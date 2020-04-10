@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "292928988594",
+    "firebase_url": "https://wine-f03da.firebaseio.com",
+    "project_id": "wine-f03da",
+    "storage_bucket": "wine-f03da.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:292928988594:android:c2a9a46c0e42d4f542f0ab",
+        "android_client_info": {
+          "package_name": "io.killy.wine"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "292928988594-4e28nug0f5mbsrd9n9kr0979n0g83mfc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "io.killy.wine",
+            "certificate_hash": "a9c4024ba79375371d34154ba2f1940cc8a474c5"
+          }
+        },
+        {
+          "client_id": "292928988594-5gl5hp7igh84pnf8uagf4g3055u0kj88.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCnR-djJSN6k78QarE716MEe08em0tPPRw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "292928988594-5gl5hp7igh84pnf8uagf4g3055u0kj88.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
