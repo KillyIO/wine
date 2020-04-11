@@ -1,4 +1,6 @@
+import 'package:flare_flutter/flare_actor.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class SplashPage extends StatefulWidget {
   @override
@@ -8,31 +10,17 @@ class SplashPage extends StatefulWidget {
 class _SplashPageState extends State<SplashPage> {
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitUp,
+      DeviceOrientation.portraitDown,
+    ]);
     return Scaffold(
       body: SafeArea(
         child: Stack(
           children: <Widget>[
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 75.0),
-              child: Align(
-                alignment: Alignment.center,
-                child: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  children: <Widget>[
-                    Image.asset(
-                      'assets/img/logo.png',
-                      fit: BoxFit.contain,
-                    ),
-                    Text(
-                      'What Is NExt?',
-                      style: TextStyle(
-                        color: Color(0xFF08C6AB),
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
+            FlareActor(
+              'assets/animation/logo.flr',
+              animation: 'splash',
             ),
             Padding(
               padding: const EdgeInsets.only(bottom: 20.0),
