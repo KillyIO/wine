@@ -11,7 +11,7 @@ description: WINE is a collaborative story writing app
 # In iOS, build-name is used as CFBundleShortVersionString while build-number used as CFBundleVersion.
 # Read more about iOS versioning at
 # https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
-version: 0.0.1+1
+version: 0.2.0+2
 
 environment:
   sdk: ">=2.2.0 <3.0.0"
@@ -25,15 +25,27 @@ dependencies:
   cupertino_icons: ^0.1.2
 
   cached_network_image: ^2.0.0
+  cloud_firestore: ^0.13.5
   equatable: ^1.1.1
+  firebase_auth: ^0.15.5+3
   flare_flutter: ^2.0.3
+  flushbar: 1.9.1
   flutter_bloc: ^3.2.0
+  flutter_icons: ^1.0.0+1
+  google_fonts: ^0.4.0
+  google_sign_in: ^4.4.1
+  hive: ^1.4.1+1
+  hive_flutter: ^0.3.0+2
   logger: ^0.8.3
+  package_info: ^0.4.0+16
+  path_provider: ^1.6.5
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
+  build_runner: ^1.8.1
   flutter_launcher_icons: ^0.7.4
+  hive_generator: ^0.7.0+2
 
 
 flutter_icons:
