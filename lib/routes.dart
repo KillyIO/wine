@@ -68,6 +68,7 @@ void createRoutes() {
       defaultTransitions: [
         SailorTransition.slide_from_bottom,
       ],
+      defaultTransitionDuration: const Duration(milliseconds: 100),
     ),
   ]);
 }

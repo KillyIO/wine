@@ -8,6 +8,7 @@ import 'package:wine/application/authentication/settings/settings_authentication
 import 'package:wine/application/authentication/sign_in/sign_in_authentication_bloc.dart';
 import 'package:wine/application/authentication/splash/splash_authentication_bloc.dart';
 import 'package:wine/application/database/create_account/create_account_database_bloc.dart';
+import 'package:wine/application/database/series/series_database_bloc.dart';
 import 'package:wine/application/database/settings/settings_database_bloc.dart';
 import 'package:wine/application/database/sign_in/sign_in_database_bloc.dart';
 import 'package:wine/application/database/splash/splash_database_bloc.dart';
@@ -36,6 +37,9 @@ Future<void> main() async {
       ),
       BlocProvider<HomeNavigationBloc>(
         create: (_) => getIt<HomeNavigationBloc>(),
+      ),
+      BlocProvider<SeriesDatabaseBloc>(
+        create: (_) => getIt<SeriesDatabaseBloc>(),
       ),
       BlocProvider<SettingsAuthenticationBloc>(
         create: (_) => getIt<SettingsAuthenticationBloc>(),

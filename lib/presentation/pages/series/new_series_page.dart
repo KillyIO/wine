@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:wine/application/database/series/series_database_bloc.dart';
 import 'package:wine/application/navigation/home/home_navigation_bloc.dart';
 import 'package:wine/presentation/widgets/image_back_button.dart';
 import 'package:wine/utils/palettes.dart';
@@ -12,6 +13,28 @@ class NewSeriesPage extends StatefulWidget {
 }
 
 class _NewSeriesPageState extends State<NewSeriesPage> {
+  final TextEditingController _titleController = TextEditingController();
+  final TextEditingController _descriptionController = TextEditingController();
+
+  @override
+  void initState() {
+    _titleController.addListener(_onTitleChanged);
+    _descriptionController.addListener(_onDescriptionChanged);
+
+    super.initState();
+  }
+
+  @override
+  void dispose() {
+    _titleController.dispose();
+    _descriptionController.dispose();
+    super.dispose();
+  }
+
+  void _onTitleChanged() {}
+
+  void _onDescriptionChanged() {}
+
   void _backButtonPressed() {
     FocusScope.of(context).requestFocus(FocusNode());
     context.bloc<HomeNavigationBloc>().add(const NewSeriesIconPressed(
@@ -79,7 +102,11 @@ class _NewSeriesPageState extends State<NewSeriesPage> {
             ),
           ),
           body: SafeArea(
-            child: Container(),
+            child: BlocBuilder<SeriesDatabaseBloc, SeriesDatabaseState>(
+              builder: (context, state) {
+                return Container();
+              },
+            ),
           ),
         ),
       ),
