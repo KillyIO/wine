@@ -4,6 +4,6 @@ class Paths {
   static const String usernameUidMapPath = 'username_uid_map';
 
   // storage paths
-  static const String coversPath = 'covers';
+  static const String coversPaths = 'covers';
   static const String profilePicturesPath = 'profile_pictures';
 }

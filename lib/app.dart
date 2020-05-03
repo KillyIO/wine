@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:wine/pages/splash/splash.dart';
-import 'package:wine/route_generator.dart';
+import 'package:sailor/sailor.dart';
+import 'package:wine/presentation/pages/splash/index.dart';
+import 'package:wine/routes.dart';
 
 class App extends StatefulWidget {
   @override
@@ -14,8 +15,11 @@ class _AppState extends State<App> {
       title: 'WINE',
       debugShowCheckedModeBanner: false,
       home: SplashPage(),
-      initialRoute: '/',
-      onGenerateRoute: RouteGenerator.generateRoute,
+      onGenerateRoute: sailor.generator(),
+      navigatorKey: sailor.navigatorKey,
+      navigatorObservers: [
+        SailorLoggingObserver(),
+      ],
     );
   }
 }
