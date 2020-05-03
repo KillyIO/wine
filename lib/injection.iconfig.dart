@@ -1,0 +1,78 @@
+// GENERATED CODE - DO NOT MODIFY BY HAND
+
+// **************************************************************************
+// InjectableConfigGenerator
+// **************************************************************************
+
+import 'package:wine/domain/models/hive/config.dart';
+import 'package:hive/hive.dart';
+import 'package:wine/infrastructure/core/hive_injectable_module.dart';
+import 'package:wine/domain/models/hive/session.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:wine/infrastructure/core/firebase_injectable_module.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:google_sign_in/google_sign_in.dart';
+import 'package:wine/application/navigation/home/home_navigation_bloc.dart';
+import 'package:wine/infrastructure/authentication/firebase_authentication_facade.dart';
+import 'package:wine/domain/authentication/i_authentication_facade.dart';
+import 'package:wine/infrastructure/database/hive_local_session_database_facade.dart';
+import 'package:wine/domain/database/i_local_session_database_facade.dart';
+import 'package:wine/infrastructure/database/firebase_online_user_database_facade.dart';
+import 'package:wine/domain/database/i_online_user_database_facade.dart';
+import 'package:wine/application/authentication/settings/settings_authentication_bloc.dart';
+import 'package:wine/application/database/settings/settings_database_bloc.dart';
+import 'package:wine/application/authentication/sign_in/sign_in_authentication_bloc.dart';
+import 'package:wine/application/database/sign_in/sign_in_database_bloc.dart';
+import 'package:wine/application/authentication/splash/splash_authentication_bloc.dart';
+import 'package:wine/application/database/splash/splash_database_bloc.dart';
+import 'package:wine/application/authentication/core/core_authentication_bloc.dart';
+import 'package:wine/application/authentication/create_account/create_account_authentication_bloc.dart';
+import 'package:wine/application/database/create_account/create_account_database_bloc.dart';
+import 'package:get_it/get_it.dart';
+
+Future<void> $initGetIt(GetIt g, {String environment}) async {
+  final hiveInjectableModule = _$HiveInjectableModule();
+  final firebaseInjectableModule = _$FirebaseInjectableModule();
+  final box = await hiveInjectableModule.openConfigsBoxes;
+  g.registerLazySingleton<Box<Config>>(() => box);
+  final box1 = await hiveInjectableModule.openSessionsBoxes;
+  g.registerLazySingleton<Box<Session>>(() => box1);
+  g.registerLazySingleton<FirebaseAuth>(
+      () => firebaseInjectableModule.firebaseAuth);
+  g.registerLazySingleton<Firestore>(() => firebaseInjectableModule.firestore);
+  g.registerLazySingleton<GoogleSignIn>(
+      () => firebaseInjectableModule.googleSignIn);
+  g.registerFactory<HomeNavigationBloc>(() => HomeNavigationBloc());
+  g.registerLazySingleton<IAuthenticationFacade>(
+      () => FirebaseAuthenticationFacade(
+            g<FirebaseAuth>(),
+            g<GoogleSignIn>(),
+            g<Firestore>(),
+          ));
+  g.registerLazySingleton<ILocalSessionDatabaseFacade>(
+      () => HiveLocalSessionDatabaseFacade(g<Box<Session>>()));
+  g.registerLazySingleton<IOnlineUserDatabaseFacade>(
+      () => FirebaseOnlineUserDatabaseFacade(g<Firestore>()));
+  g.registerFactory<SettingsAuthenticationBloc>(
+      () => SettingsAuthenticationBloc(g<IAuthenticationFacade>()));
+  g.registerFactory<SettingsDatabaseBloc>(() => SettingsDatabaseBloc(
+      g<ILocalSessionDatabaseFacade>(), g<IOnlineUserDatabaseFacade>()));
+  g.registerFactory<SignInAuthenticationBloc>(
+      () => SignInAuthenticationBloc(g<IAuthenticationFacade>()));
+  g.registerFactory<SignInDatabaseBloc>(() => SignInDatabaseBloc(
+      g<ILocalSessionDatabaseFacade>(), g<IOnlineUserDatabaseFacade>()));
+  g.registerFactory<SplashAuthenticationBloc>(
+      () => SplashAuthenticationBloc(g<IAuthenticationFacade>()));
+  g.registerFactory<SplashDatabaseBloc>(() => SplashDatabaseBloc(
+      g<ILocalSessionDatabaseFacade>(), g<IOnlineUserDatabaseFacade>()));
+  g.registerFactory<CoreAuthenticationBloc>(
+      () => CoreAuthenticationBloc(g<IAuthenticationFacade>()));
+  g.registerFactory<CreateAccountAuthenticationBloc>(
+      () => CreateAccountAuthenticationBloc(g<IAuthenticationFacade>()));
+  g.registerFactory<CreateAccountDatabaseBloc>(() => CreateAccountDatabaseBloc(
+      g<ILocalSessionDatabaseFacade>(), g<IOnlineUserDatabaseFacade>()));
+}
+
+class _$HiveInjectableModule extends HiveInjectableModule {}
+
+class _$FirebaseInjectableModule extends FirebaseInjectableModule {}

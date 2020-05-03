@@ -14,39 +14,45 @@ description: WINE is a collaborative story writing app
 version: 0.2.0+2
 
 environment:
-  sdk: ">=2.2.0 <3.0.0"
+  sdk: ">=2.2.2 <3.0.0"
 
 dependencies:
   flutter:
     sdk: flutter
+  # cached_network_image: ^2.0.0
+  cloud_firestore: ^0.13.5
+  dartz: ^0.9.0-dev.6
+  firebase_auth: ^0.16.0
+  firebase_core: ^0.4.4+3
+  flare_flutter: ^2.0.3
+  # flushbar: 1.9.1
+  flutter_bloc: ^4.0.0
+  flutter_icons: ^1.1.0
+  freezed_annotation: ^0.7.1
+  get_it: ^4.0.1
+  # google_fonts: ^0.4.0
+  google_sign_in: ^4.4.3
+  hive: ^1.4.1+1
+  hive_flutter: ^0.3.0+2
+  injectable: ^0.3.0
+  logger: ^0.9.1
+  package_info: ^0.4.0+16
+  path_provider: ^1.6.7
+  sailor: ^0.7.1
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^0.1.2
 
-  cached_network_image: ^2.0.0
-  cloud_firestore: ^0.13.5
-  equatable: ^1.1.1
-  firebase_auth: ^0.15.5+3
-  flare_flutter: ^2.0.3
-  flushbar: 1.9.1
-  flutter_bloc: ^3.2.0
-  flutter_icons: ^1.0.0+1
-  google_fonts: ^0.4.0
-  google_sign_in: ^4.4.1
-  hive: ^1.4.1+1
-  hive_flutter: ^0.3.0+2
-  logger: ^0.8.3
-  package_info: ^0.4.0+16
-  path_provider: ^1.6.5
-
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  build_runner: ^1.8.1
+  build_runner:
   flutter_launcher_icons: ^0.7.4
+  freezed: ^0.10.6
   hive_generator: ^0.7.0+2
-
+  injectable_generator: ^0.3.4
+  lint: ^1.1.1
 
 flutter_icons:
   android: "launcher_icon"
@@ -57,7 +63,6 @@ flutter_icons:
 
 # The following section is specific to Flutter.
 flutter:
-
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.
@@ -67,13 +72,10 @@ flutter:
   assets:
     - assets/img/
     - assets/animation/
-
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
-
   # For details regarding adding assets from package dependencies, see
   # https://flutter.dev/assets-and-images/#from-packages
-
   # To add custom fonts to your application, add a fonts section here,
   # in this "flutter" section. Each entry in this list should have a
   # "family" key with the font family name, and a "fonts" key with a
