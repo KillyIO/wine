@@ -46,9 +46,6 @@ class HiveLocalSessionDatabaseFacade implements ILocalSessionDatabaseFacade {
       case SessionField.profilePictureUrl:
         session.profilePictureUrl = value as String;
         break;
-      case SessionField.isEmailVerified:
-        session.isEmailVerified = value as bool;
-        break;
       case SessionField.createdAt:
         session.createdAt = value as int;
         break;

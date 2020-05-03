@@ -28,6 +28,7 @@ import 'package:wine/application/database/splash/splash_database_bloc.dart';
 import 'package:wine/application/authentication/core/core_authentication_bloc.dart';
 import 'package:wine/application/authentication/create_account/create_account_authentication_bloc.dart';
 import 'package:wine/application/database/create_account/create_account_database_bloc.dart';
+import 'package:wine/application/database/home/home_database_bloc.dart';
 import 'package:get_it/get_it.dart';
 
 Future<void> $initGetIt(GetIt g, {String environment}) async {
@@ -70,6 +71,8 @@ Future<void> $initGetIt(GetIt g, {String environment}) async {
   g.registerFactory<CreateAccountAuthenticationBloc>(
       () => CreateAccountAuthenticationBloc(g<IAuthenticationFacade>()));
   g.registerFactory<CreateAccountDatabaseBloc>(() => CreateAccountDatabaseBloc(
+      g<ILocalSessionDatabaseFacade>(), g<IOnlineUserDatabaseFacade>()));
+  g.registerFactory<HomeDatabaseBloc>(() => HomeDatabaseBloc(
       g<ILocalSessionDatabaseFacade>(), g<IOnlineUserDatabaseFacade>()));
 }
 

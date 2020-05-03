@@ -4,7 +4,6 @@ enum SessionField {
   username,
   email,
   profilePictureUrl,
-  isEmailVerified,
   createdAt,
   updatedAt,
   bio,

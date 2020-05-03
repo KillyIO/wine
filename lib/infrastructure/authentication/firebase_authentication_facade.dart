@@ -91,6 +91,13 @@ class FirebaseAuthenticationFacade implements IAuthenticationFacade {
   }
 
   @override
+  Future<void> resendVerificationEmail() async {
+    final FirebaseUser currentUser = await _firebaseAuth.currentUser();
+
+    await currentUser.sendEmailVerification();
+  }
+
+  @override
   Future<Either<AuthenticationFailure, Unit>> signInAnonymously() async {
     try {
       await _firebaseAuth.signInAnonymously();

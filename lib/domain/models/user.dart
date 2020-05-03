@@ -7,7 +7,6 @@ class User {
   String username;
   String email;
   String profilePictureUrl;
-  bool isEmailVerified;
   int createdAt;
   int updatedAt;
   String bio;
@@ -18,7 +17,6 @@ class User {
     this.username,
     this.email,
     this.profilePictureUrl,
-    this.isEmailVerified,
     this.createdAt,
     this.updatedAt,
     this.bio,
@@ -30,7 +28,6 @@ class User {
     String username,
     String email,
     String profilePictureUrl,
-    bool isEmailVerified,
     int createdAt,
     int updatedAt,
     String bio,
@@ -41,7 +38,6 @@ class User {
       username: username ?? this.username,
       email: email ?? this.email,
       profilePictureUrl: profilePictureUrl ?? this.profilePictureUrl,
-      isEmailVerified: isEmailVerified ?? this.isEmailVerified,
       createdAt: createdAt ?? this.createdAt,
       updatedAt: updatedAt ?? this.updatedAt,
       bio: bio ?? this.bio,
@@ -55,7 +51,6 @@ class User {
       username: null,
       email: user.email,
       profilePictureUrl: user.photoUrl,
-      isEmailVerified: user.isEmailVerified,
       createdAt: null,
       updatedAt: null,
       bio: null,
@@ -70,7 +65,6 @@ class User {
       username: data['username'] as String,
       email: data['email'] as String,
       profilePictureUrl: data['profilePictureUrl'] as String,
-      isEmailVerified: data['isEmailVerified'] as bool,
       createdAt: data['createdAt'] as int,
       updatedAt: data['updatedAt'] as int,
       bio: data['bio'] as String,
@@ -84,7 +78,6 @@ class User {
       'username': username,
       'email': email,
       'profilePictureUrl': profilePictureUrl,
-      'isEmailVerified': isEmailVerified,
       'createdAt': createdAt,
       'updatedAt': updatedAt,
       'bio': bio,
@@ -100,7 +93,6 @@ class User {
       username: map['username'] as String,
       email: map['email'] as String,
       profilePictureUrl: map['profilePictureUrl'] as String,
-      isEmailVerified: map['isEmailVerified'] as bool,
       createdAt: map['createdAt'] as int,
       updatedAt: map['updatedAt'] as int,
       bio: map['bio'] as String,
@@ -109,7 +101,7 @@ class User {
 
   @override
   String toString() {
-    return 'User(uid: $uid, name: $name, username: $username, email: $email, profilePictureUrl: $profilePictureUrl, isEmailVerified: $isEmailVerified, createdAt: $createdAt, updatedAt: $updatedAt, bio: $bio)';
+    return 'User(uid: $uid, name: $name, username: $username, email: $email, profilePictureUrl: $profilePictureUrl, createdAt: $createdAt, updatedAt: $updatedAt, bio: $bio)';
   }
 
   @override
@@ -122,7 +114,6 @@ class User {
         o.username == username &&
         o.email == email &&
         o.profilePictureUrl == profilePictureUrl &&
-        o.isEmailVerified == isEmailVerified &&
         o.createdAt == createdAt &&
         o.updatedAt == updatedAt &&
         o.bio == bio;
@@ -135,7 +126,6 @@ class User {
         username.hashCode ^
         email.hashCode ^
         profilePictureUrl.hashCode ^
-        isEmailVerified.hashCode ^
         createdAt.hashCode ^
         updatedAt.hashCode ^
         bio.hashCode;

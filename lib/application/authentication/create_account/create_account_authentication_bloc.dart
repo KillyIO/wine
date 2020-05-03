@@ -113,6 +113,15 @@ class CreateAccountAuthenticationBloc extends Bloc<
           authenticationFailureOrSuccessOption: optionOf(failureOrSuccess),
         );
       },
+      resendVerificationEmail: (event) async* {
+        yield state.copyWith(
+          isVerificationEmailSent: false,
+        );
+        await _authenticationFacade.resendVerificationEmail();
+        yield state.copyWith(
+          isVerificationEmailSent: true,
+        );
+      },
     );
   }
 }

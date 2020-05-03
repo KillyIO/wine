@@ -16,4 +16,6 @@ abstract class CreateAccountAuthenticationEvent
   ) = UsernameChanged;
   const factory CreateAccountAuthenticationEvent.createAccount() =
       CreateAccount;
+  const factory CreateAccountAuthenticationEvent.resendVerificationEmail() =
+      ResendVerificationEmail;
 }

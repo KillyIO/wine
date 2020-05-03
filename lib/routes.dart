@@ -57,6 +57,10 @@ void createRoutes() {
         SailorTransition.slide_from_bottom,
       ],
     ),
+    SailorRoute(
+      name: Constants.verifyEmailRoute,
+      builder: (context, args, params) => VerifyEmailPage(),
+    ),
     // SECTION SERIES
     SailorRoute(
       name: Constants.newSeriesRoute,

@@ -39,6 +39,10 @@ class _$CreateAccountAuthenticationEventTearOff {
   CreateAccount createAccount() {
     return const CreateAccount();
   }
+
+  ResendVerificationEmail resendVerificationEmail() {
+    return const ResendVerificationEmail();
+  }
 }
 
 // ignore: unused_element
@@ -53,6 +57,7 @@ mixin _$CreateAccountAuthenticationEvent {
     @required Result confirmPasswordChanged(String confirmPasswordStr),
     @required Result usernameChanged(String usernameStr),
     @required Result createAccount(),
+    @required Result resendVerificationEmail(),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
@@ -61,6 +66,7 @@ mixin _$CreateAccountAuthenticationEvent {
     Result confirmPasswordChanged(String confirmPasswordStr),
     Result usernameChanged(String usernameStr),
     Result createAccount(),
+    Result resendVerificationEmail(),
     @required Result orElse(),
   });
   @optionalTypeArgs
@@ -70,6 +76,7 @@ mixin _$CreateAccountAuthenticationEvent {
     @required Result confirmPasswordChanged(ConfirmPasswordChanged value),
     @required Result usernameChanged(UsernameChanged value),
     @required Result createAccount(CreateAccount value),
+    @required Result resendVerificationEmail(ResendVerificationEmail value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
@@ -78,6 +85,7 @@ mixin _$CreateAccountAuthenticationEvent {
     Result confirmPasswordChanged(ConfirmPasswordChanged value),
     Result usernameChanged(UsernameChanged value),
     Result createAccount(CreateAccount value),
+    Result resendVerificationEmail(ResendVerificationEmail value),
     @required Result orElse(),
   });
 }
@@ -161,12 +169,14 @@ class _$EmailChanged implements EmailChanged {
     @required Result confirmPasswordChanged(String confirmPasswordStr),
     @required Result usernameChanged(String usernameStr),
     @required Result createAccount(),
+    @required Result resendVerificationEmail(),
   }) {
     assert(emailChanged != null);
     assert(passwordChanged != null);
     assert(confirmPasswordChanged != null);
     assert(usernameChanged != null);
     assert(createAccount != null);
+    assert(resendVerificationEmail != null);
     return emailChanged(emailStr);
   }
 
@@ -178,6 +188,7 @@ class _$EmailChanged implements EmailChanged {
     Result confirmPasswordChanged(String confirmPasswordStr),
     Result usernameChanged(String usernameStr),
     Result createAccount(),
+    Result resendVerificationEmail(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -195,12 +206,14 @@ class _$EmailChanged implements EmailChanged {
     @required Result confirmPasswordChanged(ConfirmPasswordChanged value),
     @required Result usernameChanged(UsernameChanged value),
     @required Result createAccount(CreateAccount value),
+    @required Result resendVerificationEmail(ResendVerificationEmail value),
   }) {
     assert(emailChanged != null);
     assert(passwordChanged != null);
     assert(confirmPasswordChanged != null);
     assert(usernameChanged != null);
     assert(createAccount != null);
+    assert(resendVerificationEmail != null);
     return emailChanged(this);
   }
 
@@ -212,6 +225,7 @@ class _$EmailChanged implements EmailChanged {
     Result confirmPasswordChanged(ConfirmPasswordChanged value),
     Result usernameChanged(UsernameChanged value),
     Result createAccount(CreateAccount value),
+    Result resendVerificationEmail(ResendVerificationEmail value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -292,12 +306,14 @@ class _$PasswordChanged implements PasswordChanged {
     @required Result confirmPasswordChanged(String confirmPasswordStr),
     @required Result usernameChanged(String usernameStr),
     @required Result createAccount(),
+    @required Result resendVerificationEmail(),
   }) {
     assert(emailChanged != null);
     assert(passwordChanged != null);
     assert(confirmPasswordChanged != null);
     assert(usernameChanged != null);
     assert(createAccount != null);
+    assert(resendVerificationEmail != null);
     return passwordChanged(passwordStr);
   }
 
@@ -309,6 +325,7 @@ class _$PasswordChanged implements PasswordChanged {
     Result confirmPasswordChanged(String confirmPasswordStr),
     Result usernameChanged(String usernameStr),
     Result createAccount(),
+    Result resendVerificationEmail(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -326,12 +343,14 @@ class _$PasswordChanged implements PasswordChanged {
     @required Result confirmPasswordChanged(ConfirmPasswordChanged value),
     @required Result usernameChanged(UsernameChanged value),
     @required Result createAccount(CreateAccount value),
+    @required Result resendVerificationEmail(ResendVerificationEmail value),
   }) {
     assert(emailChanged != null);
     assert(passwordChanged != null);
     assert(confirmPasswordChanged != null);
     assert(usernameChanged != null);
     assert(createAccount != null);
+    assert(resendVerificationEmail != null);
     return passwordChanged(this);
   }
 
@@ -343,6 +362,7 @@ class _$PasswordChanged implements PasswordChanged {
     Result confirmPasswordChanged(ConfirmPasswordChanged value),
     Result usernameChanged(UsernameChanged value),
     Result createAccount(CreateAccount value),
+    Result resendVerificationEmail(ResendVerificationEmail value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -428,12 +448,14 @@ class _$ConfirmPasswordChanged implements ConfirmPasswordChanged {
     @required Result confirmPasswordChanged(String confirmPasswordStr),
     @required Result usernameChanged(String usernameStr),
     @required Result createAccount(),
+    @required Result resendVerificationEmail(),
   }) {
     assert(emailChanged != null);
     assert(passwordChanged != null);
     assert(confirmPasswordChanged != null);
     assert(usernameChanged != null);
     assert(createAccount != null);
+    assert(resendVerificationEmail != null);
     return confirmPasswordChanged(confirmPasswordStr);
   }
 
@@ -445,6 +467,7 @@ class _$ConfirmPasswordChanged implements ConfirmPasswordChanged {
     Result confirmPasswordChanged(String confirmPasswordStr),
     Result usernameChanged(String usernameStr),
     Result createAccount(),
+    Result resendVerificationEmail(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -462,12 +485,14 @@ class _$ConfirmPasswordChanged implements ConfirmPasswordChanged {
     @required Result confirmPasswordChanged(ConfirmPasswordChanged value),
     @required Result usernameChanged(UsernameChanged value),
     @required Result createAccount(CreateAccount value),
+    @required Result resendVerificationEmail(ResendVerificationEmail value),
   }) {
     assert(emailChanged != null);
     assert(passwordChanged != null);
     assert(confirmPasswordChanged != null);
     assert(usernameChanged != null);
     assert(createAccount != null);
+    assert(resendVerificationEmail != null);
     return confirmPasswordChanged(this);
   }
 
@@ -479,6 +504,7 @@ class _$ConfirmPasswordChanged implements ConfirmPasswordChanged {
     Result confirmPasswordChanged(ConfirmPasswordChanged value),
     Result usernameChanged(UsernameChanged value),
     Result createAccount(CreateAccount value),
+    Result resendVerificationEmail(ResendVerificationEmail value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -561,12 +587,14 @@ class _$UsernameChanged implements UsernameChanged {
     @required Result confirmPasswordChanged(String confirmPasswordStr),
     @required Result usernameChanged(String usernameStr),
     @required Result createAccount(),
+    @required Result resendVerificationEmail(),
   }) {
     assert(emailChanged != null);
     assert(passwordChanged != null);
     assert(confirmPasswordChanged != null);
     assert(usernameChanged != null);
     assert(createAccount != null);
+    assert(resendVerificationEmail != null);
     return usernameChanged(usernameStr);
   }
 
@@ -578,6 +606,7 @@ class _$UsernameChanged implements UsernameChanged {
     Result confirmPasswordChanged(String confirmPasswordStr),
     Result usernameChanged(String usernameStr),
     Result createAccount(),
+    Result resendVerificationEmail(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -595,12 +624,14 @@ class _$UsernameChanged implements UsernameChanged {
     @required Result confirmPasswordChanged(ConfirmPasswordChanged value),
     @required Result usernameChanged(UsernameChanged value),
     @required Result createAccount(CreateAccount value),
+    @required Result resendVerificationEmail(ResendVerificationEmail value),
   }) {
     assert(emailChanged != null);
     assert(passwordChanged != null);
     assert(confirmPasswordChanged != null);
     assert(usernameChanged != null);
     assert(createAccount != null);
+    assert(resendVerificationEmail != null);
     return usernameChanged(this);
   }
 
@@ -612,6 +643,7 @@ class _$UsernameChanged implements UsernameChanged {
     Result confirmPasswordChanged(ConfirmPasswordChanged value),
     Result usernameChanged(UsernameChanged value),
     Result createAccount(CreateAccount value),
+    Result resendVerificationEmail(ResendVerificationEmail value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -670,12 +702,14 @@ class _$CreateAccount implements CreateAccount {
     @required Result confirmPasswordChanged(String confirmPasswordStr),
     @required Result usernameChanged(String usernameStr),
     @required Result createAccount(),
+    @required Result resendVerificationEmail(),
   }) {
     assert(emailChanged != null);
     assert(passwordChanged != null);
     assert(confirmPasswordChanged != null);
     assert(usernameChanged != null);
     assert(createAccount != null);
+    assert(resendVerificationEmail != null);
     return createAccount();
   }
 
@@ -687,6 +721,7 @@ class _$CreateAccount implements CreateAccount {
     Result confirmPasswordChanged(String confirmPasswordStr),
     Result usernameChanged(String usernameStr),
     Result createAccount(),
+    Result resendVerificationEmail(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -704,12 +739,14 @@ class _$CreateAccount implements CreateAccount {
     @required Result confirmPasswordChanged(ConfirmPasswordChanged value),
     @required Result usernameChanged(UsernameChanged value),
     @required Result createAccount(CreateAccount value),
+    @required Result resendVerificationEmail(ResendVerificationEmail value),
   }) {
     assert(emailChanged != null);
     assert(passwordChanged != null);
     assert(confirmPasswordChanged != null);
     assert(usernameChanged != null);
     assert(createAccount != null);
+    assert(resendVerificationEmail != null);
     return createAccount(this);
   }
 
@@ -721,6 +758,7 @@ class _$CreateAccount implements CreateAccount {
     Result confirmPasswordChanged(ConfirmPasswordChanged value),
     Result usernameChanged(UsernameChanged value),
     Result createAccount(CreateAccount value),
+    Result resendVerificationEmail(ResendVerificationEmail value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -733,6 +771,119 @@ class _$CreateAccount implements CreateAccount {
 
 abstract class CreateAccount implements CreateAccountAuthenticationEvent {
   const factory CreateAccount() = _$CreateAccount;
+}
+
+abstract class $ResendVerificationEmailCopyWith<$Res> {
+  factory $ResendVerificationEmailCopyWith(ResendVerificationEmail value,
+          $Res Function(ResendVerificationEmail) then) =
+      _$ResendVerificationEmailCopyWithImpl<$Res>;
+}
+
+class _$ResendVerificationEmailCopyWithImpl<$Res>
+    extends _$CreateAccountAuthenticationEventCopyWithImpl<$Res>
+    implements $ResendVerificationEmailCopyWith<$Res> {
+  _$ResendVerificationEmailCopyWithImpl(ResendVerificationEmail _value,
+      $Res Function(ResendVerificationEmail) _then)
+      : super(_value, (v) => _then(v as ResendVerificationEmail));
+
+  @override
+  ResendVerificationEmail get _value => super._value as ResendVerificationEmail;
+}
+
+class _$ResendVerificationEmail implements ResendVerificationEmail {
+  const _$ResendVerificationEmail();
+
+  @override
+  String toString() {
+    return 'CreateAccountAuthenticationEvent.resendVerificationEmail()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is ResendVerificationEmail);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result emailChanged(String emailStr),
+    @required Result passwordChanged(String passwordStr),
+    @required Result confirmPasswordChanged(String confirmPasswordStr),
+    @required Result usernameChanged(String usernameStr),
+    @required Result createAccount(),
+    @required Result resendVerificationEmail(),
+  }) {
+    assert(emailChanged != null);
+    assert(passwordChanged != null);
+    assert(confirmPasswordChanged != null);
+    assert(usernameChanged != null);
+    assert(createAccount != null);
+    assert(resendVerificationEmail != null);
+    return resendVerificationEmail();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result emailChanged(String emailStr),
+    Result passwordChanged(String passwordStr),
+    Result confirmPasswordChanged(String confirmPasswordStr),
+    Result usernameChanged(String usernameStr),
+    Result createAccount(),
+    Result resendVerificationEmail(),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (resendVerificationEmail != null) {
+      return resendVerificationEmail();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result emailChanged(EmailChanged value),
+    @required Result passwordChanged(PasswordChanged value),
+    @required Result confirmPasswordChanged(ConfirmPasswordChanged value),
+    @required Result usernameChanged(UsernameChanged value),
+    @required Result createAccount(CreateAccount value),
+    @required Result resendVerificationEmail(ResendVerificationEmail value),
+  }) {
+    assert(emailChanged != null);
+    assert(passwordChanged != null);
+    assert(confirmPasswordChanged != null);
+    assert(usernameChanged != null);
+    assert(createAccount != null);
+    assert(resendVerificationEmail != null);
+    return resendVerificationEmail(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result emailChanged(EmailChanged value),
+    Result passwordChanged(PasswordChanged value),
+    Result confirmPasswordChanged(ConfirmPasswordChanged value),
+    Result usernameChanged(UsernameChanged value),
+    Result createAccount(CreateAccount value),
+    Result resendVerificationEmail(ResendVerificationEmail value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (resendVerificationEmail != null) {
+      return resendVerificationEmail(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ResendVerificationEmail
+    implements CreateAccountAuthenticationEvent {
+  const factory ResendVerificationEmail() = _$ResendVerificationEmail;
 }
 
 class _$CreateAccountAuthenticationStateTearOff {
@@ -758,6 +909,8 @@ class _$CreateAccountAuthenticationStateTearOff {
       @required
           bool isSubmitting,
       @required
+          bool isVerificationEmailSent,
+      @required
           Option<Either<AuthenticationFailure, dynamic>>
               authenticationFailureOrSuccessOption}) {
     return _CreateAccountAuthenticationState(
@@ -770,6 +923,7 @@ class _$CreateAccountAuthenticationStateTearOff {
       showConfirmPasswordErrorMessage: showConfirmPasswordErrorMessage,
       showUsernameErrorMessage: showUsernameErrorMessage,
       isSubmitting: isSubmitting,
+      isVerificationEmailSent: isVerificationEmailSent,
       authenticationFailureOrSuccessOption:
           authenticationFailureOrSuccessOption,
     );
@@ -790,6 +944,7 @@ mixin _$CreateAccountAuthenticationState {
   bool get showConfirmPasswordErrorMessage;
   bool get showUsernameErrorMessage;
   bool get isSubmitting;
+  bool get isVerificationEmailSent;
   Option<Either<AuthenticationFailure, dynamic>>
       get authenticationFailureOrSuccessOption;
 
@@ -812,6 +967,7 @@ abstract class $CreateAccountAuthenticationStateCopyWith<$Res> {
       bool showConfirmPasswordErrorMessage,
       bool showUsernameErrorMessage,
       bool isSubmitting,
+      bool isVerificationEmailSent,
       Option<Either<AuthenticationFailure, dynamic>>
           authenticationFailureOrSuccessOption});
 }
@@ -835,6 +991,7 @@ class _$CreateAccountAuthenticationStateCopyWithImpl<$Res>
     Object showConfirmPasswordErrorMessage = freezed,
     Object showUsernameErrorMessage = freezed,
     Object isSubmitting = freezed,
+    Object isVerificationEmailSent = freezed,
     Object authenticationFailureOrSuccessOption = freezed,
   }) {
     return _then(_value.copyWith(
@@ -861,6 +1018,9 @@ class _$CreateAccountAuthenticationStateCopyWithImpl<$Res>
           : showUsernameErrorMessage as bool,
       isSubmitting:
           isSubmitting == freezed ? _value.isSubmitting : isSubmitting as bool,
+      isVerificationEmailSent: isVerificationEmailSent == freezed
+          ? _value.isVerificationEmailSent
+          : isVerificationEmailSent as bool,
       authenticationFailureOrSuccessOption:
           authenticationFailureOrSuccessOption == freezed
               ? _value.authenticationFailureOrSuccessOption
@@ -887,6 +1047,7 @@ abstract class _$CreateAccountAuthenticationStateCopyWith<$Res>
       bool showConfirmPasswordErrorMessage,
       bool showUsernameErrorMessage,
       bool isSubmitting,
+      bool isVerificationEmailSent,
       Option<Either<AuthenticationFailure, dynamic>>
           authenticationFailureOrSuccessOption});
 }
@@ -914,6 +1075,7 @@ class __$CreateAccountAuthenticationStateCopyWithImpl<$Res>
     Object showConfirmPasswordErrorMessage = freezed,
     Object showUsernameErrorMessage = freezed,
     Object isSubmitting = freezed,
+    Object isVerificationEmailSent = freezed,
     Object authenticationFailureOrSuccessOption = freezed,
   }) {
     return _then(_CreateAccountAuthenticationState(
@@ -940,6 +1102,9 @@ class __$CreateAccountAuthenticationStateCopyWithImpl<$Res>
           : showUsernameErrorMessage as bool,
       isSubmitting:
           isSubmitting == freezed ? _value.isSubmitting : isSubmitting as bool,
+      isVerificationEmailSent: isVerificationEmailSent == freezed
+          ? _value.isVerificationEmailSent
+          : isVerificationEmailSent as bool,
       authenticationFailureOrSuccessOption:
           authenticationFailureOrSuccessOption == freezed
               ? _value.authenticationFailureOrSuccessOption
@@ -961,6 +1126,7 @@ class _$_CreateAccountAuthenticationState
       @required this.showConfirmPasswordErrorMessage,
       @required this.showUsernameErrorMessage,
       @required this.isSubmitting,
+      @required this.isVerificationEmailSent,
       @required this.authenticationFailureOrSuccessOption})
       : assert(emailAddress != null),
         assert(password != null),
@@ -971,6 +1137,7 @@ class _$_CreateAccountAuthenticationState
         assert(showConfirmPasswordErrorMessage != null),
         assert(showUsernameErrorMessage != null),
         assert(isSubmitting != null),
+        assert(isVerificationEmailSent != null),
         assert(authenticationFailureOrSuccessOption != null);
 
   @override
@@ -992,12 +1159,14 @@ class _$_CreateAccountAuthenticationState
   @override
   final bool isSubmitting;
   @override
+  final bool isVerificationEmailSent;
+  @override
   final Option<Either<AuthenticationFailure, dynamic>>
       authenticationFailureOrSuccessOption;
 
   @override
   String toString() {
-    return 'CreateAccountAuthenticationState(emailAddress: $emailAddress, password: $password, confirmPassword: $confirmPassword, username: $username, showEmailErrorMessage: $showEmailErrorMessage, showPasswordErrorMessage: $showPasswordErrorMessage, showConfirmPasswordErrorMessage: $showConfirmPasswordErrorMessage, showUsernameErrorMessage: $showUsernameErrorMessage, isSubmitting: $isSubmitting, authenticationFailureOrSuccessOption: $authenticationFailureOrSuccessOption)';
+    return 'CreateAccountAuthenticationState(emailAddress: $emailAddress, password: $password, confirmPassword: $confirmPassword, username: $username, showEmailErrorMessage: $showEmailErrorMessage, showPasswordErrorMessage: $showPasswordErrorMessage, showConfirmPasswordErrorMessage: $showConfirmPasswordErrorMessage, showUsernameErrorMessage: $showUsernameErrorMessage, isSubmitting: $isSubmitting, isVerificationEmailSent: $isVerificationEmailSent, authenticationFailureOrSuccessOption: $authenticationFailureOrSuccessOption)';
   }
 
   @override
@@ -1023,19 +1192,20 @@ class _$_CreateAccountAuthenticationState
                 const DeepCollectionEquality().equals(
                     other.showPasswordErrorMessage,
                     showPasswordErrorMessage)) &&
-            (identical(other.showConfirmPasswordErrorMessage,
-                    showConfirmPasswordErrorMessage) ||
+            (identical(other.showConfirmPasswordErrorMessage, showConfirmPasswordErrorMessage) ||
                 const DeepCollectionEquality().equals(
                     other.showConfirmPasswordErrorMessage,
                     showConfirmPasswordErrorMessage)) &&
-            (identical(
-                    other.showUsernameErrorMessage, showUsernameErrorMessage) ||
+            (identical(other.showUsernameErrorMessage, showUsernameErrorMessage) ||
                 const DeepCollectionEquality().equals(
                     other.showUsernameErrorMessage,
                     showUsernameErrorMessage)) &&
             (identical(other.isSubmitting, isSubmitting) ||
                 const DeepCollectionEquality()
                     .equals(other.isSubmitting, isSubmitting)) &&
+            (identical(other.isVerificationEmailSent, isVerificationEmailSent) ||
+                const DeepCollectionEquality().equals(
+                    other.isVerificationEmailSent, isVerificationEmailSent)) &&
             (identical(other.authenticationFailureOrSuccessOption,
                     authenticationFailureOrSuccessOption) ||
                 const DeepCollectionEquality().equals(
@@ -1055,6 +1225,7 @@ class _$_CreateAccountAuthenticationState
       const DeepCollectionEquality().hash(showConfirmPasswordErrorMessage) ^
       const DeepCollectionEquality().hash(showUsernameErrorMessage) ^
       const DeepCollectionEquality().hash(isSubmitting) ^
+      const DeepCollectionEquality().hash(isVerificationEmailSent) ^
       const DeepCollectionEquality().hash(authenticationFailureOrSuccessOption);
 
   @override
@@ -1085,6 +1256,8 @@ abstract class _CreateAccountAuthenticationState
           @required
               bool isSubmitting,
           @required
+              bool isVerificationEmailSent,
+          @required
               Option<Either<AuthenticationFailure, dynamic>>
                   authenticationFailureOrSuccessOption}) =
       _$_CreateAccountAuthenticationState;
@@ -1107,6 +1280,8 @@ abstract class _CreateAccountAuthenticationState
   bool get showUsernameErrorMessage;
   @override
   bool get isSubmitting;
+  @override
+  bool get isVerificationEmailSent;
   @override
   Option<Either<AuthenticationFailure, dynamic>>
       get authenticationFailureOrSuccessOption;

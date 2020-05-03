@@ -13,6 +13,7 @@ abstract class CreateAccountAuthenticationState
     @required bool showConfirmPasswordErrorMessage,
     @required bool showUsernameErrorMessage,
     @required bool isSubmitting,
+    @required bool isVerificationEmailSent,
     @required
         Option<Either<AuthenticationFailure, dynamic>>
             authenticationFailureOrSuccessOption,
@@ -29,6 +30,7 @@ abstract class CreateAccountAuthenticationState
         showConfirmPasswordErrorMessage: false,
         showUsernameErrorMessage: false,
         isSubmitting: false,
+        isVerificationEmailSent: false,
         authenticationFailureOrSuccessOption: none(),
       );
 }

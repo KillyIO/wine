@@ -20,15 +20,12 @@ class Session extends HiveObject {
   String profilePictureUrl;
 
   @HiveField(5)
-  bool isEmailVerified;
-
-  @HiveField(6)
   int createdAt;
 
-  @HiveField(7)
+  @HiveField(6)
   int updatedAt;
 
-  @HiveField(8)
+  @HiveField(7)
   String bio;
 
   Session({
@@ -37,7 +34,6 @@ class Session extends HiveObject {
     this.username,
     this.email,
     this.profilePictureUrl,
-    this.isEmailVerified,
     this.createdAt,
     this.updatedAt,
     this.bio,
@@ -60,7 +56,6 @@ class Session extends HiveObject {
       username: username ?? this.username,
       email: email ?? this.email,
       profilePictureUrl: profilePictureUrl ?? this.profilePictureUrl,
-      isEmailVerified: isEmailVerified ?? this.isEmailVerified,
       createdAt: createdAt ?? this.createdAt,
       updatedAt: updatedAt ?? this.updatedAt,
       bio: bio ?? this.bio,
@@ -74,7 +69,6 @@ class Session extends HiveObject {
       'username': username,
       'email': email,
       'profilePictureUrl': profilePictureUrl,
-      'isEmailVerified': isEmailVerified,
       'createdAt': createdAt,
       'updatedAt': updatedAt,
       'bio': bio,
@@ -90,7 +84,6 @@ class Session extends HiveObject {
       username: map['username'] as String,
       email: map['email'] as String,
       profilePictureUrl: map['profilePictureUrl'] as String,
-      isEmailVerified: map['isEmailVerified'] as bool,
       createdAt: map['createdAt'] as int,
       updatedAt: map['updatedAt'] as int,
       bio: map['bio'] as String,
@@ -99,7 +92,7 @@ class Session extends HiveObject {
 
   @override
   String toString() {
-    return 'Session(uid: $uid, name: $name, username: $username, email: $email, profilePictureUrl: $profilePictureUrl, isEmailVerified: $isEmailVerified, createdAt: $createdAt, updatedAt: $updatedAt, bio: $bio)';
+    return 'Session(uid: $uid, name: $name, username: $username, email: $email, profilePictureUrl: $profilePictureUrl, createdAt: $createdAt, updatedAt: $updatedAt, bio: $bio)';
   }
 
   @override
@@ -112,7 +105,6 @@ class Session extends HiveObject {
         o.username == username &&
         o.email == email &&
         o.profilePictureUrl == profilePictureUrl &&
-        o.isEmailVerified == isEmailVerified &&
         o.createdAt == createdAt &&
         o.updatedAt == updatedAt &&
         o.bio == bio;
@@ -125,7 +117,6 @@ class Session extends HiveObject {
         username.hashCode ^
         email.hashCode ^
         profilePictureUrl.hashCode ^
-        isEmailVerified.hashCode ^
         createdAt.hashCode ^
         updatedAt.hashCode ^
         bio.hashCode;
