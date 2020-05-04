@@ -27,4 +27,8 @@ abstract class ValueFailure<T> with _$ValueFailure<T> {
   const factory ValueFailure.invalidGenre({
     @required String failedValue,
   }) = InvalidGenre<T>;
+
+  const factory ValueFailure.invalidCharacter({
+    @required String failedValue,
+  }) = InvalidCharacter<T>;
 }

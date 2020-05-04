@@ -47,6 +47,12 @@ class _$ValueFailureTearOff {
       failedValue: failedValue,
     );
   }
+
+  InvalidCharacter<T> invalidCharacter<T>({@required String failedValue}) {
+    return InvalidCharacter<T>(
+      failedValue: failedValue,
+    );
+  }
 }
 
 // ignore: unused_element
@@ -63,6 +69,7 @@ mixin _$ValueFailure<T> {
     @required Result invalidTitle(String failedValue),
     @required Result invalidDescription(String failedValue),
     @required Result invalidGenre(String failedValue),
+    @required Result invalidCharacter(String failedValue),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
@@ -72,6 +79,7 @@ mixin _$ValueFailure<T> {
     Result invalidTitle(String failedValue),
     Result invalidDescription(String failedValue),
     Result invalidGenre(String failedValue),
+    Result invalidCharacter(String failedValue),
     @required Result orElse(),
   });
   @optionalTypeArgs
@@ -82,6 +90,7 @@ mixin _$ValueFailure<T> {
     @required Result invalidTitle(InvalidTitle<T> value),
     @required Result invalidDescription(InvalidDescription<T> value),
     @required Result invalidGenre(InvalidGenre<T> value),
+    @required Result invalidCharacter(InvalidCharacter<T> value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
@@ -91,6 +100,7 @@ mixin _$ValueFailure<T> {
     Result invalidTitle(InvalidTitle<T> value),
     Result invalidDescription(InvalidDescription<T> value),
     Result invalidGenre(InvalidGenre<T> value),
+    Result invalidCharacter(InvalidCharacter<T> value),
     @required Result orElse(),
   });
 
@@ -191,6 +201,7 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     @required Result invalidTitle(String failedValue),
     @required Result invalidDescription(String failedValue),
     @required Result invalidGenre(String failedValue),
+    @required Result invalidCharacter(String failedValue),
   }) {
     assert(invalidEmailAddress != null);
     assert(invalidPassword != null);
@@ -198,6 +209,7 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     assert(invalidTitle != null);
     assert(invalidDescription != null);
     assert(invalidGenre != null);
+    assert(invalidCharacter != null);
     return invalidEmailAddress(failedValue);
   }
 
@@ -210,6 +222,7 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     Result invalidTitle(String failedValue),
     Result invalidDescription(String failedValue),
     Result invalidGenre(String failedValue),
+    Result invalidCharacter(String failedValue),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -228,6 +241,7 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     @required Result invalidTitle(InvalidTitle<T> value),
     @required Result invalidDescription(InvalidDescription<T> value),
     @required Result invalidGenre(InvalidGenre<T> value),
+    @required Result invalidCharacter(InvalidCharacter<T> value),
   }) {
     assert(invalidEmailAddress != null);
     assert(invalidPassword != null);
@@ -235,6 +249,7 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     assert(invalidTitle != null);
     assert(invalidDescription != null);
     assert(invalidGenre != null);
+    assert(invalidCharacter != null);
     return invalidEmailAddress(this);
   }
 
@@ -247,6 +262,7 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     Result invalidTitle(InvalidTitle<T> value),
     Result invalidDescription(InvalidDescription<T> value),
     Result invalidGenre(InvalidGenre<T> value),
+    Result invalidCharacter(InvalidCharacter<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -335,6 +351,7 @@ class _$InvalidPassword<T> implements InvalidPassword<T> {
     @required Result invalidTitle(String failedValue),
     @required Result invalidDescription(String failedValue),
     @required Result invalidGenre(String failedValue),
+    @required Result invalidCharacter(String failedValue),
   }) {
     assert(invalidEmailAddress != null);
     assert(invalidPassword != null);
@@ -342,6 +359,7 @@ class _$InvalidPassword<T> implements InvalidPassword<T> {
     assert(invalidTitle != null);
     assert(invalidDescription != null);
     assert(invalidGenre != null);
+    assert(invalidCharacter != null);
     return invalidPassword(failedValue);
   }
 
@@ -354,6 +372,7 @@ class _$InvalidPassword<T> implements InvalidPassword<T> {
     Result invalidTitle(String failedValue),
     Result invalidDescription(String failedValue),
     Result invalidGenre(String failedValue),
+    Result invalidCharacter(String failedValue),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -372,6 +391,7 @@ class _$InvalidPassword<T> implements InvalidPassword<T> {
     @required Result invalidTitle(InvalidTitle<T> value),
     @required Result invalidDescription(InvalidDescription<T> value),
     @required Result invalidGenre(InvalidGenre<T> value),
+    @required Result invalidCharacter(InvalidCharacter<T> value),
   }) {
     assert(invalidEmailAddress != null);
     assert(invalidPassword != null);
@@ -379,6 +399,7 @@ class _$InvalidPassword<T> implements InvalidPassword<T> {
     assert(invalidTitle != null);
     assert(invalidDescription != null);
     assert(invalidGenre != null);
+    assert(invalidCharacter != null);
     return invalidPassword(this);
   }
 
@@ -391,6 +412,7 @@ class _$InvalidPassword<T> implements InvalidPassword<T> {
     Result invalidTitle(InvalidTitle<T> value),
     Result invalidDescription(InvalidDescription<T> value),
     Result invalidGenre(InvalidGenre<T> value),
+    Result invalidCharacter(InvalidCharacter<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -479,6 +501,7 @@ class _$InvalidUsername<T> implements InvalidUsername<T> {
     @required Result invalidTitle(String failedValue),
     @required Result invalidDescription(String failedValue),
     @required Result invalidGenre(String failedValue),
+    @required Result invalidCharacter(String failedValue),
   }) {
     assert(invalidEmailAddress != null);
     assert(invalidPassword != null);
@@ -486,6 +509,7 @@ class _$InvalidUsername<T> implements InvalidUsername<T> {
     assert(invalidTitle != null);
     assert(invalidDescription != null);
     assert(invalidGenre != null);
+    assert(invalidCharacter != null);
     return invalidUsername(failedValue);
   }
 
@@ -498,6 +522,7 @@ class _$InvalidUsername<T> implements InvalidUsername<T> {
     Result invalidTitle(String failedValue),
     Result invalidDescription(String failedValue),
     Result invalidGenre(String failedValue),
+    Result invalidCharacter(String failedValue),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -516,6 +541,7 @@ class _$InvalidUsername<T> implements InvalidUsername<T> {
     @required Result invalidTitle(InvalidTitle<T> value),
     @required Result invalidDescription(InvalidDescription<T> value),
     @required Result invalidGenre(InvalidGenre<T> value),
+    @required Result invalidCharacter(InvalidCharacter<T> value),
   }) {
     assert(invalidEmailAddress != null);
     assert(invalidPassword != null);
@@ -523,6 +549,7 @@ class _$InvalidUsername<T> implements InvalidUsername<T> {
     assert(invalidTitle != null);
     assert(invalidDescription != null);
     assert(invalidGenre != null);
+    assert(invalidCharacter != null);
     return invalidUsername(this);
   }
 
@@ -535,6 +562,7 @@ class _$InvalidUsername<T> implements InvalidUsername<T> {
     Result invalidTitle(InvalidTitle<T> value),
     Result invalidDescription(InvalidDescription<T> value),
     Result invalidGenre(InvalidGenre<T> value),
+    Result invalidCharacter(InvalidCharacter<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -623,6 +651,7 @@ class _$InvalidTitle<T> implements InvalidTitle<T> {
     @required Result invalidTitle(String failedValue),
     @required Result invalidDescription(String failedValue),
     @required Result invalidGenre(String failedValue),
+    @required Result invalidCharacter(String failedValue),
   }) {
     assert(invalidEmailAddress != null);
     assert(invalidPassword != null);
@@ -630,6 +659,7 @@ class _$InvalidTitle<T> implements InvalidTitle<T> {
     assert(invalidTitle != null);
     assert(invalidDescription != null);
     assert(invalidGenre != null);
+    assert(invalidCharacter != null);
     return invalidTitle(failedValue);
   }
 
@@ -642,6 +672,7 @@ class _$InvalidTitle<T> implements InvalidTitle<T> {
     Result invalidTitle(String failedValue),
     Result invalidDescription(String failedValue),
     Result invalidGenre(String failedValue),
+    Result invalidCharacter(String failedValue),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -660,6 +691,7 @@ class _$InvalidTitle<T> implements InvalidTitle<T> {
     @required Result invalidTitle(InvalidTitle<T> value),
     @required Result invalidDescription(InvalidDescription<T> value),
     @required Result invalidGenre(InvalidGenre<T> value),
+    @required Result invalidCharacter(InvalidCharacter<T> value),
   }) {
     assert(invalidEmailAddress != null);
     assert(invalidPassword != null);
@@ -667,6 +699,7 @@ class _$InvalidTitle<T> implements InvalidTitle<T> {
     assert(invalidTitle != null);
     assert(invalidDescription != null);
     assert(invalidGenre != null);
+    assert(invalidCharacter != null);
     return invalidTitle(this);
   }
 
@@ -679,6 +712,7 @@ class _$InvalidTitle<T> implements InvalidTitle<T> {
     Result invalidTitle(InvalidTitle<T> value),
     Result invalidDescription(InvalidDescription<T> value),
     Result invalidGenre(InvalidGenre<T> value),
+    Result invalidCharacter(InvalidCharacter<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -768,6 +802,7 @@ class _$InvalidDescription<T> implements InvalidDescription<T> {
     @required Result invalidTitle(String failedValue),
     @required Result invalidDescription(String failedValue),
     @required Result invalidGenre(String failedValue),
+    @required Result invalidCharacter(String failedValue),
   }) {
     assert(invalidEmailAddress != null);
     assert(invalidPassword != null);
@@ -775,6 +810,7 @@ class _$InvalidDescription<T> implements InvalidDescription<T> {
     assert(invalidTitle != null);
     assert(invalidDescription != null);
     assert(invalidGenre != null);
+    assert(invalidCharacter != null);
     return invalidDescription(failedValue);
   }
 
@@ -787,6 +823,7 @@ class _$InvalidDescription<T> implements InvalidDescription<T> {
     Result invalidTitle(String failedValue),
     Result invalidDescription(String failedValue),
     Result invalidGenre(String failedValue),
+    Result invalidCharacter(String failedValue),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -805,6 +842,7 @@ class _$InvalidDescription<T> implements InvalidDescription<T> {
     @required Result invalidTitle(InvalidTitle<T> value),
     @required Result invalidDescription(InvalidDescription<T> value),
     @required Result invalidGenre(InvalidGenre<T> value),
+    @required Result invalidCharacter(InvalidCharacter<T> value),
   }) {
     assert(invalidEmailAddress != null);
     assert(invalidPassword != null);
@@ -812,6 +850,7 @@ class _$InvalidDescription<T> implements InvalidDescription<T> {
     assert(invalidTitle != null);
     assert(invalidDescription != null);
     assert(invalidGenre != null);
+    assert(invalidCharacter != null);
     return invalidDescription(this);
   }
 
@@ -824,6 +863,7 @@ class _$InvalidDescription<T> implements InvalidDescription<T> {
     Result invalidTitle(InvalidTitle<T> value),
     Result invalidDescription(InvalidDescription<T> value),
     Result invalidGenre(InvalidGenre<T> value),
+    Result invalidCharacter(InvalidCharacter<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -912,6 +952,7 @@ class _$InvalidGenre<T> implements InvalidGenre<T> {
     @required Result invalidTitle(String failedValue),
     @required Result invalidDescription(String failedValue),
     @required Result invalidGenre(String failedValue),
+    @required Result invalidCharacter(String failedValue),
   }) {
     assert(invalidEmailAddress != null);
     assert(invalidPassword != null);
@@ -919,6 +960,7 @@ class _$InvalidGenre<T> implements InvalidGenre<T> {
     assert(invalidTitle != null);
     assert(invalidDescription != null);
     assert(invalidGenre != null);
+    assert(invalidCharacter != null);
     return invalidGenre(failedValue);
   }
 
@@ -931,6 +973,7 @@ class _$InvalidGenre<T> implements InvalidGenre<T> {
     Result invalidTitle(String failedValue),
     Result invalidDescription(String failedValue),
     Result invalidGenre(String failedValue),
+    Result invalidCharacter(String failedValue),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -949,6 +992,7 @@ class _$InvalidGenre<T> implements InvalidGenre<T> {
     @required Result invalidTitle(InvalidTitle<T> value),
     @required Result invalidDescription(InvalidDescription<T> value),
     @required Result invalidGenre(InvalidGenre<T> value),
+    @required Result invalidCharacter(InvalidCharacter<T> value),
   }) {
     assert(invalidEmailAddress != null);
     assert(invalidPassword != null);
@@ -956,6 +1000,7 @@ class _$InvalidGenre<T> implements InvalidGenre<T> {
     assert(invalidTitle != null);
     assert(invalidDescription != null);
     assert(invalidGenre != null);
+    assert(invalidCharacter != null);
     return invalidGenre(this);
   }
 
@@ -968,6 +1013,7 @@ class _$InvalidGenre<T> implements InvalidGenre<T> {
     Result invalidTitle(InvalidTitle<T> value),
     Result invalidDescription(InvalidDescription<T> value),
     Result invalidGenre(InvalidGenre<T> value),
+    Result invalidCharacter(InvalidCharacter<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -986,4 +1032,154 @@ abstract class InvalidGenre<T> implements ValueFailure<T> {
   String get failedValue;
   @override
   $InvalidGenreCopyWith<T, InvalidGenre<T>> get copyWith;
+}
+
+abstract class $InvalidCharacterCopyWith<T, $Res>
+    implements $ValueFailureCopyWith<T, $Res> {
+  factory $InvalidCharacterCopyWith(
+          InvalidCharacter<T> value, $Res Function(InvalidCharacter<T>) then) =
+      _$InvalidCharacterCopyWithImpl<T, $Res>;
+  @override
+  $Res call({String failedValue});
+}
+
+class _$InvalidCharacterCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res>
+    implements $InvalidCharacterCopyWith<T, $Res> {
+  _$InvalidCharacterCopyWithImpl(
+      InvalidCharacter<T> _value, $Res Function(InvalidCharacter<T>) _then)
+      : super(_value, (v) => _then(v as InvalidCharacter<T>));
+
+  @override
+  InvalidCharacter<T> get _value => super._value as InvalidCharacter<T>;
+
+  @override
+  $Res call({
+    Object failedValue = freezed,
+  }) {
+    return _then(InvalidCharacter<T>(
+      failedValue:
+          failedValue == freezed ? _value.failedValue : failedValue as String,
+    ));
+  }
+}
+
+class _$InvalidCharacter<T> implements InvalidCharacter<T> {
+  const _$InvalidCharacter({@required this.failedValue})
+      : assert(failedValue != null);
+
+  @override
+  final String failedValue;
+
+  @override
+  String toString() {
+    return 'ValueFailure<$T>.invalidCharacter(failedValue: $failedValue)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is InvalidCharacter<T> &&
+            (identical(other.failedValue, failedValue) ||
+                const DeepCollectionEquality()
+                    .equals(other.failedValue, failedValue)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
+
+  @override
+  $InvalidCharacterCopyWith<T, InvalidCharacter<T>> get copyWith =>
+      _$InvalidCharacterCopyWithImpl<T, InvalidCharacter<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result invalidEmailAddress(String failedValue),
+    @required Result invalidPassword(String failedValue),
+    @required Result invalidUsername(String failedValue),
+    @required Result invalidTitle(String failedValue),
+    @required Result invalidDescription(String failedValue),
+    @required Result invalidGenre(String failedValue),
+    @required Result invalidCharacter(String failedValue),
+  }) {
+    assert(invalidEmailAddress != null);
+    assert(invalidPassword != null);
+    assert(invalidUsername != null);
+    assert(invalidTitle != null);
+    assert(invalidDescription != null);
+    assert(invalidGenre != null);
+    assert(invalidCharacter != null);
+    return invalidCharacter(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result invalidEmailAddress(String failedValue),
+    Result invalidPassword(String failedValue),
+    Result invalidUsername(String failedValue),
+    Result invalidTitle(String failedValue),
+    Result invalidDescription(String failedValue),
+    Result invalidGenre(String failedValue),
+    Result invalidCharacter(String failedValue),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (invalidCharacter != null) {
+      return invalidCharacter(failedValue);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result invalidEmailAddress(InvalidEmail<T> value),
+    @required Result invalidPassword(InvalidPassword<T> value),
+    @required Result invalidUsername(InvalidUsername<T> value),
+    @required Result invalidTitle(InvalidTitle<T> value),
+    @required Result invalidDescription(InvalidDescription<T> value),
+    @required Result invalidGenre(InvalidGenre<T> value),
+    @required Result invalidCharacter(InvalidCharacter<T> value),
+  }) {
+    assert(invalidEmailAddress != null);
+    assert(invalidPassword != null);
+    assert(invalidUsername != null);
+    assert(invalidTitle != null);
+    assert(invalidDescription != null);
+    assert(invalidGenre != null);
+    assert(invalidCharacter != null);
+    return invalidCharacter(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result invalidEmailAddress(InvalidEmail<T> value),
+    Result invalidPassword(InvalidPassword<T> value),
+    Result invalidUsername(InvalidUsername<T> value),
+    Result invalidTitle(InvalidTitle<T> value),
+    Result invalidDescription(InvalidDescription<T> value),
+    Result invalidGenre(InvalidGenre<T> value),
+    Result invalidCharacter(InvalidCharacter<T> value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (invalidCharacter != null) {
+      return invalidCharacter(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class InvalidCharacter<T> implements ValueFailure<T> {
+  const factory InvalidCharacter({@required String failedValue}) =
+      _$InvalidCharacter<T>;
+
+  @override
+  String get failedValue;
+  @override
+  $InvalidCharacterCopyWith<T, InvalidCharacter<T>> get copyWith;
 }

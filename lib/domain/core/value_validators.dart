@@ -61,3 +61,11 @@ Either<ValueFailure<String>, String> validateGenre(String input) {
     return left(ValueFailure.invalidGenre(failedValue: input));
   }
 }
+
+Either<ValueFailure<String>, String> validateCharacter(String input) {
+  if (input != null && input.isNotEmpty) {
+    return right(input);
+  } else {
+    return left(ValueFailure.invalidCharacter(failedValue: input));
+  }
+}

@@ -6,17 +6,23 @@ abstract class NewSeriesDatabaseState with _$NewSeriesDatabaseState {
     @required SeriesDraft seriesDraft,
     @required String uid,
     @required String authorUid,
+    @required Genre genre,
+    @required String selectedGenre,
     @required Title title,
     @required Description description,
-    @required Genre genre,
+    @required Character character,
+    @required List<String> characters,
   }) = _NewSeriesDatabaseState;
 
   factory NewSeriesDatabaseState.initial() => NewSeriesDatabaseState(
         seriesDraft: SeriesDraft(),
         uid: '',
         authorUid: '',
+        genre: Genre(''),
+        selectedGenre: '',
         title: Title(''),
         description: Description(''),
-        genre: Genre(''),
+        character: Character(''),
+        characters: <String>[],
       );
 }
