@@ -12,19 +12,9 @@ T _$identity<T>(T value) => value;
 class _$SeriesDatabaseEventTearOff {
   const _$SeriesDatabaseEventTearOff();
 
-  NewSeriesBackButtonPressed newSeriesBackButtonPressed() {
-    return const NewSeriesBackButtonPressed();
-  }
-
-  NewSeriesGenreSelected newSeriesGenreSelected(String genre) {
-    return NewSeriesGenreSelected(
-      genre,
-    );
-  }
-
-  NewSeriesTitleChanged newSeriesTitleChanged(Title title) {
-    return NewSeriesTitleChanged(
-      title,
+  SeriesPageLaunched seriesPageLaunched(String uid) {
+    return SeriesPageLaunched(
+      uid,
     );
   }
 }
@@ -33,39 +23,16 @@ class _$SeriesDatabaseEventTearOff {
 const $SeriesDatabaseEvent = _$SeriesDatabaseEventTearOff();
 
 mixin _$SeriesDatabaseEvent {
-  @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result newSeriesBackButtonPressed(),
-    @required Result newSeriesGenreSelected(String genre),
-    @required Result newSeriesTitleChanged(Title title),
-  });
-  @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result newSeriesBackButtonPressed(),
-    Result newSeriesGenreSelected(String genre),
-    Result newSeriesTitleChanged(Title title),
-    @required Result orElse(),
-  });
-  @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required
-        Result newSeriesBackButtonPressed(NewSeriesBackButtonPressed value),
-    @required Result newSeriesGenreSelected(NewSeriesGenreSelected value),
-    @required Result newSeriesTitleChanged(NewSeriesTitleChanged value),
-  });
-  @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result newSeriesBackButtonPressed(NewSeriesBackButtonPressed value),
-    Result newSeriesGenreSelected(NewSeriesGenreSelected value),
-    Result newSeriesTitleChanged(NewSeriesTitleChanged value),
-    @required Result orElse(),
-  });
+  String get uid;
+
+  $SeriesDatabaseEventCopyWith<SeriesDatabaseEvent> get copyWith;
 }
 
 abstract class $SeriesDatabaseEventCopyWith<$Res> {
   factory $SeriesDatabaseEventCopyWith(
           SeriesDatabaseEvent value, $Res Function(SeriesDatabaseEvent) then) =
       _$SeriesDatabaseEventCopyWithImpl<$Res>;
+  $Res call({String uid});
 }
 
 class _$SeriesDatabaseEventCopyWithImpl<$Res>
@@ -75,350 +42,89 @@ class _$SeriesDatabaseEventCopyWithImpl<$Res>
   final SeriesDatabaseEvent _value;
   // ignore: unused_field
   final $Res Function(SeriesDatabaseEvent) _then;
-}
-
-abstract class $NewSeriesBackButtonPressedCopyWith<$Res> {
-  factory $NewSeriesBackButtonPressedCopyWith(NewSeriesBackButtonPressed value,
-          $Res Function(NewSeriesBackButtonPressed) then) =
-      _$NewSeriesBackButtonPressedCopyWithImpl<$Res>;
-}
-
-class _$NewSeriesBackButtonPressedCopyWithImpl<$Res>
-    extends _$SeriesDatabaseEventCopyWithImpl<$Res>
-    implements $NewSeriesBackButtonPressedCopyWith<$Res> {
-  _$NewSeriesBackButtonPressedCopyWithImpl(NewSeriesBackButtonPressed _value,
-      $Res Function(NewSeriesBackButtonPressed) _then)
-      : super(_value, (v) => _then(v as NewSeriesBackButtonPressed));
-
-  @override
-  NewSeriesBackButtonPressed get _value =>
-      super._value as NewSeriesBackButtonPressed;
-}
-
-class _$NewSeriesBackButtonPressed implements NewSeriesBackButtonPressed {
-  const _$NewSeriesBackButtonPressed();
-
-  @override
-  String toString() {
-    return 'SeriesDatabaseEvent.newSeriesBackButtonPressed()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) || (other is NewSeriesBackButtonPressed);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result newSeriesBackButtonPressed(),
-    @required Result newSeriesGenreSelected(String genre),
-    @required Result newSeriesTitleChanged(Title title),
-  }) {
-    assert(newSeriesBackButtonPressed != null);
-    assert(newSeriesGenreSelected != null);
-    assert(newSeriesTitleChanged != null);
-    return newSeriesBackButtonPressed();
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result newSeriesBackButtonPressed(),
-    Result newSeriesGenreSelected(String genre),
-    Result newSeriesTitleChanged(Title title),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (newSeriesBackButtonPressed != null) {
-      return newSeriesBackButtonPressed();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required
-        Result newSeriesBackButtonPressed(NewSeriesBackButtonPressed value),
-    @required Result newSeriesGenreSelected(NewSeriesGenreSelected value),
-    @required Result newSeriesTitleChanged(NewSeriesTitleChanged value),
-  }) {
-    assert(newSeriesBackButtonPressed != null);
-    assert(newSeriesGenreSelected != null);
-    assert(newSeriesTitleChanged != null);
-    return newSeriesBackButtonPressed(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result newSeriesBackButtonPressed(NewSeriesBackButtonPressed value),
-    Result newSeriesGenreSelected(NewSeriesGenreSelected value),
-    Result newSeriesTitleChanged(NewSeriesTitleChanged value),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (newSeriesBackButtonPressed != null) {
-      return newSeriesBackButtonPressed(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class NewSeriesBackButtonPressed implements SeriesDatabaseEvent {
-  const factory NewSeriesBackButtonPressed() = _$NewSeriesBackButtonPressed;
-}
-
-abstract class $NewSeriesGenreSelectedCopyWith<$Res> {
-  factory $NewSeriesGenreSelectedCopyWith(NewSeriesGenreSelected value,
-          $Res Function(NewSeriesGenreSelected) then) =
-      _$NewSeriesGenreSelectedCopyWithImpl<$Res>;
-  $Res call({String genre});
-}
-
-class _$NewSeriesGenreSelectedCopyWithImpl<$Res>
-    extends _$SeriesDatabaseEventCopyWithImpl<$Res>
-    implements $NewSeriesGenreSelectedCopyWith<$Res> {
-  _$NewSeriesGenreSelectedCopyWithImpl(NewSeriesGenreSelected _value,
-      $Res Function(NewSeriesGenreSelected) _then)
-      : super(_value, (v) => _then(v as NewSeriesGenreSelected));
-
-  @override
-  NewSeriesGenreSelected get _value => super._value as NewSeriesGenreSelected;
 
   @override
   $Res call({
-    Object genre = freezed,
+    Object uid = freezed,
   }) {
-    return _then(NewSeriesGenreSelected(
-      genre == freezed ? _value.genre : genre as String,
+    return _then(_value.copyWith(
+      uid: uid == freezed ? _value.uid : uid as String,
     ));
   }
 }
 
-class _$NewSeriesGenreSelected implements NewSeriesGenreSelected {
-  const _$NewSeriesGenreSelected(this.genre) : assert(genre != null);
+abstract class $SeriesPageLaunchedCopyWith<$Res>
+    implements $SeriesDatabaseEventCopyWith<$Res> {
+  factory $SeriesPageLaunchedCopyWith(
+          SeriesPageLaunched value, $Res Function(SeriesPageLaunched) then) =
+      _$SeriesPageLaunchedCopyWithImpl<$Res>;
+  @override
+  $Res call({String uid});
+}
+
+class _$SeriesPageLaunchedCopyWithImpl<$Res>
+    extends _$SeriesDatabaseEventCopyWithImpl<$Res>
+    implements $SeriesPageLaunchedCopyWith<$Res> {
+  _$SeriesPageLaunchedCopyWithImpl(
+      SeriesPageLaunched _value, $Res Function(SeriesPageLaunched) _then)
+      : super(_value, (v) => _then(v as SeriesPageLaunched));
 
   @override
-  final String genre;
+  SeriesPageLaunched get _value => super._value as SeriesPageLaunched;
+
+  @override
+  $Res call({
+    Object uid = freezed,
+  }) {
+    return _then(SeriesPageLaunched(
+      uid == freezed ? _value.uid : uid as String,
+    ));
+  }
+}
+
+class _$SeriesPageLaunched implements SeriesPageLaunched {
+  const _$SeriesPageLaunched(this.uid) : assert(uid != null);
+
+  @override
+  final String uid;
 
   @override
   String toString() {
-    return 'SeriesDatabaseEvent.newSeriesGenreSelected(genre: $genre)';
+    return 'SeriesDatabaseEvent.seriesPageLaunched(uid: $uid)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is NewSeriesGenreSelected &&
-            (identical(other.genre, genre) ||
-                const DeepCollectionEquality().equals(other.genre, genre)));
+        (other is SeriesPageLaunched &&
+            (identical(other.uid, uid) ||
+                const DeepCollectionEquality().equals(other.uid, uid)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(genre);
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(uid);
 
   @override
-  $NewSeriesGenreSelectedCopyWith<NewSeriesGenreSelected> get copyWith =>
-      _$NewSeriesGenreSelectedCopyWithImpl<NewSeriesGenreSelected>(
-          this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result newSeriesBackButtonPressed(),
-    @required Result newSeriesGenreSelected(String genre),
-    @required Result newSeriesTitleChanged(Title title),
-  }) {
-    assert(newSeriesBackButtonPressed != null);
-    assert(newSeriesGenreSelected != null);
-    assert(newSeriesTitleChanged != null);
-    return newSeriesGenreSelected(genre);
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result newSeriesBackButtonPressed(),
-    Result newSeriesGenreSelected(String genre),
-    Result newSeriesTitleChanged(Title title),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (newSeriesGenreSelected != null) {
-      return newSeriesGenreSelected(genre);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required
-        Result newSeriesBackButtonPressed(NewSeriesBackButtonPressed value),
-    @required Result newSeriesGenreSelected(NewSeriesGenreSelected value),
-    @required Result newSeriesTitleChanged(NewSeriesTitleChanged value),
-  }) {
-    assert(newSeriesBackButtonPressed != null);
-    assert(newSeriesGenreSelected != null);
-    assert(newSeriesTitleChanged != null);
-    return newSeriesGenreSelected(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result newSeriesBackButtonPressed(NewSeriesBackButtonPressed value),
-    Result newSeriesGenreSelected(NewSeriesGenreSelected value),
-    Result newSeriesTitleChanged(NewSeriesTitleChanged value),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (newSeriesGenreSelected != null) {
-      return newSeriesGenreSelected(this);
-    }
-    return orElse();
-  }
+  $SeriesPageLaunchedCopyWith<SeriesPageLaunched> get copyWith =>
+      _$SeriesPageLaunchedCopyWithImpl<SeriesPageLaunched>(this, _$identity);
 }
 
-abstract class NewSeriesGenreSelected implements SeriesDatabaseEvent {
-  const factory NewSeriesGenreSelected(String genre) = _$NewSeriesGenreSelected;
-
-  String get genre;
-  $NewSeriesGenreSelectedCopyWith<NewSeriesGenreSelected> get copyWith;
-}
-
-abstract class $NewSeriesTitleChangedCopyWith<$Res> {
-  factory $NewSeriesTitleChangedCopyWith(NewSeriesTitleChanged value,
-          $Res Function(NewSeriesTitleChanged) then) =
-      _$NewSeriesTitleChangedCopyWithImpl<$Res>;
-  $Res call({Title title});
-}
-
-class _$NewSeriesTitleChangedCopyWithImpl<$Res>
-    extends _$SeriesDatabaseEventCopyWithImpl<$Res>
-    implements $NewSeriesTitleChangedCopyWith<$Res> {
-  _$NewSeriesTitleChangedCopyWithImpl(
-      NewSeriesTitleChanged _value, $Res Function(NewSeriesTitleChanged) _then)
-      : super(_value, (v) => _then(v as NewSeriesTitleChanged));
+abstract class SeriesPageLaunched implements SeriesDatabaseEvent {
+  const factory SeriesPageLaunched(String uid) = _$SeriesPageLaunched;
 
   @override
-  NewSeriesTitleChanged get _value => super._value as NewSeriesTitleChanged;
-
+  String get uid;
   @override
-  $Res call({
-    Object title = freezed,
-  }) {
-    return _then(NewSeriesTitleChanged(
-      title == freezed ? _value.title : title as Title,
-    ));
-  }
-}
-
-class _$NewSeriesTitleChanged implements NewSeriesTitleChanged {
-  const _$NewSeriesTitleChanged(this.title) : assert(title != null);
-
-  @override
-  final Title title;
-
-  @override
-  String toString() {
-    return 'SeriesDatabaseEvent.newSeriesTitleChanged(title: $title)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is NewSeriesTitleChanged &&
-            (identical(other.title, title) ||
-                const DeepCollectionEquality().equals(other.title, title)));
-  }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(title);
-
-  @override
-  $NewSeriesTitleChangedCopyWith<NewSeriesTitleChanged> get copyWith =>
-      _$NewSeriesTitleChangedCopyWithImpl<NewSeriesTitleChanged>(
-          this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result newSeriesBackButtonPressed(),
-    @required Result newSeriesGenreSelected(String genre),
-    @required Result newSeriesTitleChanged(Title title),
-  }) {
-    assert(newSeriesBackButtonPressed != null);
-    assert(newSeriesGenreSelected != null);
-    assert(newSeriesTitleChanged != null);
-    return newSeriesTitleChanged(title);
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result newSeriesBackButtonPressed(),
-    Result newSeriesGenreSelected(String genre),
-    Result newSeriesTitleChanged(Title title),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (newSeriesTitleChanged != null) {
-      return newSeriesTitleChanged(title);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required
-        Result newSeriesBackButtonPressed(NewSeriesBackButtonPressed value),
-    @required Result newSeriesGenreSelected(NewSeriesGenreSelected value),
-    @required Result newSeriesTitleChanged(NewSeriesTitleChanged value),
-  }) {
-    assert(newSeriesBackButtonPressed != null);
-    assert(newSeriesGenreSelected != null);
-    assert(newSeriesTitleChanged != null);
-    return newSeriesTitleChanged(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result newSeriesBackButtonPressed(NewSeriesBackButtonPressed value),
-    Result newSeriesGenreSelected(NewSeriesGenreSelected value),
-    Result newSeriesTitleChanged(NewSeriesTitleChanged value),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (newSeriesTitleChanged != null) {
-      return newSeriesTitleChanged(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class NewSeriesTitleChanged implements SeriesDatabaseEvent {
-  const factory NewSeriesTitleChanged(Title title) = _$NewSeriesTitleChanged;
-
-  Title get title;
-  $NewSeriesTitleChangedCopyWith<NewSeriesTitleChanged> get copyWith;
+  $SeriesPageLaunchedCopyWith<SeriesPageLaunched> get copyWith;
 }
 
 class _$SeriesDatabaseStateTearOff {
   const _$SeriesDatabaseStateTearOff();
 
-  _SeriesDatabaseState call({@required SeriesDraft seriesDraft}) {
+  _SeriesDatabaseState call({@required Series series}) {
     return _SeriesDatabaseState(
-      seriesDraft: seriesDraft,
+      series: series,
     );
   }
 }
@@ -427,7 +133,7 @@ class _$SeriesDatabaseStateTearOff {
 const $SeriesDatabaseState = _$SeriesDatabaseStateTearOff();
 
 mixin _$SeriesDatabaseState {
-  SeriesDraft get seriesDraft;
+  Series get series;
 
   $SeriesDatabaseStateCopyWith<SeriesDatabaseState> get copyWith;
 }
@@ -436,7 +142,7 @@ abstract class $SeriesDatabaseStateCopyWith<$Res> {
   factory $SeriesDatabaseStateCopyWith(
           SeriesDatabaseState value, $Res Function(SeriesDatabaseState) then) =
       _$SeriesDatabaseStateCopyWithImpl<$Res>;
-  $Res call({SeriesDraft seriesDraft});
+  $Res call({Series series});
 }
 
 class _$SeriesDatabaseStateCopyWithImpl<$Res>
@@ -449,12 +155,10 @@ class _$SeriesDatabaseStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object seriesDraft = freezed,
+    Object series = freezed,
   }) {
     return _then(_value.copyWith(
-      seriesDraft: seriesDraft == freezed
-          ? _value.seriesDraft
-          : seriesDraft as SeriesDraft,
+      series: series == freezed ? _value.series : series as Series,
     ));
   }
 }
@@ -465,7 +169,7 @@ abstract class _$SeriesDatabaseStateCopyWith<$Res>
           $Res Function(_SeriesDatabaseState) then) =
       __$SeriesDatabaseStateCopyWithImpl<$Res>;
   @override
-  $Res call({SeriesDraft seriesDraft});
+  $Res call({Series series});
 }
 
 class __$SeriesDatabaseStateCopyWithImpl<$Res>
@@ -480,40 +184,37 @@ class __$SeriesDatabaseStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object seriesDraft = freezed,
+    Object series = freezed,
   }) {
     return _then(_SeriesDatabaseState(
-      seriesDraft: seriesDraft == freezed
-          ? _value.seriesDraft
-          : seriesDraft as SeriesDraft,
+      series: series == freezed ? _value.series : series as Series,
     ));
   }
 }
 
 class _$_SeriesDatabaseState implements _SeriesDatabaseState {
-  const _$_SeriesDatabaseState({@required this.seriesDraft})
-      : assert(seriesDraft != null);
+  const _$_SeriesDatabaseState({@required this.series})
+      : assert(series != null);
 
   @override
-  final SeriesDraft seriesDraft;
+  final Series series;
 
   @override
   String toString() {
-    return 'SeriesDatabaseState(seriesDraft: $seriesDraft)';
+    return 'SeriesDatabaseState(series: $series)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _SeriesDatabaseState &&
-            (identical(other.seriesDraft, seriesDraft) ||
-                const DeepCollectionEquality()
-                    .equals(other.seriesDraft, seriesDraft)));
+            (identical(other.series, series) ||
+                const DeepCollectionEquality().equals(other.series, series)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(seriesDraft);
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(series);
 
   @override
   _$SeriesDatabaseStateCopyWith<_SeriesDatabaseState> get copyWith =>
@@ -522,11 +223,11 @@ class _$_SeriesDatabaseState implements _SeriesDatabaseState {
 }
 
 abstract class _SeriesDatabaseState implements SeriesDatabaseState {
-  const factory _SeriesDatabaseState({@required SeriesDraft seriesDraft}) =
+  const factory _SeriesDatabaseState({@required Series series}) =
       _$_SeriesDatabaseState;
 
   @override
-  SeriesDraft get seriesDraft;
+  Series get series;
   @override
   _$SeriesDatabaseStateCopyWith<_SeriesDatabaseState> get copyWith;
 }

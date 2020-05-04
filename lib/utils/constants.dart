@@ -20,4 +20,10 @@ class Constants {
   static const String verifyEmailRoute = '/account/verify-email';
 
   static const String newSeriesRoute = '/series/new';
+
+  // SECTION series limits
+  static const int seriesDescriptionMinWords = 100;
+  static const int seriesDescriptionMaxWords = 200;
+  static const int chapterMinWords = 500;
+  static const int chapterMaxWords = 10000;
 }

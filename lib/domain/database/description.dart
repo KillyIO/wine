@@ -3,17 +3,17 @@ import 'package:wine/domain/core/failures.dart';
 import 'package:wine/domain/core/value_objects.dart';
 import 'package:wine/domain/core/value_validators.dart';
 
-class Title extends ValueObject<String> {
+class Description extends ValueObject<String> {
   @override
   final Either<ValueFailure<String>, String> value;
 
-  factory Title(String input) {
+  factory Description(String input) {
     assert(input != null);
-    return Title._(
-      validateTitle(input),
+    return Description._(
+      validateDescription(input),
     );
   }
 
   // NOTE private contructor
-  const Title._(this.value);
+  const Description._(this.value);
 }

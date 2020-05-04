@@ -19,6 +19,7 @@ import 'package:wine/infrastructure/database/hive_local_session_database_facade.
 import 'package:wine/domain/database/i_local_session_database_facade.dart';
 import 'package:wine/infrastructure/database/firebase_online_user_database_facade.dart';
 import 'package:wine/domain/database/i_online_user_database_facade.dart';
+import 'package:wine/application/database/new_series/new_series_database_bloc.dart';
 import 'package:wine/application/database/series/series_database_bloc.dart';
 import 'package:wine/application/authentication/settings/settings_authentication_bloc.dart';
 import 'package:wine/application/database/settings/settings_database_bloc.dart';
@@ -55,6 +56,8 @@ Future<void> $initGetIt(GetIt g, {String environment}) async {
       () => HiveLocalSessionDatabaseFacade(g<Box<Session>>()));
   g.registerLazySingleton<IOnlineUserDatabaseFacade>(
       () => FirebaseOnlineUserDatabaseFacade(g<Firestore>()));
+  g.registerFactory<NewSeriesDatabaseBloc>(() => NewSeriesDatabaseBloc(
+      g<ILocalSessionDatabaseFacade>(), g<IOnlineUserDatabaseFacade>()));
   g.registerFactory<SeriesDatabaseBloc>(() => SeriesDatabaseBloc(
       g<ILocalSessionDatabaseFacade>(), g<IOnlineUserDatabaseFacade>()));
   g.registerFactory<SettingsAuthenticationBloc>(

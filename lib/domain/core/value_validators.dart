@@ -1,5 +1,9 @@
 import 'package:dartz/dartz.dart';
+import 'package:stringprocess/stringprocess.dart';
 import 'package:wine/domain/core/failures.dart';
+import 'package:wine/utils/constants.dart';
+
+StringProcessor tps = StringProcessor();
 
 Either<ValueFailure<String>, String> validateEmailAddress(String input) {
   const String emailRegex =
@@ -26,5 +30,34 @@ Either<ValueFailure<String>, String> validateUsername(String input) {
     return right(input);
   } else {
     return left(ValueFailure.invalidUsername(failedValue: input));
+  }
+}
+
+Either<ValueFailure<String>, String> validateTitle(String input) {
+  if (input != null && input.isNotEmpty) {
+    return right(input);
+  } else {
+    return left(ValueFailure.invalidTitle(failedValue: input));
+  }
+}
+
+Either<ValueFailure<String>, String> validateDescription(String input) {
+  final int wordCount = tps.getWordCount(input);
+
+  if (input != null &&
+      input.isNotEmpty &&
+      wordCount >= Constants.seriesDescriptionMinWords &&
+      wordCount <= Constants.seriesDescriptionMaxWords) {
+    return right(input);
+  } else {
+    return left(ValueFailure.invalidDescription(failedValue: input));
+  }
+}
+
+Either<ValueFailure<String>, String> validateGenre(String input) {
+  if (input != null && input.isNotEmpty) {
+    return right(input);
+  } else {
+    return left(ValueFailure.invalidGenre(failedValue: input));
   }
 }

@@ -3,10 +3,10 @@ part of 'series_database_bloc.dart';
 @freezed
 abstract class SeriesDatabaseState with _$SeriesDatabaseState {
   const factory SeriesDatabaseState({
-    @required SeriesDraft seriesDraft,
+    @required Series series,
   }) = _SeriesDatabaseState;
 
   factory SeriesDatabaseState.initial() => SeriesDatabaseState(
-        seriesDraft: SeriesDraft(),
+        series: Series(),
       );
 }
