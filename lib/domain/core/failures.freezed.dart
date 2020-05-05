@@ -42,14 +42,26 @@ class _$ValueFailureTearOff {
     );
   }
 
+  InvalidCharacter<T> invalidCharacter<T>({@required String failedValue}) {
+    return InvalidCharacter<T>(
+      failedValue: failedValue,
+    );
+  }
+
   InvalidGenre<T> invalidGenre<T>({@required String failedValue}) {
     return InvalidGenre<T>(
       failedValue: failedValue,
     );
   }
 
-  InvalidCharacter<T> invalidCharacter<T>({@required String failedValue}) {
-    return InvalidCharacter<T>(
+  InvalidLanguage<T> invalidLanguage<T>({@required String failedValue}) {
+    return InvalidLanguage<T>(
+      failedValue: failedValue,
+    );
+  }
+
+  InvalidCopyright<T> invalidCopyright<T>({@required String failedValue}) {
+    return InvalidCopyright<T>(
       failedValue: failedValue,
     );
   }
@@ -68,8 +80,10 @@ mixin _$ValueFailure<T> {
     @required Result invalidUsername(String failedValue),
     @required Result invalidTitle(String failedValue),
     @required Result invalidDescription(String failedValue),
-    @required Result invalidGenre(String failedValue),
     @required Result invalidCharacter(String failedValue),
+    @required Result invalidGenre(String failedValue),
+    @required Result invalidLanguage(String failedValue),
+    @required Result invalidCopyright(String failedValue),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
@@ -78,8 +92,10 @@ mixin _$ValueFailure<T> {
     Result invalidUsername(String failedValue),
     Result invalidTitle(String failedValue),
     Result invalidDescription(String failedValue),
-    Result invalidGenre(String failedValue),
     Result invalidCharacter(String failedValue),
+    Result invalidGenre(String failedValue),
+    Result invalidLanguage(String failedValue),
+    Result invalidCopyright(String failedValue),
     @required Result orElse(),
   });
   @optionalTypeArgs
@@ -89,8 +105,10 @@ mixin _$ValueFailure<T> {
     @required Result invalidUsername(InvalidUsername<T> value),
     @required Result invalidTitle(InvalidTitle<T> value),
     @required Result invalidDescription(InvalidDescription<T> value),
-    @required Result invalidGenre(InvalidGenre<T> value),
     @required Result invalidCharacter(InvalidCharacter<T> value),
+    @required Result invalidGenre(InvalidGenre<T> value),
+    @required Result invalidLanguage(InvalidLanguage<T> value),
+    @required Result invalidCopyright(InvalidCopyright<T> value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
@@ -99,8 +117,10 @@ mixin _$ValueFailure<T> {
     Result invalidUsername(InvalidUsername<T> value),
     Result invalidTitle(InvalidTitle<T> value),
     Result invalidDescription(InvalidDescription<T> value),
-    Result invalidGenre(InvalidGenre<T> value),
     Result invalidCharacter(InvalidCharacter<T> value),
+    Result invalidGenre(InvalidGenre<T> value),
+    Result invalidLanguage(InvalidLanguage<T> value),
+    Result invalidCopyright(InvalidCopyright<T> value),
     @required Result orElse(),
   });
 
@@ -200,16 +220,20 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     @required Result invalidUsername(String failedValue),
     @required Result invalidTitle(String failedValue),
     @required Result invalidDescription(String failedValue),
-    @required Result invalidGenre(String failedValue),
     @required Result invalidCharacter(String failedValue),
+    @required Result invalidGenre(String failedValue),
+    @required Result invalidLanguage(String failedValue),
+    @required Result invalidCopyright(String failedValue),
   }) {
     assert(invalidEmailAddress != null);
     assert(invalidPassword != null);
     assert(invalidUsername != null);
     assert(invalidTitle != null);
     assert(invalidDescription != null);
-    assert(invalidGenre != null);
     assert(invalidCharacter != null);
+    assert(invalidGenre != null);
+    assert(invalidLanguage != null);
+    assert(invalidCopyright != null);
     return invalidEmailAddress(failedValue);
   }
 
@@ -221,8 +245,10 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     Result invalidUsername(String failedValue),
     Result invalidTitle(String failedValue),
     Result invalidDescription(String failedValue),
-    Result invalidGenre(String failedValue),
     Result invalidCharacter(String failedValue),
+    Result invalidGenre(String failedValue),
+    Result invalidLanguage(String failedValue),
+    Result invalidCopyright(String failedValue),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -240,16 +266,20 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     @required Result invalidUsername(InvalidUsername<T> value),
     @required Result invalidTitle(InvalidTitle<T> value),
     @required Result invalidDescription(InvalidDescription<T> value),
-    @required Result invalidGenre(InvalidGenre<T> value),
     @required Result invalidCharacter(InvalidCharacter<T> value),
+    @required Result invalidGenre(InvalidGenre<T> value),
+    @required Result invalidLanguage(InvalidLanguage<T> value),
+    @required Result invalidCopyright(InvalidCopyright<T> value),
   }) {
     assert(invalidEmailAddress != null);
     assert(invalidPassword != null);
     assert(invalidUsername != null);
     assert(invalidTitle != null);
     assert(invalidDescription != null);
-    assert(invalidGenre != null);
     assert(invalidCharacter != null);
+    assert(invalidGenre != null);
+    assert(invalidLanguage != null);
+    assert(invalidCopyright != null);
     return invalidEmailAddress(this);
   }
 
@@ -261,8 +291,10 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     Result invalidUsername(InvalidUsername<T> value),
     Result invalidTitle(InvalidTitle<T> value),
     Result invalidDescription(InvalidDescription<T> value),
-    Result invalidGenre(InvalidGenre<T> value),
     Result invalidCharacter(InvalidCharacter<T> value),
+    Result invalidGenre(InvalidGenre<T> value),
+    Result invalidLanguage(InvalidLanguage<T> value),
+    Result invalidCopyright(InvalidCopyright<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -350,16 +382,20 @@ class _$InvalidPassword<T> implements InvalidPassword<T> {
     @required Result invalidUsername(String failedValue),
     @required Result invalidTitle(String failedValue),
     @required Result invalidDescription(String failedValue),
-    @required Result invalidGenre(String failedValue),
     @required Result invalidCharacter(String failedValue),
+    @required Result invalidGenre(String failedValue),
+    @required Result invalidLanguage(String failedValue),
+    @required Result invalidCopyright(String failedValue),
   }) {
     assert(invalidEmailAddress != null);
     assert(invalidPassword != null);
     assert(invalidUsername != null);
     assert(invalidTitle != null);
     assert(invalidDescription != null);
-    assert(invalidGenre != null);
     assert(invalidCharacter != null);
+    assert(invalidGenre != null);
+    assert(invalidLanguage != null);
+    assert(invalidCopyright != null);
     return invalidPassword(failedValue);
   }
 
@@ -371,8 +407,10 @@ class _$InvalidPassword<T> implements InvalidPassword<T> {
     Result invalidUsername(String failedValue),
     Result invalidTitle(String failedValue),
     Result invalidDescription(String failedValue),
-    Result invalidGenre(String failedValue),
     Result invalidCharacter(String failedValue),
+    Result invalidGenre(String failedValue),
+    Result invalidLanguage(String failedValue),
+    Result invalidCopyright(String failedValue),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -390,16 +428,20 @@ class _$InvalidPassword<T> implements InvalidPassword<T> {
     @required Result invalidUsername(InvalidUsername<T> value),
     @required Result invalidTitle(InvalidTitle<T> value),
     @required Result invalidDescription(InvalidDescription<T> value),
-    @required Result invalidGenre(InvalidGenre<T> value),
     @required Result invalidCharacter(InvalidCharacter<T> value),
+    @required Result invalidGenre(InvalidGenre<T> value),
+    @required Result invalidLanguage(InvalidLanguage<T> value),
+    @required Result invalidCopyright(InvalidCopyright<T> value),
   }) {
     assert(invalidEmailAddress != null);
     assert(invalidPassword != null);
     assert(invalidUsername != null);
     assert(invalidTitle != null);
     assert(invalidDescription != null);
-    assert(invalidGenre != null);
     assert(invalidCharacter != null);
+    assert(invalidGenre != null);
+    assert(invalidLanguage != null);
+    assert(invalidCopyright != null);
     return invalidPassword(this);
   }
 
@@ -411,8 +453,10 @@ class _$InvalidPassword<T> implements InvalidPassword<T> {
     Result invalidUsername(InvalidUsername<T> value),
     Result invalidTitle(InvalidTitle<T> value),
     Result invalidDescription(InvalidDescription<T> value),
-    Result invalidGenre(InvalidGenre<T> value),
     Result invalidCharacter(InvalidCharacter<T> value),
+    Result invalidGenre(InvalidGenre<T> value),
+    Result invalidLanguage(InvalidLanguage<T> value),
+    Result invalidCopyright(InvalidCopyright<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -500,16 +544,20 @@ class _$InvalidUsername<T> implements InvalidUsername<T> {
     @required Result invalidUsername(String failedValue),
     @required Result invalidTitle(String failedValue),
     @required Result invalidDescription(String failedValue),
-    @required Result invalidGenre(String failedValue),
     @required Result invalidCharacter(String failedValue),
+    @required Result invalidGenre(String failedValue),
+    @required Result invalidLanguage(String failedValue),
+    @required Result invalidCopyright(String failedValue),
   }) {
     assert(invalidEmailAddress != null);
     assert(invalidPassword != null);
     assert(invalidUsername != null);
     assert(invalidTitle != null);
     assert(invalidDescription != null);
-    assert(invalidGenre != null);
     assert(invalidCharacter != null);
+    assert(invalidGenre != null);
+    assert(invalidLanguage != null);
+    assert(invalidCopyright != null);
     return invalidUsername(failedValue);
   }
 
@@ -521,8 +569,10 @@ class _$InvalidUsername<T> implements InvalidUsername<T> {
     Result invalidUsername(String failedValue),
     Result invalidTitle(String failedValue),
     Result invalidDescription(String failedValue),
-    Result invalidGenre(String failedValue),
     Result invalidCharacter(String failedValue),
+    Result invalidGenre(String failedValue),
+    Result invalidLanguage(String failedValue),
+    Result invalidCopyright(String failedValue),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -540,16 +590,20 @@ class _$InvalidUsername<T> implements InvalidUsername<T> {
     @required Result invalidUsername(InvalidUsername<T> value),
     @required Result invalidTitle(InvalidTitle<T> value),
     @required Result invalidDescription(InvalidDescription<T> value),
-    @required Result invalidGenre(InvalidGenre<T> value),
     @required Result invalidCharacter(InvalidCharacter<T> value),
+    @required Result invalidGenre(InvalidGenre<T> value),
+    @required Result invalidLanguage(InvalidLanguage<T> value),
+    @required Result invalidCopyright(InvalidCopyright<T> value),
   }) {
     assert(invalidEmailAddress != null);
     assert(invalidPassword != null);
     assert(invalidUsername != null);
     assert(invalidTitle != null);
     assert(invalidDescription != null);
-    assert(invalidGenre != null);
     assert(invalidCharacter != null);
+    assert(invalidGenre != null);
+    assert(invalidLanguage != null);
+    assert(invalidCopyright != null);
     return invalidUsername(this);
   }
 
@@ -561,8 +615,10 @@ class _$InvalidUsername<T> implements InvalidUsername<T> {
     Result invalidUsername(InvalidUsername<T> value),
     Result invalidTitle(InvalidTitle<T> value),
     Result invalidDescription(InvalidDescription<T> value),
-    Result invalidGenre(InvalidGenre<T> value),
     Result invalidCharacter(InvalidCharacter<T> value),
+    Result invalidGenre(InvalidGenre<T> value),
+    Result invalidLanguage(InvalidLanguage<T> value),
+    Result invalidCopyright(InvalidCopyright<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -650,16 +706,20 @@ class _$InvalidTitle<T> implements InvalidTitle<T> {
     @required Result invalidUsername(String failedValue),
     @required Result invalidTitle(String failedValue),
     @required Result invalidDescription(String failedValue),
-    @required Result invalidGenre(String failedValue),
     @required Result invalidCharacter(String failedValue),
+    @required Result invalidGenre(String failedValue),
+    @required Result invalidLanguage(String failedValue),
+    @required Result invalidCopyright(String failedValue),
   }) {
     assert(invalidEmailAddress != null);
     assert(invalidPassword != null);
     assert(invalidUsername != null);
     assert(invalidTitle != null);
     assert(invalidDescription != null);
-    assert(invalidGenre != null);
     assert(invalidCharacter != null);
+    assert(invalidGenre != null);
+    assert(invalidLanguage != null);
+    assert(invalidCopyright != null);
     return invalidTitle(failedValue);
   }
 
@@ -671,8 +731,10 @@ class _$InvalidTitle<T> implements InvalidTitle<T> {
     Result invalidUsername(String failedValue),
     Result invalidTitle(String failedValue),
     Result invalidDescription(String failedValue),
-    Result invalidGenre(String failedValue),
     Result invalidCharacter(String failedValue),
+    Result invalidGenre(String failedValue),
+    Result invalidLanguage(String failedValue),
+    Result invalidCopyright(String failedValue),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -690,16 +752,20 @@ class _$InvalidTitle<T> implements InvalidTitle<T> {
     @required Result invalidUsername(InvalidUsername<T> value),
     @required Result invalidTitle(InvalidTitle<T> value),
     @required Result invalidDescription(InvalidDescription<T> value),
-    @required Result invalidGenre(InvalidGenre<T> value),
     @required Result invalidCharacter(InvalidCharacter<T> value),
+    @required Result invalidGenre(InvalidGenre<T> value),
+    @required Result invalidLanguage(InvalidLanguage<T> value),
+    @required Result invalidCopyright(InvalidCopyright<T> value),
   }) {
     assert(invalidEmailAddress != null);
     assert(invalidPassword != null);
     assert(invalidUsername != null);
     assert(invalidTitle != null);
     assert(invalidDescription != null);
-    assert(invalidGenre != null);
     assert(invalidCharacter != null);
+    assert(invalidGenre != null);
+    assert(invalidLanguage != null);
+    assert(invalidCopyright != null);
     return invalidTitle(this);
   }
 
@@ -711,8 +777,10 @@ class _$InvalidTitle<T> implements InvalidTitle<T> {
     Result invalidUsername(InvalidUsername<T> value),
     Result invalidTitle(InvalidTitle<T> value),
     Result invalidDescription(InvalidDescription<T> value),
-    Result invalidGenre(InvalidGenre<T> value),
     Result invalidCharacter(InvalidCharacter<T> value),
+    Result invalidGenre(InvalidGenre<T> value),
+    Result invalidLanguage(InvalidLanguage<T> value),
+    Result invalidCopyright(InvalidCopyright<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -801,16 +869,20 @@ class _$InvalidDescription<T> implements InvalidDescription<T> {
     @required Result invalidUsername(String failedValue),
     @required Result invalidTitle(String failedValue),
     @required Result invalidDescription(String failedValue),
-    @required Result invalidGenre(String failedValue),
     @required Result invalidCharacter(String failedValue),
+    @required Result invalidGenre(String failedValue),
+    @required Result invalidLanguage(String failedValue),
+    @required Result invalidCopyright(String failedValue),
   }) {
     assert(invalidEmailAddress != null);
     assert(invalidPassword != null);
     assert(invalidUsername != null);
     assert(invalidTitle != null);
     assert(invalidDescription != null);
-    assert(invalidGenre != null);
     assert(invalidCharacter != null);
+    assert(invalidGenre != null);
+    assert(invalidLanguage != null);
+    assert(invalidCopyright != null);
     return invalidDescription(failedValue);
   }
 
@@ -822,8 +894,10 @@ class _$InvalidDescription<T> implements InvalidDescription<T> {
     Result invalidUsername(String failedValue),
     Result invalidTitle(String failedValue),
     Result invalidDescription(String failedValue),
-    Result invalidGenre(String failedValue),
     Result invalidCharacter(String failedValue),
+    Result invalidGenre(String failedValue),
+    Result invalidLanguage(String failedValue),
+    Result invalidCopyright(String failedValue),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -841,16 +915,20 @@ class _$InvalidDescription<T> implements InvalidDescription<T> {
     @required Result invalidUsername(InvalidUsername<T> value),
     @required Result invalidTitle(InvalidTitle<T> value),
     @required Result invalidDescription(InvalidDescription<T> value),
-    @required Result invalidGenre(InvalidGenre<T> value),
     @required Result invalidCharacter(InvalidCharacter<T> value),
+    @required Result invalidGenre(InvalidGenre<T> value),
+    @required Result invalidLanguage(InvalidLanguage<T> value),
+    @required Result invalidCopyright(InvalidCopyright<T> value),
   }) {
     assert(invalidEmailAddress != null);
     assert(invalidPassword != null);
     assert(invalidUsername != null);
     assert(invalidTitle != null);
     assert(invalidDescription != null);
-    assert(invalidGenre != null);
     assert(invalidCharacter != null);
+    assert(invalidGenre != null);
+    assert(invalidLanguage != null);
+    assert(invalidCopyright != null);
     return invalidDescription(this);
   }
 
@@ -862,8 +940,10 @@ class _$InvalidDescription<T> implements InvalidDescription<T> {
     Result invalidUsername(InvalidUsername<T> value),
     Result invalidTitle(InvalidTitle<T> value),
     Result invalidDescription(InvalidDescription<T> value),
-    Result invalidGenre(InvalidGenre<T> value),
     Result invalidCharacter(InvalidCharacter<T> value),
+    Result invalidGenre(InvalidGenre<T> value),
+    Result invalidLanguage(InvalidLanguage<T> value),
+    Result invalidCopyright(InvalidCopyright<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -882,156 +962,6 @@ abstract class InvalidDescription<T> implements ValueFailure<T> {
   String get failedValue;
   @override
   $InvalidDescriptionCopyWith<T, InvalidDescription<T>> get copyWith;
-}
-
-abstract class $InvalidGenreCopyWith<T, $Res>
-    implements $ValueFailureCopyWith<T, $Res> {
-  factory $InvalidGenreCopyWith(
-          InvalidGenre<T> value, $Res Function(InvalidGenre<T>) then) =
-      _$InvalidGenreCopyWithImpl<T, $Res>;
-  @override
-  $Res call({String failedValue});
-}
-
-class _$InvalidGenreCopyWithImpl<T, $Res>
-    extends _$ValueFailureCopyWithImpl<T, $Res>
-    implements $InvalidGenreCopyWith<T, $Res> {
-  _$InvalidGenreCopyWithImpl(
-      InvalidGenre<T> _value, $Res Function(InvalidGenre<T>) _then)
-      : super(_value, (v) => _then(v as InvalidGenre<T>));
-
-  @override
-  InvalidGenre<T> get _value => super._value as InvalidGenre<T>;
-
-  @override
-  $Res call({
-    Object failedValue = freezed,
-  }) {
-    return _then(InvalidGenre<T>(
-      failedValue:
-          failedValue == freezed ? _value.failedValue : failedValue as String,
-    ));
-  }
-}
-
-class _$InvalidGenre<T> implements InvalidGenre<T> {
-  const _$InvalidGenre({@required this.failedValue})
-      : assert(failedValue != null);
-
-  @override
-  final String failedValue;
-
-  @override
-  String toString() {
-    return 'ValueFailure<$T>.invalidGenre(failedValue: $failedValue)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is InvalidGenre<T> &&
-            (identical(other.failedValue, failedValue) ||
-                const DeepCollectionEquality()
-                    .equals(other.failedValue, failedValue)));
-  }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
-
-  @override
-  $InvalidGenreCopyWith<T, InvalidGenre<T>> get copyWith =>
-      _$InvalidGenreCopyWithImpl<T, InvalidGenre<T>>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result invalidEmailAddress(String failedValue),
-    @required Result invalidPassword(String failedValue),
-    @required Result invalidUsername(String failedValue),
-    @required Result invalidTitle(String failedValue),
-    @required Result invalidDescription(String failedValue),
-    @required Result invalidGenre(String failedValue),
-    @required Result invalidCharacter(String failedValue),
-  }) {
-    assert(invalidEmailAddress != null);
-    assert(invalidPassword != null);
-    assert(invalidUsername != null);
-    assert(invalidTitle != null);
-    assert(invalidDescription != null);
-    assert(invalidGenre != null);
-    assert(invalidCharacter != null);
-    return invalidGenre(failedValue);
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result invalidEmailAddress(String failedValue),
-    Result invalidPassword(String failedValue),
-    Result invalidUsername(String failedValue),
-    Result invalidTitle(String failedValue),
-    Result invalidDescription(String failedValue),
-    Result invalidGenre(String failedValue),
-    Result invalidCharacter(String failedValue),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (invalidGenre != null) {
-      return invalidGenre(failedValue);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result invalidEmailAddress(InvalidEmail<T> value),
-    @required Result invalidPassword(InvalidPassword<T> value),
-    @required Result invalidUsername(InvalidUsername<T> value),
-    @required Result invalidTitle(InvalidTitle<T> value),
-    @required Result invalidDescription(InvalidDescription<T> value),
-    @required Result invalidGenre(InvalidGenre<T> value),
-    @required Result invalidCharacter(InvalidCharacter<T> value),
-  }) {
-    assert(invalidEmailAddress != null);
-    assert(invalidPassword != null);
-    assert(invalidUsername != null);
-    assert(invalidTitle != null);
-    assert(invalidDescription != null);
-    assert(invalidGenre != null);
-    assert(invalidCharacter != null);
-    return invalidGenre(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result invalidEmailAddress(InvalidEmail<T> value),
-    Result invalidPassword(InvalidPassword<T> value),
-    Result invalidUsername(InvalidUsername<T> value),
-    Result invalidTitle(InvalidTitle<T> value),
-    Result invalidDescription(InvalidDescription<T> value),
-    Result invalidGenre(InvalidGenre<T> value),
-    Result invalidCharacter(InvalidCharacter<T> value),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (invalidGenre != null) {
-      return invalidGenre(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class InvalidGenre<T> implements ValueFailure<T> {
-  const factory InvalidGenre({@required String failedValue}) =
-      _$InvalidGenre<T>;
-
-  @override
-  String get failedValue;
-  @override
-  $InvalidGenreCopyWith<T, InvalidGenre<T>> get copyWith;
 }
 
 abstract class $InvalidCharacterCopyWith<T, $Res>
@@ -1101,16 +1031,20 @@ class _$InvalidCharacter<T> implements InvalidCharacter<T> {
     @required Result invalidUsername(String failedValue),
     @required Result invalidTitle(String failedValue),
     @required Result invalidDescription(String failedValue),
-    @required Result invalidGenre(String failedValue),
     @required Result invalidCharacter(String failedValue),
+    @required Result invalidGenre(String failedValue),
+    @required Result invalidLanguage(String failedValue),
+    @required Result invalidCopyright(String failedValue),
   }) {
     assert(invalidEmailAddress != null);
     assert(invalidPassword != null);
     assert(invalidUsername != null);
     assert(invalidTitle != null);
     assert(invalidDescription != null);
-    assert(invalidGenre != null);
     assert(invalidCharacter != null);
+    assert(invalidGenre != null);
+    assert(invalidLanguage != null);
+    assert(invalidCopyright != null);
     return invalidCharacter(failedValue);
   }
 
@@ -1122,8 +1056,10 @@ class _$InvalidCharacter<T> implements InvalidCharacter<T> {
     Result invalidUsername(String failedValue),
     Result invalidTitle(String failedValue),
     Result invalidDescription(String failedValue),
-    Result invalidGenre(String failedValue),
     Result invalidCharacter(String failedValue),
+    Result invalidGenre(String failedValue),
+    Result invalidLanguage(String failedValue),
+    Result invalidCopyright(String failedValue),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1141,16 +1077,20 @@ class _$InvalidCharacter<T> implements InvalidCharacter<T> {
     @required Result invalidUsername(InvalidUsername<T> value),
     @required Result invalidTitle(InvalidTitle<T> value),
     @required Result invalidDescription(InvalidDescription<T> value),
-    @required Result invalidGenre(InvalidGenre<T> value),
     @required Result invalidCharacter(InvalidCharacter<T> value),
+    @required Result invalidGenre(InvalidGenre<T> value),
+    @required Result invalidLanguage(InvalidLanguage<T> value),
+    @required Result invalidCopyright(InvalidCopyright<T> value),
   }) {
     assert(invalidEmailAddress != null);
     assert(invalidPassword != null);
     assert(invalidUsername != null);
     assert(invalidTitle != null);
     assert(invalidDescription != null);
-    assert(invalidGenre != null);
     assert(invalidCharacter != null);
+    assert(invalidGenre != null);
+    assert(invalidLanguage != null);
+    assert(invalidCopyright != null);
     return invalidCharacter(this);
   }
 
@@ -1162,8 +1102,10 @@ class _$InvalidCharacter<T> implements InvalidCharacter<T> {
     Result invalidUsername(InvalidUsername<T> value),
     Result invalidTitle(InvalidTitle<T> value),
     Result invalidDescription(InvalidDescription<T> value),
-    Result invalidGenre(InvalidGenre<T> value),
     Result invalidCharacter(InvalidCharacter<T> value),
+    Result invalidGenre(InvalidGenre<T> value),
+    Result invalidLanguage(InvalidLanguage<T> value),
+    Result invalidCopyright(InvalidCopyright<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1182,4 +1124,490 @@ abstract class InvalidCharacter<T> implements ValueFailure<T> {
   String get failedValue;
   @override
   $InvalidCharacterCopyWith<T, InvalidCharacter<T>> get copyWith;
+}
+
+abstract class $InvalidGenreCopyWith<T, $Res>
+    implements $ValueFailureCopyWith<T, $Res> {
+  factory $InvalidGenreCopyWith(
+          InvalidGenre<T> value, $Res Function(InvalidGenre<T>) then) =
+      _$InvalidGenreCopyWithImpl<T, $Res>;
+  @override
+  $Res call({String failedValue});
+}
+
+class _$InvalidGenreCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res>
+    implements $InvalidGenreCopyWith<T, $Res> {
+  _$InvalidGenreCopyWithImpl(
+      InvalidGenre<T> _value, $Res Function(InvalidGenre<T>) _then)
+      : super(_value, (v) => _then(v as InvalidGenre<T>));
+
+  @override
+  InvalidGenre<T> get _value => super._value as InvalidGenre<T>;
+
+  @override
+  $Res call({
+    Object failedValue = freezed,
+  }) {
+    return _then(InvalidGenre<T>(
+      failedValue:
+          failedValue == freezed ? _value.failedValue : failedValue as String,
+    ));
+  }
+}
+
+class _$InvalidGenre<T> implements InvalidGenre<T> {
+  const _$InvalidGenre({@required this.failedValue})
+      : assert(failedValue != null);
+
+  @override
+  final String failedValue;
+
+  @override
+  String toString() {
+    return 'ValueFailure<$T>.invalidGenre(failedValue: $failedValue)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is InvalidGenre<T> &&
+            (identical(other.failedValue, failedValue) ||
+                const DeepCollectionEquality()
+                    .equals(other.failedValue, failedValue)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
+
+  @override
+  $InvalidGenreCopyWith<T, InvalidGenre<T>> get copyWith =>
+      _$InvalidGenreCopyWithImpl<T, InvalidGenre<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result invalidEmailAddress(String failedValue),
+    @required Result invalidPassword(String failedValue),
+    @required Result invalidUsername(String failedValue),
+    @required Result invalidTitle(String failedValue),
+    @required Result invalidDescription(String failedValue),
+    @required Result invalidCharacter(String failedValue),
+    @required Result invalidGenre(String failedValue),
+    @required Result invalidLanguage(String failedValue),
+    @required Result invalidCopyright(String failedValue),
+  }) {
+    assert(invalidEmailAddress != null);
+    assert(invalidPassword != null);
+    assert(invalidUsername != null);
+    assert(invalidTitle != null);
+    assert(invalidDescription != null);
+    assert(invalidCharacter != null);
+    assert(invalidGenre != null);
+    assert(invalidLanguage != null);
+    assert(invalidCopyright != null);
+    return invalidGenre(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result invalidEmailAddress(String failedValue),
+    Result invalidPassword(String failedValue),
+    Result invalidUsername(String failedValue),
+    Result invalidTitle(String failedValue),
+    Result invalidDescription(String failedValue),
+    Result invalidCharacter(String failedValue),
+    Result invalidGenre(String failedValue),
+    Result invalidLanguage(String failedValue),
+    Result invalidCopyright(String failedValue),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (invalidGenre != null) {
+      return invalidGenre(failedValue);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result invalidEmailAddress(InvalidEmail<T> value),
+    @required Result invalidPassword(InvalidPassword<T> value),
+    @required Result invalidUsername(InvalidUsername<T> value),
+    @required Result invalidTitle(InvalidTitle<T> value),
+    @required Result invalidDescription(InvalidDescription<T> value),
+    @required Result invalidCharacter(InvalidCharacter<T> value),
+    @required Result invalidGenre(InvalidGenre<T> value),
+    @required Result invalidLanguage(InvalidLanguage<T> value),
+    @required Result invalidCopyright(InvalidCopyright<T> value),
+  }) {
+    assert(invalidEmailAddress != null);
+    assert(invalidPassword != null);
+    assert(invalidUsername != null);
+    assert(invalidTitle != null);
+    assert(invalidDescription != null);
+    assert(invalidCharacter != null);
+    assert(invalidGenre != null);
+    assert(invalidLanguage != null);
+    assert(invalidCopyright != null);
+    return invalidGenre(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result invalidEmailAddress(InvalidEmail<T> value),
+    Result invalidPassword(InvalidPassword<T> value),
+    Result invalidUsername(InvalidUsername<T> value),
+    Result invalidTitle(InvalidTitle<T> value),
+    Result invalidDescription(InvalidDescription<T> value),
+    Result invalidCharacter(InvalidCharacter<T> value),
+    Result invalidGenre(InvalidGenre<T> value),
+    Result invalidLanguage(InvalidLanguage<T> value),
+    Result invalidCopyright(InvalidCopyright<T> value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (invalidGenre != null) {
+      return invalidGenre(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class InvalidGenre<T> implements ValueFailure<T> {
+  const factory InvalidGenre({@required String failedValue}) =
+      _$InvalidGenre<T>;
+
+  @override
+  String get failedValue;
+  @override
+  $InvalidGenreCopyWith<T, InvalidGenre<T>> get copyWith;
+}
+
+abstract class $InvalidLanguageCopyWith<T, $Res>
+    implements $ValueFailureCopyWith<T, $Res> {
+  factory $InvalidLanguageCopyWith(
+          InvalidLanguage<T> value, $Res Function(InvalidLanguage<T>) then) =
+      _$InvalidLanguageCopyWithImpl<T, $Res>;
+  @override
+  $Res call({String failedValue});
+}
+
+class _$InvalidLanguageCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res>
+    implements $InvalidLanguageCopyWith<T, $Res> {
+  _$InvalidLanguageCopyWithImpl(
+      InvalidLanguage<T> _value, $Res Function(InvalidLanguage<T>) _then)
+      : super(_value, (v) => _then(v as InvalidLanguage<T>));
+
+  @override
+  InvalidLanguage<T> get _value => super._value as InvalidLanguage<T>;
+
+  @override
+  $Res call({
+    Object failedValue = freezed,
+  }) {
+    return _then(InvalidLanguage<T>(
+      failedValue:
+          failedValue == freezed ? _value.failedValue : failedValue as String,
+    ));
+  }
+}
+
+class _$InvalidLanguage<T> implements InvalidLanguage<T> {
+  const _$InvalidLanguage({@required this.failedValue})
+      : assert(failedValue != null);
+
+  @override
+  final String failedValue;
+
+  @override
+  String toString() {
+    return 'ValueFailure<$T>.invalidLanguage(failedValue: $failedValue)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is InvalidLanguage<T> &&
+            (identical(other.failedValue, failedValue) ||
+                const DeepCollectionEquality()
+                    .equals(other.failedValue, failedValue)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
+
+  @override
+  $InvalidLanguageCopyWith<T, InvalidLanguage<T>> get copyWith =>
+      _$InvalidLanguageCopyWithImpl<T, InvalidLanguage<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result invalidEmailAddress(String failedValue),
+    @required Result invalidPassword(String failedValue),
+    @required Result invalidUsername(String failedValue),
+    @required Result invalidTitle(String failedValue),
+    @required Result invalidDescription(String failedValue),
+    @required Result invalidCharacter(String failedValue),
+    @required Result invalidGenre(String failedValue),
+    @required Result invalidLanguage(String failedValue),
+    @required Result invalidCopyright(String failedValue),
+  }) {
+    assert(invalidEmailAddress != null);
+    assert(invalidPassword != null);
+    assert(invalidUsername != null);
+    assert(invalidTitle != null);
+    assert(invalidDescription != null);
+    assert(invalidCharacter != null);
+    assert(invalidGenre != null);
+    assert(invalidLanguage != null);
+    assert(invalidCopyright != null);
+    return invalidLanguage(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result invalidEmailAddress(String failedValue),
+    Result invalidPassword(String failedValue),
+    Result invalidUsername(String failedValue),
+    Result invalidTitle(String failedValue),
+    Result invalidDescription(String failedValue),
+    Result invalidCharacter(String failedValue),
+    Result invalidGenre(String failedValue),
+    Result invalidLanguage(String failedValue),
+    Result invalidCopyright(String failedValue),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (invalidLanguage != null) {
+      return invalidLanguage(failedValue);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result invalidEmailAddress(InvalidEmail<T> value),
+    @required Result invalidPassword(InvalidPassword<T> value),
+    @required Result invalidUsername(InvalidUsername<T> value),
+    @required Result invalidTitle(InvalidTitle<T> value),
+    @required Result invalidDescription(InvalidDescription<T> value),
+    @required Result invalidCharacter(InvalidCharacter<T> value),
+    @required Result invalidGenre(InvalidGenre<T> value),
+    @required Result invalidLanguage(InvalidLanguage<T> value),
+    @required Result invalidCopyright(InvalidCopyright<T> value),
+  }) {
+    assert(invalidEmailAddress != null);
+    assert(invalidPassword != null);
+    assert(invalidUsername != null);
+    assert(invalidTitle != null);
+    assert(invalidDescription != null);
+    assert(invalidCharacter != null);
+    assert(invalidGenre != null);
+    assert(invalidLanguage != null);
+    assert(invalidCopyright != null);
+    return invalidLanguage(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result invalidEmailAddress(InvalidEmail<T> value),
+    Result invalidPassword(InvalidPassword<T> value),
+    Result invalidUsername(InvalidUsername<T> value),
+    Result invalidTitle(InvalidTitle<T> value),
+    Result invalidDescription(InvalidDescription<T> value),
+    Result invalidCharacter(InvalidCharacter<T> value),
+    Result invalidGenre(InvalidGenre<T> value),
+    Result invalidLanguage(InvalidLanguage<T> value),
+    Result invalidCopyright(InvalidCopyright<T> value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (invalidLanguage != null) {
+      return invalidLanguage(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class InvalidLanguage<T> implements ValueFailure<T> {
+  const factory InvalidLanguage({@required String failedValue}) =
+      _$InvalidLanguage<T>;
+
+  @override
+  String get failedValue;
+  @override
+  $InvalidLanguageCopyWith<T, InvalidLanguage<T>> get copyWith;
+}
+
+abstract class $InvalidCopyrightCopyWith<T, $Res>
+    implements $ValueFailureCopyWith<T, $Res> {
+  factory $InvalidCopyrightCopyWith(
+          InvalidCopyright<T> value, $Res Function(InvalidCopyright<T>) then) =
+      _$InvalidCopyrightCopyWithImpl<T, $Res>;
+  @override
+  $Res call({String failedValue});
+}
+
+class _$InvalidCopyrightCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res>
+    implements $InvalidCopyrightCopyWith<T, $Res> {
+  _$InvalidCopyrightCopyWithImpl(
+      InvalidCopyright<T> _value, $Res Function(InvalidCopyright<T>) _then)
+      : super(_value, (v) => _then(v as InvalidCopyright<T>));
+
+  @override
+  InvalidCopyright<T> get _value => super._value as InvalidCopyright<T>;
+
+  @override
+  $Res call({
+    Object failedValue = freezed,
+  }) {
+    return _then(InvalidCopyright<T>(
+      failedValue:
+          failedValue == freezed ? _value.failedValue : failedValue as String,
+    ));
+  }
+}
+
+class _$InvalidCopyright<T> implements InvalidCopyright<T> {
+  const _$InvalidCopyright({@required this.failedValue})
+      : assert(failedValue != null);
+
+  @override
+  final String failedValue;
+
+  @override
+  String toString() {
+    return 'ValueFailure<$T>.invalidCopyright(failedValue: $failedValue)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is InvalidCopyright<T> &&
+            (identical(other.failedValue, failedValue) ||
+                const DeepCollectionEquality()
+                    .equals(other.failedValue, failedValue)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
+
+  @override
+  $InvalidCopyrightCopyWith<T, InvalidCopyright<T>> get copyWith =>
+      _$InvalidCopyrightCopyWithImpl<T, InvalidCopyright<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result invalidEmailAddress(String failedValue),
+    @required Result invalidPassword(String failedValue),
+    @required Result invalidUsername(String failedValue),
+    @required Result invalidTitle(String failedValue),
+    @required Result invalidDescription(String failedValue),
+    @required Result invalidCharacter(String failedValue),
+    @required Result invalidGenre(String failedValue),
+    @required Result invalidLanguage(String failedValue),
+    @required Result invalidCopyright(String failedValue),
+  }) {
+    assert(invalidEmailAddress != null);
+    assert(invalidPassword != null);
+    assert(invalidUsername != null);
+    assert(invalidTitle != null);
+    assert(invalidDescription != null);
+    assert(invalidCharacter != null);
+    assert(invalidGenre != null);
+    assert(invalidLanguage != null);
+    assert(invalidCopyright != null);
+    return invalidCopyright(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result invalidEmailAddress(String failedValue),
+    Result invalidPassword(String failedValue),
+    Result invalidUsername(String failedValue),
+    Result invalidTitle(String failedValue),
+    Result invalidDescription(String failedValue),
+    Result invalidCharacter(String failedValue),
+    Result invalidGenre(String failedValue),
+    Result invalidLanguage(String failedValue),
+    Result invalidCopyright(String failedValue),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (invalidCopyright != null) {
+      return invalidCopyright(failedValue);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result invalidEmailAddress(InvalidEmail<T> value),
+    @required Result invalidPassword(InvalidPassword<T> value),
+    @required Result invalidUsername(InvalidUsername<T> value),
+    @required Result invalidTitle(InvalidTitle<T> value),
+    @required Result invalidDescription(InvalidDescription<T> value),
+    @required Result invalidCharacter(InvalidCharacter<T> value),
+    @required Result invalidGenre(InvalidGenre<T> value),
+    @required Result invalidLanguage(InvalidLanguage<T> value),
+    @required Result invalidCopyright(InvalidCopyright<T> value),
+  }) {
+    assert(invalidEmailAddress != null);
+    assert(invalidPassword != null);
+    assert(invalidUsername != null);
+    assert(invalidTitle != null);
+    assert(invalidDescription != null);
+    assert(invalidCharacter != null);
+    assert(invalidGenre != null);
+    assert(invalidLanguage != null);
+    assert(invalidCopyright != null);
+    return invalidCopyright(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result invalidEmailAddress(InvalidEmail<T> value),
+    Result invalidPassword(InvalidPassword<T> value),
+    Result invalidUsername(InvalidUsername<T> value),
+    Result invalidTitle(InvalidTitle<T> value),
+    Result invalidDescription(InvalidDescription<T> value),
+    Result invalidCharacter(InvalidCharacter<T> value),
+    Result invalidGenre(InvalidGenre<T> value),
+    Result invalidLanguage(InvalidLanguage<T> value),
+    Result invalidCopyright(InvalidCopyright<T> value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (invalidCopyright != null) {
+      return invalidCopyright(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class InvalidCopyright<T> implements ValueFailure<T> {
+  const factory InvalidCopyright({@required String failedValue}) =
+      _$InvalidCopyright<T>;
+
+  @override
+  String get failedValue;
+  @override
+  $InvalidCopyrightCopyWith<T, InvalidCopyright<T>> get copyWith;
 }

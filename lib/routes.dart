@@ -2,6 +2,7 @@ import 'package:flutter/animation.dart';
 import 'package:sailor/sailor.dart';
 import 'package:wine/presentation/pages/account/index.dart';
 import 'package:wine/presentation/pages/home/index.dart';
+import 'package:wine/presentation/pages/new_series/new_series_page.dart';
 import 'package:wine/presentation/pages/series/index.dart';
 import 'package:wine/presentation/pages/settings/settings_page.dart';
 import 'package:wine/presentation/pages/splash/splash_page.dart';
@@ -64,7 +65,7 @@ void createRoutes() {
     // SECTION SERIES
     SailorRoute(
       name: Constants.newSeriesRoute,
-      builder: (context, args, params) => NewSeriesPage(),
+      builder: (context, args, params) => const NewSeriesPage(),
       defaultTransitions: [
         SailorTransition.slide_from_bottom,
       ],

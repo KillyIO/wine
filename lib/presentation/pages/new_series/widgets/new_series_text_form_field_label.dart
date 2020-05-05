@@ -13,14 +13,14 @@ class NewSeriesTextFormFieldLabel extends StatelessWidget {
       width: MediaQuery.of(context).size.width,
       height: 55.0,
       child: Padding(
-        padding: const EdgeInsets.only(left: 20.0, bottom: 10.0),
+        padding: const EdgeInsets.only(left: 19.0, bottom: 10.0),
         child: Align(
           alignment: Alignment.bottomLeft,
           child: Text(
             text,
             style: TextStyle(
               color: Colors.white,
-              fontSize: 12.0,
+              fontSize: 13.0,
               fontWeight: FontWeight.w500,
             ),
           ),

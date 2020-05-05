@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class Copyright extends StatelessWidget {
+class SplashCopyright extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(

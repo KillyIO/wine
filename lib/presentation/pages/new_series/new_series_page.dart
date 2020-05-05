@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_icons/flutter_icons.dart';
 import 'package:wine/application/database/new_series/new_series_database_bloc.dart';
 import 'package:wine/application/navigation/home/home_navigation_bloc.dart';
 import 'package:wine/domain/models/hive/series_draft.dart';
-import 'package:wine/presentation/pages/series/widgets/new_series_characters_list.dart';
-import 'package:wine/presentation/pages/series/widgets/new_series_selection_dialog.dart';
-import 'package:wine/presentation/pages/series/widgets/new_series_text_form_field_label.dart';
-import 'package:wine/presentation/pages/series/widgets/new_series_multiline_text_form_field.dart';
-import 'package:wine/presentation/pages/series/widgets/new_series_text_form_field.dart';
+import 'package:wine/presentation/pages/new_series/widgets/new_series_list_tile.dart';
+import 'package:wine/presentation/pages/new_series/widgets/new_series_selection_dialog.dart';
+import 'package:wine/presentation/pages/new_series/widgets/new_series_text_form_field_label.dart';
+import 'package:wine/presentation/pages/new_series/widgets/new_series_multiline_text_form_field.dart';
+import 'package:wine/presentation/pages/new_series/widgets/new_series_text_form_field.dart';
 import 'package:wine/presentation/widgets/custom_show_dialog.dart';
 import 'package:wine/presentation/widgets/image_back_button.dart';
 import 'package:wine/utils/methods.dart';
@@ -130,7 +129,9 @@ class _NewSeriesPageState extends State<NewSeriesPage> {
                 FlatButton(
                   disabledTextColor: Colors.black26,
                   highlightColor: Colors.transparent,
-                  onPressed: null,
+                  onPressed: () => context
+                      .bloc<NewSeriesDatabaseBloc>()
+                      .add(const ContinueButtonPressed()),
                   splashColor: Colors.transparent,
                   textColor: Colors.black,
                   child: Text(
@@ -201,146 +202,57 @@ class _NewSeriesPageState extends State<NewSeriesPage> {
                           controller: _descriptionController,
                           hintText: 'An interesting description',
                         ),
-                        const Padding(
-                          padding: EdgeInsets.only(top: 25.0),
-                          child: NewSeriesTextFormFieldLabel(
-                            text: 'MAIN CHARACTERS',
-                          ),
-                        ),
-                        Visibility(
-                          visible: databaseState.characters.isNotEmpty,
-                          child: Padding(
-                            padding: const EdgeInsets.symmetric(vertical: 20.0),
-                            child: NewSeriesCharactersList(
-                              characters: databaseState.characters,
-                            ),
-                          ),
-                        ),
-                        Row(
-                          children: <Widget>[
-                            Flexible(
-                              child: NewSeriesTextFormField(
-                                controller: _characterController,
-                                hintText: 'Name',
-                              ),
-                            ),
-                            Container(
-                              color: Palettes.darkCobaltBlue,
-                              child: IconButton(
-                                splashColor: Colors.transparent,
-                                focusColor: Colors.transparent,
-                                highlightColor: Colors.transparent,
-                                icon: Icon(
-                                  Feather.plus,
-                                  color: Colors.white,
-                                  size: 30.0,
-                                ),
-                                onPressed: _addCharacterPressed,
-                              ),
-                            ),
-                          ],
-                        ),
                         // SECTION genre
                         Padding(
                           padding: const EdgeInsets.only(top: 25.0),
-                          child: Container(
-                            color: Palettes.darkCobaltBlue,
-                            child: ListTile(
-                              onTap: () => customShowDialog(
-                                context: context,
-                                builder: (_) => NewSeriesSelectionDialog(
-                                  selections: _genres,
-                                  onPressed: _genreSelected,
-                                ),
+                          child: NewSeriesListTile(
+                            hasSelected: databaseState.selectedGenre == '',
+                            onPressed: () => customShowDialog(
+                              context: context,
+                              builder: (_) => NewSeriesSelectionDialog(
+                                title: 'GENRE',
+                                selections: _genres,
+                                onPressed: _genreSelected,
                               ),
-                              title: Text(
-                                'GENRE',
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.w300,
-                                ),
-                              ),
-                              trailing: databaseState.selectedGenre == ''
-                                  ? Icon(
-                                      Icons.keyboard_arrow_right,
-                                      color: Colors.white,
-                                    )
-                                  : Text(
-                                      _genres[databaseState.selectedGenre],
-                                      style: TextStyle(
-                                        color: Colors.white,
-                                        fontWeight: FontWeight.w300,
-                                      ),
-                                    ),
                             ),
+                            title: 'GENRE',
+                            trailingText: _genres[databaseState.selectedGenre],
                           ),
                         ),
+                        // SECTION language
                         Padding(
                           padding: const EdgeInsets.only(top: 25.0),
-                          child: Container(
-                            color: Palettes.darkCobaltBlue,
-                            child: ListTile(
-                              onTap: () => customShowDialog(
-                                context: context,
-                                builder: (_) => NewSeriesSelectionDialog(
-                                  selections: _languages,
-                                  onPressed: _languageSelected,
-                                ),
+                          child: NewSeriesListTile(
+                            hasSelected: databaseState.selectedLanguage == '',
+                            onPressed: () => customShowDialog(
+                              context: context,
+                              builder: (_) => NewSeriesSelectionDialog(
+                                title: 'LANGUAGE',
+                                selections: _languages,
+                                onPressed: _languageSelected,
                               ),
-                              title: Text(
-                                'LANGUAGE',
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.w300,
-                                ),
-                              ),
-                              trailing: databaseState.selectedGenre == ''
-                                  ? Icon(
-                                      Icons.keyboard_arrow_right,
-                                      color: Colors.white,
-                                    )
-                                  : Text(
-                                      _genres[databaseState.selectedGenre],
-                                      style: TextStyle(
-                                        color: Colors.white,
-                                        fontWeight: FontWeight.w300,
-                                      ),
-                                    ),
                             ),
+                            title: 'LANGUAGE',
+                            trailingText:
+                                _languages[databaseState.selectedLanguage],
                           ),
                         ),
+                        // SECTION copyright
                         Padding(
                           padding: const EdgeInsets.symmetric(vertical: 25.0),
-                          child: Container(
-                            color: Palettes.darkCobaltBlue,
-                            child: ListTile(
-                              onTap: () => customShowDialog(
-                                context: context,
-                                builder: (_) => NewSeriesSelectionDialog(
-                                  selections: _languages,
-                                  onPressed: _languageSelected,
-                                ),
+                          child: NewSeriesListTile(
+                            hasSelected: databaseState.selectedCopyright == '',
+                            onPressed: () => customShowDialog(
+                              context: context,
+                              builder: (_) => NewSeriesSelectionDialog(
+                                title: 'COPYRIGHTS',
+                                selections: _copyrights,
+                                onPressed: _copyrightSelected,
                               ),
-                              title: Text(
-                                'COPYRIGHTS',
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontWeight: FontWeight.w300,
-                                ),
-                              ),
-                              trailing: databaseState.selectedGenre == ''
-                                  ? Icon(
-                                      Icons.keyboard_arrow_right,
-                                      color: Colors.white,
-                                    )
-                                  : Text(
-                                      _genres[databaseState.selectedGenre],
-                                      style: TextStyle(
-                                        color: Colors.white,
-                                        fontWeight: FontWeight.w300,
-                                      ),
-                                    ),
                             ),
+                            title: 'COPYRIGHTS',
+                            trailingText:
+                                _copyrights[databaseState.selectedCopyright],
                           ),
                         ),
                       ],

@@ -1,9 +1,5 @@
 import 'package:dartz/dartz.dart';
-import 'package:stringprocess/stringprocess.dart';
 import 'package:wine/domain/core/failures.dart';
-import 'package:wine/utils/constants.dart';
-
-StringProcessor tps = StringProcessor();
 
 Either<ValueFailure<String>, String> validateEmailAddress(String input) {
   const String emailRegex =
@@ -42,15 +38,18 @@ Either<ValueFailure<String>, String> validateTitle(String input) {
 }
 
 Either<ValueFailure<String>, String> validateDescription(String input) {
-  final int wordCount = tps.getWordCount(input);
-
-  if (input != null &&
-      input.isNotEmpty &&
-      wordCount >= Constants.seriesDescriptionMinWords &&
-      wordCount <= Constants.seriesDescriptionMaxWords) {
+  if (input != null && input.isNotEmpty) {
     return right(input);
   } else {
     return left(ValueFailure.invalidDescription(failedValue: input));
+  }
+}
+
+Either<ValueFailure<String>, String> validateCharacter(String input) {
+  if (input != null && input.isNotEmpty) {
+    return right(input);
+  } else {
+    return left(ValueFailure.invalidCharacter(failedValue: input));
   }
 }
 
@@ -62,10 +61,18 @@ Either<ValueFailure<String>, String> validateGenre(String input) {
   }
 }
 
-Either<ValueFailure<String>, String> validateCharacter(String input) {
+Either<ValueFailure<String>, String> validateLanguage(String input) {
   if (input != null && input.isNotEmpty) {
     return right(input);
   } else {
-    return left(ValueFailure.invalidCharacter(failedValue: input));
+    return left(ValueFailure.invalidLanguage(failedValue: input));
+  }
+}
+
+Either<ValueFailure<String>, String> validateCopyright(String input) {
+  if (input != null && input.isNotEmpty) {
+    return right(input);
+  } else {
+    return left(ValueFailure.invalidCopyright(failedValue: input));
   }
 }

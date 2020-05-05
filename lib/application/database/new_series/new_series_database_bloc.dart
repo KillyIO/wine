@@ -6,10 +6,12 @@ import 'package:injectable/injectable.dart';
 import 'package:meta/meta.dart';
 import 'package:uuid/uuid.dart';
 import 'package:wine/domain/database/character.dart';
+import 'package:wine/domain/database/copyright.dart';
 import 'package:wine/domain/database/description.dart';
 import 'package:wine/domain/database/genre.dart';
 import 'package:wine/domain/database/i_local_session_database_facade.dart';
 import 'package:wine/domain/database/i_online_user_database_facade.dart';
+import 'package:wine/domain/database/language.dart';
 import 'package:wine/domain/database/title.dart';
 import 'package:wine/domain/models/hive/series_draft.dart';
 import 'package:wine/domain/models/hive/session.dart';
@@ -59,7 +61,7 @@ class NewSeriesDatabaseBloc
           authorUid: authorUid,
         );
       },
-      backButtonPressed: (event) async* {},
+      continueButtonPressed: (event) async* {},
       titleChanged: (event) async* {
         yield state.copyWith(
           title: Title(event.title),
@@ -72,7 +74,7 @@ class NewSeriesDatabaseBloc
       },
       characterChanged: (event) async* {
         yield state.copyWith(
-          character: Character(event.name),
+          character: Character(event.name.trim()),
         );
       },
       addCharacterButtonPressed: (event) async* {
@@ -91,8 +93,12 @@ class NewSeriesDatabaseBloc
         }
       },
       removeCharacterButtonPressed: (event) async* {
-        final List<String> charactersList = state.characters;
+        List<String> charactersList = state.characters;
         charactersList.removeAt(event.index);
+
+        if (charactersList.isEmpty) {
+          charactersList = <String>[];
+        }
 
         yield state.copyWith(
           characters: charactersList,
@@ -104,8 +110,18 @@ class NewSeriesDatabaseBloc
           selectedGenre: event.genre,
         );
       },
-      languageSelected: (event) async* {},
-      copyrightSelected: (event) async* {},
+      languageSelected: (event) async* {
+        yield state.copyWith(
+          language: Language(event.language),
+          selectedLanguage: event.language,
+        );
+      },
+      copyrightSelected: (event) async* {
+        yield state.copyWith(
+          copyright: Copyright(event.copyright),
+          selectedCopyright: event.copyright,
+        );
+      },
     );
   }
 }

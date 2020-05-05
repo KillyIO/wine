@@ -24,11 +24,19 @@ abstract class ValueFailure<T> with _$ValueFailure<T> {
     @required String failedValue,
   }) = InvalidDescription<T>;
 
+  const factory ValueFailure.invalidCharacter({
+    @required String failedValue,
+  }) = InvalidCharacter<T>;
+
   const factory ValueFailure.invalidGenre({
     @required String failedValue,
   }) = InvalidGenre<T>;
 
-  const factory ValueFailure.invalidCharacter({
+  const factory ValueFailure.invalidLanguage({
     @required String failedValue,
-  }) = InvalidCharacter<T>;
+  }) = InvalidLanguage<T>;
+
+  const factory ValueFailure.invalidCopyright({
+    @required String failedValue,
+  }) = InvalidCopyright<T>;
 }

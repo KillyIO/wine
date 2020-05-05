@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
+
 import 'package:wine/utils/palettes.dart';
 
 typedef StringToVoidFunction = void Function(String);
 
 class NewSeriesSelectionDialog extends StatelessWidget {
+  final String title;
   final Map<String, String> selections;
   final StringToVoidFunction onPressed;
 
   const NewSeriesSelectionDialog({
     Key key,
+    this.title,
     this.selections,
     this.onPressed,
   }) : super(key: key);
@@ -35,7 +38,7 @@ class NewSeriesSelectionDialog extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(
                     horizontal: 10.0, vertical: 10.0),
                 child: Text(
-                  'GENRE',
+                  title,
                   style: TextStyle(
                     color: Palettes.darkCobaltBlue,
                     fontSize: 17.0,
@@ -59,6 +62,7 @@ class NewSeriesSelectionDialog extends StatelessWidget {
                     onTap: () => onPressed(key),
                     title: Text(
                       selections[key],
+                      overflow: TextOverflow.ellipsis,
                       style: TextStyle(
                         color: Colors.black,
                         fontSize: 15.0,

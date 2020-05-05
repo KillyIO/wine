@@ -18,8 +18,8 @@ class _$NewSeriesDatabaseEventTearOff {
     );
   }
 
-  BackButtonPressed backButtonPressed() {
-    return const BackButtonPressed();
+  ContinueButtonPressed continueButtonPressed() {
+    return const ContinueButtonPressed();
   }
 
   TitleChanged titleChanged(String title) {
@@ -76,7 +76,7 @@ mixin _$NewSeriesDatabaseEvent {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result newSeriesPageLaunched(SeriesDraft seriesDraft),
-    @required Result backButtonPressed(),
+    @required Result continueButtonPressed(),
     @required Result titleChanged(String title),
     @required Result descriptionChanged(String description),
     @required Result characterChanged(String name),
@@ -89,7 +89,7 @@ mixin _$NewSeriesDatabaseEvent {
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result newSeriesPageLaunched(SeriesDraft seriesDraft),
-    Result backButtonPressed(),
+    Result continueButtonPressed(),
     Result titleChanged(String title),
     Result descriptionChanged(String description),
     Result characterChanged(String name),
@@ -103,7 +103,7 @@ mixin _$NewSeriesDatabaseEvent {
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result newSeriesPageLaunched(NewSeriesPageLaunched value),
-    @required Result backButtonPressed(BackButtonPressed value),
+    @required Result continueButtonPressed(ContinueButtonPressed value),
     @required Result titleChanged(TitleChanged value),
     @required Result descriptionChanged(DescriptionChanged value),
     @required Result characterChanged(CharacterChanged value),
@@ -117,7 +117,7 @@ mixin _$NewSeriesDatabaseEvent {
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result newSeriesPageLaunched(NewSeriesPageLaunched value),
-    Result backButtonPressed(BackButtonPressed value),
+    Result continueButtonPressed(ContinueButtonPressed value),
     Result titleChanged(TitleChanged value),
     Result descriptionChanged(DescriptionChanged value),
     Result characterChanged(CharacterChanged value),
@@ -207,7 +207,7 @@ class _$NewSeriesPageLaunched implements NewSeriesPageLaunched {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result newSeriesPageLaunched(SeriesDraft seriesDraft),
-    @required Result backButtonPressed(),
+    @required Result continueButtonPressed(),
     @required Result titleChanged(String title),
     @required Result descriptionChanged(String description),
     @required Result characterChanged(String name),
@@ -218,7 +218,7 @@ class _$NewSeriesPageLaunched implements NewSeriesPageLaunched {
     @required Result copyrightSelected(String copyright),
   }) {
     assert(newSeriesPageLaunched != null);
-    assert(backButtonPressed != null);
+    assert(continueButtonPressed != null);
     assert(titleChanged != null);
     assert(descriptionChanged != null);
     assert(characterChanged != null);
@@ -234,7 +234,7 @@ class _$NewSeriesPageLaunched implements NewSeriesPageLaunched {
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result newSeriesPageLaunched(SeriesDraft seriesDraft),
-    Result backButtonPressed(),
+    Result continueButtonPressed(),
     Result titleChanged(String title),
     Result descriptionChanged(String description),
     Result characterChanged(String name),
@@ -256,7 +256,7 @@ class _$NewSeriesPageLaunched implements NewSeriesPageLaunched {
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result newSeriesPageLaunched(NewSeriesPageLaunched value),
-    @required Result backButtonPressed(BackButtonPressed value),
+    @required Result continueButtonPressed(ContinueButtonPressed value),
     @required Result titleChanged(TitleChanged value),
     @required Result descriptionChanged(DescriptionChanged value),
     @required Result characterChanged(CharacterChanged value),
@@ -268,7 +268,7 @@ class _$NewSeriesPageLaunched implements NewSeriesPageLaunched {
     @required Result copyrightSelected(CopyrightSelected value),
   }) {
     assert(newSeriesPageLaunched != null);
-    assert(backButtonPressed != null);
+    assert(continueButtonPressed != null);
     assert(titleChanged != null);
     assert(descriptionChanged != null);
     assert(characterChanged != null);
@@ -284,7 +284,7 @@ class _$NewSeriesPageLaunched implements NewSeriesPageLaunched {
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result newSeriesPageLaunched(NewSeriesPageLaunched value),
-    Result backButtonPressed(BackButtonPressed value),
+    Result continueButtonPressed(ContinueButtonPressed value),
     Result titleChanged(TitleChanged value),
     Result descriptionChanged(DescriptionChanged value),
     Result characterChanged(CharacterChanged value),
@@ -311,34 +311,34 @@ abstract class NewSeriesPageLaunched implements NewSeriesDatabaseEvent {
   $NewSeriesPageLaunchedCopyWith<NewSeriesPageLaunched> get copyWith;
 }
 
-abstract class $BackButtonPressedCopyWith<$Res> {
-  factory $BackButtonPressedCopyWith(
-          BackButtonPressed value, $Res Function(BackButtonPressed) then) =
-      _$BackButtonPressedCopyWithImpl<$Res>;
+abstract class $ContinueButtonPressedCopyWith<$Res> {
+  factory $ContinueButtonPressedCopyWith(ContinueButtonPressed value,
+          $Res Function(ContinueButtonPressed) then) =
+      _$ContinueButtonPressedCopyWithImpl<$Res>;
 }
 
-class _$BackButtonPressedCopyWithImpl<$Res>
+class _$ContinueButtonPressedCopyWithImpl<$Res>
     extends _$NewSeriesDatabaseEventCopyWithImpl<$Res>
-    implements $BackButtonPressedCopyWith<$Res> {
-  _$BackButtonPressedCopyWithImpl(
-      BackButtonPressed _value, $Res Function(BackButtonPressed) _then)
-      : super(_value, (v) => _then(v as BackButtonPressed));
+    implements $ContinueButtonPressedCopyWith<$Res> {
+  _$ContinueButtonPressedCopyWithImpl(
+      ContinueButtonPressed _value, $Res Function(ContinueButtonPressed) _then)
+      : super(_value, (v) => _then(v as ContinueButtonPressed));
 
   @override
-  BackButtonPressed get _value => super._value as BackButtonPressed;
+  ContinueButtonPressed get _value => super._value as ContinueButtonPressed;
 }
 
-class _$BackButtonPressed implements BackButtonPressed {
-  const _$BackButtonPressed();
+class _$ContinueButtonPressed implements ContinueButtonPressed {
+  const _$ContinueButtonPressed();
 
   @override
   String toString() {
-    return 'NewSeriesDatabaseEvent.backButtonPressed()';
+    return 'NewSeriesDatabaseEvent.continueButtonPressed()';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is BackButtonPressed);
+    return identical(this, other) || (other is ContinueButtonPressed);
   }
 
   @override
@@ -348,7 +348,7 @@ class _$BackButtonPressed implements BackButtonPressed {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result newSeriesPageLaunched(SeriesDraft seriesDraft),
-    @required Result backButtonPressed(),
+    @required Result continueButtonPressed(),
     @required Result titleChanged(String title),
     @required Result descriptionChanged(String description),
     @required Result characterChanged(String name),
@@ -359,7 +359,7 @@ class _$BackButtonPressed implements BackButtonPressed {
     @required Result copyrightSelected(String copyright),
   }) {
     assert(newSeriesPageLaunched != null);
-    assert(backButtonPressed != null);
+    assert(continueButtonPressed != null);
     assert(titleChanged != null);
     assert(descriptionChanged != null);
     assert(characterChanged != null);
@@ -368,14 +368,14 @@ class _$BackButtonPressed implements BackButtonPressed {
     assert(genreSelected != null);
     assert(languageSelected != null);
     assert(copyrightSelected != null);
-    return backButtonPressed();
+    return continueButtonPressed();
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result newSeriesPageLaunched(SeriesDraft seriesDraft),
-    Result backButtonPressed(),
+    Result continueButtonPressed(),
     Result titleChanged(String title),
     Result descriptionChanged(String description),
     Result characterChanged(String name),
@@ -387,8 +387,8 @@ class _$BackButtonPressed implements BackButtonPressed {
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (backButtonPressed != null) {
-      return backButtonPressed();
+    if (continueButtonPressed != null) {
+      return continueButtonPressed();
     }
     return orElse();
   }
@@ -397,7 +397,7 @@ class _$BackButtonPressed implements BackButtonPressed {
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result newSeriesPageLaunched(NewSeriesPageLaunched value),
-    @required Result backButtonPressed(BackButtonPressed value),
+    @required Result continueButtonPressed(ContinueButtonPressed value),
     @required Result titleChanged(TitleChanged value),
     @required Result descriptionChanged(DescriptionChanged value),
     @required Result characterChanged(CharacterChanged value),
@@ -409,7 +409,7 @@ class _$BackButtonPressed implements BackButtonPressed {
     @required Result copyrightSelected(CopyrightSelected value),
   }) {
     assert(newSeriesPageLaunched != null);
-    assert(backButtonPressed != null);
+    assert(continueButtonPressed != null);
     assert(titleChanged != null);
     assert(descriptionChanged != null);
     assert(characterChanged != null);
@@ -418,14 +418,14 @@ class _$BackButtonPressed implements BackButtonPressed {
     assert(genreSelected != null);
     assert(languageSelected != null);
     assert(copyrightSelected != null);
-    return backButtonPressed(this);
+    return continueButtonPressed(this);
   }
 
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result newSeriesPageLaunched(NewSeriesPageLaunched value),
-    Result backButtonPressed(BackButtonPressed value),
+    Result continueButtonPressed(ContinueButtonPressed value),
     Result titleChanged(TitleChanged value),
     Result descriptionChanged(DescriptionChanged value),
     Result characterChanged(CharacterChanged value),
@@ -437,15 +437,15 @@ class _$BackButtonPressed implements BackButtonPressed {
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (backButtonPressed != null) {
-      return backButtonPressed(this);
+    if (continueButtonPressed != null) {
+      return continueButtonPressed(this);
     }
     return orElse();
   }
 }
 
-abstract class BackButtonPressed implements NewSeriesDatabaseEvent {
-  const factory BackButtonPressed() = _$BackButtonPressed;
+abstract class ContinueButtonPressed implements NewSeriesDatabaseEvent {
+  const factory ContinueButtonPressed() = _$ContinueButtonPressed;
 }
 
 abstract class $TitleChangedCopyWith<$Res> {
@@ -506,7 +506,7 @@ class _$TitleChanged implements TitleChanged {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result newSeriesPageLaunched(SeriesDraft seriesDraft),
-    @required Result backButtonPressed(),
+    @required Result continueButtonPressed(),
     @required Result titleChanged(String title),
     @required Result descriptionChanged(String description),
     @required Result characterChanged(String name),
@@ -517,7 +517,7 @@ class _$TitleChanged implements TitleChanged {
     @required Result copyrightSelected(String copyright),
   }) {
     assert(newSeriesPageLaunched != null);
-    assert(backButtonPressed != null);
+    assert(continueButtonPressed != null);
     assert(titleChanged != null);
     assert(descriptionChanged != null);
     assert(characterChanged != null);
@@ -533,7 +533,7 @@ class _$TitleChanged implements TitleChanged {
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result newSeriesPageLaunched(SeriesDraft seriesDraft),
-    Result backButtonPressed(),
+    Result continueButtonPressed(),
     Result titleChanged(String title),
     Result descriptionChanged(String description),
     Result characterChanged(String name),
@@ -555,7 +555,7 @@ class _$TitleChanged implements TitleChanged {
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result newSeriesPageLaunched(NewSeriesPageLaunched value),
-    @required Result backButtonPressed(BackButtonPressed value),
+    @required Result continueButtonPressed(ContinueButtonPressed value),
     @required Result titleChanged(TitleChanged value),
     @required Result descriptionChanged(DescriptionChanged value),
     @required Result characterChanged(CharacterChanged value),
@@ -567,7 +567,7 @@ class _$TitleChanged implements TitleChanged {
     @required Result copyrightSelected(CopyrightSelected value),
   }) {
     assert(newSeriesPageLaunched != null);
-    assert(backButtonPressed != null);
+    assert(continueButtonPressed != null);
     assert(titleChanged != null);
     assert(descriptionChanged != null);
     assert(characterChanged != null);
@@ -583,7 +583,7 @@ class _$TitleChanged implements TitleChanged {
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result newSeriesPageLaunched(NewSeriesPageLaunched value),
-    Result backButtonPressed(BackButtonPressed value),
+    Result continueButtonPressed(ContinueButtonPressed value),
     Result titleChanged(TitleChanged value),
     Result descriptionChanged(DescriptionChanged value),
     Result characterChanged(CharacterChanged value),
@@ -668,7 +668,7 @@ class _$DescriptionChanged implements DescriptionChanged {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result newSeriesPageLaunched(SeriesDraft seriesDraft),
-    @required Result backButtonPressed(),
+    @required Result continueButtonPressed(),
     @required Result titleChanged(String title),
     @required Result descriptionChanged(String description),
     @required Result characterChanged(String name),
@@ -679,7 +679,7 @@ class _$DescriptionChanged implements DescriptionChanged {
     @required Result copyrightSelected(String copyright),
   }) {
     assert(newSeriesPageLaunched != null);
-    assert(backButtonPressed != null);
+    assert(continueButtonPressed != null);
     assert(titleChanged != null);
     assert(descriptionChanged != null);
     assert(characterChanged != null);
@@ -695,7 +695,7 @@ class _$DescriptionChanged implements DescriptionChanged {
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result newSeriesPageLaunched(SeriesDraft seriesDraft),
-    Result backButtonPressed(),
+    Result continueButtonPressed(),
     Result titleChanged(String title),
     Result descriptionChanged(String description),
     Result characterChanged(String name),
@@ -717,7 +717,7 @@ class _$DescriptionChanged implements DescriptionChanged {
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result newSeriesPageLaunched(NewSeriesPageLaunched value),
-    @required Result backButtonPressed(BackButtonPressed value),
+    @required Result continueButtonPressed(ContinueButtonPressed value),
     @required Result titleChanged(TitleChanged value),
     @required Result descriptionChanged(DescriptionChanged value),
     @required Result characterChanged(CharacterChanged value),
@@ -729,7 +729,7 @@ class _$DescriptionChanged implements DescriptionChanged {
     @required Result copyrightSelected(CopyrightSelected value),
   }) {
     assert(newSeriesPageLaunched != null);
-    assert(backButtonPressed != null);
+    assert(continueButtonPressed != null);
     assert(titleChanged != null);
     assert(descriptionChanged != null);
     assert(characterChanged != null);
@@ -745,7 +745,7 @@ class _$DescriptionChanged implements DescriptionChanged {
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result newSeriesPageLaunched(NewSeriesPageLaunched value),
-    Result backButtonPressed(BackButtonPressed value),
+    Result continueButtonPressed(ContinueButtonPressed value),
     Result titleChanged(TitleChanged value),
     Result descriptionChanged(DescriptionChanged value),
     Result characterChanged(CharacterChanged value),
@@ -829,7 +829,7 @@ class _$CharacterChanged implements CharacterChanged {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result newSeriesPageLaunched(SeriesDraft seriesDraft),
-    @required Result backButtonPressed(),
+    @required Result continueButtonPressed(),
     @required Result titleChanged(String title),
     @required Result descriptionChanged(String description),
     @required Result characterChanged(String name),
@@ -840,7 +840,7 @@ class _$CharacterChanged implements CharacterChanged {
     @required Result copyrightSelected(String copyright),
   }) {
     assert(newSeriesPageLaunched != null);
-    assert(backButtonPressed != null);
+    assert(continueButtonPressed != null);
     assert(titleChanged != null);
     assert(descriptionChanged != null);
     assert(characterChanged != null);
@@ -856,7 +856,7 @@ class _$CharacterChanged implements CharacterChanged {
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result newSeriesPageLaunched(SeriesDraft seriesDraft),
-    Result backButtonPressed(),
+    Result continueButtonPressed(),
     Result titleChanged(String title),
     Result descriptionChanged(String description),
     Result characterChanged(String name),
@@ -878,7 +878,7 @@ class _$CharacterChanged implements CharacterChanged {
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result newSeriesPageLaunched(NewSeriesPageLaunched value),
-    @required Result backButtonPressed(BackButtonPressed value),
+    @required Result continueButtonPressed(ContinueButtonPressed value),
     @required Result titleChanged(TitleChanged value),
     @required Result descriptionChanged(DescriptionChanged value),
     @required Result characterChanged(CharacterChanged value),
@@ -890,7 +890,7 @@ class _$CharacterChanged implements CharacterChanged {
     @required Result copyrightSelected(CopyrightSelected value),
   }) {
     assert(newSeriesPageLaunched != null);
-    assert(backButtonPressed != null);
+    assert(continueButtonPressed != null);
     assert(titleChanged != null);
     assert(descriptionChanged != null);
     assert(characterChanged != null);
@@ -906,7 +906,7 @@ class _$CharacterChanged implements CharacterChanged {
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result newSeriesPageLaunched(NewSeriesPageLaunched value),
-    Result backButtonPressed(BackButtonPressed value),
+    Result continueButtonPressed(ContinueButtonPressed value),
     Result titleChanged(TitleChanged value),
     Result descriptionChanged(DescriptionChanged value),
     Result characterChanged(CharacterChanged value),
@@ -970,7 +970,7 @@ class _$AddCharacterButtonPressed implements AddCharacterButtonPressed {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result newSeriesPageLaunched(SeriesDraft seriesDraft),
-    @required Result backButtonPressed(),
+    @required Result continueButtonPressed(),
     @required Result titleChanged(String title),
     @required Result descriptionChanged(String description),
     @required Result characterChanged(String name),
@@ -981,7 +981,7 @@ class _$AddCharacterButtonPressed implements AddCharacterButtonPressed {
     @required Result copyrightSelected(String copyright),
   }) {
     assert(newSeriesPageLaunched != null);
-    assert(backButtonPressed != null);
+    assert(continueButtonPressed != null);
     assert(titleChanged != null);
     assert(descriptionChanged != null);
     assert(characterChanged != null);
@@ -997,7 +997,7 @@ class _$AddCharacterButtonPressed implements AddCharacterButtonPressed {
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result newSeriesPageLaunched(SeriesDraft seriesDraft),
-    Result backButtonPressed(),
+    Result continueButtonPressed(),
     Result titleChanged(String title),
     Result descriptionChanged(String description),
     Result characterChanged(String name),
@@ -1019,7 +1019,7 @@ class _$AddCharacterButtonPressed implements AddCharacterButtonPressed {
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result newSeriesPageLaunched(NewSeriesPageLaunched value),
-    @required Result backButtonPressed(BackButtonPressed value),
+    @required Result continueButtonPressed(ContinueButtonPressed value),
     @required Result titleChanged(TitleChanged value),
     @required Result descriptionChanged(DescriptionChanged value),
     @required Result characterChanged(CharacterChanged value),
@@ -1031,7 +1031,7 @@ class _$AddCharacterButtonPressed implements AddCharacterButtonPressed {
     @required Result copyrightSelected(CopyrightSelected value),
   }) {
     assert(newSeriesPageLaunched != null);
-    assert(backButtonPressed != null);
+    assert(continueButtonPressed != null);
     assert(titleChanged != null);
     assert(descriptionChanged != null);
     assert(characterChanged != null);
@@ -1047,7 +1047,7 @@ class _$AddCharacterButtonPressed implements AddCharacterButtonPressed {
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result newSeriesPageLaunched(NewSeriesPageLaunched value),
-    Result backButtonPressed(BackButtonPressed value),
+    Result continueButtonPressed(ContinueButtonPressed value),
     Result titleChanged(TitleChanged value),
     Result descriptionChanged(DescriptionChanged value),
     Result characterChanged(CharacterChanged value),
@@ -1132,7 +1132,7 @@ class _$RemoveCharacterButtonPressed implements RemoveCharacterButtonPressed {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result newSeriesPageLaunched(SeriesDraft seriesDraft),
-    @required Result backButtonPressed(),
+    @required Result continueButtonPressed(),
     @required Result titleChanged(String title),
     @required Result descriptionChanged(String description),
     @required Result characterChanged(String name),
@@ -1143,7 +1143,7 @@ class _$RemoveCharacterButtonPressed implements RemoveCharacterButtonPressed {
     @required Result copyrightSelected(String copyright),
   }) {
     assert(newSeriesPageLaunched != null);
-    assert(backButtonPressed != null);
+    assert(continueButtonPressed != null);
     assert(titleChanged != null);
     assert(descriptionChanged != null);
     assert(characterChanged != null);
@@ -1159,7 +1159,7 @@ class _$RemoveCharacterButtonPressed implements RemoveCharacterButtonPressed {
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result newSeriesPageLaunched(SeriesDraft seriesDraft),
-    Result backButtonPressed(),
+    Result continueButtonPressed(),
     Result titleChanged(String title),
     Result descriptionChanged(String description),
     Result characterChanged(String name),
@@ -1181,7 +1181,7 @@ class _$RemoveCharacterButtonPressed implements RemoveCharacterButtonPressed {
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result newSeriesPageLaunched(NewSeriesPageLaunched value),
-    @required Result backButtonPressed(BackButtonPressed value),
+    @required Result continueButtonPressed(ContinueButtonPressed value),
     @required Result titleChanged(TitleChanged value),
     @required Result descriptionChanged(DescriptionChanged value),
     @required Result characterChanged(CharacterChanged value),
@@ -1193,7 +1193,7 @@ class _$RemoveCharacterButtonPressed implements RemoveCharacterButtonPressed {
     @required Result copyrightSelected(CopyrightSelected value),
   }) {
     assert(newSeriesPageLaunched != null);
-    assert(backButtonPressed != null);
+    assert(continueButtonPressed != null);
     assert(titleChanged != null);
     assert(descriptionChanged != null);
     assert(characterChanged != null);
@@ -1209,7 +1209,7 @@ class _$RemoveCharacterButtonPressed implements RemoveCharacterButtonPressed {
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result newSeriesPageLaunched(NewSeriesPageLaunched value),
-    Result backButtonPressed(BackButtonPressed value),
+    Result continueButtonPressed(ContinueButtonPressed value),
     Result titleChanged(TitleChanged value),
     Result descriptionChanged(DescriptionChanged value),
     Result characterChanged(CharacterChanged value),
@@ -1295,7 +1295,7 @@ class _$GenreSelected implements GenreSelected {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result newSeriesPageLaunched(SeriesDraft seriesDraft),
-    @required Result backButtonPressed(),
+    @required Result continueButtonPressed(),
     @required Result titleChanged(String title),
     @required Result descriptionChanged(String description),
     @required Result characterChanged(String name),
@@ -1306,7 +1306,7 @@ class _$GenreSelected implements GenreSelected {
     @required Result copyrightSelected(String copyright),
   }) {
     assert(newSeriesPageLaunched != null);
-    assert(backButtonPressed != null);
+    assert(continueButtonPressed != null);
     assert(titleChanged != null);
     assert(descriptionChanged != null);
     assert(characterChanged != null);
@@ -1322,7 +1322,7 @@ class _$GenreSelected implements GenreSelected {
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result newSeriesPageLaunched(SeriesDraft seriesDraft),
-    Result backButtonPressed(),
+    Result continueButtonPressed(),
     Result titleChanged(String title),
     Result descriptionChanged(String description),
     Result characterChanged(String name),
@@ -1344,7 +1344,7 @@ class _$GenreSelected implements GenreSelected {
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result newSeriesPageLaunched(NewSeriesPageLaunched value),
-    @required Result backButtonPressed(BackButtonPressed value),
+    @required Result continueButtonPressed(ContinueButtonPressed value),
     @required Result titleChanged(TitleChanged value),
     @required Result descriptionChanged(DescriptionChanged value),
     @required Result characterChanged(CharacterChanged value),
@@ -1356,7 +1356,7 @@ class _$GenreSelected implements GenreSelected {
     @required Result copyrightSelected(CopyrightSelected value),
   }) {
     assert(newSeriesPageLaunched != null);
-    assert(backButtonPressed != null);
+    assert(continueButtonPressed != null);
     assert(titleChanged != null);
     assert(descriptionChanged != null);
     assert(characterChanged != null);
@@ -1372,7 +1372,7 @@ class _$GenreSelected implements GenreSelected {
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result newSeriesPageLaunched(NewSeriesPageLaunched value),
-    Result backButtonPressed(BackButtonPressed value),
+    Result continueButtonPressed(ContinueButtonPressed value),
     Result titleChanged(TitleChanged value),
     Result descriptionChanged(DescriptionChanged value),
     Result characterChanged(CharacterChanged value),
@@ -1457,7 +1457,7 @@ class _$LanguageSelected implements LanguageSelected {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result newSeriesPageLaunched(SeriesDraft seriesDraft),
-    @required Result backButtonPressed(),
+    @required Result continueButtonPressed(),
     @required Result titleChanged(String title),
     @required Result descriptionChanged(String description),
     @required Result characterChanged(String name),
@@ -1468,7 +1468,7 @@ class _$LanguageSelected implements LanguageSelected {
     @required Result copyrightSelected(String copyright),
   }) {
     assert(newSeriesPageLaunched != null);
-    assert(backButtonPressed != null);
+    assert(continueButtonPressed != null);
     assert(titleChanged != null);
     assert(descriptionChanged != null);
     assert(characterChanged != null);
@@ -1484,7 +1484,7 @@ class _$LanguageSelected implements LanguageSelected {
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result newSeriesPageLaunched(SeriesDraft seriesDraft),
-    Result backButtonPressed(),
+    Result continueButtonPressed(),
     Result titleChanged(String title),
     Result descriptionChanged(String description),
     Result characterChanged(String name),
@@ -1506,7 +1506,7 @@ class _$LanguageSelected implements LanguageSelected {
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result newSeriesPageLaunched(NewSeriesPageLaunched value),
-    @required Result backButtonPressed(BackButtonPressed value),
+    @required Result continueButtonPressed(ContinueButtonPressed value),
     @required Result titleChanged(TitleChanged value),
     @required Result descriptionChanged(DescriptionChanged value),
     @required Result characterChanged(CharacterChanged value),
@@ -1518,7 +1518,7 @@ class _$LanguageSelected implements LanguageSelected {
     @required Result copyrightSelected(CopyrightSelected value),
   }) {
     assert(newSeriesPageLaunched != null);
-    assert(backButtonPressed != null);
+    assert(continueButtonPressed != null);
     assert(titleChanged != null);
     assert(descriptionChanged != null);
     assert(characterChanged != null);
@@ -1534,7 +1534,7 @@ class _$LanguageSelected implements LanguageSelected {
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result newSeriesPageLaunched(NewSeriesPageLaunched value),
-    Result backButtonPressed(BackButtonPressed value),
+    Result continueButtonPressed(ContinueButtonPressed value),
     Result titleChanged(TitleChanged value),
     Result descriptionChanged(DescriptionChanged value),
     Result characterChanged(CharacterChanged value),
@@ -1619,7 +1619,7 @@ class _$CopyrightSelected implements CopyrightSelected {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result newSeriesPageLaunched(SeriesDraft seriesDraft),
-    @required Result backButtonPressed(),
+    @required Result continueButtonPressed(),
     @required Result titleChanged(String title),
     @required Result descriptionChanged(String description),
     @required Result characterChanged(String name),
@@ -1630,7 +1630,7 @@ class _$CopyrightSelected implements CopyrightSelected {
     @required Result copyrightSelected(String copyright),
   }) {
     assert(newSeriesPageLaunched != null);
-    assert(backButtonPressed != null);
+    assert(continueButtonPressed != null);
     assert(titleChanged != null);
     assert(descriptionChanged != null);
     assert(characterChanged != null);
@@ -1646,7 +1646,7 @@ class _$CopyrightSelected implements CopyrightSelected {
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result newSeriesPageLaunched(SeriesDraft seriesDraft),
-    Result backButtonPressed(),
+    Result continueButtonPressed(),
     Result titleChanged(String title),
     Result descriptionChanged(String description),
     Result characterChanged(String name),
@@ -1668,7 +1668,7 @@ class _$CopyrightSelected implements CopyrightSelected {
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result newSeriesPageLaunched(NewSeriesPageLaunched value),
-    @required Result backButtonPressed(BackButtonPressed value),
+    @required Result continueButtonPressed(ContinueButtonPressed value),
     @required Result titleChanged(TitleChanged value),
     @required Result descriptionChanged(DescriptionChanged value),
     @required Result characterChanged(CharacterChanged value),
@@ -1680,7 +1680,7 @@ class _$CopyrightSelected implements CopyrightSelected {
     @required Result copyrightSelected(CopyrightSelected value),
   }) {
     assert(newSeriesPageLaunched != null);
-    assert(backButtonPressed != null);
+    assert(continueButtonPressed != null);
     assert(titleChanged != null);
     assert(descriptionChanged != null);
     assert(characterChanged != null);
@@ -1696,7 +1696,7 @@ class _$CopyrightSelected implements CopyrightSelected {
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result newSeriesPageLaunched(NewSeriesPageLaunched value),
-    Result backButtonPressed(BackButtonPressed value),
+    Result continueButtonPressed(ContinueButtonPressed value),
     Result titleChanged(TitleChanged value),
     Result descriptionChanged(DescriptionChanged value),
     Result characterChanged(CharacterChanged value),
@@ -1729,22 +1729,30 @@ class _$NewSeriesDatabaseStateTearOff {
       {@required SeriesDraft seriesDraft,
       @required String uid,
       @required String authorUid,
-      @required Genre genre,
-      @required String selectedGenre,
       @required Title title,
       @required Description description,
       @required Character character,
-      @required List<String> characters}) {
+      @required List<String> characters,
+      @required Genre genre,
+      @required String selectedGenre,
+      @required Language language,
+      @required String selectedLanguage,
+      @required Copyright copyright,
+      @required String selectedCopyright}) {
     return _NewSeriesDatabaseState(
       seriesDraft: seriesDraft,
       uid: uid,
       authorUid: authorUid,
-      genre: genre,
-      selectedGenre: selectedGenre,
       title: title,
       description: description,
       character: character,
       characters: characters,
+      genre: genre,
+      selectedGenre: selectedGenre,
+      language: language,
+      selectedLanguage: selectedLanguage,
+      copyright: copyright,
+      selectedCopyright: selectedCopyright,
     );
   }
 }
@@ -1756,12 +1764,16 @@ mixin _$NewSeriesDatabaseState {
   SeriesDraft get seriesDraft;
   String get uid;
   String get authorUid;
-  Genre get genre;
-  String get selectedGenre;
   Title get title;
   Description get description;
   Character get character;
   List<String> get characters;
+  Genre get genre;
+  String get selectedGenre;
+  Language get language;
+  String get selectedLanguage;
+  Copyright get copyright;
+  String get selectedCopyright;
 
   $NewSeriesDatabaseStateCopyWith<NewSeriesDatabaseState> get copyWith;
 }
@@ -1774,12 +1786,16 @@ abstract class $NewSeriesDatabaseStateCopyWith<$Res> {
       {SeriesDraft seriesDraft,
       String uid,
       String authorUid,
-      Genre genre,
-      String selectedGenre,
       Title title,
       Description description,
       Character character,
-      List<String> characters});
+      List<String> characters,
+      Genre genre,
+      String selectedGenre,
+      Language language,
+      String selectedLanguage,
+      Copyright copyright,
+      String selectedCopyright});
 }
 
 class _$NewSeriesDatabaseStateCopyWithImpl<$Res>
@@ -1795,12 +1811,16 @@ class _$NewSeriesDatabaseStateCopyWithImpl<$Res>
     Object seriesDraft = freezed,
     Object uid = freezed,
     Object authorUid = freezed,
-    Object genre = freezed,
-    Object selectedGenre = freezed,
     Object title = freezed,
     Object description = freezed,
     Object character = freezed,
     Object characters = freezed,
+    Object genre = freezed,
+    Object selectedGenre = freezed,
+    Object language = freezed,
+    Object selectedLanguage = freezed,
+    Object copyright = freezed,
+    Object selectedCopyright = freezed,
   }) {
     return _then(_value.copyWith(
       seriesDraft: seriesDraft == freezed
@@ -1808,10 +1828,6 @@ class _$NewSeriesDatabaseStateCopyWithImpl<$Res>
           : seriesDraft as SeriesDraft,
       uid: uid == freezed ? _value.uid : uid as String,
       authorUid: authorUid == freezed ? _value.authorUid : authorUid as String,
-      genre: genre == freezed ? _value.genre : genre as Genre,
-      selectedGenre: selectedGenre == freezed
-          ? _value.selectedGenre
-          : selectedGenre as String,
       title: title == freezed ? _value.title : title as Title,
       description: description == freezed
           ? _value.description
@@ -1821,6 +1837,19 @@ class _$NewSeriesDatabaseStateCopyWithImpl<$Res>
       characters: characters == freezed
           ? _value.characters
           : characters as List<String>,
+      genre: genre == freezed ? _value.genre : genre as Genre,
+      selectedGenre: selectedGenre == freezed
+          ? _value.selectedGenre
+          : selectedGenre as String,
+      language: language == freezed ? _value.language : language as Language,
+      selectedLanguage: selectedLanguage == freezed
+          ? _value.selectedLanguage
+          : selectedLanguage as String,
+      copyright:
+          copyright == freezed ? _value.copyright : copyright as Copyright,
+      selectedCopyright: selectedCopyright == freezed
+          ? _value.selectedCopyright
+          : selectedCopyright as String,
     ));
   }
 }
@@ -1835,12 +1864,16 @@ abstract class _$NewSeriesDatabaseStateCopyWith<$Res>
       {SeriesDraft seriesDraft,
       String uid,
       String authorUid,
-      Genre genre,
-      String selectedGenre,
       Title title,
       Description description,
       Character character,
-      List<String> characters});
+      List<String> characters,
+      Genre genre,
+      String selectedGenre,
+      Language language,
+      String selectedLanguage,
+      Copyright copyright,
+      String selectedCopyright});
 }
 
 class __$NewSeriesDatabaseStateCopyWithImpl<$Res>
@@ -1858,12 +1891,16 @@ class __$NewSeriesDatabaseStateCopyWithImpl<$Res>
     Object seriesDraft = freezed,
     Object uid = freezed,
     Object authorUid = freezed,
-    Object genre = freezed,
-    Object selectedGenre = freezed,
     Object title = freezed,
     Object description = freezed,
     Object character = freezed,
     Object characters = freezed,
+    Object genre = freezed,
+    Object selectedGenre = freezed,
+    Object language = freezed,
+    Object selectedLanguage = freezed,
+    Object copyright = freezed,
+    Object selectedCopyright = freezed,
   }) {
     return _then(_NewSeriesDatabaseState(
       seriesDraft: seriesDraft == freezed
@@ -1871,10 +1908,6 @@ class __$NewSeriesDatabaseStateCopyWithImpl<$Res>
           : seriesDraft as SeriesDraft,
       uid: uid == freezed ? _value.uid : uid as String,
       authorUid: authorUid == freezed ? _value.authorUid : authorUid as String,
-      genre: genre == freezed ? _value.genre : genre as Genre,
-      selectedGenre: selectedGenre == freezed
-          ? _value.selectedGenre
-          : selectedGenre as String,
       title: title == freezed ? _value.title : title as Title,
       description: description == freezed
           ? _value.description
@@ -1884,6 +1917,19 @@ class __$NewSeriesDatabaseStateCopyWithImpl<$Res>
       characters: characters == freezed
           ? _value.characters
           : characters as List<String>,
+      genre: genre == freezed ? _value.genre : genre as Genre,
+      selectedGenre: selectedGenre == freezed
+          ? _value.selectedGenre
+          : selectedGenre as String,
+      language: language == freezed ? _value.language : language as Language,
+      selectedLanguage: selectedLanguage == freezed
+          ? _value.selectedLanguage
+          : selectedLanguage as String,
+      copyright:
+          copyright == freezed ? _value.copyright : copyright as Copyright,
+      selectedCopyright: selectedCopyright == freezed
+          ? _value.selectedCopyright
+          : selectedCopyright as String,
     ));
   }
 }
@@ -1893,21 +1939,29 @@ class _$_NewSeriesDatabaseState implements _NewSeriesDatabaseState {
       {@required this.seriesDraft,
       @required this.uid,
       @required this.authorUid,
-      @required this.genre,
-      @required this.selectedGenre,
       @required this.title,
       @required this.description,
       @required this.character,
-      @required this.characters})
+      @required this.characters,
+      @required this.genre,
+      @required this.selectedGenre,
+      @required this.language,
+      @required this.selectedLanguage,
+      @required this.copyright,
+      @required this.selectedCopyright})
       : assert(seriesDraft != null),
         assert(uid != null),
         assert(authorUid != null),
-        assert(genre != null),
-        assert(selectedGenre != null),
         assert(title != null),
         assert(description != null),
         assert(character != null),
-        assert(characters != null);
+        assert(characters != null),
+        assert(genre != null),
+        assert(selectedGenre != null),
+        assert(language != null),
+        assert(selectedLanguage != null),
+        assert(copyright != null),
+        assert(selectedCopyright != null);
 
   @override
   final SeriesDraft seriesDraft;
@@ -1916,10 +1970,6 @@ class _$_NewSeriesDatabaseState implements _NewSeriesDatabaseState {
   @override
   final String authorUid;
   @override
-  final Genre genre;
-  @override
-  final String selectedGenre;
-  @override
   final Title title;
   @override
   final Description description;
@@ -1927,10 +1977,22 @@ class _$_NewSeriesDatabaseState implements _NewSeriesDatabaseState {
   final Character character;
   @override
   final List<String> characters;
+  @override
+  final Genre genre;
+  @override
+  final String selectedGenre;
+  @override
+  final Language language;
+  @override
+  final String selectedLanguage;
+  @override
+  final Copyright copyright;
+  @override
+  final String selectedCopyright;
 
   @override
   String toString() {
-    return 'NewSeriesDatabaseState(seriesDraft: $seriesDraft, uid: $uid, authorUid: $authorUid, genre: $genre, selectedGenre: $selectedGenre, title: $title, description: $description, character: $character, characters: $characters)';
+    return 'NewSeriesDatabaseState(seriesDraft: $seriesDraft, uid: $uid, authorUid: $authorUid, title: $title, description: $description, character: $character, characters: $characters, genre: $genre, selectedGenre: $selectedGenre, language: $language, selectedLanguage: $selectedLanguage, copyright: $copyright, selectedCopyright: $selectedCopyright)';
   }
 
   @override
@@ -1945,11 +2007,6 @@ class _$_NewSeriesDatabaseState implements _NewSeriesDatabaseState {
             (identical(other.authorUid, authorUid) ||
                 const DeepCollectionEquality()
                     .equals(other.authorUid, authorUid)) &&
-            (identical(other.genre, genre) ||
-                const DeepCollectionEquality().equals(other.genre, genre)) &&
-            (identical(other.selectedGenre, selectedGenre) ||
-                const DeepCollectionEquality()
-                    .equals(other.selectedGenre, selectedGenre)) &&
             (identical(other.title, title) ||
                 const DeepCollectionEquality().equals(other.title, title)) &&
             (identical(other.description, description) ||
@@ -1960,7 +2017,24 @@ class _$_NewSeriesDatabaseState implements _NewSeriesDatabaseState {
                     .equals(other.character, character)) &&
             (identical(other.characters, characters) ||
                 const DeepCollectionEquality()
-                    .equals(other.characters, characters)));
+                    .equals(other.characters, characters)) &&
+            (identical(other.genre, genre) ||
+                const DeepCollectionEquality().equals(other.genre, genre)) &&
+            (identical(other.selectedGenre, selectedGenre) ||
+                const DeepCollectionEquality()
+                    .equals(other.selectedGenre, selectedGenre)) &&
+            (identical(other.language, language) ||
+                const DeepCollectionEquality()
+                    .equals(other.language, language)) &&
+            (identical(other.selectedLanguage, selectedLanguage) ||
+                const DeepCollectionEquality()
+                    .equals(other.selectedLanguage, selectedLanguage)) &&
+            (identical(other.copyright, copyright) ||
+                const DeepCollectionEquality()
+                    .equals(other.copyright, copyright)) &&
+            (identical(other.selectedCopyright, selectedCopyright) ||
+                const DeepCollectionEquality()
+                    .equals(other.selectedCopyright, selectedCopyright)));
   }
 
   @override
@@ -1969,12 +2043,16 @@ class _$_NewSeriesDatabaseState implements _NewSeriesDatabaseState {
       const DeepCollectionEquality().hash(seriesDraft) ^
       const DeepCollectionEquality().hash(uid) ^
       const DeepCollectionEquality().hash(authorUid) ^
-      const DeepCollectionEquality().hash(genre) ^
-      const DeepCollectionEquality().hash(selectedGenre) ^
       const DeepCollectionEquality().hash(title) ^
       const DeepCollectionEquality().hash(description) ^
       const DeepCollectionEquality().hash(character) ^
-      const DeepCollectionEquality().hash(characters);
+      const DeepCollectionEquality().hash(characters) ^
+      const DeepCollectionEquality().hash(genre) ^
+      const DeepCollectionEquality().hash(selectedGenre) ^
+      const DeepCollectionEquality().hash(language) ^
+      const DeepCollectionEquality().hash(selectedLanguage) ^
+      const DeepCollectionEquality().hash(copyright) ^
+      const DeepCollectionEquality().hash(selectedCopyright);
 
   @override
   _$NewSeriesDatabaseStateCopyWith<_NewSeriesDatabaseState> get copyWith =>
@@ -1987,12 +2065,16 @@ abstract class _NewSeriesDatabaseState implements NewSeriesDatabaseState {
       {@required SeriesDraft seriesDraft,
       @required String uid,
       @required String authorUid,
-      @required Genre genre,
-      @required String selectedGenre,
       @required Title title,
       @required Description description,
       @required Character character,
-      @required List<String> characters}) = _$_NewSeriesDatabaseState;
+      @required List<String> characters,
+      @required Genre genre,
+      @required String selectedGenre,
+      @required Language language,
+      @required String selectedLanguage,
+      @required Copyright copyright,
+      @required String selectedCopyright}) = _$_NewSeriesDatabaseState;
 
   @override
   SeriesDraft get seriesDraft;
@@ -2001,10 +2083,6 @@ abstract class _NewSeriesDatabaseState implements NewSeriesDatabaseState {
   @override
   String get authorUid;
   @override
-  Genre get genre;
-  @override
-  String get selectedGenre;
-  @override
   Title get title;
   @override
   Description get description;
@@ -2012,6 +2090,18 @@ abstract class _NewSeriesDatabaseState implements NewSeriesDatabaseState {
   Character get character;
   @override
   List<String> get characters;
+  @override
+  Genre get genre;
+  @override
+  String get selectedGenre;
+  @override
+  Language get language;
+  @override
+  String get selectedLanguage;
+  @override
+  Copyright get copyright;
+  @override
+  String get selectedCopyright;
   @override
   _$NewSeriesDatabaseStateCopyWith<_NewSeriesDatabaseState> get copyWith;
 }

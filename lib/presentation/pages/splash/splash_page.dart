@@ -5,7 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:sailor/sailor.dart';
 import 'package:wine/application/authentication/splash/splash_authentication_bloc.dart';
 import 'package:wine/application/database/splash/splash_database_bloc.dart';
-import 'package:wine/presentation/pages/splash/widgets/copyright.dart';
+import 'package:wine/presentation/pages/splash/widgets/splash_copyright.dart';
 import 'package:wine/presentation/widgets/custom_show_dialog.dart';
 import 'package:wine/presentation/widgets/error_dialog.dart';
 import 'package:wine/routes.dart';
@@ -129,7 +129,7 @@ class _SplashPageState extends State<SplashPage> {
                   padding: const EdgeInsets.only(bottom: 25.0),
                   child: Align(
                     alignment: Alignment.bottomCenter,
-                    child: Copyright(),
+                    child: SplashCopyright(),
                   ),
                 ),
               ],
