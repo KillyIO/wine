@@ -21,6 +21,9 @@ class Constants {
 
   static const String newSeriesRoute = '/series/new';
 
+  static const String genresRoute = '/genres';
+  static const String copyrightsRoute = '/copyrights';
+
   // SECTION series limits
   static const int seriesDescriptionMinWords = 100;
   static const int seriesDescriptionMaxWords = 200;

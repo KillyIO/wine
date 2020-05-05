@@ -1,11 +1,13 @@
 import 'package:flutter/animation.dart';
 import 'package:sailor/sailor.dart';
 import 'package:wine/presentation/pages/account/index.dart';
+import 'package:wine/presentation/pages/copyrights/copyrights_page.dart';
+import 'package:wine/presentation/pages/genres/genres_page.dart';
 import 'package:wine/presentation/pages/home/index.dart';
 import 'package:wine/presentation/pages/new_series/new_series_page.dart';
-import 'package:wine/presentation/pages/series/index.dart';
 import 'package:wine/presentation/pages/settings/settings_page.dart';
 import 'package:wine/presentation/pages/splash/splash_page.dart';
+import 'package:wine/utils/arguments.dart';
 import 'package:wine/utils/constants.dart';
 
 final Sailor sailor = Sailor();
@@ -62,14 +64,30 @@ void createRoutes() {
       name: Constants.verifyEmailRoute,
       builder: (context, args, params) => VerifyEmailPage(),
     ),
-    // SECTION SERIES
+    // SECTION NEW SERIES
     SailorRoute(
       name: Constants.newSeriesRoute,
-      builder: (context, args, params) => const NewSeriesPage(),
+      builder: (context, args, params) => NewSeriesPage(
+        args: args as NewSeriesPageArgs,
+      ),
       defaultTransitions: [
         SailorTransition.slide_from_bottom,
       ],
-      defaultTransitionDuration: const Duration(milliseconds: 100),
+    ),
+    // SECTION DETAILS PAGES
+    SailorRoute(
+      name: Constants.genresRoute,
+      builder: (context, args, params) => GenresPage(),
+      defaultTransitions: [
+        SailorTransition.slide_from_right,
+      ],
+    ),
+    SailorRoute(
+      name: Constants.copyrightsRoute,
+      builder: (context, args, params) => CopyrightsPage(),
+      defaultTransitions: [
+        SailorTransition.slide_from_right,
+      ],
     ),
   ]);
 }

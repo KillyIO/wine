@@ -6,6 +6,7 @@ import 'package:wine/application/authentication/core/core_authentication_bloc.da
 import 'package:wine/application/navigation/home/home_navigation_bloc.dart';
 import 'package:wine/presentation/pages/home/widgets/home_app_bar.dart';
 import 'package:wine/routes.dart';
+import 'package:wine/utils/arguments.dart';
 import 'package:wine/utils/constants.dart';
 import 'package:wine/utils/themes.dart';
 
@@ -41,7 +42,10 @@ class _HomePageState extends State<HomePage> {
           BlocListener<HomeNavigationBloc, HomeNavigationState>(
             listener: (context, state) {
               if (state.isNewSeriesPageOpen) {
-                sailor(Constants.newSeriesRoute);
+                sailor.navigate(
+                  Constants.newSeriesRoute,
+                  args: NewSeriesPageArgs(),
+                );
               }
             },
           ),

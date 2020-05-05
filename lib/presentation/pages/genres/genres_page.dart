@@ -4,7 +4,7 @@ import 'package:wine/presentation/widgets/image_back_button.dart';
 import 'package:wine/utils/palettes.dart';
 import 'package:wine/utils/themes.dart';
 
-class CopyrightsPage extends StatelessWidget {
+class GenresPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AnnotatedRegion<SystemUiOverlayStyle>(

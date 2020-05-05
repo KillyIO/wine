@@ -1,4 +1,3 @@
-import 'package:flutter/foundation.dart';
 import 'package:hive/hive.dart';
 
 part 'series_draft.g.dart';
@@ -21,7 +20,7 @@ class SeriesDraft extends HiveObject {
   String genre;
 
   @HiveField(5)
-  List<String> characters;
+  String genreOptional;
 
   @HiveField(6)
   String language;
@@ -35,7 +34,7 @@ class SeriesDraft extends HiveObject {
     this.title,
     this.description,
     this.genre,
-    this.characters,
+    this.genreOptional,
     this.language,
     this.copyrights,
   });
@@ -46,7 +45,7 @@ class SeriesDraft extends HiveObject {
     String title,
     String description,
     String genre,
-    List<String> characters,
+    String genreOptional,
     String language,
     String copyrights,
   }) {
@@ -56,7 +55,7 @@ class SeriesDraft extends HiveObject {
       title: title ?? this.title,
       description: description ?? this.description,
       genre: genre ?? this.genre,
-      characters: characters ?? this.characters,
+      genreOptional: genreOptional ?? this.genreOptional,
       language: language ?? this.language,
       copyrights: copyrights ?? this.copyrights,
     );
@@ -69,7 +68,7 @@ class SeriesDraft extends HiveObject {
       'title': title,
       'description': description,
       'genre': genre,
-      'characters': characters,
+      'genreOptional': genreOptional,
       'language': language,
       'copyrights': copyrights,
     };
@@ -84,7 +83,7 @@ class SeriesDraft extends HiveObject {
       title: map['title'] as String,
       description: map['description'] as String,
       genre: map['genre'] as String,
-      characters: List<String>.from(map['characters'] as List<String>),
+      genreOptional: map['genreOptional'] as String,
       language: map['language'] as String,
       copyrights: map['copyrights'] as String,
     );
@@ -92,7 +91,7 @@ class SeriesDraft extends HiveObject {
 
   @override
   String toString() {
-    return 'SeriesDraft(uid: $uid, authorUid: $authorUid, title: $title, description: $description, genre: $genre, characters: $characters, language: $language, copyrights: $copyrights)';
+    return 'SeriesDraft(uid: $uid, authorUid: $authorUid, title: $title, description: $description, genre: $genre, genreOptional: $genreOptional, language: $language, copyrights: $copyrights)';
   }
 
   @override
@@ -100,25 +99,25 @@ class SeriesDraft extends HiveObject {
     if (identical(this, o)) return true;
 
     return o is SeriesDraft &&
-        o.uid == uid &&
-        o.authorUid == authorUid &&
-        o.title == title &&
-        o.description == description &&
-        o.genre == genre &&
-        listEquals(o.characters, characters) &&
-        o.language == language &&
-        o.copyrights == copyrights;
+      o.uid == uid &&
+      o.authorUid == authorUid &&
+      o.title == title &&
+      o.description == description &&
+      o.genre == genre &&
+      o.genreOptional == genreOptional &&
+      o.language == language &&
+      o.copyrights == copyrights;
   }
 
   @override
   int get hashCode {
     return uid.hashCode ^
-        authorUid.hashCode ^
-        title.hashCode ^
-        description.hashCode ^
-        genre.hashCode ^
-        characters.hashCode ^
-        language.hashCode ^
-        copyrights.hashCode;
+      authorUid.hashCode ^
+      title.hashCode ^
+      description.hashCode ^
+      genre.hashCode ^
+      genreOptional.hashCode ^
+      language.hashCode ^
+      copyrights.hashCode;
   }
 }

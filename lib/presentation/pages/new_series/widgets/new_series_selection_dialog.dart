@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_icons/flutter_icons.dart';
 
 import 'package:wine/utils/palettes.dart';
 
@@ -8,12 +9,14 @@ class NewSeriesSelectionDialog extends StatelessWidget {
   final String title;
   final Map<String, String> selections;
   final StringToVoidFunction onPressed;
+  final VoidCallback onInfoPressed;
 
   const NewSeriesSelectionDialog({
     Key key,
     this.title,
     this.selections,
     this.onPressed,
+    this.onInfoPressed,
   }) : super(key: key);
 
   @override
@@ -30,22 +33,36 @@ class NewSeriesSelectionDialog extends StatelessWidget {
             Container(
               decoration: BoxDecoration(
                 border: Border(
-                  bottom: BorderSide(color: Colors.black12),
+                  bottom: BorderSide(color: Colors.black26),
                 ),
               ),
-              width: double.infinity,
-              child: Padding(
-                padding: const EdgeInsets.symmetric(
-                    horizontal: 10.0, vertical: 10.0),
-                child: Text(
-                  title,
-                  style: TextStyle(
-                    color: Palettes.darkCobaltBlue,
-                    fontSize: 17.0,
-                    fontWeight: FontWeight.bold,
+              height: 50.0,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: <Widget>[
+                  Padding(
+                    padding: const EdgeInsets.only(left: 15.0),
+                    child: Text(
+                      title,
+                      textAlign: TextAlign.center,
+                      style: TextStyle(
+                        color: Palettes.darkCobaltBlue,
+                        fontSize: 17.0,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
                   ),
-                  textAlign: TextAlign.center,
-                ),
+                  Visibility(
+                    visible: onInfoPressed != null,
+                    child: IconButton(
+                      icon: Icon(
+                        Feather.info,
+                        color: Palettes.darkCobaltBlue,
+                      ),
+                      onPressed: onInfoPressed,
+                    ),
+                  ),
+                ],
               ),
             ),
             ListView.builder(

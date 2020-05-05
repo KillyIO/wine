@@ -38,7 +38,7 @@ class NewSeriesMultilineTextFormField extends StatelessWidget {
           ),
         ),
       ),
-      maxLines: null,
+      maxLines: 10,
     );
   }
 }

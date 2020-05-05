@@ -1,26 +1,29 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
 import 'package:wine/application/database/new_series/new_series_database_bloc.dart';
 import 'package:wine/application/navigation/home/home_navigation_bloc.dart';
-import 'package:wine/domain/models/hive/series_draft.dart';
 import 'package:wine/presentation/pages/new_series/widgets/new_series_list_tile.dart';
-import 'package:wine/presentation/pages/new_series/widgets/new_series_selection_dialog.dart';
-import 'package:wine/presentation/pages/new_series/widgets/new_series_text_form_field_label.dart';
 import 'package:wine/presentation/pages/new_series/widgets/new_series_multiline_text_form_field.dart';
+import 'package:wine/presentation/pages/new_series/widgets/new_series_selection_dialog.dart';
 import 'package:wine/presentation/pages/new_series/widgets/new_series_text_form_field.dart';
+import 'package:wine/presentation/pages/new_series/widgets/new_series_text_form_field_label.dart';
 import 'package:wine/presentation/widgets/custom_show_dialog.dart';
 import 'package:wine/presentation/widgets/image_back_button.dart';
+import 'package:wine/routes.dart';
+import 'package:wine/utils/arguments.dart';
+import 'package:wine/utils/constants.dart';
 import 'package:wine/utils/methods.dart';
 import 'package:wine/utils/palettes.dart';
 import 'package:wine/utils/themes.dart';
 
 class NewSeriesPage extends StatefulWidget {
-  final SeriesDraft seriesDraft;
+  final NewSeriesPageArgs args;
 
   const NewSeriesPage({
     Key key,
-    this.seriesDraft,
+    this.args,
   }) : super(key: key);
 
   @override
@@ -30,7 +33,6 @@ class NewSeriesPage extends StatefulWidget {
 class _NewSeriesPageState extends State<NewSeriesPage> {
   final TextEditingController _titleController = TextEditingController();
   final TextEditingController _descriptionController = TextEditingController();
-  final TextEditingController _characterController = TextEditingController();
 
   Map<String, String> _genres;
   Map<String, String> _languages;
@@ -40,15 +42,18 @@ class _NewSeriesPageState extends State<NewSeriesPage> {
   void initState() {
     _titleController.addListener(_onTitleChanged);
     _descriptionController.addListener(_onDescriptionChanged);
-    _characterController.addListener(_onCharacterChanged);
-
-    context
-        .bloc<NewSeriesDatabaseBloc>()
-        .add(NewSeriesPageLaunched(seriesDraft: widget.seriesDraft));
 
     _genres = Methods.getGenres(context);
     _languages = Methods.getLanguages(context);
     _copyrights = Methods.getCopyrights(context);
+
+    final args = widget.args;
+
+    context
+        .bloc<NewSeriesDatabaseBloc>()
+        .add(NewSeriesPageLaunched(seriesDraft: args.seriesDraft));
+
+    _titleController.text = args.seriesDraft?.title ?? 'Untitled';
 
     super.initState();
   }
@@ -57,7 +62,6 @@ class _NewSeriesPageState extends State<NewSeriesPage> {
   void dispose() {
     _titleController.dispose();
     _descriptionController.dispose();
-    _characterController.dispose();
     super.dispose();
   }
 
@@ -68,17 +72,6 @@ class _NewSeriesPageState extends State<NewSeriesPage> {
   void _onDescriptionChanged() => context
       .bloc<NewSeriesDatabaseBloc>()
       .add(DescriptionChanged(_descriptionController.text));
-
-  void _onCharacterChanged() => context
-      .bloc<NewSeriesDatabaseBloc>()
-      .add(CharacterChanged(_characterController.text));
-
-  void _addCharacterPressed() {
-    context
-        .bloc<NewSeriesDatabaseBloc>()
-        .add(const AddCharacterButtonPressed());
-    _characterController.clear();
-  }
 
   void _backButtonPressed() {
     FocusScope.of(context).requestFocus(FocusNode());
@@ -104,13 +97,20 @@ class _NewSeriesPageState extends State<NewSeriesPage> {
     Navigator.of(context).pop(true);
   }
 
+  void _genreOptionalSelected(String genreOptional) {
+    context
+        .bloc<NewSeriesDatabaseBloc>()
+        .add(GenreOptionalSelected(genreOptional));
+    Navigator.of(context).pop(true);
+  }
+
   void _languageSelected(String language) {
     context.bloc<NewSeriesDatabaseBloc>().add(LanguageSelected(language));
     Navigator.of(context).pop(true);
   }
 
-  void _copyrightSelected(String copyright) {
-    context.bloc<NewSeriesDatabaseBloc>().add(CopyrightSelected(copyright));
+  void _copyrightSelected(String copyrights) {
+    context.bloc<NewSeriesDatabaseBloc>().add(CopyrightsSelected(copyrights));
     Navigator.of(context).pop(true);
   }
 
@@ -120,53 +120,55 @@ class _NewSeriesPageState extends State<NewSeriesPage> {
       value: Themes.wineLightTheme(),
       child: WillPopScope(
         onWillPop: _onWillPop,
-        child: Scaffold(
-          backgroundColor: Colors.white,
-          appBar: PreferredSize(
-            preferredSize: const Size.fromHeight(41.5),
-            child: AppBar(
-              actions: <Widget>[
-                FlatButton(
-                  disabledTextColor: Colors.black26,
-                  highlightColor: Colors.transparent,
-                  onPressed: () => context
-                      .bloc<NewSeriesDatabaseBloc>()
-                      .add(const ContinueButtonPressed()),
-                  splashColor: Colors.transparent,
-                  textColor: Colors.black,
-                  child: Text(
-                    'CONTINUE',
-                    style: TextStyle(
-                      fontWeight: FontWeight.w500,
+        child: BlocBuilder<NewSeriesDatabaseBloc, NewSeriesDatabaseState>(
+          builder: (context, databaseState) {
+            return Scaffold(
+              backgroundColor: Colors.white,
+              appBar: PreferredSize(
+                preferredSize: const Size.fromHeight(41.5),
+                child: AppBar(
+                  actions: <Widget>[
+                    FlatButton(
+                      disabledTextColor: Colors.black26,
+                      highlightColor: Colors.transparent,
+                      onPressed: () {
+                        context
+                            .bloc<NewSeriesDatabaseBloc>()
+                            .add(const ContinueButtonPressed());
+                      },
+                      splashColor: Colors.transparent,
+                      textColor: Colors.black,
+                      child: Text(
+                        'CONTINUE',
+                        style: TextStyle(
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                    ),
+                  ],
+                  backgroundColor: Colors.transparent,
+                  bottom: PreferredSize(
+                    preferredSize: const Size.fromHeight(0.0),
+                    child: Container(
+                      color: Palettes.darkCobaltBlue,
+                      height: 2.0,
+                    ),
+                  ),
+                  brightness: Brightness.light,
+                  centerTitle: true,
+                  elevation: 0.0,
+                  leading: Padding(
+                    padding: const EdgeInsets.only(
+                        bottom: 5.0, left: 10.0, top: 5.0),
+                    child: ImageBackButton(
+                      onPressed: _backButtonPressed,
+                      color: Palettes.darkCobaltBlue,
                     ),
                   ),
                 ),
-              ],
-              backgroundColor: Colors.transparent,
-              bottom: PreferredSize(
-                preferredSize: const Size.fromHeight(0.0),
-                child: Container(
-                  color: Palettes.darkCobaltBlue,
-                  height: 2.0,
-                ),
               ),
-              brightness: Brightness.light,
-              centerTitle: true,
-              elevation: 0.0,
-              leading: Padding(
-                padding:
-                    const EdgeInsets.only(bottom: 5.0, left: 10.0, top: 5.0),
-                child: ImageBackButton(
-                  onPressed: _backButtonPressed,
-                  color: Palettes.darkCobaltBlue,
-                ),
-              ),
-            ),
-          ),
-          body: SafeArea(
-            child: BlocBuilder<NewSeriesDatabaseBloc, NewSeriesDatabaseState>(
-              builder: (context, databaseState) {
-                return Form(
+              body: SafeArea(
+                child: Form(
                   child: ScrollConfiguration(
                     behavior: const ScrollBehavior(),
                     child: ListView(
@@ -200,30 +202,53 @@ class _NewSeriesPageState extends State<NewSeriesPage> {
                         ),
                         NewSeriesMultilineTextFormField(
                           controller: _descriptionController,
-                          hintText: 'An interesting description',
+                          hintText: '',
                         ),
                         // SECTION genre
                         Padding(
                           padding: const EdgeInsets.only(top: 25.0),
                           child: NewSeriesListTile(
-                            hasSelected: databaseState.selectedGenre == '',
+                            hasSelected: databaseState.genre == '',
                             onPressed: () => customShowDialog(
                               context: context,
                               builder: (_) => NewSeriesSelectionDialog(
                                 title: 'GENRE',
                                 selections: _genres,
                                 onPressed: _genreSelected,
+                                onInfoPressed: () => sailor(
+                                  Constants.genresRoute,
+                                ),
                               ),
                             ),
                             title: 'GENRE',
-                            trailingText: _genres[databaseState.selectedGenre],
+                            trailingText: _genres[databaseState.genre],
+                          ),
+                        ),
+                        // SECTION genre optional
+                        Padding(
+                          padding: const EdgeInsets.only(top: 25.0),
+                          child: NewSeriesListTile(
+                            hasSelected: databaseState.genreOptional == '',
+                            onPressed: () => customShowDialog(
+                              context: context,
+                              builder: (_) => NewSeriesSelectionDialog(
+                                title: 'GENRE (OPTIONAL)',
+                                selections: _genres,
+                                onPressed: _genreOptionalSelected,
+                                onInfoPressed: () => sailor(
+                                  Constants.genresRoute,
+                                ),
+                              ),
+                            ),
+                            title: 'GENRE (OPTIONAL)',
+                            trailingText: _genres[databaseState.genreOptional],
                           ),
                         ),
                         // SECTION language
                         Padding(
                           padding: const EdgeInsets.only(top: 25.0),
                           child: NewSeriesListTile(
-                            hasSelected: databaseState.selectedLanguage == '',
+                            hasSelected: databaseState.language == '',
                             onPressed: () => customShowDialog(
                               context: context,
                               builder: (_) => NewSeriesSelectionDialog(
@@ -233,35 +258,36 @@ class _NewSeriesPageState extends State<NewSeriesPage> {
                               ),
                             ),
                             title: 'LANGUAGE',
-                            trailingText:
-                                _languages[databaseState.selectedLanguage],
+                            trailingText: _languages[databaseState.language],
                           ),
                         ),
                         // SECTION copyright
                         Padding(
                           padding: const EdgeInsets.symmetric(vertical: 25.0),
                           child: NewSeriesListTile(
-                            hasSelected: databaseState.selectedCopyright == '',
+                            hasSelected: databaseState.copyrights == '',
                             onPressed: () => customShowDialog(
                               context: context,
                               builder: (_) => NewSeriesSelectionDialog(
                                 title: 'COPYRIGHTS',
                                 selections: _copyrights,
                                 onPressed: _copyrightSelected,
+                                onInfoPressed: () => sailor(
+                                  Constants.copyrightsRoute,
+                                ),
                               ),
                             ),
                             title: 'COPYRIGHTS',
-                            trailingText:
-                                _copyrights[databaseState.selectedCopyright],
+                            trailingText: _copyrights[databaseState.copyrights],
                           ),
                         ),
                       ],
                     ),
                   ),
-                );
-              },
-            ),
-          ),
+                ),
+              ),
+            );
+          },
         ),
       ),
     );
