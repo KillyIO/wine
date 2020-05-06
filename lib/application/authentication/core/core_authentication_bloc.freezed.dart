@@ -12,8 +12,8 @@ T _$identity<T>(T value) => value;
 class _$CoreAuthenticationEventTearOff {
   const _$CoreAuthenticationEventTearOff();
 
-  PageLaunched pageLaunched() {
-    return const PageLaunched();
+  GetUserAnonymousStatus getUserAnonymousStatus() {
+    return const GetUserAnonymousStatus();
   }
 }
 
@@ -37,42 +37,42 @@ class _$CoreAuthenticationEventCopyWithImpl<$Res>
   final $Res Function(CoreAuthenticationEvent) _then;
 }
 
-abstract class $PageLaunchedCopyWith<$Res> {
-  factory $PageLaunchedCopyWith(
-          PageLaunched value, $Res Function(PageLaunched) then) =
-      _$PageLaunchedCopyWithImpl<$Res>;
+abstract class $GetUserAnonymousStatusCopyWith<$Res> {
+  factory $GetUserAnonymousStatusCopyWith(GetUserAnonymousStatus value,
+          $Res Function(GetUserAnonymousStatus) then) =
+      _$GetUserAnonymousStatusCopyWithImpl<$Res>;
 }
 
-class _$PageLaunchedCopyWithImpl<$Res>
+class _$GetUserAnonymousStatusCopyWithImpl<$Res>
     extends _$CoreAuthenticationEventCopyWithImpl<$Res>
-    implements $PageLaunchedCopyWith<$Res> {
-  _$PageLaunchedCopyWithImpl(
-      PageLaunched _value, $Res Function(PageLaunched) _then)
-      : super(_value, (v) => _then(v as PageLaunched));
+    implements $GetUserAnonymousStatusCopyWith<$Res> {
+  _$GetUserAnonymousStatusCopyWithImpl(GetUserAnonymousStatus _value,
+      $Res Function(GetUserAnonymousStatus) _then)
+      : super(_value, (v) => _then(v as GetUserAnonymousStatus));
 
   @override
-  PageLaunched get _value => super._value as PageLaunched;
+  GetUserAnonymousStatus get _value => super._value as GetUserAnonymousStatus;
 }
 
-class _$PageLaunched implements PageLaunched {
-  const _$PageLaunched();
+class _$GetUserAnonymousStatus implements GetUserAnonymousStatus {
+  const _$GetUserAnonymousStatus();
 
   @override
   String toString() {
-    return 'CoreAuthenticationEvent.pageLaunched()';
+    return 'CoreAuthenticationEvent.getUserAnonymousStatus()';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is PageLaunched);
+    return identical(this, other) || (other is GetUserAnonymousStatus);
   }
 
   @override
   int get hashCode => runtimeType.hashCode;
 }
 
-abstract class PageLaunched implements CoreAuthenticationEvent {
-  const factory PageLaunched() = _$PageLaunched;
+abstract class GetUserAnonymousStatus implements CoreAuthenticationEvent {
+  const factory GetUserAnonymousStatus() = _$GetUserAnonymousStatus;
 }
 
 class _$CoreAuthenticationStateTearOff {

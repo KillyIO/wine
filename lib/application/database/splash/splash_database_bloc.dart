@@ -42,26 +42,19 @@ class SplashDatabaseBloc
           databaseFailureOrSuccessOption: none(),
         );
 
-        switch (event.accountStatus) {
-          case AccountStatus.anonymous:
-            final session = Session();
-            await _localSessionDatabaseFacade.setSession(session: session);
-            break;
-          case AccountStatus.permanent:
-            Session session = _localSessionDatabaseFacade.getSession();
-            failureOrSuccess =
-                await _onlineUserDatabaseFacade.getUser(session.uid);
-            failureOrSuccess.fold(
-              (_) {},
-              (right) async {
-                if (right is User) {
-                  session = Session.fromMap(right.toMap());
-                  await _localSessionDatabaseFacade.setSession(session: session);
-                }
-              },
-            );
-            break;
-          default:
+        if (!event.isAnonymous) {
+          Session session = _localSessionDatabaseFacade.getSession();
+          failureOrSuccess =
+              await _onlineUserDatabaseFacade.getUser(session.uid);
+          failureOrSuccess.fold(
+            (_) {},
+            (right) async {
+              if (right is User) {
+                session = Session.fromMap(right.toMap());
+                await _localSessionDatabaseFacade.setSession(session: session);
+              }
+            },
+          );
         }
 
         yield state.copyWith(

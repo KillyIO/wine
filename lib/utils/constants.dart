@@ -21,6 +21,8 @@ class Constants {
 
   static const String newSeriesRoute = '/series/new';
 
+  static const String newChapterRoute = '/chapter/new';
+
   static const String genresRoute = '/genres';
   static const String copyrightsRoute = '/copyrights';
 

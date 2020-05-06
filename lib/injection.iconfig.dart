@@ -23,6 +23,7 @@ import 'package:wine/application/database/new_series/new_series_database_bloc.da
 import 'package:wine/application/database/series/series_database_bloc.dart';
 import 'package:wine/application/authentication/settings/settings_authentication_bloc.dart';
 import 'package:wine/application/database/settings/settings_database_bloc.dart';
+import 'package:wine/application/outlier/settings/settings_outlier_bloc.dart';
 import 'package:wine/application/authentication/sign_in/sign_in_authentication_bloc.dart';
 import 'package:wine/application/database/sign_in/sign_in_database_bloc.dart';
 import 'package:wine/application/authentication/splash/splash_authentication_bloc.dart';
@@ -64,6 +65,7 @@ Future<void> $initGetIt(GetIt g, {String environment}) async {
       () => SettingsAuthenticationBloc(g<IAuthenticationFacade>()));
   g.registerFactory<SettingsDatabaseBloc>(() => SettingsDatabaseBloc(
       g<ILocalSessionDatabaseFacade>(), g<IOnlineUserDatabaseFacade>()));
+  g.registerFactory<SettingsOutlierBloc>(() => SettingsOutlierBloc());
   g.registerFactory<SignInAuthenticationBloc>(
       () => SignInAuthenticationBloc(g<IAuthenticationFacade>()));
   g.registerFactory<SignInDatabaseBloc>(() => SignInDatabaseBloc(

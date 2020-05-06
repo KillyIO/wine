@@ -82,13 +82,13 @@ class _$SplashAuthenticationStateTearOff {
       {@required
           bool isAuthenticating,
       @required
-          AccountStatus accountStatus,
+          bool isAnonymous,
       @required
           Option<Either<AuthenticationFailure, Unit>>
               authenticationFailureOrSuccessOption}) {
     return _SplashAuthenticationState(
       isAuthenticating: isAuthenticating,
-      accountStatus: accountStatus,
+      isAnonymous: isAnonymous,
       authenticationFailureOrSuccessOption:
           authenticationFailureOrSuccessOption,
     );
@@ -100,7 +100,7 @@ const $SplashAuthenticationState = _$SplashAuthenticationStateTearOff();
 
 mixin _$SplashAuthenticationState {
   bool get isAuthenticating;
-  AccountStatus get accountStatus;
+  bool get isAnonymous;
   Option<Either<AuthenticationFailure, Unit>>
       get authenticationFailureOrSuccessOption;
 
@@ -113,7 +113,7 @@ abstract class $SplashAuthenticationStateCopyWith<$Res> {
       _$SplashAuthenticationStateCopyWithImpl<$Res>;
   $Res call(
       {bool isAuthenticating,
-      AccountStatus accountStatus,
+      bool isAnonymous,
       Option<Either<AuthenticationFailure, Unit>>
           authenticationFailureOrSuccessOption});
 }
@@ -129,16 +129,15 @@ class _$SplashAuthenticationStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object isAuthenticating = freezed,
-    Object accountStatus = freezed,
+    Object isAnonymous = freezed,
     Object authenticationFailureOrSuccessOption = freezed,
   }) {
     return _then(_value.copyWith(
       isAuthenticating: isAuthenticating == freezed
           ? _value.isAuthenticating
           : isAuthenticating as bool,
-      accountStatus: accountStatus == freezed
-          ? _value.accountStatus
-          : accountStatus as AccountStatus,
+      isAnonymous:
+          isAnonymous == freezed ? _value.isAnonymous : isAnonymous as bool,
       authenticationFailureOrSuccessOption:
           authenticationFailureOrSuccessOption == freezed
               ? _value.authenticationFailureOrSuccessOption
@@ -156,7 +155,7 @@ abstract class _$SplashAuthenticationStateCopyWith<$Res>
   @override
   $Res call(
       {bool isAuthenticating,
-      AccountStatus accountStatus,
+      bool isAnonymous,
       Option<Either<AuthenticationFailure, Unit>>
           authenticationFailureOrSuccessOption});
 }
@@ -175,16 +174,15 @@ class __$SplashAuthenticationStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object isAuthenticating = freezed,
-    Object accountStatus = freezed,
+    Object isAnonymous = freezed,
     Object authenticationFailureOrSuccessOption = freezed,
   }) {
     return _then(_SplashAuthenticationState(
       isAuthenticating: isAuthenticating == freezed
           ? _value.isAuthenticating
           : isAuthenticating as bool,
-      accountStatus: accountStatus == freezed
-          ? _value.accountStatus
-          : accountStatus as AccountStatus,
+      isAnonymous:
+          isAnonymous == freezed ? _value.isAnonymous : isAnonymous as bool,
       authenticationFailureOrSuccessOption:
           authenticationFailureOrSuccessOption == freezed
               ? _value.authenticationFailureOrSuccessOption
@@ -197,23 +195,23 @@ class __$SplashAuthenticationStateCopyWithImpl<$Res>
 class _$_SplashAuthenticationState implements _SplashAuthenticationState {
   const _$_SplashAuthenticationState(
       {@required this.isAuthenticating,
-      @required this.accountStatus,
+      @required this.isAnonymous,
       @required this.authenticationFailureOrSuccessOption})
       : assert(isAuthenticating != null),
-        assert(accountStatus != null),
+        assert(isAnonymous != null),
         assert(authenticationFailureOrSuccessOption != null);
 
   @override
   final bool isAuthenticating;
   @override
-  final AccountStatus accountStatus;
+  final bool isAnonymous;
   @override
   final Option<Either<AuthenticationFailure, Unit>>
       authenticationFailureOrSuccessOption;
 
   @override
   String toString() {
-    return 'SplashAuthenticationState(isAuthenticating: $isAuthenticating, accountStatus: $accountStatus, authenticationFailureOrSuccessOption: $authenticationFailureOrSuccessOption)';
+    return 'SplashAuthenticationState(isAuthenticating: $isAuthenticating, isAnonymous: $isAnonymous, authenticationFailureOrSuccessOption: $authenticationFailureOrSuccessOption)';
   }
 
   @override
@@ -223,9 +221,9 @@ class _$_SplashAuthenticationState implements _SplashAuthenticationState {
             (identical(other.isAuthenticating, isAuthenticating) ||
                 const DeepCollectionEquality()
                     .equals(other.isAuthenticating, isAuthenticating)) &&
-            (identical(other.accountStatus, accountStatus) ||
+            (identical(other.isAnonymous, isAnonymous) ||
                 const DeepCollectionEquality()
-                    .equals(other.accountStatus, accountStatus)) &&
+                    .equals(other.isAnonymous, isAnonymous)) &&
             (identical(other.authenticationFailureOrSuccessOption,
                     authenticationFailureOrSuccessOption) ||
                 const DeepCollectionEquality().equals(
@@ -237,7 +235,7 @@ class _$_SplashAuthenticationState implements _SplashAuthenticationState {
   int get hashCode =>
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(isAuthenticating) ^
-      const DeepCollectionEquality().hash(accountStatus) ^
+      const DeepCollectionEquality().hash(isAnonymous) ^
       const DeepCollectionEquality().hash(authenticationFailureOrSuccessOption);
 
   @override
@@ -252,7 +250,7 @@ abstract class _SplashAuthenticationState implements SplashAuthenticationState {
           {@required
               bool isAuthenticating,
           @required
-              AccountStatus accountStatus,
+              bool isAnonymous,
           @required
               Option<Either<AuthenticationFailure, Unit>>
                   authenticationFailureOrSuccessOption}) =
@@ -261,7 +259,7 @@ abstract class _SplashAuthenticationState implements SplashAuthenticationState {
   @override
   bool get isAuthenticating;
   @override
-  AccountStatus get accountStatus;
+  bool get isAnonymous;
   @override
   Option<Either<AuthenticationFailure, Unit>>
       get authenticationFailureOrSuccessOption;

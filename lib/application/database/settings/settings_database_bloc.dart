@@ -33,9 +33,12 @@ class SettingsDatabaseBloc
     yield* event.map(
       settingsLaunched: (event) async* {
         final Session session = _localSessionDatabaseFacade.getSession();
-        yield state.copyWith(
-          session: session,
-        );
+
+        if (session != null) {
+          yield state.copyWith(
+            session: session,
+          );
+        }
       },
       userSignedOut: (event) async* {
         yield state.copyWith(

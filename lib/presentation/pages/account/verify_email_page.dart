@@ -31,7 +31,7 @@ class _VerifyEmailPageState extends State<VerifyEmailPage> {
       navigationType: NavigationType.pushAndRemoveUntil,
       removeUntilPredicate: (_) => false,
     );
-    context.bloc<CoreAuthenticationBloc>().add(const PageLaunched());
+    // context.bloc<CoreAuthenticationBloc>().add(const PageLaunched());
     context.bloc<HomeNavigationBloc>().add(const ResetHomeNavigationBloc());
   }
 

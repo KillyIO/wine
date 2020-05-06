@@ -1,19 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:sailor/sailor.dart';
-import 'package:wine/presentation/pages/splash/index.dart';
+import 'package:wine/presentation/pages/splash/splash_page.dart';
 import 'package:wine/routes.dart';
 
-class App extends StatefulWidget {
-  @override
-  _AppState createState() => _AppState();
-}
-
-class _AppState extends State<App> {
+class AppWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'WINE',
       debugShowCheckedModeBanner: false,
+      title: 'WINE',
       home: SplashPage(),
       onGenerateRoute: sailor.generator(),
       navigatorKey: sailor.navigatorKey,
