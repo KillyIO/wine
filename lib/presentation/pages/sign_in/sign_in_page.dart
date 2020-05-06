@@ -41,7 +41,8 @@ class SignInPage extends StatelessWidget {
             centerTitle: true,
             elevation: 0.0,
             leading: Padding(
-              padding: const EdgeInsets.only(bottom: 5.0, left: 10.0, top: 5.0),
+              padding:
+                  const EdgeInsets.symmetric(horizontal: 10.0, vertical: 5.0),
               child: ImageBackButton(
                 onPressed: () {
                   FocusScope.of(context).requestFocus(FocusNode());
@@ -58,11 +59,11 @@ class SignInPage extends StatelessWidget {
               create: (context) => getIt<SignInAuthenticationBloc>(),
             ),
             BlocProvider(
-              create: (context) => getIt<SignInAuthenticationBloc>(),
+              create: (context) => getIt<SignInDatabaseBloc>(),
             ),
           ],
           child: SignInForm(),
-        )
+        ),
       ),
     );
   }
@@ -133,17 +134,7 @@ class SignInPage extends StatelessWidget {
 //     ),
 //   ),
 // ),
-//         body: MultiBlocProvider(
-//           providers: [
-//             BlocProvider(
-//               create: (context) => getIt<SignInAuthenticationBloc>(),
-//             ),
-//             BlocProvider(
-//               create: (context) => getIt<SignInDatabaseBloc>(),
-//             ),
-//           ],
-//           child: SignInForm(),
-//         ) MultiBlocListener(
+//         body: MultiBlocListener(
 //           listeners: [
 //             BlocListener<SignInAuthenticationBloc, SignInAuthenticationState>(
 //               listener: (context, state) {

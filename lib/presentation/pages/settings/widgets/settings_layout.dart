@@ -115,14 +115,14 @@ class _SettingsLayoutState extends State<SettingsLayout>
         ],
         child: BlocBuilder<CoreAuthenticationBloc, CoreAuthenticationState>(
           builder: (context, coreAuthState) {
-            return BlocBuilder<SettingsOutlierBloc, SettingsOutlierState>(
-              builder: (context, settingsOutlierState) {
-                return BlocBuilder<SettingsAuthenticationBloc,
-                    SettingsAuthenticationState>(
-                  builder: (context, settingsAuthState) {
-                    return BlocBuilder<SettingsDatabaseBloc,
-                        SettingsDatabaseState>(
-                      builder: (context, settingsDbState) {
+            return BlocBuilder<SettingsAuthenticationBloc,
+                SettingsAuthenticationState>(
+              builder: (context, settingsAuthState) {
+                return BlocBuilder<SettingsDatabaseBloc, SettingsDatabaseState>(
+                  builder: (context, settingsDbState) {
+                    return BlocBuilder<SettingsOutlierBloc,
+                        SettingsOutlierState>(
+                      builder: (context, settingsOutlierState) {
                         return SafeArea(
                           child: Stack(
                             children: <Widget>[
