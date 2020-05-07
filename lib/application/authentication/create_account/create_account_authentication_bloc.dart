@@ -47,7 +47,10 @@ class CreateAccountAuthenticationBloc extends Bloc<
       },
       confirmPasswordChanged: (event) async* {
         yield state.copyWith(
-          confirmPassword: Password(event.confirmPasswordStr),
+          confirmPassword: Password(
+            event.confirmPasswordStr,
+            event.passwordStr,
+          ),
           authenticationFailureOrSuccessOption: none(),
         );
       },
@@ -75,8 +78,7 @@ class CreateAccountAuthenticationBloc extends Bloc<
 
         final isEmailValid = state.emailAddress.isValid();
         final isPasswordValid = state.password.isValid();
-        final isConfirmPasswordValid = state.confirmPassword.isValid() &&
-            state.confirmPassword == state.password;
+        final isConfirmPasswordValid = state.confirmPassword.isValid();
 
         if (isEmailValid &&
             isPasswordValid &&
@@ -106,10 +108,7 @@ class CreateAccountAuthenticationBloc extends Bloc<
 
         yield state.copyWith(
           isSubmitting: false,
-          showEmailErrorMessage: !isEmailValid,
-          showPasswordErrorMessage: !isPasswordValid,
-          showConfirmPasswordErrorMessage: !isConfirmPasswordValid,
-          showUsernameErrorMessage: !isUsernameValid,
+          showErrorMessages: true,
           authenticationFailureOrSuccessOption: optionOf(failureOrSuccess),
         );
       },

@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:wine/application/authentication/sign_in/sign_in_authentication_bloc.dart';
-import 'package:wine/application/database/sign_in/sign_in_database_bloc.dart';
+import 'package:wine/application/authentication/create_account/create_account_authentication_bloc.dart';
+import 'package:wine/application/database/create_account/create_account_database_bloc.dart';
 import 'package:wine/injection.dart';
-import 'package:wine/presentation/pages/sign_in/widgets/sign_in_form.dart';
+import 'package:wine/presentation/pages/create_account/widgets/create_account_form.dart';
 import 'package:wine/presentation/widgets/image_back_button.dart';
 import 'package:wine/utils/themes.dart';
 
-class SignInPage extends StatelessWidget {
+class CreateAccountPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AnnotatedRegion<SystemUiOverlayStyle>(
@@ -30,8 +30,7 @@ class SignInPage extends StatelessWidget {
             centerTitle: true,
             elevation: 0.0,
             leading: Padding(
-              padding:
-                  const EdgeInsets.symmetric(horizontal: 10.0, vertical: 5.0),
+              padding: const EdgeInsets.only(bottom: 5.0, left: 10.0, top: 5.0),
               child: ImageBackButton(
                 onPressed: () {
                   FocusScope.of(context).requestFocus(FocusNode());
@@ -45,13 +44,13 @@ class SignInPage extends StatelessWidget {
         body: MultiBlocProvider(
           providers: [
             BlocProvider(
-              create: (context) => getIt<SignInAuthenticationBloc>(),
+              create: (context) => getIt<CreateAccountAuthenticationBloc>(),
             ),
             BlocProvider(
-              create: (context) => getIt<SignInDatabaseBloc>(),
+              create: (context) => getIt<CreateAccountDatabaseBloc>(),
             ),
           ],
-          child: SignInForm(),
+          child: CreateAccountForm(),
         ),
       ),
     );

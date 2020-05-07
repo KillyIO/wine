@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_icons/flutter_icons.dart';
+import 'package:sailor/sailor.dart';
+import 'package:wine/application/authentication/core/core_authentication_bloc.dart';
 import 'package:wine/application/authentication/sign_in/sign_in_authentication_bloc.dart';
 import 'package:wine/application/database/sign_in/sign_in_database_bloc.dart';
+import 'package:wine/application/navigation/home/home_navigation_bloc.dart';
 import 'package:wine/domain/models/user.dart';
-import 'package:wine/presentation/pages/account/widgets/create_account_button.dart';
+import 'package:wine/presentation/pages/sign_in/widgets/sign_in_create_account_button.dart';
 import 'package:wine/presentation/pages/sign_in/widgets/sign_in_separator.dart';
 import 'package:wine/presentation/pages/sign_in/widgets/sign_in_social_media_button.dart';
 import 'package:wine/presentation/widgets/custom_show_dialog.dart';
@@ -57,7 +60,32 @@ class _SignInFormState extends State<SignInForm> with TickerProviderStateMixin {
           },
         ),
         BlocListener<SignInDatabaseBloc, SignInDatabaseState>(
-          listener: (context, state) {},
+          listener: (context, state) {
+            state.databaseFailureOrSuccessOption.fold(
+              () {},
+              (some) => some.fold(
+                (failure) => customShowDialog(
+                  context: context,
+                  builder: (_) => ErrorDialog(
+                    message: 'An unexpected error occured!',
+                    onPressed: () => Navigator.of(context).pop(true),
+                  ),
+                ),
+                (_) {
+                  sailor.navigate(
+                    Constants.homeRoute,
+                    navigationType: NavigationType.pushAndRemoveUntil,
+                    removeUntilPredicate: (_) => false,
+                  );
+                  context.bloc<CoreAuthenticationBloc>().add(
+                      const CoreAuthenticationEvent.getUserAnonymousStatus());
+                  context
+                      .bloc<HomeNavigationBloc>()
+                      .add(const HomeNavigationEvent.resetHomeNavigationBloc());
+                },
+              ),
+            );
+          },
         ),
       ],
       child: BlocBuilder<SignInAuthenticationBloc, SignInAuthenticationState>(
@@ -79,7 +107,7 @@ class _SignInFormState extends State<SignInForm> with TickerProviderStateMixin {
                               child: Container(
                                 width: MediaQuery.of(context).size.width,
                                 child: const Text(
-                                  'Log in to access more features.',
+                                  'Sign in to access more features.',
                                   textAlign: TextAlign.start,
                                   style: TextStyle(
                                     color: Colors.black,
@@ -119,14 +147,24 @@ class _SignInFormState extends State<SignInForm> with TickerProviderStateMixin {
                                     .add(SignInAuthenticationEvent.emailChanged(
                                       value,
                                     )),
+                                validator: (_) => context
+                                    .bloc<SignInAuthenticationBloc>()
+                                    .state
+                                    .emailAddress
+                                    .value
+                                    .fold(
+                                      (f) => f.maybeMap(
+                                          invalidEmailAddress: (_) =>
+                                              'The email address is invalid.',
+                                          orElse: () => null),
+                                      (_) => null,
+                                    ),
                               ),
                             ),
                             const SizedBox(height: 40),
                             Padding(
                               padding: const EdgeInsets.only(left: 50.0),
                               child: TextFormField(
-                                cursorColor: Colors.black,
-                                keyboardType: TextInputType.emailAddress,
                                 decoration: InputDecoration(
                                   hintText: 'Password',
                                   contentPadding: const EdgeInsets.only(
@@ -145,7 +183,28 @@ class _SignInFormState extends State<SignInForm> with TickerProviderStateMixin {
                                     ),
                                   ),
                                 ),
+                                cursorColor: Colors.black,
+                                keyboardType: TextInputType.emailAddress,
+                                autocorrect: false,
                                 obscureText: true,
+                                onChanged: (value) => context
+                                    .bloc<SignInAuthenticationBloc>()
+                                    .add(SignInAuthenticationEvent
+                                        .passwordChanged(
+                                      value,
+                                    )),
+                                validator: (_) => context
+                                    .bloc<SignInAuthenticationBloc>()
+                                    .state
+                                    .password
+                                    .value
+                                    .fold(
+                                      (f) => f.maybeMap(
+                                          invalidPassword: (_) =>
+                                              'The password is invalid.',
+                                          orElse: () => null),
+                                      (_) => null,
+                                    ),
                               ),
                             ),
                             const SizedBox(height: 50),
@@ -201,15 +260,13 @@ class _SignInFormState extends State<SignInForm> with TickerProviderStateMixin {
                                 SignInSocialMediaButton(
                                   onPressed: () => context
                                       .bloc<SignInAuthenticationBloc>()
-                                      .add(
-                                        const SignInWithGooglePressed(),
-                                      ),
+                                      .add(const SignInWithGooglePressed()),
                                   icon: FontAwesome.google,
                                 )
                               ],
                             ),
                             const SizedBox(height: 50),
-                            CreateAccountButton(
+                            SignInCreateAccountButton(
                               onPressed: () => sailor(
                                 Constants.createAccountRoute,
                               ),

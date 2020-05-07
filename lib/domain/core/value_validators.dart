@@ -11,13 +11,24 @@ Either<ValueFailure<String>, String> validateEmailAddress(String input) {
   }
 }
 
-Either<ValueFailure<String>, String> validatePassword(String input) {
+Either<ValueFailure<String>, String> validatePassword(
+  String input, [
+  String input2,
+]) {
   const String passwordRegex =
       r'^(?=.*\d)(?=.*[~!@#$%^&*()_\-+=|\\{}[\]:;<>?/])(?=.*[A-Z])(?=.*[a-z])\S{6,256}$';
-  if (RegExp(passwordRegex).hasMatch(input)) {
-    return right(input);
+  if (input2 != null) {
+    if (RegExp(passwordRegex).hasMatch(input) && input == input2) {
+      return right(input);
+    } else {
+      return left(ValueFailure.invalidConfirmPassword(failedValue: input));
+    }
   } else {
-    return left(ValueFailure.invalidPassword(failedValue: input));
+    if (RegExp(passwordRegex).hasMatch(input)) {
+      return right(input);
+    } else {
+      return left(ValueFailure.invalidPassword(failedValue: input));
+    }
   }
 }
 

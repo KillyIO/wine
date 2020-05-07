@@ -2,6 +2,7 @@ import 'package:flutter/animation.dart';
 import 'package:sailor/sailor.dart';
 import 'package:wine/presentation/pages/account/index.dart';
 import 'package:wine/presentation/pages/copyrights/copyrights_page.dart';
+import 'package:wine/presentation/pages/create_account/create_account_page.dart';
 import 'package:wine/presentation/pages/genres/genres_page.dart';
 import 'package:wine/presentation/pages/home/index.dart';
 import 'package:wine/presentation/pages/new_chapter/new_chapter_page.dart';
@@ -9,6 +10,7 @@ import 'package:wine/presentation/pages/new_series/new_series_page.dart';
 import 'package:wine/presentation/pages/settings/settings_page.dart';
 import 'package:wine/presentation/pages/sign_in/sign_in_page.dart';
 import 'package:wine/presentation/pages/splash/splash_page.dart';
+import 'package:wine/presentation/pages/verify_email/verify_email_page.dart';
 import 'package:wine/utils/arguments.dart';
 import 'package:wine/utils/constants.dart';
 

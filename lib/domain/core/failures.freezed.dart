@@ -24,6 +24,13 @@ class _$ValueFailureTearOff {
     );
   }
 
+  InvalidConfirmPassword<T> invalidConfirmPassword<T>(
+      {@required String failedValue}) {
+    return InvalidConfirmPassword<T>(
+      failedValue: failedValue,
+    );
+  }
+
   InvalidUsername<T> invalidUsername<T>({@required String failedValue}) {
     return InvalidUsername<T>(
       failedValue: failedValue,
@@ -41,12 +48,14 @@ mixin _$ValueFailure<T> {
   Result when<Result extends Object>({
     @required Result invalidEmailAddress(String failedValue),
     @required Result invalidPassword(String failedValue),
+    @required Result invalidConfirmPassword(String failedValue),
     @required Result invalidUsername(String failedValue),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result invalidEmailAddress(String failedValue),
     Result invalidPassword(String failedValue),
+    Result invalidConfirmPassword(String failedValue),
     Result invalidUsername(String failedValue),
     @required Result orElse(),
   });
@@ -54,12 +63,14 @@ mixin _$ValueFailure<T> {
   Result map<Result extends Object>({
     @required Result invalidEmailAddress(InvalidEmail<T> value),
     @required Result invalidPassword(InvalidPassword<T> value),
+    @required Result invalidConfirmPassword(InvalidConfirmPassword<T> value),
     @required Result invalidUsername(InvalidUsername<T> value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result invalidEmailAddress(InvalidEmail<T> value),
     Result invalidPassword(InvalidPassword<T> value),
+    Result invalidConfirmPassword(InvalidConfirmPassword<T> value),
     Result invalidUsername(InvalidUsername<T> value),
     @required Result orElse(),
   });
@@ -157,10 +168,12 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
   Result when<Result extends Object>({
     @required Result invalidEmailAddress(String failedValue),
     @required Result invalidPassword(String failedValue),
+    @required Result invalidConfirmPassword(String failedValue),
     @required Result invalidUsername(String failedValue),
   }) {
     assert(invalidEmailAddress != null);
     assert(invalidPassword != null);
+    assert(invalidConfirmPassword != null);
     assert(invalidUsername != null);
     return invalidEmailAddress(failedValue);
   }
@@ -170,6 +183,7 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
   Result maybeWhen<Result extends Object>({
     Result invalidEmailAddress(String failedValue),
     Result invalidPassword(String failedValue),
+    Result invalidConfirmPassword(String failedValue),
     Result invalidUsername(String failedValue),
     @required Result orElse(),
   }) {
@@ -185,10 +199,12 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
   Result map<Result extends Object>({
     @required Result invalidEmailAddress(InvalidEmail<T> value),
     @required Result invalidPassword(InvalidPassword<T> value),
+    @required Result invalidConfirmPassword(InvalidConfirmPassword<T> value),
     @required Result invalidUsername(InvalidUsername<T> value),
   }) {
     assert(invalidEmailAddress != null);
     assert(invalidPassword != null);
+    assert(invalidConfirmPassword != null);
     assert(invalidUsername != null);
     return invalidEmailAddress(this);
   }
@@ -198,6 +214,7 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
   Result maybeMap<Result extends Object>({
     Result invalidEmailAddress(InvalidEmail<T> value),
     Result invalidPassword(InvalidPassword<T> value),
+    Result invalidConfirmPassword(InvalidConfirmPassword<T> value),
     Result invalidUsername(InvalidUsername<T> value),
     @required Result orElse(),
   }) {
@@ -283,10 +300,12 @@ class _$InvalidPassword<T> implements InvalidPassword<T> {
   Result when<Result extends Object>({
     @required Result invalidEmailAddress(String failedValue),
     @required Result invalidPassword(String failedValue),
+    @required Result invalidConfirmPassword(String failedValue),
     @required Result invalidUsername(String failedValue),
   }) {
     assert(invalidEmailAddress != null);
     assert(invalidPassword != null);
+    assert(invalidConfirmPassword != null);
     assert(invalidUsername != null);
     return invalidPassword(failedValue);
   }
@@ -296,6 +315,7 @@ class _$InvalidPassword<T> implements InvalidPassword<T> {
   Result maybeWhen<Result extends Object>({
     Result invalidEmailAddress(String failedValue),
     Result invalidPassword(String failedValue),
+    Result invalidConfirmPassword(String failedValue),
     Result invalidUsername(String failedValue),
     @required Result orElse(),
   }) {
@@ -311,10 +331,12 @@ class _$InvalidPassword<T> implements InvalidPassword<T> {
   Result map<Result extends Object>({
     @required Result invalidEmailAddress(InvalidEmail<T> value),
     @required Result invalidPassword(InvalidPassword<T> value),
+    @required Result invalidConfirmPassword(InvalidConfirmPassword<T> value),
     @required Result invalidUsername(InvalidUsername<T> value),
   }) {
     assert(invalidEmailAddress != null);
     assert(invalidPassword != null);
+    assert(invalidConfirmPassword != null);
     assert(invalidUsername != null);
     return invalidPassword(this);
   }
@@ -324,6 +346,7 @@ class _$InvalidPassword<T> implements InvalidPassword<T> {
   Result maybeMap<Result extends Object>({
     Result invalidEmailAddress(InvalidEmail<T> value),
     Result invalidPassword(InvalidPassword<T> value),
+    Result invalidConfirmPassword(InvalidConfirmPassword<T> value),
     Result invalidUsername(InvalidUsername<T> value),
     @required Result orElse(),
   }) {
@@ -343,6 +366,140 @@ abstract class InvalidPassword<T> implements ValueFailure<T> {
   String get failedValue;
   @override
   $InvalidPasswordCopyWith<T, InvalidPassword<T>> get copyWith;
+}
+
+abstract class $InvalidConfirmPasswordCopyWith<T, $Res>
+    implements $ValueFailureCopyWith<T, $Res> {
+  factory $InvalidConfirmPasswordCopyWith(InvalidConfirmPassword<T> value,
+          $Res Function(InvalidConfirmPassword<T>) then) =
+      _$InvalidConfirmPasswordCopyWithImpl<T, $Res>;
+  @override
+  $Res call({String failedValue});
+}
+
+class _$InvalidConfirmPasswordCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res>
+    implements $InvalidConfirmPasswordCopyWith<T, $Res> {
+  _$InvalidConfirmPasswordCopyWithImpl(InvalidConfirmPassword<T> _value,
+      $Res Function(InvalidConfirmPassword<T>) _then)
+      : super(_value, (v) => _then(v as InvalidConfirmPassword<T>));
+
+  @override
+  InvalidConfirmPassword<T> get _value =>
+      super._value as InvalidConfirmPassword<T>;
+
+  @override
+  $Res call({
+    Object failedValue = freezed,
+  }) {
+    return _then(InvalidConfirmPassword<T>(
+      failedValue:
+          failedValue == freezed ? _value.failedValue : failedValue as String,
+    ));
+  }
+}
+
+class _$InvalidConfirmPassword<T> implements InvalidConfirmPassword<T> {
+  const _$InvalidConfirmPassword({@required this.failedValue})
+      : assert(failedValue != null);
+
+  @override
+  final String failedValue;
+
+  @override
+  String toString() {
+    return 'ValueFailure<$T>.invalidConfirmPassword(failedValue: $failedValue)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is InvalidConfirmPassword<T> &&
+            (identical(other.failedValue, failedValue) ||
+                const DeepCollectionEquality()
+                    .equals(other.failedValue, failedValue)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
+
+  @override
+  $InvalidConfirmPasswordCopyWith<T, InvalidConfirmPassword<T>> get copyWith =>
+      _$InvalidConfirmPasswordCopyWithImpl<T, InvalidConfirmPassword<T>>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result invalidEmailAddress(String failedValue),
+    @required Result invalidPassword(String failedValue),
+    @required Result invalidConfirmPassword(String failedValue),
+    @required Result invalidUsername(String failedValue),
+  }) {
+    assert(invalidEmailAddress != null);
+    assert(invalidPassword != null);
+    assert(invalidConfirmPassword != null);
+    assert(invalidUsername != null);
+    return invalidConfirmPassword(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result invalidEmailAddress(String failedValue),
+    Result invalidPassword(String failedValue),
+    Result invalidConfirmPassword(String failedValue),
+    Result invalidUsername(String failedValue),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (invalidConfirmPassword != null) {
+      return invalidConfirmPassword(failedValue);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result invalidEmailAddress(InvalidEmail<T> value),
+    @required Result invalidPassword(InvalidPassword<T> value),
+    @required Result invalidConfirmPassword(InvalidConfirmPassword<T> value),
+    @required Result invalidUsername(InvalidUsername<T> value),
+  }) {
+    assert(invalidEmailAddress != null);
+    assert(invalidPassword != null);
+    assert(invalidConfirmPassword != null);
+    assert(invalidUsername != null);
+    return invalidConfirmPassword(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result invalidEmailAddress(InvalidEmail<T> value),
+    Result invalidPassword(InvalidPassword<T> value),
+    Result invalidConfirmPassword(InvalidConfirmPassword<T> value),
+    Result invalidUsername(InvalidUsername<T> value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (invalidConfirmPassword != null) {
+      return invalidConfirmPassword(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class InvalidConfirmPassword<T> implements ValueFailure<T> {
+  const factory InvalidConfirmPassword({@required String failedValue}) =
+      _$InvalidConfirmPassword<T>;
+
+  @override
+  String get failedValue;
+  @override
+  $InvalidConfirmPasswordCopyWith<T, InvalidConfirmPassword<T>> get copyWith;
 }
 
 abstract class $InvalidUsernameCopyWith<T, $Res>
@@ -409,10 +566,12 @@ class _$InvalidUsername<T> implements InvalidUsername<T> {
   Result when<Result extends Object>({
     @required Result invalidEmailAddress(String failedValue),
     @required Result invalidPassword(String failedValue),
+    @required Result invalidConfirmPassword(String failedValue),
     @required Result invalidUsername(String failedValue),
   }) {
     assert(invalidEmailAddress != null);
     assert(invalidPassword != null);
+    assert(invalidConfirmPassword != null);
     assert(invalidUsername != null);
     return invalidUsername(failedValue);
   }
@@ -422,6 +581,7 @@ class _$InvalidUsername<T> implements InvalidUsername<T> {
   Result maybeWhen<Result extends Object>({
     Result invalidEmailAddress(String failedValue),
     Result invalidPassword(String failedValue),
+    Result invalidConfirmPassword(String failedValue),
     Result invalidUsername(String failedValue),
     @required Result orElse(),
   }) {
@@ -437,10 +597,12 @@ class _$InvalidUsername<T> implements InvalidUsername<T> {
   Result map<Result extends Object>({
     @required Result invalidEmailAddress(InvalidEmail<T> value),
     @required Result invalidPassword(InvalidPassword<T> value),
+    @required Result invalidConfirmPassword(InvalidConfirmPassword<T> value),
     @required Result invalidUsername(InvalidUsername<T> value),
   }) {
     assert(invalidEmailAddress != null);
     assert(invalidPassword != null);
+    assert(invalidConfirmPassword != null);
     assert(invalidUsername != null);
     return invalidUsername(this);
   }
@@ -450,6 +612,7 @@ class _$InvalidUsername<T> implements InvalidUsername<T> {
   Result maybeMap<Result extends Object>({
     Result invalidEmailAddress(InvalidEmail<T> value),
     Result invalidPassword(InvalidPassword<T> value),
+    Result invalidConfirmPassword(InvalidConfirmPassword<T> value),
     Result invalidUsername(InvalidUsername<T> value),
     @required Result orElse(),
   }) {

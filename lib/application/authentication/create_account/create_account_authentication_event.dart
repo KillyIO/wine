@@ -10,6 +10,7 @@ abstract class CreateAccountAuthenticationEvent
   ) = PasswordChanged;
   const factory CreateAccountAuthenticationEvent.confirmPasswordChanged(
     String confirmPasswordStr,
+    String passwordStr,
   ) = ConfirmPasswordChanged;
   const factory CreateAccountAuthenticationEvent.usernameChanged(
     String usernameStr,

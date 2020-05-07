@@ -24,9 +24,11 @@ class _$CreateAccountAuthenticationEventTearOff {
     );
   }
 
-  ConfirmPasswordChanged confirmPasswordChanged(String confirmPasswordStr) {
+  ConfirmPasswordChanged confirmPasswordChanged(
+      String confirmPasswordStr, String passwordStr) {
     return ConfirmPasswordChanged(
       confirmPasswordStr,
+      passwordStr,
     );
   }
 
@@ -54,7 +56,9 @@ mixin _$CreateAccountAuthenticationEvent {
   Result when<Result extends Object>({
     @required Result emailChanged(String emailStr),
     @required Result passwordChanged(String passwordStr),
-    @required Result confirmPasswordChanged(String confirmPasswordStr),
+    @required
+        Result confirmPasswordChanged(
+            String confirmPasswordStr, String passwordStr),
     @required Result usernameChanged(String usernameStr),
     @required Result createAccount(),
     @required Result resendVerificationEmail(),
@@ -63,7 +67,8 @@ mixin _$CreateAccountAuthenticationEvent {
   Result maybeWhen<Result extends Object>({
     Result emailChanged(String emailStr),
     Result passwordChanged(String passwordStr),
-    Result confirmPasswordChanged(String confirmPasswordStr),
+    Result confirmPasswordChanged(
+        String confirmPasswordStr, String passwordStr),
     Result usernameChanged(String usernameStr),
     Result createAccount(),
     Result resendVerificationEmail(),
@@ -166,7 +171,9 @@ class _$EmailChanged implements EmailChanged {
   Result when<Result extends Object>({
     @required Result emailChanged(String emailStr),
     @required Result passwordChanged(String passwordStr),
-    @required Result confirmPasswordChanged(String confirmPasswordStr),
+    @required
+        Result confirmPasswordChanged(
+            String confirmPasswordStr, String passwordStr),
     @required Result usernameChanged(String usernameStr),
     @required Result createAccount(),
     @required Result resendVerificationEmail(),
@@ -185,7 +192,8 @@ class _$EmailChanged implements EmailChanged {
   Result maybeWhen<Result extends Object>({
     Result emailChanged(String emailStr),
     Result passwordChanged(String passwordStr),
-    Result confirmPasswordChanged(String confirmPasswordStr),
+    Result confirmPasswordChanged(
+        String confirmPasswordStr, String passwordStr),
     Result usernameChanged(String usernameStr),
     Result createAccount(),
     Result resendVerificationEmail(),
@@ -303,7 +311,9 @@ class _$PasswordChanged implements PasswordChanged {
   Result when<Result extends Object>({
     @required Result emailChanged(String emailStr),
     @required Result passwordChanged(String passwordStr),
-    @required Result confirmPasswordChanged(String confirmPasswordStr),
+    @required
+        Result confirmPasswordChanged(
+            String confirmPasswordStr, String passwordStr),
     @required Result usernameChanged(String usernameStr),
     @required Result createAccount(),
     @required Result resendVerificationEmail(),
@@ -322,7 +332,8 @@ class _$PasswordChanged implements PasswordChanged {
   Result maybeWhen<Result extends Object>({
     Result emailChanged(String emailStr),
     Result passwordChanged(String passwordStr),
-    Result confirmPasswordChanged(String confirmPasswordStr),
+    Result confirmPasswordChanged(
+        String confirmPasswordStr, String passwordStr),
     Result usernameChanged(String usernameStr),
     Result createAccount(),
     Result resendVerificationEmail(),
@@ -384,7 +395,7 @@ abstract class $ConfirmPasswordChangedCopyWith<$Res> {
   factory $ConfirmPasswordChangedCopyWith(ConfirmPasswordChanged value,
           $Res Function(ConfirmPasswordChanged) then) =
       _$ConfirmPasswordChangedCopyWithImpl<$Res>;
-  $Res call({String confirmPasswordStr});
+  $Res call({String confirmPasswordStr, String passwordStr});
 }
 
 class _$ConfirmPasswordChangedCopyWithImpl<$Res>
@@ -400,25 +411,30 @@ class _$ConfirmPasswordChangedCopyWithImpl<$Res>
   @override
   $Res call({
     Object confirmPasswordStr = freezed,
+    Object passwordStr = freezed,
   }) {
     return _then(ConfirmPasswordChanged(
       confirmPasswordStr == freezed
           ? _value.confirmPasswordStr
           : confirmPasswordStr as String,
+      passwordStr == freezed ? _value.passwordStr : passwordStr as String,
     ));
   }
 }
 
 class _$ConfirmPasswordChanged implements ConfirmPasswordChanged {
-  const _$ConfirmPasswordChanged(this.confirmPasswordStr)
-      : assert(confirmPasswordStr != null);
+  const _$ConfirmPasswordChanged(this.confirmPasswordStr, this.passwordStr)
+      : assert(confirmPasswordStr != null),
+        assert(passwordStr != null);
 
   @override
   final String confirmPasswordStr;
+  @override
+  final String passwordStr;
 
   @override
   String toString() {
-    return 'CreateAccountAuthenticationEvent.confirmPasswordChanged(confirmPasswordStr: $confirmPasswordStr)';
+    return 'CreateAccountAuthenticationEvent.confirmPasswordChanged(confirmPasswordStr: $confirmPasswordStr, passwordStr: $passwordStr)';
   }
 
   @override
@@ -427,13 +443,17 @@ class _$ConfirmPasswordChanged implements ConfirmPasswordChanged {
         (other is ConfirmPasswordChanged &&
             (identical(other.confirmPasswordStr, confirmPasswordStr) ||
                 const DeepCollectionEquality()
-                    .equals(other.confirmPasswordStr, confirmPasswordStr)));
+                    .equals(other.confirmPasswordStr, confirmPasswordStr)) &&
+            (identical(other.passwordStr, passwordStr) ||
+                const DeepCollectionEquality()
+                    .equals(other.passwordStr, passwordStr)));
   }
 
   @override
   int get hashCode =>
       runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(confirmPasswordStr);
+      const DeepCollectionEquality().hash(confirmPasswordStr) ^
+      const DeepCollectionEquality().hash(passwordStr);
 
   @override
   $ConfirmPasswordChangedCopyWith<ConfirmPasswordChanged> get copyWith =>
@@ -445,7 +465,9 @@ class _$ConfirmPasswordChanged implements ConfirmPasswordChanged {
   Result when<Result extends Object>({
     @required Result emailChanged(String emailStr),
     @required Result passwordChanged(String passwordStr),
-    @required Result confirmPasswordChanged(String confirmPasswordStr),
+    @required
+        Result confirmPasswordChanged(
+            String confirmPasswordStr, String passwordStr),
     @required Result usernameChanged(String usernameStr),
     @required Result createAccount(),
     @required Result resendVerificationEmail(),
@@ -456,7 +478,7 @@ class _$ConfirmPasswordChanged implements ConfirmPasswordChanged {
     assert(usernameChanged != null);
     assert(createAccount != null);
     assert(resendVerificationEmail != null);
-    return confirmPasswordChanged(confirmPasswordStr);
+    return confirmPasswordChanged(confirmPasswordStr, passwordStr);
   }
 
   @override
@@ -464,7 +486,8 @@ class _$ConfirmPasswordChanged implements ConfirmPasswordChanged {
   Result maybeWhen<Result extends Object>({
     Result emailChanged(String emailStr),
     Result passwordChanged(String passwordStr),
-    Result confirmPasswordChanged(String confirmPasswordStr),
+    Result confirmPasswordChanged(
+        String confirmPasswordStr, String passwordStr),
     Result usernameChanged(String usernameStr),
     Result createAccount(),
     Result resendVerificationEmail(),
@@ -472,7 +495,7 @@ class _$ConfirmPasswordChanged implements ConfirmPasswordChanged {
   }) {
     assert(orElse != null);
     if (confirmPasswordChanged != null) {
-      return confirmPasswordChanged(confirmPasswordStr);
+      return confirmPasswordChanged(confirmPasswordStr, passwordStr);
     }
     return orElse();
   }
@@ -517,10 +540,11 @@ class _$ConfirmPasswordChanged implements ConfirmPasswordChanged {
 
 abstract class ConfirmPasswordChanged
     implements CreateAccountAuthenticationEvent {
-  const factory ConfirmPasswordChanged(String confirmPasswordStr) =
-      _$ConfirmPasswordChanged;
+  const factory ConfirmPasswordChanged(
+      String confirmPasswordStr, String passwordStr) = _$ConfirmPasswordChanged;
 
   String get confirmPasswordStr;
+  String get passwordStr;
   $ConfirmPasswordChangedCopyWith<ConfirmPasswordChanged> get copyWith;
 }
 
@@ -584,7 +608,9 @@ class _$UsernameChanged implements UsernameChanged {
   Result when<Result extends Object>({
     @required Result emailChanged(String emailStr),
     @required Result passwordChanged(String passwordStr),
-    @required Result confirmPasswordChanged(String confirmPasswordStr),
+    @required
+        Result confirmPasswordChanged(
+            String confirmPasswordStr, String passwordStr),
     @required Result usernameChanged(String usernameStr),
     @required Result createAccount(),
     @required Result resendVerificationEmail(),
@@ -603,7 +629,8 @@ class _$UsernameChanged implements UsernameChanged {
   Result maybeWhen<Result extends Object>({
     Result emailChanged(String emailStr),
     Result passwordChanged(String passwordStr),
-    Result confirmPasswordChanged(String confirmPasswordStr),
+    Result confirmPasswordChanged(
+        String confirmPasswordStr, String passwordStr),
     Result usernameChanged(String usernameStr),
     Result createAccount(),
     Result resendVerificationEmail(),
@@ -699,7 +726,9 @@ class _$CreateAccount implements CreateAccount {
   Result when<Result extends Object>({
     @required Result emailChanged(String emailStr),
     @required Result passwordChanged(String passwordStr),
-    @required Result confirmPasswordChanged(String confirmPasswordStr),
+    @required
+        Result confirmPasswordChanged(
+            String confirmPasswordStr, String passwordStr),
     @required Result usernameChanged(String usernameStr),
     @required Result createAccount(),
     @required Result resendVerificationEmail(),
@@ -718,7 +747,8 @@ class _$CreateAccount implements CreateAccount {
   Result maybeWhen<Result extends Object>({
     Result emailChanged(String emailStr),
     Result passwordChanged(String passwordStr),
-    Result confirmPasswordChanged(String confirmPasswordStr),
+    Result confirmPasswordChanged(
+        String confirmPasswordStr, String passwordStr),
     Result usernameChanged(String usernameStr),
     Result createAccount(),
     Result resendVerificationEmail(),
@@ -811,7 +841,9 @@ class _$ResendVerificationEmail implements ResendVerificationEmail {
   Result when<Result extends Object>({
     @required Result emailChanged(String emailStr),
     @required Result passwordChanged(String passwordStr),
-    @required Result confirmPasswordChanged(String confirmPasswordStr),
+    @required
+        Result confirmPasswordChanged(
+            String confirmPasswordStr, String passwordStr),
     @required Result usernameChanged(String usernameStr),
     @required Result createAccount(),
     @required Result resendVerificationEmail(),
@@ -830,7 +862,8 @@ class _$ResendVerificationEmail implements ResendVerificationEmail {
   Result maybeWhen<Result extends Object>({
     Result emailChanged(String emailStr),
     Result passwordChanged(String passwordStr),
-    Result confirmPasswordChanged(String confirmPasswordStr),
+    Result confirmPasswordChanged(
+        String confirmPasswordStr, String passwordStr),
     Result usernameChanged(String usernameStr),
     Result createAccount(),
     Result resendVerificationEmail(),
@@ -899,13 +932,7 @@ class _$CreateAccountAuthenticationStateTearOff {
       @required
           Username username,
       @required
-          bool showEmailErrorMessage,
-      @required
-          bool showPasswordErrorMessage,
-      @required
-          bool showConfirmPasswordErrorMessage,
-      @required
-          bool showUsernameErrorMessage,
+          bool showErrorMessages,
       @required
           bool isSubmitting,
       @required
@@ -918,10 +945,7 @@ class _$CreateAccountAuthenticationStateTearOff {
       password: password,
       confirmPassword: confirmPassword,
       username: username,
-      showEmailErrorMessage: showEmailErrorMessage,
-      showPasswordErrorMessage: showPasswordErrorMessage,
-      showConfirmPasswordErrorMessage: showConfirmPasswordErrorMessage,
-      showUsernameErrorMessage: showUsernameErrorMessage,
+      showErrorMessages: showErrorMessages,
       isSubmitting: isSubmitting,
       isVerificationEmailSent: isVerificationEmailSent,
       authenticationFailureOrSuccessOption:
@@ -939,10 +963,7 @@ mixin _$CreateAccountAuthenticationState {
   Password get password;
   Password get confirmPassword;
   Username get username;
-  bool get showEmailErrorMessage;
-  bool get showPasswordErrorMessage;
-  bool get showConfirmPasswordErrorMessage;
-  bool get showUsernameErrorMessage;
+  bool get showErrorMessages;
   bool get isSubmitting;
   bool get isVerificationEmailSent;
   Option<Either<AuthenticationFailure, dynamic>>
@@ -962,10 +983,7 @@ abstract class $CreateAccountAuthenticationStateCopyWith<$Res> {
       Password password,
       Password confirmPassword,
       Username username,
-      bool showEmailErrorMessage,
-      bool showPasswordErrorMessage,
-      bool showConfirmPasswordErrorMessage,
-      bool showUsernameErrorMessage,
+      bool showErrorMessages,
       bool isSubmitting,
       bool isVerificationEmailSent,
       Option<Either<AuthenticationFailure, dynamic>>
@@ -986,10 +1004,7 @@ class _$CreateAccountAuthenticationStateCopyWithImpl<$Res>
     Object password = freezed,
     Object confirmPassword = freezed,
     Object username = freezed,
-    Object showEmailErrorMessage = freezed,
-    Object showPasswordErrorMessage = freezed,
-    Object showConfirmPasswordErrorMessage = freezed,
-    Object showUsernameErrorMessage = freezed,
+    Object showErrorMessages = freezed,
     Object isSubmitting = freezed,
     Object isVerificationEmailSent = freezed,
     Object authenticationFailureOrSuccessOption = freezed,
@@ -1003,19 +1018,9 @@ class _$CreateAccountAuthenticationStateCopyWithImpl<$Res>
           ? _value.confirmPassword
           : confirmPassword as Password,
       username: username == freezed ? _value.username : username as Username,
-      showEmailErrorMessage: showEmailErrorMessage == freezed
-          ? _value.showEmailErrorMessage
-          : showEmailErrorMessage as bool,
-      showPasswordErrorMessage: showPasswordErrorMessage == freezed
-          ? _value.showPasswordErrorMessage
-          : showPasswordErrorMessage as bool,
-      showConfirmPasswordErrorMessage:
-          showConfirmPasswordErrorMessage == freezed
-              ? _value.showConfirmPasswordErrorMessage
-              : showConfirmPasswordErrorMessage as bool,
-      showUsernameErrorMessage: showUsernameErrorMessage == freezed
-          ? _value.showUsernameErrorMessage
-          : showUsernameErrorMessage as bool,
+      showErrorMessages: showErrorMessages == freezed
+          ? _value.showErrorMessages
+          : showErrorMessages as bool,
       isSubmitting:
           isSubmitting == freezed ? _value.isSubmitting : isSubmitting as bool,
       isVerificationEmailSent: isVerificationEmailSent == freezed
@@ -1042,10 +1047,7 @@ abstract class _$CreateAccountAuthenticationStateCopyWith<$Res>
       Password password,
       Password confirmPassword,
       Username username,
-      bool showEmailErrorMessage,
-      bool showPasswordErrorMessage,
-      bool showConfirmPasswordErrorMessage,
-      bool showUsernameErrorMessage,
+      bool showErrorMessages,
       bool isSubmitting,
       bool isVerificationEmailSent,
       Option<Either<AuthenticationFailure, dynamic>>
@@ -1070,10 +1072,7 @@ class __$CreateAccountAuthenticationStateCopyWithImpl<$Res>
     Object password = freezed,
     Object confirmPassword = freezed,
     Object username = freezed,
-    Object showEmailErrorMessage = freezed,
-    Object showPasswordErrorMessage = freezed,
-    Object showConfirmPasswordErrorMessage = freezed,
-    Object showUsernameErrorMessage = freezed,
+    Object showErrorMessages = freezed,
     Object isSubmitting = freezed,
     Object isVerificationEmailSent = freezed,
     Object authenticationFailureOrSuccessOption = freezed,
@@ -1087,19 +1086,9 @@ class __$CreateAccountAuthenticationStateCopyWithImpl<$Res>
           ? _value.confirmPassword
           : confirmPassword as Password,
       username: username == freezed ? _value.username : username as Username,
-      showEmailErrorMessage: showEmailErrorMessage == freezed
-          ? _value.showEmailErrorMessage
-          : showEmailErrorMessage as bool,
-      showPasswordErrorMessage: showPasswordErrorMessage == freezed
-          ? _value.showPasswordErrorMessage
-          : showPasswordErrorMessage as bool,
-      showConfirmPasswordErrorMessage:
-          showConfirmPasswordErrorMessage == freezed
-              ? _value.showConfirmPasswordErrorMessage
-              : showConfirmPasswordErrorMessage as bool,
-      showUsernameErrorMessage: showUsernameErrorMessage == freezed
-          ? _value.showUsernameErrorMessage
-          : showUsernameErrorMessage as bool,
+      showErrorMessages: showErrorMessages == freezed
+          ? _value.showErrorMessages
+          : showErrorMessages as bool,
       isSubmitting:
           isSubmitting == freezed ? _value.isSubmitting : isSubmitting as bool,
       isVerificationEmailSent: isVerificationEmailSent == freezed
@@ -1121,10 +1110,7 @@ class _$_CreateAccountAuthenticationState
       @required this.password,
       @required this.confirmPassword,
       @required this.username,
-      @required this.showEmailErrorMessage,
-      @required this.showPasswordErrorMessage,
-      @required this.showConfirmPasswordErrorMessage,
-      @required this.showUsernameErrorMessage,
+      @required this.showErrorMessages,
       @required this.isSubmitting,
       @required this.isVerificationEmailSent,
       @required this.authenticationFailureOrSuccessOption})
@@ -1132,10 +1118,7 @@ class _$_CreateAccountAuthenticationState
         assert(password != null),
         assert(confirmPassword != null),
         assert(username != null),
-        assert(showEmailErrorMessage != null),
-        assert(showPasswordErrorMessage != null),
-        assert(showConfirmPasswordErrorMessage != null),
-        assert(showUsernameErrorMessage != null),
+        assert(showErrorMessages != null),
         assert(isSubmitting != null),
         assert(isVerificationEmailSent != null),
         assert(authenticationFailureOrSuccessOption != null);
@@ -1149,13 +1132,7 @@ class _$_CreateAccountAuthenticationState
   @override
   final Username username;
   @override
-  final bool showEmailErrorMessage;
-  @override
-  final bool showPasswordErrorMessage;
-  @override
-  final bool showConfirmPasswordErrorMessage;
-  @override
-  final bool showUsernameErrorMessage;
+  final bool showErrorMessages;
   @override
   final bool isSubmitting;
   @override
@@ -1166,7 +1143,7 @@ class _$_CreateAccountAuthenticationState
 
   @override
   String toString() {
-    return 'CreateAccountAuthenticationState(emailAddress: $emailAddress, password: $password, confirmPassword: $confirmPassword, username: $username, showEmailErrorMessage: $showEmailErrorMessage, showPasswordErrorMessage: $showPasswordErrorMessage, showConfirmPasswordErrorMessage: $showConfirmPasswordErrorMessage, showUsernameErrorMessage: $showUsernameErrorMessage, isSubmitting: $isSubmitting, isVerificationEmailSent: $isVerificationEmailSent, authenticationFailureOrSuccessOption: $authenticationFailureOrSuccessOption)';
+    return 'CreateAccountAuthenticationState(emailAddress: $emailAddress, password: $password, confirmPassword: $confirmPassword, username: $username, showErrorMessages: $showErrorMessages, isSubmitting: $isSubmitting, isVerificationEmailSent: $isVerificationEmailSent, authenticationFailureOrSuccessOption: $authenticationFailureOrSuccessOption)';
   }
 
   @override
@@ -1185,25 +1162,14 @@ class _$_CreateAccountAuthenticationState
             (identical(other.username, username) ||
                 const DeepCollectionEquality()
                     .equals(other.username, username)) &&
-            (identical(other.showEmailErrorMessage, showEmailErrorMessage) ||
-                const DeepCollectionEquality().equals(
-                    other.showEmailErrorMessage, showEmailErrorMessage)) &&
-            (identical(other.showPasswordErrorMessage, showPasswordErrorMessage) ||
-                const DeepCollectionEquality().equals(
-                    other.showPasswordErrorMessage,
-                    showPasswordErrorMessage)) &&
-            (identical(other.showConfirmPasswordErrorMessage, showConfirmPasswordErrorMessage) ||
-                const DeepCollectionEquality().equals(
-                    other.showConfirmPasswordErrorMessage,
-                    showConfirmPasswordErrorMessage)) &&
-            (identical(other.showUsernameErrorMessage, showUsernameErrorMessage) ||
-                const DeepCollectionEquality().equals(
-                    other.showUsernameErrorMessage,
-                    showUsernameErrorMessage)) &&
+            (identical(other.showErrorMessages, showErrorMessages) ||
+                const DeepCollectionEquality()
+                    .equals(other.showErrorMessages, showErrorMessages)) &&
             (identical(other.isSubmitting, isSubmitting) ||
                 const DeepCollectionEquality()
                     .equals(other.isSubmitting, isSubmitting)) &&
-            (identical(other.isVerificationEmailSent, isVerificationEmailSent) ||
+            (identical(
+                    other.isVerificationEmailSent, isVerificationEmailSent) ||
                 const DeepCollectionEquality().equals(
                     other.isVerificationEmailSent, isVerificationEmailSent)) &&
             (identical(other.authenticationFailureOrSuccessOption,
@@ -1220,10 +1186,7 @@ class _$_CreateAccountAuthenticationState
       const DeepCollectionEquality().hash(password) ^
       const DeepCollectionEquality().hash(confirmPassword) ^
       const DeepCollectionEquality().hash(username) ^
-      const DeepCollectionEquality().hash(showEmailErrorMessage) ^
-      const DeepCollectionEquality().hash(showPasswordErrorMessage) ^
-      const DeepCollectionEquality().hash(showConfirmPasswordErrorMessage) ^
-      const DeepCollectionEquality().hash(showUsernameErrorMessage) ^
+      const DeepCollectionEquality().hash(showErrorMessages) ^
       const DeepCollectionEquality().hash(isSubmitting) ^
       const DeepCollectionEquality().hash(isVerificationEmailSent) ^
       const DeepCollectionEquality().hash(authenticationFailureOrSuccessOption);
@@ -1246,13 +1209,7 @@ abstract class _CreateAccountAuthenticationState
           @required
               Username username,
           @required
-              bool showEmailErrorMessage,
-          @required
-              bool showPasswordErrorMessage,
-          @required
-              bool showConfirmPasswordErrorMessage,
-          @required
-              bool showUsernameErrorMessage,
+              bool showErrorMessages,
           @required
               bool isSubmitting,
           @required
@@ -1271,13 +1228,7 @@ abstract class _CreateAccountAuthenticationState
   @override
   Username get username;
   @override
-  bool get showEmailErrorMessage;
-  @override
-  bool get showPasswordErrorMessage;
-  @override
-  bool get showConfirmPasswordErrorMessage;
-  @override
-  bool get showUsernameErrorMessage;
+  bool get showErrorMessages;
   @override
   bool get isSubmitting;
   @override
