@@ -36,7 +36,9 @@ class _CreateAccountFormState extends State<CreateAccountForm>
 
   void _onPasswordChanged() => context
       .bloc<CreateAccountAuthenticationBloc>()
-      .add(PasswordChanged(_passwordController.text));
+      .add(CreateAccountAuthenticationEvent.passwordChanged(
+        _passwordController.text,
+      ));
 
   @override
   Widget build(BuildContext context) {

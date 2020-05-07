@@ -5,8 +5,8 @@ abstract class NewSeriesDatabaseEvent with _$NewSeriesDatabaseEvent {
   const factory NewSeriesDatabaseEvent.newSeriesPageLaunched({
     SeriesDraft seriesDraft,
   }) = NewSeriesPageLaunched;
-  const factory NewSeriesDatabaseEvent.continueButtonPressed() =
-      ContinueButtonPressed;
+  const factory NewSeriesDatabaseEvent.createSeriesButtonPressed() =
+      CreateSeriesButtonPressed;
   const factory NewSeriesDatabaseEvent.titleChanged(
     String title,
   ) = TitleChanged;

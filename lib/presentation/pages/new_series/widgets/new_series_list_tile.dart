@@ -19,7 +19,7 @@ class NewSeriesListTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Palettes.darkCobaltBlue,
+      color: Colors.black,
       child: ListTile(
         onTap: onPressed,
         title: Text(

@@ -45,7 +45,7 @@ class HomeMenuLayout extends StatelessWidget {
                         onPressed: () {
                           context
                               .bloc<HomeNavigationBloc>()
-                              .add(MenuIconPressed(
+                              .add(HomeNavigationEvent.menuIconPressed(
                                 isMenuOpen: navigationState.isMenuOpen,
                               ));
                           Navigator.of(context).pop();
@@ -65,7 +65,7 @@ class HomeMenuLayout extends StatelessWidget {
                               details.globalPosition.dx;
                           context
                               .bloc<HomeNavigationBloc>()
-                              .add(MenuDragStarted(
+                              .add(HomeNavigationEvent.menuDragStarted(
                                 initialPosition: initialPosition,
                               ));
                         },
@@ -74,7 +74,7 @@ class HomeMenuLayout extends StatelessWidget {
                               navigationState.initialPosition;
                           context
                               .bloc<HomeNavigationBloc>()
-                              .add(MenuDragUpdated(
+                              .add(HomeNavigationEvent.menuDragUpdated(
                                 distance: distance,
                               ));
                         },
@@ -85,7 +85,7 @@ class HomeMenuLayout extends StatelessWidget {
                               navigationState.isMenuOpen) {
                             context
                                 .bloc<HomeNavigationBloc>()
-                                .add(MenuIconPressed(
+                                .add(HomeNavigationEvent.menuIconPressed(
                                   isMenuOpen: navigationState.isMenuOpen,
                                 ));
                             Navigator.of(context).pop();
@@ -123,6 +123,7 @@ class HomeMenuLayout extends StatelessWidget {
                                   ),
                                 ),
                               ),
+                            const SizedBox(height: 25),
                             Padding(
                               padding: const EdgeInsets.only(bottom: 50.0),
                               child: Container(

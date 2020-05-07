@@ -10,6 +10,7 @@ import 'package:wine/presentation/pages/settings/widgets/account_settings.dart';
 import 'package:wine/presentation/pages/settings/widgets/app_version.dart';
 import 'package:wine/presentation/widgets/custom_show_dialog.dart';
 import 'package:wine/presentation/widgets/error_dialog.dart';
+import 'package:wine/presentation/widgets/image_back_button.dart';
 import 'package:wine/routes.dart';
 import 'package:wine/utils/constants.dart';
 import 'package:wine/utils/palettes.dart';
@@ -44,12 +45,9 @@ class _SettingsLayoutState extends State<SettingsLayout>
               horizontal: 10.0,
               vertical: 5.0,
             ),
-            child: GestureDetector(
-              onTap: () => Navigator.of(context).pop(),
-              child: Image.asset(
-                'assets/img/back_button.png',
-                fit: BoxFit.contain,
-              ),
+            child: ImageBackButton(
+              onPressed: () => Navigator.of(context).pop(),
+              color: Colors.black,
             ),
           ),
           title: const Text(

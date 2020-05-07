@@ -50,14 +50,18 @@ class _HomeLayoutState extends State<HomeLayout> {
                     behavior: HitTestBehavior.translucent,
                     onHorizontalDragStart: (details) {
                       final double initialPosition = details.globalPosition.dx;
-                      context.bloc<HomeNavigationBloc>().add(MenuDragStarted(
+                      context
+                          .bloc<HomeNavigationBloc>()
+                          .add(HomeNavigationEvent.menuDragStarted(
                             initialPosition: initialPosition,
                           ));
                     },
                     onHorizontalDragUpdate: (details) {
                       final double distance = details.globalPosition.dx -
                           navigationState.initialPosition;
-                      context.bloc<HomeNavigationBloc>().add(MenuDragUpdated(
+                      context
+                          .bloc<HomeNavigationBloc>()
+                          .add(HomeNavigationEvent.menuDragUpdated(
                             distance: distance,
                           ));
                     },

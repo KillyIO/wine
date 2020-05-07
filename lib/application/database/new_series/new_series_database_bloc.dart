@@ -37,33 +37,30 @@ class NewSeriesDatabaseBloc
   ) async* {
     yield* event.map(
       newSeriesPageLaunched: (event) async* {
-        String uid;
-        String authorUid;
+        SeriesDraft seriesDraft;
 
         if (event.seriesDraft != null) {
-          uid = event.seriesDraft.uid;
-          authorUid = event.seriesDraft.authorUid;
+          seriesDraft = event.seriesDraft;
         } else {
           final Session session = _localSessionDatabaseFacade.getSession();
 
-          authorUid = session.uid;
-          uid = uuid.v4();
+          seriesDraft = SeriesDraft(
+            uid: uuid.v4(),
+            authorUid: session.uid,
+            title: '',
+            copyrights: 'CC BY',
+          );
         }
-
-        final SeriesDraft seriesDraft = SeriesDraft(
-          uid: uid,
-          authorUid: authorUid,
-          copyrights: 'CC BY',
-        );
 
         yield state.copyWith(
           seriesDraft: seriesDraft,
-          uid: uid,
-          authorUid: authorUid,
-          copyrights: 'CC BY',
+          uid: seriesDraft.uid,
+          authorUid: seriesDraft.authorUid,
+          title: seriesDraft.title,
+          copyrights: seriesDraft.copyrights,
         );
       },
-      continueButtonPressed: (event) async* {},
+      createSeriesButtonPressed: (event) async* {},
       titleChanged: (event) async* {
         yield state.copyWith(
           title: event.title,

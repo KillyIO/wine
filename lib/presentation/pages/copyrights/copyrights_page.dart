@@ -29,7 +29,7 @@ class CopyrightsPage extends StatelessWidget {
               padding: const EdgeInsets.only(bottom: 5.0, left: 10.0, top: 5.0),
               child: ImageBackButton(
                 onPressed: () => Navigator.of(context).pop(),
-                color: Palettes.darkCobaltBlue,
+                color: Colors.black,
               ),
             ),
           ),

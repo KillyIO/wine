@@ -18,8 +18,8 @@ class _$NewSeriesDatabaseEventTearOff {
     );
   }
 
-  ContinueButtonPressed continueButtonPressed() {
-    return const ContinueButtonPressed();
+  CreateSeriesButtonPressed createSeriesButtonPressed() {
+    return const CreateSeriesButtonPressed();
   }
 
   TitleChanged titleChanged(String title) {
@@ -66,7 +66,7 @@ mixin _$NewSeriesDatabaseEvent {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result newSeriesPageLaunched(SeriesDraft seriesDraft),
-    @required Result continueButtonPressed(),
+    @required Result createSeriesButtonPressed(),
     @required Result titleChanged(String title),
     @required Result descriptionChanged(String description),
     @required Result genreSelected(String genre),
@@ -77,7 +77,7 @@ mixin _$NewSeriesDatabaseEvent {
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result newSeriesPageLaunched(SeriesDraft seriesDraft),
-    Result continueButtonPressed(),
+    Result createSeriesButtonPressed(),
     Result titleChanged(String title),
     Result descriptionChanged(String description),
     Result genreSelected(String genre),
@@ -89,7 +89,7 @@ mixin _$NewSeriesDatabaseEvent {
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result newSeriesPageLaunched(NewSeriesPageLaunched value),
-    @required Result continueButtonPressed(ContinueButtonPressed value),
+    @required Result createSeriesButtonPressed(CreateSeriesButtonPressed value),
     @required Result titleChanged(TitleChanged value),
     @required Result descriptionChanged(DescriptionChanged value),
     @required Result genreSelected(GenreSelected value),
@@ -100,7 +100,7 @@ mixin _$NewSeriesDatabaseEvent {
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result newSeriesPageLaunched(NewSeriesPageLaunched value),
-    Result continueButtonPressed(ContinueButtonPressed value),
+    Result createSeriesButtonPressed(CreateSeriesButtonPressed value),
     Result titleChanged(TitleChanged value),
     Result descriptionChanged(DescriptionChanged value),
     Result genreSelected(GenreSelected value),
@@ -188,7 +188,7 @@ class _$NewSeriesPageLaunched implements NewSeriesPageLaunched {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result newSeriesPageLaunched(SeriesDraft seriesDraft),
-    @required Result continueButtonPressed(),
+    @required Result createSeriesButtonPressed(),
     @required Result titleChanged(String title),
     @required Result descriptionChanged(String description),
     @required Result genreSelected(String genre),
@@ -197,7 +197,7 @@ class _$NewSeriesPageLaunched implements NewSeriesPageLaunched {
     @required Result copyrightsSelected(String copyrights),
   }) {
     assert(newSeriesPageLaunched != null);
-    assert(continueButtonPressed != null);
+    assert(createSeriesButtonPressed != null);
     assert(titleChanged != null);
     assert(descriptionChanged != null);
     assert(genreSelected != null);
@@ -211,7 +211,7 @@ class _$NewSeriesPageLaunched implements NewSeriesPageLaunched {
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result newSeriesPageLaunched(SeriesDraft seriesDraft),
-    Result continueButtonPressed(),
+    Result createSeriesButtonPressed(),
     Result titleChanged(String title),
     Result descriptionChanged(String description),
     Result genreSelected(String genre),
@@ -231,7 +231,7 @@ class _$NewSeriesPageLaunched implements NewSeriesPageLaunched {
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result newSeriesPageLaunched(NewSeriesPageLaunched value),
-    @required Result continueButtonPressed(ContinueButtonPressed value),
+    @required Result createSeriesButtonPressed(CreateSeriesButtonPressed value),
     @required Result titleChanged(TitleChanged value),
     @required Result descriptionChanged(DescriptionChanged value),
     @required Result genreSelected(GenreSelected value),
@@ -240,7 +240,7 @@ class _$NewSeriesPageLaunched implements NewSeriesPageLaunched {
     @required Result copyrightsSelected(CopyrightsSelected value),
   }) {
     assert(newSeriesPageLaunched != null);
-    assert(continueButtonPressed != null);
+    assert(createSeriesButtonPressed != null);
     assert(titleChanged != null);
     assert(descriptionChanged != null);
     assert(genreSelected != null);
@@ -254,7 +254,7 @@ class _$NewSeriesPageLaunched implements NewSeriesPageLaunched {
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result newSeriesPageLaunched(NewSeriesPageLaunched value),
-    Result continueButtonPressed(ContinueButtonPressed value),
+    Result createSeriesButtonPressed(CreateSeriesButtonPressed value),
     Result titleChanged(TitleChanged value),
     Result descriptionChanged(DescriptionChanged value),
     Result genreSelected(GenreSelected value),
@@ -279,34 +279,35 @@ abstract class NewSeriesPageLaunched implements NewSeriesDatabaseEvent {
   $NewSeriesPageLaunchedCopyWith<NewSeriesPageLaunched> get copyWith;
 }
 
-abstract class $ContinueButtonPressedCopyWith<$Res> {
-  factory $ContinueButtonPressedCopyWith(ContinueButtonPressed value,
-          $Res Function(ContinueButtonPressed) then) =
-      _$ContinueButtonPressedCopyWithImpl<$Res>;
+abstract class $CreateSeriesButtonPressedCopyWith<$Res> {
+  factory $CreateSeriesButtonPressedCopyWith(CreateSeriesButtonPressed value,
+          $Res Function(CreateSeriesButtonPressed) then) =
+      _$CreateSeriesButtonPressedCopyWithImpl<$Res>;
 }
 
-class _$ContinueButtonPressedCopyWithImpl<$Res>
+class _$CreateSeriesButtonPressedCopyWithImpl<$Res>
     extends _$NewSeriesDatabaseEventCopyWithImpl<$Res>
-    implements $ContinueButtonPressedCopyWith<$Res> {
-  _$ContinueButtonPressedCopyWithImpl(
-      ContinueButtonPressed _value, $Res Function(ContinueButtonPressed) _then)
-      : super(_value, (v) => _then(v as ContinueButtonPressed));
+    implements $CreateSeriesButtonPressedCopyWith<$Res> {
+  _$CreateSeriesButtonPressedCopyWithImpl(CreateSeriesButtonPressed _value,
+      $Res Function(CreateSeriesButtonPressed) _then)
+      : super(_value, (v) => _then(v as CreateSeriesButtonPressed));
 
   @override
-  ContinueButtonPressed get _value => super._value as ContinueButtonPressed;
+  CreateSeriesButtonPressed get _value =>
+      super._value as CreateSeriesButtonPressed;
 }
 
-class _$ContinueButtonPressed implements ContinueButtonPressed {
-  const _$ContinueButtonPressed();
+class _$CreateSeriesButtonPressed implements CreateSeriesButtonPressed {
+  const _$CreateSeriesButtonPressed();
 
   @override
   String toString() {
-    return 'NewSeriesDatabaseEvent.continueButtonPressed()';
+    return 'NewSeriesDatabaseEvent.createSeriesButtonPressed()';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is ContinueButtonPressed);
+    return identical(this, other) || (other is CreateSeriesButtonPressed);
   }
 
   @override
@@ -316,7 +317,7 @@ class _$ContinueButtonPressed implements ContinueButtonPressed {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result newSeriesPageLaunched(SeriesDraft seriesDraft),
-    @required Result continueButtonPressed(),
+    @required Result createSeriesButtonPressed(),
     @required Result titleChanged(String title),
     @required Result descriptionChanged(String description),
     @required Result genreSelected(String genre),
@@ -325,21 +326,21 @@ class _$ContinueButtonPressed implements ContinueButtonPressed {
     @required Result copyrightsSelected(String copyrights),
   }) {
     assert(newSeriesPageLaunched != null);
-    assert(continueButtonPressed != null);
+    assert(createSeriesButtonPressed != null);
     assert(titleChanged != null);
     assert(descriptionChanged != null);
     assert(genreSelected != null);
     assert(genreOptionalSelected != null);
     assert(languageSelected != null);
     assert(copyrightsSelected != null);
-    return continueButtonPressed();
+    return createSeriesButtonPressed();
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result newSeriesPageLaunched(SeriesDraft seriesDraft),
-    Result continueButtonPressed(),
+    Result createSeriesButtonPressed(),
     Result titleChanged(String title),
     Result descriptionChanged(String description),
     Result genreSelected(String genre),
@@ -349,8 +350,8 @@ class _$ContinueButtonPressed implements ContinueButtonPressed {
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (continueButtonPressed != null) {
-      return continueButtonPressed();
+    if (createSeriesButtonPressed != null) {
+      return createSeriesButtonPressed();
     }
     return orElse();
   }
@@ -359,7 +360,7 @@ class _$ContinueButtonPressed implements ContinueButtonPressed {
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result newSeriesPageLaunched(NewSeriesPageLaunched value),
-    @required Result continueButtonPressed(ContinueButtonPressed value),
+    @required Result createSeriesButtonPressed(CreateSeriesButtonPressed value),
     @required Result titleChanged(TitleChanged value),
     @required Result descriptionChanged(DescriptionChanged value),
     @required Result genreSelected(GenreSelected value),
@@ -368,21 +369,21 @@ class _$ContinueButtonPressed implements ContinueButtonPressed {
     @required Result copyrightsSelected(CopyrightsSelected value),
   }) {
     assert(newSeriesPageLaunched != null);
-    assert(continueButtonPressed != null);
+    assert(createSeriesButtonPressed != null);
     assert(titleChanged != null);
     assert(descriptionChanged != null);
     assert(genreSelected != null);
     assert(genreOptionalSelected != null);
     assert(languageSelected != null);
     assert(copyrightsSelected != null);
-    return continueButtonPressed(this);
+    return createSeriesButtonPressed(this);
   }
 
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result newSeriesPageLaunched(NewSeriesPageLaunched value),
-    Result continueButtonPressed(ContinueButtonPressed value),
+    Result createSeriesButtonPressed(CreateSeriesButtonPressed value),
     Result titleChanged(TitleChanged value),
     Result descriptionChanged(DescriptionChanged value),
     Result genreSelected(GenreSelected value),
@@ -392,15 +393,15 @@ class _$ContinueButtonPressed implements ContinueButtonPressed {
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (continueButtonPressed != null) {
-      return continueButtonPressed(this);
+    if (createSeriesButtonPressed != null) {
+      return createSeriesButtonPressed(this);
     }
     return orElse();
   }
 }
 
-abstract class ContinueButtonPressed implements NewSeriesDatabaseEvent {
-  const factory ContinueButtonPressed() = _$ContinueButtonPressed;
+abstract class CreateSeriesButtonPressed implements NewSeriesDatabaseEvent {
+  const factory CreateSeriesButtonPressed() = _$CreateSeriesButtonPressed;
 }
 
 abstract class $TitleChangedCopyWith<$Res> {
@@ -461,7 +462,7 @@ class _$TitleChanged implements TitleChanged {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result newSeriesPageLaunched(SeriesDraft seriesDraft),
-    @required Result continueButtonPressed(),
+    @required Result createSeriesButtonPressed(),
     @required Result titleChanged(String title),
     @required Result descriptionChanged(String description),
     @required Result genreSelected(String genre),
@@ -470,7 +471,7 @@ class _$TitleChanged implements TitleChanged {
     @required Result copyrightsSelected(String copyrights),
   }) {
     assert(newSeriesPageLaunched != null);
-    assert(continueButtonPressed != null);
+    assert(createSeriesButtonPressed != null);
     assert(titleChanged != null);
     assert(descriptionChanged != null);
     assert(genreSelected != null);
@@ -484,7 +485,7 @@ class _$TitleChanged implements TitleChanged {
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result newSeriesPageLaunched(SeriesDraft seriesDraft),
-    Result continueButtonPressed(),
+    Result createSeriesButtonPressed(),
     Result titleChanged(String title),
     Result descriptionChanged(String description),
     Result genreSelected(String genre),
@@ -504,7 +505,7 @@ class _$TitleChanged implements TitleChanged {
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result newSeriesPageLaunched(NewSeriesPageLaunched value),
-    @required Result continueButtonPressed(ContinueButtonPressed value),
+    @required Result createSeriesButtonPressed(CreateSeriesButtonPressed value),
     @required Result titleChanged(TitleChanged value),
     @required Result descriptionChanged(DescriptionChanged value),
     @required Result genreSelected(GenreSelected value),
@@ -513,7 +514,7 @@ class _$TitleChanged implements TitleChanged {
     @required Result copyrightsSelected(CopyrightsSelected value),
   }) {
     assert(newSeriesPageLaunched != null);
-    assert(continueButtonPressed != null);
+    assert(createSeriesButtonPressed != null);
     assert(titleChanged != null);
     assert(descriptionChanged != null);
     assert(genreSelected != null);
@@ -527,7 +528,7 @@ class _$TitleChanged implements TitleChanged {
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result newSeriesPageLaunched(NewSeriesPageLaunched value),
-    Result continueButtonPressed(ContinueButtonPressed value),
+    Result createSeriesButtonPressed(CreateSeriesButtonPressed value),
     Result titleChanged(TitleChanged value),
     Result descriptionChanged(DescriptionChanged value),
     Result genreSelected(GenreSelected value),
@@ -610,7 +611,7 @@ class _$DescriptionChanged implements DescriptionChanged {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result newSeriesPageLaunched(SeriesDraft seriesDraft),
-    @required Result continueButtonPressed(),
+    @required Result createSeriesButtonPressed(),
     @required Result titleChanged(String title),
     @required Result descriptionChanged(String description),
     @required Result genreSelected(String genre),
@@ -619,7 +620,7 @@ class _$DescriptionChanged implements DescriptionChanged {
     @required Result copyrightsSelected(String copyrights),
   }) {
     assert(newSeriesPageLaunched != null);
-    assert(continueButtonPressed != null);
+    assert(createSeriesButtonPressed != null);
     assert(titleChanged != null);
     assert(descriptionChanged != null);
     assert(genreSelected != null);
@@ -633,7 +634,7 @@ class _$DescriptionChanged implements DescriptionChanged {
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result newSeriesPageLaunched(SeriesDraft seriesDraft),
-    Result continueButtonPressed(),
+    Result createSeriesButtonPressed(),
     Result titleChanged(String title),
     Result descriptionChanged(String description),
     Result genreSelected(String genre),
@@ -653,7 +654,7 @@ class _$DescriptionChanged implements DescriptionChanged {
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result newSeriesPageLaunched(NewSeriesPageLaunched value),
-    @required Result continueButtonPressed(ContinueButtonPressed value),
+    @required Result createSeriesButtonPressed(CreateSeriesButtonPressed value),
     @required Result titleChanged(TitleChanged value),
     @required Result descriptionChanged(DescriptionChanged value),
     @required Result genreSelected(GenreSelected value),
@@ -662,7 +663,7 @@ class _$DescriptionChanged implements DescriptionChanged {
     @required Result copyrightsSelected(CopyrightsSelected value),
   }) {
     assert(newSeriesPageLaunched != null);
-    assert(continueButtonPressed != null);
+    assert(createSeriesButtonPressed != null);
     assert(titleChanged != null);
     assert(descriptionChanged != null);
     assert(genreSelected != null);
@@ -676,7 +677,7 @@ class _$DescriptionChanged implements DescriptionChanged {
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result newSeriesPageLaunched(NewSeriesPageLaunched value),
-    Result continueButtonPressed(ContinueButtonPressed value),
+    Result createSeriesButtonPressed(CreateSeriesButtonPressed value),
     Result titleChanged(TitleChanged value),
     Result descriptionChanged(DescriptionChanged value),
     Result genreSelected(GenreSelected value),
@@ -758,7 +759,7 @@ class _$GenreSelected implements GenreSelected {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result newSeriesPageLaunched(SeriesDraft seriesDraft),
-    @required Result continueButtonPressed(),
+    @required Result createSeriesButtonPressed(),
     @required Result titleChanged(String title),
     @required Result descriptionChanged(String description),
     @required Result genreSelected(String genre),
@@ -767,7 +768,7 @@ class _$GenreSelected implements GenreSelected {
     @required Result copyrightsSelected(String copyrights),
   }) {
     assert(newSeriesPageLaunched != null);
-    assert(continueButtonPressed != null);
+    assert(createSeriesButtonPressed != null);
     assert(titleChanged != null);
     assert(descriptionChanged != null);
     assert(genreSelected != null);
@@ -781,7 +782,7 @@ class _$GenreSelected implements GenreSelected {
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result newSeriesPageLaunched(SeriesDraft seriesDraft),
-    Result continueButtonPressed(),
+    Result createSeriesButtonPressed(),
     Result titleChanged(String title),
     Result descriptionChanged(String description),
     Result genreSelected(String genre),
@@ -801,7 +802,7 @@ class _$GenreSelected implements GenreSelected {
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result newSeriesPageLaunched(NewSeriesPageLaunched value),
-    @required Result continueButtonPressed(ContinueButtonPressed value),
+    @required Result createSeriesButtonPressed(CreateSeriesButtonPressed value),
     @required Result titleChanged(TitleChanged value),
     @required Result descriptionChanged(DescriptionChanged value),
     @required Result genreSelected(GenreSelected value),
@@ -810,7 +811,7 @@ class _$GenreSelected implements GenreSelected {
     @required Result copyrightsSelected(CopyrightsSelected value),
   }) {
     assert(newSeriesPageLaunched != null);
-    assert(continueButtonPressed != null);
+    assert(createSeriesButtonPressed != null);
     assert(titleChanged != null);
     assert(descriptionChanged != null);
     assert(genreSelected != null);
@@ -824,7 +825,7 @@ class _$GenreSelected implements GenreSelected {
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result newSeriesPageLaunched(NewSeriesPageLaunched value),
-    Result continueButtonPressed(ContinueButtonPressed value),
+    Result createSeriesButtonPressed(CreateSeriesButtonPressed value),
     Result titleChanged(TitleChanged value),
     Result descriptionChanged(DescriptionChanged value),
     Result genreSelected(GenreSelected value),
@@ -909,7 +910,7 @@ class _$GenreOptionalSelected implements GenreOptionalSelected {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result newSeriesPageLaunched(SeriesDraft seriesDraft),
-    @required Result continueButtonPressed(),
+    @required Result createSeriesButtonPressed(),
     @required Result titleChanged(String title),
     @required Result descriptionChanged(String description),
     @required Result genreSelected(String genre),
@@ -918,7 +919,7 @@ class _$GenreOptionalSelected implements GenreOptionalSelected {
     @required Result copyrightsSelected(String copyrights),
   }) {
     assert(newSeriesPageLaunched != null);
-    assert(continueButtonPressed != null);
+    assert(createSeriesButtonPressed != null);
     assert(titleChanged != null);
     assert(descriptionChanged != null);
     assert(genreSelected != null);
@@ -932,7 +933,7 @@ class _$GenreOptionalSelected implements GenreOptionalSelected {
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result newSeriesPageLaunched(SeriesDraft seriesDraft),
-    Result continueButtonPressed(),
+    Result createSeriesButtonPressed(),
     Result titleChanged(String title),
     Result descriptionChanged(String description),
     Result genreSelected(String genre),
@@ -952,7 +953,7 @@ class _$GenreOptionalSelected implements GenreOptionalSelected {
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result newSeriesPageLaunched(NewSeriesPageLaunched value),
-    @required Result continueButtonPressed(ContinueButtonPressed value),
+    @required Result createSeriesButtonPressed(CreateSeriesButtonPressed value),
     @required Result titleChanged(TitleChanged value),
     @required Result descriptionChanged(DescriptionChanged value),
     @required Result genreSelected(GenreSelected value),
@@ -961,7 +962,7 @@ class _$GenreOptionalSelected implements GenreOptionalSelected {
     @required Result copyrightsSelected(CopyrightsSelected value),
   }) {
     assert(newSeriesPageLaunched != null);
-    assert(continueButtonPressed != null);
+    assert(createSeriesButtonPressed != null);
     assert(titleChanged != null);
     assert(descriptionChanged != null);
     assert(genreSelected != null);
@@ -975,7 +976,7 @@ class _$GenreOptionalSelected implements GenreOptionalSelected {
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result newSeriesPageLaunched(NewSeriesPageLaunched value),
-    Result continueButtonPressed(ContinueButtonPressed value),
+    Result createSeriesButtonPressed(CreateSeriesButtonPressed value),
     Result titleChanged(TitleChanged value),
     Result descriptionChanged(DescriptionChanged value),
     Result genreSelected(GenreSelected value),
@@ -1059,7 +1060,7 @@ class _$LanguageSelected implements LanguageSelected {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result newSeriesPageLaunched(SeriesDraft seriesDraft),
-    @required Result continueButtonPressed(),
+    @required Result createSeriesButtonPressed(),
     @required Result titleChanged(String title),
     @required Result descriptionChanged(String description),
     @required Result genreSelected(String genre),
@@ -1068,7 +1069,7 @@ class _$LanguageSelected implements LanguageSelected {
     @required Result copyrightsSelected(String copyrights),
   }) {
     assert(newSeriesPageLaunched != null);
-    assert(continueButtonPressed != null);
+    assert(createSeriesButtonPressed != null);
     assert(titleChanged != null);
     assert(descriptionChanged != null);
     assert(genreSelected != null);
@@ -1082,7 +1083,7 @@ class _$LanguageSelected implements LanguageSelected {
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result newSeriesPageLaunched(SeriesDraft seriesDraft),
-    Result continueButtonPressed(),
+    Result createSeriesButtonPressed(),
     Result titleChanged(String title),
     Result descriptionChanged(String description),
     Result genreSelected(String genre),
@@ -1102,7 +1103,7 @@ class _$LanguageSelected implements LanguageSelected {
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result newSeriesPageLaunched(NewSeriesPageLaunched value),
-    @required Result continueButtonPressed(ContinueButtonPressed value),
+    @required Result createSeriesButtonPressed(CreateSeriesButtonPressed value),
     @required Result titleChanged(TitleChanged value),
     @required Result descriptionChanged(DescriptionChanged value),
     @required Result genreSelected(GenreSelected value),
@@ -1111,7 +1112,7 @@ class _$LanguageSelected implements LanguageSelected {
     @required Result copyrightsSelected(CopyrightsSelected value),
   }) {
     assert(newSeriesPageLaunched != null);
-    assert(continueButtonPressed != null);
+    assert(createSeriesButtonPressed != null);
     assert(titleChanged != null);
     assert(descriptionChanged != null);
     assert(genreSelected != null);
@@ -1125,7 +1126,7 @@ class _$LanguageSelected implements LanguageSelected {
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result newSeriesPageLaunched(NewSeriesPageLaunched value),
-    Result continueButtonPressed(ContinueButtonPressed value),
+    Result createSeriesButtonPressed(CreateSeriesButtonPressed value),
     Result titleChanged(TitleChanged value),
     Result descriptionChanged(DescriptionChanged value),
     Result genreSelected(GenreSelected value),
@@ -1208,7 +1209,7 @@ class _$CopyrightsSelected implements CopyrightsSelected {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result newSeriesPageLaunched(SeriesDraft seriesDraft),
-    @required Result continueButtonPressed(),
+    @required Result createSeriesButtonPressed(),
     @required Result titleChanged(String title),
     @required Result descriptionChanged(String description),
     @required Result genreSelected(String genre),
@@ -1217,7 +1218,7 @@ class _$CopyrightsSelected implements CopyrightsSelected {
     @required Result copyrightsSelected(String copyrights),
   }) {
     assert(newSeriesPageLaunched != null);
-    assert(continueButtonPressed != null);
+    assert(createSeriesButtonPressed != null);
     assert(titleChanged != null);
     assert(descriptionChanged != null);
     assert(genreSelected != null);
@@ -1231,7 +1232,7 @@ class _$CopyrightsSelected implements CopyrightsSelected {
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result newSeriesPageLaunched(SeriesDraft seriesDraft),
-    Result continueButtonPressed(),
+    Result createSeriesButtonPressed(),
     Result titleChanged(String title),
     Result descriptionChanged(String description),
     Result genreSelected(String genre),
@@ -1251,7 +1252,7 @@ class _$CopyrightsSelected implements CopyrightsSelected {
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result newSeriesPageLaunched(NewSeriesPageLaunched value),
-    @required Result continueButtonPressed(ContinueButtonPressed value),
+    @required Result createSeriesButtonPressed(CreateSeriesButtonPressed value),
     @required Result titleChanged(TitleChanged value),
     @required Result descriptionChanged(DescriptionChanged value),
     @required Result genreSelected(GenreSelected value),
@@ -1260,7 +1261,7 @@ class _$CopyrightsSelected implements CopyrightsSelected {
     @required Result copyrightsSelected(CopyrightsSelected value),
   }) {
     assert(newSeriesPageLaunched != null);
-    assert(continueButtonPressed != null);
+    assert(createSeriesButtonPressed != null);
     assert(titleChanged != null);
     assert(descriptionChanged != null);
     assert(genreSelected != null);
@@ -1274,7 +1275,7 @@ class _$CopyrightsSelected implements CopyrightsSelected {
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result newSeriesPageLaunched(NewSeriesPageLaunched value),
-    Result continueButtonPressed(ContinueButtonPressed value),
+    Result createSeriesButtonPressed(CreateSeriesButtonPressed value),
     Result titleChanged(TitleChanged value),
     Result descriptionChanged(DescriptionChanged value),
     Result genreSelected(GenreSelected value),

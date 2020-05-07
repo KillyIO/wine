@@ -26,14 +26,14 @@ class HomeAppBar extends StatefulWidget implements PreferredSizeWidget {
 }
 
 class _HomeAppBarState extends State<HomeAppBar> {
-  void _newSeriesIconPressed() {
-    context.bloc<HomeNavigationBloc>().add(const NewSeriesIconPressed(
-          isNewSeriesPageOpen: true,
-        ));
-  }
+  void _newSeriesIconPressed() => context
+      .bloc<HomeNavigationBloc>()
+      .add(const HomeNavigationEvent.newSeriesIconPressed(
+        isNewSeriesPageOpen: true,
+      ));
 
   void _menuIconPressed() {
-    context.bloc<HomeNavigationBloc>().add(MenuIconPressed(
+    context.bloc<HomeNavigationBloc>().add(HomeNavigationEvent.menuIconPressed(
           isMenuOpen: widget.isMenuOpen,
         ));
     sailor(Constants.homeMenuRoute);
