@@ -34,7 +34,7 @@ abstract class NewSeriesDatabaseState with _$NewSeriesDatabaseState {
         summaryWordCount: 0,
         genre: Genre(''),
         genreStr: '',
-        genreOptional: Genre(''),
+        genreOptional: Genre('', isOptional: true),
         genreOptionalStr: '',
         language: Language(''),
         languageStr: '',
