@@ -1,6 +1,9 @@
 import 'package:dartz/dartz.dart';
+import 'package:stringprocess/stringprocess.dart';
 import 'package:wine/domain/core/failures.dart';
 import 'package:wine/utils/constants.dart';
+
+final StringProcessor tps = StringProcessor();
 
 Either<ValueFailure<String>, String> validateEmailAddress(String input) {
   const String emailRegex =
@@ -43,36 +46,37 @@ Either<ValueFailure<String>, String> validateUsername(String input) {
 
 Either<ValueFailure<String>, String> validateTitle(String input) {
   if (input == null || input.isEmpty) {
-    return left(ValueFailure.emptyTextField(failedValue: input));
-  } else if (input.length > Constants.seriesTitleMaxWords) {
-    return left(ValueFailure.longTextField(failedValue: input));
+    return left(ValueFailure.emptyInput(failedValue: input));
+  } else if (tps.getWordCount(input) > Constants.seriesTitleMaxWords) {
+    return left(ValueFailure.longInput(failedValue: input));
   } else {
     return right(input);
   }
 }
 
 Either<ValueFailure<String>, String> validateSubtitle(String input) {
-  if (input == null || input.isEmpty) {
-    return left(ValueFailure.emptyTextField(failedValue: input));
-  } else if (input.length > Constants.seriesSubtitleMaxWords) {
-    return left(ValueFailure.longTextField(failedValue: input));
+  if (tps.getWordCount(input) > Constants.seriesSubtitleMaxWords) {
+    return left(ValueFailure.longInput(failedValue: input));
   } else {
     return right(input);
   }
 }
 
-Either<ValueFailure<String>, String> validateDescription(String input) {
+Either<ValueFailure<String>, String> validateSummary(String input) {
   if (input == null || input.isEmpty) {
-    return left(ValueFailure.emptyTextField(failedValue: input));
-  } else if (input.length > Constants.seriesDescriptionMaxWords) {
-    return left(ValueFailure.longTextField(failedValue: input));
+    return left(ValueFailure.emptyInput(failedValue: input));
+  } else if (tps.getWordCount(input) > Constants.seriesSummaryMaxWords) {
+    return left(ValueFailure.longInput(failedValue: input));
   } else {
     return right(input);
   }
 }
 
-Either<ValueFailure<String>, String> validateGenre(String input) {
-  if (input != null && input.isNotEmpty) {
+Either<ValueFailure<String>, String> validateGenre(
+  String input, {
+  bool isOptional,
+}) {
+  if ((input != null && input.isNotEmpty) || isOptional) {
     return right(input);
   } else {
     return left(ValueFailure.emptySelection(failedValue: input));

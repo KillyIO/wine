@@ -7,10 +7,10 @@ class Genre extends ValueObject<String> {
   @override
   final Either<ValueFailure<String>, String> value;
 
-  factory Genre(String input) {
+  factory Genre(String input, {bool isOptional = false}) {
     assert(input != null);
     return Genre._(
-      validateGenre(input),
+      validateGenre(input, isOptional: isOptional),
     );
   }
 

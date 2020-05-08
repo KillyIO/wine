@@ -13,9 +13,9 @@ abstract class NewSeriesDatabaseEvent with _$NewSeriesDatabaseEvent {
   const factory NewSeriesDatabaseEvent.subtitleChanged(
     String subtitle,
   ) = SubtitleChanged;
-  const factory NewSeriesDatabaseEvent.descriptionChanged(
-    String description,
-  ) = DescriptionChanged;
+  const factory NewSeriesDatabaseEvent.summaryChanged(
+    String summary,
+  ) = SummaryChanged;
   const factory NewSeriesDatabaseEvent.genreSelected(
     String genre,
   ) = GenreSelected;

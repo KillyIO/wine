@@ -31,7 +31,7 @@ class Constants {
   // SECTION series limits
   static const int seriesTitleMaxWords = 10;
   static const int seriesSubtitleMaxWords = 10;
-  static const int seriesDescriptionMaxWords = 200;
+  static const int seriesSummaryMaxWords = 200;
   static const int chapterMinWords = 500;
   static const int chapterMaxWords = 10000;
 }

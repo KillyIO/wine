@@ -5,8 +5,11 @@ abstract class NewSeriesDatabaseState with _$NewSeriesDatabaseState {
   const factory NewSeriesDatabaseState({
     @required SeriesDraft seriesDraft,
     @required Title title,
+    @required int titleWordCount,
     @required Subtitle subtitle,
-    @required Description description,
+    @required int subtitleWordCount,
+    @required Summary summary,
+    @required int summaryWordCount,
     @required Genre genre,
     @required String genreStr,
     @required Genre genreOptional,
@@ -15,15 +18,20 @@ abstract class NewSeriesDatabaseState with _$NewSeriesDatabaseState {
     @required String languageStr,
     @required Copyrights copyrights,
     @required String copyrightsStr,
-    @required bool isSaving,
-    @required bool isSaved,
+    @required bool isCreating,
+    @required bool showErrorMessages,
+    @required
+        Option<Either<DatabaseFailure, dynamic>> databaseFailureOrSuccessOption,
   }) = _NewSeriesDatabaseState;
 
   factory NewSeriesDatabaseState.initial() => NewSeriesDatabaseState(
         seriesDraft: SeriesDraft(),
         title: Title(''),
+        titleWordCount: 0,
         subtitle: Subtitle(''),
-        description: Description(''),
+        subtitleWordCount: 0,
+        summary: Summary(''),
+        summaryWordCount: 0,
         genre: Genre(''),
         genreStr: '',
         genreOptional: Genre(''),
@@ -32,7 +40,8 @@ abstract class NewSeriesDatabaseState with _$NewSeriesDatabaseState {
         languageStr: '',
         copyrights: Copyrights(''),
         copyrightsStr: '',
-        isSaving: false,
-        isSaved: false,
+        isCreating: false,
+        showErrorMessages: false,
+        databaseFailureOrSuccessOption: none(),
       );
 }

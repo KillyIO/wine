@@ -20,13 +20,13 @@ abstract class ValueFailure<T> with _$ValueFailure<T> {
     @required String failedValue,
   }) = InvalidUsername<T>;
 
-  const factory ValueFailure.emptyTextField({
+  const factory ValueFailure.emptyInput({
     @required String failedValue,
-  }) = EmptyTextField<T>;
+  }) = EmptyInput<T>;
 
-  const factory ValueFailure.longTextField({
+  const factory ValueFailure.longInput({
     @required String failedValue,
-  }) = LongTextField<T>;
+  }) = LongInput<T>;
 
   const factory ValueFailure.emptySelection({
     @required String failedValue,

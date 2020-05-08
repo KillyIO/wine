@@ -4,6 +4,8 @@ import 'package:sailor/sailor.dart';
 import 'package:wine/application/database/new_series/new_series_database_bloc.dart';
 import 'package:wine/application/navigation/home/home_navigation_bloc.dart';
 import 'package:wine/domain/enums/parent_type.dart';
+import 'package:wine/domain/models/hive/series_draft.dart';
+import 'package:wine/domain/models/series.dart';
 import 'package:wine/presentation/pages/new_series/widgets/new_series_list_tile.dart';
 import 'package:wine/presentation/pages/new_series/widgets/new_series_selection_dialog.dart';
 import 'package:wine/presentation/pages/new_series/widgets/new_series_text_field_label.dart';
@@ -45,6 +47,7 @@ class _NewSeriesFormState extends State<NewSeriesForm>
     final bool canPop = Navigator.of(context).canPop();
 
     if (canPop) {
+      FocusScope.of(context).requestFocus(FocusNode());
       context
           .bloc<HomeNavigationBloc>()
           .add(const HomeNavigationEvent.newSeriesIconPressed(
@@ -55,6 +58,7 @@ class _NewSeriesFormState extends State<NewSeriesForm>
   }
 
   void _backButtonPressed() {
+    FocusScope.of(context).requestFocus(FocusNode());
     context
         .bloc<HomeNavigationBloc>()
         .add(const HomeNavigationEvent.newSeriesIconPressed(
@@ -91,16 +95,27 @@ class _NewSeriesFormState extends State<NewSeriesForm>
       onWillPop: _onWillPop,
       child: BlocConsumer<NewSeriesDatabaseBloc, NewSeriesDatabaseState>(
         listener: (context, state) {
-          if (!state.isSaving && state.isSaved) {
-            sailor.navigate(
-              Constants.newChapterRoute,
-              navigationType: NavigationType.pushReplace,
-              args: NewChapterPageArgs(
-                parentType: ParentType.series,
-                seriesDraft: state.seriesDraft,
-              ),
-            );
-          }
+          state.databaseFailureOrSuccessOption.fold(
+            () {},
+            (some) => some.fold(
+              (failure) {},
+              (right) {
+                if (right is Series) {
+                  final SeriesDraft seriesDraft =
+                      SeriesDraft.fromMap(right.toMap());
+
+                  sailor.navigate(
+                    Constants.newChapterRoute,
+                    navigationType: NavigationType.pushReplace,
+                    args: NewChapterPageArgs(
+                      parentType: ParentType.series,
+                      seriesDraft: seriesDraft,
+                    ),
+                  );
+                }
+              },
+            ),
+          );
         },
         builder: (context, nsDbState) {
           return Scaffold(
@@ -112,7 +127,9 @@ class _NewSeriesFormState extends State<NewSeriesForm>
                   FlatButton(
                     disabledTextColor: Colors.black26,
                     highlightColor: Colors.transparent,
-                    onPressed: () {},
+                    onPressed: () => context.bloc<NewSeriesDatabaseBloc>().add(
+                        const NewSeriesDatabaseEvent
+                            .createSeriesButtonPressed()),
                     splashColor: Colors.transparent,
                     textColor: Colors.black,
                     child: Text(
@@ -150,6 +167,7 @@ class _NewSeriesFormState extends State<NewSeriesForm>
               child: Stack(
                 children: <Widget>[
                   Form(
+                    autovalidate: nsDbState.showErrorMessages,
                     child: ScrollConfiguration(
                       behavior: const ScrollBehavior(),
                       child: ListView(
@@ -171,7 +189,8 @@ class _NewSeriesFormState extends State<NewSeriesForm>
                           const NewSeriesTextFieldLabel(title: 'TITLE*'),
                           TextFormField(
                             decoration: InputDecoration(
-                              hintText: 'Less than 10 words',
+                              hintText:
+                                  'Less than ${Constants.seriesTitleMaxWords} words',
                               contentPadding: const EdgeInsets.symmetric(
                                 horizontal: 20.0,
                               ),
@@ -187,8 +206,43 @@ class _NewSeriesFormState extends State<NewSeriesForm>
                                   width: 2.0,
                                 ),
                               ),
+                              errorStyle: TextStyle(
+                                color: Palettes.error,
+                              ),
                             ),
                             cursorColor: Colors.black,
+                            onChanged: (value) => context
+                                .bloc<NewSeriesDatabaseBloc>()
+                                .add(
+                                  NewSeriesDatabaseEvent.titleChanged(value),
+                                ),
+                            validator: (_) => context
+                                .bloc<NewSeriesDatabaseBloc>()
+                                .state
+                                .title
+                                .value
+                                .fold(
+                                  (f) => f.maybeMap(
+                                      emptyInput: (_) =>
+                                          'The title must not be empty.',
+                                      longInput: (_) =>
+                                          'The title must be lass than 10 words long.',
+                                      orElse: () => null),
+                                  (_) => null,
+                                ),
+                          ),
+                          const SizedBox(height: 5),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 20.0),
+                            child: Text(
+                              '${nsDbState.titleWordCount}/${Constants.seriesTitleMaxWords}',
+                              style: TextStyle(
+                                color: nsDbState.titleWordCount >
+                                        Constants.seriesTitleMaxWords
+                                    ? Palettes.error
+                                    : Colors.black,
+                              ),
+                            ),
                           ),
                           const SizedBox(height: 25),
                           // SECTION subtitle
@@ -197,7 +251,8 @@ class _NewSeriesFormState extends State<NewSeriesForm>
                           ),
                           TextFormField(
                             decoration: InputDecoration(
-                              hintText: 'Less than 10 words',
+                              hintText:
+                                  'Less than ${Constants.seriesSubtitleMaxWords} words',
                               contentPadding: const EdgeInsets.symmetric(
                                 horizontal: 20.0,
                               ),
@@ -212,16 +267,44 @@ class _NewSeriesFormState extends State<NewSeriesForm>
                                   color: Colors.black,
                                   width: 2.0,
                                 ),
+                              ),
+                              errorStyle: TextStyle(
+                                color: Palettes.error,
                               ),
                             ),
                             cursorColor: Colors.black,
+                            onChanged: (value) => context
+                                .bloc<NewSeriesDatabaseBloc>()
+                                .add(
+                                  NewSeriesDatabaseEvent.subtitleChanged(value),
+                                ),
+                            validator: (_) => context
+                                .bloc<NewSeriesDatabaseBloc>()
+                                .state
+                                .subtitle
+                                .value
+                                .fold(
+                                  (f) => f.maybeMap(
+                                      longInput: (_) =>
+                                          'The title must be less than 10 words long.',
+                                      orElse: () => null),
+                                  (_) => null,
+                                ),
+                          ),
+                          const SizedBox(height: 5),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 20.0),
+                            child: Text(
+                              '${nsDbState.subtitleWordCount}/${Constants.seriesSubtitleMaxWords}',
+                            ),
                           ),
                           const SizedBox(height: 25),
-                          // SECTION description
-                          const NewSeriesTextFieldLabel(title: 'DESCRIPTION*'),
+                          // SECTION symmary
+                          const NewSeriesTextFieldLabel(title: 'SUMMARY*'),
                           TextFormField(
                             decoration: InputDecoration(
-                              hintText: 'Less than 200 words',
+                              hintText:
+                                  'Less than ${Constants.seriesSummaryMaxWords} words',
                               contentPadding: const EdgeInsets.symmetric(
                                 horizontal: 20.0,
                               ),
@@ -236,45 +319,95 @@ class _NewSeriesFormState extends State<NewSeriesForm>
                                   color: Colors.black,
                                   width: 2.0,
                                 ),
+                              ),
+                              errorStyle: TextStyle(
+                                color: Palettes.error,
                               ),
                             ),
                             cursorColor: Colors.black,
                             keyboardType: TextInputType.multiline,
                             maxLines: 10,
+                            onChanged: (value) => context
+                                .bloc<NewSeriesDatabaseBloc>()
+                                .add(
+                                  NewSeriesDatabaseEvent.summaryChanged(value),
+                                ),
+                            validator: (_) => context
+                                .bloc<NewSeriesDatabaseBloc>()
+                                .state
+                                .summary
+                                .value
+                                .fold(
+                                  (f) => f.maybeMap(
+                                      emptyInput: (_) =>
+                                          'The summary must not be empty.',
+                                      longInput: (_) =>
+                                          'The summary must be less than 200 words long.',
+                                      orElse: () => null),
+                                  (_) => null,
+                                ),
+                          ),
+                          const SizedBox(height: 5),
+                          Padding(
+                            padding: const EdgeInsets.only(left: 20.0),
+                            child: Text(
+                              '${nsDbState.summaryWordCount}/${Constants.seriesSummaryMaxWords}',
+                            ),
                           ),
                           const SizedBox(height: 25),
                           // SECTION genre
                           NewSeriesListTile(
                             hasSelected: nsDbState.genreStr == '',
-                            onPressed: () => customShowDialog(
-                              context: context,
-                              builder: (_) => NewSeriesSelectionDialog(
-                                title: 'GENRE',
-                                selections: _genres,
-                                onPressed: _genreSelected,
-                                onInfoPressed: () => sailor(
-                                  Constants.genresRoute,
+                            onPressed: () {
+                              FocusScope.of(context).requestFocus(FocusNode());
+                              customShowDialog(
+                                context: context,
+                                builder: (_) => NewSeriesSelectionDialog(
+                                  title: 'GENRE',
+                                  selections: _genres,
+                                  onPressed: _genreSelected,
+                                  onInfoPressed: () => sailor(
+                                    Constants.genresRoute,
+                                  ),
+                                ),
+                              );
+                            },
+                            title: 'GENRE*',
+                            trailingText: _genres[nsDbState.genreStr],
+                          ),
+                          const SizedBox(height: 5),
+                          Visibility(
+                            visible: nsDbState.genreStr == '' &&
+                                nsDbState.showErrorMessages,
+                            child: Padding(
+                              padding: const EdgeInsets.only(left: 20.0),
+                              child: Text(
+                                'Required.',
+                                style: TextStyle(
+                                  color: Palettes.error,
+                                  fontSize: 13.0,
                                 ),
                               ),
                             ),
-                            title: 'GENRE*',
-                            trailingText: _genres[nsDbState.genreStr],
                           ),
                           const SizedBox(height: 25),
                           // SECTION genre optional
                           NewSeriesListTile(
                             hasSelected: nsDbState.genreOptionalStr == '',
-                            onPressed: () => customShowDialog(
-                              context: context,
-                              builder: (_) => NewSeriesSelectionDialog(
-                                title: 'GENRE (OPTIONAL)',
-                                selections: _genres,
-                                onPressed: _genreOptionalSelected,
-                                onInfoPressed: () => sailor(
-                                  Constants.genresRoute,
+                            onPressed: () {
+                              FocusScope.of(context).requestFocus(FocusNode());
+                              customShowDialog(
+                                context: context,
+                                builder: (_) => NewSeriesSelectionDialog(
+                                  title: 'GENRE (OPTIONAL)',
+                                  selections: _genres,
+                                  onPressed: _genreOptionalSelected,
+                                  onInfoPressed: () => sailor(
+                                    Constants.genresRoute,
+                                  ),
                                 ),
-                              ),
-                            ),
+                              );
+                            },
                             title: 'GENRE (OPTIONAL)',
                             trailingText: _genres[nsDbState.genreOptionalStr],
                           ),
@@ -282,34 +415,70 @@ class _NewSeriesFormState extends State<NewSeriesForm>
                           // SECTION language
                           NewSeriesListTile(
                             hasSelected: nsDbState.languageStr == '',
-                            onPressed: () => customShowDialog(
-                              context: context,
-                              builder: (_) => NewSeriesSelectionDialog(
-                                title: 'LANGUAGE',
-                                selections: _languages,
-                                onPressed: _languageSelected,
-                              ),
-                            ),
+                            onPressed: () {
+                              FocusScope.of(context).requestFocus(FocusNode());
+                              customShowDialog(
+                                context: context,
+                                builder: (_) => NewSeriesSelectionDialog(
+                                  title: 'LANGUAGE',
+                                  selections: _languages,
+                                  onPressed: _languageSelected,
+                                ),
+                              );
+                            },
                             title: 'LANGUAGE*',
                             trailingText: _languages[nsDbState.languageStr],
+                          ),
+                          const SizedBox(height: 5),
+                          Visibility(
+                            visible: nsDbState.languageStr == '' &&
+                                nsDbState.showErrorMessages,
+                            child: Padding(
+                              padding: const EdgeInsets.only(left: 20.0),
+                              child: Text(
+                                'Required.',
+                                style: TextStyle(
+                                  color: Palettes.error,
+                                  fontSize: 13.0,
+                                ),
+                              ),
+                            ),
                           ),
                           const SizedBox(height: 25),
                           // SECTION copyright
                           NewSeriesListTile(
                             hasSelected: nsDbState.copyrightsStr == '',
-                            onPressed: () => customShowDialog(
-                              context: context,
-                              builder: (_) => NewSeriesSelectionDialog(
-                                title: 'COPYRIGHTS',
-                                selections: _copyrights,
-                                onPressed: _copyrightSelected,
-                                onInfoPressed: () => sailor(
-                                  Constants.copyrightsRoute,
+                            onPressed: () {
+                              FocusScope.of(context).requestFocus(FocusNode());
+                              customShowDialog(
+                                context: context,
+                                builder: (_) => NewSeriesSelectionDialog(
+                                  title: 'COPYRIGHTS',
+                                  selections: _copyrights,
+                                  onPressed: _copyrightSelected,
+                                  onInfoPressed: () => sailor(
+                                    Constants.copyrightsRoute,
+                                  ),
+                                ),
+                              );
+                            },
+                            title: 'COPYRIGHTS*',
+                            trailingText: _copyrights[nsDbState.copyrightsStr],
+                          ),
+                          const SizedBox(height: 5),
+                          Visibility(
+                            visible: nsDbState.copyrightsStr == '' &&
+                                nsDbState.showErrorMessages,
+                            child: Padding(
+                              padding: const EdgeInsets.only(left: 20.0),
+                              child: Text(
+                                'Required.',
+                                style: TextStyle(
+                                  color: Palettes.error,
+                                  fontSize: 13.0,
                                 ),
                               ),
                             ),
-                            title: 'COPYRIGHTS*',
-                            trailingText: _copyrights[nsDbState.copyrightsStr],
                           ),
                           const SizedBox(height: 25),
                         ],
@@ -324,7 +493,7 @@ class _NewSeriesFormState extends State<NewSeriesForm>
                       child: Container(
                         color: Colors.white,
                         width: MediaQuery.of(context).size.width,
-                        height: nsDbState.isSaving
+                        height: nsDbState.isCreating
                             ? MediaQuery.of(context).size.height
                             : 0.0,
                         child: const Center(

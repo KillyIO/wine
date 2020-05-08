@@ -21,7 +21,7 @@ class SeriesDraftAdapter extends TypeAdapter<SeriesDraft> {
       authorUid: fields[1] as String,
       title: fields[2] as String,
       subtitle: fields[3] as String,
-      description: fields[4] as String,
+      summary: fields[4] as String,
       genre: fields[5] as String,
       genreOptional: fields[6] as String,
       language: fields[7] as String,
@@ -42,7 +42,7 @@ class SeriesDraftAdapter extends TypeAdapter<SeriesDraft> {
       ..writeByte(3)
       ..write(obj.subtitle)
       ..writeByte(4)
-      ..write(obj.description)
+      ..write(obj.summary)
       ..writeByte(5)
       ..write(obj.genre)
       ..writeByte(6)

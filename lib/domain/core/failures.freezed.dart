@@ -37,14 +37,14 @@ class _$ValueFailureTearOff {
     );
   }
 
-  EmptyTextField<T> emptyTextField<T>({@required String failedValue}) {
-    return EmptyTextField<T>(
+  EmptyInput<T> emptyInput<T>({@required String failedValue}) {
+    return EmptyInput<T>(
       failedValue: failedValue,
     );
   }
 
-  LongTextField<T> longTextField<T>({@required String failedValue}) {
-    return LongTextField<T>(
+  LongInput<T> longInput<T>({@required String failedValue}) {
+    return LongInput<T>(
       failedValue: failedValue,
     );
   }
@@ -68,8 +68,8 @@ mixin _$ValueFailure<T> {
     @required Result invalidPassword(String failedValue),
     @required Result invalidConfirmPassword(String failedValue),
     @required Result invalidUsername(String failedValue),
-    @required Result emptyTextField(String failedValue),
-    @required Result longTextField(String failedValue),
+    @required Result emptyInput(String failedValue),
+    @required Result longInput(String failedValue),
     @required Result emptySelection(String failedValue),
   });
   @optionalTypeArgs
@@ -78,8 +78,8 @@ mixin _$ValueFailure<T> {
     Result invalidPassword(String failedValue),
     Result invalidConfirmPassword(String failedValue),
     Result invalidUsername(String failedValue),
-    Result emptyTextField(String failedValue),
-    Result longTextField(String failedValue),
+    Result emptyInput(String failedValue),
+    Result longInput(String failedValue),
     Result emptySelection(String failedValue),
     @required Result orElse(),
   });
@@ -89,8 +89,8 @@ mixin _$ValueFailure<T> {
     @required Result invalidPassword(InvalidPassword<T> value),
     @required Result invalidConfirmPassword(InvalidConfirmPassword<T> value),
     @required Result invalidUsername(InvalidUsername<T> value),
-    @required Result emptyTextField(EmptyTextField<T> value),
-    @required Result longTextField(LongTextField<T> value),
+    @required Result emptyInput(EmptyInput<T> value),
+    @required Result longInput(LongInput<T> value),
     @required Result emptySelection(EmptySelection<T> value),
   });
   @optionalTypeArgs
@@ -99,8 +99,8 @@ mixin _$ValueFailure<T> {
     Result invalidPassword(InvalidPassword<T> value),
     Result invalidConfirmPassword(InvalidConfirmPassword<T> value),
     Result invalidUsername(InvalidUsername<T> value),
-    Result emptyTextField(EmptyTextField<T> value),
-    Result longTextField(LongTextField<T> value),
+    Result emptyInput(EmptyInput<T> value),
+    Result longInput(LongInput<T> value),
     Result emptySelection(EmptySelection<T> value),
     @required Result orElse(),
   });
@@ -200,16 +200,16 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     @required Result invalidPassword(String failedValue),
     @required Result invalidConfirmPassword(String failedValue),
     @required Result invalidUsername(String failedValue),
-    @required Result emptyTextField(String failedValue),
-    @required Result longTextField(String failedValue),
+    @required Result emptyInput(String failedValue),
+    @required Result longInput(String failedValue),
     @required Result emptySelection(String failedValue),
   }) {
     assert(invalidEmailAddress != null);
     assert(invalidPassword != null);
     assert(invalidConfirmPassword != null);
     assert(invalidUsername != null);
-    assert(emptyTextField != null);
-    assert(longTextField != null);
+    assert(emptyInput != null);
+    assert(longInput != null);
     assert(emptySelection != null);
     return invalidEmailAddress(failedValue);
   }
@@ -221,8 +221,8 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     Result invalidPassword(String failedValue),
     Result invalidConfirmPassword(String failedValue),
     Result invalidUsername(String failedValue),
-    Result emptyTextField(String failedValue),
-    Result longTextField(String failedValue),
+    Result emptyInput(String failedValue),
+    Result longInput(String failedValue),
     Result emptySelection(String failedValue),
     @required Result orElse(),
   }) {
@@ -240,16 +240,16 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     @required Result invalidPassword(InvalidPassword<T> value),
     @required Result invalidConfirmPassword(InvalidConfirmPassword<T> value),
     @required Result invalidUsername(InvalidUsername<T> value),
-    @required Result emptyTextField(EmptyTextField<T> value),
-    @required Result longTextField(LongTextField<T> value),
+    @required Result emptyInput(EmptyInput<T> value),
+    @required Result longInput(LongInput<T> value),
     @required Result emptySelection(EmptySelection<T> value),
   }) {
     assert(invalidEmailAddress != null);
     assert(invalidPassword != null);
     assert(invalidConfirmPassword != null);
     assert(invalidUsername != null);
-    assert(emptyTextField != null);
-    assert(longTextField != null);
+    assert(emptyInput != null);
+    assert(longInput != null);
     assert(emptySelection != null);
     return invalidEmailAddress(this);
   }
@@ -261,8 +261,8 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     Result invalidPassword(InvalidPassword<T> value),
     Result invalidConfirmPassword(InvalidConfirmPassword<T> value),
     Result invalidUsername(InvalidUsername<T> value),
-    Result emptyTextField(EmptyTextField<T> value),
-    Result longTextField(LongTextField<T> value),
+    Result emptyInput(EmptyInput<T> value),
+    Result longInput(LongInput<T> value),
     Result emptySelection(EmptySelection<T> value),
     @required Result orElse(),
   }) {
@@ -350,16 +350,16 @@ class _$InvalidPassword<T> implements InvalidPassword<T> {
     @required Result invalidPassword(String failedValue),
     @required Result invalidConfirmPassword(String failedValue),
     @required Result invalidUsername(String failedValue),
-    @required Result emptyTextField(String failedValue),
-    @required Result longTextField(String failedValue),
+    @required Result emptyInput(String failedValue),
+    @required Result longInput(String failedValue),
     @required Result emptySelection(String failedValue),
   }) {
     assert(invalidEmailAddress != null);
     assert(invalidPassword != null);
     assert(invalidConfirmPassword != null);
     assert(invalidUsername != null);
-    assert(emptyTextField != null);
-    assert(longTextField != null);
+    assert(emptyInput != null);
+    assert(longInput != null);
     assert(emptySelection != null);
     return invalidPassword(failedValue);
   }
@@ -371,8 +371,8 @@ class _$InvalidPassword<T> implements InvalidPassword<T> {
     Result invalidPassword(String failedValue),
     Result invalidConfirmPassword(String failedValue),
     Result invalidUsername(String failedValue),
-    Result emptyTextField(String failedValue),
-    Result longTextField(String failedValue),
+    Result emptyInput(String failedValue),
+    Result longInput(String failedValue),
     Result emptySelection(String failedValue),
     @required Result orElse(),
   }) {
@@ -390,16 +390,16 @@ class _$InvalidPassword<T> implements InvalidPassword<T> {
     @required Result invalidPassword(InvalidPassword<T> value),
     @required Result invalidConfirmPassword(InvalidConfirmPassword<T> value),
     @required Result invalidUsername(InvalidUsername<T> value),
-    @required Result emptyTextField(EmptyTextField<T> value),
-    @required Result longTextField(LongTextField<T> value),
+    @required Result emptyInput(EmptyInput<T> value),
+    @required Result longInput(LongInput<T> value),
     @required Result emptySelection(EmptySelection<T> value),
   }) {
     assert(invalidEmailAddress != null);
     assert(invalidPassword != null);
     assert(invalidConfirmPassword != null);
     assert(invalidUsername != null);
-    assert(emptyTextField != null);
-    assert(longTextField != null);
+    assert(emptyInput != null);
+    assert(longInput != null);
     assert(emptySelection != null);
     return invalidPassword(this);
   }
@@ -411,8 +411,8 @@ class _$InvalidPassword<T> implements InvalidPassword<T> {
     Result invalidPassword(InvalidPassword<T> value),
     Result invalidConfirmPassword(InvalidConfirmPassword<T> value),
     Result invalidUsername(InvalidUsername<T> value),
-    Result emptyTextField(EmptyTextField<T> value),
-    Result longTextField(LongTextField<T> value),
+    Result emptyInput(EmptyInput<T> value),
+    Result longInput(LongInput<T> value),
     Result emptySelection(EmptySelection<T> value),
     @required Result orElse(),
   }) {
@@ -502,16 +502,16 @@ class _$InvalidConfirmPassword<T> implements InvalidConfirmPassword<T> {
     @required Result invalidPassword(String failedValue),
     @required Result invalidConfirmPassword(String failedValue),
     @required Result invalidUsername(String failedValue),
-    @required Result emptyTextField(String failedValue),
-    @required Result longTextField(String failedValue),
+    @required Result emptyInput(String failedValue),
+    @required Result longInput(String failedValue),
     @required Result emptySelection(String failedValue),
   }) {
     assert(invalidEmailAddress != null);
     assert(invalidPassword != null);
     assert(invalidConfirmPassword != null);
     assert(invalidUsername != null);
-    assert(emptyTextField != null);
-    assert(longTextField != null);
+    assert(emptyInput != null);
+    assert(longInput != null);
     assert(emptySelection != null);
     return invalidConfirmPassword(failedValue);
   }
@@ -523,8 +523,8 @@ class _$InvalidConfirmPassword<T> implements InvalidConfirmPassword<T> {
     Result invalidPassword(String failedValue),
     Result invalidConfirmPassword(String failedValue),
     Result invalidUsername(String failedValue),
-    Result emptyTextField(String failedValue),
-    Result longTextField(String failedValue),
+    Result emptyInput(String failedValue),
+    Result longInput(String failedValue),
     Result emptySelection(String failedValue),
     @required Result orElse(),
   }) {
@@ -542,16 +542,16 @@ class _$InvalidConfirmPassword<T> implements InvalidConfirmPassword<T> {
     @required Result invalidPassword(InvalidPassword<T> value),
     @required Result invalidConfirmPassword(InvalidConfirmPassword<T> value),
     @required Result invalidUsername(InvalidUsername<T> value),
-    @required Result emptyTextField(EmptyTextField<T> value),
-    @required Result longTextField(LongTextField<T> value),
+    @required Result emptyInput(EmptyInput<T> value),
+    @required Result longInput(LongInput<T> value),
     @required Result emptySelection(EmptySelection<T> value),
   }) {
     assert(invalidEmailAddress != null);
     assert(invalidPassword != null);
     assert(invalidConfirmPassword != null);
     assert(invalidUsername != null);
-    assert(emptyTextField != null);
-    assert(longTextField != null);
+    assert(emptyInput != null);
+    assert(longInput != null);
     assert(emptySelection != null);
     return invalidConfirmPassword(this);
   }
@@ -563,8 +563,8 @@ class _$InvalidConfirmPassword<T> implements InvalidConfirmPassword<T> {
     Result invalidPassword(InvalidPassword<T> value),
     Result invalidConfirmPassword(InvalidConfirmPassword<T> value),
     Result invalidUsername(InvalidUsername<T> value),
-    Result emptyTextField(EmptyTextField<T> value),
-    Result longTextField(LongTextField<T> value),
+    Result emptyInput(EmptyInput<T> value),
+    Result longInput(LongInput<T> value),
     Result emptySelection(EmptySelection<T> value),
     @required Result orElse(),
   }) {
@@ -652,16 +652,16 @@ class _$InvalidUsername<T> implements InvalidUsername<T> {
     @required Result invalidPassword(String failedValue),
     @required Result invalidConfirmPassword(String failedValue),
     @required Result invalidUsername(String failedValue),
-    @required Result emptyTextField(String failedValue),
-    @required Result longTextField(String failedValue),
+    @required Result emptyInput(String failedValue),
+    @required Result longInput(String failedValue),
     @required Result emptySelection(String failedValue),
   }) {
     assert(invalidEmailAddress != null);
     assert(invalidPassword != null);
     assert(invalidConfirmPassword != null);
     assert(invalidUsername != null);
-    assert(emptyTextField != null);
-    assert(longTextField != null);
+    assert(emptyInput != null);
+    assert(longInput != null);
     assert(emptySelection != null);
     return invalidUsername(failedValue);
   }
@@ -673,8 +673,8 @@ class _$InvalidUsername<T> implements InvalidUsername<T> {
     Result invalidPassword(String failedValue),
     Result invalidConfirmPassword(String failedValue),
     Result invalidUsername(String failedValue),
-    Result emptyTextField(String failedValue),
-    Result longTextField(String failedValue),
+    Result emptyInput(String failedValue),
+    Result longInput(String failedValue),
     Result emptySelection(String failedValue),
     @required Result orElse(),
   }) {
@@ -692,16 +692,16 @@ class _$InvalidUsername<T> implements InvalidUsername<T> {
     @required Result invalidPassword(InvalidPassword<T> value),
     @required Result invalidConfirmPassword(InvalidConfirmPassword<T> value),
     @required Result invalidUsername(InvalidUsername<T> value),
-    @required Result emptyTextField(EmptyTextField<T> value),
-    @required Result longTextField(LongTextField<T> value),
+    @required Result emptyInput(EmptyInput<T> value),
+    @required Result longInput(LongInput<T> value),
     @required Result emptySelection(EmptySelection<T> value),
   }) {
     assert(invalidEmailAddress != null);
     assert(invalidPassword != null);
     assert(invalidConfirmPassword != null);
     assert(invalidUsername != null);
-    assert(emptyTextField != null);
-    assert(longTextField != null);
+    assert(emptyInput != null);
+    assert(longInput != null);
     assert(emptySelection != null);
     return invalidUsername(this);
   }
@@ -713,8 +713,8 @@ class _$InvalidUsername<T> implements InvalidUsername<T> {
     Result invalidPassword(InvalidPassword<T> value),
     Result invalidConfirmPassword(InvalidConfirmPassword<T> value),
     Result invalidUsername(InvalidUsername<T> value),
-    Result emptyTextField(EmptyTextField<T> value),
-    Result longTextField(LongTextField<T> value),
+    Result emptyInput(EmptyInput<T> value),
+    Result longInput(LongInput<T> value),
     Result emptySelection(EmptySelection<T> value),
     @required Result orElse(),
   }) {
@@ -736,38 +736,38 @@ abstract class InvalidUsername<T> implements ValueFailure<T> {
   $InvalidUsernameCopyWith<T, InvalidUsername<T>> get copyWith;
 }
 
-abstract class $EmptyTextFieldCopyWith<T, $Res>
+abstract class $EmptyInputCopyWith<T, $Res>
     implements $ValueFailureCopyWith<T, $Res> {
-  factory $EmptyTextFieldCopyWith(
-          EmptyTextField<T> value, $Res Function(EmptyTextField<T>) then) =
-      _$EmptyTextFieldCopyWithImpl<T, $Res>;
+  factory $EmptyInputCopyWith(
+          EmptyInput<T> value, $Res Function(EmptyInput<T>) then) =
+      _$EmptyInputCopyWithImpl<T, $Res>;
   @override
   $Res call({String failedValue});
 }
 
-class _$EmptyTextFieldCopyWithImpl<T, $Res>
+class _$EmptyInputCopyWithImpl<T, $Res>
     extends _$ValueFailureCopyWithImpl<T, $Res>
-    implements $EmptyTextFieldCopyWith<T, $Res> {
-  _$EmptyTextFieldCopyWithImpl(
-      EmptyTextField<T> _value, $Res Function(EmptyTextField<T>) _then)
-      : super(_value, (v) => _then(v as EmptyTextField<T>));
+    implements $EmptyInputCopyWith<T, $Res> {
+  _$EmptyInputCopyWithImpl(
+      EmptyInput<T> _value, $Res Function(EmptyInput<T>) _then)
+      : super(_value, (v) => _then(v as EmptyInput<T>));
 
   @override
-  EmptyTextField<T> get _value => super._value as EmptyTextField<T>;
+  EmptyInput<T> get _value => super._value as EmptyInput<T>;
 
   @override
   $Res call({
     Object failedValue = freezed,
   }) {
-    return _then(EmptyTextField<T>(
+    return _then(EmptyInput<T>(
       failedValue:
           failedValue == freezed ? _value.failedValue : failedValue as String,
     ));
   }
 }
 
-class _$EmptyTextField<T> implements EmptyTextField<T> {
-  const _$EmptyTextField({@required this.failedValue})
+class _$EmptyInput<T> implements EmptyInput<T> {
+  const _$EmptyInput({@required this.failedValue})
       : assert(failedValue != null);
 
   @override
@@ -775,13 +775,13 @@ class _$EmptyTextField<T> implements EmptyTextField<T> {
 
   @override
   String toString() {
-    return 'ValueFailure<$T>.emptyTextField(failedValue: $failedValue)';
+    return 'ValueFailure<$T>.emptyInput(failedValue: $failedValue)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is EmptyTextField<T> &&
+        (other is EmptyInput<T> &&
             (identical(other.failedValue, failedValue) ||
                 const DeepCollectionEquality()
                     .equals(other.failedValue, failedValue)));
@@ -792,8 +792,8 @@ class _$EmptyTextField<T> implements EmptyTextField<T> {
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
 
   @override
-  $EmptyTextFieldCopyWith<T, EmptyTextField<T>> get copyWith =>
-      _$EmptyTextFieldCopyWithImpl<T, EmptyTextField<T>>(this, _$identity);
+  $EmptyInputCopyWith<T, EmptyInput<T>> get copyWith =>
+      _$EmptyInputCopyWithImpl<T, EmptyInput<T>>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -802,18 +802,18 @@ class _$EmptyTextField<T> implements EmptyTextField<T> {
     @required Result invalidPassword(String failedValue),
     @required Result invalidConfirmPassword(String failedValue),
     @required Result invalidUsername(String failedValue),
-    @required Result emptyTextField(String failedValue),
-    @required Result longTextField(String failedValue),
+    @required Result emptyInput(String failedValue),
+    @required Result longInput(String failedValue),
     @required Result emptySelection(String failedValue),
   }) {
     assert(invalidEmailAddress != null);
     assert(invalidPassword != null);
     assert(invalidConfirmPassword != null);
     assert(invalidUsername != null);
-    assert(emptyTextField != null);
-    assert(longTextField != null);
+    assert(emptyInput != null);
+    assert(longInput != null);
     assert(emptySelection != null);
-    return emptyTextField(failedValue);
+    return emptyInput(failedValue);
   }
 
   @override
@@ -823,14 +823,14 @@ class _$EmptyTextField<T> implements EmptyTextField<T> {
     Result invalidPassword(String failedValue),
     Result invalidConfirmPassword(String failedValue),
     Result invalidUsername(String failedValue),
-    Result emptyTextField(String failedValue),
-    Result longTextField(String failedValue),
+    Result emptyInput(String failedValue),
+    Result longInput(String failedValue),
     Result emptySelection(String failedValue),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (emptyTextField != null) {
-      return emptyTextField(failedValue);
+    if (emptyInput != null) {
+      return emptyInput(failedValue);
     }
     return orElse();
   }
@@ -842,18 +842,18 @@ class _$EmptyTextField<T> implements EmptyTextField<T> {
     @required Result invalidPassword(InvalidPassword<T> value),
     @required Result invalidConfirmPassword(InvalidConfirmPassword<T> value),
     @required Result invalidUsername(InvalidUsername<T> value),
-    @required Result emptyTextField(EmptyTextField<T> value),
-    @required Result longTextField(LongTextField<T> value),
+    @required Result emptyInput(EmptyInput<T> value),
+    @required Result longInput(LongInput<T> value),
     @required Result emptySelection(EmptySelection<T> value),
   }) {
     assert(invalidEmailAddress != null);
     assert(invalidPassword != null);
     assert(invalidConfirmPassword != null);
     assert(invalidUsername != null);
-    assert(emptyTextField != null);
-    assert(longTextField != null);
+    assert(emptyInput != null);
+    assert(longInput != null);
     assert(emptySelection != null);
-    return emptyTextField(this);
+    return emptyInput(this);
   }
 
   @override
@@ -863,75 +863,73 @@ class _$EmptyTextField<T> implements EmptyTextField<T> {
     Result invalidPassword(InvalidPassword<T> value),
     Result invalidConfirmPassword(InvalidConfirmPassword<T> value),
     Result invalidUsername(InvalidUsername<T> value),
-    Result emptyTextField(EmptyTextField<T> value),
-    Result longTextField(LongTextField<T> value),
+    Result emptyInput(EmptyInput<T> value),
+    Result longInput(LongInput<T> value),
     Result emptySelection(EmptySelection<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (emptyTextField != null) {
-      return emptyTextField(this);
+    if (emptyInput != null) {
+      return emptyInput(this);
     }
     return orElse();
   }
 }
 
-abstract class EmptyTextField<T> implements ValueFailure<T> {
-  const factory EmptyTextField({@required String failedValue}) =
-      _$EmptyTextField<T>;
+abstract class EmptyInput<T> implements ValueFailure<T> {
+  const factory EmptyInput({@required String failedValue}) = _$EmptyInput<T>;
 
   @override
   String get failedValue;
   @override
-  $EmptyTextFieldCopyWith<T, EmptyTextField<T>> get copyWith;
+  $EmptyInputCopyWith<T, EmptyInput<T>> get copyWith;
 }
 
-abstract class $LongTextFieldCopyWith<T, $Res>
+abstract class $LongInputCopyWith<T, $Res>
     implements $ValueFailureCopyWith<T, $Res> {
-  factory $LongTextFieldCopyWith(
-          LongTextField<T> value, $Res Function(LongTextField<T>) then) =
-      _$LongTextFieldCopyWithImpl<T, $Res>;
+  factory $LongInputCopyWith(
+          LongInput<T> value, $Res Function(LongInput<T>) then) =
+      _$LongInputCopyWithImpl<T, $Res>;
   @override
   $Res call({String failedValue});
 }
 
-class _$LongTextFieldCopyWithImpl<T, $Res>
+class _$LongInputCopyWithImpl<T, $Res>
     extends _$ValueFailureCopyWithImpl<T, $Res>
-    implements $LongTextFieldCopyWith<T, $Res> {
-  _$LongTextFieldCopyWithImpl(
-      LongTextField<T> _value, $Res Function(LongTextField<T>) _then)
-      : super(_value, (v) => _then(v as LongTextField<T>));
+    implements $LongInputCopyWith<T, $Res> {
+  _$LongInputCopyWithImpl(
+      LongInput<T> _value, $Res Function(LongInput<T>) _then)
+      : super(_value, (v) => _then(v as LongInput<T>));
 
   @override
-  LongTextField<T> get _value => super._value as LongTextField<T>;
+  LongInput<T> get _value => super._value as LongInput<T>;
 
   @override
   $Res call({
     Object failedValue = freezed,
   }) {
-    return _then(LongTextField<T>(
+    return _then(LongInput<T>(
       failedValue:
           failedValue == freezed ? _value.failedValue : failedValue as String,
     ));
   }
 }
 
-class _$LongTextField<T> implements LongTextField<T> {
-  const _$LongTextField({@required this.failedValue})
-      : assert(failedValue != null);
+class _$LongInput<T> implements LongInput<T> {
+  const _$LongInput({@required this.failedValue}) : assert(failedValue != null);
 
   @override
   final String failedValue;
 
   @override
   String toString() {
-    return 'ValueFailure<$T>.longTextField(failedValue: $failedValue)';
+    return 'ValueFailure<$T>.longInput(failedValue: $failedValue)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is LongTextField<T> &&
+        (other is LongInput<T> &&
             (identical(other.failedValue, failedValue) ||
                 const DeepCollectionEquality()
                     .equals(other.failedValue, failedValue)));
@@ -942,8 +940,8 @@ class _$LongTextField<T> implements LongTextField<T> {
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
 
   @override
-  $LongTextFieldCopyWith<T, LongTextField<T>> get copyWith =>
-      _$LongTextFieldCopyWithImpl<T, LongTextField<T>>(this, _$identity);
+  $LongInputCopyWith<T, LongInput<T>> get copyWith =>
+      _$LongInputCopyWithImpl<T, LongInput<T>>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -952,18 +950,18 @@ class _$LongTextField<T> implements LongTextField<T> {
     @required Result invalidPassword(String failedValue),
     @required Result invalidConfirmPassword(String failedValue),
     @required Result invalidUsername(String failedValue),
-    @required Result emptyTextField(String failedValue),
-    @required Result longTextField(String failedValue),
+    @required Result emptyInput(String failedValue),
+    @required Result longInput(String failedValue),
     @required Result emptySelection(String failedValue),
   }) {
     assert(invalidEmailAddress != null);
     assert(invalidPassword != null);
     assert(invalidConfirmPassword != null);
     assert(invalidUsername != null);
-    assert(emptyTextField != null);
-    assert(longTextField != null);
+    assert(emptyInput != null);
+    assert(longInput != null);
     assert(emptySelection != null);
-    return longTextField(failedValue);
+    return longInput(failedValue);
   }
 
   @override
@@ -973,14 +971,14 @@ class _$LongTextField<T> implements LongTextField<T> {
     Result invalidPassword(String failedValue),
     Result invalidConfirmPassword(String failedValue),
     Result invalidUsername(String failedValue),
-    Result emptyTextField(String failedValue),
-    Result longTextField(String failedValue),
+    Result emptyInput(String failedValue),
+    Result longInput(String failedValue),
     Result emptySelection(String failedValue),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (longTextField != null) {
-      return longTextField(failedValue);
+    if (longInput != null) {
+      return longInput(failedValue);
     }
     return orElse();
   }
@@ -992,18 +990,18 @@ class _$LongTextField<T> implements LongTextField<T> {
     @required Result invalidPassword(InvalidPassword<T> value),
     @required Result invalidConfirmPassword(InvalidConfirmPassword<T> value),
     @required Result invalidUsername(InvalidUsername<T> value),
-    @required Result emptyTextField(EmptyTextField<T> value),
-    @required Result longTextField(LongTextField<T> value),
+    @required Result emptyInput(EmptyInput<T> value),
+    @required Result longInput(LongInput<T> value),
     @required Result emptySelection(EmptySelection<T> value),
   }) {
     assert(invalidEmailAddress != null);
     assert(invalidPassword != null);
     assert(invalidConfirmPassword != null);
     assert(invalidUsername != null);
-    assert(emptyTextField != null);
-    assert(longTextField != null);
+    assert(emptyInput != null);
+    assert(longInput != null);
     assert(emptySelection != null);
-    return longTextField(this);
+    return longInput(this);
   }
 
   @override
@@ -1013,27 +1011,26 @@ class _$LongTextField<T> implements LongTextField<T> {
     Result invalidPassword(InvalidPassword<T> value),
     Result invalidConfirmPassword(InvalidConfirmPassword<T> value),
     Result invalidUsername(InvalidUsername<T> value),
-    Result emptyTextField(EmptyTextField<T> value),
-    Result longTextField(LongTextField<T> value),
+    Result emptyInput(EmptyInput<T> value),
+    Result longInput(LongInput<T> value),
     Result emptySelection(EmptySelection<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (longTextField != null) {
-      return longTextField(this);
+    if (longInput != null) {
+      return longInput(this);
     }
     return orElse();
   }
 }
 
-abstract class LongTextField<T> implements ValueFailure<T> {
-  const factory LongTextField({@required String failedValue}) =
-      _$LongTextField<T>;
+abstract class LongInput<T> implements ValueFailure<T> {
+  const factory LongInput({@required String failedValue}) = _$LongInput<T>;
 
   @override
   String get failedValue;
   @override
-  $LongTextFieldCopyWith<T, LongTextField<T>> get copyWith;
+  $LongInputCopyWith<T, LongInput<T>> get copyWith;
 }
 
 abstract class $EmptySelectionCopyWith<T, $Res>
@@ -1102,16 +1099,16 @@ class _$EmptySelection<T> implements EmptySelection<T> {
     @required Result invalidPassword(String failedValue),
     @required Result invalidConfirmPassword(String failedValue),
     @required Result invalidUsername(String failedValue),
-    @required Result emptyTextField(String failedValue),
-    @required Result longTextField(String failedValue),
+    @required Result emptyInput(String failedValue),
+    @required Result longInput(String failedValue),
     @required Result emptySelection(String failedValue),
   }) {
     assert(invalidEmailAddress != null);
     assert(invalidPassword != null);
     assert(invalidConfirmPassword != null);
     assert(invalidUsername != null);
-    assert(emptyTextField != null);
-    assert(longTextField != null);
+    assert(emptyInput != null);
+    assert(longInput != null);
     assert(emptySelection != null);
     return emptySelection(failedValue);
   }
@@ -1123,8 +1120,8 @@ class _$EmptySelection<T> implements EmptySelection<T> {
     Result invalidPassword(String failedValue),
     Result invalidConfirmPassword(String failedValue),
     Result invalidUsername(String failedValue),
-    Result emptyTextField(String failedValue),
-    Result longTextField(String failedValue),
+    Result emptyInput(String failedValue),
+    Result longInput(String failedValue),
     Result emptySelection(String failedValue),
     @required Result orElse(),
   }) {
@@ -1142,16 +1139,16 @@ class _$EmptySelection<T> implements EmptySelection<T> {
     @required Result invalidPassword(InvalidPassword<T> value),
     @required Result invalidConfirmPassword(InvalidConfirmPassword<T> value),
     @required Result invalidUsername(InvalidUsername<T> value),
-    @required Result emptyTextField(EmptyTextField<T> value),
-    @required Result longTextField(LongTextField<T> value),
+    @required Result emptyInput(EmptyInput<T> value),
+    @required Result longInput(LongInput<T> value),
     @required Result emptySelection(EmptySelection<T> value),
   }) {
     assert(invalidEmailAddress != null);
     assert(invalidPassword != null);
     assert(invalidConfirmPassword != null);
     assert(invalidUsername != null);
-    assert(emptyTextField != null);
-    assert(longTextField != null);
+    assert(emptyInput != null);
+    assert(longInput != null);
     assert(emptySelection != null);
     return emptySelection(this);
   }
@@ -1163,8 +1160,8 @@ class _$EmptySelection<T> implements EmptySelection<T> {
     Result invalidPassword(InvalidPassword<T> value),
     Result invalidConfirmPassword(InvalidConfirmPassword<T> value),
     Result invalidUsername(InvalidUsername<T> value),
-    Result emptyTextField(EmptyTextField<T> value),
-    Result longTextField(LongTextField<T> value),
+    Result emptyInput(EmptyInput<T> value),
+    Result longInput(LongInput<T> value),
     Result emptySelection(EmptySelection<T> value),
     @required Result orElse(),
   }) {
