@@ -1,5 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:wine/domain/core/failures.dart';
+import 'package:wine/utils/constants.dart';
 
 Either<ValueFailure<String>, String> validateEmailAddress(String input) {
   const String emailRegex =
@@ -37,5 +38,59 @@ Either<ValueFailure<String>, String> validateUsername(String input) {
     return right(input);
   } else {
     return left(ValueFailure.invalidUsername(failedValue: input));
+  }
+}
+
+Either<ValueFailure<String>, String> validateTitle(String input) {
+  if (input == null || input.isEmpty) {
+    return left(ValueFailure.emptyTextField(failedValue: input));
+  } else if (input.length > Constants.seriesTitleMaxWords) {
+    return left(ValueFailure.longTextField(failedValue: input));
+  } else {
+    return right(input);
+  }
+}
+
+Either<ValueFailure<String>, String> validateSubtitle(String input) {
+  if (input == null || input.isEmpty) {
+    return left(ValueFailure.emptyTextField(failedValue: input));
+  } else if (input.length > Constants.seriesSubtitleMaxWords) {
+    return left(ValueFailure.longTextField(failedValue: input));
+  } else {
+    return right(input);
+  }
+}
+
+Either<ValueFailure<String>, String> validateDescription(String input) {
+  if (input == null || input.isEmpty) {
+    return left(ValueFailure.emptyTextField(failedValue: input));
+  } else if (input.length > Constants.seriesDescriptionMaxWords) {
+    return left(ValueFailure.longTextField(failedValue: input));
+  } else {
+    return right(input);
+  }
+}
+
+Either<ValueFailure<String>, String> validateGenre(String input) {
+  if (input != null && input.isNotEmpty) {
+    return right(input);
+  } else {
+    return left(ValueFailure.emptySelection(failedValue: input));
+  }
+}
+
+Either<ValueFailure<String>, String> validateLanguage(String input) {
+  if (input != null && input.isNotEmpty) {
+    return right(input);
+  } else {
+    return left(ValueFailure.emptySelection(failedValue: input));
+  }
+}
+
+Either<ValueFailure<String>, String> validateCopyrights(String input) {
+  if (input != null && input.isNotEmpty) {
+    return right(input);
+  } else {
+    return left(ValueFailure.emptySelection(failedValue: input));
   }
 }

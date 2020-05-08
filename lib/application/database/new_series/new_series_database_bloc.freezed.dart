@@ -28,6 +28,12 @@ class _$NewSeriesDatabaseEventTearOff {
     );
   }
 
+  SubtitleChanged subtitleChanged(String subtitle) {
+    return SubtitleChanged(
+      subtitle,
+    );
+  }
+
   DescriptionChanged descriptionChanged(String description) {
     return DescriptionChanged(
       description,
@@ -68,6 +74,7 @@ mixin _$NewSeriesDatabaseEvent {
     @required Result newSeriesPageLaunched(SeriesDraft seriesDraft),
     @required Result createSeriesButtonPressed(),
     @required Result titleChanged(String title),
+    @required Result subtitleChanged(String subtitle),
     @required Result descriptionChanged(String description),
     @required Result genreSelected(String genre),
     @required Result genreOptionalSelected(String genreOptional),
@@ -79,6 +86,7 @@ mixin _$NewSeriesDatabaseEvent {
     Result newSeriesPageLaunched(SeriesDraft seriesDraft),
     Result createSeriesButtonPressed(),
     Result titleChanged(String title),
+    Result subtitleChanged(String subtitle),
     Result descriptionChanged(String description),
     Result genreSelected(String genre),
     Result genreOptionalSelected(String genreOptional),
@@ -91,6 +99,7 @@ mixin _$NewSeriesDatabaseEvent {
     @required Result newSeriesPageLaunched(NewSeriesPageLaunched value),
     @required Result createSeriesButtonPressed(CreateSeriesButtonPressed value),
     @required Result titleChanged(TitleChanged value),
+    @required Result subtitleChanged(SubtitleChanged value),
     @required Result descriptionChanged(DescriptionChanged value),
     @required Result genreSelected(GenreSelected value),
     @required Result genreOptionalSelected(GenreOptionalSelected value),
@@ -102,6 +111,7 @@ mixin _$NewSeriesDatabaseEvent {
     Result newSeriesPageLaunched(NewSeriesPageLaunched value),
     Result createSeriesButtonPressed(CreateSeriesButtonPressed value),
     Result titleChanged(TitleChanged value),
+    Result subtitleChanged(SubtitleChanged value),
     Result descriptionChanged(DescriptionChanged value),
     Result genreSelected(GenreSelected value),
     Result genreOptionalSelected(GenreOptionalSelected value),
@@ -190,6 +200,7 @@ class _$NewSeriesPageLaunched implements NewSeriesPageLaunched {
     @required Result newSeriesPageLaunched(SeriesDraft seriesDraft),
     @required Result createSeriesButtonPressed(),
     @required Result titleChanged(String title),
+    @required Result subtitleChanged(String subtitle),
     @required Result descriptionChanged(String description),
     @required Result genreSelected(String genre),
     @required Result genreOptionalSelected(String genreOptional),
@@ -199,6 +210,7 @@ class _$NewSeriesPageLaunched implements NewSeriesPageLaunched {
     assert(newSeriesPageLaunched != null);
     assert(createSeriesButtonPressed != null);
     assert(titleChanged != null);
+    assert(subtitleChanged != null);
     assert(descriptionChanged != null);
     assert(genreSelected != null);
     assert(genreOptionalSelected != null);
@@ -213,6 +225,7 @@ class _$NewSeriesPageLaunched implements NewSeriesPageLaunched {
     Result newSeriesPageLaunched(SeriesDraft seriesDraft),
     Result createSeriesButtonPressed(),
     Result titleChanged(String title),
+    Result subtitleChanged(String subtitle),
     Result descriptionChanged(String description),
     Result genreSelected(String genre),
     Result genreOptionalSelected(String genreOptional),
@@ -233,6 +246,7 @@ class _$NewSeriesPageLaunched implements NewSeriesPageLaunched {
     @required Result newSeriesPageLaunched(NewSeriesPageLaunched value),
     @required Result createSeriesButtonPressed(CreateSeriesButtonPressed value),
     @required Result titleChanged(TitleChanged value),
+    @required Result subtitleChanged(SubtitleChanged value),
     @required Result descriptionChanged(DescriptionChanged value),
     @required Result genreSelected(GenreSelected value),
     @required Result genreOptionalSelected(GenreOptionalSelected value),
@@ -242,6 +256,7 @@ class _$NewSeriesPageLaunched implements NewSeriesPageLaunched {
     assert(newSeriesPageLaunched != null);
     assert(createSeriesButtonPressed != null);
     assert(titleChanged != null);
+    assert(subtitleChanged != null);
     assert(descriptionChanged != null);
     assert(genreSelected != null);
     assert(genreOptionalSelected != null);
@@ -256,6 +271,7 @@ class _$NewSeriesPageLaunched implements NewSeriesPageLaunched {
     Result newSeriesPageLaunched(NewSeriesPageLaunched value),
     Result createSeriesButtonPressed(CreateSeriesButtonPressed value),
     Result titleChanged(TitleChanged value),
+    Result subtitleChanged(SubtitleChanged value),
     Result descriptionChanged(DescriptionChanged value),
     Result genreSelected(GenreSelected value),
     Result genreOptionalSelected(GenreOptionalSelected value),
@@ -319,6 +335,7 @@ class _$CreateSeriesButtonPressed implements CreateSeriesButtonPressed {
     @required Result newSeriesPageLaunched(SeriesDraft seriesDraft),
     @required Result createSeriesButtonPressed(),
     @required Result titleChanged(String title),
+    @required Result subtitleChanged(String subtitle),
     @required Result descriptionChanged(String description),
     @required Result genreSelected(String genre),
     @required Result genreOptionalSelected(String genreOptional),
@@ -328,6 +345,7 @@ class _$CreateSeriesButtonPressed implements CreateSeriesButtonPressed {
     assert(newSeriesPageLaunched != null);
     assert(createSeriesButtonPressed != null);
     assert(titleChanged != null);
+    assert(subtitleChanged != null);
     assert(descriptionChanged != null);
     assert(genreSelected != null);
     assert(genreOptionalSelected != null);
@@ -342,6 +360,7 @@ class _$CreateSeriesButtonPressed implements CreateSeriesButtonPressed {
     Result newSeriesPageLaunched(SeriesDraft seriesDraft),
     Result createSeriesButtonPressed(),
     Result titleChanged(String title),
+    Result subtitleChanged(String subtitle),
     Result descriptionChanged(String description),
     Result genreSelected(String genre),
     Result genreOptionalSelected(String genreOptional),
@@ -362,6 +381,7 @@ class _$CreateSeriesButtonPressed implements CreateSeriesButtonPressed {
     @required Result newSeriesPageLaunched(NewSeriesPageLaunched value),
     @required Result createSeriesButtonPressed(CreateSeriesButtonPressed value),
     @required Result titleChanged(TitleChanged value),
+    @required Result subtitleChanged(SubtitleChanged value),
     @required Result descriptionChanged(DescriptionChanged value),
     @required Result genreSelected(GenreSelected value),
     @required Result genreOptionalSelected(GenreOptionalSelected value),
@@ -371,6 +391,7 @@ class _$CreateSeriesButtonPressed implements CreateSeriesButtonPressed {
     assert(newSeriesPageLaunched != null);
     assert(createSeriesButtonPressed != null);
     assert(titleChanged != null);
+    assert(subtitleChanged != null);
     assert(descriptionChanged != null);
     assert(genreSelected != null);
     assert(genreOptionalSelected != null);
@@ -385,6 +406,7 @@ class _$CreateSeriesButtonPressed implements CreateSeriesButtonPressed {
     Result newSeriesPageLaunched(NewSeriesPageLaunched value),
     Result createSeriesButtonPressed(CreateSeriesButtonPressed value),
     Result titleChanged(TitleChanged value),
+    Result subtitleChanged(SubtitleChanged value),
     Result descriptionChanged(DescriptionChanged value),
     Result genreSelected(GenreSelected value),
     Result genreOptionalSelected(GenreOptionalSelected value),
@@ -464,6 +486,7 @@ class _$TitleChanged implements TitleChanged {
     @required Result newSeriesPageLaunched(SeriesDraft seriesDraft),
     @required Result createSeriesButtonPressed(),
     @required Result titleChanged(String title),
+    @required Result subtitleChanged(String subtitle),
     @required Result descriptionChanged(String description),
     @required Result genreSelected(String genre),
     @required Result genreOptionalSelected(String genreOptional),
@@ -473,6 +496,7 @@ class _$TitleChanged implements TitleChanged {
     assert(newSeriesPageLaunched != null);
     assert(createSeriesButtonPressed != null);
     assert(titleChanged != null);
+    assert(subtitleChanged != null);
     assert(descriptionChanged != null);
     assert(genreSelected != null);
     assert(genreOptionalSelected != null);
@@ -487,6 +511,7 @@ class _$TitleChanged implements TitleChanged {
     Result newSeriesPageLaunched(SeriesDraft seriesDraft),
     Result createSeriesButtonPressed(),
     Result titleChanged(String title),
+    Result subtitleChanged(String subtitle),
     Result descriptionChanged(String description),
     Result genreSelected(String genre),
     Result genreOptionalSelected(String genreOptional),
@@ -507,6 +532,7 @@ class _$TitleChanged implements TitleChanged {
     @required Result newSeriesPageLaunched(NewSeriesPageLaunched value),
     @required Result createSeriesButtonPressed(CreateSeriesButtonPressed value),
     @required Result titleChanged(TitleChanged value),
+    @required Result subtitleChanged(SubtitleChanged value),
     @required Result descriptionChanged(DescriptionChanged value),
     @required Result genreSelected(GenreSelected value),
     @required Result genreOptionalSelected(GenreOptionalSelected value),
@@ -516,6 +542,7 @@ class _$TitleChanged implements TitleChanged {
     assert(newSeriesPageLaunched != null);
     assert(createSeriesButtonPressed != null);
     assert(titleChanged != null);
+    assert(subtitleChanged != null);
     assert(descriptionChanged != null);
     assert(genreSelected != null);
     assert(genreOptionalSelected != null);
@@ -530,6 +557,7 @@ class _$TitleChanged implements TitleChanged {
     Result newSeriesPageLaunched(NewSeriesPageLaunched value),
     Result createSeriesButtonPressed(CreateSeriesButtonPressed value),
     Result titleChanged(TitleChanged value),
+    Result subtitleChanged(SubtitleChanged value),
     Result descriptionChanged(DescriptionChanged value),
     Result genreSelected(GenreSelected value),
     Result genreOptionalSelected(GenreOptionalSelected value),
@@ -550,6 +578,161 @@ abstract class TitleChanged implements NewSeriesDatabaseEvent {
 
   String get title;
   $TitleChangedCopyWith<TitleChanged> get copyWith;
+}
+
+abstract class $SubtitleChangedCopyWith<$Res> {
+  factory $SubtitleChangedCopyWith(
+          SubtitleChanged value, $Res Function(SubtitleChanged) then) =
+      _$SubtitleChangedCopyWithImpl<$Res>;
+  $Res call({String subtitle});
+}
+
+class _$SubtitleChangedCopyWithImpl<$Res>
+    extends _$NewSeriesDatabaseEventCopyWithImpl<$Res>
+    implements $SubtitleChangedCopyWith<$Res> {
+  _$SubtitleChangedCopyWithImpl(
+      SubtitleChanged _value, $Res Function(SubtitleChanged) _then)
+      : super(_value, (v) => _then(v as SubtitleChanged));
+
+  @override
+  SubtitleChanged get _value => super._value as SubtitleChanged;
+
+  @override
+  $Res call({
+    Object subtitle = freezed,
+  }) {
+    return _then(SubtitleChanged(
+      subtitle == freezed ? _value.subtitle : subtitle as String,
+    ));
+  }
+}
+
+class _$SubtitleChanged implements SubtitleChanged {
+  const _$SubtitleChanged(this.subtitle) : assert(subtitle != null);
+
+  @override
+  final String subtitle;
+
+  @override
+  String toString() {
+    return 'NewSeriesDatabaseEvent.subtitleChanged(subtitle: $subtitle)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is SubtitleChanged &&
+            (identical(other.subtitle, subtitle) ||
+                const DeepCollectionEquality()
+                    .equals(other.subtitle, subtitle)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(subtitle);
+
+  @override
+  $SubtitleChangedCopyWith<SubtitleChanged> get copyWith =>
+      _$SubtitleChangedCopyWithImpl<SubtitleChanged>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result newSeriesPageLaunched(SeriesDraft seriesDraft),
+    @required Result createSeriesButtonPressed(),
+    @required Result titleChanged(String title),
+    @required Result subtitleChanged(String subtitle),
+    @required Result descriptionChanged(String description),
+    @required Result genreSelected(String genre),
+    @required Result genreOptionalSelected(String genreOptional),
+    @required Result languageSelected(String language),
+    @required Result copyrightsSelected(String copyrights),
+  }) {
+    assert(newSeriesPageLaunched != null);
+    assert(createSeriesButtonPressed != null);
+    assert(titleChanged != null);
+    assert(subtitleChanged != null);
+    assert(descriptionChanged != null);
+    assert(genreSelected != null);
+    assert(genreOptionalSelected != null);
+    assert(languageSelected != null);
+    assert(copyrightsSelected != null);
+    return subtitleChanged(subtitle);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result newSeriesPageLaunched(SeriesDraft seriesDraft),
+    Result createSeriesButtonPressed(),
+    Result titleChanged(String title),
+    Result subtitleChanged(String subtitle),
+    Result descriptionChanged(String description),
+    Result genreSelected(String genre),
+    Result genreOptionalSelected(String genreOptional),
+    Result languageSelected(String language),
+    Result copyrightsSelected(String copyrights),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (subtitleChanged != null) {
+      return subtitleChanged(subtitle);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result newSeriesPageLaunched(NewSeriesPageLaunched value),
+    @required Result createSeriesButtonPressed(CreateSeriesButtonPressed value),
+    @required Result titleChanged(TitleChanged value),
+    @required Result subtitleChanged(SubtitleChanged value),
+    @required Result descriptionChanged(DescriptionChanged value),
+    @required Result genreSelected(GenreSelected value),
+    @required Result genreOptionalSelected(GenreOptionalSelected value),
+    @required Result languageSelected(LanguageSelected value),
+    @required Result copyrightsSelected(CopyrightsSelected value),
+  }) {
+    assert(newSeriesPageLaunched != null);
+    assert(createSeriesButtonPressed != null);
+    assert(titleChanged != null);
+    assert(subtitleChanged != null);
+    assert(descriptionChanged != null);
+    assert(genreSelected != null);
+    assert(genreOptionalSelected != null);
+    assert(languageSelected != null);
+    assert(copyrightsSelected != null);
+    return subtitleChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result newSeriesPageLaunched(NewSeriesPageLaunched value),
+    Result createSeriesButtonPressed(CreateSeriesButtonPressed value),
+    Result titleChanged(TitleChanged value),
+    Result subtitleChanged(SubtitleChanged value),
+    Result descriptionChanged(DescriptionChanged value),
+    Result genreSelected(GenreSelected value),
+    Result genreOptionalSelected(GenreOptionalSelected value),
+    Result languageSelected(LanguageSelected value),
+    Result copyrightsSelected(CopyrightsSelected value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (subtitleChanged != null) {
+      return subtitleChanged(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SubtitleChanged implements NewSeriesDatabaseEvent {
+  const factory SubtitleChanged(String subtitle) = _$SubtitleChanged;
+
+  String get subtitle;
+  $SubtitleChangedCopyWith<SubtitleChanged> get copyWith;
 }
 
 abstract class $DescriptionChangedCopyWith<$Res> {
@@ -613,6 +796,7 @@ class _$DescriptionChanged implements DescriptionChanged {
     @required Result newSeriesPageLaunched(SeriesDraft seriesDraft),
     @required Result createSeriesButtonPressed(),
     @required Result titleChanged(String title),
+    @required Result subtitleChanged(String subtitle),
     @required Result descriptionChanged(String description),
     @required Result genreSelected(String genre),
     @required Result genreOptionalSelected(String genreOptional),
@@ -622,6 +806,7 @@ class _$DescriptionChanged implements DescriptionChanged {
     assert(newSeriesPageLaunched != null);
     assert(createSeriesButtonPressed != null);
     assert(titleChanged != null);
+    assert(subtitleChanged != null);
     assert(descriptionChanged != null);
     assert(genreSelected != null);
     assert(genreOptionalSelected != null);
@@ -636,6 +821,7 @@ class _$DescriptionChanged implements DescriptionChanged {
     Result newSeriesPageLaunched(SeriesDraft seriesDraft),
     Result createSeriesButtonPressed(),
     Result titleChanged(String title),
+    Result subtitleChanged(String subtitle),
     Result descriptionChanged(String description),
     Result genreSelected(String genre),
     Result genreOptionalSelected(String genreOptional),
@@ -656,6 +842,7 @@ class _$DescriptionChanged implements DescriptionChanged {
     @required Result newSeriesPageLaunched(NewSeriesPageLaunched value),
     @required Result createSeriesButtonPressed(CreateSeriesButtonPressed value),
     @required Result titleChanged(TitleChanged value),
+    @required Result subtitleChanged(SubtitleChanged value),
     @required Result descriptionChanged(DescriptionChanged value),
     @required Result genreSelected(GenreSelected value),
     @required Result genreOptionalSelected(GenreOptionalSelected value),
@@ -665,6 +852,7 @@ class _$DescriptionChanged implements DescriptionChanged {
     assert(newSeriesPageLaunched != null);
     assert(createSeriesButtonPressed != null);
     assert(titleChanged != null);
+    assert(subtitleChanged != null);
     assert(descriptionChanged != null);
     assert(genreSelected != null);
     assert(genreOptionalSelected != null);
@@ -679,6 +867,7 @@ class _$DescriptionChanged implements DescriptionChanged {
     Result newSeriesPageLaunched(NewSeriesPageLaunched value),
     Result createSeriesButtonPressed(CreateSeriesButtonPressed value),
     Result titleChanged(TitleChanged value),
+    Result subtitleChanged(SubtitleChanged value),
     Result descriptionChanged(DescriptionChanged value),
     Result genreSelected(GenreSelected value),
     Result genreOptionalSelected(GenreOptionalSelected value),
@@ -761,6 +950,7 @@ class _$GenreSelected implements GenreSelected {
     @required Result newSeriesPageLaunched(SeriesDraft seriesDraft),
     @required Result createSeriesButtonPressed(),
     @required Result titleChanged(String title),
+    @required Result subtitleChanged(String subtitle),
     @required Result descriptionChanged(String description),
     @required Result genreSelected(String genre),
     @required Result genreOptionalSelected(String genreOptional),
@@ -770,6 +960,7 @@ class _$GenreSelected implements GenreSelected {
     assert(newSeriesPageLaunched != null);
     assert(createSeriesButtonPressed != null);
     assert(titleChanged != null);
+    assert(subtitleChanged != null);
     assert(descriptionChanged != null);
     assert(genreSelected != null);
     assert(genreOptionalSelected != null);
@@ -784,6 +975,7 @@ class _$GenreSelected implements GenreSelected {
     Result newSeriesPageLaunched(SeriesDraft seriesDraft),
     Result createSeriesButtonPressed(),
     Result titleChanged(String title),
+    Result subtitleChanged(String subtitle),
     Result descriptionChanged(String description),
     Result genreSelected(String genre),
     Result genreOptionalSelected(String genreOptional),
@@ -804,6 +996,7 @@ class _$GenreSelected implements GenreSelected {
     @required Result newSeriesPageLaunched(NewSeriesPageLaunched value),
     @required Result createSeriesButtonPressed(CreateSeriesButtonPressed value),
     @required Result titleChanged(TitleChanged value),
+    @required Result subtitleChanged(SubtitleChanged value),
     @required Result descriptionChanged(DescriptionChanged value),
     @required Result genreSelected(GenreSelected value),
     @required Result genreOptionalSelected(GenreOptionalSelected value),
@@ -813,6 +1006,7 @@ class _$GenreSelected implements GenreSelected {
     assert(newSeriesPageLaunched != null);
     assert(createSeriesButtonPressed != null);
     assert(titleChanged != null);
+    assert(subtitleChanged != null);
     assert(descriptionChanged != null);
     assert(genreSelected != null);
     assert(genreOptionalSelected != null);
@@ -827,6 +1021,7 @@ class _$GenreSelected implements GenreSelected {
     Result newSeriesPageLaunched(NewSeriesPageLaunched value),
     Result createSeriesButtonPressed(CreateSeriesButtonPressed value),
     Result titleChanged(TitleChanged value),
+    Result subtitleChanged(SubtitleChanged value),
     Result descriptionChanged(DescriptionChanged value),
     Result genreSelected(GenreSelected value),
     Result genreOptionalSelected(GenreOptionalSelected value),
@@ -912,6 +1107,7 @@ class _$GenreOptionalSelected implements GenreOptionalSelected {
     @required Result newSeriesPageLaunched(SeriesDraft seriesDraft),
     @required Result createSeriesButtonPressed(),
     @required Result titleChanged(String title),
+    @required Result subtitleChanged(String subtitle),
     @required Result descriptionChanged(String description),
     @required Result genreSelected(String genre),
     @required Result genreOptionalSelected(String genreOptional),
@@ -921,6 +1117,7 @@ class _$GenreOptionalSelected implements GenreOptionalSelected {
     assert(newSeriesPageLaunched != null);
     assert(createSeriesButtonPressed != null);
     assert(titleChanged != null);
+    assert(subtitleChanged != null);
     assert(descriptionChanged != null);
     assert(genreSelected != null);
     assert(genreOptionalSelected != null);
@@ -935,6 +1132,7 @@ class _$GenreOptionalSelected implements GenreOptionalSelected {
     Result newSeriesPageLaunched(SeriesDraft seriesDraft),
     Result createSeriesButtonPressed(),
     Result titleChanged(String title),
+    Result subtitleChanged(String subtitle),
     Result descriptionChanged(String description),
     Result genreSelected(String genre),
     Result genreOptionalSelected(String genreOptional),
@@ -955,6 +1153,7 @@ class _$GenreOptionalSelected implements GenreOptionalSelected {
     @required Result newSeriesPageLaunched(NewSeriesPageLaunched value),
     @required Result createSeriesButtonPressed(CreateSeriesButtonPressed value),
     @required Result titleChanged(TitleChanged value),
+    @required Result subtitleChanged(SubtitleChanged value),
     @required Result descriptionChanged(DescriptionChanged value),
     @required Result genreSelected(GenreSelected value),
     @required Result genreOptionalSelected(GenreOptionalSelected value),
@@ -964,6 +1163,7 @@ class _$GenreOptionalSelected implements GenreOptionalSelected {
     assert(newSeriesPageLaunched != null);
     assert(createSeriesButtonPressed != null);
     assert(titleChanged != null);
+    assert(subtitleChanged != null);
     assert(descriptionChanged != null);
     assert(genreSelected != null);
     assert(genreOptionalSelected != null);
@@ -978,6 +1178,7 @@ class _$GenreOptionalSelected implements GenreOptionalSelected {
     Result newSeriesPageLaunched(NewSeriesPageLaunched value),
     Result createSeriesButtonPressed(CreateSeriesButtonPressed value),
     Result titleChanged(TitleChanged value),
+    Result subtitleChanged(SubtitleChanged value),
     Result descriptionChanged(DescriptionChanged value),
     Result genreSelected(GenreSelected value),
     Result genreOptionalSelected(GenreOptionalSelected value),
@@ -1062,6 +1263,7 @@ class _$LanguageSelected implements LanguageSelected {
     @required Result newSeriesPageLaunched(SeriesDraft seriesDraft),
     @required Result createSeriesButtonPressed(),
     @required Result titleChanged(String title),
+    @required Result subtitleChanged(String subtitle),
     @required Result descriptionChanged(String description),
     @required Result genreSelected(String genre),
     @required Result genreOptionalSelected(String genreOptional),
@@ -1071,6 +1273,7 @@ class _$LanguageSelected implements LanguageSelected {
     assert(newSeriesPageLaunched != null);
     assert(createSeriesButtonPressed != null);
     assert(titleChanged != null);
+    assert(subtitleChanged != null);
     assert(descriptionChanged != null);
     assert(genreSelected != null);
     assert(genreOptionalSelected != null);
@@ -1085,6 +1288,7 @@ class _$LanguageSelected implements LanguageSelected {
     Result newSeriesPageLaunched(SeriesDraft seriesDraft),
     Result createSeriesButtonPressed(),
     Result titleChanged(String title),
+    Result subtitleChanged(String subtitle),
     Result descriptionChanged(String description),
     Result genreSelected(String genre),
     Result genreOptionalSelected(String genreOptional),
@@ -1105,6 +1309,7 @@ class _$LanguageSelected implements LanguageSelected {
     @required Result newSeriesPageLaunched(NewSeriesPageLaunched value),
     @required Result createSeriesButtonPressed(CreateSeriesButtonPressed value),
     @required Result titleChanged(TitleChanged value),
+    @required Result subtitleChanged(SubtitleChanged value),
     @required Result descriptionChanged(DescriptionChanged value),
     @required Result genreSelected(GenreSelected value),
     @required Result genreOptionalSelected(GenreOptionalSelected value),
@@ -1114,6 +1319,7 @@ class _$LanguageSelected implements LanguageSelected {
     assert(newSeriesPageLaunched != null);
     assert(createSeriesButtonPressed != null);
     assert(titleChanged != null);
+    assert(subtitleChanged != null);
     assert(descriptionChanged != null);
     assert(genreSelected != null);
     assert(genreOptionalSelected != null);
@@ -1128,6 +1334,7 @@ class _$LanguageSelected implements LanguageSelected {
     Result newSeriesPageLaunched(NewSeriesPageLaunched value),
     Result createSeriesButtonPressed(CreateSeriesButtonPressed value),
     Result titleChanged(TitleChanged value),
+    Result subtitleChanged(SubtitleChanged value),
     Result descriptionChanged(DescriptionChanged value),
     Result genreSelected(GenreSelected value),
     Result genreOptionalSelected(GenreOptionalSelected value),
@@ -1211,6 +1418,7 @@ class _$CopyrightsSelected implements CopyrightsSelected {
     @required Result newSeriesPageLaunched(SeriesDraft seriesDraft),
     @required Result createSeriesButtonPressed(),
     @required Result titleChanged(String title),
+    @required Result subtitleChanged(String subtitle),
     @required Result descriptionChanged(String description),
     @required Result genreSelected(String genre),
     @required Result genreOptionalSelected(String genreOptional),
@@ -1220,6 +1428,7 @@ class _$CopyrightsSelected implements CopyrightsSelected {
     assert(newSeriesPageLaunched != null);
     assert(createSeriesButtonPressed != null);
     assert(titleChanged != null);
+    assert(subtitleChanged != null);
     assert(descriptionChanged != null);
     assert(genreSelected != null);
     assert(genreOptionalSelected != null);
@@ -1234,6 +1443,7 @@ class _$CopyrightsSelected implements CopyrightsSelected {
     Result newSeriesPageLaunched(SeriesDraft seriesDraft),
     Result createSeriesButtonPressed(),
     Result titleChanged(String title),
+    Result subtitleChanged(String subtitle),
     Result descriptionChanged(String description),
     Result genreSelected(String genre),
     Result genreOptionalSelected(String genreOptional),
@@ -1254,6 +1464,7 @@ class _$CopyrightsSelected implements CopyrightsSelected {
     @required Result newSeriesPageLaunched(NewSeriesPageLaunched value),
     @required Result createSeriesButtonPressed(CreateSeriesButtonPressed value),
     @required Result titleChanged(TitleChanged value),
+    @required Result subtitleChanged(SubtitleChanged value),
     @required Result descriptionChanged(DescriptionChanged value),
     @required Result genreSelected(GenreSelected value),
     @required Result genreOptionalSelected(GenreOptionalSelected value),
@@ -1263,6 +1474,7 @@ class _$CopyrightsSelected implements CopyrightsSelected {
     assert(newSeriesPageLaunched != null);
     assert(createSeriesButtonPressed != null);
     assert(titleChanged != null);
+    assert(subtitleChanged != null);
     assert(descriptionChanged != null);
     assert(genreSelected != null);
     assert(genreOptionalSelected != null);
@@ -1277,6 +1489,7 @@ class _$CopyrightsSelected implements CopyrightsSelected {
     Result newSeriesPageLaunched(NewSeriesPageLaunched value),
     Result createSeriesButtonPressed(CreateSeriesButtonPressed value),
     Result titleChanged(TitleChanged value),
+    Result subtitleChanged(SubtitleChanged value),
     Result descriptionChanged(DescriptionChanged value),
     Result genreSelected(GenreSelected value),
     Result genreOptionalSelected(GenreOptionalSelected value),
@@ -1304,24 +1517,34 @@ class _$NewSeriesDatabaseStateTearOff {
 
   _NewSeriesDatabaseState call(
       {@required SeriesDraft seriesDraft,
-      @required String uid,
-      @required String authorUid,
-      @required String title,
-      @required String description,
-      @required String genre,
-      @required String genreOptional,
-      @required String language,
-      @required String copyrights}) {
+      @required Title title,
+      @required Subtitle subtitle,
+      @required Description description,
+      @required Genre genre,
+      @required String genreStr,
+      @required Genre genreOptional,
+      @required String genreOptionalStr,
+      @required Language language,
+      @required String languageStr,
+      @required Copyrights copyrights,
+      @required String copyrightsStr,
+      @required bool isSaving,
+      @required bool isSaved}) {
     return _NewSeriesDatabaseState(
       seriesDraft: seriesDraft,
-      uid: uid,
-      authorUid: authorUid,
       title: title,
+      subtitle: subtitle,
       description: description,
       genre: genre,
+      genreStr: genreStr,
       genreOptional: genreOptional,
+      genreOptionalStr: genreOptionalStr,
       language: language,
+      languageStr: languageStr,
       copyrights: copyrights,
+      copyrightsStr: copyrightsStr,
+      isSaving: isSaving,
+      isSaved: isSaved,
     );
   }
 }
@@ -1331,14 +1554,19 @@ const $NewSeriesDatabaseState = _$NewSeriesDatabaseStateTearOff();
 
 mixin _$NewSeriesDatabaseState {
   SeriesDraft get seriesDraft;
-  String get uid;
-  String get authorUid;
-  String get title;
-  String get description;
-  String get genre;
-  String get genreOptional;
-  String get language;
-  String get copyrights;
+  Title get title;
+  Subtitle get subtitle;
+  Description get description;
+  Genre get genre;
+  String get genreStr;
+  Genre get genreOptional;
+  String get genreOptionalStr;
+  Language get language;
+  String get languageStr;
+  Copyrights get copyrights;
+  String get copyrightsStr;
+  bool get isSaving;
+  bool get isSaved;
 
   $NewSeriesDatabaseStateCopyWith<NewSeriesDatabaseState> get copyWith;
 }
@@ -1349,14 +1577,19 @@ abstract class $NewSeriesDatabaseStateCopyWith<$Res> {
       _$NewSeriesDatabaseStateCopyWithImpl<$Res>;
   $Res call(
       {SeriesDraft seriesDraft,
-      String uid,
-      String authorUid,
-      String title,
-      String description,
-      String genre,
-      String genreOptional,
-      String language,
-      String copyrights});
+      Title title,
+      Subtitle subtitle,
+      Description description,
+      Genre genre,
+      String genreStr,
+      Genre genreOptional,
+      String genreOptionalStr,
+      Language language,
+      String languageStr,
+      Copyrights copyrights,
+      String copyrightsStr,
+      bool isSaving,
+      bool isSaved});
 }
 
 class _$NewSeriesDatabaseStateCopyWithImpl<$Res>
@@ -1370,31 +1603,47 @@ class _$NewSeriesDatabaseStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object seriesDraft = freezed,
-    Object uid = freezed,
-    Object authorUid = freezed,
     Object title = freezed,
+    Object subtitle = freezed,
     Object description = freezed,
     Object genre = freezed,
+    Object genreStr = freezed,
     Object genreOptional = freezed,
+    Object genreOptionalStr = freezed,
     Object language = freezed,
+    Object languageStr = freezed,
     Object copyrights = freezed,
+    Object copyrightsStr = freezed,
+    Object isSaving = freezed,
+    Object isSaved = freezed,
   }) {
     return _then(_value.copyWith(
       seriesDraft: seriesDraft == freezed
           ? _value.seriesDraft
           : seriesDraft as SeriesDraft,
-      uid: uid == freezed ? _value.uid : uid as String,
-      authorUid: authorUid == freezed ? _value.authorUid : authorUid as String,
-      title: title == freezed ? _value.title : title as String,
-      description:
-          description == freezed ? _value.description : description as String,
-      genre: genre == freezed ? _value.genre : genre as String,
+      title: title == freezed ? _value.title : title as Title,
+      subtitle: subtitle == freezed ? _value.subtitle : subtitle as Subtitle,
+      description: description == freezed
+          ? _value.description
+          : description as Description,
+      genre: genre == freezed ? _value.genre : genre as Genre,
+      genreStr: genreStr == freezed ? _value.genreStr : genreStr as String,
       genreOptional: genreOptional == freezed
           ? _value.genreOptional
-          : genreOptional as String,
-      language: language == freezed ? _value.language : language as String,
+          : genreOptional as Genre,
+      genreOptionalStr: genreOptionalStr == freezed
+          ? _value.genreOptionalStr
+          : genreOptionalStr as String,
+      language: language == freezed ? _value.language : language as Language,
+      languageStr:
+          languageStr == freezed ? _value.languageStr : languageStr as String,
       copyrights:
-          copyrights == freezed ? _value.copyrights : copyrights as String,
+          copyrights == freezed ? _value.copyrights : copyrights as Copyrights,
+      copyrightsStr: copyrightsStr == freezed
+          ? _value.copyrightsStr
+          : copyrightsStr as String,
+      isSaving: isSaving == freezed ? _value.isSaving : isSaving as bool,
+      isSaved: isSaved == freezed ? _value.isSaved : isSaved as bool,
     ));
   }
 }
@@ -1407,14 +1656,19 @@ abstract class _$NewSeriesDatabaseStateCopyWith<$Res>
   @override
   $Res call(
       {SeriesDraft seriesDraft,
-      String uid,
-      String authorUid,
-      String title,
-      String description,
-      String genre,
-      String genreOptional,
-      String language,
-      String copyrights});
+      Title title,
+      Subtitle subtitle,
+      Description description,
+      Genre genre,
+      String genreStr,
+      Genre genreOptional,
+      String genreOptionalStr,
+      Language language,
+      String languageStr,
+      Copyrights copyrights,
+      String copyrightsStr,
+      bool isSaving,
+      bool isSaved});
 }
 
 class __$NewSeriesDatabaseStateCopyWithImpl<$Res>
@@ -1430,31 +1684,47 @@ class __$NewSeriesDatabaseStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object seriesDraft = freezed,
-    Object uid = freezed,
-    Object authorUid = freezed,
     Object title = freezed,
+    Object subtitle = freezed,
     Object description = freezed,
     Object genre = freezed,
+    Object genreStr = freezed,
     Object genreOptional = freezed,
+    Object genreOptionalStr = freezed,
     Object language = freezed,
+    Object languageStr = freezed,
     Object copyrights = freezed,
+    Object copyrightsStr = freezed,
+    Object isSaving = freezed,
+    Object isSaved = freezed,
   }) {
     return _then(_NewSeriesDatabaseState(
       seriesDraft: seriesDraft == freezed
           ? _value.seriesDraft
           : seriesDraft as SeriesDraft,
-      uid: uid == freezed ? _value.uid : uid as String,
-      authorUid: authorUid == freezed ? _value.authorUid : authorUid as String,
-      title: title == freezed ? _value.title : title as String,
-      description:
-          description == freezed ? _value.description : description as String,
-      genre: genre == freezed ? _value.genre : genre as String,
+      title: title == freezed ? _value.title : title as Title,
+      subtitle: subtitle == freezed ? _value.subtitle : subtitle as Subtitle,
+      description: description == freezed
+          ? _value.description
+          : description as Description,
+      genre: genre == freezed ? _value.genre : genre as Genre,
+      genreStr: genreStr == freezed ? _value.genreStr : genreStr as String,
       genreOptional: genreOptional == freezed
           ? _value.genreOptional
-          : genreOptional as String,
-      language: language == freezed ? _value.language : language as String,
+          : genreOptional as Genre,
+      genreOptionalStr: genreOptionalStr == freezed
+          ? _value.genreOptionalStr
+          : genreOptionalStr as String,
+      language: language == freezed ? _value.language : language as Language,
+      languageStr:
+          languageStr == freezed ? _value.languageStr : languageStr as String,
       copyrights:
-          copyrights == freezed ? _value.copyrights : copyrights as String,
+          copyrights == freezed ? _value.copyrights : copyrights as Copyrights,
+      copyrightsStr: copyrightsStr == freezed
+          ? _value.copyrightsStr
+          : copyrightsStr as String,
+      isSaving: isSaving == freezed ? _value.isSaving : isSaving as bool,
+      isSaved: isSaved == freezed ? _value.isSaved : isSaved as bool,
     ));
   }
 }
@@ -1462,46 +1732,66 @@ class __$NewSeriesDatabaseStateCopyWithImpl<$Res>
 class _$_NewSeriesDatabaseState implements _NewSeriesDatabaseState {
   const _$_NewSeriesDatabaseState(
       {@required this.seriesDraft,
-      @required this.uid,
-      @required this.authorUid,
       @required this.title,
+      @required this.subtitle,
       @required this.description,
       @required this.genre,
+      @required this.genreStr,
       @required this.genreOptional,
+      @required this.genreOptionalStr,
       @required this.language,
-      @required this.copyrights})
+      @required this.languageStr,
+      @required this.copyrights,
+      @required this.copyrightsStr,
+      @required this.isSaving,
+      @required this.isSaved})
       : assert(seriesDraft != null),
-        assert(uid != null),
-        assert(authorUid != null),
         assert(title != null),
+        assert(subtitle != null),
         assert(description != null),
         assert(genre != null),
+        assert(genreStr != null),
         assert(genreOptional != null),
+        assert(genreOptionalStr != null),
         assert(language != null),
-        assert(copyrights != null);
+        assert(languageStr != null),
+        assert(copyrights != null),
+        assert(copyrightsStr != null),
+        assert(isSaving != null),
+        assert(isSaved != null);
 
   @override
   final SeriesDraft seriesDraft;
   @override
-  final String uid;
+  final Title title;
   @override
-  final String authorUid;
+  final Subtitle subtitle;
   @override
-  final String title;
+  final Description description;
   @override
-  final String description;
+  final Genre genre;
   @override
-  final String genre;
+  final String genreStr;
   @override
-  final String genreOptional;
+  final Genre genreOptional;
   @override
-  final String language;
+  final String genreOptionalStr;
   @override
-  final String copyrights;
+  final Language language;
+  @override
+  final String languageStr;
+  @override
+  final Copyrights copyrights;
+  @override
+  final String copyrightsStr;
+  @override
+  final bool isSaving;
+  @override
+  final bool isSaved;
 
   @override
   String toString() {
-    return 'NewSeriesDatabaseState(seriesDraft: $seriesDraft, uid: $uid, authorUid: $authorUid, title: $title, description: $description, genre: $genre, genreOptional: $genreOptional, language: $language, copyrights: $copyrights)';
+    return 'NewSeriesDatabaseState(seriesDraft: $seriesDraft, title: $title, subtitle: $subtitle, description: $description, genre: $genre, genreStr: $genreStr, genreOptional: $genreOptional, genreOptionalStr: $genreOptionalStr, language: $language, languageStr: $languageStr, copyrights: $copyrights, copyrightsStr: $copyrightsStr, isSaving: $isSaving, isSaved: $isSaved)';
   }
 
   @override
@@ -1511,41 +1801,61 @@ class _$_NewSeriesDatabaseState implements _NewSeriesDatabaseState {
             (identical(other.seriesDraft, seriesDraft) ||
                 const DeepCollectionEquality()
                     .equals(other.seriesDraft, seriesDraft)) &&
-            (identical(other.uid, uid) ||
-                const DeepCollectionEquality().equals(other.uid, uid)) &&
-            (identical(other.authorUid, authorUid) ||
-                const DeepCollectionEquality()
-                    .equals(other.authorUid, authorUid)) &&
             (identical(other.title, title) ||
                 const DeepCollectionEquality().equals(other.title, title)) &&
+            (identical(other.subtitle, subtitle) ||
+                const DeepCollectionEquality()
+                    .equals(other.subtitle, subtitle)) &&
             (identical(other.description, description) ||
                 const DeepCollectionEquality()
                     .equals(other.description, description)) &&
             (identical(other.genre, genre) ||
                 const DeepCollectionEquality().equals(other.genre, genre)) &&
+            (identical(other.genreStr, genreStr) ||
+                const DeepCollectionEquality()
+                    .equals(other.genreStr, genreStr)) &&
             (identical(other.genreOptional, genreOptional) ||
                 const DeepCollectionEquality()
                     .equals(other.genreOptional, genreOptional)) &&
+            (identical(other.genreOptionalStr, genreOptionalStr) ||
+                const DeepCollectionEquality()
+                    .equals(other.genreOptionalStr, genreOptionalStr)) &&
             (identical(other.language, language) ||
                 const DeepCollectionEquality()
                     .equals(other.language, language)) &&
+            (identical(other.languageStr, languageStr) ||
+                const DeepCollectionEquality()
+                    .equals(other.languageStr, languageStr)) &&
             (identical(other.copyrights, copyrights) ||
                 const DeepCollectionEquality()
-                    .equals(other.copyrights, copyrights)));
+                    .equals(other.copyrights, copyrights)) &&
+            (identical(other.copyrightsStr, copyrightsStr) ||
+                const DeepCollectionEquality()
+                    .equals(other.copyrightsStr, copyrightsStr)) &&
+            (identical(other.isSaving, isSaving) ||
+                const DeepCollectionEquality()
+                    .equals(other.isSaving, isSaving)) &&
+            (identical(other.isSaved, isSaved) ||
+                const DeepCollectionEquality().equals(other.isSaved, isSaved)));
   }
 
   @override
   int get hashCode =>
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(seriesDraft) ^
-      const DeepCollectionEquality().hash(uid) ^
-      const DeepCollectionEquality().hash(authorUid) ^
       const DeepCollectionEquality().hash(title) ^
+      const DeepCollectionEquality().hash(subtitle) ^
       const DeepCollectionEquality().hash(description) ^
       const DeepCollectionEquality().hash(genre) ^
+      const DeepCollectionEquality().hash(genreStr) ^
       const DeepCollectionEquality().hash(genreOptional) ^
+      const DeepCollectionEquality().hash(genreOptionalStr) ^
       const DeepCollectionEquality().hash(language) ^
-      const DeepCollectionEquality().hash(copyrights);
+      const DeepCollectionEquality().hash(languageStr) ^
+      const DeepCollectionEquality().hash(copyrights) ^
+      const DeepCollectionEquality().hash(copyrightsStr) ^
+      const DeepCollectionEquality().hash(isSaving) ^
+      const DeepCollectionEquality().hash(isSaved);
 
   @override
   _$NewSeriesDatabaseStateCopyWith<_NewSeriesDatabaseState> get copyWith =>
@@ -1556,33 +1866,48 @@ class _$_NewSeriesDatabaseState implements _NewSeriesDatabaseState {
 abstract class _NewSeriesDatabaseState implements NewSeriesDatabaseState {
   const factory _NewSeriesDatabaseState(
       {@required SeriesDraft seriesDraft,
-      @required String uid,
-      @required String authorUid,
-      @required String title,
-      @required String description,
-      @required String genre,
-      @required String genreOptional,
-      @required String language,
-      @required String copyrights}) = _$_NewSeriesDatabaseState;
+      @required Title title,
+      @required Subtitle subtitle,
+      @required Description description,
+      @required Genre genre,
+      @required String genreStr,
+      @required Genre genreOptional,
+      @required String genreOptionalStr,
+      @required Language language,
+      @required String languageStr,
+      @required Copyrights copyrights,
+      @required String copyrightsStr,
+      @required bool isSaving,
+      @required bool isSaved}) = _$_NewSeriesDatabaseState;
 
   @override
   SeriesDraft get seriesDraft;
   @override
-  String get uid;
+  Title get title;
   @override
-  String get authorUid;
+  Subtitle get subtitle;
   @override
-  String get title;
+  Description get description;
   @override
-  String get description;
+  Genre get genre;
   @override
-  String get genre;
+  String get genreStr;
   @override
-  String get genreOptional;
+  Genre get genreOptional;
   @override
-  String get language;
+  String get genreOptionalStr;
   @override
-  String get copyrights;
+  Language get language;
+  @override
+  String get languageStr;
+  @override
+  Copyrights get copyrights;
+  @override
+  String get copyrightsStr;
+  @override
+  bool get isSaving;
+  @override
+  bool get isSaved;
   @override
   _$NewSeriesDatabaseStateCopyWith<_NewSeriesDatabaseState> get copyWith;
 }

@@ -20,18 +20,19 @@ class SeriesDraftAdapter extends TypeAdapter<SeriesDraft> {
       uid: fields[0] as String,
       authorUid: fields[1] as String,
       title: fields[2] as String,
-      description: fields[3] as String,
-      genre: fields[4] as String,
-      genreOptional: fields[5] as String,
-      language: fields[6] as String,
-      copyrights: fields[7] as String,
+      subtitle: fields[3] as String,
+      description: fields[4] as String,
+      genre: fields[5] as String,
+      genreOptional: fields[6] as String,
+      language: fields[7] as String,
+      copyrights: fields[8] as String,
     );
   }
 
   @override
   void write(BinaryWriter writer, SeriesDraft obj) {
     writer
-      ..writeByte(8)
+      ..writeByte(9)
       ..writeByte(0)
       ..write(obj.uid)
       ..writeByte(1)
@@ -39,14 +40,16 @@ class SeriesDraftAdapter extends TypeAdapter<SeriesDraft> {
       ..writeByte(2)
       ..write(obj.title)
       ..writeByte(3)
-      ..write(obj.description)
+      ..write(obj.subtitle)
       ..writeByte(4)
-      ..write(obj.genre)
+      ..write(obj.description)
       ..writeByte(5)
-      ..write(obj.genreOptional)
+      ..write(obj.genre)
       ..writeByte(6)
-      ..write(obj.language)
+      ..write(obj.genreOptional)
       ..writeByte(7)
+      ..write(obj.language)
+      ..writeByte(8)
       ..write(obj.copyrights);
   }
 }

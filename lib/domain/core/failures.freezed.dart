@@ -36,6 +36,24 @@ class _$ValueFailureTearOff {
       failedValue: failedValue,
     );
   }
+
+  EmptyTextField<T> emptyTextField<T>({@required String failedValue}) {
+    return EmptyTextField<T>(
+      failedValue: failedValue,
+    );
+  }
+
+  LongTextField<T> longTextField<T>({@required String failedValue}) {
+    return LongTextField<T>(
+      failedValue: failedValue,
+    );
+  }
+
+  EmptySelection<T> emptySelection<T>({@required String failedValue}) {
+    return EmptySelection<T>(
+      failedValue: failedValue,
+    );
+  }
 }
 
 // ignore: unused_element
@@ -50,6 +68,9 @@ mixin _$ValueFailure<T> {
     @required Result invalidPassword(String failedValue),
     @required Result invalidConfirmPassword(String failedValue),
     @required Result invalidUsername(String failedValue),
+    @required Result emptyTextField(String failedValue),
+    @required Result longTextField(String failedValue),
+    @required Result emptySelection(String failedValue),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
@@ -57,6 +78,9 @@ mixin _$ValueFailure<T> {
     Result invalidPassword(String failedValue),
     Result invalidConfirmPassword(String failedValue),
     Result invalidUsername(String failedValue),
+    Result emptyTextField(String failedValue),
+    Result longTextField(String failedValue),
+    Result emptySelection(String failedValue),
     @required Result orElse(),
   });
   @optionalTypeArgs
@@ -65,6 +89,9 @@ mixin _$ValueFailure<T> {
     @required Result invalidPassword(InvalidPassword<T> value),
     @required Result invalidConfirmPassword(InvalidConfirmPassword<T> value),
     @required Result invalidUsername(InvalidUsername<T> value),
+    @required Result emptyTextField(EmptyTextField<T> value),
+    @required Result longTextField(LongTextField<T> value),
+    @required Result emptySelection(EmptySelection<T> value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
@@ -72,6 +99,9 @@ mixin _$ValueFailure<T> {
     Result invalidPassword(InvalidPassword<T> value),
     Result invalidConfirmPassword(InvalidConfirmPassword<T> value),
     Result invalidUsername(InvalidUsername<T> value),
+    Result emptyTextField(EmptyTextField<T> value),
+    Result longTextField(LongTextField<T> value),
+    Result emptySelection(EmptySelection<T> value),
     @required Result orElse(),
   });
 
@@ -170,11 +200,17 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     @required Result invalidPassword(String failedValue),
     @required Result invalidConfirmPassword(String failedValue),
     @required Result invalidUsername(String failedValue),
+    @required Result emptyTextField(String failedValue),
+    @required Result longTextField(String failedValue),
+    @required Result emptySelection(String failedValue),
   }) {
     assert(invalidEmailAddress != null);
     assert(invalidPassword != null);
     assert(invalidConfirmPassword != null);
     assert(invalidUsername != null);
+    assert(emptyTextField != null);
+    assert(longTextField != null);
+    assert(emptySelection != null);
     return invalidEmailAddress(failedValue);
   }
 
@@ -185,6 +221,9 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     Result invalidPassword(String failedValue),
     Result invalidConfirmPassword(String failedValue),
     Result invalidUsername(String failedValue),
+    Result emptyTextField(String failedValue),
+    Result longTextField(String failedValue),
+    Result emptySelection(String failedValue),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -201,11 +240,17 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     @required Result invalidPassword(InvalidPassword<T> value),
     @required Result invalidConfirmPassword(InvalidConfirmPassword<T> value),
     @required Result invalidUsername(InvalidUsername<T> value),
+    @required Result emptyTextField(EmptyTextField<T> value),
+    @required Result longTextField(LongTextField<T> value),
+    @required Result emptySelection(EmptySelection<T> value),
   }) {
     assert(invalidEmailAddress != null);
     assert(invalidPassword != null);
     assert(invalidConfirmPassword != null);
     assert(invalidUsername != null);
+    assert(emptyTextField != null);
+    assert(longTextField != null);
+    assert(emptySelection != null);
     return invalidEmailAddress(this);
   }
 
@@ -216,6 +261,9 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     Result invalidPassword(InvalidPassword<T> value),
     Result invalidConfirmPassword(InvalidConfirmPassword<T> value),
     Result invalidUsername(InvalidUsername<T> value),
+    Result emptyTextField(EmptyTextField<T> value),
+    Result longTextField(LongTextField<T> value),
+    Result emptySelection(EmptySelection<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -302,11 +350,17 @@ class _$InvalidPassword<T> implements InvalidPassword<T> {
     @required Result invalidPassword(String failedValue),
     @required Result invalidConfirmPassword(String failedValue),
     @required Result invalidUsername(String failedValue),
+    @required Result emptyTextField(String failedValue),
+    @required Result longTextField(String failedValue),
+    @required Result emptySelection(String failedValue),
   }) {
     assert(invalidEmailAddress != null);
     assert(invalidPassword != null);
     assert(invalidConfirmPassword != null);
     assert(invalidUsername != null);
+    assert(emptyTextField != null);
+    assert(longTextField != null);
+    assert(emptySelection != null);
     return invalidPassword(failedValue);
   }
 
@@ -317,6 +371,9 @@ class _$InvalidPassword<T> implements InvalidPassword<T> {
     Result invalidPassword(String failedValue),
     Result invalidConfirmPassword(String failedValue),
     Result invalidUsername(String failedValue),
+    Result emptyTextField(String failedValue),
+    Result longTextField(String failedValue),
+    Result emptySelection(String failedValue),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -333,11 +390,17 @@ class _$InvalidPassword<T> implements InvalidPassword<T> {
     @required Result invalidPassword(InvalidPassword<T> value),
     @required Result invalidConfirmPassword(InvalidConfirmPassword<T> value),
     @required Result invalidUsername(InvalidUsername<T> value),
+    @required Result emptyTextField(EmptyTextField<T> value),
+    @required Result longTextField(LongTextField<T> value),
+    @required Result emptySelection(EmptySelection<T> value),
   }) {
     assert(invalidEmailAddress != null);
     assert(invalidPassword != null);
     assert(invalidConfirmPassword != null);
     assert(invalidUsername != null);
+    assert(emptyTextField != null);
+    assert(longTextField != null);
+    assert(emptySelection != null);
     return invalidPassword(this);
   }
 
@@ -348,6 +411,9 @@ class _$InvalidPassword<T> implements InvalidPassword<T> {
     Result invalidPassword(InvalidPassword<T> value),
     Result invalidConfirmPassword(InvalidConfirmPassword<T> value),
     Result invalidUsername(InvalidUsername<T> value),
+    Result emptyTextField(EmptyTextField<T> value),
+    Result longTextField(LongTextField<T> value),
+    Result emptySelection(EmptySelection<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -436,11 +502,17 @@ class _$InvalidConfirmPassword<T> implements InvalidConfirmPassword<T> {
     @required Result invalidPassword(String failedValue),
     @required Result invalidConfirmPassword(String failedValue),
     @required Result invalidUsername(String failedValue),
+    @required Result emptyTextField(String failedValue),
+    @required Result longTextField(String failedValue),
+    @required Result emptySelection(String failedValue),
   }) {
     assert(invalidEmailAddress != null);
     assert(invalidPassword != null);
     assert(invalidConfirmPassword != null);
     assert(invalidUsername != null);
+    assert(emptyTextField != null);
+    assert(longTextField != null);
+    assert(emptySelection != null);
     return invalidConfirmPassword(failedValue);
   }
 
@@ -451,6 +523,9 @@ class _$InvalidConfirmPassword<T> implements InvalidConfirmPassword<T> {
     Result invalidPassword(String failedValue),
     Result invalidConfirmPassword(String failedValue),
     Result invalidUsername(String failedValue),
+    Result emptyTextField(String failedValue),
+    Result longTextField(String failedValue),
+    Result emptySelection(String failedValue),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -467,11 +542,17 @@ class _$InvalidConfirmPassword<T> implements InvalidConfirmPassword<T> {
     @required Result invalidPassword(InvalidPassword<T> value),
     @required Result invalidConfirmPassword(InvalidConfirmPassword<T> value),
     @required Result invalidUsername(InvalidUsername<T> value),
+    @required Result emptyTextField(EmptyTextField<T> value),
+    @required Result longTextField(LongTextField<T> value),
+    @required Result emptySelection(EmptySelection<T> value),
   }) {
     assert(invalidEmailAddress != null);
     assert(invalidPassword != null);
     assert(invalidConfirmPassword != null);
     assert(invalidUsername != null);
+    assert(emptyTextField != null);
+    assert(longTextField != null);
+    assert(emptySelection != null);
     return invalidConfirmPassword(this);
   }
 
@@ -482,6 +563,9 @@ class _$InvalidConfirmPassword<T> implements InvalidConfirmPassword<T> {
     Result invalidPassword(InvalidPassword<T> value),
     Result invalidConfirmPassword(InvalidConfirmPassword<T> value),
     Result invalidUsername(InvalidUsername<T> value),
+    Result emptyTextField(EmptyTextField<T> value),
+    Result longTextField(LongTextField<T> value),
+    Result emptySelection(EmptySelection<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -568,11 +652,17 @@ class _$InvalidUsername<T> implements InvalidUsername<T> {
     @required Result invalidPassword(String failedValue),
     @required Result invalidConfirmPassword(String failedValue),
     @required Result invalidUsername(String failedValue),
+    @required Result emptyTextField(String failedValue),
+    @required Result longTextField(String failedValue),
+    @required Result emptySelection(String failedValue),
   }) {
     assert(invalidEmailAddress != null);
     assert(invalidPassword != null);
     assert(invalidConfirmPassword != null);
     assert(invalidUsername != null);
+    assert(emptyTextField != null);
+    assert(longTextField != null);
+    assert(emptySelection != null);
     return invalidUsername(failedValue);
   }
 
@@ -583,6 +673,9 @@ class _$InvalidUsername<T> implements InvalidUsername<T> {
     Result invalidPassword(String failedValue),
     Result invalidConfirmPassword(String failedValue),
     Result invalidUsername(String failedValue),
+    Result emptyTextField(String failedValue),
+    Result longTextField(String failedValue),
+    Result emptySelection(String failedValue),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -599,11 +692,17 @@ class _$InvalidUsername<T> implements InvalidUsername<T> {
     @required Result invalidPassword(InvalidPassword<T> value),
     @required Result invalidConfirmPassword(InvalidConfirmPassword<T> value),
     @required Result invalidUsername(InvalidUsername<T> value),
+    @required Result emptyTextField(EmptyTextField<T> value),
+    @required Result longTextField(LongTextField<T> value),
+    @required Result emptySelection(EmptySelection<T> value),
   }) {
     assert(invalidEmailAddress != null);
     assert(invalidPassword != null);
     assert(invalidConfirmPassword != null);
     assert(invalidUsername != null);
+    assert(emptyTextField != null);
+    assert(longTextField != null);
+    assert(emptySelection != null);
     return invalidUsername(this);
   }
 
@@ -614,6 +713,9 @@ class _$InvalidUsername<T> implements InvalidUsername<T> {
     Result invalidPassword(InvalidPassword<T> value),
     Result invalidConfirmPassword(InvalidConfirmPassword<T> value),
     Result invalidUsername(InvalidUsername<T> value),
+    Result emptyTextField(EmptyTextField<T> value),
+    Result longTextField(LongTextField<T> value),
+    Result emptySelection(EmptySelection<T> value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -632,4 +734,454 @@ abstract class InvalidUsername<T> implements ValueFailure<T> {
   String get failedValue;
   @override
   $InvalidUsernameCopyWith<T, InvalidUsername<T>> get copyWith;
+}
+
+abstract class $EmptyTextFieldCopyWith<T, $Res>
+    implements $ValueFailureCopyWith<T, $Res> {
+  factory $EmptyTextFieldCopyWith(
+          EmptyTextField<T> value, $Res Function(EmptyTextField<T>) then) =
+      _$EmptyTextFieldCopyWithImpl<T, $Res>;
+  @override
+  $Res call({String failedValue});
+}
+
+class _$EmptyTextFieldCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res>
+    implements $EmptyTextFieldCopyWith<T, $Res> {
+  _$EmptyTextFieldCopyWithImpl(
+      EmptyTextField<T> _value, $Res Function(EmptyTextField<T>) _then)
+      : super(_value, (v) => _then(v as EmptyTextField<T>));
+
+  @override
+  EmptyTextField<T> get _value => super._value as EmptyTextField<T>;
+
+  @override
+  $Res call({
+    Object failedValue = freezed,
+  }) {
+    return _then(EmptyTextField<T>(
+      failedValue:
+          failedValue == freezed ? _value.failedValue : failedValue as String,
+    ));
+  }
+}
+
+class _$EmptyTextField<T> implements EmptyTextField<T> {
+  const _$EmptyTextField({@required this.failedValue})
+      : assert(failedValue != null);
+
+  @override
+  final String failedValue;
+
+  @override
+  String toString() {
+    return 'ValueFailure<$T>.emptyTextField(failedValue: $failedValue)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is EmptyTextField<T> &&
+            (identical(other.failedValue, failedValue) ||
+                const DeepCollectionEquality()
+                    .equals(other.failedValue, failedValue)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
+
+  @override
+  $EmptyTextFieldCopyWith<T, EmptyTextField<T>> get copyWith =>
+      _$EmptyTextFieldCopyWithImpl<T, EmptyTextField<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result invalidEmailAddress(String failedValue),
+    @required Result invalidPassword(String failedValue),
+    @required Result invalidConfirmPassword(String failedValue),
+    @required Result invalidUsername(String failedValue),
+    @required Result emptyTextField(String failedValue),
+    @required Result longTextField(String failedValue),
+    @required Result emptySelection(String failedValue),
+  }) {
+    assert(invalidEmailAddress != null);
+    assert(invalidPassword != null);
+    assert(invalidConfirmPassword != null);
+    assert(invalidUsername != null);
+    assert(emptyTextField != null);
+    assert(longTextField != null);
+    assert(emptySelection != null);
+    return emptyTextField(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result invalidEmailAddress(String failedValue),
+    Result invalidPassword(String failedValue),
+    Result invalidConfirmPassword(String failedValue),
+    Result invalidUsername(String failedValue),
+    Result emptyTextField(String failedValue),
+    Result longTextField(String failedValue),
+    Result emptySelection(String failedValue),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (emptyTextField != null) {
+      return emptyTextField(failedValue);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result invalidEmailAddress(InvalidEmail<T> value),
+    @required Result invalidPassword(InvalidPassword<T> value),
+    @required Result invalidConfirmPassword(InvalidConfirmPassword<T> value),
+    @required Result invalidUsername(InvalidUsername<T> value),
+    @required Result emptyTextField(EmptyTextField<T> value),
+    @required Result longTextField(LongTextField<T> value),
+    @required Result emptySelection(EmptySelection<T> value),
+  }) {
+    assert(invalidEmailAddress != null);
+    assert(invalidPassword != null);
+    assert(invalidConfirmPassword != null);
+    assert(invalidUsername != null);
+    assert(emptyTextField != null);
+    assert(longTextField != null);
+    assert(emptySelection != null);
+    return emptyTextField(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result invalidEmailAddress(InvalidEmail<T> value),
+    Result invalidPassword(InvalidPassword<T> value),
+    Result invalidConfirmPassword(InvalidConfirmPassword<T> value),
+    Result invalidUsername(InvalidUsername<T> value),
+    Result emptyTextField(EmptyTextField<T> value),
+    Result longTextField(LongTextField<T> value),
+    Result emptySelection(EmptySelection<T> value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (emptyTextField != null) {
+      return emptyTextField(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class EmptyTextField<T> implements ValueFailure<T> {
+  const factory EmptyTextField({@required String failedValue}) =
+      _$EmptyTextField<T>;
+
+  @override
+  String get failedValue;
+  @override
+  $EmptyTextFieldCopyWith<T, EmptyTextField<T>> get copyWith;
+}
+
+abstract class $LongTextFieldCopyWith<T, $Res>
+    implements $ValueFailureCopyWith<T, $Res> {
+  factory $LongTextFieldCopyWith(
+          LongTextField<T> value, $Res Function(LongTextField<T>) then) =
+      _$LongTextFieldCopyWithImpl<T, $Res>;
+  @override
+  $Res call({String failedValue});
+}
+
+class _$LongTextFieldCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res>
+    implements $LongTextFieldCopyWith<T, $Res> {
+  _$LongTextFieldCopyWithImpl(
+      LongTextField<T> _value, $Res Function(LongTextField<T>) _then)
+      : super(_value, (v) => _then(v as LongTextField<T>));
+
+  @override
+  LongTextField<T> get _value => super._value as LongTextField<T>;
+
+  @override
+  $Res call({
+    Object failedValue = freezed,
+  }) {
+    return _then(LongTextField<T>(
+      failedValue:
+          failedValue == freezed ? _value.failedValue : failedValue as String,
+    ));
+  }
+}
+
+class _$LongTextField<T> implements LongTextField<T> {
+  const _$LongTextField({@required this.failedValue})
+      : assert(failedValue != null);
+
+  @override
+  final String failedValue;
+
+  @override
+  String toString() {
+    return 'ValueFailure<$T>.longTextField(failedValue: $failedValue)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is LongTextField<T> &&
+            (identical(other.failedValue, failedValue) ||
+                const DeepCollectionEquality()
+                    .equals(other.failedValue, failedValue)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
+
+  @override
+  $LongTextFieldCopyWith<T, LongTextField<T>> get copyWith =>
+      _$LongTextFieldCopyWithImpl<T, LongTextField<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result invalidEmailAddress(String failedValue),
+    @required Result invalidPassword(String failedValue),
+    @required Result invalidConfirmPassword(String failedValue),
+    @required Result invalidUsername(String failedValue),
+    @required Result emptyTextField(String failedValue),
+    @required Result longTextField(String failedValue),
+    @required Result emptySelection(String failedValue),
+  }) {
+    assert(invalidEmailAddress != null);
+    assert(invalidPassword != null);
+    assert(invalidConfirmPassword != null);
+    assert(invalidUsername != null);
+    assert(emptyTextField != null);
+    assert(longTextField != null);
+    assert(emptySelection != null);
+    return longTextField(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result invalidEmailAddress(String failedValue),
+    Result invalidPassword(String failedValue),
+    Result invalidConfirmPassword(String failedValue),
+    Result invalidUsername(String failedValue),
+    Result emptyTextField(String failedValue),
+    Result longTextField(String failedValue),
+    Result emptySelection(String failedValue),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (longTextField != null) {
+      return longTextField(failedValue);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result invalidEmailAddress(InvalidEmail<T> value),
+    @required Result invalidPassword(InvalidPassword<T> value),
+    @required Result invalidConfirmPassword(InvalidConfirmPassword<T> value),
+    @required Result invalidUsername(InvalidUsername<T> value),
+    @required Result emptyTextField(EmptyTextField<T> value),
+    @required Result longTextField(LongTextField<T> value),
+    @required Result emptySelection(EmptySelection<T> value),
+  }) {
+    assert(invalidEmailAddress != null);
+    assert(invalidPassword != null);
+    assert(invalidConfirmPassword != null);
+    assert(invalidUsername != null);
+    assert(emptyTextField != null);
+    assert(longTextField != null);
+    assert(emptySelection != null);
+    return longTextField(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result invalidEmailAddress(InvalidEmail<T> value),
+    Result invalidPassword(InvalidPassword<T> value),
+    Result invalidConfirmPassword(InvalidConfirmPassword<T> value),
+    Result invalidUsername(InvalidUsername<T> value),
+    Result emptyTextField(EmptyTextField<T> value),
+    Result longTextField(LongTextField<T> value),
+    Result emptySelection(EmptySelection<T> value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (longTextField != null) {
+      return longTextField(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class LongTextField<T> implements ValueFailure<T> {
+  const factory LongTextField({@required String failedValue}) =
+      _$LongTextField<T>;
+
+  @override
+  String get failedValue;
+  @override
+  $LongTextFieldCopyWith<T, LongTextField<T>> get copyWith;
+}
+
+abstract class $EmptySelectionCopyWith<T, $Res>
+    implements $ValueFailureCopyWith<T, $Res> {
+  factory $EmptySelectionCopyWith(
+          EmptySelection<T> value, $Res Function(EmptySelection<T>) then) =
+      _$EmptySelectionCopyWithImpl<T, $Res>;
+  @override
+  $Res call({String failedValue});
+}
+
+class _$EmptySelectionCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res>
+    implements $EmptySelectionCopyWith<T, $Res> {
+  _$EmptySelectionCopyWithImpl(
+      EmptySelection<T> _value, $Res Function(EmptySelection<T>) _then)
+      : super(_value, (v) => _then(v as EmptySelection<T>));
+
+  @override
+  EmptySelection<T> get _value => super._value as EmptySelection<T>;
+
+  @override
+  $Res call({
+    Object failedValue = freezed,
+  }) {
+    return _then(EmptySelection<T>(
+      failedValue:
+          failedValue == freezed ? _value.failedValue : failedValue as String,
+    ));
+  }
+}
+
+class _$EmptySelection<T> implements EmptySelection<T> {
+  const _$EmptySelection({@required this.failedValue})
+      : assert(failedValue != null);
+
+  @override
+  final String failedValue;
+
+  @override
+  String toString() {
+    return 'ValueFailure<$T>.emptySelection(failedValue: $failedValue)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is EmptySelection<T> &&
+            (identical(other.failedValue, failedValue) ||
+                const DeepCollectionEquality()
+                    .equals(other.failedValue, failedValue)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
+
+  @override
+  $EmptySelectionCopyWith<T, EmptySelection<T>> get copyWith =>
+      _$EmptySelectionCopyWithImpl<T, EmptySelection<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result invalidEmailAddress(String failedValue),
+    @required Result invalidPassword(String failedValue),
+    @required Result invalidConfirmPassword(String failedValue),
+    @required Result invalidUsername(String failedValue),
+    @required Result emptyTextField(String failedValue),
+    @required Result longTextField(String failedValue),
+    @required Result emptySelection(String failedValue),
+  }) {
+    assert(invalidEmailAddress != null);
+    assert(invalidPassword != null);
+    assert(invalidConfirmPassword != null);
+    assert(invalidUsername != null);
+    assert(emptyTextField != null);
+    assert(longTextField != null);
+    assert(emptySelection != null);
+    return emptySelection(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result invalidEmailAddress(String failedValue),
+    Result invalidPassword(String failedValue),
+    Result invalidConfirmPassword(String failedValue),
+    Result invalidUsername(String failedValue),
+    Result emptyTextField(String failedValue),
+    Result longTextField(String failedValue),
+    Result emptySelection(String failedValue),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (emptySelection != null) {
+      return emptySelection(failedValue);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result invalidEmailAddress(InvalidEmail<T> value),
+    @required Result invalidPassword(InvalidPassword<T> value),
+    @required Result invalidConfirmPassword(InvalidConfirmPassword<T> value),
+    @required Result invalidUsername(InvalidUsername<T> value),
+    @required Result emptyTextField(EmptyTextField<T> value),
+    @required Result longTextField(LongTextField<T> value),
+    @required Result emptySelection(EmptySelection<T> value),
+  }) {
+    assert(invalidEmailAddress != null);
+    assert(invalidPassword != null);
+    assert(invalidConfirmPassword != null);
+    assert(invalidUsername != null);
+    assert(emptyTextField != null);
+    assert(longTextField != null);
+    assert(emptySelection != null);
+    return emptySelection(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result invalidEmailAddress(InvalidEmail<T> value),
+    Result invalidPassword(InvalidPassword<T> value),
+    Result invalidConfirmPassword(InvalidConfirmPassword<T> value),
+    Result invalidUsername(InvalidUsername<T> value),
+    Result emptyTextField(EmptyTextField<T> value),
+    Result longTextField(LongTextField<T> value),
+    Result emptySelection(EmptySelection<T> value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (emptySelection != null) {
+      return emptySelection(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class EmptySelection<T> implements ValueFailure<T> {
+  const factory EmptySelection({@required String failedValue}) =
+      _$EmptySelection<T>;
+
+  @override
+  String get failedValue;
+  @override
+  $EmptySelectionCopyWith<T, EmptySelection<T>> get copyWith;
 }

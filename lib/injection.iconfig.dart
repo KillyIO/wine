@@ -4,9 +4,11 @@
 // InjectableConfigGenerator
 // **************************************************************************
 
-import 'package:wine/domain/models/hive/config.dart';
+import 'package:wine/domain/models/hive/chapter_draft.dart';
 import 'package:hive/hive.dart';
 import 'package:wine/infrastructure/core/hive_injectable_module.dart';
+import 'package:wine/domain/models/hive/config.dart';
+import 'package:wine/domain/models/hive/series_draft.dart';
 import 'package:wine/domain/models/hive/session.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:wine/infrastructure/core/firebase_injectable_module.dart';
@@ -19,6 +21,7 @@ import 'package:wine/infrastructure/database/hive_local_session_database_facade.
 import 'package:wine/domain/database/i_local_session_database_facade.dart';
 import 'package:wine/infrastructure/database/firebase_online_user_database_facade.dart';
 import 'package:wine/domain/database/i_online_user_database_facade.dart';
+import 'package:wine/application/database/new_chapter/new_chapter_database_bloc.dart';
 import 'package:wine/application/database/new_series/new_series_database_bloc.dart';
 import 'package:wine/application/database/series/series_database_bloc.dart';
 import 'package:wine/application/authentication/settings/settings_authentication_bloc.dart';
@@ -37,10 +40,14 @@ import 'package:get_it/get_it.dart';
 Future<void> $initGetIt(GetIt g, {String environment}) async {
   final hiveInjectableModule = _$HiveInjectableModule();
   final firebaseInjectableModule = _$FirebaseInjectableModule();
-  final box = await hiveInjectableModule.openConfigsBoxes;
-  g.registerLazySingleton<Box<Config>>(() => box);
-  final box1 = await hiveInjectableModule.openSessionsBoxes;
-  g.registerLazySingleton<Box<Session>>(() => box1);
+  final box = await hiveInjectableModule.openChapterDraftsBoxes;
+  g.registerLazySingleton<Box<ChapterDraft>>(() => box);
+  final box1 = await hiveInjectableModule.openConfigsBoxes;
+  g.registerLazySingleton<Box<Config>>(() => box1);
+  final box2 = await hiveInjectableModule.openSeriesDraftsBoxes;
+  g.registerLazySingleton<Box<SeriesDraft>>(() => box2);
+  final box3 = await hiveInjectableModule.openSessionsBoxes;
+  g.registerLazySingleton<Box<Session>>(() => box3);
   g.registerLazySingleton<FirebaseAuth>(
       () => firebaseInjectableModule.firebaseAuth);
   g.registerLazySingleton<Firestore>(() => firebaseInjectableModule.firestore);
@@ -53,10 +60,11 @@ Future<void> $initGetIt(GetIt g, {String environment}) async {
             g<GoogleSignIn>(),
             g<Firestore>(),
           ));
-  g.registerLazySingleton<ILocalSessionDatabaseFacade>(
-      () => HiveLocalSessionDatabaseFacade(g<Box<Session>>()));
+  g.registerLazySingleton<ILocalSessionDatabaseFacade>(() =>
+      HiveLocalSessionDatabaseFacade(g<Box<Session>>(), g<Box<SeriesDraft>>()));
   g.registerLazySingleton<IOnlineUserDatabaseFacade>(
       () => FirebaseOnlineUserDatabaseFacade(g<Firestore>()));
+  g.registerFactory<NewChapterDatabaseBloc>(() => NewChapterDatabaseBloc());
   g.registerFactory<NewSeriesDatabaseBloc>(() => NewSeriesDatabaseBloc(
       g<ILocalSessionDatabaseFacade>(), g<IOnlineUserDatabaseFacade>()));
   g.registerFactory<SeriesDatabaseBloc>(() => SeriesDatabaseBloc(

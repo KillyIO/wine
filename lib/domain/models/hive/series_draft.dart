@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:hive/hive.dart';
 
 part 'series_draft.g.dart';
@@ -14,24 +16,28 @@ class SeriesDraft extends HiveObject {
   String title;
 
   @HiveField(3)
-  String description;
+  String subtitle;
 
   @HiveField(4)
-  String genre;
+  String description;
 
   @HiveField(5)
-  String genreOptional;
+  String genre;
 
   @HiveField(6)
-  String language;
+  String genreOptional;
 
   @HiveField(7)
+  String language;
+
+  @HiveField(8)
   String copyrights;
 
   SeriesDraft({
     this.uid,
     this.authorUid,
     this.title,
+    this.subtitle,
     this.description,
     this.genre,
     this.genreOptional,
@@ -43,6 +49,7 @@ class SeriesDraft extends HiveObject {
     String uid,
     String authorUid,
     String title,
+    String subtitle,
     String description,
     String genre,
     String genreOptional,
@@ -53,6 +60,7 @@ class SeriesDraft extends HiveObject {
       uid: uid ?? this.uid,
       authorUid: authorUid ?? this.authorUid,
       title: title ?? this.title,
+      subtitle: subtitle ?? this.subtitle,
       description: description ?? this.description,
       genre: genre ?? this.genre,
       genreOptional: genreOptional ?? this.genreOptional,
@@ -66,6 +74,7 @@ class SeriesDraft extends HiveObject {
       'uid': uid,
       'authorUid': authorUid,
       'title': title,
+      'subtitle': subtitle,
       'description': description,
       'genre': genre,
       'genreOptional': genreOptional,
@@ -81,6 +90,7 @@ class SeriesDraft extends HiveObject {
       uid: map['uid'] as String,
       authorUid: map['authorUid'] as String,
       title: map['title'] as String,
+      subtitle: map['subtitle'] as String,
       description: map['description'] as String,
       genre: map['genre'] as String,
       genreOptional: map['genreOptional'] as String,
@@ -91,7 +101,7 @@ class SeriesDraft extends HiveObject {
 
   @override
   String toString() {
-    return 'SeriesDraft(uid: $uid, authorUid: $authorUid, title: $title, description: $description, genre: $genre, genreOptional: $genreOptional, language: $language, copyrights: $copyrights)';
+    return 'SeriesDraft(uid: $uid, authorUid: $authorUid, title: $title, subtitle: $subtitle, description: $description, genre: $genre, genreOptional: $genreOptional, language: $language, copyrights: $copyrights)';
   }
 
   @override
@@ -102,6 +112,7 @@ class SeriesDraft extends HiveObject {
       o.uid == uid &&
       o.authorUid == authorUid &&
       o.title == title &&
+      o.subtitle == subtitle &&
       o.description == description &&
       o.genre == genre &&
       o.genreOptional == genreOptional &&
@@ -114,6 +125,7 @@ class SeriesDraft extends HiveObject {
     return uid.hashCode ^
       authorUid.hashCode ^
       title.hashCode ^
+      subtitle.hashCode ^
       description.hashCode ^
       genre.hashCode ^
       genreOptional.hashCode ^

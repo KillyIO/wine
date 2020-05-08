@@ -45,7 +45,7 @@ class SettingsDatabaseBloc
           isUpdating: true,
         );
         final session = Session();
-        await _localSessionDatabaseFacade.setSession(session: session);
+        await _localSessionDatabaseFacade.setSession(session);
         yield state.copyWith(
           isUpdating: false,
           isSessionDeleted: true,

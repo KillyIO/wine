@@ -5,11 +5,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:wine/application/database/new_series/new_series_database_bloc.dart';
 import 'package:wine/application/navigation/home/home_navigation_bloc.dart';
 import 'package:wine/injection.dart';
-import 'package:wine/presentation/pages/new_series/widgets/new_series_layout.dart';
+import 'package:wine/presentation/pages/new_series/widgets/new_series_form.dart';
 import 'package:wine/presentation/pages/new_series/widgets/new_series_list_tile.dart';
-import 'package:wine/presentation/pages/new_series/widgets/new_series_multiline_text_form_field.dart';
 import 'package:wine/presentation/pages/new_series/widgets/new_series_selection_dialog.dart';
-import 'package:wine/presentation/pages/new_series/widgets/new_series_text_form_field.dart';
 import 'package:wine/presentation/widgets/custom_show_dialog.dart';
 import 'package:wine/presentation/widgets/image_back_button.dart';
 import 'package:wine/routes.dart';
@@ -40,7 +38,7 @@ class NewSeriesPage extends StatelessWidget {
               )),
           ),
         ],
-        child: NewSeriesLayout(args: args),
+        child: NewSeriesForm(args: args),
       ),
     );
   }

@@ -51,7 +51,7 @@ class SplashDatabaseBloc
             (right) async {
               if (right is User) {
                 session = Session.fromMap(right.toMap());
-                await _localSessionDatabaseFacade.setSession(session: session);
+                await _localSessionDatabaseFacade.setSession(session);
               }
             },
           );

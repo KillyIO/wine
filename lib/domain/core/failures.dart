@@ -19,4 +19,16 @@ abstract class ValueFailure<T> with _$ValueFailure<T> {
   const factory ValueFailure.invalidUsername({
     @required String failedValue,
   }) = InvalidUsername<T>;
+
+  const factory ValueFailure.emptyTextField({
+    @required String failedValue,
+  }) = EmptyTextField<T>;
+
+  const factory ValueFailure.longTextField({
+    @required String failedValue,
+  }) = LongTextField<T>;
+
+  const factory ValueFailure.emptySelection({
+    @required String failedValue,
+  }) = EmptySelection<T>;
 }

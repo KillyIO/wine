@@ -5,8 +5,14 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:meta/meta.dart';
 import 'package:uuid/uuid.dart';
+import 'package:wine/domain/database/copyrights.dart';
+import 'package:wine/domain/database/description.dart';
+import 'package:wine/domain/database/genre.dart';
 import 'package:wine/domain/database/i_local_session_database_facade.dart';
 import 'package:wine/domain/database/i_online_user_database_facade.dart';
+import 'package:wine/domain/database/language.dart';
+import 'package:wine/domain/database/subtitle.dart';
+import 'package:wine/domain/database/title.dart';
 import 'package:wine/domain/models/hive/series_draft.dart';
 import 'package:wine/domain/models/hive/session.dart';
 
@@ -47,48 +53,74 @@ class NewSeriesDatabaseBloc
           seriesDraft = SeriesDraft(
             uid: uuid.v4(),
             authorUid: session.uid,
-            title: '',
-            copyrights: 'CC BY',
           );
         }
 
         yield state.copyWith(
           seriesDraft: seriesDraft,
-          uid: seriesDraft.uid,
-          authorUid: seriesDraft.authorUid,
-          title: seriesDraft.title,
-          copyrights: seriesDraft.copyrights,
         );
       },
-      createSeriesButtonPressed: (event) async* {},
+      createSeriesButtonPressed: (event) async* {
+        // yield state.copyWith(
+        //   isSaving: true,
+        //   isSaved: false,
+        // );
+
+        // final SeriesDraft seriesDraft = state.seriesDraft;
+
+        // seriesDraft
+        //   ..title = state.title
+        //   ..description = state.description
+        //   ..genre = state.genre
+        //   ..genreOptional = state.genreOptional
+        //   ..language = state.language
+        //   ..copyrights = state.copyrights;
+
+        // await _localSessionDatabaseFacade.saveSeriesDraft(seriesDraft);
+
+        // yield state.copyWith(
+        //   seriesDraft: seriesDraft,
+        //   isSaving: false,
+        //   isSaved: true,
+        // );
+      },
       titleChanged: (event) async* {
         yield state.copyWith(
-          title: event.title,
+          title: Title(event.title),
+        );
+      },
+      subtitleChanged: (event) async* {
+        yield state.copyWith(
+          subtitle: Subtitle(event.subtitle),
         );
       },
       descriptionChanged: (event) async* {
         yield state.copyWith(
-          description: event.description,
+          description: Description(event.description),
         );
       },
       genreSelected: (event) async* {
         yield state.copyWith(
-          genre: event.genre,
+          genre: Genre(event.genre),
+          genreStr: event.genre,
         );
       },
       genreOptionalSelected: (event) async* {
         yield state.copyWith(
-          genreOptional: event.genreOptional,
+          genreOptional: Genre(event.genreOptional),
+          genreOptionalStr: event.genreOptional,
         );
       },
       languageSelected: (event) async* {
         yield state.copyWith(
-          language: event.language,
+          language: Language(event.language),
+          languageStr: event.language,
         );
       },
       copyrightsSelected: (event) async* {
         yield state.copyWith(
-          copyrights: event.copyrights,
+          copyrights: Copyrights(event.copyrights),
+          copyrightsStr: event.copyrights,
         );
       },
     );

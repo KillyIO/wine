@@ -2,6 +2,8 @@ class Constants {
   // Hive boxes
   static const String sessionsBox = 'sessionsBox';
   static const String configsBox = 'configsBox';
+  static const String seriesDraftsBox = 'seriesDraftsBox';
+  static const String chapterDraftsBox = 'chapterDraftsBox';
 
   // Hive session
   static const String session = 'session';
@@ -27,7 +29,8 @@ class Constants {
   static const String copyrightsRoute = '/copyrights';
 
   // SECTION series limits
-  static const int seriesDescriptionMinWords = 100;
+  static const int seriesTitleMaxWords = 10;
+  static const int seriesSubtitleMaxWords = 10;
   static const int seriesDescriptionMaxWords = 200;
   static const int chapterMinWords = 500;
   static const int chapterMaxWords = 10000;

@@ -51,7 +51,7 @@ class CreateAccountDatabaseBloc
           (right) async {
             if (right is User) {
               final Session session = Session.fromMap(right.toMap());
-              await _localSessionDatabaseFacade.setSession(session: session);
+              await _localSessionDatabaseFacade.setSession(session);
             }
           },
         );

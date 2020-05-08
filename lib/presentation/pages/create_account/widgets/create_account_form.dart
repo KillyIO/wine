@@ -11,7 +11,6 @@ import 'package:wine/presentation/widgets/custom_show_dialog.dart';
 import 'package:wine/presentation/widgets/error_dialog.dart';
 import 'package:wine/routes.dart';
 import 'package:wine/utils/constants.dart';
-import 'package:wine/utils/palettes.dart';
 
 class CreateAccountForm extends StatefulWidget {
   @override
@@ -307,6 +306,7 @@ class _CreateAccountFormState extends State<CreateAccountForm>
                                   .add(const CreateAccountAuthenticationEvent
                                       .createAccount()),
                             ),
+                            const SizedBox(height: 20),
                           ],
                         ),
                       ),
