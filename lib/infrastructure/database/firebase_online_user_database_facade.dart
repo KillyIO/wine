@@ -3,6 +3,7 @@ import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
 import 'package:wine/domain/database/database_failure.dart';
 import 'package:wine/domain/database/i_online_user_database_facade.dart';
+import 'package:wine/domain/models/series.dart';
 import 'package:wine/domain/models/user.dart';
 import 'package:wine/utils/paths.dart';
 
@@ -45,8 +46,9 @@ class FirebaseOnlineUserDatabaseFacade extends IOnlineUserDatabaseFacade {
       finalUser.updatedAt = DateTime.now().millisecondsSinceEpoch;
     }
 
-    final DocumentReference mapReference =
-        _firestore.collection(Paths.usernameUidMapPath).document(finalUser.username);
+    final DocumentReference mapReference = _firestore
+        .collection(Paths.usernameUidMapPath)
+        .document(finalUser.username);
 
     await Future.wait([
       // map the uid to the username
@@ -54,5 +56,18 @@ class FirebaseOnlineUserDatabaseFacade extends IOnlineUserDatabaseFacade {
       ref.setData(finalUser.toMap(), merge: true),
     ]);
     return right(finalUser);
+  }
+
+  @override
+  Future<Either<DatabaseFailure, Series>> createSeries(Series series) async {
+    final DocumentReference ref =
+        _firestore.collection(Paths.seriesPath).document(series.uid);
+
+    series
+      ..createdAt = DateTime.now().millisecondsSinceEpoch
+      ..updatedAt = DateTime.now().millisecondsSinceEpoch;
+
+    await ref.setData(series.toMap(), merge: true);
+    return right(series);
   }
 }

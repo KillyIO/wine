@@ -4,12 +4,14 @@ part of 'create_account_database_bloc.dart';
 abstract class CreateAccountDatabaseState with _$CreateAccountDatabaseState {
   const factory CreateAccountDatabaseState({
     @required bool isUpdating,
+    @required String email,
     @required
         Option<Either<DatabaseFailure, dynamic>> databaseFailureOrSuccessOption,
   }) = _CreateAccountDatabaseState;
 
   factory CreateAccountDatabaseState.initial() => CreateAccountDatabaseState(
         isUpdating: false,
+        email: '',
         databaseFailureOrSuccessOption: none(),
       );
 }

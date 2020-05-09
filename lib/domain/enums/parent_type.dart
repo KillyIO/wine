@@ -1,0 +1,4 @@
+enum ParentType {
+  series,
+  chapter,
+}

@@ -1,10 +1,17 @@
 import 'package:flutter/animation.dart';
 import 'package:sailor/sailor.dart';
 import 'package:wine/presentation/pages/account/index.dart';
+import 'package:wine/presentation/pages/copyrights/copyrights_page.dart';
+import 'package:wine/presentation/pages/create_account/create_account_page.dart';
+import 'package:wine/presentation/pages/genres/genres_page.dart';
 import 'package:wine/presentation/pages/home/index.dart';
-import 'package:wine/presentation/pages/series/index.dart';
+import 'package:wine/presentation/pages/new_chapter/new_chapter_page.dart';
+import 'package:wine/presentation/pages/new_series/new_series_page.dart';
 import 'package:wine/presentation/pages/settings/settings_page.dart';
+import 'package:wine/presentation/pages/sign_in/sign_in_page.dart';
 import 'package:wine/presentation/pages/splash/splash_page.dart';
+import 'package:wine/presentation/pages/verify_email/verify_email_page.dart';
+import 'package:wine/utils/arguments.dart';
 import 'package:wine/utils/constants.dart';
 
 final Sailor sailor = Sailor();
@@ -13,25 +20,19 @@ void createRoutes() {
   sailor.addRoutes([
     SailorRoute(
       name: Constants.splashRoute,
-      builder: (context, args, params) {
-        return SplashPage();
-      },
+      builder: (context, args, params) => SplashPage(),
     ),
     // SECTION HOME
     SailorRoute(
       name: Constants.homeRoute,
-      builder: (context, args, params) {
-        return HomePage();
-      },
+      builder: (context, args, params) => HomePage(),
       defaultTransitions: [
         SailorTransition.fade_in,
       ],
     ),
     SailorRoute(
       name: Constants.homeMenuRoute,
-      builder: (context, args, params) {
-        return HomeMenuPage();
-      },
+      builder: (context, args, params) => HomeMenuPage(),
       defaultTransitionCurve: Curves.linearToEaseOut,
       defaultTransitions: [
         SailorTransition.slide_from_right,
@@ -45,7 +46,7 @@ void createRoutes() {
         SailorTransition.slide_from_bottom,
       ],
     ),
-    // SECTION ACCOUNT
+    // SECTION AUTHENTICATION
     SailorRoute(
       name: Constants.signInRoute,
       builder: (context, args, params) => SignInPage(),
@@ -57,12 +58,52 @@ void createRoutes() {
         SailorTransition.slide_from_bottom,
       ],
     ),
-    // SECTION SERIES
+    SailorRoute(
+      name: Constants.verifyEmailRoute,
+      builder: (context, args, params) => VerifyEmailPage(),
+    ),
+    // SECTION ACCOUNT
+    SailorRoute(
+      name: Constants.accountRoute,
+      builder: (context, args, params) => AccountPage(),
+    ),
+    SailorRoute(
+      name: Constants.accountRoute,
+      builder: (context, args, params) => MySeriesPage(),
+    ),
+    // SECTION NEW SERIES
     SailorRoute(
       name: Constants.newSeriesRoute,
-      builder: (context, args, params) => NewSeriesPage(),
+      builder: (context, args, params) => NewSeriesPage(
+        args: args as NewSeriesPageArgs,
+      ),
       defaultTransitions: [
         SailorTransition.slide_from_bottom,
+      ],
+    ),
+    // SECTION NEW CHAPTER
+    SailorRoute(
+      name: Constants.newChapterRoute,
+      builder: (context, args, params) => NewChapterPage(
+        args: args as NewChapterPageArgs,
+      ),
+      defaultTransitions: [
+        SailorTransition.slide_from_right,
+      ],
+    ),
+    // SECTION DETAILS PAGES
+    SailorRoute(
+      name: Constants.genresRoute,
+      builder: (context, args, params) => GenresPage(),
+      defaultTransitions: [
+        SailorTransition.slide_from_right,
+      ],
+    ),
+    SailorRoute(
+      name: Constants.copyrightsRoute,
+      builder: (context, args, params) => CopyrightsPage(),
+      defaultTransitions: [
+        SailorTransition.slide_from_right,
       ],
     ),
   ]);

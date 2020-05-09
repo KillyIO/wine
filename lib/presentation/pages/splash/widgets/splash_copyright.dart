@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class Copyright extends StatelessWidget {
+class SplashCopyright extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -11,8 +11,8 @@ class Copyright extends StatelessWidget {
           height: 2.0,
           width: 25.0,
         ),
-        Padding(
-          padding: const EdgeInsets.only(top: 7.5, bottom: 2.5),
+        const Padding(
+          padding: EdgeInsets.only(top: 7.5, bottom: 2.5),
           child: Text(
             'DESIGNED BY',
             style: TextStyle(
@@ -22,7 +22,7 @@ class Copyright extends StatelessWidget {
             ),
           ),
         ),
-        Text(
+        const Text(
           'SEBIGO',
           style: TextStyle(
             color: Colors.black,

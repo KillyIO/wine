@@ -2,10 +2,10 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:wine/utils/palettes.dart';
 
-class CreateAccountButton extends StatelessWidget {
+class SignInCreateAccountButton extends StatelessWidget {
   final VoidCallback onPressed;
 
-  const CreateAccountButton({
+  const SignInCreateAccountButton({
     Key key,
     @required this.onPressed,
   }) : super(key: key);
@@ -17,7 +17,7 @@ class CreateAccountButton extends StatelessWidget {
         text: 'Not a member? ',
         style: TextStyle(
           color: Colors.black,
-          fontSize: 15.0,
+          fontSize: 16.0,
         ),
         children: <TextSpan>[
           TextSpan(

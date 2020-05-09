@@ -22,17 +22,16 @@ class SessionAdapter extends TypeAdapter<Session> {
       username: fields[2] as String,
       email: fields[3] as String,
       profilePictureUrl: fields[4] as String,
-      isEmailVerified: fields[5] as bool,
-      createdAt: fields[6] as int,
-      updatedAt: fields[7] as int,
-      bio: fields[8] as String,
+      createdAt: fields[5] as int,
+      updatedAt: fields[6] as int,
+      bio: fields[7] as String,
     );
   }
 
   @override
   void write(BinaryWriter writer, Session obj) {
     writer
-      ..writeByte(9)
+      ..writeByte(8)
       ..writeByte(0)
       ..write(obj.uid)
       ..writeByte(1)
@@ -44,12 +43,10 @@ class SessionAdapter extends TypeAdapter<Session> {
       ..writeByte(4)
       ..write(obj.profilePictureUrl)
       ..writeByte(5)
-      ..write(obj.isEmailVerified)
-      ..writeByte(6)
       ..write(obj.createdAt)
-      ..writeByte(7)
+      ..writeByte(6)
       ..write(obj.updatedAt)
-      ..writeByte(8)
+      ..writeByte(7)
       ..write(obj.bio);
   }
 }

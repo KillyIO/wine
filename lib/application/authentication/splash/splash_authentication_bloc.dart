@@ -33,7 +33,7 @@ class SplashAuthenticationBloc
   ) async* {
     if (event is AppLaunched) {
       Either<AuthenticationFailure, Unit> failureOrSuccess;
-      AccountStatus accountStatus = AccountStatus.unknown;
+      bool isAnonymous;
 
       yield state.copyWith(
         isAuthenticating: true,
@@ -42,17 +42,15 @@ class SplashAuthenticationBloc
 
       final isSignedIn = await _authenticationFacade.isSignedIn();
       if (isSignedIn) {
-        final isAnonymous = await _authenticationFacade.isAnonymous();
-        accountStatus =
-            isAnonymous ? AccountStatus.anonymous : AccountStatus.permanent;
+        isAnonymous = await _authenticationFacade.isAnonymous();
       } else {
         failureOrSuccess = await _authenticationFacade.signInAnonymously();
-        accountStatus = AccountStatus.anonymous;
+        isAnonymous = true;
       }
 
       yield state.copyWith(
         isAuthenticating: false,
-        accountStatus: accountStatus,
+        isAnonymous: isAnonymous,
         authenticationFailureOrSuccessOption: optionOf(failureOrSuccess),
       );
     }

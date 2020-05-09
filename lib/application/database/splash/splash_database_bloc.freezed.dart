@@ -12,9 +12,9 @@ T _$identity<T>(T value) => value;
 class _$SplashDatabaseEventTearOff {
   const _$SplashDatabaseEventTearOff();
 
-  Authenticated authenticated({@required AccountStatus accountStatus}) {
+  Authenticated authenticated({@required bool isAnonymous}) {
     return Authenticated(
-      accountStatus: accountStatus,
+      isAnonymous: isAnonymous,
     );
   }
 
@@ -29,12 +29,12 @@ const $SplashDatabaseEvent = _$SplashDatabaseEventTearOff();
 mixin _$SplashDatabaseEvent {
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result authenticated(AccountStatus accountStatus),
+    @required Result authenticated(bool isAnonymous),
     @required Result logoAnimationCompleted(),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result authenticated(AccountStatus accountStatus),
+    Result authenticated(bool isAnonymous),
     Result logoAnimationCompleted(),
     @required Result orElse(),
   });
@@ -70,7 +70,7 @@ abstract class $AuthenticatedCopyWith<$Res> {
   factory $AuthenticatedCopyWith(
           Authenticated value, $Res Function(Authenticated) then) =
       _$AuthenticatedCopyWithImpl<$Res>;
-  $Res call({AccountStatus accountStatus});
+  $Res call({bool isAnonymous});
 }
 
 class _$AuthenticatedCopyWithImpl<$Res>
@@ -85,40 +85,39 @@ class _$AuthenticatedCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object accountStatus = freezed,
+    Object isAnonymous = freezed,
   }) {
     return _then(Authenticated(
-      accountStatus: accountStatus == freezed
-          ? _value.accountStatus
-          : accountStatus as AccountStatus,
+      isAnonymous:
+          isAnonymous == freezed ? _value.isAnonymous : isAnonymous as bool,
     ));
   }
 }
 
 class _$Authenticated implements Authenticated {
-  const _$Authenticated({@required this.accountStatus})
-      : assert(accountStatus != null);
+  const _$Authenticated({@required this.isAnonymous})
+      : assert(isAnonymous != null);
 
   @override
-  final AccountStatus accountStatus;
+  final bool isAnonymous;
 
   @override
   String toString() {
-    return 'SplashDatabaseEvent.authenticated(accountStatus: $accountStatus)';
+    return 'SplashDatabaseEvent.authenticated(isAnonymous: $isAnonymous)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is Authenticated &&
-            (identical(other.accountStatus, accountStatus) ||
+            (identical(other.isAnonymous, isAnonymous) ||
                 const DeepCollectionEquality()
-                    .equals(other.accountStatus, accountStatus)));
+                    .equals(other.isAnonymous, isAnonymous)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(accountStatus);
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(isAnonymous);
 
   @override
   $AuthenticatedCopyWith<Authenticated> get copyWith =>
@@ -127,24 +126,24 @@ class _$Authenticated implements Authenticated {
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result authenticated(AccountStatus accountStatus),
+    @required Result authenticated(bool isAnonymous),
     @required Result logoAnimationCompleted(),
   }) {
     assert(authenticated != null);
     assert(logoAnimationCompleted != null);
-    return authenticated(accountStatus);
+    return authenticated(isAnonymous);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result authenticated(AccountStatus accountStatus),
+    Result authenticated(bool isAnonymous),
     Result logoAnimationCompleted(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
     if (authenticated != null) {
-      return authenticated(accountStatus);
+      return authenticated(isAnonymous);
     }
     return orElse();
   }
@@ -176,10 +175,9 @@ class _$Authenticated implements Authenticated {
 }
 
 abstract class Authenticated implements SplashDatabaseEvent {
-  const factory Authenticated({@required AccountStatus accountStatus}) =
-      _$Authenticated;
+  const factory Authenticated({@required bool isAnonymous}) = _$Authenticated;
 
-  AccountStatus get accountStatus;
+  bool get isAnonymous;
   $AuthenticatedCopyWith<Authenticated> get copyWith;
 }
 
@@ -219,7 +217,7 @@ class _$LogoAnimationCompleted implements LogoAnimationCompleted {
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result authenticated(AccountStatus accountStatus),
+    @required Result authenticated(bool isAnonymous),
     @required Result logoAnimationCompleted(),
   }) {
     assert(authenticated != null);
@@ -230,7 +228,7 @@ class _$LogoAnimationCompleted implements LogoAnimationCompleted {
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result authenticated(AccountStatus accountStatus),
+    Result authenticated(bool isAnonymous),
     Result logoAnimationCompleted(),
     @required Result orElse(),
   }) {

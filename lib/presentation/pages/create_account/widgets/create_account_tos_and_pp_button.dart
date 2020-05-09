@@ -1,7 +1,7 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
-class TermsOfServiceAndPrivacyPolicy extends StatelessWidget {
+class CreateAccountTOSAndPPButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return RichText(
