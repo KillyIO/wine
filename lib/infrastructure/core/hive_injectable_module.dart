@@ -3,8 +3,11 @@ import 'dart:io';
 import 'package:hive/hive.dart';
 import 'package:injectable/injectable.dart';
 import 'package:path_provider/path_provider.dart';
+import 'package:wine/domain/models/hive/chapter_draft.dart';
 import 'package:wine/domain/models/hive/config.dart';
+import 'package:wine/domain/models/hive/series_draft.dart';
 import 'package:wine/domain/models/hive/session.dart';
+import 'package:wine/utils/constants.dart';
 
 @registerModule
 abstract class HiveInjectableModule {
@@ -19,7 +22,7 @@ abstract class HiveInjectableModule {
 
     Hive.init(dirPath);
 
-    return Hive.openBox<Session>('sessionsBox');
+    return Hive.openBox<Session>(Constants.sessionsBox);
   }
 
   @preResolve
@@ -33,6 +36,34 @@ abstract class HiveInjectableModule {
 
     Hive.init(dirPath);
 
-    return Hive.openBox<Config>('configsBox');
+    return Hive.openBox<Config>(Constants.configsBox);
+  }
+
+  @preResolve
+  @lazySingleton
+  Future<Box<SeriesDraft>> get openSeriesDraftsBoxes async {
+    final Directory extDir = await getApplicationDocumentsDirectory();
+    final String dirPath = '${extDir.path}/db';
+    await Directory(dirPath).create(recursive: true);
+
+    Hive.registerAdapter(SeriesDraftAdapter());
+
+    Hive.init(dirPath);
+
+    return Hive.openBox<SeriesDraft>(Constants.seriesDraftsBox);
+  }
+
+  @preResolve
+  @lazySingleton
+  Future<Box<ChapterDraft>> get openChapterDraftsBoxes async {
+    final Directory extDir = await getApplicationDocumentsDirectory();
+    final String dirPath = '${extDir.path}/db';
+    await Directory(dirPath).create(recursive: true);
+
+    Hive.registerAdapter(ChapterDraftAdapter());
+
+    Hive.init(dirPath);
+
+    return Hive.openBox<ChapterDraft>(Constants.chapterDraftsBox);
   }
 }

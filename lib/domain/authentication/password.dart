@@ -7,10 +7,10 @@ class Password extends ValueObject<String> {
   @override
   final Either<ValueFailure<String>, String> value;
 
-  factory Password(String input) {
+  factory Password(String input, [String input2]) {
     assert(input != null);
     return Password._(
-      validatePassword(input),
+      validatePassword(input, input2),
     );
   }
 

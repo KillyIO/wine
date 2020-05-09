@@ -35,29 +35,37 @@ class CreateAccountDatabaseBloc
   Stream<CreateAccountDatabaseState> mapEventToState(
     CreateAccountDatabaseEvent event,
   ) async* {
-    if (event is AccountCreated) {
-      Either<DatabaseFailure, dynamic> failureOrSuccess;
+    yield* event.map(
+      accountCreated: (event) async* {
+        Either<DatabaseFailure, dynamic> failureOrSuccess;
 
-      yield state.copyWith(
-        isUpdating: true,
-        databaseFailureOrSuccessOption: none(),
-      );
-      failureOrSuccess =
-          await _onlineUserDatabaseFacade.saveDetailsFromUser(event.user);
+        yield state.copyWith(
+          isUpdating: true,
+          databaseFailureOrSuccessOption: none(),
+        );
+        failureOrSuccess =
+            await _onlineUserDatabaseFacade.saveDetailsFromUser(event.user);
 
-      failureOrSuccess.fold(
-        (_) {},
-        (right) async {
-          if (right is User) {
-            final Session session = Session.fromMap(right.toMap());
-            await _localSessionDatabaseFacade.setSession(session: session);
-          }
-        },
-      );
-      yield state.copyWith(
-        isUpdating: false,
-        databaseFailureOrSuccessOption: optionOf(failureOrSuccess),
-      );
-    }
+        failureOrSuccess.fold(
+          (_) {},
+          (right) async {
+            if (right is User) {
+              final Session session = Session.fromMap(right.toMap());
+              await _localSessionDatabaseFacade.setSession(session);
+            }
+          },
+        );
+        yield state.copyWith(
+          isUpdating: false,
+          databaseFailureOrSuccessOption: optionOf(failureOrSuccess),
+        );
+      },
+      verifyEmailPageLaunched: (event) async* {
+        final Session session = _localSessionDatabaseFacade.getSession();
+        yield state.copyWith(
+          email: session.email,
+        );
+      },
+    );
   }
 }

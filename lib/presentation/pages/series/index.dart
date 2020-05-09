@@ -1,1 +1,1 @@
-export 'new_series_page.dart';
+export 'series_page.dart';

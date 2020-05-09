@@ -4,7 +4,7 @@ part of 'splash_authentication_bloc.dart';
 abstract class SplashAuthenticationState with _$SplashAuthenticationState {
   const factory SplashAuthenticationState({
     @required bool isAuthenticating,
-    @required AccountStatus accountStatus,
+    @required bool isAnonymous,
     @required
         Option<Either<AuthenticationFailure, Unit>>
             authenticationFailureOrSuccessOption,
@@ -12,7 +12,7 @@ abstract class SplashAuthenticationState with _$SplashAuthenticationState {
 
   factory SplashAuthenticationState.initial() => SplashAuthenticationState(
         isAuthenticating: false,
-        accountStatus: AccountStatus.unknown,
+        isAnonymous: false,
         authenticationFailureOrSuccessOption: none(),
       );
 }

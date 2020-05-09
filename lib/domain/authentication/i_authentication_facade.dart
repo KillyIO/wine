@@ -16,6 +16,7 @@ abstract class IAuthenticationFacade {
     @required Username username,
   });
   Future<bool> isSignedIn();
+  Future<void> resendVerificationEmail();
   Future<Either<AuthenticationFailure, Unit>> signInAnonymously();
   Future<Either<AuthenticationFailure, User>> signInWithEmailAndPassword({
     @required EmailAddress emailAddress,

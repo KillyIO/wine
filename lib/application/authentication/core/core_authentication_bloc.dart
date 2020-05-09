@@ -25,7 +25,7 @@ class CoreAuthenticationBloc
   Stream<CoreAuthenticationState> mapEventToState(
     CoreAuthenticationEvent event,
   ) async* {
-    if (event is PageLaunched) {
+    if (event is GetUserAnonymousStatus) {
       final isAnonymous = await _authenticationFacade.isAnonymous();
       yield state.copyWith(
         isAnonymous: isAnonymous,

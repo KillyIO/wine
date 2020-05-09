@@ -8,11 +8,9 @@ abstract class CreateAccountAuthenticationState
     @required Password password,
     @required Password confirmPassword,
     @required Username username,
-    @required bool showEmailErrorMessage,
-    @required bool showPasswordErrorMessage,
-    @required bool showConfirmPasswordErrorMessage,
-    @required bool showUsernameErrorMessage,
+    @required bool showErrorMessages,
     @required bool isSubmitting,
+    @required bool isVerificationEmailSent,
     @required
         Option<Either<AuthenticationFailure, dynamic>>
             authenticationFailureOrSuccessOption,
@@ -22,13 +20,11 @@ abstract class CreateAccountAuthenticationState
       CreateAccountAuthenticationState(
         emailAddress: EmailAddress(''),
         password: Password(''),
-        confirmPassword: Password(''),
+        confirmPassword: Password('', ''),
         username: Username(''),
-        showEmailErrorMessage: false,
-        showPasswordErrorMessage: false,
-        showConfirmPasswordErrorMessage: false,
-        showUsernameErrorMessage: false,
+        showErrorMessages: false,
         isSubmitting: false,
+        isVerificationEmailSent: false,
         authenticationFailureOrSuccessOption: none(),
       );
 }
