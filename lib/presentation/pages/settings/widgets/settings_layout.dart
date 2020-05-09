@@ -9,7 +9,7 @@ import 'package:wine/application/outlier/settings/settings_outlier_bloc.dart';
 import 'package:wine/presentation/pages/settings/widgets/account_settings.dart';
 import 'package:wine/presentation/pages/settings/widgets/app_version.dart';
 import 'package:wine/presentation/widgets/custom_show_dialog.dart';
-import 'package:wine/presentation/widgets/error_dialog.dart';
+import 'package:wine/presentation/widgets/wine_error_dialog.dart';
 import 'package:wine/presentation/widgets/image_back_button.dart';
 import 'package:wine/routes.dart';
 import 'package:wine/utils/constants.dart';
@@ -70,14 +70,14 @@ class _SettingsLayoutState extends State<SettingsLayout>
                   (failure) => failure.maybeMap(
                     serverError: (_) => customShowDialog(
                       context: context,
-                      builder: (_) => ErrorDialog(
+                      builder: (_) => WINEErrorDialog(
                         message: 'An unexpected error occured!',
                         onPressed: () => Navigator.of(context).pop(true),
                       ),
                     ),
                     unableToSignOut: (_) => customShowDialog(
                       context: context,
-                      builder: (_) => ErrorDialog(
+                      builder: (_) => WINEErrorDialog(
                         message:
                             'We were unable to sign you out. Please retry later.',
                         onPressed: () => Navigator.of(context).pop(true),
