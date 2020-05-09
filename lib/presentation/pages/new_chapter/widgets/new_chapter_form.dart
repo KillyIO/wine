@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:wine/application/database/new_chapter/new_chapter_database_bloc.dart';
 import 'package:wine/application/navigation/home/home_navigation_bloc.dart';
-import 'package:wine/presentation/widgets/image_back_button.dart';
+import 'package:wine/presentation/widgets/wine_image_back_button.dart';
 import 'package:wine/utils/arguments.dart';
 
 class NewChapterForm extends StatefulWidget {
@@ -86,7 +86,7 @@ class _NewChapterFormState extends State<NewChapterForm> {
                     horizontal: 10.0,
                     vertical: 5.0,
                   ),
-                  child: ImageBackButton(
+                  child: WINEImageBackButton(
                     onPressed: () {},
                     color: Colors.black,
                   ),

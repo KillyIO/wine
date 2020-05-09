@@ -5,7 +5,7 @@ import 'package:wine/application/authentication/create_account/create_account_au
 import 'package:wine/application/database/create_account/create_account_database_bloc.dart';
 import 'package:wine/injection.dart';
 import 'package:wine/presentation/pages/create_account/widgets/create_account_form.dart';
-import 'package:wine/presentation/widgets/image_back_button.dart';
+import 'package:wine/presentation/widgets/wine_image_back_button.dart';
 import 'package:wine/utils/themes.dart';
 
 class CreateAccountPage extends StatelessWidget {
@@ -31,7 +31,7 @@ class CreateAccountPage extends StatelessWidget {
             elevation: 0.0,
             leading: Padding(
               padding: const EdgeInsets.only(bottom: 5.0, left: 10.0, top: 5.0),
-              child: ImageBackButton(
+              child: WINEImageBackButton(
                 onPressed: () {
                   FocusScope.of(context).requestFocus(FocusNode());
                   Navigator.of(context).pop();

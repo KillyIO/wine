@@ -18,6 +18,7 @@ abstract class NewSeriesDatabaseState with _$NewSeriesDatabaseState {
     @required String languageStr,
     @required Copyrights copyrights,
     @required String copyrightsStr,
+    @required bool isNSFW,
     @required bool isCreating,
     @required bool showErrorMessages,
     @required
@@ -40,6 +41,7 @@ abstract class NewSeriesDatabaseState with _$NewSeriesDatabaseState {
         languageStr: '',
         copyrights: Copyrights(''),
         copyrightsStr: '',
+        isNSFW: false,
         isCreating: false,
         showErrorMessages: false,
         databaseFailureOrSuccessOption: none(),

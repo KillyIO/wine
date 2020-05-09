@@ -46,121 +46,120 @@ class NewSeriesDatabaseBloc
   Stream<NewSeriesDatabaseState> mapEventToState(
     NewSeriesDatabaseEvent event,
   ) async* {
-    yield* event.map(
-      newSeriesPageLaunched: (event) async* {
-        SeriesDraft seriesDraft;
+    yield* event.map(newSeriesPageLaunched: (event) async* {
+      SeriesDraft seriesDraft;
 
-        if (event.seriesDraft != null) {
-          seriesDraft = event.seriesDraft;
-        } else {
-          final Session session = _localSessionDatabaseFacade.getSession();
+      if (event.seriesDraft != null) {
+        seriesDraft = event.seriesDraft;
+      } else {
+        final Session session = _localSessionDatabaseFacade.getSession();
 
-          seriesDraft = SeriesDraft(
-            uid: uuid.v4(),
-            authorUid: session.uid,
-          );
-        }
-
-        yield state.copyWith(
-          seriesDraft: seriesDraft,
+        seriesDraft = SeriesDraft(
+          uid: uuid.v4(),
+          authorUid: session.uid,
         );
-      },
-      createSeriesButtonPressed: (event) async* {
-        Either<DatabaseFailure, dynamic> failureOrSuccess;
+      }
 
-        final bool isTitleValid = state.title.isValid();
-        final bool isSummaryValid = state.summary.isValid();
-        final bool isGenreValid = state.genre.isValid();
-        final bool isLanguageValid = state.language.isValid();
-        final bool isCopyrightsValid = state.copyrights.isValid();
+      yield state.copyWith(
+        seriesDraft: seriesDraft,
+      );
+    }, createSeriesButtonPressed: (event) async* {
+      Either<DatabaseFailure, dynamic> failureOrSuccess;
 
-        if (isTitleValid &&
-            isSummaryValid &&
-            isGenreValid &&
-            isLanguageValid &&
-            isCopyrightsValid) {
-          yield state.copyWith(
-            isCreating: true,
-            databaseFailureOrSuccessOption: none(),
-          );
+      final bool isTitleValid = state.title.isValid();
+      final bool isSummaryValid = state.summary.isValid();
+      final bool isGenreValid = state.genre.isValid();
+      final bool isLanguageValid = state.language.isValid();
+      final bool isCopyrightsValid = state.copyrights.isValid();
 
-          final SeriesDraft seriesDraft = state.seriesDraft;
-
-          seriesDraft
-            ..title = state.title.getOrCrash()
-            ..subtitle = state.subtitle.getOrCrash()
-            ..summary = state.summary.getOrCrash()
-            ..genre = state.genre.getOrCrash()
-            ..genreOptional = state.genreOptional.getOrCrash()
-            ..language = state.language.getOrCrash()
-            ..copyrights = state.copyrights.getOrCrash();
-
-          final Series series = Series.fromMap(seriesDraft.toMap());
-
-          failureOrSuccess = await _onlineUserDatabaseFacade.createSeries(series);
-        }
-
+      if (isTitleValid &&
+          isSummaryValid &&
+          isGenreValid &&
+          isLanguageValid &&
+          isCopyrightsValid) {
         yield state.copyWith(
-          isCreating: false,
-          showErrorMessages: true,
-          databaseFailureOrSuccessOption: optionOf(failureOrSuccess),
-        );
-      },
-      titleChanged: (event) async* {
-        final int wordCount = tps.getWordCount(event.title);
-
-        yield state.copyWith(
-          title: Title(event.title),
-          titleWordCount: wordCount,
+          isCreating: true,
           databaseFailureOrSuccessOption: none(),
         );
-      },
-      subtitleChanged: (event) async* {
-        final int wordCount = tps.getWordCount(event.subtitle);
 
-        yield state.copyWith(
-          subtitle: Subtitle(event.subtitle),
-          subtitleWordCount: wordCount,
-          databaseFailureOrSuccessOption: none(),
-        );
-      },
-      summaryChanged: (event) async* {
-        final int wordCount = tps.getWordCount(event.summary);
+        final SeriesDraft seriesDraft = state.seriesDraft;
 
-        yield state.copyWith(
-          summary: Summary(event.summary),
-          summaryWordCount: wordCount,
-          databaseFailureOrSuccessOption: none(),
-        );
-      },
-      genreSelected: (event) async* {
-        yield state.copyWith(
-          genre: Genre(event.genre),
-          genreStr: event.genre,
-          databaseFailureOrSuccessOption: none(),
-        );
-      },
-      genreOptionalSelected: (event) async* {
-        yield state.copyWith(
-          genreOptional: Genre(event.genreOptional, isOptional: true),
-          genreOptionalStr: event.genreOptional,
-          databaseFailureOrSuccessOption: none(),
-        );
-      },
-      languageSelected: (event) async* {
-        yield state.copyWith(
-          language: Language(event.language),
-          languageStr: event.language,
-          databaseFailureOrSuccessOption: none(),
-        );
-      },
-      copyrightsSelected: (event) async* {
-        yield state.copyWith(
-          copyrights: Copyrights(event.copyrights),
-          copyrightsStr: event.copyrights,
-          databaseFailureOrSuccessOption: none(),
-        );
-      },
-    );
+        seriesDraft
+          ..title = state.title.getOrCrash()
+          ..subtitle = state.subtitle.getOrCrash()
+          ..summary = state.summary.getOrCrash()
+          ..genre = state.genre.getOrCrash()
+          ..genreOptional = state.genreOptional.getOrCrash()
+          ..language = state.language.getOrCrash()
+          ..copyrights = state.copyrights.getOrCrash()
+          ..isNSFW = state.isNSFW;
+
+        final Series series = Series.fromMap(seriesDraft.toMap());
+
+        failureOrSuccess = await _onlineUserDatabaseFacade.createSeries(series);
+      }
+
+      yield state.copyWith(
+        isCreating: false,
+        showErrorMessages: true,
+        databaseFailureOrSuccessOption: optionOf(failureOrSuccess),
+      );
+    }, titleChanged: (event) async* {
+      final String titleTrim = event.title.trim();
+      final int wordCount = tps.getWordCount(titleTrim);
+
+      yield state.copyWith(
+        title: Title(titleTrim),
+        titleWordCount: wordCount,
+        databaseFailureOrSuccessOption: none(),
+      );
+    }, subtitleChanged: (event) async* {
+      final String subtitleTrim = event.subtitle.trim();
+      final int wordCount = tps.getWordCount(subtitleTrim);
+
+      yield state.copyWith(
+        subtitle: Subtitle(subtitleTrim),
+        subtitleWordCount: wordCount,
+        databaseFailureOrSuccessOption: none(),
+      );
+    }, summaryChanged: (event) async* {
+      final String summaryTrim = event.summary.trim();
+      final int wordCount = tps.getWordCount(summaryTrim);
+
+      yield state.copyWith(
+        summary: Summary(summaryTrim),
+        summaryWordCount: wordCount,
+        databaseFailureOrSuccessOption: none(),
+      );
+    }, genreSelected: (event) async* {
+      yield state.copyWith(
+        genre: Genre(event.genre),
+        genreStr: event.genre,
+        databaseFailureOrSuccessOption: none(),
+      );
+    }, genreOptionalSelected: (event) async* {
+      yield state.copyWith(
+        genreOptional: Genre(event.genreOptional, isOptional: true),
+        genreOptionalStr: event.genreOptional,
+        databaseFailureOrSuccessOption: none(),
+      );
+    }, languageSelected: (event) async* {
+      yield state.copyWith(
+        language: Language(event.language),
+        languageStr: event.language,
+        databaseFailureOrSuccessOption: none(),
+      );
+    }, copyrightsSelected: (event) async* {
+      yield state.copyWith(
+        copyrights: Copyrights(event.copyrights),
+        copyrightsStr: event.copyrights,
+        databaseFailureOrSuccessOption: none(),
+      );
+    }, isNSFWChanged: (event) async* {
+      yield state.copyWith(
+        isNSFW: event.isNSFW,
+        databaseFailureOrSuccessOption: none(),
+      );
+    });
   }
 }

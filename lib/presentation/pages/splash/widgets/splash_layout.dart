@@ -6,8 +6,8 @@ import 'package:wine/application/authentication/core/core_authentication_bloc.da
 import 'package:wine/application/authentication/splash/splash_authentication_bloc.dart';
 import 'package:wine/application/database/splash/splash_database_bloc.dart';
 import 'package:wine/presentation/pages/splash/widgets/splash_copyright.dart';
-import 'package:wine/presentation/widgets/custom_show_dialog.dart';
-import 'package:wine/presentation/widgets/error_dialog.dart';
+import 'package:wine/presentation/widgets/wine_show_dialog.dart';
+import 'package:wine/presentation/widgets/wine_error_dialog.dart';
 import 'package:wine/routes.dart';
 import 'package:wine/utils/constants.dart';
 
@@ -45,9 +45,9 @@ class _SplashLayoutState extends State<SplashLayout> {
                   (some) => some.fold(
                     (failure) => failure.maybeMap(
                       serverError: (_) {
-                        customShowDialog(
+                        wineShowDialog(
                           context: context,
-                          builder: (_) => ErrorDialog(
+                          builder: (_) => WINEErrorDialog(
                             message: 'An unexpected error occured!',
                             buttonText: 'RESTART',
                             onPressed: () => context
@@ -79,9 +79,9 @@ class _SplashLayoutState extends State<SplashLayout> {
                     navigationType: NavigationType.pushReplace,
                   ),
                   (some) => some.fold(
-                    (failure) => customShowDialog(
+                    (failure) => wineShowDialog(
                       context: context,
-                      builder: (_) => ErrorDialog(
+                      builder: (_) => WINEErrorDialog(
                         message: 'An unexpected error occured!',
                         buttonText: 'RESTART',
                         onPressed: () => context

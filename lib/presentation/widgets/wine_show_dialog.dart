@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-Future<T> customShowDialog<T>({
+Future<T> wineShowDialog<T>({
   @required BuildContext context,
   bool barrierDismissible = true,
   WidgetBuilder builder,

@@ -3,12 +3,20 @@ part of 'new_chapter_database_bloc.dart';
 @freezed
 abstract class NewChapterDatabaseState with _$NewChapterDatabaseState {
   const factory NewChapterDatabaseState({
-    @required String title,
-    @required bool isPublishing,
+    @required ChapterDraft chapterDraft,
+    @required Title title,
+    @required int titleWordCount,
+    // @required Content content,
+    @required int contentWordCount,
+    @required bool isPublishingOrSaving,
   }) = _NewChapterPageState;
 
   factory NewChapterDatabaseState.initial() => NewChapterDatabaseState(
-        title: '',
-        isPublishing: false,
+        chapterDraft: ChapterDraft(),
+        title: Title(''),
+        titleWordCount: 0,
+        // content: Content(''),
+        contentWordCount: 0,
+        isPublishingOrSaving: false,
       );
 }

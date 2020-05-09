@@ -1,39 +1,17 @@
-import 'dart:convert';
-
-import 'package:hive/hive.dart';
-
-part 'chapter_draft.g.dart';
-
-@HiveType(typeId: 3)
-class ChapterDraft extends HiveObject {
-  @HiveField(0)
+class Chapter {
   String uid;
-
-  @HiveField(1)
   String seriesUid;
-
-  @HiveField(2)
   String previousChapterUid;
-
-  @HiveField(3)
   String authorUid;
-
-  @HiveField(4)
   String title;
-
-  @HiveField(5)
   String content;
-
-  @HiveField(6)
   int index;
-
-  @HiveField(7)
   String language;
-
-  @HiveField(8)
   bool isNSFW;
+  int createdAt;
+  int updatedAt;
 
-  ChapterDraft({
+  Chapter({
     this.uid,
     this.seriesUid,
     this.previousChapterUid,
@@ -43,9 +21,11 @@ class ChapterDraft extends HiveObject {
     this.index,
     this.language,
     this.isNSFW,
+    this.createdAt,
+    this.updatedAt,
   });
 
-  ChapterDraft copyWith({
+  Chapter copyWith({
     String uid,
     String seriesUid,
     String previousChapterUid,
@@ -55,8 +35,10 @@ class ChapterDraft extends HiveObject {
     int index,
     String language,
     bool isNSFW,
+    int createdAt,
+    int updatedAt,
   }) {
-    return ChapterDraft(
+    return Chapter(
       uid: uid ?? this.uid,
       seriesUid: seriesUid ?? this.seriesUid,
       previousChapterUid: previousChapterUid ?? this.previousChapterUid,
@@ -66,6 +48,8 @@ class ChapterDraft extends HiveObject {
       index: index ?? this.index,
       language: language ?? this.language,
       isNSFW: isNSFW ?? this.isNSFW,
+      createdAt: createdAt ?? this.createdAt,
+      updatedAt: updatedAt ?? this.updatedAt,
     );
   }
 
@@ -80,13 +64,15 @@ class ChapterDraft extends HiveObject {
       'index': index,
       'language': language,
       'isNSFW': isNSFW,
+      'createdAt': createdAt,
+      'updatedAt': updatedAt,
     };
   }
 
-  factory ChapterDraft.fromMap(Map<String, dynamic> map) {
+  factory Chapter.fromMap(Map<String, dynamic> map) {
     if (map == null) return null;
 
-    return ChapterDraft(
+    return Chapter(
       uid: map['uid'] as String,
       seriesUid: map['seriesUid'] as String,
       previousChapterUid: map['previousChapterUid'] as String,
@@ -96,19 +82,21 @@ class ChapterDraft extends HiveObject {
       index: map['index'] as int,
       language: map['language'] as String,
       isNSFW: map['isNSFW'] as bool,
+      createdAt: map['createdAt'] as int,
+      updatedAt: map['updatedAt'] as int,
     );
   }
 
   @override
   String toString() {
-    return 'ChapterDraft(uid: $uid, seriesUid: $seriesUid, previousChapterUid: $previousChapterUid, authorUid: $authorUid, title: $title, content: $content, index: $index, language: $language, isNSFW: $isNSFW)';
+    return 'Chapter(uid: $uid, seriesUid: $seriesUid, previousChapterUid: $previousChapterUid, authorUid: $authorUid, title: $title, content: $content, index: $index, language: $language, isNSFW: $isNSFW, createdAt: $createdAt, updatedAt: $updatedAt)';
   }
 
   @override
   bool operator ==(Object o) {
     if (identical(this, o)) return true;
 
-    return o is ChapterDraft &&
+    return o is Chapter &&
         o.uid == uid &&
         o.seriesUid == seriesUid &&
         o.previousChapterUid == previousChapterUid &&
@@ -117,7 +105,9 @@ class ChapterDraft extends HiveObject {
         o.content == content &&
         o.index == index &&
         o.language == language &&
-        o.isNSFW == isNSFW;
+        o.isNSFW == isNSFW &&
+        o.createdAt == createdAt &&
+        o.updatedAt == updatedAt;
   }
 
   @override
@@ -130,6 +120,8 @@ class ChapterDraft extends HiveObject {
         content.hashCode ^
         index.hashCode ^
         language.hashCode ^
-        isNSFW.hashCode;
+        isNSFW.hashCode ^
+        createdAt.hashCode ^
+        updatedAt.hashCode;
   }
 }

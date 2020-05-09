@@ -9,8 +9,10 @@ import 'package:wine/domain/models/series.dart';
 import 'package:wine/presentation/pages/new_series/widgets/new_series_list_tile.dart';
 import 'package:wine/presentation/pages/new_series/widgets/new_series_selection_dialog.dart';
 import 'package:wine/presentation/pages/new_series/widgets/new_series_text_field_label.dart';
-import 'package:wine/presentation/widgets/custom_show_dialog.dart';
-import 'package:wine/presentation/widgets/image_back_button.dart';
+import 'package:wine/presentation/widgets/wine_show_dialog.dart';
+import 'package:wine/presentation/widgets/wine_image_back_button.dart';
+import 'package:wine/presentation/widgets/wine_switch.dart';
+import 'package:wine/presentation/widgets/wine_switch_list_tile.dart';
 import 'package:wine/routes.dart';
 import 'package:wine/utils/arguments.dart';
 import 'package:wine/utils/constants.dart';
@@ -156,7 +158,7 @@ class _NewSeriesFormState extends State<NewSeriesForm>
                     horizontal: 10.0,
                     vertical: 5.0,
                   ),
-                  child: ImageBackButton(
+                  child: WINEImageBackButton(
                     onPressed: _backButtonPressed,
                     color: Colors.black,
                   ),
@@ -360,7 +362,7 @@ class _NewSeriesFormState extends State<NewSeriesForm>
                             hasSelected: nsDbState.genreStr == '',
                             onPressed: () {
                               FocusScope.of(context).requestFocus(FocusNode());
-                              customShowDialog(
+                              wineShowDialog(
                                 context: context,
                                 builder: (_) => NewSeriesSelectionDialog(
                                   title: 'GENRE',
@@ -396,7 +398,7 @@ class _NewSeriesFormState extends State<NewSeriesForm>
                             hasSelected: nsDbState.genreOptionalStr == '',
                             onPressed: () {
                               FocusScope.of(context).requestFocus(FocusNode());
-                              customShowDialog(
+                              wineShowDialog(
                                 context: context,
                                 builder: (_) => NewSeriesSelectionDialog(
                                   title: 'GENRE (OPTIONAL)',
@@ -412,12 +414,24 @@ class _NewSeriesFormState extends State<NewSeriesForm>
                             trailingText: _genres[nsDbState.genreOptionalStr],
                           ),
                           const SizedBox(height: 25),
+                          // SECTION ADULT CONTENT
+                          WINESwitchListTile(
+                            title: 'NSFW',
+                            onInfoPressed: () {},
+                            value: nsDbState.isNSFW,
+                            onChanged: (value) => context
+                                .bloc<NewSeriesDatabaseBloc>()
+                                .add(NewSeriesDatabaseEvent.isNSFWChanged(
+                                  isNSFW: value,
+                                )),
+                          ),
+                          const SizedBox(height: 25),
                           // SECTION language
                           NewSeriesListTile(
                             hasSelected: nsDbState.languageStr == '',
                             onPressed: () {
                               FocusScope.of(context).requestFocus(FocusNode());
-                              customShowDialog(
+                              wineShowDialog(
                                 context: context,
                                 builder: (_) => NewSeriesSelectionDialog(
                                   title: 'LANGUAGE',
@@ -450,7 +464,7 @@ class _NewSeriesFormState extends State<NewSeriesForm>
                             hasSelected: nsDbState.copyrightsStr == '',
                             onPressed: () {
                               FocusScope.of(context).requestFocus(FocusNode());
-                              customShowDialog(
+                              wineShowDialog(
                                 context: context,
                                 builder: (_) => NewSeriesSelectionDialog(
                                   title: 'COPYRIGHTS',

@@ -2,12 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:wine/utils/palettes.dart';
 
-class ErrorDialog extends StatelessWidget {
+class WINEErrorDialog extends StatelessWidget {
   final String message;
   final String buttonText;
   final VoidCallback onPressed;
 
-  const ErrorDialog({
+  const WINEErrorDialog({
     Key key,
     this.message,
     this.buttonText,
