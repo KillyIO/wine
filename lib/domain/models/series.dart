@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 class Series {
   String uid;
   String authorUid;
@@ -10,6 +8,7 @@ class Series {
   String genreOptional;
   String language;
   String copyrights;
+  bool isNSFW;
   int createdAt;
   int updatedAt;
 
@@ -23,6 +22,7 @@ class Series {
     this.genreOptional,
     this.language,
     this.copyrights,
+    this.isNSFW,
     this.createdAt,
     this.updatedAt,
   });
@@ -37,6 +37,7 @@ class Series {
     String genreOptional,
     String language,
     String copyrights,
+    bool isNSFW,
     int createdAt,
     int updatedAt,
   }) {
@@ -50,6 +51,7 @@ class Series {
       genreOptional: genreOptional ?? this.genreOptional,
       language: language ?? this.language,
       copyrights: copyrights ?? this.copyrights,
+      isNSFW: isNSFW ?? this.isNSFW,
       createdAt: createdAt ?? this.createdAt,
       updatedAt: updatedAt ?? this.updatedAt,
     );
@@ -66,6 +68,7 @@ class Series {
       'genreOptional': genreOptional,
       'language': language,
       'copyrights': copyrights,
+      'isNSFW': isNSFW,
       'createdAt': createdAt,
       'updatedAt': updatedAt,
     };
@@ -84,6 +87,7 @@ class Series {
       genreOptional: map['genreOptional'] as String,
       language: map['language'] as String,
       copyrights: map['copyrights'] as String,
+      isNSFW: map['isNSFW'] as bool,
       createdAt: map['createdAt'] as int,
       updatedAt: map['updatedAt'] as int,
     );
@@ -91,7 +95,7 @@ class Series {
 
   @override
   String toString() {
-    return 'Series(uid: $uid, authorUid: $authorUid, title: $title, subtitle: $subtitle, summary: $summary, genre: $genre, genreOptional: $genreOptional, language: $language, copyrights: $copyrights, createdAt: $createdAt, updatedAt: $updatedAt)';
+    return 'Series(uid: $uid, authorUid: $authorUid, title: $title, subtitle: $subtitle, summary: $summary, genre: $genre, genreOptional: $genreOptional, language: $language, copyrights: $copyrights, isNSFW: $isNSFW, createdAt: $createdAt, updatedAt: $updatedAt)';
   }
 
   @override
@@ -108,6 +112,7 @@ class Series {
         o.genreOptional == genreOptional &&
         o.language == language &&
         o.copyrights == copyrights &&
+        o.isNSFW == isNSFW &&
         o.createdAt == createdAt &&
         o.updatedAt == updatedAt;
   }
@@ -123,6 +128,7 @@ class Series {
         genreOptional.hashCode ^
         language.hashCode ^
         copyrights.hashCode ^
+        isNSFW.hashCode ^
         createdAt.hashCode ^
         updatedAt.hashCode;
   }

@@ -11,6 +11,8 @@ import 'package:wine/presentation/pages/new_series/widgets/new_series_selection_
 import 'package:wine/presentation/pages/new_series/widgets/new_series_text_field_label.dart';
 import 'package:wine/presentation/widgets/wine_show_dialog.dart';
 import 'package:wine/presentation/widgets/wine_image_back_button.dart';
+import 'package:wine/presentation/widgets/wine_switch.dart';
+import 'package:wine/presentation/widgets/wine_switch_list_tile.dart';
 import 'package:wine/routes.dart';
 import 'package:wine/utils/arguments.dart';
 import 'package:wine/utils/constants.dart';
@@ -410,6 +412,18 @@ class _NewSeriesFormState extends State<NewSeriesForm>
                             },
                             title: 'GENRE (OPTIONAL)',
                             trailingText: _genres[nsDbState.genreOptionalStr],
+                          ),
+                          const SizedBox(height: 25),
+                          // SECTION ADULT CONTENT
+                          WINESwitchListTile(
+                            title: 'NSFW',
+                            onInfoPressed: () {},
+                            value: nsDbState.isNSFW,
+                            onChanged: (value) => context
+                                .bloc<NewSeriesDatabaseBloc>()
+                                .add(NewSeriesDatabaseEvent.isNSFWChanged(
+                                  isNSFW: value,
+                                )),
                           ),
                           const SizedBox(height: 25),
                           // SECTION language

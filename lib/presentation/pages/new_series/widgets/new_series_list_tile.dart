@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'package:wine/utils/palettes.dart';
-
 class NewSeriesListTile extends StatelessWidget {
   final bool hasSelected;
   final VoidCallback onPressed;

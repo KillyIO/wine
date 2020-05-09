@@ -28,4 +28,7 @@ abstract class NewSeriesDatabaseEvent with _$NewSeriesDatabaseEvent {
   const factory NewSeriesDatabaseEvent.copyrightsSelected(
     String copyrights,
   ) = CopyrightsSelected;
+  const factory NewSeriesDatabaseEvent.isNSFWChanged({
+    @required bool isNSFW,
+  }) = IsNSFWChanged;
 }

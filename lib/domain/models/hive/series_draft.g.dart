@@ -26,13 +26,14 @@ class SeriesDraftAdapter extends TypeAdapter<SeriesDraft> {
       genreOptional: fields[6] as String,
       language: fields[7] as String,
       copyrights: fields[8] as String,
+      isNSFW: fields[9] as bool,
     );
   }
 
   @override
   void write(BinaryWriter writer, SeriesDraft obj) {
     writer
-      ..writeByte(9)
+      ..writeByte(10)
       ..writeByte(0)
       ..write(obj.uid)
       ..writeByte(1)
@@ -50,6 +51,8 @@ class SeriesDraftAdapter extends TypeAdapter<SeriesDraft> {
       ..writeByte(7)
       ..write(obj.language)
       ..writeByte(8)
-      ..write(obj.copyrights);
+      ..write(obj.copyrights)
+      ..writeByte(9)
+      ..write(obj.isNSFW);
   }
 }

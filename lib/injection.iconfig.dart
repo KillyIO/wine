@@ -64,7 +64,8 @@ Future<void> $initGetIt(GetIt g, {String environment}) async {
       HiveLocalSessionDatabaseFacade(g<Box<Session>>(), g<Box<SeriesDraft>>()));
   g.registerLazySingleton<IOnlineUserDatabaseFacade>(
       () => FirebaseOnlineUserDatabaseFacade(g<Firestore>()));
-  g.registerFactory<NewChapterDatabaseBloc>(() => NewChapterDatabaseBloc());
+  g.registerFactory<NewChapterDatabaseBloc>(() => NewChapterDatabaseBloc(
+      g<ILocalSessionDatabaseFacade>(), g<IOnlineUserDatabaseFacade>()));
   g.registerFactory<NewSeriesDatabaseBloc>(() => NewSeriesDatabaseBloc(
       g<ILocalSessionDatabaseFacade>(), g<IOnlineUserDatabaseFacade>()));
   g.registerFactory<SeriesDatabaseBloc>(() => SeriesDatabaseBloc(

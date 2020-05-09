@@ -63,6 +63,12 @@ class _$NewSeriesDatabaseEventTearOff {
       copyrights,
     );
   }
+
+  IsNSFWChanged isNSFWChanged({@required bool isNSFW}) {
+    return IsNSFWChanged(
+      isNSFW: isNSFW,
+    );
+  }
 }
 
 // ignore: unused_element
@@ -80,6 +86,7 @@ mixin _$NewSeriesDatabaseEvent {
     @required Result genreOptionalSelected(String genreOptional),
     @required Result languageSelected(String language),
     @required Result copyrightsSelected(String copyrights),
+    @required Result isNSFWChanged(bool isNSFW),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
@@ -92,6 +99,7 @@ mixin _$NewSeriesDatabaseEvent {
     Result genreOptionalSelected(String genreOptional),
     Result languageSelected(String language),
     Result copyrightsSelected(String copyrights),
+    Result isNSFWChanged(bool isNSFW),
     @required Result orElse(),
   });
   @optionalTypeArgs
@@ -105,6 +113,7 @@ mixin _$NewSeriesDatabaseEvent {
     @required Result genreOptionalSelected(GenreOptionalSelected value),
     @required Result languageSelected(LanguageSelected value),
     @required Result copyrightsSelected(CopyrightsSelected value),
+    @required Result isNSFWChanged(IsNSFWChanged value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
@@ -117,6 +126,7 @@ mixin _$NewSeriesDatabaseEvent {
     Result genreOptionalSelected(GenreOptionalSelected value),
     Result languageSelected(LanguageSelected value),
     Result copyrightsSelected(CopyrightsSelected value),
+    Result isNSFWChanged(IsNSFWChanged value),
     @required Result orElse(),
   });
 }
@@ -206,6 +216,7 @@ class _$NewSeriesPageLaunched implements NewSeriesPageLaunched {
     @required Result genreOptionalSelected(String genreOptional),
     @required Result languageSelected(String language),
     @required Result copyrightsSelected(String copyrights),
+    @required Result isNSFWChanged(bool isNSFW),
   }) {
     assert(newSeriesPageLaunched != null);
     assert(createSeriesButtonPressed != null);
@@ -216,6 +227,7 @@ class _$NewSeriesPageLaunched implements NewSeriesPageLaunched {
     assert(genreOptionalSelected != null);
     assert(languageSelected != null);
     assert(copyrightsSelected != null);
+    assert(isNSFWChanged != null);
     return newSeriesPageLaunched(seriesDraft);
   }
 
@@ -231,6 +243,7 @@ class _$NewSeriesPageLaunched implements NewSeriesPageLaunched {
     Result genreOptionalSelected(String genreOptional),
     Result languageSelected(String language),
     Result copyrightsSelected(String copyrights),
+    Result isNSFWChanged(bool isNSFW),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -252,6 +265,7 @@ class _$NewSeriesPageLaunched implements NewSeriesPageLaunched {
     @required Result genreOptionalSelected(GenreOptionalSelected value),
     @required Result languageSelected(LanguageSelected value),
     @required Result copyrightsSelected(CopyrightsSelected value),
+    @required Result isNSFWChanged(IsNSFWChanged value),
   }) {
     assert(newSeriesPageLaunched != null);
     assert(createSeriesButtonPressed != null);
@@ -262,6 +276,7 @@ class _$NewSeriesPageLaunched implements NewSeriesPageLaunched {
     assert(genreOptionalSelected != null);
     assert(languageSelected != null);
     assert(copyrightsSelected != null);
+    assert(isNSFWChanged != null);
     return newSeriesPageLaunched(this);
   }
 
@@ -277,6 +292,7 @@ class _$NewSeriesPageLaunched implements NewSeriesPageLaunched {
     Result genreOptionalSelected(GenreOptionalSelected value),
     Result languageSelected(LanguageSelected value),
     Result copyrightsSelected(CopyrightsSelected value),
+    Result isNSFWChanged(IsNSFWChanged value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -341,6 +357,7 @@ class _$CreateSeriesButtonPressed implements CreateSeriesButtonPressed {
     @required Result genreOptionalSelected(String genreOptional),
     @required Result languageSelected(String language),
     @required Result copyrightsSelected(String copyrights),
+    @required Result isNSFWChanged(bool isNSFW),
   }) {
     assert(newSeriesPageLaunched != null);
     assert(createSeriesButtonPressed != null);
@@ -351,6 +368,7 @@ class _$CreateSeriesButtonPressed implements CreateSeriesButtonPressed {
     assert(genreOptionalSelected != null);
     assert(languageSelected != null);
     assert(copyrightsSelected != null);
+    assert(isNSFWChanged != null);
     return createSeriesButtonPressed();
   }
 
@@ -366,6 +384,7 @@ class _$CreateSeriesButtonPressed implements CreateSeriesButtonPressed {
     Result genreOptionalSelected(String genreOptional),
     Result languageSelected(String language),
     Result copyrightsSelected(String copyrights),
+    Result isNSFWChanged(bool isNSFW),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -387,6 +406,7 @@ class _$CreateSeriesButtonPressed implements CreateSeriesButtonPressed {
     @required Result genreOptionalSelected(GenreOptionalSelected value),
     @required Result languageSelected(LanguageSelected value),
     @required Result copyrightsSelected(CopyrightsSelected value),
+    @required Result isNSFWChanged(IsNSFWChanged value),
   }) {
     assert(newSeriesPageLaunched != null);
     assert(createSeriesButtonPressed != null);
@@ -397,6 +417,7 @@ class _$CreateSeriesButtonPressed implements CreateSeriesButtonPressed {
     assert(genreOptionalSelected != null);
     assert(languageSelected != null);
     assert(copyrightsSelected != null);
+    assert(isNSFWChanged != null);
     return createSeriesButtonPressed(this);
   }
 
@@ -412,6 +433,7 @@ class _$CreateSeriesButtonPressed implements CreateSeriesButtonPressed {
     Result genreOptionalSelected(GenreOptionalSelected value),
     Result languageSelected(LanguageSelected value),
     Result copyrightsSelected(CopyrightsSelected value),
+    Result isNSFWChanged(IsNSFWChanged value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -492,6 +514,7 @@ class _$TitleChanged implements TitleChanged {
     @required Result genreOptionalSelected(String genreOptional),
     @required Result languageSelected(String language),
     @required Result copyrightsSelected(String copyrights),
+    @required Result isNSFWChanged(bool isNSFW),
   }) {
     assert(newSeriesPageLaunched != null);
     assert(createSeriesButtonPressed != null);
@@ -502,6 +525,7 @@ class _$TitleChanged implements TitleChanged {
     assert(genreOptionalSelected != null);
     assert(languageSelected != null);
     assert(copyrightsSelected != null);
+    assert(isNSFWChanged != null);
     return titleChanged(title);
   }
 
@@ -517,6 +541,7 @@ class _$TitleChanged implements TitleChanged {
     Result genreOptionalSelected(String genreOptional),
     Result languageSelected(String language),
     Result copyrightsSelected(String copyrights),
+    Result isNSFWChanged(bool isNSFW),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -538,6 +563,7 @@ class _$TitleChanged implements TitleChanged {
     @required Result genreOptionalSelected(GenreOptionalSelected value),
     @required Result languageSelected(LanguageSelected value),
     @required Result copyrightsSelected(CopyrightsSelected value),
+    @required Result isNSFWChanged(IsNSFWChanged value),
   }) {
     assert(newSeriesPageLaunched != null);
     assert(createSeriesButtonPressed != null);
@@ -548,6 +574,7 @@ class _$TitleChanged implements TitleChanged {
     assert(genreOptionalSelected != null);
     assert(languageSelected != null);
     assert(copyrightsSelected != null);
+    assert(isNSFWChanged != null);
     return titleChanged(this);
   }
 
@@ -563,6 +590,7 @@ class _$TitleChanged implements TitleChanged {
     Result genreOptionalSelected(GenreOptionalSelected value),
     Result languageSelected(LanguageSelected value),
     Result copyrightsSelected(CopyrightsSelected value),
+    Result isNSFWChanged(IsNSFWChanged value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -647,6 +675,7 @@ class _$SubtitleChanged implements SubtitleChanged {
     @required Result genreOptionalSelected(String genreOptional),
     @required Result languageSelected(String language),
     @required Result copyrightsSelected(String copyrights),
+    @required Result isNSFWChanged(bool isNSFW),
   }) {
     assert(newSeriesPageLaunched != null);
     assert(createSeriesButtonPressed != null);
@@ -657,6 +686,7 @@ class _$SubtitleChanged implements SubtitleChanged {
     assert(genreOptionalSelected != null);
     assert(languageSelected != null);
     assert(copyrightsSelected != null);
+    assert(isNSFWChanged != null);
     return subtitleChanged(subtitle);
   }
 
@@ -672,6 +702,7 @@ class _$SubtitleChanged implements SubtitleChanged {
     Result genreOptionalSelected(String genreOptional),
     Result languageSelected(String language),
     Result copyrightsSelected(String copyrights),
+    Result isNSFWChanged(bool isNSFW),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -693,6 +724,7 @@ class _$SubtitleChanged implements SubtitleChanged {
     @required Result genreOptionalSelected(GenreOptionalSelected value),
     @required Result languageSelected(LanguageSelected value),
     @required Result copyrightsSelected(CopyrightsSelected value),
+    @required Result isNSFWChanged(IsNSFWChanged value),
   }) {
     assert(newSeriesPageLaunched != null);
     assert(createSeriesButtonPressed != null);
@@ -703,6 +735,7 @@ class _$SubtitleChanged implements SubtitleChanged {
     assert(genreOptionalSelected != null);
     assert(languageSelected != null);
     assert(copyrightsSelected != null);
+    assert(isNSFWChanged != null);
     return subtitleChanged(this);
   }
 
@@ -718,6 +751,7 @@ class _$SubtitleChanged implements SubtitleChanged {
     Result genreOptionalSelected(GenreOptionalSelected value),
     Result languageSelected(LanguageSelected value),
     Result copyrightsSelected(CopyrightsSelected value),
+    Result isNSFWChanged(IsNSFWChanged value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -801,6 +835,7 @@ class _$SummaryChanged implements SummaryChanged {
     @required Result genreOptionalSelected(String genreOptional),
     @required Result languageSelected(String language),
     @required Result copyrightsSelected(String copyrights),
+    @required Result isNSFWChanged(bool isNSFW),
   }) {
     assert(newSeriesPageLaunched != null);
     assert(createSeriesButtonPressed != null);
@@ -811,6 +846,7 @@ class _$SummaryChanged implements SummaryChanged {
     assert(genreOptionalSelected != null);
     assert(languageSelected != null);
     assert(copyrightsSelected != null);
+    assert(isNSFWChanged != null);
     return summaryChanged(summary);
   }
 
@@ -826,6 +862,7 @@ class _$SummaryChanged implements SummaryChanged {
     Result genreOptionalSelected(String genreOptional),
     Result languageSelected(String language),
     Result copyrightsSelected(String copyrights),
+    Result isNSFWChanged(bool isNSFW),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -847,6 +884,7 @@ class _$SummaryChanged implements SummaryChanged {
     @required Result genreOptionalSelected(GenreOptionalSelected value),
     @required Result languageSelected(LanguageSelected value),
     @required Result copyrightsSelected(CopyrightsSelected value),
+    @required Result isNSFWChanged(IsNSFWChanged value),
   }) {
     assert(newSeriesPageLaunched != null);
     assert(createSeriesButtonPressed != null);
@@ -857,6 +895,7 @@ class _$SummaryChanged implements SummaryChanged {
     assert(genreOptionalSelected != null);
     assert(languageSelected != null);
     assert(copyrightsSelected != null);
+    assert(isNSFWChanged != null);
     return summaryChanged(this);
   }
 
@@ -872,6 +911,7 @@ class _$SummaryChanged implements SummaryChanged {
     Result genreOptionalSelected(GenreOptionalSelected value),
     Result languageSelected(LanguageSelected value),
     Result copyrightsSelected(CopyrightsSelected value),
+    Result isNSFWChanged(IsNSFWChanged value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -955,6 +995,7 @@ class _$GenreSelected implements GenreSelected {
     @required Result genreOptionalSelected(String genreOptional),
     @required Result languageSelected(String language),
     @required Result copyrightsSelected(String copyrights),
+    @required Result isNSFWChanged(bool isNSFW),
   }) {
     assert(newSeriesPageLaunched != null);
     assert(createSeriesButtonPressed != null);
@@ -965,6 +1006,7 @@ class _$GenreSelected implements GenreSelected {
     assert(genreOptionalSelected != null);
     assert(languageSelected != null);
     assert(copyrightsSelected != null);
+    assert(isNSFWChanged != null);
     return genreSelected(genre);
   }
 
@@ -980,6 +1022,7 @@ class _$GenreSelected implements GenreSelected {
     Result genreOptionalSelected(String genreOptional),
     Result languageSelected(String language),
     Result copyrightsSelected(String copyrights),
+    Result isNSFWChanged(bool isNSFW),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1001,6 +1044,7 @@ class _$GenreSelected implements GenreSelected {
     @required Result genreOptionalSelected(GenreOptionalSelected value),
     @required Result languageSelected(LanguageSelected value),
     @required Result copyrightsSelected(CopyrightsSelected value),
+    @required Result isNSFWChanged(IsNSFWChanged value),
   }) {
     assert(newSeriesPageLaunched != null);
     assert(createSeriesButtonPressed != null);
@@ -1011,6 +1055,7 @@ class _$GenreSelected implements GenreSelected {
     assert(genreOptionalSelected != null);
     assert(languageSelected != null);
     assert(copyrightsSelected != null);
+    assert(isNSFWChanged != null);
     return genreSelected(this);
   }
 
@@ -1026,6 +1071,7 @@ class _$GenreSelected implements GenreSelected {
     Result genreOptionalSelected(GenreOptionalSelected value),
     Result languageSelected(LanguageSelected value),
     Result copyrightsSelected(CopyrightsSelected value),
+    Result isNSFWChanged(IsNSFWChanged value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1112,6 +1158,7 @@ class _$GenreOptionalSelected implements GenreOptionalSelected {
     @required Result genreOptionalSelected(String genreOptional),
     @required Result languageSelected(String language),
     @required Result copyrightsSelected(String copyrights),
+    @required Result isNSFWChanged(bool isNSFW),
   }) {
     assert(newSeriesPageLaunched != null);
     assert(createSeriesButtonPressed != null);
@@ -1122,6 +1169,7 @@ class _$GenreOptionalSelected implements GenreOptionalSelected {
     assert(genreOptionalSelected != null);
     assert(languageSelected != null);
     assert(copyrightsSelected != null);
+    assert(isNSFWChanged != null);
     return genreOptionalSelected(genreOptional);
   }
 
@@ -1137,6 +1185,7 @@ class _$GenreOptionalSelected implements GenreOptionalSelected {
     Result genreOptionalSelected(String genreOptional),
     Result languageSelected(String language),
     Result copyrightsSelected(String copyrights),
+    Result isNSFWChanged(bool isNSFW),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1158,6 +1207,7 @@ class _$GenreOptionalSelected implements GenreOptionalSelected {
     @required Result genreOptionalSelected(GenreOptionalSelected value),
     @required Result languageSelected(LanguageSelected value),
     @required Result copyrightsSelected(CopyrightsSelected value),
+    @required Result isNSFWChanged(IsNSFWChanged value),
   }) {
     assert(newSeriesPageLaunched != null);
     assert(createSeriesButtonPressed != null);
@@ -1168,6 +1218,7 @@ class _$GenreOptionalSelected implements GenreOptionalSelected {
     assert(genreOptionalSelected != null);
     assert(languageSelected != null);
     assert(copyrightsSelected != null);
+    assert(isNSFWChanged != null);
     return genreOptionalSelected(this);
   }
 
@@ -1183,6 +1234,7 @@ class _$GenreOptionalSelected implements GenreOptionalSelected {
     Result genreOptionalSelected(GenreOptionalSelected value),
     Result languageSelected(LanguageSelected value),
     Result copyrightsSelected(CopyrightsSelected value),
+    Result isNSFWChanged(IsNSFWChanged value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1268,6 +1320,7 @@ class _$LanguageSelected implements LanguageSelected {
     @required Result genreOptionalSelected(String genreOptional),
     @required Result languageSelected(String language),
     @required Result copyrightsSelected(String copyrights),
+    @required Result isNSFWChanged(bool isNSFW),
   }) {
     assert(newSeriesPageLaunched != null);
     assert(createSeriesButtonPressed != null);
@@ -1278,6 +1331,7 @@ class _$LanguageSelected implements LanguageSelected {
     assert(genreOptionalSelected != null);
     assert(languageSelected != null);
     assert(copyrightsSelected != null);
+    assert(isNSFWChanged != null);
     return languageSelected(language);
   }
 
@@ -1293,6 +1347,7 @@ class _$LanguageSelected implements LanguageSelected {
     Result genreOptionalSelected(String genreOptional),
     Result languageSelected(String language),
     Result copyrightsSelected(String copyrights),
+    Result isNSFWChanged(bool isNSFW),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1314,6 +1369,7 @@ class _$LanguageSelected implements LanguageSelected {
     @required Result genreOptionalSelected(GenreOptionalSelected value),
     @required Result languageSelected(LanguageSelected value),
     @required Result copyrightsSelected(CopyrightsSelected value),
+    @required Result isNSFWChanged(IsNSFWChanged value),
   }) {
     assert(newSeriesPageLaunched != null);
     assert(createSeriesButtonPressed != null);
@@ -1324,6 +1380,7 @@ class _$LanguageSelected implements LanguageSelected {
     assert(genreOptionalSelected != null);
     assert(languageSelected != null);
     assert(copyrightsSelected != null);
+    assert(isNSFWChanged != null);
     return languageSelected(this);
   }
 
@@ -1339,6 +1396,7 @@ class _$LanguageSelected implements LanguageSelected {
     Result genreOptionalSelected(GenreOptionalSelected value),
     Result languageSelected(LanguageSelected value),
     Result copyrightsSelected(CopyrightsSelected value),
+    Result isNSFWChanged(IsNSFWChanged value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1423,6 +1481,7 @@ class _$CopyrightsSelected implements CopyrightsSelected {
     @required Result genreOptionalSelected(String genreOptional),
     @required Result languageSelected(String language),
     @required Result copyrightsSelected(String copyrights),
+    @required Result isNSFWChanged(bool isNSFW),
   }) {
     assert(newSeriesPageLaunched != null);
     assert(createSeriesButtonPressed != null);
@@ -1433,6 +1492,7 @@ class _$CopyrightsSelected implements CopyrightsSelected {
     assert(genreOptionalSelected != null);
     assert(languageSelected != null);
     assert(copyrightsSelected != null);
+    assert(isNSFWChanged != null);
     return copyrightsSelected(copyrights);
   }
 
@@ -1448,6 +1508,7 @@ class _$CopyrightsSelected implements CopyrightsSelected {
     Result genreOptionalSelected(String genreOptional),
     Result languageSelected(String language),
     Result copyrightsSelected(String copyrights),
+    Result isNSFWChanged(bool isNSFW),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1469,6 +1530,7 @@ class _$CopyrightsSelected implements CopyrightsSelected {
     @required Result genreOptionalSelected(GenreOptionalSelected value),
     @required Result languageSelected(LanguageSelected value),
     @required Result copyrightsSelected(CopyrightsSelected value),
+    @required Result isNSFWChanged(IsNSFWChanged value),
   }) {
     assert(newSeriesPageLaunched != null);
     assert(createSeriesButtonPressed != null);
@@ -1479,6 +1541,7 @@ class _$CopyrightsSelected implements CopyrightsSelected {
     assert(genreOptionalSelected != null);
     assert(languageSelected != null);
     assert(copyrightsSelected != null);
+    assert(isNSFWChanged != null);
     return copyrightsSelected(this);
   }
 
@@ -1494,6 +1557,7 @@ class _$CopyrightsSelected implements CopyrightsSelected {
     Result genreOptionalSelected(GenreOptionalSelected value),
     Result languageSelected(LanguageSelected value),
     Result copyrightsSelected(CopyrightsSelected value),
+    Result isNSFWChanged(IsNSFWChanged value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1509,6 +1573,166 @@ abstract class CopyrightsSelected implements NewSeriesDatabaseEvent {
 
   String get copyrights;
   $CopyrightsSelectedCopyWith<CopyrightsSelected> get copyWith;
+}
+
+abstract class $IsNSFWChangedCopyWith<$Res> {
+  factory $IsNSFWChangedCopyWith(
+          IsNSFWChanged value, $Res Function(IsNSFWChanged) then) =
+      _$IsNSFWChangedCopyWithImpl<$Res>;
+  $Res call({bool isNSFW});
+}
+
+class _$IsNSFWChangedCopyWithImpl<$Res>
+    extends _$NewSeriesDatabaseEventCopyWithImpl<$Res>
+    implements $IsNSFWChangedCopyWith<$Res> {
+  _$IsNSFWChangedCopyWithImpl(
+      IsNSFWChanged _value, $Res Function(IsNSFWChanged) _then)
+      : super(_value, (v) => _then(v as IsNSFWChanged));
+
+  @override
+  IsNSFWChanged get _value => super._value as IsNSFWChanged;
+
+  @override
+  $Res call({
+    Object isNSFW = freezed,
+  }) {
+    return _then(IsNSFWChanged(
+      isNSFW: isNSFW == freezed ? _value.isNSFW : isNSFW as bool,
+    ));
+  }
+}
+
+class _$IsNSFWChanged implements IsNSFWChanged {
+  const _$IsNSFWChanged({@required this.isNSFW}) : assert(isNSFW != null);
+
+  @override
+  final bool isNSFW;
+
+  @override
+  String toString() {
+    return 'NewSeriesDatabaseEvent.isNSFWChanged(isNSFW: $isNSFW)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is IsNSFWChanged &&
+            (identical(other.isNSFW, isNSFW) ||
+                const DeepCollectionEquality().equals(other.isNSFW, isNSFW)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(isNSFW);
+
+  @override
+  $IsNSFWChangedCopyWith<IsNSFWChanged> get copyWith =>
+      _$IsNSFWChangedCopyWithImpl<IsNSFWChanged>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result newSeriesPageLaunched(SeriesDraft seriesDraft),
+    @required Result createSeriesButtonPressed(),
+    @required Result titleChanged(String title),
+    @required Result subtitleChanged(String subtitle),
+    @required Result summaryChanged(String summary),
+    @required Result genreSelected(String genre),
+    @required Result genreOptionalSelected(String genreOptional),
+    @required Result languageSelected(String language),
+    @required Result copyrightsSelected(String copyrights),
+    @required Result isNSFWChanged(bool isNSFW),
+  }) {
+    assert(newSeriesPageLaunched != null);
+    assert(createSeriesButtonPressed != null);
+    assert(titleChanged != null);
+    assert(subtitleChanged != null);
+    assert(summaryChanged != null);
+    assert(genreSelected != null);
+    assert(genreOptionalSelected != null);
+    assert(languageSelected != null);
+    assert(copyrightsSelected != null);
+    assert(isNSFWChanged != null);
+    return isNSFWChanged(isNSFW);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result newSeriesPageLaunched(SeriesDraft seriesDraft),
+    Result createSeriesButtonPressed(),
+    Result titleChanged(String title),
+    Result subtitleChanged(String subtitle),
+    Result summaryChanged(String summary),
+    Result genreSelected(String genre),
+    Result genreOptionalSelected(String genreOptional),
+    Result languageSelected(String language),
+    Result copyrightsSelected(String copyrights),
+    Result isNSFWChanged(bool isNSFW),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (isNSFWChanged != null) {
+      return isNSFWChanged(isNSFW);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result newSeriesPageLaunched(NewSeriesPageLaunched value),
+    @required Result createSeriesButtonPressed(CreateSeriesButtonPressed value),
+    @required Result titleChanged(TitleChanged value),
+    @required Result subtitleChanged(SubtitleChanged value),
+    @required Result summaryChanged(SummaryChanged value),
+    @required Result genreSelected(GenreSelected value),
+    @required Result genreOptionalSelected(GenreOptionalSelected value),
+    @required Result languageSelected(LanguageSelected value),
+    @required Result copyrightsSelected(CopyrightsSelected value),
+    @required Result isNSFWChanged(IsNSFWChanged value),
+  }) {
+    assert(newSeriesPageLaunched != null);
+    assert(createSeriesButtonPressed != null);
+    assert(titleChanged != null);
+    assert(subtitleChanged != null);
+    assert(summaryChanged != null);
+    assert(genreSelected != null);
+    assert(genreOptionalSelected != null);
+    assert(languageSelected != null);
+    assert(copyrightsSelected != null);
+    assert(isNSFWChanged != null);
+    return isNSFWChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result newSeriesPageLaunched(NewSeriesPageLaunched value),
+    Result createSeriesButtonPressed(CreateSeriesButtonPressed value),
+    Result titleChanged(TitleChanged value),
+    Result subtitleChanged(SubtitleChanged value),
+    Result summaryChanged(SummaryChanged value),
+    Result genreSelected(GenreSelected value),
+    Result genreOptionalSelected(GenreOptionalSelected value),
+    Result languageSelected(LanguageSelected value),
+    Result copyrightsSelected(CopyrightsSelected value),
+    Result isNSFWChanged(IsNSFWChanged value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (isNSFWChanged != null) {
+      return isNSFWChanged(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class IsNSFWChanged implements NewSeriesDatabaseEvent {
+  const factory IsNSFWChanged({@required bool isNSFW}) = _$IsNSFWChanged;
+
+  bool get isNSFW;
+  $IsNSFWChangedCopyWith<IsNSFWChanged> get copyWith;
 }
 
 class _$NewSeriesDatabaseStateTearOff {
@@ -1546,6 +1770,8 @@ class _$NewSeriesDatabaseStateTearOff {
       @required
           String copyrightsStr,
       @required
+          bool isNSFW,
+      @required
           bool isCreating,
       @required
           bool showErrorMessages,
@@ -1568,6 +1794,7 @@ class _$NewSeriesDatabaseStateTearOff {
       languageStr: languageStr,
       copyrights: copyrights,
       copyrightsStr: copyrightsStr,
+      isNSFW: isNSFW,
       isCreating: isCreating,
       showErrorMessages: showErrorMessages,
       databaseFailureOrSuccessOption: databaseFailureOrSuccessOption,
@@ -1594,6 +1821,7 @@ mixin _$NewSeriesDatabaseState {
   String get languageStr;
   Copyrights get copyrights;
   String get copyrightsStr;
+  bool get isNSFW;
   bool get isCreating;
   bool get showErrorMessages;
   Option<Either<DatabaseFailure, dynamic>> get databaseFailureOrSuccessOption;
@@ -1621,6 +1849,7 @@ abstract class $NewSeriesDatabaseStateCopyWith<$Res> {
       String languageStr,
       Copyrights copyrights,
       String copyrightsStr,
+      bool isNSFW,
       bool isCreating,
       bool showErrorMessages,
       Option<Either<DatabaseFailure, dynamic>> databaseFailureOrSuccessOption});
@@ -1651,6 +1880,7 @@ class _$NewSeriesDatabaseStateCopyWithImpl<$Res>
     Object languageStr = freezed,
     Object copyrights = freezed,
     Object copyrightsStr = freezed,
+    Object isNSFW = freezed,
     Object isCreating = freezed,
     Object showErrorMessages = freezed,
     Object databaseFailureOrSuccessOption = freezed,
@@ -1687,6 +1917,7 @@ class _$NewSeriesDatabaseStateCopyWithImpl<$Res>
       copyrightsStr: copyrightsStr == freezed
           ? _value.copyrightsStr
           : copyrightsStr as String,
+      isNSFW: isNSFW == freezed ? _value.isNSFW : isNSFW as bool,
       isCreating:
           isCreating == freezed ? _value.isCreating : isCreating as bool,
       showErrorMessages: showErrorMessages == freezed
@@ -1722,6 +1953,7 @@ abstract class _$NewSeriesDatabaseStateCopyWith<$Res>
       String languageStr,
       Copyrights copyrights,
       String copyrightsStr,
+      bool isNSFW,
       bool isCreating,
       bool showErrorMessages,
       Option<Either<DatabaseFailure, dynamic>> databaseFailureOrSuccessOption});
@@ -1754,6 +1986,7 @@ class __$NewSeriesDatabaseStateCopyWithImpl<$Res>
     Object languageStr = freezed,
     Object copyrights = freezed,
     Object copyrightsStr = freezed,
+    Object isNSFW = freezed,
     Object isCreating = freezed,
     Object showErrorMessages = freezed,
     Object databaseFailureOrSuccessOption = freezed,
@@ -1790,6 +2023,7 @@ class __$NewSeriesDatabaseStateCopyWithImpl<$Res>
       copyrightsStr: copyrightsStr == freezed
           ? _value.copyrightsStr
           : copyrightsStr as String,
+      isNSFW: isNSFW == freezed ? _value.isNSFW : isNSFW as bool,
       isCreating:
           isCreating == freezed ? _value.isCreating : isCreating as bool,
       showErrorMessages: showErrorMessages == freezed
@@ -1820,6 +2054,7 @@ class _$_NewSeriesDatabaseState implements _NewSeriesDatabaseState {
       @required this.languageStr,
       @required this.copyrights,
       @required this.copyrightsStr,
+      @required this.isNSFW,
       @required this.isCreating,
       @required this.showErrorMessages,
       @required this.databaseFailureOrSuccessOption})
@@ -1838,6 +2073,7 @@ class _$_NewSeriesDatabaseState implements _NewSeriesDatabaseState {
         assert(languageStr != null),
         assert(copyrights != null),
         assert(copyrightsStr != null),
+        assert(isNSFW != null),
         assert(isCreating != null),
         assert(showErrorMessages != null),
         assert(databaseFailureOrSuccessOption != null);
@@ -1873,6 +2109,8 @@ class _$_NewSeriesDatabaseState implements _NewSeriesDatabaseState {
   @override
   final String copyrightsStr;
   @override
+  final bool isNSFW;
+  @override
   final bool isCreating;
   @override
   final bool showErrorMessages;
@@ -1881,7 +2119,7 @@ class _$_NewSeriesDatabaseState implements _NewSeriesDatabaseState {
 
   @override
   String toString() {
-    return 'NewSeriesDatabaseState(seriesDraft: $seriesDraft, title: $title, titleWordCount: $titleWordCount, subtitle: $subtitle, subtitleWordCount: $subtitleWordCount, summary: $summary, summaryWordCount: $summaryWordCount, genre: $genre, genreStr: $genreStr, genreOptional: $genreOptional, genreOptionalStr: $genreOptionalStr, language: $language, languageStr: $languageStr, copyrights: $copyrights, copyrightsStr: $copyrightsStr, isCreating: $isCreating, showErrorMessages: $showErrorMessages, databaseFailureOrSuccessOption: $databaseFailureOrSuccessOption)';
+    return 'NewSeriesDatabaseState(seriesDraft: $seriesDraft, title: $title, titleWordCount: $titleWordCount, subtitle: $subtitle, subtitleWordCount: $subtitleWordCount, summary: $summary, summaryWordCount: $summaryWordCount, genre: $genre, genreStr: $genreStr, genreOptional: $genreOptional, genreOptionalStr: $genreOptionalStr, language: $language, languageStr: $languageStr, copyrights: $copyrights, copyrightsStr: $copyrightsStr, isNSFW: $isNSFW, isCreating: $isCreating, showErrorMessages: $showErrorMessages, databaseFailureOrSuccessOption: $databaseFailureOrSuccessOption)';
   }
 
   @override
@@ -1931,6 +2169,8 @@ class _$_NewSeriesDatabaseState implements _NewSeriesDatabaseState {
             (identical(other.copyrightsStr, copyrightsStr) ||
                 const DeepCollectionEquality()
                     .equals(other.copyrightsStr, copyrightsStr)) &&
+            (identical(other.isNSFW, isNSFW) ||
+                const DeepCollectionEquality().equals(other.isNSFW, isNSFW)) &&
             (identical(other.isCreating, isCreating) ||
                 const DeepCollectionEquality()
                     .equals(other.isCreating, isCreating)) &&
@@ -1962,6 +2202,7 @@ class _$_NewSeriesDatabaseState implements _NewSeriesDatabaseState {
       const DeepCollectionEquality().hash(languageStr) ^
       const DeepCollectionEquality().hash(copyrights) ^
       const DeepCollectionEquality().hash(copyrightsStr) ^
+      const DeepCollectionEquality().hash(isNSFW) ^
       const DeepCollectionEquality().hash(isCreating) ^
       const DeepCollectionEquality().hash(showErrorMessages) ^
       const DeepCollectionEquality().hash(databaseFailureOrSuccessOption);
@@ -2005,6 +2246,8 @@ abstract class _NewSeriesDatabaseState implements NewSeriesDatabaseState {
       @required
           String copyrightsStr,
       @required
+          bool isNSFW,
+      @required
           bool isCreating,
       @required
           bool showErrorMessages,
@@ -2042,6 +2285,8 @@ abstract class _NewSeriesDatabaseState implements NewSeriesDatabaseState {
   Copyrights get copyrights;
   @override
   String get copyrightsStr;
+  @override
+  bool get isNSFW;
   @override
   bool get isCreating;
   @override

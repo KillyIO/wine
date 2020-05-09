@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:hive/hive.dart';
 
 part 'series_draft.g.dart';
@@ -33,6 +31,9 @@ class SeriesDraft extends HiveObject {
   @HiveField(8)
   String copyrights;
 
+  @HiveField(9)
+  bool isNSFW;
+
   SeriesDraft({
     this.uid,
     this.authorUid,
@@ -43,6 +44,7 @@ class SeriesDraft extends HiveObject {
     this.genreOptional,
     this.language,
     this.copyrights,
+    this.isNSFW,
   });
 
   SeriesDraft copyWith({
@@ -55,6 +57,7 @@ class SeriesDraft extends HiveObject {
     String genreOptional,
     String language,
     String copyrights,
+    bool isNSFW,
   }) {
     return SeriesDraft(
       uid: uid ?? this.uid,
@@ -66,6 +69,7 @@ class SeriesDraft extends HiveObject {
       genreOptional: genreOptional ?? this.genreOptional,
       language: language ?? this.language,
       copyrights: copyrights ?? this.copyrights,
+      isNSFW: isNSFW ?? this.isNSFW,
     );
   }
 
@@ -80,6 +84,7 @@ class SeriesDraft extends HiveObject {
       'genreOptional': genreOptional,
       'language': language,
       'copyrights': copyrights,
+      'isNSFW': isNSFW,
     };
   }
 
@@ -96,12 +101,13 @@ class SeriesDraft extends HiveObject {
       genreOptional: map['genreOptional'] as String,
       language: map['language'] as String,
       copyrights: map['copyrights'] as String,
+      isNSFW: map['isNSFW'] as bool,
     );
   }
 
   @override
   String toString() {
-    return 'SeriesDraft(uid: $uid, authorUid: $authorUid, title: $title, subtitle: $subtitle, summary: $summary, genre: $genre, genreOptional: $genreOptional, language: $language, copyrights: $copyrights)';
+    return 'SeriesDraft(uid: $uid, authorUid: $authorUid, title: $title, subtitle: $subtitle, summary: $summary, genre: $genre, genreOptional: $genreOptional, language: $language, copyrights: $copyrights, isNSFW: $isNSFW)';
   }
 
   @override
@@ -109,27 +115,29 @@ class SeriesDraft extends HiveObject {
     if (identical(this, o)) return true;
 
     return o is SeriesDraft &&
-      o.uid == uid &&
-      o.authorUid == authorUid &&
-      o.title == title &&
-      o.subtitle == subtitle &&
-      o.summary == summary &&
-      o.genre == genre &&
-      o.genreOptional == genreOptional &&
-      o.language == language &&
-      o.copyrights == copyrights;
+        o.uid == uid &&
+        o.authorUid == authorUid &&
+        o.title == title &&
+        o.subtitle == subtitle &&
+        o.summary == summary &&
+        o.genre == genre &&
+        o.genreOptional == genreOptional &&
+        o.language == language &&
+        o.copyrights == copyrights &&
+        o.isNSFW == isNSFW;
   }
 
   @override
   int get hashCode {
     return uid.hashCode ^
-      authorUid.hashCode ^
-      title.hashCode ^
-      subtitle.hashCode ^
-      summary.hashCode ^
-      genre.hashCode ^
-      genreOptional.hashCode ^
-      language.hashCode ^
-      copyrights.hashCode;
+        authorUid.hashCode ^
+        title.hashCode ^
+        subtitle.hashCode ^
+        summary.hashCode ^
+        genre.hashCode ^
+        genreOptional.hashCode ^
+        language.hashCode ^
+        copyrights.hashCode ^
+        isNSFW.hashCode;
   }
 }
