@@ -5,7 +5,7 @@ import 'package:wine/application/authentication/sign_in/sign_in_authentication_b
 import 'package:wine/application/database/sign_in/sign_in_database_bloc.dart';
 import 'package:wine/injection.dart';
 import 'package:wine/presentation/pages/sign_in/widgets/sign_in_form.dart';
-import 'package:wine/presentation/widgets/image_back_button.dart';
+import 'package:wine/presentation/widgets/wine_image_back_button.dart';
 import 'package:wine/utils/themes.dart';
 
 class SignInPage extends StatelessWidget {
@@ -32,7 +32,7 @@ class SignInPage extends StatelessWidget {
             leading: Padding(
               padding:
                   const EdgeInsets.symmetric(horizontal: 10.0, vertical: 5.0),
-              child: ImageBackButton(
+              child: WINEImageBackButton(
                 onPressed: () {
                   FocusScope.of(context).requestFocus(FocusNode());
                   Navigator.of(context).pop();

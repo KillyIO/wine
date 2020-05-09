@@ -10,7 +10,7 @@ import 'package:wine/domain/models/user.dart';
 import 'package:wine/presentation/pages/sign_in/widgets/sign_in_create_account_button.dart';
 import 'package:wine/presentation/pages/sign_in/widgets/sign_in_separator.dart';
 import 'package:wine/presentation/pages/sign_in/widgets/sign_in_social_media_button.dart';
-import 'package:wine/presentation/widgets/custom_show_dialog.dart';
+import 'package:wine/presentation/widgets/wine_show_dialog.dart';
 import 'package:wine/presentation/widgets/wine_error_dialog.dart';
 import 'package:wine/routes.dart';
 import 'package:wine/utils/constants.dart';
@@ -32,14 +32,14 @@ class _SignInFormState extends State<SignInForm> with TickerProviderStateMixin {
               () {},
               (some) => some.fold(
                 (failure) => failure.maybeMap(
-                  serverError: (_) => customShowDialog(
+                  serverError: (_) => wineShowDialog(
                     context: context,
                     builder: (_) => WINEErrorDialog(
                       message: 'An unexpected error occured!',
                       onPressed: () => Navigator.of(context).pop(true),
                     ),
                   ),
-                  invalidEmailAndPasswordCombination: (_) => customShowDialog(
+                  invalidEmailAndPasswordCombination: (_) => wineShowDialog(
                     context: context,
                     builder: (_) => WINEErrorDialog(
                       message: 'Incorrect email or password.',
@@ -64,7 +64,7 @@ class _SignInFormState extends State<SignInForm> with TickerProviderStateMixin {
             state.databaseFailureOrSuccessOption.fold(
               () {},
               (some) => some.fold(
-                (failure) => customShowDialog(
+                (failure) => wineShowDialog(
                   context: context,
                   builder: (_) => WINEErrorDialog(
                     message: 'An unexpected error occured!',

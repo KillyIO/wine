@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:wine/presentation/widgets/image_back_button.dart';
+import 'package:wine/presentation/widgets/wine_image_back_button.dart';
 import 'package:wine/utils/palettes.dart';
 import 'package:wine/utils/themes.dart';
 
@@ -27,7 +27,7 @@ class GenresPage extends StatelessWidget {
             elevation: 0.0,
             leading: Padding(
               padding: const EdgeInsets.only(bottom: 5.0, left: 10.0, top: 5.0),
-              child: ImageBackButton(
+              child: WINEImageBackButton(
                 onPressed: () => Navigator.of(context).pop(),
                 color: Colors.black,
               ),

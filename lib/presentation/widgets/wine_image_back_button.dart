@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-class ImageBackButton extends StatelessWidget {
+class WINEImageBackButton extends StatelessWidget {
   final VoidCallback onPressed;
   final Color color;
 
-  const ImageBackButton({
+  const WINEImageBackButton({
     Key key,
     this.onPressed,
     this.color,

@@ -7,7 +7,7 @@ import 'package:wine/domain/models/user.dart';
 import 'package:wine/presentation/pages/create_account/widgets/create_account_button.dart';
 import 'package:wine/presentation/pages/create_account/widgets/create_account_textfield_label.dart';
 import 'package:wine/presentation/pages/create_account/widgets/create_account_tos_and_pp_button.dart';
-import 'package:wine/presentation/widgets/custom_show_dialog.dart';
+import 'package:wine/presentation/widgets/wine_show_dialog.dart';
 import 'package:wine/presentation/widgets/wine_error_dialog.dart';
 import 'package:wine/routes.dart';
 import 'package:wine/utils/constants.dart';
@@ -50,21 +50,21 @@ class _CreateAccountFormState extends State<CreateAccountForm>
               () {},
               (some) => some.fold(
                 (failure) => failure.maybeMap(
-                  serverError: (_) => customShowDialog(
+                  serverError: (_) => wineShowDialog(
                     context: context,
                     builder: (_) => WINEErrorDialog(
                       message: 'An unexpected error occured!',
                       onPressed: () => Navigator.of(context).pop(true),
                     ),
                   ),
-                  emailAlreadyInUse: (_) => customShowDialog(
+                  emailAlreadyInUse: (_) => wineShowDialog(
                     context: context,
                     builder: (_) => WINEErrorDialog(
                       message: 'The email address entered is already in use.',
                       onPressed: () => Navigator.of(context).pop(true),
                     ),
                   ),
-                  usernameAlreadyInUse: (_) => customShowDialog(
+                  usernameAlreadyInUse: (_) => wineShowDialog(
                     context: context,
                     builder: (_) => WINEErrorDialog(
                       message: 'The username entered is already in use.',
@@ -89,7 +89,7 @@ class _CreateAccountFormState extends State<CreateAccountForm>
             state.databaseFailureOrSuccessOption.fold(
               () {},
               (some) => some.fold(
-                (failure) => customShowDialog(
+                (failure) => wineShowDialog(
                   context: context,
                   builder: (_) => WINEErrorDialog(
                     message: 'An unexpected error occured!',

@@ -8,9 +8,9 @@ import 'package:wine/application/navigation/home/home_navigation_bloc.dart';
 import 'package:wine/application/outlier/settings/settings_outlier_bloc.dart';
 import 'package:wine/presentation/pages/settings/widgets/account_settings.dart';
 import 'package:wine/presentation/pages/settings/widgets/app_version.dart';
-import 'package:wine/presentation/widgets/custom_show_dialog.dart';
+import 'package:wine/presentation/widgets/wine_show_dialog.dart';
 import 'package:wine/presentation/widgets/wine_error_dialog.dart';
-import 'package:wine/presentation/widgets/image_back_button.dart';
+import 'package:wine/presentation/widgets/wine_image_back_button.dart';
 import 'package:wine/routes.dart';
 import 'package:wine/utils/constants.dart';
 import 'package:wine/utils/palettes.dart';
@@ -45,7 +45,7 @@ class _SettingsLayoutState extends State<SettingsLayout>
               horizontal: 10.0,
               vertical: 5.0,
             ),
-            child: ImageBackButton(
+            child: WINEImageBackButton(
               onPressed: () => Navigator.of(context).pop(),
               color: Colors.black,
             ),
@@ -68,14 +68,14 @@ class _SettingsLayoutState extends State<SettingsLayout>
                 () {},
                 (some) => some.fold(
                   (failure) => failure.maybeMap(
-                    serverError: (_) => customShowDialog(
+                    serverError: (_) => wineShowDialog(
                       context: context,
                       builder: (_) => WINEErrorDialog(
                         message: 'An unexpected error occured!',
                         onPressed: () => Navigator.of(context).pop(true),
                       ),
                     ),
-                    unableToSignOut: (_) => customShowDialog(
+                    unableToSignOut: (_) => wineShowDialog(
                       context: context,
                       builder: (_) => WINEErrorDialog(
                         message:
