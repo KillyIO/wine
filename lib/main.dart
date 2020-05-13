@@ -18,7 +18,8 @@ Future<void> main() async {
   runApp(MultiBlocProvider(
     providers: [
       BlocProvider<CoreAuthenticationBloc>(
-        create: (_) => getIt<CoreAuthenticationBloc>(),
+        create: (_) => getIt<CoreAuthenticationBloc>()
+          ..add(const CoreAuthenticationEvent.appLaunched()),
       ),
       BlocProvider(
         create: (context) => getIt<HomeNavigationBloc>(),

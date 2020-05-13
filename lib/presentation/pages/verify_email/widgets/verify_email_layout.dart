@@ -39,7 +39,7 @@ class VerifyEmailLayout extends StatelessWidget {
                     const SizedBox(height: 25),
                     RichText(
                       text: TextSpan(
-                        style: TextStyle(
+                        style: const TextStyle(
                           color: Colors.black,
                           fontSize: 16.0,
                         ),
@@ -80,7 +80,7 @@ class VerifyEmailLayout extends StatelessWidget {
                         );
                         context.bloc<CoreAuthenticationBloc>().add(
                             const CoreAuthenticationEvent
-                                .getUserAnonymousStatus());
+                                .authenticationChanged());
                         context.bloc<HomeNavigationBloc>().add(
                             const HomeNavigationEvent
                                 .resetHomeNavigationBloc());

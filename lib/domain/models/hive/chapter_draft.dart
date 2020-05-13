@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:hive/hive.dart';
 
 part 'chapter_draft.g.dart';
@@ -22,7 +20,7 @@ class ChapterDraft extends HiveObject {
   String title;
 
   @HiveField(5)
-  String content;
+  String story;
 
   @HiveField(6)
   int index;
@@ -31,7 +29,13 @@ class ChapterDraft extends HiveObject {
   String language;
 
   @HiveField(8)
+  String copyrights;
+
+  @HiveField(9)
   bool isNSFW;
+
+  @HiveField(10)
+  bool isEnd;
 
   ChapterDraft({
     this.uid,
@@ -39,10 +43,12 @@ class ChapterDraft extends HiveObject {
     this.previousChapterUid,
     this.authorUid,
     this.title,
-    this.content,
+    this.story,
     this.index,
     this.language,
+    this.copyrights,
     this.isNSFW,
+    this.isEnd,
   });
 
   ChapterDraft copyWith({
@@ -51,10 +57,12 @@ class ChapterDraft extends HiveObject {
     String previousChapterUid,
     String authorUid,
     String title,
-    String content,
+    String story,
     int index,
     String language,
+    String copyrights,
     bool isNSFW,
+    bool isEnd,
   }) {
     return ChapterDraft(
       uid: uid ?? this.uid,
@@ -62,10 +70,12 @@ class ChapterDraft extends HiveObject {
       previousChapterUid: previousChapterUid ?? this.previousChapterUid,
       authorUid: authorUid ?? this.authorUid,
       title: title ?? this.title,
-      content: content ?? this.content,
+      story: story ?? this.story,
       index: index ?? this.index,
       language: language ?? this.language,
+      copyrights: copyrights ?? this.copyrights,
       isNSFW: isNSFW ?? this.isNSFW,
+      isEnd: isEnd ?? this.isEnd,
     );
   }
 
@@ -76,10 +86,12 @@ class ChapterDraft extends HiveObject {
       'previousChapterUid': previousChapterUid,
       'authorUid': authorUid,
       'title': title,
-      'content': content,
+      'story': story,
       'index': index,
       'language': language,
+      'copyrights': copyrights,
       'isNSFW': isNSFW,
+      'isEnd': isEnd,
     };
   }
 
@@ -92,16 +104,18 @@ class ChapterDraft extends HiveObject {
       previousChapterUid: map['previousChapterUid'] as String,
       authorUid: map['authorUid'] as String,
       title: map['title'] as String,
-      content: map['content'] as String,
+      story: map['story'] as String,
       index: map['index'] as int,
       language: map['language'] as String,
+      copyrights: map['copyrights'] as String,
       isNSFW: map['isNSFW'] as bool,
+      isEnd: map['isEnd'] as bool,
     );
   }
 
   @override
   String toString() {
-    return 'ChapterDraft(uid: $uid, seriesUid: $seriesUid, previousChapterUid: $previousChapterUid, authorUid: $authorUid, title: $title, content: $content, index: $index, language: $language, isNSFW: $isNSFW)';
+    return 'ChapterDraft(uid: $uid, seriesUid: $seriesUid, previousChapterUid: $previousChapterUid, authorUid: $authorUid, title: $title, story: $story, index: $index, language: $language, copyrights: $copyrights, isNSFW: $isNSFW, isEnd: $isEnd)';
   }
 
   @override
@@ -109,27 +123,31 @@ class ChapterDraft extends HiveObject {
     if (identical(this, o)) return true;
 
     return o is ChapterDraft &&
-        o.uid == uid &&
-        o.seriesUid == seriesUid &&
-        o.previousChapterUid == previousChapterUid &&
-        o.authorUid == authorUid &&
-        o.title == title &&
-        o.content == content &&
-        o.index == index &&
-        o.language == language &&
-        o.isNSFW == isNSFW;
+      o.uid == uid &&
+      o.seriesUid == seriesUid &&
+      o.previousChapterUid == previousChapterUid &&
+      o.authorUid == authorUid &&
+      o.title == title &&
+      o.story == story &&
+      o.index == index &&
+      o.language == language &&
+      o.copyrights == copyrights &&
+      o.isNSFW == isNSFW &&
+      o.isEnd == isEnd;
   }
 
   @override
   int get hashCode {
     return uid.hashCode ^
-        seriesUid.hashCode ^
-        previousChapterUid.hashCode ^
-        authorUid.hashCode ^
-        title.hashCode ^
-        content.hashCode ^
-        index.hashCode ^
-        language.hashCode ^
-        isNSFW.hashCode;
+      seriesUid.hashCode ^
+      previousChapterUid.hashCode ^
+      authorUid.hashCode ^
+      title.hashCode ^
+      story.hashCode ^
+      index.hashCode ^
+      language.hashCode ^
+      copyrights.hashCode ^
+      isNSFW.hashCode ^
+      isEnd.hashCode;
   }
 }

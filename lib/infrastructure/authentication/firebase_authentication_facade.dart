@@ -60,10 +60,10 @@ class FirebaseAuthenticationFacade implements IAuthenticationFacade {
   }
 
   @override
-  Future<bool> isAnonymous() async {
+  Future<Either<AuthenticationFailure, bool>> isAnonymous() async {
     final FirebaseUser currentUser = await _firebaseAuth.currentUser();
 
-    return currentUser != null && currentUser.isAnonymous;
+    return right(currentUser != null && currentUser.isAnonymous);
   }
 
   @override
@@ -84,17 +84,21 @@ class FirebaseAuthenticationFacade implements IAuthenticationFacade {
   }
 
   @override
-  Future<bool> isSignedIn() async {
+  Future<Either<AuthenticationFailure, bool>> isSignedIn() async {
     final FirebaseUser currentUser = await _firebaseAuth.currentUser();
 
-    return currentUser != null;
+    return right(currentUser != null);
   }
 
   @override
-  Future<void> resendVerificationEmail() async {
+  Future<Either<AuthenticationFailure, Unit>> resendVerificationEmail() async {
     final FirebaseUser currentUser = await _firebaseAuth.currentUser();
 
-    await currentUser.sendEmailVerification();
+    if (currentUser != null) {
+      await currentUser.sendEmailVerification();
+      return right(unit);
+    }
+    return left(const AuthenticationFailure.serverError());
   }
 
   @override

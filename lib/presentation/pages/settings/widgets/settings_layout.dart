@@ -83,31 +83,54 @@ class _SettingsLayoutState extends State<SettingsLayout>
                         onPressed: () => Navigator.of(context).pop(true),
                       ),
                     ),
-                    orElse: () {},
+                    orElse: null,
                   ),
-                  (right) => context
-                      .bloc<SettingsDatabaseBloc>()
-                      .add(const SettingsDatabaseEvent.userSignedOut()),
+                  (success) {
+                    if (state.isUserSignedOut) {
+                      context
+                          .bloc<SettingsDatabaseBloc>()
+                          .add(const SettingsDatabaseEvent.userSignedOut());
+                    }
+                  },
                 ),
               );
             },
           ),
           BlocListener<SettingsDatabaseBloc, SettingsDatabaseState>(
             listener: (context, state) {
-              if (state.isSessionDeleted) {
-                sailor.navigate(
-                  Constants.homeRoute,
-                  navigationType: NavigationType.pushAndRemoveUntil,
-                  removeUntilPredicate: (_) => false,
-                );
-                context.bloc<SettingsDatabaseBloc>().add(
-                    const SettingsDatabaseEvent.resetSettingsDatabaseBloc());
-                context.bloc<CoreAuthenticationBloc>().add(
-                    const CoreAuthenticationEvent.getUserAnonymousStatus());
-                context
-                    .bloc<HomeNavigationBloc>()
-                    .add(const HomeNavigationEvent.resetHomeNavigationBloc());
-              }
+              state.databaseFailureOrSuccessOption.fold(
+                () {},
+                (some) => some.fold(
+                  (failure) => failure.maybeMap(
+                    failedToDeleteLocalData: (_) => wineShowDialog(
+                      context: context,
+                      builder: (_) => WINEErrorDialog(
+                        message:
+                            'Failed to clear data on your device! Please retry.',
+                        onPressed: () => Navigator.of(context).pop(true),
+                      ),
+                    ),
+                    orElse: null,
+                  ),
+                  (success) {
+                    if (state.isSessionDeleted) {
+                      sailor.navigate(
+                        Constants.homeRoute,
+                        navigationType: NavigationType.pushAndRemoveUntil,
+                        removeUntilPredicate: (_) => false,
+                      );
+                      context.bloc<SettingsDatabaseBloc>().add(
+                          const SettingsDatabaseEvent
+                              .resetSettingsDatabaseBloc());
+                      context.bloc<CoreAuthenticationBloc>().add(
+                          const CoreAuthenticationEvent
+                              .authenticationChanged());
+                      context.bloc<HomeNavigationBloc>().add(
+                          const HomeNavigationEvent.resetHomeNavigationBloc());
+                    }
+                  },
+                ),
+              );
             },
           ),
         ],

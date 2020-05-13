@@ -7,4 +7,5 @@ class Palettes {
   static const Color darkCyanBlue = Color(0xFF37465B);
   static const Color darkCobaltBlue = Color(0xFF212B38);
   static const Color error = Color(0xFFe60000);
+  static const Color info = Color(0xFF3282b8);
 }

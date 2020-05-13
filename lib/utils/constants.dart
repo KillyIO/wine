@@ -32,6 +32,8 @@ class Constants {
   static const int seriesTitleMaxWords = 10;
   static const int seriesSubtitleMaxWords = 10;
   static const int seriesSummaryMaxWords = 200;
-  static const int chapterMinWords = 500;
-  static const int chapterMaxWords = 10000;
+
+  static const int chapterTitleMaxWords = 10;
+  static const int chapterStoryMinWords = 500;
+  static const int chapterStoryMaxWords = 10000;
 }

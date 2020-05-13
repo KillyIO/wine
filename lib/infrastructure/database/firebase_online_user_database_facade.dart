@@ -3,7 +3,6 @@ import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
 import 'package:wine/domain/database/database_failure.dart';
 import 'package:wine/domain/database/i_online_user_database_facade.dart';
-import 'package:wine/domain/models/series.dart';
 import 'package:wine/domain/models/user.dart';
 import 'package:wine/utils/paths.dart';
 
@@ -13,19 +12,6 @@ class FirebaseOnlineUserDatabaseFacade extends IOnlineUserDatabaseFacade {
   final Firestore _firestore;
 
   FirebaseOnlineUserDatabaseFacade(this._firestore);
-
-  @override
-  Future<Either<DatabaseFailure, User>> getUser(String sessionUid) async {
-    final DocumentReference ref =
-        _firestore.collection(Paths.usersPath).document(sessionUid);
-
-    final DocumentSnapshot snapshot = await ref.get();
-    if (snapshot != null && snapshot.exists) {
-      final User user = User.fromFirestore(snapshot);
-      return right(user);
-    }
-    return left(const DatabaseFailure.failedToRetrieveUserData());
-  }
 
   @override
   Future<Either<DatabaseFailure, User>> saveDetailsFromUser(User user) async {
@@ -59,15 +45,15 @@ class FirebaseOnlineUserDatabaseFacade extends IOnlineUserDatabaseFacade {
   }
 
   @override
-  Future<Either<DatabaseFailure, Series>> createSeries(Series series) async {
+  Future<Either<DatabaseFailure, User>> getUser(String sessionUid) async {
     final DocumentReference ref =
-        _firestore.collection(Paths.seriesPath).document(series.uid);
+        _firestore.collection(Paths.usersPath).document(sessionUid);
 
-    series
-      ..createdAt = DateTime.now().millisecondsSinceEpoch
-      ..updatedAt = DateTime.now().millisecondsSinceEpoch;
-
-    await ref.setData(series.toMap(), merge: true);
-    return right(series);
+    final DocumentSnapshot snapshot = await ref.get();
+    if (snapshot != null && snapshot.exists) {
+      final User user = User.fromFirestore(snapshot);
+      return right(user);
+    }
+    return left(const DatabaseFailure.failedToFetchOnlineData());
   }
 }

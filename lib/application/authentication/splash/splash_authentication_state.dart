@@ -6,7 +6,7 @@ abstract class SplashAuthenticationState with _$SplashAuthenticationState {
     @required bool isAuthenticating,
     @required bool isAnonymous,
     @required
-        Option<Either<AuthenticationFailure, Unit>>
+        Option<Either<AuthenticationFailure, dynamic>>
             authenticationFailureOrSuccessOption,
   }) = _SplashAuthenticationState;
 

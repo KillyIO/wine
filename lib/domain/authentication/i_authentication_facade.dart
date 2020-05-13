@@ -11,12 +11,12 @@ abstract class IAuthenticationFacade {
     @required EmailAddress emailAddress,
     @required Password password,
   });
-  Future<bool> isAnonymous();
+  Future<Either<AuthenticationFailure, bool>> isAnonymous();
   Future<Either<AuthenticationFailure, Unit>> isUsernameAvailable({
     @required Username username,
   });
-  Future<bool> isSignedIn();
-  Future<void> resendVerificationEmail();
+  Future<Either<AuthenticationFailure, bool>> isSignedIn();
+  Future<Either<AuthenticationFailure, Unit>> resendVerificationEmail();
   Future<Either<AuthenticationFailure, Unit>> signInAnonymously();
   Future<Either<AuthenticationFailure, User>> signInWithEmailAndPassword({
     @required EmailAddress emailAddress,

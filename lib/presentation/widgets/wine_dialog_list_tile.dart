@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
-class NewSeriesListTile extends StatelessWidget {
+class WINEDialogListTile extends StatelessWidget {
   final bool hasSelected;
   final VoidCallback onPressed;
   final String title;
   final String trailingText;
 
-  const NewSeriesListTile({
+  const WINEDialogListTile({
     Key key,
     this.hasSelected,
     this.onPressed,

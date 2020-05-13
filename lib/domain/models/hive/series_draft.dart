@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:hive/hive.dart';
 
 part 'series_draft.g.dart';
@@ -29,10 +31,10 @@ class SeriesDraft extends HiveObject {
   String language;
 
   @HiveField(8)
-  String copyrights;
+  bool isNSFW;
 
   @HiveField(9)
-  bool isNSFW;
+  String thumbnailPath;
 
   SeriesDraft({
     this.uid,
@@ -43,8 +45,8 @@ class SeriesDraft extends HiveObject {
     this.genre,
     this.genreOptional,
     this.language,
-    this.copyrights,
     this.isNSFW,
+    this.thumbnailPath,
   });
 
   SeriesDraft copyWith({
@@ -56,8 +58,8 @@ class SeriesDraft extends HiveObject {
     String genre,
     String genreOptional,
     String language,
-    String copyrights,
     bool isNSFW,
+    String thumbnailPath,
   }) {
     return SeriesDraft(
       uid: uid ?? this.uid,
@@ -68,8 +70,8 @@ class SeriesDraft extends HiveObject {
       genre: genre ?? this.genre,
       genreOptional: genreOptional ?? this.genreOptional,
       language: language ?? this.language,
-      copyrights: copyrights ?? this.copyrights,
       isNSFW: isNSFW ?? this.isNSFW,
+      thumbnailPath: thumbnailPath ?? this.thumbnailPath,
     );
   }
 
@@ -83,8 +85,8 @@ class SeriesDraft extends HiveObject {
       'genre': genre,
       'genreOptional': genreOptional,
       'language': language,
-      'copyrights': copyrights,
       'isNSFW': isNSFW,
+      'thumbnailPath': thumbnailPath,
     };
   }
 
@@ -100,14 +102,14 @@ class SeriesDraft extends HiveObject {
       genre: map['genre'] as String,
       genreOptional: map['genreOptional'] as String,
       language: map['language'] as String,
-      copyrights: map['copyrights'] as String,
       isNSFW: map['isNSFW'] as bool,
+      thumbnailPath: map['thumbnailPath'] as String,
     );
   }
 
   @override
   String toString() {
-    return 'SeriesDraft(uid: $uid, authorUid: $authorUid, title: $title, subtitle: $subtitle, summary: $summary, genre: $genre, genreOptional: $genreOptional, language: $language, copyrights: $copyrights, isNSFW: $isNSFW)';
+    return 'SeriesDraft(uid: $uid, authorUid: $authorUid, title: $title, subtitle: $subtitle, summary: $summary, genre: $genre, genreOptional: $genreOptional, language: $language, isNSFW: $isNSFW, thumbnailPath: $thumbnailPath)';
   }
 
   @override
@@ -123,8 +125,8 @@ class SeriesDraft extends HiveObject {
         o.genre == genre &&
         o.genreOptional == genreOptional &&
         o.language == language &&
-        o.copyrights == copyrights &&
-        o.isNSFW == isNSFW;
+        o.isNSFW == isNSFW &&
+        o.thumbnailPath == thumbnailPath;
   }
 
   @override
@@ -137,7 +139,7 @@ class SeriesDraft extends HiveObject {
         genre.hashCode ^
         genreOptional.hashCode ^
         language.hashCode ^
-        copyrights.hashCode ^
-        isNSFW.hashCode;
+        isNSFW.hashCode ^
+        thumbnailPath.hashCode;
   }
 }

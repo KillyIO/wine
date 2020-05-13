@@ -49,7 +49,7 @@ class WINEErrorDialog extends StatelessWidget {
               ),
               child: Text(
                 message,
-                style: TextStyle(
+                style: const TextStyle(
                   color: Colors.black,
                   fontSize: 17.0,
                   fontWeight: FontWeight.w300,

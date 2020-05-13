@@ -7,7 +7,6 @@ import 'package:injectable/injectable.dart';
 import 'package:meta/meta.dart';
 import 'package:wine/domain/authentication/authentication_failure.dart';
 import 'package:wine/domain/authentication/i_authentication_facade.dart';
-import 'package:wine/domain/enums/account_status.dart';
 
 part 'splash_authentication_event.dart';
 part 'splash_authentication_state.dart';
@@ -31,8 +30,8 @@ class SplashAuthenticationBloc
   Stream<SplashAuthenticationState> mapEventToState(
     SplashAuthenticationEvent event,
   ) async* {
-    if (event is AppLaunched) {
-      Either<AuthenticationFailure, Unit> failureOrSuccess;
+    if (event is SplashLaunched) {
+      Either<AuthenticationFailure, dynamic> failureOrSuccess;
       bool isAnonymous;
 
       yield state.copyWith(
@@ -40,12 +39,33 @@ class SplashAuthenticationBloc
         authenticationFailureOrSuccessOption: none(),
       );
 
-      final isSignedIn = await _authenticationFacade.isSignedIn();
-      if (isSignedIn) {
-        isAnonymous = await _authenticationFacade.isAnonymous();
-      } else {
-        failureOrSuccess = await _authenticationFacade.signInAnonymously();
-        isAnonymous = true;
+      bool isSignedIn;
+
+      failureOrSuccess = await _authenticationFacade.isSignedIn();
+      failureOrSuccess.fold(
+        (_) {},
+        (success) {
+          if (success is bool) {
+            isSignedIn = success;
+          }
+        },
+      );
+
+      if (isSignedIn != null) {
+        if (isSignedIn) {
+          failureOrSuccess = await _authenticationFacade.isAnonymous();
+          failureOrSuccess.fold(
+            (_) {},
+            (success) {
+              if (success is bool) {
+                isAnonymous = success;
+              }
+            },
+          );
+        } else {
+          failureOrSuccess = await _authenticationFacade.signInAnonymously();
+          isAnonymous = true;
+        }
       }
 
       yield state.copyWith(

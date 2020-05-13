@@ -1,3 +1,5 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
+
 class Series {
   String uid;
   String authorUid;
@@ -7,7 +9,6 @@ class Series {
   String genre;
   String genreOptional;
   String language;
-  String copyrights;
   bool isNSFW;
   int createdAt;
   int updatedAt;
@@ -21,7 +22,6 @@ class Series {
     this.genre,
     this.genreOptional,
     this.language,
-    this.copyrights,
     this.isNSFW,
     this.createdAt,
     this.updatedAt,
@@ -36,7 +36,6 @@ class Series {
     String genre,
     String genreOptional,
     String language,
-    String copyrights,
     bool isNSFW,
     int createdAt,
     int updatedAt,
@@ -50,10 +49,26 @@ class Series {
       genre: genre ?? this.genre,
       genreOptional: genreOptional ?? this.genreOptional,
       language: language ?? this.language,
-      copyrights: copyrights ?? this.copyrights,
       isNSFW: isNSFW ?? this.isNSFW,
       createdAt: createdAt ?? this.createdAt,
       updatedAt: updatedAt ?? this.updatedAt,
+    );
+  }
+
+  factory Series.fromFirestore(DocumentSnapshot document) {
+    final Map<String, dynamic> data = document.data;
+    return Series(
+      uid: data['uid'] as String,
+      authorUid: data['authorUid'] as String,
+      title: data['title'] as String,
+      subtitle: data['subtitle'] as String,
+      summary: data['summary'] as String,
+      genre: data['genre'] as String,
+      genreOptional: data['genreOptional'] as String,
+      language: data['language'] as String,
+      isNSFW: data['isNSFW'] as bool,
+      createdAt: data['createdAt'] as int,
+      updatedAt: data['updatedAt'] as int,
     );
   }
 
@@ -67,7 +82,6 @@ class Series {
       'genre': genre,
       'genreOptional': genreOptional,
       'language': language,
-      'copyrights': copyrights,
       'isNSFW': isNSFW,
       'createdAt': createdAt,
       'updatedAt': updatedAt,
@@ -86,7 +100,6 @@ class Series {
       genre: map['genre'] as String,
       genreOptional: map['genreOptional'] as String,
       language: map['language'] as String,
-      copyrights: map['copyrights'] as String,
       isNSFW: map['isNSFW'] as bool,
       createdAt: map['createdAt'] as int,
       updatedAt: map['updatedAt'] as int,
@@ -95,7 +108,7 @@ class Series {
 
   @override
   String toString() {
-    return 'Series(uid: $uid, authorUid: $authorUid, title: $title, subtitle: $subtitle, summary: $summary, genre: $genre, genreOptional: $genreOptional, language: $language, copyrights: $copyrights, isNSFW: $isNSFW, createdAt: $createdAt, updatedAt: $updatedAt)';
+    return 'Series(uid: $uid, authorUid: $authorUid, title: $title, subtitle: $subtitle, summary: $summary, genre: $genre, genreOptional: $genreOptional, language: $language, isNSFW: $isNSFW, createdAt: $createdAt, updatedAt: $updatedAt)';
   }
 
   @override
@@ -111,7 +124,6 @@ class Series {
         o.genre == genre &&
         o.genreOptional == genreOptional &&
         o.language == language &&
-        o.copyrights == copyrights &&
         o.isNSFW == isNSFW &&
         o.createdAt == createdAt &&
         o.updatedAt == updatedAt;
@@ -127,7 +139,6 @@ class Series {
         genre.hashCode ^
         genreOptional.hashCode ^
         language.hashCode ^
-        copyrights.hashCode ^
         isNSFW.hashCode ^
         createdAt.hashCode ^
         updatedAt.hashCode;

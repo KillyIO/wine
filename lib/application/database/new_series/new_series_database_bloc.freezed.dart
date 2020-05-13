@@ -12,14 +12,12 @@ T _$identity<T>(T value) => value;
 class _$NewSeriesDatabaseEventTearOff {
   const _$NewSeriesDatabaseEventTearOff();
 
-  NewSeriesPageLaunched newSeriesPageLaunched({SeriesDraft seriesDraft}) {
+  NewSeriesPageLaunched newSeriesPageLaunched(
+      {SeriesDraft seriesDraft, BuildContext context}) {
     return NewSeriesPageLaunched(
       seriesDraft: seriesDraft,
+      context: context,
     );
-  }
-
-  CreateSeriesButtonPressed createSeriesButtonPressed() {
-    return const CreateSeriesButtonPressed();
   }
 
   TitleChanged titleChanged(String title) {
@@ -58,16 +56,14 @@ class _$NewSeriesDatabaseEventTearOff {
     );
   }
 
-  CopyrightsSelected copyrightsSelected(String copyrights) {
-    return CopyrightsSelected(
-      copyrights,
-    );
-  }
-
   IsNSFWChanged isNSFWChanged({@required bool isNSFW}) {
     return IsNSFWChanged(
       isNSFW: isNSFW,
     );
+  }
+
+  SaveSeriesDraftButtonPressed saveSeriesDraftButtonPressed() {
+    return const SaveSeriesDraftButtonPressed();
   }
 }
 
@@ -77,56 +73,55 @@ const $NewSeriesDatabaseEvent = _$NewSeriesDatabaseEventTearOff();
 mixin _$NewSeriesDatabaseEvent {
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result newSeriesPageLaunched(SeriesDraft seriesDraft),
-    @required Result createSeriesButtonPressed(),
+    @required
+        Result newSeriesPageLaunched(
+            SeriesDraft seriesDraft, BuildContext context),
     @required Result titleChanged(String title),
     @required Result subtitleChanged(String subtitle),
     @required Result summaryChanged(String summary),
     @required Result genreSelected(String genre),
     @required Result genreOptionalSelected(String genreOptional),
     @required Result languageSelected(String language),
-    @required Result copyrightsSelected(String copyrights),
     @required Result isNSFWChanged(bool isNSFW),
+    @required Result saveSeriesDraftButtonPressed(),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result newSeriesPageLaunched(SeriesDraft seriesDraft),
-    Result createSeriesButtonPressed(),
+    Result newSeriesPageLaunched(SeriesDraft seriesDraft, BuildContext context),
     Result titleChanged(String title),
     Result subtitleChanged(String subtitle),
     Result summaryChanged(String summary),
     Result genreSelected(String genre),
     Result genreOptionalSelected(String genreOptional),
     Result languageSelected(String language),
-    Result copyrightsSelected(String copyrights),
     Result isNSFWChanged(bool isNSFW),
+    Result saveSeriesDraftButtonPressed(),
     @required Result orElse(),
   });
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result newSeriesPageLaunched(NewSeriesPageLaunched value),
-    @required Result createSeriesButtonPressed(CreateSeriesButtonPressed value),
     @required Result titleChanged(TitleChanged value),
     @required Result subtitleChanged(SubtitleChanged value),
     @required Result summaryChanged(SummaryChanged value),
     @required Result genreSelected(GenreSelected value),
     @required Result genreOptionalSelected(GenreOptionalSelected value),
     @required Result languageSelected(LanguageSelected value),
-    @required Result copyrightsSelected(CopyrightsSelected value),
     @required Result isNSFWChanged(IsNSFWChanged value),
+    @required
+        Result saveSeriesDraftButtonPressed(SaveSeriesDraftButtonPressed value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result newSeriesPageLaunched(NewSeriesPageLaunched value),
-    Result createSeriesButtonPressed(CreateSeriesButtonPressed value),
     Result titleChanged(TitleChanged value),
     Result subtitleChanged(SubtitleChanged value),
     Result summaryChanged(SummaryChanged value),
     Result genreSelected(GenreSelected value),
     Result genreOptionalSelected(GenreOptionalSelected value),
     Result languageSelected(LanguageSelected value),
-    Result copyrightsSelected(CopyrightsSelected value),
     Result isNSFWChanged(IsNSFWChanged value),
+    Result saveSeriesDraftButtonPressed(SaveSeriesDraftButtonPressed value),
     @required Result orElse(),
   });
 }
@@ -150,7 +145,7 @@ abstract class $NewSeriesPageLaunchedCopyWith<$Res> {
   factory $NewSeriesPageLaunchedCopyWith(NewSeriesPageLaunched value,
           $Res Function(NewSeriesPageLaunched) then) =
       _$NewSeriesPageLaunchedCopyWithImpl<$Res>;
-  $Res call({SeriesDraft seriesDraft});
+  $Res call({SeriesDraft seriesDraft, BuildContext context});
 }
 
 class _$NewSeriesPageLaunchedCopyWithImpl<$Res>
@@ -166,24 +161,40 @@ class _$NewSeriesPageLaunchedCopyWithImpl<$Res>
   @override
   $Res call({
     Object seriesDraft = freezed,
+    Object context = freezed,
   }) {
     return _then(NewSeriesPageLaunched(
       seriesDraft: seriesDraft == freezed
           ? _value.seriesDraft
           : seriesDraft as SeriesDraft,
+      context: context == freezed ? _value.context : context as BuildContext,
     ));
   }
 }
 
-class _$NewSeriesPageLaunched implements NewSeriesPageLaunched {
-  const _$NewSeriesPageLaunched({this.seriesDraft});
+class _$NewSeriesPageLaunched
+    with DiagnosticableTreeMixin
+    implements NewSeriesPageLaunched {
+  const _$NewSeriesPageLaunched({this.seriesDraft, this.context});
 
   @override
   final SeriesDraft seriesDraft;
+  @override
+  final BuildContext context;
 
   @override
-  String toString() {
-    return 'NewSeriesDatabaseEvent.newSeriesPageLaunched(seriesDraft: $seriesDraft)';
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'NewSeriesDatabaseEvent.newSeriesPageLaunched(seriesDraft: $seriesDraft, context: $context)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty(
+          'type', 'NewSeriesDatabaseEvent.newSeriesPageLaunched'))
+      ..add(DiagnosticsProperty('seriesDraft', seriesDraft))
+      ..add(DiagnosticsProperty('context', context));
   }
 
   @override
@@ -192,12 +203,16 @@ class _$NewSeriesPageLaunched implements NewSeriesPageLaunched {
         (other is NewSeriesPageLaunched &&
             (identical(other.seriesDraft, seriesDraft) ||
                 const DeepCollectionEquality()
-                    .equals(other.seriesDraft, seriesDraft)));
+                    .equals(other.seriesDraft, seriesDraft)) &&
+            (identical(other.context, context) ||
+                const DeepCollectionEquality().equals(other.context, context)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(seriesDraft);
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(seriesDraft) ^
+      const DeepCollectionEquality().hash(context);
 
   @override
   $NewSeriesPageLaunchedCopyWith<NewSeriesPageLaunched> get copyWith =>
@@ -207,48 +222,47 @@ class _$NewSeriesPageLaunched implements NewSeriesPageLaunched {
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result newSeriesPageLaunched(SeriesDraft seriesDraft),
-    @required Result createSeriesButtonPressed(),
+    @required
+        Result newSeriesPageLaunched(
+            SeriesDraft seriesDraft, BuildContext context),
     @required Result titleChanged(String title),
     @required Result subtitleChanged(String subtitle),
     @required Result summaryChanged(String summary),
     @required Result genreSelected(String genre),
     @required Result genreOptionalSelected(String genreOptional),
     @required Result languageSelected(String language),
-    @required Result copyrightsSelected(String copyrights),
     @required Result isNSFWChanged(bool isNSFW),
+    @required Result saveSeriesDraftButtonPressed(),
   }) {
     assert(newSeriesPageLaunched != null);
-    assert(createSeriesButtonPressed != null);
     assert(titleChanged != null);
     assert(subtitleChanged != null);
     assert(summaryChanged != null);
     assert(genreSelected != null);
     assert(genreOptionalSelected != null);
     assert(languageSelected != null);
-    assert(copyrightsSelected != null);
     assert(isNSFWChanged != null);
-    return newSeriesPageLaunched(seriesDraft);
+    assert(saveSeriesDraftButtonPressed != null);
+    return newSeriesPageLaunched(seriesDraft, context);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result newSeriesPageLaunched(SeriesDraft seriesDraft),
-    Result createSeriesButtonPressed(),
+    Result newSeriesPageLaunched(SeriesDraft seriesDraft, BuildContext context),
     Result titleChanged(String title),
     Result subtitleChanged(String subtitle),
     Result summaryChanged(String summary),
     Result genreSelected(String genre),
     Result genreOptionalSelected(String genreOptional),
     Result languageSelected(String language),
-    Result copyrightsSelected(String copyrights),
     Result isNSFWChanged(bool isNSFW),
+    Result saveSeriesDraftButtonPressed(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
     if (newSeriesPageLaunched != null) {
-      return newSeriesPageLaunched(seriesDraft);
+      return newSeriesPageLaunched(seriesDraft, context);
     }
     return orElse();
   }
@@ -257,26 +271,25 @@ class _$NewSeriesPageLaunched implements NewSeriesPageLaunched {
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result newSeriesPageLaunched(NewSeriesPageLaunched value),
-    @required Result createSeriesButtonPressed(CreateSeriesButtonPressed value),
     @required Result titleChanged(TitleChanged value),
     @required Result subtitleChanged(SubtitleChanged value),
     @required Result summaryChanged(SummaryChanged value),
     @required Result genreSelected(GenreSelected value),
     @required Result genreOptionalSelected(GenreOptionalSelected value),
     @required Result languageSelected(LanguageSelected value),
-    @required Result copyrightsSelected(CopyrightsSelected value),
     @required Result isNSFWChanged(IsNSFWChanged value),
+    @required
+        Result saveSeriesDraftButtonPressed(SaveSeriesDraftButtonPressed value),
   }) {
     assert(newSeriesPageLaunched != null);
-    assert(createSeriesButtonPressed != null);
     assert(titleChanged != null);
     assert(subtitleChanged != null);
     assert(summaryChanged != null);
     assert(genreSelected != null);
     assert(genreOptionalSelected != null);
     assert(languageSelected != null);
-    assert(copyrightsSelected != null);
     assert(isNSFWChanged != null);
+    assert(saveSeriesDraftButtonPressed != null);
     return newSeriesPageLaunched(this);
   }
 
@@ -284,15 +297,14 @@ class _$NewSeriesPageLaunched implements NewSeriesPageLaunched {
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result newSeriesPageLaunched(NewSeriesPageLaunched value),
-    Result createSeriesButtonPressed(CreateSeriesButtonPressed value),
     Result titleChanged(TitleChanged value),
     Result subtitleChanged(SubtitleChanged value),
     Result summaryChanged(SummaryChanged value),
     Result genreSelected(GenreSelected value),
     Result genreOptionalSelected(GenreOptionalSelected value),
     Result languageSelected(LanguageSelected value),
-    Result copyrightsSelected(CopyrightsSelected value),
     Result isNSFWChanged(IsNSFWChanged value),
+    Result saveSeriesDraftButtonPressed(SaveSeriesDraftButtonPressed value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -304,148 +316,13 @@ class _$NewSeriesPageLaunched implements NewSeriesPageLaunched {
 }
 
 abstract class NewSeriesPageLaunched implements NewSeriesDatabaseEvent {
-  const factory NewSeriesPageLaunched({SeriesDraft seriesDraft}) =
-      _$NewSeriesPageLaunched;
+  const factory NewSeriesPageLaunched(
+      {SeriesDraft seriesDraft,
+      BuildContext context}) = _$NewSeriesPageLaunched;
 
   SeriesDraft get seriesDraft;
+  BuildContext get context;
   $NewSeriesPageLaunchedCopyWith<NewSeriesPageLaunched> get copyWith;
-}
-
-abstract class $CreateSeriesButtonPressedCopyWith<$Res> {
-  factory $CreateSeriesButtonPressedCopyWith(CreateSeriesButtonPressed value,
-          $Res Function(CreateSeriesButtonPressed) then) =
-      _$CreateSeriesButtonPressedCopyWithImpl<$Res>;
-}
-
-class _$CreateSeriesButtonPressedCopyWithImpl<$Res>
-    extends _$NewSeriesDatabaseEventCopyWithImpl<$Res>
-    implements $CreateSeriesButtonPressedCopyWith<$Res> {
-  _$CreateSeriesButtonPressedCopyWithImpl(CreateSeriesButtonPressed _value,
-      $Res Function(CreateSeriesButtonPressed) _then)
-      : super(_value, (v) => _then(v as CreateSeriesButtonPressed));
-
-  @override
-  CreateSeriesButtonPressed get _value =>
-      super._value as CreateSeriesButtonPressed;
-}
-
-class _$CreateSeriesButtonPressed implements CreateSeriesButtonPressed {
-  const _$CreateSeriesButtonPressed();
-
-  @override
-  String toString() {
-    return 'NewSeriesDatabaseEvent.createSeriesButtonPressed()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) || (other is CreateSeriesButtonPressed);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result newSeriesPageLaunched(SeriesDraft seriesDraft),
-    @required Result createSeriesButtonPressed(),
-    @required Result titleChanged(String title),
-    @required Result subtitleChanged(String subtitle),
-    @required Result summaryChanged(String summary),
-    @required Result genreSelected(String genre),
-    @required Result genreOptionalSelected(String genreOptional),
-    @required Result languageSelected(String language),
-    @required Result copyrightsSelected(String copyrights),
-    @required Result isNSFWChanged(bool isNSFW),
-  }) {
-    assert(newSeriesPageLaunched != null);
-    assert(createSeriesButtonPressed != null);
-    assert(titleChanged != null);
-    assert(subtitleChanged != null);
-    assert(summaryChanged != null);
-    assert(genreSelected != null);
-    assert(genreOptionalSelected != null);
-    assert(languageSelected != null);
-    assert(copyrightsSelected != null);
-    assert(isNSFWChanged != null);
-    return createSeriesButtonPressed();
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result newSeriesPageLaunched(SeriesDraft seriesDraft),
-    Result createSeriesButtonPressed(),
-    Result titleChanged(String title),
-    Result subtitleChanged(String subtitle),
-    Result summaryChanged(String summary),
-    Result genreSelected(String genre),
-    Result genreOptionalSelected(String genreOptional),
-    Result languageSelected(String language),
-    Result copyrightsSelected(String copyrights),
-    Result isNSFWChanged(bool isNSFW),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (createSeriesButtonPressed != null) {
-      return createSeriesButtonPressed();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result newSeriesPageLaunched(NewSeriesPageLaunched value),
-    @required Result createSeriesButtonPressed(CreateSeriesButtonPressed value),
-    @required Result titleChanged(TitleChanged value),
-    @required Result subtitleChanged(SubtitleChanged value),
-    @required Result summaryChanged(SummaryChanged value),
-    @required Result genreSelected(GenreSelected value),
-    @required Result genreOptionalSelected(GenreOptionalSelected value),
-    @required Result languageSelected(LanguageSelected value),
-    @required Result copyrightsSelected(CopyrightsSelected value),
-    @required Result isNSFWChanged(IsNSFWChanged value),
-  }) {
-    assert(newSeriesPageLaunched != null);
-    assert(createSeriesButtonPressed != null);
-    assert(titleChanged != null);
-    assert(subtitleChanged != null);
-    assert(summaryChanged != null);
-    assert(genreSelected != null);
-    assert(genreOptionalSelected != null);
-    assert(languageSelected != null);
-    assert(copyrightsSelected != null);
-    assert(isNSFWChanged != null);
-    return createSeriesButtonPressed(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result newSeriesPageLaunched(NewSeriesPageLaunched value),
-    Result createSeriesButtonPressed(CreateSeriesButtonPressed value),
-    Result titleChanged(TitleChanged value),
-    Result subtitleChanged(SubtitleChanged value),
-    Result summaryChanged(SummaryChanged value),
-    Result genreSelected(GenreSelected value),
-    Result genreOptionalSelected(GenreOptionalSelected value),
-    Result languageSelected(LanguageSelected value),
-    Result copyrightsSelected(CopyrightsSelected value),
-    Result isNSFWChanged(IsNSFWChanged value),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (createSeriesButtonPressed != null) {
-      return createSeriesButtonPressed(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class CreateSeriesButtonPressed implements NewSeriesDatabaseEvent {
-  const factory CreateSeriesButtonPressed() = _$CreateSeriesButtonPressed;
 }
 
 abstract class $TitleChangedCopyWith<$Res> {
@@ -475,15 +352,23 @@ class _$TitleChangedCopyWithImpl<$Res>
   }
 }
 
-class _$TitleChanged implements TitleChanged {
+class _$TitleChanged with DiagnosticableTreeMixin implements TitleChanged {
   const _$TitleChanged(this.title) : assert(title != null);
 
   @override
   final String title;
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'NewSeriesDatabaseEvent.titleChanged(title: $title)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'NewSeriesDatabaseEvent.titleChanged'))
+      ..add(DiagnosticsProperty('title', title));
   }
 
   @override
@@ -505,43 +390,42 @@ class _$TitleChanged implements TitleChanged {
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result newSeriesPageLaunched(SeriesDraft seriesDraft),
-    @required Result createSeriesButtonPressed(),
+    @required
+        Result newSeriesPageLaunched(
+            SeriesDraft seriesDraft, BuildContext context),
     @required Result titleChanged(String title),
     @required Result subtitleChanged(String subtitle),
     @required Result summaryChanged(String summary),
     @required Result genreSelected(String genre),
     @required Result genreOptionalSelected(String genreOptional),
     @required Result languageSelected(String language),
-    @required Result copyrightsSelected(String copyrights),
     @required Result isNSFWChanged(bool isNSFW),
+    @required Result saveSeriesDraftButtonPressed(),
   }) {
     assert(newSeriesPageLaunched != null);
-    assert(createSeriesButtonPressed != null);
     assert(titleChanged != null);
     assert(subtitleChanged != null);
     assert(summaryChanged != null);
     assert(genreSelected != null);
     assert(genreOptionalSelected != null);
     assert(languageSelected != null);
-    assert(copyrightsSelected != null);
     assert(isNSFWChanged != null);
+    assert(saveSeriesDraftButtonPressed != null);
     return titleChanged(title);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result newSeriesPageLaunched(SeriesDraft seriesDraft),
-    Result createSeriesButtonPressed(),
+    Result newSeriesPageLaunched(SeriesDraft seriesDraft, BuildContext context),
     Result titleChanged(String title),
     Result subtitleChanged(String subtitle),
     Result summaryChanged(String summary),
     Result genreSelected(String genre),
     Result genreOptionalSelected(String genreOptional),
     Result languageSelected(String language),
-    Result copyrightsSelected(String copyrights),
     Result isNSFWChanged(bool isNSFW),
+    Result saveSeriesDraftButtonPressed(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -555,26 +439,25 @@ class _$TitleChanged implements TitleChanged {
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result newSeriesPageLaunched(NewSeriesPageLaunched value),
-    @required Result createSeriesButtonPressed(CreateSeriesButtonPressed value),
     @required Result titleChanged(TitleChanged value),
     @required Result subtitleChanged(SubtitleChanged value),
     @required Result summaryChanged(SummaryChanged value),
     @required Result genreSelected(GenreSelected value),
     @required Result genreOptionalSelected(GenreOptionalSelected value),
     @required Result languageSelected(LanguageSelected value),
-    @required Result copyrightsSelected(CopyrightsSelected value),
     @required Result isNSFWChanged(IsNSFWChanged value),
+    @required
+        Result saveSeriesDraftButtonPressed(SaveSeriesDraftButtonPressed value),
   }) {
     assert(newSeriesPageLaunched != null);
-    assert(createSeriesButtonPressed != null);
     assert(titleChanged != null);
     assert(subtitleChanged != null);
     assert(summaryChanged != null);
     assert(genreSelected != null);
     assert(genreOptionalSelected != null);
     assert(languageSelected != null);
-    assert(copyrightsSelected != null);
     assert(isNSFWChanged != null);
+    assert(saveSeriesDraftButtonPressed != null);
     return titleChanged(this);
   }
 
@@ -582,15 +465,14 @@ class _$TitleChanged implements TitleChanged {
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result newSeriesPageLaunched(NewSeriesPageLaunched value),
-    Result createSeriesButtonPressed(CreateSeriesButtonPressed value),
     Result titleChanged(TitleChanged value),
     Result subtitleChanged(SubtitleChanged value),
     Result summaryChanged(SummaryChanged value),
     Result genreSelected(GenreSelected value),
     Result genreOptionalSelected(GenreOptionalSelected value),
     Result languageSelected(LanguageSelected value),
-    Result copyrightsSelected(CopyrightsSelected value),
     Result isNSFWChanged(IsNSFWChanged value),
+    Result saveSeriesDraftButtonPressed(SaveSeriesDraftButtonPressed value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -635,15 +517,26 @@ class _$SubtitleChangedCopyWithImpl<$Res>
   }
 }
 
-class _$SubtitleChanged implements SubtitleChanged {
+class _$SubtitleChanged
+    with DiagnosticableTreeMixin
+    implements SubtitleChanged {
   const _$SubtitleChanged(this.subtitle) : assert(subtitle != null);
 
   @override
   final String subtitle;
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'NewSeriesDatabaseEvent.subtitleChanged(subtitle: $subtitle)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(
+          DiagnosticsProperty('type', 'NewSeriesDatabaseEvent.subtitleChanged'))
+      ..add(DiagnosticsProperty('subtitle', subtitle));
   }
 
   @override
@@ -666,43 +559,42 @@ class _$SubtitleChanged implements SubtitleChanged {
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result newSeriesPageLaunched(SeriesDraft seriesDraft),
-    @required Result createSeriesButtonPressed(),
+    @required
+        Result newSeriesPageLaunched(
+            SeriesDraft seriesDraft, BuildContext context),
     @required Result titleChanged(String title),
     @required Result subtitleChanged(String subtitle),
     @required Result summaryChanged(String summary),
     @required Result genreSelected(String genre),
     @required Result genreOptionalSelected(String genreOptional),
     @required Result languageSelected(String language),
-    @required Result copyrightsSelected(String copyrights),
     @required Result isNSFWChanged(bool isNSFW),
+    @required Result saveSeriesDraftButtonPressed(),
   }) {
     assert(newSeriesPageLaunched != null);
-    assert(createSeriesButtonPressed != null);
     assert(titleChanged != null);
     assert(subtitleChanged != null);
     assert(summaryChanged != null);
     assert(genreSelected != null);
     assert(genreOptionalSelected != null);
     assert(languageSelected != null);
-    assert(copyrightsSelected != null);
     assert(isNSFWChanged != null);
+    assert(saveSeriesDraftButtonPressed != null);
     return subtitleChanged(subtitle);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result newSeriesPageLaunched(SeriesDraft seriesDraft),
-    Result createSeriesButtonPressed(),
+    Result newSeriesPageLaunched(SeriesDraft seriesDraft, BuildContext context),
     Result titleChanged(String title),
     Result subtitleChanged(String subtitle),
     Result summaryChanged(String summary),
     Result genreSelected(String genre),
     Result genreOptionalSelected(String genreOptional),
     Result languageSelected(String language),
-    Result copyrightsSelected(String copyrights),
     Result isNSFWChanged(bool isNSFW),
+    Result saveSeriesDraftButtonPressed(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -716,26 +608,25 @@ class _$SubtitleChanged implements SubtitleChanged {
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result newSeriesPageLaunched(NewSeriesPageLaunched value),
-    @required Result createSeriesButtonPressed(CreateSeriesButtonPressed value),
     @required Result titleChanged(TitleChanged value),
     @required Result subtitleChanged(SubtitleChanged value),
     @required Result summaryChanged(SummaryChanged value),
     @required Result genreSelected(GenreSelected value),
     @required Result genreOptionalSelected(GenreOptionalSelected value),
     @required Result languageSelected(LanguageSelected value),
-    @required Result copyrightsSelected(CopyrightsSelected value),
     @required Result isNSFWChanged(IsNSFWChanged value),
+    @required
+        Result saveSeriesDraftButtonPressed(SaveSeriesDraftButtonPressed value),
   }) {
     assert(newSeriesPageLaunched != null);
-    assert(createSeriesButtonPressed != null);
     assert(titleChanged != null);
     assert(subtitleChanged != null);
     assert(summaryChanged != null);
     assert(genreSelected != null);
     assert(genreOptionalSelected != null);
     assert(languageSelected != null);
-    assert(copyrightsSelected != null);
     assert(isNSFWChanged != null);
+    assert(saveSeriesDraftButtonPressed != null);
     return subtitleChanged(this);
   }
 
@@ -743,15 +634,14 @@ class _$SubtitleChanged implements SubtitleChanged {
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result newSeriesPageLaunched(NewSeriesPageLaunched value),
-    Result createSeriesButtonPressed(CreateSeriesButtonPressed value),
     Result titleChanged(TitleChanged value),
     Result subtitleChanged(SubtitleChanged value),
     Result summaryChanged(SummaryChanged value),
     Result genreSelected(GenreSelected value),
     Result genreOptionalSelected(GenreOptionalSelected value),
     Result languageSelected(LanguageSelected value),
-    Result copyrightsSelected(CopyrightsSelected value),
     Result isNSFWChanged(IsNSFWChanged value),
+    Result saveSeriesDraftButtonPressed(SaveSeriesDraftButtonPressed value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -796,15 +686,24 @@ class _$SummaryChangedCopyWithImpl<$Res>
   }
 }
 
-class _$SummaryChanged implements SummaryChanged {
+class _$SummaryChanged with DiagnosticableTreeMixin implements SummaryChanged {
   const _$SummaryChanged(this.summary) : assert(summary != null);
 
   @override
   final String summary;
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'NewSeriesDatabaseEvent.summaryChanged(summary: $summary)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(
+          DiagnosticsProperty('type', 'NewSeriesDatabaseEvent.summaryChanged'))
+      ..add(DiagnosticsProperty('summary', summary));
   }
 
   @override
@@ -826,43 +725,42 @@ class _$SummaryChanged implements SummaryChanged {
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result newSeriesPageLaunched(SeriesDraft seriesDraft),
-    @required Result createSeriesButtonPressed(),
+    @required
+        Result newSeriesPageLaunched(
+            SeriesDraft seriesDraft, BuildContext context),
     @required Result titleChanged(String title),
     @required Result subtitleChanged(String subtitle),
     @required Result summaryChanged(String summary),
     @required Result genreSelected(String genre),
     @required Result genreOptionalSelected(String genreOptional),
     @required Result languageSelected(String language),
-    @required Result copyrightsSelected(String copyrights),
     @required Result isNSFWChanged(bool isNSFW),
+    @required Result saveSeriesDraftButtonPressed(),
   }) {
     assert(newSeriesPageLaunched != null);
-    assert(createSeriesButtonPressed != null);
     assert(titleChanged != null);
     assert(subtitleChanged != null);
     assert(summaryChanged != null);
     assert(genreSelected != null);
     assert(genreOptionalSelected != null);
     assert(languageSelected != null);
-    assert(copyrightsSelected != null);
     assert(isNSFWChanged != null);
+    assert(saveSeriesDraftButtonPressed != null);
     return summaryChanged(summary);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result newSeriesPageLaunched(SeriesDraft seriesDraft),
-    Result createSeriesButtonPressed(),
+    Result newSeriesPageLaunched(SeriesDraft seriesDraft, BuildContext context),
     Result titleChanged(String title),
     Result subtitleChanged(String subtitle),
     Result summaryChanged(String summary),
     Result genreSelected(String genre),
     Result genreOptionalSelected(String genreOptional),
     Result languageSelected(String language),
-    Result copyrightsSelected(String copyrights),
     Result isNSFWChanged(bool isNSFW),
+    Result saveSeriesDraftButtonPressed(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -876,26 +774,25 @@ class _$SummaryChanged implements SummaryChanged {
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result newSeriesPageLaunched(NewSeriesPageLaunched value),
-    @required Result createSeriesButtonPressed(CreateSeriesButtonPressed value),
     @required Result titleChanged(TitleChanged value),
     @required Result subtitleChanged(SubtitleChanged value),
     @required Result summaryChanged(SummaryChanged value),
     @required Result genreSelected(GenreSelected value),
     @required Result genreOptionalSelected(GenreOptionalSelected value),
     @required Result languageSelected(LanguageSelected value),
-    @required Result copyrightsSelected(CopyrightsSelected value),
     @required Result isNSFWChanged(IsNSFWChanged value),
+    @required
+        Result saveSeriesDraftButtonPressed(SaveSeriesDraftButtonPressed value),
   }) {
     assert(newSeriesPageLaunched != null);
-    assert(createSeriesButtonPressed != null);
     assert(titleChanged != null);
     assert(subtitleChanged != null);
     assert(summaryChanged != null);
     assert(genreSelected != null);
     assert(genreOptionalSelected != null);
     assert(languageSelected != null);
-    assert(copyrightsSelected != null);
     assert(isNSFWChanged != null);
+    assert(saveSeriesDraftButtonPressed != null);
     return summaryChanged(this);
   }
 
@@ -903,15 +800,14 @@ class _$SummaryChanged implements SummaryChanged {
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result newSeriesPageLaunched(NewSeriesPageLaunched value),
-    Result createSeriesButtonPressed(CreateSeriesButtonPressed value),
     Result titleChanged(TitleChanged value),
     Result subtitleChanged(SubtitleChanged value),
     Result summaryChanged(SummaryChanged value),
     Result genreSelected(GenreSelected value),
     Result genreOptionalSelected(GenreOptionalSelected value),
     Result languageSelected(LanguageSelected value),
-    Result copyrightsSelected(CopyrightsSelected value),
     Result isNSFWChanged(IsNSFWChanged value),
+    Result saveSeriesDraftButtonPressed(SaveSeriesDraftButtonPressed value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -956,15 +852,23 @@ class _$GenreSelectedCopyWithImpl<$Res>
   }
 }
 
-class _$GenreSelected implements GenreSelected {
+class _$GenreSelected with DiagnosticableTreeMixin implements GenreSelected {
   const _$GenreSelected(this.genre) : assert(genre != null);
 
   @override
   final String genre;
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'NewSeriesDatabaseEvent.genreSelected(genre: $genre)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'NewSeriesDatabaseEvent.genreSelected'))
+      ..add(DiagnosticsProperty('genre', genre));
   }
 
   @override
@@ -986,43 +890,42 @@ class _$GenreSelected implements GenreSelected {
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result newSeriesPageLaunched(SeriesDraft seriesDraft),
-    @required Result createSeriesButtonPressed(),
+    @required
+        Result newSeriesPageLaunched(
+            SeriesDraft seriesDraft, BuildContext context),
     @required Result titleChanged(String title),
     @required Result subtitleChanged(String subtitle),
     @required Result summaryChanged(String summary),
     @required Result genreSelected(String genre),
     @required Result genreOptionalSelected(String genreOptional),
     @required Result languageSelected(String language),
-    @required Result copyrightsSelected(String copyrights),
     @required Result isNSFWChanged(bool isNSFW),
+    @required Result saveSeriesDraftButtonPressed(),
   }) {
     assert(newSeriesPageLaunched != null);
-    assert(createSeriesButtonPressed != null);
     assert(titleChanged != null);
     assert(subtitleChanged != null);
     assert(summaryChanged != null);
     assert(genreSelected != null);
     assert(genreOptionalSelected != null);
     assert(languageSelected != null);
-    assert(copyrightsSelected != null);
     assert(isNSFWChanged != null);
+    assert(saveSeriesDraftButtonPressed != null);
     return genreSelected(genre);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result newSeriesPageLaunched(SeriesDraft seriesDraft),
-    Result createSeriesButtonPressed(),
+    Result newSeriesPageLaunched(SeriesDraft seriesDraft, BuildContext context),
     Result titleChanged(String title),
     Result subtitleChanged(String subtitle),
     Result summaryChanged(String summary),
     Result genreSelected(String genre),
     Result genreOptionalSelected(String genreOptional),
     Result languageSelected(String language),
-    Result copyrightsSelected(String copyrights),
     Result isNSFWChanged(bool isNSFW),
+    Result saveSeriesDraftButtonPressed(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1036,26 +939,25 @@ class _$GenreSelected implements GenreSelected {
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result newSeriesPageLaunched(NewSeriesPageLaunched value),
-    @required Result createSeriesButtonPressed(CreateSeriesButtonPressed value),
     @required Result titleChanged(TitleChanged value),
     @required Result subtitleChanged(SubtitleChanged value),
     @required Result summaryChanged(SummaryChanged value),
     @required Result genreSelected(GenreSelected value),
     @required Result genreOptionalSelected(GenreOptionalSelected value),
     @required Result languageSelected(LanguageSelected value),
-    @required Result copyrightsSelected(CopyrightsSelected value),
     @required Result isNSFWChanged(IsNSFWChanged value),
+    @required
+        Result saveSeriesDraftButtonPressed(SaveSeriesDraftButtonPressed value),
   }) {
     assert(newSeriesPageLaunched != null);
-    assert(createSeriesButtonPressed != null);
     assert(titleChanged != null);
     assert(subtitleChanged != null);
     assert(summaryChanged != null);
     assert(genreSelected != null);
     assert(genreOptionalSelected != null);
     assert(languageSelected != null);
-    assert(copyrightsSelected != null);
     assert(isNSFWChanged != null);
+    assert(saveSeriesDraftButtonPressed != null);
     return genreSelected(this);
   }
 
@@ -1063,15 +965,14 @@ class _$GenreSelected implements GenreSelected {
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result newSeriesPageLaunched(NewSeriesPageLaunched value),
-    Result createSeriesButtonPressed(CreateSeriesButtonPressed value),
     Result titleChanged(TitleChanged value),
     Result subtitleChanged(SubtitleChanged value),
     Result summaryChanged(SummaryChanged value),
     Result genreSelected(GenreSelected value),
     Result genreOptionalSelected(GenreOptionalSelected value),
     Result languageSelected(LanguageSelected value),
-    Result copyrightsSelected(CopyrightsSelected value),
     Result isNSFWChanged(IsNSFWChanged value),
+    Result saveSeriesDraftButtonPressed(SaveSeriesDraftButtonPressed value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1116,7 +1017,9 @@ class _$GenreOptionalSelectedCopyWithImpl<$Res>
   }
 }
 
-class _$GenreOptionalSelected implements GenreOptionalSelected {
+class _$GenreOptionalSelected
+    with DiagnosticableTreeMixin
+    implements GenreOptionalSelected {
   const _$GenreOptionalSelected(this.genreOptional)
       : assert(genreOptional != null);
 
@@ -1124,8 +1027,17 @@ class _$GenreOptionalSelected implements GenreOptionalSelected {
   final String genreOptional;
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'NewSeriesDatabaseEvent.genreOptionalSelected(genreOptional: $genreOptional)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty(
+          'type', 'NewSeriesDatabaseEvent.genreOptionalSelected'))
+      ..add(DiagnosticsProperty('genreOptional', genreOptional));
   }
 
   @override
@@ -1149,43 +1061,42 @@ class _$GenreOptionalSelected implements GenreOptionalSelected {
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result newSeriesPageLaunched(SeriesDraft seriesDraft),
-    @required Result createSeriesButtonPressed(),
+    @required
+        Result newSeriesPageLaunched(
+            SeriesDraft seriesDraft, BuildContext context),
     @required Result titleChanged(String title),
     @required Result subtitleChanged(String subtitle),
     @required Result summaryChanged(String summary),
     @required Result genreSelected(String genre),
     @required Result genreOptionalSelected(String genreOptional),
     @required Result languageSelected(String language),
-    @required Result copyrightsSelected(String copyrights),
     @required Result isNSFWChanged(bool isNSFW),
+    @required Result saveSeriesDraftButtonPressed(),
   }) {
     assert(newSeriesPageLaunched != null);
-    assert(createSeriesButtonPressed != null);
     assert(titleChanged != null);
     assert(subtitleChanged != null);
     assert(summaryChanged != null);
     assert(genreSelected != null);
     assert(genreOptionalSelected != null);
     assert(languageSelected != null);
-    assert(copyrightsSelected != null);
     assert(isNSFWChanged != null);
+    assert(saveSeriesDraftButtonPressed != null);
     return genreOptionalSelected(genreOptional);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result newSeriesPageLaunched(SeriesDraft seriesDraft),
-    Result createSeriesButtonPressed(),
+    Result newSeriesPageLaunched(SeriesDraft seriesDraft, BuildContext context),
     Result titleChanged(String title),
     Result subtitleChanged(String subtitle),
     Result summaryChanged(String summary),
     Result genreSelected(String genre),
     Result genreOptionalSelected(String genreOptional),
     Result languageSelected(String language),
-    Result copyrightsSelected(String copyrights),
     Result isNSFWChanged(bool isNSFW),
+    Result saveSeriesDraftButtonPressed(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1199,26 +1110,25 @@ class _$GenreOptionalSelected implements GenreOptionalSelected {
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result newSeriesPageLaunched(NewSeriesPageLaunched value),
-    @required Result createSeriesButtonPressed(CreateSeriesButtonPressed value),
     @required Result titleChanged(TitleChanged value),
     @required Result subtitleChanged(SubtitleChanged value),
     @required Result summaryChanged(SummaryChanged value),
     @required Result genreSelected(GenreSelected value),
     @required Result genreOptionalSelected(GenreOptionalSelected value),
     @required Result languageSelected(LanguageSelected value),
-    @required Result copyrightsSelected(CopyrightsSelected value),
     @required Result isNSFWChanged(IsNSFWChanged value),
+    @required
+        Result saveSeriesDraftButtonPressed(SaveSeriesDraftButtonPressed value),
   }) {
     assert(newSeriesPageLaunched != null);
-    assert(createSeriesButtonPressed != null);
     assert(titleChanged != null);
     assert(subtitleChanged != null);
     assert(summaryChanged != null);
     assert(genreSelected != null);
     assert(genreOptionalSelected != null);
     assert(languageSelected != null);
-    assert(copyrightsSelected != null);
     assert(isNSFWChanged != null);
+    assert(saveSeriesDraftButtonPressed != null);
     return genreOptionalSelected(this);
   }
 
@@ -1226,15 +1136,14 @@ class _$GenreOptionalSelected implements GenreOptionalSelected {
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result newSeriesPageLaunched(NewSeriesPageLaunched value),
-    Result createSeriesButtonPressed(CreateSeriesButtonPressed value),
     Result titleChanged(TitleChanged value),
     Result subtitleChanged(SubtitleChanged value),
     Result summaryChanged(SummaryChanged value),
     Result genreSelected(GenreSelected value),
     Result genreOptionalSelected(GenreOptionalSelected value),
     Result languageSelected(LanguageSelected value),
-    Result copyrightsSelected(CopyrightsSelected value),
     Result isNSFWChanged(IsNSFWChanged value),
+    Result saveSeriesDraftButtonPressed(SaveSeriesDraftButtonPressed value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1280,15 +1189,26 @@ class _$LanguageSelectedCopyWithImpl<$Res>
   }
 }
 
-class _$LanguageSelected implements LanguageSelected {
+class _$LanguageSelected
+    with DiagnosticableTreeMixin
+    implements LanguageSelected {
   const _$LanguageSelected(this.language) : assert(language != null);
 
   @override
   final String language;
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'NewSeriesDatabaseEvent.languageSelected(language: $language)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty(
+          'type', 'NewSeriesDatabaseEvent.languageSelected'))
+      ..add(DiagnosticsProperty('language', language));
   }
 
   @override
@@ -1311,43 +1231,42 @@ class _$LanguageSelected implements LanguageSelected {
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result newSeriesPageLaunched(SeriesDraft seriesDraft),
-    @required Result createSeriesButtonPressed(),
+    @required
+        Result newSeriesPageLaunched(
+            SeriesDraft seriesDraft, BuildContext context),
     @required Result titleChanged(String title),
     @required Result subtitleChanged(String subtitle),
     @required Result summaryChanged(String summary),
     @required Result genreSelected(String genre),
     @required Result genreOptionalSelected(String genreOptional),
     @required Result languageSelected(String language),
-    @required Result copyrightsSelected(String copyrights),
     @required Result isNSFWChanged(bool isNSFW),
+    @required Result saveSeriesDraftButtonPressed(),
   }) {
     assert(newSeriesPageLaunched != null);
-    assert(createSeriesButtonPressed != null);
     assert(titleChanged != null);
     assert(subtitleChanged != null);
     assert(summaryChanged != null);
     assert(genreSelected != null);
     assert(genreOptionalSelected != null);
     assert(languageSelected != null);
-    assert(copyrightsSelected != null);
     assert(isNSFWChanged != null);
+    assert(saveSeriesDraftButtonPressed != null);
     return languageSelected(language);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result newSeriesPageLaunched(SeriesDraft seriesDraft),
-    Result createSeriesButtonPressed(),
+    Result newSeriesPageLaunched(SeriesDraft seriesDraft, BuildContext context),
     Result titleChanged(String title),
     Result subtitleChanged(String subtitle),
     Result summaryChanged(String summary),
     Result genreSelected(String genre),
     Result genreOptionalSelected(String genreOptional),
     Result languageSelected(String language),
-    Result copyrightsSelected(String copyrights),
     Result isNSFWChanged(bool isNSFW),
+    Result saveSeriesDraftButtonPressed(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1361,26 +1280,25 @@ class _$LanguageSelected implements LanguageSelected {
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result newSeriesPageLaunched(NewSeriesPageLaunched value),
-    @required Result createSeriesButtonPressed(CreateSeriesButtonPressed value),
     @required Result titleChanged(TitleChanged value),
     @required Result subtitleChanged(SubtitleChanged value),
     @required Result summaryChanged(SummaryChanged value),
     @required Result genreSelected(GenreSelected value),
     @required Result genreOptionalSelected(GenreOptionalSelected value),
     @required Result languageSelected(LanguageSelected value),
-    @required Result copyrightsSelected(CopyrightsSelected value),
     @required Result isNSFWChanged(IsNSFWChanged value),
+    @required
+        Result saveSeriesDraftButtonPressed(SaveSeriesDraftButtonPressed value),
   }) {
     assert(newSeriesPageLaunched != null);
-    assert(createSeriesButtonPressed != null);
     assert(titleChanged != null);
     assert(subtitleChanged != null);
     assert(summaryChanged != null);
     assert(genreSelected != null);
     assert(genreOptionalSelected != null);
     assert(languageSelected != null);
-    assert(copyrightsSelected != null);
     assert(isNSFWChanged != null);
+    assert(saveSeriesDraftButtonPressed != null);
     return languageSelected(this);
   }
 
@@ -1388,15 +1306,14 @@ class _$LanguageSelected implements LanguageSelected {
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result newSeriesPageLaunched(NewSeriesPageLaunched value),
-    Result createSeriesButtonPressed(CreateSeriesButtonPressed value),
     Result titleChanged(TitleChanged value),
     Result subtitleChanged(SubtitleChanged value),
     Result summaryChanged(SummaryChanged value),
     Result genreSelected(GenreSelected value),
     Result genreOptionalSelected(GenreOptionalSelected value),
     Result languageSelected(LanguageSelected value),
-    Result copyrightsSelected(CopyrightsSelected value),
     Result isNSFWChanged(IsNSFWChanged value),
+    Result saveSeriesDraftButtonPressed(SaveSeriesDraftButtonPressed value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1412,167 +1329,6 @@ abstract class LanguageSelected implements NewSeriesDatabaseEvent {
 
   String get language;
   $LanguageSelectedCopyWith<LanguageSelected> get copyWith;
-}
-
-abstract class $CopyrightsSelectedCopyWith<$Res> {
-  factory $CopyrightsSelectedCopyWith(
-          CopyrightsSelected value, $Res Function(CopyrightsSelected) then) =
-      _$CopyrightsSelectedCopyWithImpl<$Res>;
-  $Res call({String copyrights});
-}
-
-class _$CopyrightsSelectedCopyWithImpl<$Res>
-    extends _$NewSeriesDatabaseEventCopyWithImpl<$Res>
-    implements $CopyrightsSelectedCopyWith<$Res> {
-  _$CopyrightsSelectedCopyWithImpl(
-      CopyrightsSelected _value, $Res Function(CopyrightsSelected) _then)
-      : super(_value, (v) => _then(v as CopyrightsSelected));
-
-  @override
-  CopyrightsSelected get _value => super._value as CopyrightsSelected;
-
-  @override
-  $Res call({
-    Object copyrights = freezed,
-  }) {
-    return _then(CopyrightsSelected(
-      copyrights == freezed ? _value.copyrights : copyrights as String,
-    ));
-  }
-}
-
-class _$CopyrightsSelected implements CopyrightsSelected {
-  const _$CopyrightsSelected(this.copyrights) : assert(copyrights != null);
-
-  @override
-  final String copyrights;
-
-  @override
-  String toString() {
-    return 'NewSeriesDatabaseEvent.copyrightsSelected(copyrights: $copyrights)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is CopyrightsSelected &&
-            (identical(other.copyrights, copyrights) ||
-                const DeepCollectionEquality()
-                    .equals(other.copyrights, copyrights)));
-  }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(copyrights);
-
-  @override
-  $CopyrightsSelectedCopyWith<CopyrightsSelected> get copyWith =>
-      _$CopyrightsSelectedCopyWithImpl<CopyrightsSelected>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result newSeriesPageLaunched(SeriesDraft seriesDraft),
-    @required Result createSeriesButtonPressed(),
-    @required Result titleChanged(String title),
-    @required Result subtitleChanged(String subtitle),
-    @required Result summaryChanged(String summary),
-    @required Result genreSelected(String genre),
-    @required Result genreOptionalSelected(String genreOptional),
-    @required Result languageSelected(String language),
-    @required Result copyrightsSelected(String copyrights),
-    @required Result isNSFWChanged(bool isNSFW),
-  }) {
-    assert(newSeriesPageLaunched != null);
-    assert(createSeriesButtonPressed != null);
-    assert(titleChanged != null);
-    assert(subtitleChanged != null);
-    assert(summaryChanged != null);
-    assert(genreSelected != null);
-    assert(genreOptionalSelected != null);
-    assert(languageSelected != null);
-    assert(copyrightsSelected != null);
-    assert(isNSFWChanged != null);
-    return copyrightsSelected(copyrights);
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result newSeriesPageLaunched(SeriesDraft seriesDraft),
-    Result createSeriesButtonPressed(),
-    Result titleChanged(String title),
-    Result subtitleChanged(String subtitle),
-    Result summaryChanged(String summary),
-    Result genreSelected(String genre),
-    Result genreOptionalSelected(String genreOptional),
-    Result languageSelected(String language),
-    Result copyrightsSelected(String copyrights),
-    Result isNSFWChanged(bool isNSFW),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (copyrightsSelected != null) {
-      return copyrightsSelected(copyrights);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result newSeriesPageLaunched(NewSeriesPageLaunched value),
-    @required Result createSeriesButtonPressed(CreateSeriesButtonPressed value),
-    @required Result titleChanged(TitleChanged value),
-    @required Result subtitleChanged(SubtitleChanged value),
-    @required Result summaryChanged(SummaryChanged value),
-    @required Result genreSelected(GenreSelected value),
-    @required Result genreOptionalSelected(GenreOptionalSelected value),
-    @required Result languageSelected(LanguageSelected value),
-    @required Result copyrightsSelected(CopyrightsSelected value),
-    @required Result isNSFWChanged(IsNSFWChanged value),
-  }) {
-    assert(newSeriesPageLaunched != null);
-    assert(createSeriesButtonPressed != null);
-    assert(titleChanged != null);
-    assert(subtitleChanged != null);
-    assert(summaryChanged != null);
-    assert(genreSelected != null);
-    assert(genreOptionalSelected != null);
-    assert(languageSelected != null);
-    assert(copyrightsSelected != null);
-    assert(isNSFWChanged != null);
-    return copyrightsSelected(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result newSeriesPageLaunched(NewSeriesPageLaunched value),
-    Result createSeriesButtonPressed(CreateSeriesButtonPressed value),
-    Result titleChanged(TitleChanged value),
-    Result subtitleChanged(SubtitleChanged value),
-    Result summaryChanged(SummaryChanged value),
-    Result genreSelected(GenreSelected value),
-    Result genreOptionalSelected(GenreOptionalSelected value),
-    Result languageSelected(LanguageSelected value),
-    Result copyrightsSelected(CopyrightsSelected value),
-    Result isNSFWChanged(IsNSFWChanged value),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (copyrightsSelected != null) {
-      return copyrightsSelected(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class CopyrightsSelected implements NewSeriesDatabaseEvent {
-  const factory CopyrightsSelected(String copyrights) = _$CopyrightsSelected;
-
-  String get copyrights;
-  $CopyrightsSelectedCopyWith<CopyrightsSelected> get copyWith;
 }
 
 abstract class $IsNSFWChangedCopyWith<$Res> {
@@ -1602,15 +1358,23 @@ class _$IsNSFWChangedCopyWithImpl<$Res>
   }
 }
 
-class _$IsNSFWChanged implements IsNSFWChanged {
+class _$IsNSFWChanged with DiagnosticableTreeMixin implements IsNSFWChanged {
   const _$IsNSFWChanged({@required this.isNSFW}) : assert(isNSFW != null);
 
   @override
   final bool isNSFW;
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'NewSeriesDatabaseEvent.isNSFWChanged(isNSFW: $isNSFW)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'NewSeriesDatabaseEvent.isNSFWChanged'))
+      ..add(DiagnosticsProperty('isNSFW', isNSFW));
   }
 
   @override
@@ -1632,43 +1396,42 @@ class _$IsNSFWChanged implements IsNSFWChanged {
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result newSeriesPageLaunched(SeriesDraft seriesDraft),
-    @required Result createSeriesButtonPressed(),
+    @required
+        Result newSeriesPageLaunched(
+            SeriesDraft seriesDraft, BuildContext context),
     @required Result titleChanged(String title),
     @required Result subtitleChanged(String subtitle),
     @required Result summaryChanged(String summary),
     @required Result genreSelected(String genre),
     @required Result genreOptionalSelected(String genreOptional),
     @required Result languageSelected(String language),
-    @required Result copyrightsSelected(String copyrights),
     @required Result isNSFWChanged(bool isNSFW),
+    @required Result saveSeriesDraftButtonPressed(),
   }) {
     assert(newSeriesPageLaunched != null);
-    assert(createSeriesButtonPressed != null);
     assert(titleChanged != null);
     assert(subtitleChanged != null);
     assert(summaryChanged != null);
     assert(genreSelected != null);
     assert(genreOptionalSelected != null);
     assert(languageSelected != null);
-    assert(copyrightsSelected != null);
     assert(isNSFWChanged != null);
+    assert(saveSeriesDraftButtonPressed != null);
     return isNSFWChanged(isNSFW);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result newSeriesPageLaunched(SeriesDraft seriesDraft),
-    Result createSeriesButtonPressed(),
+    Result newSeriesPageLaunched(SeriesDraft seriesDraft, BuildContext context),
     Result titleChanged(String title),
     Result subtitleChanged(String subtitle),
     Result summaryChanged(String summary),
     Result genreSelected(String genre),
     Result genreOptionalSelected(String genreOptional),
     Result languageSelected(String language),
-    Result copyrightsSelected(String copyrights),
     Result isNSFWChanged(bool isNSFW),
+    Result saveSeriesDraftButtonPressed(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1682,26 +1445,25 @@ class _$IsNSFWChanged implements IsNSFWChanged {
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result newSeriesPageLaunched(NewSeriesPageLaunched value),
-    @required Result createSeriesButtonPressed(CreateSeriesButtonPressed value),
     @required Result titleChanged(TitleChanged value),
     @required Result subtitleChanged(SubtitleChanged value),
     @required Result summaryChanged(SummaryChanged value),
     @required Result genreSelected(GenreSelected value),
     @required Result genreOptionalSelected(GenreOptionalSelected value),
     @required Result languageSelected(LanguageSelected value),
-    @required Result copyrightsSelected(CopyrightsSelected value),
     @required Result isNSFWChanged(IsNSFWChanged value),
+    @required
+        Result saveSeriesDraftButtonPressed(SaveSeriesDraftButtonPressed value),
   }) {
     assert(newSeriesPageLaunched != null);
-    assert(createSeriesButtonPressed != null);
     assert(titleChanged != null);
     assert(subtitleChanged != null);
     assert(summaryChanged != null);
     assert(genreSelected != null);
     assert(genreOptionalSelected != null);
     assert(languageSelected != null);
-    assert(copyrightsSelected != null);
     assert(isNSFWChanged != null);
+    assert(saveSeriesDraftButtonPressed != null);
     return isNSFWChanged(this);
   }
 
@@ -1709,15 +1471,14 @@ class _$IsNSFWChanged implements IsNSFWChanged {
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result newSeriesPageLaunched(NewSeriesPageLaunched value),
-    Result createSeriesButtonPressed(CreateSeriesButtonPressed value),
     Result titleChanged(TitleChanged value),
     Result subtitleChanged(SubtitleChanged value),
     Result summaryChanged(SummaryChanged value),
     Result genreSelected(GenreSelected value),
     Result genreOptionalSelected(GenreOptionalSelected value),
     Result languageSelected(LanguageSelected value),
-    Result copyrightsSelected(CopyrightsSelected value),
     Result isNSFWChanged(IsNSFWChanged value),
+    Result saveSeriesDraftButtonPressed(SaveSeriesDraftButtonPressed value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1735,12 +1496,160 @@ abstract class IsNSFWChanged implements NewSeriesDatabaseEvent {
   $IsNSFWChangedCopyWith<IsNSFWChanged> get copyWith;
 }
 
+abstract class $SaveSeriesDraftButtonPressedCopyWith<$Res> {
+  factory $SaveSeriesDraftButtonPressedCopyWith(
+          SaveSeriesDraftButtonPressed value,
+          $Res Function(SaveSeriesDraftButtonPressed) then) =
+      _$SaveSeriesDraftButtonPressedCopyWithImpl<$Res>;
+}
+
+class _$SaveSeriesDraftButtonPressedCopyWithImpl<$Res>
+    extends _$NewSeriesDatabaseEventCopyWithImpl<$Res>
+    implements $SaveSeriesDraftButtonPressedCopyWith<$Res> {
+  _$SaveSeriesDraftButtonPressedCopyWithImpl(
+      SaveSeriesDraftButtonPressed _value,
+      $Res Function(SaveSeriesDraftButtonPressed) _then)
+      : super(_value, (v) => _then(v as SaveSeriesDraftButtonPressed));
+
+  @override
+  SaveSeriesDraftButtonPressed get _value =>
+      super._value as SaveSeriesDraftButtonPressed;
+}
+
+class _$SaveSeriesDraftButtonPressed
+    with DiagnosticableTreeMixin
+    implements SaveSeriesDraftButtonPressed {
+  const _$SaveSeriesDraftButtonPressed();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'NewSeriesDatabaseEvent.saveSeriesDraftButtonPressed()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty(
+          'type', 'NewSeriesDatabaseEvent.saveSeriesDraftButtonPressed'));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is SaveSeriesDraftButtonPressed);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required
+        Result newSeriesPageLaunched(
+            SeriesDraft seriesDraft, BuildContext context),
+    @required Result titleChanged(String title),
+    @required Result subtitleChanged(String subtitle),
+    @required Result summaryChanged(String summary),
+    @required Result genreSelected(String genre),
+    @required Result genreOptionalSelected(String genreOptional),
+    @required Result languageSelected(String language),
+    @required Result isNSFWChanged(bool isNSFW),
+    @required Result saveSeriesDraftButtonPressed(),
+  }) {
+    assert(newSeriesPageLaunched != null);
+    assert(titleChanged != null);
+    assert(subtitleChanged != null);
+    assert(summaryChanged != null);
+    assert(genreSelected != null);
+    assert(genreOptionalSelected != null);
+    assert(languageSelected != null);
+    assert(isNSFWChanged != null);
+    assert(saveSeriesDraftButtonPressed != null);
+    return saveSeriesDraftButtonPressed();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result newSeriesPageLaunched(SeriesDraft seriesDraft, BuildContext context),
+    Result titleChanged(String title),
+    Result subtitleChanged(String subtitle),
+    Result summaryChanged(String summary),
+    Result genreSelected(String genre),
+    Result genreOptionalSelected(String genreOptional),
+    Result languageSelected(String language),
+    Result isNSFWChanged(bool isNSFW),
+    Result saveSeriesDraftButtonPressed(),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (saveSeriesDraftButtonPressed != null) {
+      return saveSeriesDraftButtonPressed();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result newSeriesPageLaunched(NewSeriesPageLaunched value),
+    @required Result titleChanged(TitleChanged value),
+    @required Result subtitleChanged(SubtitleChanged value),
+    @required Result summaryChanged(SummaryChanged value),
+    @required Result genreSelected(GenreSelected value),
+    @required Result genreOptionalSelected(GenreOptionalSelected value),
+    @required Result languageSelected(LanguageSelected value),
+    @required Result isNSFWChanged(IsNSFWChanged value),
+    @required
+        Result saveSeriesDraftButtonPressed(SaveSeriesDraftButtonPressed value),
+  }) {
+    assert(newSeriesPageLaunched != null);
+    assert(titleChanged != null);
+    assert(subtitleChanged != null);
+    assert(summaryChanged != null);
+    assert(genreSelected != null);
+    assert(genreOptionalSelected != null);
+    assert(languageSelected != null);
+    assert(isNSFWChanged != null);
+    assert(saveSeriesDraftButtonPressed != null);
+    return saveSeriesDraftButtonPressed(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result newSeriesPageLaunched(NewSeriesPageLaunched value),
+    Result titleChanged(TitleChanged value),
+    Result subtitleChanged(SubtitleChanged value),
+    Result summaryChanged(SummaryChanged value),
+    Result genreSelected(GenreSelected value),
+    Result genreOptionalSelected(GenreOptionalSelected value),
+    Result languageSelected(LanguageSelected value),
+    Result isNSFWChanged(IsNSFWChanged value),
+    Result saveSeriesDraftButtonPressed(SaveSeriesDraftButtonPressed value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (saveSeriesDraftButtonPressed != null) {
+      return saveSeriesDraftButtonPressed(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SaveSeriesDraftButtonPressed implements NewSeriesDatabaseEvent {
+  const factory SaveSeriesDraftButtonPressed() = _$SaveSeriesDraftButtonPressed;
+}
+
 class _$NewSeriesDatabaseStateTearOff {
   const _$NewSeriesDatabaseStateTearOff();
 
   _NewSeriesDatabaseState call(
       {@required
           SeriesDraft seriesDraft,
+      @required
+          bool isEditMode,
       @required
           Title title,
       @required
@@ -1766,13 +1675,13 @@ class _$NewSeriesDatabaseStateTearOff {
       @required
           String languageStr,
       @required
-          Copyrights copyrights,
-      @required
-          String copyrightsStr,
-      @required
           bool isNSFW,
       @required
           bool isCreating,
+      @required
+          Map<String, String> genresMap,
+      @required
+          Map<String, String> languagesMap,
       @required
           bool showErrorMessages,
       @required
@@ -1780,6 +1689,7 @@ class _$NewSeriesDatabaseStateTearOff {
               databaseFailureOrSuccessOption}) {
     return _NewSeriesDatabaseState(
       seriesDraft: seriesDraft,
+      isEditMode: isEditMode,
       title: title,
       titleWordCount: titleWordCount,
       subtitle: subtitle,
@@ -1792,10 +1702,10 @@ class _$NewSeriesDatabaseStateTearOff {
       genreOptionalStr: genreOptionalStr,
       language: language,
       languageStr: languageStr,
-      copyrights: copyrights,
-      copyrightsStr: copyrightsStr,
       isNSFW: isNSFW,
       isCreating: isCreating,
+      genresMap: genresMap,
+      languagesMap: languagesMap,
       showErrorMessages: showErrorMessages,
       databaseFailureOrSuccessOption: databaseFailureOrSuccessOption,
     );
@@ -1807,6 +1717,7 @@ const $NewSeriesDatabaseState = _$NewSeriesDatabaseStateTearOff();
 
 mixin _$NewSeriesDatabaseState {
   SeriesDraft get seriesDraft;
+  bool get isEditMode;
   Title get title;
   int get titleWordCount;
   Subtitle get subtitle;
@@ -1819,10 +1730,10 @@ mixin _$NewSeriesDatabaseState {
   String get genreOptionalStr;
   Language get language;
   String get languageStr;
-  Copyrights get copyrights;
-  String get copyrightsStr;
   bool get isNSFW;
   bool get isCreating;
+  Map<String, String> get genresMap;
+  Map<String, String> get languagesMap;
   bool get showErrorMessages;
   Option<Either<DatabaseFailure, dynamic>> get databaseFailureOrSuccessOption;
 
@@ -1835,6 +1746,7 @@ abstract class $NewSeriesDatabaseStateCopyWith<$Res> {
       _$NewSeriesDatabaseStateCopyWithImpl<$Res>;
   $Res call(
       {SeriesDraft seriesDraft,
+      bool isEditMode,
       Title title,
       int titleWordCount,
       Subtitle subtitle,
@@ -1847,10 +1759,10 @@ abstract class $NewSeriesDatabaseStateCopyWith<$Res> {
       String genreOptionalStr,
       Language language,
       String languageStr,
-      Copyrights copyrights,
-      String copyrightsStr,
       bool isNSFW,
       bool isCreating,
+      Map<String, String> genresMap,
+      Map<String, String> languagesMap,
       bool showErrorMessages,
       Option<Either<DatabaseFailure, dynamic>> databaseFailureOrSuccessOption});
 }
@@ -1866,6 +1778,7 @@ class _$NewSeriesDatabaseStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object seriesDraft = freezed,
+    Object isEditMode = freezed,
     Object title = freezed,
     Object titleWordCount = freezed,
     Object subtitle = freezed,
@@ -1878,10 +1791,10 @@ class _$NewSeriesDatabaseStateCopyWithImpl<$Res>
     Object genreOptionalStr = freezed,
     Object language = freezed,
     Object languageStr = freezed,
-    Object copyrights = freezed,
-    Object copyrightsStr = freezed,
     Object isNSFW = freezed,
     Object isCreating = freezed,
+    Object genresMap = freezed,
+    Object languagesMap = freezed,
     Object showErrorMessages = freezed,
     Object databaseFailureOrSuccessOption = freezed,
   }) {
@@ -1889,6 +1802,8 @@ class _$NewSeriesDatabaseStateCopyWithImpl<$Res>
       seriesDraft: seriesDraft == freezed
           ? _value.seriesDraft
           : seriesDraft as SeriesDraft,
+      isEditMode:
+          isEditMode == freezed ? _value.isEditMode : isEditMode as bool,
       title: title == freezed ? _value.title : title as Title,
       titleWordCount: titleWordCount == freezed
           ? _value.titleWordCount
@@ -1912,14 +1827,15 @@ class _$NewSeriesDatabaseStateCopyWithImpl<$Res>
       language: language == freezed ? _value.language : language as Language,
       languageStr:
           languageStr == freezed ? _value.languageStr : languageStr as String,
-      copyrights:
-          copyrights == freezed ? _value.copyrights : copyrights as Copyrights,
-      copyrightsStr: copyrightsStr == freezed
-          ? _value.copyrightsStr
-          : copyrightsStr as String,
       isNSFW: isNSFW == freezed ? _value.isNSFW : isNSFW as bool,
       isCreating:
           isCreating == freezed ? _value.isCreating : isCreating as bool,
+      genresMap: genresMap == freezed
+          ? _value.genresMap
+          : genresMap as Map<String, String>,
+      languagesMap: languagesMap == freezed
+          ? _value.languagesMap
+          : languagesMap as Map<String, String>,
       showErrorMessages: showErrorMessages == freezed
           ? _value.showErrorMessages
           : showErrorMessages as bool,
@@ -1939,6 +1855,7 @@ abstract class _$NewSeriesDatabaseStateCopyWith<$Res>
   @override
   $Res call(
       {SeriesDraft seriesDraft,
+      bool isEditMode,
       Title title,
       int titleWordCount,
       Subtitle subtitle,
@@ -1951,10 +1868,10 @@ abstract class _$NewSeriesDatabaseStateCopyWith<$Res>
       String genreOptionalStr,
       Language language,
       String languageStr,
-      Copyrights copyrights,
-      String copyrightsStr,
       bool isNSFW,
       bool isCreating,
+      Map<String, String> genresMap,
+      Map<String, String> languagesMap,
       bool showErrorMessages,
       Option<Either<DatabaseFailure, dynamic>> databaseFailureOrSuccessOption});
 }
@@ -1972,6 +1889,7 @@ class __$NewSeriesDatabaseStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object seriesDraft = freezed,
+    Object isEditMode = freezed,
     Object title = freezed,
     Object titleWordCount = freezed,
     Object subtitle = freezed,
@@ -1984,10 +1902,10 @@ class __$NewSeriesDatabaseStateCopyWithImpl<$Res>
     Object genreOptionalStr = freezed,
     Object language = freezed,
     Object languageStr = freezed,
-    Object copyrights = freezed,
-    Object copyrightsStr = freezed,
     Object isNSFW = freezed,
     Object isCreating = freezed,
+    Object genresMap = freezed,
+    Object languagesMap = freezed,
     Object showErrorMessages = freezed,
     Object databaseFailureOrSuccessOption = freezed,
   }) {
@@ -1995,6 +1913,8 @@ class __$NewSeriesDatabaseStateCopyWithImpl<$Res>
       seriesDraft: seriesDraft == freezed
           ? _value.seriesDraft
           : seriesDraft as SeriesDraft,
+      isEditMode:
+          isEditMode == freezed ? _value.isEditMode : isEditMode as bool,
       title: title == freezed ? _value.title : title as Title,
       titleWordCount: titleWordCount == freezed
           ? _value.titleWordCount
@@ -2018,14 +1938,15 @@ class __$NewSeriesDatabaseStateCopyWithImpl<$Res>
       language: language == freezed ? _value.language : language as Language,
       languageStr:
           languageStr == freezed ? _value.languageStr : languageStr as String,
-      copyrights:
-          copyrights == freezed ? _value.copyrights : copyrights as Copyrights,
-      copyrightsStr: copyrightsStr == freezed
-          ? _value.copyrightsStr
-          : copyrightsStr as String,
       isNSFW: isNSFW == freezed ? _value.isNSFW : isNSFW as bool,
       isCreating:
           isCreating == freezed ? _value.isCreating : isCreating as bool,
+      genresMap: genresMap == freezed
+          ? _value.genresMap
+          : genresMap as Map<String, String>,
+      languagesMap: languagesMap == freezed
+          ? _value.languagesMap
+          : languagesMap as Map<String, String>,
       showErrorMessages: showErrorMessages == freezed
           ? _value.showErrorMessages
           : showErrorMessages as bool,
@@ -2037,9 +1958,12 @@ class __$NewSeriesDatabaseStateCopyWithImpl<$Res>
   }
 }
 
-class _$_NewSeriesDatabaseState implements _NewSeriesDatabaseState {
+class _$_NewSeriesDatabaseState
+    with DiagnosticableTreeMixin
+    implements _NewSeriesDatabaseState {
   const _$_NewSeriesDatabaseState(
       {@required this.seriesDraft,
+      @required this.isEditMode,
       @required this.title,
       @required this.titleWordCount,
       @required this.subtitle,
@@ -2052,13 +1976,14 @@ class _$_NewSeriesDatabaseState implements _NewSeriesDatabaseState {
       @required this.genreOptionalStr,
       @required this.language,
       @required this.languageStr,
-      @required this.copyrights,
-      @required this.copyrightsStr,
       @required this.isNSFW,
       @required this.isCreating,
+      @required this.genresMap,
+      @required this.languagesMap,
       @required this.showErrorMessages,
       @required this.databaseFailureOrSuccessOption})
       : assert(seriesDraft != null),
+        assert(isEditMode != null),
         assert(title != null),
         assert(titleWordCount != null),
         assert(subtitle != null),
@@ -2071,15 +1996,17 @@ class _$_NewSeriesDatabaseState implements _NewSeriesDatabaseState {
         assert(genreOptionalStr != null),
         assert(language != null),
         assert(languageStr != null),
-        assert(copyrights != null),
-        assert(copyrightsStr != null),
         assert(isNSFW != null),
         assert(isCreating != null),
+        assert(genresMap != null),
+        assert(languagesMap != null),
         assert(showErrorMessages != null),
         assert(databaseFailureOrSuccessOption != null);
 
   @override
   final SeriesDraft seriesDraft;
+  @override
+  final bool isEditMode;
   @override
   final Title title;
   @override
@@ -2105,21 +2032,49 @@ class _$_NewSeriesDatabaseState implements _NewSeriesDatabaseState {
   @override
   final String languageStr;
   @override
-  final Copyrights copyrights;
-  @override
-  final String copyrightsStr;
-  @override
   final bool isNSFW;
   @override
   final bool isCreating;
+  @override
+  final Map<String, String> genresMap;
+  @override
+  final Map<String, String> languagesMap;
   @override
   final bool showErrorMessages;
   @override
   final Option<Either<DatabaseFailure, dynamic>> databaseFailureOrSuccessOption;
 
   @override
-  String toString() {
-    return 'NewSeriesDatabaseState(seriesDraft: $seriesDraft, title: $title, titleWordCount: $titleWordCount, subtitle: $subtitle, subtitleWordCount: $subtitleWordCount, summary: $summary, summaryWordCount: $summaryWordCount, genre: $genre, genreStr: $genreStr, genreOptional: $genreOptional, genreOptionalStr: $genreOptionalStr, language: $language, languageStr: $languageStr, copyrights: $copyrights, copyrightsStr: $copyrightsStr, isNSFW: $isNSFW, isCreating: $isCreating, showErrorMessages: $showErrorMessages, databaseFailureOrSuccessOption: $databaseFailureOrSuccessOption)';
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'NewSeriesDatabaseState(seriesDraft: $seriesDraft, isEditMode: $isEditMode, title: $title, titleWordCount: $titleWordCount, subtitle: $subtitle, subtitleWordCount: $subtitleWordCount, summary: $summary, summaryWordCount: $summaryWordCount, genre: $genre, genreStr: $genreStr, genreOptional: $genreOptional, genreOptionalStr: $genreOptionalStr, language: $language, languageStr: $languageStr, isNSFW: $isNSFW, isCreating: $isCreating, genresMap: $genresMap, languagesMap: $languagesMap, showErrorMessages: $showErrorMessages, databaseFailureOrSuccessOption: $databaseFailureOrSuccessOption)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'NewSeriesDatabaseState'))
+      ..add(DiagnosticsProperty('seriesDraft', seriesDraft))
+      ..add(DiagnosticsProperty('isEditMode', isEditMode))
+      ..add(DiagnosticsProperty('title', title))
+      ..add(DiagnosticsProperty('titleWordCount', titleWordCount))
+      ..add(DiagnosticsProperty('subtitle', subtitle))
+      ..add(DiagnosticsProperty('subtitleWordCount', subtitleWordCount))
+      ..add(DiagnosticsProperty('summary', summary))
+      ..add(DiagnosticsProperty('summaryWordCount', summaryWordCount))
+      ..add(DiagnosticsProperty('genre', genre))
+      ..add(DiagnosticsProperty('genreStr', genreStr))
+      ..add(DiagnosticsProperty('genreOptional', genreOptional))
+      ..add(DiagnosticsProperty('genreOptionalStr', genreOptionalStr))
+      ..add(DiagnosticsProperty('language', language))
+      ..add(DiagnosticsProperty('languageStr', languageStr))
+      ..add(DiagnosticsProperty('isNSFW', isNSFW))
+      ..add(DiagnosticsProperty('isCreating', isCreating))
+      ..add(DiagnosticsProperty('genresMap', genresMap))
+      ..add(DiagnosticsProperty('languagesMap', languagesMap))
+      ..add(DiagnosticsProperty('showErrorMessages', showErrorMessages))
+      ..add(DiagnosticsProperty(
+          'databaseFailureOrSuccessOption', databaseFailureOrSuccessOption));
   }
 
   @override
@@ -2129,6 +2084,9 @@ class _$_NewSeriesDatabaseState implements _NewSeriesDatabaseState {
             (identical(other.seriesDraft, seriesDraft) ||
                 const DeepCollectionEquality()
                     .equals(other.seriesDraft, seriesDraft)) &&
+            (identical(other.isEditMode, isEditMode) ||
+                const DeepCollectionEquality()
+                    .equals(other.isEditMode, isEditMode)) &&
             (identical(other.title, title) ||
                 const DeepCollectionEquality().equals(other.title, title)) &&
             (identical(other.titleWordCount, titleWordCount) ||
@@ -2163,17 +2121,17 @@ class _$_NewSeriesDatabaseState implements _NewSeriesDatabaseState {
             (identical(other.languageStr, languageStr) ||
                 const DeepCollectionEquality()
                     .equals(other.languageStr, languageStr)) &&
-            (identical(other.copyrights, copyrights) ||
-                const DeepCollectionEquality()
-                    .equals(other.copyrights, copyrights)) &&
-            (identical(other.copyrightsStr, copyrightsStr) ||
-                const DeepCollectionEquality()
-                    .equals(other.copyrightsStr, copyrightsStr)) &&
             (identical(other.isNSFW, isNSFW) ||
                 const DeepCollectionEquality().equals(other.isNSFW, isNSFW)) &&
             (identical(other.isCreating, isCreating) ||
                 const DeepCollectionEquality()
                     .equals(other.isCreating, isCreating)) &&
+            (identical(other.genresMap, genresMap) ||
+                const DeepCollectionEquality()
+                    .equals(other.genresMap, genresMap)) &&
+            (identical(other.languagesMap, languagesMap) ||
+                const DeepCollectionEquality()
+                    .equals(other.languagesMap, languagesMap)) &&
             (identical(other.showErrorMessages, showErrorMessages) ||
                 const DeepCollectionEquality()
                     .equals(other.showErrorMessages, showErrorMessages)) &&
@@ -2188,6 +2146,7 @@ class _$_NewSeriesDatabaseState implements _NewSeriesDatabaseState {
   int get hashCode =>
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(seriesDraft) ^
+      const DeepCollectionEquality().hash(isEditMode) ^
       const DeepCollectionEquality().hash(title) ^
       const DeepCollectionEquality().hash(titleWordCount) ^
       const DeepCollectionEquality().hash(subtitle) ^
@@ -2200,10 +2159,10 @@ class _$_NewSeriesDatabaseState implements _NewSeriesDatabaseState {
       const DeepCollectionEquality().hash(genreOptionalStr) ^
       const DeepCollectionEquality().hash(language) ^
       const DeepCollectionEquality().hash(languageStr) ^
-      const DeepCollectionEquality().hash(copyrights) ^
-      const DeepCollectionEquality().hash(copyrightsStr) ^
       const DeepCollectionEquality().hash(isNSFW) ^
       const DeepCollectionEquality().hash(isCreating) ^
+      const DeepCollectionEquality().hash(genresMap) ^
+      const DeepCollectionEquality().hash(languagesMap) ^
       const DeepCollectionEquality().hash(showErrorMessages) ^
       const DeepCollectionEquality().hash(databaseFailureOrSuccessOption);
 
@@ -2217,6 +2176,8 @@ abstract class _NewSeriesDatabaseState implements NewSeriesDatabaseState {
   const factory _NewSeriesDatabaseState(
       {@required
           SeriesDraft seriesDraft,
+      @required
+          bool isEditMode,
       @required
           Title title,
       @required
@@ -2242,13 +2203,13 @@ abstract class _NewSeriesDatabaseState implements NewSeriesDatabaseState {
       @required
           String languageStr,
       @required
-          Copyrights copyrights,
-      @required
-          String copyrightsStr,
-      @required
           bool isNSFW,
       @required
           bool isCreating,
+      @required
+          Map<String, String> genresMap,
+      @required
+          Map<String, String> languagesMap,
       @required
           bool showErrorMessages,
       @required
@@ -2257,6 +2218,8 @@ abstract class _NewSeriesDatabaseState implements NewSeriesDatabaseState {
 
   @override
   SeriesDraft get seriesDraft;
+  @override
+  bool get isEditMode;
   @override
   Title get title;
   @override
@@ -2282,13 +2245,13 @@ abstract class _NewSeriesDatabaseState implements NewSeriesDatabaseState {
   @override
   String get languageStr;
   @override
-  Copyrights get copyrights;
-  @override
-  String get copyrightsStr;
-  @override
   bool get isNSFW;
   @override
   bool get isCreating;
+  @override
+  Map<String, String> get genresMap;
+  @override
+  Map<String, String> get languagesMap;
   @override
   bool get showErrorMessages;
   @override

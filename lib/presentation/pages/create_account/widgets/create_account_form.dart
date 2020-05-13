@@ -71,13 +71,12 @@ class _CreateAccountFormState extends State<CreateAccountForm>
                       onPressed: () => Navigator.of(context).pop(true),
                     ),
                   ),
-                  orElse: () {},
+                  orElse: null,
                 ),
-                (right) {
-                  if (right is User) {
-                    context
-                        .bloc<CreateAccountDatabaseBloc>()
-                        .add(CreateAccountDatabaseEvent.accountCreated(right));
+                (success) {
+                  if (success is User) {
+                    context.bloc<CreateAccountDatabaseBloc>().add(
+                        CreateAccountDatabaseEvent.accountCreated(success));
                   }
                 },
               ),

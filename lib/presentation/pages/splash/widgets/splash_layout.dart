@@ -2,7 +2,6 @@ import 'package:flare_flutter/flare_actor.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:sailor/sailor.dart';
-import 'package:wine/application/authentication/core/core_authentication_bloc.dart';
 import 'package:wine/application/authentication/splash/splash_authentication_bloc.dart';
 import 'package:wine/application/database/splash/splash_database_bloc.dart';
 import 'package:wine/presentation/pages/splash/widgets/splash_copyright.dart';
@@ -11,23 +10,7 @@ import 'package:wine/presentation/widgets/wine_error_dialog.dart';
 import 'package:wine/routes.dart';
 import 'package:wine/utils/constants.dart';
 
-class SplashLayout extends StatefulWidget {
-  @override
-  _SplashLayoutState createState() => _SplashLayoutState();
-}
-
-class _SplashLayoutState extends State<SplashLayout> {
-  @override
-  void initState() {
-    super.initState();
-    context
-        .bloc<SplashAuthenticationBloc>()
-        .add(const SplashAuthenticationEvent.appLaunched());
-    context
-        .bloc<CoreAuthenticationBloc>()
-        .add(const CoreAuthenticationEvent.getUserAnonymousStatus());
-  }
-
+class SplashLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -37,11 +20,7 @@ class _SplashLayoutState extends State<SplashLayout> {
             listener: (context, state) {
               if (!state.isAuthenticating) {
                 state.authenticationFailureOrSuccessOption.fold(
-                  () => context
-                      .bloc<SplashDatabaseBloc>()
-                      .add(SplashDatabaseEvent.authenticated(
-                        isAnonymous: state.isAnonymous,
-                      )),
+                  () {},
                   (some) => some.fold(
                     (failure) => failure.maybeMap(
                       serverError: (_) {
@@ -52,13 +31,12 @@ class _SplashLayoutState extends State<SplashLayout> {
                             buttonText: 'RESTART',
                             onPressed: () => context
                                 .bloc<SplashAuthenticationBloc>()
-                                .add(
-                                  const SplashAuthenticationEvent.appLaunched(),
-                                ),
+                                .add(const SplashAuthenticationEvent
+                                    .splashLaunched()),
                           ),
                         );
                       },
-                      orElse: () {},
+                      orElse: null,
                     ),
                     (_) => context
                         .bloc<SplashDatabaseBloc>()
@@ -74,25 +52,62 @@ class _SplashLayoutState extends State<SplashLayout> {
             listener: (context, state) {
               if (!state.isUpdating && state.isLogoAnimationCompleted) {
                 state.databaseFailureOrSuccessOption.fold(
-                  () => sailor.navigate(
-                    Constants.homeRoute,
-                    navigationType: NavigationType.pushReplace,
-                  ),
+                  () {
+                    if (state.isLogoAnimationCompleted) {
+                      sailor.navigate(
+                        Constants.homeRoute,
+                        navigationType: NavigationType.pushReplace,
+                      );
+                    }
+                  },
                   (some) => some.fold(
-                    (failure) => wineShowDialog(
-                      context: context,
-                      builder: (_) => WINEErrorDialog(
-                        message: 'An unexpected error occured!',
-                        buttonText: 'RESTART',
-                        onPressed: () => context
-                            .bloc<SplashAuthenticationBloc>()
-                            .add(const SplashAuthenticationEvent.appLaunched()),
+                    (failure) => failure.maybeMap(
+                      failedToFetchOnlineData: (_) => wineShowDialog(
+                        context: context,
+                        builder: (_) => WINEErrorDialog(
+                          message:
+                              'Failed to fetch data from our servers! Please restart WINE.',
+                          buttonText: 'RESTART',
+                          onPressed: () => context
+                              .bloc<SplashAuthenticationBloc>()
+                              .add(const SplashAuthenticationEvent
+                                  .splashLaunched()),
+                        ),
                       ),
+                      failedToRetrieveLocalData: (_) => wineShowDialog(
+                        context: context,
+                        builder: (_) => WINEErrorDialog(
+                          message:
+                              'Failed to retrieve data on your device! Please restart WINE.',
+                          buttonText: 'RESTART',
+                          onPressed: () => context
+                              .bloc<SplashAuthenticationBloc>()
+                              .add(const SplashAuthenticationEvent
+                                  .splashLaunched()),
+                        ),
+                      ),
+                      failedToUpdateLocalData: (_) => wineShowDialog(
+                        context: context,
+                        builder: (_) => WINEErrorDialog(
+                          message:
+                              'Failed to update data on your device! Please restart WINE.',
+                          buttonText: 'RESTART',
+                          onPressed: () => context
+                              .bloc<SplashAuthenticationBloc>()
+                              .add(const SplashAuthenticationEvent
+                                  .splashLaunched()),
+                        ),
+                      ),
+                      orElse: null,
                     ),
-                    (_) => sailor.navigate(
-                      Constants.homeRoute,
-                      navigationType: NavigationType.pushReplace,
-                    ),
+                    (_) {
+                      if (state.isLogoAnimationCompleted) {
+                        sailor.navigate(
+                          Constants.homeRoute,
+                          navigationType: NavigationType.pushReplace,
+                        );
+                      }
+                    },
                   ),
                 );
               }

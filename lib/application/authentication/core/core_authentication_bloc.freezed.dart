@@ -12,15 +12,42 @@ T _$identity<T>(T value) => value;
 class _$CoreAuthenticationEventTearOff {
   const _$CoreAuthenticationEventTearOff();
 
-  GetUserAnonymousStatus getUserAnonymousStatus() {
-    return const GetUserAnonymousStatus();
+  AppLaunched appLaunched() {
+    return const AppLaunched();
+  }
+
+  AuthenticationChanged authenticationChanged() {
+    return const AuthenticationChanged();
   }
 }
 
 // ignore: unused_element
 const $CoreAuthenticationEvent = _$CoreAuthenticationEventTearOff();
 
-mixin _$CoreAuthenticationEvent {}
+mixin _$CoreAuthenticationEvent {
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result appLaunched(),
+    @required Result authenticationChanged(),
+  });
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result appLaunched(),
+    Result authenticationChanged(),
+    @required Result orElse(),
+  });
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result appLaunched(AppLaunched value),
+    @required Result authenticationChanged(AuthenticationChanged value),
+  });
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result appLaunched(AppLaunched value),
+    Result authenticationChanged(AuthenticationChanged value),
+    @required Result orElse(),
+  });
+}
 
 abstract class $CoreAuthenticationEventCopyWith<$Res> {
   factory $CoreAuthenticationEventCopyWith(CoreAuthenticationEvent value,
@@ -37,50 +64,195 @@ class _$CoreAuthenticationEventCopyWithImpl<$Res>
   final $Res Function(CoreAuthenticationEvent) _then;
 }
 
-abstract class $GetUserAnonymousStatusCopyWith<$Res> {
-  factory $GetUserAnonymousStatusCopyWith(GetUserAnonymousStatus value,
-          $Res Function(GetUserAnonymousStatus) then) =
-      _$GetUserAnonymousStatusCopyWithImpl<$Res>;
+abstract class $AppLaunchedCopyWith<$Res> {
+  factory $AppLaunchedCopyWith(
+          AppLaunched value, $Res Function(AppLaunched) then) =
+      _$AppLaunchedCopyWithImpl<$Res>;
 }
 
-class _$GetUserAnonymousStatusCopyWithImpl<$Res>
+class _$AppLaunchedCopyWithImpl<$Res>
     extends _$CoreAuthenticationEventCopyWithImpl<$Res>
-    implements $GetUserAnonymousStatusCopyWith<$Res> {
-  _$GetUserAnonymousStatusCopyWithImpl(GetUserAnonymousStatus _value,
-      $Res Function(GetUserAnonymousStatus) _then)
-      : super(_value, (v) => _then(v as GetUserAnonymousStatus));
+    implements $AppLaunchedCopyWith<$Res> {
+  _$AppLaunchedCopyWithImpl(
+      AppLaunched _value, $Res Function(AppLaunched) _then)
+      : super(_value, (v) => _then(v as AppLaunched));
 
   @override
-  GetUserAnonymousStatus get _value => super._value as GetUserAnonymousStatus;
+  AppLaunched get _value => super._value as AppLaunched;
 }
 
-class _$GetUserAnonymousStatus implements GetUserAnonymousStatus {
-  const _$GetUserAnonymousStatus();
+class _$AppLaunched implements AppLaunched {
+  const _$AppLaunched();
 
   @override
   String toString() {
-    return 'CoreAuthenticationEvent.getUserAnonymousStatus()';
+    return 'CoreAuthenticationEvent.appLaunched()';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is GetUserAnonymousStatus);
+    return identical(this, other) || (other is AppLaunched);
   }
 
   @override
   int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result appLaunched(),
+    @required Result authenticationChanged(),
+  }) {
+    assert(appLaunched != null);
+    assert(authenticationChanged != null);
+    return appLaunched();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result appLaunched(),
+    Result authenticationChanged(),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (appLaunched != null) {
+      return appLaunched();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result appLaunched(AppLaunched value),
+    @required Result authenticationChanged(AuthenticationChanged value),
+  }) {
+    assert(appLaunched != null);
+    assert(authenticationChanged != null);
+    return appLaunched(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result appLaunched(AppLaunched value),
+    Result authenticationChanged(AuthenticationChanged value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (appLaunched != null) {
+      return appLaunched(this);
+    }
+    return orElse();
+  }
 }
 
-abstract class GetUserAnonymousStatus implements CoreAuthenticationEvent {
-  const factory GetUserAnonymousStatus() = _$GetUserAnonymousStatus;
+abstract class AppLaunched implements CoreAuthenticationEvent {
+  const factory AppLaunched() = _$AppLaunched;
+}
+
+abstract class $AuthenticationChangedCopyWith<$Res> {
+  factory $AuthenticationChangedCopyWith(AuthenticationChanged value,
+          $Res Function(AuthenticationChanged) then) =
+      _$AuthenticationChangedCopyWithImpl<$Res>;
+}
+
+class _$AuthenticationChangedCopyWithImpl<$Res>
+    extends _$CoreAuthenticationEventCopyWithImpl<$Res>
+    implements $AuthenticationChangedCopyWith<$Res> {
+  _$AuthenticationChangedCopyWithImpl(
+      AuthenticationChanged _value, $Res Function(AuthenticationChanged) _then)
+      : super(_value, (v) => _then(v as AuthenticationChanged));
+
+  @override
+  AuthenticationChanged get _value => super._value as AuthenticationChanged;
+}
+
+class _$AuthenticationChanged implements AuthenticationChanged {
+  const _$AuthenticationChanged();
+
+  @override
+  String toString() {
+    return 'CoreAuthenticationEvent.authenticationChanged()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is AuthenticationChanged);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result appLaunched(),
+    @required Result authenticationChanged(),
+  }) {
+    assert(appLaunched != null);
+    assert(authenticationChanged != null);
+    return authenticationChanged();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result appLaunched(),
+    Result authenticationChanged(),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (authenticationChanged != null) {
+      return authenticationChanged();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result appLaunched(AppLaunched value),
+    @required Result authenticationChanged(AuthenticationChanged value),
+  }) {
+    assert(appLaunched != null);
+    assert(authenticationChanged != null);
+    return authenticationChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result appLaunched(AppLaunched value),
+    Result authenticationChanged(AuthenticationChanged value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (authenticationChanged != null) {
+      return authenticationChanged(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class AuthenticationChanged implements CoreAuthenticationEvent {
+  const factory AuthenticationChanged() = _$AuthenticationChanged;
 }
 
 class _$CoreAuthenticationStateTearOff {
   const _$CoreAuthenticationStateTearOff();
 
-  _CoreAuthenticationState call({@required bool isAnonymous}) {
+  _CoreAuthenticationState call(
+      {@required
+          bool isAnonymous,
+      @required
+          Option<Either<AuthenticationFailure, dynamic>>
+              authenticationFailureOrSuccessOption}) {
     return _CoreAuthenticationState(
       isAnonymous: isAnonymous,
+      authenticationFailureOrSuccessOption:
+          authenticationFailureOrSuccessOption,
     );
   }
 }
@@ -90,6 +262,8 @@ const $CoreAuthenticationState = _$CoreAuthenticationStateTearOff();
 
 mixin _$CoreAuthenticationState {
   bool get isAnonymous;
+  Option<Either<AuthenticationFailure, dynamic>>
+      get authenticationFailureOrSuccessOption;
 
   $CoreAuthenticationStateCopyWith<CoreAuthenticationState> get copyWith;
 }
@@ -98,7 +272,10 @@ abstract class $CoreAuthenticationStateCopyWith<$Res> {
   factory $CoreAuthenticationStateCopyWith(CoreAuthenticationState value,
           $Res Function(CoreAuthenticationState) then) =
       _$CoreAuthenticationStateCopyWithImpl<$Res>;
-  $Res call({bool isAnonymous});
+  $Res call(
+      {bool isAnonymous,
+      Option<Either<AuthenticationFailure, dynamic>>
+          authenticationFailureOrSuccessOption});
 }
 
 class _$CoreAuthenticationStateCopyWithImpl<$Res>
@@ -112,10 +289,16 @@ class _$CoreAuthenticationStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object isAnonymous = freezed,
+    Object authenticationFailureOrSuccessOption = freezed,
   }) {
     return _then(_value.copyWith(
       isAnonymous:
           isAnonymous == freezed ? _value.isAnonymous : isAnonymous as bool,
+      authenticationFailureOrSuccessOption:
+          authenticationFailureOrSuccessOption == freezed
+              ? _value.authenticationFailureOrSuccessOption
+              : authenticationFailureOrSuccessOption
+                  as Option<Either<AuthenticationFailure, dynamic>>,
     ));
   }
 }
@@ -126,7 +309,10 @@ abstract class _$CoreAuthenticationStateCopyWith<$Res>
           $Res Function(_CoreAuthenticationState) then) =
       __$CoreAuthenticationStateCopyWithImpl<$Res>;
   @override
-  $Res call({bool isAnonymous});
+  $Res call(
+      {bool isAnonymous,
+      Option<Either<AuthenticationFailure, dynamic>>
+          authenticationFailureOrSuccessOption});
 }
 
 class __$CoreAuthenticationStateCopyWithImpl<$Res>
@@ -143,24 +329,36 @@ class __$CoreAuthenticationStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object isAnonymous = freezed,
+    Object authenticationFailureOrSuccessOption = freezed,
   }) {
     return _then(_CoreAuthenticationState(
       isAnonymous:
           isAnonymous == freezed ? _value.isAnonymous : isAnonymous as bool,
+      authenticationFailureOrSuccessOption:
+          authenticationFailureOrSuccessOption == freezed
+              ? _value.authenticationFailureOrSuccessOption
+              : authenticationFailureOrSuccessOption
+                  as Option<Either<AuthenticationFailure, dynamic>>,
     ));
   }
 }
 
 class _$_CoreAuthenticationState implements _CoreAuthenticationState {
-  const _$_CoreAuthenticationState({@required this.isAnonymous})
-      : assert(isAnonymous != null);
+  const _$_CoreAuthenticationState(
+      {@required this.isAnonymous,
+      @required this.authenticationFailureOrSuccessOption})
+      : assert(isAnonymous != null),
+        assert(authenticationFailureOrSuccessOption != null);
 
   @override
   final bool isAnonymous;
+  @override
+  final Option<Either<AuthenticationFailure, dynamic>>
+      authenticationFailureOrSuccessOption;
 
   @override
   String toString() {
-    return 'CoreAuthenticationState(isAnonymous: $isAnonymous)';
+    return 'CoreAuthenticationState(isAnonymous: $isAnonymous, authenticationFailureOrSuccessOption: $authenticationFailureOrSuccessOption)';
   }
 
   @override
@@ -169,12 +367,19 @@ class _$_CoreAuthenticationState implements _CoreAuthenticationState {
         (other is _CoreAuthenticationState &&
             (identical(other.isAnonymous, isAnonymous) ||
                 const DeepCollectionEquality()
-                    .equals(other.isAnonymous, isAnonymous)));
+                    .equals(other.isAnonymous, isAnonymous)) &&
+            (identical(other.authenticationFailureOrSuccessOption,
+                    authenticationFailureOrSuccessOption) ||
+                const DeepCollectionEquality().equals(
+                    other.authenticationFailureOrSuccessOption,
+                    authenticationFailureOrSuccessOption)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(isAnonymous);
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(isAnonymous) ^
+      const DeepCollectionEquality().hash(authenticationFailureOrSuccessOption);
 
   @override
   _$CoreAuthenticationStateCopyWith<_CoreAuthenticationState> get copyWith =>
@@ -183,11 +388,19 @@ class _$_CoreAuthenticationState implements _CoreAuthenticationState {
 }
 
 abstract class _CoreAuthenticationState implements CoreAuthenticationState {
-  const factory _CoreAuthenticationState({@required bool isAnonymous}) =
+  const factory _CoreAuthenticationState(
+          {@required
+              bool isAnonymous,
+          @required
+              Option<Either<AuthenticationFailure, dynamic>>
+                  authenticationFailureOrSuccessOption}) =
       _$_CoreAuthenticationState;
 
   @override
   bool get isAnonymous;
+  @override
+  Option<Either<AuthenticationFailure, dynamic>>
+      get authenticationFailureOrSuccessOption;
   @override
   _$CoreAuthenticationStateCopyWith<_CoreAuthenticationState> get copyWith;
 }

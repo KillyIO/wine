@@ -43,15 +43,17 @@ class CreateAccountDatabaseBloc
           isUpdating: true,
           databaseFailureOrSuccessOption: none(),
         );
+
         failureOrSuccess =
             await _onlineUserDatabaseFacade.saveDetailsFromUser(event.user);
 
         failureOrSuccess.fold(
           (_) {},
-          (right) async {
-            if (right is User) {
-              final Session session = Session.fromMap(right.toMap());
-              await _localSessionDatabaseFacade.setSession(session);
+          (success) async {
+            if (success is User) {
+              final Session session = Session.fromMap(success.toMap());
+              failureOrSuccess =
+                  await _localSessionDatabaseFacade.saveSession(session);
             }
           },
         );
@@ -61,9 +63,22 @@ class CreateAccountDatabaseBloc
         );
       },
       verifyEmailPageLaunched: (event) async* {
-        final Session session = _localSessionDatabaseFacade.getSession();
+        Session session;
+
+        final Either<DatabaseFailure, dynamic> failureOrSuccess =
+            await _localSessionDatabaseFacade.getSession();
+        failureOrSuccess.fold(
+          (_) {},
+          (success) {
+            if (success is Session) {
+              session = success;
+            }
+          },
+        );
+
         yield state.copyWith(
           email: session.email,
+          databaseFailureOrSuccessOption: optionOf(failureOrSuccess),
         );
       },
     );

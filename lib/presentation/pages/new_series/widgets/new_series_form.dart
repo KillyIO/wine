@@ -6,17 +6,16 @@ import 'package:wine/application/navigation/home/home_navigation_bloc.dart';
 import 'package:wine/domain/enums/parent_type.dart';
 import 'package:wine/domain/models/hive/series_draft.dart';
 import 'package:wine/domain/models/series.dart';
-import 'package:wine/presentation/pages/new_series/widgets/new_series_list_tile.dart';
-import 'package:wine/presentation/pages/new_series/widgets/new_series_selection_dialog.dart';
-import 'package:wine/presentation/pages/new_series/widgets/new_series_text_field_label.dart';
+import 'package:wine/presentation/widgets/wine_dialog_list_tile.dart';
+import 'package:wine/presentation/widgets/wine_info_dialog.dart';
 import 'package:wine/presentation/widgets/wine_show_dialog.dart';
 import 'package:wine/presentation/widgets/wine_image_back_button.dart';
-import 'package:wine/presentation/widgets/wine_switch.dart';
+import 'package:wine/presentation/widgets/wine_selection_dialog.dart';
 import 'package:wine/presentation/widgets/wine_switch_list_tile.dart';
+import 'package:wine/presentation/widgets/wine_text_field_label.dart';
 import 'package:wine/routes.dart';
 import 'package:wine/utils/arguments.dart';
 import 'package:wine/utils/constants.dart';
-import 'package:wine/utils/methods.dart';
 import 'package:wine/utils/palettes.dart';
 
 class NewSeriesForm extends StatefulWidget {
@@ -33,18 +32,6 @@ class NewSeriesForm extends StatefulWidget {
 
 class _NewSeriesFormState extends State<NewSeriesForm>
     with TickerProviderStateMixin {
-  Map<String, String> _genres;
-  Map<String, String> _languages;
-  Map<String, String> _copyrights;
-
-  @override
-  void initState() {
-    super.initState();
-    _genres = Methods.getGenres(context);
-    _languages = Methods.getLanguages(context);
-    _copyrights = Methods.getCopyrights(context);
-  }
-
   Future<bool> _onWillPop() async {
     final bool canPop = Navigator.of(context).canPop();
 
@@ -86,11 +73,6 @@ class _NewSeriesFormState extends State<NewSeriesForm>
     Navigator.of(context).pop(true);
   }
 
-  void _copyrightSelected(String copyrights) {
-    context.bloc<NewSeriesDatabaseBloc>().add(CopyrightsSelected(copyrights));
-    Navigator.of(context).pop(true);
-  }
-
   @override
   Widget build(BuildContext context) {
     return WillPopScope(
@@ -100,18 +82,15 @@ class _NewSeriesFormState extends State<NewSeriesForm>
           state.databaseFailureOrSuccessOption.fold(
             () {},
             (some) => some.fold(
-              (failure) {},
-              (right) {
-                if (right is Series) {
-                  final SeriesDraft seriesDraft =
-                      SeriesDraft.fromMap(right.toMap());
-
+              (_) {},
+              (success) {
+                if (success is SeriesDraft) {
                   sailor.navigate(
                     Constants.newChapterRoute,
                     navigationType: NavigationType.pushReplace,
                     args: NewChapterPageArgs(
                       parentType: ParentType.series,
-                      seriesDraft: seriesDraft,
+                      seriesDraft: success,
                     ),
                   );
                 }
@@ -129,13 +108,28 @@ class _NewSeriesFormState extends State<NewSeriesForm>
                   FlatButton(
                     disabledTextColor: Colors.black26,
                     highlightColor: Colors.transparent,
-                    onPressed: () => context.bloc<NewSeriesDatabaseBloc>().add(
-                        const NewSeriesDatabaseEvent
-                            .createSeriesButtonPressed()),
+                    onPressed: () => nsDbState.isEditMode
+                        ? context.bloc<NewSeriesDatabaseBloc>().add(
+                            const NewSeriesDatabaseEvent
+                                .saveSeriesDraftButtonPressed())
+                        : wineShowDialog(
+                            context: context,
+                            builder: (_) => WINEInfoDialog(
+                              message:
+                                  'This series will be available to the community once you publish the first chapter.',
+                              buttonText: 'GOT IT!',
+                              onPressed: () {
+                                context.bloc<NewSeriesDatabaseBloc>().add(
+                                    const NewSeriesDatabaseEvent
+                                        .saveSeriesDraftButtonPressed());
+                                Navigator.of(context).pop(true);
+                              },
+                            ),
+                          ),
                     splashColor: Colors.transparent,
                     textColor: Colors.black,
                     child: Text(
-                      'CREATE SERIES',
+                      nsDbState.isEditMode ? 'SAVE' : 'CREATE SERIES',
                       style: TextStyle(
                         fontWeight: FontWeight.w500,
                       ),
@@ -188,7 +182,7 @@ class _NewSeriesFormState extends State<NewSeriesForm>
                             ),
                           ),
                           // SECTION title
-                          const NewSeriesTextFieldLabel(title: 'TITLE*'),
+                          const WINETextFieldLabel(title: 'TITLE*'),
                           TextFormField(
                             decoration: InputDecoration(
                               hintText:
@@ -248,7 +242,7 @@ class _NewSeriesFormState extends State<NewSeriesForm>
                           ),
                           const SizedBox(height: 25),
                           // SECTION subtitle
-                          const NewSeriesTextFieldLabel(
+                          const WINETextFieldLabel(
                             title: 'SUBTITLE (OPTIONAL)',
                           ),
                           TextFormField(
@@ -302,7 +296,7 @@ class _NewSeriesFormState extends State<NewSeriesForm>
                           ),
                           const SizedBox(height: 25),
                           // SECTION symmary
-                          const NewSeriesTextFieldLabel(title: 'SUMMARY*'),
+                          const WINETextFieldLabel(title: 'SUMMARY*'),
                           TextFormField(
                             decoration: InputDecoration(
                               hintText:
@@ -358,15 +352,15 @@ class _NewSeriesFormState extends State<NewSeriesForm>
                           ),
                           const SizedBox(height: 25),
                           // SECTION genre
-                          NewSeriesListTile(
+                          WINEDialogListTile(
                             hasSelected: nsDbState.genreStr == '',
                             onPressed: () {
                               FocusScope.of(context).requestFocus(FocusNode());
                               wineShowDialog(
                                 context: context,
-                                builder: (_) => NewSeriesSelectionDialog(
+                                builder: (_) => WINESelectionDialog(
                                   title: 'GENRE',
-                                  selections: _genres,
+                                  selections: nsDbState.genresMap,
                                   onPressed: _genreSelected,
                                   onInfoPressed: () => sailor(
                                     Constants.genresRoute,
@@ -375,7 +369,8 @@ class _NewSeriesFormState extends State<NewSeriesForm>
                               );
                             },
                             title: 'GENRE*',
-                            trailingText: _genres[nsDbState.genreStr],
+                            trailingText:
+                                nsDbState.genresMap[nsDbState.genreStr],
                           ),
                           const SizedBox(height: 5),
                           Visibility(
@@ -394,15 +389,15 @@ class _NewSeriesFormState extends State<NewSeriesForm>
                           ),
                           const SizedBox(height: 25),
                           // SECTION genre optional
-                          NewSeriesListTile(
+                          WINEDialogListTile(
                             hasSelected: nsDbState.genreOptionalStr == '',
                             onPressed: () {
                               FocusScope.of(context).requestFocus(FocusNode());
                               wineShowDialog(
                                 context: context,
-                                builder: (_) => NewSeriesSelectionDialog(
+                                builder: (_) => WINESelectionDialog(
                                   title: 'GENRE (OPTIONAL)',
-                                  selections: _genres,
+                                  selections: nsDbState.genresMap,
                                   onPressed: _genreOptionalSelected,
                                   onInfoPressed: () => sailor(
                                     Constants.genresRoute,
@@ -411,7 +406,8 @@ class _NewSeriesFormState extends State<NewSeriesForm>
                               );
                             },
                             title: 'GENRE (OPTIONAL)',
-                            trailingText: _genres[nsDbState.genreOptionalStr],
+                            trailingText:
+                                nsDbState.genresMap[nsDbState.genreOptionalStr],
                           ),
                           const SizedBox(height: 25),
                           // SECTION ADULT CONTENT
@@ -427,61 +423,26 @@ class _NewSeriesFormState extends State<NewSeriesForm>
                           ),
                           const SizedBox(height: 25),
                           // SECTION language
-                          NewSeriesListTile(
+                          WINEDialogListTile(
                             hasSelected: nsDbState.languageStr == '',
                             onPressed: () {
                               FocusScope.of(context).requestFocus(FocusNode());
                               wineShowDialog(
                                 context: context,
-                                builder: (_) => NewSeriesSelectionDialog(
+                                builder: (_) => WINESelectionDialog(
                                   title: 'LANGUAGE',
-                                  selections: _languages,
+                                  selections: nsDbState.languagesMap,
                                   onPressed: _languageSelected,
                                 ),
                               );
                             },
                             title: 'LANGUAGE*',
-                            trailingText: _languages[nsDbState.languageStr],
+                            trailingText:
+                                nsDbState.languagesMap[nsDbState.languageStr],
                           ),
                           const SizedBox(height: 5),
                           Visibility(
                             visible: nsDbState.languageStr == '' &&
-                                nsDbState.showErrorMessages,
-                            child: Padding(
-                              padding: const EdgeInsets.only(left: 20.0),
-                              child: Text(
-                                'Required.',
-                                style: TextStyle(
-                                  color: Palettes.error,
-                                  fontSize: 13.0,
-                                ),
-                              ),
-                            ),
-                          ),
-                          const SizedBox(height: 25),
-                          // SECTION copyright
-                          NewSeriesListTile(
-                            hasSelected: nsDbState.copyrightsStr == '',
-                            onPressed: () {
-                              FocusScope.of(context).requestFocus(FocusNode());
-                              wineShowDialog(
-                                context: context,
-                                builder: (_) => NewSeriesSelectionDialog(
-                                  title: 'COPYRIGHTS',
-                                  selections: _copyrights,
-                                  onPressed: _copyrightSelected,
-                                  onInfoPressed: () => sailor(
-                                    Constants.copyrightsRoute,
-                                  ),
-                                ),
-                              );
-                            },
-                            title: 'COPYRIGHTS*',
-                            trailingText: _copyrights[nsDbState.copyrightsStr],
-                          ),
-                          const SizedBox(height: 5),
-                          Visibility(
-                            visible: nsDbState.copyrightsStr == '' &&
                                 nsDbState.showErrorMessages,
                             child: Padding(
                               padding: const EdgeInsets.only(left: 20.0),

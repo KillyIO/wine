@@ -92,15 +92,15 @@ class CreateAccountAuthenticationBloc extends Bloc<
 
           failureOrSuccess.fold(
             (_) {},
-            (right) {
-              if (right is User) {
-                right.username = state.username
+            (success) {
+              if (success is User) {
+                success.username = state.username
                     .getOrCrash()
                     .trim()
                     .replaceAll(RegExp(r'[ -]'), '_');
-                right.name = state.username.getOrCrash().trim();
-                right.createdAt = DateTime.now().millisecondsSinceEpoch;
-                right.updatedAt = DateTime.now().millisecondsSinceEpoch;
+                success.name = state.username.getOrCrash().trim();
+                success.createdAt = DateTime.now().millisecondsSinceEpoch;
+                success.updatedAt = DateTime.now().millisecondsSinceEpoch;
               }
             },
           );

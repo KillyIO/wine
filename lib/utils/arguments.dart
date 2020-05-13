@@ -16,14 +16,12 @@ class NewChapterPageArgs extends BaseArguments {
   final ParentType parentType;
   final ChapterDraft chapterDraft;
   final SeriesDraft seriesDraft;
-  final String previousChapterUid;
-  final int previousChapterIndex;
+  final ChapterDraft previousChapterDraft;
 
   NewChapterPageArgs({
     this.parentType,
     this.chapterDraft,
     this.seriesDraft,
-    this.previousChapterUid,
-    this.previousChapterIndex,
+    this.previousChapterDraft,
   });
 }

@@ -67,10 +67,6 @@ void createRoutes() {
       name: Constants.accountRoute,
       builder: (context, args, params) => AccountPage(),
     ),
-    SailorRoute(
-      name: Constants.accountRoute,
-      builder: (context, args, params) => MySeriesPage(),
-    ),
     // SECTION NEW SERIES
     SailorRoute(
       name: Constants.newSeriesRoute,
