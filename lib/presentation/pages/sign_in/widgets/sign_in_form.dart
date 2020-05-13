@@ -46,13 +46,13 @@ class _SignInFormState extends State<SignInForm> with TickerProviderStateMixin {
                       onPressed: () => Navigator.of(context).pop(true),
                     ),
                   ),
-                  orElse: () {},
+                  orElse: null,
                 ),
-                (right) {
-                  if (right is User) {
+                (success) {
+                  if (success is User) {
                     context
                         .bloc<SignInDatabaseBloc>()
-                        .add(SignInDatabaseEvent.signedIn(right));
+                        .add(SignInDatabaseEvent.signedIn(success));
                   }
                 },
               ),
@@ -64,12 +64,24 @@ class _SignInFormState extends State<SignInForm> with TickerProviderStateMixin {
             state.databaseFailureOrSuccessOption.fold(
               () {},
               (some) => some.fold(
-                (failure) => wineShowDialog(
-                  context: context,
-                  builder: (_) => WINEErrorDialog(
-                    message: 'An unexpected error occured!',
-                    onPressed: () => Navigator.of(context).pop(true),
+                (failure) => failure.maybeMap(
+                  failedToCreateOnlineData: (_) => wineShowDialog(
+                    context: context,
+                    builder: (_) => WINEErrorDialog(
+                      message:
+                          'Failed to send data to our servers! Please try again.',
+                      onPressed: () => Navigator.of(context).pop(true),
+                    ),
                   ),
+                  failedToCreateLocalData: (_) => wineShowDialog(
+                    context: context,
+                    builder: (_) => WINEErrorDialog(
+                      message:
+                          'Failed to save data on your device! Please try again.',
+                      onPressed: () => Navigator.of(context).pop(true),
+                    ),
+                  ),
+                  orElse: null,
                 ),
                 (_) {
                   sailor.navigate(
@@ -78,7 +90,7 @@ class _SignInFormState extends State<SignInForm> with TickerProviderStateMixin {
                     removeUntilPredicate: (_) => false,
                   );
                   context.bloc<CoreAuthenticationBloc>().add(
-                      const CoreAuthenticationEvent.getUserAnonymousStatus());
+                      const CoreAuthenticationEvent.authenticationChanged());
                   context
                       .bloc<HomeNavigationBloc>()
                       .add(const HomeNavigationEvent.resetHomeNavigationBloc());

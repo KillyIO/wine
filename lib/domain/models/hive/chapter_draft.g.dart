@@ -22,17 +22,19 @@ class ChapterDraftAdapter extends TypeAdapter<ChapterDraft> {
       previousChapterUid: fields[2] as String,
       authorUid: fields[3] as String,
       title: fields[4] as String,
-      content: fields[5] as String,
+      story: fields[5] as String,
       index: fields[6] as int,
       language: fields[7] as String,
-      isNSFW: fields[8] as bool,
+      copyrights: fields[8] as String,
+      isNSFW: fields[9] as bool,
+      isEnd: fields[10] as bool,
     );
   }
 
   @override
   void write(BinaryWriter writer, ChapterDraft obj) {
     writer
-      ..writeByte(9)
+      ..writeByte(11)
       ..writeByte(0)
       ..write(obj.uid)
       ..writeByte(1)
@@ -44,12 +46,16 @@ class ChapterDraftAdapter extends TypeAdapter<ChapterDraft> {
       ..writeByte(4)
       ..write(obj.title)
       ..writeByte(5)
-      ..write(obj.content)
+      ..write(obj.story)
       ..writeByte(6)
       ..write(obj.index)
       ..writeByte(7)
       ..write(obj.language)
       ..writeByte(8)
-      ..write(obj.isNSFW);
+      ..write(obj.copyrights)
+      ..writeByte(9)
+      ..write(obj.isNSFW)
+      ..writeByte(10)
+      ..write(obj.isEnd);
   }
 }

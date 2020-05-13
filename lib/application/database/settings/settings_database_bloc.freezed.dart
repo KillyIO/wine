@@ -359,13 +359,20 @@ class _$SettingsDatabaseStateTearOff {
   const _$SettingsDatabaseStateTearOff();
 
   _SettingsDatabaseState call(
-      {@required Session session,
-      @required bool isUpdating,
-      @required bool isSessionDeleted}) {
+      {@required
+          Session session,
+      @required
+          bool isUpdating,
+      @required
+          bool isSessionDeleted,
+      @required
+          Option<Either<DatabaseFailure, dynamic>>
+              databaseFailureOrSuccessOption}) {
     return _SettingsDatabaseState(
       session: session,
       isUpdating: isUpdating,
       isSessionDeleted: isSessionDeleted,
+      databaseFailureOrSuccessOption: databaseFailureOrSuccessOption,
     );
   }
 }
@@ -377,6 +384,7 @@ mixin _$SettingsDatabaseState {
   Session get session;
   bool get isUpdating;
   bool get isSessionDeleted;
+  Option<Either<DatabaseFailure, dynamic>> get databaseFailureOrSuccessOption;
 
   $SettingsDatabaseStateCopyWith<SettingsDatabaseState> get copyWith;
 }
@@ -385,7 +393,11 @@ abstract class $SettingsDatabaseStateCopyWith<$Res> {
   factory $SettingsDatabaseStateCopyWith(SettingsDatabaseState value,
           $Res Function(SettingsDatabaseState) then) =
       _$SettingsDatabaseStateCopyWithImpl<$Res>;
-  $Res call({Session session, bool isUpdating, bool isSessionDeleted});
+  $Res call(
+      {Session session,
+      bool isUpdating,
+      bool isSessionDeleted,
+      Option<Either<DatabaseFailure, dynamic>> databaseFailureOrSuccessOption});
 }
 
 class _$SettingsDatabaseStateCopyWithImpl<$Res>
@@ -401,6 +413,7 @@ class _$SettingsDatabaseStateCopyWithImpl<$Res>
     Object session = freezed,
     Object isUpdating = freezed,
     Object isSessionDeleted = freezed,
+    Object databaseFailureOrSuccessOption = freezed,
   }) {
     return _then(_value.copyWith(
       session: session == freezed ? _value.session : session as Session,
@@ -409,6 +422,10 @@ class _$SettingsDatabaseStateCopyWithImpl<$Res>
       isSessionDeleted: isSessionDeleted == freezed
           ? _value.isSessionDeleted
           : isSessionDeleted as bool,
+      databaseFailureOrSuccessOption: databaseFailureOrSuccessOption == freezed
+          ? _value.databaseFailureOrSuccessOption
+          : databaseFailureOrSuccessOption
+              as Option<Either<DatabaseFailure, dynamic>>,
     ));
   }
 }
@@ -419,7 +436,11 @@ abstract class _$SettingsDatabaseStateCopyWith<$Res>
           $Res Function(_SettingsDatabaseState) then) =
       __$SettingsDatabaseStateCopyWithImpl<$Res>;
   @override
-  $Res call({Session session, bool isUpdating, bool isSessionDeleted});
+  $Res call(
+      {Session session,
+      bool isUpdating,
+      bool isSessionDeleted,
+      Option<Either<DatabaseFailure, dynamic>> databaseFailureOrSuccessOption});
 }
 
 class __$SettingsDatabaseStateCopyWithImpl<$Res>
@@ -437,6 +458,7 @@ class __$SettingsDatabaseStateCopyWithImpl<$Res>
     Object session = freezed,
     Object isUpdating = freezed,
     Object isSessionDeleted = freezed,
+    Object databaseFailureOrSuccessOption = freezed,
   }) {
     return _then(_SettingsDatabaseState(
       session: session == freezed ? _value.session : session as Session,
@@ -445,6 +467,10 @@ class __$SettingsDatabaseStateCopyWithImpl<$Res>
       isSessionDeleted: isSessionDeleted == freezed
           ? _value.isSessionDeleted
           : isSessionDeleted as bool,
+      databaseFailureOrSuccessOption: databaseFailureOrSuccessOption == freezed
+          ? _value.databaseFailureOrSuccessOption
+          : databaseFailureOrSuccessOption
+              as Option<Either<DatabaseFailure, dynamic>>,
     ));
   }
 }
@@ -453,10 +479,12 @@ class _$_SettingsDatabaseState implements _SettingsDatabaseState {
   const _$_SettingsDatabaseState(
       {@required this.session,
       @required this.isUpdating,
-      @required this.isSessionDeleted})
+      @required this.isSessionDeleted,
+      @required this.databaseFailureOrSuccessOption})
       : assert(session != null),
         assert(isUpdating != null),
-        assert(isSessionDeleted != null);
+        assert(isSessionDeleted != null),
+        assert(databaseFailureOrSuccessOption != null);
 
   @override
   final Session session;
@@ -464,10 +492,12 @@ class _$_SettingsDatabaseState implements _SettingsDatabaseState {
   final bool isUpdating;
   @override
   final bool isSessionDeleted;
+  @override
+  final Option<Either<DatabaseFailure, dynamic>> databaseFailureOrSuccessOption;
 
   @override
   String toString() {
-    return 'SettingsDatabaseState(session: $session, isUpdating: $isUpdating, isSessionDeleted: $isSessionDeleted)';
+    return 'SettingsDatabaseState(session: $session, isUpdating: $isUpdating, isSessionDeleted: $isSessionDeleted, databaseFailureOrSuccessOption: $databaseFailureOrSuccessOption)';
   }
 
   @override
@@ -482,7 +512,12 @@ class _$_SettingsDatabaseState implements _SettingsDatabaseState {
                     .equals(other.isUpdating, isUpdating)) &&
             (identical(other.isSessionDeleted, isSessionDeleted) ||
                 const DeepCollectionEquality()
-                    .equals(other.isSessionDeleted, isSessionDeleted)));
+                    .equals(other.isSessionDeleted, isSessionDeleted)) &&
+            (identical(other.databaseFailureOrSuccessOption,
+                    databaseFailureOrSuccessOption) ||
+                const DeepCollectionEquality().equals(
+                    other.databaseFailureOrSuccessOption,
+                    databaseFailureOrSuccessOption)));
   }
 
   @override
@@ -490,7 +525,8 @@ class _$_SettingsDatabaseState implements _SettingsDatabaseState {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(session) ^
       const DeepCollectionEquality().hash(isUpdating) ^
-      const DeepCollectionEquality().hash(isSessionDeleted);
+      const DeepCollectionEquality().hash(isSessionDeleted) ^
+      const DeepCollectionEquality().hash(databaseFailureOrSuccessOption);
 
   @override
   _$SettingsDatabaseStateCopyWith<_SettingsDatabaseState> get copyWith =>
@@ -500,9 +536,15 @@ class _$_SettingsDatabaseState implements _SettingsDatabaseState {
 
 abstract class _SettingsDatabaseState implements SettingsDatabaseState {
   const factory _SettingsDatabaseState(
-      {@required Session session,
-      @required bool isUpdating,
-      @required bool isSessionDeleted}) = _$_SettingsDatabaseState;
+      {@required
+          Session session,
+      @required
+          bool isUpdating,
+      @required
+          bool isSessionDeleted,
+      @required
+          Option<Either<DatabaseFailure, dynamic>>
+              databaseFailureOrSuccessOption}) = _$_SettingsDatabaseState;
 
   @override
   Session get session;
@@ -510,6 +552,8 @@ abstract class _SettingsDatabaseState implements SettingsDatabaseState {
   bool get isUpdating;
   @override
   bool get isSessionDeleted;
+  @override
+  Option<Either<DatabaseFailure, dynamic>> get databaseFailureOrSuccessOption;
   @override
   _$SettingsDatabaseStateCopyWith<_SettingsDatabaseState> get copyWith;
 }

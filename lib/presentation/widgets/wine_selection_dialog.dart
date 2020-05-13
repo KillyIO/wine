@@ -1,17 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
-
 import 'package:wine/utils/palettes.dart';
 
 typedef StringToVoidFunction = void Function(String);
 
-class NewSeriesSelectionDialog extends StatelessWidget {
+class WINESelectionDialog extends StatelessWidget {
   final String title;
   final Map<String, String> selections;
   final StringToVoidFunction onPressed;
   final VoidCallback onInfoPressed;
 
-  const NewSeriesSelectionDialog({
+  const WINESelectionDialog({
     Key key,
     this.title,
     this.selections,

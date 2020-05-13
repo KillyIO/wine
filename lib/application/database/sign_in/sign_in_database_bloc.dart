@@ -41,15 +41,17 @@ class SignInDatabaseBloc
         isUpdating: true,
         databaseFailureOrSuccessOption: none(),
       );
+
       failureOrSuccess =
           await _onlineUserDatabaseFacade.saveDetailsFromUser(event.user);
 
       failureOrSuccess.fold(
         (_) {},
-        (right) async {
-          if (right is User) {
-            final Session session = Session.fromMap(right.toMap());
-            await _localSessionDatabaseFacade.setSession(session);
+        (success) async {
+          if (success is User) {
+            final Session session = Session.fromMap(success.toMap());
+            failureOrSuccess =
+                await _localSessionDatabaseFacade.saveSession(session);
           }
         },
       );

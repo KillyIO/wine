@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:wine/utils/palettes.dart';
 
-class NewSeriesTextFieldLabel extends StatelessWidget {
+class WINETextFieldLabel extends StatelessWidget {
   final String title;
 
-  const NewSeriesTextFieldLabel({
+  const WINETextFieldLabel({
     Key key,
     this.title,
   }) : super(key: key);

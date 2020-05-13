@@ -8,7 +8,6 @@ import 'package:meta/meta.dart';
 import 'package:wine/domain/database/database_failure.dart';
 import 'package:wine/domain/database/i_local_session_database_facade.dart';
 import 'package:wine/domain/database/i_online_user_database_facade.dart';
-import 'package:wine/domain/enums/account_status.dart';
 import 'package:wine/domain/models/hive/session.dart';
 import 'package:wine/domain/models/user.dart';
 
@@ -43,18 +42,34 @@ class SplashDatabaseBloc
         );
 
         if (!event.isAnonymous) {
-          Session session = _localSessionDatabaseFacade.getSession();
-          failureOrSuccess =
-              await _onlineUserDatabaseFacade.getUser(session.uid);
+          Session session;
+
+          failureOrSuccess = await _localSessionDatabaseFacade.getSession();
           failureOrSuccess.fold(
             (_) {},
-            (right) async {
-              if (right is User) {
-                session = Session.fromMap(right.toMap());
-                await _localSessionDatabaseFacade.setSession(session);
+            (success) {
+              if (success is Session) {
+                session = success;
               }
             },
           );
+
+          if (session != null) {
+            failureOrSuccess =
+                await _onlineUserDatabaseFacade.getUser(session.uid);
+            failureOrSuccess.fold(
+              (_) {},
+              (success) async {
+                if (success is User) {
+                  session = Session.fromMap(success.toMap());
+                  await _localSessionDatabaseFacade.updateSession(session);
+                }
+              },
+            );
+          }
+        } else {
+          failureOrSuccess =
+              await _localSessionDatabaseFacade.saveSession(Session());
         }
 
         yield state.copyWith(

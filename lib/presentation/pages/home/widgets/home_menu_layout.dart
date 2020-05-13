@@ -112,7 +112,7 @@ class HomeMenuLayout extends StatelessWidget {
                                 ),
                                 height: 30.0,
                                 child: GestureDetector(
-                                  onTap: () {},
+                                  onTap: () => sailor(Constants.accountRoute),
                                   child: Text(
                                     'MY ACCOUNT',
                                     style: TextStyle(

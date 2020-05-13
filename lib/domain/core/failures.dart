@@ -24,6 +24,10 @@ abstract class ValueFailure<T> with _$ValueFailure<T> {
     @required String failedValue,
   }) = EmptyInput<T>;
 
+  const factory ValueFailure.shortInput({
+    @required String failedValue,
+  }) = ShortInput<T>;
+
   const factory ValueFailure.longInput({
     @required String failedValue,
   }) = LongInput<T>;

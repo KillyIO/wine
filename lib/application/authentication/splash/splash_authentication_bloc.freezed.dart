@@ -12,8 +12,8 @@ T _$identity<T>(T value) => value;
 class _$SplashAuthenticationEventTearOff {
   const _$SplashAuthenticationEventTearOff();
 
-  AppLaunched appLaunched() {
-    return const AppLaunched();
+  SplashLaunched splashLaunched() {
+    return const SplashLaunched();
   }
 }
 
@@ -37,42 +37,42 @@ class _$SplashAuthenticationEventCopyWithImpl<$Res>
   final $Res Function(SplashAuthenticationEvent) _then;
 }
 
-abstract class $AppLaunchedCopyWith<$Res> {
-  factory $AppLaunchedCopyWith(
-          AppLaunched value, $Res Function(AppLaunched) then) =
-      _$AppLaunchedCopyWithImpl<$Res>;
+abstract class $SplashLaunchedCopyWith<$Res> {
+  factory $SplashLaunchedCopyWith(
+          SplashLaunched value, $Res Function(SplashLaunched) then) =
+      _$SplashLaunchedCopyWithImpl<$Res>;
 }
 
-class _$AppLaunchedCopyWithImpl<$Res>
+class _$SplashLaunchedCopyWithImpl<$Res>
     extends _$SplashAuthenticationEventCopyWithImpl<$Res>
-    implements $AppLaunchedCopyWith<$Res> {
-  _$AppLaunchedCopyWithImpl(
-      AppLaunched _value, $Res Function(AppLaunched) _then)
-      : super(_value, (v) => _then(v as AppLaunched));
+    implements $SplashLaunchedCopyWith<$Res> {
+  _$SplashLaunchedCopyWithImpl(
+      SplashLaunched _value, $Res Function(SplashLaunched) _then)
+      : super(_value, (v) => _then(v as SplashLaunched));
 
   @override
-  AppLaunched get _value => super._value as AppLaunched;
+  SplashLaunched get _value => super._value as SplashLaunched;
 }
 
-class _$AppLaunched implements AppLaunched {
-  const _$AppLaunched();
+class _$SplashLaunched implements SplashLaunched {
+  const _$SplashLaunched();
 
   @override
   String toString() {
-    return 'SplashAuthenticationEvent.appLaunched()';
+    return 'SplashAuthenticationEvent.splashLaunched()';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is AppLaunched);
+    return identical(this, other) || (other is SplashLaunched);
   }
 
   @override
   int get hashCode => runtimeType.hashCode;
 }
 
-abstract class AppLaunched implements SplashAuthenticationEvent {
-  const factory AppLaunched() = _$AppLaunched;
+abstract class SplashLaunched implements SplashAuthenticationEvent {
+  const factory SplashLaunched() = _$SplashLaunched;
 }
 
 class _$SplashAuthenticationStateTearOff {
@@ -84,7 +84,7 @@ class _$SplashAuthenticationStateTearOff {
       @required
           bool isAnonymous,
       @required
-          Option<Either<AuthenticationFailure, Unit>>
+          Option<Either<AuthenticationFailure, dynamic>>
               authenticationFailureOrSuccessOption}) {
     return _SplashAuthenticationState(
       isAuthenticating: isAuthenticating,
@@ -101,7 +101,7 @@ const $SplashAuthenticationState = _$SplashAuthenticationStateTearOff();
 mixin _$SplashAuthenticationState {
   bool get isAuthenticating;
   bool get isAnonymous;
-  Option<Either<AuthenticationFailure, Unit>>
+  Option<Either<AuthenticationFailure, dynamic>>
       get authenticationFailureOrSuccessOption;
 
   $SplashAuthenticationStateCopyWith<SplashAuthenticationState> get copyWith;
@@ -114,7 +114,7 @@ abstract class $SplashAuthenticationStateCopyWith<$Res> {
   $Res call(
       {bool isAuthenticating,
       bool isAnonymous,
-      Option<Either<AuthenticationFailure, Unit>>
+      Option<Either<AuthenticationFailure, dynamic>>
           authenticationFailureOrSuccessOption});
 }
 
@@ -142,7 +142,7 @@ class _$SplashAuthenticationStateCopyWithImpl<$Res>
           authenticationFailureOrSuccessOption == freezed
               ? _value.authenticationFailureOrSuccessOption
               : authenticationFailureOrSuccessOption
-                  as Option<Either<AuthenticationFailure, Unit>>,
+                  as Option<Either<AuthenticationFailure, dynamic>>,
     ));
   }
 }
@@ -156,7 +156,7 @@ abstract class _$SplashAuthenticationStateCopyWith<$Res>
   $Res call(
       {bool isAuthenticating,
       bool isAnonymous,
-      Option<Either<AuthenticationFailure, Unit>>
+      Option<Either<AuthenticationFailure, dynamic>>
           authenticationFailureOrSuccessOption});
 }
 
@@ -187,7 +187,7 @@ class __$SplashAuthenticationStateCopyWithImpl<$Res>
           authenticationFailureOrSuccessOption == freezed
               ? _value.authenticationFailureOrSuccessOption
               : authenticationFailureOrSuccessOption
-                  as Option<Either<AuthenticationFailure, Unit>>,
+                  as Option<Either<AuthenticationFailure, dynamic>>,
     ));
   }
 }
@@ -206,7 +206,7 @@ class _$_SplashAuthenticationState implements _SplashAuthenticationState {
   @override
   final bool isAnonymous;
   @override
-  final Option<Either<AuthenticationFailure, Unit>>
+  final Option<Either<AuthenticationFailure, dynamic>>
       authenticationFailureOrSuccessOption;
 
   @override
@@ -252,7 +252,7 @@ abstract class _SplashAuthenticationState implements SplashAuthenticationState {
           @required
               bool isAnonymous,
           @required
-              Option<Either<AuthenticationFailure, Unit>>
+              Option<Either<AuthenticationFailure, dynamic>>
                   authenticationFailureOrSuccessOption}) =
       _$_SplashAuthenticationState;
 
@@ -261,7 +261,7 @@ abstract class _SplashAuthenticationState implements SplashAuthenticationState {
   @override
   bool get isAnonymous;
   @override
-  Option<Either<AuthenticationFailure, Unit>>
+  Option<Either<AuthenticationFailure, dynamic>>
       get authenticationFailureOrSuccessOption;
   @override
   _$SplashAuthenticationStateCopyWith<_SplashAuthenticationState> get copyWith;

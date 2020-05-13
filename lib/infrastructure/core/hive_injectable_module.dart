@@ -13,7 +13,7 @@ import 'package:wine/utils/constants.dart';
 abstract class HiveInjectableModule {
   @preResolve
   @lazySingleton
-  Future<Box<Session>> get openSessionsBoxes async {
+  Future<Box<Session>> get openSessionsBox async {
     final Directory extDir = await getApplicationDocumentsDirectory();
     final String dirPath = '${extDir.path}/db';
     await Directory(dirPath).create(recursive: true);
@@ -27,7 +27,7 @@ abstract class HiveInjectableModule {
 
   @preResolve
   @lazySingleton
-  Future<Box<Config>> get openConfigsBoxes async {
+  Future<Box<Config>> get openConfigsBox async {
     final Directory extDir = await getApplicationDocumentsDirectory();
     final String dirPath = '${extDir.path}/db';
     await Directory(dirPath).create(recursive: true);
@@ -41,7 +41,7 @@ abstract class HiveInjectableModule {
 
   @preResolve
   @lazySingleton
-  Future<Box<SeriesDraft>> get openSeriesDraftsBoxes async {
+  Future<Box<SeriesDraft>> get openSeriesDraftsBox async {
     final Directory extDir = await getApplicationDocumentsDirectory();
     final String dirPath = '${extDir.path}/db';
     await Directory(dirPath).create(recursive: true);
@@ -55,7 +55,7 @@ abstract class HiveInjectableModule {
 
   @preResolve
   @lazySingleton
-  Future<Box<ChapterDraft>> get openChapterDraftsBoxes async {
+  Future<Box<ChapterDraft>> get openChapterDraftsBox async {
     final Directory extDir = await getApplicationDocumentsDirectory();
     final String dirPath = '${extDir.path}/db';
     await Directory(dirPath).create(recursive: true);

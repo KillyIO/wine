@@ -24,8 +24,11 @@ class NewChapterPage extends StatelessWidget {
           BlocProvider(
             create: (context) => getIt<NewChapterDatabaseBloc>()
               ..add(NewChapterDatabaseEvent.newChapterPageLaunched(
+                parentType: args.parentType,
                 chapterDraft: args.chapterDraft,
                 seriesDraft: args.seriesDraft,
+                previousChapterDraft: args.previousChapterDraft,
+                context: context,
               )),
           ),
         ],

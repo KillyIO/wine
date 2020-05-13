@@ -1,10 +1,9 @@
-import 'package:flutter/foundation.dart';
+import 'package:dartz/dartz.dart';
 import 'package:hive/hive.dart';
 import 'package:injectable/injectable.dart';
+import 'package:wine/domain/database/database_failure.dart';
 
 import 'package:wine/domain/database/i_local_session_database_facade.dart';
-import 'package:wine/domain/enums/session_field.dart';
-import 'package:wine/domain/models/hive/series_draft.dart';
 import 'package:wine/domain/models/hive/session.dart';
 import 'package:wine/utils/constants.dart';
 
@@ -12,82 +11,51 @@ import 'package:wine/utils/constants.dart';
 @RegisterAs(ILocalSessionDatabaseFacade)
 class HiveLocalSessionDatabaseFacade implements ILocalSessionDatabaseFacade {
   final Box<Session> _sessionsBox;
-  final Box<SeriesDraft> _seriesDraftBox;
 
-  HiveLocalSessionDatabaseFacade(
-    this._sessionsBox,
-    this._seriesDraftBox,
-  );
+  HiveLocalSessionDatabaseFacade(this._sessionsBox);
 
   @override
-  Future<void> setSession(Session session) async {
+  Future<Either<DatabaseFailure, Unit>> saveSession(Session session) async {
     await _sessionsBox.put(Constants.session, session);
+
+    final Session sessionTest = _sessionsBox.get(Constants.session);
+    if (sessionTest != null) {
+      return right(unit);
+    }
+    return left(const DatabaseFailure.failedToCreateLocalData());
   }
 
   @override
-  Future<void> setSessionData({
-    @required SessionField field,
-    @required dynamic value,
-  }) async {
-    Session session = _sessionsBox.get(Constants.session);
+  Future<Either<DatabaseFailure, Session>> getSession() async {
+    final Session session = _sessionsBox.get(Constants.session);
 
-    if (session == null) {
-      await _sessionsBox.put(Constants.session, Session());
-      session = _sessionsBox.get(Constants.session);
+    if (session != null) {
+      return right(session);
     }
-
-    switch (field) {
-      case SessionField.uid:
-        session.uid = value as String;
-        break;
-      case SessionField.name:
-        session.name = value as String;
-        break;
-      case SessionField.username:
-        session.username = value as String;
-        break;
-      case SessionField.email:
-        session.email = value as String;
-        break;
-      case SessionField.profilePictureUrl:
-        session.profilePictureUrl = value as String;
-        break;
-      case SessionField.createdAt:
-        session.createdAt = value as int;
-        break;
-      case SessionField.updatedAt:
-        session.updatedAt = value as int;
-        break;
-      case SessionField.bio:
-        session.bio = value as String;
-        break;
-      default:
-    }
-    await session.save();
+    return left(const DatabaseFailure.failedToRetrieveLocalData());
   }
 
   @override
-  Future<void> clearSession() async {
+  Future<Either<DatabaseFailure, Unit>> updateSession(Session session) async {
+    final Session outdatedSession = _sessionsBox.get(Constants.session);
+
+    await _sessionsBox.put(Constants.session, session);
+
+    final Session currentSession = _sessionsBox.get(Constants.session);
+    if (currentSession != outdatedSession) {
+      return right(unit);
+    }
+    return left(const DatabaseFailure.failedToUpdateLocalData());
+  }
+
+  @override
+  Future<Either<DatabaseFailure, Unit>> deleteSession() async {
     await _sessionsBox.delete(Constants.session);
-  }
 
-  @override
-  Session getSession() {
-    return _sessionsBox.get(Constants.session);
-  }
-
-  @override
-  Future<void> saveSeriesDraft(SeriesDraft seriesDraft) async {
-    await _seriesDraftBox.put(seriesDraft.uid, seriesDraft);
-  }
-
-  @override
-  SeriesDraft getSeriesDraft(String uid) {
-    return _seriesDraftBox.get(uid);
-  }
-
-  @override
-  Future<void> deleteSeriesDraft(String uid) async {
-    await _seriesDraftBox.delete(uid);
+    final Session session = _sessionsBox.get(Constants.session);
+    if (session != null) {
+      return left(const DatabaseFailure.failedToDeleteLocalData());
+    }
+    return right(unit);
   }
 }

@@ -15,12 +15,42 @@ class _$SettingsAuthenticationEventTearOff {
   SignOutPressed signOutPressed() {
     return const SignOutPressed();
   }
+
+  ResetSettingsAuthenticationBloc resetSettingsAuthenticationBloc() {
+    return const ResetSettingsAuthenticationBloc();
+  }
 }
 
 // ignore: unused_element
 const $SettingsAuthenticationEvent = _$SettingsAuthenticationEventTearOff();
 
-mixin _$SettingsAuthenticationEvent {}
+mixin _$SettingsAuthenticationEvent {
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result signOutPressed(),
+    @required Result resetSettingsAuthenticationBloc(),
+  });
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result signOutPressed(),
+    Result resetSettingsAuthenticationBloc(),
+    @required Result orElse(),
+  });
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result signOutPressed(SignOutPressed value),
+    @required
+        Result resetSettingsAuthenticationBloc(
+            ResetSettingsAuthenticationBloc value),
+  });
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result signOutPressed(SignOutPressed value),
+    Result resetSettingsAuthenticationBloc(
+        ResetSettingsAuthenticationBloc value),
+    @required Result orElse(),
+  });
+}
 
 abstract class $SettingsAuthenticationEventCopyWith<$Res> {
   factory $SettingsAuthenticationEventCopyWith(
@@ -70,10 +100,160 @@ class _$SignOutPressed implements SignOutPressed {
 
   @override
   int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result signOutPressed(),
+    @required Result resetSettingsAuthenticationBloc(),
+  }) {
+    assert(signOutPressed != null);
+    assert(resetSettingsAuthenticationBloc != null);
+    return signOutPressed();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result signOutPressed(),
+    Result resetSettingsAuthenticationBloc(),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (signOutPressed != null) {
+      return signOutPressed();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result signOutPressed(SignOutPressed value),
+    @required
+        Result resetSettingsAuthenticationBloc(
+            ResetSettingsAuthenticationBloc value),
+  }) {
+    assert(signOutPressed != null);
+    assert(resetSettingsAuthenticationBloc != null);
+    return signOutPressed(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result signOutPressed(SignOutPressed value),
+    Result resetSettingsAuthenticationBloc(
+        ResetSettingsAuthenticationBloc value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (signOutPressed != null) {
+      return signOutPressed(this);
+    }
+    return orElse();
+  }
 }
 
 abstract class SignOutPressed implements SettingsAuthenticationEvent {
   const factory SignOutPressed() = _$SignOutPressed;
+}
+
+abstract class $ResetSettingsAuthenticationBlocCopyWith<$Res> {
+  factory $ResetSettingsAuthenticationBlocCopyWith(
+          ResetSettingsAuthenticationBloc value,
+          $Res Function(ResetSettingsAuthenticationBloc) then) =
+      _$ResetSettingsAuthenticationBlocCopyWithImpl<$Res>;
+}
+
+class _$ResetSettingsAuthenticationBlocCopyWithImpl<$Res>
+    extends _$SettingsAuthenticationEventCopyWithImpl<$Res>
+    implements $ResetSettingsAuthenticationBlocCopyWith<$Res> {
+  _$ResetSettingsAuthenticationBlocCopyWithImpl(
+      ResetSettingsAuthenticationBloc _value,
+      $Res Function(ResetSettingsAuthenticationBloc) _then)
+      : super(_value, (v) => _then(v as ResetSettingsAuthenticationBloc));
+
+  @override
+  ResetSettingsAuthenticationBloc get _value =>
+      super._value as ResetSettingsAuthenticationBloc;
+}
+
+class _$ResetSettingsAuthenticationBloc
+    implements ResetSettingsAuthenticationBloc {
+  const _$ResetSettingsAuthenticationBloc();
+
+  @override
+  String toString() {
+    return 'SettingsAuthenticationEvent.resetSettingsAuthenticationBloc()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is ResetSettingsAuthenticationBloc);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result signOutPressed(),
+    @required Result resetSettingsAuthenticationBloc(),
+  }) {
+    assert(signOutPressed != null);
+    assert(resetSettingsAuthenticationBloc != null);
+    return resetSettingsAuthenticationBloc();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result signOutPressed(),
+    Result resetSettingsAuthenticationBloc(),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (resetSettingsAuthenticationBloc != null) {
+      return resetSettingsAuthenticationBloc();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result signOutPressed(SignOutPressed value),
+    @required
+        Result resetSettingsAuthenticationBloc(
+            ResetSettingsAuthenticationBloc value),
+  }) {
+    assert(signOutPressed != null);
+    assert(resetSettingsAuthenticationBloc != null);
+    return resetSettingsAuthenticationBloc(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result signOutPressed(SignOutPressed value),
+    Result resetSettingsAuthenticationBloc(
+        ResetSettingsAuthenticationBloc value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (resetSettingsAuthenticationBloc != null) {
+      return resetSettingsAuthenticationBloc(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ResetSettingsAuthenticationBloc
+    implements SettingsAuthenticationEvent {
+  const factory ResetSettingsAuthenticationBloc() =
+      _$ResetSettingsAuthenticationBloc;
 }
 
 class _$SettingsAuthenticationStateTearOff {
@@ -83,10 +263,13 @@ class _$SettingsAuthenticationStateTearOff {
       {@required
           bool isSigningOut,
       @required
+          bool isUserSignedOut,
+      @required
           Option<Either<AuthenticationFailure, dynamic>>
               authenticationFailureOrSuccessOption}) {
     return _SettingsAuthenticationState(
       isSigningOut: isSigningOut,
+      isUserSignedOut: isUserSignedOut,
       authenticationFailureOrSuccessOption:
           authenticationFailureOrSuccessOption,
     );
@@ -98,6 +281,7 @@ const $SettingsAuthenticationState = _$SettingsAuthenticationStateTearOff();
 
 mixin _$SettingsAuthenticationState {
   bool get isSigningOut;
+  bool get isUserSignedOut;
   Option<Either<AuthenticationFailure, dynamic>>
       get authenticationFailureOrSuccessOption;
 
@@ -112,6 +296,7 @@ abstract class $SettingsAuthenticationStateCopyWith<$Res> {
       _$SettingsAuthenticationStateCopyWithImpl<$Res>;
   $Res call(
       {bool isSigningOut,
+      bool isUserSignedOut,
       Option<Either<AuthenticationFailure, dynamic>>
           authenticationFailureOrSuccessOption});
 }
@@ -127,11 +312,15 @@ class _$SettingsAuthenticationStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object isSigningOut = freezed,
+    Object isUserSignedOut = freezed,
     Object authenticationFailureOrSuccessOption = freezed,
   }) {
     return _then(_value.copyWith(
       isSigningOut:
           isSigningOut == freezed ? _value.isSigningOut : isSigningOut as bool,
+      isUserSignedOut: isUserSignedOut == freezed
+          ? _value.isUserSignedOut
+          : isUserSignedOut as bool,
       authenticationFailureOrSuccessOption:
           authenticationFailureOrSuccessOption == freezed
               ? _value.authenticationFailureOrSuccessOption
@@ -150,6 +339,7 @@ abstract class _$SettingsAuthenticationStateCopyWith<$Res>
   @override
   $Res call(
       {bool isSigningOut,
+      bool isUserSignedOut,
       Option<Either<AuthenticationFailure, dynamic>>
           authenticationFailureOrSuccessOption});
 }
@@ -169,11 +359,15 @@ class __$SettingsAuthenticationStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object isSigningOut = freezed,
+    Object isUserSignedOut = freezed,
     Object authenticationFailureOrSuccessOption = freezed,
   }) {
     return _then(_SettingsAuthenticationState(
       isSigningOut:
           isSigningOut == freezed ? _value.isSigningOut : isSigningOut as bool,
+      isUserSignedOut: isUserSignedOut == freezed
+          ? _value.isUserSignedOut
+          : isUserSignedOut as bool,
       authenticationFailureOrSuccessOption:
           authenticationFailureOrSuccessOption == freezed
               ? _value.authenticationFailureOrSuccessOption
@@ -186,19 +380,23 @@ class __$SettingsAuthenticationStateCopyWithImpl<$Res>
 class _$_SettingsAuthenticationState implements _SettingsAuthenticationState {
   const _$_SettingsAuthenticationState(
       {@required this.isSigningOut,
+      @required this.isUserSignedOut,
       @required this.authenticationFailureOrSuccessOption})
       : assert(isSigningOut != null),
+        assert(isUserSignedOut != null),
         assert(authenticationFailureOrSuccessOption != null);
 
   @override
   final bool isSigningOut;
+  @override
+  final bool isUserSignedOut;
   @override
   final Option<Either<AuthenticationFailure, dynamic>>
       authenticationFailureOrSuccessOption;
 
   @override
   String toString() {
-    return 'SettingsAuthenticationState(isSigningOut: $isSigningOut, authenticationFailureOrSuccessOption: $authenticationFailureOrSuccessOption)';
+    return 'SettingsAuthenticationState(isSigningOut: $isSigningOut, isUserSignedOut: $isUserSignedOut, authenticationFailureOrSuccessOption: $authenticationFailureOrSuccessOption)';
   }
 
   @override
@@ -208,6 +406,9 @@ class _$_SettingsAuthenticationState implements _SettingsAuthenticationState {
             (identical(other.isSigningOut, isSigningOut) ||
                 const DeepCollectionEquality()
                     .equals(other.isSigningOut, isSigningOut)) &&
+            (identical(other.isUserSignedOut, isUserSignedOut) ||
+                const DeepCollectionEquality()
+                    .equals(other.isUserSignedOut, isUserSignedOut)) &&
             (identical(other.authenticationFailureOrSuccessOption,
                     authenticationFailureOrSuccessOption) ||
                 const DeepCollectionEquality().equals(
@@ -219,6 +420,7 @@ class _$_SettingsAuthenticationState implements _SettingsAuthenticationState {
   int get hashCode =>
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(isSigningOut) ^
+      const DeepCollectionEquality().hash(isUserSignedOut) ^
       const DeepCollectionEquality().hash(authenticationFailureOrSuccessOption);
 
   @override
@@ -233,12 +435,16 @@ abstract class _SettingsAuthenticationState
           {@required
               bool isSigningOut,
           @required
+              bool isUserSignedOut,
+          @required
               Option<Either<AuthenticationFailure, dynamic>>
                   authenticationFailureOrSuccessOption}) =
       _$_SettingsAuthenticationState;
 
   @override
   bool get isSigningOut;
+  @override
+  bool get isUserSignedOut;
   @override
   Option<Either<AuthenticationFailure, dynamic>>
       get authenticationFailureOrSuccessOption;

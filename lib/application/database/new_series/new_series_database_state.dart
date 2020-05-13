@@ -4,6 +4,7 @@ part of 'new_series_database_bloc.dart';
 abstract class NewSeriesDatabaseState with _$NewSeriesDatabaseState {
   const factory NewSeriesDatabaseState({
     @required SeriesDraft seriesDraft,
+    @required bool isEditMode,
     @required Title title,
     @required int titleWordCount,
     @required Subtitle subtitle,
@@ -16,10 +17,10 @@ abstract class NewSeriesDatabaseState with _$NewSeriesDatabaseState {
     @required String genreOptionalStr,
     @required Language language,
     @required String languageStr,
-    @required Copyrights copyrights,
-    @required String copyrightsStr,
     @required bool isNSFW,
     @required bool isCreating,
+    @required Map<String, String> genresMap,
+    @required Map<String, String> languagesMap,
     @required bool showErrorMessages,
     @required
         Option<Either<DatabaseFailure, dynamic>> databaseFailureOrSuccessOption,
@@ -27,6 +28,7 @@ abstract class NewSeriesDatabaseState with _$NewSeriesDatabaseState {
 
   factory NewSeriesDatabaseState.initial() => NewSeriesDatabaseState(
         seriesDraft: SeriesDraft(),
+        isEditMode: false,
         title: Title(''),
         titleWordCount: 0,
         subtitle: Subtitle(''),
@@ -39,10 +41,10 @@ abstract class NewSeriesDatabaseState with _$NewSeriesDatabaseState {
         genreOptionalStr: '',
         language: Language(''),
         languageStr: '',
-        copyrights: Copyrights(''),
-        copyrightsStr: '',
         isNSFW: false,
         isCreating: false,
+        genresMap: <String, String>{},
+        languagesMap: <String, String>{},
         showErrorMessages: false,
         databaseFailureOrSuccessOption: none(),
       );

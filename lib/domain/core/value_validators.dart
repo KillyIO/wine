@@ -98,3 +98,15 @@ Either<ValueFailure<String>, String> validateCopyrights(String input) {
     return left(ValueFailure.emptySelection(failedValue: input));
   }
 }
+
+Either<ValueFailure<String>, String> validateStory(String input) {
+  if (input == null || input.isEmpty) {
+    return left(ValueFailure.emptyInput(failedValue: input));
+  } else if (tps.getWordCount(input) < Constants.chapterStoryMinWords) {
+    return left(ValueFailure.shortInput(failedValue: input));
+  } else if (tps.getWordCount(input) > Constants.chapterStoryMaxWords) {
+    return left(ValueFailure.longInput(failedValue: input));
+  } else {
+    return right(input);
+  }
+}

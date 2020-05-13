@@ -2,6 +2,8 @@ import 'dart:async';
 
 import 'package:bloc/bloc.dart';
 import 'package:dartz/dartz.dart';
+import 'package:flutter/widgets.dart' hide Title;
+import 'package:flutter/foundation.dart' hide Summary;
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:meta/meta.dart';
@@ -9,6 +11,8 @@ import 'package:stringprocess/stringprocess.dart';
 import 'package:uuid/uuid.dart';
 import 'package:wine/domain/database/copyrights.dart';
 import 'package:wine/domain/database/database_failure.dart';
+import 'package:wine/domain/database/i_local_series_draft_database_facade.dart';
+import 'package:wine/domain/database/i_online_series_database_facade.dart';
 import 'package:wine/domain/database/summary.dart';
 import 'package:wine/domain/database/genre.dart';
 import 'package:wine/domain/database/i_local_session_database_facade.dart';
@@ -19,6 +23,7 @@ import 'package:wine/domain/database/title.dart';
 import 'package:wine/domain/models/hive/series_draft.dart';
 import 'package:wine/domain/models/hive/session.dart';
 import 'package:wine/domain/models/series.dart';
+import 'package:wine/utils/methods.dart';
 
 part 'new_series_database_event.dart';
 part 'new_series_database_state.dart';
@@ -29,14 +34,14 @@ part 'new_series_database_bloc.freezed.dart';
 class NewSeriesDatabaseBloc
     extends Bloc<NewSeriesDatabaseEvent, NewSeriesDatabaseState> {
   final ILocalSessionDatabaseFacade _localSessionDatabaseFacade;
-  final IOnlineUserDatabaseFacade _onlineUserDatabaseFacade;
+  final ILocalSeriesDraftDatabaseFacade _localSeriesDraftDatabaseFacade;
 
   final Uuid uuid = Uuid();
   final StringProcessor tps = StringProcessor();
 
   NewSeriesDatabaseBloc(
     this._localSessionDatabaseFacade,
-    this._onlineUserDatabaseFacade,
+    this._localSeriesDraftDatabaseFacade,
   );
 
   @override
@@ -46,120 +51,136 @@ class NewSeriesDatabaseBloc
   Stream<NewSeriesDatabaseState> mapEventToState(
     NewSeriesDatabaseEvent event,
   ) async* {
-    yield* event.map(newSeriesPageLaunched: (event) async* {
-      SeriesDraft seriesDraft;
+    yield* event.map(
+      newSeriesPageLaunched: (event) async* {
+        Either<DatabaseFailure, dynamic> failureOrSuccess;
 
-      if (event.seriesDraft != null) {
-        seriesDraft = event.seriesDraft;
-      } else {
-        final Session session = _localSessionDatabaseFacade.getSession();
+        SeriesDraft seriesDraft;
+        bool isEditMode = false;
 
-        seriesDraft = SeriesDraft(
-          uid: uuid.v4(),
-          authorUid: session.uid,
-        );
-      }
+        if (event.seriesDraft != null) {
+          seriesDraft = event.seriesDraft;
+          isEditMode = true;
+        } else {
+          Session session;
 
-      yield state.copyWith(
-        seriesDraft: seriesDraft,
-      );
-    }, createSeriesButtonPressed: (event) async* {
-      Either<DatabaseFailure, dynamic> failureOrSuccess;
+          failureOrSuccess = await _localSessionDatabaseFacade.getSession();
+          failureOrSuccess.fold(
+            (_) {},
+            (success) {
+              if (success is Session) {
+                session = success;
+              }
+            },
+          );
 
-      final bool isTitleValid = state.title.isValid();
-      final bool isSummaryValid = state.summary.isValid();
-      final bool isGenreValid = state.genre.isValid();
-      final bool isLanguageValid = state.language.isValid();
-      final bool isCopyrightsValid = state.copyrights.isValid();
+          seriesDraft = SeriesDraft(
+            uid: uuid.v4(),
+            authorUid: session.uid,
+          );
+        }
 
-      if (isTitleValid &&
-          isSummaryValid &&
-          isGenreValid &&
-          isLanguageValid &&
-          isCopyrightsValid) {
         yield state.copyWith(
-          isCreating: true,
+          seriesDraft: seriesDraft,
+          isEditMode: isEditMode,
+          genresMap: Methods.getGenres(event.context),
+          languagesMap: Methods.getLanguages(event.context),
+          databaseFailureOrSuccessOption: optionOf(failureOrSuccess),
+        );
+      },
+      titleChanged: (event) async* {
+        final String titleTrim = event.title.trim();
+        final int wordCount = tps.getWordCount(titleTrim);
+
+        yield state.copyWith(
+          title: Title(titleTrim),
+          titleWordCount: wordCount,
           databaseFailureOrSuccessOption: none(),
         );
+      },
+      subtitleChanged: (event) async* {
+        final String subtitleTrim = event.subtitle.trim();
+        final int wordCount = tps.getWordCount(subtitleTrim);
 
-        final SeriesDraft seriesDraft = state.seriesDraft;
+        yield state.copyWith(
+          subtitle: Subtitle(subtitleTrim),
+          subtitleWordCount: wordCount,
+          databaseFailureOrSuccessOption: none(),
+        );
+      },
+      summaryChanged: (event) async* {
+        final String summaryTrim = event.summary.trim();
+        final int wordCount = tps.getWordCount(summaryTrim);
 
-        seriesDraft
-          ..title = state.title.getOrCrash()
-          ..subtitle = state.subtitle.getOrCrash()
-          ..summary = state.summary.getOrCrash()
-          ..genre = state.genre.getOrCrash()
-          ..genreOptional = state.genreOptional.getOrCrash()
-          ..language = state.language.getOrCrash()
-          ..copyrights = state.copyrights.getOrCrash()
-          ..isNSFW = state.isNSFW;
+        yield state.copyWith(
+          summary: Summary(summaryTrim),
+          summaryWordCount: wordCount,
+          databaseFailureOrSuccessOption: none(),
+        );
+      },
+      genreSelected: (event) async* {
+        yield state.copyWith(
+          genre: Genre(event.genre),
+          genreStr: event.genre,
+          databaseFailureOrSuccessOption: none(),
+        );
+      },
+      genreOptionalSelected: (event) async* {
+        yield state.copyWith(
+          genreOptional: Genre(event.genreOptional, isOptional: true),
+          genreOptionalStr: event.genreOptional,
+          databaseFailureOrSuccessOption: none(),
+        );
+      },
+      languageSelected: (event) async* {
+        yield state.copyWith(
+          language: Language(event.language),
+          languageStr: event.language,
+          databaseFailureOrSuccessOption: none(),
+        );
+      },
+      isNSFWChanged: (event) async* {
+        yield state.copyWith(
+          isNSFW: event.isNSFW,
+          databaseFailureOrSuccessOption: none(),
+        );
+      },
+      saveSeriesDraftButtonPressed: (event) async* {
+        Either<DatabaseFailure, dynamic> failureOrSuccess;
 
-        final Series series = Series.fromMap(seriesDraft.toMap());
+        final bool isTitleValid = state.title.isValid();
+        final bool isSummaryValid = state.summary.isValid();
+        final bool isGenreValid = state.genre.isValid();
+        final bool isLanguageValid = state.language.isValid();
 
-        failureOrSuccess = await _onlineUserDatabaseFacade.createSeries(series);
-      }
+        if (isTitleValid && isSummaryValid && isGenreValid && isLanguageValid) {
+          yield state.copyWith(
+            isCreating: true,
+            databaseFailureOrSuccessOption: none(),
+          );
 
-      yield state.copyWith(
-        isCreating: false,
-        showErrorMessages: true,
-        databaseFailureOrSuccessOption: optionOf(failureOrSuccess),
-      );
-    }, titleChanged: (event) async* {
-      final String titleTrim = event.title.trim();
-      final int wordCount = tps.getWordCount(titleTrim);
+          final SeriesDraft seriesDraft = state.seriesDraft;
 
-      yield state.copyWith(
-        title: Title(titleTrim),
-        titleWordCount: wordCount,
-        databaseFailureOrSuccessOption: none(),
-      );
-    }, subtitleChanged: (event) async* {
-      final String subtitleTrim = event.subtitle.trim();
-      final int wordCount = tps.getWordCount(subtitleTrim);
+          seriesDraft
+            ..title = state.title.getOrCrash()
+            ..subtitle = state.subtitle.getOrCrash()
+            ..summary = state.summary.getOrCrash()
+            ..genre = state.genre.getOrCrash()
+            ..genreOptional = state.genreOptional.getOrCrash()
+            ..language = state.language.getOrCrash()
+            ..isNSFW = state.isNSFW
+            ..thumbnailPath = '';
 
-      yield state.copyWith(
-        subtitle: Subtitle(subtitleTrim),
-        subtitleWordCount: wordCount,
-        databaseFailureOrSuccessOption: none(),
-      );
-    }, summaryChanged: (event) async* {
-      final String summaryTrim = event.summary.trim();
-      final int wordCount = tps.getWordCount(summaryTrim);
+          failureOrSuccess = await _localSeriesDraftDatabaseFacade
+              .saveSeriesDraft(seriesDraft);
+        }
 
-      yield state.copyWith(
-        summary: Summary(summaryTrim),
-        summaryWordCount: wordCount,
-        databaseFailureOrSuccessOption: none(),
-      );
-    }, genreSelected: (event) async* {
-      yield state.copyWith(
-        genre: Genre(event.genre),
-        genreStr: event.genre,
-        databaseFailureOrSuccessOption: none(),
-      );
-    }, genreOptionalSelected: (event) async* {
-      yield state.copyWith(
-        genreOptional: Genre(event.genreOptional, isOptional: true),
-        genreOptionalStr: event.genreOptional,
-        databaseFailureOrSuccessOption: none(),
-      );
-    }, languageSelected: (event) async* {
-      yield state.copyWith(
-        language: Language(event.language),
-        languageStr: event.language,
-        databaseFailureOrSuccessOption: none(),
-      );
-    }, copyrightsSelected: (event) async* {
-      yield state.copyWith(
-        copyrights: Copyrights(event.copyrights),
-        copyrightsStr: event.copyrights,
-        databaseFailureOrSuccessOption: none(),
-      );
-    }, isNSFWChanged: (event) async* {
-      yield state.copyWith(
-        isNSFW: event.isNSFW,
-        databaseFailureOrSuccessOption: none(),
-      );
-    });
+        yield state.copyWith(
+          isCreating: false,
+          showErrorMessages: true,
+          databaseFailureOrSuccessOption: optionOf(failureOrSuccess),
+        );
+      },
+    );
   }
 }

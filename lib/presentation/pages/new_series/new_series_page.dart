@@ -26,6 +26,7 @@ class NewSeriesPage extends StatelessWidget {
             create: (context) => getIt<NewSeriesDatabaseBloc>()
               ..add(NewSeriesDatabaseEvent.newSeriesPageLaunched(
                 seriesDraft: args.seriesDraft,
+                context: context,
               )),
           ),
         ],

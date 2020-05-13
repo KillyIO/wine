@@ -43,6 +43,12 @@ class _$ValueFailureTearOff {
     );
   }
 
+  ShortInput<T> shortInput<T>({@required String failedValue}) {
+    return ShortInput<T>(
+      failedValue: failedValue,
+    );
+  }
+
   LongInput<T> longInput<T>({@required String failedValue}) {
     return LongInput<T>(
       failedValue: failedValue,
@@ -69,6 +75,7 @@ mixin _$ValueFailure<T> {
     @required Result invalidConfirmPassword(String failedValue),
     @required Result invalidUsername(String failedValue),
     @required Result emptyInput(String failedValue),
+    @required Result shortInput(String failedValue),
     @required Result longInput(String failedValue),
     @required Result emptySelection(String failedValue),
   });
@@ -79,6 +86,7 @@ mixin _$ValueFailure<T> {
     Result invalidConfirmPassword(String failedValue),
     Result invalidUsername(String failedValue),
     Result emptyInput(String failedValue),
+    Result shortInput(String failedValue),
     Result longInput(String failedValue),
     Result emptySelection(String failedValue),
     @required Result orElse(),
@@ -90,6 +98,7 @@ mixin _$ValueFailure<T> {
     @required Result invalidConfirmPassword(InvalidConfirmPassword<T> value),
     @required Result invalidUsername(InvalidUsername<T> value),
     @required Result emptyInput(EmptyInput<T> value),
+    @required Result shortInput(ShortInput<T> value),
     @required Result longInput(LongInput<T> value),
     @required Result emptySelection(EmptySelection<T> value),
   });
@@ -100,6 +109,7 @@ mixin _$ValueFailure<T> {
     Result invalidConfirmPassword(InvalidConfirmPassword<T> value),
     Result invalidUsername(InvalidUsername<T> value),
     Result emptyInput(EmptyInput<T> value),
+    Result shortInput(ShortInput<T> value),
     Result longInput(LongInput<T> value),
     Result emptySelection(EmptySelection<T> value),
     @required Result orElse(),
@@ -201,6 +211,7 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     @required Result invalidConfirmPassword(String failedValue),
     @required Result invalidUsername(String failedValue),
     @required Result emptyInput(String failedValue),
+    @required Result shortInput(String failedValue),
     @required Result longInput(String failedValue),
     @required Result emptySelection(String failedValue),
   }) {
@@ -209,6 +220,7 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     assert(invalidConfirmPassword != null);
     assert(invalidUsername != null);
     assert(emptyInput != null);
+    assert(shortInput != null);
     assert(longInput != null);
     assert(emptySelection != null);
     return invalidEmailAddress(failedValue);
@@ -222,6 +234,7 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     Result invalidConfirmPassword(String failedValue),
     Result invalidUsername(String failedValue),
     Result emptyInput(String failedValue),
+    Result shortInput(String failedValue),
     Result longInput(String failedValue),
     Result emptySelection(String failedValue),
     @required Result orElse(),
@@ -241,6 +254,7 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     @required Result invalidConfirmPassword(InvalidConfirmPassword<T> value),
     @required Result invalidUsername(InvalidUsername<T> value),
     @required Result emptyInput(EmptyInput<T> value),
+    @required Result shortInput(ShortInput<T> value),
     @required Result longInput(LongInput<T> value),
     @required Result emptySelection(EmptySelection<T> value),
   }) {
@@ -249,6 +263,7 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     assert(invalidConfirmPassword != null);
     assert(invalidUsername != null);
     assert(emptyInput != null);
+    assert(shortInput != null);
     assert(longInput != null);
     assert(emptySelection != null);
     return invalidEmailAddress(this);
@@ -262,6 +277,7 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     Result invalidConfirmPassword(InvalidConfirmPassword<T> value),
     Result invalidUsername(InvalidUsername<T> value),
     Result emptyInput(EmptyInput<T> value),
+    Result shortInput(ShortInput<T> value),
     Result longInput(LongInput<T> value),
     Result emptySelection(EmptySelection<T> value),
     @required Result orElse(),
@@ -351,6 +367,7 @@ class _$InvalidPassword<T> implements InvalidPassword<T> {
     @required Result invalidConfirmPassword(String failedValue),
     @required Result invalidUsername(String failedValue),
     @required Result emptyInput(String failedValue),
+    @required Result shortInput(String failedValue),
     @required Result longInput(String failedValue),
     @required Result emptySelection(String failedValue),
   }) {
@@ -359,6 +376,7 @@ class _$InvalidPassword<T> implements InvalidPassword<T> {
     assert(invalidConfirmPassword != null);
     assert(invalidUsername != null);
     assert(emptyInput != null);
+    assert(shortInput != null);
     assert(longInput != null);
     assert(emptySelection != null);
     return invalidPassword(failedValue);
@@ -372,6 +390,7 @@ class _$InvalidPassword<T> implements InvalidPassword<T> {
     Result invalidConfirmPassword(String failedValue),
     Result invalidUsername(String failedValue),
     Result emptyInput(String failedValue),
+    Result shortInput(String failedValue),
     Result longInput(String failedValue),
     Result emptySelection(String failedValue),
     @required Result orElse(),
@@ -391,6 +410,7 @@ class _$InvalidPassword<T> implements InvalidPassword<T> {
     @required Result invalidConfirmPassword(InvalidConfirmPassword<T> value),
     @required Result invalidUsername(InvalidUsername<T> value),
     @required Result emptyInput(EmptyInput<T> value),
+    @required Result shortInput(ShortInput<T> value),
     @required Result longInput(LongInput<T> value),
     @required Result emptySelection(EmptySelection<T> value),
   }) {
@@ -399,6 +419,7 @@ class _$InvalidPassword<T> implements InvalidPassword<T> {
     assert(invalidConfirmPassword != null);
     assert(invalidUsername != null);
     assert(emptyInput != null);
+    assert(shortInput != null);
     assert(longInput != null);
     assert(emptySelection != null);
     return invalidPassword(this);
@@ -412,6 +433,7 @@ class _$InvalidPassword<T> implements InvalidPassword<T> {
     Result invalidConfirmPassword(InvalidConfirmPassword<T> value),
     Result invalidUsername(InvalidUsername<T> value),
     Result emptyInput(EmptyInput<T> value),
+    Result shortInput(ShortInput<T> value),
     Result longInput(LongInput<T> value),
     Result emptySelection(EmptySelection<T> value),
     @required Result orElse(),
@@ -503,6 +525,7 @@ class _$InvalidConfirmPassword<T> implements InvalidConfirmPassword<T> {
     @required Result invalidConfirmPassword(String failedValue),
     @required Result invalidUsername(String failedValue),
     @required Result emptyInput(String failedValue),
+    @required Result shortInput(String failedValue),
     @required Result longInput(String failedValue),
     @required Result emptySelection(String failedValue),
   }) {
@@ -511,6 +534,7 @@ class _$InvalidConfirmPassword<T> implements InvalidConfirmPassword<T> {
     assert(invalidConfirmPassword != null);
     assert(invalidUsername != null);
     assert(emptyInput != null);
+    assert(shortInput != null);
     assert(longInput != null);
     assert(emptySelection != null);
     return invalidConfirmPassword(failedValue);
@@ -524,6 +548,7 @@ class _$InvalidConfirmPassword<T> implements InvalidConfirmPassword<T> {
     Result invalidConfirmPassword(String failedValue),
     Result invalidUsername(String failedValue),
     Result emptyInput(String failedValue),
+    Result shortInput(String failedValue),
     Result longInput(String failedValue),
     Result emptySelection(String failedValue),
     @required Result orElse(),
@@ -543,6 +568,7 @@ class _$InvalidConfirmPassword<T> implements InvalidConfirmPassword<T> {
     @required Result invalidConfirmPassword(InvalidConfirmPassword<T> value),
     @required Result invalidUsername(InvalidUsername<T> value),
     @required Result emptyInput(EmptyInput<T> value),
+    @required Result shortInput(ShortInput<T> value),
     @required Result longInput(LongInput<T> value),
     @required Result emptySelection(EmptySelection<T> value),
   }) {
@@ -551,6 +577,7 @@ class _$InvalidConfirmPassword<T> implements InvalidConfirmPassword<T> {
     assert(invalidConfirmPassword != null);
     assert(invalidUsername != null);
     assert(emptyInput != null);
+    assert(shortInput != null);
     assert(longInput != null);
     assert(emptySelection != null);
     return invalidConfirmPassword(this);
@@ -564,6 +591,7 @@ class _$InvalidConfirmPassword<T> implements InvalidConfirmPassword<T> {
     Result invalidConfirmPassword(InvalidConfirmPassword<T> value),
     Result invalidUsername(InvalidUsername<T> value),
     Result emptyInput(EmptyInput<T> value),
+    Result shortInput(ShortInput<T> value),
     Result longInput(LongInput<T> value),
     Result emptySelection(EmptySelection<T> value),
     @required Result orElse(),
@@ -653,6 +681,7 @@ class _$InvalidUsername<T> implements InvalidUsername<T> {
     @required Result invalidConfirmPassword(String failedValue),
     @required Result invalidUsername(String failedValue),
     @required Result emptyInput(String failedValue),
+    @required Result shortInput(String failedValue),
     @required Result longInput(String failedValue),
     @required Result emptySelection(String failedValue),
   }) {
@@ -661,6 +690,7 @@ class _$InvalidUsername<T> implements InvalidUsername<T> {
     assert(invalidConfirmPassword != null);
     assert(invalidUsername != null);
     assert(emptyInput != null);
+    assert(shortInput != null);
     assert(longInput != null);
     assert(emptySelection != null);
     return invalidUsername(failedValue);
@@ -674,6 +704,7 @@ class _$InvalidUsername<T> implements InvalidUsername<T> {
     Result invalidConfirmPassword(String failedValue),
     Result invalidUsername(String failedValue),
     Result emptyInput(String failedValue),
+    Result shortInput(String failedValue),
     Result longInput(String failedValue),
     Result emptySelection(String failedValue),
     @required Result orElse(),
@@ -693,6 +724,7 @@ class _$InvalidUsername<T> implements InvalidUsername<T> {
     @required Result invalidConfirmPassword(InvalidConfirmPassword<T> value),
     @required Result invalidUsername(InvalidUsername<T> value),
     @required Result emptyInput(EmptyInput<T> value),
+    @required Result shortInput(ShortInput<T> value),
     @required Result longInput(LongInput<T> value),
     @required Result emptySelection(EmptySelection<T> value),
   }) {
@@ -701,6 +733,7 @@ class _$InvalidUsername<T> implements InvalidUsername<T> {
     assert(invalidConfirmPassword != null);
     assert(invalidUsername != null);
     assert(emptyInput != null);
+    assert(shortInput != null);
     assert(longInput != null);
     assert(emptySelection != null);
     return invalidUsername(this);
@@ -714,6 +747,7 @@ class _$InvalidUsername<T> implements InvalidUsername<T> {
     Result invalidConfirmPassword(InvalidConfirmPassword<T> value),
     Result invalidUsername(InvalidUsername<T> value),
     Result emptyInput(EmptyInput<T> value),
+    Result shortInput(ShortInput<T> value),
     Result longInput(LongInput<T> value),
     Result emptySelection(EmptySelection<T> value),
     @required Result orElse(),
@@ -803,6 +837,7 @@ class _$EmptyInput<T> implements EmptyInput<T> {
     @required Result invalidConfirmPassword(String failedValue),
     @required Result invalidUsername(String failedValue),
     @required Result emptyInput(String failedValue),
+    @required Result shortInput(String failedValue),
     @required Result longInput(String failedValue),
     @required Result emptySelection(String failedValue),
   }) {
@@ -811,6 +846,7 @@ class _$EmptyInput<T> implements EmptyInput<T> {
     assert(invalidConfirmPassword != null);
     assert(invalidUsername != null);
     assert(emptyInput != null);
+    assert(shortInput != null);
     assert(longInput != null);
     assert(emptySelection != null);
     return emptyInput(failedValue);
@@ -824,6 +860,7 @@ class _$EmptyInput<T> implements EmptyInput<T> {
     Result invalidConfirmPassword(String failedValue),
     Result invalidUsername(String failedValue),
     Result emptyInput(String failedValue),
+    Result shortInput(String failedValue),
     Result longInput(String failedValue),
     Result emptySelection(String failedValue),
     @required Result orElse(),
@@ -843,6 +880,7 @@ class _$EmptyInput<T> implements EmptyInput<T> {
     @required Result invalidConfirmPassword(InvalidConfirmPassword<T> value),
     @required Result invalidUsername(InvalidUsername<T> value),
     @required Result emptyInput(EmptyInput<T> value),
+    @required Result shortInput(ShortInput<T> value),
     @required Result longInput(LongInput<T> value),
     @required Result emptySelection(EmptySelection<T> value),
   }) {
@@ -851,6 +889,7 @@ class _$EmptyInput<T> implements EmptyInput<T> {
     assert(invalidConfirmPassword != null);
     assert(invalidUsername != null);
     assert(emptyInput != null);
+    assert(shortInput != null);
     assert(longInput != null);
     assert(emptySelection != null);
     return emptyInput(this);
@@ -864,6 +903,7 @@ class _$EmptyInput<T> implements EmptyInput<T> {
     Result invalidConfirmPassword(InvalidConfirmPassword<T> value),
     Result invalidUsername(InvalidUsername<T> value),
     Result emptyInput(EmptyInput<T> value),
+    Result shortInput(ShortInput<T> value),
     Result longInput(LongInput<T> value),
     Result emptySelection(EmptySelection<T> value),
     @required Result orElse(),
@@ -883,6 +923,161 @@ abstract class EmptyInput<T> implements ValueFailure<T> {
   String get failedValue;
   @override
   $EmptyInputCopyWith<T, EmptyInput<T>> get copyWith;
+}
+
+abstract class $ShortInputCopyWith<T, $Res>
+    implements $ValueFailureCopyWith<T, $Res> {
+  factory $ShortInputCopyWith(
+          ShortInput<T> value, $Res Function(ShortInput<T>) then) =
+      _$ShortInputCopyWithImpl<T, $Res>;
+  @override
+  $Res call({String failedValue});
+}
+
+class _$ShortInputCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res>
+    implements $ShortInputCopyWith<T, $Res> {
+  _$ShortInputCopyWithImpl(
+      ShortInput<T> _value, $Res Function(ShortInput<T>) _then)
+      : super(_value, (v) => _then(v as ShortInput<T>));
+
+  @override
+  ShortInput<T> get _value => super._value as ShortInput<T>;
+
+  @override
+  $Res call({
+    Object failedValue = freezed,
+  }) {
+    return _then(ShortInput<T>(
+      failedValue:
+          failedValue == freezed ? _value.failedValue : failedValue as String,
+    ));
+  }
+}
+
+class _$ShortInput<T> implements ShortInput<T> {
+  const _$ShortInput({@required this.failedValue})
+      : assert(failedValue != null);
+
+  @override
+  final String failedValue;
+
+  @override
+  String toString() {
+    return 'ValueFailure<$T>.shortInput(failedValue: $failedValue)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is ShortInput<T> &&
+            (identical(other.failedValue, failedValue) ||
+                const DeepCollectionEquality()
+                    .equals(other.failedValue, failedValue)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
+
+  @override
+  $ShortInputCopyWith<T, ShortInput<T>> get copyWith =>
+      _$ShortInputCopyWithImpl<T, ShortInput<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result invalidEmailAddress(String failedValue),
+    @required Result invalidPassword(String failedValue),
+    @required Result invalidConfirmPassword(String failedValue),
+    @required Result invalidUsername(String failedValue),
+    @required Result emptyInput(String failedValue),
+    @required Result shortInput(String failedValue),
+    @required Result longInput(String failedValue),
+    @required Result emptySelection(String failedValue),
+  }) {
+    assert(invalidEmailAddress != null);
+    assert(invalidPassword != null);
+    assert(invalidConfirmPassword != null);
+    assert(invalidUsername != null);
+    assert(emptyInput != null);
+    assert(shortInput != null);
+    assert(longInput != null);
+    assert(emptySelection != null);
+    return shortInput(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result invalidEmailAddress(String failedValue),
+    Result invalidPassword(String failedValue),
+    Result invalidConfirmPassword(String failedValue),
+    Result invalidUsername(String failedValue),
+    Result emptyInput(String failedValue),
+    Result shortInput(String failedValue),
+    Result longInput(String failedValue),
+    Result emptySelection(String failedValue),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (shortInput != null) {
+      return shortInput(failedValue);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result invalidEmailAddress(InvalidEmail<T> value),
+    @required Result invalidPassword(InvalidPassword<T> value),
+    @required Result invalidConfirmPassword(InvalidConfirmPassword<T> value),
+    @required Result invalidUsername(InvalidUsername<T> value),
+    @required Result emptyInput(EmptyInput<T> value),
+    @required Result shortInput(ShortInput<T> value),
+    @required Result longInput(LongInput<T> value),
+    @required Result emptySelection(EmptySelection<T> value),
+  }) {
+    assert(invalidEmailAddress != null);
+    assert(invalidPassword != null);
+    assert(invalidConfirmPassword != null);
+    assert(invalidUsername != null);
+    assert(emptyInput != null);
+    assert(shortInput != null);
+    assert(longInput != null);
+    assert(emptySelection != null);
+    return shortInput(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result invalidEmailAddress(InvalidEmail<T> value),
+    Result invalidPassword(InvalidPassword<T> value),
+    Result invalidConfirmPassword(InvalidConfirmPassword<T> value),
+    Result invalidUsername(InvalidUsername<T> value),
+    Result emptyInput(EmptyInput<T> value),
+    Result shortInput(ShortInput<T> value),
+    Result longInput(LongInput<T> value),
+    Result emptySelection(EmptySelection<T> value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (shortInput != null) {
+      return shortInput(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ShortInput<T> implements ValueFailure<T> {
+  const factory ShortInput({@required String failedValue}) = _$ShortInput<T>;
+
+  @override
+  String get failedValue;
+  @override
+  $ShortInputCopyWith<T, ShortInput<T>> get copyWith;
 }
 
 abstract class $LongInputCopyWith<T, $Res>
@@ -951,6 +1146,7 @@ class _$LongInput<T> implements LongInput<T> {
     @required Result invalidConfirmPassword(String failedValue),
     @required Result invalidUsername(String failedValue),
     @required Result emptyInput(String failedValue),
+    @required Result shortInput(String failedValue),
     @required Result longInput(String failedValue),
     @required Result emptySelection(String failedValue),
   }) {
@@ -959,6 +1155,7 @@ class _$LongInput<T> implements LongInput<T> {
     assert(invalidConfirmPassword != null);
     assert(invalidUsername != null);
     assert(emptyInput != null);
+    assert(shortInput != null);
     assert(longInput != null);
     assert(emptySelection != null);
     return longInput(failedValue);
@@ -972,6 +1169,7 @@ class _$LongInput<T> implements LongInput<T> {
     Result invalidConfirmPassword(String failedValue),
     Result invalidUsername(String failedValue),
     Result emptyInput(String failedValue),
+    Result shortInput(String failedValue),
     Result longInput(String failedValue),
     Result emptySelection(String failedValue),
     @required Result orElse(),
@@ -991,6 +1189,7 @@ class _$LongInput<T> implements LongInput<T> {
     @required Result invalidConfirmPassword(InvalidConfirmPassword<T> value),
     @required Result invalidUsername(InvalidUsername<T> value),
     @required Result emptyInput(EmptyInput<T> value),
+    @required Result shortInput(ShortInput<T> value),
     @required Result longInput(LongInput<T> value),
     @required Result emptySelection(EmptySelection<T> value),
   }) {
@@ -999,6 +1198,7 @@ class _$LongInput<T> implements LongInput<T> {
     assert(invalidConfirmPassword != null);
     assert(invalidUsername != null);
     assert(emptyInput != null);
+    assert(shortInput != null);
     assert(longInput != null);
     assert(emptySelection != null);
     return longInput(this);
@@ -1012,6 +1212,7 @@ class _$LongInput<T> implements LongInput<T> {
     Result invalidConfirmPassword(InvalidConfirmPassword<T> value),
     Result invalidUsername(InvalidUsername<T> value),
     Result emptyInput(EmptyInput<T> value),
+    Result shortInput(ShortInput<T> value),
     Result longInput(LongInput<T> value),
     Result emptySelection(EmptySelection<T> value),
     @required Result orElse(),
@@ -1100,6 +1301,7 @@ class _$EmptySelection<T> implements EmptySelection<T> {
     @required Result invalidConfirmPassword(String failedValue),
     @required Result invalidUsername(String failedValue),
     @required Result emptyInput(String failedValue),
+    @required Result shortInput(String failedValue),
     @required Result longInput(String failedValue),
     @required Result emptySelection(String failedValue),
   }) {
@@ -1108,6 +1310,7 @@ class _$EmptySelection<T> implements EmptySelection<T> {
     assert(invalidConfirmPassword != null);
     assert(invalidUsername != null);
     assert(emptyInput != null);
+    assert(shortInput != null);
     assert(longInput != null);
     assert(emptySelection != null);
     return emptySelection(failedValue);
@@ -1121,6 +1324,7 @@ class _$EmptySelection<T> implements EmptySelection<T> {
     Result invalidConfirmPassword(String failedValue),
     Result invalidUsername(String failedValue),
     Result emptyInput(String failedValue),
+    Result shortInput(String failedValue),
     Result longInput(String failedValue),
     Result emptySelection(String failedValue),
     @required Result orElse(),
@@ -1140,6 +1344,7 @@ class _$EmptySelection<T> implements EmptySelection<T> {
     @required Result invalidConfirmPassword(InvalidConfirmPassword<T> value),
     @required Result invalidUsername(InvalidUsername<T> value),
     @required Result emptyInput(EmptyInput<T> value),
+    @required Result shortInput(ShortInput<T> value),
     @required Result longInput(LongInput<T> value),
     @required Result emptySelection(EmptySelection<T> value),
   }) {
@@ -1148,6 +1353,7 @@ class _$EmptySelection<T> implements EmptySelection<T> {
     assert(invalidConfirmPassword != null);
     assert(invalidUsername != null);
     assert(emptyInput != null);
+    assert(shortInput != null);
     assert(longInput != null);
     assert(emptySelection != null);
     return emptySelection(this);
@@ -1161,6 +1367,7 @@ class _$EmptySelection<T> implements EmptySelection<T> {
     Result invalidConfirmPassword(InvalidConfirmPassword<T> value),
     Result invalidUsername(InvalidUsername<T> value),
     Result emptyInput(EmptyInput<T> value),
+    Result shortInput(ShortInput<T> value),
     Result longInput(LongInput<T> value),
     Result emptySelection(EmptySelection<T> value),
     @required Result orElse(),
