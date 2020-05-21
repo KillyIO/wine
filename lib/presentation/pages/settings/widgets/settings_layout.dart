@@ -10,10 +10,9 @@ import 'package:wine/presentation/pages/settings/widgets/account_settings.dart';
 import 'package:wine/presentation/pages/settings/widgets/app_version.dart';
 import 'package:wine/presentation/widgets/wine_show_dialog.dart';
 import 'package:wine/presentation/widgets/wine_error_dialog.dart';
-import 'package:wine/presentation/widgets/wine_image_back_button.dart';
+import 'package:wine/presentation/widgets/wine_leading_image_button.dart';
 import 'package:wine/routes.dart';
 import 'package:wine/utils/constants.dart';
-import 'package:wine/utils/palettes.dart';
 
 class SettingsLayout extends StatefulWidget {
   @override
@@ -45,9 +44,9 @@ class _SettingsLayoutState extends State<SettingsLayout>
               horizontal: 10.0,
               vertical: 5.0,
             ),
-            child: WINEImageBackButton(
+            child: WINELeadingImageButton(
+              imagePath: 'assets/img/back_button.png',
               onPressed: () => Navigator.of(context).pop(),
-              color: Colors.black,
             ),
           ),
           title: const Text(
@@ -179,11 +178,11 @@ class _SettingsLayoutState extends State<SettingsLayout>
                                             settingsDbState.isUpdating
                                         ? MediaQuery.of(context).size.height
                                         : 0.0,
-                                    child: Center(
+                                    child: const Center(
                                       child: CircularProgressIndicator(
                                         valueColor:
                                             AlwaysStoppedAnimation<Color>(
-                                          Palettes.darkCyanBlue,
+                                          Colors.black,
                                         ),
                                       ),
                                     ),

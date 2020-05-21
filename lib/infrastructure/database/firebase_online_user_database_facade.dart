@@ -56,4 +56,29 @@ class FirebaseOnlineUserDatabaseFacade extends IOnlineUserDatabaseFacade {
     }
     return left(const DatabaseFailure.failedToFetchOnlineData());
   }
+
+  @override
+  Future<Either<DatabaseFailure, Map<String, User>>> getUsersAsMapByUidList(
+    List<String> userUids,
+  ) async {
+    final List<String> filterUserUids = userUids.toSet().toList();
+
+    final CollectionReference usersCollection =
+        _firestore.collection(Paths.usersPath);
+
+    final QuerySnapshot querySnapshot = await usersCollection
+        .where('uid', whereIn: filterUserUids)
+        .getDocuments();
+
+    final List<User> usersList = <User>[];
+    for (final DocumentSnapshot doc in querySnapshot.documents) {
+      usersList.add(User.fromFirestore(doc));
+    }
+
+    final Map<String, User> usersMap = {
+      for (final User user in usersList) user.uid: user
+    };
+
+    return right(usersMap);
+  }
 }

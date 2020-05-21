@@ -5,14 +5,14 @@ import 'package:wine/application/database/new_series/new_series_database_bloc.da
 import 'package:wine/application/navigation/home/home_navigation_bloc.dart';
 import 'package:wine/domain/enums/parent_type.dart';
 import 'package:wine/domain/models/hive/series_draft.dart';
-import 'package:wine/domain/models/series.dart';
 import 'package:wine/presentation/widgets/wine_dialog_list_tile.dart';
 import 'package:wine/presentation/widgets/wine_info_dialog.dart';
 import 'package:wine/presentation/widgets/wine_show_dialog.dart';
-import 'package:wine/presentation/widgets/wine_image_back_button.dart';
+import 'package:wine/presentation/widgets/wine_leading_image_button.dart';
 import 'package:wine/presentation/widgets/wine_selection_dialog.dart';
 import 'package:wine/presentation/widgets/wine_switch_list_tile.dart';
 import 'package:wine/presentation/widgets/wine_text_field_label.dart';
+import 'package:wine/presentation/widgets/wine_warning_dialog.dart';
 import 'package:wine/routes.dart';
 import 'package:wine/utils/arguments.dart';
 import 'package:wine/utils/constants.dart';
@@ -32,27 +32,35 @@ class NewSeriesForm extends StatefulWidget {
 
 class _NewSeriesFormState extends State<NewSeriesForm>
     with TickerProviderStateMixin {
+  final TextEditingController _titleController = TextEditingController();
+  final TextEditingController _subtitleController = TextEditingController();
+  final TextEditingController _summaryController = TextEditingController();
+
   Future<bool> _onWillPop() async {
     final bool canPop = Navigator.of(context).canPop();
 
     if (canPop) {
       FocusScope.of(context).requestFocus(FocusNode());
+      if (!context.bloc<NewSeriesDatabaseBloc>().state.isEditMode) {
+        context
+            .bloc<HomeNavigationBloc>()
+            .add(const HomeNavigationEvent.newSeriesIconPressed(
+              isNewSeriesPageOpen: false,
+            ));
+      }
+    }
+    return canPop;
+  }
+
+  void _backButtonPressed(bool isEditMode) {
+    FocusScope.of(context).requestFocus(FocusNode());
+    if (!isEditMode) {
       context
           .bloc<HomeNavigationBloc>()
           .add(const HomeNavigationEvent.newSeriesIconPressed(
             isNewSeriesPageOpen: false,
           ));
     }
-    return canPop;
-  }
-
-  void _backButtonPressed() {
-    FocusScope.of(context).requestFocus(FocusNode());
-    context
-        .bloc<HomeNavigationBloc>()
-        .add(const HomeNavigationEvent.newSeriesIconPressed(
-          isNewSeriesPageOpen: false,
-        ));
     Navigator.of(context).pop();
   }
 
@@ -84,21 +92,34 @@ class _NewSeriesFormState extends State<NewSeriesForm>
             (some) => some.fold(
               (_) {},
               (success) {
-                if (success is SeriesDraft) {
-                  sailor.navigate(
-                    Constants.newChapterRoute,
-                    navigationType: NavigationType.pushReplace,
-                    args: NewChapterPageArgs(
-                      parentType: ParentType.series,
-                      seriesDraft: success,
-                    ),
-                  );
+                if (state.isEditMode) {
+                  Navigator.of(context).pop();
+                } else {
+                  if (success is SeriesDraft) {
+                    sailor.navigate(
+                      Constants.newChapterRoute,
+                      navigationType: NavigationType.pushReplace,
+                      args: NewChapterPageArgs(
+                        parentType: ParentType.series,
+                        seriesDraft: success,
+                      ),
+                    );
+                  }
                 }
               },
             ),
           );
         },
         builder: (context, nsDbState) {
+          _titleController.value =
+              _titleController.value.copyWith(text: nsDbState.titleStr);
+
+          _subtitleController.value =
+              _subtitleController.value.copyWith(text: nsDbState.subtitleStr);
+
+          _summaryController.value =
+              _summaryController.value.copyWith(text: nsDbState.summaryStr);
+
           return Scaffold(
             backgroundColor: Colors.white,
             appBar: PreferredSize(
@@ -152,9 +173,9 @@ class _NewSeriesFormState extends State<NewSeriesForm>
                     horizontal: 10.0,
                     vertical: 5.0,
                   ),
-                  child: WINEImageBackButton(
-                    onPressed: _backButtonPressed,
-                    color: Colors.black,
+                  child: WINELeadingImageButton(
+                    imagePath: 'assets/img/back_button.png',
+                    onPressed: () => _backButtonPressed(nsDbState.isEditMode),
                   ),
                 ),
               ),
@@ -184,6 +205,8 @@ class _NewSeriesFormState extends State<NewSeriesForm>
                           // SECTION title
                           const WINETextFieldLabel(title: 'TITLE*'),
                           TextFormField(
+                            controller: _titleController,
+                            textCapitalization: TextCapitalization.sentences,
                             decoration: InputDecoration(
                               hintText:
                                   'Less than ${Constants.seriesTitleMaxWords} words',
@@ -246,6 +269,8 @@ class _NewSeriesFormState extends State<NewSeriesForm>
                             title: 'SUBTITLE (OPTIONAL)',
                           ),
                           TextFormField(
+                            controller: _subtitleController,
+                            textCapitalization: TextCapitalization.sentences,
                             decoration: InputDecoration(
                               hintText:
                                   'Less than ${Constants.seriesSubtitleMaxWords} words',
@@ -298,6 +323,8 @@ class _NewSeriesFormState extends State<NewSeriesForm>
                           // SECTION symmary
                           const WINETextFieldLabel(title: 'SUMMARY*'),
                           TextFormField(
+                            controller: _summaryController,
+                            textCapitalization: TextCapitalization.sentences,
                             decoration: InputDecoration(
                               hintText:
                                   'Less than ${Constants.seriesSummaryMaxWords} words',
@@ -456,6 +483,39 @@ class _NewSeriesFormState extends State<NewSeriesForm>
                             ),
                           ),
                           const SizedBox(height: 25),
+                          Visibility(
+                            visible: nsDbState.isEditMode,
+                            child: Container(
+                              height: 60.0,
+                              width: double.infinity,
+                              child: FlatButton(
+                                color: Palettes.error,
+                                onPressed: () => wineShowDialog(
+                                  context: context,
+                                  builder: (_) => WINEWarningDialog(
+                                    message:
+                                        'Do you really want to delete this draft?',
+                                    buttonText: 'CONTINUE',
+                                    onPressed: () {
+                                      context.bloc<NewSeriesDatabaseBloc>().add(
+                                          const NewSeriesDatabaseEvent
+                                              .deleteDraftButtonPressed());
+                                      Navigator.of(context).pop(true);
+                                    },
+                                  ),
+                                ),
+                                child: Text(
+                                  'DELETE DRAFT',
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 20.0,
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                                ),
+                              ),
+                            ),
+                          ),
+                          const SizedBox(height: 25),
                         ],
                       ),
                     ),
@@ -468,7 +528,7 @@ class _NewSeriesFormState extends State<NewSeriesForm>
                       child: Container(
                         color: Colors.white,
                         width: MediaQuery.of(context).size.width,
-                        height: nsDbState.isCreating
+                        height: nsDbState.isCreatingOrDeleting
                             ? MediaQuery.of(context).size.height
                             : 0.0,
                         child: const Center(

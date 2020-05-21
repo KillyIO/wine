@@ -1,10 +1,16 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
+import 'package:dartz/dartz.dart';
+import 'package:flutter/foundation.dart';
+import 'package:flutter/widgets.dart';
+import 'package:flutter_device_locale/flutter_device_locale.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
-import 'package:wine/domain/database/i_local_session_database_facade.dart';
-import 'package:wine/domain/database/i_online_user_database_facade.dart';
+import 'package:wine/domain/database/database_failure.dart';
+import 'package:wine/domain/database/i_online_series_database_facade.dart';
+import 'package:wine/domain/models/series.dart';
+import 'package:wine/utils/methods.dart';
 
 part 'home_database_event.dart';
 part 'home_database_state.dart';
@@ -13,12 +19,10 @@ part 'home_database_bloc.freezed.dart';
 
 @injectable
 class HomeDatabaseBloc extends Bloc<HomeDatabaseEvent, HomeDatabaseState> {
-  final ILocalSessionDatabaseFacade _localSessionDatabaseFacade;
-  final IOnlineUserDatabaseFacade _onlineUserDatabaseFacade;
+  final IOnlineSeriesDatabaseFacade _onlineSeriesDatabaseFacade;
 
   HomeDatabaseBloc(
-    this._localSessionDatabaseFacade,
-    this._onlineUserDatabaseFacade,
+    this._onlineSeriesDatabaseFacade,
   );
 
   @override
@@ -28,6 +32,137 @@ class HomeDatabaseBloc extends Bloc<HomeDatabaseEvent, HomeDatabaseState> {
   Stream<HomeDatabaseState> mapEventToState(
     HomeDatabaseEvent event,
   ) async* {
-    // TODO: implement mapEventToState
+    yield* event.map(
+      homePageLaunched: (event) async* {
+        Either<DatabaseFailure, dynamic> failureOrSuccess;
+        final Map<String, dynamic> filters = state.filters;
+
+        final List<Series> topFiveSeries = <Series>[];
+        final List<Series> topSeries = <Series>[];
+        final List<Series> newSeries = <Series>[];
+
+        final String currentLocale = (await DeviceLocale.getCurrentLocale())
+            .toString()
+            .split(RegExp('[_-]'))[0];
+
+        filters['time'] =
+            Methods.getTimeFilterTimestamps()[state.timeFilterKey];
+        filters['genre'] = state.genreFilterKey;
+        filters['language'] = currentLocale;
+
+        failureOrSuccess =
+            await _onlineSeriesDatabaseFacade.getTopSeries(filters: filters);
+        failureOrSuccess.fold(
+          (_) {},
+          (success) {
+            if (success is List<Series>) {
+              topSeries.addAll(success);
+            }
+          },
+        );
+
+        if (failureOrSuccess.isRight()) {
+          failureOrSuccess =
+              await _onlineSeriesDatabaseFacade.getNewSeries(filters: filters);
+          failureOrSuccess.fold(
+            (_) {},
+            (success) {
+              if (success is List<Series>) {
+                newSeries.addAll(success);
+              }
+            },
+          );
+        }
+
+        if (topSeries.length >= 5) {
+          topFiveSeries.addAll(topSeries.sublist(0, 5));
+          topSeries.removeRange(0, 5);
+        } else {
+          topFiveSeries.addAll(topSeries.sublist(0, topSeries.length));
+          topSeries.removeRange(0, topFiveSeries.length);
+        }
+
+        yield state.copyWith(
+          topFiveSeries: topFiveSeries,
+          topSeries: topSeries,
+          newSeries: newSeries,
+          filters: filters,
+          languageFilterKey: currentLocale,
+          times: Methods.getTimeFilters(event.context),
+          genres: Methods.getGenres(event.context),
+          languages: Methods.getLanguages(event.context),
+          placeholders: Methods.getPlaceholderUrls(),
+          databaseFailureOrSuccessOption: optionOf(failureOrSuccess),
+        );
+      },
+      fetchMoreTopSeries: (event) async* {},
+      fetchMoreNewSeries: (event) async* {},
+      timeFilterKeyChanged: (event) async* {
+        yield state.copyWith(
+          timeFilterKey: event.key,
+          databaseFailureOrSuccessOption: none(),
+        );
+      },
+      genreFilterKeyChanged: (event) async* {
+        yield state.copyWith(
+          genreFilterKey: event.key,
+          databaseFailureOrSuccessOption: none(),
+        );
+      },
+      languageFilterKeyChanged: (event) async* {
+        yield state.copyWith(
+          languageFilterKey: event.key,
+          databaseFailureOrSuccessOption: none(),
+        );
+      },
+      applyFilterChanges: (event) async* {
+        Either<DatabaseFailure, dynamic> failureOrSuccess;
+        final Map<String, dynamic> filters = state.filters;
+
+        final List<Series> topSeries = <Series>[];
+        final List<Series> newSeries = <Series>[];
+
+        yield state.copyWith(
+          isFetching: true,
+          databaseFailureOrSuccessOption: none(),
+        );
+
+        filters['time'] =
+            Methods.getTimeFilterTimestamps()[state.timeFilterKey];
+        filters['genre'] = state.genreFilterKey;
+        filters['language'] = state.languageFilterKey;
+
+        failureOrSuccess = await _onlineSeriesDatabaseFacade.getTopSeries();
+        failureOrSuccess.fold(
+          (_) {},
+          (success) {
+            if (success is List<Series>) {
+              topSeries.addAll(success);
+            }
+          },
+        );
+
+        if (failureOrSuccess.isRight()) {
+          failureOrSuccess =
+              await _onlineSeriesDatabaseFacade.getNewSeries(filters: filters);
+          failureOrSuccess.fold(
+            (_) {},
+            (success) {
+              if (success is List<Series>) {
+                newSeries.addAll(success);
+              }
+            },
+          );
+        }
+
+        yield state.copyWith(
+          isFetching: false,
+          topSeries: topSeries,
+          newSeries: newSeries,
+          filters: filters,
+          databaseFailureOrSuccessOption: optionOf(failureOrSuccess),
+        );
+      },
+    );
   }
 }

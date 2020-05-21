@@ -15,7 +15,7 @@ class CreateAccountButton extends StatelessWidget {
       height: 60.0,
       width: double.infinity,
       child: FlatButton(
-        color: Palettes.strongCyan,
+        color: Palettes.pastelPink,
         onPressed: onPressed,
         child: Text(
           'CREATE AN ACCOUNT',

@@ -85,7 +85,7 @@ class VerifyEmailLayout extends StatelessWidget {
                             const HomeNavigationEvent
                                 .resetHomeNavigationBloc());
                       },
-                      color: Palettes.strongCyan,
+                      color: Palettes.pastelPink,
                     ),
                     const SizedBox(height: 20),
                     VerifyEmailButton(

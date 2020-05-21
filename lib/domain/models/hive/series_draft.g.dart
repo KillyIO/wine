@@ -26,7 +26,7 @@ class SeriesDraftAdapter extends TypeAdapter<SeriesDraft> {
       genreOptional: fields[6] as String,
       language: fields[7] as String,
       isNSFW: fields[8] as bool,
-      thumbnailPath: fields[9] as String,
+      coverPath: fields[9] as String,
     );
   }
 
@@ -53,6 +53,6 @@ class SeriesDraftAdapter extends TypeAdapter<SeriesDraft> {
       ..writeByte(8)
       ..write(obj.isNSFW)
       ..writeByte(9)
-      ..write(obj.thumbnailPath);
+      ..write(obj.coverPath);
   }
 }

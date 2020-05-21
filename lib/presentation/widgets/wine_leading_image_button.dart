@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 
-class WINEImageBackButton extends StatelessWidget {
+class WINELeadingImageButton extends StatelessWidget {
+  final String imagePath;
   final VoidCallback onPressed;
   final Color color;
 
-  const WINEImageBackButton({
+  const WINELeadingImageButton({
     Key key,
+    this.imagePath,
     this.onPressed,
     this.color,
   }) : super(key: key);
@@ -15,9 +17,9 @@ class WINEImageBackButton extends StatelessWidget {
     return GestureDetector(
       onTap: onPressed,
       child: Image.asset(
-        'assets/img/back_button.png',
+        imagePath,
         fit: BoxFit.contain,
-        color: color,
+        color: color ?? Colors.black,
       ),
     );
   }

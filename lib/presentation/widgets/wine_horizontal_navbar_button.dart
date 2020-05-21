@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-class WINERowMenuButton extends StatelessWidget {
+class WINEHorizontalNavbarButton extends StatelessWidget {
   final VoidCallback onPressed;
   final String title;
   final Color color;
 
-  const WINERowMenuButton({
+  const WINEHorizontalNavbarButton({
     Key key,
     this.onPressed,
     this.title,

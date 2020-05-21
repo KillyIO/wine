@@ -12,7 +12,8 @@ class Constants {
   static const String splashRoute = '/splash';
 
   static const String homeRoute = '/home';
-  static const String homeMenuRoute = '/home/menu';
+  static const String homeDrawerRoute = '/home/drawer';
+  static const String homeFiltersRoute = '/home/filters';
 
   static const String settingsRoute = '/settings';
 

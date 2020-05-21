@@ -80,13 +80,39 @@ class NewSeriesDatabaseBloc
           );
         }
 
-        yield state.copyWith(
-          seriesDraft: seriesDraft,
-          isEditMode: isEditMode,
-          genresMap: Methods.getGenres(event.context),
-          languagesMap: Methods.getLanguages(event.context),
-          databaseFailureOrSuccessOption: optionOf(failureOrSuccess),
-        );
+        if (isEditMode) {
+          yield state.copyWith(
+            seriesDraft: seriesDraft,
+            isEditMode: isEditMode,
+            title: Title(seriesDraft.title),
+            titleStr: seriesDraft.title,
+            titleWordCount: tps.getWordCount(seriesDraft.title),
+            subtitle: Subtitle(seriesDraft.subtitle),
+            subtitleStr: seriesDraft.subtitle,
+            subtitleWordCount: tps.getWordCount(seriesDraft.subtitle),
+            summary: Summary(seriesDraft.summary),
+            summaryStr: seriesDraft.summary,
+            summaryWordCount: tps.getWordCount(seriesDraft.summary),
+            genre: Genre(seriesDraft.genre),
+            genreStr: seriesDraft.genre,
+            genreOptional: Genre(seriesDraft.genreOptional, isOptional: true),
+            genreOptionalStr: seriesDraft.genreOptional,
+            language: Language(seriesDraft.language),
+            languageStr: seriesDraft.language,
+            isNSFW: seriesDraft.isNSFW,
+            genresMap: Methods.getGenres(event.context),
+            languagesMap: Methods.getLanguages(event.context),
+            databaseFailureOrSuccessOption: optionOf(failureOrSuccess),
+          );
+        } else {
+          yield state.copyWith(
+            seriesDraft: seriesDraft,
+            isEditMode: isEditMode,
+            genresMap: Methods.getGenres(event.context),
+            languagesMap: Methods.getLanguages(event.context),
+            databaseFailureOrSuccessOption: optionOf(failureOrSuccess),
+          );
+        }
       },
       titleChanged: (event) async* {
         final String titleTrim = event.title.trim();
@@ -94,6 +120,7 @@ class NewSeriesDatabaseBloc
 
         yield state.copyWith(
           title: Title(titleTrim),
+          titleStr: titleTrim,
           titleWordCount: wordCount,
           databaseFailureOrSuccessOption: none(),
         );
@@ -104,6 +131,7 @@ class NewSeriesDatabaseBloc
 
         yield state.copyWith(
           subtitle: Subtitle(subtitleTrim),
+          subtitleStr: subtitleTrim,
           subtitleWordCount: wordCount,
           databaseFailureOrSuccessOption: none(),
         );
@@ -114,6 +142,7 @@ class NewSeriesDatabaseBloc
 
         yield state.copyWith(
           summary: Summary(summaryTrim),
+          summaryStr: summaryTrim,
           summaryWordCount: wordCount,
           databaseFailureOrSuccessOption: none(),
         );
@@ -155,7 +184,7 @@ class NewSeriesDatabaseBloc
 
         if (isTitleValid && isSummaryValid && isGenreValid && isLanguageValid) {
           yield state.copyWith(
-            isCreating: true,
+            isCreatingOrDeleting: true,
             databaseFailureOrSuccessOption: none(),
           );
 
@@ -169,15 +198,33 @@ class NewSeriesDatabaseBloc
             ..genreOptional = state.genreOptional.getOrCrash()
             ..language = state.language.getOrCrash()
             ..isNSFW = state.isNSFW
-            ..thumbnailPath = '';
+            ..coverPath = '';
 
           failureOrSuccess = await _localSeriesDraftDatabaseFacade
               .saveSeriesDraft(seriesDraft);
         }
 
         yield state.copyWith(
-          isCreating: false,
+          isCreatingOrDeleting: false,
           showErrorMessages: true,
+          databaseFailureOrSuccessOption: optionOf(failureOrSuccess),
+        );
+      },
+      deleteDraftButtonPressed: (event) async* {
+        Either<DatabaseFailure, dynamic> failureOrSuccess;
+
+        yield state.copyWith(
+          isCreatingOrDeleting: true,
+          databaseFailureOrSuccessOption: none(),
+        );
+
+        final String seriesDraftUid = state.seriesDraft.uid;
+
+        failureOrSuccess = await _localSeriesDraftDatabaseFacade
+            .deleteSeriesDraft(seriesDraftUid);
+
+        yield state.copyWith(
+          isCreatingOrDeleting: false,
           databaseFailureOrSuccessOption: optionOf(failureOrSuccess),
         );
       },

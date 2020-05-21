@@ -1,8 +1,11 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 
+import 'package:wine/domain/models/user.dart';
+
 class Series {
   String uid;
   String authorUid;
+  User author;
   String title;
   String subtitle;
   String summary;
@@ -10,12 +13,15 @@ class Series {
   String genreOptional;
   String language;
   bool isNSFW;
+  String coverUrl;
+  int likesCount;
   int createdAt;
   int updatedAt;
 
   Series({
     this.uid,
     this.authorUid,
+    this.author,
     this.title,
     this.subtitle,
     this.summary,
@@ -23,6 +29,8 @@ class Series {
     this.genreOptional,
     this.language,
     this.isNSFW,
+    this.coverUrl,
+    this.likesCount,
     this.createdAt,
     this.updatedAt,
   });
@@ -30,6 +38,7 @@ class Series {
   Series copyWith({
     String uid,
     String authorUid,
+    User author,
     String title,
     String subtitle,
     String summary,
@@ -37,12 +46,15 @@ class Series {
     String genreOptional,
     String language,
     bool isNSFW,
+    String coverUrl,
+    int likesCount,
     int createdAt,
     int updatedAt,
   }) {
     return Series(
       uid: uid ?? this.uid,
       authorUid: authorUid ?? this.authorUid,
+      author: author ?? this.author,
       title: title ?? this.title,
       subtitle: subtitle ?? this.subtitle,
       summary: summary ?? this.summary,
@@ -50,6 +62,8 @@ class Series {
       genreOptional: genreOptional ?? this.genreOptional,
       language: language ?? this.language,
       isNSFW: isNSFW ?? this.isNSFW,
+      coverUrl: coverUrl ?? this.coverUrl,
+      likesCount: likesCount ?? this.likesCount,
       createdAt: createdAt ?? this.createdAt,
       updatedAt: updatedAt ?? this.updatedAt,
     );
@@ -67,6 +81,8 @@ class Series {
       genreOptional: data['genreOptional'] as String,
       language: data['language'] as String,
       isNSFW: data['isNSFW'] as bool,
+      coverUrl: data['coverUrl'] as String,
+      likesCount: data['likesCount'] as int,
       createdAt: data['createdAt'] as int,
       updatedAt: data['updatedAt'] as int,
     );
@@ -83,6 +99,8 @@ class Series {
       'genreOptional': genreOptional,
       'language': language,
       'isNSFW': isNSFW,
+      'coverUrl': coverUrl,
+      'likesCount': likesCount,
       'createdAt': createdAt,
       'updatedAt': updatedAt,
     };
@@ -101,6 +119,8 @@ class Series {
       genreOptional: map['genreOptional'] as String,
       language: map['language'] as String,
       isNSFW: map['isNSFW'] as bool,
+      coverUrl: map['coverUrl'] as String,
+      likesCount: map['likesCount'] as int,
       createdAt: map['createdAt'] as int,
       updatedAt: map['updatedAt'] as int,
     );
@@ -108,7 +128,7 @@ class Series {
 
   @override
   String toString() {
-    return 'Series(uid: $uid, authorUid: $authorUid, title: $title, subtitle: $subtitle, summary: $summary, genre: $genre, genreOptional: $genreOptional, language: $language, isNSFW: $isNSFW, createdAt: $createdAt, updatedAt: $updatedAt)';
+    return 'Series(uid: $uid, authorUid: $authorUid, author: $author, title: $title, subtitle: $subtitle, summary: $summary, genre: $genre, genreOptional: $genreOptional, language: $language, isNSFW: $isNSFW, coverUrl: $coverUrl, likesCount: $likesCount, createdAt: $createdAt, updatedAt: $updatedAt)';
   }
 
   @override
@@ -116,31 +136,37 @@ class Series {
     if (identical(this, o)) return true;
 
     return o is Series &&
-        o.uid == uid &&
-        o.authorUid == authorUid &&
-        o.title == title &&
-        o.subtitle == subtitle &&
-        o.summary == summary &&
-        o.genre == genre &&
-        o.genreOptional == genreOptional &&
-        o.language == language &&
-        o.isNSFW == isNSFW &&
-        o.createdAt == createdAt &&
-        o.updatedAt == updatedAt;
+      o.uid == uid &&
+      o.authorUid == authorUid &&
+      o.author == author &&
+      o.title == title &&
+      o.subtitle == subtitle &&
+      o.summary == summary &&
+      o.genre == genre &&
+      o.genreOptional == genreOptional &&
+      o.language == language &&
+      o.isNSFW == isNSFW &&
+      o.coverUrl == coverUrl &&
+      o.likesCount == likesCount &&
+      o.createdAt == createdAt &&
+      o.updatedAt == updatedAt;
   }
 
   @override
   int get hashCode {
     return uid.hashCode ^
-        authorUid.hashCode ^
-        title.hashCode ^
-        subtitle.hashCode ^
-        summary.hashCode ^
-        genre.hashCode ^
-        genreOptional.hashCode ^
-        language.hashCode ^
-        isNSFW.hashCode ^
-        createdAt.hashCode ^
-        updatedAt.hashCode;
+      authorUid.hashCode ^
+      author.hashCode ^
+      title.hashCode ^
+      subtitle.hashCode ^
+      summary.hashCode ^
+      genre.hashCode ^
+      genreOptional.hashCode ^
+      language.hashCode ^
+      isNSFW.hashCode ^
+      coverUrl.hashCode ^
+      likesCount.hashCode ^
+      createdAt.hashCode ^
+      updatedAt.hashCode;
   }
 }

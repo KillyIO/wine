@@ -24,7 +24,7 @@ class SignInCreateAccountButton extends StatelessWidget {
             text: 'Create an account',
             recognizer: TapGestureRecognizer()..onTap = onPressed,
             style: TextStyle(
-              color: Palettes.strongCyan,
+              color: Palettes.pastelPink,
               decoration: TextDecoration.underline,
             ),
           ),

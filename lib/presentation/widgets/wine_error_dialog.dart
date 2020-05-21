@@ -26,7 +26,7 @@ class WINEErrorDialog extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.symmetric(vertical: 20.0),
               child: Icon(
-                Feather.alert_triangle,
+                Feather.alert_circle,
                 color: Palettes.error,
                 size: 60.0,
               ),
@@ -64,7 +64,7 @@ class WINEErrorDialog extends StatelessWidget {
                 child: Text(
                   buttonText ?? 'DISMISS',
                   textAlign: TextAlign.center,
-                  style: TextStyle(
+                  style: const TextStyle(
                     color: Colors.white,
                     fontSize: 16.0,
                     fontWeight: FontWeight.w500,

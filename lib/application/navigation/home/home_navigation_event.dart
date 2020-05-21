@@ -2,18 +2,18 @@ part of 'home_navigation_bloc.dart';
 
 @freezed
 abstract class HomeNavigationEvent with _$HomeNavigationEvent {
-  const factory HomeNavigationEvent.menuIconPressed({
-    @required bool isMenuOpen,
-  }) = MenuIconPressed;
+  const factory HomeNavigationEvent.homePageLaunched({
+    BuildContext context,
+  }) = HomePageLaunched;
+  const factory HomeNavigationEvent.drawerIconPressed({
+    @required bool isDrawerOpen,
+  }) = DrawerIconPressed;
   const factory HomeNavigationEvent.newSeriesIconPressed({
     @required bool isNewSeriesPageOpen,
   }) = NewSeriesIconPressed;
-  const factory HomeNavigationEvent.menuDragStarted({
-    @required double initialPosition,
-  }) = MenuDragStarted;
-  const factory HomeNavigationEvent.menuDragUpdated({
-    @required double distance,
-  }) = MenuDragUpdated;
+  const factory HomeNavigationEvent.pageViewIndexChanged({
+    @required int index,
+  }) = PageViewIndexChanged;
   const factory HomeNavigationEvent.resetHomeNavigationBloc() =
       ResetHomeNavigationBloc;
 }

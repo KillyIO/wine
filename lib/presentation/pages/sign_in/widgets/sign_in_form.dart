@@ -226,7 +226,7 @@ class _SignInFormState extends State<SignInForm> with TickerProviderStateMixin {
                               child: Container(
                                 height: 50.0,
                                 child: FlatButton(
-                                  color: Palettes.strongCyan,
+                                  color: Palettes.pastelPink,
                                   shape: RoundedRectangleBorder(
                                     borderRadius: BorderRadius.circular(8.0),
                                   ),

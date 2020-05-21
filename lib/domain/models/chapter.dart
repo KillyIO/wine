@@ -1,12 +1,15 @@
-import 'dart:convert';
-
 import 'package:cloud_firestore/cloud_firestore.dart';
+
+import 'package:wine/domain/models/series.dart';
+import 'package:wine/domain/models/user.dart';
 
 class Chapter {
   String uid;
-  String seriesUid;
-  String previousChapterUid;
   String authorUid;
+  User author;
+  String seriesUid;
+  Series series;
+  String previousChapterUid;
   int index;
   String title;
   String story;
@@ -19,9 +22,11 @@ class Chapter {
 
   Chapter({
     this.uid,
-    this.seriesUid,
-    this.previousChapterUid,
     this.authorUid,
+    this.author,
+    this.seriesUid,
+    this.series,
+    this.previousChapterUid,
     this.index,
     this.title,
     this.story,
@@ -35,9 +40,11 @@ class Chapter {
 
   Chapter copyWith({
     String uid,
-    String seriesUid,
-    String previousChapterUid,
     String authorUid,
+    User author,
+    String seriesUid,
+    Series series,
+    String previousChapterUid,
     int index,
     String title,
     String story,
@@ -50,9 +57,11 @@ class Chapter {
   }) {
     return Chapter(
       uid: uid ?? this.uid,
-      seriesUid: seriesUid ?? this.seriesUid,
-      previousChapterUid: previousChapterUid ?? this.previousChapterUid,
       authorUid: authorUid ?? this.authorUid,
+      author: author ?? this.author,
+      seriesUid: seriesUid ?? this.seriesUid,
+      series: series ?? this.series,
+      previousChapterUid: previousChapterUid ?? this.previousChapterUid,
       index: index ?? this.index,
       title: title ?? this.title,
       story: story ?? this.story,
@@ -69,9 +78,9 @@ class Chapter {
     final Map<String, dynamic> data = document.data;
     return Chapter(
       uid: data['uid'] as String,
+      authorUid: data['authorUid'] as String,
       seriesUid: data['seriesUid'] as String,
       previousChapterUid: data['previousChapterUid'] as String,
-      authorUid: data['authorUid'] as String,
       index: data['index'] as int,
       title: data['title'] as String,
       story: data['story'] as String,
@@ -86,9 +95,9 @@ class Chapter {
   Map<String, dynamic> toMap() {
     return {
       'uid': uid,
+      'authorUid': authorUid,
       'seriesUid': seriesUid,
       'previousChapterUid': previousChapterUid,
-      'authorUid': authorUid,
       'index': index,
       'title': title,
       'story': story,
@@ -106,9 +115,9 @@ class Chapter {
 
     return Chapter(
       uid: map['uid'] as String,
+      authorUid: map['authorUid'] as String,
       seriesUid: map['seriesUid'] as String,
       previousChapterUid: map['previousChapterUid'] as String,
-      authorUid: map['authorUid'] as String,
       index: map['index'] as int,
       title: map['title'] as String,
       story: map['story'] as String,
@@ -123,7 +132,7 @@ class Chapter {
 
   @override
   String toString() {
-    return 'Chapter(uid: $uid, seriesUid: $seriesUid, previousChapterUid: $previousChapterUid, authorUid: $authorUid, index: $index, title: $title, story: $story, language: $language, copyrights: $copyrights, isNSFW: $isNSFW, isEnd: $isEnd, createdAt: $createdAt, updatedAt: $updatedAt)';
+    return 'Chapter(uid: $uid, authorUid: $authorUid, author: $author, seriesUid: $seriesUid, series: $series, previousChapterUid: $previousChapterUid, index: $index, title: $title, story: $story, language: $language, copyrights: $copyrights, isNSFW: $isNSFW, isEnd: $isEnd, createdAt: $createdAt, updatedAt: $updatedAt)';
   }
 
   @override
@@ -132,9 +141,11 @@ class Chapter {
 
     return o is Chapter &&
       o.uid == uid &&
-      o.seriesUid == seriesUid &&
-      o.previousChapterUid == previousChapterUid &&
       o.authorUid == authorUid &&
+      o.author == author &&
+      o.seriesUid == seriesUid &&
+      o.series == series &&
+      o.previousChapterUid == previousChapterUid &&
       o.index == index &&
       o.title == title &&
       o.story == story &&
@@ -149,9 +160,11 @@ class Chapter {
   @override
   int get hashCode {
     return uid.hashCode ^
-      seriesUid.hashCode ^
-      previousChapterUid.hashCode ^
       authorUid.hashCode ^
+      author.hashCode ^
+      seriesUid.hashCode ^
+      series.hashCode ^
+      previousChapterUid.hashCode ^
       index.hashCode ^
       title.hashCode ^
       story.hashCode ^

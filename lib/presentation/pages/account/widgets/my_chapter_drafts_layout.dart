@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 
-class MySeriesPage extends StatelessWidget {
+class MyChapterDraftsLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Container(
+      
+    );
   }
 }
