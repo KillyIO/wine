@@ -6,6 +6,11 @@ class Methods {
     return {
       'action': 'Action',
       'adventure': 'Adventure',
+      'erotica': 'Erotica',
+      'fantasy': 'Fantasy',
+      'horror': 'Horror',
+      'mystery': 'Mystery',
+      'romance': 'Romance',
       'scifi': 'Science fiction',
     };
   }
@@ -14,6 +19,11 @@ class Methods {
     return <String>[
       'action',
       'adventure',
+      'erotica',
+      'fantasy',
+      'horror',
+      'mystery',
+      'romance',
       'scifi',
     ];
   }
@@ -33,21 +43,21 @@ class Methods {
     };
   }
 
-  static List<String> getAccountMenuItems(BuildContext context) {
+  static List<String> getAccountNavbarItems(BuildContext context) {
     return <String>[
       'MY SERIES',
       'MY CHAPTERS',
     ];
   }
 
-  static List<String> getAccountVerticalMenuItems(BuildContext context) {
+  static List<String> getAccountVerticalNavbarItems(BuildContext context) {
     return <String>[
       'PUBLISHED',
       'DRAFTS',
     ];
   }
 
-  static List<String> getHomeMenuItems(BuildContext context) {
+  static List<String> getHomeNavbarItems(BuildContext context) {
     return [
       'TOP SERIES',
       'NEW SERIES',
@@ -63,7 +73,7 @@ class Methods {
     };
   }
 
-  static Map<String, int> getTimeFilterTimestamps() {
+  static Map<String, int> getTimeFiltersTimestamps() {
     return {
       'today': (DateTime.now() - 1.days).millisecondsSinceEpoch,
       'week': (DateTime.now() - 1.weeks).millisecondsSinceEpoch,

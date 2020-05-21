@@ -26,8 +26,8 @@ class AccountNavigationBloc
     yield* event.map(
       accountPageLaunched: (event) async* {
         yield state.copyWith(
-          pageViewNavbarItems: Methods.getAccountMenuItems(event.context),
-          verticalNavbarItems: Methods.getAccountVerticalMenuItems(
+          pageViewNavbarItems: Methods.getAccountNavbarItems(event.context),
+          verticalNavbarItems: Methods.getAccountVerticalNavbarItems(
             event.context,
           ),
         );

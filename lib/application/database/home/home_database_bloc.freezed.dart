@@ -1131,11 +1131,13 @@ class _$HomeDatabaseStateTearOff {
       @required
           String languageFilterKey,
       @required
-          Map<String, String> times,
+          bool areFiltersApplied,
       @required
-          Map<String, String> genres,
+          Map<String, String> timesMap,
       @required
-          Map<String, String> languages,
+          Map<String, String> genresMap,
+      @required
+          Map<String, String> languagesMap,
       @required
           List<String> placeholders,
       @required
@@ -1151,9 +1153,10 @@ class _$HomeDatabaseStateTearOff {
       timeFilterKey: timeFilterKey,
       genreFilterKey: genreFilterKey,
       languageFilterKey: languageFilterKey,
-      times: times,
-      genres: genres,
-      languages: languages,
+      areFiltersApplied: areFiltersApplied,
+      timesMap: timesMap,
+      genresMap: genresMap,
+      languagesMap: languagesMap,
       placeholders: placeholders,
       isFetching: isFetching,
       databaseFailureOrSuccessOption: databaseFailureOrSuccessOption,
@@ -1172,9 +1175,10 @@ mixin _$HomeDatabaseState {
   String get timeFilterKey;
   String get genreFilterKey;
   String get languageFilterKey;
-  Map<String, String> get times;
-  Map<String, String> get genres;
-  Map<String, String> get languages;
+  bool get areFiltersApplied;
+  Map<String, String> get timesMap;
+  Map<String, String> get genresMap;
+  Map<String, String> get languagesMap;
   List<String> get placeholders;
   bool get isFetching;
   Option<Either<DatabaseFailure, dynamic>> get databaseFailureOrSuccessOption;
@@ -1194,9 +1198,10 @@ abstract class $HomeDatabaseStateCopyWith<$Res> {
       String timeFilterKey,
       String genreFilterKey,
       String languageFilterKey,
-      Map<String, String> times,
-      Map<String, String> genres,
-      Map<String, String> languages,
+      bool areFiltersApplied,
+      Map<String, String> timesMap,
+      Map<String, String> genresMap,
+      Map<String, String> languagesMap,
       List<String> placeholders,
       bool isFetching,
       Option<Either<DatabaseFailure, dynamic>> databaseFailureOrSuccessOption});
@@ -1219,9 +1224,10 @@ class _$HomeDatabaseStateCopyWithImpl<$Res>
     Object timeFilterKey = freezed,
     Object genreFilterKey = freezed,
     Object languageFilterKey = freezed,
-    Object times = freezed,
-    Object genres = freezed,
-    Object languages = freezed,
+    Object areFiltersApplied = freezed,
+    Object timesMap = freezed,
+    Object genresMap = freezed,
+    Object languagesMap = freezed,
     Object placeholders = freezed,
     Object isFetching = freezed,
     Object databaseFailureOrSuccessOption = freezed,
@@ -1245,11 +1251,18 @@ class _$HomeDatabaseStateCopyWithImpl<$Res>
       languageFilterKey: languageFilterKey == freezed
           ? _value.languageFilterKey
           : languageFilterKey as String,
-      times: times == freezed ? _value.times : times as Map<String, String>,
-      genres: genres == freezed ? _value.genres : genres as Map<String, String>,
-      languages: languages == freezed
-          ? _value.languages
-          : languages as Map<String, String>,
+      areFiltersApplied: areFiltersApplied == freezed
+          ? _value.areFiltersApplied
+          : areFiltersApplied as bool,
+      timesMap: timesMap == freezed
+          ? _value.timesMap
+          : timesMap as Map<String, String>,
+      genresMap: genresMap == freezed
+          ? _value.genresMap
+          : genresMap as Map<String, String>,
+      languagesMap: languagesMap == freezed
+          ? _value.languagesMap
+          : languagesMap as Map<String, String>,
       placeholders: placeholders == freezed
           ? _value.placeholders
           : placeholders as List<String>,
@@ -1277,9 +1290,10 @@ abstract class _$HomeDatabaseStateCopyWith<$Res>
       String timeFilterKey,
       String genreFilterKey,
       String languageFilterKey,
-      Map<String, String> times,
-      Map<String, String> genres,
-      Map<String, String> languages,
+      bool areFiltersApplied,
+      Map<String, String> timesMap,
+      Map<String, String> genresMap,
+      Map<String, String> languagesMap,
       List<String> placeholders,
       bool isFetching,
       Option<Either<DatabaseFailure, dynamic>> databaseFailureOrSuccessOption});
@@ -1304,9 +1318,10 @@ class __$HomeDatabaseStateCopyWithImpl<$Res>
     Object timeFilterKey = freezed,
     Object genreFilterKey = freezed,
     Object languageFilterKey = freezed,
-    Object times = freezed,
-    Object genres = freezed,
-    Object languages = freezed,
+    Object areFiltersApplied = freezed,
+    Object timesMap = freezed,
+    Object genresMap = freezed,
+    Object languagesMap = freezed,
     Object placeholders = freezed,
     Object isFetching = freezed,
     Object databaseFailureOrSuccessOption = freezed,
@@ -1330,11 +1345,18 @@ class __$HomeDatabaseStateCopyWithImpl<$Res>
       languageFilterKey: languageFilterKey == freezed
           ? _value.languageFilterKey
           : languageFilterKey as String,
-      times: times == freezed ? _value.times : times as Map<String, String>,
-      genres: genres == freezed ? _value.genres : genres as Map<String, String>,
-      languages: languages == freezed
-          ? _value.languages
-          : languages as Map<String, String>,
+      areFiltersApplied: areFiltersApplied == freezed
+          ? _value.areFiltersApplied
+          : areFiltersApplied as bool,
+      timesMap: timesMap == freezed
+          ? _value.timesMap
+          : timesMap as Map<String, String>,
+      genresMap: genresMap == freezed
+          ? _value.genresMap
+          : genresMap as Map<String, String>,
+      languagesMap: languagesMap == freezed
+          ? _value.languagesMap
+          : languagesMap as Map<String, String>,
       placeholders: placeholders == freezed
           ? _value.placeholders
           : placeholders as List<String>,
@@ -1359,9 +1381,10 @@ class _$_HomeDatabaseState
       @required this.timeFilterKey,
       @required this.genreFilterKey,
       @required this.languageFilterKey,
-      @required this.times,
-      @required this.genres,
-      @required this.languages,
+      @required this.areFiltersApplied,
+      @required this.timesMap,
+      @required this.genresMap,
+      @required this.languagesMap,
       @required this.placeholders,
       @required this.isFetching,
       @required this.databaseFailureOrSuccessOption})
@@ -1372,9 +1395,10 @@ class _$_HomeDatabaseState
         assert(timeFilterKey != null),
         assert(genreFilterKey != null),
         assert(languageFilterKey != null),
-        assert(times != null),
-        assert(genres != null),
-        assert(languages != null),
+        assert(areFiltersApplied != null),
+        assert(timesMap != null),
+        assert(genresMap != null),
+        assert(languagesMap != null),
         assert(placeholders != null),
         assert(isFetching != null),
         assert(databaseFailureOrSuccessOption != null);
@@ -1394,11 +1418,13 @@ class _$_HomeDatabaseState
   @override
   final String languageFilterKey;
   @override
-  final Map<String, String> times;
+  final bool areFiltersApplied;
   @override
-  final Map<String, String> genres;
+  final Map<String, String> timesMap;
   @override
-  final Map<String, String> languages;
+  final Map<String, String> genresMap;
+  @override
+  final Map<String, String> languagesMap;
   @override
   final List<String> placeholders;
   @override
@@ -1408,7 +1434,7 @@ class _$_HomeDatabaseState
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'HomeDatabaseState(topFiveSeries: $topFiveSeries, topSeries: $topSeries, newSeries: $newSeries, filters: $filters, timeFilterKey: $timeFilterKey, genreFilterKey: $genreFilterKey, languageFilterKey: $languageFilterKey, times: $times, genres: $genres, languages: $languages, placeholders: $placeholders, isFetching: $isFetching, databaseFailureOrSuccessOption: $databaseFailureOrSuccessOption)';
+    return 'HomeDatabaseState(topFiveSeries: $topFiveSeries, topSeries: $topSeries, newSeries: $newSeries, filters: $filters, timeFilterKey: $timeFilterKey, genreFilterKey: $genreFilterKey, languageFilterKey: $languageFilterKey, areFiltersApplied: $areFiltersApplied, timesMap: $timesMap, genresMap: $genresMap, languagesMap: $languagesMap, placeholders: $placeholders, isFetching: $isFetching, databaseFailureOrSuccessOption: $databaseFailureOrSuccessOption)';
   }
 
   @override
@@ -1423,9 +1449,10 @@ class _$_HomeDatabaseState
       ..add(DiagnosticsProperty('timeFilterKey', timeFilterKey))
       ..add(DiagnosticsProperty('genreFilterKey', genreFilterKey))
       ..add(DiagnosticsProperty('languageFilterKey', languageFilterKey))
-      ..add(DiagnosticsProperty('times', times))
-      ..add(DiagnosticsProperty('genres', genres))
-      ..add(DiagnosticsProperty('languages', languages))
+      ..add(DiagnosticsProperty('areFiltersApplied', areFiltersApplied))
+      ..add(DiagnosticsProperty('timesMap', timesMap))
+      ..add(DiagnosticsProperty('genresMap', genresMap))
+      ..add(DiagnosticsProperty('languagesMap', languagesMap))
       ..add(DiagnosticsProperty('placeholders', placeholders))
       ..add(DiagnosticsProperty('isFetching', isFetching))
       ..add(DiagnosticsProperty(
@@ -1457,13 +1484,18 @@ class _$_HomeDatabaseState
             (identical(other.languageFilterKey, languageFilterKey) ||
                 const DeepCollectionEquality()
                     .equals(other.languageFilterKey, languageFilterKey)) &&
-            (identical(other.times, times) ||
-                const DeepCollectionEquality().equals(other.times, times)) &&
-            (identical(other.genres, genres) ||
-                const DeepCollectionEquality().equals(other.genres, genres)) &&
-            (identical(other.languages, languages) ||
+            (identical(other.areFiltersApplied, areFiltersApplied) ||
                 const DeepCollectionEquality()
-                    .equals(other.languages, languages)) &&
+                    .equals(other.areFiltersApplied, areFiltersApplied)) &&
+            (identical(other.timesMap, timesMap) ||
+                const DeepCollectionEquality()
+                    .equals(other.timesMap, timesMap)) &&
+            (identical(other.genresMap, genresMap) ||
+                const DeepCollectionEquality()
+                    .equals(other.genresMap, genresMap)) &&
+            (identical(other.languagesMap, languagesMap) ||
+                const DeepCollectionEquality()
+                    .equals(other.languagesMap, languagesMap)) &&
             (identical(other.placeholders, placeholders) ||
                 const DeepCollectionEquality()
                     .equals(other.placeholders, placeholders)) &&
@@ -1487,9 +1519,10 @@ class _$_HomeDatabaseState
       const DeepCollectionEquality().hash(timeFilterKey) ^
       const DeepCollectionEquality().hash(genreFilterKey) ^
       const DeepCollectionEquality().hash(languageFilterKey) ^
-      const DeepCollectionEquality().hash(times) ^
-      const DeepCollectionEquality().hash(genres) ^
-      const DeepCollectionEquality().hash(languages) ^
+      const DeepCollectionEquality().hash(areFiltersApplied) ^
+      const DeepCollectionEquality().hash(timesMap) ^
+      const DeepCollectionEquality().hash(genresMap) ^
+      const DeepCollectionEquality().hash(languagesMap) ^
       const DeepCollectionEquality().hash(placeholders) ^
       const DeepCollectionEquality().hash(isFetching) ^
       const DeepCollectionEquality().hash(databaseFailureOrSuccessOption);
@@ -1516,11 +1549,13 @@ abstract class _HomeDatabaseState implements HomeDatabaseState {
       @required
           String languageFilterKey,
       @required
-          Map<String, String> times,
+          bool areFiltersApplied,
       @required
-          Map<String, String> genres,
+          Map<String, String> timesMap,
       @required
-          Map<String, String> languages,
+          Map<String, String> genresMap,
+      @required
+          Map<String, String> languagesMap,
       @required
           List<String> placeholders,
       @required
@@ -1544,11 +1579,13 @@ abstract class _HomeDatabaseState implements HomeDatabaseState {
   @override
   String get languageFilterKey;
   @override
-  Map<String, String> get times;
+  bool get areFiltersApplied;
   @override
-  Map<String, String> get genres;
+  Map<String, String> get timesMap;
   @override
-  Map<String, String> get languages;
+  Map<String, String> get genresMap;
+  @override
+  Map<String, String> get languagesMap;
   @override
   List<String> get placeholders;
   @override

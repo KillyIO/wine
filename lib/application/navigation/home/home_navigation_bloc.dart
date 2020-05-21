@@ -26,7 +26,7 @@ class HomeNavigationBloc
     yield* event.map(
       homePageLaunched: (event) async* {
         yield state.copyWith(
-          pageViewNavbarItems: Methods.getHomeMenuItems(event.context),
+          pageViewNavbarItems: Methods.getHomeNavbarItems(event.context),
         );
       },
       drawerIconPressed: (event) async* {
