@@ -46,12 +46,13 @@ class HomeDatabaseBloc extends Bloc<HomeDatabaseEvent, HomeDatabaseState> {
             .split(RegExp('[_-]'))[0];
 
         filters['time'] =
-            Methods.getTimeFilterTimestamps()[state.timeFilterKey];
+            Methods.getTimeFiltersTimestamps()[state.timeFilterKey];
         filters['genre'] = state.genreFilterKey;
         filters['language'] = currentLocale;
 
-        failureOrSuccess =
-            await _onlineSeriesDatabaseFacade.getTopSeries(filters: filters);
+        failureOrSuccess = await _onlineSeriesDatabaseFacade.getTopSeries(
+          filters: filters,
+        );
         failureOrSuccess.fold(
           (_) {},
           (success) {
@@ -62,8 +63,9 @@ class HomeDatabaseBloc extends Bloc<HomeDatabaseEvent, HomeDatabaseState> {
         );
 
         if (failureOrSuccess.isRight()) {
-          failureOrSuccess =
-              await _onlineSeriesDatabaseFacade.getNewSeries(filters: filters);
+          failureOrSuccess = await _onlineSeriesDatabaseFacade.getNewSeries(
+            filters: filters,
+          );
           failureOrSuccess.fold(
             (_) {},
             (success) {
@@ -88,9 +90,9 @@ class HomeDatabaseBloc extends Bloc<HomeDatabaseEvent, HomeDatabaseState> {
           newSeries: newSeries,
           filters: filters,
           languageFilterKey: currentLocale,
-          times: Methods.getTimeFilters(event.context),
-          genres: Methods.getGenres(event.context),
-          languages: Methods.getLanguages(event.context),
+          timesMap: Methods.getTimeFilters(event.context),
+          genresMap: Methods.getGenres(event.context),
+          languagesMap: Methods.getLanguages(event.context),
           placeholders: Methods.getPlaceholderUrls(),
           databaseFailureOrSuccessOption: optionOf(failureOrSuccess),
         );
@@ -100,18 +102,21 @@ class HomeDatabaseBloc extends Bloc<HomeDatabaseEvent, HomeDatabaseState> {
       timeFilterKeyChanged: (event) async* {
         yield state.copyWith(
           timeFilterKey: event.key,
+          areFiltersApplied: false,
           databaseFailureOrSuccessOption: none(),
         );
       },
       genreFilterKeyChanged: (event) async* {
         yield state.copyWith(
-          genreFilterKey: event.key,
+          genreFilterKey: state.genreFilterKey == event.key ? '' : event.key,
+          areFiltersApplied: false,
           databaseFailureOrSuccessOption: none(),
         );
       },
       languageFilterKeyChanged: (event) async* {
         yield state.copyWith(
           languageFilterKey: event.key,
+          areFiltersApplied: false,
           databaseFailureOrSuccessOption: none(),
         );
       },
@@ -119,6 +124,7 @@ class HomeDatabaseBloc extends Bloc<HomeDatabaseEvent, HomeDatabaseState> {
         Either<DatabaseFailure, dynamic> failureOrSuccess;
         final Map<String, dynamic> filters = state.filters;
 
+        final List<Series> topFiveSeries = <Series>[];
         final List<Series> topSeries = <Series>[];
         final List<Series> newSeries = <Series>[];
 
@@ -128,11 +134,13 @@ class HomeDatabaseBloc extends Bloc<HomeDatabaseEvent, HomeDatabaseState> {
         );
 
         filters['time'] =
-            Methods.getTimeFilterTimestamps()[state.timeFilterKey];
+            Methods.getTimeFiltersTimestamps()[state.timeFilterKey];
         filters['genre'] = state.genreFilterKey;
         filters['language'] = state.languageFilterKey;
 
-        failureOrSuccess = await _onlineSeriesDatabaseFacade.getTopSeries();
+        failureOrSuccess = await _onlineSeriesDatabaseFacade.getTopSeries(
+          filters: filters,
+        );
         failureOrSuccess.fold(
           (_) {},
           (success) {
@@ -143,8 +151,9 @@ class HomeDatabaseBloc extends Bloc<HomeDatabaseEvent, HomeDatabaseState> {
         );
 
         if (failureOrSuccess.isRight()) {
-          failureOrSuccess =
-              await _onlineSeriesDatabaseFacade.getNewSeries(filters: filters);
+          failureOrSuccess = await _onlineSeriesDatabaseFacade.getNewSeries(
+            filters: filters,
+          );
           failureOrSuccess.fold(
             (_) {},
             (success) {
@@ -155,11 +164,21 @@ class HomeDatabaseBloc extends Bloc<HomeDatabaseEvent, HomeDatabaseState> {
           );
         }
 
+        if (topSeries.length >= 5) {
+          topFiveSeries.addAll(topSeries.sublist(0, 5));
+          topSeries.removeRange(0, 5);
+        } else {
+          topFiveSeries.addAll(topSeries.sublist(0, topSeries.length));
+          topSeries.removeRange(0, topFiveSeries.length);
+        }
+
         yield state.copyWith(
           isFetching: false,
+          topFiveSeries: topFiveSeries,
           topSeries: topSeries,
           newSeries: newSeries,
           filters: filters,
+          areFiltersApplied: true,
           databaseFailureOrSuccessOption: optionOf(failureOrSuccess),
         );
       },

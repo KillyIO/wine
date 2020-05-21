@@ -9,7 +9,7 @@ class HomeFiltersLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<HomeDatabaseBloc, HomeDatabaseState>(
-      builder: (context, state) {
+      builder: (context, homeDbState) {
         return Scaffold(
           backgroundColor: Colors.white,
           appBar: PreferredSize(
@@ -41,9 +41,11 @@ class HomeFiltersLayout extends StatelessWidget {
                 FlatButton(
                   disabledTextColor: Colors.black26,
                   highlightColor: Colors.transparent,
-                  onPressed: () => context
-                      .bloc<HomeDatabaseBloc>()
-                      .add(const HomeDatabaseEvent.applyFilterChanges()),
+                  onPressed: homeDbState.areFiltersApplied
+                      ? null
+                      : () => context
+                          .bloc<HomeDatabaseBloc>()
+                          .add(const HomeDatabaseEvent.applyFilterChanges()),
                   splashColor: Colors.transparent,
                   textColor: Colors.black,
                   child: Text(
@@ -57,76 +59,86 @@ class HomeFiltersLayout extends StatelessWidget {
             ),
           ),
           body: SafeArea(
-            child: BlocBuilder<HomeDatabaseBloc, HomeDatabaseState>(
-              builder: (context, homeDbState) {
-                return ListView(
-                  children: <Widget>[
-                    ListTile(
-                      title: Text(
-                        'TIME',
-                        style: TextStyle(
-                          fontSize: 20.0,
-                          fontWeight: FontWeight.w300,
-                        ),
-                      ),
+            child: ListView(
+              children: <Widget>[
+                ListTile(
+                  title: Text(
+                    'TIME',
+                    style: TextStyle(
+                      fontSize: 20.0,
+                      fontWeight: FontWeight.w300,
                     ),
-                    ListView.builder(
-                      itemCount: homeDbState.times.values.toList().length,
-                      itemBuilder: (BuildContext context, int index) {
-                        return HomeFilterButton(
-                          title: homeDbState.times.values
-                              .toList()[index]
-                              .capitalize(),
-                          isActive: homeDbState.times.keys.toList()[index] ==
-                              homeDbState.timeFilterKey,
-                        );
-                      },
-                      shrinkWrap: true,
+                  ),
+                ),
+                ListView.builder(
+                  itemCount: homeDbState.timesMap.values.toList().length,
+                  itemBuilder: (BuildContext context, int index) {
+                    return HomeFilterButton(
+                      title: homeDbState.timesMap.values
+                          .toList()[index]
+                          .capitalize(),
+                      isActive: homeDbState.timesMap.keys.toList()[index] ==
+                          homeDbState.timeFilterKey,
+                      onPressed: () => context
+                          .bloc<HomeDatabaseBloc>()
+                          .add(HomeDatabaseEvent.timeFilterKeyChanged(
+                            homeDbState.timesMap.keys.toList()[index],
+                          )),
+                    );
+                  },
+                  shrinkWrap: true,
+                ),
+                ListTile(
+                  title: Text(
+                    'GENRE',
+                    style: TextStyle(
+                      fontSize: 20.0,
+                      fontWeight: FontWeight.w300,
                     ),
-                    ListTile(
-                      title: Text(
-                        'GENRE',
-                        style: TextStyle(
-                          fontSize: 20.0,
-                          fontWeight: FontWeight.w300,
-                        ),
-                      ),
+                  ),
+                ),
+                ListView.builder(
+                  itemCount: homeDbState.genresMap.values.toList().length,
+                  itemBuilder: (BuildContext context, int index) {
+                    return HomeFilterButton(
+                      title: homeDbState.genresMap.values.toList()[index],
+                      isActive: homeDbState.genresMap.keys.toList()[index] ==
+                          homeDbState.genreFilterKey,
+                      onPressed: () => context
+                          .bloc<HomeDatabaseBloc>()
+                          .add(HomeDatabaseEvent.genreFilterKeyChanged(
+                            homeDbState.genresMap.keys.toList()[index],
+                          )),
+                    );
+                  },
+                  shrinkWrap: true,
+                ),
+                ListTile(
+                  title: Text(
+                    'LANGUAGE',
+                    style: TextStyle(
+                      fontSize: 20.0,
+                      fontWeight: FontWeight.w300,
                     ),
-                    ListView.builder(
-                      itemCount: homeDbState.genres.values.toList().length,
-                      itemBuilder: (BuildContext context, int index) {
-                        return HomeFilterButton(
-                          title: homeDbState.genres.values.toList()[index],
-                          isActive: homeDbState.genres.keys.toList()[index] ==
-                              homeDbState.genreFilterKey,
-                        );
-                      },
-                      shrinkWrap: true,
-                    ),
-                    ListTile(
-                      title: Text(
-                        'LANGUAGE',
-                        style: TextStyle(
-                          fontSize: 20.0,
-                          fontWeight: FontWeight.w300,
-                        ),
-                      ),
-                    ),
-                    ListView.builder(
-                      itemCount: homeDbState.languages.values.toList().length,
-                      itemBuilder: (BuildContext context, int index) {
-                        return HomeFilterButton(
-                          title: homeDbState.languages.values.toList()[index],
-                          isActive:
-                              homeDbState.languages.keys.toList()[index] ==
-                                  homeDbState.languageFilterKey,
-                        );
-                      },
-                      shrinkWrap: true,
-                    ),
-                  ],
-                );
-              },
+                  ),
+                ),
+                ListView.builder(
+                  itemCount: homeDbState.languagesMap.values.toList().length,
+                  itemBuilder: (BuildContext context, int index) {
+                    return HomeFilterButton(
+                      title: homeDbState.languagesMap.values.toList()[index],
+                      isActive: homeDbState.languagesMap.keys.toList()[index] ==
+                          homeDbState.languageFilterKey,
+                      onPressed: () => context
+                          .bloc<HomeDatabaseBloc>()
+                          .add(HomeDatabaseEvent.languageFilterKeyChanged(
+                            homeDbState.languagesMap.keys.toList()[index],
+                          )),
+                    );
+                  },
+                  shrinkWrap: true,
+                ),
+              ],
             ),
           ),
         );
