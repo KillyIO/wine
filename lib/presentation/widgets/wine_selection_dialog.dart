@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
-import 'package:wine/utils/palettes.dart';
 
 typedef StringToVoidFunction = void Function(String);
 
@@ -45,7 +44,7 @@ class WINESelectionDialog extends StatelessWidget {
                       title,
                       textAlign: TextAlign.center,
                       style: TextStyle(
-                        color: Palettes.darkCobaltBlue,
+                        color: Colors.black,
                         fontSize: 17.0,
                         fontWeight: FontWeight.bold,
                       ),
@@ -56,7 +55,7 @@ class WINESelectionDialog extends StatelessWidget {
                     child: IconButton(
                       icon: Icon(
                         Feather.info,
-                        color: Palettes.darkCobaltBlue,
+                        color: Colors.black,
                       ),
                       onPressed: onInfoPressed,
                     ),

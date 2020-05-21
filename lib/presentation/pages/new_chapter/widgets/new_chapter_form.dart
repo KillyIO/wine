@@ -5,7 +5,7 @@ import 'package:wine/application/database/new_chapter/new_chapter_database_bloc.
 import 'package:wine/application/navigation/home/home_navigation_bloc.dart';
 import 'package:wine/presentation/widgets/wine_dialog_list_tile.dart';
 import 'package:wine/presentation/widgets/wine_error_dialog.dart';
-import 'package:wine/presentation/widgets/wine_image_back_button.dart';
+import 'package:wine/presentation/widgets/wine_leading_image_button.dart';
 import 'package:wine/presentation/widgets/wine_selection_dialog.dart';
 import 'package:wine/presentation/widgets/wine_show_dialog.dart';
 import 'package:wine/presentation/widgets/wine_switch_list_tile.dart';
@@ -142,9 +142,9 @@ class _NewChapterFormState extends State<NewChapterForm>
                     horizontal: 10.0,
                     vertical: 5.0,
                   ),
-                  child: WINEImageBackButton(
+                  child: WINELeadingImageButton(
+                    imagePath: 'assets/img/back_button.png',
                     onPressed: () {},
-                    color: Colors.black,
                   ),
                 ),
               ),
@@ -174,6 +174,7 @@ class _NewChapterFormState extends State<NewChapterForm>
                           // SECTION title
                           const WINETextFieldLabel(title: 'TITLE*'),
                           TextFormField(
+                            textCapitalization: TextCapitalization.sentences,
                             decoration: InputDecoration(
                               hintText:
                                   'Less than ${Constants.seriesTitleMaxWords} words',
@@ -234,6 +235,7 @@ class _NewChapterFormState extends State<NewChapterForm>
                           // SECTION story
                           const WINETextFieldLabel(title: 'STORY*'),
                           TextFormField(
+                            textCapitalization: TextCapitalization.sentences,
                             decoration: InputDecoration(
                               hintText:
                                   'More than ${Constants.chapterStoryMinWords} words and less than ${Constants.chapterStoryMaxWords} words',

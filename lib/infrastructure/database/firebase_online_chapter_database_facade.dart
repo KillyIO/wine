@@ -31,7 +31,8 @@ class FirebaseOnlineChapterDatabaseFacade
   }
 
   @override
-  Future<Either<DatabaseFailure, Chapter>> getChapterById(String chapterUid) async {
+  Future<Either<DatabaseFailure, Chapter>> getChapterById(
+      String chapterUid) async {
     final DocumentReference ref =
         _firestore.collection(Paths.chaptersPath).document(chapterUid);
 
@@ -41,5 +42,39 @@ class FirebaseOnlineChapterDatabaseFacade
       return right(chapter);
     }
     return left(const DatabaseFailure.failedToFetchOnlineData());
+  }
+
+  @override
+  Future<Either<DatabaseFailure, List<Chapter>>> getChaptersByUserId(
+    String uid, {
+    Chapter lastChapter,
+  }) async {
+    final CollectionReference chaptersCollection =
+        _firestore.collection(Paths.chaptersPath);
+
+    QuerySnapshot querySnapshot;
+    if (lastChapter != null) {
+      final DocumentSnapshot lastDocument =
+          await chaptersCollection.document(lastChapter.uid).get();
+
+      querySnapshot = await chaptersCollection
+          .startAfterDocument(lastDocument)
+          .where('authorUid', isEqualTo: uid)
+          .orderBy('createdAt', descending: true)
+          .limit(20)
+          .getDocuments();
+    } else {
+      querySnapshot = await chaptersCollection
+          .where('authorUid', isEqualTo: uid)
+          .orderBy('createdAt', descending: true)
+          .limit(20)
+          .getDocuments();
+    }
+
+    final List<Chapter> chaptersList = <Chapter>[];
+    for (final DocumentSnapshot doc in querySnapshot.documents) {
+      chaptersList.add(Chapter.fromFirestore(doc));
+    }
+    return right(chaptersList);
   }
 }

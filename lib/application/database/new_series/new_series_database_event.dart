@@ -29,4 +29,6 @@ abstract class NewSeriesDatabaseEvent with _$NewSeriesDatabaseEvent {
   }) = IsNSFWChanged;
   const factory NewSeriesDatabaseEvent.saveSeriesDraftButtonPressed() =
       SaveSeriesDraftButtonPressed;
+  const factory NewSeriesDatabaseEvent.deleteDraftButtonPressed() =
+      DeleteDraftButtonPressed;
 }

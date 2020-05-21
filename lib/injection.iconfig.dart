@@ -4,6 +4,7 @@
 // InjectableConfigGenerator
 // **************************************************************************
 
+import 'package:wine/application/navigation/account/account_navigation_bloc.dart';
 import 'package:wine/domain/models/hive/chapter_draft.dart';
 import 'package:hive/hive.dart';
 import 'package:wine/infrastructure/core/hive_injectable_module.dart';
@@ -25,11 +26,8 @@ import 'package:wine/infrastructure/database/hive_local_session_database_facade.
 import 'package:wine/domain/database/i_local_session_database_facade.dart';
 import 'package:wine/infrastructure/database/firebase_online_chapter_database_facade.dart';
 import 'package:wine/domain/database/i_online_chapter_database_facade.dart';
-import 'package:wine/infrastructure/database/firebase_online_series_database_facade.dart';
-import 'package:wine/domain/database/i_online_series_database_facade.dart';
 import 'package:wine/infrastructure/database/firebase_online_user_database_facade.dart';
 import 'package:wine/domain/database/i_online_user_database_facade.dart';
-import 'package:wine/application/database/new_chapter/new_chapter_database_bloc.dart';
 import 'package:wine/application/database/new_series/new_series_database_bloc.dart';
 import 'package:wine/application/database/series/series_database_bloc.dart';
 import 'package:wine/application/authentication/settings/settings_authentication_bloc.dart';
@@ -39,16 +37,20 @@ import 'package:wine/application/authentication/sign_in/sign_in_authentication_b
 import 'package:wine/application/database/sign_in/sign_in_database_bloc.dart';
 import 'package:wine/application/authentication/splash/splash_authentication_bloc.dart';
 import 'package:wine/application/database/splash/splash_database_bloc.dart';
-import 'package:wine/application/database/account/account_database_bloc.dart';
 import 'package:wine/application/authentication/core/core_authentication_bloc.dart';
 import 'package:wine/application/authentication/create_account/create_account_authentication_bloc.dart';
 import 'package:wine/application/database/create_account/create_account_database_bloc.dart';
+import 'package:wine/infrastructure/database/firebase_online_series_database_facade.dart';
+import 'package:wine/domain/database/i_online_series_database_facade.dart';
+import 'package:wine/application/database/new_chapter/new_chapter_database_bloc.dart';
+import 'package:wine/application/database/account/account_database_bloc.dart';
 import 'package:wine/application/database/home/home_database_bloc.dart';
 import 'package:get_it/get_it.dart';
 
 Future<void> $initGetIt(GetIt g, {String environment}) async {
   final hiveInjectableModule = _$HiveInjectableModule();
   final firebaseInjectableModule = _$FirebaseInjectableModule();
+  g.registerFactory<AccountNavigationBloc>(() => AccountNavigationBloc());
   final box = await hiveInjectableModule.openChapterDraftsBox;
   g.registerLazySingleton<Box<ChapterDraft>>(() => box);
   final box1 = await hiveInjectableModule.openConfigsBox;
@@ -77,17 +79,8 @@ Future<void> $initGetIt(GetIt g, {String environment}) async {
       () => HiveLocalSessionDatabaseFacade(g<Box<Session>>()));
   g.registerLazySingleton<IOnlineChapterDatabaseFacade>(
       () => FirebaseOnlineChapterDatabaseFacade(g<Firestore>()));
-  g.registerLazySingleton<IOnlineSeriesDatabaseFacade>(
-      () => FirebaseOnlineSeriesDatabaseFacade(g<Firestore>()));
   g.registerLazySingleton<IOnlineUserDatabaseFacade>(
       () => FirebaseOnlineUserDatabaseFacade(g<Firestore>()));
-  g.registerFactory<NewChapterDatabaseBloc>(() => NewChapterDatabaseBloc(
-        g<ILocalSessionDatabaseFacade>(),
-        g<ILocalChapterDraftDatabaseFacade>(),
-        g<ILocalSeriesDraftDatabaseFacade>(),
-        g<IOnlineChapterDatabaseFacade>(),
-        g<IOnlineSeriesDatabaseFacade>(),
-      ));
   g.registerFactory<NewSeriesDatabaseBloc>(() => NewSeriesDatabaseBloc(
       g<ILocalSessionDatabaseFacade>(), g<ILocalSeriesDraftDatabaseFacade>()));
   g.registerFactory<SeriesDatabaseBloc>(() => SeriesDatabaseBloc(
@@ -105,16 +98,29 @@ Future<void> $initGetIt(GetIt g, {String environment}) async {
       () => SplashAuthenticationBloc(g<IAuthenticationFacade>()));
   g.registerFactory<SplashDatabaseBloc>(() => SplashDatabaseBloc(
       g<ILocalSessionDatabaseFacade>(), g<IOnlineUserDatabaseFacade>()));
-  g.registerFactory<AccountDatabaseBloc>(
-      () => AccountDatabaseBloc(g<ILocalSessionDatabaseFacade>()));
   g.registerFactory<CoreAuthenticationBloc>(
       () => CoreAuthenticationBloc(g<IAuthenticationFacade>()));
   g.registerFactory<CreateAccountAuthenticationBloc>(
       () => CreateAccountAuthenticationBloc(g<IAuthenticationFacade>()));
   g.registerFactory<CreateAccountDatabaseBloc>(() => CreateAccountDatabaseBloc(
       g<ILocalSessionDatabaseFacade>(), g<IOnlineUserDatabaseFacade>()));
-  g.registerFactory<HomeDatabaseBloc>(() => HomeDatabaseBloc(
-      g<ILocalSessionDatabaseFacade>(), g<IOnlineUserDatabaseFacade>()));
+  g.registerLazySingleton<IOnlineSeriesDatabaseFacade>(() =>
+      FirebaseOnlineSeriesDatabaseFacade(
+          g<Firestore>(), g<IOnlineUserDatabaseFacade>()));
+  g.registerFactory<NewChapterDatabaseBloc>(() => NewChapterDatabaseBloc(
+        g<ILocalSessionDatabaseFacade>(),
+        g<ILocalChapterDraftDatabaseFacade>(),
+        g<ILocalSeriesDraftDatabaseFacade>(),
+        g<IOnlineChapterDatabaseFacade>(),
+        g<IOnlineSeriesDatabaseFacade>(),
+      ));
+  g.registerFactory<AccountDatabaseBloc>(() => AccountDatabaseBloc(
+        g<ILocalSessionDatabaseFacade>(),
+        g<IOnlineSeriesDatabaseFacade>(),
+        g<IOnlineChapterDatabaseFacade>(),
+      ));
+  g.registerFactory<HomeDatabaseBloc>(
+      () => HomeDatabaseBloc(g<IOnlineSeriesDatabaseFacade>()));
 }
 
 class _$HiveInjectableModule extends HiveInjectableModule {}

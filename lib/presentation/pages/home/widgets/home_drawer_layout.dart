@@ -1,18 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:swipe_gesture_recognizer/swipe_gesture_recognizer.dart';
 import 'package:wine/application/authentication/core/core_authentication_bloc.dart';
 import 'package:wine/application/navigation/home/home_navigation_bloc.dart';
 import 'package:wine/presentation/pages/home/widgets/animated_icon_button.dart';
 import 'package:wine/routes.dart';
 import 'package:wine/utils/constants.dart';
 
-class HomeMenuLayout extends StatelessWidget {
+class HomeDrawerLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final Size mediaQuery = MediaQuery.of(context).size;
+
     return BlocBuilder<CoreAuthenticationBloc, CoreAuthenticationState>(
       builder: (context, coreState) {
         return BlocBuilder<HomeNavigationBloc, HomeNavigationState>(
-          builder: (context, navigationState) {
+          builder: (context, homeNavState) {
             return WillPopScope(
               onWillPop: () async {
                 final bool canPop = Navigator.of(context).canPop();
@@ -20,8 +23,8 @@ class HomeMenuLayout extends StatelessWidget {
                 if (canPop) {
                   context
                       .bloc<HomeNavigationBloc>()
-                      .add(HomeNavigationEvent.menuIconPressed(
-                        isMenuOpen: navigationState.isMenuOpen,
+                      .add(HomeNavigationEvent.drawerIconPressed(
+                        isDrawerOpen: homeNavState.isDrawerOpen,
                       ));
                 }
                 return canPop;
@@ -37,7 +40,7 @@ class HomeMenuLayout extends StatelessWidget {
                     Padding(
                       padding: const EdgeInsets.only(right: 15.0),
                       child: AnimatedIconButton(
-                        animation: navigationState.isMenuOpen
+                        animation: homeNavState.isDrawerOpen
                             ? 'menu_to_x'
                             : 'x_to_menu',
                         filename: 'assets/animation/menu.flr',
@@ -45,8 +48,8 @@ class HomeMenuLayout extends StatelessWidget {
                         onPressed: () {
                           context
                               .bloc<HomeNavigationBloc>()
-                              .add(HomeNavigationEvent.menuIconPressed(
-                                isMenuOpen: navigationState.isMenuOpen,
+                              .add(HomeNavigationEvent.drawerIconPressed(
+                                isDrawerOpen: homeNavState.isDrawerOpen,
                               ));
                           Navigator.of(context).pop();
                         },
@@ -58,42 +61,19 @@ class HomeMenuLayout extends StatelessWidget {
                 body: SafeArea(
                   child: Stack(
                     children: <Widget>[
-                      GestureDetector(
-                        behavior: HitTestBehavior.translucent,
-                        onHorizontalDragStart: (details) {
-                          final double initialPosition =
-                              details.globalPosition.dx;
+                      SwipeGestureRecognizer(
+                        onSwipeRight: () {
                           context
                               .bloc<HomeNavigationBloc>()
-                              .add(HomeNavigationEvent.menuDragStarted(
-                                initialPosition: initialPosition,
+                              .add(HomeNavigationEvent.drawerIconPressed(
+                                isDrawerOpen: homeNavState.isDrawerOpen,
                               ));
+                          Navigator.of(context).pop();
                         },
-                        onHorizontalDragUpdate: (details) {
-                          final double distance = details.globalPosition.dx -
-                              navigationState.initialPosition;
-                          context
-                              .bloc<HomeNavigationBloc>()
-                              .add(HomeNavigationEvent.menuDragUpdated(
-                                distance: distance,
-                              ));
-                        },
-                        onHorizontalDragEnd: (DragEndDetails details) {
-                          final velocity = details.velocity.pixelsPerSecond.dx;
-                          if (navigationState.distance > 0 &&
-                              velocity >= 150 &&
-                              navigationState.isMenuOpen) {
-                            context
-                                .bloc<HomeNavigationBloc>()
-                                .add(HomeNavigationEvent.menuIconPressed(
-                                  isMenuOpen: navigationState.isMenuOpen,
-                                ));
-                            Navigator.of(context).pop();
-                          }
-                        },
-                        child: SizedBox(
-                          width: MediaQuery.of(context).size.width,
-                          height: MediaQuery.of(context).size.height,
+                        child: Container(
+                          color: Colors.transparent,
+                          width: mediaQuery.width,
+                          height: mediaQuery.height,
                         ),
                       ),
                       Align(

@@ -46,7 +46,7 @@ class WINESwitchListTile extends StatelessWidget {
         trailing: WINESwitch(
           value: value,
           onChanged: onChanged,
-          activeColor: Palettes.strongCyan,
+          activeColor: Palettes.pastelBlue,
         ),
       ),
     );

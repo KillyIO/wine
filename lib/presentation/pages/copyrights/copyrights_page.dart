@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:wine/presentation/widgets/wine_image_back_button.dart';
-import 'package:wine/utils/palettes.dart';
+import 'package:wine/presentation/widgets/wine_leading_image_button.dart';
 import 'package:wine/utils/themes.dart';
 
 class CopyrightsPage extends StatelessWidget {
@@ -18,7 +17,7 @@ class CopyrightsPage extends StatelessWidget {
             bottom: PreferredSize(
               preferredSize: const Size.fromHeight(0.0),
               child: Container(
-                color: Palettes.darkCobaltBlue,
+                color: Colors.black,
                 height: 2.0,
               ),
             ),
@@ -27,9 +26,9 @@ class CopyrightsPage extends StatelessWidget {
             elevation: 0.0,
             leading: Padding(
               padding: const EdgeInsets.only(bottom: 5.0, left: 10.0, top: 5.0),
-              child: WINEImageBackButton(
+              child: WINELeadingImageButton(
+                imagePath: 'assets/img/back_button.png',
                 onPressed: () => Navigator.of(context).pop(),
-                color: Colors.black,
               ),
             ),
           ),

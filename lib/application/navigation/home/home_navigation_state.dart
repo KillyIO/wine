@@ -3,16 +3,16 @@ part of 'home_navigation_bloc.dart';
 @freezed
 abstract class HomeNavigationState with _$HomeNavigationState {
   const factory HomeNavigationState({
-    @required bool isMenuOpen,
+    @required bool isDrawerOpen,
     @required bool isNewSeriesPageOpen,
-    @required double initialPosition,
-    @required double distance,
+    @required List<String> pageViewNavbarItems,
+    @required int currentPageViewIdx,
   }) = _HomeNavigationState;
 
   factory HomeNavigationState.initial() => const HomeNavigationState(
-        isMenuOpen: false,
+        isDrawerOpen: false,
         isNewSeriesPageOpen: false,
-        initialPosition: 0.0,
-        distance: 0.0,
+        pageViewNavbarItems: <String>[],
+        currentPageViewIdx: 0,
       );
 }

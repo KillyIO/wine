@@ -12,24 +12,18 @@ T _$identity<T>(T value) => value;
 class _$AccountDatabaseEventTearOff {
   const _$AccountDatabaseEventTearOff();
 
-  AccountPageLaunched accountPageLaunched() {
-    return const AccountPageLaunched();
+  AccountPageLaunched accountPageLaunched({BuildContext context}) {
+    return AccountPageLaunched(
+      context: context,
+    );
   }
 
-  SeriesButtonPresed seriesButtonPresed() {
-    return const SeriesButtonPresed();
+  FetchMoreSeries fetchMoreSeries() {
+    return const FetchMoreSeries();
   }
 
-  ChaptersButtonPresed chaptersButtonPresed() {
-    return const ChaptersButtonPresed();
-  }
-
-  SeriesDraftsButtonPresed seriesDraftsButtonPresed() {
-    return const SeriesDraftsButtonPresed();
-  }
-
-  ChapterDraftsButtonPresed chapterDraftsButtonPresed() {
-    return const ChapterDraftsButtonPresed();
+  FetchMoreChapters fetchMoreChapters() {
+    return const FetchMoreChapters();
   }
 }
 
@@ -39,36 +33,28 @@ const $AccountDatabaseEvent = _$AccountDatabaseEventTearOff();
 mixin _$AccountDatabaseEvent {
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result accountPageLaunched(),
-    @required Result seriesButtonPresed(),
-    @required Result chaptersButtonPresed(),
-    @required Result seriesDraftsButtonPresed(),
-    @required Result chapterDraftsButtonPresed(),
+    @required Result accountPageLaunched(BuildContext context),
+    @required Result fetchMoreSeries(),
+    @required Result fetchMoreChapters(),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result accountPageLaunched(),
-    Result seriesButtonPresed(),
-    Result chaptersButtonPresed(),
-    Result seriesDraftsButtonPresed(),
-    Result chapterDraftsButtonPresed(),
+    Result accountPageLaunched(BuildContext context),
+    Result fetchMoreSeries(),
+    Result fetchMoreChapters(),
     @required Result orElse(),
   });
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result accountPageLaunched(AccountPageLaunched value),
-    @required Result seriesButtonPresed(SeriesButtonPresed value),
-    @required Result chaptersButtonPresed(ChaptersButtonPresed value),
-    @required Result seriesDraftsButtonPresed(SeriesDraftsButtonPresed value),
-    @required Result chapterDraftsButtonPresed(ChapterDraftsButtonPresed value),
+    @required Result fetchMoreSeries(FetchMoreSeries value),
+    @required Result fetchMoreChapters(FetchMoreChapters value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result accountPageLaunched(AccountPageLaunched value),
-    Result seriesButtonPresed(SeriesButtonPresed value),
-    Result chaptersButtonPresed(ChaptersButtonPresed value),
-    Result seriesDraftsButtonPresed(SeriesDraftsButtonPresed value),
-    Result chapterDraftsButtonPresed(ChapterDraftsButtonPresed value),
+    Result fetchMoreSeries(FetchMoreSeries value),
+    Result fetchMoreChapters(FetchMoreChapters value),
     @required Result orElse(),
   });
 }
@@ -92,6 +78,7 @@ abstract class $AccountPageLaunchedCopyWith<$Res> {
   factory $AccountPageLaunchedCopyWith(
           AccountPageLaunched value, $Res Function(AccountPageLaunched) then) =
       _$AccountPageLaunchedCopyWithImpl<$Res>;
+  $Res call({BuildContext context});
 }
 
 class _$AccountPageLaunchedCopyWithImpl<$Res>
@@ -103,54 +90,79 @@ class _$AccountPageLaunchedCopyWithImpl<$Res>
 
   @override
   AccountPageLaunched get _value => super._value as AccountPageLaunched;
-}
-
-class _$AccountPageLaunched implements AccountPageLaunched {
-  const _$AccountPageLaunched();
 
   @override
-  String toString() {
-    return 'AccountDatabaseEvent.accountPageLaunched()';
+  $Res call({
+    Object context = freezed,
+  }) {
+    return _then(AccountPageLaunched(
+      context: context == freezed ? _value.context : context as BuildContext,
+    ));
+  }
+}
+
+class _$AccountPageLaunched
+    with DiagnosticableTreeMixin
+    implements AccountPageLaunched {
+  const _$AccountPageLaunched({this.context});
+
+  @override
+  final BuildContext context;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'AccountDatabaseEvent.accountPageLaunched(context: $context)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty(
+          'type', 'AccountDatabaseEvent.accountPageLaunched'))
+      ..add(DiagnosticsProperty('context', context));
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is AccountPageLaunched);
+    return identical(this, other) ||
+        (other is AccountPageLaunched &&
+            (identical(other.context, context) ||
+                const DeepCollectionEquality().equals(other.context, context)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(context);
+
+  @override
+  $AccountPageLaunchedCopyWith<AccountPageLaunched> get copyWith =>
+      _$AccountPageLaunchedCopyWithImpl<AccountPageLaunched>(this, _$identity);
 
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result accountPageLaunched(),
-    @required Result seriesButtonPresed(),
-    @required Result chaptersButtonPresed(),
-    @required Result seriesDraftsButtonPresed(),
-    @required Result chapterDraftsButtonPresed(),
+    @required Result accountPageLaunched(BuildContext context),
+    @required Result fetchMoreSeries(),
+    @required Result fetchMoreChapters(),
   }) {
     assert(accountPageLaunched != null);
-    assert(seriesButtonPresed != null);
-    assert(chaptersButtonPresed != null);
-    assert(seriesDraftsButtonPresed != null);
-    assert(chapterDraftsButtonPresed != null);
-    return accountPageLaunched();
+    assert(fetchMoreSeries != null);
+    assert(fetchMoreChapters != null);
+    return accountPageLaunched(context);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result accountPageLaunched(),
-    Result seriesButtonPresed(),
-    Result chaptersButtonPresed(),
-    Result seriesDraftsButtonPresed(),
-    Result chapterDraftsButtonPresed(),
+    Result accountPageLaunched(BuildContext context),
+    Result fetchMoreSeries(),
+    Result fetchMoreChapters(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
     if (accountPageLaunched != null) {
-      return accountPageLaunched();
+      return accountPageLaunched(context);
     }
     return orElse();
   }
@@ -159,16 +171,12 @@ class _$AccountPageLaunched implements AccountPageLaunched {
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result accountPageLaunched(AccountPageLaunched value),
-    @required Result seriesButtonPresed(SeriesButtonPresed value),
-    @required Result chaptersButtonPresed(ChaptersButtonPresed value),
-    @required Result seriesDraftsButtonPresed(SeriesDraftsButtonPresed value),
-    @required Result chapterDraftsButtonPresed(ChapterDraftsButtonPresed value),
+    @required Result fetchMoreSeries(FetchMoreSeries value),
+    @required Result fetchMoreChapters(FetchMoreChapters value),
   }) {
     assert(accountPageLaunched != null);
-    assert(seriesButtonPresed != null);
-    assert(chaptersButtonPresed != null);
-    assert(seriesDraftsButtonPresed != null);
-    assert(chapterDraftsButtonPresed != null);
+    assert(fetchMoreSeries != null);
+    assert(fetchMoreChapters != null);
     return accountPageLaunched(this);
   }
 
@@ -176,10 +184,8 @@ class _$AccountPageLaunched implements AccountPageLaunched {
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result accountPageLaunched(AccountPageLaunched value),
-    Result seriesButtonPresed(SeriesButtonPresed value),
-    Result chaptersButtonPresed(ChaptersButtonPresed value),
-    Result seriesDraftsButtonPresed(SeriesDraftsButtonPresed value),
-    Result chapterDraftsButtonPresed(ChapterDraftsButtonPresed value),
+    Result fetchMoreSeries(FetchMoreSeries value),
+    Result fetchMoreChapters(FetchMoreChapters value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -191,37 +197,51 @@ class _$AccountPageLaunched implements AccountPageLaunched {
 }
 
 abstract class AccountPageLaunched implements AccountDatabaseEvent {
-  const factory AccountPageLaunched() = _$AccountPageLaunched;
+  const factory AccountPageLaunched({BuildContext context}) =
+      _$AccountPageLaunched;
+
+  BuildContext get context;
+  $AccountPageLaunchedCopyWith<AccountPageLaunched> get copyWith;
 }
 
-abstract class $SeriesButtonPresedCopyWith<$Res> {
-  factory $SeriesButtonPresedCopyWith(
-          SeriesButtonPresed value, $Res Function(SeriesButtonPresed) then) =
-      _$SeriesButtonPresedCopyWithImpl<$Res>;
+abstract class $FetchMoreSeriesCopyWith<$Res> {
+  factory $FetchMoreSeriesCopyWith(
+          FetchMoreSeries value, $Res Function(FetchMoreSeries) then) =
+      _$FetchMoreSeriesCopyWithImpl<$Res>;
 }
 
-class _$SeriesButtonPresedCopyWithImpl<$Res>
+class _$FetchMoreSeriesCopyWithImpl<$Res>
     extends _$AccountDatabaseEventCopyWithImpl<$Res>
-    implements $SeriesButtonPresedCopyWith<$Res> {
-  _$SeriesButtonPresedCopyWithImpl(
-      SeriesButtonPresed _value, $Res Function(SeriesButtonPresed) _then)
-      : super(_value, (v) => _then(v as SeriesButtonPresed));
+    implements $FetchMoreSeriesCopyWith<$Res> {
+  _$FetchMoreSeriesCopyWithImpl(
+      FetchMoreSeries _value, $Res Function(FetchMoreSeries) _then)
+      : super(_value, (v) => _then(v as FetchMoreSeries));
 
   @override
-  SeriesButtonPresed get _value => super._value as SeriesButtonPresed;
+  FetchMoreSeries get _value => super._value as FetchMoreSeries;
 }
 
-class _$SeriesButtonPresed implements SeriesButtonPresed {
-  const _$SeriesButtonPresed();
+class _$FetchMoreSeries
+    with DiagnosticableTreeMixin
+    implements FetchMoreSeries {
+  const _$FetchMoreSeries();
 
   @override
-  String toString() {
-    return 'AccountDatabaseEvent.seriesButtonPresed()';
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'AccountDatabaseEvent.fetchMoreSeries()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(
+          DiagnosticsProperty('type', 'AccountDatabaseEvent.fetchMoreSeries'));
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is SeriesButtonPresed);
+    return identical(this, other) || (other is FetchMoreSeries);
   }
 
   @override
@@ -230,33 +250,27 @@ class _$SeriesButtonPresed implements SeriesButtonPresed {
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result accountPageLaunched(),
-    @required Result seriesButtonPresed(),
-    @required Result chaptersButtonPresed(),
-    @required Result seriesDraftsButtonPresed(),
-    @required Result chapterDraftsButtonPresed(),
+    @required Result accountPageLaunched(BuildContext context),
+    @required Result fetchMoreSeries(),
+    @required Result fetchMoreChapters(),
   }) {
     assert(accountPageLaunched != null);
-    assert(seriesButtonPresed != null);
-    assert(chaptersButtonPresed != null);
-    assert(seriesDraftsButtonPresed != null);
-    assert(chapterDraftsButtonPresed != null);
-    return seriesButtonPresed();
+    assert(fetchMoreSeries != null);
+    assert(fetchMoreChapters != null);
+    return fetchMoreSeries();
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result accountPageLaunched(),
-    Result seriesButtonPresed(),
-    Result chaptersButtonPresed(),
-    Result seriesDraftsButtonPresed(),
-    Result chapterDraftsButtonPresed(),
+    Result accountPageLaunched(BuildContext context),
+    Result fetchMoreSeries(),
+    Result fetchMoreChapters(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (seriesButtonPresed != null) {
-      return seriesButtonPresed();
+    if (fetchMoreSeries != null) {
+      return fetchMoreSeries();
     }
     return orElse();
   }
@@ -265,69 +279,73 @@ class _$SeriesButtonPresed implements SeriesButtonPresed {
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result accountPageLaunched(AccountPageLaunched value),
-    @required Result seriesButtonPresed(SeriesButtonPresed value),
-    @required Result chaptersButtonPresed(ChaptersButtonPresed value),
-    @required Result seriesDraftsButtonPresed(SeriesDraftsButtonPresed value),
-    @required Result chapterDraftsButtonPresed(ChapterDraftsButtonPresed value),
+    @required Result fetchMoreSeries(FetchMoreSeries value),
+    @required Result fetchMoreChapters(FetchMoreChapters value),
   }) {
     assert(accountPageLaunched != null);
-    assert(seriesButtonPresed != null);
-    assert(chaptersButtonPresed != null);
-    assert(seriesDraftsButtonPresed != null);
-    assert(chapterDraftsButtonPresed != null);
-    return seriesButtonPresed(this);
+    assert(fetchMoreSeries != null);
+    assert(fetchMoreChapters != null);
+    return fetchMoreSeries(this);
   }
 
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result accountPageLaunched(AccountPageLaunched value),
-    Result seriesButtonPresed(SeriesButtonPresed value),
-    Result chaptersButtonPresed(ChaptersButtonPresed value),
-    Result seriesDraftsButtonPresed(SeriesDraftsButtonPresed value),
-    Result chapterDraftsButtonPresed(ChapterDraftsButtonPresed value),
+    Result fetchMoreSeries(FetchMoreSeries value),
+    Result fetchMoreChapters(FetchMoreChapters value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (seriesButtonPresed != null) {
-      return seriesButtonPresed(this);
+    if (fetchMoreSeries != null) {
+      return fetchMoreSeries(this);
     }
     return orElse();
   }
 }
 
-abstract class SeriesButtonPresed implements AccountDatabaseEvent {
-  const factory SeriesButtonPresed() = _$SeriesButtonPresed;
+abstract class FetchMoreSeries implements AccountDatabaseEvent {
+  const factory FetchMoreSeries() = _$FetchMoreSeries;
 }
 
-abstract class $ChaptersButtonPresedCopyWith<$Res> {
-  factory $ChaptersButtonPresedCopyWith(ChaptersButtonPresed value,
-          $Res Function(ChaptersButtonPresed) then) =
-      _$ChaptersButtonPresedCopyWithImpl<$Res>;
+abstract class $FetchMoreChaptersCopyWith<$Res> {
+  factory $FetchMoreChaptersCopyWith(
+          FetchMoreChapters value, $Res Function(FetchMoreChapters) then) =
+      _$FetchMoreChaptersCopyWithImpl<$Res>;
 }
 
-class _$ChaptersButtonPresedCopyWithImpl<$Res>
+class _$FetchMoreChaptersCopyWithImpl<$Res>
     extends _$AccountDatabaseEventCopyWithImpl<$Res>
-    implements $ChaptersButtonPresedCopyWith<$Res> {
-  _$ChaptersButtonPresedCopyWithImpl(
-      ChaptersButtonPresed _value, $Res Function(ChaptersButtonPresed) _then)
-      : super(_value, (v) => _then(v as ChaptersButtonPresed));
+    implements $FetchMoreChaptersCopyWith<$Res> {
+  _$FetchMoreChaptersCopyWithImpl(
+      FetchMoreChapters _value, $Res Function(FetchMoreChapters) _then)
+      : super(_value, (v) => _then(v as FetchMoreChapters));
 
   @override
-  ChaptersButtonPresed get _value => super._value as ChaptersButtonPresed;
+  FetchMoreChapters get _value => super._value as FetchMoreChapters;
 }
 
-class _$ChaptersButtonPresed implements ChaptersButtonPresed {
-  const _$ChaptersButtonPresed();
+class _$FetchMoreChapters
+    with DiagnosticableTreeMixin
+    implements FetchMoreChapters {
+  const _$FetchMoreChapters();
 
   @override
-  String toString() {
-    return 'AccountDatabaseEvent.chaptersButtonPresed()';
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'AccountDatabaseEvent.fetchMoreChapters()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty(
+          'type', 'AccountDatabaseEvent.fetchMoreChapters'));
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is ChaptersButtonPresed);
+    return identical(this, other) || (other is FetchMoreChapters);
   }
 
   @override
@@ -336,33 +354,27 @@ class _$ChaptersButtonPresed implements ChaptersButtonPresed {
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result accountPageLaunched(),
-    @required Result seriesButtonPresed(),
-    @required Result chaptersButtonPresed(),
-    @required Result seriesDraftsButtonPresed(),
-    @required Result chapterDraftsButtonPresed(),
+    @required Result accountPageLaunched(BuildContext context),
+    @required Result fetchMoreSeries(),
+    @required Result fetchMoreChapters(),
   }) {
     assert(accountPageLaunched != null);
-    assert(seriesButtonPresed != null);
-    assert(chaptersButtonPresed != null);
-    assert(seriesDraftsButtonPresed != null);
-    assert(chapterDraftsButtonPresed != null);
-    return chaptersButtonPresed();
+    assert(fetchMoreSeries != null);
+    assert(fetchMoreChapters != null);
+    return fetchMoreChapters();
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result accountPageLaunched(),
-    Result seriesButtonPresed(),
-    Result chaptersButtonPresed(),
-    Result seriesDraftsButtonPresed(),
-    Result chapterDraftsButtonPresed(),
+    Result accountPageLaunched(BuildContext context),
+    Result fetchMoreSeries(),
+    Result fetchMoreChapters(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (chaptersButtonPresed != null) {
-      return chaptersButtonPresed();
+    if (fetchMoreChapters != null) {
+      return fetchMoreChapters();
     }
     return orElse();
   }
@@ -371,253 +383,33 @@ class _$ChaptersButtonPresed implements ChaptersButtonPresed {
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result accountPageLaunched(AccountPageLaunched value),
-    @required Result seriesButtonPresed(SeriesButtonPresed value),
-    @required Result chaptersButtonPresed(ChaptersButtonPresed value),
-    @required Result seriesDraftsButtonPresed(SeriesDraftsButtonPresed value),
-    @required Result chapterDraftsButtonPresed(ChapterDraftsButtonPresed value),
+    @required Result fetchMoreSeries(FetchMoreSeries value),
+    @required Result fetchMoreChapters(FetchMoreChapters value),
   }) {
     assert(accountPageLaunched != null);
-    assert(seriesButtonPresed != null);
-    assert(chaptersButtonPresed != null);
-    assert(seriesDraftsButtonPresed != null);
-    assert(chapterDraftsButtonPresed != null);
-    return chaptersButtonPresed(this);
+    assert(fetchMoreSeries != null);
+    assert(fetchMoreChapters != null);
+    return fetchMoreChapters(this);
   }
 
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result accountPageLaunched(AccountPageLaunched value),
-    Result seriesButtonPresed(SeriesButtonPresed value),
-    Result chaptersButtonPresed(ChaptersButtonPresed value),
-    Result seriesDraftsButtonPresed(SeriesDraftsButtonPresed value),
-    Result chapterDraftsButtonPresed(ChapterDraftsButtonPresed value),
+    Result fetchMoreSeries(FetchMoreSeries value),
+    Result fetchMoreChapters(FetchMoreChapters value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (chaptersButtonPresed != null) {
-      return chaptersButtonPresed(this);
+    if (fetchMoreChapters != null) {
+      return fetchMoreChapters(this);
     }
     return orElse();
   }
 }
 
-abstract class ChaptersButtonPresed implements AccountDatabaseEvent {
-  const factory ChaptersButtonPresed() = _$ChaptersButtonPresed;
-}
-
-abstract class $SeriesDraftsButtonPresedCopyWith<$Res> {
-  factory $SeriesDraftsButtonPresedCopyWith(SeriesDraftsButtonPresed value,
-          $Res Function(SeriesDraftsButtonPresed) then) =
-      _$SeriesDraftsButtonPresedCopyWithImpl<$Res>;
-}
-
-class _$SeriesDraftsButtonPresedCopyWithImpl<$Res>
-    extends _$AccountDatabaseEventCopyWithImpl<$Res>
-    implements $SeriesDraftsButtonPresedCopyWith<$Res> {
-  _$SeriesDraftsButtonPresedCopyWithImpl(SeriesDraftsButtonPresed _value,
-      $Res Function(SeriesDraftsButtonPresed) _then)
-      : super(_value, (v) => _then(v as SeriesDraftsButtonPresed));
-
-  @override
-  SeriesDraftsButtonPresed get _value =>
-      super._value as SeriesDraftsButtonPresed;
-}
-
-class _$SeriesDraftsButtonPresed implements SeriesDraftsButtonPresed {
-  const _$SeriesDraftsButtonPresed();
-
-  @override
-  String toString() {
-    return 'AccountDatabaseEvent.seriesDraftsButtonPresed()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) || (other is SeriesDraftsButtonPresed);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result accountPageLaunched(),
-    @required Result seriesButtonPresed(),
-    @required Result chaptersButtonPresed(),
-    @required Result seriesDraftsButtonPresed(),
-    @required Result chapterDraftsButtonPresed(),
-  }) {
-    assert(accountPageLaunched != null);
-    assert(seriesButtonPresed != null);
-    assert(chaptersButtonPresed != null);
-    assert(seriesDraftsButtonPresed != null);
-    assert(chapterDraftsButtonPresed != null);
-    return seriesDraftsButtonPresed();
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result accountPageLaunched(),
-    Result seriesButtonPresed(),
-    Result chaptersButtonPresed(),
-    Result seriesDraftsButtonPresed(),
-    Result chapterDraftsButtonPresed(),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (seriesDraftsButtonPresed != null) {
-      return seriesDraftsButtonPresed();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result accountPageLaunched(AccountPageLaunched value),
-    @required Result seriesButtonPresed(SeriesButtonPresed value),
-    @required Result chaptersButtonPresed(ChaptersButtonPresed value),
-    @required Result seriesDraftsButtonPresed(SeriesDraftsButtonPresed value),
-    @required Result chapterDraftsButtonPresed(ChapterDraftsButtonPresed value),
-  }) {
-    assert(accountPageLaunched != null);
-    assert(seriesButtonPresed != null);
-    assert(chaptersButtonPresed != null);
-    assert(seriesDraftsButtonPresed != null);
-    assert(chapterDraftsButtonPresed != null);
-    return seriesDraftsButtonPresed(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result accountPageLaunched(AccountPageLaunched value),
-    Result seriesButtonPresed(SeriesButtonPresed value),
-    Result chaptersButtonPresed(ChaptersButtonPresed value),
-    Result seriesDraftsButtonPresed(SeriesDraftsButtonPresed value),
-    Result chapterDraftsButtonPresed(ChapterDraftsButtonPresed value),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (seriesDraftsButtonPresed != null) {
-      return seriesDraftsButtonPresed(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class SeriesDraftsButtonPresed implements AccountDatabaseEvent {
-  const factory SeriesDraftsButtonPresed() = _$SeriesDraftsButtonPresed;
-}
-
-abstract class $ChapterDraftsButtonPresedCopyWith<$Res> {
-  factory $ChapterDraftsButtonPresedCopyWith(ChapterDraftsButtonPresed value,
-          $Res Function(ChapterDraftsButtonPresed) then) =
-      _$ChapterDraftsButtonPresedCopyWithImpl<$Res>;
-}
-
-class _$ChapterDraftsButtonPresedCopyWithImpl<$Res>
-    extends _$AccountDatabaseEventCopyWithImpl<$Res>
-    implements $ChapterDraftsButtonPresedCopyWith<$Res> {
-  _$ChapterDraftsButtonPresedCopyWithImpl(ChapterDraftsButtonPresed _value,
-      $Res Function(ChapterDraftsButtonPresed) _then)
-      : super(_value, (v) => _then(v as ChapterDraftsButtonPresed));
-
-  @override
-  ChapterDraftsButtonPresed get _value =>
-      super._value as ChapterDraftsButtonPresed;
-}
-
-class _$ChapterDraftsButtonPresed implements ChapterDraftsButtonPresed {
-  const _$ChapterDraftsButtonPresed();
-
-  @override
-  String toString() {
-    return 'AccountDatabaseEvent.chapterDraftsButtonPresed()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) || (other is ChapterDraftsButtonPresed);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result accountPageLaunched(),
-    @required Result seriesButtonPresed(),
-    @required Result chaptersButtonPresed(),
-    @required Result seriesDraftsButtonPresed(),
-    @required Result chapterDraftsButtonPresed(),
-  }) {
-    assert(accountPageLaunched != null);
-    assert(seriesButtonPresed != null);
-    assert(chaptersButtonPresed != null);
-    assert(seriesDraftsButtonPresed != null);
-    assert(chapterDraftsButtonPresed != null);
-    return chapterDraftsButtonPresed();
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result accountPageLaunched(),
-    Result seriesButtonPresed(),
-    Result chaptersButtonPresed(),
-    Result seriesDraftsButtonPresed(),
-    Result chapterDraftsButtonPresed(),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (chapterDraftsButtonPresed != null) {
-      return chapterDraftsButtonPresed();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result accountPageLaunched(AccountPageLaunched value),
-    @required Result seriesButtonPresed(SeriesButtonPresed value),
-    @required Result chaptersButtonPresed(ChaptersButtonPresed value),
-    @required Result seriesDraftsButtonPresed(SeriesDraftsButtonPresed value),
-    @required Result chapterDraftsButtonPresed(ChapterDraftsButtonPresed value),
-  }) {
-    assert(accountPageLaunched != null);
-    assert(seriesButtonPresed != null);
-    assert(chaptersButtonPresed != null);
-    assert(seriesDraftsButtonPresed != null);
-    assert(chapterDraftsButtonPresed != null);
-    return chapterDraftsButtonPresed(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result accountPageLaunched(AccountPageLaunched value),
-    Result seriesButtonPresed(SeriesButtonPresed value),
-    Result chaptersButtonPresed(ChaptersButtonPresed value),
-    Result seriesDraftsButtonPresed(SeriesDraftsButtonPresed value),
-    Result chapterDraftsButtonPresed(ChapterDraftsButtonPresed value),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (chapterDraftsButtonPresed != null) {
-      return chapterDraftsButtonPresed(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class ChapterDraftsButtonPresed implements AccountDatabaseEvent {
-  const factory ChapterDraftsButtonPresed() = _$ChapterDraftsButtonPresed;
+abstract class FetchMoreChapters implements AccountDatabaseEvent {
+  const factory FetchMoreChapters() = _$FetchMoreChapters;
 }
 
 class _$AccountDatabaseStateTearOff {
@@ -627,13 +419,31 @@ class _$AccountDatabaseStateTearOff {
       {@required
           Session session,
       @required
-          AccountMenuLayoutType menuType,
+          List<Series> series,
+      @required
+          List<Chapter> chapters,
+      @required
+          Map<String, String> genres,
+      @required
+          Map<String, String> languages,
+      @required
+          Map<String, String> copyrights,
+      @required
+          List<String> placeholders,
+      @required
+          bool isFetching,
       @required
           Option<Either<DatabaseFailure, dynamic>>
               databaseFailureOrSuccessOption}) {
     return _AccountSettingsState(
       session: session,
-      menuType: menuType,
+      series: series,
+      chapters: chapters,
+      genres: genres,
+      languages: languages,
+      copyrights: copyrights,
+      placeholders: placeholders,
+      isFetching: isFetching,
       databaseFailureOrSuccessOption: databaseFailureOrSuccessOption,
     );
   }
@@ -644,7 +454,13 @@ const $AccountDatabaseState = _$AccountDatabaseStateTearOff();
 
 mixin _$AccountDatabaseState {
   Session get session;
-  AccountMenuLayoutType get menuType;
+  List<Series> get series;
+  List<Chapter> get chapters;
+  Map<String, String> get genres;
+  Map<String, String> get languages;
+  Map<String, String> get copyrights;
+  List<String> get placeholders;
+  bool get isFetching;
   Option<Either<DatabaseFailure, dynamic>> get databaseFailureOrSuccessOption;
 
   $AccountDatabaseStateCopyWith<AccountDatabaseState> get copyWith;
@@ -656,7 +472,13 @@ abstract class $AccountDatabaseStateCopyWith<$Res> {
       _$AccountDatabaseStateCopyWithImpl<$Res>;
   $Res call(
       {Session session,
-      AccountMenuLayoutType menuType,
+      List<Series> series,
+      List<Chapter> chapters,
+      Map<String, String> genres,
+      Map<String, String> languages,
+      Map<String, String> copyrights,
+      List<String> placeholders,
+      bool isFetching,
       Option<Either<DatabaseFailure, dynamic>> databaseFailureOrSuccessOption});
 }
 
@@ -671,14 +493,32 @@ class _$AccountDatabaseStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object session = freezed,
-    Object menuType = freezed,
+    Object series = freezed,
+    Object chapters = freezed,
+    Object genres = freezed,
+    Object languages = freezed,
+    Object copyrights = freezed,
+    Object placeholders = freezed,
+    Object isFetching = freezed,
     Object databaseFailureOrSuccessOption = freezed,
   }) {
     return _then(_value.copyWith(
       session: session == freezed ? _value.session : session as Session,
-      menuType: menuType == freezed
-          ? _value.menuType
-          : menuType as AccountMenuLayoutType,
+      series: series == freezed ? _value.series : series as List<Series>,
+      chapters:
+          chapters == freezed ? _value.chapters : chapters as List<Chapter>,
+      genres: genres == freezed ? _value.genres : genres as Map<String, String>,
+      languages: languages == freezed
+          ? _value.languages
+          : languages as Map<String, String>,
+      copyrights: copyrights == freezed
+          ? _value.copyrights
+          : copyrights as Map<String, String>,
+      placeholders: placeholders == freezed
+          ? _value.placeholders
+          : placeholders as List<String>,
+      isFetching:
+          isFetching == freezed ? _value.isFetching : isFetching as bool,
       databaseFailureOrSuccessOption: databaseFailureOrSuccessOption == freezed
           ? _value.databaseFailureOrSuccessOption
           : databaseFailureOrSuccessOption
@@ -695,7 +535,13 @@ abstract class _$AccountSettingsStateCopyWith<$Res>
   @override
   $Res call(
       {Session session,
-      AccountMenuLayoutType menuType,
+      List<Series> series,
+      List<Chapter> chapters,
+      Map<String, String> genres,
+      Map<String, String> languages,
+      Map<String, String> copyrights,
+      List<String> placeholders,
+      bool isFetching,
       Option<Either<DatabaseFailure, dynamic>> databaseFailureOrSuccessOption});
 }
 
@@ -712,14 +558,32 @@ class __$AccountSettingsStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object session = freezed,
-    Object menuType = freezed,
+    Object series = freezed,
+    Object chapters = freezed,
+    Object genres = freezed,
+    Object languages = freezed,
+    Object copyrights = freezed,
+    Object placeholders = freezed,
+    Object isFetching = freezed,
     Object databaseFailureOrSuccessOption = freezed,
   }) {
     return _then(_AccountSettingsState(
       session: session == freezed ? _value.session : session as Session,
-      menuType: menuType == freezed
-          ? _value.menuType
-          : menuType as AccountMenuLayoutType,
+      series: series == freezed ? _value.series : series as List<Series>,
+      chapters:
+          chapters == freezed ? _value.chapters : chapters as List<Chapter>,
+      genres: genres == freezed ? _value.genres : genres as Map<String, String>,
+      languages: languages == freezed
+          ? _value.languages
+          : languages as Map<String, String>,
+      copyrights: copyrights == freezed
+          ? _value.copyrights
+          : copyrights as Map<String, String>,
+      placeholders: placeholders == freezed
+          ? _value.placeholders
+          : placeholders as List<String>,
+      isFetching:
+          isFetching == freezed ? _value.isFetching : isFetching as bool,
       databaseFailureOrSuccessOption: databaseFailureOrSuccessOption == freezed
           ? _value.databaseFailureOrSuccessOption
           : databaseFailureOrSuccessOption
@@ -728,25 +592,68 @@ class __$AccountSettingsStateCopyWithImpl<$Res>
   }
 }
 
-class _$_AccountSettingsState implements _AccountSettingsState {
+class _$_AccountSettingsState
+    with DiagnosticableTreeMixin
+    implements _AccountSettingsState {
   const _$_AccountSettingsState(
       {@required this.session,
-      @required this.menuType,
+      @required this.series,
+      @required this.chapters,
+      @required this.genres,
+      @required this.languages,
+      @required this.copyrights,
+      @required this.placeholders,
+      @required this.isFetching,
       @required this.databaseFailureOrSuccessOption})
       : assert(session != null),
-        assert(menuType != null),
+        assert(series != null),
+        assert(chapters != null),
+        assert(genres != null),
+        assert(languages != null),
+        assert(copyrights != null),
+        assert(placeholders != null),
+        assert(isFetching != null),
         assert(databaseFailureOrSuccessOption != null);
 
   @override
   final Session session;
   @override
-  final AccountMenuLayoutType menuType;
+  final List<Series> series;
+  @override
+  final List<Chapter> chapters;
+  @override
+  final Map<String, String> genres;
+  @override
+  final Map<String, String> languages;
+  @override
+  final Map<String, String> copyrights;
+  @override
+  final List<String> placeholders;
+  @override
+  final bool isFetching;
   @override
   final Option<Either<DatabaseFailure, dynamic>> databaseFailureOrSuccessOption;
 
   @override
-  String toString() {
-    return 'AccountDatabaseState(session: $session, menuType: $menuType, databaseFailureOrSuccessOption: $databaseFailureOrSuccessOption)';
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'AccountDatabaseState(session: $session, series: $series, chapters: $chapters, genres: $genres, languages: $languages, copyrights: $copyrights, placeholders: $placeholders, isFetching: $isFetching, databaseFailureOrSuccessOption: $databaseFailureOrSuccessOption)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'AccountDatabaseState'))
+      ..add(DiagnosticsProperty('session', session))
+      ..add(DiagnosticsProperty('series', series))
+      ..add(DiagnosticsProperty('chapters', chapters))
+      ..add(DiagnosticsProperty('genres', genres))
+      ..add(DiagnosticsProperty('languages', languages))
+      ..add(DiagnosticsProperty('copyrights', copyrights))
+      ..add(DiagnosticsProperty('placeholders', placeholders))
+      ..add(DiagnosticsProperty('isFetching', isFetching))
+      ..add(DiagnosticsProperty(
+          'databaseFailureOrSuccessOption', databaseFailureOrSuccessOption));
   }
 
   @override
@@ -756,9 +663,25 @@ class _$_AccountSettingsState implements _AccountSettingsState {
             (identical(other.session, session) ||
                 const DeepCollectionEquality()
                     .equals(other.session, session)) &&
-            (identical(other.menuType, menuType) ||
+            (identical(other.series, series) ||
+                const DeepCollectionEquality().equals(other.series, series)) &&
+            (identical(other.chapters, chapters) ||
                 const DeepCollectionEquality()
-                    .equals(other.menuType, menuType)) &&
+                    .equals(other.chapters, chapters)) &&
+            (identical(other.genres, genres) ||
+                const DeepCollectionEquality().equals(other.genres, genres)) &&
+            (identical(other.languages, languages) ||
+                const DeepCollectionEquality()
+                    .equals(other.languages, languages)) &&
+            (identical(other.copyrights, copyrights) ||
+                const DeepCollectionEquality()
+                    .equals(other.copyrights, copyrights)) &&
+            (identical(other.placeholders, placeholders) ||
+                const DeepCollectionEquality()
+                    .equals(other.placeholders, placeholders)) &&
+            (identical(other.isFetching, isFetching) ||
+                const DeepCollectionEquality()
+                    .equals(other.isFetching, isFetching)) &&
             (identical(other.databaseFailureOrSuccessOption,
                     databaseFailureOrSuccessOption) ||
                 const DeepCollectionEquality().equals(
@@ -770,7 +693,13 @@ class _$_AccountSettingsState implements _AccountSettingsState {
   int get hashCode =>
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(session) ^
-      const DeepCollectionEquality().hash(menuType) ^
+      const DeepCollectionEquality().hash(series) ^
+      const DeepCollectionEquality().hash(chapters) ^
+      const DeepCollectionEquality().hash(genres) ^
+      const DeepCollectionEquality().hash(languages) ^
+      const DeepCollectionEquality().hash(copyrights) ^
+      const DeepCollectionEquality().hash(placeholders) ^
+      const DeepCollectionEquality().hash(isFetching) ^
       const DeepCollectionEquality().hash(databaseFailureOrSuccessOption);
 
   @override
@@ -784,7 +713,19 @@ abstract class _AccountSettingsState implements AccountDatabaseState {
       {@required
           Session session,
       @required
-          AccountMenuLayoutType menuType,
+          List<Series> series,
+      @required
+          List<Chapter> chapters,
+      @required
+          Map<String, String> genres,
+      @required
+          Map<String, String> languages,
+      @required
+          Map<String, String> copyrights,
+      @required
+          List<String> placeholders,
+      @required
+          bool isFetching,
       @required
           Option<Either<DatabaseFailure, dynamic>>
               databaseFailureOrSuccessOption}) = _$_AccountSettingsState;
@@ -792,7 +733,19 @@ abstract class _AccountSettingsState implements AccountDatabaseState {
   @override
   Session get session;
   @override
-  AccountMenuLayoutType get menuType;
+  List<Series> get series;
+  @override
+  List<Chapter> get chapters;
+  @override
+  Map<String, String> get genres;
+  @override
+  Map<String, String> get languages;
+  @override
+  Map<String, String> get copyrights;
+  @override
+  List<String> get placeholders;
+  @override
+  bool get isFetching;
   @override
   Option<Either<DatabaseFailure, dynamic>> get databaseFailureOrSuccessOption;
   @override

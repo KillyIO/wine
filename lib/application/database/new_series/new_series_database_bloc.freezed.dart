@@ -65,6 +65,10 @@ class _$NewSeriesDatabaseEventTearOff {
   SaveSeriesDraftButtonPressed saveSeriesDraftButtonPressed() {
     return const SaveSeriesDraftButtonPressed();
   }
+
+  DeleteDraftButtonPressed deleteDraftButtonPressed() {
+    return const DeleteDraftButtonPressed();
+  }
 }
 
 // ignore: unused_element
@@ -84,6 +88,7 @@ mixin _$NewSeriesDatabaseEvent {
     @required Result languageSelected(String language),
     @required Result isNSFWChanged(bool isNSFW),
     @required Result saveSeriesDraftButtonPressed(),
+    @required Result deleteDraftButtonPressed(),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
@@ -96,6 +101,7 @@ mixin _$NewSeriesDatabaseEvent {
     Result languageSelected(String language),
     Result isNSFWChanged(bool isNSFW),
     Result saveSeriesDraftButtonPressed(),
+    Result deleteDraftButtonPressed(),
     @required Result orElse(),
   });
   @optionalTypeArgs
@@ -110,6 +116,7 @@ mixin _$NewSeriesDatabaseEvent {
     @required Result isNSFWChanged(IsNSFWChanged value),
     @required
         Result saveSeriesDraftButtonPressed(SaveSeriesDraftButtonPressed value),
+    @required Result deleteDraftButtonPressed(DeleteDraftButtonPressed value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
@@ -122,6 +129,7 @@ mixin _$NewSeriesDatabaseEvent {
     Result languageSelected(LanguageSelected value),
     Result isNSFWChanged(IsNSFWChanged value),
     Result saveSeriesDraftButtonPressed(SaveSeriesDraftButtonPressed value),
+    Result deleteDraftButtonPressed(DeleteDraftButtonPressed value),
     @required Result orElse(),
   });
 }
@@ -233,6 +241,7 @@ class _$NewSeriesPageLaunched
     @required Result languageSelected(String language),
     @required Result isNSFWChanged(bool isNSFW),
     @required Result saveSeriesDraftButtonPressed(),
+    @required Result deleteDraftButtonPressed(),
   }) {
     assert(newSeriesPageLaunched != null);
     assert(titleChanged != null);
@@ -243,6 +252,7 @@ class _$NewSeriesPageLaunched
     assert(languageSelected != null);
     assert(isNSFWChanged != null);
     assert(saveSeriesDraftButtonPressed != null);
+    assert(deleteDraftButtonPressed != null);
     return newSeriesPageLaunched(seriesDraft, context);
   }
 
@@ -258,6 +268,7 @@ class _$NewSeriesPageLaunched
     Result languageSelected(String language),
     Result isNSFWChanged(bool isNSFW),
     Result saveSeriesDraftButtonPressed(),
+    Result deleteDraftButtonPressed(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -280,6 +291,7 @@ class _$NewSeriesPageLaunched
     @required Result isNSFWChanged(IsNSFWChanged value),
     @required
         Result saveSeriesDraftButtonPressed(SaveSeriesDraftButtonPressed value),
+    @required Result deleteDraftButtonPressed(DeleteDraftButtonPressed value),
   }) {
     assert(newSeriesPageLaunched != null);
     assert(titleChanged != null);
@@ -290,6 +302,7 @@ class _$NewSeriesPageLaunched
     assert(languageSelected != null);
     assert(isNSFWChanged != null);
     assert(saveSeriesDraftButtonPressed != null);
+    assert(deleteDraftButtonPressed != null);
     return newSeriesPageLaunched(this);
   }
 
@@ -305,6 +318,7 @@ class _$NewSeriesPageLaunched
     Result languageSelected(LanguageSelected value),
     Result isNSFWChanged(IsNSFWChanged value),
     Result saveSeriesDraftButtonPressed(SaveSeriesDraftButtonPressed value),
+    Result deleteDraftButtonPressed(DeleteDraftButtonPressed value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -401,6 +415,7 @@ class _$TitleChanged with DiagnosticableTreeMixin implements TitleChanged {
     @required Result languageSelected(String language),
     @required Result isNSFWChanged(bool isNSFW),
     @required Result saveSeriesDraftButtonPressed(),
+    @required Result deleteDraftButtonPressed(),
   }) {
     assert(newSeriesPageLaunched != null);
     assert(titleChanged != null);
@@ -411,6 +426,7 @@ class _$TitleChanged with DiagnosticableTreeMixin implements TitleChanged {
     assert(languageSelected != null);
     assert(isNSFWChanged != null);
     assert(saveSeriesDraftButtonPressed != null);
+    assert(deleteDraftButtonPressed != null);
     return titleChanged(title);
   }
 
@@ -426,6 +442,7 @@ class _$TitleChanged with DiagnosticableTreeMixin implements TitleChanged {
     Result languageSelected(String language),
     Result isNSFWChanged(bool isNSFW),
     Result saveSeriesDraftButtonPressed(),
+    Result deleteDraftButtonPressed(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -448,6 +465,7 @@ class _$TitleChanged with DiagnosticableTreeMixin implements TitleChanged {
     @required Result isNSFWChanged(IsNSFWChanged value),
     @required
         Result saveSeriesDraftButtonPressed(SaveSeriesDraftButtonPressed value),
+    @required Result deleteDraftButtonPressed(DeleteDraftButtonPressed value),
   }) {
     assert(newSeriesPageLaunched != null);
     assert(titleChanged != null);
@@ -458,6 +476,7 @@ class _$TitleChanged with DiagnosticableTreeMixin implements TitleChanged {
     assert(languageSelected != null);
     assert(isNSFWChanged != null);
     assert(saveSeriesDraftButtonPressed != null);
+    assert(deleteDraftButtonPressed != null);
     return titleChanged(this);
   }
 
@@ -473,6 +492,7 @@ class _$TitleChanged with DiagnosticableTreeMixin implements TitleChanged {
     Result languageSelected(LanguageSelected value),
     Result isNSFWChanged(IsNSFWChanged value),
     Result saveSeriesDraftButtonPressed(SaveSeriesDraftButtonPressed value),
+    Result deleteDraftButtonPressed(DeleteDraftButtonPressed value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -570,6 +590,7 @@ class _$SubtitleChanged
     @required Result languageSelected(String language),
     @required Result isNSFWChanged(bool isNSFW),
     @required Result saveSeriesDraftButtonPressed(),
+    @required Result deleteDraftButtonPressed(),
   }) {
     assert(newSeriesPageLaunched != null);
     assert(titleChanged != null);
@@ -580,6 +601,7 @@ class _$SubtitleChanged
     assert(languageSelected != null);
     assert(isNSFWChanged != null);
     assert(saveSeriesDraftButtonPressed != null);
+    assert(deleteDraftButtonPressed != null);
     return subtitleChanged(subtitle);
   }
 
@@ -595,6 +617,7 @@ class _$SubtitleChanged
     Result languageSelected(String language),
     Result isNSFWChanged(bool isNSFW),
     Result saveSeriesDraftButtonPressed(),
+    Result deleteDraftButtonPressed(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -617,6 +640,7 @@ class _$SubtitleChanged
     @required Result isNSFWChanged(IsNSFWChanged value),
     @required
         Result saveSeriesDraftButtonPressed(SaveSeriesDraftButtonPressed value),
+    @required Result deleteDraftButtonPressed(DeleteDraftButtonPressed value),
   }) {
     assert(newSeriesPageLaunched != null);
     assert(titleChanged != null);
@@ -627,6 +651,7 @@ class _$SubtitleChanged
     assert(languageSelected != null);
     assert(isNSFWChanged != null);
     assert(saveSeriesDraftButtonPressed != null);
+    assert(deleteDraftButtonPressed != null);
     return subtitleChanged(this);
   }
 
@@ -642,6 +667,7 @@ class _$SubtitleChanged
     Result languageSelected(LanguageSelected value),
     Result isNSFWChanged(IsNSFWChanged value),
     Result saveSeriesDraftButtonPressed(SaveSeriesDraftButtonPressed value),
+    Result deleteDraftButtonPressed(DeleteDraftButtonPressed value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -736,6 +762,7 @@ class _$SummaryChanged with DiagnosticableTreeMixin implements SummaryChanged {
     @required Result languageSelected(String language),
     @required Result isNSFWChanged(bool isNSFW),
     @required Result saveSeriesDraftButtonPressed(),
+    @required Result deleteDraftButtonPressed(),
   }) {
     assert(newSeriesPageLaunched != null);
     assert(titleChanged != null);
@@ -746,6 +773,7 @@ class _$SummaryChanged with DiagnosticableTreeMixin implements SummaryChanged {
     assert(languageSelected != null);
     assert(isNSFWChanged != null);
     assert(saveSeriesDraftButtonPressed != null);
+    assert(deleteDraftButtonPressed != null);
     return summaryChanged(summary);
   }
 
@@ -761,6 +789,7 @@ class _$SummaryChanged with DiagnosticableTreeMixin implements SummaryChanged {
     Result languageSelected(String language),
     Result isNSFWChanged(bool isNSFW),
     Result saveSeriesDraftButtonPressed(),
+    Result deleteDraftButtonPressed(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -783,6 +812,7 @@ class _$SummaryChanged with DiagnosticableTreeMixin implements SummaryChanged {
     @required Result isNSFWChanged(IsNSFWChanged value),
     @required
         Result saveSeriesDraftButtonPressed(SaveSeriesDraftButtonPressed value),
+    @required Result deleteDraftButtonPressed(DeleteDraftButtonPressed value),
   }) {
     assert(newSeriesPageLaunched != null);
     assert(titleChanged != null);
@@ -793,6 +823,7 @@ class _$SummaryChanged with DiagnosticableTreeMixin implements SummaryChanged {
     assert(languageSelected != null);
     assert(isNSFWChanged != null);
     assert(saveSeriesDraftButtonPressed != null);
+    assert(deleteDraftButtonPressed != null);
     return summaryChanged(this);
   }
 
@@ -808,6 +839,7 @@ class _$SummaryChanged with DiagnosticableTreeMixin implements SummaryChanged {
     Result languageSelected(LanguageSelected value),
     Result isNSFWChanged(IsNSFWChanged value),
     Result saveSeriesDraftButtonPressed(SaveSeriesDraftButtonPressed value),
+    Result deleteDraftButtonPressed(DeleteDraftButtonPressed value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -901,6 +933,7 @@ class _$GenreSelected with DiagnosticableTreeMixin implements GenreSelected {
     @required Result languageSelected(String language),
     @required Result isNSFWChanged(bool isNSFW),
     @required Result saveSeriesDraftButtonPressed(),
+    @required Result deleteDraftButtonPressed(),
   }) {
     assert(newSeriesPageLaunched != null);
     assert(titleChanged != null);
@@ -911,6 +944,7 @@ class _$GenreSelected with DiagnosticableTreeMixin implements GenreSelected {
     assert(languageSelected != null);
     assert(isNSFWChanged != null);
     assert(saveSeriesDraftButtonPressed != null);
+    assert(deleteDraftButtonPressed != null);
     return genreSelected(genre);
   }
 
@@ -926,6 +960,7 @@ class _$GenreSelected with DiagnosticableTreeMixin implements GenreSelected {
     Result languageSelected(String language),
     Result isNSFWChanged(bool isNSFW),
     Result saveSeriesDraftButtonPressed(),
+    Result deleteDraftButtonPressed(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -948,6 +983,7 @@ class _$GenreSelected with DiagnosticableTreeMixin implements GenreSelected {
     @required Result isNSFWChanged(IsNSFWChanged value),
     @required
         Result saveSeriesDraftButtonPressed(SaveSeriesDraftButtonPressed value),
+    @required Result deleteDraftButtonPressed(DeleteDraftButtonPressed value),
   }) {
     assert(newSeriesPageLaunched != null);
     assert(titleChanged != null);
@@ -958,6 +994,7 @@ class _$GenreSelected with DiagnosticableTreeMixin implements GenreSelected {
     assert(languageSelected != null);
     assert(isNSFWChanged != null);
     assert(saveSeriesDraftButtonPressed != null);
+    assert(deleteDraftButtonPressed != null);
     return genreSelected(this);
   }
 
@@ -973,6 +1010,7 @@ class _$GenreSelected with DiagnosticableTreeMixin implements GenreSelected {
     Result languageSelected(LanguageSelected value),
     Result isNSFWChanged(IsNSFWChanged value),
     Result saveSeriesDraftButtonPressed(SaveSeriesDraftButtonPressed value),
+    Result deleteDraftButtonPressed(DeleteDraftButtonPressed value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1072,6 +1110,7 @@ class _$GenreOptionalSelected
     @required Result languageSelected(String language),
     @required Result isNSFWChanged(bool isNSFW),
     @required Result saveSeriesDraftButtonPressed(),
+    @required Result deleteDraftButtonPressed(),
   }) {
     assert(newSeriesPageLaunched != null);
     assert(titleChanged != null);
@@ -1082,6 +1121,7 @@ class _$GenreOptionalSelected
     assert(languageSelected != null);
     assert(isNSFWChanged != null);
     assert(saveSeriesDraftButtonPressed != null);
+    assert(deleteDraftButtonPressed != null);
     return genreOptionalSelected(genreOptional);
   }
 
@@ -1097,6 +1137,7 @@ class _$GenreOptionalSelected
     Result languageSelected(String language),
     Result isNSFWChanged(bool isNSFW),
     Result saveSeriesDraftButtonPressed(),
+    Result deleteDraftButtonPressed(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1119,6 +1160,7 @@ class _$GenreOptionalSelected
     @required Result isNSFWChanged(IsNSFWChanged value),
     @required
         Result saveSeriesDraftButtonPressed(SaveSeriesDraftButtonPressed value),
+    @required Result deleteDraftButtonPressed(DeleteDraftButtonPressed value),
   }) {
     assert(newSeriesPageLaunched != null);
     assert(titleChanged != null);
@@ -1129,6 +1171,7 @@ class _$GenreOptionalSelected
     assert(languageSelected != null);
     assert(isNSFWChanged != null);
     assert(saveSeriesDraftButtonPressed != null);
+    assert(deleteDraftButtonPressed != null);
     return genreOptionalSelected(this);
   }
 
@@ -1144,6 +1187,7 @@ class _$GenreOptionalSelected
     Result languageSelected(LanguageSelected value),
     Result isNSFWChanged(IsNSFWChanged value),
     Result saveSeriesDraftButtonPressed(SaveSeriesDraftButtonPressed value),
+    Result deleteDraftButtonPressed(DeleteDraftButtonPressed value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1242,6 +1286,7 @@ class _$LanguageSelected
     @required Result languageSelected(String language),
     @required Result isNSFWChanged(bool isNSFW),
     @required Result saveSeriesDraftButtonPressed(),
+    @required Result deleteDraftButtonPressed(),
   }) {
     assert(newSeriesPageLaunched != null);
     assert(titleChanged != null);
@@ -1252,6 +1297,7 @@ class _$LanguageSelected
     assert(languageSelected != null);
     assert(isNSFWChanged != null);
     assert(saveSeriesDraftButtonPressed != null);
+    assert(deleteDraftButtonPressed != null);
     return languageSelected(language);
   }
 
@@ -1267,6 +1313,7 @@ class _$LanguageSelected
     Result languageSelected(String language),
     Result isNSFWChanged(bool isNSFW),
     Result saveSeriesDraftButtonPressed(),
+    Result deleteDraftButtonPressed(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1289,6 +1336,7 @@ class _$LanguageSelected
     @required Result isNSFWChanged(IsNSFWChanged value),
     @required
         Result saveSeriesDraftButtonPressed(SaveSeriesDraftButtonPressed value),
+    @required Result deleteDraftButtonPressed(DeleteDraftButtonPressed value),
   }) {
     assert(newSeriesPageLaunched != null);
     assert(titleChanged != null);
@@ -1299,6 +1347,7 @@ class _$LanguageSelected
     assert(languageSelected != null);
     assert(isNSFWChanged != null);
     assert(saveSeriesDraftButtonPressed != null);
+    assert(deleteDraftButtonPressed != null);
     return languageSelected(this);
   }
 
@@ -1314,6 +1363,7 @@ class _$LanguageSelected
     Result languageSelected(LanguageSelected value),
     Result isNSFWChanged(IsNSFWChanged value),
     Result saveSeriesDraftButtonPressed(SaveSeriesDraftButtonPressed value),
+    Result deleteDraftButtonPressed(DeleteDraftButtonPressed value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1407,6 +1457,7 @@ class _$IsNSFWChanged with DiagnosticableTreeMixin implements IsNSFWChanged {
     @required Result languageSelected(String language),
     @required Result isNSFWChanged(bool isNSFW),
     @required Result saveSeriesDraftButtonPressed(),
+    @required Result deleteDraftButtonPressed(),
   }) {
     assert(newSeriesPageLaunched != null);
     assert(titleChanged != null);
@@ -1417,6 +1468,7 @@ class _$IsNSFWChanged with DiagnosticableTreeMixin implements IsNSFWChanged {
     assert(languageSelected != null);
     assert(isNSFWChanged != null);
     assert(saveSeriesDraftButtonPressed != null);
+    assert(deleteDraftButtonPressed != null);
     return isNSFWChanged(isNSFW);
   }
 
@@ -1432,6 +1484,7 @@ class _$IsNSFWChanged with DiagnosticableTreeMixin implements IsNSFWChanged {
     Result languageSelected(String language),
     Result isNSFWChanged(bool isNSFW),
     Result saveSeriesDraftButtonPressed(),
+    Result deleteDraftButtonPressed(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1454,6 +1507,7 @@ class _$IsNSFWChanged with DiagnosticableTreeMixin implements IsNSFWChanged {
     @required Result isNSFWChanged(IsNSFWChanged value),
     @required
         Result saveSeriesDraftButtonPressed(SaveSeriesDraftButtonPressed value),
+    @required Result deleteDraftButtonPressed(DeleteDraftButtonPressed value),
   }) {
     assert(newSeriesPageLaunched != null);
     assert(titleChanged != null);
@@ -1464,6 +1518,7 @@ class _$IsNSFWChanged with DiagnosticableTreeMixin implements IsNSFWChanged {
     assert(languageSelected != null);
     assert(isNSFWChanged != null);
     assert(saveSeriesDraftButtonPressed != null);
+    assert(deleteDraftButtonPressed != null);
     return isNSFWChanged(this);
   }
 
@@ -1479,6 +1534,7 @@ class _$IsNSFWChanged with DiagnosticableTreeMixin implements IsNSFWChanged {
     Result languageSelected(LanguageSelected value),
     Result isNSFWChanged(IsNSFWChanged value),
     Result saveSeriesDraftButtonPressed(SaveSeriesDraftButtonPressed value),
+    Result deleteDraftButtonPressed(DeleteDraftButtonPressed value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1556,6 +1612,7 @@ class _$SaveSeriesDraftButtonPressed
     @required Result languageSelected(String language),
     @required Result isNSFWChanged(bool isNSFW),
     @required Result saveSeriesDraftButtonPressed(),
+    @required Result deleteDraftButtonPressed(),
   }) {
     assert(newSeriesPageLaunched != null);
     assert(titleChanged != null);
@@ -1566,6 +1623,7 @@ class _$SaveSeriesDraftButtonPressed
     assert(languageSelected != null);
     assert(isNSFWChanged != null);
     assert(saveSeriesDraftButtonPressed != null);
+    assert(deleteDraftButtonPressed != null);
     return saveSeriesDraftButtonPressed();
   }
 
@@ -1581,6 +1639,7 @@ class _$SaveSeriesDraftButtonPressed
     Result languageSelected(String language),
     Result isNSFWChanged(bool isNSFW),
     Result saveSeriesDraftButtonPressed(),
+    Result deleteDraftButtonPressed(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1603,6 +1662,7 @@ class _$SaveSeriesDraftButtonPressed
     @required Result isNSFWChanged(IsNSFWChanged value),
     @required
         Result saveSeriesDraftButtonPressed(SaveSeriesDraftButtonPressed value),
+    @required Result deleteDraftButtonPressed(DeleteDraftButtonPressed value),
   }) {
     assert(newSeriesPageLaunched != null);
     assert(titleChanged != null);
@@ -1613,6 +1673,7 @@ class _$SaveSeriesDraftButtonPressed
     assert(languageSelected != null);
     assert(isNSFWChanged != null);
     assert(saveSeriesDraftButtonPressed != null);
+    assert(deleteDraftButtonPressed != null);
     return saveSeriesDraftButtonPressed(this);
   }
 
@@ -1628,6 +1689,7 @@ class _$SaveSeriesDraftButtonPressed
     Result languageSelected(LanguageSelected value),
     Result isNSFWChanged(IsNSFWChanged value),
     Result saveSeriesDraftButtonPressed(SaveSeriesDraftButtonPressed value),
+    Result deleteDraftButtonPressed(DeleteDraftButtonPressed value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -1642,6 +1704,156 @@ abstract class SaveSeriesDraftButtonPressed implements NewSeriesDatabaseEvent {
   const factory SaveSeriesDraftButtonPressed() = _$SaveSeriesDraftButtonPressed;
 }
 
+abstract class $DeleteDraftButtonPressedCopyWith<$Res> {
+  factory $DeleteDraftButtonPressedCopyWith(DeleteDraftButtonPressed value,
+          $Res Function(DeleteDraftButtonPressed) then) =
+      _$DeleteDraftButtonPressedCopyWithImpl<$Res>;
+}
+
+class _$DeleteDraftButtonPressedCopyWithImpl<$Res>
+    extends _$NewSeriesDatabaseEventCopyWithImpl<$Res>
+    implements $DeleteDraftButtonPressedCopyWith<$Res> {
+  _$DeleteDraftButtonPressedCopyWithImpl(DeleteDraftButtonPressed _value,
+      $Res Function(DeleteDraftButtonPressed) _then)
+      : super(_value, (v) => _then(v as DeleteDraftButtonPressed));
+
+  @override
+  DeleteDraftButtonPressed get _value =>
+      super._value as DeleteDraftButtonPressed;
+}
+
+class _$DeleteDraftButtonPressed
+    with DiagnosticableTreeMixin
+    implements DeleteDraftButtonPressed {
+  const _$DeleteDraftButtonPressed();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'NewSeriesDatabaseEvent.deleteDraftButtonPressed()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty(
+          'type', 'NewSeriesDatabaseEvent.deleteDraftButtonPressed'));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is DeleteDraftButtonPressed);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required
+        Result newSeriesPageLaunched(
+            SeriesDraft seriesDraft, BuildContext context),
+    @required Result titleChanged(String title),
+    @required Result subtitleChanged(String subtitle),
+    @required Result summaryChanged(String summary),
+    @required Result genreSelected(String genre),
+    @required Result genreOptionalSelected(String genreOptional),
+    @required Result languageSelected(String language),
+    @required Result isNSFWChanged(bool isNSFW),
+    @required Result saveSeriesDraftButtonPressed(),
+    @required Result deleteDraftButtonPressed(),
+  }) {
+    assert(newSeriesPageLaunched != null);
+    assert(titleChanged != null);
+    assert(subtitleChanged != null);
+    assert(summaryChanged != null);
+    assert(genreSelected != null);
+    assert(genreOptionalSelected != null);
+    assert(languageSelected != null);
+    assert(isNSFWChanged != null);
+    assert(saveSeriesDraftButtonPressed != null);
+    assert(deleteDraftButtonPressed != null);
+    return deleteDraftButtonPressed();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result newSeriesPageLaunched(SeriesDraft seriesDraft, BuildContext context),
+    Result titleChanged(String title),
+    Result subtitleChanged(String subtitle),
+    Result summaryChanged(String summary),
+    Result genreSelected(String genre),
+    Result genreOptionalSelected(String genreOptional),
+    Result languageSelected(String language),
+    Result isNSFWChanged(bool isNSFW),
+    Result saveSeriesDraftButtonPressed(),
+    Result deleteDraftButtonPressed(),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (deleteDraftButtonPressed != null) {
+      return deleteDraftButtonPressed();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result newSeriesPageLaunched(NewSeriesPageLaunched value),
+    @required Result titleChanged(TitleChanged value),
+    @required Result subtitleChanged(SubtitleChanged value),
+    @required Result summaryChanged(SummaryChanged value),
+    @required Result genreSelected(GenreSelected value),
+    @required Result genreOptionalSelected(GenreOptionalSelected value),
+    @required Result languageSelected(LanguageSelected value),
+    @required Result isNSFWChanged(IsNSFWChanged value),
+    @required
+        Result saveSeriesDraftButtonPressed(SaveSeriesDraftButtonPressed value),
+    @required Result deleteDraftButtonPressed(DeleteDraftButtonPressed value),
+  }) {
+    assert(newSeriesPageLaunched != null);
+    assert(titleChanged != null);
+    assert(subtitleChanged != null);
+    assert(summaryChanged != null);
+    assert(genreSelected != null);
+    assert(genreOptionalSelected != null);
+    assert(languageSelected != null);
+    assert(isNSFWChanged != null);
+    assert(saveSeriesDraftButtonPressed != null);
+    assert(deleteDraftButtonPressed != null);
+    return deleteDraftButtonPressed(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result newSeriesPageLaunched(NewSeriesPageLaunched value),
+    Result titleChanged(TitleChanged value),
+    Result subtitleChanged(SubtitleChanged value),
+    Result summaryChanged(SummaryChanged value),
+    Result genreSelected(GenreSelected value),
+    Result genreOptionalSelected(GenreOptionalSelected value),
+    Result languageSelected(LanguageSelected value),
+    Result isNSFWChanged(IsNSFWChanged value),
+    Result saveSeriesDraftButtonPressed(SaveSeriesDraftButtonPressed value),
+    Result deleteDraftButtonPressed(DeleteDraftButtonPressed value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (deleteDraftButtonPressed != null) {
+      return deleteDraftButtonPressed(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class DeleteDraftButtonPressed implements NewSeriesDatabaseEvent {
+  const factory DeleteDraftButtonPressed() = _$DeleteDraftButtonPressed;
+}
+
 class _$NewSeriesDatabaseStateTearOff {
   const _$NewSeriesDatabaseStateTearOff();
 
@@ -1653,13 +1865,19 @@ class _$NewSeriesDatabaseStateTearOff {
       @required
           Title title,
       @required
+          String titleStr,
+      @required
           int titleWordCount,
       @required
           Subtitle subtitle,
       @required
+          String subtitleStr,
+      @required
           int subtitleWordCount,
       @required
           Summary summary,
+      @required
+          String summaryStr,
       @required
           int summaryWordCount,
       @required
@@ -1677,7 +1895,7 @@ class _$NewSeriesDatabaseStateTearOff {
       @required
           bool isNSFW,
       @required
-          bool isCreating,
+          bool isCreatingOrDeleting,
       @required
           Map<String, String> genresMap,
       @required
@@ -1691,10 +1909,13 @@ class _$NewSeriesDatabaseStateTearOff {
       seriesDraft: seriesDraft,
       isEditMode: isEditMode,
       title: title,
+      titleStr: titleStr,
       titleWordCount: titleWordCount,
       subtitle: subtitle,
+      subtitleStr: subtitleStr,
       subtitleWordCount: subtitleWordCount,
       summary: summary,
+      summaryStr: summaryStr,
       summaryWordCount: summaryWordCount,
       genre: genre,
       genreStr: genreStr,
@@ -1703,7 +1924,7 @@ class _$NewSeriesDatabaseStateTearOff {
       language: language,
       languageStr: languageStr,
       isNSFW: isNSFW,
-      isCreating: isCreating,
+      isCreatingOrDeleting: isCreatingOrDeleting,
       genresMap: genresMap,
       languagesMap: languagesMap,
       showErrorMessages: showErrorMessages,
@@ -1719,10 +1940,13 @@ mixin _$NewSeriesDatabaseState {
   SeriesDraft get seriesDraft;
   bool get isEditMode;
   Title get title;
+  String get titleStr;
   int get titleWordCount;
   Subtitle get subtitle;
+  String get subtitleStr;
   int get subtitleWordCount;
   Summary get summary;
+  String get summaryStr;
   int get summaryWordCount;
   Genre get genre;
   String get genreStr;
@@ -1731,7 +1955,7 @@ mixin _$NewSeriesDatabaseState {
   Language get language;
   String get languageStr;
   bool get isNSFW;
-  bool get isCreating;
+  bool get isCreatingOrDeleting;
   Map<String, String> get genresMap;
   Map<String, String> get languagesMap;
   bool get showErrorMessages;
@@ -1748,10 +1972,13 @@ abstract class $NewSeriesDatabaseStateCopyWith<$Res> {
       {SeriesDraft seriesDraft,
       bool isEditMode,
       Title title,
+      String titleStr,
       int titleWordCount,
       Subtitle subtitle,
+      String subtitleStr,
       int subtitleWordCount,
       Summary summary,
+      String summaryStr,
       int summaryWordCount,
       Genre genre,
       String genreStr,
@@ -1760,7 +1987,7 @@ abstract class $NewSeriesDatabaseStateCopyWith<$Res> {
       Language language,
       String languageStr,
       bool isNSFW,
-      bool isCreating,
+      bool isCreatingOrDeleting,
       Map<String, String> genresMap,
       Map<String, String> languagesMap,
       bool showErrorMessages,
@@ -1780,10 +2007,13 @@ class _$NewSeriesDatabaseStateCopyWithImpl<$Res>
     Object seriesDraft = freezed,
     Object isEditMode = freezed,
     Object title = freezed,
+    Object titleStr = freezed,
     Object titleWordCount = freezed,
     Object subtitle = freezed,
+    Object subtitleStr = freezed,
     Object subtitleWordCount = freezed,
     Object summary = freezed,
+    Object summaryStr = freezed,
     Object summaryWordCount = freezed,
     Object genre = freezed,
     Object genreStr = freezed,
@@ -1792,7 +2022,7 @@ class _$NewSeriesDatabaseStateCopyWithImpl<$Res>
     Object language = freezed,
     Object languageStr = freezed,
     Object isNSFW = freezed,
-    Object isCreating = freezed,
+    Object isCreatingOrDeleting = freezed,
     Object genresMap = freezed,
     Object languagesMap = freezed,
     Object showErrorMessages = freezed,
@@ -1805,14 +2035,19 @@ class _$NewSeriesDatabaseStateCopyWithImpl<$Res>
       isEditMode:
           isEditMode == freezed ? _value.isEditMode : isEditMode as bool,
       title: title == freezed ? _value.title : title as Title,
+      titleStr: titleStr == freezed ? _value.titleStr : titleStr as String,
       titleWordCount: titleWordCount == freezed
           ? _value.titleWordCount
           : titleWordCount as int,
       subtitle: subtitle == freezed ? _value.subtitle : subtitle as Subtitle,
+      subtitleStr:
+          subtitleStr == freezed ? _value.subtitleStr : subtitleStr as String,
       subtitleWordCount: subtitleWordCount == freezed
           ? _value.subtitleWordCount
           : subtitleWordCount as int,
       summary: summary == freezed ? _value.summary : summary as Summary,
+      summaryStr:
+          summaryStr == freezed ? _value.summaryStr : summaryStr as String,
       summaryWordCount: summaryWordCount == freezed
           ? _value.summaryWordCount
           : summaryWordCount as int,
@@ -1828,8 +2063,9 @@ class _$NewSeriesDatabaseStateCopyWithImpl<$Res>
       languageStr:
           languageStr == freezed ? _value.languageStr : languageStr as String,
       isNSFW: isNSFW == freezed ? _value.isNSFW : isNSFW as bool,
-      isCreating:
-          isCreating == freezed ? _value.isCreating : isCreating as bool,
+      isCreatingOrDeleting: isCreatingOrDeleting == freezed
+          ? _value.isCreatingOrDeleting
+          : isCreatingOrDeleting as bool,
       genresMap: genresMap == freezed
           ? _value.genresMap
           : genresMap as Map<String, String>,
@@ -1857,10 +2093,13 @@ abstract class _$NewSeriesDatabaseStateCopyWith<$Res>
       {SeriesDraft seriesDraft,
       bool isEditMode,
       Title title,
+      String titleStr,
       int titleWordCount,
       Subtitle subtitle,
+      String subtitleStr,
       int subtitleWordCount,
       Summary summary,
+      String summaryStr,
       int summaryWordCount,
       Genre genre,
       String genreStr,
@@ -1869,7 +2108,7 @@ abstract class _$NewSeriesDatabaseStateCopyWith<$Res>
       Language language,
       String languageStr,
       bool isNSFW,
-      bool isCreating,
+      bool isCreatingOrDeleting,
       Map<String, String> genresMap,
       Map<String, String> languagesMap,
       bool showErrorMessages,
@@ -1891,10 +2130,13 @@ class __$NewSeriesDatabaseStateCopyWithImpl<$Res>
     Object seriesDraft = freezed,
     Object isEditMode = freezed,
     Object title = freezed,
+    Object titleStr = freezed,
     Object titleWordCount = freezed,
     Object subtitle = freezed,
+    Object subtitleStr = freezed,
     Object subtitleWordCount = freezed,
     Object summary = freezed,
+    Object summaryStr = freezed,
     Object summaryWordCount = freezed,
     Object genre = freezed,
     Object genreStr = freezed,
@@ -1903,7 +2145,7 @@ class __$NewSeriesDatabaseStateCopyWithImpl<$Res>
     Object language = freezed,
     Object languageStr = freezed,
     Object isNSFW = freezed,
-    Object isCreating = freezed,
+    Object isCreatingOrDeleting = freezed,
     Object genresMap = freezed,
     Object languagesMap = freezed,
     Object showErrorMessages = freezed,
@@ -1916,14 +2158,19 @@ class __$NewSeriesDatabaseStateCopyWithImpl<$Res>
       isEditMode:
           isEditMode == freezed ? _value.isEditMode : isEditMode as bool,
       title: title == freezed ? _value.title : title as Title,
+      titleStr: titleStr == freezed ? _value.titleStr : titleStr as String,
       titleWordCount: titleWordCount == freezed
           ? _value.titleWordCount
           : titleWordCount as int,
       subtitle: subtitle == freezed ? _value.subtitle : subtitle as Subtitle,
+      subtitleStr:
+          subtitleStr == freezed ? _value.subtitleStr : subtitleStr as String,
       subtitleWordCount: subtitleWordCount == freezed
           ? _value.subtitleWordCount
           : subtitleWordCount as int,
       summary: summary == freezed ? _value.summary : summary as Summary,
+      summaryStr:
+          summaryStr == freezed ? _value.summaryStr : summaryStr as String,
       summaryWordCount: summaryWordCount == freezed
           ? _value.summaryWordCount
           : summaryWordCount as int,
@@ -1939,8 +2186,9 @@ class __$NewSeriesDatabaseStateCopyWithImpl<$Res>
       languageStr:
           languageStr == freezed ? _value.languageStr : languageStr as String,
       isNSFW: isNSFW == freezed ? _value.isNSFW : isNSFW as bool,
-      isCreating:
-          isCreating == freezed ? _value.isCreating : isCreating as bool,
+      isCreatingOrDeleting: isCreatingOrDeleting == freezed
+          ? _value.isCreatingOrDeleting
+          : isCreatingOrDeleting as bool,
       genresMap: genresMap == freezed
           ? _value.genresMap
           : genresMap as Map<String, String>,
@@ -1965,10 +2213,13 @@ class _$_NewSeriesDatabaseState
       {@required this.seriesDraft,
       @required this.isEditMode,
       @required this.title,
+      @required this.titleStr,
       @required this.titleWordCount,
       @required this.subtitle,
+      @required this.subtitleStr,
       @required this.subtitleWordCount,
       @required this.summary,
+      @required this.summaryStr,
       @required this.summaryWordCount,
       @required this.genre,
       @required this.genreStr,
@@ -1977,7 +2228,7 @@ class _$_NewSeriesDatabaseState
       @required this.language,
       @required this.languageStr,
       @required this.isNSFW,
-      @required this.isCreating,
+      @required this.isCreatingOrDeleting,
       @required this.genresMap,
       @required this.languagesMap,
       @required this.showErrorMessages,
@@ -1985,10 +2236,13 @@ class _$_NewSeriesDatabaseState
       : assert(seriesDraft != null),
         assert(isEditMode != null),
         assert(title != null),
+        assert(titleStr != null),
         assert(titleWordCount != null),
         assert(subtitle != null),
+        assert(subtitleStr != null),
         assert(subtitleWordCount != null),
         assert(summary != null),
+        assert(summaryStr != null),
         assert(summaryWordCount != null),
         assert(genre != null),
         assert(genreStr != null),
@@ -1997,7 +2251,7 @@ class _$_NewSeriesDatabaseState
         assert(language != null),
         assert(languageStr != null),
         assert(isNSFW != null),
-        assert(isCreating != null),
+        assert(isCreatingOrDeleting != null),
         assert(genresMap != null),
         assert(languagesMap != null),
         assert(showErrorMessages != null),
@@ -2010,13 +2264,19 @@ class _$_NewSeriesDatabaseState
   @override
   final Title title;
   @override
+  final String titleStr;
+  @override
   final int titleWordCount;
   @override
   final Subtitle subtitle;
   @override
+  final String subtitleStr;
+  @override
   final int subtitleWordCount;
   @override
   final Summary summary;
+  @override
+  final String summaryStr;
   @override
   final int summaryWordCount;
   @override
@@ -2034,7 +2294,7 @@ class _$_NewSeriesDatabaseState
   @override
   final bool isNSFW;
   @override
-  final bool isCreating;
+  final bool isCreatingOrDeleting;
   @override
   final Map<String, String> genresMap;
   @override
@@ -2046,7 +2306,7 @@ class _$_NewSeriesDatabaseState
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'NewSeriesDatabaseState(seriesDraft: $seriesDraft, isEditMode: $isEditMode, title: $title, titleWordCount: $titleWordCount, subtitle: $subtitle, subtitleWordCount: $subtitleWordCount, summary: $summary, summaryWordCount: $summaryWordCount, genre: $genre, genreStr: $genreStr, genreOptional: $genreOptional, genreOptionalStr: $genreOptionalStr, language: $language, languageStr: $languageStr, isNSFW: $isNSFW, isCreating: $isCreating, genresMap: $genresMap, languagesMap: $languagesMap, showErrorMessages: $showErrorMessages, databaseFailureOrSuccessOption: $databaseFailureOrSuccessOption)';
+    return 'NewSeriesDatabaseState(seriesDraft: $seriesDraft, isEditMode: $isEditMode, title: $title, titleStr: $titleStr, titleWordCount: $titleWordCount, subtitle: $subtitle, subtitleStr: $subtitleStr, subtitleWordCount: $subtitleWordCount, summary: $summary, summaryStr: $summaryStr, summaryWordCount: $summaryWordCount, genre: $genre, genreStr: $genreStr, genreOptional: $genreOptional, genreOptionalStr: $genreOptionalStr, language: $language, languageStr: $languageStr, isNSFW: $isNSFW, isCreatingOrDeleting: $isCreatingOrDeleting, genresMap: $genresMap, languagesMap: $languagesMap, showErrorMessages: $showErrorMessages, databaseFailureOrSuccessOption: $databaseFailureOrSuccessOption)';
   }
 
   @override
@@ -2057,10 +2317,13 @@ class _$_NewSeriesDatabaseState
       ..add(DiagnosticsProperty('seriesDraft', seriesDraft))
       ..add(DiagnosticsProperty('isEditMode', isEditMode))
       ..add(DiagnosticsProperty('title', title))
+      ..add(DiagnosticsProperty('titleStr', titleStr))
       ..add(DiagnosticsProperty('titleWordCount', titleWordCount))
       ..add(DiagnosticsProperty('subtitle', subtitle))
+      ..add(DiagnosticsProperty('subtitleStr', subtitleStr))
       ..add(DiagnosticsProperty('subtitleWordCount', subtitleWordCount))
       ..add(DiagnosticsProperty('summary', summary))
+      ..add(DiagnosticsProperty('summaryStr', summaryStr))
       ..add(DiagnosticsProperty('summaryWordCount', summaryWordCount))
       ..add(DiagnosticsProperty('genre', genre))
       ..add(DiagnosticsProperty('genreStr', genreStr))
@@ -2069,7 +2332,7 @@ class _$_NewSeriesDatabaseState
       ..add(DiagnosticsProperty('language', language))
       ..add(DiagnosticsProperty('languageStr', languageStr))
       ..add(DiagnosticsProperty('isNSFW', isNSFW))
-      ..add(DiagnosticsProperty('isCreating', isCreating))
+      ..add(DiagnosticsProperty('isCreatingOrDeleting', isCreatingOrDeleting))
       ..add(DiagnosticsProperty('genresMap', genresMap))
       ..add(DiagnosticsProperty('languagesMap', languagesMap))
       ..add(DiagnosticsProperty('showErrorMessages', showErrorMessages))
@@ -2089,18 +2352,27 @@ class _$_NewSeriesDatabaseState
                     .equals(other.isEditMode, isEditMode)) &&
             (identical(other.title, title) ||
                 const DeepCollectionEquality().equals(other.title, title)) &&
+            (identical(other.titleStr, titleStr) ||
+                const DeepCollectionEquality()
+                    .equals(other.titleStr, titleStr)) &&
             (identical(other.titleWordCount, titleWordCount) ||
                 const DeepCollectionEquality()
                     .equals(other.titleWordCount, titleWordCount)) &&
             (identical(other.subtitle, subtitle) ||
                 const DeepCollectionEquality()
                     .equals(other.subtitle, subtitle)) &&
+            (identical(other.subtitleStr, subtitleStr) ||
+                const DeepCollectionEquality()
+                    .equals(other.subtitleStr, subtitleStr)) &&
             (identical(other.subtitleWordCount, subtitleWordCount) ||
                 const DeepCollectionEquality()
                     .equals(other.subtitleWordCount, subtitleWordCount)) &&
             (identical(other.summary, summary) ||
                 const DeepCollectionEquality()
                     .equals(other.summary, summary)) &&
+            (identical(other.summaryStr, summaryStr) ||
+                const DeepCollectionEquality()
+                    .equals(other.summaryStr, summaryStr)) &&
             (identical(other.summaryWordCount, summaryWordCount) ||
                 const DeepCollectionEquality()
                     .equals(other.summaryWordCount, summaryWordCount)) &&
@@ -2123,9 +2395,9 @@ class _$_NewSeriesDatabaseState
                     .equals(other.languageStr, languageStr)) &&
             (identical(other.isNSFW, isNSFW) ||
                 const DeepCollectionEquality().equals(other.isNSFW, isNSFW)) &&
-            (identical(other.isCreating, isCreating) ||
-                const DeepCollectionEquality()
-                    .equals(other.isCreating, isCreating)) &&
+            (identical(other.isCreatingOrDeleting, isCreatingOrDeleting) ||
+                const DeepCollectionEquality().equals(
+                    other.isCreatingOrDeleting, isCreatingOrDeleting)) &&
             (identical(other.genresMap, genresMap) ||
                 const DeepCollectionEquality()
                     .equals(other.genresMap, genresMap)) &&
@@ -2135,11 +2407,9 @@ class _$_NewSeriesDatabaseState
             (identical(other.showErrorMessages, showErrorMessages) ||
                 const DeepCollectionEquality()
                     .equals(other.showErrorMessages, showErrorMessages)) &&
-            (identical(other.databaseFailureOrSuccessOption,
-                    databaseFailureOrSuccessOption) ||
-                const DeepCollectionEquality().equals(
-                    other.databaseFailureOrSuccessOption,
-                    databaseFailureOrSuccessOption)));
+            (identical(other.databaseFailureOrSuccessOption, databaseFailureOrSuccessOption) ||
+                const DeepCollectionEquality()
+                    .equals(other.databaseFailureOrSuccessOption, databaseFailureOrSuccessOption)));
   }
 
   @override
@@ -2148,10 +2418,13 @@ class _$_NewSeriesDatabaseState
       const DeepCollectionEquality().hash(seriesDraft) ^
       const DeepCollectionEquality().hash(isEditMode) ^
       const DeepCollectionEquality().hash(title) ^
+      const DeepCollectionEquality().hash(titleStr) ^
       const DeepCollectionEquality().hash(titleWordCount) ^
       const DeepCollectionEquality().hash(subtitle) ^
+      const DeepCollectionEquality().hash(subtitleStr) ^
       const DeepCollectionEquality().hash(subtitleWordCount) ^
       const DeepCollectionEquality().hash(summary) ^
+      const DeepCollectionEquality().hash(summaryStr) ^
       const DeepCollectionEquality().hash(summaryWordCount) ^
       const DeepCollectionEquality().hash(genre) ^
       const DeepCollectionEquality().hash(genreStr) ^
@@ -2160,7 +2433,7 @@ class _$_NewSeriesDatabaseState
       const DeepCollectionEquality().hash(language) ^
       const DeepCollectionEquality().hash(languageStr) ^
       const DeepCollectionEquality().hash(isNSFW) ^
-      const DeepCollectionEquality().hash(isCreating) ^
+      const DeepCollectionEquality().hash(isCreatingOrDeleting) ^
       const DeepCollectionEquality().hash(genresMap) ^
       const DeepCollectionEquality().hash(languagesMap) ^
       const DeepCollectionEquality().hash(showErrorMessages) ^
@@ -2181,13 +2454,19 @@ abstract class _NewSeriesDatabaseState implements NewSeriesDatabaseState {
       @required
           Title title,
       @required
+          String titleStr,
+      @required
           int titleWordCount,
       @required
           Subtitle subtitle,
       @required
+          String subtitleStr,
+      @required
           int subtitleWordCount,
       @required
           Summary summary,
+      @required
+          String summaryStr,
       @required
           int summaryWordCount,
       @required
@@ -2205,7 +2484,7 @@ abstract class _NewSeriesDatabaseState implements NewSeriesDatabaseState {
       @required
           bool isNSFW,
       @required
-          bool isCreating,
+          bool isCreatingOrDeleting,
       @required
           Map<String, String> genresMap,
       @required
@@ -2223,13 +2502,19 @@ abstract class _NewSeriesDatabaseState implements NewSeriesDatabaseState {
   @override
   Title get title;
   @override
+  String get titleStr;
+  @override
   int get titleWordCount;
   @override
   Subtitle get subtitle;
   @override
+  String get subtitleStr;
+  @override
   int get subtitleWordCount;
   @override
   Summary get summary;
+  @override
+  String get summaryStr;
   @override
   int get summaryWordCount;
   @override
@@ -2247,7 +2532,7 @@ abstract class _NewSeriesDatabaseState implements NewSeriesDatabaseState {
   @override
   bool get isNSFW;
   @override
-  bool get isCreating;
+  bool get isCreatingOrDeleting;
   @override
   Map<String, String> get genresMap;
   @override

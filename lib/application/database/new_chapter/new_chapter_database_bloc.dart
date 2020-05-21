@@ -15,7 +15,6 @@ import 'package:wine/domain/database/i_local_series_draft_database_facade.dart';
 import 'package:wine/domain/database/i_local_session_database_facade.dart';
 import 'package:wine/domain/database/i_online_chapter_database_facade.dart';
 import 'package:wine/domain/database/i_online_series_database_facade.dart';
-import 'package:wine/domain/database/i_online_user_database_facade.dart';
 import 'package:wine/domain/database/language.dart';
 import 'package:wine/domain/database/story.dart';
 import 'package:wine/domain/database/title.dart';

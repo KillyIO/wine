@@ -1,9 +1,12 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
+import 'package:flutter/foundation.dart';
+import 'package:flutter/widgets.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:meta/meta.dart';
+import 'package:wine/utils/methods.dart';
 
 part 'home_navigation_event.dart';
 part 'home_navigation_state.dart';
@@ -21,9 +24,14 @@ class HomeNavigationBloc
     HomeNavigationEvent event,
   ) async* {
     yield* event.map(
-      menuIconPressed: (event) async* {
+      homePageLaunched: (event) async* {
         yield state.copyWith(
-          isMenuOpen: !event.isMenuOpen,
+          pageViewNavbarItems: Methods.getHomeMenuItems(event.context),
+        );
+      },
+      drawerIconPressed: (event) async* {
+        yield state.copyWith(
+          isDrawerOpen: !event.isDrawerOpen,
         );
       },
       newSeriesIconPressed: (event) async* {
@@ -31,22 +39,25 @@ class HomeNavigationBloc
           isNewSeriesPageOpen: event.isNewSeriesPageOpen,
         );
       },
-      menuDragStarted: (event) async* {
-        yield state.copyWith(
-          initialPosition: event.initialPosition,
-        );
-      },
-      menuDragUpdated: (event) async* {
-        yield state.copyWith(
-          distance: event.distance,
-        );
+      pageViewIndexChanged: (event) async* {
+        if (state.currentPageViewIdx != event.index) {
+          int newIdx = event.index;
+          if (event.index > state.pageViewNavbarItems.length - 1) {
+            newIdx = 0;
+          }
+          if (event.index < 0) {
+            newIdx = state.pageViewNavbarItems.length - 1;
+          }
+          yield state.copyWith(
+            currentPageViewIdx: newIdx,
+          );
+        }
       },
       resetHomeNavigationBloc: (event) async* {
         yield state.copyWith(
-          isMenuOpen: false,
+          isDrawerOpen: false,
           isNewSeriesPageOpen: false,
-          initialPosition: 0.0,
-          distance: 0.0,
+          currentPageViewIdx: 0,
         );
       },
     );

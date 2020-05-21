@@ -12,9 +12,15 @@ T _$identity<T>(T value) => value;
 class _$HomeNavigationEventTearOff {
   const _$HomeNavigationEventTearOff();
 
-  MenuIconPressed menuIconPressed({@required bool isMenuOpen}) {
-    return MenuIconPressed(
-      isMenuOpen: isMenuOpen,
+  HomePageLaunched homePageLaunched({BuildContext context}) {
+    return HomePageLaunched(
+      context: context,
+    );
+  }
+
+  DrawerIconPressed drawerIconPressed({@required bool isDrawerOpen}) {
+    return DrawerIconPressed(
+      isDrawerOpen: isDrawerOpen,
     );
   }
 
@@ -25,15 +31,9 @@ class _$HomeNavigationEventTearOff {
     );
   }
 
-  MenuDragStarted menuDragStarted({@required double initialPosition}) {
-    return MenuDragStarted(
-      initialPosition: initialPosition,
-    );
-  }
-
-  MenuDragUpdated menuDragUpdated({@required double distance}) {
-    return MenuDragUpdated(
-      distance: distance,
+  PageViewIndexChanged pageViewIndexChanged({@required int index}) {
+    return PageViewIndexChanged(
+      index: index,
     );
   }
 
@@ -48,35 +48,35 @@ const $HomeNavigationEvent = _$HomeNavigationEventTearOff();
 mixin _$HomeNavigationEvent {
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result menuIconPressed(bool isMenuOpen),
+    @required Result homePageLaunched(BuildContext context),
+    @required Result drawerIconPressed(bool isDrawerOpen),
     @required Result newSeriesIconPressed(bool isNewSeriesPageOpen),
-    @required Result menuDragStarted(double initialPosition),
-    @required Result menuDragUpdated(double distance),
+    @required Result pageViewIndexChanged(int index),
     @required Result resetHomeNavigationBloc(),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result menuIconPressed(bool isMenuOpen),
+    Result homePageLaunched(BuildContext context),
+    Result drawerIconPressed(bool isDrawerOpen),
     Result newSeriesIconPressed(bool isNewSeriesPageOpen),
-    Result menuDragStarted(double initialPosition),
-    Result menuDragUpdated(double distance),
+    Result pageViewIndexChanged(int index),
     Result resetHomeNavigationBloc(),
     @required Result orElse(),
   });
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result menuIconPressed(MenuIconPressed value),
+    @required Result homePageLaunched(HomePageLaunched value),
+    @required Result drawerIconPressed(DrawerIconPressed value),
     @required Result newSeriesIconPressed(NewSeriesIconPressed value),
-    @required Result menuDragStarted(MenuDragStarted value),
-    @required Result menuDragUpdated(MenuDragUpdated value),
+    @required Result pageViewIndexChanged(PageViewIndexChanged value),
     @required Result resetHomeNavigationBloc(ResetHomeNavigationBloc value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result menuIconPressed(MenuIconPressed value),
+    Result homePageLaunched(HomePageLaunched value),
+    Result drawerIconPressed(DrawerIconPressed value),
     Result newSeriesIconPressed(NewSeriesIconPressed value),
-    Result menuDragStarted(MenuDragStarted value),
-    Result menuDragUpdated(MenuDragUpdated value),
+    Result pageViewIndexChanged(PageViewIndexChanged value),
     Result resetHomeNavigationBloc(ResetHomeNavigationBloc value),
     @required Result orElse(),
   });
@@ -97,93 +97,100 @@ class _$HomeNavigationEventCopyWithImpl<$Res>
   final $Res Function(HomeNavigationEvent) _then;
 }
 
-abstract class $MenuIconPressedCopyWith<$Res> {
-  factory $MenuIconPressedCopyWith(
-          MenuIconPressed value, $Res Function(MenuIconPressed) then) =
-      _$MenuIconPressedCopyWithImpl<$Res>;
-  $Res call({bool isMenuOpen});
+abstract class $HomePageLaunchedCopyWith<$Res> {
+  factory $HomePageLaunchedCopyWith(
+          HomePageLaunched value, $Res Function(HomePageLaunched) then) =
+      _$HomePageLaunchedCopyWithImpl<$Res>;
+  $Res call({BuildContext context});
 }
 
-class _$MenuIconPressedCopyWithImpl<$Res>
+class _$HomePageLaunchedCopyWithImpl<$Res>
     extends _$HomeNavigationEventCopyWithImpl<$Res>
-    implements $MenuIconPressedCopyWith<$Res> {
-  _$MenuIconPressedCopyWithImpl(
-      MenuIconPressed _value, $Res Function(MenuIconPressed) _then)
-      : super(_value, (v) => _then(v as MenuIconPressed));
+    implements $HomePageLaunchedCopyWith<$Res> {
+  _$HomePageLaunchedCopyWithImpl(
+      HomePageLaunched _value, $Res Function(HomePageLaunched) _then)
+      : super(_value, (v) => _then(v as HomePageLaunched));
 
   @override
-  MenuIconPressed get _value => super._value as MenuIconPressed;
+  HomePageLaunched get _value => super._value as HomePageLaunched;
 
   @override
   $Res call({
-    Object isMenuOpen = freezed,
+    Object context = freezed,
   }) {
-    return _then(MenuIconPressed(
-      isMenuOpen:
-          isMenuOpen == freezed ? _value.isMenuOpen : isMenuOpen as bool,
+    return _then(HomePageLaunched(
+      context: context == freezed ? _value.context : context as BuildContext,
     ));
   }
 }
 
-class _$MenuIconPressed implements MenuIconPressed {
-  const _$MenuIconPressed({@required this.isMenuOpen})
-      : assert(isMenuOpen != null);
+class _$HomePageLaunched
+    with DiagnosticableTreeMixin
+    implements HomePageLaunched {
+  const _$HomePageLaunched({this.context});
 
   @override
-  final bool isMenuOpen;
+  final BuildContext context;
 
   @override
-  String toString() {
-    return 'HomeNavigationEvent.menuIconPressed(isMenuOpen: $isMenuOpen)';
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'HomeNavigationEvent.homePageLaunched(context: $context)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'HomeNavigationEvent.homePageLaunched'))
+      ..add(DiagnosticsProperty('context', context));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is MenuIconPressed &&
-            (identical(other.isMenuOpen, isMenuOpen) ||
-                const DeepCollectionEquality()
-                    .equals(other.isMenuOpen, isMenuOpen)));
+        (other is HomePageLaunched &&
+            (identical(other.context, context) ||
+                const DeepCollectionEquality().equals(other.context, context)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(isMenuOpen);
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(context);
 
   @override
-  $MenuIconPressedCopyWith<MenuIconPressed> get copyWith =>
-      _$MenuIconPressedCopyWithImpl<MenuIconPressed>(this, _$identity);
+  $HomePageLaunchedCopyWith<HomePageLaunched> get copyWith =>
+      _$HomePageLaunchedCopyWithImpl<HomePageLaunched>(this, _$identity);
 
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result menuIconPressed(bool isMenuOpen),
+    @required Result homePageLaunched(BuildContext context),
+    @required Result drawerIconPressed(bool isDrawerOpen),
     @required Result newSeriesIconPressed(bool isNewSeriesPageOpen),
-    @required Result menuDragStarted(double initialPosition),
-    @required Result menuDragUpdated(double distance),
+    @required Result pageViewIndexChanged(int index),
     @required Result resetHomeNavigationBloc(),
   }) {
-    assert(menuIconPressed != null);
+    assert(homePageLaunched != null);
+    assert(drawerIconPressed != null);
     assert(newSeriesIconPressed != null);
-    assert(menuDragStarted != null);
-    assert(menuDragUpdated != null);
+    assert(pageViewIndexChanged != null);
     assert(resetHomeNavigationBloc != null);
-    return menuIconPressed(isMenuOpen);
+    return homePageLaunched(context);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result menuIconPressed(bool isMenuOpen),
+    Result homePageLaunched(BuildContext context),
+    Result drawerIconPressed(bool isDrawerOpen),
     Result newSeriesIconPressed(bool isNewSeriesPageOpen),
-    Result menuDragStarted(double initialPosition),
-    Result menuDragUpdated(double distance),
+    Result pageViewIndexChanged(int index),
     Result resetHomeNavigationBloc(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (menuIconPressed != null) {
-      return menuIconPressed(isMenuOpen);
+    if (homePageLaunched != null) {
+      return homePageLaunched(context);
     }
     return orElse();
   }
@@ -191,44 +198,188 @@ class _$MenuIconPressed implements MenuIconPressed {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result menuIconPressed(MenuIconPressed value),
+    @required Result homePageLaunched(HomePageLaunched value),
+    @required Result drawerIconPressed(DrawerIconPressed value),
     @required Result newSeriesIconPressed(NewSeriesIconPressed value),
-    @required Result menuDragStarted(MenuDragStarted value),
-    @required Result menuDragUpdated(MenuDragUpdated value),
+    @required Result pageViewIndexChanged(PageViewIndexChanged value),
     @required Result resetHomeNavigationBloc(ResetHomeNavigationBloc value),
   }) {
-    assert(menuIconPressed != null);
+    assert(homePageLaunched != null);
+    assert(drawerIconPressed != null);
     assert(newSeriesIconPressed != null);
-    assert(menuDragStarted != null);
-    assert(menuDragUpdated != null);
+    assert(pageViewIndexChanged != null);
     assert(resetHomeNavigationBloc != null);
-    return menuIconPressed(this);
+    return homePageLaunched(this);
   }
 
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result menuIconPressed(MenuIconPressed value),
+    Result homePageLaunched(HomePageLaunched value),
+    Result drawerIconPressed(DrawerIconPressed value),
     Result newSeriesIconPressed(NewSeriesIconPressed value),
-    Result menuDragStarted(MenuDragStarted value),
-    Result menuDragUpdated(MenuDragUpdated value),
+    Result pageViewIndexChanged(PageViewIndexChanged value),
     Result resetHomeNavigationBloc(ResetHomeNavigationBloc value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (menuIconPressed != null) {
-      return menuIconPressed(this);
+    if (homePageLaunched != null) {
+      return homePageLaunched(this);
     }
     return orElse();
   }
 }
 
-abstract class MenuIconPressed implements HomeNavigationEvent {
-  const factory MenuIconPressed({@required bool isMenuOpen}) =
-      _$MenuIconPressed;
+abstract class HomePageLaunched implements HomeNavigationEvent {
+  const factory HomePageLaunched({BuildContext context}) = _$HomePageLaunched;
 
-  bool get isMenuOpen;
-  $MenuIconPressedCopyWith<MenuIconPressed> get copyWith;
+  BuildContext get context;
+  $HomePageLaunchedCopyWith<HomePageLaunched> get copyWith;
+}
+
+abstract class $DrawerIconPressedCopyWith<$Res> {
+  factory $DrawerIconPressedCopyWith(
+          DrawerIconPressed value, $Res Function(DrawerIconPressed) then) =
+      _$DrawerIconPressedCopyWithImpl<$Res>;
+  $Res call({bool isDrawerOpen});
+}
+
+class _$DrawerIconPressedCopyWithImpl<$Res>
+    extends _$HomeNavigationEventCopyWithImpl<$Res>
+    implements $DrawerIconPressedCopyWith<$Res> {
+  _$DrawerIconPressedCopyWithImpl(
+      DrawerIconPressed _value, $Res Function(DrawerIconPressed) _then)
+      : super(_value, (v) => _then(v as DrawerIconPressed));
+
+  @override
+  DrawerIconPressed get _value => super._value as DrawerIconPressed;
+
+  @override
+  $Res call({
+    Object isDrawerOpen = freezed,
+  }) {
+    return _then(DrawerIconPressed(
+      isDrawerOpen:
+          isDrawerOpen == freezed ? _value.isDrawerOpen : isDrawerOpen as bool,
+    ));
+  }
+}
+
+class _$DrawerIconPressed
+    with DiagnosticableTreeMixin
+    implements DrawerIconPressed {
+  const _$DrawerIconPressed({@required this.isDrawerOpen})
+      : assert(isDrawerOpen != null);
+
+  @override
+  final bool isDrawerOpen;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'HomeNavigationEvent.drawerIconPressed(isDrawerOpen: $isDrawerOpen)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(
+          DiagnosticsProperty('type', 'HomeNavigationEvent.drawerIconPressed'))
+      ..add(DiagnosticsProperty('isDrawerOpen', isDrawerOpen));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is DrawerIconPressed &&
+            (identical(other.isDrawerOpen, isDrawerOpen) ||
+                const DeepCollectionEquality()
+                    .equals(other.isDrawerOpen, isDrawerOpen)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(isDrawerOpen);
+
+  @override
+  $DrawerIconPressedCopyWith<DrawerIconPressed> get copyWith =>
+      _$DrawerIconPressedCopyWithImpl<DrawerIconPressed>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result homePageLaunched(BuildContext context),
+    @required Result drawerIconPressed(bool isDrawerOpen),
+    @required Result newSeriesIconPressed(bool isNewSeriesPageOpen),
+    @required Result pageViewIndexChanged(int index),
+    @required Result resetHomeNavigationBloc(),
+  }) {
+    assert(homePageLaunched != null);
+    assert(drawerIconPressed != null);
+    assert(newSeriesIconPressed != null);
+    assert(pageViewIndexChanged != null);
+    assert(resetHomeNavigationBloc != null);
+    return drawerIconPressed(isDrawerOpen);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result homePageLaunched(BuildContext context),
+    Result drawerIconPressed(bool isDrawerOpen),
+    Result newSeriesIconPressed(bool isNewSeriesPageOpen),
+    Result pageViewIndexChanged(int index),
+    Result resetHomeNavigationBloc(),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (drawerIconPressed != null) {
+      return drawerIconPressed(isDrawerOpen);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result homePageLaunched(HomePageLaunched value),
+    @required Result drawerIconPressed(DrawerIconPressed value),
+    @required Result newSeriesIconPressed(NewSeriesIconPressed value),
+    @required Result pageViewIndexChanged(PageViewIndexChanged value),
+    @required Result resetHomeNavigationBloc(ResetHomeNavigationBloc value),
+  }) {
+    assert(homePageLaunched != null);
+    assert(drawerIconPressed != null);
+    assert(newSeriesIconPressed != null);
+    assert(pageViewIndexChanged != null);
+    assert(resetHomeNavigationBloc != null);
+    return drawerIconPressed(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result homePageLaunched(HomePageLaunched value),
+    Result drawerIconPressed(DrawerIconPressed value),
+    Result newSeriesIconPressed(NewSeriesIconPressed value),
+    Result pageViewIndexChanged(PageViewIndexChanged value),
+    Result resetHomeNavigationBloc(ResetHomeNavigationBloc value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (drawerIconPressed != null) {
+      return drawerIconPressed(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class DrawerIconPressed implements HomeNavigationEvent {
+  const factory DrawerIconPressed({@required bool isDrawerOpen}) =
+      _$DrawerIconPressed;
+
+  bool get isDrawerOpen;
+  $DrawerIconPressedCopyWith<DrawerIconPressed> get copyWith;
 }
 
 abstract class $NewSeriesIconPressedCopyWith<$Res> {
@@ -260,7 +411,9 @@ class _$NewSeriesIconPressedCopyWithImpl<$Res>
   }
 }
 
-class _$NewSeriesIconPressed implements NewSeriesIconPressed {
+class _$NewSeriesIconPressed
+    with DiagnosticableTreeMixin
+    implements NewSeriesIconPressed {
   const _$NewSeriesIconPressed({@required this.isNewSeriesPageOpen})
       : assert(isNewSeriesPageOpen != null);
 
@@ -268,8 +421,17 @@ class _$NewSeriesIconPressed implements NewSeriesIconPressed {
   final bool isNewSeriesPageOpen;
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'HomeNavigationEvent.newSeriesIconPressed(isNewSeriesPageOpen: $isNewSeriesPageOpen)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty(
+          'type', 'HomeNavigationEvent.newSeriesIconPressed'))
+      ..add(DiagnosticsProperty('isNewSeriesPageOpen', isNewSeriesPageOpen));
   }
 
   @override
@@ -294,16 +456,16 @@ class _$NewSeriesIconPressed implements NewSeriesIconPressed {
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result menuIconPressed(bool isMenuOpen),
+    @required Result homePageLaunched(BuildContext context),
+    @required Result drawerIconPressed(bool isDrawerOpen),
     @required Result newSeriesIconPressed(bool isNewSeriesPageOpen),
-    @required Result menuDragStarted(double initialPosition),
-    @required Result menuDragUpdated(double distance),
+    @required Result pageViewIndexChanged(int index),
     @required Result resetHomeNavigationBloc(),
   }) {
-    assert(menuIconPressed != null);
+    assert(homePageLaunched != null);
+    assert(drawerIconPressed != null);
     assert(newSeriesIconPressed != null);
-    assert(menuDragStarted != null);
-    assert(menuDragUpdated != null);
+    assert(pageViewIndexChanged != null);
     assert(resetHomeNavigationBloc != null);
     return newSeriesIconPressed(isNewSeriesPageOpen);
   }
@@ -311,10 +473,10 @@ class _$NewSeriesIconPressed implements NewSeriesIconPressed {
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result menuIconPressed(bool isMenuOpen),
+    Result homePageLaunched(BuildContext context),
+    Result drawerIconPressed(bool isDrawerOpen),
     Result newSeriesIconPressed(bool isNewSeriesPageOpen),
-    Result menuDragStarted(double initialPosition),
-    Result menuDragUpdated(double distance),
+    Result pageViewIndexChanged(int index),
     Result resetHomeNavigationBloc(),
     @required Result orElse(),
   }) {
@@ -328,16 +490,16 @@ class _$NewSeriesIconPressed implements NewSeriesIconPressed {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result menuIconPressed(MenuIconPressed value),
+    @required Result homePageLaunched(HomePageLaunched value),
+    @required Result drawerIconPressed(DrawerIconPressed value),
     @required Result newSeriesIconPressed(NewSeriesIconPressed value),
-    @required Result menuDragStarted(MenuDragStarted value),
-    @required Result menuDragUpdated(MenuDragUpdated value),
+    @required Result pageViewIndexChanged(PageViewIndexChanged value),
     @required Result resetHomeNavigationBloc(ResetHomeNavigationBloc value),
   }) {
-    assert(menuIconPressed != null);
+    assert(homePageLaunched != null);
+    assert(drawerIconPressed != null);
     assert(newSeriesIconPressed != null);
-    assert(menuDragStarted != null);
-    assert(menuDragUpdated != null);
+    assert(pageViewIndexChanged != null);
     assert(resetHomeNavigationBloc != null);
     return newSeriesIconPressed(this);
   }
@@ -345,10 +507,10 @@ class _$NewSeriesIconPressed implements NewSeriesIconPressed {
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result menuIconPressed(MenuIconPressed value),
+    Result homePageLaunched(HomePageLaunched value),
+    Result drawerIconPressed(DrawerIconPressed value),
     Result newSeriesIconPressed(NewSeriesIconPressed value),
-    Result menuDragStarted(MenuDragStarted value),
-    Result menuDragUpdated(MenuDragUpdated value),
+    Result pageViewIndexChanged(PageViewIndexChanged value),
     Result resetHomeNavigationBloc(ResetHomeNavigationBloc value),
     @required Result orElse(),
   }) {
@@ -368,95 +530,102 @@ abstract class NewSeriesIconPressed implements HomeNavigationEvent {
   $NewSeriesIconPressedCopyWith<NewSeriesIconPressed> get copyWith;
 }
 
-abstract class $MenuDragStartedCopyWith<$Res> {
-  factory $MenuDragStartedCopyWith(
-          MenuDragStarted value, $Res Function(MenuDragStarted) then) =
-      _$MenuDragStartedCopyWithImpl<$Res>;
-  $Res call({double initialPosition});
+abstract class $PageViewIndexChangedCopyWith<$Res> {
+  factory $PageViewIndexChangedCopyWith(PageViewIndexChanged value,
+          $Res Function(PageViewIndexChanged) then) =
+      _$PageViewIndexChangedCopyWithImpl<$Res>;
+  $Res call({int index});
 }
 
-class _$MenuDragStartedCopyWithImpl<$Res>
+class _$PageViewIndexChangedCopyWithImpl<$Res>
     extends _$HomeNavigationEventCopyWithImpl<$Res>
-    implements $MenuDragStartedCopyWith<$Res> {
-  _$MenuDragStartedCopyWithImpl(
-      MenuDragStarted _value, $Res Function(MenuDragStarted) _then)
-      : super(_value, (v) => _then(v as MenuDragStarted));
+    implements $PageViewIndexChangedCopyWith<$Res> {
+  _$PageViewIndexChangedCopyWithImpl(
+      PageViewIndexChanged _value, $Res Function(PageViewIndexChanged) _then)
+      : super(_value, (v) => _then(v as PageViewIndexChanged));
 
   @override
-  MenuDragStarted get _value => super._value as MenuDragStarted;
+  PageViewIndexChanged get _value => super._value as PageViewIndexChanged;
 
   @override
   $Res call({
-    Object initialPosition = freezed,
+    Object index = freezed,
   }) {
-    return _then(MenuDragStarted(
-      initialPosition: initialPosition == freezed
-          ? _value.initialPosition
-          : initialPosition as double,
+    return _then(PageViewIndexChanged(
+      index: index == freezed ? _value.index : index as int,
     ));
   }
 }
 
-class _$MenuDragStarted implements MenuDragStarted {
-  const _$MenuDragStarted({@required this.initialPosition})
-      : assert(initialPosition != null);
+class _$PageViewIndexChanged
+    with DiagnosticableTreeMixin
+    implements PageViewIndexChanged {
+  const _$PageViewIndexChanged({@required this.index}) : assert(index != null);
 
   @override
-  final double initialPosition;
+  final int index;
 
   @override
-  String toString() {
-    return 'HomeNavigationEvent.menuDragStarted(initialPosition: $initialPosition)';
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'HomeNavigationEvent.pageViewIndexChanged(index: $index)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty(
+          'type', 'HomeNavigationEvent.pageViewIndexChanged'))
+      ..add(DiagnosticsProperty('index', index));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is MenuDragStarted &&
-            (identical(other.initialPosition, initialPosition) ||
-                const DeepCollectionEquality()
-                    .equals(other.initialPosition, initialPosition)));
+        (other is PageViewIndexChanged &&
+            (identical(other.index, index) ||
+                const DeepCollectionEquality().equals(other.index, index)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(initialPosition);
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(index);
 
   @override
-  $MenuDragStartedCopyWith<MenuDragStarted> get copyWith =>
-      _$MenuDragStartedCopyWithImpl<MenuDragStarted>(this, _$identity);
+  $PageViewIndexChangedCopyWith<PageViewIndexChanged> get copyWith =>
+      _$PageViewIndexChangedCopyWithImpl<PageViewIndexChanged>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result menuIconPressed(bool isMenuOpen),
+    @required Result homePageLaunched(BuildContext context),
+    @required Result drawerIconPressed(bool isDrawerOpen),
     @required Result newSeriesIconPressed(bool isNewSeriesPageOpen),
-    @required Result menuDragStarted(double initialPosition),
-    @required Result menuDragUpdated(double distance),
+    @required Result pageViewIndexChanged(int index),
     @required Result resetHomeNavigationBloc(),
   }) {
-    assert(menuIconPressed != null);
+    assert(homePageLaunched != null);
+    assert(drawerIconPressed != null);
     assert(newSeriesIconPressed != null);
-    assert(menuDragStarted != null);
-    assert(menuDragUpdated != null);
+    assert(pageViewIndexChanged != null);
     assert(resetHomeNavigationBloc != null);
-    return menuDragStarted(initialPosition);
+    return pageViewIndexChanged(index);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result menuIconPressed(bool isMenuOpen),
+    Result homePageLaunched(BuildContext context),
+    Result drawerIconPressed(bool isDrawerOpen),
     Result newSeriesIconPressed(bool isNewSeriesPageOpen),
-    Result menuDragStarted(double initialPosition),
-    Result menuDragUpdated(double distance),
+    Result pageViewIndexChanged(int index),
     Result resetHomeNavigationBloc(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (menuDragStarted != null) {
-      return menuDragStarted(initialPosition);
+    if (pageViewIndexChanged != null) {
+      return pageViewIndexChanged(index);
     }
     return orElse();
   }
@@ -464,176 +633,44 @@ class _$MenuDragStarted implements MenuDragStarted {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result menuIconPressed(MenuIconPressed value),
+    @required Result homePageLaunched(HomePageLaunched value),
+    @required Result drawerIconPressed(DrawerIconPressed value),
     @required Result newSeriesIconPressed(NewSeriesIconPressed value),
-    @required Result menuDragStarted(MenuDragStarted value),
-    @required Result menuDragUpdated(MenuDragUpdated value),
+    @required Result pageViewIndexChanged(PageViewIndexChanged value),
     @required Result resetHomeNavigationBloc(ResetHomeNavigationBloc value),
   }) {
-    assert(menuIconPressed != null);
+    assert(homePageLaunched != null);
+    assert(drawerIconPressed != null);
     assert(newSeriesIconPressed != null);
-    assert(menuDragStarted != null);
-    assert(menuDragUpdated != null);
+    assert(pageViewIndexChanged != null);
     assert(resetHomeNavigationBloc != null);
-    return menuDragStarted(this);
+    return pageViewIndexChanged(this);
   }
 
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result menuIconPressed(MenuIconPressed value),
+    Result homePageLaunched(HomePageLaunched value),
+    Result drawerIconPressed(DrawerIconPressed value),
     Result newSeriesIconPressed(NewSeriesIconPressed value),
-    Result menuDragStarted(MenuDragStarted value),
-    Result menuDragUpdated(MenuDragUpdated value),
+    Result pageViewIndexChanged(PageViewIndexChanged value),
     Result resetHomeNavigationBloc(ResetHomeNavigationBloc value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (menuDragStarted != null) {
-      return menuDragStarted(this);
+    if (pageViewIndexChanged != null) {
+      return pageViewIndexChanged(this);
     }
     return orElse();
   }
 }
 
-abstract class MenuDragStarted implements HomeNavigationEvent {
-  const factory MenuDragStarted({@required double initialPosition}) =
-      _$MenuDragStarted;
+abstract class PageViewIndexChanged implements HomeNavigationEvent {
+  const factory PageViewIndexChanged({@required int index}) =
+      _$PageViewIndexChanged;
 
-  double get initialPosition;
-  $MenuDragStartedCopyWith<MenuDragStarted> get copyWith;
-}
-
-abstract class $MenuDragUpdatedCopyWith<$Res> {
-  factory $MenuDragUpdatedCopyWith(
-          MenuDragUpdated value, $Res Function(MenuDragUpdated) then) =
-      _$MenuDragUpdatedCopyWithImpl<$Res>;
-  $Res call({double distance});
-}
-
-class _$MenuDragUpdatedCopyWithImpl<$Res>
-    extends _$HomeNavigationEventCopyWithImpl<$Res>
-    implements $MenuDragUpdatedCopyWith<$Res> {
-  _$MenuDragUpdatedCopyWithImpl(
-      MenuDragUpdated _value, $Res Function(MenuDragUpdated) _then)
-      : super(_value, (v) => _then(v as MenuDragUpdated));
-
-  @override
-  MenuDragUpdated get _value => super._value as MenuDragUpdated;
-
-  @override
-  $Res call({
-    Object distance = freezed,
-  }) {
-    return _then(MenuDragUpdated(
-      distance: distance == freezed ? _value.distance : distance as double,
-    ));
-  }
-}
-
-class _$MenuDragUpdated implements MenuDragUpdated {
-  const _$MenuDragUpdated({@required this.distance}) : assert(distance != null);
-
-  @override
-  final double distance;
-
-  @override
-  String toString() {
-    return 'HomeNavigationEvent.menuDragUpdated(distance: $distance)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is MenuDragUpdated &&
-            (identical(other.distance, distance) ||
-                const DeepCollectionEquality()
-                    .equals(other.distance, distance)));
-  }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(distance);
-
-  @override
-  $MenuDragUpdatedCopyWith<MenuDragUpdated> get copyWith =>
-      _$MenuDragUpdatedCopyWithImpl<MenuDragUpdated>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result menuIconPressed(bool isMenuOpen),
-    @required Result newSeriesIconPressed(bool isNewSeriesPageOpen),
-    @required Result menuDragStarted(double initialPosition),
-    @required Result menuDragUpdated(double distance),
-    @required Result resetHomeNavigationBloc(),
-  }) {
-    assert(menuIconPressed != null);
-    assert(newSeriesIconPressed != null);
-    assert(menuDragStarted != null);
-    assert(menuDragUpdated != null);
-    assert(resetHomeNavigationBloc != null);
-    return menuDragUpdated(distance);
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result menuIconPressed(bool isMenuOpen),
-    Result newSeriesIconPressed(bool isNewSeriesPageOpen),
-    Result menuDragStarted(double initialPosition),
-    Result menuDragUpdated(double distance),
-    Result resetHomeNavigationBloc(),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (menuDragUpdated != null) {
-      return menuDragUpdated(distance);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result menuIconPressed(MenuIconPressed value),
-    @required Result newSeriesIconPressed(NewSeriesIconPressed value),
-    @required Result menuDragStarted(MenuDragStarted value),
-    @required Result menuDragUpdated(MenuDragUpdated value),
-    @required Result resetHomeNavigationBloc(ResetHomeNavigationBloc value),
-  }) {
-    assert(menuIconPressed != null);
-    assert(newSeriesIconPressed != null);
-    assert(menuDragStarted != null);
-    assert(menuDragUpdated != null);
-    assert(resetHomeNavigationBloc != null);
-    return menuDragUpdated(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result menuIconPressed(MenuIconPressed value),
-    Result newSeriesIconPressed(NewSeriesIconPressed value),
-    Result menuDragStarted(MenuDragStarted value),
-    Result menuDragUpdated(MenuDragUpdated value),
-    Result resetHomeNavigationBloc(ResetHomeNavigationBloc value),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (menuDragUpdated != null) {
-      return menuDragUpdated(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class MenuDragUpdated implements HomeNavigationEvent {
-  const factory MenuDragUpdated({@required double distance}) =
-      _$MenuDragUpdated;
-
-  double get distance;
-  $MenuDragUpdatedCopyWith<MenuDragUpdated> get copyWith;
+  int get index;
+  $PageViewIndexChangedCopyWith<PageViewIndexChanged> get copyWith;
 }
 
 abstract class $ResetHomeNavigationBlocCopyWith<$Res> {
@@ -653,12 +690,22 @@ class _$ResetHomeNavigationBlocCopyWithImpl<$Res>
   ResetHomeNavigationBloc get _value => super._value as ResetHomeNavigationBloc;
 }
 
-class _$ResetHomeNavigationBloc implements ResetHomeNavigationBloc {
+class _$ResetHomeNavigationBloc
+    with DiagnosticableTreeMixin
+    implements ResetHomeNavigationBloc {
   const _$ResetHomeNavigationBloc();
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'HomeNavigationEvent.resetHomeNavigationBloc()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty(
+          'type', 'HomeNavigationEvent.resetHomeNavigationBloc'));
   }
 
   @override
@@ -672,16 +719,16 @@ class _$ResetHomeNavigationBloc implements ResetHomeNavigationBloc {
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result menuIconPressed(bool isMenuOpen),
+    @required Result homePageLaunched(BuildContext context),
+    @required Result drawerIconPressed(bool isDrawerOpen),
     @required Result newSeriesIconPressed(bool isNewSeriesPageOpen),
-    @required Result menuDragStarted(double initialPosition),
-    @required Result menuDragUpdated(double distance),
+    @required Result pageViewIndexChanged(int index),
     @required Result resetHomeNavigationBloc(),
   }) {
-    assert(menuIconPressed != null);
+    assert(homePageLaunched != null);
+    assert(drawerIconPressed != null);
     assert(newSeriesIconPressed != null);
-    assert(menuDragStarted != null);
-    assert(menuDragUpdated != null);
+    assert(pageViewIndexChanged != null);
     assert(resetHomeNavigationBloc != null);
     return resetHomeNavigationBloc();
   }
@@ -689,10 +736,10 @@ class _$ResetHomeNavigationBloc implements ResetHomeNavigationBloc {
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result menuIconPressed(bool isMenuOpen),
+    Result homePageLaunched(BuildContext context),
+    Result drawerIconPressed(bool isDrawerOpen),
     Result newSeriesIconPressed(bool isNewSeriesPageOpen),
-    Result menuDragStarted(double initialPosition),
-    Result menuDragUpdated(double distance),
+    Result pageViewIndexChanged(int index),
     Result resetHomeNavigationBloc(),
     @required Result orElse(),
   }) {
@@ -706,16 +753,16 @@ class _$ResetHomeNavigationBloc implements ResetHomeNavigationBloc {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result menuIconPressed(MenuIconPressed value),
+    @required Result homePageLaunched(HomePageLaunched value),
+    @required Result drawerIconPressed(DrawerIconPressed value),
     @required Result newSeriesIconPressed(NewSeriesIconPressed value),
-    @required Result menuDragStarted(MenuDragStarted value),
-    @required Result menuDragUpdated(MenuDragUpdated value),
+    @required Result pageViewIndexChanged(PageViewIndexChanged value),
     @required Result resetHomeNavigationBloc(ResetHomeNavigationBloc value),
   }) {
-    assert(menuIconPressed != null);
+    assert(homePageLaunched != null);
+    assert(drawerIconPressed != null);
     assert(newSeriesIconPressed != null);
-    assert(menuDragStarted != null);
-    assert(menuDragUpdated != null);
+    assert(pageViewIndexChanged != null);
     assert(resetHomeNavigationBloc != null);
     return resetHomeNavigationBloc(this);
   }
@@ -723,10 +770,10 @@ class _$ResetHomeNavigationBloc implements ResetHomeNavigationBloc {
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result menuIconPressed(MenuIconPressed value),
+    Result homePageLaunched(HomePageLaunched value),
+    Result drawerIconPressed(DrawerIconPressed value),
     Result newSeriesIconPressed(NewSeriesIconPressed value),
-    Result menuDragStarted(MenuDragStarted value),
-    Result menuDragUpdated(MenuDragUpdated value),
+    Result pageViewIndexChanged(PageViewIndexChanged value),
     Result resetHomeNavigationBloc(ResetHomeNavigationBloc value),
     @required Result orElse(),
   }) {
@@ -746,15 +793,15 @@ class _$HomeNavigationStateTearOff {
   const _$HomeNavigationStateTearOff();
 
   _HomeNavigationState call(
-      {@required bool isMenuOpen,
+      {@required bool isDrawerOpen,
       @required bool isNewSeriesPageOpen,
-      @required double initialPosition,
-      @required double distance}) {
+      @required List<String> pageViewNavbarItems,
+      @required int currentPageViewIdx}) {
     return _HomeNavigationState(
-      isMenuOpen: isMenuOpen,
+      isDrawerOpen: isDrawerOpen,
       isNewSeriesPageOpen: isNewSeriesPageOpen,
-      initialPosition: initialPosition,
-      distance: distance,
+      pageViewNavbarItems: pageViewNavbarItems,
+      currentPageViewIdx: currentPageViewIdx,
     );
   }
 }
@@ -763,10 +810,10 @@ class _$HomeNavigationStateTearOff {
 const $HomeNavigationState = _$HomeNavigationStateTearOff();
 
 mixin _$HomeNavigationState {
-  bool get isMenuOpen;
+  bool get isDrawerOpen;
   bool get isNewSeriesPageOpen;
-  double get initialPosition;
-  double get distance;
+  List<String> get pageViewNavbarItems;
+  int get currentPageViewIdx;
 
   $HomeNavigationStateCopyWith<HomeNavigationState> get copyWith;
 }
@@ -776,10 +823,10 @@ abstract class $HomeNavigationStateCopyWith<$Res> {
           HomeNavigationState value, $Res Function(HomeNavigationState) then) =
       _$HomeNavigationStateCopyWithImpl<$Res>;
   $Res call(
-      {bool isMenuOpen,
+      {bool isDrawerOpen,
       bool isNewSeriesPageOpen,
-      double initialPosition,
-      double distance});
+      List<String> pageViewNavbarItems,
+      int currentPageViewIdx});
 }
 
 class _$HomeNavigationStateCopyWithImpl<$Res>
@@ -792,21 +839,23 @@ class _$HomeNavigationStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object isMenuOpen = freezed,
+    Object isDrawerOpen = freezed,
     Object isNewSeriesPageOpen = freezed,
-    Object initialPosition = freezed,
-    Object distance = freezed,
+    Object pageViewNavbarItems = freezed,
+    Object currentPageViewIdx = freezed,
   }) {
     return _then(_value.copyWith(
-      isMenuOpen:
-          isMenuOpen == freezed ? _value.isMenuOpen : isMenuOpen as bool,
+      isDrawerOpen:
+          isDrawerOpen == freezed ? _value.isDrawerOpen : isDrawerOpen as bool,
       isNewSeriesPageOpen: isNewSeriesPageOpen == freezed
           ? _value.isNewSeriesPageOpen
           : isNewSeriesPageOpen as bool,
-      initialPosition: initialPosition == freezed
-          ? _value.initialPosition
-          : initialPosition as double,
-      distance: distance == freezed ? _value.distance : distance as double,
+      pageViewNavbarItems: pageViewNavbarItems == freezed
+          ? _value.pageViewNavbarItems
+          : pageViewNavbarItems as List<String>,
+      currentPageViewIdx: currentPageViewIdx == freezed
+          ? _value.currentPageViewIdx
+          : currentPageViewIdx as int,
     ));
   }
 }
@@ -818,10 +867,10 @@ abstract class _$HomeNavigationStateCopyWith<$Res>
       __$HomeNavigationStateCopyWithImpl<$Res>;
   @override
   $Res call(
-      {bool isMenuOpen,
+      {bool isDrawerOpen,
       bool isNewSeriesPageOpen,
-      double initialPosition,
-      double distance});
+      List<String> pageViewNavbarItems,
+      int currentPageViewIdx});
 }
 
 class __$HomeNavigationStateCopyWithImpl<$Res>
@@ -836,75 +885,90 @@ class __$HomeNavigationStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object isMenuOpen = freezed,
+    Object isDrawerOpen = freezed,
     Object isNewSeriesPageOpen = freezed,
-    Object initialPosition = freezed,
-    Object distance = freezed,
+    Object pageViewNavbarItems = freezed,
+    Object currentPageViewIdx = freezed,
   }) {
     return _then(_HomeNavigationState(
-      isMenuOpen:
-          isMenuOpen == freezed ? _value.isMenuOpen : isMenuOpen as bool,
+      isDrawerOpen:
+          isDrawerOpen == freezed ? _value.isDrawerOpen : isDrawerOpen as bool,
       isNewSeriesPageOpen: isNewSeriesPageOpen == freezed
           ? _value.isNewSeriesPageOpen
           : isNewSeriesPageOpen as bool,
-      initialPosition: initialPosition == freezed
-          ? _value.initialPosition
-          : initialPosition as double,
-      distance: distance == freezed ? _value.distance : distance as double,
+      pageViewNavbarItems: pageViewNavbarItems == freezed
+          ? _value.pageViewNavbarItems
+          : pageViewNavbarItems as List<String>,
+      currentPageViewIdx: currentPageViewIdx == freezed
+          ? _value.currentPageViewIdx
+          : currentPageViewIdx as int,
     ));
   }
 }
 
-class _$_HomeNavigationState implements _HomeNavigationState {
+class _$_HomeNavigationState
+    with DiagnosticableTreeMixin
+    implements _HomeNavigationState {
   const _$_HomeNavigationState(
-      {@required this.isMenuOpen,
+      {@required this.isDrawerOpen,
       @required this.isNewSeriesPageOpen,
-      @required this.initialPosition,
-      @required this.distance})
-      : assert(isMenuOpen != null),
+      @required this.pageViewNavbarItems,
+      @required this.currentPageViewIdx})
+      : assert(isDrawerOpen != null),
         assert(isNewSeriesPageOpen != null),
-        assert(initialPosition != null),
-        assert(distance != null);
+        assert(pageViewNavbarItems != null),
+        assert(currentPageViewIdx != null);
 
   @override
-  final bool isMenuOpen;
+  final bool isDrawerOpen;
   @override
   final bool isNewSeriesPageOpen;
   @override
-  final double initialPosition;
+  final List<String> pageViewNavbarItems;
   @override
-  final double distance;
+  final int currentPageViewIdx;
 
   @override
-  String toString() {
-    return 'HomeNavigationState(isMenuOpen: $isMenuOpen, isNewSeriesPageOpen: $isNewSeriesPageOpen, initialPosition: $initialPosition, distance: $distance)';
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'HomeNavigationState(isDrawerOpen: $isDrawerOpen, isNewSeriesPageOpen: $isNewSeriesPageOpen, pageViewNavbarItems: $pageViewNavbarItems, currentPageViewIdx: $currentPageViewIdx)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'HomeNavigationState'))
+      ..add(DiagnosticsProperty('isDrawerOpen', isDrawerOpen))
+      ..add(DiagnosticsProperty('isNewSeriesPageOpen', isNewSeriesPageOpen))
+      ..add(DiagnosticsProperty('pageViewNavbarItems', pageViewNavbarItems))
+      ..add(DiagnosticsProperty('currentPageViewIdx', currentPageViewIdx));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _HomeNavigationState &&
-            (identical(other.isMenuOpen, isMenuOpen) ||
+            (identical(other.isDrawerOpen, isDrawerOpen) ||
                 const DeepCollectionEquality()
-                    .equals(other.isMenuOpen, isMenuOpen)) &&
+                    .equals(other.isDrawerOpen, isDrawerOpen)) &&
             (identical(other.isNewSeriesPageOpen, isNewSeriesPageOpen) ||
                 const DeepCollectionEquality()
                     .equals(other.isNewSeriesPageOpen, isNewSeriesPageOpen)) &&
-            (identical(other.initialPosition, initialPosition) ||
+            (identical(other.pageViewNavbarItems, pageViewNavbarItems) ||
                 const DeepCollectionEquality()
-                    .equals(other.initialPosition, initialPosition)) &&
-            (identical(other.distance, distance) ||
+                    .equals(other.pageViewNavbarItems, pageViewNavbarItems)) &&
+            (identical(other.currentPageViewIdx, currentPageViewIdx) ||
                 const DeepCollectionEquality()
-                    .equals(other.distance, distance)));
+                    .equals(other.currentPageViewIdx, currentPageViewIdx)));
   }
 
   @override
   int get hashCode =>
       runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(isMenuOpen) ^
+      const DeepCollectionEquality().hash(isDrawerOpen) ^
       const DeepCollectionEquality().hash(isNewSeriesPageOpen) ^
-      const DeepCollectionEquality().hash(initialPosition) ^
-      const DeepCollectionEquality().hash(distance);
+      const DeepCollectionEquality().hash(pageViewNavbarItems) ^
+      const DeepCollectionEquality().hash(currentPageViewIdx);
 
   @override
   _$HomeNavigationStateCopyWith<_HomeNavigationState> get copyWith =>
@@ -914,19 +978,19 @@ class _$_HomeNavigationState implements _HomeNavigationState {
 
 abstract class _HomeNavigationState implements HomeNavigationState {
   const factory _HomeNavigationState(
-      {@required bool isMenuOpen,
+      {@required bool isDrawerOpen,
       @required bool isNewSeriesPageOpen,
-      @required double initialPosition,
-      @required double distance}) = _$_HomeNavigationState;
+      @required List<String> pageViewNavbarItems,
+      @required int currentPageViewIdx}) = _$_HomeNavigationState;
 
   @override
-  bool get isMenuOpen;
+  bool get isDrawerOpen;
   @override
   bool get isNewSeriesPageOpen;
   @override
-  double get initialPosition;
+  List<String> get pageViewNavbarItems;
   @override
-  double get distance;
+  int get currentPageViewIdx;
   @override
   _$HomeNavigationStateCopyWith<_HomeNavigationState> get copyWith;
 }

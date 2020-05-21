@@ -31,11 +31,18 @@ void createRoutes() {
       ],
     ),
     SailorRoute(
-      name: Constants.homeMenuRoute,
-      builder: (context, args, params) => HomeMenuPage(),
+      name: Constants.homeDrawerRoute,
+      builder: (context, args, params) => HomeDrawerPage(),
       defaultTransitionCurve: Curves.linearToEaseOut,
       defaultTransitions: [
         SailorTransition.slide_from_right,
+      ],
+    ),
+    SailorRoute(
+      name: Constants.homeFiltersRoute,
+      builder: (context, args, params) => HomeFiltersPage(),
+      defaultTransitions: [
+        SailorTransition.fade_in,
       ],
     ),
     // SECTION SETTINGS
@@ -73,9 +80,6 @@ void createRoutes() {
       builder: (context, args, params) => NewSeriesPage(
         args: args as NewSeriesPageArgs,
       ),
-      defaultTransitions: [
-        SailorTransition.slide_from_bottom,
-      ],
     ),
     // SECTION NEW CHAPTER
     SailorRoute(
@@ -91,16 +95,10 @@ void createRoutes() {
     SailorRoute(
       name: Constants.genresRoute,
       builder: (context, args, params) => GenresPage(),
-      defaultTransitions: [
-        SailorTransition.slide_from_right,
-      ],
     ),
     SailorRoute(
       name: Constants.copyrightsRoute,
       builder: (context, args, params) => CopyrightsPage(),
-      defaultTransitions: [
-        SailorTransition.slide_from_right,
-      ],
     ),
   ]);
 }
