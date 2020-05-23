@@ -15,7 +15,7 @@ class SignInCreateAccountButton extends StatelessWidget {
     return RichText(
       text: TextSpan(
         text: 'Not a member? ',
-        style: TextStyle(
+        style: const TextStyle(
           color: Colors.black,
           fontSize: 16.0,
         ),

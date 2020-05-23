@@ -70,6 +70,7 @@ class Methods {
       'week': 'this week',
       'month': 'this month',
       'year': 'this year',
+      'all': 'all time',
     };
   }
 
@@ -79,6 +80,7 @@ class Methods {
       'week': (DateTime.now() - 1.weeks).millisecondsSinceEpoch,
       'month': (DateTime.now() - 30.days).millisecondsSinceEpoch,
       'year': (DateTime.now() - 365.days).millisecondsSinceEpoch,
+      'all': DateTime(2020).millisecondsSinceEpoch,
     };
   }
 

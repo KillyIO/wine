@@ -4,9 +4,7 @@ import 'package:time/time.dart';
 import 'package:wine/application/database/account/account_database_bloc.dart';
 import 'package:wine/application/navigation/account/account_navigation_bloc.dart';
 import 'package:wine/presentation/pages/account/widgets/my_chapters_layout.dart';
-import 'package:wine/presentation/pages/account/widgets/my_chapter_drafts_layout.dart';
 import 'package:wine/presentation/pages/account/widgets/my_series_layout.dart';
-import 'package:wine/presentation/pages/account/widgets/my_series_drafts_layout.dart';
 import 'package:wine/presentation/widgets/wine_horizontal_navbar_button.dart';
 import 'package:wine/utils/palettes.dart';
 

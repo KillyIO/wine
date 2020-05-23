@@ -3,6 +3,7 @@ import 'package:sailor/sailor.dart';
 import 'package:wine/domain/enums/parent_type.dart';
 import 'package:wine/domain/models/hive/chapter_draft.dart';
 import 'package:wine/domain/models/hive/series_draft.dart';
+import 'package:wine/domain/models/series.dart';
 
 class NewSeriesPageArgs extends BaseArguments {
   final SeriesDraft seriesDraft;
@@ -23,5 +24,13 @@ class NewChapterPageArgs extends BaseArguments {
     this.chapterDraft,
     this.seriesDraft,
     this.previousChapterDraft,
+  });
+}
+
+class SeriesPageArgs extends BaseArguments {
+  final Series series;
+
+  SeriesPageArgs({
+    this.series,
   });
 }

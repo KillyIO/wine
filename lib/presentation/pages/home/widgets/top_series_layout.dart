@@ -5,6 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:wine/application/database/home/home_database_bloc.dart';
 import 'package:wine/domain/models/series.dart';
+import 'package:wine/presentation/pages/home/widgets/top_five_series_layout.dart';
 import 'package:wine/presentation/widgets/wine_series_card.dart';
 
 class TopSeriesLayout extends StatelessWidget {
@@ -21,7 +22,9 @@ class TopSeriesLayout extends StatelessWidget {
   }
 
   List<Widget> _generateTiles(
-      List<Series> seriesList, List<String> placeholderList) {
+    List<Series> seriesList,
+    List<String> placeholderList,
+  ) {
     final List<Widget> tiles = <Widget>[];
 
     for (final Series series in seriesList) {
@@ -42,90 +45,71 @@ class TopSeriesLayout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final Size mediaQuery = MediaQuery.of(context).size;
-
     return BlocBuilder<HomeDatabaseBloc, HomeDatabaseState>(
       builder: (context, homeDbState) {
-        if (homeDbState.topFiveSeries.isEmpty) {
-          return const Center(
-            child: Text(
-              'No top series :(',
+        if (homeDbState.topFiveSeries.isEmpty &&
+            homeDbState.topSeries.isEmpty) {
+          return Center(
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              children: <Widget>[
+                RichText(
+                  textAlign: TextAlign.center,
+                  text: TextSpan(
+                    children: <InlineSpan>[
+                      const TextSpan(text: 'No series in '),
+                      TextSpan(
+                        text: homeDbState
+                            .languagesMap[homeDbState.languageFilterKey],
+                      ),
+                      const TextSpan(text: ' were updated '),
+                      TextSpan(
+                        text: homeDbState.timesMap[homeDbState.timeFilterKey],
+                      ),
+                    ],
+                    style: const TextStyle(
+                      color: Colors.black,
+                      fontSize: 16.0,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                ),
+                const SizedBox(height: 8),
+                const Text(
+                  'Try top series \'this week\'',
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontSize: 16.0,
+                    fontWeight: FontWeight.w600,
+                  ),
+                )
+              ],
             ),
           );
         }
         return ListView(
           children: <Widget>[
+            Visibility(
+              visible: homeDbState.topFiveSeries.isNotEmpty,
+              child: TopFiveSeriesLayout(state: homeDbState),
+            ),
             const SizedBox(height: 20),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20.0),
-              child: RichText(
-                text: TextSpan(
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 17.0,
-                    fontWeight: FontWeight.w400,
-                  ),
-                  children: <InlineSpan>[
-                    const TextSpan(text: 'TOP 5 '),
-                    if (homeDbState.genreFilterKey != null &&
-                        homeDbState.genreFilterKey.isNotEmpty)
-                      TextSpan(
-                        text:
-                            '${homeDbState.genresMap[homeDbState.genreFilterKey].toUpperCase()} ',
-                      ),
-                    TextSpan(
-                      text: homeDbState.timesMap[homeDbState.timeFilterKey]
-                          .toUpperCase(),
-                    ),
-                  ],
-                ),
-              ),
-
-              //  Text(
-
-              //   'TOP 5 ${homeDbState.timesMap[homeDbState.timeFilterKey].toUpperCase()}',
-              //   style: TextStyle(
-              //     fontSize: 17.0,
-              //     fontWeight: FontWeight.w400,
-              //   ),
-              // ),
-            ),
-            const SizedBox(height: 15),
-            SizedBox(
-              height: mediaQuery.height / 3,
-              child: ScrollConfiguration(
-                behavior: const ScrollBehavior(),
-                child: ListView.builder(
-                  scrollDirection: Axis.horizontal,
-                  itemCount: homeDbState.topFiveSeries.length,
-                  itemBuilder: (BuildContext context, int index) {
-                    final Series series = homeDbState.topFiveSeries[index];
-
-                    return Row(
-                      children: <Widget>[
-                        if (index == 0) const SizedBox(width: 20),
-                        WINESeriesCard(
-                          title: series.title,
-                          username: 'username',
-                          coverUrl: series.coverUrl,
-                          placeholderIndex: _random.nextInt(
-                            homeDbState.placeholders.length,
-                          ),
-                          placeholderUrls: homeDbState.placeholders,
-                          onPressed: () {},
-                          width: mediaQuery.width / 2.5,
-                          height: mediaQuery.height / 3,
-                          titleFontSize: 16.0,
-                          usernameFontSize: 14.0,
-                        ),
-                        const SizedBox(width: 20),
-                      ],
-                    );
-                  },
+            if (homeDbState.topSeries.isNotEmpty)
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 19.0),
+                child: StaggeredGridView.count(
+                  physics: const NeverScrollableScrollPhysics(),
+                  crossAxisCount: 3,
+                  staggeredTiles:
+                      _generateStaggeredTiles(homeDbState.topSeries),
+                  crossAxisSpacing: 20.0,
                   shrinkWrap: true,
+                  children: _generateTiles(
+                    homeDbState.topSeries,
+                    homeDbState.placeholders,
+                  ),
                 ),
               ),
-            ),
           ],
         );
       },

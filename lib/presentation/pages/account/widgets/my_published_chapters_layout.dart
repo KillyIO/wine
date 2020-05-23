@@ -27,7 +27,7 @@ class MyPublishedChaptersLayout extends StatelessWidget {
               final Chapter chapter = acDbState.chapters[index];
 
               return GestureDetector(
-                onTap: () => print('display chapter'),
+                onTap: () {},
                 child: SizedBox(
                   height: 95.0,
                   child: Column(

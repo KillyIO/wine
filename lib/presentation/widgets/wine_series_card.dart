@@ -38,12 +38,12 @@ class WINESeriesCard extends StatelessWidget {
           Container(
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10.0),
-              boxShadow: [
-                const BoxShadow(
+              boxShadow: const <BoxShadow>[
+                BoxShadow(
                   color: Color(0xFFF1F1F1),
                   spreadRadius: 1,
                   blurRadius: 5,
-                  offset: const Offset(0, 3),
+                  offset: Offset(0, 3),
                 ),
               ],
             ),
