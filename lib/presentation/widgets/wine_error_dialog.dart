@@ -31,7 +31,7 @@ class WINEErrorDialog extends StatelessWidget {
                 size: 60.0,
               ),
             ),
-            Text(
+            const Text(
               'OH NO!',
               textAlign: TextAlign.center,
               style: TextStyle(

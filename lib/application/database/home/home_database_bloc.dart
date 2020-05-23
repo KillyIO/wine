@@ -79,9 +79,6 @@ class HomeDatabaseBloc extends Bloc<HomeDatabaseEvent, HomeDatabaseState> {
         if (topSeries.length >= 5) {
           topFiveSeries.addAll(topSeries.sublist(0, 5));
           topSeries.removeRange(0, 5);
-        } else {
-          topFiveSeries.addAll(topSeries.sublist(0, topSeries.length));
-          topSeries.removeRange(0, topFiveSeries.length);
         }
 
         yield state.copyWith(
@@ -100,11 +97,13 @@ class HomeDatabaseBloc extends Bloc<HomeDatabaseEvent, HomeDatabaseState> {
       fetchMoreTopSeries: (event) async* {},
       fetchMoreNewSeries: (event) async* {},
       timeFilterKeyChanged: (event) async* {
-        yield state.copyWith(
-          timeFilterKey: event.key,
-          areFiltersApplied: false,
-          databaseFailureOrSuccessOption: none(),
-        );
+        if (state.timeFilterKey != event.key) {
+          yield state.copyWith(
+            timeFilterKey: event.key,
+            areFiltersApplied: false,
+            databaseFailureOrSuccessOption: none(),
+          );
+        }
       },
       genreFilterKeyChanged: (event) async* {
         yield state.copyWith(
@@ -114,11 +113,13 @@ class HomeDatabaseBloc extends Bloc<HomeDatabaseEvent, HomeDatabaseState> {
         );
       },
       languageFilterKeyChanged: (event) async* {
-        yield state.copyWith(
-          languageFilterKey: event.key,
-          areFiltersApplied: false,
-          databaseFailureOrSuccessOption: none(),
-        );
+        if (state.languageFilterKey != event.key) {
+          yield state.copyWith(
+            languageFilterKey: event.key,
+            areFiltersApplied: false,
+            databaseFailureOrSuccessOption: none(),
+          );
+        }
       },
       applyFilterChanges: (event) async* {
         Either<DatabaseFailure, dynamic> failureOrSuccess;
@@ -167,9 +168,6 @@ class HomeDatabaseBloc extends Bloc<HomeDatabaseEvent, HomeDatabaseState> {
         if (topSeries.length >= 5) {
           topFiveSeries.addAll(topSeries.sublist(0, 5));
           topSeries.removeRange(0, 5);
-        } else {
-          topFiveSeries.addAll(topSeries.sublist(0, topSeries.length));
-          topSeries.removeRange(0, topFiveSeries.length);
         }
 
         yield state.copyWith(

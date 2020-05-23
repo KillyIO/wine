@@ -110,7 +110,9 @@ class _WINESwitchState extends State<WINESwitch>
                         width: 25.0,
                         height: 25.0,
                         decoration: BoxDecoration(
-                            shape: BoxShape.circle, color: Colors.white),
+                          shape: BoxShape.circle,
+                          color: Colors.white,
+                        ),
                       ),
                     ),
                     if (_circleAnimation.value == Alignment.centerLeft)

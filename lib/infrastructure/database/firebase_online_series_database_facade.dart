@@ -149,8 +149,29 @@ class FirebaseOnlineSeriesDatabaseFacade
     }
 
     final List<Series> seriesList = <Series>[];
-    for (final DocumentSnapshot doc in querySnapshot.documents) {
-      seriesList.add(Series.fromFirestore(doc));
+    if (querySnapshot.documents.isNotEmpty) {
+      final List<String> userUid = <String>[];
+      for (final DocumentSnapshot doc in querySnapshot.documents) {
+        seriesList.add(Series.fromFirestore(doc));
+        userUid.add(doc.data['authorUid'] as String);
+      }
+
+      Map<String, User> usersMap = <String, User>{};
+
+      if (userUid.isNotEmpty) {
+        final Either<DatabaseFailure, Map<String, User>> failureOrSuccess =
+            await _onlineUserDatabaseFacade.getUsersAsMapByUidList(userUid);
+        failureOrSuccess.fold(
+          (failure) => left(failure),
+          (success) {
+            usersMap = success;
+          },
+        );
+
+        for (final Series series in seriesList) {
+          series.author = usersMap[series.authorUid];
+        }
+      }
     }
     return right(seriesList);
   }
@@ -193,8 +214,29 @@ class FirebaseOnlineSeriesDatabaseFacade
     }
 
     final List<Series> seriesList = <Series>[];
-    for (final DocumentSnapshot doc in querySnapshot.documents) {
-      seriesList.add(Series.fromFirestore(doc));
+    if (querySnapshot.documents.isNotEmpty) {
+      final List<String> userUid = <String>[];
+      for (final DocumentSnapshot doc in querySnapshot.documents) {
+        seriesList.add(Series.fromFirestore(doc));
+        userUid.add(doc.data['authorUid'] as String);
+      }
+
+      Map<String, User> usersMap = <String, User>{};
+
+      if (userUid.isNotEmpty) {
+        final Either<DatabaseFailure, Map<String, User>> failureOrSuccess =
+            await _onlineUserDatabaseFacade.getUsersAsMapByUidList(userUid);
+        failureOrSuccess.fold(
+          (failure) => left(failure),
+          (success) {
+            usersMap = success;
+          },
+        );
+
+        for (final Series series in seriesList) {
+          series.author = usersMap[series.authorUid];
+        }
+      }
     }
     return right(seriesList);
   }

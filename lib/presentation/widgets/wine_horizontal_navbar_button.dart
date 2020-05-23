@@ -20,6 +20,7 @@ class WINEHorizontalNavbarButton extends StatelessWidget {
         title,
         style: TextStyle(
           color: color,
+          fontWeight: FontWeight.w500,
         ),
       ),
     );

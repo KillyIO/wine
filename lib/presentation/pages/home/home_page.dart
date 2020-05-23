@@ -3,7 +3,6 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:wine/application/database/home/home_database_bloc.dart';
 import 'package:wine/application/navigation/home/home_navigation_bloc.dart';
-import 'package:wine/injection.dart';
 import 'package:wine/presentation/pages/home/widgets/home_layout.dart';
 import 'package:wine/utils/themes.dart';
 
