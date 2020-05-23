@@ -30,12 +30,12 @@ class SeriesDraftCard extends StatelessWidget {
           Container(
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(10.0),
-              boxShadow: [
+              boxShadow: const <BoxShadow>[
                 BoxShadow(
-                  color: Colors.black12,
+                  color: Color(0xFFF1F1F1),
                   spreadRadius: 1,
-                  blurRadius: 7,
-                  offset: const Offset(0, 3),
+                  blurRadius: 5,
+                  offset: Offset(0, 3),
                 ),
               ],
             ),
