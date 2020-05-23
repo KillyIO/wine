@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:math';
 
 import 'package:bloc/bloc.dart';
 import 'package:dartz/dartz.dart';
@@ -34,6 +35,8 @@ class HomeDatabaseBloc extends Bloc<HomeDatabaseEvent, HomeDatabaseState> {
   ) async* {
     yield* event.map(
       homePageLaunched: (event) async* {
+        final Random _random = Random();
+
         Either<DatabaseFailure, dynamic> failureOrSuccess;
         final Map<String, dynamic> filters = state.filters;
 
@@ -81,6 +84,8 @@ class HomeDatabaseBloc extends Bloc<HomeDatabaseEvent, HomeDatabaseState> {
           topSeries.removeRange(0, 5);
         }
 
+        final List<String> placeholdersUrls = Methods.getPlaceholderUrls();
+
         yield state.copyWith(
           topFiveSeries: topFiveSeries,
           topSeries: topSeries,
@@ -90,7 +95,12 @@ class HomeDatabaseBloc extends Bloc<HomeDatabaseEvent, HomeDatabaseState> {
           timesMap: Methods.getTimeFilters(event.context),
           genresMap: Methods.getGenres(event.context),
           languagesMap: Methods.getLanguages(event.context),
-          placeholders: Methods.getPlaceholderUrls(),
+          placeholders: placeholdersUrls,
+          placeholderIndexes: <int>[
+            _random.nextInt(placeholdersUrls.length),
+            _random.nextInt(placeholdersUrls.length),
+            _random.nextInt(placeholdersUrls.length),
+          ],
           databaseFailureOrSuccessOption: optionOf(failureOrSuccess),
         );
       },

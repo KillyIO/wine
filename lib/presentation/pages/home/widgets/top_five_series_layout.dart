@@ -9,12 +9,10 @@ import 'package:wine/presentation/widgets/wine_series_card.dart';
 class TopFiveSeriesLayout extends StatelessWidget {
   final HomeDatabaseState state;
 
-  TopFiveSeriesLayout({
+  const TopFiveSeriesLayout({
     Key key,
     this.state,
   }) : super(key: key);
-
-  final Random _random = Random();
 
   @override
   Widget build(BuildContext context) {
@@ -67,9 +65,8 @@ class TopFiveSeriesLayout extends StatelessWidget {
                       title: series.title,
                       username: series.author.username,
                       coverUrl: series.coverUrl,
-                      placeholderIndex: _random.nextInt(
-                        state.placeholders.length,
-                      ),
+                      placeholderIndex: state.placeholderIndexes[
+                          index % state.placeholderIndexes.length],
                       placeholderUrls: state.placeholders,
                       onPressed: () {},
                       width: mediaQuery.width / 2.5,

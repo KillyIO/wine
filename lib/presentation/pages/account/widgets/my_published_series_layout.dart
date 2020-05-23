@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
@@ -8,8 +6,6 @@ import 'package:wine/domain/models/series.dart';
 import 'package:wine/presentation/widgets/wine_series_card.dart';
 
 class MyPublishedSeriesLayout extends StatelessWidget {
-  final Random _random = Random();
-
   List<StaggeredTile> _generateStaggeredTiles(List<Series> seriesList) {
     final List<StaggeredTile> staggeredTiles = <StaggeredTile>[];
 
@@ -24,16 +20,17 @@ class MyPublishedSeriesLayout extends StatelessWidget {
     List<Series> seriesList,
     String username,
     List<String> placeholderList,
+    List<int> placeholderIndexes,
   ) {
     final List<Widget> tiles = <Widget>[];
 
-    for (final Series series in seriesList) {
+    for (int i = 0; i < seriesList.length; i++) {
       tiles.add(
         WINESeriesCard(
-          title: series.title,
+          title: seriesList[i].title,
           username: username,
-          coverUrl: series.coverUrl,
-          placeholderIndex: _random.nextInt(placeholderList.length),
+          coverUrl: seriesList[i].coverUrl,
+          placeholderIndex: placeholderIndexes[i % placeholderIndexes.length],
           placeholderUrls: placeholderList,
           onPressed: () {},
         ),
@@ -66,6 +63,7 @@ class MyPublishedSeriesLayout extends StatelessWidget {
                 acDbState.series,
                 acDbState.session.username,
                 acDbState.placeholders,
+                acDbState.placeholderIndexes,
               ),
             ),
           ),

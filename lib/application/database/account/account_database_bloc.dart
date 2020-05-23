@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:math';
 
 import 'package:bloc/bloc.dart';
 import 'package:dartz/dartz.dart';
@@ -43,6 +44,8 @@ class AccountDatabaseBloc
   ) async* {
     yield* event.map(
       accountPageLaunched: (event) async* {
+        final Random _random = Random();
+
         Either<DatabaseFailure, dynamic> failureOrSuccess;
         Session session = Session();
 
@@ -91,6 +94,8 @@ class AccountDatabaseBloc
           }
         }
 
+        final List<String> placeholdersUrls = Methods.getPlaceholderUrls();
+
         yield state.copyWith(
           session: session,
           series: series,
@@ -98,7 +103,11 @@ class AccountDatabaseBloc
           genres: Methods.getGenres(event.context),
           languages: Methods.getLanguages(event.context),
           copyrights: Methods.getCopyrights(event.context),
-          placeholders: Methods.getPlaceholderUrls(),
+          placeholders: placeholdersUrls,
+          placeholderIndexes: <int>[
+            _random.nextInt(placeholdersUrls.length),
+            _random.nextInt(placeholdersUrls.length),
+          ],
           isFetching: false,
           databaseFailureOrSuccessOption: optionOf(failureOrSuccess),
         );

@@ -5,6 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:wine/application/database/home/home_database_bloc.dart';
 import 'package:wine/domain/models/series.dart';
+import 'package:wine/presentation/pages/home/widgets/no_series_found_layout.dart';
 import 'package:wine/presentation/pages/home/widgets/top_five_series_layout.dart';
 import 'package:wine/presentation/widgets/wine_series_card.dart';
 
@@ -24,16 +25,17 @@ class TopSeriesLayout extends StatelessWidget {
   List<Widget> _generateTiles(
     List<Series> seriesList,
     List<String> placeholderList,
+    List<int> placeholderIndexes,
   ) {
     final List<Widget> tiles = <Widget>[];
 
-    for (final Series series in seriesList) {
+    for (int i = 0; i < seriesList.length; i++) {
       tiles.add(
         WINESeriesCard(
-          title: series.title,
-          username: series.author.username,
-          coverUrl: series.coverUrl,
-          placeholderIndex: _random.nextInt(placeholderList.length),
+          title: seriesList[i].title,
+          username: seriesList[i].author.username,
+          coverUrl: seriesList[i].coverUrl,
+          placeholderIndex: placeholderIndexes[i % placeholderIndexes.length],
           placeholderUrls: placeholderList,
           onPressed: () {},
         ),
@@ -49,42 +51,9 @@ class TopSeriesLayout extends StatelessWidget {
       builder: (context, homeDbState) {
         if (homeDbState.topFiveSeries.isEmpty &&
             homeDbState.topSeries.isEmpty) {
-          return Center(
-            child: Column(
-              mainAxisSize: MainAxisSize.min,
-              children: <Widget>[
-                RichText(
-                  textAlign: TextAlign.center,
-                  text: TextSpan(
-                    children: <InlineSpan>[
-                      const TextSpan(text: 'No series in '),
-                      TextSpan(
-                        text: homeDbState
-                            .languagesMap[homeDbState.languageFilterKey],
-                      ),
-                      const TextSpan(text: ' were updated '),
-                      TextSpan(
-                        text: homeDbState.timesMap[homeDbState.timeFilterKey],
-                      ),
-                    ],
-                    style: const TextStyle(
-                      color: Colors.black,
-                      fontSize: 16.0,
-                      fontWeight: FontWeight.w600,
-                    ),
-                  ),
-                ),
-                const SizedBox(height: 8),
-                const Text(
-                  'Try top series \'this week\'',
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontSize: 16.0,
-                    fontWeight: FontWeight.w600,
-                  ),
-                )
-              ],
-            ),
+          return NoSeriesFoundLayout(
+            language: homeDbState.languagesMap[homeDbState.languageFilterKey],
+            time: homeDbState.timesMap[homeDbState.timeFilterKey],
           );
         }
         return ListView(
@@ -107,9 +76,11 @@ class TopSeriesLayout extends StatelessWidget {
                   children: _generateTiles(
                     homeDbState.topSeries,
                     homeDbState.placeholders,
+                    homeDbState.placeholderIndexes,
                   ),
                 ),
               ),
+            const SizedBox(height: 20),
           ],
         );
       },

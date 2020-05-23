@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
@@ -11,8 +9,6 @@ import 'package:wine/injection.dart';
 import 'package:wine/presentation/pages/account/widgets/series_draft_card.dart';
 
 class MySeriesDraftsLayout extends StatelessWidget {
-  final Random _random = Random();
-
   List<StaggeredTile> _generateStaggeredTiles(List<SeriesDraft> seriesList) {
     final List<StaggeredTile> staggeredTiles = <StaggeredTile>[];
 
@@ -26,15 +22,16 @@ class MySeriesDraftsLayout extends StatelessWidget {
   List<Widget> _generateTiles(
     List<SeriesDraft> seriesList,
     List<String> placeholderList,
+    List<int> placeholderIndexes,
   ) {
     final List<Widget> tiles = <Widget>[];
 
-    for (final SeriesDraft seriesDraft in seriesList) {
+    for (int i = 0; i < seriesList.length; i++) {
       tiles.add(
         SeriesDraftCard(
-          title: seriesDraft.title,
-          coverPath: seriesDraft.coverPath,
-          placeholderIndex: _random.nextInt(placeholderList.length),
+          title: seriesList[i].title,
+          coverPath: seriesList[i].coverPath,
+          placeholderIndex: placeholderIndexes[i % placeholderIndexes.length],
           placeholderUrls: placeholderList,
           onPressed: () {},
         ),
@@ -65,6 +62,7 @@ class MySeriesDraftsLayout extends StatelessWidget {
                   children: _generateTiles(
                     box.values.toList(),
                     acDbState.placeholders,
+                    acDbState.placeholderIndexes,
                   ),
                 ),
               ),

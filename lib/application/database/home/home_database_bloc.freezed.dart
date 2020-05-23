@@ -1141,6 +1141,8 @@ class _$HomeDatabaseStateTearOff {
       @required
           List<String> placeholders,
       @required
+          List<int> placeholderIndexes,
+      @required
           bool isFetching,
       @required
           Option<Either<DatabaseFailure, dynamic>>
@@ -1158,6 +1160,7 @@ class _$HomeDatabaseStateTearOff {
       genresMap: genresMap,
       languagesMap: languagesMap,
       placeholders: placeholders,
+      placeholderIndexes: placeholderIndexes,
       isFetching: isFetching,
       databaseFailureOrSuccessOption: databaseFailureOrSuccessOption,
     );
@@ -1180,6 +1183,7 @@ mixin _$HomeDatabaseState {
   Map<String, String> get genresMap;
   Map<String, String> get languagesMap;
   List<String> get placeholders;
+  List<int> get placeholderIndexes;
   bool get isFetching;
   Option<Either<DatabaseFailure, dynamic>> get databaseFailureOrSuccessOption;
 
@@ -1203,6 +1207,7 @@ abstract class $HomeDatabaseStateCopyWith<$Res> {
       Map<String, String> genresMap,
       Map<String, String> languagesMap,
       List<String> placeholders,
+      List<int> placeholderIndexes,
       bool isFetching,
       Option<Either<DatabaseFailure, dynamic>> databaseFailureOrSuccessOption});
 }
@@ -1229,6 +1234,7 @@ class _$HomeDatabaseStateCopyWithImpl<$Res>
     Object genresMap = freezed,
     Object languagesMap = freezed,
     Object placeholders = freezed,
+    Object placeholderIndexes = freezed,
     Object isFetching = freezed,
     Object databaseFailureOrSuccessOption = freezed,
   }) {
@@ -1266,6 +1272,9 @@ class _$HomeDatabaseStateCopyWithImpl<$Res>
       placeholders: placeholders == freezed
           ? _value.placeholders
           : placeholders as List<String>,
+      placeholderIndexes: placeholderIndexes == freezed
+          ? _value.placeholderIndexes
+          : placeholderIndexes as List<int>,
       isFetching:
           isFetching == freezed ? _value.isFetching : isFetching as bool,
       databaseFailureOrSuccessOption: databaseFailureOrSuccessOption == freezed
@@ -1295,6 +1304,7 @@ abstract class _$HomeDatabaseStateCopyWith<$Res>
       Map<String, String> genresMap,
       Map<String, String> languagesMap,
       List<String> placeholders,
+      List<int> placeholderIndexes,
       bool isFetching,
       Option<Either<DatabaseFailure, dynamic>> databaseFailureOrSuccessOption});
 }
@@ -1323,6 +1333,7 @@ class __$HomeDatabaseStateCopyWithImpl<$Res>
     Object genresMap = freezed,
     Object languagesMap = freezed,
     Object placeholders = freezed,
+    Object placeholderIndexes = freezed,
     Object isFetching = freezed,
     Object databaseFailureOrSuccessOption = freezed,
   }) {
@@ -1360,6 +1371,9 @@ class __$HomeDatabaseStateCopyWithImpl<$Res>
       placeholders: placeholders == freezed
           ? _value.placeholders
           : placeholders as List<String>,
+      placeholderIndexes: placeholderIndexes == freezed
+          ? _value.placeholderIndexes
+          : placeholderIndexes as List<int>,
       isFetching:
           isFetching == freezed ? _value.isFetching : isFetching as bool,
       databaseFailureOrSuccessOption: databaseFailureOrSuccessOption == freezed
@@ -1386,6 +1400,7 @@ class _$_HomeDatabaseState
       @required this.genresMap,
       @required this.languagesMap,
       @required this.placeholders,
+      @required this.placeholderIndexes,
       @required this.isFetching,
       @required this.databaseFailureOrSuccessOption})
       : assert(topFiveSeries != null),
@@ -1400,6 +1415,7 @@ class _$_HomeDatabaseState
         assert(genresMap != null),
         assert(languagesMap != null),
         assert(placeholders != null),
+        assert(placeholderIndexes != null),
         assert(isFetching != null),
         assert(databaseFailureOrSuccessOption != null);
 
@@ -1428,13 +1444,15 @@ class _$_HomeDatabaseState
   @override
   final List<String> placeholders;
   @override
+  final List<int> placeholderIndexes;
+  @override
   final bool isFetching;
   @override
   final Option<Either<DatabaseFailure, dynamic>> databaseFailureOrSuccessOption;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'HomeDatabaseState(topFiveSeries: $topFiveSeries, topSeries: $topSeries, newSeries: $newSeries, filters: $filters, timeFilterKey: $timeFilterKey, genreFilterKey: $genreFilterKey, languageFilterKey: $languageFilterKey, areFiltersApplied: $areFiltersApplied, timesMap: $timesMap, genresMap: $genresMap, languagesMap: $languagesMap, placeholders: $placeholders, isFetching: $isFetching, databaseFailureOrSuccessOption: $databaseFailureOrSuccessOption)';
+    return 'HomeDatabaseState(topFiveSeries: $topFiveSeries, topSeries: $topSeries, newSeries: $newSeries, filters: $filters, timeFilterKey: $timeFilterKey, genreFilterKey: $genreFilterKey, languageFilterKey: $languageFilterKey, areFiltersApplied: $areFiltersApplied, timesMap: $timesMap, genresMap: $genresMap, languagesMap: $languagesMap, placeholders: $placeholders, placeholderIndexes: $placeholderIndexes, isFetching: $isFetching, databaseFailureOrSuccessOption: $databaseFailureOrSuccessOption)';
   }
 
   @override
@@ -1454,6 +1472,7 @@ class _$_HomeDatabaseState
       ..add(DiagnosticsProperty('genresMap', genresMap))
       ..add(DiagnosticsProperty('languagesMap', languagesMap))
       ..add(DiagnosticsProperty('placeholders', placeholders))
+      ..add(DiagnosticsProperty('placeholderIndexes', placeholderIndexes))
       ..add(DiagnosticsProperty('isFetching', isFetching))
       ..add(DiagnosticsProperty(
           'databaseFailureOrSuccessOption', databaseFailureOrSuccessOption));
@@ -1499,6 +1518,9 @@ class _$_HomeDatabaseState
             (identical(other.placeholders, placeholders) ||
                 const DeepCollectionEquality()
                     .equals(other.placeholders, placeholders)) &&
+            (identical(other.placeholderIndexes, placeholderIndexes) ||
+                const DeepCollectionEquality()
+                    .equals(other.placeholderIndexes, placeholderIndexes)) &&
             (identical(other.isFetching, isFetching) ||
                 const DeepCollectionEquality()
                     .equals(other.isFetching, isFetching)) &&
@@ -1524,6 +1546,7 @@ class _$_HomeDatabaseState
       const DeepCollectionEquality().hash(genresMap) ^
       const DeepCollectionEquality().hash(languagesMap) ^
       const DeepCollectionEquality().hash(placeholders) ^
+      const DeepCollectionEquality().hash(placeholderIndexes) ^
       const DeepCollectionEquality().hash(isFetching) ^
       const DeepCollectionEquality().hash(databaseFailureOrSuccessOption);
 
@@ -1559,6 +1582,8 @@ abstract class _HomeDatabaseState implements HomeDatabaseState {
       @required
           List<String> placeholders,
       @required
+          List<int> placeholderIndexes,
+      @required
           bool isFetching,
       @required
           Option<Either<DatabaseFailure, dynamic>>
@@ -1588,6 +1613,8 @@ abstract class _HomeDatabaseState implements HomeDatabaseState {
   Map<String, String> get languagesMap;
   @override
   List<String> get placeholders;
+  @override
+  List<int> get placeholderIndexes;
   @override
   bool get isFetching;
   @override

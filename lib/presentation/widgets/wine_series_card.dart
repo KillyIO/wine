@@ -58,6 +58,9 @@ class WINESeriesCard extends StatelessWidget {
                     Center(
                   child: CircularProgressIndicator(
                     value: downloadProgress.progress,
+                    valueColor: AlwaysStoppedAnimation<Color>(
+                      Colors.black,
+                    ),
                   ),
                 ),
               ),
