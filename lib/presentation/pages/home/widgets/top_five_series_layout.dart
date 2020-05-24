@@ -62,6 +62,7 @@ class TopFiveSeriesLayout extends StatelessWidget {
                   children: <Widget>[
                     if (index == 0) const SizedBox(width: 20),
                     WINESeriesCard(
+                      uid: series.uid,
                       title: series.title,
                       username: series.author.username,
                       coverUrl: series.coverUrl,

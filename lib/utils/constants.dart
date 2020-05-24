@@ -22,8 +22,10 @@ class Constants {
   static const String createAccountRoute = '/account/create-account';
   static const String verifyEmailRoute = '/account/verify-email';
 
+  static const String seriesRoute = '/series';
   static const String newSeriesRoute = '/series/new';
 
+  static const String chapterRoute = '/chapter';
   static const String newChapterRoute = '/chapter/new';
 
   static const String genresRoute = '/genres';

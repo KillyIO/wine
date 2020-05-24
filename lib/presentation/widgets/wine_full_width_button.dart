@@ -1,12 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:wine/utils/palettes.dart';
 
-class CreateAccountButton extends StatelessWidget {
+class WINEFullWidthButton extends StatelessWidget {
+  final String title;
+  final Color color;
   final VoidCallback onPressed;
+  final double fontSize;
 
-  const CreateAccountButton({
+  const WINEFullWidthButton({
     Key key,
+    this.title,
+    this.color = Palettes.pastelPink,
     this.onPressed,
+    this.fontSize = 20.0,
   }) : super(key: key);
 
   @override
@@ -15,13 +21,13 @@ class CreateAccountButton extends StatelessWidget {
       height: 60.0,
       width: double.infinity,
       child: FlatButton(
-        color: Palettes.pastelPink,
+        color: color,
         onPressed: onPressed,
         child: Text(
-          'CREATE AN ACCOUNT',
+          title,
           style: TextStyle(
             color: Colors.white,
-            fontSize: 20.0,
+            fontSize: fontSize,
             fontWeight: FontWeight.w500,
           ),
         ),

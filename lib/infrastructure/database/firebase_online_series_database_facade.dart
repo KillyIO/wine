@@ -22,22 +22,21 @@ class FirebaseOnlineSeriesDatabaseFacade
   );
 
   @override
-  Future<Either<DatabaseFailure, Series>> createSeries(Series series) async {
+  Future<Either<DatabaseFailure, Series>> publishSeries(Series series) async {
     final DocumentReference ref =
         _firestore.collection(Paths.seriesPath).document(series.uid);
 
     series
-      ..likesCount = 1
       ..createdAt = DateTime.now().millisecondsSinceEpoch
       ..updatedAt = DateTime.now().millisecondsSinceEpoch;
 
     await ref.setData(series.toMap(), merge: true);
 
-    return getSeriesById(series.uid);
+    return getSeriesByUid(series.uid);
   }
 
   @override
-  Future<Either<DatabaseFailure, Series>> getSeriesById(
+  Future<Either<DatabaseFailure, Series>> getSeriesByUid(
       String seriesUid) async {
     final DocumentReference ref =
         _firestore.collection(Paths.seriesPath).document(seriesUid);
@@ -81,31 +80,6 @@ class FirebaseOnlineSeriesDatabaseFacade
     for (final DocumentSnapshot doc in querySnapshot.documents) {
       seriesList.add(Series.fromFirestore(doc));
     }
-
-    // if (querySnapshot.documents.isNotEmpty) {
-    //   final List<String> userUid = <String>[];
-    //   for (final DocumentSnapshot doc in querySnapshot.documents) {
-    //     seriesList.add(Series.fromFirestore(doc));
-    //     userUid.add(doc.data['authorUid'] as String);
-    //   }
-
-    //   Map<String, User> usersMap = <String, User>{};
-
-    //   if (userUid.isNotEmpty) {
-    //     final Either<DatabaseFailure, Map<String, User>> failureOrSuccess =
-    //         await _onlineUserDatabaseFacade.getUsersAsMapByUidList(userUid);
-    //     failureOrSuccess.fold(
-    //       (failure) => left(failure),
-    //       (success) {
-    //         usersMap = success;
-    //       },
-    //     );
-
-    //     for (final Series series in seriesList) {
-    //       series.author = usersMap[series.authorUid];
-    //     }
-    //   }
-    // }
     return right(seriesList);
   }
 
@@ -264,5 +238,99 @@ class FirebaseOnlineSeriesDatabaseFacade
     };
 
     return right(seriesMap);
+  }
+
+  @override
+  Future<Either<DatabaseFailure, int>> getSeriesLikesCount(
+    String seriesUid,
+  ) async {
+    final DocumentSnapshot documentSnapshot = await _firestore
+        .collection(Paths.seriesLikesPath)
+        .document(seriesUid)
+        .get();
+
+    final Map<String, dynamic> data = documentSnapshot.data;
+    final List<String> likes =
+        data.keys.where((key) => data[key] == true).toList();
+    return right(likes.length);
+  }
+
+  @override
+  Future<Either<DatabaseFailure, bool>> getUserLikeStatus({
+    String userUid,
+    String seriesUid,
+  }) async {
+    final DocumentSnapshot documentSnapshot = await _firestore
+        .collection(Paths.seriesLikesPath)
+        .document(seriesUid)
+        .get();
+
+    final Map<String, dynamic> data = documentSnapshot.data;
+    final bool isLiked = data[userUid] as bool;
+
+    if (isLiked != null) {
+      return right(isLiked);
+    }
+    return right(false);
+  }
+
+  @override
+  Future<Either<DatabaseFailure, Unit>> updateSeriesLikesAndLikesCount({
+    String userUid,
+    String seriesUid,
+  }) async {
+    final DocumentReference seriesReference =
+        _firestore.collection(Paths.seriesPath).document(seriesUid);
+    final DocumentReference seriesLikesReference =
+        _firestore.collection(Paths.seriesLikesPath).document(seriesUid);
+
+    final DocumentSnapshot documentSnapshot = await seriesLikesReference.get();
+
+    final Map<String, dynamic> data = documentSnapshot?.data;
+    final bool isLiked = data[userUid] as bool ?? false;
+
+    Future.wait([
+      seriesReference.setData({
+        'likesCount': FieldValue.increment(!isLiked ? 1 : -1),
+        'updatedAt': DateTime.now().millisecondsSinceEpoch,
+      }, merge: true),
+      seriesLikesReference.setData({
+        userUid: !isLiked,
+      }, merge: true),
+    ]);
+    return right(unit);
+  }
+
+  @override
+  Future<Either<DatabaseFailure, int>> getSeriesViewsCount(
+    String seriesUid,
+  ) async {
+    final DocumentSnapshot documentSnapshot = await _firestore
+        .collection(Paths.seriesViewsPath)
+        .document(seriesUid)
+        .get();
+
+    final Map<String, dynamic> data = documentSnapshot.data;
+    final List<String> views =
+        data.keys.where((key) => data[key] == true).toList();
+    return right(views.length);
+  }
+
+  @override
+  Future<Either<DatabaseFailure, Unit>> updateSeriesViewsAndViewsCount({
+    String userUid,
+    String seriesUid,
+  }) async {
+    final DocumentReference seriesViewsReference =
+        _firestore.collection(Paths.seriesViewsPath).document(seriesUid);
+
+    final DocumentSnapshot documentSnapshot = await seriesViewsReference.get();
+
+    if (documentSnapshot == null) {
+      await seriesViewsReference.setData({
+        userUid: true,
+      }, merge: true);
+    }
+    return right(unit);
   }
 }

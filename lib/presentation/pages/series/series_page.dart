@@ -18,11 +18,9 @@ class SeriesPage extends StatelessWidget {
       value: Themes.wineLightTheme(),
       child: MultiBlocProvider(
         providers: [
-          BlocProvider(
-            create: (context) => getIt<SeriesDatabaseBloc>(),
-          )
+          BlocProvider(create: (context) => getIt<SeriesDatabaseBloc>())
         ],
-        child: SeriesLayout(args: args),
+        child: SeriesLayout(),
       ),
     );
   }

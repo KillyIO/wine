@@ -215,7 +215,7 @@ class NewChapterDatabaseBloc
             bool seriesCreated = false;
 
             failureOrSuccess =
-                await _onlineSeriesDatabaseFacade.createSeries(series);
+                await _onlineSeriesDatabaseFacade.publishSeries(series);
             failureOrSuccess.fold(
               (_) {},
               (_) {
