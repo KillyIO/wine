@@ -7,6 +7,7 @@ import 'package:wine/presentation/pages/genres/genres_page.dart';
 import 'package:wine/presentation/pages/home/index.dart';
 import 'package:wine/presentation/pages/new_chapter/new_chapter_page.dart';
 import 'package:wine/presentation/pages/new_series/new_series_page.dart';
+import 'package:wine/presentation/pages/series/series_page.dart';
 import 'package:wine/presentation/pages/settings/settings_page.dart';
 import 'package:wine/presentation/pages/sign_in/sign_in_page.dart';
 import 'package:wine/presentation/pages/splash/splash_page.dart';
@@ -74,7 +75,16 @@ void createRoutes() {
       name: Constants.accountRoute,
       builder: (context, args, params) => AccountPage(),
     ),
-    // SECTION NEW SERIES
+    // SECTION SERIES
+    SailorRoute(
+      name: Constants.seriesRoute,
+      builder: (context, args, params) => SeriesPage(
+        args: args as SeriesPageArgs,
+      ),
+      defaultTransitions: [
+        SailorTransition.fade_in,
+      ],
+    ),
     SailorRoute(
       name: Constants.newSeriesRoute,
       builder: (context, args, params) => NewSeriesPage(

@@ -51,20 +51,25 @@ class MySeriesDraftsLayout extends StatelessWidget {
             if (box.isEmpty) {
               return const Text('No series drafts :(');
             }
-            return Padding(
-              padding: const EdgeInsets.symmetric(vertical: 20.0),
-              child: ScrollConfiguration(
-                behavior: const ScrollBehavior(),
-                child: StaggeredGridView.count(
-                  crossAxisCount: 2,
-                  staggeredTiles: _generateStaggeredTiles(box.values.toList()),
-                  crossAxisSpacing: 20.0,
-                  children: _generateTiles(
-                    box.values.toList(),
-                    acDbState.placeholders,
-                    acDbState.placeholderIndexes,
+            return ScrollConfiguration(
+              behavior: const ScrollBehavior(),
+              child: ListView(
+                children: <Widget>[
+                  const SizedBox(height: 20),
+                  StaggeredGridView.count(
+                    physics: const NeverScrollableScrollPhysics(),
+                    crossAxisCount: 2,
+                    staggeredTiles:
+                        _generateStaggeredTiles(box.values.toList()),
+                    crossAxisSpacing: 20.0,
+                    shrinkWrap: true,
+                    children: _generateTiles(
+                      box.values.toList(),
+                      acDbState.placeholders,
+                      acDbState.placeholderIndexes,
+                    ),
                   ),
-                ),
+                ],
               ),
             );
           },

@@ -54,6 +54,7 @@ class Methods {
     return <String>[
       'PUBLISHED',
       'DRAFTS',
+      'BOOKMARKS'
     ];
   }
 

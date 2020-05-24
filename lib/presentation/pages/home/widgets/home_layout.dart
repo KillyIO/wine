@@ -1,3 +1,4 @@
+import 'package:after_layout/after_layout.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:swipe_gesture_recognizer/swipe_gesture_recognizer.dart';
@@ -18,8 +19,18 @@ class HomeLayout extends StatefulWidget {
   _HomeLayoutState createState() => _HomeLayoutState();
 }
 
-class _HomeLayoutState extends State<HomeLayout> with TickerProviderStateMixin {
+class _HomeLayoutState extends State<HomeLayout> with AfterLayoutMixin {
   final PageController _pageController = PageController(initialPage: 1000);
+
+  @override
+  void afterFirstLayout(BuildContext context) {
+    context
+        .bloc<HomeNavigationBloc>()
+        .add(HomeNavigationEvent.homePageLaunched(context: context));
+    context
+        .bloc<HomeDatabaseBloc>()
+        .add(const HomeDatabaseEvent.homePageLaunched());
+  }
 
   @override
   void dispose() {
@@ -66,67 +77,82 @@ class _HomeLayoutState extends State<HomeLayout> with TickerProviderStateMixin {
                 ),
                 body: Stack(
                   children: <Widget>[
-                    Column(
-                      children: <Widget>[
-                        AnimatedContainer(
-                          duration: 100.milliseconds,
-                          height: 30.0,
-                          width: MediaQuery.of(context).size.width,
-                          color: pageViewNavbarColors[
-                              homeNavState.currentPageViewIdx],
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceAround,
-                            mainAxisSize: MainAxisSize.max,
-                            children: homeNavState.pageViewNavbarItems
-                                .asMap()
-                                .entries
-                                .map((entry) {
-                              final int index = entry.key;
-                              final String value = entry.value;
+                    if (!homeDbState.isFetching)
+                      Column(
+                        children: <Widget>[
+                          AnimatedContainer(
+                            duration: 100.milliseconds,
+                            height: 30.0,
+                            width: MediaQuery.of(context).size.width,
+                            color: pageViewNavbarColors[
+                                homeNavState.currentPageViewIdx],
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceAround,
+                              mainAxisSize: MainAxisSize.max,
+                              children: homeNavState.pageViewNavbarItems
+                                  .asMap()
+                                  .entries
+                                  .map((entry) {
+                                final int index = entry.key;
+                                final String value = entry.value;
 
-                              return WINEHorizontalNavbarButton(
-                                title: value,
-                                color: homeNavState.currentPageViewIdx == index
-                                    ? Colors.black
-                                    : Colors.black12,
-                                onPressed: () => _pageController.animateToPage(
-                                  index == 0 ? 1000 : 1001,
-                                  duration: 200.milliseconds,
-                                  curve: Curves.linear,
-                                ),
-                              );
-                            }).toList(),
+                                return WINEHorizontalNavbarButton(
+                                  title: value,
+                                  color:
+                                      homeNavState.currentPageViewIdx == index
+                                          ? Colors.black
+                                          : Colors.black12,
+                                  onPressed: () =>
+                                      _pageController.animateToPage(
+                                    index == 0 ? 1000 : 1001,
+                                    duration: 200.milliseconds,
+                                    curve: Curves.linear,
+                                  ),
+                                );
+                              }).toList(),
+                            ),
+                          ),
+                          Expanded(
+                            child: PageView.builder(
+                              controller: _pageController,
+                              itemBuilder: (BuildContext context, int index) =>
+                                  pageViewLayouts[
+                                      index % pageViewLayouts.length],
+                              onPageChanged: (int index) => context
+                                  .bloc<HomeNavigationBloc>()
+                                  .add(HomeNavigationEvent.pageViewIndexChanged(
+                                    index: index % pageViewLayouts.length,
+                                  )),
+                            ),
+                          ),
+                        ],
+                      ),
+                    if (!homeDbState.isFetching)
+                      SwipeGestureRecognizer(
+                        onSwipeLeft: () {
+                          context
+                              .bloc<HomeNavigationBloc>()
+                              .add(HomeNavigationEvent.drawerIconPressed(
+                                isDrawerOpen: homeNavState.isDrawerOpen,
+                              ));
+                          sailor(Constants.homeDrawerRoute);
+                        },
+                        child: Align(
+                          alignment: Alignment.topRight,
+                          child: Container(
+                            color: Colors.transparent,
+                            width: 20,
+                            height: mediaQuery.height,
                           ),
                         ),
-                        Expanded(
-                          child: PageView.builder(
-                            controller: _pageController,
-                            itemBuilder: (BuildContext context, int index) =>
-                                pageViewLayouts[index % pageViewLayouts.length],
-                            onPageChanged: (int index) => context
-                                .bloc<HomeNavigationBloc>()
-                                .add(HomeNavigationEvent.pageViewIndexChanged(
-                                  index: index % pageViewLayouts.length,
-                                )),
+                      ),
+                    Visibility(
+                      visible: homeDbState.isFetching,
+                      child: const Center(
+                        child: CircularProgressIndicator(
+                          valueColor: AlwaysStoppedAnimation<Color>(
+                            Colors.black,
                           ),
-                        ),
-                      ],
-                    ),
-                    SwipeGestureRecognizer(
-                      onSwipeLeft: () {
-                        context
-                            .bloc<HomeNavigationBloc>()
-                            .add(HomeNavigationEvent.drawerIconPressed(
-                              isDrawerOpen: homeNavState.isDrawerOpen,
-                            ));
-                        sailor(Constants.homeDrawerRoute);
-                      },
-                      child: Align(
-                        alignment: Alignment.topRight,
-                        child: Container(
-                          color: Colors.transparent,
-                          width: 20,
-                          height: mediaQuery.height,
                         ),
                       ),
                     ),

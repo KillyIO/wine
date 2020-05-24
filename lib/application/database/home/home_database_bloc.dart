@@ -37,6 +37,11 @@ class HomeDatabaseBloc extends Bloc<HomeDatabaseEvent, HomeDatabaseState> {
       homePageLaunched: (event) async* {
         final Random _random = Random();
 
+        yield state.copyWith(
+          isFetching: true,
+          databaseFailureOrSuccessOption: none(),
+        );
+
         Either<DatabaseFailure, dynamic> failureOrSuccess;
         final Map<String, dynamic> filters = state.filters;
 
@@ -101,6 +106,7 @@ class HomeDatabaseBloc extends Bloc<HomeDatabaseEvent, HomeDatabaseState> {
             _random.nextInt(placeholdersUrls.length),
             _random.nextInt(placeholdersUrls.length),
           ],
+          isFetching: false,
           databaseFailureOrSuccessOption: optionOf(failureOrSuccess),
         );
       },

@@ -32,6 +32,7 @@ class TopSeriesLayout extends StatelessWidget {
     for (int i = 0; i < seriesList.length; i++) {
       tiles.add(
         WINESeriesCard(
+          uid: seriesList[i].uid,
           title: seriesList[i].title,
           username: seriesList[i].author.username,
           coverUrl: seriesList[i].coverUrl,

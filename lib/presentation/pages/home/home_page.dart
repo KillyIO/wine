@@ -12,16 +12,16 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  @override
-  void initState() {
-    super.initState();
-    context
-        .bloc<HomeNavigationBloc>()
-        .add(HomeNavigationEvent.homePageLaunched(context: context));
-    context
-        .bloc<HomeDatabaseBloc>()
-        .add(const HomeDatabaseEvent.homePageLaunched());
-  }
+  // @override
+  // void initState() {
+  //   super.initState();
+  //   context
+  //       .bloc<HomeNavigationBloc>()
+  //       .add(HomeNavigationEvent.homePageLaunched(context: context));
+  //   context
+  //       .bloc<HomeDatabaseBloc>()
+  //       .add(const HomeDatabaseEvent.homePageLaunched());
+  // }
 
   @override
   Widget build(BuildContext context) {

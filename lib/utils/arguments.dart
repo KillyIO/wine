@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:sailor/sailor.dart';
 
 import 'package:wine/domain/enums/parent_type.dart';
@@ -29,8 +30,12 @@ class NewChapterPageArgs extends BaseArguments {
 
 class SeriesPageArgs extends BaseArguments {
   final Series series;
+  final String placeholderUrl;
+  final String username;
 
   SeriesPageArgs({
-    this.series,
+    @required this.series,
+    @required this.placeholderUrl,
+    this.username,
   });
 }
