@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:dartz/dartz.dart';
 import 'package:flutter/foundation.dart';
 import 'package:wine/domain/database/database_failure.dart';
@@ -35,4 +37,5 @@ abstract class IOnlineSeriesDatabaseFacade {
     @required String userUid,
     @required String seriesUid,
   });
+  Future<Either<DatabaseFailure, String>> uploadCover(File cover);
 }

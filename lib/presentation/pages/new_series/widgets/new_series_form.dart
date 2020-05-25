@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:sailor/sailor.dart';
@@ -83,6 +85,8 @@ class _NewSeriesFormState extends State<NewSeriesForm>
 
   @override
   Widget build(BuildContext context) {
+    final Size mediaQuery = MediaQuery.of(context).size;
+
     return WillPopScope(
       onWillPop: _onWillPop,
       child: BlocConsumer<NewSeriesDatabaseBloc, NewSeriesDatabaseState>(
@@ -201,6 +205,42 @@ class _NewSeriesFormState extends State<NewSeriesForm>
                                 letterSpacing: .5,
                               ),
                             ),
+                          ),
+                          // SECTION cover
+                          const WINETextFieldLabel(title: 'COVER'),
+                          Stack(
+                            children: <Widget>[
+                              Container(
+                                width: mediaQuery.width,
+                                height: 150.0,
+                                child: nsDbState.coverPath.isNotEmpty
+                                    ? Image.file(
+                                        File(nsDbState.coverPath),
+                                        fit: BoxFit.fitWidth,
+                                      )
+                                    : Image.network(
+                                        nsDbState.placeholders[
+                                            nsDbState.placeholderIndex],
+                                        fit: BoxFit.fitWidth,
+                                      ),
+                              ),
+                              GestureDetector(
+                                onTap: () => context
+                                    .bloc<NewSeriesDatabaseBloc>()
+                                    .add(const NewSeriesDatabaseEvent
+                                        .addCoverPressed()),
+                                child: Container(
+                                  width: mediaQuery.width,
+                                  height: 150.0,
+                                  color: Colors.white60,
+                                  child: Icon(
+                                    Icons.camera_alt,
+                                    color: Colors.black38,
+                                    size: 40.0,
+                                  ),
+                                ),
+                              ),
+                            ],
                           ),
                           // SECTION title
                           const WINETextFieldLabel(title: 'TITLE*'),

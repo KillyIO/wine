@@ -44,7 +44,7 @@ class AccountDatabaseBloc
   ) async* {
     yield* event.map(
       accountPageLaunched: (event) async* {
-        final Random _random = Random();
+        final Random random = Random();
 
         Either<DatabaseFailure, dynamic> failureOrSuccess;
         Session session = Session();
@@ -105,8 +105,8 @@ class AccountDatabaseBloc
           copyrights: Methods.getCopyrights(event.context),
           placeholders: placeholdersUrls,
           placeholderIndexes: <int>[
-            _random.nextInt(placeholdersUrls.length),
-            _random.nextInt(placeholdersUrls.length),
+            random.nextInt(placeholdersUrls.length),
+            random.nextInt(placeholdersUrls.length),
           ],
           isFetching: false,
           databaseFailureOrSuccessOption: optionOf(failureOrSuccess),
