@@ -1,6 +1,10 @@
+import 'dart:io';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:injectable/injectable.dart';
+import 'package:path/path.dart' as p;
 import 'package:wine/domain/database/database_failure.dart';
 import 'package:wine/domain/database/i_online_series_database_facade.dart';
 import 'package:wine/domain/database/i_online_user_database_facade.dart';
@@ -14,10 +18,12 @@ import 'package:wine/utils/paths.dart';
 class FirebaseOnlineSeriesDatabaseFacade
     implements IOnlineSeriesDatabaseFacade {
   final Firestore _firestore;
+  final FirebaseStorage _firebaseStorage;
   final IOnlineUserDatabaseFacade _onlineUserDatabaseFacade;
 
   FirebaseOnlineSeriesDatabaseFacade(
     this._firestore,
+    this._firebaseStorage,
     this._onlineUserDatabaseFacade,
   );
 
@@ -332,5 +338,16 @@ class FirebaseOnlineSeriesDatabaseFacade
       }, merge: true);
     }
     return right(unit);
+  }
+
+  @override
+  Future<Either<DatabaseFailure, String>> uploadCover(File cover) async {
+    final String fileName = p.basename(cover.path);
+    final StorageReference ref = _firebaseStorage.ref().child(
+        '${Paths.coversPaths}/${DateTime.now().millisecondsSinceEpoch}-$fileName');
+    final StorageUploadTask uploadTask = ref.putFile(cover);
+    final StorageTaskSnapshot result = await uploadTask.onComplete;
+    final String url = await result.ref.getDownloadURL() as String;
+    return right(url);
   }
 }

@@ -13,6 +13,7 @@ import 'package:wine/domain/models/hive/series_draft.dart';
 import 'package:wine/domain/models/hive/session.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:wine/infrastructure/core/firebase_injectable_module.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:wine/application/navigation/home/home_navigation_bloc.dart';
@@ -61,6 +62,8 @@ Future<void> $initGetIt(GetIt g, {String environment}) async {
   g.registerLazySingleton<Box<Session>>(() => box3);
   g.registerLazySingleton<FirebaseAuth>(
       () => firebaseInjectableModule.firebaseAuth);
+  g.registerLazySingleton<FirebaseStorage>(
+      () => firebaseInjectableModule.firebaseStorage);
   g.registerLazySingleton<Firestore>(() => firebaseInjectableModule.firestore);
   g.registerLazySingleton<GoogleSignIn>(
       () => firebaseInjectableModule.googleSignIn);
@@ -104,9 +107,12 @@ Future<void> $initGetIt(GetIt g, {String environment}) async {
       () => CreateAccountAuthenticationBloc(g<IAuthenticationFacade>()));
   g.registerFactory<CreateAccountDatabaseBloc>(() => CreateAccountDatabaseBloc(
       g<ILocalSessionDatabaseFacade>(), g<IOnlineUserDatabaseFacade>()));
-  g.registerLazySingleton<IOnlineSeriesDatabaseFacade>(() =>
-      FirebaseOnlineSeriesDatabaseFacade(
-          g<Firestore>(), g<IOnlineUserDatabaseFacade>()));
+  g.registerLazySingleton<IOnlineSeriesDatabaseFacade>(
+      () => FirebaseOnlineSeriesDatabaseFacade(
+            g<Firestore>(),
+            g<FirebaseStorage>(),
+            g<IOnlineUserDatabaseFacade>(),
+          ));
   g.registerFactory<NewChapterDatabaseBloc>(() => NewChapterDatabaseBloc(
         g<ILocalSessionDatabaseFacade>(),
         g<ILocalChapterDraftDatabaseFacade>(),

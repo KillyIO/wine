@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:io';
 
 import 'package:bloc/bloc.dart';
 import 'package:dartz/dartz.dart';
@@ -24,6 +25,7 @@ import 'package:wine/domain/models/hive/chapter_draft.dart';
 import 'package:wine/domain/models/hive/series_draft.dart';
 import 'package:wine/domain/models/hive/session.dart';
 import 'package:wine/domain/models/series.dart';
+import 'package:wine/utils/extensions.dart';
 import 'package:wine/utils/methods.dart';
 
 part 'new_chapter_database_event.dart';
@@ -211,7 +213,27 @@ class NewChapterDatabaseBloc
           );
 
           if (seriesDraft != null) {
-            final Series series = Series.fromMap(seriesDraft.toMap());
+            String coverUrl;
+
+            if (seriesDraft.coverPath.isNotEmpty) {
+              failureOrSuccess = await _onlineSeriesDatabaseFacade
+                  .uploadCover(File(seriesDraft.coverPath));
+
+              failureOrSuccess.fold(
+                (_) {},
+                (success) {
+                  if (success is String) {
+                    coverUrl = success;
+                  }
+                },
+              );
+            }
+
+            final Series series = Series.fromMap(seriesDraft.toMap())
+              ..coverUrl = coverUrl
+              ..subtitle = seriesDraft.subtitle.isEmptyToNull
+              ..genreOptional = seriesDraft.genreOptional.isEmptyToNull;
+
             bool seriesCreated = false;
 
             failureOrSuccess =

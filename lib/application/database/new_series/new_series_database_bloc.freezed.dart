@@ -20,6 +20,10 @@ class _$NewSeriesDatabaseEventTearOff {
     );
   }
 
+  AddCoverPressed addCoverPressed() {
+    return const AddCoverPressed();
+  }
+
   TitleChanged titleChanged(String title) {
     return TitleChanged(
       title,
@@ -80,6 +84,7 @@ mixin _$NewSeriesDatabaseEvent {
     @required
         Result newSeriesPageLaunched(
             SeriesDraft seriesDraft, BuildContext context),
+    @required Result addCoverPressed(),
     @required Result titleChanged(String title),
     @required Result subtitleChanged(String subtitle),
     @required Result summaryChanged(String summary),
@@ -93,6 +98,7 @@ mixin _$NewSeriesDatabaseEvent {
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result newSeriesPageLaunched(SeriesDraft seriesDraft, BuildContext context),
+    Result addCoverPressed(),
     Result titleChanged(String title),
     Result subtitleChanged(String subtitle),
     Result summaryChanged(String summary),
@@ -107,6 +113,7 @@ mixin _$NewSeriesDatabaseEvent {
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result newSeriesPageLaunched(NewSeriesPageLaunched value),
+    @required Result addCoverPressed(AddCoverPressed value),
     @required Result titleChanged(TitleChanged value),
     @required Result subtitleChanged(SubtitleChanged value),
     @required Result summaryChanged(SummaryChanged value),
@@ -121,6 +128,7 @@ mixin _$NewSeriesDatabaseEvent {
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result newSeriesPageLaunched(NewSeriesPageLaunched value),
+    Result addCoverPressed(AddCoverPressed value),
     Result titleChanged(TitleChanged value),
     Result subtitleChanged(SubtitleChanged value),
     Result summaryChanged(SummaryChanged value),
@@ -233,6 +241,7 @@ class _$NewSeriesPageLaunched
     @required
         Result newSeriesPageLaunched(
             SeriesDraft seriesDraft, BuildContext context),
+    @required Result addCoverPressed(),
     @required Result titleChanged(String title),
     @required Result subtitleChanged(String subtitle),
     @required Result summaryChanged(String summary),
@@ -244,6 +253,7 @@ class _$NewSeriesPageLaunched
     @required Result deleteDraftButtonPressed(),
   }) {
     assert(newSeriesPageLaunched != null);
+    assert(addCoverPressed != null);
     assert(titleChanged != null);
     assert(subtitleChanged != null);
     assert(summaryChanged != null);
@@ -260,6 +270,7 @@ class _$NewSeriesPageLaunched
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result newSeriesPageLaunched(SeriesDraft seriesDraft, BuildContext context),
+    Result addCoverPressed(),
     Result titleChanged(String title),
     Result subtitleChanged(String subtitle),
     Result summaryChanged(String summary),
@@ -282,6 +293,7 @@ class _$NewSeriesPageLaunched
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result newSeriesPageLaunched(NewSeriesPageLaunched value),
+    @required Result addCoverPressed(AddCoverPressed value),
     @required Result titleChanged(TitleChanged value),
     @required Result subtitleChanged(SubtitleChanged value),
     @required Result summaryChanged(SummaryChanged value),
@@ -294,6 +306,7 @@ class _$NewSeriesPageLaunched
     @required Result deleteDraftButtonPressed(DeleteDraftButtonPressed value),
   }) {
     assert(newSeriesPageLaunched != null);
+    assert(addCoverPressed != null);
     assert(titleChanged != null);
     assert(subtitleChanged != null);
     assert(summaryChanged != null);
@@ -310,6 +323,7 @@ class _$NewSeriesPageLaunched
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result newSeriesPageLaunched(NewSeriesPageLaunched value),
+    Result addCoverPressed(AddCoverPressed value),
     Result titleChanged(TitleChanged value),
     Result subtitleChanged(SubtitleChanged value),
     Result summaryChanged(SummaryChanged value),
@@ -337,6 +351,161 @@ abstract class NewSeriesPageLaunched implements NewSeriesDatabaseEvent {
   SeriesDraft get seriesDraft;
   BuildContext get context;
   $NewSeriesPageLaunchedCopyWith<NewSeriesPageLaunched> get copyWith;
+}
+
+abstract class $AddCoverPressedCopyWith<$Res> {
+  factory $AddCoverPressedCopyWith(
+          AddCoverPressed value, $Res Function(AddCoverPressed) then) =
+      _$AddCoverPressedCopyWithImpl<$Res>;
+}
+
+class _$AddCoverPressedCopyWithImpl<$Res>
+    extends _$NewSeriesDatabaseEventCopyWithImpl<$Res>
+    implements $AddCoverPressedCopyWith<$Res> {
+  _$AddCoverPressedCopyWithImpl(
+      AddCoverPressed _value, $Res Function(AddCoverPressed) _then)
+      : super(_value, (v) => _then(v as AddCoverPressed));
+
+  @override
+  AddCoverPressed get _value => super._value as AddCoverPressed;
+}
+
+class _$AddCoverPressed
+    with DiagnosticableTreeMixin
+    implements AddCoverPressed {
+  const _$AddCoverPressed();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'NewSeriesDatabaseEvent.addCoverPressed()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty(
+          'type', 'NewSeriesDatabaseEvent.addCoverPressed'));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is AddCoverPressed);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required
+        Result newSeriesPageLaunched(
+            SeriesDraft seriesDraft, BuildContext context),
+    @required Result addCoverPressed(),
+    @required Result titleChanged(String title),
+    @required Result subtitleChanged(String subtitle),
+    @required Result summaryChanged(String summary),
+    @required Result genreSelected(String genre),
+    @required Result genreOptionalSelected(String genreOptional),
+    @required Result languageSelected(String language),
+    @required Result isNSFWChanged(bool isNSFW),
+    @required Result saveSeriesDraftButtonPressed(),
+    @required Result deleteDraftButtonPressed(),
+  }) {
+    assert(newSeriesPageLaunched != null);
+    assert(addCoverPressed != null);
+    assert(titleChanged != null);
+    assert(subtitleChanged != null);
+    assert(summaryChanged != null);
+    assert(genreSelected != null);
+    assert(genreOptionalSelected != null);
+    assert(languageSelected != null);
+    assert(isNSFWChanged != null);
+    assert(saveSeriesDraftButtonPressed != null);
+    assert(deleteDraftButtonPressed != null);
+    return addCoverPressed();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result newSeriesPageLaunched(SeriesDraft seriesDraft, BuildContext context),
+    Result addCoverPressed(),
+    Result titleChanged(String title),
+    Result subtitleChanged(String subtitle),
+    Result summaryChanged(String summary),
+    Result genreSelected(String genre),
+    Result genreOptionalSelected(String genreOptional),
+    Result languageSelected(String language),
+    Result isNSFWChanged(bool isNSFW),
+    Result saveSeriesDraftButtonPressed(),
+    Result deleteDraftButtonPressed(),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (addCoverPressed != null) {
+      return addCoverPressed();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result newSeriesPageLaunched(NewSeriesPageLaunched value),
+    @required Result addCoverPressed(AddCoverPressed value),
+    @required Result titleChanged(TitleChanged value),
+    @required Result subtitleChanged(SubtitleChanged value),
+    @required Result summaryChanged(SummaryChanged value),
+    @required Result genreSelected(GenreSelected value),
+    @required Result genreOptionalSelected(GenreOptionalSelected value),
+    @required Result languageSelected(LanguageSelected value),
+    @required Result isNSFWChanged(IsNSFWChanged value),
+    @required
+        Result saveSeriesDraftButtonPressed(SaveSeriesDraftButtonPressed value),
+    @required Result deleteDraftButtonPressed(DeleteDraftButtonPressed value),
+  }) {
+    assert(newSeriesPageLaunched != null);
+    assert(addCoverPressed != null);
+    assert(titleChanged != null);
+    assert(subtitleChanged != null);
+    assert(summaryChanged != null);
+    assert(genreSelected != null);
+    assert(genreOptionalSelected != null);
+    assert(languageSelected != null);
+    assert(isNSFWChanged != null);
+    assert(saveSeriesDraftButtonPressed != null);
+    assert(deleteDraftButtonPressed != null);
+    return addCoverPressed(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result newSeriesPageLaunched(NewSeriesPageLaunched value),
+    Result addCoverPressed(AddCoverPressed value),
+    Result titleChanged(TitleChanged value),
+    Result subtitleChanged(SubtitleChanged value),
+    Result summaryChanged(SummaryChanged value),
+    Result genreSelected(GenreSelected value),
+    Result genreOptionalSelected(GenreOptionalSelected value),
+    Result languageSelected(LanguageSelected value),
+    Result isNSFWChanged(IsNSFWChanged value),
+    Result saveSeriesDraftButtonPressed(SaveSeriesDraftButtonPressed value),
+    Result deleteDraftButtonPressed(DeleteDraftButtonPressed value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (addCoverPressed != null) {
+      return addCoverPressed(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class AddCoverPressed implements NewSeriesDatabaseEvent {
+  const factory AddCoverPressed() = _$AddCoverPressed;
 }
 
 abstract class $TitleChangedCopyWith<$Res> {
@@ -407,6 +576,7 @@ class _$TitleChanged with DiagnosticableTreeMixin implements TitleChanged {
     @required
         Result newSeriesPageLaunched(
             SeriesDraft seriesDraft, BuildContext context),
+    @required Result addCoverPressed(),
     @required Result titleChanged(String title),
     @required Result subtitleChanged(String subtitle),
     @required Result summaryChanged(String summary),
@@ -418,6 +588,7 @@ class _$TitleChanged with DiagnosticableTreeMixin implements TitleChanged {
     @required Result deleteDraftButtonPressed(),
   }) {
     assert(newSeriesPageLaunched != null);
+    assert(addCoverPressed != null);
     assert(titleChanged != null);
     assert(subtitleChanged != null);
     assert(summaryChanged != null);
@@ -434,6 +605,7 @@ class _$TitleChanged with DiagnosticableTreeMixin implements TitleChanged {
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result newSeriesPageLaunched(SeriesDraft seriesDraft, BuildContext context),
+    Result addCoverPressed(),
     Result titleChanged(String title),
     Result subtitleChanged(String subtitle),
     Result summaryChanged(String summary),
@@ -456,6 +628,7 @@ class _$TitleChanged with DiagnosticableTreeMixin implements TitleChanged {
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result newSeriesPageLaunched(NewSeriesPageLaunched value),
+    @required Result addCoverPressed(AddCoverPressed value),
     @required Result titleChanged(TitleChanged value),
     @required Result subtitleChanged(SubtitleChanged value),
     @required Result summaryChanged(SummaryChanged value),
@@ -468,6 +641,7 @@ class _$TitleChanged with DiagnosticableTreeMixin implements TitleChanged {
     @required Result deleteDraftButtonPressed(DeleteDraftButtonPressed value),
   }) {
     assert(newSeriesPageLaunched != null);
+    assert(addCoverPressed != null);
     assert(titleChanged != null);
     assert(subtitleChanged != null);
     assert(summaryChanged != null);
@@ -484,6 +658,7 @@ class _$TitleChanged with DiagnosticableTreeMixin implements TitleChanged {
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result newSeriesPageLaunched(NewSeriesPageLaunched value),
+    Result addCoverPressed(AddCoverPressed value),
     Result titleChanged(TitleChanged value),
     Result subtitleChanged(SubtitleChanged value),
     Result summaryChanged(SummaryChanged value),
@@ -582,6 +757,7 @@ class _$SubtitleChanged
     @required
         Result newSeriesPageLaunched(
             SeriesDraft seriesDraft, BuildContext context),
+    @required Result addCoverPressed(),
     @required Result titleChanged(String title),
     @required Result subtitleChanged(String subtitle),
     @required Result summaryChanged(String summary),
@@ -593,6 +769,7 @@ class _$SubtitleChanged
     @required Result deleteDraftButtonPressed(),
   }) {
     assert(newSeriesPageLaunched != null);
+    assert(addCoverPressed != null);
     assert(titleChanged != null);
     assert(subtitleChanged != null);
     assert(summaryChanged != null);
@@ -609,6 +786,7 @@ class _$SubtitleChanged
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result newSeriesPageLaunched(SeriesDraft seriesDraft, BuildContext context),
+    Result addCoverPressed(),
     Result titleChanged(String title),
     Result subtitleChanged(String subtitle),
     Result summaryChanged(String summary),
@@ -631,6 +809,7 @@ class _$SubtitleChanged
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result newSeriesPageLaunched(NewSeriesPageLaunched value),
+    @required Result addCoverPressed(AddCoverPressed value),
     @required Result titleChanged(TitleChanged value),
     @required Result subtitleChanged(SubtitleChanged value),
     @required Result summaryChanged(SummaryChanged value),
@@ -643,6 +822,7 @@ class _$SubtitleChanged
     @required Result deleteDraftButtonPressed(DeleteDraftButtonPressed value),
   }) {
     assert(newSeriesPageLaunched != null);
+    assert(addCoverPressed != null);
     assert(titleChanged != null);
     assert(subtitleChanged != null);
     assert(summaryChanged != null);
@@ -659,6 +839,7 @@ class _$SubtitleChanged
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result newSeriesPageLaunched(NewSeriesPageLaunched value),
+    Result addCoverPressed(AddCoverPressed value),
     Result titleChanged(TitleChanged value),
     Result subtitleChanged(SubtitleChanged value),
     Result summaryChanged(SummaryChanged value),
@@ -754,6 +935,7 @@ class _$SummaryChanged with DiagnosticableTreeMixin implements SummaryChanged {
     @required
         Result newSeriesPageLaunched(
             SeriesDraft seriesDraft, BuildContext context),
+    @required Result addCoverPressed(),
     @required Result titleChanged(String title),
     @required Result subtitleChanged(String subtitle),
     @required Result summaryChanged(String summary),
@@ -765,6 +947,7 @@ class _$SummaryChanged with DiagnosticableTreeMixin implements SummaryChanged {
     @required Result deleteDraftButtonPressed(),
   }) {
     assert(newSeriesPageLaunched != null);
+    assert(addCoverPressed != null);
     assert(titleChanged != null);
     assert(subtitleChanged != null);
     assert(summaryChanged != null);
@@ -781,6 +964,7 @@ class _$SummaryChanged with DiagnosticableTreeMixin implements SummaryChanged {
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result newSeriesPageLaunched(SeriesDraft seriesDraft, BuildContext context),
+    Result addCoverPressed(),
     Result titleChanged(String title),
     Result subtitleChanged(String subtitle),
     Result summaryChanged(String summary),
@@ -803,6 +987,7 @@ class _$SummaryChanged with DiagnosticableTreeMixin implements SummaryChanged {
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result newSeriesPageLaunched(NewSeriesPageLaunched value),
+    @required Result addCoverPressed(AddCoverPressed value),
     @required Result titleChanged(TitleChanged value),
     @required Result subtitleChanged(SubtitleChanged value),
     @required Result summaryChanged(SummaryChanged value),
@@ -815,6 +1000,7 @@ class _$SummaryChanged with DiagnosticableTreeMixin implements SummaryChanged {
     @required Result deleteDraftButtonPressed(DeleteDraftButtonPressed value),
   }) {
     assert(newSeriesPageLaunched != null);
+    assert(addCoverPressed != null);
     assert(titleChanged != null);
     assert(subtitleChanged != null);
     assert(summaryChanged != null);
@@ -831,6 +1017,7 @@ class _$SummaryChanged with DiagnosticableTreeMixin implements SummaryChanged {
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result newSeriesPageLaunched(NewSeriesPageLaunched value),
+    Result addCoverPressed(AddCoverPressed value),
     Result titleChanged(TitleChanged value),
     Result subtitleChanged(SubtitleChanged value),
     Result summaryChanged(SummaryChanged value),
@@ -925,6 +1112,7 @@ class _$GenreSelected with DiagnosticableTreeMixin implements GenreSelected {
     @required
         Result newSeriesPageLaunched(
             SeriesDraft seriesDraft, BuildContext context),
+    @required Result addCoverPressed(),
     @required Result titleChanged(String title),
     @required Result subtitleChanged(String subtitle),
     @required Result summaryChanged(String summary),
@@ -936,6 +1124,7 @@ class _$GenreSelected with DiagnosticableTreeMixin implements GenreSelected {
     @required Result deleteDraftButtonPressed(),
   }) {
     assert(newSeriesPageLaunched != null);
+    assert(addCoverPressed != null);
     assert(titleChanged != null);
     assert(subtitleChanged != null);
     assert(summaryChanged != null);
@@ -952,6 +1141,7 @@ class _$GenreSelected with DiagnosticableTreeMixin implements GenreSelected {
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result newSeriesPageLaunched(SeriesDraft seriesDraft, BuildContext context),
+    Result addCoverPressed(),
     Result titleChanged(String title),
     Result subtitleChanged(String subtitle),
     Result summaryChanged(String summary),
@@ -974,6 +1164,7 @@ class _$GenreSelected with DiagnosticableTreeMixin implements GenreSelected {
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result newSeriesPageLaunched(NewSeriesPageLaunched value),
+    @required Result addCoverPressed(AddCoverPressed value),
     @required Result titleChanged(TitleChanged value),
     @required Result subtitleChanged(SubtitleChanged value),
     @required Result summaryChanged(SummaryChanged value),
@@ -986,6 +1177,7 @@ class _$GenreSelected with DiagnosticableTreeMixin implements GenreSelected {
     @required Result deleteDraftButtonPressed(DeleteDraftButtonPressed value),
   }) {
     assert(newSeriesPageLaunched != null);
+    assert(addCoverPressed != null);
     assert(titleChanged != null);
     assert(subtitleChanged != null);
     assert(summaryChanged != null);
@@ -1002,6 +1194,7 @@ class _$GenreSelected with DiagnosticableTreeMixin implements GenreSelected {
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result newSeriesPageLaunched(NewSeriesPageLaunched value),
+    Result addCoverPressed(AddCoverPressed value),
     Result titleChanged(TitleChanged value),
     Result subtitleChanged(SubtitleChanged value),
     Result summaryChanged(SummaryChanged value),
@@ -1102,6 +1295,7 @@ class _$GenreOptionalSelected
     @required
         Result newSeriesPageLaunched(
             SeriesDraft seriesDraft, BuildContext context),
+    @required Result addCoverPressed(),
     @required Result titleChanged(String title),
     @required Result subtitleChanged(String subtitle),
     @required Result summaryChanged(String summary),
@@ -1113,6 +1307,7 @@ class _$GenreOptionalSelected
     @required Result deleteDraftButtonPressed(),
   }) {
     assert(newSeriesPageLaunched != null);
+    assert(addCoverPressed != null);
     assert(titleChanged != null);
     assert(subtitleChanged != null);
     assert(summaryChanged != null);
@@ -1129,6 +1324,7 @@ class _$GenreOptionalSelected
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result newSeriesPageLaunched(SeriesDraft seriesDraft, BuildContext context),
+    Result addCoverPressed(),
     Result titleChanged(String title),
     Result subtitleChanged(String subtitle),
     Result summaryChanged(String summary),
@@ -1151,6 +1347,7 @@ class _$GenreOptionalSelected
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result newSeriesPageLaunched(NewSeriesPageLaunched value),
+    @required Result addCoverPressed(AddCoverPressed value),
     @required Result titleChanged(TitleChanged value),
     @required Result subtitleChanged(SubtitleChanged value),
     @required Result summaryChanged(SummaryChanged value),
@@ -1163,6 +1360,7 @@ class _$GenreOptionalSelected
     @required Result deleteDraftButtonPressed(DeleteDraftButtonPressed value),
   }) {
     assert(newSeriesPageLaunched != null);
+    assert(addCoverPressed != null);
     assert(titleChanged != null);
     assert(subtitleChanged != null);
     assert(summaryChanged != null);
@@ -1179,6 +1377,7 @@ class _$GenreOptionalSelected
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result newSeriesPageLaunched(NewSeriesPageLaunched value),
+    Result addCoverPressed(AddCoverPressed value),
     Result titleChanged(TitleChanged value),
     Result subtitleChanged(SubtitleChanged value),
     Result summaryChanged(SummaryChanged value),
@@ -1278,6 +1477,7 @@ class _$LanguageSelected
     @required
         Result newSeriesPageLaunched(
             SeriesDraft seriesDraft, BuildContext context),
+    @required Result addCoverPressed(),
     @required Result titleChanged(String title),
     @required Result subtitleChanged(String subtitle),
     @required Result summaryChanged(String summary),
@@ -1289,6 +1489,7 @@ class _$LanguageSelected
     @required Result deleteDraftButtonPressed(),
   }) {
     assert(newSeriesPageLaunched != null);
+    assert(addCoverPressed != null);
     assert(titleChanged != null);
     assert(subtitleChanged != null);
     assert(summaryChanged != null);
@@ -1305,6 +1506,7 @@ class _$LanguageSelected
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result newSeriesPageLaunched(SeriesDraft seriesDraft, BuildContext context),
+    Result addCoverPressed(),
     Result titleChanged(String title),
     Result subtitleChanged(String subtitle),
     Result summaryChanged(String summary),
@@ -1327,6 +1529,7 @@ class _$LanguageSelected
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result newSeriesPageLaunched(NewSeriesPageLaunched value),
+    @required Result addCoverPressed(AddCoverPressed value),
     @required Result titleChanged(TitleChanged value),
     @required Result subtitleChanged(SubtitleChanged value),
     @required Result summaryChanged(SummaryChanged value),
@@ -1339,6 +1542,7 @@ class _$LanguageSelected
     @required Result deleteDraftButtonPressed(DeleteDraftButtonPressed value),
   }) {
     assert(newSeriesPageLaunched != null);
+    assert(addCoverPressed != null);
     assert(titleChanged != null);
     assert(subtitleChanged != null);
     assert(summaryChanged != null);
@@ -1355,6 +1559,7 @@ class _$LanguageSelected
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result newSeriesPageLaunched(NewSeriesPageLaunched value),
+    Result addCoverPressed(AddCoverPressed value),
     Result titleChanged(TitleChanged value),
     Result subtitleChanged(SubtitleChanged value),
     Result summaryChanged(SummaryChanged value),
@@ -1449,6 +1654,7 @@ class _$IsNSFWChanged with DiagnosticableTreeMixin implements IsNSFWChanged {
     @required
         Result newSeriesPageLaunched(
             SeriesDraft seriesDraft, BuildContext context),
+    @required Result addCoverPressed(),
     @required Result titleChanged(String title),
     @required Result subtitleChanged(String subtitle),
     @required Result summaryChanged(String summary),
@@ -1460,6 +1666,7 @@ class _$IsNSFWChanged with DiagnosticableTreeMixin implements IsNSFWChanged {
     @required Result deleteDraftButtonPressed(),
   }) {
     assert(newSeriesPageLaunched != null);
+    assert(addCoverPressed != null);
     assert(titleChanged != null);
     assert(subtitleChanged != null);
     assert(summaryChanged != null);
@@ -1476,6 +1683,7 @@ class _$IsNSFWChanged with DiagnosticableTreeMixin implements IsNSFWChanged {
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result newSeriesPageLaunched(SeriesDraft seriesDraft, BuildContext context),
+    Result addCoverPressed(),
     Result titleChanged(String title),
     Result subtitleChanged(String subtitle),
     Result summaryChanged(String summary),
@@ -1498,6 +1706,7 @@ class _$IsNSFWChanged with DiagnosticableTreeMixin implements IsNSFWChanged {
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result newSeriesPageLaunched(NewSeriesPageLaunched value),
+    @required Result addCoverPressed(AddCoverPressed value),
     @required Result titleChanged(TitleChanged value),
     @required Result subtitleChanged(SubtitleChanged value),
     @required Result summaryChanged(SummaryChanged value),
@@ -1510,6 +1719,7 @@ class _$IsNSFWChanged with DiagnosticableTreeMixin implements IsNSFWChanged {
     @required Result deleteDraftButtonPressed(DeleteDraftButtonPressed value),
   }) {
     assert(newSeriesPageLaunched != null);
+    assert(addCoverPressed != null);
     assert(titleChanged != null);
     assert(subtitleChanged != null);
     assert(summaryChanged != null);
@@ -1526,6 +1736,7 @@ class _$IsNSFWChanged with DiagnosticableTreeMixin implements IsNSFWChanged {
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result newSeriesPageLaunched(NewSeriesPageLaunched value),
+    Result addCoverPressed(AddCoverPressed value),
     Result titleChanged(TitleChanged value),
     Result subtitleChanged(SubtitleChanged value),
     Result summaryChanged(SummaryChanged value),
@@ -1604,6 +1815,7 @@ class _$SaveSeriesDraftButtonPressed
     @required
         Result newSeriesPageLaunched(
             SeriesDraft seriesDraft, BuildContext context),
+    @required Result addCoverPressed(),
     @required Result titleChanged(String title),
     @required Result subtitleChanged(String subtitle),
     @required Result summaryChanged(String summary),
@@ -1615,6 +1827,7 @@ class _$SaveSeriesDraftButtonPressed
     @required Result deleteDraftButtonPressed(),
   }) {
     assert(newSeriesPageLaunched != null);
+    assert(addCoverPressed != null);
     assert(titleChanged != null);
     assert(subtitleChanged != null);
     assert(summaryChanged != null);
@@ -1631,6 +1844,7 @@ class _$SaveSeriesDraftButtonPressed
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result newSeriesPageLaunched(SeriesDraft seriesDraft, BuildContext context),
+    Result addCoverPressed(),
     Result titleChanged(String title),
     Result subtitleChanged(String subtitle),
     Result summaryChanged(String summary),
@@ -1653,6 +1867,7 @@ class _$SaveSeriesDraftButtonPressed
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result newSeriesPageLaunched(NewSeriesPageLaunched value),
+    @required Result addCoverPressed(AddCoverPressed value),
     @required Result titleChanged(TitleChanged value),
     @required Result subtitleChanged(SubtitleChanged value),
     @required Result summaryChanged(SummaryChanged value),
@@ -1665,6 +1880,7 @@ class _$SaveSeriesDraftButtonPressed
     @required Result deleteDraftButtonPressed(DeleteDraftButtonPressed value),
   }) {
     assert(newSeriesPageLaunched != null);
+    assert(addCoverPressed != null);
     assert(titleChanged != null);
     assert(subtitleChanged != null);
     assert(summaryChanged != null);
@@ -1681,6 +1897,7 @@ class _$SaveSeriesDraftButtonPressed
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result newSeriesPageLaunched(NewSeriesPageLaunched value),
+    Result addCoverPressed(AddCoverPressed value),
     Result titleChanged(TitleChanged value),
     Result subtitleChanged(SubtitleChanged value),
     Result summaryChanged(SummaryChanged value),
@@ -1754,6 +1971,7 @@ class _$DeleteDraftButtonPressed
     @required
         Result newSeriesPageLaunched(
             SeriesDraft seriesDraft, BuildContext context),
+    @required Result addCoverPressed(),
     @required Result titleChanged(String title),
     @required Result subtitleChanged(String subtitle),
     @required Result summaryChanged(String summary),
@@ -1765,6 +1983,7 @@ class _$DeleteDraftButtonPressed
     @required Result deleteDraftButtonPressed(),
   }) {
     assert(newSeriesPageLaunched != null);
+    assert(addCoverPressed != null);
     assert(titleChanged != null);
     assert(subtitleChanged != null);
     assert(summaryChanged != null);
@@ -1781,6 +2000,7 @@ class _$DeleteDraftButtonPressed
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result newSeriesPageLaunched(SeriesDraft seriesDraft, BuildContext context),
+    Result addCoverPressed(),
     Result titleChanged(String title),
     Result subtitleChanged(String subtitle),
     Result summaryChanged(String summary),
@@ -1803,6 +2023,7 @@ class _$DeleteDraftButtonPressed
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result newSeriesPageLaunched(NewSeriesPageLaunched value),
+    @required Result addCoverPressed(AddCoverPressed value),
     @required Result titleChanged(TitleChanged value),
     @required Result subtitleChanged(SubtitleChanged value),
     @required Result summaryChanged(SummaryChanged value),
@@ -1815,6 +2036,7 @@ class _$DeleteDraftButtonPressed
     @required Result deleteDraftButtonPressed(DeleteDraftButtonPressed value),
   }) {
     assert(newSeriesPageLaunched != null);
+    assert(addCoverPressed != null);
     assert(titleChanged != null);
     assert(subtitleChanged != null);
     assert(summaryChanged != null);
@@ -1831,6 +2053,7 @@ class _$DeleteDraftButtonPressed
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result newSeriesPageLaunched(NewSeriesPageLaunched value),
+    Result addCoverPressed(AddCoverPressed value),
     Result titleChanged(TitleChanged value),
     Result subtitleChanged(SubtitleChanged value),
     Result summaryChanged(SummaryChanged value),
@@ -1862,6 +2085,8 @@ class _$NewSeriesDatabaseStateTearOff {
           SeriesDraft seriesDraft,
       @required
           bool isEditMode,
+      @required
+          String coverPath,
       @required
           Title title,
       @required
@@ -1901,6 +2126,10 @@ class _$NewSeriesDatabaseStateTearOff {
       @required
           Map<String, String> languagesMap,
       @required
+          List<String> placeholders,
+      @required
+          int placeholderIndex,
+      @required
           bool showErrorMessages,
       @required
           Option<Either<DatabaseFailure, dynamic>>
@@ -1908,6 +2137,7 @@ class _$NewSeriesDatabaseStateTearOff {
     return _NewSeriesDatabaseState(
       seriesDraft: seriesDraft,
       isEditMode: isEditMode,
+      coverPath: coverPath,
       title: title,
       titleStr: titleStr,
       titleWordCount: titleWordCount,
@@ -1927,6 +2157,8 @@ class _$NewSeriesDatabaseStateTearOff {
       isCreatingOrDeleting: isCreatingOrDeleting,
       genresMap: genresMap,
       languagesMap: languagesMap,
+      placeholders: placeholders,
+      placeholderIndex: placeholderIndex,
       showErrorMessages: showErrorMessages,
       databaseFailureOrSuccessOption: databaseFailureOrSuccessOption,
     );
@@ -1939,6 +2171,7 @@ const $NewSeriesDatabaseState = _$NewSeriesDatabaseStateTearOff();
 mixin _$NewSeriesDatabaseState {
   SeriesDraft get seriesDraft;
   bool get isEditMode;
+  String get coverPath;
   Title get title;
   String get titleStr;
   int get titleWordCount;
@@ -1958,6 +2191,8 @@ mixin _$NewSeriesDatabaseState {
   bool get isCreatingOrDeleting;
   Map<String, String> get genresMap;
   Map<String, String> get languagesMap;
+  List<String> get placeholders;
+  int get placeholderIndex;
   bool get showErrorMessages;
   Option<Either<DatabaseFailure, dynamic>> get databaseFailureOrSuccessOption;
 
@@ -1971,6 +2206,7 @@ abstract class $NewSeriesDatabaseStateCopyWith<$Res> {
   $Res call(
       {SeriesDraft seriesDraft,
       bool isEditMode,
+      String coverPath,
       Title title,
       String titleStr,
       int titleWordCount,
@@ -1990,6 +2226,8 @@ abstract class $NewSeriesDatabaseStateCopyWith<$Res> {
       bool isCreatingOrDeleting,
       Map<String, String> genresMap,
       Map<String, String> languagesMap,
+      List<String> placeholders,
+      int placeholderIndex,
       bool showErrorMessages,
       Option<Either<DatabaseFailure, dynamic>> databaseFailureOrSuccessOption});
 }
@@ -2006,6 +2244,7 @@ class _$NewSeriesDatabaseStateCopyWithImpl<$Res>
   $Res call({
     Object seriesDraft = freezed,
     Object isEditMode = freezed,
+    Object coverPath = freezed,
     Object title = freezed,
     Object titleStr = freezed,
     Object titleWordCount = freezed,
@@ -2025,6 +2264,8 @@ class _$NewSeriesDatabaseStateCopyWithImpl<$Res>
     Object isCreatingOrDeleting = freezed,
     Object genresMap = freezed,
     Object languagesMap = freezed,
+    Object placeholders = freezed,
+    Object placeholderIndex = freezed,
     Object showErrorMessages = freezed,
     Object databaseFailureOrSuccessOption = freezed,
   }) {
@@ -2034,6 +2275,7 @@ class _$NewSeriesDatabaseStateCopyWithImpl<$Res>
           : seriesDraft as SeriesDraft,
       isEditMode:
           isEditMode == freezed ? _value.isEditMode : isEditMode as bool,
+      coverPath: coverPath == freezed ? _value.coverPath : coverPath as String,
       title: title == freezed ? _value.title : title as Title,
       titleStr: titleStr == freezed ? _value.titleStr : titleStr as String,
       titleWordCount: titleWordCount == freezed
@@ -2072,6 +2314,12 @@ class _$NewSeriesDatabaseStateCopyWithImpl<$Res>
       languagesMap: languagesMap == freezed
           ? _value.languagesMap
           : languagesMap as Map<String, String>,
+      placeholders: placeholders == freezed
+          ? _value.placeholders
+          : placeholders as List<String>,
+      placeholderIndex: placeholderIndex == freezed
+          ? _value.placeholderIndex
+          : placeholderIndex as int,
       showErrorMessages: showErrorMessages == freezed
           ? _value.showErrorMessages
           : showErrorMessages as bool,
@@ -2092,6 +2340,7 @@ abstract class _$NewSeriesDatabaseStateCopyWith<$Res>
   $Res call(
       {SeriesDraft seriesDraft,
       bool isEditMode,
+      String coverPath,
       Title title,
       String titleStr,
       int titleWordCount,
@@ -2111,6 +2360,8 @@ abstract class _$NewSeriesDatabaseStateCopyWith<$Res>
       bool isCreatingOrDeleting,
       Map<String, String> genresMap,
       Map<String, String> languagesMap,
+      List<String> placeholders,
+      int placeholderIndex,
       bool showErrorMessages,
       Option<Either<DatabaseFailure, dynamic>> databaseFailureOrSuccessOption});
 }
@@ -2129,6 +2380,7 @@ class __$NewSeriesDatabaseStateCopyWithImpl<$Res>
   $Res call({
     Object seriesDraft = freezed,
     Object isEditMode = freezed,
+    Object coverPath = freezed,
     Object title = freezed,
     Object titleStr = freezed,
     Object titleWordCount = freezed,
@@ -2148,6 +2400,8 @@ class __$NewSeriesDatabaseStateCopyWithImpl<$Res>
     Object isCreatingOrDeleting = freezed,
     Object genresMap = freezed,
     Object languagesMap = freezed,
+    Object placeholders = freezed,
+    Object placeholderIndex = freezed,
     Object showErrorMessages = freezed,
     Object databaseFailureOrSuccessOption = freezed,
   }) {
@@ -2157,6 +2411,7 @@ class __$NewSeriesDatabaseStateCopyWithImpl<$Res>
           : seriesDraft as SeriesDraft,
       isEditMode:
           isEditMode == freezed ? _value.isEditMode : isEditMode as bool,
+      coverPath: coverPath == freezed ? _value.coverPath : coverPath as String,
       title: title == freezed ? _value.title : title as Title,
       titleStr: titleStr == freezed ? _value.titleStr : titleStr as String,
       titleWordCount: titleWordCount == freezed
@@ -2195,6 +2450,12 @@ class __$NewSeriesDatabaseStateCopyWithImpl<$Res>
       languagesMap: languagesMap == freezed
           ? _value.languagesMap
           : languagesMap as Map<String, String>,
+      placeholders: placeholders == freezed
+          ? _value.placeholders
+          : placeholders as List<String>,
+      placeholderIndex: placeholderIndex == freezed
+          ? _value.placeholderIndex
+          : placeholderIndex as int,
       showErrorMessages: showErrorMessages == freezed
           ? _value.showErrorMessages
           : showErrorMessages as bool,
@@ -2212,6 +2473,7 @@ class _$_NewSeriesDatabaseState
   const _$_NewSeriesDatabaseState(
       {@required this.seriesDraft,
       @required this.isEditMode,
+      @required this.coverPath,
       @required this.title,
       @required this.titleStr,
       @required this.titleWordCount,
@@ -2231,10 +2493,13 @@ class _$_NewSeriesDatabaseState
       @required this.isCreatingOrDeleting,
       @required this.genresMap,
       @required this.languagesMap,
+      @required this.placeholders,
+      @required this.placeholderIndex,
       @required this.showErrorMessages,
       @required this.databaseFailureOrSuccessOption})
       : assert(seriesDraft != null),
         assert(isEditMode != null),
+        assert(coverPath != null),
         assert(title != null),
         assert(titleStr != null),
         assert(titleWordCount != null),
@@ -2254,6 +2519,8 @@ class _$_NewSeriesDatabaseState
         assert(isCreatingOrDeleting != null),
         assert(genresMap != null),
         assert(languagesMap != null),
+        assert(placeholders != null),
+        assert(placeholderIndex != null),
         assert(showErrorMessages != null),
         assert(databaseFailureOrSuccessOption != null);
 
@@ -2261,6 +2528,8 @@ class _$_NewSeriesDatabaseState
   final SeriesDraft seriesDraft;
   @override
   final bool isEditMode;
+  @override
+  final String coverPath;
   @override
   final Title title;
   @override
@@ -2300,13 +2569,17 @@ class _$_NewSeriesDatabaseState
   @override
   final Map<String, String> languagesMap;
   @override
+  final List<String> placeholders;
+  @override
+  final int placeholderIndex;
+  @override
   final bool showErrorMessages;
   @override
   final Option<Either<DatabaseFailure, dynamic>> databaseFailureOrSuccessOption;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'NewSeriesDatabaseState(seriesDraft: $seriesDraft, isEditMode: $isEditMode, title: $title, titleStr: $titleStr, titleWordCount: $titleWordCount, subtitle: $subtitle, subtitleStr: $subtitleStr, subtitleWordCount: $subtitleWordCount, summary: $summary, summaryStr: $summaryStr, summaryWordCount: $summaryWordCount, genre: $genre, genreStr: $genreStr, genreOptional: $genreOptional, genreOptionalStr: $genreOptionalStr, language: $language, languageStr: $languageStr, isNSFW: $isNSFW, isCreatingOrDeleting: $isCreatingOrDeleting, genresMap: $genresMap, languagesMap: $languagesMap, showErrorMessages: $showErrorMessages, databaseFailureOrSuccessOption: $databaseFailureOrSuccessOption)';
+    return 'NewSeriesDatabaseState(seriesDraft: $seriesDraft, isEditMode: $isEditMode, coverPath: $coverPath, title: $title, titleStr: $titleStr, titleWordCount: $titleWordCount, subtitle: $subtitle, subtitleStr: $subtitleStr, subtitleWordCount: $subtitleWordCount, summary: $summary, summaryStr: $summaryStr, summaryWordCount: $summaryWordCount, genre: $genre, genreStr: $genreStr, genreOptional: $genreOptional, genreOptionalStr: $genreOptionalStr, language: $language, languageStr: $languageStr, isNSFW: $isNSFW, isCreatingOrDeleting: $isCreatingOrDeleting, genresMap: $genresMap, languagesMap: $languagesMap, placeholders: $placeholders, placeholderIndex: $placeholderIndex, showErrorMessages: $showErrorMessages, databaseFailureOrSuccessOption: $databaseFailureOrSuccessOption)';
   }
 
   @override
@@ -2316,6 +2589,7 @@ class _$_NewSeriesDatabaseState
       ..add(DiagnosticsProperty('type', 'NewSeriesDatabaseState'))
       ..add(DiagnosticsProperty('seriesDraft', seriesDraft))
       ..add(DiagnosticsProperty('isEditMode', isEditMode))
+      ..add(DiagnosticsProperty('coverPath', coverPath))
       ..add(DiagnosticsProperty('title', title))
       ..add(DiagnosticsProperty('titleStr', titleStr))
       ..add(DiagnosticsProperty('titleWordCount', titleWordCount))
@@ -2335,6 +2609,8 @@ class _$_NewSeriesDatabaseState
       ..add(DiagnosticsProperty('isCreatingOrDeleting', isCreatingOrDeleting))
       ..add(DiagnosticsProperty('genresMap', genresMap))
       ..add(DiagnosticsProperty('languagesMap', languagesMap))
+      ..add(DiagnosticsProperty('placeholders', placeholders))
+      ..add(DiagnosticsProperty('placeholderIndex', placeholderIndex))
       ..add(DiagnosticsProperty('showErrorMessages', showErrorMessages))
       ..add(DiagnosticsProperty(
           'databaseFailureOrSuccessOption', databaseFailureOrSuccessOption));
@@ -2350,6 +2626,9 @@ class _$_NewSeriesDatabaseState
             (identical(other.isEditMode, isEditMode) ||
                 const DeepCollectionEquality()
                     .equals(other.isEditMode, isEditMode)) &&
+            (identical(other.coverPath, coverPath) ||
+                const DeepCollectionEquality()
+                    .equals(other.coverPath, coverPath)) &&
             (identical(other.title, title) ||
                 const DeepCollectionEquality().equals(other.title, title)) &&
             (identical(other.titleStr, titleStr) ||
@@ -2404,12 +2683,12 @@ class _$_NewSeriesDatabaseState
             (identical(other.languagesMap, languagesMap) ||
                 const DeepCollectionEquality()
                     .equals(other.languagesMap, languagesMap)) &&
-            (identical(other.showErrorMessages, showErrorMessages) ||
+            (identical(other.placeholders, placeholders) ||
                 const DeepCollectionEquality()
-                    .equals(other.showErrorMessages, showErrorMessages)) &&
-            (identical(other.databaseFailureOrSuccessOption, databaseFailureOrSuccessOption) ||
-                const DeepCollectionEquality()
-                    .equals(other.databaseFailureOrSuccessOption, databaseFailureOrSuccessOption)));
+                    .equals(other.placeholders, placeholders)) &&
+            (identical(other.placeholderIndex, placeholderIndex) || const DeepCollectionEquality().equals(other.placeholderIndex, placeholderIndex)) &&
+            (identical(other.showErrorMessages, showErrorMessages) || const DeepCollectionEquality().equals(other.showErrorMessages, showErrorMessages)) &&
+            (identical(other.databaseFailureOrSuccessOption, databaseFailureOrSuccessOption) || const DeepCollectionEquality().equals(other.databaseFailureOrSuccessOption, databaseFailureOrSuccessOption)));
   }
 
   @override
@@ -2417,6 +2696,7 @@ class _$_NewSeriesDatabaseState
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(seriesDraft) ^
       const DeepCollectionEquality().hash(isEditMode) ^
+      const DeepCollectionEquality().hash(coverPath) ^
       const DeepCollectionEquality().hash(title) ^
       const DeepCollectionEquality().hash(titleStr) ^
       const DeepCollectionEquality().hash(titleWordCount) ^
@@ -2436,6 +2716,8 @@ class _$_NewSeriesDatabaseState
       const DeepCollectionEquality().hash(isCreatingOrDeleting) ^
       const DeepCollectionEquality().hash(genresMap) ^
       const DeepCollectionEquality().hash(languagesMap) ^
+      const DeepCollectionEquality().hash(placeholders) ^
+      const DeepCollectionEquality().hash(placeholderIndex) ^
       const DeepCollectionEquality().hash(showErrorMessages) ^
       const DeepCollectionEquality().hash(databaseFailureOrSuccessOption);
 
@@ -2451,6 +2733,8 @@ abstract class _NewSeriesDatabaseState implements NewSeriesDatabaseState {
           SeriesDraft seriesDraft,
       @required
           bool isEditMode,
+      @required
+          String coverPath,
       @required
           Title title,
       @required
@@ -2490,6 +2774,10 @@ abstract class _NewSeriesDatabaseState implements NewSeriesDatabaseState {
       @required
           Map<String, String> languagesMap,
       @required
+          List<String> placeholders,
+      @required
+          int placeholderIndex,
+      @required
           bool showErrorMessages,
       @required
           Option<Either<DatabaseFailure, dynamic>>
@@ -2499,6 +2787,8 @@ abstract class _NewSeriesDatabaseState implements NewSeriesDatabaseState {
   SeriesDraft get seriesDraft;
   @override
   bool get isEditMode;
+  @override
+  String get coverPath;
   @override
   Title get title;
   @override
@@ -2537,6 +2827,10 @@ abstract class _NewSeriesDatabaseState implements NewSeriesDatabaseState {
   Map<String, String> get genresMap;
   @override
   Map<String, String> get languagesMap;
+  @override
+  List<String> get placeholders;
+  @override
+  int get placeholderIndex;
   @override
   bool get showErrorMessages;
   @override

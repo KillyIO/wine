@@ -25,6 +25,7 @@ dependencies:
   dartz: ^0.9.0-dev.6
   firebase_auth: ^0.16.0
   firebase_core: ^0.4.4+3
+  firebase_storage: ^3.1.5
   flare_flutter: ^2.0.3
   # flushbar: 1.9.1
   flutter_bloc: ^4.0.0
@@ -37,6 +38,8 @@ dependencies:
   google_sign_in: ^4.4.3
   hive: ^1.4.1+1
   hive_flutter: ^0.3.0+2
+  image_cropper: ^1.2.2
+  image_picker: ^0.6.6+4
   injectable: ^0.3.0
   logger: ^0.9.1
   package_info: ^0.4.0+16

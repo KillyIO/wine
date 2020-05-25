@@ -5,6 +5,7 @@ abstract class NewSeriesDatabaseState with _$NewSeriesDatabaseState {
   const factory NewSeriesDatabaseState({
     @required SeriesDraft seriesDraft,
     @required bool isEditMode,
+    @required String coverPath,
     @required Title title,
     @required String titleStr,
     @required int titleWordCount,
@@ -24,6 +25,8 @@ abstract class NewSeriesDatabaseState with _$NewSeriesDatabaseState {
     @required bool isCreatingOrDeleting,
     @required Map<String, String> genresMap,
     @required Map<String, String> languagesMap,
+    @required List<String> placeholders,
+    @required int placeholderIndex,
     @required bool showErrorMessages,
     @required
         Option<Either<DatabaseFailure, dynamic>> databaseFailureOrSuccessOption,
@@ -32,6 +35,7 @@ abstract class NewSeriesDatabaseState with _$NewSeriesDatabaseState {
   factory NewSeriesDatabaseState.initial() => NewSeriesDatabaseState(
         seriesDraft: SeriesDraft(),
         isEditMode: false,
+        coverPath: '',
         title: Title(''),
         titleStr: '',
         titleWordCount: 0,
@@ -51,6 +55,8 @@ abstract class NewSeriesDatabaseState with _$NewSeriesDatabaseState {
         isCreatingOrDeleting: false,
         genresMap: <String, String>{},
         languagesMap: <String, String>{},
+        placeholders: <String>[],
+        placeholderIndex: 0,
         showErrorMessages: false,
         databaseFailureOrSuccessOption: none(),
       );

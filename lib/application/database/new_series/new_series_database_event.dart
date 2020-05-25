@@ -6,6 +6,7 @@ abstract class NewSeriesDatabaseEvent with _$NewSeriesDatabaseEvent {
     SeriesDraft seriesDraft,
     BuildContext context,
   }) = NewSeriesPageLaunched;
+  const factory NewSeriesDatabaseEvent.addCoverPressed() = AddCoverPressed;
   const factory NewSeriesDatabaseEvent.titleChanged(
     String title,
   ) = TitleChanged;

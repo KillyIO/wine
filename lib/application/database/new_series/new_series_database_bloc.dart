@@ -1,12 +1,18 @@
 import 'dart:async';
+import 'dart:io';
+import 'dart:math';
 
 import 'package:bloc/bloc.dart';
 import 'package:dartz/dartz.dart';
 import 'package:flutter/widgets.dart' hide Title;
 import 'package:flutter/foundation.dart' hide Summary;
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:image_cropper/image_cropper.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:injectable/injectable.dart';
 import 'package:meta/meta.dart';
+import 'package:path/path.dart' as p;
+import 'package:path_provider/path_provider.dart';
 import 'package:stringprocess/stringprocess.dart';
 import 'package:uuid/uuid.dart';
 import 'package:wine/domain/database/database_failure.dart';
@@ -19,6 +25,7 @@ import 'package:wine/domain/database/subtitle.dart';
 import 'package:wine/domain/database/title.dart';
 import 'package:wine/domain/models/hive/series_draft.dart';
 import 'package:wine/domain/models/hive/session.dart';
+import 'package:wine/utils/constants.dart';
 import 'package:wine/utils/methods.dart';
 
 part 'new_series_database_event.dart';
@@ -49,6 +56,8 @@ class NewSeriesDatabaseBloc
   ) async* {
     yield* event.map(
       newSeriesPageLaunched: (event) async* {
+        final Random random = Random();
+
         Either<DatabaseFailure, dynamic> failureOrSuccess;
 
         SeriesDraft seriesDraft;
@@ -76,10 +85,13 @@ class NewSeriesDatabaseBloc
           );
         }
 
+        final List<String> placeholdersUrls = Methods.getPlaceholderUrls();
+
         if (isEditMode) {
           yield state.copyWith(
             seriesDraft: seriesDraft,
             isEditMode: isEditMode,
+            coverPath: seriesDraft.coverPath,
             title: Title(seriesDraft.title),
             titleStr: seriesDraft.title,
             titleWordCount: tps.getWordCount(seriesDraft.title),
@@ -98,6 +110,8 @@ class NewSeriesDatabaseBloc
             isNSFW: seriesDraft.isNSFW,
             genresMap: Methods.getGenres(event.context),
             languagesMap: Methods.getLanguages(event.context),
+            placeholders: placeholdersUrls,
+            placeholderIndex: random.nextInt(placeholdersUrls.length),
             databaseFailureOrSuccessOption: optionOf(failureOrSuccess),
           );
         } else {
@@ -106,8 +120,42 @@ class NewSeriesDatabaseBloc
             isEditMode: isEditMode,
             genresMap: Methods.getGenres(event.context),
             languagesMap: Methods.getLanguages(event.context),
+            placeholders: placeholdersUrls,
+            placeholderIndex: random.nextInt(placeholdersUrls.length),
             databaseFailureOrSuccessOption: optionOf(failureOrSuccess),
           );
+        }
+      },
+      addCoverPressed: (event) async* {
+        final File image = await ImagePicker.pickImage(
+          source: ImageSource.gallery,
+          maxWidth: Constants.coverMaxWidthAsDouble,
+          maxHeight: Constants.coverMaxHeightAsDouble,
+        );
+
+        if (image != null) {
+          final File croppedFile = await ImageCropper.cropImage(
+            sourcePath: image.path,
+            maxWidth: Constants.coverMaxWidth,
+            maxHeight: Constants.coverMaxHeight,
+            aspectRatio: const CropAspectRatio(
+              ratioX: Constants.coverRatioX,
+              ratioY: Constants.coverRatioY,
+            ),
+          );
+
+          if (croppedFile != null) {
+            final Directory appDocDir =
+                await getApplicationDocumentsDirectory();
+            final String coverPath =
+                appDocDir.uri.resolve('${p.basename(croppedFile.path)}').path;
+            final File coverFile = await croppedFile.copy(coverPath);
+
+            yield state.copyWith(
+              coverPath: coverFile.path,
+              databaseFailureOrSuccessOption: none(),
+            );
+          }
         }
       },
       titleChanged: (event) async* {
@@ -187,14 +235,14 @@ class NewSeriesDatabaseBloc
           final SeriesDraft seriesDraft = state.seriesDraft;
 
           seriesDraft
+            ..coverPath = state.coverPath
             ..title = state.title.getOrCrash()
             ..subtitle = state.subtitle.getOrCrash()
             ..summary = state.summary.getOrCrash()
             ..genre = state.genre.getOrCrash()
             ..genreOptional = state.genreOptional.getOrCrash()
             ..language = state.language.getOrCrash()
-            ..isNSFW = state.isNSFW
-            ..coverPath = '';
+            ..isNSFW = state.isNSFW;
 
           failureOrSuccess = await _localSeriesDraftDatabaseFacade
               .saveSeriesDraft(seriesDraft);
