@@ -66,4 +66,16 @@ abstract class HiveInjectableModule {
 
     return Hive.openBox<ChapterDraft>(Constants.chapterDraftsBox);
   }
+
+  @preResolve
+  @lazySingleton
+  Future<Box<String>> get openPlaceholdersBox async {
+    final Directory extDir = await getApplicationDocumentsDirectory();
+    final String dirPath = '${extDir.path}/db';
+    await Directory(dirPath).create(recursive: true);
+
+    Hive.init(dirPath);
+
+    return Hive.openBox<String>(Constants.placeholdersBox);
+  }
 }

@@ -12,15 +12,9 @@ T _$identity<T>(T value) => value;
 class _$SeriesDatabaseEventTearOff {
   const _$SeriesDatabaseEventTearOff();
 
-  SeriesPageLaunched seriesPageLaunched(
-      {@required Series series,
-      @required String placeholderUrl,
-      String username,
-      BuildContext context}) {
+  SeriesPageLaunched seriesPageLaunched({Series series, BuildContext context}) {
     return SeriesPageLaunched(
       series: series,
-      placeholderUrl: placeholderUrl,
-      username: username,
       context: context,
     );
   }
@@ -36,6 +30,10 @@ class _$SeriesDatabaseEventTearOff {
   ShowMoreSummaryButtonPressed showMoreSummaryButtonPressed() {
     return const ShowMoreSummaryButtonPressed();
   }
+
+  ReadChapterOneButtonPressed readChapterOneButtonPressed() {
+    return const ReadChapterOneButtonPressed();
+  }
 }
 
 // ignore: unused_element
@@ -44,20 +42,19 @@ const $SeriesDatabaseEvent = _$SeriesDatabaseEventTearOff();
 mixin _$SeriesDatabaseEvent {
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required
-        Result seriesPageLaunched(Series series, String placeholderUrl,
-            String username, BuildContext context),
+    @required Result seriesPageLaunched(Series series, BuildContext context),
     @required Result likeButtonPressed(),
     @required Result bookmarkButtonPressed(),
     @required Result showMoreSummaryButtonPressed(),
+    @required Result readChapterOneButtonPressed(),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result seriesPageLaunched(Series series, String placeholderUrl,
-        String username, BuildContext context),
+    Result seriesPageLaunched(Series series, BuildContext context),
     Result likeButtonPressed(),
     Result bookmarkButtonPressed(),
     Result showMoreSummaryButtonPressed(),
+    Result readChapterOneButtonPressed(),
     @required Result orElse(),
   });
   @optionalTypeArgs
@@ -67,6 +64,8 @@ mixin _$SeriesDatabaseEvent {
     @required Result bookmarkButtonPressed(BookmarkButtonPressed value),
     @required
         Result showMoreSummaryButtonPressed(ShowMoreSummaryButtonPressed value),
+    @required
+        Result readChapterOneButtonPressed(ReadChapterOneButtonPressed value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
@@ -74,6 +73,7 @@ mixin _$SeriesDatabaseEvent {
     Result likeButtonPressed(LikeButtonPressed value),
     Result bookmarkButtonPressed(BookmarkButtonPressed value),
     Result showMoreSummaryButtonPressed(ShowMoreSummaryButtonPressed value),
+    Result readChapterOneButtonPressed(ReadChapterOneButtonPressed value),
     @required Result orElse(),
   });
 }
@@ -97,11 +97,7 @@ abstract class $SeriesPageLaunchedCopyWith<$Res> {
   factory $SeriesPageLaunchedCopyWith(
           SeriesPageLaunched value, $Res Function(SeriesPageLaunched) then) =
       _$SeriesPageLaunchedCopyWithImpl<$Res>;
-  $Res call(
-      {Series series,
-      String placeholderUrl,
-      String username,
-      BuildContext context});
+  $Res call({Series series, BuildContext context});
 }
 
 class _$SeriesPageLaunchedCopyWithImpl<$Res>
@@ -117,16 +113,10 @@ class _$SeriesPageLaunchedCopyWithImpl<$Res>
   @override
   $Res call({
     Object series = freezed,
-    Object placeholderUrl = freezed,
-    Object username = freezed,
     Object context = freezed,
   }) {
     return _then(SeriesPageLaunched(
       series: series == freezed ? _value.series : series as Series,
-      placeholderUrl: placeholderUrl == freezed
-          ? _value.placeholderUrl
-          : placeholderUrl as String,
-      username: username == freezed ? _value.username : username as String,
       context: context == freezed ? _value.context : context as BuildContext,
     ));
   }
@@ -135,26 +125,16 @@ class _$SeriesPageLaunchedCopyWithImpl<$Res>
 class _$SeriesPageLaunched
     with DiagnosticableTreeMixin
     implements SeriesPageLaunched {
-  const _$SeriesPageLaunched(
-      {@required this.series,
-      @required this.placeholderUrl,
-      this.username,
-      this.context})
-      : assert(series != null),
-        assert(placeholderUrl != null);
+  const _$SeriesPageLaunched({this.series, this.context});
 
   @override
   final Series series;
-  @override
-  final String placeholderUrl;
-  @override
-  final String username;
   @override
   final BuildContext context;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'SeriesDatabaseEvent.seriesPageLaunched(series: $series, placeholderUrl: $placeholderUrl, username: $username, context: $context)';
+    return 'SeriesDatabaseEvent.seriesPageLaunched(series: $series, context: $context)';
   }
 
   @override
@@ -164,8 +144,6 @@ class _$SeriesPageLaunched
       ..add(
           DiagnosticsProperty('type', 'SeriesDatabaseEvent.seriesPageLaunched'))
       ..add(DiagnosticsProperty('series', series))
-      ..add(DiagnosticsProperty('placeholderUrl', placeholderUrl))
-      ..add(DiagnosticsProperty('username', username))
       ..add(DiagnosticsProperty('context', context));
   }
 
@@ -175,12 +153,6 @@ class _$SeriesPageLaunched
         (other is SeriesPageLaunched &&
             (identical(other.series, series) ||
                 const DeepCollectionEquality().equals(other.series, series)) &&
-            (identical(other.placeholderUrl, placeholderUrl) ||
-                const DeepCollectionEquality()
-                    .equals(other.placeholderUrl, placeholderUrl)) &&
-            (identical(other.username, username) ||
-                const DeepCollectionEquality()
-                    .equals(other.username, username)) &&
             (identical(other.context, context) ||
                 const DeepCollectionEquality().equals(other.context, context)));
   }
@@ -189,8 +161,6 @@ class _$SeriesPageLaunched
   int get hashCode =>
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(series) ^
-      const DeepCollectionEquality().hash(placeholderUrl) ^
-      const DeepCollectionEquality().hash(username) ^
       const DeepCollectionEquality().hash(context);
 
   @override
@@ -200,33 +170,33 @@ class _$SeriesPageLaunched
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required
-        Result seriesPageLaunched(Series series, String placeholderUrl,
-            String username, BuildContext context),
+    @required Result seriesPageLaunched(Series series, BuildContext context),
     @required Result likeButtonPressed(),
     @required Result bookmarkButtonPressed(),
     @required Result showMoreSummaryButtonPressed(),
+    @required Result readChapterOneButtonPressed(),
   }) {
     assert(seriesPageLaunched != null);
     assert(likeButtonPressed != null);
     assert(bookmarkButtonPressed != null);
     assert(showMoreSummaryButtonPressed != null);
-    return seriesPageLaunched(series, placeholderUrl, username, context);
+    assert(readChapterOneButtonPressed != null);
+    return seriesPageLaunched(series, context);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result seriesPageLaunched(Series series, String placeholderUrl,
-        String username, BuildContext context),
+    Result seriesPageLaunched(Series series, BuildContext context),
     Result likeButtonPressed(),
     Result bookmarkButtonPressed(),
     Result showMoreSummaryButtonPressed(),
+    Result readChapterOneButtonPressed(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
     if (seriesPageLaunched != null) {
-      return seriesPageLaunched(series, placeholderUrl, username, context);
+      return seriesPageLaunched(series, context);
     }
     return orElse();
   }
@@ -239,11 +209,14 @@ class _$SeriesPageLaunched
     @required Result bookmarkButtonPressed(BookmarkButtonPressed value),
     @required
         Result showMoreSummaryButtonPressed(ShowMoreSummaryButtonPressed value),
+    @required
+        Result readChapterOneButtonPressed(ReadChapterOneButtonPressed value),
   }) {
     assert(seriesPageLaunched != null);
     assert(likeButtonPressed != null);
     assert(bookmarkButtonPressed != null);
     assert(showMoreSummaryButtonPressed != null);
+    assert(readChapterOneButtonPressed != null);
     return seriesPageLaunched(this);
   }
 
@@ -254,6 +227,7 @@ class _$SeriesPageLaunched
     Result likeButtonPressed(LikeButtonPressed value),
     Result bookmarkButtonPressed(BookmarkButtonPressed value),
     Result showMoreSummaryButtonPressed(ShowMoreSummaryButtonPressed value),
+    Result readChapterOneButtonPressed(ReadChapterOneButtonPressed value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -265,15 +239,10 @@ class _$SeriesPageLaunched
 }
 
 abstract class SeriesPageLaunched implements SeriesDatabaseEvent {
-  const factory SeriesPageLaunched(
-      {@required Series series,
-      @required String placeholderUrl,
-      String username,
-      BuildContext context}) = _$SeriesPageLaunched;
+  const factory SeriesPageLaunched({Series series, BuildContext context}) =
+      _$SeriesPageLaunched;
 
   Series get series;
-  String get placeholderUrl;
-  String get username;
   BuildContext get context;
   $SeriesPageLaunchedCopyWith<SeriesPageLaunched> get copyWith;
 }
@@ -324,28 +293,28 @@ class _$LikeButtonPressed
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required
-        Result seriesPageLaunched(Series series, String placeholderUrl,
-            String username, BuildContext context),
+    @required Result seriesPageLaunched(Series series, BuildContext context),
     @required Result likeButtonPressed(),
     @required Result bookmarkButtonPressed(),
     @required Result showMoreSummaryButtonPressed(),
+    @required Result readChapterOneButtonPressed(),
   }) {
     assert(seriesPageLaunched != null);
     assert(likeButtonPressed != null);
     assert(bookmarkButtonPressed != null);
     assert(showMoreSummaryButtonPressed != null);
+    assert(readChapterOneButtonPressed != null);
     return likeButtonPressed();
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result seriesPageLaunched(Series series, String placeholderUrl,
-        String username, BuildContext context),
+    Result seriesPageLaunched(Series series, BuildContext context),
     Result likeButtonPressed(),
     Result bookmarkButtonPressed(),
     Result showMoreSummaryButtonPressed(),
+    Result readChapterOneButtonPressed(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -363,11 +332,14 @@ class _$LikeButtonPressed
     @required Result bookmarkButtonPressed(BookmarkButtonPressed value),
     @required
         Result showMoreSummaryButtonPressed(ShowMoreSummaryButtonPressed value),
+    @required
+        Result readChapterOneButtonPressed(ReadChapterOneButtonPressed value),
   }) {
     assert(seriesPageLaunched != null);
     assert(likeButtonPressed != null);
     assert(bookmarkButtonPressed != null);
     assert(showMoreSummaryButtonPressed != null);
+    assert(readChapterOneButtonPressed != null);
     return likeButtonPressed(this);
   }
 
@@ -378,6 +350,7 @@ class _$LikeButtonPressed
     Result likeButtonPressed(LikeButtonPressed value),
     Result bookmarkButtonPressed(BookmarkButtonPressed value),
     Result showMoreSummaryButtonPressed(ShowMoreSummaryButtonPressed value),
+    Result readChapterOneButtonPressed(ReadChapterOneButtonPressed value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -438,28 +411,28 @@ class _$BookmarkButtonPressed
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required
-        Result seriesPageLaunched(Series series, String placeholderUrl,
-            String username, BuildContext context),
+    @required Result seriesPageLaunched(Series series, BuildContext context),
     @required Result likeButtonPressed(),
     @required Result bookmarkButtonPressed(),
     @required Result showMoreSummaryButtonPressed(),
+    @required Result readChapterOneButtonPressed(),
   }) {
     assert(seriesPageLaunched != null);
     assert(likeButtonPressed != null);
     assert(bookmarkButtonPressed != null);
     assert(showMoreSummaryButtonPressed != null);
+    assert(readChapterOneButtonPressed != null);
     return bookmarkButtonPressed();
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result seriesPageLaunched(Series series, String placeholderUrl,
-        String username, BuildContext context),
+    Result seriesPageLaunched(Series series, BuildContext context),
     Result likeButtonPressed(),
     Result bookmarkButtonPressed(),
     Result showMoreSummaryButtonPressed(),
+    Result readChapterOneButtonPressed(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -477,11 +450,14 @@ class _$BookmarkButtonPressed
     @required Result bookmarkButtonPressed(BookmarkButtonPressed value),
     @required
         Result showMoreSummaryButtonPressed(ShowMoreSummaryButtonPressed value),
+    @required
+        Result readChapterOneButtonPressed(ReadChapterOneButtonPressed value),
   }) {
     assert(seriesPageLaunched != null);
     assert(likeButtonPressed != null);
     assert(bookmarkButtonPressed != null);
     assert(showMoreSummaryButtonPressed != null);
+    assert(readChapterOneButtonPressed != null);
     return bookmarkButtonPressed(this);
   }
 
@@ -492,6 +468,7 @@ class _$BookmarkButtonPressed
     Result likeButtonPressed(LikeButtonPressed value),
     Result bookmarkButtonPressed(BookmarkButtonPressed value),
     Result showMoreSummaryButtonPressed(ShowMoreSummaryButtonPressed value),
+    Result readChapterOneButtonPressed(ReadChapterOneButtonPressed value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -555,28 +532,28 @@ class _$ShowMoreSummaryButtonPressed
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required
-        Result seriesPageLaunched(Series series, String placeholderUrl,
-            String username, BuildContext context),
+    @required Result seriesPageLaunched(Series series, BuildContext context),
     @required Result likeButtonPressed(),
     @required Result bookmarkButtonPressed(),
     @required Result showMoreSummaryButtonPressed(),
+    @required Result readChapterOneButtonPressed(),
   }) {
     assert(seriesPageLaunched != null);
     assert(likeButtonPressed != null);
     assert(bookmarkButtonPressed != null);
     assert(showMoreSummaryButtonPressed != null);
+    assert(readChapterOneButtonPressed != null);
     return showMoreSummaryButtonPressed();
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result seriesPageLaunched(Series series, String placeholderUrl,
-        String username, BuildContext context),
+    Result seriesPageLaunched(Series series, BuildContext context),
     Result likeButtonPressed(),
     Result bookmarkButtonPressed(),
     Result showMoreSummaryButtonPressed(),
+    Result readChapterOneButtonPressed(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -594,11 +571,14 @@ class _$ShowMoreSummaryButtonPressed
     @required Result bookmarkButtonPressed(BookmarkButtonPressed value),
     @required
         Result showMoreSummaryButtonPressed(ShowMoreSummaryButtonPressed value),
+    @required
+        Result readChapterOneButtonPressed(ReadChapterOneButtonPressed value),
   }) {
     assert(seriesPageLaunched != null);
     assert(likeButtonPressed != null);
     assert(bookmarkButtonPressed != null);
     assert(showMoreSummaryButtonPressed != null);
+    assert(readChapterOneButtonPressed != null);
     return showMoreSummaryButtonPressed(this);
   }
 
@@ -609,6 +589,7 @@ class _$ShowMoreSummaryButtonPressed
     Result likeButtonPressed(LikeButtonPressed value),
     Result bookmarkButtonPressed(BookmarkButtonPressed value),
     Result showMoreSummaryButtonPressed(ShowMoreSummaryButtonPressed value),
+    Result readChapterOneButtonPressed(ReadChapterOneButtonPressed value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -623,21 +604,165 @@ abstract class ShowMoreSummaryButtonPressed implements SeriesDatabaseEvent {
   const factory ShowMoreSummaryButtonPressed() = _$ShowMoreSummaryButtonPressed;
 }
 
+abstract class $ReadChapterOneButtonPressedCopyWith<$Res> {
+  factory $ReadChapterOneButtonPressedCopyWith(
+          ReadChapterOneButtonPressed value,
+          $Res Function(ReadChapterOneButtonPressed) then) =
+      _$ReadChapterOneButtonPressedCopyWithImpl<$Res>;
+}
+
+class _$ReadChapterOneButtonPressedCopyWithImpl<$Res>
+    extends _$SeriesDatabaseEventCopyWithImpl<$Res>
+    implements $ReadChapterOneButtonPressedCopyWith<$Res> {
+  _$ReadChapterOneButtonPressedCopyWithImpl(ReadChapterOneButtonPressed _value,
+      $Res Function(ReadChapterOneButtonPressed) _then)
+      : super(_value, (v) => _then(v as ReadChapterOneButtonPressed));
+
+  @override
+  ReadChapterOneButtonPressed get _value =>
+      super._value as ReadChapterOneButtonPressed;
+}
+
+class _$ReadChapterOneButtonPressed
+    with DiagnosticableTreeMixin
+    implements ReadChapterOneButtonPressed {
+  const _$ReadChapterOneButtonPressed();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'SeriesDatabaseEvent.readChapterOneButtonPressed()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty(
+          'type', 'SeriesDatabaseEvent.readChapterOneButtonPressed'));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is ReadChapterOneButtonPressed);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result seriesPageLaunched(Series series, BuildContext context),
+    @required Result likeButtonPressed(),
+    @required Result bookmarkButtonPressed(),
+    @required Result showMoreSummaryButtonPressed(),
+    @required Result readChapterOneButtonPressed(),
+  }) {
+    assert(seriesPageLaunched != null);
+    assert(likeButtonPressed != null);
+    assert(bookmarkButtonPressed != null);
+    assert(showMoreSummaryButtonPressed != null);
+    assert(readChapterOneButtonPressed != null);
+    return readChapterOneButtonPressed();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result seriesPageLaunched(Series series, BuildContext context),
+    Result likeButtonPressed(),
+    Result bookmarkButtonPressed(),
+    Result showMoreSummaryButtonPressed(),
+    Result readChapterOneButtonPressed(),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (readChapterOneButtonPressed != null) {
+      return readChapterOneButtonPressed();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result seriesPageLaunched(SeriesPageLaunched value),
+    @required Result likeButtonPressed(LikeButtonPressed value),
+    @required Result bookmarkButtonPressed(BookmarkButtonPressed value),
+    @required
+        Result showMoreSummaryButtonPressed(ShowMoreSummaryButtonPressed value),
+    @required
+        Result readChapterOneButtonPressed(ReadChapterOneButtonPressed value),
+  }) {
+    assert(seriesPageLaunched != null);
+    assert(likeButtonPressed != null);
+    assert(bookmarkButtonPressed != null);
+    assert(showMoreSummaryButtonPressed != null);
+    assert(readChapterOneButtonPressed != null);
+    return readChapterOneButtonPressed(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result seriesPageLaunched(SeriesPageLaunched value),
+    Result likeButtonPressed(LikeButtonPressed value),
+    Result bookmarkButtonPressed(BookmarkButtonPressed value),
+    Result showMoreSummaryButtonPressed(ShowMoreSummaryButtonPressed value),
+    Result readChapterOneButtonPressed(ReadChapterOneButtonPressed value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (readChapterOneButtonPressed != null) {
+      return readChapterOneButtonPressed(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ReadChapterOneButtonPressed implements SeriesDatabaseEvent {
+  const factory ReadChapterOneButtonPressed() = _$ReadChapterOneButtonPressed;
+}
+
 class _$SeriesDatabaseStateTearOff {
   const _$SeriesDatabaseStateTearOff();
 
   _SeriesDatabaseState call(
-      {@required Series series,
-      @required String placeholderUrl,
-      @required String username,
-      @required Map<String, String> genresMap,
-      @required Map<String, String> languagesMap}) {
+      {@required
+          Session session,
+      @required
+          Series series,
+      @required
+          Chapter chapterOne,
+      @required
+          bool isLiked,
+      @required
+          bool isBookmarked,
+      @required
+          int viewsCount,
+      @required
+          int likesCount,
+      @required
+          int bookmarksCount,
+      @required
+          Map<String, String> genresMap,
+      @required
+          Map<String, String> languagesMap,
+      @required
+          Option<Either<DatabaseFailure, dynamic>>
+              databaseFailureOrSuccessOption}) {
     return _SeriesDatabaseState(
+      session: session,
       series: series,
-      placeholderUrl: placeholderUrl,
-      username: username,
+      chapterOne: chapterOne,
+      isLiked: isLiked,
+      isBookmarked: isBookmarked,
+      viewsCount: viewsCount,
+      likesCount: likesCount,
+      bookmarksCount: bookmarksCount,
       genresMap: genresMap,
       languagesMap: languagesMap,
+      databaseFailureOrSuccessOption: databaseFailureOrSuccessOption,
     );
   }
 }
@@ -646,11 +771,17 @@ class _$SeriesDatabaseStateTearOff {
 const $SeriesDatabaseState = _$SeriesDatabaseStateTearOff();
 
 mixin _$SeriesDatabaseState {
+  Session get session;
   Series get series;
-  String get placeholderUrl;
-  String get username;
+  Chapter get chapterOne;
+  bool get isLiked;
+  bool get isBookmarked;
+  int get viewsCount;
+  int get likesCount;
+  int get bookmarksCount;
   Map<String, String> get genresMap;
   Map<String, String> get languagesMap;
+  Option<Either<DatabaseFailure, dynamic>> get databaseFailureOrSuccessOption;
 
   $SeriesDatabaseStateCopyWith<SeriesDatabaseState> get copyWith;
 }
@@ -660,11 +791,17 @@ abstract class $SeriesDatabaseStateCopyWith<$Res> {
           SeriesDatabaseState value, $Res Function(SeriesDatabaseState) then) =
       _$SeriesDatabaseStateCopyWithImpl<$Res>;
   $Res call(
-      {Series series,
-      String placeholderUrl,
-      String username,
+      {Session session,
+      Series series,
+      Chapter chapterOne,
+      bool isLiked,
+      bool isBookmarked,
+      int viewsCount,
+      int likesCount,
+      int bookmarksCount,
       Map<String, String> genresMap,
-      Map<String, String> languagesMap});
+      Map<String, String> languagesMap,
+      Option<Either<DatabaseFailure, dynamic>> databaseFailureOrSuccessOption});
 }
 
 class _$SeriesDatabaseStateCopyWithImpl<$Res>
@@ -677,24 +814,41 @@ class _$SeriesDatabaseStateCopyWithImpl<$Res>
 
   @override
   $Res call({
+    Object session = freezed,
     Object series = freezed,
-    Object placeholderUrl = freezed,
-    Object username = freezed,
+    Object chapterOne = freezed,
+    Object isLiked = freezed,
+    Object isBookmarked = freezed,
+    Object viewsCount = freezed,
+    Object likesCount = freezed,
+    Object bookmarksCount = freezed,
     Object genresMap = freezed,
     Object languagesMap = freezed,
+    Object databaseFailureOrSuccessOption = freezed,
   }) {
     return _then(_value.copyWith(
+      session: session == freezed ? _value.session : session as Session,
       series: series == freezed ? _value.series : series as Series,
-      placeholderUrl: placeholderUrl == freezed
-          ? _value.placeholderUrl
-          : placeholderUrl as String,
-      username: username == freezed ? _value.username : username as String,
+      chapterOne:
+          chapterOne == freezed ? _value.chapterOne : chapterOne as Chapter,
+      isLiked: isLiked == freezed ? _value.isLiked : isLiked as bool,
+      isBookmarked:
+          isBookmarked == freezed ? _value.isBookmarked : isBookmarked as bool,
+      viewsCount: viewsCount == freezed ? _value.viewsCount : viewsCount as int,
+      likesCount: likesCount == freezed ? _value.likesCount : likesCount as int,
+      bookmarksCount: bookmarksCount == freezed
+          ? _value.bookmarksCount
+          : bookmarksCount as int,
       genresMap: genresMap == freezed
           ? _value.genresMap
           : genresMap as Map<String, String>,
       languagesMap: languagesMap == freezed
           ? _value.languagesMap
           : languagesMap as Map<String, String>,
+      databaseFailureOrSuccessOption: databaseFailureOrSuccessOption == freezed
+          ? _value.databaseFailureOrSuccessOption
+          : databaseFailureOrSuccessOption
+              as Option<Either<DatabaseFailure, dynamic>>,
     ));
   }
 }
@@ -706,11 +860,17 @@ abstract class _$SeriesDatabaseStateCopyWith<$Res>
       __$SeriesDatabaseStateCopyWithImpl<$Res>;
   @override
   $Res call(
-      {Series series,
-      String placeholderUrl,
-      String username,
+      {Session session,
+      Series series,
+      Chapter chapterOne,
+      bool isLiked,
+      bool isBookmarked,
+      int viewsCount,
+      int likesCount,
+      int bookmarksCount,
       Map<String, String> genresMap,
-      Map<String, String> languagesMap});
+      Map<String, String> languagesMap,
+      Option<Either<DatabaseFailure, dynamic>> databaseFailureOrSuccessOption});
 }
 
 class __$SeriesDatabaseStateCopyWithImpl<$Res>
@@ -725,24 +885,41 @@ class __$SeriesDatabaseStateCopyWithImpl<$Res>
 
   @override
   $Res call({
+    Object session = freezed,
     Object series = freezed,
-    Object placeholderUrl = freezed,
-    Object username = freezed,
+    Object chapterOne = freezed,
+    Object isLiked = freezed,
+    Object isBookmarked = freezed,
+    Object viewsCount = freezed,
+    Object likesCount = freezed,
+    Object bookmarksCount = freezed,
     Object genresMap = freezed,
     Object languagesMap = freezed,
+    Object databaseFailureOrSuccessOption = freezed,
   }) {
     return _then(_SeriesDatabaseState(
+      session: session == freezed ? _value.session : session as Session,
       series: series == freezed ? _value.series : series as Series,
-      placeholderUrl: placeholderUrl == freezed
-          ? _value.placeholderUrl
-          : placeholderUrl as String,
-      username: username == freezed ? _value.username : username as String,
+      chapterOne:
+          chapterOne == freezed ? _value.chapterOne : chapterOne as Chapter,
+      isLiked: isLiked == freezed ? _value.isLiked : isLiked as bool,
+      isBookmarked:
+          isBookmarked == freezed ? _value.isBookmarked : isBookmarked as bool,
+      viewsCount: viewsCount == freezed ? _value.viewsCount : viewsCount as int,
+      likesCount: likesCount == freezed ? _value.likesCount : likesCount as int,
+      bookmarksCount: bookmarksCount == freezed
+          ? _value.bookmarksCount
+          : bookmarksCount as int,
       genresMap: genresMap == freezed
           ? _value.genresMap
           : genresMap as Map<String, String>,
       languagesMap: languagesMap == freezed
           ? _value.languagesMap
           : languagesMap as Map<String, String>,
+      databaseFailureOrSuccessOption: databaseFailureOrSuccessOption == freezed
+          ? _value.databaseFailureOrSuccessOption
+          : databaseFailureOrSuccessOption
+              as Option<Either<DatabaseFailure, dynamic>>,
     ));
   }
 }
@@ -751,31 +928,55 @@ class _$_SeriesDatabaseState
     with DiagnosticableTreeMixin
     implements _SeriesDatabaseState {
   const _$_SeriesDatabaseState(
-      {@required this.series,
-      @required this.placeholderUrl,
-      @required this.username,
+      {@required this.session,
+      @required this.series,
+      @required this.chapterOne,
+      @required this.isLiked,
+      @required this.isBookmarked,
+      @required this.viewsCount,
+      @required this.likesCount,
+      @required this.bookmarksCount,
       @required this.genresMap,
-      @required this.languagesMap})
-      : assert(series != null),
-        assert(placeholderUrl != null),
-        assert(username != null),
+      @required this.languagesMap,
+      @required this.databaseFailureOrSuccessOption})
+      : assert(session != null),
+        assert(series != null),
+        assert(chapterOne != null),
+        assert(isLiked != null),
+        assert(isBookmarked != null),
+        assert(viewsCount != null),
+        assert(likesCount != null),
+        assert(bookmarksCount != null),
         assert(genresMap != null),
-        assert(languagesMap != null);
+        assert(languagesMap != null),
+        assert(databaseFailureOrSuccessOption != null);
 
+  @override
+  final Session session;
   @override
   final Series series;
   @override
-  final String placeholderUrl;
+  final Chapter chapterOne;
   @override
-  final String username;
+  final bool isLiked;
+  @override
+  final bool isBookmarked;
+  @override
+  final int viewsCount;
+  @override
+  final int likesCount;
+  @override
+  final int bookmarksCount;
   @override
   final Map<String, String> genresMap;
   @override
   final Map<String, String> languagesMap;
+  @override
+  final Option<Either<DatabaseFailure, dynamic>> databaseFailureOrSuccessOption;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'SeriesDatabaseState(series: $series, placeholderUrl: $placeholderUrl, username: $username, genresMap: $genresMap, languagesMap: $languagesMap)';
+    return 'SeriesDatabaseState(session: $session, series: $series, chapterOne: $chapterOne, isLiked: $isLiked, isBookmarked: $isBookmarked, viewsCount: $viewsCount, likesCount: $likesCount, bookmarksCount: $bookmarksCount, genresMap: $genresMap, languagesMap: $languagesMap, databaseFailureOrSuccessOption: $databaseFailureOrSuccessOption)';
   }
 
   @override
@@ -783,41 +984,74 @@ class _$_SeriesDatabaseState
     super.debugFillProperties(properties);
     properties
       ..add(DiagnosticsProperty('type', 'SeriesDatabaseState'))
+      ..add(DiagnosticsProperty('session', session))
       ..add(DiagnosticsProperty('series', series))
-      ..add(DiagnosticsProperty('placeholderUrl', placeholderUrl))
-      ..add(DiagnosticsProperty('username', username))
+      ..add(DiagnosticsProperty('chapterOne', chapterOne))
+      ..add(DiagnosticsProperty('isLiked', isLiked))
+      ..add(DiagnosticsProperty('isBookmarked', isBookmarked))
+      ..add(DiagnosticsProperty('viewsCount', viewsCount))
+      ..add(DiagnosticsProperty('likesCount', likesCount))
+      ..add(DiagnosticsProperty('bookmarksCount', bookmarksCount))
       ..add(DiagnosticsProperty('genresMap', genresMap))
-      ..add(DiagnosticsProperty('languagesMap', languagesMap));
+      ..add(DiagnosticsProperty('languagesMap', languagesMap))
+      ..add(DiagnosticsProperty(
+          'databaseFailureOrSuccessOption', databaseFailureOrSuccessOption));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _SeriesDatabaseState &&
+            (identical(other.session, session) ||
+                const DeepCollectionEquality()
+                    .equals(other.session, session)) &&
             (identical(other.series, series) ||
                 const DeepCollectionEquality().equals(other.series, series)) &&
-            (identical(other.placeholderUrl, placeholderUrl) ||
+            (identical(other.chapterOne, chapterOne) ||
                 const DeepCollectionEquality()
-                    .equals(other.placeholderUrl, placeholderUrl)) &&
-            (identical(other.username, username) ||
+                    .equals(other.chapterOne, chapterOne)) &&
+            (identical(other.isLiked, isLiked) ||
                 const DeepCollectionEquality()
-                    .equals(other.username, username)) &&
+                    .equals(other.isLiked, isLiked)) &&
+            (identical(other.isBookmarked, isBookmarked) ||
+                const DeepCollectionEquality()
+                    .equals(other.isBookmarked, isBookmarked)) &&
+            (identical(other.viewsCount, viewsCount) ||
+                const DeepCollectionEquality()
+                    .equals(other.viewsCount, viewsCount)) &&
+            (identical(other.likesCount, likesCount) ||
+                const DeepCollectionEquality()
+                    .equals(other.likesCount, likesCount)) &&
+            (identical(other.bookmarksCount, bookmarksCount) ||
+                const DeepCollectionEquality()
+                    .equals(other.bookmarksCount, bookmarksCount)) &&
             (identical(other.genresMap, genresMap) ||
                 const DeepCollectionEquality()
                     .equals(other.genresMap, genresMap)) &&
             (identical(other.languagesMap, languagesMap) ||
                 const DeepCollectionEquality()
-                    .equals(other.languagesMap, languagesMap)));
+                    .equals(other.languagesMap, languagesMap)) &&
+            (identical(other.databaseFailureOrSuccessOption,
+                    databaseFailureOrSuccessOption) ||
+                const DeepCollectionEquality().equals(
+                    other.databaseFailureOrSuccessOption,
+                    databaseFailureOrSuccessOption)));
   }
 
   @override
   int get hashCode =>
       runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(session) ^
       const DeepCollectionEquality().hash(series) ^
-      const DeepCollectionEquality().hash(placeholderUrl) ^
-      const DeepCollectionEquality().hash(username) ^
+      const DeepCollectionEquality().hash(chapterOne) ^
+      const DeepCollectionEquality().hash(isLiked) ^
+      const DeepCollectionEquality().hash(isBookmarked) ^
+      const DeepCollectionEquality().hash(viewsCount) ^
+      const DeepCollectionEquality().hash(likesCount) ^
+      const DeepCollectionEquality().hash(bookmarksCount) ^
       const DeepCollectionEquality().hash(genresMap) ^
-      const DeepCollectionEquality().hash(languagesMap);
+      const DeepCollectionEquality().hash(languagesMap) ^
+      const DeepCollectionEquality().hash(databaseFailureOrSuccessOption);
 
   @override
   _$SeriesDatabaseStateCopyWith<_SeriesDatabaseState> get copyWith =>
@@ -827,22 +1061,52 @@ class _$_SeriesDatabaseState
 
 abstract class _SeriesDatabaseState implements SeriesDatabaseState {
   const factory _SeriesDatabaseState(
-      {@required Series series,
-      @required String placeholderUrl,
-      @required String username,
-      @required Map<String, String> genresMap,
-      @required Map<String, String> languagesMap}) = _$_SeriesDatabaseState;
+      {@required
+          Session session,
+      @required
+          Series series,
+      @required
+          Chapter chapterOne,
+      @required
+          bool isLiked,
+      @required
+          bool isBookmarked,
+      @required
+          int viewsCount,
+      @required
+          int likesCount,
+      @required
+          int bookmarksCount,
+      @required
+          Map<String, String> genresMap,
+      @required
+          Map<String, String> languagesMap,
+      @required
+          Option<Either<DatabaseFailure, dynamic>>
+              databaseFailureOrSuccessOption}) = _$_SeriesDatabaseState;
 
+  @override
+  Session get session;
   @override
   Series get series;
   @override
-  String get placeholderUrl;
+  Chapter get chapterOne;
   @override
-  String get username;
+  bool get isLiked;
+  @override
+  bool get isBookmarked;
+  @override
+  int get viewsCount;
+  @override
+  int get likesCount;
+  @override
+  int get bookmarksCount;
   @override
   Map<String, String> get genresMap;
   @override
   Map<String, String> get languagesMap;
+  @override
+  Option<Either<DatabaseFailure, dynamic>> get databaseFailureOrSuccessOption;
   @override
   _$SeriesDatabaseStateCopyWith<_SeriesDatabaseState> get copyWith;
 }

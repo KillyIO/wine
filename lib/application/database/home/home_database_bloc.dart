@@ -9,6 +9,7 @@ import 'package:flutter_device_locale/flutter_device_locale.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:wine/domain/database/database_failure.dart';
+import 'package:wine/domain/database/i_local_placeholder_database_facade.dart';
 import 'package:wine/domain/database/i_online_series_database_facade.dart';
 import 'package:wine/domain/models/series.dart';
 import 'package:wine/utils/methods.dart';
@@ -21,9 +22,11 @@ part 'home_database_bloc.freezed.dart';
 @injectable
 class HomeDatabaseBloc extends Bloc<HomeDatabaseEvent, HomeDatabaseState> {
   final IOnlineSeriesDatabaseFacade _onlineSeriesDatabaseFacade;
+  final ILocalPlaceholderDatabaseFacade _localPlaceholderDatabaseFacade;
 
   HomeDatabaseBloc(
     this._onlineSeriesDatabaseFacade,
+    this._localPlaceholderDatabaseFacade,
   );
 
   @override
@@ -35,7 +38,7 @@ class HomeDatabaseBloc extends Bloc<HomeDatabaseEvent, HomeDatabaseState> {
   ) async* {
     yield* event.map(
       homePageLaunched: (event) async* {
-        final Random _random = Random();
+        final Random random = Random();
 
         yield state.copyWith(
           isFetching: true,
@@ -48,6 +51,7 @@ class HomeDatabaseBloc extends Bloc<HomeDatabaseEvent, HomeDatabaseState> {
         final List<Series> topFiveSeries = <Series>[];
         final List<Series> topSeries = <Series>[];
         final List<Series> newSeries = <Series>[];
+        final List<String> placeholderUrls = <String>[];
 
         final String currentLocale = (await DeviceLocale.getCurrentLocale())
             .toString()
@@ -82,14 +86,34 @@ class HomeDatabaseBloc extends Bloc<HomeDatabaseEvent, HomeDatabaseState> {
               }
             },
           );
+
+          if (failureOrSuccess.isRight()) {
+            final List<String> placeholderKeys = Methods.getPlaceholderKeys();
+            final List<String> randomKeys = <String>[
+              placeholderKeys[random.nextInt(placeholderKeys.length)],
+              placeholderKeys[random.nextInt(placeholderKeys.length)],
+              placeholderKeys[random.nextInt(placeholderKeys.length)],
+            ];
+
+            for (final String key in randomKeys) {
+              failureOrSuccess = await _localPlaceholderDatabaseFacade
+                  .getPlaceholderUrlByKey(key);
+              failureOrSuccess.fold(
+                (_) {},
+                (success) {
+                  if (success is String) {
+                    placeholderUrls.add(success);
+                  }
+                },
+              );
+            }
+          }
         }
 
         if (topSeries.length >= 5) {
           topFiveSeries.addAll(topSeries.sublist(0, 5));
           topSeries.removeRange(0, 5);
         }
-
-        final List<String> placeholdersUrls = Methods.getPlaceholderUrls();
 
         yield state.copyWith(
           topFiveSeries: topFiveSeries,
@@ -100,12 +124,7 @@ class HomeDatabaseBloc extends Bloc<HomeDatabaseEvent, HomeDatabaseState> {
           timesMap: Methods.getTimeFilters(event.context),
           genresMap: Methods.getGenres(event.context),
           languagesMap: Methods.getLanguages(event.context),
-          placeholders: placeholdersUrls,
-          placeholderIndexes: <int>[
-            _random.nextInt(placeholdersUrls.length),
-            _random.nextInt(placeholdersUrls.length),
-            _random.nextInt(placeholdersUrls.length),
-          ],
+          placeholderUrls: placeholderUrls,
           isFetching: false,
           databaseFailureOrSuccessOption: optionOf(failureOrSuccess),
         );

@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 
 import 'package:wine/domain/models/series.dart';
 import 'package:wine/domain/models/user.dart';
+import 'package:wine/utils/extensions.dart';
 
 class Chapter {
   String uid;
@@ -140,39 +141,43 @@ class Chapter {
     if (identical(this, o)) return true;
 
     return o is Chapter &&
-      o.uid == uid &&
-      o.authorUid == authorUid &&
-      o.author == author &&
-      o.seriesUid == seriesUid &&
-      o.series == series &&
-      o.previousChapterUid == previousChapterUid &&
-      o.index == index &&
-      o.title == title &&
-      o.story == story &&
-      o.language == language &&
-      o.copyrights == copyrights &&
-      o.isNSFW == isNSFW &&
-      o.isEnd == isEnd &&
-      o.createdAt == createdAt &&
-      o.updatedAt == updatedAt;
+        o.uid == uid &&
+        o.authorUid == authorUid &&
+        o.author == author &&
+        o.seriesUid == seriesUid &&
+        o.series == series &&
+        o.previousChapterUid == previousChapterUid &&
+        o.index == index &&
+        o.title == title &&
+        o.story == story &&
+        o.language == language &&
+        o.copyrights == copyrights &&
+        o.isNSFW == isNSFW &&
+        o.isEnd == isEnd &&
+        o.createdAt == createdAt &&
+        o.updatedAt == updatedAt;
   }
 
   @override
   int get hashCode {
     return uid.hashCode ^
-      authorUid.hashCode ^
-      author.hashCode ^
-      seriesUid.hashCode ^
-      series.hashCode ^
-      previousChapterUid.hashCode ^
-      index.hashCode ^
-      title.hashCode ^
-      story.hashCode ^
-      language.hashCode ^
-      copyrights.hashCode ^
-      isNSFW.hashCode ^
-      isEnd.hashCode ^
-      createdAt.hashCode ^
-      updatedAt.hashCode;
+        authorUid.hashCode ^
+        author.hashCode ^
+        seriesUid.hashCode ^
+        series.hashCode ^
+        previousChapterUid.hashCode ^
+        index.hashCode ^
+        title.hashCode ^
+        story.hashCode ^
+        language.hashCode ^
+        copyrights.hashCode ^
+        isNSFW.hashCode ^
+        isEnd.hashCode ^
+        createdAt.hashCode ^
+        updatedAt.hashCode;
+  }
+
+  bool get isNotEmptyOrNull {
+    return this != null && uid.isNotEmptyOrNull;
   }
 }

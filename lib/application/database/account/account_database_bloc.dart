@@ -9,6 +9,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:meta/meta.dart';
 import 'package:wine/domain/database/database_failure.dart';
+import 'package:wine/domain/database/i_local_placeholder_database_facade.dart';
 import 'package:wine/domain/database/i_local_session_database_facade.dart';
 import 'package:wine/domain/database/i_online_chapter_database_facade.dart';
 import 'package:wine/domain/database/i_online_series_database_facade.dart';
@@ -28,11 +29,13 @@ class AccountDatabaseBloc
   final ILocalSessionDatabaseFacade _localSessionDatabaseFacade;
   final IOnlineSeriesDatabaseFacade _onlineSeriesDatabaseFacade;
   final IOnlineChapterDatabaseFacade _onlineChapterDatabaseFacade;
+  final ILocalPlaceholderDatabaseFacade _localPlaceholderDatabaseFacade;
 
   AccountDatabaseBloc(
     this._localSessionDatabaseFacade,
     this._onlineSeriesDatabaseFacade,
     this._onlineChapterDatabaseFacade,
+    this._localPlaceholderDatabaseFacade,
   );
 
   @override
@@ -51,6 +54,7 @@ class AccountDatabaseBloc
 
         final List<Series> series = <Series>[];
         final List<Chapter> chapters = <Chapter>[];
+        final List<String> placeholderUrls = <String>[];
 
         yield state.copyWith(
           isFetching: true,
@@ -91,10 +95,29 @@ class AccountDatabaseBloc
                 }
               },
             );
+
+            if (failureOrSuccess.isRight()) {
+              final List<String> placeholderKeys = Methods.getPlaceholderKeys();
+              final List<String> randomKeys = <String>[
+                placeholderKeys[random.nextInt(placeholderKeys.length)],
+                placeholderKeys[random.nextInt(placeholderKeys.length)],
+              ];
+
+              for (final String key in randomKeys) {
+                failureOrSuccess = await _localPlaceholderDatabaseFacade
+                    .getPlaceholderUrlByKey(key);
+                failureOrSuccess.fold(
+                  (_) {},
+                  (success) {
+                    if (success is String) {
+                      placeholderUrls.add(success);
+                    }
+                  },
+                );
+              }
+            }
           }
         }
-
-        final List<String> placeholdersUrls = Methods.getPlaceholderUrls();
 
         yield state.copyWith(
           session: session,
@@ -103,11 +126,7 @@ class AccountDatabaseBloc
           genres: Methods.getGenres(event.context),
           languages: Methods.getLanguages(event.context),
           copyrights: Methods.getCopyrights(event.context),
-          placeholders: placeholdersUrls,
-          placeholderIndexes: <int>[
-            random.nextInt(placeholdersUrls.length),
-            random.nextInt(placeholdersUrls.length),
-          ],
+          placeholderUrls: placeholderUrls,
           isFetching: false,
           databaseFailureOrSuccessOption: optionOf(failureOrSuccess),
         );

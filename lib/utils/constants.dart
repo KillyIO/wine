@@ -4,6 +4,7 @@ class Constants {
   static const String configsBox = 'configsBox';
   static const String seriesDraftsBox = 'seriesDraftsBox';
   static const String chapterDraftsBox = 'chapterDraftsBox';
+  static const String placeholdersBox = 'placeholdersBox';
 
   // Hive session
   static const String session = 'session';

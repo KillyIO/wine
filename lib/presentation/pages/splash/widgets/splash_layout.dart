@@ -74,6 +74,18 @@ class SplashLayout extends StatelessWidget {
                                   .splashLaunched()),
                         ),
                       ),
+                      failedToCreateLocalData: (_) => wineShowDialog(
+                        context: context,
+                        builder: (_) => WINEErrorDialog(
+                          message:
+                              'Failed to save data on your device! Please restart WINE.',
+                          buttonText: 'RESTART',
+                          onPressed: () => context
+                              .bloc<SplashAuthenticationBloc>()
+                              .add(const SplashAuthenticationEvent
+                                  .splashLaunched()),
+                        ),
+                      ),
                       failedToRetrieveLocalData: (_) => wineShowDialog(
                         context: context,
                         builder: (_) => WINEErrorDialog(

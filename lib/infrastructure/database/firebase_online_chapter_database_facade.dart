@@ -77,4 +77,32 @@ class FirebaseOnlineChapterDatabaseFacade
     }
     return right(chaptersList);
   }
+
+  @override
+  Future<Either<DatabaseFailure, dynamic>> getChaptersBySeriesUidAndIndex({
+    String seriesUid,
+    int index,
+  }) async {
+    final CollectionReference chaptersCollection =
+        _firestore.collection(Paths.chaptersPath);
+
+    final QuerySnapshot querySnapshot = await chaptersCollection
+        .where('seriesUid', isEqualTo: seriesUid)
+        .where('index', isEqualTo: index)
+        .getDocuments();
+
+    if (querySnapshot.documents.length > 1) {
+      final List<Chapter> chapters = <Chapter>[];
+
+      for (final DocumentSnapshot document in querySnapshot.documents) {
+        chapters.add(Chapter.fromFirestore(document));
+      }
+      return right(chapters);
+    } else {
+      final Chapter chapterOne =
+          Chapter.fromFirestore(querySnapshot.documents[0]);
+
+      return right(chapterOne);
+    }
+  }
 }

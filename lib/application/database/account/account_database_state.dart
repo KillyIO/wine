@@ -9,8 +9,7 @@ abstract class AccountDatabaseState with _$AccountDatabaseState {
     @required Map<String, String> genres,
     @required Map<String, String> languages,
     @required Map<String, String> copyrights,
-    @required List<String> placeholders,
-    @required List<int> placeholderIndexes,
+    @required List<String> placeholderUrls,
     @required bool isFetching,
     @required
         Option<Either<DatabaseFailure, dynamic>> databaseFailureOrSuccessOption,
@@ -23,8 +22,7 @@ abstract class AccountDatabaseState with _$AccountDatabaseState {
         genres: <String, String>{},
         languages: <String, String>{},
         copyrights: <String, String>{},
-        placeholders: <String>[],
-        placeholderIndexes: <int>[],
+        placeholderUrls: <String>[],
         isFetching: false,
         databaseFailureOrSuccessOption: none(),
       );

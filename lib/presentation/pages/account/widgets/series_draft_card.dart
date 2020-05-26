@@ -6,16 +6,14 @@ import 'package:flutter/material.dart';
 class SeriesDraftCard extends StatelessWidget {
   final String title;
   final String coverPath;
-  final int placeholderIndex;
-  final List<String> placeholderUrls;
+  final String placeholderUrl;
   final VoidCallback onPressed;
 
   const SeriesDraftCard({
     Key key,
     this.title,
     this.coverPath,
-    this.placeholderIndex,
-    this.placeholderUrls,
+    this.placeholderUrl,
     this.onPressed,
   }) : super(key: key);
 
@@ -32,9 +30,9 @@ class SeriesDraftCard extends StatelessWidget {
               borderRadius: BorderRadius.circular(10.0),
               boxShadow: const <BoxShadow>[
                 BoxShadow(
-                  color: Color(0xFFF1F1F1),
-                  spreadRadius: 1,
-                  blurRadius: 5,
+                  color: Colors.black12,
+                  spreadRadius: 3,
+                  blurRadius: 7,
                   offset: Offset(0, 3),
                 ),
               ],
@@ -48,7 +46,7 @@ class SeriesDraftCard extends StatelessWidget {
                     )
                   : CachedNetworkImage(
                       fit: BoxFit.contain,
-                      imageUrl: placeholderUrls[placeholderIndex],
+                      imageUrl: placeholderUrl,
                       progressIndicatorBuilder: (
                         context,
                         url,

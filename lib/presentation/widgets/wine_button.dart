@@ -1,28 +1,38 @@
 import 'package:flutter/material.dart';
+
 import 'package:wine/utils/palettes.dart';
 
-class WINEFullWidthButton extends StatelessWidget {
+class WINEButton extends StatelessWidget {
   final String title;
   final Color color;
   final VoidCallback onPressed;
   final double fontSize;
+  final bool hasRoundedCorners;
 
-  const WINEFullWidthButton({
+  const WINEButton({
     Key key,
     this.title,
     this.color = Palettes.pastelPink,
     this.onPressed,
     this.fontSize = 20.0,
+    this.hasRoundedCorners = false,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    final Size mediaQuery = MediaQuery.of(context).size;
+
     return Container(
       height: 60.0,
-      width: double.infinity,
+      width: mediaQuery.width,
       child: FlatButton(
         color: color,
         onPressed: onPressed,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(
+            hasRoundedCorners ? 10 : 0,
+          ),
+        ),
         child: Text(
           title,
           style: TextStyle(

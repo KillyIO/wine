@@ -14,8 +14,7 @@ abstract class HomeDatabaseState with _$HomeDatabaseState {
     @required Map<String, String> timesMap,
     @required Map<String, String> genresMap,
     @required Map<String, String> languagesMap,
-    @required List<String> placeholders,
-    @required List<int> placeholderIndexes,
+    @required List<String> placeholderUrls,
     @required bool isFetching,
     @required
         Option<Either<DatabaseFailure, dynamic>> databaseFailureOrSuccessOption,
@@ -33,8 +32,7 @@ abstract class HomeDatabaseState with _$HomeDatabaseState {
         timesMap: <String, String>{},
         genresMap: <String, String>{},
         languagesMap: <String, String>{},
-        placeholders: <String>[],
-        placeholderIndexes: <int>[],
+        placeholderUrls: <String>[],
         isFetching: false,
         databaseFailureOrSuccessOption: none(),
       );

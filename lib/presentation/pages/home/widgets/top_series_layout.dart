@@ -24,8 +24,7 @@ class TopSeriesLayout extends StatelessWidget {
 
   List<Widget> _generateTiles(
     List<Series> seriesList,
-    List<String> placeholderList,
-    List<int> placeholderIndexes,
+    List<String> placeholderUrls,
   ) {
     final List<Widget> tiles = <Widget>[];
 
@@ -36,8 +35,7 @@ class TopSeriesLayout extends StatelessWidget {
           title: seriesList[i].title,
           username: seriesList[i].author.username,
           coverUrl: seriesList[i].coverUrl,
-          placeholderIndex: placeholderIndexes[i % placeholderIndexes.length],
-          placeholderUrls: placeholderList,
+          placeholderUrl: placeholderUrls[i % placeholderUrls.length],
           onPressed: () {},
         ),
       );
@@ -59,12 +57,11 @@ class TopSeriesLayout extends StatelessWidget {
         }
         return ListView(
           children: <Widget>[
-            Visibility(
-              visible: homeDbState.topFiveSeries.isNotEmpty,
-              child: TopFiveSeriesLayout(state: homeDbState),
-            ),
+            if (homeDbState.topFiveSeries.isNotEmpty)
+              TopFiveSeriesLayout(state: homeDbState),
             const SizedBox(height: 20),
-            if (homeDbState.topSeries.isNotEmpty)
+            if (homeDbState.topSeries.isNotEmpty &&
+                homeDbState.placeholderUrls.isNotEmpty)
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 19.0),
                 child: StaggeredGridView.count(
@@ -76,8 +73,7 @@ class TopSeriesLayout extends StatelessWidget {
                   shrinkWrap: true,
                   children: _generateTiles(
                     homeDbState.topSeries,
-                    homeDbState.placeholders,
-                    homeDbState.placeholderIndexes,
+                    homeDbState.placeholderUrls,
                   ),
                 ),
               ),

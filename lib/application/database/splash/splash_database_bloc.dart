@@ -6,7 +6,9 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:meta/meta.dart';
 import 'package:wine/domain/database/database_failure.dart';
+import 'package:wine/domain/database/i_local_placeholder_database_facade.dart';
 import 'package:wine/domain/database/i_local_session_database_facade.dart';
+import 'package:wine/domain/database/i_online_placeholder_database_facade.dart';
 import 'package:wine/domain/database/i_online_user_database_facade.dart';
 import 'package:wine/domain/models/hive/session.dart';
 import 'package:wine/domain/models/user.dart';
@@ -21,9 +23,15 @@ class SplashDatabaseBloc
     extends Bloc<SplashDatabaseEvent, SplashDatabaseState> {
   final ILocalSessionDatabaseFacade _localSessionDatabaseFacade;
   final IOnlineUserDatabaseFacade _onlineUserDatabaseFacade;
+  final ILocalPlaceholderDatabaseFacade _localPlaceholderDatabaseFacade;
+  final IOnlinePlaceholderDatabaseFacade _onlinePlaceholderDatabaseFacade;
 
   SplashDatabaseBloc(
-      this._localSessionDatabaseFacade, this._onlineUserDatabaseFacade);
+    this._localSessionDatabaseFacade,
+    this._onlineUserDatabaseFacade,
+    this._localPlaceholderDatabaseFacade,
+    this._onlinePlaceholderDatabaseFacade,
+  );
 
   @override
   SplashDatabaseState get initialState => SplashDatabaseState.initial();
@@ -41,35 +49,55 @@ class SplashDatabaseBloc
           databaseFailureOrSuccessOption: none(),
         );
 
-        if (!event.isAnonymous) {
-          Session session;
+        Map<String, String> placeholderUrls = <String, String>{};
 
-          failureOrSuccess = await _localSessionDatabaseFacade.getSession();
-          failureOrSuccess.fold(
-            (_) {},
-            (success) {
-              if (success is Session) {
-                session = success;
+        failureOrSuccess =
+            await _onlinePlaceholderDatabaseFacade.getPlaceholderUrls();
+        failureOrSuccess.fold(
+          (_) {},
+          (success) {
+            if (success is Map<String, String>) {
+              placeholderUrls = success;
+            }
+          },
+        );
+
+        if (failureOrSuccess.isRight()) {
+          failureOrSuccess = await _localPlaceholderDatabaseFacade
+              .savePlaceholderUrls(placeholderUrls);
+
+          if (failureOrSuccess.isRight()) {
+            if (!event.isAnonymous) {
+              Session session;
+
+              failureOrSuccess = await _localSessionDatabaseFacade.getSession();
+              failureOrSuccess.fold(
+                (_) {},
+                (success) {
+                  if (success is Session) {
+                    session = success;
+                  }
+                },
+              );
+
+              if (failureOrSuccess.isRight()) {
+                failureOrSuccess =
+                    await _onlineUserDatabaseFacade.getUser(session.uid);
+                failureOrSuccess.fold(
+                  (_) {},
+                  (success) async {
+                    if (success is User) {
+                      session = Session.fromMap(success.toMap());
+                      await _localSessionDatabaseFacade.updateSession(session);
+                    }
+                  },
+                );
               }
-            },
-          );
-
-          if (session != null) {
-            failureOrSuccess =
-                await _onlineUserDatabaseFacade.getUser(session.uid);
-            failureOrSuccess.fold(
-              (_) {},
-              (success) async {
-                if (success is User) {
-                  session = Session.fromMap(success.toMap());
-                  await _localSessionDatabaseFacade.updateSession(session);
-                }
-              },
-            );
+            } else {
+              failureOrSuccess =
+                  await _localSessionDatabaseFacade.saveSession(Session());
+            }
           }
-        } else {
-          failureOrSuccess =
-              await _localSessionDatabaseFacade.saveSession(Session());
         }
 
         yield state.copyWith(

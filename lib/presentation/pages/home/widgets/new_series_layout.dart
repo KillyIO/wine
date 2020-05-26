@@ -19,8 +19,7 @@ class NewSeriesLayout extends StatelessWidget {
 
   List<Widget> _generateTiles(
     List<Series> seriesList,
-    List<String> placeholderList,
-    List<int> placeholderIndexes,
+    List<String> placeholderUrls,
   ) {
     final List<Widget> tiles = <Widget>[];
 
@@ -31,8 +30,7 @@ class NewSeriesLayout extends StatelessWidget {
           title: seriesList[i].title,
           username: seriesList[i].author.username,
           coverUrl: seriesList[i].coverUrl,
-          placeholderIndex: placeholderIndexes[i % placeholderIndexes.length],
-          placeholderUrls: placeholderList,
+          placeholderUrl: placeholderUrls[i % placeholderUrls.length],
           onPressed: () {},
         ),
       );
@@ -54,16 +52,18 @@ class NewSeriesLayout extends StatelessWidget {
         }
         return Padding(
           padding: const EdgeInsets.symmetric(horizontal: 19.0, vertical: 20.0),
-          child: StaggeredGridView.count(
-            physics: const NeverScrollableScrollPhysics(),
-            crossAxisCount: 3,
-            staggeredTiles: _generateStaggeredTiles(homeDbState.newSeries),
-            crossAxisSpacing: 20.0,
-            shrinkWrap: true,
-            children: _generateTiles(
-              homeDbState.topSeries,
-              homeDbState.placeholders,
-              homeDbState.placeholderIndexes,
+          child: Visibility(
+            visible: homeDbState.placeholderUrls.isNotEmpty,
+            child: StaggeredGridView.count(
+              physics: const NeverScrollableScrollPhysics(),
+              crossAxisCount: 3,
+              staggeredTiles: _generateStaggeredTiles(homeDbState.newSeries),
+              crossAxisSpacing: 20.0,
+              shrinkWrap: true,
+              children: _generateTiles(
+                homeDbState.topSeries,
+                homeDbState.placeholderUrls,
+              ),
             ),
           ),
         );

@@ -21,16 +21,19 @@ import 'package:wine/infrastructure/authentication/firebase_authentication_facad
 import 'package:wine/domain/authentication/i_authentication_facade.dart';
 import 'package:wine/infrastructure/database/hive_local_chapter_draft_database_facade.dart';
 import 'package:wine/domain/database/i_local_chapter_draft_database_facade.dart';
+import 'package:wine/infrastructure/database/hive_local_placeholder_database_facade.dart';
+import 'package:wine/domain/database/i_local_placeholder_database_facade.dart';
 import 'package:wine/infrastructure/database/hive_local_series_draft_database_facade.dart';
 import 'package:wine/domain/database/i_local_series_draft_database_facade.dart';
 import 'package:wine/infrastructure/database/hive_local_session_database_facade.dart';
 import 'package:wine/domain/database/i_local_session_database_facade.dart';
 import 'package:wine/infrastructure/database/firebase_online_chapter_database_facade.dart';
 import 'package:wine/domain/database/i_online_chapter_database_facade.dart';
+import 'package:wine/infrastructure/database/firebase_online_placeholder_database_facade.dart';
+import 'package:wine/domain/database/i_online_placeholder_database_facade.dart';
 import 'package:wine/infrastructure/database/firebase_online_user_database_facade.dart';
 import 'package:wine/domain/database/i_online_user_database_facade.dart';
 import 'package:wine/application/database/new_series/new_series_database_bloc.dart';
-import 'package:wine/application/database/series/series_database_bloc.dart';
 import 'package:wine/application/authentication/settings/settings_authentication_bloc.dart';
 import 'package:wine/application/database/settings/settings_database_bloc.dart';
 import 'package:wine/application/outlier/settings/settings_outlier_bloc.dart';
@@ -44,6 +47,7 @@ import 'package:wine/application/database/create_account/create_account_database
 import 'package:wine/infrastructure/database/firebase_online_series_database_facade.dart';
 import 'package:wine/domain/database/i_online_series_database_facade.dart';
 import 'package:wine/application/database/new_chapter/new_chapter_database_bloc.dart';
+import 'package:wine/application/database/series/series_database_bloc.dart';
 import 'package:wine/application/database/account/account_database_bloc.dart';
 import 'package:wine/application/database/home/home_database_bloc.dart';
 import 'package:get_it/get_it.dart';
@@ -60,6 +64,8 @@ Future<void> $initGetIt(GetIt g, {String environment}) async {
   g.registerLazySingleton<Box<SeriesDraft>>(() => box2);
   final box3 = await hiveInjectableModule.openSessionsBox;
   g.registerLazySingleton<Box<Session>>(() => box3);
+  final box4 = await hiveInjectableModule.openPlaceholdersBox;
+  g.registerLazySingleton<Box<String>>(() => box4);
   g.registerLazySingleton<FirebaseAuth>(
       () => firebaseInjectableModule.firebaseAuth);
   g.registerLazySingleton<FirebaseStorage>(
@@ -76,18 +82,23 @@ Future<void> $initGetIt(GetIt g, {String environment}) async {
           ));
   g.registerLazySingleton<ILocalChapterDraftDatabaseFacade>(
       () => HiveLocalChapterDatabaseFacade(g<Box<ChapterDraft>>()));
+  g.registerLazySingleton<ILocalPlaceholderDatabaseFacade>(
+      () => HiveLocalPlaceholderDatabaseFacade(g<Box<String>>()));
   g.registerLazySingleton<ILocalSeriesDraftDatabaseFacade>(
       () => HiveLocalSeriesDatabaseFacade(g<Box<SeriesDraft>>()));
   g.registerLazySingleton<ILocalSessionDatabaseFacade>(
       () => HiveLocalSessionDatabaseFacade(g<Box<Session>>()));
   g.registerLazySingleton<IOnlineChapterDatabaseFacade>(
       () => FirebaseOnlineChapterDatabaseFacade(g<Firestore>()));
+  g.registerLazySingleton<IOnlinePlaceholderDatabaseFacade>(
+      () => FirebaseOnlinePlaceholderDatabaseFacade(g<Firestore>()));
   g.registerLazySingleton<IOnlineUserDatabaseFacade>(
       () => FirebaseOnlineUserDatabaseFacade(g<Firestore>()));
   g.registerFactory<NewSeriesDatabaseBloc>(() => NewSeriesDatabaseBloc(
-      g<ILocalSessionDatabaseFacade>(), g<ILocalSeriesDraftDatabaseFacade>()));
-  g.registerFactory<SeriesDatabaseBloc>(() => SeriesDatabaseBloc(
-      g<ILocalSessionDatabaseFacade>(), g<IOnlineUserDatabaseFacade>()));
+        g<ILocalSessionDatabaseFacade>(),
+        g<ILocalSeriesDraftDatabaseFacade>(),
+        g<ILocalPlaceholderDatabaseFacade>(),
+      ));
   g.registerFactory<SettingsAuthenticationBloc>(
       () => SettingsAuthenticationBloc(g<IAuthenticationFacade>()));
   g.registerFactory<SettingsDatabaseBloc>(() => SettingsDatabaseBloc(
@@ -100,7 +111,11 @@ Future<void> $initGetIt(GetIt g, {String environment}) async {
   g.registerFactory<SplashAuthenticationBloc>(
       () => SplashAuthenticationBloc(g<IAuthenticationFacade>()));
   g.registerFactory<SplashDatabaseBloc>(() => SplashDatabaseBloc(
-      g<ILocalSessionDatabaseFacade>(), g<IOnlineUserDatabaseFacade>()));
+        g<ILocalSessionDatabaseFacade>(),
+        g<IOnlineUserDatabaseFacade>(),
+        g<ILocalPlaceholderDatabaseFacade>(),
+        g<IOnlinePlaceholderDatabaseFacade>(),
+      ));
   g.registerFactory<CoreAuthenticationBloc>(
       () => CoreAuthenticationBloc(g<IAuthenticationFacade>()));
   g.registerFactory<CreateAccountAuthenticationBloc>(
@@ -120,13 +135,20 @@ Future<void> $initGetIt(GetIt g, {String environment}) async {
         g<IOnlineChapterDatabaseFacade>(),
         g<IOnlineSeriesDatabaseFacade>(),
       ));
+  g.registerFactory<SeriesDatabaseBloc>(() => SeriesDatabaseBloc(
+        g<ILocalSessionDatabaseFacade>(),
+        g<IOnlineUserDatabaseFacade>(),
+        g<IOnlineSeriesDatabaseFacade>(),
+        g<IOnlineChapterDatabaseFacade>(),
+      ));
   g.registerFactory<AccountDatabaseBloc>(() => AccountDatabaseBloc(
         g<ILocalSessionDatabaseFacade>(),
         g<IOnlineSeriesDatabaseFacade>(),
         g<IOnlineChapterDatabaseFacade>(),
+        g<ILocalPlaceholderDatabaseFacade>(),
       ));
-  g.registerFactory<HomeDatabaseBloc>(
-      () => HomeDatabaseBloc(g<IOnlineSeriesDatabaseFacade>()));
+  g.registerFactory<HomeDatabaseBloc>(() => HomeDatabaseBloc(
+      g<IOnlineSeriesDatabaseFacade>(), g<ILocalPlaceholderDatabaseFacade>()));
 }
 
 class _$HiveInjectableModule extends HiveInjectableModule {}
