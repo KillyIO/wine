@@ -247,6 +247,42 @@ class FirebaseOnlineSeriesDatabaseFacade
   }
 
   @override
+  Future<Either<DatabaseFailure, int>> getSeriesViewsCount(
+    String seriesUid,
+  ) async {
+    final DocumentSnapshot documentSnapshot = await _firestore
+        .collection(Paths.seriesViewsPath)
+        .document(seriesUid)
+        .get();
+
+    if (!documentSnapshot.exists) {
+      return right(0);
+    }
+    final Map<String, dynamic> data = documentSnapshot.data;
+    final List<String> views =
+        data.keys.where((key) => data[key] == true).toList();
+    return right(views.length);
+  }
+
+  @override
+  Future<Either<DatabaseFailure, Unit>> updateSeriesViews({
+    String userUid,
+    String seriesUid,
+  }) async {
+    final DocumentReference seriesViewsReference =
+        _firestore.collection(Paths.seriesViewsPath).document(seriesUid);
+
+    final DocumentSnapshot documentSnapshot = await seriesViewsReference.get();
+
+    if (!documentSnapshot.exists || documentSnapshot.data[userUid] == null) {
+      await seriesViewsReference.setData({
+        userUid: true,
+      }, merge: true);
+    }
+    return right(unit);
+  }
+
+  @override
   Future<Either<DatabaseFailure, int>> getSeriesLikesCount(
     String seriesUid,
   ) async {
@@ -255,6 +291,9 @@ class FirebaseOnlineSeriesDatabaseFacade
         .document(seriesUid)
         .get();
 
+    if (!documentSnapshot.exists) {
+      return right(0);
+    }
     final Map<String, dynamic> data = documentSnapshot.data;
     final List<String> likes =
         data.keys.where((key) => data[key] == true).toList();
@@ -270,6 +309,10 @@ class FirebaseOnlineSeriesDatabaseFacade
         .collection(Paths.seriesLikesPath)
         .document(seriesUid)
         .get();
+
+    if (!documentSnapshot.exists) {
+      return right(false);
+    }
 
     final Map<String, dynamic> data = documentSnapshot.data;
     final bool isLiked = data[userUid] as bool;
@@ -292,8 +335,13 @@ class FirebaseOnlineSeriesDatabaseFacade
 
     final DocumentSnapshot documentSnapshot = await seriesLikesReference.get();
 
-    final Map<String, dynamic> data = documentSnapshot?.data;
-    final bool isLiked = data[userUid] as bool ?? false;
+    bool isLiked;
+    if (!documentSnapshot.exists ||
+        documentSnapshot.data[userUid] as bool == null) {
+      isLiked = false;
+    } else {
+      isLiked = documentSnapshot.data[userUid] as bool;
+    }
 
     Future.wait([
       seriesReference.setData({
@@ -308,35 +356,68 @@ class FirebaseOnlineSeriesDatabaseFacade
   }
 
   @override
-  Future<Either<DatabaseFailure, int>> getSeriesViewsCount(
+  Future<Either<DatabaseFailure, int>> getSeriesBookmarksCount(
     String seriesUid,
   ) async {
     final DocumentSnapshot documentSnapshot = await _firestore
-        .collection(Paths.seriesViewsPath)
+        .collection(Paths.seriesBookmarksPath)
         .document(seriesUid)
         .get();
 
+    if (!documentSnapshot.exists) {
+      return right(0);
+    }
     final Map<String, dynamic> data = documentSnapshot.data;
-    final List<String> views =
+    final List<String> bookmarks =
         data.keys.where((key) => data[key] == true).toList();
-    return right(views.length);
+    return right(bookmarks.length);
   }
 
   @override
-  Future<Either<DatabaseFailure, Unit>> updateSeriesViewsAndViewsCount({
+  Future<Either<DatabaseFailure, bool>> getUserBookmarkStatus({
     String userUid,
     String seriesUid,
   }) async {
-    final DocumentReference seriesViewsReference =
-        _firestore.collection(Paths.seriesViewsPath).document(seriesUid);
+    final DocumentSnapshot documentSnapshot = await _firestore
+        .collection(Paths.seriesBookmarksPath)
+        .document(seriesUid)
+        .get();
 
-    final DocumentSnapshot documentSnapshot = await seriesViewsReference.get();
-
-    if (documentSnapshot == null) {
-      await seriesViewsReference.setData({
-        userUid: true,
-      }, merge: true);
+    if (!documentSnapshot.exists) {
+      return right(false);
     }
+
+    final Map<String, dynamic> data = documentSnapshot.data;
+    final bool isBookmarked = data[userUid] as bool;
+
+    if (isBookmarked != null) {
+      return right(isBookmarked);
+    }
+    return right(false);
+  }
+
+  @override
+  Future<Either<DatabaseFailure, Unit>> updateSeriesBookmarks({
+    String userUid,
+    String seriesUid,
+  }) async {
+    final DocumentReference seriesBookmarksReference =
+        _firestore.collection(Paths.seriesBookmarksPath).document(seriesUid);
+
+    final DocumentSnapshot documentSnapshot =
+        await seriesBookmarksReference.get();
+
+    bool isBookmarked;
+    if (!documentSnapshot.exists ||
+        documentSnapshot.data[userUid] as bool == null) {
+      isBookmarked = false;
+    } else {
+      isBookmarked = documentSnapshot.data[userUid] as bool;
+    }
+
+    await seriesBookmarksReference.setData({
+      userUid: !isBookmarked,
+    }, merge: true);
     return right(unit);
   }
 

@@ -1,13 +1,13 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:wine/utils/extensions.dart';
 
 class WINESeriesCard extends StatelessWidget {
   final String uid;
   final String title;
   final String username;
   final String coverUrl;
-  final int placeholderIndex;
-  final List<String> placeholderUrls;
+  final String placeholderUrl;
   final double height;
   final double width;
   final double titleFontSize;
@@ -20,8 +20,7 @@ class WINESeriesCard extends StatelessWidget {
     this.title,
     this.username,
     this.coverUrl,
-    this.placeholderIndex,
-    this.placeholderUrls,
+    this.placeholderUrl,
     this.height = 100,
     this.width = 50,
     this.titleFontSize = 12,
@@ -44,9 +43,9 @@ class WINESeriesCard extends StatelessWidget {
                 borderRadius: BorderRadius.circular(10.0),
                 boxShadow: const <BoxShadow>[
                   BoxShadow(
-                    color: Color(0xFFF1F1F1),
-                    spreadRadius: 1,
-                    blurRadius: 5,
+                    color: Colors.black12,
+                    spreadRadius: 3,
+                    blurRadius: 7,
                     offset: Offset(0, 3),
                   ),
                 ],
@@ -57,9 +56,9 @@ class WINESeriesCard extends StatelessWidget {
                   tag: uid,
                   child: CachedNetworkImage(
                     fit: BoxFit.contain,
-                    imageUrl: coverUrl != null && coverUrl.isNotEmpty
+                    imageUrl: coverUrl.isNotEmptyOrNull
                         ? coverUrl
-                        : placeholderUrls[placeholderIndex],
+                        : placeholderUrl,
                   ),
                 ),
               ),

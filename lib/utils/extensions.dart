@@ -6,4 +6,8 @@ extension StringX on String {
   String get isEmptyToNull {
     return isEmpty ? null : this;
   }
+
+  bool get isNotEmptyOrNull {
+    return this != null && isNotEmpty;
+  }
 }

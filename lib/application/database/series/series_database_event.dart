@@ -3,9 +3,7 @@ part of 'series_database_bloc.dart';
 @freezed
 abstract class SeriesDatabaseEvent with _$SeriesDatabaseEvent {
   const factory SeriesDatabaseEvent.seriesPageLaunched({
-    @required Series series,
-    @required String placeholderUrl,
-    String username,
+    Series series,
     BuildContext context,
   }) = SeriesPageLaunched;
   const factory SeriesDatabaseEvent.likeButtonPressed() = LikeButtonPressed;
@@ -13,4 +11,6 @@ abstract class SeriesDatabaseEvent with _$SeriesDatabaseEvent {
       BookmarkButtonPressed;
   const factory SeriesDatabaseEvent.showMoreSummaryButtonPressed() =
       ShowMoreSummaryButtonPressed;
+  const factory SeriesDatabaseEvent.readChapterOneButtonPressed() =
+      ReadChapterOneButtonPressed;
 }

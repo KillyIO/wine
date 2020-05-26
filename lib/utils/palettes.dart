@@ -8,7 +8,7 @@ class Palettes {
   // static const Color strongBlue = Color(0xFF518BE8);
   static const Color pastelPink = Color(0xFFFFBDB8);
   static const Color pastelYellow = Color(0xFFFFE485);
-  static const Color pastelGreen = Color(0xFFC0EBBE);
+  static const Color pastelCyan = Color(0xFFC0EBBE);
   static const Color pastelBlue = Color(0xFFB0C7E8);
   static const Color error = Color(0xFFe60000);
   static const Color info = Color(0xFF3282b8);

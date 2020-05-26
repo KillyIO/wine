@@ -23,6 +23,11 @@ abstract class IOnlineSeriesDatabaseFacade {
   Future<Either<DatabaseFailure, Map<String, Series>>> getSeriesAsMapByUidList(
     List<String> seriesUids,
   );
+  Future<Either<DatabaseFailure, int>> getSeriesViewsCount(String seriesUid);
+  Future<Either<DatabaseFailure, Unit>> updateSeriesViews({
+    @required String userUid,
+    @required String seriesUid,
+  });
   Future<Either<DatabaseFailure, int>> getSeriesLikesCount(String seriesUid);
   Future<Either<DatabaseFailure, bool>> getUserLikeStatus({
     @required String userUid,
@@ -32,8 +37,14 @@ abstract class IOnlineSeriesDatabaseFacade {
     @required String userUid,
     @required String seriesUid,
   });
-  Future<Either<DatabaseFailure, int>> getSeriesViewsCount(String seriesUid);
-  Future<Either<DatabaseFailure, Unit>> updateSeriesViewsAndViewsCount({
+  Future<Either<DatabaseFailure, int>> getSeriesBookmarksCount(
+    String seriesUid,
+  );
+  Future<Either<DatabaseFailure, bool>> getUserBookmarkStatus({
+    @required String userUid,
+    @required String seriesUid,
+  });
+  Future<Either<DatabaseFailure, Unit>> updateSeriesBookmarks({
     @required String userUid,
     @required String seriesUid,
   });

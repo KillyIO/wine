@@ -2126,9 +2126,7 @@ class _$NewSeriesDatabaseStateTearOff {
       @required
           Map<String, String> languagesMap,
       @required
-          List<String> placeholders,
-      @required
-          int placeholderIndex,
+          String placeholderUrl,
       @required
           bool showErrorMessages,
       @required
@@ -2157,8 +2155,7 @@ class _$NewSeriesDatabaseStateTearOff {
       isCreatingOrDeleting: isCreatingOrDeleting,
       genresMap: genresMap,
       languagesMap: languagesMap,
-      placeholders: placeholders,
-      placeholderIndex: placeholderIndex,
+      placeholderUrl: placeholderUrl,
       showErrorMessages: showErrorMessages,
       databaseFailureOrSuccessOption: databaseFailureOrSuccessOption,
     );
@@ -2191,8 +2188,7 @@ mixin _$NewSeriesDatabaseState {
   bool get isCreatingOrDeleting;
   Map<String, String> get genresMap;
   Map<String, String> get languagesMap;
-  List<String> get placeholders;
-  int get placeholderIndex;
+  String get placeholderUrl;
   bool get showErrorMessages;
   Option<Either<DatabaseFailure, dynamic>> get databaseFailureOrSuccessOption;
 
@@ -2226,8 +2222,7 @@ abstract class $NewSeriesDatabaseStateCopyWith<$Res> {
       bool isCreatingOrDeleting,
       Map<String, String> genresMap,
       Map<String, String> languagesMap,
-      List<String> placeholders,
-      int placeholderIndex,
+      String placeholderUrl,
       bool showErrorMessages,
       Option<Either<DatabaseFailure, dynamic>> databaseFailureOrSuccessOption});
 }
@@ -2264,8 +2259,7 @@ class _$NewSeriesDatabaseStateCopyWithImpl<$Res>
     Object isCreatingOrDeleting = freezed,
     Object genresMap = freezed,
     Object languagesMap = freezed,
-    Object placeholders = freezed,
-    Object placeholderIndex = freezed,
+    Object placeholderUrl = freezed,
     Object showErrorMessages = freezed,
     Object databaseFailureOrSuccessOption = freezed,
   }) {
@@ -2314,12 +2308,9 @@ class _$NewSeriesDatabaseStateCopyWithImpl<$Res>
       languagesMap: languagesMap == freezed
           ? _value.languagesMap
           : languagesMap as Map<String, String>,
-      placeholders: placeholders == freezed
-          ? _value.placeholders
-          : placeholders as List<String>,
-      placeholderIndex: placeholderIndex == freezed
-          ? _value.placeholderIndex
-          : placeholderIndex as int,
+      placeholderUrl: placeholderUrl == freezed
+          ? _value.placeholderUrl
+          : placeholderUrl as String,
       showErrorMessages: showErrorMessages == freezed
           ? _value.showErrorMessages
           : showErrorMessages as bool,
@@ -2360,8 +2351,7 @@ abstract class _$NewSeriesDatabaseStateCopyWith<$Res>
       bool isCreatingOrDeleting,
       Map<String, String> genresMap,
       Map<String, String> languagesMap,
-      List<String> placeholders,
-      int placeholderIndex,
+      String placeholderUrl,
       bool showErrorMessages,
       Option<Either<DatabaseFailure, dynamic>> databaseFailureOrSuccessOption});
 }
@@ -2400,8 +2390,7 @@ class __$NewSeriesDatabaseStateCopyWithImpl<$Res>
     Object isCreatingOrDeleting = freezed,
     Object genresMap = freezed,
     Object languagesMap = freezed,
-    Object placeholders = freezed,
-    Object placeholderIndex = freezed,
+    Object placeholderUrl = freezed,
     Object showErrorMessages = freezed,
     Object databaseFailureOrSuccessOption = freezed,
   }) {
@@ -2450,12 +2439,9 @@ class __$NewSeriesDatabaseStateCopyWithImpl<$Res>
       languagesMap: languagesMap == freezed
           ? _value.languagesMap
           : languagesMap as Map<String, String>,
-      placeholders: placeholders == freezed
-          ? _value.placeholders
-          : placeholders as List<String>,
-      placeholderIndex: placeholderIndex == freezed
-          ? _value.placeholderIndex
-          : placeholderIndex as int,
+      placeholderUrl: placeholderUrl == freezed
+          ? _value.placeholderUrl
+          : placeholderUrl as String,
       showErrorMessages: showErrorMessages == freezed
           ? _value.showErrorMessages
           : showErrorMessages as bool,
@@ -2493,8 +2479,7 @@ class _$_NewSeriesDatabaseState
       @required this.isCreatingOrDeleting,
       @required this.genresMap,
       @required this.languagesMap,
-      @required this.placeholders,
-      @required this.placeholderIndex,
+      @required this.placeholderUrl,
       @required this.showErrorMessages,
       @required this.databaseFailureOrSuccessOption})
       : assert(seriesDraft != null),
@@ -2519,8 +2504,7 @@ class _$_NewSeriesDatabaseState
         assert(isCreatingOrDeleting != null),
         assert(genresMap != null),
         assert(languagesMap != null),
-        assert(placeholders != null),
-        assert(placeholderIndex != null),
+        assert(placeholderUrl != null),
         assert(showErrorMessages != null),
         assert(databaseFailureOrSuccessOption != null);
 
@@ -2569,9 +2553,7 @@ class _$_NewSeriesDatabaseState
   @override
   final Map<String, String> languagesMap;
   @override
-  final List<String> placeholders;
-  @override
-  final int placeholderIndex;
+  final String placeholderUrl;
   @override
   final bool showErrorMessages;
   @override
@@ -2579,7 +2561,7 @@ class _$_NewSeriesDatabaseState
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'NewSeriesDatabaseState(seriesDraft: $seriesDraft, isEditMode: $isEditMode, coverPath: $coverPath, title: $title, titleStr: $titleStr, titleWordCount: $titleWordCount, subtitle: $subtitle, subtitleStr: $subtitleStr, subtitleWordCount: $subtitleWordCount, summary: $summary, summaryStr: $summaryStr, summaryWordCount: $summaryWordCount, genre: $genre, genreStr: $genreStr, genreOptional: $genreOptional, genreOptionalStr: $genreOptionalStr, language: $language, languageStr: $languageStr, isNSFW: $isNSFW, isCreatingOrDeleting: $isCreatingOrDeleting, genresMap: $genresMap, languagesMap: $languagesMap, placeholders: $placeholders, placeholderIndex: $placeholderIndex, showErrorMessages: $showErrorMessages, databaseFailureOrSuccessOption: $databaseFailureOrSuccessOption)';
+    return 'NewSeriesDatabaseState(seriesDraft: $seriesDraft, isEditMode: $isEditMode, coverPath: $coverPath, title: $title, titleStr: $titleStr, titleWordCount: $titleWordCount, subtitle: $subtitle, subtitleStr: $subtitleStr, subtitleWordCount: $subtitleWordCount, summary: $summary, summaryStr: $summaryStr, summaryWordCount: $summaryWordCount, genre: $genre, genreStr: $genreStr, genreOptional: $genreOptional, genreOptionalStr: $genreOptionalStr, language: $language, languageStr: $languageStr, isNSFW: $isNSFW, isCreatingOrDeleting: $isCreatingOrDeleting, genresMap: $genresMap, languagesMap: $languagesMap, placeholderUrl: $placeholderUrl, showErrorMessages: $showErrorMessages, databaseFailureOrSuccessOption: $databaseFailureOrSuccessOption)';
   }
 
   @override
@@ -2609,8 +2591,7 @@ class _$_NewSeriesDatabaseState
       ..add(DiagnosticsProperty('isCreatingOrDeleting', isCreatingOrDeleting))
       ..add(DiagnosticsProperty('genresMap', genresMap))
       ..add(DiagnosticsProperty('languagesMap', languagesMap))
-      ..add(DiagnosticsProperty('placeholders', placeholders))
-      ..add(DiagnosticsProperty('placeholderIndex', placeholderIndex))
+      ..add(DiagnosticsProperty('placeholderUrl', placeholderUrl))
       ..add(DiagnosticsProperty('showErrorMessages', showErrorMessages))
       ..add(DiagnosticsProperty(
           'databaseFailureOrSuccessOption', databaseFailureOrSuccessOption));
@@ -2683,10 +2664,9 @@ class _$_NewSeriesDatabaseState
             (identical(other.languagesMap, languagesMap) ||
                 const DeepCollectionEquality()
                     .equals(other.languagesMap, languagesMap)) &&
-            (identical(other.placeholders, placeholders) ||
+            (identical(other.placeholderUrl, placeholderUrl) ||
                 const DeepCollectionEquality()
-                    .equals(other.placeholders, placeholders)) &&
-            (identical(other.placeholderIndex, placeholderIndex) || const DeepCollectionEquality().equals(other.placeholderIndex, placeholderIndex)) &&
+                    .equals(other.placeholderUrl, placeholderUrl)) &&
             (identical(other.showErrorMessages, showErrorMessages) || const DeepCollectionEquality().equals(other.showErrorMessages, showErrorMessages)) &&
             (identical(other.databaseFailureOrSuccessOption, databaseFailureOrSuccessOption) || const DeepCollectionEquality().equals(other.databaseFailureOrSuccessOption, databaseFailureOrSuccessOption)));
   }
@@ -2716,8 +2696,7 @@ class _$_NewSeriesDatabaseState
       const DeepCollectionEquality().hash(isCreatingOrDeleting) ^
       const DeepCollectionEquality().hash(genresMap) ^
       const DeepCollectionEquality().hash(languagesMap) ^
-      const DeepCollectionEquality().hash(placeholders) ^
-      const DeepCollectionEquality().hash(placeholderIndex) ^
+      const DeepCollectionEquality().hash(placeholderUrl) ^
       const DeepCollectionEquality().hash(showErrorMessages) ^
       const DeepCollectionEquality().hash(databaseFailureOrSuccessOption);
 
@@ -2774,9 +2753,7 @@ abstract class _NewSeriesDatabaseState implements NewSeriesDatabaseState {
       @required
           Map<String, String> languagesMap,
       @required
-          List<String> placeholders,
-      @required
-          int placeholderIndex,
+          String placeholderUrl,
       @required
           bool showErrorMessages,
       @required
@@ -2828,9 +2805,7 @@ abstract class _NewSeriesDatabaseState implements NewSeriesDatabaseState {
   @override
   Map<String, String> get languagesMap;
   @override
-  List<String> get placeholders;
-  @override
-  int get placeholderIndex;
+  String get placeholderUrl;
   @override
   bool get showErrorMessages;
   @override

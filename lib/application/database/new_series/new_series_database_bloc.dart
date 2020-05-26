@@ -16,6 +16,7 @@ import 'package:path_provider/path_provider.dart';
 import 'package:stringprocess/stringprocess.dart';
 import 'package:uuid/uuid.dart';
 import 'package:wine/domain/database/database_failure.dart';
+import 'package:wine/domain/database/i_local_placeholder_database_facade.dart';
 import 'package:wine/domain/database/i_local_series_draft_database_facade.dart';
 import 'package:wine/domain/database/summary.dart';
 import 'package:wine/domain/database/genre.dart';
@@ -38,6 +39,7 @@ class NewSeriesDatabaseBloc
     extends Bloc<NewSeriesDatabaseEvent, NewSeriesDatabaseState> {
   final ILocalSessionDatabaseFacade _localSessionDatabaseFacade;
   final ILocalSeriesDraftDatabaseFacade _localSeriesDraftDatabaseFacade;
+  final ILocalPlaceholderDatabaseFacade _localPlaceholderDatabaseFacade;
 
   final Uuid uuid = Uuid();
   final StringProcessor tps = StringProcessor();
@@ -45,6 +47,7 @@ class NewSeriesDatabaseBloc
   NewSeriesDatabaseBloc(
     this._localSessionDatabaseFacade,
     this._localSeriesDraftDatabaseFacade,
+    this._localPlaceholderDatabaseFacade,
   );
 
   @override
@@ -62,6 +65,7 @@ class NewSeriesDatabaseBloc
 
         SeriesDraft seriesDraft;
         bool isEditMode = false;
+        String placeholderUrl = '';
 
         if (event.seriesDraft != null) {
           seriesDraft = event.seriesDraft;
@@ -85,7 +89,20 @@ class NewSeriesDatabaseBloc
           );
         }
 
-        final List<String> placeholdersUrls = Methods.getPlaceholderUrls();
+        final List<String> placeholderUrls = Methods.getPlaceholderKeys();
+        final String randomKey =
+            placeholderUrls[random.nextInt(placeholderUrls.length)];
+
+        failureOrSuccess = await _localPlaceholderDatabaseFacade
+            .getPlaceholderUrlByKey(randomKey);
+        failureOrSuccess.fold(
+          (_) {},
+          (success) {
+            if (success is String) {
+              placeholderUrl = success;
+            }
+          },
+        );
 
         if (isEditMode) {
           yield state.copyWith(
@@ -110,8 +127,7 @@ class NewSeriesDatabaseBloc
             isNSFW: seriesDraft.isNSFW,
             genresMap: Methods.getGenres(event.context),
             languagesMap: Methods.getLanguages(event.context),
-            placeholders: placeholdersUrls,
-            placeholderIndex: random.nextInt(placeholdersUrls.length),
+            placeholderUrl: placeholderUrl,
             databaseFailureOrSuccessOption: optionOf(failureOrSuccess),
           );
         } else {
@@ -120,8 +136,7 @@ class NewSeriesDatabaseBloc
             isEditMode: isEditMode,
             genresMap: Methods.getGenres(event.context),
             languagesMap: Methods.getLanguages(event.context),
-            placeholders: placeholdersUrls,
-            placeholderIndex: random.nextInt(placeholdersUrls.length),
+            placeholderUrl: placeholderUrl,
             databaseFailureOrSuccessOption: optionOf(failureOrSuccess),
           );
         }

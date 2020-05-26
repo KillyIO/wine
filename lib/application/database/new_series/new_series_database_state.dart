@@ -25,8 +25,7 @@ abstract class NewSeriesDatabaseState with _$NewSeriesDatabaseState {
     @required bool isCreatingOrDeleting,
     @required Map<String, String> genresMap,
     @required Map<String, String> languagesMap,
-    @required List<String> placeholders,
-    @required int placeholderIndex,
+    @required String placeholderUrl,
     @required bool showErrorMessages,
     @required
         Option<Either<DatabaseFailure, dynamic>> databaseFailureOrSuccessOption,
@@ -55,8 +54,7 @@ abstract class NewSeriesDatabaseState with _$NewSeriesDatabaseState {
         isCreatingOrDeleting: false,
         genresMap: <String, String>{},
         languagesMap: <String, String>{},
-        placeholders: <String>[],
-        placeholderIndex: 0,
+        placeholderUrl: '',
         showErrorMessages: false,
         databaseFailureOrSuccessOption: none(),
       );

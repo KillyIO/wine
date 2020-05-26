@@ -20,7 +20,7 @@ class SeriesPage extends StatelessWidget {
         providers: [
           BlocProvider(create: (context) => getIt<SeriesDatabaseBloc>())
         ],
-        child: SeriesLayout(),
+        child: SeriesLayout(args: args),
       ),
     );
   }

@@ -3,7 +3,10 @@ import 'package:flutter/material.dart';
 class GenreContainer extends StatelessWidget {
   final String title;
 
-  const GenreContainer({Key key, this.title}) : super(key: key);
+  const GenreContainer({
+    Key key,
+    this.title,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +20,7 @@ class GenreContainer extends StatelessWidget {
         vertical: 5.0,
       ),
       child: Text(
-        title,
+        title ?? '',
         style: TextStyle(
           color: Colors.black,
           fontWeight: FontWeight.w400,

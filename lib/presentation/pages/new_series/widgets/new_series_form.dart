@@ -219,8 +219,7 @@ class _NewSeriesFormState extends State<NewSeriesForm>
                                         fit: BoxFit.fitWidth,
                                       )
                                     : Image.network(
-                                        nsDbState.placeholders[
-                                            nsDbState.placeholderIndex],
+                                        nsDbState.placeholderUrl,
                                         fit: BoxFit.fitWidth,
                                       ),
                               ),

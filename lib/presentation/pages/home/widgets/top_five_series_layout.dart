@@ -66,9 +66,8 @@ class TopFiveSeriesLayout extends StatelessWidget {
                       title: series.title,
                       username: series.author.username,
                       coverUrl: series.coverUrl,
-                      placeholderIndex: state.placeholderIndexes[
-                          index % state.placeholderIndexes.length],
-                      placeholderUrls: state.placeholders,
+                      placeholderUrl: state.placeholderUrls[
+                          index % state.placeholderUrls.length],
                       onPressed: () {},
                       width: mediaQuery.width / 2.5,
                       height: mediaQuery.height / 3,

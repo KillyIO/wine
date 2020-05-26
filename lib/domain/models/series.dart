@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 import 'package:wine/domain/models/user.dart';
+import 'package:wine/utils/extensions.dart';
 
 class Series {
   String uid;
@@ -136,37 +137,41 @@ class Series {
     if (identical(this, o)) return true;
 
     return o is Series &&
-      o.uid == uid &&
-      o.authorUid == authorUid &&
-      o.author == author &&
-      o.title == title &&
-      o.subtitle == subtitle &&
-      o.summary == summary &&
-      o.genre == genre &&
-      o.genreOptional == genreOptional &&
-      o.language == language &&
-      o.isNSFW == isNSFW &&
-      o.coverUrl == coverUrl &&
-      o.likesCount == likesCount &&
-      o.createdAt == createdAt &&
-      o.updatedAt == updatedAt;
+        o.uid == uid &&
+        o.authorUid == authorUid &&
+        o.author == author &&
+        o.title == title &&
+        o.subtitle == subtitle &&
+        o.summary == summary &&
+        o.genre == genre &&
+        o.genreOptional == genreOptional &&
+        o.language == language &&
+        o.isNSFW == isNSFW &&
+        o.coverUrl == coverUrl &&
+        o.likesCount == likesCount &&
+        o.createdAt == createdAt &&
+        o.updatedAt == updatedAt;
   }
 
   @override
   int get hashCode {
     return uid.hashCode ^
-      authorUid.hashCode ^
-      author.hashCode ^
-      title.hashCode ^
-      subtitle.hashCode ^
-      summary.hashCode ^
-      genre.hashCode ^
-      genreOptional.hashCode ^
-      language.hashCode ^
-      isNSFW.hashCode ^
-      coverUrl.hashCode ^
-      likesCount.hashCode ^
-      createdAt.hashCode ^
-      updatedAt.hashCode;
+        authorUid.hashCode ^
+        author.hashCode ^
+        title.hashCode ^
+        subtitle.hashCode ^
+        summary.hashCode ^
+        genre.hashCode ^
+        genreOptional.hashCode ^
+        language.hashCode ^
+        isNSFW.hashCode ^
+        coverUrl.hashCode ^
+        likesCount.hashCode ^
+        createdAt.hashCode ^
+        updatedAt.hashCode;
+  }
+
+  bool get isNotEmptyOrNull {
+    return this != null && uid.isNotEmptyOrNull;
   }
 }

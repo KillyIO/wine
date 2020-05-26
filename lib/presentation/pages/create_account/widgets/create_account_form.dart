@@ -6,7 +6,7 @@ import 'package:wine/application/database/create_account/create_account_database
 import 'package:wine/domain/models/user.dart';
 import 'package:wine/presentation/pages/create_account/widgets/create_account_textfield_label.dart';
 import 'package:wine/presentation/pages/create_account/widgets/create_account_tos_and_pp_button.dart';
-import 'package:wine/presentation/widgets/wine_full_width_button.dart';
+import 'package:wine/presentation/widgets/wine_button.dart';
 import 'package:wine/presentation/widgets/wine_show_dialog.dart';
 import 'package:wine/presentation/widgets/wine_error_dialog.dart';
 import 'package:wine/routes.dart';
@@ -299,7 +299,7 @@ class _CreateAccountFormState extends State<CreateAccountForm>
                               child: CreateAccountTOSAndPPButton(),
                             ),
                             const SizedBox(height: 30),
-                            WINEFullWidthButton(
+                            WINEButton(
                               title: 'CREATE AN ACCOUNT',
                               onPressed: () => context
                                   .bloc<CreateAccountAuthenticationBloc>()

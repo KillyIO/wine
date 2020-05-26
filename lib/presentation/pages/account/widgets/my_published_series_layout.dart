@@ -22,8 +22,7 @@ class MyPublishedSeriesLayout extends StatelessWidget {
   List<Widget> _generateTiles(
     List<Series> seriesList,
     String username,
-    List<String> placeholderList,
-    List<int> placeholderIndexes,
+    List<String> placeholderUrls,
   ) {
     final List<Widget> tiles = <Widget>[];
 
@@ -34,14 +33,12 @@ class MyPublishedSeriesLayout extends StatelessWidget {
           title: seriesList[i].title,
           username: username,
           coverUrl: seriesList[i].coverUrl,
-          placeholderIndex: placeholderIndexes[i % placeholderIndexes.length],
-          placeholderUrls: placeholderList,
+          placeholderUrl: placeholderUrls[i % placeholderUrls.length],
           onPressed: () => sailor.navigate(
             Constants.seriesRoute,
             args: SeriesPageArgs(
               series: seriesList[i],
-              placeholderUrl: placeholderList[
-                  placeholderIndexes[i % placeholderIndexes.length]],
+              placeholderUrl: placeholderUrls[i % placeholderUrls.length],
               username: username,
             ),
           ),
@@ -68,19 +65,19 @@ class MyPublishedSeriesLayout extends StatelessWidget {
           child: ListView(
             children: <Widget>[
               const SizedBox(height: 20),
-              StaggeredGridView.count(
-                physics: const NeverScrollableScrollPhysics(),
-                crossAxisCount: 2,
-                staggeredTiles: _generateStaggeredTiles(acDbState.series),
-                crossAxisSpacing: 20.0,
-                shrinkWrap: true,
-                children: _generateTiles(
-                  acDbState.series,
-                  acDbState.session.username,
-                  acDbState.placeholders,
-                  acDbState.placeholderIndexes,
+              if (acDbState.placeholderUrls.isNotEmpty)
+                StaggeredGridView.count(
+                  physics: const NeverScrollableScrollPhysics(),
+                  crossAxisCount: 2,
+                  staggeredTiles: _generateStaggeredTiles(acDbState.series),
+                  crossAxisSpacing: 20.0,
+                  shrinkWrap: true,
+                  children: _generateTiles(
+                    acDbState.series,
+                    acDbState.session.username,
+                    acDbState.placeholderUrls,
+                  ),
                 ),
-              ),
             ],
           ),
         );

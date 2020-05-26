@@ -429,9 +429,7 @@ class _$AccountDatabaseStateTearOff {
       @required
           Map<String, String> copyrights,
       @required
-          List<String> placeholders,
-      @required
-          List<int> placeholderIndexes,
+          List<String> placeholderUrls,
       @required
           bool isFetching,
       @required
@@ -444,8 +442,7 @@ class _$AccountDatabaseStateTearOff {
       genres: genres,
       languages: languages,
       copyrights: copyrights,
-      placeholders: placeholders,
-      placeholderIndexes: placeholderIndexes,
+      placeholderUrls: placeholderUrls,
       isFetching: isFetching,
       databaseFailureOrSuccessOption: databaseFailureOrSuccessOption,
     );
@@ -462,8 +459,7 @@ mixin _$AccountDatabaseState {
   Map<String, String> get genres;
   Map<String, String> get languages;
   Map<String, String> get copyrights;
-  List<String> get placeholders;
-  List<int> get placeholderIndexes;
+  List<String> get placeholderUrls;
   bool get isFetching;
   Option<Either<DatabaseFailure, dynamic>> get databaseFailureOrSuccessOption;
 
@@ -481,8 +477,7 @@ abstract class $AccountDatabaseStateCopyWith<$Res> {
       Map<String, String> genres,
       Map<String, String> languages,
       Map<String, String> copyrights,
-      List<String> placeholders,
-      List<int> placeholderIndexes,
+      List<String> placeholderUrls,
       bool isFetching,
       Option<Either<DatabaseFailure, dynamic>> databaseFailureOrSuccessOption});
 }
@@ -503,8 +498,7 @@ class _$AccountDatabaseStateCopyWithImpl<$Res>
     Object genres = freezed,
     Object languages = freezed,
     Object copyrights = freezed,
-    Object placeholders = freezed,
-    Object placeholderIndexes = freezed,
+    Object placeholderUrls = freezed,
     Object isFetching = freezed,
     Object databaseFailureOrSuccessOption = freezed,
   }) {
@@ -520,12 +514,9 @@ class _$AccountDatabaseStateCopyWithImpl<$Res>
       copyrights: copyrights == freezed
           ? _value.copyrights
           : copyrights as Map<String, String>,
-      placeholders: placeholders == freezed
-          ? _value.placeholders
-          : placeholders as List<String>,
-      placeholderIndexes: placeholderIndexes == freezed
-          ? _value.placeholderIndexes
-          : placeholderIndexes as List<int>,
+      placeholderUrls: placeholderUrls == freezed
+          ? _value.placeholderUrls
+          : placeholderUrls as List<String>,
       isFetching:
           isFetching == freezed ? _value.isFetching : isFetching as bool,
       databaseFailureOrSuccessOption: databaseFailureOrSuccessOption == freezed
@@ -549,8 +540,7 @@ abstract class _$AccountSettingsStateCopyWith<$Res>
       Map<String, String> genres,
       Map<String, String> languages,
       Map<String, String> copyrights,
-      List<String> placeholders,
-      List<int> placeholderIndexes,
+      List<String> placeholderUrls,
       bool isFetching,
       Option<Either<DatabaseFailure, dynamic>> databaseFailureOrSuccessOption});
 }
@@ -573,8 +563,7 @@ class __$AccountSettingsStateCopyWithImpl<$Res>
     Object genres = freezed,
     Object languages = freezed,
     Object copyrights = freezed,
-    Object placeholders = freezed,
-    Object placeholderIndexes = freezed,
+    Object placeholderUrls = freezed,
     Object isFetching = freezed,
     Object databaseFailureOrSuccessOption = freezed,
   }) {
@@ -590,12 +579,9 @@ class __$AccountSettingsStateCopyWithImpl<$Res>
       copyrights: copyrights == freezed
           ? _value.copyrights
           : copyrights as Map<String, String>,
-      placeholders: placeholders == freezed
-          ? _value.placeholders
-          : placeholders as List<String>,
-      placeholderIndexes: placeholderIndexes == freezed
-          ? _value.placeholderIndexes
-          : placeholderIndexes as List<int>,
+      placeholderUrls: placeholderUrls == freezed
+          ? _value.placeholderUrls
+          : placeholderUrls as List<String>,
       isFetching:
           isFetching == freezed ? _value.isFetching : isFetching as bool,
       databaseFailureOrSuccessOption: databaseFailureOrSuccessOption == freezed
@@ -616,8 +602,7 @@ class _$_AccountSettingsState
       @required this.genres,
       @required this.languages,
       @required this.copyrights,
-      @required this.placeholders,
-      @required this.placeholderIndexes,
+      @required this.placeholderUrls,
       @required this.isFetching,
       @required this.databaseFailureOrSuccessOption})
       : assert(session != null),
@@ -626,8 +611,7 @@ class _$_AccountSettingsState
         assert(genres != null),
         assert(languages != null),
         assert(copyrights != null),
-        assert(placeholders != null),
-        assert(placeholderIndexes != null),
+        assert(placeholderUrls != null),
         assert(isFetching != null),
         assert(databaseFailureOrSuccessOption != null);
 
@@ -644,9 +628,7 @@ class _$_AccountSettingsState
   @override
   final Map<String, String> copyrights;
   @override
-  final List<String> placeholders;
-  @override
-  final List<int> placeholderIndexes;
+  final List<String> placeholderUrls;
   @override
   final bool isFetching;
   @override
@@ -654,7 +636,7 @@ class _$_AccountSettingsState
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'AccountDatabaseState(session: $session, series: $series, chapters: $chapters, genres: $genres, languages: $languages, copyrights: $copyrights, placeholders: $placeholders, placeholderIndexes: $placeholderIndexes, isFetching: $isFetching, databaseFailureOrSuccessOption: $databaseFailureOrSuccessOption)';
+    return 'AccountDatabaseState(session: $session, series: $series, chapters: $chapters, genres: $genres, languages: $languages, copyrights: $copyrights, placeholderUrls: $placeholderUrls, isFetching: $isFetching, databaseFailureOrSuccessOption: $databaseFailureOrSuccessOption)';
   }
 
   @override
@@ -668,8 +650,7 @@ class _$_AccountSettingsState
       ..add(DiagnosticsProperty('genres', genres))
       ..add(DiagnosticsProperty('languages', languages))
       ..add(DiagnosticsProperty('copyrights', copyrights))
-      ..add(DiagnosticsProperty('placeholders', placeholders))
-      ..add(DiagnosticsProperty('placeholderIndexes', placeholderIndexes))
+      ..add(DiagnosticsProperty('placeholderUrls', placeholderUrls))
       ..add(DiagnosticsProperty('isFetching', isFetching))
       ..add(DiagnosticsProperty(
           'databaseFailureOrSuccessOption', databaseFailureOrSuccessOption));
@@ -695,12 +676,9 @@ class _$_AccountSettingsState
             (identical(other.copyrights, copyrights) ||
                 const DeepCollectionEquality()
                     .equals(other.copyrights, copyrights)) &&
-            (identical(other.placeholders, placeholders) ||
+            (identical(other.placeholderUrls, placeholderUrls) ||
                 const DeepCollectionEquality()
-                    .equals(other.placeholders, placeholders)) &&
-            (identical(other.placeholderIndexes, placeholderIndexes) ||
-                const DeepCollectionEquality()
-                    .equals(other.placeholderIndexes, placeholderIndexes)) &&
+                    .equals(other.placeholderUrls, placeholderUrls)) &&
             (identical(other.isFetching, isFetching) ||
                 const DeepCollectionEquality()
                     .equals(other.isFetching, isFetching)) &&
@@ -720,8 +698,7 @@ class _$_AccountSettingsState
       const DeepCollectionEquality().hash(genres) ^
       const DeepCollectionEquality().hash(languages) ^
       const DeepCollectionEquality().hash(copyrights) ^
-      const DeepCollectionEquality().hash(placeholders) ^
-      const DeepCollectionEquality().hash(placeholderIndexes) ^
+      const DeepCollectionEquality().hash(placeholderUrls) ^
       const DeepCollectionEquality().hash(isFetching) ^
       const DeepCollectionEquality().hash(databaseFailureOrSuccessOption);
 
@@ -746,9 +723,7 @@ abstract class _AccountSettingsState implements AccountDatabaseState {
       @required
           Map<String, String> copyrights,
       @required
-          List<String> placeholders,
-      @required
-          List<int> placeholderIndexes,
+          List<String> placeholderUrls,
       @required
           bool isFetching,
       @required
@@ -768,9 +743,7 @@ abstract class _AccountSettingsState implements AccountDatabaseState {
   @override
   Map<String, String> get copyrights;
   @override
-  List<String> get placeholders;
-  @override
-  List<int> get placeholderIndexes;
+  List<String> get placeholderUrls;
   @override
   bool get isFetching;
   @override

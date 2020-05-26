@@ -21,8 +21,7 @@ class MySeriesDraftsLayout extends StatelessWidget {
 
   List<Widget> _generateTiles(
     List<SeriesDraft> seriesList,
-    List<String> placeholderList,
-    List<int> placeholderIndexes,
+    List<String> placeholderUrls,
   ) {
     final List<Widget> tiles = <Widget>[];
 
@@ -31,8 +30,7 @@ class MySeriesDraftsLayout extends StatelessWidget {
         SeriesDraftCard(
           title: seriesList[i].title,
           coverPath: seriesList[i].coverPath,
-          placeholderIndex: placeholderIndexes[i % placeholderIndexes.length],
-          placeholderUrls: placeholderList,
+          placeholderUrl: placeholderUrls[i % placeholderUrls.length],
           onPressed: () {},
         ),
       );
@@ -56,19 +54,19 @@ class MySeriesDraftsLayout extends StatelessWidget {
               child: ListView(
                 children: <Widget>[
                   const SizedBox(height: 20),
-                  StaggeredGridView.count(
-                    physics: const NeverScrollableScrollPhysics(),
-                    crossAxisCount: 2,
-                    staggeredTiles:
-                        _generateStaggeredTiles(box.values.toList()),
-                    crossAxisSpacing: 20.0,
-                    shrinkWrap: true,
-                    children: _generateTiles(
-                      box.values.toList(),
-                      acDbState.placeholders,
-                      acDbState.placeholderIndexes,
+                  if (acDbState.placeholderUrls.isNotEmpty)
+                    StaggeredGridView.count(
+                      physics: const NeverScrollableScrollPhysics(),
+                      crossAxisCount: 2,
+                      staggeredTiles:
+                          _generateStaggeredTiles(box.values.toList()),
+                      crossAxisSpacing: 20.0,
+                      shrinkWrap: true,
+                      children: _generateTiles(
+                        box.values.toList(),
+                        acDbState.placeholderUrls,
+                      ),
                     ),
-                  ),
                 ],
               ),
             );
