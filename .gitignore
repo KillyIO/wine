@@ -36,6 +36,7 @@ build/
 **/android/app/google-services.json
 **/android/app/src/development/google-services.json
 **/android/app/src/production/google-services.json
+**/android/app/src/beta/google-services.json
 **/android/key.jks
 
 ## Android related
@@ -50,6 +51,7 @@ build/
 **/android/app/google-services.json
 **/android/app/src/development/google-services.json
 **/android/app/src/production/google-services.json
+**/android/app/src/beta/google-services.json
 **/android/key.jks
 
 # iOS/XCode related

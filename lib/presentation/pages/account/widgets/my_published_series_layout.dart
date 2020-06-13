@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:wine/application/database/account/account_database_bloc.dart';
 import 'package:wine/domain/models/series.dart';
+import 'package:wine/domain/models/user.dart';
 import 'package:wine/presentation/widgets/wine_series_card.dart';
 import 'package:wine/routes.dart';
 import 'package:wine/utils/arguments.dart';
@@ -21,8 +22,7 @@ class MyPublishedSeriesLayout extends StatelessWidget {
 
   List<Widget> _generateTiles(
     List<Series> seriesList,
-    String username,
-    List<String> placeholderUrls,
+    User author,
   ) {
     final List<Widget> tiles = <Widget>[];
 
@@ -31,17 +31,14 @@ class MyPublishedSeriesLayout extends StatelessWidget {
         WINESeriesCard(
           uid: seriesList[i].uid,
           title: seriesList[i].title,
-          username: username,
           coverUrl: seriesList[i].coverUrl,
-          placeholderUrl: placeholderUrls[i % placeholderUrls.length],
           onPressed: () => sailor.navigate(
             Constants.seriesRoute,
             args: SeriesPageArgs(
-              series: seriesList[i],
-              placeholderUrl: placeholderUrls[i % placeholderUrls.length],
-              username: username,
+              series: seriesList[i]..author = author,
             ),
           ),
+          titleFontSize: 16.0,
         ),
       );
     }
@@ -74,8 +71,7 @@ class MyPublishedSeriesLayout extends StatelessWidget {
                   shrinkWrap: true,
                   children: _generateTiles(
                     acDbState.series,
-                    acDbState.session.username,
-                    acDbState.placeholderUrls,
+                    User.fromMap(acDbState.session.toMap()),
                   ),
                 ),
             ],

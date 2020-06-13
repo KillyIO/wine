@@ -89,4 +89,8 @@ class Methods {
       'pastelYellow',
     ];
   }
+
+  static bool isUrl(String input) {
+    return Uri.parse(input).isAbsolute;
+  }
 }

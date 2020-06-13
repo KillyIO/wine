@@ -14,10 +14,13 @@ class Chapter {
   int index;
   String title;
   String story;
+  String genre;
+  String genreOptional;
   String language;
   String copyrights;
   bool isNSFW;
   bool isEnd;
+  String coverUrl;
   int createdAt;
   int updatedAt;
 
@@ -31,10 +34,13 @@ class Chapter {
     this.index,
     this.title,
     this.story,
+    this.genre,
+    this.genreOptional,
     this.language,
     this.copyrights,
     this.isNSFW,
     this.isEnd,
+    this.coverUrl,
     this.createdAt,
     this.updatedAt,
   });
@@ -49,10 +55,13 @@ class Chapter {
     int index,
     String title,
     String story,
+    String genre,
+    String genreOptional,
     String language,
     String copyrights,
     bool isNSFW,
     bool isEnd,
+    String coverUrl,
     int createdAt,
     int updatedAt,
   }) {
@@ -66,10 +75,13 @@ class Chapter {
       index: index ?? this.index,
       title: title ?? this.title,
       story: story ?? this.story,
+      genre: genre ?? this.genre,
+      genreOptional: genreOptional ?? this.genreOptional,
       language: language ?? this.language,
       copyrights: copyrights ?? this.copyrights,
       isNSFW: isNSFW ?? this.isNSFW,
       isEnd: isEnd ?? this.isEnd,
+      coverUrl: coverUrl ?? this.coverUrl,
       createdAt: createdAt ?? this.createdAt,
       updatedAt: updatedAt ?? this.updatedAt,
     );
@@ -85,9 +97,13 @@ class Chapter {
       index: data['index'] as int,
       title: data['title'] as String,
       story: data['story'] as String,
+      genre: data['genre'] as String,
+      genreOptional: data['genreOptional'] as String,
       language: data['language'] as String,
       copyrights: data['copyrights'] as String,
       isNSFW: data['isNSFW'] as bool,
+      isEnd: data['isEnd'] as bool,
+      coverUrl: data['coverUrl'] as String,
       createdAt: data['createdAt'] as int,
       updatedAt: data['updatedAt'] as int,
     );
@@ -102,10 +118,13 @@ class Chapter {
       'index': index,
       'title': title,
       'story': story,
+      'genre': genre,
+      'genreOptional': genreOptional,
       'language': language,
       'copyrights': copyrights,
       'isNSFW': isNSFW,
       'isEnd': isEnd,
+      'coverUrl': coverUrl,
       'createdAt': createdAt,
       'updatedAt': updatedAt,
     };
@@ -122,10 +141,13 @@ class Chapter {
       index: map['index'] as int,
       title: map['title'] as String,
       story: map['story'] as String,
+      genre: map['genre'] as String,
+      genreOptional: map['genreOptional'] as String,
       language: map['language'] as String,
       copyrights: map['copyrights'] as String,
       isNSFW: map['isNSFW'] as bool,
       isEnd: map['isEnd'] as bool,
+      coverUrl: map['coverUrl'] as String,
       createdAt: map['createdAt'] as int,
       updatedAt: map['updatedAt'] as int,
     );
@@ -133,7 +155,7 @@ class Chapter {
 
   @override
   String toString() {
-    return 'Chapter(uid: $uid, authorUid: $authorUid, author: $author, seriesUid: $seriesUid, series: $series, previousChapterUid: $previousChapterUid, index: $index, title: $title, story: $story, language: $language, copyrights: $copyrights, isNSFW: $isNSFW, isEnd: $isEnd, createdAt: $createdAt, updatedAt: $updatedAt)';
+    return 'Chapter(uid: $uid, authorUid: $authorUid, author: $author, seriesUid: $seriesUid, series: $series, previousChapterUid: $previousChapterUid, index: $index, title: $title, story: $story, genre: $genre, genreOptional; $genreOptional, language: $language, copyrights: $copyrights, isNSFW: $isNSFW, isEnd: $isEnd, coverUrl: $coverUrl, createdAt: $createdAt, updatedAt: $updatedAt)';
   }
 
   @override
@@ -150,10 +172,13 @@ class Chapter {
         o.index == index &&
         o.title == title &&
         o.story == story &&
+        o.genre == genre &&
+        o.genreOptional == genreOptional &&
         o.language == language &&
         o.copyrights == copyrights &&
         o.isNSFW == isNSFW &&
         o.isEnd == isEnd &&
+        o.coverUrl == coverUrl &&
         o.createdAt == createdAt &&
         o.updatedAt == updatedAt;
   }
@@ -169,10 +194,13 @@ class Chapter {
         index.hashCode ^
         title.hashCode ^
         story.hashCode ^
+        genre.hashCode ^
+        genreOptional.hashCode ^
         language.hashCode ^
         copyrights.hashCode ^
         isNSFW.hashCode ^
         isEnd.hashCode ^
+        coverUrl.hashCode ^
         createdAt.hashCode ^
         updatedAt.hashCode;
   }

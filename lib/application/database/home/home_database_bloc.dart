@@ -38,8 +38,6 @@ class HomeDatabaseBloc extends Bloc<HomeDatabaseEvent, HomeDatabaseState> {
   ) async* {
     yield* event.map(
       homePageLaunched: (event) async* {
-        final Random random = Random();
-
         yield state.copyWith(
           isFetching: true,
           databaseFailureOrSuccessOption: none(),
@@ -51,7 +49,6 @@ class HomeDatabaseBloc extends Bloc<HomeDatabaseEvent, HomeDatabaseState> {
         final List<Series> topFiveSeries = <Series>[];
         final List<Series> topSeries = <Series>[];
         final List<Series> newSeries = <Series>[];
-        final List<String> placeholderUrls = <String>[];
 
         final String currentLocale = (await DeviceLocale.getCurrentLocale())
             .toString()
@@ -64,6 +61,7 @@ class HomeDatabaseBloc extends Bloc<HomeDatabaseEvent, HomeDatabaseState> {
 
         failureOrSuccess = await _onlineSeriesDatabaseFacade.getTopSeries(
           filters: filters,
+          getAuthors: true,
         );
         failureOrSuccess.fold(
           (_) {},
@@ -77,6 +75,7 @@ class HomeDatabaseBloc extends Bloc<HomeDatabaseEvent, HomeDatabaseState> {
         if (failureOrSuccess.isRight()) {
           failureOrSuccess = await _onlineSeriesDatabaseFacade.getNewSeries(
             filters: filters,
+            getAuthors: true,
           );
           failureOrSuccess.fold(
             (_) {},
@@ -86,28 +85,6 @@ class HomeDatabaseBloc extends Bloc<HomeDatabaseEvent, HomeDatabaseState> {
               }
             },
           );
-
-          if (failureOrSuccess.isRight()) {
-            final List<String> placeholderKeys = Methods.getPlaceholderKeys();
-            final List<String> randomKeys = <String>[
-              placeholderKeys[random.nextInt(placeholderKeys.length)],
-              placeholderKeys[random.nextInt(placeholderKeys.length)],
-              placeholderKeys[random.nextInt(placeholderKeys.length)],
-            ];
-
-            for (final String key in randomKeys) {
-              failureOrSuccess = await _localPlaceholderDatabaseFacade
-                  .getPlaceholderUrlByKey(key);
-              failureOrSuccess.fold(
-                (_) {},
-                (success) {
-                  if (success is String) {
-                    placeholderUrls.add(success);
-                  }
-                },
-              );
-            }
-          }
         }
 
         if (topSeries.length >= 5) {
@@ -124,7 +101,6 @@ class HomeDatabaseBloc extends Bloc<HomeDatabaseEvent, HomeDatabaseState> {
           timesMap: Methods.getTimeFilters(event.context),
           genresMap: Methods.getGenres(event.context),
           languagesMap: Methods.getLanguages(event.context),
-          placeholderUrls: placeholderUrls,
           isFetching: false,
           databaseFailureOrSuccessOption: optionOf(failureOrSuccess),
         );
@@ -176,6 +152,7 @@ class HomeDatabaseBloc extends Bloc<HomeDatabaseEvent, HomeDatabaseState> {
 
         failureOrSuccess = await _onlineSeriesDatabaseFacade.getTopSeries(
           filters: filters,
+          getAuthors: true,
         );
         failureOrSuccess.fold(
           (_) {},
@@ -189,6 +166,7 @@ class HomeDatabaseBloc extends Bloc<HomeDatabaseEvent, HomeDatabaseState> {
         if (failureOrSuccess.isRight()) {
           failureOrSuccess = await _onlineSeriesDatabaseFacade.getNewSeries(
             filters: filters,
+            getAuthors: true,
           );
           failureOrSuccess.fold(
             (_) {},

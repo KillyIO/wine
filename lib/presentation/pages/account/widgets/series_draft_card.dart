@@ -5,14 +5,14 @@ import 'package:flutter/material.dart';
 
 class SeriesDraftCard extends StatelessWidget {
   final String title;
-  final String coverPath;
+  final String coverUrl;
   final String placeholderUrl;
   final VoidCallback onPressed;
 
   const SeriesDraftCard({
     Key key,
     this.title,
-    this.coverPath,
+    this.coverUrl,
     this.placeholderUrl,
     this.onPressed,
   }) : super(key: key);
@@ -31,17 +31,17 @@ class SeriesDraftCard extends StatelessWidget {
               boxShadow: const <BoxShadow>[
                 BoxShadow(
                   color: Colors.black12,
-                  spreadRadius: 3,
-                  blurRadius: 7,
+                  spreadRadius: 1,
+                  blurRadius: 5,
                   offset: Offset(0, 3),
                 ),
               ],
             ),
             child: ClipRRect(
               borderRadius: BorderRadius.circular(10.0),
-              child: coverPath != null && coverPath.isNotEmpty
+              child: coverUrl != null && coverUrl.isNotEmpty
                   ? Image.file(
-                      File(coverPath),
+                      File(coverUrl),
                       fit: BoxFit.contain,
                     )
                   : CachedNetworkImage(

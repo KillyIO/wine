@@ -10,6 +10,7 @@ abstract class AccountDatabaseState with _$AccountDatabaseState {
     @required Map<String, String> languages,
     @required Map<String, String> copyrights,
     @required List<String> placeholderUrls,
+    @required Map<String, Series> seriesMap,
     @required bool isFetching,
     @required
         Option<Either<DatabaseFailure, dynamic>> databaseFailureOrSuccessOption,
@@ -23,6 +24,7 @@ abstract class AccountDatabaseState with _$AccountDatabaseState {
         languages: <String, String>{},
         copyrights: <String, String>{},
         placeholderUrls: <String>[],
+        seriesMap: <String, Series>{},
         isFetching: false,
         databaseFailureOrSuccessOption: none(),
       );

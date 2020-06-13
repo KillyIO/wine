@@ -431,6 +431,8 @@ class _$AccountDatabaseStateTearOff {
       @required
           List<String> placeholderUrls,
       @required
+          Map<String, Series> seriesMap,
+      @required
           bool isFetching,
       @required
           Option<Either<DatabaseFailure, dynamic>>
@@ -443,6 +445,7 @@ class _$AccountDatabaseStateTearOff {
       languages: languages,
       copyrights: copyrights,
       placeholderUrls: placeholderUrls,
+      seriesMap: seriesMap,
       isFetching: isFetching,
       databaseFailureOrSuccessOption: databaseFailureOrSuccessOption,
     );
@@ -460,6 +463,7 @@ mixin _$AccountDatabaseState {
   Map<String, String> get languages;
   Map<String, String> get copyrights;
   List<String> get placeholderUrls;
+  Map<String, Series> get seriesMap;
   bool get isFetching;
   Option<Either<DatabaseFailure, dynamic>> get databaseFailureOrSuccessOption;
 
@@ -478,6 +482,7 @@ abstract class $AccountDatabaseStateCopyWith<$Res> {
       Map<String, String> languages,
       Map<String, String> copyrights,
       List<String> placeholderUrls,
+      Map<String, Series> seriesMap,
       bool isFetching,
       Option<Either<DatabaseFailure, dynamic>> databaseFailureOrSuccessOption});
 }
@@ -499,6 +504,7 @@ class _$AccountDatabaseStateCopyWithImpl<$Res>
     Object languages = freezed,
     Object copyrights = freezed,
     Object placeholderUrls = freezed,
+    Object seriesMap = freezed,
     Object isFetching = freezed,
     Object databaseFailureOrSuccessOption = freezed,
   }) {
@@ -517,6 +523,9 @@ class _$AccountDatabaseStateCopyWithImpl<$Res>
       placeholderUrls: placeholderUrls == freezed
           ? _value.placeholderUrls
           : placeholderUrls as List<String>,
+      seriesMap: seriesMap == freezed
+          ? _value.seriesMap
+          : seriesMap as Map<String, Series>,
       isFetching:
           isFetching == freezed ? _value.isFetching : isFetching as bool,
       databaseFailureOrSuccessOption: databaseFailureOrSuccessOption == freezed
@@ -541,6 +550,7 @@ abstract class _$AccountSettingsStateCopyWith<$Res>
       Map<String, String> languages,
       Map<String, String> copyrights,
       List<String> placeholderUrls,
+      Map<String, Series> seriesMap,
       bool isFetching,
       Option<Either<DatabaseFailure, dynamic>> databaseFailureOrSuccessOption});
 }
@@ -564,6 +574,7 @@ class __$AccountSettingsStateCopyWithImpl<$Res>
     Object languages = freezed,
     Object copyrights = freezed,
     Object placeholderUrls = freezed,
+    Object seriesMap = freezed,
     Object isFetching = freezed,
     Object databaseFailureOrSuccessOption = freezed,
   }) {
@@ -582,6 +593,9 @@ class __$AccountSettingsStateCopyWithImpl<$Res>
       placeholderUrls: placeholderUrls == freezed
           ? _value.placeholderUrls
           : placeholderUrls as List<String>,
+      seriesMap: seriesMap == freezed
+          ? _value.seriesMap
+          : seriesMap as Map<String, Series>,
       isFetching:
           isFetching == freezed ? _value.isFetching : isFetching as bool,
       databaseFailureOrSuccessOption: databaseFailureOrSuccessOption == freezed
@@ -603,6 +617,7 @@ class _$_AccountSettingsState
       @required this.languages,
       @required this.copyrights,
       @required this.placeholderUrls,
+      @required this.seriesMap,
       @required this.isFetching,
       @required this.databaseFailureOrSuccessOption})
       : assert(session != null),
@@ -612,6 +627,7 @@ class _$_AccountSettingsState
         assert(languages != null),
         assert(copyrights != null),
         assert(placeholderUrls != null),
+        assert(seriesMap != null),
         assert(isFetching != null),
         assert(databaseFailureOrSuccessOption != null);
 
@@ -630,13 +646,15 @@ class _$_AccountSettingsState
   @override
   final List<String> placeholderUrls;
   @override
+  final Map<String, Series> seriesMap;
+  @override
   final bool isFetching;
   @override
   final Option<Either<DatabaseFailure, dynamic>> databaseFailureOrSuccessOption;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'AccountDatabaseState(session: $session, series: $series, chapters: $chapters, genres: $genres, languages: $languages, copyrights: $copyrights, placeholderUrls: $placeholderUrls, isFetching: $isFetching, databaseFailureOrSuccessOption: $databaseFailureOrSuccessOption)';
+    return 'AccountDatabaseState(session: $session, series: $series, chapters: $chapters, genres: $genres, languages: $languages, copyrights: $copyrights, placeholderUrls: $placeholderUrls, seriesMap: $seriesMap, isFetching: $isFetching, databaseFailureOrSuccessOption: $databaseFailureOrSuccessOption)';
   }
 
   @override
@@ -651,6 +669,7 @@ class _$_AccountSettingsState
       ..add(DiagnosticsProperty('languages', languages))
       ..add(DiagnosticsProperty('copyrights', copyrights))
       ..add(DiagnosticsProperty('placeholderUrls', placeholderUrls))
+      ..add(DiagnosticsProperty('seriesMap', seriesMap))
       ..add(DiagnosticsProperty('isFetching', isFetching))
       ..add(DiagnosticsProperty(
           'databaseFailureOrSuccessOption', databaseFailureOrSuccessOption));
@@ -679,6 +698,9 @@ class _$_AccountSettingsState
             (identical(other.placeholderUrls, placeholderUrls) ||
                 const DeepCollectionEquality()
                     .equals(other.placeholderUrls, placeholderUrls)) &&
+            (identical(other.seriesMap, seriesMap) ||
+                const DeepCollectionEquality()
+                    .equals(other.seriesMap, seriesMap)) &&
             (identical(other.isFetching, isFetching) ||
                 const DeepCollectionEquality()
                     .equals(other.isFetching, isFetching)) &&
@@ -699,6 +721,7 @@ class _$_AccountSettingsState
       const DeepCollectionEquality().hash(languages) ^
       const DeepCollectionEquality().hash(copyrights) ^
       const DeepCollectionEquality().hash(placeholderUrls) ^
+      const DeepCollectionEquality().hash(seriesMap) ^
       const DeepCollectionEquality().hash(isFetching) ^
       const DeepCollectionEquality().hash(databaseFailureOrSuccessOption);
 
@@ -725,6 +748,8 @@ abstract class _AccountSettingsState implements AccountDatabaseState {
       @required
           List<String> placeholderUrls,
       @required
+          Map<String, Series> seriesMap,
+      @required
           bool isFetching,
       @required
           Option<Either<DatabaseFailure, dynamic>>
@@ -744,6 +769,8 @@ abstract class _AccountSettingsState implements AccountDatabaseState {
   Map<String, String> get copyrights;
   @override
   List<String> get placeholderUrls;
+  @override
+  Map<String, Series> get seriesMap;
   @override
   bool get isFetching;
   @override

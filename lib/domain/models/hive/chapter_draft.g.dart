@@ -28,13 +28,16 @@ class ChapterDraftAdapter extends TypeAdapter<ChapterDraft> {
       copyrights: fields[8] as String,
       isNSFW: fields[9] as bool,
       isEnd: fields[10] as bool,
+      genre: fields[11] as String,
+      genreOptional: fields[12] as String,
+      coverUrl: fields[13] as String,
     );
   }
 
   @override
   void write(BinaryWriter writer, ChapterDraft obj) {
     writer
-      ..writeByte(11)
+      ..writeByte(14)
       ..writeByte(0)
       ..write(obj.uid)
       ..writeByte(1)
@@ -56,6 +59,12 @@ class ChapterDraftAdapter extends TypeAdapter<ChapterDraft> {
       ..writeByte(9)
       ..write(obj.isNSFW)
       ..writeByte(10)
-      ..write(obj.isEnd);
+      ..write(obj.isEnd)
+      ..writeByte(11)
+      ..write(obj.genre)
+      ..writeByte(12)
+      ..write(obj.genreOptional)
+      ..writeByte(13)
+      ..write(obj.coverUrl);
   }
 }

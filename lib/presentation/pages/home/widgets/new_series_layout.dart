@@ -5,6 +5,9 @@ import 'package:wine/application/database/home/home_database_bloc.dart';
 import 'package:wine/domain/models/series.dart';
 import 'package:wine/presentation/pages/home/widgets/no_series_found_layout.dart';
 import 'package:wine/presentation/widgets/wine_series_card.dart';
+import 'package:wine/routes.dart';
+import 'package:wine/utils/arguments.dart';
+import 'package:wine/utils/constants.dart';
 
 class NewSeriesLayout extends StatelessWidget {
   List<StaggeredTile> _generateStaggeredTiles(List<Series> seriesList) {
@@ -17,10 +20,7 @@ class NewSeriesLayout extends StatelessWidget {
     return staggeredTiles;
   }
 
-  List<Widget> _generateTiles(
-    List<Series> seriesList,
-    List<String> placeholderUrls,
-  ) {
+  List<Widget> _generateTiles(List<Series> seriesList) {
     final List<Widget> tiles = <Widget>[];
 
     for (int i = 0; i < seriesList.length; i++) {
@@ -28,10 +28,14 @@ class NewSeriesLayout extends StatelessWidget {
         WINESeriesCard(
           uid: seriesList[i].uid,
           title: seriesList[i].title,
-          username: seriesList[i].author.username,
           coverUrl: seriesList[i].coverUrl,
-          placeholderUrl: placeholderUrls[i % placeholderUrls.length],
-          onPressed: () {},
+          onPressed: () => sailor.navigate(
+            Constants.seriesRoute,
+            args: SeriesPageArgs(
+              series: seriesList[i],
+            ),
+          ),
+          titleFontSize: 14.0,
         ),
       );
     }
@@ -52,19 +56,13 @@ class NewSeriesLayout extends StatelessWidget {
         }
         return Padding(
           padding: const EdgeInsets.symmetric(horizontal: 19.0, vertical: 20.0),
-          child: Visibility(
-            visible: homeDbState.placeholderUrls.isNotEmpty,
-            child: StaggeredGridView.count(
-              physics: const NeverScrollableScrollPhysics(),
-              crossAxisCount: 3,
-              staggeredTiles: _generateStaggeredTiles(homeDbState.newSeries),
-              crossAxisSpacing: 20.0,
-              shrinkWrap: true,
-              children: _generateTiles(
-                homeDbState.topSeries,
-                homeDbState.placeholderUrls,
-              ),
-            ),
+          child: StaggeredGridView.count(
+            physics: const NeverScrollableScrollPhysics(),
+            crossAxisCount: 3,
+            staggeredTiles: _generateStaggeredTiles(homeDbState.newSeries),
+            crossAxisSpacing: 20.0,
+            shrinkWrap: true,
+            children: _generateTiles(homeDbState.topSeries),
           ),
         );
       },

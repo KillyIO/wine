@@ -19,18 +19,14 @@ class MySeriesDraftsLayout extends StatelessWidget {
     return staggeredTiles;
   }
 
-  List<Widget> _generateTiles(
-    List<SeriesDraft> seriesList,
-    List<String> placeholderUrls,
-  ) {
+  List<Widget> _generateTiles(List<SeriesDraft> seriesList) {
     final List<Widget> tiles = <Widget>[];
 
     for (int i = 0; i < seriesList.length; i++) {
       tiles.add(
         SeriesDraftCard(
           title: seriesList[i].title,
-          coverPath: seriesList[i].coverPath,
-          placeholderUrl: placeholderUrls[i % placeholderUrls.length],
+          coverUrl: seriesList[i].coverUrl,
           onPressed: () {},
         ),
       );
@@ -47,7 +43,11 @@ class MySeriesDraftsLayout extends StatelessWidget {
           valueListenable: getIt<Box<SeriesDraft>>().listenable(),
           builder: (context, Box<SeriesDraft> box, _) {
             if (box.isEmpty) {
-              return const Text('No series drafts :(');
+              return const Center(
+                child: Text(
+                  'No series drafts :(',
+                ),
+              );
             }
             return ScrollConfiguration(
               behavior: const ScrollBehavior(),
@@ -62,10 +62,7 @@ class MySeriesDraftsLayout extends StatelessWidget {
                           _generateStaggeredTiles(box.values.toList()),
                       crossAxisSpacing: 20.0,
                       shrinkWrap: true,
-                      children: _generateTiles(
-                        box.values.toList(),
-                        acDbState.placeholderUrls,
-                      ),
+                      children: _generateTiles(box.values.toList()),
                     ),
                 ],
               ),

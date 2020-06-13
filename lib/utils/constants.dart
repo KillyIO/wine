@@ -40,6 +40,7 @@ class Constants {
   static const int chapterTitleMaxWords = 10;
   static const int chapterStoryMinWords = 500;
   static const int chapterStoryMaxWords = 10000;
+  static const int maxNextChaptersByChapter = 10;
 
   // SECTION cover dimensions
   static const int coverMaxWidth = 3000;

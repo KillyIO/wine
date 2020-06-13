@@ -33,7 +33,7 @@ class SeriesDraft extends HiveObject {
   bool isNSFW;
 
   @HiveField(9)
-  String coverPath;
+  String coverUrl;
 
   SeriesDraft({
     this.uid,
@@ -45,7 +45,7 @@ class SeriesDraft extends HiveObject {
     this.genreOptional,
     this.language,
     this.isNSFW,
-    this.coverPath,
+    this.coverUrl,
   });
 
   SeriesDraft copyWith({
@@ -58,7 +58,7 @@ class SeriesDraft extends HiveObject {
     String genreOptional,
     String language,
     bool isNSFW,
-    String coverPath,
+    String coverUrl,
   }) {
     return SeriesDraft(
       uid: uid ?? this.uid,
@@ -70,7 +70,7 @@ class SeriesDraft extends HiveObject {
       genreOptional: genreOptional ?? this.genreOptional,
       language: language ?? this.language,
       isNSFW: isNSFW ?? this.isNSFW,
-      coverPath: coverPath ?? this.coverPath,
+      coverUrl: coverUrl ?? this.coverUrl,
     );
   }
 
@@ -85,7 +85,7 @@ class SeriesDraft extends HiveObject {
       'genreOptional': genreOptional,
       'language': language,
       'isNSFW': isNSFW,
-      'coverPath': coverPath,
+      'coverUrl': coverUrl,
     };
   }
 
@@ -102,13 +102,13 @@ class SeriesDraft extends HiveObject {
       genreOptional: map['genreOptional'] as String,
       language: map['language'] as String,
       isNSFW: map['isNSFW'] as bool,
-      coverPath: map['coverPath'] as String,
+      coverUrl: map['coverUrl'] as String,
     );
   }
 
   @override
   String toString() {
-    return 'SeriesDraft(uid: $uid, authorUid: $authorUid, title: $title, subtitle: $subtitle, summary: $summary, genre: $genre, genreOptional: $genreOptional, language: $language, isNSFW: $isNSFW, coverPath: $coverPath)';
+    return 'SeriesDraft(uid: $uid, authorUid: $authorUid, title: $title, subtitle: $subtitle, summary: $summary, genre: $genre, genreOptional: $genreOptional, language: $language, isNSFW: $isNSFW, coverUrl: $coverUrl)';
   }
 
   @override
@@ -125,7 +125,7 @@ class SeriesDraft extends HiveObject {
         o.genreOptional == genreOptional &&
         o.language == language &&
         o.isNSFW == isNSFW &&
-        o.coverPath == coverPath;
+        o.coverUrl == coverUrl;
   }
 
   @override
@@ -139,6 +139,6 @@ class SeriesDraft extends HiveObject {
         genreOptional.hashCode ^
         language.hashCode ^
         isNSFW.hashCode ^
-        coverPath.hashCode;
+        coverUrl.hashCode;
   }
 }

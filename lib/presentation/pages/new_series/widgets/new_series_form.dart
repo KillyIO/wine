@@ -3,21 +3,23 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:sailor/sailor.dart';
+
 import 'package:wine/application/database/new_series/new_series_database_bloc.dart';
 import 'package:wine/application/navigation/home/home_navigation_bloc.dart';
 import 'package:wine/domain/enums/parent_type.dart';
 import 'package:wine/domain/models/hive/series_draft.dart';
 import 'package:wine/presentation/widgets/wine_dialog_list_tile.dart';
 import 'package:wine/presentation/widgets/wine_info_dialog.dart';
-import 'package:wine/presentation/widgets/wine_show_dialog.dart';
 import 'package:wine/presentation/widgets/wine_leading_image_button.dart';
 import 'package:wine/presentation/widgets/wine_selection_dialog.dart';
+import 'package:wine/presentation/widgets/wine_show_dialog.dart';
 import 'package:wine/presentation/widgets/wine_switch_list_tile.dart';
 import 'package:wine/presentation/widgets/wine_text_field_label.dart';
 import 'package:wine/presentation/widgets/wine_warning_dialog.dart';
 import 'package:wine/routes.dart';
 import 'package:wine/utils/arguments.dart';
 import 'package:wine/utils/constants.dart';
+import 'package:wine/utils/methods.dart';
 import 'package:wine/utils/palettes.dart';
 
 class NewSeriesForm extends StatefulWidget {
@@ -66,6 +68,28 @@ class _NewSeriesFormState extends State<NewSeriesForm>
     Navigator.of(context).pop();
   }
 
+  void _saveSeriesDraftButtonPressed() {
+    context
+        .bloc<NewSeriesDatabaseBloc>()
+        .add(const NewSeriesDatabaseEvent.saveSeriesDraftButtonPressed());
+  }
+
+  Widget _getCoverWidget(String coverUrl) {
+    if (coverUrl.isEmpty) {
+      return Container();
+    } else {
+      return Methods.isUrl(coverUrl)
+          ? Image.network(
+              coverUrl,
+              fit: BoxFit.fitWidth,
+            )
+          : Image.file(
+              File(coverUrl),
+              fit: BoxFit.fitWidth,
+            );
+    }
+  }
+
   void _genreSelected(String genre) {
     context.bloc<NewSeriesDatabaseBloc>().add(GenreSelected(genre));
     Navigator.of(context).pop(true);
@@ -106,6 +130,7 @@ class _NewSeriesFormState extends State<NewSeriesForm>
                       args: NewChapterPageArgs(
                         parentType: ParentType.series,
                         seriesDraft: success,
+                        routeBack: Constants.homeRoute,
                       ),
                     );
                   }
@@ -134,9 +159,7 @@ class _NewSeriesFormState extends State<NewSeriesForm>
                     disabledTextColor: Colors.black26,
                     highlightColor: Colors.transparent,
                     onPressed: () => nsDbState.isEditMode
-                        ? context.bloc<NewSeriesDatabaseBloc>().add(
-                            const NewSeriesDatabaseEvent
-                                .saveSeriesDraftButtonPressed())
+                        ? _saveSeriesDraftButtonPressed()
                         : wineShowDialog(
                             context: context,
                             builder: (_) => WINEInfoDialog(
@@ -144,9 +167,7 @@ class _NewSeriesFormState extends State<NewSeriesForm>
                                   'This series will be available to the community once you publish the first chapter.',
                               buttonText: 'GOT IT!',
                               onPressed: () {
-                                context.bloc<NewSeriesDatabaseBloc>().add(
-                                    const NewSeriesDatabaseEvent
-                                        .saveSeriesDraftButtonPressed());
+                                _saveSeriesDraftButtonPressed();
                                 Navigator.of(context).pop(true);
                               },
                             ),
@@ -191,371 +212,370 @@ class _NewSeriesFormState extends State<NewSeriesForm>
                     autovalidate: nsDbState.showErrorMessages,
                     child: ScrollConfiguration(
                       behavior: const ScrollBehavior(),
-                      child: ListView(
-                        children: <Widget>[
-                          Padding(
-                            padding: const EdgeInsets.symmetric(vertical: 25.0),
-                            child: Text(
-                              'STORY DETAILS',
-                              textAlign: TextAlign.center,
-                              style: TextStyle(
-                                color: Colors.black,
-                                fontSize: 20.0,
-                                fontWeight: FontWeight.w400,
-                                letterSpacing: .5,
+                      child: SingleChildScrollView(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: <Widget>[
+                            Padding(
+                              padding:
+                                  const EdgeInsets.symmetric(vertical: 25.0),
+                              child: Center(
+                                child: Text(
+                                  'STORY DETAILS',
+                                  textAlign: TextAlign.center,
+                                  style: TextStyle(
+                                    color: Colors.black,
+                                    fontSize: 20.0,
+                                    fontWeight: FontWeight.w400,
+                                    letterSpacing: .5,
+                                  ),
+                                ),
                               ),
                             ),
-                          ),
-                          // SECTION cover
-                          const WINETextFieldLabel(title: 'COVER'),
-                          Stack(
-                            children: <Widget>[
-                              Container(
-                                width: mediaQuery.width,
-                                height: 150.0,
-                                child: nsDbState.coverPath.isNotEmpty
-                                    ? Image.file(
-                                        File(nsDbState.coverPath),
-                                        fit: BoxFit.fitWidth,
-                                      )
-                                    : Image.network(
-                                        nsDbState.placeholderUrl,
-                                        fit: BoxFit.fitWidth,
-                                      ),
-                              ),
-                              GestureDetector(
-                                onTap: () => context
-                                    .bloc<NewSeriesDatabaseBloc>()
-                                    .add(const NewSeriesDatabaseEvent
-                                        .addCoverPressed()),
-                                child: Container(
+                            // SECTION cover
+                            const WINETextFieldLabel(title: 'COVER'),
+                            Stack(
+                              children: <Widget>[
+                                Container(
                                   width: mediaQuery.width,
                                   height: 150.0,
-                                  color: Colors.white60,
-                                  child: Icon(
-                                    Icons.camera_alt,
-                                    color: Colors.black38,
-                                    size: 40.0,
+                                  child: _getCoverWidget(nsDbState.coverUrl),
+                                ),
+                                GestureDetector(
+                                  onTap: () => context
+                                      .bloc<NewSeriesDatabaseBloc>()
+                                      .add(const NewSeriesDatabaseEvent
+                                          .addCoverPressed()),
+                                  child: Container(
+                                    width: mediaQuery.width,
+                                    height: 150.0,
+                                    color: Colors.white60,
+                                    child: Icon(
+                                      Icons.camera_alt,
+                                      color: Colors.black38,
+                                      size: 40.0,
+                                    ),
                                   ),
                                 ),
-                              ),
-                            ],
-                          ),
-                          // SECTION title
-                          const WINETextFieldLabel(title: 'TITLE*'),
-                          TextFormField(
-                            controller: _titleController,
-                            textCapitalization: TextCapitalization.sentences,
-                            decoration: InputDecoration(
-                              hintText:
-                                  'Less than ${Constants.seriesTitleMaxWords} words',
-                              contentPadding: const EdgeInsets.symmetric(
-                                horizontal: 20.0,
-                              ),
-                              enabledBorder: UnderlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: Colors.black26,
-                                  width: 2.0,
-                                ),
-                              ),
-                              focusedBorder: const UnderlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: Colors.black,
-                                  width: 2.0,
-                                ),
-                              ),
-                              errorStyle: TextStyle(
-                                color: Palettes.error,
-                              ),
+                              ],
                             ),
-                            cursorColor: Colors.black,
-                            onChanged: (value) => context
-                                .bloc<NewSeriesDatabaseBloc>()
-                                .add(
-                                  NewSeriesDatabaseEvent.titleChanged(value),
+                            // SECTION title
+                            const WINETextFieldLabel(title: 'TITLE*'),
+                            TextFormField(
+                              controller: _titleController,
+                              textCapitalization: TextCapitalization.sentences,
+                              decoration: InputDecoration(
+                                hintText:
+                                    'Less than ${Constants.seriesTitleMaxWords} words',
+                                contentPadding: const EdgeInsets.symmetric(
+                                  horizontal: 20.0,
                                 ),
-                            validator: (_) => context
-                                .bloc<NewSeriesDatabaseBloc>()
-                                .state
-                                .title
-                                .value
-                                .fold(
-                                  (f) => f.maybeMap(
-                                      emptyInput: (_) =>
-                                          'The title must not be empty.',
-                                      longInput: (_) =>
-                                          'The title must be lass than 10 words long.',
-                                      orElse: () => null),
-                                  (_) => null,
-                                ),
-                          ),
-                          const SizedBox(height: 5),
-                          Padding(
-                            padding: const EdgeInsets.only(left: 20.0),
-                            child: Text(
-                              '${nsDbState.titleWordCount}/${Constants.seriesTitleMaxWords}',
-                              style: TextStyle(
-                                color: nsDbState.titleWordCount >
-                                        Constants.seriesTitleMaxWords
-                                    ? Palettes.error
-                                    : Colors.black,
-                              ),
-                            ),
-                          ),
-                          const SizedBox(height: 25),
-                          // SECTION subtitle
-                          const WINETextFieldLabel(
-                            title: 'SUBTITLE (OPTIONAL)',
-                          ),
-                          TextFormField(
-                            controller: _subtitleController,
-                            textCapitalization: TextCapitalization.sentences,
-                            decoration: InputDecoration(
-                              hintText:
-                                  'Less than ${Constants.seriesSubtitleMaxWords} words',
-                              contentPadding: const EdgeInsets.symmetric(
-                                horizontal: 20.0,
-                              ),
-                              enabledBorder: UnderlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: Colors.black26,
-                                  width: 2.0,
-                                ),
-                              ),
-                              focusedBorder: const UnderlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: Colors.black,
-                                  width: 2.0,
-                                ),
-                              ),
-                              errorStyle: TextStyle(
-                                color: Palettes.error,
-                              ),
-                            ),
-                            cursorColor: Colors.black,
-                            onChanged: (value) => context
-                                .bloc<NewSeriesDatabaseBloc>()
-                                .add(
-                                  NewSeriesDatabaseEvent.subtitleChanged(value),
-                                ),
-                            validator: (_) => context
-                                .bloc<NewSeriesDatabaseBloc>()
-                                .state
-                                .subtitle
-                                .value
-                                .fold(
-                                  (f) => f.maybeMap(
-                                      longInput: (_) =>
-                                          'The title must be less than 10 words long.',
-                                      orElse: () => null),
-                                  (_) => null,
-                                ),
-                          ),
-                          const SizedBox(height: 5),
-                          Padding(
-                            padding: const EdgeInsets.only(left: 20.0),
-                            child: Text(
-                              '${nsDbState.subtitleWordCount}/${Constants.seriesSubtitleMaxWords}',
-                            ),
-                          ),
-                          const SizedBox(height: 25),
-                          // SECTION symmary
-                          const WINETextFieldLabel(title: 'SUMMARY*'),
-                          TextFormField(
-                            controller: _summaryController,
-                            textCapitalization: TextCapitalization.sentences,
-                            decoration: InputDecoration(
-                              hintText:
-                                  'Less than ${Constants.seriesSummaryMaxWords} words',
-                              contentPadding: const EdgeInsets.symmetric(
-                                horizontal: 20.0,
-                              ),
-                              enabledBorder: UnderlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: Colors.black26,
-                                  width: 2.0,
-                                ),
-                              ),
-                              focusedBorder: const UnderlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: Colors.black,
-                                  width: 2.0,
-                                ),
-                              ),
-                              errorStyle: TextStyle(
-                                color: Palettes.error,
-                              ),
-                            ),
-                            cursorColor: Colors.black,
-                            keyboardType: TextInputType.multiline,
-                            maxLines: 10,
-                            onChanged: (value) => context
-                                .bloc<NewSeriesDatabaseBloc>()
-                                .add(
-                                  NewSeriesDatabaseEvent.summaryChanged(value),
-                                ),
-                            validator: (_) => context
-                                .bloc<NewSeriesDatabaseBloc>()
-                                .state
-                                .summary
-                                .value
-                                .fold(
-                                  (f) => f.maybeMap(
-                                      emptyInput: (_) =>
-                                          'The summary must not be empty.',
-                                      longInput: (_) =>
-                                          'The summary must be less than 200 words long.',
-                                      orElse: () => null),
-                                  (_) => null,
-                                ),
-                          ),
-                          const SizedBox(height: 5),
-                          Padding(
-                            padding: const EdgeInsets.only(left: 20.0),
-                            child: Text(
-                              '${nsDbState.summaryWordCount}/${Constants.seriesSummaryMaxWords}',
-                            ),
-                          ),
-                          const SizedBox(height: 25),
-                          // SECTION genre
-                          WINEDialogListTile(
-                            hasSelected: nsDbState.genreStr == '',
-                            onPressed: () {
-                              FocusScope.of(context).requestFocus(FocusNode());
-                              wineShowDialog(
-                                context: context,
-                                builder: (_) => WINESelectionDialog(
-                                  title: 'GENRE',
-                                  selections: nsDbState.genresMap,
-                                  onPressed: _genreSelected,
-                                  onInfoPressed: () => sailor(
-                                    Constants.genresRoute,
+                                enabledBorder: UnderlineInputBorder(
+                                  borderSide: BorderSide(
+                                    color: Colors.black26,
+                                    width: 2.0,
                                   ),
                                 ),
-                              );
-                            },
-                            title: 'GENRE*',
-                            trailingText:
-                                nsDbState.genresMap[nsDbState.genreStr],
-                          ),
-                          const SizedBox(height: 5),
-                          Visibility(
-                            visible: nsDbState.genreStr == '' &&
-                                nsDbState.showErrorMessages,
-                            child: Padding(
+                                focusedBorder: const UnderlineInputBorder(
+                                  borderSide: BorderSide(
+                                    width: 2.0,
+                                  ),
+                                ),
+                                errorStyle: TextStyle(
+                                  color: Palettes.error,
+                                ),
+                              ),
+                              cursorColor: Colors.black,
+                              onChanged: (value) => context
+                                  .bloc<NewSeriesDatabaseBloc>()
+                                  .add(
+                                    NewSeriesDatabaseEvent.titleChanged(value),
+                                  ),
+                              validator: (_) => context
+                                  .bloc<NewSeriesDatabaseBloc>()
+                                  .state
+                                  .title
+                                  .value
+                                  .fold(
+                                    (f) => f.maybeMap(
+                                        emptyInput: (_) =>
+                                            'The title must not be empty.',
+                                        longInput: (_) =>
+                                            'The title must be lass than 10 words long.',
+                                        orElse: () => null),
+                                    (_) => null,
+                                  ),
+                            ),
+                            const SizedBox(height: 5),
+                            Padding(
                               padding: const EdgeInsets.only(left: 20.0),
                               child: Text(
-                                'Required.',
+                                '${nsDbState.titleWordCount}/${Constants.seriesTitleMaxWords}',
                                 style: TextStyle(
-                                  color: Palettes.error,
-                                  fontSize: 13.0,
+                                  color: nsDbState.titleWordCount >
+                                          Constants.seriesTitleMaxWords
+                                      ? Palettes.error
+                                      : Colors.black,
                                 ),
                               ),
                             ),
-                          ),
-                          const SizedBox(height: 25),
-                          // SECTION genre optional
-                          WINEDialogListTile(
-                            hasSelected: nsDbState.genreOptionalStr == '',
-                            onPressed: () {
-                              FocusScope.of(context).requestFocus(FocusNode());
-                              wineShowDialog(
-                                context: context,
-                                builder: (_) => WINESelectionDialog(
-                                  title: 'GENRE (OPTIONAL)',
-                                  selections: nsDbState.genresMap,
-                                  onPressed: _genreOptionalSelected,
-                                  onInfoPressed: () => sailor(
-                                    Constants.genresRoute,
+                            const SizedBox(height: 25),
+                            // SECTION subtitle
+                            const WINETextFieldLabel(
+                              title: 'SUBTITLE (OPTIONAL)',
+                            ),
+                            TextFormField(
+                              controller: _subtitleController,
+                              textCapitalization: TextCapitalization.sentences,
+                              decoration: InputDecoration(
+                                hintText:
+                                    'Less than ${Constants.seriesSubtitleMaxWords} words',
+                                contentPadding: const EdgeInsets.symmetric(
+                                  horizontal: 20.0,
+                                ),
+                                enabledBorder: UnderlineInputBorder(
+                                  borderSide: BorderSide(
+                                    color: Colors.black26,
+                                    width: 2.0,
                                   ),
                                 ),
-                              );
-                            },
-                            title: 'GENRE (OPTIONAL)',
-                            trailingText:
-                                nsDbState.genresMap[nsDbState.genreOptionalStr],
-                          ),
-                          const SizedBox(height: 25),
-                          // SECTION ADULT CONTENT
-                          WINESwitchListTile(
-                            title: 'NSFW',
-                            onInfoPressed: () {},
-                            value: nsDbState.isNSFW,
-                            onChanged: (value) => context
-                                .bloc<NewSeriesDatabaseBloc>()
-                                .add(NewSeriesDatabaseEvent.isNSFWChanged(
-                                  isNSFW: value,
-                                )),
-                          ),
-                          const SizedBox(height: 25),
-                          // SECTION language
-                          WINEDialogListTile(
-                            hasSelected: nsDbState.languageStr == '',
-                            onPressed: () {
-                              FocusScope.of(context).requestFocus(FocusNode());
-                              wineShowDialog(
-                                context: context,
-                                builder: (_) => WINESelectionDialog(
-                                  title: 'LANGUAGE',
-                                  selections: nsDbState.languagesMap,
-                                  onPressed: _languageSelected,
+                                focusedBorder: const UnderlineInputBorder(
+                                  borderSide: BorderSide(
+                                    width: 2.0,
+                                  ),
                                 ),
-                              );
-                            },
-                            title: 'LANGUAGE*',
-                            trailingText:
-                                nsDbState.languagesMap[nsDbState.languageStr],
-                          ),
-                          const SizedBox(height: 5),
-                          Visibility(
-                            visible: nsDbState.languageStr == '' &&
-                                nsDbState.showErrorMessages,
-                            child: Padding(
-                              padding: const EdgeInsets.only(left: 20.0),
-                              child: Text(
-                                'Required.',
-                                style: TextStyle(
+                                errorStyle: TextStyle(
                                   color: Palettes.error,
-                                  fontSize: 13.0,
                                 ),
                               ),
+                              cursorColor: Colors.black,
+                              onChanged: (value) =>
+                                  context.bloc<NewSeriesDatabaseBloc>().add(
+                                        NewSeriesDatabaseEvent.subtitleChanged(
+                                            value),
+                                      ),
+                              validator: (_) => context
+                                  .bloc<NewSeriesDatabaseBloc>()
+                                  .state
+                                  .subtitle
+                                  .value
+                                  .fold(
+                                    (f) => f.maybeMap(
+                                        longInput: (_) =>
+                                            'The title must be less than 10 words long.',
+                                        orElse: () => null),
+                                    (_) => null,
+                                  ),
                             ),
-                          ),
-                          const SizedBox(height: 25),
-                          Visibility(
-                            visible: nsDbState.isEditMode,
-                            child: Container(
-                              height: 60.0,
-                              width: double.infinity,
-                              child: FlatButton(
-                                color: Palettes.error,
-                                onPressed: () => wineShowDialog(
+                            const SizedBox(height: 5),
+                            Padding(
+                              padding: const EdgeInsets.only(left: 20.0),
+                              child: Text(
+                                '${nsDbState.subtitleWordCount}/${Constants.seriesSubtitleMaxWords}',
+                              ),
+                            ),
+                            const SizedBox(height: 25),
+                            // SECTION symmary
+                            const WINETextFieldLabel(title: 'SUMMARY*'),
+                            TextFormField(
+                              controller: _summaryController,
+                              textCapitalization: TextCapitalization.sentences,
+                              decoration: InputDecoration(
+                                hintText:
+                                    'Less than ${Constants.seriesSummaryMaxWords} words',
+                                contentPadding: const EdgeInsets.symmetric(
+                                  horizontal: 20.0,
+                                ),
+                                enabledBorder: UnderlineInputBorder(
+                                  borderSide: BorderSide(
+                                    color: Colors.black26,
+                                    width: 2.0,
+                                  ),
+                                ),
+                                focusedBorder: const UnderlineInputBorder(
+                                  borderSide: BorderSide(
+                                    width: 2.0,
+                                  ),
+                                ),
+                                errorStyle: TextStyle(
+                                  color: Palettes.error,
+                                ),
+                              ),
+                              cursorColor: Colors.black,
+                              keyboardType: TextInputType.multiline,
+                              maxLines: 10,
+                              onChanged: (value) =>
+                                  context.bloc<NewSeriesDatabaseBloc>().add(
+                                        NewSeriesDatabaseEvent.summaryChanged(
+                                            value),
+                                      ),
+                              validator: (_) => context
+                                  .bloc<NewSeriesDatabaseBloc>()
+                                  .state
+                                  .summary
+                                  .value
+                                  .fold(
+                                    (f) => f.maybeMap(
+                                        emptyInput: (_) =>
+                                            'The summary must not be empty.',
+                                        longInput: (_) =>
+                                            'The summary must be less than 200 words long.',
+                                        orElse: () => null),
+                                    (_) => null,
+                                  ),
+                            ),
+                            const SizedBox(height: 5),
+                            Padding(
+                              padding: const EdgeInsets.only(left: 20.0),
+                              child: Text(
+                                '${nsDbState.summaryWordCount}/${Constants.seriesSummaryMaxWords}',
+                              ),
+                            ),
+                            const SizedBox(height: 25),
+                            // SECTION genre
+                            WINEDialogListTile(
+                              hasSelected: nsDbState.genreStr == '',
+                              onPressed: () {
+                                FocusScope.of(context)
+                                    .requestFocus(FocusNode());
+                                wineShowDialog(
                                   context: context,
-                                  builder: (_) => WINEWarningDialog(
-                                    message:
-                                        'Do you really want to delete this draft?',
-                                    buttonText: 'CONTINUE',
-                                    onPressed: () {
-                                      context.bloc<NewSeriesDatabaseBloc>().add(
-                                          const NewSeriesDatabaseEvent
-                                              .deleteDraftButtonPressed());
-                                      Navigator.of(context).pop(true);
-                                    },
+                                  builder: (_) => WINESelectionDialog(
+                                    title: 'GENRE',
+                                    selections: nsDbState.genresMap,
+                                    onPressed: _genreSelected,
+                                    onInfoPressed: () => sailor(
+                                      Constants.genresRoute,
+                                    ),
                                   ),
-                                ),
+                                );
+                              },
+                              title: 'GENRE*',
+                              trailingText:
+                                  nsDbState.genresMap[nsDbState.genreStr],
+                            ),
+                            const SizedBox(height: 5),
+                            Visibility(
+                              visible: nsDbState.genreStr == '' &&
+                                  nsDbState.showErrorMessages,
+                              child: Padding(
+                                padding: const EdgeInsets.only(left: 20.0),
                                 child: Text(
-                                  'DELETE DRAFT',
+                                  'Required.',
                                   style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 20.0,
-                                    fontWeight: FontWeight.w500,
+                                    color: Palettes.error,
+                                    fontSize: 13.0,
                                   ),
                                 ),
                               ),
                             ),
-                          ),
-                          const SizedBox(height: 25),
-                        ],
+                            const SizedBox(height: 25),
+                            // SECTION genre optional
+                            WINEDialogListTile(
+                              hasSelected: nsDbState.genreOptionalStr == '',
+                              onPressed: () {
+                                FocusScope.of(context)
+                                    .requestFocus(FocusNode());
+                                wineShowDialog(
+                                  context: context,
+                                  builder: (_) => WINESelectionDialog(
+                                    title: 'GENRE (OPTIONAL)',
+                                    selections: nsDbState.genresMap,
+                                    onPressed: _genreOptionalSelected,
+                                    onInfoPressed: () => sailor(
+                                      Constants.genresRoute,
+                                    ),
+                                  ),
+                                );
+                              },
+                              title: 'GENRE (OPTIONAL)',
+                              trailingText: nsDbState
+                                  .genresMap[nsDbState.genreOptionalStr],
+                            ),
+                            const SizedBox(height: 25),
+                            // SECTION ADULT CONTENT
+                            WINESwitchListTile(
+                              title: 'NSFW',
+                              onInfoPressed: () {},
+                              value: nsDbState.isNSFW,
+                              onChanged: (value) => context
+                                  .bloc<NewSeriesDatabaseBloc>()
+                                  .add(NewSeriesDatabaseEvent.isNSFWChanged(
+                                    isNSFW: value,
+                                  )),
+                            ),
+                            const SizedBox(height: 25),
+                            // SECTION language
+                            WINEDialogListTile(
+                              hasSelected: nsDbState.languageStr == '',
+                              onPressed: () {
+                                FocusScope.of(context)
+                                    .requestFocus(FocusNode());
+                                wineShowDialog(
+                                  context: context,
+                                  builder: (_) => WINESelectionDialog(
+                                    title: 'LANGUAGE',
+                                    selections: nsDbState.languagesMap,
+                                    onPressed: _languageSelected,
+                                  ),
+                                );
+                              },
+                              title: 'LANGUAGE*',
+                              trailingText:
+                                  nsDbState.languagesMap[nsDbState.languageStr],
+                            ),
+                            const SizedBox(height: 5),
+                            Visibility(
+                              visible: nsDbState.languageStr == '' &&
+                                  nsDbState.showErrorMessages,
+                              child: Padding(
+                                padding: const EdgeInsets.only(left: 20.0),
+                                child: Text(
+                                  'Required.',
+                                  style: TextStyle(
+                                    color: Palettes.error,
+                                    fontSize: 13.0,
+                                  ),
+                                ),
+                              ),
+                            ),
+                            const SizedBox(height: 25),
+                            Visibility(
+                              visible: nsDbState.isEditMode,
+                              child: Container(
+                                height: 60.0,
+                                width: double.infinity,
+                                child: FlatButton(
+                                  color: Palettes.error,
+                                  onPressed: () => wineShowDialog(
+                                    context: context,
+                                    builder: (_) => WINEWarningDialog(
+                                      message:
+                                          'Do you really want to delete this draft?',
+                                      buttonText: 'CONTINUE',
+                                      onPressed: () {
+                                        context
+                                            .bloc<NewSeriesDatabaseBloc>()
+                                            .add(const NewSeriesDatabaseEvent
+                                                .deleteDraftButtonPressed());
+                                        Navigator.of(context).pop(true);
+                                      },
+                                    ),
+                                  ),
+                                  child: Text(
+                                    'DELETE DRAFT',
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 20.0,
+                                      fontWeight: FontWeight.w500,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ),
+                            const SizedBox(height: 25),
+                          ],
+                        ),
                       ),
                     ),
                   ),
