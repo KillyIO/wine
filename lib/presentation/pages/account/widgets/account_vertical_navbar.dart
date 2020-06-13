@@ -24,21 +24,21 @@ class AccountVerticalNavbar extends StatelessWidget {
           final int index = entry.key;
           final String value = entry.value;
 
-          return Column(
-            children: <Widget>[
-              if (index == 0) const SizedBox(height: 20),
-              WINEVerticalNavbarButton(
-                title: value,
-                onPressed: () => context
-                    .bloc<AccountNavigationBloc>()
-                    .add(AccountNavigationEvent.verticalNavbarIndexChanged(
-                      index: index,
-                    )),
-                color: currentIndex == index ? Colors.black : Colors.black12,
-                width: width,
-              ),
-              const SizedBox(height: 20),
-            ],
+          return Padding(
+            padding: EdgeInsets.only(
+              top: index == 0 ? 20.0 : 0.0,
+              bottom: 20.0,
+            ),
+            child: WINEVerticalNavbarButton(
+              title: value,
+              onPressed: () => context
+                  .bloc<AccountNavigationBloc>()
+                  .add(AccountNavigationEvent.verticalNavbarIndexChanged(
+                    index: index,
+                  )),
+              color: currentIndex == index ? Colors.black : Colors.black12,
+              width: width,
+            ),
           );
         }).toList(),
       ),

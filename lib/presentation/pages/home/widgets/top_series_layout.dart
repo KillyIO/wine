@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
@@ -8,10 +6,11 @@ import 'package:wine/domain/models/series.dart';
 import 'package:wine/presentation/pages/home/widgets/no_series_found_layout.dart';
 import 'package:wine/presentation/pages/home/widgets/top_five_series_layout.dart';
 import 'package:wine/presentation/widgets/wine_series_card.dart';
+import 'package:wine/routes.dart';
+import 'package:wine/utils/arguments.dart';
+import 'package:wine/utils/constants.dart';
 
 class TopSeriesLayout extends StatelessWidget {
-  final Random _random = Random();
-
   List<StaggeredTile> _generateStaggeredTiles(List<Series> seriesList) {
     final List<StaggeredTile> staggeredTiles = <StaggeredTile>[];
 
@@ -22,10 +21,7 @@ class TopSeriesLayout extends StatelessWidget {
     return staggeredTiles;
   }
 
-  List<Widget> _generateTiles(
-    List<Series> seriesList,
-    List<String> placeholderUrls,
-  ) {
+  List<Widget> _generateTiles(List<Series> seriesList) {
     final List<Widget> tiles = <Widget>[];
 
     for (int i = 0; i < seriesList.length; i++) {
@@ -33,10 +29,14 @@ class TopSeriesLayout extends StatelessWidget {
         WINESeriesCard(
           uid: seriesList[i].uid,
           title: seriesList[i].title,
-          username: seriesList[i].author.username,
           coverUrl: seriesList[i].coverUrl,
-          placeholderUrl: placeholderUrls[i % placeholderUrls.length],
-          onPressed: () {},
+          onPressed: () => sailor.navigate(
+            Constants.seriesRoute,
+            args: SeriesPageArgs(
+              series: seriesList[i],
+            ),
+          ),
+          titleFontSize: 14.0,
         ),
       );
     }
@@ -58,10 +58,13 @@ class TopSeriesLayout extends StatelessWidget {
         return ListView(
           children: <Widget>[
             if (homeDbState.topFiveSeries.isNotEmpty)
-              TopFiveSeriesLayout(state: homeDbState),
+              TopFiveSeriesLayout(
+                topFiveSeries: homeDbState.topFiveSeries,
+                genreStr: homeDbState.genresMap[homeDbState.genreFilterKey],
+                timeStr: homeDbState.timesMap[homeDbState.timeFilterKey],
+              ),
             const SizedBox(height: 20),
-            if (homeDbState.topSeries.isNotEmpty &&
-                homeDbState.placeholderUrls.isNotEmpty)
+            if (homeDbState.topSeries.isNotEmpty)
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 19.0),
                 child: StaggeredGridView.count(
@@ -71,10 +74,7 @@ class TopSeriesLayout extends StatelessWidget {
                       _generateStaggeredTiles(homeDbState.topSeries),
                   crossAxisSpacing: 20.0,
                   shrinkWrap: true,
-                  children: _generateTiles(
-                    homeDbState.topSeries,
-                    homeDbState.placeholderUrls,
-                  ),
+                  children: _generateTiles(homeDbState.topSeries),
                 ),
               ),
             const SizedBox(height: 20),

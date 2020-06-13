@@ -27,7 +27,7 @@ class NewChapterPage extends StatelessWidget {
                 parentType: args.parentType,
                 chapterDraft: args.chapterDraft,
                 seriesDraft: args.seriesDraft,
-                previousChapterDraft: args.previousChapterDraft,
+                previousChapter: args.previousChapter,
                 context: context,
               )),
           ),

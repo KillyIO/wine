@@ -5,14 +5,11 @@ import 'package:wine/application/authentication/core/core_authentication_bloc.da
 import 'package:wine/application/database/home/home_database_bloc.dart';
 import 'package:wine/application/navigation/home/home_navigation_bloc.dart';
 import 'package:wine/injection.dart';
-import 'package:wine/presentation/core/app_widget.dart';
+import 'package:wine/presentation/core/production_app.dart';
 import 'package:wine/routes.dart';
-import 'package:wine/simple_bloc_delegate.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
-
-  BlocSupervisor.delegate = SimpleBlocDelegate();
 
   await configureInjection(Environment.prod);
   createRoutes();
@@ -29,6 +26,6 @@ Future<void> main() async {
         create: (context) => getIt<HomeDatabaseBloc>(),
       )
     ],
-    child: AppWidget(),
+    child: ProductionApp(),
   ));
 }

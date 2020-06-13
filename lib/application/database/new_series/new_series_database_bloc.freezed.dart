@@ -2086,7 +2086,7 @@ class _$NewSeriesDatabaseStateTearOff {
       @required
           bool isEditMode,
       @required
-          String coverPath,
+          String coverUrl,
       @required
           Title title,
       @required
@@ -2126,8 +2126,6 @@ class _$NewSeriesDatabaseStateTearOff {
       @required
           Map<String, String> languagesMap,
       @required
-          String placeholderUrl,
-      @required
           bool showErrorMessages,
       @required
           Option<Either<DatabaseFailure, dynamic>>
@@ -2135,7 +2133,7 @@ class _$NewSeriesDatabaseStateTearOff {
     return _NewSeriesDatabaseState(
       seriesDraft: seriesDraft,
       isEditMode: isEditMode,
-      coverPath: coverPath,
+      coverUrl: coverUrl,
       title: title,
       titleStr: titleStr,
       titleWordCount: titleWordCount,
@@ -2155,7 +2153,6 @@ class _$NewSeriesDatabaseStateTearOff {
       isCreatingOrDeleting: isCreatingOrDeleting,
       genresMap: genresMap,
       languagesMap: languagesMap,
-      placeholderUrl: placeholderUrl,
       showErrorMessages: showErrorMessages,
       databaseFailureOrSuccessOption: databaseFailureOrSuccessOption,
     );
@@ -2168,7 +2165,7 @@ const $NewSeriesDatabaseState = _$NewSeriesDatabaseStateTearOff();
 mixin _$NewSeriesDatabaseState {
   SeriesDraft get seriesDraft;
   bool get isEditMode;
-  String get coverPath;
+  String get coverUrl;
   Title get title;
   String get titleStr;
   int get titleWordCount;
@@ -2188,7 +2185,6 @@ mixin _$NewSeriesDatabaseState {
   bool get isCreatingOrDeleting;
   Map<String, String> get genresMap;
   Map<String, String> get languagesMap;
-  String get placeholderUrl;
   bool get showErrorMessages;
   Option<Either<DatabaseFailure, dynamic>> get databaseFailureOrSuccessOption;
 
@@ -2202,7 +2198,7 @@ abstract class $NewSeriesDatabaseStateCopyWith<$Res> {
   $Res call(
       {SeriesDraft seriesDraft,
       bool isEditMode,
-      String coverPath,
+      String coverUrl,
       Title title,
       String titleStr,
       int titleWordCount,
@@ -2222,7 +2218,6 @@ abstract class $NewSeriesDatabaseStateCopyWith<$Res> {
       bool isCreatingOrDeleting,
       Map<String, String> genresMap,
       Map<String, String> languagesMap,
-      String placeholderUrl,
       bool showErrorMessages,
       Option<Either<DatabaseFailure, dynamic>> databaseFailureOrSuccessOption});
 }
@@ -2239,7 +2234,7 @@ class _$NewSeriesDatabaseStateCopyWithImpl<$Res>
   $Res call({
     Object seriesDraft = freezed,
     Object isEditMode = freezed,
-    Object coverPath = freezed,
+    Object coverUrl = freezed,
     Object title = freezed,
     Object titleStr = freezed,
     Object titleWordCount = freezed,
@@ -2259,7 +2254,6 @@ class _$NewSeriesDatabaseStateCopyWithImpl<$Res>
     Object isCreatingOrDeleting = freezed,
     Object genresMap = freezed,
     Object languagesMap = freezed,
-    Object placeholderUrl = freezed,
     Object showErrorMessages = freezed,
     Object databaseFailureOrSuccessOption = freezed,
   }) {
@@ -2269,7 +2263,7 @@ class _$NewSeriesDatabaseStateCopyWithImpl<$Res>
           : seriesDraft as SeriesDraft,
       isEditMode:
           isEditMode == freezed ? _value.isEditMode : isEditMode as bool,
-      coverPath: coverPath == freezed ? _value.coverPath : coverPath as String,
+      coverUrl: coverUrl == freezed ? _value.coverUrl : coverUrl as String,
       title: title == freezed ? _value.title : title as Title,
       titleStr: titleStr == freezed ? _value.titleStr : titleStr as String,
       titleWordCount: titleWordCount == freezed
@@ -2308,9 +2302,6 @@ class _$NewSeriesDatabaseStateCopyWithImpl<$Res>
       languagesMap: languagesMap == freezed
           ? _value.languagesMap
           : languagesMap as Map<String, String>,
-      placeholderUrl: placeholderUrl == freezed
-          ? _value.placeholderUrl
-          : placeholderUrl as String,
       showErrorMessages: showErrorMessages == freezed
           ? _value.showErrorMessages
           : showErrorMessages as bool,
@@ -2331,7 +2322,7 @@ abstract class _$NewSeriesDatabaseStateCopyWith<$Res>
   $Res call(
       {SeriesDraft seriesDraft,
       bool isEditMode,
-      String coverPath,
+      String coverUrl,
       Title title,
       String titleStr,
       int titleWordCount,
@@ -2351,7 +2342,6 @@ abstract class _$NewSeriesDatabaseStateCopyWith<$Res>
       bool isCreatingOrDeleting,
       Map<String, String> genresMap,
       Map<String, String> languagesMap,
-      String placeholderUrl,
       bool showErrorMessages,
       Option<Either<DatabaseFailure, dynamic>> databaseFailureOrSuccessOption});
 }
@@ -2370,7 +2360,7 @@ class __$NewSeriesDatabaseStateCopyWithImpl<$Res>
   $Res call({
     Object seriesDraft = freezed,
     Object isEditMode = freezed,
-    Object coverPath = freezed,
+    Object coverUrl = freezed,
     Object title = freezed,
     Object titleStr = freezed,
     Object titleWordCount = freezed,
@@ -2390,7 +2380,6 @@ class __$NewSeriesDatabaseStateCopyWithImpl<$Res>
     Object isCreatingOrDeleting = freezed,
     Object genresMap = freezed,
     Object languagesMap = freezed,
-    Object placeholderUrl = freezed,
     Object showErrorMessages = freezed,
     Object databaseFailureOrSuccessOption = freezed,
   }) {
@@ -2400,7 +2389,7 @@ class __$NewSeriesDatabaseStateCopyWithImpl<$Res>
           : seriesDraft as SeriesDraft,
       isEditMode:
           isEditMode == freezed ? _value.isEditMode : isEditMode as bool,
-      coverPath: coverPath == freezed ? _value.coverPath : coverPath as String,
+      coverUrl: coverUrl == freezed ? _value.coverUrl : coverUrl as String,
       title: title == freezed ? _value.title : title as Title,
       titleStr: titleStr == freezed ? _value.titleStr : titleStr as String,
       titleWordCount: titleWordCount == freezed
@@ -2439,9 +2428,6 @@ class __$NewSeriesDatabaseStateCopyWithImpl<$Res>
       languagesMap: languagesMap == freezed
           ? _value.languagesMap
           : languagesMap as Map<String, String>,
-      placeholderUrl: placeholderUrl == freezed
-          ? _value.placeholderUrl
-          : placeholderUrl as String,
       showErrorMessages: showErrorMessages == freezed
           ? _value.showErrorMessages
           : showErrorMessages as bool,
@@ -2459,7 +2445,7 @@ class _$_NewSeriesDatabaseState
   const _$_NewSeriesDatabaseState(
       {@required this.seriesDraft,
       @required this.isEditMode,
-      @required this.coverPath,
+      @required this.coverUrl,
       @required this.title,
       @required this.titleStr,
       @required this.titleWordCount,
@@ -2479,12 +2465,11 @@ class _$_NewSeriesDatabaseState
       @required this.isCreatingOrDeleting,
       @required this.genresMap,
       @required this.languagesMap,
-      @required this.placeholderUrl,
       @required this.showErrorMessages,
       @required this.databaseFailureOrSuccessOption})
       : assert(seriesDraft != null),
         assert(isEditMode != null),
-        assert(coverPath != null),
+        assert(coverUrl != null),
         assert(title != null),
         assert(titleStr != null),
         assert(titleWordCount != null),
@@ -2504,7 +2489,6 @@ class _$_NewSeriesDatabaseState
         assert(isCreatingOrDeleting != null),
         assert(genresMap != null),
         assert(languagesMap != null),
-        assert(placeholderUrl != null),
         assert(showErrorMessages != null),
         assert(databaseFailureOrSuccessOption != null);
 
@@ -2513,7 +2497,7 @@ class _$_NewSeriesDatabaseState
   @override
   final bool isEditMode;
   @override
-  final String coverPath;
+  final String coverUrl;
   @override
   final Title title;
   @override
@@ -2553,15 +2537,13 @@ class _$_NewSeriesDatabaseState
   @override
   final Map<String, String> languagesMap;
   @override
-  final String placeholderUrl;
-  @override
   final bool showErrorMessages;
   @override
   final Option<Either<DatabaseFailure, dynamic>> databaseFailureOrSuccessOption;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'NewSeriesDatabaseState(seriesDraft: $seriesDraft, isEditMode: $isEditMode, coverPath: $coverPath, title: $title, titleStr: $titleStr, titleWordCount: $titleWordCount, subtitle: $subtitle, subtitleStr: $subtitleStr, subtitleWordCount: $subtitleWordCount, summary: $summary, summaryStr: $summaryStr, summaryWordCount: $summaryWordCount, genre: $genre, genreStr: $genreStr, genreOptional: $genreOptional, genreOptionalStr: $genreOptionalStr, language: $language, languageStr: $languageStr, isNSFW: $isNSFW, isCreatingOrDeleting: $isCreatingOrDeleting, genresMap: $genresMap, languagesMap: $languagesMap, placeholderUrl: $placeholderUrl, showErrorMessages: $showErrorMessages, databaseFailureOrSuccessOption: $databaseFailureOrSuccessOption)';
+    return 'NewSeriesDatabaseState(seriesDraft: $seriesDraft, isEditMode: $isEditMode, coverUrl: $coverUrl, title: $title, titleStr: $titleStr, titleWordCount: $titleWordCount, subtitle: $subtitle, subtitleStr: $subtitleStr, subtitleWordCount: $subtitleWordCount, summary: $summary, summaryStr: $summaryStr, summaryWordCount: $summaryWordCount, genre: $genre, genreStr: $genreStr, genreOptional: $genreOptional, genreOptionalStr: $genreOptionalStr, language: $language, languageStr: $languageStr, isNSFW: $isNSFW, isCreatingOrDeleting: $isCreatingOrDeleting, genresMap: $genresMap, languagesMap: $languagesMap, showErrorMessages: $showErrorMessages, databaseFailureOrSuccessOption: $databaseFailureOrSuccessOption)';
   }
 
   @override
@@ -2571,7 +2553,7 @@ class _$_NewSeriesDatabaseState
       ..add(DiagnosticsProperty('type', 'NewSeriesDatabaseState'))
       ..add(DiagnosticsProperty('seriesDraft', seriesDraft))
       ..add(DiagnosticsProperty('isEditMode', isEditMode))
-      ..add(DiagnosticsProperty('coverPath', coverPath))
+      ..add(DiagnosticsProperty('coverUrl', coverUrl))
       ..add(DiagnosticsProperty('title', title))
       ..add(DiagnosticsProperty('titleStr', titleStr))
       ..add(DiagnosticsProperty('titleWordCount', titleWordCount))
@@ -2591,7 +2573,6 @@ class _$_NewSeriesDatabaseState
       ..add(DiagnosticsProperty('isCreatingOrDeleting', isCreatingOrDeleting))
       ..add(DiagnosticsProperty('genresMap', genresMap))
       ..add(DiagnosticsProperty('languagesMap', languagesMap))
-      ..add(DiagnosticsProperty('placeholderUrl', placeholderUrl))
       ..add(DiagnosticsProperty('showErrorMessages', showErrorMessages))
       ..add(DiagnosticsProperty(
           'databaseFailureOrSuccessOption', databaseFailureOrSuccessOption));
@@ -2607,9 +2588,9 @@ class _$_NewSeriesDatabaseState
             (identical(other.isEditMode, isEditMode) ||
                 const DeepCollectionEquality()
                     .equals(other.isEditMode, isEditMode)) &&
-            (identical(other.coverPath, coverPath) ||
+            (identical(other.coverUrl, coverUrl) ||
                 const DeepCollectionEquality()
-                    .equals(other.coverPath, coverPath)) &&
+                    .equals(other.coverUrl, coverUrl)) &&
             (identical(other.title, title) ||
                 const DeepCollectionEquality().equals(other.title, title)) &&
             (identical(other.titleStr, titleStr) ||
@@ -2664,10 +2645,9 @@ class _$_NewSeriesDatabaseState
             (identical(other.languagesMap, languagesMap) ||
                 const DeepCollectionEquality()
                     .equals(other.languagesMap, languagesMap)) &&
-            (identical(other.placeholderUrl, placeholderUrl) ||
+            (identical(other.showErrorMessages, showErrorMessages) ||
                 const DeepCollectionEquality()
-                    .equals(other.placeholderUrl, placeholderUrl)) &&
-            (identical(other.showErrorMessages, showErrorMessages) || const DeepCollectionEquality().equals(other.showErrorMessages, showErrorMessages)) &&
+                    .equals(other.showErrorMessages, showErrorMessages)) &&
             (identical(other.databaseFailureOrSuccessOption, databaseFailureOrSuccessOption) || const DeepCollectionEquality().equals(other.databaseFailureOrSuccessOption, databaseFailureOrSuccessOption)));
   }
 
@@ -2676,7 +2656,7 @@ class _$_NewSeriesDatabaseState
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(seriesDraft) ^
       const DeepCollectionEquality().hash(isEditMode) ^
-      const DeepCollectionEquality().hash(coverPath) ^
+      const DeepCollectionEquality().hash(coverUrl) ^
       const DeepCollectionEquality().hash(title) ^
       const DeepCollectionEquality().hash(titleStr) ^
       const DeepCollectionEquality().hash(titleWordCount) ^
@@ -2696,7 +2676,6 @@ class _$_NewSeriesDatabaseState
       const DeepCollectionEquality().hash(isCreatingOrDeleting) ^
       const DeepCollectionEquality().hash(genresMap) ^
       const DeepCollectionEquality().hash(languagesMap) ^
-      const DeepCollectionEquality().hash(placeholderUrl) ^
       const DeepCollectionEquality().hash(showErrorMessages) ^
       const DeepCollectionEquality().hash(databaseFailureOrSuccessOption);
 
@@ -2713,7 +2692,7 @@ abstract class _NewSeriesDatabaseState implements NewSeriesDatabaseState {
       @required
           bool isEditMode,
       @required
-          String coverPath,
+          String coverUrl,
       @required
           Title title,
       @required
@@ -2753,8 +2732,6 @@ abstract class _NewSeriesDatabaseState implements NewSeriesDatabaseState {
       @required
           Map<String, String> languagesMap,
       @required
-          String placeholderUrl,
-      @required
           bool showErrorMessages,
       @required
           Option<Either<DatabaseFailure, dynamic>>
@@ -2765,7 +2742,7 @@ abstract class _NewSeriesDatabaseState implements NewSeriesDatabaseState {
   @override
   bool get isEditMode;
   @override
-  String get coverPath;
+  String get coverUrl;
   @override
   Title get title;
   @override
@@ -2804,8 +2781,6 @@ abstract class _NewSeriesDatabaseState implements NewSeriesDatabaseState {
   Map<String, String> get genresMap;
   @override
   Map<String, String> get languagesMap;
-  @override
-  String get placeholderUrl;
   @override
   bool get showErrorMessages;
   @override

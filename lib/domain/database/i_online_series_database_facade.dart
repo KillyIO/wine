@@ -15,10 +15,12 @@ abstract class IOnlineSeriesDatabaseFacade {
   Future<Either<DatabaseFailure, List<Series>>> getTopSeries({
     Series lastSeries,
     @required Map<String, dynamic> filters,
+    bool getAuthors = false,
   });
   Future<Either<DatabaseFailure, List<Series>>> getNewSeries({
     Series lastSeries,
     @required Map<String, dynamic> filters,
+    bool getAuthors = false,
   });
   Future<Either<DatabaseFailure, Map<String, Series>>> getSeriesAsMapByUidList(
     List<String> seriesUids,

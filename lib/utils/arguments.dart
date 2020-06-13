@@ -2,6 +2,7 @@ import 'package:flutter/foundation.dart';
 import 'package:sailor/sailor.dart';
 
 import 'package:wine/domain/enums/parent_type.dart';
+import 'package:wine/domain/models/chapter.dart';
 import 'package:wine/domain/models/hive/chapter_draft.dart';
 import 'package:wine/domain/models/hive/series_draft.dart';
 import 'package:wine/domain/models/series.dart';
@@ -14,28 +15,37 @@ class NewSeriesPageArgs extends BaseArguments {
   });
 }
 
+/// [chapterDraft] not null only when editing a chapter not published
+/// [seriesDraft] only if [parentType] is series, not null only if writing first chapter
+/// [previousChapter] only when writing next chapter
 class NewChapterPageArgs extends BaseArguments {
   final ParentType parentType;
   final ChapterDraft chapterDraft;
   final SeriesDraft seriesDraft;
-  final ChapterDraft previousChapterDraft;
+  final Chapter previousChapter;
+  final String routeBack;
+  final String predicateRoute;
 
   NewChapterPageArgs({
-    this.parentType,
+    @required this.parentType,
     this.chapterDraft,
     this.seriesDraft,
-    this.previousChapterDraft,
+    this.previousChapter,
+    @required this.routeBack,
+    this.predicateRoute,
   });
 }
 
 class SeriesPageArgs extends BaseArguments {
   final Series series;
-  final String placeholderUrl;
-  final String username;
 
   SeriesPageArgs({
     @required this.series,
-    @required this.placeholderUrl,
-    this.username,
   });
+}
+
+class ChapterPageArgs extends BaseArguments {
+  final Chapter chapter;
+
+  ChapterPageArgs({@required this.chapter});
 }

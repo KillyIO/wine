@@ -33,6 +33,7 @@ class FirebaseOnlineSeriesDatabaseFacade
         _firestore.collection(Paths.seriesPath).document(series.uid);
 
     series
+      ..likesCount = 0
       ..createdAt = DateTime.now().millisecondsSinceEpoch
       ..updatedAt = DateTime.now().millisecondsSinceEpoch;
 
@@ -93,6 +94,7 @@ class FirebaseOnlineSeriesDatabaseFacade
   Future<Either<DatabaseFailure, List<Series>>> getTopSeries({
     Series lastSeries,
     Map<String, dynamic> filters,
+    bool getAuthors = false,
   }) async {
     final CollectionReference seriesCollection =
         _firestore.collection(Paths.seriesPath);
@@ -130,29 +132,36 @@ class FirebaseOnlineSeriesDatabaseFacade
 
     final List<Series> seriesList = <Series>[];
     if (querySnapshot.documents.isNotEmpty) {
-      final List<String> userUid = <String>[];
-      for (final DocumentSnapshot doc in querySnapshot.documents) {
-        seriesList.add(Series.fromFirestore(doc));
-        userUid.add(doc.data['authorUid'] as String);
-      }
+      if (!getAuthors) {
+        for (final DocumentSnapshot doc in querySnapshot.documents) {
+          seriesList.add(Series.fromFirestore(doc));
+        }
+      } else {
+        final List<String> userUid = <String>[];
+        for (final DocumentSnapshot doc in querySnapshot.documents) {
+          seriesList.add(Series.fromFirestore(doc));
+          userUid.add(doc.data['authorUid'] as String);
+        }
 
-      Map<String, User> usersMap = <String, User>{};
+        Map<String, User> usersMap = <String, User>{};
 
-      if (userUid.isNotEmpty) {
-        final Either<DatabaseFailure, Map<String, User>> failureOrSuccess =
-            await _onlineUserDatabaseFacade.getUsersAsMapByUidList(userUid);
-        failureOrSuccess.fold(
-          (failure) => left(failure),
-          (success) {
-            usersMap = success;
-          },
-        );
+        if (userUid.isNotEmpty) {
+          final Either<DatabaseFailure, Map<String, User>> failureOrSuccess =
+              await _onlineUserDatabaseFacade.getUsersAsMapByUidList(userUid);
+          failureOrSuccess.fold(
+            (failure) => left(failure),
+            (success) {
+              usersMap = success;
+            },
+          );
 
-        for (final Series series in seriesList) {
-          series.author = usersMap[series.authorUid];
+          for (final Series series in seriesList) {
+            series.author = usersMap[series.authorUid];
+          }
         }
       }
     }
+    seriesList.sort((b, a) => a.likesCount.compareTo(b.likesCount));
     return right(seriesList);
   }
 
@@ -160,6 +169,7 @@ class FirebaseOnlineSeriesDatabaseFacade
   Future<Either<DatabaseFailure, List<Series>>> getNewSeries({
     Series lastSeries,
     Map<String, dynamic> filters,
+    bool getAuthors = false,
   }) async {
     final CollectionReference seriesCollection =
         _firestore.collection(Paths.seriesPath);
@@ -195,26 +205,32 @@ class FirebaseOnlineSeriesDatabaseFacade
 
     final List<Series> seriesList = <Series>[];
     if (querySnapshot.documents.isNotEmpty) {
-      final List<String> userUid = <String>[];
-      for (final DocumentSnapshot doc in querySnapshot.documents) {
-        seriesList.add(Series.fromFirestore(doc));
-        userUid.add(doc.data['authorUid'] as String);
-      }
+      if (!getAuthors) {
+        for (final DocumentSnapshot doc in querySnapshot.documents) {
+          seriesList.add(Series.fromFirestore(doc));
+        }
+      } else {
+        final List<String> userUid = <String>[];
+        for (final DocumentSnapshot doc in querySnapshot.documents) {
+          seriesList.add(Series.fromFirestore(doc));
+          userUid.add(doc.data['authorUid'] as String);
+        }
 
-      Map<String, User> usersMap = <String, User>{};
+        Map<String, User> usersMap = <String, User>{};
 
-      if (userUid.isNotEmpty) {
-        final Either<DatabaseFailure, Map<String, User>> failureOrSuccess =
-            await _onlineUserDatabaseFacade.getUsersAsMapByUidList(userUid);
-        failureOrSuccess.fold(
-          (failure) => left(failure),
-          (success) {
-            usersMap = success;
-          },
-        );
+        if (userUid.isNotEmpty) {
+          final Either<DatabaseFailure, Map<String, User>> failureOrSuccess =
+              await _onlineUserDatabaseFacade.getUsersAsMapByUidList(userUid);
+          failureOrSuccess.fold(
+            (failure) => left(failure),
+            (success) {
+              usersMap = success;
+            },
+          );
 
-        for (final Series series in seriesList) {
-          series.author = usersMap[series.authorUid];
+          for (final Series series in seriesList) {
+            series.author = usersMap[series.authorUid];
+          }
         }
       }
     }

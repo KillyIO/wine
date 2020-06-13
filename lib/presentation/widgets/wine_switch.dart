@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-// Shoutout to mohak1283 and his package CustomSwitch [https://github.com/mohak1283/CustomSwitch]
+// Credit to mohak1283 and his package CustomSwitch [https://github.com/mohak1283/CustomSwitch]
 // Unfortunately this package is not maintain anymore
 class WINESwitch extends StatefulWidget {
   final bool value;

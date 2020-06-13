@@ -1,30 +1,24 @@
+import 'package:assorted_layout_widgets/assorted_layout_widgets.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:wine/utils/extensions.dart';
 
 class WINESeriesCard extends StatelessWidget {
   final String uid;
   final String title;
-  final String username;
   final String coverUrl;
-  final String placeholderUrl;
   final double height;
   final double width;
   final double titleFontSize;
-  final double usernameFontSize;
   final VoidCallback onPressed;
 
   const WINESeriesCard({
     Key key,
     this.uid,
     this.title,
-    this.username,
     this.coverUrl,
-    this.placeholderUrl,
     this.height = 100,
     this.width = 50,
     this.titleFontSize = 12,
-    this.usernameFontSize = 11,
     this.onPressed,
   }) : super(key: key);
 
@@ -44,47 +38,33 @@ class WINESeriesCard extends StatelessWidget {
                 boxShadow: const <BoxShadow>[
                   BoxShadow(
                     color: Colors.black12,
-                    spreadRadius: 3,
-                    blurRadius: 7,
+                    spreadRadius: 1,
+                    blurRadius: 5,
                     offset: Offset(0, 3),
                   ),
                 ],
               ),
               child: ClipRRect(
-                borderRadius: BorderRadius.circular(10.0),
+                borderRadius: BorderRadius.circular(6.0),
                 child: Hero(
                   tag: uid,
                   child: CachedNetworkImage(
                     fit: BoxFit.contain,
-                    imageUrl: coverUrl.isNotEmptyOrNull
-                        ? coverUrl
-                        : placeholderUrl,
+                    imageUrl: coverUrl,
                   ),
                 ),
               ),
             ),
-            const SizedBox(height: 20),
-            Padding(
-              padding: const EdgeInsets.only(left: 5.0),
-              child: Text(
-                title,
-                overflow: TextOverflow.ellipsis,
-                style: TextStyle(
-                  fontWeight: FontWeight.w500,
-                  fontSize: titleFontSize,
-                ),
-              ),
-            ),
-            const SizedBox(height: 2.5),
-            Padding(
-              padding: const EdgeInsets.only(left: 5.0),
-              child: Text(
-                username,
-                overflow: TextOverflow.ellipsis,
-                style: TextStyle(
-                  color: Colors.black26,
-                  fontSize: usernameFontSize,
-                  fontWeight: FontWeight.w400,
+            const SizedBox(height: 10),
+            Flexible(
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 1.0),
+                child: TextOneLine(
+                  title,
+                  style: TextStyle(
+                    fontWeight: FontWeight.w600,
+                    fontSize: titleFontSize,
+                  ),
                 ),
               ),
             ),

@@ -1,6 +1,7 @@
 import 'package:flutter/animation.dart';
 import 'package:sailor/sailor.dart';
 import 'package:wine/presentation/pages/account/index.dart';
+import 'package:wine/presentation/pages/chapter/chapter_page.dart';
 import 'package:wine/presentation/pages/copyrights/copyrights_page.dart';
 import 'package:wine/presentation/pages/create_account/create_account_page.dart';
 import 'package:wine/presentation/pages/genres/genres_page.dart';
@@ -99,6 +100,15 @@ void createRoutes() {
       ),
       defaultTransitions: [
         SailorTransition.slide_from_right,
+      ],
+    ),
+    SailorRoute(
+      name: Constants.chapterRoute,
+      builder: (context, args, params) => ChapterPage(
+        args: args as ChapterPageArgs,
+      ),
+      defaultTransitions: [
+        SailorTransition.fade_in,
       ],
     ),
     // SECTION DETAILS PAGES

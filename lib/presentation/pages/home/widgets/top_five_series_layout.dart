@@ -2,16 +2,23 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 
-import 'package:wine/application/database/home/home_database_bloc.dart';
 import 'package:wine/domain/models/series.dart';
 import 'package:wine/presentation/widgets/wine_series_card.dart';
+import 'package:wine/routes.dart';
+import 'package:wine/utils/arguments.dart';
+import 'package:wine/utils/constants.dart';
+import 'package:wine/utils/extensions.dart';
 
 class TopFiveSeriesLayout extends StatelessWidget {
-  final HomeDatabaseState state;
+  final List<Series> topFiveSeries;
+  final String genreStr;
+  final String timeStr;
 
   const TopFiveSeriesLayout({
     Key key,
-    this.state,
+    this.topFiveSeries,
+    this.genreStr,
+    this.timeStr,
   }) : super(key: key);
 
   @override
@@ -34,14 +41,12 @@ class TopFiveSeriesLayout extends StatelessWidget {
               ),
               children: <InlineSpan>[
                 const TextSpan(text: 'TOP 5 '),
-                if (state.genreFilterKey != null &&
-                    state.genreFilterKey.isNotEmpty)
+                if (genreStr.isNotEmptyOrNull)
                   TextSpan(
-                    text:
-                        '${state.genresMap[state.genreFilterKey].toUpperCase()} ',
+                    text: '${genreStr.toUpperCase()} ',
                   ),
                 TextSpan(
-                  text: state.timesMap[state.timeFilterKey].toUpperCase(),
+                  text: timeStr.toUpperCase(),
                 ),
               ],
             ),
@@ -54,9 +59,9 @@ class TopFiveSeriesLayout extends StatelessWidget {
             behavior: const ScrollBehavior(),
             child: ListView.builder(
               scrollDirection: Axis.horizontal,
-              itemCount: state.topFiveSeries.length,
+              itemCount: topFiveSeries.length,
               itemBuilder: (BuildContext context, int index) {
-                final Series series = state.topFiveSeries[index];
+                final Series series = topFiveSeries[index];
 
                 return Row(
                   children: <Widget>[
@@ -64,15 +69,14 @@ class TopFiveSeriesLayout extends StatelessWidget {
                     WINESeriesCard(
                       uid: series.uid,
                       title: series.title,
-                      username: series.author.username,
                       coverUrl: series.coverUrl,
-                      placeholderUrl: state.placeholderUrls[
-                          index % state.placeholderUrls.length],
-                      onPressed: () {},
+                      onPressed: () => sailor.navigate(
+                        Constants.seriesRoute,
+                        args: SeriesPageArgs(series: series),
+                      ),
                       width: mediaQuery.width / 2.5,
                       height: mediaQuery.height / 3,
                       titleFontSize: 16.0,
-                      usernameFontSize: 14.0,
                     ),
                     const SizedBox(width: 20),
                   ],

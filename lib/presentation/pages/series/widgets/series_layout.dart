@@ -2,11 +2,15 @@ import 'package:after_layout/after_layout.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:intl/intl.dart';
 import 'package:wine/application/database/series/series_database_bloc.dart';
-import 'package:wine/presentation/pages/series/widgets/genre_container.dart';
 import 'package:wine/presentation/widgets/wine_button.dart';
+import 'package:wine/presentation/widgets/wine_genre_container.dart';
 import 'package:wine/presentation/widgets/wine_leading_image_button.dart';
+import 'package:wine/presentation/widgets/wine_stats_button.dart';
+import 'package:wine/routes.dart';
 import 'package:wine/utils/arguments.dart';
+import 'package:wine/utils/constants.dart';
 import 'package:wine/utils/extensions.dart';
 import 'package:wine/utils/palettes.dart';
 
@@ -33,13 +37,26 @@ class _SeriesLayoutState extends State<SeriesLayout> with AfterLayoutMixin {
         ));
   }
 
+  void _readFirstChapterButtonPressed() {
+    context
+        .bloc<SeriesDatabaseBloc>()
+        .add(const SeriesDatabaseEvent.readChapterOneButtonPressed());
+  }
+
   @override
   Widget build(BuildContext context) {
     return MultiBlocListener(
       listeners: [
         BlocListener<SeriesDatabaseBloc, SeriesDatabaseState>(
           listener: (context, state) {
-            if (state.chapterOne.isNotEmptyOrNull) {}
+            if (state.chapterOne.isNotEmptyOrNull) {
+              sailor.navigate(
+                Constants.chapterRoute,
+                args: ChapterPageArgs(
+                  chapter: state.chapterOne,
+                ),
+              );
+            }
           },
         ),
       ],
@@ -117,15 +134,12 @@ class _SeriesLayoutState extends State<SeriesLayout> with AfterLayoutMixin {
                     children: <Widget>[
                       const SizedBox(width: 20),
                       ClipRRect(
-                        borderRadius: BorderRadius.circular(10.0),
+                        borderRadius: BorderRadius.circular(6.0),
                         child: Hero(
                           tag: widget.args.series.uid,
                           child: CachedNetworkImage(
                             fit: BoxFit.contain,
-                            imageUrl:
-                                widget.args.series.coverUrl.isNotEmptyOrNull
-                                    ? widget.args.series.coverUrl
-                                    : widget.args.placeholderUrl,
+                            imageUrl: widget.args.series.coverUrl,
                             height: 125.0,
                           ),
                         ),
@@ -150,51 +164,36 @@ class _SeriesLayoutState extends State<SeriesLayout> with AfterLayoutMixin {
                                 ),
                                 const SizedBox(height: 7.5),
                                 Text(
-                                  widget.args.series.author?.username ??
-                                      widget.args.username,
+                                  widget.args.series.author.username,
                                   style: TextStyle(
-                                      color: Colors.black26,
-                                      fontSize: 16.0,
-                                      fontWeight: FontWeight.w600),
+                                    color: Colors.black26,
+                                    fontSize: 16.0,
+                                    fontWeight: FontWeight.w600,
+                                  ),
                                 ),
                               ],
                             ),
                             Row(
                               children: <Widget>[
-                                Icon(
-                                  Icons.visibility,
-                                  color: Colors.black38,
-                                ),
-                                const SizedBox(width: 5),
-                                Text(
-                                  seriesDbState.viewsCount.toString(),
-                                  style: TextStyle(
-                                    color: Colors.black38,
-                                  ),
+                                WINEStatsButton(
+                                  icon: Icons.visibility,
+                                  iconColor: Colors.black38,
+                                  statsCount: NumberFormat.compact()
+                                      .format(seriesDbState.viewsCount),
                                 ),
                                 const SizedBox(width: 10),
-                                Icon(
-                                  Icons.favorite,
-                                  color: Palettes.pastelPink,
-                                ),
-                                const SizedBox(width: 5),
-                                Text(
-                                  seriesDbState.likesCount.toString(),
-                                  style: TextStyle(
-                                    color: Palettes.pastelPink,
-                                  ),
+                                WINEStatsButton(
+                                  icon: Icons.favorite,
+                                  iconColor: Palettes.pastelPink,
+                                  statsCount: NumberFormat.compact()
+                                      .format(seriesDbState.likesCount),
                                 ),
                                 const SizedBox(width: 10),
-                                Icon(
-                                  Icons.bookmark,
-                                  color: Palettes.pastelYellow,
-                                ),
-                                const SizedBox(width: 5),
-                                Text(
-                                  seriesDbState.bookmarksCount.toString(),
-                                  style: TextStyle(
-                                    color: Palettes.pastelYellow,
-                                  ),
+                                WINEStatsButton(
+                                  icon: Icons.bookmark,
+                                  iconColor: Palettes.pastelYellow,
+                                  statsCount: NumberFormat.compact()
+                                      .format(seriesDbState.bookmarksCount),
                                 ),
                               ],
                             ),
@@ -244,16 +243,12 @@ class _SeriesLayoutState extends State<SeriesLayout> with AfterLayoutMixin {
                   Row(
                     children: <Widget>[
                       const SizedBox(width: 20),
-                      GenreContainer(
-                        title:
-                            seriesDbState.genresMap[widget.args.series.genre],
-                      ),
+                      WINEGenreContainer(
+                          seriesDbState.genresMap[widget.args.series.genre]),
                       const SizedBox(width: 15),
                       if (widget.args.series.genreOptional.isNotEmptyOrNull)
-                        GenreContainer(
-                          title: seriesDbState
-                              .genresMap[widget.args.series.genreOptional],
-                        ),
+                        WINEGenreContainer(seriesDbState
+                            .genresMap[widget.args.series.genreOptional]),
                       const SizedBox(width: 20),
                     ],
                   ),
@@ -262,9 +257,7 @@ class _SeriesLayoutState extends State<SeriesLayout> with AfterLayoutMixin {
                     padding: const EdgeInsets.symmetric(horizontal: 15.0),
                     child: WINEButton(
                       title: 'READ FIRST CHAPTER',
-                      onPressed: () => context.bloc<SeriesDatabaseBloc>().add(
-                          const SeriesDatabaseEvent
-                              .readChapterOneButtonPressed()),
+                      onPressed: _readFirstChapterButtonPressed,
                       fontSize: 18.0,
                       hasRoundedCorners: true,
                     ),

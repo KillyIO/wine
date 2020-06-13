@@ -4,8 +4,8 @@ import 'dart:math';
 
 import 'package:bloc/bloc.dart';
 import 'package:dartz/dartz.dart';
-import 'package:flutter/widgets.dart' hide Title;
 import 'package:flutter/foundation.dart' hide Summary;
+import 'package:flutter/widgets.dart' hide Title;
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:image_cropper/image_cropper.dart';
 import 'package:image_picker/image_picker.dart';
@@ -15,24 +15,24 @@ import 'package:path/path.dart' as p;
 import 'package:path_provider/path_provider.dart';
 import 'package:stringprocess/stringprocess.dart';
 import 'package:uuid/uuid.dart';
+
 import 'package:wine/domain/database/database_failure.dart';
+import 'package:wine/domain/database/genre.dart';
 import 'package:wine/domain/database/i_local_placeholder_database_facade.dart';
 import 'package:wine/domain/database/i_local_series_draft_database_facade.dart';
-import 'package:wine/domain/database/summary.dart';
-import 'package:wine/domain/database/genre.dart';
 import 'package:wine/domain/database/i_local_session_database_facade.dart';
 import 'package:wine/domain/database/language.dart';
 import 'package:wine/domain/database/subtitle.dart';
+import 'package:wine/domain/database/summary.dart';
 import 'package:wine/domain/database/title.dart';
 import 'package:wine/domain/models/hive/series_draft.dart';
 import 'package:wine/domain/models/hive/session.dart';
 import 'package:wine/utils/constants.dart';
 import 'package:wine/utils/methods.dart';
 
+part 'new_series_database_bloc.freezed.dart';
 part 'new_series_database_event.dart';
 part 'new_series_database_state.dart';
-
-part 'new_series_database_bloc.freezed.dart';
 
 @injectable
 class NewSeriesDatabaseBloc
@@ -65,7 +65,6 @@ class NewSeriesDatabaseBloc
 
         SeriesDraft seriesDraft;
         bool isEditMode = false;
-        String placeholderUrl = '';
 
         if (event.seriesDraft != null) {
           seriesDraft = event.seriesDraft;
@@ -89,26 +88,11 @@ class NewSeriesDatabaseBloc
           );
         }
 
-        final List<String> placeholderUrls = Methods.getPlaceholderKeys();
-        final String randomKey =
-            placeholderUrls[random.nextInt(placeholderUrls.length)];
-
-        failureOrSuccess = await _localPlaceholderDatabaseFacade
-            .getPlaceholderUrlByKey(randomKey);
-        failureOrSuccess.fold(
-          (_) {},
-          (success) {
-            if (success is String) {
-              placeholderUrl = success;
-            }
-          },
-        );
-
         if (isEditMode) {
           yield state.copyWith(
             seriesDraft: seriesDraft,
             isEditMode: isEditMode,
-            coverPath: seriesDraft.coverPath,
+            coverUrl: seriesDraft.coverUrl,
             title: Title(seriesDraft.title),
             titleStr: seriesDraft.title,
             titleWordCount: tps.getWordCount(seriesDraft.title),
@@ -127,16 +111,31 @@ class NewSeriesDatabaseBloc
             isNSFW: seriesDraft.isNSFW,
             genresMap: Methods.getGenres(event.context),
             languagesMap: Methods.getLanguages(event.context),
-            placeholderUrl: placeholderUrl,
             databaseFailureOrSuccessOption: optionOf(failureOrSuccess),
           );
         } else {
+          String coverUrl;
+          final List<String> placeholderUrls = Methods.getPlaceholderKeys();
+          final String randomKey =
+              placeholderUrls[random.nextInt(placeholderUrls.length)];
+
+          failureOrSuccess = await _localPlaceholderDatabaseFacade
+              .getPlaceholderUrlByKey(randomKey);
+          failureOrSuccess.fold(
+            (_) {},
+            (success) {
+              if (success is String) {
+                coverUrl = success;
+              }
+            },
+          );
+
           yield state.copyWith(
             seriesDraft: seriesDraft,
             isEditMode: isEditMode,
+            coverUrl: coverUrl,
             genresMap: Methods.getGenres(event.context),
             languagesMap: Methods.getLanguages(event.context),
-            placeholderUrl: placeholderUrl,
             databaseFailureOrSuccessOption: optionOf(failureOrSuccess),
           );
         }
@@ -163,11 +162,11 @@ class NewSeriesDatabaseBloc
             final Directory appDocDir =
                 await getApplicationDocumentsDirectory();
             final String coverPath =
-                appDocDir.uri.resolve('${p.basename(croppedFile.path)}').path;
+                appDocDir.uri.resolve(p.basename(croppedFile.path)).path;
             final File coverFile = await croppedFile.copy(coverPath);
 
             yield state.copyWith(
-              coverPath: coverFile.path,
+              coverUrl: coverFile.path,
               databaseFailureOrSuccessOption: none(),
             );
           }
@@ -250,7 +249,7 @@ class NewSeriesDatabaseBloc
           final SeriesDraft seriesDraft = state.seriesDraft;
 
           seriesDraft
-            ..coverPath = state.coverPath
+            ..coverUrl = state.coverUrl
             ..title = state.title.getOrCrash()
             ..subtitle = state.subtitle.getOrCrash()
             ..summary = state.summary.getOrCrash()

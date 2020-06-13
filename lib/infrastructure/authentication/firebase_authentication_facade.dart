@@ -28,6 +28,12 @@ class FirebaseAuthenticationFacade implements IAuthenticationFacade {
   );
 
   @override
+  Future<Either<AuthenticationFailure, String>> getUid() async {
+    final FirebaseUser currentUser = await _firebaseAuth.currentUser();
+    return right(currentUser.uid);
+  }
+
+  @override
   Future<Either<AuthenticationFailure, User>> convertWithEmailAndPassword({
     @required EmailAddress emailAddress,
     @required Password password,
@@ -62,7 +68,6 @@ class FirebaseAuthenticationFacade implements IAuthenticationFacade {
   @override
   Future<Either<AuthenticationFailure, bool>> isAnonymous() async {
     final FirebaseUser currentUser = await _firebaseAuth.currentUser();
-
     return right(currentUser != null && currentUser.isAnonymous);
   }
 

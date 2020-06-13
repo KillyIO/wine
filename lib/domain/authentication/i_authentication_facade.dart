@@ -7,6 +7,7 @@ import 'package:wine/domain/authentication/username.dart';
 import 'package:wine/domain/models/user.dart';
 
 abstract class IAuthenticationFacade {
+  Future<Either<AuthenticationFailure, String>> getUid();
   Future<Either<AuthenticationFailure, User>> convertWithEmailAndPassword({
     @required EmailAddress emailAddress,
     @required Password password,

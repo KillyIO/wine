@@ -37,6 +37,15 @@ class ChapterDraft extends HiveObject {
   @HiveField(10)
   bool isEnd;
 
+  @HiveField(11)
+  String genre;
+
+  @HiveField(12)
+  String genreOptional;
+
+  @HiveField(13)
+  String coverUrl;
+
   ChapterDraft({
     this.uid,
     this.seriesUid,
@@ -49,6 +58,9 @@ class ChapterDraft extends HiveObject {
     this.copyrights,
     this.isNSFW,
     this.isEnd,
+    this.genre,
+    this.genreOptional,
+    this.coverUrl,
   });
 
   ChapterDraft copyWith({
@@ -63,6 +75,9 @@ class ChapterDraft extends HiveObject {
     String copyrights,
     bool isNSFW,
     bool isEnd,
+    String genre,
+    String genreOptional,
+    String coverUrl,
   }) {
     return ChapterDraft(
       uid: uid ?? this.uid,
@@ -76,6 +91,9 @@ class ChapterDraft extends HiveObject {
       copyrights: copyrights ?? this.copyrights,
       isNSFW: isNSFW ?? this.isNSFW,
       isEnd: isEnd ?? this.isEnd,
+      genre: genre ?? this.genre,
+      genreOptional: genreOptional ?? this.genreOptional,
+      coverUrl: coverUrl ?? this.coverUrl,
     );
   }
 
@@ -92,6 +110,9 @@ class ChapterDraft extends HiveObject {
       'copyrights': copyrights,
       'isNSFW': isNSFW,
       'isEnd': isEnd,
+      'genre': genre,
+      'genreOptional': genreOptional,
+      'coverUrl': coverUrl,
     };
   }
 
@@ -110,12 +131,15 @@ class ChapterDraft extends HiveObject {
       copyrights: map['copyrights'] as String,
       isNSFW: map['isNSFW'] as bool,
       isEnd: map['isEnd'] as bool,
+      genre: map['genre'] as String,
+      genreOptional: map['genreOptional'] as String,
+      coverUrl: map['coverUrl'] as String,
     );
   }
 
   @override
   String toString() {
-    return 'ChapterDraft(uid: $uid, seriesUid: $seriesUid, previousChapterUid: $previousChapterUid, authorUid: $authorUid, title: $title, story: $story, index: $index, language: $language, copyrights: $copyrights, isNSFW: $isNSFW, isEnd: $isEnd)';
+    return 'ChapterDraft(uid: $uid, seriesUid: $seriesUid, previousChapterUid: $previousChapterUid, authorUid: $authorUid, title: $title, story: $story, index: $index, language: $language, copyrights: $copyrights, isNSFW: $isNSFW, isEnd: $isEnd, genre: $genre, genreOptional: $genreOptional, coverUrl: $coverUrl)';
   }
 
   @override
@@ -123,31 +147,37 @@ class ChapterDraft extends HiveObject {
     if (identical(this, o)) return true;
 
     return o is ChapterDraft &&
-      o.uid == uid &&
-      o.seriesUid == seriesUid &&
-      o.previousChapterUid == previousChapterUid &&
-      o.authorUid == authorUid &&
-      o.title == title &&
-      o.story == story &&
-      o.index == index &&
-      o.language == language &&
-      o.copyrights == copyrights &&
-      o.isNSFW == isNSFW &&
-      o.isEnd == isEnd;
+        o.uid == uid &&
+        o.seriesUid == seriesUid &&
+        o.previousChapterUid == previousChapterUid &&
+        o.authorUid == authorUid &&
+        o.title == title &&
+        o.story == story &&
+        o.index == index &&
+        o.language == language &&
+        o.copyrights == copyrights &&
+        o.isNSFW == isNSFW &&
+        o.isEnd == isEnd &&
+        o.genre == genre &&
+        o.genreOptional == genreOptional &&
+        o.coverUrl == coverUrl;
   }
 
   @override
   int get hashCode {
     return uid.hashCode ^
-      seriesUid.hashCode ^
-      previousChapterUid.hashCode ^
-      authorUid.hashCode ^
-      title.hashCode ^
-      story.hashCode ^
-      index.hashCode ^
-      language.hashCode ^
-      copyrights.hashCode ^
-      isNSFW.hashCode ^
-      isEnd.hashCode;
+        seriesUid.hashCode ^
+        previousChapterUid.hashCode ^
+        authorUid.hashCode ^
+        title.hashCode ^
+        story.hashCode ^
+        index.hashCode ^
+        language.hashCode ^
+        copyrights.hashCode ^
+        isNSFW.hashCode ^
+        isEnd.hashCode ^
+        genre.hashCode ^
+        genreOptional.hashCode ^
+        coverUrl.hashCode;
   }
 }

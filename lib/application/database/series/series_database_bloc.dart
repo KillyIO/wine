@@ -48,8 +48,8 @@ class SeriesDatabaseBloc
         Either<DatabaseFailure, dynamic> failureOrSuccess;
 
         Session session = Session();
-        int viewsCount, likesCount, bookmarksCount = 0;
-        bool isLiked, isBookmarked = false;
+        int viewsCount = 0, likesCount = 0, bookmarksCount = 0;
+        bool isLiked = false, isBookmarked = false;
 
         failureOrSuccess = await _localSessionDatabaseFacade.getSession();
         failureOrSuccess.fold(
@@ -218,24 +218,32 @@ class SeriesDatabaseBloc
         Either<DatabaseFailure, dynamic> failureOrSuccess;
 
         yield state.copyWith(
+          chapterOne: Chapter(),
           databaseFailureOrSuccessOption: none(),
         );
 
         Chapter chapterOne = Chapter();
 
-        failureOrSuccess =
-            await _onlineChapterDatabaseFacade.getChaptersBySeriesUidAndIndex(
-          seriesUid: state.series.uid,
-          index: 1,
-        );
-        failureOrSuccess.fold(
-          (_) {},
-          (success) {
-            if (success is Chapter) {
-              chapterOne = success;
-            }
-          },
-        );
+        if (state.chapterOne.isNotEmptyOrNull) {
+          chapterOne = state.chapterOne;
+        } else {
+          failureOrSuccess =
+              await _onlineChapterDatabaseFacade.getChaptersBySeriesUidAndIndex(
+            seriesUid: state.series.uid,
+            index: 1,
+          );
+          failureOrSuccess.fold(
+            (_) {},
+            (success) {
+              if (success is Chapter) {
+                chapterOne = success;
+                chapterOne
+                  ..series = state.series
+                  ..author = state.series.author;
+              }
+            },
+          );
+        }
 
         yield state.copyWith(
           chapterOne: chapterOne,

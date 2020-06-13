@@ -6,15 +6,22 @@ abstract class NewChapterDatabaseEvent with _$NewChapterDatabaseEvent {
     ParentType parentType,
     ChapterDraft chapterDraft,
     SeriesDraft seriesDraft,
-    ChapterDraft previousChapterDraft,
+    Chapter previousChapter,
     BuildContext context,
   }) = NewChapterPageLaunched;
+  const factory NewChapterDatabaseEvent.addCoverPressed() = AddCoverPressed;
   const factory NewChapterDatabaseEvent.titleChanged(
     String title,
   ) = TitleChanged;
   const factory NewChapterDatabaseEvent.storyChanged(
     String story,
   ) = StoryChanged;
+  const factory NewChapterDatabaseEvent.genreSelected(
+    String genre,
+  ) = GenreSelected;
+  const factory NewChapterDatabaseEvent.genreOptionalSelected(
+    String genreOptional,
+  ) = GenreOptionalSelected;
   const factory NewChapterDatabaseEvent.languageSelected(
     String language,
   ) = LanguageSelected;

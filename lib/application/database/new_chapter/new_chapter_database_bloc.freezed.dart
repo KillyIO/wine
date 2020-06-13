@@ -16,15 +16,19 @@ class _$NewChapterDatabaseEventTearOff {
       {ParentType parentType,
       ChapterDraft chapterDraft,
       SeriesDraft seriesDraft,
-      ChapterDraft previousChapterDraft,
+      Chapter previousChapter,
       BuildContext context}) {
     return NewChapterPageLaunched(
       parentType: parentType,
       chapterDraft: chapterDraft,
       seriesDraft: seriesDraft,
-      previousChapterDraft: previousChapterDraft,
+      previousChapter: previousChapter,
       context: context,
     );
+  }
+
+  AddCoverPressed addCoverPressed() {
+    return const AddCoverPressed();
   }
 
   TitleChanged titleChanged(String title) {
@@ -36,6 +40,18 @@ class _$NewChapterDatabaseEventTearOff {
   StoryChanged storyChanged(String story) {
     return StoryChanged(
       story,
+    );
+  }
+
+  GenreSelected genreSelected(String genre) {
+    return GenreSelected(
+      genre,
+    );
+  }
+
+  GenreOptionalSelected genreOptionalSelected(String genreOptional) {
+    return GenreOptionalSelected(
+      genreOptional,
     );
   }
 
@@ -83,10 +99,13 @@ mixin _$NewChapterDatabaseEvent {
             ParentType parentType,
             ChapterDraft chapterDraft,
             SeriesDraft seriesDraft,
-            ChapterDraft previousChapterDraft,
+            Chapter previousChapter,
             BuildContext context),
+    @required Result addCoverPressed(),
     @required Result titleChanged(String title),
     @required Result storyChanged(String story),
+    @required Result genreSelected(String genre),
+    @required Result genreOptionalSelected(String genreOptional),
     @required Result languageSelected(String language),
     @required Result copyrightsSelected(String copyrights),
     @required Result isNSFWChanged(bool isNSFW),
@@ -100,10 +119,13 @@ mixin _$NewChapterDatabaseEvent {
         ParentType parentType,
         ChapterDraft chapterDraft,
         SeriesDraft seriesDraft,
-        ChapterDraft previousChapterDraft,
+        Chapter previousChapter,
         BuildContext context),
+    Result addCoverPressed(),
     Result titleChanged(String title),
     Result storyChanged(String story),
+    Result genreSelected(String genre),
+    Result genreOptionalSelected(String genreOptional),
     Result languageSelected(String language),
     Result copyrightsSelected(String copyrights),
     Result isNSFWChanged(bool isNSFW),
@@ -115,8 +137,11 @@ mixin _$NewChapterDatabaseEvent {
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result newChapterPageLaunched(NewChapterPageLaunched value),
+    @required Result addCoverPressed(AddCoverPressed value),
     @required Result titleChanged(TitleChanged value),
     @required Result storyChanged(StoryChanged value),
+    @required Result genreSelected(GenreSelected value),
+    @required Result genreOptionalSelected(GenreOptionalSelected value),
     @required Result languageSelected(LanguageSelected value),
     @required Result copyrightsSelected(CopyrightsSelected value),
     @required Result isNSFWChanged(IsNSFWChanged value),
@@ -127,8 +152,11 @@ mixin _$NewChapterDatabaseEvent {
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result newChapterPageLaunched(NewChapterPageLaunched value),
+    Result addCoverPressed(AddCoverPressed value),
     Result titleChanged(TitleChanged value),
     Result storyChanged(StoryChanged value),
+    Result genreSelected(GenreSelected value),
+    Result genreOptionalSelected(GenreOptionalSelected value),
     Result languageSelected(LanguageSelected value),
     Result copyrightsSelected(CopyrightsSelected value),
     Result isNSFWChanged(IsNSFWChanged value),
@@ -162,7 +190,7 @@ abstract class $NewChapterPageLaunchedCopyWith<$Res> {
       {ParentType parentType,
       ChapterDraft chapterDraft,
       SeriesDraft seriesDraft,
-      ChapterDraft previousChapterDraft,
+      Chapter previousChapter,
       BuildContext context});
 }
 
@@ -181,7 +209,7 @@ class _$NewChapterPageLaunchedCopyWithImpl<$Res>
     Object parentType = freezed,
     Object chapterDraft = freezed,
     Object seriesDraft = freezed,
-    Object previousChapterDraft = freezed,
+    Object previousChapter = freezed,
     Object context = freezed,
   }) {
     return _then(NewChapterPageLaunched(
@@ -193,9 +221,9 @@ class _$NewChapterPageLaunchedCopyWithImpl<$Res>
       seriesDraft: seriesDraft == freezed
           ? _value.seriesDraft
           : seriesDraft as SeriesDraft,
-      previousChapterDraft: previousChapterDraft == freezed
-          ? _value.previousChapterDraft
-          : previousChapterDraft as ChapterDraft,
+      previousChapter: previousChapter == freezed
+          ? _value.previousChapter
+          : previousChapter as Chapter,
       context: context == freezed ? _value.context : context as BuildContext,
     ));
   }
@@ -208,7 +236,7 @@ class _$NewChapterPageLaunched
       {this.parentType,
       this.chapterDraft,
       this.seriesDraft,
-      this.previousChapterDraft,
+      this.previousChapter,
       this.context});
 
   @override
@@ -218,13 +246,13 @@ class _$NewChapterPageLaunched
   @override
   final SeriesDraft seriesDraft;
   @override
-  final ChapterDraft previousChapterDraft;
+  final Chapter previousChapter;
   @override
   final BuildContext context;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'NewChapterDatabaseEvent.newChapterPageLaunched(parentType: $parentType, chapterDraft: $chapterDraft, seriesDraft: $seriesDraft, previousChapterDraft: $previousChapterDraft, context: $context)';
+    return 'NewChapterDatabaseEvent.newChapterPageLaunched(parentType: $parentType, chapterDraft: $chapterDraft, seriesDraft: $seriesDraft, previousChapter: $previousChapter, context: $context)';
   }
 
   @override
@@ -236,7 +264,7 @@ class _$NewChapterPageLaunched
       ..add(DiagnosticsProperty('parentType', parentType))
       ..add(DiagnosticsProperty('chapterDraft', chapterDraft))
       ..add(DiagnosticsProperty('seriesDraft', seriesDraft))
-      ..add(DiagnosticsProperty('previousChapterDraft', previousChapterDraft))
+      ..add(DiagnosticsProperty('previousChapter', previousChapter))
       ..add(DiagnosticsProperty('context', context));
   }
 
@@ -253,9 +281,9 @@ class _$NewChapterPageLaunched
             (identical(other.seriesDraft, seriesDraft) ||
                 const DeepCollectionEquality()
                     .equals(other.seriesDraft, seriesDraft)) &&
-            (identical(other.previousChapterDraft, previousChapterDraft) ||
-                const DeepCollectionEquality().equals(
-                    other.previousChapterDraft, previousChapterDraft)) &&
+            (identical(other.previousChapter, previousChapter) ||
+                const DeepCollectionEquality()
+                    .equals(other.previousChapter, previousChapter)) &&
             (identical(other.context, context) ||
                 const DeepCollectionEquality().equals(other.context, context)));
   }
@@ -266,7 +294,7 @@ class _$NewChapterPageLaunched
       const DeepCollectionEquality().hash(parentType) ^
       const DeepCollectionEquality().hash(chapterDraft) ^
       const DeepCollectionEquality().hash(seriesDraft) ^
-      const DeepCollectionEquality().hash(previousChapterDraft) ^
+      const DeepCollectionEquality().hash(previousChapter) ^
       const DeepCollectionEquality().hash(context);
 
   @override
@@ -282,10 +310,13 @@ class _$NewChapterPageLaunched
             ParentType parentType,
             ChapterDraft chapterDraft,
             SeriesDraft seriesDraft,
-            ChapterDraft previousChapterDraft,
+            Chapter previousChapter,
             BuildContext context),
+    @required Result addCoverPressed(),
     @required Result titleChanged(String title),
     @required Result storyChanged(String story),
+    @required Result genreSelected(String genre),
+    @required Result genreOptionalSelected(String genreOptional),
     @required Result languageSelected(String language),
     @required Result copyrightsSelected(String copyrights),
     @required Result isNSFWChanged(bool isNSFW),
@@ -294,8 +325,11 @@ class _$NewChapterPageLaunched
     @required Result saveOrBackButtonPressed(),
   }) {
     assert(newChapterPageLaunched != null);
+    assert(addCoverPressed != null);
     assert(titleChanged != null);
     assert(storyChanged != null);
+    assert(genreSelected != null);
+    assert(genreOptionalSelected != null);
     assert(languageSelected != null);
     assert(copyrightsSelected != null);
     assert(isNSFWChanged != null);
@@ -303,7 +337,7 @@ class _$NewChapterPageLaunched
     assert(publishButtonPressed != null);
     assert(saveOrBackButtonPressed != null);
     return newChapterPageLaunched(
-        parentType, chapterDraft, seriesDraft, previousChapterDraft, context);
+        parentType, chapterDraft, seriesDraft, previousChapter, context);
   }
 
   @override
@@ -313,10 +347,13 @@ class _$NewChapterPageLaunched
         ParentType parentType,
         ChapterDraft chapterDraft,
         SeriesDraft seriesDraft,
-        ChapterDraft previousChapterDraft,
+        Chapter previousChapter,
         BuildContext context),
+    Result addCoverPressed(),
     Result titleChanged(String title),
     Result storyChanged(String story),
+    Result genreSelected(String genre),
+    Result genreOptionalSelected(String genreOptional),
     Result languageSelected(String language),
     Result copyrightsSelected(String copyrights),
     Result isNSFWChanged(bool isNSFW),
@@ -328,7 +365,7 @@ class _$NewChapterPageLaunched
     assert(orElse != null);
     if (newChapterPageLaunched != null) {
       return newChapterPageLaunched(
-          parentType, chapterDraft, seriesDraft, previousChapterDraft, context);
+          parentType, chapterDraft, seriesDraft, previousChapter, context);
     }
     return orElse();
   }
@@ -337,8 +374,11 @@ class _$NewChapterPageLaunched
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result newChapterPageLaunched(NewChapterPageLaunched value),
+    @required Result addCoverPressed(AddCoverPressed value),
     @required Result titleChanged(TitleChanged value),
     @required Result storyChanged(StoryChanged value),
+    @required Result genreSelected(GenreSelected value),
+    @required Result genreOptionalSelected(GenreOptionalSelected value),
     @required Result languageSelected(LanguageSelected value),
     @required Result copyrightsSelected(CopyrightsSelected value),
     @required Result isNSFWChanged(IsNSFWChanged value),
@@ -347,8 +387,11 @@ class _$NewChapterPageLaunched
     @required Result saveOrBackButtonPressed(SaveOrBackButtonPressed value),
   }) {
     assert(newChapterPageLaunched != null);
+    assert(addCoverPressed != null);
     assert(titleChanged != null);
     assert(storyChanged != null);
+    assert(genreSelected != null);
+    assert(genreOptionalSelected != null);
     assert(languageSelected != null);
     assert(copyrightsSelected != null);
     assert(isNSFWChanged != null);
@@ -362,8 +405,11 @@ class _$NewChapterPageLaunched
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result newChapterPageLaunched(NewChapterPageLaunched value),
+    Result addCoverPressed(AddCoverPressed value),
     Result titleChanged(TitleChanged value),
     Result storyChanged(StoryChanged value),
+    Result genreSelected(GenreSelected value),
+    Result genreOptionalSelected(GenreOptionalSelected value),
     Result languageSelected(LanguageSelected value),
     Result copyrightsSelected(CopyrightsSelected value),
     Result isNSFWChanged(IsNSFWChanged value),
@@ -385,15 +431,184 @@ abstract class NewChapterPageLaunched implements NewChapterDatabaseEvent {
       {ParentType parentType,
       ChapterDraft chapterDraft,
       SeriesDraft seriesDraft,
-      ChapterDraft previousChapterDraft,
+      Chapter previousChapter,
       BuildContext context}) = _$NewChapterPageLaunched;
 
   ParentType get parentType;
   ChapterDraft get chapterDraft;
   SeriesDraft get seriesDraft;
-  ChapterDraft get previousChapterDraft;
+  Chapter get previousChapter;
   BuildContext get context;
   $NewChapterPageLaunchedCopyWith<NewChapterPageLaunched> get copyWith;
+}
+
+abstract class $AddCoverPressedCopyWith<$Res> {
+  factory $AddCoverPressedCopyWith(
+          AddCoverPressed value, $Res Function(AddCoverPressed) then) =
+      _$AddCoverPressedCopyWithImpl<$Res>;
+}
+
+class _$AddCoverPressedCopyWithImpl<$Res>
+    extends _$NewChapterDatabaseEventCopyWithImpl<$Res>
+    implements $AddCoverPressedCopyWith<$Res> {
+  _$AddCoverPressedCopyWithImpl(
+      AddCoverPressed _value, $Res Function(AddCoverPressed) _then)
+      : super(_value, (v) => _then(v as AddCoverPressed));
+
+  @override
+  AddCoverPressed get _value => super._value as AddCoverPressed;
+}
+
+class _$AddCoverPressed
+    with DiagnosticableTreeMixin
+    implements AddCoverPressed {
+  const _$AddCoverPressed();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'NewChapterDatabaseEvent.addCoverPressed()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty(
+          'type', 'NewChapterDatabaseEvent.addCoverPressed'));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is AddCoverPressed);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required
+        Result newChapterPageLaunched(
+            ParentType parentType,
+            ChapterDraft chapterDraft,
+            SeriesDraft seriesDraft,
+            Chapter previousChapter,
+            BuildContext context),
+    @required Result addCoverPressed(),
+    @required Result titleChanged(String title),
+    @required Result storyChanged(String story),
+    @required Result genreSelected(String genre),
+    @required Result genreOptionalSelected(String genreOptional),
+    @required Result languageSelected(String language),
+    @required Result copyrightsSelected(String copyrights),
+    @required Result isNSFWChanged(bool isNSFW),
+    @required Result isEndChanged(bool isEnd),
+    @required Result publishButtonPressed(),
+    @required Result saveOrBackButtonPressed(),
+  }) {
+    assert(newChapterPageLaunched != null);
+    assert(addCoverPressed != null);
+    assert(titleChanged != null);
+    assert(storyChanged != null);
+    assert(genreSelected != null);
+    assert(genreOptionalSelected != null);
+    assert(languageSelected != null);
+    assert(copyrightsSelected != null);
+    assert(isNSFWChanged != null);
+    assert(isEndChanged != null);
+    assert(publishButtonPressed != null);
+    assert(saveOrBackButtonPressed != null);
+    return addCoverPressed();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result newChapterPageLaunched(
+        ParentType parentType,
+        ChapterDraft chapterDraft,
+        SeriesDraft seriesDraft,
+        Chapter previousChapter,
+        BuildContext context),
+    Result addCoverPressed(),
+    Result titleChanged(String title),
+    Result storyChanged(String story),
+    Result genreSelected(String genre),
+    Result genreOptionalSelected(String genreOptional),
+    Result languageSelected(String language),
+    Result copyrightsSelected(String copyrights),
+    Result isNSFWChanged(bool isNSFW),
+    Result isEndChanged(bool isEnd),
+    Result publishButtonPressed(),
+    Result saveOrBackButtonPressed(),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (addCoverPressed != null) {
+      return addCoverPressed();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result newChapterPageLaunched(NewChapterPageLaunched value),
+    @required Result addCoverPressed(AddCoverPressed value),
+    @required Result titleChanged(TitleChanged value),
+    @required Result storyChanged(StoryChanged value),
+    @required Result genreSelected(GenreSelected value),
+    @required Result genreOptionalSelected(GenreOptionalSelected value),
+    @required Result languageSelected(LanguageSelected value),
+    @required Result copyrightsSelected(CopyrightsSelected value),
+    @required Result isNSFWChanged(IsNSFWChanged value),
+    @required Result isEndChanged(IsEndChanged value),
+    @required Result publishButtonPressed(PublishButtonPressed value),
+    @required Result saveOrBackButtonPressed(SaveOrBackButtonPressed value),
+  }) {
+    assert(newChapterPageLaunched != null);
+    assert(addCoverPressed != null);
+    assert(titleChanged != null);
+    assert(storyChanged != null);
+    assert(genreSelected != null);
+    assert(genreOptionalSelected != null);
+    assert(languageSelected != null);
+    assert(copyrightsSelected != null);
+    assert(isNSFWChanged != null);
+    assert(isEndChanged != null);
+    assert(publishButtonPressed != null);
+    assert(saveOrBackButtonPressed != null);
+    return addCoverPressed(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result newChapterPageLaunched(NewChapterPageLaunched value),
+    Result addCoverPressed(AddCoverPressed value),
+    Result titleChanged(TitleChanged value),
+    Result storyChanged(StoryChanged value),
+    Result genreSelected(GenreSelected value),
+    Result genreOptionalSelected(GenreOptionalSelected value),
+    Result languageSelected(LanguageSelected value),
+    Result copyrightsSelected(CopyrightsSelected value),
+    Result isNSFWChanged(IsNSFWChanged value),
+    Result isEndChanged(IsEndChanged value),
+    Result publishButtonPressed(PublishButtonPressed value),
+    Result saveOrBackButtonPressed(SaveOrBackButtonPressed value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (addCoverPressed != null) {
+      return addCoverPressed(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class AddCoverPressed implements NewChapterDatabaseEvent {
+  const factory AddCoverPressed() = _$AddCoverPressed;
 }
 
 abstract class $TitleChangedCopyWith<$Res> {
@@ -466,10 +681,13 @@ class _$TitleChanged with DiagnosticableTreeMixin implements TitleChanged {
             ParentType parentType,
             ChapterDraft chapterDraft,
             SeriesDraft seriesDraft,
-            ChapterDraft previousChapterDraft,
+            Chapter previousChapter,
             BuildContext context),
+    @required Result addCoverPressed(),
     @required Result titleChanged(String title),
     @required Result storyChanged(String story),
+    @required Result genreSelected(String genre),
+    @required Result genreOptionalSelected(String genreOptional),
     @required Result languageSelected(String language),
     @required Result copyrightsSelected(String copyrights),
     @required Result isNSFWChanged(bool isNSFW),
@@ -478,8 +696,11 @@ class _$TitleChanged with DiagnosticableTreeMixin implements TitleChanged {
     @required Result saveOrBackButtonPressed(),
   }) {
     assert(newChapterPageLaunched != null);
+    assert(addCoverPressed != null);
     assert(titleChanged != null);
     assert(storyChanged != null);
+    assert(genreSelected != null);
+    assert(genreOptionalSelected != null);
     assert(languageSelected != null);
     assert(copyrightsSelected != null);
     assert(isNSFWChanged != null);
@@ -496,10 +717,13 @@ class _$TitleChanged with DiagnosticableTreeMixin implements TitleChanged {
         ParentType parentType,
         ChapterDraft chapterDraft,
         SeriesDraft seriesDraft,
-        ChapterDraft previousChapterDraft,
+        Chapter previousChapter,
         BuildContext context),
+    Result addCoverPressed(),
     Result titleChanged(String title),
     Result storyChanged(String story),
+    Result genreSelected(String genre),
+    Result genreOptionalSelected(String genreOptional),
     Result languageSelected(String language),
     Result copyrightsSelected(String copyrights),
     Result isNSFWChanged(bool isNSFW),
@@ -519,8 +743,11 @@ class _$TitleChanged with DiagnosticableTreeMixin implements TitleChanged {
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result newChapterPageLaunched(NewChapterPageLaunched value),
+    @required Result addCoverPressed(AddCoverPressed value),
     @required Result titleChanged(TitleChanged value),
     @required Result storyChanged(StoryChanged value),
+    @required Result genreSelected(GenreSelected value),
+    @required Result genreOptionalSelected(GenreOptionalSelected value),
     @required Result languageSelected(LanguageSelected value),
     @required Result copyrightsSelected(CopyrightsSelected value),
     @required Result isNSFWChanged(IsNSFWChanged value),
@@ -529,8 +756,11 @@ class _$TitleChanged with DiagnosticableTreeMixin implements TitleChanged {
     @required Result saveOrBackButtonPressed(SaveOrBackButtonPressed value),
   }) {
     assert(newChapterPageLaunched != null);
+    assert(addCoverPressed != null);
     assert(titleChanged != null);
     assert(storyChanged != null);
+    assert(genreSelected != null);
+    assert(genreOptionalSelected != null);
     assert(languageSelected != null);
     assert(copyrightsSelected != null);
     assert(isNSFWChanged != null);
@@ -544,8 +774,11 @@ class _$TitleChanged with DiagnosticableTreeMixin implements TitleChanged {
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result newChapterPageLaunched(NewChapterPageLaunched value),
+    Result addCoverPressed(AddCoverPressed value),
     Result titleChanged(TitleChanged value),
     Result storyChanged(StoryChanged value),
+    Result genreSelected(GenreSelected value),
+    Result genreOptionalSelected(GenreOptionalSelected value),
     Result languageSelected(LanguageSelected value),
     Result copyrightsSelected(CopyrightsSelected value),
     Result isNSFWChanged(IsNSFWChanged value),
@@ -639,10 +872,13 @@ class _$StoryChanged with DiagnosticableTreeMixin implements StoryChanged {
             ParentType parentType,
             ChapterDraft chapterDraft,
             SeriesDraft seriesDraft,
-            ChapterDraft previousChapterDraft,
+            Chapter previousChapter,
             BuildContext context),
+    @required Result addCoverPressed(),
     @required Result titleChanged(String title),
     @required Result storyChanged(String story),
+    @required Result genreSelected(String genre),
+    @required Result genreOptionalSelected(String genreOptional),
     @required Result languageSelected(String language),
     @required Result copyrightsSelected(String copyrights),
     @required Result isNSFWChanged(bool isNSFW),
@@ -651,8 +887,11 @@ class _$StoryChanged with DiagnosticableTreeMixin implements StoryChanged {
     @required Result saveOrBackButtonPressed(),
   }) {
     assert(newChapterPageLaunched != null);
+    assert(addCoverPressed != null);
     assert(titleChanged != null);
     assert(storyChanged != null);
+    assert(genreSelected != null);
+    assert(genreOptionalSelected != null);
     assert(languageSelected != null);
     assert(copyrightsSelected != null);
     assert(isNSFWChanged != null);
@@ -669,10 +908,13 @@ class _$StoryChanged with DiagnosticableTreeMixin implements StoryChanged {
         ParentType parentType,
         ChapterDraft chapterDraft,
         SeriesDraft seriesDraft,
-        ChapterDraft previousChapterDraft,
+        Chapter previousChapter,
         BuildContext context),
+    Result addCoverPressed(),
     Result titleChanged(String title),
     Result storyChanged(String story),
+    Result genreSelected(String genre),
+    Result genreOptionalSelected(String genreOptional),
     Result languageSelected(String language),
     Result copyrightsSelected(String copyrights),
     Result isNSFWChanged(bool isNSFW),
@@ -692,8 +934,11 @@ class _$StoryChanged with DiagnosticableTreeMixin implements StoryChanged {
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result newChapterPageLaunched(NewChapterPageLaunched value),
+    @required Result addCoverPressed(AddCoverPressed value),
     @required Result titleChanged(TitleChanged value),
     @required Result storyChanged(StoryChanged value),
+    @required Result genreSelected(GenreSelected value),
+    @required Result genreOptionalSelected(GenreOptionalSelected value),
     @required Result languageSelected(LanguageSelected value),
     @required Result copyrightsSelected(CopyrightsSelected value),
     @required Result isNSFWChanged(IsNSFWChanged value),
@@ -702,8 +947,11 @@ class _$StoryChanged with DiagnosticableTreeMixin implements StoryChanged {
     @required Result saveOrBackButtonPressed(SaveOrBackButtonPressed value),
   }) {
     assert(newChapterPageLaunched != null);
+    assert(addCoverPressed != null);
     assert(titleChanged != null);
     assert(storyChanged != null);
+    assert(genreSelected != null);
+    assert(genreOptionalSelected != null);
     assert(languageSelected != null);
     assert(copyrightsSelected != null);
     assert(isNSFWChanged != null);
@@ -717,8 +965,11 @@ class _$StoryChanged with DiagnosticableTreeMixin implements StoryChanged {
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result newChapterPageLaunched(NewChapterPageLaunched value),
+    Result addCoverPressed(AddCoverPressed value),
     Result titleChanged(TitleChanged value),
     Result storyChanged(StoryChanged value),
+    Result genreSelected(GenreSelected value),
+    Result genreOptionalSelected(GenreOptionalSelected value),
     Result languageSelected(LanguageSelected value),
     Result copyrightsSelected(CopyrightsSelected value),
     Result isNSFWChanged(IsNSFWChanged value),
@@ -740,6 +991,396 @@ abstract class StoryChanged implements NewChapterDatabaseEvent {
 
   String get story;
   $StoryChangedCopyWith<StoryChanged> get copyWith;
+}
+
+abstract class $GenreSelectedCopyWith<$Res> {
+  factory $GenreSelectedCopyWith(
+          GenreSelected value, $Res Function(GenreSelected) then) =
+      _$GenreSelectedCopyWithImpl<$Res>;
+  $Res call({String genre});
+}
+
+class _$GenreSelectedCopyWithImpl<$Res>
+    extends _$NewChapterDatabaseEventCopyWithImpl<$Res>
+    implements $GenreSelectedCopyWith<$Res> {
+  _$GenreSelectedCopyWithImpl(
+      GenreSelected _value, $Res Function(GenreSelected) _then)
+      : super(_value, (v) => _then(v as GenreSelected));
+
+  @override
+  GenreSelected get _value => super._value as GenreSelected;
+
+  @override
+  $Res call({
+    Object genre = freezed,
+  }) {
+    return _then(GenreSelected(
+      genre == freezed ? _value.genre : genre as String,
+    ));
+  }
+}
+
+class _$GenreSelected with DiagnosticableTreeMixin implements GenreSelected {
+  const _$GenreSelected(this.genre) : assert(genre != null);
+
+  @override
+  final String genre;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'NewChapterDatabaseEvent.genreSelected(genre: $genre)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(
+          DiagnosticsProperty('type', 'NewChapterDatabaseEvent.genreSelected'))
+      ..add(DiagnosticsProperty('genre', genre));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is GenreSelected &&
+            (identical(other.genre, genre) ||
+                const DeepCollectionEquality().equals(other.genre, genre)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(genre);
+
+  @override
+  $GenreSelectedCopyWith<GenreSelected> get copyWith =>
+      _$GenreSelectedCopyWithImpl<GenreSelected>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required
+        Result newChapterPageLaunched(
+            ParentType parentType,
+            ChapterDraft chapterDraft,
+            SeriesDraft seriesDraft,
+            Chapter previousChapter,
+            BuildContext context),
+    @required Result addCoverPressed(),
+    @required Result titleChanged(String title),
+    @required Result storyChanged(String story),
+    @required Result genreSelected(String genre),
+    @required Result genreOptionalSelected(String genreOptional),
+    @required Result languageSelected(String language),
+    @required Result copyrightsSelected(String copyrights),
+    @required Result isNSFWChanged(bool isNSFW),
+    @required Result isEndChanged(bool isEnd),
+    @required Result publishButtonPressed(),
+    @required Result saveOrBackButtonPressed(),
+  }) {
+    assert(newChapterPageLaunched != null);
+    assert(addCoverPressed != null);
+    assert(titleChanged != null);
+    assert(storyChanged != null);
+    assert(genreSelected != null);
+    assert(genreOptionalSelected != null);
+    assert(languageSelected != null);
+    assert(copyrightsSelected != null);
+    assert(isNSFWChanged != null);
+    assert(isEndChanged != null);
+    assert(publishButtonPressed != null);
+    assert(saveOrBackButtonPressed != null);
+    return genreSelected(genre);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result newChapterPageLaunched(
+        ParentType parentType,
+        ChapterDraft chapterDraft,
+        SeriesDraft seriesDraft,
+        Chapter previousChapter,
+        BuildContext context),
+    Result addCoverPressed(),
+    Result titleChanged(String title),
+    Result storyChanged(String story),
+    Result genreSelected(String genre),
+    Result genreOptionalSelected(String genreOptional),
+    Result languageSelected(String language),
+    Result copyrightsSelected(String copyrights),
+    Result isNSFWChanged(bool isNSFW),
+    Result isEndChanged(bool isEnd),
+    Result publishButtonPressed(),
+    Result saveOrBackButtonPressed(),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (genreSelected != null) {
+      return genreSelected(genre);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result newChapterPageLaunched(NewChapterPageLaunched value),
+    @required Result addCoverPressed(AddCoverPressed value),
+    @required Result titleChanged(TitleChanged value),
+    @required Result storyChanged(StoryChanged value),
+    @required Result genreSelected(GenreSelected value),
+    @required Result genreOptionalSelected(GenreOptionalSelected value),
+    @required Result languageSelected(LanguageSelected value),
+    @required Result copyrightsSelected(CopyrightsSelected value),
+    @required Result isNSFWChanged(IsNSFWChanged value),
+    @required Result isEndChanged(IsEndChanged value),
+    @required Result publishButtonPressed(PublishButtonPressed value),
+    @required Result saveOrBackButtonPressed(SaveOrBackButtonPressed value),
+  }) {
+    assert(newChapterPageLaunched != null);
+    assert(addCoverPressed != null);
+    assert(titleChanged != null);
+    assert(storyChanged != null);
+    assert(genreSelected != null);
+    assert(genreOptionalSelected != null);
+    assert(languageSelected != null);
+    assert(copyrightsSelected != null);
+    assert(isNSFWChanged != null);
+    assert(isEndChanged != null);
+    assert(publishButtonPressed != null);
+    assert(saveOrBackButtonPressed != null);
+    return genreSelected(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result newChapterPageLaunched(NewChapterPageLaunched value),
+    Result addCoverPressed(AddCoverPressed value),
+    Result titleChanged(TitleChanged value),
+    Result storyChanged(StoryChanged value),
+    Result genreSelected(GenreSelected value),
+    Result genreOptionalSelected(GenreOptionalSelected value),
+    Result languageSelected(LanguageSelected value),
+    Result copyrightsSelected(CopyrightsSelected value),
+    Result isNSFWChanged(IsNSFWChanged value),
+    Result isEndChanged(IsEndChanged value),
+    Result publishButtonPressed(PublishButtonPressed value),
+    Result saveOrBackButtonPressed(SaveOrBackButtonPressed value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (genreSelected != null) {
+      return genreSelected(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GenreSelected implements NewChapterDatabaseEvent {
+  const factory GenreSelected(String genre) = _$GenreSelected;
+
+  String get genre;
+  $GenreSelectedCopyWith<GenreSelected> get copyWith;
+}
+
+abstract class $GenreOptionalSelectedCopyWith<$Res> {
+  factory $GenreOptionalSelectedCopyWith(GenreOptionalSelected value,
+          $Res Function(GenreOptionalSelected) then) =
+      _$GenreOptionalSelectedCopyWithImpl<$Res>;
+  $Res call({String genreOptional});
+}
+
+class _$GenreOptionalSelectedCopyWithImpl<$Res>
+    extends _$NewChapterDatabaseEventCopyWithImpl<$Res>
+    implements $GenreOptionalSelectedCopyWith<$Res> {
+  _$GenreOptionalSelectedCopyWithImpl(
+      GenreOptionalSelected _value, $Res Function(GenreOptionalSelected) _then)
+      : super(_value, (v) => _then(v as GenreOptionalSelected));
+
+  @override
+  GenreOptionalSelected get _value => super._value as GenreOptionalSelected;
+
+  @override
+  $Res call({
+    Object genreOptional = freezed,
+  }) {
+    return _then(GenreOptionalSelected(
+      genreOptional == freezed ? _value.genreOptional : genreOptional as String,
+    ));
+  }
+}
+
+class _$GenreOptionalSelected
+    with DiagnosticableTreeMixin
+    implements GenreOptionalSelected {
+  const _$GenreOptionalSelected(this.genreOptional)
+      : assert(genreOptional != null);
+
+  @override
+  final String genreOptional;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'NewChapterDatabaseEvent.genreOptionalSelected(genreOptional: $genreOptional)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty(
+          'type', 'NewChapterDatabaseEvent.genreOptionalSelected'))
+      ..add(DiagnosticsProperty('genreOptional', genreOptional));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is GenreOptionalSelected &&
+            (identical(other.genreOptional, genreOptional) ||
+                const DeepCollectionEquality()
+                    .equals(other.genreOptional, genreOptional)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(genreOptional);
+
+  @override
+  $GenreOptionalSelectedCopyWith<GenreOptionalSelected> get copyWith =>
+      _$GenreOptionalSelectedCopyWithImpl<GenreOptionalSelected>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required
+        Result newChapterPageLaunched(
+            ParentType parentType,
+            ChapterDraft chapterDraft,
+            SeriesDraft seriesDraft,
+            Chapter previousChapter,
+            BuildContext context),
+    @required Result addCoverPressed(),
+    @required Result titleChanged(String title),
+    @required Result storyChanged(String story),
+    @required Result genreSelected(String genre),
+    @required Result genreOptionalSelected(String genreOptional),
+    @required Result languageSelected(String language),
+    @required Result copyrightsSelected(String copyrights),
+    @required Result isNSFWChanged(bool isNSFW),
+    @required Result isEndChanged(bool isEnd),
+    @required Result publishButtonPressed(),
+    @required Result saveOrBackButtonPressed(),
+  }) {
+    assert(newChapterPageLaunched != null);
+    assert(addCoverPressed != null);
+    assert(titleChanged != null);
+    assert(storyChanged != null);
+    assert(genreSelected != null);
+    assert(genreOptionalSelected != null);
+    assert(languageSelected != null);
+    assert(copyrightsSelected != null);
+    assert(isNSFWChanged != null);
+    assert(isEndChanged != null);
+    assert(publishButtonPressed != null);
+    assert(saveOrBackButtonPressed != null);
+    return genreOptionalSelected(genreOptional);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result newChapterPageLaunched(
+        ParentType parentType,
+        ChapterDraft chapterDraft,
+        SeriesDraft seriesDraft,
+        Chapter previousChapter,
+        BuildContext context),
+    Result addCoverPressed(),
+    Result titleChanged(String title),
+    Result storyChanged(String story),
+    Result genreSelected(String genre),
+    Result genreOptionalSelected(String genreOptional),
+    Result languageSelected(String language),
+    Result copyrightsSelected(String copyrights),
+    Result isNSFWChanged(bool isNSFW),
+    Result isEndChanged(bool isEnd),
+    Result publishButtonPressed(),
+    Result saveOrBackButtonPressed(),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (genreOptionalSelected != null) {
+      return genreOptionalSelected(genreOptional);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result newChapterPageLaunched(NewChapterPageLaunched value),
+    @required Result addCoverPressed(AddCoverPressed value),
+    @required Result titleChanged(TitleChanged value),
+    @required Result storyChanged(StoryChanged value),
+    @required Result genreSelected(GenreSelected value),
+    @required Result genreOptionalSelected(GenreOptionalSelected value),
+    @required Result languageSelected(LanguageSelected value),
+    @required Result copyrightsSelected(CopyrightsSelected value),
+    @required Result isNSFWChanged(IsNSFWChanged value),
+    @required Result isEndChanged(IsEndChanged value),
+    @required Result publishButtonPressed(PublishButtonPressed value),
+    @required Result saveOrBackButtonPressed(SaveOrBackButtonPressed value),
+  }) {
+    assert(newChapterPageLaunched != null);
+    assert(addCoverPressed != null);
+    assert(titleChanged != null);
+    assert(storyChanged != null);
+    assert(genreSelected != null);
+    assert(genreOptionalSelected != null);
+    assert(languageSelected != null);
+    assert(copyrightsSelected != null);
+    assert(isNSFWChanged != null);
+    assert(isEndChanged != null);
+    assert(publishButtonPressed != null);
+    assert(saveOrBackButtonPressed != null);
+    return genreOptionalSelected(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result newChapterPageLaunched(NewChapterPageLaunched value),
+    Result addCoverPressed(AddCoverPressed value),
+    Result titleChanged(TitleChanged value),
+    Result storyChanged(StoryChanged value),
+    Result genreSelected(GenreSelected value),
+    Result genreOptionalSelected(GenreOptionalSelected value),
+    Result languageSelected(LanguageSelected value),
+    Result copyrightsSelected(CopyrightsSelected value),
+    Result isNSFWChanged(IsNSFWChanged value),
+    Result isEndChanged(IsEndChanged value),
+    Result publishButtonPressed(PublishButtonPressed value),
+    Result saveOrBackButtonPressed(SaveOrBackButtonPressed value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (genreOptionalSelected != null) {
+      return genreOptionalSelected(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GenreOptionalSelected implements NewChapterDatabaseEvent {
+  const factory GenreOptionalSelected(String genreOptional) =
+      _$GenreOptionalSelected;
+
+  String get genreOptional;
+  $GenreOptionalSelectedCopyWith<GenreOptionalSelected> get copyWith;
 }
 
 abstract class $LanguageSelectedCopyWith<$Res> {
@@ -816,10 +1457,13 @@ class _$LanguageSelected
             ParentType parentType,
             ChapterDraft chapterDraft,
             SeriesDraft seriesDraft,
-            ChapterDraft previousChapterDraft,
+            Chapter previousChapter,
             BuildContext context),
+    @required Result addCoverPressed(),
     @required Result titleChanged(String title),
     @required Result storyChanged(String story),
+    @required Result genreSelected(String genre),
+    @required Result genreOptionalSelected(String genreOptional),
     @required Result languageSelected(String language),
     @required Result copyrightsSelected(String copyrights),
     @required Result isNSFWChanged(bool isNSFW),
@@ -828,8 +1472,11 @@ class _$LanguageSelected
     @required Result saveOrBackButtonPressed(),
   }) {
     assert(newChapterPageLaunched != null);
+    assert(addCoverPressed != null);
     assert(titleChanged != null);
     assert(storyChanged != null);
+    assert(genreSelected != null);
+    assert(genreOptionalSelected != null);
     assert(languageSelected != null);
     assert(copyrightsSelected != null);
     assert(isNSFWChanged != null);
@@ -846,10 +1493,13 @@ class _$LanguageSelected
         ParentType parentType,
         ChapterDraft chapterDraft,
         SeriesDraft seriesDraft,
-        ChapterDraft previousChapterDraft,
+        Chapter previousChapter,
         BuildContext context),
+    Result addCoverPressed(),
     Result titleChanged(String title),
     Result storyChanged(String story),
+    Result genreSelected(String genre),
+    Result genreOptionalSelected(String genreOptional),
     Result languageSelected(String language),
     Result copyrightsSelected(String copyrights),
     Result isNSFWChanged(bool isNSFW),
@@ -869,8 +1519,11 @@ class _$LanguageSelected
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result newChapterPageLaunched(NewChapterPageLaunched value),
+    @required Result addCoverPressed(AddCoverPressed value),
     @required Result titleChanged(TitleChanged value),
     @required Result storyChanged(StoryChanged value),
+    @required Result genreSelected(GenreSelected value),
+    @required Result genreOptionalSelected(GenreOptionalSelected value),
     @required Result languageSelected(LanguageSelected value),
     @required Result copyrightsSelected(CopyrightsSelected value),
     @required Result isNSFWChanged(IsNSFWChanged value),
@@ -879,8 +1532,11 @@ class _$LanguageSelected
     @required Result saveOrBackButtonPressed(SaveOrBackButtonPressed value),
   }) {
     assert(newChapterPageLaunched != null);
+    assert(addCoverPressed != null);
     assert(titleChanged != null);
     assert(storyChanged != null);
+    assert(genreSelected != null);
+    assert(genreOptionalSelected != null);
     assert(languageSelected != null);
     assert(copyrightsSelected != null);
     assert(isNSFWChanged != null);
@@ -894,8 +1550,11 @@ class _$LanguageSelected
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result newChapterPageLaunched(NewChapterPageLaunched value),
+    Result addCoverPressed(AddCoverPressed value),
     Result titleChanged(TitleChanged value),
     Result storyChanged(StoryChanged value),
+    Result genreSelected(GenreSelected value),
+    Result genreOptionalSelected(GenreOptionalSelected value),
     Result languageSelected(LanguageSelected value),
     Result copyrightsSelected(CopyrightsSelected value),
     Result isNSFWChanged(IsNSFWChanged value),
@@ -993,10 +1652,13 @@ class _$CopyrightsSelected
             ParentType parentType,
             ChapterDraft chapterDraft,
             SeriesDraft seriesDraft,
-            ChapterDraft previousChapterDraft,
+            Chapter previousChapter,
             BuildContext context),
+    @required Result addCoverPressed(),
     @required Result titleChanged(String title),
     @required Result storyChanged(String story),
+    @required Result genreSelected(String genre),
+    @required Result genreOptionalSelected(String genreOptional),
     @required Result languageSelected(String language),
     @required Result copyrightsSelected(String copyrights),
     @required Result isNSFWChanged(bool isNSFW),
@@ -1005,8 +1667,11 @@ class _$CopyrightsSelected
     @required Result saveOrBackButtonPressed(),
   }) {
     assert(newChapterPageLaunched != null);
+    assert(addCoverPressed != null);
     assert(titleChanged != null);
     assert(storyChanged != null);
+    assert(genreSelected != null);
+    assert(genreOptionalSelected != null);
     assert(languageSelected != null);
     assert(copyrightsSelected != null);
     assert(isNSFWChanged != null);
@@ -1023,10 +1688,13 @@ class _$CopyrightsSelected
         ParentType parentType,
         ChapterDraft chapterDraft,
         SeriesDraft seriesDraft,
-        ChapterDraft previousChapterDraft,
+        Chapter previousChapter,
         BuildContext context),
+    Result addCoverPressed(),
     Result titleChanged(String title),
     Result storyChanged(String story),
+    Result genreSelected(String genre),
+    Result genreOptionalSelected(String genreOptional),
     Result languageSelected(String language),
     Result copyrightsSelected(String copyrights),
     Result isNSFWChanged(bool isNSFW),
@@ -1046,8 +1714,11 @@ class _$CopyrightsSelected
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result newChapterPageLaunched(NewChapterPageLaunched value),
+    @required Result addCoverPressed(AddCoverPressed value),
     @required Result titleChanged(TitleChanged value),
     @required Result storyChanged(StoryChanged value),
+    @required Result genreSelected(GenreSelected value),
+    @required Result genreOptionalSelected(GenreOptionalSelected value),
     @required Result languageSelected(LanguageSelected value),
     @required Result copyrightsSelected(CopyrightsSelected value),
     @required Result isNSFWChanged(IsNSFWChanged value),
@@ -1056,8 +1727,11 @@ class _$CopyrightsSelected
     @required Result saveOrBackButtonPressed(SaveOrBackButtonPressed value),
   }) {
     assert(newChapterPageLaunched != null);
+    assert(addCoverPressed != null);
     assert(titleChanged != null);
     assert(storyChanged != null);
+    assert(genreSelected != null);
+    assert(genreOptionalSelected != null);
     assert(languageSelected != null);
     assert(copyrightsSelected != null);
     assert(isNSFWChanged != null);
@@ -1071,8 +1745,11 @@ class _$CopyrightsSelected
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result newChapterPageLaunched(NewChapterPageLaunched value),
+    Result addCoverPressed(AddCoverPressed value),
     Result titleChanged(TitleChanged value),
     Result storyChanged(StoryChanged value),
+    Result genreSelected(GenreSelected value),
+    Result genreOptionalSelected(GenreOptionalSelected value),
     Result languageSelected(LanguageSelected value),
     Result copyrightsSelected(CopyrightsSelected value),
     Result isNSFWChanged(IsNSFWChanged value),
@@ -1167,10 +1844,13 @@ class _$IsNSFWChanged with DiagnosticableTreeMixin implements IsNSFWChanged {
             ParentType parentType,
             ChapterDraft chapterDraft,
             SeriesDraft seriesDraft,
-            ChapterDraft previousChapterDraft,
+            Chapter previousChapter,
             BuildContext context),
+    @required Result addCoverPressed(),
     @required Result titleChanged(String title),
     @required Result storyChanged(String story),
+    @required Result genreSelected(String genre),
+    @required Result genreOptionalSelected(String genreOptional),
     @required Result languageSelected(String language),
     @required Result copyrightsSelected(String copyrights),
     @required Result isNSFWChanged(bool isNSFW),
@@ -1179,8 +1859,11 @@ class _$IsNSFWChanged with DiagnosticableTreeMixin implements IsNSFWChanged {
     @required Result saveOrBackButtonPressed(),
   }) {
     assert(newChapterPageLaunched != null);
+    assert(addCoverPressed != null);
     assert(titleChanged != null);
     assert(storyChanged != null);
+    assert(genreSelected != null);
+    assert(genreOptionalSelected != null);
     assert(languageSelected != null);
     assert(copyrightsSelected != null);
     assert(isNSFWChanged != null);
@@ -1197,10 +1880,13 @@ class _$IsNSFWChanged with DiagnosticableTreeMixin implements IsNSFWChanged {
         ParentType parentType,
         ChapterDraft chapterDraft,
         SeriesDraft seriesDraft,
-        ChapterDraft previousChapterDraft,
+        Chapter previousChapter,
         BuildContext context),
+    Result addCoverPressed(),
     Result titleChanged(String title),
     Result storyChanged(String story),
+    Result genreSelected(String genre),
+    Result genreOptionalSelected(String genreOptional),
     Result languageSelected(String language),
     Result copyrightsSelected(String copyrights),
     Result isNSFWChanged(bool isNSFW),
@@ -1220,8 +1906,11 @@ class _$IsNSFWChanged with DiagnosticableTreeMixin implements IsNSFWChanged {
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result newChapterPageLaunched(NewChapterPageLaunched value),
+    @required Result addCoverPressed(AddCoverPressed value),
     @required Result titleChanged(TitleChanged value),
     @required Result storyChanged(StoryChanged value),
+    @required Result genreSelected(GenreSelected value),
+    @required Result genreOptionalSelected(GenreOptionalSelected value),
     @required Result languageSelected(LanguageSelected value),
     @required Result copyrightsSelected(CopyrightsSelected value),
     @required Result isNSFWChanged(IsNSFWChanged value),
@@ -1230,8 +1919,11 @@ class _$IsNSFWChanged with DiagnosticableTreeMixin implements IsNSFWChanged {
     @required Result saveOrBackButtonPressed(SaveOrBackButtonPressed value),
   }) {
     assert(newChapterPageLaunched != null);
+    assert(addCoverPressed != null);
     assert(titleChanged != null);
     assert(storyChanged != null);
+    assert(genreSelected != null);
+    assert(genreOptionalSelected != null);
     assert(languageSelected != null);
     assert(copyrightsSelected != null);
     assert(isNSFWChanged != null);
@@ -1245,8 +1937,11 @@ class _$IsNSFWChanged with DiagnosticableTreeMixin implements IsNSFWChanged {
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result newChapterPageLaunched(NewChapterPageLaunched value),
+    Result addCoverPressed(AddCoverPressed value),
     Result titleChanged(TitleChanged value),
     Result storyChanged(StoryChanged value),
+    Result genreSelected(GenreSelected value),
+    Result genreOptionalSelected(GenreOptionalSelected value),
     Result languageSelected(LanguageSelected value),
     Result copyrightsSelected(CopyrightsSelected value),
     Result isNSFWChanged(IsNSFWChanged value),
@@ -1340,10 +2035,13 @@ class _$IsEndChanged with DiagnosticableTreeMixin implements IsEndChanged {
             ParentType parentType,
             ChapterDraft chapterDraft,
             SeriesDraft seriesDraft,
-            ChapterDraft previousChapterDraft,
+            Chapter previousChapter,
             BuildContext context),
+    @required Result addCoverPressed(),
     @required Result titleChanged(String title),
     @required Result storyChanged(String story),
+    @required Result genreSelected(String genre),
+    @required Result genreOptionalSelected(String genreOptional),
     @required Result languageSelected(String language),
     @required Result copyrightsSelected(String copyrights),
     @required Result isNSFWChanged(bool isNSFW),
@@ -1352,8 +2050,11 @@ class _$IsEndChanged with DiagnosticableTreeMixin implements IsEndChanged {
     @required Result saveOrBackButtonPressed(),
   }) {
     assert(newChapterPageLaunched != null);
+    assert(addCoverPressed != null);
     assert(titleChanged != null);
     assert(storyChanged != null);
+    assert(genreSelected != null);
+    assert(genreOptionalSelected != null);
     assert(languageSelected != null);
     assert(copyrightsSelected != null);
     assert(isNSFWChanged != null);
@@ -1370,10 +2071,13 @@ class _$IsEndChanged with DiagnosticableTreeMixin implements IsEndChanged {
         ParentType parentType,
         ChapterDraft chapterDraft,
         SeriesDraft seriesDraft,
-        ChapterDraft previousChapterDraft,
+        Chapter previousChapter,
         BuildContext context),
+    Result addCoverPressed(),
     Result titleChanged(String title),
     Result storyChanged(String story),
+    Result genreSelected(String genre),
+    Result genreOptionalSelected(String genreOptional),
     Result languageSelected(String language),
     Result copyrightsSelected(String copyrights),
     Result isNSFWChanged(bool isNSFW),
@@ -1393,8 +2097,11 @@ class _$IsEndChanged with DiagnosticableTreeMixin implements IsEndChanged {
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result newChapterPageLaunched(NewChapterPageLaunched value),
+    @required Result addCoverPressed(AddCoverPressed value),
     @required Result titleChanged(TitleChanged value),
     @required Result storyChanged(StoryChanged value),
+    @required Result genreSelected(GenreSelected value),
+    @required Result genreOptionalSelected(GenreOptionalSelected value),
     @required Result languageSelected(LanguageSelected value),
     @required Result copyrightsSelected(CopyrightsSelected value),
     @required Result isNSFWChanged(IsNSFWChanged value),
@@ -1403,8 +2110,11 @@ class _$IsEndChanged with DiagnosticableTreeMixin implements IsEndChanged {
     @required Result saveOrBackButtonPressed(SaveOrBackButtonPressed value),
   }) {
     assert(newChapterPageLaunched != null);
+    assert(addCoverPressed != null);
     assert(titleChanged != null);
     assert(storyChanged != null);
+    assert(genreSelected != null);
+    assert(genreOptionalSelected != null);
     assert(languageSelected != null);
     assert(copyrightsSelected != null);
     assert(isNSFWChanged != null);
@@ -1418,8 +2128,11 @@ class _$IsEndChanged with DiagnosticableTreeMixin implements IsEndChanged {
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result newChapterPageLaunched(NewChapterPageLaunched value),
+    Result addCoverPressed(AddCoverPressed value),
     Result titleChanged(TitleChanged value),
     Result storyChanged(StoryChanged value),
+    Result genreSelected(GenreSelected value),
+    Result genreOptionalSelected(GenreOptionalSelected value),
     Result languageSelected(LanguageSelected value),
     Result copyrightsSelected(CopyrightsSelected value),
     Result isNSFWChanged(IsNSFWChanged value),
@@ -1494,10 +2207,13 @@ class _$PublishButtonPressed
             ParentType parentType,
             ChapterDraft chapterDraft,
             SeriesDraft seriesDraft,
-            ChapterDraft previousChapterDraft,
+            Chapter previousChapter,
             BuildContext context),
+    @required Result addCoverPressed(),
     @required Result titleChanged(String title),
     @required Result storyChanged(String story),
+    @required Result genreSelected(String genre),
+    @required Result genreOptionalSelected(String genreOptional),
     @required Result languageSelected(String language),
     @required Result copyrightsSelected(String copyrights),
     @required Result isNSFWChanged(bool isNSFW),
@@ -1506,8 +2222,11 @@ class _$PublishButtonPressed
     @required Result saveOrBackButtonPressed(),
   }) {
     assert(newChapterPageLaunched != null);
+    assert(addCoverPressed != null);
     assert(titleChanged != null);
     assert(storyChanged != null);
+    assert(genreSelected != null);
+    assert(genreOptionalSelected != null);
     assert(languageSelected != null);
     assert(copyrightsSelected != null);
     assert(isNSFWChanged != null);
@@ -1524,10 +2243,13 @@ class _$PublishButtonPressed
         ParentType parentType,
         ChapterDraft chapterDraft,
         SeriesDraft seriesDraft,
-        ChapterDraft previousChapterDraft,
+        Chapter previousChapter,
         BuildContext context),
+    Result addCoverPressed(),
     Result titleChanged(String title),
     Result storyChanged(String story),
+    Result genreSelected(String genre),
+    Result genreOptionalSelected(String genreOptional),
     Result languageSelected(String language),
     Result copyrightsSelected(String copyrights),
     Result isNSFWChanged(bool isNSFW),
@@ -1547,8 +2269,11 @@ class _$PublishButtonPressed
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result newChapterPageLaunched(NewChapterPageLaunched value),
+    @required Result addCoverPressed(AddCoverPressed value),
     @required Result titleChanged(TitleChanged value),
     @required Result storyChanged(StoryChanged value),
+    @required Result genreSelected(GenreSelected value),
+    @required Result genreOptionalSelected(GenreOptionalSelected value),
     @required Result languageSelected(LanguageSelected value),
     @required Result copyrightsSelected(CopyrightsSelected value),
     @required Result isNSFWChanged(IsNSFWChanged value),
@@ -1557,8 +2282,11 @@ class _$PublishButtonPressed
     @required Result saveOrBackButtonPressed(SaveOrBackButtonPressed value),
   }) {
     assert(newChapterPageLaunched != null);
+    assert(addCoverPressed != null);
     assert(titleChanged != null);
     assert(storyChanged != null);
+    assert(genreSelected != null);
+    assert(genreOptionalSelected != null);
     assert(languageSelected != null);
     assert(copyrightsSelected != null);
     assert(isNSFWChanged != null);
@@ -1572,8 +2300,11 @@ class _$PublishButtonPressed
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result newChapterPageLaunched(NewChapterPageLaunched value),
+    Result addCoverPressed(AddCoverPressed value),
     Result titleChanged(TitleChanged value),
     Result storyChanged(StoryChanged value),
+    Result genreSelected(GenreSelected value),
+    Result genreOptionalSelected(GenreOptionalSelected value),
     Result languageSelected(LanguageSelected value),
     Result copyrightsSelected(CopyrightsSelected value),
     Result isNSFWChanged(IsNSFWChanged value),
@@ -1645,10 +2376,13 @@ class _$SaveOrBackButtonPressed
             ParentType parentType,
             ChapterDraft chapterDraft,
             SeriesDraft seriesDraft,
-            ChapterDraft previousChapterDraft,
+            Chapter previousChapter,
             BuildContext context),
+    @required Result addCoverPressed(),
     @required Result titleChanged(String title),
     @required Result storyChanged(String story),
+    @required Result genreSelected(String genre),
+    @required Result genreOptionalSelected(String genreOptional),
     @required Result languageSelected(String language),
     @required Result copyrightsSelected(String copyrights),
     @required Result isNSFWChanged(bool isNSFW),
@@ -1657,8 +2391,11 @@ class _$SaveOrBackButtonPressed
     @required Result saveOrBackButtonPressed(),
   }) {
     assert(newChapterPageLaunched != null);
+    assert(addCoverPressed != null);
     assert(titleChanged != null);
     assert(storyChanged != null);
+    assert(genreSelected != null);
+    assert(genreOptionalSelected != null);
     assert(languageSelected != null);
     assert(copyrightsSelected != null);
     assert(isNSFWChanged != null);
@@ -1675,10 +2412,13 @@ class _$SaveOrBackButtonPressed
         ParentType parentType,
         ChapterDraft chapterDraft,
         SeriesDraft seriesDraft,
-        ChapterDraft previousChapterDraft,
+        Chapter previousChapter,
         BuildContext context),
+    Result addCoverPressed(),
     Result titleChanged(String title),
     Result storyChanged(String story),
+    Result genreSelected(String genre),
+    Result genreOptionalSelected(String genreOptional),
     Result languageSelected(String language),
     Result copyrightsSelected(String copyrights),
     Result isNSFWChanged(bool isNSFW),
@@ -1698,8 +2438,11 @@ class _$SaveOrBackButtonPressed
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result newChapterPageLaunched(NewChapterPageLaunched value),
+    @required Result addCoverPressed(AddCoverPressed value),
     @required Result titleChanged(TitleChanged value),
     @required Result storyChanged(StoryChanged value),
+    @required Result genreSelected(GenreSelected value),
+    @required Result genreOptionalSelected(GenreOptionalSelected value),
     @required Result languageSelected(LanguageSelected value),
     @required Result copyrightsSelected(CopyrightsSelected value),
     @required Result isNSFWChanged(IsNSFWChanged value),
@@ -1708,8 +2451,11 @@ class _$SaveOrBackButtonPressed
     @required Result saveOrBackButtonPressed(SaveOrBackButtonPressed value),
   }) {
     assert(newChapterPageLaunched != null);
+    assert(addCoverPressed != null);
     assert(titleChanged != null);
     assert(storyChanged != null);
+    assert(genreSelected != null);
+    assert(genreOptionalSelected != null);
     assert(languageSelected != null);
     assert(copyrightsSelected != null);
     assert(isNSFWChanged != null);
@@ -1723,8 +2469,11 @@ class _$SaveOrBackButtonPressed
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result newChapterPageLaunched(NewChapterPageLaunched value),
+    Result addCoverPressed(AddCoverPressed value),
     Result titleChanged(TitleChanged value),
     Result storyChanged(StoryChanged value),
+    Result genreSelected(GenreSelected value),
+    Result genreOptionalSelected(GenreOptionalSelected value),
     Result languageSelected(LanguageSelected value),
     Result copyrightsSelected(CopyrightsSelected value),
     Result isNSFWChanged(IsNSFWChanged value),
@@ -1754,6 +2503,8 @@ class _$NewChapterDatabaseStateTearOff {
       @required
           bool isEditMode,
       @required
+          String coverUrl,
+      @required
           Title title,
       @required
           String titleStr,
@@ -1765,6 +2516,14 @@ class _$NewChapterDatabaseStateTearOff {
           String storyStr,
       @required
           int storyWordCount,
+      @required
+          Genre genre,
+      @required
+          String genreStr,
+      @required
+          Genre genreOptional,
+      @required
+          String genreOptionalStr,
       @required
           Language language,
       @required
@@ -1784,6 +2543,8 @@ class _$NewChapterDatabaseStateTearOff {
       @required
           bool isFirstChapter,
       @required
+          Map<String, String> genresMap,
+      @required
           Map<String, String> languagesMap,
       @required
           Map<String, String> copyrightsMap,
@@ -1795,12 +2556,17 @@ class _$NewChapterDatabaseStateTearOff {
     return _NewChapterPageState(
       chapterDraft: chapterDraft,
       isEditMode: isEditMode,
+      coverUrl: coverUrl,
       title: title,
       titleStr: titleStr,
       titleWordCount: titleWordCount,
       story: story,
       storyStr: storyStr,
       storyWordCount: storyWordCount,
+      genre: genre,
+      genreStr: genreStr,
+      genreOptional: genreOptional,
+      genreOptionalStr: genreOptionalStr,
       language: language,
       languageStr: languageStr,
       copyrights: copyrights,
@@ -1810,6 +2576,7 @@ class _$NewChapterDatabaseStateTearOff {
       isPublishingOrSaving: isPublishingOrSaving,
       isPublishedOrSaved: isPublishedOrSaved,
       isFirstChapter: isFirstChapter,
+      genresMap: genresMap,
       languagesMap: languagesMap,
       copyrightsMap: copyrightsMap,
       showErrorMessages: showErrorMessages,
@@ -1824,12 +2591,17 @@ const $NewChapterDatabaseState = _$NewChapterDatabaseStateTearOff();
 mixin _$NewChapterDatabaseState {
   ChapterDraft get chapterDraft;
   bool get isEditMode;
+  String get coverUrl;
   Title get title;
   String get titleStr;
   int get titleWordCount;
   Story get story;
   String get storyStr;
   int get storyWordCount;
+  Genre get genre;
+  String get genreStr;
+  Genre get genreOptional;
+  String get genreOptionalStr;
   Language get language;
   String get languageStr;
   Copyrights get copyrights;
@@ -1839,6 +2611,7 @@ mixin _$NewChapterDatabaseState {
   bool get isPublishingOrSaving;
   bool get isPublishedOrSaved;
   bool get isFirstChapter;
+  Map<String, String> get genresMap;
   Map<String, String> get languagesMap;
   Map<String, String> get copyrightsMap;
   bool get showErrorMessages;
@@ -1854,12 +2627,17 @@ abstract class $NewChapterDatabaseStateCopyWith<$Res> {
   $Res call(
       {ChapterDraft chapterDraft,
       bool isEditMode,
+      String coverUrl,
       Title title,
       String titleStr,
       int titleWordCount,
       Story story,
       String storyStr,
       int storyWordCount,
+      Genre genre,
+      String genreStr,
+      Genre genreOptional,
+      String genreOptionalStr,
       Language language,
       String languageStr,
       Copyrights copyrights,
@@ -1869,6 +2647,7 @@ abstract class $NewChapterDatabaseStateCopyWith<$Res> {
       bool isPublishingOrSaving,
       bool isPublishedOrSaved,
       bool isFirstChapter,
+      Map<String, String> genresMap,
       Map<String, String> languagesMap,
       Map<String, String> copyrightsMap,
       bool showErrorMessages,
@@ -1887,12 +2666,17 @@ class _$NewChapterDatabaseStateCopyWithImpl<$Res>
   $Res call({
     Object chapterDraft = freezed,
     Object isEditMode = freezed,
+    Object coverUrl = freezed,
     Object title = freezed,
     Object titleStr = freezed,
     Object titleWordCount = freezed,
     Object story = freezed,
     Object storyStr = freezed,
     Object storyWordCount = freezed,
+    Object genre = freezed,
+    Object genreStr = freezed,
+    Object genreOptional = freezed,
+    Object genreOptionalStr = freezed,
     Object language = freezed,
     Object languageStr = freezed,
     Object copyrights = freezed,
@@ -1902,6 +2686,7 @@ class _$NewChapterDatabaseStateCopyWithImpl<$Res>
     Object isPublishingOrSaving = freezed,
     Object isPublishedOrSaved = freezed,
     Object isFirstChapter = freezed,
+    Object genresMap = freezed,
     Object languagesMap = freezed,
     Object copyrightsMap = freezed,
     Object showErrorMessages = freezed,
@@ -1913,6 +2698,7 @@ class _$NewChapterDatabaseStateCopyWithImpl<$Res>
           : chapterDraft as ChapterDraft,
       isEditMode:
           isEditMode == freezed ? _value.isEditMode : isEditMode as bool,
+      coverUrl: coverUrl == freezed ? _value.coverUrl : coverUrl as String,
       title: title == freezed ? _value.title : title as Title,
       titleStr: titleStr == freezed ? _value.titleStr : titleStr as String,
       titleWordCount: titleWordCount == freezed
@@ -1923,6 +2709,14 @@ class _$NewChapterDatabaseStateCopyWithImpl<$Res>
       storyWordCount: storyWordCount == freezed
           ? _value.storyWordCount
           : storyWordCount as int,
+      genre: genre == freezed ? _value.genre : genre as Genre,
+      genreStr: genreStr == freezed ? _value.genreStr : genreStr as String,
+      genreOptional: genreOptional == freezed
+          ? _value.genreOptional
+          : genreOptional as Genre,
+      genreOptionalStr: genreOptionalStr == freezed
+          ? _value.genreOptionalStr
+          : genreOptionalStr as String,
       language: language == freezed ? _value.language : language as Language,
       languageStr:
           languageStr == freezed ? _value.languageStr : languageStr as String,
@@ -1942,6 +2736,9 @@ class _$NewChapterDatabaseStateCopyWithImpl<$Res>
       isFirstChapter: isFirstChapter == freezed
           ? _value.isFirstChapter
           : isFirstChapter as bool,
+      genresMap: genresMap == freezed
+          ? _value.genresMap
+          : genresMap as Map<String, String>,
       languagesMap: languagesMap == freezed
           ? _value.languagesMap
           : languagesMap as Map<String, String>,
@@ -1968,12 +2765,17 @@ abstract class _$NewChapterPageStateCopyWith<$Res>
   $Res call(
       {ChapterDraft chapterDraft,
       bool isEditMode,
+      String coverUrl,
       Title title,
       String titleStr,
       int titleWordCount,
       Story story,
       String storyStr,
       int storyWordCount,
+      Genre genre,
+      String genreStr,
+      Genre genreOptional,
+      String genreOptionalStr,
       Language language,
       String languageStr,
       Copyrights copyrights,
@@ -1983,6 +2785,7 @@ abstract class _$NewChapterPageStateCopyWith<$Res>
       bool isPublishingOrSaving,
       bool isPublishedOrSaved,
       bool isFirstChapter,
+      Map<String, String> genresMap,
       Map<String, String> languagesMap,
       Map<String, String> copyrightsMap,
       bool showErrorMessages,
@@ -2003,12 +2806,17 @@ class __$NewChapterPageStateCopyWithImpl<$Res>
   $Res call({
     Object chapterDraft = freezed,
     Object isEditMode = freezed,
+    Object coverUrl = freezed,
     Object title = freezed,
     Object titleStr = freezed,
     Object titleWordCount = freezed,
     Object story = freezed,
     Object storyStr = freezed,
     Object storyWordCount = freezed,
+    Object genre = freezed,
+    Object genreStr = freezed,
+    Object genreOptional = freezed,
+    Object genreOptionalStr = freezed,
     Object language = freezed,
     Object languageStr = freezed,
     Object copyrights = freezed,
@@ -2018,6 +2826,7 @@ class __$NewChapterPageStateCopyWithImpl<$Res>
     Object isPublishingOrSaving = freezed,
     Object isPublishedOrSaved = freezed,
     Object isFirstChapter = freezed,
+    Object genresMap = freezed,
     Object languagesMap = freezed,
     Object copyrightsMap = freezed,
     Object showErrorMessages = freezed,
@@ -2029,6 +2838,7 @@ class __$NewChapterPageStateCopyWithImpl<$Res>
           : chapterDraft as ChapterDraft,
       isEditMode:
           isEditMode == freezed ? _value.isEditMode : isEditMode as bool,
+      coverUrl: coverUrl == freezed ? _value.coverUrl : coverUrl as String,
       title: title == freezed ? _value.title : title as Title,
       titleStr: titleStr == freezed ? _value.titleStr : titleStr as String,
       titleWordCount: titleWordCount == freezed
@@ -2039,6 +2849,14 @@ class __$NewChapterPageStateCopyWithImpl<$Res>
       storyWordCount: storyWordCount == freezed
           ? _value.storyWordCount
           : storyWordCount as int,
+      genre: genre == freezed ? _value.genre : genre as Genre,
+      genreStr: genreStr == freezed ? _value.genreStr : genreStr as String,
+      genreOptional: genreOptional == freezed
+          ? _value.genreOptional
+          : genreOptional as Genre,
+      genreOptionalStr: genreOptionalStr == freezed
+          ? _value.genreOptionalStr
+          : genreOptionalStr as String,
       language: language == freezed ? _value.language : language as Language,
       languageStr:
           languageStr == freezed ? _value.languageStr : languageStr as String,
@@ -2058,6 +2876,9 @@ class __$NewChapterPageStateCopyWithImpl<$Res>
       isFirstChapter: isFirstChapter == freezed
           ? _value.isFirstChapter
           : isFirstChapter as bool,
+      genresMap: genresMap == freezed
+          ? _value.genresMap
+          : genresMap as Map<String, String>,
       languagesMap: languagesMap == freezed
           ? _value.languagesMap
           : languagesMap as Map<String, String>,
@@ -2081,12 +2902,17 @@ class _$_NewChapterPageState
   const _$_NewChapterPageState(
       {@required this.chapterDraft,
       @required this.isEditMode,
+      @required this.coverUrl,
       @required this.title,
       @required this.titleStr,
       @required this.titleWordCount,
       @required this.story,
       @required this.storyStr,
       @required this.storyWordCount,
+      @required this.genre,
+      @required this.genreStr,
+      @required this.genreOptional,
+      @required this.genreOptionalStr,
       @required this.language,
       @required this.languageStr,
       @required this.copyrights,
@@ -2096,18 +2922,24 @@ class _$_NewChapterPageState
       @required this.isPublishingOrSaving,
       @required this.isPublishedOrSaved,
       @required this.isFirstChapter,
+      @required this.genresMap,
       @required this.languagesMap,
       @required this.copyrightsMap,
       @required this.showErrorMessages,
       @required this.databaseFailureOrSuccessOption})
       : assert(chapterDraft != null),
         assert(isEditMode != null),
+        assert(coverUrl != null),
         assert(title != null),
         assert(titleStr != null),
         assert(titleWordCount != null),
         assert(story != null),
         assert(storyStr != null),
         assert(storyWordCount != null),
+        assert(genre != null),
+        assert(genreStr != null),
+        assert(genreOptional != null),
+        assert(genreOptionalStr != null),
         assert(language != null),
         assert(languageStr != null),
         assert(copyrights != null),
@@ -2117,6 +2949,7 @@ class _$_NewChapterPageState
         assert(isPublishingOrSaving != null),
         assert(isPublishedOrSaved != null),
         assert(isFirstChapter != null),
+        assert(genresMap != null),
         assert(languagesMap != null),
         assert(copyrightsMap != null),
         assert(showErrorMessages != null),
@@ -2126,6 +2959,8 @@ class _$_NewChapterPageState
   final ChapterDraft chapterDraft;
   @override
   final bool isEditMode;
+  @override
+  final String coverUrl;
   @override
   final Title title;
   @override
@@ -2138,6 +2973,14 @@ class _$_NewChapterPageState
   final String storyStr;
   @override
   final int storyWordCount;
+  @override
+  final Genre genre;
+  @override
+  final String genreStr;
+  @override
+  final Genre genreOptional;
+  @override
+  final String genreOptionalStr;
   @override
   final Language language;
   @override
@@ -2157,6 +3000,8 @@ class _$_NewChapterPageState
   @override
   final bool isFirstChapter;
   @override
+  final Map<String, String> genresMap;
+  @override
   final Map<String, String> languagesMap;
   @override
   final Map<String, String> copyrightsMap;
@@ -2167,7 +3012,7 @@ class _$_NewChapterPageState
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'NewChapterDatabaseState(chapterDraft: $chapterDraft, isEditMode: $isEditMode, title: $title, titleStr: $titleStr, titleWordCount: $titleWordCount, story: $story, storyStr: $storyStr, storyWordCount: $storyWordCount, language: $language, languageStr: $languageStr, copyrights: $copyrights, copyrightsStr: $copyrightsStr, isNSFW: $isNSFW, isEnd: $isEnd, isPublishingOrSaving: $isPublishingOrSaving, isPublishedOrSaved: $isPublishedOrSaved, isFirstChapter: $isFirstChapter, languagesMap: $languagesMap, copyrightsMap: $copyrightsMap, showErrorMessages: $showErrorMessages, databaseFailureOrSuccessOption: $databaseFailureOrSuccessOption)';
+    return 'NewChapterDatabaseState(chapterDraft: $chapterDraft, isEditMode: $isEditMode, coverUrl: $coverUrl, title: $title, titleStr: $titleStr, titleWordCount: $titleWordCount, story: $story, storyStr: $storyStr, storyWordCount: $storyWordCount, genre: $genre, genreStr: $genreStr, genreOptional: $genreOptional, genreOptionalStr: $genreOptionalStr, language: $language, languageStr: $languageStr, copyrights: $copyrights, copyrightsStr: $copyrightsStr, isNSFW: $isNSFW, isEnd: $isEnd, isPublishingOrSaving: $isPublishingOrSaving, isPublishedOrSaved: $isPublishedOrSaved, isFirstChapter: $isFirstChapter, genresMap: $genresMap, languagesMap: $languagesMap, copyrightsMap: $copyrightsMap, showErrorMessages: $showErrorMessages, databaseFailureOrSuccessOption: $databaseFailureOrSuccessOption)';
   }
 
   @override
@@ -2177,12 +3022,17 @@ class _$_NewChapterPageState
       ..add(DiagnosticsProperty('type', 'NewChapterDatabaseState'))
       ..add(DiagnosticsProperty('chapterDraft', chapterDraft))
       ..add(DiagnosticsProperty('isEditMode', isEditMode))
+      ..add(DiagnosticsProperty('coverUrl', coverUrl))
       ..add(DiagnosticsProperty('title', title))
       ..add(DiagnosticsProperty('titleStr', titleStr))
       ..add(DiagnosticsProperty('titleWordCount', titleWordCount))
       ..add(DiagnosticsProperty('story', story))
       ..add(DiagnosticsProperty('storyStr', storyStr))
       ..add(DiagnosticsProperty('storyWordCount', storyWordCount))
+      ..add(DiagnosticsProperty('genre', genre))
+      ..add(DiagnosticsProperty('genreStr', genreStr))
+      ..add(DiagnosticsProperty('genreOptional', genreOptional))
+      ..add(DiagnosticsProperty('genreOptionalStr', genreOptionalStr))
       ..add(DiagnosticsProperty('language', language))
       ..add(DiagnosticsProperty('languageStr', languageStr))
       ..add(DiagnosticsProperty('copyrights', copyrights))
@@ -2192,6 +3042,7 @@ class _$_NewChapterPageState
       ..add(DiagnosticsProperty('isPublishingOrSaving', isPublishingOrSaving))
       ..add(DiagnosticsProperty('isPublishedOrSaved', isPublishedOrSaved))
       ..add(DiagnosticsProperty('isFirstChapter', isFirstChapter))
+      ..add(DiagnosticsProperty('genresMap', genresMap))
       ..add(DiagnosticsProperty('languagesMap', languagesMap))
       ..add(DiagnosticsProperty('copyrightsMap', copyrightsMap))
       ..add(DiagnosticsProperty('showErrorMessages', showErrorMessages))
@@ -2209,6 +3060,9 @@ class _$_NewChapterPageState
             (identical(other.isEditMode, isEditMode) ||
                 const DeepCollectionEquality()
                     .equals(other.isEditMode, isEditMode)) &&
+            (identical(other.coverUrl, coverUrl) ||
+                const DeepCollectionEquality()
+                    .equals(other.coverUrl, coverUrl)) &&
             (identical(other.title, title) ||
                 const DeepCollectionEquality().equals(other.title, title)) &&
             (identical(other.titleStr, titleStr) ||
@@ -2225,6 +3079,17 @@ class _$_NewChapterPageState
             (identical(other.storyWordCount, storyWordCount) ||
                 const DeepCollectionEquality()
                     .equals(other.storyWordCount, storyWordCount)) &&
+            (identical(other.genre, genre) ||
+                const DeepCollectionEquality().equals(other.genre, genre)) &&
+            (identical(other.genreStr, genreStr) ||
+                const DeepCollectionEquality()
+                    .equals(other.genreStr, genreStr)) &&
+            (identical(other.genreOptional, genreOptional) ||
+                const DeepCollectionEquality()
+                    .equals(other.genreOptional, genreOptional)) &&
+            (identical(other.genreOptionalStr, genreOptionalStr) ||
+                const DeepCollectionEquality()
+                    .equals(other.genreOptionalStr, genreOptionalStr)) &&
             (identical(other.language, language) ||
                 const DeepCollectionEquality()
                     .equals(other.language, language)) &&
@@ -2250,20 +3115,15 @@ class _$_NewChapterPageState
             (identical(other.isFirstChapter, isFirstChapter) ||
                 const DeepCollectionEquality()
                     .equals(other.isFirstChapter, isFirstChapter)) &&
+            (identical(other.genresMap, genresMap) ||
+                const DeepCollectionEquality()
+                    .equals(other.genresMap, genresMap)) &&
             (identical(other.languagesMap, languagesMap) ||
                 const DeepCollectionEquality()
                     .equals(other.languagesMap, languagesMap)) &&
-            (identical(other.copyrightsMap, copyrightsMap) ||
-                const DeepCollectionEquality()
-                    .equals(other.copyrightsMap, copyrightsMap)) &&
-            (identical(other.showErrorMessages, showErrorMessages) ||
-                const DeepCollectionEquality()
-                    .equals(other.showErrorMessages, showErrorMessages)) &&
-            (identical(other.databaseFailureOrSuccessOption,
-                    databaseFailureOrSuccessOption) ||
-                const DeepCollectionEquality().equals(
-                    other.databaseFailureOrSuccessOption,
-                    databaseFailureOrSuccessOption)));
+            (identical(other.copyrightsMap, copyrightsMap) || const DeepCollectionEquality().equals(other.copyrightsMap, copyrightsMap)) &&
+            (identical(other.showErrorMessages, showErrorMessages) || const DeepCollectionEquality().equals(other.showErrorMessages, showErrorMessages)) &&
+            (identical(other.databaseFailureOrSuccessOption, databaseFailureOrSuccessOption) || const DeepCollectionEquality().equals(other.databaseFailureOrSuccessOption, databaseFailureOrSuccessOption)));
   }
 
   @override
@@ -2271,12 +3131,17 @@ class _$_NewChapterPageState
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(chapterDraft) ^
       const DeepCollectionEquality().hash(isEditMode) ^
+      const DeepCollectionEquality().hash(coverUrl) ^
       const DeepCollectionEquality().hash(title) ^
       const DeepCollectionEquality().hash(titleStr) ^
       const DeepCollectionEquality().hash(titleWordCount) ^
       const DeepCollectionEquality().hash(story) ^
       const DeepCollectionEquality().hash(storyStr) ^
       const DeepCollectionEquality().hash(storyWordCount) ^
+      const DeepCollectionEquality().hash(genre) ^
+      const DeepCollectionEquality().hash(genreStr) ^
+      const DeepCollectionEquality().hash(genreOptional) ^
+      const DeepCollectionEquality().hash(genreOptionalStr) ^
       const DeepCollectionEquality().hash(language) ^
       const DeepCollectionEquality().hash(languageStr) ^
       const DeepCollectionEquality().hash(copyrights) ^
@@ -2286,6 +3151,7 @@ class _$_NewChapterPageState
       const DeepCollectionEquality().hash(isPublishingOrSaving) ^
       const DeepCollectionEquality().hash(isPublishedOrSaved) ^
       const DeepCollectionEquality().hash(isFirstChapter) ^
+      const DeepCollectionEquality().hash(genresMap) ^
       const DeepCollectionEquality().hash(languagesMap) ^
       const DeepCollectionEquality().hash(copyrightsMap) ^
       const DeepCollectionEquality().hash(showErrorMessages) ^
@@ -2304,6 +3170,8 @@ abstract class _NewChapterPageState implements NewChapterDatabaseState {
       @required
           bool isEditMode,
       @required
+          String coverUrl,
+      @required
           Title title,
       @required
           String titleStr,
@@ -2315,6 +3183,14 @@ abstract class _NewChapterPageState implements NewChapterDatabaseState {
           String storyStr,
       @required
           int storyWordCount,
+      @required
+          Genre genre,
+      @required
+          String genreStr,
+      @required
+          Genre genreOptional,
+      @required
+          String genreOptionalStr,
       @required
           Language language,
       @required
@@ -2334,6 +3210,8 @@ abstract class _NewChapterPageState implements NewChapterDatabaseState {
       @required
           bool isFirstChapter,
       @required
+          Map<String, String> genresMap,
+      @required
           Map<String, String> languagesMap,
       @required
           Map<String, String> copyrightsMap,
@@ -2348,6 +3226,8 @@ abstract class _NewChapterPageState implements NewChapterDatabaseState {
   @override
   bool get isEditMode;
   @override
+  String get coverUrl;
+  @override
   Title get title;
   @override
   String get titleStr;
@@ -2359,6 +3239,14 @@ abstract class _NewChapterPageState implements NewChapterDatabaseState {
   String get storyStr;
   @override
   int get storyWordCount;
+  @override
+  Genre get genre;
+  @override
+  String get genreStr;
+  @override
+  Genre get genreOptional;
+  @override
+  String get genreOptionalStr;
   @override
   Language get language;
   @override
@@ -2377,6 +3265,8 @@ abstract class _NewChapterPageState implements NewChapterDatabaseState {
   bool get isPublishedOrSaved;
   @override
   bool get isFirstChapter;
+  @override
+  Map<String, String> get genresMap;
   @override
   Map<String, String> get languagesMap;
   @override
