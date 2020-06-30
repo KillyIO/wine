@@ -12,26 +12,27 @@ T _$identity<T>(T value) => value;
 class _$AccountNavigationEventTearOff {
   const _$AccountNavigationEventTearOff();
 
-  AccountPageLaunched accountPageLaunched({@required BuildContext context}) {
-    return AccountPageLaunched(
+  AccountPageLaunchedEVT accountPageLaunchedEVT(
+      {@required BuildContext context}) {
+    return AccountPageLaunchedEVT(
       context: context,
     );
   }
 
-  PageViewIndexChanged pageViewIndexChanged({@required int index}) {
-    return PageViewIndexChanged(
-      index: index,
+  PageViewIndexChangedEVT pageViewIndexChangedEVT(int index) {
+    return PageViewIndexChangedEVT(
+      index,
     );
   }
 
-  VerticalNavbarIndexChanged verticalNavbarIndexChanged({@required int index}) {
-    return VerticalNavbarIndexChanged(
-      index: index,
-    );
+  ResetBlocEVT resetBlocEVT() {
+    return const ResetBlocEVT();
   }
 
-  ResetAccountNavigationBloc resetAccountNavigationBloc() {
-    return const ResetAccountNavigationBloc();
+  VerticalNavbarIndexChangedEVT verticalNavbarIndexChangedEVT(int index) {
+    return VerticalNavbarIndexChangedEVT(
+      index,
+    );
   }
 }
 
@@ -41,34 +42,34 @@ const $AccountNavigationEvent = _$AccountNavigationEventTearOff();
 mixin _$AccountNavigationEvent {
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result accountPageLaunched(BuildContext context),
-    @required Result pageViewIndexChanged(int index),
-    @required Result verticalNavbarIndexChanged(int index),
-    @required Result resetAccountNavigationBloc(),
+    @required Result accountPageLaunchedEVT(BuildContext context),
+    @required Result pageViewIndexChangedEVT(int index),
+    @required Result resetBlocEVT(),
+    @required Result verticalNavbarIndexChangedEVT(int index),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result accountPageLaunched(BuildContext context),
-    Result pageViewIndexChanged(int index),
-    Result verticalNavbarIndexChanged(int index),
-    Result resetAccountNavigationBloc(),
+    Result accountPageLaunchedEVT(BuildContext context),
+    Result pageViewIndexChangedEVT(int index),
+    Result resetBlocEVT(),
+    Result verticalNavbarIndexChangedEVT(int index),
     @required Result orElse(),
   });
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result accountPageLaunched(AccountPageLaunched value),
-    @required Result pageViewIndexChanged(PageViewIndexChanged value),
+    @required Result accountPageLaunchedEVT(AccountPageLaunchedEVT value),
+    @required Result pageViewIndexChangedEVT(PageViewIndexChangedEVT value),
+    @required Result resetBlocEVT(ResetBlocEVT value),
     @required
-        Result verticalNavbarIndexChanged(VerticalNavbarIndexChanged value),
-    @required
-        Result resetAccountNavigationBloc(ResetAccountNavigationBloc value),
+        Result verticalNavbarIndexChangedEVT(
+            VerticalNavbarIndexChangedEVT value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result accountPageLaunched(AccountPageLaunched value),
-    Result pageViewIndexChanged(PageViewIndexChanged value),
-    Result verticalNavbarIndexChanged(VerticalNavbarIndexChanged value),
-    Result resetAccountNavigationBloc(ResetAccountNavigationBloc value),
+    Result accountPageLaunchedEVT(AccountPageLaunchedEVT value),
+    Result pageViewIndexChangedEVT(PageViewIndexChangedEVT value),
+    Result resetBlocEVT(ResetBlocEVT value),
+    Result verticalNavbarIndexChangedEVT(VerticalNavbarIndexChangedEVT value),
     @required Result orElse(),
   });
 }
@@ -88,37 +89,37 @@ class _$AccountNavigationEventCopyWithImpl<$Res>
   final $Res Function(AccountNavigationEvent) _then;
 }
 
-abstract class $AccountPageLaunchedCopyWith<$Res> {
-  factory $AccountPageLaunchedCopyWith(
-          AccountPageLaunched value, $Res Function(AccountPageLaunched) then) =
-      _$AccountPageLaunchedCopyWithImpl<$Res>;
+abstract class $AccountPageLaunchedEVTCopyWith<$Res> {
+  factory $AccountPageLaunchedEVTCopyWith(AccountPageLaunchedEVT value,
+          $Res Function(AccountPageLaunchedEVT) then) =
+      _$AccountPageLaunchedEVTCopyWithImpl<$Res>;
   $Res call({BuildContext context});
 }
 
-class _$AccountPageLaunchedCopyWithImpl<$Res>
+class _$AccountPageLaunchedEVTCopyWithImpl<$Res>
     extends _$AccountNavigationEventCopyWithImpl<$Res>
-    implements $AccountPageLaunchedCopyWith<$Res> {
-  _$AccountPageLaunchedCopyWithImpl(
-      AccountPageLaunched _value, $Res Function(AccountPageLaunched) _then)
-      : super(_value, (v) => _then(v as AccountPageLaunched));
+    implements $AccountPageLaunchedEVTCopyWith<$Res> {
+  _$AccountPageLaunchedEVTCopyWithImpl(AccountPageLaunchedEVT _value,
+      $Res Function(AccountPageLaunchedEVT) _then)
+      : super(_value, (v) => _then(v as AccountPageLaunchedEVT));
 
   @override
-  AccountPageLaunched get _value => super._value as AccountPageLaunched;
+  AccountPageLaunchedEVT get _value => super._value as AccountPageLaunchedEVT;
 
   @override
   $Res call({
     Object context = freezed,
   }) {
-    return _then(AccountPageLaunched(
+    return _then(AccountPageLaunchedEVT(
       context: context == freezed ? _value.context : context as BuildContext,
     ));
   }
 }
 
-class _$AccountPageLaunched
+class _$AccountPageLaunchedEVT
     with DiagnosticableTreeMixin
-    implements AccountPageLaunched {
-  const _$AccountPageLaunched({@required this.context})
+    implements AccountPageLaunchedEVT {
+  const _$AccountPageLaunchedEVT({@required this.context})
       : assert(context != null);
 
   @override
@@ -126,7 +127,7 @@ class _$AccountPageLaunched
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'AccountNavigationEvent.accountPageLaunched(context: $context)';
+    return 'AccountNavigationEvent.accountPageLaunchedEVT(context: $context)';
   }
 
   @override
@@ -134,14 +135,14 @@ class _$AccountPageLaunched
     super.debugFillProperties(properties);
     properties
       ..add(DiagnosticsProperty(
-          'type', 'AccountNavigationEvent.accountPageLaunched'))
+          'type', 'AccountNavigationEvent.accountPageLaunchedEVT'))
       ..add(DiagnosticsProperty('context', context));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is AccountPageLaunched &&
+        (other is AccountPageLaunchedEVT &&
             (identical(other.context, context) ||
                 const DeepCollectionEquality().equals(other.context, context)));
   }
@@ -151,175 +152,37 @@ class _$AccountPageLaunched
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(context);
 
   @override
-  $AccountPageLaunchedCopyWith<AccountPageLaunched> get copyWith =>
-      _$AccountPageLaunchedCopyWithImpl<AccountPageLaunched>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result accountPageLaunched(BuildContext context),
-    @required Result pageViewIndexChanged(int index),
-    @required Result verticalNavbarIndexChanged(int index),
-    @required Result resetAccountNavigationBloc(),
-  }) {
-    assert(accountPageLaunched != null);
-    assert(pageViewIndexChanged != null);
-    assert(verticalNavbarIndexChanged != null);
-    assert(resetAccountNavigationBloc != null);
-    return accountPageLaunched(context);
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result accountPageLaunched(BuildContext context),
-    Result pageViewIndexChanged(int index),
-    Result verticalNavbarIndexChanged(int index),
-    Result resetAccountNavigationBloc(),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (accountPageLaunched != null) {
-      return accountPageLaunched(context);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result accountPageLaunched(AccountPageLaunched value),
-    @required Result pageViewIndexChanged(PageViewIndexChanged value),
-    @required
-        Result verticalNavbarIndexChanged(VerticalNavbarIndexChanged value),
-    @required
-        Result resetAccountNavigationBloc(ResetAccountNavigationBloc value),
-  }) {
-    assert(accountPageLaunched != null);
-    assert(pageViewIndexChanged != null);
-    assert(verticalNavbarIndexChanged != null);
-    assert(resetAccountNavigationBloc != null);
-    return accountPageLaunched(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result accountPageLaunched(AccountPageLaunched value),
-    Result pageViewIndexChanged(PageViewIndexChanged value),
-    Result verticalNavbarIndexChanged(VerticalNavbarIndexChanged value),
-    Result resetAccountNavigationBloc(ResetAccountNavigationBloc value),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (accountPageLaunched != null) {
-      return accountPageLaunched(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class AccountPageLaunched implements AccountNavigationEvent {
-  const factory AccountPageLaunched({@required BuildContext context}) =
-      _$AccountPageLaunched;
-
-  BuildContext get context;
-  $AccountPageLaunchedCopyWith<AccountPageLaunched> get copyWith;
-}
-
-abstract class $PageViewIndexChangedCopyWith<$Res> {
-  factory $PageViewIndexChangedCopyWith(PageViewIndexChanged value,
-          $Res Function(PageViewIndexChanged) then) =
-      _$PageViewIndexChangedCopyWithImpl<$Res>;
-  $Res call({int index});
-}
-
-class _$PageViewIndexChangedCopyWithImpl<$Res>
-    extends _$AccountNavigationEventCopyWithImpl<$Res>
-    implements $PageViewIndexChangedCopyWith<$Res> {
-  _$PageViewIndexChangedCopyWithImpl(
-      PageViewIndexChanged _value, $Res Function(PageViewIndexChanged) _then)
-      : super(_value, (v) => _then(v as PageViewIndexChanged));
-
-  @override
-  PageViewIndexChanged get _value => super._value as PageViewIndexChanged;
-
-  @override
-  $Res call({
-    Object index = freezed,
-  }) {
-    return _then(PageViewIndexChanged(
-      index: index == freezed ? _value.index : index as int,
-    ));
-  }
-}
-
-class _$PageViewIndexChanged
-    with DiagnosticableTreeMixin
-    implements PageViewIndexChanged {
-  const _$PageViewIndexChanged({@required this.index}) : assert(index != null);
-
-  @override
-  final int index;
-
-  @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'AccountNavigationEvent.pageViewIndexChanged(index: $index)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty(
-          'type', 'AccountNavigationEvent.pageViewIndexChanged'))
-      ..add(DiagnosticsProperty('index', index));
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is PageViewIndexChanged &&
-            (identical(other.index, index) ||
-                const DeepCollectionEquality().equals(other.index, index)));
-  }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(index);
-
-  @override
-  $PageViewIndexChangedCopyWith<PageViewIndexChanged> get copyWith =>
-      _$PageViewIndexChangedCopyWithImpl<PageViewIndexChanged>(
+  $AccountPageLaunchedEVTCopyWith<AccountPageLaunchedEVT> get copyWith =>
+      _$AccountPageLaunchedEVTCopyWithImpl<AccountPageLaunchedEVT>(
           this, _$identity);
 
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result accountPageLaunched(BuildContext context),
-    @required Result pageViewIndexChanged(int index),
-    @required Result verticalNavbarIndexChanged(int index),
-    @required Result resetAccountNavigationBloc(),
+    @required Result accountPageLaunchedEVT(BuildContext context),
+    @required Result pageViewIndexChangedEVT(int index),
+    @required Result resetBlocEVT(),
+    @required Result verticalNavbarIndexChangedEVT(int index),
   }) {
-    assert(accountPageLaunched != null);
-    assert(pageViewIndexChanged != null);
-    assert(verticalNavbarIndexChanged != null);
-    assert(resetAccountNavigationBloc != null);
-    return pageViewIndexChanged(index);
+    assert(accountPageLaunchedEVT != null);
+    assert(pageViewIndexChangedEVT != null);
+    assert(resetBlocEVT != null);
+    assert(verticalNavbarIndexChangedEVT != null);
+    return accountPageLaunchedEVT(context);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result accountPageLaunched(BuildContext context),
-    Result pageViewIndexChanged(int index),
-    Result verticalNavbarIndexChanged(int index),
-    Result resetAccountNavigationBloc(),
+    Result accountPageLaunchedEVT(BuildContext context),
+    Result pageViewIndexChangedEVT(int index),
+    Result resetBlocEVT(),
+    Result verticalNavbarIndexChangedEVT(int index),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (pageViewIndexChanged != null) {
-      return pageViewIndexChanged(index);
+    if (accountPageLaunchedEVT != null) {
+      return accountPageLaunchedEVT(context);
     }
     return orElse();
   }
@@ -327,85 +190,83 @@ class _$PageViewIndexChanged
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result accountPageLaunched(AccountPageLaunched value),
-    @required Result pageViewIndexChanged(PageViewIndexChanged value),
+    @required Result accountPageLaunchedEVT(AccountPageLaunchedEVT value),
+    @required Result pageViewIndexChangedEVT(PageViewIndexChangedEVT value),
+    @required Result resetBlocEVT(ResetBlocEVT value),
     @required
-        Result verticalNavbarIndexChanged(VerticalNavbarIndexChanged value),
-    @required
-        Result resetAccountNavigationBloc(ResetAccountNavigationBloc value),
+        Result verticalNavbarIndexChangedEVT(
+            VerticalNavbarIndexChangedEVT value),
   }) {
-    assert(accountPageLaunched != null);
-    assert(pageViewIndexChanged != null);
-    assert(verticalNavbarIndexChanged != null);
-    assert(resetAccountNavigationBloc != null);
-    return pageViewIndexChanged(this);
+    assert(accountPageLaunchedEVT != null);
+    assert(pageViewIndexChangedEVT != null);
+    assert(resetBlocEVT != null);
+    assert(verticalNavbarIndexChangedEVT != null);
+    return accountPageLaunchedEVT(this);
   }
 
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result accountPageLaunched(AccountPageLaunched value),
-    Result pageViewIndexChanged(PageViewIndexChanged value),
-    Result verticalNavbarIndexChanged(VerticalNavbarIndexChanged value),
-    Result resetAccountNavigationBloc(ResetAccountNavigationBloc value),
+    Result accountPageLaunchedEVT(AccountPageLaunchedEVT value),
+    Result pageViewIndexChangedEVT(PageViewIndexChangedEVT value),
+    Result resetBlocEVT(ResetBlocEVT value),
+    Result verticalNavbarIndexChangedEVT(VerticalNavbarIndexChangedEVT value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (pageViewIndexChanged != null) {
-      return pageViewIndexChanged(this);
+    if (accountPageLaunchedEVT != null) {
+      return accountPageLaunchedEVT(this);
     }
     return orElse();
   }
 }
 
-abstract class PageViewIndexChanged implements AccountNavigationEvent {
-  const factory PageViewIndexChanged({@required int index}) =
-      _$PageViewIndexChanged;
+abstract class AccountPageLaunchedEVT implements AccountNavigationEvent {
+  const factory AccountPageLaunchedEVT({@required BuildContext context}) =
+      _$AccountPageLaunchedEVT;
 
-  int get index;
-  $PageViewIndexChangedCopyWith<PageViewIndexChanged> get copyWith;
+  BuildContext get context;
+  $AccountPageLaunchedEVTCopyWith<AccountPageLaunchedEVT> get copyWith;
 }
 
-abstract class $VerticalNavbarIndexChangedCopyWith<$Res> {
-  factory $VerticalNavbarIndexChangedCopyWith(VerticalNavbarIndexChanged value,
-          $Res Function(VerticalNavbarIndexChanged) then) =
-      _$VerticalNavbarIndexChangedCopyWithImpl<$Res>;
+abstract class $PageViewIndexChangedEVTCopyWith<$Res> {
+  factory $PageViewIndexChangedEVTCopyWith(PageViewIndexChangedEVT value,
+          $Res Function(PageViewIndexChangedEVT) then) =
+      _$PageViewIndexChangedEVTCopyWithImpl<$Res>;
   $Res call({int index});
 }
 
-class _$VerticalNavbarIndexChangedCopyWithImpl<$Res>
+class _$PageViewIndexChangedEVTCopyWithImpl<$Res>
     extends _$AccountNavigationEventCopyWithImpl<$Res>
-    implements $VerticalNavbarIndexChangedCopyWith<$Res> {
-  _$VerticalNavbarIndexChangedCopyWithImpl(VerticalNavbarIndexChanged _value,
-      $Res Function(VerticalNavbarIndexChanged) _then)
-      : super(_value, (v) => _then(v as VerticalNavbarIndexChanged));
+    implements $PageViewIndexChangedEVTCopyWith<$Res> {
+  _$PageViewIndexChangedEVTCopyWithImpl(PageViewIndexChangedEVT _value,
+      $Res Function(PageViewIndexChangedEVT) _then)
+      : super(_value, (v) => _then(v as PageViewIndexChangedEVT));
 
   @override
-  VerticalNavbarIndexChanged get _value =>
-      super._value as VerticalNavbarIndexChanged;
+  PageViewIndexChangedEVT get _value => super._value as PageViewIndexChangedEVT;
 
   @override
   $Res call({
     Object index = freezed,
   }) {
-    return _then(VerticalNavbarIndexChanged(
-      index: index == freezed ? _value.index : index as int,
+    return _then(PageViewIndexChangedEVT(
+      index == freezed ? _value.index : index as int,
     ));
   }
 }
 
-class _$VerticalNavbarIndexChanged
+class _$PageViewIndexChangedEVT
     with DiagnosticableTreeMixin
-    implements VerticalNavbarIndexChanged {
-  const _$VerticalNavbarIndexChanged({@required this.index})
-      : assert(index != null);
+    implements PageViewIndexChangedEVT {
+  const _$PageViewIndexChangedEVT(this.index) : assert(index != null);
 
   @override
   final int index;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'AccountNavigationEvent.verticalNavbarIndexChanged(index: $index)';
+    return 'AccountNavigationEvent.pageViewIndexChangedEVT(index: $index)';
   }
 
   @override
@@ -413,14 +274,14 @@ class _$VerticalNavbarIndexChanged
     super.debugFillProperties(properties);
     properties
       ..add(DiagnosticsProperty(
-          'type', 'AccountNavigationEvent.verticalNavbarIndexChanged'))
+          'type', 'AccountNavigationEvent.pageViewIndexChangedEVT'))
       ..add(DiagnosticsProperty('index', index));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is VerticalNavbarIndexChanged &&
+        (other is PageViewIndexChangedEVT &&
             (identical(other.index, index) ||
                 const DeepCollectionEquality().equals(other.index, index)));
   }
@@ -430,38 +291,37 @@ class _$VerticalNavbarIndexChanged
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(index);
 
   @override
-  $VerticalNavbarIndexChangedCopyWith<VerticalNavbarIndexChanged>
-      get copyWith =>
-          _$VerticalNavbarIndexChangedCopyWithImpl<VerticalNavbarIndexChanged>(
-              this, _$identity);
+  $PageViewIndexChangedEVTCopyWith<PageViewIndexChangedEVT> get copyWith =>
+      _$PageViewIndexChangedEVTCopyWithImpl<PageViewIndexChangedEVT>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result accountPageLaunched(BuildContext context),
-    @required Result pageViewIndexChanged(int index),
-    @required Result verticalNavbarIndexChanged(int index),
-    @required Result resetAccountNavigationBloc(),
+    @required Result accountPageLaunchedEVT(BuildContext context),
+    @required Result pageViewIndexChangedEVT(int index),
+    @required Result resetBlocEVT(),
+    @required Result verticalNavbarIndexChangedEVT(int index),
   }) {
-    assert(accountPageLaunched != null);
-    assert(pageViewIndexChanged != null);
-    assert(verticalNavbarIndexChanged != null);
-    assert(resetAccountNavigationBloc != null);
-    return verticalNavbarIndexChanged(index);
+    assert(accountPageLaunchedEVT != null);
+    assert(pageViewIndexChangedEVT != null);
+    assert(resetBlocEVT != null);
+    assert(verticalNavbarIndexChangedEVT != null);
+    return pageViewIndexChangedEVT(index);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result accountPageLaunched(BuildContext context),
-    Result pageViewIndexChanged(int index),
-    Result verticalNavbarIndexChanged(int index),
-    Result resetAccountNavigationBloc(),
+    Result accountPageLaunchedEVT(BuildContext context),
+    Result pageViewIndexChangedEVT(int index),
+    Result resetBlocEVT(),
+    Result verticalNavbarIndexChangedEVT(int index),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (verticalNavbarIndexChanged != null) {
-      return verticalNavbarIndexChanged(index);
+    if (pageViewIndexChangedEVT != null) {
+      return pageViewIndexChangedEVT(index);
     }
     return orElse();
   }
@@ -469,84 +329,79 @@ class _$VerticalNavbarIndexChanged
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result accountPageLaunched(AccountPageLaunched value),
-    @required Result pageViewIndexChanged(PageViewIndexChanged value),
+    @required Result accountPageLaunchedEVT(AccountPageLaunchedEVT value),
+    @required Result pageViewIndexChangedEVT(PageViewIndexChangedEVT value),
+    @required Result resetBlocEVT(ResetBlocEVT value),
     @required
-        Result verticalNavbarIndexChanged(VerticalNavbarIndexChanged value),
-    @required
-        Result resetAccountNavigationBloc(ResetAccountNavigationBloc value),
+        Result verticalNavbarIndexChangedEVT(
+            VerticalNavbarIndexChangedEVT value),
   }) {
-    assert(accountPageLaunched != null);
-    assert(pageViewIndexChanged != null);
-    assert(verticalNavbarIndexChanged != null);
-    assert(resetAccountNavigationBloc != null);
-    return verticalNavbarIndexChanged(this);
+    assert(accountPageLaunchedEVT != null);
+    assert(pageViewIndexChangedEVT != null);
+    assert(resetBlocEVT != null);
+    assert(verticalNavbarIndexChangedEVT != null);
+    return pageViewIndexChangedEVT(this);
   }
 
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result accountPageLaunched(AccountPageLaunched value),
-    Result pageViewIndexChanged(PageViewIndexChanged value),
-    Result verticalNavbarIndexChanged(VerticalNavbarIndexChanged value),
-    Result resetAccountNavigationBloc(ResetAccountNavigationBloc value),
+    Result accountPageLaunchedEVT(AccountPageLaunchedEVT value),
+    Result pageViewIndexChangedEVT(PageViewIndexChangedEVT value),
+    Result resetBlocEVT(ResetBlocEVT value),
+    Result verticalNavbarIndexChangedEVT(VerticalNavbarIndexChangedEVT value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (verticalNavbarIndexChanged != null) {
-      return verticalNavbarIndexChanged(this);
+    if (pageViewIndexChangedEVT != null) {
+      return pageViewIndexChangedEVT(this);
     }
     return orElse();
   }
 }
 
-abstract class VerticalNavbarIndexChanged implements AccountNavigationEvent {
-  const factory VerticalNavbarIndexChanged({@required int index}) =
-      _$VerticalNavbarIndexChanged;
+abstract class PageViewIndexChangedEVT implements AccountNavigationEvent {
+  const factory PageViewIndexChangedEVT(int index) = _$PageViewIndexChangedEVT;
 
   int get index;
-  $VerticalNavbarIndexChangedCopyWith<VerticalNavbarIndexChanged> get copyWith;
+  $PageViewIndexChangedEVTCopyWith<PageViewIndexChangedEVT> get copyWith;
 }
 
-abstract class $ResetAccountNavigationBlocCopyWith<$Res> {
-  factory $ResetAccountNavigationBlocCopyWith(ResetAccountNavigationBloc value,
-          $Res Function(ResetAccountNavigationBloc) then) =
-      _$ResetAccountNavigationBlocCopyWithImpl<$Res>;
+abstract class $ResetBlocEVTCopyWith<$Res> {
+  factory $ResetBlocEVTCopyWith(
+          ResetBlocEVT value, $Res Function(ResetBlocEVT) then) =
+      _$ResetBlocEVTCopyWithImpl<$Res>;
 }
 
-class _$ResetAccountNavigationBlocCopyWithImpl<$Res>
+class _$ResetBlocEVTCopyWithImpl<$Res>
     extends _$AccountNavigationEventCopyWithImpl<$Res>
-    implements $ResetAccountNavigationBlocCopyWith<$Res> {
-  _$ResetAccountNavigationBlocCopyWithImpl(ResetAccountNavigationBloc _value,
-      $Res Function(ResetAccountNavigationBloc) _then)
-      : super(_value, (v) => _then(v as ResetAccountNavigationBloc));
+    implements $ResetBlocEVTCopyWith<$Res> {
+  _$ResetBlocEVTCopyWithImpl(
+      ResetBlocEVT _value, $Res Function(ResetBlocEVT) _then)
+      : super(_value, (v) => _then(v as ResetBlocEVT));
 
   @override
-  ResetAccountNavigationBloc get _value =>
-      super._value as ResetAccountNavigationBloc;
+  ResetBlocEVT get _value => super._value as ResetBlocEVT;
 }
 
-class _$ResetAccountNavigationBloc
-    with DiagnosticableTreeMixin
-    implements ResetAccountNavigationBloc {
-  const _$ResetAccountNavigationBloc();
+class _$ResetBlocEVT with DiagnosticableTreeMixin implements ResetBlocEVT {
+  const _$ResetBlocEVT();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'AccountNavigationEvent.resetAccountNavigationBloc()';
+    return 'AccountNavigationEvent.resetBlocEVT()';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
-      ..add(DiagnosticsProperty(
-          'type', 'AccountNavigationEvent.resetAccountNavigationBloc'));
+      ..add(DiagnosticsProperty('type', 'AccountNavigationEvent.resetBlocEVT'));
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is ResetAccountNavigationBloc);
+    return identical(this, other) || (other is ResetBlocEVT);
   }
 
   @override
@@ -555,30 +410,30 @@ class _$ResetAccountNavigationBloc
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result accountPageLaunched(BuildContext context),
-    @required Result pageViewIndexChanged(int index),
-    @required Result verticalNavbarIndexChanged(int index),
-    @required Result resetAccountNavigationBloc(),
+    @required Result accountPageLaunchedEVT(BuildContext context),
+    @required Result pageViewIndexChangedEVT(int index),
+    @required Result resetBlocEVT(),
+    @required Result verticalNavbarIndexChangedEVT(int index),
   }) {
-    assert(accountPageLaunched != null);
-    assert(pageViewIndexChanged != null);
-    assert(verticalNavbarIndexChanged != null);
-    assert(resetAccountNavigationBloc != null);
-    return resetAccountNavigationBloc();
+    assert(accountPageLaunchedEVT != null);
+    assert(pageViewIndexChangedEVT != null);
+    assert(resetBlocEVT != null);
+    assert(verticalNavbarIndexChangedEVT != null);
+    return resetBlocEVT();
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result accountPageLaunched(BuildContext context),
-    Result pageViewIndexChanged(int index),
-    Result verticalNavbarIndexChanged(int index),
-    Result resetAccountNavigationBloc(),
+    Result accountPageLaunchedEVT(BuildContext context),
+    Result pageViewIndexChangedEVT(int index),
+    Result resetBlocEVT(),
+    Result verticalNavbarIndexChangedEVT(int index),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (resetAccountNavigationBloc != null) {
-      return resetAccountNavigationBloc();
+    if (resetBlocEVT != null) {
+      return resetBlocEVT();
     }
     return orElse();
   }
@@ -586,54 +441,197 @@ class _$ResetAccountNavigationBloc
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result accountPageLaunched(AccountPageLaunched value),
-    @required Result pageViewIndexChanged(PageViewIndexChanged value),
+    @required Result accountPageLaunchedEVT(AccountPageLaunchedEVT value),
+    @required Result pageViewIndexChangedEVT(PageViewIndexChangedEVT value),
+    @required Result resetBlocEVT(ResetBlocEVT value),
     @required
-        Result verticalNavbarIndexChanged(VerticalNavbarIndexChanged value),
-    @required
-        Result resetAccountNavigationBloc(ResetAccountNavigationBloc value),
+        Result verticalNavbarIndexChangedEVT(
+            VerticalNavbarIndexChangedEVT value),
   }) {
-    assert(accountPageLaunched != null);
-    assert(pageViewIndexChanged != null);
-    assert(verticalNavbarIndexChanged != null);
-    assert(resetAccountNavigationBloc != null);
-    return resetAccountNavigationBloc(this);
+    assert(accountPageLaunchedEVT != null);
+    assert(pageViewIndexChangedEVT != null);
+    assert(resetBlocEVT != null);
+    assert(verticalNavbarIndexChangedEVT != null);
+    return resetBlocEVT(this);
   }
 
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result accountPageLaunched(AccountPageLaunched value),
-    Result pageViewIndexChanged(PageViewIndexChanged value),
-    Result verticalNavbarIndexChanged(VerticalNavbarIndexChanged value),
-    Result resetAccountNavigationBloc(ResetAccountNavigationBloc value),
+    Result accountPageLaunchedEVT(AccountPageLaunchedEVT value),
+    Result pageViewIndexChangedEVT(PageViewIndexChangedEVT value),
+    Result resetBlocEVT(ResetBlocEVT value),
+    Result verticalNavbarIndexChangedEVT(VerticalNavbarIndexChangedEVT value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (resetAccountNavigationBloc != null) {
-      return resetAccountNavigationBloc(this);
+    if (resetBlocEVT != null) {
+      return resetBlocEVT(this);
     }
     return orElse();
   }
 }
 
-abstract class ResetAccountNavigationBloc implements AccountNavigationEvent {
-  const factory ResetAccountNavigationBloc() = _$ResetAccountNavigationBloc;
+abstract class ResetBlocEVT implements AccountNavigationEvent {
+  const factory ResetBlocEVT() = _$ResetBlocEVT;
+}
+
+abstract class $VerticalNavbarIndexChangedEVTCopyWith<$Res> {
+  factory $VerticalNavbarIndexChangedEVTCopyWith(
+          VerticalNavbarIndexChangedEVT value,
+          $Res Function(VerticalNavbarIndexChangedEVT) then) =
+      _$VerticalNavbarIndexChangedEVTCopyWithImpl<$Res>;
+  $Res call({int index});
+}
+
+class _$VerticalNavbarIndexChangedEVTCopyWithImpl<$Res>
+    extends _$AccountNavigationEventCopyWithImpl<$Res>
+    implements $VerticalNavbarIndexChangedEVTCopyWith<$Res> {
+  _$VerticalNavbarIndexChangedEVTCopyWithImpl(
+      VerticalNavbarIndexChangedEVT _value,
+      $Res Function(VerticalNavbarIndexChangedEVT) _then)
+      : super(_value, (v) => _then(v as VerticalNavbarIndexChangedEVT));
+
+  @override
+  VerticalNavbarIndexChangedEVT get _value =>
+      super._value as VerticalNavbarIndexChangedEVT;
+
+  @override
+  $Res call({
+    Object index = freezed,
+  }) {
+    return _then(VerticalNavbarIndexChangedEVT(
+      index == freezed ? _value.index : index as int,
+    ));
+  }
+}
+
+class _$VerticalNavbarIndexChangedEVT
+    with DiagnosticableTreeMixin
+    implements VerticalNavbarIndexChangedEVT {
+  const _$VerticalNavbarIndexChangedEVT(this.index) : assert(index != null);
+
+  @override
+  final int index;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'AccountNavigationEvent.verticalNavbarIndexChangedEVT(index: $index)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty(
+          'type', 'AccountNavigationEvent.verticalNavbarIndexChangedEVT'))
+      ..add(DiagnosticsProperty('index', index));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is VerticalNavbarIndexChangedEVT &&
+            (identical(other.index, index) ||
+                const DeepCollectionEquality().equals(other.index, index)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(index);
+
+  @override
+  $VerticalNavbarIndexChangedEVTCopyWith<VerticalNavbarIndexChangedEVT>
+      get copyWith => _$VerticalNavbarIndexChangedEVTCopyWithImpl<
+          VerticalNavbarIndexChangedEVT>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result accountPageLaunchedEVT(BuildContext context),
+    @required Result pageViewIndexChangedEVT(int index),
+    @required Result resetBlocEVT(),
+    @required Result verticalNavbarIndexChangedEVT(int index),
+  }) {
+    assert(accountPageLaunchedEVT != null);
+    assert(pageViewIndexChangedEVT != null);
+    assert(resetBlocEVT != null);
+    assert(verticalNavbarIndexChangedEVT != null);
+    return verticalNavbarIndexChangedEVT(index);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result accountPageLaunchedEVT(BuildContext context),
+    Result pageViewIndexChangedEVT(int index),
+    Result resetBlocEVT(),
+    Result verticalNavbarIndexChangedEVT(int index),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (verticalNavbarIndexChangedEVT != null) {
+      return verticalNavbarIndexChangedEVT(index);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result accountPageLaunchedEVT(AccountPageLaunchedEVT value),
+    @required Result pageViewIndexChangedEVT(PageViewIndexChangedEVT value),
+    @required Result resetBlocEVT(ResetBlocEVT value),
+    @required
+        Result verticalNavbarIndexChangedEVT(
+            VerticalNavbarIndexChangedEVT value),
+  }) {
+    assert(accountPageLaunchedEVT != null);
+    assert(pageViewIndexChangedEVT != null);
+    assert(resetBlocEVT != null);
+    assert(verticalNavbarIndexChangedEVT != null);
+    return verticalNavbarIndexChangedEVT(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result accountPageLaunchedEVT(AccountPageLaunchedEVT value),
+    Result pageViewIndexChangedEVT(PageViewIndexChangedEVT value),
+    Result resetBlocEVT(ResetBlocEVT value),
+    Result verticalNavbarIndexChangedEVT(VerticalNavbarIndexChangedEVT value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (verticalNavbarIndexChangedEVT != null) {
+      return verticalNavbarIndexChangedEVT(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class VerticalNavbarIndexChangedEVT implements AccountNavigationEvent {
+  const factory VerticalNavbarIndexChangedEVT(int index) =
+      _$VerticalNavbarIndexChangedEVT;
+
+  int get index;
+  $VerticalNavbarIndexChangedEVTCopyWith<VerticalNavbarIndexChangedEVT>
+      get copyWith;
 }
 
 class _$AccountNavigationStateTearOff {
   const _$AccountNavigationStateTearOff();
 
   _AccountSettingsState call(
-      {@required List<String> pageViewNavbarItems,
-      @required List<String> verticalNavbarItems,
-      @required int currentPageViewIdx,
-      @required int currentVerticalNavbarIdx}) {
+      {@required int currentPageViewIdx,
+      @required int currentVerticalNavbarIdx,
+      @required List<String> pageViewNavbarItems,
+      @required List<String> verticalNavbarItems}) {
     return _AccountSettingsState(
-      pageViewNavbarItems: pageViewNavbarItems,
-      verticalNavbarItems: verticalNavbarItems,
       currentPageViewIdx: currentPageViewIdx,
       currentVerticalNavbarIdx: currentVerticalNavbarIdx,
+      pageViewNavbarItems: pageViewNavbarItems,
+      verticalNavbarItems: verticalNavbarItems,
     );
   }
 }
@@ -642,10 +640,10 @@ class _$AccountNavigationStateTearOff {
 const $AccountNavigationState = _$AccountNavigationStateTearOff();
 
 mixin _$AccountNavigationState {
-  List<String> get pageViewNavbarItems;
-  List<String> get verticalNavbarItems;
   int get currentPageViewIdx;
   int get currentVerticalNavbarIdx;
+  List<String> get pageViewNavbarItems;
+  List<String> get verticalNavbarItems;
 
   $AccountNavigationStateCopyWith<AccountNavigationState> get copyWith;
 }
@@ -655,10 +653,10 @@ abstract class $AccountNavigationStateCopyWith<$Res> {
           $Res Function(AccountNavigationState) then) =
       _$AccountNavigationStateCopyWithImpl<$Res>;
   $Res call(
-      {List<String> pageViewNavbarItems,
-      List<String> verticalNavbarItems,
-      int currentPageViewIdx,
-      int currentVerticalNavbarIdx});
+      {int currentPageViewIdx,
+      int currentVerticalNavbarIdx,
+      List<String> pageViewNavbarItems,
+      List<String> verticalNavbarItems});
 }
 
 class _$AccountNavigationStateCopyWithImpl<$Res>
@@ -671,24 +669,24 @@ class _$AccountNavigationStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object pageViewNavbarItems = freezed,
-    Object verticalNavbarItems = freezed,
     Object currentPageViewIdx = freezed,
     Object currentVerticalNavbarIdx = freezed,
+    Object pageViewNavbarItems = freezed,
+    Object verticalNavbarItems = freezed,
   }) {
     return _then(_value.copyWith(
-      pageViewNavbarItems: pageViewNavbarItems == freezed
-          ? _value.pageViewNavbarItems
-          : pageViewNavbarItems as List<String>,
-      verticalNavbarItems: verticalNavbarItems == freezed
-          ? _value.verticalNavbarItems
-          : verticalNavbarItems as List<String>,
       currentPageViewIdx: currentPageViewIdx == freezed
           ? _value.currentPageViewIdx
           : currentPageViewIdx as int,
       currentVerticalNavbarIdx: currentVerticalNavbarIdx == freezed
           ? _value.currentVerticalNavbarIdx
           : currentVerticalNavbarIdx as int,
+      pageViewNavbarItems: pageViewNavbarItems == freezed
+          ? _value.pageViewNavbarItems
+          : pageViewNavbarItems as List<String>,
+      verticalNavbarItems: verticalNavbarItems == freezed
+          ? _value.verticalNavbarItems
+          : verticalNavbarItems as List<String>,
     ));
   }
 }
@@ -700,10 +698,10 @@ abstract class _$AccountSettingsStateCopyWith<$Res>
       __$AccountSettingsStateCopyWithImpl<$Res>;
   @override
   $Res call(
-      {List<String> pageViewNavbarItems,
-      List<String> verticalNavbarItems,
-      int currentPageViewIdx,
-      int currentVerticalNavbarIdx});
+      {int currentPageViewIdx,
+      int currentVerticalNavbarIdx,
+      List<String> pageViewNavbarItems,
+      List<String> verticalNavbarItems});
 }
 
 class __$AccountSettingsStateCopyWithImpl<$Res>
@@ -718,24 +716,24 @@ class __$AccountSettingsStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object pageViewNavbarItems = freezed,
-    Object verticalNavbarItems = freezed,
     Object currentPageViewIdx = freezed,
     Object currentVerticalNavbarIdx = freezed,
+    Object pageViewNavbarItems = freezed,
+    Object verticalNavbarItems = freezed,
   }) {
     return _then(_AccountSettingsState(
-      pageViewNavbarItems: pageViewNavbarItems == freezed
-          ? _value.pageViewNavbarItems
-          : pageViewNavbarItems as List<String>,
-      verticalNavbarItems: verticalNavbarItems == freezed
-          ? _value.verticalNavbarItems
-          : verticalNavbarItems as List<String>,
       currentPageViewIdx: currentPageViewIdx == freezed
           ? _value.currentPageViewIdx
           : currentPageViewIdx as int,
       currentVerticalNavbarIdx: currentVerticalNavbarIdx == freezed
           ? _value.currentVerticalNavbarIdx
           : currentVerticalNavbarIdx as int,
+      pageViewNavbarItems: pageViewNavbarItems == freezed
+          ? _value.pageViewNavbarItems
+          : pageViewNavbarItems as List<String>,
+      verticalNavbarItems: verticalNavbarItems == freezed
+          ? _value.verticalNavbarItems
+          : verticalNavbarItems as List<String>,
     ));
   }
 }
@@ -744,27 +742,27 @@ class _$_AccountSettingsState
     with DiagnosticableTreeMixin
     implements _AccountSettingsState {
   const _$_AccountSettingsState(
-      {@required this.pageViewNavbarItems,
-      @required this.verticalNavbarItems,
-      @required this.currentPageViewIdx,
-      @required this.currentVerticalNavbarIdx})
-      : assert(pageViewNavbarItems != null),
-        assert(verticalNavbarItems != null),
-        assert(currentPageViewIdx != null),
-        assert(currentVerticalNavbarIdx != null);
+      {@required this.currentPageViewIdx,
+      @required this.currentVerticalNavbarIdx,
+      @required this.pageViewNavbarItems,
+      @required this.verticalNavbarItems})
+      : assert(currentPageViewIdx != null),
+        assert(currentVerticalNavbarIdx != null),
+        assert(pageViewNavbarItems != null),
+        assert(verticalNavbarItems != null);
 
-  @override
-  final List<String> pageViewNavbarItems;
-  @override
-  final List<String> verticalNavbarItems;
   @override
   final int currentPageViewIdx;
   @override
   final int currentVerticalNavbarIdx;
+  @override
+  final List<String> pageViewNavbarItems;
+  @override
+  final List<String> verticalNavbarItems;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'AccountNavigationState(pageViewNavbarItems: $pageViewNavbarItems, verticalNavbarItems: $verticalNavbarItems, currentPageViewIdx: $currentPageViewIdx, currentVerticalNavbarIdx: $currentVerticalNavbarIdx)';
+    return 'AccountNavigationState(currentPageViewIdx: $currentPageViewIdx, currentVerticalNavbarIdx: $currentVerticalNavbarIdx, pageViewNavbarItems: $pageViewNavbarItems, verticalNavbarItems: $verticalNavbarItems)';
   }
 
   @override
@@ -772,39 +770,40 @@ class _$_AccountSettingsState
     super.debugFillProperties(properties);
     properties
       ..add(DiagnosticsProperty('type', 'AccountNavigationState'))
-      ..add(DiagnosticsProperty('pageViewNavbarItems', pageViewNavbarItems))
-      ..add(DiagnosticsProperty('verticalNavbarItems', verticalNavbarItems))
       ..add(DiagnosticsProperty('currentPageViewIdx', currentPageViewIdx))
       ..add(DiagnosticsProperty(
-          'currentVerticalNavbarIdx', currentVerticalNavbarIdx));
+          'currentVerticalNavbarIdx', currentVerticalNavbarIdx))
+      ..add(DiagnosticsProperty('pageViewNavbarItems', pageViewNavbarItems))
+      ..add(DiagnosticsProperty('verticalNavbarItems', verticalNavbarItems));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _AccountSettingsState &&
-            (identical(other.pageViewNavbarItems, pageViewNavbarItems) ||
-                const DeepCollectionEquality()
-                    .equals(other.pageViewNavbarItems, pageViewNavbarItems)) &&
-            (identical(other.verticalNavbarItems, verticalNavbarItems) ||
-                const DeepCollectionEquality()
-                    .equals(other.verticalNavbarItems, verticalNavbarItems)) &&
             (identical(other.currentPageViewIdx, currentPageViewIdx) ||
                 const DeepCollectionEquality()
                     .equals(other.currentPageViewIdx, currentPageViewIdx)) &&
             (identical(
                     other.currentVerticalNavbarIdx, currentVerticalNavbarIdx) ||
                 const DeepCollectionEquality().equals(
-                    other.currentVerticalNavbarIdx, currentVerticalNavbarIdx)));
+                    other.currentVerticalNavbarIdx,
+                    currentVerticalNavbarIdx)) &&
+            (identical(other.pageViewNavbarItems, pageViewNavbarItems) ||
+                const DeepCollectionEquality()
+                    .equals(other.pageViewNavbarItems, pageViewNavbarItems)) &&
+            (identical(other.verticalNavbarItems, verticalNavbarItems) ||
+                const DeepCollectionEquality()
+                    .equals(other.verticalNavbarItems, verticalNavbarItems)));
   }
 
   @override
   int get hashCode =>
       runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(pageViewNavbarItems) ^
-      const DeepCollectionEquality().hash(verticalNavbarItems) ^
       const DeepCollectionEquality().hash(currentPageViewIdx) ^
-      const DeepCollectionEquality().hash(currentVerticalNavbarIdx);
+      const DeepCollectionEquality().hash(currentVerticalNavbarIdx) ^
+      const DeepCollectionEquality().hash(pageViewNavbarItems) ^
+      const DeepCollectionEquality().hash(verticalNavbarItems);
 
   @override
   _$AccountSettingsStateCopyWith<_AccountSettingsState> get copyWith =>
@@ -814,19 +813,19 @@ class _$_AccountSettingsState
 
 abstract class _AccountSettingsState implements AccountNavigationState {
   const factory _AccountSettingsState(
-      {@required List<String> pageViewNavbarItems,
-      @required List<String> verticalNavbarItems,
-      @required int currentPageViewIdx,
-      @required int currentVerticalNavbarIdx}) = _$_AccountSettingsState;
+      {@required int currentPageViewIdx,
+      @required int currentVerticalNavbarIdx,
+      @required List<String> pageViewNavbarItems,
+      @required List<String> verticalNavbarItems}) = _$_AccountSettingsState;
 
-  @override
-  List<String> get pageViewNavbarItems;
-  @override
-  List<String> get verticalNavbarItems;
   @override
   int get currentPageViewIdx;
   @override
   int get currentVerticalNavbarIdx;
+  @override
+  List<String> get pageViewNavbarItems;
+  @override
+  List<String> get verticalNavbarItems;
   @override
   _$AccountSettingsStateCopyWith<_AccountSettingsState> get copyWith;
 }

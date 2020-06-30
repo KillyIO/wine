@@ -12,24 +12,24 @@ T _$identity<T>(T value) => value;
 class _$SignInAuthenticationEventTearOff {
   const _$SignInAuthenticationEventTearOff();
 
-  EmailChanged emailChanged(String emailStr) {
-    return EmailChanged(
+  EmailChangedEVT emailChangedEVT(String emailStr) {
+    return EmailChangedEVT(
       emailStr,
     );
   }
 
-  PasswordChanged passwordChanged(String passwordStr) {
-    return PasswordChanged(
+  PasswordChangedEVT passwordChangedEVT(String passwordStr) {
+    return PasswordChangedEVT(
       passwordStr,
     );
   }
 
-  SignInWithEmailAndPasswordPressed signInWithEmailAndPasswordPressed() {
-    return const SignInWithEmailAndPasswordPressed();
+  SignInWithEmailAndPasswordPressedEVT signInWithEmailAndPasswordPressedEVT() {
+    return const SignInWithEmailAndPasswordPressedEVT();
   }
 
-  SignInWithGooglePressed signInWithGooglePressed() {
-    return const SignInWithGooglePressed();
+  SignInWithGooglePressedEVT signInWithGooglePressedEVT() {
+    return const SignInWithGooglePressedEVT();
   }
 }
 
@@ -39,35 +39,36 @@ const $SignInAuthenticationEvent = _$SignInAuthenticationEventTearOff();
 mixin _$SignInAuthenticationEvent {
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result emailChanged(String emailStr),
-    @required Result passwordChanged(String passwordStr),
-    @required Result signInWithEmailAndPasswordPressed(),
-    @required Result signInWithGooglePressed(),
+    @required Result emailChangedEVT(String emailStr),
+    @required Result passwordChangedEVT(String passwordStr),
+    @required Result signInWithEmailAndPasswordPressedEVT(),
+    @required Result signInWithGooglePressedEVT(),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result emailChanged(String emailStr),
-    Result passwordChanged(String passwordStr),
-    Result signInWithEmailAndPasswordPressed(),
-    Result signInWithGooglePressed(),
+    Result emailChangedEVT(String emailStr),
+    Result passwordChangedEVT(String passwordStr),
+    Result signInWithEmailAndPasswordPressedEVT(),
+    Result signInWithGooglePressedEVT(),
     @required Result orElse(),
   });
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result emailChanged(EmailChanged value),
-    @required Result passwordChanged(PasswordChanged value),
+    @required Result emailChangedEVT(EmailChangedEVT value),
+    @required Result passwordChangedEVT(PasswordChangedEVT value),
     @required
-        Result signInWithEmailAndPasswordPressed(
-            SignInWithEmailAndPasswordPressed value),
-    @required Result signInWithGooglePressed(SignInWithGooglePressed value),
+        Result signInWithEmailAndPasswordPressedEVT(
+            SignInWithEmailAndPasswordPressedEVT value),
+    @required
+        Result signInWithGooglePressedEVT(SignInWithGooglePressedEVT value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result emailChanged(EmailChanged value),
-    Result passwordChanged(PasswordChanged value),
-    Result signInWithEmailAndPasswordPressed(
-        SignInWithEmailAndPasswordPressed value),
-    Result signInWithGooglePressed(SignInWithGooglePressed value),
+    Result emailChangedEVT(EmailChangedEVT value),
+    Result passwordChangedEVT(PasswordChangedEVT value),
+    Result signInWithEmailAndPasswordPressedEVT(
+        SignInWithEmailAndPasswordPressedEVT value),
+    Result signInWithGooglePressedEVT(SignInWithGooglePressedEVT value),
     @required Result orElse(),
   });
 }
@@ -87,48 +88,48 @@ class _$SignInAuthenticationEventCopyWithImpl<$Res>
   final $Res Function(SignInAuthenticationEvent) _then;
 }
 
-abstract class $EmailChangedCopyWith<$Res> {
-  factory $EmailChangedCopyWith(
-          EmailChanged value, $Res Function(EmailChanged) then) =
-      _$EmailChangedCopyWithImpl<$Res>;
+abstract class $EmailChangedEVTCopyWith<$Res> {
+  factory $EmailChangedEVTCopyWith(
+          EmailChangedEVT value, $Res Function(EmailChangedEVT) then) =
+      _$EmailChangedEVTCopyWithImpl<$Res>;
   $Res call({String emailStr});
 }
 
-class _$EmailChangedCopyWithImpl<$Res>
+class _$EmailChangedEVTCopyWithImpl<$Res>
     extends _$SignInAuthenticationEventCopyWithImpl<$Res>
-    implements $EmailChangedCopyWith<$Res> {
-  _$EmailChangedCopyWithImpl(
-      EmailChanged _value, $Res Function(EmailChanged) _then)
-      : super(_value, (v) => _then(v as EmailChanged));
+    implements $EmailChangedEVTCopyWith<$Res> {
+  _$EmailChangedEVTCopyWithImpl(
+      EmailChangedEVT _value, $Res Function(EmailChangedEVT) _then)
+      : super(_value, (v) => _then(v as EmailChangedEVT));
 
   @override
-  EmailChanged get _value => super._value as EmailChanged;
+  EmailChangedEVT get _value => super._value as EmailChangedEVT;
 
   @override
   $Res call({
     Object emailStr = freezed,
   }) {
-    return _then(EmailChanged(
+    return _then(EmailChangedEVT(
       emailStr == freezed ? _value.emailStr : emailStr as String,
     ));
   }
 }
 
-class _$EmailChanged implements EmailChanged {
-  const _$EmailChanged(this.emailStr) : assert(emailStr != null);
+class _$EmailChangedEVT implements EmailChangedEVT {
+  const _$EmailChangedEVT(this.emailStr) : assert(emailStr != null);
 
   @override
   final String emailStr;
 
   @override
   String toString() {
-    return 'SignInAuthenticationEvent.emailChanged(emailStr: $emailStr)';
+    return 'SignInAuthenticationEvent.emailChangedEVT(emailStr: $emailStr)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is EmailChanged &&
+        (other is EmailChangedEVT &&
             (identical(other.emailStr, emailStr) ||
                 const DeepCollectionEquality()
                     .equals(other.emailStr, emailStr)));
@@ -139,36 +140,36 @@ class _$EmailChanged implements EmailChanged {
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(emailStr);
 
   @override
-  $EmailChangedCopyWith<EmailChanged> get copyWith =>
-      _$EmailChangedCopyWithImpl<EmailChanged>(this, _$identity);
+  $EmailChangedEVTCopyWith<EmailChangedEVT> get copyWith =>
+      _$EmailChangedEVTCopyWithImpl<EmailChangedEVT>(this, _$identity);
 
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result emailChanged(String emailStr),
-    @required Result passwordChanged(String passwordStr),
-    @required Result signInWithEmailAndPasswordPressed(),
-    @required Result signInWithGooglePressed(),
+    @required Result emailChangedEVT(String emailStr),
+    @required Result passwordChangedEVT(String passwordStr),
+    @required Result signInWithEmailAndPasswordPressedEVT(),
+    @required Result signInWithGooglePressedEVT(),
   }) {
-    assert(emailChanged != null);
-    assert(passwordChanged != null);
-    assert(signInWithEmailAndPasswordPressed != null);
-    assert(signInWithGooglePressed != null);
-    return emailChanged(emailStr);
+    assert(emailChangedEVT != null);
+    assert(passwordChangedEVT != null);
+    assert(signInWithEmailAndPasswordPressedEVT != null);
+    assert(signInWithGooglePressedEVT != null);
+    return emailChangedEVT(emailStr);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result emailChanged(String emailStr),
-    Result passwordChanged(String passwordStr),
-    Result signInWithEmailAndPasswordPressed(),
-    Result signInWithGooglePressed(),
+    Result emailChangedEVT(String emailStr),
+    Result passwordChangedEVT(String passwordStr),
+    Result signInWithEmailAndPasswordPressedEVT(),
+    Result signInWithGooglePressedEVT(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (emailChanged != null) {
-      return emailChanged(emailStr);
+    if (emailChangedEVT != null) {
+      return emailChangedEVT(emailStr);
     }
     return orElse();
   }
@@ -176,87 +177,88 @@ class _$EmailChanged implements EmailChanged {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result emailChanged(EmailChanged value),
-    @required Result passwordChanged(PasswordChanged value),
+    @required Result emailChangedEVT(EmailChangedEVT value),
+    @required Result passwordChangedEVT(PasswordChangedEVT value),
     @required
-        Result signInWithEmailAndPasswordPressed(
-            SignInWithEmailAndPasswordPressed value),
-    @required Result signInWithGooglePressed(SignInWithGooglePressed value),
+        Result signInWithEmailAndPasswordPressedEVT(
+            SignInWithEmailAndPasswordPressedEVT value),
+    @required
+        Result signInWithGooglePressedEVT(SignInWithGooglePressedEVT value),
   }) {
-    assert(emailChanged != null);
-    assert(passwordChanged != null);
-    assert(signInWithEmailAndPasswordPressed != null);
-    assert(signInWithGooglePressed != null);
-    return emailChanged(this);
+    assert(emailChangedEVT != null);
+    assert(passwordChangedEVT != null);
+    assert(signInWithEmailAndPasswordPressedEVT != null);
+    assert(signInWithGooglePressedEVT != null);
+    return emailChangedEVT(this);
   }
 
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result emailChanged(EmailChanged value),
-    Result passwordChanged(PasswordChanged value),
-    Result signInWithEmailAndPasswordPressed(
-        SignInWithEmailAndPasswordPressed value),
-    Result signInWithGooglePressed(SignInWithGooglePressed value),
+    Result emailChangedEVT(EmailChangedEVT value),
+    Result passwordChangedEVT(PasswordChangedEVT value),
+    Result signInWithEmailAndPasswordPressedEVT(
+        SignInWithEmailAndPasswordPressedEVT value),
+    Result signInWithGooglePressedEVT(SignInWithGooglePressedEVT value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (emailChanged != null) {
-      return emailChanged(this);
+    if (emailChangedEVT != null) {
+      return emailChangedEVT(this);
     }
     return orElse();
   }
 }
 
-abstract class EmailChanged implements SignInAuthenticationEvent {
-  const factory EmailChanged(String emailStr) = _$EmailChanged;
+abstract class EmailChangedEVT implements SignInAuthenticationEvent {
+  const factory EmailChangedEVT(String emailStr) = _$EmailChangedEVT;
 
   String get emailStr;
-  $EmailChangedCopyWith<EmailChanged> get copyWith;
+  $EmailChangedEVTCopyWith<EmailChangedEVT> get copyWith;
 }
 
-abstract class $PasswordChangedCopyWith<$Res> {
-  factory $PasswordChangedCopyWith(
-          PasswordChanged value, $Res Function(PasswordChanged) then) =
-      _$PasswordChangedCopyWithImpl<$Res>;
+abstract class $PasswordChangedEVTCopyWith<$Res> {
+  factory $PasswordChangedEVTCopyWith(
+          PasswordChangedEVT value, $Res Function(PasswordChangedEVT) then) =
+      _$PasswordChangedEVTCopyWithImpl<$Res>;
   $Res call({String passwordStr});
 }
 
-class _$PasswordChangedCopyWithImpl<$Res>
+class _$PasswordChangedEVTCopyWithImpl<$Res>
     extends _$SignInAuthenticationEventCopyWithImpl<$Res>
-    implements $PasswordChangedCopyWith<$Res> {
-  _$PasswordChangedCopyWithImpl(
-      PasswordChanged _value, $Res Function(PasswordChanged) _then)
-      : super(_value, (v) => _then(v as PasswordChanged));
+    implements $PasswordChangedEVTCopyWith<$Res> {
+  _$PasswordChangedEVTCopyWithImpl(
+      PasswordChangedEVT _value, $Res Function(PasswordChangedEVT) _then)
+      : super(_value, (v) => _then(v as PasswordChangedEVT));
 
   @override
-  PasswordChanged get _value => super._value as PasswordChanged;
+  PasswordChangedEVT get _value => super._value as PasswordChangedEVT;
 
   @override
   $Res call({
     Object passwordStr = freezed,
   }) {
-    return _then(PasswordChanged(
+    return _then(PasswordChangedEVT(
       passwordStr == freezed ? _value.passwordStr : passwordStr as String,
     ));
   }
 }
 
-class _$PasswordChanged implements PasswordChanged {
-  const _$PasswordChanged(this.passwordStr) : assert(passwordStr != null);
+class _$PasswordChangedEVT implements PasswordChangedEVT {
+  const _$PasswordChangedEVT(this.passwordStr) : assert(passwordStr != null);
 
   @override
   final String passwordStr;
 
   @override
   String toString() {
-    return 'SignInAuthenticationEvent.passwordChanged(passwordStr: $passwordStr)';
+    return 'SignInAuthenticationEvent.passwordChangedEVT(passwordStr: $passwordStr)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is PasswordChanged &&
+        (other is PasswordChangedEVT &&
             (identical(other.passwordStr, passwordStr) ||
                 const DeepCollectionEquality()
                     .equals(other.passwordStr, passwordStr)));
@@ -267,36 +269,36 @@ class _$PasswordChanged implements PasswordChanged {
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(passwordStr);
 
   @override
-  $PasswordChangedCopyWith<PasswordChanged> get copyWith =>
-      _$PasswordChangedCopyWithImpl<PasswordChanged>(this, _$identity);
+  $PasswordChangedEVTCopyWith<PasswordChangedEVT> get copyWith =>
+      _$PasswordChangedEVTCopyWithImpl<PasswordChangedEVT>(this, _$identity);
 
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result emailChanged(String emailStr),
-    @required Result passwordChanged(String passwordStr),
-    @required Result signInWithEmailAndPasswordPressed(),
-    @required Result signInWithGooglePressed(),
+    @required Result emailChangedEVT(String emailStr),
+    @required Result passwordChangedEVT(String passwordStr),
+    @required Result signInWithEmailAndPasswordPressedEVT(),
+    @required Result signInWithGooglePressedEVT(),
   }) {
-    assert(emailChanged != null);
-    assert(passwordChanged != null);
-    assert(signInWithEmailAndPasswordPressed != null);
-    assert(signInWithGooglePressed != null);
-    return passwordChanged(passwordStr);
+    assert(emailChangedEVT != null);
+    assert(passwordChangedEVT != null);
+    assert(signInWithEmailAndPasswordPressedEVT != null);
+    assert(signInWithGooglePressedEVT != null);
+    return passwordChangedEVT(passwordStr);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result emailChanged(String emailStr),
-    Result passwordChanged(String passwordStr),
-    Result signInWithEmailAndPasswordPressed(),
-    Result signInWithGooglePressed(),
+    Result emailChangedEVT(String emailStr),
+    Result passwordChangedEVT(String passwordStr),
+    Result signInWithEmailAndPasswordPressedEVT(),
+    Result signInWithGooglePressedEVT(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (passwordChanged != null) {
-      return passwordChanged(passwordStr);
+    if (passwordChangedEVT != null) {
+      return passwordChangedEVT(passwordStr);
     }
     return orElse();
   }
@@ -304,78 +306,79 @@ class _$PasswordChanged implements PasswordChanged {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result emailChanged(EmailChanged value),
-    @required Result passwordChanged(PasswordChanged value),
+    @required Result emailChangedEVT(EmailChangedEVT value),
+    @required Result passwordChangedEVT(PasswordChangedEVT value),
     @required
-        Result signInWithEmailAndPasswordPressed(
-            SignInWithEmailAndPasswordPressed value),
-    @required Result signInWithGooglePressed(SignInWithGooglePressed value),
+        Result signInWithEmailAndPasswordPressedEVT(
+            SignInWithEmailAndPasswordPressedEVT value),
+    @required
+        Result signInWithGooglePressedEVT(SignInWithGooglePressedEVT value),
   }) {
-    assert(emailChanged != null);
-    assert(passwordChanged != null);
-    assert(signInWithEmailAndPasswordPressed != null);
-    assert(signInWithGooglePressed != null);
-    return passwordChanged(this);
+    assert(emailChangedEVT != null);
+    assert(passwordChangedEVT != null);
+    assert(signInWithEmailAndPasswordPressedEVT != null);
+    assert(signInWithGooglePressedEVT != null);
+    return passwordChangedEVT(this);
   }
 
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result emailChanged(EmailChanged value),
-    Result passwordChanged(PasswordChanged value),
-    Result signInWithEmailAndPasswordPressed(
-        SignInWithEmailAndPasswordPressed value),
-    Result signInWithGooglePressed(SignInWithGooglePressed value),
+    Result emailChangedEVT(EmailChangedEVT value),
+    Result passwordChangedEVT(PasswordChangedEVT value),
+    Result signInWithEmailAndPasswordPressedEVT(
+        SignInWithEmailAndPasswordPressedEVT value),
+    Result signInWithGooglePressedEVT(SignInWithGooglePressedEVT value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (passwordChanged != null) {
-      return passwordChanged(this);
+    if (passwordChangedEVT != null) {
+      return passwordChangedEVT(this);
     }
     return orElse();
   }
 }
 
-abstract class PasswordChanged implements SignInAuthenticationEvent {
-  const factory PasswordChanged(String passwordStr) = _$PasswordChanged;
+abstract class PasswordChangedEVT implements SignInAuthenticationEvent {
+  const factory PasswordChangedEVT(String passwordStr) = _$PasswordChangedEVT;
 
   String get passwordStr;
-  $PasswordChangedCopyWith<PasswordChanged> get copyWith;
+  $PasswordChangedEVTCopyWith<PasswordChangedEVT> get copyWith;
 }
 
-abstract class $SignInWithEmailAndPasswordPressedCopyWith<$Res> {
-  factory $SignInWithEmailAndPasswordPressedCopyWith(
-          SignInWithEmailAndPasswordPressed value,
-          $Res Function(SignInWithEmailAndPasswordPressed) then) =
-      _$SignInWithEmailAndPasswordPressedCopyWithImpl<$Res>;
+abstract class $SignInWithEmailAndPasswordPressedEVTCopyWith<$Res> {
+  factory $SignInWithEmailAndPasswordPressedEVTCopyWith(
+          SignInWithEmailAndPasswordPressedEVT value,
+          $Res Function(SignInWithEmailAndPasswordPressedEVT) then) =
+      _$SignInWithEmailAndPasswordPressedEVTCopyWithImpl<$Res>;
 }
 
-class _$SignInWithEmailAndPasswordPressedCopyWithImpl<$Res>
+class _$SignInWithEmailAndPasswordPressedEVTCopyWithImpl<$Res>
     extends _$SignInAuthenticationEventCopyWithImpl<$Res>
-    implements $SignInWithEmailAndPasswordPressedCopyWith<$Res> {
-  _$SignInWithEmailAndPasswordPressedCopyWithImpl(
-      SignInWithEmailAndPasswordPressed _value,
-      $Res Function(SignInWithEmailAndPasswordPressed) _then)
-      : super(_value, (v) => _then(v as SignInWithEmailAndPasswordPressed));
+    implements $SignInWithEmailAndPasswordPressedEVTCopyWith<$Res> {
+  _$SignInWithEmailAndPasswordPressedEVTCopyWithImpl(
+      SignInWithEmailAndPasswordPressedEVT _value,
+      $Res Function(SignInWithEmailAndPasswordPressedEVT) _then)
+      : super(_value, (v) => _then(v as SignInWithEmailAndPasswordPressedEVT));
 
   @override
-  SignInWithEmailAndPasswordPressed get _value =>
-      super._value as SignInWithEmailAndPasswordPressed;
+  SignInWithEmailAndPasswordPressedEVT get _value =>
+      super._value as SignInWithEmailAndPasswordPressedEVT;
 }
 
-class _$SignInWithEmailAndPasswordPressed
-    implements SignInWithEmailAndPasswordPressed {
-  const _$SignInWithEmailAndPasswordPressed();
+class _$SignInWithEmailAndPasswordPressedEVT
+    implements SignInWithEmailAndPasswordPressedEVT {
+  const _$SignInWithEmailAndPasswordPressedEVT();
 
   @override
   String toString() {
-    return 'SignInAuthenticationEvent.signInWithEmailAndPasswordPressed()';
+    return 'SignInAuthenticationEvent.signInWithEmailAndPasswordPressedEVT()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is SignInWithEmailAndPasswordPressed);
+        (other is SignInWithEmailAndPasswordPressedEVT);
   }
 
   @override
@@ -384,30 +387,30 @@ class _$SignInWithEmailAndPasswordPressed
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result emailChanged(String emailStr),
-    @required Result passwordChanged(String passwordStr),
-    @required Result signInWithEmailAndPasswordPressed(),
-    @required Result signInWithGooglePressed(),
+    @required Result emailChangedEVT(String emailStr),
+    @required Result passwordChangedEVT(String passwordStr),
+    @required Result signInWithEmailAndPasswordPressedEVT(),
+    @required Result signInWithGooglePressedEVT(),
   }) {
-    assert(emailChanged != null);
-    assert(passwordChanged != null);
-    assert(signInWithEmailAndPasswordPressed != null);
-    assert(signInWithGooglePressed != null);
-    return signInWithEmailAndPasswordPressed();
+    assert(emailChangedEVT != null);
+    assert(passwordChangedEVT != null);
+    assert(signInWithEmailAndPasswordPressedEVT != null);
+    assert(signInWithGooglePressedEVT != null);
+    return signInWithEmailAndPasswordPressedEVT();
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result emailChanged(String emailStr),
-    Result passwordChanged(String passwordStr),
-    Result signInWithEmailAndPasswordPressed(),
-    Result signInWithGooglePressed(),
+    Result emailChangedEVT(String emailStr),
+    Result passwordChangedEVT(String passwordStr),
+    Result signInWithEmailAndPasswordPressedEVT(),
+    Result signInWithGooglePressedEVT(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (signInWithEmailAndPasswordPressed != null) {
-      return signInWithEmailAndPasswordPressed();
+    if (signInWithEmailAndPasswordPressedEVT != null) {
+      return signInWithEmailAndPasswordPressedEVT();
     }
     return orElse();
   }
@@ -415,72 +418,74 @@ class _$SignInWithEmailAndPasswordPressed
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result emailChanged(EmailChanged value),
-    @required Result passwordChanged(PasswordChanged value),
+    @required Result emailChangedEVT(EmailChangedEVT value),
+    @required Result passwordChangedEVT(PasswordChangedEVT value),
     @required
-        Result signInWithEmailAndPasswordPressed(
-            SignInWithEmailAndPasswordPressed value),
-    @required Result signInWithGooglePressed(SignInWithGooglePressed value),
+        Result signInWithEmailAndPasswordPressedEVT(
+            SignInWithEmailAndPasswordPressedEVT value),
+    @required
+        Result signInWithGooglePressedEVT(SignInWithGooglePressedEVT value),
   }) {
-    assert(emailChanged != null);
-    assert(passwordChanged != null);
-    assert(signInWithEmailAndPasswordPressed != null);
-    assert(signInWithGooglePressed != null);
-    return signInWithEmailAndPasswordPressed(this);
+    assert(emailChangedEVT != null);
+    assert(passwordChangedEVT != null);
+    assert(signInWithEmailAndPasswordPressedEVT != null);
+    assert(signInWithGooglePressedEVT != null);
+    return signInWithEmailAndPasswordPressedEVT(this);
   }
 
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result emailChanged(EmailChanged value),
-    Result passwordChanged(PasswordChanged value),
-    Result signInWithEmailAndPasswordPressed(
-        SignInWithEmailAndPasswordPressed value),
-    Result signInWithGooglePressed(SignInWithGooglePressed value),
+    Result emailChangedEVT(EmailChangedEVT value),
+    Result passwordChangedEVT(PasswordChangedEVT value),
+    Result signInWithEmailAndPasswordPressedEVT(
+        SignInWithEmailAndPasswordPressedEVT value),
+    Result signInWithGooglePressedEVT(SignInWithGooglePressedEVT value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (signInWithEmailAndPasswordPressed != null) {
-      return signInWithEmailAndPasswordPressed(this);
+    if (signInWithEmailAndPasswordPressedEVT != null) {
+      return signInWithEmailAndPasswordPressedEVT(this);
     }
     return orElse();
   }
 }
 
-abstract class SignInWithEmailAndPasswordPressed
+abstract class SignInWithEmailAndPasswordPressedEVT
     implements SignInAuthenticationEvent {
-  const factory SignInWithEmailAndPasswordPressed() =
-      _$SignInWithEmailAndPasswordPressed;
+  const factory SignInWithEmailAndPasswordPressedEVT() =
+      _$SignInWithEmailAndPasswordPressedEVT;
 }
 
-abstract class $SignInWithGooglePressedCopyWith<$Res> {
-  factory $SignInWithGooglePressedCopyWith(SignInWithGooglePressed value,
-          $Res Function(SignInWithGooglePressed) then) =
-      _$SignInWithGooglePressedCopyWithImpl<$Res>;
+abstract class $SignInWithGooglePressedEVTCopyWith<$Res> {
+  factory $SignInWithGooglePressedEVTCopyWith(SignInWithGooglePressedEVT value,
+          $Res Function(SignInWithGooglePressedEVT) then) =
+      _$SignInWithGooglePressedEVTCopyWithImpl<$Res>;
 }
 
-class _$SignInWithGooglePressedCopyWithImpl<$Res>
+class _$SignInWithGooglePressedEVTCopyWithImpl<$Res>
     extends _$SignInAuthenticationEventCopyWithImpl<$Res>
-    implements $SignInWithGooglePressedCopyWith<$Res> {
-  _$SignInWithGooglePressedCopyWithImpl(SignInWithGooglePressed _value,
-      $Res Function(SignInWithGooglePressed) _then)
-      : super(_value, (v) => _then(v as SignInWithGooglePressed));
+    implements $SignInWithGooglePressedEVTCopyWith<$Res> {
+  _$SignInWithGooglePressedEVTCopyWithImpl(SignInWithGooglePressedEVT _value,
+      $Res Function(SignInWithGooglePressedEVT) _then)
+      : super(_value, (v) => _then(v as SignInWithGooglePressedEVT));
 
   @override
-  SignInWithGooglePressed get _value => super._value as SignInWithGooglePressed;
+  SignInWithGooglePressedEVT get _value =>
+      super._value as SignInWithGooglePressedEVT;
 }
 
-class _$SignInWithGooglePressed implements SignInWithGooglePressed {
-  const _$SignInWithGooglePressed();
+class _$SignInWithGooglePressedEVT implements SignInWithGooglePressedEVT {
+  const _$SignInWithGooglePressedEVT();
 
   @override
   String toString() {
-    return 'SignInAuthenticationEvent.signInWithGooglePressed()';
+    return 'SignInAuthenticationEvent.signInWithGooglePressedEVT()';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is SignInWithGooglePressed);
+    return identical(this, other) || (other is SignInWithGooglePressedEVT);
   }
 
   @override
@@ -489,30 +494,30 @@ class _$SignInWithGooglePressed implements SignInWithGooglePressed {
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result emailChanged(String emailStr),
-    @required Result passwordChanged(String passwordStr),
-    @required Result signInWithEmailAndPasswordPressed(),
-    @required Result signInWithGooglePressed(),
+    @required Result emailChangedEVT(String emailStr),
+    @required Result passwordChangedEVT(String passwordStr),
+    @required Result signInWithEmailAndPasswordPressedEVT(),
+    @required Result signInWithGooglePressedEVT(),
   }) {
-    assert(emailChanged != null);
-    assert(passwordChanged != null);
-    assert(signInWithEmailAndPasswordPressed != null);
-    assert(signInWithGooglePressed != null);
-    return signInWithGooglePressed();
+    assert(emailChangedEVT != null);
+    assert(passwordChangedEVT != null);
+    assert(signInWithEmailAndPasswordPressedEVT != null);
+    assert(signInWithGooglePressedEVT != null);
+    return signInWithGooglePressedEVT();
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result emailChanged(String emailStr),
-    Result passwordChanged(String passwordStr),
-    Result signInWithEmailAndPasswordPressed(),
-    Result signInWithGooglePressed(),
+    Result emailChangedEVT(String emailStr),
+    Result passwordChangedEVT(String passwordStr),
+    Result signInWithEmailAndPasswordPressedEVT(),
+    Result signInWithGooglePressedEVT(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (signInWithGooglePressed != null) {
-      return signInWithGooglePressed();
+    if (signInWithGooglePressedEVT != null) {
+      return signInWithGooglePressedEVT();
     }
     return orElse();
   }
@@ -520,40 +525,41 @@ class _$SignInWithGooglePressed implements SignInWithGooglePressed {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result emailChanged(EmailChanged value),
-    @required Result passwordChanged(PasswordChanged value),
+    @required Result emailChangedEVT(EmailChangedEVT value),
+    @required Result passwordChangedEVT(PasswordChangedEVT value),
     @required
-        Result signInWithEmailAndPasswordPressed(
-            SignInWithEmailAndPasswordPressed value),
-    @required Result signInWithGooglePressed(SignInWithGooglePressed value),
+        Result signInWithEmailAndPasswordPressedEVT(
+            SignInWithEmailAndPasswordPressedEVT value),
+    @required
+        Result signInWithGooglePressedEVT(SignInWithGooglePressedEVT value),
   }) {
-    assert(emailChanged != null);
-    assert(passwordChanged != null);
-    assert(signInWithEmailAndPasswordPressed != null);
-    assert(signInWithGooglePressed != null);
-    return signInWithGooglePressed(this);
+    assert(emailChangedEVT != null);
+    assert(passwordChangedEVT != null);
+    assert(signInWithEmailAndPasswordPressedEVT != null);
+    assert(signInWithGooglePressedEVT != null);
+    return signInWithGooglePressedEVT(this);
   }
 
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result emailChanged(EmailChanged value),
-    Result passwordChanged(PasswordChanged value),
-    Result signInWithEmailAndPasswordPressed(
-        SignInWithEmailAndPasswordPressed value),
-    Result signInWithGooglePressed(SignInWithGooglePressed value),
+    Result emailChangedEVT(EmailChangedEVT value),
+    Result passwordChangedEVT(PasswordChangedEVT value),
+    Result signInWithEmailAndPasswordPressedEVT(
+        SignInWithEmailAndPasswordPressedEVT value),
+    Result signInWithGooglePressedEVT(SignInWithGooglePressedEVT value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (signInWithGooglePressed != null) {
-      return signInWithGooglePressed(this);
+    if (signInWithGooglePressedEVT != null) {
+      return signInWithGooglePressedEVT(this);
     }
     return orElse();
   }
 }
 
-abstract class SignInWithGooglePressed implements SignInAuthenticationEvent {
-  const factory SignInWithGooglePressed() = _$SignInWithGooglePressed;
+abstract class SignInWithGooglePressedEVT implements SignInAuthenticationEvent {
+  const factory SignInWithGooglePressedEVT() = _$SignInWithGooglePressedEVT;
 }
 
 class _$SignInAuthenticationStateTearOff {
@@ -569,7 +575,7 @@ class _$SignInAuthenticationStateTearOff {
       @required
           bool isSubmitting,
       @required
-          Option<Either<AuthenticationFailure, dynamic>>
+          Option<Either<AuthenticationFailure, AuthenticationSuccess>>
               authFailureOrSuccessOption}) {
     return _SignInAuthenticationState(
       emailAddress: emailAddress,
@@ -589,7 +595,8 @@ mixin _$SignInAuthenticationState {
   Password get password;
   bool get showErrorMessages;
   bool get isSubmitting;
-  Option<Either<AuthenticationFailure, dynamic>> get authFailureOrSuccessOption;
+  Option<Either<AuthenticationFailure, AuthenticationSuccess>>
+      get authFailureOrSuccessOption;
 
   $SignInAuthenticationStateCopyWith<SignInAuthenticationState> get copyWith;
 }
@@ -603,7 +610,7 @@ abstract class $SignInAuthenticationStateCopyWith<$Res> {
       Password password,
       bool showErrorMessages,
       bool isSubmitting,
-      Option<Either<AuthenticationFailure, dynamic>>
+      Option<Either<AuthenticationFailure, AuthenticationSuccess>>
           authFailureOrSuccessOption});
 }
 
@@ -636,7 +643,7 @@ class _$SignInAuthenticationStateCopyWithImpl<$Res>
       authFailureOrSuccessOption: authFailureOrSuccessOption == freezed
           ? _value.authFailureOrSuccessOption
           : authFailureOrSuccessOption
-              as Option<Either<AuthenticationFailure, dynamic>>,
+              as Option<Either<AuthenticationFailure, AuthenticationSuccess>>,
     ));
   }
 }
@@ -652,7 +659,7 @@ abstract class _$SignInAuthenticationStateCopyWith<$Res>
       Password password,
       bool showErrorMessages,
       bool isSubmitting,
-      Option<Either<AuthenticationFailure, dynamic>>
+      Option<Either<AuthenticationFailure, AuthenticationSuccess>>
           authFailureOrSuccessOption});
 }
 
@@ -688,7 +695,7 @@ class __$SignInAuthenticationStateCopyWithImpl<$Res>
       authFailureOrSuccessOption: authFailureOrSuccessOption == freezed
           ? _value.authFailureOrSuccessOption
           : authFailureOrSuccessOption
-              as Option<Either<AuthenticationFailure, dynamic>>,
+              as Option<Either<AuthenticationFailure, AuthenticationSuccess>>,
     ));
   }
 }
@@ -715,7 +722,7 @@ class _$_SignInAuthenticationState implements _SignInAuthenticationState {
   @override
   final bool isSubmitting;
   @override
-  final Option<Either<AuthenticationFailure, dynamic>>
+  final Option<Either<AuthenticationFailure, AuthenticationSuccess>>
       authFailureOrSuccessOption;
 
   @override
@@ -773,7 +780,7 @@ abstract class _SignInAuthenticationState implements SignInAuthenticationState {
       @required
           bool isSubmitting,
       @required
-          Option<Either<AuthenticationFailure, dynamic>>
+          Option<Either<AuthenticationFailure, AuthenticationSuccess>>
               authFailureOrSuccessOption}) = _$_SignInAuthenticationState;
 
   @override
@@ -785,7 +792,8 @@ abstract class _SignInAuthenticationState implements SignInAuthenticationState {
   @override
   bool get isSubmitting;
   @override
-  Option<Either<AuthenticationFailure, dynamic>> get authFailureOrSuccessOption;
+  Option<Either<AuthenticationFailure, AuthenticationSuccess>>
+      get authFailureOrSuccessOption;
   @override
   _$SignInAuthenticationStateCopyWith<_SignInAuthenticationState> get copyWith;
 }

@@ -12,14 +12,33 @@ T _$identity<T>(T value) => value;
 class _$SplashDatabaseEventTearOff {
   const _$SplashDatabaseEventTearOff();
 
-  Authenticated authenticated({@required bool isAnonymous}) {
-    return Authenticated(
+  AuthenticatedEVT authenticatedEVT({@required bool isAnonymous}) {
+    return AuthenticatedEVT(
       isAnonymous: isAnonymous,
     );
   }
 
-  LogoAnimationCompleted logoAnimationCompleted() {
-    return const LogoAnimationCompleted();
+  PlaceholdersLoadedEVT placeholdersLoadedEVT(
+      Map<String, String> placeholders) {
+    return PlaceholdersLoadedEVT(
+      placeholders,
+    );
+  }
+
+  PlaceholdersSavedEVT placeholdersSavedEVT() {
+    return const PlaceholdersSavedEVT();
+  }
+
+  SessionFetchedEVT sessionFetchedEVT(Session session) {
+    return SessionFetchedEVT(
+      session,
+    );
+  }
+
+  UserLoadedEVT userLoadedEVT(User user) {
+    return UserLoadedEVT(
+      user,
+    );
   }
 }
 
@@ -29,24 +48,36 @@ const $SplashDatabaseEvent = _$SplashDatabaseEventTearOff();
 mixin _$SplashDatabaseEvent {
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result authenticated(bool isAnonymous),
-    @required Result logoAnimationCompleted(),
+    @required Result authenticatedEVT(bool isAnonymous),
+    @required Result placeholdersLoadedEVT(Map<String, String> placeholders),
+    @required Result placeholdersSavedEVT(),
+    @required Result sessionFetchedEVT(Session session),
+    @required Result userLoadedEVT(User user),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result authenticated(bool isAnonymous),
-    Result logoAnimationCompleted(),
+    Result authenticatedEVT(bool isAnonymous),
+    Result placeholdersLoadedEVT(Map<String, String> placeholders),
+    Result placeholdersSavedEVT(),
+    Result sessionFetchedEVT(Session session),
+    Result userLoadedEVT(User user),
     @required Result orElse(),
   });
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result authenticated(Authenticated value),
-    @required Result logoAnimationCompleted(LogoAnimationCompleted value),
+    @required Result authenticatedEVT(AuthenticatedEVT value),
+    @required Result placeholdersLoadedEVT(PlaceholdersLoadedEVT value),
+    @required Result placeholdersSavedEVT(PlaceholdersSavedEVT value),
+    @required Result sessionFetchedEVT(SessionFetchedEVT value),
+    @required Result userLoadedEVT(UserLoadedEVT value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result authenticated(Authenticated value),
-    Result logoAnimationCompleted(LogoAnimationCompleted value),
+    Result authenticatedEVT(AuthenticatedEVT value),
+    Result placeholdersLoadedEVT(PlaceholdersLoadedEVT value),
+    Result placeholdersSavedEVT(PlaceholdersSavedEVT value),
+    Result sessionFetchedEVT(SessionFetchedEVT value),
+    Result userLoadedEVT(UserLoadedEVT value),
     @required Result orElse(),
   });
 }
@@ -66,36 +97,36 @@ class _$SplashDatabaseEventCopyWithImpl<$Res>
   final $Res Function(SplashDatabaseEvent) _then;
 }
 
-abstract class $AuthenticatedCopyWith<$Res> {
-  factory $AuthenticatedCopyWith(
-          Authenticated value, $Res Function(Authenticated) then) =
-      _$AuthenticatedCopyWithImpl<$Res>;
+abstract class $AuthenticatedEVTCopyWith<$Res> {
+  factory $AuthenticatedEVTCopyWith(
+          AuthenticatedEVT value, $Res Function(AuthenticatedEVT) then) =
+      _$AuthenticatedEVTCopyWithImpl<$Res>;
   $Res call({bool isAnonymous});
 }
 
-class _$AuthenticatedCopyWithImpl<$Res>
+class _$AuthenticatedEVTCopyWithImpl<$Res>
     extends _$SplashDatabaseEventCopyWithImpl<$Res>
-    implements $AuthenticatedCopyWith<$Res> {
-  _$AuthenticatedCopyWithImpl(
-      Authenticated _value, $Res Function(Authenticated) _then)
-      : super(_value, (v) => _then(v as Authenticated));
+    implements $AuthenticatedEVTCopyWith<$Res> {
+  _$AuthenticatedEVTCopyWithImpl(
+      AuthenticatedEVT _value, $Res Function(AuthenticatedEVT) _then)
+      : super(_value, (v) => _then(v as AuthenticatedEVT));
 
   @override
-  Authenticated get _value => super._value as Authenticated;
+  AuthenticatedEVT get _value => super._value as AuthenticatedEVT;
 
   @override
   $Res call({
     Object isAnonymous = freezed,
   }) {
-    return _then(Authenticated(
+    return _then(AuthenticatedEVT(
       isAnonymous:
           isAnonymous == freezed ? _value.isAnonymous : isAnonymous as bool,
     ));
   }
 }
 
-class _$Authenticated implements Authenticated {
-  const _$Authenticated({@required this.isAnonymous})
+class _$AuthenticatedEVT implements AuthenticatedEVT {
+  const _$AuthenticatedEVT({@required this.isAnonymous})
       : assert(isAnonymous != null);
 
   @override
@@ -103,13 +134,13 @@ class _$Authenticated implements Authenticated {
 
   @override
   String toString() {
-    return 'SplashDatabaseEvent.authenticated(isAnonymous: $isAnonymous)';
+    return 'SplashDatabaseEvent.authenticatedEVT(isAnonymous: $isAnonymous)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is Authenticated &&
+        (other is AuthenticatedEVT &&
             (identical(other.isAnonymous, isAnonymous) ||
                 const DeepCollectionEquality()
                     .equals(other.isAnonymous, isAnonymous)));
@@ -120,30 +151,39 @@ class _$Authenticated implements Authenticated {
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(isAnonymous);
 
   @override
-  $AuthenticatedCopyWith<Authenticated> get copyWith =>
-      _$AuthenticatedCopyWithImpl<Authenticated>(this, _$identity);
+  $AuthenticatedEVTCopyWith<AuthenticatedEVT> get copyWith =>
+      _$AuthenticatedEVTCopyWithImpl<AuthenticatedEVT>(this, _$identity);
 
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result authenticated(bool isAnonymous),
-    @required Result logoAnimationCompleted(),
+    @required Result authenticatedEVT(bool isAnonymous),
+    @required Result placeholdersLoadedEVT(Map<String, String> placeholders),
+    @required Result placeholdersSavedEVT(),
+    @required Result sessionFetchedEVT(Session session),
+    @required Result userLoadedEVT(User user),
   }) {
-    assert(authenticated != null);
-    assert(logoAnimationCompleted != null);
-    return authenticated(isAnonymous);
+    assert(authenticatedEVT != null);
+    assert(placeholdersLoadedEVT != null);
+    assert(placeholdersSavedEVT != null);
+    assert(sessionFetchedEVT != null);
+    assert(userLoadedEVT != null);
+    return authenticatedEVT(isAnonymous);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result authenticated(bool isAnonymous),
-    Result logoAnimationCompleted(),
+    Result authenticatedEVT(bool isAnonymous),
+    Result placeholdersLoadedEVT(Map<String, String> placeholders),
+    Result placeholdersSavedEVT(),
+    Result sessionFetchedEVT(Session session),
+    Result userLoadedEVT(User user),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (authenticated != null) {
-      return authenticated(isAnonymous);
+    if (authenticatedEVT != null) {
+      return authenticatedEVT(isAnonymous);
     }
     return orElse();
   }
@@ -151,64 +191,210 @@ class _$Authenticated implements Authenticated {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result authenticated(Authenticated value),
-    @required Result logoAnimationCompleted(LogoAnimationCompleted value),
+    @required Result authenticatedEVT(AuthenticatedEVT value),
+    @required Result placeholdersLoadedEVT(PlaceholdersLoadedEVT value),
+    @required Result placeholdersSavedEVT(PlaceholdersSavedEVT value),
+    @required Result sessionFetchedEVT(SessionFetchedEVT value),
+    @required Result userLoadedEVT(UserLoadedEVT value),
   }) {
-    assert(authenticated != null);
-    assert(logoAnimationCompleted != null);
-    return authenticated(this);
+    assert(authenticatedEVT != null);
+    assert(placeholdersLoadedEVT != null);
+    assert(placeholdersSavedEVT != null);
+    assert(sessionFetchedEVT != null);
+    assert(userLoadedEVT != null);
+    return authenticatedEVT(this);
   }
 
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result authenticated(Authenticated value),
-    Result logoAnimationCompleted(LogoAnimationCompleted value),
+    Result authenticatedEVT(AuthenticatedEVT value),
+    Result placeholdersLoadedEVT(PlaceholdersLoadedEVT value),
+    Result placeholdersSavedEVT(PlaceholdersSavedEVT value),
+    Result sessionFetchedEVT(SessionFetchedEVT value),
+    Result userLoadedEVT(UserLoadedEVT value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (authenticated != null) {
-      return authenticated(this);
+    if (authenticatedEVT != null) {
+      return authenticatedEVT(this);
     }
     return orElse();
   }
 }
 
-abstract class Authenticated implements SplashDatabaseEvent {
-  const factory Authenticated({@required bool isAnonymous}) = _$Authenticated;
+abstract class AuthenticatedEVT implements SplashDatabaseEvent {
+  const factory AuthenticatedEVT({@required bool isAnonymous}) =
+      _$AuthenticatedEVT;
 
   bool get isAnonymous;
-  $AuthenticatedCopyWith<Authenticated> get copyWith;
+  $AuthenticatedEVTCopyWith<AuthenticatedEVT> get copyWith;
 }
 
-abstract class $LogoAnimationCompletedCopyWith<$Res> {
-  factory $LogoAnimationCompletedCopyWith(LogoAnimationCompleted value,
-          $Res Function(LogoAnimationCompleted) then) =
-      _$LogoAnimationCompletedCopyWithImpl<$Res>;
+abstract class $PlaceholdersLoadedEVTCopyWith<$Res> {
+  factory $PlaceholdersLoadedEVTCopyWith(PlaceholdersLoadedEVT value,
+          $Res Function(PlaceholdersLoadedEVT) then) =
+      _$PlaceholdersLoadedEVTCopyWithImpl<$Res>;
+  $Res call({Map<String, String> placeholders});
 }
 
-class _$LogoAnimationCompletedCopyWithImpl<$Res>
+class _$PlaceholdersLoadedEVTCopyWithImpl<$Res>
     extends _$SplashDatabaseEventCopyWithImpl<$Res>
-    implements $LogoAnimationCompletedCopyWith<$Res> {
-  _$LogoAnimationCompletedCopyWithImpl(LogoAnimationCompleted _value,
-      $Res Function(LogoAnimationCompleted) _then)
-      : super(_value, (v) => _then(v as LogoAnimationCompleted));
+    implements $PlaceholdersLoadedEVTCopyWith<$Res> {
+  _$PlaceholdersLoadedEVTCopyWithImpl(
+      PlaceholdersLoadedEVT _value, $Res Function(PlaceholdersLoadedEVT) _then)
+      : super(_value, (v) => _then(v as PlaceholdersLoadedEVT));
 
   @override
-  LogoAnimationCompleted get _value => super._value as LogoAnimationCompleted;
+  PlaceholdersLoadedEVT get _value => super._value as PlaceholdersLoadedEVT;
+
+  @override
+  $Res call({
+    Object placeholders = freezed,
+  }) {
+    return _then(PlaceholdersLoadedEVT(
+      placeholders == freezed
+          ? _value.placeholders
+          : placeholders as Map<String, String>,
+    ));
+  }
 }
 
-class _$LogoAnimationCompleted implements LogoAnimationCompleted {
-  const _$LogoAnimationCompleted();
+class _$PlaceholdersLoadedEVT implements PlaceholdersLoadedEVT {
+  const _$PlaceholdersLoadedEVT(this.placeholders)
+      : assert(placeholders != null);
+
+  @override
+  final Map<String, String> placeholders;
 
   @override
   String toString() {
-    return 'SplashDatabaseEvent.logoAnimationCompleted()';
+    return 'SplashDatabaseEvent.placeholdersLoadedEVT(placeholders: $placeholders)';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is LogoAnimationCompleted);
+    return identical(this, other) ||
+        (other is PlaceholdersLoadedEVT &&
+            (identical(other.placeholders, placeholders) ||
+                const DeepCollectionEquality()
+                    .equals(other.placeholders, placeholders)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(placeholders);
+
+  @override
+  $PlaceholdersLoadedEVTCopyWith<PlaceholdersLoadedEVT> get copyWith =>
+      _$PlaceholdersLoadedEVTCopyWithImpl<PlaceholdersLoadedEVT>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result authenticatedEVT(bool isAnonymous),
+    @required Result placeholdersLoadedEVT(Map<String, String> placeholders),
+    @required Result placeholdersSavedEVT(),
+    @required Result sessionFetchedEVT(Session session),
+    @required Result userLoadedEVT(User user),
+  }) {
+    assert(authenticatedEVT != null);
+    assert(placeholdersLoadedEVT != null);
+    assert(placeholdersSavedEVT != null);
+    assert(sessionFetchedEVT != null);
+    assert(userLoadedEVT != null);
+    return placeholdersLoadedEVT(placeholders);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result authenticatedEVT(bool isAnonymous),
+    Result placeholdersLoadedEVT(Map<String, String> placeholders),
+    Result placeholdersSavedEVT(),
+    Result sessionFetchedEVT(Session session),
+    Result userLoadedEVT(User user),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (placeholdersLoadedEVT != null) {
+      return placeholdersLoadedEVT(placeholders);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result authenticatedEVT(AuthenticatedEVT value),
+    @required Result placeholdersLoadedEVT(PlaceholdersLoadedEVT value),
+    @required Result placeholdersSavedEVT(PlaceholdersSavedEVT value),
+    @required Result sessionFetchedEVT(SessionFetchedEVT value),
+    @required Result userLoadedEVT(UserLoadedEVT value),
+  }) {
+    assert(authenticatedEVT != null);
+    assert(placeholdersLoadedEVT != null);
+    assert(placeholdersSavedEVT != null);
+    assert(sessionFetchedEVT != null);
+    assert(userLoadedEVT != null);
+    return placeholdersLoadedEVT(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result authenticatedEVT(AuthenticatedEVT value),
+    Result placeholdersLoadedEVT(PlaceholdersLoadedEVT value),
+    Result placeholdersSavedEVT(PlaceholdersSavedEVT value),
+    Result sessionFetchedEVT(SessionFetchedEVT value),
+    Result userLoadedEVT(UserLoadedEVT value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (placeholdersLoadedEVT != null) {
+      return placeholdersLoadedEVT(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class PlaceholdersLoadedEVT implements SplashDatabaseEvent {
+  const factory PlaceholdersLoadedEVT(Map<String, String> placeholders) =
+      _$PlaceholdersLoadedEVT;
+
+  Map<String, String> get placeholders;
+  $PlaceholdersLoadedEVTCopyWith<PlaceholdersLoadedEVT> get copyWith;
+}
+
+abstract class $PlaceholdersSavedEVTCopyWith<$Res> {
+  factory $PlaceholdersSavedEVTCopyWith(PlaceholdersSavedEVT value,
+          $Res Function(PlaceholdersSavedEVT) then) =
+      _$PlaceholdersSavedEVTCopyWithImpl<$Res>;
+}
+
+class _$PlaceholdersSavedEVTCopyWithImpl<$Res>
+    extends _$SplashDatabaseEventCopyWithImpl<$Res>
+    implements $PlaceholdersSavedEVTCopyWith<$Res> {
+  _$PlaceholdersSavedEVTCopyWithImpl(
+      PlaceholdersSavedEVT _value, $Res Function(PlaceholdersSavedEVT) _then)
+      : super(_value, (v) => _then(v as PlaceholdersSavedEVT));
+
+  @override
+  PlaceholdersSavedEVT get _value => super._value as PlaceholdersSavedEVT;
+}
+
+class _$PlaceholdersSavedEVT implements PlaceholdersSavedEVT {
+  const _$PlaceholdersSavedEVT();
+
+  @override
+  String toString() {
+    return 'SplashDatabaseEvent.placeholdersSavedEVT()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is PlaceholdersSavedEVT);
   }
 
   @override
@@ -217,24 +403,33 @@ class _$LogoAnimationCompleted implements LogoAnimationCompleted {
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result authenticated(bool isAnonymous),
-    @required Result logoAnimationCompleted(),
+    @required Result authenticatedEVT(bool isAnonymous),
+    @required Result placeholdersLoadedEVT(Map<String, String> placeholders),
+    @required Result placeholdersSavedEVT(),
+    @required Result sessionFetchedEVT(Session session),
+    @required Result userLoadedEVT(User user),
   }) {
-    assert(authenticated != null);
-    assert(logoAnimationCompleted != null);
-    return logoAnimationCompleted();
+    assert(authenticatedEVT != null);
+    assert(placeholdersLoadedEVT != null);
+    assert(placeholdersSavedEVT != null);
+    assert(sessionFetchedEVT != null);
+    assert(userLoadedEVT != null);
+    return placeholdersSavedEVT();
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result authenticated(bool isAnonymous),
-    Result logoAnimationCompleted(),
+    Result authenticatedEVT(bool isAnonymous),
+    Result placeholdersLoadedEVT(Map<String, String> placeholders),
+    Result placeholdersSavedEVT(),
+    Result sessionFetchedEVT(Session session),
+    Result userLoadedEVT(User user),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (logoAnimationCompleted != null) {
-      return logoAnimationCompleted();
+    if (placeholdersSavedEVT != null) {
+      return placeholdersSavedEVT();
     }
     return orElse();
   }
@@ -242,31 +437,300 @@ class _$LogoAnimationCompleted implements LogoAnimationCompleted {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result authenticated(Authenticated value),
-    @required Result logoAnimationCompleted(LogoAnimationCompleted value),
+    @required Result authenticatedEVT(AuthenticatedEVT value),
+    @required Result placeholdersLoadedEVT(PlaceholdersLoadedEVT value),
+    @required Result placeholdersSavedEVT(PlaceholdersSavedEVT value),
+    @required Result sessionFetchedEVT(SessionFetchedEVT value),
+    @required Result userLoadedEVT(UserLoadedEVT value),
   }) {
-    assert(authenticated != null);
-    assert(logoAnimationCompleted != null);
-    return logoAnimationCompleted(this);
+    assert(authenticatedEVT != null);
+    assert(placeholdersLoadedEVT != null);
+    assert(placeholdersSavedEVT != null);
+    assert(sessionFetchedEVT != null);
+    assert(userLoadedEVT != null);
+    return placeholdersSavedEVT(this);
   }
 
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result authenticated(Authenticated value),
-    Result logoAnimationCompleted(LogoAnimationCompleted value),
+    Result authenticatedEVT(AuthenticatedEVT value),
+    Result placeholdersLoadedEVT(PlaceholdersLoadedEVT value),
+    Result placeholdersSavedEVT(PlaceholdersSavedEVT value),
+    Result sessionFetchedEVT(SessionFetchedEVT value),
+    Result userLoadedEVT(UserLoadedEVT value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (logoAnimationCompleted != null) {
-      return logoAnimationCompleted(this);
+    if (placeholdersSavedEVT != null) {
+      return placeholdersSavedEVT(this);
     }
     return orElse();
   }
 }
 
-abstract class LogoAnimationCompleted implements SplashDatabaseEvent {
-  const factory LogoAnimationCompleted() = _$LogoAnimationCompleted;
+abstract class PlaceholdersSavedEVT implements SplashDatabaseEvent {
+  const factory PlaceholdersSavedEVT() = _$PlaceholdersSavedEVT;
+}
+
+abstract class $SessionFetchedEVTCopyWith<$Res> {
+  factory $SessionFetchedEVTCopyWith(
+          SessionFetchedEVT value, $Res Function(SessionFetchedEVT) then) =
+      _$SessionFetchedEVTCopyWithImpl<$Res>;
+  $Res call({Session session});
+}
+
+class _$SessionFetchedEVTCopyWithImpl<$Res>
+    extends _$SplashDatabaseEventCopyWithImpl<$Res>
+    implements $SessionFetchedEVTCopyWith<$Res> {
+  _$SessionFetchedEVTCopyWithImpl(
+      SessionFetchedEVT _value, $Res Function(SessionFetchedEVT) _then)
+      : super(_value, (v) => _then(v as SessionFetchedEVT));
+
+  @override
+  SessionFetchedEVT get _value => super._value as SessionFetchedEVT;
+
+  @override
+  $Res call({
+    Object session = freezed,
+  }) {
+    return _then(SessionFetchedEVT(
+      session == freezed ? _value.session : session as Session,
+    ));
+  }
+}
+
+class _$SessionFetchedEVT implements SessionFetchedEVT {
+  const _$SessionFetchedEVT(this.session) : assert(session != null);
+
+  @override
+  final Session session;
+
+  @override
+  String toString() {
+    return 'SplashDatabaseEvent.sessionFetchedEVT(session: $session)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is SessionFetchedEVT &&
+            (identical(other.session, session) ||
+                const DeepCollectionEquality().equals(other.session, session)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(session);
+
+  @override
+  $SessionFetchedEVTCopyWith<SessionFetchedEVT> get copyWith =>
+      _$SessionFetchedEVTCopyWithImpl<SessionFetchedEVT>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result authenticatedEVT(bool isAnonymous),
+    @required Result placeholdersLoadedEVT(Map<String, String> placeholders),
+    @required Result placeholdersSavedEVT(),
+    @required Result sessionFetchedEVT(Session session),
+    @required Result userLoadedEVT(User user),
+  }) {
+    assert(authenticatedEVT != null);
+    assert(placeholdersLoadedEVT != null);
+    assert(placeholdersSavedEVT != null);
+    assert(sessionFetchedEVT != null);
+    assert(userLoadedEVT != null);
+    return sessionFetchedEVT(session);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result authenticatedEVT(bool isAnonymous),
+    Result placeholdersLoadedEVT(Map<String, String> placeholders),
+    Result placeholdersSavedEVT(),
+    Result sessionFetchedEVT(Session session),
+    Result userLoadedEVT(User user),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (sessionFetchedEVT != null) {
+      return sessionFetchedEVT(session);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result authenticatedEVT(AuthenticatedEVT value),
+    @required Result placeholdersLoadedEVT(PlaceholdersLoadedEVT value),
+    @required Result placeholdersSavedEVT(PlaceholdersSavedEVT value),
+    @required Result sessionFetchedEVT(SessionFetchedEVT value),
+    @required Result userLoadedEVT(UserLoadedEVT value),
+  }) {
+    assert(authenticatedEVT != null);
+    assert(placeholdersLoadedEVT != null);
+    assert(placeholdersSavedEVT != null);
+    assert(sessionFetchedEVT != null);
+    assert(userLoadedEVT != null);
+    return sessionFetchedEVT(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result authenticatedEVT(AuthenticatedEVT value),
+    Result placeholdersLoadedEVT(PlaceholdersLoadedEVT value),
+    Result placeholdersSavedEVT(PlaceholdersSavedEVT value),
+    Result sessionFetchedEVT(SessionFetchedEVT value),
+    Result userLoadedEVT(UserLoadedEVT value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (sessionFetchedEVT != null) {
+      return sessionFetchedEVT(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SessionFetchedEVT implements SplashDatabaseEvent {
+  const factory SessionFetchedEVT(Session session) = _$SessionFetchedEVT;
+
+  Session get session;
+  $SessionFetchedEVTCopyWith<SessionFetchedEVT> get copyWith;
+}
+
+abstract class $UserLoadedEVTCopyWith<$Res> {
+  factory $UserLoadedEVTCopyWith(
+          UserLoadedEVT value, $Res Function(UserLoadedEVT) then) =
+      _$UserLoadedEVTCopyWithImpl<$Res>;
+  $Res call({User user});
+}
+
+class _$UserLoadedEVTCopyWithImpl<$Res>
+    extends _$SplashDatabaseEventCopyWithImpl<$Res>
+    implements $UserLoadedEVTCopyWith<$Res> {
+  _$UserLoadedEVTCopyWithImpl(
+      UserLoadedEVT _value, $Res Function(UserLoadedEVT) _then)
+      : super(_value, (v) => _then(v as UserLoadedEVT));
+
+  @override
+  UserLoadedEVT get _value => super._value as UserLoadedEVT;
+
+  @override
+  $Res call({
+    Object user = freezed,
+  }) {
+    return _then(UserLoadedEVT(
+      user == freezed ? _value.user : user as User,
+    ));
+  }
+}
+
+class _$UserLoadedEVT implements UserLoadedEVT {
+  const _$UserLoadedEVT(this.user) : assert(user != null);
+
+  @override
+  final User user;
+
+  @override
+  String toString() {
+    return 'SplashDatabaseEvent.userLoadedEVT(user: $user)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is UserLoadedEVT &&
+            (identical(other.user, user) ||
+                const DeepCollectionEquality().equals(other.user, user)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(user);
+
+  @override
+  $UserLoadedEVTCopyWith<UserLoadedEVT> get copyWith =>
+      _$UserLoadedEVTCopyWithImpl<UserLoadedEVT>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result authenticatedEVT(bool isAnonymous),
+    @required Result placeholdersLoadedEVT(Map<String, String> placeholders),
+    @required Result placeholdersSavedEVT(),
+    @required Result sessionFetchedEVT(Session session),
+    @required Result userLoadedEVT(User user),
+  }) {
+    assert(authenticatedEVT != null);
+    assert(placeholdersLoadedEVT != null);
+    assert(placeholdersSavedEVT != null);
+    assert(sessionFetchedEVT != null);
+    assert(userLoadedEVT != null);
+    return userLoadedEVT(user);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result authenticatedEVT(bool isAnonymous),
+    Result placeholdersLoadedEVT(Map<String, String> placeholders),
+    Result placeholdersSavedEVT(),
+    Result sessionFetchedEVT(Session session),
+    Result userLoadedEVT(User user),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (userLoadedEVT != null) {
+      return userLoadedEVT(user);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result authenticatedEVT(AuthenticatedEVT value),
+    @required Result placeholdersLoadedEVT(PlaceholdersLoadedEVT value),
+    @required Result placeholdersSavedEVT(PlaceholdersSavedEVT value),
+    @required Result sessionFetchedEVT(SessionFetchedEVT value),
+    @required Result userLoadedEVT(UserLoadedEVT value),
+  }) {
+    assert(authenticatedEVT != null);
+    assert(placeholdersLoadedEVT != null);
+    assert(placeholdersSavedEVT != null);
+    assert(sessionFetchedEVT != null);
+    assert(userLoadedEVT != null);
+    return userLoadedEVT(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result authenticatedEVT(AuthenticatedEVT value),
+    Result placeholdersLoadedEVT(PlaceholdersLoadedEVT value),
+    Result placeholdersSavedEVT(PlaceholdersSavedEVT value),
+    Result sessionFetchedEVT(SessionFetchedEVT value),
+    Result userLoadedEVT(UserLoadedEVT value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (userLoadedEVT != null) {
+      return userLoadedEVT(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UserLoadedEVT implements SplashDatabaseEvent {
+  const factory UserLoadedEVT(User user) = _$UserLoadedEVT;
+
+  User get user;
+  $UserLoadedEVTCopyWith<UserLoadedEVT> get copyWith;
 }
 
 class _$SplashDatabaseStateTearOff {
@@ -276,13 +740,13 @@ class _$SplashDatabaseStateTearOff {
       {@required
           bool isUpdating,
       @required
-          bool isLogoAnimationCompleted,
+          bool isAnonymous,
       @required
-          Option<Either<DatabaseFailure, dynamic>>
+          Option<Either<DatabaseFailure, DatabaseSuccess>>
               databaseFailureOrSuccessOption}) {
     return _SplashDatabaseState(
       isUpdating: isUpdating,
-      isLogoAnimationCompleted: isLogoAnimationCompleted,
+      isAnonymous: isAnonymous,
       databaseFailureOrSuccessOption: databaseFailureOrSuccessOption,
     );
   }
@@ -293,8 +757,9 @@ const $SplashDatabaseState = _$SplashDatabaseStateTearOff();
 
 mixin _$SplashDatabaseState {
   bool get isUpdating;
-  bool get isLogoAnimationCompleted;
-  Option<Either<DatabaseFailure, dynamic>> get databaseFailureOrSuccessOption;
+  bool get isAnonymous;
+  Option<Either<DatabaseFailure, DatabaseSuccess>>
+      get databaseFailureOrSuccessOption;
 
   $SplashDatabaseStateCopyWith<SplashDatabaseState> get copyWith;
 }
@@ -305,8 +770,9 @@ abstract class $SplashDatabaseStateCopyWith<$Res> {
       _$SplashDatabaseStateCopyWithImpl<$Res>;
   $Res call(
       {bool isUpdating,
-      bool isLogoAnimationCompleted,
-      Option<Either<DatabaseFailure, dynamic>> databaseFailureOrSuccessOption});
+      bool isAnonymous,
+      Option<Either<DatabaseFailure, DatabaseSuccess>>
+          databaseFailureOrSuccessOption});
 }
 
 class _$SplashDatabaseStateCopyWithImpl<$Res>
@@ -320,19 +786,18 @@ class _$SplashDatabaseStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object isUpdating = freezed,
-    Object isLogoAnimationCompleted = freezed,
+    Object isAnonymous = freezed,
     Object databaseFailureOrSuccessOption = freezed,
   }) {
     return _then(_value.copyWith(
       isUpdating:
           isUpdating == freezed ? _value.isUpdating : isUpdating as bool,
-      isLogoAnimationCompleted: isLogoAnimationCompleted == freezed
-          ? _value.isLogoAnimationCompleted
-          : isLogoAnimationCompleted as bool,
+      isAnonymous:
+          isAnonymous == freezed ? _value.isAnonymous : isAnonymous as bool,
       databaseFailureOrSuccessOption: databaseFailureOrSuccessOption == freezed
           ? _value.databaseFailureOrSuccessOption
           : databaseFailureOrSuccessOption
-              as Option<Either<DatabaseFailure, dynamic>>,
+              as Option<Either<DatabaseFailure, DatabaseSuccess>>,
     ));
   }
 }
@@ -345,8 +810,9 @@ abstract class _$SplashDatabaseStateCopyWith<$Res>
   @override
   $Res call(
       {bool isUpdating,
-      bool isLogoAnimationCompleted,
-      Option<Either<DatabaseFailure, dynamic>> databaseFailureOrSuccessOption});
+      bool isAnonymous,
+      Option<Either<DatabaseFailure, DatabaseSuccess>>
+          databaseFailureOrSuccessOption});
 }
 
 class __$SplashDatabaseStateCopyWithImpl<$Res>
@@ -362,19 +828,18 @@ class __$SplashDatabaseStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object isUpdating = freezed,
-    Object isLogoAnimationCompleted = freezed,
+    Object isAnonymous = freezed,
     Object databaseFailureOrSuccessOption = freezed,
   }) {
     return _then(_SplashDatabaseState(
       isUpdating:
           isUpdating == freezed ? _value.isUpdating : isUpdating as bool,
-      isLogoAnimationCompleted: isLogoAnimationCompleted == freezed
-          ? _value.isLogoAnimationCompleted
-          : isLogoAnimationCompleted as bool,
+      isAnonymous:
+          isAnonymous == freezed ? _value.isAnonymous : isAnonymous as bool,
       databaseFailureOrSuccessOption: databaseFailureOrSuccessOption == freezed
           ? _value.databaseFailureOrSuccessOption
           : databaseFailureOrSuccessOption
-              as Option<Either<DatabaseFailure, dynamic>>,
+              as Option<Either<DatabaseFailure, DatabaseSuccess>>,
     ));
   }
 }
@@ -382,22 +847,23 @@ class __$SplashDatabaseStateCopyWithImpl<$Res>
 class _$_SplashDatabaseState implements _SplashDatabaseState {
   const _$_SplashDatabaseState(
       {@required this.isUpdating,
-      @required this.isLogoAnimationCompleted,
+      @required this.isAnonymous,
       @required this.databaseFailureOrSuccessOption})
       : assert(isUpdating != null),
-        assert(isLogoAnimationCompleted != null),
+        assert(isAnonymous != null),
         assert(databaseFailureOrSuccessOption != null);
 
   @override
   final bool isUpdating;
   @override
-  final bool isLogoAnimationCompleted;
+  final bool isAnonymous;
   @override
-  final Option<Either<DatabaseFailure, dynamic>> databaseFailureOrSuccessOption;
+  final Option<Either<DatabaseFailure, DatabaseSuccess>>
+      databaseFailureOrSuccessOption;
 
   @override
   String toString() {
-    return 'SplashDatabaseState(isUpdating: $isUpdating, isLogoAnimationCompleted: $isLogoAnimationCompleted, databaseFailureOrSuccessOption: $databaseFailureOrSuccessOption)';
+    return 'SplashDatabaseState(isUpdating: $isUpdating, isAnonymous: $isAnonymous, databaseFailureOrSuccessOption: $databaseFailureOrSuccessOption)';
   }
 
   @override
@@ -407,11 +873,9 @@ class _$_SplashDatabaseState implements _SplashDatabaseState {
             (identical(other.isUpdating, isUpdating) ||
                 const DeepCollectionEquality()
                     .equals(other.isUpdating, isUpdating)) &&
-            (identical(
-                    other.isLogoAnimationCompleted, isLogoAnimationCompleted) ||
-                const DeepCollectionEquality().equals(
-                    other.isLogoAnimationCompleted,
-                    isLogoAnimationCompleted)) &&
+            (identical(other.isAnonymous, isAnonymous) ||
+                const DeepCollectionEquality()
+                    .equals(other.isAnonymous, isAnonymous)) &&
             (identical(other.databaseFailureOrSuccessOption,
                     databaseFailureOrSuccessOption) ||
                 const DeepCollectionEquality().equals(
@@ -423,7 +887,7 @@ class _$_SplashDatabaseState implements _SplashDatabaseState {
   int get hashCode =>
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(isUpdating) ^
-      const DeepCollectionEquality().hash(isLogoAnimationCompleted) ^
+      const DeepCollectionEquality().hash(isAnonymous) ^
       const DeepCollectionEquality().hash(databaseFailureOrSuccessOption);
 
   @override
@@ -437,17 +901,18 @@ abstract class _SplashDatabaseState implements SplashDatabaseState {
       {@required
           bool isUpdating,
       @required
-          bool isLogoAnimationCompleted,
+          bool isAnonymous,
       @required
-          Option<Either<DatabaseFailure, dynamic>>
+          Option<Either<DatabaseFailure, DatabaseSuccess>>
               databaseFailureOrSuccessOption}) = _$_SplashDatabaseState;
 
   @override
   bool get isUpdating;
   @override
-  bool get isLogoAnimationCompleted;
+  bool get isAnonymous;
   @override
-  Option<Either<DatabaseFailure, dynamic>> get databaseFailureOrSuccessOption;
+  Option<Either<DatabaseFailure, DatabaseSuccess>>
+      get databaseFailureOrSuccessOption;
   @override
   _$SplashDatabaseStateCopyWith<_SplashDatabaseState> get copyWith;
 }

@@ -7,6 +7,8 @@ import 'package:wine/injection.dart';
 import 'package:wine/presentation/pages/account/widgets/account_layout.dart';
 import 'package:wine/presentation/widgets/wine_leading_image_button.dart';
 import 'package:wine/utils/themes.dart';
+import 'package:wine/presentation/widgets/wine_switch.dart';
+import 'package:wine/utils/palettes.dart';
 
 class AccountPage extends StatelessWidget {
   @override
@@ -19,13 +21,7 @@ class AccountPage extends StatelessWidget {
           preferredSize: const Size.fromHeight(41.5),
           child: AppBar(
             backgroundColor: Colors.transparent,
-            bottom: PreferredSize(
-              preferredSize: const Size.fromHeight(0.0),
-              child: Container(
-                color: Colors.black,
-                height: 2.0,
-              ),
-            ),
+            bottom: const PreferredSize(preferredSize: Size.fromHeight(0.0), child: SizedBox(height: 0.0)),
             brightness: Brightness.light,
             centerTitle: true,
             elevation: 0.0,
@@ -41,16 +37,12 @@ class AccountPage extends StatelessWidget {
         body: MultiBlocProvider(
           providers: [
             BlocProvider(
-              create: (context) => getIt<AccountDatabaseBloc>()
-                ..add(AccountDatabaseEvent.accountPageLaunched(
-                  context: context,
-                )),
+              create: (context) =>
+                  getIt<AccountDatabaseBloc>()..add(AccountDatabaseEvent.accountPageLaunchedEVT(context: context)),
             ),
             BlocProvider(
-              create: (context) => getIt<AccountNavigationBloc>()
-                ..add(AccountNavigationEvent.accountPageLaunched(
-                  context: context,
-                )),
+              create: (context) =>
+                  getIt<AccountNavigationBloc>()..add(AccountNavigationEvent.accountPageLaunchedEVT(context: context)),
             ),
           ],
           child: AccountLayout(),

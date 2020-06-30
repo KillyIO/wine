@@ -14,8 +14,7 @@ part 'account_navigation_state.dart';
 part 'account_navigation_bloc.freezed.dart';
 
 @injectable
-class AccountNavigationBloc
-    extends Bloc<AccountNavigationEvent, AccountNavigationState> {
+class AccountNavigationBloc extends Bloc<AccountNavigationEvent, AccountNavigationState> {
   @override
   AccountNavigationState get initialState => AccountNavigationState.initial();
 
@@ -24,15 +23,13 @@ class AccountNavigationBloc
     AccountNavigationEvent event,
   ) async* {
     yield* event.map(
-      accountPageLaunched: (event) async* {
+      accountPageLaunchedEVT: (event) async* {
         yield state.copyWith(
           pageViewNavbarItems: Methods.getAccountNavbarItems(event.context),
-          verticalNavbarItems: Methods.getAccountVerticalNavbarItems(
-            event.context,
-          ),
+          verticalNavbarItems: Methods.getAccountVerticalNavbarItems(event.context),
         );
       },
-      pageViewIndexChanged: (event) async* {
+      pageViewIndexChangedEVT: (event) async* {
         if (state.currentPageViewIdx != event.index) {
           int newIdx = event.index;
           if (event.index > state.pageViewNavbarItems.length - 1) {
@@ -41,21 +38,14 @@ class AccountNavigationBloc
           if (event.index < 0) {
             newIdx = state.pageViewNavbarItems.length - 1;
           }
-          yield state.copyWith(
-            currentPageViewIdx: newIdx,
-          );
+          yield state.copyWith(currentPageViewIdx: newIdx);
         }
       },
-      verticalNavbarIndexChanged: (event) async* {
-        yield state.copyWith(
-          currentVerticalNavbarIdx: event.index,
-        );
+      resetBlocEVT: (event) async* {
+        yield state.copyWith(currentPageViewIdx: 0, currentVerticalNavbarIdx: 0);
       },
-      resetAccountNavigationBloc: (event) async* {
-        yield state.copyWith(
-          currentPageViewIdx: 0,
-          currentVerticalNavbarIdx: 0,
-        );
+      verticalNavbarIndexChangedEVT: (event) async* {
+        yield state.copyWith(currentVerticalNavbarIdx: event.index);
       },
     );
   }

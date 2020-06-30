@@ -19,6 +19,7 @@ class Paths {
   static const String placeholdersPath = 'placeholders';
 
   // SECTION STORAGE PATHS
-  static const String coversPaths = 'covers';
+  static const String seriesCoversPaths = 'series_covers';
+  static const String chapterCoversPaths = 'chapter_covers';
   static const String profilePicturesPath = 'profile_pictures';
 }

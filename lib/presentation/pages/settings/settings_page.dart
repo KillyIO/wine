@@ -19,16 +19,12 @@ class SettingsPage extends StatelessWidget {
       value: Themes.wineLightTheme(),
       child: MultiBlocProvider(
         providers: [
+          BlocProvider(create: (context) => getIt<SettingsAuthenticationBloc>()),
           BlocProvider(
-            create: (context) => getIt<SettingsAuthenticationBloc>(),
+            create: (context) => getIt<SettingsDatabaseBloc>()..add(const SettingsDatabaseEvent.settingsLaunchedEVT()),
           ),
           BlocProvider(
-            create: (context) => getIt<SettingsDatabaseBloc>()
-              ..add(const SettingsDatabaseEvent.settingsLaunched()),
-          ),
-          BlocProvider(
-            create: (context) => getIt<SettingsOutlierBloc>()
-              ..add(const SettingsOutlierEvent.getAppDetails()),
+            create: (context) => getIt<SettingsOutlierBloc>()..add(const SettingsOutlierEvent.getAppDetailsEVT()),
           ),
         ],
         child: SettingsLayout(),

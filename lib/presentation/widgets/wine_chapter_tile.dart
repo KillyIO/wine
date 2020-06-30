@@ -1,6 +1,7 @@
 import 'package:assorted_layout_widgets/assorted_layout_widgets.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:wine/utils/extensions.dart';
 
 class WINEChapterTile extends StatelessWidget {
   final String coverUrl;
@@ -11,11 +12,11 @@ class WINEChapterTile extends StatelessWidget {
 
   const WINEChapterTile({
     Key key,
-    this.coverUrl,
-    this.title,
-    this.authorName,
-    this.seriesTitle,
-    this.onPressed,
+    @required this.coverUrl,
+    @required this.title,
+    @required this.authorName,
+    @required this.seriesTitle,
+    @required this.onPressed,
   }) : super(key: key);
 
   @override
@@ -43,7 +44,7 @@ class WINEChapterTile extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     TextOneLine(
-                      title,
+                      title.isNotEmptyOrNull ? title : 'No title',
                       style: TextStyle(
                         color: Colors.black,
                         fontSize: 18.0,
@@ -64,8 +65,7 @@ class WINEChapterTile extends StatelessWidget {
                   padding: const EdgeInsets.only(left: 2.5),
                   child: TextOneLine(
                     authorName,
-                    style: TextStyle(
-                        color: Colors.black38, fontWeight: FontWeight.w400),
+                    style: TextStyle(color: Colors.black38, fontWeight: FontWeight.w400),
                   ),
                 ),
               ],

@@ -17,9 +17,7 @@ class ChapterPage extends StatelessWidget {
     return AnnotatedRegion<SystemUiOverlayStyle>(
       value: Themes.wineLightTheme(),
       child: MultiBlocProvider(
-        providers: [
-          BlocProvider(create: (context) => getIt<ChapterDatabaseBloc>())
-        ],
+        providers: [BlocProvider(create: (context) => getIt<ChapterDatabaseBloc>())],
         child: ChapterLayout(args: args),
       ),
     );

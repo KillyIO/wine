@@ -21,12 +21,10 @@ class SplashPage extends StatelessWidget {
         body: MultiBlocProvider(
           providers: [
             BlocProvider(
-              create: (context) => getIt<SplashAuthenticationBloc>()
-                ..add(const SplashAuthenticationEvent.splashLaunched()),
+              create: (context) =>
+                  getIt<SplashAuthenticationBloc>()..add(const SplashAuthenticationEvent.splashLaunchedEVT()),
             ),
-            BlocProvider(
-              create: (context) => getIt<SplashDatabaseBloc>(),
-            ),
+            BlocProvider(create: (context) => getIt<SplashDatabaseBloc>()),
           ],
           child: SplashLayout(),
         ),

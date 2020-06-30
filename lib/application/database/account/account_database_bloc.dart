@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:math';
 
 import 'package:bloc/bloc.dart';
 import 'package:dartz/dartz.dart';
@@ -10,12 +9,13 @@ import 'package:hive/hive.dart';
 import 'package:injectable/injectable.dart';
 import 'package:meta/meta.dart';
 import 'package:wine/domain/database/database_failure.dart';
-import 'package:wine/domain/database/i_local_placeholder_database_facade.dart';
+import 'package:wine/domain/database/database_success.dart';
 import 'package:wine/domain/database/i_local_session_database_facade.dart';
 import 'package:wine/domain/database/i_online_chapter_database_facade.dart';
 import 'package:wine/domain/database/i_online_series_database_facade.dart';
 import 'package:wine/domain/models/chapter.dart';
 import 'package:wine/domain/models/hive/chapter_draft.dart';
+import 'package:wine/domain/models/hive/series_draft.dart';
 import 'package:wine/domain/models/hive/session.dart';
 import 'package:wine/domain/models/series.dart';
 import 'package:wine/injection.dart';
@@ -27,18 +27,15 @@ part 'account_database_state.dart';
 part 'account_database_bloc.freezed.dart';
 
 @injectable
-class AccountDatabaseBloc
-    extends Bloc<AccountDatabaseEvent, AccountDatabaseState> {
+class AccountDatabaseBloc extends Bloc<AccountDatabaseEvent, AccountDatabaseState> {
   final ILocalSessionDatabaseFacade _localSessionDatabaseFacade;
   final IOnlineSeriesDatabaseFacade _onlineSeriesDatabaseFacade;
   final IOnlineChapterDatabaseFacade _onlineChapterDatabaseFacade;
-  final ILocalPlaceholderDatabaseFacade _localPlaceholderDatabaseFacade;
 
   AccountDatabaseBloc(
     this._localSessionDatabaseFacade,
     this._onlineSeriesDatabaseFacade,
     this._onlineChapterDatabaseFacade,
-    this._localPlaceholderDatabaseFacade,
   );
 
   @override
@@ -49,135 +46,117 @@ class AccountDatabaseBloc
     AccountDatabaseEvent event,
   ) async* {
     yield* event.map(
-      accountPageLaunched: (event) async* {
-        final Random random = Random();
-
-        Either<DatabaseFailure, dynamic> failureOrSuccess;
+      accountPageLaunchedEVT: (event) async* {
         Session session = Session();
 
-        final List<Series> series = <Series>[];
-        final List<Chapter> chapters = <Chapter>[];
-        final List<String> placeholderUrls = <String>[];
-        Map<String, Series> seriesMap = <String, Series>{};
+        yield state.copyWith(isFetching: true, databaseFailureOrSuccessOption: none());
 
-        yield state.copyWith(
-          isFetching: true,
-          databaseFailureOrSuccessOption: none(),
-        );
-
-        failureOrSuccess = await _localSessionDatabaseFacade.getSession();
+        final Either<DatabaseFailure, DatabaseSuccess> failureOrSuccess =
+            await _localSessionDatabaseFacade.fetchSession();
         failureOrSuccess.fold(
           (_) {},
           (success) {
-            if (success is Session) {
-              session = success;
+            if (success is SessionFetchedSCS) {
+              session = success.session;
+              add(AccountDatabaseEvent.sessionFetchedEVT(session));
             }
           },
         );
 
-        if (failureOrSuccess.isRight()) {
-          failureOrSuccess =
-              await _onlineSeriesDatabaseFacade.getSeriesByUserId(session.uid);
+        yield state.copyWith(
+          session: session,
+          genres: Methods.getGenres(event.context),
+          languages: Methods.getLanguages(event.context),
+          copyrights: Methods.getCopyrights(event.context),
+          databaseFailureOrSuccessOption: optionOf(failureOrSuccess),
+        );
+      },
+      chaptersLoadedEVT: (event) async* {
+        final List<String> seriesUids =
+            getIt<Box<ChapterDraft>>().values.toList().map((chapterDraft) => chapterDraft.seriesUid).toList();
+
+        if (seriesUids.isNotEmpty) {
+          Map<String, Series> seriesMap = <String, Series>{};
+
+          final Either<DatabaseFailure, DatabaseSuccess> failureOrSuccess =
+              await _onlineSeriesDatabaseFacade.loadSeriesAsMapByUidList(seriesUids);
           failureOrSuccess.fold(
             (_) {},
             (success) {
-              if (success is List<Series>) {
-                series.addAll(success);
+              if (success is SeriesAsMapLoadedSCS) {
+                seriesMap = success.seriesMap;
+                add(const AccountDatabaseEvent.seriesAsMapLoadedEVT());
               }
             },
           );
 
-          if (failureOrSuccess.isRight()) {
-            failureOrSuccess = await _onlineChapterDatabaseFacade
-                .getChaptersByUserId(session.uid, getSeries: true);
-
-            failureOrSuccess.fold(
-              (_) {},
-              (success) {
-                if (success is List<Chapter>) {
-                  chapters.addAll(success);
-                }
-              },
-            );
-
-            if (failureOrSuccess.isRight()) {
-              final List<String> placeholderKeys = Methods.getPlaceholderKeys();
-              final List<String> randomKeys = <String>[
-                placeholderKeys[random.nextInt(placeholderKeys.length)],
-                placeholderKeys[random.nextInt(placeholderKeys.length)],
-              ];
-
-              for (final String key in randomKeys) {
-                failureOrSuccess = await _localPlaceholderDatabaseFacade
-                    .getPlaceholderUrlByKey(key);
-                failureOrSuccess.fold(
-                  (_) {},
-                  (success) {
-                    if (success is String) {
-                      placeholderUrls.add(success);
-                    }
-                  },
-                );
-              }
-
-              final List<String> seriesUids = getIt<Box<ChapterDraft>>()
-                  .values
-                  .toList()
-                  .map((chapterDraft) => chapterDraft.seriesUid)
-                  .toList();
-              if (seriesUids.isNotEmpty) {
-                failureOrSuccess = await _onlineSeriesDatabaseFacade
-                    .getSeriesAsMapByUidList(seriesUids);
-                failureOrSuccess.fold(
-                  (_) {},
-                  (success) {
-                    if (success is Map<String, Series>) {
-                      seriesMap = success;
-                    }
-                  },
-                );
-              }
-            }
-          }
+          yield state.copyWith(
+            databaseFailureOrSuccessOption: optionOf(failureOrSuccess),
+            isFetching: false,
+            seriesMap: seriesMap,
+          );
         }
-
-        yield state.copyWith(
-          session: session,
-          series: series,
-          chapters: chapters,
-          genres: Methods.getGenres(event.context),
-          languages: Methods.getLanguages(event.context),
-          copyrights: Methods.getCopyrights(event.context),
-          placeholderUrls: placeholderUrls,
-          seriesMap: seriesMap,
-          isFetching: false,
-          databaseFailureOrSuccessOption: optionOf(failureOrSuccess),
-        );
       },
-      fetchMoreSeries: (event) async* {
-        final Session session = state.session;
+      loadMoreSeriesEVT: (event) async* {
         final List<Series> series = state.series;
 
-        final Either<DatabaseFailure, dynamic> failureOrSuccess =
-            await _onlineSeriesDatabaseFacade.getSeriesByUserId(
-          session.uid,
-          lastSeries: series.last,
-        );
+        final Either<DatabaseFailure, DatabaseSuccess> failureOrSuccess =
+            await _onlineSeriesDatabaseFacade.loadSeriesByUserId(state.session.uid, lastSeries: series.last);
         failureOrSuccess.fold(
           (_) {},
           (success) {
-            if (success is List<Series>) {
-              series.addAll(success);
+            if (success is SeriesListLoadedSCS) {
+              series.addAll(success.series);
             }
           },
         );
 
-        yield state.copyWith(
-          series: series,
-          databaseFailureOrSuccessOption: optionOf(failureOrSuccess),
-        );
+        yield state.copyWith(databaseFailureOrSuccessOption: optionOf(failureOrSuccess), series: series);
       },
-      fetchMoreChapters: (event) async* {},
+      loadMoreChaptersEVT: (event) async* {},
+      seriesLoadedEVT: (event) async* {
+        final List<Chapter> chapters = <Chapter>[];
+
+        final Either<DatabaseFailure, DatabaseSuccess> failureOrSuccess =
+            await _onlineChapterDatabaseFacade.loadChaptersByUserId(state.session.uid, loadSeries: true);
+        failureOrSuccess.fold(
+          (_) {},
+          (success) {
+            if (success is ChapterListLoadedSCS) {
+              chapters.addAll(success.chapters);
+              add(const AccountDatabaseEvent.chaptersLoadedEVT());
+            }
+          },
+        );
+
+        yield state.copyWith(databaseFailureOrSuccessOption: optionOf(failureOrSuccess), chapters: chapters);
+      },
+      seriesAsMapLoadedEVT: (event) async* {
+        final List<SeriesDraft> seriesDraftsList = getIt<Box<SeriesDraft>>().values.toList();
+
+        final Map<String, SeriesDraft> seriesDraftsMap = {
+          for (final SeriesDraft seriesDraft in seriesDraftsList) seriesDraft.uid: seriesDraft,
+        };
+
+        yield state.copyWith(seriesDraftsMap: seriesDraftsMap);
+      },
+      sessionFetchedEVT: (event) async* {
+        final List<Series> series = <Series>[];
+
+        final Either<DatabaseFailure, DatabaseSuccess> failureOrSuccess =
+            await _onlineSeriesDatabaseFacade.loadSeriesByUserId(event.session.uid);
+        failureOrSuccess.fold(
+          (_) {},
+          (success) {
+            if (success is SeriesListLoadedSCS) {
+              series.addAll(success.series);
+              add(const AccountDatabaseEvent.seriesLoadedEVT());
+            }
+          },
+        );
+
+        yield state.copyWith(databaseFailureOrSuccessOption: optionOf(failureOrSuccess), series: series);
+      },
     );
   }
 }

@@ -19,10 +19,7 @@ class ChapterStats extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: const EdgeInsets.symmetric(vertical: 10.0),
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(200.0),
-      ),
+      decoration: BoxDecoration(color: Colors.white, borderRadius: BorderRadius.circular(200.0)),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: <Widget>[
@@ -33,7 +30,6 @@ class ChapterStats extends StatelessWidget {
             statsCount: NumberFormat.compact().format(viewsCount),
             statsSize: 18.0,
           ),
-          // const SizedBox(width: 30),
           WINEStatsButton(
             icon: Icons.favorite,
             iconColor: Palettes.pastelPink,
@@ -41,7 +37,6 @@ class ChapterStats extends StatelessWidget {
             statsCount: NumberFormat.compact().format(likesCount),
             statsSize: 18.0,
           ),
-          // const SizedBox(width: 30),
           WINEStatsButton(
             icon: Icons.bookmark,
             iconColor: Palettes.pastelYellow,

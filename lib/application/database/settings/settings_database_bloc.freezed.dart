@@ -12,16 +12,16 @@ T _$identity<T>(T value) => value;
 class _$SettingsDatabaseEventTearOff {
   const _$SettingsDatabaseEventTearOff();
 
-  SettingsLaunched settingsLaunched() {
-    return const SettingsLaunched();
+  SettingsLaunchedEVT settingsLaunchedEVT() {
+    return const SettingsLaunchedEVT();
   }
 
-  UserSignedOut userSignedOut() {
-    return const UserSignedOut();
+  UserSignedOutEVT userSignedOutEVT() {
+    return const UserSignedOutEVT();
   }
 
-  ResetSettingsDatabaseBloc resetSettingsDatabaseBloc() {
-    return const ResetSettingsDatabaseBloc();
+  ResetBlocEVT resetBlocEVT() {
+    return const ResetBlocEVT();
   }
 }
 
@@ -31,28 +31,28 @@ const $SettingsDatabaseEvent = _$SettingsDatabaseEventTearOff();
 mixin _$SettingsDatabaseEvent {
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result settingsLaunched(),
-    @required Result userSignedOut(),
-    @required Result resetSettingsDatabaseBloc(),
+    @required Result settingsLaunchedEVT(),
+    @required Result userSignedOutEVT(),
+    @required Result resetBlocEVT(),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result settingsLaunched(),
-    Result userSignedOut(),
-    Result resetSettingsDatabaseBloc(),
+    Result settingsLaunchedEVT(),
+    Result userSignedOutEVT(),
+    Result resetBlocEVT(),
     @required Result orElse(),
   });
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result settingsLaunched(SettingsLaunched value),
-    @required Result userSignedOut(UserSignedOut value),
-    @required Result resetSettingsDatabaseBloc(ResetSettingsDatabaseBloc value),
+    @required Result settingsLaunchedEVT(SettingsLaunchedEVT value),
+    @required Result userSignedOutEVT(UserSignedOutEVT value),
+    @required Result resetBlocEVT(ResetBlocEVT value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result settingsLaunched(SettingsLaunched value),
-    Result userSignedOut(UserSignedOut value),
-    Result resetSettingsDatabaseBloc(ResetSettingsDatabaseBloc value),
+    Result settingsLaunchedEVT(SettingsLaunchedEVT value),
+    Result userSignedOutEVT(UserSignedOutEVT value),
+    Result resetBlocEVT(ResetBlocEVT value),
     @required Result orElse(),
   });
 }
@@ -72,34 +72,34 @@ class _$SettingsDatabaseEventCopyWithImpl<$Res>
   final $Res Function(SettingsDatabaseEvent) _then;
 }
 
-abstract class $SettingsLaunchedCopyWith<$Res> {
-  factory $SettingsLaunchedCopyWith(
-          SettingsLaunched value, $Res Function(SettingsLaunched) then) =
-      _$SettingsLaunchedCopyWithImpl<$Res>;
+abstract class $SettingsLaunchedEVTCopyWith<$Res> {
+  factory $SettingsLaunchedEVTCopyWith(
+          SettingsLaunchedEVT value, $Res Function(SettingsLaunchedEVT) then) =
+      _$SettingsLaunchedEVTCopyWithImpl<$Res>;
 }
 
-class _$SettingsLaunchedCopyWithImpl<$Res>
+class _$SettingsLaunchedEVTCopyWithImpl<$Res>
     extends _$SettingsDatabaseEventCopyWithImpl<$Res>
-    implements $SettingsLaunchedCopyWith<$Res> {
-  _$SettingsLaunchedCopyWithImpl(
-      SettingsLaunched _value, $Res Function(SettingsLaunched) _then)
-      : super(_value, (v) => _then(v as SettingsLaunched));
+    implements $SettingsLaunchedEVTCopyWith<$Res> {
+  _$SettingsLaunchedEVTCopyWithImpl(
+      SettingsLaunchedEVT _value, $Res Function(SettingsLaunchedEVT) _then)
+      : super(_value, (v) => _then(v as SettingsLaunchedEVT));
 
   @override
-  SettingsLaunched get _value => super._value as SettingsLaunched;
+  SettingsLaunchedEVT get _value => super._value as SettingsLaunchedEVT;
 }
 
-class _$SettingsLaunched implements SettingsLaunched {
-  const _$SettingsLaunched();
+class _$SettingsLaunchedEVT implements SettingsLaunchedEVT {
+  const _$SettingsLaunchedEVT();
 
   @override
   String toString() {
-    return 'SettingsDatabaseEvent.settingsLaunched()';
+    return 'SettingsDatabaseEvent.settingsLaunchedEVT()';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is SettingsLaunched);
+    return identical(this, other) || (other is SettingsLaunchedEVT);
   }
 
   @override
@@ -108,27 +108,27 @@ class _$SettingsLaunched implements SettingsLaunched {
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result settingsLaunched(),
-    @required Result userSignedOut(),
-    @required Result resetSettingsDatabaseBloc(),
+    @required Result settingsLaunchedEVT(),
+    @required Result userSignedOutEVT(),
+    @required Result resetBlocEVT(),
   }) {
-    assert(settingsLaunched != null);
-    assert(userSignedOut != null);
-    assert(resetSettingsDatabaseBloc != null);
-    return settingsLaunched();
+    assert(settingsLaunchedEVT != null);
+    assert(userSignedOutEVT != null);
+    assert(resetBlocEVT != null);
+    return settingsLaunchedEVT();
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result settingsLaunched(),
-    Result userSignedOut(),
-    Result resetSettingsDatabaseBloc(),
+    Result settingsLaunchedEVT(),
+    Result userSignedOutEVT(),
+    Result resetBlocEVT(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (settingsLaunched != null) {
-      return settingsLaunched();
+    if (settingsLaunchedEVT != null) {
+      return settingsLaunchedEVT();
     }
     return orElse();
   }
@@ -136,64 +136,64 @@ class _$SettingsLaunched implements SettingsLaunched {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result settingsLaunched(SettingsLaunched value),
-    @required Result userSignedOut(UserSignedOut value),
-    @required Result resetSettingsDatabaseBloc(ResetSettingsDatabaseBloc value),
+    @required Result settingsLaunchedEVT(SettingsLaunchedEVT value),
+    @required Result userSignedOutEVT(UserSignedOutEVT value),
+    @required Result resetBlocEVT(ResetBlocEVT value),
   }) {
-    assert(settingsLaunched != null);
-    assert(userSignedOut != null);
-    assert(resetSettingsDatabaseBloc != null);
-    return settingsLaunched(this);
+    assert(settingsLaunchedEVT != null);
+    assert(userSignedOutEVT != null);
+    assert(resetBlocEVT != null);
+    return settingsLaunchedEVT(this);
   }
 
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result settingsLaunched(SettingsLaunched value),
-    Result userSignedOut(UserSignedOut value),
-    Result resetSettingsDatabaseBloc(ResetSettingsDatabaseBloc value),
+    Result settingsLaunchedEVT(SettingsLaunchedEVT value),
+    Result userSignedOutEVT(UserSignedOutEVT value),
+    Result resetBlocEVT(ResetBlocEVT value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (settingsLaunched != null) {
-      return settingsLaunched(this);
+    if (settingsLaunchedEVT != null) {
+      return settingsLaunchedEVT(this);
     }
     return orElse();
   }
 }
 
-abstract class SettingsLaunched implements SettingsDatabaseEvent {
-  const factory SettingsLaunched() = _$SettingsLaunched;
+abstract class SettingsLaunchedEVT implements SettingsDatabaseEvent {
+  const factory SettingsLaunchedEVT() = _$SettingsLaunchedEVT;
 }
 
-abstract class $UserSignedOutCopyWith<$Res> {
-  factory $UserSignedOutCopyWith(
-          UserSignedOut value, $Res Function(UserSignedOut) then) =
-      _$UserSignedOutCopyWithImpl<$Res>;
+abstract class $UserSignedOutEVTCopyWith<$Res> {
+  factory $UserSignedOutEVTCopyWith(
+          UserSignedOutEVT value, $Res Function(UserSignedOutEVT) then) =
+      _$UserSignedOutEVTCopyWithImpl<$Res>;
 }
 
-class _$UserSignedOutCopyWithImpl<$Res>
+class _$UserSignedOutEVTCopyWithImpl<$Res>
     extends _$SettingsDatabaseEventCopyWithImpl<$Res>
-    implements $UserSignedOutCopyWith<$Res> {
-  _$UserSignedOutCopyWithImpl(
-      UserSignedOut _value, $Res Function(UserSignedOut) _then)
-      : super(_value, (v) => _then(v as UserSignedOut));
+    implements $UserSignedOutEVTCopyWith<$Res> {
+  _$UserSignedOutEVTCopyWithImpl(
+      UserSignedOutEVT _value, $Res Function(UserSignedOutEVT) _then)
+      : super(_value, (v) => _then(v as UserSignedOutEVT));
 
   @override
-  UserSignedOut get _value => super._value as UserSignedOut;
+  UserSignedOutEVT get _value => super._value as UserSignedOutEVT;
 }
 
-class _$UserSignedOut implements UserSignedOut {
-  const _$UserSignedOut();
+class _$UserSignedOutEVT implements UserSignedOutEVT {
+  const _$UserSignedOutEVT();
 
   @override
   String toString() {
-    return 'SettingsDatabaseEvent.userSignedOut()';
+    return 'SettingsDatabaseEvent.userSignedOutEVT()';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is UserSignedOut);
+    return identical(this, other) || (other is UserSignedOutEVT);
   }
 
   @override
@@ -202,27 +202,27 @@ class _$UserSignedOut implements UserSignedOut {
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result settingsLaunched(),
-    @required Result userSignedOut(),
-    @required Result resetSettingsDatabaseBloc(),
+    @required Result settingsLaunchedEVT(),
+    @required Result userSignedOutEVT(),
+    @required Result resetBlocEVT(),
   }) {
-    assert(settingsLaunched != null);
-    assert(userSignedOut != null);
-    assert(resetSettingsDatabaseBloc != null);
-    return userSignedOut();
+    assert(settingsLaunchedEVT != null);
+    assert(userSignedOutEVT != null);
+    assert(resetBlocEVT != null);
+    return userSignedOutEVT();
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result settingsLaunched(),
-    Result userSignedOut(),
-    Result resetSettingsDatabaseBloc(),
+    Result settingsLaunchedEVT(),
+    Result userSignedOutEVT(),
+    Result resetBlocEVT(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (userSignedOut != null) {
-      return userSignedOut();
+    if (userSignedOutEVT != null) {
+      return userSignedOutEVT();
     }
     return orElse();
   }
@@ -230,65 +230,64 @@ class _$UserSignedOut implements UserSignedOut {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result settingsLaunched(SettingsLaunched value),
-    @required Result userSignedOut(UserSignedOut value),
-    @required Result resetSettingsDatabaseBloc(ResetSettingsDatabaseBloc value),
+    @required Result settingsLaunchedEVT(SettingsLaunchedEVT value),
+    @required Result userSignedOutEVT(UserSignedOutEVT value),
+    @required Result resetBlocEVT(ResetBlocEVT value),
   }) {
-    assert(settingsLaunched != null);
-    assert(userSignedOut != null);
-    assert(resetSettingsDatabaseBloc != null);
-    return userSignedOut(this);
+    assert(settingsLaunchedEVT != null);
+    assert(userSignedOutEVT != null);
+    assert(resetBlocEVT != null);
+    return userSignedOutEVT(this);
   }
 
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result settingsLaunched(SettingsLaunched value),
-    Result userSignedOut(UserSignedOut value),
-    Result resetSettingsDatabaseBloc(ResetSettingsDatabaseBloc value),
+    Result settingsLaunchedEVT(SettingsLaunchedEVT value),
+    Result userSignedOutEVT(UserSignedOutEVT value),
+    Result resetBlocEVT(ResetBlocEVT value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (userSignedOut != null) {
-      return userSignedOut(this);
+    if (userSignedOutEVT != null) {
+      return userSignedOutEVT(this);
     }
     return orElse();
   }
 }
 
-abstract class UserSignedOut implements SettingsDatabaseEvent {
-  const factory UserSignedOut() = _$UserSignedOut;
+abstract class UserSignedOutEVT implements SettingsDatabaseEvent {
+  const factory UserSignedOutEVT() = _$UserSignedOutEVT;
 }
 
-abstract class $ResetSettingsDatabaseBlocCopyWith<$Res> {
-  factory $ResetSettingsDatabaseBlocCopyWith(ResetSettingsDatabaseBloc value,
-          $Res Function(ResetSettingsDatabaseBloc) then) =
-      _$ResetSettingsDatabaseBlocCopyWithImpl<$Res>;
+abstract class $ResetBlocEVTCopyWith<$Res> {
+  factory $ResetBlocEVTCopyWith(
+          ResetBlocEVT value, $Res Function(ResetBlocEVT) then) =
+      _$ResetBlocEVTCopyWithImpl<$Res>;
 }
 
-class _$ResetSettingsDatabaseBlocCopyWithImpl<$Res>
+class _$ResetBlocEVTCopyWithImpl<$Res>
     extends _$SettingsDatabaseEventCopyWithImpl<$Res>
-    implements $ResetSettingsDatabaseBlocCopyWith<$Res> {
-  _$ResetSettingsDatabaseBlocCopyWithImpl(ResetSettingsDatabaseBloc _value,
-      $Res Function(ResetSettingsDatabaseBloc) _then)
-      : super(_value, (v) => _then(v as ResetSettingsDatabaseBloc));
+    implements $ResetBlocEVTCopyWith<$Res> {
+  _$ResetBlocEVTCopyWithImpl(
+      ResetBlocEVT _value, $Res Function(ResetBlocEVT) _then)
+      : super(_value, (v) => _then(v as ResetBlocEVT));
 
   @override
-  ResetSettingsDatabaseBloc get _value =>
-      super._value as ResetSettingsDatabaseBloc;
+  ResetBlocEVT get _value => super._value as ResetBlocEVT;
 }
 
-class _$ResetSettingsDatabaseBloc implements ResetSettingsDatabaseBloc {
-  const _$ResetSettingsDatabaseBloc();
+class _$ResetBlocEVT implements ResetBlocEVT {
+  const _$ResetBlocEVT();
 
   @override
   String toString() {
-    return 'SettingsDatabaseEvent.resetSettingsDatabaseBloc()';
+    return 'SettingsDatabaseEvent.resetBlocEVT()';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is ResetSettingsDatabaseBloc);
+    return identical(this, other) || (other is ResetBlocEVT);
   }
 
   @override
@@ -297,27 +296,27 @@ class _$ResetSettingsDatabaseBloc implements ResetSettingsDatabaseBloc {
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result settingsLaunched(),
-    @required Result userSignedOut(),
-    @required Result resetSettingsDatabaseBloc(),
+    @required Result settingsLaunchedEVT(),
+    @required Result userSignedOutEVT(),
+    @required Result resetBlocEVT(),
   }) {
-    assert(settingsLaunched != null);
-    assert(userSignedOut != null);
-    assert(resetSettingsDatabaseBloc != null);
-    return resetSettingsDatabaseBloc();
+    assert(settingsLaunchedEVT != null);
+    assert(userSignedOutEVT != null);
+    assert(resetBlocEVT != null);
+    return resetBlocEVT();
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result settingsLaunched(),
-    Result userSignedOut(),
-    Result resetSettingsDatabaseBloc(),
+    Result settingsLaunchedEVT(),
+    Result userSignedOutEVT(),
+    Result resetBlocEVT(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (resetSettingsDatabaseBloc != null) {
-      return resetSettingsDatabaseBloc();
+    if (resetBlocEVT != null) {
+      return resetBlocEVT();
     }
     return orElse();
   }
@@ -325,34 +324,34 @@ class _$ResetSettingsDatabaseBloc implements ResetSettingsDatabaseBloc {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result settingsLaunched(SettingsLaunched value),
-    @required Result userSignedOut(UserSignedOut value),
-    @required Result resetSettingsDatabaseBloc(ResetSettingsDatabaseBloc value),
+    @required Result settingsLaunchedEVT(SettingsLaunchedEVT value),
+    @required Result userSignedOutEVT(UserSignedOutEVT value),
+    @required Result resetBlocEVT(ResetBlocEVT value),
   }) {
-    assert(settingsLaunched != null);
-    assert(userSignedOut != null);
-    assert(resetSettingsDatabaseBloc != null);
-    return resetSettingsDatabaseBloc(this);
+    assert(settingsLaunchedEVT != null);
+    assert(userSignedOutEVT != null);
+    assert(resetBlocEVT != null);
+    return resetBlocEVT(this);
   }
 
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result settingsLaunched(SettingsLaunched value),
-    Result userSignedOut(UserSignedOut value),
-    Result resetSettingsDatabaseBloc(ResetSettingsDatabaseBloc value),
+    Result settingsLaunchedEVT(SettingsLaunchedEVT value),
+    Result userSignedOutEVT(UserSignedOutEVT value),
+    Result resetBlocEVT(ResetBlocEVT value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (resetSettingsDatabaseBloc != null) {
-      return resetSettingsDatabaseBloc(this);
+    if (resetBlocEVT != null) {
+      return resetBlocEVT(this);
     }
     return orElse();
   }
 }
 
-abstract class ResetSettingsDatabaseBloc implements SettingsDatabaseEvent {
-  const factory ResetSettingsDatabaseBloc() = _$ResetSettingsDatabaseBloc;
+abstract class ResetBlocEVT implements SettingsDatabaseEvent {
+  const factory ResetBlocEVT() = _$ResetBlocEVT;
 }
 
 class _$SettingsDatabaseStateTearOff {
@@ -364,14 +363,11 @@ class _$SettingsDatabaseStateTearOff {
       @required
           bool isUpdating,
       @required
-          bool isSessionDeleted,
-      @required
-          Option<Either<DatabaseFailure, dynamic>>
+          Option<Either<DatabaseFailure, DatabaseSuccess>>
               databaseFailureOrSuccessOption}) {
     return _SettingsDatabaseState(
       session: session,
       isUpdating: isUpdating,
-      isSessionDeleted: isSessionDeleted,
       databaseFailureOrSuccessOption: databaseFailureOrSuccessOption,
     );
   }
@@ -383,8 +379,8 @@ const $SettingsDatabaseState = _$SettingsDatabaseStateTearOff();
 mixin _$SettingsDatabaseState {
   Session get session;
   bool get isUpdating;
-  bool get isSessionDeleted;
-  Option<Either<DatabaseFailure, dynamic>> get databaseFailureOrSuccessOption;
+  Option<Either<DatabaseFailure, DatabaseSuccess>>
+      get databaseFailureOrSuccessOption;
 
   $SettingsDatabaseStateCopyWith<SettingsDatabaseState> get copyWith;
 }
@@ -396,8 +392,8 @@ abstract class $SettingsDatabaseStateCopyWith<$Res> {
   $Res call(
       {Session session,
       bool isUpdating,
-      bool isSessionDeleted,
-      Option<Either<DatabaseFailure, dynamic>> databaseFailureOrSuccessOption});
+      Option<Either<DatabaseFailure, DatabaseSuccess>>
+          databaseFailureOrSuccessOption});
 }
 
 class _$SettingsDatabaseStateCopyWithImpl<$Res>
@@ -412,20 +408,16 @@ class _$SettingsDatabaseStateCopyWithImpl<$Res>
   $Res call({
     Object session = freezed,
     Object isUpdating = freezed,
-    Object isSessionDeleted = freezed,
     Object databaseFailureOrSuccessOption = freezed,
   }) {
     return _then(_value.copyWith(
       session: session == freezed ? _value.session : session as Session,
       isUpdating:
           isUpdating == freezed ? _value.isUpdating : isUpdating as bool,
-      isSessionDeleted: isSessionDeleted == freezed
-          ? _value.isSessionDeleted
-          : isSessionDeleted as bool,
       databaseFailureOrSuccessOption: databaseFailureOrSuccessOption == freezed
           ? _value.databaseFailureOrSuccessOption
           : databaseFailureOrSuccessOption
-              as Option<Either<DatabaseFailure, dynamic>>,
+              as Option<Either<DatabaseFailure, DatabaseSuccess>>,
     ));
   }
 }
@@ -439,8 +431,8 @@ abstract class _$SettingsDatabaseStateCopyWith<$Res>
   $Res call(
       {Session session,
       bool isUpdating,
-      bool isSessionDeleted,
-      Option<Either<DatabaseFailure, dynamic>> databaseFailureOrSuccessOption});
+      Option<Either<DatabaseFailure, DatabaseSuccess>>
+          databaseFailureOrSuccessOption});
 }
 
 class __$SettingsDatabaseStateCopyWithImpl<$Res>
@@ -457,20 +449,16 @@ class __$SettingsDatabaseStateCopyWithImpl<$Res>
   $Res call({
     Object session = freezed,
     Object isUpdating = freezed,
-    Object isSessionDeleted = freezed,
     Object databaseFailureOrSuccessOption = freezed,
   }) {
     return _then(_SettingsDatabaseState(
       session: session == freezed ? _value.session : session as Session,
       isUpdating:
           isUpdating == freezed ? _value.isUpdating : isUpdating as bool,
-      isSessionDeleted: isSessionDeleted == freezed
-          ? _value.isSessionDeleted
-          : isSessionDeleted as bool,
       databaseFailureOrSuccessOption: databaseFailureOrSuccessOption == freezed
           ? _value.databaseFailureOrSuccessOption
           : databaseFailureOrSuccessOption
-              as Option<Either<DatabaseFailure, dynamic>>,
+              as Option<Either<DatabaseFailure, DatabaseSuccess>>,
     ));
   }
 }
@@ -479,11 +467,9 @@ class _$_SettingsDatabaseState implements _SettingsDatabaseState {
   const _$_SettingsDatabaseState(
       {@required this.session,
       @required this.isUpdating,
-      @required this.isSessionDeleted,
       @required this.databaseFailureOrSuccessOption})
       : assert(session != null),
         assert(isUpdating != null),
-        assert(isSessionDeleted != null),
         assert(databaseFailureOrSuccessOption != null);
 
   @override
@@ -491,13 +477,12 @@ class _$_SettingsDatabaseState implements _SettingsDatabaseState {
   @override
   final bool isUpdating;
   @override
-  final bool isSessionDeleted;
-  @override
-  final Option<Either<DatabaseFailure, dynamic>> databaseFailureOrSuccessOption;
+  final Option<Either<DatabaseFailure, DatabaseSuccess>>
+      databaseFailureOrSuccessOption;
 
   @override
   String toString() {
-    return 'SettingsDatabaseState(session: $session, isUpdating: $isUpdating, isSessionDeleted: $isSessionDeleted, databaseFailureOrSuccessOption: $databaseFailureOrSuccessOption)';
+    return 'SettingsDatabaseState(session: $session, isUpdating: $isUpdating, databaseFailureOrSuccessOption: $databaseFailureOrSuccessOption)';
   }
 
   @override
@@ -510,9 +495,6 @@ class _$_SettingsDatabaseState implements _SettingsDatabaseState {
             (identical(other.isUpdating, isUpdating) ||
                 const DeepCollectionEquality()
                     .equals(other.isUpdating, isUpdating)) &&
-            (identical(other.isSessionDeleted, isSessionDeleted) ||
-                const DeepCollectionEquality()
-                    .equals(other.isSessionDeleted, isSessionDeleted)) &&
             (identical(other.databaseFailureOrSuccessOption,
                     databaseFailureOrSuccessOption) ||
                 const DeepCollectionEquality().equals(
@@ -525,7 +507,6 @@ class _$_SettingsDatabaseState implements _SettingsDatabaseState {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(session) ^
       const DeepCollectionEquality().hash(isUpdating) ^
-      const DeepCollectionEquality().hash(isSessionDeleted) ^
       const DeepCollectionEquality().hash(databaseFailureOrSuccessOption);
 
   @override
@@ -541,9 +522,7 @@ abstract class _SettingsDatabaseState implements SettingsDatabaseState {
       @required
           bool isUpdating,
       @required
-          bool isSessionDeleted,
-      @required
-          Option<Either<DatabaseFailure, dynamic>>
+          Option<Either<DatabaseFailure, DatabaseSuccess>>
               databaseFailureOrSuccessOption}) = _$_SettingsDatabaseState;
 
   @override
@@ -551,9 +530,8 @@ abstract class _SettingsDatabaseState implements SettingsDatabaseState {
   @override
   bool get isUpdating;
   @override
-  bool get isSessionDeleted;
-  @override
-  Option<Either<DatabaseFailure, dynamic>> get databaseFailureOrSuccessOption;
+  Option<Either<DatabaseFailure, DatabaseSuccess>>
+      get databaseFailureOrSuccessOption;
   @override
   _$SettingsDatabaseStateCopyWith<_SettingsDatabaseState> get copyWith;
 }

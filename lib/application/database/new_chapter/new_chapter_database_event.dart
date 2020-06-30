@@ -2,40 +2,47 @@ part of 'new_chapter_database_bloc.dart';
 
 @freezed
 abstract class NewChapterDatabaseEvent with _$NewChapterDatabaseEvent {
-  const factory NewChapterDatabaseEvent.newChapterPageLaunched({
-    ParentType parentType,
+  const factory NewChapterDatabaseEvent.addCoverPressedEVT() = AddCoverPressedEVT;
+  const factory NewChapterDatabaseEvent.chapterDraftDeletedEVT(Chapter chapter) = ChapterDraftDeletedEVT;
+  const factory NewChapterDatabaseEvent.chapterPublishedEVT(Chapter chapter) = ChapterPublishedEVT;
+  const factory NewChapterDatabaseEvent.copyrightsSelectedEVT(String copyrights) = CopyrightsSelectedEVT;
+  const factory NewChapterDatabaseEvent.chapterCoverUploadedEVT(
+    String coverUrl,
+    ChapterDraft chapterDraft,
+  ) = ChapterCoverUploadedEVT;
+  const factory NewChapterDatabaseEvent.deleteDraftButtonPressedEVT() = DeleteDraftButtonPressedEVT;
+  const factory NewChapterDatabaseEvent.editModeLaunchedEVT(ChapterDraft chapterDraft) = EditModeLaunchedEVT;
+  const factory NewChapterDatabaseEvent.genreOptionalSelectedEVT(String genreOptional) = GenreOptionalSelectedEVT;
+  const factory NewChapterDatabaseEvent.genreSelectedEVT(String genre) = GenreSelectedEVT;
+  const factory NewChapterDatabaseEvent.isEndChangedEVT({@required bool isEnd}) = IsEndChangedEVT;
+  const factory NewChapterDatabaseEvent.isNSFWChangedEVT({@required bool isNSFW}) = IsNSFWChangedEVT;
+  const factory NewChapterDatabaseEvent.languageSelectedEVT(String language) = LanguageSelectedEVT;
+  const factory NewChapterDatabaseEvent.newChapterPageLaunchedEVT({
+    @required BuildContext context,
+    Chapter previousChapter,
     ChapterDraft chapterDraft,
     SeriesDraft seriesDraft,
+  }) = NewChapterPageLaunchedEVT;
+  const factory NewChapterDatabaseEvent.placeholderFetchedEVT({
     Chapter previousChapter,
-    BuildContext context,
-  }) = NewChapterPageLaunched;
-  const factory NewChapterDatabaseEvent.addCoverPressed() = AddCoverPressed;
-  const factory NewChapterDatabaseEvent.titleChanged(
-    String title,
-  ) = TitleChanged;
-  const factory NewChapterDatabaseEvent.storyChanged(
-    String story,
-  ) = StoryChanged;
-  const factory NewChapterDatabaseEvent.genreSelected(
-    String genre,
-  ) = GenreSelected;
-  const factory NewChapterDatabaseEvent.genreOptionalSelected(
-    String genreOptional,
-  ) = GenreOptionalSelected;
-  const factory NewChapterDatabaseEvent.languageSelected(
-    String language,
-  ) = LanguageSelected;
-  const factory NewChapterDatabaseEvent.copyrightsSelected(
-    String copyrights,
-  ) = CopyrightsSelected;
-  const factory NewChapterDatabaseEvent.isNSFWChanged({
-    @required bool isNSFW,
-  }) = IsNSFWChanged;
-  const factory NewChapterDatabaseEvent.isEndChanged({
-    @required bool isEnd,
-  }) = IsEndChanged;
-  const factory NewChapterDatabaseEvent.publishButtonPressed() =
-      PublishButtonPressed;
-  const factory NewChapterDatabaseEvent.saveOrBackButtonPressed() =
-      SaveOrBackButtonPressed;
+    SeriesDraft seriesDraft,
+    @required String sessionUid,
+    @required String coverUrl,
+  }) = PlaceholderFetchedEVT;
+  const factory NewChapterDatabaseEvent.publishButtonPressedEVT() = PublishButtonPressedEVT;
+  const factory NewChapterDatabaseEvent.saveOrBackButtonPressedEVT() = SaveOrBackButtonPressedEVT;
+  const factory NewChapterDatabaseEvent.seriesCoverUploadedEVT(
+    String coverUrl,
+    SeriesDraft seriesDraft,
+  ) = SeriesCoverUploadedEVT;
+  const factory NewChapterDatabaseEvent.seriesDraftDeletedEVT() = SeriesDraftDeletedEVT;
+  const factory NewChapterDatabaseEvent.seriesDraftFetchedEVT(SeriesDraft seriesDraft) = SeriesDraftFetchedEVT;
+  const factory NewChapterDatabaseEvent.seriesPublishedEVT(Series series) = SeriesPublishedEVT;
+  const factory NewChapterDatabaseEvent.sessionFetchedEVT({
+    @required Session session,
+    Chapter previousChapter,
+    SeriesDraft seriesDraft,
+  }) = SessionFetchedEVT;
+  const factory NewChapterDatabaseEvent.storyChangedEVT(String story) = StoryChangedEVT;
+  const factory NewChapterDatabaseEvent.titleChangedEVT(String title) = TitleChangedEVT;
 }

@@ -100,8 +100,8 @@ Future<void> $initGetIt(GetIt g, {String environment}) async {
       ));
   g.registerFactory<SettingsAuthenticationBloc>(
       () => SettingsAuthenticationBloc(g<IAuthenticationFacade>()));
-  g.registerFactory<SettingsDatabaseBloc>(() => SettingsDatabaseBloc(
-      g<ILocalSessionDatabaseFacade>(), g<IOnlineUserDatabaseFacade>()));
+  g.registerFactory<SettingsDatabaseBloc>(
+      () => SettingsDatabaseBloc(g<ILocalSessionDatabaseFacade>()));
   g.registerFactory<SettingsOutlierBloc>(() => SettingsOutlierBloc());
   g.registerFactory<SignInAuthenticationBloc>(
       () => SignInAuthenticationBloc(g<IAuthenticationFacade>()));
@@ -127,11 +127,12 @@ Future<void> $initGetIt(GetIt g, {String environment}) async {
             g<FirebaseStorage>(),
             g<IOnlineUserDatabaseFacade>(),
           ));
-  g.registerFactory<HomeDatabaseBloc>(() => HomeDatabaseBloc(
-      g<IOnlineSeriesDatabaseFacade>(), g<ILocalPlaceholderDatabaseFacade>()));
+  g.registerFactory<HomeDatabaseBloc>(
+      () => HomeDatabaseBloc(g<IOnlineSeriesDatabaseFacade>()));
   g.registerLazySingleton<IOnlineChapterDatabaseFacade>(
       () => FirebaseOnlineChapterDatabaseFacade(
             g<Firestore>(),
+            g<FirebaseStorage>(),
             g<IOnlineSeriesDatabaseFacade>(),
             g<IOnlineUserDatabaseFacade>(),
           ));
@@ -144,19 +145,21 @@ Future<void> $initGetIt(GetIt g, {String environment}) async {
         g<ILocalPlaceholderDatabaseFacade>(),
       ));
   g.registerFactory<SeriesDatabaseBloc>(() => SeriesDatabaseBloc(
+        g<IAuthenticationFacade>(),
         g<ILocalSessionDatabaseFacade>(),
-        g<IOnlineUserDatabaseFacade>(),
-        g<IOnlineSeriesDatabaseFacade>(),
         g<IOnlineChapterDatabaseFacade>(),
+        g<IOnlineSeriesDatabaseFacade>(),
       ));
   g.registerFactory<AccountDatabaseBloc>(() => AccountDatabaseBloc(
         g<ILocalSessionDatabaseFacade>(),
         g<IOnlineSeriesDatabaseFacade>(),
         g<IOnlineChapterDatabaseFacade>(),
-        g<ILocalPlaceholderDatabaseFacade>(),
       ));
   g.registerFactory<ChapterDatabaseBloc>(() => ChapterDatabaseBloc(
-      g<ILocalSessionDatabaseFacade>(), g<IOnlineChapterDatabaseFacade>()));
+        g<IAuthenticationFacade>(),
+        g<ILocalSessionDatabaseFacade>(),
+        g<IOnlineChapterDatabaseFacade>(),
+      ));
 }
 
 class _$HiveInjectableModule extends HiveInjectableModule {}

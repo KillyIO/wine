@@ -2,15 +2,10 @@ part of 'account_navigation_bloc.dart';
 
 @freezed
 abstract class AccountNavigationEvent with _$AccountNavigationEvent {
-  const factory AccountNavigationEvent.accountPageLaunched({
+  const factory AccountNavigationEvent.accountPageLaunchedEVT({
     @required BuildContext context,
-  }) = AccountPageLaunched;
-  const factory AccountNavigationEvent.pageViewIndexChanged({
-    @required int index,
-  }) = PageViewIndexChanged;
-  const factory AccountNavigationEvent.verticalNavbarIndexChanged({
-    @required int index,
-  }) = VerticalNavbarIndexChanged;
-  const factory AccountNavigationEvent.resetAccountNavigationBloc() =
-      ResetAccountNavigationBloc;
+  }) = AccountPageLaunchedEVT;
+  const factory AccountNavigationEvent.pageViewIndexChangedEVT(int index) = PageViewIndexChangedEVT;
+  const factory AccountNavigationEvent.resetBlocEVT() = ResetBlocEVT;
+  const factory AccountNavigationEvent.verticalNavbarIndexChangedEVT(int index) = VerticalNavbarIndexChangedEVT;
 }

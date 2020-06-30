@@ -14,9 +14,8 @@ abstract class HomeDatabaseState with _$HomeDatabaseState {
     @required Map<String, String> timesMap,
     @required Map<String, String> genresMap,
     @required Map<String, String> languagesMap,
-    @required bool isFetching,
-    @required
-        Option<Either<DatabaseFailure, dynamic>> databaseFailureOrSuccessOption,
+    @required bool isLoading,
+    @required Option<Either<DatabaseFailure, DatabaseSuccess>> databaseFailureOrSuccessOption,
   }) = _HomeDatabaseState;
 
   factory HomeDatabaseState.initial() => HomeDatabaseState(
@@ -31,7 +30,7 @@ abstract class HomeDatabaseState with _$HomeDatabaseState {
         timesMap: <String, String>{},
         genresMap: <String, String>{},
         languagesMap: <String, String>{},
-        isFetching: false,
+        isLoading: false,
         databaseFailureOrSuccessOption: none(),
       );
 }

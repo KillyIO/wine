@@ -14,24 +14,8 @@ class HomeFilterPanelTitle extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 30.0),
       child: Container(
         height: 50.0,
-        decoration: const BoxDecoration(
-          border: Border(
-            bottom: BorderSide(
-              color: Colors.black12,
-              width: 2.0,
-            ),
-          ),
-        ),
-        child: Align(
-          alignment: Alignment.center,
-          child: Text(
-            title,
-            style: TextStyle(
-              fontSize: 20.0,
-              fontWeight: FontWeight.w300,
-            ),
-          ),
-        ),
+        decoration: const BoxDecoration(border: Border(bottom: BorderSide(color: Colors.black12, width: 2.0))),
+        child: Text(title, style: TextStyle(fontSize: 20.0, fontWeight: FontWeight.w300)),
       ),
     );
   }
