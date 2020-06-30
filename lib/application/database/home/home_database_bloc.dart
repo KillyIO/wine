@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:math';
 
 import 'package:bloc/bloc.dart';
 import 'package:dartz/dartz.dart';
@@ -9,7 +8,7 @@ import 'package:flutter_device_locale/flutter_device_locale.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:wine/domain/database/database_failure.dart';
-import 'package:wine/domain/database/i_local_placeholder_database_facade.dart';
+import 'package:wine/domain/database/database_success.dart';
 import 'package:wine/domain/database/i_online_series_database_facade.dart';
 import 'package:wine/domain/models/series.dart';
 import 'package:wine/utils/methods.dart';
@@ -22,12 +21,8 @@ part 'home_database_bloc.freezed.dart';
 @injectable
 class HomeDatabaseBloc extends Bloc<HomeDatabaseEvent, HomeDatabaseState> {
   final IOnlineSeriesDatabaseFacade _onlineSeriesDatabaseFacade;
-  final ILocalPlaceholderDatabaseFacade _localPlaceholderDatabaseFacade;
 
-  HomeDatabaseBloc(
-    this._onlineSeriesDatabaseFacade,
-    this._localPlaceholderDatabaseFacade,
-  );
+  HomeDatabaseBloc(this._onlineSeriesDatabaseFacade);
 
   @override
   HomeDatabaseState get initialState => HomeDatabaseState.initial();
@@ -37,93 +32,75 @@ class HomeDatabaseBloc extends Bloc<HomeDatabaseEvent, HomeDatabaseState> {
     HomeDatabaseEvent event,
   ) async* {
     yield* event.map(
-      homePageLaunched: (event) async* {
-        yield state.copyWith(
-          isFetching: true,
-          databaseFailureOrSuccessOption: none(),
-        );
+      applyFilterChangesEVT: (event) async* {
+        yield state.copyWith(isLoading: true, databaseFailureOrSuccessOption: none());
 
-        Either<DatabaseFailure, dynamic> failureOrSuccess;
         final Map<String, dynamic> filters = state.filters;
+
+        filters['time'] = Methods.getTimeFiltersTimestamps()[state.timeFilterKey];
+        filters['genre'] = state.genreFilterKey;
+        filters['language'] = state.languageFilterKey;
+
+        add(HomeDatabaseEvent.filtersAppliedEVT(filters));
+
+        yield state.copyWith(areFiltersApplied: true);
+      },
+      filtersAppliedEVT: (event) async* {
+        Either<DatabaseFailure, DatabaseSuccess> failureOrSuccess;
 
         final List<Series> topFiveSeries = <Series>[];
         final List<Series> topSeries = <Series>[];
-        final List<Series> newSeries = <Series>[];
 
-        final String currentLocale = (await DeviceLocale.getCurrentLocale())
-            .toString()
-            .split(RegExp('[_-]'))[0];
-
-        filters['time'] =
-            Methods.getTimeFiltersTimestamps()[state.timeFilterKey];
-        filters['genre'] = state.genreFilterKey;
-        filters['language'] = currentLocale;
-
-        failureOrSuccess = await _onlineSeriesDatabaseFacade.getTopSeries(
-          filters: filters,
-          getAuthors: true,
-        );
+        failureOrSuccess = await _onlineSeriesDatabaseFacade.loadTopSeries(filters: event.filters, loadAuthors: true);
         failureOrSuccess.fold(
           (_) {},
           (success) {
-            if (success is List<Series>) {
-              topSeries.addAll(success);
+            if (success is SeriesListLoadedSCS) {
+              topSeries.addAll(success.series);
+              if (topSeries.length >= 5) {
+                topFiveSeries.addAll(topSeries.sublist(0, 5));
+                topSeries.removeRange(0, 5);
+              }
+              add(const HomeDatabaseEvent.topSeriesLoadedEVT());
             }
           },
         );
 
-        if (failureOrSuccess.isRight()) {
-          failureOrSuccess = await _onlineSeriesDatabaseFacade.getNewSeries(
-            filters: filters,
-            getAuthors: true,
-          );
-          failureOrSuccess.fold(
-            (_) {},
-            (success) {
-              if (success is List<Series>) {
-                newSeries.addAll(success);
-              }
-            },
-          );
-        }
-
-        if (topSeries.length >= 5) {
-          topFiveSeries.addAll(topSeries.sublist(0, 5));
-          topSeries.removeRange(0, 5);
-        }
-
         yield state.copyWith(
           topFiveSeries: topFiveSeries,
           topSeries: topSeries,
-          newSeries: newSeries,
-          filters: filters,
-          languageFilterKey: currentLocale,
-          timesMap: Methods.getTimeFilters(event.context),
-          genresMap: Methods.getGenres(event.context),
-          languagesMap: Methods.getLanguages(event.context),
-          isFetching: false,
           databaseFailureOrSuccessOption: optionOf(failureOrSuccess),
         );
       },
-      fetchMoreTopSeries: (event) async* {},
-      fetchMoreNewSeries: (event) async* {},
-      timeFilterKeyChanged: (event) async* {
-        if (state.timeFilterKey != event.key) {
-          yield state.copyWith(
-            timeFilterKey: event.key,
-            areFiltersApplied: false,
-            databaseFailureOrSuccessOption: none(),
-          );
-        }
-      },
-      genreFilterKeyChanged: (event) async* {
+      genreFilterKeyChangedEVT: (event) async* {
         yield state.copyWith(
           genreFilterKey: state.genreFilterKey == event.key ? '' : event.key,
           areFiltersApplied: false,
           databaseFailureOrSuccessOption: none(),
         );
       },
-      languageFilterKeyChanged: (event) async* {
+      homePageLaunchedEVT: (event) async* {
+        yield state.copyWith(isLoading: true, databaseFailureOrSuccessOption: none());
+
+        final Map<String, dynamic> filters = state.filters;
+
+        final String currentLocale = (await DeviceLocale.getCurrentLocale()).toString().split(RegExp('[_-]'))[0];
+
+        filters['time'] = Methods.getTimeFiltersTimestamps()[state.timeFilterKey];
+        filters['genre'] = state.genreFilterKey;
+        filters['language'] = currentLocale;
+
+        add(HomeDatabaseEvent.filtersAppliedEVT(filters));
+
+        yield state.copyWith(
+          filters: filters,
+          languageFilterKey: currentLocale,
+          timesMap: Methods.getTimeFilters(event.context),
+          genresMap: Methods.getGenres(event.context),
+          languagesMap: Methods.getLanguages(event.context),
+        );
+      },
+      languageFilterKeyChangedEVT: (event) async* {
         if (state.languageFilterKey != event.key) {
           yield state.copyWith(
             languageFilterKey: event.key,
@@ -132,64 +109,35 @@ class HomeDatabaseBloc extends Bloc<HomeDatabaseEvent, HomeDatabaseState> {
           );
         }
       },
-      applyFilterChanges: (event) async* {
-        Either<DatabaseFailure, dynamic> failureOrSuccess;
-        final Map<String, dynamic> filters = state.filters;
+      loadMoreNewSeriesEVT: (event) async* {},
+      loadMoreTopSeriesEVT: (event) async* {},
+      timeFilterKeyChangedEVT: (event) async* {
+        if (state.timeFilterKey != event.key) {
+          yield state.copyWith(
+            timeFilterKey: event.key,
+            areFiltersApplied: false,
+            databaseFailureOrSuccessOption: none(),
+          );
+        }
+      },
+      topSeriesLoadedEVT: (event) async* {
+        Either<DatabaseFailure, DatabaseSuccess> failureOrSuccess;
 
-        final List<Series> topFiveSeries = <Series>[];
-        final List<Series> topSeries = <Series>[];
         final List<Series> newSeries = <Series>[];
 
-        yield state.copyWith(
-          isFetching: true,
-          databaseFailureOrSuccessOption: none(),
-        );
-
-        filters['time'] =
-            Methods.getTimeFiltersTimestamps()[state.timeFilterKey];
-        filters['genre'] = state.genreFilterKey;
-        filters['language'] = state.languageFilterKey;
-
-        failureOrSuccess = await _onlineSeriesDatabaseFacade.getTopSeries(
-          filters: filters,
-          getAuthors: true,
-        );
+        failureOrSuccess = await _onlineSeriesDatabaseFacade.loadNewSeries(filters: state.filters, loadAuthors: true);
         failureOrSuccess.fold(
           (_) {},
           (success) {
-            if (success is List<Series>) {
-              topSeries.addAll(success);
+            if (success is SeriesListLoadedSCS) {
+              newSeries.addAll(success.series);
             }
           },
         );
 
-        if (failureOrSuccess.isRight()) {
-          failureOrSuccess = await _onlineSeriesDatabaseFacade.getNewSeries(
-            filters: filters,
-            getAuthors: true,
-          );
-          failureOrSuccess.fold(
-            (_) {},
-            (success) {
-              if (success is List<Series>) {
-                newSeries.addAll(success);
-              }
-            },
-          );
-        }
-
-        if (topSeries.length >= 5) {
-          topFiveSeries.addAll(topSeries.sublist(0, 5));
-          topSeries.removeRange(0, 5);
-        }
-
         yield state.copyWith(
-          isFetching: false,
-          topFiveSeries: topFiveSeries,
-          topSeries: topSeries,
           newSeries: newSeries,
-          filters: filters,
-          areFiltersApplied: true,
+          isLoading: false,
           databaseFailureOrSuccessOption: optionOf(failureOrSuccess),
         );
       },

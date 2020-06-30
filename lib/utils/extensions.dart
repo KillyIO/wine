@@ -7,6 +7,10 @@ extension StringX on String {
     return isEmpty ? null : this;
   }
 
+  bool get isEmptyOrNull {
+    return this == null || isEmpty;
+  }
+
   bool get isNotEmptyOrNull {
     return this != null && isNotEmpty;
   }

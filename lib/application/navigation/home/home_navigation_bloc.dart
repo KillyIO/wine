@@ -14,8 +14,7 @@ part 'home_navigation_state.dart';
 part 'home_navigation_bloc.freezed.dart';
 
 @injectable
-class HomeNavigationBloc
-    extends Bloc<HomeNavigationEvent, HomeNavigationState> {
+class HomeNavigationBloc extends Bloc<HomeNavigationEvent, HomeNavigationState> {
   @override
   HomeNavigationState get initialState => HomeNavigationState.initial();
 
@@ -24,22 +23,16 @@ class HomeNavigationBloc
     HomeNavigationEvent event,
   ) async* {
     yield* event.map(
-      homePageLaunched: (event) async* {
-        yield state.copyWith(
-          pageViewNavbarItems: Methods.getHomeNavbarItems(event.context),
-        );
+      drawerIconPressedEVT: (event) async* {
+        yield state.copyWith(isDrawerOpen: event.isDrawerOpen);
       },
-      drawerIconPressed: (event) async* {
-        yield state.copyWith(
-          isDrawerOpen: !event.isDrawerOpen,
-        );
+      homePageLaunchedEVT: (event) async* {
+        yield state.copyWith(pageViewNavbarItems: Methods.getHomeNavbarItems(event.context));
       },
-      newSeriesIconPressed: (event) async* {
-        yield state.copyWith(
-          isNewSeriesPageOpen: event.isNewSeriesPageOpen,
-        );
+      newSeriesIconPressedEVT: (event) async* {
+        yield state.copyWith(isNewSeriesPageOpen: event.isNewSeriesPageOpen);
       },
-      pageViewIndexChanged: (event) async* {
+      pageViewIndexChangedEVT: (event) async* {
         if (state.currentPageViewIdx != event.index) {
           int newIdx = event.index;
           if (event.index > state.pageViewNavbarItems.length - 1) {
@@ -48,17 +41,11 @@ class HomeNavigationBloc
           if (event.index < 0) {
             newIdx = state.pageViewNavbarItems.length - 1;
           }
-          yield state.copyWith(
-            currentPageViewIdx: newIdx,
-          );
+          yield state.copyWith(currentPageViewIdx: newIdx);
         }
       },
-      resetHomeNavigationBloc: (event) async* {
-        yield state.copyWith(
-          isDrawerOpen: false,
-          isNewSeriesPageOpen: false,
-          currentPageViewIdx: 0,
-        );
+      resetBlocEVT: (event) async* {
+        yield state.copyWith(isDrawerOpen: false, isNewSeriesPageOpen: false, currentPageViewIdx: 0);
       },
     );
   }

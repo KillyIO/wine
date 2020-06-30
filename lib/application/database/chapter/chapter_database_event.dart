@@ -2,21 +2,22 @@ part of 'chapter_database_bloc.dart';
 
 @freezed
 abstract class ChapterDatabaseEvent with _$ChapterDatabaseEvent {
-  const factory ChapterDatabaseEvent.chapterPageLaunched({
-    Chapter chapter,
-    BuildContext context,
-  }) = ChapterPageLaunched;
-  const factory ChapterDatabaseEvent.previousChapterButtonPressed() =
-      PreviousChapterButtonPressed;
-  const factory ChapterDatabaseEvent.likeButtonPressed() = LikeButtonPressed;
-  const factory ChapterDatabaseEvent.bookmarkButtonPressed() =
-      BookmarkButtonPressed;
-  const factory ChapterDatabaseEvent.showOrHideNavbar() = ShowOrHideNavbar;
-  const factory ChapterDatabaseEvent.scroll({
-    @required int currentScrollPosition,
-    @required int maxScrollPosition,
-  }) = Scroll;
-  const factory ChapterDatabaseEvent.toggleChapterAdditionalInfo() =
-      ToggleChapterAdditionalInfo;
-  const factory ChapterDatabaseEvent.fetchNextChapters() = FetchNextChapters;
+  const factory ChapterDatabaseEvent.bookmarkButtonPressedEVT() = BookmarkButtonPressedEVT;
+  const factory ChapterDatabaseEvent.bookmarksUpdatedEVT() = BookmarksUpdatedEVT;
+  const factory ChapterDatabaseEvent.chapterBookmarkStatusLoadedEVT() = ChapterBookmarkStatusLoadedEVT;
+  const factory ChapterDatabaseEvent.chapterLikesLoadedEVT() = ChapterLikesLoadedEVT;
+  const factory ChapterDatabaseEvent.chapterLikeStatusLoadedEVT() = ChapterLikeStatusLoadedEVT;
+  const factory ChapterDatabaseEvent.chapterPageLaunchedEVT({Chapter chapter, BuildContext context}) =
+      ChapterPageLaunchedEVT;
+  const factory ChapterDatabaseEvent.chapterViewsLoadedEVT() = ChapterViewsLoadedEVT;
+  const factory ChapterDatabaseEvent.chapterViewsUpdatedEVT() = ChapterViewsUpdatedEVT;
+  const factory ChapterDatabaseEvent.likeButtonPressedEVT() = LikeButtonPressedEVT;
+  const factory ChapterDatabaseEvent.likesUpdatedEVT() = LikesUpdatedEVT;
+  const factory ChapterDatabaseEvent.loadNextChaptersEVT() = LoadNextChaptersEVT;
+  const factory ChapterDatabaseEvent.previousChapterButtonPressedEVT() = PreviousChapterButtonPressedEVT;
+  const factory ChapterDatabaseEvent.scrollEVT({@required int currentScrollPosition, @required int maxScrollPosition}) =
+      ScrollEVT;
+  const factory ChapterDatabaseEvent.sessionFetchedEVT(Session session) = SessionFetchedEVT;
+  const factory ChapterDatabaseEvent.showOrHideNavbarEVT() = ShowOrHideNavbarEVT;
+  const factory ChapterDatabaseEvent.toggleChapterAdditionalInfoEVT() = ToggleChapterAdditionalInfoEVT;
 }

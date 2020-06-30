@@ -20,18 +20,9 @@ class WINEDialogListTile extends StatelessWidget {
       color: Colors.black,
       child: ListTile(
         onTap: onPressed,
-        title: Text(
-          title,
-          style: TextStyle(
-            color: Colors.white,
-            fontWeight: FontWeight.w300,
-          ),
-        ),
+        title: Text(title, style: TextStyle(color: Colors.white, fontWeight: FontWeight.w300)),
         trailing: hasSelected
-            ? Icon(
-                Icons.keyboard_arrow_right,
-                color: Colors.white,
-              )
+            ? Icon(Icons.keyboard_arrow_right, color: Colors.white)
             : Container(
                 width: MediaQuery.of(context).size.width / 2,
                 child: Align(
@@ -39,10 +30,7 @@ class WINEDialogListTile extends StatelessWidget {
                   child: Text(
                     trailingText,
                     overflow: TextOverflow.ellipsis,
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.w300,
-                    ),
+                    style: TextStyle(color: Colors.white, fontWeight: FontWeight.w300),
                   ),
                 ),
               ),

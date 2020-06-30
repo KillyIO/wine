@@ -3,7 +3,7 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:wine/application/database/new_chapter/new_chapter_database_bloc.dart';
 import 'package:wine/injection.dart';
-import 'package:wine/presentation/pages/new_chapter/widgets/new_chapter_form.dart';
+import 'package:wine/presentation/pages/new_chapter/widgets/new_chapter_form_layout.dart';
 import 'package:wine/utils/arguments.dart';
 import 'package:wine/utils/themes.dart';
 
@@ -23,16 +23,15 @@ class NewChapterPage extends StatelessWidget {
         providers: [
           BlocProvider(
             create: (context) => getIt<NewChapterDatabaseBloc>()
-              ..add(NewChapterDatabaseEvent.newChapterPageLaunched(
-                parentType: args.parentType,
+              ..add(NewChapterDatabaseEvent.newChapterPageLaunchedEVT(
                 chapterDraft: args.chapterDraft,
-                seriesDraft: args.seriesDraft,
-                previousChapter: args.previousChapter,
                 context: context,
+                previousChapter: args.previousChapter,
+                seriesDraft: args.seriesDraft,
               )),
           ),
         ],
-        child: NewChapterForm(args: args),
+        child: NewChapterFormLayout(args: args),
       ),
     );
   }

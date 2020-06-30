@@ -7,8 +7,7 @@ abstract class SignInAuthenticationState with _$SignInAuthenticationState {
     @required Password password,
     @required bool showErrorMessages,
     @required bool isSubmitting,
-    @required
-        Option<Either<AuthenticationFailure, dynamic>> authFailureOrSuccessOption,
+    @required Option<Either<AuthenticationFailure, AuthenticationSuccess>> authFailureOrSuccessOption,
   }) = _SignInAuthenticationState;
 
   factory SignInAuthenticationState.initial() => SignInAuthenticationState(

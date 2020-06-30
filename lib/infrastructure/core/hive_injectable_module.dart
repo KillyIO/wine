@@ -9,7 +9,7 @@ import 'package:wine/domain/models/hive/series_draft.dart';
 import 'package:wine/domain/models/hive/session.dart';
 import 'package:wine/utils/constants.dart';
 
-@registerModule
+@module
 abstract class HiveInjectableModule {
   @preResolve
   @lazySingleton

@@ -12,13 +12,19 @@ T _$identity<T>(T value) => value;
 class _$CreateAccountDatabaseEventTearOff {
   const _$CreateAccountDatabaseEventTearOff();
 
-  AccountCreated accountCreated(User user) {
+  AccountCreated accountCreatedEVT(User user) {
     return AccountCreated(
       user,
     );
   }
 
-  VerifyEmailPageLaunched verifyEmailPageLaunched() {
+  UserDetailsSavedEVT userDetailsSavedEVT(User user) {
+    return UserDetailsSavedEVT(
+      user,
+    );
+  }
+
+  VerifyEmailPageLaunched verifyEmailPageLaunchedEVT() {
     return const VerifyEmailPageLaunched();
   }
 }
@@ -29,24 +35,28 @@ const $CreateAccountDatabaseEvent = _$CreateAccountDatabaseEventTearOff();
 mixin _$CreateAccountDatabaseEvent {
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result accountCreated(User user),
-    @required Result verifyEmailPageLaunched(),
+    @required Result accountCreatedEVT(User user),
+    @required Result userDetailsSavedEVT(User user),
+    @required Result verifyEmailPageLaunchedEVT(),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result accountCreated(User user),
-    Result verifyEmailPageLaunched(),
+    Result accountCreatedEVT(User user),
+    Result userDetailsSavedEVT(User user),
+    Result verifyEmailPageLaunchedEVT(),
     @required Result orElse(),
   });
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result accountCreated(AccountCreated value),
-    @required Result verifyEmailPageLaunched(VerifyEmailPageLaunched value),
+    @required Result accountCreatedEVT(AccountCreated value),
+    @required Result userDetailsSavedEVT(UserDetailsSavedEVT value),
+    @required Result verifyEmailPageLaunchedEVT(VerifyEmailPageLaunched value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result accountCreated(AccountCreated value),
-    Result verifyEmailPageLaunched(VerifyEmailPageLaunched value),
+    Result accountCreatedEVT(AccountCreated value),
+    Result userDetailsSavedEVT(UserDetailsSavedEVT value),
+    Result verifyEmailPageLaunchedEVT(VerifyEmailPageLaunched value),
     @required Result orElse(),
   });
 }
@@ -101,7 +111,7 @@ class _$AccountCreated implements AccountCreated {
 
   @override
   String toString() {
-    return 'CreateAccountDatabaseEvent.accountCreated(user: $user)';
+    return 'CreateAccountDatabaseEvent.accountCreatedEVT(user: $user)';
   }
 
   @override
@@ -123,24 +133,27 @@ class _$AccountCreated implements AccountCreated {
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result accountCreated(User user),
-    @required Result verifyEmailPageLaunched(),
+    @required Result accountCreatedEVT(User user),
+    @required Result userDetailsSavedEVT(User user),
+    @required Result verifyEmailPageLaunchedEVT(),
   }) {
-    assert(accountCreated != null);
-    assert(verifyEmailPageLaunched != null);
-    return accountCreated(user);
+    assert(accountCreatedEVT != null);
+    assert(userDetailsSavedEVT != null);
+    assert(verifyEmailPageLaunchedEVT != null);
+    return accountCreatedEVT(user);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result accountCreated(User user),
-    Result verifyEmailPageLaunched(),
+    Result accountCreatedEVT(User user),
+    Result userDetailsSavedEVT(User user),
+    Result verifyEmailPageLaunchedEVT(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (accountCreated != null) {
-      return accountCreated(user);
+    if (accountCreatedEVT != null) {
+      return accountCreatedEVT(user);
     }
     return orElse();
   }
@@ -148,24 +161,27 @@ class _$AccountCreated implements AccountCreated {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result accountCreated(AccountCreated value),
-    @required Result verifyEmailPageLaunched(VerifyEmailPageLaunched value),
+    @required Result accountCreatedEVT(AccountCreated value),
+    @required Result userDetailsSavedEVT(UserDetailsSavedEVT value),
+    @required Result verifyEmailPageLaunchedEVT(VerifyEmailPageLaunched value),
   }) {
-    assert(accountCreated != null);
-    assert(verifyEmailPageLaunched != null);
-    return accountCreated(this);
+    assert(accountCreatedEVT != null);
+    assert(userDetailsSavedEVT != null);
+    assert(verifyEmailPageLaunchedEVT != null);
+    return accountCreatedEVT(this);
   }
 
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result accountCreated(AccountCreated value),
-    Result verifyEmailPageLaunched(VerifyEmailPageLaunched value),
+    Result accountCreatedEVT(AccountCreated value),
+    Result userDetailsSavedEVT(UserDetailsSavedEVT value),
+    Result verifyEmailPageLaunchedEVT(VerifyEmailPageLaunched value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (accountCreated != null) {
-      return accountCreated(this);
+    if (accountCreatedEVT != null) {
+      return accountCreatedEVT(this);
     }
     return orElse();
   }
@@ -176,6 +192,124 @@ abstract class AccountCreated implements CreateAccountDatabaseEvent {
 
   User get user;
   $AccountCreatedCopyWith<AccountCreated> get copyWith;
+}
+
+abstract class $UserDetailsSavedEVTCopyWith<$Res> {
+  factory $UserDetailsSavedEVTCopyWith(
+          UserDetailsSavedEVT value, $Res Function(UserDetailsSavedEVT) then) =
+      _$UserDetailsSavedEVTCopyWithImpl<$Res>;
+  $Res call({User user});
+}
+
+class _$UserDetailsSavedEVTCopyWithImpl<$Res>
+    extends _$CreateAccountDatabaseEventCopyWithImpl<$Res>
+    implements $UserDetailsSavedEVTCopyWith<$Res> {
+  _$UserDetailsSavedEVTCopyWithImpl(
+      UserDetailsSavedEVT _value, $Res Function(UserDetailsSavedEVT) _then)
+      : super(_value, (v) => _then(v as UserDetailsSavedEVT));
+
+  @override
+  UserDetailsSavedEVT get _value => super._value as UserDetailsSavedEVT;
+
+  @override
+  $Res call({
+    Object user = freezed,
+  }) {
+    return _then(UserDetailsSavedEVT(
+      user == freezed ? _value.user : user as User,
+    ));
+  }
+}
+
+class _$UserDetailsSavedEVT implements UserDetailsSavedEVT {
+  const _$UserDetailsSavedEVT(this.user) : assert(user != null);
+
+  @override
+  final User user;
+
+  @override
+  String toString() {
+    return 'CreateAccountDatabaseEvent.userDetailsSavedEVT(user: $user)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is UserDetailsSavedEVT &&
+            (identical(other.user, user) ||
+                const DeepCollectionEquality().equals(other.user, user)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(user);
+
+  @override
+  $UserDetailsSavedEVTCopyWith<UserDetailsSavedEVT> get copyWith =>
+      _$UserDetailsSavedEVTCopyWithImpl<UserDetailsSavedEVT>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result accountCreatedEVT(User user),
+    @required Result userDetailsSavedEVT(User user),
+    @required Result verifyEmailPageLaunchedEVT(),
+  }) {
+    assert(accountCreatedEVT != null);
+    assert(userDetailsSavedEVT != null);
+    assert(verifyEmailPageLaunchedEVT != null);
+    return userDetailsSavedEVT(user);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result accountCreatedEVT(User user),
+    Result userDetailsSavedEVT(User user),
+    Result verifyEmailPageLaunchedEVT(),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (userDetailsSavedEVT != null) {
+      return userDetailsSavedEVT(user);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result accountCreatedEVT(AccountCreated value),
+    @required Result userDetailsSavedEVT(UserDetailsSavedEVT value),
+    @required Result verifyEmailPageLaunchedEVT(VerifyEmailPageLaunched value),
+  }) {
+    assert(accountCreatedEVT != null);
+    assert(userDetailsSavedEVT != null);
+    assert(verifyEmailPageLaunchedEVT != null);
+    return userDetailsSavedEVT(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result accountCreatedEVT(AccountCreated value),
+    Result userDetailsSavedEVT(UserDetailsSavedEVT value),
+    Result verifyEmailPageLaunchedEVT(VerifyEmailPageLaunched value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (userDetailsSavedEVT != null) {
+      return userDetailsSavedEVT(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UserDetailsSavedEVT implements CreateAccountDatabaseEvent {
+  const factory UserDetailsSavedEVT(User user) = _$UserDetailsSavedEVT;
+
+  User get user;
+  $UserDetailsSavedEVTCopyWith<UserDetailsSavedEVT> get copyWith;
 }
 
 abstract class $VerifyEmailPageLaunchedCopyWith<$Res> {
@@ -200,7 +334,7 @@ class _$VerifyEmailPageLaunched implements VerifyEmailPageLaunched {
 
   @override
   String toString() {
-    return 'CreateAccountDatabaseEvent.verifyEmailPageLaunched()';
+    return 'CreateAccountDatabaseEvent.verifyEmailPageLaunchedEVT()';
   }
 
   @override
@@ -214,24 +348,27 @@ class _$VerifyEmailPageLaunched implements VerifyEmailPageLaunched {
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result accountCreated(User user),
-    @required Result verifyEmailPageLaunched(),
+    @required Result accountCreatedEVT(User user),
+    @required Result userDetailsSavedEVT(User user),
+    @required Result verifyEmailPageLaunchedEVT(),
   }) {
-    assert(accountCreated != null);
-    assert(verifyEmailPageLaunched != null);
-    return verifyEmailPageLaunched();
+    assert(accountCreatedEVT != null);
+    assert(userDetailsSavedEVT != null);
+    assert(verifyEmailPageLaunchedEVT != null);
+    return verifyEmailPageLaunchedEVT();
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result accountCreated(User user),
-    Result verifyEmailPageLaunched(),
+    Result accountCreatedEVT(User user),
+    Result userDetailsSavedEVT(User user),
+    Result verifyEmailPageLaunchedEVT(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (verifyEmailPageLaunched != null) {
-      return verifyEmailPageLaunched();
+    if (verifyEmailPageLaunchedEVT != null) {
+      return verifyEmailPageLaunchedEVT();
     }
     return orElse();
   }
@@ -239,24 +376,27 @@ class _$VerifyEmailPageLaunched implements VerifyEmailPageLaunched {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result accountCreated(AccountCreated value),
-    @required Result verifyEmailPageLaunched(VerifyEmailPageLaunched value),
+    @required Result accountCreatedEVT(AccountCreated value),
+    @required Result userDetailsSavedEVT(UserDetailsSavedEVT value),
+    @required Result verifyEmailPageLaunchedEVT(VerifyEmailPageLaunched value),
   }) {
-    assert(accountCreated != null);
-    assert(verifyEmailPageLaunched != null);
-    return verifyEmailPageLaunched(this);
+    assert(accountCreatedEVT != null);
+    assert(userDetailsSavedEVT != null);
+    assert(verifyEmailPageLaunchedEVT != null);
+    return verifyEmailPageLaunchedEVT(this);
   }
 
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result accountCreated(AccountCreated value),
-    Result verifyEmailPageLaunched(VerifyEmailPageLaunched value),
+    Result accountCreatedEVT(AccountCreated value),
+    Result userDetailsSavedEVT(UserDetailsSavedEVT value),
+    Result verifyEmailPageLaunchedEVT(VerifyEmailPageLaunched value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (verifyEmailPageLaunched != null) {
-      return verifyEmailPageLaunched(this);
+    if (verifyEmailPageLaunchedEVT != null) {
+      return verifyEmailPageLaunchedEVT(this);
     }
     return orElse();
   }
@@ -275,7 +415,7 @@ class _$CreateAccountDatabaseStateTearOff {
       @required
           String email,
       @required
-          Option<Either<DatabaseFailure, dynamic>>
+          Option<Either<DatabaseFailure, DatabaseSuccess>>
               databaseFailureOrSuccessOption}) {
     return _CreateAccountDatabaseState(
       isUpdating: isUpdating,
@@ -291,7 +431,8 @@ const $CreateAccountDatabaseState = _$CreateAccountDatabaseStateTearOff();
 mixin _$CreateAccountDatabaseState {
   bool get isUpdating;
   String get email;
-  Option<Either<DatabaseFailure, dynamic>> get databaseFailureOrSuccessOption;
+  Option<Either<DatabaseFailure, DatabaseSuccess>>
+      get databaseFailureOrSuccessOption;
 
   $CreateAccountDatabaseStateCopyWith<CreateAccountDatabaseState> get copyWith;
 }
@@ -303,7 +444,8 @@ abstract class $CreateAccountDatabaseStateCopyWith<$Res> {
   $Res call(
       {bool isUpdating,
       String email,
-      Option<Either<DatabaseFailure, dynamic>> databaseFailureOrSuccessOption});
+      Option<Either<DatabaseFailure, DatabaseSuccess>>
+          databaseFailureOrSuccessOption});
 }
 
 class _$CreateAccountDatabaseStateCopyWithImpl<$Res>
@@ -327,7 +469,7 @@ class _$CreateAccountDatabaseStateCopyWithImpl<$Res>
       databaseFailureOrSuccessOption: databaseFailureOrSuccessOption == freezed
           ? _value.databaseFailureOrSuccessOption
           : databaseFailureOrSuccessOption
-              as Option<Either<DatabaseFailure, dynamic>>,
+              as Option<Either<DatabaseFailure, DatabaseSuccess>>,
     ));
   }
 }
@@ -342,7 +484,8 @@ abstract class _$CreateAccountDatabaseStateCopyWith<$Res>
   $Res call(
       {bool isUpdating,
       String email,
-      Option<Either<DatabaseFailure, dynamic>> databaseFailureOrSuccessOption});
+      Option<Either<DatabaseFailure, DatabaseSuccess>>
+          databaseFailureOrSuccessOption});
 }
 
 class __$CreateAccountDatabaseStateCopyWithImpl<$Res>
@@ -369,7 +512,7 @@ class __$CreateAccountDatabaseStateCopyWithImpl<$Res>
       databaseFailureOrSuccessOption: databaseFailureOrSuccessOption == freezed
           ? _value.databaseFailureOrSuccessOption
           : databaseFailureOrSuccessOption
-              as Option<Either<DatabaseFailure, dynamic>>,
+              as Option<Either<DatabaseFailure, DatabaseSuccess>>,
     ));
   }
 }
@@ -388,7 +531,8 @@ class _$_CreateAccountDatabaseState implements _CreateAccountDatabaseState {
   @override
   final String email;
   @override
-  final Option<Either<DatabaseFailure, dynamic>> databaseFailureOrSuccessOption;
+  final Option<Either<DatabaseFailure, DatabaseSuccess>>
+      databaseFailureOrSuccessOption;
 
   @override
   String toString() {
@@ -432,7 +576,7 @@ abstract class _CreateAccountDatabaseState
       @required
           String email,
       @required
-          Option<Either<DatabaseFailure, dynamic>>
+          Option<Either<DatabaseFailure, DatabaseSuccess>>
               databaseFailureOrSuccessOption}) = _$_CreateAccountDatabaseState;
 
   @override
@@ -440,7 +584,8 @@ abstract class _CreateAccountDatabaseState
   @override
   String get email;
   @override
-  Option<Either<DatabaseFailure, dynamic>> get databaseFailureOrSuccessOption;
+  Option<Either<DatabaseFailure, DatabaseSuccess>>
+      get databaseFailureOrSuccessOption;
   @override
   _$CreateAccountDatabaseStateCopyWith<_CreateAccountDatabaseState>
       get copyWith;

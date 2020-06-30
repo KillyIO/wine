@@ -5,8 +5,8 @@ import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:wine/domain/database/database_failure.dart';
+import 'package:wine/domain/database/database_success.dart';
 import 'package:wine/domain/database/i_local_session_database_facade.dart';
-import 'package:wine/domain/database/i_online_user_database_facade.dart';
 import 'package:wine/domain/models/hive/session.dart';
 
 part 'settings_database_event.dart';
@@ -15,15 +15,10 @@ part 'settings_database_state.dart';
 part 'settings_database_bloc.freezed.dart';
 
 @injectable
-class SettingsDatabaseBloc
-    extends Bloc<SettingsDatabaseEvent, SettingsDatabaseState> {
+class SettingsDatabaseBloc extends Bloc<SettingsDatabaseEvent, SettingsDatabaseState> {
   final ILocalSessionDatabaseFacade _localSessionDatabaseFacade;
-  final IOnlineUserDatabaseFacade _onlineUserDatabaseFacade;
 
-  SettingsDatabaseBloc(
-    this._localSessionDatabaseFacade,
-    this._onlineUserDatabaseFacade,
-  );
+  SettingsDatabaseBloc(this._localSessionDatabaseFacade);
 
   @override
   SettingsDatabaseState get initialState => SettingsDatabaseState.initial();
@@ -33,46 +28,32 @@ class SettingsDatabaseBloc
     SettingsDatabaseEvent event,
   ) async* {
     yield* event.map(
-      settingsLaunched: (event) async* {
+      settingsLaunchedEVT: (event) async* {
         Session session = Session();
 
-        final Either<DatabaseFailure, Session> failureOrSuccess =
-            await _localSessionDatabaseFacade.getSession();
+        final Either<DatabaseFailure, DatabaseSuccess> failureOrSuccess =
+            await _localSessionDatabaseFacade.fetchSession();
         failureOrSuccess.fold(
           (_) {},
           (success) {
-            if (success is Session) {
-              session = success;
+            if (success is SessionFetchedSCS) {
+              session = success.session;
             }
           },
         );
 
-        yield state.copyWith(
-          session: session,
-          databaseFailureOrSuccessOption: optionOf(failureOrSuccess),
-        );
+        yield state.copyWith(session: session, databaseFailureOrSuccessOption: optionOf(failureOrSuccess));
       },
-      userSignedOut: (event) async* {
-        yield state.copyWith(
-          isUpdating: true,
-          databaseFailureOrSuccessOption: none(),
-        );
+      userSignedOutEVT: (event) async* {
+        yield state.copyWith(isUpdating: true, databaseFailureOrSuccessOption: none());
 
-        final Either<DatabaseFailure, dynamic> failureOrSuccess =
+        final Either<DatabaseFailure, DatabaseSuccess> failureOrSuccess =
             await _localSessionDatabaseFacade.deleteSession();
 
-        yield state.copyWith(
-          isUpdating: false,
-          isSessionDeleted: true,
-          databaseFailureOrSuccessOption: optionOf(failureOrSuccess),
-        );
+        yield state.copyWith(isUpdating: false, databaseFailureOrSuccessOption: optionOf(failureOrSuccess));
       },
-      resetSettingsDatabaseBloc: (event) async* {
-        yield state.copyWith(
-          isUpdating: false,
-          isSessionDeleted: false,
-          databaseFailureOrSuccessOption: none(),
-        );
+      resetBlocEVT: (event) async* {
+        yield state.copyWith(isUpdating: false, databaseFailureOrSuccessOption: none());
       },
     );
   }

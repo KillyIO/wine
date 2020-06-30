@@ -17,9 +17,7 @@ class SeriesPage extends StatelessWidget {
     return AnnotatedRegion<SystemUiOverlayStyle>(
       value: Themes.wineLightTheme(),
       child: MultiBlocProvider(
-        providers: [
-          BlocProvider(create: (context) => getIt<SeriesDatabaseBloc>())
-        ],
+        providers: [BlocProvider(create: (context) => getIt<SeriesDatabaseBloc>())],
         child: SeriesLayout(args: args),
       ),
     );

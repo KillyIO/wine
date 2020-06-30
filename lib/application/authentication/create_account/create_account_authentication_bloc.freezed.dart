@@ -12,38 +12,38 @@ T _$identity<T>(T value) => value;
 class _$CreateAccountAuthenticationEventTearOff {
   const _$CreateAccountAuthenticationEventTearOff();
 
-  EmailChanged emailChanged(String emailStr) {
-    return EmailChanged(
-      emailStr,
-    );
-  }
-
-  PasswordChanged passwordChanged(String passwordStr) {
-    return PasswordChanged(
-      passwordStr,
-    );
-  }
-
-  ConfirmPasswordChanged confirmPasswordChanged(
+  ConfirmPasswordChangedEVT confirmPasswordChangedEVT(
       String confirmPasswordStr, String passwordStr) {
-    return ConfirmPasswordChanged(
+    return ConfirmPasswordChangedEVT(
       confirmPasswordStr,
       passwordStr,
     );
   }
 
-  UsernameChanged usernameChanged(String usernameStr) {
-    return UsernameChanged(
-      usernameStr,
+  CreateAccountEVT createAccountEVT() {
+    return const CreateAccountEVT();
+  }
+
+  EmailChangedEVT emailChangedEVT(String emailStr) {
+    return EmailChangedEVT(
+      emailStr,
     );
   }
 
-  CreateAccount createAccount() {
-    return const CreateAccount();
+  PasswordChangedEVT passwordChangedEVT(String passwordStr) {
+    return PasswordChangedEVT(
+      passwordStr,
+    );
   }
 
-  ResendVerificationEmail resendVerificationEmail() {
-    return const ResendVerificationEmail();
+  ResendVerificationEmailEVT resendVerificationEmailEVT() {
+    return const ResendVerificationEmailEVT();
+  }
+
+  UsernameChangedEVT usernameChangedEVT(String usernameStr) {
+    return UsernameChangedEVT(
+      usernameStr,
+    );
   }
 }
 
@@ -54,43 +54,44 @@ const $CreateAccountAuthenticationEvent =
 mixin _$CreateAccountAuthenticationEvent {
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result emailChanged(String emailStr),
-    @required Result passwordChanged(String passwordStr),
     @required
-        Result confirmPasswordChanged(
+        Result confirmPasswordChangedEVT(
             String confirmPasswordStr, String passwordStr),
-    @required Result usernameChanged(String usernameStr),
-    @required Result createAccount(),
-    @required Result resendVerificationEmail(),
+    @required Result createAccountEVT(),
+    @required Result emailChangedEVT(String emailStr),
+    @required Result passwordChangedEVT(String passwordStr),
+    @required Result resendVerificationEmailEVT(),
+    @required Result usernameChangedEVT(String usernameStr),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result emailChanged(String emailStr),
-    Result passwordChanged(String passwordStr),
-    Result confirmPasswordChanged(
+    Result confirmPasswordChangedEVT(
         String confirmPasswordStr, String passwordStr),
-    Result usernameChanged(String usernameStr),
-    Result createAccount(),
-    Result resendVerificationEmail(),
+    Result createAccountEVT(),
+    Result emailChangedEVT(String emailStr),
+    Result passwordChangedEVT(String passwordStr),
+    Result resendVerificationEmailEVT(),
+    Result usernameChangedEVT(String usernameStr),
     @required Result orElse(),
   });
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result emailChanged(EmailChanged value),
-    @required Result passwordChanged(PasswordChanged value),
-    @required Result confirmPasswordChanged(ConfirmPasswordChanged value),
-    @required Result usernameChanged(UsernameChanged value),
-    @required Result createAccount(CreateAccount value),
-    @required Result resendVerificationEmail(ResendVerificationEmail value),
+    @required Result confirmPasswordChangedEVT(ConfirmPasswordChangedEVT value),
+    @required Result createAccountEVT(CreateAccountEVT value),
+    @required Result emailChangedEVT(EmailChangedEVT value),
+    @required Result passwordChangedEVT(PasswordChangedEVT value),
+    @required
+        Result resendVerificationEmailEVT(ResendVerificationEmailEVT value),
+    @required Result usernameChangedEVT(UsernameChangedEVT value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result emailChanged(EmailChanged value),
-    Result passwordChanged(PasswordChanged value),
-    Result confirmPasswordChanged(ConfirmPasswordChanged value),
-    Result usernameChanged(UsernameChanged value),
-    Result createAccount(CreateAccount value),
-    Result resendVerificationEmail(ResendVerificationEmail value),
+    Result confirmPasswordChangedEVT(ConfirmPasswordChangedEVT value),
+    Result createAccountEVT(CreateAccountEVT value),
+    Result emailChangedEVT(EmailChangedEVT value),
+    Result passwordChangedEVT(PasswordChangedEVT value),
+    Result resendVerificationEmailEVT(ResendVerificationEmailEVT value),
+    Result usernameChangedEVT(UsernameChangedEVT value),
     @required Result orElse(),
   });
 }
@@ -111,309 +112,30 @@ class _$CreateAccountAuthenticationEventCopyWithImpl<$Res>
   final $Res Function(CreateAccountAuthenticationEvent) _then;
 }
 
-abstract class $EmailChangedCopyWith<$Res> {
-  factory $EmailChangedCopyWith(
-          EmailChanged value, $Res Function(EmailChanged) then) =
-      _$EmailChangedCopyWithImpl<$Res>;
-  $Res call({String emailStr});
-}
-
-class _$EmailChangedCopyWithImpl<$Res>
-    extends _$CreateAccountAuthenticationEventCopyWithImpl<$Res>
-    implements $EmailChangedCopyWith<$Res> {
-  _$EmailChangedCopyWithImpl(
-      EmailChanged _value, $Res Function(EmailChanged) _then)
-      : super(_value, (v) => _then(v as EmailChanged));
-
-  @override
-  EmailChanged get _value => super._value as EmailChanged;
-
-  @override
-  $Res call({
-    Object emailStr = freezed,
-  }) {
-    return _then(EmailChanged(
-      emailStr == freezed ? _value.emailStr : emailStr as String,
-    ));
-  }
-}
-
-class _$EmailChanged implements EmailChanged {
-  const _$EmailChanged(this.emailStr) : assert(emailStr != null);
-
-  @override
-  final String emailStr;
-
-  @override
-  String toString() {
-    return 'CreateAccountAuthenticationEvent.emailChanged(emailStr: $emailStr)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is EmailChanged &&
-            (identical(other.emailStr, emailStr) ||
-                const DeepCollectionEquality()
-                    .equals(other.emailStr, emailStr)));
-  }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(emailStr);
-
-  @override
-  $EmailChangedCopyWith<EmailChanged> get copyWith =>
-      _$EmailChangedCopyWithImpl<EmailChanged>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result emailChanged(String emailStr),
-    @required Result passwordChanged(String passwordStr),
-    @required
-        Result confirmPasswordChanged(
-            String confirmPasswordStr, String passwordStr),
-    @required Result usernameChanged(String usernameStr),
-    @required Result createAccount(),
-    @required Result resendVerificationEmail(),
-  }) {
-    assert(emailChanged != null);
-    assert(passwordChanged != null);
-    assert(confirmPasswordChanged != null);
-    assert(usernameChanged != null);
-    assert(createAccount != null);
-    assert(resendVerificationEmail != null);
-    return emailChanged(emailStr);
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result emailChanged(String emailStr),
-    Result passwordChanged(String passwordStr),
-    Result confirmPasswordChanged(
-        String confirmPasswordStr, String passwordStr),
-    Result usernameChanged(String usernameStr),
-    Result createAccount(),
-    Result resendVerificationEmail(),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (emailChanged != null) {
-      return emailChanged(emailStr);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result emailChanged(EmailChanged value),
-    @required Result passwordChanged(PasswordChanged value),
-    @required Result confirmPasswordChanged(ConfirmPasswordChanged value),
-    @required Result usernameChanged(UsernameChanged value),
-    @required Result createAccount(CreateAccount value),
-    @required Result resendVerificationEmail(ResendVerificationEmail value),
-  }) {
-    assert(emailChanged != null);
-    assert(passwordChanged != null);
-    assert(confirmPasswordChanged != null);
-    assert(usernameChanged != null);
-    assert(createAccount != null);
-    assert(resendVerificationEmail != null);
-    return emailChanged(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result emailChanged(EmailChanged value),
-    Result passwordChanged(PasswordChanged value),
-    Result confirmPasswordChanged(ConfirmPasswordChanged value),
-    Result usernameChanged(UsernameChanged value),
-    Result createAccount(CreateAccount value),
-    Result resendVerificationEmail(ResendVerificationEmail value),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (emailChanged != null) {
-      return emailChanged(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class EmailChanged implements CreateAccountAuthenticationEvent {
-  const factory EmailChanged(String emailStr) = _$EmailChanged;
-
-  String get emailStr;
-  $EmailChangedCopyWith<EmailChanged> get copyWith;
-}
-
-abstract class $PasswordChangedCopyWith<$Res> {
-  factory $PasswordChangedCopyWith(
-          PasswordChanged value, $Res Function(PasswordChanged) then) =
-      _$PasswordChangedCopyWithImpl<$Res>;
-  $Res call({String passwordStr});
-}
-
-class _$PasswordChangedCopyWithImpl<$Res>
-    extends _$CreateAccountAuthenticationEventCopyWithImpl<$Res>
-    implements $PasswordChangedCopyWith<$Res> {
-  _$PasswordChangedCopyWithImpl(
-      PasswordChanged _value, $Res Function(PasswordChanged) _then)
-      : super(_value, (v) => _then(v as PasswordChanged));
-
-  @override
-  PasswordChanged get _value => super._value as PasswordChanged;
-
-  @override
-  $Res call({
-    Object passwordStr = freezed,
-  }) {
-    return _then(PasswordChanged(
-      passwordStr == freezed ? _value.passwordStr : passwordStr as String,
-    ));
-  }
-}
-
-class _$PasswordChanged implements PasswordChanged {
-  const _$PasswordChanged(this.passwordStr) : assert(passwordStr != null);
-
-  @override
-  final String passwordStr;
-
-  @override
-  String toString() {
-    return 'CreateAccountAuthenticationEvent.passwordChanged(passwordStr: $passwordStr)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is PasswordChanged &&
-            (identical(other.passwordStr, passwordStr) ||
-                const DeepCollectionEquality()
-                    .equals(other.passwordStr, passwordStr)));
-  }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(passwordStr);
-
-  @override
-  $PasswordChangedCopyWith<PasswordChanged> get copyWith =>
-      _$PasswordChangedCopyWithImpl<PasswordChanged>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result emailChanged(String emailStr),
-    @required Result passwordChanged(String passwordStr),
-    @required
-        Result confirmPasswordChanged(
-            String confirmPasswordStr, String passwordStr),
-    @required Result usernameChanged(String usernameStr),
-    @required Result createAccount(),
-    @required Result resendVerificationEmail(),
-  }) {
-    assert(emailChanged != null);
-    assert(passwordChanged != null);
-    assert(confirmPasswordChanged != null);
-    assert(usernameChanged != null);
-    assert(createAccount != null);
-    assert(resendVerificationEmail != null);
-    return passwordChanged(passwordStr);
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result emailChanged(String emailStr),
-    Result passwordChanged(String passwordStr),
-    Result confirmPasswordChanged(
-        String confirmPasswordStr, String passwordStr),
-    Result usernameChanged(String usernameStr),
-    Result createAccount(),
-    Result resendVerificationEmail(),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (passwordChanged != null) {
-      return passwordChanged(passwordStr);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result emailChanged(EmailChanged value),
-    @required Result passwordChanged(PasswordChanged value),
-    @required Result confirmPasswordChanged(ConfirmPasswordChanged value),
-    @required Result usernameChanged(UsernameChanged value),
-    @required Result createAccount(CreateAccount value),
-    @required Result resendVerificationEmail(ResendVerificationEmail value),
-  }) {
-    assert(emailChanged != null);
-    assert(passwordChanged != null);
-    assert(confirmPasswordChanged != null);
-    assert(usernameChanged != null);
-    assert(createAccount != null);
-    assert(resendVerificationEmail != null);
-    return passwordChanged(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result emailChanged(EmailChanged value),
-    Result passwordChanged(PasswordChanged value),
-    Result confirmPasswordChanged(ConfirmPasswordChanged value),
-    Result usernameChanged(UsernameChanged value),
-    Result createAccount(CreateAccount value),
-    Result resendVerificationEmail(ResendVerificationEmail value),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (passwordChanged != null) {
-      return passwordChanged(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class PasswordChanged implements CreateAccountAuthenticationEvent {
-  const factory PasswordChanged(String passwordStr) = _$PasswordChanged;
-
-  String get passwordStr;
-  $PasswordChangedCopyWith<PasswordChanged> get copyWith;
-}
-
-abstract class $ConfirmPasswordChangedCopyWith<$Res> {
-  factory $ConfirmPasswordChangedCopyWith(ConfirmPasswordChanged value,
-          $Res Function(ConfirmPasswordChanged) then) =
-      _$ConfirmPasswordChangedCopyWithImpl<$Res>;
+abstract class $ConfirmPasswordChangedEVTCopyWith<$Res> {
+  factory $ConfirmPasswordChangedEVTCopyWith(ConfirmPasswordChangedEVT value,
+          $Res Function(ConfirmPasswordChangedEVT) then) =
+      _$ConfirmPasswordChangedEVTCopyWithImpl<$Res>;
   $Res call({String confirmPasswordStr, String passwordStr});
 }
 
-class _$ConfirmPasswordChangedCopyWithImpl<$Res>
+class _$ConfirmPasswordChangedEVTCopyWithImpl<$Res>
     extends _$CreateAccountAuthenticationEventCopyWithImpl<$Res>
-    implements $ConfirmPasswordChangedCopyWith<$Res> {
-  _$ConfirmPasswordChangedCopyWithImpl(ConfirmPasswordChanged _value,
-      $Res Function(ConfirmPasswordChanged) _then)
-      : super(_value, (v) => _then(v as ConfirmPasswordChanged));
+    implements $ConfirmPasswordChangedEVTCopyWith<$Res> {
+  _$ConfirmPasswordChangedEVTCopyWithImpl(ConfirmPasswordChangedEVT _value,
+      $Res Function(ConfirmPasswordChangedEVT) _then)
+      : super(_value, (v) => _then(v as ConfirmPasswordChangedEVT));
 
   @override
-  ConfirmPasswordChanged get _value => super._value as ConfirmPasswordChanged;
+  ConfirmPasswordChangedEVT get _value =>
+      super._value as ConfirmPasswordChangedEVT;
 
   @override
   $Res call({
     Object confirmPasswordStr = freezed,
     Object passwordStr = freezed,
   }) {
-    return _then(ConfirmPasswordChanged(
+    return _then(ConfirmPasswordChangedEVT(
       confirmPasswordStr == freezed
           ? _value.confirmPasswordStr
           : confirmPasswordStr as String,
@@ -422,8 +144,8 @@ class _$ConfirmPasswordChangedCopyWithImpl<$Res>
   }
 }
 
-class _$ConfirmPasswordChanged implements ConfirmPasswordChanged {
-  const _$ConfirmPasswordChanged(this.confirmPasswordStr, this.passwordStr)
+class _$ConfirmPasswordChangedEVT implements ConfirmPasswordChangedEVT {
+  const _$ConfirmPasswordChangedEVT(this.confirmPasswordStr, this.passwordStr)
       : assert(confirmPasswordStr != null),
         assert(passwordStr != null);
 
@@ -434,13 +156,13 @@ class _$ConfirmPasswordChanged implements ConfirmPasswordChanged {
 
   @override
   String toString() {
-    return 'CreateAccountAuthenticationEvent.confirmPasswordChanged(confirmPasswordStr: $confirmPasswordStr, passwordStr: $passwordStr)';
+    return 'CreateAccountAuthenticationEvent.confirmPasswordChangedEVT(confirmPasswordStr: $confirmPasswordStr, passwordStr: $passwordStr)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is ConfirmPasswordChanged &&
+        (other is ConfirmPasswordChangedEVT &&
             (identical(other.confirmPasswordStr, confirmPasswordStr) ||
                 const DeepCollectionEquality()
                     .equals(other.confirmPasswordStr, confirmPasswordStr)) &&
@@ -456,46 +178,46 @@ class _$ConfirmPasswordChanged implements ConfirmPasswordChanged {
       const DeepCollectionEquality().hash(passwordStr);
 
   @override
-  $ConfirmPasswordChangedCopyWith<ConfirmPasswordChanged> get copyWith =>
-      _$ConfirmPasswordChangedCopyWithImpl<ConfirmPasswordChanged>(
+  $ConfirmPasswordChangedEVTCopyWith<ConfirmPasswordChangedEVT> get copyWith =>
+      _$ConfirmPasswordChangedEVTCopyWithImpl<ConfirmPasswordChangedEVT>(
           this, _$identity);
 
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result emailChanged(String emailStr),
-    @required Result passwordChanged(String passwordStr),
     @required
-        Result confirmPasswordChanged(
+        Result confirmPasswordChangedEVT(
             String confirmPasswordStr, String passwordStr),
-    @required Result usernameChanged(String usernameStr),
-    @required Result createAccount(),
-    @required Result resendVerificationEmail(),
+    @required Result createAccountEVT(),
+    @required Result emailChangedEVT(String emailStr),
+    @required Result passwordChangedEVT(String passwordStr),
+    @required Result resendVerificationEmailEVT(),
+    @required Result usernameChangedEVT(String usernameStr),
   }) {
-    assert(emailChanged != null);
-    assert(passwordChanged != null);
-    assert(confirmPasswordChanged != null);
-    assert(usernameChanged != null);
-    assert(createAccount != null);
-    assert(resendVerificationEmail != null);
-    return confirmPasswordChanged(confirmPasswordStr, passwordStr);
+    assert(confirmPasswordChangedEVT != null);
+    assert(createAccountEVT != null);
+    assert(emailChangedEVT != null);
+    assert(passwordChangedEVT != null);
+    assert(resendVerificationEmailEVT != null);
+    assert(usernameChangedEVT != null);
+    return confirmPasswordChangedEVT(confirmPasswordStr, passwordStr);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result emailChanged(String emailStr),
-    Result passwordChanged(String passwordStr),
-    Result confirmPasswordChanged(
+    Result confirmPasswordChangedEVT(
         String confirmPasswordStr, String passwordStr),
-    Result usernameChanged(String usernameStr),
-    Result createAccount(),
-    Result resendVerificationEmail(),
+    Result createAccountEVT(),
+    Result emailChangedEVT(String emailStr),
+    Result passwordChangedEVT(String passwordStr),
+    Result resendVerificationEmailEVT(),
+    Result usernameChangedEVT(String usernameStr),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (confirmPasswordChanged != null) {
-      return confirmPasswordChanged(confirmPasswordStr, passwordStr);
+    if (confirmPasswordChangedEVT != null) {
+      return confirmPasswordChangedEVT(confirmPasswordStr, passwordStr);
     }
     return orElse();
   }
@@ -503,93 +225,611 @@ class _$ConfirmPasswordChanged implements ConfirmPasswordChanged {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result emailChanged(EmailChanged value),
-    @required Result passwordChanged(PasswordChanged value),
-    @required Result confirmPasswordChanged(ConfirmPasswordChanged value),
-    @required Result usernameChanged(UsernameChanged value),
-    @required Result createAccount(CreateAccount value),
-    @required Result resendVerificationEmail(ResendVerificationEmail value),
+    @required Result confirmPasswordChangedEVT(ConfirmPasswordChangedEVT value),
+    @required Result createAccountEVT(CreateAccountEVT value),
+    @required Result emailChangedEVT(EmailChangedEVT value),
+    @required Result passwordChangedEVT(PasswordChangedEVT value),
+    @required
+        Result resendVerificationEmailEVT(ResendVerificationEmailEVT value),
+    @required Result usernameChangedEVT(UsernameChangedEVT value),
   }) {
-    assert(emailChanged != null);
-    assert(passwordChanged != null);
-    assert(confirmPasswordChanged != null);
-    assert(usernameChanged != null);
-    assert(createAccount != null);
-    assert(resendVerificationEmail != null);
-    return confirmPasswordChanged(this);
+    assert(confirmPasswordChangedEVT != null);
+    assert(createAccountEVT != null);
+    assert(emailChangedEVT != null);
+    assert(passwordChangedEVT != null);
+    assert(resendVerificationEmailEVT != null);
+    assert(usernameChangedEVT != null);
+    return confirmPasswordChangedEVT(this);
   }
 
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result emailChanged(EmailChanged value),
-    Result passwordChanged(PasswordChanged value),
-    Result confirmPasswordChanged(ConfirmPasswordChanged value),
-    Result usernameChanged(UsernameChanged value),
-    Result createAccount(CreateAccount value),
-    Result resendVerificationEmail(ResendVerificationEmail value),
+    Result confirmPasswordChangedEVT(ConfirmPasswordChangedEVT value),
+    Result createAccountEVT(CreateAccountEVT value),
+    Result emailChangedEVT(EmailChangedEVT value),
+    Result passwordChangedEVT(PasswordChangedEVT value),
+    Result resendVerificationEmailEVT(ResendVerificationEmailEVT value),
+    Result usernameChangedEVT(UsernameChangedEVT value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (confirmPasswordChanged != null) {
-      return confirmPasswordChanged(this);
+    if (confirmPasswordChangedEVT != null) {
+      return confirmPasswordChangedEVT(this);
     }
     return orElse();
   }
 }
 
-abstract class ConfirmPasswordChanged
+abstract class ConfirmPasswordChangedEVT
     implements CreateAccountAuthenticationEvent {
-  const factory ConfirmPasswordChanged(
-      String confirmPasswordStr, String passwordStr) = _$ConfirmPasswordChanged;
+  const factory ConfirmPasswordChangedEVT(
+          String confirmPasswordStr, String passwordStr) =
+      _$ConfirmPasswordChangedEVT;
 
   String get confirmPasswordStr;
   String get passwordStr;
-  $ConfirmPasswordChangedCopyWith<ConfirmPasswordChanged> get copyWith;
+  $ConfirmPasswordChangedEVTCopyWith<ConfirmPasswordChangedEVT> get copyWith;
 }
 
-abstract class $UsernameChangedCopyWith<$Res> {
-  factory $UsernameChangedCopyWith(
-          UsernameChanged value, $Res Function(UsernameChanged) then) =
-      _$UsernameChangedCopyWithImpl<$Res>;
+abstract class $CreateAccountEVTCopyWith<$Res> {
+  factory $CreateAccountEVTCopyWith(
+          CreateAccountEVT value, $Res Function(CreateAccountEVT) then) =
+      _$CreateAccountEVTCopyWithImpl<$Res>;
+}
+
+class _$CreateAccountEVTCopyWithImpl<$Res>
+    extends _$CreateAccountAuthenticationEventCopyWithImpl<$Res>
+    implements $CreateAccountEVTCopyWith<$Res> {
+  _$CreateAccountEVTCopyWithImpl(
+      CreateAccountEVT _value, $Res Function(CreateAccountEVT) _then)
+      : super(_value, (v) => _then(v as CreateAccountEVT));
+
+  @override
+  CreateAccountEVT get _value => super._value as CreateAccountEVT;
+}
+
+class _$CreateAccountEVT implements CreateAccountEVT {
+  const _$CreateAccountEVT();
+
+  @override
+  String toString() {
+    return 'CreateAccountAuthenticationEvent.createAccountEVT()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is CreateAccountEVT);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required
+        Result confirmPasswordChangedEVT(
+            String confirmPasswordStr, String passwordStr),
+    @required Result createAccountEVT(),
+    @required Result emailChangedEVT(String emailStr),
+    @required Result passwordChangedEVT(String passwordStr),
+    @required Result resendVerificationEmailEVT(),
+    @required Result usernameChangedEVT(String usernameStr),
+  }) {
+    assert(confirmPasswordChangedEVT != null);
+    assert(createAccountEVT != null);
+    assert(emailChangedEVT != null);
+    assert(passwordChangedEVT != null);
+    assert(resendVerificationEmailEVT != null);
+    assert(usernameChangedEVT != null);
+    return createAccountEVT();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result confirmPasswordChangedEVT(
+        String confirmPasswordStr, String passwordStr),
+    Result createAccountEVT(),
+    Result emailChangedEVT(String emailStr),
+    Result passwordChangedEVT(String passwordStr),
+    Result resendVerificationEmailEVT(),
+    Result usernameChangedEVT(String usernameStr),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (createAccountEVT != null) {
+      return createAccountEVT();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result confirmPasswordChangedEVT(ConfirmPasswordChangedEVT value),
+    @required Result createAccountEVT(CreateAccountEVT value),
+    @required Result emailChangedEVT(EmailChangedEVT value),
+    @required Result passwordChangedEVT(PasswordChangedEVT value),
+    @required
+        Result resendVerificationEmailEVT(ResendVerificationEmailEVT value),
+    @required Result usernameChangedEVT(UsernameChangedEVT value),
+  }) {
+    assert(confirmPasswordChangedEVT != null);
+    assert(createAccountEVT != null);
+    assert(emailChangedEVT != null);
+    assert(passwordChangedEVT != null);
+    assert(resendVerificationEmailEVT != null);
+    assert(usernameChangedEVT != null);
+    return createAccountEVT(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result confirmPasswordChangedEVT(ConfirmPasswordChangedEVT value),
+    Result createAccountEVT(CreateAccountEVT value),
+    Result emailChangedEVT(EmailChangedEVT value),
+    Result passwordChangedEVT(PasswordChangedEVT value),
+    Result resendVerificationEmailEVT(ResendVerificationEmailEVT value),
+    Result usernameChangedEVT(UsernameChangedEVT value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (createAccountEVT != null) {
+      return createAccountEVT(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class CreateAccountEVT implements CreateAccountAuthenticationEvent {
+  const factory CreateAccountEVT() = _$CreateAccountEVT;
+}
+
+abstract class $EmailChangedEVTCopyWith<$Res> {
+  factory $EmailChangedEVTCopyWith(
+          EmailChangedEVT value, $Res Function(EmailChangedEVT) then) =
+      _$EmailChangedEVTCopyWithImpl<$Res>;
+  $Res call({String emailStr});
+}
+
+class _$EmailChangedEVTCopyWithImpl<$Res>
+    extends _$CreateAccountAuthenticationEventCopyWithImpl<$Res>
+    implements $EmailChangedEVTCopyWith<$Res> {
+  _$EmailChangedEVTCopyWithImpl(
+      EmailChangedEVT _value, $Res Function(EmailChangedEVT) _then)
+      : super(_value, (v) => _then(v as EmailChangedEVT));
+
+  @override
+  EmailChangedEVT get _value => super._value as EmailChangedEVT;
+
+  @override
+  $Res call({
+    Object emailStr = freezed,
+  }) {
+    return _then(EmailChangedEVT(
+      emailStr == freezed ? _value.emailStr : emailStr as String,
+    ));
+  }
+}
+
+class _$EmailChangedEVT implements EmailChangedEVT {
+  const _$EmailChangedEVT(this.emailStr) : assert(emailStr != null);
+
+  @override
+  final String emailStr;
+
+  @override
+  String toString() {
+    return 'CreateAccountAuthenticationEvent.emailChangedEVT(emailStr: $emailStr)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is EmailChangedEVT &&
+            (identical(other.emailStr, emailStr) ||
+                const DeepCollectionEquality()
+                    .equals(other.emailStr, emailStr)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(emailStr);
+
+  @override
+  $EmailChangedEVTCopyWith<EmailChangedEVT> get copyWith =>
+      _$EmailChangedEVTCopyWithImpl<EmailChangedEVT>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required
+        Result confirmPasswordChangedEVT(
+            String confirmPasswordStr, String passwordStr),
+    @required Result createAccountEVT(),
+    @required Result emailChangedEVT(String emailStr),
+    @required Result passwordChangedEVT(String passwordStr),
+    @required Result resendVerificationEmailEVT(),
+    @required Result usernameChangedEVT(String usernameStr),
+  }) {
+    assert(confirmPasswordChangedEVT != null);
+    assert(createAccountEVT != null);
+    assert(emailChangedEVT != null);
+    assert(passwordChangedEVT != null);
+    assert(resendVerificationEmailEVT != null);
+    assert(usernameChangedEVT != null);
+    return emailChangedEVT(emailStr);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result confirmPasswordChangedEVT(
+        String confirmPasswordStr, String passwordStr),
+    Result createAccountEVT(),
+    Result emailChangedEVT(String emailStr),
+    Result passwordChangedEVT(String passwordStr),
+    Result resendVerificationEmailEVT(),
+    Result usernameChangedEVT(String usernameStr),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (emailChangedEVT != null) {
+      return emailChangedEVT(emailStr);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result confirmPasswordChangedEVT(ConfirmPasswordChangedEVT value),
+    @required Result createAccountEVT(CreateAccountEVT value),
+    @required Result emailChangedEVT(EmailChangedEVT value),
+    @required Result passwordChangedEVT(PasswordChangedEVT value),
+    @required
+        Result resendVerificationEmailEVT(ResendVerificationEmailEVT value),
+    @required Result usernameChangedEVT(UsernameChangedEVT value),
+  }) {
+    assert(confirmPasswordChangedEVT != null);
+    assert(createAccountEVT != null);
+    assert(emailChangedEVT != null);
+    assert(passwordChangedEVT != null);
+    assert(resendVerificationEmailEVT != null);
+    assert(usernameChangedEVT != null);
+    return emailChangedEVT(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result confirmPasswordChangedEVT(ConfirmPasswordChangedEVT value),
+    Result createAccountEVT(CreateAccountEVT value),
+    Result emailChangedEVT(EmailChangedEVT value),
+    Result passwordChangedEVT(PasswordChangedEVT value),
+    Result resendVerificationEmailEVT(ResendVerificationEmailEVT value),
+    Result usernameChangedEVT(UsernameChangedEVT value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (emailChangedEVT != null) {
+      return emailChangedEVT(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class EmailChangedEVT implements CreateAccountAuthenticationEvent {
+  const factory EmailChangedEVT(String emailStr) = _$EmailChangedEVT;
+
+  String get emailStr;
+  $EmailChangedEVTCopyWith<EmailChangedEVT> get copyWith;
+}
+
+abstract class $PasswordChangedEVTCopyWith<$Res> {
+  factory $PasswordChangedEVTCopyWith(
+          PasswordChangedEVT value, $Res Function(PasswordChangedEVT) then) =
+      _$PasswordChangedEVTCopyWithImpl<$Res>;
+  $Res call({String passwordStr});
+}
+
+class _$PasswordChangedEVTCopyWithImpl<$Res>
+    extends _$CreateAccountAuthenticationEventCopyWithImpl<$Res>
+    implements $PasswordChangedEVTCopyWith<$Res> {
+  _$PasswordChangedEVTCopyWithImpl(
+      PasswordChangedEVT _value, $Res Function(PasswordChangedEVT) _then)
+      : super(_value, (v) => _then(v as PasswordChangedEVT));
+
+  @override
+  PasswordChangedEVT get _value => super._value as PasswordChangedEVT;
+
+  @override
+  $Res call({
+    Object passwordStr = freezed,
+  }) {
+    return _then(PasswordChangedEVT(
+      passwordStr == freezed ? _value.passwordStr : passwordStr as String,
+    ));
+  }
+}
+
+class _$PasswordChangedEVT implements PasswordChangedEVT {
+  const _$PasswordChangedEVT(this.passwordStr) : assert(passwordStr != null);
+
+  @override
+  final String passwordStr;
+
+  @override
+  String toString() {
+    return 'CreateAccountAuthenticationEvent.passwordChangedEVT(passwordStr: $passwordStr)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is PasswordChangedEVT &&
+            (identical(other.passwordStr, passwordStr) ||
+                const DeepCollectionEquality()
+                    .equals(other.passwordStr, passwordStr)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(passwordStr);
+
+  @override
+  $PasswordChangedEVTCopyWith<PasswordChangedEVT> get copyWith =>
+      _$PasswordChangedEVTCopyWithImpl<PasswordChangedEVT>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required
+        Result confirmPasswordChangedEVT(
+            String confirmPasswordStr, String passwordStr),
+    @required Result createAccountEVT(),
+    @required Result emailChangedEVT(String emailStr),
+    @required Result passwordChangedEVT(String passwordStr),
+    @required Result resendVerificationEmailEVT(),
+    @required Result usernameChangedEVT(String usernameStr),
+  }) {
+    assert(confirmPasswordChangedEVT != null);
+    assert(createAccountEVT != null);
+    assert(emailChangedEVT != null);
+    assert(passwordChangedEVT != null);
+    assert(resendVerificationEmailEVT != null);
+    assert(usernameChangedEVT != null);
+    return passwordChangedEVT(passwordStr);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result confirmPasswordChangedEVT(
+        String confirmPasswordStr, String passwordStr),
+    Result createAccountEVT(),
+    Result emailChangedEVT(String emailStr),
+    Result passwordChangedEVT(String passwordStr),
+    Result resendVerificationEmailEVT(),
+    Result usernameChangedEVT(String usernameStr),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (passwordChangedEVT != null) {
+      return passwordChangedEVT(passwordStr);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result confirmPasswordChangedEVT(ConfirmPasswordChangedEVT value),
+    @required Result createAccountEVT(CreateAccountEVT value),
+    @required Result emailChangedEVT(EmailChangedEVT value),
+    @required Result passwordChangedEVT(PasswordChangedEVT value),
+    @required
+        Result resendVerificationEmailEVT(ResendVerificationEmailEVT value),
+    @required Result usernameChangedEVT(UsernameChangedEVT value),
+  }) {
+    assert(confirmPasswordChangedEVT != null);
+    assert(createAccountEVT != null);
+    assert(emailChangedEVT != null);
+    assert(passwordChangedEVT != null);
+    assert(resendVerificationEmailEVT != null);
+    assert(usernameChangedEVT != null);
+    return passwordChangedEVT(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result confirmPasswordChangedEVT(ConfirmPasswordChangedEVT value),
+    Result createAccountEVT(CreateAccountEVT value),
+    Result emailChangedEVT(EmailChangedEVT value),
+    Result passwordChangedEVT(PasswordChangedEVT value),
+    Result resendVerificationEmailEVT(ResendVerificationEmailEVT value),
+    Result usernameChangedEVT(UsernameChangedEVT value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (passwordChangedEVT != null) {
+      return passwordChangedEVT(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class PasswordChangedEVT implements CreateAccountAuthenticationEvent {
+  const factory PasswordChangedEVT(String passwordStr) = _$PasswordChangedEVT;
+
+  String get passwordStr;
+  $PasswordChangedEVTCopyWith<PasswordChangedEVT> get copyWith;
+}
+
+abstract class $ResendVerificationEmailEVTCopyWith<$Res> {
+  factory $ResendVerificationEmailEVTCopyWith(ResendVerificationEmailEVT value,
+          $Res Function(ResendVerificationEmailEVT) then) =
+      _$ResendVerificationEmailEVTCopyWithImpl<$Res>;
+}
+
+class _$ResendVerificationEmailEVTCopyWithImpl<$Res>
+    extends _$CreateAccountAuthenticationEventCopyWithImpl<$Res>
+    implements $ResendVerificationEmailEVTCopyWith<$Res> {
+  _$ResendVerificationEmailEVTCopyWithImpl(ResendVerificationEmailEVT _value,
+      $Res Function(ResendVerificationEmailEVT) _then)
+      : super(_value, (v) => _then(v as ResendVerificationEmailEVT));
+
+  @override
+  ResendVerificationEmailEVT get _value =>
+      super._value as ResendVerificationEmailEVT;
+}
+
+class _$ResendVerificationEmailEVT implements ResendVerificationEmailEVT {
+  const _$ResendVerificationEmailEVT();
+
+  @override
+  String toString() {
+    return 'CreateAccountAuthenticationEvent.resendVerificationEmailEVT()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is ResendVerificationEmailEVT);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required
+        Result confirmPasswordChangedEVT(
+            String confirmPasswordStr, String passwordStr),
+    @required Result createAccountEVT(),
+    @required Result emailChangedEVT(String emailStr),
+    @required Result passwordChangedEVT(String passwordStr),
+    @required Result resendVerificationEmailEVT(),
+    @required Result usernameChangedEVT(String usernameStr),
+  }) {
+    assert(confirmPasswordChangedEVT != null);
+    assert(createAccountEVT != null);
+    assert(emailChangedEVT != null);
+    assert(passwordChangedEVT != null);
+    assert(resendVerificationEmailEVT != null);
+    assert(usernameChangedEVT != null);
+    return resendVerificationEmailEVT();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result confirmPasswordChangedEVT(
+        String confirmPasswordStr, String passwordStr),
+    Result createAccountEVT(),
+    Result emailChangedEVT(String emailStr),
+    Result passwordChangedEVT(String passwordStr),
+    Result resendVerificationEmailEVT(),
+    Result usernameChangedEVT(String usernameStr),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (resendVerificationEmailEVT != null) {
+      return resendVerificationEmailEVT();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result confirmPasswordChangedEVT(ConfirmPasswordChangedEVT value),
+    @required Result createAccountEVT(CreateAccountEVT value),
+    @required Result emailChangedEVT(EmailChangedEVT value),
+    @required Result passwordChangedEVT(PasswordChangedEVT value),
+    @required
+        Result resendVerificationEmailEVT(ResendVerificationEmailEVT value),
+    @required Result usernameChangedEVT(UsernameChangedEVT value),
+  }) {
+    assert(confirmPasswordChangedEVT != null);
+    assert(createAccountEVT != null);
+    assert(emailChangedEVT != null);
+    assert(passwordChangedEVT != null);
+    assert(resendVerificationEmailEVT != null);
+    assert(usernameChangedEVT != null);
+    return resendVerificationEmailEVT(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result confirmPasswordChangedEVT(ConfirmPasswordChangedEVT value),
+    Result createAccountEVT(CreateAccountEVT value),
+    Result emailChangedEVT(EmailChangedEVT value),
+    Result passwordChangedEVT(PasswordChangedEVT value),
+    Result resendVerificationEmailEVT(ResendVerificationEmailEVT value),
+    Result usernameChangedEVT(UsernameChangedEVT value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (resendVerificationEmailEVT != null) {
+      return resendVerificationEmailEVT(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ResendVerificationEmailEVT
+    implements CreateAccountAuthenticationEvent {
+  const factory ResendVerificationEmailEVT() = _$ResendVerificationEmailEVT;
+}
+
+abstract class $UsernameChangedEVTCopyWith<$Res> {
+  factory $UsernameChangedEVTCopyWith(
+          UsernameChangedEVT value, $Res Function(UsernameChangedEVT) then) =
+      _$UsernameChangedEVTCopyWithImpl<$Res>;
   $Res call({String usernameStr});
 }
 
-class _$UsernameChangedCopyWithImpl<$Res>
+class _$UsernameChangedEVTCopyWithImpl<$Res>
     extends _$CreateAccountAuthenticationEventCopyWithImpl<$Res>
-    implements $UsernameChangedCopyWith<$Res> {
-  _$UsernameChangedCopyWithImpl(
-      UsernameChanged _value, $Res Function(UsernameChanged) _then)
-      : super(_value, (v) => _then(v as UsernameChanged));
+    implements $UsernameChangedEVTCopyWith<$Res> {
+  _$UsernameChangedEVTCopyWithImpl(
+      UsernameChangedEVT _value, $Res Function(UsernameChangedEVT) _then)
+      : super(_value, (v) => _then(v as UsernameChangedEVT));
 
   @override
-  UsernameChanged get _value => super._value as UsernameChanged;
+  UsernameChangedEVT get _value => super._value as UsernameChangedEVT;
 
   @override
   $Res call({
     Object usernameStr = freezed,
   }) {
-    return _then(UsernameChanged(
+    return _then(UsernameChangedEVT(
       usernameStr == freezed ? _value.usernameStr : usernameStr as String,
     ));
   }
 }
 
-class _$UsernameChanged implements UsernameChanged {
-  const _$UsernameChanged(this.usernameStr) : assert(usernameStr != null);
+class _$UsernameChangedEVT implements UsernameChangedEVT {
+  const _$UsernameChangedEVT(this.usernameStr) : assert(usernameStr != null);
 
   @override
   final String usernameStr;
 
   @override
   String toString() {
-    return 'CreateAccountAuthenticationEvent.usernameChanged(usernameStr: $usernameStr)';
+    return 'CreateAccountAuthenticationEvent.usernameChangedEVT(usernameStr: $usernameStr)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is UsernameChanged &&
+        (other is UsernameChangedEVT &&
             (identical(other.usernameStr, usernameStr) ||
                 const DeepCollectionEquality()
                     .equals(other.usernameStr, usernameStr)));
@@ -600,45 +840,45 @@ class _$UsernameChanged implements UsernameChanged {
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(usernameStr);
 
   @override
-  $UsernameChangedCopyWith<UsernameChanged> get copyWith =>
-      _$UsernameChangedCopyWithImpl<UsernameChanged>(this, _$identity);
+  $UsernameChangedEVTCopyWith<UsernameChangedEVT> get copyWith =>
+      _$UsernameChangedEVTCopyWithImpl<UsernameChangedEVT>(this, _$identity);
 
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result emailChanged(String emailStr),
-    @required Result passwordChanged(String passwordStr),
     @required
-        Result confirmPasswordChanged(
+        Result confirmPasswordChangedEVT(
             String confirmPasswordStr, String passwordStr),
-    @required Result usernameChanged(String usernameStr),
-    @required Result createAccount(),
-    @required Result resendVerificationEmail(),
+    @required Result createAccountEVT(),
+    @required Result emailChangedEVT(String emailStr),
+    @required Result passwordChangedEVT(String passwordStr),
+    @required Result resendVerificationEmailEVT(),
+    @required Result usernameChangedEVT(String usernameStr),
   }) {
-    assert(emailChanged != null);
-    assert(passwordChanged != null);
-    assert(confirmPasswordChanged != null);
-    assert(usernameChanged != null);
-    assert(createAccount != null);
-    assert(resendVerificationEmail != null);
-    return usernameChanged(usernameStr);
+    assert(confirmPasswordChangedEVT != null);
+    assert(createAccountEVT != null);
+    assert(emailChangedEVT != null);
+    assert(passwordChangedEVT != null);
+    assert(resendVerificationEmailEVT != null);
+    assert(usernameChangedEVT != null);
+    return usernameChangedEVT(usernameStr);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result emailChanged(String emailStr),
-    Result passwordChanged(String passwordStr),
-    Result confirmPasswordChanged(
+    Result confirmPasswordChangedEVT(
         String confirmPasswordStr, String passwordStr),
-    Result usernameChanged(String usernameStr),
-    Result createAccount(),
-    Result resendVerificationEmail(),
+    Result createAccountEVT(),
+    Result emailChangedEVT(String emailStr),
+    Result passwordChangedEVT(String passwordStr),
+    Result resendVerificationEmailEVT(),
+    Result usernameChangedEVT(String usernameStr),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (usernameChanged != null) {
-      return usernameChanged(usernameStr);
+    if (usernameChangedEVT != null) {
+      return usernameChangedEVT(usernameStr);
     }
     return orElse();
   }
@@ -646,277 +886,47 @@ class _$UsernameChanged implements UsernameChanged {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result emailChanged(EmailChanged value),
-    @required Result passwordChanged(PasswordChanged value),
-    @required Result confirmPasswordChanged(ConfirmPasswordChanged value),
-    @required Result usernameChanged(UsernameChanged value),
-    @required Result createAccount(CreateAccount value),
-    @required Result resendVerificationEmail(ResendVerificationEmail value),
+    @required Result confirmPasswordChangedEVT(ConfirmPasswordChangedEVT value),
+    @required Result createAccountEVT(CreateAccountEVT value),
+    @required Result emailChangedEVT(EmailChangedEVT value),
+    @required Result passwordChangedEVT(PasswordChangedEVT value),
+    @required
+        Result resendVerificationEmailEVT(ResendVerificationEmailEVT value),
+    @required Result usernameChangedEVT(UsernameChangedEVT value),
   }) {
-    assert(emailChanged != null);
-    assert(passwordChanged != null);
-    assert(confirmPasswordChanged != null);
-    assert(usernameChanged != null);
-    assert(createAccount != null);
-    assert(resendVerificationEmail != null);
-    return usernameChanged(this);
+    assert(confirmPasswordChangedEVT != null);
+    assert(createAccountEVT != null);
+    assert(emailChangedEVT != null);
+    assert(passwordChangedEVT != null);
+    assert(resendVerificationEmailEVT != null);
+    assert(usernameChangedEVT != null);
+    return usernameChangedEVT(this);
   }
 
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result emailChanged(EmailChanged value),
-    Result passwordChanged(PasswordChanged value),
-    Result confirmPasswordChanged(ConfirmPasswordChanged value),
-    Result usernameChanged(UsernameChanged value),
-    Result createAccount(CreateAccount value),
-    Result resendVerificationEmail(ResendVerificationEmail value),
+    Result confirmPasswordChangedEVT(ConfirmPasswordChangedEVT value),
+    Result createAccountEVT(CreateAccountEVT value),
+    Result emailChangedEVT(EmailChangedEVT value),
+    Result passwordChangedEVT(PasswordChangedEVT value),
+    Result resendVerificationEmailEVT(ResendVerificationEmailEVT value),
+    Result usernameChangedEVT(UsernameChangedEVT value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (usernameChanged != null) {
-      return usernameChanged(this);
+    if (usernameChangedEVT != null) {
+      return usernameChangedEVT(this);
     }
     return orElse();
   }
 }
 
-abstract class UsernameChanged implements CreateAccountAuthenticationEvent {
-  const factory UsernameChanged(String usernameStr) = _$UsernameChanged;
+abstract class UsernameChangedEVT implements CreateAccountAuthenticationEvent {
+  const factory UsernameChangedEVT(String usernameStr) = _$UsernameChangedEVT;
 
   String get usernameStr;
-  $UsernameChangedCopyWith<UsernameChanged> get copyWith;
-}
-
-abstract class $CreateAccountCopyWith<$Res> {
-  factory $CreateAccountCopyWith(
-          CreateAccount value, $Res Function(CreateAccount) then) =
-      _$CreateAccountCopyWithImpl<$Res>;
-}
-
-class _$CreateAccountCopyWithImpl<$Res>
-    extends _$CreateAccountAuthenticationEventCopyWithImpl<$Res>
-    implements $CreateAccountCopyWith<$Res> {
-  _$CreateAccountCopyWithImpl(
-      CreateAccount _value, $Res Function(CreateAccount) _then)
-      : super(_value, (v) => _then(v as CreateAccount));
-
-  @override
-  CreateAccount get _value => super._value as CreateAccount;
-}
-
-class _$CreateAccount implements CreateAccount {
-  const _$CreateAccount();
-
-  @override
-  String toString() {
-    return 'CreateAccountAuthenticationEvent.createAccount()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) || (other is CreateAccount);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result emailChanged(String emailStr),
-    @required Result passwordChanged(String passwordStr),
-    @required
-        Result confirmPasswordChanged(
-            String confirmPasswordStr, String passwordStr),
-    @required Result usernameChanged(String usernameStr),
-    @required Result createAccount(),
-    @required Result resendVerificationEmail(),
-  }) {
-    assert(emailChanged != null);
-    assert(passwordChanged != null);
-    assert(confirmPasswordChanged != null);
-    assert(usernameChanged != null);
-    assert(createAccount != null);
-    assert(resendVerificationEmail != null);
-    return createAccount();
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result emailChanged(String emailStr),
-    Result passwordChanged(String passwordStr),
-    Result confirmPasswordChanged(
-        String confirmPasswordStr, String passwordStr),
-    Result usernameChanged(String usernameStr),
-    Result createAccount(),
-    Result resendVerificationEmail(),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (createAccount != null) {
-      return createAccount();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result emailChanged(EmailChanged value),
-    @required Result passwordChanged(PasswordChanged value),
-    @required Result confirmPasswordChanged(ConfirmPasswordChanged value),
-    @required Result usernameChanged(UsernameChanged value),
-    @required Result createAccount(CreateAccount value),
-    @required Result resendVerificationEmail(ResendVerificationEmail value),
-  }) {
-    assert(emailChanged != null);
-    assert(passwordChanged != null);
-    assert(confirmPasswordChanged != null);
-    assert(usernameChanged != null);
-    assert(createAccount != null);
-    assert(resendVerificationEmail != null);
-    return createAccount(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result emailChanged(EmailChanged value),
-    Result passwordChanged(PasswordChanged value),
-    Result confirmPasswordChanged(ConfirmPasswordChanged value),
-    Result usernameChanged(UsernameChanged value),
-    Result createAccount(CreateAccount value),
-    Result resendVerificationEmail(ResendVerificationEmail value),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (createAccount != null) {
-      return createAccount(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class CreateAccount implements CreateAccountAuthenticationEvent {
-  const factory CreateAccount() = _$CreateAccount;
-}
-
-abstract class $ResendVerificationEmailCopyWith<$Res> {
-  factory $ResendVerificationEmailCopyWith(ResendVerificationEmail value,
-          $Res Function(ResendVerificationEmail) then) =
-      _$ResendVerificationEmailCopyWithImpl<$Res>;
-}
-
-class _$ResendVerificationEmailCopyWithImpl<$Res>
-    extends _$CreateAccountAuthenticationEventCopyWithImpl<$Res>
-    implements $ResendVerificationEmailCopyWith<$Res> {
-  _$ResendVerificationEmailCopyWithImpl(ResendVerificationEmail _value,
-      $Res Function(ResendVerificationEmail) _then)
-      : super(_value, (v) => _then(v as ResendVerificationEmail));
-
-  @override
-  ResendVerificationEmail get _value => super._value as ResendVerificationEmail;
-}
-
-class _$ResendVerificationEmail implements ResendVerificationEmail {
-  const _$ResendVerificationEmail();
-
-  @override
-  String toString() {
-    return 'CreateAccountAuthenticationEvent.resendVerificationEmail()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) || (other is ResendVerificationEmail);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result emailChanged(String emailStr),
-    @required Result passwordChanged(String passwordStr),
-    @required
-        Result confirmPasswordChanged(
-            String confirmPasswordStr, String passwordStr),
-    @required Result usernameChanged(String usernameStr),
-    @required Result createAccount(),
-    @required Result resendVerificationEmail(),
-  }) {
-    assert(emailChanged != null);
-    assert(passwordChanged != null);
-    assert(confirmPasswordChanged != null);
-    assert(usernameChanged != null);
-    assert(createAccount != null);
-    assert(resendVerificationEmail != null);
-    return resendVerificationEmail();
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result emailChanged(String emailStr),
-    Result passwordChanged(String passwordStr),
-    Result confirmPasswordChanged(
-        String confirmPasswordStr, String passwordStr),
-    Result usernameChanged(String usernameStr),
-    Result createAccount(),
-    Result resendVerificationEmail(),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (resendVerificationEmail != null) {
-      return resendVerificationEmail();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result emailChanged(EmailChanged value),
-    @required Result passwordChanged(PasswordChanged value),
-    @required Result confirmPasswordChanged(ConfirmPasswordChanged value),
-    @required Result usernameChanged(UsernameChanged value),
-    @required Result createAccount(CreateAccount value),
-    @required Result resendVerificationEmail(ResendVerificationEmail value),
-  }) {
-    assert(emailChanged != null);
-    assert(passwordChanged != null);
-    assert(confirmPasswordChanged != null);
-    assert(usernameChanged != null);
-    assert(createAccount != null);
-    assert(resendVerificationEmail != null);
-    return resendVerificationEmail(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result emailChanged(EmailChanged value),
-    Result passwordChanged(PasswordChanged value),
-    Result confirmPasswordChanged(ConfirmPasswordChanged value),
-    Result usernameChanged(UsernameChanged value),
-    Result createAccount(CreateAccount value),
-    Result resendVerificationEmail(ResendVerificationEmail value),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (resendVerificationEmail != null) {
-      return resendVerificationEmail(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class ResendVerificationEmail
-    implements CreateAccountAuthenticationEvent {
-  const factory ResendVerificationEmail() = _$ResendVerificationEmail;
+  $UsernameChangedEVTCopyWith<UsernameChangedEVT> get copyWith;
 }
 
 class _$CreateAccountAuthenticationStateTearOff {
@@ -936,9 +946,7 @@ class _$CreateAccountAuthenticationStateTearOff {
       @required
           bool isSubmitting,
       @required
-          bool isVerificationEmailSent,
-      @required
-          Option<Either<AuthenticationFailure, dynamic>>
+          Option<Either<AuthenticationFailure, AuthenticationSuccess>>
               authenticationFailureOrSuccessOption}) {
     return _CreateAccountAuthenticationState(
       emailAddress: emailAddress,
@@ -947,7 +955,6 @@ class _$CreateAccountAuthenticationStateTearOff {
       username: username,
       showErrorMessages: showErrorMessages,
       isSubmitting: isSubmitting,
-      isVerificationEmailSent: isVerificationEmailSent,
       authenticationFailureOrSuccessOption:
           authenticationFailureOrSuccessOption,
     );
@@ -965,8 +972,7 @@ mixin _$CreateAccountAuthenticationState {
   Username get username;
   bool get showErrorMessages;
   bool get isSubmitting;
-  bool get isVerificationEmailSent;
-  Option<Either<AuthenticationFailure, dynamic>>
+  Option<Either<AuthenticationFailure, AuthenticationSuccess>>
       get authenticationFailureOrSuccessOption;
 
   $CreateAccountAuthenticationStateCopyWith<CreateAccountAuthenticationState>
@@ -985,8 +991,7 @@ abstract class $CreateAccountAuthenticationStateCopyWith<$Res> {
       Username username,
       bool showErrorMessages,
       bool isSubmitting,
-      bool isVerificationEmailSent,
-      Option<Either<AuthenticationFailure, dynamic>>
+      Option<Either<AuthenticationFailure, AuthenticationSuccess>>
           authenticationFailureOrSuccessOption});
 }
 
@@ -1006,7 +1011,6 @@ class _$CreateAccountAuthenticationStateCopyWithImpl<$Res>
     Object username = freezed,
     Object showErrorMessages = freezed,
     Object isSubmitting = freezed,
-    Object isVerificationEmailSent = freezed,
     Object authenticationFailureOrSuccessOption = freezed,
   }) {
     return _then(_value.copyWith(
@@ -1023,14 +1027,11 @@ class _$CreateAccountAuthenticationStateCopyWithImpl<$Res>
           : showErrorMessages as bool,
       isSubmitting:
           isSubmitting == freezed ? _value.isSubmitting : isSubmitting as bool,
-      isVerificationEmailSent: isVerificationEmailSent == freezed
-          ? _value.isVerificationEmailSent
-          : isVerificationEmailSent as bool,
       authenticationFailureOrSuccessOption:
           authenticationFailureOrSuccessOption == freezed
               ? _value.authenticationFailureOrSuccessOption
-              : authenticationFailureOrSuccessOption
-                  as Option<Either<AuthenticationFailure, dynamic>>,
+              : authenticationFailureOrSuccessOption as Option<
+                  Either<AuthenticationFailure, AuthenticationSuccess>>,
     ));
   }
 }
@@ -1049,8 +1050,7 @@ abstract class _$CreateAccountAuthenticationStateCopyWith<$Res>
       Username username,
       bool showErrorMessages,
       bool isSubmitting,
-      bool isVerificationEmailSent,
-      Option<Either<AuthenticationFailure, dynamic>>
+      Option<Either<AuthenticationFailure, AuthenticationSuccess>>
           authenticationFailureOrSuccessOption});
 }
 
@@ -1074,7 +1074,6 @@ class __$CreateAccountAuthenticationStateCopyWithImpl<$Res>
     Object username = freezed,
     Object showErrorMessages = freezed,
     Object isSubmitting = freezed,
-    Object isVerificationEmailSent = freezed,
     Object authenticationFailureOrSuccessOption = freezed,
   }) {
     return _then(_CreateAccountAuthenticationState(
@@ -1091,14 +1090,11 @@ class __$CreateAccountAuthenticationStateCopyWithImpl<$Res>
           : showErrorMessages as bool,
       isSubmitting:
           isSubmitting == freezed ? _value.isSubmitting : isSubmitting as bool,
-      isVerificationEmailSent: isVerificationEmailSent == freezed
-          ? _value.isVerificationEmailSent
-          : isVerificationEmailSent as bool,
       authenticationFailureOrSuccessOption:
           authenticationFailureOrSuccessOption == freezed
               ? _value.authenticationFailureOrSuccessOption
-              : authenticationFailureOrSuccessOption
-                  as Option<Either<AuthenticationFailure, dynamic>>,
+              : authenticationFailureOrSuccessOption as Option<
+                  Either<AuthenticationFailure, AuthenticationSuccess>>,
     ));
   }
 }
@@ -1112,7 +1108,6 @@ class _$_CreateAccountAuthenticationState
       @required this.username,
       @required this.showErrorMessages,
       @required this.isSubmitting,
-      @required this.isVerificationEmailSent,
       @required this.authenticationFailureOrSuccessOption})
       : assert(emailAddress != null),
         assert(password != null),
@@ -1120,7 +1115,6 @@ class _$_CreateAccountAuthenticationState
         assert(username != null),
         assert(showErrorMessages != null),
         assert(isSubmitting != null),
-        assert(isVerificationEmailSent != null),
         assert(authenticationFailureOrSuccessOption != null);
 
   @override
@@ -1136,14 +1130,12 @@ class _$_CreateAccountAuthenticationState
   @override
   final bool isSubmitting;
   @override
-  final bool isVerificationEmailSent;
-  @override
-  final Option<Either<AuthenticationFailure, dynamic>>
+  final Option<Either<AuthenticationFailure, AuthenticationSuccess>>
       authenticationFailureOrSuccessOption;
 
   @override
   String toString() {
-    return 'CreateAccountAuthenticationState(emailAddress: $emailAddress, password: $password, confirmPassword: $confirmPassword, username: $username, showErrorMessages: $showErrorMessages, isSubmitting: $isSubmitting, isVerificationEmailSent: $isVerificationEmailSent, authenticationFailureOrSuccessOption: $authenticationFailureOrSuccessOption)';
+    return 'CreateAccountAuthenticationState(emailAddress: $emailAddress, password: $password, confirmPassword: $confirmPassword, username: $username, showErrorMessages: $showErrorMessages, isSubmitting: $isSubmitting, authenticationFailureOrSuccessOption: $authenticationFailureOrSuccessOption)';
   }
 
   @override
@@ -1168,10 +1160,6 @@ class _$_CreateAccountAuthenticationState
             (identical(other.isSubmitting, isSubmitting) ||
                 const DeepCollectionEquality()
                     .equals(other.isSubmitting, isSubmitting)) &&
-            (identical(
-                    other.isVerificationEmailSent, isVerificationEmailSent) ||
-                const DeepCollectionEquality().equals(
-                    other.isVerificationEmailSent, isVerificationEmailSent)) &&
             (identical(other.authenticationFailureOrSuccessOption,
                     authenticationFailureOrSuccessOption) ||
                 const DeepCollectionEquality().equals(
@@ -1188,7 +1176,6 @@ class _$_CreateAccountAuthenticationState
       const DeepCollectionEquality().hash(username) ^
       const DeepCollectionEquality().hash(showErrorMessages) ^
       const DeepCollectionEquality().hash(isSubmitting) ^
-      const DeepCollectionEquality().hash(isVerificationEmailSent) ^
       const DeepCollectionEquality().hash(authenticationFailureOrSuccessOption);
 
   @override
@@ -1213,9 +1200,7 @@ abstract class _CreateAccountAuthenticationState
           @required
               bool isSubmitting,
           @required
-              bool isVerificationEmailSent,
-          @required
-              Option<Either<AuthenticationFailure, dynamic>>
+              Option<Either<AuthenticationFailure, AuthenticationSuccess>>
                   authenticationFailureOrSuccessOption}) =
       _$_CreateAccountAuthenticationState;
 
@@ -1232,9 +1217,7 @@ abstract class _CreateAccountAuthenticationState
   @override
   bool get isSubmitting;
   @override
-  bool get isVerificationEmailSent;
-  @override
-  Option<Either<AuthenticationFailure, dynamic>>
+  Option<Either<AuthenticationFailure, AuthenticationSuccess>>
       get authenticationFailureOrSuccessOption;
   @override
   _$CreateAccountAuthenticationStateCopyWith<_CreateAccountAuthenticationState>

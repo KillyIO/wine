@@ -205,7 +205,15 @@ class Chapter {
         updatedAt.hashCode;
   }
 
-  bool get isNotEmptyOrNull {
-    return this != null && uid.isNotEmptyOrNull;
+  bool get isEmpty {
+    return uid.isEmptyOrNull &&
+        authorUid.isEmptyOrNull &&
+        seriesUid.isEmptyOrNull &&
+        title.isEmptyOrNull &&
+        story.isEmptyOrNull &&
+        genre.isEmptyOrNull &&
+        language.isEmptyOrNull &&
+        copyrights.isEmptyOrNull &&
+        coverUrl.isEmptyOrNull;
   }
 }

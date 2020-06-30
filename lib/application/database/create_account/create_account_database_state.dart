@@ -5,8 +5,7 @@ abstract class CreateAccountDatabaseState with _$CreateAccountDatabaseState {
   const factory CreateAccountDatabaseState({
     @required bool isUpdating,
     @required String email,
-    @required
-        Option<Either<DatabaseFailure, dynamic>> databaseFailureOrSuccessOption,
+    @required Option<Either<DatabaseFailure, DatabaseSuccess>> databaseFailureOrSuccessOption,
   }) = _CreateAccountDatabaseState;
 
   factory CreateAccountDatabaseState.initial() => CreateAccountDatabaseState(

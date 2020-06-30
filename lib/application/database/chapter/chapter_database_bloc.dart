@@ -6,7 +6,9 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/widgets.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
+import 'package:wine/domain/authentication/i_authentication_facade.dart';
 import 'package:wine/domain/database/database_failure.dart';
+import 'package:wine/domain/database/database_success.dart';
 import 'package:wine/domain/database/i_local_session_database_facade.dart';
 import 'package:wine/domain/database/i_online_chapter_database_facade.dart';
 import 'package:wine/domain/models/chapter.dart';
@@ -19,12 +21,13 @@ part 'chapter_database_state.dart';
 part 'chapter_database_bloc.freezed.dart';
 
 @injectable
-class ChapterDatabaseBloc
-    extends Bloc<ChapterDatabaseEvent, ChapterDatabaseState> {
+class ChapterDatabaseBloc extends Bloc<ChapterDatabaseEvent, ChapterDatabaseState> {
+  final IAuthenticationFacade _authenticationFacade;
   final ILocalSessionDatabaseFacade _localSessionDatabaseFacade;
   final IOnlineChapterDatabaseFacade _onlineChapterDatabaseFacade;
 
   ChapterDatabaseBloc(
+    this._authenticationFacade,
     this._localSessionDatabaseFacade,
     this._onlineChapterDatabaseFacade,
   );
@@ -37,235 +40,327 @@ class ChapterDatabaseBloc
     ChapterDatabaseEvent event,
   ) async* {
     yield* event.map(
-      chapterPageLaunched: (event) async* {
-        Either<DatabaseFailure, dynamic> failureOrSuccess;
-
-        Session session = Session();
-        int viewsCount = 0, likesCount = 0, bookmarksCount = 0;
-        bool isLiked = false, isBookmarked = false;
-
-        failureOrSuccess = await _localSessionDatabaseFacade.getSession();
+      bookmarkButtonPressedEVT: (event) async* {
+        final Either<DatabaseFailure, DatabaseSuccess> failureOrSuccess = await _onlineChapterDatabaseFacade
+            .updateChapterBookmarks(userUid: state.session.uid, chapterUid: state.chapter.uid);
         failureOrSuccess.fold(
           (_) {},
           (success) {
-            if (success is Session) {
-              session = success;
+            if (success is ChapterStatsCountUpdatedSCS) {
+              add(const ChapterDatabaseEvent.bookmarksUpdatedEVT());
             }
           },
         );
 
-        if (failureOrSuccess.isRight()) {
-          failureOrSuccess =
-              await _onlineChapterDatabaseFacade.updateChapterViews(
-            userUid: session.uid,
-            chapterUid: event.chapter.uid,
-          );
+        yield state.copyWith(
+          databaseFailureOrSuccessOption: optionOf(failureOrSuccess),
+          isBookmarked: !state.isBookmarked,
+        );
+      },
+      bookmarksUpdatedEVT: (event) async* {
+        int bookmarksCount = 0;
 
-          if (failureOrSuccess.isRight()) {
-            failureOrSuccess = await _onlineChapterDatabaseFacade
-                .getChapterViewsCount(event.chapter.uid);
-            failureOrSuccess.fold(
-              (_) {},
-              (success) {
-                if (success is int) {
-                  viewsCount = success;
-                }
-              },
-            );
-
-            if (failureOrSuccess.isRight()) {
-              failureOrSuccess = await _onlineChapterDatabaseFacade
-                  .getChapterLikesCount(event.chapter.uid);
-              failureOrSuccess.fold(
-                (_) {},
-                (success) {
-                  if (success is int) {
-                    likesCount = success;
-                  }
-                },
-              );
-
-              if (failureOrSuccess.isRight()) {
-                failureOrSuccess =
-                    await _onlineChapterDatabaseFacade.getUserLikeStatus(
-                  userUid: session.uid,
-                  chapterUid: event.chapter.uid,
-                );
-                failureOrSuccess.fold(
-                  (_) {},
-                  (success) {
-                    if (success is bool) {
-                      isLiked = success;
-                    }
-                  },
-                );
-
-                if (failureOrSuccess.isRight()) {
-                  failureOrSuccess = await _onlineChapterDatabaseFacade
-                      .getChapterBookmarksCount(event.chapter.uid);
-                  failureOrSuccess.fold(
-                    (_) {},
-                    (success) {
-                      if (success is int) {
-                        bookmarksCount = success;
-                      }
-                    },
-                  );
-
-                  if (failureOrSuccess.isRight()) {
-                    failureOrSuccess = await _onlineChapterDatabaseFacade
-                        .getUserBookmarkStatus(
-                      userUid: session.uid,
-                      chapterUid: event.chapter.uid,
-                    );
-                    failureOrSuccess.fold(
-                      (_) {},
-                      (success) {
-                        if (success is bool) {
-                          isBookmarked = success;
-                        }
-                      },
-                    );
-                  }
-                }
-              }
+        final Either<DatabaseFailure, DatabaseSuccess> failureOrSuccess =
+            await _onlineChapterDatabaseFacade.loadChapterBookmarksCount(state.chapter.uid);
+        failureOrSuccess.fold(
+          (_) {},
+          (success) {
+            if (success is ChapterStatsCountLoadedSCS) {
+              bookmarksCount = success.count;
             }
-          }
+          },
+        );
+
+        yield state.copyWith(
+          bookmarksCount: bookmarksCount,
+          databaseFailureOrSuccessOption: optionOf(failureOrSuccess),
+        );
+      },
+      chapterBookmarkStatusLoadedEVT: (event) async* {
+        int bookmarksCount = 0;
+
+        final Either<DatabaseFailure, DatabaseSuccess> failureOrSuccess =
+            await _onlineChapterDatabaseFacade.loadChapterBookmarksCount(state.chapter.uid);
+        failureOrSuccess.fold(
+          (_) {},
+          (success) {
+            if (success is ChapterStatsCountLoadedSCS) {
+              bookmarksCount = success.count;
+            }
+          },
+        );
+
+        yield state.copyWith(
+          bookmarksCount: bookmarksCount,
+          databaseFailureOrSuccessOption: optionOf(failureOrSuccess),
+        );
+      },
+      chapterLikesLoadedEVT: (event) async* {
+        Either<DatabaseFailure, DatabaseSuccess> failureOrSuccess;
+
+        final bool isAnonymous = await _authenticationFacade.isAnonymous();
+        bool isBookmarked = false;
+        int bookmarksCount = 0;
+
+        if (isAnonymous) {
+          failureOrSuccess = await _onlineChapterDatabaseFacade.loadChapterBookmarksCount(state.chapter.uid);
+          failureOrSuccess.fold(
+            (_) {},
+            (success) {
+              if (success is ChapterStatsCountLoadedSCS) {
+                bookmarksCount = success.count;
+              }
+            },
+          );
+        } else {
+          failureOrSuccess = await _onlineChapterDatabaseFacade.loadUserBookmarkStatus(
+            userUid: state.session.uid,
+            chapterUid: state.chapter.uid,
+          );
+          failureOrSuccess.fold(
+            (_) {},
+            (success) {
+              if (success is ChapterStatsStatusLoadedSCS) {
+                isBookmarked = success.status;
+                add(const ChapterDatabaseEvent.chapterBookmarkStatusLoadedEVT());
+              }
+            },
+          );
         }
 
         yield state.copyWith(
-          session: session,
-          chapter: event.chapter,
-          isLiked: isLiked,
-          isBookmarked: isBookmarked,
-          viewsCount: viewsCount,
-          likesCount: likesCount,
           bookmarksCount: bookmarksCount,
-          genresMap: Methods.getGenres(event.context),
-          languagesMap: Methods.getLanguages(event.context),
+          databaseFailureOrSuccessOption: optionOf(failureOrSuccess),
+          isBookmarked: isBookmarked,
+        );
+      },
+      chapterLikeStatusLoadedEVT: (event) async* {
+        int likesCount = 0;
+
+        final Either<DatabaseFailure, DatabaseSuccess> failureOrSuccess =
+            await _onlineChapterDatabaseFacade.loadChapterLikesCount(state.chapter.uid);
+        failureOrSuccess.fold(
+          (_) {},
+          (success) {
+            if (success is ChapterStatsCountLoadedSCS) {
+              likesCount = success.count;
+              add(const ChapterDatabaseEvent.chapterLikesLoadedEVT());
+            }
+          },
+        );
+
+        yield state.copyWith(
+          databaseFailureOrSuccessOption: optionOf(failureOrSuccess),
+          likesCount: likesCount,
+        );
+      },
+      chapterPageLaunchedEVT: (event) async* {
+        Session session = Session();
+
+        final Either<DatabaseFailure, DatabaseSuccess> failureOrSuccess =
+            await _localSessionDatabaseFacade.fetchSession();
+        failureOrSuccess.fold(
+          (_) {},
+          (success) {
+            if (success is SessionFetchedSCS) {
+              session = success.session;
+              add(ChapterDatabaseEvent.sessionFetchedEVT(session));
+            }
+          },
+        );
+
+        yield state.copyWith(
+          chapter: event.chapter,
           copyrightsMap: Methods.getCopyrights(event.context),
           databaseFailureOrSuccessOption: optionOf(failureOrSuccess),
+          genresMap: Methods.getGenres(event.context),
+          languagesMap: Methods.getLanguages(event.context),
+          session: session,
         );
       },
-      previousChapterButtonPressed: (event) async* {},
-      likeButtonPressed: (event) async* {
-        Either<DatabaseFailure, dynamic> failureOrSuccess;
+      chapterViewsLoadedEVT: (event) async* {
+        Either<DatabaseFailure, DatabaseSuccess> failureOrSuccess;
 
-        int likesCount;
+        final bool isAnonymous = await _authenticationFacade.isAnonymous();
+        bool isLiked = false;
+        int likesCount = 0;
 
-        failureOrSuccess =
-            await _onlineChapterDatabaseFacade.updateChapterLikes(
-          userUid: state.session.uid,
-          chapterUid: state.chapter.uid,
-        );
-
-        if (failureOrSuccess.isRight()) {
-          failureOrSuccess = await _onlineChapterDatabaseFacade
-              .getChapterLikesCount(state.chapter.uid);
+        if (isAnonymous) {
+          failureOrSuccess = await _onlineChapterDatabaseFacade.loadChapterLikesCount(state.chapter.uid);
           failureOrSuccess.fold(
             (_) {},
             (success) {
-              if (success is int) {
-                likesCount = success;
+              if (success is ChapterStatsCountLoadedSCS) {
+                likesCount = success.count;
+                add(const ChapterDatabaseEvent.chapterLikesLoadedEVT());
+              }
+            },
+          );
+        } else {
+          failureOrSuccess = await _onlineChapterDatabaseFacade.loadUserLikeStatus(
+            userUid: state.session.uid,
+            chapterUid: state.chapter.uid,
+          );
+          failureOrSuccess.fold(
+            (_) {},
+            (success) {
+              if (success is ChapterStatsStatusLoadedSCS) {
+                isLiked = success.status;
+                add(const ChapterDatabaseEvent.chapterLikeStatusLoadedEVT());
               }
             },
           );
         }
 
         yield state.copyWith(
-          isLiked: !state.isLiked,
+          databaseFailureOrSuccessOption: optionOf(failureOrSuccess),
+          isLiked: isLiked,
           likesCount: likesCount,
-          databaseFailureOrSuccessOption: optionOf(failureOrSuccess),
         );
       },
-      bookmarkButtonPressed: (event) async* {
-        Either<DatabaseFailure, dynamic> failureOrSuccess;
+      chapterViewsUpdatedEVT: (event) async* {
+        int viewsCount = 0;
 
-        int bookmarksCount;
-
-        failureOrSuccess =
-            await _onlineChapterDatabaseFacade.updateChapterBookmarks(
-          userUid: state.session.uid,
-          chapterUid: state.chapter.uid,
+        final Either<DatabaseFailure, DatabaseSuccess> failureOrSuccess =
+            await _onlineChapterDatabaseFacade.loadChapterViewsCount(state.chapter.uid);
+        failureOrSuccess.fold(
+          (_) {},
+          (success) {
+            if (success is ChapterStatsCountLoadedSCS) {
+              viewsCount = success.count;
+              add(const ChapterDatabaseEvent.chapterViewsLoadedEVT());
+            }
+          },
         );
 
-        if (failureOrSuccess.isRight()) {
-          failureOrSuccess = await _onlineChapterDatabaseFacade
-              .getChapterBookmarksCount(state.chapter.uid);
-          failureOrSuccess.fold(
-            (_) {},
-            (success) {
-              if (success is int) {
-                bookmarksCount = success;
+        yield state.copyWith(
+          databaseFailureOrSuccessOption: optionOf(failureOrSuccess),
+          viewsCount: viewsCount,
+        );
+      },
+      likeButtonPressedEVT: (event) async* {
+        final Either<DatabaseFailure, DatabaseSuccess> failureOrSuccess = await _onlineChapterDatabaseFacade
+            .updateChapterLikes(userUid: state.session.uid, chapterUid: state.chapter.uid);
+        failureOrSuccess.fold(
+          (_) {},
+          (success) {
+            if (success is ChapterStatsCountUpdatedSCS) {
+              add(const ChapterDatabaseEvent.likesUpdatedEVT());
+            }
+          },
+        );
+
+        yield state.copyWith(databaseFailureOrSuccessOption: optionOf(failureOrSuccess), isLiked: !state.isLiked);
+      },
+      likesUpdatedEVT: (event) async* {
+        int likesCount = 0;
+
+        final Either<DatabaseFailure, DatabaseSuccess> failureOrSuccess =
+            await _onlineChapterDatabaseFacade.loadChapterLikesCount(state.chapter.uid);
+        failureOrSuccess.fold(
+          (_) {},
+          (success) {
+            if (success is ChapterStatsCountLoadedSCS) {
+              likesCount = success.count;
+            }
+          },
+        );
+
+        yield state.copyWith(databaseFailureOrSuccessOption: optionOf(failureOrSuccess), likesCount: likesCount);
+      },
+      loadNextChaptersEVT: (event) async* {
+        Chapter sameAuthorChapter = Chapter();
+        List<Chapter> nextChapters = <Chapter>[];
+
+        final Either<DatabaseFailure, DatabaseSuccess> failureOrSuccess =
+            await _onlineChapterDatabaseFacade.loadChaptersBySeriesUidAndIndex(
+          state.chapter.seriesUid,
+          state.chapter.index + 1,
+          loadAuthors: true,
+        );
+        failureOrSuccess.fold(
+          (_) {},
+          (success) {
+            if (success is ChapterListLoadedSCS) {
+              if (success.chapters.isNotEmpty) {
+                for (final Chapter chapter in success.chapters) {
+                  chapter.series = state.chapter.series;
+                }
+
+                final int sameAuthorIdx =
+                    success.chapters.indexWhere((chapter) => chapter.authorUid == state.chapter.authorUid);
+
+                if (sameAuthorIdx != -1) {
+                  sameAuthorChapter = success.chapters.removeAt(sameAuthorIdx);
+                }
+                nextChapters = success.chapters;
               }
-            },
-          );
-        }
+            }
+          },
+        );
 
         yield state.copyWith(
-          isBookmarked: !state.isBookmarked,
-          bookmarksCount: bookmarksCount,
           databaseFailureOrSuccessOption: optionOf(failureOrSuccess),
+          nextChapters: nextChapters,
+          nextSameAuthorChapter: sameAuthorChapter,
         );
       },
-      showOrHideNavbar: (event) async* {
-        yield state.copyWith(
-          showNavbar: !state.showNavbar,
-          databaseFailureOrSuccessOption: none(),
-        );
-      },
-      scroll: (event) async* {
-        final percentProgress =
-            event.currentScrollPosition / event.maxScrollPosition;
+      previousChapterButtonPressedEVT: (event) async* {},
+      scrollEVT: (event) async* {
+        final percentProgress = event.currentScrollPosition / event.maxScrollPosition;
 
         yield state.copyWith(
           percentProgress: percentProgress,
           databaseFailureOrSuccessOption: none(),
         );
       },
-      toggleChapterAdditionalInfo: (event) async* {
+      sessionFetchedEVT: (event) async* {
+        Either<DatabaseFailure, DatabaseSuccess> failureOrSuccess;
+
+        final bool isAnonymous = await _authenticationFacade.isAnonymous();
+        int viewsCount = 0;
+
+        if (isAnonymous) {
+          failureOrSuccess = await _onlineChapterDatabaseFacade.loadChapterViewsCount(state.chapter.uid);
+          failureOrSuccess.fold(
+            (_) {},
+            (success) {
+              if (success is ChapterStatsCountLoadedSCS) {
+                viewsCount = success.count;
+                add(const ChapterDatabaseEvent.chapterViewsLoadedEVT());
+              }
+            },
+          );
+        } else {
+          failureOrSuccess = await _onlineChapterDatabaseFacade.updateChapterViews(
+            userUid: event.session.uid,
+            chapterUid: state.chapter.uid,
+          );
+          failureOrSuccess.fold(
+            (_) {},
+            (success) {
+              if (success is ChapterStatsCountUpdatedSCS) {
+                add(const ChapterDatabaseEvent.chapterViewsUpdatedEVT());
+              }
+            },
+          );
+        }
+
         yield state.copyWith(
-          showChapterAdditionalInfo: !state.showChapterAdditionalInfo,
+          databaseFailureOrSuccessOption: optionOf(failureOrSuccess),
+          viewsCount: viewsCount,
+        );
+      },
+      showOrHideNavbarEVT: (event) async* {
+        yield state.copyWith(
+          showNavbar: !state.showNavbar,
           databaseFailureOrSuccessOption: none(),
         );
       },
-      fetchNextChapters: (event) async* {
-        Either<DatabaseFailure, dynamic> failureOrSuccess;
-
-        Chapter sameAuthorChapter = Chapter();
-        List<Chapter> nextChapters = <Chapter>[];
-
-        failureOrSuccess =
-            await _onlineChapterDatabaseFacade.getChaptersBySeriesUidAndIndex(
-          seriesUid: state.chapter.seriesUid,
-          index: state.chapter.index + 1,
-          getAuthors: true,
-        );
-        failureOrSuccess.fold(
-          (_) {},
-          (success) {
-            if (success is List<Chapter>) {
-              if (success.isNotEmpty) {
-                for (final Chapter chapter in success) {
-                  chapter.series = state.chapter.series;
-                }
-
-                final int sameAuthorIdx = success.indexWhere(
-                    (chapter) => chapter.authorUid == state.chapter.authorUid);
-
-                if (sameAuthorIdx != -1) {
-                  sameAuthorChapter = success.removeAt(sameAuthorIdx);
-                }
-                nextChapters = success;
-              }
-            }
-          },
-        );
-
+      toggleChapterAdditionalInfoEVT: (event) async* {
         yield state.copyWith(
-          nextSameAuthorChapter: sameAuthorChapter,
-          nextChapters: nextChapters,
-          databaseFailureOrSuccessOption: optionOf(failureOrSuccess),
+          showChapterAdditionalInfo: !state.showChapterAdditionalInfo,
+          databaseFailureOrSuccessOption: none(),
         );
       },
     );

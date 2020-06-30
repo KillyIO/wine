@@ -12,44 +12,78 @@ T _$identity<T>(T value) => value;
 class _$ChapterDatabaseEventTearOff {
   const _$ChapterDatabaseEventTearOff();
 
-  ChapterPageLaunched chapterPageLaunched(
+  BookmarkButtonPressedEVT bookmarkButtonPressedEVT() {
+    return const BookmarkButtonPressedEVT();
+  }
+
+  BookmarksUpdatedEVT bookmarksUpdatedEVT() {
+    return const BookmarksUpdatedEVT();
+  }
+
+  ChapterBookmarkStatusLoadedEVT chapterBookmarkStatusLoadedEVT() {
+    return const ChapterBookmarkStatusLoadedEVT();
+  }
+
+  ChapterLikesLoadedEVT chapterLikesLoadedEVT() {
+    return const ChapterLikesLoadedEVT();
+  }
+
+  ChapterLikeStatusLoadedEVT chapterLikeStatusLoadedEVT() {
+    return const ChapterLikeStatusLoadedEVT();
+  }
+
+  ChapterPageLaunchedEVT chapterPageLaunchedEVT(
       {Chapter chapter, BuildContext context}) {
-    return ChapterPageLaunched(
+    return ChapterPageLaunchedEVT(
       chapter: chapter,
       context: context,
     );
   }
 
-  PreviousChapterButtonPressed previousChapterButtonPressed() {
-    return const PreviousChapterButtonPressed();
+  ChapterViewsLoadedEVT chapterViewsLoadedEVT() {
+    return const ChapterViewsLoadedEVT();
   }
 
-  LikeButtonPressed likeButtonPressed() {
-    return const LikeButtonPressed();
+  ChapterViewsUpdatedEVT chapterViewsUpdatedEVT() {
+    return const ChapterViewsUpdatedEVT();
   }
 
-  BookmarkButtonPressed bookmarkButtonPressed() {
-    return const BookmarkButtonPressed();
+  LikeButtonPressedEVT likeButtonPressedEVT() {
+    return const LikeButtonPressedEVT();
   }
 
-  ShowOrHideNavbar showOrHideNavbar() {
-    return const ShowOrHideNavbar();
+  LikesUpdatedEVT likesUpdatedEVT() {
+    return const LikesUpdatedEVT();
   }
 
-  Scroll scroll(
+  LoadNextChaptersEVT loadNextChaptersEVT() {
+    return const LoadNextChaptersEVT();
+  }
+
+  PreviousChapterButtonPressedEVT previousChapterButtonPressedEVT() {
+    return const PreviousChapterButtonPressedEVT();
+  }
+
+  ScrollEVT scrollEVT(
       {@required int currentScrollPosition, @required int maxScrollPosition}) {
-    return Scroll(
+    return ScrollEVT(
       currentScrollPosition: currentScrollPosition,
       maxScrollPosition: maxScrollPosition,
     );
   }
 
-  ToggleChapterAdditionalInfo toggleChapterAdditionalInfo() {
-    return const ToggleChapterAdditionalInfo();
+  SessionFetchedEVT sessionFetchedEVT(Session session) {
+    return SessionFetchedEVT(
+      session,
+    );
   }
 
-  FetchNextChapters fetchNextChapters() {
-    return const FetchNextChapters();
+  ShowOrHideNavbarEVT showOrHideNavbarEVT() {
+    return const ShowOrHideNavbarEVT();
+  }
+
+  ToggleChapterAdditionalInfoEVT toggleChapterAdditionalInfoEVT() {
+    return const ToggleChapterAdditionalInfoEVT();
   }
 }
 
@@ -59,50 +93,90 @@ const $ChapterDatabaseEvent = _$ChapterDatabaseEventTearOff();
 mixin _$ChapterDatabaseEvent {
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result chapterPageLaunched(Chapter chapter, BuildContext context),
-    @required Result previousChapterButtonPressed(),
-    @required Result likeButtonPressed(),
-    @required Result bookmarkButtonPressed(),
-    @required Result showOrHideNavbar(),
-    @required Result scroll(int currentScrollPosition, int maxScrollPosition),
-    @required Result toggleChapterAdditionalInfo(),
-    @required Result fetchNextChapters(),
+    @required Result bookmarkButtonPressedEVT(),
+    @required Result bookmarksUpdatedEVT(),
+    @required Result chapterBookmarkStatusLoadedEVT(),
+    @required Result chapterLikesLoadedEVT(),
+    @required Result chapterLikeStatusLoadedEVT(),
+    @required
+        Result chapterPageLaunchedEVT(Chapter chapter, BuildContext context),
+    @required Result chapterViewsLoadedEVT(),
+    @required Result chapterViewsUpdatedEVT(),
+    @required Result likeButtonPressedEVT(),
+    @required Result likesUpdatedEVT(),
+    @required Result loadNextChaptersEVT(),
+    @required Result previousChapterButtonPressedEVT(),
+    @required
+        Result scrollEVT(int currentScrollPosition, int maxScrollPosition),
+    @required Result sessionFetchedEVT(Session session),
+    @required Result showOrHideNavbarEVT(),
+    @required Result toggleChapterAdditionalInfoEVT(),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result chapterPageLaunched(Chapter chapter, BuildContext context),
-    Result previousChapterButtonPressed(),
-    Result likeButtonPressed(),
-    Result bookmarkButtonPressed(),
-    Result showOrHideNavbar(),
-    Result scroll(int currentScrollPosition, int maxScrollPosition),
-    Result toggleChapterAdditionalInfo(),
-    Result fetchNextChapters(),
+    Result bookmarkButtonPressedEVT(),
+    Result bookmarksUpdatedEVT(),
+    Result chapterBookmarkStatusLoadedEVT(),
+    Result chapterLikesLoadedEVT(),
+    Result chapterLikeStatusLoadedEVT(),
+    Result chapterPageLaunchedEVT(Chapter chapter, BuildContext context),
+    Result chapterViewsLoadedEVT(),
+    Result chapterViewsUpdatedEVT(),
+    Result likeButtonPressedEVT(),
+    Result likesUpdatedEVT(),
+    Result loadNextChaptersEVT(),
+    Result previousChapterButtonPressedEVT(),
+    Result scrollEVT(int currentScrollPosition, int maxScrollPosition),
+    Result sessionFetchedEVT(Session session),
+    Result showOrHideNavbarEVT(),
+    Result toggleChapterAdditionalInfoEVT(),
     @required Result orElse(),
   });
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result chapterPageLaunched(ChapterPageLaunched value),
+    @required Result bookmarkButtonPressedEVT(BookmarkButtonPressedEVT value),
+    @required Result bookmarksUpdatedEVT(BookmarksUpdatedEVT value),
     @required
-        Result previousChapterButtonPressed(PreviousChapterButtonPressed value),
-    @required Result likeButtonPressed(LikeButtonPressed value),
-    @required Result bookmarkButtonPressed(BookmarkButtonPressed value),
-    @required Result showOrHideNavbar(ShowOrHideNavbar value),
-    @required Result scroll(Scroll value),
+        Result chapterBookmarkStatusLoadedEVT(
+            ChapterBookmarkStatusLoadedEVT value),
+    @required Result chapterLikesLoadedEVT(ChapterLikesLoadedEVT value),
     @required
-        Result toggleChapterAdditionalInfo(ToggleChapterAdditionalInfo value),
-    @required Result fetchNextChapters(FetchNextChapters value),
+        Result chapterLikeStatusLoadedEVT(ChapterLikeStatusLoadedEVT value),
+    @required Result chapterPageLaunchedEVT(ChapterPageLaunchedEVT value),
+    @required Result chapterViewsLoadedEVT(ChapterViewsLoadedEVT value),
+    @required Result chapterViewsUpdatedEVT(ChapterViewsUpdatedEVT value),
+    @required Result likeButtonPressedEVT(LikeButtonPressedEVT value),
+    @required Result likesUpdatedEVT(LikesUpdatedEVT value),
+    @required Result loadNextChaptersEVT(LoadNextChaptersEVT value),
+    @required
+        Result previousChapterButtonPressedEVT(
+            PreviousChapterButtonPressedEVT value),
+    @required Result scrollEVT(ScrollEVT value),
+    @required Result sessionFetchedEVT(SessionFetchedEVT value),
+    @required Result showOrHideNavbarEVT(ShowOrHideNavbarEVT value),
+    @required
+        Result toggleChapterAdditionalInfoEVT(
+            ToggleChapterAdditionalInfoEVT value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result chapterPageLaunched(ChapterPageLaunched value),
-    Result previousChapterButtonPressed(PreviousChapterButtonPressed value),
-    Result likeButtonPressed(LikeButtonPressed value),
-    Result bookmarkButtonPressed(BookmarkButtonPressed value),
-    Result showOrHideNavbar(ShowOrHideNavbar value),
-    Result scroll(Scroll value),
-    Result toggleChapterAdditionalInfo(ToggleChapterAdditionalInfo value),
-    Result fetchNextChapters(FetchNextChapters value),
+    Result bookmarkButtonPressedEVT(BookmarkButtonPressedEVT value),
+    Result bookmarksUpdatedEVT(BookmarksUpdatedEVT value),
+    Result chapterBookmarkStatusLoadedEVT(ChapterBookmarkStatusLoadedEVT value),
+    Result chapterLikesLoadedEVT(ChapterLikesLoadedEVT value),
+    Result chapterLikeStatusLoadedEVT(ChapterLikeStatusLoadedEVT value),
+    Result chapterPageLaunchedEVT(ChapterPageLaunchedEVT value),
+    Result chapterViewsLoadedEVT(ChapterViewsLoadedEVT value),
+    Result chapterViewsUpdatedEVT(ChapterViewsUpdatedEVT value),
+    Result likeButtonPressedEVT(LikeButtonPressedEVT value),
+    Result likesUpdatedEVT(LikesUpdatedEVT value),
+    Result loadNextChaptersEVT(LoadNextChaptersEVT value),
+    Result previousChapterButtonPressedEVT(
+        PreviousChapterButtonPressedEVT value),
+    Result scrollEVT(ScrollEVT value),
+    Result sessionFetchedEVT(SessionFetchedEVT value),
+    Result showOrHideNavbarEVT(ShowOrHideNavbarEVT value),
+    Result toggleChapterAdditionalInfoEVT(ToggleChapterAdditionalInfoEVT value),
     @required Result orElse(),
   });
 }
@@ -122,39 +196,1005 @@ class _$ChapterDatabaseEventCopyWithImpl<$Res>
   final $Res Function(ChapterDatabaseEvent) _then;
 }
 
-abstract class $ChapterPageLaunchedCopyWith<$Res> {
-  factory $ChapterPageLaunchedCopyWith(
-          ChapterPageLaunched value, $Res Function(ChapterPageLaunched) then) =
-      _$ChapterPageLaunchedCopyWithImpl<$Res>;
+abstract class $BookmarkButtonPressedEVTCopyWith<$Res> {
+  factory $BookmarkButtonPressedEVTCopyWith(BookmarkButtonPressedEVT value,
+          $Res Function(BookmarkButtonPressedEVT) then) =
+      _$BookmarkButtonPressedEVTCopyWithImpl<$Res>;
+}
+
+class _$BookmarkButtonPressedEVTCopyWithImpl<$Res>
+    extends _$ChapterDatabaseEventCopyWithImpl<$Res>
+    implements $BookmarkButtonPressedEVTCopyWith<$Res> {
+  _$BookmarkButtonPressedEVTCopyWithImpl(BookmarkButtonPressedEVT _value,
+      $Res Function(BookmarkButtonPressedEVT) _then)
+      : super(_value, (v) => _then(v as BookmarkButtonPressedEVT));
+
+  @override
+  BookmarkButtonPressedEVT get _value =>
+      super._value as BookmarkButtonPressedEVT;
+}
+
+class _$BookmarkButtonPressedEVT
+    with DiagnosticableTreeMixin
+    implements BookmarkButtonPressedEVT {
+  const _$BookmarkButtonPressedEVT();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'ChapterDatabaseEvent.bookmarkButtonPressedEVT()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty(
+          'type', 'ChapterDatabaseEvent.bookmarkButtonPressedEVT'));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is BookmarkButtonPressedEVT);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result bookmarkButtonPressedEVT(),
+    @required Result bookmarksUpdatedEVT(),
+    @required Result chapterBookmarkStatusLoadedEVT(),
+    @required Result chapterLikesLoadedEVT(),
+    @required Result chapterLikeStatusLoadedEVT(),
+    @required
+        Result chapterPageLaunchedEVT(Chapter chapter, BuildContext context),
+    @required Result chapterViewsLoadedEVT(),
+    @required Result chapterViewsUpdatedEVT(),
+    @required Result likeButtonPressedEVT(),
+    @required Result likesUpdatedEVT(),
+    @required Result loadNextChaptersEVT(),
+    @required Result previousChapterButtonPressedEVT(),
+    @required
+        Result scrollEVT(int currentScrollPosition, int maxScrollPosition),
+    @required Result sessionFetchedEVT(Session session),
+    @required Result showOrHideNavbarEVT(),
+    @required Result toggleChapterAdditionalInfoEVT(),
+  }) {
+    assert(bookmarkButtonPressedEVT != null);
+    assert(bookmarksUpdatedEVT != null);
+    assert(chapterBookmarkStatusLoadedEVT != null);
+    assert(chapterLikesLoadedEVT != null);
+    assert(chapterLikeStatusLoadedEVT != null);
+    assert(chapterPageLaunchedEVT != null);
+    assert(chapterViewsLoadedEVT != null);
+    assert(chapterViewsUpdatedEVT != null);
+    assert(likeButtonPressedEVT != null);
+    assert(likesUpdatedEVT != null);
+    assert(loadNextChaptersEVT != null);
+    assert(previousChapterButtonPressedEVT != null);
+    assert(scrollEVT != null);
+    assert(sessionFetchedEVT != null);
+    assert(showOrHideNavbarEVT != null);
+    assert(toggleChapterAdditionalInfoEVT != null);
+    return bookmarkButtonPressedEVT();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result bookmarkButtonPressedEVT(),
+    Result bookmarksUpdatedEVT(),
+    Result chapterBookmarkStatusLoadedEVT(),
+    Result chapterLikesLoadedEVT(),
+    Result chapterLikeStatusLoadedEVT(),
+    Result chapterPageLaunchedEVT(Chapter chapter, BuildContext context),
+    Result chapterViewsLoadedEVT(),
+    Result chapterViewsUpdatedEVT(),
+    Result likeButtonPressedEVT(),
+    Result likesUpdatedEVT(),
+    Result loadNextChaptersEVT(),
+    Result previousChapterButtonPressedEVT(),
+    Result scrollEVT(int currentScrollPosition, int maxScrollPosition),
+    Result sessionFetchedEVT(Session session),
+    Result showOrHideNavbarEVT(),
+    Result toggleChapterAdditionalInfoEVT(),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (bookmarkButtonPressedEVT != null) {
+      return bookmarkButtonPressedEVT();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result bookmarkButtonPressedEVT(BookmarkButtonPressedEVT value),
+    @required Result bookmarksUpdatedEVT(BookmarksUpdatedEVT value),
+    @required
+        Result chapterBookmarkStatusLoadedEVT(
+            ChapterBookmarkStatusLoadedEVT value),
+    @required Result chapterLikesLoadedEVT(ChapterLikesLoadedEVT value),
+    @required
+        Result chapterLikeStatusLoadedEVT(ChapterLikeStatusLoadedEVT value),
+    @required Result chapterPageLaunchedEVT(ChapterPageLaunchedEVT value),
+    @required Result chapterViewsLoadedEVT(ChapterViewsLoadedEVT value),
+    @required Result chapterViewsUpdatedEVT(ChapterViewsUpdatedEVT value),
+    @required Result likeButtonPressedEVT(LikeButtonPressedEVT value),
+    @required Result likesUpdatedEVT(LikesUpdatedEVT value),
+    @required Result loadNextChaptersEVT(LoadNextChaptersEVT value),
+    @required
+        Result previousChapterButtonPressedEVT(
+            PreviousChapterButtonPressedEVT value),
+    @required Result scrollEVT(ScrollEVT value),
+    @required Result sessionFetchedEVT(SessionFetchedEVT value),
+    @required Result showOrHideNavbarEVT(ShowOrHideNavbarEVT value),
+    @required
+        Result toggleChapterAdditionalInfoEVT(
+            ToggleChapterAdditionalInfoEVT value),
+  }) {
+    assert(bookmarkButtonPressedEVT != null);
+    assert(bookmarksUpdatedEVT != null);
+    assert(chapterBookmarkStatusLoadedEVT != null);
+    assert(chapterLikesLoadedEVT != null);
+    assert(chapterLikeStatusLoadedEVT != null);
+    assert(chapterPageLaunchedEVT != null);
+    assert(chapterViewsLoadedEVT != null);
+    assert(chapterViewsUpdatedEVT != null);
+    assert(likeButtonPressedEVT != null);
+    assert(likesUpdatedEVT != null);
+    assert(loadNextChaptersEVT != null);
+    assert(previousChapterButtonPressedEVT != null);
+    assert(scrollEVT != null);
+    assert(sessionFetchedEVT != null);
+    assert(showOrHideNavbarEVT != null);
+    assert(toggleChapterAdditionalInfoEVT != null);
+    return bookmarkButtonPressedEVT(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result bookmarkButtonPressedEVT(BookmarkButtonPressedEVT value),
+    Result bookmarksUpdatedEVT(BookmarksUpdatedEVT value),
+    Result chapterBookmarkStatusLoadedEVT(ChapterBookmarkStatusLoadedEVT value),
+    Result chapterLikesLoadedEVT(ChapterLikesLoadedEVT value),
+    Result chapterLikeStatusLoadedEVT(ChapterLikeStatusLoadedEVT value),
+    Result chapterPageLaunchedEVT(ChapterPageLaunchedEVT value),
+    Result chapterViewsLoadedEVT(ChapterViewsLoadedEVT value),
+    Result chapterViewsUpdatedEVT(ChapterViewsUpdatedEVT value),
+    Result likeButtonPressedEVT(LikeButtonPressedEVT value),
+    Result likesUpdatedEVT(LikesUpdatedEVT value),
+    Result loadNextChaptersEVT(LoadNextChaptersEVT value),
+    Result previousChapterButtonPressedEVT(
+        PreviousChapterButtonPressedEVT value),
+    Result scrollEVT(ScrollEVT value),
+    Result sessionFetchedEVT(SessionFetchedEVT value),
+    Result showOrHideNavbarEVT(ShowOrHideNavbarEVT value),
+    Result toggleChapterAdditionalInfoEVT(ToggleChapterAdditionalInfoEVT value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (bookmarkButtonPressedEVT != null) {
+      return bookmarkButtonPressedEVT(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class BookmarkButtonPressedEVT implements ChapterDatabaseEvent {
+  const factory BookmarkButtonPressedEVT() = _$BookmarkButtonPressedEVT;
+}
+
+abstract class $BookmarksUpdatedEVTCopyWith<$Res> {
+  factory $BookmarksUpdatedEVTCopyWith(
+          BookmarksUpdatedEVT value, $Res Function(BookmarksUpdatedEVT) then) =
+      _$BookmarksUpdatedEVTCopyWithImpl<$Res>;
+}
+
+class _$BookmarksUpdatedEVTCopyWithImpl<$Res>
+    extends _$ChapterDatabaseEventCopyWithImpl<$Res>
+    implements $BookmarksUpdatedEVTCopyWith<$Res> {
+  _$BookmarksUpdatedEVTCopyWithImpl(
+      BookmarksUpdatedEVT _value, $Res Function(BookmarksUpdatedEVT) _then)
+      : super(_value, (v) => _then(v as BookmarksUpdatedEVT));
+
+  @override
+  BookmarksUpdatedEVT get _value => super._value as BookmarksUpdatedEVT;
+}
+
+class _$BookmarksUpdatedEVT
+    with DiagnosticableTreeMixin
+    implements BookmarksUpdatedEVT {
+  const _$BookmarksUpdatedEVT();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'ChapterDatabaseEvent.bookmarksUpdatedEVT()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty(
+          'type', 'ChapterDatabaseEvent.bookmarksUpdatedEVT'));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is BookmarksUpdatedEVT);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result bookmarkButtonPressedEVT(),
+    @required Result bookmarksUpdatedEVT(),
+    @required Result chapterBookmarkStatusLoadedEVT(),
+    @required Result chapterLikesLoadedEVT(),
+    @required Result chapterLikeStatusLoadedEVT(),
+    @required
+        Result chapterPageLaunchedEVT(Chapter chapter, BuildContext context),
+    @required Result chapterViewsLoadedEVT(),
+    @required Result chapterViewsUpdatedEVT(),
+    @required Result likeButtonPressedEVT(),
+    @required Result likesUpdatedEVT(),
+    @required Result loadNextChaptersEVT(),
+    @required Result previousChapterButtonPressedEVT(),
+    @required
+        Result scrollEVT(int currentScrollPosition, int maxScrollPosition),
+    @required Result sessionFetchedEVT(Session session),
+    @required Result showOrHideNavbarEVT(),
+    @required Result toggleChapterAdditionalInfoEVT(),
+  }) {
+    assert(bookmarkButtonPressedEVT != null);
+    assert(bookmarksUpdatedEVT != null);
+    assert(chapterBookmarkStatusLoadedEVT != null);
+    assert(chapterLikesLoadedEVT != null);
+    assert(chapterLikeStatusLoadedEVT != null);
+    assert(chapterPageLaunchedEVT != null);
+    assert(chapterViewsLoadedEVT != null);
+    assert(chapterViewsUpdatedEVT != null);
+    assert(likeButtonPressedEVT != null);
+    assert(likesUpdatedEVT != null);
+    assert(loadNextChaptersEVT != null);
+    assert(previousChapterButtonPressedEVT != null);
+    assert(scrollEVT != null);
+    assert(sessionFetchedEVT != null);
+    assert(showOrHideNavbarEVT != null);
+    assert(toggleChapterAdditionalInfoEVT != null);
+    return bookmarksUpdatedEVT();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result bookmarkButtonPressedEVT(),
+    Result bookmarksUpdatedEVT(),
+    Result chapterBookmarkStatusLoadedEVT(),
+    Result chapterLikesLoadedEVT(),
+    Result chapterLikeStatusLoadedEVT(),
+    Result chapterPageLaunchedEVT(Chapter chapter, BuildContext context),
+    Result chapterViewsLoadedEVT(),
+    Result chapterViewsUpdatedEVT(),
+    Result likeButtonPressedEVT(),
+    Result likesUpdatedEVT(),
+    Result loadNextChaptersEVT(),
+    Result previousChapterButtonPressedEVT(),
+    Result scrollEVT(int currentScrollPosition, int maxScrollPosition),
+    Result sessionFetchedEVT(Session session),
+    Result showOrHideNavbarEVT(),
+    Result toggleChapterAdditionalInfoEVT(),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (bookmarksUpdatedEVT != null) {
+      return bookmarksUpdatedEVT();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result bookmarkButtonPressedEVT(BookmarkButtonPressedEVT value),
+    @required Result bookmarksUpdatedEVT(BookmarksUpdatedEVT value),
+    @required
+        Result chapterBookmarkStatusLoadedEVT(
+            ChapterBookmarkStatusLoadedEVT value),
+    @required Result chapterLikesLoadedEVT(ChapterLikesLoadedEVT value),
+    @required
+        Result chapterLikeStatusLoadedEVT(ChapterLikeStatusLoadedEVT value),
+    @required Result chapterPageLaunchedEVT(ChapterPageLaunchedEVT value),
+    @required Result chapterViewsLoadedEVT(ChapterViewsLoadedEVT value),
+    @required Result chapterViewsUpdatedEVT(ChapterViewsUpdatedEVT value),
+    @required Result likeButtonPressedEVT(LikeButtonPressedEVT value),
+    @required Result likesUpdatedEVT(LikesUpdatedEVT value),
+    @required Result loadNextChaptersEVT(LoadNextChaptersEVT value),
+    @required
+        Result previousChapterButtonPressedEVT(
+            PreviousChapterButtonPressedEVT value),
+    @required Result scrollEVT(ScrollEVT value),
+    @required Result sessionFetchedEVT(SessionFetchedEVT value),
+    @required Result showOrHideNavbarEVT(ShowOrHideNavbarEVT value),
+    @required
+        Result toggleChapterAdditionalInfoEVT(
+            ToggleChapterAdditionalInfoEVT value),
+  }) {
+    assert(bookmarkButtonPressedEVT != null);
+    assert(bookmarksUpdatedEVT != null);
+    assert(chapterBookmarkStatusLoadedEVT != null);
+    assert(chapterLikesLoadedEVT != null);
+    assert(chapterLikeStatusLoadedEVT != null);
+    assert(chapterPageLaunchedEVT != null);
+    assert(chapterViewsLoadedEVT != null);
+    assert(chapterViewsUpdatedEVT != null);
+    assert(likeButtonPressedEVT != null);
+    assert(likesUpdatedEVT != null);
+    assert(loadNextChaptersEVT != null);
+    assert(previousChapterButtonPressedEVT != null);
+    assert(scrollEVT != null);
+    assert(sessionFetchedEVT != null);
+    assert(showOrHideNavbarEVT != null);
+    assert(toggleChapterAdditionalInfoEVT != null);
+    return bookmarksUpdatedEVT(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result bookmarkButtonPressedEVT(BookmarkButtonPressedEVT value),
+    Result bookmarksUpdatedEVT(BookmarksUpdatedEVT value),
+    Result chapterBookmarkStatusLoadedEVT(ChapterBookmarkStatusLoadedEVT value),
+    Result chapterLikesLoadedEVT(ChapterLikesLoadedEVT value),
+    Result chapterLikeStatusLoadedEVT(ChapterLikeStatusLoadedEVT value),
+    Result chapterPageLaunchedEVT(ChapterPageLaunchedEVT value),
+    Result chapterViewsLoadedEVT(ChapterViewsLoadedEVT value),
+    Result chapterViewsUpdatedEVT(ChapterViewsUpdatedEVT value),
+    Result likeButtonPressedEVT(LikeButtonPressedEVT value),
+    Result likesUpdatedEVT(LikesUpdatedEVT value),
+    Result loadNextChaptersEVT(LoadNextChaptersEVT value),
+    Result previousChapterButtonPressedEVT(
+        PreviousChapterButtonPressedEVT value),
+    Result scrollEVT(ScrollEVT value),
+    Result sessionFetchedEVT(SessionFetchedEVT value),
+    Result showOrHideNavbarEVT(ShowOrHideNavbarEVT value),
+    Result toggleChapterAdditionalInfoEVT(ToggleChapterAdditionalInfoEVT value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (bookmarksUpdatedEVT != null) {
+      return bookmarksUpdatedEVT(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class BookmarksUpdatedEVT implements ChapterDatabaseEvent {
+  const factory BookmarksUpdatedEVT() = _$BookmarksUpdatedEVT;
+}
+
+abstract class $ChapterBookmarkStatusLoadedEVTCopyWith<$Res> {
+  factory $ChapterBookmarkStatusLoadedEVTCopyWith(
+          ChapterBookmarkStatusLoadedEVT value,
+          $Res Function(ChapterBookmarkStatusLoadedEVT) then) =
+      _$ChapterBookmarkStatusLoadedEVTCopyWithImpl<$Res>;
+}
+
+class _$ChapterBookmarkStatusLoadedEVTCopyWithImpl<$Res>
+    extends _$ChapterDatabaseEventCopyWithImpl<$Res>
+    implements $ChapterBookmarkStatusLoadedEVTCopyWith<$Res> {
+  _$ChapterBookmarkStatusLoadedEVTCopyWithImpl(
+      ChapterBookmarkStatusLoadedEVT _value,
+      $Res Function(ChapterBookmarkStatusLoadedEVT) _then)
+      : super(_value, (v) => _then(v as ChapterBookmarkStatusLoadedEVT));
+
+  @override
+  ChapterBookmarkStatusLoadedEVT get _value =>
+      super._value as ChapterBookmarkStatusLoadedEVT;
+}
+
+class _$ChapterBookmarkStatusLoadedEVT
+    with DiagnosticableTreeMixin
+    implements ChapterBookmarkStatusLoadedEVT {
+  const _$ChapterBookmarkStatusLoadedEVT();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'ChapterDatabaseEvent.chapterBookmarkStatusLoadedEVT()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty(
+          'type', 'ChapterDatabaseEvent.chapterBookmarkStatusLoadedEVT'));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is ChapterBookmarkStatusLoadedEVT);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result bookmarkButtonPressedEVT(),
+    @required Result bookmarksUpdatedEVT(),
+    @required Result chapterBookmarkStatusLoadedEVT(),
+    @required Result chapterLikesLoadedEVT(),
+    @required Result chapterLikeStatusLoadedEVT(),
+    @required
+        Result chapterPageLaunchedEVT(Chapter chapter, BuildContext context),
+    @required Result chapterViewsLoadedEVT(),
+    @required Result chapterViewsUpdatedEVT(),
+    @required Result likeButtonPressedEVT(),
+    @required Result likesUpdatedEVT(),
+    @required Result loadNextChaptersEVT(),
+    @required Result previousChapterButtonPressedEVT(),
+    @required
+        Result scrollEVT(int currentScrollPosition, int maxScrollPosition),
+    @required Result sessionFetchedEVT(Session session),
+    @required Result showOrHideNavbarEVT(),
+    @required Result toggleChapterAdditionalInfoEVT(),
+  }) {
+    assert(bookmarkButtonPressedEVT != null);
+    assert(bookmarksUpdatedEVT != null);
+    assert(chapterBookmarkStatusLoadedEVT != null);
+    assert(chapterLikesLoadedEVT != null);
+    assert(chapterLikeStatusLoadedEVT != null);
+    assert(chapterPageLaunchedEVT != null);
+    assert(chapterViewsLoadedEVT != null);
+    assert(chapterViewsUpdatedEVT != null);
+    assert(likeButtonPressedEVT != null);
+    assert(likesUpdatedEVT != null);
+    assert(loadNextChaptersEVT != null);
+    assert(previousChapterButtonPressedEVT != null);
+    assert(scrollEVT != null);
+    assert(sessionFetchedEVT != null);
+    assert(showOrHideNavbarEVT != null);
+    assert(toggleChapterAdditionalInfoEVT != null);
+    return chapterBookmarkStatusLoadedEVT();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result bookmarkButtonPressedEVT(),
+    Result bookmarksUpdatedEVT(),
+    Result chapterBookmarkStatusLoadedEVT(),
+    Result chapterLikesLoadedEVT(),
+    Result chapterLikeStatusLoadedEVT(),
+    Result chapterPageLaunchedEVT(Chapter chapter, BuildContext context),
+    Result chapterViewsLoadedEVT(),
+    Result chapterViewsUpdatedEVT(),
+    Result likeButtonPressedEVT(),
+    Result likesUpdatedEVT(),
+    Result loadNextChaptersEVT(),
+    Result previousChapterButtonPressedEVT(),
+    Result scrollEVT(int currentScrollPosition, int maxScrollPosition),
+    Result sessionFetchedEVT(Session session),
+    Result showOrHideNavbarEVT(),
+    Result toggleChapterAdditionalInfoEVT(),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (chapterBookmarkStatusLoadedEVT != null) {
+      return chapterBookmarkStatusLoadedEVT();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result bookmarkButtonPressedEVT(BookmarkButtonPressedEVT value),
+    @required Result bookmarksUpdatedEVT(BookmarksUpdatedEVT value),
+    @required
+        Result chapterBookmarkStatusLoadedEVT(
+            ChapterBookmarkStatusLoadedEVT value),
+    @required Result chapterLikesLoadedEVT(ChapterLikesLoadedEVT value),
+    @required
+        Result chapterLikeStatusLoadedEVT(ChapterLikeStatusLoadedEVT value),
+    @required Result chapterPageLaunchedEVT(ChapterPageLaunchedEVT value),
+    @required Result chapterViewsLoadedEVT(ChapterViewsLoadedEVT value),
+    @required Result chapterViewsUpdatedEVT(ChapterViewsUpdatedEVT value),
+    @required Result likeButtonPressedEVT(LikeButtonPressedEVT value),
+    @required Result likesUpdatedEVT(LikesUpdatedEVT value),
+    @required Result loadNextChaptersEVT(LoadNextChaptersEVT value),
+    @required
+        Result previousChapterButtonPressedEVT(
+            PreviousChapterButtonPressedEVT value),
+    @required Result scrollEVT(ScrollEVT value),
+    @required Result sessionFetchedEVT(SessionFetchedEVT value),
+    @required Result showOrHideNavbarEVT(ShowOrHideNavbarEVT value),
+    @required
+        Result toggleChapterAdditionalInfoEVT(
+            ToggleChapterAdditionalInfoEVT value),
+  }) {
+    assert(bookmarkButtonPressedEVT != null);
+    assert(bookmarksUpdatedEVT != null);
+    assert(chapterBookmarkStatusLoadedEVT != null);
+    assert(chapterLikesLoadedEVT != null);
+    assert(chapterLikeStatusLoadedEVT != null);
+    assert(chapterPageLaunchedEVT != null);
+    assert(chapterViewsLoadedEVT != null);
+    assert(chapterViewsUpdatedEVT != null);
+    assert(likeButtonPressedEVT != null);
+    assert(likesUpdatedEVT != null);
+    assert(loadNextChaptersEVT != null);
+    assert(previousChapterButtonPressedEVT != null);
+    assert(scrollEVT != null);
+    assert(sessionFetchedEVT != null);
+    assert(showOrHideNavbarEVT != null);
+    assert(toggleChapterAdditionalInfoEVT != null);
+    return chapterBookmarkStatusLoadedEVT(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result bookmarkButtonPressedEVT(BookmarkButtonPressedEVT value),
+    Result bookmarksUpdatedEVT(BookmarksUpdatedEVT value),
+    Result chapterBookmarkStatusLoadedEVT(ChapterBookmarkStatusLoadedEVT value),
+    Result chapterLikesLoadedEVT(ChapterLikesLoadedEVT value),
+    Result chapterLikeStatusLoadedEVT(ChapterLikeStatusLoadedEVT value),
+    Result chapterPageLaunchedEVT(ChapterPageLaunchedEVT value),
+    Result chapterViewsLoadedEVT(ChapterViewsLoadedEVT value),
+    Result chapterViewsUpdatedEVT(ChapterViewsUpdatedEVT value),
+    Result likeButtonPressedEVT(LikeButtonPressedEVT value),
+    Result likesUpdatedEVT(LikesUpdatedEVT value),
+    Result loadNextChaptersEVT(LoadNextChaptersEVT value),
+    Result previousChapterButtonPressedEVT(
+        PreviousChapterButtonPressedEVT value),
+    Result scrollEVT(ScrollEVT value),
+    Result sessionFetchedEVT(SessionFetchedEVT value),
+    Result showOrHideNavbarEVT(ShowOrHideNavbarEVT value),
+    Result toggleChapterAdditionalInfoEVT(ToggleChapterAdditionalInfoEVT value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (chapterBookmarkStatusLoadedEVT != null) {
+      return chapterBookmarkStatusLoadedEVT(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ChapterBookmarkStatusLoadedEVT implements ChapterDatabaseEvent {
+  const factory ChapterBookmarkStatusLoadedEVT() =
+      _$ChapterBookmarkStatusLoadedEVT;
+}
+
+abstract class $ChapterLikesLoadedEVTCopyWith<$Res> {
+  factory $ChapterLikesLoadedEVTCopyWith(ChapterLikesLoadedEVT value,
+          $Res Function(ChapterLikesLoadedEVT) then) =
+      _$ChapterLikesLoadedEVTCopyWithImpl<$Res>;
+}
+
+class _$ChapterLikesLoadedEVTCopyWithImpl<$Res>
+    extends _$ChapterDatabaseEventCopyWithImpl<$Res>
+    implements $ChapterLikesLoadedEVTCopyWith<$Res> {
+  _$ChapterLikesLoadedEVTCopyWithImpl(
+      ChapterLikesLoadedEVT _value, $Res Function(ChapterLikesLoadedEVT) _then)
+      : super(_value, (v) => _then(v as ChapterLikesLoadedEVT));
+
+  @override
+  ChapterLikesLoadedEVT get _value => super._value as ChapterLikesLoadedEVT;
+}
+
+class _$ChapterLikesLoadedEVT
+    with DiagnosticableTreeMixin
+    implements ChapterLikesLoadedEVT {
+  const _$ChapterLikesLoadedEVT();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'ChapterDatabaseEvent.chapterLikesLoadedEVT()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty(
+          'type', 'ChapterDatabaseEvent.chapterLikesLoadedEVT'));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is ChapterLikesLoadedEVT);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result bookmarkButtonPressedEVT(),
+    @required Result bookmarksUpdatedEVT(),
+    @required Result chapterBookmarkStatusLoadedEVT(),
+    @required Result chapterLikesLoadedEVT(),
+    @required Result chapterLikeStatusLoadedEVT(),
+    @required
+        Result chapterPageLaunchedEVT(Chapter chapter, BuildContext context),
+    @required Result chapterViewsLoadedEVT(),
+    @required Result chapterViewsUpdatedEVT(),
+    @required Result likeButtonPressedEVT(),
+    @required Result likesUpdatedEVT(),
+    @required Result loadNextChaptersEVT(),
+    @required Result previousChapterButtonPressedEVT(),
+    @required
+        Result scrollEVT(int currentScrollPosition, int maxScrollPosition),
+    @required Result sessionFetchedEVT(Session session),
+    @required Result showOrHideNavbarEVT(),
+    @required Result toggleChapterAdditionalInfoEVT(),
+  }) {
+    assert(bookmarkButtonPressedEVT != null);
+    assert(bookmarksUpdatedEVT != null);
+    assert(chapterBookmarkStatusLoadedEVT != null);
+    assert(chapterLikesLoadedEVT != null);
+    assert(chapterLikeStatusLoadedEVT != null);
+    assert(chapterPageLaunchedEVT != null);
+    assert(chapterViewsLoadedEVT != null);
+    assert(chapterViewsUpdatedEVT != null);
+    assert(likeButtonPressedEVT != null);
+    assert(likesUpdatedEVT != null);
+    assert(loadNextChaptersEVT != null);
+    assert(previousChapterButtonPressedEVT != null);
+    assert(scrollEVT != null);
+    assert(sessionFetchedEVT != null);
+    assert(showOrHideNavbarEVT != null);
+    assert(toggleChapterAdditionalInfoEVT != null);
+    return chapterLikesLoadedEVT();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result bookmarkButtonPressedEVT(),
+    Result bookmarksUpdatedEVT(),
+    Result chapterBookmarkStatusLoadedEVT(),
+    Result chapterLikesLoadedEVT(),
+    Result chapterLikeStatusLoadedEVT(),
+    Result chapterPageLaunchedEVT(Chapter chapter, BuildContext context),
+    Result chapterViewsLoadedEVT(),
+    Result chapterViewsUpdatedEVT(),
+    Result likeButtonPressedEVT(),
+    Result likesUpdatedEVT(),
+    Result loadNextChaptersEVT(),
+    Result previousChapterButtonPressedEVT(),
+    Result scrollEVT(int currentScrollPosition, int maxScrollPosition),
+    Result sessionFetchedEVT(Session session),
+    Result showOrHideNavbarEVT(),
+    Result toggleChapterAdditionalInfoEVT(),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (chapterLikesLoadedEVT != null) {
+      return chapterLikesLoadedEVT();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result bookmarkButtonPressedEVT(BookmarkButtonPressedEVT value),
+    @required Result bookmarksUpdatedEVT(BookmarksUpdatedEVT value),
+    @required
+        Result chapterBookmarkStatusLoadedEVT(
+            ChapterBookmarkStatusLoadedEVT value),
+    @required Result chapterLikesLoadedEVT(ChapterLikesLoadedEVT value),
+    @required
+        Result chapterLikeStatusLoadedEVT(ChapterLikeStatusLoadedEVT value),
+    @required Result chapterPageLaunchedEVT(ChapterPageLaunchedEVT value),
+    @required Result chapterViewsLoadedEVT(ChapterViewsLoadedEVT value),
+    @required Result chapterViewsUpdatedEVT(ChapterViewsUpdatedEVT value),
+    @required Result likeButtonPressedEVT(LikeButtonPressedEVT value),
+    @required Result likesUpdatedEVT(LikesUpdatedEVT value),
+    @required Result loadNextChaptersEVT(LoadNextChaptersEVT value),
+    @required
+        Result previousChapterButtonPressedEVT(
+            PreviousChapterButtonPressedEVT value),
+    @required Result scrollEVT(ScrollEVT value),
+    @required Result sessionFetchedEVT(SessionFetchedEVT value),
+    @required Result showOrHideNavbarEVT(ShowOrHideNavbarEVT value),
+    @required
+        Result toggleChapterAdditionalInfoEVT(
+            ToggleChapterAdditionalInfoEVT value),
+  }) {
+    assert(bookmarkButtonPressedEVT != null);
+    assert(bookmarksUpdatedEVT != null);
+    assert(chapterBookmarkStatusLoadedEVT != null);
+    assert(chapterLikesLoadedEVT != null);
+    assert(chapterLikeStatusLoadedEVT != null);
+    assert(chapterPageLaunchedEVT != null);
+    assert(chapterViewsLoadedEVT != null);
+    assert(chapterViewsUpdatedEVT != null);
+    assert(likeButtonPressedEVT != null);
+    assert(likesUpdatedEVT != null);
+    assert(loadNextChaptersEVT != null);
+    assert(previousChapterButtonPressedEVT != null);
+    assert(scrollEVT != null);
+    assert(sessionFetchedEVT != null);
+    assert(showOrHideNavbarEVT != null);
+    assert(toggleChapterAdditionalInfoEVT != null);
+    return chapterLikesLoadedEVT(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result bookmarkButtonPressedEVT(BookmarkButtonPressedEVT value),
+    Result bookmarksUpdatedEVT(BookmarksUpdatedEVT value),
+    Result chapterBookmarkStatusLoadedEVT(ChapterBookmarkStatusLoadedEVT value),
+    Result chapterLikesLoadedEVT(ChapterLikesLoadedEVT value),
+    Result chapterLikeStatusLoadedEVT(ChapterLikeStatusLoadedEVT value),
+    Result chapterPageLaunchedEVT(ChapterPageLaunchedEVT value),
+    Result chapterViewsLoadedEVT(ChapterViewsLoadedEVT value),
+    Result chapterViewsUpdatedEVT(ChapterViewsUpdatedEVT value),
+    Result likeButtonPressedEVT(LikeButtonPressedEVT value),
+    Result likesUpdatedEVT(LikesUpdatedEVT value),
+    Result loadNextChaptersEVT(LoadNextChaptersEVT value),
+    Result previousChapterButtonPressedEVT(
+        PreviousChapterButtonPressedEVT value),
+    Result scrollEVT(ScrollEVT value),
+    Result sessionFetchedEVT(SessionFetchedEVT value),
+    Result showOrHideNavbarEVT(ShowOrHideNavbarEVT value),
+    Result toggleChapterAdditionalInfoEVT(ToggleChapterAdditionalInfoEVT value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (chapterLikesLoadedEVT != null) {
+      return chapterLikesLoadedEVT(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ChapterLikesLoadedEVT implements ChapterDatabaseEvent {
+  const factory ChapterLikesLoadedEVT() = _$ChapterLikesLoadedEVT;
+}
+
+abstract class $ChapterLikeStatusLoadedEVTCopyWith<$Res> {
+  factory $ChapterLikeStatusLoadedEVTCopyWith(ChapterLikeStatusLoadedEVT value,
+          $Res Function(ChapterLikeStatusLoadedEVT) then) =
+      _$ChapterLikeStatusLoadedEVTCopyWithImpl<$Res>;
+}
+
+class _$ChapterLikeStatusLoadedEVTCopyWithImpl<$Res>
+    extends _$ChapterDatabaseEventCopyWithImpl<$Res>
+    implements $ChapterLikeStatusLoadedEVTCopyWith<$Res> {
+  _$ChapterLikeStatusLoadedEVTCopyWithImpl(ChapterLikeStatusLoadedEVT _value,
+      $Res Function(ChapterLikeStatusLoadedEVT) _then)
+      : super(_value, (v) => _then(v as ChapterLikeStatusLoadedEVT));
+
+  @override
+  ChapterLikeStatusLoadedEVT get _value =>
+      super._value as ChapterLikeStatusLoadedEVT;
+}
+
+class _$ChapterLikeStatusLoadedEVT
+    with DiagnosticableTreeMixin
+    implements ChapterLikeStatusLoadedEVT {
+  const _$ChapterLikeStatusLoadedEVT();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'ChapterDatabaseEvent.chapterLikeStatusLoadedEVT()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty(
+          'type', 'ChapterDatabaseEvent.chapterLikeStatusLoadedEVT'));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is ChapterLikeStatusLoadedEVT);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result bookmarkButtonPressedEVT(),
+    @required Result bookmarksUpdatedEVT(),
+    @required Result chapterBookmarkStatusLoadedEVT(),
+    @required Result chapterLikesLoadedEVT(),
+    @required Result chapterLikeStatusLoadedEVT(),
+    @required
+        Result chapterPageLaunchedEVT(Chapter chapter, BuildContext context),
+    @required Result chapterViewsLoadedEVT(),
+    @required Result chapterViewsUpdatedEVT(),
+    @required Result likeButtonPressedEVT(),
+    @required Result likesUpdatedEVT(),
+    @required Result loadNextChaptersEVT(),
+    @required Result previousChapterButtonPressedEVT(),
+    @required
+        Result scrollEVT(int currentScrollPosition, int maxScrollPosition),
+    @required Result sessionFetchedEVT(Session session),
+    @required Result showOrHideNavbarEVT(),
+    @required Result toggleChapterAdditionalInfoEVT(),
+  }) {
+    assert(bookmarkButtonPressedEVT != null);
+    assert(bookmarksUpdatedEVT != null);
+    assert(chapterBookmarkStatusLoadedEVT != null);
+    assert(chapterLikesLoadedEVT != null);
+    assert(chapterLikeStatusLoadedEVT != null);
+    assert(chapterPageLaunchedEVT != null);
+    assert(chapterViewsLoadedEVT != null);
+    assert(chapterViewsUpdatedEVT != null);
+    assert(likeButtonPressedEVT != null);
+    assert(likesUpdatedEVT != null);
+    assert(loadNextChaptersEVT != null);
+    assert(previousChapterButtonPressedEVT != null);
+    assert(scrollEVT != null);
+    assert(sessionFetchedEVT != null);
+    assert(showOrHideNavbarEVT != null);
+    assert(toggleChapterAdditionalInfoEVT != null);
+    return chapterLikeStatusLoadedEVT();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result bookmarkButtonPressedEVT(),
+    Result bookmarksUpdatedEVT(),
+    Result chapterBookmarkStatusLoadedEVT(),
+    Result chapterLikesLoadedEVT(),
+    Result chapterLikeStatusLoadedEVT(),
+    Result chapterPageLaunchedEVT(Chapter chapter, BuildContext context),
+    Result chapterViewsLoadedEVT(),
+    Result chapterViewsUpdatedEVT(),
+    Result likeButtonPressedEVT(),
+    Result likesUpdatedEVT(),
+    Result loadNextChaptersEVT(),
+    Result previousChapterButtonPressedEVT(),
+    Result scrollEVT(int currentScrollPosition, int maxScrollPosition),
+    Result sessionFetchedEVT(Session session),
+    Result showOrHideNavbarEVT(),
+    Result toggleChapterAdditionalInfoEVT(),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (chapterLikeStatusLoadedEVT != null) {
+      return chapterLikeStatusLoadedEVT();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result bookmarkButtonPressedEVT(BookmarkButtonPressedEVT value),
+    @required Result bookmarksUpdatedEVT(BookmarksUpdatedEVT value),
+    @required
+        Result chapterBookmarkStatusLoadedEVT(
+            ChapterBookmarkStatusLoadedEVT value),
+    @required Result chapterLikesLoadedEVT(ChapterLikesLoadedEVT value),
+    @required
+        Result chapterLikeStatusLoadedEVT(ChapterLikeStatusLoadedEVT value),
+    @required Result chapterPageLaunchedEVT(ChapterPageLaunchedEVT value),
+    @required Result chapterViewsLoadedEVT(ChapterViewsLoadedEVT value),
+    @required Result chapterViewsUpdatedEVT(ChapterViewsUpdatedEVT value),
+    @required Result likeButtonPressedEVT(LikeButtonPressedEVT value),
+    @required Result likesUpdatedEVT(LikesUpdatedEVT value),
+    @required Result loadNextChaptersEVT(LoadNextChaptersEVT value),
+    @required
+        Result previousChapterButtonPressedEVT(
+            PreviousChapterButtonPressedEVT value),
+    @required Result scrollEVT(ScrollEVT value),
+    @required Result sessionFetchedEVT(SessionFetchedEVT value),
+    @required Result showOrHideNavbarEVT(ShowOrHideNavbarEVT value),
+    @required
+        Result toggleChapterAdditionalInfoEVT(
+            ToggleChapterAdditionalInfoEVT value),
+  }) {
+    assert(bookmarkButtonPressedEVT != null);
+    assert(bookmarksUpdatedEVT != null);
+    assert(chapterBookmarkStatusLoadedEVT != null);
+    assert(chapterLikesLoadedEVT != null);
+    assert(chapterLikeStatusLoadedEVT != null);
+    assert(chapterPageLaunchedEVT != null);
+    assert(chapterViewsLoadedEVT != null);
+    assert(chapterViewsUpdatedEVT != null);
+    assert(likeButtonPressedEVT != null);
+    assert(likesUpdatedEVT != null);
+    assert(loadNextChaptersEVT != null);
+    assert(previousChapterButtonPressedEVT != null);
+    assert(scrollEVT != null);
+    assert(sessionFetchedEVT != null);
+    assert(showOrHideNavbarEVT != null);
+    assert(toggleChapterAdditionalInfoEVT != null);
+    return chapterLikeStatusLoadedEVT(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result bookmarkButtonPressedEVT(BookmarkButtonPressedEVT value),
+    Result bookmarksUpdatedEVT(BookmarksUpdatedEVT value),
+    Result chapterBookmarkStatusLoadedEVT(ChapterBookmarkStatusLoadedEVT value),
+    Result chapterLikesLoadedEVT(ChapterLikesLoadedEVT value),
+    Result chapterLikeStatusLoadedEVT(ChapterLikeStatusLoadedEVT value),
+    Result chapterPageLaunchedEVT(ChapterPageLaunchedEVT value),
+    Result chapterViewsLoadedEVT(ChapterViewsLoadedEVT value),
+    Result chapterViewsUpdatedEVT(ChapterViewsUpdatedEVT value),
+    Result likeButtonPressedEVT(LikeButtonPressedEVT value),
+    Result likesUpdatedEVT(LikesUpdatedEVT value),
+    Result loadNextChaptersEVT(LoadNextChaptersEVT value),
+    Result previousChapterButtonPressedEVT(
+        PreviousChapterButtonPressedEVT value),
+    Result scrollEVT(ScrollEVT value),
+    Result sessionFetchedEVT(SessionFetchedEVT value),
+    Result showOrHideNavbarEVT(ShowOrHideNavbarEVT value),
+    Result toggleChapterAdditionalInfoEVT(ToggleChapterAdditionalInfoEVT value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (chapterLikeStatusLoadedEVT != null) {
+      return chapterLikeStatusLoadedEVT(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ChapterLikeStatusLoadedEVT implements ChapterDatabaseEvent {
+  const factory ChapterLikeStatusLoadedEVT() = _$ChapterLikeStatusLoadedEVT;
+}
+
+abstract class $ChapterPageLaunchedEVTCopyWith<$Res> {
+  factory $ChapterPageLaunchedEVTCopyWith(ChapterPageLaunchedEVT value,
+          $Res Function(ChapterPageLaunchedEVT) then) =
+      _$ChapterPageLaunchedEVTCopyWithImpl<$Res>;
   $Res call({Chapter chapter, BuildContext context});
 }
 
-class _$ChapterPageLaunchedCopyWithImpl<$Res>
+class _$ChapterPageLaunchedEVTCopyWithImpl<$Res>
     extends _$ChapterDatabaseEventCopyWithImpl<$Res>
-    implements $ChapterPageLaunchedCopyWith<$Res> {
-  _$ChapterPageLaunchedCopyWithImpl(
-      ChapterPageLaunched _value, $Res Function(ChapterPageLaunched) _then)
-      : super(_value, (v) => _then(v as ChapterPageLaunched));
+    implements $ChapterPageLaunchedEVTCopyWith<$Res> {
+  _$ChapterPageLaunchedEVTCopyWithImpl(ChapterPageLaunchedEVT _value,
+      $Res Function(ChapterPageLaunchedEVT) _then)
+      : super(_value, (v) => _then(v as ChapterPageLaunchedEVT));
 
   @override
-  ChapterPageLaunched get _value => super._value as ChapterPageLaunched;
+  ChapterPageLaunchedEVT get _value => super._value as ChapterPageLaunchedEVT;
 
   @override
   $Res call({
     Object chapter = freezed,
     Object context = freezed,
   }) {
-    return _then(ChapterPageLaunched(
+    return _then(ChapterPageLaunchedEVT(
       chapter: chapter == freezed ? _value.chapter : chapter as Chapter,
       context: context == freezed ? _value.context : context as BuildContext,
     ));
   }
 }
 
-class _$ChapterPageLaunched
+class _$ChapterPageLaunchedEVT
     with DiagnosticableTreeMixin
-    implements ChapterPageLaunched {
-  const _$ChapterPageLaunched({this.chapter, this.context});
+    implements ChapterPageLaunchedEVT {
+  const _$ChapterPageLaunchedEVT({this.chapter, this.context});
 
   @override
   final Chapter chapter;
@@ -163,7 +1203,7 @@ class _$ChapterPageLaunched
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'ChapterDatabaseEvent.chapterPageLaunched(chapter: $chapter, context: $context)';
+    return 'ChapterDatabaseEvent.chapterPageLaunchedEVT(chapter: $chapter, context: $context)';
   }
 
   @override
@@ -171,7 +1211,7 @@ class _$ChapterPageLaunched
     super.debugFillProperties(properties);
     properties
       ..add(DiagnosticsProperty(
-          'type', 'ChapterDatabaseEvent.chapterPageLaunched'))
+          'type', 'ChapterDatabaseEvent.chapterPageLaunchedEVT'))
       ..add(DiagnosticsProperty('chapter', chapter))
       ..add(DiagnosticsProperty('context', context));
   }
@@ -179,7 +1219,7 @@ class _$ChapterPageLaunched
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is ChapterPageLaunched &&
+        (other is ChapterPageLaunchedEVT &&
             (identical(other.chapter, chapter) ||
                 const DeepCollectionEquality()
                     .equals(other.chapter, chapter)) &&
@@ -194,48 +1234,75 @@ class _$ChapterPageLaunched
       const DeepCollectionEquality().hash(context);
 
   @override
-  $ChapterPageLaunchedCopyWith<ChapterPageLaunched> get copyWith =>
-      _$ChapterPageLaunchedCopyWithImpl<ChapterPageLaunched>(this, _$identity);
+  $ChapterPageLaunchedEVTCopyWith<ChapterPageLaunchedEVT> get copyWith =>
+      _$ChapterPageLaunchedEVTCopyWithImpl<ChapterPageLaunchedEVT>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result chapterPageLaunched(Chapter chapter, BuildContext context),
-    @required Result previousChapterButtonPressed(),
-    @required Result likeButtonPressed(),
-    @required Result bookmarkButtonPressed(),
-    @required Result showOrHideNavbar(),
-    @required Result scroll(int currentScrollPosition, int maxScrollPosition),
-    @required Result toggleChapterAdditionalInfo(),
-    @required Result fetchNextChapters(),
+    @required Result bookmarkButtonPressedEVT(),
+    @required Result bookmarksUpdatedEVT(),
+    @required Result chapterBookmarkStatusLoadedEVT(),
+    @required Result chapterLikesLoadedEVT(),
+    @required Result chapterLikeStatusLoadedEVT(),
+    @required
+        Result chapterPageLaunchedEVT(Chapter chapter, BuildContext context),
+    @required Result chapterViewsLoadedEVT(),
+    @required Result chapterViewsUpdatedEVT(),
+    @required Result likeButtonPressedEVT(),
+    @required Result likesUpdatedEVT(),
+    @required Result loadNextChaptersEVT(),
+    @required Result previousChapterButtonPressedEVT(),
+    @required
+        Result scrollEVT(int currentScrollPosition, int maxScrollPosition),
+    @required Result sessionFetchedEVT(Session session),
+    @required Result showOrHideNavbarEVT(),
+    @required Result toggleChapterAdditionalInfoEVT(),
   }) {
-    assert(chapterPageLaunched != null);
-    assert(previousChapterButtonPressed != null);
-    assert(likeButtonPressed != null);
-    assert(bookmarkButtonPressed != null);
-    assert(showOrHideNavbar != null);
-    assert(scroll != null);
-    assert(toggleChapterAdditionalInfo != null);
-    assert(fetchNextChapters != null);
-    return chapterPageLaunched(chapter, context);
+    assert(bookmarkButtonPressedEVT != null);
+    assert(bookmarksUpdatedEVT != null);
+    assert(chapterBookmarkStatusLoadedEVT != null);
+    assert(chapterLikesLoadedEVT != null);
+    assert(chapterLikeStatusLoadedEVT != null);
+    assert(chapterPageLaunchedEVT != null);
+    assert(chapterViewsLoadedEVT != null);
+    assert(chapterViewsUpdatedEVT != null);
+    assert(likeButtonPressedEVT != null);
+    assert(likesUpdatedEVT != null);
+    assert(loadNextChaptersEVT != null);
+    assert(previousChapterButtonPressedEVT != null);
+    assert(scrollEVT != null);
+    assert(sessionFetchedEVT != null);
+    assert(showOrHideNavbarEVT != null);
+    assert(toggleChapterAdditionalInfoEVT != null);
+    return chapterPageLaunchedEVT(chapter, context);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result chapterPageLaunched(Chapter chapter, BuildContext context),
-    Result previousChapterButtonPressed(),
-    Result likeButtonPressed(),
-    Result bookmarkButtonPressed(),
-    Result showOrHideNavbar(),
-    Result scroll(int currentScrollPosition, int maxScrollPosition),
-    Result toggleChapterAdditionalInfo(),
-    Result fetchNextChapters(),
+    Result bookmarkButtonPressedEVT(),
+    Result bookmarksUpdatedEVT(),
+    Result chapterBookmarkStatusLoadedEVT(),
+    Result chapterLikesLoadedEVT(),
+    Result chapterLikeStatusLoadedEVT(),
+    Result chapterPageLaunchedEVT(Chapter chapter, BuildContext context),
+    Result chapterViewsLoadedEVT(),
+    Result chapterViewsUpdatedEVT(),
+    Result likeButtonPressedEVT(),
+    Result likesUpdatedEVT(),
+    Result loadNextChaptersEVT(),
+    Result previousChapterButtonPressedEVT(),
+    Result scrollEVT(int currentScrollPosition, int maxScrollPosition),
+    Result sessionFetchedEVT(Session session),
+    Result showOrHideNavbarEVT(),
+    Result toggleChapterAdditionalInfoEVT(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (chapterPageLaunched != null) {
-      return chapterPageLaunched(chapter, context);
+    if (chapterPageLaunchedEVT != null) {
+      return chapterPageLaunchedEVT(chapter, context);
     }
     return orElse();
   }
@@ -243,86 +1310,113 @@ class _$ChapterPageLaunched
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result chapterPageLaunched(ChapterPageLaunched value),
+    @required Result bookmarkButtonPressedEVT(BookmarkButtonPressedEVT value),
+    @required Result bookmarksUpdatedEVT(BookmarksUpdatedEVT value),
     @required
-        Result previousChapterButtonPressed(PreviousChapterButtonPressed value),
-    @required Result likeButtonPressed(LikeButtonPressed value),
-    @required Result bookmarkButtonPressed(BookmarkButtonPressed value),
-    @required Result showOrHideNavbar(ShowOrHideNavbar value),
-    @required Result scroll(Scroll value),
+        Result chapterBookmarkStatusLoadedEVT(
+            ChapterBookmarkStatusLoadedEVT value),
+    @required Result chapterLikesLoadedEVT(ChapterLikesLoadedEVT value),
     @required
-        Result toggleChapterAdditionalInfo(ToggleChapterAdditionalInfo value),
-    @required Result fetchNextChapters(FetchNextChapters value),
+        Result chapterLikeStatusLoadedEVT(ChapterLikeStatusLoadedEVT value),
+    @required Result chapterPageLaunchedEVT(ChapterPageLaunchedEVT value),
+    @required Result chapterViewsLoadedEVT(ChapterViewsLoadedEVT value),
+    @required Result chapterViewsUpdatedEVT(ChapterViewsUpdatedEVT value),
+    @required Result likeButtonPressedEVT(LikeButtonPressedEVT value),
+    @required Result likesUpdatedEVT(LikesUpdatedEVT value),
+    @required Result loadNextChaptersEVT(LoadNextChaptersEVT value),
+    @required
+        Result previousChapterButtonPressedEVT(
+            PreviousChapterButtonPressedEVT value),
+    @required Result scrollEVT(ScrollEVT value),
+    @required Result sessionFetchedEVT(SessionFetchedEVT value),
+    @required Result showOrHideNavbarEVT(ShowOrHideNavbarEVT value),
+    @required
+        Result toggleChapterAdditionalInfoEVT(
+            ToggleChapterAdditionalInfoEVT value),
   }) {
-    assert(chapterPageLaunched != null);
-    assert(previousChapterButtonPressed != null);
-    assert(likeButtonPressed != null);
-    assert(bookmarkButtonPressed != null);
-    assert(showOrHideNavbar != null);
-    assert(scroll != null);
-    assert(toggleChapterAdditionalInfo != null);
-    assert(fetchNextChapters != null);
-    return chapterPageLaunched(this);
+    assert(bookmarkButtonPressedEVT != null);
+    assert(bookmarksUpdatedEVT != null);
+    assert(chapterBookmarkStatusLoadedEVT != null);
+    assert(chapterLikesLoadedEVT != null);
+    assert(chapterLikeStatusLoadedEVT != null);
+    assert(chapterPageLaunchedEVT != null);
+    assert(chapterViewsLoadedEVT != null);
+    assert(chapterViewsUpdatedEVT != null);
+    assert(likeButtonPressedEVT != null);
+    assert(likesUpdatedEVT != null);
+    assert(loadNextChaptersEVT != null);
+    assert(previousChapterButtonPressedEVT != null);
+    assert(scrollEVT != null);
+    assert(sessionFetchedEVT != null);
+    assert(showOrHideNavbarEVT != null);
+    assert(toggleChapterAdditionalInfoEVT != null);
+    return chapterPageLaunchedEVT(this);
   }
 
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result chapterPageLaunched(ChapterPageLaunched value),
-    Result previousChapterButtonPressed(PreviousChapterButtonPressed value),
-    Result likeButtonPressed(LikeButtonPressed value),
-    Result bookmarkButtonPressed(BookmarkButtonPressed value),
-    Result showOrHideNavbar(ShowOrHideNavbar value),
-    Result scroll(Scroll value),
-    Result toggleChapterAdditionalInfo(ToggleChapterAdditionalInfo value),
-    Result fetchNextChapters(FetchNextChapters value),
+    Result bookmarkButtonPressedEVT(BookmarkButtonPressedEVT value),
+    Result bookmarksUpdatedEVT(BookmarksUpdatedEVT value),
+    Result chapterBookmarkStatusLoadedEVT(ChapterBookmarkStatusLoadedEVT value),
+    Result chapterLikesLoadedEVT(ChapterLikesLoadedEVT value),
+    Result chapterLikeStatusLoadedEVT(ChapterLikeStatusLoadedEVT value),
+    Result chapterPageLaunchedEVT(ChapterPageLaunchedEVT value),
+    Result chapterViewsLoadedEVT(ChapterViewsLoadedEVT value),
+    Result chapterViewsUpdatedEVT(ChapterViewsUpdatedEVT value),
+    Result likeButtonPressedEVT(LikeButtonPressedEVT value),
+    Result likesUpdatedEVT(LikesUpdatedEVT value),
+    Result loadNextChaptersEVT(LoadNextChaptersEVT value),
+    Result previousChapterButtonPressedEVT(
+        PreviousChapterButtonPressedEVT value),
+    Result scrollEVT(ScrollEVT value),
+    Result sessionFetchedEVT(SessionFetchedEVT value),
+    Result showOrHideNavbarEVT(ShowOrHideNavbarEVT value),
+    Result toggleChapterAdditionalInfoEVT(ToggleChapterAdditionalInfoEVT value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (chapterPageLaunched != null) {
-      return chapterPageLaunched(this);
+    if (chapterPageLaunchedEVT != null) {
+      return chapterPageLaunchedEVT(this);
     }
     return orElse();
   }
 }
 
-abstract class ChapterPageLaunched implements ChapterDatabaseEvent {
-  const factory ChapterPageLaunched({Chapter chapter, BuildContext context}) =
-      _$ChapterPageLaunched;
+abstract class ChapterPageLaunchedEVT implements ChapterDatabaseEvent {
+  const factory ChapterPageLaunchedEVT(
+      {Chapter chapter, BuildContext context}) = _$ChapterPageLaunchedEVT;
 
   Chapter get chapter;
   BuildContext get context;
-  $ChapterPageLaunchedCopyWith<ChapterPageLaunched> get copyWith;
+  $ChapterPageLaunchedEVTCopyWith<ChapterPageLaunchedEVT> get copyWith;
 }
 
-abstract class $PreviousChapterButtonPressedCopyWith<$Res> {
-  factory $PreviousChapterButtonPressedCopyWith(
-          PreviousChapterButtonPressed value,
-          $Res Function(PreviousChapterButtonPressed) then) =
-      _$PreviousChapterButtonPressedCopyWithImpl<$Res>;
+abstract class $ChapterViewsLoadedEVTCopyWith<$Res> {
+  factory $ChapterViewsLoadedEVTCopyWith(ChapterViewsLoadedEVT value,
+          $Res Function(ChapterViewsLoadedEVT) then) =
+      _$ChapterViewsLoadedEVTCopyWithImpl<$Res>;
 }
 
-class _$PreviousChapterButtonPressedCopyWithImpl<$Res>
+class _$ChapterViewsLoadedEVTCopyWithImpl<$Res>
     extends _$ChapterDatabaseEventCopyWithImpl<$Res>
-    implements $PreviousChapterButtonPressedCopyWith<$Res> {
-  _$PreviousChapterButtonPressedCopyWithImpl(
-      PreviousChapterButtonPressed _value,
-      $Res Function(PreviousChapterButtonPressed) _then)
-      : super(_value, (v) => _then(v as PreviousChapterButtonPressed));
+    implements $ChapterViewsLoadedEVTCopyWith<$Res> {
+  _$ChapterViewsLoadedEVTCopyWithImpl(
+      ChapterViewsLoadedEVT _value, $Res Function(ChapterViewsLoadedEVT) _then)
+      : super(_value, (v) => _then(v as ChapterViewsLoadedEVT));
 
   @override
-  PreviousChapterButtonPressed get _value =>
-      super._value as PreviousChapterButtonPressed;
+  ChapterViewsLoadedEVT get _value => super._value as ChapterViewsLoadedEVT;
 }
 
-class _$PreviousChapterButtonPressed
+class _$ChapterViewsLoadedEVT
     with DiagnosticableTreeMixin
-    implements PreviousChapterButtonPressed {
-  const _$PreviousChapterButtonPressed();
+    implements ChapterViewsLoadedEVT {
+  const _$ChapterViewsLoadedEVT();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'ChapterDatabaseEvent.previousChapterButtonPressed()';
+    return 'ChapterDatabaseEvent.chapterViewsLoadedEVT()';
   }
 
   @override
@@ -330,12 +1424,12 @@ class _$PreviousChapterButtonPressed
     super.debugFillProperties(properties);
     properties
       ..add(DiagnosticsProperty(
-          'type', 'ChapterDatabaseEvent.previousChapterButtonPressed'));
+          'type', 'ChapterDatabaseEvent.chapterViewsLoadedEVT'));
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is PreviousChapterButtonPressed);
+    return identical(this, other) || (other is ChapterViewsLoadedEVT);
   }
 
   @override
@@ -344,42 +1438,68 @@ class _$PreviousChapterButtonPressed
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result chapterPageLaunched(Chapter chapter, BuildContext context),
-    @required Result previousChapterButtonPressed(),
-    @required Result likeButtonPressed(),
-    @required Result bookmarkButtonPressed(),
-    @required Result showOrHideNavbar(),
-    @required Result scroll(int currentScrollPosition, int maxScrollPosition),
-    @required Result toggleChapterAdditionalInfo(),
-    @required Result fetchNextChapters(),
+    @required Result bookmarkButtonPressedEVT(),
+    @required Result bookmarksUpdatedEVT(),
+    @required Result chapterBookmarkStatusLoadedEVT(),
+    @required Result chapterLikesLoadedEVT(),
+    @required Result chapterLikeStatusLoadedEVT(),
+    @required
+        Result chapterPageLaunchedEVT(Chapter chapter, BuildContext context),
+    @required Result chapterViewsLoadedEVT(),
+    @required Result chapterViewsUpdatedEVT(),
+    @required Result likeButtonPressedEVT(),
+    @required Result likesUpdatedEVT(),
+    @required Result loadNextChaptersEVT(),
+    @required Result previousChapterButtonPressedEVT(),
+    @required
+        Result scrollEVT(int currentScrollPosition, int maxScrollPosition),
+    @required Result sessionFetchedEVT(Session session),
+    @required Result showOrHideNavbarEVT(),
+    @required Result toggleChapterAdditionalInfoEVT(),
   }) {
-    assert(chapterPageLaunched != null);
-    assert(previousChapterButtonPressed != null);
-    assert(likeButtonPressed != null);
-    assert(bookmarkButtonPressed != null);
-    assert(showOrHideNavbar != null);
-    assert(scroll != null);
-    assert(toggleChapterAdditionalInfo != null);
-    assert(fetchNextChapters != null);
-    return previousChapterButtonPressed();
+    assert(bookmarkButtonPressedEVT != null);
+    assert(bookmarksUpdatedEVT != null);
+    assert(chapterBookmarkStatusLoadedEVT != null);
+    assert(chapterLikesLoadedEVT != null);
+    assert(chapterLikeStatusLoadedEVT != null);
+    assert(chapterPageLaunchedEVT != null);
+    assert(chapterViewsLoadedEVT != null);
+    assert(chapterViewsUpdatedEVT != null);
+    assert(likeButtonPressedEVT != null);
+    assert(likesUpdatedEVT != null);
+    assert(loadNextChaptersEVT != null);
+    assert(previousChapterButtonPressedEVT != null);
+    assert(scrollEVT != null);
+    assert(sessionFetchedEVT != null);
+    assert(showOrHideNavbarEVT != null);
+    assert(toggleChapterAdditionalInfoEVT != null);
+    return chapterViewsLoadedEVT();
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result chapterPageLaunched(Chapter chapter, BuildContext context),
-    Result previousChapterButtonPressed(),
-    Result likeButtonPressed(),
-    Result bookmarkButtonPressed(),
-    Result showOrHideNavbar(),
-    Result scroll(int currentScrollPosition, int maxScrollPosition),
-    Result toggleChapterAdditionalInfo(),
-    Result fetchNextChapters(),
+    Result bookmarkButtonPressedEVT(),
+    Result bookmarksUpdatedEVT(),
+    Result chapterBookmarkStatusLoadedEVT(),
+    Result chapterLikesLoadedEVT(),
+    Result chapterLikeStatusLoadedEVT(),
+    Result chapterPageLaunchedEVT(Chapter chapter, BuildContext context),
+    Result chapterViewsLoadedEVT(),
+    Result chapterViewsUpdatedEVT(),
+    Result likeButtonPressedEVT(),
+    Result likesUpdatedEVT(),
+    Result loadNextChaptersEVT(),
+    Result previousChapterButtonPressedEVT(),
+    Result scrollEVT(int currentScrollPosition, int maxScrollPosition),
+    Result sessionFetchedEVT(Session session),
+    Result showOrHideNavbarEVT(),
+    Result toggleChapterAdditionalInfoEVT(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (previousChapterButtonPressed != null) {
-      return previousChapterButtonPressed();
+    if (chapterViewsLoadedEVT != null) {
+      return chapterViewsLoadedEVT();
     }
     return orElse();
   }
@@ -387,78 +1507,108 @@ class _$PreviousChapterButtonPressed
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result chapterPageLaunched(ChapterPageLaunched value),
+    @required Result bookmarkButtonPressedEVT(BookmarkButtonPressedEVT value),
+    @required Result bookmarksUpdatedEVT(BookmarksUpdatedEVT value),
     @required
-        Result previousChapterButtonPressed(PreviousChapterButtonPressed value),
-    @required Result likeButtonPressed(LikeButtonPressed value),
-    @required Result bookmarkButtonPressed(BookmarkButtonPressed value),
-    @required Result showOrHideNavbar(ShowOrHideNavbar value),
-    @required Result scroll(Scroll value),
+        Result chapterBookmarkStatusLoadedEVT(
+            ChapterBookmarkStatusLoadedEVT value),
+    @required Result chapterLikesLoadedEVT(ChapterLikesLoadedEVT value),
     @required
-        Result toggleChapterAdditionalInfo(ToggleChapterAdditionalInfo value),
-    @required Result fetchNextChapters(FetchNextChapters value),
+        Result chapterLikeStatusLoadedEVT(ChapterLikeStatusLoadedEVT value),
+    @required Result chapterPageLaunchedEVT(ChapterPageLaunchedEVT value),
+    @required Result chapterViewsLoadedEVT(ChapterViewsLoadedEVT value),
+    @required Result chapterViewsUpdatedEVT(ChapterViewsUpdatedEVT value),
+    @required Result likeButtonPressedEVT(LikeButtonPressedEVT value),
+    @required Result likesUpdatedEVT(LikesUpdatedEVT value),
+    @required Result loadNextChaptersEVT(LoadNextChaptersEVT value),
+    @required
+        Result previousChapterButtonPressedEVT(
+            PreviousChapterButtonPressedEVT value),
+    @required Result scrollEVT(ScrollEVT value),
+    @required Result sessionFetchedEVT(SessionFetchedEVT value),
+    @required Result showOrHideNavbarEVT(ShowOrHideNavbarEVT value),
+    @required
+        Result toggleChapterAdditionalInfoEVT(
+            ToggleChapterAdditionalInfoEVT value),
   }) {
-    assert(chapterPageLaunched != null);
-    assert(previousChapterButtonPressed != null);
-    assert(likeButtonPressed != null);
-    assert(bookmarkButtonPressed != null);
-    assert(showOrHideNavbar != null);
-    assert(scroll != null);
-    assert(toggleChapterAdditionalInfo != null);
-    assert(fetchNextChapters != null);
-    return previousChapterButtonPressed(this);
+    assert(bookmarkButtonPressedEVT != null);
+    assert(bookmarksUpdatedEVT != null);
+    assert(chapterBookmarkStatusLoadedEVT != null);
+    assert(chapterLikesLoadedEVT != null);
+    assert(chapterLikeStatusLoadedEVT != null);
+    assert(chapterPageLaunchedEVT != null);
+    assert(chapterViewsLoadedEVT != null);
+    assert(chapterViewsUpdatedEVT != null);
+    assert(likeButtonPressedEVT != null);
+    assert(likesUpdatedEVT != null);
+    assert(loadNextChaptersEVT != null);
+    assert(previousChapterButtonPressedEVT != null);
+    assert(scrollEVT != null);
+    assert(sessionFetchedEVT != null);
+    assert(showOrHideNavbarEVT != null);
+    assert(toggleChapterAdditionalInfoEVT != null);
+    return chapterViewsLoadedEVT(this);
   }
 
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result chapterPageLaunched(ChapterPageLaunched value),
-    Result previousChapterButtonPressed(PreviousChapterButtonPressed value),
-    Result likeButtonPressed(LikeButtonPressed value),
-    Result bookmarkButtonPressed(BookmarkButtonPressed value),
-    Result showOrHideNavbar(ShowOrHideNavbar value),
-    Result scroll(Scroll value),
-    Result toggleChapterAdditionalInfo(ToggleChapterAdditionalInfo value),
-    Result fetchNextChapters(FetchNextChapters value),
+    Result bookmarkButtonPressedEVT(BookmarkButtonPressedEVT value),
+    Result bookmarksUpdatedEVT(BookmarksUpdatedEVT value),
+    Result chapterBookmarkStatusLoadedEVT(ChapterBookmarkStatusLoadedEVT value),
+    Result chapterLikesLoadedEVT(ChapterLikesLoadedEVT value),
+    Result chapterLikeStatusLoadedEVT(ChapterLikeStatusLoadedEVT value),
+    Result chapterPageLaunchedEVT(ChapterPageLaunchedEVT value),
+    Result chapterViewsLoadedEVT(ChapterViewsLoadedEVT value),
+    Result chapterViewsUpdatedEVT(ChapterViewsUpdatedEVT value),
+    Result likeButtonPressedEVT(LikeButtonPressedEVT value),
+    Result likesUpdatedEVT(LikesUpdatedEVT value),
+    Result loadNextChaptersEVT(LoadNextChaptersEVT value),
+    Result previousChapterButtonPressedEVT(
+        PreviousChapterButtonPressedEVT value),
+    Result scrollEVT(ScrollEVT value),
+    Result sessionFetchedEVT(SessionFetchedEVT value),
+    Result showOrHideNavbarEVT(ShowOrHideNavbarEVT value),
+    Result toggleChapterAdditionalInfoEVT(ToggleChapterAdditionalInfoEVT value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (previousChapterButtonPressed != null) {
-      return previousChapterButtonPressed(this);
+    if (chapterViewsLoadedEVT != null) {
+      return chapterViewsLoadedEVT(this);
     }
     return orElse();
   }
 }
 
-abstract class PreviousChapterButtonPressed implements ChapterDatabaseEvent {
-  const factory PreviousChapterButtonPressed() = _$PreviousChapterButtonPressed;
+abstract class ChapterViewsLoadedEVT implements ChapterDatabaseEvent {
+  const factory ChapterViewsLoadedEVT() = _$ChapterViewsLoadedEVT;
 }
 
-abstract class $LikeButtonPressedCopyWith<$Res> {
-  factory $LikeButtonPressedCopyWith(
-          LikeButtonPressed value, $Res Function(LikeButtonPressed) then) =
-      _$LikeButtonPressedCopyWithImpl<$Res>;
+abstract class $ChapterViewsUpdatedEVTCopyWith<$Res> {
+  factory $ChapterViewsUpdatedEVTCopyWith(ChapterViewsUpdatedEVT value,
+          $Res Function(ChapterViewsUpdatedEVT) then) =
+      _$ChapterViewsUpdatedEVTCopyWithImpl<$Res>;
 }
 
-class _$LikeButtonPressedCopyWithImpl<$Res>
+class _$ChapterViewsUpdatedEVTCopyWithImpl<$Res>
     extends _$ChapterDatabaseEventCopyWithImpl<$Res>
-    implements $LikeButtonPressedCopyWith<$Res> {
-  _$LikeButtonPressedCopyWithImpl(
-      LikeButtonPressed _value, $Res Function(LikeButtonPressed) _then)
-      : super(_value, (v) => _then(v as LikeButtonPressed));
+    implements $ChapterViewsUpdatedEVTCopyWith<$Res> {
+  _$ChapterViewsUpdatedEVTCopyWithImpl(ChapterViewsUpdatedEVT _value,
+      $Res Function(ChapterViewsUpdatedEVT) _then)
+      : super(_value, (v) => _then(v as ChapterViewsUpdatedEVT));
 
   @override
-  LikeButtonPressed get _value => super._value as LikeButtonPressed;
+  ChapterViewsUpdatedEVT get _value => super._value as ChapterViewsUpdatedEVT;
 }
 
-class _$LikeButtonPressed
+class _$ChapterViewsUpdatedEVT
     with DiagnosticableTreeMixin
-    implements LikeButtonPressed {
-  const _$LikeButtonPressed();
+    implements ChapterViewsUpdatedEVT {
+  const _$ChapterViewsUpdatedEVT();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'ChapterDatabaseEvent.likeButtonPressed()';
+    return 'ChapterDatabaseEvent.chapterViewsUpdatedEVT()';
   }
 
   @override
@@ -466,12 +1616,12 @@ class _$LikeButtonPressed
     super.debugFillProperties(properties);
     properties
       ..add(DiagnosticsProperty(
-          'type', 'ChapterDatabaseEvent.likeButtonPressed'));
+          'type', 'ChapterDatabaseEvent.chapterViewsUpdatedEVT'));
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is LikeButtonPressed);
+    return identical(this, other) || (other is ChapterViewsUpdatedEVT);
   }
 
   @override
@@ -480,42 +1630,68 @@ class _$LikeButtonPressed
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result chapterPageLaunched(Chapter chapter, BuildContext context),
-    @required Result previousChapterButtonPressed(),
-    @required Result likeButtonPressed(),
-    @required Result bookmarkButtonPressed(),
-    @required Result showOrHideNavbar(),
-    @required Result scroll(int currentScrollPosition, int maxScrollPosition),
-    @required Result toggleChapterAdditionalInfo(),
-    @required Result fetchNextChapters(),
+    @required Result bookmarkButtonPressedEVT(),
+    @required Result bookmarksUpdatedEVT(),
+    @required Result chapterBookmarkStatusLoadedEVT(),
+    @required Result chapterLikesLoadedEVT(),
+    @required Result chapterLikeStatusLoadedEVT(),
+    @required
+        Result chapterPageLaunchedEVT(Chapter chapter, BuildContext context),
+    @required Result chapterViewsLoadedEVT(),
+    @required Result chapterViewsUpdatedEVT(),
+    @required Result likeButtonPressedEVT(),
+    @required Result likesUpdatedEVT(),
+    @required Result loadNextChaptersEVT(),
+    @required Result previousChapterButtonPressedEVT(),
+    @required
+        Result scrollEVT(int currentScrollPosition, int maxScrollPosition),
+    @required Result sessionFetchedEVT(Session session),
+    @required Result showOrHideNavbarEVT(),
+    @required Result toggleChapterAdditionalInfoEVT(),
   }) {
-    assert(chapterPageLaunched != null);
-    assert(previousChapterButtonPressed != null);
-    assert(likeButtonPressed != null);
-    assert(bookmarkButtonPressed != null);
-    assert(showOrHideNavbar != null);
-    assert(scroll != null);
-    assert(toggleChapterAdditionalInfo != null);
-    assert(fetchNextChapters != null);
-    return likeButtonPressed();
+    assert(bookmarkButtonPressedEVT != null);
+    assert(bookmarksUpdatedEVT != null);
+    assert(chapterBookmarkStatusLoadedEVT != null);
+    assert(chapterLikesLoadedEVT != null);
+    assert(chapterLikeStatusLoadedEVT != null);
+    assert(chapterPageLaunchedEVT != null);
+    assert(chapterViewsLoadedEVT != null);
+    assert(chapterViewsUpdatedEVT != null);
+    assert(likeButtonPressedEVT != null);
+    assert(likesUpdatedEVT != null);
+    assert(loadNextChaptersEVT != null);
+    assert(previousChapterButtonPressedEVT != null);
+    assert(scrollEVT != null);
+    assert(sessionFetchedEVT != null);
+    assert(showOrHideNavbarEVT != null);
+    assert(toggleChapterAdditionalInfoEVT != null);
+    return chapterViewsUpdatedEVT();
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result chapterPageLaunched(Chapter chapter, BuildContext context),
-    Result previousChapterButtonPressed(),
-    Result likeButtonPressed(),
-    Result bookmarkButtonPressed(),
-    Result showOrHideNavbar(),
-    Result scroll(int currentScrollPosition, int maxScrollPosition),
-    Result toggleChapterAdditionalInfo(),
-    Result fetchNextChapters(),
+    Result bookmarkButtonPressedEVT(),
+    Result bookmarksUpdatedEVT(),
+    Result chapterBookmarkStatusLoadedEVT(),
+    Result chapterLikesLoadedEVT(),
+    Result chapterLikeStatusLoadedEVT(),
+    Result chapterPageLaunchedEVT(Chapter chapter, BuildContext context),
+    Result chapterViewsLoadedEVT(),
+    Result chapterViewsUpdatedEVT(),
+    Result likeButtonPressedEVT(),
+    Result likesUpdatedEVT(),
+    Result loadNextChaptersEVT(),
+    Result previousChapterButtonPressedEVT(),
+    Result scrollEVT(int currentScrollPosition, int maxScrollPosition),
+    Result sessionFetchedEVT(Session session),
+    Result showOrHideNavbarEVT(),
+    Result toggleChapterAdditionalInfoEVT(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (likeButtonPressed != null) {
-      return likeButtonPressed();
+    if (chapterViewsUpdatedEVT != null) {
+      return chapterViewsUpdatedEVT();
     }
     return orElse();
   }
@@ -523,78 +1699,108 @@ class _$LikeButtonPressed
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result chapterPageLaunched(ChapterPageLaunched value),
+    @required Result bookmarkButtonPressedEVT(BookmarkButtonPressedEVT value),
+    @required Result bookmarksUpdatedEVT(BookmarksUpdatedEVT value),
     @required
-        Result previousChapterButtonPressed(PreviousChapterButtonPressed value),
-    @required Result likeButtonPressed(LikeButtonPressed value),
-    @required Result bookmarkButtonPressed(BookmarkButtonPressed value),
-    @required Result showOrHideNavbar(ShowOrHideNavbar value),
-    @required Result scroll(Scroll value),
+        Result chapterBookmarkStatusLoadedEVT(
+            ChapterBookmarkStatusLoadedEVT value),
+    @required Result chapterLikesLoadedEVT(ChapterLikesLoadedEVT value),
     @required
-        Result toggleChapterAdditionalInfo(ToggleChapterAdditionalInfo value),
-    @required Result fetchNextChapters(FetchNextChapters value),
+        Result chapterLikeStatusLoadedEVT(ChapterLikeStatusLoadedEVT value),
+    @required Result chapterPageLaunchedEVT(ChapterPageLaunchedEVT value),
+    @required Result chapterViewsLoadedEVT(ChapterViewsLoadedEVT value),
+    @required Result chapterViewsUpdatedEVT(ChapterViewsUpdatedEVT value),
+    @required Result likeButtonPressedEVT(LikeButtonPressedEVT value),
+    @required Result likesUpdatedEVT(LikesUpdatedEVT value),
+    @required Result loadNextChaptersEVT(LoadNextChaptersEVT value),
+    @required
+        Result previousChapterButtonPressedEVT(
+            PreviousChapterButtonPressedEVT value),
+    @required Result scrollEVT(ScrollEVT value),
+    @required Result sessionFetchedEVT(SessionFetchedEVT value),
+    @required Result showOrHideNavbarEVT(ShowOrHideNavbarEVT value),
+    @required
+        Result toggleChapterAdditionalInfoEVT(
+            ToggleChapterAdditionalInfoEVT value),
   }) {
-    assert(chapterPageLaunched != null);
-    assert(previousChapterButtonPressed != null);
-    assert(likeButtonPressed != null);
-    assert(bookmarkButtonPressed != null);
-    assert(showOrHideNavbar != null);
-    assert(scroll != null);
-    assert(toggleChapterAdditionalInfo != null);
-    assert(fetchNextChapters != null);
-    return likeButtonPressed(this);
+    assert(bookmarkButtonPressedEVT != null);
+    assert(bookmarksUpdatedEVT != null);
+    assert(chapterBookmarkStatusLoadedEVT != null);
+    assert(chapterLikesLoadedEVT != null);
+    assert(chapterLikeStatusLoadedEVT != null);
+    assert(chapterPageLaunchedEVT != null);
+    assert(chapterViewsLoadedEVT != null);
+    assert(chapterViewsUpdatedEVT != null);
+    assert(likeButtonPressedEVT != null);
+    assert(likesUpdatedEVT != null);
+    assert(loadNextChaptersEVT != null);
+    assert(previousChapterButtonPressedEVT != null);
+    assert(scrollEVT != null);
+    assert(sessionFetchedEVT != null);
+    assert(showOrHideNavbarEVT != null);
+    assert(toggleChapterAdditionalInfoEVT != null);
+    return chapterViewsUpdatedEVT(this);
   }
 
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result chapterPageLaunched(ChapterPageLaunched value),
-    Result previousChapterButtonPressed(PreviousChapterButtonPressed value),
-    Result likeButtonPressed(LikeButtonPressed value),
-    Result bookmarkButtonPressed(BookmarkButtonPressed value),
-    Result showOrHideNavbar(ShowOrHideNavbar value),
-    Result scroll(Scroll value),
-    Result toggleChapterAdditionalInfo(ToggleChapterAdditionalInfo value),
-    Result fetchNextChapters(FetchNextChapters value),
+    Result bookmarkButtonPressedEVT(BookmarkButtonPressedEVT value),
+    Result bookmarksUpdatedEVT(BookmarksUpdatedEVT value),
+    Result chapterBookmarkStatusLoadedEVT(ChapterBookmarkStatusLoadedEVT value),
+    Result chapterLikesLoadedEVT(ChapterLikesLoadedEVT value),
+    Result chapterLikeStatusLoadedEVT(ChapterLikeStatusLoadedEVT value),
+    Result chapterPageLaunchedEVT(ChapterPageLaunchedEVT value),
+    Result chapterViewsLoadedEVT(ChapterViewsLoadedEVT value),
+    Result chapterViewsUpdatedEVT(ChapterViewsUpdatedEVT value),
+    Result likeButtonPressedEVT(LikeButtonPressedEVT value),
+    Result likesUpdatedEVT(LikesUpdatedEVT value),
+    Result loadNextChaptersEVT(LoadNextChaptersEVT value),
+    Result previousChapterButtonPressedEVT(
+        PreviousChapterButtonPressedEVT value),
+    Result scrollEVT(ScrollEVT value),
+    Result sessionFetchedEVT(SessionFetchedEVT value),
+    Result showOrHideNavbarEVT(ShowOrHideNavbarEVT value),
+    Result toggleChapterAdditionalInfoEVT(ToggleChapterAdditionalInfoEVT value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (likeButtonPressed != null) {
-      return likeButtonPressed(this);
+    if (chapterViewsUpdatedEVT != null) {
+      return chapterViewsUpdatedEVT(this);
     }
     return orElse();
   }
 }
 
-abstract class LikeButtonPressed implements ChapterDatabaseEvent {
-  const factory LikeButtonPressed() = _$LikeButtonPressed;
+abstract class ChapterViewsUpdatedEVT implements ChapterDatabaseEvent {
+  const factory ChapterViewsUpdatedEVT() = _$ChapterViewsUpdatedEVT;
 }
 
-abstract class $BookmarkButtonPressedCopyWith<$Res> {
-  factory $BookmarkButtonPressedCopyWith(BookmarkButtonPressed value,
-          $Res Function(BookmarkButtonPressed) then) =
-      _$BookmarkButtonPressedCopyWithImpl<$Res>;
+abstract class $LikeButtonPressedEVTCopyWith<$Res> {
+  factory $LikeButtonPressedEVTCopyWith(LikeButtonPressedEVT value,
+          $Res Function(LikeButtonPressedEVT) then) =
+      _$LikeButtonPressedEVTCopyWithImpl<$Res>;
 }
 
-class _$BookmarkButtonPressedCopyWithImpl<$Res>
+class _$LikeButtonPressedEVTCopyWithImpl<$Res>
     extends _$ChapterDatabaseEventCopyWithImpl<$Res>
-    implements $BookmarkButtonPressedCopyWith<$Res> {
-  _$BookmarkButtonPressedCopyWithImpl(
-      BookmarkButtonPressed _value, $Res Function(BookmarkButtonPressed) _then)
-      : super(_value, (v) => _then(v as BookmarkButtonPressed));
+    implements $LikeButtonPressedEVTCopyWith<$Res> {
+  _$LikeButtonPressedEVTCopyWithImpl(
+      LikeButtonPressedEVT _value, $Res Function(LikeButtonPressedEVT) _then)
+      : super(_value, (v) => _then(v as LikeButtonPressedEVT));
 
   @override
-  BookmarkButtonPressed get _value => super._value as BookmarkButtonPressed;
+  LikeButtonPressedEVT get _value => super._value as LikeButtonPressedEVT;
 }
 
-class _$BookmarkButtonPressed
+class _$LikeButtonPressedEVT
     with DiagnosticableTreeMixin
-    implements BookmarkButtonPressed {
-  const _$BookmarkButtonPressed();
+    implements LikeButtonPressedEVT {
+  const _$LikeButtonPressedEVT();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'ChapterDatabaseEvent.bookmarkButtonPressed()';
+    return 'ChapterDatabaseEvent.likeButtonPressedEVT()';
   }
 
   @override
@@ -602,12 +1808,12 @@ class _$BookmarkButtonPressed
     super.debugFillProperties(properties);
     properties
       ..add(DiagnosticsProperty(
-          'type', 'ChapterDatabaseEvent.bookmarkButtonPressed'));
+          'type', 'ChapterDatabaseEvent.likeButtonPressedEVT'));
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is BookmarkButtonPressed);
+    return identical(this, other) || (other is LikeButtonPressedEVT);
   }
 
   @override
@@ -616,42 +1822,68 @@ class _$BookmarkButtonPressed
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result chapterPageLaunched(Chapter chapter, BuildContext context),
-    @required Result previousChapterButtonPressed(),
-    @required Result likeButtonPressed(),
-    @required Result bookmarkButtonPressed(),
-    @required Result showOrHideNavbar(),
-    @required Result scroll(int currentScrollPosition, int maxScrollPosition),
-    @required Result toggleChapterAdditionalInfo(),
-    @required Result fetchNextChapters(),
+    @required Result bookmarkButtonPressedEVT(),
+    @required Result bookmarksUpdatedEVT(),
+    @required Result chapterBookmarkStatusLoadedEVT(),
+    @required Result chapterLikesLoadedEVT(),
+    @required Result chapterLikeStatusLoadedEVT(),
+    @required
+        Result chapterPageLaunchedEVT(Chapter chapter, BuildContext context),
+    @required Result chapterViewsLoadedEVT(),
+    @required Result chapterViewsUpdatedEVT(),
+    @required Result likeButtonPressedEVT(),
+    @required Result likesUpdatedEVT(),
+    @required Result loadNextChaptersEVT(),
+    @required Result previousChapterButtonPressedEVT(),
+    @required
+        Result scrollEVT(int currentScrollPosition, int maxScrollPosition),
+    @required Result sessionFetchedEVT(Session session),
+    @required Result showOrHideNavbarEVT(),
+    @required Result toggleChapterAdditionalInfoEVT(),
   }) {
-    assert(chapterPageLaunched != null);
-    assert(previousChapterButtonPressed != null);
-    assert(likeButtonPressed != null);
-    assert(bookmarkButtonPressed != null);
-    assert(showOrHideNavbar != null);
-    assert(scroll != null);
-    assert(toggleChapterAdditionalInfo != null);
-    assert(fetchNextChapters != null);
-    return bookmarkButtonPressed();
+    assert(bookmarkButtonPressedEVT != null);
+    assert(bookmarksUpdatedEVT != null);
+    assert(chapterBookmarkStatusLoadedEVT != null);
+    assert(chapterLikesLoadedEVT != null);
+    assert(chapterLikeStatusLoadedEVT != null);
+    assert(chapterPageLaunchedEVT != null);
+    assert(chapterViewsLoadedEVT != null);
+    assert(chapterViewsUpdatedEVT != null);
+    assert(likeButtonPressedEVT != null);
+    assert(likesUpdatedEVT != null);
+    assert(loadNextChaptersEVT != null);
+    assert(previousChapterButtonPressedEVT != null);
+    assert(scrollEVT != null);
+    assert(sessionFetchedEVT != null);
+    assert(showOrHideNavbarEVT != null);
+    assert(toggleChapterAdditionalInfoEVT != null);
+    return likeButtonPressedEVT();
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result chapterPageLaunched(Chapter chapter, BuildContext context),
-    Result previousChapterButtonPressed(),
-    Result likeButtonPressed(),
-    Result bookmarkButtonPressed(),
-    Result showOrHideNavbar(),
-    Result scroll(int currentScrollPosition, int maxScrollPosition),
-    Result toggleChapterAdditionalInfo(),
-    Result fetchNextChapters(),
+    Result bookmarkButtonPressedEVT(),
+    Result bookmarksUpdatedEVT(),
+    Result chapterBookmarkStatusLoadedEVT(),
+    Result chapterLikesLoadedEVT(),
+    Result chapterLikeStatusLoadedEVT(),
+    Result chapterPageLaunchedEVT(Chapter chapter, BuildContext context),
+    Result chapterViewsLoadedEVT(),
+    Result chapterViewsUpdatedEVT(),
+    Result likeButtonPressedEVT(),
+    Result likesUpdatedEVT(),
+    Result loadNextChaptersEVT(),
+    Result previousChapterButtonPressedEVT(),
+    Result scrollEVT(int currentScrollPosition, int maxScrollPosition),
+    Result sessionFetchedEVT(Session session),
+    Result showOrHideNavbarEVT(),
+    Result toggleChapterAdditionalInfoEVT(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (bookmarkButtonPressed != null) {
-      return bookmarkButtonPressed();
+    if (likeButtonPressedEVT != null) {
+      return likeButtonPressedEVT();
     }
     return orElse();
   }
@@ -659,78 +1891,108 @@ class _$BookmarkButtonPressed
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result chapterPageLaunched(ChapterPageLaunched value),
+    @required Result bookmarkButtonPressedEVT(BookmarkButtonPressedEVT value),
+    @required Result bookmarksUpdatedEVT(BookmarksUpdatedEVT value),
     @required
-        Result previousChapterButtonPressed(PreviousChapterButtonPressed value),
-    @required Result likeButtonPressed(LikeButtonPressed value),
-    @required Result bookmarkButtonPressed(BookmarkButtonPressed value),
-    @required Result showOrHideNavbar(ShowOrHideNavbar value),
-    @required Result scroll(Scroll value),
+        Result chapterBookmarkStatusLoadedEVT(
+            ChapterBookmarkStatusLoadedEVT value),
+    @required Result chapterLikesLoadedEVT(ChapterLikesLoadedEVT value),
     @required
-        Result toggleChapterAdditionalInfo(ToggleChapterAdditionalInfo value),
-    @required Result fetchNextChapters(FetchNextChapters value),
+        Result chapterLikeStatusLoadedEVT(ChapterLikeStatusLoadedEVT value),
+    @required Result chapterPageLaunchedEVT(ChapterPageLaunchedEVT value),
+    @required Result chapterViewsLoadedEVT(ChapterViewsLoadedEVT value),
+    @required Result chapterViewsUpdatedEVT(ChapterViewsUpdatedEVT value),
+    @required Result likeButtonPressedEVT(LikeButtonPressedEVT value),
+    @required Result likesUpdatedEVT(LikesUpdatedEVT value),
+    @required Result loadNextChaptersEVT(LoadNextChaptersEVT value),
+    @required
+        Result previousChapterButtonPressedEVT(
+            PreviousChapterButtonPressedEVT value),
+    @required Result scrollEVT(ScrollEVT value),
+    @required Result sessionFetchedEVT(SessionFetchedEVT value),
+    @required Result showOrHideNavbarEVT(ShowOrHideNavbarEVT value),
+    @required
+        Result toggleChapterAdditionalInfoEVT(
+            ToggleChapterAdditionalInfoEVT value),
   }) {
-    assert(chapterPageLaunched != null);
-    assert(previousChapterButtonPressed != null);
-    assert(likeButtonPressed != null);
-    assert(bookmarkButtonPressed != null);
-    assert(showOrHideNavbar != null);
-    assert(scroll != null);
-    assert(toggleChapterAdditionalInfo != null);
-    assert(fetchNextChapters != null);
-    return bookmarkButtonPressed(this);
+    assert(bookmarkButtonPressedEVT != null);
+    assert(bookmarksUpdatedEVT != null);
+    assert(chapterBookmarkStatusLoadedEVT != null);
+    assert(chapterLikesLoadedEVT != null);
+    assert(chapterLikeStatusLoadedEVT != null);
+    assert(chapterPageLaunchedEVT != null);
+    assert(chapterViewsLoadedEVT != null);
+    assert(chapterViewsUpdatedEVT != null);
+    assert(likeButtonPressedEVT != null);
+    assert(likesUpdatedEVT != null);
+    assert(loadNextChaptersEVT != null);
+    assert(previousChapterButtonPressedEVT != null);
+    assert(scrollEVT != null);
+    assert(sessionFetchedEVT != null);
+    assert(showOrHideNavbarEVT != null);
+    assert(toggleChapterAdditionalInfoEVT != null);
+    return likeButtonPressedEVT(this);
   }
 
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result chapterPageLaunched(ChapterPageLaunched value),
-    Result previousChapterButtonPressed(PreviousChapterButtonPressed value),
-    Result likeButtonPressed(LikeButtonPressed value),
-    Result bookmarkButtonPressed(BookmarkButtonPressed value),
-    Result showOrHideNavbar(ShowOrHideNavbar value),
-    Result scroll(Scroll value),
-    Result toggleChapterAdditionalInfo(ToggleChapterAdditionalInfo value),
-    Result fetchNextChapters(FetchNextChapters value),
+    Result bookmarkButtonPressedEVT(BookmarkButtonPressedEVT value),
+    Result bookmarksUpdatedEVT(BookmarksUpdatedEVT value),
+    Result chapterBookmarkStatusLoadedEVT(ChapterBookmarkStatusLoadedEVT value),
+    Result chapterLikesLoadedEVT(ChapterLikesLoadedEVT value),
+    Result chapterLikeStatusLoadedEVT(ChapterLikeStatusLoadedEVT value),
+    Result chapterPageLaunchedEVT(ChapterPageLaunchedEVT value),
+    Result chapterViewsLoadedEVT(ChapterViewsLoadedEVT value),
+    Result chapterViewsUpdatedEVT(ChapterViewsUpdatedEVT value),
+    Result likeButtonPressedEVT(LikeButtonPressedEVT value),
+    Result likesUpdatedEVT(LikesUpdatedEVT value),
+    Result loadNextChaptersEVT(LoadNextChaptersEVT value),
+    Result previousChapterButtonPressedEVT(
+        PreviousChapterButtonPressedEVT value),
+    Result scrollEVT(ScrollEVT value),
+    Result sessionFetchedEVT(SessionFetchedEVT value),
+    Result showOrHideNavbarEVT(ShowOrHideNavbarEVT value),
+    Result toggleChapterAdditionalInfoEVT(ToggleChapterAdditionalInfoEVT value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (bookmarkButtonPressed != null) {
-      return bookmarkButtonPressed(this);
+    if (likeButtonPressedEVT != null) {
+      return likeButtonPressedEVT(this);
     }
     return orElse();
   }
 }
 
-abstract class BookmarkButtonPressed implements ChapterDatabaseEvent {
-  const factory BookmarkButtonPressed() = _$BookmarkButtonPressed;
+abstract class LikeButtonPressedEVT implements ChapterDatabaseEvent {
+  const factory LikeButtonPressedEVT() = _$LikeButtonPressedEVT;
 }
 
-abstract class $ShowOrHideNavbarCopyWith<$Res> {
-  factory $ShowOrHideNavbarCopyWith(
-          ShowOrHideNavbar value, $Res Function(ShowOrHideNavbar) then) =
-      _$ShowOrHideNavbarCopyWithImpl<$Res>;
+abstract class $LikesUpdatedEVTCopyWith<$Res> {
+  factory $LikesUpdatedEVTCopyWith(
+          LikesUpdatedEVT value, $Res Function(LikesUpdatedEVT) then) =
+      _$LikesUpdatedEVTCopyWithImpl<$Res>;
 }
 
-class _$ShowOrHideNavbarCopyWithImpl<$Res>
+class _$LikesUpdatedEVTCopyWithImpl<$Res>
     extends _$ChapterDatabaseEventCopyWithImpl<$Res>
-    implements $ShowOrHideNavbarCopyWith<$Res> {
-  _$ShowOrHideNavbarCopyWithImpl(
-      ShowOrHideNavbar _value, $Res Function(ShowOrHideNavbar) _then)
-      : super(_value, (v) => _then(v as ShowOrHideNavbar));
+    implements $LikesUpdatedEVTCopyWith<$Res> {
+  _$LikesUpdatedEVTCopyWithImpl(
+      LikesUpdatedEVT _value, $Res Function(LikesUpdatedEVT) _then)
+      : super(_value, (v) => _then(v as LikesUpdatedEVT));
 
   @override
-  ShowOrHideNavbar get _value => super._value as ShowOrHideNavbar;
+  LikesUpdatedEVT get _value => super._value as LikesUpdatedEVT;
 }
 
-class _$ShowOrHideNavbar
+class _$LikesUpdatedEVT
     with DiagnosticableTreeMixin
-    implements ShowOrHideNavbar {
-  const _$ShowOrHideNavbar();
+    implements LikesUpdatedEVT {
+  const _$LikesUpdatedEVT();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'ChapterDatabaseEvent.showOrHideNavbar()';
+    return 'ChapterDatabaseEvent.likesUpdatedEVT()';
   }
 
   @override
@@ -738,12 +2000,12 @@ class _$ShowOrHideNavbar
     super.debugFillProperties(properties);
     properties
       ..add(
-          DiagnosticsProperty('type', 'ChapterDatabaseEvent.showOrHideNavbar'));
+          DiagnosticsProperty('type', 'ChapterDatabaseEvent.likesUpdatedEVT'));
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is ShowOrHideNavbar);
+    return identical(this, other) || (other is LikesUpdatedEVT);
   }
 
   @override
@@ -752,42 +2014,68 @@ class _$ShowOrHideNavbar
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result chapterPageLaunched(Chapter chapter, BuildContext context),
-    @required Result previousChapterButtonPressed(),
-    @required Result likeButtonPressed(),
-    @required Result bookmarkButtonPressed(),
-    @required Result showOrHideNavbar(),
-    @required Result scroll(int currentScrollPosition, int maxScrollPosition),
-    @required Result toggleChapterAdditionalInfo(),
-    @required Result fetchNextChapters(),
+    @required Result bookmarkButtonPressedEVT(),
+    @required Result bookmarksUpdatedEVT(),
+    @required Result chapterBookmarkStatusLoadedEVT(),
+    @required Result chapterLikesLoadedEVT(),
+    @required Result chapterLikeStatusLoadedEVT(),
+    @required
+        Result chapterPageLaunchedEVT(Chapter chapter, BuildContext context),
+    @required Result chapterViewsLoadedEVT(),
+    @required Result chapterViewsUpdatedEVT(),
+    @required Result likeButtonPressedEVT(),
+    @required Result likesUpdatedEVT(),
+    @required Result loadNextChaptersEVT(),
+    @required Result previousChapterButtonPressedEVT(),
+    @required
+        Result scrollEVT(int currentScrollPosition, int maxScrollPosition),
+    @required Result sessionFetchedEVT(Session session),
+    @required Result showOrHideNavbarEVT(),
+    @required Result toggleChapterAdditionalInfoEVT(),
   }) {
-    assert(chapterPageLaunched != null);
-    assert(previousChapterButtonPressed != null);
-    assert(likeButtonPressed != null);
-    assert(bookmarkButtonPressed != null);
-    assert(showOrHideNavbar != null);
-    assert(scroll != null);
-    assert(toggleChapterAdditionalInfo != null);
-    assert(fetchNextChapters != null);
-    return showOrHideNavbar();
+    assert(bookmarkButtonPressedEVT != null);
+    assert(bookmarksUpdatedEVT != null);
+    assert(chapterBookmarkStatusLoadedEVT != null);
+    assert(chapterLikesLoadedEVT != null);
+    assert(chapterLikeStatusLoadedEVT != null);
+    assert(chapterPageLaunchedEVT != null);
+    assert(chapterViewsLoadedEVT != null);
+    assert(chapterViewsUpdatedEVT != null);
+    assert(likeButtonPressedEVT != null);
+    assert(likesUpdatedEVT != null);
+    assert(loadNextChaptersEVT != null);
+    assert(previousChapterButtonPressedEVT != null);
+    assert(scrollEVT != null);
+    assert(sessionFetchedEVT != null);
+    assert(showOrHideNavbarEVT != null);
+    assert(toggleChapterAdditionalInfoEVT != null);
+    return likesUpdatedEVT();
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result chapterPageLaunched(Chapter chapter, BuildContext context),
-    Result previousChapterButtonPressed(),
-    Result likeButtonPressed(),
-    Result bookmarkButtonPressed(),
-    Result showOrHideNavbar(),
-    Result scroll(int currentScrollPosition, int maxScrollPosition),
-    Result toggleChapterAdditionalInfo(),
-    Result fetchNextChapters(),
+    Result bookmarkButtonPressedEVT(),
+    Result bookmarksUpdatedEVT(),
+    Result chapterBookmarkStatusLoadedEVT(),
+    Result chapterLikesLoadedEVT(),
+    Result chapterLikeStatusLoadedEVT(),
+    Result chapterPageLaunchedEVT(Chapter chapter, BuildContext context),
+    Result chapterViewsLoadedEVT(),
+    Result chapterViewsUpdatedEVT(),
+    Result likeButtonPressedEVT(),
+    Result likesUpdatedEVT(),
+    Result loadNextChaptersEVT(),
+    Result previousChapterButtonPressedEVT(),
+    Result scrollEVT(int currentScrollPosition, int maxScrollPosition),
+    Result sessionFetchedEVT(Session session),
+    Result showOrHideNavbarEVT(),
+    Result toggleChapterAdditionalInfoEVT(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (showOrHideNavbar != null) {
-      return showOrHideNavbar();
+    if (likesUpdatedEVT != null) {
+      return likesUpdatedEVT();
     }
     return orElse();
   }
@@ -795,74 +2083,492 @@ class _$ShowOrHideNavbar
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result chapterPageLaunched(ChapterPageLaunched value),
+    @required Result bookmarkButtonPressedEVT(BookmarkButtonPressedEVT value),
+    @required Result bookmarksUpdatedEVT(BookmarksUpdatedEVT value),
     @required
-        Result previousChapterButtonPressed(PreviousChapterButtonPressed value),
-    @required Result likeButtonPressed(LikeButtonPressed value),
-    @required Result bookmarkButtonPressed(BookmarkButtonPressed value),
-    @required Result showOrHideNavbar(ShowOrHideNavbar value),
-    @required Result scroll(Scroll value),
+        Result chapterBookmarkStatusLoadedEVT(
+            ChapterBookmarkStatusLoadedEVT value),
+    @required Result chapterLikesLoadedEVT(ChapterLikesLoadedEVT value),
     @required
-        Result toggleChapterAdditionalInfo(ToggleChapterAdditionalInfo value),
-    @required Result fetchNextChapters(FetchNextChapters value),
+        Result chapterLikeStatusLoadedEVT(ChapterLikeStatusLoadedEVT value),
+    @required Result chapterPageLaunchedEVT(ChapterPageLaunchedEVT value),
+    @required Result chapterViewsLoadedEVT(ChapterViewsLoadedEVT value),
+    @required Result chapterViewsUpdatedEVT(ChapterViewsUpdatedEVT value),
+    @required Result likeButtonPressedEVT(LikeButtonPressedEVT value),
+    @required Result likesUpdatedEVT(LikesUpdatedEVT value),
+    @required Result loadNextChaptersEVT(LoadNextChaptersEVT value),
+    @required
+        Result previousChapterButtonPressedEVT(
+            PreviousChapterButtonPressedEVT value),
+    @required Result scrollEVT(ScrollEVT value),
+    @required Result sessionFetchedEVT(SessionFetchedEVT value),
+    @required Result showOrHideNavbarEVT(ShowOrHideNavbarEVT value),
+    @required
+        Result toggleChapterAdditionalInfoEVT(
+            ToggleChapterAdditionalInfoEVT value),
   }) {
-    assert(chapterPageLaunched != null);
-    assert(previousChapterButtonPressed != null);
-    assert(likeButtonPressed != null);
-    assert(bookmarkButtonPressed != null);
-    assert(showOrHideNavbar != null);
-    assert(scroll != null);
-    assert(toggleChapterAdditionalInfo != null);
-    assert(fetchNextChapters != null);
-    return showOrHideNavbar(this);
+    assert(bookmarkButtonPressedEVT != null);
+    assert(bookmarksUpdatedEVT != null);
+    assert(chapterBookmarkStatusLoadedEVT != null);
+    assert(chapterLikesLoadedEVT != null);
+    assert(chapterLikeStatusLoadedEVT != null);
+    assert(chapterPageLaunchedEVT != null);
+    assert(chapterViewsLoadedEVT != null);
+    assert(chapterViewsUpdatedEVT != null);
+    assert(likeButtonPressedEVT != null);
+    assert(likesUpdatedEVT != null);
+    assert(loadNextChaptersEVT != null);
+    assert(previousChapterButtonPressedEVT != null);
+    assert(scrollEVT != null);
+    assert(sessionFetchedEVT != null);
+    assert(showOrHideNavbarEVT != null);
+    assert(toggleChapterAdditionalInfoEVT != null);
+    return likesUpdatedEVT(this);
   }
 
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result chapterPageLaunched(ChapterPageLaunched value),
-    Result previousChapterButtonPressed(PreviousChapterButtonPressed value),
-    Result likeButtonPressed(LikeButtonPressed value),
-    Result bookmarkButtonPressed(BookmarkButtonPressed value),
-    Result showOrHideNavbar(ShowOrHideNavbar value),
-    Result scroll(Scroll value),
-    Result toggleChapterAdditionalInfo(ToggleChapterAdditionalInfo value),
-    Result fetchNextChapters(FetchNextChapters value),
+    Result bookmarkButtonPressedEVT(BookmarkButtonPressedEVT value),
+    Result bookmarksUpdatedEVT(BookmarksUpdatedEVT value),
+    Result chapterBookmarkStatusLoadedEVT(ChapterBookmarkStatusLoadedEVT value),
+    Result chapterLikesLoadedEVT(ChapterLikesLoadedEVT value),
+    Result chapterLikeStatusLoadedEVT(ChapterLikeStatusLoadedEVT value),
+    Result chapterPageLaunchedEVT(ChapterPageLaunchedEVT value),
+    Result chapterViewsLoadedEVT(ChapterViewsLoadedEVT value),
+    Result chapterViewsUpdatedEVT(ChapterViewsUpdatedEVT value),
+    Result likeButtonPressedEVT(LikeButtonPressedEVT value),
+    Result likesUpdatedEVT(LikesUpdatedEVT value),
+    Result loadNextChaptersEVT(LoadNextChaptersEVT value),
+    Result previousChapterButtonPressedEVT(
+        PreviousChapterButtonPressedEVT value),
+    Result scrollEVT(ScrollEVT value),
+    Result sessionFetchedEVT(SessionFetchedEVT value),
+    Result showOrHideNavbarEVT(ShowOrHideNavbarEVT value),
+    Result toggleChapterAdditionalInfoEVT(ToggleChapterAdditionalInfoEVT value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (showOrHideNavbar != null) {
-      return showOrHideNavbar(this);
+    if (likesUpdatedEVT != null) {
+      return likesUpdatedEVT(this);
     }
     return orElse();
   }
 }
 
-abstract class ShowOrHideNavbar implements ChapterDatabaseEvent {
-  const factory ShowOrHideNavbar() = _$ShowOrHideNavbar;
+abstract class LikesUpdatedEVT implements ChapterDatabaseEvent {
+  const factory LikesUpdatedEVT() = _$LikesUpdatedEVT;
 }
 
-abstract class $ScrollCopyWith<$Res> {
-  factory $ScrollCopyWith(Scroll value, $Res Function(Scroll) then) =
-      _$ScrollCopyWithImpl<$Res>;
+abstract class $LoadNextChaptersEVTCopyWith<$Res> {
+  factory $LoadNextChaptersEVTCopyWith(
+          LoadNextChaptersEVT value, $Res Function(LoadNextChaptersEVT) then) =
+      _$LoadNextChaptersEVTCopyWithImpl<$Res>;
+}
+
+class _$LoadNextChaptersEVTCopyWithImpl<$Res>
+    extends _$ChapterDatabaseEventCopyWithImpl<$Res>
+    implements $LoadNextChaptersEVTCopyWith<$Res> {
+  _$LoadNextChaptersEVTCopyWithImpl(
+      LoadNextChaptersEVT _value, $Res Function(LoadNextChaptersEVT) _then)
+      : super(_value, (v) => _then(v as LoadNextChaptersEVT));
+
+  @override
+  LoadNextChaptersEVT get _value => super._value as LoadNextChaptersEVT;
+}
+
+class _$LoadNextChaptersEVT
+    with DiagnosticableTreeMixin
+    implements LoadNextChaptersEVT {
+  const _$LoadNextChaptersEVT();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'ChapterDatabaseEvent.loadNextChaptersEVT()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty(
+          'type', 'ChapterDatabaseEvent.loadNextChaptersEVT'));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is LoadNextChaptersEVT);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result bookmarkButtonPressedEVT(),
+    @required Result bookmarksUpdatedEVT(),
+    @required Result chapterBookmarkStatusLoadedEVT(),
+    @required Result chapterLikesLoadedEVT(),
+    @required Result chapterLikeStatusLoadedEVT(),
+    @required
+        Result chapterPageLaunchedEVT(Chapter chapter, BuildContext context),
+    @required Result chapterViewsLoadedEVT(),
+    @required Result chapterViewsUpdatedEVT(),
+    @required Result likeButtonPressedEVT(),
+    @required Result likesUpdatedEVT(),
+    @required Result loadNextChaptersEVT(),
+    @required Result previousChapterButtonPressedEVT(),
+    @required
+        Result scrollEVT(int currentScrollPosition, int maxScrollPosition),
+    @required Result sessionFetchedEVT(Session session),
+    @required Result showOrHideNavbarEVT(),
+    @required Result toggleChapterAdditionalInfoEVT(),
+  }) {
+    assert(bookmarkButtonPressedEVT != null);
+    assert(bookmarksUpdatedEVT != null);
+    assert(chapterBookmarkStatusLoadedEVT != null);
+    assert(chapterLikesLoadedEVT != null);
+    assert(chapterLikeStatusLoadedEVT != null);
+    assert(chapterPageLaunchedEVT != null);
+    assert(chapterViewsLoadedEVT != null);
+    assert(chapterViewsUpdatedEVT != null);
+    assert(likeButtonPressedEVT != null);
+    assert(likesUpdatedEVT != null);
+    assert(loadNextChaptersEVT != null);
+    assert(previousChapterButtonPressedEVT != null);
+    assert(scrollEVT != null);
+    assert(sessionFetchedEVT != null);
+    assert(showOrHideNavbarEVT != null);
+    assert(toggleChapterAdditionalInfoEVT != null);
+    return loadNextChaptersEVT();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result bookmarkButtonPressedEVT(),
+    Result bookmarksUpdatedEVT(),
+    Result chapterBookmarkStatusLoadedEVT(),
+    Result chapterLikesLoadedEVT(),
+    Result chapterLikeStatusLoadedEVT(),
+    Result chapterPageLaunchedEVT(Chapter chapter, BuildContext context),
+    Result chapterViewsLoadedEVT(),
+    Result chapterViewsUpdatedEVT(),
+    Result likeButtonPressedEVT(),
+    Result likesUpdatedEVT(),
+    Result loadNextChaptersEVT(),
+    Result previousChapterButtonPressedEVT(),
+    Result scrollEVT(int currentScrollPosition, int maxScrollPosition),
+    Result sessionFetchedEVT(Session session),
+    Result showOrHideNavbarEVT(),
+    Result toggleChapterAdditionalInfoEVT(),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (loadNextChaptersEVT != null) {
+      return loadNextChaptersEVT();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result bookmarkButtonPressedEVT(BookmarkButtonPressedEVT value),
+    @required Result bookmarksUpdatedEVT(BookmarksUpdatedEVT value),
+    @required
+        Result chapterBookmarkStatusLoadedEVT(
+            ChapterBookmarkStatusLoadedEVT value),
+    @required Result chapterLikesLoadedEVT(ChapterLikesLoadedEVT value),
+    @required
+        Result chapterLikeStatusLoadedEVT(ChapterLikeStatusLoadedEVT value),
+    @required Result chapterPageLaunchedEVT(ChapterPageLaunchedEVT value),
+    @required Result chapterViewsLoadedEVT(ChapterViewsLoadedEVT value),
+    @required Result chapterViewsUpdatedEVT(ChapterViewsUpdatedEVT value),
+    @required Result likeButtonPressedEVT(LikeButtonPressedEVT value),
+    @required Result likesUpdatedEVT(LikesUpdatedEVT value),
+    @required Result loadNextChaptersEVT(LoadNextChaptersEVT value),
+    @required
+        Result previousChapterButtonPressedEVT(
+            PreviousChapterButtonPressedEVT value),
+    @required Result scrollEVT(ScrollEVT value),
+    @required Result sessionFetchedEVT(SessionFetchedEVT value),
+    @required Result showOrHideNavbarEVT(ShowOrHideNavbarEVT value),
+    @required
+        Result toggleChapterAdditionalInfoEVT(
+            ToggleChapterAdditionalInfoEVT value),
+  }) {
+    assert(bookmarkButtonPressedEVT != null);
+    assert(bookmarksUpdatedEVT != null);
+    assert(chapterBookmarkStatusLoadedEVT != null);
+    assert(chapterLikesLoadedEVT != null);
+    assert(chapterLikeStatusLoadedEVT != null);
+    assert(chapterPageLaunchedEVT != null);
+    assert(chapterViewsLoadedEVT != null);
+    assert(chapterViewsUpdatedEVT != null);
+    assert(likeButtonPressedEVT != null);
+    assert(likesUpdatedEVT != null);
+    assert(loadNextChaptersEVT != null);
+    assert(previousChapterButtonPressedEVT != null);
+    assert(scrollEVT != null);
+    assert(sessionFetchedEVT != null);
+    assert(showOrHideNavbarEVT != null);
+    assert(toggleChapterAdditionalInfoEVT != null);
+    return loadNextChaptersEVT(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result bookmarkButtonPressedEVT(BookmarkButtonPressedEVT value),
+    Result bookmarksUpdatedEVT(BookmarksUpdatedEVT value),
+    Result chapterBookmarkStatusLoadedEVT(ChapterBookmarkStatusLoadedEVT value),
+    Result chapterLikesLoadedEVT(ChapterLikesLoadedEVT value),
+    Result chapterLikeStatusLoadedEVT(ChapterLikeStatusLoadedEVT value),
+    Result chapterPageLaunchedEVT(ChapterPageLaunchedEVT value),
+    Result chapterViewsLoadedEVT(ChapterViewsLoadedEVT value),
+    Result chapterViewsUpdatedEVT(ChapterViewsUpdatedEVT value),
+    Result likeButtonPressedEVT(LikeButtonPressedEVT value),
+    Result likesUpdatedEVT(LikesUpdatedEVT value),
+    Result loadNextChaptersEVT(LoadNextChaptersEVT value),
+    Result previousChapterButtonPressedEVT(
+        PreviousChapterButtonPressedEVT value),
+    Result scrollEVT(ScrollEVT value),
+    Result sessionFetchedEVT(SessionFetchedEVT value),
+    Result showOrHideNavbarEVT(ShowOrHideNavbarEVT value),
+    Result toggleChapterAdditionalInfoEVT(ToggleChapterAdditionalInfoEVT value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (loadNextChaptersEVT != null) {
+      return loadNextChaptersEVT(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class LoadNextChaptersEVT implements ChapterDatabaseEvent {
+  const factory LoadNextChaptersEVT() = _$LoadNextChaptersEVT;
+}
+
+abstract class $PreviousChapterButtonPressedEVTCopyWith<$Res> {
+  factory $PreviousChapterButtonPressedEVTCopyWith(
+          PreviousChapterButtonPressedEVT value,
+          $Res Function(PreviousChapterButtonPressedEVT) then) =
+      _$PreviousChapterButtonPressedEVTCopyWithImpl<$Res>;
+}
+
+class _$PreviousChapterButtonPressedEVTCopyWithImpl<$Res>
+    extends _$ChapterDatabaseEventCopyWithImpl<$Res>
+    implements $PreviousChapterButtonPressedEVTCopyWith<$Res> {
+  _$PreviousChapterButtonPressedEVTCopyWithImpl(
+      PreviousChapterButtonPressedEVT _value,
+      $Res Function(PreviousChapterButtonPressedEVT) _then)
+      : super(_value, (v) => _then(v as PreviousChapterButtonPressedEVT));
+
+  @override
+  PreviousChapterButtonPressedEVT get _value =>
+      super._value as PreviousChapterButtonPressedEVT;
+}
+
+class _$PreviousChapterButtonPressedEVT
+    with DiagnosticableTreeMixin
+    implements PreviousChapterButtonPressedEVT {
+  const _$PreviousChapterButtonPressedEVT();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'ChapterDatabaseEvent.previousChapterButtonPressedEVT()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty(
+          'type', 'ChapterDatabaseEvent.previousChapterButtonPressedEVT'));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is PreviousChapterButtonPressedEVT);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result bookmarkButtonPressedEVT(),
+    @required Result bookmarksUpdatedEVT(),
+    @required Result chapterBookmarkStatusLoadedEVT(),
+    @required Result chapterLikesLoadedEVT(),
+    @required Result chapterLikeStatusLoadedEVT(),
+    @required
+        Result chapterPageLaunchedEVT(Chapter chapter, BuildContext context),
+    @required Result chapterViewsLoadedEVT(),
+    @required Result chapterViewsUpdatedEVT(),
+    @required Result likeButtonPressedEVT(),
+    @required Result likesUpdatedEVT(),
+    @required Result loadNextChaptersEVT(),
+    @required Result previousChapterButtonPressedEVT(),
+    @required
+        Result scrollEVT(int currentScrollPosition, int maxScrollPosition),
+    @required Result sessionFetchedEVT(Session session),
+    @required Result showOrHideNavbarEVT(),
+    @required Result toggleChapterAdditionalInfoEVT(),
+  }) {
+    assert(bookmarkButtonPressedEVT != null);
+    assert(bookmarksUpdatedEVT != null);
+    assert(chapterBookmarkStatusLoadedEVT != null);
+    assert(chapterLikesLoadedEVT != null);
+    assert(chapterLikeStatusLoadedEVT != null);
+    assert(chapterPageLaunchedEVT != null);
+    assert(chapterViewsLoadedEVT != null);
+    assert(chapterViewsUpdatedEVT != null);
+    assert(likeButtonPressedEVT != null);
+    assert(likesUpdatedEVT != null);
+    assert(loadNextChaptersEVT != null);
+    assert(previousChapterButtonPressedEVT != null);
+    assert(scrollEVT != null);
+    assert(sessionFetchedEVT != null);
+    assert(showOrHideNavbarEVT != null);
+    assert(toggleChapterAdditionalInfoEVT != null);
+    return previousChapterButtonPressedEVT();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result bookmarkButtonPressedEVT(),
+    Result bookmarksUpdatedEVT(),
+    Result chapterBookmarkStatusLoadedEVT(),
+    Result chapterLikesLoadedEVT(),
+    Result chapterLikeStatusLoadedEVT(),
+    Result chapterPageLaunchedEVT(Chapter chapter, BuildContext context),
+    Result chapterViewsLoadedEVT(),
+    Result chapterViewsUpdatedEVT(),
+    Result likeButtonPressedEVT(),
+    Result likesUpdatedEVT(),
+    Result loadNextChaptersEVT(),
+    Result previousChapterButtonPressedEVT(),
+    Result scrollEVT(int currentScrollPosition, int maxScrollPosition),
+    Result sessionFetchedEVT(Session session),
+    Result showOrHideNavbarEVT(),
+    Result toggleChapterAdditionalInfoEVT(),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (previousChapterButtonPressedEVT != null) {
+      return previousChapterButtonPressedEVT();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result bookmarkButtonPressedEVT(BookmarkButtonPressedEVT value),
+    @required Result bookmarksUpdatedEVT(BookmarksUpdatedEVT value),
+    @required
+        Result chapterBookmarkStatusLoadedEVT(
+            ChapterBookmarkStatusLoadedEVT value),
+    @required Result chapterLikesLoadedEVT(ChapterLikesLoadedEVT value),
+    @required
+        Result chapterLikeStatusLoadedEVT(ChapterLikeStatusLoadedEVT value),
+    @required Result chapterPageLaunchedEVT(ChapterPageLaunchedEVT value),
+    @required Result chapterViewsLoadedEVT(ChapterViewsLoadedEVT value),
+    @required Result chapterViewsUpdatedEVT(ChapterViewsUpdatedEVT value),
+    @required Result likeButtonPressedEVT(LikeButtonPressedEVT value),
+    @required Result likesUpdatedEVT(LikesUpdatedEVT value),
+    @required Result loadNextChaptersEVT(LoadNextChaptersEVT value),
+    @required
+        Result previousChapterButtonPressedEVT(
+            PreviousChapterButtonPressedEVT value),
+    @required Result scrollEVT(ScrollEVT value),
+    @required Result sessionFetchedEVT(SessionFetchedEVT value),
+    @required Result showOrHideNavbarEVT(ShowOrHideNavbarEVT value),
+    @required
+        Result toggleChapterAdditionalInfoEVT(
+            ToggleChapterAdditionalInfoEVT value),
+  }) {
+    assert(bookmarkButtonPressedEVT != null);
+    assert(bookmarksUpdatedEVT != null);
+    assert(chapterBookmarkStatusLoadedEVT != null);
+    assert(chapterLikesLoadedEVT != null);
+    assert(chapterLikeStatusLoadedEVT != null);
+    assert(chapterPageLaunchedEVT != null);
+    assert(chapterViewsLoadedEVT != null);
+    assert(chapterViewsUpdatedEVT != null);
+    assert(likeButtonPressedEVT != null);
+    assert(likesUpdatedEVT != null);
+    assert(loadNextChaptersEVT != null);
+    assert(previousChapterButtonPressedEVT != null);
+    assert(scrollEVT != null);
+    assert(sessionFetchedEVT != null);
+    assert(showOrHideNavbarEVT != null);
+    assert(toggleChapterAdditionalInfoEVT != null);
+    return previousChapterButtonPressedEVT(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result bookmarkButtonPressedEVT(BookmarkButtonPressedEVT value),
+    Result bookmarksUpdatedEVT(BookmarksUpdatedEVT value),
+    Result chapterBookmarkStatusLoadedEVT(ChapterBookmarkStatusLoadedEVT value),
+    Result chapterLikesLoadedEVT(ChapterLikesLoadedEVT value),
+    Result chapterLikeStatusLoadedEVT(ChapterLikeStatusLoadedEVT value),
+    Result chapterPageLaunchedEVT(ChapterPageLaunchedEVT value),
+    Result chapterViewsLoadedEVT(ChapterViewsLoadedEVT value),
+    Result chapterViewsUpdatedEVT(ChapterViewsUpdatedEVT value),
+    Result likeButtonPressedEVT(LikeButtonPressedEVT value),
+    Result likesUpdatedEVT(LikesUpdatedEVT value),
+    Result loadNextChaptersEVT(LoadNextChaptersEVT value),
+    Result previousChapterButtonPressedEVT(
+        PreviousChapterButtonPressedEVT value),
+    Result scrollEVT(ScrollEVT value),
+    Result sessionFetchedEVT(SessionFetchedEVT value),
+    Result showOrHideNavbarEVT(ShowOrHideNavbarEVT value),
+    Result toggleChapterAdditionalInfoEVT(ToggleChapterAdditionalInfoEVT value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (previousChapterButtonPressedEVT != null) {
+      return previousChapterButtonPressedEVT(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class PreviousChapterButtonPressedEVT implements ChapterDatabaseEvent {
+  const factory PreviousChapterButtonPressedEVT() =
+      _$PreviousChapterButtonPressedEVT;
+}
+
+abstract class $ScrollEVTCopyWith<$Res> {
+  factory $ScrollEVTCopyWith(ScrollEVT value, $Res Function(ScrollEVT) then) =
+      _$ScrollEVTCopyWithImpl<$Res>;
   $Res call({int currentScrollPosition, int maxScrollPosition});
 }
 
-class _$ScrollCopyWithImpl<$Res>
+class _$ScrollEVTCopyWithImpl<$Res>
     extends _$ChapterDatabaseEventCopyWithImpl<$Res>
-    implements $ScrollCopyWith<$Res> {
-  _$ScrollCopyWithImpl(Scroll _value, $Res Function(Scroll) _then)
-      : super(_value, (v) => _then(v as Scroll));
+    implements $ScrollEVTCopyWith<$Res> {
+  _$ScrollEVTCopyWithImpl(ScrollEVT _value, $Res Function(ScrollEVT) _then)
+      : super(_value, (v) => _then(v as ScrollEVT));
 
   @override
-  Scroll get _value => super._value as Scroll;
+  ScrollEVT get _value => super._value as ScrollEVT;
 
   @override
   $Res call({
     Object currentScrollPosition = freezed,
     Object maxScrollPosition = freezed,
   }) {
-    return _then(Scroll(
+    return _then(ScrollEVT(
       currentScrollPosition: currentScrollPosition == freezed
           ? _value.currentScrollPosition
           : currentScrollPosition as int,
@@ -873,8 +2579,8 @@ class _$ScrollCopyWithImpl<$Res>
   }
 }
 
-class _$Scroll with DiagnosticableTreeMixin implements Scroll {
-  const _$Scroll(
+class _$ScrollEVT with DiagnosticableTreeMixin implements ScrollEVT {
+  const _$ScrollEVT(
       {@required this.currentScrollPosition, @required this.maxScrollPosition})
       : assert(currentScrollPosition != null),
         assert(maxScrollPosition != null);
@@ -886,14 +2592,14 @@ class _$Scroll with DiagnosticableTreeMixin implements Scroll {
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'ChapterDatabaseEvent.scroll(currentScrollPosition: $currentScrollPosition, maxScrollPosition: $maxScrollPosition)';
+    return 'ChapterDatabaseEvent.scrollEVT(currentScrollPosition: $currentScrollPosition, maxScrollPosition: $maxScrollPosition)';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
-      ..add(DiagnosticsProperty('type', 'ChapterDatabaseEvent.scroll'))
+      ..add(DiagnosticsProperty('type', 'ChapterDatabaseEvent.scrollEVT'))
       ..add(DiagnosticsProperty('currentScrollPosition', currentScrollPosition))
       ..add(DiagnosticsProperty('maxScrollPosition', maxScrollPosition));
   }
@@ -901,7 +2607,7 @@ class _$Scroll with DiagnosticableTreeMixin implements Scroll {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is Scroll &&
+        (other is ScrollEVT &&
             (identical(other.currentScrollPosition, currentScrollPosition) ||
                 const DeepCollectionEquality().equals(
                     other.currentScrollPosition, currentScrollPosition)) &&
@@ -917,48 +2623,74 @@ class _$Scroll with DiagnosticableTreeMixin implements Scroll {
       const DeepCollectionEquality().hash(maxScrollPosition);
 
   @override
-  $ScrollCopyWith<Scroll> get copyWith =>
-      _$ScrollCopyWithImpl<Scroll>(this, _$identity);
+  $ScrollEVTCopyWith<ScrollEVT> get copyWith =>
+      _$ScrollEVTCopyWithImpl<ScrollEVT>(this, _$identity);
 
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result chapterPageLaunched(Chapter chapter, BuildContext context),
-    @required Result previousChapterButtonPressed(),
-    @required Result likeButtonPressed(),
-    @required Result bookmarkButtonPressed(),
-    @required Result showOrHideNavbar(),
-    @required Result scroll(int currentScrollPosition, int maxScrollPosition),
-    @required Result toggleChapterAdditionalInfo(),
-    @required Result fetchNextChapters(),
+    @required Result bookmarkButtonPressedEVT(),
+    @required Result bookmarksUpdatedEVT(),
+    @required Result chapterBookmarkStatusLoadedEVT(),
+    @required Result chapterLikesLoadedEVT(),
+    @required Result chapterLikeStatusLoadedEVT(),
+    @required
+        Result chapterPageLaunchedEVT(Chapter chapter, BuildContext context),
+    @required Result chapterViewsLoadedEVT(),
+    @required Result chapterViewsUpdatedEVT(),
+    @required Result likeButtonPressedEVT(),
+    @required Result likesUpdatedEVT(),
+    @required Result loadNextChaptersEVT(),
+    @required Result previousChapterButtonPressedEVT(),
+    @required
+        Result scrollEVT(int currentScrollPosition, int maxScrollPosition),
+    @required Result sessionFetchedEVT(Session session),
+    @required Result showOrHideNavbarEVT(),
+    @required Result toggleChapterAdditionalInfoEVT(),
   }) {
-    assert(chapterPageLaunched != null);
-    assert(previousChapterButtonPressed != null);
-    assert(likeButtonPressed != null);
-    assert(bookmarkButtonPressed != null);
-    assert(showOrHideNavbar != null);
-    assert(scroll != null);
-    assert(toggleChapterAdditionalInfo != null);
-    assert(fetchNextChapters != null);
-    return scroll(currentScrollPosition, maxScrollPosition);
+    assert(bookmarkButtonPressedEVT != null);
+    assert(bookmarksUpdatedEVT != null);
+    assert(chapterBookmarkStatusLoadedEVT != null);
+    assert(chapterLikesLoadedEVT != null);
+    assert(chapterLikeStatusLoadedEVT != null);
+    assert(chapterPageLaunchedEVT != null);
+    assert(chapterViewsLoadedEVT != null);
+    assert(chapterViewsUpdatedEVT != null);
+    assert(likeButtonPressedEVT != null);
+    assert(likesUpdatedEVT != null);
+    assert(loadNextChaptersEVT != null);
+    assert(previousChapterButtonPressedEVT != null);
+    assert(scrollEVT != null);
+    assert(sessionFetchedEVT != null);
+    assert(showOrHideNavbarEVT != null);
+    assert(toggleChapterAdditionalInfoEVT != null);
+    return scrollEVT(currentScrollPosition, maxScrollPosition);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result chapterPageLaunched(Chapter chapter, BuildContext context),
-    Result previousChapterButtonPressed(),
-    Result likeButtonPressed(),
-    Result bookmarkButtonPressed(),
-    Result showOrHideNavbar(),
-    Result scroll(int currentScrollPosition, int maxScrollPosition),
-    Result toggleChapterAdditionalInfo(),
-    Result fetchNextChapters(),
+    Result bookmarkButtonPressedEVT(),
+    Result bookmarksUpdatedEVT(),
+    Result chapterBookmarkStatusLoadedEVT(),
+    Result chapterLikesLoadedEVT(),
+    Result chapterLikeStatusLoadedEVT(),
+    Result chapterPageLaunchedEVT(Chapter chapter, BuildContext context),
+    Result chapterViewsLoadedEVT(),
+    Result chapterViewsUpdatedEVT(),
+    Result likeButtonPressedEVT(),
+    Result likesUpdatedEVT(),
+    Result loadNextChaptersEVT(),
+    Result previousChapterButtonPressedEVT(),
+    Result scrollEVT(int currentScrollPosition, int maxScrollPosition),
+    Result sessionFetchedEVT(Session session),
+    Result showOrHideNavbarEVT(),
+    Result toggleChapterAdditionalInfoEVT(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (scroll != null) {
-      return scroll(currentScrollPosition, maxScrollPosition);
+    if (scrollEVT != null) {
+      return scrollEVT(currentScrollPosition, maxScrollPosition);
     }
     return orElse();
   }
@@ -966,86 +2698,331 @@ class _$Scroll with DiagnosticableTreeMixin implements Scroll {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result chapterPageLaunched(ChapterPageLaunched value),
+    @required Result bookmarkButtonPressedEVT(BookmarkButtonPressedEVT value),
+    @required Result bookmarksUpdatedEVT(BookmarksUpdatedEVT value),
     @required
-        Result previousChapterButtonPressed(PreviousChapterButtonPressed value),
-    @required Result likeButtonPressed(LikeButtonPressed value),
-    @required Result bookmarkButtonPressed(BookmarkButtonPressed value),
-    @required Result showOrHideNavbar(ShowOrHideNavbar value),
-    @required Result scroll(Scroll value),
+        Result chapterBookmarkStatusLoadedEVT(
+            ChapterBookmarkStatusLoadedEVT value),
+    @required Result chapterLikesLoadedEVT(ChapterLikesLoadedEVT value),
     @required
-        Result toggleChapterAdditionalInfo(ToggleChapterAdditionalInfo value),
-    @required Result fetchNextChapters(FetchNextChapters value),
+        Result chapterLikeStatusLoadedEVT(ChapterLikeStatusLoadedEVT value),
+    @required Result chapterPageLaunchedEVT(ChapterPageLaunchedEVT value),
+    @required Result chapterViewsLoadedEVT(ChapterViewsLoadedEVT value),
+    @required Result chapterViewsUpdatedEVT(ChapterViewsUpdatedEVT value),
+    @required Result likeButtonPressedEVT(LikeButtonPressedEVT value),
+    @required Result likesUpdatedEVT(LikesUpdatedEVT value),
+    @required Result loadNextChaptersEVT(LoadNextChaptersEVT value),
+    @required
+        Result previousChapterButtonPressedEVT(
+            PreviousChapterButtonPressedEVT value),
+    @required Result scrollEVT(ScrollEVT value),
+    @required Result sessionFetchedEVT(SessionFetchedEVT value),
+    @required Result showOrHideNavbarEVT(ShowOrHideNavbarEVT value),
+    @required
+        Result toggleChapterAdditionalInfoEVT(
+            ToggleChapterAdditionalInfoEVT value),
   }) {
-    assert(chapterPageLaunched != null);
-    assert(previousChapterButtonPressed != null);
-    assert(likeButtonPressed != null);
-    assert(bookmarkButtonPressed != null);
-    assert(showOrHideNavbar != null);
-    assert(scroll != null);
-    assert(toggleChapterAdditionalInfo != null);
-    assert(fetchNextChapters != null);
-    return scroll(this);
+    assert(bookmarkButtonPressedEVT != null);
+    assert(bookmarksUpdatedEVT != null);
+    assert(chapterBookmarkStatusLoadedEVT != null);
+    assert(chapterLikesLoadedEVT != null);
+    assert(chapterLikeStatusLoadedEVT != null);
+    assert(chapterPageLaunchedEVT != null);
+    assert(chapterViewsLoadedEVT != null);
+    assert(chapterViewsUpdatedEVT != null);
+    assert(likeButtonPressedEVT != null);
+    assert(likesUpdatedEVT != null);
+    assert(loadNextChaptersEVT != null);
+    assert(previousChapterButtonPressedEVT != null);
+    assert(scrollEVT != null);
+    assert(sessionFetchedEVT != null);
+    assert(showOrHideNavbarEVT != null);
+    assert(toggleChapterAdditionalInfoEVT != null);
+    return scrollEVT(this);
   }
 
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result chapterPageLaunched(ChapterPageLaunched value),
-    Result previousChapterButtonPressed(PreviousChapterButtonPressed value),
-    Result likeButtonPressed(LikeButtonPressed value),
-    Result bookmarkButtonPressed(BookmarkButtonPressed value),
-    Result showOrHideNavbar(ShowOrHideNavbar value),
-    Result scroll(Scroll value),
-    Result toggleChapterAdditionalInfo(ToggleChapterAdditionalInfo value),
-    Result fetchNextChapters(FetchNextChapters value),
+    Result bookmarkButtonPressedEVT(BookmarkButtonPressedEVT value),
+    Result bookmarksUpdatedEVT(BookmarksUpdatedEVT value),
+    Result chapterBookmarkStatusLoadedEVT(ChapterBookmarkStatusLoadedEVT value),
+    Result chapterLikesLoadedEVT(ChapterLikesLoadedEVT value),
+    Result chapterLikeStatusLoadedEVT(ChapterLikeStatusLoadedEVT value),
+    Result chapterPageLaunchedEVT(ChapterPageLaunchedEVT value),
+    Result chapterViewsLoadedEVT(ChapterViewsLoadedEVT value),
+    Result chapterViewsUpdatedEVT(ChapterViewsUpdatedEVT value),
+    Result likeButtonPressedEVT(LikeButtonPressedEVT value),
+    Result likesUpdatedEVT(LikesUpdatedEVT value),
+    Result loadNextChaptersEVT(LoadNextChaptersEVT value),
+    Result previousChapterButtonPressedEVT(
+        PreviousChapterButtonPressedEVT value),
+    Result scrollEVT(ScrollEVT value),
+    Result sessionFetchedEVT(SessionFetchedEVT value),
+    Result showOrHideNavbarEVT(ShowOrHideNavbarEVT value),
+    Result toggleChapterAdditionalInfoEVT(ToggleChapterAdditionalInfoEVT value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (scroll != null) {
-      return scroll(this);
+    if (scrollEVT != null) {
+      return scrollEVT(this);
     }
     return orElse();
   }
 }
 
-abstract class Scroll implements ChapterDatabaseEvent {
-  const factory Scroll(
+abstract class ScrollEVT implements ChapterDatabaseEvent {
+  const factory ScrollEVT(
       {@required int currentScrollPosition,
-      @required int maxScrollPosition}) = _$Scroll;
+      @required int maxScrollPosition}) = _$ScrollEVT;
 
   int get currentScrollPosition;
   int get maxScrollPosition;
-  $ScrollCopyWith<Scroll> get copyWith;
+  $ScrollEVTCopyWith<ScrollEVT> get copyWith;
 }
 
-abstract class $ToggleChapterAdditionalInfoCopyWith<$Res> {
-  factory $ToggleChapterAdditionalInfoCopyWith(
-          ToggleChapterAdditionalInfo value,
-          $Res Function(ToggleChapterAdditionalInfo) then) =
-      _$ToggleChapterAdditionalInfoCopyWithImpl<$Res>;
+abstract class $SessionFetchedEVTCopyWith<$Res> {
+  factory $SessionFetchedEVTCopyWith(
+          SessionFetchedEVT value, $Res Function(SessionFetchedEVT) then) =
+      _$SessionFetchedEVTCopyWithImpl<$Res>;
+  $Res call({Session session});
 }
 
-class _$ToggleChapterAdditionalInfoCopyWithImpl<$Res>
+class _$SessionFetchedEVTCopyWithImpl<$Res>
     extends _$ChapterDatabaseEventCopyWithImpl<$Res>
-    implements $ToggleChapterAdditionalInfoCopyWith<$Res> {
-  _$ToggleChapterAdditionalInfoCopyWithImpl(ToggleChapterAdditionalInfo _value,
-      $Res Function(ToggleChapterAdditionalInfo) _then)
-      : super(_value, (v) => _then(v as ToggleChapterAdditionalInfo));
+    implements $SessionFetchedEVTCopyWith<$Res> {
+  _$SessionFetchedEVTCopyWithImpl(
+      SessionFetchedEVT _value, $Res Function(SessionFetchedEVT) _then)
+      : super(_value, (v) => _then(v as SessionFetchedEVT));
 
   @override
-  ToggleChapterAdditionalInfo get _value =>
-      super._value as ToggleChapterAdditionalInfo;
+  SessionFetchedEVT get _value => super._value as SessionFetchedEVT;
+
+  @override
+  $Res call({
+    Object session = freezed,
+  }) {
+    return _then(SessionFetchedEVT(
+      session == freezed ? _value.session : session as Session,
+    ));
+  }
 }
 
-class _$ToggleChapterAdditionalInfo
+class _$SessionFetchedEVT
     with DiagnosticableTreeMixin
-    implements ToggleChapterAdditionalInfo {
-  const _$ToggleChapterAdditionalInfo();
+    implements SessionFetchedEVT {
+  const _$SessionFetchedEVT(this.session) : assert(session != null);
+
+  @override
+  final Session session;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'ChapterDatabaseEvent.toggleChapterAdditionalInfo()';
+    return 'ChapterDatabaseEvent.sessionFetchedEVT(session: $session)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(
+          DiagnosticsProperty('type', 'ChapterDatabaseEvent.sessionFetchedEVT'))
+      ..add(DiagnosticsProperty('session', session));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is SessionFetchedEVT &&
+            (identical(other.session, session) ||
+                const DeepCollectionEquality().equals(other.session, session)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(session);
+
+  @override
+  $SessionFetchedEVTCopyWith<SessionFetchedEVT> get copyWith =>
+      _$SessionFetchedEVTCopyWithImpl<SessionFetchedEVT>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result bookmarkButtonPressedEVT(),
+    @required Result bookmarksUpdatedEVT(),
+    @required Result chapterBookmarkStatusLoadedEVT(),
+    @required Result chapterLikesLoadedEVT(),
+    @required Result chapterLikeStatusLoadedEVT(),
+    @required
+        Result chapterPageLaunchedEVT(Chapter chapter, BuildContext context),
+    @required Result chapterViewsLoadedEVT(),
+    @required Result chapterViewsUpdatedEVT(),
+    @required Result likeButtonPressedEVT(),
+    @required Result likesUpdatedEVT(),
+    @required Result loadNextChaptersEVT(),
+    @required Result previousChapterButtonPressedEVT(),
+    @required
+        Result scrollEVT(int currentScrollPosition, int maxScrollPosition),
+    @required Result sessionFetchedEVT(Session session),
+    @required Result showOrHideNavbarEVT(),
+    @required Result toggleChapterAdditionalInfoEVT(),
+  }) {
+    assert(bookmarkButtonPressedEVT != null);
+    assert(bookmarksUpdatedEVT != null);
+    assert(chapterBookmarkStatusLoadedEVT != null);
+    assert(chapterLikesLoadedEVT != null);
+    assert(chapterLikeStatusLoadedEVT != null);
+    assert(chapterPageLaunchedEVT != null);
+    assert(chapterViewsLoadedEVT != null);
+    assert(chapterViewsUpdatedEVT != null);
+    assert(likeButtonPressedEVT != null);
+    assert(likesUpdatedEVT != null);
+    assert(loadNextChaptersEVT != null);
+    assert(previousChapterButtonPressedEVT != null);
+    assert(scrollEVT != null);
+    assert(sessionFetchedEVT != null);
+    assert(showOrHideNavbarEVT != null);
+    assert(toggleChapterAdditionalInfoEVT != null);
+    return sessionFetchedEVT(session);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result bookmarkButtonPressedEVT(),
+    Result bookmarksUpdatedEVT(),
+    Result chapterBookmarkStatusLoadedEVT(),
+    Result chapterLikesLoadedEVT(),
+    Result chapterLikeStatusLoadedEVT(),
+    Result chapterPageLaunchedEVT(Chapter chapter, BuildContext context),
+    Result chapterViewsLoadedEVT(),
+    Result chapterViewsUpdatedEVT(),
+    Result likeButtonPressedEVT(),
+    Result likesUpdatedEVT(),
+    Result loadNextChaptersEVT(),
+    Result previousChapterButtonPressedEVT(),
+    Result scrollEVT(int currentScrollPosition, int maxScrollPosition),
+    Result sessionFetchedEVT(Session session),
+    Result showOrHideNavbarEVT(),
+    Result toggleChapterAdditionalInfoEVT(),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (sessionFetchedEVT != null) {
+      return sessionFetchedEVT(session);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result bookmarkButtonPressedEVT(BookmarkButtonPressedEVT value),
+    @required Result bookmarksUpdatedEVT(BookmarksUpdatedEVT value),
+    @required
+        Result chapterBookmarkStatusLoadedEVT(
+            ChapterBookmarkStatusLoadedEVT value),
+    @required Result chapterLikesLoadedEVT(ChapterLikesLoadedEVT value),
+    @required
+        Result chapterLikeStatusLoadedEVT(ChapterLikeStatusLoadedEVT value),
+    @required Result chapterPageLaunchedEVT(ChapterPageLaunchedEVT value),
+    @required Result chapterViewsLoadedEVT(ChapterViewsLoadedEVT value),
+    @required Result chapterViewsUpdatedEVT(ChapterViewsUpdatedEVT value),
+    @required Result likeButtonPressedEVT(LikeButtonPressedEVT value),
+    @required Result likesUpdatedEVT(LikesUpdatedEVT value),
+    @required Result loadNextChaptersEVT(LoadNextChaptersEVT value),
+    @required
+        Result previousChapterButtonPressedEVT(
+            PreviousChapterButtonPressedEVT value),
+    @required Result scrollEVT(ScrollEVT value),
+    @required Result sessionFetchedEVT(SessionFetchedEVT value),
+    @required Result showOrHideNavbarEVT(ShowOrHideNavbarEVT value),
+    @required
+        Result toggleChapterAdditionalInfoEVT(
+            ToggleChapterAdditionalInfoEVT value),
+  }) {
+    assert(bookmarkButtonPressedEVT != null);
+    assert(bookmarksUpdatedEVT != null);
+    assert(chapterBookmarkStatusLoadedEVT != null);
+    assert(chapterLikesLoadedEVT != null);
+    assert(chapterLikeStatusLoadedEVT != null);
+    assert(chapterPageLaunchedEVT != null);
+    assert(chapterViewsLoadedEVT != null);
+    assert(chapterViewsUpdatedEVT != null);
+    assert(likeButtonPressedEVT != null);
+    assert(likesUpdatedEVT != null);
+    assert(loadNextChaptersEVT != null);
+    assert(previousChapterButtonPressedEVT != null);
+    assert(scrollEVT != null);
+    assert(sessionFetchedEVT != null);
+    assert(showOrHideNavbarEVT != null);
+    assert(toggleChapterAdditionalInfoEVT != null);
+    return sessionFetchedEVT(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result bookmarkButtonPressedEVT(BookmarkButtonPressedEVT value),
+    Result bookmarksUpdatedEVT(BookmarksUpdatedEVT value),
+    Result chapterBookmarkStatusLoadedEVT(ChapterBookmarkStatusLoadedEVT value),
+    Result chapterLikesLoadedEVT(ChapterLikesLoadedEVT value),
+    Result chapterLikeStatusLoadedEVT(ChapterLikeStatusLoadedEVT value),
+    Result chapterPageLaunchedEVT(ChapterPageLaunchedEVT value),
+    Result chapterViewsLoadedEVT(ChapterViewsLoadedEVT value),
+    Result chapterViewsUpdatedEVT(ChapterViewsUpdatedEVT value),
+    Result likeButtonPressedEVT(LikeButtonPressedEVT value),
+    Result likesUpdatedEVT(LikesUpdatedEVT value),
+    Result loadNextChaptersEVT(LoadNextChaptersEVT value),
+    Result previousChapterButtonPressedEVT(
+        PreviousChapterButtonPressedEVT value),
+    Result scrollEVT(ScrollEVT value),
+    Result sessionFetchedEVT(SessionFetchedEVT value),
+    Result showOrHideNavbarEVT(ShowOrHideNavbarEVT value),
+    Result toggleChapterAdditionalInfoEVT(ToggleChapterAdditionalInfoEVT value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (sessionFetchedEVT != null) {
+      return sessionFetchedEVT(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SessionFetchedEVT implements ChapterDatabaseEvent {
+  const factory SessionFetchedEVT(Session session) = _$SessionFetchedEVT;
+
+  Session get session;
+  $SessionFetchedEVTCopyWith<SessionFetchedEVT> get copyWith;
+}
+
+abstract class $ShowOrHideNavbarEVTCopyWith<$Res> {
+  factory $ShowOrHideNavbarEVTCopyWith(
+          ShowOrHideNavbarEVT value, $Res Function(ShowOrHideNavbarEVT) then) =
+      _$ShowOrHideNavbarEVTCopyWithImpl<$Res>;
+}
+
+class _$ShowOrHideNavbarEVTCopyWithImpl<$Res>
+    extends _$ChapterDatabaseEventCopyWithImpl<$Res>
+    implements $ShowOrHideNavbarEVTCopyWith<$Res> {
+  _$ShowOrHideNavbarEVTCopyWithImpl(
+      ShowOrHideNavbarEVT _value, $Res Function(ShowOrHideNavbarEVT) _then)
+      : super(_value, (v) => _then(v as ShowOrHideNavbarEVT));
+
+  @override
+  ShowOrHideNavbarEVT get _value => super._value as ShowOrHideNavbarEVT;
+}
+
+class _$ShowOrHideNavbarEVT
+    with DiagnosticableTreeMixin
+    implements ShowOrHideNavbarEVT {
+  const _$ShowOrHideNavbarEVT();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'ChapterDatabaseEvent.showOrHideNavbarEVT()';
   }
 
   @override
@@ -1053,12 +3030,12 @@ class _$ToggleChapterAdditionalInfo
     super.debugFillProperties(properties);
     properties
       ..add(DiagnosticsProperty(
-          'type', 'ChapterDatabaseEvent.toggleChapterAdditionalInfo'));
+          'type', 'ChapterDatabaseEvent.showOrHideNavbarEVT'));
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is ToggleChapterAdditionalInfo);
+    return identical(this, other) || (other is ShowOrHideNavbarEVT);
   }
 
   @override
@@ -1067,42 +3044,68 @@ class _$ToggleChapterAdditionalInfo
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result chapterPageLaunched(Chapter chapter, BuildContext context),
-    @required Result previousChapterButtonPressed(),
-    @required Result likeButtonPressed(),
-    @required Result bookmarkButtonPressed(),
-    @required Result showOrHideNavbar(),
-    @required Result scroll(int currentScrollPosition, int maxScrollPosition),
-    @required Result toggleChapterAdditionalInfo(),
-    @required Result fetchNextChapters(),
+    @required Result bookmarkButtonPressedEVT(),
+    @required Result bookmarksUpdatedEVT(),
+    @required Result chapterBookmarkStatusLoadedEVT(),
+    @required Result chapterLikesLoadedEVT(),
+    @required Result chapterLikeStatusLoadedEVT(),
+    @required
+        Result chapterPageLaunchedEVT(Chapter chapter, BuildContext context),
+    @required Result chapterViewsLoadedEVT(),
+    @required Result chapterViewsUpdatedEVT(),
+    @required Result likeButtonPressedEVT(),
+    @required Result likesUpdatedEVT(),
+    @required Result loadNextChaptersEVT(),
+    @required Result previousChapterButtonPressedEVT(),
+    @required
+        Result scrollEVT(int currentScrollPosition, int maxScrollPosition),
+    @required Result sessionFetchedEVT(Session session),
+    @required Result showOrHideNavbarEVT(),
+    @required Result toggleChapterAdditionalInfoEVT(),
   }) {
-    assert(chapterPageLaunched != null);
-    assert(previousChapterButtonPressed != null);
-    assert(likeButtonPressed != null);
-    assert(bookmarkButtonPressed != null);
-    assert(showOrHideNavbar != null);
-    assert(scroll != null);
-    assert(toggleChapterAdditionalInfo != null);
-    assert(fetchNextChapters != null);
-    return toggleChapterAdditionalInfo();
+    assert(bookmarkButtonPressedEVT != null);
+    assert(bookmarksUpdatedEVT != null);
+    assert(chapterBookmarkStatusLoadedEVT != null);
+    assert(chapterLikesLoadedEVT != null);
+    assert(chapterLikeStatusLoadedEVT != null);
+    assert(chapterPageLaunchedEVT != null);
+    assert(chapterViewsLoadedEVT != null);
+    assert(chapterViewsUpdatedEVT != null);
+    assert(likeButtonPressedEVT != null);
+    assert(likesUpdatedEVT != null);
+    assert(loadNextChaptersEVT != null);
+    assert(previousChapterButtonPressedEVT != null);
+    assert(scrollEVT != null);
+    assert(sessionFetchedEVT != null);
+    assert(showOrHideNavbarEVT != null);
+    assert(toggleChapterAdditionalInfoEVT != null);
+    return showOrHideNavbarEVT();
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result chapterPageLaunched(Chapter chapter, BuildContext context),
-    Result previousChapterButtonPressed(),
-    Result likeButtonPressed(),
-    Result bookmarkButtonPressed(),
-    Result showOrHideNavbar(),
-    Result scroll(int currentScrollPosition, int maxScrollPosition),
-    Result toggleChapterAdditionalInfo(),
-    Result fetchNextChapters(),
+    Result bookmarkButtonPressedEVT(),
+    Result bookmarksUpdatedEVT(),
+    Result chapterBookmarkStatusLoadedEVT(),
+    Result chapterLikesLoadedEVT(),
+    Result chapterLikeStatusLoadedEVT(),
+    Result chapterPageLaunchedEVT(Chapter chapter, BuildContext context),
+    Result chapterViewsLoadedEVT(),
+    Result chapterViewsUpdatedEVT(),
+    Result likeButtonPressedEVT(),
+    Result likesUpdatedEVT(),
+    Result loadNextChaptersEVT(),
+    Result previousChapterButtonPressedEVT(),
+    Result scrollEVT(int currentScrollPosition, int maxScrollPosition),
+    Result sessionFetchedEVT(Session session),
+    Result showOrHideNavbarEVT(),
+    Result toggleChapterAdditionalInfoEVT(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (toggleChapterAdditionalInfo != null) {
-      return toggleChapterAdditionalInfo();
+    if (showOrHideNavbarEVT != null) {
+      return showOrHideNavbarEVT();
     }
     return orElse();
   }
@@ -1110,78 +3113,111 @@ class _$ToggleChapterAdditionalInfo
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result chapterPageLaunched(ChapterPageLaunched value),
+    @required Result bookmarkButtonPressedEVT(BookmarkButtonPressedEVT value),
+    @required Result bookmarksUpdatedEVT(BookmarksUpdatedEVT value),
     @required
-        Result previousChapterButtonPressed(PreviousChapterButtonPressed value),
-    @required Result likeButtonPressed(LikeButtonPressed value),
-    @required Result bookmarkButtonPressed(BookmarkButtonPressed value),
-    @required Result showOrHideNavbar(ShowOrHideNavbar value),
-    @required Result scroll(Scroll value),
+        Result chapterBookmarkStatusLoadedEVT(
+            ChapterBookmarkStatusLoadedEVT value),
+    @required Result chapterLikesLoadedEVT(ChapterLikesLoadedEVT value),
     @required
-        Result toggleChapterAdditionalInfo(ToggleChapterAdditionalInfo value),
-    @required Result fetchNextChapters(FetchNextChapters value),
+        Result chapterLikeStatusLoadedEVT(ChapterLikeStatusLoadedEVT value),
+    @required Result chapterPageLaunchedEVT(ChapterPageLaunchedEVT value),
+    @required Result chapterViewsLoadedEVT(ChapterViewsLoadedEVT value),
+    @required Result chapterViewsUpdatedEVT(ChapterViewsUpdatedEVT value),
+    @required Result likeButtonPressedEVT(LikeButtonPressedEVT value),
+    @required Result likesUpdatedEVT(LikesUpdatedEVT value),
+    @required Result loadNextChaptersEVT(LoadNextChaptersEVT value),
+    @required
+        Result previousChapterButtonPressedEVT(
+            PreviousChapterButtonPressedEVT value),
+    @required Result scrollEVT(ScrollEVT value),
+    @required Result sessionFetchedEVT(SessionFetchedEVT value),
+    @required Result showOrHideNavbarEVT(ShowOrHideNavbarEVT value),
+    @required
+        Result toggleChapterAdditionalInfoEVT(
+            ToggleChapterAdditionalInfoEVT value),
   }) {
-    assert(chapterPageLaunched != null);
-    assert(previousChapterButtonPressed != null);
-    assert(likeButtonPressed != null);
-    assert(bookmarkButtonPressed != null);
-    assert(showOrHideNavbar != null);
-    assert(scroll != null);
-    assert(toggleChapterAdditionalInfo != null);
-    assert(fetchNextChapters != null);
-    return toggleChapterAdditionalInfo(this);
+    assert(bookmarkButtonPressedEVT != null);
+    assert(bookmarksUpdatedEVT != null);
+    assert(chapterBookmarkStatusLoadedEVT != null);
+    assert(chapterLikesLoadedEVT != null);
+    assert(chapterLikeStatusLoadedEVT != null);
+    assert(chapterPageLaunchedEVT != null);
+    assert(chapterViewsLoadedEVT != null);
+    assert(chapterViewsUpdatedEVT != null);
+    assert(likeButtonPressedEVT != null);
+    assert(likesUpdatedEVT != null);
+    assert(loadNextChaptersEVT != null);
+    assert(previousChapterButtonPressedEVT != null);
+    assert(scrollEVT != null);
+    assert(sessionFetchedEVT != null);
+    assert(showOrHideNavbarEVT != null);
+    assert(toggleChapterAdditionalInfoEVT != null);
+    return showOrHideNavbarEVT(this);
   }
 
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result chapterPageLaunched(ChapterPageLaunched value),
-    Result previousChapterButtonPressed(PreviousChapterButtonPressed value),
-    Result likeButtonPressed(LikeButtonPressed value),
-    Result bookmarkButtonPressed(BookmarkButtonPressed value),
-    Result showOrHideNavbar(ShowOrHideNavbar value),
-    Result scroll(Scroll value),
-    Result toggleChapterAdditionalInfo(ToggleChapterAdditionalInfo value),
-    Result fetchNextChapters(FetchNextChapters value),
+    Result bookmarkButtonPressedEVT(BookmarkButtonPressedEVT value),
+    Result bookmarksUpdatedEVT(BookmarksUpdatedEVT value),
+    Result chapterBookmarkStatusLoadedEVT(ChapterBookmarkStatusLoadedEVT value),
+    Result chapterLikesLoadedEVT(ChapterLikesLoadedEVT value),
+    Result chapterLikeStatusLoadedEVT(ChapterLikeStatusLoadedEVT value),
+    Result chapterPageLaunchedEVT(ChapterPageLaunchedEVT value),
+    Result chapterViewsLoadedEVT(ChapterViewsLoadedEVT value),
+    Result chapterViewsUpdatedEVT(ChapterViewsUpdatedEVT value),
+    Result likeButtonPressedEVT(LikeButtonPressedEVT value),
+    Result likesUpdatedEVT(LikesUpdatedEVT value),
+    Result loadNextChaptersEVT(LoadNextChaptersEVT value),
+    Result previousChapterButtonPressedEVT(
+        PreviousChapterButtonPressedEVT value),
+    Result scrollEVT(ScrollEVT value),
+    Result sessionFetchedEVT(SessionFetchedEVT value),
+    Result showOrHideNavbarEVT(ShowOrHideNavbarEVT value),
+    Result toggleChapterAdditionalInfoEVT(ToggleChapterAdditionalInfoEVT value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (toggleChapterAdditionalInfo != null) {
-      return toggleChapterAdditionalInfo(this);
+    if (showOrHideNavbarEVT != null) {
+      return showOrHideNavbarEVT(this);
     }
     return orElse();
   }
 }
 
-abstract class ToggleChapterAdditionalInfo implements ChapterDatabaseEvent {
-  const factory ToggleChapterAdditionalInfo() = _$ToggleChapterAdditionalInfo;
+abstract class ShowOrHideNavbarEVT implements ChapterDatabaseEvent {
+  const factory ShowOrHideNavbarEVT() = _$ShowOrHideNavbarEVT;
 }
 
-abstract class $FetchNextChaptersCopyWith<$Res> {
-  factory $FetchNextChaptersCopyWith(
-          FetchNextChapters value, $Res Function(FetchNextChapters) then) =
-      _$FetchNextChaptersCopyWithImpl<$Res>;
+abstract class $ToggleChapterAdditionalInfoEVTCopyWith<$Res> {
+  factory $ToggleChapterAdditionalInfoEVTCopyWith(
+          ToggleChapterAdditionalInfoEVT value,
+          $Res Function(ToggleChapterAdditionalInfoEVT) then) =
+      _$ToggleChapterAdditionalInfoEVTCopyWithImpl<$Res>;
 }
 
-class _$FetchNextChaptersCopyWithImpl<$Res>
+class _$ToggleChapterAdditionalInfoEVTCopyWithImpl<$Res>
     extends _$ChapterDatabaseEventCopyWithImpl<$Res>
-    implements $FetchNextChaptersCopyWith<$Res> {
-  _$FetchNextChaptersCopyWithImpl(
-      FetchNextChapters _value, $Res Function(FetchNextChapters) _then)
-      : super(_value, (v) => _then(v as FetchNextChapters));
+    implements $ToggleChapterAdditionalInfoEVTCopyWith<$Res> {
+  _$ToggleChapterAdditionalInfoEVTCopyWithImpl(
+      ToggleChapterAdditionalInfoEVT _value,
+      $Res Function(ToggleChapterAdditionalInfoEVT) _then)
+      : super(_value, (v) => _then(v as ToggleChapterAdditionalInfoEVT));
 
   @override
-  FetchNextChapters get _value => super._value as FetchNextChapters;
+  ToggleChapterAdditionalInfoEVT get _value =>
+      super._value as ToggleChapterAdditionalInfoEVT;
 }
 
-class _$FetchNextChapters
+class _$ToggleChapterAdditionalInfoEVT
     with DiagnosticableTreeMixin
-    implements FetchNextChapters {
-  const _$FetchNextChapters();
+    implements ToggleChapterAdditionalInfoEVT {
+  const _$ToggleChapterAdditionalInfoEVT();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'ChapterDatabaseEvent.fetchNextChapters()';
+    return 'ChapterDatabaseEvent.toggleChapterAdditionalInfoEVT()';
   }
 
   @override
@@ -1189,12 +3225,12 @@ class _$FetchNextChapters
     super.debugFillProperties(properties);
     properties
       ..add(DiagnosticsProperty(
-          'type', 'ChapterDatabaseEvent.fetchNextChapters'));
+          'type', 'ChapterDatabaseEvent.toggleChapterAdditionalInfoEVT'));
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is FetchNextChapters);
+    return identical(this, other) || (other is ToggleChapterAdditionalInfoEVT);
   }
 
   @override
@@ -1203,42 +3239,68 @@ class _$FetchNextChapters
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result chapterPageLaunched(Chapter chapter, BuildContext context),
-    @required Result previousChapterButtonPressed(),
-    @required Result likeButtonPressed(),
-    @required Result bookmarkButtonPressed(),
-    @required Result showOrHideNavbar(),
-    @required Result scroll(int currentScrollPosition, int maxScrollPosition),
-    @required Result toggleChapterAdditionalInfo(),
-    @required Result fetchNextChapters(),
+    @required Result bookmarkButtonPressedEVT(),
+    @required Result bookmarksUpdatedEVT(),
+    @required Result chapterBookmarkStatusLoadedEVT(),
+    @required Result chapterLikesLoadedEVT(),
+    @required Result chapterLikeStatusLoadedEVT(),
+    @required
+        Result chapterPageLaunchedEVT(Chapter chapter, BuildContext context),
+    @required Result chapterViewsLoadedEVT(),
+    @required Result chapterViewsUpdatedEVT(),
+    @required Result likeButtonPressedEVT(),
+    @required Result likesUpdatedEVT(),
+    @required Result loadNextChaptersEVT(),
+    @required Result previousChapterButtonPressedEVT(),
+    @required
+        Result scrollEVT(int currentScrollPosition, int maxScrollPosition),
+    @required Result sessionFetchedEVT(Session session),
+    @required Result showOrHideNavbarEVT(),
+    @required Result toggleChapterAdditionalInfoEVT(),
   }) {
-    assert(chapterPageLaunched != null);
-    assert(previousChapterButtonPressed != null);
-    assert(likeButtonPressed != null);
-    assert(bookmarkButtonPressed != null);
-    assert(showOrHideNavbar != null);
-    assert(scroll != null);
-    assert(toggleChapterAdditionalInfo != null);
-    assert(fetchNextChapters != null);
-    return fetchNextChapters();
+    assert(bookmarkButtonPressedEVT != null);
+    assert(bookmarksUpdatedEVT != null);
+    assert(chapterBookmarkStatusLoadedEVT != null);
+    assert(chapterLikesLoadedEVT != null);
+    assert(chapterLikeStatusLoadedEVT != null);
+    assert(chapterPageLaunchedEVT != null);
+    assert(chapterViewsLoadedEVT != null);
+    assert(chapterViewsUpdatedEVT != null);
+    assert(likeButtonPressedEVT != null);
+    assert(likesUpdatedEVT != null);
+    assert(loadNextChaptersEVT != null);
+    assert(previousChapterButtonPressedEVT != null);
+    assert(scrollEVT != null);
+    assert(sessionFetchedEVT != null);
+    assert(showOrHideNavbarEVT != null);
+    assert(toggleChapterAdditionalInfoEVT != null);
+    return toggleChapterAdditionalInfoEVT();
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result chapterPageLaunched(Chapter chapter, BuildContext context),
-    Result previousChapterButtonPressed(),
-    Result likeButtonPressed(),
-    Result bookmarkButtonPressed(),
-    Result showOrHideNavbar(),
-    Result scroll(int currentScrollPosition, int maxScrollPosition),
-    Result toggleChapterAdditionalInfo(),
-    Result fetchNextChapters(),
+    Result bookmarkButtonPressedEVT(),
+    Result bookmarksUpdatedEVT(),
+    Result chapterBookmarkStatusLoadedEVT(),
+    Result chapterLikesLoadedEVT(),
+    Result chapterLikeStatusLoadedEVT(),
+    Result chapterPageLaunchedEVT(Chapter chapter, BuildContext context),
+    Result chapterViewsLoadedEVT(),
+    Result chapterViewsUpdatedEVT(),
+    Result likeButtonPressedEVT(),
+    Result likesUpdatedEVT(),
+    Result loadNextChaptersEVT(),
+    Result previousChapterButtonPressedEVT(),
+    Result scrollEVT(int currentScrollPosition, int maxScrollPosition),
+    Result sessionFetchedEVT(Session session),
+    Result showOrHideNavbarEVT(),
+    Result toggleChapterAdditionalInfoEVT(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (fetchNextChapters != null) {
-      return fetchNextChapters();
+    if (toggleChapterAdditionalInfoEVT != null) {
+      return toggleChapterAdditionalInfoEVT();
     }
     return orElse();
   }
@@ -1246,51 +3308,82 @@ class _$FetchNextChapters
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result chapterPageLaunched(ChapterPageLaunched value),
+    @required Result bookmarkButtonPressedEVT(BookmarkButtonPressedEVT value),
+    @required Result bookmarksUpdatedEVT(BookmarksUpdatedEVT value),
     @required
-        Result previousChapterButtonPressed(PreviousChapterButtonPressed value),
-    @required Result likeButtonPressed(LikeButtonPressed value),
-    @required Result bookmarkButtonPressed(BookmarkButtonPressed value),
-    @required Result showOrHideNavbar(ShowOrHideNavbar value),
-    @required Result scroll(Scroll value),
+        Result chapterBookmarkStatusLoadedEVT(
+            ChapterBookmarkStatusLoadedEVT value),
+    @required Result chapterLikesLoadedEVT(ChapterLikesLoadedEVT value),
     @required
-        Result toggleChapterAdditionalInfo(ToggleChapterAdditionalInfo value),
-    @required Result fetchNextChapters(FetchNextChapters value),
+        Result chapterLikeStatusLoadedEVT(ChapterLikeStatusLoadedEVT value),
+    @required Result chapterPageLaunchedEVT(ChapterPageLaunchedEVT value),
+    @required Result chapterViewsLoadedEVT(ChapterViewsLoadedEVT value),
+    @required Result chapterViewsUpdatedEVT(ChapterViewsUpdatedEVT value),
+    @required Result likeButtonPressedEVT(LikeButtonPressedEVT value),
+    @required Result likesUpdatedEVT(LikesUpdatedEVT value),
+    @required Result loadNextChaptersEVT(LoadNextChaptersEVT value),
+    @required
+        Result previousChapterButtonPressedEVT(
+            PreviousChapterButtonPressedEVT value),
+    @required Result scrollEVT(ScrollEVT value),
+    @required Result sessionFetchedEVT(SessionFetchedEVT value),
+    @required Result showOrHideNavbarEVT(ShowOrHideNavbarEVT value),
+    @required
+        Result toggleChapterAdditionalInfoEVT(
+            ToggleChapterAdditionalInfoEVT value),
   }) {
-    assert(chapterPageLaunched != null);
-    assert(previousChapterButtonPressed != null);
-    assert(likeButtonPressed != null);
-    assert(bookmarkButtonPressed != null);
-    assert(showOrHideNavbar != null);
-    assert(scroll != null);
-    assert(toggleChapterAdditionalInfo != null);
-    assert(fetchNextChapters != null);
-    return fetchNextChapters(this);
+    assert(bookmarkButtonPressedEVT != null);
+    assert(bookmarksUpdatedEVT != null);
+    assert(chapterBookmarkStatusLoadedEVT != null);
+    assert(chapterLikesLoadedEVT != null);
+    assert(chapterLikeStatusLoadedEVT != null);
+    assert(chapterPageLaunchedEVT != null);
+    assert(chapterViewsLoadedEVT != null);
+    assert(chapterViewsUpdatedEVT != null);
+    assert(likeButtonPressedEVT != null);
+    assert(likesUpdatedEVT != null);
+    assert(loadNextChaptersEVT != null);
+    assert(previousChapterButtonPressedEVT != null);
+    assert(scrollEVT != null);
+    assert(sessionFetchedEVT != null);
+    assert(showOrHideNavbarEVT != null);
+    assert(toggleChapterAdditionalInfoEVT != null);
+    return toggleChapterAdditionalInfoEVT(this);
   }
 
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result chapterPageLaunched(ChapterPageLaunched value),
-    Result previousChapterButtonPressed(PreviousChapterButtonPressed value),
-    Result likeButtonPressed(LikeButtonPressed value),
-    Result bookmarkButtonPressed(BookmarkButtonPressed value),
-    Result showOrHideNavbar(ShowOrHideNavbar value),
-    Result scroll(Scroll value),
-    Result toggleChapterAdditionalInfo(ToggleChapterAdditionalInfo value),
-    Result fetchNextChapters(FetchNextChapters value),
+    Result bookmarkButtonPressedEVT(BookmarkButtonPressedEVT value),
+    Result bookmarksUpdatedEVT(BookmarksUpdatedEVT value),
+    Result chapterBookmarkStatusLoadedEVT(ChapterBookmarkStatusLoadedEVT value),
+    Result chapterLikesLoadedEVT(ChapterLikesLoadedEVT value),
+    Result chapterLikeStatusLoadedEVT(ChapterLikeStatusLoadedEVT value),
+    Result chapterPageLaunchedEVT(ChapterPageLaunchedEVT value),
+    Result chapterViewsLoadedEVT(ChapterViewsLoadedEVT value),
+    Result chapterViewsUpdatedEVT(ChapterViewsUpdatedEVT value),
+    Result likeButtonPressedEVT(LikeButtonPressedEVT value),
+    Result likesUpdatedEVT(LikesUpdatedEVT value),
+    Result loadNextChaptersEVT(LoadNextChaptersEVT value),
+    Result previousChapterButtonPressedEVT(
+        PreviousChapterButtonPressedEVT value),
+    Result scrollEVT(ScrollEVT value),
+    Result sessionFetchedEVT(SessionFetchedEVT value),
+    Result showOrHideNavbarEVT(ShowOrHideNavbarEVT value),
+    Result toggleChapterAdditionalInfoEVT(ToggleChapterAdditionalInfoEVT value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (fetchNextChapters != null) {
-      return fetchNextChapters(this);
+    if (toggleChapterAdditionalInfoEVT != null) {
+      return toggleChapterAdditionalInfoEVT(this);
     }
     return orElse();
   }
 }
 
-abstract class FetchNextChapters implements ChapterDatabaseEvent {
-  const factory FetchNextChapters() = _$FetchNextChapters;
+abstract class ToggleChapterAdditionalInfoEVT implements ChapterDatabaseEvent {
+  const factory ToggleChapterAdditionalInfoEVT() =
+      _$ToggleChapterAdditionalInfoEVT;
 }
 
 class _$ChapterDatabaseStateTearOff {
@@ -1298,55 +3391,55 @@ class _$ChapterDatabaseStateTearOff {
 
   _ChapterDatabaseState call(
       {@required
-          Session session,
+          bool isBookmarked,
+      @required
+          bool isLiked,
+      @required
+          bool showChapterAdditionalInfo,
+      @required
+          bool showNavbar,
       @required
           Chapter chapter,
       @required
           Chapter nextSameAuthorChapter,
       @required
-          List<Chapter> nextChapters,
-      @required
-          bool isLiked,
-      @required
-          bool isBookmarked,
-      @required
-          int viewsCount,
-      @required
-          int likesCount,
+          double percentProgress,
       @required
           int bookmarksCount,
       @required
-          bool showNavbar,
+          int likesCount,
       @required
-          double percentProgress,
+          int viewsCount,
       @required
-          bool showChapterAdditionalInfo,
+          List<Chapter> nextChapters,
+      @required
+          Map<String, String> copyrightsMap,
       @required
           Map<String, String> genresMap,
       @required
           Map<String, String> languagesMap,
       @required
-          Map<String, String> copyrightsMap,
+          Option<Either<DatabaseFailure, DatabaseSuccess>>
+              databaseFailureOrSuccessOption,
       @required
-          Option<Either<DatabaseFailure, dynamic>>
-              databaseFailureOrSuccessOption}) {
+          Session session}) {
     return _ChapterDatabaseState(
-      session: session,
+      isBookmarked: isBookmarked,
+      isLiked: isLiked,
+      showChapterAdditionalInfo: showChapterAdditionalInfo,
+      showNavbar: showNavbar,
       chapter: chapter,
       nextSameAuthorChapter: nextSameAuthorChapter,
-      nextChapters: nextChapters,
-      isLiked: isLiked,
-      isBookmarked: isBookmarked,
-      viewsCount: viewsCount,
-      likesCount: likesCount,
-      bookmarksCount: bookmarksCount,
-      showNavbar: showNavbar,
       percentProgress: percentProgress,
-      showChapterAdditionalInfo: showChapterAdditionalInfo,
+      bookmarksCount: bookmarksCount,
+      likesCount: likesCount,
+      viewsCount: viewsCount,
+      nextChapters: nextChapters,
+      copyrightsMap: copyrightsMap,
       genresMap: genresMap,
       languagesMap: languagesMap,
-      copyrightsMap: copyrightsMap,
       databaseFailureOrSuccessOption: databaseFailureOrSuccessOption,
+      session: session,
     );
   }
 }
@@ -1355,22 +3448,23 @@ class _$ChapterDatabaseStateTearOff {
 const $ChapterDatabaseState = _$ChapterDatabaseStateTearOff();
 
 mixin _$ChapterDatabaseState {
-  Session get session;
+  bool get isBookmarked;
+  bool get isLiked;
+  bool get showChapterAdditionalInfo;
+  bool get showNavbar;
   Chapter get chapter;
   Chapter get nextSameAuthorChapter;
-  List<Chapter> get nextChapters;
-  bool get isLiked;
-  bool get isBookmarked;
-  int get viewsCount;
-  int get likesCount;
-  int get bookmarksCount;
-  bool get showNavbar;
   double get percentProgress;
-  bool get showChapterAdditionalInfo;
+  int get bookmarksCount;
+  int get likesCount;
+  int get viewsCount;
+  List<Chapter> get nextChapters;
+  Map<String, String> get copyrightsMap;
   Map<String, String> get genresMap;
   Map<String, String> get languagesMap;
-  Map<String, String> get copyrightsMap;
-  Option<Either<DatabaseFailure, dynamic>> get databaseFailureOrSuccessOption;
+  Option<Either<DatabaseFailure, DatabaseSuccess>>
+      get databaseFailureOrSuccessOption;
+  Session get session;
 
   $ChapterDatabaseStateCopyWith<ChapterDatabaseState> get copyWith;
 }
@@ -1380,22 +3474,23 @@ abstract class $ChapterDatabaseStateCopyWith<$Res> {
           $Res Function(ChapterDatabaseState) then) =
       _$ChapterDatabaseStateCopyWithImpl<$Res>;
   $Res call(
-      {Session session,
+      {bool isBookmarked,
+      bool isLiked,
+      bool showChapterAdditionalInfo,
+      bool showNavbar,
       Chapter chapter,
       Chapter nextSameAuthorChapter,
-      List<Chapter> nextChapters,
-      bool isLiked,
-      bool isBookmarked,
-      int viewsCount,
-      int likesCount,
-      int bookmarksCount,
-      bool showNavbar,
       double percentProgress,
-      bool showChapterAdditionalInfo,
+      int bookmarksCount,
+      int likesCount,
+      int viewsCount,
+      List<Chapter> nextChapters,
+      Map<String, String> copyrightsMap,
       Map<String, String> genresMap,
       Map<String, String> languagesMap,
-      Map<String, String> copyrightsMap,
-      Option<Either<DatabaseFailure, dynamic>> databaseFailureOrSuccessOption});
+      Option<Either<DatabaseFailure, DatabaseSuccess>>
+          databaseFailureOrSuccessOption,
+      Session session});
 }
 
 class _$ChapterDatabaseStateCopyWithImpl<$Res>
@@ -1408,61 +3503,61 @@ class _$ChapterDatabaseStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object session = freezed,
+    Object isBookmarked = freezed,
+    Object isLiked = freezed,
+    Object showChapterAdditionalInfo = freezed,
+    Object showNavbar = freezed,
     Object chapter = freezed,
     Object nextSameAuthorChapter = freezed,
-    Object nextChapters = freezed,
-    Object isLiked = freezed,
-    Object isBookmarked = freezed,
-    Object viewsCount = freezed,
-    Object likesCount = freezed,
-    Object bookmarksCount = freezed,
-    Object showNavbar = freezed,
     Object percentProgress = freezed,
-    Object showChapterAdditionalInfo = freezed,
+    Object bookmarksCount = freezed,
+    Object likesCount = freezed,
+    Object viewsCount = freezed,
+    Object nextChapters = freezed,
+    Object copyrightsMap = freezed,
     Object genresMap = freezed,
     Object languagesMap = freezed,
-    Object copyrightsMap = freezed,
     Object databaseFailureOrSuccessOption = freezed,
+    Object session = freezed,
   }) {
     return _then(_value.copyWith(
-      session: session == freezed ? _value.session : session as Session,
+      isBookmarked:
+          isBookmarked == freezed ? _value.isBookmarked : isBookmarked as bool,
+      isLiked: isLiked == freezed ? _value.isLiked : isLiked as bool,
+      showChapterAdditionalInfo: showChapterAdditionalInfo == freezed
+          ? _value.showChapterAdditionalInfo
+          : showChapterAdditionalInfo as bool,
+      showNavbar:
+          showNavbar == freezed ? _value.showNavbar : showNavbar as bool,
       chapter: chapter == freezed ? _value.chapter : chapter as Chapter,
       nextSameAuthorChapter: nextSameAuthorChapter == freezed
           ? _value.nextSameAuthorChapter
           : nextSameAuthorChapter as Chapter,
-      nextChapters: nextChapters == freezed
-          ? _value.nextChapters
-          : nextChapters as List<Chapter>,
-      isLiked: isLiked == freezed ? _value.isLiked : isLiked as bool,
-      isBookmarked:
-          isBookmarked == freezed ? _value.isBookmarked : isBookmarked as bool,
-      viewsCount: viewsCount == freezed ? _value.viewsCount : viewsCount as int,
-      likesCount: likesCount == freezed ? _value.likesCount : likesCount as int,
-      bookmarksCount: bookmarksCount == freezed
-          ? _value.bookmarksCount
-          : bookmarksCount as int,
-      showNavbar:
-          showNavbar == freezed ? _value.showNavbar : showNavbar as bool,
       percentProgress: percentProgress == freezed
           ? _value.percentProgress
           : percentProgress as double,
-      showChapterAdditionalInfo: showChapterAdditionalInfo == freezed
-          ? _value.showChapterAdditionalInfo
-          : showChapterAdditionalInfo as bool,
+      bookmarksCount: bookmarksCount == freezed
+          ? _value.bookmarksCount
+          : bookmarksCount as int,
+      likesCount: likesCount == freezed ? _value.likesCount : likesCount as int,
+      viewsCount: viewsCount == freezed ? _value.viewsCount : viewsCount as int,
+      nextChapters: nextChapters == freezed
+          ? _value.nextChapters
+          : nextChapters as List<Chapter>,
+      copyrightsMap: copyrightsMap == freezed
+          ? _value.copyrightsMap
+          : copyrightsMap as Map<String, String>,
       genresMap: genresMap == freezed
           ? _value.genresMap
           : genresMap as Map<String, String>,
       languagesMap: languagesMap == freezed
           ? _value.languagesMap
           : languagesMap as Map<String, String>,
-      copyrightsMap: copyrightsMap == freezed
-          ? _value.copyrightsMap
-          : copyrightsMap as Map<String, String>,
       databaseFailureOrSuccessOption: databaseFailureOrSuccessOption == freezed
           ? _value.databaseFailureOrSuccessOption
           : databaseFailureOrSuccessOption
-              as Option<Either<DatabaseFailure, dynamic>>,
+              as Option<Either<DatabaseFailure, DatabaseSuccess>>,
+      session: session == freezed ? _value.session : session as Session,
     ));
   }
 }
@@ -1474,22 +3569,23 @@ abstract class _$ChapterDatabaseStateCopyWith<$Res>
       __$ChapterDatabaseStateCopyWithImpl<$Res>;
   @override
   $Res call(
-      {Session session,
+      {bool isBookmarked,
+      bool isLiked,
+      bool showChapterAdditionalInfo,
+      bool showNavbar,
       Chapter chapter,
       Chapter nextSameAuthorChapter,
-      List<Chapter> nextChapters,
-      bool isLiked,
-      bool isBookmarked,
-      int viewsCount,
-      int likesCount,
-      int bookmarksCount,
-      bool showNavbar,
       double percentProgress,
-      bool showChapterAdditionalInfo,
+      int bookmarksCount,
+      int likesCount,
+      int viewsCount,
+      List<Chapter> nextChapters,
+      Map<String, String> copyrightsMap,
       Map<String, String> genresMap,
       Map<String, String> languagesMap,
-      Map<String, String> copyrightsMap,
-      Option<Either<DatabaseFailure, dynamic>> databaseFailureOrSuccessOption});
+      Option<Either<DatabaseFailure, DatabaseSuccess>>
+          databaseFailureOrSuccessOption,
+      Session session});
 }
 
 class __$ChapterDatabaseStateCopyWithImpl<$Res>
@@ -1504,61 +3600,61 @@ class __$ChapterDatabaseStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object session = freezed,
+    Object isBookmarked = freezed,
+    Object isLiked = freezed,
+    Object showChapterAdditionalInfo = freezed,
+    Object showNavbar = freezed,
     Object chapter = freezed,
     Object nextSameAuthorChapter = freezed,
-    Object nextChapters = freezed,
-    Object isLiked = freezed,
-    Object isBookmarked = freezed,
-    Object viewsCount = freezed,
-    Object likesCount = freezed,
-    Object bookmarksCount = freezed,
-    Object showNavbar = freezed,
     Object percentProgress = freezed,
-    Object showChapterAdditionalInfo = freezed,
+    Object bookmarksCount = freezed,
+    Object likesCount = freezed,
+    Object viewsCount = freezed,
+    Object nextChapters = freezed,
+    Object copyrightsMap = freezed,
     Object genresMap = freezed,
     Object languagesMap = freezed,
-    Object copyrightsMap = freezed,
     Object databaseFailureOrSuccessOption = freezed,
+    Object session = freezed,
   }) {
     return _then(_ChapterDatabaseState(
-      session: session == freezed ? _value.session : session as Session,
+      isBookmarked:
+          isBookmarked == freezed ? _value.isBookmarked : isBookmarked as bool,
+      isLiked: isLiked == freezed ? _value.isLiked : isLiked as bool,
+      showChapterAdditionalInfo: showChapterAdditionalInfo == freezed
+          ? _value.showChapterAdditionalInfo
+          : showChapterAdditionalInfo as bool,
+      showNavbar:
+          showNavbar == freezed ? _value.showNavbar : showNavbar as bool,
       chapter: chapter == freezed ? _value.chapter : chapter as Chapter,
       nextSameAuthorChapter: nextSameAuthorChapter == freezed
           ? _value.nextSameAuthorChapter
           : nextSameAuthorChapter as Chapter,
-      nextChapters: nextChapters == freezed
-          ? _value.nextChapters
-          : nextChapters as List<Chapter>,
-      isLiked: isLiked == freezed ? _value.isLiked : isLiked as bool,
-      isBookmarked:
-          isBookmarked == freezed ? _value.isBookmarked : isBookmarked as bool,
-      viewsCount: viewsCount == freezed ? _value.viewsCount : viewsCount as int,
-      likesCount: likesCount == freezed ? _value.likesCount : likesCount as int,
-      bookmarksCount: bookmarksCount == freezed
-          ? _value.bookmarksCount
-          : bookmarksCount as int,
-      showNavbar:
-          showNavbar == freezed ? _value.showNavbar : showNavbar as bool,
       percentProgress: percentProgress == freezed
           ? _value.percentProgress
           : percentProgress as double,
-      showChapterAdditionalInfo: showChapterAdditionalInfo == freezed
-          ? _value.showChapterAdditionalInfo
-          : showChapterAdditionalInfo as bool,
+      bookmarksCount: bookmarksCount == freezed
+          ? _value.bookmarksCount
+          : bookmarksCount as int,
+      likesCount: likesCount == freezed ? _value.likesCount : likesCount as int,
+      viewsCount: viewsCount == freezed ? _value.viewsCount : viewsCount as int,
+      nextChapters: nextChapters == freezed
+          ? _value.nextChapters
+          : nextChapters as List<Chapter>,
+      copyrightsMap: copyrightsMap == freezed
+          ? _value.copyrightsMap
+          : copyrightsMap as Map<String, String>,
       genresMap: genresMap == freezed
           ? _value.genresMap
           : genresMap as Map<String, String>,
       languagesMap: languagesMap == freezed
           ? _value.languagesMap
           : languagesMap as Map<String, String>,
-      copyrightsMap: copyrightsMap == freezed
-          ? _value.copyrightsMap
-          : copyrightsMap as Map<String, String>,
       databaseFailureOrSuccessOption: databaseFailureOrSuccessOption == freezed
           ? _value.databaseFailureOrSuccessOption
           : databaseFailureOrSuccessOption
-              as Option<Either<DatabaseFailure, dynamic>>,
+              as Option<Either<DatabaseFailure, DatabaseSuccess>>,
+      session: session == freezed ? _value.session : session as Session,
     ));
   }
 }
@@ -1567,75 +3663,76 @@ class _$_ChapterDatabaseState
     with DiagnosticableTreeMixin
     implements _ChapterDatabaseState {
   const _$_ChapterDatabaseState(
-      {@required this.session,
+      {@required this.isBookmarked,
+      @required this.isLiked,
+      @required this.showChapterAdditionalInfo,
+      @required this.showNavbar,
       @required this.chapter,
       @required this.nextSameAuthorChapter,
-      @required this.nextChapters,
-      @required this.isLiked,
-      @required this.isBookmarked,
-      @required this.viewsCount,
-      @required this.likesCount,
-      @required this.bookmarksCount,
-      @required this.showNavbar,
       @required this.percentProgress,
-      @required this.showChapterAdditionalInfo,
+      @required this.bookmarksCount,
+      @required this.likesCount,
+      @required this.viewsCount,
+      @required this.nextChapters,
+      @required this.copyrightsMap,
       @required this.genresMap,
       @required this.languagesMap,
-      @required this.copyrightsMap,
-      @required this.databaseFailureOrSuccessOption})
-      : assert(session != null),
+      @required this.databaseFailureOrSuccessOption,
+      @required this.session})
+      : assert(isBookmarked != null),
+        assert(isLiked != null),
+        assert(showChapterAdditionalInfo != null),
+        assert(showNavbar != null),
         assert(chapter != null),
         assert(nextSameAuthorChapter != null),
-        assert(nextChapters != null),
-        assert(isLiked != null),
-        assert(isBookmarked != null),
-        assert(viewsCount != null),
-        assert(likesCount != null),
-        assert(bookmarksCount != null),
-        assert(showNavbar != null),
         assert(percentProgress != null),
-        assert(showChapterAdditionalInfo != null),
+        assert(bookmarksCount != null),
+        assert(likesCount != null),
+        assert(viewsCount != null),
+        assert(nextChapters != null),
+        assert(copyrightsMap != null),
         assert(genresMap != null),
         assert(languagesMap != null),
-        assert(copyrightsMap != null),
-        assert(databaseFailureOrSuccessOption != null);
+        assert(databaseFailureOrSuccessOption != null),
+        assert(session != null);
 
   @override
-  final Session session;
+  final bool isBookmarked;
+  @override
+  final bool isLiked;
+  @override
+  final bool showChapterAdditionalInfo;
+  @override
+  final bool showNavbar;
   @override
   final Chapter chapter;
   @override
   final Chapter nextSameAuthorChapter;
   @override
-  final List<Chapter> nextChapters;
-  @override
-  final bool isLiked;
-  @override
-  final bool isBookmarked;
-  @override
-  final int viewsCount;
-  @override
-  final int likesCount;
+  final double percentProgress;
   @override
   final int bookmarksCount;
   @override
-  final bool showNavbar;
+  final int likesCount;
   @override
-  final double percentProgress;
+  final int viewsCount;
   @override
-  final bool showChapterAdditionalInfo;
+  final List<Chapter> nextChapters;
+  @override
+  final Map<String, String> copyrightsMap;
   @override
   final Map<String, String> genresMap;
   @override
   final Map<String, String> languagesMap;
   @override
-  final Map<String, String> copyrightsMap;
+  final Option<Either<DatabaseFailure, DatabaseSuccess>>
+      databaseFailureOrSuccessOption;
   @override
-  final Option<Either<DatabaseFailure, dynamic>> databaseFailureOrSuccessOption;
+  final Session session;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'ChapterDatabaseState(session: $session, chapter: $chapter, nextSameAuthorChapter: $nextSameAuthorChapter, nextChapters: $nextChapters, isLiked: $isLiked, isBookmarked: $isBookmarked, viewsCount: $viewsCount, likesCount: $likesCount, bookmarksCount: $bookmarksCount, showNavbar: $showNavbar, percentProgress: $percentProgress, showChapterAdditionalInfo: $showChapterAdditionalInfo, genresMap: $genresMap, languagesMap: $languagesMap, copyrightsMap: $copyrightsMap, databaseFailureOrSuccessOption: $databaseFailureOrSuccessOption)';
+    return 'ChapterDatabaseState(isBookmarked: $isBookmarked, isLiked: $isLiked, showChapterAdditionalInfo: $showChapterAdditionalInfo, showNavbar: $showNavbar, chapter: $chapter, nextSameAuthorChapter: $nextSameAuthorChapter, percentProgress: $percentProgress, bookmarksCount: $bookmarksCount, likesCount: $likesCount, viewsCount: $viewsCount, nextChapters: $nextChapters, copyrightsMap: $copyrightsMap, genresMap: $genresMap, languagesMap: $languagesMap, databaseFailureOrSuccessOption: $databaseFailureOrSuccessOption, session: $session)';
   }
 
   @override
@@ -1643,103 +3740,100 @@ class _$_ChapterDatabaseState
     super.debugFillProperties(properties);
     properties
       ..add(DiagnosticsProperty('type', 'ChapterDatabaseState'))
-      ..add(DiagnosticsProperty('session', session))
-      ..add(DiagnosticsProperty('chapter', chapter))
-      ..add(DiagnosticsProperty('nextSameAuthorChapter', nextSameAuthorChapter))
-      ..add(DiagnosticsProperty('nextChapters', nextChapters))
-      ..add(DiagnosticsProperty('isLiked', isLiked))
       ..add(DiagnosticsProperty('isBookmarked', isBookmarked))
-      ..add(DiagnosticsProperty('viewsCount', viewsCount))
-      ..add(DiagnosticsProperty('likesCount', likesCount))
-      ..add(DiagnosticsProperty('bookmarksCount', bookmarksCount))
-      ..add(DiagnosticsProperty('showNavbar', showNavbar))
-      ..add(DiagnosticsProperty('percentProgress', percentProgress))
+      ..add(DiagnosticsProperty('isLiked', isLiked))
       ..add(DiagnosticsProperty(
           'showChapterAdditionalInfo', showChapterAdditionalInfo))
+      ..add(DiagnosticsProperty('showNavbar', showNavbar))
+      ..add(DiagnosticsProperty('chapter', chapter))
+      ..add(DiagnosticsProperty('nextSameAuthorChapter', nextSameAuthorChapter))
+      ..add(DiagnosticsProperty('percentProgress', percentProgress))
+      ..add(DiagnosticsProperty('bookmarksCount', bookmarksCount))
+      ..add(DiagnosticsProperty('likesCount', likesCount))
+      ..add(DiagnosticsProperty('viewsCount', viewsCount))
+      ..add(DiagnosticsProperty('nextChapters', nextChapters))
+      ..add(DiagnosticsProperty('copyrightsMap', copyrightsMap))
       ..add(DiagnosticsProperty('genresMap', genresMap))
       ..add(DiagnosticsProperty('languagesMap', languagesMap))
-      ..add(DiagnosticsProperty('copyrightsMap', copyrightsMap))
       ..add(DiagnosticsProperty(
-          'databaseFailureOrSuccessOption', databaseFailureOrSuccessOption));
+          'databaseFailureOrSuccessOption', databaseFailureOrSuccessOption))
+      ..add(DiagnosticsProperty('session', session));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _ChapterDatabaseState &&
-            (identical(other.session, session) ||
+            (identical(other.isBookmarked, isBookmarked) ||
                 const DeepCollectionEquality()
-                    .equals(other.session, session)) &&
+                    .equals(other.isBookmarked, isBookmarked)) &&
+            (identical(other.isLiked, isLiked) ||
+                const DeepCollectionEquality()
+                    .equals(other.isLiked, isLiked)) &&
+            (identical(other.showChapterAdditionalInfo, showChapterAdditionalInfo) ||
+                const DeepCollectionEquality().equals(
+                    other.showChapterAdditionalInfo,
+                    showChapterAdditionalInfo)) &&
+            (identical(other.showNavbar, showNavbar) ||
+                const DeepCollectionEquality()
+                    .equals(other.showNavbar, showNavbar)) &&
             (identical(other.chapter, chapter) ||
                 const DeepCollectionEquality()
                     .equals(other.chapter, chapter)) &&
             (identical(other.nextSameAuthorChapter, nextSameAuthorChapter) ||
                 const DeepCollectionEquality().equals(
                     other.nextSameAuthorChapter, nextSameAuthorChapter)) &&
-            (identical(other.nextChapters, nextChapters) ||
-                const DeepCollectionEquality()
-                    .equals(other.nextChapters, nextChapters)) &&
-            (identical(other.isLiked, isLiked) ||
-                const DeepCollectionEquality()
-                    .equals(other.isLiked, isLiked)) &&
-            (identical(other.isBookmarked, isBookmarked) ||
-                const DeepCollectionEquality()
-                    .equals(other.isBookmarked, isBookmarked)) &&
-            (identical(other.viewsCount, viewsCount) ||
-                const DeepCollectionEquality()
-                    .equals(other.viewsCount, viewsCount)) &&
-            (identical(other.likesCount, likesCount) ||
-                const DeepCollectionEquality()
-                    .equals(other.likesCount, likesCount)) &&
-            (identical(other.bookmarksCount, bookmarksCount) ||
-                const DeepCollectionEquality()
-                    .equals(other.bookmarksCount, bookmarksCount)) &&
-            (identical(other.showNavbar, showNavbar) ||
-                const DeepCollectionEquality()
-                    .equals(other.showNavbar, showNavbar)) &&
             (identical(other.percentProgress, percentProgress) ||
                 const DeepCollectionEquality()
                     .equals(other.percentProgress, percentProgress)) &&
-            (identical(other.showChapterAdditionalInfo,
-                    showChapterAdditionalInfo) ||
-                const DeepCollectionEquality().equals(
-                    other.showChapterAdditionalInfo,
-                    showChapterAdditionalInfo)) &&
+            (identical(other.bookmarksCount, bookmarksCount) ||
+                const DeepCollectionEquality()
+                    .equals(other.bookmarksCount, bookmarksCount)) &&
+            (identical(other.likesCount, likesCount) ||
+                const DeepCollectionEquality()
+                    .equals(other.likesCount, likesCount)) &&
+            (identical(other.viewsCount, viewsCount) ||
+                const DeepCollectionEquality()
+                    .equals(other.viewsCount, viewsCount)) &&
+            (identical(other.nextChapters, nextChapters) ||
+                const DeepCollectionEquality()
+                    .equals(other.nextChapters, nextChapters)) &&
+            (identical(other.copyrightsMap, copyrightsMap) ||
+                const DeepCollectionEquality()
+                    .equals(other.copyrightsMap, copyrightsMap)) &&
             (identical(other.genresMap, genresMap) ||
                 const DeepCollectionEquality()
                     .equals(other.genresMap, genresMap)) &&
             (identical(other.languagesMap, languagesMap) ||
                 const DeepCollectionEquality()
                     .equals(other.languagesMap, languagesMap)) &&
-            (identical(other.copyrightsMap, copyrightsMap) ||
-                const DeepCollectionEquality()
-                    .equals(other.copyrightsMap, copyrightsMap)) &&
-            (identical(other.databaseFailureOrSuccessOption,
-                    databaseFailureOrSuccessOption) ||
+            (identical(other.databaseFailureOrSuccessOption, databaseFailureOrSuccessOption) ||
                 const DeepCollectionEquality().equals(
                     other.databaseFailureOrSuccessOption,
-                    databaseFailureOrSuccessOption)));
+                    databaseFailureOrSuccessOption)) &&
+            (identical(other.session, session) ||
+                const DeepCollectionEquality().equals(other.session, session)));
   }
 
   @override
   int get hashCode =>
       runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(session) ^
+      const DeepCollectionEquality().hash(isBookmarked) ^
+      const DeepCollectionEquality().hash(isLiked) ^
+      const DeepCollectionEquality().hash(showChapterAdditionalInfo) ^
+      const DeepCollectionEquality().hash(showNavbar) ^
       const DeepCollectionEquality().hash(chapter) ^
       const DeepCollectionEquality().hash(nextSameAuthorChapter) ^
-      const DeepCollectionEquality().hash(nextChapters) ^
-      const DeepCollectionEquality().hash(isLiked) ^
-      const DeepCollectionEquality().hash(isBookmarked) ^
-      const DeepCollectionEquality().hash(viewsCount) ^
-      const DeepCollectionEquality().hash(likesCount) ^
-      const DeepCollectionEquality().hash(bookmarksCount) ^
-      const DeepCollectionEquality().hash(showNavbar) ^
       const DeepCollectionEquality().hash(percentProgress) ^
-      const DeepCollectionEquality().hash(showChapterAdditionalInfo) ^
+      const DeepCollectionEquality().hash(bookmarksCount) ^
+      const DeepCollectionEquality().hash(likesCount) ^
+      const DeepCollectionEquality().hash(viewsCount) ^
+      const DeepCollectionEquality().hash(nextChapters) ^
+      const DeepCollectionEquality().hash(copyrightsMap) ^
       const DeepCollectionEquality().hash(genresMap) ^
       const DeepCollectionEquality().hash(languagesMap) ^
-      const DeepCollectionEquality().hash(copyrightsMap) ^
-      const DeepCollectionEquality().hash(databaseFailureOrSuccessOption);
+      const DeepCollectionEquality().hash(databaseFailureOrSuccessOption) ^
+      const DeepCollectionEquality().hash(session);
 
   @override
   _$ChapterDatabaseStateCopyWith<_ChapterDatabaseState> get copyWith =>
@@ -1750,71 +3844,72 @@ class _$_ChapterDatabaseState
 abstract class _ChapterDatabaseState implements ChapterDatabaseState {
   const factory _ChapterDatabaseState(
       {@required
-          Session session,
+          bool isBookmarked,
+      @required
+          bool isLiked,
+      @required
+          bool showChapterAdditionalInfo,
+      @required
+          bool showNavbar,
       @required
           Chapter chapter,
       @required
           Chapter nextSameAuthorChapter,
       @required
-          List<Chapter> nextChapters,
-      @required
-          bool isLiked,
-      @required
-          bool isBookmarked,
-      @required
-          int viewsCount,
-      @required
-          int likesCount,
+          double percentProgress,
       @required
           int bookmarksCount,
       @required
-          bool showNavbar,
+          int likesCount,
       @required
-          double percentProgress,
+          int viewsCount,
       @required
-          bool showChapterAdditionalInfo,
+          List<Chapter> nextChapters,
+      @required
+          Map<String, String> copyrightsMap,
       @required
           Map<String, String> genresMap,
       @required
           Map<String, String> languagesMap,
       @required
-          Map<String, String> copyrightsMap,
+          Option<Either<DatabaseFailure, DatabaseSuccess>>
+              databaseFailureOrSuccessOption,
       @required
-          Option<Either<DatabaseFailure, dynamic>>
-              databaseFailureOrSuccessOption}) = _$_ChapterDatabaseState;
+          Session session}) = _$_ChapterDatabaseState;
 
   @override
-  Session get session;
+  bool get isBookmarked;
+  @override
+  bool get isLiked;
+  @override
+  bool get showChapterAdditionalInfo;
+  @override
+  bool get showNavbar;
   @override
   Chapter get chapter;
   @override
   Chapter get nextSameAuthorChapter;
   @override
-  List<Chapter> get nextChapters;
-  @override
-  bool get isLiked;
-  @override
-  bool get isBookmarked;
-  @override
-  int get viewsCount;
-  @override
-  int get likesCount;
+  double get percentProgress;
   @override
   int get bookmarksCount;
   @override
-  bool get showNavbar;
+  int get likesCount;
   @override
-  double get percentProgress;
+  int get viewsCount;
   @override
-  bool get showChapterAdditionalInfo;
+  List<Chapter> get nextChapters;
+  @override
+  Map<String, String> get copyrightsMap;
   @override
   Map<String, String> get genresMap;
   @override
   Map<String, String> get languagesMap;
   @override
-  Map<String, String> get copyrightsMap;
+  Option<Either<DatabaseFailure, DatabaseSuccess>>
+      get databaseFailureOrSuccessOption;
   @override
-  Option<Either<DatabaseFailure, dynamic>> get databaseFailureOrSuccessOption;
+  Session get session;
   @override
   _$ChapterDatabaseStateCopyWith<_ChapterDatabaseState> get copyWith;
 }

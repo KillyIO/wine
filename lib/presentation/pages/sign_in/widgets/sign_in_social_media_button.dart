@@ -15,14 +15,8 @@ class SignInSocialMediaButton extends StatelessWidget {
     return FlatButton(
       onPressed: onPressed,
       padding: const EdgeInsets.all(10.0),
-      shape: const CircleBorder(
-        side: BorderSide(width: 2.0),
-      ),
-      child: Icon(
-        icon,
-        color: Colors.black,
-        size: 30.0,
-      ),
+      shape: const CircleBorder(side: BorderSide(width: 2.0)),
+      child: Icon(icon, color: Colors.black, size: 30.0),
     );
   }
 }

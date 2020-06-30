@@ -1,5 +1,11 @@
 import 'package:flutter/widgets.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:sailor/sailor.dart';
 import 'package:time/time.dart';
+import 'package:wine/application/authentication/core/core_authentication_bloc.dart';
+import 'package:wine/application/navigation/home/home_navigation_bloc.dart';
+import 'package:wine/routes.dart';
+import 'package:wine/utils/constants.dart';
 
 class Methods {
   static Map<String, String> getGenres(BuildContext context) {
@@ -45,6 +51,7 @@ class Methods {
 
   static List<String> getAccountNavbarItems(BuildContext context) {
     return <String>[
+      'PROFILE',
       'MY SERIES',
       'MY CHAPTERS',
     ];
@@ -92,5 +99,15 @@ class Methods {
 
   static bool isUrl(String input) {
     return Uri.parse(input).isAbsolute;
+  }
+
+  static void pseudoRestart(BuildContext context) {
+    sailor.navigate(
+      Constants.homeRoute,
+      navigationType: NavigationType.pushAndRemoveUntil,
+      removeUntilPredicate: (_) => false,
+    );
+    context.bloc<CoreAuthenticationBloc>().add(const CoreAuthenticationEvent.userStatusChangedEVT());
+    context.bloc<HomeNavigationBloc>().add(const HomeNavigationEvent.resetBlocEVT());
   }
 }

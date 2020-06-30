@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:time/time.dart';
 import 'package:wine/application/database/account/account_database_bloc.dart';
 import 'package:wine/application/navigation/account/account_navigation_bloc.dart';
-import 'package:wine/presentation/pages/account/widgets/my_chapters_layout.dart';
-import 'package:wine/presentation/pages/account/widgets/my_series_layout.dart';
-import 'package:wine/presentation/widgets/wine_horizontal_navbar_button.dart';
+import 'package:wine/presentation/pages/account/utils/account_database_methods.dart';
+import 'package:wine/presentation/pages/account/utils/account_navigation_methods.dart';
+import 'package:wine/presentation/pages/account/widgets/account_profile_layout.dart';
+import 'package:wine/presentation/pages/account/widgets/account_my_chapters_layout.dart';
+import 'package:wine/presentation/pages/account/widgets/account_my_series_layout.dart';
+import 'package:wine/presentation/widgets/wine_horizontal_navbar.dart';
 import 'package:wine/utils/palettes.dart';
 
 class AccountLayout extends StatefulWidget {
@@ -13,25 +15,29 @@ class AccountLayout extends StatefulWidget {
   _AccountLayoutState createState() => _AccountLayoutState();
 }
 
-class _AccountLayoutState extends State<AccountLayout>
-    with TickerProviderStateMixin {
-  final PageController _pageController = PageController(initialPage: 1000);
+class _AccountLayoutState extends State<AccountLayout> with TickerProviderStateMixin {
+  final PageController _pageController = PageController(initialPage: 999);
+  AccountDatabaseMethods _acDbMethods;
+  AccountNavigationMethods _acNavMethods;
+  List<Widget> _pageViewLayouts;
+
+  @override
+  void initState() {
+    super.initState();
+    _acDbMethods = AccountDatabaseMethods(context);
+    _acNavMethods = AccountNavigationMethods(context);
+    _pageViewLayouts = <Widget>[
+      AccountProfileLayout(),
+      AccountMySeriesLayout(acNavMethods: _acNavMethods),
+      AccountMyChaptersLayout(acNavMethods: _acNavMethods),
+    ];
+  }
 
   @override
   void dispose() {
     _pageController.dispose();
     super.dispose();
   }
-
-  final List<Color> pageViewNavbarColors = <Color>[
-    Palettes.pastelYellow,
-    Palettes.pastelPink,
-  ];
-
-  final List<Widget> pageViewLayouts = <Widget>[
-    MySeriesLayout(),
-    MyChaptersLayout(),
-  ];
 
   @override
   Widget build(BuildContext context) {
@@ -45,45 +51,18 @@ class _AccountLayoutState extends State<AccountLayout>
             return SafeArea(
               child: Column(
                 children: <Widget>[
-                  AnimatedContainer(
-                    duration: 100.milliseconds,
-                    height: 30.0,
-                    width: MediaQuery.of(context).size.width,
-                    color: pageViewNavbarColors[acNavState.currentPageViewIdx],
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      mainAxisSize: MainAxisSize.max,
-                      children: acNavState.pageViewNavbarItems
-                          .asMap()
-                          .entries
-                          .map((entry) {
-                        final int index = entry.key;
-                        final String value = entry.value;
-
-                        return WINEHorizontalNavbarButton(
-                          title: value,
-                          color: acNavState.currentPageViewIdx == index
-                              ? Colors.black
-                              : Colors.black12,
-                          onPressed: () => _pageController.animateToPage(
-                            index == 0 ? 1000 : 1001,
-                            duration: 200.milliseconds,
-                            curve: Curves.linear,
-                          ),
-                        );
-                      }).toList(),
-                    ),
+                  WINEHorizontalNavbar(
+                    pageController: _pageController,
+                    pageViewNavbarItems: acNavState.pageViewNavbarItems,
+                    currentPageViewIdx: acNavState.currentPageViewIdx,
+                    pageViewNavbarColors: <Color>[Palettes.pastelBlue, Palettes.pastelYellow, Palettes.pastelPink],
                   ),
                   Expanded(
                     child: PageView.builder(
                       controller: _pageController,
                       itemBuilder: (BuildContext context, int index) =>
-                          pageViewLayouts[index % pageViewLayouts.length],
-                      onPageChanged: (int index) => context
-                          .bloc<AccountNavigationBloc>()
-                          .add(AccountNavigationEvent.pageViewIndexChanged(
-                            index: index % pageViewLayouts.length,
-                          )),
+                          _pageViewLayouts[index % _pageViewLayouts.length],
+                      onPageChanged: (int index) => _acNavMethods.pageViewIndexChanged(index, _pageViewLayouts.length),
                     ),
                   ),
                 ],

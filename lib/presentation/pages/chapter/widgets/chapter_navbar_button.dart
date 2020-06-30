@@ -21,11 +21,7 @@ class ChapterNavbarButton extends StatelessWidget {
     return IconButton(
       highlightColor: Colors.transparent,
       splashColor: Colors.transparent,
-      icon: Icon(
-        icon,
-        color: onPressed == null ? disabledColor : iconColor,
-        size: iconSize,
-      ),
+      icon: Icon(icon, color: onPressed == null ? disabledColor : iconColor, size: iconSize),
       onPressed: onPressed,
     );
   }

@@ -48,12 +48,8 @@ class User {
     return User(
       uid: user.uid,
       name: user.displayName,
-      username: null,
       email: user.email,
       profilePictureUrl: user.photoUrl,
-      createdAt: null,
-      updatedAt: null,
-      bio: null,
     );
   }
 

@@ -12,8 +12,8 @@ T _$identity<T>(T value) => value;
 class _$SettingsOutlierEventTearOff {
   const _$SettingsOutlierEventTearOff();
 
-  GetAppDetails getAppDetails() {
-    return const GetAppDetails();
+  GetAppDetailsEVT getAppDetailsEVT() {
+    return const GetAppDetailsEVT();
   }
 }
 
@@ -37,42 +37,42 @@ class _$SettingsOutlierEventCopyWithImpl<$Res>
   final $Res Function(SettingsOutlierEvent) _then;
 }
 
-abstract class $GetAppDetailsCopyWith<$Res> {
-  factory $GetAppDetailsCopyWith(
-          GetAppDetails value, $Res Function(GetAppDetails) then) =
-      _$GetAppDetailsCopyWithImpl<$Res>;
+abstract class $GetAppDetailsEVTCopyWith<$Res> {
+  factory $GetAppDetailsEVTCopyWith(
+          GetAppDetailsEVT value, $Res Function(GetAppDetailsEVT) then) =
+      _$GetAppDetailsEVTCopyWithImpl<$Res>;
 }
 
-class _$GetAppDetailsCopyWithImpl<$Res>
+class _$GetAppDetailsEVTCopyWithImpl<$Res>
     extends _$SettingsOutlierEventCopyWithImpl<$Res>
-    implements $GetAppDetailsCopyWith<$Res> {
-  _$GetAppDetailsCopyWithImpl(
-      GetAppDetails _value, $Res Function(GetAppDetails) _then)
-      : super(_value, (v) => _then(v as GetAppDetails));
+    implements $GetAppDetailsEVTCopyWith<$Res> {
+  _$GetAppDetailsEVTCopyWithImpl(
+      GetAppDetailsEVT _value, $Res Function(GetAppDetailsEVT) _then)
+      : super(_value, (v) => _then(v as GetAppDetailsEVT));
 
   @override
-  GetAppDetails get _value => super._value as GetAppDetails;
+  GetAppDetailsEVT get _value => super._value as GetAppDetailsEVT;
 }
 
-class _$GetAppDetails implements GetAppDetails {
-  const _$GetAppDetails();
+class _$GetAppDetailsEVT implements GetAppDetailsEVT {
+  const _$GetAppDetailsEVT();
 
   @override
   String toString() {
-    return 'SettingsOutlierEvent.getAppDetails()';
+    return 'SettingsOutlierEvent.getAppDetailsEVT()';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is GetAppDetails);
+    return identical(this, other) || (other is GetAppDetailsEVT);
   }
 
   @override
   int get hashCode => runtimeType.hashCode;
 }
 
-abstract class GetAppDetails implements SettingsOutlierEvent {
-  const factory GetAppDetails() = _$GetAppDetails;
+abstract class GetAppDetailsEVT implements SettingsOutlierEvent {
+  const factory GetAppDetailsEVT() = _$GetAppDetailsEVT;
 }
 
 class _$SettingsOutlierStateTearOff {

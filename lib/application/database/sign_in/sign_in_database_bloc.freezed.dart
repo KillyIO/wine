@@ -12,8 +12,14 @@ T _$identity<T>(T value) => value;
 class _$SignInDatabaseEventTearOff {
   const _$SignInDatabaseEventTearOff();
 
-  SignedIn signedIn(User user) {
-    return SignedIn(
+  SignedInEVT signedInEVT(User user) {
+    return SignedInEVT(
+      user,
+    );
+  }
+
+  UserDetailsSavedEVT userDetailsSavedEVT(User user) {
+    return UserDetailsSavedEVT(
       user,
     );
   }
@@ -24,6 +30,29 @@ const $SignInDatabaseEvent = _$SignInDatabaseEventTearOff();
 
 mixin _$SignInDatabaseEvent {
   User get user;
+
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result signedInEVT(User user),
+    @required Result userDetailsSavedEVT(User user),
+  });
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result signedInEVT(User user),
+    Result userDetailsSavedEVT(User user),
+    @required Result orElse(),
+  });
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result signedInEVT(SignedInEVT value),
+    @required Result userDetailsSavedEVT(UserDetailsSavedEVT value),
+  });
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result signedInEVT(SignedInEVT value),
+    Result userDetailsSavedEVT(UserDetailsSavedEVT value),
+    @required Result orElse(),
+  });
 
   $SignInDatabaseEventCopyWith<SignInDatabaseEvent> get copyWith;
 }
@@ -53,48 +82,50 @@ class _$SignInDatabaseEventCopyWithImpl<$Res>
   }
 }
 
-abstract class $SignedInCopyWith<$Res>
+abstract class $SignedInEVTCopyWith<$Res>
     implements $SignInDatabaseEventCopyWith<$Res> {
-  factory $SignedInCopyWith(SignedIn value, $Res Function(SignedIn) then) =
-      _$SignedInCopyWithImpl<$Res>;
+  factory $SignedInEVTCopyWith(
+          SignedInEVT value, $Res Function(SignedInEVT) then) =
+      _$SignedInEVTCopyWithImpl<$Res>;
   @override
   $Res call({User user});
 }
 
-class _$SignedInCopyWithImpl<$Res>
+class _$SignedInEVTCopyWithImpl<$Res>
     extends _$SignInDatabaseEventCopyWithImpl<$Res>
-    implements $SignedInCopyWith<$Res> {
-  _$SignedInCopyWithImpl(SignedIn _value, $Res Function(SignedIn) _then)
-      : super(_value, (v) => _then(v as SignedIn));
+    implements $SignedInEVTCopyWith<$Res> {
+  _$SignedInEVTCopyWithImpl(
+      SignedInEVT _value, $Res Function(SignedInEVT) _then)
+      : super(_value, (v) => _then(v as SignedInEVT));
 
   @override
-  SignedIn get _value => super._value as SignedIn;
+  SignedInEVT get _value => super._value as SignedInEVT;
 
   @override
   $Res call({
     Object user = freezed,
   }) {
-    return _then(SignedIn(
+    return _then(SignedInEVT(
       user == freezed ? _value.user : user as User,
     ));
   }
 }
 
-class _$SignedIn implements SignedIn {
-  const _$SignedIn(this.user) : assert(user != null);
+class _$SignedInEVT implements SignedInEVT {
+  const _$SignedInEVT(this.user) : assert(user != null);
 
   @override
   final User user;
 
   @override
   String toString() {
-    return 'SignInDatabaseEvent.signedIn(user: $user)';
+    return 'SignInDatabaseEvent.signedInEVT(user: $user)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is SignedIn &&
+        (other is SignedInEVT &&
             (identical(other.user, user) ||
                 const DeepCollectionEquality().equals(other.user, user)));
   }
@@ -104,17 +135,183 @@ class _$SignedIn implements SignedIn {
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(user);
 
   @override
-  $SignedInCopyWith<SignedIn> get copyWith =>
-      _$SignedInCopyWithImpl<SignedIn>(this, _$identity);
+  $SignedInEVTCopyWith<SignedInEVT> get copyWith =>
+      _$SignedInEVTCopyWithImpl<SignedInEVT>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result signedInEVT(User user),
+    @required Result userDetailsSavedEVT(User user),
+  }) {
+    assert(signedInEVT != null);
+    assert(userDetailsSavedEVT != null);
+    return signedInEVT(user);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result signedInEVT(User user),
+    Result userDetailsSavedEVT(User user),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (signedInEVT != null) {
+      return signedInEVT(user);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result signedInEVT(SignedInEVT value),
+    @required Result userDetailsSavedEVT(UserDetailsSavedEVT value),
+  }) {
+    assert(signedInEVT != null);
+    assert(userDetailsSavedEVT != null);
+    return signedInEVT(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result signedInEVT(SignedInEVT value),
+    Result userDetailsSavedEVT(UserDetailsSavedEVT value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (signedInEVT != null) {
+      return signedInEVT(this);
+    }
+    return orElse();
+  }
 }
 
-abstract class SignedIn implements SignInDatabaseEvent {
-  const factory SignedIn(User user) = _$SignedIn;
+abstract class SignedInEVT implements SignInDatabaseEvent {
+  const factory SignedInEVT(User user) = _$SignedInEVT;
 
   @override
   User get user;
   @override
-  $SignedInCopyWith<SignedIn> get copyWith;
+  $SignedInEVTCopyWith<SignedInEVT> get copyWith;
+}
+
+abstract class $UserDetailsSavedEVTCopyWith<$Res>
+    implements $SignInDatabaseEventCopyWith<$Res> {
+  factory $UserDetailsSavedEVTCopyWith(
+          UserDetailsSavedEVT value, $Res Function(UserDetailsSavedEVT) then) =
+      _$UserDetailsSavedEVTCopyWithImpl<$Res>;
+  @override
+  $Res call({User user});
+}
+
+class _$UserDetailsSavedEVTCopyWithImpl<$Res>
+    extends _$SignInDatabaseEventCopyWithImpl<$Res>
+    implements $UserDetailsSavedEVTCopyWith<$Res> {
+  _$UserDetailsSavedEVTCopyWithImpl(
+      UserDetailsSavedEVT _value, $Res Function(UserDetailsSavedEVT) _then)
+      : super(_value, (v) => _then(v as UserDetailsSavedEVT));
+
+  @override
+  UserDetailsSavedEVT get _value => super._value as UserDetailsSavedEVT;
+
+  @override
+  $Res call({
+    Object user = freezed,
+  }) {
+    return _then(UserDetailsSavedEVT(
+      user == freezed ? _value.user : user as User,
+    ));
+  }
+}
+
+class _$UserDetailsSavedEVT implements UserDetailsSavedEVT {
+  const _$UserDetailsSavedEVT(this.user) : assert(user != null);
+
+  @override
+  final User user;
+
+  @override
+  String toString() {
+    return 'SignInDatabaseEvent.userDetailsSavedEVT(user: $user)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is UserDetailsSavedEVT &&
+            (identical(other.user, user) ||
+                const DeepCollectionEquality().equals(other.user, user)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(user);
+
+  @override
+  $UserDetailsSavedEVTCopyWith<UserDetailsSavedEVT> get copyWith =>
+      _$UserDetailsSavedEVTCopyWithImpl<UserDetailsSavedEVT>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result signedInEVT(User user),
+    @required Result userDetailsSavedEVT(User user),
+  }) {
+    assert(signedInEVT != null);
+    assert(userDetailsSavedEVT != null);
+    return userDetailsSavedEVT(user);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result signedInEVT(User user),
+    Result userDetailsSavedEVT(User user),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (userDetailsSavedEVT != null) {
+      return userDetailsSavedEVT(user);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result signedInEVT(SignedInEVT value),
+    @required Result userDetailsSavedEVT(UserDetailsSavedEVT value),
+  }) {
+    assert(signedInEVT != null);
+    assert(userDetailsSavedEVT != null);
+    return userDetailsSavedEVT(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result signedInEVT(SignedInEVT value),
+    Result userDetailsSavedEVT(UserDetailsSavedEVT value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (userDetailsSavedEVT != null) {
+      return userDetailsSavedEVT(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UserDetailsSavedEVT implements SignInDatabaseEvent {
+  const factory UserDetailsSavedEVT(User user) = _$UserDetailsSavedEVT;
+
+  @override
+  User get user;
+  @override
+  $UserDetailsSavedEVTCopyWith<UserDetailsSavedEVT> get copyWith;
 }
 
 class _$SignInDatabaseStateTearOff {
@@ -124,7 +321,7 @@ class _$SignInDatabaseStateTearOff {
       {@required
           bool isUpdating,
       @required
-          Option<Either<DatabaseFailure, dynamic>>
+          Option<Either<DatabaseFailure, DatabaseSuccess>>
               databaseFailureOrSuccessOption}) {
     return _SignInDatabaseState(
       isUpdating: isUpdating,
@@ -138,7 +335,8 @@ const $SignInDatabaseState = _$SignInDatabaseStateTearOff();
 
 mixin _$SignInDatabaseState {
   bool get isUpdating;
-  Option<Either<DatabaseFailure, dynamic>> get databaseFailureOrSuccessOption;
+  Option<Either<DatabaseFailure, DatabaseSuccess>>
+      get databaseFailureOrSuccessOption;
 
   $SignInDatabaseStateCopyWith<SignInDatabaseState> get copyWith;
 }
@@ -149,7 +347,8 @@ abstract class $SignInDatabaseStateCopyWith<$Res> {
       _$SignInDatabaseStateCopyWithImpl<$Res>;
   $Res call(
       {bool isUpdating,
-      Option<Either<DatabaseFailure, dynamic>> databaseFailureOrSuccessOption});
+      Option<Either<DatabaseFailure, DatabaseSuccess>>
+          databaseFailureOrSuccessOption});
 }
 
 class _$SignInDatabaseStateCopyWithImpl<$Res>
@@ -171,7 +370,7 @@ class _$SignInDatabaseStateCopyWithImpl<$Res>
       databaseFailureOrSuccessOption: databaseFailureOrSuccessOption == freezed
           ? _value.databaseFailureOrSuccessOption
           : databaseFailureOrSuccessOption
-              as Option<Either<DatabaseFailure, dynamic>>,
+              as Option<Either<DatabaseFailure, DatabaseSuccess>>,
     ));
   }
 }
@@ -184,7 +383,8 @@ abstract class _$SignInDatabaseStateCopyWith<$Res>
   @override
   $Res call(
       {bool isUpdating,
-      Option<Either<DatabaseFailure, dynamic>> databaseFailureOrSuccessOption});
+      Option<Either<DatabaseFailure, DatabaseSuccess>>
+          databaseFailureOrSuccessOption});
 }
 
 class __$SignInDatabaseStateCopyWithImpl<$Res>
@@ -208,7 +408,7 @@ class __$SignInDatabaseStateCopyWithImpl<$Res>
       databaseFailureOrSuccessOption: databaseFailureOrSuccessOption == freezed
           ? _value.databaseFailureOrSuccessOption
           : databaseFailureOrSuccessOption
-              as Option<Either<DatabaseFailure, dynamic>>,
+              as Option<Either<DatabaseFailure, DatabaseSuccess>>,
     ));
   }
 }
@@ -223,7 +423,8 @@ class _$_SignInDatabaseState implements _SignInDatabaseState {
   @override
   final bool isUpdating;
   @override
-  final Option<Either<DatabaseFailure, dynamic>> databaseFailureOrSuccessOption;
+  final Option<Either<DatabaseFailure, DatabaseSuccess>>
+      databaseFailureOrSuccessOption;
 
   @override
   String toString() {
@@ -261,13 +462,14 @@ abstract class _SignInDatabaseState implements SignInDatabaseState {
       {@required
           bool isUpdating,
       @required
-          Option<Either<DatabaseFailure, dynamic>>
+          Option<Either<DatabaseFailure, DatabaseSuccess>>
               databaseFailureOrSuccessOption}) = _$_SignInDatabaseState;
 
   @override
   bool get isUpdating;
   @override
-  Option<Either<DatabaseFailure, dynamic>> get databaseFailureOrSuccessOption;
+  Option<Either<DatabaseFailure, DatabaseSuccess>>
+      get databaseFailureOrSuccessOption;
   @override
   _$SignInDatabaseStateCopyWith<_SignInDatabaseState> get copyWith;
 }

@@ -1,26 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:sailor/sailor.dart';
-import 'package:wine/application/authentication/core/core_authentication_bloc.dart';
 import 'package:wine/application/authentication/settings/settings_authentication_bloc.dart';
 import 'package:wine/application/database/settings/settings_database_bloc.dart';
-import 'package:wine/application/navigation/home/home_navigation_bloc.dart';
-import 'package:wine/application/outlier/settings/settings_outlier_bloc.dart';
-import 'package:wine/presentation/pages/settings/widgets/account_settings.dart';
-import 'package:wine/presentation/pages/settings/widgets/app_version.dart';
-import 'package:wine/presentation/widgets/wine_show_dialog.dart';
-import 'package:wine/presentation/widgets/wine_error_dialog.dart';
+import 'package:wine/presentation/pages/settings/utils/settings_listeners.dart';
+import 'package:wine/presentation/pages/settings/widgets/settings_account_settings.dart';
+import 'package:wine/presentation/pages/settings/widgets/settings_app_version.dart';
 import 'package:wine/presentation/widgets/wine_leading_image_button.dart';
-import 'package:wine/routes.dart';
-import 'package:wine/utils/constants.dart';
+import 'package:wine/presentation/widgets/wine_loading_screen.dart';
 
 class SettingsLayout extends StatefulWidget {
   @override
   _SettingsLayoutState createState() => _SettingsLayoutState();
 }
 
-class _SettingsLayoutState extends State<SettingsLayout>
-    with TickerProviderStateMixin {
+class _SettingsLayoutState extends State<SettingsLayout> with TickerProviderStateMixin {
+  final SettingsListeners _stgsListeners = SettingsListeners();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,19 +26,13 @@ class _SettingsLayoutState extends State<SettingsLayout>
           backgroundColor: Colors.transparent,
           bottom: PreferredSize(
             preferredSize: const Size.fromHeight(0.0),
-            child: Container(
-              color: Colors.black,
-              height: 2.0,
-            ),
+            child: Container(color: Colors.black, height: 2.0),
           ),
           brightness: Brightness.light,
           centerTitle: true,
           elevation: 0.0,
           leading: Padding(
-            padding: const EdgeInsets.symmetric(
-              horizontal: 10.0,
-              vertical: 5.0,
-            ),
+            padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 5.0),
             child: WINELeadingImageButton(
               imagePath: 'assets/img/back_button.png',
               onPressed: () => Navigator.of(context).pop(),
@@ -51,150 +40,34 @@ class _SettingsLayoutState extends State<SettingsLayout>
           ),
           title: const Text(
             'SETTINGS',
-            style: TextStyle(
-              color: Colors.black,
-              fontSize: 18.0,
-              fontWeight: FontWeight.w300,
-            ),
+            style: TextStyle(color: Colors.black, fontSize: 18.0, fontWeight: FontWeight.w300),
           ),
         ),
       ),
       body: MultiBlocListener(
-        listeners: [
-          BlocListener<SettingsAuthenticationBloc, SettingsAuthenticationState>(
-            listener: (context, state) {
-              state.authenticationFailureOrSuccessOption.fold(
-                () {},
-                (some) => some.fold(
-                  (failure) => failure.maybeMap(
-                    serverError: (_) => wineShowDialog(
-                      context: context,
-                      builder: (_) => WINEErrorDialog(
-                        message: 'An unexpected error occured!',
-                        onPressed: () => Navigator.of(context).pop(true),
+        listeners: _stgsListeners.listeners,
+        child: BlocBuilder<SettingsAuthenticationBloc, SettingsAuthenticationState>(
+          builder: (context, settingsAuthState) {
+            return BlocBuilder<SettingsDatabaseBloc, SettingsDatabaseState>(
+              builder: (context, settingsDbState) {
+                return SafeArea(
+                  child: Stack(
+                    children: <Widget>[
+                      ScrollConfiguration(
+                        behavior: const ScrollBehavior(),
+                        child: ListView(
+                          children: <Widget>[
+                            SettingsAccountSettings(session: settingsDbState.session),
+                            const Padding(padding: EdgeInsets.symmetric(vertical: 10.0), child: SettingsAppVersion()),
+                          ],
+                        ),
                       ),
-                    ),
-                    unableToSignOut: (_) => wineShowDialog(
-                      context: context,
-                      builder: (_) => WINEErrorDialog(
-                        message:
-                            'We were unable to sign you out. Please retry later.',
-                        onPressed: () => Navigator.of(context).pop(true),
+                      WINELoadingScreen(
+                        vsync: this,
+                        isLoading: settingsAuthState.isSigningOut || settingsDbState.isUpdating,
                       ),
-                    ),
-                    orElse: null,
+                    ],
                   ),
-                  (success) {
-                    if (state.isUserSignedOut) {
-                      context
-                          .bloc<SettingsDatabaseBloc>()
-                          .add(const SettingsDatabaseEvent.userSignedOut());
-                    }
-                  },
-                ),
-              );
-            },
-          ),
-          BlocListener<SettingsDatabaseBloc, SettingsDatabaseState>(
-            listener: (context, state) {
-              state.databaseFailureOrSuccessOption.fold(
-                () {},
-                (some) => some.fold(
-                  (failure) => failure.maybeMap(
-                    failedToDeleteLocalData: (_) => wineShowDialog(
-                      context: context,
-                      builder: (_) => WINEErrorDialog(
-                        message:
-                            'Failed to clear data on your device! Please retry.',
-                        onPressed: () => Navigator.of(context).pop(true),
-                      ),
-                    ),
-                    orElse: null,
-                  ),
-                  (success) {
-                    if (state.isSessionDeleted) {
-                      sailor.navigate(
-                        Constants.homeRoute,
-                        navigationType: NavigationType.pushAndRemoveUntil,
-                        removeUntilPredicate: (_) => false,
-                      );
-                      context.bloc<SettingsDatabaseBloc>().add(
-                          const SettingsDatabaseEvent
-                              .resetSettingsDatabaseBloc());
-                      context.bloc<CoreAuthenticationBloc>().add(
-                          const CoreAuthenticationEvent
-                              .authenticationChanged());
-                      context.bloc<HomeNavigationBloc>().add(
-                          const HomeNavigationEvent.resetHomeNavigationBloc());
-                    }
-                  },
-                ),
-              );
-            },
-          ),
-        ],
-        child: BlocBuilder<CoreAuthenticationBloc, CoreAuthenticationState>(
-          builder: (context, coreAuthState) {
-            return BlocBuilder<SettingsAuthenticationBloc,
-                SettingsAuthenticationState>(
-              builder: (context, settingsAuthState) {
-                return BlocBuilder<SettingsDatabaseBloc, SettingsDatabaseState>(
-                  builder: (context, settingsDbState) {
-                    return BlocBuilder<SettingsOutlierBloc,
-                        SettingsOutlierState>(
-                      builder: (context, settingsOutlierState) {
-                        return SafeArea(
-                          child: Stack(
-                            children: <Widget>[
-                              ScrollConfiguration(
-                                behavior: const ScrollBehavior(),
-                                child: ListView(
-                                  children: <Widget>[
-                                    AccountSettings(
-                                      isAnonymous: coreAuthState.isAnonymous,
-                                      session: settingsDbState.session,
-                                    ),
-                                    Padding(
-                                      padding: const EdgeInsets.symmetric(
-                                          vertical: 10.0),
-                                      child: AppVersion(
-                                        appName: settingsOutlierState.appName,
-                                        appVersion:
-                                            settingsOutlierState.appVersion,
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                              Align(
-                                alignment: Alignment.bottomCenter,
-                                child: AnimatedSize(
-                                  duration: const Duration(milliseconds: 200),
-                                  vsync: this,
-                                  child: Container(
-                                    color: Colors.white,
-                                    width: MediaQuery.of(context).size.width,
-                                    height: settingsAuthState.isSigningOut ||
-                                            settingsDbState.isUpdating
-                                        ? MediaQuery.of(context).size.height
-                                        : 0.0,
-                                    child: const Center(
-                                      child: CircularProgressIndicator(
-                                        valueColor:
-                                            AlwaysStoppedAnimation<Color>(
-                                          Colors.black,
-                                        ),
-                                      ),
-                                    ),
-                                  ),
-                                ),
-                              ),
-                            ],
-                          ),
-                        );
-                      },
-                    );
-                  },
                 );
               },
             );

@@ -1,18 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:wine/application/navigation/account/account_navigation_bloc.dart';
+
+import 'package:wine/presentation/pages/account/utils/account_navigation_methods.dart';
 import 'package:wine/presentation/widgets/wine_vertical_navbar_button.dart';
 
 class AccountVerticalNavbar extends StatelessWidget {
+  final AccountNavigationMethods acNavMethods;
   final List<String> items;
   final int currentIndex;
   final double width;
 
   const AccountVerticalNavbar({
     Key key,
-    this.items,
-    this.currentIndex,
-    this.width,
+    @required this.acNavMethods,
+    @required this.items,
+    @required this.currentIndex,
+    @required this.width,
   }) : super(key: key);
 
   @override
@@ -31,11 +33,7 @@ class AccountVerticalNavbar extends StatelessWidget {
             ),
             child: WINEVerticalNavbarButton(
               title: value,
-              onPressed: () => context
-                  .bloc<AccountNavigationBloc>()
-                  .add(AccountNavigationEvent.verticalNavbarIndexChanged(
-                    index: index,
-                  )),
+              onPressed: () => acNavMethods.verticalNavbarIndexChanged(index),
               color: currentIndex == index ? Colors.black : Colors.black12,
               width: width,
             ),

@@ -16,19 +16,13 @@ Future<void> main() async {
 
   await configureInjection(Environment.dev);
   createRoutes();
-  runApp(MultiBlocProvider(
-    providers: [
+  runApp(
+    MultiBlocProvider(providers: [
       BlocProvider<CoreAuthenticationBloc>(
-        create: (_) => getIt<CoreAuthenticationBloc>()
-          ..add(const CoreAuthenticationEvent.appLaunched()),
+        create: (_) => getIt<CoreAuthenticationBloc>()..add(const CoreAuthenticationEvent.appLaunchedEVT()),
       ),
-      BlocProvider(
-        create: (context) => getIt<HomeNavigationBloc>(),
-      ),
-      BlocProvider(
-        create: (context) => getIt<HomeDatabaseBloc>(),
-      )
-    ],
-    child: DevelopmentApp(),
-  ));
+      BlocProvider(create: (context) => getIt<HomeNavigationBloc>()),
+      BlocProvider(create: (context) => getIt<HomeDatabaseBloc>())
+    ], child: DevelopmentApp()),
+  );
 }

@@ -6,6 +6,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:meta/meta.dart';
 import 'package:wine/domain/database/database_failure.dart';
+import 'package:wine/domain/database/database_success.dart';
 import 'package:wine/domain/database/i_local_placeholder_database_facade.dart';
 import 'package:wine/domain/database/i_local_session_database_facade.dart';
 import 'package:wine/domain/database/i_online_placeholder_database_facade.dart';
@@ -19,8 +20,7 @@ part 'splash_database_state.dart';
 part 'splash_database_bloc.freezed.dart';
 
 @injectable
-class SplashDatabaseBloc
-    extends Bloc<SplashDatabaseEvent, SplashDatabaseState> {
+class SplashDatabaseBloc extends Bloc<SplashDatabaseEvent, SplashDatabaseState> {
   final ILocalSessionDatabaseFacade _localSessionDatabaseFacade;
   final IOnlineUserDatabaseFacade _onlineUserDatabaseFacade;
   final ILocalPlaceholderDatabaseFacade _localPlaceholderDatabaseFacade;
@@ -41,75 +41,84 @@ class SplashDatabaseBloc
     SplashDatabaseEvent event,
   ) async* {
     yield* event.map(
-      authenticated: (event) async* {
-        Either<DatabaseFailure, dynamic> failureOrSuccess;
+      authenticatedEVT: (event) async* {
+        Either<DatabaseFailure, DatabaseSuccess> failureOrSuccess;
 
-        yield state.copyWith(
-          isUpdating: true,
-          databaseFailureOrSuccessOption: none(),
-        );
+        yield state.copyWith(isUpdating: true, databaseFailureOrSuccessOption: none());
 
-        Map<String, String> placeholderUrls = <String, String>{};
-
-        failureOrSuccess =
-            await _onlinePlaceholderDatabaseFacade.getPlaceholderUrls();
+        failureOrSuccess = await _onlinePlaceholderDatabaseFacade.getPlaceholderUrls();
         failureOrSuccess.fold(
           (_) {},
           (success) {
-            if (success is Map<String, String>) {
-              placeholderUrls = success;
+            if (success is PlaceholdersLoadedSCS) {
+              add(SplashDatabaseEvent.placeholdersLoadedEVT(success.placeholders));
             }
           },
         );
 
-        if (failureOrSuccess.isRight()) {
-          failureOrSuccess = await _localPlaceholderDatabaseFacade
-              .savePlaceholderUrls(placeholderUrls);
-
-          if (failureOrSuccess.isRight()) {
-            if (!event.isAnonymous) {
-              Session session;
-
-              failureOrSuccess = await _localSessionDatabaseFacade.getSession();
-              failureOrSuccess.fold(
-                (_) {},
-                (success) {
-                  if (success is Session) {
-                    session = success;
-                  }
-                },
-              );
-
-              if (failureOrSuccess.isRight()) {
-                failureOrSuccess =
-                    await _onlineUserDatabaseFacade.getUser(session.uid);
-                failureOrSuccess.fold(
-                  (_) {},
-                  (success) async {
-                    if (success is User) {
-                      session = Session.fromMap(success.toMap());
-                      await _localSessionDatabaseFacade.updateSession(session);
-                    }
-                  },
-                );
-              }
-            } else {
-              failureOrSuccess =
-                  await _localSessionDatabaseFacade.saveSession(Session());
-            }
-          }
-        }
-
         yield state.copyWith(
-          isUpdating: false,
+          isAnonymous: event.isAnonymous,
           databaseFailureOrSuccessOption: optionOf(failureOrSuccess),
         );
       },
-      logoAnimationCompleted: (event) async* {
-        yield state.copyWith(
-          isLogoAnimationCompleted: true,
-          databaseFailureOrSuccessOption: none(),
+      placeholdersLoadedEVT: (event) async* {
+        Either<DatabaseFailure, DatabaseSuccess> failureOrSuccess;
+
+        failureOrSuccess = await _localPlaceholderDatabaseFacade.savePlaceholderUrls(event.placeholders);
+        failureOrSuccess.fold(
+          (_) {},
+          (success) {
+            if (success is PlaceholdersSavedSCS) {
+              add(const SplashDatabaseEvent.placeholdersSavedEVT());
+            }
+          },
         );
+
+        yield state.copyWith(databaseFailureOrSuccessOption: optionOf(failureOrSuccess));
+      },
+      placeholdersSavedEVT: (event) async* {
+        Either<DatabaseFailure, DatabaseSuccess> failureOrSuccess;
+
+        if (!state.isAnonymous) {
+          failureOrSuccess = await _localSessionDatabaseFacade.fetchSession();
+          failureOrSuccess.fold(
+            (_) {},
+            (success) {
+              if (success is SessionFetchedSCS) {
+                add(SplashDatabaseEvent.sessionFetchedEVT(success.session));
+              }
+            },
+          );
+
+          yield state.copyWith(databaseFailureOrSuccessOption: optionOf(failureOrSuccess));
+        } else {
+          failureOrSuccess = await _localSessionDatabaseFacade.saveSession(Session());
+
+          yield state.copyWith(isUpdating: false, databaseFailureOrSuccessOption: optionOf(failureOrSuccess));
+        }
+      },
+      sessionFetchedEVT: (event) async* {
+        Either<DatabaseFailure, DatabaseSuccess> failureOrSuccess;
+
+        failureOrSuccess = await _onlineUserDatabaseFacade.loadUser(event.session.uid);
+        failureOrSuccess.fold(
+          (_) {},
+          (success) async {
+            if (success is UserLoadedSCS) {
+              add(SplashDatabaseEvent.userLoadedEVT(success.user));
+            }
+          },
+        );
+
+        yield state.copyWith(databaseFailureOrSuccessOption: optionOf(failureOrSuccess));
+      },
+      userLoadedEVT: (event) async* {
+        Either<DatabaseFailure, DatabaseSuccess> failureOrSuccess;
+
+        final Session session = Session.fromMap(event.user.toMap());
+        failureOrSuccess = await _localSessionDatabaseFacade.updateSession(session);
+
+        yield state.copyWith(isUpdating: false, databaseFailureOrSuccessOption: optionOf(failureOrSuccess));
       },
     );
   }

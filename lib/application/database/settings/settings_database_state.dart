@@ -5,15 +5,12 @@ abstract class SettingsDatabaseState with _$SettingsDatabaseState {
   const factory SettingsDatabaseState({
     @required Session session,
     @required bool isUpdating,
-    @required bool isSessionDeleted,
-    @required
-        Option<Either<DatabaseFailure, dynamic>> databaseFailureOrSuccessOption,
+    @required Option<Either<DatabaseFailure, DatabaseSuccess>> databaseFailureOrSuccessOption,
   }) = _SettingsDatabaseState;
 
   factory SettingsDatabaseState.initial() => SettingsDatabaseState(
         session: Session(),
         isUpdating: false,
-        isSessionDeleted: false,
         databaseFailureOrSuccessOption: none(),
       );
 }

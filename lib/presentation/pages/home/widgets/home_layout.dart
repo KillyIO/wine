@@ -2,16 +2,13 @@ import 'package:after_layout/after_layout.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:swipe_gesture_recognizer/swipe_gesture_recognizer.dart';
-import 'package:time/time.dart';
 import 'package:wine/application/database/home/home_database_bloc.dart';
 import 'package:wine/application/navigation/home/home_navigation_bloc.dart';
+import 'package:wine/presentation/pages/home/utils/home_listeners.dart';
+import 'package:wine/presentation/pages/home/utils/home_navigation_methods.dart';
 import 'package:wine/presentation/pages/home/widgets/home_app_bar.dart';
-import 'package:wine/presentation/pages/home/widgets/new_series_layout.dart';
-import 'package:wine/presentation/pages/home/widgets/top_series_layout.dart';
-import 'package:wine/presentation/widgets/wine_horizontal_navbar_button.dart';
-import 'package:wine/routes.dart';
-import 'package:wine/utils/arguments.dart';
-import 'package:wine/utils/constants.dart';
+import 'package:wine/presentation/pages/home/widgets/home_page_view_builder.dart';
+import 'package:wine/presentation/widgets/wine_horizontal_navbar.dart';
 import 'package:wine/utils/palettes.dart';
 
 class HomeLayout extends StatefulWidget {
@@ -20,16 +17,21 @@ class HomeLayout extends StatefulWidget {
 }
 
 class _HomeLayoutState extends State<HomeLayout> with AfterLayoutMixin {
+  final HomeListeners _homeListeners = HomeListeners();
   final PageController _pageController = PageController(initialPage: 1000);
+
+  HomeNavigationMethods _homeNavState;
+
+  @override
+  void initState() {
+    super.initState();
+    _homeNavState = HomeNavigationMethods(context);
+  }
 
   @override
   void afterFirstLayout(BuildContext context) {
-    context
-        .bloc<HomeNavigationBloc>()
-        .add(HomeNavigationEvent.homePageLaunched(context: context));
-    context
-        .bloc<HomeDatabaseBloc>()
-        .add(const HomeDatabaseEvent.homePageLaunched());
+    context.bloc<HomeDatabaseBloc>().add(const HomeDatabaseEvent.homePageLaunchedEVT());
+    context.bloc<HomeNavigationBloc>().add(HomeNavigationEvent.homePageLaunchedEVT(context: context));
   }
 
   @override
@@ -38,33 +40,12 @@ class _HomeLayoutState extends State<HomeLayout> with AfterLayoutMixin {
     super.dispose();
   }
 
-  final List<Color> pageViewNavbarColors = <Color>[
-    Palettes.pastelYellow,
-    Palettes.pastelPink,
-  ];
-
-  final List<Widget> pageViewLayouts = <Widget>[
-    TopSeriesLayout(),
-    NewSeriesLayout(),
-  ];
-
   @override
   Widget build(BuildContext context) {
     final Size mediaQuery = MediaQuery.of(context).size;
 
     return MultiBlocListener(
-      listeners: [
-        BlocListener<HomeNavigationBloc, HomeNavigationState>(
-          listener: (context, state) {
-            if (state.isNewSeriesPageOpen) {
-              sailor.navigate(
-                Constants.newSeriesRoute,
-                args: NewSeriesPageArgs(),
-              );
-            }
-          },
-        ),
-      ],
+      listeners: _homeListeners.listeners,
       child: BlocBuilder<HomeNavigationBloc, HomeNavigationState>(
         builder: (context, homeNavState) {
           return BlocBuilder<HomeDatabaseBloc, HomeDatabaseState>(
@@ -72,90 +53,36 @@ class _HomeLayoutState extends State<HomeLayout> with AfterLayoutMixin {
               return Scaffold(
                 backgroundColor: Colors.white,
                 appBar: HomeAppBar(
+                  homeNavState: _homeNavState,
                   isDrawerOpen: homeNavState.isDrawerOpen,
                   isNewSeriesPageOpen: homeNavState.isNewSeriesPageOpen,
                 ),
                 body: Stack(
                   children: <Widget>[
-                    if (!homeDbState.isFetching)
+                    if (!homeDbState.isLoading)
                       Column(
                         children: <Widget>[
-                          AnimatedContainer(
-                            duration: 100.milliseconds,
-                            height: 30.0,
-                            width: MediaQuery.of(context).size.width,
-                            color: pageViewNavbarColors[
-                                homeNavState.currentPageViewIdx],
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceAround,
-                              mainAxisSize: MainAxisSize.max,
-                              children: homeNavState.pageViewNavbarItems
-                                  .asMap()
-                                  .entries
-                                  .map((entry) {
-                                final int index = entry.key;
-                                final String value = entry.value;
-
-                                return WINEHorizontalNavbarButton(
-                                  title: value,
-                                  color:
-                                      homeNavState.currentPageViewIdx == index
-                                          ? Colors.black
-                                          : Colors.black12,
-                                  onPressed: () =>
-                                      _pageController.animateToPage(
-                                    index == 0 ? 1000 : 1001,
-                                    duration: 200.milliseconds,
-                                    curve: Curves.linear,
-                                  ),
-                                );
-                              }).toList(),
-                            ),
+                          WINEHorizontalNavbar(
+                            pageController: _pageController,
+                            pageViewNavbarItems: homeNavState.pageViewNavbarItems,
+                            currentPageViewIdx: homeNavState.currentPageViewIdx,
+                            pageViewNavbarColors: <Color>[Palettes.pastelYellow, Palettes.pastelPink],
                           ),
-                          Expanded(
-                            child: PageView.builder(
-                              controller: _pageController,
-                              itemBuilder: (BuildContext context, int index) =>
-                                  pageViewLayouts[
-                                      index % pageViewLayouts.length],
-                              onPageChanged: (int index) => context
-                                  .bloc<HomeNavigationBloc>()
-                                  .add(HomeNavigationEvent.pageViewIndexChanged(
-                                    index: index % pageViewLayouts.length,
-                                  )),
-                            ),
-                          ),
+                          HomePageViewBuilder(pageController: _pageController, homeNavState: _homeNavState),
                         ],
                       ),
-                    if (!homeDbState.isFetching)
+                    if (!homeDbState.isLoading)
                       SwipeGestureRecognizer(
-                        onSwipeLeft: () {
-                          context
-                              .bloc<HomeNavigationBloc>()
-                              .add(HomeNavigationEvent.drawerIconPressed(
-                                isDrawerOpen: homeNavState.isDrawerOpen,
-                              ));
-                          sailor(Constants.homeDrawerRoute);
-                        },
+                        onSwipeLeft: () => _homeNavState.openDrawer(),
                         child: Align(
                           alignment: Alignment.topRight,
-                          child: Container(
-                            color: Colors.transparent,
-                            width: 20,
-                            height: mediaQuery.height,
-                          ),
+                          child: Container(color: Colors.transparent, width: 20, height: mediaQuery.height),
                         ),
                       ),
-                    Visibility(
-                      visible: homeDbState.isFetching,
-                      child: const Center(
-                        child: CircularProgressIndicator(
-                          valueColor: AlwaysStoppedAnimation<Color>(
-                            Colors.black,
-                          ),
-                        ),
+                    if (homeDbState.isLoading)
+                      const Center(
+                        child: CircularProgressIndicator(valueColor: AlwaysStoppedAnimation<Color>(Colors.black)),
                       ),
-                    ),
                   ],
                 ),
               );

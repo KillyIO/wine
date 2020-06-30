@@ -4,7 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:wine/application/authentication/sign_in/sign_in_authentication_bloc.dart';
 import 'package:wine/application/database/sign_in/sign_in_database_bloc.dart';
 import 'package:wine/injection.dart';
-import 'package:wine/presentation/pages/sign_in/widgets/sign_in_form.dart';
+import 'package:wine/presentation/pages/sign_in/widgets/sign_in_form_layout.dart';
 import 'package:wine/presentation/widgets/wine_leading_image_button.dart';
 import 'package:wine/utils/themes.dart';
 
@@ -30,8 +30,7 @@ class SignInPage extends StatelessWidget {
             centerTitle: true,
             elevation: 0.0,
             leading: Padding(
-              padding:
-                  const EdgeInsets.symmetric(horizontal: 10.0, vertical: 5.0),
+              padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 5.0),
               child: WINELeadingImageButton(
                 imagePath: 'assets/img/back_button.png',
                 onPressed: () {
@@ -44,14 +43,10 @@ class SignInPage extends StatelessWidget {
         ),
         body: MultiBlocProvider(
           providers: [
-            BlocProvider(
-              create: (context) => getIt<SignInAuthenticationBloc>(),
-            ),
-            BlocProvider(
-              create: (context) => getIt<SignInDatabaseBloc>(),
-            ),
+            BlocProvider(create: (context) => getIt<SignInAuthenticationBloc>()),
+            BlocProvider(create: (context) => getIt<SignInDatabaseBloc>()),
           ],
-          child: SignInForm(),
+          child: SignInFormLayout(),
         ),
       ),
     );

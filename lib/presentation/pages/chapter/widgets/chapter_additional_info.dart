@@ -11,11 +11,11 @@ class ChapterAdditionalInfo extends StatelessWidget {
 
   const ChapterAdditionalInfo({
     Key key,
-    this.authorName,
-    this.seriesName,
-    this.genre,
-    this.genreOptional,
-    this.copyrights,
+    @required this.authorName,
+    @required this.seriesName,
+    @required this.genre,
+    @required this.genreOptional,
+    @required this.copyrights,
   }) : super(key: key);
 
   @override
@@ -33,42 +33,20 @@ class ChapterAdditionalInfo extends StatelessWidget {
           RichText(
             text: TextSpan(
               children: <TextSpan>[
-                TextSpan(
-                  text: 'Author · ',
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                TextSpan(
-                  text: authorName,
-                ),
+                TextSpan(text: 'Author · ', style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold)),
+                TextSpan(text: authorName),
               ],
-              style: TextStyle(
-                color: Colors.black38,
-                fontSize: 16.0,
-              ),
+              style: TextStyle(color: Colors.black38, fontSize: 16.0),
             ),
           ),
           const SizedBox(height: 5),
           RichText(
             text: TextSpan(
               children: <TextSpan>[
-                TextSpan(
-                  text: 'Series · ',
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                TextSpan(
-                  text: seriesName,
-                ),
+                TextSpan(text: 'Series · ', style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold)),
+                TextSpan(text: seriesName),
               ],
-              style: TextStyle(
-                color: Colors.black38,
-                fontSize: 16.0,
-              ),
+              style: TextStyle(color: Colors.black38, fontSize: 16.0),
             ),
           ),
           const SizedBox(height: 10),
@@ -76,25 +54,15 @@ class ChapterAdditionalInfo extends StatelessWidget {
             children: <Widget>[
               WINEGenreContainer(genre),
               const SizedBox(width: 15),
-              if (genreOptional.isNotEmptyOrNull)
-                WINEGenreContainer(genreOptional),
+              if (genreOptional.isNotEmptyOrNull) WINEGenreContainer(genreOptional),
             ],
           ),
           const SizedBox(height: 10),
           Row(
             children: <Widget>[
-              Icon(
-                Icons.copyright,
-                color: Colors.black54,
-              ),
+              Icon(Icons.copyright, color: Colors.black54),
               const SizedBox(width: 5),
-              Text(
-                copyrights,
-                style: TextStyle(
-                  color: Colors.black54,
-                  fontSize: 16.0,
-                ),
-              ),
+              Text(copyrights, style: TextStyle(color: Colors.black54, fontSize: 16.0)),
             ],
           ),
         ],

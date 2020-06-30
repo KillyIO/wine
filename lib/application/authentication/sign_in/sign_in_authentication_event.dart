@@ -2,12 +2,8 @@ part of 'sign_in_authentication_bloc.dart';
 
 @freezed
 abstract class SignInAuthenticationEvent with _$SignInAuthenticationEvent {
-  const factory SignInAuthenticationEvent.emailChanged(String emailStr) =
-      EmailChanged;
-  const factory SignInAuthenticationEvent.passwordChanged(String passwordStr) =
-      PasswordChanged;
-  const factory SignInAuthenticationEvent.signInWithEmailAndPasswordPressed() =
-      SignInWithEmailAndPasswordPressed;
-  const factory SignInAuthenticationEvent.signInWithGooglePressed() =
-      SignInWithGooglePressed;
+  const factory SignInAuthenticationEvent.emailChangedEVT(String emailStr) = EmailChangedEVT;
+  const factory SignInAuthenticationEvent.passwordChangedEVT(String passwordStr) = PasswordChangedEVT;
+  const factory SignInAuthenticationEvent.signInWithEmailAndPasswordPressedEVT() = SignInWithEmailAndPasswordPressedEVT;
+  const factory SignInAuthenticationEvent.signInWithGooglePressedEVT() = SignInWithGooglePressedEVT;
 }

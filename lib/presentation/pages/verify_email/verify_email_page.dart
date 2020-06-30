@@ -16,14 +16,10 @@ class VerifyEmailPage extends StatelessWidget {
         backgroundColor: Colors.white,
         body: MultiBlocProvider(
           providers: [
-            BlocProvider(
-              create: (context) => getIt<CreateAccountAuthenticationBloc>(),
-            ),
+            BlocProvider(create: (context) => getIt<CreateAccountAuthenticationBloc>()),
             BlocProvider(
               create: (context) => getIt<CreateAccountDatabaseBloc>()
-                ..add(
-                  const CreateAccountDatabaseEvent.verifyEmailPageLaunched(),
-                ),
+                ..add(const CreateAccountDatabaseEvent.verifyEmailPageLaunchedEVT()),
             ),
           ],
           child: VerifyEmailLayout(),

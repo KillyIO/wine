@@ -4,15 +4,11 @@ part of 'settings_authentication_bloc.dart';
 abstract class SettingsAuthenticationState with _$SettingsAuthenticationState {
   const factory SettingsAuthenticationState({
     @required bool isSigningOut,
-    @required bool isUserSignedOut,
-    @required
-        Option<Either<AuthenticationFailure, dynamic>>
-            authenticationFailureOrSuccessOption,
+    @required Option<Either<AuthenticationFailure, AuthenticationSuccess>> authenticationFailureOrSuccessOption,
   }) = _SettingsAuthenticationState;
 
   factory SettingsAuthenticationState.initial() => SettingsAuthenticationState(
         isSigningOut: false,
-        isUserSignedOut: false,
         authenticationFailureOrSuccessOption: none(),
       );
 }

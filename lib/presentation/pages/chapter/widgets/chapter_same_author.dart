@@ -19,14 +19,21 @@ class ChapterSameAuthor extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    if (chapter.isNotEmptyOrNull) {
+    if (!chapter.isEmpty) {
       return WINEChapterTile(
+        coverUrl: chapter.coverUrl,
         title: chapter.title,
         authorName: authorName,
         seriesTitle: chapter.series.title,
+        onPressed: () {},
       );
     } else {
-      return Text("There's no chapter $index by $authorName for this series.");
+      return Column(
+        children: <Widget>[
+          Image.asset('assets/img/leaf.png', fit: BoxFit.contain, width: MediaQuery.of(context).size.width / 2.5),
+          Text("There's no chapter $index by $authorName for this series."),
+        ],
+      );
     }
   }
 }

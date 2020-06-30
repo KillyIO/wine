@@ -16,15 +16,10 @@ Future<void> main() async {
   runApp(MultiBlocProvider(
     providers: [
       BlocProvider<CoreAuthenticationBloc>(
-        create: (_) => getIt<CoreAuthenticationBloc>()
-          ..add(const CoreAuthenticationEvent.appLaunched()),
+        create: (_) => getIt<CoreAuthenticationBloc>()..add(const CoreAuthenticationEvent.appLaunchedEVT()),
       ),
-      BlocProvider(
-        create: (context) => getIt<HomeNavigationBloc>(),
-      ),
-      BlocProvider(
-        create: (context) => getIt<HomeDatabaseBloc>(),
-      )
+      BlocProvider(create: (context) => getIt<HomeNavigationBloc>()),
+      BlocProvider(create: (context) => getIt<HomeDatabaseBloc>())
     ],
     child: ProductionApp(),
   ));

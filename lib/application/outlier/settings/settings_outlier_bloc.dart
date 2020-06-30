@@ -20,13 +20,10 @@ class SettingsOutlierBloc extends Bloc<SettingsOutlierEvent, SettingsOutlierStat
   Stream<SettingsOutlierState> mapEventToState(
     SettingsOutlierEvent event,
   ) async* {
-    if (event is GetAppDetails) {
+    if (event is GetAppDetailsEVT) {
       final PackageInfo packageInfo = await PackageInfo.fromPlatform();
 
-      yield state.copyWith(
-        appName: packageInfo.appName,
-        appVersion: packageInfo.version,
-      );
+      yield state.copyWith(appName: packageInfo.appName, appVersion: packageInfo.version);
     }
   }
 }

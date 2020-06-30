@@ -12,27 +12,62 @@ T _$identity<T>(T value) => value;
 class _$SeriesDatabaseEventTearOff {
   const _$SeriesDatabaseEventTearOff();
 
-  SeriesPageLaunched seriesPageLaunched({Series series, BuildContext context}) {
-    return SeriesPageLaunched(
+  BookmarkButtonPressedEVT bookmarkButtonPressedEVT() {
+    return const BookmarkButtonPressedEVT();
+  }
+
+  BookmarksUpdatedEVT bookmarksUpdatedEVT() {
+    return const BookmarksUpdatedEVT();
+  }
+
+  LikeButtonPressedEVT likeButtonPressedEVT() {
+    return const LikeButtonPressedEVT();
+  }
+
+  LikesUpdatedEVT likesUpdatedEVT() {
+    return const LikesUpdatedEVT();
+  }
+
+  ReadChapterOneButtonPressedEVT readChapterOneButtonPressedEVT() {
+    return const ReadChapterOneButtonPressedEVT();
+  }
+
+  SeriesBookmarkStatusLoadedEVT seriesBookmarkStatusLoadedEVT() {
+    return const SeriesBookmarkStatusLoadedEVT();
+  }
+
+  SeriesLikesLoadedEVT seriesLikesLoadedEVT() {
+    return const SeriesLikesLoadedEVT();
+  }
+
+  SeriesLikeStatusLoadedEVT seriesLikeStatusLoadedEVT() {
+    return const SeriesLikeStatusLoadedEVT();
+  }
+
+  SeriesPageLaunchedEVT seriesPageLaunchedEVT(
+      {Series series, BuildContext context}) {
+    return SeriesPageLaunchedEVT(
       series: series,
       context: context,
     );
   }
 
-  LikeButtonPressed likeButtonPressed() {
-    return const LikeButtonPressed();
+  SeriesViewsLoadedEVT seriesViewsLoadedEVT() {
+    return const SeriesViewsLoadedEVT();
   }
 
-  BookmarkButtonPressed bookmarkButtonPressed() {
-    return const BookmarkButtonPressed();
+  SeriesViewsUpdatedEVT seriesViewsUpdatedEVT() {
+    return const SeriesViewsUpdatedEVT();
   }
 
-  ShowMoreSummaryButtonPressed showMoreSummaryButtonPressed() {
-    return const ShowMoreSummaryButtonPressed();
+  SessionFetchedEVT sessionFetchedEVT(Session session) {
+    return SessionFetchedEVT(
+      session,
+    );
   }
 
-  ReadChapterOneButtonPressed readChapterOneButtonPressed() {
-    return const ReadChapterOneButtonPressed();
+  ShowMoreSummaryButtonPressedEVT showMoreSummaryButtonPressedEVT() {
+    return const ShowMoreSummaryButtonPressedEVT();
   }
 }
 
@@ -42,38 +77,75 @@ const $SeriesDatabaseEvent = _$SeriesDatabaseEventTearOff();
 mixin _$SeriesDatabaseEvent {
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result seriesPageLaunched(Series series, BuildContext context),
-    @required Result likeButtonPressed(),
-    @required Result bookmarkButtonPressed(),
-    @required Result showMoreSummaryButtonPressed(),
-    @required Result readChapterOneButtonPressed(),
+    @required Result bookmarkButtonPressedEVT(),
+    @required Result bookmarksUpdatedEVT(),
+    @required Result likeButtonPressedEVT(),
+    @required Result likesUpdatedEVT(),
+    @required Result readChapterOneButtonPressedEVT(),
+    @required Result seriesBookmarkStatusLoadedEVT(),
+    @required Result seriesLikesLoadedEVT(),
+    @required Result seriesLikeStatusLoadedEVT(),
+    @required Result seriesPageLaunchedEVT(Series series, BuildContext context),
+    @required Result seriesViewsLoadedEVT(),
+    @required Result seriesViewsUpdatedEVT(),
+    @required Result sessionFetchedEVT(Session session),
+    @required Result showMoreSummaryButtonPressedEVT(),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result seriesPageLaunched(Series series, BuildContext context),
-    Result likeButtonPressed(),
-    Result bookmarkButtonPressed(),
-    Result showMoreSummaryButtonPressed(),
-    Result readChapterOneButtonPressed(),
+    Result bookmarkButtonPressedEVT(),
+    Result bookmarksUpdatedEVT(),
+    Result likeButtonPressedEVT(),
+    Result likesUpdatedEVT(),
+    Result readChapterOneButtonPressedEVT(),
+    Result seriesBookmarkStatusLoadedEVT(),
+    Result seriesLikesLoadedEVT(),
+    Result seriesLikeStatusLoadedEVT(),
+    Result seriesPageLaunchedEVT(Series series, BuildContext context),
+    Result seriesViewsLoadedEVT(),
+    Result seriesViewsUpdatedEVT(),
+    Result sessionFetchedEVT(Session session),
+    Result showMoreSummaryButtonPressedEVT(),
     @required Result orElse(),
   });
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result seriesPageLaunched(SeriesPageLaunched value),
-    @required Result likeButtonPressed(LikeButtonPressed value),
-    @required Result bookmarkButtonPressed(BookmarkButtonPressed value),
+    @required Result bookmarkButtonPressedEVT(BookmarkButtonPressedEVT value),
+    @required Result bookmarksUpdatedEVT(BookmarksUpdatedEVT value),
+    @required Result likeButtonPressedEVT(LikeButtonPressedEVT value),
+    @required Result likesUpdatedEVT(LikesUpdatedEVT value),
     @required
-        Result showMoreSummaryButtonPressed(ShowMoreSummaryButtonPressed value),
+        Result readChapterOneButtonPressedEVT(
+            ReadChapterOneButtonPressedEVT value),
     @required
-        Result readChapterOneButtonPressed(ReadChapterOneButtonPressed value),
+        Result seriesBookmarkStatusLoadedEVT(
+            SeriesBookmarkStatusLoadedEVT value),
+    @required Result seriesLikesLoadedEVT(SeriesLikesLoadedEVT value),
+    @required Result seriesLikeStatusLoadedEVT(SeriesLikeStatusLoadedEVT value),
+    @required Result seriesPageLaunchedEVT(SeriesPageLaunchedEVT value),
+    @required Result seriesViewsLoadedEVT(SeriesViewsLoadedEVT value),
+    @required Result seriesViewsUpdatedEVT(SeriesViewsUpdatedEVT value),
+    @required Result sessionFetchedEVT(SessionFetchedEVT value),
+    @required
+        Result showMoreSummaryButtonPressedEVT(
+            ShowMoreSummaryButtonPressedEVT value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result seriesPageLaunched(SeriesPageLaunched value),
-    Result likeButtonPressed(LikeButtonPressed value),
-    Result bookmarkButtonPressed(BookmarkButtonPressed value),
-    Result showMoreSummaryButtonPressed(ShowMoreSummaryButtonPressed value),
-    Result readChapterOneButtonPressed(ReadChapterOneButtonPressed value),
+    Result bookmarkButtonPressedEVT(BookmarkButtonPressedEVT value),
+    Result bookmarksUpdatedEVT(BookmarksUpdatedEVT value),
+    Result likeButtonPressedEVT(LikeButtonPressedEVT value),
+    Result likesUpdatedEVT(LikesUpdatedEVT value),
+    Result readChapterOneButtonPressedEVT(ReadChapterOneButtonPressedEVT value),
+    Result seriesBookmarkStatusLoadedEVT(SeriesBookmarkStatusLoadedEVT value),
+    Result seriesLikesLoadedEVT(SeriesLikesLoadedEVT value),
+    Result seriesLikeStatusLoadedEVT(SeriesLikeStatusLoadedEVT value),
+    Result seriesPageLaunchedEVT(SeriesPageLaunchedEVT value),
+    Result seriesViewsLoadedEVT(SeriesViewsLoadedEVT value),
+    Result seriesViewsUpdatedEVT(SeriesViewsUpdatedEVT value),
+    Result sessionFetchedEVT(SessionFetchedEVT value),
+    Result showMoreSummaryButtonPressedEVT(
+        ShowMoreSummaryButtonPressedEVT value),
     @required Result orElse(),
   });
 }
@@ -93,39 +165,1416 @@ class _$SeriesDatabaseEventCopyWithImpl<$Res>
   final $Res Function(SeriesDatabaseEvent) _then;
 }
 
-abstract class $SeriesPageLaunchedCopyWith<$Res> {
-  factory $SeriesPageLaunchedCopyWith(
-          SeriesPageLaunched value, $Res Function(SeriesPageLaunched) then) =
-      _$SeriesPageLaunchedCopyWithImpl<$Res>;
+abstract class $BookmarkButtonPressedEVTCopyWith<$Res> {
+  factory $BookmarkButtonPressedEVTCopyWith(BookmarkButtonPressedEVT value,
+          $Res Function(BookmarkButtonPressedEVT) then) =
+      _$BookmarkButtonPressedEVTCopyWithImpl<$Res>;
+}
+
+class _$BookmarkButtonPressedEVTCopyWithImpl<$Res>
+    extends _$SeriesDatabaseEventCopyWithImpl<$Res>
+    implements $BookmarkButtonPressedEVTCopyWith<$Res> {
+  _$BookmarkButtonPressedEVTCopyWithImpl(BookmarkButtonPressedEVT _value,
+      $Res Function(BookmarkButtonPressedEVT) _then)
+      : super(_value, (v) => _then(v as BookmarkButtonPressedEVT));
+
+  @override
+  BookmarkButtonPressedEVT get _value =>
+      super._value as BookmarkButtonPressedEVT;
+}
+
+class _$BookmarkButtonPressedEVT
+    with DiagnosticableTreeMixin
+    implements BookmarkButtonPressedEVT {
+  const _$BookmarkButtonPressedEVT();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'SeriesDatabaseEvent.bookmarkButtonPressedEVT()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty(
+          'type', 'SeriesDatabaseEvent.bookmarkButtonPressedEVT'));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is BookmarkButtonPressedEVT);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result bookmarkButtonPressedEVT(),
+    @required Result bookmarksUpdatedEVT(),
+    @required Result likeButtonPressedEVT(),
+    @required Result likesUpdatedEVT(),
+    @required Result readChapterOneButtonPressedEVT(),
+    @required Result seriesBookmarkStatusLoadedEVT(),
+    @required Result seriesLikesLoadedEVT(),
+    @required Result seriesLikeStatusLoadedEVT(),
+    @required Result seriesPageLaunchedEVT(Series series, BuildContext context),
+    @required Result seriesViewsLoadedEVT(),
+    @required Result seriesViewsUpdatedEVT(),
+    @required Result sessionFetchedEVT(Session session),
+    @required Result showMoreSummaryButtonPressedEVT(),
+  }) {
+    assert(bookmarkButtonPressedEVT != null);
+    assert(bookmarksUpdatedEVT != null);
+    assert(likeButtonPressedEVT != null);
+    assert(likesUpdatedEVT != null);
+    assert(readChapterOneButtonPressedEVT != null);
+    assert(seriesBookmarkStatusLoadedEVT != null);
+    assert(seriesLikesLoadedEVT != null);
+    assert(seriesLikeStatusLoadedEVT != null);
+    assert(seriesPageLaunchedEVT != null);
+    assert(seriesViewsLoadedEVT != null);
+    assert(seriesViewsUpdatedEVT != null);
+    assert(sessionFetchedEVT != null);
+    assert(showMoreSummaryButtonPressedEVT != null);
+    return bookmarkButtonPressedEVT();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result bookmarkButtonPressedEVT(),
+    Result bookmarksUpdatedEVT(),
+    Result likeButtonPressedEVT(),
+    Result likesUpdatedEVT(),
+    Result readChapterOneButtonPressedEVT(),
+    Result seriesBookmarkStatusLoadedEVT(),
+    Result seriesLikesLoadedEVT(),
+    Result seriesLikeStatusLoadedEVT(),
+    Result seriesPageLaunchedEVT(Series series, BuildContext context),
+    Result seriesViewsLoadedEVT(),
+    Result seriesViewsUpdatedEVT(),
+    Result sessionFetchedEVT(Session session),
+    Result showMoreSummaryButtonPressedEVT(),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (bookmarkButtonPressedEVT != null) {
+      return bookmarkButtonPressedEVT();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result bookmarkButtonPressedEVT(BookmarkButtonPressedEVT value),
+    @required Result bookmarksUpdatedEVT(BookmarksUpdatedEVT value),
+    @required Result likeButtonPressedEVT(LikeButtonPressedEVT value),
+    @required Result likesUpdatedEVT(LikesUpdatedEVT value),
+    @required
+        Result readChapterOneButtonPressedEVT(
+            ReadChapterOneButtonPressedEVT value),
+    @required
+        Result seriesBookmarkStatusLoadedEVT(
+            SeriesBookmarkStatusLoadedEVT value),
+    @required Result seriesLikesLoadedEVT(SeriesLikesLoadedEVT value),
+    @required Result seriesLikeStatusLoadedEVT(SeriesLikeStatusLoadedEVT value),
+    @required Result seriesPageLaunchedEVT(SeriesPageLaunchedEVT value),
+    @required Result seriesViewsLoadedEVT(SeriesViewsLoadedEVT value),
+    @required Result seriesViewsUpdatedEVT(SeriesViewsUpdatedEVT value),
+    @required Result sessionFetchedEVT(SessionFetchedEVT value),
+    @required
+        Result showMoreSummaryButtonPressedEVT(
+            ShowMoreSummaryButtonPressedEVT value),
+  }) {
+    assert(bookmarkButtonPressedEVT != null);
+    assert(bookmarksUpdatedEVT != null);
+    assert(likeButtonPressedEVT != null);
+    assert(likesUpdatedEVT != null);
+    assert(readChapterOneButtonPressedEVT != null);
+    assert(seriesBookmarkStatusLoadedEVT != null);
+    assert(seriesLikesLoadedEVT != null);
+    assert(seriesLikeStatusLoadedEVT != null);
+    assert(seriesPageLaunchedEVT != null);
+    assert(seriesViewsLoadedEVT != null);
+    assert(seriesViewsUpdatedEVT != null);
+    assert(sessionFetchedEVT != null);
+    assert(showMoreSummaryButtonPressedEVT != null);
+    return bookmarkButtonPressedEVT(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result bookmarkButtonPressedEVT(BookmarkButtonPressedEVT value),
+    Result bookmarksUpdatedEVT(BookmarksUpdatedEVT value),
+    Result likeButtonPressedEVT(LikeButtonPressedEVT value),
+    Result likesUpdatedEVT(LikesUpdatedEVT value),
+    Result readChapterOneButtonPressedEVT(ReadChapterOneButtonPressedEVT value),
+    Result seriesBookmarkStatusLoadedEVT(SeriesBookmarkStatusLoadedEVT value),
+    Result seriesLikesLoadedEVT(SeriesLikesLoadedEVT value),
+    Result seriesLikeStatusLoadedEVT(SeriesLikeStatusLoadedEVT value),
+    Result seriesPageLaunchedEVT(SeriesPageLaunchedEVT value),
+    Result seriesViewsLoadedEVT(SeriesViewsLoadedEVT value),
+    Result seriesViewsUpdatedEVT(SeriesViewsUpdatedEVT value),
+    Result sessionFetchedEVT(SessionFetchedEVT value),
+    Result showMoreSummaryButtonPressedEVT(
+        ShowMoreSummaryButtonPressedEVT value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (bookmarkButtonPressedEVT != null) {
+      return bookmarkButtonPressedEVT(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class BookmarkButtonPressedEVT implements SeriesDatabaseEvent {
+  const factory BookmarkButtonPressedEVT() = _$BookmarkButtonPressedEVT;
+}
+
+abstract class $BookmarksUpdatedEVTCopyWith<$Res> {
+  factory $BookmarksUpdatedEVTCopyWith(
+          BookmarksUpdatedEVT value, $Res Function(BookmarksUpdatedEVT) then) =
+      _$BookmarksUpdatedEVTCopyWithImpl<$Res>;
+}
+
+class _$BookmarksUpdatedEVTCopyWithImpl<$Res>
+    extends _$SeriesDatabaseEventCopyWithImpl<$Res>
+    implements $BookmarksUpdatedEVTCopyWith<$Res> {
+  _$BookmarksUpdatedEVTCopyWithImpl(
+      BookmarksUpdatedEVT _value, $Res Function(BookmarksUpdatedEVT) _then)
+      : super(_value, (v) => _then(v as BookmarksUpdatedEVT));
+
+  @override
+  BookmarksUpdatedEVT get _value => super._value as BookmarksUpdatedEVT;
+}
+
+class _$BookmarksUpdatedEVT
+    with DiagnosticableTreeMixin
+    implements BookmarksUpdatedEVT {
+  const _$BookmarksUpdatedEVT();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'SeriesDatabaseEvent.bookmarksUpdatedEVT()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty(
+          'type', 'SeriesDatabaseEvent.bookmarksUpdatedEVT'));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is BookmarksUpdatedEVT);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result bookmarkButtonPressedEVT(),
+    @required Result bookmarksUpdatedEVT(),
+    @required Result likeButtonPressedEVT(),
+    @required Result likesUpdatedEVT(),
+    @required Result readChapterOneButtonPressedEVT(),
+    @required Result seriesBookmarkStatusLoadedEVT(),
+    @required Result seriesLikesLoadedEVT(),
+    @required Result seriesLikeStatusLoadedEVT(),
+    @required Result seriesPageLaunchedEVT(Series series, BuildContext context),
+    @required Result seriesViewsLoadedEVT(),
+    @required Result seriesViewsUpdatedEVT(),
+    @required Result sessionFetchedEVT(Session session),
+    @required Result showMoreSummaryButtonPressedEVT(),
+  }) {
+    assert(bookmarkButtonPressedEVT != null);
+    assert(bookmarksUpdatedEVT != null);
+    assert(likeButtonPressedEVT != null);
+    assert(likesUpdatedEVT != null);
+    assert(readChapterOneButtonPressedEVT != null);
+    assert(seriesBookmarkStatusLoadedEVT != null);
+    assert(seriesLikesLoadedEVT != null);
+    assert(seriesLikeStatusLoadedEVT != null);
+    assert(seriesPageLaunchedEVT != null);
+    assert(seriesViewsLoadedEVT != null);
+    assert(seriesViewsUpdatedEVT != null);
+    assert(sessionFetchedEVT != null);
+    assert(showMoreSummaryButtonPressedEVT != null);
+    return bookmarksUpdatedEVT();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result bookmarkButtonPressedEVT(),
+    Result bookmarksUpdatedEVT(),
+    Result likeButtonPressedEVT(),
+    Result likesUpdatedEVT(),
+    Result readChapterOneButtonPressedEVT(),
+    Result seriesBookmarkStatusLoadedEVT(),
+    Result seriesLikesLoadedEVT(),
+    Result seriesLikeStatusLoadedEVT(),
+    Result seriesPageLaunchedEVT(Series series, BuildContext context),
+    Result seriesViewsLoadedEVT(),
+    Result seriesViewsUpdatedEVT(),
+    Result sessionFetchedEVT(Session session),
+    Result showMoreSummaryButtonPressedEVT(),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (bookmarksUpdatedEVT != null) {
+      return bookmarksUpdatedEVT();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result bookmarkButtonPressedEVT(BookmarkButtonPressedEVT value),
+    @required Result bookmarksUpdatedEVT(BookmarksUpdatedEVT value),
+    @required Result likeButtonPressedEVT(LikeButtonPressedEVT value),
+    @required Result likesUpdatedEVT(LikesUpdatedEVT value),
+    @required
+        Result readChapterOneButtonPressedEVT(
+            ReadChapterOneButtonPressedEVT value),
+    @required
+        Result seriesBookmarkStatusLoadedEVT(
+            SeriesBookmarkStatusLoadedEVT value),
+    @required Result seriesLikesLoadedEVT(SeriesLikesLoadedEVT value),
+    @required Result seriesLikeStatusLoadedEVT(SeriesLikeStatusLoadedEVT value),
+    @required Result seriesPageLaunchedEVT(SeriesPageLaunchedEVT value),
+    @required Result seriesViewsLoadedEVT(SeriesViewsLoadedEVT value),
+    @required Result seriesViewsUpdatedEVT(SeriesViewsUpdatedEVT value),
+    @required Result sessionFetchedEVT(SessionFetchedEVT value),
+    @required
+        Result showMoreSummaryButtonPressedEVT(
+            ShowMoreSummaryButtonPressedEVT value),
+  }) {
+    assert(bookmarkButtonPressedEVT != null);
+    assert(bookmarksUpdatedEVT != null);
+    assert(likeButtonPressedEVT != null);
+    assert(likesUpdatedEVT != null);
+    assert(readChapterOneButtonPressedEVT != null);
+    assert(seriesBookmarkStatusLoadedEVT != null);
+    assert(seriesLikesLoadedEVT != null);
+    assert(seriesLikeStatusLoadedEVT != null);
+    assert(seriesPageLaunchedEVT != null);
+    assert(seriesViewsLoadedEVT != null);
+    assert(seriesViewsUpdatedEVT != null);
+    assert(sessionFetchedEVT != null);
+    assert(showMoreSummaryButtonPressedEVT != null);
+    return bookmarksUpdatedEVT(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result bookmarkButtonPressedEVT(BookmarkButtonPressedEVT value),
+    Result bookmarksUpdatedEVT(BookmarksUpdatedEVT value),
+    Result likeButtonPressedEVT(LikeButtonPressedEVT value),
+    Result likesUpdatedEVT(LikesUpdatedEVT value),
+    Result readChapterOneButtonPressedEVT(ReadChapterOneButtonPressedEVT value),
+    Result seriesBookmarkStatusLoadedEVT(SeriesBookmarkStatusLoadedEVT value),
+    Result seriesLikesLoadedEVT(SeriesLikesLoadedEVT value),
+    Result seriesLikeStatusLoadedEVT(SeriesLikeStatusLoadedEVT value),
+    Result seriesPageLaunchedEVT(SeriesPageLaunchedEVT value),
+    Result seriesViewsLoadedEVT(SeriesViewsLoadedEVT value),
+    Result seriesViewsUpdatedEVT(SeriesViewsUpdatedEVT value),
+    Result sessionFetchedEVT(SessionFetchedEVT value),
+    Result showMoreSummaryButtonPressedEVT(
+        ShowMoreSummaryButtonPressedEVT value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (bookmarksUpdatedEVT != null) {
+      return bookmarksUpdatedEVT(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class BookmarksUpdatedEVT implements SeriesDatabaseEvent {
+  const factory BookmarksUpdatedEVT() = _$BookmarksUpdatedEVT;
+}
+
+abstract class $LikeButtonPressedEVTCopyWith<$Res> {
+  factory $LikeButtonPressedEVTCopyWith(LikeButtonPressedEVT value,
+          $Res Function(LikeButtonPressedEVT) then) =
+      _$LikeButtonPressedEVTCopyWithImpl<$Res>;
+}
+
+class _$LikeButtonPressedEVTCopyWithImpl<$Res>
+    extends _$SeriesDatabaseEventCopyWithImpl<$Res>
+    implements $LikeButtonPressedEVTCopyWith<$Res> {
+  _$LikeButtonPressedEVTCopyWithImpl(
+      LikeButtonPressedEVT _value, $Res Function(LikeButtonPressedEVT) _then)
+      : super(_value, (v) => _then(v as LikeButtonPressedEVT));
+
+  @override
+  LikeButtonPressedEVT get _value => super._value as LikeButtonPressedEVT;
+}
+
+class _$LikeButtonPressedEVT
+    with DiagnosticableTreeMixin
+    implements LikeButtonPressedEVT {
+  const _$LikeButtonPressedEVT();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'SeriesDatabaseEvent.likeButtonPressedEVT()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty(
+          'type', 'SeriesDatabaseEvent.likeButtonPressedEVT'));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is LikeButtonPressedEVT);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result bookmarkButtonPressedEVT(),
+    @required Result bookmarksUpdatedEVT(),
+    @required Result likeButtonPressedEVT(),
+    @required Result likesUpdatedEVT(),
+    @required Result readChapterOneButtonPressedEVT(),
+    @required Result seriesBookmarkStatusLoadedEVT(),
+    @required Result seriesLikesLoadedEVT(),
+    @required Result seriesLikeStatusLoadedEVT(),
+    @required Result seriesPageLaunchedEVT(Series series, BuildContext context),
+    @required Result seriesViewsLoadedEVT(),
+    @required Result seriesViewsUpdatedEVT(),
+    @required Result sessionFetchedEVT(Session session),
+    @required Result showMoreSummaryButtonPressedEVT(),
+  }) {
+    assert(bookmarkButtonPressedEVT != null);
+    assert(bookmarksUpdatedEVT != null);
+    assert(likeButtonPressedEVT != null);
+    assert(likesUpdatedEVT != null);
+    assert(readChapterOneButtonPressedEVT != null);
+    assert(seriesBookmarkStatusLoadedEVT != null);
+    assert(seriesLikesLoadedEVT != null);
+    assert(seriesLikeStatusLoadedEVT != null);
+    assert(seriesPageLaunchedEVT != null);
+    assert(seriesViewsLoadedEVT != null);
+    assert(seriesViewsUpdatedEVT != null);
+    assert(sessionFetchedEVT != null);
+    assert(showMoreSummaryButtonPressedEVT != null);
+    return likeButtonPressedEVT();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result bookmarkButtonPressedEVT(),
+    Result bookmarksUpdatedEVT(),
+    Result likeButtonPressedEVT(),
+    Result likesUpdatedEVT(),
+    Result readChapterOneButtonPressedEVT(),
+    Result seriesBookmarkStatusLoadedEVT(),
+    Result seriesLikesLoadedEVT(),
+    Result seriesLikeStatusLoadedEVT(),
+    Result seriesPageLaunchedEVT(Series series, BuildContext context),
+    Result seriesViewsLoadedEVT(),
+    Result seriesViewsUpdatedEVT(),
+    Result sessionFetchedEVT(Session session),
+    Result showMoreSummaryButtonPressedEVT(),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (likeButtonPressedEVT != null) {
+      return likeButtonPressedEVT();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result bookmarkButtonPressedEVT(BookmarkButtonPressedEVT value),
+    @required Result bookmarksUpdatedEVT(BookmarksUpdatedEVT value),
+    @required Result likeButtonPressedEVT(LikeButtonPressedEVT value),
+    @required Result likesUpdatedEVT(LikesUpdatedEVT value),
+    @required
+        Result readChapterOneButtonPressedEVT(
+            ReadChapterOneButtonPressedEVT value),
+    @required
+        Result seriesBookmarkStatusLoadedEVT(
+            SeriesBookmarkStatusLoadedEVT value),
+    @required Result seriesLikesLoadedEVT(SeriesLikesLoadedEVT value),
+    @required Result seriesLikeStatusLoadedEVT(SeriesLikeStatusLoadedEVT value),
+    @required Result seriesPageLaunchedEVT(SeriesPageLaunchedEVT value),
+    @required Result seriesViewsLoadedEVT(SeriesViewsLoadedEVT value),
+    @required Result seriesViewsUpdatedEVT(SeriesViewsUpdatedEVT value),
+    @required Result sessionFetchedEVT(SessionFetchedEVT value),
+    @required
+        Result showMoreSummaryButtonPressedEVT(
+            ShowMoreSummaryButtonPressedEVT value),
+  }) {
+    assert(bookmarkButtonPressedEVT != null);
+    assert(bookmarksUpdatedEVT != null);
+    assert(likeButtonPressedEVT != null);
+    assert(likesUpdatedEVT != null);
+    assert(readChapterOneButtonPressedEVT != null);
+    assert(seriesBookmarkStatusLoadedEVT != null);
+    assert(seriesLikesLoadedEVT != null);
+    assert(seriesLikeStatusLoadedEVT != null);
+    assert(seriesPageLaunchedEVT != null);
+    assert(seriesViewsLoadedEVT != null);
+    assert(seriesViewsUpdatedEVT != null);
+    assert(sessionFetchedEVT != null);
+    assert(showMoreSummaryButtonPressedEVT != null);
+    return likeButtonPressedEVT(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result bookmarkButtonPressedEVT(BookmarkButtonPressedEVT value),
+    Result bookmarksUpdatedEVT(BookmarksUpdatedEVT value),
+    Result likeButtonPressedEVT(LikeButtonPressedEVT value),
+    Result likesUpdatedEVT(LikesUpdatedEVT value),
+    Result readChapterOneButtonPressedEVT(ReadChapterOneButtonPressedEVT value),
+    Result seriesBookmarkStatusLoadedEVT(SeriesBookmarkStatusLoadedEVT value),
+    Result seriesLikesLoadedEVT(SeriesLikesLoadedEVT value),
+    Result seriesLikeStatusLoadedEVT(SeriesLikeStatusLoadedEVT value),
+    Result seriesPageLaunchedEVT(SeriesPageLaunchedEVT value),
+    Result seriesViewsLoadedEVT(SeriesViewsLoadedEVT value),
+    Result seriesViewsUpdatedEVT(SeriesViewsUpdatedEVT value),
+    Result sessionFetchedEVT(SessionFetchedEVT value),
+    Result showMoreSummaryButtonPressedEVT(
+        ShowMoreSummaryButtonPressedEVT value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (likeButtonPressedEVT != null) {
+      return likeButtonPressedEVT(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class LikeButtonPressedEVT implements SeriesDatabaseEvent {
+  const factory LikeButtonPressedEVT() = _$LikeButtonPressedEVT;
+}
+
+abstract class $LikesUpdatedEVTCopyWith<$Res> {
+  factory $LikesUpdatedEVTCopyWith(
+          LikesUpdatedEVT value, $Res Function(LikesUpdatedEVT) then) =
+      _$LikesUpdatedEVTCopyWithImpl<$Res>;
+}
+
+class _$LikesUpdatedEVTCopyWithImpl<$Res>
+    extends _$SeriesDatabaseEventCopyWithImpl<$Res>
+    implements $LikesUpdatedEVTCopyWith<$Res> {
+  _$LikesUpdatedEVTCopyWithImpl(
+      LikesUpdatedEVT _value, $Res Function(LikesUpdatedEVT) _then)
+      : super(_value, (v) => _then(v as LikesUpdatedEVT));
+
+  @override
+  LikesUpdatedEVT get _value => super._value as LikesUpdatedEVT;
+}
+
+class _$LikesUpdatedEVT
+    with DiagnosticableTreeMixin
+    implements LikesUpdatedEVT {
+  const _$LikesUpdatedEVT();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'SeriesDatabaseEvent.likesUpdatedEVT()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'SeriesDatabaseEvent.likesUpdatedEVT'));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is LikesUpdatedEVT);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result bookmarkButtonPressedEVT(),
+    @required Result bookmarksUpdatedEVT(),
+    @required Result likeButtonPressedEVT(),
+    @required Result likesUpdatedEVT(),
+    @required Result readChapterOneButtonPressedEVT(),
+    @required Result seriesBookmarkStatusLoadedEVT(),
+    @required Result seriesLikesLoadedEVT(),
+    @required Result seriesLikeStatusLoadedEVT(),
+    @required Result seriesPageLaunchedEVT(Series series, BuildContext context),
+    @required Result seriesViewsLoadedEVT(),
+    @required Result seriesViewsUpdatedEVT(),
+    @required Result sessionFetchedEVT(Session session),
+    @required Result showMoreSummaryButtonPressedEVT(),
+  }) {
+    assert(bookmarkButtonPressedEVT != null);
+    assert(bookmarksUpdatedEVT != null);
+    assert(likeButtonPressedEVT != null);
+    assert(likesUpdatedEVT != null);
+    assert(readChapterOneButtonPressedEVT != null);
+    assert(seriesBookmarkStatusLoadedEVT != null);
+    assert(seriesLikesLoadedEVT != null);
+    assert(seriesLikeStatusLoadedEVT != null);
+    assert(seriesPageLaunchedEVT != null);
+    assert(seriesViewsLoadedEVT != null);
+    assert(seriesViewsUpdatedEVT != null);
+    assert(sessionFetchedEVT != null);
+    assert(showMoreSummaryButtonPressedEVT != null);
+    return likesUpdatedEVT();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result bookmarkButtonPressedEVT(),
+    Result bookmarksUpdatedEVT(),
+    Result likeButtonPressedEVT(),
+    Result likesUpdatedEVT(),
+    Result readChapterOneButtonPressedEVT(),
+    Result seriesBookmarkStatusLoadedEVT(),
+    Result seriesLikesLoadedEVT(),
+    Result seriesLikeStatusLoadedEVT(),
+    Result seriesPageLaunchedEVT(Series series, BuildContext context),
+    Result seriesViewsLoadedEVT(),
+    Result seriesViewsUpdatedEVT(),
+    Result sessionFetchedEVT(Session session),
+    Result showMoreSummaryButtonPressedEVT(),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (likesUpdatedEVT != null) {
+      return likesUpdatedEVT();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result bookmarkButtonPressedEVT(BookmarkButtonPressedEVT value),
+    @required Result bookmarksUpdatedEVT(BookmarksUpdatedEVT value),
+    @required Result likeButtonPressedEVT(LikeButtonPressedEVT value),
+    @required Result likesUpdatedEVT(LikesUpdatedEVT value),
+    @required
+        Result readChapterOneButtonPressedEVT(
+            ReadChapterOneButtonPressedEVT value),
+    @required
+        Result seriesBookmarkStatusLoadedEVT(
+            SeriesBookmarkStatusLoadedEVT value),
+    @required Result seriesLikesLoadedEVT(SeriesLikesLoadedEVT value),
+    @required Result seriesLikeStatusLoadedEVT(SeriesLikeStatusLoadedEVT value),
+    @required Result seriesPageLaunchedEVT(SeriesPageLaunchedEVT value),
+    @required Result seriesViewsLoadedEVT(SeriesViewsLoadedEVT value),
+    @required Result seriesViewsUpdatedEVT(SeriesViewsUpdatedEVT value),
+    @required Result sessionFetchedEVT(SessionFetchedEVT value),
+    @required
+        Result showMoreSummaryButtonPressedEVT(
+            ShowMoreSummaryButtonPressedEVT value),
+  }) {
+    assert(bookmarkButtonPressedEVT != null);
+    assert(bookmarksUpdatedEVT != null);
+    assert(likeButtonPressedEVT != null);
+    assert(likesUpdatedEVT != null);
+    assert(readChapterOneButtonPressedEVT != null);
+    assert(seriesBookmarkStatusLoadedEVT != null);
+    assert(seriesLikesLoadedEVT != null);
+    assert(seriesLikeStatusLoadedEVT != null);
+    assert(seriesPageLaunchedEVT != null);
+    assert(seriesViewsLoadedEVT != null);
+    assert(seriesViewsUpdatedEVT != null);
+    assert(sessionFetchedEVT != null);
+    assert(showMoreSummaryButtonPressedEVT != null);
+    return likesUpdatedEVT(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result bookmarkButtonPressedEVT(BookmarkButtonPressedEVT value),
+    Result bookmarksUpdatedEVT(BookmarksUpdatedEVT value),
+    Result likeButtonPressedEVT(LikeButtonPressedEVT value),
+    Result likesUpdatedEVT(LikesUpdatedEVT value),
+    Result readChapterOneButtonPressedEVT(ReadChapterOneButtonPressedEVT value),
+    Result seriesBookmarkStatusLoadedEVT(SeriesBookmarkStatusLoadedEVT value),
+    Result seriesLikesLoadedEVT(SeriesLikesLoadedEVT value),
+    Result seriesLikeStatusLoadedEVT(SeriesLikeStatusLoadedEVT value),
+    Result seriesPageLaunchedEVT(SeriesPageLaunchedEVT value),
+    Result seriesViewsLoadedEVT(SeriesViewsLoadedEVT value),
+    Result seriesViewsUpdatedEVT(SeriesViewsUpdatedEVT value),
+    Result sessionFetchedEVT(SessionFetchedEVT value),
+    Result showMoreSummaryButtonPressedEVT(
+        ShowMoreSummaryButtonPressedEVT value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (likesUpdatedEVT != null) {
+      return likesUpdatedEVT(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class LikesUpdatedEVT implements SeriesDatabaseEvent {
+  const factory LikesUpdatedEVT() = _$LikesUpdatedEVT;
+}
+
+abstract class $ReadChapterOneButtonPressedEVTCopyWith<$Res> {
+  factory $ReadChapterOneButtonPressedEVTCopyWith(
+          ReadChapterOneButtonPressedEVT value,
+          $Res Function(ReadChapterOneButtonPressedEVT) then) =
+      _$ReadChapterOneButtonPressedEVTCopyWithImpl<$Res>;
+}
+
+class _$ReadChapterOneButtonPressedEVTCopyWithImpl<$Res>
+    extends _$SeriesDatabaseEventCopyWithImpl<$Res>
+    implements $ReadChapterOneButtonPressedEVTCopyWith<$Res> {
+  _$ReadChapterOneButtonPressedEVTCopyWithImpl(
+      ReadChapterOneButtonPressedEVT _value,
+      $Res Function(ReadChapterOneButtonPressedEVT) _then)
+      : super(_value, (v) => _then(v as ReadChapterOneButtonPressedEVT));
+
+  @override
+  ReadChapterOneButtonPressedEVT get _value =>
+      super._value as ReadChapterOneButtonPressedEVT;
+}
+
+class _$ReadChapterOneButtonPressedEVT
+    with DiagnosticableTreeMixin
+    implements ReadChapterOneButtonPressedEVT {
+  const _$ReadChapterOneButtonPressedEVT();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'SeriesDatabaseEvent.readChapterOneButtonPressedEVT()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty(
+          'type', 'SeriesDatabaseEvent.readChapterOneButtonPressedEVT'));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is ReadChapterOneButtonPressedEVT);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result bookmarkButtonPressedEVT(),
+    @required Result bookmarksUpdatedEVT(),
+    @required Result likeButtonPressedEVT(),
+    @required Result likesUpdatedEVT(),
+    @required Result readChapterOneButtonPressedEVT(),
+    @required Result seriesBookmarkStatusLoadedEVT(),
+    @required Result seriesLikesLoadedEVT(),
+    @required Result seriesLikeStatusLoadedEVT(),
+    @required Result seriesPageLaunchedEVT(Series series, BuildContext context),
+    @required Result seriesViewsLoadedEVT(),
+    @required Result seriesViewsUpdatedEVT(),
+    @required Result sessionFetchedEVT(Session session),
+    @required Result showMoreSummaryButtonPressedEVT(),
+  }) {
+    assert(bookmarkButtonPressedEVT != null);
+    assert(bookmarksUpdatedEVT != null);
+    assert(likeButtonPressedEVT != null);
+    assert(likesUpdatedEVT != null);
+    assert(readChapterOneButtonPressedEVT != null);
+    assert(seriesBookmarkStatusLoadedEVT != null);
+    assert(seriesLikesLoadedEVT != null);
+    assert(seriesLikeStatusLoadedEVT != null);
+    assert(seriesPageLaunchedEVT != null);
+    assert(seriesViewsLoadedEVT != null);
+    assert(seriesViewsUpdatedEVT != null);
+    assert(sessionFetchedEVT != null);
+    assert(showMoreSummaryButtonPressedEVT != null);
+    return readChapterOneButtonPressedEVT();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result bookmarkButtonPressedEVT(),
+    Result bookmarksUpdatedEVT(),
+    Result likeButtonPressedEVT(),
+    Result likesUpdatedEVT(),
+    Result readChapterOneButtonPressedEVT(),
+    Result seriesBookmarkStatusLoadedEVT(),
+    Result seriesLikesLoadedEVT(),
+    Result seriesLikeStatusLoadedEVT(),
+    Result seriesPageLaunchedEVT(Series series, BuildContext context),
+    Result seriesViewsLoadedEVT(),
+    Result seriesViewsUpdatedEVT(),
+    Result sessionFetchedEVT(Session session),
+    Result showMoreSummaryButtonPressedEVT(),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (readChapterOneButtonPressedEVT != null) {
+      return readChapterOneButtonPressedEVT();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result bookmarkButtonPressedEVT(BookmarkButtonPressedEVT value),
+    @required Result bookmarksUpdatedEVT(BookmarksUpdatedEVT value),
+    @required Result likeButtonPressedEVT(LikeButtonPressedEVT value),
+    @required Result likesUpdatedEVT(LikesUpdatedEVT value),
+    @required
+        Result readChapterOneButtonPressedEVT(
+            ReadChapterOneButtonPressedEVT value),
+    @required
+        Result seriesBookmarkStatusLoadedEVT(
+            SeriesBookmarkStatusLoadedEVT value),
+    @required Result seriesLikesLoadedEVT(SeriesLikesLoadedEVT value),
+    @required Result seriesLikeStatusLoadedEVT(SeriesLikeStatusLoadedEVT value),
+    @required Result seriesPageLaunchedEVT(SeriesPageLaunchedEVT value),
+    @required Result seriesViewsLoadedEVT(SeriesViewsLoadedEVT value),
+    @required Result seriesViewsUpdatedEVT(SeriesViewsUpdatedEVT value),
+    @required Result sessionFetchedEVT(SessionFetchedEVT value),
+    @required
+        Result showMoreSummaryButtonPressedEVT(
+            ShowMoreSummaryButtonPressedEVT value),
+  }) {
+    assert(bookmarkButtonPressedEVT != null);
+    assert(bookmarksUpdatedEVT != null);
+    assert(likeButtonPressedEVT != null);
+    assert(likesUpdatedEVT != null);
+    assert(readChapterOneButtonPressedEVT != null);
+    assert(seriesBookmarkStatusLoadedEVT != null);
+    assert(seriesLikesLoadedEVT != null);
+    assert(seriesLikeStatusLoadedEVT != null);
+    assert(seriesPageLaunchedEVT != null);
+    assert(seriesViewsLoadedEVT != null);
+    assert(seriesViewsUpdatedEVT != null);
+    assert(sessionFetchedEVT != null);
+    assert(showMoreSummaryButtonPressedEVT != null);
+    return readChapterOneButtonPressedEVT(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result bookmarkButtonPressedEVT(BookmarkButtonPressedEVT value),
+    Result bookmarksUpdatedEVT(BookmarksUpdatedEVT value),
+    Result likeButtonPressedEVT(LikeButtonPressedEVT value),
+    Result likesUpdatedEVT(LikesUpdatedEVT value),
+    Result readChapterOneButtonPressedEVT(ReadChapterOneButtonPressedEVT value),
+    Result seriesBookmarkStatusLoadedEVT(SeriesBookmarkStatusLoadedEVT value),
+    Result seriesLikesLoadedEVT(SeriesLikesLoadedEVT value),
+    Result seriesLikeStatusLoadedEVT(SeriesLikeStatusLoadedEVT value),
+    Result seriesPageLaunchedEVT(SeriesPageLaunchedEVT value),
+    Result seriesViewsLoadedEVT(SeriesViewsLoadedEVT value),
+    Result seriesViewsUpdatedEVT(SeriesViewsUpdatedEVT value),
+    Result sessionFetchedEVT(SessionFetchedEVT value),
+    Result showMoreSummaryButtonPressedEVT(
+        ShowMoreSummaryButtonPressedEVT value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (readChapterOneButtonPressedEVT != null) {
+      return readChapterOneButtonPressedEVT(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ReadChapterOneButtonPressedEVT implements SeriesDatabaseEvent {
+  const factory ReadChapterOneButtonPressedEVT() =
+      _$ReadChapterOneButtonPressedEVT;
+}
+
+abstract class $SeriesBookmarkStatusLoadedEVTCopyWith<$Res> {
+  factory $SeriesBookmarkStatusLoadedEVTCopyWith(
+          SeriesBookmarkStatusLoadedEVT value,
+          $Res Function(SeriesBookmarkStatusLoadedEVT) then) =
+      _$SeriesBookmarkStatusLoadedEVTCopyWithImpl<$Res>;
+}
+
+class _$SeriesBookmarkStatusLoadedEVTCopyWithImpl<$Res>
+    extends _$SeriesDatabaseEventCopyWithImpl<$Res>
+    implements $SeriesBookmarkStatusLoadedEVTCopyWith<$Res> {
+  _$SeriesBookmarkStatusLoadedEVTCopyWithImpl(
+      SeriesBookmarkStatusLoadedEVT _value,
+      $Res Function(SeriesBookmarkStatusLoadedEVT) _then)
+      : super(_value, (v) => _then(v as SeriesBookmarkStatusLoadedEVT));
+
+  @override
+  SeriesBookmarkStatusLoadedEVT get _value =>
+      super._value as SeriesBookmarkStatusLoadedEVT;
+}
+
+class _$SeriesBookmarkStatusLoadedEVT
+    with DiagnosticableTreeMixin
+    implements SeriesBookmarkStatusLoadedEVT {
+  const _$SeriesBookmarkStatusLoadedEVT();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'SeriesDatabaseEvent.seriesBookmarkStatusLoadedEVT()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty(
+          'type', 'SeriesDatabaseEvent.seriesBookmarkStatusLoadedEVT'));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is SeriesBookmarkStatusLoadedEVT);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result bookmarkButtonPressedEVT(),
+    @required Result bookmarksUpdatedEVT(),
+    @required Result likeButtonPressedEVT(),
+    @required Result likesUpdatedEVT(),
+    @required Result readChapterOneButtonPressedEVT(),
+    @required Result seriesBookmarkStatusLoadedEVT(),
+    @required Result seriesLikesLoadedEVT(),
+    @required Result seriesLikeStatusLoadedEVT(),
+    @required Result seriesPageLaunchedEVT(Series series, BuildContext context),
+    @required Result seriesViewsLoadedEVT(),
+    @required Result seriesViewsUpdatedEVT(),
+    @required Result sessionFetchedEVT(Session session),
+    @required Result showMoreSummaryButtonPressedEVT(),
+  }) {
+    assert(bookmarkButtonPressedEVT != null);
+    assert(bookmarksUpdatedEVT != null);
+    assert(likeButtonPressedEVT != null);
+    assert(likesUpdatedEVT != null);
+    assert(readChapterOneButtonPressedEVT != null);
+    assert(seriesBookmarkStatusLoadedEVT != null);
+    assert(seriesLikesLoadedEVT != null);
+    assert(seriesLikeStatusLoadedEVT != null);
+    assert(seriesPageLaunchedEVT != null);
+    assert(seriesViewsLoadedEVT != null);
+    assert(seriesViewsUpdatedEVT != null);
+    assert(sessionFetchedEVT != null);
+    assert(showMoreSummaryButtonPressedEVT != null);
+    return seriesBookmarkStatusLoadedEVT();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result bookmarkButtonPressedEVT(),
+    Result bookmarksUpdatedEVT(),
+    Result likeButtonPressedEVT(),
+    Result likesUpdatedEVT(),
+    Result readChapterOneButtonPressedEVT(),
+    Result seriesBookmarkStatusLoadedEVT(),
+    Result seriesLikesLoadedEVT(),
+    Result seriesLikeStatusLoadedEVT(),
+    Result seriesPageLaunchedEVT(Series series, BuildContext context),
+    Result seriesViewsLoadedEVT(),
+    Result seriesViewsUpdatedEVT(),
+    Result sessionFetchedEVT(Session session),
+    Result showMoreSummaryButtonPressedEVT(),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (seriesBookmarkStatusLoadedEVT != null) {
+      return seriesBookmarkStatusLoadedEVT();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result bookmarkButtonPressedEVT(BookmarkButtonPressedEVT value),
+    @required Result bookmarksUpdatedEVT(BookmarksUpdatedEVT value),
+    @required Result likeButtonPressedEVT(LikeButtonPressedEVT value),
+    @required Result likesUpdatedEVT(LikesUpdatedEVT value),
+    @required
+        Result readChapterOneButtonPressedEVT(
+            ReadChapterOneButtonPressedEVT value),
+    @required
+        Result seriesBookmarkStatusLoadedEVT(
+            SeriesBookmarkStatusLoadedEVT value),
+    @required Result seriesLikesLoadedEVT(SeriesLikesLoadedEVT value),
+    @required Result seriesLikeStatusLoadedEVT(SeriesLikeStatusLoadedEVT value),
+    @required Result seriesPageLaunchedEVT(SeriesPageLaunchedEVT value),
+    @required Result seriesViewsLoadedEVT(SeriesViewsLoadedEVT value),
+    @required Result seriesViewsUpdatedEVT(SeriesViewsUpdatedEVT value),
+    @required Result sessionFetchedEVT(SessionFetchedEVT value),
+    @required
+        Result showMoreSummaryButtonPressedEVT(
+            ShowMoreSummaryButtonPressedEVT value),
+  }) {
+    assert(bookmarkButtonPressedEVT != null);
+    assert(bookmarksUpdatedEVT != null);
+    assert(likeButtonPressedEVT != null);
+    assert(likesUpdatedEVT != null);
+    assert(readChapterOneButtonPressedEVT != null);
+    assert(seriesBookmarkStatusLoadedEVT != null);
+    assert(seriesLikesLoadedEVT != null);
+    assert(seriesLikeStatusLoadedEVT != null);
+    assert(seriesPageLaunchedEVT != null);
+    assert(seriesViewsLoadedEVT != null);
+    assert(seriesViewsUpdatedEVT != null);
+    assert(sessionFetchedEVT != null);
+    assert(showMoreSummaryButtonPressedEVT != null);
+    return seriesBookmarkStatusLoadedEVT(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result bookmarkButtonPressedEVT(BookmarkButtonPressedEVT value),
+    Result bookmarksUpdatedEVT(BookmarksUpdatedEVT value),
+    Result likeButtonPressedEVT(LikeButtonPressedEVT value),
+    Result likesUpdatedEVT(LikesUpdatedEVT value),
+    Result readChapterOneButtonPressedEVT(ReadChapterOneButtonPressedEVT value),
+    Result seriesBookmarkStatusLoadedEVT(SeriesBookmarkStatusLoadedEVT value),
+    Result seriesLikesLoadedEVT(SeriesLikesLoadedEVT value),
+    Result seriesLikeStatusLoadedEVT(SeriesLikeStatusLoadedEVT value),
+    Result seriesPageLaunchedEVT(SeriesPageLaunchedEVT value),
+    Result seriesViewsLoadedEVT(SeriesViewsLoadedEVT value),
+    Result seriesViewsUpdatedEVT(SeriesViewsUpdatedEVT value),
+    Result sessionFetchedEVT(SessionFetchedEVT value),
+    Result showMoreSummaryButtonPressedEVT(
+        ShowMoreSummaryButtonPressedEVT value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (seriesBookmarkStatusLoadedEVT != null) {
+      return seriesBookmarkStatusLoadedEVT(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SeriesBookmarkStatusLoadedEVT implements SeriesDatabaseEvent {
+  const factory SeriesBookmarkStatusLoadedEVT() =
+      _$SeriesBookmarkStatusLoadedEVT;
+}
+
+abstract class $SeriesLikesLoadedEVTCopyWith<$Res> {
+  factory $SeriesLikesLoadedEVTCopyWith(SeriesLikesLoadedEVT value,
+          $Res Function(SeriesLikesLoadedEVT) then) =
+      _$SeriesLikesLoadedEVTCopyWithImpl<$Res>;
+}
+
+class _$SeriesLikesLoadedEVTCopyWithImpl<$Res>
+    extends _$SeriesDatabaseEventCopyWithImpl<$Res>
+    implements $SeriesLikesLoadedEVTCopyWith<$Res> {
+  _$SeriesLikesLoadedEVTCopyWithImpl(
+      SeriesLikesLoadedEVT _value, $Res Function(SeriesLikesLoadedEVT) _then)
+      : super(_value, (v) => _then(v as SeriesLikesLoadedEVT));
+
+  @override
+  SeriesLikesLoadedEVT get _value => super._value as SeriesLikesLoadedEVT;
+}
+
+class _$SeriesLikesLoadedEVT
+    with DiagnosticableTreeMixin
+    implements SeriesLikesLoadedEVT {
+  const _$SeriesLikesLoadedEVT();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'SeriesDatabaseEvent.seriesLikesLoadedEVT()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty(
+          'type', 'SeriesDatabaseEvent.seriesLikesLoadedEVT'));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is SeriesLikesLoadedEVT);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result bookmarkButtonPressedEVT(),
+    @required Result bookmarksUpdatedEVT(),
+    @required Result likeButtonPressedEVT(),
+    @required Result likesUpdatedEVT(),
+    @required Result readChapterOneButtonPressedEVT(),
+    @required Result seriesBookmarkStatusLoadedEVT(),
+    @required Result seriesLikesLoadedEVT(),
+    @required Result seriesLikeStatusLoadedEVT(),
+    @required Result seriesPageLaunchedEVT(Series series, BuildContext context),
+    @required Result seriesViewsLoadedEVT(),
+    @required Result seriesViewsUpdatedEVT(),
+    @required Result sessionFetchedEVT(Session session),
+    @required Result showMoreSummaryButtonPressedEVT(),
+  }) {
+    assert(bookmarkButtonPressedEVT != null);
+    assert(bookmarksUpdatedEVT != null);
+    assert(likeButtonPressedEVT != null);
+    assert(likesUpdatedEVT != null);
+    assert(readChapterOneButtonPressedEVT != null);
+    assert(seriesBookmarkStatusLoadedEVT != null);
+    assert(seriesLikesLoadedEVT != null);
+    assert(seriesLikeStatusLoadedEVT != null);
+    assert(seriesPageLaunchedEVT != null);
+    assert(seriesViewsLoadedEVT != null);
+    assert(seriesViewsUpdatedEVT != null);
+    assert(sessionFetchedEVT != null);
+    assert(showMoreSummaryButtonPressedEVT != null);
+    return seriesLikesLoadedEVT();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result bookmarkButtonPressedEVT(),
+    Result bookmarksUpdatedEVT(),
+    Result likeButtonPressedEVT(),
+    Result likesUpdatedEVT(),
+    Result readChapterOneButtonPressedEVT(),
+    Result seriesBookmarkStatusLoadedEVT(),
+    Result seriesLikesLoadedEVT(),
+    Result seriesLikeStatusLoadedEVT(),
+    Result seriesPageLaunchedEVT(Series series, BuildContext context),
+    Result seriesViewsLoadedEVT(),
+    Result seriesViewsUpdatedEVT(),
+    Result sessionFetchedEVT(Session session),
+    Result showMoreSummaryButtonPressedEVT(),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (seriesLikesLoadedEVT != null) {
+      return seriesLikesLoadedEVT();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result bookmarkButtonPressedEVT(BookmarkButtonPressedEVT value),
+    @required Result bookmarksUpdatedEVT(BookmarksUpdatedEVT value),
+    @required Result likeButtonPressedEVT(LikeButtonPressedEVT value),
+    @required Result likesUpdatedEVT(LikesUpdatedEVT value),
+    @required
+        Result readChapterOneButtonPressedEVT(
+            ReadChapterOneButtonPressedEVT value),
+    @required
+        Result seriesBookmarkStatusLoadedEVT(
+            SeriesBookmarkStatusLoadedEVT value),
+    @required Result seriesLikesLoadedEVT(SeriesLikesLoadedEVT value),
+    @required Result seriesLikeStatusLoadedEVT(SeriesLikeStatusLoadedEVT value),
+    @required Result seriesPageLaunchedEVT(SeriesPageLaunchedEVT value),
+    @required Result seriesViewsLoadedEVT(SeriesViewsLoadedEVT value),
+    @required Result seriesViewsUpdatedEVT(SeriesViewsUpdatedEVT value),
+    @required Result sessionFetchedEVT(SessionFetchedEVT value),
+    @required
+        Result showMoreSummaryButtonPressedEVT(
+            ShowMoreSummaryButtonPressedEVT value),
+  }) {
+    assert(bookmarkButtonPressedEVT != null);
+    assert(bookmarksUpdatedEVT != null);
+    assert(likeButtonPressedEVT != null);
+    assert(likesUpdatedEVT != null);
+    assert(readChapterOneButtonPressedEVT != null);
+    assert(seriesBookmarkStatusLoadedEVT != null);
+    assert(seriesLikesLoadedEVT != null);
+    assert(seriesLikeStatusLoadedEVT != null);
+    assert(seriesPageLaunchedEVT != null);
+    assert(seriesViewsLoadedEVT != null);
+    assert(seriesViewsUpdatedEVT != null);
+    assert(sessionFetchedEVT != null);
+    assert(showMoreSummaryButtonPressedEVT != null);
+    return seriesLikesLoadedEVT(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result bookmarkButtonPressedEVT(BookmarkButtonPressedEVT value),
+    Result bookmarksUpdatedEVT(BookmarksUpdatedEVT value),
+    Result likeButtonPressedEVT(LikeButtonPressedEVT value),
+    Result likesUpdatedEVT(LikesUpdatedEVT value),
+    Result readChapterOneButtonPressedEVT(ReadChapterOneButtonPressedEVT value),
+    Result seriesBookmarkStatusLoadedEVT(SeriesBookmarkStatusLoadedEVT value),
+    Result seriesLikesLoadedEVT(SeriesLikesLoadedEVT value),
+    Result seriesLikeStatusLoadedEVT(SeriesLikeStatusLoadedEVT value),
+    Result seriesPageLaunchedEVT(SeriesPageLaunchedEVT value),
+    Result seriesViewsLoadedEVT(SeriesViewsLoadedEVT value),
+    Result seriesViewsUpdatedEVT(SeriesViewsUpdatedEVT value),
+    Result sessionFetchedEVT(SessionFetchedEVT value),
+    Result showMoreSummaryButtonPressedEVT(
+        ShowMoreSummaryButtonPressedEVT value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (seriesLikesLoadedEVT != null) {
+      return seriesLikesLoadedEVT(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SeriesLikesLoadedEVT implements SeriesDatabaseEvent {
+  const factory SeriesLikesLoadedEVT() = _$SeriesLikesLoadedEVT;
+}
+
+abstract class $SeriesLikeStatusLoadedEVTCopyWith<$Res> {
+  factory $SeriesLikeStatusLoadedEVTCopyWith(SeriesLikeStatusLoadedEVT value,
+          $Res Function(SeriesLikeStatusLoadedEVT) then) =
+      _$SeriesLikeStatusLoadedEVTCopyWithImpl<$Res>;
+}
+
+class _$SeriesLikeStatusLoadedEVTCopyWithImpl<$Res>
+    extends _$SeriesDatabaseEventCopyWithImpl<$Res>
+    implements $SeriesLikeStatusLoadedEVTCopyWith<$Res> {
+  _$SeriesLikeStatusLoadedEVTCopyWithImpl(SeriesLikeStatusLoadedEVT _value,
+      $Res Function(SeriesLikeStatusLoadedEVT) _then)
+      : super(_value, (v) => _then(v as SeriesLikeStatusLoadedEVT));
+
+  @override
+  SeriesLikeStatusLoadedEVT get _value =>
+      super._value as SeriesLikeStatusLoadedEVT;
+}
+
+class _$SeriesLikeStatusLoadedEVT
+    with DiagnosticableTreeMixin
+    implements SeriesLikeStatusLoadedEVT {
+  const _$SeriesLikeStatusLoadedEVT();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'SeriesDatabaseEvent.seriesLikeStatusLoadedEVT()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty(
+          'type', 'SeriesDatabaseEvent.seriesLikeStatusLoadedEVT'));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is SeriesLikeStatusLoadedEVT);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result bookmarkButtonPressedEVT(),
+    @required Result bookmarksUpdatedEVT(),
+    @required Result likeButtonPressedEVT(),
+    @required Result likesUpdatedEVT(),
+    @required Result readChapterOneButtonPressedEVT(),
+    @required Result seriesBookmarkStatusLoadedEVT(),
+    @required Result seriesLikesLoadedEVT(),
+    @required Result seriesLikeStatusLoadedEVT(),
+    @required Result seriesPageLaunchedEVT(Series series, BuildContext context),
+    @required Result seriesViewsLoadedEVT(),
+    @required Result seriesViewsUpdatedEVT(),
+    @required Result sessionFetchedEVT(Session session),
+    @required Result showMoreSummaryButtonPressedEVT(),
+  }) {
+    assert(bookmarkButtonPressedEVT != null);
+    assert(bookmarksUpdatedEVT != null);
+    assert(likeButtonPressedEVT != null);
+    assert(likesUpdatedEVT != null);
+    assert(readChapterOneButtonPressedEVT != null);
+    assert(seriesBookmarkStatusLoadedEVT != null);
+    assert(seriesLikesLoadedEVT != null);
+    assert(seriesLikeStatusLoadedEVT != null);
+    assert(seriesPageLaunchedEVT != null);
+    assert(seriesViewsLoadedEVT != null);
+    assert(seriesViewsUpdatedEVT != null);
+    assert(sessionFetchedEVT != null);
+    assert(showMoreSummaryButtonPressedEVT != null);
+    return seriesLikeStatusLoadedEVT();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result bookmarkButtonPressedEVT(),
+    Result bookmarksUpdatedEVT(),
+    Result likeButtonPressedEVT(),
+    Result likesUpdatedEVT(),
+    Result readChapterOneButtonPressedEVT(),
+    Result seriesBookmarkStatusLoadedEVT(),
+    Result seriesLikesLoadedEVT(),
+    Result seriesLikeStatusLoadedEVT(),
+    Result seriesPageLaunchedEVT(Series series, BuildContext context),
+    Result seriesViewsLoadedEVT(),
+    Result seriesViewsUpdatedEVT(),
+    Result sessionFetchedEVT(Session session),
+    Result showMoreSummaryButtonPressedEVT(),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (seriesLikeStatusLoadedEVT != null) {
+      return seriesLikeStatusLoadedEVT();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result bookmarkButtonPressedEVT(BookmarkButtonPressedEVT value),
+    @required Result bookmarksUpdatedEVT(BookmarksUpdatedEVT value),
+    @required Result likeButtonPressedEVT(LikeButtonPressedEVT value),
+    @required Result likesUpdatedEVT(LikesUpdatedEVT value),
+    @required
+        Result readChapterOneButtonPressedEVT(
+            ReadChapterOneButtonPressedEVT value),
+    @required
+        Result seriesBookmarkStatusLoadedEVT(
+            SeriesBookmarkStatusLoadedEVT value),
+    @required Result seriesLikesLoadedEVT(SeriesLikesLoadedEVT value),
+    @required Result seriesLikeStatusLoadedEVT(SeriesLikeStatusLoadedEVT value),
+    @required Result seriesPageLaunchedEVT(SeriesPageLaunchedEVT value),
+    @required Result seriesViewsLoadedEVT(SeriesViewsLoadedEVT value),
+    @required Result seriesViewsUpdatedEVT(SeriesViewsUpdatedEVT value),
+    @required Result sessionFetchedEVT(SessionFetchedEVT value),
+    @required
+        Result showMoreSummaryButtonPressedEVT(
+            ShowMoreSummaryButtonPressedEVT value),
+  }) {
+    assert(bookmarkButtonPressedEVT != null);
+    assert(bookmarksUpdatedEVT != null);
+    assert(likeButtonPressedEVT != null);
+    assert(likesUpdatedEVT != null);
+    assert(readChapterOneButtonPressedEVT != null);
+    assert(seriesBookmarkStatusLoadedEVT != null);
+    assert(seriesLikesLoadedEVT != null);
+    assert(seriesLikeStatusLoadedEVT != null);
+    assert(seriesPageLaunchedEVT != null);
+    assert(seriesViewsLoadedEVT != null);
+    assert(seriesViewsUpdatedEVT != null);
+    assert(sessionFetchedEVT != null);
+    assert(showMoreSummaryButtonPressedEVT != null);
+    return seriesLikeStatusLoadedEVT(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result bookmarkButtonPressedEVT(BookmarkButtonPressedEVT value),
+    Result bookmarksUpdatedEVT(BookmarksUpdatedEVT value),
+    Result likeButtonPressedEVT(LikeButtonPressedEVT value),
+    Result likesUpdatedEVT(LikesUpdatedEVT value),
+    Result readChapterOneButtonPressedEVT(ReadChapterOneButtonPressedEVT value),
+    Result seriesBookmarkStatusLoadedEVT(SeriesBookmarkStatusLoadedEVT value),
+    Result seriesLikesLoadedEVT(SeriesLikesLoadedEVT value),
+    Result seriesLikeStatusLoadedEVT(SeriesLikeStatusLoadedEVT value),
+    Result seriesPageLaunchedEVT(SeriesPageLaunchedEVT value),
+    Result seriesViewsLoadedEVT(SeriesViewsLoadedEVT value),
+    Result seriesViewsUpdatedEVT(SeriesViewsUpdatedEVT value),
+    Result sessionFetchedEVT(SessionFetchedEVT value),
+    Result showMoreSummaryButtonPressedEVT(
+        ShowMoreSummaryButtonPressedEVT value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (seriesLikeStatusLoadedEVT != null) {
+      return seriesLikeStatusLoadedEVT(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SeriesLikeStatusLoadedEVT implements SeriesDatabaseEvent {
+  const factory SeriesLikeStatusLoadedEVT() = _$SeriesLikeStatusLoadedEVT;
+}
+
+abstract class $SeriesPageLaunchedEVTCopyWith<$Res> {
+  factory $SeriesPageLaunchedEVTCopyWith(SeriesPageLaunchedEVT value,
+          $Res Function(SeriesPageLaunchedEVT) then) =
+      _$SeriesPageLaunchedEVTCopyWithImpl<$Res>;
   $Res call({Series series, BuildContext context});
 }
 
-class _$SeriesPageLaunchedCopyWithImpl<$Res>
+class _$SeriesPageLaunchedEVTCopyWithImpl<$Res>
     extends _$SeriesDatabaseEventCopyWithImpl<$Res>
-    implements $SeriesPageLaunchedCopyWith<$Res> {
-  _$SeriesPageLaunchedCopyWithImpl(
-      SeriesPageLaunched _value, $Res Function(SeriesPageLaunched) _then)
-      : super(_value, (v) => _then(v as SeriesPageLaunched));
+    implements $SeriesPageLaunchedEVTCopyWith<$Res> {
+  _$SeriesPageLaunchedEVTCopyWithImpl(
+      SeriesPageLaunchedEVT _value, $Res Function(SeriesPageLaunchedEVT) _then)
+      : super(_value, (v) => _then(v as SeriesPageLaunchedEVT));
 
   @override
-  SeriesPageLaunched get _value => super._value as SeriesPageLaunched;
+  SeriesPageLaunchedEVT get _value => super._value as SeriesPageLaunchedEVT;
 
   @override
   $Res call({
     Object series = freezed,
     Object context = freezed,
   }) {
-    return _then(SeriesPageLaunched(
+    return _then(SeriesPageLaunchedEVT(
       series: series == freezed ? _value.series : series as Series,
       context: context == freezed ? _value.context : context as BuildContext,
     ));
   }
 }
 
-class _$SeriesPageLaunched
+class _$SeriesPageLaunchedEVT
     with DiagnosticableTreeMixin
-    implements SeriesPageLaunched {
-  const _$SeriesPageLaunched({this.series, this.context});
+    implements SeriesPageLaunchedEVT {
+  const _$SeriesPageLaunchedEVT({this.series, this.context});
 
   @override
   final Series series;
@@ -134,15 +1583,15 @@ class _$SeriesPageLaunched
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'SeriesDatabaseEvent.seriesPageLaunched(series: $series, context: $context)';
+    return 'SeriesDatabaseEvent.seriesPageLaunchedEVT(series: $series, context: $context)';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
-      ..add(
-          DiagnosticsProperty('type', 'SeriesDatabaseEvent.seriesPageLaunched'))
+      ..add(DiagnosticsProperty(
+          'type', 'SeriesDatabaseEvent.seriesPageLaunchedEVT'))
       ..add(DiagnosticsProperty('series', series))
       ..add(DiagnosticsProperty('context', context));
   }
@@ -150,7 +1599,7 @@ class _$SeriesPageLaunched
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is SeriesPageLaunched &&
+        (other is SeriesPageLaunchedEVT &&
             (identical(other.series, series) ||
                 const DeepCollectionEquality().equals(other.series, series)) &&
             (identical(other.context, context) ||
@@ -164,39 +1613,64 @@ class _$SeriesPageLaunched
       const DeepCollectionEquality().hash(context);
 
   @override
-  $SeriesPageLaunchedCopyWith<SeriesPageLaunched> get copyWith =>
-      _$SeriesPageLaunchedCopyWithImpl<SeriesPageLaunched>(this, _$identity);
+  $SeriesPageLaunchedEVTCopyWith<SeriesPageLaunchedEVT> get copyWith =>
+      _$SeriesPageLaunchedEVTCopyWithImpl<SeriesPageLaunchedEVT>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result seriesPageLaunched(Series series, BuildContext context),
-    @required Result likeButtonPressed(),
-    @required Result bookmarkButtonPressed(),
-    @required Result showMoreSummaryButtonPressed(),
-    @required Result readChapterOneButtonPressed(),
+    @required Result bookmarkButtonPressedEVT(),
+    @required Result bookmarksUpdatedEVT(),
+    @required Result likeButtonPressedEVT(),
+    @required Result likesUpdatedEVT(),
+    @required Result readChapterOneButtonPressedEVT(),
+    @required Result seriesBookmarkStatusLoadedEVT(),
+    @required Result seriesLikesLoadedEVT(),
+    @required Result seriesLikeStatusLoadedEVT(),
+    @required Result seriesPageLaunchedEVT(Series series, BuildContext context),
+    @required Result seriesViewsLoadedEVT(),
+    @required Result seriesViewsUpdatedEVT(),
+    @required Result sessionFetchedEVT(Session session),
+    @required Result showMoreSummaryButtonPressedEVT(),
   }) {
-    assert(seriesPageLaunched != null);
-    assert(likeButtonPressed != null);
-    assert(bookmarkButtonPressed != null);
-    assert(showMoreSummaryButtonPressed != null);
-    assert(readChapterOneButtonPressed != null);
-    return seriesPageLaunched(series, context);
+    assert(bookmarkButtonPressedEVT != null);
+    assert(bookmarksUpdatedEVT != null);
+    assert(likeButtonPressedEVT != null);
+    assert(likesUpdatedEVT != null);
+    assert(readChapterOneButtonPressedEVT != null);
+    assert(seriesBookmarkStatusLoadedEVT != null);
+    assert(seriesLikesLoadedEVT != null);
+    assert(seriesLikeStatusLoadedEVT != null);
+    assert(seriesPageLaunchedEVT != null);
+    assert(seriesViewsLoadedEVT != null);
+    assert(seriesViewsUpdatedEVT != null);
+    assert(sessionFetchedEVT != null);
+    assert(showMoreSummaryButtonPressedEVT != null);
+    return seriesPageLaunchedEVT(series, context);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result seriesPageLaunched(Series series, BuildContext context),
-    Result likeButtonPressed(),
-    Result bookmarkButtonPressed(),
-    Result showMoreSummaryButtonPressed(),
-    Result readChapterOneButtonPressed(),
+    Result bookmarkButtonPressedEVT(),
+    Result bookmarksUpdatedEVT(),
+    Result likeButtonPressedEVT(),
+    Result likesUpdatedEVT(),
+    Result readChapterOneButtonPressedEVT(),
+    Result seriesBookmarkStatusLoadedEVT(),
+    Result seriesLikesLoadedEVT(),
+    Result seriesLikeStatusLoadedEVT(),
+    Result seriesPageLaunchedEVT(Series series, BuildContext context),
+    Result seriesViewsLoadedEVT(),
+    Result seriesViewsUpdatedEVT(),
+    Result sessionFetchedEVT(Session session),
+    Result showMoreSummaryButtonPressedEVT(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (seriesPageLaunched != null) {
-      return seriesPageLaunched(series, context);
+    if (seriesPageLaunchedEVT != null) {
+      return seriesPageLaunchedEVT(series, context);
     }
     return orElse();
   }
@@ -204,74 +1678,458 @@ class _$SeriesPageLaunched
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result seriesPageLaunched(SeriesPageLaunched value),
-    @required Result likeButtonPressed(LikeButtonPressed value),
-    @required Result bookmarkButtonPressed(BookmarkButtonPressed value),
+    @required Result bookmarkButtonPressedEVT(BookmarkButtonPressedEVT value),
+    @required Result bookmarksUpdatedEVT(BookmarksUpdatedEVT value),
+    @required Result likeButtonPressedEVT(LikeButtonPressedEVT value),
+    @required Result likesUpdatedEVT(LikesUpdatedEVT value),
     @required
-        Result showMoreSummaryButtonPressed(ShowMoreSummaryButtonPressed value),
+        Result readChapterOneButtonPressedEVT(
+            ReadChapterOneButtonPressedEVT value),
     @required
-        Result readChapterOneButtonPressed(ReadChapterOneButtonPressed value),
+        Result seriesBookmarkStatusLoadedEVT(
+            SeriesBookmarkStatusLoadedEVT value),
+    @required Result seriesLikesLoadedEVT(SeriesLikesLoadedEVT value),
+    @required Result seriesLikeStatusLoadedEVT(SeriesLikeStatusLoadedEVT value),
+    @required Result seriesPageLaunchedEVT(SeriesPageLaunchedEVT value),
+    @required Result seriesViewsLoadedEVT(SeriesViewsLoadedEVT value),
+    @required Result seriesViewsUpdatedEVT(SeriesViewsUpdatedEVT value),
+    @required Result sessionFetchedEVT(SessionFetchedEVT value),
+    @required
+        Result showMoreSummaryButtonPressedEVT(
+            ShowMoreSummaryButtonPressedEVT value),
   }) {
-    assert(seriesPageLaunched != null);
-    assert(likeButtonPressed != null);
-    assert(bookmarkButtonPressed != null);
-    assert(showMoreSummaryButtonPressed != null);
-    assert(readChapterOneButtonPressed != null);
-    return seriesPageLaunched(this);
+    assert(bookmarkButtonPressedEVT != null);
+    assert(bookmarksUpdatedEVT != null);
+    assert(likeButtonPressedEVT != null);
+    assert(likesUpdatedEVT != null);
+    assert(readChapterOneButtonPressedEVT != null);
+    assert(seriesBookmarkStatusLoadedEVT != null);
+    assert(seriesLikesLoadedEVT != null);
+    assert(seriesLikeStatusLoadedEVT != null);
+    assert(seriesPageLaunchedEVT != null);
+    assert(seriesViewsLoadedEVT != null);
+    assert(seriesViewsUpdatedEVT != null);
+    assert(sessionFetchedEVT != null);
+    assert(showMoreSummaryButtonPressedEVT != null);
+    return seriesPageLaunchedEVT(this);
   }
 
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result seriesPageLaunched(SeriesPageLaunched value),
-    Result likeButtonPressed(LikeButtonPressed value),
-    Result bookmarkButtonPressed(BookmarkButtonPressed value),
-    Result showMoreSummaryButtonPressed(ShowMoreSummaryButtonPressed value),
-    Result readChapterOneButtonPressed(ReadChapterOneButtonPressed value),
+    Result bookmarkButtonPressedEVT(BookmarkButtonPressedEVT value),
+    Result bookmarksUpdatedEVT(BookmarksUpdatedEVT value),
+    Result likeButtonPressedEVT(LikeButtonPressedEVT value),
+    Result likesUpdatedEVT(LikesUpdatedEVT value),
+    Result readChapterOneButtonPressedEVT(ReadChapterOneButtonPressedEVT value),
+    Result seriesBookmarkStatusLoadedEVT(SeriesBookmarkStatusLoadedEVT value),
+    Result seriesLikesLoadedEVT(SeriesLikesLoadedEVT value),
+    Result seriesLikeStatusLoadedEVT(SeriesLikeStatusLoadedEVT value),
+    Result seriesPageLaunchedEVT(SeriesPageLaunchedEVT value),
+    Result seriesViewsLoadedEVT(SeriesViewsLoadedEVT value),
+    Result seriesViewsUpdatedEVT(SeriesViewsUpdatedEVT value),
+    Result sessionFetchedEVT(SessionFetchedEVT value),
+    Result showMoreSummaryButtonPressedEVT(
+        ShowMoreSummaryButtonPressedEVT value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (seriesPageLaunched != null) {
-      return seriesPageLaunched(this);
+    if (seriesPageLaunchedEVT != null) {
+      return seriesPageLaunchedEVT(this);
     }
     return orElse();
   }
 }
 
-abstract class SeriesPageLaunched implements SeriesDatabaseEvent {
-  const factory SeriesPageLaunched({Series series, BuildContext context}) =
-      _$SeriesPageLaunched;
+abstract class SeriesPageLaunchedEVT implements SeriesDatabaseEvent {
+  const factory SeriesPageLaunchedEVT({Series series, BuildContext context}) =
+      _$SeriesPageLaunchedEVT;
 
   Series get series;
   BuildContext get context;
-  $SeriesPageLaunchedCopyWith<SeriesPageLaunched> get copyWith;
+  $SeriesPageLaunchedEVTCopyWith<SeriesPageLaunchedEVT> get copyWith;
 }
 
-abstract class $LikeButtonPressedCopyWith<$Res> {
-  factory $LikeButtonPressedCopyWith(
-          LikeButtonPressed value, $Res Function(LikeButtonPressed) then) =
-      _$LikeButtonPressedCopyWithImpl<$Res>;
+abstract class $SeriesViewsLoadedEVTCopyWith<$Res> {
+  factory $SeriesViewsLoadedEVTCopyWith(SeriesViewsLoadedEVT value,
+          $Res Function(SeriesViewsLoadedEVT) then) =
+      _$SeriesViewsLoadedEVTCopyWithImpl<$Res>;
 }
 
-class _$LikeButtonPressedCopyWithImpl<$Res>
+class _$SeriesViewsLoadedEVTCopyWithImpl<$Res>
     extends _$SeriesDatabaseEventCopyWithImpl<$Res>
-    implements $LikeButtonPressedCopyWith<$Res> {
-  _$LikeButtonPressedCopyWithImpl(
-      LikeButtonPressed _value, $Res Function(LikeButtonPressed) _then)
-      : super(_value, (v) => _then(v as LikeButtonPressed));
+    implements $SeriesViewsLoadedEVTCopyWith<$Res> {
+  _$SeriesViewsLoadedEVTCopyWithImpl(
+      SeriesViewsLoadedEVT _value, $Res Function(SeriesViewsLoadedEVT) _then)
+      : super(_value, (v) => _then(v as SeriesViewsLoadedEVT));
 
   @override
-  LikeButtonPressed get _value => super._value as LikeButtonPressed;
+  SeriesViewsLoadedEVT get _value => super._value as SeriesViewsLoadedEVT;
 }
 
-class _$LikeButtonPressed
+class _$SeriesViewsLoadedEVT
     with DiagnosticableTreeMixin
-    implements LikeButtonPressed {
-  const _$LikeButtonPressed();
+    implements SeriesViewsLoadedEVT {
+  const _$SeriesViewsLoadedEVT();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'SeriesDatabaseEvent.likeButtonPressed()';
+    return 'SeriesDatabaseEvent.seriesViewsLoadedEVT()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty(
+          'type', 'SeriesDatabaseEvent.seriesViewsLoadedEVT'));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is SeriesViewsLoadedEVT);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result bookmarkButtonPressedEVT(),
+    @required Result bookmarksUpdatedEVT(),
+    @required Result likeButtonPressedEVT(),
+    @required Result likesUpdatedEVT(),
+    @required Result readChapterOneButtonPressedEVT(),
+    @required Result seriesBookmarkStatusLoadedEVT(),
+    @required Result seriesLikesLoadedEVT(),
+    @required Result seriesLikeStatusLoadedEVT(),
+    @required Result seriesPageLaunchedEVT(Series series, BuildContext context),
+    @required Result seriesViewsLoadedEVT(),
+    @required Result seriesViewsUpdatedEVT(),
+    @required Result sessionFetchedEVT(Session session),
+    @required Result showMoreSummaryButtonPressedEVT(),
+  }) {
+    assert(bookmarkButtonPressedEVT != null);
+    assert(bookmarksUpdatedEVT != null);
+    assert(likeButtonPressedEVT != null);
+    assert(likesUpdatedEVT != null);
+    assert(readChapterOneButtonPressedEVT != null);
+    assert(seriesBookmarkStatusLoadedEVT != null);
+    assert(seriesLikesLoadedEVT != null);
+    assert(seriesLikeStatusLoadedEVT != null);
+    assert(seriesPageLaunchedEVT != null);
+    assert(seriesViewsLoadedEVT != null);
+    assert(seriesViewsUpdatedEVT != null);
+    assert(sessionFetchedEVT != null);
+    assert(showMoreSummaryButtonPressedEVT != null);
+    return seriesViewsLoadedEVT();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result bookmarkButtonPressedEVT(),
+    Result bookmarksUpdatedEVT(),
+    Result likeButtonPressedEVT(),
+    Result likesUpdatedEVT(),
+    Result readChapterOneButtonPressedEVT(),
+    Result seriesBookmarkStatusLoadedEVT(),
+    Result seriesLikesLoadedEVT(),
+    Result seriesLikeStatusLoadedEVT(),
+    Result seriesPageLaunchedEVT(Series series, BuildContext context),
+    Result seriesViewsLoadedEVT(),
+    Result seriesViewsUpdatedEVT(),
+    Result sessionFetchedEVT(Session session),
+    Result showMoreSummaryButtonPressedEVT(),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (seriesViewsLoadedEVT != null) {
+      return seriesViewsLoadedEVT();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result bookmarkButtonPressedEVT(BookmarkButtonPressedEVT value),
+    @required Result bookmarksUpdatedEVT(BookmarksUpdatedEVT value),
+    @required Result likeButtonPressedEVT(LikeButtonPressedEVT value),
+    @required Result likesUpdatedEVT(LikesUpdatedEVT value),
+    @required
+        Result readChapterOneButtonPressedEVT(
+            ReadChapterOneButtonPressedEVT value),
+    @required
+        Result seriesBookmarkStatusLoadedEVT(
+            SeriesBookmarkStatusLoadedEVT value),
+    @required Result seriesLikesLoadedEVT(SeriesLikesLoadedEVT value),
+    @required Result seriesLikeStatusLoadedEVT(SeriesLikeStatusLoadedEVT value),
+    @required Result seriesPageLaunchedEVT(SeriesPageLaunchedEVT value),
+    @required Result seriesViewsLoadedEVT(SeriesViewsLoadedEVT value),
+    @required Result seriesViewsUpdatedEVT(SeriesViewsUpdatedEVT value),
+    @required Result sessionFetchedEVT(SessionFetchedEVT value),
+    @required
+        Result showMoreSummaryButtonPressedEVT(
+            ShowMoreSummaryButtonPressedEVT value),
+  }) {
+    assert(bookmarkButtonPressedEVT != null);
+    assert(bookmarksUpdatedEVT != null);
+    assert(likeButtonPressedEVT != null);
+    assert(likesUpdatedEVT != null);
+    assert(readChapterOneButtonPressedEVT != null);
+    assert(seriesBookmarkStatusLoadedEVT != null);
+    assert(seriesLikesLoadedEVT != null);
+    assert(seriesLikeStatusLoadedEVT != null);
+    assert(seriesPageLaunchedEVT != null);
+    assert(seriesViewsLoadedEVT != null);
+    assert(seriesViewsUpdatedEVT != null);
+    assert(sessionFetchedEVT != null);
+    assert(showMoreSummaryButtonPressedEVT != null);
+    return seriesViewsLoadedEVT(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result bookmarkButtonPressedEVT(BookmarkButtonPressedEVT value),
+    Result bookmarksUpdatedEVT(BookmarksUpdatedEVT value),
+    Result likeButtonPressedEVT(LikeButtonPressedEVT value),
+    Result likesUpdatedEVT(LikesUpdatedEVT value),
+    Result readChapterOneButtonPressedEVT(ReadChapterOneButtonPressedEVT value),
+    Result seriesBookmarkStatusLoadedEVT(SeriesBookmarkStatusLoadedEVT value),
+    Result seriesLikesLoadedEVT(SeriesLikesLoadedEVT value),
+    Result seriesLikeStatusLoadedEVT(SeriesLikeStatusLoadedEVT value),
+    Result seriesPageLaunchedEVT(SeriesPageLaunchedEVT value),
+    Result seriesViewsLoadedEVT(SeriesViewsLoadedEVT value),
+    Result seriesViewsUpdatedEVT(SeriesViewsUpdatedEVT value),
+    Result sessionFetchedEVT(SessionFetchedEVT value),
+    Result showMoreSummaryButtonPressedEVT(
+        ShowMoreSummaryButtonPressedEVT value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (seriesViewsLoadedEVT != null) {
+      return seriesViewsLoadedEVT(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SeriesViewsLoadedEVT implements SeriesDatabaseEvent {
+  const factory SeriesViewsLoadedEVT() = _$SeriesViewsLoadedEVT;
+}
+
+abstract class $SeriesViewsUpdatedEVTCopyWith<$Res> {
+  factory $SeriesViewsUpdatedEVTCopyWith(SeriesViewsUpdatedEVT value,
+          $Res Function(SeriesViewsUpdatedEVT) then) =
+      _$SeriesViewsUpdatedEVTCopyWithImpl<$Res>;
+}
+
+class _$SeriesViewsUpdatedEVTCopyWithImpl<$Res>
+    extends _$SeriesDatabaseEventCopyWithImpl<$Res>
+    implements $SeriesViewsUpdatedEVTCopyWith<$Res> {
+  _$SeriesViewsUpdatedEVTCopyWithImpl(
+      SeriesViewsUpdatedEVT _value, $Res Function(SeriesViewsUpdatedEVT) _then)
+      : super(_value, (v) => _then(v as SeriesViewsUpdatedEVT));
+
+  @override
+  SeriesViewsUpdatedEVT get _value => super._value as SeriesViewsUpdatedEVT;
+}
+
+class _$SeriesViewsUpdatedEVT
+    with DiagnosticableTreeMixin
+    implements SeriesViewsUpdatedEVT {
+  const _$SeriesViewsUpdatedEVT();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'SeriesDatabaseEvent.seriesViewsUpdatedEVT()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty(
+          'type', 'SeriesDatabaseEvent.seriesViewsUpdatedEVT'));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is SeriesViewsUpdatedEVT);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result bookmarkButtonPressedEVT(),
+    @required Result bookmarksUpdatedEVT(),
+    @required Result likeButtonPressedEVT(),
+    @required Result likesUpdatedEVT(),
+    @required Result readChapterOneButtonPressedEVT(),
+    @required Result seriesBookmarkStatusLoadedEVT(),
+    @required Result seriesLikesLoadedEVT(),
+    @required Result seriesLikeStatusLoadedEVT(),
+    @required Result seriesPageLaunchedEVT(Series series, BuildContext context),
+    @required Result seriesViewsLoadedEVT(),
+    @required Result seriesViewsUpdatedEVT(),
+    @required Result sessionFetchedEVT(Session session),
+    @required Result showMoreSummaryButtonPressedEVT(),
+  }) {
+    assert(bookmarkButtonPressedEVT != null);
+    assert(bookmarksUpdatedEVT != null);
+    assert(likeButtonPressedEVT != null);
+    assert(likesUpdatedEVT != null);
+    assert(readChapterOneButtonPressedEVT != null);
+    assert(seriesBookmarkStatusLoadedEVT != null);
+    assert(seriesLikesLoadedEVT != null);
+    assert(seriesLikeStatusLoadedEVT != null);
+    assert(seriesPageLaunchedEVT != null);
+    assert(seriesViewsLoadedEVT != null);
+    assert(seriesViewsUpdatedEVT != null);
+    assert(sessionFetchedEVT != null);
+    assert(showMoreSummaryButtonPressedEVT != null);
+    return seriesViewsUpdatedEVT();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result bookmarkButtonPressedEVT(),
+    Result bookmarksUpdatedEVT(),
+    Result likeButtonPressedEVT(),
+    Result likesUpdatedEVT(),
+    Result readChapterOneButtonPressedEVT(),
+    Result seriesBookmarkStatusLoadedEVT(),
+    Result seriesLikesLoadedEVT(),
+    Result seriesLikeStatusLoadedEVT(),
+    Result seriesPageLaunchedEVT(Series series, BuildContext context),
+    Result seriesViewsLoadedEVT(),
+    Result seriesViewsUpdatedEVT(),
+    Result sessionFetchedEVT(Session session),
+    Result showMoreSummaryButtonPressedEVT(),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (seriesViewsUpdatedEVT != null) {
+      return seriesViewsUpdatedEVT();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result bookmarkButtonPressedEVT(BookmarkButtonPressedEVT value),
+    @required Result bookmarksUpdatedEVT(BookmarksUpdatedEVT value),
+    @required Result likeButtonPressedEVT(LikeButtonPressedEVT value),
+    @required Result likesUpdatedEVT(LikesUpdatedEVT value),
+    @required
+        Result readChapterOneButtonPressedEVT(
+            ReadChapterOneButtonPressedEVT value),
+    @required
+        Result seriesBookmarkStatusLoadedEVT(
+            SeriesBookmarkStatusLoadedEVT value),
+    @required Result seriesLikesLoadedEVT(SeriesLikesLoadedEVT value),
+    @required Result seriesLikeStatusLoadedEVT(SeriesLikeStatusLoadedEVT value),
+    @required Result seriesPageLaunchedEVT(SeriesPageLaunchedEVT value),
+    @required Result seriesViewsLoadedEVT(SeriesViewsLoadedEVT value),
+    @required Result seriesViewsUpdatedEVT(SeriesViewsUpdatedEVT value),
+    @required Result sessionFetchedEVT(SessionFetchedEVT value),
+    @required
+        Result showMoreSummaryButtonPressedEVT(
+            ShowMoreSummaryButtonPressedEVT value),
+  }) {
+    assert(bookmarkButtonPressedEVT != null);
+    assert(bookmarksUpdatedEVT != null);
+    assert(likeButtonPressedEVT != null);
+    assert(likesUpdatedEVT != null);
+    assert(readChapterOneButtonPressedEVT != null);
+    assert(seriesBookmarkStatusLoadedEVT != null);
+    assert(seriesLikesLoadedEVT != null);
+    assert(seriesLikeStatusLoadedEVT != null);
+    assert(seriesPageLaunchedEVT != null);
+    assert(seriesViewsLoadedEVT != null);
+    assert(seriesViewsUpdatedEVT != null);
+    assert(sessionFetchedEVT != null);
+    assert(showMoreSummaryButtonPressedEVT != null);
+    return seriesViewsUpdatedEVT(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result bookmarkButtonPressedEVT(BookmarkButtonPressedEVT value),
+    Result bookmarksUpdatedEVT(BookmarksUpdatedEVT value),
+    Result likeButtonPressedEVT(LikeButtonPressedEVT value),
+    Result likesUpdatedEVT(LikesUpdatedEVT value),
+    Result readChapterOneButtonPressedEVT(ReadChapterOneButtonPressedEVT value),
+    Result seriesBookmarkStatusLoadedEVT(SeriesBookmarkStatusLoadedEVT value),
+    Result seriesLikesLoadedEVT(SeriesLikesLoadedEVT value),
+    Result seriesLikeStatusLoadedEVT(SeriesLikeStatusLoadedEVT value),
+    Result seriesPageLaunchedEVT(SeriesPageLaunchedEVT value),
+    Result seriesViewsLoadedEVT(SeriesViewsLoadedEVT value),
+    Result seriesViewsUpdatedEVT(SeriesViewsUpdatedEVT value),
+    Result sessionFetchedEVT(SessionFetchedEVT value),
+    Result showMoreSummaryButtonPressedEVT(
+        ShowMoreSummaryButtonPressedEVT value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (seriesViewsUpdatedEVT != null) {
+      return seriesViewsUpdatedEVT(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SeriesViewsUpdatedEVT implements SeriesDatabaseEvent {
+  const factory SeriesViewsUpdatedEVT() = _$SeriesViewsUpdatedEVT;
+}
+
+abstract class $SessionFetchedEVTCopyWith<$Res> {
+  factory $SessionFetchedEVTCopyWith(
+          SessionFetchedEVT value, $Res Function(SessionFetchedEVT) then) =
+      _$SessionFetchedEVTCopyWithImpl<$Res>;
+  $Res call({Session session});
+}
+
+class _$SessionFetchedEVTCopyWithImpl<$Res>
+    extends _$SeriesDatabaseEventCopyWithImpl<$Res>
+    implements $SessionFetchedEVTCopyWith<$Res> {
+  _$SessionFetchedEVTCopyWithImpl(
+      SessionFetchedEVT _value, $Res Function(SessionFetchedEVT) _then)
+      : super(_value, (v) => _then(v as SessionFetchedEVT));
+
+  @override
+  SessionFetchedEVT get _value => super._value as SessionFetchedEVT;
+
+  @override
+  $Res call({
+    Object session = freezed,
+  }) {
+    return _then(SessionFetchedEVT(
+      session == freezed ? _value.session : session as Session,
+    ));
+  }
+}
+
+class _$SessionFetchedEVT
+    with DiagnosticableTreeMixin
+    implements SessionFetchedEVT {
+  const _$SessionFetchedEVT(this.session) : assert(session != null);
+
+  @override
+  final Session session;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'SeriesDatabaseEvent.sessionFetchedEVT(session: $session)';
   }
 
   @override
@@ -279,47 +2137,80 @@ class _$LikeButtonPressed
     super.debugFillProperties(properties);
     properties
       ..add(
-          DiagnosticsProperty('type', 'SeriesDatabaseEvent.likeButtonPressed'));
+          DiagnosticsProperty('type', 'SeriesDatabaseEvent.sessionFetchedEVT'))
+      ..add(DiagnosticsProperty('session', session));
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is LikeButtonPressed);
+    return identical(this, other) ||
+        (other is SessionFetchedEVT &&
+            (identical(other.session, session) ||
+                const DeepCollectionEquality().equals(other.session, session)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(session);
+
+  @override
+  $SessionFetchedEVTCopyWith<SessionFetchedEVT> get copyWith =>
+      _$SessionFetchedEVTCopyWithImpl<SessionFetchedEVT>(this, _$identity);
 
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result seriesPageLaunched(Series series, BuildContext context),
-    @required Result likeButtonPressed(),
-    @required Result bookmarkButtonPressed(),
-    @required Result showMoreSummaryButtonPressed(),
-    @required Result readChapterOneButtonPressed(),
+    @required Result bookmarkButtonPressedEVT(),
+    @required Result bookmarksUpdatedEVT(),
+    @required Result likeButtonPressedEVT(),
+    @required Result likesUpdatedEVT(),
+    @required Result readChapterOneButtonPressedEVT(),
+    @required Result seriesBookmarkStatusLoadedEVT(),
+    @required Result seriesLikesLoadedEVT(),
+    @required Result seriesLikeStatusLoadedEVT(),
+    @required Result seriesPageLaunchedEVT(Series series, BuildContext context),
+    @required Result seriesViewsLoadedEVT(),
+    @required Result seriesViewsUpdatedEVT(),
+    @required Result sessionFetchedEVT(Session session),
+    @required Result showMoreSummaryButtonPressedEVT(),
   }) {
-    assert(seriesPageLaunched != null);
-    assert(likeButtonPressed != null);
-    assert(bookmarkButtonPressed != null);
-    assert(showMoreSummaryButtonPressed != null);
-    assert(readChapterOneButtonPressed != null);
-    return likeButtonPressed();
+    assert(bookmarkButtonPressedEVT != null);
+    assert(bookmarksUpdatedEVT != null);
+    assert(likeButtonPressedEVT != null);
+    assert(likesUpdatedEVT != null);
+    assert(readChapterOneButtonPressedEVT != null);
+    assert(seriesBookmarkStatusLoadedEVT != null);
+    assert(seriesLikesLoadedEVT != null);
+    assert(seriesLikeStatusLoadedEVT != null);
+    assert(seriesPageLaunchedEVT != null);
+    assert(seriesViewsLoadedEVT != null);
+    assert(seriesViewsUpdatedEVT != null);
+    assert(sessionFetchedEVT != null);
+    assert(showMoreSummaryButtonPressedEVT != null);
+    return sessionFetchedEVT(session);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result seriesPageLaunched(Series series, BuildContext context),
-    Result likeButtonPressed(),
-    Result bookmarkButtonPressed(),
-    Result showMoreSummaryButtonPressed(),
-    Result readChapterOneButtonPressed(),
+    Result bookmarkButtonPressedEVT(),
+    Result bookmarksUpdatedEVT(),
+    Result likeButtonPressedEVT(),
+    Result likesUpdatedEVT(),
+    Result readChapterOneButtonPressedEVT(),
+    Result seriesBookmarkStatusLoadedEVT(),
+    Result seriesLikesLoadedEVT(),
+    Result seriesLikeStatusLoadedEVT(),
+    Result seriesPageLaunchedEVT(Series series, BuildContext context),
+    Result seriesViewsLoadedEVT(),
+    Result seriesViewsUpdatedEVT(),
+    Result sessionFetchedEVT(Session session),
+    Result showMoreSummaryButtonPressedEVT(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (likeButtonPressed != null) {
-      return likeButtonPressed();
+    if (sessionFetchedEVT != null) {
+      return sessionFetchedEVT(session);
     }
     return orElse();
   }
@@ -327,69 +2218,104 @@ class _$LikeButtonPressed
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result seriesPageLaunched(SeriesPageLaunched value),
-    @required Result likeButtonPressed(LikeButtonPressed value),
-    @required Result bookmarkButtonPressed(BookmarkButtonPressed value),
+    @required Result bookmarkButtonPressedEVT(BookmarkButtonPressedEVT value),
+    @required Result bookmarksUpdatedEVT(BookmarksUpdatedEVT value),
+    @required Result likeButtonPressedEVT(LikeButtonPressedEVT value),
+    @required Result likesUpdatedEVT(LikesUpdatedEVT value),
     @required
-        Result showMoreSummaryButtonPressed(ShowMoreSummaryButtonPressed value),
+        Result readChapterOneButtonPressedEVT(
+            ReadChapterOneButtonPressedEVT value),
     @required
-        Result readChapterOneButtonPressed(ReadChapterOneButtonPressed value),
+        Result seriesBookmarkStatusLoadedEVT(
+            SeriesBookmarkStatusLoadedEVT value),
+    @required Result seriesLikesLoadedEVT(SeriesLikesLoadedEVT value),
+    @required Result seriesLikeStatusLoadedEVT(SeriesLikeStatusLoadedEVT value),
+    @required Result seriesPageLaunchedEVT(SeriesPageLaunchedEVT value),
+    @required Result seriesViewsLoadedEVT(SeriesViewsLoadedEVT value),
+    @required Result seriesViewsUpdatedEVT(SeriesViewsUpdatedEVT value),
+    @required Result sessionFetchedEVT(SessionFetchedEVT value),
+    @required
+        Result showMoreSummaryButtonPressedEVT(
+            ShowMoreSummaryButtonPressedEVT value),
   }) {
-    assert(seriesPageLaunched != null);
-    assert(likeButtonPressed != null);
-    assert(bookmarkButtonPressed != null);
-    assert(showMoreSummaryButtonPressed != null);
-    assert(readChapterOneButtonPressed != null);
-    return likeButtonPressed(this);
+    assert(bookmarkButtonPressedEVT != null);
+    assert(bookmarksUpdatedEVT != null);
+    assert(likeButtonPressedEVT != null);
+    assert(likesUpdatedEVT != null);
+    assert(readChapterOneButtonPressedEVT != null);
+    assert(seriesBookmarkStatusLoadedEVT != null);
+    assert(seriesLikesLoadedEVT != null);
+    assert(seriesLikeStatusLoadedEVT != null);
+    assert(seriesPageLaunchedEVT != null);
+    assert(seriesViewsLoadedEVT != null);
+    assert(seriesViewsUpdatedEVT != null);
+    assert(sessionFetchedEVT != null);
+    assert(showMoreSummaryButtonPressedEVT != null);
+    return sessionFetchedEVT(this);
   }
 
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result seriesPageLaunched(SeriesPageLaunched value),
-    Result likeButtonPressed(LikeButtonPressed value),
-    Result bookmarkButtonPressed(BookmarkButtonPressed value),
-    Result showMoreSummaryButtonPressed(ShowMoreSummaryButtonPressed value),
-    Result readChapterOneButtonPressed(ReadChapterOneButtonPressed value),
+    Result bookmarkButtonPressedEVT(BookmarkButtonPressedEVT value),
+    Result bookmarksUpdatedEVT(BookmarksUpdatedEVT value),
+    Result likeButtonPressedEVT(LikeButtonPressedEVT value),
+    Result likesUpdatedEVT(LikesUpdatedEVT value),
+    Result readChapterOneButtonPressedEVT(ReadChapterOneButtonPressedEVT value),
+    Result seriesBookmarkStatusLoadedEVT(SeriesBookmarkStatusLoadedEVT value),
+    Result seriesLikesLoadedEVT(SeriesLikesLoadedEVT value),
+    Result seriesLikeStatusLoadedEVT(SeriesLikeStatusLoadedEVT value),
+    Result seriesPageLaunchedEVT(SeriesPageLaunchedEVT value),
+    Result seriesViewsLoadedEVT(SeriesViewsLoadedEVT value),
+    Result seriesViewsUpdatedEVT(SeriesViewsUpdatedEVT value),
+    Result sessionFetchedEVT(SessionFetchedEVT value),
+    Result showMoreSummaryButtonPressedEVT(
+        ShowMoreSummaryButtonPressedEVT value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (likeButtonPressed != null) {
-      return likeButtonPressed(this);
+    if (sessionFetchedEVT != null) {
+      return sessionFetchedEVT(this);
     }
     return orElse();
   }
 }
 
-abstract class LikeButtonPressed implements SeriesDatabaseEvent {
-  const factory LikeButtonPressed() = _$LikeButtonPressed;
+abstract class SessionFetchedEVT implements SeriesDatabaseEvent {
+  const factory SessionFetchedEVT(Session session) = _$SessionFetchedEVT;
+
+  Session get session;
+  $SessionFetchedEVTCopyWith<SessionFetchedEVT> get copyWith;
 }
 
-abstract class $BookmarkButtonPressedCopyWith<$Res> {
-  factory $BookmarkButtonPressedCopyWith(BookmarkButtonPressed value,
-          $Res Function(BookmarkButtonPressed) then) =
-      _$BookmarkButtonPressedCopyWithImpl<$Res>;
+abstract class $ShowMoreSummaryButtonPressedEVTCopyWith<$Res> {
+  factory $ShowMoreSummaryButtonPressedEVTCopyWith(
+          ShowMoreSummaryButtonPressedEVT value,
+          $Res Function(ShowMoreSummaryButtonPressedEVT) then) =
+      _$ShowMoreSummaryButtonPressedEVTCopyWithImpl<$Res>;
 }
 
-class _$BookmarkButtonPressedCopyWithImpl<$Res>
+class _$ShowMoreSummaryButtonPressedEVTCopyWithImpl<$Res>
     extends _$SeriesDatabaseEventCopyWithImpl<$Res>
-    implements $BookmarkButtonPressedCopyWith<$Res> {
-  _$BookmarkButtonPressedCopyWithImpl(
-      BookmarkButtonPressed _value, $Res Function(BookmarkButtonPressed) _then)
-      : super(_value, (v) => _then(v as BookmarkButtonPressed));
+    implements $ShowMoreSummaryButtonPressedEVTCopyWith<$Res> {
+  _$ShowMoreSummaryButtonPressedEVTCopyWithImpl(
+      ShowMoreSummaryButtonPressedEVT _value,
+      $Res Function(ShowMoreSummaryButtonPressedEVT) _then)
+      : super(_value, (v) => _then(v as ShowMoreSummaryButtonPressedEVT));
 
   @override
-  BookmarkButtonPressed get _value => super._value as BookmarkButtonPressed;
+  ShowMoreSummaryButtonPressedEVT get _value =>
+      super._value as ShowMoreSummaryButtonPressedEVT;
 }
 
-class _$BookmarkButtonPressed
+class _$ShowMoreSummaryButtonPressedEVT
     with DiagnosticableTreeMixin
-    implements BookmarkButtonPressed {
-  const _$BookmarkButtonPressed();
+    implements ShowMoreSummaryButtonPressedEVT {
+  const _$ShowMoreSummaryButtonPressedEVT();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'SeriesDatabaseEvent.bookmarkButtonPressed()';
+    return 'SeriesDatabaseEvent.showMoreSummaryButtonPressedEVT()';
   }
 
   @override
@@ -397,12 +2323,12 @@ class _$BookmarkButtonPressed
     super.debugFillProperties(properties);
     properties
       ..add(DiagnosticsProperty(
-          'type', 'SeriesDatabaseEvent.bookmarkButtonPressed'));
+          'type', 'SeriesDatabaseEvent.showMoreSummaryButtonPressedEVT'));
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is BookmarkButtonPressed);
+    return identical(this, other) || (other is ShowMoreSummaryButtonPressedEVT);
   }
 
   @override
@@ -411,33 +2337,57 @@ class _$BookmarkButtonPressed
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result seriesPageLaunched(Series series, BuildContext context),
-    @required Result likeButtonPressed(),
-    @required Result bookmarkButtonPressed(),
-    @required Result showMoreSummaryButtonPressed(),
-    @required Result readChapterOneButtonPressed(),
+    @required Result bookmarkButtonPressedEVT(),
+    @required Result bookmarksUpdatedEVT(),
+    @required Result likeButtonPressedEVT(),
+    @required Result likesUpdatedEVT(),
+    @required Result readChapterOneButtonPressedEVT(),
+    @required Result seriesBookmarkStatusLoadedEVT(),
+    @required Result seriesLikesLoadedEVT(),
+    @required Result seriesLikeStatusLoadedEVT(),
+    @required Result seriesPageLaunchedEVT(Series series, BuildContext context),
+    @required Result seriesViewsLoadedEVT(),
+    @required Result seriesViewsUpdatedEVT(),
+    @required Result sessionFetchedEVT(Session session),
+    @required Result showMoreSummaryButtonPressedEVT(),
   }) {
-    assert(seriesPageLaunched != null);
-    assert(likeButtonPressed != null);
-    assert(bookmarkButtonPressed != null);
-    assert(showMoreSummaryButtonPressed != null);
-    assert(readChapterOneButtonPressed != null);
-    return bookmarkButtonPressed();
+    assert(bookmarkButtonPressedEVT != null);
+    assert(bookmarksUpdatedEVT != null);
+    assert(likeButtonPressedEVT != null);
+    assert(likesUpdatedEVT != null);
+    assert(readChapterOneButtonPressedEVT != null);
+    assert(seriesBookmarkStatusLoadedEVT != null);
+    assert(seriesLikesLoadedEVT != null);
+    assert(seriesLikeStatusLoadedEVT != null);
+    assert(seriesPageLaunchedEVT != null);
+    assert(seriesViewsLoadedEVT != null);
+    assert(seriesViewsUpdatedEVT != null);
+    assert(sessionFetchedEVT != null);
+    assert(showMoreSummaryButtonPressedEVT != null);
+    return showMoreSummaryButtonPressedEVT();
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result seriesPageLaunched(Series series, BuildContext context),
-    Result likeButtonPressed(),
-    Result bookmarkButtonPressed(),
-    Result showMoreSummaryButtonPressed(),
-    Result readChapterOneButtonPressed(),
+    Result bookmarkButtonPressedEVT(),
+    Result bookmarksUpdatedEVT(),
+    Result likeButtonPressedEVT(),
+    Result likesUpdatedEVT(),
+    Result readChapterOneButtonPressedEVT(),
+    Result seriesBookmarkStatusLoadedEVT(),
+    Result seriesLikesLoadedEVT(),
+    Result seriesLikeStatusLoadedEVT(),
+    Result seriesPageLaunchedEVT(Series series, BuildContext context),
+    Result seriesViewsLoadedEVT(),
+    Result seriesViewsUpdatedEVT(),
+    Result sessionFetchedEVT(Session session),
+    Result showMoreSummaryButtonPressedEVT(),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (bookmarkButtonPressed != null) {
-      return bookmarkButtonPressed();
+    if (showMoreSummaryButtonPressedEVT != null) {
+      return showMoreSummaryButtonPressedEVT();
     }
     return orElse();
   }
@@ -445,283 +2395,72 @@ class _$BookmarkButtonPressed
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result seriesPageLaunched(SeriesPageLaunched value),
-    @required Result likeButtonPressed(LikeButtonPressed value),
-    @required Result bookmarkButtonPressed(BookmarkButtonPressed value),
+    @required Result bookmarkButtonPressedEVT(BookmarkButtonPressedEVT value),
+    @required Result bookmarksUpdatedEVT(BookmarksUpdatedEVT value),
+    @required Result likeButtonPressedEVT(LikeButtonPressedEVT value),
+    @required Result likesUpdatedEVT(LikesUpdatedEVT value),
     @required
-        Result showMoreSummaryButtonPressed(ShowMoreSummaryButtonPressed value),
+        Result readChapterOneButtonPressedEVT(
+            ReadChapterOneButtonPressedEVT value),
     @required
-        Result readChapterOneButtonPressed(ReadChapterOneButtonPressed value),
+        Result seriesBookmarkStatusLoadedEVT(
+            SeriesBookmarkStatusLoadedEVT value),
+    @required Result seriesLikesLoadedEVT(SeriesLikesLoadedEVT value),
+    @required Result seriesLikeStatusLoadedEVT(SeriesLikeStatusLoadedEVT value),
+    @required Result seriesPageLaunchedEVT(SeriesPageLaunchedEVT value),
+    @required Result seriesViewsLoadedEVT(SeriesViewsLoadedEVT value),
+    @required Result seriesViewsUpdatedEVT(SeriesViewsUpdatedEVT value),
+    @required Result sessionFetchedEVT(SessionFetchedEVT value),
+    @required
+        Result showMoreSummaryButtonPressedEVT(
+            ShowMoreSummaryButtonPressedEVT value),
   }) {
-    assert(seriesPageLaunched != null);
-    assert(likeButtonPressed != null);
-    assert(bookmarkButtonPressed != null);
-    assert(showMoreSummaryButtonPressed != null);
-    assert(readChapterOneButtonPressed != null);
-    return bookmarkButtonPressed(this);
+    assert(bookmarkButtonPressedEVT != null);
+    assert(bookmarksUpdatedEVT != null);
+    assert(likeButtonPressedEVT != null);
+    assert(likesUpdatedEVT != null);
+    assert(readChapterOneButtonPressedEVT != null);
+    assert(seriesBookmarkStatusLoadedEVT != null);
+    assert(seriesLikesLoadedEVT != null);
+    assert(seriesLikeStatusLoadedEVT != null);
+    assert(seriesPageLaunchedEVT != null);
+    assert(seriesViewsLoadedEVT != null);
+    assert(seriesViewsUpdatedEVT != null);
+    assert(sessionFetchedEVT != null);
+    assert(showMoreSummaryButtonPressedEVT != null);
+    return showMoreSummaryButtonPressedEVT(this);
   }
 
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result seriesPageLaunched(SeriesPageLaunched value),
-    Result likeButtonPressed(LikeButtonPressed value),
-    Result bookmarkButtonPressed(BookmarkButtonPressed value),
-    Result showMoreSummaryButtonPressed(ShowMoreSummaryButtonPressed value),
-    Result readChapterOneButtonPressed(ReadChapterOneButtonPressed value),
+    Result bookmarkButtonPressedEVT(BookmarkButtonPressedEVT value),
+    Result bookmarksUpdatedEVT(BookmarksUpdatedEVT value),
+    Result likeButtonPressedEVT(LikeButtonPressedEVT value),
+    Result likesUpdatedEVT(LikesUpdatedEVT value),
+    Result readChapterOneButtonPressedEVT(ReadChapterOneButtonPressedEVT value),
+    Result seriesBookmarkStatusLoadedEVT(SeriesBookmarkStatusLoadedEVT value),
+    Result seriesLikesLoadedEVT(SeriesLikesLoadedEVT value),
+    Result seriesLikeStatusLoadedEVT(SeriesLikeStatusLoadedEVT value),
+    Result seriesPageLaunchedEVT(SeriesPageLaunchedEVT value),
+    Result seriesViewsLoadedEVT(SeriesViewsLoadedEVT value),
+    Result seriesViewsUpdatedEVT(SeriesViewsUpdatedEVT value),
+    Result sessionFetchedEVT(SessionFetchedEVT value),
+    Result showMoreSummaryButtonPressedEVT(
+        ShowMoreSummaryButtonPressedEVT value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (bookmarkButtonPressed != null) {
-      return bookmarkButtonPressed(this);
+    if (showMoreSummaryButtonPressedEVT != null) {
+      return showMoreSummaryButtonPressedEVT(this);
     }
     return orElse();
   }
 }
 
-abstract class BookmarkButtonPressed implements SeriesDatabaseEvent {
-  const factory BookmarkButtonPressed() = _$BookmarkButtonPressed;
-}
-
-abstract class $ShowMoreSummaryButtonPressedCopyWith<$Res> {
-  factory $ShowMoreSummaryButtonPressedCopyWith(
-          ShowMoreSummaryButtonPressed value,
-          $Res Function(ShowMoreSummaryButtonPressed) then) =
-      _$ShowMoreSummaryButtonPressedCopyWithImpl<$Res>;
-}
-
-class _$ShowMoreSummaryButtonPressedCopyWithImpl<$Res>
-    extends _$SeriesDatabaseEventCopyWithImpl<$Res>
-    implements $ShowMoreSummaryButtonPressedCopyWith<$Res> {
-  _$ShowMoreSummaryButtonPressedCopyWithImpl(
-      ShowMoreSummaryButtonPressed _value,
-      $Res Function(ShowMoreSummaryButtonPressed) _then)
-      : super(_value, (v) => _then(v as ShowMoreSummaryButtonPressed));
-
-  @override
-  ShowMoreSummaryButtonPressed get _value =>
-      super._value as ShowMoreSummaryButtonPressed;
-}
-
-class _$ShowMoreSummaryButtonPressed
-    with DiagnosticableTreeMixin
-    implements ShowMoreSummaryButtonPressed {
-  const _$ShowMoreSummaryButtonPressed();
-
-  @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'SeriesDatabaseEvent.showMoreSummaryButtonPressed()';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty(
-          'type', 'SeriesDatabaseEvent.showMoreSummaryButtonPressed'));
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) || (other is ShowMoreSummaryButtonPressed);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result seriesPageLaunched(Series series, BuildContext context),
-    @required Result likeButtonPressed(),
-    @required Result bookmarkButtonPressed(),
-    @required Result showMoreSummaryButtonPressed(),
-    @required Result readChapterOneButtonPressed(),
-  }) {
-    assert(seriesPageLaunched != null);
-    assert(likeButtonPressed != null);
-    assert(bookmarkButtonPressed != null);
-    assert(showMoreSummaryButtonPressed != null);
-    assert(readChapterOneButtonPressed != null);
-    return showMoreSummaryButtonPressed();
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result seriesPageLaunched(Series series, BuildContext context),
-    Result likeButtonPressed(),
-    Result bookmarkButtonPressed(),
-    Result showMoreSummaryButtonPressed(),
-    Result readChapterOneButtonPressed(),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (showMoreSummaryButtonPressed != null) {
-      return showMoreSummaryButtonPressed();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result seriesPageLaunched(SeriesPageLaunched value),
-    @required Result likeButtonPressed(LikeButtonPressed value),
-    @required Result bookmarkButtonPressed(BookmarkButtonPressed value),
-    @required
-        Result showMoreSummaryButtonPressed(ShowMoreSummaryButtonPressed value),
-    @required
-        Result readChapterOneButtonPressed(ReadChapterOneButtonPressed value),
-  }) {
-    assert(seriesPageLaunched != null);
-    assert(likeButtonPressed != null);
-    assert(bookmarkButtonPressed != null);
-    assert(showMoreSummaryButtonPressed != null);
-    assert(readChapterOneButtonPressed != null);
-    return showMoreSummaryButtonPressed(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result seriesPageLaunched(SeriesPageLaunched value),
-    Result likeButtonPressed(LikeButtonPressed value),
-    Result bookmarkButtonPressed(BookmarkButtonPressed value),
-    Result showMoreSummaryButtonPressed(ShowMoreSummaryButtonPressed value),
-    Result readChapterOneButtonPressed(ReadChapterOneButtonPressed value),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (showMoreSummaryButtonPressed != null) {
-      return showMoreSummaryButtonPressed(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class ShowMoreSummaryButtonPressed implements SeriesDatabaseEvent {
-  const factory ShowMoreSummaryButtonPressed() = _$ShowMoreSummaryButtonPressed;
-}
-
-abstract class $ReadChapterOneButtonPressedCopyWith<$Res> {
-  factory $ReadChapterOneButtonPressedCopyWith(
-          ReadChapterOneButtonPressed value,
-          $Res Function(ReadChapterOneButtonPressed) then) =
-      _$ReadChapterOneButtonPressedCopyWithImpl<$Res>;
-}
-
-class _$ReadChapterOneButtonPressedCopyWithImpl<$Res>
-    extends _$SeriesDatabaseEventCopyWithImpl<$Res>
-    implements $ReadChapterOneButtonPressedCopyWith<$Res> {
-  _$ReadChapterOneButtonPressedCopyWithImpl(ReadChapterOneButtonPressed _value,
-      $Res Function(ReadChapterOneButtonPressed) _then)
-      : super(_value, (v) => _then(v as ReadChapterOneButtonPressed));
-
-  @override
-  ReadChapterOneButtonPressed get _value =>
-      super._value as ReadChapterOneButtonPressed;
-}
-
-class _$ReadChapterOneButtonPressed
-    with DiagnosticableTreeMixin
-    implements ReadChapterOneButtonPressed {
-  const _$ReadChapterOneButtonPressed();
-
-  @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'SeriesDatabaseEvent.readChapterOneButtonPressed()';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty(
-          'type', 'SeriesDatabaseEvent.readChapterOneButtonPressed'));
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) || (other is ReadChapterOneButtonPressed);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result seriesPageLaunched(Series series, BuildContext context),
-    @required Result likeButtonPressed(),
-    @required Result bookmarkButtonPressed(),
-    @required Result showMoreSummaryButtonPressed(),
-    @required Result readChapterOneButtonPressed(),
-  }) {
-    assert(seriesPageLaunched != null);
-    assert(likeButtonPressed != null);
-    assert(bookmarkButtonPressed != null);
-    assert(showMoreSummaryButtonPressed != null);
-    assert(readChapterOneButtonPressed != null);
-    return readChapterOneButtonPressed();
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result seriesPageLaunched(Series series, BuildContext context),
-    Result likeButtonPressed(),
-    Result bookmarkButtonPressed(),
-    Result showMoreSummaryButtonPressed(),
-    Result readChapterOneButtonPressed(),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (readChapterOneButtonPressed != null) {
-      return readChapterOneButtonPressed();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result seriesPageLaunched(SeriesPageLaunched value),
-    @required Result likeButtonPressed(LikeButtonPressed value),
-    @required Result bookmarkButtonPressed(BookmarkButtonPressed value),
-    @required
-        Result showMoreSummaryButtonPressed(ShowMoreSummaryButtonPressed value),
-    @required
-        Result readChapterOneButtonPressed(ReadChapterOneButtonPressed value),
-  }) {
-    assert(seriesPageLaunched != null);
-    assert(likeButtonPressed != null);
-    assert(bookmarkButtonPressed != null);
-    assert(showMoreSummaryButtonPressed != null);
-    assert(readChapterOneButtonPressed != null);
-    return readChapterOneButtonPressed(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result seriesPageLaunched(SeriesPageLaunched value),
-    Result likeButtonPressed(LikeButtonPressed value),
-    Result bookmarkButtonPressed(BookmarkButtonPressed value),
-    Result showMoreSummaryButtonPressed(ShowMoreSummaryButtonPressed value),
-    Result readChapterOneButtonPressed(ReadChapterOneButtonPressed value),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (readChapterOneButtonPressed != null) {
-      return readChapterOneButtonPressed(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class ReadChapterOneButtonPressed implements SeriesDatabaseEvent {
-  const factory ReadChapterOneButtonPressed() = _$ReadChapterOneButtonPressed;
+abstract class ShowMoreSummaryButtonPressedEVT implements SeriesDatabaseEvent {
+  const factory ShowMoreSummaryButtonPressedEVT() =
+      _$ShowMoreSummaryButtonPressedEVT;
 }
 
 class _$SeriesDatabaseStateTearOff {
@@ -729,40 +2468,40 @@ class _$SeriesDatabaseStateTearOff {
 
   _SeriesDatabaseState call(
       {@required
-          Session session,
-      @required
-          Series series,
-      @required
-          Chapter chapterOne,
+          bool isBookmarked,
       @required
           bool isLiked,
       @required
-          bool isBookmarked,
+          Chapter chapterOne,
       @required
-          int viewsCount,
+          int bookmarksCount,
       @required
           int likesCount,
       @required
-          int bookmarksCount,
+          int viewsCount,
       @required
           Map<String, String> genresMap,
       @required
           Map<String, String> languagesMap,
       @required
-          Option<Either<DatabaseFailure, dynamic>>
-              databaseFailureOrSuccessOption}) {
+          Option<Either<DatabaseFailure, DatabaseSuccess>>
+              databaseFailureOrSuccessOption,
+      @required
+          Series series,
+      @required
+          Session session}) {
     return _SeriesDatabaseState(
-      session: session,
-      series: series,
-      chapterOne: chapterOne,
-      isLiked: isLiked,
       isBookmarked: isBookmarked,
-      viewsCount: viewsCount,
-      likesCount: likesCount,
+      isLiked: isLiked,
+      chapterOne: chapterOne,
       bookmarksCount: bookmarksCount,
+      likesCount: likesCount,
+      viewsCount: viewsCount,
       genresMap: genresMap,
       languagesMap: languagesMap,
       databaseFailureOrSuccessOption: databaseFailureOrSuccessOption,
+      series: series,
+      session: session,
     );
   }
 }
@@ -771,17 +2510,18 @@ class _$SeriesDatabaseStateTearOff {
 const $SeriesDatabaseState = _$SeriesDatabaseStateTearOff();
 
 mixin _$SeriesDatabaseState {
-  Session get session;
-  Series get series;
-  Chapter get chapterOne;
-  bool get isLiked;
   bool get isBookmarked;
-  int get viewsCount;
-  int get likesCount;
+  bool get isLiked;
+  Chapter get chapterOne;
   int get bookmarksCount;
+  int get likesCount;
+  int get viewsCount;
   Map<String, String> get genresMap;
   Map<String, String> get languagesMap;
-  Option<Either<DatabaseFailure, dynamic>> get databaseFailureOrSuccessOption;
+  Option<Either<DatabaseFailure, DatabaseSuccess>>
+      get databaseFailureOrSuccessOption;
+  Series get series;
+  Session get session;
 
   $SeriesDatabaseStateCopyWith<SeriesDatabaseState> get copyWith;
 }
@@ -791,17 +2531,18 @@ abstract class $SeriesDatabaseStateCopyWith<$Res> {
           SeriesDatabaseState value, $Res Function(SeriesDatabaseState) then) =
       _$SeriesDatabaseStateCopyWithImpl<$Res>;
   $Res call(
-      {Session session,
-      Series series,
-      Chapter chapterOne,
+      {bool isBookmarked,
       bool isLiked,
-      bool isBookmarked,
-      int viewsCount,
-      int likesCount,
+      Chapter chapterOne,
       int bookmarksCount,
+      int likesCount,
+      int viewsCount,
       Map<String, String> genresMap,
       Map<String, String> languagesMap,
-      Option<Either<DatabaseFailure, dynamic>> databaseFailureOrSuccessOption});
+      Option<Either<DatabaseFailure, DatabaseSuccess>>
+          databaseFailureOrSuccessOption,
+      Series series,
+      Session session});
 }
 
 class _$SeriesDatabaseStateCopyWithImpl<$Res>
@@ -814,31 +2555,29 @@ class _$SeriesDatabaseStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object session = freezed,
-    Object series = freezed,
-    Object chapterOne = freezed,
-    Object isLiked = freezed,
     Object isBookmarked = freezed,
-    Object viewsCount = freezed,
-    Object likesCount = freezed,
+    Object isLiked = freezed,
+    Object chapterOne = freezed,
     Object bookmarksCount = freezed,
+    Object likesCount = freezed,
+    Object viewsCount = freezed,
     Object genresMap = freezed,
     Object languagesMap = freezed,
     Object databaseFailureOrSuccessOption = freezed,
+    Object series = freezed,
+    Object session = freezed,
   }) {
     return _then(_value.copyWith(
-      session: session == freezed ? _value.session : session as Session,
-      series: series == freezed ? _value.series : series as Series,
-      chapterOne:
-          chapterOne == freezed ? _value.chapterOne : chapterOne as Chapter,
-      isLiked: isLiked == freezed ? _value.isLiked : isLiked as bool,
       isBookmarked:
           isBookmarked == freezed ? _value.isBookmarked : isBookmarked as bool,
-      viewsCount: viewsCount == freezed ? _value.viewsCount : viewsCount as int,
-      likesCount: likesCount == freezed ? _value.likesCount : likesCount as int,
+      isLiked: isLiked == freezed ? _value.isLiked : isLiked as bool,
+      chapterOne:
+          chapterOne == freezed ? _value.chapterOne : chapterOne as Chapter,
       bookmarksCount: bookmarksCount == freezed
           ? _value.bookmarksCount
           : bookmarksCount as int,
+      likesCount: likesCount == freezed ? _value.likesCount : likesCount as int,
+      viewsCount: viewsCount == freezed ? _value.viewsCount : viewsCount as int,
       genresMap: genresMap == freezed
           ? _value.genresMap
           : genresMap as Map<String, String>,
@@ -848,7 +2587,9 @@ class _$SeriesDatabaseStateCopyWithImpl<$Res>
       databaseFailureOrSuccessOption: databaseFailureOrSuccessOption == freezed
           ? _value.databaseFailureOrSuccessOption
           : databaseFailureOrSuccessOption
-              as Option<Either<DatabaseFailure, dynamic>>,
+              as Option<Either<DatabaseFailure, DatabaseSuccess>>,
+      series: series == freezed ? _value.series : series as Series,
+      session: session == freezed ? _value.session : session as Session,
     ));
   }
 }
@@ -860,17 +2601,18 @@ abstract class _$SeriesDatabaseStateCopyWith<$Res>
       __$SeriesDatabaseStateCopyWithImpl<$Res>;
   @override
   $Res call(
-      {Session session,
-      Series series,
-      Chapter chapterOne,
+      {bool isBookmarked,
       bool isLiked,
-      bool isBookmarked,
-      int viewsCount,
-      int likesCount,
+      Chapter chapterOne,
       int bookmarksCount,
+      int likesCount,
+      int viewsCount,
       Map<String, String> genresMap,
       Map<String, String> languagesMap,
-      Option<Either<DatabaseFailure, dynamic>> databaseFailureOrSuccessOption});
+      Option<Either<DatabaseFailure, DatabaseSuccess>>
+          databaseFailureOrSuccessOption,
+      Series series,
+      Session session});
 }
 
 class __$SeriesDatabaseStateCopyWithImpl<$Res>
@@ -885,31 +2627,29 @@ class __$SeriesDatabaseStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object session = freezed,
-    Object series = freezed,
-    Object chapterOne = freezed,
-    Object isLiked = freezed,
     Object isBookmarked = freezed,
-    Object viewsCount = freezed,
-    Object likesCount = freezed,
+    Object isLiked = freezed,
+    Object chapterOne = freezed,
     Object bookmarksCount = freezed,
+    Object likesCount = freezed,
+    Object viewsCount = freezed,
     Object genresMap = freezed,
     Object languagesMap = freezed,
     Object databaseFailureOrSuccessOption = freezed,
+    Object series = freezed,
+    Object session = freezed,
   }) {
     return _then(_SeriesDatabaseState(
-      session: session == freezed ? _value.session : session as Session,
-      series: series == freezed ? _value.series : series as Series,
-      chapterOne:
-          chapterOne == freezed ? _value.chapterOne : chapterOne as Chapter,
-      isLiked: isLiked == freezed ? _value.isLiked : isLiked as bool,
       isBookmarked:
           isBookmarked == freezed ? _value.isBookmarked : isBookmarked as bool,
-      viewsCount: viewsCount == freezed ? _value.viewsCount : viewsCount as int,
-      likesCount: likesCount == freezed ? _value.likesCount : likesCount as int,
+      isLiked: isLiked == freezed ? _value.isLiked : isLiked as bool,
+      chapterOne:
+          chapterOne == freezed ? _value.chapterOne : chapterOne as Chapter,
       bookmarksCount: bookmarksCount == freezed
           ? _value.bookmarksCount
           : bookmarksCount as int,
+      likesCount: likesCount == freezed ? _value.likesCount : likesCount as int,
+      viewsCount: viewsCount == freezed ? _value.viewsCount : viewsCount as int,
       genresMap: genresMap == freezed
           ? _value.genresMap
           : genresMap as Map<String, String>,
@@ -919,7 +2659,9 @@ class __$SeriesDatabaseStateCopyWithImpl<$Res>
       databaseFailureOrSuccessOption: databaseFailureOrSuccessOption == freezed
           ? _value.databaseFailureOrSuccessOption
           : databaseFailureOrSuccessOption
-              as Option<Either<DatabaseFailure, dynamic>>,
+              as Option<Either<DatabaseFailure, DatabaseSuccess>>,
+      series: series == freezed ? _value.series : series as Series,
+      session: session == freezed ? _value.session : session as Session,
     ));
   }
 }
@@ -928,55 +2670,56 @@ class _$_SeriesDatabaseState
     with DiagnosticableTreeMixin
     implements _SeriesDatabaseState {
   const _$_SeriesDatabaseState(
-      {@required this.session,
-      @required this.series,
-      @required this.chapterOne,
+      {@required this.isBookmarked,
       @required this.isLiked,
-      @required this.isBookmarked,
-      @required this.viewsCount,
-      @required this.likesCount,
+      @required this.chapterOne,
       @required this.bookmarksCount,
+      @required this.likesCount,
+      @required this.viewsCount,
       @required this.genresMap,
       @required this.languagesMap,
-      @required this.databaseFailureOrSuccessOption})
-      : assert(session != null),
-        assert(series != null),
-        assert(chapterOne != null),
+      @required this.databaseFailureOrSuccessOption,
+      @required this.series,
+      @required this.session})
+      : assert(isBookmarked != null),
         assert(isLiked != null),
-        assert(isBookmarked != null),
-        assert(viewsCount != null),
-        assert(likesCount != null),
+        assert(chapterOne != null),
         assert(bookmarksCount != null),
+        assert(likesCount != null),
+        assert(viewsCount != null),
         assert(genresMap != null),
         assert(languagesMap != null),
-        assert(databaseFailureOrSuccessOption != null);
+        assert(databaseFailureOrSuccessOption != null),
+        assert(series != null),
+        assert(session != null);
 
-  @override
-  final Session session;
-  @override
-  final Series series;
-  @override
-  final Chapter chapterOne;
-  @override
-  final bool isLiked;
   @override
   final bool isBookmarked;
   @override
-  final int viewsCount;
+  final bool isLiked;
+  @override
+  final Chapter chapterOne;
+  @override
+  final int bookmarksCount;
   @override
   final int likesCount;
   @override
-  final int bookmarksCount;
+  final int viewsCount;
   @override
   final Map<String, String> genresMap;
   @override
   final Map<String, String> languagesMap;
   @override
-  final Option<Either<DatabaseFailure, dynamic>> databaseFailureOrSuccessOption;
+  final Option<Either<DatabaseFailure, DatabaseSuccess>>
+      databaseFailureOrSuccessOption;
+  @override
+  final Series series;
+  @override
+  final Session session;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'SeriesDatabaseState(session: $session, series: $series, chapterOne: $chapterOne, isLiked: $isLiked, isBookmarked: $isBookmarked, viewsCount: $viewsCount, likesCount: $likesCount, bookmarksCount: $bookmarksCount, genresMap: $genresMap, languagesMap: $languagesMap, databaseFailureOrSuccessOption: $databaseFailureOrSuccessOption)';
+    return 'SeriesDatabaseState(isBookmarked: $isBookmarked, isLiked: $isLiked, chapterOne: $chapterOne, bookmarksCount: $bookmarksCount, likesCount: $likesCount, viewsCount: $viewsCount, genresMap: $genresMap, languagesMap: $languagesMap, databaseFailureOrSuccessOption: $databaseFailureOrSuccessOption, series: $series, session: $session)';
   }
 
   @override
@@ -984,47 +2727,42 @@ class _$_SeriesDatabaseState
     super.debugFillProperties(properties);
     properties
       ..add(DiagnosticsProperty('type', 'SeriesDatabaseState'))
-      ..add(DiagnosticsProperty('session', session))
-      ..add(DiagnosticsProperty('series', series))
-      ..add(DiagnosticsProperty('chapterOne', chapterOne))
-      ..add(DiagnosticsProperty('isLiked', isLiked))
       ..add(DiagnosticsProperty('isBookmarked', isBookmarked))
-      ..add(DiagnosticsProperty('viewsCount', viewsCount))
-      ..add(DiagnosticsProperty('likesCount', likesCount))
+      ..add(DiagnosticsProperty('isLiked', isLiked))
+      ..add(DiagnosticsProperty('chapterOne', chapterOne))
       ..add(DiagnosticsProperty('bookmarksCount', bookmarksCount))
+      ..add(DiagnosticsProperty('likesCount', likesCount))
+      ..add(DiagnosticsProperty('viewsCount', viewsCount))
       ..add(DiagnosticsProperty('genresMap', genresMap))
       ..add(DiagnosticsProperty('languagesMap', languagesMap))
       ..add(DiagnosticsProperty(
-          'databaseFailureOrSuccessOption', databaseFailureOrSuccessOption));
+          'databaseFailureOrSuccessOption', databaseFailureOrSuccessOption))
+      ..add(DiagnosticsProperty('series', series))
+      ..add(DiagnosticsProperty('session', session));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _SeriesDatabaseState &&
-            (identical(other.session, session) ||
-                const DeepCollectionEquality()
-                    .equals(other.session, session)) &&
-            (identical(other.series, series) ||
-                const DeepCollectionEquality().equals(other.series, series)) &&
-            (identical(other.chapterOne, chapterOne) ||
-                const DeepCollectionEquality()
-                    .equals(other.chapterOne, chapterOne)) &&
-            (identical(other.isLiked, isLiked) ||
-                const DeepCollectionEquality()
-                    .equals(other.isLiked, isLiked)) &&
             (identical(other.isBookmarked, isBookmarked) ||
                 const DeepCollectionEquality()
                     .equals(other.isBookmarked, isBookmarked)) &&
-            (identical(other.viewsCount, viewsCount) ||
+            (identical(other.isLiked, isLiked) ||
                 const DeepCollectionEquality()
-                    .equals(other.viewsCount, viewsCount)) &&
-            (identical(other.likesCount, likesCount) ||
+                    .equals(other.isLiked, isLiked)) &&
+            (identical(other.chapterOne, chapterOne) ||
                 const DeepCollectionEquality()
-                    .equals(other.likesCount, likesCount)) &&
+                    .equals(other.chapterOne, chapterOne)) &&
             (identical(other.bookmarksCount, bookmarksCount) ||
                 const DeepCollectionEquality()
                     .equals(other.bookmarksCount, bookmarksCount)) &&
+            (identical(other.likesCount, likesCount) ||
+                const DeepCollectionEquality()
+                    .equals(other.likesCount, likesCount)) &&
+            (identical(other.viewsCount, viewsCount) ||
+                const DeepCollectionEquality()
+                    .equals(other.viewsCount, viewsCount)) &&
             (identical(other.genresMap, genresMap) ||
                 const DeepCollectionEquality()
                     .equals(other.genresMap, genresMap)) &&
@@ -1035,23 +2773,27 @@ class _$_SeriesDatabaseState
                     databaseFailureOrSuccessOption) ||
                 const DeepCollectionEquality().equals(
                     other.databaseFailureOrSuccessOption,
-                    databaseFailureOrSuccessOption)));
+                    databaseFailureOrSuccessOption)) &&
+            (identical(other.series, series) ||
+                const DeepCollectionEquality().equals(other.series, series)) &&
+            (identical(other.session, session) ||
+                const DeepCollectionEquality().equals(other.session, session)));
   }
 
   @override
   int get hashCode =>
       runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(session) ^
-      const DeepCollectionEquality().hash(series) ^
-      const DeepCollectionEquality().hash(chapterOne) ^
-      const DeepCollectionEquality().hash(isLiked) ^
       const DeepCollectionEquality().hash(isBookmarked) ^
-      const DeepCollectionEquality().hash(viewsCount) ^
-      const DeepCollectionEquality().hash(likesCount) ^
+      const DeepCollectionEquality().hash(isLiked) ^
+      const DeepCollectionEquality().hash(chapterOne) ^
       const DeepCollectionEquality().hash(bookmarksCount) ^
+      const DeepCollectionEquality().hash(likesCount) ^
+      const DeepCollectionEquality().hash(viewsCount) ^
       const DeepCollectionEquality().hash(genresMap) ^
       const DeepCollectionEquality().hash(languagesMap) ^
-      const DeepCollectionEquality().hash(databaseFailureOrSuccessOption);
+      const DeepCollectionEquality().hash(databaseFailureOrSuccessOption) ^
+      const DeepCollectionEquality().hash(series) ^
+      const DeepCollectionEquality().hash(session);
 
   @override
   _$SeriesDatabaseStateCopyWith<_SeriesDatabaseState> get copyWith =>
@@ -1062,51 +2804,52 @@ class _$_SeriesDatabaseState
 abstract class _SeriesDatabaseState implements SeriesDatabaseState {
   const factory _SeriesDatabaseState(
       {@required
-          Session session,
-      @required
-          Series series,
-      @required
-          Chapter chapterOne,
+          bool isBookmarked,
       @required
           bool isLiked,
       @required
-          bool isBookmarked,
+          Chapter chapterOne,
       @required
-          int viewsCount,
+          int bookmarksCount,
       @required
           int likesCount,
       @required
-          int bookmarksCount,
+          int viewsCount,
       @required
           Map<String, String> genresMap,
       @required
           Map<String, String> languagesMap,
       @required
-          Option<Either<DatabaseFailure, dynamic>>
-              databaseFailureOrSuccessOption}) = _$_SeriesDatabaseState;
+          Option<Either<DatabaseFailure, DatabaseSuccess>>
+              databaseFailureOrSuccessOption,
+      @required
+          Series series,
+      @required
+          Session session}) = _$_SeriesDatabaseState;
 
-  @override
-  Session get session;
-  @override
-  Series get series;
-  @override
-  Chapter get chapterOne;
-  @override
-  bool get isLiked;
   @override
   bool get isBookmarked;
   @override
-  int get viewsCount;
+  bool get isLiked;
+  @override
+  Chapter get chapterOne;
+  @override
+  int get bookmarksCount;
   @override
   int get likesCount;
   @override
-  int get bookmarksCount;
+  int get viewsCount;
   @override
   Map<String, String> get genresMap;
   @override
   Map<String, String> get languagesMap;
   @override
-  Option<Either<DatabaseFailure, dynamic>> get databaseFailureOrSuccessOption;
+  Option<Either<DatabaseFailure, DatabaseSuccess>>
+      get databaseFailureOrSuccessOption;
+  @override
+  Series get series;
+  @override
+  Session get session;
   @override
   _$SeriesDatabaseStateCopyWith<_SeriesDatabaseState> get copyWith;
 }
