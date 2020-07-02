@@ -2,7 +2,6 @@ import 'package:after_layout/after_layout.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:wine/application/database/series/series_database_bloc.dart';
-import 'package:wine/domain/database/database_success.dart';
 import 'package:wine/presentation/pages/series/utils/series_database_methods.dart';
 import 'package:wine/presentation/pages/series/utils/series_listeners.dart';
 import 'package:wine/presentation/pages/series/widgets/series_app_bar.dart';
@@ -10,9 +9,7 @@ import 'package:wine/presentation/pages/series/widgets/series_details.dart';
 import 'package:wine/presentation/pages/series/widgets/series_summary.dart';
 import 'package:wine/presentation/widgets/wine_button.dart';
 import 'package:wine/presentation/widgets/wine_genre_container.dart';
-import 'package:wine/routes.dart';
 import 'package:wine/utils/arguments.dart';
-import 'package:wine/utils/constants.dart';
 import 'package:wine/utils/extensions.dart';
 
 class SeriesLayout extends StatefulWidget {

@@ -6625,6 +6625,10 @@ class _$NewChapterDatabaseStateTearOff {
       @required
           String titleStr,
       @required
+          TextEditingController storyController,
+      @required
+          TextEditingController titleController,
+      @required
           Title title}) {
     return _NewChapterPageState(
       isDeletingOrPublishingOrSaving: isDeletingOrPublishingOrSaving,
@@ -6652,6 +6656,8 @@ class _$NewChapterDatabaseStateTearOff {
       languageStr: languageStr,
       storyStr: storyStr,
       titleStr: titleStr,
+      storyController: storyController,
+      titleController: titleController,
       title: title,
     );
   }
@@ -6686,6 +6692,8 @@ mixin _$NewChapterDatabaseState {
   String get languageStr;
   String get storyStr;
   String get titleStr;
+  TextEditingController get storyController;
+  TextEditingController get titleController;
   Title get title;
 
   $NewChapterDatabaseStateCopyWith<NewChapterDatabaseState> get copyWith;
@@ -6721,6 +6729,8 @@ abstract class $NewChapterDatabaseStateCopyWith<$Res> {
       String languageStr,
       String storyStr,
       String titleStr,
+      TextEditingController storyController,
+      TextEditingController titleController,
       Title title});
 }
 
@@ -6759,6 +6769,8 @@ class _$NewChapterDatabaseStateCopyWithImpl<$Res>
     Object languageStr = freezed,
     Object storyStr = freezed,
     Object titleStr = freezed,
+    Object storyController = freezed,
+    Object titleController = freezed,
     Object title = freezed,
   }) {
     return _then(_value.copyWith(
@@ -6817,6 +6829,12 @@ class _$NewChapterDatabaseStateCopyWithImpl<$Res>
           languageStr == freezed ? _value.languageStr : languageStr as String,
       storyStr: storyStr == freezed ? _value.storyStr : storyStr as String,
       titleStr: titleStr == freezed ? _value.titleStr : titleStr as String,
+      storyController: storyController == freezed
+          ? _value.storyController
+          : storyController as TextEditingController,
+      titleController: titleController == freezed
+          ? _value.titleController
+          : titleController as TextEditingController,
       title: title == freezed ? _value.title : title as Title,
     ));
   }
@@ -6854,6 +6872,8 @@ abstract class _$NewChapterPageStateCopyWith<$Res>
       String languageStr,
       String storyStr,
       String titleStr,
+      TextEditingController storyController,
+      TextEditingController titleController,
       Title title});
 }
 
@@ -6894,6 +6914,8 @@ class __$NewChapterPageStateCopyWithImpl<$Res>
     Object languageStr = freezed,
     Object storyStr = freezed,
     Object titleStr = freezed,
+    Object storyController = freezed,
+    Object titleController = freezed,
     Object title = freezed,
   }) {
     return _then(_NewChapterPageState(
@@ -6952,6 +6974,12 @@ class __$NewChapterPageStateCopyWithImpl<$Res>
           languageStr == freezed ? _value.languageStr : languageStr as String,
       storyStr: storyStr == freezed ? _value.storyStr : storyStr as String,
       titleStr: titleStr == freezed ? _value.titleStr : titleStr as String,
+      storyController: storyController == freezed
+          ? _value.storyController
+          : storyController as TextEditingController,
+      titleController: titleController == freezed
+          ? _value.titleController
+          : titleController as TextEditingController,
       title: title == freezed ? _value.title : title as Title,
     ));
   }
@@ -6986,6 +7014,8 @@ class _$_NewChapterPageState
       @required this.languageStr,
       @required this.storyStr,
       @required this.titleStr,
+      @required this.storyController,
+      @required this.titleController,
       @required this.title})
       : assert(isDeletingOrPublishingOrSaving != null),
         assert(isEditMode != null),
@@ -7012,6 +7042,8 @@ class _$_NewChapterPageState
         assert(languageStr != null),
         assert(storyStr != null),
         assert(titleStr != null),
+        assert(storyController != null),
+        assert(titleController != null),
         assert(title != null);
 
   @override
@@ -7065,11 +7097,15 @@ class _$_NewChapterPageState
   @override
   final String titleStr;
   @override
+  final TextEditingController storyController;
+  @override
+  final TextEditingController titleController;
+  @override
   final Title title;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'NewChapterDatabaseState(isDeletingOrPublishingOrSaving: $isDeletingOrPublishingOrSaving, isEditMode: $isEditMode, isEnd: $isEnd, isFirstChapter: $isFirstChapter, isNSFW: $isNSFW, showErrorMessages: $showErrorMessages, chapterDraft: $chapterDraft, copyrights: $copyrights, genre: $genre, genreOptional: $genreOptional, storyWordCount: $storyWordCount, titleWordCount: $titleWordCount, language: $language, copyrightsMap: $copyrightsMap, genresMap: $genresMap, languagesMap: $languagesMap, databaseFailureOrSuccessOption: $databaseFailureOrSuccessOption, story: $story, copyrightsStr: $copyrightsStr, coverUrl: $coverUrl, genreOptionalStr: $genreOptionalStr, genreStr: $genreStr, languageStr: $languageStr, storyStr: $storyStr, titleStr: $titleStr, title: $title)';
+    return 'NewChapterDatabaseState(isDeletingOrPublishingOrSaving: $isDeletingOrPublishingOrSaving, isEditMode: $isEditMode, isEnd: $isEnd, isFirstChapter: $isFirstChapter, isNSFW: $isNSFW, showErrorMessages: $showErrorMessages, chapterDraft: $chapterDraft, copyrights: $copyrights, genre: $genre, genreOptional: $genreOptional, storyWordCount: $storyWordCount, titleWordCount: $titleWordCount, language: $language, copyrightsMap: $copyrightsMap, genresMap: $genresMap, languagesMap: $languagesMap, databaseFailureOrSuccessOption: $databaseFailureOrSuccessOption, story: $story, copyrightsStr: $copyrightsStr, coverUrl: $coverUrl, genreOptionalStr: $genreOptionalStr, genreStr: $genreStr, languageStr: $languageStr, storyStr: $storyStr, titleStr: $titleStr, storyController: $storyController, titleController: $titleController, title: $title)';
   }
 
   @override
@@ -7104,6 +7140,8 @@ class _$_NewChapterPageState
       ..add(DiagnosticsProperty('languageStr', languageStr))
       ..add(DiagnosticsProperty('storyStr', storyStr))
       ..add(DiagnosticsProperty('titleStr', titleStr))
+      ..add(DiagnosticsProperty('storyController', storyController))
+      ..add(DiagnosticsProperty('titleController', titleController))
       ..add(DiagnosticsProperty('title', title));
   }
 
@@ -7169,6 +7207,8 @@ class _$_NewChapterPageState
             (identical(other.languageStr, languageStr) || const DeepCollectionEquality().equals(other.languageStr, languageStr)) &&
             (identical(other.storyStr, storyStr) || const DeepCollectionEquality().equals(other.storyStr, storyStr)) &&
             (identical(other.titleStr, titleStr) || const DeepCollectionEquality().equals(other.titleStr, titleStr)) &&
+            (identical(other.storyController, storyController) || const DeepCollectionEquality().equals(other.storyController, storyController)) &&
+            (identical(other.titleController, titleController) || const DeepCollectionEquality().equals(other.titleController, titleController)) &&
             (identical(other.title, title) || const DeepCollectionEquality().equals(other.title, title)));
   }
 
@@ -7200,6 +7240,8 @@ class _$_NewChapterPageState
       const DeepCollectionEquality().hash(languageStr) ^
       const DeepCollectionEquality().hash(storyStr) ^
       const DeepCollectionEquality().hash(titleStr) ^
+      const DeepCollectionEquality().hash(storyController) ^
+      const DeepCollectionEquality().hash(titleController) ^
       const DeepCollectionEquality().hash(title);
 
   @override
@@ -7262,6 +7304,10 @@ abstract class _NewChapterPageState implements NewChapterDatabaseState {
       @required
           String titleStr,
       @required
+          TextEditingController storyController,
+      @required
+          TextEditingController titleController,
+      @required
           Title title}) = _$_NewChapterPageState;
 
   @override
@@ -7314,6 +7360,10 @@ abstract class _NewChapterPageState implements NewChapterDatabaseState {
   String get storyStr;
   @override
   String get titleStr;
+  @override
+  TextEditingController get storyController;
+  @override
+  TextEditingController get titleController;
   @override
   Title get title;
   @override

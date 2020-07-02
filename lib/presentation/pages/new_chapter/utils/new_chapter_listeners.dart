@@ -13,10 +13,7 @@ class NewChapterListeners {
   final HomeNavigationMethods homeNavMethods;
   final NewChapterPageArgs args;
 
-  NewChapterListeners(
-    this.homeNavMethods,
-    this.args,
-  );
+  NewChapterListeners(this.homeNavMethods, this.args);
 
   void listener(BuildContext context, NewChapterDatabaseState state) => state.databaseFailureOrSuccessOption.fold(
         () {},
@@ -35,20 +32,24 @@ class NewChapterListeners {
             if ((success is ChapterDraftDeletedSCS && !state.isFirstChapter) ||
                 success is ChapterDraftSavedSCS ||
                 success is SeriesDraftDeletedSCS) {
-              if (state.isFirstChapter) {
-                sailor.navigate(
-                  args.routeBack,
-                  navigationType: NavigationType.pushAndRemoveUntil,
-                  removeUntilPredicate: (_) => false,
-                );
-                homeNavMethods.resetBloc();
+              if (state.isEditMode) {
+                Navigator.of(context).pop();
               } else {
-                sailor.navigate(
-                  args.routeBack,
-                  args: ChapterPageArgs(chapter: args.previousChapter),
-                  navigationType: NavigationType.pushAndRemoveUntil,
-                  removeUntilPredicate: ModalRoute.withName(args.predicateRoute),
-                );
+                if (state.isFirstChapter) {
+                  sailor.navigate(
+                    args.routeBack,
+                    navigationType: NavigationType.pushAndRemoveUntil,
+                    removeUntilPredicate: (_) => false,
+                  );
+                  homeNavMethods.resetBloc();
+                } else {
+                  sailor.navigate(
+                    args.routeBack,
+                    args: ChapterPageArgs(chapter: args.previousChapter),
+                    navigationType: NavigationType.pushAndRemoveUntil,
+                    removeUntilPredicate: ModalRoute.withName(args.predicateRoute),
+                  );
+                }
               }
             }
           },

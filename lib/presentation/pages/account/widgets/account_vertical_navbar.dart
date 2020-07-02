@@ -21,24 +21,27 @@ class AccountVerticalNavbar extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       width: width,
-      child: Column(
-        children: items.asMap().entries.map((entry) {
-          final int index = entry.key;
-          final String value = entry.value;
+      height: MediaQuery.of(context).size.height,
+      child: SingleChildScrollView(
+        child: Column(
+          children: items.asMap().entries.map((entry) {
+            final int index = entry.key;
+            final String value = entry.value;
 
-          return Padding(
-            padding: EdgeInsets.only(
-              top: index == 0 ? 20.0 : 0.0,
-              bottom: 20.0,
-            ),
-            child: WINEVerticalNavbarButton(
-              title: value,
-              onPressed: () => acNavMethods.verticalNavbarIndexChanged(index),
-              color: currentIndex == index ? Colors.black : Colors.black12,
-              width: width,
-            ),
-          );
-        }).toList(),
+            return Padding(
+              padding: EdgeInsets.only(
+                top: index == 0 ? 20.0 : 0.0,
+                bottom: 20.0,
+              ),
+              child: WINEVerticalNavbarButton(
+                title: value,
+                onPressed: () => acNavMethods.verticalNavbarIndexChanged(index),
+                color: currentIndex == index ? Colors.black : Colors.black12,
+                width: width,
+              ),
+            );
+          }).toList(),
+        ),
       ),
     );
   }

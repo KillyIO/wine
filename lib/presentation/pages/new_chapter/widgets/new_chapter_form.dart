@@ -7,8 +7,6 @@ import 'package:wine/presentation/widgets/editor/wine_editor_cover.dart';
 import 'package:wine/presentation/widgets/editor/wine_editor_selector_dialog.dart';
 import 'package:wine/presentation/widgets/editor/wine_editor_text_form_field.dart';
 import 'package:wine/presentation/widgets/wine_button.dart';
-import 'package:wine/presentation/widgets/wine_dialog_list_tile.dart';
-import 'package:wine/presentation/widgets/wine_selection_dialog.dart';
 import 'package:wine/presentation/widgets/wine_show_dialog.dart';
 import 'package:wine/presentation/widgets/wine_switch_list_tile.dart';
 import 'package:wine/presentation/widgets/wine_text_field_label.dart';
@@ -22,16 +20,11 @@ class NewChapterForm extends StatelessWidget {
   final NewChapterDatabaseMethods ncDbMethods;
   final NewChapterDatabaseValidators ncDbValidators;
 
-  final TextEditingController titleController;
-  final TextEditingController storyController;
-
   const NewChapterForm({
     Key key,
     @required this.ncDbState,
     @required this.ncDbMethods,
     @required this.ncDbValidators,
-    @required this.titleController,
-    @required this.storyController,
   }) : super(key: key);
 
   @override
@@ -64,7 +57,7 @@ class NewChapterForm extends StatelessWidget {
               WINEEditorCover(coverUrl: ncDbState.coverUrl, onPressed: ncDbMethods.addCoverPressed),
               // SECTION title
               WINEEditorTextFormField(
-                controller: titleController,
+                controller: ncDbState.titleController,
                 label: 'TITLE*',
                 hintText: 'Less than ${Constants.seriesTitleMaxWords} words',
                 onChanged: ncDbMethods.titleChanged,
@@ -74,7 +67,7 @@ class NewChapterForm extends StatelessWidget {
               ),
               // SECTION story
               WINEEditorTextFormField(
-                controller: storyController,
+                controller: ncDbState.storyController,
                 label: 'STORY*',
                 hintText:
                     'More than ${Constants.chapterStoryMinWords} words and less than ${Constants.chapterStoryMaxWords} words',

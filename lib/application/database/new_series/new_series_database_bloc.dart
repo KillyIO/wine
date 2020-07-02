@@ -96,6 +96,10 @@ class NewSeriesDatabaseBloc extends Bloc<NewSeriesDatabaseEvent, NewSeriesDataba
         yield state.copyWith(isCreatingOrDeleting: false, databaseFailureOrSuccessOption: optionOf(failureOrSuccess));
       },
       editModeLaunchedEVT: (event) async* {
+        state.subtitleController.text = event.seriesDraft.subtitle;
+        state.summaryController.text = event.seriesDraft.summary;
+        state.titleController.text = event.seriesDraft.title;
+
         yield state.copyWith(
           coverUrl: event.seriesDraft.coverUrl,
           genre: Genre(event.seriesDraft.genre),
@@ -108,12 +112,15 @@ class NewSeriesDatabaseBloc extends Bloc<NewSeriesDatabaseEvent, NewSeriesDataba
           languageStr: event.seriesDraft.language,
           seriesDraft: event.seriesDraft,
           subtitle: Subtitle(event.seriesDraft.subtitle),
+          subtitleController: state.subtitleController,
           subtitleStr: event.seriesDraft.subtitle,
           subtitleWordCount: tps.getWordCount(event.seriesDraft.subtitle),
           summary: Summary(event.seriesDraft.summary),
+          summaryController: state.summaryController,
           summaryStr: event.seriesDraft.summary,
           summaryWordCount: tps.getWordCount(event.seriesDraft.summary),
           title: Title(event.seriesDraft.title),
+          titleController: state.titleController,
           titleStr: event.seriesDraft.title,
           titleWordCount: tps.getWordCount(event.seriesDraft.title),
         );
@@ -158,12 +165,12 @@ class NewSeriesDatabaseBloc extends Bloc<NewSeriesDatabaseEvent, NewSeriesDataba
               }
             },
           );
-
-          yield state.copyWith(
-            genresMap: Methods.getGenres(event.context),
-            languagesMap: Methods.getLanguages(event.context),
-          );
         }
+
+        yield state.copyWith(
+          genresMap: Methods.getGenres(event.context),
+          languagesMap: Methods.getLanguages(event.context),
+        );
       },
       saveSeriesDraftButtonPressedEVT: (event) async* {
         Either<DatabaseFailure, DatabaseSuccess> failureOrSuccess;

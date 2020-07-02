@@ -23,9 +23,6 @@ class NewChapterFormLayout extends StatefulWidget {
 }
 
 class _NewChapterFormLayoutState extends State<NewChapterFormLayout> with TickerProviderStateMixin {
-  final TextEditingController _titleController = TextEditingController();
-  final TextEditingController _storyController = TextEditingController();
-
   HomeNavigationMethods _homeNavMethods;
   NewChapterDatabaseMethods _ncDbMethods;
   NewChapterDatabaseValidators _ncDbValidators;
@@ -47,10 +44,6 @@ class _NewChapterFormLayoutState extends State<NewChapterFormLayout> with Ticker
       child: BlocConsumer<NewChapterDatabaseBloc, NewChapterDatabaseState>(
         listener: _ncListeners.listener,
         builder: (context, ncDbState) {
-          _titleController.value = _titleController.value.copyWith(text: ncDbState.titleStr);
-
-          _storyController.value = _storyController.value.copyWith(text: ncDbState.storyStr);
-
           return Scaffold(
             backgroundColor: Colors.white,
             appBar: PreferredSize(
@@ -94,13 +87,7 @@ class _NewChapterFormLayoutState extends State<NewChapterFormLayout> with Ticker
             body: SafeArea(
               child: Stack(
                 children: <Widget>[
-                  NewChapterForm(
-                    ncDbState: ncDbState,
-                    ncDbMethods: _ncDbMethods,
-                    ncDbValidators: _ncDbValidators,
-                    titleController: _titleController,
-                    storyController: _storyController,
-                  ),
+                  NewChapterForm(ncDbState: ncDbState, ncDbMethods: _ncDbMethods, ncDbValidators: _ncDbValidators),
                   WINELoadingScreen(vsync: this, isLoading: ncDbState.isDeletingOrPublishingOrSaving),
                 ],
               ),

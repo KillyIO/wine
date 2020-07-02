@@ -7,10 +7,8 @@ import 'package:wine/presentation/pages/new_series/utils/new_series_database_met
 import 'package:wine/presentation/pages/new_series/utils/new_series_database_validators.dart';
 import 'package:wine/presentation/pages/new_series/utils/new_series_listeners.dart';
 import 'package:wine/presentation/pages/new_series/widgets/new_series_form.dart';
-import 'package:wine/presentation/widgets/wine_info_dialog.dart';
 import 'package:wine/presentation/widgets/wine_leading_image_button.dart';
 import 'package:wine/presentation/widgets/wine_loading_screen.dart';
-import 'package:wine/presentation/widgets/wine_show_dialog.dart';
 import 'package:wine/utils/arguments.dart';
 
 class NewSeriesFormLayout extends StatefulWidget {
@@ -23,10 +21,6 @@ class NewSeriesFormLayout extends StatefulWidget {
 }
 
 class _NewSeriesFormLayoutState extends State<NewSeriesFormLayout> with TickerProviderStateMixin {
-  final TextEditingController _titleController = TextEditingController();
-  final TextEditingController _subtitleController = TextEditingController();
-  final TextEditingController _summaryController = TextEditingController();
-
   HomeNavigationMethods _homeNavMethods;
   NewSeriesDatabaseMethods _nsDbMethods;
   NewSeriesDatabaseValidators _nsDbValidators;
@@ -47,12 +41,6 @@ class _NewSeriesFormLayoutState extends State<NewSeriesFormLayout> with TickerPr
       child: BlocConsumer<NewSeriesDatabaseBloc, NewSeriesDatabaseState>(
         listener: _nsListeners.listener,
         builder: (context, nsDbState) {
-          _titleController.value = _titleController.value.copyWith(text: nsDbState.titleStr);
-
-          _subtitleController.value = _subtitleController.value.copyWith(text: nsDbState.subtitleStr);
-
-          _summaryController.value = _summaryController.value.copyWith(text: nsDbState.summaryStr);
-
           return Scaffold(
             backgroundColor: Colors.white,
             appBar: PreferredSize(
@@ -91,14 +79,7 @@ class _NewSeriesFormLayoutState extends State<NewSeriesFormLayout> with TickerPr
             body: SafeArea(
               child: Stack(
                 children: <Widget>[
-                  NewSeriesForm(
-                    nsDbState: nsDbState,
-                    nsDbMethods: _nsDbMethods,
-                    nsDbValidators: _nsDbValidators,
-                    titleController: _titleController,
-                    subtitleController: _subtitleController,
-                    summaryController: _summaryController,
-                  ),
+                  NewSeriesForm(nsDbState: nsDbState, nsDbMethods: _nsDbMethods, nsDbValidators: _nsDbValidators),
                   WINELoadingScreen(vsync: this, isLoading: nsDbState.isCreatingOrDeleting),
                 ],
               ),

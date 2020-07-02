@@ -162,18 +162,31 @@ class NewChapterDatabaseBloc extends Bloc<NewChapterDatabaseEvent, NewChapterDat
         );
       },
       editModeLaunchedEVT: (event) async* {
+        state.titleController.text = event.chapterDraft.title;
+        state.storyController.text = event.chapterDraft.story;
+
         yield state.copyWith(
           chapterDraft: event.chapterDraft,
-          isEditMode: true,
-          isFirstChapter: event.chapterDraft.index == 1,
+          copyrights: Copyrights(event.chapterDraft.copyrights),
+          copyrightsStr: event.chapterDraft.copyrights,
           coverUrl: event.chapterDraft.coverUrl,
           genre: Genre(event.chapterDraft.genre),
-          genreStr: event.chapterDraft.genre,
           genreOptional: Genre(event.chapterDraft.genreOptional, isOptional: true),
           genreOptionalStr: event.chapterDraft.genreOptional,
+          genreStr: event.chapterDraft.genre,
+          isEditMode: true,
+          isFirstChapter: event.chapterDraft.index == 1,
+          isNSFW: event.chapterDraft.isNSFW,
           language: Language(event.chapterDraft.language),
           languageStr: event.chapterDraft.language,
-          isNSFW: event.chapterDraft.isNSFW,
+          story: Story(event.chapterDraft.story),
+          storyController: state.storyController,
+          storyStr: event.chapterDraft.story,
+          storyWordCount: tps.getWordCount(event.chapterDraft.story),
+          title: Title(event.chapterDraft.title),
+          titleController: state.titleController,
+          titleStr: event.chapterDraft.title,
+          titleWordCount: tps.getWordCount(event.chapterDraft.title),
         );
       },
       genreOptionalSelectedEVT: (event) async* {

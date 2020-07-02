@@ -39,8 +39,10 @@ class NewChapterDatabaseMethods {
   void publishButtonPressed() =>
       context.bloc<NewChapterDatabaseBloc>().add(const NewChapterDatabaseEvent.publishButtonPressedEVT());
 
-  void saveOrBackButtonPressed() =>
-      context.bloc<NewChapterDatabaseBloc>().add(const NewChapterDatabaseEvent.saveOrBackButtonPressedEVT());
+  void saveOrBackButtonPressed() {
+    FocusScope.of(context).requestFocus(FocusNode());
+    context.bloc<NewChapterDatabaseBloc>().add(const NewChapterDatabaseEvent.saveOrBackButtonPressedEVT());
+  }
 
   void selector(String value, String field) {
     switch (field) {
