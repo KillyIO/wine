@@ -17,10 +17,12 @@ class NewSeriesDatabaseMethods {
 
   void backButtonPressed({@required bool isEditMode}) {
     FocusScope.of(context).requestFocus(FocusNode());
-    if (!isEditMode) {
+    if (isEditMode) {
+      context.bloc<NewSeriesDatabaseBloc>().add(const NewSeriesDatabaseEvent.saveSeriesDraftButtonPressedEVT());
+    } else {
       homeNavMethods.newSeriesIconPressed(isNSOpen: false);
+      Navigator.of(context).pop();
     }
-    Navigator.of(context).pop();
   }
 
   void deleteDraft() {

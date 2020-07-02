@@ -21,18 +21,16 @@ class NewSeriesForm extends StatelessWidget {
   final NewSeriesDatabaseMethods nsDbMethods;
   final NewSeriesDatabaseValidators nsDbValidators;
 
-  final TextEditingController titleController;
-  final TextEditingController subtitleController;
-  final TextEditingController summaryController;
+  // final TextEditingController subtitleController;
+  // final TextEditingController summaryController;
 
   const NewSeriesForm({
     Key key,
     @required this.nsDbState,
     @required this.nsDbMethods,
     @required this.nsDbValidators,
-    @required this.titleController,
-    @required this.subtitleController,
-    @required this.summaryController,
+    // @required this.subtitleController,
+    // @required this.summaryController,
   }) : super(key: key);
 
   @override
@@ -51,7 +49,7 @@ class NewSeriesForm extends StatelessWidget {
               WINEEditorCover(coverUrl: nsDbState.coverUrl, onPressed: nsDbMethods.addCoverPressed),
               // SECTION title
               WINEEditorTextFormField(
-                controller: titleController,
+                controller: nsDbState.titleController,
                 label: 'TITLE*',
                 hintText: 'Less than ${Constants.seriesTitleMaxWords} words',
                 onChanged: nsDbMethods.titleChanged,
@@ -61,7 +59,7 @@ class NewSeriesForm extends StatelessWidget {
               ),
               // SECTION subtitle
               WINEEditorTextFormField(
-                controller: subtitleController,
+                controller: nsDbState.subtitleController,
                 label: 'SUBTITLE (OPTIONAL)',
                 hintText: 'Less than ${Constants.seriesSubtitleMaxWords} words',
                 onChanged: nsDbMethods.subtitleChanged,
@@ -71,7 +69,7 @@ class NewSeriesForm extends StatelessWidget {
               ),
               // SECTION symmary
               WINEEditorTextFormField(
-                controller: summaryController,
+                controller: nsDbState.summaryController,
                 label: 'SUMMARY*',
                 hintText: 'Less than ${Constants.seriesSummaryMaxWords} words',
                 keyboardType: TextInputType.multiline,

@@ -6,6 +6,9 @@ import 'package:wine/application/database/account/account_database_bloc.dart';
 import 'package:wine/domain/models/hive/chapter_draft.dart';
 import 'package:wine/injection.dart';
 import 'package:wine/presentation/widgets/wine_chapter_tile.dart';
+import 'package:wine/routes.dart';
+import 'package:wine/utils/arguments.dart';
+import 'package:wine/utils/constants.dart';
 
 class AccountMyChapterDraftsLayout extends StatelessWidget {
   @override
@@ -45,7 +48,10 @@ class AccountMyChapterDraftsLayout extends StatelessWidget {
                         title: chapterDraft.title,
                         authorName: acDbState.session.username,
                         seriesTitle: acDbState.seriesMap[chapterDraft.seriesUid].title,
-                        onPressed: () {},
+                        onPressed: () => sailor.navigate(
+                          Constants.newChapterRoute,
+                          args: NewChapterPageArgs(chapterDraft: chapterDraft, routeBack: Constants.accountRoute),
+                        ),
                       ),
                     );
                   } else {
@@ -56,7 +62,10 @@ class AccountMyChapterDraftsLayout extends StatelessWidget {
                         title: chapterDraft.title,
                         authorName: acDbState.session.username,
                         seriesTitle: acDbState.seriesDraftsMap[chapterDraft.seriesUid]?.title,
-                        onPressed: () {},
+                        onPressed: () => sailor.navigate(
+                          Constants.newChapterRoute,
+                          args: NewChapterPageArgs(chapterDraft: chapterDraft, routeBack: Constants.accountRoute),
+                        ),
                       ),
                     );
                   }

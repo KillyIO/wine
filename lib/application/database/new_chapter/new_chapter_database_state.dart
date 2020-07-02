@@ -28,6 +28,8 @@ abstract class NewChapterDatabaseState with _$NewChapterDatabaseState {
     @required String languageStr,
     @required String storyStr,
     @required String titleStr,
+    @required TextEditingController storyController,
+    @required TextEditingController titleController,
     @required Title title,
   }) = _NewChapterPageState;
 
@@ -53,9 +55,11 @@ abstract class NewChapterDatabaseState with _$NewChapterDatabaseState {
         languageStr: '',
         showErrorMessages: false,
         story: Story(''),
+        storyController: TextEditingController(),
         storyStr: '',
         storyWordCount: 0,
         title: Title(''),
+        titleController: TextEditingController(),
         titleStr: '',
         titleWordCount: 0,
       );

@@ -26,6 +26,9 @@ abstract class NewSeriesDatabaseState with _$NewSeriesDatabaseState {
     @required String titleStr,
     @required Subtitle subtitle,
     @required Summary summary,
+    @required TextEditingController subtitleController,
+    @required TextEditingController summaryController,
+    @required TextEditingController titleController,
     @required Title title,
   }) = _NewSeriesDatabaseState;
 
@@ -46,12 +49,15 @@ abstract class NewSeriesDatabaseState with _$NewSeriesDatabaseState {
         seriesDraft: SeriesDraft(),
         showErrorMessages: false,
         subtitle: Subtitle(''),
+        subtitleController: TextEditingController(),
         subtitleStr: '',
         subtitleWordCount: 0,
         summary: Summary(''),
+        summaryController: TextEditingController(),
         summaryStr: '',
         summaryWordCount: 0,
         title: Title(''),
+        titleController: TextEditingController(),
         titleStr: '',
         titleWordCount: 0,
       );

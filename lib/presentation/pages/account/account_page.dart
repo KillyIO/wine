@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
 import 'package:wine/application/database/account/account_database_bloc.dart';
 import 'package:wine/application/navigation/account/account_navigation_bloc.dart';
 import 'package:wine/injection.dart';
 import 'package:wine/presentation/pages/account/widgets/account_layout.dart';
 import 'package:wine/presentation/widgets/wine_leading_image_button.dart';
 import 'package:wine/utils/themes.dart';
-import 'package:wine/presentation/widgets/wine_switch.dart';
-import 'package:wine/utils/palettes.dart';
 
 class AccountPage extends StatelessWidget {
   @override

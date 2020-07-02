@@ -40,7 +40,7 @@ class WINEEditorSelectorDialog extends StatelessWidget {
             wineShowDialog(
               context: context,
               builder: (_) => WINESelectionDialog(
-                title: 'GENRE',
+                title: title,
                 selections: selections,
                 onPressed: onPressed,
                 onInfoPressed: onInfoPressed,

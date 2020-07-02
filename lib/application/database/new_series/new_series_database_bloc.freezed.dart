@@ -2775,6 +2775,12 @@ class _$NewSeriesDatabaseStateTearOff {
       @required
           Summary summary,
       @required
+          TextEditingController subtitleController,
+      @required
+          TextEditingController summaryController,
+      @required
+          TextEditingController titleController,
+      @required
           Title title}) {
     return _NewSeriesDatabaseState(
       isCreatingOrDeleting: isCreatingOrDeleting,
@@ -2800,6 +2806,9 @@ class _$NewSeriesDatabaseStateTearOff {
       titleStr: titleStr,
       subtitle: subtitle,
       summary: summary,
+      subtitleController: subtitleController,
+      summaryController: summaryController,
+      titleController: titleController,
       title: title,
     );
   }
@@ -2832,6 +2841,9 @@ mixin _$NewSeriesDatabaseState {
   String get titleStr;
   Subtitle get subtitle;
   Summary get summary;
+  TextEditingController get subtitleController;
+  TextEditingController get summaryController;
+  TextEditingController get titleController;
   Title get title;
 
   $NewSeriesDatabaseStateCopyWith<NewSeriesDatabaseState> get copyWith;
@@ -2865,6 +2877,9 @@ abstract class $NewSeriesDatabaseStateCopyWith<$Res> {
       String titleStr,
       Subtitle subtitle,
       Summary summary,
+      TextEditingController subtitleController,
+      TextEditingController summaryController,
+      TextEditingController titleController,
       Title title});
 }
 
@@ -2901,6 +2916,9 @@ class _$NewSeriesDatabaseStateCopyWithImpl<$Res>
     Object titleStr = freezed,
     Object subtitle = freezed,
     Object summary = freezed,
+    Object subtitleController = freezed,
+    Object summaryController = freezed,
+    Object titleController = freezed,
     Object title = freezed,
   }) {
     return _then(_value.copyWith(
@@ -2954,6 +2972,15 @@ class _$NewSeriesDatabaseStateCopyWithImpl<$Res>
       titleStr: titleStr == freezed ? _value.titleStr : titleStr as String,
       subtitle: subtitle == freezed ? _value.subtitle : subtitle as Subtitle,
       summary: summary == freezed ? _value.summary : summary as Summary,
+      subtitleController: subtitleController == freezed
+          ? _value.subtitleController
+          : subtitleController as TextEditingController,
+      summaryController: summaryController == freezed
+          ? _value.summaryController
+          : summaryController as TextEditingController,
+      titleController: titleController == freezed
+          ? _value.titleController
+          : titleController as TextEditingController,
       title: title == freezed ? _value.title : title as Title,
     ));
   }
@@ -2989,6 +3016,9 @@ abstract class _$NewSeriesDatabaseStateCopyWith<$Res>
       String titleStr,
       Subtitle subtitle,
       Summary summary,
+      TextEditingController subtitleController,
+      TextEditingController summaryController,
+      TextEditingController titleController,
       Title title});
 }
 
@@ -3027,6 +3057,9 @@ class __$NewSeriesDatabaseStateCopyWithImpl<$Res>
     Object titleStr = freezed,
     Object subtitle = freezed,
     Object summary = freezed,
+    Object subtitleController = freezed,
+    Object summaryController = freezed,
+    Object titleController = freezed,
     Object title = freezed,
   }) {
     return _then(_NewSeriesDatabaseState(
@@ -3080,6 +3113,15 @@ class __$NewSeriesDatabaseStateCopyWithImpl<$Res>
       titleStr: titleStr == freezed ? _value.titleStr : titleStr as String,
       subtitle: subtitle == freezed ? _value.subtitle : subtitle as Subtitle,
       summary: summary == freezed ? _value.summary : summary as Summary,
+      subtitleController: subtitleController == freezed
+          ? _value.subtitleController
+          : subtitleController as TextEditingController,
+      summaryController: summaryController == freezed
+          ? _value.summaryController
+          : summaryController as TextEditingController,
+      titleController: titleController == freezed
+          ? _value.titleController
+          : titleController as TextEditingController,
       title: title == freezed ? _value.title : title as Title,
     ));
   }
@@ -3112,6 +3154,9 @@ class _$_NewSeriesDatabaseState
       @required this.titleStr,
       @required this.subtitle,
       @required this.summary,
+      @required this.subtitleController,
+      @required this.summaryController,
+      @required this.titleController,
       @required this.title})
       : assert(isCreatingOrDeleting != null),
         assert(isEditMode != null),
@@ -3136,6 +3181,9 @@ class _$_NewSeriesDatabaseState
         assert(titleStr != null),
         assert(subtitle != null),
         assert(summary != null),
+        assert(subtitleController != null),
+        assert(summaryController != null),
+        assert(titleController != null),
         assert(title != null);
 
   @override
@@ -3185,11 +3233,17 @@ class _$_NewSeriesDatabaseState
   @override
   final Summary summary;
   @override
+  final TextEditingController subtitleController;
+  @override
+  final TextEditingController summaryController;
+  @override
+  final TextEditingController titleController;
+  @override
   final Title title;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'NewSeriesDatabaseState(isCreatingOrDeleting: $isCreatingOrDeleting, isEditMode: $isEditMode, isNSFW: $isNSFW, showErrorMessages: $showErrorMessages, genre: $genre, genreOptional: $genreOptional, subtitleWordCount: $subtitleWordCount, summaryWordCount: $summaryWordCount, titleWordCount: $titleWordCount, language: $language, genresMap: $genresMap, languagesMap: $languagesMap, databaseFailureOrSuccessOption: $databaseFailureOrSuccessOption, seriesDraft: $seriesDraft, coverUrl: $coverUrl, genreOptionalStr: $genreOptionalStr, genreStr: $genreStr, languageStr: $languageStr, subtitleStr: $subtitleStr, summaryStr: $summaryStr, titleStr: $titleStr, subtitle: $subtitle, summary: $summary, title: $title)';
+    return 'NewSeriesDatabaseState(isCreatingOrDeleting: $isCreatingOrDeleting, isEditMode: $isEditMode, isNSFW: $isNSFW, showErrorMessages: $showErrorMessages, genre: $genre, genreOptional: $genreOptional, subtitleWordCount: $subtitleWordCount, summaryWordCount: $summaryWordCount, titleWordCount: $titleWordCount, language: $language, genresMap: $genresMap, languagesMap: $languagesMap, databaseFailureOrSuccessOption: $databaseFailureOrSuccessOption, seriesDraft: $seriesDraft, coverUrl: $coverUrl, genreOptionalStr: $genreOptionalStr, genreStr: $genreStr, languageStr: $languageStr, subtitleStr: $subtitleStr, summaryStr: $summaryStr, titleStr: $titleStr, subtitle: $subtitle, summary: $summary, subtitleController: $subtitleController, summaryController: $summaryController, titleController: $titleController, title: $title)';
   }
 
   @override
@@ -3221,6 +3275,9 @@ class _$_NewSeriesDatabaseState
       ..add(DiagnosticsProperty('titleStr', titleStr))
       ..add(DiagnosticsProperty('subtitle', subtitle))
       ..add(DiagnosticsProperty('summary', summary))
+      ..add(DiagnosticsProperty('subtitleController', subtitleController))
+      ..add(DiagnosticsProperty('summaryController', summaryController))
+      ..add(DiagnosticsProperty('titleController', titleController))
       ..add(DiagnosticsProperty('title', title));
   }
 
@@ -3291,6 +3348,9 @@ class _$_NewSeriesDatabaseState
                 const DeepCollectionEquality().equals(other.titleStr, titleStr)) &&
             (identical(other.subtitle, subtitle) || const DeepCollectionEquality().equals(other.subtitle, subtitle)) &&
             (identical(other.summary, summary) || const DeepCollectionEquality().equals(other.summary, summary)) &&
+            (identical(other.subtitleController, subtitleController) || const DeepCollectionEquality().equals(other.subtitleController, subtitleController)) &&
+            (identical(other.summaryController, summaryController) || const DeepCollectionEquality().equals(other.summaryController, summaryController)) &&
+            (identical(other.titleController, titleController) || const DeepCollectionEquality().equals(other.titleController, titleController)) &&
             (identical(other.title, title) || const DeepCollectionEquality().equals(other.title, title)));
   }
 
@@ -3320,6 +3380,9 @@ class _$_NewSeriesDatabaseState
       const DeepCollectionEquality().hash(titleStr) ^
       const DeepCollectionEquality().hash(subtitle) ^
       const DeepCollectionEquality().hash(summary) ^
+      const DeepCollectionEquality().hash(subtitleController) ^
+      const DeepCollectionEquality().hash(summaryController) ^
+      const DeepCollectionEquality().hash(titleController) ^
       const DeepCollectionEquality().hash(title);
 
   @override
@@ -3378,6 +3441,12 @@ abstract class _NewSeriesDatabaseState implements NewSeriesDatabaseState {
       @required
           Summary summary,
       @required
+          TextEditingController subtitleController,
+      @required
+          TextEditingController summaryController,
+      @required
+          TextEditingController titleController,
+      @required
           Title title}) = _$_NewSeriesDatabaseState;
 
   @override
@@ -3426,6 +3495,12 @@ abstract class _NewSeriesDatabaseState implements NewSeriesDatabaseState {
   Subtitle get subtitle;
   @override
   Summary get summary;
+  @override
+  TextEditingController get subtitleController;
+  @override
+  TextEditingController get summaryController;
+  @override
+  TextEditingController get titleController;
   @override
   Title get title;
   @override
