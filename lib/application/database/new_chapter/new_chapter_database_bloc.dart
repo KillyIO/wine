@@ -61,15 +61,10 @@ class NewChapterDatabaseBloc extends Bloc<NewChapterDatabaseEvent, NewChapterDat
     this._onlineChapterDatabaseFacade,
     this._onlineSeriesDatabaseFacade,
     this._localPlaceholderDatabaseFacade,
-  );
+  ) : super(NewChapterDatabaseState.initial());
 
   @override
-  NewChapterDatabaseState get initialState => NewChapterDatabaseState.initial();
-
-  @override
-  Stream<NewChapterDatabaseState> mapEventToState(
-    NewChapterDatabaseEvent event,
-  ) async* {
+  Stream<NewChapterDatabaseState> mapEventToState(NewChapterDatabaseEvent event) async* {
     yield* event.map(
       addCoverPressedEVT: (event) async* {
         final PickedFile pickedFile = await imagePicker.getImage(

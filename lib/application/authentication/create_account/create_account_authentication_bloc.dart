@@ -21,15 +21,10 @@ part 'create_account_authentication_bloc.freezed.dart';
 class CreateAccountAuthenticationBloc extends Bloc<CreateAccountAuthenticationEvent, CreateAccountAuthenticationState> {
   final IAuthenticationFacade _authenticationFacade;
 
-  CreateAccountAuthenticationBloc(this._authenticationFacade);
+  CreateAccountAuthenticationBloc(this._authenticationFacade) : super(CreateAccountAuthenticationState.initial());
 
   @override
-  CreateAccountAuthenticationState get initialState => CreateAccountAuthenticationState.initial();
-
-  @override
-  Stream<CreateAccountAuthenticationState> mapEventToState(
-    CreateAccountAuthenticationEvent event,
-  ) async* {
+  Stream<CreateAccountAuthenticationState> mapEventToState(CreateAccountAuthenticationEvent event) async* {
     yield* event.map(
       emailChangedEVT: (event) async* {
         yield state.copyWith(emailAddress: EmailAddress(event.emailStr), authenticationFailureOrSuccessOption: none());

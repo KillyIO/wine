@@ -18,16 +18,14 @@ part 'settings_database_bloc.freezed.dart';
 class SettingsDatabaseBloc extends Bloc<SettingsDatabaseEvent, SettingsDatabaseState> {
   final ILocalSessionDatabaseFacade _localSessionDatabaseFacade;
 
-  SettingsDatabaseBloc(this._localSessionDatabaseFacade);
+  SettingsDatabaseBloc(this._localSessionDatabaseFacade) : super(SettingsDatabaseState.initial());
 
   @override
-  SettingsDatabaseState get initialState => SettingsDatabaseState.initial();
-
-  @override
-  Stream<SettingsDatabaseState> mapEventToState(
-    SettingsDatabaseEvent event,
-  ) async* {
+  Stream<SettingsDatabaseState> mapEventToState(SettingsDatabaseEvent event) async* {
     yield* event.map(
+      resetBlocEVT: (event) async* {
+        yield state.copyWith(isUpdating: false, databaseFailureOrSuccessOption: none());
+      },
       settingsLaunchedEVT: (event) async* {
         Session session = Session();
 
@@ -51,9 +49,6 @@ class SettingsDatabaseBloc extends Bloc<SettingsDatabaseEvent, SettingsDatabaseS
             await _localSessionDatabaseFacade.deleteSession();
 
         yield state.copyWith(isUpdating: false, databaseFailureOrSuccessOption: optionOf(failureOrSuccess));
-      },
-      resetBlocEVT: (event) async* {
-        yield state.copyWith(isUpdating: false, databaseFailureOrSuccessOption: none());
       },
     );
   }

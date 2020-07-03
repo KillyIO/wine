@@ -7,22 +7,16 @@ class WINEHorizontalNavbarButton extends StatelessWidget {
 
   const WINEHorizontalNavbarButton({
     Key key,
-    this.onPressed,
-    this.title,
-    this.color,
+    @required this.onPressed,
+    @required this.title,
+    @required this.color,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: onPressed,
-      child: Text(
-        title,
-        style: TextStyle(
-          color: color,
-          fontWeight: FontWeight.w500,
-        ),
-      ),
+      child: Text(title, style: TextStyle(color: color, fontWeight: FontWeight.w500)),
     );
   }
 }

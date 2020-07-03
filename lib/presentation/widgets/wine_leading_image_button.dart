@@ -7,20 +7,16 @@ class WINELeadingImageButton extends StatelessWidget {
 
   const WINELeadingImageButton({
     Key key,
-    this.imagePath,
-    this.onPressed,
-    this.color,
+    @required this.imagePath,
+    @required this.onPressed,
+    this.color = Colors.black,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: onPressed,
-      child: Image.asset(
-        imagePath,
-        fit: BoxFit.contain,
-        color: color ?? Colors.black,
-      ),
+      child: Image.asset(imagePath, fit: BoxFit.contain, color: color),
     );
   }
 }

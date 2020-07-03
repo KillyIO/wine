@@ -13,13 +13,10 @@ part 'settings_outlier_bloc.freezed.dart';
 
 @injectable
 class SettingsOutlierBloc extends Bloc<SettingsOutlierEvent, SettingsOutlierState> {
-  @override
-  SettingsOutlierState get initialState => SettingsOutlierState.initial();
+  SettingsOutlierBloc() : super(SettingsOutlierState.initial());
 
   @override
-  Stream<SettingsOutlierState> mapEventToState(
-    SettingsOutlierEvent event,
-  ) async* {
+  Stream<SettingsOutlierState> mapEventToState(SettingsOutlierEvent event) async* {
     if (event is GetAppDetailsEVT) {
       final PackageInfo packageInfo = await PackageInfo.fromPlatform();
 

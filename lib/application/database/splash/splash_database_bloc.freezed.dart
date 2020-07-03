@@ -738,15 +738,15 @@ class _$SplashDatabaseStateTearOff {
 
   _SplashDatabaseState call(
       {@required
-          bool isUpdating,
-      @required
           bool isAnonymous,
+      @required
+          bool isUpdating,
       @required
           Option<Either<DatabaseFailure, DatabaseSuccess>>
               databaseFailureOrSuccessOption}) {
     return _SplashDatabaseState(
-      isUpdating: isUpdating,
       isAnonymous: isAnonymous,
+      isUpdating: isUpdating,
       databaseFailureOrSuccessOption: databaseFailureOrSuccessOption,
     );
   }
@@ -756,8 +756,8 @@ class _$SplashDatabaseStateTearOff {
 const $SplashDatabaseState = _$SplashDatabaseStateTearOff();
 
 mixin _$SplashDatabaseState {
-  bool get isUpdating;
   bool get isAnonymous;
+  bool get isUpdating;
   Option<Either<DatabaseFailure, DatabaseSuccess>>
       get databaseFailureOrSuccessOption;
 
@@ -769,8 +769,8 @@ abstract class $SplashDatabaseStateCopyWith<$Res> {
           SplashDatabaseState value, $Res Function(SplashDatabaseState) then) =
       _$SplashDatabaseStateCopyWithImpl<$Res>;
   $Res call(
-      {bool isUpdating,
-      bool isAnonymous,
+      {bool isAnonymous,
+      bool isUpdating,
       Option<Either<DatabaseFailure, DatabaseSuccess>>
           databaseFailureOrSuccessOption});
 }
@@ -785,15 +785,15 @@ class _$SplashDatabaseStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object isUpdating = freezed,
     Object isAnonymous = freezed,
+    Object isUpdating = freezed,
     Object databaseFailureOrSuccessOption = freezed,
   }) {
     return _then(_value.copyWith(
-      isUpdating:
-          isUpdating == freezed ? _value.isUpdating : isUpdating as bool,
       isAnonymous:
           isAnonymous == freezed ? _value.isAnonymous : isAnonymous as bool,
+      isUpdating:
+          isUpdating == freezed ? _value.isUpdating : isUpdating as bool,
       databaseFailureOrSuccessOption: databaseFailureOrSuccessOption == freezed
           ? _value.databaseFailureOrSuccessOption
           : databaseFailureOrSuccessOption
@@ -809,8 +809,8 @@ abstract class _$SplashDatabaseStateCopyWith<$Res>
       __$SplashDatabaseStateCopyWithImpl<$Res>;
   @override
   $Res call(
-      {bool isUpdating,
-      bool isAnonymous,
+      {bool isAnonymous,
+      bool isUpdating,
       Option<Either<DatabaseFailure, DatabaseSuccess>>
           databaseFailureOrSuccessOption});
 }
@@ -827,15 +827,15 @@ class __$SplashDatabaseStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object isUpdating = freezed,
     Object isAnonymous = freezed,
+    Object isUpdating = freezed,
     Object databaseFailureOrSuccessOption = freezed,
   }) {
     return _then(_SplashDatabaseState(
-      isUpdating:
-          isUpdating == freezed ? _value.isUpdating : isUpdating as bool,
       isAnonymous:
           isAnonymous == freezed ? _value.isAnonymous : isAnonymous as bool,
+      isUpdating:
+          isUpdating == freezed ? _value.isUpdating : isUpdating as bool,
       databaseFailureOrSuccessOption: databaseFailureOrSuccessOption == freezed
           ? _value.databaseFailureOrSuccessOption
           : databaseFailureOrSuccessOption
@@ -846,36 +846,36 @@ class __$SplashDatabaseStateCopyWithImpl<$Res>
 
 class _$_SplashDatabaseState implements _SplashDatabaseState {
   const _$_SplashDatabaseState(
-      {@required this.isUpdating,
-      @required this.isAnonymous,
+      {@required this.isAnonymous,
+      @required this.isUpdating,
       @required this.databaseFailureOrSuccessOption})
-      : assert(isUpdating != null),
-        assert(isAnonymous != null),
+      : assert(isAnonymous != null),
+        assert(isUpdating != null),
         assert(databaseFailureOrSuccessOption != null);
 
   @override
-  final bool isUpdating;
-  @override
   final bool isAnonymous;
+  @override
+  final bool isUpdating;
   @override
   final Option<Either<DatabaseFailure, DatabaseSuccess>>
       databaseFailureOrSuccessOption;
 
   @override
   String toString() {
-    return 'SplashDatabaseState(isUpdating: $isUpdating, isAnonymous: $isAnonymous, databaseFailureOrSuccessOption: $databaseFailureOrSuccessOption)';
+    return 'SplashDatabaseState(isAnonymous: $isAnonymous, isUpdating: $isUpdating, databaseFailureOrSuccessOption: $databaseFailureOrSuccessOption)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _SplashDatabaseState &&
-            (identical(other.isUpdating, isUpdating) ||
-                const DeepCollectionEquality()
-                    .equals(other.isUpdating, isUpdating)) &&
             (identical(other.isAnonymous, isAnonymous) ||
                 const DeepCollectionEquality()
                     .equals(other.isAnonymous, isAnonymous)) &&
+            (identical(other.isUpdating, isUpdating) ||
+                const DeepCollectionEquality()
+                    .equals(other.isUpdating, isUpdating)) &&
             (identical(other.databaseFailureOrSuccessOption,
                     databaseFailureOrSuccessOption) ||
                 const DeepCollectionEquality().equals(
@@ -886,8 +886,8 @@ class _$_SplashDatabaseState implements _SplashDatabaseState {
   @override
   int get hashCode =>
       runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(isUpdating) ^
       const DeepCollectionEquality().hash(isAnonymous) ^
+      const DeepCollectionEquality().hash(isUpdating) ^
       const DeepCollectionEquality().hash(databaseFailureOrSuccessOption);
 
   @override
@@ -899,17 +899,17 @@ class _$_SplashDatabaseState implements _SplashDatabaseState {
 abstract class _SplashDatabaseState implements SplashDatabaseState {
   const factory _SplashDatabaseState(
       {@required
-          bool isUpdating,
-      @required
           bool isAnonymous,
+      @required
+          bool isUpdating,
       @required
           Option<Either<DatabaseFailure, DatabaseSuccess>>
               databaseFailureOrSuccessOption}) = _$_SplashDatabaseState;
 
   @override
-  bool get isUpdating;
-  @override
   bool get isAnonymous;
+  @override
+  bool get isUpdating;
   @override
   Option<Either<DatabaseFailure, DatabaseSuccess>>
       get databaseFailureOrSuccessOption;

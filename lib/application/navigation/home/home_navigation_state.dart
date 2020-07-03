@@ -5,14 +5,14 @@ abstract class HomeNavigationState with _$HomeNavigationState {
   const factory HomeNavigationState({
     @required bool isDrawerOpen,
     @required bool isNewSeriesPageOpen,
-    @required List<String> pageViewNavbarItems,
     @required int currentPageViewIdx,
+    @required List<String> pageViewNavbarItems,
   }) = _HomeNavigationState;
 
   factory HomeNavigationState.initial() => const HomeNavigationState(
+        currentPageViewIdx: 0,
         isDrawerOpen: false,
         isNewSeriesPageOpen: false,
         pageViewNavbarItems: <String>[],
-        currentPageViewIdx: 0,
       );
 }

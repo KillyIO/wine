@@ -17,15 +17,10 @@ part 'settings_authentication_bloc.freezed.dart';
 class SettingsAuthenticationBloc extends Bloc<SettingsAuthenticationEvent, SettingsAuthenticationState> {
   final IAuthenticationFacade _authenticationFacade;
 
-  SettingsAuthenticationBloc(this._authenticationFacade);
+  SettingsAuthenticationBloc(this._authenticationFacade) : super(SettingsAuthenticationState.initial());
 
   @override
-  SettingsAuthenticationState get initialState => SettingsAuthenticationState.initial();
-
-  @override
-  Stream<SettingsAuthenticationState> mapEventToState(
-    SettingsAuthenticationEvent event,
-  ) async* {
+  Stream<SettingsAuthenticationState> mapEventToState(SettingsAuthenticationEvent event) async* {
     yield* event.map(
       signOutPressedEVT: (event) async* {
         Either<AuthenticationFailure, AuthenticationSuccess> failureOrSuccess;

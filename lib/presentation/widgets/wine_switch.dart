@@ -14,9 +14,9 @@ class WINESwitch extends StatefulWidget {
 
   const WINESwitch({
     Key key,
-    this.value,
-    this.onChanged,
-    this.activeColor,
+    @required this.value,
+    @required this.onChanged,
+    @required this.activeColor,
     this.inactiveColor = Colors.grey,
     this.activeText = 'On',
     this.inactiveText = 'Off',
@@ -28,27 +28,18 @@ class WINESwitch extends StatefulWidget {
   _WINESwitchState createState() => _WINESwitchState();
 }
 
-class _WINESwitchState extends State<WINESwitch>
-    with SingleTickerProviderStateMixin {
+class _WINESwitchState extends State<WINESwitch> with SingleTickerProviderStateMixin {
   Animation<Alignment> _circleAnimation;
   AnimationController _animationController;
 
   @override
   void initState() {
     super.initState();
-    _animationController = AnimationController(
-      vsync: this,
-      duration: const Duration(
-        milliseconds: 60,
-      ),
-    );
+    _animationController = AnimationController(vsync: this, duration: const Duration(milliseconds: 60));
     _circleAnimation = AlignmentTween(
       begin: widget.value ? Alignment.centerRight : Alignment.centerLeft,
       end: widget.value ? Alignment.centerLeft : Alignment.centerRight,
-    ).animate(CurvedAnimation(
-      parent: _animationController,
-      curve: Curves.linear,
-    ));
+    ).animate(CurvedAnimation(parent: _animationController, curve: Curves.linear));
   }
 
   @override
@@ -72,22 +63,15 @@ class _WINESwitchState extends State<WINESwitch>
               } else {
                 _animationController.forward();
               }
-              widget.value == false
-                  ? widget.onChanged(true)
-                  : widget.onChanged(false);
+              widget.value == false ? widget.onChanged(true) : widget.onChanged(false);
             },
             child: Container(
-              // width: 50.0,
-              // height: 35.0,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(20.0),
-                color: _circleAnimation.value == Alignment.centerLeft
-                    ? widget.inactiveColor
-                    : widget.activeColor,
+                color: _circleAnimation.value == Alignment.centerLeft ? widget.inactiveColor : widget.activeColor,
               ),
               child: Padding(
-                padding: const EdgeInsets.only(
-                    top: 4.0, bottom: 4.0, right: 4.0, left: 4.0),
+                padding: const EdgeInsets.only(top: 4.0, bottom: 4.0, right: 4.0, left: 4.0),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: <Widget>[
@@ -96,10 +80,7 @@ class _WINESwitchState extends State<WINESwitch>
                         padding: const EdgeInsets.only(left: 4.0, right: 4.0),
                         child: Text(
                           widget.activeText,
-                          style: TextStyle(
-                              color: widget.activeTextColor,
-                              fontWeight: FontWeight.w900,
-                              fontSize: 16.0),
+                          style: TextStyle(color: widget.activeTextColor, fontWeight: FontWeight.w900, fontSize: 16.0),
                         ),
                       )
                     else
@@ -109,10 +90,7 @@ class _WINESwitchState extends State<WINESwitch>
                       child: Container(
                         width: 25.0,
                         height: 25.0,
-                        decoration: BoxDecoration(
-                          shape: BoxShape.circle,
-                          color: Colors.white,
-                        ),
+                        decoration: BoxDecoration(shape: BoxShape.circle, color: Colors.white),
                       ),
                     ),
                     if (_circleAnimation.value == Alignment.centerLeft)
@@ -121,9 +99,10 @@ class _WINESwitchState extends State<WINESwitch>
                         child: Text(
                           widget.inactiveText,
                           style: TextStyle(
-                              color: widget.inactiveTextColor,
-                              fontWeight: FontWeight.w900,
-                              fontSize: 16.0),
+                            color: widget.inactiveTextColor,
+                            fontWeight: FontWeight.w900,
+                            fontSize: 16.0,
+                          ),
                         ),
                       )
                     else

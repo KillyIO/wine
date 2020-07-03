@@ -49,15 +49,10 @@ class NewSeriesDatabaseBloc extends Bloc<NewSeriesDatabaseEvent, NewSeriesDataba
     this._localSessionDatabaseFacade,
     this._localSeriesDraftDatabaseFacade,
     this._localPlaceholderDatabaseFacade,
-  );
+  ) : super(NewSeriesDatabaseState.initial());
 
   @override
-  NewSeriesDatabaseState get initialState => NewSeriesDatabaseState.initial();
-
-  @override
-  Stream<NewSeriesDatabaseState> mapEventToState(
-    NewSeriesDatabaseEvent event,
-  ) async* {
+  Stream<NewSeriesDatabaseState> mapEventToState(NewSeriesDatabaseEvent event) async* {
     yield* event.map(
       addCoverPressedEVT: (event) async* {
         final PickedFile pickedFile = await imagePicker.getImage(

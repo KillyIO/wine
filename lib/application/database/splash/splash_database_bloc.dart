@@ -31,15 +31,10 @@ class SplashDatabaseBloc extends Bloc<SplashDatabaseEvent, SplashDatabaseState> 
     this._onlineUserDatabaseFacade,
     this._localPlaceholderDatabaseFacade,
     this._onlinePlaceholderDatabaseFacade,
-  );
+  ) : super(SplashDatabaseState.initial());
 
   @override
-  SplashDatabaseState get initialState => SplashDatabaseState.initial();
-
-  @override
-  Stream<SplashDatabaseState> mapEventToState(
-    SplashDatabaseEvent event,
-  ) async* {
+  Stream<SplashDatabaseState> mapEventToState(SplashDatabaseEvent event) async* {
     yield* event.map(
       authenticatedEVT: (event) async* {
         Either<DatabaseFailure, DatabaseSuccess> failureOrSuccess;

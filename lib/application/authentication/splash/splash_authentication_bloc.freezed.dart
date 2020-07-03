@@ -20,7 +20,26 @@ class _$SplashAuthenticationEventTearOff {
 // ignore: unused_element
 const $SplashAuthenticationEvent = _$SplashAuthenticationEventTearOff();
 
-mixin _$SplashAuthenticationEvent {}
+mixin _$SplashAuthenticationEvent {
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result splashLaunchedEVT(),
+  });
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result splashLaunchedEVT(),
+    @required Result orElse(),
+  });
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result splashLaunchedEVT(SplashLaunchedEVT value),
+  });
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result splashLaunchedEVT(SplashLaunchedEVT value),
+    @required Result orElse(),
+  });
+}
 
 abstract class $SplashAuthenticationEventCopyWith<$Res> {
   factory $SplashAuthenticationEventCopyWith(SplashAuthenticationEvent value,
@@ -69,6 +88,50 @@ class _$SplashLaunchedEVT implements SplashLaunchedEVT {
 
   @override
   int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result splashLaunchedEVT(),
+  }) {
+    assert(splashLaunchedEVT != null);
+    return splashLaunchedEVT();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result splashLaunchedEVT(),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (splashLaunchedEVT != null) {
+      return splashLaunchedEVT();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result splashLaunchedEVT(SplashLaunchedEVT value),
+  }) {
+    assert(splashLaunchedEVT != null);
+    return splashLaunchedEVT(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result splashLaunchedEVT(SplashLaunchedEVT value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (splashLaunchedEVT != null) {
+      return splashLaunchedEVT(this);
+    }
+    return orElse();
+  }
 }
 
 abstract class SplashLaunchedEVT implements SplashAuthenticationEvent {

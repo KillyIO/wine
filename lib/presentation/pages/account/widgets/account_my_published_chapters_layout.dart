@@ -2,7 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:wine/application/database/account/account_database_bloc.dart';
 import 'package:wine/domain/models/chapter.dart';
+import 'package:wine/domain/models/user.dart';
 import 'package:wine/presentation/widgets/wine_chapter_tile.dart';
+import 'package:wine/routes.dart';
+import 'package:wine/utils/arguments.dart';
+import 'package:wine/utils/constants.dart';
 
 class AccountMyPublishedChaptersLayout extends StatelessWidget {
   @override
@@ -30,6 +34,7 @@ class AccountMyPublishedChaptersLayout extends StatelessWidget {
             itemCount: acDbState.chapters.length,
             itemBuilder: (BuildContext context, int index) {
               final Chapter chapter = acDbState.chapters[index];
+              chapter.author = User.fromMap(acDbState.session.toMap());
 
               return Padding(
                 padding: EdgeInsets.only(top: index == 0 ? 10.0 : 0.0),
@@ -38,7 +43,7 @@ class AccountMyPublishedChaptersLayout extends StatelessWidget {
                   title: chapter.title,
                   authorName: acDbState.session.username,
                   seriesTitle: chapter.series.title,
-                  onPressed: () {},
+                  onPressed: () => sailor.navigate(Constants.chapterRoute, args: ChapterPageArgs(chapter: chapter)),
                 ),
               );
             },

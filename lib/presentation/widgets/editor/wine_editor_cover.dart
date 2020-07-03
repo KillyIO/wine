@@ -22,14 +22,8 @@ class WINEEditorCover extends StatelessWidget {
           child: coverUrl.isEmpty
               ? Container()
               : Methods.isUrl(coverUrl)
-                  ? Image.network(
-                      coverUrl,
-                      fit: BoxFit.fitWidth,
-                    )
-                  : Image.file(
-                      File(coverUrl),
-                      fit: BoxFit.fitWidth,
-                    ),
+                  ? Image.network(coverUrl, fit: BoxFit.fitWidth)
+                  : Image.file(File(coverUrl), fit: BoxFit.fitWidth),
         ),
         GestureDetector(
           onTap: onPressed,

@@ -8,10 +8,10 @@ class WINEDialogListTile extends StatelessWidget {
 
   const WINEDialogListTile({
     Key key,
-    this.hasSelected,
-    this.onPressed,
-    this.title,
-    this.trailingText,
+    @required this.hasSelected,
+    @required this.onPressed,
+    @required this.title,
+    @required this.trailingText,
   }) : super(key: key);
 
   @override

@@ -5,7 +5,7 @@ class WINETextFieldLabel extends StatelessWidget {
 
   const WINETextFieldLabel({
     Key key,
-    this.title,
+    @required this.title,
   }) : super(key: key);
 
   @override
@@ -20,11 +20,7 @@ class WINETextFieldLabel extends StatelessWidget {
           padding: const EdgeInsets.only(left: 20.0, bottom: 10.0),
           child: Text(
             title,
-            style: TextStyle(
-              color: Colors.black,
-              fontSize: 13.0,
-              fontWeight: FontWeight.w500,
-            ),
+            style: TextStyle(color: Colors.black, fontSize: 13.0, fontWeight: FontWeight.w500),
           ),
         ),
       ),

@@ -22,15 +22,10 @@ part 'home_database_bloc.freezed.dart';
 class HomeDatabaseBloc extends Bloc<HomeDatabaseEvent, HomeDatabaseState> {
   final IOnlineSeriesDatabaseFacade _onlineSeriesDatabaseFacade;
 
-  HomeDatabaseBloc(this._onlineSeriesDatabaseFacade);
+  HomeDatabaseBloc(this._onlineSeriesDatabaseFacade) : super(HomeDatabaseState.initial());
 
   @override
-  HomeDatabaseState get initialState => HomeDatabaseState.initial();
-
-  @override
-  Stream<HomeDatabaseState> mapEventToState(
-    HomeDatabaseEvent event,
-  ) async* {
+  Stream<HomeDatabaseState> mapEventToState(HomeDatabaseEvent event) async* {
     yield* event.map(
       applyFilterChangesEVT: (event) async* {
         yield state.copyWith(isLoading: true, databaseFailureOrSuccessOption: none());

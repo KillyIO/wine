@@ -8,7 +8,7 @@ abstract class SplashAuthenticationState with _$SplashAuthenticationState {
   }) = _SplashAuthenticationState;
 
   factory SplashAuthenticationState.initial() => SplashAuthenticationState(
-        isAuthenticating: false,
         authenticationFailureOrSuccessOption: none(),
+        isAuthenticating: false,
       );
 }

@@ -796,13 +796,13 @@ class _$HomeNavigationStateTearOff {
   _HomeNavigationState call(
       {@required bool isDrawerOpen,
       @required bool isNewSeriesPageOpen,
-      @required List<String> pageViewNavbarItems,
-      @required int currentPageViewIdx}) {
+      @required int currentPageViewIdx,
+      @required List<String> pageViewNavbarItems}) {
     return _HomeNavigationState(
       isDrawerOpen: isDrawerOpen,
       isNewSeriesPageOpen: isNewSeriesPageOpen,
-      pageViewNavbarItems: pageViewNavbarItems,
       currentPageViewIdx: currentPageViewIdx,
+      pageViewNavbarItems: pageViewNavbarItems,
     );
   }
 }
@@ -813,8 +813,8 @@ const $HomeNavigationState = _$HomeNavigationStateTearOff();
 mixin _$HomeNavigationState {
   bool get isDrawerOpen;
   bool get isNewSeriesPageOpen;
-  List<String> get pageViewNavbarItems;
   int get currentPageViewIdx;
+  List<String> get pageViewNavbarItems;
 
   $HomeNavigationStateCopyWith<HomeNavigationState> get copyWith;
 }
@@ -826,8 +826,8 @@ abstract class $HomeNavigationStateCopyWith<$Res> {
   $Res call(
       {bool isDrawerOpen,
       bool isNewSeriesPageOpen,
-      List<String> pageViewNavbarItems,
-      int currentPageViewIdx});
+      int currentPageViewIdx,
+      List<String> pageViewNavbarItems});
 }
 
 class _$HomeNavigationStateCopyWithImpl<$Res>
@@ -842,8 +842,8 @@ class _$HomeNavigationStateCopyWithImpl<$Res>
   $Res call({
     Object isDrawerOpen = freezed,
     Object isNewSeriesPageOpen = freezed,
-    Object pageViewNavbarItems = freezed,
     Object currentPageViewIdx = freezed,
+    Object pageViewNavbarItems = freezed,
   }) {
     return _then(_value.copyWith(
       isDrawerOpen:
@@ -851,12 +851,12 @@ class _$HomeNavigationStateCopyWithImpl<$Res>
       isNewSeriesPageOpen: isNewSeriesPageOpen == freezed
           ? _value.isNewSeriesPageOpen
           : isNewSeriesPageOpen as bool,
-      pageViewNavbarItems: pageViewNavbarItems == freezed
-          ? _value.pageViewNavbarItems
-          : pageViewNavbarItems as List<String>,
       currentPageViewIdx: currentPageViewIdx == freezed
           ? _value.currentPageViewIdx
           : currentPageViewIdx as int,
+      pageViewNavbarItems: pageViewNavbarItems == freezed
+          ? _value.pageViewNavbarItems
+          : pageViewNavbarItems as List<String>,
     ));
   }
 }
@@ -870,8 +870,8 @@ abstract class _$HomeNavigationStateCopyWith<$Res>
   $Res call(
       {bool isDrawerOpen,
       bool isNewSeriesPageOpen,
-      List<String> pageViewNavbarItems,
-      int currentPageViewIdx});
+      int currentPageViewIdx,
+      List<String> pageViewNavbarItems});
 }
 
 class __$HomeNavigationStateCopyWithImpl<$Res>
@@ -888,8 +888,8 @@ class __$HomeNavigationStateCopyWithImpl<$Res>
   $Res call({
     Object isDrawerOpen = freezed,
     Object isNewSeriesPageOpen = freezed,
-    Object pageViewNavbarItems = freezed,
     Object currentPageViewIdx = freezed,
+    Object pageViewNavbarItems = freezed,
   }) {
     return _then(_HomeNavigationState(
       isDrawerOpen:
@@ -897,12 +897,12 @@ class __$HomeNavigationStateCopyWithImpl<$Res>
       isNewSeriesPageOpen: isNewSeriesPageOpen == freezed
           ? _value.isNewSeriesPageOpen
           : isNewSeriesPageOpen as bool,
-      pageViewNavbarItems: pageViewNavbarItems == freezed
-          ? _value.pageViewNavbarItems
-          : pageViewNavbarItems as List<String>,
       currentPageViewIdx: currentPageViewIdx == freezed
           ? _value.currentPageViewIdx
           : currentPageViewIdx as int,
+      pageViewNavbarItems: pageViewNavbarItems == freezed
+          ? _value.pageViewNavbarItems
+          : pageViewNavbarItems as List<String>,
     ));
   }
 }
@@ -913,25 +913,25 @@ class _$_HomeNavigationState
   const _$_HomeNavigationState(
       {@required this.isDrawerOpen,
       @required this.isNewSeriesPageOpen,
-      @required this.pageViewNavbarItems,
-      @required this.currentPageViewIdx})
+      @required this.currentPageViewIdx,
+      @required this.pageViewNavbarItems})
       : assert(isDrawerOpen != null),
         assert(isNewSeriesPageOpen != null),
-        assert(pageViewNavbarItems != null),
-        assert(currentPageViewIdx != null);
+        assert(currentPageViewIdx != null),
+        assert(pageViewNavbarItems != null);
 
   @override
   final bool isDrawerOpen;
   @override
   final bool isNewSeriesPageOpen;
   @override
-  final List<String> pageViewNavbarItems;
-  @override
   final int currentPageViewIdx;
+  @override
+  final List<String> pageViewNavbarItems;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'HomeNavigationState(isDrawerOpen: $isDrawerOpen, isNewSeriesPageOpen: $isNewSeriesPageOpen, pageViewNavbarItems: $pageViewNavbarItems, currentPageViewIdx: $currentPageViewIdx)';
+    return 'HomeNavigationState(isDrawerOpen: $isDrawerOpen, isNewSeriesPageOpen: $isNewSeriesPageOpen, currentPageViewIdx: $currentPageViewIdx, pageViewNavbarItems: $pageViewNavbarItems)';
   }
 
   @override
@@ -941,8 +941,8 @@ class _$_HomeNavigationState
       ..add(DiagnosticsProperty('type', 'HomeNavigationState'))
       ..add(DiagnosticsProperty('isDrawerOpen', isDrawerOpen))
       ..add(DiagnosticsProperty('isNewSeriesPageOpen', isNewSeriesPageOpen))
-      ..add(DiagnosticsProperty('pageViewNavbarItems', pageViewNavbarItems))
-      ..add(DiagnosticsProperty('currentPageViewIdx', currentPageViewIdx));
+      ..add(DiagnosticsProperty('currentPageViewIdx', currentPageViewIdx))
+      ..add(DiagnosticsProperty('pageViewNavbarItems', pageViewNavbarItems));
   }
 
   @override
@@ -955,12 +955,12 @@ class _$_HomeNavigationState
             (identical(other.isNewSeriesPageOpen, isNewSeriesPageOpen) ||
                 const DeepCollectionEquality()
                     .equals(other.isNewSeriesPageOpen, isNewSeriesPageOpen)) &&
-            (identical(other.pageViewNavbarItems, pageViewNavbarItems) ||
-                const DeepCollectionEquality()
-                    .equals(other.pageViewNavbarItems, pageViewNavbarItems)) &&
             (identical(other.currentPageViewIdx, currentPageViewIdx) ||
                 const DeepCollectionEquality()
-                    .equals(other.currentPageViewIdx, currentPageViewIdx)));
+                    .equals(other.currentPageViewIdx, currentPageViewIdx)) &&
+            (identical(other.pageViewNavbarItems, pageViewNavbarItems) ||
+                const DeepCollectionEquality()
+                    .equals(other.pageViewNavbarItems, pageViewNavbarItems)));
   }
 
   @override
@@ -968,8 +968,8 @@ class _$_HomeNavigationState
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(isDrawerOpen) ^
       const DeepCollectionEquality().hash(isNewSeriesPageOpen) ^
-      const DeepCollectionEquality().hash(pageViewNavbarItems) ^
-      const DeepCollectionEquality().hash(currentPageViewIdx);
+      const DeepCollectionEquality().hash(currentPageViewIdx) ^
+      const DeepCollectionEquality().hash(pageViewNavbarItems);
 
   @override
   _$HomeNavigationStateCopyWith<_HomeNavigationState> get copyWith =>
@@ -981,17 +981,17 @@ abstract class _HomeNavigationState implements HomeNavigationState {
   const factory _HomeNavigationState(
       {@required bool isDrawerOpen,
       @required bool isNewSeriesPageOpen,
-      @required List<String> pageViewNavbarItems,
-      @required int currentPageViewIdx}) = _$_HomeNavigationState;
+      @required int currentPageViewIdx,
+      @required List<String> pageViewNavbarItems}) = _$_HomeNavigationState;
 
   @override
   bool get isDrawerOpen;
   @override
   bool get isNewSeriesPageOpen;
   @override
-  List<String> get pageViewNavbarItems;
-  @override
   int get currentPageViewIdx;
+  @override
+  List<String> get pageViewNavbarItems;
   @override
   _$HomeNavigationStateCopyWith<_HomeNavigationState> get copyWith;
 }

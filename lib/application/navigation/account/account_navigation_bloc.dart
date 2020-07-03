@@ -15,13 +15,10 @@ part 'account_navigation_bloc.freezed.dart';
 
 @injectable
 class AccountNavigationBloc extends Bloc<AccountNavigationEvent, AccountNavigationState> {
-  @override
-  AccountNavigationState get initialState => AccountNavigationState.initial();
+  AccountNavigationBloc() : super(AccountNavigationState.initial());
 
   @override
-  Stream<AccountNavigationState> mapEventToState(
-    AccountNavigationEvent event,
-  ) async* {
+  Stream<AccountNavigationState> mapEventToState(AccountNavigationEvent event) async* {
     yield* event.map(
       accountPageLaunchedEVT: (event) async* {
         yield state.copyWith(

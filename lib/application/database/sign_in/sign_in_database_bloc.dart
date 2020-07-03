@@ -25,15 +25,10 @@ class SignInDatabaseBloc extends Bloc<SignInDatabaseEvent, SignInDatabaseState> 
   SignInDatabaseBloc(
     this._localSessionDatabaseFacade,
     this._onlineUserDatabaseFacade,
-  );
+  ) : super(SignInDatabaseState.initial());
 
   @override
-  SignInDatabaseState get initialState => SignInDatabaseState.initial();
-
-  @override
-  Stream<SignInDatabaseState> mapEventToState(
-    SignInDatabaseEvent event,
-  ) async* {
+  Stream<SignInDatabaseState> mapEventToState(SignInDatabaseEvent event) async* {
     yield* event.map(
       signedInEVT: (event) async* {
         Either<DatabaseFailure, DatabaseSuccess> failureOrSuccess;

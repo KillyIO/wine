@@ -8,7 +8,7 @@ abstract class SignInDatabaseState with _$SignInDatabaseState {
   }) = _SignInDatabaseState;
 
   factory SignInDatabaseState.initial() => SignInDatabaseState(
-        isUpdating: false,
         databaseFailureOrSuccessOption: none(),
+        isUpdating: false,
       );
 }

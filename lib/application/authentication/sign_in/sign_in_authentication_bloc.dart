@@ -20,15 +20,10 @@ part 'sign_in_authentication_state.dart';
 class SignInAuthenticationBloc extends Bloc<SignInAuthenticationEvent, SignInAuthenticationState> {
   final IAuthenticationFacade _authenticationFacade;
 
-  SignInAuthenticationBloc(this._authenticationFacade);
+  SignInAuthenticationBloc(this._authenticationFacade) : super(SignInAuthenticationState.initial());
 
   @override
-  SignInAuthenticationState get initialState => SignInAuthenticationState.initial();
-
-  @override
-  Stream<SignInAuthenticationState> mapEventToState(
-    SignInAuthenticationEvent event,
-  ) async* {
+  Stream<SignInAuthenticationState> mapEventToState(SignInAuthenticationEvent event) async* {
     yield* event.map(
       emailChangedEVT: (event) async* {
         yield state.copyWith(emailAddress: EmailAddress(event.emailStr), authFailureOrSuccessOption: none());
