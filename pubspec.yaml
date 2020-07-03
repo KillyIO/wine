@@ -22,15 +22,15 @@ dependencies:
   after_layout: ^1.0.7+2
   assorted_layout_widgets: ^1.1.3
   cached_network_image: ^2.2.0+1
-  cloud_firestore: ^0.13.6
+  cloud_firestore: ^0.13.7
   dartz: ^0.9.1
   firebase_auth: ^0.16.1
   firebase_core: ^0.4.5
   firebase_storage: ^3.1.6
-  flare_flutter: ^2.0.3
+  flare_flutter: ^2.0.4
   flare_loading: ^2.1.1
   # flushbar: 1.9.1
-  flutter_bloc: ^4.0.1
+  flutter_bloc: ^5.0.0
   flutter_device_locale: ^0.4.0
   flutter_icons: ^1.1.0
   flutter_staggered_grid_view: ^0.3.0
@@ -46,13 +46,13 @@ dependencies:
   intl: ^0.16.1
   logger: ^0.9.1
   package_info: ^0.4.1
-  path_provider: ^1.6.10
+  path_provider: ^1.6.11
   percent_indicator: ^2.1.5
   sailor: ^0.7.1
   stringprocess: ^1.0.10
   swipe_gesture_recognizer: ^0.0.2
   time: ^1.3.0
-  uuid: ^2.1.0
+  uuid: ^2.2.0
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
@@ -66,7 +66,7 @@ dev_dependencies:
     sdk: flutter
   build_runner: ^1.10.0
   flutter_launcher_icons: ^0.7.5
-  freezed: ^0.11.0
+  freezed: ^0.11.2
   hive_generator: ^0.7.0+2
   injectable_generator: ^0.4.1
   lint: ^1.2.0

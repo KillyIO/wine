@@ -36,15 +36,10 @@ class AccountDatabaseBloc extends Bloc<AccountDatabaseEvent, AccountDatabaseStat
     this._localSessionDatabaseFacade,
     this._onlineSeriesDatabaseFacade,
     this._onlineChapterDatabaseFacade,
-  );
+  ) : super(AccountDatabaseState.initial());
 
   @override
-  AccountDatabaseState get initialState => AccountDatabaseState.initial();
-
-  @override
-  Stream<AccountDatabaseState> mapEventToState(
-    AccountDatabaseEvent event,
-  ) async* {
+  Stream<AccountDatabaseState> mapEventToState(AccountDatabaseEvent event) async* {
     yield* event.map(
       accountPageLaunchedEVT: (event) async* {
         Session session = Session();

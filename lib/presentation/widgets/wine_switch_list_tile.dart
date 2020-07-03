@@ -12,10 +12,10 @@ class WINESwitchListTile extends StatelessWidget {
 
   const WINESwitchListTile({
     Key key,
-    this.title,
-    this.onInfoPressed,
-    this.value,
-    this.onChanged,
+    @required this.title,
+    @required this.onInfoPressed,
+    @required this.value,
+    @required this.onChanged,
   }) : super(key: key);
 
   @override
@@ -26,28 +26,14 @@ class WINESwitchListTile extends StatelessWidget {
         title: Row(
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
-            Text(
-              title,
-              style: TextStyle(
-                color: Colors.white,
-                fontWeight: FontWeight.w300,
-              ),
-            ),
+            Text(title, style: TextStyle(color: Colors.white, fontWeight: FontWeight.w300)),
             IconButton(
-              icon: Icon(
-                Feather.info,
-                color: Colors.white,
-                size: 20.0,
-              ),
+              icon: Icon(Feather.info, color: Colors.white, size: 20.0),
               onPressed: onInfoPressed,
             ),
           ],
         ),
-        trailing: WINESwitch(
-          value: value,
-          onChanged: onChanged,
-          activeColor: Palettes.pastelBlue,
-        ),
+        trailing: WINESwitch(value: value, onChanged: onChanged, activeColor: Palettes.pastelBlue),
       ),
     );
   }

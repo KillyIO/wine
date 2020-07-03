@@ -30,15 +30,10 @@ class ChapterDatabaseBloc extends Bloc<ChapterDatabaseEvent, ChapterDatabaseStat
     this._authenticationFacade,
     this._localSessionDatabaseFacade,
     this._onlineChapterDatabaseFacade,
-  );
+  ) : super(ChapterDatabaseState.initial());
 
   @override
-  ChapterDatabaseState get initialState => ChapterDatabaseState.initial();
-
-  @override
-  Stream<ChapterDatabaseState> mapEventToState(
-    ChapterDatabaseEvent event,
-  ) async* {
+  Stream<ChapterDatabaseState> mapEventToState(ChapterDatabaseEvent event) async* {
     yield* event.map(
       bookmarkButtonPressedEVT: (event) async* {
         final Either<DatabaseFailure, DatabaseSuccess> failureOrSuccess = await _onlineChapterDatabaseFacade

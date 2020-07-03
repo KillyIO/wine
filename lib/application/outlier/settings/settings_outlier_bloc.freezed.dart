@@ -20,7 +20,26 @@ class _$SettingsOutlierEventTearOff {
 // ignore: unused_element
 const $SettingsOutlierEvent = _$SettingsOutlierEventTearOff();
 
-mixin _$SettingsOutlierEvent {}
+mixin _$SettingsOutlierEvent {
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result getAppDetailsEVT(),
+  });
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result getAppDetailsEVT(),
+    @required Result orElse(),
+  });
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result getAppDetailsEVT(GetAppDetailsEVT value),
+  });
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result getAppDetailsEVT(GetAppDetailsEVT value),
+    @required Result orElse(),
+  });
+}
 
 abstract class $SettingsOutlierEventCopyWith<$Res> {
   factory $SettingsOutlierEventCopyWith(SettingsOutlierEvent value,
@@ -69,6 +88,50 @@ class _$GetAppDetailsEVT implements GetAppDetailsEVT {
 
   @override
   int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result getAppDetailsEVT(),
+  }) {
+    assert(getAppDetailsEVT != null);
+    return getAppDetailsEVT();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result getAppDetailsEVT(),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (getAppDetailsEVT != null) {
+      return getAppDetailsEVT();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result getAppDetailsEVT(GetAppDetailsEVT value),
+  }) {
+    assert(getAppDetailsEVT != null);
+    return getAppDetailsEVT(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result getAppDetailsEVT(GetAppDetailsEVT value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (getAppDetailsEVT != null) {
+      return getAppDetailsEVT(this);
+    }
+    return orElse();
+  }
 }
 
 abstract class GetAppDetailsEVT implements SettingsOutlierEvent {

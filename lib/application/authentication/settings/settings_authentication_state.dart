@@ -8,7 +8,7 @@ abstract class SettingsAuthenticationState with _$SettingsAuthenticationState {
   }) = _SettingsAuthenticationState;
 
   factory SettingsAuthenticationState.initial() => SettingsAuthenticationState(
-        isSigningOut: false,
         authenticationFailureOrSuccessOption: none(),
+        isSigningOut: false,
       );
 }

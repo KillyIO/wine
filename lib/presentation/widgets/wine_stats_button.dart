@@ -21,19 +21,9 @@ class WINEStatsButton extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
-        Icon(
-          icon,
-          color: iconColor,
-          size: iconSize,
-        ),
+        Icon(icon, color: iconColor, size: iconSize),
         const SizedBox(width: 5),
-        Text(
-          statsCount,
-          style: TextStyle(
-            color: iconColor,
-            fontSize: statsSize,
-          ),
-        ),
+        Text(statsCount, style: TextStyle(color: iconColor, fontSize: statsSize)),
       ],
     );
   }

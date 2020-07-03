@@ -11,9 +11,9 @@ class WINEButton extends StatelessWidget {
 
   const WINEButton({
     Key key,
-    this.title,
+    @required this.title,
     this.color = Palettes.pastelPink,
-    this.onPressed,
+    @required this.onPressed,
     this.fontSize = 20.0,
     this.hasRoundedCorners = false,
   }) : super(key: key);
@@ -28,19 +28,8 @@ class WINEButton extends StatelessWidget {
       child: FlatButton(
         color: color,
         onPressed: onPressed,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(
-            hasRoundedCorners ? 10 : 0,
-          ),
-        ),
-        child: Text(
-          title,
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: fontSize,
-            fontWeight: FontWeight.w500,
-          ),
-        ),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(hasRoundedCorners ? 10 : 0)),
+        child: Text(title, style: TextStyle(color: Colors.white, fontSize: fontSize, fontWeight: FontWeight.w500)),
       ),
     );
   }

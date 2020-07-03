@@ -15,13 +15,10 @@ part 'home_navigation_bloc.freezed.dart';
 
 @injectable
 class HomeNavigationBloc extends Bloc<HomeNavigationEvent, HomeNavigationState> {
-  @override
-  HomeNavigationState get initialState => HomeNavigationState.initial();
+  HomeNavigationBloc() : super(HomeNavigationState.initial());
 
   @override
-  Stream<HomeNavigationState> mapEventToState(
-    HomeNavigationEvent event,
-  ) async* {
+  Stream<HomeNavigationState> mapEventToState(HomeNavigationEvent event) async* {
     yield* event.map(
       drawerIconPressedEVT: (event) async* {
         yield state.copyWith(isDrawerOpen: event.isDrawerOpen);

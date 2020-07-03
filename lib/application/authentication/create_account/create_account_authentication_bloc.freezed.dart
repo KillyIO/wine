@@ -934,29 +934,29 @@ class _$CreateAccountAuthenticationStateTearOff {
 
   _CreateAccountAuthenticationState call(
       {@required
-          EmailAddress emailAddress,
-      @required
-          Password password,
-      @required
-          Password confirmPassword,
-      @required
-          Username username,
+          bool isSubmitting,
       @required
           bool showErrorMessages,
       @required
-          bool isSubmitting,
+          EmailAddress emailAddress,
       @required
           Option<Either<AuthenticationFailure, AuthenticationSuccess>>
-              authenticationFailureOrSuccessOption}) {
+              authenticationFailureOrSuccessOption,
+      @required
+          Password confirmPassword,
+      @required
+          Password password,
+      @required
+          Username username}) {
     return _CreateAccountAuthenticationState(
-      emailAddress: emailAddress,
-      password: password,
-      confirmPassword: confirmPassword,
-      username: username,
-      showErrorMessages: showErrorMessages,
       isSubmitting: isSubmitting,
+      showErrorMessages: showErrorMessages,
+      emailAddress: emailAddress,
       authenticationFailureOrSuccessOption:
           authenticationFailureOrSuccessOption,
+      confirmPassword: confirmPassword,
+      password: password,
+      username: username,
     );
   }
 }
@@ -966,14 +966,14 @@ const $CreateAccountAuthenticationState =
     _$CreateAccountAuthenticationStateTearOff();
 
 mixin _$CreateAccountAuthenticationState {
-  EmailAddress get emailAddress;
-  Password get password;
-  Password get confirmPassword;
-  Username get username;
-  bool get showErrorMessages;
   bool get isSubmitting;
+  bool get showErrorMessages;
+  EmailAddress get emailAddress;
   Option<Either<AuthenticationFailure, AuthenticationSuccess>>
       get authenticationFailureOrSuccessOption;
+  Password get confirmPassword;
+  Password get password;
+  Username get username;
 
   $CreateAccountAuthenticationStateCopyWith<CreateAccountAuthenticationState>
       get copyWith;
@@ -985,14 +985,14 @@ abstract class $CreateAccountAuthenticationStateCopyWith<$Res> {
           $Res Function(CreateAccountAuthenticationState) then) =
       _$CreateAccountAuthenticationStateCopyWithImpl<$Res>;
   $Res call(
-      {EmailAddress emailAddress,
-      Password password,
-      Password confirmPassword,
-      Username username,
+      {bool isSubmitting,
       bool showErrorMessages,
-      bool isSubmitting,
+      EmailAddress emailAddress,
       Option<Either<AuthenticationFailure, AuthenticationSuccess>>
-          authenticationFailureOrSuccessOption});
+          authenticationFailureOrSuccessOption,
+      Password confirmPassword,
+      Password password,
+      Username username});
 }
 
 class _$CreateAccountAuthenticationStateCopyWithImpl<$Res>
@@ -1005,33 +1005,33 @@ class _$CreateAccountAuthenticationStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object emailAddress = freezed,
-    Object password = freezed,
-    Object confirmPassword = freezed,
-    Object username = freezed,
-    Object showErrorMessages = freezed,
     Object isSubmitting = freezed,
+    Object showErrorMessages = freezed,
+    Object emailAddress = freezed,
     Object authenticationFailureOrSuccessOption = freezed,
+    Object confirmPassword = freezed,
+    Object password = freezed,
+    Object username = freezed,
   }) {
     return _then(_value.copyWith(
-      emailAddress: emailAddress == freezed
-          ? _value.emailAddress
-          : emailAddress as EmailAddress,
-      password: password == freezed ? _value.password : password as Password,
-      confirmPassword: confirmPassword == freezed
-          ? _value.confirmPassword
-          : confirmPassword as Password,
-      username: username == freezed ? _value.username : username as Username,
+      isSubmitting:
+          isSubmitting == freezed ? _value.isSubmitting : isSubmitting as bool,
       showErrorMessages: showErrorMessages == freezed
           ? _value.showErrorMessages
           : showErrorMessages as bool,
-      isSubmitting:
-          isSubmitting == freezed ? _value.isSubmitting : isSubmitting as bool,
+      emailAddress: emailAddress == freezed
+          ? _value.emailAddress
+          : emailAddress as EmailAddress,
       authenticationFailureOrSuccessOption:
           authenticationFailureOrSuccessOption == freezed
               ? _value.authenticationFailureOrSuccessOption
               : authenticationFailureOrSuccessOption as Option<
                   Either<AuthenticationFailure, AuthenticationSuccess>>,
+      confirmPassword: confirmPassword == freezed
+          ? _value.confirmPassword
+          : confirmPassword as Password,
+      password: password == freezed ? _value.password : password as Password,
+      username: username == freezed ? _value.username : username as Username,
     ));
   }
 }
@@ -1044,14 +1044,14 @@ abstract class _$CreateAccountAuthenticationStateCopyWith<$Res>
       __$CreateAccountAuthenticationStateCopyWithImpl<$Res>;
   @override
   $Res call(
-      {EmailAddress emailAddress,
-      Password password,
-      Password confirmPassword,
-      Username username,
+      {bool isSubmitting,
       bool showErrorMessages,
-      bool isSubmitting,
+      EmailAddress emailAddress,
       Option<Either<AuthenticationFailure, AuthenticationSuccess>>
-          authenticationFailureOrSuccessOption});
+          authenticationFailureOrSuccessOption,
+      Password confirmPassword,
+      Password password,
+      Username username});
 }
 
 class __$CreateAccountAuthenticationStateCopyWithImpl<$Res>
@@ -1068,33 +1068,33 @@ class __$CreateAccountAuthenticationStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object emailAddress = freezed,
-    Object password = freezed,
-    Object confirmPassword = freezed,
-    Object username = freezed,
-    Object showErrorMessages = freezed,
     Object isSubmitting = freezed,
+    Object showErrorMessages = freezed,
+    Object emailAddress = freezed,
     Object authenticationFailureOrSuccessOption = freezed,
+    Object confirmPassword = freezed,
+    Object password = freezed,
+    Object username = freezed,
   }) {
     return _then(_CreateAccountAuthenticationState(
-      emailAddress: emailAddress == freezed
-          ? _value.emailAddress
-          : emailAddress as EmailAddress,
-      password: password == freezed ? _value.password : password as Password,
-      confirmPassword: confirmPassword == freezed
-          ? _value.confirmPassword
-          : confirmPassword as Password,
-      username: username == freezed ? _value.username : username as Username,
+      isSubmitting:
+          isSubmitting == freezed ? _value.isSubmitting : isSubmitting as bool,
       showErrorMessages: showErrorMessages == freezed
           ? _value.showErrorMessages
           : showErrorMessages as bool,
-      isSubmitting:
-          isSubmitting == freezed ? _value.isSubmitting : isSubmitting as bool,
+      emailAddress: emailAddress == freezed
+          ? _value.emailAddress
+          : emailAddress as EmailAddress,
       authenticationFailureOrSuccessOption:
           authenticationFailureOrSuccessOption == freezed
               ? _value.authenticationFailureOrSuccessOption
               : authenticationFailureOrSuccessOption as Option<
                   Either<AuthenticationFailure, AuthenticationSuccess>>,
+      confirmPassword: confirmPassword == freezed
+          ? _value.confirmPassword
+          : confirmPassword as Password,
+      password: password == freezed ? _value.password : password as Password,
+      username: username == freezed ? _value.username : username as Username,
     ));
   }
 }
@@ -1102,81 +1102,82 @@ class __$CreateAccountAuthenticationStateCopyWithImpl<$Res>
 class _$_CreateAccountAuthenticationState
     implements _CreateAccountAuthenticationState {
   const _$_CreateAccountAuthenticationState(
-      {@required this.emailAddress,
-      @required this.password,
-      @required this.confirmPassword,
-      @required this.username,
+      {@required this.isSubmitting,
       @required this.showErrorMessages,
-      @required this.isSubmitting,
-      @required this.authenticationFailureOrSuccessOption})
-      : assert(emailAddress != null),
-        assert(password != null),
-        assert(confirmPassword != null),
-        assert(username != null),
+      @required this.emailAddress,
+      @required this.authenticationFailureOrSuccessOption,
+      @required this.confirmPassword,
+      @required this.password,
+      @required this.username})
+      : assert(isSubmitting != null),
         assert(showErrorMessages != null),
-        assert(isSubmitting != null),
-        assert(authenticationFailureOrSuccessOption != null);
+        assert(emailAddress != null),
+        assert(authenticationFailureOrSuccessOption != null),
+        assert(confirmPassword != null),
+        assert(password != null),
+        assert(username != null);
 
-  @override
-  final EmailAddress emailAddress;
-  @override
-  final Password password;
-  @override
-  final Password confirmPassword;
-  @override
-  final Username username;
-  @override
-  final bool showErrorMessages;
   @override
   final bool isSubmitting;
   @override
+  final bool showErrorMessages;
+  @override
+  final EmailAddress emailAddress;
+  @override
   final Option<Either<AuthenticationFailure, AuthenticationSuccess>>
       authenticationFailureOrSuccessOption;
+  @override
+  final Password confirmPassword;
+  @override
+  final Password password;
+  @override
+  final Username username;
 
   @override
   String toString() {
-    return 'CreateAccountAuthenticationState(emailAddress: $emailAddress, password: $password, confirmPassword: $confirmPassword, username: $username, showErrorMessages: $showErrorMessages, isSubmitting: $isSubmitting, authenticationFailureOrSuccessOption: $authenticationFailureOrSuccessOption)';
+    return 'CreateAccountAuthenticationState(isSubmitting: $isSubmitting, showErrorMessages: $showErrorMessages, emailAddress: $emailAddress, authenticationFailureOrSuccessOption: $authenticationFailureOrSuccessOption, confirmPassword: $confirmPassword, password: $password, username: $username)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _CreateAccountAuthenticationState &&
-            (identical(other.emailAddress, emailAddress) ||
-                const DeepCollectionEquality()
-                    .equals(other.emailAddress, emailAddress)) &&
-            (identical(other.password, password) ||
-                const DeepCollectionEquality()
-                    .equals(other.password, password)) &&
-            (identical(other.confirmPassword, confirmPassword) ||
-                const DeepCollectionEquality()
-                    .equals(other.confirmPassword, confirmPassword)) &&
-            (identical(other.username, username) ||
-                const DeepCollectionEquality()
-                    .equals(other.username, username)) &&
-            (identical(other.showErrorMessages, showErrorMessages) ||
-                const DeepCollectionEquality()
-                    .equals(other.showErrorMessages, showErrorMessages)) &&
             (identical(other.isSubmitting, isSubmitting) ||
                 const DeepCollectionEquality()
                     .equals(other.isSubmitting, isSubmitting)) &&
+            (identical(other.showErrorMessages, showErrorMessages) ||
+                const DeepCollectionEquality()
+                    .equals(other.showErrorMessages, showErrorMessages)) &&
+            (identical(other.emailAddress, emailAddress) ||
+                const DeepCollectionEquality()
+                    .equals(other.emailAddress, emailAddress)) &&
             (identical(other.authenticationFailureOrSuccessOption,
                     authenticationFailureOrSuccessOption) ||
                 const DeepCollectionEquality().equals(
                     other.authenticationFailureOrSuccessOption,
-                    authenticationFailureOrSuccessOption)));
+                    authenticationFailureOrSuccessOption)) &&
+            (identical(other.confirmPassword, confirmPassword) ||
+                const DeepCollectionEquality()
+                    .equals(other.confirmPassword, confirmPassword)) &&
+            (identical(other.password, password) ||
+                const DeepCollectionEquality()
+                    .equals(other.password, password)) &&
+            (identical(other.username, username) ||
+                const DeepCollectionEquality()
+                    .equals(other.username, username)));
   }
 
   @override
   int get hashCode =>
       runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(emailAddress) ^
-      const DeepCollectionEquality().hash(password) ^
-      const DeepCollectionEquality().hash(confirmPassword) ^
-      const DeepCollectionEquality().hash(username) ^
-      const DeepCollectionEquality().hash(showErrorMessages) ^
       const DeepCollectionEquality().hash(isSubmitting) ^
-      const DeepCollectionEquality().hash(authenticationFailureOrSuccessOption);
+      const DeepCollectionEquality().hash(showErrorMessages) ^
+      const DeepCollectionEquality().hash(emailAddress) ^
+      const DeepCollectionEquality()
+          .hash(authenticationFailureOrSuccessOption) ^
+      const DeepCollectionEquality().hash(confirmPassword) ^
+      const DeepCollectionEquality().hash(password) ^
+      const DeepCollectionEquality().hash(username);
 
   @override
   _$CreateAccountAuthenticationStateCopyWith<_CreateAccountAuthenticationState>
@@ -1187,38 +1188,37 @@ class _$_CreateAccountAuthenticationState
 abstract class _CreateAccountAuthenticationState
     implements CreateAccountAuthenticationState {
   const factory _CreateAccountAuthenticationState(
-          {@required
-              EmailAddress emailAddress,
-          @required
-              Password password,
-          @required
-              Password confirmPassword,
-          @required
-              Username username,
-          @required
-              bool showErrorMessages,
-          @required
-              bool isSubmitting,
-          @required
-              Option<Either<AuthenticationFailure, AuthenticationSuccess>>
-                  authenticationFailureOrSuccessOption}) =
-      _$_CreateAccountAuthenticationState;
+      {@required
+          bool isSubmitting,
+      @required
+          bool showErrorMessages,
+      @required
+          EmailAddress emailAddress,
+      @required
+          Option<Either<AuthenticationFailure, AuthenticationSuccess>>
+              authenticationFailureOrSuccessOption,
+      @required
+          Password confirmPassword,
+      @required
+          Password password,
+      @required
+          Username username}) = _$_CreateAccountAuthenticationState;
 
-  @override
-  EmailAddress get emailAddress;
-  @override
-  Password get password;
-  @override
-  Password get confirmPassword;
-  @override
-  Username get username;
-  @override
-  bool get showErrorMessages;
   @override
   bool get isSubmitting;
   @override
+  bool get showErrorMessages;
+  @override
+  EmailAddress get emailAddress;
+  @override
   Option<Either<AuthenticationFailure, AuthenticationSuccess>>
       get authenticationFailureOrSuccessOption;
+  @override
+  Password get confirmPassword;
+  @override
+  Password get password;
+  @override
+  Username get username;
   @override
   _$CreateAccountAuthenticationStateCopyWith<_CreateAccountAuthenticationState>
       get copyWith;

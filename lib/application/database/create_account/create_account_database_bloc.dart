@@ -25,15 +25,10 @@ class CreateAccountDatabaseBloc extends Bloc<CreateAccountDatabaseEvent, CreateA
   CreateAccountDatabaseBloc(
     this._localSessionDatabaseFacade,
     this._onlineUserDatabaseFacade,
-  );
+  ) : super(CreateAccountDatabaseState.initial());
 
   @override
-  CreateAccountDatabaseState get initialState => CreateAccountDatabaseState.initial();
-
-  @override
-  Stream<CreateAccountDatabaseState> mapEventToState(
-    CreateAccountDatabaseEvent event,
-  ) async* {
+  Stream<CreateAccountDatabaseState> mapEventToState(CreateAccountDatabaseEvent event) async* {
     yield* event.map(
       accountCreatedEVT: (event) async* {
         Either<DatabaseFailure, DatabaseSuccess> failureOrSuccess;

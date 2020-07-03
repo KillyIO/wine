@@ -25,14 +25,7 @@ class WINEChapterTile extends StatelessWidget {
       onTap: onPressed,
       child: Container(
         height: MediaQuery.of(context).size.height / 8,
-        decoration: BoxDecoration(
-          border: Border(
-            bottom: BorderSide(
-              width: 0.5,
-              color: Colors.black12,
-            ),
-          ),
-        ),
+        decoration: BoxDecoration(border: Border(bottom: BorderSide(width: 0.5, color: Colors.black12))),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: <Widget>[
@@ -45,34 +38,19 @@ class WINEChapterTile extends StatelessWidget {
                   children: <Widget>[
                     TextOneLine(
                       title.isNotEmptyOrNull ? title : 'No title',
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 18.0,
-                        fontWeight: FontWeight.w400,
-                      ),
+                      style: TextStyle(color: Colors.black, fontSize: 18.0, fontWeight: FontWeight.w400),
                     ),
                     const SizedBox(height: 2.5),
-                    TextOneLine(
-                      seriesTitle,
-                      style: TextStyle(
-                        fontSize: 15.0,
-                        fontWeight: FontWeight.w300,
-                      ),
-                    ),
+                    TextOneLine(seriesTitle, style: TextStyle(fontSize: 15.0, fontWeight: FontWeight.w300)),
                   ],
                 ),
                 Padding(
                   padding: const EdgeInsets.only(left: 2.5),
-                  child: TextOneLine(
-                    authorName,
-                    style: TextStyle(color: Colors.black38, fontWeight: FontWeight.w400),
-                  ),
+                  child: TextOneLine(authorName, style: TextStyle(color: Colors.black38, fontWeight: FontWeight.w400)),
                 ),
               ],
             ),
-            CachedNetworkImage(
-              imageUrl: coverUrl,
-            ),
+            CachedNetworkImage(imageUrl: coverUrl),
           ],
         ),
       ),

@@ -6,8 +6,8 @@ class WINELoadingScreen extends StatelessWidget {
 
   const WINELoadingScreen({
     Key key,
-    this.vsync,
-    this.isLoading,
+    @required this.vsync,
+    @required this.isLoading,
   }) : super(key: key);
 
   @override

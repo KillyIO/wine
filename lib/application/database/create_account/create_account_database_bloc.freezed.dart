@@ -413,14 +413,14 @@ class _$CreateAccountDatabaseStateTearOff {
       {@required
           bool isUpdating,
       @required
-          String email,
-      @required
           Option<Either<DatabaseFailure, DatabaseSuccess>>
-              databaseFailureOrSuccessOption}) {
+              databaseFailureOrSuccessOption,
+      @required
+          String email}) {
     return _CreateAccountDatabaseState(
       isUpdating: isUpdating,
-      email: email,
       databaseFailureOrSuccessOption: databaseFailureOrSuccessOption,
+      email: email,
     );
   }
 }
@@ -430,9 +430,9 @@ const $CreateAccountDatabaseState = _$CreateAccountDatabaseStateTearOff();
 
 mixin _$CreateAccountDatabaseState {
   bool get isUpdating;
-  String get email;
   Option<Either<DatabaseFailure, DatabaseSuccess>>
       get databaseFailureOrSuccessOption;
+  String get email;
 
   $CreateAccountDatabaseStateCopyWith<CreateAccountDatabaseState> get copyWith;
 }
@@ -443,9 +443,9 @@ abstract class $CreateAccountDatabaseStateCopyWith<$Res> {
       _$CreateAccountDatabaseStateCopyWithImpl<$Res>;
   $Res call(
       {bool isUpdating,
-      String email,
       Option<Either<DatabaseFailure, DatabaseSuccess>>
-          databaseFailureOrSuccessOption});
+          databaseFailureOrSuccessOption,
+      String email});
 }
 
 class _$CreateAccountDatabaseStateCopyWithImpl<$Res>
@@ -459,17 +459,17 @@ class _$CreateAccountDatabaseStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object isUpdating = freezed,
-    Object email = freezed,
     Object databaseFailureOrSuccessOption = freezed,
+    Object email = freezed,
   }) {
     return _then(_value.copyWith(
       isUpdating:
           isUpdating == freezed ? _value.isUpdating : isUpdating as bool,
-      email: email == freezed ? _value.email : email as String,
       databaseFailureOrSuccessOption: databaseFailureOrSuccessOption == freezed
           ? _value.databaseFailureOrSuccessOption
           : databaseFailureOrSuccessOption
               as Option<Either<DatabaseFailure, DatabaseSuccess>>,
+      email: email == freezed ? _value.email : email as String,
     ));
   }
 }
@@ -483,9 +483,9 @@ abstract class _$CreateAccountDatabaseStateCopyWith<$Res>
   @override
   $Res call(
       {bool isUpdating,
-      String email,
       Option<Either<DatabaseFailure, DatabaseSuccess>>
-          databaseFailureOrSuccessOption});
+          databaseFailureOrSuccessOption,
+      String email});
 }
 
 class __$CreateAccountDatabaseStateCopyWithImpl<$Res>
@@ -502,17 +502,17 @@ class __$CreateAccountDatabaseStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object isUpdating = freezed,
-    Object email = freezed,
     Object databaseFailureOrSuccessOption = freezed,
+    Object email = freezed,
   }) {
     return _then(_CreateAccountDatabaseState(
       isUpdating:
           isUpdating == freezed ? _value.isUpdating : isUpdating as bool,
-      email: email == freezed ? _value.email : email as String,
       databaseFailureOrSuccessOption: databaseFailureOrSuccessOption == freezed
           ? _value.databaseFailureOrSuccessOption
           : databaseFailureOrSuccessOption
               as Option<Either<DatabaseFailure, DatabaseSuccess>>,
+      email: email == freezed ? _value.email : email as String,
     ));
   }
 }
@@ -520,23 +520,23 @@ class __$CreateAccountDatabaseStateCopyWithImpl<$Res>
 class _$_CreateAccountDatabaseState implements _CreateAccountDatabaseState {
   const _$_CreateAccountDatabaseState(
       {@required this.isUpdating,
-      @required this.email,
-      @required this.databaseFailureOrSuccessOption})
+      @required this.databaseFailureOrSuccessOption,
+      @required this.email})
       : assert(isUpdating != null),
-        assert(email != null),
-        assert(databaseFailureOrSuccessOption != null);
+        assert(databaseFailureOrSuccessOption != null),
+        assert(email != null);
 
   @override
   final bool isUpdating;
   @override
-  final String email;
-  @override
   final Option<Either<DatabaseFailure, DatabaseSuccess>>
       databaseFailureOrSuccessOption;
+  @override
+  final String email;
 
   @override
   String toString() {
-    return 'CreateAccountDatabaseState(isUpdating: $isUpdating, email: $email, databaseFailureOrSuccessOption: $databaseFailureOrSuccessOption)';
+    return 'CreateAccountDatabaseState(isUpdating: $isUpdating, databaseFailureOrSuccessOption: $databaseFailureOrSuccessOption, email: $email)';
   }
 
   @override
@@ -546,21 +546,21 @@ class _$_CreateAccountDatabaseState implements _CreateAccountDatabaseState {
             (identical(other.isUpdating, isUpdating) ||
                 const DeepCollectionEquality()
                     .equals(other.isUpdating, isUpdating)) &&
-            (identical(other.email, email) ||
-                const DeepCollectionEquality().equals(other.email, email)) &&
             (identical(other.databaseFailureOrSuccessOption,
                     databaseFailureOrSuccessOption) ||
                 const DeepCollectionEquality().equals(
                     other.databaseFailureOrSuccessOption,
-                    databaseFailureOrSuccessOption)));
+                    databaseFailureOrSuccessOption)) &&
+            (identical(other.email, email) ||
+                const DeepCollectionEquality().equals(other.email, email)));
   }
 
   @override
   int get hashCode =>
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(isUpdating) ^
-      const DeepCollectionEquality().hash(email) ^
-      const DeepCollectionEquality().hash(databaseFailureOrSuccessOption);
+      const DeepCollectionEquality().hash(databaseFailureOrSuccessOption) ^
+      const DeepCollectionEquality().hash(email);
 
   @override
   _$CreateAccountDatabaseStateCopyWith<_CreateAccountDatabaseState>
@@ -574,18 +574,18 @@ abstract class _CreateAccountDatabaseState
       {@required
           bool isUpdating,
       @required
-          String email,
-      @required
           Option<Either<DatabaseFailure, DatabaseSuccess>>
-              databaseFailureOrSuccessOption}) = _$_CreateAccountDatabaseState;
+              databaseFailureOrSuccessOption,
+      @required
+          String email}) = _$_CreateAccountDatabaseState;
 
   @override
   bool get isUpdating;
   @override
-  String get email;
-  @override
   Option<Either<DatabaseFailure, DatabaseSuccess>>
       get databaseFailureOrSuccessOption;
+  @override
+  String get email;
   @override
   _$CreateAccountDatabaseStateCopyWith<_CreateAccountDatabaseState>
       get copyWith;

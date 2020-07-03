@@ -37,10 +37,7 @@ class SeriesDatabaseBloc extends Bloc<SeriesDatabaseEvent, SeriesDatabaseState> 
     this._localSessionDatabaseFacade,
     this._onlineChapterDatabaseFacade,
     this._onlineSeriesDatabaseFacade,
-  );
-
-  @override
-  SeriesDatabaseState get initialState => SeriesDatabaseState.initial();
+  ) : super(SeriesDatabaseState.initial());
 
   @override
   Stream<SeriesDatabaseState> mapEventToState(SeriesDatabaseEvent event) async* {
@@ -136,10 +133,7 @@ class SeriesDatabaseBloc extends Bloc<SeriesDatabaseEvent, SeriesDatabaseState> 
           );
         }
 
-        sailor.navigate(
-          Constants.chapterRoute,
-          args: ChapterPageArgs(chapter: chapterOne),
-        );
+        sailor.navigate(Constants.chapterRoute, args: ChapterPageArgs(chapter: chapterOne));
 
         yield state.copyWith(chapterOne: chapterOne, databaseFailureOrSuccessOption: optionOf(failureOrSuccess));
       },

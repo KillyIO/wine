@@ -15,15 +15,10 @@ part 'core_authentication_state.dart';
 class CoreAuthenticationBloc extends Bloc<CoreAuthenticationEvent, CoreAuthenticationState> {
   final IAuthenticationFacade _authenticationFacade;
 
-  CoreAuthenticationBloc(this._authenticationFacade);
+  CoreAuthenticationBloc(this._authenticationFacade) : super(CoreAuthenticationState.initial());
 
   @override
-  CoreAuthenticationState get initialState => CoreAuthenticationState.initial();
-
-  @override
-  Stream<CoreAuthenticationState> mapEventToState(
-    CoreAuthenticationEvent event,
-  ) async* {
+  Stream<CoreAuthenticationState> mapEventToState(CoreAuthenticationEvent event) async* {
     yield* event.map(
       appLaunchedEVT: (event) async* {
         final bool isAnonymous = await _authenticationFacade.isAnonymous();

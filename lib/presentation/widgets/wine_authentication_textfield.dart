@@ -28,15 +28,9 @@ class WINEAuthenticationTextField extends StatelessWidget {
       controller: controller,
       decoration: InputDecoration(
         hintText: hintText,
-        contentPadding: EdgeInsets.symmetric(
-          horizontal: isSignInPage ? 0.0 : 20.0,
-        ),
-        enabledBorder: UnderlineInputBorder(
-          borderSide: BorderSide(color: Colors.black26, width: 2.0),
-        ),
-        focusedBorder: const UnderlineInputBorder(
-          borderSide: BorderSide(width: 2.0),
-        ),
+        contentPadding: EdgeInsets.symmetric(horizontal: isSignInPage ? 0.0 : 20.0),
+        enabledBorder: UnderlineInputBorder(borderSide: BorderSide(color: Colors.black26, width: 2.0)),
+        focusedBorder: const UnderlineInputBorder(borderSide: BorderSide(width: 2.0)),
       ),
       cursorColor: Colors.black,
       keyboardType: keyboardType,
