@@ -1061,7 +1061,7 @@ abstract class SessionFetchedEVT implements AccountDatabaseEvent {
 class _$AccountDatabaseStateTearOff {
   const _$AccountDatabaseStateTearOff();
 
-  _AccountSettingsState call(
+  _AccountDatabaseState call(
       {@required
           bool isFetching,
       @required
@@ -1083,7 +1083,7 @@ class _$AccountDatabaseStateTearOff {
               databaseFailureOrSuccessOption,
       @required
           Session session}) {
-    return _AccountSettingsState(
+    return _AccountDatabaseState(
       isFetching: isFetching,
       chapters: chapters,
       series: series,
@@ -1184,11 +1184,11 @@ class _$AccountDatabaseStateCopyWithImpl<$Res>
   }
 }
 
-abstract class _$AccountSettingsStateCopyWith<$Res>
+abstract class _$AccountDatabaseStateCopyWith<$Res>
     implements $AccountDatabaseStateCopyWith<$Res> {
-  factory _$AccountSettingsStateCopyWith(_AccountSettingsState value,
-          $Res Function(_AccountSettingsState) then) =
-      __$AccountSettingsStateCopyWithImpl<$Res>;
+  factory _$AccountDatabaseStateCopyWith(_AccountDatabaseState value,
+          $Res Function(_AccountDatabaseState) then) =
+      __$AccountDatabaseStateCopyWithImpl<$Res>;
   @override
   $Res call(
       {bool isFetching,
@@ -1204,15 +1204,15 @@ abstract class _$AccountSettingsStateCopyWith<$Res>
       Session session});
 }
 
-class __$AccountSettingsStateCopyWithImpl<$Res>
+class __$AccountDatabaseStateCopyWithImpl<$Res>
     extends _$AccountDatabaseStateCopyWithImpl<$Res>
-    implements _$AccountSettingsStateCopyWith<$Res> {
-  __$AccountSettingsStateCopyWithImpl(
-      _AccountSettingsState _value, $Res Function(_AccountSettingsState) _then)
-      : super(_value, (v) => _then(v as _AccountSettingsState));
+    implements _$AccountDatabaseStateCopyWith<$Res> {
+  __$AccountDatabaseStateCopyWithImpl(
+      _AccountDatabaseState _value, $Res Function(_AccountDatabaseState) _then)
+      : super(_value, (v) => _then(v as _AccountDatabaseState));
 
   @override
-  _AccountSettingsState get _value => super._value as _AccountSettingsState;
+  _AccountDatabaseState get _value => super._value as _AccountDatabaseState;
 
   @override
   $Res call({
@@ -1227,7 +1227,7 @@ class __$AccountSettingsStateCopyWithImpl<$Res>
     Object databaseFailureOrSuccessOption = freezed,
     Object session = freezed,
   }) {
-    return _then(_AccountSettingsState(
+    return _then(_AccountDatabaseState(
       isFetching:
           isFetching == freezed ? _value.isFetching : isFetching as bool,
       chapters:
@@ -1255,10 +1255,10 @@ class __$AccountSettingsStateCopyWithImpl<$Res>
   }
 }
 
-class _$_AccountSettingsState
+class _$_AccountDatabaseState
     with DiagnosticableTreeMixin
-    implements _AccountSettingsState {
-  const _$_AccountSettingsState(
+    implements _AccountDatabaseState {
+  const _$_AccountDatabaseState(
       {@required this.isFetching,
       @required this.chapters,
       @required this.series,
@@ -1328,7 +1328,7 @@ class _$_AccountSettingsState
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _AccountSettingsState &&
+        (other is _AccountDatabaseState &&
             (identical(other.isFetching, isFetching) ||
                 const DeepCollectionEquality()
                     .equals(other.isFetching, isFetching)) &&
@@ -1375,13 +1375,13 @@ class _$_AccountSettingsState
       const DeepCollectionEquality().hash(session);
 
   @override
-  _$AccountSettingsStateCopyWith<_AccountSettingsState> get copyWith =>
-      __$AccountSettingsStateCopyWithImpl<_AccountSettingsState>(
+  _$AccountDatabaseStateCopyWith<_AccountDatabaseState> get copyWith =>
+      __$AccountDatabaseStateCopyWithImpl<_AccountDatabaseState>(
           this, _$identity);
 }
 
-abstract class _AccountSettingsState implements AccountDatabaseState {
-  const factory _AccountSettingsState(
+abstract class _AccountDatabaseState implements AccountDatabaseState {
+  const factory _AccountDatabaseState(
       {@required
           bool isFetching,
       @required
@@ -1402,7 +1402,7 @@ abstract class _AccountSettingsState implements AccountDatabaseState {
           Option<Either<DatabaseFailure, DatabaseSuccess>>
               databaseFailureOrSuccessOption,
       @required
-          Session session}) = _$_AccountSettingsState;
+          Session session}) = _$_AccountDatabaseState;
 
   @override
   bool get isFetching;
@@ -1426,5 +1426,5 @@ abstract class _AccountSettingsState implements AccountDatabaseState {
   @override
   Session get session;
   @override
-  _$AccountSettingsStateCopyWith<_AccountSettingsState> get copyWith;
+  _$AccountDatabaseStateCopyWith<_AccountDatabaseState> get copyWith;
 }

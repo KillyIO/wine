@@ -16,7 +16,7 @@ class AccountLayout extends StatefulWidget {
 }
 
 class _AccountLayoutState extends State<AccountLayout> with TickerProviderStateMixin {
-  final PageController _pageController = PageController(initialPage: 999);
+  final PageController _pageController = PageController(initialPage: 1002);
   AccountDatabaseMethods _acDbMethods;
   AccountNavigationMethods _acNavMethods;
   List<Widget> _pageViewLayouts;

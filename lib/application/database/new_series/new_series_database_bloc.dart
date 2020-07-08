@@ -7,6 +7,7 @@ import 'package:dartz/dartz.dart';
 import 'package:flutter/foundation.dart' hide Summary;
 import 'package:flutter/widgets.dart' hide Title;
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:hive/hive.dart';
 import 'package:image_cropper/image_cropper.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:injectable/injectable.dart';
@@ -19,6 +20,7 @@ import 'package:uuid/uuid.dart';
 import 'package:wine/domain/database/database_failure.dart';
 import 'package:wine/domain/database/database_success.dart';
 import 'package:wine/domain/database/genre.dart';
+import 'package:wine/domain/database/i_local_chapter_draft_database_facade.dart';
 import 'package:wine/domain/database/i_local_placeholder_database_facade.dart';
 import 'package:wine/domain/database/i_local_series_draft_database_facade.dart';
 import 'package:wine/domain/database/i_local_session_database_facade.dart';
@@ -26,8 +28,10 @@ import 'package:wine/domain/database/language.dart';
 import 'package:wine/domain/database/subtitle.dart';
 import 'package:wine/domain/database/summary.dart';
 import 'package:wine/domain/database/title.dart';
+import 'package:wine/domain/models/hive/chapter_draft.dart';
 import 'package:wine/domain/models/hive/series_draft.dart';
 import 'package:wine/domain/models/hive/session.dart';
+import 'package:wine/injection.dart';
 import 'package:wine/utils/constants.dart';
 import 'package:wine/utils/methods.dart';
 
@@ -38,6 +42,7 @@ part 'new_series_database_state.dart';
 @injectable
 class NewSeriesDatabaseBloc extends Bloc<NewSeriesDatabaseEvent, NewSeriesDatabaseState> {
   final ILocalSessionDatabaseFacade _localSessionDatabaseFacade;
+  final ILocalChapterDraftDatabaseFacade _localChapterDraftDatabaseFacade;
   final ILocalSeriesDraftDatabaseFacade _localSeriesDraftDatabaseFacade;
   final ILocalPlaceholderDatabaseFacade _localPlaceholderDatabaseFacade;
 
@@ -47,6 +52,7 @@ class NewSeriesDatabaseBloc extends Bloc<NewSeriesDatabaseEvent, NewSeriesDataba
 
   NewSeriesDatabaseBloc(
     this._localSessionDatabaseFacade,
+    this._localChapterDraftDatabaseFacade,
     this._localSeriesDraftDatabaseFacade,
     this._localPlaceholderDatabaseFacade,
   ) : super(NewSeriesDatabaseState.initial());
@@ -80,15 +86,30 @@ class NewSeriesDatabaseBloc extends Bloc<NewSeriesDatabaseEvent, NewSeriesDataba
           }
         }
       },
+      chapterDraftDeletedEVT: (event) async* {
+        final Either<DatabaseFailure, DatabaseSuccess> failureOrSuccess =
+            await _localSeriesDraftDatabaseFacade.deleteSeriesDraft(state.seriesDraft.uid);
+
+        yield state.copyWith(isCreatingOrDeleting: false, databaseFailureOrSuccessOption: optionOf(failureOrSuccess));
+      },
       deleteDraftButtonPressedEVT: (event) async* {
         yield state.copyWith(isCreatingOrDeleting: true, databaseFailureOrSuccessOption: none());
 
-        final String seriesDraftUid = state.seriesDraft.uid;
+        final ChapterDraft chapterDraft =
+            getIt<Box<ChapterDraft>>().values.toList().singleWhere((cD) => cD.seriesUid == state.seriesDraft.uid);
 
         final Either<DatabaseFailure, DatabaseSuccess> failureOrSuccess =
-            await _localSeriesDraftDatabaseFacade.deleteSeriesDraft(seriesDraftUid);
+            await _localChapterDraftDatabaseFacade.deleteChapterDraft(chapterDraft.uid);
+        failureOrSuccess.fold(
+          (_) {},
+          (success) {
+            if (success is ChapterDraftDeletedSCS) {
+              add(const NewSeriesDatabaseEvent.chapterDraftDeletedEVT());
+            }
+          },
+        );
 
-        yield state.copyWith(isCreatingOrDeleting: false, databaseFailureOrSuccessOption: optionOf(failureOrSuccess));
+        yield state.copyWith(databaseFailureOrSuccessOption: optionOf(failureOrSuccess));
       },
       editModeLaunchedEVT: (event) async* {
         state.subtitleController.text = event.seriesDraft.subtitle;

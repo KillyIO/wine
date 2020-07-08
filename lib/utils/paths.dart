@@ -5,12 +5,14 @@ class Paths {
 
   // SECTION DB PATHS SERIES
   static const String seriesPath = 'series';
+  static const String seriesMinified = 'series_minified';
   static const String seriesViewsPath = 'series_views';
   static const String seriesLikesPath = 'series_likes';
   static const String seriesBookmarksPath = 'series_bookmarks';
 
   // SECTION DB PATHS CHAPTERS
   static const String chaptersPath = 'chapters';
+  static const String chaptersMinified = 'chapters_minified';
   static const String chaptersViewsPath = 'chapters_views';
   static const String chaptersLikesPath = 'chapters_likes';
   static const String chaptersBookmarksPath = 'chapters_bookmarks';

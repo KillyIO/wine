@@ -12,8 +12,9 @@ T _$identity<T>(T value) => value;
 class _$HomeNavigationEventTearOff {
   const _$HomeNavigationEventTearOff();
 
-  DrawerIconPressedEVT drawerIconPressedEVT({@required bool isDrawerOpen}) {
-    return DrawerIconPressedEVT(
+  LeftDrawerIconPressedEVT leftDrawerIconPressedEVT(
+      {@required bool isDrawerOpen}) {
+    return LeftDrawerIconPressedEVT(
       isDrawerOpen: isDrawerOpen,
     );
   }
@@ -40,6 +41,13 @@ class _$HomeNavigationEventTearOff {
   ResetBlocEVT resetBlocEVT() {
     return const ResetBlocEVT();
   }
+
+  RightDrawerIconPressedEVT rightDrawerIconPressedEVT(
+      {@required bool isDrawerOpen}) {
+    return RightDrawerIconPressedEVT(
+      isDrawerOpen: isDrawerOpen,
+    );
+  }
 }
 
 // ignore: unused_element
@@ -48,36 +56,40 @@ const $HomeNavigationEvent = _$HomeNavigationEventTearOff();
 mixin _$HomeNavigationEvent {
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result drawerIconPressedEVT(bool isDrawerOpen),
+    @required Result leftDrawerIconPressedEVT(bool isDrawerOpen),
     @required Result homePageLaunchedEVT(BuildContext context),
     @required Result newSeriesIconPressedEVT(bool isNewSeriesPageOpen),
     @required Result pageViewIndexChangedEVT(int index),
     @required Result resetBlocEVT(),
+    @required Result rightDrawerIconPressedEVT(bool isDrawerOpen),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result drawerIconPressedEVT(bool isDrawerOpen),
+    Result leftDrawerIconPressedEVT(bool isDrawerOpen),
     Result homePageLaunchedEVT(BuildContext context),
     Result newSeriesIconPressedEVT(bool isNewSeriesPageOpen),
     Result pageViewIndexChangedEVT(int index),
     Result resetBlocEVT(),
+    Result rightDrawerIconPressedEVT(bool isDrawerOpen),
     @required Result orElse(),
   });
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result drawerIconPressedEVT(DrawerIconPressedEVT value),
+    @required Result leftDrawerIconPressedEVT(LeftDrawerIconPressedEVT value),
     @required Result homePageLaunchedEVT(HomePageLaunchedEVT value),
     @required Result newSeriesIconPressedEVT(NewSeriesIconPressedEVT value),
     @required Result pageViewIndexChangedEVT(PageViewIndexChangedEVT value),
     @required Result resetBlocEVT(ResetBlocEVT value),
+    @required Result rightDrawerIconPressedEVT(RightDrawerIconPressedEVT value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result drawerIconPressedEVT(DrawerIconPressedEVT value),
+    Result leftDrawerIconPressedEVT(LeftDrawerIconPressedEVT value),
     Result homePageLaunchedEVT(HomePageLaunchedEVT value),
     Result newSeriesIconPressedEVT(NewSeriesIconPressedEVT value),
     Result pageViewIndexChangedEVT(PageViewIndexChangedEVT value),
     Result resetBlocEVT(ResetBlocEVT value),
+    Result rightDrawerIconPressedEVT(RightDrawerIconPressedEVT value),
     @required Result orElse(),
   });
 }
@@ -97,38 +109,39 @@ class _$HomeNavigationEventCopyWithImpl<$Res>
   final $Res Function(HomeNavigationEvent) _then;
 }
 
-abstract class $DrawerIconPressedEVTCopyWith<$Res> {
-  factory $DrawerIconPressedEVTCopyWith(DrawerIconPressedEVT value,
-          $Res Function(DrawerIconPressedEVT) then) =
-      _$DrawerIconPressedEVTCopyWithImpl<$Res>;
+abstract class $LeftDrawerIconPressedEVTCopyWith<$Res> {
+  factory $LeftDrawerIconPressedEVTCopyWith(LeftDrawerIconPressedEVT value,
+          $Res Function(LeftDrawerIconPressedEVT) then) =
+      _$LeftDrawerIconPressedEVTCopyWithImpl<$Res>;
   $Res call({bool isDrawerOpen});
 }
 
-class _$DrawerIconPressedEVTCopyWithImpl<$Res>
+class _$LeftDrawerIconPressedEVTCopyWithImpl<$Res>
     extends _$HomeNavigationEventCopyWithImpl<$Res>
-    implements $DrawerIconPressedEVTCopyWith<$Res> {
-  _$DrawerIconPressedEVTCopyWithImpl(
-      DrawerIconPressedEVT _value, $Res Function(DrawerIconPressedEVT) _then)
-      : super(_value, (v) => _then(v as DrawerIconPressedEVT));
+    implements $LeftDrawerIconPressedEVTCopyWith<$Res> {
+  _$LeftDrawerIconPressedEVTCopyWithImpl(LeftDrawerIconPressedEVT _value,
+      $Res Function(LeftDrawerIconPressedEVT) _then)
+      : super(_value, (v) => _then(v as LeftDrawerIconPressedEVT));
 
   @override
-  DrawerIconPressedEVT get _value => super._value as DrawerIconPressedEVT;
+  LeftDrawerIconPressedEVT get _value =>
+      super._value as LeftDrawerIconPressedEVT;
 
   @override
   $Res call({
     Object isDrawerOpen = freezed,
   }) {
-    return _then(DrawerIconPressedEVT(
+    return _then(LeftDrawerIconPressedEVT(
       isDrawerOpen:
           isDrawerOpen == freezed ? _value.isDrawerOpen : isDrawerOpen as bool,
     ));
   }
 }
 
-class _$DrawerIconPressedEVT
+class _$LeftDrawerIconPressedEVT
     with DiagnosticableTreeMixin
-    implements DrawerIconPressedEVT {
-  const _$DrawerIconPressedEVT({@required this.isDrawerOpen})
+    implements LeftDrawerIconPressedEVT {
+  const _$LeftDrawerIconPressedEVT({@required this.isDrawerOpen})
       : assert(isDrawerOpen != null);
 
   @override
@@ -136,7 +149,7 @@ class _$DrawerIconPressedEVT
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'HomeNavigationEvent.drawerIconPressedEVT(isDrawerOpen: $isDrawerOpen)';
+    return 'HomeNavigationEvent.leftDrawerIconPressedEVT(isDrawerOpen: $isDrawerOpen)';
   }
 
   @override
@@ -144,14 +157,14 @@ class _$DrawerIconPressedEVT
     super.debugFillProperties(properties);
     properties
       ..add(DiagnosticsProperty(
-          'type', 'HomeNavigationEvent.drawerIconPressedEVT'))
+          'type', 'HomeNavigationEvent.leftDrawerIconPressedEVT'))
       ..add(DiagnosticsProperty('isDrawerOpen', isDrawerOpen));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is DrawerIconPressedEVT &&
+        (other is LeftDrawerIconPressedEVT &&
             (identical(other.isDrawerOpen, isDrawerOpen) ||
                 const DeepCollectionEquality()
                     .equals(other.isDrawerOpen, isDrawerOpen)));
@@ -162,40 +175,43 @@ class _$DrawerIconPressedEVT
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(isDrawerOpen);
 
   @override
-  $DrawerIconPressedEVTCopyWith<DrawerIconPressedEVT> get copyWith =>
-      _$DrawerIconPressedEVTCopyWithImpl<DrawerIconPressedEVT>(
+  $LeftDrawerIconPressedEVTCopyWith<LeftDrawerIconPressedEVT> get copyWith =>
+      _$LeftDrawerIconPressedEVTCopyWithImpl<LeftDrawerIconPressedEVT>(
           this, _$identity);
 
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result drawerIconPressedEVT(bool isDrawerOpen),
+    @required Result leftDrawerIconPressedEVT(bool isDrawerOpen),
     @required Result homePageLaunchedEVT(BuildContext context),
     @required Result newSeriesIconPressedEVT(bool isNewSeriesPageOpen),
     @required Result pageViewIndexChangedEVT(int index),
     @required Result resetBlocEVT(),
+    @required Result rightDrawerIconPressedEVT(bool isDrawerOpen),
   }) {
-    assert(drawerIconPressedEVT != null);
+    assert(leftDrawerIconPressedEVT != null);
     assert(homePageLaunchedEVT != null);
     assert(newSeriesIconPressedEVT != null);
     assert(pageViewIndexChangedEVT != null);
     assert(resetBlocEVT != null);
-    return drawerIconPressedEVT(isDrawerOpen);
+    assert(rightDrawerIconPressedEVT != null);
+    return leftDrawerIconPressedEVT(isDrawerOpen);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result drawerIconPressedEVT(bool isDrawerOpen),
+    Result leftDrawerIconPressedEVT(bool isDrawerOpen),
     Result homePageLaunchedEVT(BuildContext context),
     Result newSeriesIconPressedEVT(bool isNewSeriesPageOpen),
     Result pageViewIndexChangedEVT(int index),
     Result resetBlocEVT(),
+    Result rightDrawerIconPressedEVT(bool isDrawerOpen),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (drawerIconPressedEVT != null) {
-      return drawerIconPressedEVT(isDrawerOpen);
+    if (leftDrawerIconPressedEVT != null) {
+      return leftDrawerIconPressedEVT(isDrawerOpen);
     }
     return orElse();
   }
@@ -203,44 +219,47 @@ class _$DrawerIconPressedEVT
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result drawerIconPressedEVT(DrawerIconPressedEVT value),
+    @required Result leftDrawerIconPressedEVT(LeftDrawerIconPressedEVT value),
     @required Result homePageLaunchedEVT(HomePageLaunchedEVT value),
     @required Result newSeriesIconPressedEVT(NewSeriesIconPressedEVT value),
     @required Result pageViewIndexChangedEVT(PageViewIndexChangedEVT value),
     @required Result resetBlocEVT(ResetBlocEVT value),
+    @required Result rightDrawerIconPressedEVT(RightDrawerIconPressedEVT value),
   }) {
-    assert(drawerIconPressedEVT != null);
+    assert(leftDrawerIconPressedEVT != null);
     assert(homePageLaunchedEVT != null);
     assert(newSeriesIconPressedEVT != null);
     assert(pageViewIndexChangedEVT != null);
     assert(resetBlocEVT != null);
-    return drawerIconPressedEVT(this);
+    assert(rightDrawerIconPressedEVT != null);
+    return leftDrawerIconPressedEVT(this);
   }
 
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result drawerIconPressedEVT(DrawerIconPressedEVT value),
+    Result leftDrawerIconPressedEVT(LeftDrawerIconPressedEVT value),
     Result homePageLaunchedEVT(HomePageLaunchedEVT value),
     Result newSeriesIconPressedEVT(NewSeriesIconPressedEVT value),
     Result pageViewIndexChangedEVT(PageViewIndexChangedEVT value),
     Result resetBlocEVT(ResetBlocEVT value),
+    Result rightDrawerIconPressedEVT(RightDrawerIconPressedEVT value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (drawerIconPressedEVT != null) {
-      return drawerIconPressedEVT(this);
+    if (leftDrawerIconPressedEVT != null) {
+      return leftDrawerIconPressedEVT(this);
     }
     return orElse();
   }
 }
 
-abstract class DrawerIconPressedEVT implements HomeNavigationEvent {
-  const factory DrawerIconPressedEVT({@required bool isDrawerOpen}) =
-      _$DrawerIconPressedEVT;
+abstract class LeftDrawerIconPressedEVT implements HomeNavigationEvent {
+  const factory LeftDrawerIconPressedEVT({@required bool isDrawerOpen}) =
+      _$LeftDrawerIconPressedEVT;
 
   bool get isDrawerOpen;
-  $DrawerIconPressedEVTCopyWith<DrawerIconPressedEVT> get copyWith;
+  $LeftDrawerIconPressedEVTCopyWith<LeftDrawerIconPressedEVT> get copyWith;
 }
 
 abstract class $HomePageLaunchedEVTCopyWith<$Res> {
@@ -311,28 +330,31 @@ class _$HomePageLaunchedEVT
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result drawerIconPressedEVT(bool isDrawerOpen),
+    @required Result leftDrawerIconPressedEVT(bool isDrawerOpen),
     @required Result homePageLaunchedEVT(BuildContext context),
     @required Result newSeriesIconPressedEVT(bool isNewSeriesPageOpen),
     @required Result pageViewIndexChangedEVT(int index),
     @required Result resetBlocEVT(),
+    @required Result rightDrawerIconPressedEVT(bool isDrawerOpen),
   }) {
-    assert(drawerIconPressedEVT != null);
+    assert(leftDrawerIconPressedEVT != null);
     assert(homePageLaunchedEVT != null);
     assert(newSeriesIconPressedEVT != null);
     assert(pageViewIndexChangedEVT != null);
     assert(resetBlocEVT != null);
+    assert(rightDrawerIconPressedEVT != null);
     return homePageLaunchedEVT(context);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result drawerIconPressedEVT(bool isDrawerOpen),
+    Result leftDrawerIconPressedEVT(bool isDrawerOpen),
     Result homePageLaunchedEVT(BuildContext context),
     Result newSeriesIconPressedEVT(bool isNewSeriesPageOpen),
     Result pageViewIndexChangedEVT(int index),
     Result resetBlocEVT(),
+    Result rightDrawerIconPressedEVT(bool isDrawerOpen),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -345,28 +367,31 @@ class _$HomePageLaunchedEVT
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result drawerIconPressedEVT(DrawerIconPressedEVT value),
+    @required Result leftDrawerIconPressedEVT(LeftDrawerIconPressedEVT value),
     @required Result homePageLaunchedEVT(HomePageLaunchedEVT value),
     @required Result newSeriesIconPressedEVT(NewSeriesIconPressedEVT value),
     @required Result pageViewIndexChangedEVT(PageViewIndexChangedEVT value),
     @required Result resetBlocEVT(ResetBlocEVT value),
+    @required Result rightDrawerIconPressedEVT(RightDrawerIconPressedEVT value),
   }) {
-    assert(drawerIconPressedEVT != null);
+    assert(leftDrawerIconPressedEVT != null);
     assert(homePageLaunchedEVT != null);
     assert(newSeriesIconPressedEVT != null);
     assert(pageViewIndexChangedEVT != null);
     assert(resetBlocEVT != null);
+    assert(rightDrawerIconPressedEVT != null);
     return homePageLaunchedEVT(this);
   }
 
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result drawerIconPressedEVT(DrawerIconPressedEVT value),
+    Result leftDrawerIconPressedEVT(LeftDrawerIconPressedEVT value),
     Result homePageLaunchedEVT(HomePageLaunchedEVT value),
     Result newSeriesIconPressedEVT(NewSeriesIconPressedEVT value),
     Result pageViewIndexChangedEVT(PageViewIndexChangedEVT value),
     Result resetBlocEVT(ResetBlocEVT value),
+    Result rightDrawerIconPressedEVT(RightDrawerIconPressedEVT value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -459,28 +484,31 @@ class _$NewSeriesIconPressedEVT
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result drawerIconPressedEVT(bool isDrawerOpen),
+    @required Result leftDrawerIconPressedEVT(bool isDrawerOpen),
     @required Result homePageLaunchedEVT(BuildContext context),
     @required Result newSeriesIconPressedEVT(bool isNewSeriesPageOpen),
     @required Result pageViewIndexChangedEVT(int index),
     @required Result resetBlocEVT(),
+    @required Result rightDrawerIconPressedEVT(bool isDrawerOpen),
   }) {
-    assert(drawerIconPressedEVT != null);
+    assert(leftDrawerIconPressedEVT != null);
     assert(homePageLaunchedEVT != null);
     assert(newSeriesIconPressedEVT != null);
     assert(pageViewIndexChangedEVT != null);
     assert(resetBlocEVT != null);
+    assert(rightDrawerIconPressedEVT != null);
     return newSeriesIconPressedEVT(isNewSeriesPageOpen);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result drawerIconPressedEVT(bool isDrawerOpen),
+    Result leftDrawerIconPressedEVT(bool isDrawerOpen),
     Result homePageLaunchedEVT(BuildContext context),
     Result newSeriesIconPressedEVT(bool isNewSeriesPageOpen),
     Result pageViewIndexChangedEVT(int index),
     Result resetBlocEVT(),
+    Result rightDrawerIconPressedEVT(bool isDrawerOpen),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -493,28 +521,31 @@ class _$NewSeriesIconPressedEVT
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result drawerIconPressedEVT(DrawerIconPressedEVT value),
+    @required Result leftDrawerIconPressedEVT(LeftDrawerIconPressedEVT value),
     @required Result homePageLaunchedEVT(HomePageLaunchedEVT value),
     @required Result newSeriesIconPressedEVT(NewSeriesIconPressedEVT value),
     @required Result pageViewIndexChangedEVT(PageViewIndexChangedEVT value),
     @required Result resetBlocEVT(ResetBlocEVT value),
+    @required Result rightDrawerIconPressedEVT(RightDrawerIconPressedEVT value),
   }) {
-    assert(drawerIconPressedEVT != null);
+    assert(leftDrawerIconPressedEVT != null);
     assert(homePageLaunchedEVT != null);
     assert(newSeriesIconPressedEVT != null);
     assert(pageViewIndexChangedEVT != null);
     assert(resetBlocEVT != null);
+    assert(rightDrawerIconPressedEVT != null);
     return newSeriesIconPressedEVT(this);
   }
 
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result drawerIconPressedEVT(DrawerIconPressedEVT value),
+    Result leftDrawerIconPressedEVT(LeftDrawerIconPressedEVT value),
     Result homePageLaunchedEVT(HomePageLaunchedEVT value),
     Result newSeriesIconPressedEVT(NewSeriesIconPressedEVT value),
     Result pageViewIndexChangedEVT(PageViewIndexChangedEVT value),
     Result resetBlocEVT(ResetBlocEVT value),
+    Result rightDrawerIconPressedEVT(RightDrawerIconPressedEVT value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -603,28 +634,31 @@ class _$PageViewIndexChangedEVT
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result drawerIconPressedEVT(bool isDrawerOpen),
+    @required Result leftDrawerIconPressedEVT(bool isDrawerOpen),
     @required Result homePageLaunchedEVT(BuildContext context),
     @required Result newSeriesIconPressedEVT(bool isNewSeriesPageOpen),
     @required Result pageViewIndexChangedEVT(int index),
     @required Result resetBlocEVT(),
+    @required Result rightDrawerIconPressedEVT(bool isDrawerOpen),
   }) {
-    assert(drawerIconPressedEVT != null);
+    assert(leftDrawerIconPressedEVT != null);
     assert(homePageLaunchedEVT != null);
     assert(newSeriesIconPressedEVT != null);
     assert(pageViewIndexChangedEVT != null);
     assert(resetBlocEVT != null);
+    assert(rightDrawerIconPressedEVT != null);
     return pageViewIndexChangedEVT(index);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result drawerIconPressedEVT(bool isDrawerOpen),
+    Result leftDrawerIconPressedEVT(bool isDrawerOpen),
     Result homePageLaunchedEVT(BuildContext context),
     Result newSeriesIconPressedEVT(bool isNewSeriesPageOpen),
     Result pageViewIndexChangedEVT(int index),
     Result resetBlocEVT(),
+    Result rightDrawerIconPressedEVT(bool isDrawerOpen),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -637,28 +671,31 @@ class _$PageViewIndexChangedEVT
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result drawerIconPressedEVT(DrawerIconPressedEVT value),
+    @required Result leftDrawerIconPressedEVT(LeftDrawerIconPressedEVT value),
     @required Result homePageLaunchedEVT(HomePageLaunchedEVT value),
     @required Result newSeriesIconPressedEVT(NewSeriesIconPressedEVT value),
     @required Result pageViewIndexChangedEVT(PageViewIndexChangedEVT value),
     @required Result resetBlocEVT(ResetBlocEVT value),
+    @required Result rightDrawerIconPressedEVT(RightDrawerIconPressedEVT value),
   }) {
-    assert(drawerIconPressedEVT != null);
+    assert(leftDrawerIconPressedEVT != null);
     assert(homePageLaunchedEVT != null);
     assert(newSeriesIconPressedEVT != null);
     assert(pageViewIndexChangedEVT != null);
     assert(resetBlocEVT != null);
+    assert(rightDrawerIconPressedEVT != null);
     return pageViewIndexChangedEVT(this);
   }
 
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result drawerIconPressedEVT(DrawerIconPressedEVT value),
+    Result leftDrawerIconPressedEVT(LeftDrawerIconPressedEVT value),
     Result homePageLaunchedEVT(HomePageLaunchedEVT value),
     Result newSeriesIconPressedEVT(NewSeriesIconPressedEVT value),
     Result pageViewIndexChangedEVT(PageViewIndexChangedEVT value),
     Result resetBlocEVT(ResetBlocEVT value),
+    Result rightDrawerIconPressedEVT(RightDrawerIconPressedEVT value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -720,28 +757,31 @@ class _$ResetBlocEVT with DiagnosticableTreeMixin implements ResetBlocEVT {
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
-    @required Result drawerIconPressedEVT(bool isDrawerOpen),
+    @required Result leftDrawerIconPressedEVT(bool isDrawerOpen),
     @required Result homePageLaunchedEVT(BuildContext context),
     @required Result newSeriesIconPressedEVT(bool isNewSeriesPageOpen),
     @required Result pageViewIndexChangedEVT(int index),
     @required Result resetBlocEVT(),
+    @required Result rightDrawerIconPressedEVT(bool isDrawerOpen),
   }) {
-    assert(drawerIconPressedEVT != null);
+    assert(leftDrawerIconPressedEVT != null);
     assert(homePageLaunchedEVT != null);
     assert(newSeriesIconPressedEVT != null);
     assert(pageViewIndexChangedEVT != null);
     assert(resetBlocEVT != null);
+    assert(rightDrawerIconPressedEVT != null);
     return resetBlocEVT();
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
-    Result drawerIconPressedEVT(bool isDrawerOpen),
+    Result leftDrawerIconPressedEVT(bool isDrawerOpen),
     Result homePageLaunchedEVT(BuildContext context),
     Result newSeriesIconPressedEVT(bool isNewSeriesPageOpen),
     Result pageViewIndexChangedEVT(int index),
     Result resetBlocEVT(),
+    Result rightDrawerIconPressedEVT(bool isDrawerOpen),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -754,28 +794,31 @@ class _$ResetBlocEVT with DiagnosticableTreeMixin implements ResetBlocEVT {
   @override
   @optionalTypeArgs
   Result map<Result extends Object>({
-    @required Result drawerIconPressedEVT(DrawerIconPressedEVT value),
+    @required Result leftDrawerIconPressedEVT(LeftDrawerIconPressedEVT value),
     @required Result homePageLaunchedEVT(HomePageLaunchedEVT value),
     @required Result newSeriesIconPressedEVT(NewSeriesIconPressedEVT value),
     @required Result pageViewIndexChangedEVT(PageViewIndexChangedEVT value),
     @required Result resetBlocEVT(ResetBlocEVT value),
+    @required Result rightDrawerIconPressedEVT(RightDrawerIconPressedEVT value),
   }) {
-    assert(drawerIconPressedEVT != null);
+    assert(leftDrawerIconPressedEVT != null);
     assert(homePageLaunchedEVT != null);
     assert(newSeriesIconPressedEVT != null);
     assert(pageViewIndexChangedEVT != null);
     assert(resetBlocEVT != null);
+    assert(rightDrawerIconPressedEVT != null);
     return resetBlocEVT(this);
   }
 
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
-    Result drawerIconPressedEVT(DrawerIconPressedEVT value),
+    Result leftDrawerIconPressedEVT(LeftDrawerIconPressedEVT value),
     Result homePageLaunchedEVT(HomePageLaunchedEVT value),
     Result newSeriesIconPressedEVT(NewSeriesIconPressedEVT value),
     Result pageViewIndexChangedEVT(PageViewIndexChangedEVT value),
     Result resetBlocEVT(ResetBlocEVT value),
+    Result rightDrawerIconPressedEVT(RightDrawerIconPressedEVT value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
@@ -790,16 +833,171 @@ abstract class ResetBlocEVT implements HomeNavigationEvent {
   const factory ResetBlocEVT() = _$ResetBlocEVT;
 }
 
+abstract class $RightDrawerIconPressedEVTCopyWith<$Res> {
+  factory $RightDrawerIconPressedEVTCopyWith(RightDrawerIconPressedEVT value,
+          $Res Function(RightDrawerIconPressedEVT) then) =
+      _$RightDrawerIconPressedEVTCopyWithImpl<$Res>;
+  $Res call({bool isDrawerOpen});
+}
+
+class _$RightDrawerIconPressedEVTCopyWithImpl<$Res>
+    extends _$HomeNavigationEventCopyWithImpl<$Res>
+    implements $RightDrawerIconPressedEVTCopyWith<$Res> {
+  _$RightDrawerIconPressedEVTCopyWithImpl(RightDrawerIconPressedEVT _value,
+      $Res Function(RightDrawerIconPressedEVT) _then)
+      : super(_value, (v) => _then(v as RightDrawerIconPressedEVT));
+
+  @override
+  RightDrawerIconPressedEVT get _value =>
+      super._value as RightDrawerIconPressedEVT;
+
+  @override
+  $Res call({
+    Object isDrawerOpen = freezed,
+  }) {
+    return _then(RightDrawerIconPressedEVT(
+      isDrawerOpen:
+          isDrawerOpen == freezed ? _value.isDrawerOpen : isDrawerOpen as bool,
+    ));
+  }
+}
+
+class _$RightDrawerIconPressedEVT
+    with DiagnosticableTreeMixin
+    implements RightDrawerIconPressedEVT {
+  const _$RightDrawerIconPressedEVT({@required this.isDrawerOpen})
+      : assert(isDrawerOpen != null);
+
+  @override
+  final bool isDrawerOpen;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'HomeNavigationEvent.rightDrawerIconPressedEVT(isDrawerOpen: $isDrawerOpen)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty(
+          'type', 'HomeNavigationEvent.rightDrawerIconPressedEVT'))
+      ..add(DiagnosticsProperty('isDrawerOpen', isDrawerOpen));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is RightDrawerIconPressedEVT &&
+            (identical(other.isDrawerOpen, isDrawerOpen) ||
+                const DeepCollectionEquality()
+                    .equals(other.isDrawerOpen, isDrawerOpen)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(isDrawerOpen);
+
+  @override
+  $RightDrawerIconPressedEVTCopyWith<RightDrawerIconPressedEVT> get copyWith =>
+      _$RightDrawerIconPressedEVTCopyWithImpl<RightDrawerIconPressedEVT>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result leftDrawerIconPressedEVT(bool isDrawerOpen),
+    @required Result homePageLaunchedEVT(BuildContext context),
+    @required Result newSeriesIconPressedEVT(bool isNewSeriesPageOpen),
+    @required Result pageViewIndexChangedEVT(int index),
+    @required Result resetBlocEVT(),
+    @required Result rightDrawerIconPressedEVT(bool isDrawerOpen),
+  }) {
+    assert(leftDrawerIconPressedEVT != null);
+    assert(homePageLaunchedEVT != null);
+    assert(newSeriesIconPressedEVT != null);
+    assert(pageViewIndexChangedEVT != null);
+    assert(resetBlocEVT != null);
+    assert(rightDrawerIconPressedEVT != null);
+    return rightDrawerIconPressedEVT(isDrawerOpen);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result leftDrawerIconPressedEVT(bool isDrawerOpen),
+    Result homePageLaunchedEVT(BuildContext context),
+    Result newSeriesIconPressedEVT(bool isNewSeriesPageOpen),
+    Result pageViewIndexChangedEVT(int index),
+    Result resetBlocEVT(),
+    Result rightDrawerIconPressedEVT(bool isDrawerOpen),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (rightDrawerIconPressedEVT != null) {
+      return rightDrawerIconPressedEVT(isDrawerOpen);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result leftDrawerIconPressedEVT(LeftDrawerIconPressedEVT value),
+    @required Result homePageLaunchedEVT(HomePageLaunchedEVT value),
+    @required Result newSeriesIconPressedEVT(NewSeriesIconPressedEVT value),
+    @required Result pageViewIndexChangedEVT(PageViewIndexChangedEVT value),
+    @required Result resetBlocEVT(ResetBlocEVT value),
+    @required Result rightDrawerIconPressedEVT(RightDrawerIconPressedEVT value),
+  }) {
+    assert(leftDrawerIconPressedEVT != null);
+    assert(homePageLaunchedEVT != null);
+    assert(newSeriesIconPressedEVT != null);
+    assert(pageViewIndexChangedEVT != null);
+    assert(resetBlocEVT != null);
+    assert(rightDrawerIconPressedEVT != null);
+    return rightDrawerIconPressedEVT(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result leftDrawerIconPressedEVT(LeftDrawerIconPressedEVT value),
+    Result homePageLaunchedEVT(HomePageLaunchedEVT value),
+    Result newSeriesIconPressedEVT(NewSeriesIconPressedEVT value),
+    Result pageViewIndexChangedEVT(PageViewIndexChangedEVT value),
+    Result resetBlocEVT(ResetBlocEVT value),
+    Result rightDrawerIconPressedEVT(RightDrawerIconPressedEVT value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (rightDrawerIconPressedEVT != null) {
+      return rightDrawerIconPressedEVT(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class RightDrawerIconPressedEVT implements HomeNavigationEvent {
+  const factory RightDrawerIconPressedEVT({@required bool isDrawerOpen}) =
+      _$RightDrawerIconPressedEVT;
+
+  bool get isDrawerOpen;
+  $RightDrawerIconPressedEVTCopyWith<RightDrawerIconPressedEVT> get copyWith;
+}
+
 class _$HomeNavigationStateTearOff {
   const _$HomeNavigationStateTearOff();
 
   _HomeNavigationState call(
-      {@required bool isDrawerOpen,
+      {@required bool isLeftDrawerOpen,
+      @required bool isRightDrawerOpen,
       @required bool isNewSeriesPageOpen,
       @required int currentPageViewIdx,
       @required List<String> pageViewNavbarItems}) {
     return _HomeNavigationState(
-      isDrawerOpen: isDrawerOpen,
+      isLeftDrawerOpen: isLeftDrawerOpen,
+      isRightDrawerOpen: isRightDrawerOpen,
       isNewSeriesPageOpen: isNewSeriesPageOpen,
       currentPageViewIdx: currentPageViewIdx,
       pageViewNavbarItems: pageViewNavbarItems,
@@ -811,7 +1009,8 @@ class _$HomeNavigationStateTearOff {
 const $HomeNavigationState = _$HomeNavigationStateTearOff();
 
 mixin _$HomeNavigationState {
-  bool get isDrawerOpen;
+  bool get isLeftDrawerOpen;
+  bool get isRightDrawerOpen;
   bool get isNewSeriesPageOpen;
   int get currentPageViewIdx;
   List<String> get pageViewNavbarItems;
@@ -824,7 +1023,8 @@ abstract class $HomeNavigationStateCopyWith<$Res> {
           HomeNavigationState value, $Res Function(HomeNavigationState) then) =
       _$HomeNavigationStateCopyWithImpl<$Res>;
   $Res call(
-      {bool isDrawerOpen,
+      {bool isLeftDrawerOpen,
+      bool isRightDrawerOpen,
       bool isNewSeriesPageOpen,
       int currentPageViewIdx,
       List<String> pageViewNavbarItems});
@@ -840,14 +1040,19 @@ class _$HomeNavigationStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object isDrawerOpen = freezed,
+    Object isLeftDrawerOpen = freezed,
+    Object isRightDrawerOpen = freezed,
     Object isNewSeriesPageOpen = freezed,
     Object currentPageViewIdx = freezed,
     Object pageViewNavbarItems = freezed,
   }) {
     return _then(_value.copyWith(
-      isDrawerOpen:
-          isDrawerOpen == freezed ? _value.isDrawerOpen : isDrawerOpen as bool,
+      isLeftDrawerOpen: isLeftDrawerOpen == freezed
+          ? _value.isLeftDrawerOpen
+          : isLeftDrawerOpen as bool,
+      isRightDrawerOpen: isRightDrawerOpen == freezed
+          ? _value.isRightDrawerOpen
+          : isRightDrawerOpen as bool,
       isNewSeriesPageOpen: isNewSeriesPageOpen == freezed
           ? _value.isNewSeriesPageOpen
           : isNewSeriesPageOpen as bool,
@@ -868,7 +1073,8 @@ abstract class _$HomeNavigationStateCopyWith<$Res>
       __$HomeNavigationStateCopyWithImpl<$Res>;
   @override
   $Res call(
-      {bool isDrawerOpen,
+      {bool isLeftDrawerOpen,
+      bool isRightDrawerOpen,
       bool isNewSeriesPageOpen,
       int currentPageViewIdx,
       List<String> pageViewNavbarItems});
@@ -886,14 +1092,19 @@ class __$HomeNavigationStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object isDrawerOpen = freezed,
+    Object isLeftDrawerOpen = freezed,
+    Object isRightDrawerOpen = freezed,
     Object isNewSeriesPageOpen = freezed,
     Object currentPageViewIdx = freezed,
     Object pageViewNavbarItems = freezed,
   }) {
     return _then(_HomeNavigationState(
-      isDrawerOpen:
-          isDrawerOpen == freezed ? _value.isDrawerOpen : isDrawerOpen as bool,
+      isLeftDrawerOpen: isLeftDrawerOpen == freezed
+          ? _value.isLeftDrawerOpen
+          : isLeftDrawerOpen as bool,
+      isRightDrawerOpen: isRightDrawerOpen == freezed
+          ? _value.isRightDrawerOpen
+          : isRightDrawerOpen as bool,
       isNewSeriesPageOpen: isNewSeriesPageOpen == freezed
           ? _value.isNewSeriesPageOpen
           : isNewSeriesPageOpen as bool,
@@ -911,17 +1122,21 @@ class _$_HomeNavigationState
     with DiagnosticableTreeMixin
     implements _HomeNavigationState {
   const _$_HomeNavigationState(
-      {@required this.isDrawerOpen,
+      {@required this.isLeftDrawerOpen,
+      @required this.isRightDrawerOpen,
       @required this.isNewSeriesPageOpen,
       @required this.currentPageViewIdx,
       @required this.pageViewNavbarItems})
-      : assert(isDrawerOpen != null),
+      : assert(isLeftDrawerOpen != null),
+        assert(isRightDrawerOpen != null),
         assert(isNewSeriesPageOpen != null),
         assert(currentPageViewIdx != null),
         assert(pageViewNavbarItems != null);
 
   @override
-  final bool isDrawerOpen;
+  final bool isLeftDrawerOpen;
+  @override
+  final bool isRightDrawerOpen;
   @override
   final bool isNewSeriesPageOpen;
   @override
@@ -931,7 +1146,7 @@ class _$_HomeNavigationState
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'HomeNavigationState(isDrawerOpen: $isDrawerOpen, isNewSeriesPageOpen: $isNewSeriesPageOpen, currentPageViewIdx: $currentPageViewIdx, pageViewNavbarItems: $pageViewNavbarItems)';
+    return 'HomeNavigationState(isLeftDrawerOpen: $isLeftDrawerOpen, isRightDrawerOpen: $isRightDrawerOpen, isNewSeriesPageOpen: $isNewSeriesPageOpen, currentPageViewIdx: $currentPageViewIdx, pageViewNavbarItems: $pageViewNavbarItems)';
   }
 
   @override
@@ -939,7 +1154,8 @@ class _$_HomeNavigationState
     super.debugFillProperties(properties);
     properties
       ..add(DiagnosticsProperty('type', 'HomeNavigationState'))
-      ..add(DiagnosticsProperty('isDrawerOpen', isDrawerOpen))
+      ..add(DiagnosticsProperty('isLeftDrawerOpen', isLeftDrawerOpen))
+      ..add(DiagnosticsProperty('isRightDrawerOpen', isRightDrawerOpen))
       ..add(DiagnosticsProperty('isNewSeriesPageOpen', isNewSeriesPageOpen))
       ..add(DiagnosticsProperty('currentPageViewIdx', currentPageViewIdx))
       ..add(DiagnosticsProperty('pageViewNavbarItems', pageViewNavbarItems));
@@ -949,9 +1165,12 @@ class _$_HomeNavigationState
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _HomeNavigationState &&
-            (identical(other.isDrawerOpen, isDrawerOpen) ||
+            (identical(other.isLeftDrawerOpen, isLeftDrawerOpen) ||
                 const DeepCollectionEquality()
-                    .equals(other.isDrawerOpen, isDrawerOpen)) &&
+                    .equals(other.isLeftDrawerOpen, isLeftDrawerOpen)) &&
+            (identical(other.isRightDrawerOpen, isRightDrawerOpen) ||
+                const DeepCollectionEquality()
+                    .equals(other.isRightDrawerOpen, isRightDrawerOpen)) &&
             (identical(other.isNewSeriesPageOpen, isNewSeriesPageOpen) ||
                 const DeepCollectionEquality()
                     .equals(other.isNewSeriesPageOpen, isNewSeriesPageOpen)) &&
@@ -966,7 +1185,8 @@ class _$_HomeNavigationState
   @override
   int get hashCode =>
       runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(isDrawerOpen) ^
+      const DeepCollectionEquality().hash(isLeftDrawerOpen) ^
+      const DeepCollectionEquality().hash(isRightDrawerOpen) ^
       const DeepCollectionEquality().hash(isNewSeriesPageOpen) ^
       const DeepCollectionEquality().hash(currentPageViewIdx) ^
       const DeepCollectionEquality().hash(pageViewNavbarItems);
@@ -979,13 +1199,16 @@ class _$_HomeNavigationState
 
 abstract class _HomeNavigationState implements HomeNavigationState {
   const factory _HomeNavigationState(
-      {@required bool isDrawerOpen,
+      {@required bool isLeftDrawerOpen,
+      @required bool isRightDrawerOpen,
       @required bool isNewSeriesPageOpen,
       @required int currentPageViewIdx,
       @required List<String> pageViewNavbarItems}) = _$_HomeNavigationState;
 
   @override
-  bool get isDrawerOpen;
+  bool get isLeftDrawerOpen;
+  @override
+  bool get isRightDrawerOpen;
   @override
   bool get isNewSeriesPageOpen;
   @override

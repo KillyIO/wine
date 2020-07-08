@@ -43,7 +43,10 @@ class AccountMyPublishedChaptersLayout extends StatelessWidget {
                   title: chapter.title,
                   authorName: acDbState.session.username,
                   seriesTitle: chapter.series.title,
-                  onPressed: () => sailor.navigate(Constants.chapterRoute, args: ChapterPageArgs(chapter: chapter)),
+                  onPressed: () => sailor.navigate(
+                    Constants.chapterRoute,
+                    args: ChapterPageArgs(chapter: chapter, predicateRoute: Constants.accountRoute),
+                  ),
                 ),
               );
             },

@@ -3,6 +3,7 @@ part of 'new_series_database_bloc.dart';
 @freezed
 abstract class NewSeriesDatabaseEvent with _$NewSeriesDatabaseEvent {
   const factory NewSeriesDatabaseEvent.addCoverPressedEVT() = AddCoverPressedEVT;
+  const factory NewSeriesDatabaseEvent.chapterDraftDeletedEVT() = ChapterDraftDeletedEVT;
   const factory NewSeriesDatabaseEvent.deleteDraftButtonPressedEVT() = DeleteDraftButtonPressedEVT;
   const factory NewSeriesDatabaseEvent.editModeLaunchedEVT(SeriesDraft seriesDraft) = EditModeLaunchedEVT;
   const factory NewSeriesDatabaseEvent.genreOptionalSelectedEVT(String genreOptional) = GenreOptionalSelectedEVT;

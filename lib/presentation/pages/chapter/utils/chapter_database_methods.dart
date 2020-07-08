@@ -33,7 +33,7 @@ class ChapterDatabaseMethods {
     @required Chapter sameAuthorChapter,
     @required List<Chapter> nextChapters,
   }) {
-    if (currentChapter.isEnd) {
+    if (currentChapter.isEnd || sessionUid == null) {
       return false;
     } else {
       if (sessionUid == currentChapter.authorUid) {

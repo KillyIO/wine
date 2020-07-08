@@ -133,7 +133,10 @@ class SeriesDatabaseBloc extends Bloc<SeriesDatabaseEvent, SeriesDatabaseState> 
           );
         }
 
-        sailor.navigate(Constants.chapterRoute, args: ChapterPageArgs(chapter: chapterOne));
+        sailor.navigate(
+          Constants.chapterRoute,
+          args: ChapterPageArgs(chapter: chapterOne, predicateRoute: Constants.seriesRoute),
+        );
 
         yield state.copyWith(chapterOne: chapterOne, databaseFailureOrSuccessOption: optionOf(failureOrSuccess));
       },

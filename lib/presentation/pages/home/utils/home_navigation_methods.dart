@@ -1,8 +1,6 @@
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:wine/application/navigation/home/home_navigation_bloc.dart';
-import 'package:wine/routes.dart';
-import 'package:wine/utils/constants.dart';
 
 class HomeNavigationMethods {
   final BuildContext context;
@@ -12,15 +10,11 @@ class HomeNavigationMethods {
   void pageViewIndexChanged(int index) =>
       context.bloc<HomeNavigationBloc>().add(HomeNavigationEvent.pageViewIndexChangedEVT(index: index));
 
-  void openDrawer() {
-    context.bloc<HomeNavigationBloc>().add(const HomeNavigationEvent.drawerIconPressedEVT(isDrawerOpen: true));
-    sailor(Constants.homeDrawerRoute);
-  }
-
-  void closeDrawer({bool pop = false}) {
-    context.bloc<HomeNavigationBloc>().add(const HomeNavigationEvent.drawerIconPressedEVT(isDrawerOpen: false));
-    if (pop) {
-      Navigator.of(context).pop();
+  void closeDrawer({bool isRight = true}) {
+    if (isRight) {
+      context.bloc<HomeNavigationBloc>().add(const HomeNavigationEvent.rightDrawerIconPressedEVT(isDrawerOpen: false));
+    } else {
+      context.bloc<HomeNavigationBloc>().add(const HomeNavigationEvent.leftDrawerIconPressedEVT(isDrawerOpen: false));
     }
   }
 
@@ -28,6 +22,13 @@ class HomeNavigationMethods {
       .bloc<HomeNavigationBloc>()
       .add(HomeNavigationEvent.newSeriesIconPressedEVT(isNewSeriesPageOpen: isNSOpen));
 
-  void resetBloc() =>
-      context.bloc<HomeNavigationBloc>().add(const HomeNavigationEvent.resetBlocEVT());
+  void openDrawer({bool isRight = true}) {
+    if (isRight) {
+      context.bloc<HomeNavigationBloc>().add(const HomeNavigationEvent.rightDrawerIconPressedEVT(isDrawerOpen: true));
+    } else {
+      context.bloc<HomeNavigationBloc>().add(const HomeNavigationEvent.leftDrawerIconPressedEVT(isDrawerOpen: true));
+    }
+  }
+
+  void resetBloc() => context.bloc<HomeNavigationBloc>().add(const HomeNavigationEvent.resetBlocEVT());
 }

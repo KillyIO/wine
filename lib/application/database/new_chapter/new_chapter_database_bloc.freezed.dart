@@ -6572,7 +6572,7 @@ abstract class TitleChangedEVT implements NewChapterDatabaseEvent {
 class _$NewChapterDatabaseStateTearOff {
   const _$NewChapterDatabaseStateTearOff();
 
-  _NewChapterPageState call(
+  _NewChapterDatabaseState call(
       {@required
           bool isDeletingOrPublishingOrSaving,
       @required
@@ -6630,7 +6630,7 @@ class _$NewChapterDatabaseStateTearOff {
           TextEditingController titleController,
       @required
           Title title}) {
-    return _NewChapterPageState(
+    return _NewChapterDatabaseState(
       isDeletingOrPublishingOrSaving: isDeletingOrPublishingOrSaving,
       isEditMode: isEditMode,
       isEnd: isEnd,
@@ -6840,11 +6840,11 @@ class _$NewChapterDatabaseStateCopyWithImpl<$Res>
   }
 }
 
-abstract class _$NewChapterPageStateCopyWith<$Res>
+abstract class _$NewChapterDatabaseStateCopyWith<$Res>
     implements $NewChapterDatabaseStateCopyWith<$Res> {
-  factory _$NewChapterPageStateCopyWith(_NewChapterPageState value,
-          $Res Function(_NewChapterPageState) then) =
-      __$NewChapterPageStateCopyWithImpl<$Res>;
+  factory _$NewChapterDatabaseStateCopyWith(_NewChapterDatabaseState value,
+          $Res Function(_NewChapterDatabaseState) then) =
+      __$NewChapterDatabaseStateCopyWithImpl<$Res>;
   @override
   $Res call(
       {bool isDeletingOrPublishingOrSaving,
@@ -6877,15 +6877,16 @@ abstract class _$NewChapterPageStateCopyWith<$Res>
       Title title});
 }
 
-class __$NewChapterPageStateCopyWithImpl<$Res>
+class __$NewChapterDatabaseStateCopyWithImpl<$Res>
     extends _$NewChapterDatabaseStateCopyWithImpl<$Res>
-    implements _$NewChapterPageStateCopyWith<$Res> {
-  __$NewChapterPageStateCopyWithImpl(
-      _NewChapterPageState _value, $Res Function(_NewChapterPageState) _then)
-      : super(_value, (v) => _then(v as _NewChapterPageState));
+    implements _$NewChapterDatabaseStateCopyWith<$Res> {
+  __$NewChapterDatabaseStateCopyWithImpl(_NewChapterDatabaseState _value,
+      $Res Function(_NewChapterDatabaseState) _then)
+      : super(_value, (v) => _then(v as _NewChapterDatabaseState));
 
   @override
-  _NewChapterPageState get _value => super._value as _NewChapterPageState;
+  _NewChapterDatabaseState get _value =>
+      super._value as _NewChapterDatabaseState;
 
   @override
   $Res call({
@@ -6918,7 +6919,7 @@ class __$NewChapterPageStateCopyWithImpl<$Res>
     Object titleController = freezed,
     Object title = freezed,
   }) {
-    return _then(_NewChapterPageState(
+    return _then(_NewChapterDatabaseState(
       isDeletingOrPublishingOrSaving: isDeletingOrPublishingOrSaving == freezed
           ? _value.isDeletingOrPublishingOrSaving
           : isDeletingOrPublishingOrSaving as bool,
@@ -6985,10 +6986,10 @@ class __$NewChapterPageStateCopyWithImpl<$Res>
   }
 }
 
-class _$_NewChapterPageState
+class _$_NewChapterDatabaseState
     with DiagnosticableTreeMixin
-    implements _NewChapterPageState {
-  const _$_NewChapterPageState(
+    implements _NewChapterDatabaseState {
+  const _$_NewChapterDatabaseState(
       {@required this.isDeletingOrPublishingOrSaving,
       @required this.isEditMode,
       @required this.isEnd,
@@ -7148,7 +7149,7 @@ class _$_NewChapterPageState
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _NewChapterPageState &&
+        (other is _NewChapterDatabaseState &&
             (identical(other.isDeletingOrPublishingOrSaving, isDeletingOrPublishingOrSaving) ||
                 const DeepCollectionEquality().equals(
                     other.isDeletingOrPublishingOrSaving,
@@ -7245,13 +7246,13 @@ class _$_NewChapterPageState
       const DeepCollectionEquality().hash(title);
 
   @override
-  _$NewChapterPageStateCopyWith<_NewChapterPageState> get copyWith =>
-      __$NewChapterPageStateCopyWithImpl<_NewChapterPageState>(
+  _$NewChapterDatabaseStateCopyWith<_NewChapterDatabaseState> get copyWith =>
+      __$NewChapterDatabaseStateCopyWithImpl<_NewChapterDatabaseState>(
           this, _$identity);
 }
 
-abstract class _NewChapterPageState implements NewChapterDatabaseState {
-  const factory _NewChapterPageState(
+abstract class _NewChapterDatabaseState implements NewChapterDatabaseState {
+  const factory _NewChapterDatabaseState(
       {@required
           bool isDeletingOrPublishingOrSaving,
       @required
@@ -7308,7 +7309,7 @@ abstract class _NewChapterPageState implements NewChapterDatabaseState {
       @required
           TextEditingController titleController,
       @required
-          Title title}) = _$_NewChapterPageState;
+          Title title}) = _$_NewChapterDatabaseState;
 
   @override
   bool get isDeletingOrPublishingOrSaving;
@@ -7367,5 +7368,5 @@ abstract class _NewChapterPageState implements NewChapterDatabaseState {
   @override
   Title get title;
   @override
-  _$NewChapterPageStateCopyWith<_NewChapterPageState> get copyWith;
+  _$NewChapterDatabaseStateCopyWith<_NewChapterDatabaseState> get copyWith;
 }

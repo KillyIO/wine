@@ -33,16 +33,19 @@ class WINEChapterTile extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: <Widget>[
-                    TextOneLine(
-                      title.isNotEmptyOrNull ? title : 'No title',
-                      style: TextStyle(color: Colors.black, fontSize: 18.0, fontWeight: FontWeight.w400),
-                    ),
-                    const SizedBox(height: 2.5),
-                    TextOneLine(seriesTitle, style: TextStyle(fontSize: 15.0, fontWeight: FontWeight.w300)),
-                  ],
+                SizedBox(
+                  width: MediaQuery.of(context).size.width / 2,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: <Widget>[
+                      TextOneLine(
+                        title.isNotEmptyOrNull ? title : 'No title',
+                        style: TextStyle(color: Colors.black, fontSize: 18.0, fontWeight: FontWeight.w400),
+                      ),
+                      const SizedBox(height: 2.5),
+                      TextOneLine(seriesTitle, style: TextStyle(fontSize: 15.0, fontWeight: FontWeight.w300)),
+                    ],
+                  ),
                 ),
                 Padding(
                   padding: const EdgeInsets.only(left: 2.5),

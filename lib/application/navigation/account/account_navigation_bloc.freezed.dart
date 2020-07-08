@@ -622,12 +622,12 @@ abstract class VerticalNavbarIndexChangedEVT implements AccountNavigationEvent {
 class _$AccountNavigationStateTearOff {
   const _$AccountNavigationStateTearOff();
 
-  _AccountSettingsState call(
+  _AccountNavigationState call(
       {@required int currentPageViewIdx,
       @required int currentVerticalNavbarIdx,
       @required List<String> pageViewNavbarItems,
       @required List<String> verticalNavbarItems}) {
-    return _AccountSettingsState(
+    return _AccountNavigationState(
       currentPageViewIdx: currentPageViewIdx,
       currentVerticalNavbarIdx: currentVerticalNavbarIdx,
       pageViewNavbarItems: pageViewNavbarItems,
@@ -691,11 +691,11 @@ class _$AccountNavigationStateCopyWithImpl<$Res>
   }
 }
 
-abstract class _$AccountSettingsStateCopyWith<$Res>
+abstract class _$AccountNavigationStateCopyWith<$Res>
     implements $AccountNavigationStateCopyWith<$Res> {
-  factory _$AccountSettingsStateCopyWith(_AccountSettingsState value,
-          $Res Function(_AccountSettingsState) then) =
-      __$AccountSettingsStateCopyWithImpl<$Res>;
+  factory _$AccountNavigationStateCopyWith(_AccountNavigationState value,
+          $Res Function(_AccountNavigationState) then) =
+      __$AccountNavigationStateCopyWithImpl<$Res>;
   @override
   $Res call(
       {int currentPageViewIdx,
@@ -704,15 +704,15 @@ abstract class _$AccountSettingsStateCopyWith<$Res>
       List<String> verticalNavbarItems});
 }
 
-class __$AccountSettingsStateCopyWithImpl<$Res>
+class __$AccountNavigationStateCopyWithImpl<$Res>
     extends _$AccountNavigationStateCopyWithImpl<$Res>
-    implements _$AccountSettingsStateCopyWith<$Res> {
-  __$AccountSettingsStateCopyWithImpl(
-      _AccountSettingsState _value, $Res Function(_AccountSettingsState) _then)
-      : super(_value, (v) => _then(v as _AccountSettingsState));
+    implements _$AccountNavigationStateCopyWith<$Res> {
+  __$AccountNavigationStateCopyWithImpl(_AccountNavigationState _value,
+      $Res Function(_AccountNavigationState) _then)
+      : super(_value, (v) => _then(v as _AccountNavigationState));
 
   @override
-  _AccountSettingsState get _value => super._value as _AccountSettingsState;
+  _AccountNavigationState get _value => super._value as _AccountNavigationState;
 
   @override
   $Res call({
@@ -721,7 +721,7 @@ class __$AccountSettingsStateCopyWithImpl<$Res>
     Object pageViewNavbarItems = freezed,
     Object verticalNavbarItems = freezed,
   }) {
-    return _then(_AccountSettingsState(
+    return _then(_AccountNavigationState(
       currentPageViewIdx: currentPageViewIdx == freezed
           ? _value.currentPageViewIdx
           : currentPageViewIdx as int,
@@ -738,10 +738,10 @@ class __$AccountSettingsStateCopyWithImpl<$Res>
   }
 }
 
-class _$_AccountSettingsState
+class _$_AccountNavigationState
     with DiagnosticableTreeMixin
-    implements _AccountSettingsState {
-  const _$_AccountSettingsState(
+    implements _AccountNavigationState {
+  const _$_AccountNavigationState(
       {@required this.currentPageViewIdx,
       @required this.currentVerticalNavbarIdx,
       @required this.pageViewNavbarItems,
@@ -780,7 +780,7 @@ class _$_AccountSettingsState
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _AccountSettingsState &&
+        (other is _AccountNavigationState &&
             (identical(other.currentPageViewIdx, currentPageViewIdx) ||
                 const DeepCollectionEquality()
                     .equals(other.currentPageViewIdx, currentPageViewIdx)) &&
@@ -806,17 +806,17 @@ class _$_AccountSettingsState
       const DeepCollectionEquality().hash(verticalNavbarItems);
 
   @override
-  _$AccountSettingsStateCopyWith<_AccountSettingsState> get copyWith =>
-      __$AccountSettingsStateCopyWithImpl<_AccountSettingsState>(
+  _$AccountNavigationStateCopyWith<_AccountNavigationState> get copyWith =>
+      __$AccountNavigationStateCopyWithImpl<_AccountNavigationState>(
           this, _$identity);
 }
 
-abstract class _AccountSettingsState implements AccountNavigationState {
-  const factory _AccountSettingsState(
+abstract class _AccountNavigationState implements AccountNavigationState {
+  const factory _AccountNavigationState(
       {@required int currentPageViewIdx,
       @required int currentVerticalNavbarIdx,
       @required List<String> pageViewNavbarItems,
-      @required List<String> verticalNavbarItems}) = _$_AccountSettingsState;
+      @required List<String> verticalNavbarItems}) = _$_AccountNavigationState;
 
   @override
   int get currentPageViewIdx;
@@ -827,5 +827,5 @@ abstract class _AccountSettingsState implements AccountNavigationState {
   @override
   List<String> get verticalNavbarItems;
   @override
-  _$AccountSettingsStateCopyWith<_AccountSettingsState> get copyWith;
+  _$AccountNavigationStateCopyWith<_AccountNavigationState> get copyWith;
 }

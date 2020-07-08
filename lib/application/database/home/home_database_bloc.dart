@@ -22,6 +22,9 @@ part 'home_database_bloc.freezed.dart';
 class HomeDatabaseBloc extends Bloc<HomeDatabaseEvent, HomeDatabaseState> {
   final IOnlineSeriesDatabaseFacade _onlineSeriesDatabaseFacade;
 
+  StreamSubscription<Either<DatabaseFailure, DatabaseSuccess>> _topSeriesStreamSubscription;
+  StreamSubscription<Either<DatabaseFailure, DatabaseSuccess>> _newSeriesStreamSubscription;
+
   HomeDatabaseBloc(this._onlineSeriesDatabaseFacade) : super(HomeDatabaseState.initial());
 
   @override
@@ -137,5 +140,12 @@ class HomeDatabaseBloc extends Bloc<HomeDatabaseEvent, HomeDatabaseState> {
         );
       },
     );
+  }
+
+  @override
+  Future<void> close() async {
+    await _topSeriesStreamSubscription.cancel();
+    await _newSeriesStreamSubscription.cancel();
+    return super.close();
   }
 }

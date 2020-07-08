@@ -32,21 +32,6 @@ void createRoutes() {
         SailorTransition.fade_in,
       ],
     ),
-    SailorRoute(
-      name: Constants.homeDrawerRoute,
-      builder: (context, args, params) => HomeDrawerPage(),
-      defaultTransitionCurve: Curves.linearToEaseOut,
-      defaultTransitions: [
-        SailorTransition.slide_from_right,
-      ],
-    ),
-    SailorRoute(
-      name: Constants.homeFiltersRoute,
-      builder: (context, args, params) => HomeFiltersPage(),
-      defaultTransitions: [
-        SailorTransition.fade_in,
-      ],
-    ),
     // SECTION SETTINGS
     SailorRoute(
       name: Constants.settingsRoute,

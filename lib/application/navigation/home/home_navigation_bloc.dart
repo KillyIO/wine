@@ -20,8 +20,8 @@ class HomeNavigationBloc extends Bloc<HomeNavigationEvent, HomeNavigationState> 
   @override
   Stream<HomeNavigationState> mapEventToState(HomeNavigationEvent event) async* {
     yield* event.map(
-      drawerIconPressedEVT: (event) async* {
-        yield state.copyWith(isDrawerOpen: event.isDrawerOpen);
+      leftDrawerIconPressedEVT: (event) async* {
+        yield state.copyWith(isLeftDrawerOpen: event.isDrawerOpen);
       },
       homePageLaunchedEVT: (event) async* {
         yield state.copyWith(pageViewNavbarItems: Methods.getHomeNavbarItems(event.context));
@@ -42,7 +42,15 @@ class HomeNavigationBloc extends Bloc<HomeNavigationEvent, HomeNavigationState> 
         }
       },
       resetBlocEVT: (event) async* {
-        yield state.copyWith(isDrawerOpen: false, isNewSeriesPageOpen: false, currentPageViewIdx: 0);
+        yield state.copyWith(
+          isLeftDrawerOpen: false,
+          isNewSeriesPageOpen: false,
+          isRightDrawerOpen: false,
+          currentPageViewIdx: 0,
+        );
+      },
+      rightDrawerIconPressedEVT: (event) async* {
+        yield state.copyWith(isRightDrawerOpen: event.isDrawerOpen);
       },
     );
   }

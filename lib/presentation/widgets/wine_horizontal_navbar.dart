@@ -35,7 +35,7 @@ class WINEHorizontalNavbar extends StatelessWidget {
             title: value,
             color: currentPageViewIdx == index ? Colors.black : Colors.black12,
             onPressed: () => pageController.animateToPage(
-              index == 0 ? 1000 : 1001,
+              1002 + index,
               duration: 200.milliseconds,
               curve: Curves.linear,
             ),
