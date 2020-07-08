@@ -7,7 +7,7 @@ abstract class AccountNavigationState with _$AccountNavigationState {
     @required int currentVerticalNavbarIdx,
     @required List<String> pageViewNavbarItems,
     @required List<String> verticalNavbarItems,
-  }) = _AccountSettingsState;
+  }) = _AccountNavigationState;
 
   factory AccountNavigationState.initial() => const AccountNavigationState(
         currentPageViewIdx: 0,

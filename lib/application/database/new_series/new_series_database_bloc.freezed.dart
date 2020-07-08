@@ -16,6 +16,10 @@ class _$NewSeriesDatabaseEventTearOff {
     return const AddCoverPressedEVT();
   }
 
+  ChapterDraftDeletedEVT chapterDraftDeletedEVT() {
+    return const ChapterDraftDeletedEVT();
+  }
+
   DeleteDraftButtonPressedEVT deleteDraftButtonPressedEVT() {
     return const DeleteDraftButtonPressedEVT();
   }
@@ -96,6 +100,7 @@ mixin _$NewSeriesDatabaseEvent {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result addCoverPressedEVT(),
+    @required Result chapterDraftDeletedEVT(),
     @required Result deleteDraftButtonPressedEVT(),
     @required Result editModeLaunchedEVT(SeriesDraft seriesDraft),
     @required Result genreOptionalSelectedEVT(String genreOptional),
@@ -115,6 +120,7 @@ mixin _$NewSeriesDatabaseEvent {
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result addCoverPressedEVT(),
+    Result chapterDraftDeletedEVT(),
     Result deleteDraftButtonPressedEVT(),
     Result editModeLaunchedEVT(SeriesDraft seriesDraft),
     Result genreOptionalSelectedEVT(String genreOptional),
@@ -133,6 +139,7 @@ mixin _$NewSeriesDatabaseEvent {
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result addCoverPressedEVT(AddCoverPressedEVT value),
+    @required Result chapterDraftDeletedEVT(ChapterDraftDeletedEVT value),
     @required
         Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
     @required Result editModeLaunchedEVT(EditModeLaunchedEVT value),
@@ -152,6 +159,7 @@ mixin _$NewSeriesDatabaseEvent {
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result addCoverPressedEVT(AddCoverPressedEVT value),
+    Result chapterDraftDeletedEVT(ChapterDraftDeletedEVT value),
     Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
     Result editModeLaunchedEVT(EditModeLaunchedEVT value),
     Result genreOptionalSelectedEVT(GenreOptionalSelectedEVT value),
@@ -231,6 +239,7 @@ class _$AddCoverPressedEVT
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result addCoverPressedEVT(),
+    @required Result chapterDraftDeletedEVT(),
     @required Result deleteDraftButtonPressedEVT(),
     @required Result editModeLaunchedEVT(SeriesDraft seriesDraft),
     @required Result genreOptionalSelectedEVT(String genreOptional),
@@ -248,6 +257,7 @@ class _$AddCoverPressedEVT
     @required Result titleChangedEVT(String title),
   }) {
     assert(addCoverPressedEVT != null);
+    assert(chapterDraftDeletedEVT != null);
     assert(deleteDraftButtonPressedEVT != null);
     assert(editModeLaunchedEVT != null);
     assert(genreOptionalSelectedEVT != null);
@@ -267,6 +277,7 @@ class _$AddCoverPressedEVT
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result addCoverPressedEVT(),
+    Result chapterDraftDeletedEVT(),
     Result deleteDraftButtonPressedEVT(),
     Result editModeLaunchedEVT(SeriesDraft seriesDraft),
     Result genreOptionalSelectedEVT(String genreOptional),
@@ -293,6 +304,7 @@ class _$AddCoverPressedEVT
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result addCoverPressedEVT(AddCoverPressedEVT value),
+    @required Result chapterDraftDeletedEVT(ChapterDraftDeletedEVT value),
     @required
         Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
     @required Result editModeLaunchedEVT(EditModeLaunchedEVT value),
@@ -310,6 +322,7 @@ class _$AddCoverPressedEVT
     @required Result titleChangedEVT(TitleChangedEVT value),
   }) {
     assert(addCoverPressedEVT != null);
+    assert(chapterDraftDeletedEVT != null);
     assert(deleteDraftButtonPressedEVT != null);
     assert(editModeLaunchedEVT != null);
     assert(genreOptionalSelectedEVT != null);
@@ -329,6 +342,7 @@ class _$AddCoverPressedEVT
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result addCoverPressedEVT(AddCoverPressedEVT value),
+    Result chapterDraftDeletedEVT(ChapterDraftDeletedEVT value),
     Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
     Result editModeLaunchedEVT(EditModeLaunchedEVT value),
     Result genreOptionalSelectedEVT(GenreOptionalSelectedEVT value),
@@ -354,6 +368,184 @@ class _$AddCoverPressedEVT
 
 abstract class AddCoverPressedEVT implements NewSeriesDatabaseEvent {
   const factory AddCoverPressedEVT() = _$AddCoverPressedEVT;
+}
+
+abstract class $ChapterDraftDeletedEVTCopyWith<$Res> {
+  factory $ChapterDraftDeletedEVTCopyWith(ChapterDraftDeletedEVT value,
+          $Res Function(ChapterDraftDeletedEVT) then) =
+      _$ChapterDraftDeletedEVTCopyWithImpl<$Res>;
+}
+
+class _$ChapterDraftDeletedEVTCopyWithImpl<$Res>
+    extends _$NewSeriesDatabaseEventCopyWithImpl<$Res>
+    implements $ChapterDraftDeletedEVTCopyWith<$Res> {
+  _$ChapterDraftDeletedEVTCopyWithImpl(ChapterDraftDeletedEVT _value,
+      $Res Function(ChapterDraftDeletedEVT) _then)
+      : super(_value, (v) => _then(v as ChapterDraftDeletedEVT));
+
+  @override
+  ChapterDraftDeletedEVT get _value => super._value as ChapterDraftDeletedEVT;
+}
+
+class _$ChapterDraftDeletedEVT
+    with DiagnosticableTreeMixin
+    implements ChapterDraftDeletedEVT {
+  const _$ChapterDraftDeletedEVT();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'NewSeriesDatabaseEvent.chapterDraftDeletedEVT()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty(
+          'type', 'NewSeriesDatabaseEvent.chapterDraftDeletedEVT'));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is ChapterDraftDeletedEVT);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result addCoverPressedEVT(),
+    @required Result chapterDraftDeletedEVT(),
+    @required Result deleteDraftButtonPressedEVT(),
+    @required Result editModeLaunchedEVT(SeriesDraft seriesDraft),
+    @required Result genreOptionalSelectedEVT(String genreOptional),
+    @required Result genreSelectedEVT(String genre),
+    @required Result isNSFWChangedEVT(bool isNSFW),
+    @required Result languageSelectedEVT(String language),
+    @required
+        Result newSeriesPageLaunchedEVT(
+            SeriesDraft seriesDraft, BuildContext context),
+    @required Result saveSeriesDraftButtonPressedEVT(),
+    @required
+        Result sessionFetchedEVT(Session session, SeriesDraft seriesDraft),
+    @required Result subtitleChangedEVT(String subtitle),
+    @required Result summaryChangedEVT(String summary),
+    @required Result titleChangedEVT(String title),
+  }) {
+    assert(addCoverPressedEVT != null);
+    assert(chapterDraftDeletedEVT != null);
+    assert(deleteDraftButtonPressedEVT != null);
+    assert(editModeLaunchedEVT != null);
+    assert(genreOptionalSelectedEVT != null);
+    assert(genreSelectedEVT != null);
+    assert(isNSFWChangedEVT != null);
+    assert(languageSelectedEVT != null);
+    assert(newSeriesPageLaunchedEVT != null);
+    assert(saveSeriesDraftButtonPressedEVT != null);
+    assert(sessionFetchedEVT != null);
+    assert(subtitleChangedEVT != null);
+    assert(summaryChangedEVT != null);
+    assert(titleChangedEVT != null);
+    return chapterDraftDeletedEVT();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result addCoverPressedEVT(),
+    Result chapterDraftDeletedEVT(),
+    Result deleteDraftButtonPressedEVT(),
+    Result editModeLaunchedEVT(SeriesDraft seriesDraft),
+    Result genreOptionalSelectedEVT(String genreOptional),
+    Result genreSelectedEVT(String genre),
+    Result isNSFWChangedEVT(bool isNSFW),
+    Result languageSelectedEVT(String language),
+    Result newSeriesPageLaunchedEVT(
+        SeriesDraft seriesDraft, BuildContext context),
+    Result saveSeriesDraftButtonPressedEVT(),
+    Result sessionFetchedEVT(Session session, SeriesDraft seriesDraft),
+    Result subtitleChangedEVT(String subtitle),
+    Result summaryChangedEVT(String summary),
+    Result titleChangedEVT(String title),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (chapterDraftDeletedEVT != null) {
+      return chapterDraftDeletedEVT();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result addCoverPressedEVT(AddCoverPressedEVT value),
+    @required Result chapterDraftDeletedEVT(ChapterDraftDeletedEVT value),
+    @required
+        Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
+    @required Result editModeLaunchedEVT(EditModeLaunchedEVT value),
+    @required Result genreOptionalSelectedEVT(GenreOptionalSelectedEVT value),
+    @required Result genreSelectedEVT(GenreSelectedEVT value),
+    @required Result isNSFWChangedEVT(IsNSFWChangedEVT value),
+    @required Result languageSelectedEVT(LanguageSelectedEVT value),
+    @required Result newSeriesPageLaunchedEVT(NewSeriesPageLaunchedEVT value),
+    @required
+        Result saveSeriesDraftButtonPressedEVT(
+            SaveSeriesDraftButtonPressedEVT value),
+    @required Result sessionFetchedEVT(SessionFetchedEVT value),
+    @required Result subtitleChangedEVT(SubtitleChangedEVT value),
+    @required Result summaryChangedEVT(SummaryChangedEVT value),
+    @required Result titleChangedEVT(TitleChangedEVT value),
+  }) {
+    assert(addCoverPressedEVT != null);
+    assert(chapterDraftDeletedEVT != null);
+    assert(deleteDraftButtonPressedEVT != null);
+    assert(editModeLaunchedEVT != null);
+    assert(genreOptionalSelectedEVT != null);
+    assert(genreSelectedEVT != null);
+    assert(isNSFWChangedEVT != null);
+    assert(languageSelectedEVT != null);
+    assert(newSeriesPageLaunchedEVT != null);
+    assert(saveSeriesDraftButtonPressedEVT != null);
+    assert(sessionFetchedEVT != null);
+    assert(subtitleChangedEVT != null);
+    assert(summaryChangedEVT != null);
+    assert(titleChangedEVT != null);
+    return chapterDraftDeletedEVT(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result addCoverPressedEVT(AddCoverPressedEVT value),
+    Result chapterDraftDeletedEVT(ChapterDraftDeletedEVT value),
+    Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
+    Result editModeLaunchedEVT(EditModeLaunchedEVT value),
+    Result genreOptionalSelectedEVT(GenreOptionalSelectedEVT value),
+    Result genreSelectedEVT(GenreSelectedEVT value),
+    Result isNSFWChangedEVT(IsNSFWChangedEVT value),
+    Result languageSelectedEVT(LanguageSelectedEVT value),
+    Result newSeriesPageLaunchedEVT(NewSeriesPageLaunchedEVT value),
+    Result saveSeriesDraftButtonPressedEVT(
+        SaveSeriesDraftButtonPressedEVT value),
+    Result sessionFetchedEVT(SessionFetchedEVT value),
+    Result subtitleChangedEVT(SubtitleChangedEVT value),
+    Result summaryChangedEVT(SummaryChangedEVT value),
+    Result titleChangedEVT(TitleChangedEVT value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (chapterDraftDeletedEVT != null) {
+      return chapterDraftDeletedEVT(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ChapterDraftDeletedEVT implements NewSeriesDatabaseEvent {
+  const factory ChapterDraftDeletedEVT() = _$ChapterDraftDeletedEVT;
 }
 
 abstract class $DeleteDraftButtonPressedEVTCopyWith<$Res> {
@@ -405,6 +597,7 @@ class _$DeleteDraftButtonPressedEVT
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result addCoverPressedEVT(),
+    @required Result chapterDraftDeletedEVT(),
     @required Result deleteDraftButtonPressedEVT(),
     @required Result editModeLaunchedEVT(SeriesDraft seriesDraft),
     @required Result genreOptionalSelectedEVT(String genreOptional),
@@ -422,6 +615,7 @@ class _$DeleteDraftButtonPressedEVT
     @required Result titleChangedEVT(String title),
   }) {
     assert(addCoverPressedEVT != null);
+    assert(chapterDraftDeletedEVT != null);
     assert(deleteDraftButtonPressedEVT != null);
     assert(editModeLaunchedEVT != null);
     assert(genreOptionalSelectedEVT != null);
@@ -441,6 +635,7 @@ class _$DeleteDraftButtonPressedEVT
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result addCoverPressedEVT(),
+    Result chapterDraftDeletedEVT(),
     Result deleteDraftButtonPressedEVT(),
     Result editModeLaunchedEVT(SeriesDraft seriesDraft),
     Result genreOptionalSelectedEVT(String genreOptional),
@@ -467,6 +662,7 @@ class _$DeleteDraftButtonPressedEVT
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result addCoverPressedEVT(AddCoverPressedEVT value),
+    @required Result chapterDraftDeletedEVT(ChapterDraftDeletedEVT value),
     @required
         Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
     @required Result editModeLaunchedEVT(EditModeLaunchedEVT value),
@@ -484,6 +680,7 @@ class _$DeleteDraftButtonPressedEVT
     @required Result titleChangedEVT(TitleChangedEVT value),
   }) {
     assert(addCoverPressedEVT != null);
+    assert(chapterDraftDeletedEVT != null);
     assert(deleteDraftButtonPressedEVT != null);
     assert(editModeLaunchedEVT != null);
     assert(genreOptionalSelectedEVT != null);
@@ -503,6 +700,7 @@ class _$DeleteDraftButtonPressedEVT
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result addCoverPressedEVT(AddCoverPressedEVT value),
+    Result chapterDraftDeletedEVT(ChapterDraftDeletedEVT value),
     Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
     Result editModeLaunchedEVT(EditModeLaunchedEVT value),
     Result genreOptionalSelectedEVT(GenreOptionalSelectedEVT value),
@@ -600,6 +798,7 @@ class _$EditModeLaunchedEVT
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result addCoverPressedEVT(),
+    @required Result chapterDraftDeletedEVT(),
     @required Result deleteDraftButtonPressedEVT(),
     @required Result editModeLaunchedEVT(SeriesDraft seriesDraft),
     @required Result genreOptionalSelectedEVT(String genreOptional),
@@ -617,6 +816,7 @@ class _$EditModeLaunchedEVT
     @required Result titleChangedEVT(String title),
   }) {
     assert(addCoverPressedEVT != null);
+    assert(chapterDraftDeletedEVT != null);
     assert(deleteDraftButtonPressedEVT != null);
     assert(editModeLaunchedEVT != null);
     assert(genreOptionalSelectedEVT != null);
@@ -636,6 +836,7 @@ class _$EditModeLaunchedEVT
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result addCoverPressedEVT(),
+    Result chapterDraftDeletedEVT(),
     Result deleteDraftButtonPressedEVT(),
     Result editModeLaunchedEVT(SeriesDraft seriesDraft),
     Result genreOptionalSelectedEVT(String genreOptional),
@@ -662,6 +863,7 @@ class _$EditModeLaunchedEVT
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result addCoverPressedEVT(AddCoverPressedEVT value),
+    @required Result chapterDraftDeletedEVT(ChapterDraftDeletedEVT value),
     @required
         Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
     @required Result editModeLaunchedEVT(EditModeLaunchedEVT value),
@@ -679,6 +881,7 @@ class _$EditModeLaunchedEVT
     @required Result titleChangedEVT(TitleChangedEVT value),
   }) {
     assert(addCoverPressedEVT != null);
+    assert(chapterDraftDeletedEVT != null);
     assert(deleteDraftButtonPressedEVT != null);
     assert(editModeLaunchedEVT != null);
     assert(genreOptionalSelectedEVT != null);
@@ -698,6 +901,7 @@ class _$EditModeLaunchedEVT
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result addCoverPressedEVT(AddCoverPressedEVT value),
+    Result chapterDraftDeletedEVT(ChapterDraftDeletedEVT value),
     Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
     Result editModeLaunchedEVT(EditModeLaunchedEVT value),
     Result genreOptionalSelectedEVT(GenreOptionalSelectedEVT value),
@@ -802,6 +1006,7 @@ class _$GenreOptionalSelectedEVT
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result addCoverPressedEVT(),
+    @required Result chapterDraftDeletedEVT(),
     @required Result deleteDraftButtonPressedEVT(),
     @required Result editModeLaunchedEVT(SeriesDraft seriesDraft),
     @required Result genreOptionalSelectedEVT(String genreOptional),
@@ -819,6 +1024,7 @@ class _$GenreOptionalSelectedEVT
     @required Result titleChangedEVT(String title),
   }) {
     assert(addCoverPressedEVT != null);
+    assert(chapterDraftDeletedEVT != null);
     assert(deleteDraftButtonPressedEVT != null);
     assert(editModeLaunchedEVT != null);
     assert(genreOptionalSelectedEVT != null);
@@ -838,6 +1044,7 @@ class _$GenreOptionalSelectedEVT
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result addCoverPressedEVT(),
+    Result chapterDraftDeletedEVT(),
     Result deleteDraftButtonPressedEVT(),
     Result editModeLaunchedEVT(SeriesDraft seriesDraft),
     Result genreOptionalSelectedEVT(String genreOptional),
@@ -864,6 +1071,7 @@ class _$GenreOptionalSelectedEVT
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result addCoverPressedEVT(AddCoverPressedEVT value),
+    @required Result chapterDraftDeletedEVT(ChapterDraftDeletedEVT value),
     @required
         Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
     @required Result editModeLaunchedEVT(EditModeLaunchedEVT value),
@@ -881,6 +1089,7 @@ class _$GenreOptionalSelectedEVT
     @required Result titleChangedEVT(TitleChangedEVT value),
   }) {
     assert(addCoverPressedEVT != null);
+    assert(chapterDraftDeletedEVT != null);
     assert(deleteDraftButtonPressedEVT != null);
     assert(editModeLaunchedEVT != null);
     assert(genreOptionalSelectedEVT != null);
@@ -900,6 +1109,7 @@ class _$GenreOptionalSelectedEVT
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result addCoverPressedEVT(AddCoverPressedEVT value),
+    Result chapterDraftDeletedEVT(ChapterDraftDeletedEVT value),
     Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
     Result editModeLaunchedEVT(EditModeLaunchedEVT value),
     Result genreOptionalSelectedEVT(GenreOptionalSelectedEVT value),
@@ -1000,6 +1210,7 @@ class _$GenreSelectedEVT
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result addCoverPressedEVT(),
+    @required Result chapterDraftDeletedEVT(),
     @required Result deleteDraftButtonPressedEVT(),
     @required Result editModeLaunchedEVT(SeriesDraft seriesDraft),
     @required Result genreOptionalSelectedEVT(String genreOptional),
@@ -1017,6 +1228,7 @@ class _$GenreSelectedEVT
     @required Result titleChangedEVT(String title),
   }) {
     assert(addCoverPressedEVT != null);
+    assert(chapterDraftDeletedEVT != null);
     assert(deleteDraftButtonPressedEVT != null);
     assert(editModeLaunchedEVT != null);
     assert(genreOptionalSelectedEVT != null);
@@ -1036,6 +1248,7 @@ class _$GenreSelectedEVT
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result addCoverPressedEVT(),
+    Result chapterDraftDeletedEVT(),
     Result deleteDraftButtonPressedEVT(),
     Result editModeLaunchedEVT(SeriesDraft seriesDraft),
     Result genreOptionalSelectedEVT(String genreOptional),
@@ -1062,6 +1275,7 @@ class _$GenreSelectedEVT
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result addCoverPressedEVT(AddCoverPressedEVT value),
+    @required Result chapterDraftDeletedEVT(ChapterDraftDeletedEVT value),
     @required
         Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
     @required Result editModeLaunchedEVT(EditModeLaunchedEVT value),
@@ -1079,6 +1293,7 @@ class _$GenreSelectedEVT
     @required Result titleChangedEVT(TitleChangedEVT value),
   }) {
     assert(addCoverPressedEVT != null);
+    assert(chapterDraftDeletedEVT != null);
     assert(deleteDraftButtonPressedEVT != null);
     assert(editModeLaunchedEVT != null);
     assert(genreOptionalSelectedEVT != null);
@@ -1098,6 +1313,7 @@ class _$GenreSelectedEVT
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result addCoverPressedEVT(AddCoverPressedEVT value),
+    Result chapterDraftDeletedEVT(ChapterDraftDeletedEVT value),
     Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
     Result editModeLaunchedEVT(EditModeLaunchedEVT value),
     Result genreOptionalSelectedEVT(GenreOptionalSelectedEVT value),
@@ -1197,6 +1413,7 @@ class _$IsNSFWChangedEVT
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result addCoverPressedEVT(),
+    @required Result chapterDraftDeletedEVT(),
     @required Result deleteDraftButtonPressedEVT(),
     @required Result editModeLaunchedEVT(SeriesDraft seriesDraft),
     @required Result genreOptionalSelectedEVT(String genreOptional),
@@ -1214,6 +1431,7 @@ class _$IsNSFWChangedEVT
     @required Result titleChangedEVT(String title),
   }) {
     assert(addCoverPressedEVT != null);
+    assert(chapterDraftDeletedEVT != null);
     assert(deleteDraftButtonPressedEVT != null);
     assert(editModeLaunchedEVT != null);
     assert(genreOptionalSelectedEVT != null);
@@ -1233,6 +1451,7 @@ class _$IsNSFWChangedEVT
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result addCoverPressedEVT(),
+    Result chapterDraftDeletedEVT(),
     Result deleteDraftButtonPressedEVT(),
     Result editModeLaunchedEVT(SeriesDraft seriesDraft),
     Result genreOptionalSelectedEVT(String genreOptional),
@@ -1259,6 +1478,7 @@ class _$IsNSFWChangedEVT
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result addCoverPressedEVT(AddCoverPressedEVT value),
+    @required Result chapterDraftDeletedEVT(ChapterDraftDeletedEVT value),
     @required
         Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
     @required Result editModeLaunchedEVT(EditModeLaunchedEVT value),
@@ -1276,6 +1496,7 @@ class _$IsNSFWChangedEVT
     @required Result titleChangedEVT(TitleChangedEVT value),
   }) {
     assert(addCoverPressedEVT != null);
+    assert(chapterDraftDeletedEVT != null);
     assert(deleteDraftButtonPressedEVT != null);
     assert(editModeLaunchedEVT != null);
     assert(genreOptionalSelectedEVT != null);
@@ -1295,6 +1516,7 @@ class _$IsNSFWChangedEVT
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result addCoverPressedEVT(AddCoverPressedEVT value),
+    Result chapterDraftDeletedEVT(ChapterDraftDeletedEVT value),
     Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
     Result editModeLaunchedEVT(EditModeLaunchedEVT value),
     Result genreOptionalSelectedEVT(GenreOptionalSelectedEVT value),
@@ -1395,6 +1617,7 @@ class _$LanguageSelectedEVT
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result addCoverPressedEVT(),
+    @required Result chapterDraftDeletedEVT(),
     @required Result deleteDraftButtonPressedEVT(),
     @required Result editModeLaunchedEVT(SeriesDraft seriesDraft),
     @required Result genreOptionalSelectedEVT(String genreOptional),
@@ -1412,6 +1635,7 @@ class _$LanguageSelectedEVT
     @required Result titleChangedEVT(String title),
   }) {
     assert(addCoverPressedEVT != null);
+    assert(chapterDraftDeletedEVT != null);
     assert(deleteDraftButtonPressedEVT != null);
     assert(editModeLaunchedEVT != null);
     assert(genreOptionalSelectedEVT != null);
@@ -1431,6 +1655,7 @@ class _$LanguageSelectedEVT
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result addCoverPressedEVT(),
+    Result chapterDraftDeletedEVT(),
     Result deleteDraftButtonPressedEVT(),
     Result editModeLaunchedEVT(SeriesDraft seriesDraft),
     Result genreOptionalSelectedEVT(String genreOptional),
@@ -1457,6 +1682,7 @@ class _$LanguageSelectedEVT
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result addCoverPressedEVT(AddCoverPressedEVT value),
+    @required Result chapterDraftDeletedEVT(ChapterDraftDeletedEVT value),
     @required
         Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
     @required Result editModeLaunchedEVT(EditModeLaunchedEVT value),
@@ -1474,6 +1700,7 @@ class _$LanguageSelectedEVT
     @required Result titleChangedEVT(TitleChangedEVT value),
   }) {
     assert(addCoverPressedEVT != null);
+    assert(chapterDraftDeletedEVT != null);
     assert(deleteDraftButtonPressedEVT != null);
     assert(editModeLaunchedEVT != null);
     assert(genreOptionalSelectedEVT != null);
@@ -1493,6 +1720,7 @@ class _$LanguageSelectedEVT
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result addCoverPressedEVT(AddCoverPressedEVT value),
+    Result chapterDraftDeletedEVT(ChapterDraftDeletedEVT value),
     Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
     Result editModeLaunchedEVT(EditModeLaunchedEVT value),
     Result genreOptionalSelectedEVT(GenreOptionalSelectedEVT value),
@@ -1607,6 +1835,7 @@ class _$NewSeriesPageLaunchedEVT
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result addCoverPressedEVT(),
+    @required Result chapterDraftDeletedEVT(),
     @required Result deleteDraftButtonPressedEVT(),
     @required Result editModeLaunchedEVT(SeriesDraft seriesDraft),
     @required Result genreOptionalSelectedEVT(String genreOptional),
@@ -1624,6 +1853,7 @@ class _$NewSeriesPageLaunchedEVT
     @required Result titleChangedEVT(String title),
   }) {
     assert(addCoverPressedEVT != null);
+    assert(chapterDraftDeletedEVT != null);
     assert(deleteDraftButtonPressedEVT != null);
     assert(editModeLaunchedEVT != null);
     assert(genreOptionalSelectedEVT != null);
@@ -1643,6 +1873,7 @@ class _$NewSeriesPageLaunchedEVT
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result addCoverPressedEVT(),
+    Result chapterDraftDeletedEVT(),
     Result deleteDraftButtonPressedEVT(),
     Result editModeLaunchedEVT(SeriesDraft seriesDraft),
     Result genreOptionalSelectedEVT(String genreOptional),
@@ -1669,6 +1900,7 @@ class _$NewSeriesPageLaunchedEVT
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result addCoverPressedEVT(AddCoverPressedEVT value),
+    @required Result chapterDraftDeletedEVT(ChapterDraftDeletedEVT value),
     @required
         Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
     @required Result editModeLaunchedEVT(EditModeLaunchedEVT value),
@@ -1686,6 +1918,7 @@ class _$NewSeriesPageLaunchedEVT
     @required Result titleChangedEVT(TitleChangedEVT value),
   }) {
     assert(addCoverPressedEVT != null);
+    assert(chapterDraftDeletedEVT != null);
     assert(deleteDraftButtonPressedEVT != null);
     assert(editModeLaunchedEVT != null);
     assert(genreOptionalSelectedEVT != null);
@@ -1705,6 +1938,7 @@ class _$NewSeriesPageLaunchedEVT
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result addCoverPressedEVT(AddCoverPressedEVT value),
+    Result chapterDraftDeletedEVT(ChapterDraftDeletedEVT value),
     Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
     Result editModeLaunchedEVT(EditModeLaunchedEVT value),
     Result genreOptionalSelectedEVT(GenreOptionalSelectedEVT value),
@@ -1788,6 +2022,7 @@ class _$SaveSeriesDraftButtonPressedEVT
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result addCoverPressedEVT(),
+    @required Result chapterDraftDeletedEVT(),
     @required Result deleteDraftButtonPressedEVT(),
     @required Result editModeLaunchedEVT(SeriesDraft seriesDraft),
     @required Result genreOptionalSelectedEVT(String genreOptional),
@@ -1805,6 +2040,7 @@ class _$SaveSeriesDraftButtonPressedEVT
     @required Result titleChangedEVT(String title),
   }) {
     assert(addCoverPressedEVT != null);
+    assert(chapterDraftDeletedEVT != null);
     assert(deleteDraftButtonPressedEVT != null);
     assert(editModeLaunchedEVT != null);
     assert(genreOptionalSelectedEVT != null);
@@ -1824,6 +2060,7 @@ class _$SaveSeriesDraftButtonPressedEVT
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result addCoverPressedEVT(),
+    Result chapterDraftDeletedEVT(),
     Result deleteDraftButtonPressedEVT(),
     Result editModeLaunchedEVT(SeriesDraft seriesDraft),
     Result genreOptionalSelectedEVT(String genreOptional),
@@ -1850,6 +2087,7 @@ class _$SaveSeriesDraftButtonPressedEVT
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result addCoverPressedEVT(AddCoverPressedEVT value),
+    @required Result chapterDraftDeletedEVT(ChapterDraftDeletedEVT value),
     @required
         Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
     @required Result editModeLaunchedEVT(EditModeLaunchedEVT value),
@@ -1867,6 +2105,7 @@ class _$SaveSeriesDraftButtonPressedEVT
     @required Result titleChangedEVT(TitleChangedEVT value),
   }) {
     assert(addCoverPressedEVT != null);
+    assert(chapterDraftDeletedEVT != null);
     assert(deleteDraftButtonPressedEVT != null);
     assert(editModeLaunchedEVT != null);
     assert(genreOptionalSelectedEVT != null);
@@ -1886,6 +2125,7 @@ class _$SaveSeriesDraftButtonPressedEVT
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result addCoverPressedEVT(AddCoverPressedEVT value),
+    Result chapterDraftDeletedEVT(ChapterDraftDeletedEVT value),
     Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
     Result editModeLaunchedEVT(EditModeLaunchedEVT value),
     Result genreOptionalSelectedEVT(GenreOptionalSelectedEVT value),
@@ -2000,6 +2240,7 @@ class _$SessionFetchedEVT
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result addCoverPressedEVT(),
+    @required Result chapterDraftDeletedEVT(),
     @required Result deleteDraftButtonPressedEVT(),
     @required Result editModeLaunchedEVT(SeriesDraft seriesDraft),
     @required Result genreOptionalSelectedEVT(String genreOptional),
@@ -2017,6 +2258,7 @@ class _$SessionFetchedEVT
     @required Result titleChangedEVT(String title),
   }) {
     assert(addCoverPressedEVT != null);
+    assert(chapterDraftDeletedEVT != null);
     assert(deleteDraftButtonPressedEVT != null);
     assert(editModeLaunchedEVT != null);
     assert(genreOptionalSelectedEVT != null);
@@ -2036,6 +2278,7 @@ class _$SessionFetchedEVT
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result addCoverPressedEVT(),
+    Result chapterDraftDeletedEVT(),
     Result deleteDraftButtonPressedEVT(),
     Result editModeLaunchedEVT(SeriesDraft seriesDraft),
     Result genreOptionalSelectedEVT(String genreOptional),
@@ -2062,6 +2305,7 @@ class _$SessionFetchedEVT
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result addCoverPressedEVT(AddCoverPressedEVT value),
+    @required Result chapterDraftDeletedEVT(ChapterDraftDeletedEVT value),
     @required
         Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
     @required Result editModeLaunchedEVT(EditModeLaunchedEVT value),
@@ -2079,6 +2323,7 @@ class _$SessionFetchedEVT
     @required Result titleChangedEVT(TitleChangedEVT value),
   }) {
     assert(addCoverPressedEVT != null);
+    assert(chapterDraftDeletedEVT != null);
     assert(deleteDraftButtonPressedEVT != null);
     assert(editModeLaunchedEVT != null);
     assert(genreOptionalSelectedEVT != null);
@@ -2098,6 +2343,7 @@ class _$SessionFetchedEVT
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result addCoverPressedEVT(AddCoverPressedEVT value),
+    Result chapterDraftDeletedEVT(ChapterDraftDeletedEVT value),
     Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
     Result editModeLaunchedEVT(EditModeLaunchedEVT value),
     Result genreOptionalSelectedEVT(GenreOptionalSelectedEVT value),
@@ -2201,6 +2447,7 @@ class _$SubtitleChangedEVT
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result addCoverPressedEVT(),
+    @required Result chapterDraftDeletedEVT(),
     @required Result deleteDraftButtonPressedEVT(),
     @required Result editModeLaunchedEVT(SeriesDraft seriesDraft),
     @required Result genreOptionalSelectedEVT(String genreOptional),
@@ -2218,6 +2465,7 @@ class _$SubtitleChangedEVT
     @required Result titleChangedEVT(String title),
   }) {
     assert(addCoverPressedEVT != null);
+    assert(chapterDraftDeletedEVT != null);
     assert(deleteDraftButtonPressedEVT != null);
     assert(editModeLaunchedEVT != null);
     assert(genreOptionalSelectedEVT != null);
@@ -2237,6 +2485,7 @@ class _$SubtitleChangedEVT
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result addCoverPressedEVT(),
+    Result chapterDraftDeletedEVT(),
     Result deleteDraftButtonPressedEVT(),
     Result editModeLaunchedEVT(SeriesDraft seriesDraft),
     Result genreOptionalSelectedEVT(String genreOptional),
@@ -2263,6 +2512,7 @@ class _$SubtitleChangedEVT
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result addCoverPressedEVT(AddCoverPressedEVT value),
+    @required Result chapterDraftDeletedEVT(ChapterDraftDeletedEVT value),
     @required
         Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
     @required Result editModeLaunchedEVT(EditModeLaunchedEVT value),
@@ -2280,6 +2530,7 @@ class _$SubtitleChangedEVT
     @required Result titleChangedEVT(TitleChangedEVT value),
   }) {
     assert(addCoverPressedEVT != null);
+    assert(chapterDraftDeletedEVT != null);
     assert(deleteDraftButtonPressedEVT != null);
     assert(editModeLaunchedEVT != null);
     assert(genreOptionalSelectedEVT != null);
@@ -2299,6 +2550,7 @@ class _$SubtitleChangedEVT
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result addCoverPressedEVT(AddCoverPressedEVT value),
+    Result chapterDraftDeletedEVT(ChapterDraftDeletedEVT value),
     Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
     Result editModeLaunchedEVT(EditModeLaunchedEVT value),
     Result genreOptionalSelectedEVT(GenreOptionalSelectedEVT value),
@@ -2398,6 +2650,7 @@ class _$SummaryChangedEVT
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result addCoverPressedEVT(),
+    @required Result chapterDraftDeletedEVT(),
     @required Result deleteDraftButtonPressedEVT(),
     @required Result editModeLaunchedEVT(SeriesDraft seriesDraft),
     @required Result genreOptionalSelectedEVT(String genreOptional),
@@ -2415,6 +2668,7 @@ class _$SummaryChangedEVT
     @required Result titleChangedEVT(String title),
   }) {
     assert(addCoverPressedEVT != null);
+    assert(chapterDraftDeletedEVT != null);
     assert(deleteDraftButtonPressedEVT != null);
     assert(editModeLaunchedEVT != null);
     assert(genreOptionalSelectedEVT != null);
@@ -2434,6 +2688,7 @@ class _$SummaryChangedEVT
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result addCoverPressedEVT(),
+    Result chapterDraftDeletedEVT(),
     Result deleteDraftButtonPressedEVT(),
     Result editModeLaunchedEVT(SeriesDraft seriesDraft),
     Result genreOptionalSelectedEVT(String genreOptional),
@@ -2460,6 +2715,7 @@ class _$SummaryChangedEVT
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result addCoverPressedEVT(AddCoverPressedEVT value),
+    @required Result chapterDraftDeletedEVT(ChapterDraftDeletedEVT value),
     @required
         Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
     @required Result editModeLaunchedEVT(EditModeLaunchedEVT value),
@@ -2477,6 +2733,7 @@ class _$SummaryChangedEVT
     @required Result titleChangedEVT(TitleChangedEVT value),
   }) {
     assert(addCoverPressedEVT != null);
+    assert(chapterDraftDeletedEVT != null);
     assert(deleteDraftButtonPressedEVT != null);
     assert(editModeLaunchedEVT != null);
     assert(genreOptionalSelectedEVT != null);
@@ -2496,6 +2753,7 @@ class _$SummaryChangedEVT
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result addCoverPressedEVT(AddCoverPressedEVT value),
+    Result chapterDraftDeletedEVT(ChapterDraftDeletedEVT value),
     Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
     Result editModeLaunchedEVT(EditModeLaunchedEVT value),
     Result genreOptionalSelectedEVT(GenreOptionalSelectedEVT value),
@@ -2595,6 +2853,7 @@ class _$TitleChangedEVT
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result addCoverPressedEVT(),
+    @required Result chapterDraftDeletedEVT(),
     @required Result deleteDraftButtonPressedEVT(),
     @required Result editModeLaunchedEVT(SeriesDraft seriesDraft),
     @required Result genreOptionalSelectedEVT(String genreOptional),
@@ -2612,6 +2871,7 @@ class _$TitleChangedEVT
     @required Result titleChangedEVT(String title),
   }) {
     assert(addCoverPressedEVT != null);
+    assert(chapterDraftDeletedEVT != null);
     assert(deleteDraftButtonPressedEVT != null);
     assert(editModeLaunchedEVT != null);
     assert(genreOptionalSelectedEVT != null);
@@ -2631,6 +2891,7 @@ class _$TitleChangedEVT
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result addCoverPressedEVT(),
+    Result chapterDraftDeletedEVT(),
     Result deleteDraftButtonPressedEVT(),
     Result editModeLaunchedEVT(SeriesDraft seriesDraft),
     Result genreOptionalSelectedEVT(String genreOptional),
@@ -2657,6 +2918,7 @@ class _$TitleChangedEVT
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result addCoverPressedEVT(AddCoverPressedEVT value),
+    @required Result chapterDraftDeletedEVT(ChapterDraftDeletedEVT value),
     @required
         Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
     @required Result editModeLaunchedEVT(EditModeLaunchedEVT value),
@@ -2674,6 +2936,7 @@ class _$TitleChangedEVT
     @required Result titleChangedEVT(TitleChangedEVT value),
   }) {
     assert(addCoverPressedEVT != null);
+    assert(chapterDraftDeletedEVT != null);
     assert(deleteDraftButtonPressedEVT != null);
     assert(editModeLaunchedEVT != null);
     assert(genreOptionalSelectedEVT != null);
@@ -2693,6 +2956,7 @@ class _$TitleChangedEVT
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result addCoverPressedEVT(AddCoverPressedEVT value),
+    Result chapterDraftDeletedEVT(ChapterDraftDeletedEVT value),
     Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
     Result editModeLaunchedEVT(EditModeLaunchedEVT value),
     Result genreOptionalSelectedEVT(GenreOptionalSelectedEVT value),

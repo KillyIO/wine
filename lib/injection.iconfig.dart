@@ -11,6 +11,7 @@ import 'package:wine/infrastructure/core/hive_injectable_module.dart';
 import 'package:wine/domain/models/hive/config.dart';
 import 'package:wine/domain/models/hive/series_draft.dart';
 import 'package:wine/domain/models/hive/session.dart';
+import 'package:wine/application/outlier/core/core_outlier_bloc.dart';
 import 'package:wine/infrastructure/core/firebase_injectable_module.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_storage/firebase_storage.dart';
@@ -67,6 +68,7 @@ Future<void> $initGetIt(GetIt g, {String environment}) async {
   g.registerLazySingleton<Box<Session>>(() => box3);
   final box4 = await hiveInjectableModule.openPlaceholdersBox;
   g.registerLazySingleton<Box<String>>(() => box4);
+  g.registerFactory<CoreOutlierBloc>(() => CoreOutlierBloc());
   g.registerLazySingleton<FirebaseAuth>(
       () => firebaseInjectableModule.firebaseAuth);
   g.registerLazySingleton<FirebaseStorage>(
@@ -95,6 +97,7 @@ Future<void> $initGetIt(GetIt g, {String environment}) async {
       () => FirebaseOnlineUserDatabaseFacade(g<Firestore>()));
   g.registerFactory<NewSeriesDatabaseBloc>(() => NewSeriesDatabaseBloc(
         g<ILocalSessionDatabaseFacade>(),
+        g<ILocalChapterDraftDatabaseFacade>(),
         g<ILocalSeriesDraftDatabaseFacade>(),
         g<ILocalPlaceholderDatabaseFacade>(),
       ));

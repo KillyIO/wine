@@ -28,6 +28,14 @@ class _$DatabaseFailureTearOff {
     return const FailedToDeleteOnlineData();
   }
 
+  InsufficientPermissions insufficientPermissions() {
+    return const InsufficientPermissions();
+  }
+
+  Unexpected unexpected() {
+    return const Unexpected();
+  }
+
   FailedToCreateLocalData failedToCreateLocalData() {
     return const FailedToCreateLocalData();
   }
@@ -55,6 +63,8 @@ mixin _$DatabaseFailure {
     @required Result failedToFetchOnlineData(),
     @required Result failedToUpdateOnlineData(),
     @required Result failedToDeleteOnlineData(),
+    @required Result insufficientPermissions(),
+    @required Result unexpected(),
     @required Result failedToCreateLocalData(),
     @required Result failedToRetrieveLocalData(),
     @required Result failedToUpdateLocalData(),
@@ -66,6 +76,8 @@ mixin _$DatabaseFailure {
     Result failedToFetchOnlineData(),
     Result failedToUpdateOnlineData(),
     Result failedToDeleteOnlineData(),
+    Result insufficientPermissions(),
+    Result unexpected(),
     Result failedToCreateLocalData(),
     Result failedToRetrieveLocalData(),
     Result failedToUpdateLocalData(),
@@ -78,6 +90,8 @@ mixin _$DatabaseFailure {
     @required Result failedToFetchOnlineData(FailedToFetchOnlineData value),
     @required Result failedToUpdateOnlineData(FailedToUpdateOnlineData value),
     @required Result failedToDeleteOnlineData(FailedToDeleteOnlineData value),
+    @required Result insufficientPermissions(InsufficientPermissions value),
+    @required Result unexpected(Unexpected value),
     @required Result failedToCreateLocalData(FailedToCreateLocalData value),
     @required Result failedToRetrieveLocalData(FailedToRetrieveLocalData value),
     @required Result failedToUpdateLocalData(FailedToUpdateLocalData value),
@@ -89,6 +103,8 @@ mixin _$DatabaseFailure {
     Result failedToFetchOnlineData(FailedToFetchOnlineData value),
     Result failedToUpdateOnlineData(FailedToUpdateOnlineData value),
     Result failedToDeleteOnlineData(FailedToDeleteOnlineData value),
+    Result insufficientPermissions(InsufficientPermissions value),
+    Result unexpected(Unexpected value),
     Result failedToCreateLocalData(FailedToCreateLocalData value),
     Result failedToRetrieveLocalData(FailedToRetrieveLocalData value),
     Result failedToUpdateLocalData(FailedToUpdateLocalData value),
@@ -153,6 +169,8 @@ class _$FailedToCreateOnlineData implements FailedToCreateOnlineData {
     @required Result failedToFetchOnlineData(),
     @required Result failedToUpdateOnlineData(),
     @required Result failedToDeleteOnlineData(),
+    @required Result insufficientPermissions(),
+    @required Result unexpected(),
     @required Result failedToCreateLocalData(),
     @required Result failedToRetrieveLocalData(),
     @required Result failedToUpdateLocalData(),
@@ -162,6 +180,8 @@ class _$FailedToCreateOnlineData implements FailedToCreateOnlineData {
     assert(failedToFetchOnlineData != null);
     assert(failedToUpdateOnlineData != null);
     assert(failedToDeleteOnlineData != null);
+    assert(insufficientPermissions != null);
+    assert(unexpected != null);
     assert(failedToCreateLocalData != null);
     assert(failedToRetrieveLocalData != null);
     assert(failedToUpdateLocalData != null);
@@ -176,6 +196,8 @@ class _$FailedToCreateOnlineData implements FailedToCreateOnlineData {
     Result failedToFetchOnlineData(),
     Result failedToUpdateOnlineData(),
     Result failedToDeleteOnlineData(),
+    Result insufficientPermissions(),
+    Result unexpected(),
     Result failedToCreateLocalData(),
     Result failedToRetrieveLocalData(),
     Result failedToUpdateLocalData(),
@@ -196,6 +218,8 @@ class _$FailedToCreateOnlineData implements FailedToCreateOnlineData {
     @required Result failedToFetchOnlineData(FailedToFetchOnlineData value),
     @required Result failedToUpdateOnlineData(FailedToUpdateOnlineData value),
     @required Result failedToDeleteOnlineData(FailedToDeleteOnlineData value),
+    @required Result insufficientPermissions(InsufficientPermissions value),
+    @required Result unexpected(Unexpected value),
     @required Result failedToCreateLocalData(FailedToCreateLocalData value),
     @required Result failedToRetrieveLocalData(FailedToRetrieveLocalData value),
     @required Result failedToUpdateLocalData(FailedToUpdateLocalData value),
@@ -205,6 +229,8 @@ class _$FailedToCreateOnlineData implements FailedToCreateOnlineData {
     assert(failedToFetchOnlineData != null);
     assert(failedToUpdateOnlineData != null);
     assert(failedToDeleteOnlineData != null);
+    assert(insufficientPermissions != null);
+    assert(unexpected != null);
     assert(failedToCreateLocalData != null);
     assert(failedToRetrieveLocalData != null);
     assert(failedToUpdateLocalData != null);
@@ -219,6 +245,8 @@ class _$FailedToCreateOnlineData implements FailedToCreateOnlineData {
     Result failedToFetchOnlineData(FailedToFetchOnlineData value),
     Result failedToUpdateOnlineData(FailedToUpdateOnlineData value),
     Result failedToDeleteOnlineData(FailedToDeleteOnlineData value),
+    Result insufficientPermissions(InsufficientPermissions value),
+    Result unexpected(Unexpected value),
     Result failedToCreateLocalData(FailedToCreateLocalData value),
     Result failedToRetrieveLocalData(FailedToRetrieveLocalData value),
     Result failedToUpdateLocalData(FailedToUpdateLocalData value),
@@ -277,6 +305,8 @@ class _$FailedToFetchOnlineData implements FailedToFetchOnlineData {
     @required Result failedToFetchOnlineData(),
     @required Result failedToUpdateOnlineData(),
     @required Result failedToDeleteOnlineData(),
+    @required Result insufficientPermissions(),
+    @required Result unexpected(),
     @required Result failedToCreateLocalData(),
     @required Result failedToRetrieveLocalData(),
     @required Result failedToUpdateLocalData(),
@@ -286,6 +316,8 @@ class _$FailedToFetchOnlineData implements FailedToFetchOnlineData {
     assert(failedToFetchOnlineData != null);
     assert(failedToUpdateOnlineData != null);
     assert(failedToDeleteOnlineData != null);
+    assert(insufficientPermissions != null);
+    assert(unexpected != null);
     assert(failedToCreateLocalData != null);
     assert(failedToRetrieveLocalData != null);
     assert(failedToUpdateLocalData != null);
@@ -300,6 +332,8 @@ class _$FailedToFetchOnlineData implements FailedToFetchOnlineData {
     Result failedToFetchOnlineData(),
     Result failedToUpdateOnlineData(),
     Result failedToDeleteOnlineData(),
+    Result insufficientPermissions(),
+    Result unexpected(),
     Result failedToCreateLocalData(),
     Result failedToRetrieveLocalData(),
     Result failedToUpdateLocalData(),
@@ -320,6 +354,8 @@ class _$FailedToFetchOnlineData implements FailedToFetchOnlineData {
     @required Result failedToFetchOnlineData(FailedToFetchOnlineData value),
     @required Result failedToUpdateOnlineData(FailedToUpdateOnlineData value),
     @required Result failedToDeleteOnlineData(FailedToDeleteOnlineData value),
+    @required Result insufficientPermissions(InsufficientPermissions value),
+    @required Result unexpected(Unexpected value),
     @required Result failedToCreateLocalData(FailedToCreateLocalData value),
     @required Result failedToRetrieveLocalData(FailedToRetrieveLocalData value),
     @required Result failedToUpdateLocalData(FailedToUpdateLocalData value),
@@ -329,6 +365,8 @@ class _$FailedToFetchOnlineData implements FailedToFetchOnlineData {
     assert(failedToFetchOnlineData != null);
     assert(failedToUpdateOnlineData != null);
     assert(failedToDeleteOnlineData != null);
+    assert(insufficientPermissions != null);
+    assert(unexpected != null);
     assert(failedToCreateLocalData != null);
     assert(failedToRetrieveLocalData != null);
     assert(failedToUpdateLocalData != null);
@@ -343,6 +381,8 @@ class _$FailedToFetchOnlineData implements FailedToFetchOnlineData {
     Result failedToFetchOnlineData(FailedToFetchOnlineData value),
     Result failedToUpdateOnlineData(FailedToUpdateOnlineData value),
     Result failedToDeleteOnlineData(FailedToDeleteOnlineData value),
+    Result insufficientPermissions(InsufficientPermissions value),
+    Result unexpected(Unexpected value),
     Result failedToCreateLocalData(FailedToCreateLocalData value),
     Result failedToRetrieveLocalData(FailedToRetrieveLocalData value),
     Result failedToUpdateLocalData(FailedToUpdateLocalData value),
@@ -402,6 +442,8 @@ class _$FailedToUpdateOnlineData implements FailedToUpdateOnlineData {
     @required Result failedToFetchOnlineData(),
     @required Result failedToUpdateOnlineData(),
     @required Result failedToDeleteOnlineData(),
+    @required Result insufficientPermissions(),
+    @required Result unexpected(),
     @required Result failedToCreateLocalData(),
     @required Result failedToRetrieveLocalData(),
     @required Result failedToUpdateLocalData(),
@@ -411,6 +453,8 @@ class _$FailedToUpdateOnlineData implements FailedToUpdateOnlineData {
     assert(failedToFetchOnlineData != null);
     assert(failedToUpdateOnlineData != null);
     assert(failedToDeleteOnlineData != null);
+    assert(insufficientPermissions != null);
+    assert(unexpected != null);
     assert(failedToCreateLocalData != null);
     assert(failedToRetrieveLocalData != null);
     assert(failedToUpdateLocalData != null);
@@ -425,6 +469,8 @@ class _$FailedToUpdateOnlineData implements FailedToUpdateOnlineData {
     Result failedToFetchOnlineData(),
     Result failedToUpdateOnlineData(),
     Result failedToDeleteOnlineData(),
+    Result insufficientPermissions(),
+    Result unexpected(),
     Result failedToCreateLocalData(),
     Result failedToRetrieveLocalData(),
     Result failedToUpdateLocalData(),
@@ -445,6 +491,8 @@ class _$FailedToUpdateOnlineData implements FailedToUpdateOnlineData {
     @required Result failedToFetchOnlineData(FailedToFetchOnlineData value),
     @required Result failedToUpdateOnlineData(FailedToUpdateOnlineData value),
     @required Result failedToDeleteOnlineData(FailedToDeleteOnlineData value),
+    @required Result insufficientPermissions(InsufficientPermissions value),
+    @required Result unexpected(Unexpected value),
     @required Result failedToCreateLocalData(FailedToCreateLocalData value),
     @required Result failedToRetrieveLocalData(FailedToRetrieveLocalData value),
     @required Result failedToUpdateLocalData(FailedToUpdateLocalData value),
@@ -454,6 +502,8 @@ class _$FailedToUpdateOnlineData implements FailedToUpdateOnlineData {
     assert(failedToFetchOnlineData != null);
     assert(failedToUpdateOnlineData != null);
     assert(failedToDeleteOnlineData != null);
+    assert(insufficientPermissions != null);
+    assert(unexpected != null);
     assert(failedToCreateLocalData != null);
     assert(failedToRetrieveLocalData != null);
     assert(failedToUpdateLocalData != null);
@@ -468,6 +518,8 @@ class _$FailedToUpdateOnlineData implements FailedToUpdateOnlineData {
     Result failedToFetchOnlineData(FailedToFetchOnlineData value),
     Result failedToUpdateOnlineData(FailedToUpdateOnlineData value),
     Result failedToDeleteOnlineData(FailedToDeleteOnlineData value),
+    Result insufficientPermissions(InsufficientPermissions value),
+    Result unexpected(Unexpected value),
     Result failedToCreateLocalData(FailedToCreateLocalData value),
     Result failedToRetrieveLocalData(FailedToRetrieveLocalData value),
     Result failedToUpdateLocalData(FailedToUpdateLocalData value),
@@ -527,6 +579,8 @@ class _$FailedToDeleteOnlineData implements FailedToDeleteOnlineData {
     @required Result failedToFetchOnlineData(),
     @required Result failedToUpdateOnlineData(),
     @required Result failedToDeleteOnlineData(),
+    @required Result insufficientPermissions(),
+    @required Result unexpected(),
     @required Result failedToCreateLocalData(),
     @required Result failedToRetrieveLocalData(),
     @required Result failedToUpdateLocalData(),
@@ -536,6 +590,8 @@ class _$FailedToDeleteOnlineData implements FailedToDeleteOnlineData {
     assert(failedToFetchOnlineData != null);
     assert(failedToUpdateOnlineData != null);
     assert(failedToDeleteOnlineData != null);
+    assert(insufficientPermissions != null);
+    assert(unexpected != null);
     assert(failedToCreateLocalData != null);
     assert(failedToRetrieveLocalData != null);
     assert(failedToUpdateLocalData != null);
@@ -550,6 +606,8 @@ class _$FailedToDeleteOnlineData implements FailedToDeleteOnlineData {
     Result failedToFetchOnlineData(),
     Result failedToUpdateOnlineData(),
     Result failedToDeleteOnlineData(),
+    Result insufficientPermissions(),
+    Result unexpected(),
     Result failedToCreateLocalData(),
     Result failedToRetrieveLocalData(),
     Result failedToUpdateLocalData(),
@@ -570,6 +628,8 @@ class _$FailedToDeleteOnlineData implements FailedToDeleteOnlineData {
     @required Result failedToFetchOnlineData(FailedToFetchOnlineData value),
     @required Result failedToUpdateOnlineData(FailedToUpdateOnlineData value),
     @required Result failedToDeleteOnlineData(FailedToDeleteOnlineData value),
+    @required Result insufficientPermissions(InsufficientPermissions value),
+    @required Result unexpected(Unexpected value),
     @required Result failedToCreateLocalData(FailedToCreateLocalData value),
     @required Result failedToRetrieveLocalData(FailedToRetrieveLocalData value),
     @required Result failedToUpdateLocalData(FailedToUpdateLocalData value),
@@ -579,6 +639,8 @@ class _$FailedToDeleteOnlineData implements FailedToDeleteOnlineData {
     assert(failedToFetchOnlineData != null);
     assert(failedToUpdateOnlineData != null);
     assert(failedToDeleteOnlineData != null);
+    assert(insufficientPermissions != null);
+    assert(unexpected != null);
     assert(failedToCreateLocalData != null);
     assert(failedToRetrieveLocalData != null);
     assert(failedToUpdateLocalData != null);
@@ -593,6 +655,8 @@ class _$FailedToDeleteOnlineData implements FailedToDeleteOnlineData {
     Result failedToFetchOnlineData(FailedToFetchOnlineData value),
     Result failedToUpdateOnlineData(FailedToUpdateOnlineData value),
     Result failedToDeleteOnlineData(FailedToDeleteOnlineData value),
+    Result insufficientPermissions(InsufficientPermissions value),
+    Result unexpected(Unexpected value),
     Result failedToCreateLocalData(FailedToCreateLocalData value),
     Result failedToRetrieveLocalData(FailedToRetrieveLocalData value),
     Result failedToUpdateLocalData(FailedToUpdateLocalData value),
@@ -609,6 +673,276 @@ class _$FailedToDeleteOnlineData implements FailedToDeleteOnlineData {
 
 abstract class FailedToDeleteOnlineData implements DatabaseFailure {
   const factory FailedToDeleteOnlineData() = _$FailedToDeleteOnlineData;
+}
+
+abstract class $InsufficientPermissionsCopyWith<$Res> {
+  factory $InsufficientPermissionsCopyWith(InsufficientPermissions value,
+          $Res Function(InsufficientPermissions) then) =
+      _$InsufficientPermissionsCopyWithImpl<$Res>;
+}
+
+class _$InsufficientPermissionsCopyWithImpl<$Res>
+    extends _$DatabaseFailureCopyWithImpl<$Res>
+    implements $InsufficientPermissionsCopyWith<$Res> {
+  _$InsufficientPermissionsCopyWithImpl(InsufficientPermissions _value,
+      $Res Function(InsufficientPermissions) _then)
+      : super(_value, (v) => _then(v as InsufficientPermissions));
+
+  @override
+  InsufficientPermissions get _value => super._value as InsufficientPermissions;
+}
+
+class _$InsufficientPermissions implements InsufficientPermissions {
+  const _$InsufficientPermissions();
+
+  @override
+  String toString() {
+    return 'DatabaseFailure.insufficientPermissions()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is InsufficientPermissions);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result failedToCreateOnlineData(),
+    @required Result failedToFetchOnlineData(),
+    @required Result failedToUpdateOnlineData(),
+    @required Result failedToDeleteOnlineData(),
+    @required Result insufficientPermissions(),
+    @required Result unexpected(),
+    @required Result failedToCreateLocalData(),
+    @required Result failedToRetrieveLocalData(),
+    @required Result failedToUpdateLocalData(),
+    @required Result failedToDeleteLocalData(),
+  }) {
+    assert(failedToCreateOnlineData != null);
+    assert(failedToFetchOnlineData != null);
+    assert(failedToUpdateOnlineData != null);
+    assert(failedToDeleteOnlineData != null);
+    assert(insufficientPermissions != null);
+    assert(unexpected != null);
+    assert(failedToCreateLocalData != null);
+    assert(failedToRetrieveLocalData != null);
+    assert(failedToUpdateLocalData != null);
+    assert(failedToDeleteLocalData != null);
+    return insufficientPermissions();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result failedToCreateOnlineData(),
+    Result failedToFetchOnlineData(),
+    Result failedToUpdateOnlineData(),
+    Result failedToDeleteOnlineData(),
+    Result insufficientPermissions(),
+    Result unexpected(),
+    Result failedToCreateLocalData(),
+    Result failedToRetrieveLocalData(),
+    Result failedToUpdateLocalData(),
+    Result failedToDeleteLocalData(),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (insufficientPermissions != null) {
+      return insufficientPermissions();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result failedToCreateOnlineData(FailedToCreateOnlineData value),
+    @required Result failedToFetchOnlineData(FailedToFetchOnlineData value),
+    @required Result failedToUpdateOnlineData(FailedToUpdateOnlineData value),
+    @required Result failedToDeleteOnlineData(FailedToDeleteOnlineData value),
+    @required Result insufficientPermissions(InsufficientPermissions value),
+    @required Result unexpected(Unexpected value),
+    @required Result failedToCreateLocalData(FailedToCreateLocalData value),
+    @required Result failedToRetrieveLocalData(FailedToRetrieveLocalData value),
+    @required Result failedToUpdateLocalData(FailedToUpdateLocalData value),
+    @required Result failedToDeleteLocalData(FailedToDeleteLocalData value),
+  }) {
+    assert(failedToCreateOnlineData != null);
+    assert(failedToFetchOnlineData != null);
+    assert(failedToUpdateOnlineData != null);
+    assert(failedToDeleteOnlineData != null);
+    assert(insufficientPermissions != null);
+    assert(unexpected != null);
+    assert(failedToCreateLocalData != null);
+    assert(failedToRetrieveLocalData != null);
+    assert(failedToUpdateLocalData != null);
+    assert(failedToDeleteLocalData != null);
+    return insufficientPermissions(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result failedToCreateOnlineData(FailedToCreateOnlineData value),
+    Result failedToFetchOnlineData(FailedToFetchOnlineData value),
+    Result failedToUpdateOnlineData(FailedToUpdateOnlineData value),
+    Result failedToDeleteOnlineData(FailedToDeleteOnlineData value),
+    Result insufficientPermissions(InsufficientPermissions value),
+    Result unexpected(Unexpected value),
+    Result failedToCreateLocalData(FailedToCreateLocalData value),
+    Result failedToRetrieveLocalData(FailedToRetrieveLocalData value),
+    Result failedToUpdateLocalData(FailedToUpdateLocalData value),
+    Result failedToDeleteLocalData(FailedToDeleteLocalData value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (insufficientPermissions != null) {
+      return insufficientPermissions(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class InsufficientPermissions implements DatabaseFailure {
+  const factory InsufficientPermissions() = _$InsufficientPermissions;
+}
+
+abstract class $UnexpectedCopyWith<$Res> {
+  factory $UnexpectedCopyWith(
+          Unexpected value, $Res Function(Unexpected) then) =
+      _$UnexpectedCopyWithImpl<$Res>;
+}
+
+class _$UnexpectedCopyWithImpl<$Res> extends _$DatabaseFailureCopyWithImpl<$Res>
+    implements $UnexpectedCopyWith<$Res> {
+  _$UnexpectedCopyWithImpl(Unexpected _value, $Res Function(Unexpected) _then)
+      : super(_value, (v) => _then(v as Unexpected));
+
+  @override
+  Unexpected get _value => super._value as Unexpected;
+}
+
+class _$Unexpected implements Unexpected {
+  const _$Unexpected();
+
+  @override
+  String toString() {
+    return 'DatabaseFailure.unexpected()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is Unexpected);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result failedToCreateOnlineData(),
+    @required Result failedToFetchOnlineData(),
+    @required Result failedToUpdateOnlineData(),
+    @required Result failedToDeleteOnlineData(),
+    @required Result insufficientPermissions(),
+    @required Result unexpected(),
+    @required Result failedToCreateLocalData(),
+    @required Result failedToRetrieveLocalData(),
+    @required Result failedToUpdateLocalData(),
+    @required Result failedToDeleteLocalData(),
+  }) {
+    assert(failedToCreateOnlineData != null);
+    assert(failedToFetchOnlineData != null);
+    assert(failedToUpdateOnlineData != null);
+    assert(failedToDeleteOnlineData != null);
+    assert(insufficientPermissions != null);
+    assert(unexpected != null);
+    assert(failedToCreateLocalData != null);
+    assert(failedToRetrieveLocalData != null);
+    assert(failedToUpdateLocalData != null);
+    assert(failedToDeleteLocalData != null);
+    return unexpected();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result failedToCreateOnlineData(),
+    Result failedToFetchOnlineData(),
+    Result failedToUpdateOnlineData(),
+    Result failedToDeleteOnlineData(),
+    Result insufficientPermissions(),
+    Result unexpected(),
+    Result failedToCreateLocalData(),
+    Result failedToRetrieveLocalData(),
+    Result failedToUpdateLocalData(),
+    Result failedToDeleteLocalData(),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (unexpected != null) {
+      return unexpected();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result failedToCreateOnlineData(FailedToCreateOnlineData value),
+    @required Result failedToFetchOnlineData(FailedToFetchOnlineData value),
+    @required Result failedToUpdateOnlineData(FailedToUpdateOnlineData value),
+    @required Result failedToDeleteOnlineData(FailedToDeleteOnlineData value),
+    @required Result insufficientPermissions(InsufficientPermissions value),
+    @required Result unexpected(Unexpected value),
+    @required Result failedToCreateLocalData(FailedToCreateLocalData value),
+    @required Result failedToRetrieveLocalData(FailedToRetrieveLocalData value),
+    @required Result failedToUpdateLocalData(FailedToUpdateLocalData value),
+    @required Result failedToDeleteLocalData(FailedToDeleteLocalData value),
+  }) {
+    assert(failedToCreateOnlineData != null);
+    assert(failedToFetchOnlineData != null);
+    assert(failedToUpdateOnlineData != null);
+    assert(failedToDeleteOnlineData != null);
+    assert(insufficientPermissions != null);
+    assert(unexpected != null);
+    assert(failedToCreateLocalData != null);
+    assert(failedToRetrieveLocalData != null);
+    assert(failedToUpdateLocalData != null);
+    assert(failedToDeleteLocalData != null);
+    return unexpected(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result failedToCreateOnlineData(FailedToCreateOnlineData value),
+    Result failedToFetchOnlineData(FailedToFetchOnlineData value),
+    Result failedToUpdateOnlineData(FailedToUpdateOnlineData value),
+    Result failedToDeleteOnlineData(FailedToDeleteOnlineData value),
+    Result insufficientPermissions(InsufficientPermissions value),
+    Result unexpected(Unexpected value),
+    Result failedToCreateLocalData(FailedToCreateLocalData value),
+    Result failedToRetrieveLocalData(FailedToRetrieveLocalData value),
+    Result failedToUpdateLocalData(FailedToUpdateLocalData value),
+    Result failedToDeleteLocalData(FailedToDeleteLocalData value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (unexpected != null) {
+      return unexpected(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class Unexpected implements DatabaseFailure {
+  const factory Unexpected() = _$Unexpected;
 }
 
 abstract class $FailedToCreateLocalDataCopyWith<$Res> {
@@ -651,6 +985,8 @@ class _$FailedToCreateLocalData implements FailedToCreateLocalData {
     @required Result failedToFetchOnlineData(),
     @required Result failedToUpdateOnlineData(),
     @required Result failedToDeleteOnlineData(),
+    @required Result insufficientPermissions(),
+    @required Result unexpected(),
     @required Result failedToCreateLocalData(),
     @required Result failedToRetrieveLocalData(),
     @required Result failedToUpdateLocalData(),
@@ -660,6 +996,8 @@ class _$FailedToCreateLocalData implements FailedToCreateLocalData {
     assert(failedToFetchOnlineData != null);
     assert(failedToUpdateOnlineData != null);
     assert(failedToDeleteOnlineData != null);
+    assert(insufficientPermissions != null);
+    assert(unexpected != null);
     assert(failedToCreateLocalData != null);
     assert(failedToRetrieveLocalData != null);
     assert(failedToUpdateLocalData != null);
@@ -674,6 +1012,8 @@ class _$FailedToCreateLocalData implements FailedToCreateLocalData {
     Result failedToFetchOnlineData(),
     Result failedToUpdateOnlineData(),
     Result failedToDeleteOnlineData(),
+    Result insufficientPermissions(),
+    Result unexpected(),
     Result failedToCreateLocalData(),
     Result failedToRetrieveLocalData(),
     Result failedToUpdateLocalData(),
@@ -694,6 +1034,8 @@ class _$FailedToCreateLocalData implements FailedToCreateLocalData {
     @required Result failedToFetchOnlineData(FailedToFetchOnlineData value),
     @required Result failedToUpdateOnlineData(FailedToUpdateOnlineData value),
     @required Result failedToDeleteOnlineData(FailedToDeleteOnlineData value),
+    @required Result insufficientPermissions(InsufficientPermissions value),
+    @required Result unexpected(Unexpected value),
     @required Result failedToCreateLocalData(FailedToCreateLocalData value),
     @required Result failedToRetrieveLocalData(FailedToRetrieveLocalData value),
     @required Result failedToUpdateLocalData(FailedToUpdateLocalData value),
@@ -703,6 +1045,8 @@ class _$FailedToCreateLocalData implements FailedToCreateLocalData {
     assert(failedToFetchOnlineData != null);
     assert(failedToUpdateOnlineData != null);
     assert(failedToDeleteOnlineData != null);
+    assert(insufficientPermissions != null);
+    assert(unexpected != null);
     assert(failedToCreateLocalData != null);
     assert(failedToRetrieveLocalData != null);
     assert(failedToUpdateLocalData != null);
@@ -717,6 +1061,8 @@ class _$FailedToCreateLocalData implements FailedToCreateLocalData {
     Result failedToFetchOnlineData(FailedToFetchOnlineData value),
     Result failedToUpdateOnlineData(FailedToUpdateOnlineData value),
     Result failedToDeleteOnlineData(FailedToDeleteOnlineData value),
+    Result insufficientPermissions(InsufficientPermissions value),
+    Result unexpected(Unexpected value),
     Result failedToCreateLocalData(FailedToCreateLocalData value),
     Result failedToRetrieveLocalData(FailedToRetrieveLocalData value),
     Result failedToUpdateLocalData(FailedToUpdateLocalData value),
@@ -776,6 +1122,8 @@ class _$FailedToRetrieveLocalData implements FailedToRetrieveLocalData {
     @required Result failedToFetchOnlineData(),
     @required Result failedToUpdateOnlineData(),
     @required Result failedToDeleteOnlineData(),
+    @required Result insufficientPermissions(),
+    @required Result unexpected(),
     @required Result failedToCreateLocalData(),
     @required Result failedToRetrieveLocalData(),
     @required Result failedToUpdateLocalData(),
@@ -785,6 +1133,8 @@ class _$FailedToRetrieveLocalData implements FailedToRetrieveLocalData {
     assert(failedToFetchOnlineData != null);
     assert(failedToUpdateOnlineData != null);
     assert(failedToDeleteOnlineData != null);
+    assert(insufficientPermissions != null);
+    assert(unexpected != null);
     assert(failedToCreateLocalData != null);
     assert(failedToRetrieveLocalData != null);
     assert(failedToUpdateLocalData != null);
@@ -799,6 +1149,8 @@ class _$FailedToRetrieveLocalData implements FailedToRetrieveLocalData {
     Result failedToFetchOnlineData(),
     Result failedToUpdateOnlineData(),
     Result failedToDeleteOnlineData(),
+    Result insufficientPermissions(),
+    Result unexpected(),
     Result failedToCreateLocalData(),
     Result failedToRetrieveLocalData(),
     Result failedToUpdateLocalData(),
@@ -819,6 +1171,8 @@ class _$FailedToRetrieveLocalData implements FailedToRetrieveLocalData {
     @required Result failedToFetchOnlineData(FailedToFetchOnlineData value),
     @required Result failedToUpdateOnlineData(FailedToUpdateOnlineData value),
     @required Result failedToDeleteOnlineData(FailedToDeleteOnlineData value),
+    @required Result insufficientPermissions(InsufficientPermissions value),
+    @required Result unexpected(Unexpected value),
     @required Result failedToCreateLocalData(FailedToCreateLocalData value),
     @required Result failedToRetrieveLocalData(FailedToRetrieveLocalData value),
     @required Result failedToUpdateLocalData(FailedToUpdateLocalData value),
@@ -828,6 +1182,8 @@ class _$FailedToRetrieveLocalData implements FailedToRetrieveLocalData {
     assert(failedToFetchOnlineData != null);
     assert(failedToUpdateOnlineData != null);
     assert(failedToDeleteOnlineData != null);
+    assert(insufficientPermissions != null);
+    assert(unexpected != null);
     assert(failedToCreateLocalData != null);
     assert(failedToRetrieveLocalData != null);
     assert(failedToUpdateLocalData != null);
@@ -842,6 +1198,8 @@ class _$FailedToRetrieveLocalData implements FailedToRetrieveLocalData {
     Result failedToFetchOnlineData(FailedToFetchOnlineData value),
     Result failedToUpdateOnlineData(FailedToUpdateOnlineData value),
     Result failedToDeleteOnlineData(FailedToDeleteOnlineData value),
+    Result insufficientPermissions(InsufficientPermissions value),
+    Result unexpected(Unexpected value),
     Result failedToCreateLocalData(FailedToCreateLocalData value),
     Result failedToRetrieveLocalData(FailedToRetrieveLocalData value),
     Result failedToUpdateLocalData(FailedToUpdateLocalData value),
@@ -900,6 +1258,8 @@ class _$FailedToUpdateLocalData implements FailedToUpdateLocalData {
     @required Result failedToFetchOnlineData(),
     @required Result failedToUpdateOnlineData(),
     @required Result failedToDeleteOnlineData(),
+    @required Result insufficientPermissions(),
+    @required Result unexpected(),
     @required Result failedToCreateLocalData(),
     @required Result failedToRetrieveLocalData(),
     @required Result failedToUpdateLocalData(),
@@ -909,6 +1269,8 @@ class _$FailedToUpdateLocalData implements FailedToUpdateLocalData {
     assert(failedToFetchOnlineData != null);
     assert(failedToUpdateOnlineData != null);
     assert(failedToDeleteOnlineData != null);
+    assert(insufficientPermissions != null);
+    assert(unexpected != null);
     assert(failedToCreateLocalData != null);
     assert(failedToRetrieveLocalData != null);
     assert(failedToUpdateLocalData != null);
@@ -923,6 +1285,8 @@ class _$FailedToUpdateLocalData implements FailedToUpdateLocalData {
     Result failedToFetchOnlineData(),
     Result failedToUpdateOnlineData(),
     Result failedToDeleteOnlineData(),
+    Result insufficientPermissions(),
+    Result unexpected(),
     Result failedToCreateLocalData(),
     Result failedToRetrieveLocalData(),
     Result failedToUpdateLocalData(),
@@ -943,6 +1307,8 @@ class _$FailedToUpdateLocalData implements FailedToUpdateLocalData {
     @required Result failedToFetchOnlineData(FailedToFetchOnlineData value),
     @required Result failedToUpdateOnlineData(FailedToUpdateOnlineData value),
     @required Result failedToDeleteOnlineData(FailedToDeleteOnlineData value),
+    @required Result insufficientPermissions(InsufficientPermissions value),
+    @required Result unexpected(Unexpected value),
     @required Result failedToCreateLocalData(FailedToCreateLocalData value),
     @required Result failedToRetrieveLocalData(FailedToRetrieveLocalData value),
     @required Result failedToUpdateLocalData(FailedToUpdateLocalData value),
@@ -952,6 +1318,8 @@ class _$FailedToUpdateLocalData implements FailedToUpdateLocalData {
     assert(failedToFetchOnlineData != null);
     assert(failedToUpdateOnlineData != null);
     assert(failedToDeleteOnlineData != null);
+    assert(insufficientPermissions != null);
+    assert(unexpected != null);
     assert(failedToCreateLocalData != null);
     assert(failedToRetrieveLocalData != null);
     assert(failedToUpdateLocalData != null);
@@ -966,6 +1334,8 @@ class _$FailedToUpdateLocalData implements FailedToUpdateLocalData {
     Result failedToFetchOnlineData(FailedToFetchOnlineData value),
     Result failedToUpdateOnlineData(FailedToUpdateOnlineData value),
     Result failedToDeleteOnlineData(FailedToDeleteOnlineData value),
+    Result insufficientPermissions(InsufficientPermissions value),
+    Result unexpected(Unexpected value),
     Result failedToCreateLocalData(FailedToCreateLocalData value),
     Result failedToRetrieveLocalData(FailedToRetrieveLocalData value),
     Result failedToUpdateLocalData(FailedToUpdateLocalData value),
@@ -1024,6 +1394,8 @@ class _$FailedToDeleteLocalData implements FailedToDeleteLocalData {
     @required Result failedToFetchOnlineData(),
     @required Result failedToUpdateOnlineData(),
     @required Result failedToDeleteOnlineData(),
+    @required Result insufficientPermissions(),
+    @required Result unexpected(),
     @required Result failedToCreateLocalData(),
     @required Result failedToRetrieveLocalData(),
     @required Result failedToUpdateLocalData(),
@@ -1033,6 +1405,8 @@ class _$FailedToDeleteLocalData implements FailedToDeleteLocalData {
     assert(failedToFetchOnlineData != null);
     assert(failedToUpdateOnlineData != null);
     assert(failedToDeleteOnlineData != null);
+    assert(insufficientPermissions != null);
+    assert(unexpected != null);
     assert(failedToCreateLocalData != null);
     assert(failedToRetrieveLocalData != null);
     assert(failedToUpdateLocalData != null);
@@ -1047,6 +1421,8 @@ class _$FailedToDeleteLocalData implements FailedToDeleteLocalData {
     Result failedToFetchOnlineData(),
     Result failedToUpdateOnlineData(),
     Result failedToDeleteOnlineData(),
+    Result insufficientPermissions(),
+    Result unexpected(),
     Result failedToCreateLocalData(),
     Result failedToRetrieveLocalData(),
     Result failedToUpdateLocalData(),
@@ -1067,6 +1443,8 @@ class _$FailedToDeleteLocalData implements FailedToDeleteLocalData {
     @required Result failedToFetchOnlineData(FailedToFetchOnlineData value),
     @required Result failedToUpdateOnlineData(FailedToUpdateOnlineData value),
     @required Result failedToDeleteOnlineData(FailedToDeleteOnlineData value),
+    @required Result insufficientPermissions(InsufficientPermissions value),
+    @required Result unexpected(Unexpected value),
     @required Result failedToCreateLocalData(FailedToCreateLocalData value),
     @required Result failedToRetrieveLocalData(FailedToRetrieveLocalData value),
     @required Result failedToUpdateLocalData(FailedToUpdateLocalData value),
@@ -1076,6 +1454,8 @@ class _$FailedToDeleteLocalData implements FailedToDeleteLocalData {
     assert(failedToFetchOnlineData != null);
     assert(failedToUpdateOnlineData != null);
     assert(failedToDeleteOnlineData != null);
+    assert(insufficientPermissions != null);
+    assert(unexpected != null);
     assert(failedToCreateLocalData != null);
     assert(failedToRetrieveLocalData != null);
     assert(failedToUpdateLocalData != null);
@@ -1090,6 +1470,8 @@ class _$FailedToDeleteLocalData implements FailedToDeleteLocalData {
     Result failedToFetchOnlineData(FailedToFetchOnlineData value),
     Result failedToUpdateOnlineData(FailedToUpdateOnlineData value),
     Result failedToDeleteOnlineData(FailedToDeleteOnlineData value),
+    Result insufficientPermissions(InsufficientPermissions value),
+    Result unexpected(Unexpected value),
     Result failedToCreateLocalData(FailedToCreateLocalData value),
     Result failedToRetrieveLocalData(FailedToRetrieveLocalData value),
     Result failedToUpdateLocalData(FailedToUpdateLocalData value),

@@ -12,7 +12,7 @@ class NewSeriesListeners {
         (some) => some.fold(
           (_) {},
           (success) {
-            if (state.isEditMode) {
+            if (success is SeriesDraftDeletedSCS && state.isEditMode) {
               Navigator.of(context).pop();
             } else {
               if (success is SeriesDraftSavedSCS) {

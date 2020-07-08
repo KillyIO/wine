@@ -55,8 +55,8 @@ class NewSeriesDatabaseMethods {
           message: 'This series will be available to the community once you publish the first chapter.',
           buttonText: 'GOT IT!',
           onPressed: () {
-            context.bloc<NewSeriesDatabaseBloc>().add(const NewSeriesDatabaseEvent.saveSeriesDraftButtonPressedEVT());
             Navigator.of(context).pop(true);
+            context.bloc<NewSeriesDatabaseBloc>().add(const NewSeriesDatabaseEvent.saveSeriesDraftButtonPressedEVT());
           },
         ),
       );

@@ -29,28 +29,10 @@ class NewChapterListeners {
             orElse: () => null,
           ),
           (success) {
-            if ((success is ChapterDraftDeletedSCS && !state.isFirstChapter) ||
-                success is ChapterDraftSavedSCS ||
-                success is SeriesDraftDeletedSCS) {
-              if (state.isEditMode) {
-                Navigator.of(context).pop();
-              } else {
-                if (state.isFirstChapter) {
-                  sailor.navigate(
-                    args.routeBack,
-                    navigationType: NavigationType.pushAndRemoveUntil,
-                    removeUntilPredicate: (_) => false,
-                  );
-                  homeNavMethods.resetBloc();
-                } else {
-                  sailor.navigate(
-                    args.routeBack,
-                    args: ChapterPageArgs(chapter: args.previousChapter),
-                    navigationType: NavigationType.pushAndRemoveUntil,
-                    removeUntilPredicate: ModalRoute.withName(args.predicateRoute),
-                  );
-                }
-              }
+            if (success is ChapterDraftSavedSCS ||
+                (success is ChapterDraftDeletedSCS && !state.isFirstChapter) ||
+                (success is SeriesDraftDeletedSCS && state.isFirstChapter)) {
+              Navigator.of(context).popUntil((route) => route.settings.name == args.routeBack);
             }
           },
         ),

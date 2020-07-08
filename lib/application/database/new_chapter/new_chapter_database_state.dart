@@ -31,7 +31,7 @@ abstract class NewChapterDatabaseState with _$NewChapterDatabaseState {
     @required TextEditingController storyController,
     @required TextEditingController titleController,
     @required Title title,
-  }) = _NewChapterPageState;
+  }) = _NewChapterDatabaseState;
 
   factory NewChapterDatabaseState.initial() => NewChapterDatabaseState(
         chapterDraft: ChapterDraft(),

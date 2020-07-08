@@ -13,8 +13,10 @@ class NewChapterDatabaseMethods {
   void addCoverPressed() =>
       context.bloc<NewChapterDatabaseBloc>().add(const NewChapterDatabaseEvent.addCoverPressedEVT());
 
-  void deleteDraft() =>
-      context.bloc<NewChapterDatabaseBloc>().add(const NewChapterDatabaseEvent.deleteDraftButtonPressedEVT());
+  void deleteDraft() {
+    context.bloc<NewChapterDatabaseBloc>().add(const NewChapterDatabaseEvent.deleteDraftButtonPressedEVT());
+    Navigator.of(context).pop(true);
+  }
 
   void isEndChanged({@required bool value}) =>
       context.bloc<NewChapterDatabaseBloc>().add(NewChapterDatabaseEvent.isEndChangedEVT(isEnd: value));

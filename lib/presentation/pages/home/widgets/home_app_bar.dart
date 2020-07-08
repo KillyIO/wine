@@ -9,7 +9,7 @@ import 'package:wine/routes.dart';
 import 'package:wine/utils/constants.dart';
 
 class HomeAppBar extends StatefulWidget implements PreferredSizeWidget {
-  final HomeNavigationMethods homeNavState;
+  final HomeNavigationMethods homeNavMethods;
   final bool isDrawerOpen;
   final bool isNewSeriesPageOpen;
 
@@ -18,7 +18,7 @@ class HomeAppBar extends StatefulWidget implements PreferredSizeWidget {
 
   const HomeAppBar({
     Key key,
-    @required this.homeNavState,
+    @required this.homeNavMethods,
     @required this.isDrawerOpen,
     @required this.isNewSeriesPageOpen,
     this.preferredSize = const Size.fromHeight(kToolbarHeight),
@@ -54,7 +54,7 @@ class _HomeAppBarState extends State<HomeAppBar> {
                   animation: widget.isNewSeriesPageOpen ? 'create' : 'dismiss',
                   filename: 'assets/animation/new_series.flr',
                   height: 20.0,
-                  onPressed: () => widget.homeNavState.newSeriesIconPressed(isNSOpen: true),
+                  onPressed: () => widget.homeNavMethods.newSeriesIconPressed(isNSOpen: true),
                   width: 20.0,
                 ),
               ),
@@ -64,7 +64,7 @@ class _HomeAppBarState extends State<HomeAppBar> {
                 animation: Scaffold.of(context).isEndDrawerOpen ? 'menu_to_x' : 'x_to_menu',
                 filename: 'assets/animation/menu.flr',
                 height: 20.0,
-                onPressed: () => widget.homeNavState.openDrawer(),
+                onPressed: () => widget.homeNavMethods.openDrawer(),
                 width: 20.0,
               ),
             ),

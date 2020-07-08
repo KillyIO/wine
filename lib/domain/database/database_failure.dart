@@ -9,6 +9,8 @@ abstract class DatabaseFailure with _$DatabaseFailure {
   const factory DatabaseFailure.failedToFetchOnlineData() = FailedToFetchOnlineData;
   const factory DatabaseFailure.failedToUpdateOnlineData() = FailedToUpdateOnlineData;
   const factory DatabaseFailure.failedToDeleteOnlineData() = FailedToDeleteOnlineData;
+  const factory DatabaseFailure.insufficientPermissions() = InsufficientPermissions;
+  const factory DatabaseFailure.unexpected() = Unexpected;
 
   // NOTE LOCAL DATA
   const factory DatabaseFailure.failedToCreateLocalData() = FailedToCreateLocalData;

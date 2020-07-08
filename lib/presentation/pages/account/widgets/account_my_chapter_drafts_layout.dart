@@ -47,7 +47,7 @@ class AccountMyChapterDraftsLayout extends StatelessWidget {
                         coverUrl: chapterDraft.coverUrl,
                         title: chapterDraft.title,
                         authorName: acDbState.session.username,
-                        seriesTitle: acDbState.seriesMap[chapterDraft.seriesUid].title,
+                        seriesTitle: acDbState.seriesMap[chapterDraft.seriesUid]?.title,
                         onPressed: () => sailor.navigate(
                           Constants.newChapterRoute,
                           args: NewChapterPageArgs(chapterDraft: chapterDraft, routeBack: Constants.accountRoute),

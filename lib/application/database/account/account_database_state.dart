@@ -13,7 +13,7 @@ abstract class AccountDatabaseState with _$AccountDatabaseState {
     @required Map<String, String> languages,
     @required Option<Either<DatabaseFailure, DatabaseSuccess>> databaseFailureOrSuccessOption,
     @required Session session,
-  }) = _AccountSettingsState;
+  }) = _AccountDatabaseState;
 
   factory AccountDatabaseState.initial() => AccountDatabaseState(
         chapters: <Chapter>[],

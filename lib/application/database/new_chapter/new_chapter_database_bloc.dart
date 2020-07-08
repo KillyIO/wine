@@ -137,24 +137,30 @@ class NewChapterDatabaseBloc extends Bloc<NewChapterDatabaseEvent, NewChapterDat
 
         final Either<DatabaseFailure, DatabaseSuccess> failureOrSuccess =
             await _onlineChapterDatabaseFacade.publishChapter(chapter);
-        failureOrSuccess.fold((_) {}, (success) {
-          if (success is ChapterPublishedSCS) {
-            add(NewChapterDatabaseEvent.chapterPublishedEVT(chapter));
-          }
-        });
+        failureOrSuccess.fold(
+          (_) {},
+          (success) {
+            if (success is ChapterPublishedSCS) {
+              add(NewChapterDatabaseEvent.chapterPublishedEVT(chapter));
+            }
+          },
+        );
       },
       deleteDraftButtonPressedEVT: (event) async* {
         yield state.copyWith(isDeletingOrPublishingOrSaving: true, databaseFailureOrSuccessOption: none());
 
-        final String chapterDraftUid = state.chapterDraft.uid;
-
         final Either<DatabaseFailure, DatabaseSuccess> failureOrSuccess =
-            await _localChapterDraftDatabaseFacade.deleteChapterDraft(chapterDraftUid);
-
-        yield state.copyWith(
-          isDeletingOrPublishingOrSaving: false,
-          databaseFailureOrSuccessOption: optionOf(failureOrSuccess),
+            await _localSeriesDraftDatabaseFacade.deleteSeriesDraft(state.chapterDraft.seriesUid);
+        failureOrSuccess.fold(
+          (_) {},
+          (success) {
+            if (success is SeriesDraftDeletedSCS) {
+              add(const NewChapterDatabaseEvent.seriesDraftDeletedEVT());
+            }
+          },
         );
+
+        yield state.copyWith(databaseFailureOrSuccessOption: optionOf(failureOrSuccess));
       },
       editModeLaunchedEVT: (event) async* {
         state.titleController.text = event.chapterDraft.title;
@@ -238,33 +244,51 @@ class NewChapterDatabaseBloc extends Bloc<NewChapterDatabaseEvent, NewChapterDat
         );
       },
       placeholderFetchedEVT: (event) async* {
-        final ChapterDraft chapterDraft = ChapterDraft(
-          authorUid: event.sessionUid,
-          genre: event.seriesDraft.genre ?? event.previousChapter.genre,
-          genreOptional: event.seriesDraft.genreOptional ?? event.previousChapter.genreOptional,
-          index: event.previousChapter != null ? event.previousChapter.index + 1 : 1,
-          isNSFW: event.seriesDraft.isNSFW ?? event.previousChapter.isNSFW,
-          language: event.seriesDraft.language ?? event.previousChapter.language,
-          seriesUid: event.seriesDraft.uid ?? event.previousChapter.seriesUid,
-          uid: uuid.v4(),
-        );
+        final ChapterDraft chapterDraft = ChapterDraft(authorUid: event.sessionUid, uid: uuid.v4());
 
-        final bool isNSFW = event.seriesDraft.isNSFW ?? event.previousChapter.isNSFW;
-        final String genreOptionalStr = event.seriesDraft.genreOptional ?? event.previousChapter.genreOptional;
-        final String genreStr = event.seriesDraft.genre ?? event.previousChapter.genre;
-        final String languageStr = event.seriesDraft.language ?? event.previousChapter.language;
+        bool isNSFW;
+        String genreOptionalStr;
+        String genreStr;
+        String languageStr;
+
+        if (event.seriesDraft != null) {
+          chapterDraft
+            ..genre = event.seriesDraft.genre
+            ..genreOptional = event.seriesDraft.genreOptional
+            ..index = 1
+            ..language = event.seriesDraft.language
+            ..seriesUid = event.seriesDraft.uid;
+
+          isNSFW = event.seriesDraft.isNSFW;
+          genreOptionalStr = event.seriesDraft.genreOptional;
+          genreStr = event.seriesDraft.genre;
+          languageStr = event.seriesDraft.language;
+        } else if (event.previousChapter != null) {
+          chapterDraft
+            ..genre = event.previousChapter.genre
+            ..genreOptional = event.previousChapter.genreOptional ?? ''
+            ..index = event.previousChapter.index + 1
+            ..language = event.previousChapter.language
+            ..previousChapterUid = event.previousChapter.uid
+            ..seriesUid = event.previousChapter.seriesUid;
+
+          isNSFW = event.previousChapter.isNSFW;
+          genreOptionalStr = event.previousChapter.genreOptional ?? '';
+          genreStr = event.previousChapter.genre;
+          languageStr = event.previousChapter.language;
+        }
 
         yield state.copyWith(
           chapterDraft: chapterDraft,
-          isEditMode: false,
-          isFirstChapter: event.seriesDraft != null,
           genre: Genre(genreStr),
-          genreStr: genreStr,
           genreOptional: Genre(genreOptionalStr, isOptional: true),
           genreOptionalStr: genreOptionalStr,
+          genreStr: genreStr,
+          isEditMode: false,
+          isFirstChapter: event.seriesDraft != null,
+          isNSFW: isNSFW,
           language: Language(languageStr),
           languageStr: languageStr,
-          isNSFW: isNSFW,
         );
       },
       publishButtonPressedEVT: (event) async* {
@@ -357,7 +381,13 @@ class NewChapterDatabaseBloc extends Bloc<NewChapterDatabaseEvent, NewChapterDat
         yield state.copyWith(databaseFailureOrSuccessOption: optionOf(failureOrSuccess));
       },
       seriesDraftDeletedEVT: (event) async* {
-        yield state.copyWith(isDeletingOrPublishingOrSaving: false, databaseFailureOrSuccessOption: none());
+        final Either<DatabaseFailure, DatabaseSuccess> failureOrSuccess =
+            await _localChapterDraftDatabaseFacade.deleteChapterDraft(state.chapterDraft.uid);
+
+        yield state.copyWith(
+          databaseFailureOrSuccessOption: optionOf(failureOrSuccess),
+          isDeletingOrPublishingOrSaving: false,
+        );
       },
       seriesDraftFetchedEVT: (event) async* {
         Either<DatabaseFailure, DatabaseSuccess> failureOrSuccess;
@@ -393,16 +423,11 @@ class NewChapterDatabaseBloc extends Bloc<NewChapterDatabaseEvent, NewChapterDat
       seriesPublishedEVT: (event) async* {
         final Either<DatabaseFailure, DatabaseSuccess> failureOrSuccess =
             await _localSeriesDraftDatabaseFacade.deleteSeriesDraft(event.series.uid);
-        failureOrSuccess.fold(
-          (_) {},
-          (success) {
-            if (success is SeriesDraftDeletedSCS) {
-              add(const NewChapterDatabaseEvent.seriesDraftDeletedEVT());
-            }
-          },
-        );
 
-        yield state.copyWith(databaseFailureOrSuccessOption: optionOf(failureOrSuccess));
+        yield state.copyWith(
+          databaseFailureOrSuccessOption: optionOf(failureOrSuccess),
+          isDeletingOrPublishingOrSaving: false,
+        );
       },
       sessionFetchedEVT: (event) async* {
         final Random random = Random();

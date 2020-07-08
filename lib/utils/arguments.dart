@@ -39,6 +39,10 @@ class SeriesPageArgs extends BaseArguments {
 
 class ChapterPageArgs extends BaseArguments {
   final Chapter chapter;
+  final String predicateRoute;
 
-  ChapterPageArgs({@required this.chapter});
+  ChapterPageArgs({
+    @required this.chapter,
+    @required this.predicateRoute,
+  });
 }
