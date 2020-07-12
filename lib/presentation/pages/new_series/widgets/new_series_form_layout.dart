@@ -2,36 +2,37 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:wine/application/database/new_series/new_series_database_bloc.dart';
-import 'package:wine/presentation/pages/home/utils/home_navigation_methods.dart';
+import 'package:wine/domain/models/hive/series_draft.dart';
 import 'package:wine/presentation/pages/new_series/utils/new_series_database_methods.dart';
 import 'package:wine/presentation/pages/new_series/utils/new_series_database_validators.dart';
 import 'package:wine/presentation/pages/new_series/utils/new_series_listeners.dart';
 import 'package:wine/presentation/pages/new_series/widgets/new_series_form.dart';
 import 'package:wine/presentation/widgets/wine_leading_image_button.dart';
 import 'package:wine/presentation/widgets/wine_loading_screen.dart';
-import 'package:wine/utils/arguments.dart';
 
 class NewSeriesFormLayout extends StatefulWidget {
-  final NewSeriesPageArgs args;
+  final SeriesDraft seriesDraft;
 
-  const NewSeriesFormLayout({Key key, this.args}) : super(key: key);
+  const NewSeriesFormLayout({
+    Key key,
+    this.seriesDraft,
+  }) : super(key: key);
 
   @override
   _NewSeriesFormLayoutState createState() => _NewSeriesFormLayoutState();
 }
 
 class _NewSeriesFormLayoutState extends State<NewSeriesFormLayout> with TickerProviderStateMixin {
-  HomeNavigationMethods _homeNavMethods;
   NewSeriesDatabaseMethods _nsDbMethods;
   NewSeriesDatabaseValidators _nsDbValidators;
-  final NewSeriesListeners _nsListeners = NewSeriesListeners();
+  NewSeriesListeners _nsListeners;
 
   @override
   void initState() {
     super.initState();
-    _homeNavMethods = HomeNavigationMethods(context);
-    _nsDbMethods = NewSeriesDatabaseMethods(context, _homeNavMethods);
+    _nsDbMethods = NewSeriesDatabaseMethods(context);
     _nsDbValidators = NewSeriesDatabaseValidators(context);
+    _nsListeners = NewSeriesListeners();
   }
 
   @override

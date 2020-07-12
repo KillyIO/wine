@@ -30,6 +30,22 @@ class FirebaseOnlineChapterDatabaseFacade implements IOnlineChapterDatabaseFacad
   );
 
   @override
+  Future<Either<DatabaseFailure, DatabaseSuccess>> deleteChapter(String chapterUid) async {
+    final DocumentReference ref = _firestore.collection(Paths.chaptersPath).document(chapterUid);
+
+    await ref.delete();
+    return right(const DatabaseSuccess.chapterDeletedSCS());
+  }
+
+  @override
+  Future<Either<DatabaseFailure, DatabaseSuccess>> deleteChapterCover(String coverUrl) async {
+    final StorageReference storageReference = await _firebaseStorage.getReferenceFromUrl(coverUrl);
+
+    await storageReference.delete();
+    return right(const DatabaseSuccess.chapterCoverDeletedSCS());
+  }
+
+  @override
   Future<Either<DatabaseFailure, DatabaseSuccess>> loadChapterBookmarksCount(String chapterUid) async {
     final DocumentSnapshot documentSnapshot =
         await _firestore.collection(Paths.chaptersBookmarksPath).document(chapterUid).get();

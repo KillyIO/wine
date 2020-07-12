@@ -3,15 +3,19 @@ part of 'new_chapter_database_bloc.dart';
 @freezed
 abstract class NewChapterDatabaseEvent with _$NewChapterDatabaseEvent {
   const factory NewChapterDatabaseEvent.addCoverPressedEVT() = AddCoverPressedEVT;
-  const factory NewChapterDatabaseEvent.chapterDraftDeletedEVT(Chapter chapter) = ChapterDraftDeletedEVT;
-  const factory NewChapterDatabaseEvent.chapterPublishedEVT(Chapter chapter) = ChapterPublishedEVT;
-  const factory NewChapterDatabaseEvent.copyrightsSelectedEVT(String copyrights) = CopyrightsSelectedEVT;
+  const factory NewChapterDatabaseEvent.chapterCoverDeletedEVT() = ChapterCoverDeletedEVT;
   const factory NewChapterDatabaseEvent.chapterCoverUploadedEVT(
     String coverUrl,
     ChapterDraft chapterDraft,
   ) = ChapterCoverUploadedEVT;
+  const factory NewChapterDatabaseEvent.chapterPublishedEVT(Chapter chapter) = ChapterPublishedEVT;
+  const factory NewChapterDatabaseEvent.copyrightsSelectedEVT(String copyrights) = CopyrightsSelectedEVT;
+  const factory NewChapterDatabaseEvent.chapterDeletedEVT() = ChapterDeletedEVT;
   const factory NewChapterDatabaseEvent.deleteDraftButtonPressedEVT() = DeleteDraftButtonPressedEVT;
   const factory NewChapterDatabaseEvent.editModeLaunchedEVT(ChapterDraft chapterDraft) = EditModeLaunchedEVT;
+  const factory NewChapterDatabaseEvent.failureWhenPublishingChapterEVT(String coverUrl) = FailureWhenPublishingChapterEVT;
+  const factory NewChapterDatabaseEvent.failureWhenPublishingSeriesEVT({String coverUrl}) = FailureWhenPublishingSeriesEVT;
+  const factory NewChapterDatabaseEvent.failureWhenUploadingSeriesCoverEVT() = FailureWhenUploadingSeriesCoverEVT;
   const factory NewChapterDatabaseEvent.genreOptionalSelectedEVT(String genreOptional) = GenreOptionalSelectedEVT;
   const factory NewChapterDatabaseEvent.genreSelectedEVT(String genre) = GenreSelectedEVT;
   const factory NewChapterDatabaseEvent.isEndChangedEVT({@required bool isEnd}) = IsEndChangedEVT;
@@ -31,6 +35,7 @@ abstract class NewChapterDatabaseEvent with _$NewChapterDatabaseEvent {
   }) = PlaceholderFetchedEVT;
   const factory NewChapterDatabaseEvent.publishButtonPressedEVT() = PublishButtonPressedEVT;
   const factory NewChapterDatabaseEvent.saveOrBackButtonPressedEVT() = SaveOrBackButtonPressedEVT;
+  const factory NewChapterDatabaseEvent.seriesCoverDeletedEVT() = SeriesCoverDeletedEVT;
   const factory NewChapterDatabaseEvent.seriesCoverUploadedEVT(
     String coverUrl,
     SeriesDraft seriesDraft,

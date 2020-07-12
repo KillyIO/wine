@@ -28,11 +28,6 @@ class NewChapterDatabaseMethods {
     final bool canPop = Navigator.of(context).canPop();
 
     if (canPop) {
-      final bool isFirstChapter = context.bloc<NewChapterDatabaseBloc>().state.isFirstChapter;
-
-      if (isFirstChapter) {
-        homeNavMethods.newSeriesIconPressed(isNSOpen: false);
-      }
       saveOrBackButtonPressed();
     }
     return canPop;

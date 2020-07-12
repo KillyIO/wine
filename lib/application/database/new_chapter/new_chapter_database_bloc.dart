@@ -41,6 +41,9 @@ part 'new_chapter_database_bloc.freezed.dart';
 part 'new_chapter_database_event.dart';
 part 'new_chapter_database_state.dart';
 
+/// Business logic used in `new-chapter-page`
+///
+/// Consult workflow at this path `root/assets/workflow/WINE_publish_series_workflow.png`
 @injectable
 class NewChapterDatabaseBloc extends Bloc<NewChapterDatabaseEvent, NewChapterDatabaseState> {
   final ILocalSessionDatabaseFacade _localSessionDatabaseFacade;
@@ -92,7 +95,16 @@ class NewChapterDatabaseBloc extends Bloc<NewChapterDatabaseEvent, NewChapterDat
           }
         }
       },
-      chapterDraftDeletedEVT: (event) async* {
+      chapterCoverDeletedEVT: (event) async* {
+        final Either<DatabaseFailure, DatabaseSuccess> failureOrSuccess =
+            await _onlineChapterDatabaseFacade.deleteChapter(state.chapterDraft.uid);
+
+        yield state.copyWith(
+          isDeletingOrPublishingOrSaving: false,
+          databaseFailureOrSuccessOption: optionOf(failureOrSuccess),
+        );
+      },
+      chapterPublishedEVT: (event) async* {
         if (state.isFirstChapter) {
           final Either<DatabaseFailure, DatabaseSuccess> failureOrSuccess =
               await _localSeriesDraftDatabaseFacade.fetchSeriesDraft(event.chapter.seriesUid);
@@ -110,20 +122,6 @@ class NewChapterDatabaseBloc extends Bloc<NewChapterDatabaseEvent, NewChapterDat
           yield state.copyWith(isDeletingOrPublishingOrSaving: false, databaseFailureOrSuccessOption: none());
         }
       },
-      chapterPublishedEVT: (event) async* {
-        final Either<DatabaseFailure, DatabaseSuccess> failureOrSuccess =
-            await _localChapterDraftDatabaseFacade.deleteChapterDraft(event.chapter.uid);
-        failureOrSuccess.fold(
-          (_) {},
-          (success) {
-            if (success is ChapterDraftDeletedSCS) {
-              add(NewChapterDatabaseEvent.chapterDraftDeletedEVT(event.chapter));
-            }
-          },
-        );
-
-        yield state.copyWith(databaseFailureOrSuccessOption: optionOf(failureOrSuccess));
-      },
       copyrightsSelectedEVT: (event) async* {
         yield state.copyWith(
           copyrights: Copyrights(event.copyrights),
@@ -138,12 +136,28 @@ class NewChapterDatabaseBloc extends Bloc<NewChapterDatabaseEvent, NewChapterDat
         final Either<DatabaseFailure, DatabaseSuccess> failureOrSuccess =
             await _onlineChapterDatabaseFacade.publishChapter(chapter);
         failureOrSuccess.fold(
-          (_) {},
+          (_) {
+            add(NewChapterDatabaseEvent.failureWhenPublishingChapterEVT(event.coverUrl));
+          },
           (success) {
             if (success is ChapterPublishedSCS) {
               add(NewChapterDatabaseEvent.chapterPublishedEVT(chapter));
             }
           },
+        );
+
+        yield state.copyWith(
+          chapterCoverUrl: event.coverUrl,
+          databaseFailureOrSuccessOption: optionOf(failureOrSuccess),
+        );
+      },
+      chapterDeletedEVT: (event) async* {
+        final Either<DatabaseFailure, DatabaseSuccess> failureOrSuccess =
+            await _onlineChapterDatabaseFacade.deleteChapter(state.chapterDraft.uid);
+
+        yield state.copyWith(
+          isDeletingOrPublishingOrSaving: false,
+          databaseFailureOrSuccessOption: optionOf(failureOrSuccess),
         );
       },
       deleteDraftButtonPressedEVT: (event) async* {
@@ -189,6 +203,55 @@ class NewChapterDatabaseBloc extends Bloc<NewChapterDatabaseEvent, NewChapterDat
           titleStr: event.chapterDraft.title,
           titleWordCount: tps.getWordCount(event.chapterDraft.title),
         );
+      },
+      failureWhenPublishingChapterEVT: (event) async* {
+        final Either<DatabaseFailure, DatabaseSuccess> failureOrSuccess =
+            await _onlineChapterDatabaseFacade.deleteChapterCover(event.coverUrl);
+
+        yield state.copyWith(
+          isDeletingOrPublishingOrSaving: false,
+          databaseFailureOrSuccessOption: optionOf(failureOrSuccess),
+        );
+      },
+      failureWhenPublishingSeriesEVT: (event) async* {
+        if (event.coverUrl != null) {
+          final Either<DatabaseFailure, DatabaseSuccess> failureOrSuccess =
+              await _onlineSeriesDatabaseFacade.deleteSeriesCover(event.coverUrl);
+          failureOrSuccess.fold(
+            (_) {},
+            (success) {
+              if (success is SeriesCoverDeletedSCS) {
+                add(const NewChapterDatabaseEvent.seriesCoverDeletedEVT());
+              }
+            },
+          );
+        } else {
+          yield* seriesHasNotUploadedCover(state);
+        }
+      },
+      failureWhenUploadingSeriesCoverEVT: (event) async* {
+        Either<DatabaseFailure, DatabaseSuccess> failureOrSuccess;
+
+        if (state.chapterCoverUrl.isNotEmptyOrNull) {
+          failureOrSuccess = await _onlineChapterDatabaseFacade.deleteChapterCover(state.chapterCoverUrl);
+          failureOrSuccess.fold(
+            (_) {},
+            (success) {
+              if (success is ChapterCoverDeletedSCS) {
+                add(const NewChapterDatabaseEvent.chapterDeletedEVT());
+              }
+            },
+          );
+
+          yield state.copyWith(databaseFailureOrSuccessOption: optionOf(failureOrSuccess));
+        } else {
+          failureOrSuccess = await _onlineChapterDatabaseFacade.deleteChapter(state.chapterDraft.uid);
+
+          yield state.copyWith(
+            isDeletingOrPublishingOrSaving: false,
+            databaseFailureOrSuccessOption: optionOf(failureOrSuccess),
+          );
+        }
       },
       genreOptionalSelectedEVT: (event) async* {
         yield state.copyWith(
@@ -361,6 +424,9 @@ class NewChapterDatabaseBloc extends Bloc<NewChapterDatabaseEvent, NewChapterDat
           databaseFailureOrSuccessOption: optionOf(failureOrSuccess),
         );
       },
+      seriesCoverDeletedEVT: (event) async* {
+        yield* seriesHasNotUploadedCover(state);
+      },
       seriesCoverUploadedEVT: (event) async* {
         final Series series = Series.fromMap(event.seriesDraft.toMap())
           ..coverUrl = event.coverUrl
@@ -370,7 +436,9 @@ class NewChapterDatabaseBloc extends Bloc<NewChapterDatabaseEvent, NewChapterDat
         final Either<DatabaseFailure, DatabaseSuccess> failureOrSuccess =
             await _onlineSeriesDatabaseFacade.publishSeries(series);
         failureOrSuccess.fold(
-          (_) {},
+          (_) {
+            add(NewChapterDatabaseEvent.failureWhenPublishingSeriesEVT(coverUrl: event.coverUrl));
+          },
           (success) {
             if (success is SeriesPublishedSCS) {
               add(NewChapterDatabaseEvent.seriesPublishedEVT(series));
@@ -378,7 +446,10 @@ class NewChapterDatabaseBloc extends Bloc<NewChapterDatabaseEvent, NewChapterDat
           },
         );
 
-        yield state.copyWith(databaseFailureOrSuccessOption: optionOf(failureOrSuccess));
+        yield state.copyWith(
+          seriesCoverUrl: event.coverUrl,
+          databaseFailureOrSuccessOption: optionOf(failureOrSuccess),
+        );
       },
       seriesDraftDeletedEVT: (event) async* {
         final Either<DatabaseFailure, DatabaseSuccess> failureOrSuccess =
@@ -395,7 +466,9 @@ class NewChapterDatabaseBloc extends Bloc<NewChapterDatabaseEvent, NewChapterDat
         if (!Methods.isUrl(event.seriesDraft.coverUrl)) {
           failureOrSuccess = await _onlineSeriesDatabaseFacade.uploadCover(File(event.seriesDraft.coverUrl));
           failureOrSuccess.fold(
-            (_) {},
+            (_) {
+              add(const NewChapterDatabaseEvent.failureWhenUploadingSeriesCoverEVT());
+            },
             (success) {
               if (success is SeriesCoverUploadedSCS) {
                 add(NewChapterDatabaseEvent.seriesCoverUploadedEVT(success.coverUrl, event.seriesDraft));
@@ -409,7 +482,9 @@ class NewChapterDatabaseBloc extends Bloc<NewChapterDatabaseEvent, NewChapterDat
 
           failureOrSuccess = await _onlineSeriesDatabaseFacade.publishSeries(series);
           failureOrSuccess.fold(
-            (_) {},
+            (_) {
+              add(const NewChapterDatabaseEvent.failureWhenPublishingSeriesEVT());
+            },
             (success) {
               if (success is SeriesPublishedSCS) {
                 add(NewChapterDatabaseEvent.seriesPublishedEVT(series));
@@ -423,6 +498,14 @@ class NewChapterDatabaseBloc extends Bloc<NewChapterDatabaseEvent, NewChapterDat
       seriesPublishedEVT: (event) async* {
         final Either<DatabaseFailure, DatabaseSuccess> failureOrSuccess =
             await _localSeriesDraftDatabaseFacade.deleteSeriesDraft(event.series.uid);
+        failureOrSuccess.fold(
+          (_) {},
+          (success) {
+            if (success is SeriesDraftDeletedSCS) {
+              add(const NewChapterDatabaseEvent.seriesDraftDeletedEVT());
+            }
+          },
+        );
 
         yield state.copyWith(
           databaseFailureOrSuccessOption: optionOf(failureOrSuccess),
@@ -480,5 +563,30 @@ class NewChapterDatabaseBloc extends Bloc<NewChapterDatabaseEvent, NewChapterDat
         );
       },
     );
+  }
+
+  Stream<NewChapterDatabaseState> seriesHasNotUploadedCover(NewChapterDatabaseState state) async* {
+    if (state.chapterCoverUrl.isNotEmptyOrNull) {
+      final Either<DatabaseFailure, DatabaseSuccess> failureOrSuccess =
+          await _onlineChapterDatabaseFacade.deleteChapterCover(state.chapterCoverUrl);
+      failureOrSuccess.fold(
+        (_) {},
+        (success) {
+          if (success is ChapterCoverDeletedSCS) {
+            add(const NewChapterDatabaseEvent.chapterCoverDeletedEVT());
+          }
+        },
+      );
+
+      yield state.copyWith(databaseFailureOrSuccessOption: optionOf(failureOrSuccess));
+    } else {
+      final Either<DatabaseFailure, DatabaseSuccess> failureOrSuccess =
+          await _onlineChapterDatabaseFacade.deleteChapter(state.chapterDraft.uid);
+
+      yield state.copyWith(
+        databaseFailureOrSuccessOption: optionOf(failureOrSuccess),
+        isDeletingOrPublishingOrSaving: false,
+      );
+    }
   }
 }

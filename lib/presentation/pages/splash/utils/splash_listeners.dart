@@ -1,16 +1,19 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:sailor/sailor.dart';
+
 import 'package:wine/application/authentication/splash/splash_authentication_bloc.dart';
 import 'package:wine/application/database/splash/splash_database_bloc.dart';
 import 'package:wine/domain/authentication/authentication_success.dart';
 import 'package:wine/domain/database/database_success.dart';
+import 'package:wine/presentation/pages/splash/utils/splash_authentication_methods.dart';
+import 'package:wine/presentation/routes/router.gr.dart';
 import 'package:wine/presentation/widgets/wine_error_dialog.dart';
 import 'package:wine/presentation/widgets/wine_show_dialog.dart';
-import 'package:wine/routes.dart';
-import 'package:wine/utils/constants.dart';
 
 class SplashListeners {
+  final SplashAuthenticationMethods _splashAuthMethods = SplashAuthenticationMethods();
+
   BlocListener<SplashAuthenticationBloc, SplashAuthenticationState> _authListener() =>
       BlocListener<SplashAuthenticationBloc, SplashAuthenticationState>(
         listener: (context, state) {
@@ -21,16 +24,7 @@ class SplashListeners {
                   .add(const SplashDatabaseEvent.authenticatedEVT(isAnonymous: false)),
               (some) => some.fold(
                 (failure) => failure.maybeMap(
-                  serverError: (_) => wineShowDialog(
-                    context: context,
-                    builder: (_) => WINEErrorDialog(
-                      message: 'An unexpected error occured!',
-                      buttonText: 'RESTART',
-                      onPressed: () => context
-                          .bloc<SplashAuthenticationBloc>()
-                          .add(const SplashAuthenticationEvent.splashLaunchedEVT()),
-                    ),
-                  ),
+                  serverError: (_) => _splashAuthMethods.restartSplash(context, 'An unexpected error occured!'),
                   orElse: () => null,
                 ),
                 (success) {
@@ -53,47 +47,23 @@ class SplashListeners {
             () {},
             (some) => some.fold(
               (failure) => failure.maybeMap(
-                failedToFetchOnlineData: (_) => wineShowDialog(
-                  context: context,
-                  builder: (_) => WINEErrorDialog(
-                    message: 'Failed to fetch data from our servers! Please restart WINE.',
-                    buttonText: 'RESTART',
-                    onPressed: () {
-                      Navigator.of(context).pop(true);
-                      context.bloc<SplashAuthenticationBloc>().add(const SplashAuthenticationEvent.splashLaunchedEVT());
-                    },
-                  ),
+                failedToFetchOnlineData: (_) => _splashAuthMethods.restartSplash(
+                  context,
+                  'Failed to fetch data from our servers! Please restart WINE.',
                 ),
-                failedToCreateLocalData: (_) => wineShowDialog(
-                  context: context,
-                  builder: (_) => WINEErrorDialog(
-                    message: 'Failed to save data on your device! Please restart WINE.',
-                    buttonText: 'RESTART',
-                    onPressed: () {
-                      Navigator.of(context).pop(true);
-                      context.bloc<SplashAuthenticationBloc>().add(const SplashAuthenticationEvent.splashLaunchedEVT());
-                    },
-                  ),
+                failedToCreateLocalData: (_) => _splashAuthMethods.restartSplash(
+                  context,
+                  'Failed to save data on your device! Please restart WINE.',
                 ),
-                failedToUpdateLocalData: (_) => wineShowDialog(
-                  context: context,
-                  builder: (_) => WINEErrorDialog(
-                    message: 'Failed to update data on your device! Please restart WINE.',
-                    buttonText: 'RESTART',
-                    onPressed: () {
-                      Navigator.of(context).pop(true);
-                      context.bloc<SplashAuthenticationBloc>().add(const SplashAuthenticationEvent.splashLaunchedEVT());
-                    },
-                  ),
+                failedToUpdateLocalData: (_) => _splashAuthMethods.restartSplash(
+                  context,
+                  'Failed to update data on your device! Please restart WINE.',
                 ),
                 orElse: () => null,
               ),
               (success) {
                 if (success is SessionSavedSCS || success is SessionUpdatedSCS) {
-                  sailor.navigate(
-                    Constants.homeRoute,
-                    navigationType: NavigationType.pushReplace,
-                  );
+                  ExtendedNavigator.root.pushReplacementNamed(Routes.homePage);
                 }
               },
             ),

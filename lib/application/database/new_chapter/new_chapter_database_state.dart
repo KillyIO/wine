@@ -21,11 +21,13 @@ abstract class NewChapterDatabaseState with _$NewChapterDatabaseState {
     @required Map<String, String> languagesMap,
     @required Option<Either<DatabaseFailure, dynamic>> databaseFailureOrSuccessOption,
     @required Story story,
+    @required String chapterCoverUrl,
     @required String copyrightsStr,
     @required String coverUrl,
     @required String genreOptionalStr,
     @required String genreStr,
     @required String languageStr,
+    @required String seriesCoverUrl,
     @required String storyStr,
     @required String titleStr,
     @required TextEditingController storyController,
@@ -34,6 +36,7 @@ abstract class NewChapterDatabaseState with _$NewChapterDatabaseState {
   }) = _NewChapterDatabaseState;
 
   factory NewChapterDatabaseState.initial() => NewChapterDatabaseState(
+        chapterCoverUrl: '',
         chapterDraft: ChapterDraft(),
         copyrights: Copyrights(''),
         copyrightsMap: <String, String>{},
@@ -53,6 +56,7 @@ abstract class NewChapterDatabaseState with _$NewChapterDatabaseState {
         language: Language(''),
         languagesMap: <String, String>{},
         languageStr: '',
+        seriesCoverUrl: '',
         showErrorMessages: false,
         story: Story(''),
         storyController: TextEditingController(),

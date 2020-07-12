@@ -16,9 +16,15 @@ class _$NewChapterDatabaseEventTearOff {
     return const AddCoverPressedEVT();
   }
 
-  ChapterDraftDeletedEVT chapterDraftDeletedEVT(Chapter chapter) {
-    return ChapterDraftDeletedEVT(
-      chapter,
+  ChapterCoverDeletedEVT chapterCoverDeletedEVT() {
+    return const ChapterCoverDeletedEVT();
+  }
+
+  ChapterCoverUploadedEVT chapterCoverUploadedEVT(
+      String coverUrl, ChapterDraft chapterDraft) {
+    return ChapterCoverUploadedEVT(
+      coverUrl,
+      chapterDraft,
     );
   }
 
@@ -34,12 +40,8 @@ class _$NewChapterDatabaseEventTearOff {
     );
   }
 
-  ChapterCoverUploadedEVT chapterCoverUploadedEVT(
-      String coverUrl, ChapterDraft chapterDraft) {
-    return ChapterCoverUploadedEVT(
-      coverUrl,
-      chapterDraft,
-    );
+  ChapterDeletedEVT chapterDeletedEVT() {
+    return const ChapterDeletedEVT();
   }
 
   DeleteDraftButtonPressedEVT deleteDraftButtonPressedEVT() {
@@ -50,6 +52,24 @@ class _$NewChapterDatabaseEventTearOff {
     return EditModeLaunchedEVT(
       chapterDraft,
     );
+  }
+
+  FailureWhenPublishingChapterEVT failureWhenPublishingChapterEVT(
+      String coverUrl) {
+    return FailureWhenPublishingChapterEVT(
+      coverUrl,
+    );
+  }
+
+  FailureWhenPublishingSeriesEVT failureWhenPublishingSeriesEVT(
+      {String coverUrl}) {
+    return FailureWhenPublishingSeriesEVT(
+      coverUrl: coverUrl,
+    );
+  }
+
+  FailureWhenUploadingSeriesCoverEVT failureWhenUploadingSeriesCoverEVT() {
+    return const FailureWhenUploadingSeriesCoverEVT();
   }
 
   GenreOptionalSelectedEVT genreOptionalSelectedEVT(String genreOptional) {
@@ -116,6 +136,10 @@ class _$NewChapterDatabaseEventTearOff {
     return const SaveOrBackButtonPressedEVT();
   }
 
+  SeriesCoverDeletedEVT seriesCoverDeletedEVT() {
+    return const SeriesCoverDeletedEVT();
+  }
+
   SeriesCoverUploadedEVT seriesCoverUploadedEVT(
       String coverUrl, SeriesDraft seriesDraft) {
     return SeriesCoverUploadedEVT(
@@ -171,14 +195,18 @@ mixin _$NewChapterDatabaseEvent {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result addCoverPressedEVT(),
-    @required Result chapterDraftDeletedEVT(Chapter chapter),
-    @required Result chapterPublishedEVT(Chapter chapter),
-    @required Result copyrightsSelectedEVT(String copyrights),
+    @required Result chapterCoverDeletedEVT(),
     @required
         Result chapterCoverUploadedEVT(
             String coverUrl, ChapterDraft chapterDraft),
+    @required Result chapterPublishedEVT(Chapter chapter),
+    @required Result copyrightsSelectedEVT(String copyrights),
+    @required Result chapterDeletedEVT(),
     @required Result deleteDraftButtonPressedEVT(),
     @required Result editModeLaunchedEVT(ChapterDraft chapterDraft),
+    @required Result failureWhenPublishingChapterEVT(String coverUrl),
+    @required Result failureWhenPublishingSeriesEVT(String coverUrl),
+    @required Result failureWhenUploadingSeriesCoverEVT(),
     @required Result genreOptionalSelectedEVT(String genreOptional),
     @required Result genreSelectedEVT(String genre),
     @required Result isEndChangedEVT(bool isEnd),
@@ -195,6 +223,7 @@ mixin _$NewChapterDatabaseEvent {
             SeriesDraft seriesDraft, String sessionUid, String coverUrl),
     @required Result publishButtonPressedEVT(),
     @required Result saveOrBackButtonPressedEVT(),
+    @required Result seriesCoverDeletedEVT(),
     @required
         Result seriesCoverUploadedEVT(String coverUrl, SeriesDraft seriesDraft),
     @required Result seriesDraftDeletedEVT(),
@@ -209,12 +238,16 @@ mixin _$NewChapterDatabaseEvent {
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result addCoverPressedEVT(),
-    Result chapterDraftDeletedEVT(Chapter chapter),
+    Result chapterCoverDeletedEVT(),
+    Result chapterCoverUploadedEVT(String coverUrl, ChapterDraft chapterDraft),
     Result chapterPublishedEVT(Chapter chapter),
     Result copyrightsSelectedEVT(String copyrights),
-    Result chapterCoverUploadedEVT(String coverUrl, ChapterDraft chapterDraft),
+    Result chapterDeletedEVT(),
     Result deleteDraftButtonPressedEVT(),
     Result editModeLaunchedEVT(ChapterDraft chapterDraft),
+    Result failureWhenPublishingChapterEVT(String coverUrl),
+    Result failureWhenPublishingSeriesEVT(String coverUrl),
+    Result failureWhenUploadingSeriesCoverEVT(),
     Result genreOptionalSelectedEVT(String genreOptional),
     Result genreSelectedEVT(String genre),
     Result isEndChangedEVT(bool isEnd),
@@ -229,6 +262,7 @@ mixin _$NewChapterDatabaseEvent {
         SeriesDraft seriesDraft, String sessionUid, String coverUrl),
     Result publishButtonPressedEVT(),
     Result saveOrBackButtonPressedEVT(),
+    Result seriesCoverDeletedEVT(),
     Result seriesCoverUploadedEVT(String coverUrl, SeriesDraft seriesDraft),
     Result seriesDraftDeletedEVT(),
     Result seriesDraftFetchedEVT(SeriesDraft seriesDraft),
@@ -242,13 +276,23 @@ mixin _$NewChapterDatabaseEvent {
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result addCoverPressedEVT(AddCoverPressedEVT value),
-    @required Result chapterDraftDeletedEVT(ChapterDraftDeletedEVT value),
+    @required Result chapterCoverDeletedEVT(ChapterCoverDeletedEVT value),
+    @required Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
     @required Result chapterPublishedEVT(ChapterPublishedEVT value),
     @required Result copyrightsSelectedEVT(CopyrightsSelectedEVT value),
-    @required Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
+    @required Result chapterDeletedEVT(ChapterDeletedEVT value),
     @required
         Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
     @required Result editModeLaunchedEVT(EditModeLaunchedEVT value),
+    @required
+        Result failureWhenPublishingChapterEVT(
+            FailureWhenPublishingChapterEVT value),
+    @required
+        Result failureWhenPublishingSeriesEVT(
+            FailureWhenPublishingSeriesEVT value),
+    @required
+        Result failureWhenUploadingSeriesCoverEVT(
+            FailureWhenUploadingSeriesCoverEVT value),
     @required Result genreOptionalSelectedEVT(GenreOptionalSelectedEVT value),
     @required Result genreSelectedEVT(GenreSelectedEVT value),
     @required Result isEndChangedEVT(IsEndChangedEVT value),
@@ -259,6 +303,7 @@ mixin _$NewChapterDatabaseEvent {
     @required Result publishButtonPressedEVT(PublishButtonPressedEVT value),
     @required
         Result saveOrBackButtonPressedEVT(SaveOrBackButtonPressedEVT value),
+    @required Result seriesCoverDeletedEVT(SeriesCoverDeletedEVT value),
     @required Result seriesCoverUploadedEVT(SeriesCoverUploadedEVT value),
     @required Result seriesDraftDeletedEVT(SeriesDraftDeletedEVT value),
     @required Result seriesDraftFetchedEVT(SeriesDraftFetchedEVT value),
@@ -270,12 +315,18 @@ mixin _$NewChapterDatabaseEvent {
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result addCoverPressedEVT(AddCoverPressedEVT value),
-    Result chapterDraftDeletedEVT(ChapterDraftDeletedEVT value),
+    Result chapterCoverDeletedEVT(ChapterCoverDeletedEVT value),
+    Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
     Result chapterPublishedEVT(ChapterPublishedEVT value),
     Result copyrightsSelectedEVT(CopyrightsSelectedEVT value),
-    Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
+    Result chapterDeletedEVT(ChapterDeletedEVT value),
     Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
     Result editModeLaunchedEVT(EditModeLaunchedEVT value),
+    Result failureWhenPublishingChapterEVT(
+        FailureWhenPublishingChapterEVT value),
+    Result failureWhenPublishingSeriesEVT(FailureWhenPublishingSeriesEVT value),
+    Result failureWhenUploadingSeriesCoverEVT(
+        FailureWhenUploadingSeriesCoverEVT value),
     Result genreOptionalSelectedEVT(GenreOptionalSelectedEVT value),
     Result genreSelectedEVT(GenreSelectedEVT value),
     Result isEndChangedEVT(IsEndChangedEVT value),
@@ -285,6 +336,7 @@ mixin _$NewChapterDatabaseEvent {
     Result placeholderFetchedEVT(PlaceholderFetchedEVT value),
     Result publishButtonPressedEVT(PublishButtonPressedEVT value),
     Result saveOrBackButtonPressedEVT(SaveOrBackButtonPressedEVT value),
+    Result seriesCoverDeletedEVT(SeriesCoverDeletedEVT value),
     Result seriesCoverUploadedEVT(SeriesCoverUploadedEVT value),
     Result seriesDraftDeletedEVT(SeriesDraftDeletedEVT value),
     Result seriesDraftFetchedEVT(SeriesDraftFetchedEVT value),
@@ -358,14 +410,18 @@ class _$AddCoverPressedEVT
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result addCoverPressedEVT(),
-    @required Result chapterDraftDeletedEVT(Chapter chapter),
-    @required Result chapterPublishedEVT(Chapter chapter),
-    @required Result copyrightsSelectedEVT(String copyrights),
+    @required Result chapterCoverDeletedEVT(),
     @required
         Result chapterCoverUploadedEVT(
             String coverUrl, ChapterDraft chapterDraft),
+    @required Result chapterPublishedEVT(Chapter chapter),
+    @required Result copyrightsSelectedEVT(String copyrights),
+    @required Result chapterDeletedEVT(),
     @required Result deleteDraftButtonPressedEVT(),
     @required Result editModeLaunchedEVT(ChapterDraft chapterDraft),
+    @required Result failureWhenPublishingChapterEVT(String coverUrl),
+    @required Result failureWhenPublishingSeriesEVT(String coverUrl),
+    @required Result failureWhenUploadingSeriesCoverEVT(),
     @required Result genreOptionalSelectedEVT(String genreOptional),
     @required Result genreSelectedEVT(String genre),
     @required Result isEndChangedEVT(bool isEnd),
@@ -382,6 +438,7 @@ class _$AddCoverPressedEVT
             SeriesDraft seriesDraft, String sessionUid, String coverUrl),
     @required Result publishButtonPressedEVT(),
     @required Result saveOrBackButtonPressedEVT(),
+    @required Result seriesCoverDeletedEVT(),
     @required
         Result seriesCoverUploadedEVT(String coverUrl, SeriesDraft seriesDraft),
     @required Result seriesDraftDeletedEVT(),
@@ -394,12 +451,16 @@ class _$AddCoverPressedEVT
     @required Result titleChangedEVT(String title),
   }) {
     assert(addCoverPressedEVT != null);
-    assert(chapterDraftDeletedEVT != null);
+    assert(chapterCoverDeletedEVT != null);
+    assert(chapterCoverUploadedEVT != null);
     assert(chapterPublishedEVT != null);
     assert(copyrightsSelectedEVT != null);
-    assert(chapterCoverUploadedEVT != null);
+    assert(chapterDeletedEVT != null);
     assert(deleteDraftButtonPressedEVT != null);
     assert(editModeLaunchedEVT != null);
+    assert(failureWhenPublishingChapterEVT != null);
+    assert(failureWhenPublishingSeriesEVT != null);
+    assert(failureWhenUploadingSeriesCoverEVT != null);
     assert(genreOptionalSelectedEVT != null);
     assert(genreSelectedEVT != null);
     assert(isEndChangedEVT != null);
@@ -409,6 +470,7 @@ class _$AddCoverPressedEVT
     assert(placeholderFetchedEVT != null);
     assert(publishButtonPressedEVT != null);
     assert(saveOrBackButtonPressedEVT != null);
+    assert(seriesCoverDeletedEVT != null);
     assert(seriesCoverUploadedEVT != null);
     assert(seriesDraftDeletedEVT != null);
     assert(seriesDraftFetchedEVT != null);
@@ -423,12 +485,16 @@ class _$AddCoverPressedEVT
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result addCoverPressedEVT(),
-    Result chapterDraftDeletedEVT(Chapter chapter),
+    Result chapterCoverDeletedEVT(),
+    Result chapterCoverUploadedEVT(String coverUrl, ChapterDraft chapterDraft),
     Result chapterPublishedEVT(Chapter chapter),
     Result copyrightsSelectedEVT(String copyrights),
-    Result chapterCoverUploadedEVT(String coverUrl, ChapterDraft chapterDraft),
+    Result chapterDeletedEVT(),
     Result deleteDraftButtonPressedEVT(),
     Result editModeLaunchedEVT(ChapterDraft chapterDraft),
+    Result failureWhenPublishingChapterEVT(String coverUrl),
+    Result failureWhenPublishingSeriesEVT(String coverUrl),
+    Result failureWhenUploadingSeriesCoverEVT(),
     Result genreOptionalSelectedEVT(String genreOptional),
     Result genreSelectedEVT(String genre),
     Result isEndChangedEVT(bool isEnd),
@@ -443,6 +509,7 @@ class _$AddCoverPressedEVT
         SeriesDraft seriesDraft, String sessionUid, String coverUrl),
     Result publishButtonPressedEVT(),
     Result saveOrBackButtonPressedEVT(),
+    Result seriesCoverDeletedEVT(),
     Result seriesCoverUploadedEVT(String coverUrl, SeriesDraft seriesDraft),
     Result seriesDraftDeletedEVT(),
     Result seriesDraftFetchedEVT(SeriesDraft seriesDraft),
@@ -464,13 +531,23 @@ class _$AddCoverPressedEVT
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result addCoverPressedEVT(AddCoverPressedEVT value),
-    @required Result chapterDraftDeletedEVT(ChapterDraftDeletedEVT value),
+    @required Result chapterCoverDeletedEVT(ChapterCoverDeletedEVT value),
+    @required Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
     @required Result chapterPublishedEVT(ChapterPublishedEVT value),
     @required Result copyrightsSelectedEVT(CopyrightsSelectedEVT value),
-    @required Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
+    @required Result chapterDeletedEVT(ChapterDeletedEVT value),
     @required
         Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
     @required Result editModeLaunchedEVT(EditModeLaunchedEVT value),
+    @required
+        Result failureWhenPublishingChapterEVT(
+            FailureWhenPublishingChapterEVT value),
+    @required
+        Result failureWhenPublishingSeriesEVT(
+            FailureWhenPublishingSeriesEVT value),
+    @required
+        Result failureWhenUploadingSeriesCoverEVT(
+            FailureWhenUploadingSeriesCoverEVT value),
     @required Result genreOptionalSelectedEVT(GenreOptionalSelectedEVT value),
     @required Result genreSelectedEVT(GenreSelectedEVT value),
     @required Result isEndChangedEVT(IsEndChangedEVT value),
@@ -481,6 +558,7 @@ class _$AddCoverPressedEVT
     @required Result publishButtonPressedEVT(PublishButtonPressedEVT value),
     @required
         Result saveOrBackButtonPressedEVT(SaveOrBackButtonPressedEVT value),
+    @required Result seriesCoverDeletedEVT(SeriesCoverDeletedEVT value),
     @required Result seriesCoverUploadedEVT(SeriesCoverUploadedEVT value),
     @required Result seriesDraftDeletedEVT(SeriesDraftDeletedEVT value),
     @required Result seriesDraftFetchedEVT(SeriesDraftFetchedEVT value),
@@ -490,12 +568,16 @@ class _$AddCoverPressedEVT
     @required Result titleChangedEVT(TitleChangedEVT value),
   }) {
     assert(addCoverPressedEVT != null);
-    assert(chapterDraftDeletedEVT != null);
+    assert(chapterCoverDeletedEVT != null);
+    assert(chapterCoverUploadedEVT != null);
     assert(chapterPublishedEVT != null);
     assert(copyrightsSelectedEVT != null);
-    assert(chapterCoverUploadedEVT != null);
+    assert(chapterDeletedEVT != null);
     assert(deleteDraftButtonPressedEVT != null);
     assert(editModeLaunchedEVT != null);
+    assert(failureWhenPublishingChapterEVT != null);
+    assert(failureWhenPublishingSeriesEVT != null);
+    assert(failureWhenUploadingSeriesCoverEVT != null);
     assert(genreOptionalSelectedEVT != null);
     assert(genreSelectedEVT != null);
     assert(isEndChangedEVT != null);
@@ -505,6 +587,7 @@ class _$AddCoverPressedEVT
     assert(placeholderFetchedEVT != null);
     assert(publishButtonPressedEVT != null);
     assert(saveOrBackButtonPressedEVT != null);
+    assert(seriesCoverDeletedEVT != null);
     assert(seriesCoverUploadedEVT != null);
     assert(seriesDraftDeletedEVT != null);
     assert(seriesDraftFetchedEVT != null);
@@ -519,12 +602,18 @@ class _$AddCoverPressedEVT
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result addCoverPressedEVT(AddCoverPressedEVT value),
-    Result chapterDraftDeletedEVT(ChapterDraftDeletedEVT value),
+    Result chapterCoverDeletedEVT(ChapterCoverDeletedEVT value),
+    Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
     Result chapterPublishedEVT(ChapterPublishedEVT value),
     Result copyrightsSelectedEVT(CopyrightsSelectedEVT value),
-    Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
+    Result chapterDeletedEVT(ChapterDeletedEVT value),
     Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
     Result editModeLaunchedEVT(EditModeLaunchedEVT value),
+    Result failureWhenPublishingChapterEVT(
+        FailureWhenPublishingChapterEVT value),
+    Result failureWhenPublishingSeriesEVT(FailureWhenPublishingSeriesEVT value),
+    Result failureWhenUploadingSeriesCoverEVT(
+        FailureWhenUploadingSeriesCoverEVT value),
     Result genreOptionalSelectedEVT(GenreOptionalSelectedEVT value),
     Result genreSelectedEVT(GenreSelectedEVT value),
     Result isEndChangedEVT(IsEndChangedEVT value),
@@ -534,6 +623,7 @@ class _$AddCoverPressedEVT
     Result placeholderFetchedEVT(PlaceholderFetchedEVT value),
     Result publishButtonPressedEVT(PublishButtonPressedEVT value),
     Result saveOrBackButtonPressedEVT(SaveOrBackButtonPressedEVT value),
+    Result seriesCoverDeletedEVT(SeriesCoverDeletedEVT value),
     Result seriesCoverUploadedEVT(SeriesCoverUploadedEVT value),
     Result seriesDraftDeletedEVT(SeriesDraftDeletedEVT value),
     Result seriesDraftFetchedEVT(SeriesDraftFetchedEVT value),
@@ -555,44 +645,31 @@ abstract class AddCoverPressedEVT implements NewChapterDatabaseEvent {
   const factory AddCoverPressedEVT() = _$AddCoverPressedEVT;
 }
 
-abstract class $ChapterDraftDeletedEVTCopyWith<$Res> {
-  factory $ChapterDraftDeletedEVTCopyWith(ChapterDraftDeletedEVT value,
-          $Res Function(ChapterDraftDeletedEVT) then) =
-      _$ChapterDraftDeletedEVTCopyWithImpl<$Res>;
-  $Res call({Chapter chapter});
+abstract class $ChapterCoverDeletedEVTCopyWith<$Res> {
+  factory $ChapterCoverDeletedEVTCopyWith(ChapterCoverDeletedEVT value,
+          $Res Function(ChapterCoverDeletedEVT) then) =
+      _$ChapterCoverDeletedEVTCopyWithImpl<$Res>;
 }
 
-class _$ChapterDraftDeletedEVTCopyWithImpl<$Res>
+class _$ChapterCoverDeletedEVTCopyWithImpl<$Res>
     extends _$NewChapterDatabaseEventCopyWithImpl<$Res>
-    implements $ChapterDraftDeletedEVTCopyWith<$Res> {
-  _$ChapterDraftDeletedEVTCopyWithImpl(ChapterDraftDeletedEVT _value,
-      $Res Function(ChapterDraftDeletedEVT) _then)
-      : super(_value, (v) => _then(v as ChapterDraftDeletedEVT));
+    implements $ChapterCoverDeletedEVTCopyWith<$Res> {
+  _$ChapterCoverDeletedEVTCopyWithImpl(ChapterCoverDeletedEVT _value,
+      $Res Function(ChapterCoverDeletedEVT) _then)
+      : super(_value, (v) => _then(v as ChapterCoverDeletedEVT));
 
   @override
-  ChapterDraftDeletedEVT get _value => super._value as ChapterDraftDeletedEVT;
-
-  @override
-  $Res call({
-    Object chapter = freezed,
-  }) {
-    return _then(ChapterDraftDeletedEVT(
-      chapter == freezed ? _value.chapter : chapter as Chapter,
-    ));
-  }
+  ChapterCoverDeletedEVT get _value => super._value as ChapterCoverDeletedEVT;
 }
 
-class _$ChapterDraftDeletedEVT
+class _$ChapterCoverDeletedEVT
     with DiagnosticableTreeMixin
-    implements ChapterDraftDeletedEVT {
-  const _$ChapterDraftDeletedEVT(this.chapter) : assert(chapter != null);
-
-  @override
-  final Chapter chapter;
+    implements ChapterCoverDeletedEVT {
+  const _$ChapterCoverDeletedEVT();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'NewChapterDatabaseEvent.chapterDraftDeletedEVT(chapter: $chapter)';
+    return 'NewChapterDatabaseEvent.chapterCoverDeletedEVT()';
   }
 
   @override
@@ -600,39 +677,33 @@ class _$ChapterDraftDeletedEVT
     super.debugFillProperties(properties);
     properties
       ..add(DiagnosticsProperty(
-          'type', 'NewChapterDatabaseEvent.chapterDraftDeletedEVT'))
-      ..add(DiagnosticsProperty('chapter', chapter));
+          'type', 'NewChapterDatabaseEvent.chapterCoverDeletedEVT'));
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is ChapterDraftDeletedEVT &&
-            (identical(other.chapter, chapter) ||
-                const DeepCollectionEquality().equals(other.chapter, chapter)));
+    return identical(this, other) || (other is ChapterCoverDeletedEVT);
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(chapter);
-
-  @override
-  $ChapterDraftDeletedEVTCopyWith<ChapterDraftDeletedEVT> get copyWith =>
-      _$ChapterDraftDeletedEVTCopyWithImpl<ChapterDraftDeletedEVT>(
-          this, _$identity);
+  int get hashCode => runtimeType.hashCode;
 
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result addCoverPressedEVT(),
-    @required Result chapterDraftDeletedEVT(Chapter chapter),
-    @required Result chapterPublishedEVT(Chapter chapter),
-    @required Result copyrightsSelectedEVT(String copyrights),
+    @required Result chapterCoverDeletedEVT(),
     @required
         Result chapterCoverUploadedEVT(
             String coverUrl, ChapterDraft chapterDraft),
+    @required Result chapterPublishedEVT(Chapter chapter),
+    @required Result copyrightsSelectedEVT(String copyrights),
+    @required Result chapterDeletedEVT(),
     @required Result deleteDraftButtonPressedEVT(),
     @required Result editModeLaunchedEVT(ChapterDraft chapterDraft),
+    @required Result failureWhenPublishingChapterEVT(String coverUrl),
+    @required Result failureWhenPublishingSeriesEVT(String coverUrl),
+    @required Result failureWhenUploadingSeriesCoverEVT(),
     @required Result genreOptionalSelectedEVT(String genreOptional),
     @required Result genreSelectedEVT(String genre),
     @required Result isEndChangedEVT(bool isEnd),
@@ -649,6 +720,7 @@ class _$ChapterDraftDeletedEVT
             SeriesDraft seriesDraft, String sessionUid, String coverUrl),
     @required Result publishButtonPressedEVT(),
     @required Result saveOrBackButtonPressedEVT(),
+    @required Result seriesCoverDeletedEVT(),
     @required
         Result seriesCoverUploadedEVT(String coverUrl, SeriesDraft seriesDraft),
     @required Result seriesDraftDeletedEVT(),
@@ -661,12 +733,16 @@ class _$ChapterDraftDeletedEVT
     @required Result titleChangedEVT(String title),
   }) {
     assert(addCoverPressedEVT != null);
-    assert(chapterDraftDeletedEVT != null);
+    assert(chapterCoverDeletedEVT != null);
+    assert(chapterCoverUploadedEVT != null);
     assert(chapterPublishedEVT != null);
     assert(copyrightsSelectedEVT != null);
-    assert(chapterCoverUploadedEVT != null);
+    assert(chapterDeletedEVT != null);
     assert(deleteDraftButtonPressedEVT != null);
     assert(editModeLaunchedEVT != null);
+    assert(failureWhenPublishingChapterEVT != null);
+    assert(failureWhenPublishingSeriesEVT != null);
+    assert(failureWhenUploadingSeriesCoverEVT != null);
     assert(genreOptionalSelectedEVT != null);
     assert(genreSelectedEVT != null);
     assert(isEndChangedEVT != null);
@@ -676,6 +752,7 @@ class _$ChapterDraftDeletedEVT
     assert(placeholderFetchedEVT != null);
     assert(publishButtonPressedEVT != null);
     assert(saveOrBackButtonPressedEVT != null);
+    assert(seriesCoverDeletedEVT != null);
     assert(seriesCoverUploadedEVT != null);
     assert(seriesDraftDeletedEVT != null);
     assert(seriesDraftFetchedEVT != null);
@@ -683,19 +760,23 @@ class _$ChapterDraftDeletedEVT
     assert(sessionFetchedEVT != null);
     assert(storyChangedEVT != null);
     assert(titleChangedEVT != null);
-    return chapterDraftDeletedEVT(chapter);
+    return chapterCoverDeletedEVT();
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result addCoverPressedEVT(),
-    Result chapterDraftDeletedEVT(Chapter chapter),
+    Result chapterCoverDeletedEVT(),
+    Result chapterCoverUploadedEVT(String coverUrl, ChapterDraft chapterDraft),
     Result chapterPublishedEVT(Chapter chapter),
     Result copyrightsSelectedEVT(String copyrights),
-    Result chapterCoverUploadedEVT(String coverUrl, ChapterDraft chapterDraft),
+    Result chapterDeletedEVT(),
     Result deleteDraftButtonPressedEVT(),
     Result editModeLaunchedEVT(ChapterDraft chapterDraft),
+    Result failureWhenPublishingChapterEVT(String coverUrl),
+    Result failureWhenPublishingSeriesEVT(String coverUrl),
+    Result failureWhenUploadingSeriesCoverEVT(),
     Result genreOptionalSelectedEVT(String genreOptional),
     Result genreSelectedEVT(String genre),
     Result isEndChangedEVT(bool isEnd),
@@ -710,6 +791,7 @@ class _$ChapterDraftDeletedEVT
         SeriesDraft seriesDraft, String sessionUid, String coverUrl),
     Result publishButtonPressedEVT(),
     Result saveOrBackButtonPressedEVT(),
+    Result seriesCoverDeletedEVT(),
     Result seriesCoverUploadedEVT(String coverUrl, SeriesDraft seriesDraft),
     Result seriesDraftDeletedEVT(),
     Result seriesDraftFetchedEVT(SeriesDraft seriesDraft),
@@ -721,8 +803,8 @@ class _$ChapterDraftDeletedEVT
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (chapterDraftDeletedEVT != null) {
-      return chapterDraftDeletedEVT(chapter);
+    if (chapterCoverDeletedEVT != null) {
+      return chapterCoverDeletedEVT();
     }
     return orElse();
   }
@@ -731,13 +813,23 @@ class _$ChapterDraftDeletedEVT
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result addCoverPressedEVT(AddCoverPressedEVT value),
-    @required Result chapterDraftDeletedEVT(ChapterDraftDeletedEVT value),
+    @required Result chapterCoverDeletedEVT(ChapterCoverDeletedEVT value),
+    @required Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
     @required Result chapterPublishedEVT(ChapterPublishedEVT value),
     @required Result copyrightsSelectedEVT(CopyrightsSelectedEVT value),
-    @required Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
+    @required Result chapterDeletedEVT(ChapterDeletedEVT value),
     @required
         Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
     @required Result editModeLaunchedEVT(EditModeLaunchedEVT value),
+    @required
+        Result failureWhenPublishingChapterEVT(
+            FailureWhenPublishingChapterEVT value),
+    @required
+        Result failureWhenPublishingSeriesEVT(
+            FailureWhenPublishingSeriesEVT value),
+    @required
+        Result failureWhenUploadingSeriesCoverEVT(
+            FailureWhenUploadingSeriesCoverEVT value),
     @required Result genreOptionalSelectedEVT(GenreOptionalSelectedEVT value),
     @required Result genreSelectedEVT(GenreSelectedEVT value),
     @required Result isEndChangedEVT(IsEndChangedEVT value),
@@ -748,6 +840,7 @@ class _$ChapterDraftDeletedEVT
     @required Result publishButtonPressedEVT(PublishButtonPressedEVT value),
     @required
         Result saveOrBackButtonPressedEVT(SaveOrBackButtonPressedEVT value),
+    @required Result seriesCoverDeletedEVT(SeriesCoverDeletedEVT value),
     @required Result seriesCoverUploadedEVT(SeriesCoverUploadedEVT value),
     @required Result seriesDraftDeletedEVT(SeriesDraftDeletedEVT value),
     @required Result seriesDraftFetchedEVT(SeriesDraftFetchedEVT value),
@@ -757,12 +850,16 @@ class _$ChapterDraftDeletedEVT
     @required Result titleChangedEVT(TitleChangedEVT value),
   }) {
     assert(addCoverPressedEVT != null);
-    assert(chapterDraftDeletedEVT != null);
+    assert(chapterCoverDeletedEVT != null);
+    assert(chapterCoverUploadedEVT != null);
     assert(chapterPublishedEVT != null);
     assert(copyrightsSelectedEVT != null);
-    assert(chapterCoverUploadedEVT != null);
+    assert(chapterDeletedEVT != null);
     assert(deleteDraftButtonPressedEVT != null);
     assert(editModeLaunchedEVT != null);
+    assert(failureWhenPublishingChapterEVT != null);
+    assert(failureWhenPublishingSeriesEVT != null);
+    assert(failureWhenUploadingSeriesCoverEVT != null);
     assert(genreOptionalSelectedEVT != null);
     assert(genreSelectedEVT != null);
     assert(isEndChangedEVT != null);
@@ -772,6 +869,7 @@ class _$ChapterDraftDeletedEVT
     assert(placeholderFetchedEVT != null);
     assert(publishButtonPressedEVT != null);
     assert(saveOrBackButtonPressedEVT != null);
+    assert(seriesCoverDeletedEVT != null);
     assert(seriesCoverUploadedEVT != null);
     assert(seriesDraftDeletedEVT != null);
     assert(seriesDraftFetchedEVT != null);
@@ -779,19 +877,25 @@ class _$ChapterDraftDeletedEVT
     assert(sessionFetchedEVT != null);
     assert(storyChangedEVT != null);
     assert(titleChangedEVT != null);
-    return chapterDraftDeletedEVT(this);
+    return chapterCoverDeletedEVT(this);
   }
 
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result addCoverPressedEVT(AddCoverPressedEVT value),
-    Result chapterDraftDeletedEVT(ChapterDraftDeletedEVT value),
+    Result chapterCoverDeletedEVT(ChapterCoverDeletedEVT value),
+    Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
     Result chapterPublishedEVT(ChapterPublishedEVT value),
     Result copyrightsSelectedEVT(CopyrightsSelectedEVT value),
-    Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
+    Result chapterDeletedEVT(ChapterDeletedEVT value),
     Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
     Result editModeLaunchedEVT(EditModeLaunchedEVT value),
+    Result failureWhenPublishingChapterEVT(
+        FailureWhenPublishingChapterEVT value),
+    Result failureWhenPublishingSeriesEVT(FailureWhenPublishingSeriesEVT value),
+    Result failureWhenUploadingSeriesCoverEVT(
+        FailureWhenUploadingSeriesCoverEVT value),
     Result genreOptionalSelectedEVT(GenreOptionalSelectedEVT value),
     Result genreSelectedEVT(GenreSelectedEVT value),
     Result isEndChangedEVT(IsEndChangedEVT value),
@@ -801,6 +905,7 @@ class _$ChapterDraftDeletedEVT
     Result placeholderFetchedEVT(PlaceholderFetchedEVT value),
     Result publishButtonPressedEVT(PublishButtonPressedEVT value),
     Result saveOrBackButtonPressedEVT(SaveOrBackButtonPressedEVT value),
+    Result seriesCoverDeletedEVT(SeriesCoverDeletedEVT value),
     Result seriesCoverUploadedEVT(SeriesCoverUploadedEVT value),
     Result seriesDraftDeletedEVT(SeriesDraftDeletedEVT value),
     Result seriesDraftFetchedEVT(SeriesDraftFetchedEVT value),
@@ -811,19 +916,340 @@ class _$ChapterDraftDeletedEVT
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (chapterDraftDeletedEVT != null) {
-      return chapterDraftDeletedEVT(this);
+    if (chapterCoverDeletedEVT != null) {
+      return chapterCoverDeletedEVT(this);
     }
     return orElse();
   }
 }
 
-abstract class ChapterDraftDeletedEVT implements NewChapterDatabaseEvent {
-  const factory ChapterDraftDeletedEVT(Chapter chapter) =
-      _$ChapterDraftDeletedEVT;
+abstract class ChapterCoverDeletedEVT implements NewChapterDatabaseEvent {
+  const factory ChapterCoverDeletedEVT() = _$ChapterCoverDeletedEVT;
+}
 
-  Chapter get chapter;
-  $ChapterDraftDeletedEVTCopyWith<ChapterDraftDeletedEVT> get copyWith;
+abstract class $ChapterCoverUploadedEVTCopyWith<$Res> {
+  factory $ChapterCoverUploadedEVTCopyWith(ChapterCoverUploadedEVT value,
+          $Res Function(ChapterCoverUploadedEVT) then) =
+      _$ChapterCoverUploadedEVTCopyWithImpl<$Res>;
+  $Res call({String coverUrl, ChapterDraft chapterDraft});
+}
+
+class _$ChapterCoverUploadedEVTCopyWithImpl<$Res>
+    extends _$NewChapterDatabaseEventCopyWithImpl<$Res>
+    implements $ChapterCoverUploadedEVTCopyWith<$Res> {
+  _$ChapterCoverUploadedEVTCopyWithImpl(ChapterCoverUploadedEVT _value,
+      $Res Function(ChapterCoverUploadedEVT) _then)
+      : super(_value, (v) => _then(v as ChapterCoverUploadedEVT));
+
+  @override
+  ChapterCoverUploadedEVT get _value => super._value as ChapterCoverUploadedEVT;
+
+  @override
+  $Res call({
+    Object coverUrl = freezed,
+    Object chapterDraft = freezed,
+  }) {
+    return _then(ChapterCoverUploadedEVT(
+      coverUrl == freezed ? _value.coverUrl : coverUrl as String,
+      chapterDraft == freezed
+          ? _value.chapterDraft
+          : chapterDraft as ChapterDraft,
+    ));
+  }
+}
+
+class _$ChapterCoverUploadedEVT
+    with DiagnosticableTreeMixin
+    implements ChapterCoverUploadedEVT {
+  const _$ChapterCoverUploadedEVT(this.coverUrl, this.chapterDraft)
+      : assert(coverUrl != null),
+        assert(chapterDraft != null);
+
+  @override
+  final String coverUrl;
+  @override
+  final ChapterDraft chapterDraft;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'NewChapterDatabaseEvent.chapterCoverUploadedEVT(coverUrl: $coverUrl, chapterDraft: $chapterDraft)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty(
+          'type', 'NewChapterDatabaseEvent.chapterCoverUploadedEVT'))
+      ..add(DiagnosticsProperty('coverUrl', coverUrl))
+      ..add(DiagnosticsProperty('chapterDraft', chapterDraft));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is ChapterCoverUploadedEVT &&
+            (identical(other.coverUrl, coverUrl) ||
+                const DeepCollectionEquality()
+                    .equals(other.coverUrl, coverUrl)) &&
+            (identical(other.chapterDraft, chapterDraft) ||
+                const DeepCollectionEquality()
+                    .equals(other.chapterDraft, chapterDraft)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(coverUrl) ^
+      const DeepCollectionEquality().hash(chapterDraft);
+
+  @override
+  $ChapterCoverUploadedEVTCopyWith<ChapterCoverUploadedEVT> get copyWith =>
+      _$ChapterCoverUploadedEVTCopyWithImpl<ChapterCoverUploadedEVT>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result addCoverPressedEVT(),
+    @required Result chapterCoverDeletedEVT(),
+    @required
+        Result chapterCoverUploadedEVT(
+            String coverUrl, ChapterDraft chapterDraft),
+    @required Result chapterPublishedEVT(Chapter chapter),
+    @required Result copyrightsSelectedEVT(String copyrights),
+    @required Result chapterDeletedEVT(),
+    @required Result deleteDraftButtonPressedEVT(),
+    @required Result editModeLaunchedEVT(ChapterDraft chapterDraft),
+    @required Result failureWhenPublishingChapterEVT(String coverUrl),
+    @required Result failureWhenPublishingSeriesEVT(String coverUrl),
+    @required Result failureWhenUploadingSeriesCoverEVT(),
+    @required Result genreOptionalSelectedEVT(String genreOptional),
+    @required Result genreSelectedEVT(String genre),
+    @required Result isEndChangedEVT(bool isEnd),
+    @required Result isNSFWChangedEVT(bool isNSFW),
+    @required Result languageSelectedEVT(String language),
+    @required
+        Result newChapterPageLaunchedEVT(
+            BuildContext context,
+            Chapter previousChapter,
+            ChapterDraft chapterDraft,
+            SeriesDraft seriesDraft),
+    @required
+        Result placeholderFetchedEVT(Chapter previousChapter,
+            SeriesDraft seriesDraft, String sessionUid, String coverUrl),
+    @required Result publishButtonPressedEVT(),
+    @required Result saveOrBackButtonPressedEVT(),
+    @required Result seriesCoverDeletedEVT(),
+    @required
+        Result seriesCoverUploadedEVT(String coverUrl, SeriesDraft seriesDraft),
+    @required Result seriesDraftDeletedEVT(),
+    @required Result seriesDraftFetchedEVT(SeriesDraft seriesDraft),
+    @required Result seriesPublishedEVT(Series series),
+    @required
+        Result sessionFetchedEVT(
+            Session session, Chapter previousChapter, SeriesDraft seriesDraft),
+    @required Result storyChangedEVT(String story),
+    @required Result titleChangedEVT(String title),
+  }) {
+    assert(addCoverPressedEVT != null);
+    assert(chapterCoverDeletedEVT != null);
+    assert(chapterCoverUploadedEVT != null);
+    assert(chapterPublishedEVT != null);
+    assert(copyrightsSelectedEVT != null);
+    assert(chapterDeletedEVT != null);
+    assert(deleteDraftButtonPressedEVT != null);
+    assert(editModeLaunchedEVT != null);
+    assert(failureWhenPublishingChapterEVT != null);
+    assert(failureWhenPublishingSeriesEVT != null);
+    assert(failureWhenUploadingSeriesCoverEVT != null);
+    assert(genreOptionalSelectedEVT != null);
+    assert(genreSelectedEVT != null);
+    assert(isEndChangedEVT != null);
+    assert(isNSFWChangedEVT != null);
+    assert(languageSelectedEVT != null);
+    assert(newChapterPageLaunchedEVT != null);
+    assert(placeholderFetchedEVT != null);
+    assert(publishButtonPressedEVT != null);
+    assert(saveOrBackButtonPressedEVT != null);
+    assert(seriesCoverDeletedEVT != null);
+    assert(seriesCoverUploadedEVT != null);
+    assert(seriesDraftDeletedEVT != null);
+    assert(seriesDraftFetchedEVT != null);
+    assert(seriesPublishedEVT != null);
+    assert(sessionFetchedEVT != null);
+    assert(storyChangedEVT != null);
+    assert(titleChangedEVT != null);
+    return chapterCoverUploadedEVT(coverUrl, chapterDraft);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result addCoverPressedEVT(),
+    Result chapterCoverDeletedEVT(),
+    Result chapterCoverUploadedEVT(String coverUrl, ChapterDraft chapterDraft),
+    Result chapterPublishedEVT(Chapter chapter),
+    Result copyrightsSelectedEVT(String copyrights),
+    Result chapterDeletedEVT(),
+    Result deleteDraftButtonPressedEVT(),
+    Result editModeLaunchedEVT(ChapterDraft chapterDraft),
+    Result failureWhenPublishingChapterEVT(String coverUrl),
+    Result failureWhenPublishingSeriesEVT(String coverUrl),
+    Result failureWhenUploadingSeriesCoverEVT(),
+    Result genreOptionalSelectedEVT(String genreOptional),
+    Result genreSelectedEVT(String genre),
+    Result isEndChangedEVT(bool isEnd),
+    Result isNSFWChangedEVT(bool isNSFW),
+    Result languageSelectedEVT(String language),
+    Result newChapterPageLaunchedEVT(
+        BuildContext context,
+        Chapter previousChapter,
+        ChapterDraft chapterDraft,
+        SeriesDraft seriesDraft),
+    Result placeholderFetchedEVT(Chapter previousChapter,
+        SeriesDraft seriesDraft, String sessionUid, String coverUrl),
+    Result publishButtonPressedEVT(),
+    Result saveOrBackButtonPressedEVT(),
+    Result seriesCoverDeletedEVT(),
+    Result seriesCoverUploadedEVT(String coverUrl, SeriesDraft seriesDraft),
+    Result seriesDraftDeletedEVT(),
+    Result seriesDraftFetchedEVT(SeriesDraft seriesDraft),
+    Result seriesPublishedEVT(Series series),
+    Result sessionFetchedEVT(
+        Session session, Chapter previousChapter, SeriesDraft seriesDraft),
+    Result storyChangedEVT(String story),
+    Result titleChangedEVT(String title),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (chapterCoverUploadedEVT != null) {
+      return chapterCoverUploadedEVT(coverUrl, chapterDraft);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result addCoverPressedEVT(AddCoverPressedEVT value),
+    @required Result chapterCoverDeletedEVT(ChapterCoverDeletedEVT value),
+    @required Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
+    @required Result chapterPublishedEVT(ChapterPublishedEVT value),
+    @required Result copyrightsSelectedEVT(CopyrightsSelectedEVT value),
+    @required Result chapterDeletedEVT(ChapterDeletedEVT value),
+    @required
+        Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
+    @required Result editModeLaunchedEVT(EditModeLaunchedEVT value),
+    @required
+        Result failureWhenPublishingChapterEVT(
+            FailureWhenPublishingChapterEVT value),
+    @required
+        Result failureWhenPublishingSeriesEVT(
+            FailureWhenPublishingSeriesEVT value),
+    @required
+        Result failureWhenUploadingSeriesCoverEVT(
+            FailureWhenUploadingSeriesCoverEVT value),
+    @required Result genreOptionalSelectedEVT(GenreOptionalSelectedEVT value),
+    @required Result genreSelectedEVT(GenreSelectedEVT value),
+    @required Result isEndChangedEVT(IsEndChangedEVT value),
+    @required Result isNSFWChangedEVT(IsNSFWChangedEVT value),
+    @required Result languageSelectedEVT(LanguageSelectedEVT value),
+    @required Result newChapterPageLaunchedEVT(NewChapterPageLaunchedEVT value),
+    @required Result placeholderFetchedEVT(PlaceholderFetchedEVT value),
+    @required Result publishButtonPressedEVT(PublishButtonPressedEVT value),
+    @required
+        Result saveOrBackButtonPressedEVT(SaveOrBackButtonPressedEVT value),
+    @required Result seriesCoverDeletedEVT(SeriesCoverDeletedEVT value),
+    @required Result seriesCoverUploadedEVT(SeriesCoverUploadedEVT value),
+    @required Result seriesDraftDeletedEVT(SeriesDraftDeletedEVT value),
+    @required Result seriesDraftFetchedEVT(SeriesDraftFetchedEVT value),
+    @required Result seriesPublishedEVT(SeriesPublishedEVT value),
+    @required Result sessionFetchedEVT(SessionFetchedEVT value),
+    @required Result storyChangedEVT(StoryChangedEVT value),
+    @required Result titleChangedEVT(TitleChangedEVT value),
+  }) {
+    assert(addCoverPressedEVT != null);
+    assert(chapterCoverDeletedEVT != null);
+    assert(chapterCoverUploadedEVT != null);
+    assert(chapterPublishedEVT != null);
+    assert(copyrightsSelectedEVT != null);
+    assert(chapterDeletedEVT != null);
+    assert(deleteDraftButtonPressedEVT != null);
+    assert(editModeLaunchedEVT != null);
+    assert(failureWhenPublishingChapterEVT != null);
+    assert(failureWhenPublishingSeriesEVT != null);
+    assert(failureWhenUploadingSeriesCoverEVT != null);
+    assert(genreOptionalSelectedEVT != null);
+    assert(genreSelectedEVT != null);
+    assert(isEndChangedEVT != null);
+    assert(isNSFWChangedEVT != null);
+    assert(languageSelectedEVT != null);
+    assert(newChapterPageLaunchedEVT != null);
+    assert(placeholderFetchedEVT != null);
+    assert(publishButtonPressedEVT != null);
+    assert(saveOrBackButtonPressedEVT != null);
+    assert(seriesCoverDeletedEVT != null);
+    assert(seriesCoverUploadedEVT != null);
+    assert(seriesDraftDeletedEVT != null);
+    assert(seriesDraftFetchedEVT != null);
+    assert(seriesPublishedEVT != null);
+    assert(sessionFetchedEVT != null);
+    assert(storyChangedEVT != null);
+    assert(titleChangedEVT != null);
+    return chapterCoverUploadedEVT(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result addCoverPressedEVT(AddCoverPressedEVT value),
+    Result chapterCoverDeletedEVT(ChapterCoverDeletedEVT value),
+    Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
+    Result chapterPublishedEVT(ChapterPublishedEVT value),
+    Result copyrightsSelectedEVT(CopyrightsSelectedEVT value),
+    Result chapterDeletedEVT(ChapterDeletedEVT value),
+    Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
+    Result editModeLaunchedEVT(EditModeLaunchedEVT value),
+    Result failureWhenPublishingChapterEVT(
+        FailureWhenPublishingChapterEVT value),
+    Result failureWhenPublishingSeriesEVT(FailureWhenPublishingSeriesEVT value),
+    Result failureWhenUploadingSeriesCoverEVT(
+        FailureWhenUploadingSeriesCoverEVT value),
+    Result genreOptionalSelectedEVT(GenreOptionalSelectedEVT value),
+    Result genreSelectedEVT(GenreSelectedEVT value),
+    Result isEndChangedEVT(IsEndChangedEVT value),
+    Result isNSFWChangedEVT(IsNSFWChangedEVT value),
+    Result languageSelectedEVT(LanguageSelectedEVT value),
+    Result newChapterPageLaunchedEVT(NewChapterPageLaunchedEVT value),
+    Result placeholderFetchedEVT(PlaceholderFetchedEVT value),
+    Result publishButtonPressedEVT(PublishButtonPressedEVT value),
+    Result saveOrBackButtonPressedEVT(SaveOrBackButtonPressedEVT value),
+    Result seriesCoverDeletedEVT(SeriesCoverDeletedEVT value),
+    Result seriesCoverUploadedEVT(SeriesCoverUploadedEVT value),
+    Result seriesDraftDeletedEVT(SeriesDraftDeletedEVT value),
+    Result seriesDraftFetchedEVT(SeriesDraftFetchedEVT value),
+    Result seriesPublishedEVT(SeriesPublishedEVT value),
+    Result sessionFetchedEVT(SessionFetchedEVT value),
+    Result storyChangedEVT(StoryChangedEVT value),
+    Result titleChangedEVT(TitleChangedEVT value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (chapterCoverUploadedEVT != null) {
+      return chapterCoverUploadedEVT(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ChapterCoverUploadedEVT implements NewChapterDatabaseEvent {
+  const factory ChapterCoverUploadedEVT(
+      String coverUrl, ChapterDraft chapterDraft) = _$ChapterCoverUploadedEVT;
+
+  String get coverUrl;
+  ChapterDraft get chapterDraft;
+  $ChapterCoverUploadedEVTCopyWith<ChapterCoverUploadedEVT> get copyWith;
 }
 
 abstract class $ChapterPublishedEVTCopyWith<$Res> {
@@ -895,14 +1321,18 @@ class _$ChapterPublishedEVT
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result addCoverPressedEVT(),
-    @required Result chapterDraftDeletedEVT(Chapter chapter),
-    @required Result chapterPublishedEVT(Chapter chapter),
-    @required Result copyrightsSelectedEVT(String copyrights),
+    @required Result chapterCoverDeletedEVT(),
     @required
         Result chapterCoverUploadedEVT(
             String coverUrl, ChapterDraft chapterDraft),
+    @required Result chapterPublishedEVT(Chapter chapter),
+    @required Result copyrightsSelectedEVT(String copyrights),
+    @required Result chapterDeletedEVT(),
     @required Result deleteDraftButtonPressedEVT(),
     @required Result editModeLaunchedEVT(ChapterDraft chapterDraft),
+    @required Result failureWhenPublishingChapterEVT(String coverUrl),
+    @required Result failureWhenPublishingSeriesEVT(String coverUrl),
+    @required Result failureWhenUploadingSeriesCoverEVT(),
     @required Result genreOptionalSelectedEVT(String genreOptional),
     @required Result genreSelectedEVT(String genre),
     @required Result isEndChangedEVT(bool isEnd),
@@ -919,6 +1349,7 @@ class _$ChapterPublishedEVT
             SeriesDraft seriesDraft, String sessionUid, String coverUrl),
     @required Result publishButtonPressedEVT(),
     @required Result saveOrBackButtonPressedEVT(),
+    @required Result seriesCoverDeletedEVT(),
     @required
         Result seriesCoverUploadedEVT(String coverUrl, SeriesDraft seriesDraft),
     @required Result seriesDraftDeletedEVT(),
@@ -931,12 +1362,16 @@ class _$ChapterPublishedEVT
     @required Result titleChangedEVT(String title),
   }) {
     assert(addCoverPressedEVT != null);
-    assert(chapterDraftDeletedEVT != null);
+    assert(chapterCoverDeletedEVT != null);
+    assert(chapterCoverUploadedEVT != null);
     assert(chapterPublishedEVT != null);
     assert(copyrightsSelectedEVT != null);
-    assert(chapterCoverUploadedEVT != null);
+    assert(chapterDeletedEVT != null);
     assert(deleteDraftButtonPressedEVT != null);
     assert(editModeLaunchedEVT != null);
+    assert(failureWhenPublishingChapterEVT != null);
+    assert(failureWhenPublishingSeriesEVT != null);
+    assert(failureWhenUploadingSeriesCoverEVT != null);
     assert(genreOptionalSelectedEVT != null);
     assert(genreSelectedEVT != null);
     assert(isEndChangedEVT != null);
@@ -946,6 +1381,7 @@ class _$ChapterPublishedEVT
     assert(placeholderFetchedEVT != null);
     assert(publishButtonPressedEVT != null);
     assert(saveOrBackButtonPressedEVT != null);
+    assert(seriesCoverDeletedEVT != null);
     assert(seriesCoverUploadedEVT != null);
     assert(seriesDraftDeletedEVT != null);
     assert(seriesDraftFetchedEVT != null);
@@ -960,12 +1396,16 @@ class _$ChapterPublishedEVT
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result addCoverPressedEVT(),
-    Result chapterDraftDeletedEVT(Chapter chapter),
+    Result chapterCoverDeletedEVT(),
+    Result chapterCoverUploadedEVT(String coverUrl, ChapterDraft chapterDraft),
     Result chapterPublishedEVT(Chapter chapter),
     Result copyrightsSelectedEVT(String copyrights),
-    Result chapterCoverUploadedEVT(String coverUrl, ChapterDraft chapterDraft),
+    Result chapterDeletedEVT(),
     Result deleteDraftButtonPressedEVT(),
     Result editModeLaunchedEVT(ChapterDraft chapterDraft),
+    Result failureWhenPublishingChapterEVT(String coverUrl),
+    Result failureWhenPublishingSeriesEVT(String coverUrl),
+    Result failureWhenUploadingSeriesCoverEVT(),
     Result genreOptionalSelectedEVT(String genreOptional),
     Result genreSelectedEVT(String genre),
     Result isEndChangedEVT(bool isEnd),
@@ -980,6 +1420,7 @@ class _$ChapterPublishedEVT
         SeriesDraft seriesDraft, String sessionUid, String coverUrl),
     Result publishButtonPressedEVT(),
     Result saveOrBackButtonPressedEVT(),
+    Result seriesCoverDeletedEVT(),
     Result seriesCoverUploadedEVT(String coverUrl, SeriesDraft seriesDraft),
     Result seriesDraftDeletedEVT(),
     Result seriesDraftFetchedEVT(SeriesDraft seriesDraft),
@@ -1001,13 +1442,23 @@ class _$ChapterPublishedEVT
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result addCoverPressedEVT(AddCoverPressedEVT value),
-    @required Result chapterDraftDeletedEVT(ChapterDraftDeletedEVT value),
+    @required Result chapterCoverDeletedEVT(ChapterCoverDeletedEVT value),
+    @required Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
     @required Result chapterPublishedEVT(ChapterPublishedEVT value),
     @required Result copyrightsSelectedEVT(CopyrightsSelectedEVT value),
-    @required Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
+    @required Result chapterDeletedEVT(ChapterDeletedEVT value),
     @required
         Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
     @required Result editModeLaunchedEVT(EditModeLaunchedEVT value),
+    @required
+        Result failureWhenPublishingChapterEVT(
+            FailureWhenPublishingChapterEVT value),
+    @required
+        Result failureWhenPublishingSeriesEVT(
+            FailureWhenPublishingSeriesEVT value),
+    @required
+        Result failureWhenUploadingSeriesCoverEVT(
+            FailureWhenUploadingSeriesCoverEVT value),
     @required Result genreOptionalSelectedEVT(GenreOptionalSelectedEVT value),
     @required Result genreSelectedEVT(GenreSelectedEVT value),
     @required Result isEndChangedEVT(IsEndChangedEVT value),
@@ -1018,6 +1469,7 @@ class _$ChapterPublishedEVT
     @required Result publishButtonPressedEVT(PublishButtonPressedEVT value),
     @required
         Result saveOrBackButtonPressedEVT(SaveOrBackButtonPressedEVT value),
+    @required Result seriesCoverDeletedEVT(SeriesCoverDeletedEVT value),
     @required Result seriesCoverUploadedEVT(SeriesCoverUploadedEVT value),
     @required Result seriesDraftDeletedEVT(SeriesDraftDeletedEVT value),
     @required Result seriesDraftFetchedEVT(SeriesDraftFetchedEVT value),
@@ -1027,12 +1479,16 @@ class _$ChapterPublishedEVT
     @required Result titleChangedEVT(TitleChangedEVT value),
   }) {
     assert(addCoverPressedEVT != null);
-    assert(chapterDraftDeletedEVT != null);
+    assert(chapterCoverDeletedEVT != null);
+    assert(chapterCoverUploadedEVT != null);
     assert(chapterPublishedEVT != null);
     assert(copyrightsSelectedEVT != null);
-    assert(chapterCoverUploadedEVT != null);
+    assert(chapterDeletedEVT != null);
     assert(deleteDraftButtonPressedEVT != null);
     assert(editModeLaunchedEVT != null);
+    assert(failureWhenPublishingChapterEVT != null);
+    assert(failureWhenPublishingSeriesEVT != null);
+    assert(failureWhenUploadingSeriesCoverEVT != null);
     assert(genreOptionalSelectedEVT != null);
     assert(genreSelectedEVT != null);
     assert(isEndChangedEVT != null);
@@ -1042,6 +1498,7 @@ class _$ChapterPublishedEVT
     assert(placeholderFetchedEVT != null);
     assert(publishButtonPressedEVT != null);
     assert(saveOrBackButtonPressedEVT != null);
+    assert(seriesCoverDeletedEVT != null);
     assert(seriesCoverUploadedEVT != null);
     assert(seriesDraftDeletedEVT != null);
     assert(seriesDraftFetchedEVT != null);
@@ -1056,12 +1513,18 @@ class _$ChapterPublishedEVT
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result addCoverPressedEVT(AddCoverPressedEVT value),
-    Result chapterDraftDeletedEVT(ChapterDraftDeletedEVT value),
+    Result chapterCoverDeletedEVT(ChapterCoverDeletedEVT value),
+    Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
     Result chapterPublishedEVT(ChapterPublishedEVT value),
     Result copyrightsSelectedEVT(CopyrightsSelectedEVT value),
-    Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
+    Result chapterDeletedEVT(ChapterDeletedEVT value),
     Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
     Result editModeLaunchedEVT(EditModeLaunchedEVT value),
+    Result failureWhenPublishingChapterEVT(
+        FailureWhenPublishingChapterEVT value),
+    Result failureWhenPublishingSeriesEVT(FailureWhenPublishingSeriesEVT value),
+    Result failureWhenUploadingSeriesCoverEVT(
+        FailureWhenUploadingSeriesCoverEVT value),
     Result genreOptionalSelectedEVT(GenreOptionalSelectedEVT value),
     Result genreSelectedEVT(GenreSelectedEVT value),
     Result isEndChangedEVT(IsEndChangedEVT value),
@@ -1071,6 +1534,7 @@ class _$ChapterPublishedEVT
     Result placeholderFetchedEVT(PlaceholderFetchedEVT value),
     Result publishButtonPressedEVT(PublishButtonPressedEVT value),
     Result saveOrBackButtonPressedEVT(SaveOrBackButtonPressedEVT value),
+    Result seriesCoverDeletedEVT(SeriesCoverDeletedEVT value),
     Result seriesCoverUploadedEVT(SeriesCoverUploadedEVT value),
     Result seriesDraftDeletedEVT(SeriesDraftDeletedEVT value),
     Result seriesDraftFetchedEVT(SeriesDraftFetchedEVT value),
@@ -1166,14 +1630,18 @@ class _$CopyrightsSelectedEVT
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result addCoverPressedEVT(),
-    @required Result chapterDraftDeletedEVT(Chapter chapter),
-    @required Result chapterPublishedEVT(Chapter chapter),
-    @required Result copyrightsSelectedEVT(String copyrights),
+    @required Result chapterCoverDeletedEVT(),
     @required
         Result chapterCoverUploadedEVT(
             String coverUrl, ChapterDraft chapterDraft),
+    @required Result chapterPublishedEVT(Chapter chapter),
+    @required Result copyrightsSelectedEVT(String copyrights),
+    @required Result chapterDeletedEVT(),
     @required Result deleteDraftButtonPressedEVT(),
     @required Result editModeLaunchedEVT(ChapterDraft chapterDraft),
+    @required Result failureWhenPublishingChapterEVT(String coverUrl),
+    @required Result failureWhenPublishingSeriesEVT(String coverUrl),
+    @required Result failureWhenUploadingSeriesCoverEVT(),
     @required Result genreOptionalSelectedEVT(String genreOptional),
     @required Result genreSelectedEVT(String genre),
     @required Result isEndChangedEVT(bool isEnd),
@@ -1190,6 +1658,7 @@ class _$CopyrightsSelectedEVT
             SeriesDraft seriesDraft, String sessionUid, String coverUrl),
     @required Result publishButtonPressedEVT(),
     @required Result saveOrBackButtonPressedEVT(),
+    @required Result seriesCoverDeletedEVT(),
     @required
         Result seriesCoverUploadedEVT(String coverUrl, SeriesDraft seriesDraft),
     @required Result seriesDraftDeletedEVT(),
@@ -1202,12 +1671,16 @@ class _$CopyrightsSelectedEVT
     @required Result titleChangedEVT(String title),
   }) {
     assert(addCoverPressedEVT != null);
-    assert(chapterDraftDeletedEVT != null);
+    assert(chapterCoverDeletedEVT != null);
+    assert(chapterCoverUploadedEVT != null);
     assert(chapterPublishedEVT != null);
     assert(copyrightsSelectedEVT != null);
-    assert(chapterCoverUploadedEVT != null);
+    assert(chapterDeletedEVT != null);
     assert(deleteDraftButtonPressedEVT != null);
     assert(editModeLaunchedEVT != null);
+    assert(failureWhenPublishingChapterEVT != null);
+    assert(failureWhenPublishingSeriesEVT != null);
+    assert(failureWhenUploadingSeriesCoverEVT != null);
     assert(genreOptionalSelectedEVT != null);
     assert(genreSelectedEVT != null);
     assert(isEndChangedEVT != null);
@@ -1217,6 +1690,7 @@ class _$CopyrightsSelectedEVT
     assert(placeholderFetchedEVT != null);
     assert(publishButtonPressedEVT != null);
     assert(saveOrBackButtonPressedEVT != null);
+    assert(seriesCoverDeletedEVT != null);
     assert(seriesCoverUploadedEVT != null);
     assert(seriesDraftDeletedEVT != null);
     assert(seriesDraftFetchedEVT != null);
@@ -1231,12 +1705,16 @@ class _$CopyrightsSelectedEVT
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result addCoverPressedEVT(),
-    Result chapterDraftDeletedEVT(Chapter chapter),
+    Result chapterCoverDeletedEVT(),
+    Result chapterCoverUploadedEVT(String coverUrl, ChapterDraft chapterDraft),
     Result chapterPublishedEVT(Chapter chapter),
     Result copyrightsSelectedEVT(String copyrights),
-    Result chapterCoverUploadedEVT(String coverUrl, ChapterDraft chapterDraft),
+    Result chapterDeletedEVT(),
     Result deleteDraftButtonPressedEVT(),
     Result editModeLaunchedEVT(ChapterDraft chapterDraft),
+    Result failureWhenPublishingChapterEVT(String coverUrl),
+    Result failureWhenPublishingSeriesEVT(String coverUrl),
+    Result failureWhenUploadingSeriesCoverEVT(),
     Result genreOptionalSelectedEVT(String genreOptional),
     Result genreSelectedEVT(String genre),
     Result isEndChangedEVT(bool isEnd),
@@ -1251,6 +1729,7 @@ class _$CopyrightsSelectedEVT
         SeriesDraft seriesDraft, String sessionUid, String coverUrl),
     Result publishButtonPressedEVT(),
     Result saveOrBackButtonPressedEVT(),
+    Result seriesCoverDeletedEVT(),
     Result seriesCoverUploadedEVT(String coverUrl, SeriesDraft seriesDraft),
     Result seriesDraftDeletedEVT(),
     Result seriesDraftFetchedEVT(SeriesDraft seriesDraft),
@@ -1272,13 +1751,23 @@ class _$CopyrightsSelectedEVT
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result addCoverPressedEVT(AddCoverPressedEVT value),
-    @required Result chapterDraftDeletedEVT(ChapterDraftDeletedEVT value),
+    @required Result chapterCoverDeletedEVT(ChapterCoverDeletedEVT value),
+    @required Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
     @required Result chapterPublishedEVT(ChapterPublishedEVT value),
     @required Result copyrightsSelectedEVT(CopyrightsSelectedEVT value),
-    @required Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
+    @required Result chapterDeletedEVT(ChapterDeletedEVT value),
     @required
         Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
     @required Result editModeLaunchedEVT(EditModeLaunchedEVT value),
+    @required
+        Result failureWhenPublishingChapterEVT(
+            FailureWhenPublishingChapterEVT value),
+    @required
+        Result failureWhenPublishingSeriesEVT(
+            FailureWhenPublishingSeriesEVT value),
+    @required
+        Result failureWhenUploadingSeriesCoverEVT(
+            FailureWhenUploadingSeriesCoverEVT value),
     @required Result genreOptionalSelectedEVT(GenreOptionalSelectedEVT value),
     @required Result genreSelectedEVT(GenreSelectedEVT value),
     @required Result isEndChangedEVT(IsEndChangedEVT value),
@@ -1289,6 +1778,7 @@ class _$CopyrightsSelectedEVT
     @required Result publishButtonPressedEVT(PublishButtonPressedEVT value),
     @required
         Result saveOrBackButtonPressedEVT(SaveOrBackButtonPressedEVT value),
+    @required Result seriesCoverDeletedEVT(SeriesCoverDeletedEVT value),
     @required Result seriesCoverUploadedEVT(SeriesCoverUploadedEVT value),
     @required Result seriesDraftDeletedEVT(SeriesDraftDeletedEVT value),
     @required Result seriesDraftFetchedEVT(SeriesDraftFetchedEVT value),
@@ -1298,12 +1788,16 @@ class _$CopyrightsSelectedEVT
     @required Result titleChangedEVT(TitleChangedEVT value),
   }) {
     assert(addCoverPressedEVT != null);
-    assert(chapterDraftDeletedEVT != null);
+    assert(chapterCoverDeletedEVT != null);
+    assert(chapterCoverUploadedEVT != null);
     assert(chapterPublishedEVT != null);
     assert(copyrightsSelectedEVT != null);
-    assert(chapterCoverUploadedEVT != null);
+    assert(chapterDeletedEVT != null);
     assert(deleteDraftButtonPressedEVT != null);
     assert(editModeLaunchedEVT != null);
+    assert(failureWhenPublishingChapterEVT != null);
+    assert(failureWhenPublishingSeriesEVT != null);
+    assert(failureWhenUploadingSeriesCoverEVT != null);
     assert(genreOptionalSelectedEVT != null);
     assert(genreSelectedEVT != null);
     assert(isEndChangedEVT != null);
@@ -1313,6 +1807,7 @@ class _$CopyrightsSelectedEVT
     assert(placeholderFetchedEVT != null);
     assert(publishButtonPressedEVT != null);
     assert(saveOrBackButtonPressedEVT != null);
+    assert(seriesCoverDeletedEVT != null);
     assert(seriesCoverUploadedEVT != null);
     assert(seriesDraftDeletedEVT != null);
     assert(seriesDraftFetchedEVT != null);
@@ -1327,12 +1822,18 @@ class _$CopyrightsSelectedEVT
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result addCoverPressedEVT(AddCoverPressedEVT value),
-    Result chapterDraftDeletedEVT(ChapterDraftDeletedEVT value),
+    Result chapterCoverDeletedEVT(ChapterCoverDeletedEVT value),
+    Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
     Result chapterPublishedEVT(ChapterPublishedEVT value),
     Result copyrightsSelectedEVT(CopyrightsSelectedEVT value),
-    Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
+    Result chapterDeletedEVT(ChapterDeletedEVT value),
     Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
     Result editModeLaunchedEVT(EditModeLaunchedEVT value),
+    Result failureWhenPublishingChapterEVT(
+        FailureWhenPublishingChapterEVT value),
+    Result failureWhenPublishingSeriesEVT(FailureWhenPublishingSeriesEVT value),
+    Result failureWhenUploadingSeriesCoverEVT(
+        FailureWhenUploadingSeriesCoverEVT value),
     Result genreOptionalSelectedEVT(GenreOptionalSelectedEVT value),
     Result genreSelectedEVT(GenreSelectedEVT value),
     Result isEndChangedEVT(IsEndChangedEVT value),
@@ -1342,6 +1843,7 @@ class _$CopyrightsSelectedEVT
     Result placeholderFetchedEVT(PlaceholderFetchedEVT value),
     Result publishButtonPressedEVT(PublishButtonPressedEVT value),
     Result saveOrBackButtonPressedEVT(SaveOrBackButtonPressedEVT value),
+    Result seriesCoverDeletedEVT(SeriesCoverDeletedEVT value),
     Result seriesCoverUploadedEVT(SeriesCoverUploadedEVT value),
     Result seriesDraftDeletedEVT(SeriesDraftDeletedEVT value),
     Result seriesDraftFetchedEVT(SeriesDraftFetchedEVT value),
@@ -1367,52 +1869,31 @@ abstract class CopyrightsSelectedEVT implements NewChapterDatabaseEvent {
   $CopyrightsSelectedEVTCopyWith<CopyrightsSelectedEVT> get copyWith;
 }
 
-abstract class $ChapterCoverUploadedEVTCopyWith<$Res> {
-  factory $ChapterCoverUploadedEVTCopyWith(ChapterCoverUploadedEVT value,
-          $Res Function(ChapterCoverUploadedEVT) then) =
-      _$ChapterCoverUploadedEVTCopyWithImpl<$Res>;
-  $Res call({String coverUrl, ChapterDraft chapterDraft});
+abstract class $ChapterDeletedEVTCopyWith<$Res> {
+  factory $ChapterDeletedEVTCopyWith(
+          ChapterDeletedEVT value, $Res Function(ChapterDeletedEVT) then) =
+      _$ChapterDeletedEVTCopyWithImpl<$Res>;
 }
 
-class _$ChapterCoverUploadedEVTCopyWithImpl<$Res>
+class _$ChapterDeletedEVTCopyWithImpl<$Res>
     extends _$NewChapterDatabaseEventCopyWithImpl<$Res>
-    implements $ChapterCoverUploadedEVTCopyWith<$Res> {
-  _$ChapterCoverUploadedEVTCopyWithImpl(ChapterCoverUploadedEVT _value,
-      $Res Function(ChapterCoverUploadedEVT) _then)
-      : super(_value, (v) => _then(v as ChapterCoverUploadedEVT));
+    implements $ChapterDeletedEVTCopyWith<$Res> {
+  _$ChapterDeletedEVTCopyWithImpl(
+      ChapterDeletedEVT _value, $Res Function(ChapterDeletedEVT) _then)
+      : super(_value, (v) => _then(v as ChapterDeletedEVT));
 
   @override
-  ChapterCoverUploadedEVT get _value => super._value as ChapterCoverUploadedEVT;
-
-  @override
-  $Res call({
-    Object coverUrl = freezed,
-    Object chapterDraft = freezed,
-  }) {
-    return _then(ChapterCoverUploadedEVT(
-      coverUrl == freezed ? _value.coverUrl : coverUrl as String,
-      chapterDraft == freezed
-          ? _value.chapterDraft
-          : chapterDraft as ChapterDraft,
-    ));
-  }
+  ChapterDeletedEVT get _value => super._value as ChapterDeletedEVT;
 }
 
-class _$ChapterCoverUploadedEVT
+class _$ChapterDeletedEVT
     with DiagnosticableTreeMixin
-    implements ChapterCoverUploadedEVT {
-  const _$ChapterCoverUploadedEVT(this.coverUrl, this.chapterDraft)
-      : assert(coverUrl != null),
-        assert(chapterDraft != null);
-
-  @override
-  final String coverUrl;
-  @override
-  final ChapterDraft chapterDraft;
+    implements ChapterDeletedEVT {
+  const _$ChapterDeletedEVT();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'NewChapterDatabaseEvent.chapterCoverUploadedEVT(coverUrl: $coverUrl, chapterDraft: $chapterDraft)';
+    return 'NewChapterDatabaseEvent.chapterDeletedEVT()';
   }
 
   @override
@@ -1420,46 +1901,33 @@ class _$ChapterCoverUploadedEVT
     super.debugFillProperties(properties);
     properties
       ..add(DiagnosticsProperty(
-          'type', 'NewChapterDatabaseEvent.chapterCoverUploadedEVT'))
-      ..add(DiagnosticsProperty('coverUrl', coverUrl))
-      ..add(DiagnosticsProperty('chapterDraft', chapterDraft));
+          'type', 'NewChapterDatabaseEvent.chapterDeletedEVT'));
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is ChapterCoverUploadedEVT &&
-            (identical(other.coverUrl, coverUrl) ||
-                const DeepCollectionEquality()
-                    .equals(other.coverUrl, coverUrl)) &&
-            (identical(other.chapterDraft, chapterDraft) ||
-                const DeepCollectionEquality()
-                    .equals(other.chapterDraft, chapterDraft)));
+    return identical(this, other) || (other is ChapterDeletedEVT);
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(coverUrl) ^
-      const DeepCollectionEquality().hash(chapterDraft);
-
-  @override
-  $ChapterCoverUploadedEVTCopyWith<ChapterCoverUploadedEVT> get copyWith =>
-      _$ChapterCoverUploadedEVTCopyWithImpl<ChapterCoverUploadedEVT>(
-          this, _$identity);
+  int get hashCode => runtimeType.hashCode;
 
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result addCoverPressedEVT(),
-    @required Result chapterDraftDeletedEVT(Chapter chapter),
-    @required Result chapterPublishedEVT(Chapter chapter),
-    @required Result copyrightsSelectedEVT(String copyrights),
+    @required Result chapterCoverDeletedEVT(),
     @required
         Result chapterCoverUploadedEVT(
             String coverUrl, ChapterDraft chapterDraft),
+    @required Result chapterPublishedEVT(Chapter chapter),
+    @required Result copyrightsSelectedEVT(String copyrights),
+    @required Result chapterDeletedEVT(),
     @required Result deleteDraftButtonPressedEVT(),
     @required Result editModeLaunchedEVT(ChapterDraft chapterDraft),
+    @required Result failureWhenPublishingChapterEVT(String coverUrl),
+    @required Result failureWhenPublishingSeriesEVT(String coverUrl),
+    @required Result failureWhenUploadingSeriesCoverEVT(),
     @required Result genreOptionalSelectedEVT(String genreOptional),
     @required Result genreSelectedEVT(String genre),
     @required Result isEndChangedEVT(bool isEnd),
@@ -1476,6 +1944,7 @@ class _$ChapterCoverUploadedEVT
             SeriesDraft seriesDraft, String sessionUid, String coverUrl),
     @required Result publishButtonPressedEVT(),
     @required Result saveOrBackButtonPressedEVT(),
+    @required Result seriesCoverDeletedEVT(),
     @required
         Result seriesCoverUploadedEVT(String coverUrl, SeriesDraft seriesDraft),
     @required Result seriesDraftDeletedEVT(),
@@ -1488,12 +1957,16 @@ class _$ChapterCoverUploadedEVT
     @required Result titleChangedEVT(String title),
   }) {
     assert(addCoverPressedEVT != null);
-    assert(chapterDraftDeletedEVT != null);
+    assert(chapterCoverDeletedEVT != null);
+    assert(chapterCoverUploadedEVT != null);
     assert(chapterPublishedEVT != null);
     assert(copyrightsSelectedEVT != null);
-    assert(chapterCoverUploadedEVT != null);
+    assert(chapterDeletedEVT != null);
     assert(deleteDraftButtonPressedEVT != null);
     assert(editModeLaunchedEVT != null);
+    assert(failureWhenPublishingChapterEVT != null);
+    assert(failureWhenPublishingSeriesEVT != null);
+    assert(failureWhenUploadingSeriesCoverEVT != null);
     assert(genreOptionalSelectedEVT != null);
     assert(genreSelectedEVT != null);
     assert(isEndChangedEVT != null);
@@ -1503,6 +1976,7 @@ class _$ChapterCoverUploadedEVT
     assert(placeholderFetchedEVT != null);
     assert(publishButtonPressedEVT != null);
     assert(saveOrBackButtonPressedEVT != null);
+    assert(seriesCoverDeletedEVT != null);
     assert(seriesCoverUploadedEVT != null);
     assert(seriesDraftDeletedEVT != null);
     assert(seriesDraftFetchedEVT != null);
@@ -1510,19 +1984,23 @@ class _$ChapterCoverUploadedEVT
     assert(sessionFetchedEVT != null);
     assert(storyChangedEVT != null);
     assert(titleChangedEVT != null);
-    return chapterCoverUploadedEVT(coverUrl, chapterDraft);
+    return chapterDeletedEVT();
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result addCoverPressedEVT(),
-    Result chapterDraftDeletedEVT(Chapter chapter),
+    Result chapterCoverDeletedEVT(),
+    Result chapterCoverUploadedEVT(String coverUrl, ChapterDraft chapterDraft),
     Result chapterPublishedEVT(Chapter chapter),
     Result copyrightsSelectedEVT(String copyrights),
-    Result chapterCoverUploadedEVT(String coverUrl, ChapterDraft chapterDraft),
+    Result chapterDeletedEVT(),
     Result deleteDraftButtonPressedEVT(),
     Result editModeLaunchedEVT(ChapterDraft chapterDraft),
+    Result failureWhenPublishingChapterEVT(String coverUrl),
+    Result failureWhenPublishingSeriesEVT(String coverUrl),
+    Result failureWhenUploadingSeriesCoverEVT(),
     Result genreOptionalSelectedEVT(String genreOptional),
     Result genreSelectedEVT(String genre),
     Result isEndChangedEVT(bool isEnd),
@@ -1537,6 +2015,7 @@ class _$ChapterCoverUploadedEVT
         SeriesDraft seriesDraft, String sessionUid, String coverUrl),
     Result publishButtonPressedEVT(),
     Result saveOrBackButtonPressedEVT(),
+    Result seriesCoverDeletedEVT(),
     Result seriesCoverUploadedEVT(String coverUrl, SeriesDraft seriesDraft),
     Result seriesDraftDeletedEVT(),
     Result seriesDraftFetchedEVT(SeriesDraft seriesDraft),
@@ -1548,8 +2027,8 @@ class _$ChapterCoverUploadedEVT
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (chapterCoverUploadedEVT != null) {
-      return chapterCoverUploadedEVT(coverUrl, chapterDraft);
+    if (chapterDeletedEVT != null) {
+      return chapterDeletedEVT();
     }
     return orElse();
   }
@@ -1558,13 +2037,23 @@ class _$ChapterCoverUploadedEVT
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result addCoverPressedEVT(AddCoverPressedEVT value),
-    @required Result chapterDraftDeletedEVT(ChapterDraftDeletedEVT value),
+    @required Result chapterCoverDeletedEVT(ChapterCoverDeletedEVT value),
+    @required Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
     @required Result chapterPublishedEVT(ChapterPublishedEVT value),
     @required Result copyrightsSelectedEVT(CopyrightsSelectedEVT value),
-    @required Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
+    @required Result chapterDeletedEVT(ChapterDeletedEVT value),
     @required
         Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
     @required Result editModeLaunchedEVT(EditModeLaunchedEVT value),
+    @required
+        Result failureWhenPublishingChapterEVT(
+            FailureWhenPublishingChapterEVT value),
+    @required
+        Result failureWhenPublishingSeriesEVT(
+            FailureWhenPublishingSeriesEVT value),
+    @required
+        Result failureWhenUploadingSeriesCoverEVT(
+            FailureWhenUploadingSeriesCoverEVT value),
     @required Result genreOptionalSelectedEVT(GenreOptionalSelectedEVT value),
     @required Result genreSelectedEVT(GenreSelectedEVT value),
     @required Result isEndChangedEVT(IsEndChangedEVT value),
@@ -1575,6 +2064,7 @@ class _$ChapterCoverUploadedEVT
     @required Result publishButtonPressedEVT(PublishButtonPressedEVT value),
     @required
         Result saveOrBackButtonPressedEVT(SaveOrBackButtonPressedEVT value),
+    @required Result seriesCoverDeletedEVT(SeriesCoverDeletedEVT value),
     @required Result seriesCoverUploadedEVT(SeriesCoverUploadedEVT value),
     @required Result seriesDraftDeletedEVT(SeriesDraftDeletedEVT value),
     @required Result seriesDraftFetchedEVT(SeriesDraftFetchedEVT value),
@@ -1584,12 +2074,16 @@ class _$ChapterCoverUploadedEVT
     @required Result titleChangedEVT(TitleChangedEVT value),
   }) {
     assert(addCoverPressedEVT != null);
-    assert(chapterDraftDeletedEVT != null);
+    assert(chapterCoverDeletedEVT != null);
+    assert(chapterCoverUploadedEVT != null);
     assert(chapterPublishedEVT != null);
     assert(copyrightsSelectedEVT != null);
-    assert(chapterCoverUploadedEVT != null);
+    assert(chapterDeletedEVT != null);
     assert(deleteDraftButtonPressedEVT != null);
     assert(editModeLaunchedEVT != null);
+    assert(failureWhenPublishingChapterEVT != null);
+    assert(failureWhenPublishingSeriesEVT != null);
+    assert(failureWhenUploadingSeriesCoverEVT != null);
     assert(genreOptionalSelectedEVT != null);
     assert(genreSelectedEVT != null);
     assert(isEndChangedEVT != null);
@@ -1599,6 +2093,7 @@ class _$ChapterCoverUploadedEVT
     assert(placeholderFetchedEVT != null);
     assert(publishButtonPressedEVT != null);
     assert(saveOrBackButtonPressedEVT != null);
+    assert(seriesCoverDeletedEVT != null);
     assert(seriesCoverUploadedEVT != null);
     assert(seriesDraftDeletedEVT != null);
     assert(seriesDraftFetchedEVT != null);
@@ -1606,19 +2101,25 @@ class _$ChapterCoverUploadedEVT
     assert(sessionFetchedEVT != null);
     assert(storyChangedEVT != null);
     assert(titleChangedEVT != null);
-    return chapterCoverUploadedEVT(this);
+    return chapterDeletedEVT(this);
   }
 
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result addCoverPressedEVT(AddCoverPressedEVT value),
-    Result chapterDraftDeletedEVT(ChapterDraftDeletedEVT value),
+    Result chapterCoverDeletedEVT(ChapterCoverDeletedEVT value),
+    Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
     Result chapterPublishedEVT(ChapterPublishedEVT value),
     Result copyrightsSelectedEVT(CopyrightsSelectedEVT value),
-    Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
+    Result chapterDeletedEVT(ChapterDeletedEVT value),
     Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
     Result editModeLaunchedEVT(EditModeLaunchedEVT value),
+    Result failureWhenPublishingChapterEVT(
+        FailureWhenPublishingChapterEVT value),
+    Result failureWhenPublishingSeriesEVT(FailureWhenPublishingSeriesEVT value),
+    Result failureWhenUploadingSeriesCoverEVT(
+        FailureWhenUploadingSeriesCoverEVT value),
     Result genreOptionalSelectedEVT(GenreOptionalSelectedEVT value),
     Result genreSelectedEVT(GenreSelectedEVT value),
     Result isEndChangedEVT(IsEndChangedEVT value),
@@ -1628,6 +2129,7 @@ class _$ChapterCoverUploadedEVT
     Result placeholderFetchedEVT(PlaceholderFetchedEVT value),
     Result publishButtonPressedEVT(PublishButtonPressedEVT value),
     Result saveOrBackButtonPressedEVT(SaveOrBackButtonPressedEVT value),
+    Result seriesCoverDeletedEVT(SeriesCoverDeletedEVT value),
     Result seriesCoverUploadedEVT(SeriesCoverUploadedEVT value),
     Result seriesDraftDeletedEVT(SeriesDraftDeletedEVT value),
     Result seriesDraftFetchedEVT(SeriesDraftFetchedEVT value),
@@ -1638,20 +2140,15 @@ class _$ChapterCoverUploadedEVT
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (chapterCoverUploadedEVT != null) {
-      return chapterCoverUploadedEVT(this);
+    if (chapterDeletedEVT != null) {
+      return chapterDeletedEVT(this);
     }
     return orElse();
   }
 }
 
-abstract class ChapterCoverUploadedEVT implements NewChapterDatabaseEvent {
-  const factory ChapterCoverUploadedEVT(
-      String coverUrl, ChapterDraft chapterDraft) = _$ChapterCoverUploadedEVT;
-
-  String get coverUrl;
-  ChapterDraft get chapterDraft;
-  $ChapterCoverUploadedEVTCopyWith<ChapterCoverUploadedEVT> get copyWith;
+abstract class ChapterDeletedEVT implements NewChapterDatabaseEvent {
+  const factory ChapterDeletedEVT() = _$ChapterDeletedEVT;
 }
 
 abstract class $DeleteDraftButtonPressedEVTCopyWith<$Res> {
@@ -1703,14 +2200,18 @@ class _$DeleteDraftButtonPressedEVT
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result addCoverPressedEVT(),
-    @required Result chapterDraftDeletedEVT(Chapter chapter),
-    @required Result chapterPublishedEVT(Chapter chapter),
-    @required Result copyrightsSelectedEVT(String copyrights),
+    @required Result chapterCoverDeletedEVT(),
     @required
         Result chapterCoverUploadedEVT(
             String coverUrl, ChapterDraft chapterDraft),
+    @required Result chapterPublishedEVT(Chapter chapter),
+    @required Result copyrightsSelectedEVT(String copyrights),
+    @required Result chapterDeletedEVT(),
     @required Result deleteDraftButtonPressedEVT(),
     @required Result editModeLaunchedEVT(ChapterDraft chapterDraft),
+    @required Result failureWhenPublishingChapterEVT(String coverUrl),
+    @required Result failureWhenPublishingSeriesEVT(String coverUrl),
+    @required Result failureWhenUploadingSeriesCoverEVT(),
     @required Result genreOptionalSelectedEVT(String genreOptional),
     @required Result genreSelectedEVT(String genre),
     @required Result isEndChangedEVT(bool isEnd),
@@ -1727,6 +2228,7 @@ class _$DeleteDraftButtonPressedEVT
             SeriesDraft seriesDraft, String sessionUid, String coverUrl),
     @required Result publishButtonPressedEVT(),
     @required Result saveOrBackButtonPressedEVT(),
+    @required Result seriesCoverDeletedEVT(),
     @required
         Result seriesCoverUploadedEVT(String coverUrl, SeriesDraft seriesDraft),
     @required Result seriesDraftDeletedEVT(),
@@ -1739,12 +2241,16 @@ class _$DeleteDraftButtonPressedEVT
     @required Result titleChangedEVT(String title),
   }) {
     assert(addCoverPressedEVT != null);
-    assert(chapterDraftDeletedEVT != null);
+    assert(chapterCoverDeletedEVT != null);
+    assert(chapterCoverUploadedEVT != null);
     assert(chapterPublishedEVT != null);
     assert(copyrightsSelectedEVT != null);
-    assert(chapterCoverUploadedEVT != null);
+    assert(chapterDeletedEVT != null);
     assert(deleteDraftButtonPressedEVT != null);
     assert(editModeLaunchedEVT != null);
+    assert(failureWhenPublishingChapterEVT != null);
+    assert(failureWhenPublishingSeriesEVT != null);
+    assert(failureWhenUploadingSeriesCoverEVT != null);
     assert(genreOptionalSelectedEVT != null);
     assert(genreSelectedEVT != null);
     assert(isEndChangedEVT != null);
@@ -1754,6 +2260,7 @@ class _$DeleteDraftButtonPressedEVT
     assert(placeholderFetchedEVT != null);
     assert(publishButtonPressedEVT != null);
     assert(saveOrBackButtonPressedEVT != null);
+    assert(seriesCoverDeletedEVT != null);
     assert(seriesCoverUploadedEVT != null);
     assert(seriesDraftDeletedEVT != null);
     assert(seriesDraftFetchedEVT != null);
@@ -1768,12 +2275,16 @@ class _$DeleteDraftButtonPressedEVT
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result addCoverPressedEVT(),
-    Result chapterDraftDeletedEVT(Chapter chapter),
+    Result chapterCoverDeletedEVT(),
+    Result chapterCoverUploadedEVT(String coverUrl, ChapterDraft chapterDraft),
     Result chapterPublishedEVT(Chapter chapter),
     Result copyrightsSelectedEVT(String copyrights),
-    Result chapterCoverUploadedEVT(String coverUrl, ChapterDraft chapterDraft),
+    Result chapterDeletedEVT(),
     Result deleteDraftButtonPressedEVT(),
     Result editModeLaunchedEVT(ChapterDraft chapterDraft),
+    Result failureWhenPublishingChapterEVT(String coverUrl),
+    Result failureWhenPublishingSeriesEVT(String coverUrl),
+    Result failureWhenUploadingSeriesCoverEVT(),
     Result genreOptionalSelectedEVT(String genreOptional),
     Result genreSelectedEVT(String genre),
     Result isEndChangedEVT(bool isEnd),
@@ -1788,6 +2299,7 @@ class _$DeleteDraftButtonPressedEVT
         SeriesDraft seriesDraft, String sessionUid, String coverUrl),
     Result publishButtonPressedEVT(),
     Result saveOrBackButtonPressedEVT(),
+    Result seriesCoverDeletedEVT(),
     Result seriesCoverUploadedEVT(String coverUrl, SeriesDraft seriesDraft),
     Result seriesDraftDeletedEVT(),
     Result seriesDraftFetchedEVT(SeriesDraft seriesDraft),
@@ -1809,13 +2321,23 @@ class _$DeleteDraftButtonPressedEVT
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result addCoverPressedEVT(AddCoverPressedEVT value),
-    @required Result chapterDraftDeletedEVT(ChapterDraftDeletedEVT value),
+    @required Result chapterCoverDeletedEVT(ChapterCoverDeletedEVT value),
+    @required Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
     @required Result chapterPublishedEVT(ChapterPublishedEVT value),
     @required Result copyrightsSelectedEVT(CopyrightsSelectedEVT value),
-    @required Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
+    @required Result chapterDeletedEVT(ChapterDeletedEVT value),
     @required
         Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
     @required Result editModeLaunchedEVT(EditModeLaunchedEVT value),
+    @required
+        Result failureWhenPublishingChapterEVT(
+            FailureWhenPublishingChapterEVT value),
+    @required
+        Result failureWhenPublishingSeriesEVT(
+            FailureWhenPublishingSeriesEVT value),
+    @required
+        Result failureWhenUploadingSeriesCoverEVT(
+            FailureWhenUploadingSeriesCoverEVT value),
     @required Result genreOptionalSelectedEVT(GenreOptionalSelectedEVT value),
     @required Result genreSelectedEVT(GenreSelectedEVT value),
     @required Result isEndChangedEVT(IsEndChangedEVT value),
@@ -1826,6 +2348,7 @@ class _$DeleteDraftButtonPressedEVT
     @required Result publishButtonPressedEVT(PublishButtonPressedEVT value),
     @required
         Result saveOrBackButtonPressedEVT(SaveOrBackButtonPressedEVT value),
+    @required Result seriesCoverDeletedEVT(SeriesCoverDeletedEVT value),
     @required Result seriesCoverUploadedEVT(SeriesCoverUploadedEVT value),
     @required Result seriesDraftDeletedEVT(SeriesDraftDeletedEVT value),
     @required Result seriesDraftFetchedEVT(SeriesDraftFetchedEVT value),
@@ -1835,12 +2358,16 @@ class _$DeleteDraftButtonPressedEVT
     @required Result titleChangedEVT(TitleChangedEVT value),
   }) {
     assert(addCoverPressedEVT != null);
-    assert(chapterDraftDeletedEVT != null);
+    assert(chapterCoverDeletedEVT != null);
+    assert(chapterCoverUploadedEVT != null);
     assert(chapterPublishedEVT != null);
     assert(copyrightsSelectedEVT != null);
-    assert(chapterCoverUploadedEVT != null);
+    assert(chapterDeletedEVT != null);
     assert(deleteDraftButtonPressedEVT != null);
     assert(editModeLaunchedEVT != null);
+    assert(failureWhenPublishingChapterEVT != null);
+    assert(failureWhenPublishingSeriesEVT != null);
+    assert(failureWhenUploadingSeriesCoverEVT != null);
     assert(genreOptionalSelectedEVT != null);
     assert(genreSelectedEVT != null);
     assert(isEndChangedEVT != null);
@@ -1850,6 +2377,7 @@ class _$DeleteDraftButtonPressedEVT
     assert(placeholderFetchedEVT != null);
     assert(publishButtonPressedEVT != null);
     assert(saveOrBackButtonPressedEVT != null);
+    assert(seriesCoverDeletedEVT != null);
     assert(seriesCoverUploadedEVT != null);
     assert(seriesDraftDeletedEVT != null);
     assert(seriesDraftFetchedEVT != null);
@@ -1864,12 +2392,18 @@ class _$DeleteDraftButtonPressedEVT
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result addCoverPressedEVT(AddCoverPressedEVT value),
-    Result chapterDraftDeletedEVT(ChapterDraftDeletedEVT value),
+    Result chapterCoverDeletedEVT(ChapterCoverDeletedEVT value),
+    Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
     Result chapterPublishedEVT(ChapterPublishedEVT value),
     Result copyrightsSelectedEVT(CopyrightsSelectedEVT value),
-    Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
+    Result chapterDeletedEVT(ChapterDeletedEVT value),
     Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
     Result editModeLaunchedEVT(EditModeLaunchedEVT value),
+    Result failureWhenPublishingChapterEVT(
+        FailureWhenPublishingChapterEVT value),
+    Result failureWhenPublishingSeriesEVT(FailureWhenPublishingSeriesEVT value),
+    Result failureWhenUploadingSeriesCoverEVT(
+        FailureWhenUploadingSeriesCoverEVT value),
     Result genreOptionalSelectedEVT(GenreOptionalSelectedEVT value),
     Result genreSelectedEVT(GenreSelectedEVT value),
     Result isEndChangedEVT(IsEndChangedEVT value),
@@ -1879,6 +2413,7 @@ class _$DeleteDraftButtonPressedEVT
     Result placeholderFetchedEVT(PlaceholderFetchedEVT value),
     Result publishButtonPressedEVT(PublishButtonPressedEVT value),
     Result saveOrBackButtonPressedEVT(SaveOrBackButtonPressedEVT value),
+    Result seriesCoverDeletedEVT(SeriesCoverDeletedEVT value),
     Result seriesCoverUploadedEVT(SeriesCoverUploadedEVT value),
     Result seriesDraftDeletedEVT(SeriesDraftDeletedEVT value),
     Result seriesDraftFetchedEVT(SeriesDraftFetchedEVT value),
@@ -1972,14 +2507,18 @@ class _$EditModeLaunchedEVT
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result addCoverPressedEVT(),
-    @required Result chapterDraftDeletedEVT(Chapter chapter),
-    @required Result chapterPublishedEVT(Chapter chapter),
-    @required Result copyrightsSelectedEVT(String copyrights),
+    @required Result chapterCoverDeletedEVT(),
     @required
         Result chapterCoverUploadedEVT(
             String coverUrl, ChapterDraft chapterDraft),
+    @required Result chapterPublishedEVT(Chapter chapter),
+    @required Result copyrightsSelectedEVT(String copyrights),
+    @required Result chapterDeletedEVT(),
     @required Result deleteDraftButtonPressedEVT(),
     @required Result editModeLaunchedEVT(ChapterDraft chapterDraft),
+    @required Result failureWhenPublishingChapterEVT(String coverUrl),
+    @required Result failureWhenPublishingSeriesEVT(String coverUrl),
+    @required Result failureWhenUploadingSeriesCoverEVT(),
     @required Result genreOptionalSelectedEVT(String genreOptional),
     @required Result genreSelectedEVT(String genre),
     @required Result isEndChangedEVT(bool isEnd),
@@ -1996,6 +2535,7 @@ class _$EditModeLaunchedEVT
             SeriesDraft seriesDraft, String sessionUid, String coverUrl),
     @required Result publishButtonPressedEVT(),
     @required Result saveOrBackButtonPressedEVT(),
+    @required Result seriesCoverDeletedEVT(),
     @required
         Result seriesCoverUploadedEVT(String coverUrl, SeriesDraft seriesDraft),
     @required Result seriesDraftDeletedEVT(),
@@ -2008,12 +2548,16 @@ class _$EditModeLaunchedEVT
     @required Result titleChangedEVT(String title),
   }) {
     assert(addCoverPressedEVT != null);
-    assert(chapterDraftDeletedEVT != null);
+    assert(chapterCoverDeletedEVT != null);
+    assert(chapterCoverUploadedEVT != null);
     assert(chapterPublishedEVT != null);
     assert(copyrightsSelectedEVT != null);
-    assert(chapterCoverUploadedEVT != null);
+    assert(chapterDeletedEVT != null);
     assert(deleteDraftButtonPressedEVT != null);
     assert(editModeLaunchedEVT != null);
+    assert(failureWhenPublishingChapterEVT != null);
+    assert(failureWhenPublishingSeriesEVT != null);
+    assert(failureWhenUploadingSeriesCoverEVT != null);
     assert(genreOptionalSelectedEVT != null);
     assert(genreSelectedEVT != null);
     assert(isEndChangedEVT != null);
@@ -2023,6 +2567,7 @@ class _$EditModeLaunchedEVT
     assert(placeholderFetchedEVT != null);
     assert(publishButtonPressedEVT != null);
     assert(saveOrBackButtonPressedEVT != null);
+    assert(seriesCoverDeletedEVT != null);
     assert(seriesCoverUploadedEVT != null);
     assert(seriesDraftDeletedEVT != null);
     assert(seriesDraftFetchedEVT != null);
@@ -2037,12 +2582,16 @@ class _$EditModeLaunchedEVT
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result addCoverPressedEVT(),
-    Result chapterDraftDeletedEVT(Chapter chapter),
+    Result chapterCoverDeletedEVT(),
+    Result chapterCoverUploadedEVT(String coverUrl, ChapterDraft chapterDraft),
     Result chapterPublishedEVT(Chapter chapter),
     Result copyrightsSelectedEVT(String copyrights),
-    Result chapterCoverUploadedEVT(String coverUrl, ChapterDraft chapterDraft),
+    Result chapterDeletedEVT(),
     Result deleteDraftButtonPressedEVT(),
     Result editModeLaunchedEVT(ChapterDraft chapterDraft),
+    Result failureWhenPublishingChapterEVT(String coverUrl),
+    Result failureWhenPublishingSeriesEVT(String coverUrl),
+    Result failureWhenUploadingSeriesCoverEVT(),
     Result genreOptionalSelectedEVT(String genreOptional),
     Result genreSelectedEVT(String genre),
     Result isEndChangedEVT(bool isEnd),
@@ -2057,6 +2606,7 @@ class _$EditModeLaunchedEVT
         SeriesDraft seriesDraft, String sessionUid, String coverUrl),
     Result publishButtonPressedEVT(),
     Result saveOrBackButtonPressedEVT(),
+    Result seriesCoverDeletedEVT(),
     Result seriesCoverUploadedEVT(String coverUrl, SeriesDraft seriesDraft),
     Result seriesDraftDeletedEVT(),
     Result seriesDraftFetchedEVT(SeriesDraft seriesDraft),
@@ -2078,13 +2628,23 @@ class _$EditModeLaunchedEVT
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result addCoverPressedEVT(AddCoverPressedEVT value),
-    @required Result chapterDraftDeletedEVT(ChapterDraftDeletedEVT value),
+    @required Result chapterCoverDeletedEVT(ChapterCoverDeletedEVT value),
+    @required Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
     @required Result chapterPublishedEVT(ChapterPublishedEVT value),
     @required Result copyrightsSelectedEVT(CopyrightsSelectedEVT value),
-    @required Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
+    @required Result chapterDeletedEVT(ChapterDeletedEVT value),
     @required
         Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
     @required Result editModeLaunchedEVT(EditModeLaunchedEVT value),
+    @required
+        Result failureWhenPublishingChapterEVT(
+            FailureWhenPublishingChapterEVT value),
+    @required
+        Result failureWhenPublishingSeriesEVT(
+            FailureWhenPublishingSeriesEVT value),
+    @required
+        Result failureWhenUploadingSeriesCoverEVT(
+            FailureWhenUploadingSeriesCoverEVT value),
     @required Result genreOptionalSelectedEVT(GenreOptionalSelectedEVT value),
     @required Result genreSelectedEVT(GenreSelectedEVT value),
     @required Result isEndChangedEVT(IsEndChangedEVT value),
@@ -2095,6 +2655,7 @@ class _$EditModeLaunchedEVT
     @required Result publishButtonPressedEVT(PublishButtonPressedEVT value),
     @required
         Result saveOrBackButtonPressedEVT(SaveOrBackButtonPressedEVT value),
+    @required Result seriesCoverDeletedEVT(SeriesCoverDeletedEVT value),
     @required Result seriesCoverUploadedEVT(SeriesCoverUploadedEVT value),
     @required Result seriesDraftDeletedEVT(SeriesDraftDeletedEVT value),
     @required Result seriesDraftFetchedEVT(SeriesDraftFetchedEVT value),
@@ -2104,12 +2665,16 @@ class _$EditModeLaunchedEVT
     @required Result titleChangedEVT(TitleChangedEVT value),
   }) {
     assert(addCoverPressedEVT != null);
-    assert(chapterDraftDeletedEVT != null);
+    assert(chapterCoverDeletedEVT != null);
+    assert(chapterCoverUploadedEVT != null);
     assert(chapterPublishedEVT != null);
     assert(copyrightsSelectedEVT != null);
-    assert(chapterCoverUploadedEVT != null);
+    assert(chapterDeletedEVT != null);
     assert(deleteDraftButtonPressedEVT != null);
     assert(editModeLaunchedEVT != null);
+    assert(failureWhenPublishingChapterEVT != null);
+    assert(failureWhenPublishingSeriesEVT != null);
+    assert(failureWhenUploadingSeriesCoverEVT != null);
     assert(genreOptionalSelectedEVT != null);
     assert(genreSelectedEVT != null);
     assert(isEndChangedEVT != null);
@@ -2119,6 +2684,7 @@ class _$EditModeLaunchedEVT
     assert(placeholderFetchedEVT != null);
     assert(publishButtonPressedEVT != null);
     assert(saveOrBackButtonPressedEVT != null);
+    assert(seriesCoverDeletedEVT != null);
     assert(seriesCoverUploadedEVT != null);
     assert(seriesDraftDeletedEVT != null);
     assert(seriesDraftFetchedEVT != null);
@@ -2133,12 +2699,18 @@ class _$EditModeLaunchedEVT
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result addCoverPressedEVT(AddCoverPressedEVT value),
-    Result chapterDraftDeletedEVT(ChapterDraftDeletedEVT value),
+    Result chapterCoverDeletedEVT(ChapterCoverDeletedEVT value),
+    Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
     Result chapterPublishedEVT(ChapterPublishedEVT value),
     Result copyrightsSelectedEVT(CopyrightsSelectedEVT value),
-    Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
+    Result chapterDeletedEVT(ChapterDeletedEVT value),
     Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
     Result editModeLaunchedEVT(EditModeLaunchedEVT value),
+    Result failureWhenPublishingChapterEVT(
+        FailureWhenPublishingChapterEVT value),
+    Result failureWhenPublishingSeriesEVT(FailureWhenPublishingSeriesEVT value),
+    Result failureWhenUploadingSeriesCoverEVT(
+        FailureWhenUploadingSeriesCoverEVT value),
     Result genreOptionalSelectedEVT(GenreOptionalSelectedEVT value),
     Result genreSelectedEVT(GenreSelectedEVT value),
     Result isEndChangedEVT(IsEndChangedEVT value),
@@ -2148,6 +2720,7 @@ class _$EditModeLaunchedEVT
     Result placeholderFetchedEVT(PlaceholderFetchedEVT value),
     Result publishButtonPressedEVT(PublishButtonPressedEVT value),
     Result saveOrBackButtonPressedEVT(SaveOrBackButtonPressedEVT value),
+    Result seriesCoverDeletedEVT(SeriesCoverDeletedEVT value),
     Result seriesCoverUploadedEVT(SeriesCoverUploadedEVT value),
     Result seriesDraftDeletedEVT(SeriesDraftDeletedEVT value),
     Result seriesDraftFetchedEVT(SeriesDraftFetchedEVT value),
@@ -2171,6 +2744,925 @@ abstract class EditModeLaunchedEVT implements NewChapterDatabaseEvent {
 
   ChapterDraft get chapterDraft;
   $EditModeLaunchedEVTCopyWith<EditModeLaunchedEVT> get copyWith;
+}
+
+abstract class $FailureWhenPublishingChapterEVTCopyWith<$Res> {
+  factory $FailureWhenPublishingChapterEVTCopyWith(
+          FailureWhenPublishingChapterEVT value,
+          $Res Function(FailureWhenPublishingChapterEVT) then) =
+      _$FailureWhenPublishingChapterEVTCopyWithImpl<$Res>;
+  $Res call({String coverUrl});
+}
+
+class _$FailureWhenPublishingChapterEVTCopyWithImpl<$Res>
+    extends _$NewChapterDatabaseEventCopyWithImpl<$Res>
+    implements $FailureWhenPublishingChapterEVTCopyWith<$Res> {
+  _$FailureWhenPublishingChapterEVTCopyWithImpl(
+      FailureWhenPublishingChapterEVT _value,
+      $Res Function(FailureWhenPublishingChapterEVT) _then)
+      : super(_value, (v) => _then(v as FailureWhenPublishingChapterEVT));
+
+  @override
+  FailureWhenPublishingChapterEVT get _value =>
+      super._value as FailureWhenPublishingChapterEVT;
+
+  @override
+  $Res call({
+    Object coverUrl = freezed,
+  }) {
+    return _then(FailureWhenPublishingChapterEVT(
+      coverUrl == freezed ? _value.coverUrl : coverUrl as String,
+    ));
+  }
+}
+
+class _$FailureWhenPublishingChapterEVT
+    with DiagnosticableTreeMixin
+    implements FailureWhenPublishingChapterEVT {
+  const _$FailureWhenPublishingChapterEVT(this.coverUrl)
+      : assert(coverUrl != null);
+
+  @override
+  final String coverUrl;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'NewChapterDatabaseEvent.failureWhenPublishingChapterEVT(coverUrl: $coverUrl)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty(
+          'type', 'NewChapterDatabaseEvent.failureWhenPublishingChapterEVT'))
+      ..add(DiagnosticsProperty('coverUrl', coverUrl));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is FailureWhenPublishingChapterEVT &&
+            (identical(other.coverUrl, coverUrl) ||
+                const DeepCollectionEquality()
+                    .equals(other.coverUrl, coverUrl)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(coverUrl);
+
+  @override
+  $FailureWhenPublishingChapterEVTCopyWith<FailureWhenPublishingChapterEVT>
+      get copyWith => _$FailureWhenPublishingChapterEVTCopyWithImpl<
+          FailureWhenPublishingChapterEVT>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result addCoverPressedEVT(),
+    @required Result chapterCoverDeletedEVT(),
+    @required
+        Result chapterCoverUploadedEVT(
+            String coverUrl, ChapterDraft chapterDraft),
+    @required Result chapterPublishedEVT(Chapter chapter),
+    @required Result copyrightsSelectedEVT(String copyrights),
+    @required Result chapterDeletedEVT(),
+    @required Result deleteDraftButtonPressedEVT(),
+    @required Result editModeLaunchedEVT(ChapterDraft chapterDraft),
+    @required Result failureWhenPublishingChapterEVT(String coverUrl),
+    @required Result failureWhenPublishingSeriesEVT(String coverUrl),
+    @required Result failureWhenUploadingSeriesCoverEVT(),
+    @required Result genreOptionalSelectedEVT(String genreOptional),
+    @required Result genreSelectedEVT(String genre),
+    @required Result isEndChangedEVT(bool isEnd),
+    @required Result isNSFWChangedEVT(bool isNSFW),
+    @required Result languageSelectedEVT(String language),
+    @required
+        Result newChapterPageLaunchedEVT(
+            BuildContext context,
+            Chapter previousChapter,
+            ChapterDraft chapterDraft,
+            SeriesDraft seriesDraft),
+    @required
+        Result placeholderFetchedEVT(Chapter previousChapter,
+            SeriesDraft seriesDraft, String sessionUid, String coverUrl),
+    @required Result publishButtonPressedEVT(),
+    @required Result saveOrBackButtonPressedEVT(),
+    @required Result seriesCoverDeletedEVT(),
+    @required
+        Result seriesCoverUploadedEVT(String coverUrl, SeriesDraft seriesDraft),
+    @required Result seriesDraftDeletedEVT(),
+    @required Result seriesDraftFetchedEVT(SeriesDraft seriesDraft),
+    @required Result seriesPublishedEVT(Series series),
+    @required
+        Result sessionFetchedEVT(
+            Session session, Chapter previousChapter, SeriesDraft seriesDraft),
+    @required Result storyChangedEVT(String story),
+    @required Result titleChangedEVT(String title),
+  }) {
+    assert(addCoverPressedEVT != null);
+    assert(chapterCoverDeletedEVT != null);
+    assert(chapterCoverUploadedEVT != null);
+    assert(chapterPublishedEVT != null);
+    assert(copyrightsSelectedEVT != null);
+    assert(chapterDeletedEVT != null);
+    assert(deleteDraftButtonPressedEVT != null);
+    assert(editModeLaunchedEVT != null);
+    assert(failureWhenPublishingChapterEVT != null);
+    assert(failureWhenPublishingSeriesEVT != null);
+    assert(failureWhenUploadingSeriesCoverEVT != null);
+    assert(genreOptionalSelectedEVT != null);
+    assert(genreSelectedEVT != null);
+    assert(isEndChangedEVT != null);
+    assert(isNSFWChangedEVT != null);
+    assert(languageSelectedEVT != null);
+    assert(newChapterPageLaunchedEVT != null);
+    assert(placeholderFetchedEVT != null);
+    assert(publishButtonPressedEVT != null);
+    assert(saveOrBackButtonPressedEVT != null);
+    assert(seriesCoverDeletedEVT != null);
+    assert(seriesCoverUploadedEVT != null);
+    assert(seriesDraftDeletedEVT != null);
+    assert(seriesDraftFetchedEVT != null);
+    assert(seriesPublishedEVT != null);
+    assert(sessionFetchedEVT != null);
+    assert(storyChangedEVT != null);
+    assert(titleChangedEVT != null);
+    return failureWhenPublishingChapterEVT(coverUrl);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result addCoverPressedEVT(),
+    Result chapterCoverDeletedEVT(),
+    Result chapterCoverUploadedEVT(String coverUrl, ChapterDraft chapterDraft),
+    Result chapterPublishedEVT(Chapter chapter),
+    Result copyrightsSelectedEVT(String copyrights),
+    Result chapterDeletedEVT(),
+    Result deleteDraftButtonPressedEVT(),
+    Result editModeLaunchedEVT(ChapterDraft chapterDraft),
+    Result failureWhenPublishingChapterEVT(String coverUrl),
+    Result failureWhenPublishingSeriesEVT(String coverUrl),
+    Result failureWhenUploadingSeriesCoverEVT(),
+    Result genreOptionalSelectedEVT(String genreOptional),
+    Result genreSelectedEVT(String genre),
+    Result isEndChangedEVT(bool isEnd),
+    Result isNSFWChangedEVT(bool isNSFW),
+    Result languageSelectedEVT(String language),
+    Result newChapterPageLaunchedEVT(
+        BuildContext context,
+        Chapter previousChapter,
+        ChapterDraft chapterDraft,
+        SeriesDraft seriesDraft),
+    Result placeholderFetchedEVT(Chapter previousChapter,
+        SeriesDraft seriesDraft, String sessionUid, String coverUrl),
+    Result publishButtonPressedEVT(),
+    Result saveOrBackButtonPressedEVT(),
+    Result seriesCoverDeletedEVT(),
+    Result seriesCoverUploadedEVT(String coverUrl, SeriesDraft seriesDraft),
+    Result seriesDraftDeletedEVT(),
+    Result seriesDraftFetchedEVT(SeriesDraft seriesDraft),
+    Result seriesPublishedEVT(Series series),
+    Result sessionFetchedEVT(
+        Session session, Chapter previousChapter, SeriesDraft seriesDraft),
+    Result storyChangedEVT(String story),
+    Result titleChangedEVT(String title),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (failureWhenPublishingChapterEVT != null) {
+      return failureWhenPublishingChapterEVT(coverUrl);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result addCoverPressedEVT(AddCoverPressedEVT value),
+    @required Result chapterCoverDeletedEVT(ChapterCoverDeletedEVT value),
+    @required Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
+    @required Result chapterPublishedEVT(ChapterPublishedEVT value),
+    @required Result copyrightsSelectedEVT(CopyrightsSelectedEVT value),
+    @required Result chapterDeletedEVT(ChapterDeletedEVT value),
+    @required
+        Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
+    @required Result editModeLaunchedEVT(EditModeLaunchedEVT value),
+    @required
+        Result failureWhenPublishingChapterEVT(
+            FailureWhenPublishingChapterEVT value),
+    @required
+        Result failureWhenPublishingSeriesEVT(
+            FailureWhenPublishingSeriesEVT value),
+    @required
+        Result failureWhenUploadingSeriesCoverEVT(
+            FailureWhenUploadingSeriesCoverEVT value),
+    @required Result genreOptionalSelectedEVT(GenreOptionalSelectedEVT value),
+    @required Result genreSelectedEVT(GenreSelectedEVT value),
+    @required Result isEndChangedEVT(IsEndChangedEVT value),
+    @required Result isNSFWChangedEVT(IsNSFWChangedEVT value),
+    @required Result languageSelectedEVT(LanguageSelectedEVT value),
+    @required Result newChapterPageLaunchedEVT(NewChapterPageLaunchedEVT value),
+    @required Result placeholderFetchedEVT(PlaceholderFetchedEVT value),
+    @required Result publishButtonPressedEVT(PublishButtonPressedEVT value),
+    @required
+        Result saveOrBackButtonPressedEVT(SaveOrBackButtonPressedEVT value),
+    @required Result seriesCoverDeletedEVT(SeriesCoverDeletedEVT value),
+    @required Result seriesCoverUploadedEVT(SeriesCoverUploadedEVT value),
+    @required Result seriesDraftDeletedEVT(SeriesDraftDeletedEVT value),
+    @required Result seriesDraftFetchedEVT(SeriesDraftFetchedEVT value),
+    @required Result seriesPublishedEVT(SeriesPublishedEVT value),
+    @required Result sessionFetchedEVT(SessionFetchedEVT value),
+    @required Result storyChangedEVT(StoryChangedEVT value),
+    @required Result titleChangedEVT(TitleChangedEVT value),
+  }) {
+    assert(addCoverPressedEVT != null);
+    assert(chapterCoverDeletedEVT != null);
+    assert(chapterCoverUploadedEVT != null);
+    assert(chapterPublishedEVT != null);
+    assert(copyrightsSelectedEVT != null);
+    assert(chapterDeletedEVT != null);
+    assert(deleteDraftButtonPressedEVT != null);
+    assert(editModeLaunchedEVT != null);
+    assert(failureWhenPublishingChapterEVT != null);
+    assert(failureWhenPublishingSeriesEVT != null);
+    assert(failureWhenUploadingSeriesCoverEVT != null);
+    assert(genreOptionalSelectedEVT != null);
+    assert(genreSelectedEVT != null);
+    assert(isEndChangedEVT != null);
+    assert(isNSFWChangedEVT != null);
+    assert(languageSelectedEVT != null);
+    assert(newChapterPageLaunchedEVT != null);
+    assert(placeholderFetchedEVT != null);
+    assert(publishButtonPressedEVT != null);
+    assert(saveOrBackButtonPressedEVT != null);
+    assert(seriesCoverDeletedEVT != null);
+    assert(seriesCoverUploadedEVT != null);
+    assert(seriesDraftDeletedEVT != null);
+    assert(seriesDraftFetchedEVT != null);
+    assert(seriesPublishedEVT != null);
+    assert(sessionFetchedEVT != null);
+    assert(storyChangedEVT != null);
+    assert(titleChangedEVT != null);
+    return failureWhenPublishingChapterEVT(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result addCoverPressedEVT(AddCoverPressedEVT value),
+    Result chapterCoverDeletedEVT(ChapterCoverDeletedEVT value),
+    Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
+    Result chapterPublishedEVT(ChapterPublishedEVT value),
+    Result copyrightsSelectedEVT(CopyrightsSelectedEVT value),
+    Result chapterDeletedEVT(ChapterDeletedEVT value),
+    Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
+    Result editModeLaunchedEVT(EditModeLaunchedEVT value),
+    Result failureWhenPublishingChapterEVT(
+        FailureWhenPublishingChapterEVT value),
+    Result failureWhenPublishingSeriesEVT(FailureWhenPublishingSeriesEVT value),
+    Result failureWhenUploadingSeriesCoverEVT(
+        FailureWhenUploadingSeriesCoverEVT value),
+    Result genreOptionalSelectedEVT(GenreOptionalSelectedEVT value),
+    Result genreSelectedEVT(GenreSelectedEVT value),
+    Result isEndChangedEVT(IsEndChangedEVT value),
+    Result isNSFWChangedEVT(IsNSFWChangedEVT value),
+    Result languageSelectedEVT(LanguageSelectedEVT value),
+    Result newChapterPageLaunchedEVT(NewChapterPageLaunchedEVT value),
+    Result placeholderFetchedEVT(PlaceholderFetchedEVT value),
+    Result publishButtonPressedEVT(PublishButtonPressedEVT value),
+    Result saveOrBackButtonPressedEVT(SaveOrBackButtonPressedEVT value),
+    Result seriesCoverDeletedEVT(SeriesCoverDeletedEVT value),
+    Result seriesCoverUploadedEVT(SeriesCoverUploadedEVT value),
+    Result seriesDraftDeletedEVT(SeriesDraftDeletedEVT value),
+    Result seriesDraftFetchedEVT(SeriesDraftFetchedEVT value),
+    Result seriesPublishedEVT(SeriesPublishedEVT value),
+    Result sessionFetchedEVT(SessionFetchedEVT value),
+    Result storyChangedEVT(StoryChangedEVT value),
+    Result titleChangedEVT(TitleChangedEVT value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (failureWhenPublishingChapterEVT != null) {
+      return failureWhenPublishingChapterEVT(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class FailureWhenPublishingChapterEVT
+    implements NewChapterDatabaseEvent {
+  const factory FailureWhenPublishingChapterEVT(String coverUrl) =
+      _$FailureWhenPublishingChapterEVT;
+
+  String get coverUrl;
+  $FailureWhenPublishingChapterEVTCopyWith<FailureWhenPublishingChapterEVT>
+      get copyWith;
+}
+
+abstract class $FailureWhenPublishingSeriesEVTCopyWith<$Res> {
+  factory $FailureWhenPublishingSeriesEVTCopyWith(
+          FailureWhenPublishingSeriesEVT value,
+          $Res Function(FailureWhenPublishingSeriesEVT) then) =
+      _$FailureWhenPublishingSeriesEVTCopyWithImpl<$Res>;
+  $Res call({String coverUrl});
+}
+
+class _$FailureWhenPublishingSeriesEVTCopyWithImpl<$Res>
+    extends _$NewChapterDatabaseEventCopyWithImpl<$Res>
+    implements $FailureWhenPublishingSeriesEVTCopyWith<$Res> {
+  _$FailureWhenPublishingSeriesEVTCopyWithImpl(
+      FailureWhenPublishingSeriesEVT _value,
+      $Res Function(FailureWhenPublishingSeriesEVT) _then)
+      : super(_value, (v) => _then(v as FailureWhenPublishingSeriesEVT));
+
+  @override
+  FailureWhenPublishingSeriesEVT get _value =>
+      super._value as FailureWhenPublishingSeriesEVT;
+
+  @override
+  $Res call({
+    Object coverUrl = freezed,
+  }) {
+    return _then(FailureWhenPublishingSeriesEVT(
+      coverUrl: coverUrl == freezed ? _value.coverUrl : coverUrl as String,
+    ));
+  }
+}
+
+class _$FailureWhenPublishingSeriesEVT
+    with DiagnosticableTreeMixin
+    implements FailureWhenPublishingSeriesEVT {
+  const _$FailureWhenPublishingSeriesEVT({this.coverUrl});
+
+  @override
+  final String coverUrl;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'NewChapterDatabaseEvent.failureWhenPublishingSeriesEVT(coverUrl: $coverUrl)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty(
+          'type', 'NewChapterDatabaseEvent.failureWhenPublishingSeriesEVT'))
+      ..add(DiagnosticsProperty('coverUrl', coverUrl));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is FailureWhenPublishingSeriesEVT &&
+            (identical(other.coverUrl, coverUrl) ||
+                const DeepCollectionEquality()
+                    .equals(other.coverUrl, coverUrl)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(coverUrl);
+
+  @override
+  $FailureWhenPublishingSeriesEVTCopyWith<FailureWhenPublishingSeriesEVT>
+      get copyWith => _$FailureWhenPublishingSeriesEVTCopyWithImpl<
+          FailureWhenPublishingSeriesEVT>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result addCoverPressedEVT(),
+    @required Result chapterCoverDeletedEVT(),
+    @required
+        Result chapterCoverUploadedEVT(
+            String coverUrl, ChapterDraft chapterDraft),
+    @required Result chapterPublishedEVT(Chapter chapter),
+    @required Result copyrightsSelectedEVT(String copyrights),
+    @required Result chapterDeletedEVT(),
+    @required Result deleteDraftButtonPressedEVT(),
+    @required Result editModeLaunchedEVT(ChapterDraft chapterDraft),
+    @required Result failureWhenPublishingChapterEVT(String coverUrl),
+    @required Result failureWhenPublishingSeriesEVT(String coverUrl),
+    @required Result failureWhenUploadingSeriesCoverEVT(),
+    @required Result genreOptionalSelectedEVT(String genreOptional),
+    @required Result genreSelectedEVT(String genre),
+    @required Result isEndChangedEVT(bool isEnd),
+    @required Result isNSFWChangedEVT(bool isNSFW),
+    @required Result languageSelectedEVT(String language),
+    @required
+        Result newChapterPageLaunchedEVT(
+            BuildContext context,
+            Chapter previousChapter,
+            ChapterDraft chapterDraft,
+            SeriesDraft seriesDraft),
+    @required
+        Result placeholderFetchedEVT(Chapter previousChapter,
+            SeriesDraft seriesDraft, String sessionUid, String coverUrl),
+    @required Result publishButtonPressedEVT(),
+    @required Result saveOrBackButtonPressedEVT(),
+    @required Result seriesCoverDeletedEVT(),
+    @required
+        Result seriesCoverUploadedEVT(String coverUrl, SeriesDraft seriesDraft),
+    @required Result seriesDraftDeletedEVT(),
+    @required Result seriesDraftFetchedEVT(SeriesDraft seriesDraft),
+    @required Result seriesPublishedEVT(Series series),
+    @required
+        Result sessionFetchedEVT(
+            Session session, Chapter previousChapter, SeriesDraft seriesDraft),
+    @required Result storyChangedEVT(String story),
+    @required Result titleChangedEVT(String title),
+  }) {
+    assert(addCoverPressedEVT != null);
+    assert(chapterCoverDeletedEVT != null);
+    assert(chapterCoverUploadedEVT != null);
+    assert(chapterPublishedEVT != null);
+    assert(copyrightsSelectedEVT != null);
+    assert(chapterDeletedEVT != null);
+    assert(deleteDraftButtonPressedEVT != null);
+    assert(editModeLaunchedEVT != null);
+    assert(failureWhenPublishingChapterEVT != null);
+    assert(failureWhenPublishingSeriesEVT != null);
+    assert(failureWhenUploadingSeriesCoverEVT != null);
+    assert(genreOptionalSelectedEVT != null);
+    assert(genreSelectedEVT != null);
+    assert(isEndChangedEVT != null);
+    assert(isNSFWChangedEVT != null);
+    assert(languageSelectedEVT != null);
+    assert(newChapterPageLaunchedEVT != null);
+    assert(placeholderFetchedEVT != null);
+    assert(publishButtonPressedEVT != null);
+    assert(saveOrBackButtonPressedEVT != null);
+    assert(seriesCoverDeletedEVT != null);
+    assert(seriesCoverUploadedEVT != null);
+    assert(seriesDraftDeletedEVT != null);
+    assert(seriesDraftFetchedEVT != null);
+    assert(seriesPublishedEVT != null);
+    assert(sessionFetchedEVT != null);
+    assert(storyChangedEVT != null);
+    assert(titleChangedEVT != null);
+    return failureWhenPublishingSeriesEVT(coverUrl);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result addCoverPressedEVT(),
+    Result chapterCoverDeletedEVT(),
+    Result chapterCoverUploadedEVT(String coverUrl, ChapterDraft chapterDraft),
+    Result chapterPublishedEVT(Chapter chapter),
+    Result copyrightsSelectedEVT(String copyrights),
+    Result chapterDeletedEVT(),
+    Result deleteDraftButtonPressedEVT(),
+    Result editModeLaunchedEVT(ChapterDraft chapterDraft),
+    Result failureWhenPublishingChapterEVT(String coverUrl),
+    Result failureWhenPublishingSeriesEVT(String coverUrl),
+    Result failureWhenUploadingSeriesCoverEVT(),
+    Result genreOptionalSelectedEVT(String genreOptional),
+    Result genreSelectedEVT(String genre),
+    Result isEndChangedEVT(bool isEnd),
+    Result isNSFWChangedEVT(bool isNSFW),
+    Result languageSelectedEVT(String language),
+    Result newChapterPageLaunchedEVT(
+        BuildContext context,
+        Chapter previousChapter,
+        ChapterDraft chapterDraft,
+        SeriesDraft seriesDraft),
+    Result placeholderFetchedEVT(Chapter previousChapter,
+        SeriesDraft seriesDraft, String sessionUid, String coverUrl),
+    Result publishButtonPressedEVT(),
+    Result saveOrBackButtonPressedEVT(),
+    Result seriesCoverDeletedEVT(),
+    Result seriesCoverUploadedEVT(String coverUrl, SeriesDraft seriesDraft),
+    Result seriesDraftDeletedEVT(),
+    Result seriesDraftFetchedEVT(SeriesDraft seriesDraft),
+    Result seriesPublishedEVT(Series series),
+    Result sessionFetchedEVT(
+        Session session, Chapter previousChapter, SeriesDraft seriesDraft),
+    Result storyChangedEVT(String story),
+    Result titleChangedEVT(String title),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (failureWhenPublishingSeriesEVT != null) {
+      return failureWhenPublishingSeriesEVT(coverUrl);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result addCoverPressedEVT(AddCoverPressedEVT value),
+    @required Result chapterCoverDeletedEVT(ChapterCoverDeletedEVT value),
+    @required Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
+    @required Result chapterPublishedEVT(ChapterPublishedEVT value),
+    @required Result copyrightsSelectedEVT(CopyrightsSelectedEVT value),
+    @required Result chapterDeletedEVT(ChapterDeletedEVT value),
+    @required
+        Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
+    @required Result editModeLaunchedEVT(EditModeLaunchedEVT value),
+    @required
+        Result failureWhenPublishingChapterEVT(
+            FailureWhenPublishingChapterEVT value),
+    @required
+        Result failureWhenPublishingSeriesEVT(
+            FailureWhenPublishingSeriesEVT value),
+    @required
+        Result failureWhenUploadingSeriesCoverEVT(
+            FailureWhenUploadingSeriesCoverEVT value),
+    @required Result genreOptionalSelectedEVT(GenreOptionalSelectedEVT value),
+    @required Result genreSelectedEVT(GenreSelectedEVT value),
+    @required Result isEndChangedEVT(IsEndChangedEVT value),
+    @required Result isNSFWChangedEVT(IsNSFWChangedEVT value),
+    @required Result languageSelectedEVT(LanguageSelectedEVT value),
+    @required Result newChapterPageLaunchedEVT(NewChapterPageLaunchedEVT value),
+    @required Result placeholderFetchedEVT(PlaceholderFetchedEVT value),
+    @required Result publishButtonPressedEVT(PublishButtonPressedEVT value),
+    @required
+        Result saveOrBackButtonPressedEVT(SaveOrBackButtonPressedEVT value),
+    @required Result seriesCoverDeletedEVT(SeriesCoverDeletedEVT value),
+    @required Result seriesCoverUploadedEVT(SeriesCoverUploadedEVT value),
+    @required Result seriesDraftDeletedEVT(SeriesDraftDeletedEVT value),
+    @required Result seriesDraftFetchedEVT(SeriesDraftFetchedEVT value),
+    @required Result seriesPublishedEVT(SeriesPublishedEVT value),
+    @required Result sessionFetchedEVT(SessionFetchedEVT value),
+    @required Result storyChangedEVT(StoryChangedEVT value),
+    @required Result titleChangedEVT(TitleChangedEVT value),
+  }) {
+    assert(addCoverPressedEVT != null);
+    assert(chapterCoverDeletedEVT != null);
+    assert(chapterCoverUploadedEVT != null);
+    assert(chapterPublishedEVT != null);
+    assert(copyrightsSelectedEVT != null);
+    assert(chapterDeletedEVT != null);
+    assert(deleteDraftButtonPressedEVT != null);
+    assert(editModeLaunchedEVT != null);
+    assert(failureWhenPublishingChapterEVT != null);
+    assert(failureWhenPublishingSeriesEVT != null);
+    assert(failureWhenUploadingSeriesCoverEVT != null);
+    assert(genreOptionalSelectedEVT != null);
+    assert(genreSelectedEVT != null);
+    assert(isEndChangedEVT != null);
+    assert(isNSFWChangedEVT != null);
+    assert(languageSelectedEVT != null);
+    assert(newChapterPageLaunchedEVT != null);
+    assert(placeholderFetchedEVT != null);
+    assert(publishButtonPressedEVT != null);
+    assert(saveOrBackButtonPressedEVT != null);
+    assert(seriesCoverDeletedEVT != null);
+    assert(seriesCoverUploadedEVT != null);
+    assert(seriesDraftDeletedEVT != null);
+    assert(seriesDraftFetchedEVT != null);
+    assert(seriesPublishedEVT != null);
+    assert(sessionFetchedEVT != null);
+    assert(storyChangedEVT != null);
+    assert(titleChangedEVT != null);
+    return failureWhenPublishingSeriesEVT(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result addCoverPressedEVT(AddCoverPressedEVT value),
+    Result chapterCoverDeletedEVT(ChapterCoverDeletedEVT value),
+    Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
+    Result chapterPublishedEVT(ChapterPublishedEVT value),
+    Result copyrightsSelectedEVT(CopyrightsSelectedEVT value),
+    Result chapterDeletedEVT(ChapterDeletedEVT value),
+    Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
+    Result editModeLaunchedEVT(EditModeLaunchedEVT value),
+    Result failureWhenPublishingChapterEVT(
+        FailureWhenPublishingChapterEVT value),
+    Result failureWhenPublishingSeriesEVT(FailureWhenPublishingSeriesEVT value),
+    Result failureWhenUploadingSeriesCoverEVT(
+        FailureWhenUploadingSeriesCoverEVT value),
+    Result genreOptionalSelectedEVT(GenreOptionalSelectedEVT value),
+    Result genreSelectedEVT(GenreSelectedEVT value),
+    Result isEndChangedEVT(IsEndChangedEVT value),
+    Result isNSFWChangedEVT(IsNSFWChangedEVT value),
+    Result languageSelectedEVT(LanguageSelectedEVT value),
+    Result newChapterPageLaunchedEVT(NewChapterPageLaunchedEVT value),
+    Result placeholderFetchedEVT(PlaceholderFetchedEVT value),
+    Result publishButtonPressedEVT(PublishButtonPressedEVT value),
+    Result saveOrBackButtonPressedEVT(SaveOrBackButtonPressedEVT value),
+    Result seriesCoverDeletedEVT(SeriesCoverDeletedEVT value),
+    Result seriesCoverUploadedEVT(SeriesCoverUploadedEVT value),
+    Result seriesDraftDeletedEVT(SeriesDraftDeletedEVT value),
+    Result seriesDraftFetchedEVT(SeriesDraftFetchedEVT value),
+    Result seriesPublishedEVT(SeriesPublishedEVT value),
+    Result sessionFetchedEVT(SessionFetchedEVT value),
+    Result storyChangedEVT(StoryChangedEVT value),
+    Result titleChangedEVT(TitleChangedEVT value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (failureWhenPublishingSeriesEVT != null) {
+      return failureWhenPublishingSeriesEVT(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class FailureWhenPublishingSeriesEVT
+    implements NewChapterDatabaseEvent {
+  const factory FailureWhenPublishingSeriesEVT({String coverUrl}) =
+      _$FailureWhenPublishingSeriesEVT;
+
+  String get coverUrl;
+  $FailureWhenPublishingSeriesEVTCopyWith<FailureWhenPublishingSeriesEVT>
+      get copyWith;
+}
+
+abstract class $FailureWhenUploadingSeriesCoverEVTCopyWith<$Res> {
+  factory $FailureWhenUploadingSeriesCoverEVTCopyWith(
+          FailureWhenUploadingSeriesCoverEVT value,
+          $Res Function(FailureWhenUploadingSeriesCoverEVT) then) =
+      _$FailureWhenUploadingSeriesCoverEVTCopyWithImpl<$Res>;
+}
+
+class _$FailureWhenUploadingSeriesCoverEVTCopyWithImpl<$Res>
+    extends _$NewChapterDatabaseEventCopyWithImpl<$Res>
+    implements $FailureWhenUploadingSeriesCoverEVTCopyWith<$Res> {
+  _$FailureWhenUploadingSeriesCoverEVTCopyWithImpl(
+      FailureWhenUploadingSeriesCoverEVT _value,
+      $Res Function(FailureWhenUploadingSeriesCoverEVT) _then)
+      : super(_value, (v) => _then(v as FailureWhenUploadingSeriesCoverEVT));
+
+  @override
+  FailureWhenUploadingSeriesCoverEVT get _value =>
+      super._value as FailureWhenUploadingSeriesCoverEVT;
+}
+
+class _$FailureWhenUploadingSeriesCoverEVT
+    with DiagnosticableTreeMixin
+    implements FailureWhenUploadingSeriesCoverEVT {
+  const _$FailureWhenUploadingSeriesCoverEVT();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'NewChapterDatabaseEvent.failureWhenUploadingSeriesCoverEVT()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type',
+          'NewChapterDatabaseEvent.failureWhenUploadingSeriesCoverEVT'));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is FailureWhenUploadingSeriesCoverEVT);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result addCoverPressedEVT(),
+    @required Result chapterCoverDeletedEVT(),
+    @required
+        Result chapterCoverUploadedEVT(
+            String coverUrl, ChapterDraft chapterDraft),
+    @required Result chapterPublishedEVT(Chapter chapter),
+    @required Result copyrightsSelectedEVT(String copyrights),
+    @required Result chapterDeletedEVT(),
+    @required Result deleteDraftButtonPressedEVT(),
+    @required Result editModeLaunchedEVT(ChapterDraft chapterDraft),
+    @required Result failureWhenPublishingChapterEVT(String coverUrl),
+    @required Result failureWhenPublishingSeriesEVT(String coverUrl),
+    @required Result failureWhenUploadingSeriesCoverEVT(),
+    @required Result genreOptionalSelectedEVT(String genreOptional),
+    @required Result genreSelectedEVT(String genre),
+    @required Result isEndChangedEVT(bool isEnd),
+    @required Result isNSFWChangedEVT(bool isNSFW),
+    @required Result languageSelectedEVT(String language),
+    @required
+        Result newChapterPageLaunchedEVT(
+            BuildContext context,
+            Chapter previousChapter,
+            ChapterDraft chapterDraft,
+            SeriesDraft seriesDraft),
+    @required
+        Result placeholderFetchedEVT(Chapter previousChapter,
+            SeriesDraft seriesDraft, String sessionUid, String coverUrl),
+    @required Result publishButtonPressedEVT(),
+    @required Result saveOrBackButtonPressedEVT(),
+    @required Result seriesCoverDeletedEVT(),
+    @required
+        Result seriesCoverUploadedEVT(String coverUrl, SeriesDraft seriesDraft),
+    @required Result seriesDraftDeletedEVT(),
+    @required Result seriesDraftFetchedEVT(SeriesDraft seriesDraft),
+    @required Result seriesPublishedEVT(Series series),
+    @required
+        Result sessionFetchedEVT(
+            Session session, Chapter previousChapter, SeriesDraft seriesDraft),
+    @required Result storyChangedEVT(String story),
+    @required Result titleChangedEVT(String title),
+  }) {
+    assert(addCoverPressedEVT != null);
+    assert(chapterCoverDeletedEVT != null);
+    assert(chapterCoverUploadedEVT != null);
+    assert(chapterPublishedEVT != null);
+    assert(copyrightsSelectedEVT != null);
+    assert(chapterDeletedEVT != null);
+    assert(deleteDraftButtonPressedEVT != null);
+    assert(editModeLaunchedEVT != null);
+    assert(failureWhenPublishingChapterEVT != null);
+    assert(failureWhenPublishingSeriesEVT != null);
+    assert(failureWhenUploadingSeriesCoverEVT != null);
+    assert(genreOptionalSelectedEVT != null);
+    assert(genreSelectedEVT != null);
+    assert(isEndChangedEVT != null);
+    assert(isNSFWChangedEVT != null);
+    assert(languageSelectedEVT != null);
+    assert(newChapterPageLaunchedEVT != null);
+    assert(placeholderFetchedEVT != null);
+    assert(publishButtonPressedEVT != null);
+    assert(saveOrBackButtonPressedEVT != null);
+    assert(seriesCoverDeletedEVT != null);
+    assert(seriesCoverUploadedEVT != null);
+    assert(seriesDraftDeletedEVT != null);
+    assert(seriesDraftFetchedEVT != null);
+    assert(seriesPublishedEVT != null);
+    assert(sessionFetchedEVT != null);
+    assert(storyChangedEVT != null);
+    assert(titleChangedEVT != null);
+    return failureWhenUploadingSeriesCoverEVT();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result addCoverPressedEVT(),
+    Result chapterCoverDeletedEVT(),
+    Result chapterCoverUploadedEVT(String coverUrl, ChapterDraft chapterDraft),
+    Result chapterPublishedEVT(Chapter chapter),
+    Result copyrightsSelectedEVT(String copyrights),
+    Result chapterDeletedEVT(),
+    Result deleteDraftButtonPressedEVT(),
+    Result editModeLaunchedEVT(ChapterDraft chapterDraft),
+    Result failureWhenPublishingChapterEVT(String coverUrl),
+    Result failureWhenPublishingSeriesEVT(String coverUrl),
+    Result failureWhenUploadingSeriesCoverEVT(),
+    Result genreOptionalSelectedEVT(String genreOptional),
+    Result genreSelectedEVT(String genre),
+    Result isEndChangedEVT(bool isEnd),
+    Result isNSFWChangedEVT(bool isNSFW),
+    Result languageSelectedEVT(String language),
+    Result newChapterPageLaunchedEVT(
+        BuildContext context,
+        Chapter previousChapter,
+        ChapterDraft chapterDraft,
+        SeriesDraft seriesDraft),
+    Result placeholderFetchedEVT(Chapter previousChapter,
+        SeriesDraft seriesDraft, String sessionUid, String coverUrl),
+    Result publishButtonPressedEVT(),
+    Result saveOrBackButtonPressedEVT(),
+    Result seriesCoverDeletedEVT(),
+    Result seriesCoverUploadedEVT(String coverUrl, SeriesDraft seriesDraft),
+    Result seriesDraftDeletedEVT(),
+    Result seriesDraftFetchedEVT(SeriesDraft seriesDraft),
+    Result seriesPublishedEVT(Series series),
+    Result sessionFetchedEVT(
+        Session session, Chapter previousChapter, SeriesDraft seriesDraft),
+    Result storyChangedEVT(String story),
+    Result titleChangedEVT(String title),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (failureWhenUploadingSeriesCoverEVT != null) {
+      return failureWhenUploadingSeriesCoverEVT();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result addCoverPressedEVT(AddCoverPressedEVT value),
+    @required Result chapterCoverDeletedEVT(ChapterCoverDeletedEVT value),
+    @required Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
+    @required Result chapterPublishedEVT(ChapterPublishedEVT value),
+    @required Result copyrightsSelectedEVT(CopyrightsSelectedEVT value),
+    @required Result chapterDeletedEVT(ChapterDeletedEVT value),
+    @required
+        Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
+    @required Result editModeLaunchedEVT(EditModeLaunchedEVT value),
+    @required
+        Result failureWhenPublishingChapterEVT(
+            FailureWhenPublishingChapterEVT value),
+    @required
+        Result failureWhenPublishingSeriesEVT(
+            FailureWhenPublishingSeriesEVT value),
+    @required
+        Result failureWhenUploadingSeriesCoverEVT(
+            FailureWhenUploadingSeriesCoverEVT value),
+    @required Result genreOptionalSelectedEVT(GenreOptionalSelectedEVT value),
+    @required Result genreSelectedEVT(GenreSelectedEVT value),
+    @required Result isEndChangedEVT(IsEndChangedEVT value),
+    @required Result isNSFWChangedEVT(IsNSFWChangedEVT value),
+    @required Result languageSelectedEVT(LanguageSelectedEVT value),
+    @required Result newChapterPageLaunchedEVT(NewChapterPageLaunchedEVT value),
+    @required Result placeholderFetchedEVT(PlaceholderFetchedEVT value),
+    @required Result publishButtonPressedEVT(PublishButtonPressedEVT value),
+    @required
+        Result saveOrBackButtonPressedEVT(SaveOrBackButtonPressedEVT value),
+    @required Result seriesCoverDeletedEVT(SeriesCoverDeletedEVT value),
+    @required Result seriesCoverUploadedEVT(SeriesCoverUploadedEVT value),
+    @required Result seriesDraftDeletedEVT(SeriesDraftDeletedEVT value),
+    @required Result seriesDraftFetchedEVT(SeriesDraftFetchedEVT value),
+    @required Result seriesPublishedEVT(SeriesPublishedEVT value),
+    @required Result sessionFetchedEVT(SessionFetchedEVT value),
+    @required Result storyChangedEVT(StoryChangedEVT value),
+    @required Result titleChangedEVT(TitleChangedEVT value),
+  }) {
+    assert(addCoverPressedEVT != null);
+    assert(chapterCoverDeletedEVT != null);
+    assert(chapterCoverUploadedEVT != null);
+    assert(chapterPublishedEVT != null);
+    assert(copyrightsSelectedEVT != null);
+    assert(chapterDeletedEVT != null);
+    assert(deleteDraftButtonPressedEVT != null);
+    assert(editModeLaunchedEVT != null);
+    assert(failureWhenPublishingChapterEVT != null);
+    assert(failureWhenPublishingSeriesEVT != null);
+    assert(failureWhenUploadingSeriesCoverEVT != null);
+    assert(genreOptionalSelectedEVT != null);
+    assert(genreSelectedEVT != null);
+    assert(isEndChangedEVT != null);
+    assert(isNSFWChangedEVT != null);
+    assert(languageSelectedEVT != null);
+    assert(newChapterPageLaunchedEVT != null);
+    assert(placeholderFetchedEVT != null);
+    assert(publishButtonPressedEVT != null);
+    assert(saveOrBackButtonPressedEVT != null);
+    assert(seriesCoverDeletedEVT != null);
+    assert(seriesCoverUploadedEVT != null);
+    assert(seriesDraftDeletedEVT != null);
+    assert(seriesDraftFetchedEVT != null);
+    assert(seriesPublishedEVT != null);
+    assert(sessionFetchedEVT != null);
+    assert(storyChangedEVT != null);
+    assert(titleChangedEVT != null);
+    return failureWhenUploadingSeriesCoverEVT(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result addCoverPressedEVT(AddCoverPressedEVT value),
+    Result chapterCoverDeletedEVT(ChapterCoverDeletedEVT value),
+    Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
+    Result chapterPublishedEVT(ChapterPublishedEVT value),
+    Result copyrightsSelectedEVT(CopyrightsSelectedEVT value),
+    Result chapterDeletedEVT(ChapterDeletedEVT value),
+    Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
+    Result editModeLaunchedEVT(EditModeLaunchedEVT value),
+    Result failureWhenPublishingChapterEVT(
+        FailureWhenPublishingChapterEVT value),
+    Result failureWhenPublishingSeriesEVT(FailureWhenPublishingSeriesEVT value),
+    Result failureWhenUploadingSeriesCoverEVT(
+        FailureWhenUploadingSeriesCoverEVT value),
+    Result genreOptionalSelectedEVT(GenreOptionalSelectedEVT value),
+    Result genreSelectedEVT(GenreSelectedEVT value),
+    Result isEndChangedEVT(IsEndChangedEVT value),
+    Result isNSFWChangedEVT(IsNSFWChangedEVT value),
+    Result languageSelectedEVT(LanguageSelectedEVT value),
+    Result newChapterPageLaunchedEVT(NewChapterPageLaunchedEVT value),
+    Result placeholderFetchedEVT(PlaceholderFetchedEVT value),
+    Result publishButtonPressedEVT(PublishButtonPressedEVT value),
+    Result saveOrBackButtonPressedEVT(SaveOrBackButtonPressedEVT value),
+    Result seriesCoverDeletedEVT(SeriesCoverDeletedEVT value),
+    Result seriesCoverUploadedEVT(SeriesCoverUploadedEVT value),
+    Result seriesDraftDeletedEVT(SeriesDraftDeletedEVT value),
+    Result seriesDraftFetchedEVT(SeriesDraftFetchedEVT value),
+    Result seriesPublishedEVT(SeriesPublishedEVT value),
+    Result sessionFetchedEVT(SessionFetchedEVT value),
+    Result storyChangedEVT(StoryChangedEVT value),
+    Result titleChangedEVT(TitleChangedEVT value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (failureWhenUploadingSeriesCoverEVT != null) {
+      return failureWhenUploadingSeriesCoverEVT(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class FailureWhenUploadingSeriesCoverEVT
+    implements NewChapterDatabaseEvent {
+  const factory FailureWhenUploadingSeriesCoverEVT() =
+      _$FailureWhenUploadingSeriesCoverEVT;
 }
 
 abstract class $GenreOptionalSelectedEVTCopyWith<$Res> {
@@ -2246,14 +3738,18 @@ class _$GenreOptionalSelectedEVT
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result addCoverPressedEVT(),
-    @required Result chapterDraftDeletedEVT(Chapter chapter),
-    @required Result chapterPublishedEVT(Chapter chapter),
-    @required Result copyrightsSelectedEVT(String copyrights),
+    @required Result chapterCoverDeletedEVT(),
     @required
         Result chapterCoverUploadedEVT(
             String coverUrl, ChapterDraft chapterDraft),
+    @required Result chapterPublishedEVT(Chapter chapter),
+    @required Result copyrightsSelectedEVT(String copyrights),
+    @required Result chapterDeletedEVT(),
     @required Result deleteDraftButtonPressedEVT(),
     @required Result editModeLaunchedEVT(ChapterDraft chapterDraft),
+    @required Result failureWhenPublishingChapterEVT(String coverUrl),
+    @required Result failureWhenPublishingSeriesEVT(String coverUrl),
+    @required Result failureWhenUploadingSeriesCoverEVT(),
     @required Result genreOptionalSelectedEVT(String genreOptional),
     @required Result genreSelectedEVT(String genre),
     @required Result isEndChangedEVT(bool isEnd),
@@ -2270,6 +3766,7 @@ class _$GenreOptionalSelectedEVT
             SeriesDraft seriesDraft, String sessionUid, String coverUrl),
     @required Result publishButtonPressedEVT(),
     @required Result saveOrBackButtonPressedEVT(),
+    @required Result seriesCoverDeletedEVT(),
     @required
         Result seriesCoverUploadedEVT(String coverUrl, SeriesDraft seriesDraft),
     @required Result seriesDraftDeletedEVT(),
@@ -2282,12 +3779,16 @@ class _$GenreOptionalSelectedEVT
     @required Result titleChangedEVT(String title),
   }) {
     assert(addCoverPressedEVT != null);
-    assert(chapterDraftDeletedEVT != null);
+    assert(chapterCoverDeletedEVT != null);
+    assert(chapterCoverUploadedEVT != null);
     assert(chapterPublishedEVT != null);
     assert(copyrightsSelectedEVT != null);
-    assert(chapterCoverUploadedEVT != null);
+    assert(chapterDeletedEVT != null);
     assert(deleteDraftButtonPressedEVT != null);
     assert(editModeLaunchedEVT != null);
+    assert(failureWhenPublishingChapterEVT != null);
+    assert(failureWhenPublishingSeriesEVT != null);
+    assert(failureWhenUploadingSeriesCoverEVT != null);
     assert(genreOptionalSelectedEVT != null);
     assert(genreSelectedEVT != null);
     assert(isEndChangedEVT != null);
@@ -2297,6 +3798,7 @@ class _$GenreOptionalSelectedEVT
     assert(placeholderFetchedEVT != null);
     assert(publishButtonPressedEVT != null);
     assert(saveOrBackButtonPressedEVT != null);
+    assert(seriesCoverDeletedEVT != null);
     assert(seriesCoverUploadedEVT != null);
     assert(seriesDraftDeletedEVT != null);
     assert(seriesDraftFetchedEVT != null);
@@ -2311,12 +3813,16 @@ class _$GenreOptionalSelectedEVT
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result addCoverPressedEVT(),
-    Result chapterDraftDeletedEVT(Chapter chapter),
+    Result chapterCoverDeletedEVT(),
+    Result chapterCoverUploadedEVT(String coverUrl, ChapterDraft chapterDraft),
     Result chapterPublishedEVT(Chapter chapter),
     Result copyrightsSelectedEVT(String copyrights),
-    Result chapterCoverUploadedEVT(String coverUrl, ChapterDraft chapterDraft),
+    Result chapterDeletedEVT(),
     Result deleteDraftButtonPressedEVT(),
     Result editModeLaunchedEVT(ChapterDraft chapterDraft),
+    Result failureWhenPublishingChapterEVT(String coverUrl),
+    Result failureWhenPublishingSeriesEVT(String coverUrl),
+    Result failureWhenUploadingSeriesCoverEVT(),
     Result genreOptionalSelectedEVT(String genreOptional),
     Result genreSelectedEVT(String genre),
     Result isEndChangedEVT(bool isEnd),
@@ -2331,6 +3837,7 @@ class _$GenreOptionalSelectedEVT
         SeriesDraft seriesDraft, String sessionUid, String coverUrl),
     Result publishButtonPressedEVT(),
     Result saveOrBackButtonPressedEVT(),
+    Result seriesCoverDeletedEVT(),
     Result seriesCoverUploadedEVT(String coverUrl, SeriesDraft seriesDraft),
     Result seriesDraftDeletedEVT(),
     Result seriesDraftFetchedEVT(SeriesDraft seriesDraft),
@@ -2352,13 +3859,23 @@ class _$GenreOptionalSelectedEVT
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result addCoverPressedEVT(AddCoverPressedEVT value),
-    @required Result chapterDraftDeletedEVT(ChapterDraftDeletedEVT value),
+    @required Result chapterCoverDeletedEVT(ChapterCoverDeletedEVT value),
+    @required Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
     @required Result chapterPublishedEVT(ChapterPublishedEVT value),
     @required Result copyrightsSelectedEVT(CopyrightsSelectedEVT value),
-    @required Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
+    @required Result chapterDeletedEVT(ChapterDeletedEVT value),
     @required
         Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
     @required Result editModeLaunchedEVT(EditModeLaunchedEVT value),
+    @required
+        Result failureWhenPublishingChapterEVT(
+            FailureWhenPublishingChapterEVT value),
+    @required
+        Result failureWhenPublishingSeriesEVT(
+            FailureWhenPublishingSeriesEVT value),
+    @required
+        Result failureWhenUploadingSeriesCoverEVT(
+            FailureWhenUploadingSeriesCoverEVT value),
     @required Result genreOptionalSelectedEVT(GenreOptionalSelectedEVT value),
     @required Result genreSelectedEVT(GenreSelectedEVT value),
     @required Result isEndChangedEVT(IsEndChangedEVT value),
@@ -2369,6 +3886,7 @@ class _$GenreOptionalSelectedEVT
     @required Result publishButtonPressedEVT(PublishButtonPressedEVT value),
     @required
         Result saveOrBackButtonPressedEVT(SaveOrBackButtonPressedEVT value),
+    @required Result seriesCoverDeletedEVT(SeriesCoverDeletedEVT value),
     @required Result seriesCoverUploadedEVT(SeriesCoverUploadedEVT value),
     @required Result seriesDraftDeletedEVT(SeriesDraftDeletedEVT value),
     @required Result seriesDraftFetchedEVT(SeriesDraftFetchedEVT value),
@@ -2378,12 +3896,16 @@ class _$GenreOptionalSelectedEVT
     @required Result titleChangedEVT(TitleChangedEVT value),
   }) {
     assert(addCoverPressedEVT != null);
-    assert(chapterDraftDeletedEVT != null);
+    assert(chapterCoverDeletedEVT != null);
+    assert(chapterCoverUploadedEVT != null);
     assert(chapterPublishedEVT != null);
     assert(copyrightsSelectedEVT != null);
-    assert(chapterCoverUploadedEVT != null);
+    assert(chapterDeletedEVT != null);
     assert(deleteDraftButtonPressedEVT != null);
     assert(editModeLaunchedEVT != null);
+    assert(failureWhenPublishingChapterEVT != null);
+    assert(failureWhenPublishingSeriesEVT != null);
+    assert(failureWhenUploadingSeriesCoverEVT != null);
     assert(genreOptionalSelectedEVT != null);
     assert(genreSelectedEVT != null);
     assert(isEndChangedEVT != null);
@@ -2393,6 +3915,7 @@ class _$GenreOptionalSelectedEVT
     assert(placeholderFetchedEVT != null);
     assert(publishButtonPressedEVT != null);
     assert(saveOrBackButtonPressedEVT != null);
+    assert(seriesCoverDeletedEVT != null);
     assert(seriesCoverUploadedEVT != null);
     assert(seriesDraftDeletedEVT != null);
     assert(seriesDraftFetchedEVT != null);
@@ -2407,12 +3930,18 @@ class _$GenreOptionalSelectedEVT
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result addCoverPressedEVT(AddCoverPressedEVT value),
-    Result chapterDraftDeletedEVT(ChapterDraftDeletedEVT value),
+    Result chapterCoverDeletedEVT(ChapterCoverDeletedEVT value),
+    Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
     Result chapterPublishedEVT(ChapterPublishedEVT value),
     Result copyrightsSelectedEVT(CopyrightsSelectedEVT value),
-    Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
+    Result chapterDeletedEVT(ChapterDeletedEVT value),
     Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
     Result editModeLaunchedEVT(EditModeLaunchedEVT value),
+    Result failureWhenPublishingChapterEVT(
+        FailureWhenPublishingChapterEVT value),
+    Result failureWhenPublishingSeriesEVT(FailureWhenPublishingSeriesEVT value),
+    Result failureWhenUploadingSeriesCoverEVT(
+        FailureWhenUploadingSeriesCoverEVT value),
     Result genreOptionalSelectedEVT(GenreOptionalSelectedEVT value),
     Result genreSelectedEVT(GenreSelectedEVT value),
     Result isEndChangedEVT(IsEndChangedEVT value),
@@ -2422,6 +3951,7 @@ class _$GenreOptionalSelectedEVT
     Result placeholderFetchedEVT(PlaceholderFetchedEVT value),
     Result publishButtonPressedEVT(PublishButtonPressedEVT value),
     Result saveOrBackButtonPressedEVT(SaveOrBackButtonPressedEVT value),
+    Result seriesCoverDeletedEVT(SeriesCoverDeletedEVT value),
     Result seriesCoverUploadedEVT(SeriesCoverUploadedEVT value),
     Result seriesDraftDeletedEVT(SeriesDraftDeletedEVT value),
     Result seriesDraftFetchedEVT(SeriesDraftFetchedEVT value),
@@ -2516,14 +4046,18 @@ class _$GenreSelectedEVT
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result addCoverPressedEVT(),
-    @required Result chapterDraftDeletedEVT(Chapter chapter),
-    @required Result chapterPublishedEVT(Chapter chapter),
-    @required Result copyrightsSelectedEVT(String copyrights),
+    @required Result chapterCoverDeletedEVT(),
     @required
         Result chapterCoverUploadedEVT(
             String coverUrl, ChapterDraft chapterDraft),
+    @required Result chapterPublishedEVT(Chapter chapter),
+    @required Result copyrightsSelectedEVT(String copyrights),
+    @required Result chapterDeletedEVT(),
     @required Result deleteDraftButtonPressedEVT(),
     @required Result editModeLaunchedEVT(ChapterDraft chapterDraft),
+    @required Result failureWhenPublishingChapterEVT(String coverUrl),
+    @required Result failureWhenPublishingSeriesEVT(String coverUrl),
+    @required Result failureWhenUploadingSeriesCoverEVT(),
     @required Result genreOptionalSelectedEVT(String genreOptional),
     @required Result genreSelectedEVT(String genre),
     @required Result isEndChangedEVT(bool isEnd),
@@ -2540,6 +4074,7 @@ class _$GenreSelectedEVT
             SeriesDraft seriesDraft, String sessionUid, String coverUrl),
     @required Result publishButtonPressedEVT(),
     @required Result saveOrBackButtonPressedEVT(),
+    @required Result seriesCoverDeletedEVT(),
     @required
         Result seriesCoverUploadedEVT(String coverUrl, SeriesDraft seriesDraft),
     @required Result seriesDraftDeletedEVT(),
@@ -2552,12 +4087,16 @@ class _$GenreSelectedEVT
     @required Result titleChangedEVT(String title),
   }) {
     assert(addCoverPressedEVT != null);
-    assert(chapterDraftDeletedEVT != null);
+    assert(chapterCoverDeletedEVT != null);
+    assert(chapterCoverUploadedEVT != null);
     assert(chapterPublishedEVT != null);
     assert(copyrightsSelectedEVT != null);
-    assert(chapterCoverUploadedEVT != null);
+    assert(chapterDeletedEVT != null);
     assert(deleteDraftButtonPressedEVT != null);
     assert(editModeLaunchedEVT != null);
+    assert(failureWhenPublishingChapterEVT != null);
+    assert(failureWhenPublishingSeriesEVT != null);
+    assert(failureWhenUploadingSeriesCoverEVT != null);
     assert(genreOptionalSelectedEVT != null);
     assert(genreSelectedEVT != null);
     assert(isEndChangedEVT != null);
@@ -2567,6 +4106,7 @@ class _$GenreSelectedEVT
     assert(placeholderFetchedEVT != null);
     assert(publishButtonPressedEVT != null);
     assert(saveOrBackButtonPressedEVT != null);
+    assert(seriesCoverDeletedEVT != null);
     assert(seriesCoverUploadedEVT != null);
     assert(seriesDraftDeletedEVT != null);
     assert(seriesDraftFetchedEVT != null);
@@ -2581,12 +4121,16 @@ class _$GenreSelectedEVT
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result addCoverPressedEVT(),
-    Result chapterDraftDeletedEVT(Chapter chapter),
+    Result chapterCoverDeletedEVT(),
+    Result chapterCoverUploadedEVT(String coverUrl, ChapterDraft chapterDraft),
     Result chapterPublishedEVT(Chapter chapter),
     Result copyrightsSelectedEVT(String copyrights),
-    Result chapterCoverUploadedEVT(String coverUrl, ChapterDraft chapterDraft),
+    Result chapterDeletedEVT(),
     Result deleteDraftButtonPressedEVT(),
     Result editModeLaunchedEVT(ChapterDraft chapterDraft),
+    Result failureWhenPublishingChapterEVT(String coverUrl),
+    Result failureWhenPublishingSeriesEVT(String coverUrl),
+    Result failureWhenUploadingSeriesCoverEVT(),
     Result genreOptionalSelectedEVT(String genreOptional),
     Result genreSelectedEVT(String genre),
     Result isEndChangedEVT(bool isEnd),
@@ -2601,6 +4145,7 @@ class _$GenreSelectedEVT
         SeriesDraft seriesDraft, String sessionUid, String coverUrl),
     Result publishButtonPressedEVT(),
     Result saveOrBackButtonPressedEVT(),
+    Result seriesCoverDeletedEVT(),
     Result seriesCoverUploadedEVT(String coverUrl, SeriesDraft seriesDraft),
     Result seriesDraftDeletedEVT(),
     Result seriesDraftFetchedEVT(SeriesDraft seriesDraft),
@@ -2622,13 +4167,23 @@ class _$GenreSelectedEVT
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result addCoverPressedEVT(AddCoverPressedEVT value),
-    @required Result chapterDraftDeletedEVT(ChapterDraftDeletedEVT value),
+    @required Result chapterCoverDeletedEVT(ChapterCoverDeletedEVT value),
+    @required Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
     @required Result chapterPublishedEVT(ChapterPublishedEVT value),
     @required Result copyrightsSelectedEVT(CopyrightsSelectedEVT value),
-    @required Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
+    @required Result chapterDeletedEVT(ChapterDeletedEVT value),
     @required
         Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
     @required Result editModeLaunchedEVT(EditModeLaunchedEVT value),
+    @required
+        Result failureWhenPublishingChapterEVT(
+            FailureWhenPublishingChapterEVT value),
+    @required
+        Result failureWhenPublishingSeriesEVT(
+            FailureWhenPublishingSeriesEVT value),
+    @required
+        Result failureWhenUploadingSeriesCoverEVT(
+            FailureWhenUploadingSeriesCoverEVT value),
     @required Result genreOptionalSelectedEVT(GenreOptionalSelectedEVT value),
     @required Result genreSelectedEVT(GenreSelectedEVT value),
     @required Result isEndChangedEVT(IsEndChangedEVT value),
@@ -2639,6 +4194,7 @@ class _$GenreSelectedEVT
     @required Result publishButtonPressedEVT(PublishButtonPressedEVT value),
     @required
         Result saveOrBackButtonPressedEVT(SaveOrBackButtonPressedEVT value),
+    @required Result seriesCoverDeletedEVT(SeriesCoverDeletedEVT value),
     @required Result seriesCoverUploadedEVT(SeriesCoverUploadedEVT value),
     @required Result seriesDraftDeletedEVT(SeriesDraftDeletedEVT value),
     @required Result seriesDraftFetchedEVT(SeriesDraftFetchedEVT value),
@@ -2648,12 +4204,16 @@ class _$GenreSelectedEVT
     @required Result titleChangedEVT(TitleChangedEVT value),
   }) {
     assert(addCoverPressedEVT != null);
-    assert(chapterDraftDeletedEVT != null);
+    assert(chapterCoverDeletedEVT != null);
+    assert(chapterCoverUploadedEVT != null);
     assert(chapterPublishedEVT != null);
     assert(copyrightsSelectedEVT != null);
-    assert(chapterCoverUploadedEVT != null);
+    assert(chapterDeletedEVT != null);
     assert(deleteDraftButtonPressedEVT != null);
     assert(editModeLaunchedEVT != null);
+    assert(failureWhenPublishingChapterEVT != null);
+    assert(failureWhenPublishingSeriesEVT != null);
+    assert(failureWhenUploadingSeriesCoverEVT != null);
     assert(genreOptionalSelectedEVT != null);
     assert(genreSelectedEVT != null);
     assert(isEndChangedEVT != null);
@@ -2663,6 +4223,7 @@ class _$GenreSelectedEVT
     assert(placeholderFetchedEVT != null);
     assert(publishButtonPressedEVT != null);
     assert(saveOrBackButtonPressedEVT != null);
+    assert(seriesCoverDeletedEVT != null);
     assert(seriesCoverUploadedEVT != null);
     assert(seriesDraftDeletedEVT != null);
     assert(seriesDraftFetchedEVT != null);
@@ -2677,12 +4238,18 @@ class _$GenreSelectedEVT
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result addCoverPressedEVT(AddCoverPressedEVT value),
-    Result chapterDraftDeletedEVT(ChapterDraftDeletedEVT value),
+    Result chapterCoverDeletedEVT(ChapterCoverDeletedEVT value),
+    Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
     Result chapterPublishedEVT(ChapterPublishedEVT value),
     Result copyrightsSelectedEVT(CopyrightsSelectedEVT value),
-    Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
+    Result chapterDeletedEVT(ChapterDeletedEVT value),
     Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
     Result editModeLaunchedEVT(EditModeLaunchedEVT value),
+    Result failureWhenPublishingChapterEVT(
+        FailureWhenPublishingChapterEVT value),
+    Result failureWhenPublishingSeriesEVT(FailureWhenPublishingSeriesEVT value),
+    Result failureWhenUploadingSeriesCoverEVT(
+        FailureWhenUploadingSeriesCoverEVT value),
     Result genreOptionalSelectedEVT(GenreOptionalSelectedEVT value),
     Result genreSelectedEVT(GenreSelectedEVT value),
     Result isEndChangedEVT(IsEndChangedEVT value),
@@ -2692,6 +4259,7 @@ class _$GenreSelectedEVT
     Result placeholderFetchedEVT(PlaceholderFetchedEVT value),
     Result publishButtonPressedEVT(PublishButtonPressedEVT value),
     Result saveOrBackButtonPressedEVT(SaveOrBackButtonPressedEVT value),
+    Result seriesCoverDeletedEVT(SeriesCoverDeletedEVT value),
     Result seriesCoverUploadedEVT(SeriesCoverUploadedEVT value),
     Result seriesDraftDeletedEVT(SeriesDraftDeletedEVT value),
     Result seriesDraftFetchedEVT(SeriesDraftFetchedEVT value),
@@ -2785,14 +4353,18 @@ class _$IsEndChangedEVT
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result addCoverPressedEVT(),
-    @required Result chapterDraftDeletedEVT(Chapter chapter),
-    @required Result chapterPublishedEVT(Chapter chapter),
-    @required Result copyrightsSelectedEVT(String copyrights),
+    @required Result chapterCoverDeletedEVT(),
     @required
         Result chapterCoverUploadedEVT(
             String coverUrl, ChapterDraft chapterDraft),
+    @required Result chapterPublishedEVT(Chapter chapter),
+    @required Result copyrightsSelectedEVT(String copyrights),
+    @required Result chapterDeletedEVT(),
     @required Result deleteDraftButtonPressedEVT(),
     @required Result editModeLaunchedEVT(ChapterDraft chapterDraft),
+    @required Result failureWhenPublishingChapterEVT(String coverUrl),
+    @required Result failureWhenPublishingSeriesEVT(String coverUrl),
+    @required Result failureWhenUploadingSeriesCoverEVT(),
     @required Result genreOptionalSelectedEVT(String genreOptional),
     @required Result genreSelectedEVT(String genre),
     @required Result isEndChangedEVT(bool isEnd),
@@ -2809,6 +4381,7 @@ class _$IsEndChangedEVT
             SeriesDraft seriesDraft, String sessionUid, String coverUrl),
     @required Result publishButtonPressedEVT(),
     @required Result saveOrBackButtonPressedEVT(),
+    @required Result seriesCoverDeletedEVT(),
     @required
         Result seriesCoverUploadedEVT(String coverUrl, SeriesDraft seriesDraft),
     @required Result seriesDraftDeletedEVT(),
@@ -2821,12 +4394,16 @@ class _$IsEndChangedEVT
     @required Result titleChangedEVT(String title),
   }) {
     assert(addCoverPressedEVT != null);
-    assert(chapterDraftDeletedEVT != null);
+    assert(chapterCoverDeletedEVT != null);
+    assert(chapterCoverUploadedEVT != null);
     assert(chapterPublishedEVT != null);
     assert(copyrightsSelectedEVT != null);
-    assert(chapterCoverUploadedEVT != null);
+    assert(chapterDeletedEVT != null);
     assert(deleteDraftButtonPressedEVT != null);
     assert(editModeLaunchedEVT != null);
+    assert(failureWhenPublishingChapterEVT != null);
+    assert(failureWhenPublishingSeriesEVT != null);
+    assert(failureWhenUploadingSeriesCoverEVT != null);
     assert(genreOptionalSelectedEVT != null);
     assert(genreSelectedEVT != null);
     assert(isEndChangedEVT != null);
@@ -2836,6 +4413,7 @@ class _$IsEndChangedEVT
     assert(placeholderFetchedEVT != null);
     assert(publishButtonPressedEVT != null);
     assert(saveOrBackButtonPressedEVT != null);
+    assert(seriesCoverDeletedEVT != null);
     assert(seriesCoverUploadedEVT != null);
     assert(seriesDraftDeletedEVT != null);
     assert(seriesDraftFetchedEVT != null);
@@ -2850,12 +4428,16 @@ class _$IsEndChangedEVT
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result addCoverPressedEVT(),
-    Result chapterDraftDeletedEVT(Chapter chapter),
+    Result chapterCoverDeletedEVT(),
+    Result chapterCoverUploadedEVT(String coverUrl, ChapterDraft chapterDraft),
     Result chapterPublishedEVT(Chapter chapter),
     Result copyrightsSelectedEVT(String copyrights),
-    Result chapterCoverUploadedEVT(String coverUrl, ChapterDraft chapterDraft),
+    Result chapterDeletedEVT(),
     Result deleteDraftButtonPressedEVT(),
     Result editModeLaunchedEVT(ChapterDraft chapterDraft),
+    Result failureWhenPublishingChapterEVT(String coverUrl),
+    Result failureWhenPublishingSeriesEVT(String coverUrl),
+    Result failureWhenUploadingSeriesCoverEVT(),
     Result genreOptionalSelectedEVT(String genreOptional),
     Result genreSelectedEVT(String genre),
     Result isEndChangedEVT(bool isEnd),
@@ -2870,6 +4452,7 @@ class _$IsEndChangedEVT
         SeriesDraft seriesDraft, String sessionUid, String coverUrl),
     Result publishButtonPressedEVT(),
     Result saveOrBackButtonPressedEVT(),
+    Result seriesCoverDeletedEVT(),
     Result seriesCoverUploadedEVT(String coverUrl, SeriesDraft seriesDraft),
     Result seriesDraftDeletedEVT(),
     Result seriesDraftFetchedEVT(SeriesDraft seriesDraft),
@@ -2891,13 +4474,23 @@ class _$IsEndChangedEVT
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result addCoverPressedEVT(AddCoverPressedEVT value),
-    @required Result chapterDraftDeletedEVT(ChapterDraftDeletedEVT value),
+    @required Result chapterCoverDeletedEVT(ChapterCoverDeletedEVT value),
+    @required Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
     @required Result chapterPublishedEVT(ChapterPublishedEVT value),
     @required Result copyrightsSelectedEVT(CopyrightsSelectedEVT value),
-    @required Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
+    @required Result chapterDeletedEVT(ChapterDeletedEVT value),
     @required
         Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
     @required Result editModeLaunchedEVT(EditModeLaunchedEVT value),
+    @required
+        Result failureWhenPublishingChapterEVT(
+            FailureWhenPublishingChapterEVT value),
+    @required
+        Result failureWhenPublishingSeriesEVT(
+            FailureWhenPublishingSeriesEVT value),
+    @required
+        Result failureWhenUploadingSeriesCoverEVT(
+            FailureWhenUploadingSeriesCoverEVT value),
     @required Result genreOptionalSelectedEVT(GenreOptionalSelectedEVT value),
     @required Result genreSelectedEVT(GenreSelectedEVT value),
     @required Result isEndChangedEVT(IsEndChangedEVT value),
@@ -2908,6 +4501,7 @@ class _$IsEndChangedEVT
     @required Result publishButtonPressedEVT(PublishButtonPressedEVT value),
     @required
         Result saveOrBackButtonPressedEVT(SaveOrBackButtonPressedEVT value),
+    @required Result seriesCoverDeletedEVT(SeriesCoverDeletedEVT value),
     @required Result seriesCoverUploadedEVT(SeriesCoverUploadedEVT value),
     @required Result seriesDraftDeletedEVT(SeriesDraftDeletedEVT value),
     @required Result seriesDraftFetchedEVT(SeriesDraftFetchedEVT value),
@@ -2917,12 +4511,16 @@ class _$IsEndChangedEVT
     @required Result titleChangedEVT(TitleChangedEVT value),
   }) {
     assert(addCoverPressedEVT != null);
-    assert(chapterDraftDeletedEVT != null);
+    assert(chapterCoverDeletedEVT != null);
+    assert(chapterCoverUploadedEVT != null);
     assert(chapterPublishedEVT != null);
     assert(copyrightsSelectedEVT != null);
-    assert(chapterCoverUploadedEVT != null);
+    assert(chapterDeletedEVT != null);
     assert(deleteDraftButtonPressedEVT != null);
     assert(editModeLaunchedEVT != null);
+    assert(failureWhenPublishingChapterEVT != null);
+    assert(failureWhenPublishingSeriesEVT != null);
+    assert(failureWhenUploadingSeriesCoverEVT != null);
     assert(genreOptionalSelectedEVT != null);
     assert(genreSelectedEVT != null);
     assert(isEndChangedEVT != null);
@@ -2932,6 +4530,7 @@ class _$IsEndChangedEVT
     assert(placeholderFetchedEVT != null);
     assert(publishButtonPressedEVT != null);
     assert(saveOrBackButtonPressedEVT != null);
+    assert(seriesCoverDeletedEVT != null);
     assert(seriesCoverUploadedEVT != null);
     assert(seriesDraftDeletedEVT != null);
     assert(seriesDraftFetchedEVT != null);
@@ -2946,12 +4545,18 @@ class _$IsEndChangedEVT
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result addCoverPressedEVT(AddCoverPressedEVT value),
-    Result chapterDraftDeletedEVT(ChapterDraftDeletedEVT value),
+    Result chapterCoverDeletedEVT(ChapterCoverDeletedEVT value),
+    Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
     Result chapterPublishedEVT(ChapterPublishedEVT value),
     Result copyrightsSelectedEVT(CopyrightsSelectedEVT value),
-    Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
+    Result chapterDeletedEVT(ChapterDeletedEVT value),
     Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
     Result editModeLaunchedEVT(EditModeLaunchedEVT value),
+    Result failureWhenPublishingChapterEVT(
+        FailureWhenPublishingChapterEVT value),
+    Result failureWhenPublishingSeriesEVT(FailureWhenPublishingSeriesEVT value),
+    Result failureWhenUploadingSeriesCoverEVT(
+        FailureWhenUploadingSeriesCoverEVT value),
     Result genreOptionalSelectedEVT(GenreOptionalSelectedEVT value),
     Result genreSelectedEVT(GenreSelectedEVT value),
     Result isEndChangedEVT(IsEndChangedEVT value),
@@ -2961,6 +4566,7 @@ class _$IsEndChangedEVT
     Result placeholderFetchedEVT(PlaceholderFetchedEVT value),
     Result publishButtonPressedEVT(PublishButtonPressedEVT value),
     Result saveOrBackButtonPressedEVT(SaveOrBackButtonPressedEVT value),
+    Result seriesCoverDeletedEVT(SeriesCoverDeletedEVT value),
     Result seriesCoverUploadedEVT(SeriesCoverUploadedEVT value),
     Result seriesDraftDeletedEVT(SeriesDraftDeletedEVT value),
     Result seriesDraftFetchedEVT(SeriesDraftFetchedEVT value),
@@ -3054,14 +4660,18 @@ class _$IsNSFWChangedEVT
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result addCoverPressedEVT(),
-    @required Result chapterDraftDeletedEVT(Chapter chapter),
-    @required Result chapterPublishedEVT(Chapter chapter),
-    @required Result copyrightsSelectedEVT(String copyrights),
+    @required Result chapterCoverDeletedEVT(),
     @required
         Result chapterCoverUploadedEVT(
             String coverUrl, ChapterDraft chapterDraft),
+    @required Result chapterPublishedEVT(Chapter chapter),
+    @required Result copyrightsSelectedEVT(String copyrights),
+    @required Result chapterDeletedEVT(),
     @required Result deleteDraftButtonPressedEVT(),
     @required Result editModeLaunchedEVT(ChapterDraft chapterDraft),
+    @required Result failureWhenPublishingChapterEVT(String coverUrl),
+    @required Result failureWhenPublishingSeriesEVT(String coverUrl),
+    @required Result failureWhenUploadingSeriesCoverEVT(),
     @required Result genreOptionalSelectedEVT(String genreOptional),
     @required Result genreSelectedEVT(String genre),
     @required Result isEndChangedEVT(bool isEnd),
@@ -3078,6 +4688,7 @@ class _$IsNSFWChangedEVT
             SeriesDraft seriesDraft, String sessionUid, String coverUrl),
     @required Result publishButtonPressedEVT(),
     @required Result saveOrBackButtonPressedEVT(),
+    @required Result seriesCoverDeletedEVT(),
     @required
         Result seriesCoverUploadedEVT(String coverUrl, SeriesDraft seriesDraft),
     @required Result seriesDraftDeletedEVT(),
@@ -3090,12 +4701,16 @@ class _$IsNSFWChangedEVT
     @required Result titleChangedEVT(String title),
   }) {
     assert(addCoverPressedEVT != null);
-    assert(chapterDraftDeletedEVT != null);
+    assert(chapterCoverDeletedEVT != null);
+    assert(chapterCoverUploadedEVT != null);
     assert(chapterPublishedEVT != null);
     assert(copyrightsSelectedEVT != null);
-    assert(chapterCoverUploadedEVT != null);
+    assert(chapterDeletedEVT != null);
     assert(deleteDraftButtonPressedEVT != null);
     assert(editModeLaunchedEVT != null);
+    assert(failureWhenPublishingChapterEVT != null);
+    assert(failureWhenPublishingSeriesEVT != null);
+    assert(failureWhenUploadingSeriesCoverEVT != null);
     assert(genreOptionalSelectedEVT != null);
     assert(genreSelectedEVT != null);
     assert(isEndChangedEVT != null);
@@ -3105,6 +4720,7 @@ class _$IsNSFWChangedEVT
     assert(placeholderFetchedEVT != null);
     assert(publishButtonPressedEVT != null);
     assert(saveOrBackButtonPressedEVT != null);
+    assert(seriesCoverDeletedEVT != null);
     assert(seriesCoverUploadedEVT != null);
     assert(seriesDraftDeletedEVT != null);
     assert(seriesDraftFetchedEVT != null);
@@ -3119,12 +4735,16 @@ class _$IsNSFWChangedEVT
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result addCoverPressedEVT(),
-    Result chapterDraftDeletedEVT(Chapter chapter),
+    Result chapterCoverDeletedEVT(),
+    Result chapterCoverUploadedEVT(String coverUrl, ChapterDraft chapterDraft),
     Result chapterPublishedEVT(Chapter chapter),
     Result copyrightsSelectedEVT(String copyrights),
-    Result chapterCoverUploadedEVT(String coverUrl, ChapterDraft chapterDraft),
+    Result chapterDeletedEVT(),
     Result deleteDraftButtonPressedEVT(),
     Result editModeLaunchedEVT(ChapterDraft chapterDraft),
+    Result failureWhenPublishingChapterEVT(String coverUrl),
+    Result failureWhenPublishingSeriesEVT(String coverUrl),
+    Result failureWhenUploadingSeriesCoverEVT(),
     Result genreOptionalSelectedEVT(String genreOptional),
     Result genreSelectedEVT(String genre),
     Result isEndChangedEVT(bool isEnd),
@@ -3139,6 +4759,7 @@ class _$IsNSFWChangedEVT
         SeriesDraft seriesDraft, String sessionUid, String coverUrl),
     Result publishButtonPressedEVT(),
     Result saveOrBackButtonPressedEVT(),
+    Result seriesCoverDeletedEVT(),
     Result seriesCoverUploadedEVT(String coverUrl, SeriesDraft seriesDraft),
     Result seriesDraftDeletedEVT(),
     Result seriesDraftFetchedEVT(SeriesDraft seriesDraft),
@@ -3160,13 +4781,23 @@ class _$IsNSFWChangedEVT
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result addCoverPressedEVT(AddCoverPressedEVT value),
-    @required Result chapterDraftDeletedEVT(ChapterDraftDeletedEVT value),
+    @required Result chapterCoverDeletedEVT(ChapterCoverDeletedEVT value),
+    @required Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
     @required Result chapterPublishedEVT(ChapterPublishedEVT value),
     @required Result copyrightsSelectedEVT(CopyrightsSelectedEVT value),
-    @required Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
+    @required Result chapterDeletedEVT(ChapterDeletedEVT value),
     @required
         Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
     @required Result editModeLaunchedEVT(EditModeLaunchedEVT value),
+    @required
+        Result failureWhenPublishingChapterEVT(
+            FailureWhenPublishingChapterEVT value),
+    @required
+        Result failureWhenPublishingSeriesEVT(
+            FailureWhenPublishingSeriesEVT value),
+    @required
+        Result failureWhenUploadingSeriesCoverEVT(
+            FailureWhenUploadingSeriesCoverEVT value),
     @required Result genreOptionalSelectedEVT(GenreOptionalSelectedEVT value),
     @required Result genreSelectedEVT(GenreSelectedEVT value),
     @required Result isEndChangedEVT(IsEndChangedEVT value),
@@ -3177,6 +4808,7 @@ class _$IsNSFWChangedEVT
     @required Result publishButtonPressedEVT(PublishButtonPressedEVT value),
     @required
         Result saveOrBackButtonPressedEVT(SaveOrBackButtonPressedEVT value),
+    @required Result seriesCoverDeletedEVT(SeriesCoverDeletedEVT value),
     @required Result seriesCoverUploadedEVT(SeriesCoverUploadedEVT value),
     @required Result seriesDraftDeletedEVT(SeriesDraftDeletedEVT value),
     @required Result seriesDraftFetchedEVT(SeriesDraftFetchedEVT value),
@@ -3186,12 +4818,16 @@ class _$IsNSFWChangedEVT
     @required Result titleChangedEVT(TitleChangedEVT value),
   }) {
     assert(addCoverPressedEVT != null);
-    assert(chapterDraftDeletedEVT != null);
+    assert(chapterCoverDeletedEVT != null);
+    assert(chapterCoverUploadedEVT != null);
     assert(chapterPublishedEVT != null);
     assert(copyrightsSelectedEVT != null);
-    assert(chapterCoverUploadedEVT != null);
+    assert(chapterDeletedEVT != null);
     assert(deleteDraftButtonPressedEVT != null);
     assert(editModeLaunchedEVT != null);
+    assert(failureWhenPublishingChapterEVT != null);
+    assert(failureWhenPublishingSeriesEVT != null);
+    assert(failureWhenUploadingSeriesCoverEVT != null);
     assert(genreOptionalSelectedEVT != null);
     assert(genreSelectedEVT != null);
     assert(isEndChangedEVT != null);
@@ -3201,6 +4837,7 @@ class _$IsNSFWChangedEVT
     assert(placeholderFetchedEVT != null);
     assert(publishButtonPressedEVT != null);
     assert(saveOrBackButtonPressedEVT != null);
+    assert(seriesCoverDeletedEVT != null);
     assert(seriesCoverUploadedEVT != null);
     assert(seriesDraftDeletedEVT != null);
     assert(seriesDraftFetchedEVT != null);
@@ -3215,12 +4852,18 @@ class _$IsNSFWChangedEVT
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result addCoverPressedEVT(AddCoverPressedEVT value),
-    Result chapterDraftDeletedEVT(ChapterDraftDeletedEVT value),
+    Result chapterCoverDeletedEVT(ChapterCoverDeletedEVT value),
+    Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
     Result chapterPublishedEVT(ChapterPublishedEVT value),
     Result copyrightsSelectedEVT(CopyrightsSelectedEVT value),
-    Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
+    Result chapterDeletedEVT(ChapterDeletedEVT value),
     Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
     Result editModeLaunchedEVT(EditModeLaunchedEVT value),
+    Result failureWhenPublishingChapterEVT(
+        FailureWhenPublishingChapterEVT value),
+    Result failureWhenPublishingSeriesEVT(FailureWhenPublishingSeriesEVT value),
+    Result failureWhenUploadingSeriesCoverEVT(
+        FailureWhenUploadingSeriesCoverEVT value),
     Result genreOptionalSelectedEVT(GenreOptionalSelectedEVT value),
     Result genreSelectedEVT(GenreSelectedEVT value),
     Result isEndChangedEVT(IsEndChangedEVT value),
@@ -3230,6 +4873,7 @@ class _$IsNSFWChangedEVT
     Result placeholderFetchedEVT(PlaceholderFetchedEVT value),
     Result publishButtonPressedEVT(PublishButtonPressedEVT value),
     Result saveOrBackButtonPressedEVT(SaveOrBackButtonPressedEVT value),
+    Result seriesCoverDeletedEVT(SeriesCoverDeletedEVT value),
     Result seriesCoverUploadedEVT(SeriesCoverUploadedEVT value),
     Result seriesDraftDeletedEVT(SeriesDraftDeletedEVT value),
     Result seriesDraftFetchedEVT(SeriesDraftFetchedEVT value),
@@ -3324,14 +4968,18 @@ class _$LanguageSelectedEVT
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result addCoverPressedEVT(),
-    @required Result chapterDraftDeletedEVT(Chapter chapter),
-    @required Result chapterPublishedEVT(Chapter chapter),
-    @required Result copyrightsSelectedEVT(String copyrights),
+    @required Result chapterCoverDeletedEVT(),
     @required
         Result chapterCoverUploadedEVT(
             String coverUrl, ChapterDraft chapterDraft),
+    @required Result chapterPublishedEVT(Chapter chapter),
+    @required Result copyrightsSelectedEVT(String copyrights),
+    @required Result chapterDeletedEVT(),
     @required Result deleteDraftButtonPressedEVT(),
     @required Result editModeLaunchedEVT(ChapterDraft chapterDraft),
+    @required Result failureWhenPublishingChapterEVT(String coverUrl),
+    @required Result failureWhenPublishingSeriesEVT(String coverUrl),
+    @required Result failureWhenUploadingSeriesCoverEVT(),
     @required Result genreOptionalSelectedEVT(String genreOptional),
     @required Result genreSelectedEVT(String genre),
     @required Result isEndChangedEVT(bool isEnd),
@@ -3348,6 +4996,7 @@ class _$LanguageSelectedEVT
             SeriesDraft seriesDraft, String sessionUid, String coverUrl),
     @required Result publishButtonPressedEVT(),
     @required Result saveOrBackButtonPressedEVT(),
+    @required Result seriesCoverDeletedEVT(),
     @required
         Result seriesCoverUploadedEVT(String coverUrl, SeriesDraft seriesDraft),
     @required Result seriesDraftDeletedEVT(),
@@ -3360,12 +5009,16 @@ class _$LanguageSelectedEVT
     @required Result titleChangedEVT(String title),
   }) {
     assert(addCoverPressedEVT != null);
-    assert(chapterDraftDeletedEVT != null);
+    assert(chapterCoverDeletedEVT != null);
+    assert(chapterCoverUploadedEVT != null);
     assert(chapterPublishedEVT != null);
     assert(copyrightsSelectedEVT != null);
-    assert(chapterCoverUploadedEVT != null);
+    assert(chapterDeletedEVT != null);
     assert(deleteDraftButtonPressedEVT != null);
     assert(editModeLaunchedEVT != null);
+    assert(failureWhenPublishingChapterEVT != null);
+    assert(failureWhenPublishingSeriesEVT != null);
+    assert(failureWhenUploadingSeriesCoverEVT != null);
     assert(genreOptionalSelectedEVT != null);
     assert(genreSelectedEVT != null);
     assert(isEndChangedEVT != null);
@@ -3375,6 +5028,7 @@ class _$LanguageSelectedEVT
     assert(placeholderFetchedEVT != null);
     assert(publishButtonPressedEVT != null);
     assert(saveOrBackButtonPressedEVT != null);
+    assert(seriesCoverDeletedEVT != null);
     assert(seriesCoverUploadedEVT != null);
     assert(seriesDraftDeletedEVT != null);
     assert(seriesDraftFetchedEVT != null);
@@ -3389,12 +5043,16 @@ class _$LanguageSelectedEVT
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result addCoverPressedEVT(),
-    Result chapterDraftDeletedEVT(Chapter chapter),
+    Result chapterCoverDeletedEVT(),
+    Result chapterCoverUploadedEVT(String coverUrl, ChapterDraft chapterDraft),
     Result chapterPublishedEVT(Chapter chapter),
     Result copyrightsSelectedEVT(String copyrights),
-    Result chapterCoverUploadedEVT(String coverUrl, ChapterDraft chapterDraft),
+    Result chapterDeletedEVT(),
     Result deleteDraftButtonPressedEVT(),
     Result editModeLaunchedEVT(ChapterDraft chapterDraft),
+    Result failureWhenPublishingChapterEVT(String coverUrl),
+    Result failureWhenPublishingSeriesEVT(String coverUrl),
+    Result failureWhenUploadingSeriesCoverEVT(),
     Result genreOptionalSelectedEVT(String genreOptional),
     Result genreSelectedEVT(String genre),
     Result isEndChangedEVT(bool isEnd),
@@ -3409,6 +5067,7 @@ class _$LanguageSelectedEVT
         SeriesDraft seriesDraft, String sessionUid, String coverUrl),
     Result publishButtonPressedEVT(),
     Result saveOrBackButtonPressedEVT(),
+    Result seriesCoverDeletedEVT(),
     Result seriesCoverUploadedEVT(String coverUrl, SeriesDraft seriesDraft),
     Result seriesDraftDeletedEVT(),
     Result seriesDraftFetchedEVT(SeriesDraft seriesDraft),
@@ -3430,13 +5089,23 @@ class _$LanguageSelectedEVT
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result addCoverPressedEVT(AddCoverPressedEVT value),
-    @required Result chapterDraftDeletedEVT(ChapterDraftDeletedEVT value),
+    @required Result chapterCoverDeletedEVT(ChapterCoverDeletedEVT value),
+    @required Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
     @required Result chapterPublishedEVT(ChapterPublishedEVT value),
     @required Result copyrightsSelectedEVT(CopyrightsSelectedEVT value),
-    @required Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
+    @required Result chapterDeletedEVT(ChapterDeletedEVT value),
     @required
         Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
     @required Result editModeLaunchedEVT(EditModeLaunchedEVT value),
+    @required
+        Result failureWhenPublishingChapterEVT(
+            FailureWhenPublishingChapterEVT value),
+    @required
+        Result failureWhenPublishingSeriesEVT(
+            FailureWhenPublishingSeriesEVT value),
+    @required
+        Result failureWhenUploadingSeriesCoverEVT(
+            FailureWhenUploadingSeriesCoverEVT value),
     @required Result genreOptionalSelectedEVT(GenreOptionalSelectedEVT value),
     @required Result genreSelectedEVT(GenreSelectedEVT value),
     @required Result isEndChangedEVT(IsEndChangedEVT value),
@@ -3447,6 +5116,7 @@ class _$LanguageSelectedEVT
     @required Result publishButtonPressedEVT(PublishButtonPressedEVT value),
     @required
         Result saveOrBackButtonPressedEVT(SaveOrBackButtonPressedEVT value),
+    @required Result seriesCoverDeletedEVT(SeriesCoverDeletedEVT value),
     @required Result seriesCoverUploadedEVT(SeriesCoverUploadedEVT value),
     @required Result seriesDraftDeletedEVT(SeriesDraftDeletedEVT value),
     @required Result seriesDraftFetchedEVT(SeriesDraftFetchedEVT value),
@@ -3456,12 +5126,16 @@ class _$LanguageSelectedEVT
     @required Result titleChangedEVT(TitleChangedEVT value),
   }) {
     assert(addCoverPressedEVT != null);
-    assert(chapterDraftDeletedEVT != null);
+    assert(chapterCoverDeletedEVT != null);
+    assert(chapterCoverUploadedEVT != null);
     assert(chapterPublishedEVT != null);
     assert(copyrightsSelectedEVT != null);
-    assert(chapterCoverUploadedEVT != null);
+    assert(chapterDeletedEVT != null);
     assert(deleteDraftButtonPressedEVT != null);
     assert(editModeLaunchedEVT != null);
+    assert(failureWhenPublishingChapterEVT != null);
+    assert(failureWhenPublishingSeriesEVT != null);
+    assert(failureWhenUploadingSeriesCoverEVT != null);
     assert(genreOptionalSelectedEVT != null);
     assert(genreSelectedEVT != null);
     assert(isEndChangedEVT != null);
@@ -3471,6 +5145,7 @@ class _$LanguageSelectedEVT
     assert(placeholderFetchedEVT != null);
     assert(publishButtonPressedEVT != null);
     assert(saveOrBackButtonPressedEVT != null);
+    assert(seriesCoverDeletedEVT != null);
     assert(seriesCoverUploadedEVT != null);
     assert(seriesDraftDeletedEVT != null);
     assert(seriesDraftFetchedEVT != null);
@@ -3485,12 +5160,18 @@ class _$LanguageSelectedEVT
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result addCoverPressedEVT(AddCoverPressedEVT value),
-    Result chapterDraftDeletedEVT(ChapterDraftDeletedEVT value),
+    Result chapterCoverDeletedEVT(ChapterCoverDeletedEVT value),
+    Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
     Result chapterPublishedEVT(ChapterPublishedEVT value),
     Result copyrightsSelectedEVT(CopyrightsSelectedEVT value),
-    Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
+    Result chapterDeletedEVT(ChapterDeletedEVT value),
     Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
     Result editModeLaunchedEVT(EditModeLaunchedEVT value),
+    Result failureWhenPublishingChapterEVT(
+        FailureWhenPublishingChapterEVT value),
+    Result failureWhenPublishingSeriesEVT(FailureWhenPublishingSeriesEVT value),
+    Result failureWhenUploadingSeriesCoverEVT(
+        FailureWhenUploadingSeriesCoverEVT value),
     Result genreOptionalSelectedEVT(GenreOptionalSelectedEVT value),
     Result genreSelectedEVT(GenreSelectedEVT value),
     Result isEndChangedEVT(IsEndChangedEVT value),
@@ -3500,6 +5181,7 @@ class _$LanguageSelectedEVT
     Result placeholderFetchedEVT(PlaceholderFetchedEVT value),
     Result publishButtonPressedEVT(PublishButtonPressedEVT value),
     Result saveOrBackButtonPressedEVT(SaveOrBackButtonPressedEVT value),
+    Result seriesCoverDeletedEVT(SeriesCoverDeletedEVT value),
     Result seriesCoverUploadedEVT(SeriesCoverUploadedEVT value),
     Result seriesDraftDeletedEVT(SeriesDraftDeletedEVT value),
     Result seriesDraftFetchedEVT(SeriesDraftFetchedEVT value),
@@ -3639,14 +5321,18 @@ class _$NewChapterPageLaunchedEVT
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result addCoverPressedEVT(),
-    @required Result chapterDraftDeletedEVT(Chapter chapter),
-    @required Result chapterPublishedEVT(Chapter chapter),
-    @required Result copyrightsSelectedEVT(String copyrights),
+    @required Result chapterCoverDeletedEVT(),
     @required
         Result chapterCoverUploadedEVT(
             String coverUrl, ChapterDraft chapterDraft),
+    @required Result chapterPublishedEVT(Chapter chapter),
+    @required Result copyrightsSelectedEVT(String copyrights),
+    @required Result chapterDeletedEVT(),
     @required Result deleteDraftButtonPressedEVT(),
     @required Result editModeLaunchedEVT(ChapterDraft chapterDraft),
+    @required Result failureWhenPublishingChapterEVT(String coverUrl),
+    @required Result failureWhenPublishingSeriesEVT(String coverUrl),
+    @required Result failureWhenUploadingSeriesCoverEVT(),
     @required Result genreOptionalSelectedEVT(String genreOptional),
     @required Result genreSelectedEVT(String genre),
     @required Result isEndChangedEVT(bool isEnd),
@@ -3663,6 +5349,7 @@ class _$NewChapterPageLaunchedEVT
             SeriesDraft seriesDraft, String sessionUid, String coverUrl),
     @required Result publishButtonPressedEVT(),
     @required Result saveOrBackButtonPressedEVT(),
+    @required Result seriesCoverDeletedEVT(),
     @required
         Result seriesCoverUploadedEVT(String coverUrl, SeriesDraft seriesDraft),
     @required Result seriesDraftDeletedEVT(),
@@ -3675,12 +5362,16 @@ class _$NewChapterPageLaunchedEVT
     @required Result titleChangedEVT(String title),
   }) {
     assert(addCoverPressedEVT != null);
-    assert(chapterDraftDeletedEVT != null);
+    assert(chapterCoverDeletedEVT != null);
+    assert(chapterCoverUploadedEVT != null);
     assert(chapterPublishedEVT != null);
     assert(copyrightsSelectedEVT != null);
-    assert(chapterCoverUploadedEVT != null);
+    assert(chapterDeletedEVT != null);
     assert(deleteDraftButtonPressedEVT != null);
     assert(editModeLaunchedEVT != null);
+    assert(failureWhenPublishingChapterEVT != null);
+    assert(failureWhenPublishingSeriesEVT != null);
+    assert(failureWhenUploadingSeriesCoverEVT != null);
     assert(genreOptionalSelectedEVT != null);
     assert(genreSelectedEVT != null);
     assert(isEndChangedEVT != null);
@@ -3690,6 +5381,7 @@ class _$NewChapterPageLaunchedEVT
     assert(placeholderFetchedEVT != null);
     assert(publishButtonPressedEVT != null);
     assert(saveOrBackButtonPressedEVT != null);
+    assert(seriesCoverDeletedEVT != null);
     assert(seriesCoverUploadedEVT != null);
     assert(seriesDraftDeletedEVT != null);
     assert(seriesDraftFetchedEVT != null);
@@ -3705,12 +5397,16 @@ class _$NewChapterPageLaunchedEVT
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result addCoverPressedEVT(),
-    Result chapterDraftDeletedEVT(Chapter chapter),
+    Result chapterCoverDeletedEVT(),
+    Result chapterCoverUploadedEVT(String coverUrl, ChapterDraft chapterDraft),
     Result chapterPublishedEVT(Chapter chapter),
     Result copyrightsSelectedEVT(String copyrights),
-    Result chapterCoverUploadedEVT(String coverUrl, ChapterDraft chapterDraft),
+    Result chapterDeletedEVT(),
     Result deleteDraftButtonPressedEVT(),
     Result editModeLaunchedEVT(ChapterDraft chapterDraft),
+    Result failureWhenPublishingChapterEVT(String coverUrl),
+    Result failureWhenPublishingSeriesEVT(String coverUrl),
+    Result failureWhenUploadingSeriesCoverEVT(),
     Result genreOptionalSelectedEVT(String genreOptional),
     Result genreSelectedEVT(String genre),
     Result isEndChangedEVT(bool isEnd),
@@ -3725,6 +5421,7 @@ class _$NewChapterPageLaunchedEVT
         SeriesDraft seriesDraft, String sessionUid, String coverUrl),
     Result publishButtonPressedEVT(),
     Result saveOrBackButtonPressedEVT(),
+    Result seriesCoverDeletedEVT(),
     Result seriesCoverUploadedEVT(String coverUrl, SeriesDraft seriesDraft),
     Result seriesDraftDeletedEVT(),
     Result seriesDraftFetchedEVT(SeriesDraft seriesDraft),
@@ -3747,13 +5444,23 @@ class _$NewChapterPageLaunchedEVT
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result addCoverPressedEVT(AddCoverPressedEVT value),
-    @required Result chapterDraftDeletedEVT(ChapterDraftDeletedEVT value),
+    @required Result chapterCoverDeletedEVT(ChapterCoverDeletedEVT value),
+    @required Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
     @required Result chapterPublishedEVT(ChapterPublishedEVT value),
     @required Result copyrightsSelectedEVT(CopyrightsSelectedEVT value),
-    @required Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
+    @required Result chapterDeletedEVT(ChapterDeletedEVT value),
     @required
         Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
     @required Result editModeLaunchedEVT(EditModeLaunchedEVT value),
+    @required
+        Result failureWhenPublishingChapterEVT(
+            FailureWhenPublishingChapterEVT value),
+    @required
+        Result failureWhenPublishingSeriesEVT(
+            FailureWhenPublishingSeriesEVT value),
+    @required
+        Result failureWhenUploadingSeriesCoverEVT(
+            FailureWhenUploadingSeriesCoverEVT value),
     @required Result genreOptionalSelectedEVT(GenreOptionalSelectedEVT value),
     @required Result genreSelectedEVT(GenreSelectedEVT value),
     @required Result isEndChangedEVT(IsEndChangedEVT value),
@@ -3764,6 +5471,7 @@ class _$NewChapterPageLaunchedEVT
     @required Result publishButtonPressedEVT(PublishButtonPressedEVT value),
     @required
         Result saveOrBackButtonPressedEVT(SaveOrBackButtonPressedEVT value),
+    @required Result seriesCoverDeletedEVT(SeriesCoverDeletedEVT value),
     @required Result seriesCoverUploadedEVT(SeriesCoverUploadedEVT value),
     @required Result seriesDraftDeletedEVT(SeriesDraftDeletedEVT value),
     @required Result seriesDraftFetchedEVT(SeriesDraftFetchedEVT value),
@@ -3773,12 +5481,16 @@ class _$NewChapterPageLaunchedEVT
     @required Result titleChangedEVT(TitleChangedEVT value),
   }) {
     assert(addCoverPressedEVT != null);
-    assert(chapterDraftDeletedEVT != null);
+    assert(chapterCoverDeletedEVT != null);
+    assert(chapterCoverUploadedEVT != null);
     assert(chapterPublishedEVT != null);
     assert(copyrightsSelectedEVT != null);
-    assert(chapterCoverUploadedEVT != null);
+    assert(chapterDeletedEVT != null);
     assert(deleteDraftButtonPressedEVT != null);
     assert(editModeLaunchedEVT != null);
+    assert(failureWhenPublishingChapterEVT != null);
+    assert(failureWhenPublishingSeriesEVT != null);
+    assert(failureWhenUploadingSeriesCoverEVT != null);
     assert(genreOptionalSelectedEVT != null);
     assert(genreSelectedEVT != null);
     assert(isEndChangedEVT != null);
@@ -3788,6 +5500,7 @@ class _$NewChapterPageLaunchedEVT
     assert(placeholderFetchedEVT != null);
     assert(publishButtonPressedEVT != null);
     assert(saveOrBackButtonPressedEVT != null);
+    assert(seriesCoverDeletedEVT != null);
     assert(seriesCoverUploadedEVT != null);
     assert(seriesDraftDeletedEVT != null);
     assert(seriesDraftFetchedEVT != null);
@@ -3802,12 +5515,18 @@ class _$NewChapterPageLaunchedEVT
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result addCoverPressedEVT(AddCoverPressedEVT value),
-    Result chapterDraftDeletedEVT(ChapterDraftDeletedEVT value),
+    Result chapterCoverDeletedEVT(ChapterCoverDeletedEVT value),
+    Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
     Result chapterPublishedEVT(ChapterPublishedEVT value),
     Result copyrightsSelectedEVT(CopyrightsSelectedEVT value),
-    Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
+    Result chapterDeletedEVT(ChapterDeletedEVT value),
     Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
     Result editModeLaunchedEVT(EditModeLaunchedEVT value),
+    Result failureWhenPublishingChapterEVT(
+        FailureWhenPublishingChapterEVT value),
+    Result failureWhenPublishingSeriesEVT(FailureWhenPublishingSeriesEVT value),
+    Result failureWhenUploadingSeriesCoverEVT(
+        FailureWhenUploadingSeriesCoverEVT value),
     Result genreOptionalSelectedEVT(GenreOptionalSelectedEVT value),
     Result genreSelectedEVT(GenreSelectedEVT value),
     Result isEndChangedEVT(IsEndChangedEVT value),
@@ -3817,6 +5536,7 @@ class _$NewChapterPageLaunchedEVT
     Result placeholderFetchedEVT(PlaceholderFetchedEVT value),
     Result publishButtonPressedEVT(PublishButtonPressedEVT value),
     Result saveOrBackButtonPressedEVT(SaveOrBackButtonPressedEVT value),
+    Result seriesCoverDeletedEVT(SeriesCoverDeletedEVT value),
     Result seriesCoverUploadedEVT(SeriesCoverUploadedEVT value),
     Result seriesDraftDeletedEVT(SeriesDraftDeletedEVT value),
     Result seriesDraftFetchedEVT(SeriesDraftFetchedEVT value),
@@ -3962,14 +5682,18 @@ class _$PlaceholderFetchedEVT
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result addCoverPressedEVT(),
-    @required Result chapterDraftDeletedEVT(Chapter chapter),
-    @required Result chapterPublishedEVT(Chapter chapter),
-    @required Result copyrightsSelectedEVT(String copyrights),
+    @required Result chapterCoverDeletedEVT(),
     @required
         Result chapterCoverUploadedEVT(
             String coverUrl, ChapterDraft chapterDraft),
+    @required Result chapterPublishedEVT(Chapter chapter),
+    @required Result copyrightsSelectedEVT(String copyrights),
+    @required Result chapterDeletedEVT(),
     @required Result deleteDraftButtonPressedEVT(),
     @required Result editModeLaunchedEVT(ChapterDraft chapterDraft),
+    @required Result failureWhenPublishingChapterEVT(String coverUrl),
+    @required Result failureWhenPublishingSeriesEVT(String coverUrl),
+    @required Result failureWhenUploadingSeriesCoverEVT(),
     @required Result genreOptionalSelectedEVT(String genreOptional),
     @required Result genreSelectedEVT(String genre),
     @required Result isEndChangedEVT(bool isEnd),
@@ -3986,6 +5710,7 @@ class _$PlaceholderFetchedEVT
             SeriesDraft seriesDraft, String sessionUid, String coverUrl),
     @required Result publishButtonPressedEVT(),
     @required Result saveOrBackButtonPressedEVT(),
+    @required Result seriesCoverDeletedEVT(),
     @required
         Result seriesCoverUploadedEVT(String coverUrl, SeriesDraft seriesDraft),
     @required Result seriesDraftDeletedEVT(),
@@ -3998,12 +5723,16 @@ class _$PlaceholderFetchedEVT
     @required Result titleChangedEVT(String title),
   }) {
     assert(addCoverPressedEVT != null);
-    assert(chapterDraftDeletedEVT != null);
+    assert(chapterCoverDeletedEVT != null);
+    assert(chapterCoverUploadedEVT != null);
     assert(chapterPublishedEVT != null);
     assert(copyrightsSelectedEVT != null);
-    assert(chapterCoverUploadedEVT != null);
+    assert(chapterDeletedEVT != null);
     assert(deleteDraftButtonPressedEVT != null);
     assert(editModeLaunchedEVT != null);
+    assert(failureWhenPublishingChapterEVT != null);
+    assert(failureWhenPublishingSeriesEVT != null);
+    assert(failureWhenUploadingSeriesCoverEVT != null);
     assert(genreOptionalSelectedEVT != null);
     assert(genreSelectedEVT != null);
     assert(isEndChangedEVT != null);
@@ -4013,6 +5742,7 @@ class _$PlaceholderFetchedEVT
     assert(placeholderFetchedEVT != null);
     assert(publishButtonPressedEVT != null);
     assert(saveOrBackButtonPressedEVT != null);
+    assert(seriesCoverDeletedEVT != null);
     assert(seriesCoverUploadedEVT != null);
     assert(seriesDraftDeletedEVT != null);
     assert(seriesDraftFetchedEVT != null);
@@ -4028,12 +5758,16 @@ class _$PlaceholderFetchedEVT
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result addCoverPressedEVT(),
-    Result chapterDraftDeletedEVT(Chapter chapter),
+    Result chapterCoverDeletedEVT(),
+    Result chapterCoverUploadedEVT(String coverUrl, ChapterDraft chapterDraft),
     Result chapterPublishedEVT(Chapter chapter),
     Result copyrightsSelectedEVT(String copyrights),
-    Result chapterCoverUploadedEVT(String coverUrl, ChapterDraft chapterDraft),
+    Result chapterDeletedEVT(),
     Result deleteDraftButtonPressedEVT(),
     Result editModeLaunchedEVT(ChapterDraft chapterDraft),
+    Result failureWhenPublishingChapterEVT(String coverUrl),
+    Result failureWhenPublishingSeriesEVT(String coverUrl),
+    Result failureWhenUploadingSeriesCoverEVT(),
     Result genreOptionalSelectedEVT(String genreOptional),
     Result genreSelectedEVT(String genre),
     Result isEndChangedEVT(bool isEnd),
@@ -4048,6 +5782,7 @@ class _$PlaceholderFetchedEVT
         SeriesDraft seriesDraft, String sessionUid, String coverUrl),
     Result publishButtonPressedEVT(),
     Result saveOrBackButtonPressedEVT(),
+    Result seriesCoverDeletedEVT(),
     Result seriesCoverUploadedEVT(String coverUrl, SeriesDraft seriesDraft),
     Result seriesDraftDeletedEVT(),
     Result seriesDraftFetchedEVT(SeriesDraft seriesDraft),
@@ -4070,13 +5805,23 @@ class _$PlaceholderFetchedEVT
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result addCoverPressedEVT(AddCoverPressedEVT value),
-    @required Result chapterDraftDeletedEVT(ChapterDraftDeletedEVT value),
+    @required Result chapterCoverDeletedEVT(ChapterCoverDeletedEVT value),
+    @required Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
     @required Result chapterPublishedEVT(ChapterPublishedEVT value),
     @required Result copyrightsSelectedEVT(CopyrightsSelectedEVT value),
-    @required Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
+    @required Result chapterDeletedEVT(ChapterDeletedEVT value),
     @required
         Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
     @required Result editModeLaunchedEVT(EditModeLaunchedEVT value),
+    @required
+        Result failureWhenPublishingChapterEVT(
+            FailureWhenPublishingChapterEVT value),
+    @required
+        Result failureWhenPublishingSeriesEVT(
+            FailureWhenPublishingSeriesEVT value),
+    @required
+        Result failureWhenUploadingSeriesCoverEVT(
+            FailureWhenUploadingSeriesCoverEVT value),
     @required Result genreOptionalSelectedEVT(GenreOptionalSelectedEVT value),
     @required Result genreSelectedEVT(GenreSelectedEVT value),
     @required Result isEndChangedEVT(IsEndChangedEVT value),
@@ -4087,6 +5832,7 @@ class _$PlaceholderFetchedEVT
     @required Result publishButtonPressedEVT(PublishButtonPressedEVT value),
     @required
         Result saveOrBackButtonPressedEVT(SaveOrBackButtonPressedEVT value),
+    @required Result seriesCoverDeletedEVT(SeriesCoverDeletedEVT value),
     @required Result seriesCoverUploadedEVT(SeriesCoverUploadedEVT value),
     @required Result seriesDraftDeletedEVT(SeriesDraftDeletedEVT value),
     @required Result seriesDraftFetchedEVT(SeriesDraftFetchedEVT value),
@@ -4096,12 +5842,16 @@ class _$PlaceholderFetchedEVT
     @required Result titleChangedEVT(TitleChangedEVT value),
   }) {
     assert(addCoverPressedEVT != null);
-    assert(chapterDraftDeletedEVT != null);
+    assert(chapterCoverDeletedEVT != null);
+    assert(chapterCoverUploadedEVT != null);
     assert(chapterPublishedEVT != null);
     assert(copyrightsSelectedEVT != null);
-    assert(chapterCoverUploadedEVT != null);
+    assert(chapterDeletedEVT != null);
     assert(deleteDraftButtonPressedEVT != null);
     assert(editModeLaunchedEVT != null);
+    assert(failureWhenPublishingChapterEVT != null);
+    assert(failureWhenPublishingSeriesEVT != null);
+    assert(failureWhenUploadingSeriesCoverEVT != null);
     assert(genreOptionalSelectedEVT != null);
     assert(genreSelectedEVT != null);
     assert(isEndChangedEVT != null);
@@ -4111,6 +5861,7 @@ class _$PlaceholderFetchedEVT
     assert(placeholderFetchedEVT != null);
     assert(publishButtonPressedEVT != null);
     assert(saveOrBackButtonPressedEVT != null);
+    assert(seriesCoverDeletedEVT != null);
     assert(seriesCoverUploadedEVT != null);
     assert(seriesDraftDeletedEVT != null);
     assert(seriesDraftFetchedEVT != null);
@@ -4125,12 +5876,18 @@ class _$PlaceholderFetchedEVT
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result addCoverPressedEVT(AddCoverPressedEVT value),
-    Result chapterDraftDeletedEVT(ChapterDraftDeletedEVT value),
+    Result chapterCoverDeletedEVT(ChapterCoverDeletedEVT value),
+    Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
     Result chapterPublishedEVT(ChapterPublishedEVT value),
     Result copyrightsSelectedEVT(CopyrightsSelectedEVT value),
-    Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
+    Result chapterDeletedEVT(ChapterDeletedEVT value),
     Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
     Result editModeLaunchedEVT(EditModeLaunchedEVT value),
+    Result failureWhenPublishingChapterEVT(
+        FailureWhenPublishingChapterEVT value),
+    Result failureWhenPublishingSeriesEVT(FailureWhenPublishingSeriesEVT value),
+    Result failureWhenUploadingSeriesCoverEVT(
+        FailureWhenUploadingSeriesCoverEVT value),
     Result genreOptionalSelectedEVT(GenreOptionalSelectedEVT value),
     Result genreSelectedEVT(GenreSelectedEVT value),
     Result isEndChangedEVT(IsEndChangedEVT value),
@@ -4140,6 +5897,7 @@ class _$PlaceholderFetchedEVT
     Result placeholderFetchedEVT(PlaceholderFetchedEVT value),
     Result publishButtonPressedEVT(PublishButtonPressedEVT value),
     Result saveOrBackButtonPressedEVT(SaveOrBackButtonPressedEVT value),
+    Result seriesCoverDeletedEVT(SeriesCoverDeletedEVT value),
     Result seriesCoverUploadedEVT(SeriesCoverUploadedEVT value),
     Result seriesDraftDeletedEVT(SeriesDraftDeletedEVT value),
     Result seriesDraftFetchedEVT(SeriesDraftFetchedEVT value),
@@ -4218,14 +5976,18 @@ class _$PublishButtonPressedEVT
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result addCoverPressedEVT(),
-    @required Result chapterDraftDeletedEVT(Chapter chapter),
-    @required Result chapterPublishedEVT(Chapter chapter),
-    @required Result copyrightsSelectedEVT(String copyrights),
+    @required Result chapterCoverDeletedEVT(),
     @required
         Result chapterCoverUploadedEVT(
             String coverUrl, ChapterDraft chapterDraft),
+    @required Result chapterPublishedEVT(Chapter chapter),
+    @required Result copyrightsSelectedEVT(String copyrights),
+    @required Result chapterDeletedEVT(),
     @required Result deleteDraftButtonPressedEVT(),
     @required Result editModeLaunchedEVT(ChapterDraft chapterDraft),
+    @required Result failureWhenPublishingChapterEVT(String coverUrl),
+    @required Result failureWhenPublishingSeriesEVT(String coverUrl),
+    @required Result failureWhenUploadingSeriesCoverEVT(),
     @required Result genreOptionalSelectedEVT(String genreOptional),
     @required Result genreSelectedEVT(String genre),
     @required Result isEndChangedEVT(bool isEnd),
@@ -4242,6 +6004,7 @@ class _$PublishButtonPressedEVT
             SeriesDraft seriesDraft, String sessionUid, String coverUrl),
     @required Result publishButtonPressedEVT(),
     @required Result saveOrBackButtonPressedEVT(),
+    @required Result seriesCoverDeletedEVT(),
     @required
         Result seriesCoverUploadedEVT(String coverUrl, SeriesDraft seriesDraft),
     @required Result seriesDraftDeletedEVT(),
@@ -4254,12 +6017,16 @@ class _$PublishButtonPressedEVT
     @required Result titleChangedEVT(String title),
   }) {
     assert(addCoverPressedEVT != null);
-    assert(chapterDraftDeletedEVT != null);
+    assert(chapterCoverDeletedEVT != null);
+    assert(chapterCoverUploadedEVT != null);
     assert(chapterPublishedEVT != null);
     assert(copyrightsSelectedEVT != null);
-    assert(chapterCoverUploadedEVT != null);
+    assert(chapterDeletedEVT != null);
     assert(deleteDraftButtonPressedEVT != null);
     assert(editModeLaunchedEVT != null);
+    assert(failureWhenPublishingChapterEVT != null);
+    assert(failureWhenPublishingSeriesEVT != null);
+    assert(failureWhenUploadingSeriesCoverEVT != null);
     assert(genreOptionalSelectedEVT != null);
     assert(genreSelectedEVT != null);
     assert(isEndChangedEVT != null);
@@ -4269,6 +6036,7 @@ class _$PublishButtonPressedEVT
     assert(placeholderFetchedEVT != null);
     assert(publishButtonPressedEVT != null);
     assert(saveOrBackButtonPressedEVT != null);
+    assert(seriesCoverDeletedEVT != null);
     assert(seriesCoverUploadedEVT != null);
     assert(seriesDraftDeletedEVT != null);
     assert(seriesDraftFetchedEVT != null);
@@ -4283,12 +6051,16 @@ class _$PublishButtonPressedEVT
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result addCoverPressedEVT(),
-    Result chapterDraftDeletedEVT(Chapter chapter),
+    Result chapterCoverDeletedEVT(),
+    Result chapterCoverUploadedEVT(String coverUrl, ChapterDraft chapterDraft),
     Result chapterPublishedEVT(Chapter chapter),
     Result copyrightsSelectedEVT(String copyrights),
-    Result chapterCoverUploadedEVT(String coverUrl, ChapterDraft chapterDraft),
+    Result chapterDeletedEVT(),
     Result deleteDraftButtonPressedEVT(),
     Result editModeLaunchedEVT(ChapterDraft chapterDraft),
+    Result failureWhenPublishingChapterEVT(String coverUrl),
+    Result failureWhenPublishingSeriesEVT(String coverUrl),
+    Result failureWhenUploadingSeriesCoverEVT(),
     Result genreOptionalSelectedEVT(String genreOptional),
     Result genreSelectedEVT(String genre),
     Result isEndChangedEVT(bool isEnd),
@@ -4303,6 +6075,7 @@ class _$PublishButtonPressedEVT
         SeriesDraft seriesDraft, String sessionUid, String coverUrl),
     Result publishButtonPressedEVT(),
     Result saveOrBackButtonPressedEVT(),
+    Result seriesCoverDeletedEVT(),
     Result seriesCoverUploadedEVT(String coverUrl, SeriesDraft seriesDraft),
     Result seriesDraftDeletedEVT(),
     Result seriesDraftFetchedEVT(SeriesDraft seriesDraft),
@@ -4324,13 +6097,23 @@ class _$PublishButtonPressedEVT
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result addCoverPressedEVT(AddCoverPressedEVT value),
-    @required Result chapterDraftDeletedEVT(ChapterDraftDeletedEVT value),
+    @required Result chapterCoverDeletedEVT(ChapterCoverDeletedEVT value),
+    @required Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
     @required Result chapterPublishedEVT(ChapterPublishedEVT value),
     @required Result copyrightsSelectedEVT(CopyrightsSelectedEVT value),
-    @required Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
+    @required Result chapterDeletedEVT(ChapterDeletedEVT value),
     @required
         Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
     @required Result editModeLaunchedEVT(EditModeLaunchedEVT value),
+    @required
+        Result failureWhenPublishingChapterEVT(
+            FailureWhenPublishingChapterEVT value),
+    @required
+        Result failureWhenPublishingSeriesEVT(
+            FailureWhenPublishingSeriesEVT value),
+    @required
+        Result failureWhenUploadingSeriesCoverEVT(
+            FailureWhenUploadingSeriesCoverEVT value),
     @required Result genreOptionalSelectedEVT(GenreOptionalSelectedEVT value),
     @required Result genreSelectedEVT(GenreSelectedEVT value),
     @required Result isEndChangedEVT(IsEndChangedEVT value),
@@ -4341,6 +6124,7 @@ class _$PublishButtonPressedEVT
     @required Result publishButtonPressedEVT(PublishButtonPressedEVT value),
     @required
         Result saveOrBackButtonPressedEVT(SaveOrBackButtonPressedEVT value),
+    @required Result seriesCoverDeletedEVT(SeriesCoverDeletedEVT value),
     @required Result seriesCoverUploadedEVT(SeriesCoverUploadedEVT value),
     @required Result seriesDraftDeletedEVT(SeriesDraftDeletedEVT value),
     @required Result seriesDraftFetchedEVT(SeriesDraftFetchedEVT value),
@@ -4350,12 +6134,16 @@ class _$PublishButtonPressedEVT
     @required Result titleChangedEVT(TitleChangedEVT value),
   }) {
     assert(addCoverPressedEVT != null);
-    assert(chapterDraftDeletedEVT != null);
+    assert(chapterCoverDeletedEVT != null);
+    assert(chapterCoverUploadedEVT != null);
     assert(chapterPublishedEVT != null);
     assert(copyrightsSelectedEVT != null);
-    assert(chapterCoverUploadedEVT != null);
+    assert(chapterDeletedEVT != null);
     assert(deleteDraftButtonPressedEVT != null);
     assert(editModeLaunchedEVT != null);
+    assert(failureWhenPublishingChapterEVT != null);
+    assert(failureWhenPublishingSeriesEVT != null);
+    assert(failureWhenUploadingSeriesCoverEVT != null);
     assert(genreOptionalSelectedEVT != null);
     assert(genreSelectedEVT != null);
     assert(isEndChangedEVT != null);
@@ -4365,6 +6153,7 @@ class _$PublishButtonPressedEVT
     assert(placeholderFetchedEVT != null);
     assert(publishButtonPressedEVT != null);
     assert(saveOrBackButtonPressedEVT != null);
+    assert(seriesCoverDeletedEVT != null);
     assert(seriesCoverUploadedEVT != null);
     assert(seriesDraftDeletedEVT != null);
     assert(seriesDraftFetchedEVT != null);
@@ -4379,12 +6168,18 @@ class _$PublishButtonPressedEVT
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result addCoverPressedEVT(AddCoverPressedEVT value),
-    Result chapterDraftDeletedEVT(ChapterDraftDeletedEVT value),
+    Result chapterCoverDeletedEVT(ChapterCoverDeletedEVT value),
+    Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
     Result chapterPublishedEVT(ChapterPublishedEVT value),
     Result copyrightsSelectedEVT(CopyrightsSelectedEVT value),
-    Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
+    Result chapterDeletedEVT(ChapterDeletedEVT value),
     Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
     Result editModeLaunchedEVT(EditModeLaunchedEVT value),
+    Result failureWhenPublishingChapterEVT(
+        FailureWhenPublishingChapterEVT value),
+    Result failureWhenPublishingSeriesEVT(FailureWhenPublishingSeriesEVT value),
+    Result failureWhenUploadingSeriesCoverEVT(
+        FailureWhenUploadingSeriesCoverEVT value),
     Result genreOptionalSelectedEVT(GenreOptionalSelectedEVT value),
     Result genreSelectedEVT(GenreSelectedEVT value),
     Result isEndChangedEVT(IsEndChangedEVT value),
@@ -4394,6 +6189,7 @@ class _$PublishButtonPressedEVT
     Result placeholderFetchedEVT(PlaceholderFetchedEVT value),
     Result publishButtonPressedEVT(PublishButtonPressedEVT value),
     Result saveOrBackButtonPressedEVT(SaveOrBackButtonPressedEVT value),
+    Result seriesCoverDeletedEVT(SeriesCoverDeletedEVT value),
     Result seriesCoverUploadedEVT(SeriesCoverUploadedEVT value),
     Result seriesDraftDeletedEVT(SeriesDraftDeletedEVT value),
     Result seriesDraftFetchedEVT(SeriesDraftFetchedEVT value),
@@ -4463,14 +6259,18 @@ class _$SaveOrBackButtonPressedEVT
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result addCoverPressedEVT(),
-    @required Result chapterDraftDeletedEVT(Chapter chapter),
-    @required Result chapterPublishedEVT(Chapter chapter),
-    @required Result copyrightsSelectedEVT(String copyrights),
+    @required Result chapterCoverDeletedEVT(),
     @required
         Result chapterCoverUploadedEVT(
             String coverUrl, ChapterDraft chapterDraft),
+    @required Result chapterPublishedEVT(Chapter chapter),
+    @required Result copyrightsSelectedEVT(String copyrights),
+    @required Result chapterDeletedEVT(),
     @required Result deleteDraftButtonPressedEVT(),
     @required Result editModeLaunchedEVT(ChapterDraft chapterDraft),
+    @required Result failureWhenPublishingChapterEVT(String coverUrl),
+    @required Result failureWhenPublishingSeriesEVT(String coverUrl),
+    @required Result failureWhenUploadingSeriesCoverEVT(),
     @required Result genreOptionalSelectedEVT(String genreOptional),
     @required Result genreSelectedEVT(String genre),
     @required Result isEndChangedEVT(bool isEnd),
@@ -4487,6 +6287,7 @@ class _$SaveOrBackButtonPressedEVT
             SeriesDraft seriesDraft, String sessionUid, String coverUrl),
     @required Result publishButtonPressedEVT(),
     @required Result saveOrBackButtonPressedEVT(),
+    @required Result seriesCoverDeletedEVT(),
     @required
         Result seriesCoverUploadedEVT(String coverUrl, SeriesDraft seriesDraft),
     @required Result seriesDraftDeletedEVT(),
@@ -4499,12 +6300,16 @@ class _$SaveOrBackButtonPressedEVT
     @required Result titleChangedEVT(String title),
   }) {
     assert(addCoverPressedEVT != null);
-    assert(chapterDraftDeletedEVT != null);
+    assert(chapterCoverDeletedEVT != null);
+    assert(chapterCoverUploadedEVT != null);
     assert(chapterPublishedEVT != null);
     assert(copyrightsSelectedEVT != null);
-    assert(chapterCoverUploadedEVT != null);
+    assert(chapterDeletedEVT != null);
     assert(deleteDraftButtonPressedEVT != null);
     assert(editModeLaunchedEVT != null);
+    assert(failureWhenPublishingChapterEVT != null);
+    assert(failureWhenPublishingSeriesEVT != null);
+    assert(failureWhenUploadingSeriesCoverEVT != null);
     assert(genreOptionalSelectedEVT != null);
     assert(genreSelectedEVT != null);
     assert(isEndChangedEVT != null);
@@ -4514,6 +6319,7 @@ class _$SaveOrBackButtonPressedEVT
     assert(placeholderFetchedEVT != null);
     assert(publishButtonPressedEVT != null);
     assert(saveOrBackButtonPressedEVT != null);
+    assert(seriesCoverDeletedEVT != null);
     assert(seriesCoverUploadedEVT != null);
     assert(seriesDraftDeletedEVT != null);
     assert(seriesDraftFetchedEVT != null);
@@ -4528,12 +6334,16 @@ class _$SaveOrBackButtonPressedEVT
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result addCoverPressedEVT(),
-    Result chapterDraftDeletedEVT(Chapter chapter),
+    Result chapterCoverDeletedEVT(),
+    Result chapterCoverUploadedEVT(String coverUrl, ChapterDraft chapterDraft),
     Result chapterPublishedEVT(Chapter chapter),
     Result copyrightsSelectedEVT(String copyrights),
-    Result chapterCoverUploadedEVT(String coverUrl, ChapterDraft chapterDraft),
+    Result chapterDeletedEVT(),
     Result deleteDraftButtonPressedEVT(),
     Result editModeLaunchedEVT(ChapterDraft chapterDraft),
+    Result failureWhenPublishingChapterEVT(String coverUrl),
+    Result failureWhenPublishingSeriesEVT(String coverUrl),
+    Result failureWhenUploadingSeriesCoverEVT(),
     Result genreOptionalSelectedEVT(String genreOptional),
     Result genreSelectedEVT(String genre),
     Result isEndChangedEVT(bool isEnd),
@@ -4548,6 +6358,7 @@ class _$SaveOrBackButtonPressedEVT
         SeriesDraft seriesDraft, String sessionUid, String coverUrl),
     Result publishButtonPressedEVT(),
     Result saveOrBackButtonPressedEVT(),
+    Result seriesCoverDeletedEVT(),
     Result seriesCoverUploadedEVT(String coverUrl, SeriesDraft seriesDraft),
     Result seriesDraftDeletedEVT(),
     Result seriesDraftFetchedEVT(SeriesDraft seriesDraft),
@@ -4569,13 +6380,23 @@ class _$SaveOrBackButtonPressedEVT
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result addCoverPressedEVT(AddCoverPressedEVT value),
-    @required Result chapterDraftDeletedEVT(ChapterDraftDeletedEVT value),
+    @required Result chapterCoverDeletedEVT(ChapterCoverDeletedEVT value),
+    @required Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
     @required Result chapterPublishedEVT(ChapterPublishedEVT value),
     @required Result copyrightsSelectedEVT(CopyrightsSelectedEVT value),
-    @required Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
+    @required Result chapterDeletedEVT(ChapterDeletedEVT value),
     @required
         Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
     @required Result editModeLaunchedEVT(EditModeLaunchedEVT value),
+    @required
+        Result failureWhenPublishingChapterEVT(
+            FailureWhenPublishingChapterEVT value),
+    @required
+        Result failureWhenPublishingSeriesEVT(
+            FailureWhenPublishingSeriesEVT value),
+    @required
+        Result failureWhenUploadingSeriesCoverEVT(
+            FailureWhenUploadingSeriesCoverEVT value),
     @required Result genreOptionalSelectedEVT(GenreOptionalSelectedEVT value),
     @required Result genreSelectedEVT(GenreSelectedEVT value),
     @required Result isEndChangedEVT(IsEndChangedEVT value),
@@ -4586,6 +6407,7 @@ class _$SaveOrBackButtonPressedEVT
     @required Result publishButtonPressedEVT(PublishButtonPressedEVT value),
     @required
         Result saveOrBackButtonPressedEVT(SaveOrBackButtonPressedEVT value),
+    @required Result seriesCoverDeletedEVT(SeriesCoverDeletedEVT value),
     @required Result seriesCoverUploadedEVT(SeriesCoverUploadedEVT value),
     @required Result seriesDraftDeletedEVT(SeriesDraftDeletedEVT value),
     @required Result seriesDraftFetchedEVT(SeriesDraftFetchedEVT value),
@@ -4595,12 +6417,16 @@ class _$SaveOrBackButtonPressedEVT
     @required Result titleChangedEVT(TitleChangedEVT value),
   }) {
     assert(addCoverPressedEVT != null);
-    assert(chapterDraftDeletedEVT != null);
+    assert(chapterCoverDeletedEVT != null);
+    assert(chapterCoverUploadedEVT != null);
     assert(chapterPublishedEVT != null);
     assert(copyrightsSelectedEVT != null);
-    assert(chapterCoverUploadedEVT != null);
+    assert(chapterDeletedEVT != null);
     assert(deleteDraftButtonPressedEVT != null);
     assert(editModeLaunchedEVT != null);
+    assert(failureWhenPublishingChapterEVT != null);
+    assert(failureWhenPublishingSeriesEVT != null);
+    assert(failureWhenUploadingSeriesCoverEVT != null);
     assert(genreOptionalSelectedEVT != null);
     assert(genreSelectedEVT != null);
     assert(isEndChangedEVT != null);
@@ -4610,6 +6436,7 @@ class _$SaveOrBackButtonPressedEVT
     assert(placeholderFetchedEVT != null);
     assert(publishButtonPressedEVT != null);
     assert(saveOrBackButtonPressedEVT != null);
+    assert(seriesCoverDeletedEVT != null);
     assert(seriesCoverUploadedEVT != null);
     assert(seriesDraftDeletedEVT != null);
     assert(seriesDraftFetchedEVT != null);
@@ -4624,12 +6451,18 @@ class _$SaveOrBackButtonPressedEVT
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result addCoverPressedEVT(AddCoverPressedEVT value),
-    Result chapterDraftDeletedEVT(ChapterDraftDeletedEVT value),
+    Result chapterCoverDeletedEVT(ChapterCoverDeletedEVT value),
+    Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
     Result chapterPublishedEVT(ChapterPublishedEVT value),
     Result copyrightsSelectedEVT(CopyrightsSelectedEVT value),
-    Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
+    Result chapterDeletedEVT(ChapterDeletedEVT value),
     Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
     Result editModeLaunchedEVT(EditModeLaunchedEVT value),
+    Result failureWhenPublishingChapterEVT(
+        FailureWhenPublishingChapterEVT value),
+    Result failureWhenPublishingSeriesEVT(FailureWhenPublishingSeriesEVT value),
+    Result failureWhenUploadingSeriesCoverEVT(
+        FailureWhenUploadingSeriesCoverEVT value),
     Result genreOptionalSelectedEVT(GenreOptionalSelectedEVT value),
     Result genreSelectedEVT(GenreSelectedEVT value),
     Result isEndChangedEVT(IsEndChangedEVT value),
@@ -4639,6 +6472,7 @@ class _$SaveOrBackButtonPressedEVT
     Result placeholderFetchedEVT(PlaceholderFetchedEVT value),
     Result publishButtonPressedEVT(PublishButtonPressedEVT value),
     Result saveOrBackButtonPressedEVT(SaveOrBackButtonPressedEVT value),
+    Result seriesCoverDeletedEVT(SeriesCoverDeletedEVT value),
     Result seriesCoverUploadedEVT(SeriesCoverUploadedEVT value),
     Result seriesDraftDeletedEVT(SeriesDraftDeletedEVT value),
     Result seriesDraftFetchedEVT(SeriesDraftFetchedEVT value),
@@ -4658,6 +6492,288 @@ class _$SaveOrBackButtonPressedEVT
 
 abstract class SaveOrBackButtonPressedEVT implements NewChapterDatabaseEvent {
   const factory SaveOrBackButtonPressedEVT() = _$SaveOrBackButtonPressedEVT;
+}
+
+abstract class $SeriesCoverDeletedEVTCopyWith<$Res> {
+  factory $SeriesCoverDeletedEVTCopyWith(SeriesCoverDeletedEVT value,
+          $Res Function(SeriesCoverDeletedEVT) then) =
+      _$SeriesCoverDeletedEVTCopyWithImpl<$Res>;
+}
+
+class _$SeriesCoverDeletedEVTCopyWithImpl<$Res>
+    extends _$NewChapterDatabaseEventCopyWithImpl<$Res>
+    implements $SeriesCoverDeletedEVTCopyWith<$Res> {
+  _$SeriesCoverDeletedEVTCopyWithImpl(
+      SeriesCoverDeletedEVT _value, $Res Function(SeriesCoverDeletedEVT) _then)
+      : super(_value, (v) => _then(v as SeriesCoverDeletedEVT));
+
+  @override
+  SeriesCoverDeletedEVT get _value => super._value as SeriesCoverDeletedEVT;
+}
+
+class _$SeriesCoverDeletedEVT
+    with DiagnosticableTreeMixin
+    implements SeriesCoverDeletedEVT {
+  const _$SeriesCoverDeletedEVT();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'NewChapterDatabaseEvent.seriesCoverDeletedEVT()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty(
+          'type', 'NewChapterDatabaseEvent.seriesCoverDeletedEVT'));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is SeriesCoverDeletedEVT);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result addCoverPressedEVT(),
+    @required Result chapterCoverDeletedEVT(),
+    @required
+        Result chapterCoverUploadedEVT(
+            String coverUrl, ChapterDraft chapterDraft),
+    @required Result chapterPublishedEVT(Chapter chapter),
+    @required Result copyrightsSelectedEVT(String copyrights),
+    @required Result chapterDeletedEVT(),
+    @required Result deleteDraftButtonPressedEVT(),
+    @required Result editModeLaunchedEVT(ChapterDraft chapterDraft),
+    @required Result failureWhenPublishingChapterEVT(String coverUrl),
+    @required Result failureWhenPublishingSeriesEVT(String coverUrl),
+    @required Result failureWhenUploadingSeriesCoverEVT(),
+    @required Result genreOptionalSelectedEVT(String genreOptional),
+    @required Result genreSelectedEVT(String genre),
+    @required Result isEndChangedEVT(bool isEnd),
+    @required Result isNSFWChangedEVT(bool isNSFW),
+    @required Result languageSelectedEVT(String language),
+    @required
+        Result newChapterPageLaunchedEVT(
+            BuildContext context,
+            Chapter previousChapter,
+            ChapterDraft chapterDraft,
+            SeriesDraft seriesDraft),
+    @required
+        Result placeholderFetchedEVT(Chapter previousChapter,
+            SeriesDraft seriesDraft, String sessionUid, String coverUrl),
+    @required Result publishButtonPressedEVT(),
+    @required Result saveOrBackButtonPressedEVT(),
+    @required Result seriesCoverDeletedEVT(),
+    @required
+        Result seriesCoverUploadedEVT(String coverUrl, SeriesDraft seriesDraft),
+    @required Result seriesDraftDeletedEVT(),
+    @required Result seriesDraftFetchedEVT(SeriesDraft seriesDraft),
+    @required Result seriesPublishedEVT(Series series),
+    @required
+        Result sessionFetchedEVT(
+            Session session, Chapter previousChapter, SeriesDraft seriesDraft),
+    @required Result storyChangedEVT(String story),
+    @required Result titleChangedEVT(String title),
+  }) {
+    assert(addCoverPressedEVT != null);
+    assert(chapterCoverDeletedEVT != null);
+    assert(chapterCoverUploadedEVT != null);
+    assert(chapterPublishedEVT != null);
+    assert(copyrightsSelectedEVT != null);
+    assert(chapterDeletedEVT != null);
+    assert(deleteDraftButtonPressedEVT != null);
+    assert(editModeLaunchedEVT != null);
+    assert(failureWhenPublishingChapterEVT != null);
+    assert(failureWhenPublishingSeriesEVT != null);
+    assert(failureWhenUploadingSeriesCoverEVT != null);
+    assert(genreOptionalSelectedEVT != null);
+    assert(genreSelectedEVT != null);
+    assert(isEndChangedEVT != null);
+    assert(isNSFWChangedEVT != null);
+    assert(languageSelectedEVT != null);
+    assert(newChapterPageLaunchedEVT != null);
+    assert(placeholderFetchedEVT != null);
+    assert(publishButtonPressedEVT != null);
+    assert(saveOrBackButtonPressedEVT != null);
+    assert(seriesCoverDeletedEVT != null);
+    assert(seriesCoverUploadedEVT != null);
+    assert(seriesDraftDeletedEVT != null);
+    assert(seriesDraftFetchedEVT != null);
+    assert(seriesPublishedEVT != null);
+    assert(sessionFetchedEVT != null);
+    assert(storyChangedEVT != null);
+    assert(titleChangedEVT != null);
+    return seriesCoverDeletedEVT();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result addCoverPressedEVT(),
+    Result chapterCoverDeletedEVT(),
+    Result chapterCoverUploadedEVT(String coverUrl, ChapterDraft chapterDraft),
+    Result chapterPublishedEVT(Chapter chapter),
+    Result copyrightsSelectedEVT(String copyrights),
+    Result chapterDeletedEVT(),
+    Result deleteDraftButtonPressedEVT(),
+    Result editModeLaunchedEVT(ChapterDraft chapterDraft),
+    Result failureWhenPublishingChapterEVT(String coverUrl),
+    Result failureWhenPublishingSeriesEVT(String coverUrl),
+    Result failureWhenUploadingSeriesCoverEVT(),
+    Result genreOptionalSelectedEVT(String genreOptional),
+    Result genreSelectedEVT(String genre),
+    Result isEndChangedEVT(bool isEnd),
+    Result isNSFWChangedEVT(bool isNSFW),
+    Result languageSelectedEVT(String language),
+    Result newChapterPageLaunchedEVT(
+        BuildContext context,
+        Chapter previousChapter,
+        ChapterDraft chapterDraft,
+        SeriesDraft seriesDraft),
+    Result placeholderFetchedEVT(Chapter previousChapter,
+        SeriesDraft seriesDraft, String sessionUid, String coverUrl),
+    Result publishButtonPressedEVT(),
+    Result saveOrBackButtonPressedEVT(),
+    Result seriesCoverDeletedEVT(),
+    Result seriesCoverUploadedEVT(String coverUrl, SeriesDraft seriesDraft),
+    Result seriesDraftDeletedEVT(),
+    Result seriesDraftFetchedEVT(SeriesDraft seriesDraft),
+    Result seriesPublishedEVT(Series series),
+    Result sessionFetchedEVT(
+        Session session, Chapter previousChapter, SeriesDraft seriesDraft),
+    Result storyChangedEVT(String story),
+    Result titleChangedEVT(String title),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (seriesCoverDeletedEVT != null) {
+      return seriesCoverDeletedEVT();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result addCoverPressedEVT(AddCoverPressedEVT value),
+    @required Result chapterCoverDeletedEVT(ChapterCoverDeletedEVT value),
+    @required Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
+    @required Result chapterPublishedEVT(ChapterPublishedEVT value),
+    @required Result copyrightsSelectedEVT(CopyrightsSelectedEVT value),
+    @required Result chapterDeletedEVT(ChapterDeletedEVT value),
+    @required
+        Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
+    @required Result editModeLaunchedEVT(EditModeLaunchedEVT value),
+    @required
+        Result failureWhenPublishingChapterEVT(
+            FailureWhenPublishingChapterEVT value),
+    @required
+        Result failureWhenPublishingSeriesEVT(
+            FailureWhenPublishingSeriesEVT value),
+    @required
+        Result failureWhenUploadingSeriesCoverEVT(
+            FailureWhenUploadingSeriesCoverEVT value),
+    @required Result genreOptionalSelectedEVT(GenreOptionalSelectedEVT value),
+    @required Result genreSelectedEVT(GenreSelectedEVT value),
+    @required Result isEndChangedEVT(IsEndChangedEVT value),
+    @required Result isNSFWChangedEVT(IsNSFWChangedEVT value),
+    @required Result languageSelectedEVT(LanguageSelectedEVT value),
+    @required Result newChapterPageLaunchedEVT(NewChapterPageLaunchedEVT value),
+    @required Result placeholderFetchedEVT(PlaceholderFetchedEVT value),
+    @required Result publishButtonPressedEVT(PublishButtonPressedEVT value),
+    @required
+        Result saveOrBackButtonPressedEVT(SaveOrBackButtonPressedEVT value),
+    @required Result seriesCoverDeletedEVT(SeriesCoverDeletedEVT value),
+    @required Result seriesCoverUploadedEVT(SeriesCoverUploadedEVT value),
+    @required Result seriesDraftDeletedEVT(SeriesDraftDeletedEVT value),
+    @required Result seriesDraftFetchedEVT(SeriesDraftFetchedEVT value),
+    @required Result seriesPublishedEVT(SeriesPublishedEVT value),
+    @required Result sessionFetchedEVT(SessionFetchedEVT value),
+    @required Result storyChangedEVT(StoryChangedEVT value),
+    @required Result titleChangedEVT(TitleChangedEVT value),
+  }) {
+    assert(addCoverPressedEVT != null);
+    assert(chapterCoverDeletedEVT != null);
+    assert(chapterCoverUploadedEVT != null);
+    assert(chapterPublishedEVT != null);
+    assert(copyrightsSelectedEVT != null);
+    assert(chapterDeletedEVT != null);
+    assert(deleteDraftButtonPressedEVT != null);
+    assert(editModeLaunchedEVT != null);
+    assert(failureWhenPublishingChapterEVT != null);
+    assert(failureWhenPublishingSeriesEVT != null);
+    assert(failureWhenUploadingSeriesCoverEVT != null);
+    assert(genreOptionalSelectedEVT != null);
+    assert(genreSelectedEVT != null);
+    assert(isEndChangedEVT != null);
+    assert(isNSFWChangedEVT != null);
+    assert(languageSelectedEVT != null);
+    assert(newChapterPageLaunchedEVT != null);
+    assert(placeholderFetchedEVT != null);
+    assert(publishButtonPressedEVT != null);
+    assert(saveOrBackButtonPressedEVT != null);
+    assert(seriesCoverDeletedEVT != null);
+    assert(seriesCoverUploadedEVT != null);
+    assert(seriesDraftDeletedEVT != null);
+    assert(seriesDraftFetchedEVT != null);
+    assert(seriesPublishedEVT != null);
+    assert(sessionFetchedEVT != null);
+    assert(storyChangedEVT != null);
+    assert(titleChangedEVT != null);
+    return seriesCoverDeletedEVT(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result addCoverPressedEVT(AddCoverPressedEVT value),
+    Result chapterCoverDeletedEVT(ChapterCoverDeletedEVT value),
+    Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
+    Result chapterPublishedEVT(ChapterPublishedEVT value),
+    Result copyrightsSelectedEVT(CopyrightsSelectedEVT value),
+    Result chapterDeletedEVT(ChapterDeletedEVT value),
+    Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
+    Result editModeLaunchedEVT(EditModeLaunchedEVT value),
+    Result failureWhenPublishingChapterEVT(
+        FailureWhenPublishingChapterEVT value),
+    Result failureWhenPublishingSeriesEVT(FailureWhenPublishingSeriesEVT value),
+    Result failureWhenUploadingSeriesCoverEVT(
+        FailureWhenUploadingSeriesCoverEVT value),
+    Result genreOptionalSelectedEVT(GenreOptionalSelectedEVT value),
+    Result genreSelectedEVT(GenreSelectedEVT value),
+    Result isEndChangedEVT(IsEndChangedEVT value),
+    Result isNSFWChangedEVT(IsNSFWChangedEVT value),
+    Result languageSelectedEVT(LanguageSelectedEVT value),
+    Result newChapterPageLaunchedEVT(NewChapterPageLaunchedEVT value),
+    Result placeholderFetchedEVT(PlaceholderFetchedEVT value),
+    Result publishButtonPressedEVT(PublishButtonPressedEVT value),
+    Result saveOrBackButtonPressedEVT(SaveOrBackButtonPressedEVT value),
+    Result seriesCoverDeletedEVT(SeriesCoverDeletedEVT value),
+    Result seriesCoverUploadedEVT(SeriesCoverUploadedEVT value),
+    Result seriesDraftDeletedEVT(SeriesDraftDeletedEVT value),
+    Result seriesDraftFetchedEVT(SeriesDraftFetchedEVT value),
+    Result seriesPublishedEVT(SeriesPublishedEVT value),
+    Result sessionFetchedEVT(SessionFetchedEVT value),
+    Result storyChangedEVT(StoryChangedEVT value),
+    Result titleChangedEVT(TitleChangedEVT value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (seriesCoverDeletedEVT != null) {
+      return seriesCoverDeletedEVT(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SeriesCoverDeletedEVT implements NewChapterDatabaseEvent {
+  const factory SeriesCoverDeletedEVT() = _$SeriesCoverDeletedEVT;
 }
 
 abstract class $SeriesCoverUploadedEVTCopyWith<$Res> {
@@ -4743,14 +6859,18 @@ class _$SeriesCoverUploadedEVT
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result addCoverPressedEVT(),
-    @required Result chapterDraftDeletedEVT(Chapter chapter),
-    @required Result chapterPublishedEVT(Chapter chapter),
-    @required Result copyrightsSelectedEVT(String copyrights),
+    @required Result chapterCoverDeletedEVT(),
     @required
         Result chapterCoverUploadedEVT(
             String coverUrl, ChapterDraft chapterDraft),
+    @required Result chapterPublishedEVT(Chapter chapter),
+    @required Result copyrightsSelectedEVT(String copyrights),
+    @required Result chapterDeletedEVT(),
     @required Result deleteDraftButtonPressedEVT(),
     @required Result editModeLaunchedEVT(ChapterDraft chapterDraft),
+    @required Result failureWhenPublishingChapterEVT(String coverUrl),
+    @required Result failureWhenPublishingSeriesEVT(String coverUrl),
+    @required Result failureWhenUploadingSeriesCoverEVT(),
     @required Result genreOptionalSelectedEVT(String genreOptional),
     @required Result genreSelectedEVT(String genre),
     @required Result isEndChangedEVT(bool isEnd),
@@ -4767,6 +6887,7 @@ class _$SeriesCoverUploadedEVT
             SeriesDraft seriesDraft, String sessionUid, String coverUrl),
     @required Result publishButtonPressedEVT(),
     @required Result saveOrBackButtonPressedEVT(),
+    @required Result seriesCoverDeletedEVT(),
     @required
         Result seriesCoverUploadedEVT(String coverUrl, SeriesDraft seriesDraft),
     @required Result seriesDraftDeletedEVT(),
@@ -4779,12 +6900,16 @@ class _$SeriesCoverUploadedEVT
     @required Result titleChangedEVT(String title),
   }) {
     assert(addCoverPressedEVT != null);
-    assert(chapterDraftDeletedEVT != null);
+    assert(chapterCoverDeletedEVT != null);
+    assert(chapterCoverUploadedEVT != null);
     assert(chapterPublishedEVT != null);
     assert(copyrightsSelectedEVT != null);
-    assert(chapterCoverUploadedEVT != null);
+    assert(chapterDeletedEVT != null);
     assert(deleteDraftButtonPressedEVT != null);
     assert(editModeLaunchedEVT != null);
+    assert(failureWhenPublishingChapterEVT != null);
+    assert(failureWhenPublishingSeriesEVT != null);
+    assert(failureWhenUploadingSeriesCoverEVT != null);
     assert(genreOptionalSelectedEVT != null);
     assert(genreSelectedEVT != null);
     assert(isEndChangedEVT != null);
@@ -4794,6 +6919,7 @@ class _$SeriesCoverUploadedEVT
     assert(placeholderFetchedEVT != null);
     assert(publishButtonPressedEVT != null);
     assert(saveOrBackButtonPressedEVT != null);
+    assert(seriesCoverDeletedEVT != null);
     assert(seriesCoverUploadedEVT != null);
     assert(seriesDraftDeletedEVT != null);
     assert(seriesDraftFetchedEVT != null);
@@ -4808,12 +6934,16 @@ class _$SeriesCoverUploadedEVT
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result addCoverPressedEVT(),
-    Result chapterDraftDeletedEVT(Chapter chapter),
+    Result chapterCoverDeletedEVT(),
+    Result chapterCoverUploadedEVT(String coverUrl, ChapterDraft chapterDraft),
     Result chapterPublishedEVT(Chapter chapter),
     Result copyrightsSelectedEVT(String copyrights),
-    Result chapterCoverUploadedEVT(String coverUrl, ChapterDraft chapterDraft),
+    Result chapterDeletedEVT(),
     Result deleteDraftButtonPressedEVT(),
     Result editModeLaunchedEVT(ChapterDraft chapterDraft),
+    Result failureWhenPublishingChapterEVT(String coverUrl),
+    Result failureWhenPublishingSeriesEVT(String coverUrl),
+    Result failureWhenUploadingSeriesCoverEVT(),
     Result genreOptionalSelectedEVT(String genreOptional),
     Result genreSelectedEVT(String genre),
     Result isEndChangedEVT(bool isEnd),
@@ -4828,6 +6958,7 @@ class _$SeriesCoverUploadedEVT
         SeriesDraft seriesDraft, String sessionUid, String coverUrl),
     Result publishButtonPressedEVT(),
     Result saveOrBackButtonPressedEVT(),
+    Result seriesCoverDeletedEVT(),
     Result seriesCoverUploadedEVT(String coverUrl, SeriesDraft seriesDraft),
     Result seriesDraftDeletedEVT(),
     Result seriesDraftFetchedEVT(SeriesDraft seriesDraft),
@@ -4849,13 +6980,23 @@ class _$SeriesCoverUploadedEVT
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result addCoverPressedEVT(AddCoverPressedEVT value),
-    @required Result chapterDraftDeletedEVT(ChapterDraftDeletedEVT value),
+    @required Result chapterCoverDeletedEVT(ChapterCoverDeletedEVT value),
+    @required Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
     @required Result chapterPublishedEVT(ChapterPublishedEVT value),
     @required Result copyrightsSelectedEVT(CopyrightsSelectedEVT value),
-    @required Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
+    @required Result chapterDeletedEVT(ChapterDeletedEVT value),
     @required
         Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
     @required Result editModeLaunchedEVT(EditModeLaunchedEVT value),
+    @required
+        Result failureWhenPublishingChapterEVT(
+            FailureWhenPublishingChapterEVT value),
+    @required
+        Result failureWhenPublishingSeriesEVT(
+            FailureWhenPublishingSeriesEVT value),
+    @required
+        Result failureWhenUploadingSeriesCoverEVT(
+            FailureWhenUploadingSeriesCoverEVT value),
     @required Result genreOptionalSelectedEVT(GenreOptionalSelectedEVT value),
     @required Result genreSelectedEVT(GenreSelectedEVT value),
     @required Result isEndChangedEVT(IsEndChangedEVT value),
@@ -4866,6 +7007,7 @@ class _$SeriesCoverUploadedEVT
     @required Result publishButtonPressedEVT(PublishButtonPressedEVT value),
     @required
         Result saveOrBackButtonPressedEVT(SaveOrBackButtonPressedEVT value),
+    @required Result seriesCoverDeletedEVT(SeriesCoverDeletedEVT value),
     @required Result seriesCoverUploadedEVT(SeriesCoverUploadedEVT value),
     @required Result seriesDraftDeletedEVT(SeriesDraftDeletedEVT value),
     @required Result seriesDraftFetchedEVT(SeriesDraftFetchedEVT value),
@@ -4875,12 +7017,16 @@ class _$SeriesCoverUploadedEVT
     @required Result titleChangedEVT(TitleChangedEVT value),
   }) {
     assert(addCoverPressedEVT != null);
-    assert(chapterDraftDeletedEVT != null);
+    assert(chapterCoverDeletedEVT != null);
+    assert(chapterCoverUploadedEVT != null);
     assert(chapterPublishedEVT != null);
     assert(copyrightsSelectedEVT != null);
-    assert(chapterCoverUploadedEVT != null);
+    assert(chapterDeletedEVT != null);
     assert(deleteDraftButtonPressedEVT != null);
     assert(editModeLaunchedEVT != null);
+    assert(failureWhenPublishingChapterEVT != null);
+    assert(failureWhenPublishingSeriesEVT != null);
+    assert(failureWhenUploadingSeriesCoverEVT != null);
     assert(genreOptionalSelectedEVT != null);
     assert(genreSelectedEVT != null);
     assert(isEndChangedEVT != null);
@@ -4890,6 +7036,7 @@ class _$SeriesCoverUploadedEVT
     assert(placeholderFetchedEVT != null);
     assert(publishButtonPressedEVT != null);
     assert(saveOrBackButtonPressedEVT != null);
+    assert(seriesCoverDeletedEVT != null);
     assert(seriesCoverUploadedEVT != null);
     assert(seriesDraftDeletedEVT != null);
     assert(seriesDraftFetchedEVT != null);
@@ -4904,12 +7051,18 @@ class _$SeriesCoverUploadedEVT
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result addCoverPressedEVT(AddCoverPressedEVT value),
-    Result chapterDraftDeletedEVT(ChapterDraftDeletedEVT value),
+    Result chapterCoverDeletedEVT(ChapterCoverDeletedEVT value),
+    Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
     Result chapterPublishedEVT(ChapterPublishedEVT value),
     Result copyrightsSelectedEVT(CopyrightsSelectedEVT value),
-    Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
+    Result chapterDeletedEVT(ChapterDeletedEVT value),
     Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
     Result editModeLaunchedEVT(EditModeLaunchedEVT value),
+    Result failureWhenPublishingChapterEVT(
+        FailureWhenPublishingChapterEVT value),
+    Result failureWhenPublishingSeriesEVT(FailureWhenPublishingSeriesEVT value),
+    Result failureWhenUploadingSeriesCoverEVT(
+        FailureWhenUploadingSeriesCoverEVT value),
     Result genreOptionalSelectedEVT(GenreOptionalSelectedEVT value),
     Result genreSelectedEVT(GenreSelectedEVT value),
     Result isEndChangedEVT(IsEndChangedEVT value),
@@ -4919,6 +7072,7 @@ class _$SeriesCoverUploadedEVT
     Result placeholderFetchedEVT(PlaceholderFetchedEVT value),
     Result publishButtonPressedEVT(PublishButtonPressedEVT value),
     Result saveOrBackButtonPressedEVT(SaveOrBackButtonPressedEVT value),
+    Result seriesCoverDeletedEVT(SeriesCoverDeletedEVT value),
     Result seriesCoverUploadedEVT(SeriesCoverUploadedEVT value),
     Result seriesDraftDeletedEVT(SeriesDraftDeletedEVT value),
     Result seriesDraftFetchedEVT(SeriesDraftFetchedEVT value),
@@ -4992,14 +7146,18 @@ class _$SeriesDraftDeletedEVT
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result addCoverPressedEVT(),
-    @required Result chapterDraftDeletedEVT(Chapter chapter),
-    @required Result chapterPublishedEVT(Chapter chapter),
-    @required Result copyrightsSelectedEVT(String copyrights),
+    @required Result chapterCoverDeletedEVT(),
     @required
         Result chapterCoverUploadedEVT(
             String coverUrl, ChapterDraft chapterDraft),
+    @required Result chapterPublishedEVT(Chapter chapter),
+    @required Result copyrightsSelectedEVT(String copyrights),
+    @required Result chapterDeletedEVT(),
     @required Result deleteDraftButtonPressedEVT(),
     @required Result editModeLaunchedEVT(ChapterDraft chapterDraft),
+    @required Result failureWhenPublishingChapterEVT(String coverUrl),
+    @required Result failureWhenPublishingSeriesEVT(String coverUrl),
+    @required Result failureWhenUploadingSeriesCoverEVT(),
     @required Result genreOptionalSelectedEVT(String genreOptional),
     @required Result genreSelectedEVT(String genre),
     @required Result isEndChangedEVT(bool isEnd),
@@ -5016,6 +7174,7 @@ class _$SeriesDraftDeletedEVT
             SeriesDraft seriesDraft, String sessionUid, String coverUrl),
     @required Result publishButtonPressedEVT(),
     @required Result saveOrBackButtonPressedEVT(),
+    @required Result seriesCoverDeletedEVT(),
     @required
         Result seriesCoverUploadedEVT(String coverUrl, SeriesDraft seriesDraft),
     @required Result seriesDraftDeletedEVT(),
@@ -5028,12 +7187,16 @@ class _$SeriesDraftDeletedEVT
     @required Result titleChangedEVT(String title),
   }) {
     assert(addCoverPressedEVT != null);
-    assert(chapterDraftDeletedEVT != null);
+    assert(chapterCoverDeletedEVT != null);
+    assert(chapterCoverUploadedEVT != null);
     assert(chapterPublishedEVT != null);
     assert(copyrightsSelectedEVT != null);
-    assert(chapterCoverUploadedEVT != null);
+    assert(chapterDeletedEVT != null);
     assert(deleteDraftButtonPressedEVT != null);
     assert(editModeLaunchedEVT != null);
+    assert(failureWhenPublishingChapterEVT != null);
+    assert(failureWhenPublishingSeriesEVT != null);
+    assert(failureWhenUploadingSeriesCoverEVT != null);
     assert(genreOptionalSelectedEVT != null);
     assert(genreSelectedEVT != null);
     assert(isEndChangedEVT != null);
@@ -5043,6 +7206,7 @@ class _$SeriesDraftDeletedEVT
     assert(placeholderFetchedEVT != null);
     assert(publishButtonPressedEVT != null);
     assert(saveOrBackButtonPressedEVT != null);
+    assert(seriesCoverDeletedEVT != null);
     assert(seriesCoverUploadedEVT != null);
     assert(seriesDraftDeletedEVT != null);
     assert(seriesDraftFetchedEVT != null);
@@ -5057,12 +7221,16 @@ class _$SeriesDraftDeletedEVT
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result addCoverPressedEVT(),
-    Result chapterDraftDeletedEVT(Chapter chapter),
+    Result chapterCoverDeletedEVT(),
+    Result chapterCoverUploadedEVT(String coverUrl, ChapterDraft chapterDraft),
     Result chapterPublishedEVT(Chapter chapter),
     Result copyrightsSelectedEVT(String copyrights),
-    Result chapterCoverUploadedEVT(String coverUrl, ChapterDraft chapterDraft),
+    Result chapterDeletedEVT(),
     Result deleteDraftButtonPressedEVT(),
     Result editModeLaunchedEVT(ChapterDraft chapterDraft),
+    Result failureWhenPublishingChapterEVT(String coverUrl),
+    Result failureWhenPublishingSeriesEVT(String coverUrl),
+    Result failureWhenUploadingSeriesCoverEVT(),
     Result genreOptionalSelectedEVT(String genreOptional),
     Result genreSelectedEVT(String genre),
     Result isEndChangedEVT(bool isEnd),
@@ -5077,6 +7245,7 @@ class _$SeriesDraftDeletedEVT
         SeriesDraft seriesDraft, String sessionUid, String coverUrl),
     Result publishButtonPressedEVT(),
     Result saveOrBackButtonPressedEVT(),
+    Result seriesCoverDeletedEVT(),
     Result seriesCoverUploadedEVT(String coverUrl, SeriesDraft seriesDraft),
     Result seriesDraftDeletedEVT(),
     Result seriesDraftFetchedEVT(SeriesDraft seriesDraft),
@@ -5098,13 +7267,23 @@ class _$SeriesDraftDeletedEVT
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result addCoverPressedEVT(AddCoverPressedEVT value),
-    @required Result chapterDraftDeletedEVT(ChapterDraftDeletedEVT value),
+    @required Result chapterCoverDeletedEVT(ChapterCoverDeletedEVT value),
+    @required Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
     @required Result chapterPublishedEVT(ChapterPublishedEVT value),
     @required Result copyrightsSelectedEVT(CopyrightsSelectedEVT value),
-    @required Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
+    @required Result chapterDeletedEVT(ChapterDeletedEVT value),
     @required
         Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
     @required Result editModeLaunchedEVT(EditModeLaunchedEVT value),
+    @required
+        Result failureWhenPublishingChapterEVT(
+            FailureWhenPublishingChapterEVT value),
+    @required
+        Result failureWhenPublishingSeriesEVT(
+            FailureWhenPublishingSeriesEVT value),
+    @required
+        Result failureWhenUploadingSeriesCoverEVT(
+            FailureWhenUploadingSeriesCoverEVT value),
     @required Result genreOptionalSelectedEVT(GenreOptionalSelectedEVT value),
     @required Result genreSelectedEVT(GenreSelectedEVT value),
     @required Result isEndChangedEVT(IsEndChangedEVT value),
@@ -5115,6 +7294,7 @@ class _$SeriesDraftDeletedEVT
     @required Result publishButtonPressedEVT(PublishButtonPressedEVT value),
     @required
         Result saveOrBackButtonPressedEVT(SaveOrBackButtonPressedEVT value),
+    @required Result seriesCoverDeletedEVT(SeriesCoverDeletedEVT value),
     @required Result seriesCoverUploadedEVT(SeriesCoverUploadedEVT value),
     @required Result seriesDraftDeletedEVT(SeriesDraftDeletedEVT value),
     @required Result seriesDraftFetchedEVT(SeriesDraftFetchedEVT value),
@@ -5124,12 +7304,16 @@ class _$SeriesDraftDeletedEVT
     @required Result titleChangedEVT(TitleChangedEVT value),
   }) {
     assert(addCoverPressedEVT != null);
-    assert(chapterDraftDeletedEVT != null);
+    assert(chapterCoverDeletedEVT != null);
+    assert(chapterCoverUploadedEVT != null);
     assert(chapterPublishedEVT != null);
     assert(copyrightsSelectedEVT != null);
-    assert(chapterCoverUploadedEVT != null);
+    assert(chapterDeletedEVT != null);
     assert(deleteDraftButtonPressedEVT != null);
     assert(editModeLaunchedEVT != null);
+    assert(failureWhenPublishingChapterEVT != null);
+    assert(failureWhenPublishingSeriesEVT != null);
+    assert(failureWhenUploadingSeriesCoverEVT != null);
     assert(genreOptionalSelectedEVT != null);
     assert(genreSelectedEVT != null);
     assert(isEndChangedEVT != null);
@@ -5139,6 +7323,7 @@ class _$SeriesDraftDeletedEVT
     assert(placeholderFetchedEVT != null);
     assert(publishButtonPressedEVT != null);
     assert(saveOrBackButtonPressedEVT != null);
+    assert(seriesCoverDeletedEVT != null);
     assert(seriesCoverUploadedEVT != null);
     assert(seriesDraftDeletedEVT != null);
     assert(seriesDraftFetchedEVT != null);
@@ -5153,12 +7338,18 @@ class _$SeriesDraftDeletedEVT
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result addCoverPressedEVT(AddCoverPressedEVT value),
-    Result chapterDraftDeletedEVT(ChapterDraftDeletedEVT value),
+    Result chapterCoverDeletedEVT(ChapterCoverDeletedEVT value),
+    Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
     Result chapterPublishedEVT(ChapterPublishedEVT value),
     Result copyrightsSelectedEVT(CopyrightsSelectedEVT value),
-    Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
+    Result chapterDeletedEVT(ChapterDeletedEVT value),
     Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
     Result editModeLaunchedEVT(EditModeLaunchedEVT value),
+    Result failureWhenPublishingChapterEVT(
+        FailureWhenPublishingChapterEVT value),
+    Result failureWhenPublishingSeriesEVT(FailureWhenPublishingSeriesEVT value),
+    Result failureWhenUploadingSeriesCoverEVT(
+        FailureWhenUploadingSeriesCoverEVT value),
     Result genreOptionalSelectedEVT(GenreOptionalSelectedEVT value),
     Result genreSelectedEVT(GenreSelectedEVT value),
     Result isEndChangedEVT(IsEndChangedEVT value),
@@ -5168,6 +7359,7 @@ class _$SeriesDraftDeletedEVT
     Result placeholderFetchedEVT(PlaceholderFetchedEVT value),
     Result publishButtonPressedEVT(PublishButtonPressedEVT value),
     Result saveOrBackButtonPressedEVT(SaveOrBackButtonPressedEVT value),
+    Result seriesCoverDeletedEVT(SeriesCoverDeletedEVT value),
     Result seriesCoverUploadedEVT(SeriesCoverUploadedEVT value),
     Result seriesDraftDeletedEVT(SeriesDraftDeletedEVT value),
     Result seriesDraftFetchedEVT(SeriesDraftFetchedEVT value),
@@ -5260,14 +7452,18 @@ class _$SeriesDraftFetchedEVT
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result addCoverPressedEVT(),
-    @required Result chapterDraftDeletedEVT(Chapter chapter),
-    @required Result chapterPublishedEVT(Chapter chapter),
-    @required Result copyrightsSelectedEVT(String copyrights),
+    @required Result chapterCoverDeletedEVT(),
     @required
         Result chapterCoverUploadedEVT(
             String coverUrl, ChapterDraft chapterDraft),
+    @required Result chapterPublishedEVT(Chapter chapter),
+    @required Result copyrightsSelectedEVT(String copyrights),
+    @required Result chapterDeletedEVT(),
     @required Result deleteDraftButtonPressedEVT(),
     @required Result editModeLaunchedEVT(ChapterDraft chapterDraft),
+    @required Result failureWhenPublishingChapterEVT(String coverUrl),
+    @required Result failureWhenPublishingSeriesEVT(String coverUrl),
+    @required Result failureWhenUploadingSeriesCoverEVT(),
     @required Result genreOptionalSelectedEVT(String genreOptional),
     @required Result genreSelectedEVT(String genre),
     @required Result isEndChangedEVT(bool isEnd),
@@ -5284,6 +7480,7 @@ class _$SeriesDraftFetchedEVT
             SeriesDraft seriesDraft, String sessionUid, String coverUrl),
     @required Result publishButtonPressedEVT(),
     @required Result saveOrBackButtonPressedEVT(),
+    @required Result seriesCoverDeletedEVT(),
     @required
         Result seriesCoverUploadedEVT(String coverUrl, SeriesDraft seriesDraft),
     @required Result seriesDraftDeletedEVT(),
@@ -5296,12 +7493,16 @@ class _$SeriesDraftFetchedEVT
     @required Result titleChangedEVT(String title),
   }) {
     assert(addCoverPressedEVT != null);
-    assert(chapterDraftDeletedEVT != null);
+    assert(chapterCoverDeletedEVT != null);
+    assert(chapterCoverUploadedEVT != null);
     assert(chapterPublishedEVT != null);
     assert(copyrightsSelectedEVT != null);
-    assert(chapterCoverUploadedEVT != null);
+    assert(chapterDeletedEVT != null);
     assert(deleteDraftButtonPressedEVT != null);
     assert(editModeLaunchedEVT != null);
+    assert(failureWhenPublishingChapterEVT != null);
+    assert(failureWhenPublishingSeriesEVT != null);
+    assert(failureWhenUploadingSeriesCoverEVT != null);
     assert(genreOptionalSelectedEVT != null);
     assert(genreSelectedEVT != null);
     assert(isEndChangedEVT != null);
@@ -5311,6 +7512,7 @@ class _$SeriesDraftFetchedEVT
     assert(placeholderFetchedEVT != null);
     assert(publishButtonPressedEVT != null);
     assert(saveOrBackButtonPressedEVT != null);
+    assert(seriesCoverDeletedEVT != null);
     assert(seriesCoverUploadedEVT != null);
     assert(seriesDraftDeletedEVT != null);
     assert(seriesDraftFetchedEVT != null);
@@ -5325,12 +7527,16 @@ class _$SeriesDraftFetchedEVT
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result addCoverPressedEVT(),
-    Result chapterDraftDeletedEVT(Chapter chapter),
+    Result chapterCoverDeletedEVT(),
+    Result chapterCoverUploadedEVT(String coverUrl, ChapterDraft chapterDraft),
     Result chapterPublishedEVT(Chapter chapter),
     Result copyrightsSelectedEVT(String copyrights),
-    Result chapterCoverUploadedEVT(String coverUrl, ChapterDraft chapterDraft),
+    Result chapterDeletedEVT(),
     Result deleteDraftButtonPressedEVT(),
     Result editModeLaunchedEVT(ChapterDraft chapterDraft),
+    Result failureWhenPublishingChapterEVT(String coverUrl),
+    Result failureWhenPublishingSeriesEVT(String coverUrl),
+    Result failureWhenUploadingSeriesCoverEVT(),
     Result genreOptionalSelectedEVT(String genreOptional),
     Result genreSelectedEVT(String genre),
     Result isEndChangedEVT(bool isEnd),
@@ -5345,6 +7551,7 @@ class _$SeriesDraftFetchedEVT
         SeriesDraft seriesDraft, String sessionUid, String coverUrl),
     Result publishButtonPressedEVT(),
     Result saveOrBackButtonPressedEVT(),
+    Result seriesCoverDeletedEVT(),
     Result seriesCoverUploadedEVT(String coverUrl, SeriesDraft seriesDraft),
     Result seriesDraftDeletedEVT(),
     Result seriesDraftFetchedEVT(SeriesDraft seriesDraft),
@@ -5366,13 +7573,23 @@ class _$SeriesDraftFetchedEVT
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result addCoverPressedEVT(AddCoverPressedEVT value),
-    @required Result chapterDraftDeletedEVT(ChapterDraftDeletedEVT value),
+    @required Result chapterCoverDeletedEVT(ChapterCoverDeletedEVT value),
+    @required Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
     @required Result chapterPublishedEVT(ChapterPublishedEVT value),
     @required Result copyrightsSelectedEVT(CopyrightsSelectedEVT value),
-    @required Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
+    @required Result chapterDeletedEVT(ChapterDeletedEVT value),
     @required
         Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
     @required Result editModeLaunchedEVT(EditModeLaunchedEVT value),
+    @required
+        Result failureWhenPublishingChapterEVT(
+            FailureWhenPublishingChapterEVT value),
+    @required
+        Result failureWhenPublishingSeriesEVT(
+            FailureWhenPublishingSeriesEVT value),
+    @required
+        Result failureWhenUploadingSeriesCoverEVT(
+            FailureWhenUploadingSeriesCoverEVT value),
     @required Result genreOptionalSelectedEVT(GenreOptionalSelectedEVT value),
     @required Result genreSelectedEVT(GenreSelectedEVT value),
     @required Result isEndChangedEVT(IsEndChangedEVT value),
@@ -5383,6 +7600,7 @@ class _$SeriesDraftFetchedEVT
     @required Result publishButtonPressedEVT(PublishButtonPressedEVT value),
     @required
         Result saveOrBackButtonPressedEVT(SaveOrBackButtonPressedEVT value),
+    @required Result seriesCoverDeletedEVT(SeriesCoverDeletedEVT value),
     @required Result seriesCoverUploadedEVT(SeriesCoverUploadedEVT value),
     @required Result seriesDraftDeletedEVT(SeriesDraftDeletedEVT value),
     @required Result seriesDraftFetchedEVT(SeriesDraftFetchedEVT value),
@@ -5392,12 +7610,16 @@ class _$SeriesDraftFetchedEVT
     @required Result titleChangedEVT(TitleChangedEVT value),
   }) {
     assert(addCoverPressedEVT != null);
-    assert(chapterDraftDeletedEVT != null);
+    assert(chapterCoverDeletedEVT != null);
+    assert(chapterCoverUploadedEVT != null);
     assert(chapterPublishedEVT != null);
     assert(copyrightsSelectedEVT != null);
-    assert(chapterCoverUploadedEVT != null);
+    assert(chapterDeletedEVT != null);
     assert(deleteDraftButtonPressedEVT != null);
     assert(editModeLaunchedEVT != null);
+    assert(failureWhenPublishingChapterEVT != null);
+    assert(failureWhenPublishingSeriesEVT != null);
+    assert(failureWhenUploadingSeriesCoverEVT != null);
     assert(genreOptionalSelectedEVT != null);
     assert(genreSelectedEVT != null);
     assert(isEndChangedEVT != null);
@@ -5407,6 +7629,7 @@ class _$SeriesDraftFetchedEVT
     assert(placeholderFetchedEVT != null);
     assert(publishButtonPressedEVT != null);
     assert(saveOrBackButtonPressedEVT != null);
+    assert(seriesCoverDeletedEVT != null);
     assert(seriesCoverUploadedEVT != null);
     assert(seriesDraftDeletedEVT != null);
     assert(seriesDraftFetchedEVT != null);
@@ -5421,12 +7644,18 @@ class _$SeriesDraftFetchedEVT
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result addCoverPressedEVT(AddCoverPressedEVT value),
-    Result chapterDraftDeletedEVT(ChapterDraftDeletedEVT value),
+    Result chapterCoverDeletedEVT(ChapterCoverDeletedEVT value),
+    Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
     Result chapterPublishedEVT(ChapterPublishedEVT value),
     Result copyrightsSelectedEVT(CopyrightsSelectedEVT value),
-    Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
+    Result chapterDeletedEVT(ChapterDeletedEVT value),
     Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
     Result editModeLaunchedEVT(EditModeLaunchedEVT value),
+    Result failureWhenPublishingChapterEVT(
+        FailureWhenPublishingChapterEVT value),
+    Result failureWhenPublishingSeriesEVT(FailureWhenPublishingSeriesEVT value),
+    Result failureWhenUploadingSeriesCoverEVT(
+        FailureWhenUploadingSeriesCoverEVT value),
     Result genreOptionalSelectedEVT(GenreOptionalSelectedEVT value),
     Result genreSelectedEVT(GenreSelectedEVT value),
     Result isEndChangedEVT(IsEndChangedEVT value),
@@ -5436,6 +7665,7 @@ class _$SeriesDraftFetchedEVT
     Result placeholderFetchedEVT(PlaceholderFetchedEVT value),
     Result publishButtonPressedEVT(PublishButtonPressedEVT value),
     Result saveOrBackButtonPressedEVT(SaveOrBackButtonPressedEVT value),
+    Result seriesCoverDeletedEVT(SeriesCoverDeletedEVT value),
     Result seriesCoverUploadedEVT(SeriesCoverUploadedEVT value),
     Result seriesDraftDeletedEVT(SeriesDraftDeletedEVT value),
     Result seriesDraftFetchedEVT(SeriesDraftFetchedEVT value),
@@ -5530,14 +7760,18 @@ class _$SeriesPublishedEVT
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result addCoverPressedEVT(),
-    @required Result chapterDraftDeletedEVT(Chapter chapter),
-    @required Result chapterPublishedEVT(Chapter chapter),
-    @required Result copyrightsSelectedEVT(String copyrights),
+    @required Result chapterCoverDeletedEVT(),
     @required
         Result chapterCoverUploadedEVT(
             String coverUrl, ChapterDraft chapterDraft),
+    @required Result chapterPublishedEVT(Chapter chapter),
+    @required Result copyrightsSelectedEVT(String copyrights),
+    @required Result chapterDeletedEVT(),
     @required Result deleteDraftButtonPressedEVT(),
     @required Result editModeLaunchedEVT(ChapterDraft chapterDraft),
+    @required Result failureWhenPublishingChapterEVT(String coverUrl),
+    @required Result failureWhenPublishingSeriesEVT(String coverUrl),
+    @required Result failureWhenUploadingSeriesCoverEVT(),
     @required Result genreOptionalSelectedEVT(String genreOptional),
     @required Result genreSelectedEVT(String genre),
     @required Result isEndChangedEVT(bool isEnd),
@@ -5554,6 +7788,7 @@ class _$SeriesPublishedEVT
             SeriesDraft seriesDraft, String sessionUid, String coverUrl),
     @required Result publishButtonPressedEVT(),
     @required Result saveOrBackButtonPressedEVT(),
+    @required Result seriesCoverDeletedEVT(),
     @required
         Result seriesCoverUploadedEVT(String coverUrl, SeriesDraft seriesDraft),
     @required Result seriesDraftDeletedEVT(),
@@ -5566,12 +7801,16 @@ class _$SeriesPublishedEVT
     @required Result titleChangedEVT(String title),
   }) {
     assert(addCoverPressedEVT != null);
-    assert(chapterDraftDeletedEVT != null);
+    assert(chapterCoverDeletedEVT != null);
+    assert(chapterCoverUploadedEVT != null);
     assert(chapterPublishedEVT != null);
     assert(copyrightsSelectedEVT != null);
-    assert(chapterCoverUploadedEVT != null);
+    assert(chapterDeletedEVT != null);
     assert(deleteDraftButtonPressedEVT != null);
     assert(editModeLaunchedEVT != null);
+    assert(failureWhenPublishingChapterEVT != null);
+    assert(failureWhenPublishingSeriesEVT != null);
+    assert(failureWhenUploadingSeriesCoverEVT != null);
     assert(genreOptionalSelectedEVT != null);
     assert(genreSelectedEVT != null);
     assert(isEndChangedEVT != null);
@@ -5581,6 +7820,7 @@ class _$SeriesPublishedEVT
     assert(placeholderFetchedEVT != null);
     assert(publishButtonPressedEVT != null);
     assert(saveOrBackButtonPressedEVT != null);
+    assert(seriesCoverDeletedEVT != null);
     assert(seriesCoverUploadedEVT != null);
     assert(seriesDraftDeletedEVT != null);
     assert(seriesDraftFetchedEVT != null);
@@ -5595,12 +7835,16 @@ class _$SeriesPublishedEVT
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result addCoverPressedEVT(),
-    Result chapterDraftDeletedEVT(Chapter chapter),
+    Result chapterCoverDeletedEVT(),
+    Result chapterCoverUploadedEVT(String coverUrl, ChapterDraft chapterDraft),
     Result chapterPublishedEVT(Chapter chapter),
     Result copyrightsSelectedEVT(String copyrights),
-    Result chapterCoverUploadedEVT(String coverUrl, ChapterDraft chapterDraft),
+    Result chapterDeletedEVT(),
     Result deleteDraftButtonPressedEVT(),
     Result editModeLaunchedEVT(ChapterDraft chapterDraft),
+    Result failureWhenPublishingChapterEVT(String coverUrl),
+    Result failureWhenPublishingSeriesEVT(String coverUrl),
+    Result failureWhenUploadingSeriesCoverEVT(),
     Result genreOptionalSelectedEVT(String genreOptional),
     Result genreSelectedEVT(String genre),
     Result isEndChangedEVT(bool isEnd),
@@ -5615,6 +7859,7 @@ class _$SeriesPublishedEVT
         SeriesDraft seriesDraft, String sessionUid, String coverUrl),
     Result publishButtonPressedEVT(),
     Result saveOrBackButtonPressedEVT(),
+    Result seriesCoverDeletedEVT(),
     Result seriesCoverUploadedEVT(String coverUrl, SeriesDraft seriesDraft),
     Result seriesDraftDeletedEVT(),
     Result seriesDraftFetchedEVT(SeriesDraft seriesDraft),
@@ -5636,13 +7881,23 @@ class _$SeriesPublishedEVT
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result addCoverPressedEVT(AddCoverPressedEVT value),
-    @required Result chapterDraftDeletedEVT(ChapterDraftDeletedEVT value),
+    @required Result chapterCoverDeletedEVT(ChapterCoverDeletedEVT value),
+    @required Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
     @required Result chapterPublishedEVT(ChapterPublishedEVT value),
     @required Result copyrightsSelectedEVT(CopyrightsSelectedEVT value),
-    @required Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
+    @required Result chapterDeletedEVT(ChapterDeletedEVT value),
     @required
         Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
     @required Result editModeLaunchedEVT(EditModeLaunchedEVT value),
+    @required
+        Result failureWhenPublishingChapterEVT(
+            FailureWhenPublishingChapterEVT value),
+    @required
+        Result failureWhenPublishingSeriesEVT(
+            FailureWhenPublishingSeriesEVT value),
+    @required
+        Result failureWhenUploadingSeriesCoverEVT(
+            FailureWhenUploadingSeriesCoverEVT value),
     @required Result genreOptionalSelectedEVT(GenreOptionalSelectedEVT value),
     @required Result genreSelectedEVT(GenreSelectedEVT value),
     @required Result isEndChangedEVT(IsEndChangedEVT value),
@@ -5653,6 +7908,7 @@ class _$SeriesPublishedEVT
     @required Result publishButtonPressedEVT(PublishButtonPressedEVT value),
     @required
         Result saveOrBackButtonPressedEVT(SaveOrBackButtonPressedEVT value),
+    @required Result seriesCoverDeletedEVT(SeriesCoverDeletedEVT value),
     @required Result seriesCoverUploadedEVT(SeriesCoverUploadedEVT value),
     @required Result seriesDraftDeletedEVT(SeriesDraftDeletedEVT value),
     @required Result seriesDraftFetchedEVT(SeriesDraftFetchedEVT value),
@@ -5662,12 +7918,16 @@ class _$SeriesPublishedEVT
     @required Result titleChangedEVT(TitleChangedEVT value),
   }) {
     assert(addCoverPressedEVT != null);
-    assert(chapterDraftDeletedEVT != null);
+    assert(chapterCoverDeletedEVT != null);
+    assert(chapterCoverUploadedEVT != null);
     assert(chapterPublishedEVT != null);
     assert(copyrightsSelectedEVT != null);
-    assert(chapterCoverUploadedEVT != null);
+    assert(chapterDeletedEVT != null);
     assert(deleteDraftButtonPressedEVT != null);
     assert(editModeLaunchedEVT != null);
+    assert(failureWhenPublishingChapterEVT != null);
+    assert(failureWhenPublishingSeriesEVT != null);
+    assert(failureWhenUploadingSeriesCoverEVT != null);
     assert(genreOptionalSelectedEVT != null);
     assert(genreSelectedEVT != null);
     assert(isEndChangedEVT != null);
@@ -5677,6 +7937,7 @@ class _$SeriesPublishedEVT
     assert(placeholderFetchedEVT != null);
     assert(publishButtonPressedEVT != null);
     assert(saveOrBackButtonPressedEVT != null);
+    assert(seriesCoverDeletedEVT != null);
     assert(seriesCoverUploadedEVT != null);
     assert(seriesDraftDeletedEVT != null);
     assert(seriesDraftFetchedEVT != null);
@@ -5691,12 +7952,18 @@ class _$SeriesPublishedEVT
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result addCoverPressedEVT(AddCoverPressedEVT value),
-    Result chapterDraftDeletedEVT(ChapterDraftDeletedEVT value),
+    Result chapterCoverDeletedEVT(ChapterCoverDeletedEVT value),
+    Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
     Result chapterPublishedEVT(ChapterPublishedEVT value),
     Result copyrightsSelectedEVT(CopyrightsSelectedEVT value),
-    Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
+    Result chapterDeletedEVT(ChapterDeletedEVT value),
     Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
     Result editModeLaunchedEVT(EditModeLaunchedEVT value),
+    Result failureWhenPublishingChapterEVT(
+        FailureWhenPublishingChapterEVT value),
+    Result failureWhenPublishingSeriesEVT(FailureWhenPublishingSeriesEVT value),
+    Result failureWhenUploadingSeriesCoverEVT(
+        FailureWhenUploadingSeriesCoverEVT value),
     Result genreOptionalSelectedEVT(GenreOptionalSelectedEVT value),
     Result genreSelectedEVT(GenreSelectedEVT value),
     Result isEndChangedEVT(IsEndChangedEVT value),
@@ -5706,6 +7973,7 @@ class _$SeriesPublishedEVT
     Result placeholderFetchedEVT(PlaceholderFetchedEVT value),
     Result publishButtonPressedEVT(PublishButtonPressedEVT value),
     Result saveOrBackButtonPressedEVT(SaveOrBackButtonPressedEVT value),
+    Result seriesCoverDeletedEVT(SeriesCoverDeletedEVT value),
     Result seriesCoverUploadedEVT(SeriesCoverUploadedEVT value),
     Result seriesDraftDeletedEVT(SeriesDraftDeletedEVT value),
     Result seriesDraftFetchedEVT(SeriesDraftFetchedEVT value),
@@ -5826,14 +8094,18 @@ class _$SessionFetchedEVT
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result addCoverPressedEVT(),
-    @required Result chapterDraftDeletedEVT(Chapter chapter),
-    @required Result chapterPublishedEVT(Chapter chapter),
-    @required Result copyrightsSelectedEVT(String copyrights),
+    @required Result chapterCoverDeletedEVT(),
     @required
         Result chapterCoverUploadedEVT(
             String coverUrl, ChapterDraft chapterDraft),
+    @required Result chapterPublishedEVT(Chapter chapter),
+    @required Result copyrightsSelectedEVT(String copyrights),
+    @required Result chapterDeletedEVT(),
     @required Result deleteDraftButtonPressedEVT(),
     @required Result editModeLaunchedEVT(ChapterDraft chapterDraft),
+    @required Result failureWhenPublishingChapterEVT(String coverUrl),
+    @required Result failureWhenPublishingSeriesEVT(String coverUrl),
+    @required Result failureWhenUploadingSeriesCoverEVT(),
     @required Result genreOptionalSelectedEVT(String genreOptional),
     @required Result genreSelectedEVT(String genre),
     @required Result isEndChangedEVT(bool isEnd),
@@ -5850,6 +8122,7 @@ class _$SessionFetchedEVT
             SeriesDraft seriesDraft, String sessionUid, String coverUrl),
     @required Result publishButtonPressedEVT(),
     @required Result saveOrBackButtonPressedEVT(),
+    @required Result seriesCoverDeletedEVT(),
     @required
         Result seriesCoverUploadedEVT(String coverUrl, SeriesDraft seriesDraft),
     @required Result seriesDraftDeletedEVT(),
@@ -5862,12 +8135,16 @@ class _$SessionFetchedEVT
     @required Result titleChangedEVT(String title),
   }) {
     assert(addCoverPressedEVT != null);
-    assert(chapterDraftDeletedEVT != null);
+    assert(chapterCoverDeletedEVT != null);
+    assert(chapterCoverUploadedEVT != null);
     assert(chapterPublishedEVT != null);
     assert(copyrightsSelectedEVT != null);
-    assert(chapterCoverUploadedEVT != null);
+    assert(chapterDeletedEVT != null);
     assert(deleteDraftButtonPressedEVT != null);
     assert(editModeLaunchedEVT != null);
+    assert(failureWhenPublishingChapterEVT != null);
+    assert(failureWhenPublishingSeriesEVT != null);
+    assert(failureWhenUploadingSeriesCoverEVT != null);
     assert(genreOptionalSelectedEVT != null);
     assert(genreSelectedEVT != null);
     assert(isEndChangedEVT != null);
@@ -5877,6 +8154,7 @@ class _$SessionFetchedEVT
     assert(placeholderFetchedEVT != null);
     assert(publishButtonPressedEVT != null);
     assert(saveOrBackButtonPressedEVT != null);
+    assert(seriesCoverDeletedEVT != null);
     assert(seriesCoverUploadedEVT != null);
     assert(seriesDraftDeletedEVT != null);
     assert(seriesDraftFetchedEVT != null);
@@ -5891,12 +8169,16 @@ class _$SessionFetchedEVT
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result addCoverPressedEVT(),
-    Result chapterDraftDeletedEVT(Chapter chapter),
+    Result chapterCoverDeletedEVT(),
+    Result chapterCoverUploadedEVT(String coverUrl, ChapterDraft chapterDraft),
     Result chapterPublishedEVT(Chapter chapter),
     Result copyrightsSelectedEVT(String copyrights),
-    Result chapterCoverUploadedEVT(String coverUrl, ChapterDraft chapterDraft),
+    Result chapterDeletedEVT(),
     Result deleteDraftButtonPressedEVT(),
     Result editModeLaunchedEVT(ChapterDraft chapterDraft),
+    Result failureWhenPublishingChapterEVT(String coverUrl),
+    Result failureWhenPublishingSeriesEVT(String coverUrl),
+    Result failureWhenUploadingSeriesCoverEVT(),
     Result genreOptionalSelectedEVT(String genreOptional),
     Result genreSelectedEVT(String genre),
     Result isEndChangedEVT(bool isEnd),
@@ -5911,6 +8193,7 @@ class _$SessionFetchedEVT
         SeriesDraft seriesDraft, String sessionUid, String coverUrl),
     Result publishButtonPressedEVT(),
     Result saveOrBackButtonPressedEVT(),
+    Result seriesCoverDeletedEVT(),
     Result seriesCoverUploadedEVT(String coverUrl, SeriesDraft seriesDraft),
     Result seriesDraftDeletedEVT(),
     Result seriesDraftFetchedEVT(SeriesDraft seriesDraft),
@@ -5932,13 +8215,23 @@ class _$SessionFetchedEVT
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result addCoverPressedEVT(AddCoverPressedEVT value),
-    @required Result chapterDraftDeletedEVT(ChapterDraftDeletedEVT value),
+    @required Result chapterCoverDeletedEVT(ChapterCoverDeletedEVT value),
+    @required Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
     @required Result chapterPublishedEVT(ChapterPublishedEVT value),
     @required Result copyrightsSelectedEVT(CopyrightsSelectedEVT value),
-    @required Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
+    @required Result chapterDeletedEVT(ChapterDeletedEVT value),
     @required
         Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
     @required Result editModeLaunchedEVT(EditModeLaunchedEVT value),
+    @required
+        Result failureWhenPublishingChapterEVT(
+            FailureWhenPublishingChapterEVT value),
+    @required
+        Result failureWhenPublishingSeriesEVT(
+            FailureWhenPublishingSeriesEVT value),
+    @required
+        Result failureWhenUploadingSeriesCoverEVT(
+            FailureWhenUploadingSeriesCoverEVT value),
     @required Result genreOptionalSelectedEVT(GenreOptionalSelectedEVT value),
     @required Result genreSelectedEVT(GenreSelectedEVT value),
     @required Result isEndChangedEVT(IsEndChangedEVT value),
@@ -5949,6 +8242,7 @@ class _$SessionFetchedEVT
     @required Result publishButtonPressedEVT(PublishButtonPressedEVT value),
     @required
         Result saveOrBackButtonPressedEVT(SaveOrBackButtonPressedEVT value),
+    @required Result seriesCoverDeletedEVT(SeriesCoverDeletedEVT value),
     @required Result seriesCoverUploadedEVT(SeriesCoverUploadedEVT value),
     @required Result seriesDraftDeletedEVT(SeriesDraftDeletedEVT value),
     @required Result seriesDraftFetchedEVT(SeriesDraftFetchedEVT value),
@@ -5958,12 +8252,16 @@ class _$SessionFetchedEVT
     @required Result titleChangedEVT(TitleChangedEVT value),
   }) {
     assert(addCoverPressedEVT != null);
-    assert(chapterDraftDeletedEVT != null);
+    assert(chapterCoverDeletedEVT != null);
+    assert(chapterCoverUploadedEVT != null);
     assert(chapterPublishedEVT != null);
     assert(copyrightsSelectedEVT != null);
-    assert(chapterCoverUploadedEVT != null);
+    assert(chapterDeletedEVT != null);
     assert(deleteDraftButtonPressedEVT != null);
     assert(editModeLaunchedEVT != null);
+    assert(failureWhenPublishingChapterEVT != null);
+    assert(failureWhenPublishingSeriesEVT != null);
+    assert(failureWhenUploadingSeriesCoverEVT != null);
     assert(genreOptionalSelectedEVT != null);
     assert(genreSelectedEVT != null);
     assert(isEndChangedEVT != null);
@@ -5973,6 +8271,7 @@ class _$SessionFetchedEVT
     assert(placeholderFetchedEVT != null);
     assert(publishButtonPressedEVT != null);
     assert(saveOrBackButtonPressedEVT != null);
+    assert(seriesCoverDeletedEVT != null);
     assert(seriesCoverUploadedEVT != null);
     assert(seriesDraftDeletedEVT != null);
     assert(seriesDraftFetchedEVT != null);
@@ -5987,12 +8286,18 @@ class _$SessionFetchedEVT
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result addCoverPressedEVT(AddCoverPressedEVT value),
-    Result chapterDraftDeletedEVT(ChapterDraftDeletedEVT value),
+    Result chapterCoverDeletedEVT(ChapterCoverDeletedEVT value),
+    Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
     Result chapterPublishedEVT(ChapterPublishedEVT value),
     Result copyrightsSelectedEVT(CopyrightsSelectedEVT value),
-    Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
+    Result chapterDeletedEVT(ChapterDeletedEVT value),
     Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
     Result editModeLaunchedEVT(EditModeLaunchedEVT value),
+    Result failureWhenPublishingChapterEVT(
+        FailureWhenPublishingChapterEVT value),
+    Result failureWhenPublishingSeriesEVT(FailureWhenPublishingSeriesEVT value),
+    Result failureWhenUploadingSeriesCoverEVT(
+        FailureWhenUploadingSeriesCoverEVT value),
     Result genreOptionalSelectedEVT(GenreOptionalSelectedEVT value),
     Result genreSelectedEVT(GenreSelectedEVT value),
     Result isEndChangedEVT(IsEndChangedEVT value),
@@ -6002,6 +8307,7 @@ class _$SessionFetchedEVT
     Result placeholderFetchedEVT(PlaceholderFetchedEVT value),
     Result publishButtonPressedEVT(PublishButtonPressedEVT value),
     Result saveOrBackButtonPressedEVT(SaveOrBackButtonPressedEVT value),
+    Result seriesCoverDeletedEVT(SeriesCoverDeletedEVT value),
     Result seriesCoverUploadedEVT(SeriesCoverUploadedEVT value),
     Result seriesDraftDeletedEVT(SeriesDraftDeletedEVT value),
     Result seriesDraftFetchedEVT(SeriesDraftFetchedEVT value),
@@ -6100,14 +8406,18 @@ class _$StoryChangedEVT
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result addCoverPressedEVT(),
-    @required Result chapterDraftDeletedEVT(Chapter chapter),
-    @required Result chapterPublishedEVT(Chapter chapter),
-    @required Result copyrightsSelectedEVT(String copyrights),
+    @required Result chapterCoverDeletedEVT(),
     @required
         Result chapterCoverUploadedEVT(
             String coverUrl, ChapterDraft chapterDraft),
+    @required Result chapterPublishedEVT(Chapter chapter),
+    @required Result copyrightsSelectedEVT(String copyrights),
+    @required Result chapterDeletedEVT(),
     @required Result deleteDraftButtonPressedEVT(),
     @required Result editModeLaunchedEVT(ChapterDraft chapterDraft),
+    @required Result failureWhenPublishingChapterEVT(String coverUrl),
+    @required Result failureWhenPublishingSeriesEVT(String coverUrl),
+    @required Result failureWhenUploadingSeriesCoverEVT(),
     @required Result genreOptionalSelectedEVT(String genreOptional),
     @required Result genreSelectedEVT(String genre),
     @required Result isEndChangedEVT(bool isEnd),
@@ -6124,6 +8434,7 @@ class _$StoryChangedEVT
             SeriesDraft seriesDraft, String sessionUid, String coverUrl),
     @required Result publishButtonPressedEVT(),
     @required Result saveOrBackButtonPressedEVT(),
+    @required Result seriesCoverDeletedEVT(),
     @required
         Result seriesCoverUploadedEVT(String coverUrl, SeriesDraft seriesDraft),
     @required Result seriesDraftDeletedEVT(),
@@ -6136,12 +8447,16 @@ class _$StoryChangedEVT
     @required Result titleChangedEVT(String title),
   }) {
     assert(addCoverPressedEVT != null);
-    assert(chapterDraftDeletedEVT != null);
+    assert(chapterCoverDeletedEVT != null);
+    assert(chapterCoverUploadedEVT != null);
     assert(chapterPublishedEVT != null);
     assert(copyrightsSelectedEVT != null);
-    assert(chapterCoverUploadedEVT != null);
+    assert(chapterDeletedEVT != null);
     assert(deleteDraftButtonPressedEVT != null);
     assert(editModeLaunchedEVT != null);
+    assert(failureWhenPublishingChapterEVT != null);
+    assert(failureWhenPublishingSeriesEVT != null);
+    assert(failureWhenUploadingSeriesCoverEVT != null);
     assert(genreOptionalSelectedEVT != null);
     assert(genreSelectedEVT != null);
     assert(isEndChangedEVT != null);
@@ -6151,6 +8466,7 @@ class _$StoryChangedEVT
     assert(placeholderFetchedEVT != null);
     assert(publishButtonPressedEVT != null);
     assert(saveOrBackButtonPressedEVT != null);
+    assert(seriesCoverDeletedEVT != null);
     assert(seriesCoverUploadedEVT != null);
     assert(seriesDraftDeletedEVT != null);
     assert(seriesDraftFetchedEVT != null);
@@ -6165,12 +8481,16 @@ class _$StoryChangedEVT
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result addCoverPressedEVT(),
-    Result chapterDraftDeletedEVT(Chapter chapter),
+    Result chapterCoverDeletedEVT(),
+    Result chapterCoverUploadedEVT(String coverUrl, ChapterDraft chapterDraft),
     Result chapterPublishedEVT(Chapter chapter),
     Result copyrightsSelectedEVT(String copyrights),
-    Result chapterCoverUploadedEVT(String coverUrl, ChapterDraft chapterDraft),
+    Result chapterDeletedEVT(),
     Result deleteDraftButtonPressedEVT(),
     Result editModeLaunchedEVT(ChapterDraft chapterDraft),
+    Result failureWhenPublishingChapterEVT(String coverUrl),
+    Result failureWhenPublishingSeriesEVT(String coverUrl),
+    Result failureWhenUploadingSeriesCoverEVT(),
     Result genreOptionalSelectedEVT(String genreOptional),
     Result genreSelectedEVT(String genre),
     Result isEndChangedEVT(bool isEnd),
@@ -6185,6 +8505,7 @@ class _$StoryChangedEVT
         SeriesDraft seriesDraft, String sessionUid, String coverUrl),
     Result publishButtonPressedEVT(),
     Result saveOrBackButtonPressedEVT(),
+    Result seriesCoverDeletedEVT(),
     Result seriesCoverUploadedEVT(String coverUrl, SeriesDraft seriesDraft),
     Result seriesDraftDeletedEVT(),
     Result seriesDraftFetchedEVT(SeriesDraft seriesDraft),
@@ -6206,13 +8527,23 @@ class _$StoryChangedEVT
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result addCoverPressedEVT(AddCoverPressedEVT value),
-    @required Result chapterDraftDeletedEVT(ChapterDraftDeletedEVT value),
+    @required Result chapterCoverDeletedEVT(ChapterCoverDeletedEVT value),
+    @required Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
     @required Result chapterPublishedEVT(ChapterPublishedEVT value),
     @required Result copyrightsSelectedEVT(CopyrightsSelectedEVT value),
-    @required Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
+    @required Result chapterDeletedEVT(ChapterDeletedEVT value),
     @required
         Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
     @required Result editModeLaunchedEVT(EditModeLaunchedEVT value),
+    @required
+        Result failureWhenPublishingChapterEVT(
+            FailureWhenPublishingChapterEVT value),
+    @required
+        Result failureWhenPublishingSeriesEVT(
+            FailureWhenPublishingSeriesEVT value),
+    @required
+        Result failureWhenUploadingSeriesCoverEVT(
+            FailureWhenUploadingSeriesCoverEVT value),
     @required Result genreOptionalSelectedEVT(GenreOptionalSelectedEVT value),
     @required Result genreSelectedEVT(GenreSelectedEVT value),
     @required Result isEndChangedEVT(IsEndChangedEVT value),
@@ -6223,6 +8554,7 @@ class _$StoryChangedEVT
     @required Result publishButtonPressedEVT(PublishButtonPressedEVT value),
     @required
         Result saveOrBackButtonPressedEVT(SaveOrBackButtonPressedEVT value),
+    @required Result seriesCoverDeletedEVT(SeriesCoverDeletedEVT value),
     @required Result seriesCoverUploadedEVT(SeriesCoverUploadedEVT value),
     @required Result seriesDraftDeletedEVT(SeriesDraftDeletedEVT value),
     @required Result seriesDraftFetchedEVT(SeriesDraftFetchedEVT value),
@@ -6232,12 +8564,16 @@ class _$StoryChangedEVT
     @required Result titleChangedEVT(TitleChangedEVT value),
   }) {
     assert(addCoverPressedEVT != null);
-    assert(chapterDraftDeletedEVT != null);
+    assert(chapterCoverDeletedEVT != null);
+    assert(chapterCoverUploadedEVT != null);
     assert(chapterPublishedEVT != null);
     assert(copyrightsSelectedEVT != null);
-    assert(chapterCoverUploadedEVT != null);
+    assert(chapterDeletedEVT != null);
     assert(deleteDraftButtonPressedEVT != null);
     assert(editModeLaunchedEVT != null);
+    assert(failureWhenPublishingChapterEVT != null);
+    assert(failureWhenPublishingSeriesEVT != null);
+    assert(failureWhenUploadingSeriesCoverEVT != null);
     assert(genreOptionalSelectedEVT != null);
     assert(genreSelectedEVT != null);
     assert(isEndChangedEVT != null);
@@ -6247,6 +8583,7 @@ class _$StoryChangedEVT
     assert(placeholderFetchedEVT != null);
     assert(publishButtonPressedEVT != null);
     assert(saveOrBackButtonPressedEVT != null);
+    assert(seriesCoverDeletedEVT != null);
     assert(seriesCoverUploadedEVT != null);
     assert(seriesDraftDeletedEVT != null);
     assert(seriesDraftFetchedEVT != null);
@@ -6261,12 +8598,18 @@ class _$StoryChangedEVT
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result addCoverPressedEVT(AddCoverPressedEVT value),
-    Result chapterDraftDeletedEVT(ChapterDraftDeletedEVT value),
+    Result chapterCoverDeletedEVT(ChapterCoverDeletedEVT value),
+    Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
     Result chapterPublishedEVT(ChapterPublishedEVT value),
     Result copyrightsSelectedEVT(CopyrightsSelectedEVT value),
-    Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
+    Result chapterDeletedEVT(ChapterDeletedEVT value),
     Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
     Result editModeLaunchedEVT(EditModeLaunchedEVT value),
+    Result failureWhenPublishingChapterEVT(
+        FailureWhenPublishingChapterEVT value),
+    Result failureWhenPublishingSeriesEVT(FailureWhenPublishingSeriesEVT value),
+    Result failureWhenUploadingSeriesCoverEVT(
+        FailureWhenUploadingSeriesCoverEVT value),
     Result genreOptionalSelectedEVT(GenreOptionalSelectedEVT value),
     Result genreSelectedEVT(GenreSelectedEVT value),
     Result isEndChangedEVT(IsEndChangedEVT value),
@@ -6276,6 +8619,7 @@ class _$StoryChangedEVT
     Result placeholderFetchedEVT(PlaceholderFetchedEVT value),
     Result publishButtonPressedEVT(PublishButtonPressedEVT value),
     Result saveOrBackButtonPressedEVT(SaveOrBackButtonPressedEVT value),
+    Result seriesCoverDeletedEVT(SeriesCoverDeletedEVT value),
     Result seriesCoverUploadedEVT(SeriesCoverUploadedEVT value),
     Result seriesDraftDeletedEVT(SeriesDraftDeletedEVT value),
     Result seriesDraftFetchedEVT(SeriesDraftFetchedEVT value),
@@ -6369,14 +8713,18 @@ class _$TitleChangedEVT
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result addCoverPressedEVT(),
-    @required Result chapterDraftDeletedEVT(Chapter chapter),
-    @required Result chapterPublishedEVT(Chapter chapter),
-    @required Result copyrightsSelectedEVT(String copyrights),
+    @required Result chapterCoverDeletedEVT(),
     @required
         Result chapterCoverUploadedEVT(
             String coverUrl, ChapterDraft chapterDraft),
+    @required Result chapterPublishedEVT(Chapter chapter),
+    @required Result copyrightsSelectedEVT(String copyrights),
+    @required Result chapterDeletedEVT(),
     @required Result deleteDraftButtonPressedEVT(),
     @required Result editModeLaunchedEVT(ChapterDraft chapterDraft),
+    @required Result failureWhenPublishingChapterEVT(String coverUrl),
+    @required Result failureWhenPublishingSeriesEVT(String coverUrl),
+    @required Result failureWhenUploadingSeriesCoverEVT(),
     @required Result genreOptionalSelectedEVT(String genreOptional),
     @required Result genreSelectedEVT(String genre),
     @required Result isEndChangedEVT(bool isEnd),
@@ -6393,6 +8741,7 @@ class _$TitleChangedEVT
             SeriesDraft seriesDraft, String sessionUid, String coverUrl),
     @required Result publishButtonPressedEVT(),
     @required Result saveOrBackButtonPressedEVT(),
+    @required Result seriesCoverDeletedEVT(),
     @required
         Result seriesCoverUploadedEVT(String coverUrl, SeriesDraft seriesDraft),
     @required Result seriesDraftDeletedEVT(),
@@ -6405,12 +8754,16 @@ class _$TitleChangedEVT
     @required Result titleChangedEVT(String title),
   }) {
     assert(addCoverPressedEVT != null);
-    assert(chapterDraftDeletedEVT != null);
+    assert(chapterCoverDeletedEVT != null);
+    assert(chapterCoverUploadedEVT != null);
     assert(chapterPublishedEVT != null);
     assert(copyrightsSelectedEVT != null);
-    assert(chapterCoverUploadedEVT != null);
+    assert(chapterDeletedEVT != null);
     assert(deleteDraftButtonPressedEVT != null);
     assert(editModeLaunchedEVT != null);
+    assert(failureWhenPublishingChapterEVT != null);
+    assert(failureWhenPublishingSeriesEVT != null);
+    assert(failureWhenUploadingSeriesCoverEVT != null);
     assert(genreOptionalSelectedEVT != null);
     assert(genreSelectedEVT != null);
     assert(isEndChangedEVT != null);
@@ -6420,6 +8773,7 @@ class _$TitleChangedEVT
     assert(placeholderFetchedEVT != null);
     assert(publishButtonPressedEVT != null);
     assert(saveOrBackButtonPressedEVT != null);
+    assert(seriesCoverDeletedEVT != null);
     assert(seriesCoverUploadedEVT != null);
     assert(seriesDraftDeletedEVT != null);
     assert(seriesDraftFetchedEVT != null);
@@ -6434,12 +8788,16 @@ class _$TitleChangedEVT
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result addCoverPressedEVT(),
-    Result chapterDraftDeletedEVT(Chapter chapter),
+    Result chapterCoverDeletedEVT(),
+    Result chapterCoverUploadedEVT(String coverUrl, ChapterDraft chapterDraft),
     Result chapterPublishedEVT(Chapter chapter),
     Result copyrightsSelectedEVT(String copyrights),
-    Result chapterCoverUploadedEVT(String coverUrl, ChapterDraft chapterDraft),
+    Result chapterDeletedEVT(),
     Result deleteDraftButtonPressedEVT(),
     Result editModeLaunchedEVT(ChapterDraft chapterDraft),
+    Result failureWhenPublishingChapterEVT(String coverUrl),
+    Result failureWhenPublishingSeriesEVT(String coverUrl),
+    Result failureWhenUploadingSeriesCoverEVT(),
     Result genreOptionalSelectedEVT(String genreOptional),
     Result genreSelectedEVT(String genre),
     Result isEndChangedEVT(bool isEnd),
@@ -6454,6 +8812,7 @@ class _$TitleChangedEVT
         SeriesDraft seriesDraft, String sessionUid, String coverUrl),
     Result publishButtonPressedEVT(),
     Result saveOrBackButtonPressedEVT(),
+    Result seriesCoverDeletedEVT(),
     Result seriesCoverUploadedEVT(String coverUrl, SeriesDraft seriesDraft),
     Result seriesDraftDeletedEVT(),
     Result seriesDraftFetchedEVT(SeriesDraft seriesDraft),
@@ -6475,13 +8834,23 @@ class _$TitleChangedEVT
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result addCoverPressedEVT(AddCoverPressedEVT value),
-    @required Result chapterDraftDeletedEVT(ChapterDraftDeletedEVT value),
+    @required Result chapterCoverDeletedEVT(ChapterCoverDeletedEVT value),
+    @required Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
     @required Result chapterPublishedEVT(ChapterPublishedEVT value),
     @required Result copyrightsSelectedEVT(CopyrightsSelectedEVT value),
-    @required Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
+    @required Result chapterDeletedEVT(ChapterDeletedEVT value),
     @required
         Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
     @required Result editModeLaunchedEVT(EditModeLaunchedEVT value),
+    @required
+        Result failureWhenPublishingChapterEVT(
+            FailureWhenPublishingChapterEVT value),
+    @required
+        Result failureWhenPublishingSeriesEVT(
+            FailureWhenPublishingSeriesEVT value),
+    @required
+        Result failureWhenUploadingSeriesCoverEVT(
+            FailureWhenUploadingSeriesCoverEVT value),
     @required Result genreOptionalSelectedEVT(GenreOptionalSelectedEVT value),
     @required Result genreSelectedEVT(GenreSelectedEVT value),
     @required Result isEndChangedEVT(IsEndChangedEVT value),
@@ -6492,6 +8861,7 @@ class _$TitleChangedEVT
     @required Result publishButtonPressedEVT(PublishButtonPressedEVT value),
     @required
         Result saveOrBackButtonPressedEVT(SaveOrBackButtonPressedEVT value),
+    @required Result seriesCoverDeletedEVT(SeriesCoverDeletedEVT value),
     @required Result seriesCoverUploadedEVT(SeriesCoverUploadedEVT value),
     @required Result seriesDraftDeletedEVT(SeriesDraftDeletedEVT value),
     @required Result seriesDraftFetchedEVT(SeriesDraftFetchedEVT value),
@@ -6501,12 +8871,16 @@ class _$TitleChangedEVT
     @required Result titleChangedEVT(TitleChangedEVT value),
   }) {
     assert(addCoverPressedEVT != null);
-    assert(chapterDraftDeletedEVT != null);
+    assert(chapterCoverDeletedEVT != null);
+    assert(chapterCoverUploadedEVT != null);
     assert(chapterPublishedEVT != null);
     assert(copyrightsSelectedEVT != null);
-    assert(chapterCoverUploadedEVT != null);
+    assert(chapterDeletedEVT != null);
     assert(deleteDraftButtonPressedEVT != null);
     assert(editModeLaunchedEVT != null);
+    assert(failureWhenPublishingChapterEVT != null);
+    assert(failureWhenPublishingSeriesEVT != null);
+    assert(failureWhenUploadingSeriesCoverEVT != null);
     assert(genreOptionalSelectedEVT != null);
     assert(genreSelectedEVT != null);
     assert(isEndChangedEVT != null);
@@ -6516,6 +8890,7 @@ class _$TitleChangedEVT
     assert(placeholderFetchedEVT != null);
     assert(publishButtonPressedEVT != null);
     assert(saveOrBackButtonPressedEVT != null);
+    assert(seriesCoverDeletedEVT != null);
     assert(seriesCoverUploadedEVT != null);
     assert(seriesDraftDeletedEVT != null);
     assert(seriesDraftFetchedEVT != null);
@@ -6530,12 +8905,18 @@ class _$TitleChangedEVT
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result addCoverPressedEVT(AddCoverPressedEVT value),
-    Result chapterDraftDeletedEVT(ChapterDraftDeletedEVT value),
+    Result chapterCoverDeletedEVT(ChapterCoverDeletedEVT value),
+    Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
     Result chapterPublishedEVT(ChapterPublishedEVT value),
     Result copyrightsSelectedEVT(CopyrightsSelectedEVT value),
-    Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
+    Result chapterDeletedEVT(ChapterDeletedEVT value),
     Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
     Result editModeLaunchedEVT(EditModeLaunchedEVT value),
+    Result failureWhenPublishingChapterEVT(
+        FailureWhenPublishingChapterEVT value),
+    Result failureWhenPublishingSeriesEVT(FailureWhenPublishingSeriesEVT value),
+    Result failureWhenUploadingSeriesCoverEVT(
+        FailureWhenUploadingSeriesCoverEVT value),
     Result genreOptionalSelectedEVT(GenreOptionalSelectedEVT value),
     Result genreSelectedEVT(GenreSelectedEVT value),
     Result isEndChangedEVT(IsEndChangedEVT value),
@@ -6545,6 +8926,7 @@ class _$TitleChangedEVT
     Result placeholderFetchedEVT(PlaceholderFetchedEVT value),
     Result publishButtonPressedEVT(PublishButtonPressedEVT value),
     Result saveOrBackButtonPressedEVT(SaveOrBackButtonPressedEVT value),
+    Result seriesCoverDeletedEVT(SeriesCoverDeletedEVT value),
     Result seriesCoverUploadedEVT(SeriesCoverUploadedEVT value),
     Result seriesDraftDeletedEVT(SeriesDraftDeletedEVT value),
     Result seriesDraftFetchedEVT(SeriesDraftFetchedEVT value),
@@ -6611,6 +8993,8 @@ class _$NewChapterDatabaseStateTearOff {
       @required
           Story story,
       @required
+          String chapterCoverUrl,
+      @required
           String copyrightsStr,
       @required
           String coverUrl,
@@ -6620,6 +9004,8 @@ class _$NewChapterDatabaseStateTearOff {
           String genreStr,
       @required
           String languageStr,
+      @required
+          String seriesCoverUrl,
       @required
           String storyStr,
       @required
@@ -6649,11 +9035,13 @@ class _$NewChapterDatabaseStateTearOff {
       languagesMap: languagesMap,
       databaseFailureOrSuccessOption: databaseFailureOrSuccessOption,
       story: story,
+      chapterCoverUrl: chapterCoverUrl,
       copyrightsStr: copyrightsStr,
       coverUrl: coverUrl,
       genreOptionalStr: genreOptionalStr,
       genreStr: genreStr,
       languageStr: languageStr,
+      seriesCoverUrl: seriesCoverUrl,
       storyStr: storyStr,
       titleStr: titleStr,
       storyController: storyController,
@@ -6685,11 +9073,13 @@ mixin _$NewChapterDatabaseState {
   Map<String, String> get languagesMap;
   Option<Either<DatabaseFailure, dynamic>> get databaseFailureOrSuccessOption;
   Story get story;
+  String get chapterCoverUrl;
   String get copyrightsStr;
   String get coverUrl;
   String get genreOptionalStr;
   String get genreStr;
   String get languageStr;
+  String get seriesCoverUrl;
   String get storyStr;
   String get titleStr;
   TextEditingController get storyController;
@@ -6722,11 +9112,13 @@ abstract class $NewChapterDatabaseStateCopyWith<$Res> {
       Map<String, String> languagesMap,
       Option<Either<DatabaseFailure, dynamic>> databaseFailureOrSuccessOption,
       Story story,
+      String chapterCoverUrl,
       String copyrightsStr,
       String coverUrl,
       String genreOptionalStr,
       String genreStr,
       String languageStr,
+      String seriesCoverUrl,
       String storyStr,
       String titleStr,
       TextEditingController storyController,
@@ -6762,11 +9154,13 @@ class _$NewChapterDatabaseStateCopyWithImpl<$Res>
     Object languagesMap = freezed,
     Object databaseFailureOrSuccessOption = freezed,
     Object story = freezed,
+    Object chapterCoverUrl = freezed,
     Object copyrightsStr = freezed,
     Object coverUrl = freezed,
     Object genreOptionalStr = freezed,
     Object genreStr = freezed,
     Object languageStr = freezed,
+    Object seriesCoverUrl = freezed,
     Object storyStr = freezed,
     Object titleStr = freezed,
     Object storyController = freezed,
@@ -6817,6 +9211,9 @@ class _$NewChapterDatabaseStateCopyWithImpl<$Res>
           : databaseFailureOrSuccessOption
               as Option<Either<DatabaseFailure, dynamic>>,
       story: story == freezed ? _value.story : story as Story,
+      chapterCoverUrl: chapterCoverUrl == freezed
+          ? _value.chapterCoverUrl
+          : chapterCoverUrl as String,
       copyrightsStr: copyrightsStr == freezed
           ? _value.copyrightsStr
           : copyrightsStr as String,
@@ -6827,6 +9224,9 @@ class _$NewChapterDatabaseStateCopyWithImpl<$Res>
       genreStr: genreStr == freezed ? _value.genreStr : genreStr as String,
       languageStr:
           languageStr == freezed ? _value.languageStr : languageStr as String,
+      seriesCoverUrl: seriesCoverUrl == freezed
+          ? _value.seriesCoverUrl
+          : seriesCoverUrl as String,
       storyStr: storyStr == freezed ? _value.storyStr : storyStr as String,
       titleStr: titleStr == freezed ? _value.titleStr : titleStr as String,
       storyController: storyController == freezed
@@ -6865,11 +9265,13 @@ abstract class _$NewChapterDatabaseStateCopyWith<$Res>
       Map<String, String> languagesMap,
       Option<Either<DatabaseFailure, dynamic>> databaseFailureOrSuccessOption,
       Story story,
+      String chapterCoverUrl,
       String copyrightsStr,
       String coverUrl,
       String genreOptionalStr,
       String genreStr,
       String languageStr,
+      String seriesCoverUrl,
       String storyStr,
       String titleStr,
       TextEditingController storyController,
@@ -6908,11 +9310,13 @@ class __$NewChapterDatabaseStateCopyWithImpl<$Res>
     Object languagesMap = freezed,
     Object databaseFailureOrSuccessOption = freezed,
     Object story = freezed,
+    Object chapterCoverUrl = freezed,
     Object copyrightsStr = freezed,
     Object coverUrl = freezed,
     Object genreOptionalStr = freezed,
     Object genreStr = freezed,
     Object languageStr = freezed,
+    Object seriesCoverUrl = freezed,
     Object storyStr = freezed,
     Object titleStr = freezed,
     Object storyController = freezed,
@@ -6963,6 +9367,9 @@ class __$NewChapterDatabaseStateCopyWithImpl<$Res>
           : databaseFailureOrSuccessOption
               as Option<Either<DatabaseFailure, dynamic>>,
       story: story == freezed ? _value.story : story as Story,
+      chapterCoverUrl: chapterCoverUrl == freezed
+          ? _value.chapterCoverUrl
+          : chapterCoverUrl as String,
       copyrightsStr: copyrightsStr == freezed
           ? _value.copyrightsStr
           : copyrightsStr as String,
@@ -6973,6 +9380,9 @@ class __$NewChapterDatabaseStateCopyWithImpl<$Res>
       genreStr: genreStr == freezed ? _value.genreStr : genreStr as String,
       languageStr:
           languageStr == freezed ? _value.languageStr : languageStr as String,
+      seriesCoverUrl: seriesCoverUrl == freezed
+          ? _value.seriesCoverUrl
+          : seriesCoverUrl as String,
       storyStr: storyStr == freezed ? _value.storyStr : storyStr as String,
       titleStr: titleStr == freezed ? _value.titleStr : titleStr as String,
       storyController: storyController == freezed
@@ -7008,11 +9418,13 @@ class _$_NewChapterDatabaseState
       @required this.languagesMap,
       @required this.databaseFailureOrSuccessOption,
       @required this.story,
+      @required this.chapterCoverUrl,
       @required this.copyrightsStr,
       @required this.coverUrl,
       @required this.genreOptionalStr,
       @required this.genreStr,
       @required this.languageStr,
+      @required this.seriesCoverUrl,
       @required this.storyStr,
       @required this.titleStr,
       @required this.storyController,
@@ -7036,11 +9448,13 @@ class _$_NewChapterDatabaseState
         assert(languagesMap != null),
         assert(databaseFailureOrSuccessOption != null),
         assert(story != null),
+        assert(chapterCoverUrl != null),
         assert(copyrightsStr != null),
         assert(coverUrl != null),
         assert(genreOptionalStr != null),
         assert(genreStr != null),
         assert(languageStr != null),
+        assert(seriesCoverUrl != null),
         assert(storyStr != null),
         assert(titleStr != null),
         assert(storyController != null),
@@ -7084,6 +9498,8 @@ class _$_NewChapterDatabaseState
   @override
   final Story story;
   @override
+  final String chapterCoverUrl;
+  @override
   final String copyrightsStr;
   @override
   final String coverUrl;
@@ -7093,6 +9509,8 @@ class _$_NewChapterDatabaseState
   final String genreStr;
   @override
   final String languageStr;
+  @override
+  final String seriesCoverUrl;
   @override
   final String storyStr;
   @override
@@ -7106,7 +9524,7 @@ class _$_NewChapterDatabaseState
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'NewChapterDatabaseState(isDeletingOrPublishingOrSaving: $isDeletingOrPublishingOrSaving, isEditMode: $isEditMode, isEnd: $isEnd, isFirstChapter: $isFirstChapter, isNSFW: $isNSFW, showErrorMessages: $showErrorMessages, chapterDraft: $chapterDraft, copyrights: $copyrights, genre: $genre, genreOptional: $genreOptional, storyWordCount: $storyWordCount, titleWordCount: $titleWordCount, language: $language, copyrightsMap: $copyrightsMap, genresMap: $genresMap, languagesMap: $languagesMap, databaseFailureOrSuccessOption: $databaseFailureOrSuccessOption, story: $story, copyrightsStr: $copyrightsStr, coverUrl: $coverUrl, genreOptionalStr: $genreOptionalStr, genreStr: $genreStr, languageStr: $languageStr, storyStr: $storyStr, titleStr: $titleStr, storyController: $storyController, titleController: $titleController, title: $title)';
+    return 'NewChapterDatabaseState(isDeletingOrPublishingOrSaving: $isDeletingOrPublishingOrSaving, isEditMode: $isEditMode, isEnd: $isEnd, isFirstChapter: $isFirstChapter, isNSFW: $isNSFW, showErrorMessages: $showErrorMessages, chapterDraft: $chapterDraft, copyrights: $copyrights, genre: $genre, genreOptional: $genreOptional, storyWordCount: $storyWordCount, titleWordCount: $titleWordCount, language: $language, copyrightsMap: $copyrightsMap, genresMap: $genresMap, languagesMap: $languagesMap, databaseFailureOrSuccessOption: $databaseFailureOrSuccessOption, story: $story, chapterCoverUrl: $chapterCoverUrl, copyrightsStr: $copyrightsStr, coverUrl: $coverUrl, genreOptionalStr: $genreOptionalStr, genreStr: $genreStr, languageStr: $languageStr, seriesCoverUrl: $seriesCoverUrl, storyStr: $storyStr, titleStr: $titleStr, storyController: $storyController, titleController: $titleController, title: $title)';
   }
 
   @override
@@ -7134,11 +9552,13 @@ class _$_NewChapterDatabaseState
       ..add(DiagnosticsProperty(
           'databaseFailureOrSuccessOption', databaseFailureOrSuccessOption))
       ..add(DiagnosticsProperty('story', story))
+      ..add(DiagnosticsProperty('chapterCoverUrl', chapterCoverUrl))
       ..add(DiagnosticsProperty('copyrightsStr', copyrightsStr))
       ..add(DiagnosticsProperty('coverUrl', coverUrl))
       ..add(DiagnosticsProperty('genreOptionalStr', genreOptionalStr))
       ..add(DiagnosticsProperty('genreStr', genreStr))
       ..add(DiagnosticsProperty('languageStr', languageStr))
+      ..add(DiagnosticsProperty('seriesCoverUrl', seriesCoverUrl))
       ..add(DiagnosticsProperty('storyStr', storyStr))
       ..add(DiagnosticsProperty('titleStr', titleStr))
       ..add(DiagnosticsProperty('storyController', storyController))
@@ -7201,11 +9621,13 @@ class _$_NewChapterDatabaseState
                     other.databaseFailureOrSuccessOption,
                     databaseFailureOrSuccessOption)) &&
             (identical(other.story, story) || const DeepCollectionEquality().equals(other.story, story)) &&
+            (identical(other.chapterCoverUrl, chapterCoverUrl) || const DeepCollectionEquality().equals(other.chapterCoverUrl, chapterCoverUrl)) &&
             (identical(other.copyrightsStr, copyrightsStr) || const DeepCollectionEquality().equals(other.copyrightsStr, copyrightsStr)) &&
             (identical(other.coverUrl, coverUrl) || const DeepCollectionEquality().equals(other.coverUrl, coverUrl)) &&
             (identical(other.genreOptionalStr, genreOptionalStr) || const DeepCollectionEquality().equals(other.genreOptionalStr, genreOptionalStr)) &&
             (identical(other.genreStr, genreStr) || const DeepCollectionEquality().equals(other.genreStr, genreStr)) &&
             (identical(other.languageStr, languageStr) || const DeepCollectionEquality().equals(other.languageStr, languageStr)) &&
+            (identical(other.seriesCoverUrl, seriesCoverUrl) || const DeepCollectionEquality().equals(other.seriesCoverUrl, seriesCoverUrl)) &&
             (identical(other.storyStr, storyStr) || const DeepCollectionEquality().equals(other.storyStr, storyStr)) &&
             (identical(other.titleStr, titleStr) || const DeepCollectionEquality().equals(other.titleStr, titleStr)) &&
             (identical(other.storyController, storyController) || const DeepCollectionEquality().equals(other.storyController, storyController)) &&
@@ -7234,11 +9656,13 @@ class _$_NewChapterDatabaseState
       const DeepCollectionEquality().hash(languagesMap) ^
       const DeepCollectionEquality().hash(databaseFailureOrSuccessOption) ^
       const DeepCollectionEquality().hash(story) ^
+      const DeepCollectionEquality().hash(chapterCoverUrl) ^
       const DeepCollectionEquality().hash(copyrightsStr) ^
       const DeepCollectionEquality().hash(coverUrl) ^
       const DeepCollectionEquality().hash(genreOptionalStr) ^
       const DeepCollectionEquality().hash(genreStr) ^
       const DeepCollectionEquality().hash(languageStr) ^
+      const DeepCollectionEquality().hash(seriesCoverUrl) ^
       const DeepCollectionEquality().hash(storyStr) ^
       const DeepCollectionEquality().hash(titleStr) ^
       const DeepCollectionEquality().hash(storyController) ^
@@ -7291,6 +9715,8 @@ abstract class _NewChapterDatabaseState implements NewChapterDatabaseState {
       @required
           Story story,
       @required
+          String chapterCoverUrl,
+      @required
           String copyrightsStr,
       @required
           String coverUrl,
@@ -7300,6 +9726,8 @@ abstract class _NewChapterDatabaseState implements NewChapterDatabaseState {
           String genreStr,
       @required
           String languageStr,
+      @required
+          String seriesCoverUrl,
       @required
           String storyStr,
       @required
@@ -7348,6 +9776,8 @@ abstract class _NewChapterDatabaseState implements NewChapterDatabaseState {
   @override
   Story get story;
   @override
+  String get chapterCoverUrl;
+  @override
   String get copyrightsStr;
   @override
   String get coverUrl;
@@ -7357,6 +9787,8 @@ abstract class _NewChapterDatabaseState implements NewChapterDatabaseState {
   String get genreStr;
   @override
   String get languageStr;
+  @override
+  String get seriesCoverUrl;
   @override
   String get storyStr;
   @override

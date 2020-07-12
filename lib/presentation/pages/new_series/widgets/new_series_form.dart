@@ -21,16 +21,11 @@ class NewSeriesForm extends StatelessWidget {
   final NewSeriesDatabaseMethods nsDbMethods;
   final NewSeriesDatabaseValidators nsDbValidators;
 
-  // final TextEditingController subtitleController;
-  // final TextEditingController summaryController;
-
   const NewSeriesForm({
     Key key,
     @required this.nsDbState,
     @required this.nsDbMethods,
     @required this.nsDbValidators,
-    // @required this.subtitleController,
-    // @required this.summaryController,
   }) : super(key: key);
 
   @override
@@ -43,7 +38,7 @@ class NewSeriesForm extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              const WINEEditorTopTitle(title: 'STORY DETAILS'),
+              const WINEEditorTopTitle(title: 'SERIES DETAILS'),
               // SECTION cover
               const WINETextFieldLabel(title: 'COVER'),
               WINEEditorCover(coverUrl: nsDbState.coverUrl, onPressed: nsDbMethods.addCoverPressed),

@@ -52,7 +52,10 @@ class AccountStaggeredTileMethods {
             title: sd.title,
             coverUrl: sd.coverUrl,
             authorName: username,
-            onPressed: () => sailor.navigate(Constants.newSeriesRoute, args: NewSeriesPageArgs(seriesDraft: sd)),
+            onPressed: () => sailor.navigate(
+              Constants.newSeriesRoute,
+              args: NewSeriesPageArgs(seriesDraft: sd, routeBack: Constants.accountRoute),
+            ),
             titleFontSize: 16.0,
             authorNameFontSize: 15.0,
           ),

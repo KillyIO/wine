@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:wine/application/authentication/settings/settings_authentication_bloc.dart';
@@ -35,7 +36,7 @@ class _SettingsLayoutState extends State<SettingsLayout> with TickerProviderStat
             padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 5.0),
             child: WINELeadingImageButton(
               imagePath: 'assets/img/back_button.png',
-              onPressed: () => Navigator.of(context).pop(),
+              onPressed: () => ExtendedNavigator.root.pop(),
             ),
           ),
           title: const Text(

@@ -7,6 +7,8 @@ import 'package:wine/domain/database/database_success.dart';
 import 'package:wine/domain/models/chapter.dart';
 
 abstract class IOnlineChapterDatabaseFacade {
+  Future<Either<DatabaseFailure, DatabaseSuccess>> deleteChapter(String chapterUid);
+  Future<Either<DatabaseFailure, DatabaseSuccess>> deleteChapterCover(String url);
   Future<Either<DatabaseFailure, DatabaseSuccess>> loadChapterBookmarksCount(String chapterUid);
   Future<Either<DatabaseFailure, DatabaseSuccess>> loadChapterById(String uid);
   Future<Either<DatabaseFailure, DatabaseSuccess>> loadChapterLikesCount(String chapterUid);

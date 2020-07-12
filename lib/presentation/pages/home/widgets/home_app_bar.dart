@@ -1,17 +1,16 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:wine/application/authentication/core/core_authentication_bloc.dart';
 import 'package:wine/presentation/pages/home/utils/home_navigation_methods.dart';
 import 'package:wine/presentation/pages/home/widgets/home_animated_icon_button.dart';
+import 'package:wine/presentation/routes/router.gr.dart';
 import 'package:wine/presentation/widgets/wine_leading_image_button.dart';
-import 'package:wine/routes.dart';
-import 'package:wine/utils/constants.dart';
 
 class HomeAppBar extends StatefulWidget implements PreferredSizeWidget {
   final HomeNavigationMethods homeNavMethods;
   final bool isDrawerOpen;
-  final bool isNewSeriesPageOpen;
 
   @override
   final Size preferredSize;
@@ -20,7 +19,6 @@ class HomeAppBar extends StatefulWidget implements PreferredSizeWidget {
     Key key,
     @required this.homeNavMethods,
     @required this.isDrawerOpen,
-    @required this.isNewSeriesPageOpen,
     this.preferredSize = const Size.fromHeight(kToolbarHeight),
   }) : super(key: key);
 
@@ -41,7 +39,7 @@ class _HomeAppBarState extends State<HomeAppBar> {
             padding: const EdgeInsets.only(left: 20.0, right: 15.0),
             child: WINELeadingImageButton(
               imagePath: 'assets/img/filters.png',
-              onPressed: () => sailor(Constants.homeFiltersRoute),
+              onPressed: () => widget.homeNavMethods.openDrawer(isRight: false),
             ),
           ),
           actions: <Widget>[
@@ -50,12 +48,9 @@ class _HomeAppBarState extends State<HomeAppBar> {
             else
               Padding(
                 padding: const EdgeInsets.only(right: 20.0),
-                child: HomeAnimatedIconButton(
-                  animation: widget.isNewSeriesPageOpen ? 'create' : 'dismiss',
-                  filename: 'assets/animation/new_series.flr',
-                  height: 20.0,
-                  onPressed: () => widget.homeNavMethods.newSeriesIconPressed(isNSOpen: true),
-                  width: 20.0,
+                child: WINELeadingImageButton(
+                  imagePath: 'assets/img/plus_button.png',
+                  onPressed: () => ExtendedNavigator.root.pushNamed(Routes.newSeriesPage),
                 ),
               ),
             Padding(
