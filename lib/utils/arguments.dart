@@ -8,8 +8,12 @@ import 'package:wine/domain/models/series.dart';
 
 class NewSeriesPageArgs extends BaseArguments {
   final SeriesDraft seriesDraft;
+  final String routeBack;
 
-  NewSeriesPageArgs({this.seriesDraft});
+  NewSeriesPageArgs({
+    this.seriesDraft,
+    @required this.routeBack,
+  });
 }
 
 /// [chapterDraft] not null only when editing a chapter not published

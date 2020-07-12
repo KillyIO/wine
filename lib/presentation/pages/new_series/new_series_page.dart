@@ -3,17 +3,17 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:wine/application/database/new_series/new_series_database_bloc.dart';
+import 'package:wine/domain/models/hive/series_draft.dart';
 import 'package:wine/injection.dart';
 import 'package:wine/presentation/pages/new_series/widgets/new_series_form_layout.dart';
-import 'package:wine/utils/arguments.dart';
 import 'package:wine/utils/themes.dart';
 
 class NewSeriesPage extends StatelessWidget {
-  final NewSeriesPageArgs args;
+  final SeriesDraft seriesDraft;
 
   const NewSeriesPage({
     Key key,
-    this.args,
+    this.seriesDraft,
   }) : super(key: key);
 
   @override
@@ -24,10 +24,10 @@ class NewSeriesPage extends StatelessWidget {
         providers: [
           BlocProvider(
             create: (context) => getIt<NewSeriesDatabaseBloc>()
-              ..add(NewSeriesDatabaseEvent.newSeriesPageLaunchedEVT(seriesDraft: args.seriesDraft, context: context)),
+              ..add(NewSeriesDatabaseEvent.newSeriesPageLaunchedEVT(seriesDraft: seriesDraft, context: context)),
           ),
         ],
-        child: NewSeriesFormLayout(args: args),
+        child: NewSeriesFormLayout(seriesDraft: seriesDraft),
       ),
     );
   }

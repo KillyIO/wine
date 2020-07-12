@@ -1,18 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
 import 'package:wine/application/database/new_chapter/new_chapter_database_bloc.dart';
+import 'package:wine/domain/models/chapter.dart';
+import 'package:wine/domain/models/hive/chapter_draft.dart';
+import 'package:wine/domain/models/hive/series_draft.dart';
 import 'package:wine/injection.dart';
 import 'package:wine/presentation/pages/new_chapter/widgets/new_chapter_form_layout.dart';
-import 'package:wine/utils/arguments.dart';
 import 'package:wine/utils/themes.dart';
 
 class NewChapterPage extends StatelessWidget {
-  final NewChapterPageArgs args;
+  final ChapterDraft chapterDraft;
+  final SeriesDraft seriesDraft;
+  final Chapter previousChapter;
 
   const NewChapterPage({
     Key key,
-    this.args,
+    this.chapterDraft,
+    this.seriesDraft,
+    this.previousChapter,
   }) : super(key: key);
 
   @override
@@ -24,14 +31,14 @@ class NewChapterPage extends StatelessWidget {
           BlocProvider(
             create: (context) => getIt<NewChapterDatabaseBloc>()
               ..add(NewChapterDatabaseEvent.newChapterPageLaunchedEVT(
-                chapterDraft: args.chapterDraft,
+                chapterDraft: chapterDraft,
                 context: context,
-                previousChapter: args.previousChapter,
-                seriesDraft: args.seriesDraft,
+                previousChapter: previousChapter,
+                seriesDraft: seriesDraft,
               )),
           ),
         ],
-        child: NewChapterFormLayout(args: args),
+        child: const NewChapterFormLayout(),
       ),
     );
   }

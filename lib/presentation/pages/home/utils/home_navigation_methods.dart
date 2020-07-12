@@ -18,10 +18,6 @@ class HomeNavigationMethods {
     }
   }
 
-  void newSeriesIconPressed({@required bool isNSOpen}) => context
-      .bloc<HomeNavigationBloc>()
-      .add(HomeNavigationEvent.newSeriesIconPressedEVT(isNewSeriesPageOpen: isNSOpen));
-
   void openDrawer({bool isRight = true}) {
     if (isRight) {
       context.bloc<HomeNavigationBloc>().add(const HomeNavigationEvent.rightDrawerIconPressedEVT(isDrawerOpen: true));

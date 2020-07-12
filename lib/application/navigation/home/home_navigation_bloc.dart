@@ -26,9 +26,6 @@ class HomeNavigationBloc extends Bloc<HomeNavigationEvent, HomeNavigationState> 
       homePageLaunchedEVT: (event) async* {
         yield state.copyWith(pageViewNavbarItems: Methods.getHomeNavbarItems(event.context));
       },
-      newSeriesIconPressedEVT: (event) async* {
-        yield state.copyWith(isNewSeriesPageOpen: event.isNewSeriesPageOpen);
-      },
       pageViewIndexChangedEVT: (event) async* {
         if (state.currentPageViewIdx != event.index) {
           int newIdx = event.index;
@@ -44,7 +41,6 @@ class HomeNavigationBloc extends Bloc<HomeNavigationEvent, HomeNavigationState> 
       resetBlocEVT: (event) async* {
         yield state.copyWith(
           isLeftDrawerOpen: false,
-          isNewSeriesPageOpen: false,
           isRightDrawerOpen: false,
           currentPageViewIdx: 0,
         );

@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:swipe_gesture_recognizer/swipe_gesture_recognizer.dart';
@@ -6,8 +7,7 @@ import 'package:wine/application/authentication/core/core_authentication_bloc.da
 import 'package:wine/application/navigation/home/home_navigation_bloc.dart';
 import 'package:wine/presentation/pages/home/utils/home_navigation_methods.dart';
 import 'package:wine/presentation/pages/home/widgets/home_animated_icon_button.dart';
-import 'package:wine/routes.dart';
-import 'package:wine/utils/constants.dart';
+import 'package:wine/presentation/routes/router.gr.dart';
 
 class HomeRightDrawer extends StatelessWidget {
   final HomeNavigationMethods homeNavMethods;
@@ -64,7 +64,7 @@ class HomeRightDrawer extends StatelessWidget {
                           decoration: const BoxDecoration(border: Border(bottom: BorderSide(width: 3.0))),
                           height: 30.0,
                           child: GestureDetector(
-                            onTap: () => sailor(Constants.accountRoute),
+                            onTap: () => ExtendedNavigator.root.pushNamed(Routes.accountPage),
                             child: Text(
                               'MY ACCOUNT',
                               style: TextStyle(color: Colors.black, fontSize: 20.0, fontWeight: FontWeight.w300),
@@ -78,7 +78,7 @@ class HomeRightDrawer extends StatelessWidget {
                           decoration: const BoxDecoration(border: Border(bottom: BorderSide(width: 3.0))),
                           height: 30.0,
                           child: GestureDetector(
-                            onTap: () => sailor(Constants.settingsRoute),
+                            onTap: () => ExtendedNavigator.root.pushNamed(Routes.settingsPage),
                             child: Text(
                               'SETTINGS',
                               style: TextStyle(color: Colors.black, fontSize: 20.0, fontWeight: FontWeight.w300),

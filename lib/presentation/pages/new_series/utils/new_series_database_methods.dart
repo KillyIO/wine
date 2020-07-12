@@ -1,16 +1,15 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:wine/application/database/new_series/new_series_database_bloc.dart';
-import 'package:wine/presentation/pages/home/utils/home_navigation_methods.dart';
 import 'package:wine/presentation/widgets/wine_info_dialog.dart';
 import 'package:wine/presentation/widgets/wine_show_dialog.dart';
 
 class NewSeriesDatabaseMethods {
   final BuildContext context;
-  final HomeNavigationMethods homeNavMethods;
 
-  NewSeriesDatabaseMethods(this.context, this.homeNavMethods);
+  NewSeriesDatabaseMethods(this.context);
 
   void addCoverPressed() =>
       context.bloc<NewSeriesDatabaseBloc>().add(const NewSeriesDatabaseEvent.addCoverPressedEVT());
@@ -20,14 +19,13 @@ class NewSeriesDatabaseMethods {
     if (isEditMode) {
       context.bloc<NewSeriesDatabaseBloc>().add(const NewSeriesDatabaseEvent.saveSeriesDraftButtonPressedEVT());
     } else {
-      homeNavMethods.newSeriesIconPressed(isNSOpen: false);
-      Navigator.of(context).pop();
+      ExtendedNavigator.root.pop();
     }
   }
 
   void deleteDraft() {
     context.bloc<NewSeriesDatabaseBloc>().add(const NewSeriesDatabaseEvent.deleteDraftButtonPressedEVT());
-    Navigator.of(context).pop(true);
+    ExtendedNavigator.root.pop();
   }
 
   void isNSFWChanged({@required bool value}) =>
@@ -38,28 +36,25 @@ class NewSeriesDatabaseMethods {
 
     if (canPop) {
       FocusScope.of(context).requestFocus(FocusNode());
-      if (!context.bloc<NewSeriesDatabaseBloc>().state.isEditMode) {
-        homeNavMethods.newSeriesIconPressed(isNSOpen: false);
-      }
     }
     return canPop;
   }
 
-  void saveSeriesDraftButtonPressed({@required bool isEditMode}) {
+  Future<void> saveSeriesDraftButtonPressed({@required bool isEditMode}) async {
     if (isEditMode) {
       context.bloc<NewSeriesDatabaseBloc>().add(const NewSeriesDatabaseEvent.saveSeriesDraftButtonPressedEVT());
     } else {
-      wineShowDialog(
+      final bool result = await wineShowDialog(
         context: context,
         builder: (_) => WINEInfoDialog(
           message: 'This series will be available to the community once you publish the first chapter.',
           buttonText: 'GOT IT!',
-          onPressed: () {
-            Navigator.of(context).pop(true);
-            context.bloc<NewSeriesDatabaseBloc>().add(const NewSeriesDatabaseEvent.saveSeriesDraftButtonPressedEVT());
-          },
+          onPressed: () async => ExtendedNavigator.of(context).pop<bool>(true),
         ),
       );
+      if (result) {
+        context.bloc<NewSeriesDatabaseBloc>().add(const NewSeriesDatabaseEvent.saveSeriesDraftButtonPressedEVT());
+      }
     }
   }
 
@@ -75,7 +70,7 @@ class NewSeriesDatabaseMethods {
         context.bloc<NewSeriesDatabaseBloc>().add(NewSeriesDatabaseEvent.languageSelectedEVT(value));
         break;
     }
-    Navigator.of(context).pop(true);
+    ExtendedNavigator.of(context).pop<bool>(true);
   }
 
   void subtitleChanged(String value) =>

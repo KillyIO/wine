@@ -7,6 +7,7 @@ import 'package:wine/domain/database/database_success.dart';
 import 'package:wine/domain/models/series.dart';
 
 abstract class IOnlineSeriesDatabaseFacade {
+  Future<Either<DatabaseFailure, DatabaseSuccess>> deleteSeriesCover(String coverUrl);
   Future<Either<DatabaseFailure, DatabaseSuccess>> loadNewSeries({
     Series lastSeries,
     @required Map<String, dynamic> filters,

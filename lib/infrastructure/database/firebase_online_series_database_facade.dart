@@ -27,6 +27,14 @@ class FirebaseOnlineSeriesDatabaseFacade implements IOnlineSeriesDatabaseFacade 
   );
 
   @override
+  Future<Either<DatabaseFailure, DatabaseSuccess>> deleteSeriesCover(String coverUrl) async {
+    final StorageReference storageReference = await _firebaseStorage.getReferenceFromUrl(coverUrl);
+
+    await storageReference.delete();
+    return right(const DatabaseSuccess.seriesCoverDeletedSCS());
+  }
+
+  @override
   Future<Either<DatabaseFailure, DatabaseSuccess>> loadNewSeries({
     Series lastSeries,
     Map<String, dynamic> filters,

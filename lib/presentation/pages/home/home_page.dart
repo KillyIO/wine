@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:wine/application/database/home/home_database_bloc.dart';
+import 'package:wine/application/navigation/home/home_navigation_bloc.dart';
+import 'package:wine/injection.dart';
 import 'package:wine/presentation/pages/home/widgets/home_layout.dart';
 import 'package:wine/utils/themes.dart';
 
@@ -17,7 +21,13 @@ class _HomePageState extends State<HomePage> {
     ]);
     return AnnotatedRegion<SystemUiOverlayStyle>(
       value: Themes.wineLightTheme(),
-      child: HomeLayout(),
+      child: MultiBlocProvider(
+        providers: [
+          BlocProvider(create: (context) => getIt<HomeDatabaseBloc>()),
+          BlocProvider(create: (context) => getIt<HomeNavigationBloc>()),
+        ],
+        child: HomeLayout(),
+      ),
     );
   }
 }

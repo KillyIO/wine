@@ -8,15 +8,9 @@ import 'package:wine/presentation/pages/new_chapter/utils/new_chapter_listeners.
 import 'package:wine/presentation/pages/new_chapter/widgets/new_chapter_form.dart';
 import 'package:wine/presentation/widgets/wine_leading_image_button.dart';
 import 'package:wine/presentation/widgets/wine_loading_screen.dart';
-import 'package:wine/utils/arguments.dart';
 
 class NewChapterFormLayout extends StatefulWidget {
-  final NewChapterPageArgs args;
-
-  const NewChapterFormLayout({
-    Key key,
-    this.args,
-  }) : super(key: key);
+  const NewChapterFormLayout({Key key}) : super(key: key);
 
   @override
   _NewChapterFormLayoutState createState() => _NewChapterFormLayoutState();
@@ -34,7 +28,7 @@ class _NewChapterFormLayoutState extends State<NewChapterFormLayout> with Ticker
     _homeNavMethods = HomeNavigationMethods(context);
     _ncDbMethods = NewChapterDatabaseMethods(context, _homeNavMethods);
     _ncDbValidators = NewChapterDatabaseValidators(context);
-    _ncListeners = NewChapterListeners(_homeNavMethods, widget.args);
+    _ncListeners = NewChapterListeners(_homeNavMethods);
   }
 
   @override

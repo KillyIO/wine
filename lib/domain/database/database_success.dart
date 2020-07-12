@@ -27,7 +27,9 @@ abstract class DatabaseSuccess with _$DatabaseSuccess {
   const factory DatabaseSuccess.seriesDraftUpdatedSCS() = SeriesDraftUpdatedSCS;
   // SECTION Series online
   const factory DatabaseSuccess.seriesAsMapLoadedSCS(Map<String, Series> seriesMap) = SeriesAsMapLoadedSCS;
+  const factory DatabaseSuccess.seriesCoverDeletedSCS() = SeriesCoverDeletedSCS;
   const factory DatabaseSuccess.seriesCoverUploadedSCS(String coverUrl) = SeriesCoverUploadedSCS;
+  const factory DatabaseSuccess.seriesDeletedSCS() = SeriesDeletedSCS;
   const factory DatabaseSuccess.seriesListLoadedSCS(List<Series> series) = SeriesListLoadedSCS;
   const factory DatabaseSuccess.seriesLoadedSCS(Series series) = SeriesLoadedSCS;
   const factory DatabaseSuccess.seriesPublishedSCS() = SeriesPublishedSCS;
@@ -40,7 +42,9 @@ abstract class DatabaseSuccess with _$DatabaseSuccess {
   const factory DatabaseSuccess.chapterDraftSavedSCS() = ChapterDraftSavedSCS;
   const factory DatabaseSuccess.chapterDraftUpdatedSCS() = ChapterDraftUpdatedSCS;
   // SECTION Chapters online
+  const factory DatabaseSuccess.chapterCoverDeletedSCS() = ChapterCoverDeletedSCS;
   const factory DatabaseSuccess.chapterCoverUploadedSCS(String coverUrl) = ChapterCoverUploadedSCS;
+  const factory DatabaseSuccess.chapterDeletedSCS() = ChapterDeletedSCS;
   const factory DatabaseSuccess.chapterListLoadedSCS(List<Chapter> chapters) = ChapterListLoadedSCS;
   const factory DatabaseSuccess.chapterLoadedSCS(Chapter chapter) = ChapterLoadedSCS;
   const factory DatabaseSuccess.chapterPublishedSCS() = ChapterPublishedSCS;

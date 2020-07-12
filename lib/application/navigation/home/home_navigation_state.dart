@@ -5,7 +5,6 @@ abstract class HomeNavigationState with _$HomeNavigationState {
   const factory HomeNavigationState({
     @required bool isLeftDrawerOpen,
     @required bool isRightDrawerOpen,
-    @required bool isNewSeriesPageOpen,
     @required int currentPageViewIdx,
     @required List<String> pageViewNavbarItems,
   }) = _HomeNavigationState;
@@ -14,7 +13,6 @@ abstract class HomeNavigationState with _$HomeNavigationState {
         currentPageViewIdx: 0,
         isLeftDrawerOpen: false,
         isRightDrawerOpen: false,
-        isNewSeriesPageOpen: false,
         pageViewNavbarItems: <String>[],
       );
 }

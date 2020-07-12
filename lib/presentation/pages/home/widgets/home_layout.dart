@@ -52,10 +52,10 @@ class _HomeLayoutState extends State<HomeLayout> with AfterLayoutMixin {
 
     return MultiBlocListener(
       listeners: _homeListeners.listeners,
-      child: BlocBuilder<HomeNavigationBloc, HomeNavigationState>(
-        builder: (context, homeNavState) {
-          return BlocBuilder<HomeDatabaseBloc, HomeDatabaseState>(
-            builder: (context, homeDbState) {
+      child: BlocBuilder<HomeDatabaseBloc, HomeDatabaseState>(
+        builder: (context, homeDbState) {
+          return BlocBuilder<HomeNavigationBloc, HomeNavigationState>(
+            builder: (context, homeNavState) {
               return WillPopScope(
                 onWillPop: () async {
                   final bool canPop = Navigator.of(context).canPop();
@@ -73,11 +73,7 @@ class _HomeLayoutState extends State<HomeLayout> with AfterLayoutMixin {
                   children: <Widget>[
                     Scaffold(
                       backgroundColor: Colors.white,
-                      appBar: HomeAppBar(
-                        homeNavMethods: _homeNavMethods,
-                        isDrawerOpen: homeNavState.isRightDrawerOpen,
-                        isNewSeriesPageOpen: homeNavState.isNewSeriesPageOpen,
-                      ),
+                      appBar: HomeAppBar(homeNavMethods: _homeNavMethods, isDrawerOpen: homeNavState.isRightDrawerOpen),
                       body: Stack(
                         children: <Widget>[
                           if (!homeDbState.isLoading)
