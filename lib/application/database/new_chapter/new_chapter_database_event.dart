@@ -13,8 +13,10 @@ abstract class NewChapterDatabaseEvent with _$NewChapterDatabaseEvent {
   const factory NewChapterDatabaseEvent.chapterDeletedEVT() = ChapterDeletedEVT;
   const factory NewChapterDatabaseEvent.deleteDraftButtonPressedEVT() = DeleteDraftButtonPressedEVT;
   const factory NewChapterDatabaseEvent.editModeLaunchedEVT(ChapterDraft chapterDraft) = EditModeLaunchedEVT;
-  const factory NewChapterDatabaseEvent.failureWhenPublishingChapterEVT(String coverUrl) = FailureWhenPublishingChapterEVT;
-  const factory NewChapterDatabaseEvent.failureWhenPublishingSeriesEVT({String coverUrl}) = FailureWhenPublishingSeriesEVT;
+  const factory NewChapterDatabaseEvent.failureWhenPublishingChapterEVT(String coverUrl) =
+      FailureWhenPublishingChapterEVT;
+  const factory NewChapterDatabaseEvent.failureWhenPublishingSeriesEVT({String coverUrl}) =
+      FailureWhenPublishingSeriesEVT;
   const factory NewChapterDatabaseEvent.failureWhenUploadingSeriesCoverEVT() = FailureWhenUploadingSeriesCoverEVT;
   const factory NewChapterDatabaseEvent.genreOptionalSelectedEVT(String genreOptional) = GenreOptionalSelectedEVT;
   const factory NewChapterDatabaseEvent.genreSelectedEVT(String genre) = GenreSelectedEVT;
@@ -30,7 +32,6 @@ abstract class NewChapterDatabaseEvent with _$NewChapterDatabaseEvent {
   const factory NewChapterDatabaseEvent.placeholderFetchedEVT({
     Chapter previousChapter,
     SeriesDraft seriesDraft,
-    @required String sessionUid,
     @required String coverUrl,
   }) = PlaceholderFetchedEVT;
   const factory NewChapterDatabaseEvent.publishButtonPressedEVT() = PublishButtonPressedEVT;
@@ -44,7 +45,6 @@ abstract class NewChapterDatabaseEvent with _$NewChapterDatabaseEvent {
   const factory NewChapterDatabaseEvent.seriesDraftFetchedEVT(SeriesDraft seriesDraft) = SeriesDraftFetchedEVT;
   const factory NewChapterDatabaseEvent.seriesPublishedEVT(Series series) = SeriesPublishedEVT;
   const factory NewChapterDatabaseEvent.sessionFetchedEVT({
-    @required Session session,
     Chapter previousChapter,
     SeriesDraft seriesDraft,
   }) = SessionFetchedEVT;

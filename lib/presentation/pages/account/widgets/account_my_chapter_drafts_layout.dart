@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:hive/hive.dart';
@@ -5,10 +6,8 @@ import 'package:hive_flutter/hive_flutter.dart';
 import 'package:wine/application/database/account/account_database_bloc.dart';
 import 'package:wine/domain/models/hive/chapter_draft.dart';
 import 'package:wine/injection.dart';
-import 'package:wine/presentation/widgets/wine_chapter_tile.dart';
-import 'package:wine/routes.dart';
-import 'package:wine/utils/arguments.dart';
-import 'package:wine/utils/constants.dart';
+import 'package:wine/presentation/routes/router.gr.dart';
+import 'package:wine/presentation/widgets/chapter_tile/wine_chapter_tile.dart';
 
 class AccountMyChapterDraftsLayout extends StatelessWidget {
   @override
@@ -46,11 +45,10 @@ class AccountMyChapterDraftsLayout extends StatelessWidget {
                       child: WINEChapterTile(
                         coverUrl: chapterDraft.coverUrl,
                         title: chapterDraft.title,
-                        authorName: acDbState.session.username,
-                        seriesTitle: acDbState.seriesMap[chapterDraft.seriesUid]?.title,
-                        onPressed: () => sailor.navigate(
-                          Constants.newChapterRoute,
-                          args: NewChapterPageArgs(chapterDraft: chapterDraft, routeBack: Constants.accountRoute),
+                        authorUsername: acDbState.session.username,
+                        onPressed: () async => ExtendedNavigator.root.push(
+                          Routes.newChapterPage,
+                          arguments: NewChapterPageArguments(chapterDraft: chapterDraft),
                         ),
                       ),
                     );
@@ -60,11 +58,10 @@ class AccountMyChapterDraftsLayout extends StatelessWidget {
                       child: WINEChapterTile(
                         coverUrl: chapterDraft.coverUrl,
                         title: chapterDraft.title,
-                        authorName: acDbState.session.username,
-                        seriesTitle: acDbState.seriesDraftsMap[chapterDraft.seriesUid]?.title,
-                        onPressed: () => sailor.navigate(
-                          Constants.newChapterRoute,
-                          args: NewChapterPageArgs(chapterDraft: chapterDraft, routeBack: Constants.accountRoute),
+                        authorUsername: acDbState.session.username,
+                        onPressed: () async => ExtendedNavigator.root.push(
+                          Routes.newChapterPage,
+                          arguments: NewChapterPageArguments(chapterDraft: chapterDraft),
                         ),
                       ),
                     );

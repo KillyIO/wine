@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:wine/utils/palettes.dart';
@@ -40,7 +41,7 @@ class WINEWarningDialog extends StatelessWidget {
                   child: Container(
                     color: Colors.black,
                     child: FlatButton(
-                      onPressed: () => Navigator.of(context).pop(true),
+                      onPressed: () async => ExtendedNavigator.of(context).pop<bool>(true),
                       child: Text(
                         'CANCEL',
                         textAlign: TextAlign.center,

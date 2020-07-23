@@ -14,36 +14,6 @@ class FirebaseOnlineUserDatabaseFacade extends IOnlineUserDatabaseFacade {
   FirebaseOnlineUserDatabaseFacade(this._firestore);
 
   @override
-  Future<Either<DatabaseFailure, DatabaseSuccess>> saveDetailsFromUser(User user) async {
-    User finalUser = user;
-
-    final DocumentReference ref = _firestore.collection(Paths.usersPath).document(finalUser.uid);
-
-    final failureOrSuccess = await loadUser(finalUser.uid);
-
-    User dbUser;
-    failureOrSuccess.fold((_) {}, (success) {
-      if (success is UserLoadedSCS) {
-        dbUser = success.user;
-      }
-    });
-
-    if (dbUser != null) {
-      finalUser = dbUser;
-      finalUser.updatedAt = DateTime.now().millisecondsSinceEpoch;
-    }
-
-    final DocumentReference mapReference = _firestore.collection(Paths.usernameUidMapPath).document(finalUser.username);
-
-    await Future.wait([
-      // map the uid to the username
-      mapReference.setData({'uid': finalUser.uid}, merge: true),
-      ref.setData(finalUser.toMap(), merge: true),
-    ]);
-    return right(DatabaseSuccess.userDetailsSavedSCS(finalUser));
-  }
-
-  @override
   Future<Either<DatabaseFailure, DatabaseSuccess>> loadUser(String sessionUid) async {
     final DocumentReference ref = _firestore.collection(Paths.usersPath).document(sessionUid);
 
@@ -71,5 +41,35 @@ class FirebaseOnlineUserDatabaseFacade extends IOnlineUserDatabaseFacade {
     final Map<String, User> usersMap = {for (final User user in usersList) user.uid: user};
 
     return right(DatabaseSuccess.userAsMapLoadedSCS(usersMap));
+  }
+
+  @override
+  Future<Either<DatabaseFailure, DatabaseSuccess>> saveDetailsFromUser(User user) async {
+    User finalUser = user;
+
+    final DocumentReference ref = _firestore.collection(Paths.usersPath).document(finalUser.uid);
+
+    final failureOrSuccess = await loadUser(finalUser.uid);
+
+    User dbUser;
+    failureOrSuccess.fold((_) {}, (success) {
+      if (success is UserLoadedSCS) {
+        dbUser = success.user;
+      }
+    });
+
+    if (dbUser != null) {
+      finalUser = dbUser;
+      finalUser.updatedAt = DateTime.now().millisecondsSinceEpoch;
+    }
+
+    final DocumentReference mapReference = _firestore.collection(Paths.usernameUidMapPath).document(finalUser.username);
+
+    await Future.wait([
+      // map the uid to the username
+      mapReference.setData({'uid': finalUser.uid}, merge: true),
+      ref.setData(finalUser.toMap(), merge: true),
+    ]);
+    return right(DatabaseSuccess.userDetailsSavedSCS(finalUser));
   }
 }

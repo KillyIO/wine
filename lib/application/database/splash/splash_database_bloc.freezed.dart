@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named
+// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
 
 part of 'splash_database_bloc.dart';
 
@@ -12,12 +12,14 @@ T _$identity<T>(T value) => value;
 class _$SplashDatabaseEventTearOff {
   const _$SplashDatabaseEventTearOff();
 
+// ignore: unused_element
   AuthenticatedEVT authenticatedEVT({@required bool isAnonymous}) {
     return AuthenticatedEVT(
       isAnonymous: isAnonymous,
     );
   }
 
+// ignore: unused_element
   PlaceholdersLoadedEVT placeholdersLoadedEVT(
       Map<String, String> placeholders) {
     return PlaceholdersLoadedEVT(
@@ -25,16 +27,19 @@ class _$SplashDatabaseEventTearOff {
     );
   }
 
+// ignore: unused_element
   PlaceholdersSavedEVT placeholdersSavedEVT() {
     return const PlaceholdersSavedEVT();
   }
 
+// ignore: unused_element
   SessionFetchedEVT sessionFetchedEVT(Session session) {
     return SessionFetchedEVT(
       session,
     );
   }
 
+// ignore: unused_element
   UserLoadedEVT userLoadedEVT(User user) {
     return UserLoadedEVT(
       user,
@@ -736,6 +741,7 @@ abstract class UserLoadedEVT implements SplashDatabaseEvent {
 class _$SplashDatabaseStateTearOff {
   const _$SplashDatabaseStateTearOff();
 
+// ignore: unused_element
   _SplashDatabaseState call(
       {@required
           bool isAnonymous,

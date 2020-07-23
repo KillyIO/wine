@@ -95,21 +95,25 @@ class NewSeriesDatabaseBloc extends Bloc<NewSeriesDatabaseEvent, NewSeriesDataba
       deleteDraftButtonPressedEVT: (event) async* {
         yield state.copyWith(isCreatingOrDeleting: true, databaseFailureOrSuccessOption: none());
 
-        final ChapterDraft chapterDraft =
-            getIt<Box<ChapterDraft>>().values.toList().singleWhere((cD) => cD.seriesUid == state.seriesDraft.uid);
+        final List<ChapterDraft> chapterDrafts = getIt<Box<ChapterDraft>>().values.toList();
 
-        final Either<DatabaseFailure, DatabaseSuccess> failureOrSuccess =
-            await _localChapterDraftDatabaseFacade.deleteChapterDraft(chapterDraft.uid);
-        failureOrSuccess.fold(
-          (_) {},
-          (success) {
-            if (success is ChapterDraftDeletedSCS) {
-              add(const NewSeriesDatabaseEvent.chapterDraftDeletedEVT());
-            }
-          },
-        );
+        if (chapterDrafts.isNotEmpty) {
+          final ChapterDraft chapterDraft = chapterDrafts.singleWhere((cD) => cD.seriesUid == state.seriesDraft.uid);
 
-        yield state.copyWith(databaseFailureOrSuccessOption: optionOf(failureOrSuccess));
+          final Either<DatabaseFailure, DatabaseSuccess> failureOrSuccess =
+              await _localChapterDraftDatabaseFacade.deleteChapterDraft(chapterDraft.uid);
+          failureOrSuccess.fold(
+            (_) {},
+            (success) {
+              if (success is ChapterDraftDeletedSCS) {
+                add(const NewSeriesDatabaseEvent.chapterDraftDeletedEVT());
+              }
+            },
+          );
+          yield state.copyWith(databaseFailureOrSuccessOption: optionOf(failureOrSuccess));
+        } else {
+          add(const NewSeriesDatabaseEvent.chapterDraftDeletedEVT());
+        }
       },
       editModeLaunchedEVT: (event) async* {
         state.subtitleController.text = event.seriesDraft.subtitle;

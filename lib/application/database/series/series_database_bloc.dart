@@ -6,6 +6,8 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/widgets.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
+import 'package:wine/application/database/series/utils/series_database_methods_for_private_events.dart';
+import 'package:wine/application/database/series/utils/series_database_methods_for_public_events.dart';
 
 import 'package:wine/domain/authentication/i_authentication_facade.dart';
 import 'package:wine/domain/database/database_failure.dart';
@@ -13,12 +15,11 @@ import 'package:wine/domain/database/database_success.dart';
 import 'package:wine/domain/database/i_local_session_database_facade.dart';
 import 'package:wine/domain/database/i_online_chapter_database_facade.dart';
 import 'package:wine/domain/database/i_online_series_database_facade.dart';
-import 'package:wine/domain/models/chapter.dart';
+import 'package:wine/domain/database/i_online_user_database_facade.dart';
+import 'package:wine/domain/models/chapter_minified.dart';
 import 'package:wine/domain/models/hive/session.dart';
 import 'package:wine/domain/models/series.dart';
-import 'package:wine/routes.dart';
-import 'package:wine/utils/arguments.dart';
-import 'package:wine/utils/constants.dart';
+import 'package:wine/domain/models/user.dart';
 import 'package:wine/utils/methods.dart';
 
 part 'series_database_bloc.freezed.dart';
@@ -26,38 +27,47 @@ part 'series_database_event.dart';
 part 'series_database_state.dart';
 
 @injectable
-class SeriesDatabaseBloc extends Bloc<SeriesDatabaseEvent, SeriesDatabaseState> {
+class SeriesDatabaseBloc extends Bloc<SeriesDatabaseEvent, SeriesDatabaseState>
+    with SeriesDatabaseMethodsForPrivateEvents, SeriesDatabaseMethodsForPublicEvents {
   final IAuthenticationFacade _authenticationFacade;
   final ILocalSessionDatabaseFacade _localSessionDatabaseFacade;
   final IOnlineChapterDatabaseFacade _onlineChapterDatabaseFacade;
   final IOnlineSeriesDatabaseFacade _onlineSeriesDatabaseFacade;
+  final IOnlineUserDatabaseFacade _onlineUserDatabaseFacade;
 
   SeriesDatabaseBloc(
     this._authenticationFacade,
     this._localSessionDatabaseFacade,
     this._onlineChapterDatabaseFacade,
     this._onlineSeriesDatabaseFacade,
+    this._onlineUserDatabaseFacade,
   ) : super(SeriesDatabaseState.initial());
 
   @override
   Stream<SeriesDatabaseState> mapEventToState(SeriesDatabaseEvent event) async* {
     yield* event.map(
-      bookmarkButtonPressedEVT: (event) async* {
-        final Either<DatabaseFailure, DatabaseSuccess> failureOrSuccess = await _onlineSeriesDatabaseFacade
-            .updateSeriesBookmarks(userUid: state.session.uid, seriesUid: state.series.uid);
+      authorLoadedEVT: (event) async* {
+        ChapterMinified chapterMinified;
+
+        final Either<DatabaseFailure, DatabaseSuccess> failureOrSuccess =
+            await _onlineChapterDatabaseFacade.loadFirstChapterMinified(state.series.uid);
         failureOrSuccess.fold(
           (_) {},
           (success) {
-            if (success is SeriesStatsCountUpdatedSCS) {
-              add(const SeriesDatabaseEvent.bookmarksUpdatedEVT());
+            if (success is ChapterMinifiedLoadedSCS) {
+              chapterMinified = success.chapterMinified;
+              add(const SeriesDatabaseEvent.firstChapterMinifiedLoadedEVT());
             }
           },
         );
 
         yield state.copyWith(
+          chapterOneMinified: chapterMinified,
           databaseFailureOrSuccessOption: optionOf(failureOrSuccess),
-          isBookmarked: !state.isBookmarked,
         );
+      },
+      bookmarkButtonPressedEVT: (event) async* {
+        yield* updateSeriesBookmarks(_onlineSeriesDatabaseFacade);
       },
       bookmarksUpdatedEVT: (event) async* {
         int bookmarksCount = 0;
@@ -78,20 +88,25 @@ class SeriesDatabaseBloc extends Bloc<SeriesDatabaseEvent, SeriesDatabaseState> 
           databaseFailureOrSuccessOption: optionOf(failureOrSuccess),
         );
       },
-      likeButtonPressedEVT: (event) async* {
-        final Either<DatabaseFailure, DatabaseSuccess> failureOrSuccess = await _onlineSeriesDatabaseFacade
-            .updateSeriesLikesAndLikesCount(userUid: state.session.uid, seriesUid: state.series.uid);
+      firstChapterMinifiedLoadedEVT: (event) async* {
+        Session session;
 
+        final Either<DatabaseFailure, DatabaseSuccess> failureOrSuccess =
+            await _localSessionDatabaseFacade.fetchSession();
         failureOrSuccess.fold(
           (_) {},
           (success) {
-            if (success is SeriesStatsCountUpdatedSCS) {
-              add(const SeriesDatabaseEvent.likesUpdatedEVT());
+            if (success is SessionFetchedSCS) {
+              session = success.session;
+              add(SeriesDatabaseEvent.sessionFetchedEVT(session));
             }
           },
         );
 
-        yield state.copyWith(databaseFailureOrSuccessOption: optionOf(failureOrSuccess), isLiked: !state.isLiked);
+        yield state.copyWith(databaseFailureOrSuccessOption: optionOf(failureOrSuccess), session: session);
+      },
+      likeButtonPressedEVT: (event) async* {
+        yield* updateSeriesLikesAndLikesCount(_onlineSeriesDatabaseFacade);
       },
       likesUpdatedEVT: (event) async* {
         int likesCount = 0;
@@ -108,37 +123,6 @@ class SeriesDatabaseBloc extends Bloc<SeriesDatabaseEvent, SeriesDatabaseState> 
         );
 
         yield state.copyWith(databaseFailureOrSuccessOption: optionOf(failureOrSuccess), likesCount: likesCount);
-      },
-      readChapterOneButtonPressedEVT: (event) async* {
-        Either<DatabaseFailure, DatabaseSuccess> failureOrSuccess;
-
-        yield state.copyWith(databaseFailureOrSuccessOption: none());
-
-        Chapter chapterOne = Chapter();
-
-        if (!state.chapterOne.isEmpty) {
-          chapterOne = state.chapterOne;
-        } else {
-          failureOrSuccess = await _onlineChapterDatabaseFacade.loadFirstChapter(state.series.uid);
-          failureOrSuccess.fold(
-            (_) {},
-            (success) {
-              if (success is ChapterLoadedSCS) {
-                chapterOne = success.chapter;
-                chapterOne
-                  ..series = state.series
-                  ..author = state.series.author;
-              }
-            },
-          );
-        }
-
-        sailor.navigate(
-          Constants.chapterRoute,
-          args: ChapterPageArgs(chapter: chapterOne, predicateRoute: Constants.seriesRoute),
-        );
-
-        yield state.copyWith(chapterOne: chapterOne, databaseFailureOrSuccessOption: optionOf(failureOrSuccess));
       },
       seriesBookmarkStatusLoadedEVT: (event) async* {
         int bookmarksCount = 0;
@@ -218,27 +202,49 @@ class SeriesDatabaseBloc extends Bloc<SeriesDatabaseEvent, SeriesDatabaseState> 
           likesCount: likesCount,
         );
       },
-      seriesPageLaunchedEVT: (event) async* {
-        Session session = Session();
+      seriesLoadedEVT: (event) async* {
+        User author;
 
         final Either<DatabaseFailure, DatabaseSuccess> failureOrSuccess =
-            await _localSessionDatabaseFacade.fetchSession();
+            await _onlineUserDatabaseFacade.loadUser(state.series.authorUid);
         failureOrSuccess.fold(
           (_) {},
           (success) {
-            if (success is SessionFetchedSCS) {
-              session = success.session;
-              add(SeriesDatabaseEvent.sessionFetchedEVT(session));
+            if (success is UserLoadedSCS) {
+              author = success.user;
+              add(const SeriesDatabaseEvent.authorLoadedEVT());
+            }
+          },
+        );
+
+        yield state.copyWith(
+          author: author,
+          databaseFailureOrSuccessOption: optionOf(failureOrSuccess),
+        );
+      },
+      seriesPageLaunchedEVT: (event) async* {
+        yield state.copyWith(
+          genresMap: Methods.getGenres(event.context),
+          languagesMap: Methods.getLanguages(event.context),
+        );
+
+        Series series;
+
+        final Either<DatabaseFailure, DatabaseSuccess> failureOrSuccess =
+            await _onlineSeriesDatabaseFacade.loadSeriesByUid(event.seriesUid);
+        failureOrSuccess.fold(
+          (_) {},
+          (success) {
+            if (success is SeriesLoadedSCS) {
+              series = success.series;
+              add(const SeriesDatabaseEvent.seriesLoadedEVT());
             }
           },
         );
 
         yield state.copyWith(
           databaseFailureOrSuccessOption: optionOf(failureOrSuccess),
-          genresMap: Methods.getGenres(event.context),
-          languagesMap: Methods.getLanguages(event.context),
-          series: event.series,
-          session: session,
+          series: series,
         );
       },
       seriesViewsLoadedEVT: (event) async* {

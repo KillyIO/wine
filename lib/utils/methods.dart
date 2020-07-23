@@ -1,11 +1,10 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:sailor/sailor.dart';
 import 'package:time/time.dart';
 import 'package:wine/application/authentication/core/core_authentication_bloc.dart';
 import 'package:wine/application/navigation/home/home_navigation_bloc.dart';
-import 'package:wine/routes.dart';
-import 'package:wine/utils/constants.dart';
+import 'package:wine/presentation/routes/router.gr.dart';
 
 class Methods {
   static Map<String, String> getGenres(BuildContext context) {
@@ -102,11 +101,7 @@ class Methods {
   }
 
   static void pseudoRestart(BuildContext context) {
-    sailor.navigate(
-      Constants.homeRoute,
-      navigationType: NavigationType.pushAndRemoveUntil,
-      removeUntilPredicate: (_) => false,
-    );
+    ExtendedNavigator.root.pushAndRemoveUntil(Routes.homePage, (route) => false);
     context.bloc<CoreAuthenticationBloc>().add(const CoreAuthenticationEvent.userStatusChangedEVT());
     context.bloc<HomeNavigationBloc>().add(const HomeNavigationEvent.resetBlocEVT());
   }

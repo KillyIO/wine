@@ -1,22 +1,21 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
-import 'package:wine/domain/models/series.dart';
+import 'package:wine/domain/models/series_minified.dart';
+import 'package:wine/presentation/routes/router.gr.dart';
 import 'package:wine/presentation/widgets/wine_series_card.dart';
-import 'package:wine/routes.dart';
-import 'package:wine/utils/arguments.dart';
-import 'package:wine/utils/constants.dart';
 import 'package:wine/utils/extensions.dart';
 
 class HomeTopFiveSeriesLayout extends StatelessWidget {
-  final List<Series> topFiveSeries;
+  final List<SeriesMinified> topFiveSeriesMinified;
   final String genreStr;
   final String timeStr;
 
   const HomeTopFiveSeriesLayout({
     Key key,
-    this.topFiveSeries,
-    this.genreStr,
-    this.timeStr,
+    @required this.topFiveSeriesMinified,
+    @required this.genreStr,
+    @required this.timeStr,
   }) : super(key: key);
 
   @override
@@ -48,23 +47,26 @@ class HomeTopFiveSeriesLayout extends StatelessWidget {
             behavior: const ScrollBehavior(),
             child: ListView.builder(
               scrollDirection: Axis.horizontal,
-              itemCount: topFiveSeries.length,
+              itemCount: topFiveSeriesMinified.length,
               itemBuilder: (BuildContext context, int index) {
-                final Series series = topFiveSeries[index];
+                final SeriesMinified seriesMinified = topFiveSeriesMinified[index];
 
                 return Row(
                   children: <Widget>[
                     if (index == 0) const SizedBox(width: 20),
                     WINESeriesCard(
-                      uid: series.uid,
-                      title: series.title,
-                      coverUrl: series.coverUrl,
-                      authorName: series.author.username,
-                      onPressed: () => sailor.navigate(Constants.seriesRoute, args: SeriesPageArgs(series: series)),
+                      uid: seriesMinified.uid,
+                      title: seriesMinified.title,
+                      coverUrl: seriesMinified.coverUrl,
+                      authorUsername: seriesMinified.authorUsername,
+                      onPressed: () async => ExtendedNavigator.root.push(
+                        Routes.seriesPage,
+                        arguments: SeriesPageArguments(seriesUid: seriesMinified.uid),
+                      ),
                       width: mediaQuery.width / 2.5,
                       height: mediaQuery.height / 3,
                       titleFontSize: 16.0,
-                      authorNameFontSize: 15.0,
+                      authorUsernameFontSize: 15.0,
                     ),
                     const SizedBox(width: 20),
                   ],

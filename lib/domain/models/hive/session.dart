@@ -121,4 +121,12 @@ class Session extends HiveObject {
         updatedAt.hashCode ^
         bio.hashCode;
   }
+
+  bool get isEmpty {
+    return uid == null && name == null && username == null && email == null && createdAt == null && updatedAt == null;
+  }
+
+  bool get isNotEmpty {
+    return uid != null && name != null && username != null && email != null && createdAt != null && updatedAt != null;
+  }
 }

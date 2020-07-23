@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named
+// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
 
 part of 'database_failure.dart';
 
@@ -12,42 +12,52 @@ T _$identity<T>(T value) => value;
 class _$DatabaseFailureTearOff {
   const _$DatabaseFailureTearOff();
 
+// ignore: unused_element
   FailedToCreateOnlineData failedToCreateOnlineData() {
     return const FailedToCreateOnlineData();
   }
 
+// ignore: unused_element
   FailedToFetchOnlineData failedToFetchOnlineData() {
     return const FailedToFetchOnlineData();
   }
 
+// ignore: unused_element
   FailedToUpdateOnlineData failedToUpdateOnlineData() {
     return const FailedToUpdateOnlineData();
   }
 
+// ignore: unused_element
   FailedToDeleteOnlineData failedToDeleteOnlineData() {
     return const FailedToDeleteOnlineData();
   }
 
+// ignore: unused_element
   InsufficientPermissions insufficientPermissions() {
     return const InsufficientPermissions();
   }
 
+// ignore: unused_element
   Unexpected unexpected() {
     return const Unexpected();
   }
 
+// ignore: unused_element
   FailedToCreateLocalData failedToCreateLocalData() {
     return const FailedToCreateLocalData();
   }
 
+// ignore: unused_element
   FailedToRetrieveLocalData failedToRetrieveLocalData() {
     return const FailedToRetrieveLocalData();
   }
 
+// ignore: unused_element
   FailedToUpdateLocalData failedToUpdateLocalData() {
     return const FailedToUpdateLocalData();
   }
 
+// ignore: unused_element
   FailedToDeleteLocalData failedToDeleteLocalData() {
     return const FailedToDeleteLocalData();
   }

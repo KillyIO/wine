@@ -4,10 +4,8 @@ part of 'account_database_bloc.dart';
 abstract class AccountDatabaseState with _$AccountDatabaseState {
   const factory AccountDatabaseState({
     @required bool isFetching,
-    @required List<Chapter> chapters,
-    @required List<Series> series,
-    @required Map<String, Series> seriesMap,
-    @required Map<String, SeriesDraft> seriesDraftsMap,
+    @required List<ChapterMinified> chaptersMinified,
+    @required List<SeriesMinified> seriesMinified,
     @required Map<String, String> copyrights,
     @required Map<String, String> genres,
     @required Map<String, String> languages,
@@ -16,15 +14,13 @@ abstract class AccountDatabaseState with _$AccountDatabaseState {
   }) = _AccountDatabaseState;
 
   factory AccountDatabaseState.initial() => AccountDatabaseState(
-        chapters: <Chapter>[],
+        chaptersMinified: <ChapterMinified>[],
         copyrights: <String, String>{},
         databaseFailureOrSuccessOption: none(),
         genres: <String, String>{},
         isFetching: false,
         languages: <String, String>{},
-        series: <Series>[],
-        seriesDraftsMap: <String, SeriesDraft>{},
-        seriesMap: <String, Series>{},
+        seriesMinified: <SeriesMinified>[],
         session: Session(),
       );
 }

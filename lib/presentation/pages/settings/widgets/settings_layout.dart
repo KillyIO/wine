@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:wine/application/authentication/settings/settings_authentication_bloc.dart';
 import 'package:wine/application/database/settings/settings_database_bloc.dart';
+import 'package:wine/presentation/pages/settings/utils/settings_authentication_methods.dart';
 import 'package:wine/presentation/pages/settings/utils/settings_listeners.dart';
 import 'package:wine/presentation/pages/settings/widgets/settings_account_settings.dart';
 import 'package:wine/presentation/pages/settings/widgets/settings_app_version.dart';
@@ -16,6 +17,14 @@ class SettingsLayout extends StatefulWidget {
 
 class _SettingsLayoutState extends State<SettingsLayout> with TickerProviderStateMixin {
   final SettingsListeners _stgsListeners = SettingsListeners();
+
+  SettingsAuthenticationMethods _stgsAuthMethods;
+
+  @override
+  void initState() {
+    super.initState();
+    _stgsAuthMethods = SettingsAuthenticationMethods(context);
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -36,12 +45,16 @@ class _SettingsLayoutState extends State<SettingsLayout> with TickerProviderStat
             padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 5.0),
             child: WINELeadingImageButton(
               imagePath: 'assets/img/back_button.png',
-              onPressed: () => ExtendedNavigator.root.pop(),
+              onPressed: () async => ExtendedNavigator.root.pop(),
             ),
           ),
           title: const Text(
             'SETTINGS',
-            style: TextStyle(color: Colors.black, fontSize: 18.0, fontWeight: FontWeight.w300),
+            style: TextStyle(
+              color: Colors.black,
+              fontSize: 18.0,
+              fontWeight: FontWeight.w300,
+            ),
           ),
         ),
       ),
@@ -58,8 +71,14 @@ class _SettingsLayoutState extends State<SettingsLayout> with TickerProviderStat
                         behavior: const ScrollBehavior(),
                         child: ListView(
                           children: <Widget>[
-                            SettingsAccountSettings(session: settingsDbState.session),
-                            const Padding(padding: EdgeInsets.symmetric(vertical: 10.0), child: SettingsAppVersion()),
+                            SettingsAccountSettings(
+                              stgsAuthMethods: _stgsAuthMethods,
+                              session: settingsDbState.session,
+                            ),
+                            const Padding(
+                              padding: EdgeInsets.symmetric(vertical: 10.0),
+                              child: SettingsAppVersion(),
+                            ),
                           ],
                         ),
                       ),

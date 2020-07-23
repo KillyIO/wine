@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -5,8 +6,8 @@ import 'package:wine/application/authentication/sign_in/sign_in_authentication_b
 import 'package:wine/application/database/sign_in/sign_in_database_bloc.dart';
 import 'package:wine/domain/authentication/authentication_success.dart';
 import 'package:wine/domain/database/database_success.dart';
-import 'package:wine/presentation/widgets/wine_error_dialog.dart';
-import 'package:wine/presentation/widgets/wine_show_dialog.dart';
+import 'package:wine/presentation/widgets/dialog/wine_error_dialog.dart';
+import 'package:wine/presentation/widgets/dialog/wine_show_dialog.dart';
 import 'package:wine/utils/methods.dart';
 
 class SignInListeners {
@@ -25,14 +26,14 @@ class SignInListeners {
                   context: context,
                   builder: (_) => WINEErrorDialog(
                     message: 'An unexpected error occured!',
-                    onPressed: () => Navigator.of(context).pop(true),
+                    onPressed: () async => ExtendedNavigator.of(context).pop<bool>(true),
                   ),
                 ),
                 invalidEmailAndPasswordCombination: (_) => wineShowDialog(
                   context: context,
                   builder: (_) => WINEErrorDialog(
                     message: 'Incorrect email or password.',
-                    onPressed: () => Navigator.of(context).pop(true),
+                    onPressed: () async => ExtendedNavigator.of(context).pop<bool>(true),
                   ),
                 ),
                 orElse: () => null,
@@ -58,14 +59,14 @@ class SignInListeners {
                   context: context,
                   builder: (_) => WINEErrorDialog(
                     message: 'Failed to send data to our servers! Please try again.',
-                    onPressed: () => Navigator.of(context).pop(true),
+                    onPressed: () async => ExtendedNavigator.of(context).pop<bool>(true),
                   ),
                 ),
                 failedToCreateLocalData: (_) => wineShowDialog(
                   context: context,
                   builder: (_) => WINEErrorDialog(
                     message: 'Failed to save data on your device! Please try again.',
-                    onPressed: () => Navigator.of(context).pop(true),
+                    onPressed: () async => ExtendedNavigator.of(context).pop<bool>(true),
                   ),
                 ),
                 orElse: () => null,

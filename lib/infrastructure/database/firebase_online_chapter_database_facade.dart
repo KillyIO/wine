@@ -9,24 +9,18 @@ import 'package:path/path.dart' as p;
 import 'package:wine/domain/database/database_failure.dart';
 import 'package:wine/domain/database/database_success.dart';
 import 'package:wine/domain/database/i_online_chapter_database_facade.dart';
-import 'package:wine/domain/database/i_online_series_database_facade.dart';
-import 'package:wine/domain/database/i_online_user_database_facade.dart';
 import 'package:wine/domain/models/chapter.dart';
-import 'package:wine/domain/models/user.dart';
+import 'package:wine/domain/models/chapter_minified.dart';
 import 'package:wine/utils/paths.dart';
 
 @LazySingleton(as: IOnlineChapterDatabaseFacade)
 class FirebaseOnlineChapterDatabaseFacade implements IOnlineChapterDatabaseFacade {
   final Firestore _firestore;
   final FirebaseStorage _firebaseStorage;
-  final IOnlineSeriesDatabaseFacade _onlineSeriesDatabaseFacade;
-  final IOnlineUserDatabaseFacade _onlineUserDatabaseFacade;
 
   FirebaseOnlineChapterDatabaseFacade(
     this._firestore,
     this._firebaseStorage,
-    this._onlineSeriesDatabaseFacade,
-    this._onlineUserDatabaseFacade,
   );
 
   @override
@@ -59,7 +53,7 @@ class FirebaseOnlineChapterDatabaseFacade implements IOnlineChapterDatabaseFacad
   }
 
   @override
-  Future<Either<DatabaseFailure, DatabaseSuccess>> loadChapterById(String chapterUid) async {
+  Future<Either<DatabaseFailure, DatabaseSuccess>> loadChapterByUid(String chapterUid) async {
     final DocumentReference ref = _firestore.collection(Paths.chaptersPath).document(chapterUid);
 
     final DocumentSnapshot snapshot = await ref.get();
@@ -84,107 +78,60 @@ class FirebaseOnlineChapterDatabaseFacade implements IOnlineChapterDatabaseFacad
   }
 
   @override
-  Future<Either<DatabaseFailure, DatabaseSuccess>> loadChaptersBySeriesUidAndIndex(
+  Future<Either<DatabaseFailure, DatabaseSuccess>> loadChaptersMinifiedBySeriesUidAndIndex(
     String seriesUid,
-    int index, {
-    bool loadAuthors = false,
-    bool loadSeries = false,
-  }) async {
-    final CollectionReference chaptersCollection = _firestore.collection(Paths.chaptersPath);
+    int index,
+  ) async {
+    final CollectionReference chaptersMinifiedCollection = _firestore.collection(Paths.chaptersMinifiedPath);
 
-    final QuerySnapshot querySnapshot = await chaptersCollection
+    final QuerySnapshot querySnapshot = await chaptersMinifiedCollection
         .where('seriesUid', isEqualTo: seriesUid)
         .where('index', isEqualTo: index)
         .getDocuments();
 
-    final List<Chapter> chaptersList = <Chapter>[];
-    if (!loadAuthors) {
+    final List<ChapterMinified> chaptersMinifiedList = <ChapterMinified>[];
+    if (querySnapshot.documents.isNotEmpty) {
       for (final DocumentSnapshot document in querySnapshot.documents) {
-        chaptersList.add(Chapter.fromFirestore(document));
-      }
-    } else {
-      final List<String> userUid = <String>[];
-      for (final DocumentSnapshot doc in querySnapshot.documents) {
-        chaptersList.add(Chapter.fromFirestore(doc));
-        userUid.add(doc.data['authorUid'] as String);
-
-        Map<String, User> usersMap = <String, User>{};
-
-        if (userUid.isNotEmpty) {
-          final Either<DatabaseFailure, DatabaseSuccess> failureOrSuccess =
-              await _onlineUserDatabaseFacade.loadUsersAsMapByUidList(userUid);
-          failureOrSuccess.fold(
-            (failure) => left(failure),
-            (success) {
-              if (success is UserAsMapLoadedSCS) {
-                usersMap = success.usersMap;
-              }
-            },
-          );
-
-          for (final Chapter chapter in chaptersList) {
-            chapter.author = usersMap[chapter.authorUid];
-          }
-        }
+        chaptersMinifiedList.add(ChapterMinified.fromFirestore(document));
       }
     }
-    return right(DatabaseSuccess.chapterListLoadedSCS(chaptersList));
+
+    return right(DatabaseSuccess.chapterMinifiedListLoadedSCS(chaptersMinifiedList));
   }
 
   @override
-  Future<Either<DatabaseFailure, DatabaseSuccess>> loadChaptersByUserId(
+  Future<Either<DatabaseFailure, DatabaseSuccess>> loadChaptersMinifiedByUserUid(
     String uid, {
-    Chapter lastChapter,
-    bool loadSeries = false,
+    ChapterMinified lastChapterMinified,
   }) async {
-    final CollectionReference chaptersCollection = _firestore.collection(Paths.chaptersPath);
+    final CollectionReference chaptersMinifiedCollection = _firestore.collection(Paths.chaptersMinifiedPath);
 
     QuerySnapshot querySnapshot;
-    if (lastChapter != null) {
-      final DocumentSnapshot lastDocument = await chaptersCollection.document(lastChapter.uid).get();
+    if (lastChapterMinified != null) {
+      final DocumentSnapshot lastDocument = await chaptersMinifiedCollection.document(lastChapterMinified.uid).get();
 
-      querySnapshot = await chaptersCollection
+      querySnapshot = await chaptersMinifiedCollection
           .startAfterDocument(lastDocument)
           .where('authorUid', isEqualTo: uid)
           .orderBy('createdAt', descending: true)
           .limit(20)
           .getDocuments();
     } else {
-      querySnapshot = await chaptersCollection
+      querySnapshot = await chaptersMinifiedCollection
           .where('authorUid', isEqualTo: uid)
           .orderBy('createdAt', descending: true)
           .limit(20)
           .getDocuments();
     }
 
-    final List<Chapter> chaptersList = <Chapter>[];
-    if (!loadSeries) {
+    final List<ChapterMinified> chaptersMinifiedList = <ChapterMinified>[];
+    if (querySnapshot.documents.isNotEmpty) {
       for (final DocumentSnapshot doc in querySnapshot.documents) {
-        chaptersList.add(Chapter.fromFirestore(doc));
-      }
-    } else {
-      final List<String> seriesUid = <String>[];
-      for (final DocumentSnapshot doc in querySnapshot.documents) {
-        chaptersList.add(Chapter.fromFirestore(doc));
-        seriesUid.add(doc.data['seriesUid'] as String);
-      }
-
-      if (seriesUid.isNotEmpty) {
-        final Either<DatabaseFailure, DatabaseSuccess> failureOrSuccess =
-            await _onlineSeriesDatabaseFacade.loadSeriesAsMapByUidList(seriesUid);
-        failureOrSuccess.fold(
-          (failure) => left(failure),
-          (success) {
-            if (success is SeriesAsMapLoadedSCS) {
-              for (final Chapter chapter in chaptersList) {
-                chapter.series = success.seriesMap[chapter.seriesUid];
-              }
-            }
-          },
-        );
+        chaptersMinifiedList.add(ChapterMinified.fromFirestore(doc));
       }
     }
-    return right(DatabaseSuccess.chapterListLoadedSCS(chaptersList));
+
+    return right(DatabaseSuccess.chapterMinifiedListLoadedSCS(chaptersMinifiedList));
   }
 
   @override
@@ -210,6 +157,20 @@ class FirebaseOnlineChapterDatabaseFacade implements IOnlineChapterDatabaseFacad
     final Chapter chapterOne = Chapter.fromFirestore(querySnapshot.documents[0]);
 
     return right(DatabaseSuccess.chapterLoadedSCS(chapterOne));
+  }
+
+  @override
+  Future<Either<DatabaseFailure, DatabaseSuccess>> loadFirstChapterMinified(String seriesUid) async {
+    final CollectionReference chaptersMinifiedCollection = _firestore.collection(Paths.chaptersMinifiedPath);
+
+    final QuerySnapshot querySnapshot = await chaptersMinifiedCollection
+        .where('seriesUid', isEqualTo: seriesUid)
+        .where('index', isEqualTo: 1)
+        .getDocuments();
+
+    final ChapterMinified chapterOneMinified = ChapterMinified.fromFirestore(querySnapshot.documents[0]);
+
+    return right(DatabaseSuccess.chapterMinifiedLoadedSCS(chapterOneMinified));
   }
 
   @override
@@ -249,14 +210,22 @@ class FirebaseOnlineChapterDatabaseFacade implements IOnlineChapterDatabaseFacad
   }
 
   @override
-  Future<Either<DatabaseFailure, DatabaseSuccess>> publishChapter(Chapter chapter) async {
-    final DocumentReference ref = _firestore.collection(Paths.chaptersPath).document(chapter.uid);
+  Future<Either<DatabaseFailure, DatabaseSuccess>> publishChapter(
+    ChapterMinified chapterMinified,
+    Chapter chapter,
+  ) async {
+    final DocumentReference chapterMinifiedRef =
+        _firestore.collection(Paths.chaptersMinifiedPath).document(chapterMinified.uid);
+    final DocumentReference chapterRef = _firestore.collection(Paths.chaptersPath).document(chapter.uid);
 
-    chapter
+    chapterMinified
       ..createdAt = DateTime.now().millisecondsSinceEpoch
       ..updatedAt = DateTime.now().millisecondsSinceEpoch;
 
-    await ref.setData(chapter.toMap(), merge: true);
+    Future.wait([
+      chapterMinifiedRef.setData(chapterMinified.toMap(), merge: true),
+      chapterRef.setData(chapter.toMap(), merge: true),
+    ]);
 
     return right(const DatabaseSuccess.chapterPublishedSCS());
   }

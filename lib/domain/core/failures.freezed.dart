@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named
+// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
 
 part of 'failures.dart';
 
@@ -12,18 +12,21 @@ T _$identity<T>(T value) => value;
 class _$ValueFailureTearOff {
   const _$ValueFailureTearOff();
 
+// ignore: unused_element
   InvalidEmail<T> invalidEmailAddress<T>({@required String failedValue}) {
     return InvalidEmail<T>(
       failedValue: failedValue,
     );
   }
 
+// ignore: unused_element
   InvalidPassword<T> invalidPassword<T>({@required String failedValue}) {
     return InvalidPassword<T>(
       failedValue: failedValue,
     );
   }
 
+// ignore: unused_element
   InvalidConfirmPassword<T> invalidConfirmPassword<T>(
       {@required String failedValue}) {
     return InvalidConfirmPassword<T>(
@@ -31,30 +34,35 @@ class _$ValueFailureTearOff {
     );
   }
 
+// ignore: unused_element
   InvalidUsername<T> invalidUsername<T>({@required String failedValue}) {
     return InvalidUsername<T>(
       failedValue: failedValue,
     );
   }
 
+// ignore: unused_element
   EmptyInput<T> emptyInput<T>({@required String failedValue}) {
     return EmptyInput<T>(
       failedValue: failedValue,
     );
   }
 
+// ignore: unused_element
   ShortInput<T> shortInput<T>({@required String failedValue}) {
     return ShortInput<T>(
       failedValue: failedValue,
     );
   }
 
+// ignore: unused_element
   LongInput<T> longInput<T>({@required String failedValue}) {
     return LongInput<T>(
       failedValue: failedValue,
     );
   }
 
+// ignore: unused_element
   EmptySelection<T> emptySelection<T>({@required String failedValue}) {
     return EmptySelection<T>(
       failedValue: failedValue,

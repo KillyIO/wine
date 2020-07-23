@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named
+// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
 
 part of 'account_database_bloc.dart';
 
@@ -12,6 +12,7 @@ T _$identity<T>(T value) => value;
 class _$AccountDatabaseEventTearOff {
   const _$AccountDatabaseEventTearOff();
 
+// ignore: unused_element
   AccountPageLaunchedEVT accountPageLaunchedEVT(
       {@required BuildContext context}) {
     return AccountPageLaunchedEVT(
@@ -19,26 +20,29 @@ class _$AccountDatabaseEventTearOff {
     );
   }
 
-  ChaptersLoadedEVT chaptersLoadedEVT() {
-    return const ChaptersLoadedEVT();
+// ignore: unused_element
+  ChapterTileHeldEVT chapterTileHeldEVT(String seriesUid) {
+    return ChapterTileHeldEVT(
+      seriesUid,
+    );
   }
 
-  LoadMoreChaptersEVT loadMoreChaptersEVT() {
-    return const LoadMoreChaptersEVT();
+// ignore: unused_element
+  LoadMoreChaptersMinifiedEVT loadMoreChaptersMinifiedEVT() {
+    return const LoadMoreChaptersMinifiedEVT();
   }
 
-  LoadMoreSeriesEVT loadMoreSeriesEVT() {
-    return const LoadMoreSeriesEVT();
+// ignore: unused_element
+  LoadMoreSeriesMinifiedEVT loadMoreSeriesMinifiedEVT() {
+    return const LoadMoreSeriesMinifiedEVT();
   }
 
-  SeriesLoadedEVT seriesLoadedEVT() {
-    return const SeriesLoadedEVT();
+// ignore: unused_element
+  SeriesMinifiedLoadedEVT seriesMinifiedLoadedEVT() {
+    return const SeriesMinifiedLoadedEVT();
   }
 
-  SeriesAsMapLoadedEVT seriesAsMapLoadedEVT() {
-    return const SeriesAsMapLoadedEVT();
-  }
-
+// ignore: unused_element
   SessionFetchedEVT sessionFetchedEVT(Session session) {
     return SessionFetchedEVT(
       session,
@@ -53,42 +57,39 @@ mixin _$AccountDatabaseEvent {
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result accountPageLaunchedEVT(BuildContext context),
-    @required Result chaptersLoadedEVT(),
-    @required Result loadMoreChaptersEVT(),
-    @required Result loadMoreSeriesEVT(),
-    @required Result seriesLoadedEVT(),
-    @required Result seriesAsMapLoadedEVT(),
+    @required Result chapterTileHeldEVT(String seriesUid),
+    @required Result loadMoreChaptersMinifiedEVT(),
+    @required Result loadMoreSeriesMinifiedEVT(),
+    @required Result seriesMinifiedLoadedEVT(),
     @required Result sessionFetchedEVT(Session session),
   });
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result accountPageLaunchedEVT(BuildContext context),
-    Result chaptersLoadedEVT(),
-    Result loadMoreChaptersEVT(),
-    Result loadMoreSeriesEVT(),
-    Result seriesLoadedEVT(),
-    Result seriesAsMapLoadedEVT(),
+    Result chapterTileHeldEVT(String seriesUid),
+    Result loadMoreChaptersMinifiedEVT(),
+    Result loadMoreSeriesMinifiedEVT(),
+    Result seriesMinifiedLoadedEVT(),
     Result sessionFetchedEVT(Session session),
     @required Result orElse(),
   });
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result accountPageLaunchedEVT(AccountPageLaunchedEVT value),
-    @required Result chaptersLoadedEVT(ChaptersLoadedEVT value),
-    @required Result loadMoreChaptersEVT(LoadMoreChaptersEVT value),
-    @required Result loadMoreSeriesEVT(LoadMoreSeriesEVT value),
-    @required Result seriesLoadedEVT(SeriesLoadedEVT value),
-    @required Result seriesAsMapLoadedEVT(SeriesAsMapLoadedEVT value),
+    @required Result chapterTileHeldEVT(ChapterTileHeldEVT value),
+    @required
+        Result loadMoreChaptersMinifiedEVT(LoadMoreChaptersMinifiedEVT value),
+    @required Result loadMoreSeriesMinifiedEVT(LoadMoreSeriesMinifiedEVT value),
+    @required Result seriesMinifiedLoadedEVT(SeriesMinifiedLoadedEVT value),
     @required Result sessionFetchedEVT(SessionFetchedEVT value),
   });
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result accountPageLaunchedEVT(AccountPageLaunchedEVT value),
-    Result chaptersLoadedEVT(ChaptersLoadedEVT value),
-    Result loadMoreChaptersEVT(LoadMoreChaptersEVT value),
-    Result loadMoreSeriesEVT(LoadMoreSeriesEVT value),
-    Result seriesLoadedEVT(SeriesLoadedEVT value),
-    Result seriesAsMapLoadedEVT(SeriesAsMapLoadedEVT value),
+    Result chapterTileHeldEVT(ChapterTileHeldEVT value),
+    Result loadMoreChaptersMinifiedEVT(LoadMoreChaptersMinifiedEVT value),
+    Result loadMoreSeriesMinifiedEVT(LoadMoreSeriesMinifiedEVT value),
+    Result seriesMinifiedLoadedEVT(SeriesMinifiedLoadedEVT value),
     Result sessionFetchedEVT(SessionFetchedEVT value),
     @required Result orElse(),
   });
@@ -180,19 +181,17 @@ class _$AccountPageLaunchedEVT
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result accountPageLaunchedEVT(BuildContext context),
-    @required Result chaptersLoadedEVT(),
-    @required Result loadMoreChaptersEVT(),
-    @required Result loadMoreSeriesEVT(),
-    @required Result seriesLoadedEVT(),
-    @required Result seriesAsMapLoadedEVT(),
+    @required Result chapterTileHeldEVT(String seriesUid),
+    @required Result loadMoreChaptersMinifiedEVT(),
+    @required Result loadMoreSeriesMinifiedEVT(),
+    @required Result seriesMinifiedLoadedEVT(),
     @required Result sessionFetchedEVT(Session session),
   }) {
     assert(accountPageLaunchedEVT != null);
-    assert(chaptersLoadedEVT != null);
-    assert(loadMoreChaptersEVT != null);
-    assert(loadMoreSeriesEVT != null);
-    assert(seriesLoadedEVT != null);
-    assert(seriesAsMapLoadedEVT != null);
+    assert(chapterTileHeldEVT != null);
+    assert(loadMoreChaptersMinifiedEVT != null);
+    assert(loadMoreSeriesMinifiedEVT != null);
+    assert(seriesMinifiedLoadedEVT != null);
     assert(sessionFetchedEVT != null);
     return accountPageLaunchedEVT(context);
   }
@@ -201,11 +200,10 @@ class _$AccountPageLaunchedEVT
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result accountPageLaunchedEVT(BuildContext context),
-    Result chaptersLoadedEVT(),
-    Result loadMoreChaptersEVT(),
-    Result loadMoreSeriesEVT(),
-    Result seriesLoadedEVT(),
-    Result seriesAsMapLoadedEVT(),
+    Result chapterTileHeldEVT(String seriesUid),
+    Result loadMoreChaptersMinifiedEVT(),
+    Result loadMoreSeriesMinifiedEVT(),
+    Result seriesMinifiedLoadedEVT(),
     Result sessionFetchedEVT(Session session),
     @required Result orElse(),
   }) {
@@ -220,19 +218,18 @@ class _$AccountPageLaunchedEVT
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result accountPageLaunchedEVT(AccountPageLaunchedEVT value),
-    @required Result chaptersLoadedEVT(ChaptersLoadedEVT value),
-    @required Result loadMoreChaptersEVT(LoadMoreChaptersEVT value),
-    @required Result loadMoreSeriesEVT(LoadMoreSeriesEVT value),
-    @required Result seriesLoadedEVT(SeriesLoadedEVT value),
-    @required Result seriesAsMapLoadedEVT(SeriesAsMapLoadedEVT value),
+    @required Result chapterTileHeldEVT(ChapterTileHeldEVT value),
+    @required
+        Result loadMoreChaptersMinifiedEVT(LoadMoreChaptersMinifiedEVT value),
+    @required Result loadMoreSeriesMinifiedEVT(LoadMoreSeriesMinifiedEVT value),
+    @required Result seriesMinifiedLoadedEVT(SeriesMinifiedLoadedEVT value),
     @required Result sessionFetchedEVT(SessionFetchedEVT value),
   }) {
     assert(accountPageLaunchedEVT != null);
-    assert(chaptersLoadedEVT != null);
-    assert(loadMoreChaptersEVT != null);
-    assert(loadMoreSeriesEVT != null);
-    assert(seriesLoadedEVT != null);
-    assert(seriesAsMapLoadedEVT != null);
+    assert(chapterTileHeldEVT != null);
+    assert(loadMoreChaptersMinifiedEVT != null);
+    assert(loadMoreSeriesMinifiedEVT != null);
+    assert(seriesMinifiedLoadedEVT != null);
     assert(sessionFetchedEVT != null);
     return accountPageLaunchedEVT(this);
   }
@@ -241,11 +238,10 @@ class _$AccountPageLaunchedEVT
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result accountPageLaunchedEVT(AccountPageLaunchedEVT value),
-    Result chaptersLoadedEVT(ChaptersLoadedEVT value),
-    Result loadMoreChaptersEVT(LoadMoreChaptersEVT value),
-    Result loadMoreSeriesEVT(LoadMoreSeriesEVT value),
-    Result seriesLoadedEVT(SeriesLoadedEVT value),
-    Result seriesAsMapLoadedEVT(SeriesAsMapLoadedEVT value),
+    Result chapterTileHeldEVT(ChapterTileHeldEVT value),
+    Result loadMoreChaptersMinifiedEVT(LoadMoreChaptersMinifiedEVT value),
+    Result loadMoreSeriesMinifiedEVT(LoadMoreSeriesMinifiedEVT value),
+    Result seriesMinifiedLoadedEVT(SeriesMinifiedLoadedEVT value),
     Result sessionFetchedEVT(SessionFetchedEVT value),
     @required Result orElse(),
   }) {
@@ -265,31 +261,44 @@ abstract class AccountPageLaunchedEVT implements AccountDatabaseEvent {
   $AccountPageLaunchedEVTCopyWith<AccountPageLaunchedEVT> get copyWith;
 }
 
-abstract class $ChaptersLoadedEVTCopyWith<$Res> {
-  factory $ChaptersLoadedEVTCopyWith(
-          ChaptersLoadedEVT value, $Res Function(ChaptersLoadedEVT) then) =
-      _$ChaptersLoadedEVTCopyWithImpl<$Res>;
+abstract class $ChapterTileHeldEVTCopyWith<$Res> {
+  factory $ChapterTileHeldEVTCopyWith(
+          ChapterTileHeldEVT value, $Res Function(ChapterTileHeldEVT) then) =
+      _$ChapterTileHeldEVTCopyWithImpl<$Res>;
+  $Res call({String seriesUid});
 }
 
-class _$ChaptersLoadedEVTCopyWithImpl<$Res>
+class _$ChapterTileHeldEVTCopyWithImpl<$Res>
     extends _$AccountDatabaseEventCopyWithImpl<$Res>
-    implements $ChaptersLoadedEVTCopyWith<$Res> {
-  _$ChaptersLoadedEVTCopyWithImpl(
-      ChaptersLoadedEVT _value, $Res Function(ChaptersLoadedEVT) _then)
-      : super(_value, (v) => _then(v as ChaptersLoadedEVT));
+    implements $ChapterTileHeldEVTCopyWith<$Res> {
+  _$ChapterTileHeldEVTCopyWithImpl(
+      ChapterTileHeldEVT _value, $Res Function(ChapterTileHeldEVT) _then)
+      : super(_value, (v) => _then(v as ChapterTileHeldEVT));
 
   @override
-  ChaptersLoadedEVT get _value => super._value as ChaptersLoadedEVT;
+  ChapterTileHeldEVT get _value => super._value as ChapterTileHeldEVT;
+
+  @override
+  $Res call({
+    Object seriesUid = freezed,
+  }) {
+    return _then(ChapterTileHeldEVT(
+      seriesUid == freezed ? _value.seriesUid : seriesUid as String,
+    ));
+  }
 }
 
-class _$ChaptersLoadedEVT
+class _$ChapterTileHeldEVT
     with DiagnosticableTreeMixin
-    implements ChaptersLoadedEVT {
-  const _$ChaptersLoadedEVT();
+    implements ChapterTileHeldEVT {
+  const _$ChapterTileHeldEVT(this.seriesUid) : assert(seriesUid != null);
+
+  @override
+  final String seriesUid;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'AccountDatabaseEvent.chaptersLoadedEVT()';
+    return 'AccountDatabaseEvent.chapterTileHeldEVT(seriesUid: $seriesUid)';
   }
 
   @override
@@ -297,53 +306,60 @@ class _$ChaptersLoadedEVT
     super.debugFillProperties(properties);
     properties
       ..add(DiagnosticsProperty(
-          'type', 'AccountDatabaseEvent.chaptersLoadedEVT'));
+          'type', 'AccountDatabaseEvent.chapterTileHeldEVT'))
+      ..add(DiagnosticsProperty('seriesUid', seriesUid));
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is ChaptersLoadedEVT);
+    return identical(this, other) ||
+        (other is ChapterTileHeldEVT &&
+            (identical(other.seriesUid, seriesUid) ||
+                const DeepCollectionEquality()
+                    .equals(other.seriesUid, seriesUid)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(seriesUid);
+
+  @override
+  $ChapterTileHeldEVTCopyWith<ChapterTileHeldEVT> get copyWith =>
+      _$ChapterTileHeldEVTCopyWithImpl<ChapterTileHeldEVT>(this, _$identity);
 
   @override
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result accountPageLaunchedEVT(BuildContext context),
-    @required Result chaptersLoadedEVT(),
-    @required Result loadMoreChaptersEVT(),
-    @required Result loadMoreSeriesEVT(),
-    @required Result seriesLoadedEVT(),
-    @required Result seriesAsMapLoadedEVT(),
+    @required Result chapterTileHeldEVT(String seriesUid),
+    @required Result loadMoreChaptersMinifiedEVT(),
+    @required Result loadMoreSeriesMinifiedEVT(),
+    @required Result seriesMinifiedLoadedEVT(),
     @required Result sessionFetchedEVT(Session session),
   }) {
     assert(accountPageLaunchedEVT != null);
-    assert(chaptersLoadedEVT != null);
-    assert(loadMoreChaptersEVT != null);
-    assert(loadMoreSeriesEVT != null);
-    assert(seriesLoadedEVT != null);
-    assert(seriesAsMapLoadedEVT != null);
+    assert(chapterTileHeldEVT != null);
+    assert(loadMoreChaptersMinifiedEVT != null);
+    assert(loadMoreSeriesMinifiedEVT != null);
+    assert(seriesMinifiedLoadedEVT != null);
     assert(sessionFetchedEVT != null);
-    return chaptersLoadedEVT();
+    return chapterTileHeldEVT(seriesUid);
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result accountPageLaunchedEVT(BuildContext context),
-    Result chaptersLoadedEVT(),
-    Result loadMoreChaptersEVT(),
-    Result loadMoreSeriesEVT(),
-    Result seriesLoadedEVT(),
-    Result seriesAsMapLoadedEVT(),
+    Result chapterTileHeldEVT(String seriesUid),
+    Result loadMoreChaptersMinifiedEVT(),
+    Result loadMoreSeriesMinifiedEVT(),
+    Result seriesMinifiedLoadedEVT(),
     Result sessionFetchedEVT(Session session),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (chaptersLoadedEVT != null) {
-      return chaptersLoadedEVT();
+    if (chapterTileHeldEVT != null) {
+      return chapterTileHeldEVT(seriesUid);
     }
     return orElse();
   }
@@ -352,72 +368,75 @@ class _$ChaptersLoadedEVT
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result accountPageLaunchedEVT(AccountPageLaunchedEVT value),
-    @required Result chaptersLoadedEVT(ChaptersLoadedEVT value),
-    @required Result loadMoreChaptersEVT(LoadMoreChaptersEVT value),
-    @required Result loadMoreSeriesEVT(LoadMoreSeriesEVT value),
-    @required Result seriesLoadedEVT(SeriesLoadedEVT value),
-    @required Result seriesAsMapLoadedEVT(SeriesAsMapLoadedEVT value),
+    @required Result chapterTileHeldEVT(ChapterTileHeldEVT value),
+    @required
+        Result loadMoreChaptersMinifiedEVT(LoadMoreChaptersMinifiedEVT value),
+    @required Result loadMoreSeriesMinifiedEVT(LoadMoreSeriesMinifiedEVT value),
+    @required Result seriesMinifiedLoadedEVT(SeriesMinifiedLoadedEVT value),
     @required Result sessionFetchedEVT(SessionFetchedEVT value),
   }) {
     assert(accountPageLaunchedEVT != null);
-    assert(chaptersLoadedEVT != null);
-    assert(loadMoreChaptersEVT != null);
-    assert(loadMoreSeriesEVT != null);
-    assert(seriesLoadedEVT != null);
-    assert(seriesAsMapLoadedEVT != null);
+    assert(chapterTileHeldEVT != null);
+    assert(loadMoreChaptersMinifiedEVT != null);
+    assert(loadMoreSeriesMinifiedEVT != null);
+    assert(seriesMinifiedLoadedEVT != null);
     assert(sessionFetchedEVT != null);
-    return chaptersLoadedEVT(this);
+    return chapterTileHeldEVT(this);
   }
 
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result accountPageLaunchedEVT(AccountPageLaunchedEVT value),
-    Result chaptersLoadedEVT(ChaptersLoadedEVT value),
-    Result loadMoreChaptersEVT(LoadMoreChaptersEVT value),
-    Result loadMoreSeriesEVT(LoadMoreSeriesEVT value),
-    Result seriesLoadedEVT(SeriesLoadedEVT value),
-    Result seriesAsMapLoadedEVT(SeriesAsMapLoadedEVT value),
+    Result chapterTileHeldEVT(ChapterTileHeldEVT value),
+    Result loadMoreChaptersMinifiedEVT(LoadMoreChaptersMinifiedEVT value),
+    Result loadMoreSeriesMinifiedEVT(LoadMoreSeriesMinifiedEVT value),
+    Result seriesMinifiedLoadedEVT(SeriesMinifiedLoadedEVT value),
     Result sessionFetchedEVT(SessionFetchedEVT value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (chaptersLoadedEVT != null) {
-      return chaptersLoadedEVT(this);
+    if (chapterTileHeldEVT != null) {
+      return chapterTileHeldEVT(this);
     }
     return orElse();
   }
 }
 
-abstract class ChaptersLoadedEVT implements AccountDatabaseEvent {
-  const factory ChaptersLoadedEVT() = _$ChaptersLoadedEVT;
+abstract class ChapterTileHeldEVT implements AccountDatabaseEvent {
+  const factory ChapterTileHeldEVT(String seriesUid) = _$ChapterTileHeldEVT;
+
+  String get seriesUid;
+  $ChapterTileHeldEVTCopyWith<ChapterTileHeldEVT> get copyWith;
 }
 
-abstract class $LoadMoreChaptersEVTCopyWith<$Res> {
-  factory $LoadMoreChaptersEVTCopyWith(
-          LoadMoreChaptersEVT value, $Res Function(LoadMoreChaptersEVT) then) =
-      _$LoadMoreChaptersEVTCopyWithImpl<$Res>;
+abstract class $LoadMoreChaptersMinifiedEVTCopyWith<$Res> {
+  factory $LoadMoreChaptersMinifiedEVTCopyWith(
+          LoadMoreChaptersMinifiedEVT value,
+          $Res Function(LoadMoreChaptersMinifiedEVT) then) =
+      _$LoadMoreChaptersMinifiedEVTCopyWithImpl<$Res>;
 }
 
-class _$LoadMoreChaptersEVTCopyWithImpl<$Res>
+class _$LoadMoreChaptersMinifiedEVTCopyWithImpl<$Res>
     extends _$AccountDatabaseEventCopyWithImpl<$Res>
-    implements $LoadMoreChaptersEVTCopyWith<$Res> {
-  _$LoadMoreChaptersEVTCopyWithImpl(
-      LoadMoreChaptersEVT _value, $Res Function(LoadMoreChaptersEVT) _then)
-      : super(_value, (v) => _then(v as LoadMoreChaptersEVT));
+    implements $LoadMoreChaptersMinifiedEVTCopyWith<$Res> {
+  _$LoadMoreChaptersMinifiedEVTCopyWithImpl(LoadMoreChaptersMinifiedEVT _value,
+      $Res Function(LoadMoreChaptersMinifiedEVT) _then)
+      : super(_value, (v) => _then(v as LoadMoreChaptersMinifiedEVT));
 
   @override
-  LoadMoreChaptersEVT get _value => super._value as LoadMoreChaptersEVT;
+  LoadMoreChaptersMinifiedEVT get _value =>
+      super._value as LoadMoreChaptersMinifiedEVT;
 }
 
-class _$LoadMoreChaptersEVT
+class _$LoadMoreChaptersMinifiedEVT
     with DiagnosticableTreeMixin
-    implements LoadMoreChaptersEVT {
-  const _$LoadMoreChaptersEVT();
+    implements LoadMoreChaptersMinifiedEVT {
+  const _$LoadMoreChaptersMinifiedEVT();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'AccountDatabaseEvent.loadMoreChaptersEVT()';
+    return 'AccountDatabaseEvent.loadMoreChaptersMinifiedEVT()';
   }
 
   @override
@@ -425,12 +444,12 @@ class _$LoadMoreChaptersEVT
     super.debugFillProperties(properties);
     properties
       ..add(DiagnosticsProperty(
-          'type', 'AccountDatabaseEvent.loadMoreChaptersEVT'));
+          'type', 'AccountDatabaseEvent.loadMoreChaptersMinifiedEVT'));
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is LoadMoreChaptersEVT);
+    return identical(this, other) || (other is LoadMoreChaptersMinifiedEVT);
   }
 
   @override
@@ -440,38 +459,35 @@ class _$LoadMoreChaptersEVT
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result accountPageLaunchedEVT(BuildContext context),
-    @required Result chaptersLoadedEVT(),
-    @required Result loadMoreChaptersEVT(),
-    @required Result loadMoreSeriesEVT(),
-    @required Result seriesLoadedEVT(),
-    @required Result seriesAsMapLoadedEVT(),
+    @required Result chapterTileHeldEVT(String seriesUid),
+    @required Result loadMoreChaptersMinifiedEVT(),
+    @required Result loadMoreSeriesMinifiedEVT(),
+    @required Result seriesMinifiedLoadedEVT(),
     @required Result sessionFetchedEVT(Session session),
   }) {
     assert(accountPageLaunchedEVT != null);
-    assert(chaptersLoadedEVT != null);
-    assert(loadMoreChaptersEVT != null);
-    assert(loadMoreSeriesEVT != null);
-    assert(seriesLoadedEVT != null);
-    assert(seriesAsMapLoadedEVT != null);
+    assert(chapterTileHeldEVT != null);
+    assert(loadMoreChaptersMinifiedEVT != null);
+    assert(loadMoreSeriesMinifiedEVT != null);
+    assert(seriesMinifiedLoadedEVT != null);
     assert(sessionFetchedEVT != null);
-    return loadMoreChaptersEVT();
+    return loadMoreChaptersMinifiedEVT();
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result accountPageLaunchedEVT(BuildContext context),
-    Result chaptersLoadedEVT(),
-    Result loadMoreChaptersEVT(),
-    Result loadMoreSeriesEVT(),
-    Result seriesLoadedEVT(),
-    Result seriesAsMapLoadedEVT(),
+    Result chapterTileHeldEVT(String seriesUid),
+    Result loadMoreChaptersMinifiedEVT(),
+    Result loadMoreSeriesMinifiedEVT(),
+    Result seriesMinifiedLoadedEVT(),
     Result sessionFetchedEVT(Session session),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (loadMoreChaptersEVT != null) {
-      return loadMoreChaptersEVT();
+    if (loadMoreChaptersMinifiedEVT != null) {
+      return loadMoreChaptersMinifiedEVT();
     }
     return orElse();
   }
@@ -480,72 +496,71 @@ class _$LoadMoreChaptersEVT
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result accountPageLaunchedEVT(AccountPageLaunchedEVT value),
-    @required Result chaptersLoadedEVT(ChaptersLoadedEVT value),
-    @required Result loadMoreChaptersEVT(LoadMoreChaptersEVT value),
-    @required Result loadMoreSeriesEVT(LoadMoreSeriesEVT value),
-    @required Result seriesLoadedEVT(SeriesLoadedEVT value),
-    @required Result seriesAsMapLoadedEVT(SeriesAsMapLoadedEVT value),
+    @required Result chapterTileHeldEVT(ChapterTileHeldEVT value),
+    @required
+        Result loadMoreChaptersMinifiedEVT(LoadMoreChaptersMinifiedEVT value),
+    @required Result loadMoreSeriesMinifiedEVT(LoadMoreSeriesMinifiedEVT value),
+    @required Result seriesMinifiedLoadedEVT(SeriesMinifiedLoadedEVT value),
     @required Result sessionFetchedEVT(SessionFetchedEVT value),
   }) {
     assert(accountPageLaunchedEVT != null);
-    assert(chaptersLoadedEVT != null);
-    assert(loadMoreChaptersEVT != null);
-    assert(loadMoreSeriesEVT != null);
-    assert(seriesLoadedEVT != null);
-    assert(seriesAsMapLoadedEVT != null);
+    assert(chapterTileHeldEVT != null);
+    assert(loadMoreChaptersMinifiedEVT != null);
+    assert(loadMoreSeriesMinifiedEVT != null);
+    assert(seriesMinifiedLoadedEVT != null);
     assert(sessionFetchedEVT != null);
-    return loadMoreChaptersEVT(this);
+    return loadMoreChaptersMinifiedEVT(this);
   }
 
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result accountPageLaunchedEVT(AccountPageLaunchedEVT value),
-    Result chaptersLoadedEVT(ChaptersLoadedEVT value),
-    Result loadMoreChaptersEVT(LoadMoreChaptersEVT value),
-    Result loadMoreSeriesEVT(LoadMoreSeriesEVT value),
-    Result seriesLoadedEVT(SeriesLoadedEVT value),
-    Result seriesAsMapLoadedEVT(SeriesAsMapLoadedEVT value),
+    Result chapterTileHeldEVT(ChapterTileHeldEVT value),
+    Result loadMoreChaptersMinifiedEVT(LoadMoreChaptersMinifiedEVT value),
+    Result loadMoreSeriesMinifiedEVT(LoadMoreSeriesMinifiedEVT value),
+    Result seriesMinifiedLoadedEVT(SeriesMinifiedLoadedEVT value),
     Result sessionFetchedEVT(SessionFetchedEVT value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (loadMoreChaptersEVT != null) {
-      return loadMoreChaptersEVT(this);
+    if (loadMoreChaptersMinifiedEVT != null) {
+      return loadMoreChaptersMinifiedEVT(this);
     }
     return orElse();
   }
 }
 
-abstract class LoadMoreChaptersEVT implements AccountDatabaseEvent {
-  const factory LoadMoreChaptersEVT() = _$LoadMoreChaptersEVT;
+abstract class LoadMoreChaptersMinifiedEVT implements AccountDatabaseEvent {
+  const factory LoadMoreChaptersMinifiedEVT() = _$LoadMoreChaptersMinifiedEVT;
 }
 
-abstract class $LoadMoreSeriesEVTCopyWith<$Res> {
-  factory $LoadMoreSeriesEVTCopyWith(
-          LoadMoreSeriesEVT value, $Res Function(LoadMoreSeriesEVT) then) =
-      _$LoadMoreSeriesEVTCopyWithImpl<$Res>;
+abstract class $LoadMoreSeriesMinifiedEVTCopyWith<$Res> {
+  factory $LoadMoreSeriesMinifiedEVTCopyWith(LoadMoreSeriesMinifiedEVT value,
+          $Res Function(LoadMoreSeriesMinifiedEVT) then) =
+      _$LoadMoreSeriesMinifiedEVTCopyWithImpl<$Res>;
 }
 
-class _$LoadMoreSeriesEVTCopyWithImpl<$Res>
+class _$LoadMoreSeriesMinifiedEVTCopyWithImpl<$Res>
     extends _$AccountDatabaseEventCopyWithImpl<$Res>
-    implements $LoadMoreSeriesEVTCopyWith<$Res> {
-  _$LoadMoreSeriesEVTCopyWithImpl(
-      LoadMoreSeriesEVT _value, $Res Function(LoadMoreSeriesEVT) _then)
-      : super(_value, (v) => _then(v as LoadMoreSeriesEVT));
+    implements $LoadMoreSeriesMinifiedEVTCopyWith<$Res> {
+  _$LoadMoreSeriesMinifiedEVTCopyWithImpl(LoadMoreSeriesMinifiedEVT _value,
+      $Res Function(LoadMoreSeriesMinifiedEVT) _then)
+      : super(_value, (v) => _then(v as LoadMoreSeriesMinifiedEVT));
 
   @override
-  LoadMoreSeriesEVT get _value => super._value as LoadMoreSeriesEVT;
+  LoadMoreSeriesMinifiedEVT get _value =>
+      super._value as LoadMoreSeriesMinifiedEVT;
 }
 
-class _$LoadMoreSeriesEVT
+class _$LoadMoreSeriesMinifiedEVT
     with DiagnosticableTreeMixin
-    implements LoadMoreSeriesEVT {
-  const _$LoadMoreSeriesEVT();
+    implements LoadMoreSeriesMinifiedEVT {
+  const _$LoadMoreSeriesMinifiedEVT();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'AccountDatabaseEvent.loadMoreSeriesEVT()';
+    return 'AccountDatabaseEvent.loadMoreSeriesMinifiedEVT()';
   }
 
   @override
@@ -553,12 +568,12 @@ class _$LoadMoreSeriesEVT
     super.debugFillProperties(properties);
     properties
       ..add(DiagnosticsProperty(
-          'type', 'AccountDatabaseEvent.loadMoreSeriesEVT'));
+          'type', 'AccountDatabaseEvent.loadMoreSeriesMinifiedEVT'));
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is LoadMoreSeriesEVT);
+    return identical(this, other) || (other is LoadMoreSeriesMinifiedEVT);
   }
 
   @override
@@ -568,38 +583,35 @@ class _$LoadMoreSeriesEVT
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result accountPageLaunchedEVT(BuildContext context),
-    @required Result chaptersLoadedEVT(),
-    @required Result loadMoreChaptersEVT(),
-    @required Result loadMoreSeriesEVT(),
-    @required Result seriesLoadedEVT(),
-    @required Result seriesAsMapLoadedEVT(),
+    @required Result chapterTileHeldEVT(String seriesUid),
+    @required Result loadMoreChaptersMinifiedEVT(),
+    @required Result loadMoreSeriesMinifiedEVT(),
+    @required Result seriesMinifiedLoadedEVT(),
     @required Result sessionFetchedEVT(Session session),
   }) {
     assert(accountPageLaunchedEVT != null);
-    assert(chaptersLoadedEVT != null);
-    assert(loadMoreChaptersEVT != null);
-    assert(loadMoreSeriesEVT != null);
-    assert(seriesLoadedEVT != null);
-    assert(seriesAsMapLoadedEVT != null);
+    assert(chapterTileHeldEVT != null);
+    assert(loadMoreChaptersMinifiedEVT != null);
+    assert(loadMoreSeriesMinifiedEVT != null);
+    assert(seriesMinifiedLoadedEVT != null);
     assert(sessionFetchedEVT != null);
-    return loadMoreSeriesEVT();
+    return loadMoreSeriesMinifiedEVT();
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result accountPageLaunchedEVT(BuildContext context),
-    Result chaptersLoadedEVT(),
-    Result loadMoreChaptersEVT(),
-    Result loadMoreSeriesEVT(),
-    Result seriesLoadedEVT(),
-    Result seriesAsMapLoadedEVT(),
+    Result chapterTileHeldEVT(String seriesUid),
+    Result loadMoreChaptersMinifiedEVT(),
+    Result loadMoreSeriesMinifiedEVT(),
+    Result seriesMinifiedLoadedEVT(),
     Result sessionFetchedEVT(Session session),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (loadMoreSeriesEVT != null) {
-      return loadMoreSeriesEVT();
+    if (loadMoreSeriesMinifiedEVT != null) {
+      return loadMoreSeriesMinifiedEVT();
     }
     return orElse();
   }
@@ -608,200 +620,70 @@ class _$LoadMoreSeriesEVT
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result accountPageLaunchedEVT(AccountPageLaunchedEVT value),
-    @required Result chaptersLoadedEVT(ChaptersLoadedEVT value),
-    @required Result loadMoreChaptersEVT(LoadMoreChaptersEVT value),
-    @required Result loadMoreSeriesEVT(LoadMoreSeriesEVT value),
-    @required Result seriesLoadedEVT(SeriesLoadedEVT value),
-    @required Result seriesAsMapLoadedEVT(SeriesAsMapLoadedEVT value),
+    @required Result chapterTileHeldEVT(ChapterTileHeldEVT value),
+    @required
+        Result loadMoreChaptersMinifiedEVT(LoadMoreChaptersMinifiedEVT value),
+    @required Result loadMoreSeriesMinifiedEVT(LoadMoreSeriesMinifiedEVT value),
+    @required Result seriesMinifiedLoadedEVT(SeriesMinifiedLoadedEVT value),
     @required Result sessionFetchedEVT(SessionFetchedEVT value),
   }) {
     assert(accountPageLaunchedEVT != null);
-    assert(chaptersLoadedEVT != null);
-    assert(loadMoreChaptersEVT != null);
-    assert(loadMoreSeriesEVT != null);
-    assert(seriesLoadedEVT != null);
-    assert(seriesAsMapLoadedEVT != null);
+    assert(chapterTileHeldEVT != null);
+    assert(loadMoreChaptersMinifiedEVT != null);
+    assert(loadMoreSeriesMinifiedEVT != null);
+    assert(seriesMinifiedLoadedEVT != null);
     assert(sessionFetchedEVT != null);
-    return loadMoreSeriesEVT(this);
+    return loadMoreSeriesMinifiedEVT(this);
   }
 
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result accountPageLaunchedEVT(AccountPageLaunchedEVT value),
-    Result chaptersLoadedEVT(ChaptersLoadedEVT value),
-    Result loadMoreChaptersEVT(LoadMoreChaptersEVT value),
-    Result loadMoreSeriesEVT(LoadMoreSeriesEVT value),
-    Result seriesLoadedEVT(SeriesLoadedEVT value),
-    Result seriesAsMapLoadedEVT(SeriesAsMapLoadedEVT value),
+    Result chapterTileHeldEVT(ChapterTileHeldEVT value),
+    Result loadMoreChaptersMinifiedEVT(LoadMoreChaptersMinifiedEVT value),
+    Result loadMoreSeriesMinifiedEVT(LoadMoreSeriesMinifiedEVT value),
+    Result seriesMinifiedLoadedEVT(SeriesMinifiedLoadedEVT value),
     Result sessionFetchedEVT(SessionFetchedEVT value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (loadMoreSeriesEVT != null) {
-      return loadMoreSeriesEVT(this);
+    if (loadMoreSeriesMinifiedEVT != null) {
+      return loadMoreSeriesMinifiedEVT(this);
     }
     return orElse();
   }
 }
 
-abstract class LoadMoreSeriesEVT implements AccountDatabaseEvent {
-  const factory LoadMoreSeriesEVT() = _$LoadMoreSeriesEVT;
+abstract class LoadMoreSeriesMinifiedEVT implements AccountDatabaseEvent {
+  const factory LoadMoreSeriesMinifiedEVT() = _$LoadMoreSeriesMinifiedEVT;
 }
 
-abstract class $SeriesLoadedEVTCopyWith<$Res> {
-  factory $SeriesLoadedEVTCopyWith(
-          SeriesLoadedEVT value, $Res Function(SeriesLoadedEVT) then) =
-      _$SeriesLoadedEVTCopyWithImpl<$Res>;
+abstract class $SeriesMinifiedLoadedEVTCopyWith<$Res> {
+  factory $SeriesMinifiedLoadedEVTCopyWith(SeriesMinifiedLoadedEVT value,
+          $Res Function(SeriesMinifiedLoadedEVT) then) =
+      _$SeriesMinifiedLoadedEVTCopyWithImpl<$Res>;
 }
 
-class _$SeriesLoadedEVTCopyWithImpl<$Res>
+class _$SeriesMinifiedLoadedEVTCopyWithImpl<$Res>
     extends _$AccountDatabaseEventCopyWithImpl<$Res>
-    implements $SeriesLoadedEVTCopyWith<$Res> {
-  _$SeriesLoadedEVTCopyWithImpl(
-      SeriesLoadedEVT _value, $Res Function(SeriesLoadedEVT) _then)
-      : super(_value, (v) => _then(v as SeriesLoadedEVT));
+    implements $SeriesMinifiedLoadedEVTCopyWith<$Res> {
+  _$SeriesMinifiedLoadedEVTCopyWithImpl(SeriesMinifiedLoadedEVT _value,
+      $Res Function(SeriesMinifiedLoadedEVT) _then)
+      : super(_value, (v) => _then(v as SeriesMinifiedLoadedEVT));
 
   @override
-  SeriesLoadedEVT get _value => super._value as SeriesLoadedEVT;
+  SeriesMinifiedLoadedEVT get _value => super._value as SeriesMinifiedLoadedEVT;
 }
 
-class _$SeriesLoadedEVT
+class _$SeriesMinifiedLoadedEVT
     with DiagnosticableTreeMixin
-    implements SeriesLoadedEVT {
-  const _$SeriesLoadedEVT();
+    implements SeriesMinifiedLoadedEVT {
+  const _$SeriesMinifiedLoadedEVT();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'AccountDatabaseEvent.seriesLoadedEVT()';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(
-          DiagnosticsProperty('type', 'AccountDatabaseEvent.seriesLoadedEVT'));
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) || (other is SeriesLoadedEVT);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result accountPageLaunchedEVT(BuildContext context),
-    @required Result chaptersLoadedEVT(),
-    @required Result loadMoreChaptersEVT(),
-    @required Result loadMoreSeriesEVT(),
-    @required Result seriesLoadedEVT(),
-    @required Result seriesAsMapLoadedEVT(),
-    @required Result sessionFetchedEVT(Session session),
-  }) {
-    assert(accountPageLaunchedEVT != null);
-    assert(chaptersLoadedEVT != null);
-    assert(loadMoreChaptersEVT != null);
-    assert(loadMoreSeriesEVT != null);
-    assert(seriesLoadedEVT != null);
-    assert(seriesAsMapLoadedEVT != null);
-    assert(sessionFetchedEVT != null);
-    return seriesLoadedEVT();
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result accountPageLaunchedEVT(BuildContext context),
-    Result chaptersLoadedEVT(),
-    Result loadMoreChaptersEVT(),
-    Result loadMoreSeriesEVT(),
-    Result seriesLoadedEVT(),
-    Result seriesAsMapLoadedEVT(),
-    Result sessionFetchedEVT(Session session),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (seriesLoadedEVT != null) {
-      return seriesLoadedEVT();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result accountPageLaunchedEVT(AccountPageLaunchedEVT value),
-    @required Result chaptersLoadedEVT(ChaptersLoadedEVT value),
-    @required Result loadMoreChaptersEVT(LoadMoreChaptersEVT value),
-    @required Result loadMoreSeriesEVT(LoadMoreSeriesEVT value),
-    @required Result seriesLoadedEVT(SeriesLoadedEVT value),
-    @required Result seriesAsMapLoadedEVT(SeriesAsMapLoadedEVT value),
-    @required Result sessionFetchedEVT(SessionFetchedEVT value),
-  }) {
-    assert(accountPageLaunchedEVT != null);
-    assert(chaptersLoadedEVT != null);
-    assert(loadMoreChaptersEVT != null);
-    assert(loadMoreSeriesEVT != null);
-    assert(seriesLoadedEVT != null);
-    assert(seriesAsMapLoadedEVT != null);
-    assert(sessionFetchedEVT != null);
-    return seriesLoadedEVT(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result accountPageLaunchedEVT(AccountPageLaunchedEVT value),
-    Result chaptersLoadedEVT(ChaptersLoadedEVT value),
-    Result loadMoreChaptersEVT(LoadMoreChaptersEVT value),
-    Result loadMoreSeriesEVT(LoadMoreSeriesEVT value),
-    Result seriesLoadedEVT(SeriesLoadedEVT value),
-    Result seriesAsMapLoadedEVT(SeriesAsMapLoadedEVT value),
-    Result sessionFetchedEVT(SessionFetchedEVT value),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (seriesLoadedEVT != null) {
-      return seriesLoadedEVT(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class SeriesLoadedEVT implements AccountDatabaseEvent {
-  const factory SeriesLoadedEVT() = _$SeriesLoadedEVT;
-}
-
-abstract class $SeriesAsMapLoadedEVTCopyWith<$Res> {
-  factory $SeriesAsMapLoadedEVTCopyWith(SeriesAsMapLoadedEVT value,
-          $Res Function(SeriesAsMapLoadedEVT) then) =
-      _$SeriesAsMapLoadedEVTCopyWithImpl<$Res>;
-}
-
-class _$SeriesAsMapLoadedEVTCopyWithImpl<$Res>
-    extends _$AccountDatabaseEventCopyWithImpl<$Res>
-    implements $SeriesAsMapLoadedEVTCopyWith<$Res> {
-  _$SeriesAsMapLoadedEVTCopyWithImpl(
-      SeriesAsMapLoadedEVT _value, $Res Function(SeriesAsMapLoadedEVT) _then)
-      : super(_value, (v) => _then(v as SeriesAsMapLoadedEVT));
-
-  @override
-  SeriesAsMapLoadedEVT get _value => super._value as SeriesAsMapLoadedEVT;
-}
-
-class _$SeriesAsMapLoadedEVT
-    with DiagnosticableTreeMixin
-    implements SeriesAsMapLoadedEVT {
-  const _$SeriesAsMapLoadedEVT();
-
-  @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'AccountDatabaseEvent.seriesAsMapLoadedEVT()';
+    return 'AccountDatabaseEvent.seriesMinifiedLoadedEVT()';
   }
 
   @override
@@ -809,12 +691,12 @@ class _$SeriesAsMapLoadedEVT
     super.debugFillProperties(properties);
     properties
       ..add(DiagnosticsProperty(
-          'type', 'AccountDatabaseEvent.seriesAsMapLoadedEVT'));
+          'type', 'AccountDatabaseEvent.seriesMinifiedLoadedEVT'));
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is SeriesAsMapLoadedEVT);
+    return identical(this, other) || (other is SeriesMinifiedLoadedEVT);
   }
 
   @override
@@ -824,38 +706,35 @@ class _$SeriesAsMapLoadedEVT
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result accountPageLaunchedEVT(BuildContext context),
-    @required Result chaptersLoadedEVT(),
-    @required Result loadMoreChaptersEVT(),
-    @required Result loadMoreSeriesEVT(),
-    @required Result seriesLoadedEVT(),
-    @required Result seriesAsMapLoadedEVT(),
+    @required Result chapterTileHeldEVT(String seriesUid),
+    @required Result loadMoreChaptersMinifiedEVT(),
+    @required Result loadMoreSeriesMinifiedEVT(),
+    @required Result seriesMinifiedLoadedEVT(),
     @required Result sessionFetchedEVT(Session session),
   }) {
     assert(accountPageLaunchedEVT != null);
-    assert(chaptersLoadedEVT != null);
-    assert(loadMoreChaptersEVT != null);
-    assert(loadMoreSeriesEVT != null);
-    assert(seriesLoadedEVT != null);
-    assert(seriesAsMapLoadedEVT != null);
+    assert(chapterTileHeldEVT != null);
+    assert(loadMoreChaptersMinifiedEVT != null);
+    assert(loadMoreSeriesMinifiedEVT != null);
+    assert(seriesMinifiedLoadedEVT != null);
     assert(sessionFetchedEVT != null);
-    return seriesAsMapLoadedEVT();
+    return seriesMinifiedLoadedEVT();
   }
 
   @override
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result accountPageLaunchedEVT(BuildContext context),
-    Result chaptersLoadedEVT(),
-    Result loadMoreChaptersEVT(),
-    Result loadMoreSeriesEVT(),
-    Result seriesLoadedEVT(),
-    Result seriesAsMapLoadedEVT(),
+    Result chapterTileHeldEVT(String seriesUid),
+    Result loadMoreChaptersMinifiedEVT(),
+    Result loadMoreSeriesMinifiedEVT(),
+    Result seriesMinifiedLoadedEVT(),
     Result sessionFetchedEVT(Session session),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (seriesAsMapLoadedEVT != null) {
-      return seriesAsMapLoadedEVT();
+    if (seriesMinifiedLoadedEVT != null) {
+      return seriesMinifiedLoadedEVT();
     }
     return orElse();
   }
@@ -864,45 +743,43 @@ class _$SeriesAsMapLoadedEVT
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result accountPageLaunchedEVT(AccountPageLaunchedEVT value),
-    @required Result chaptersLoadedEVT(ChaptersLoadedEVT value),
-    @required Result loadMoreChaptersEVT(LoadMoreChaptersEVT value),
-    @required Result loadMoreSeriesEVT(LoadMoreSeriesEVT value),
-    @required Result seriesLoadedEVT(SeriesLoadedEVT value),
-    @required Result seriesAsMapLoadedEVT(SeriesAsMapLoadedEVT value),
+    @required Result chapterTileHeldEVT(ChapterTileHeldEVT value),
+    @required
+        Result loadMoreChaptersMinifiedEVT(LoadMoreChaptersMinifiedEVT value),
+    @required Result loadMoreSeriesMinifiedEVT(LoadMoreSeriesMinifiedEVT value),
+    @required Result seriesMinifiedLoadedEVT(SeriesMinifiedLoadedEVT value),
     @required Result sessionFetchedEVT(SessionFetchedEVT value),
   }) {
     assert(accountPageLaunchedEVT != null);
-    assert(chaptersLoadedEVT != null);
-    assert(loadMoreChaptersEVT != null);
-    assert(loadMoreSeriesEVT != null);
-    assert(seriesLoadedEVT != null);
-    assert(seriesAsMapLoadedEVT != null);
+    assert(chapterTileHeldEVT != null);
+    assert(loadMoreChaptersMinifiedEVT != null);
+    assert(loadMoreSeriesMinifiedEVT != null);
+    assert(seriesMinifiedLoadedEVT != null);
     assert(sessionFetchedEVT != null);
-    return seriesAsMapLoadedEVT(this);
+    return seriesMinifiedLoadedEVT(this);
   }
 
   @override
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result accountPageLaunchedEVT(AccountPageLaunchedEVT value),
-    Result chaptersLoadedEVT(ChaptersLoadedEVT value),
-    Result loadMoreChaptersEVT(LoadMoreChaptersEVT value),
-    Result loadMoreSeriesEVT(LoadMoreSeriesEVT value),
-    Result seriesLoadedEVT(SeriesLoadedEVT value),
-    Result seriesAsMapLoadedEVT(SeriesAsMapLoadedEVT value),
+    Result chapterTileHeldEVT(ChapterTileHeldEVT value),
+    Result loadMoreChaptersMinifiedEVT(LoadMoreChaptersMinifiedEVT value),
+    Result loadMoreSeriesMinifiedEVT(LoadMoreSeriesMinifiedEVT value),
+    Result seriesMinifiedLoadedEVT(SeriesMinifiedLoadedEVT value),
     Result sessionFetchedEVT(SessionFetchedEVT value),
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (seriesAsMapLoadedEVT != null) {
-      return seriesAsMapLoadedEVT(this);
+    if (seriesMinifiedLoadedEVT != null) {
+      return seriesMinifiedLoadedEVT(this);
     }
     return orElse();
   }
 }
 
-abstract class SeriesAsMapLoadedEVT implements AccountDatabaseEvent {
-  const factory SeriesAsMapLoadedEVT() = _$SeriesAsMapLoadedEVT;
+abstract class SeriesMinifiedLoadedEVT implements AccountDatabaseEvent {
+  const factory SeriesMinifiedLoadedEVT() = _$SeriesMinifiedLoadedEVT;
 }
 
 abstract class $SessionFetchedEVTCopyWith<$Res> {
@@ -974,19 +851,17 @@ class _$SessionFetchedEVT
   @optionalTypeArgs
   Result when<Result extends Object>({
     @required Result accountPageLaunchedEVT(BuildContext context),
-    @required Result chaptersLoadedEVT(),
-    @required Result loadMoreChaptersEVT(),
-    @required Result loadMoreSeriesEVT(),
-    @required Result seriesLoadedEVT(),
-    @required Result seriesAsMapLoadedEVT(),
+    @required Result chapterTileHeldEVT(String seriesUid),
+    @required Result loadMoreChaptersMinifiedEVT(),
+    @required Result loadMoreSeriesMinifiedEVT(),
+    @required Result seriesMinifiedLoadedEVT(),
     @required Result sessionFetchedEVT(Session session),
   }) {
     assert(accountPageLaunchedEVT != null);
-    assert(chaptersLoadedEVT != null);
-    assert(loadMoreChaptersEVT != null);
-    assert(loadMoreSeriesEVT != null);
-    assert(seriesLoadedEVT != null);
-    assert(seriesAsMapLoadedEVT != null);
+    assert(chapterTileHeldEVT != null);
+    assert(loadMoreChaptersMinifiedEVT != null);
+    assert(loadMoreSeriesMinifiedEVT != null);
+    assert(seriesMinifiedLoadedEVT != null);
     assert(sessionFetchedEVT != null);
     return sessionFetchedEVT(session);
   }
@@ -995,11 +870,10 @@ class _$SessionFetchedEVT
   @optionalTypeArgs
   Result maybeWhen<Result extends Object>({
     Result accountPageLaunchedEVT(BuildContext context),
-    Result chaptersLoadedEVT(),
-    Result loadMoreChaptersEVT(),
-    Result loadMoreSeriesEVT(),
-    Result seriesLoadedEVT(),
-    Result seriesAsMapLoadedEVT(),
+    Result chapterTileHeldEVT(String seriesUid),
+    Result loadMoreChaptersMinifiedEVT(),
+    Result loadMoreSeriesMinifiedEVT(),
+    Result seriesMinifiedLoadedEVT(),
     Result sessionFetchedEVT(Session session),
     @required Result orElse(),
   }) {
@@ -1014,19 +888,18 @@ class _$SessionFetchedEVT
   @optionalTypeArgs
   Result map<Result extends Object>({
     @required Result accountPageLaunchedEVT(AccountPageLaunchedEVT value),
-    @required Result chaptersLoadedEVT(ChaptersLoadedEVT value),
-    @required Result loadMoreChaptersEVT(LoadMoreChaptersEVT value),
-    @required Result loadMoreSeriesEVT(LoadMoreSeriesEVT value),
-    @required Result seriesLoadedEVT(SeriesLoadedEVT value),
-    @required Result seriesAsMapLoadedEVT(SeriesAsMapLoadedEVT value),
+    @required Result chapterTileHeldEVT(ChapterTileHeldEVT value),
+    @required
+        Result loadMoreChaptersMinifiedEVT(LoadMoreChaptersMinifiedEVT value),
+    @required Result loadMoreSeriesMinifiedEVT(LoadMoreSeriesMinifiedEVT value),
+    @required Result seriesMinifiedLoadedEVT(SeriesMinifiedLoadedEVT value),
     @required Result sessionFetchedEVT(SessionFetchedEVT value),
   }) {
     assert(accountPageLaunchedEVT != null);
-    assert(chaptersLoadedEVT != null);
-    assert(loadMoreChaptersEVT != null);
-    assert(loadMoreSeriesEVT != null);
-    assert(seriesLoadedEVT != null);
-    assert(seriesAsMapLoadedEVT != null);
+    assert(chapterTileHeldEVT != null);
+    assert(loadMoreChaptersMinifiedEVT != null);
+    assert(loadMoreSeriesMinifiedEVT != null);
+    assert(seriesMinifiedLoadedEVT != null);
     assert(sessionFetchedEVT != null);
     return sessionFetchedEVT(this);
   }
@@ -1035,11 +908,10 @@ class _$SessionFetchedEVT
   @optionalTypeArgs
   Result maybeMap<Result extends Object>({
     Result accountPageLaunchedEVT(AccountPageLaunchedEVT value),
-    Result chaptersLoadedEVT(ChaptersLoadedEVT value),
-    Result loadMoreChaptersEVT(LoadMoreChaptersEVT value),
-    Result loadMoreSeriesEVT(LoadMoreSeriesEVT value),
-    Result seriesLoadedEVT(SeriesLoadedEVT value),
-    Result seriesAsMapLoadedEVT(SeriesAsMapLoadedEVT value),
+    Result chapterTileHeldEVT(ChapterTileHeldEVT value),
+    Result loadMoreChaptersMinifiedEVT(LoadMoreChaptersMinifiedEVT value),
+    Result loadMoreSeriesMinifiedEVT(LoadMoreSeriesMinifiedEVT value),
+    Result seriesMinifiedLoadedEVT(SeriesMinifiedLoadedEVT value),
     Result sessionFetchedEVT(SessionFetchedEVT value),
     @required Result orElse(),
   }) {
@@ -1061,17 +933,14 @@ abstract class SessionFetchedEVT implements AccountDatabaseEvent {
 class _$AccountDatabaseStateTearOff {
   const _$AccountDatabaseStateTearOff();
 
+// ignore: unused_element
   _AccountDatabaseState call(
       {@required
           bool isFetching,
       @required
-          List<Chapter> chapters,
+          List<ChapterMinified> chaptersMinified,
       @required
-          List<Series> series,
-      @required
-          Map<String, Series> seriesMap,
-      @required
-          Map<String, SeriesDraft> seriesDraftsMap,
+          List<SeriesMinified> seriesMinified,
       @required
           Map<String, String> copyrights,
       @required
@@ -1085,10 +954,8 @@ class _$AccountDatabaseStateTearOff {
           Session session}) {
     return _AccountDatabaseState(
       isFetching: isFetching,
-      chapters: chapters,
-      series: series,
-      seriesMap: seriesMap,
-      seriesDraftsMap: seriesDraftsMap,
+      chaptersMinified: chaptersMinified,
+      seriesMinified: seriesMinified,
       copyrights: copyrights,
       genres: genres,
       languages: languages,
@@ -1103,10 +970,8 @@ const $AccountDatabaseState = _$AccountDatabaseStateTearOff();
 
 mixin _$AccountDatabaseState {
   bool get isFetching;
-  List<Chapter> get chapters;
-  List<Series> get series;
-  Map<String, Series> get seriesMap;
-  Map<String, SeriesDraft> get seriesDraftsMap;
+  List<ChapterMinified> get chaptersMinified;
+  List<SeriesMinified> get seriesMinified;
   Map<String, String> get copyrights;
   Map<String, String> get genres;
   Map<String, String> get languages;
@@ -1123,10 +988,8 @@ abstract class $AccountDatabaseStateCopyWith<$Res> {
       _$AccountDatabaseStateCopyWithImpl<$Res>;
   $Res call(
       {bool isFetching,
-      List<Chapter> chapters,
-      List<Series> series,
-      Map<String, Series> seriesMap,
-      Map<String, SeriesDraft> seriesDraftsMap,
+      List<ChapterMinified> chaptersMinified,
+      List<SeriesMinified> seriesMinified,
       Map<String, String> copyrights,
       Map<String, String> genres,
       Map<String, String> languages,
@@ -1146,10 +1009,8 @@ class _$AccountDatabaseStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object isFetching = freezed,
-    Object chapters = freezed,
-    Object series = freezed,
-    Object seriesMap = freezed,
-    Object seriesDraftsMap = freezed,
+    Object chaptersMinified = freezed,
+    Object seriesMinified = freezed,
     Object copyrights = freezed,
     Object genres = freezed,
     Object languages = freezed,
@@ -1159,15 +1020,12 @@ class _$AccountDatabaseStateCopyWithImpl<$Res>
     return _then(_value.copyWith(
       isFetching:
           isFetching == freezed ? _value.isFetching : isFetching as bool,
-      chapters:
-          chapters == freezed ? _value.chapters : chapters as List<Chapter>,
-      series: series == freezed ? _value.series : series as List<Series>,
-      seriesMap: seriesMap == freezed
-          ? _value.seriesMap
-          : seriesMap as Map<String, Series>,
-      seriesDraftsMap: seriesDraftsMap == freezed
-          ? _value.seriesDraftsMap
-          : seriesDraftsMap as Map<String, SeriesDraft>,
+      chaptersMinified: chaptersMinified == freezed
+          ? _value.chaptersMinified
+          : chaptersMinified as List<ChapterMinified>,
+      seriesMinified: seriesMinified == freezed
+          ? _value.seriesMinified
+          : seriesMinified as List<SeriesMinified>,
       copyrights: copyrights == freezed
           ? _value.copyrights
           : copyrights as Map<String, String>,
@@ -1192,10 +1050,8 @@ abstract class _$AccountDatabaseStateCopyWith<$Res>
   @override
   $Res call(
       {bool isFetching,
-      List<Chapter> chapters,
-      List<Series> series,
-      Map<String, Series> seriesMap,
-      Map<String, SeriesDraft> seriesDraftsMap,
+      List<ChapterMinified> chaptersMinified,
+      List<SeriesMinified> seriesMinified,
       Map<String, String> copyrights,
       Map<String, String> genres,
       Map<String, String> languages,
@@ -1217,10 +1073,8 @@ class __$AccountDatabaseStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object isFetching = freezed,
-    Object chapters = freezed,
-    Object series = freezed,
-    Object seriesMap = freezed,
-    Object seriesDraftsMap = freezed,
+    Object chaptersMinified = freezed,
+    Object seriesMinified = freezed,
     Object copyrights = freezed,
     Object genres = freezed,
     Object languages = freezed,
@@ -1230,15 +1084,12 @@ class __$AccountDatabaseStateCopyWithImpl<$Res>
     return _then(_AccountDatabaseState(
       isFetching:
           isFetching == freezed ? _value.isFetching : isFetching as bool,
-      chapters:
-          chapters == freezed ? _value.chapters : chapters as List<Chapter>,
-      series: series == freezed ? _value.series : series as List<Series>,
-      seriesMap: seriesMap == freezed
-          ? _value.seriesMap
-          : seriesMap as Map<String, Series>,
-      seriesDraftsMap: seriesDraftsMap == freezed
-          ? _value.seriesDraftsMap
-          : seriesDraftsMap as Map<String, SeriesDraft>,
+      chaptersMinified: chaptersMinified == freezed
+          ? _value.chaptersMinified
+          : chaptersMinified as List<ChapterMinified>,
+      seriesMinified: seriesMinified == freezed
+          ? _value.seriesMinified
+          : seriesMinified as List<SeriesMinified>,
       copyrights: copyrights == freezed
           ? _value.copyrights
           : copyrights as Map<String, String>,
@@ -1260,20 +1111,16 @@ class _$_AccountDatabaseState
     implements _AccountDatabaseState {
   const _$_AccountDatabaseState(
       {@required this.isFetching,
-      @required this.chapters,
-      @required this.series,
-      @required this.seriesMap,
-      @required this.seriesDraftsMap,
+      @required this.chaptersMinified,
+      @required this.seriesMinified,
       @required this.copyrights,
       @required this.genres,
       @required this.languages,
       @required this.databaseFailureOrSuccessOption,
       @required this.session})
       : assert(isFetching != null),
-        assert(chapters != null),
-        assert(series != null),
-        assert(seriesMap != null),
-        assert(seriesDraftsMap != null),
+        assert(chaptersMinified != null),
+        assert(seriesMinified != null),
         assert(copyrights != null),
         assert(genres != null),
         assert(languages != null),
@@ -1283,13 +1130,9 @@ class _$_AccountDatabaseState
   @override
   final bool isFetching;
   @override
-  final List<Chapter> chapters;
+  final List<ChapterMinified> chaptersMinified;
   @override
-  final List<Series> series;
-  @override
-  final Map<String, Series> seriesMap;
-  @override
-  final Map<String, SeriesDraft> seriesDraftsMap;
+  final List<SeriesMinified> seriesMinified;
   @override
   final Map<String, String> copyrights;
   @override
@@ -1304,7 +1147,7 @@ class _$_AccountDatabaseState
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'AccountDatabaseState(isFetching: $isFetching, chapters: $chapters, series: $series, seriesMap: $seriesMap, seriesDraftsMap: $seriesDraftsMap, copyrights: $copyrights, genres: $genres, languages: $languages, databaseFailureOrSuccessOption: $databaseFailureOrSuccessOption, session: $session)';
+    return 'AccountDatabaseState(isFetching: $isFetching, chaptersMinified: $chaptersMinified, seriesMinified: $seriesMinified, copyrights: $copyrights, genres: $genres, languages: $languages, databaseFailureOrSuccessOption: $databaseFailureOrSuccessOption, session: $session)';
   }
 
   @override
@@ -1313,10 +1156,8 @@ class _$_AccountDatabaseState
     properties
       ..add(DiagnosticsProperty('type', 'AccountDatabaseState'))
       ..add(DiagnosticsProperty('isFetching', isFetching))
-      ..add(DiagnosticsProperty('chapters', chapters))
-      ..add(DiagnosticsProperty('series', series))
-      ..add(DiagnosticsProperty('seriesMap', seriesMap))
-      ..add(DiagnosticsProperty('seriesDraftsMap', seriesDraftsMap))
+      ..add(DiagnosticsProperty('chaptersMinified', chaptersMinified))
+      ..add(DiagnosticsProperty('seriesMinified', seriesMinified))
       ..add(DiagnosticsProperty('copyrights', copyrights))
       ..add(DiagnosticsProperty('genres', genres))
       ..add(DiagnosticsProperty('languages', languages))
@@ -1332,17 +1173,12 @@ class _$_AccountDatabaseState
             (identical(other.isFetching, isFetching) ||
                 const DeepCollectionEquality()
                     .equals(other.isFetching, isFetching)) &&
-            (identical(other.chapters, chapters) ||
+            (identical(other.chaptersMinified, chaptersMinified) ||
                 const DeepCollectionEquality()
-                    .equals(other.chapters, chapters)) &&
-            (identical(other.series, series) ||
-                const DeepCollectionEquality().equals(other.series, series)) &&
-            (identical(other.seriesMap, seriesMap) ||
+                    .equals(other.chaptersMinified, chaptersMinified)) &&
+            (identical(other.seriesMinified, seriesMinified) ||
                 const DeepCollectionEquality()
-                    .equals(other.seriesMap, seriesMap)) &&
-            (identical(other.seriesDraftsMap, seriesDraftsMap) ||
-                const DeepCollectionEquality()
-                    .equals(other.seriesDraftsMap, seriesDraftsMap)) &&
+                    .equals(other.seriesMinified, seriesMinified)) &&
             (identical(other.copyrights, copyrights) ||
                 const DeepCollectionEquality()
                     .equals(other.copyrights, copyrights)) &&
@@ -1364,10 +1200,8 @@ class _$_AccountDatabaseState
   int get hashCode =>
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(isFetching) ^
-      const DeepCollectionEquality().hash(chapters) ^
-      const DeepCollectionEquality().hash(series) ^
-      const DeepCollectionEquality().hash(seriesMap) ^
-      const DeepCollectionEquality().hash(seriesDraftsMap) ^
+      const DeepCollectionEquality().hash(chaptersMinified) ^
+      const DeepCollectionEquality().hash(seriesMinified) ^
       const DeepCollectionEquality().hash(copyrights) ^
       const DeepCollectionEquality().hash(genres) ^
       const DeepCollectionEquality().hash(languages) ^
@@ -1385,13 +1219,9 @@ abstract class _AccountDatabaseState implements AccountDatabaseState {
       {@required
           bool isFetching,
       @required
-          List<Chapter> chapters,
+          List<ChapterMinified> chaptersMinified,
       @required
-          List<Series> series,
-      @required
-          Map<String, Series> seriesMap,
-      @required
-          Map<String, SeriesDraft> seriesDraftsMap,
+          List<SeriesMinified> seriesMinified,
       @required
           Map<String, String> copyrights,
       @required
@@ -1407,13 +1237,9 @@ abstract class _AccountDatabaseState implements AccountDatabaseState {
   @override
   bool get isFetching;
   @override
-  List<Chapter> get chapters;
+  List<ChapterMinified> get chaptersMinified;
   @override
-  List<Series> get series;
-  @override
-  Map<String, Series> get seriesMap;
-  @override
-  Map<String, SeriesDraft> get seriesDraftsMap;
+  List<SeriesMinified> get seriesMinified;
   @override
   Map<String, String> get copyrights;
   @override

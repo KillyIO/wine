@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named
+// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
 
 part of 'database_success.dart';
 
@@ -12,108 +12,130 @@ T _$identity<T>(T value) => value;
 class _$DatabaseSuccessTearOff {
   const _$DatabaseSuccessTearOff();
 
+// ignore: unused_element
   SessionDeletedSCS sessionDeletedSCS() {
     return const SessionDeletedSCS();
   }
 
+// ignore: unused_element
   SessionFetchedSCS sessionFetchedSCS(Session session) {
     return SessionFetchedSCS(
       session,
     );
   }
 
+// ignore: unused_element
   SessionSavedSCS sessionSavedSCS() {
     return const SessionSavedSCS();
   }
 
+// ignore: unused_element
   SessionUpdatedSCS sessionUpdatedSCS() {
     return const SessionUpdatedSCS();
   }
 
+// ignore: unused_element
   UserAsMapLoadedSCS userAsMapLoadedSCS(Map<String, User> usersMap) {
     return UserAsMapLoadedSCS(
       usersMap,
     );
   }
 
+// ignore: unused_element
   UserDetailsSavedSCS userDetailsSavedSCS(User user) {
     return UserDetailsSavedSCS(
       user,
     );
   }
 
+// ignore: unused_element
   UserLoadedSCS userLoadedSCS(User user) {
     return UserLoadedSCS(
       user,
     );
   }
 
+// ignore: unused_element
   SeriesDraftDeletedSCS seriesDraftDeletedSCS() {
     return const SeriesDraftDeletedSCS();
   }
 
+// ignore: unused_element
   SeriesDraftFetchedSCS seriesDraftFetchedSCS(SeriesDraft seriesDraft) {
     return SeriesDraftFetchedSCS(
       seriesDraft,
     );
   }
 
+// ignore: unused_element
   SeriesDraftSavedSCS seriesDraftSavedSCS(SeriesDraft seriesDraft) {
     return SeriesDraftSavedSCS(
       seriesDraft,
     );
   }
 
+// ignore: unused_element
   SeriesDraftUpdatedSCS seriesDraftUpdatedSCS() {
     return const SeriesDraftUpdatedSCS();
   }
 
+// ignore: unused_element
   SeriesAsMapLoadedSCS seriesAsMapLoadedSCS(Map<String, Series> seriesMap) {
     return SeriesAsMapLoadedSCS(
       seriesMap,
     );
   }
 
+// ignore: unused_element
   SeriesCoverDeletedSCS seriesCoverDeletedSCS() {
     return const SeriesCoverDeletedSCS();
   }
 
+// ignore: unused_element
   SeriesCoverUploadedSCS seriesCoverUploadedSCS(String coverUrl) {
     return SeriesCoverUploadedSCS(
       coverUrl,
     );
   }
 
+// ignore: unused_element
   SeriesDeletedSCS seriesDeletedSCS() {
     return const SeriesDeletedSCS();
   }
 
-  SeriesListLoadedSCS seriesListLoadedSCS(List<Series> series) {
-    return SeriesListLoadedSCS(
-      series,
+// ignore: unused_element
+  SeriesMinifiedListLoadedSCS seriesMinifiedListLoadedSCS(
+      List<SeriesMinified> seriesMinified) {
+    return SeriesMinifiedListLoadedSCS(
+      seriesMinified,
     );
   }
 
+// ignore: unused_element
   SeriesLoadedSCS seriesLoadedSCS(Series series) {
     return SeriesLoadedSCS(
       series,
     );
   }
 
+// ignore: unused_element
   SeriesPublishedSCS seriesPublishedSCS() {
     return const SeriesPublishedSCS();
   }
 
+// ignore: unused_element
   SeriesStatsCountLoadedSCS seriesStatsCountLoadedSCS(int count) {
     return SeriesStatsCountLoadedSCS(
       count,
     );
   }
 
+// ignore: unused_element
   SeriesStatsCountUpdatedSCS seriesStatsCountUpdatedSCS() {
     return const SeriesStatsCountUpdatedSCS();
   }
 
+// ignore: unused_element
   SeriesStatsStatusLoadedSCS seriesStatsStatusLoadedSCS(
       {@required bool status}) {
     return SeriesStatsStatusLoadedSCS(
@@ -121,64 +143,86 @@ class _$DatabaseSuccessTearOff {
     );
   }
 
+// ignore: unused_element
   ChapterDraftDeletedSCS chapterDraftDeletedSCS() {
     return const ChapterDraftDeletedSCS();
   }
 
+// ignore: unused_element
   ChapterDraftFetchedSCS chapterDraftFetchedSCS(ChapterDraft chapterDraft) {
     return ChapterDraftFetchedSCS(
       chapterDraft,
     );
   }
 
+// ignore: unused_element
   ChapterDraftSavedSCS chapterDraftSavedSCS() {
     return const ChapterDraftSavedSCS();
   }
 
+// ignore: unused_element
   ChapterDraftUpdatedSCS chapterDraftUpdatedSCS() {
     return const ChapterDraftUpdatedSCS();
   }
 
+// ignore: unused_element
   ChapterCoverDeletedSCS chapterCoverDeletedSCS() {
     return const ChapterCoverDeletedSCS();
   }
 
+// ignore: unused_element
   ChapterCoverUploadedSCS chapterCoverUploadedSCS(String coverUrl) {
     return ChapterCoverUploadedSCS(
       coverUrl,
     );
   }
 
+// ignore: unused_element
   ChapterDeletedSCS chapterDeletedSCS() {
     return const ChapterDeletedSCS();
   }
 
-  ChapterListLoadedSCS chapterListLoadedSCS(List<Chapter> chapters) {
-    return ChapterListLoadedSCS(
-      chapters,
+// ignore: unused_element
+  ChapterMinifiedListLoadedSCS chapterMinifiedListLoadedSCS(
+      List<ChapterMinified> chaptersMinified) {
+    return ChapterMinifiedListLoadedSCS(
+      chaptersMinified,
     );
   }
 
+// ignore: unused_element
+  ChapterMinifiedLoadedSCS chapterMinifiedLoadedSCS(
+      ChapterMinified chapterMinified) {
+    return ChapterMinifiedLoadedSCS(
+      chapterMinified,
+    );
+  }
+
+// ignore: unused_element
   ChapterLoadedSCS chapterLoadedSCS(Chapter chapter) {
     return ChapterLoadedSCS(
       chapter,
     );
   }
 
+// ignore: unused_element
   ChapterPublishedSCS chapterPublishedSCS() {
     return const ChapterPublishedSCS();
   }
 
+// ignore: unused_element
   ChapterStatsCountLoadedSCS chapterStatsCountLoadedSCS(int count) {
     return ChapterStatsCountLoadedSCS(
       count,
     );
   }
 
+// ignore: unused_element
   ChapterStatsCountUpdatedSCS chapterStatsCountUpdatedSCS() {
     return const ChapterStatsCountUpdatedSCS();
   }
 
+// ignore: unused_element
   ChapterStatsStatusLoadedSCS chapterStatsStatusLoadedSCS(
       {@required bool status}) {
     return ChapterStatsStatusLoadedSCS(
@@ -186,16 +230,19 @@ class _$DatabaseSuccessTearOff {
     );
   }
 
+// ignore: unused_element
   PlaceholderFetchedSCS placeholderFetchedSCS(String placeholderUrl) {
     return PlaceholderFetchedSCS(
       placeholderUrl,
     );
   }
 
+// ignore: unused_element
   PlaceholdersSavedSCS placeholdersSavedSCS() {
     return const PlaceholdersSavedSCS();
   }
 
+// ignore: unused_element
   PlaceholdersLoadedSCS placeholdersLoadedSCS(
       Map<String, String> placeholders) {
     return PlaceholdersLoadedSCS(
@@ -225,7 +272,8 @@ mixin _$DatabaseSuccess {
     @required Result seriesCoverDeletedSCS(),
     @required Result seriesCoverUploadedSCS(String coverUrl),
     @required Result seriesDeletedSCS(),
-    @required Result seriesListLoadedSCS(List<Series> series),
+    @required
+        Result seriesMinifiedListLoadedSCS(List<SeriesMinified> seriesMinified),
     @required Result seriesLoadedSCS(Series series),
     @required Result seriesPublishedSCS(),
     @required Result seriesStatsCountLoadedSCS(int count),
@@ -238,7 +286,10 @@ mixin _$DatabaseSuccess {
     @required Result chapterCoverDeletedSCS(),
     @required Result chapterCoverUploadedSCS(String coverUrl),
     @required Result chapterDeletedSCS(),
-    @required Result chapterListLoadedSCS(List<Chapter> chapters),
+    @required
+        Result chapterMinifiedListLoadedSCS(
+            List<ChapterMinified> chaptersMinified),
+    @required Result chapterMinifiedLoadedSCS(ChapterMinified chapterMinified),
     @required Result chapterLoadedSCS(Chapter chapter),
     @required Result chapterPublishedSCS(),
     @required Result chapterStatsCountLoadedSCS(int count),
@@ -265,7 +316,7 @@ mixin _$DatabaseSuccess {
     Result seriesCoverDeletedSCS(),
     Result seriesCoverUploadedSCS(String coverUrl),
     Result seriesDeletedSCS(),
-    Result seriesListLoadedSCS(List<Series> series),
+    Result seriesMinifiedListLoadedSCS(List<SeriesMinified> seriesMinified),
     Result seriesLoadedSCS(Series series),
     Result seriesPublishedSCS(),
     Result seriesStatsCountLoadedSCS(int count),
@@ -278,7 +329,8 @@ mixin _$DatabaseSuccess {
     Result chapterCoverDeletedSCS(),
     Result chapterCoverUploadedSCS(String coverUrl),
     Result chapterDeletedSCS(),
-    Result chapterListLoadedSCS(List<Chapter> chapters),
+    Result chapterMinifiedListLoadedSCS(List<ChapterMinified> chaptersMinified),
+    Result chapterMinifiedLoadedSCS(ChapterMinified chapterMinified),
     Result chapterLoadedSCS(Chapter chapter),
     Result chapterPublishedSCS(),
     Result chapterStatsCountLoadedSCS(int count),
@@ -306,7 +358,8 @@ mixin _$DatabaseSuccess {
     @required Result seriesCoverDeletedSCS(SeriesCoverDeletedSCS value),
     @required Result seriesCoverUploadedSCS(SeriesCoverUploadedSCS value),
     @required Result seriesDeletedSCS(SeriesDeletedSCS value),
-    @required Result seriesListLoadedSCS(SeriesListLoadedSCS value),
+    @required
+        Result seriesMinifiedListLoadedSCS(SeriesMinifiedListLoadedSCS value),
     @required Result seriesLoadedSCS(SeriesLoadedSCS value),
     @required Result seriesPublishedSCS(SeriesPublishedSCS value),
     @required Result seriesStatsCountLoadedSCS(SeriesStatsCountLoadedSCS value),
@@ -321,7 +374,9 @@ mixin _$DatabaseSuccess {
     @required Result chapterCoverDeletedSCS(ChapterCoverDeletedSCS value),
     @required Result chapterCoverUploadedSCS(ChapterCoverUploadedSCS value),
     @required Result chapterDeletedSCS(ChapterDeletedSCS value),
-    @required Result chapterListLoadedSCS(ChapterListLoadedSCS value),
+    @required
+        Result chapterMinifiedListLoadedSCS(ChapterMinifiedListLoadedSCS value),
+    @required Result chapterMinifiedLoadedSCS(ChapterMinifiedLoadedSCS value),
     @required Result chapterLoadedSCS(ChapterLoadedSCS value),
     @required Result chapterPublishedSCS(ChapterPublishedSCS value),
     @required
@@ -351,7 +406,7 @@ mixin _$DatabaseSuccess {
     Result seriesCoverDeletedSCS(SeriesCoverDeletedSCS value),
     Result seriesCoverUploadedSCS(SeriesCoverUploadedSCS value),
     Result seriesDeletedSCS(SeriesDeletedSCS value),
-    Result seriesListLoadedSCS(SeriesListLoadedSCS value),
+    Result seriesMinifiedListLoadedSCS(SeriesMinifiedListLoadedSCS value),
     Result seriesLoadedSCS(SeriesLoadedSCS value),
     Result seriesPublishedSCS(SeriesPublishedSCS value),
     Result seriesStatsCountLoadedSCS(SeriesStatsCountLoadedSCS value),
@@ -364,7 +419,8 @@ mixin _$DatabaseSuccess {
     Result chapterCoverDeletedSCS(ChapterCoverDeletedSCS value),
     Result chapterCoverUploadedSCS(ChapterCoverUploadedSCS value),
     Result chapterDeletedSCS(ChapterDeletedSCS value),
-    Result chapterListLoadedSCS(ChapterListLoadedSCS value),
+    Result chapterMinifiedListLoadedSCS(ChapterMinifiedListLoadedSCS value),
+    Result chapterMinifiedLoadedSCS(ChapterMinifiedLoadedSCS value),
     Result chapterLoadedSCS(ChapterLoadedSCS value),
     Result chapterPublishedSCS(ChapterPublishedSCS value),
     Result chapterStatsCountLoadedSCS(ChapterStatsCountLoadedSCS value),
@@ -443,7 +499,8 @@ class _$SessionDeletedSCS implements SessionDeletedSCS {
     @required Result seriesCoverDeletedSCS(),
     @required Result seriesCoverUploadedSCS(String coverUrl),
     @required Result seriesDeletedSCS(),
-    @required Result seriesListLoadedSCS(List<Series> series),
+    @required
+        Result seriesMinifiedListLoadedSCS(List<SeriesMinified> seriesMinified),
     @required Result seriesLoadedSCS(Series series),
     @required Result seriesPublishedSCS(),
     @required Result seriesStatsCountLoadedSCS(int count),
@@ -456,7 +513,10 @@ class _$SessionDeletedSCS implements SessionDeletedSCS {
     @required Result chapterCoverDeletedSCS(),
     @required Result chapterCoverUploadedSCS(String coverUrl),
     @required Result chapterDeletedSCS(),
-    @required Result chapterListLoadedSCS(List<Chapter> chapters),
+    @required
+        Result chapterMinifiedListLoadedSCS(
+            List<ChapterMinified> chaptersMinified),
+    @required Result chapterMinifiedLoadedSCS(ChapterMinified chapterMinified),
     @required Result chapterLoadedSCS(Chapter chapter),
     @required Result chapterPublishedSCS(),
     @required Result chapterStatsCountLoadedSCS(int count),
@@ -481,7 +541,7 @@ class _$SessionDeletedSCS implements SessionDeletedSCS {
     assert(seriesCoverDeletedSCS != null);
     assert(seriesCoverUploadedSCS != null);
     assert(seriesDeletedSCS != null);
-    assert(seriesListLoadedSCS != null);
+    assert(seriesMinifiedListLoadedSCS != null);
     assert(seriesLoadedSCS != null);
     assert(seriesPublishedSCS != null);
     assert(seriesStatsCountLoadedSCS != null);
@@ -494,7 +554,8 @@ class _$SessionDeletedSCS implements SessionDeletedSCS {
     assert(chapterCoverDeletedSCS != null);
     assert(chapterCoverUploadedSCS != null);
     assert(chapterDeletedSCS != null);
-    assert(chapterListLoadedSCS != null);
+    assert(chapterMinifiedListLoadedSCS != null);
+    assert(chapterMinifiedLoadedSCS != null);
     assert(chapterLoadedSCS != null);
     assert(chapterPublishedSCS != null);
     assert(chapterStatsCountLoadedSCS != null);
@@ -524,7 +585,7 @@ class _$SessionDeletedSCS implements SessionDeletedSCS {
     Result seriesCoverDeletedSCS(),
     Result seriesCoverUploadedSCS(String coverUrl),
     Result seriesDeletedSCS(),
-    Result seriesListLoadedSCS(List<Series> series),
+    Result seriesMinifiedListLoadedSCS(List<SeriesMinified> seriesMinified),
     Result seriesLoadedSCS(Series series),
     Result seriesPublishedSCS(),
     Result seriesStatsCountLoadedSCS(int count),
@@ -537,7 +598,8 @@ class _$SessionDeletedSCS implements SessionDeletedSCS {
     Result chapterCoverDeletedSCS(),
     Result chapterCoverUploadedSCS(String coverUrl),
     Result chapterDeletedSCS(),
-    Result chapterListLoadedSCS(List<Chapter> chapters),
+    Result chapterMinifiedListLoadedSCS(List<ChapterMinified> chaptersMinified),
+    Result chapterMinifiedLoadedSCS(ChapterMinified chapterMinified),
     Result chapterLoadedSCS(Chapter chapter),
     Result chapterPublishedSCS(),
     Result chapterStatsCountLoadedSCS(int count),
@@ -573,7 +635,8 @@ class _$SessionDeletedSCS implements SessionDeletedSCS {
     @required Result seriesCoverDeletedSCS(SeriesCoverDeletedSCS value),
     @required Result seriesCoverUploadedSCS(SeriesCoverUploadedSCS value),
     @required Result seriesDeletedSCS(SeriesDeletedSCS value),
-    @required Result seriesListLoadedSCS(SeriesListLoadedSCS value),
+    @required
+        Result seriesMinifiedListLoadedSCS(SeriesMinifiedListLoadedSCS value),
     @required Result seriesLoadedSCS(SeriesLoadedSCS value),
     @required Result seriesPublishedSCS(SeriesPublishedSCS value),
     @required Result seriesStatsCountLoadedSCS(SeriesStatsCountLoadedSCS value),
@@ -588,7 +651,9 @@ class _$SessionDeletedSCS implements SessionDeletedSCS {
     @required Result chapterCoverDeletedSCS(ChapterCoverDeletedSCS value),
     @required Result chapterCoverUploadedSCS(ChapterCoverUploadedSCS value),
     @required Result chapterDeletedSCS(ChapterDeletedSCS value),
-    @required Result chapterListLoadedSCS(ChapterListLoadedSCS value),
+    @required
+        Result chapterMinifiedListLoadedSCS(ChapterMinifiedListLoadedSCS value),
+    @required Result chapterMinifiedLoadedSCS(ChapterMinifiedLoadedSCS value),
     @required Result chapterLoadedSCS(ChapterLoadedSCS value),
     @required Result chapterPublishedSCS(ChapterPublishedSCS value),
     @required
@@ -616,7 +681,7 @@ class _$SessionDeletedSCS implements SessionDeletedSCS {
     assert(seriesCoverDeletedSCS != null);
     assert(seriesCoverUploadedSCS != null);
     assert(seriesDeletedSCS != null);
-    assert(seriesListLoadedSCS != null);
+    assert(seriesMinifiedListLoadedSCS != null);
     assert(seriesLoadedSCS != null);
     assert(seriesPublishedSCS != null);
     assert(seriesStatsCountLoadedSCS != null);
@@ -629,7 +694,8 @@ class _$SessionDeletedSCS implements SessionDeletedSCS {
     assert(chapterCoverDeletedSCS != null);
     assert(chapterCoverUploadedSCS != null);
     assert(chapterDeletedSCS != null);
-    assert(chapterListLoadedSCS != null);
+    assert(chapterMinifiedListLoadedSCS != null);
+    assert(chapterMinifiedLoadedSCS != null);
     assert(chapterLoadedSCS != null);
     assert(chapterPublishedSCS != null);
     assert(chapterStatsCountLoadedSCS != null);
@@ -659,7 +725,7 @@ class _$SessionDeletedSCS implements SessionDeletedSCS {
     Result seriesCoverDeletedSCS(SeriesCoverDeletedSCS value),
     Result seriesCoverUploadedSCS(SeriesCoverUploadedSCS value),
     Result seriesDeletedSCS(SeriesDeletedSCS value),
-    Result seriesListLoadedSCS(SeriesListLoadedSCS value),
+    Result seriesMinifiedListLoadedSCS(SeriesMinifiedListLoadedSCS value),
     Result seriesLoadedSCS(SeriesLoadedSCS value),
     Result seriesPublishedSCS(SeriesPublishedSCS value),
     Result seriesStatsCountLoadedSCS(SeriesStatsCountLoadedSCS value),
@@ -672,7 +738,8 @@ class _$SessionDeletedSCS implements SessionDeletedSCS {
     Result chapterCoverDeletedSCS(ChapterCoverDeletedSCS value),
     Result chapterCoverUploadedSCS(ChapterCoverUploadedSCS value),
     Result chapterDeletedSCS(ChapterDeletedSCS value),
-    Result chapterListLoadedSCS(ChapterListLoadedSCS value),
+    Result chapterMinifiedListLoadedSCS(ChapterMinifiedListLoadedSCS value),
+    Result chapterMinifiedLoadedSCS(ChapterMinifiedLoadedSCS value),
     Result chapterLoadedSCS(ChapterLoadedSCS value),
     Result chapterPublishedSCS(ChapterPublishedSCS value),
     Result chapterStatsCountLoadedSCS(ChapterStatsCountLoadedSCS value),
@@ -767,7 +834,8 @@ class _$SessionFetchedSCS implements SessionFetchedSCS {
     @required Result seriesCoverDeletedSCS(),
     @required Result seriesCoverUploadedSCS(String coverUrl),
     @required Result seriesDeletedSCS(),
-    @required Result seriesListLoadedSCS(List<Series> series),
+    @required
+        Result seriesMinifiedListLoadedSCS(List<SeriesMinified> seriesMinified),
     @required Result seriesLoadedSCS(Series series),
     @required Result seriesPublishedSCS(),
     @required Result seriesStatsCountLoadedSCS(int count),
@@ -780,7 +848,10 @@ class _$SessionFetchedSCS implements SessionFetchedSCS {
     @required Result chapterCoverDeletedSCS(),
     @required Result chapterCoverUploadedSCS(String coverUrl),
     @required Result chapterDeletedSCS(),
-    @required Result chapterListLoadedSCS(List<Chapter> chapters),
+    @required
+        Result chapterMinifiedListLoadedSCS(
+            List<ChapterMinified> chaptersMinified),
+    @required Result chapterMinifiedLoadedSCS(ChapterMinified chapterMinified),
     @required Result chapterLoadedSCS(Chapter chapter),
     @required Result chapterPublishedSCS(),
     @required Result chapterStatsCountLoadedSCS(int count),
@@ -805,7 +876,7 @@ class _$SessionFetchedSCS implements SessionFetchedSCS {
     assert(seriesCoverDeletedSCS != null);
     assert(seriesCoverUploadedSCS != null);
     assert(seriesDeletedSCS != null);
-    assert(seriesListLoadedSCS != null);
+    assert(seriesMinifiedListLoadedSCS != null);
     assert(seriesLoadedSCS != null);
     assert(seriesPublishedSCS != null);
     assert(seriesStatsCountLoadedSCS != null);
@@ -818,7 +889,8 @@ class _$SessionFetchedSCS implements SessionFetchedSCS {
     assert(chapterCoverDeletedSCS != null);
     assert(chapterCoverUploadedSCS != null);
     assert(chapterDeletedSCS != null);
-    assert(chapterListLoadedSCS != null);
+    assert(chapterMinifiedListLoadedSCS != null);
+    assert(chapterMinifiedLoadedSCS != null);
     assert(chapterLoadedSCS != null);
     assert(chapterPublishedSCS != null);
     assert(chapterStatsCountLoadedSCS != null);
@@ -848,7 +920,7 @@ class _$SessionFetchedSCS implements SessionFetchedSCS {
     Result seriesCoverDeletedSCS(),
     Result seriesCoverUploadedSCS(String coverUrl),
     Result seriesDeletedSCS(),
-    Result seriesListLoadedSCS(List<Series> series),
+    Result seriesMinifiedListLoadedSCS(List<SeriesMinified> seriesMinified),
     Result seriesLoadedSCS(Series series),
     Result seriesPublishedSCS(),
     Result seriesStatsCountLoadedSCS(int count),
@@ -861,7 +933,8 @@ class _$SessionFetchedSCS implements SessionFetchedSCS {
     Result chapterCoverDeletedSCS(),
     Result chapterCoverUploadedSCS(String coverUrl),
     Result chapterDeletedSCS(),
-    Result chapterListLoadedSCS(List<Chapter> chapters),
+    Result chapterMinifiedListLoadedSCS(List<ChapterMinified> chaptersMinified),
+    Result chapterMinifiedLoadedSCS(ChapterMinified chapterMinified),
     Result chapterLoadedSCS(Chapter chapter),
     Result chapterPublishedSCS(),
     Result chapterStatsCountLoadedSCS(int count),
@@ -897,7 +970,8 @@ class _$SessionFetchedSCS implements SessionFetchedSCS {
     @required Result seriesCoverDeletedSCS(SeriesCoverDeletedSCS value),
     @required Result seriesCoverUploadedSCS(SeriesCoverUploadedSCS value),
     @required Result seriesDeletedSCS(SeriesDeletedSCS value),
-    @required Result seriesListLoadedSCS(SeriesListLoadedSCS value),
+    @required
+        Result seriesMinifiedListLoadedSCS(SeriesMinifiedListLoadedSCS value),
     @required Result seriesLoadedSCS(SeriesLoadedSCS value),
     @required Result seriesPublishedSCS(SeriesPublishedSCS value),
     @required Result seriesStatsCountLoadedSCS(SeriesStatsCountLoadedSCS value),
@@ -912,7 +986,9 @@ class _$SessionFetchedSCS implements SessionFetchedSCS {
     @required Result chapterCoverDeletedSCS(ChapterCoverDeletedSCS value),
     @required Result chapterCoverUploadedSCS(ChapterCoverUploadedSCS value),
     @required Result chapterDeletedSCS(ChapterDeletedSCS value),
-    @required Result chapterListLoadedSCS(ChapterListLoadedSCS value),
+    @required
+        Result chapterMinifiedListLoadedSCS(ChapterMinifiedListLoadedSCS value),
+    @required Result chapterMinifiedLoadedSCS(ChapterMinifiedLoadedSCS value),
     @required Result chapterLoadedSCS(ChapterLoadedSCS value),
     @required Result chapterPublishedSCS(ChapterPublishedSCS value),
     @required
@@ -940,7 +1016,7 @@ class _$SessionFetchedSCS implements SessionFetchedSCS {
     assert(seriesCoverDeletedSCS != null);
     assert(seriesCoverUploadedSCS != null);
     assert(seriesDeletedSCS != null);
-    assert(seriesListLoadedSCS != null);
+    assert(seriesMinifiedListLoadedSCS != null);
     assert(seriesLoadedSCS != null);
     assert(seriesPublishedSCS != null);
     assert(seriesStatsCountLoadedSCS != null);
@@ -953,7 +1029,8 @@ class _$SessionFetchedSCS implements SessionFetchedSCS {
     assert(chapterCoverDeletedSCS != null);
     assert(chapterCoverUploadedSCS != null);
     assert(chapterDeletedSCS != null);
-    assert(chapterListLoadedSCS != null);
+    assert(chapterMinifiedListLoadedSCS != null);
+    assert(chapterMinifiedLoadedSCS != null);
     assert(chapterLoadedSCS != null);
     assert(chapterPublishedSCS != null);
     assert(chapterStatsCountLoadedSCS != null);
@@ -983,7 +1060,7 @@ class _$SessionFetchedSCS implements SessionFetchedSCS {
     Result seriesCoverDeletedSCS(SeriesCoverDeletedSCS value),
     Result seriesCoverUploadedSCS(SeriesCoverUploadedSCS value),
     Result seriesDeletedSCS(SeriesDeletedSCS value),
-    Result seriesListLoadedSCS(SeriesListLoadedSCS value),
+    Result seriesMinifiedListLoadedSCS(SeriesMinifiedListLoadedSCS value),
     Result seriesLoadedSCS(SeriesLoadedSCS value),
     Result seriesPublishedSCS(SeriesPublishedSCS value),
     Result seriesStatsCountLoadedSCS(SeriesStatsCountLoadedSCS value),
@@ -996,7 +1073,8 @@ class _$SessionFetchedSCS implements SessionFetchedSCS {
     Result chapterCoverDeletedSCS(ChapterCoverDeletedSCS value),
     Result chapterCoverUploadedSCS(ChapterCoverUploadedSCS value),
     Result chapterDeletedSCS(ChapterDeletedSCS value),
-    Result chapterListLoadedSCS(ChapterListLoadedSCS value),
+    Result chapterMinifiedListLoadedSCS(ChapterMinifiedListLoadedSCS value),
+    Result chapterMinifiedLoadedSCS(ChapterMinifiedLoadedSCS value),
     Result chapterLoadedSCS(ChapterLoadedSCS value),
     Result chapterPublishedSCS(ChapterPublishedSCS value),
     Result chapterStatsCountLoadedSCS(ChapterStatsCountLoadedSCS value),
@@ -1073,7 +1151,8 @@ class _$SessionSavedSCS implements SessionSavedSCS {
     @required Result seriesCoverDeletedSCS(),
     @required Result seriesCoverUploadedSCS(String coverUrl),
     @required Result seriesDeletedSCS(),
-    @required Result seriesListLoadedSCS(List<Series> series),
+    @required
+        Result seriesMinifiedListLoadedSCS(List<SeriesMinified> seriesMinified),
     @required Result seriesLoadedSCS(Series series),
     @required Result seriesPublishedSCS(),
     @required Result seriesStatsCountLoadedSCS(int count),
@@ -1086,7 +1165,10 @@ class _$SessionSavedSCS implements SessionSavedSCS {
     @required Result chapterCoverDeletedSCS(),
     @required Result chapterCoverUploadedSCS(String coverUrl),
     @required Result chapterDeletedSCS(),
-    @required Result chapterListLoadedSCS(List<Chapter> chapters),
+    @required
+        Result chapterMinifiedListLoadedSCS(
+            List<ChapterMinified> chaptersMinified),
+    @required Result chapterMinifiedLoadedSCS(ChapterMinified chapterMinified),
     @required Result chapterLoadedSCS(Chapter chapter),
     @required Result chapterPublishedSCS(),
     @required Result chapterStatsCountLoadedSCS(int count),
@@ -1111,7 +1193,7 @@ class _$SessionSavedSCS implements SessionSavedSCS {
     assert(seriesCoverDeletedSCS != null);
     assert(seriesCoverUploadedSCS != null);
     assert(seriesDeletedSCS != null);
-    assert(seriesListLoadedSCS != null);
+    assert(seriesMinifiedListLoadedSCS != null);
     assert(seriesLoadedSCS != null);
     assert(seriesPublishedSCS != null);
     assert(seriesStatsCountLoadedSCS != null);
@@ -1124,7 +1206,8 @@ class _$SessionSavedSCS implements SessionSavedSCS {
     assert(chapterCoverDeletedSCS != null);
     assert(chapterCoverUploadedSCS != null);
     assert(chapterDeletedSCS != null);
-    assert(chapterListLoadedSCS != null);
+    assert(chapterMinifiedListLoadedSCS != null);
+    assert(chapterMinifiedLoadedSCS != null);
     assert(chapterLoadedSCS != null);
     assert(chapterPublishedSCS != null);
     assert(chapterStatsCountLoadedSCS != null);
@@ -1154,7 +1237,7 @@ class _$SessionSavedSCS implements SessionSavedSCS {
     Result seriesCoverDeletedSCS(),
     Result seriesCoverUploadedSCS(String coverUrl),
     Result seriesDeletedSCS(),
-    Result seriesListLoadedSCS(List<Series> series),
+    Result seriesMinifiedListLoadedSCS(List<SeriesMinified> seriesMinified),
     Result seriesLoadedSCS(Series series),
     Result seriesPublishedSCS(),
     Result seriesStatsCountLoadedSCS(int count),
@@ -1167,7 +1250,8 @@ class _$SessionSavedSCS implements SessionSavedSCS {
     Result chapterCoverDeletedSCS(),
     Result chapterCoverUploadedSCS(String coverUrl),
     Result chapterDeletedSCS(),
-    Result chapterListLoadedSCS(List<Chapter> chapters),
+    Result chapterMinifiedListLoadedSCS(List<ChapterMinified> chaptersMinified),
+    Result chapterMinifiedLoadedSCS(ChapterMinified chapterMinified),
     Result chapterLoadedSCS(Chapter chapter),
     Result chapterPublishedSCS(),
     Result chapterStatsCountLoadedSCS(int count),
@@ -1203,7 +1287,8 @@ class _$SessionSavedSCS implements SessionSavedSCS {
     @required Result seriesCoverDeletedSCS(SeriesCoverDeletedSCS value),
     @required Result seriesCoverUploadedSCS(SeriesCoverUploadedSCS value),
     @required Result seriesDeletedSCS(SeriesDeletedSCS value),
-    @required Result seriesListLoadedSCS(SeriesListLoadedSCS value),
+    @required
+        Result seriesMinifiedListLoadedSCS(SeriesMinifiedListLoadedSCS value),
     @required Result seriesLoadedSCS(SeriesLoadedSCS value),
     @required Result seriesPublishedSCS(SeriesPublishedSCS value),
     @required Result seriesStatsCountLoadedSCS(SeriesStatsCountLoadedSCS value),
@@ -1218,7 +1303,9 @@ class _$SessionSavedSCS implements SessionSavedSCS {
     @required Result chapterCoverDeletedSCS(ChapterCoverDeletedSCS value),
     @required Result chapterCoverUploadedSCS(ChapterCoverUploadedSCS value),
     @required Result chapterDeletedSCS(ChapterDeletedSCS value),
-    @required Result chapterListLoadedSCS(ChapterListLoadedSCS value),
+    @required
+        Result chapterMinifiedListLoadedSCS(ChapterMinifiedListLoadedSCS value),
+    @required Result chapterMinifiedLoadedSCS(ChapterMinifiedLoadedSCS value),
     @required Result chapterLoadedSCS(ChapterLoadedSCS value),
     @required Result chapterPublishedSCS(ChapterPublishedSCS value),
     @required
@@ -1246,7 +1333,7 @@ class _$SessionSavedSCS implements SessionSavedSCS {
     assert(seriesCoverDeletedSCS != null);
     assert(seriesCoverUploadedSCS != null);
     assert(seriesDeletedSCS != null);
-    assert(seriesListLoadedSCS != null);
+    assert(seriesMinifiedListLoadedSCS != null);
     assert(seriesLoadedSCS != null);
     assert(seriesPublishedSCS != null);
     assert(seriesStatsCountLoadedSCS != null);
@@ -1259,7 +1346,8 @@ class _$SessionSavedSCS implements SessionSavedSCS {
     assert(chapterCoverDeletedSCS != null);
     assert(chapterCoverUploadedSCS != null);
     assert(chapterDeletedSCS != null);
-    assert(chapterListLoadedSCS != null);
+    assert(chapterMinifiedListLoadedSCS != null);
+    assert(chapterMinifiedLoadedSCS != null);
     assert(chapterLoadedSCS != null);
     assert(chapterPublishedSCS != null);
     assert(chapterStatsCountLoadedSCS != null);
@@ -1289,7 +1377,7 @@ class _$SessionSavedSCS implements SessionSavedSCS {
     Result seriesCoverDeletedSCS(SeriesCoverDeletedSCS value),
     Result seriesCoverUploadedSCS(SeriesCoverUploadedSCS value),
     Result seriesDeletedSCS(SeriesDeletedSCS value),
-    Result seriesListLoadedSCS(SeriesListLoadedSCS value),
+    Result seriesMinifiedListLoadedSCS(SeriesMinifiedListLoadedSCS value),
     Result seriesLoadedSCS(SeriesLoadedSCS value),
     Result seriesPublishedSCS(SeriesPublishedSCS value),
     Result seriesStatsCountLoadedSCS(SeriesStatsCountLoadedSCS value),
@@ -1302,7 +1390,8 @@ class _$SessionSavedSCS implements SessionSavedSCS {
     Result chapterCoverDeletedSCS(ChapterCoverDeletedSCS value),
     Result chapterCoverUploadedSCS(ChapterCoverUploadedSCS value),
     Result chapterDeletedSCS(ChapterDeletedSCS value),
-    Result chapterListLoadedSCS(ChapterListLoadedSCS value),
+    Result chapterMinifiedListLoadedSCS(ChapterMinifiedListLoadedSCS value),
+    Result chapterMinifiedLoadedSCS(ChapterMinifiedLoadedSCS value),
     Result chapterLoadedSCS(ChapterLoadedSCS value),
     Result chapterPublishedSCS(ChapterPublishedSCS value),
     Result chapterStatsCountLoadedSCS(ChapterStatsCountLoadedSCS value),
@@ -1376,7 +1465,8 @@ class _$SessionUpdatedSCS implements SessionUpdatedSCS {
     @required Result seriesCoverDeletedSCS(),
     @required Result seriesCoverUploadedSCS(String coverUrl),
     @required Result seriesDeletedSCS(),
-    @required Result seriesListLoadedSCS(List<Series> series),
+    @required
+        Result seriesMinifiedListLoadedSCS(List<SeriesMinified> seriesMinified),
     @required Result seriesLoadedSCS(Series series),
     @required Result seriesPublishedSCS(),
     @required Result seriesStatsCountLoadedSCS(int count),
@@ -1389,7 +1479,10 @@ class _$SessionUpdatedSCS implements SessionUpdatedSCS {
     @required Result chapterCoverDeletedSCS(),
     @required Result chapterCoverUploadedSCS(String coverUrl),
     @required Result chapterDeletedSCS(),
-    @required Result chapterListLoadedSCS(List<Chapter> chapters),
+    @required
+        Result chapterMinifiedListLoadedSCS(
+            List<ChapterMinified> chaptersMinified),
+    @required Result chapterMinifiedLoadedSCS(ChapterMinified chapterMinified),
     @required Result chapterLoadedSCS(Chapter chapter),
     @required Result chapterPublishedSCS(),
     @required Result chapterStatsCountLoadedSCS(int count),
@@ -1414,7 +1507,7 @@ class _$SessionUpdatedSCS implements SessionUpdatedSCS {
     assert(seriesCoverDeletedSCS != null);
     assert(seriesCoverUploadedSCS != null);
     assert(seriesDeletedSCS != null);
-    assert(seriesListLoadedSCS != null);
+    assert(seriesMinifiedListLoadedSCS != null);
     assert(seriesLoadedSCS != null);
     assert(seriesPublishedSCS != null);
     assert(seriesStatsCountLoadedSCS != null);
@@ -1427,7 +1520,8 @@ class _$SessionUpdatedSCS implements SessionUpdatedSCS {
     assert(chapterCoverDeletedSCS != null);
     assert(chapterCoverUploadedSCS != null);
     assert(chapterDeletedSCS != null);
-    assert(chapterListLoadedSCS != null);
+    assert(chapterMinifiedListLoadedSCS != null);
+    assert(chapterMinifiedLoadedSCS != null);
     assert(chapterLoadedSCS != null);
     assert(chapterPublishedSCS != null);
     assert(chapterStatsCountLoadedSCS != null);
@@ -1457,7 +1551,7 @@ class _$SessionUpdatedSCS implements SessionUpdatedSCS {
     Result seriesCoverDeletedSCS(),
     Result seriesCoverUploadedSCS(String coverUrl),
     Result seriesDeletedSCS(),
-    Result seriesListLoadedSCS(List<Series> series),
+    Result seriesMinifiedListLoadedSCS(List<SeriesMinified> seriesMinified),
     Result seriesLoadedSCS(Series series),
     Result seriesPublishedSCS(),
     Result seriesStatsCountLoadedSCS(int count),
@@ -1470,7 +1564,8 @@ class _$SessionUpdatedSCS implements SessionUpdatedSCS {
     Result chapterCoverDeletedSCS(),
     Result chapterCoverUploadedSCS(String coverUrl),
     Result chapterDeletedSCS(),
-    Result chapterListLoadedSCS(List<Chapter> chapters),
+    Result chapterMinifiedListLoadedSCS(List<ChapterMinified> chaptersMinified),
+    Result chapterMinifiedLoadedSCS(ChapterMinified chapterMinified),
     Result chapterLoadedSCS(Chapter chapter),
     Result chapterPublishedSCS(),
     Result chapterStatsCountLoadedSCS(int count),
@@ -1506,7 +1601,8 @@ class _$SessionUpdatedSCS implements SessionUpdatedSCS {
     @required Result seriesCoverDeletedSCS(SeriesCoverDeletedSCS value),
     @required Result seriesCoverUploadedSCS(SeriesCoverUploadedSCS value),
     @required Result seriesDeletedSCS(SeriesDeletedSCS value),
-    @required Result seriesListLoadedSCS(SeriesListLoadedSCS value),
+    @required
+        Result seriesMinifiedListLoadedSCS(SeriesMinifiedListLoadedSCS value),
     @required Result seriesLoadedSCS(SeriesLoadedSCS value),
     @required Result seriesPublishedSCS(SeriesPublishedSCS value),
     @required Result seriesStatsCountLoadedSCS(SeriesStatsCountLoadedSCS value),
@@ -1521,7 +1617,9 @@ class _$SessionUpdatedSCS implements SessionUpdatedSCS {
     @required Result chapterCoverDeletedSCS(ChapterCoverDeletedSCS value),
     @required Result chapterCoverUploadedSCS(ChapterCoverUploadedSCS value),
     @required Result chapterDeletedSCS(ChapterDeletedSCS value),
-    @required Result chapterListLoadedSCS(ChapterListLoadedSCS value),
+    @required
+        Result chapterMinifiedListLoadedSCS(ChapterMinifiedListLoadedSCS value),
+    @required Result chapterMinifiedLoadedSCS(ChapterMinifiedLoadedSCS value),
     @required Result chapterLoadedSCS(ChapterLoadedSCS value),
     @required Result chapterPublishedSCS(ChapterPublishedSCS value),
     @required
@@ -1549,7 +1647,7 @@ class _$SessionUpdatedSCS implements SessionUpdatedSCS {
     assert(seriesCoverDeletedSCS != null);
     assert(seriesCoverUploadedSCS != null);
     assert(seriesDeletedSCS != null);
-    assert(seriesListLoadedSCS != null);
+    assert(seriesMinifiedListLoadedSCS != null);
     assert(seriesLoadedSCS != null);
     assert(seriesPublishedSCS != null);
     assert(seriesStatsCountLoadedSCS != null);
@@ -1562,7 +1660,8 @@ class _$SessionUpdatedSCS implements SessionUpdatedSCS {
     assert(chapterCoverDeletedSCS != null);
     assert(chapterCoverUploadedSCS != null);
     assert(chapterDeletedSCS != null);
-    assert(chapterListLoadedSCS != null);
+    assert(chapterMinifiedListLoadedSCS != null);
+    assert(chapterMinifiedLoadedSCS != null);
     assert(chapterLoadedSCS != null);
     assert(chapterPublishedSCS != null);
     assert(chapterStatsCountLoadedSCS != null);
@@ -1592,7 +1691,7 @@ class _$SessionUpdatedSCS implements SessionUpdatedSCS {
     Result seriesCoverDeletedSCS(SeriesCoverDeletedSCS value),
     Result seriesCoverUploadedSCS(SeriesCoverUploadedSCS value),
     Result seriesDeletedSCS(SeriesDeletedSCS value),
-    Result seriesListLoadedSCS(SeriesListLoadedSCS value),
+    Result seriesMinifiedListLoadedSCS(SeriesMinifiedListLoadedSCS value),
     Result seriesLoadedSCS(SeriesLoadedSCS value),
     Result seriesPublishedSCS(SeriesPublishedSCS value),
     Result seriesStatsCountLoadedSCS(SeriesStatsCountLoadedSCS value),
@@ -1605,7 +1704,8 @@ class _$SessionUpdatedSCS implements SessionUpdatedSCS {
     Result chapterCoverDeletedSCS(ChapterCoverDeletedSCS value),
     Result chapterCoverUploadedSCS(ChapterCoverUploadedSCS value),
     Result chapterDeletedSCS(ChapterDeletedSCS value),
-    Result chapterListLoadedSCS(ChapterListLoadedSCS value),
+    Result chapterMinifiedListLoadedSCS(ChapterMinifiedListLoadedSCS value),
+    Result chapterMinifiedLoadedSCS(ChapterMinifiedLoadedSCS value),
     Result chapterLoadedSCS(ChapterLoadedSCS value),
     Result chapterPublishedSCS(ChapterPublishedSCS value),
     Result chapterStatsCountLoadedSCS(ChapterStatsCountLoadedSCS value),
@@ -1701,7 +1801,8 @@ class _$UserAsMapLoadedSCS implements UserAsMapLoadedSCS {
     @required Result seriesCoverDeletedSCS(),
     @required Result seriesCoverUploadedSCS(String coverUrl),
     @required Result seriesDeletedSCS(),
-    @required Result seriesListLoadedSCS(List<Series> series),
+    @required
+        Result seriesMinifiedListLoadedSCS(List<SeriesMinified> seriesMinified),
     @required Result seriesLoadedSCS(Series series),
     @required Result seriesPublishedSCS(),
     @required Result seriesStatsCountLoadedSCS(int count),
@@ -1714,7 +1815,10 @@ class _$UserAsMapLoadedSCS implements UserAsMapLoadedSCS {
     @required Result chapterCoverDeletedSCS(),
     @required Result chapterCoverUploadedSCS(String coverUrl),
     @required Result chapterDeletedSCS(),
-    @required Result chapterListLoadedSCS(List<Chapter> chapters),
+    @required
+        Result chapterMinifiedListLoadedSCS(
+            List<ChapterMinified> chaptersMinified),
+    @required Result chapterMinifiedLoadedSCS(ChapterMinified chapterMinified),
     @required Result chapterLoadedSCS(Chapter chapter),
     @required Result chapterPublishedSCS(),
     @required Result chapterStatsCountLoadedSCS(int count),
@@ -1739,7 +1843,7 @@ class _$UserAsMapLoadedSCS implements UserAsMapLoadedSCS {
     assert(seriesCoverDeletedSCS != null);
     assert(seriesCoverUploadedSCS != null);
     assert(seriesDeletedSCS != null);
-    assert(seriesListLoadedSCS != null);
+    assert(seriesMinifiedListLoadedSCS != null);
     assert(seriesLoadedSCS != null);
     assert(seriesPublishedSCS != null);
     assert(seriesStatsCountLoadedSCS != null);
@@ -1752,7 +1856,8 @@ class _$UserAsMapLoadedSCS implements UserAsMapLoadedSCS {
     assert(chapterCoverDeletedSCS != null);
     assert(chapterCoverUploadedSCS != null);
     assert(chapterDeletedSCS != null);
-    assert(chapterListLoadedSCS != null);
+    assert(chapterMinifiedListLoadedSCS != null);
+    assert(chapterMinifiedLoadedSCS != null);
     assert(chapterLoadedSCS != null);
     assert(chapterPublishedSCS != null);
     assert(chapterStatsCountLoadedSCS != null);
@@ -1782,7 +1887,7 @@ class _$UserAsMapLoadedSCS implements UserAsMapLoadedSCS {
     Result seriesCoverDeletedSCS(),
     Result seriesCoverUploadedSCS(String coverUrl),
     Result seriesDeletedSCS(),
-    Result seriesListLoadedSCS(List<Series> series),
+    Result seriesMinifiedListLoadedSCS(List<SeriesMinified> seriesMinified),
     Result seriesLoadedSCS(Series series),
     Result seriesPublishedSCS(),
     Result seriesStatsCountLoadedSCS(int count),
@@ -1795,7 +1900,8 @@ class _$UserAsMapLoadedSCS implements UserAsMapLoadedSCS {
     Result chapterCoverDeletedSCS(),
     Result chapterCoverUploadedSCS(String coverUrl),
     Result chapterDeletedSCS(),
-    Result chapterListLoadedSCS(List<Chapter> chapters),
+    Result chapterMinifiedListLoadedSCS(List<ChapterMinified> chaptersMinified),
+    Result chapterMinifiedLoadedSCS(ChapterMinified chapterMinified),
     Result chapterLoadedSCS(Chapter chapter),
     Result chapterPublishedSCS(),
     Result chapterStatsCountLoadedSCS(int count),
@@ -1831,7 +1937,8 @@ class _$UserAsMapLoadedSCS implements UserAsMapLoadedSCS {
     @required Result seriesCoverDeletedSCS(SeriesCoverDeletedSCS value),
     @required Result seriesCoverUploadedSCS(SeriesCoverUploadedSCS value),
     @required Result seriesDeletedSCS(SeriesDeletedSCS value),
-    @required Result seriesListLoadedSCS(SeriesListLoadedSCS value),
+    @required
+        Result seriesMinifiedListLoadedSCS(SeriesMinifiedListLoadedSCS value),
     @required Result seriesLoadedSCS(SeriesLoadedSCS value),
     @required Result seriesPublishedSCS(SeriesPublishedSCS value),
     @required Result seriesStatsCountLoadedSCS(SeriesStatsCountLoadedSCS value),
@@ -1846,7 +1953,9 @@ class _$UserAsMapLoadedSCS implements UserAsMapLoadedSCS {
     @required Result chapterCoverDeletedSCS(ChapterCoverDeletedSCS value),
     @required Result chapterCoverUploadedSCS(ChapterCoverUploadedSCS value),
     @required Result chapterDeletedSCS(ChapterDeletedSCS value),
-    @required Result chapterListLoadedSCS(ChapterListLoadedSCS value),
+    @required
+        Result chapterMinifiedListLoadedSCS(ChapterMinifiedListLoadedSCS value),
+    @required Result chapterMinifiedLoadedSCS(ChapterMinifiedLoadedSCS value),
     @required Result chapterLoadedSCS(ChapterLoadedSCS value),
     @required Result chapterPublishedSCS(ChapterPublishedSCS value),
     @required
@@ -1874,7 +1983,7 @@ class _$UserAsMapLoadedSCS implements UserAsMapLoadedSCS {
     assert(seriesCoverDeletedSCS != null);
     assert(seriesCoverUploadedSCS != null);
     assert(seriesDeletedSCS != null);
-    assert(seriesListLoadedSCS != null);
+    assert(seriesMinifiedListLoadedSCS != null);
     assert(seriesLoadedSCS != null);
     assert(seriesPublishedSCS != null);
     assert(seriesStatsCountLoadedSCS != null);
@@ -1887,7 +1996,8 @@ class _$UserAsMapLoadedSCS implements UserAsMapLoadedSCS {
     assert(chapterCoverDeletedSCS != null);
     assert(chapterCoverUploadedSCS != null);
     assert(chapterDeletedSCS != null);
-    assert(chapterListLoadedSCS != null);
+    assert(chapterMinifiedListLoadedSCS != null);
+    assert(chapterMinifiedLoadedSCS != null);
     assert(chapterLoadedSCS != null);
     assert(chapterPublishedSCS != null);
     assert(chapterStatsCountLoadedSCS != null);
@@ -1917,7 +2027,7 @@ class _$UserAsMapLoadedSCS implements UserAsMapLoadedSCS {
     Result seriesCoverDeletedSCS(SeriesCoverDeletedSCS value),
     Result seriesCoverUploadedSCS(SeriesCoverUploadedSCS value),
     Result seriesDeletedSCS(SeriesDeletedSCS value),
-    Result seriesListLoadedSCS(SeriesListLoadedSCS value),
+    Result seriesMinifiedListLoadedSCS(SeriesMinifiedListLoadedSCS value),
     Result seriesLoadedSCS(SeriesLoadedSCS value),
     Result seriesPublishedSCS(SeriesPublishedSCS value),
     Result seriesStatsCountLoadedSCS(SeriesStatsCountLoadedSCS value),
@@ -1930,7 +2040,8 @@ class _$UserAsMapLoadedSCS implements UserAsMapLoadedSCS {
     Result chapterCoverDeletedSCS(ChapterCoverDeletedSCS value),
     Result chapterCoverUploadedSCS(ChapterCoverUploadedSCS value),
     Result chapterDeletedSCS(ChapterDeletedSCS value),
-    Result chapterListLoadedSCS(ChapterListLoadedSCS value),
+    Result chapterMinifiedListLoadedSCS(ChapterMinifiedListLoadedSCS value),
+    Result chapterMinifiedLoadedSCS(ChapterMinifiedLoadedSCS value),
     Result chapterLoadedSCS(ChapterLoadedSCS value),
     Result chapterPublishedSCS(ChapterPublishedSCS value),
     Result chapterStatsCountLoadedSCS(ChapterStatsCountLoadedSCS value),
@@ -2029,7 +2140,8 @@ class _$UserDetailsSavedSCS implements UserDetailsSavedSCS {
     @required Result seriesCoverDeletedSCS(),
     @required Result seriesCoverUploadedSCS(String coverUrl),
     @required Result seriesDeletedSCS(),
-    @required Result seriesListLoadedSCS(List<Series> series),
+    @required
+        Result seriesMinifiedListLoadedSCS(List<SeriesMinified> seriesMinified),
     @required Result seriesLoadedSCS(Series series),
     @required Result seriesPublishedSCS(),
     @required Result seriesStatsCountLoadedSCS(int count),
@@ -2042,7 +2154,10 @@ class _$UserDetailsSavedSCS implements UserDetailsSavedSCS {
     @required Result chapterCoverDeletedSCS(),
     @required Result chapterCoverUploadedSCS(String coverUrl),
     @required Result chapterDeletedSCS(),
-    @required Result chapterListLoadedSCS(List<Chapter> chapters),
+    @required
+        Result chapterMinifiedListLoadedSCS(
+            List<ChapterMinified> chaptersMinified),
+    @required Result chapterMinifiedLoadedSCS(ChapterMinified chapterMinified),
     @required Result chapterLoadedSCS(Chapter chapter),
     @required Result chapterPublishedSCS(),
     @required Result chapterStatsCountLoadedSCS(int count),
@@ -2067,7 +2182,7 @@ class _$UserDetailsSavedSCS implements UserDetailsSavedSCS {
     assert(seriesCoverDeletedSCS != null);
     assert(seriesCoverUploadedSCS != null);
     assert(seriesDeletedSCS != null);
-    assert(seriesListLoadedSCS != null);
+    assert(seriesMinifiedListLoadedSCS != null);
     assert(seriesLoadedSCS != null);
     assert(seriesPublishedSCS != null);
     assert(seriesStatsCountLoadedSCS != null);
@@ -2080,7 +2195,8 @@ class _$UserDetailsSavedSCS implements UserDetailsSavedSCS {
     assert(chapterCoverDeletedSCS != null);
     assert(chapterCoverUploadedSCS != null);
     assert(chapterDeletedSCS != null);
-    assert(chapterListLoadedSCS != null);
+    assert(chapterMinifiedListLoadedSCS != null);
+    assert(chapterMinifiedLoadedSCS != null);
     assert(chapterLoadedSCS != null);
     assert(chapterPublishedSCS != null);
     assert(chapterStatsCountLoadedSCS != null);
@@ -2110,7 +2226,7 @@ class _$UserDetailsSavedSCS implements UserDetailsSavedSCS {
     Result seriesCoverDeletedSCS(),
     Result seriesCoverUploadedSCS(String coverUrl),
     Result seriesDeletedSCS(),
-    Result seriesListLoadedSCS(List<Series> series),
+    Result seriesMinifiedListLoadedSCS(List<SeriesMinified> seriesMinified),
     Result seriesLoadedSCS(Series series),
     Result seriesPublishedSCS(),
     Result seriesStatsCountLoadedSCS(int count),
@@ -2123,7 +2239,8 @@ class _$UserDetailsSavedSCS implements UserDetailsSavedSCS {
     Result chapterCoverDeletedSCS(),
     Result chapterCoverUploadedSCS(String coverUrl),
     Result chapterDeletedSCS(),
-    Result chapterListLoadedSCS(List<Chapter> chapters),
+    Result chapterMinifiedListLoadedSCS(List<ChapterMinified> chaptersMinified),
+    Result chapterMinifiedLoadedSCS(ChapterMinified chapterMinified),
     Result chapterLoadedSCS(Chapter chapter),
     Result chapterPublishedSCS(),
     Result chapterStatsCountLoadedSCS(int count),
@@ -2159,7 +2276,8 @@ class _$UserDetailsSavedSCS implements UserDetailsSavedSCS {
     @required Result seriesCoverDeletedSCS(SeriesCoverDeletedSCS value),
     @required Result seriesCoverUploadedSCS(SeriesCoverUploadedSCS value),
     @required Result seriesDeletedSCS(SeriesDeletedSCS value),
-    @required Result seriesListLoadedSCS(SeriesListLoadedSCS value),
+    @required
+        Result seriesMinifiedListLoadedSCS(SeriesMinifiedListLoadedSCS value),
     @required Result seriesLoadedSCS(SeriesLoadedSCS value),
     @required Result seriesPublishedSCS(SeriesPublishedSCS value),
     @required Result seriesStatsCountLoadedSCS(SeriesStatsCountLoadedSCS value),
@@ -2174,7 +2292,9 @@ class _$UserDetailsSavedSCS implements UserDetailsSavedSCS {
     @required Result chapterCoverDeletedSCS(ChapterCoverDeletedSCS value),
     @required Result chapterCoverUploadedSCS(ChapterCoverUploadedSCS value),
     @required Result chapterDeletedSCS(ChapterDeletedSCS value),
-    @required Result chapterListLoadedSCS(ChapterListLoadedSCS value),
+    @required
+        Result chapterMinifiedListLoadedSCS(ChapterMinifiedListLoadedSCS value),
+    @required Result chapterMinifiedLoadedSCS(ChapterMinifiedLoadedSCS value),
     @required Result chapterLoadedSCS(ChapterLoadedSCS value),
     @required Result chapterPublishedSCS(ChapterPublishedSCS value),
     @required
@@ -2202,7 +2322,7 @@ class _$UserDetailsSavedSCS implements UserDetailsSavedSCS {
     assert(seriesCoverDeletedSCS != null);
     assert(seriesCoverUploadedSCS != null);
     assert(seriesDeletedSCS != null);
-    assert(seriesListLoadedSCS != null);
+    assert(seriesMinifiedListLoadedSCS != null);
     assert(seriesLoadedSCS != null);
     assert(seriesPublishedSCS != null);
     assert(seriesStatsCountLoadedSCS != null);
@@ -2215,7 +2335,8 @@ class _$UserDetailsSavedSCS implements UserDetailsSavedSCS {
     assert(chapterCoverDeletedSCS != null);
     assert(chapterCoverUploadedSCS != null);
     assert(chapterDeletedSCS != null);
-    assert(chapterListLoadedSCS != null);
+    assert(chapterMinifiedListLoadedSCS != null);
+    assert(chapterMinifiedLoadedSCS != null);
     assert(chapterLoadedSCS != null);
     assert(chapterPublishedSCS != null);
     assert(chapterStatsCountLoadedSCS != null);
@@ -2245,7 +2366,7 @@ class _$UserDetailsSavedSCS implements UserDetailsSavedSCS {
     Result seriesCoverDeletedSCS(SeriesCoverDeletedSCS value),
     Result seriesCoverUploadedSCS(SeriesCoverUploadedSCS value),
     Result seriesDeletedSCS(SeriesDeletedSCS value),
-    Result seriesListLoadedSCS(SeriesListLoadedSCS value),
+    Result seriesMinifiedListLoadedSCS(SeriesMinifiedListLoadedSCS value),
     Result seriesLoadedSCS(SeriesLoadedSCS value),
     Result seriesPublishedSCS(SeriesPublishedSCS value),
     Result seriesStatsCountLoadedSCS(SeriesStatsCountLoadedSCS value),
@@ -2258,7 +2379,8 @@ class _$UserDetailsSavedSCS implements UserDetailsSavedSCS {
     Result chapterCoverDeletedSCS(ChapterCoverDeletedSCS value),
     Result chapterCoverUploadedSCS(ChapterCoverUploadedSCS value),
     Result chapterDeletedSCS(ChapterDeletedSCS value),
-    Result chapterListLoadedSCS(ChapterListLoadedSCS value),
+    Result chapterMinifiedListLoadedSCS(ChapterMinifiedListLoadedSCS value),
+    Result chapterMinifiedLoadedSCS(ChapterMinifiedLoadedSCS value),
     Result chapterLoadedSCS(ChapterLoadedSCS value),
     Result chapterPublishedSCS(ChapterPublishedSCS value),
     Result chapterStatsCountLoadedSCS(ChapterStatsCountLoadedSCS value),
@@ -2356,7 +2478,8 @@ class _$UserLoadedSCS implements UserLoadedSCS {
     @required Result seriesCoverDeletedSCS(),
     @required Result seriesCoverUploadedSCS(String coverUrl),
     @required Result seriesDeletedSCS(),
-    @required Result seriesListLoadedSCS(List<Series> series),
+    @required
+        Result seriesMinifiedListLoadedSCS(List<SeriesMinified> seriesMinified),
     @required Result seriesLoadedSCS(Series series),
     @required Result seriesPublishedSCS(),
     @required Result seriesStatsCountLoadedSCS(int count),
@@ -2369,7 +2492,10 @@ class _$UserLoadedSCS implements UserLoadedSCS {
     @required Result chapterCoverDeletedSCS(),
     @required Result chapterCoverUploadedSCS(String coverUrl),
     @required Result chapterDeletedSCS(),
-    @required Result chapterListLoadedSCS(List<Chapter> chapters),
+    @required
+        Result chapterMinifiedListLoadedSCS(
+            List<ChapterMinified> chaptersMinified),
+    @required Result chapterMinifiedLoadedSCS(ChapterMinified chapterMinified),
     @required Result chapterLoadedSCS(Chapter chapter),
     @required Result chapterPublishedSCS(),
     @required Result chapterStatsCountLoadedSCS(int count),
@@ -2394,7 +2520,7 @@ class _$UserLoadedSCS implements UserLoadedSCS {
     assert(seriesCoverDeletedSCS != null);
     assert(seriesCoverUploadedSCS != null);
     assert(seriesDeletedSCS != null);
-    assert(seriesListLoadedSCS != null);
+    assert(seriesMinifiedListLoadedSCS != null);
     assert(seriesLoadedSCS != null);
     assert(seriesPublishedSCS != null);
     assert(seriesStatsCountLoadedSCS != null);
@@ -2407,7 +2533,8 @@ class _$UserLoadedSCS implements UserLoadedSCS {
     assert(chapterCoverDeletedSCS != null);
     assert(chapterCoverUploadedSCS != null);
     assert(chapterDeletedSCS != null);
-    assert(chapterListLoadedSCS != null);
+    assert(chapterMinifiedListLoadedSCS != null);
+    assert(chapterMinifiedLoadedSCS != null);
     assert(chapterLoadedSCS != null);
     assert(chapterPublishedSCS != null);
     assert(chapterStatsCountLoadedSCS != null);
@@ -2437,7 +2564,7 @@ class _$UserLoadedSCS implements UserLoadedSCS {
     Result seriesCoverDeletedSCS(),
     Result seriesCoverUploadedSCS(String coverUrl),
     Result seriesDeletedSCS(),
-    Result seriesListLoadedSCS(List<Series> series),
+    Result seriesMinifiedListLoadedSCS(List<SeriesMinified> seriesMinified),
     Result seriesLoadedSCS(Series series),
     Result seriesPublishedSCS(),
     Result seriesStatsCountLoadedSCS(int count),
@@ -2450,7 +2577,8 @@ class _$UserLoadedSCS implements UserLoadedSCS {
     Result chapterCoverDeletedSCS(),
     Result chapterCoverUploadedSCS(String coverUrl),
     Result chapterDeletedSCS(),
-    Result chapterListLoadedSCS(List<Chapter> chapters),
+    Result chapterMinifiedListLoadedSCS(List<ChapterMinified> chaptersMinified),
+    Result chapterMinifiedLoadedSCS(ChapterMinified chapterMinified),
     Result chapterLoadedSCS(Chapter chapter),
     Result chapterPublishedSCS(),
     Result chapterStatsCountLoadedSCS(int count),
@@ -2486,7 +2614,8 @@ class _$UserLoadedSCS implements UserLoadedSCS {
     @required Result seriesCoverDeletedSCS(SeriesCoverDeletedSCS value),
     @required Result seriesCoverUploadedSCS(SeriesCoverUploadedSCS value),
     @required Result seriesDeletedSCS(SeriesDeletedSCS value),
-    @required Result seriesListLoadedSCS(SeriesListLoadedSCS value),
+    @required
+        Result seriesMinifiedListLoadedSCS(SeriesMinifiedListLoadedSCS value),
     @required Result seriesLoadedSCS(SeriesLoadedSCS value),
     @required Result seriesPublishedSCS(SeriesPublishedSCS value),
     @required Result seriesStatsCountLoadedSCS(SeriesStatsCountLoadedSCS value),
@@ -2501,7 +2630,9 @@ class _$UserLoadedSCS implements UserLoadedSCS {
     @required Result chapterCoverDeletedSCS(ChapterCoverDeletedSCS value),
     @required Result chapterCoverUploadedSCS(ChapterCoverUploadedSCS value),
     @required Result chapterDeletedSCS(ChapterDeletedSCS value),
-    @required Result chapterListLoadedSCS(ChapterListLoadedSCS value),
+    @required
+        Result chapterMinifiedListLoadedSCS(ChapterMinifiedListLoadedSCS value),
+    @required Result chapterMinifiedLoadedSCS(ChapterMinifiedLoadedSCS value),
     @required Result chapterLoadedSCS(ChapterLoadedSCS value),
     @required Result chapterPublishedSCS(ChapterPublishedSCS value),
     @required
@@ -2529,7 +2660,7 @@ class _$UserLoadedSCS implements UserLoadedSCS {
     assert(seriesCoverDeletedSCS != null);
     assert(seriesCoverUploadedSCS != null);
     assert(seriesDeletedSCS != null);
-    assert(seriesListLoadedSCS != null);
+    assert(seriesMinifiedListLoadedSCS != null);
     assert(seriesLoadedSCS != null);
     assert(seriesPublishedSCS != null);
     assert(seriesStatsCountLoadedSCS != null);
@@ -2542,7 +2673,8 @@ class _$UserLoadedSCS implements UserLoadedSCS {
     assert(chapterCoverDeletedSCS != null);
     assert(chapterCoverUploadedSCS != null);
     assert(chapterDeletedSCS != null);
-    assert(chapterListLoadedSCS != null);
+    assert(chapterMinifiedListLoadedSCS != null);
+    assert(chapterMinifiedLoadedSCS != null);
     assert(chapterLoadedSCS != null);
     assert(chapterPublishedSCS != null);
     assert(chapterStatsCountLoadedSCS != null);
@@ -2572,7 +2704,7 @@ class _$UserLoadedSCS implements UserLoadedSCS {
     Result seriesCoverDeletedSCS(SeriesCoverDeletedSCS value),
     Result seriesCoverUploadedSCS(SeriesCoverUploadedSCS value),
     Result seriesDeletedSCS(SeriesDeletedSCS value),
-    Result seriesListLoadedSCS(SeriesListLoadedSCS value),
+    Result seriesMinifiedListLoadedSCS(SeriesMinifiedListLoadedSCS value),
     Result seriesLoadedSCS(SeriesLoadedSCS value),
     Result seriesPublishedSCS(SeriesPublishedSCS value),
     Result seriesStatsCountLoadedSCS(SeriesStatsCountLoadedSCS value),
@@ -2585,7 +2717,8 @@ class _$UserLoadedSCS implements UserLoadedSCS {
     Result chapterCoverDeletedSCS(ChapterCoverDeletedSCS value),
     Result chapterCoverUploadedSCS(ChapterCoverUploadedSCS value),
     Result chapterDeletedSCS(ChapterDeletedSCS value),
-    Result chapterListLoadedSCS(ChapterListLoadedSCS value),
+    Result chapterMinifiedListLoadedSCS(ChapterMinifiedListLoadedSCS value),
+    Result chapterMinifiedLoadedSCS(ChapterMinifiedLoadedSCS value),
     Result chapterLoadedSCS(ChapterLoadedSCS value),
     Result chapterPublishedSCS(ChapterPublishedSCS value),
     Result chapterStatsCountLoadedSCS(ChapterStatsCountLoadedSCS value),
@@ -2662,7 +2795,8 @@ class _$SeriesDraftDeletedSCS implements SeriesDraftDeletedSCS {
     @required Result seriesCoverDeletedSCS(),
     @required Result seriesCoverUploadedSCS(String coverUrl),
     @required Result seriesDeletedSCS(),
-    @required Result seriesListLoadedSCS(List<Series> series),
+    @required
+        Result seriesMinifiedListLoadedSCS(List<SeriesMinified> seriesMinified),
     @required Result seriesLoadedSCS(Series series),
     @required Result seriesPublishedSCS(),
     @required Result seriesStatsCountLoadedSCS(int count),
@@ -2675,7 +2809,10 @@ class _$SeriesDraftDeletedSCS implements SeriesDraftDeletedSCS {
     @required Result chapterCoverDeletedSCS(),
     @required Result chapterCoverUploadedSCS(String coverUrl),
     @required Result chapterDeletedSCS(),
-    @required Result chapterListLoadedSCS(List<Chapter> chapters),
+    @required
+        Result chapterMinifiedListLoadedSCS(
+            List<ChapterMinified> chaptersMinified),
+    @required Result chapterMinifiedLoadedSCS(ChapterMinified chapterMinified),
     @required Result chapterLoadedSCS(Chapter chapter),
     @required Result chapterPublishedSCS(),
     @required Result chapterStatsCountLoadedSCS(int count),
@@ -2700,7 +2837,7 @@ class _$SeriesDraftDeletedSCS implements SeriesDraftDeletedSCS {
     assert(seriesCoverDeletedSCS != null);
     assert(seriesCoverUploadedSCS != null);
     assert(seriesDeletedSCS != null);
-    assert(seriesListLoadedSCS != null);
+    assert(seriesMinifiedListLoadedSCS != null);
     assert(seriesLoadedSCS != null);
     assert(seriesPublishedSCS != null);
     assert(seriesStatsCountLoadedSCS != null);
@@ -2713,7 +2850,8 @@ class _$SeriesDraftDeletedSCS implements SeriesDraftDeletedSCS {
     assert(chapterCoverDeletedSCS != null);
     assert(chapterCoverUploadedSCS != null);
     assert(chapterDeletedSCS != null);
-    assert(chapterListLoadedSCS != null);
+    assert(chapterMinifiedListLoadedSCS != null);
+    assert(chapterMinifiedLoadedSCS != null);
     assert(chapterLoadedSCS != null);
     assert(chapterPublishedSCS != null);
     assert(chapterStatsCountLoadedSCS != null);
@@ -2743,7 +2881,7 @@ class _$SeriesDraftDeletedSCS implements SeriesDraftDeletedSCS {
     Result seriesCoverDeletedSCS(),
     Result seriesCoverUploadedSCS(String coverUrl),
     Result seriesDeletedSCS(),
-    Result seriesListLoadedSCS(List<Series> series),
+    Result seriesMinifiedListLoadedSCS(List<SeriesMinified> seriesMinified),
     Result seriesLoadedSCS(Series series),
     Result seriesPublishedSCS(),
     Result seriesStatsCountLoadedSCS(int count),
@@ -2756,7 +2894,8 @@ class _$SeriesDraftDeletedSCS implements SeriesDraftDeletedSCS {
     Result chapterCoverDeletedSCS(),
     Result chapterCoverUploadedSCS(String coverUrl),
     Result chapterDeletedSCS(),
-    Result chapterListLoadedSCS(List<Chapter> chapters),
+    Result chapterMinifiedListLoadedSCS(List<ChapterMinified> chaptersMinified),
+    Result chapterMinifiedLoadedSCS(ChapterMinified chapterMinified),
     Result chapterLoadedSCS(Chapter chapter),
     Result chapterPublishedSCS(),
     Result chapterStatsCountLoadedSCS(int count),
@@ -2792,7 +2931,8 @@ class _$SeriesDraftDeletedSCS implements SeriesDraftDeletedSCS {
     @required Result seriesCoverDeletedSCS(SeriesCoverDeletedSCS value),
     @required Result seriesCoverUploadedSCS(SeriesCoverUploadedSCS value),
     @required Result seriesDeletedSCS(SeriesDeletedSCS value),
-    @required Result seriesListLoadedSCS(SeriesListLoadedSCS value),
+    @required
+        Result seriesMinifiedListLoadedSCS(SeriesMinifiedListLoadedSCS value),
     @required Result seriesLoadedSCS(SeriesLoadedSCS value),
     @required Result seriesPublishedSCS(SeriesPublishedSCS value),
     @required Result seriesStatsCountLoadedSCS(SeriesStatsCountLoadedSCS value),
@@ -2807,7 +2947,9 @@ class _$SeriesDraftDeletedSCS implements SeriesDraftDeletedSCS {
     @required Result chapterCoverDeletedSCS(ChapterCoverDeletedSCS value),
     @required Result chapterCoverUploadedSCS(ChapterCoverUploadedSCS value),
     @required Result chapterDeletedSCS(ChapterDeletedSCS value),
-    @required Result chapterListLoadedSCS(ChapterListLoadedSCS value),
+    @required
+        Result chapterMinifiedListLoadedSCS(ChapterMinifiedListLoadedSCS value),
+    @required Result chapterMinifiedLoadedSCS(ChapterMinifiedLoadedSCS value),
     @required Result chapterLoadedSCS(ChapterLoadedSCS value),
     @required Result chapterPublishedSCS(ChapterPublishedSCS value),
     @required
@@ -2835,7 +2977,7 @@ class _$SeriesDraftDeletedSCS implements SeriesDraftDeletedSCS {
     assert(seriesCoverDeletedSCS != null);
     assert(seriesCoverUploadedSCS != null);
     assert(seriesDeletedSCS != null);
-    assert(seriesListLoadedSCS != null);
+    assert(seriesMinifiedListLoadedSCS != null);
     assert(seriesLoadedSCS != null);
     assert(seriesPublishedSCS != null);
     assert(seriesStatsCountLoadedSCS != null);
@@ -2848,7 +2990,8 @@ class _$SeriesDraftDeletedSCS implements SeriesDraftDeletedSCS {
     assert(chapterCoverDeletedSCS != null);
     assert(chapterCoverUploadedSCS != null);
     assert(chapterDeletedSCS != null);
-    assert(chapterListLoadedSCS != null);
+    assert(chapterMinifiedListLoadedSCS != null);
+    assert(chapterMinifiedLoadedSCS != null);
     assert(chapterLoadedSCS != null);
     assert(chapterPublishedSCS != null);
     assert(chapterStatsCountLoadedSCS != null);
@@ -2878,7 +3021,7 @@ class _$SeriesDraftDeletedSCS implements SeriesDraftDeletedSCS {
     Result seriesCoverDeletedSCS(SeriesCoverDeletedSCS value),
     Result seriesCoverUploadedSCS(SeriesCoverUploadedSCS value),
     Result seriesDeletedSCS(SeriesDeletedSCS value),
-    Result seriesListLoadedSCS(SeriesListLoadedSCS value),
+    Result seriesMinifiedListLoadedSCS(SeriesMinifiedListLoadedSCS value),
     Result seriesLoadedSCS(SeriesLoadedSCS value),
     Result seriesPublishedSCS(SeriesPublishedSCS value),
     Result seriesStatsCountLoadedSCS(SeriesStatsCountLoadedSCS value),
@@ -2891,7 +3034,8 @@ class _$SeriesDraftDeletedSCS implements SeriesDraftDeletedSCS {
     Result chapterCoverDeletedSCS(ChapterCoverDeletedSCS value),
     Result chapterCoverUploadedSCS(ChapterCoverUploadedSCS value),
     Result chapterDeletedSCS(ChapterDeletedSCS value),
-    Result chapterListLoadedSCS(ChapterListLoadedSCS value),
+    Result chapterMinifiedListLoadedSCS(ChapterMinifiedListLoadedSCS value),
+    Result chapterMinifiedLoadedSCS(ChapterMinifiedLoadedSCS value),
     Result chapterLoadedSCS(ChapterLoadedSCS value),
     Result chapterPublishedSCS(ChapterPublishedSCS value),
     Result chapterStatsCountLoadedSCS(ChapterStatsCountLoadedSCS value),
@@ -2988,7 +3132,8 @@ class _$SeriesDraftFetchedSCS implements SeriesDraftFetchedSCS {
     @required Result seriesCoverDeletedSCS(),
     @required Result seriesCoverUploadedSCS(String coverUrl),
     @required Result seriesDeletedSCS(),
-    @required Result seriesListLoadedSCS(List<Series> series),
+    @required
+        Result seriesMinifiedListLoadedSCS(List<SeriesMinified> seriesMinified),
     @required Result seriesLoadedSCS(Series series),
     @required Result seriesPublishedSCS(),
     @required Result seriesStatsCountLoadedSCS(int count),
@@ -3001,7 +3146,10 @@ class _$SeriesDraftFetchedSCS implements SeriesDraftFetchedSCS {
     @required Result chapterCoverDeletedSCS(),
     @required Result chapterCoverUploadedSCS(String coverUrl),
     @required Result chapterDeletedSCS(),
-    @required Result chapterListLoadedSCS(List<Chapter> chapters),
+    @required
+        Result chapterMinifiedListLoadedSCS(
+            List<ChapterMinified> chaptersMinified),
+    @required Result chapterMinifiedLoadedSCS(ChapterMinified chapterMinified),
     @required Result chapterLoadedSCS(Chapter chapter),
     @required Result chapterPublishedSCS(),
     @required Result chapterStatsCountLoadedSCS(int count),
@@ -3026,7 +3174,7 @@ class _$SeriesDraftFetchedSCS implements SeriesDraftFetchedSCS {
     assert(seriesCoverDeletedSCS != null);
     assert(seriesCoverUploadedSCS != null);
     assert(seriesDeletedSCS != null);
-    assert(seriesListLoadedSCS != null);
+    assert(seriesMinifiedListLoadedSCS != null);
     assert(seriesLoadedSCS != null);
     assert(seriesPublishedSCS != null);
     assert(seriesStatsCountLoadedSCS != null);
@@ -3039,7 +3187,8 @@ class _$SeriesDraftFetchedSCS implements SeriesDraftFetchedSCS {
     assert(chapterCoverDeletedSCS != null);
     assert(chapterCoverUploadedSCS != null);
     assert(chapterDeletedSCS != null);
-    assert(chapterListLoadedSCS != null);
+    assert(chapterMinifiedListLoadedSCS != null);
+    assert(chapterMinifiedLoadedSCS != null);
     assert(chapterLoadedSCS != null);
     assert(chapterPublishedSCS != null);
     assert(chapterStatsCountLoadedSCS != null);
@@ -3069,7 +3218,7 @@ class _$SeriesDraftFetchedSCS implements SeriesDraftFetchedSCS {
     Result seriesCoverDeletedSCS(),
     Result seriesCoverUploadedSCS(String coverUrl),
     Result seriesDeletedSCS(),
-    Result seriesListLoadedSCS(List<Series> series),
+    Result seriesMinifiedListLoadedSCS(List<SeriesMinified> seriesMinified),
     Result seriesLoadedSCS(Series series),
     Result seriesPublishedSCS(),
     Result seriesStatsCountLoadedSCS(int count),
@@ -3082,7 +3231,8 @@ class _$SeriesDraftFetchedSCS implements SeriesDraftFetchedSCS {
     Result chapterCoverDeletedSCS(),
     Result chapterCoverUploadedSCS(String coverUrl),
     Result chapterDeletedSCS(),
-    Result chapterListLoadedSCS(List<Chapter> chapters),
+    Result chapterMinifiedListLoadedSCS(List<ChapterMinified> chaptersMinified),
+    Result chapterMinifiedLoadedSCS(ChapterMinified chapterMinified),
     Result chapterLoadedSCS(Chapter chapter),
     Result chapterPublishedSCS(),
     Result chapterStatsCountLoadedSCS(int count),
@@ -3118,7 +3268,8 @@ class _$SeriesDraftFetchedSCS implements SeriesDraftFetchedSCS {
     @required Result seriesCoverDeletedSCS(SeriesCoverDeletedSCS value),
     @required Result seriesCoverUploadedSCS(SeriesCoverUploadedSCS value),
     @required Result seriesDeletedSCS(SeriesDeletedSCS value),
-    @required Result seriesListLoadedSCS(SeriesListLoadedSCS value),
+    @required
+        Result seriesMinifiedListLoadedSCS(SeriesMinifiedListLoadedSCS value),
     @required Result seriesLoadedSCS(SeriesLoadedSCS value),
     @required Result seriesPublishedSCS(SeriesPublishedSCS value),
     @required Result seriesStatsCountLoadedSCS(SeriesStatsCountLoadedSCS value),
@@ -3133,7 +3284,9 @@ class _$SeriesDraftFetchedSCS implements SeriesDraftFetchedSCS {
     @required Result chapterCoverDeletedSCS(ChapterCoverDeletedSCS value),
     @required Result chapterCoverUploadedSCS(ChapterCoverUploadedSCS value),
     @required Result chapterDeletedSCS(ChapterDeletedSCS value),
-    @required Result chapterListLoadedSCS(ChapterListLoadedSCS value),
+    @required
+        Result chapterMinifiedListLoadedSCS(ChapterMinifiedListLoadedSCS value),
+    @required Result chapterMinifiedLoadedSCS(ChapterMinifiedLoadedSCS value),
     @required Result chapterLoadedSCS(ChapterLoadedSCS value),
     @required Result chapterPublishedSCS(ChapterPublishedSCS value),
     @required
@@ -3161,7 +3314,7 @@ class _$SeriesDraftFetchedSCS implements SeriesDraftFetchedSCS {
     assert(seriesCoverDeletedSCS != null);
     assert(seriesCoverUploadedSCS != null);
     assert(seriesDeletedSCS != null);
-    assert(seriesListLoadedSCS != null);
+    assert(seriesMinifiedListLoadedSCS != null);
     assert(seriesLoadedSCS != null);
     assert(seriesPublishedSCS != null);
     assert(seriesStatsCountLoadedSCS != null);
@@ -3174,7 +3327,8 @@ class _$SeriesDraftFetchedSCS implements SeriesDraftFetchedSCS {
     assert(chapterCoverDeletedSCS != null);
     assert(chapterCoverUploadedSCS != null);
     assert(chapterDeletedSCS != null);
-    assert(chapterListLoadedSCS != null);
+    assert(chapterMinifiedListLoadedSCS != null);
+    assert(chapterMinifiedLoadedSCS != null);
     assert(chapterLoadedSCS != null);
     assert(chapterPublishedSCS != null);
     assert(chapterStatsCountLoadedSCS != null);
@@ -3204,7 +3358,7 @@ class _$SeriesDraftFetchedSCS implements SeriesDraftFetchedSCS {
     Result seriesCoverDeletedSCS(SeriesCoverDeletedSCS value),
     Result seriesCoverUploadedSCS(SeriesCoverUploadedSCS value),
     Result seriesDeletedSCS(SeriesDeletedSCS value),
-    Result seriesListLoadedSCS(SeriesListLoadedSCS value),
+    Result seriesMinifiedListLoadedSCS(SeriesMinifiedListLoadedSCS value),
     Result seriesLoadedSCS(SeriesLoadedSCS value),
     Result seriesPublishedSCS(SeriesPublishedSCS value),
     Result seriesStatsCountLoadedSCS(SeriesStatsCountLoadedSCS value),
@@ -3217,7 +3371,8 @@ class _$SeriesDraftFetchedSCS implements SeriesDraftFetchedSCS {
     Result chapterCoverDeletedSCS(ChapterCoverDeletedSCS value),
     Result chapterCoverUploadedSCS(ChapterCoverUploadedSCS value),
     Result chapterDeletedSCS(ChapterDeletedSCS value),
-    Result chapterListLoadedSCS(ChapterListLoadedSCS value),
+    Result chapterMinifiedListLoadedSCS(ChapterMinifiedListLoadedSCS value),
+    Result chapterMinifiedLoadedSCS(ChapterMinifiedLoadedSCS value),
     Result chapterLoadedSCS(ChapterLoadedSCS value),
     Result chapterPublishedSCS(ChapterPublishedSCS value),
     Result chapterStatsCountLoadedSCS(ChapterStatsCountLoadedSCS value),
@@ -3317,7 +3472,8 @@ class _$SeriesDraftSavedSCS implements SeriesDraftSavedSCS {
     @required Result seriesCoverDeletedSCS(),
     @required Result seriesCoverUploadedSCS(String coverUrl),
     @required Result seriesDeletedSCS(),
-    @required Result seriesListLoadedSCS(List<Series> series),
+    @required
+        Result seriesMinifiedListLoadedSCS(List<SeriesMinified> seriesMinified),
     @required Result seriesLoadedSCS(Series series),
     @required Result seriesPublishedSCS(),
     @required Result seriesStatsCountLoadedSCS(int count),
@@ -3330,7 +3486,10 @@ class _$SeriesDraftSavedSCS implements SeriesDraftSavedSCS {
     @required Result chapterCoverDeletedSCS(),
     @required Result chapterCoverUploadedSCS(String coverUrl),
     @required Result chapterDeletedSCS(),
-    @required Result chapterListLoadedSCS(List<Chapter> chapters),
+    @required
+        Result chapterMinifiedListLoadedSCS(
+            List<ChapterMinified> chaptersMinified),
+    @required Result chapterMinifiedLoadedSCS(ChapterMinified chapterMinified),
     @required Result chapterLoadedSCS(Chapter chapter),
     @required Result chapterPublishedSCS(),
     @required Result chapterStatsCountLoadedSCS(int count),
@@ -3355,7 +3514,7 @@ class _$SeriesDraftSavedSCS implements SeriesDraftSavedSCS {
     assert(seriesCoverDeletedSCS != null);
     assert(seriesCoverUploadedSCS != null);
     assert(seriesDeletedSCS != null);
-    assert(seriesListLoadedSCS != null);
+    assert(seriesMinifiedListLoadedSCS != null);
     assert(seriesLoadedSCS != null);
     assert(seriesPublishedSCS != null);
     assert(seriesStatsCountLoadedSCS != null);
@@ -3368,7 +3527,8 @@ class _$SeriesDraftSavedSCS implements SeriesDraftSavedSCS {
     assert(chapterCoverDeletedSCS != null);
     assert(chapterCoverUploadedSCS != null);
     assert(chapterDeletedSCS != null);
-    assert(chapterListLoadedSCS != null);
+    assert(chapterMinifiedListLoadedSCS != null);
+    assert(chapterMinifiedLoadedSCS != null);
     assert(chapterLoadedSCS != null);
     assert(chapterPublishedSCS != null);
     assert(chapterStatsCountLoadedSCS != null);
@@ -3398,7 +3558,7 @@ class _$SeriesDraftSavedSCS implements SeriesDraftSavedSCS {
     Result seriesCoverDeletedSCS(),
     Result seriesCoverUploadedSCS(String coverUrl),
     Result seriesDeletedSCS(),
-    Result seriesListLoadedSCS(List<Series> series),
+    Result seriesMinifiedListLoadedSCS(List<SeriesMinified> seriesMinified),
     Result seriesLoadedSCS(Series series),
     Result seriesPublishedSCS(),
     Result seriesStatsCountLoadedSCS(int count),
@@ -3411,7 +3571,8 @@ class _$SeriesDraftSavedSCS implements SeriesDraftSavedSCS {
     Result chapterCoverDeletedSCS(),
     Result chapterCoverUploadedSCS(String coverUrl),
     Result chapterDeletedSCS(),
-    Result chapterListLoadedSCS(List<Chapter> chapters),
+    Result chapterMinifiedListLoadedSCS(List<ChapterMinified> chaptersMinified),
+    Result chapterMinifiedLoadedSCS(ChapterMinified chapterMinified),
     Result chapterLoadedSCS(Chapter chapter),
     Result chapterPublishedSCS(),
     Result chapterStatsCountLoadedSCS(int count),
@@ -3447,7 +3608,8 @@ class _$SeriesDraftSavedSCS implements SeriesDraftSavedSCS {
     @required Result seriesCoverDeletedSCS(SeriesCoverDeletedSCS value),
     @required Result seriesCoverUploadedSCS(SeriesCoverUploadedSCS value),
     @required Result seriesDeletedSCS(SeriesDeletedSCS value),
-    @required Result seriesListLoadedSCS(SeriesListLoadedSCS value),
+    @required
+        Result seriesMinifiedListLoadedSCS(SeriesMinifiedListLoadedSCS value),
     @required Result seriesLoadedSCS(SeriesLoadedSCS value),
     @required Result seriesPublishedSCS(SeriesPublishedSCS value),
     @required Result seriesStatsCountLoadedSCS(SeriesStatsCountLoadedSCS value),
@@ -3462,7 +3624,9 @@ class _$SeriesDraftSavedSCS implements SeriesDraftSavedSCS {
     @required Result chapterCoverDeletedSCS(ChapterCoverDeletedSCS value),
     @required Result chapterCoverUploadedSCS(ChapterCoverUploadedSCS value),
     @required Result chapterDeletedSCS(ChapterDeletedSCS value),
-    @required Result chapterListLoadedSCS(ChapterListLoadedSCS value),
+    @required
+        Result chapterMinifiedListLoadedSCS(ChapterMinifiedListLoadedSCS value),
+    @required Result chapterMinifiedLoadedSCS(ChapterMinifiedLoadedSCS value),
     @required Result chapterLoadedSCS(ChapterLoadedSCS value),
     @required Result chapterPublishedSCS(ChapterPublishedSCS value),
     @required
@@ -3490,7 +3654,7 @@ class _$SeriesDraftSavedSCS implements SeriesDraftSavedSCS {
     assert(seriesCoverDeletedSCS != null);
     assert(seriesCoverUploadedSCS != null);
     assert(seriesDeletedSCS != null);
-    assert(seriesListLoadedSCS != null);
+    assert(seriesMinifiedListLoadedSCS != null);
     assert(seriesLoadedSCS != null);
     assert(seriesPublishedSCS != null);
     assert(seriesStatsCountLoadedSCS != null);
@@ -3503,7 +3667,8 @@ class _$SeriesDraftSavedSCS implements SeriesDraftSavedSCS {
     assert(chapterCoverDeletedSCS != null);
     assert(chapterCoverUploadedSCS != null);
     assert(chapterDeletedSCS != null);
-    assert(chapterListLoadedSCS != null);
+    assert(chapterMinifiedListLoadedSCS != null);
+    assert(chapterMinifiedLoadedSCS != null);
     assert(chapterLoadedSCS != null);
     assert(chapterPublishedSCS != null);
     assert(chapterStatsCountLoadedSCS != null);
@@ -3533,7 +3698,7 @@ class _$SeriesDraftSavedSCS implements SeriesDraftSavedSCS {
     Result seriesCoverDeletedSCS(SeriesCoverDeletedSCS value),
     Result seriesCoverUploadedSCS(SeriesCoverUploadedSCS value),
     Result seriesDeletedSCS(SeriesDeletedSCS value),
-    Result seriesListLoadedSCS(SeriesListLoadedSCS value),
+    Result seriesMinifiedListLoadedSCS(SeriesMinifiedListLoadedSCS value),
     Result seriesLoadedSCS(SeriesLoadedSCS value),
     Result seriesPublishedSCS(SeriesPublishedSCS value),
     Result seriesStatsCountLoadedSCS(SeriesStatsCountLoadedSCS value),
@@ -3546,7 +3711,8 @@ class _$SeriesDraftSavedSCS implements SeriesDraftSavedSCS {
     Result chapterCoverDeletedSCS(ChapterCoverDeletedSCS value),
     Result chapterCoverUploadedSCS(ChapterCoverUploadedSCS value),
     Result chapterDeletedSCS(ChapterDeletedSCS value),
-    Result chapterListLoadedSCS(ChapterListLoadedSCS value),
+    Result chapterMinifiedListLoadedSCS(ChapterMinifiedListLoadedSCS value),
+    Result chapterMinifiedLoadedSCS(ChapterMinifiedLoadedSCS value),
     Result chapterLoadedSCS(ChapterLoadedSCS value),
     Result chapterPublishedSCS(ChapterPublishedSCS value),
     Result chapterStatsCountLoadedSCS(ChapterStatsCountLoadedSCS value),
@@ -3624,7 +3790,8 @@ class _$SeriesDraftUpdatedSCS implements SeriesDraftUpdatedSCS {
     @required Result seriesCoverDeletedSCS(),
     @required Result seriesCoverUploadedSCS(String coverUrl),
     @required Result seriesDeletedSCS(),
-    @required Result seriesListLoadedSCS(List<Series> series),
+    @required
+        Result seriesMinifiedListLoadedSCS(List<SeriesMinified> seriesMinified),
     @required Result seriesLoadedSCS(Series series),
     @required Result seriesPublishedSCS(),
     @required Result seriesStatsCountLoadedSCS(int count),
@@ -3637,7 +3804,10 @@ class _$SeriesDraftUpdatedSCS implements SeriesDraftUpdatedSCS {
     @required Result chapterCoverDeletedSCS(),
     @required Result chapterCoverUploadedSCS(String coverUrl),
     @required Result chapterDeletedSCS(),
-    @required Result chapterListLoadedSCS(List<Chapter> chapters),
+    @required
+        Result chapterMinifiedListLoadedSCS(
+            List<ChapterMinified> chaptersMinified),
+    @required Result chapterMinifiedLoadedSCS(ChapterMinified chapterMinified),
     @required Result chapterLoadedSCS(Chapter chapter),
     @required Result chapterPublishedSCS(),
     @required Result chapterStatsCountLoadedSCS(int count),
@@ -3662,7 +3832,7 @@ class _$SeriesDraftUpdatedSCS implements SeriesDraftUpdatedSCS {
     assert(seriesCoverDeletedSCS != null);
     assert(seriesCoverUploadedSCS != null);
     assert(seriesDeletedSCS != null);
-    assert(seriesListLoadedSCS != null);
+    assert(seriesMinifiedListLoadedSCS != null);
     assert(seriesLoadedSCS != null);
     assert(seriesPublishedSCS != null);
     assert(seriesStatsCountLoadedSCS != null);
@@ -3675,7 +3845,8 @@ class _$SeriesDraftUpdatedSCS implements SeriesDraftUpdatedSCS {
     assert(chapterCoverDeletedSCS != null);
     assert(chapterCoverUploadedSCS != null);
     assert(chapterDeletedSCS != null);
-    assert(chapterListLoadedSCS != null);
+    assert(chapterMinifiedListLoadedSCS != null);
+    assert(chapterMinifiedLoadedSCS != null);
     assert(chapterLoadedSCS != null);
     assert(chapterPublishedSCS != null);
     assert(chapterStatsCountLoadedSCS != null);
@@ -3705,7 +3876,7 @@ class _$SeriesDraftUpdatedSCS implements SeriesDraftUpdatedSCS {
     Result seriesCoverDeletedSCS(),
     Result seriesCoverUploadedSCS(String coverUrl),
     Result seriesDeletedSCS(),
-    Result seriesListLoadedSCS(List<Series> series),
+    Result seriesMinifiedListLoadedSCS(List<SeriesMinified> seriesMinified),
     Result seriesLoadedSCS(Series series),
     Result seriesPublishedSCS(),
     Result seriesStatsCountLoadedSCS(int count),
@@ -3718,7 +3889,8 @@ class _$SeriesDraftUpdatedSCS implements SeriesDraftUpdatedSCS {
     Result chapterCoverDeletedSCS(),
     Result chapterCoverUploadedSCS(String coverUrl),
     Result chapterDeletedSCS(),
-    Result chapterListLoadedSCS(List<Chapter> chapters),
+    Result chapterMinifiedListLoadedSCS(List<ChapterMinified> chaptersMinified),
+    Result chapterMinifiedLoadedSCS(ChapterMinified chapterMinified),
     Result chapterLoadedSCS(Chapter chapter),
     Result chapterPublishedSCS(),
     Result chapterStatsCountLoadedSCS(int count),
@@ -3754,7 +3926,8 @@ class _$SeriesDraftUpdatedSCS implements SeriesDraftUpdatedSCS {
     @required Result seriesCoverDeletedSCS(SeriesCoverDeletedSCS value),
     @required Result seriesCoverUploadedSCS(SeriesCoverUploadedSCS value),
     @required Result seriesDeletedSCS(SeriesDeletedSCS value),
-    @required Result seriesListLoadedSCS(SeriesListLoadedSCS value),
+    @required
+        Result seriesMinifiedListLoadedSCS(SeriesMinifiedListLoadedSCS value),
     @required Result seriesLoadedSCS(SeriesLoadedSCS value),
     @required Result seriesPublishedSCS(SeriesPublishedSCS value),
     @required Result seriesStatsCountLoadedSCS(SeriesStatsCountLoadedSCS value),
@@ -3769,7 +3942,9 @@ class _$SeriesDraftUpdatedSCS implements SeriesDraftUpdatedSCS {
     @required Result chapterCoverDeletedSCS(ChapterCoverDeletedSCS value),
     @required Result chapterCoverUploadedSCS(ChapterCoverUploadedSCS value),
     @required Result chapterDeletedSCS(ChapterDeletedSCS value),
-    @required Result chapterListLoadedSCS(ChapterListLoadedSCS value),
+    @required
+        Result chapterMinifiedListLoadedSCS(ChapterMinifiedListLoadedSCS value),
+    @required Result chapterMinifiedLoadedSCS(ChapterMinifiedLoadedSCS value),
     @required Result chapterLoadedSCS(ChapterLoadedSCS value),
     @required Result chapterPublishedSCS(ChapterPublishedSCS value),
     @required
@@ -3797,7 +3972,7 @@ class _$SeriesDraftUpdatedSCS implements SeriesDraftUpdatedSCS {
     assert(seriesCoverDeletedSCS != null);
     assert(seriesCoverUploadedSCS != null);
     assert(seriesDeletedSCS != null);
-    assert(seriesListLoadedSCS != null);
+    assert(seriesMinifiedListLoadedSCS != null);
     assert(seriesLoadedSCS != null);
     assert(seriesPublishedSCS != null);
     assert(seriesStatsCountLoadedSCS != null);
@@ -3810,7 +3985,8 @@ class _$SeriesDraftUpdatedSCS implements SeriesDraftUpdatedSCS {
     assert(chapterCoverDeletedSCS != null);
     assert(chapterCoverUploadedSCS != null);
     assert(chapterDeletedSCS != null);
-    assert(chapterListLoadedSCS != null);
+    assert(chapterMinifiedListLoadedSCS != null);
+    assert(chapterMinifiedLoadedSCS != null);
     assert(chapterLoadedSCS != null);
     assert(chapterPublishedSCS != null);
     assert(chapterStatsCountLoadedSCS != null);
@@ -3840,7 +4016,7 @@ class _$SeriesDraftUpdatedSCS implements SeriesDraftUpdatedSCS {
     Result seriesCoverDeletedSCS(SeriesCoverDeletedSCS value),
     Result seriesCoverUploadedSCS(SeriesCoverUploadedSCS value),
     Result seriesDeletedSCS(SeriesDeletedSCS value),
-    Result seriesListLoadedSCS(SeriesListLoadedSCS value),
+    Result seriesMinifiedListLoadedSCS(SeriesMinifiedListLoadedSCS value),
     Result seriesLoadedSCS(SeriesLoadedSCS value),
     Result seriesPublishedSCS(SeriesPublishedSCS value),
     Result seriesStatsCountLoadedSCS(SeriesStatsCountLoadedSCS value),
@@ -3853,7 +4029,8 @@ class _$SeriesDraftUpdatedSCS implements SeriesDraftUpdatedSCS {
     Result chapterCoverDeletedSCS(ChapterCoverDeletedSCS value),
     Result chapterCoverUploadedSCS(ChapterCoverUploadedSCS value),
     Result chapterDeletedSCS(ChapterDeletedSCS value),
-    Result chapterListLoadedSCS(ChapterListLoadedSCS value),
+    Result chapterMinifiedListLoadedSCS(ChapterMinifiedListLoadedSCS value),
+    Result chapterMinifiedLoadedSCS(ChapterMinifiedLoadedSCS value),
     Result chapterLoadedSCS(ChapterLoadedSCS value),
     Result chapterPublishedSCS(ChapterPublishedSCS value),
     Result chapterStatsCountLoadedSCS(ChapterStatsCountLoadedSCS value),
@@ -3952,7 +4129,8 @@ class _$SeriesAsMapLoadedSCS implements SeriesAsMapLoadedSCS {
     @required Result seriesCoverDeletedSCS(),
     @required Result seriesCoverUploadedSCS(String coverUrl),
     @required Result seriesDeletedSCS(),
-    @required Result seriesListLoadedSCS(List<Series> series),
+    @required
+        Result seriesMinifiedListLoadedSCS(List<SeriesMinified> seriesMinified),
     @required Result seriesLoadedSCS(Series series),
     @required Result seriesPublishedSCS(),
     @required Result seriesStatsCountLoadedSCS(int count),
@@ -3965,7 +4143,10 @@ class _$SeriesAsMapLoadedSCS implements SeriesAsMapLoadedSCS {
     @required Result chapterCoverDeletedSCS(),
     @required Result chapterCoverUploadedSCS(String coverUrl),
     @required Result chapterDeletedSCS(),
-    @required Result chapterListLoadedSCS(List<Chapter> chapters),
+    @required
+        Result chapterMinifiedListLoadedSCS(
+            List<ChapterMinified> chaptersMinified),
+    @required Result chapterMinifiedLoadedSCS(ChapterMinified chapterMinified),
     @required Result chapterLoadedSCS(Chapter chapter),
     @required Result chapterPublishedSCS(),
     @required Result chapterStatsCountLoadedSCS(int count),
@@ -3990,7 +4171,7 @@ class _$SeriesAsMapLoadedSCS implements SeriesAsMapLoadedSCS {
     assert(seriesCoverDeletedSCS != null);
     assert(seriesCoverUploadedSCS != null);
     assert(seriesDeletedSCS != null);
-    assert(seriesListLoadedSCS != null);
+    assert(seriesMinifiedListLoadedSCS != null);
     assert(seriesLoadedSCS != null);
     assert(seriesPublishedSCS != null);
     assert(seriesStatsCountLoadedSCS != null);
@@ -4003,7 +4184,8 @@ class _$SeriesAsMapLoadedSCS implements SeriesAsMapLoadedSCS {
     assert(chapterCoverDeletedSCS != null);
     assert(chapterCoverUploadedSCS != null);
     assert(chapterDeletedSCS != null);
-    assert(chapterListLoadedSCS != null);
+    assert(chapterMinifiedListLoadedSCS != null);
+    assert(chapterMinifiedLoadedSCS != null);
     assert(chapterLoadedSCS != null);
     assert(chapterPublishedSCS != null);
     assert(chapterStatsCountLoadedSCS != null);
@@ -4033,7 +4215,7 @@ class _$SeriesAsMapLoadedSCS implements SeriesAsMapLoadedSCS {
     Result seriesCoverDeletedSCS(),
     Result seriesCoverUploadedSCS(String coverUrl),
     Result seriesDeletedSCS(),
-    Result seriesListLoadedSCS(List<Series> series),
+    Result seriesMinifiedListLoadedSCS(List<SeriesMinified> seriesMinified),
     Result seriesLoadedSCS(Series series),
     Result seriesPublishedSCS(),
     Result seriesStatsCountLoadedSCS(int count),
@@ -4046,7 +4228,8 @@ class _$SeriesAsMapLoadedSCS implements SeriesAsMapLoadedSCS {
     Result chapterCoverDeletedSCS(),
     Result chapterCoverUploadedSCS(String coverUrl),
     Result chapterDeletedSCS(),
-    Result chapterListLoadedSCS(List<Chapter> chapters),
+    Result chapterMinifiedListLoadedSCS(List<ChapterMinified> chaptersMinified),
+    Result chapterMinifiedLoadedSCS(ChapterMinified chapterMinified),
     Result chapterLoadedSCS(Chapter chapter),
     Result chapterPublishedSCS(),
     Result chapterStatsCountLoadedSCS(int count),
@@ -4082,7 +4265,8 @@ class _$SeriesAsMapLoadedSCS implements SeriesAsMapLoadedSCS {
     @required Result seriesCoverDeletedSCS(SeriesCoverDeletedSCS value),
     @required Result seriesCoverUploadedSCS(SeriesCoverUploadedSCS value),
     @required Result seriesDeletedSCS(SeriesDeletedSCS value),
-    @required Result seriesListLoadedSCS(SeriesListLoadedSCS value),
+    @required
+        Result seriesMinifiedListLoadedSCS(SeriesMinifiedListLoadedSCS value),
     @required Result seriesLoadedSCS(SeriesLoadedSCS value),
     @required Result seriesPublishedSCS(SeriesPublishedSCS value),
     @required Result seriesStatsCountLoadedSCS(SeriesStatsCountLoadedSCS value),
@@ -4097,7 +4281,9 @@ class _$SeriesAsMapLoadedSCS implements SeriesAsMapLoadedSCS {
     @required Result chapterCoverDeletedSCS(ChapterCoverDeletedSCS value),
     @required Result chapterCoverUploadedSCS(ChapterCoverUploadedSCS value),
     @required Result chapterDeletedSCS(ChapterDeletedSCS value),
-    @required Result chapterListLoadedSCS(ChapterListLoadedSCS value),
+    @required
+        Result chapterMinifiedListLoadedSCS(ChapterMinifiedListLoadedSCS value),
+    @required Result chapterMinifiedLoadedSCS(ChapterMinifiedLoadedSCS value),
     @required Result chapterLoadedSCS(ChapterLoadedSCS value),
     @required Result chapterPublishedSCS(ChapterPublishedSCS value),
     @required
@@ -4125,7 +4311,7 @@ class _$SeriesAsMapLoadedSCS implements SeriesAsMapLoadedSCS {
     assert(seriesCoverDeletedSCS != null);
     assert(seriesCoverUploadedSCS != null);
     assert(seriesDeletedSCS != null);
-    assert(seriesListLoadedSCS != null);
+    assert(seriesMinifiedListLoadedSCS != null);
     assert(seriesLoadedSCS != null);
     assert(seriesPublishedSCS != null);
     assert(seriesStatsCountLoadedSCS != null);
@@ -4138,7 +4324,8 @@ class _$SeriesAsMapLoadedSCS implements SeriesAsMapLoadedSCS {
     assert(chapterCoverDeletedSCS != null);
     assert(chapterCoverUploadedSCS != null);
     assert(chapterDeletedSCS != null);
-    assert(chapterListLoadedSCS != null);
+    assert(chapterMinifiedListLoadedSCS != null);
+    assert(chapterMinifiedLoadedSCS != null);
     assert(chapterLoadedSCS != null);
     assert(chapterPublishedSCS != null);
     assert(chapterStatsCountLoadedSCS != null);
@@ -4168,7 +4355,7 @@ class _$SeriesAsMapLoadedSCS implements SeriesAsMapLoadedSCS {
     Result seriesCoverDeletedSCS(SeriesCoverDeletedSCS value),
     Result seriesCoverUploadedSCS(SeriesCoverUploadedSCS value),
     Result seriesDeletedSCS(SeriesDeletedSCS value),
-    Result seriesListLoadedSCS(SeriesListLoadedSCS value),
+    Result seriesMinifiedListLoadedSCS(SeriesMinifiedListLoadedSCS value),
     Result seriesLoadedSCS(SeriesLoadedSCS value),
     Result seriesPublishedSCS(SeriesPublishedSCS value),
     Result seriesStatsCountLoadedSCS(SeriesStatsCountLoadedSCS value),
@@ -4181,7 +4368,8 @@ class _$SeriesAsMapLoadedSCS implements SeriesAsMapLoadedSCS {
     Result chapterCoverDeletedSCS(ChapterCoverDeletedSCS value),
     Result chapterCoverUploadedSCS(ChapterCoverUploadedSCS value),
     Result chapterDeletedSCS(ChapterDeletedSCS value),
-    Result chapterListLoadedSCS(ChapterListLoadedSCS value),
+    Result chapterMinifiedListLoadedSCS(ChapterMinifiedListLoadedSCS value),
+    Result chapterMinifiedLoadedSCS(ChapterMinifiedLoadedSCS value),
     Result chapterLoadedSCS(ChapterLoadedSCS value),
     Result chapterPublishedSCS(ChapterPublishedSCS value),
     Result chapterStatsCountLoadedSCS(ChapterStatsCountLoadedSCS value),
@@ -4259,7 +4447,8 @@ class _$SeriesCoverDeletedSCS implements SeriesCoverDeletedSCS {
     @required Result seriesCoverDeletedSCS(),
     @required Result seriesCoverUploadedSCS(String coverUrl),
     @required Result seriesDeletedSCS(),
-    @required Result seriesListLoadedSCS(List<Series> series),
+    @required
+        Result seriesMinifiedListLoadedSCS(List<SeriesMinified> seriesMinified),
     @required Result seriesLoadedSCS(Series series),
     @required Result seriesPublishedSCS(),
     @required Result seriesStatsCountLoadedSCS(int count),
@@ -4272,7 +4461,10 @@ class _$SeriesCoverDeletedSCS implements SeriesCoverDeletedSCS {
     @required Result chapterCoverDeletedSCS(),
     @required Result chapterCoverUploadedSCS(String coverUrl),
     @required Result chapterDeletedSCS(),
-    @required Result chapterListLoadedSCS(List<Chapter> chapters),
+    @required
+        Result chapterMinifiedListLoadedSCS(
+            List<ChapterMinified> chaptersMinified),
+    @required Result chapterMinifiedLoadedSCS(ChapterMinified chapterMinified),
     @required Result chapterLoadedSCS(Chapter chapter),
     @required Result chapterPublishedSCS(),
     @required Result chapterStatsCountLoadedSCS(int count),
@@ -4297,7 +4489,7 @@ class _$SeriesCoverDeletedSCS implements SeriesCoverDeletedSCS {
     assert(seriesCoverDeletedSCS != null);
     assert(seriesCoverUploadedSCS != null);
     assert(seriesDeletedSCS != null);
-    assert(seriesListLoadedSCS != null);
+    assert(seriesMinifiedListLoadedSCS != null);
     assert(seriesLoadedSCS != null);
     assert(seriesPublishedSCS != null);
     assert(seriesStatsCountLoadedSCS != null);
@@ -4310,7 +4502,8 @@ class _$SeriesCoverDeletedSCS implements SeriesCoverDeletedSCS {
     assert(chapterCoverDeletedSCS != null);
     assert(chapterCoverUploadedSCS != null);
     assert(chapterDeletedSCS != null);
-    assert(chapterListLoadedSCS != null);
+    assert(chapterMinifiedListLoadedSCS != null);
+    assert(chapterMinifiedLoadedSCS != null);
     assert(chapterLoadedSCS != null);
     assert(chapterPublishedSCS != null);
     assert(chapterStatsCountLoadedSCS != null);
@@ -4340,7 +4533,7 @@ class _$SeriesCoverDeletedSCS implements SeriesCoverDeletedSCS {
     Result seriesCoverDeletedSCS(),
     Result seriesCoverUploadedSCS(String coverUrl),
     Result seriesDeletedSCS(),
-    Result seriesListLoadedSCS(List<Series> series),
+    Result seriesMinifiedListLoadedSCS(List<SeriesMinified> seriesMinified),
     Result seriesLoadedSCS(Series series),
     Result seriesPublishedSCS(),
     Result seriesStatsCountLoadedSCS(int count),
@@ -4353,7 +4546,8 @@ class _$SeriesCoverDeletedSCS implements SeriesCoverDeletedSCS {
     Result chapterCoverDeletedSCS(),
     Result chapterCoverUploadedSCS(String coverUrl),
     Result chapterDeletedSCS(),
-    Result chapterListLoadedSCS(List<Chapter> chapters),
+    Result chapterMinifiedListLoadedSCS(List<ChapterMinified> chaptersMinified),
+    Result chapterMinifiedLoadedSCS(ChapterMinified chapterMinified),
     Result chapterLoadedSCS(Chapter chapter),
     Result chapterPublishedSCS(),
     Result chapterStatsCountLoadedSCS(int count),
@@ -4389,7 +4583,8 @@ class _$SeriesCoverDeletedSCS implements SeriesCoverDeletedSCS {
     @required Result seriesCoverDeletedSCS(SeriesCoverDeletedSCS value),
     @required Result seriesCoverUploadedSCS(SeriesCoverUploadedSCS value),
     @required Result seriesDeletedSCS(SeriesDeletedSCS value),
-    @required Result seriesListLoadedSCS(SeriesListLoadedSCS value),
+    @required
+        Result seriesMinifiedListLoadedSCS(SeriesMinifiedListLoadedSCS value),
     @required Result seriesLoadedSCS(SeriesLoadedSCS value),
     @required Result seriesPublishedSCS(SeriesPublishedSCS value),
     @required Result seriesStatsCountLoadedSCS(SeriesStatsCountLoadedSCS value),
@@ -4404,7 +4599,9 @@ class _$SeriesCoverDeletedSCS implements SeriesCoverDeletedSCS {
     @required Result chapterCoverDeletedSCS(ChapterCoverDeletedSCS value),
     @required Result chapterCoverUploadedSCS(ChapterCoverUploadedSCS value),
     @required Result chapterDeletedSCS(ChapterDeletedSCS value),
-    @required Result chapterListLoadedSCS(ChapterListLoadedSCS value),
+    @required
+        Result chapterMinifiedListLoadedSCS(ChapterMinifiedListLoadedSCS value),
+    @required Result chapterMinifiedLoadedSCS(ChapterMinifiedLoadedSCS value),
     @required Result chapterLoadedSCS(ChapterLoadedSCS value),
     @required Result chapterPublishedSCS(ChapterPublishedSCS value),
     @required
@@ -4432,7 +4629,7 @@ class _$SeriesCoverDeletedSCS implements SeriesCoverDeletedSCS {
     assert(seriesCoverDeletedSCS != null);
     assert(seriesCoverUploadedSCS != null);
     assert(seriesDeletedSCS != null);
-    assert(seriesListLoadedSCS != null);
+    assert(seriesMinifiedListLoadedSCS != null);
     assert(seriesLoadedSCS != null);
     assert(seriesPublishedSCS != null);
     assert(seriesStatsCountLoadedSCS != null);
@@ -4445,7 +4642,8 @@ class _$SeriesCoverDeletedSCS implements SeriesCoverDeletedSCS {
     assert(chapterCoverDeletedSCS != null);
     assert(chapterCoverUploadedSCS != null);
     assert(chapterDeletedSCS != null);
-    assert(chapterListLoadedSCS != null);
+    assert(chapterMinifiedListLoadedSCS != null);
+    assert(chapterMinifiedLoadedSCS != null);
     assert(chapterLoadedSCS != null);
     assert(chapterPublishedSCS != null);
     assert(chapterStatsCountLoadedSCS != null);
@@ -4475,7 +4673,7 @@ class _$SeriesCoverDeletedSCS implements SeriesCoverDeletedSCS {
     Result seriesCoverDeletedSCS(SeriesCoverDeletedSCS value),
     Result seriesCoverUploadedSCS(SeriesCoverUploadedSCS value),
     Result seriesDeletedSCS(SeriesDeletedSCS value),
-    Result seriesListLoadedSCS(SeriesListLoadedSCS value),
+    Result seriesMinifiedListLoadedSCS(SeriesMinifiedListLoadedSCS value),
     Result seriesLoadedSCS(SeriesLoadedSCS value),
     Result seriesPublishedSCS(SeriesPublishedSCS value),
     Result seriesStatsCountLoadedSCS(SeriesStatsCountLoadedSCS value),
@@ -4488,7 +4686,8 @@ class _$SeriesCoverDeletedSCS implements SeriesCoverDeletedSCS {
     Result chapterCoverDeletedSCS(ChapterCoverDeletedSCS value),
     Result chapterCoverUploadedSCS(ChapterCoverUploadedSCS value),
     Result chapterDeletedSCS(ChapterDeletedSCS value),
-    Result chapterListLoadedSCS(ChapterListLoadedSCS value),
+    Result chapterMinifiedListLoadedSCS(ChapterMinifiedListLoadedSCS value),
+    Result chapterMinifiedLoadedSCS(ChapterMinifiedLoadedSCS value),
     Result chapterLoadedSCS(ChapterLoadedSCS value),
     Result chapterPublishedSCS(ChapterPublishedSCS value),
     Result chapterStatsCountLoadedSCS(ChapterStatsCountLoadedSCS value),
@@ -4585,7 +4784,8 @@ class _$SeriesCoverUploadedSCS implements SeriesCoverUploadedSCS {
     @required Result seriesCoverDeletedSCS(),
     @required Result seriesCoverUploadedSCS(String coverUrl),
     @required Result seriesDeletedSCS(),
-    @required Result seriesListLoadedSCS(List<Series> series),
+    @required
+        Result seriesMinifiedListLoadedSCS(List<SeriesMinified> seriesMinified),
     @required Result seriesLoadedSCS(Series series),
     @required Result seriesPublishedSCS(),
     @required Result seriesStatsCountLoadedSCS(int count),
@@ -4598,7 +4798,10 @@ class _$SeriesCoverUploadedSCS implements SeriesCoverUploadedSCS {
     @required Result chapterCoverDeletedSCS(),
     @required Result chapterCoverUploadedSCS(String coverUrl),
     @required Result chapterDeletedSCS(),
-    @required Result chapterListLoadedSCS(List<Chapter> chapters),
+    @required
+        Result chapterMinifiedListLoadedSCS(
+            List<ChapterMinified> chaptersMinified),
+    @required Result chapterMinifiedLoadedSCS(ChapterMinified chapterMinified),
     @required Result chapterLoadedSCS(Chapter chapter),
     @required Result chapterPublishedSCS(),
     @required Result chapterStatsCountLoadedSCS(int count),
@@ -4623,7 +4826,7 @@ class _$SeriesCoverUploadedSCS implements SeriesCoverUploadedSCS {
     assert(seriesCoverDeletedSCS != null);
     assert(seriesCoverUploadedSCS != null);
     assert(seriesDeletedSCS != null);
-    assert(seriesListLoadedSCS != null);
+    assert(seriesMinifiedListLoadedSCS != null);
     assert(seriesLoadedSCS != null);
     assert(seriesPublishedSCS != null);
     assert(seriesStatsCountLoadedSCS != null);
@@ -4636,7 +4839,8 @@ class _$SeriesCoverUploadedSCS implements SeriesCoverUploadedSCS {
     assert(chapterCoverDeletedSCS != null);
     assert(chapterCoverUploadedSCS != null);
     assert(chapterDeletedSCS != null);
-    assert(chapterListLoadedSCS != null);
+    assert(chapterMinifiedListLoadedSCS != null);
+    assert(chapterMinifiedLoadedSCS != null);
     assert(chapterLoadedSCS != null);
     assert(chapterPublishedSCS != null);
     assert(chapterStatsCountLoadedSCS != null);
@@ -4666,7 +4870,7 @@ class _$SeriesCoverUploadedSCS implements SeriesCoverUploadedSCS {
     Result seriesCoverDeletedSCS(),
     Result seriesCoverUploadedSCS(String coverUrl),
     Result seriesDeletedSCS(),
-    Result seriesListLoadedSCS(List<Series> series),
+    Result seriesMinifiedListLoadedSCS(List<SeriesMinified> seriesMinified),
     Result seriesLoadedSCS(Series series),
     Result seriesPublishedSCS(),
     Result seriesStatsCountLoadedSCS(int count),
@@ -4679,7 +4883,8 @@ class _$SeriesCoverUploadedSCS implements SeriesCoverUploadedSCS {
     Result chapterCoverDeletedSCS(),
     Result chapterCoverUploadedSCS(String coverUrl),
     Result chapterDeletedSCS(),
-    Result chapterListLoadedSCS(List<Chapter> chapters),
+    Result chapterMinifiedListLoadedSCS(List<ChapterMinified> chaptersMinified),
+    Result chapterMinifiedLoadedSCS(ChapterMinified chapterMinified),
     Result chapterLoadedSCS(Chapter chapter),
     Result chapterPublishedSCS(),
     Result chapterStatsCountLoadedSCS(int count),
@@ -4715,7 +4920,8 @@ class _$SeriesCoverUploadedSCS implements SeriesCoverUploadedSCS {
     @required Result seriesCoverDeletedSCS(SeriesCoverDeletedSCS value),
     @required Result seriesCoverUploadedSCS(SeriesCoverUploadedSCS value),
     @required Result seriesDeletedSCS(SeriesDeletedSCS value),
-    @required Result seriesListLoadedSCS(SeriesListLoadedSCS value),
+    @required
+        Result seriesMinifiedListLoadedSCS(SeriesMinifiedListLoadedSCS value),
     @required Result seriesLoadedSCS(SeriesLoadedSCS value),
     @required Result seriesPublishedSCS(SeriesPublishedSCS value),
     @required Result seriesStatsCountLoadedSCS(SeriesStatsCountLoadedSCS value),
@@ -4730,7 +4936,9 @@ class _$SeriesCoverUploadedSCS implements SeriesCoverUploadedSCS {
     @required Result chapterCoverDeletedSCS(ChapterCoverDeletedSCS value),
     @required Result chapterCoverUploadedSCS(ChapterCoverUploadedSCS value),
     @required Result chapterDeletedSCS(ChapterDeletedSCS value),
-    @required Result chapterListLoadedSCS(ChapterListLoadedSCS value),
+    @required
+        Result chapterMinifiedListLoadedSCS(ChapterMinifiedListLoadedSCS value),
+    @required Result chapterMinifiedLoadedSCS(ChapterMinifiedLoadedSCS value),
     @required Result chapterLoadedSCS(ChapterLoadedSCS value),
     @required Result chapterPublishedSCS(ChapterPublishedSCS value),
     @required
@@ -4758,7 +4966,7 @@ class _$SeriesCoverUploadedSCS implements SeriesCoverUploadedSCS {
     assert(seriesCoverDeletedSCS != null);
     assert(seriesCoverUploadedSCS != null);
     assert(seriesDeletedSCS != null);
-    assert(seriesListLoadedSCS != null);
+    assert(seriesMinifiedListLoadedSCS != null);
     assert(seriesLoadedSCS != null);
     assert(seriesPublishedSCS != null);
     assert(seriesStatsCountLoadedSCS != null);
@@ -4771,7 +4979,8 @@ class _$SeriesCoverUploadedSCS implements SeriesCoverUploadedSCS {
     assert(chapterCoverDeletedSCS != null);
     assert(chapterCoverUploadedSCS != null);
     assert(chapterDeletedSCS != null);
-    assert(chapterListLoadedSCS != null);
+    assert(chapterMinifiedListLoadedSCS != null);
+    assert(chapterMinifiedLoadedSCS != null);
     assert(chapterLoadedSCS != null);
     assert(chapterPublishedSCS != null);
     assert(chapterStatsCountLoadedSCS != null);
@@ -4801,7 +5010,7 @@ class _$SeriesCoverUploadedSCS implements SeriesCoverUploadedSCS {
     Result seriesCoverDeletedSCS(SeriesCoverDeletedSCS value),
     Result seriesCoverUploadedSCS(SeriesCoverUploadedSCS value),
     Result seriesDeletedSCS(SeriesDeletedSCS value),
-    Result seriesListLoadedSCS(SeriesListLoadedSCS value),
+    Result seriesMinifiedListLoadedSCS(SeriesMinifiedListLoadedSCS value),
     Result seriesLoadedSCS(SeriesLoadedSCS value),
     Result seriesPublishedSCS(SeriesPublishedSCS value),
     Result seriesStatsCountLoadedSCS(SeriesStatsCountLoadedSCS value),
@@ -4814,7 +5023,8 @@ class _$SeriesCoverUploadedSCS implements SeriesCoverUploadedSCS {
     Result chapterCoverDeletedSCS(ChapterCoverDeletedSCS value),
     Result chapterCoverUploadedSCS(ChapterCoverUploadedSCS value),
     Result chapterDeletedSCS(ChapterDeletedSCS value),
-    Result chapterListLoadedSCS(ChapterListLoadedSCS value),
+    Result chapterMinifiedListLoadedSCS(ChapterMinifiedListLoadedSCS value),
+    Result chapterMinifiedLoadedSCS(ChapterMinifiedLoadedSCS value),
     Result chapterLoadedSCS(ChapterLoadedSCS value),
     Result chapterPublishedSCS(ChapterPublishedSCS value),
     Result chapterStatsCountLoadedSCS(ChapterStatsCountLoadedSCS value),
@@ -4892,7 +5102,8 @@ class _$SeriesDeletedSCS implements SeriesDeletedSCS {
     @required Result seriesCoverDeletedSCS(),
     @required Result seriesCoverUploadedSCS(String coverUrl),
     @required Result seriesDeletedSCS(),
-    @required Result seriesListLoadedSCS(List<Series> series),
+    @required
+        Result seriesMinifiedListLoadedSCS(List<SeriesMinified> seriesMinified),
     @required Result seriesLoadedSCS(Series series),
     @required Result seriesPublishedSCS(),
     @required Result seriesStatsCountLoadedSCS(int count),
@@ -4905,7 +5116,10 @@ class _$SeriesDeletedSCS implements SeriesDeletedSCS {
     @required Result chapterCoverDeletedSCS(),
     @required Result chapterCoverUploadedSCS(String coverUrl),
     @required Result chapterDeletedSCS(),
-    @required Result chapterListLoadedSCS(List<Chapter> chapters),
+    @required
+        Result chapterMinifiedListLoadedSCS(
+            List<ChapterMinified> chaptersMinified),
+    @required Result chapterMinifiedLoadedSCS(ChapterMinified chapterMinified),
     @required Result chapterLoadedSCS(Chapter chapter),
     @required Result chapterPublishedSCS(),
     @required Result chapterStatsCountLoadedSCS(int count),
@@ -4930,7 +5144,7 @@ class _$SeriesDeletedSCS implements SeriesDeletedSCS {
     assert(seriesCoverDeletedSCS != null);
     assert(seriesCoverUploadedSCS != null);
     assert(seriesDeletedSCS != null);
-    assert(seriesListLoadedSCS != null);
+    assert(seriesMinifiedListLoadedSCS != null);
     assert(seriesLoadedSCS != null);
     assert(seriesPublishedSCS != null);
     assert(seriesStatsCountLoadedSCS != null);
@@ -4943,7 +5157,8 @@ class _$SeriesDeletedSCS implements SeriesDeletedSCS {
     assert(chapterCoverDeletedSCS != null);
     assert(chapterCoverUploadedSCS != null);
     assert(chapterDeletedSCS != null);
-    assert(chapterListLoadedSCS != null);
+    assert(chapterMinifiedListLoadedSCS != null);
+    assert(chapterMinifiedLoadedSCS != null);
     assert(chapterLoadedSCS != null);
     assert(chapterPublishedSCS != null);
     assert(chapterStatsCountLoadedSCS != null);
@@ -4973,7 +5188,7 @@ class _$SeriesDeletedSCS implements SeriesDeletedSCS {
     Result seriesCoverDeletedSCS(),
     Result seriesCoverUploadedSCS(String coverUrl),
     Result seriesDeletedSCS(),
-    Result seriesListLoadedSCS(List<Series> series),
+    Result seriesMinifiedListLoadedSCS(List<SeriesMinified> seriesMinified),
     Result seriesLoadedSCS(Series series),
     Result seriesPublishedSCS(),
     Result seriesStatsCountLoadedSCS(int count),
@@ -4986,7 +5201,8 @@ class _$SeriesDeletedSCS implements SeriesDeletedSCS {
     Result chapterCoverDeletedSCS(),
     Result chapterCoverUploadedSCS(String coverUrl),
     Result chapterDeletedSCS(),
-    Result chapterListLoadedSCS(List<Chapter> chapters),
+    Result chapterMinifiedListLoadedSCS(List<ChapterMinified> chaptersMinified),
+    Result chapterMinifiedLoadedSCS(ChapterMinified chapterMinified),
     Result chapterLoadedSCS(Chapter chapter),
     Result chapterPublishedSCS(),
     Result chapterStatsCountLoadedSCS(int count),
@@ -5022,7 +5238,8 @@ class _$SeriesDeletedSCS implements SeriesDeletedSCS {
     @required Result seriesCoverDeletedSCS(SeriesCoverDeletedSCS value),
     @required Result seriesCoverUploadedSCS(SeriesCoverUploadedSCS value),
     @required Result seriesDeletedSCS(SeriesDeletedSCS value),
-    @required Result seriesListLoadedSCS(SeriesListLoadedSCS value),
+    @required
+        Result seriesMinifiedListLoadedSCS(SeriesMinifiedListLoadedSCS value),
     @required Result seriesLoadedSCS(SeriesLoadedSCS value),
     @required Result seriesPublishedSCS(SeriesPublishedSCS value),
     @required Result seriesStatsCountLoadedSCS(SeriesStatsCountLoadedSCS value),
@@ -5037,7 +5254,9 @@ class _$SeriesDeletedSCS implements SeriesDeletedSCS {
     @required Result chapterCoverDeletedSCS(ChapterCoverDeletedSCS value),
     @required Result chapterCoverUploadedSCS(ChapterCoverUploadedSCS value),
     @required Result chapterDeletedSCS(ChapterDeletedSCS value),
-    @required Result chapterListLoadedSCS(ChapterListLoadedSCS value),
+    @required
+        Result chapterMinifiedListLoadedSCS(ChapterMinifiedListLoadedSCS value),
+    @required Result chapterMinifiedLoadedSCS(ChapterMinifiedLoadedSCS value),
     @required Result chapterLoadedSCS(ChapterLoadedSCS value),
     @required Result chapterPublishedSCS(ChapterPublishedSCS value),
     @required
@@ -5065,7 +5284,7 @@ class _$SeriesDeletedSCS implements SeriesDeletedSCS {
     assert(seriesCoverDeletedSCS != null);
     assert(seriesCoverUploadedSCS != null);
     assert(seriesDeletedSCS != null);
-    assert(seriesListLoadedSCS != null);
+    assert(seriesMinifiedListLoadedSCS != null);
     assert(seriesLoadedSCS != null);
     assert(seriesPublishedSCS != null);
     assert(seriesStatsCountLoadedSCS != null);
@@ -5078,7 +5297,8 @@ class _$SeriesDeletedSCS implements SeriesDeletedSCS {
     assert(chapterCoverDeletedSCS != null);
     assert(chapterCoverUploadedSCS != null);
     assert(chapterDeletedSCS != null);
-    assert(chapterListLoadedSCS != null);
+    assert(chapterMinifiedListLoadedSCS != null);
+    assert(chapterMinifiedLoadedSCS != null);
     assert(chapterLoadedSCS != null);
     assert(chapterPublishedSCS != null);
     assert(chapterStatsCountLoadedSCS != null);
@@ -5108,7 +5328,7 @@ class _$SeriesDeletedSCS implements SeriesDeletedSCS {
     Result seriesCoverDeletedSCS(SeriesCoverDeletedSCS value),
     Result seriesCoverUploadedSCS(SeriesCoverUploadedSCS value),
     Result seriesDeletedSCS(SeriesDeletedSCS value),
-    Result seriesListLoadedSCS(SeriesListLoadedSCS value),
+    Result seriesMinifiedListLoadedSCS(SeriesMinifiedListLoadedSCS value),
     Result seriesLoadedSCS(SeriesLoadedSCS value),
     Result seriesPublishedSCS(SeriesPublishedSCS value),
     Result seriesStatsCountLoadedSCS(SeriesStatsCountLoadedSCS value),
@@ -5121,7 +5341,8 @@ class _$SeriesDeletedSCS implements SeriesDeletedSCS {
     Result chapterCoverDeletedSCS(ChapterCoverDeletedSCS value),
     Result chapterCoverUploadedSCS(ChapterCoverUploadedSCS value),
     Result chapterDeletedSCS(ChapterDeletedSCS value),
-    Result chapterListLoadedSCS(ChapterListLoadedSCS value),
+    Result chapterMinifiedListLoadedSCS(ChapterMinifiedListLoadedSCS value),
+    Result chapterMinifiedLoadedSCS(ChapterMinifiedLoadedSCS value),
     Result chapterLoadedSCS(ChapterLoadedSCS value),
     Result chapterPublishedSCS(ChapterPublishedSCS value),
     Result chapterStatsCountLoadedSCS(ChapterStatsCountLoadedSCS value),
@@ -5144,59 +5365,67 @@ abstract class SeriesDeletedSCS implements DatabaseSuccess {
   const factory SeriesDeletedSCS() = _$SeriesDeletedSCS;
 }
 
-abstract class $SeriesListLoadedSCSCopyWith<$Res> {
-  factory $SeriesListLoadedSCSCopyWith(
-          SeriesListLoadedSCS value, $Res Function(SeriesListLoadedSCS) then) =
-      _$SeriesListLoadedSCSCopyWithImpl<$Res>;
-  $Res call({List<Series> series});
+abstract class $SeriesMinifiedListLoadedSCSCopyWith<$Res> {
+  factory $SeriesMinifiedListLoadedSCSCopyWith(
+          SeriesMinifiedListLoadedSCS value,
+          $Res Function(SeriesMinifiedListLoadedSCS) then) =
+      _$SeriesMinifiedListLoadedSCSCopyWithImpl<$Res>;
+  $Res call({List<SeriesMinified> seriesMinified});
 }
 
-class _$SeriesListLoadedSCSCopyWithImpl<$Res>
+class _$SeriesMinifiedListLoadedSCSCopyWithImpl<$Res>
     extends _$DatabaseSuccessCopyWithImpl<$Res>
-    implements $SeriesListLoadedSCSCopyWith<$Res> {
-  _$SeriesListLoadedSCSCopyWithImpl(
-      SeriesListLoadedSCS _value, $Res Function(SeriesListLoadedSCS) _then)
-      : super(_value, (v) => _then(v as SeriesListLoadedSCS));
+    implements $SeriesMinifiedListLoadedSCSCopyWith<$Res> {
+  _$SeriesMinifiedListLoadedSCSCopyWithImpl(SeriesMinifiedListLoadedSCS _value,
+      $Res Function(SeriesMinifiedListLoadedSCS) _then)
+      : super(_value, (v) => _then(v as SeriesMinifiedListLoadedSCS));
 
   @override
-  SeriesListLoadedSCS get _value => super._value as SeriesListLoadedSCS;
+  SeriesMinifiedListLoadedSCS get _value =>
+      super._value as SeriesMinifiedListLoadedSCS;
 
   @override
   $Res call({
-    Object series = freezed,
+    Object seriesMinified = freezed,
   }) {
-    return _then(SeriesListLoadedSCS(
-      series == freezed ? _value.series : series as List<Series>,
+    return _then(SeriesMinifiedListLoadedSCS(
+      seriesMinified == freezed
+          ? _value.seriesMinified
+          : seriesMinified as List<SeriesMinified>,
     ));
   }
 }
 
-class _$SeriesListLoadedSCS implements SeriesListLoadedSCS {
-  const _$SeriesListLoadedSCS(this.series) : assert(series != null);
+class _$SeriesMinifiedListLoadedSCS implements SeriesMinifiedListLoadedSCS {
+  const _$SeriesMinifiedListLoadedSCS(this.seriesMinified)
+      : assert(seriesMinified != null);
 
   @override
-  final List<Series> series;
+  final List<SeriesMinified> seriesMinified;
 
   @override
   String toString() {
-    return 'DatabaseSuccess.seriesListLoadedSCS(series: $series)';
+    return 'DatabaseSuccess.seriesMinifiedListLoadedSCS(seriesMinified: $seriesMinified)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is SeriesListLoadedSCS &&
-            (identical(other.series, series) ||
-                const DeepCollectionEquality().equals(other.series, series)));
+        (other is SeriesMinifiedListLoadedSCS &&
+            (identical(other.seriesMinified, seriesMinified) ||
+                const DeepCollectionEquality()
+                    .equals(other.seriesMinified, seriesMinified)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(series);
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(seriesMinified);
 
   @override
-  $SeriesListLoadedSCSCopyWith<SeriesListLoadedSCS> get copyWith =>
-      _$SeriesListLoadedSCSCopyWithImpl<SeriesListLoadedSCS>(this, _$identity);
+  $SeriesMinifiedListLoadedSCSCopyWith<SeriesMinifiedListLoadedSCS>
+      get copyWith => _$SeriesMinifiedListLoadedSCSCopyWithImpl<
+          SeriesMinifiedListLoadedSCS>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -5216,7 +5445,8 @@ class _$SeriesListLoadedSCS implements SeriesListLoadedSCS {
     @required Result seriesCoverDeletedSCS(),
     @required Result seriesCoverUploadedSCS(String coverUrl),
     @required Result seriesDeletedSCS(),
-    @required Result seriesListLoadedSCS(List<Series> series),
+    @required
+        Result seriesMinifiedListLoadedSCS(List<SeriesMinified> seriesMinified),
     @required Result seriesLoadedSCS(Series series),
     @required Result seriesPublishedSCS(),
     @required Result seriesStatsCountLoadedSCS(int count),
@@ -5229,7 +5459,10 @@ class _$SeriesListLoadedSCS implements SeriesListLoadedSCS {
     @required Result chapterCoverDeletedSCS(),
     @required Result chapterCoverUploadedSCS(String coverUrl),
     @required Result chapterDeletedSCS(),
-    @required Result chapterListLoadedSCS(List<Chapter> chapters),
+    @required
+        Result chapterMinifiedListLoadedSCS(
+            List<ChapterMinified> chaptersMinified),
+    @required Result chapterMinifiedLoadedSCS(ChapterMinified chapterMinified),
     @required Result chapterLoadedSCS(Chapter chapter),
     @required Result chapterPublishedSCS(),
     @required Result chapterStatsCountLoadedSCS(int count),
@@ -5254,7 +5487,7 @@ class _$SeriesListLoadedSCS implements SeriesListLoadedSCS {
     assert(seriesCoverDeletedSCS != null);
     assert(seriesCoverUploadedSCS != null);
     assert(seriesDeletedSCS != null);
-    assert(seriesListLoadedSCS != null);
+    assert(seriesMinifiedListLoadedSCS != null);
     assert(seriesLoadedSCS != null);
     assert(seriesPublishedSCS != null);
     assert(seriesStatsCountLoadedSCS != null);
@@ -5267,7 +5500,8 @@ class _$SeriesListLoadedSCS implements SeriesListLoadedSCS {
     assert(chapterCoverDeletedSCS != null);
     assert(chapterCoverUploadedSCS != null);
     assert(chapterDeletedSCS != null);
-    assert(chapterListLoadedSCS != null);
+    assert(chapterMinifiedListLoadedSCS != null);
+    assert(chapterMinifiedLoadedSCS != null);
     assert(chapterLoadedSCS != null);
     assert(chapterPublishedSCS != null);
     assert(chapterStatsCountLoadedSCS != null);
@@ -5276,7 +5510,7 @@ class _$SeriesListLoadedSCS implements SeriesListLoadedSCS {
     assert(placeholderFetchedSCS != null);
     assert(placeholdersSavedSCS != null);
     assert(placeholdersLoadedSCS != null);
-    return seriesListLoadedSCS(series);
+    return seriesMinifiedListLoadedSCS(seriesMinified);
   }
 
   @override
@@ -5297,7 +5531,7 @@ class _$SeriesListLoadedSCS implements SeriesListLoadedSCS {
     Result seriesCoverDeletedSCS(),
     Result seriesCoverUploadedSCS(String coverUrl),
     Result seriesDeletedSCS(),
-    Result seriesListLoadedSCS(List<Series> series),
+    Result seriesMinifiedListLoadedSCS(List<SeriesMinified> seriesMinified),
     Result seriesLoadedSCS(Series series),
     Result seriesPublishedSCS(),
     Result seriesStatsCountLoadedSCS(int count),
@@ -5310,7 +5544,8 @@ class _$SeriesListLoadedSCS implements SeriesListLoadedSCS {
     Result chapterCoverDeletedSCS(),
     Result chapterCoverUploadedSCS(String coverUrl),
     Result chapterDeletedSCS(),
-    Result chapterListLoadedSCS(List<Chapter> chapters),
+    Result chapterMinifiedListLoadedSCS(List<ChapterMinified> chaptersMinified),
+    Result chapterMinifiedLoadedSCS(ChapterMinified chapterMinified),
     Result chapterLoadedSCS(Chapter chapter),
     Result chapterPublishedSCS(),
     Result chapterStatsCountLoadedSCS(int count),
@@ -5322,8 +5557,8 @@ class _$SeriesListLoadedSCS implements SeriesListLoadedSCS {
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (seriesListLoadedSCS != null) {
-      return seriesListLoadedSCS(series);
+    if (seriesMinifiedListLoadedSCS != null) {
+      return seriesMinifiedListLoadedSCS(seriesMinified);
     }
     return orElse();
   }
@@ -5346,7 +5581,8 @@ class _$SeriesListLoadedSCS implements SeriesListLoadedSCS {
     @required Result seriesCoverDeletedSCS(SeriesCoverDeletedSCS value),
     @required Result seriesCoverUploadedSCS(SeriesCoverUploadedSCS value),
     @required Result seriesDeletedSCS(SeriesDeletedSCS value),
-    @required Result seriesListLoadedSCS(SeriesListLoadedSCS value),
+    @required
+        Result seriesMinifiedListLoadedSCS(SeriesMinifiedListLoadedSCS value),
     @required Result seriesLoadedSCS(SeriesLoadedSCS value),
     @required Result seriesPublishedSCS(SeriesPublishedSCS value),
     @required Result seriesStatsCountLoadedSCS(SeriesStatsCountLoadedSCS value),
@@ -5361,7 +5597,9 @@ class _$SeriesListLoadedSCS implements SeriesListLoadedSCS {
     @required Result chapterCoverDeletedSCS(ChapterCoverDeletedSCS value),
     @required Result chapterCoverUploadedSCS(ChapterCoverUploadedSCS value),
     @required Result chapterDeletedSCS(ChapterDeletedSCS value),
-    @required Result chapterListLoadedSCS(ChapterListLoadedSCS value),
+    @required
+        Result chapterMinifiedListLoadedSCS(ChapterMinifiedListLoadedSCS value),
+    @required Result chapterMinifiedLoadedSCS(ChapterMinifiedLoadedSCS value),
     @required Result chapterLoadedSCS(ChapterLoadedSCS value),
     @required Result chapterPublishedSCS(ChapterPublishedSCS value),
     @required
@@ -5389,7 +5627,7 @@ class _$SeriesListLoadedSCS implements SeriesListLoadedSCS {
     assert(seriesCoverDeletedSCS != null);
     assert(seriesCoverUploadedSCS != null);
     assert(seriesDeletedSCS != null);
-    assert(seriesListLoadedSCS != null);
+    assert(seriesMinifiedListLoadedSCS != null);
     assert(seriesLoadedSCS != null);
     assert(seriesPublishedSCS != null);
     assert(seriesStatsCountLoadedSCS != null);
@@ -5402,7 +5640,8 @@ class _$SeriesListLoadedSCS implements SeriesListLoadedSCS {
     assert(chapterCoverDeletedSCS != null);
     assert(chapterCoverUploadedSCS != null);
     assert(chapterDeletedSCS != null);
-    assert(chapterListLoadedSCS != null);
+    assert(chapterMinifiedListLoadedSCS != null);
+    assert(chapterMinifiedLoadedSCS != null);
     assert(chapterLoadedSCS != null);
     assert(chapterPublishedSCS != null);
     assert(chapterStatsCountLoadedSCS != null);
@@ -5411,7 +5650,7 @@ class _$SeriesListLoadedSCS implements SeriesListLoadedSCS {
     assert(placeholderFetchedSCS != null);
     assert(placeholdersSavedSCS != null);
     assert(placeholdersLoadedSCS != null);
-    return seriesListLoadedSCS(this);
+    return seriesMinifiedListLoadedSCS(this);
   }
 
   @override
@@ -5432,7 +5671,7 @@ class _$SeriesListLoadedSCS implements SeriesListLoadedSCS {
     Result seriesCoverDeletedSCS(SeriesCoverDeletedSCS value),
     Result seriesCoverUploadedSCS(SeriesCoverUploadedSCS value),
     Result seriesDeletedSCS(SeriesDeletedSCS value),
-    Result seriesListLoadedSCS(SeriesListLoadedSCS value),
+    Result seriesMinifiedListLoadedSCS(SeriesMinifiedListLoadedSCS value),
     Result seriesLoadedSCS(SeriesLoadedSCS value),
     Result seriesPublishedSCS(SeriesPublishedSCS value),
     Result seriesStatsCountLoadedSCS(SeriesStatsCountLoadedSCS value),
@@ -5445,7 +5684,8 @@ class _$SeriesListLoadedSCS implements SeriesListLoadedSCS {
     Result chapterCoverDeletedSCS(ChapterCoverDeletedSCS value),
     Result chapterCoverUploadedSCS(ChapterCoverUploadedSCS value),
     Result chapterDeletedSCS(ChapterDeletedSCS value),
-    Result chapterListLoadedSCS(ChapterListLoadedSCS value),
+    Result chapterMinifiedListLoadedSCS(ChapterMinifiedListLoadedSCS value),
+    Result chapterMinifiedLoadedSCS(ChapterMinifiedLoadedSCS value),
     Result chapterLoadedSCS(ChapterLoadedSCS value),
     Result chapterPublishedSCS(ChapterPublishedSCS value),
     Result chapterStatsCountLoadedSCS(ChapterStatsCountLoadedSCS value),
@@ -5457,19 +5697,20 @@ class _$SeriesListLoadedSCS implements SeriesListLoadedSCS {
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (seriesListLoadedSCS != null) {
-      return seriesListLoadedSCS(this);
+    if (seriesMinifiedListLoadedSCS != null) {
+      return seriesMinifiedListLoadedSCS(this);
     }
     return orElse();
   }
 }
 
-abstract class SeriesListLoadedSCS implements DatabaseSuccess {
-  const factory SeriesListLoadedSCS(List<Series> series) =
-      _$SeriesListLoadedSCS;
+abstract class SeriesMinifiedListLoadedSCS implements DatabaseSuccess {
+  const factory SeriesMinifiedListLoadedSCS(
+      List<SeriesMinified> seriesMinified) = _$SeriesMinifiedListLoadedSCS;
 
-  List<Series> get series;
-  $SeriesListLoadedSCSCopyWith<SeriesListLoadedSCS> get copyWith;
+  List<SeriesMinified> get seriesMinified;
+  $SeriesMinifiedListLoadedSCSCopyWith<SeriesMinifiedListLoadedSCS>
+      get copyWith;
 }
 
 abstract class $SeriesLoadedSCSCopyWith<$Res> {
@@ -5544,7 +5785,8 @@ class _$SeriesLoadedSCS implements SeriesLoadedSCS {
     @required Result seriesCoverDeletedSCS(),
     @required Result seriesCoverUploadedSCS(String coverUrl),
     @required Result seriesDeletedSCS(),
-    @required Result seriesListLoadedSCS(List<Series> series),
+    @required
+        Result seriesMinifiedListLoadedSCS(List<SeriesMinified> seriesMinified),
     @required Result seriesLoadedSCS(Series series),
     @required Result seriesPublishedSCS(),
     @required Result seriesStatsCountLoadedSCS(int count),
@@ -5557,7 +5799,10 @@ class _$SeriesLoadedSCS implements SeriesLoadedSCS {
     @required Result chapterCoverDeletedSCS(),
     @required Result chapterCoverUploadedSCS(String coverUrl),
     @required Result chapterDeletedSCS(),
-    @required Result chapterListLoadedSCS(List<Chapter> chapters),
+    @required
+        Result chapterMinifiedListLoadedSCS(
+            List<ChapterMinified> chaptersMinified),
+    @required Result chapterMinifiedLoadedSCS(ChapterMinified chapterMinified),
     @required Result chapterLoadedSCS(Chapter chapter),
     @required Result chapterPublishedSCS(),
     @required Result chapterStatsCountLoadedSCS(int count),
@@ -5582,7 +5827,7 @@ class _$SeriesLoadedSCS implements SeriesLoadedSCS {
     assert(seriesCoverDeletedSCS != null);
     assert(seriesCoverUploadedSCS != null);
     assert(seriesDeletedSCS != null);
-    assert(seriesListLoadedSCS != null);
+    assert(seriesMinifiedListLoadedSCS != null);
     assert(seriesLoadedSCS != null);
     assert(seriesPublishedSCS != null);
     assert(seriesStatsCountLoadedSCS != null);
@@ -5595,7 +5840,8 @@ class _$SeriesLoadedSCS implements SeriesLoadedSCS {
     assert(chapterCoverDeletedSCS != null);
     assert(chapterCoverUploadedSCS != null);
     assert(chapterDeletedSCS != null);
-    assert(chapterListLoadedSCS != null);
+    assert(chapterMinifiedListLoadedSCS != null);
+    assert(chapterMinifiedLoadedSCS != null);
     assert(chapterLoadedSCS != null);
     assert(chapterPublishedSCS != null);
     assert(chapterStatsCountLoadedSCS != null);
@@ -5625,7 +5871,7 @@ class _$SeriesLoadedSCS implements SeriesLoadedSCS {
     Result seriesCoverDeletedSCS(),
     Result seriesCoverUploadedSCS(String coverUrl),
     Result seriesDeletedSCS(),
-    Result seriesListLoadedSCS(List<Series> series),
+    Result seriesMinifiedListLoadedSCS(List<SeriesMinified> seriesMinified),
     Result seriesLoadedSCS(Series series),
     Result seriesPublishedSCS(),
     Result seriesStatsCountLoadedSCS(int count),
@@ -5638,7 +5884,8 @@ class _$SeriesLoadedSCS implements SeriesLoadedSCS {
     Result chapterCoverDeletedSCS(),
     Result chapterCoverUploadedSCS(String coverUrl),
     Result chapterDeletedSCS(),
-    Result chapterListLoadedSCS(List<Chapter> chapters),
+    Result chapterMinifiedListLoadedSCS(List<ChapterMinified> chaptersMinified),
+    Result chapterMinifiedLoadedSCS(ChapterMinified chapterMinified),
     Result chapterLoadedSCS(Chapter chapter),
     Result chapterPublishedSCS(),
     Result chapterStatsCountLoadedSCS(int count),
@@ -5674,7 +5921,8 @@ class _$SeriesLoadedSCS implements SeriesLoadedSCS {
     @required Result seriesCoverDeletedSCS(SeriesCoverDeletedSCS value),
     @required Result seriesCoverUploadedSCS(SeriesCoverUploadedSCS value),
     @required Result seriesDeletedSCS(SeriesDeletedSCS value),
-    @required Result seriesListLoadedSCS(SeriesListLoadedSCS value),
+    @required
+        Result seriesMinifiedListLoadedSCS(SeriesMinifiedListLoadedSCS value),
     @required Result seriesLoadedSCS(SeriesLoadedSCS value),
     @required Result seriesPublishedSCS(SeriesPublishedSCS value),
     @required Result seriesStatsCountLoadedSCS(SeriesStatsCountLoadedSCS value),
@@ -5689,7 +5937,9 @@ class _$SeriesLoadedSCS implements SeriesLoadedSCS {
     @required Result chapterCoverDeletedSCS(ChapterCoverDeletedSCS value),
     @required Result chapterCoverUploadedSCS(ChapterCoverUploadedSCS value),
     @required Result chapterDeletedSCS(ChapterDeletedSCS value),
-    @required Result chapterListLoadedSCS(ChapterListLoadedSCS value),
+    @required
+        Result chapterMinifiedListLoadedSCS(ChapterMinifiedListLoadedSCS value),
+    @required Result chapterMinifiedLoadedSCS(ChapterMinifiedLoadedSCS value),
     @required Result chapterLoadedSCS(ChapterLoadedSCS value),
     @required Result chapterPublishedSCS(ChapterPublishedSCS value),
     @required
@@ -5717,7 +5967,7 @@ class _$SeriesLoadedSCS implements SeriesLoadedSCS {
     assert(seriesCoverDeletedSCS != null);
     assert(seriesCoverUploadedSCS != null);
     assert(seriesDeletedSCS != null);
-    assert(seriesListLoadedSCS != null);
+    assert(seriesMinifiedListLoadedSCS != null);
     assert(seriesLoadedSCS != null);
     assert(seriesPublishedSCS != null);
     assert(seriesStatsCountLoadedSCS != null);
@@ -5730,7 +5980,8 @@ class _$SeriesLoadedSCS implements SeriesLoadedSCS {
     assert(chapterCoverDeletedSCS != null);
     assert(chapterCoverUploadedSCS != null);
     assert(chapterDeletedSCS != null);
-    assert(chapterListLoadedSCS != null);
+    assert(chapterMinifiedListLoadedSCS != null);
+    assert(chapterMinifiedLoadedSCS != null);
     assert(chapterLoadedSCS != null);
     assert(chapterPublishedSCS != null);
     assert(chapterStatsCountLoadedSCS != null);
@@ -5760,7 +6011,7 @@ class _$SeriesLoadedSCS implements SeriesLoadedSCS {
     Result seriesCoverDeletedSCS(SeriesCoverDeletedSCS value),
     Result seriesCoverUploadedSCS(SeriesCoverUploadedSCS value),
     Result seriesDeletedSCS(SeriesDeletedSCS value),
-    Result seriesListLoadedSCS(SeriesListLoadedSCS value),
+    Result seriesMinifiedListLoadedSCS(SeriesMinifiedListLoadedSCS value),
     Result seriesLoadedSCS(SeriesLoadedSCS value),
     Result seriesPublishedSCS(SeriesPublishedSCS value),
     Result seriesStatsCountLoadedSCS(SeriesStatsCountLoadedSCS value),
@@ -5773,7 +6024,8 @@ class _$SeriesLoadedSCS implements SeriesLoadedSCS {
     Result chapterCoverDeletedSCS(ChapterCoverDeletedSCS value),
     Result chapterCoverUploadedSCS(ChapterCoverUploadedSCS value),
     Result chapterDeletedSCS(ChapterDeletedSCS value),
-    Result chapterListLoadedSCS(ChapterListLoadedSCS value),
+    Result chapterMinifiedListLoadedSCS(ChapterMinifiedListLoadedSCS value),
+    Result chapterMinifiedLoadedSCS(ChapterMinifiedLoadedSCS value),
     Result chapterLoadedSCS(ChapterLoadedSCS value),
     Result chapterPublishedSCS(ChapterPublishedSCS value),
     Result chapterStatsCountLoadedSCS(ChapterStatsCountLoadedSCS value),
@@ -5850,7 +6102,8 @@ class _$SeriesPublishedSCS implements SeriesPublishedSCS {
     @required Result seriesCoverDeletedSCS(),
     @required Result seriesCoverUploadedSCS(String coverUrl),
     @required Result seriesDeletedSCS(),
-    @required Result seriesListLoadedSCS(List<Series> series),
+    @required
+        Result seriesMinifiedListLoadedSCS(List<SeriesMinified> seriesMinified),
     @required Result seriesLoadedSCS(Series series),
     @required Result seriesPublishedSCS(),
     @required Result seriesStatsCountLoadedSCS(int count),
@@ -5863,7 +6116,10 @@ class _$SeriesPublishedSCS implements SeriesPublishedSCS {
     @required Result chapterCoverDeletedSCS(),
     @required Result chapterCoverUploadedSCS(String coverUrl),
     @required Result chapterDeletedSCS(),
-    @required Result chapterListLoadedSCS(List<Chapter> chapters),
+    @required
+        Result chapterMinifiedListLoadedSCS(
+            List<ChapterMinified> chaptersMinified),
+    @required Result chapterMinifiedLoadedSCS(ChapterMinified chapterMinified),
     @required Result chapterLoadedSCS(Chapter chapter),
     @required Result chapterPublishedSCS(),
     @required Result chapterStatsCountLoadedSCS(int count),
@@ -5888,7 +6144,7 @@ class _$SeriesPublishedSCS implements SeriesPublishedSCS {
     assert(seriesCoverDeletedSCS != null);
     assert(seriesCoverUploadedSCS != null);
     assert(seriesDeletedSCS != null);
-    assert(seriesListLoadedSCS != null);
+    assert(seriesMinifiedListLoadedSCS != null);
     assert(seriesLoadedSCS != null);
     assert(seriesPublishedSCS != null);
     assert(seriesStatsCountLoadedSCS != null);
@@ -5901,7 +6157,8 @@ class _$SeriesPublishedSCS implements SeriesPublishedSCS {
     assert(chapterCoverDeletedSCS != null);
     assert(chapterCoverUploadedSCS != null);
     assert(chapterDeletedSCS != null);
-    assert(chapterListLoadedSCS != null);
+    assert(chapterMinifiedListLoadedSCS != null);
+    assert(chapterMinifiedLoadedSCS != null);
     assert(chapterLoadedSCS != null);
     assert(chapterPublishedSCS != null);
     assert(chapterStatsCountLoadedSCS != null);
@@ -5931,7 +6188,7 @@ class _$SeriesPublishedSCS implements SeriesPublishedSCS {
     Result seriesCoverDeletedSCS(),
     Result seriesCoverUploadedSCS(String coverUrl),
     Result seriesDeletedSCS(),
-    Result seriesListLoadedSCS(List<Series> series),
+    Result seriesMinifiedListLoadedSCS(List<SeriesMinified> seriesMinified),
     Result seriesLoadedSCS(Series series),
     Result seriesPublishedSCS(),
     Result seriesStatsCountLoadedSCS(int count),
@@ -5944,7 +6201,8 @@ class _$SeriesPublishedSCS implements SeriesPublishedSCS {
     Result chapterCoverDeletedSCS(),
     Result chapterCoverUploadedSCS(String coverUrl),
     Result chapterDeletedSCS(),
-    Result chapterListLoadedSCS(List<Chapter> chapters),
+    Result chapterMinifiedListLoadedSCS(List<ChapterMinified> chaptersMinified),
+    Result chapterMinifiedLoadedSCS(ChapterMinified chapterMinified),
     Result chapterLoadedSCS(Chapter chapter),
     Result chapterPublishedSCS(),
     Result chapterStatsCountLoadedSCS(int count),
@@ -5980,7 +6238,8 @@ class _$SeriesPublishedSCS implements SeriesPublishedSCS {
     @required Result seriesCoverDeletedSCS(SeriesCoverDeletedSCS value),
     @required Result seriesCoverUploadedSCS(SeriesCoverUploadedSCS value),
     @required Result seriesDeletedSCS(SeriesDeletedSCS value),
-    @required Result seriesListLoadedSCS(SeriesListLoadedSCS value),
+    @required
+        Result seriesMinifiedListLoadedSCS(SeriesMinifiedListLoadedSCS value),
     @required Result seriesLoadedSCS(SeriesLoadedSCS value),
     @required Result seriesPublishedSCS(SeriesPublishedSCS value),
     @required Result seriesStatsCountLoadedSCS(SeriesStatsCountLoadedSCS value),
@@ -5995,7 +6254,9 @@ class _$SeriesPublishedSCS implements SeriesPublishedSCS {
     @required Result chapterCoverDeletedSCS(ChapterCoverDeletedSCS value),
     @required Result chapterCoverUploadedSCS(ChapterCoverUploadedSCS value),
     @required Result chapterDeletedSCS(ChapterDeletedSCS value),
-    @required Result chapterListLoadedSCS(ChapterListLoadedSCS value),
+    @required
+        Result chapterMinifiedListLoadedSCS(ChapterMinifiedListLoadedSCS value),
+    @required Result chapterMinifiedLoadedSCS(ChapterMinifiedLoadedSCS value),
     @required Result chapterLoadedSCS(ChapterLoadedSCS value),
     @required Result chapterPublishedSCS(ChapterPublishedSCS value),
     @required
@@ -6023,7 +6284,7 @@ class _$SeriesPublishedSCS implements SeriesPublishedSCS {
     assert(seriesCoverDeletedSCS != null);
     assert(seriesCoverUploadedSCS != null);
     assert(seriesDeletedSCS != null);
-    assert(seriesListLoadedSCS != null);
+    assert(seriesMinifiedListLoadedSCS != null);
     assert(seriesLoadedSCS != null);
     assert(seriesPublishedSCS != null);
     assert(seriesStatsCountLoadedSCS != null);
@@ -6036,7 +6297,8 @@ class _$SeriesPublishedSCS implements SeriesPublishedSCS {
     assert(chapterCoverDeletedSCS != null);
     assert(chapterCoverUploadedSCS != null);
     assert(chapterDeletedSCS != null);
-    assert(chapterListLoadedSCS != null);
+    assert(chapterMinifiedListLoadedSCS != null);
+    assert(chapterMinifiedLoadedSCS != null);
     assert(chapterLoadedSCS != null);
     assert(chapterPublishedSCS != null);
     assert(chapterStatsCountLoadedSCS != null);
@@ -6066,7 +6328,7 @@ class _$SeriesPublishedSCS implements SeriesPublishedSCS {
     Result seriesCoverDeletedSCS(SeriesCoverDeletedSCS value),
     Result seriesCoverUploadedSCS(SeriesCoverUploadedSCS value),
     Result seriesDeletedSCS(SeriesDeletedSCS value),
-    Result seriesListLoadedSCS(SeriesListLoadedSCS value),
+    Result seriesMinifiedListLoadedSCS(SeriesMinifiedListLoadedSCS value),
     Result seriesLoadedSCS(SeriesLoadedSCS value),
     Result seriesPublishedSCS(SeriesPublishedSCS value),
     Result seriesStatsCountLoadedSCS(SeriesStatsCountLoadedSCS value),
@@ -6079,7 +6341,8 @@ class _$SeriesPublishedSCS implements SeriesPublishedSCS {
     Result chapterCoverDeletedSCS(ChapterCoverDeletedSCS value),
     Result chapterCoverUploadedSCS(ChapterCoverUploadedSCS value),
     Result chapterDeletedSCS(ChapterDeletedSCS value),
-    Result chapterListLoadedSCS(ChapterListLoadedSCS value),
+    Result chapterMinifiedListLoadedSCS(ChapterMinifiedListLoadedSCS value),
+    Result chapterMinifiedLoadedSCS(ChapterMinifiedLoadedSCS value),
     Result chapterLoadedSCS(ChapterLoadedSCS value),
     Result chapterPublishedSCS(ChapterPublishedSCS value),
     Result chapterStatsCountLoadedSCS(ChapterStatsCountLoadedSCS value),
@@ -6176,7 +6439,8 @@ class _$SeriesStatsCountLoadedSCS implements SeriesStatsCountLoadedSCS {
     @required Result seriesCoverDeletedSCS(),
     @required Result seriesCoverUploadedSCS(String coverUrl),
     @required Result seriesDeletedSCS(),
-    @required Result seriesListLoadedSCS(List<Series> series),
+    @required
+        Result seriesMinifiedListLoadedSCS(List<SeriesMinified> seriesMinified),
     @required Result seriesLoadedSCS(Series series),
     @required Result seriesPublishedSCS(),
     @required Result seriesStatsCountLoadedSCS(int count),
@@ -6189,7 +6453,10 @@ class _$SeriesStatsCountLoadedSCS implements SeriesStatsCountLoadedSCS {
     @required Result chapterCoverDeletedSCS(),
     @required Result chapterCoverUploadedSCS(String coverUrl),
     @required Result chapterDeletedSCS(),
-    @required Result chapterListLoadedSCS(List<Chapter> chapters),
+    @required
+        Result chapterMinifiedListLoadedSCS(
+            List<ChapterMinified> chaptersMinified),
+    @required Result chapterMinifiedLoadedSCS(ChapterMinified chapterMinified),
     @required Result chapterLoadedSCS(Chapter chapter),
     @required Result chapterPublishedSCS(),
     @required Result chapterStatsCountLoadedSCS(int count),
@@ -6214,7 +6481,7 @@ class _$SeriesStatsCountLoadedSCS implements SeriesStatsCountLoadedSCS {
     assert(seriesCoverDeletedSCS != null);
     assert(seriesCoverUploadedSCS != null);
     assert(seriesDeletedSCS != null);
-    assert(seriesListLoadedSCS != null);
+    assert(seriesMinifiedListLoadedSCS != null);
     assert(seriesLoadedSCS != null);
     assert(seriesPublishedSCS != null);
     assert(seriesStatsCountLoadedSCS != null);
@@ -6227,7 +6494,8 @@ class _$SeriesStatsCountLoadedSCS implements SeriesStatsCountLoadedSCS {
     assert(chapterCoverDeletedSCS != null);
     assert(chapterCoverUploadedSCS != null);
     assert(chapterDeletedSCS != null);
-    assert(chapterListLoadedSCS != null);
+    assert(chapterMinifiedListLoadedSCS != null);
+    assert(chapterMinifiedLoadedSCS != null);
     assert(chapterLoadedSCS != null);
     assert(chapterPublishedSCS != null);
     assert(chapterStatsCountLoadedSCS != null);
@@ -6257,7 +6525,7 @@ class _$SeriesStatsCountLoadedSCS implements SeriesStatsCountLoadedSCS {
     Result seriesCoverDeletedSCS(),
     Result seriesCoverUploadedSCS(String coverUrl),
     Result seriesDeletedSCS(),
-    Result seriesListLoadedSCS(List<Series> series),
+    Result seriesMinifiedListLoadedSCS(List<SeriesMinified> seriesMinified),
     Result seriesLoadedSCS(Series series),
     Result seriesPublishedSCS(),
     Result seriesStatsCountLoadedSCS(int count),
@@ -6270,7 +6538,8 @@ class _$SeriesStatsCountLoadedSCS implements SeriesStatsCountLoadedSCS {
     Result chapterCoverDeletedSCS(),
     Result chapterCoverUploadedSCS(String coverUrl),
     Result chapterDeletedSCS(),
-    Result chapterListLoadedSCS(List<Chapter> chapters),
+    Result chapterMinifiedListLoadedSCS(List<ChapterMinified> chaptersMinified),
+    Result chapterMinifiedLoadedSCS(ChapterMinified chapterMinified),
     Result chapterLoadedSCS(Chapter chapter),
     Result chapterPublishedSCS(),
     Result chapterStatsCountLoadedSCS(int count),
@@ -6306,7 +6575,8 @@ class _$SeriesStatsCountLoadedSCS implements SeriesStatsCountLoadedSCS {
     @required Result seriesCoverDeletedSCS(SeriesCoverDeletedSCS value),
     @required Result seriesCoverUploadedSCS(SeriesCoverUploadedSCS value),
     @required Result seriesDeletedSCS(SeriesDeletedSCS value),
-    @required Result seriesListLoadedSCS(SeriesListLoadedSCS value),
+    @required
+        Result seriesMinifiedListLoadedSCS(SeriesMinifiedListLoadedSCS value),
     @required Result seriesLoadedSCS(SeriesLoadedSCS value),
     @required Result seriesPublishedSCS(SeriesPublishedSCS value),
     @required Result seriesStatsCountLoadedSCS(SeriesStatsCountLoadedSCS value),
@@ -6321,7 +6591,9 @@ class _$SeriesStatsCountLoadedSCS implements SeriesStatsCountLoadedSCS {
     @required Result chapterCoverDeletedSCS(ChapterCoverDeletedSCS value),
     @required Result chapterCoverUploadedSCS(ChapterCoverUploadedSCS value),
     @required Result chapterDeletedSCS(ChapterDeletedSCS value),
-    @required Result chapterListLoadedSCS(ChapterListLoadedSCS value),
+    @required
+        Result chapterMinifiedListLoadedSCS(ChapterMinifiedListLoadedSCS value),
+    @required Result chapterMinifiedLoadedSCS(ChapterMinifiedLoadedSCS value),
     @required Result chapterLoadedSCS(ChapterLoadedSCS value),
     @required Result chapterPublishedSCS(ChapterPublishedSCS value),
     @required
@@ -6349,7 +6621,7 @@ class _$SeriesStatsCountLoadedSCS implements SeriesStatsCountLoadedSCS {
     assert(seriesCoverDeletedSCS != null);
     assert(seriesCoverUploadedSCS != null);
     assert(seriesDeletedSCS != null);
-    assert(seriesListLoadedSCS != null);
+    assert(seriesMinifiedListLoadedSCS != null);
     assert(seriesLoadedSCS != null);
     assert(seriesPublishedSCS != null);
     assert(seriesStatsCountLoadedSCS != null);
@@ -6362,7 +6634,8 @@ class _$SeriesStatsCountLoadedSCS implements SeriesStatsCountLoadedSCS {
     assert(chapterCoverDeletedSCS != null);
     assert(chapterCoverUploadedSCS != null);
     assert(chapterDeletedSCS != null);
-    assert(chapterListLoadedSCS != null);
+    assert(chapterMinifiedListLoadedSCS != null);
+    assert(chapterMinifiedLoadedSCS != null);
     assert(chapterLoadedSCS != null);
     assert(chapterPublishedSCS != null);
     assert(chapterStatsCountLoadedSCS != null);
@@ -6392,7 +6665,7 @@ class _$SeriesStatsCountLoadedSCS implements SeriesStatsCountLoadedSCS {
     Result seriesCoverDeletedSCS(SeriesCoverDeletedSCS value),
     Result seriesCoverUploadedSCS(SeriesCoverUploadedSCS value),
     Result seriesDeletedSCS(SeriesDeletedSCS value),
-    Result seriesListLoadedSCS(SeriesListLoadedSCS value),
+    Result seriesMinifiedListLoadedSCS(SeriesMinifiedListLoadedSCS value),
     Result seriesLoadedSCS(SeriesLoadedSCS value),
     Result seriesPublishedSCS(SeriesPublishedSCS value),
     Result seriesStatsCountLoadedSCS(SeriesStatsCountLoadedSCS value),
@@ -6405,7 +6678,8 @@ class _$SeriesStatsCountLoadedSCS implements SeriesStatsCountLoadedSCS {
     Result chapterCoverDeletedSCS(ChapterCoverDeletedSCS value),
     Result chapterCoverUploadedSCS(ChapterCoverUploadedSCS value),
     Result chapterDeletedSCS(ChapterDeletedSCS value),
-    Result chapterListLoadedSCS(ChapterListLoadedSCS value),
+    Result chapterMinifiedListLoadedSCS(ChapterMinifiedListLoadedSCS value),
+    Result chapterMinifiedLoadedSCS(ChapterMinifiedLoadedSCS value),
     Result chapterLoadedSCS(ChapterLoadedSCS value),
     Result chapterPublishedSCS(ChapterPublishedSCS value),
     Result chapterStatsCountLoadedSCS(ChapterStatsCountLoadedSCS value),
@@ -6484,7 +6758,8 @@ class _$SeriesStatsCountUpdatedSCS implements SeriesStatsCountUpdatedSCS {
     @required Result seriesCoverDeletedSCS(),
     @required Result seriesCoverUploadedSCS(String coverUrl),
     @required Result seriesDeletedSCS(),
-    @required Result seriesListLoadedSCS(List<Series> series),
+    @required
+        Result seriesMinifiedListLoadedSCS(List<SeriesMinified> seriesMinified),
     @required Result seriesLoadedSCS(Series series),
     @required Result seriesPublishedSCS(),
     @required Result seriesStatsCountLoadedSCS(int count),
@@ -6497,7 +6772,10 @@ class _$SeriesStatsCountUpdatedSCS implements SeriesStatsCountUpdatedSCS {
     @required Result chapterCoverDeletedSCS(),
     @required Result chapterCoverUploadedSCS(String coverUrl),
     @required Result chapterDeletedSCS(),
-    @required Result chapterListLoadedSCS(List<Chapter> chapters),
+    @required
+        Result chapterMinifiedListLoadedSCS(
+            List<ChapterMinified> chaptersMinified),
+    @required Result chapterMinifiedLoadedSCS(ChapterMinified chapterMinified),
     @required Result chapterLoadedSCS(Chapter chapter),
     @required Result chapterPublishedSCS(),
     @required Result chapterStatsCountLoadedSCS(int count),
@@ -6522,7 +6800,7 @@ class _$SeriesStatsCountUpdatedSCS implements SeriesStatsCountUpdatedSCS {
     assert(seriesCoverDeletedSCS != null);
     assert(seriesCoverUploadedSCS != null);
     assert(seriesDeletedSCS != null);
-    assert(seriesListLoadedSCS != null);
+    assert(seriesMinifiedListLoadedSCS != null);
     assert(seriesLoadedSCS != null);
     assert(seriesPublishedSCS != null);
     assert(seriesStatsCountLoadedSCS != null);
@@ -6535,7 +6813,8 @@ class _$SeriesStatsCountUpdatedSCS implements SeriesStatsCountUpdatedSCS {
     assert(chapterCoverDeletedSCS != null);
     assert(chapterCoverUploadedSCS != null);
     assert(chapterDeletedSCS != null);
-    assert(chapterListLoadedSCS != null);
+    assert(chapterMinifiedListLoadedSCS != null);
+    assert(chapterMinifiedLoadedSCS != null);
     assert(chapterLoadedSCS != null);
     assert(chapterPublishedSCS != null);
     assert(chapterStatsCountLoadedSCS != null);
@@ -6565,7 +6844,7 @@ class _$SeriesStatsCountUpdatedSCS implements SeriesStatsCountUpdatedSCS {
     Result seriesCoverDeletedSCS(),
     Result seriesCoverUploadedSCS(String coverUrl),
     Result seriesDeletedSCS(),
-    Result seriesListLoadedSCS(List<Series> series),
+    Result seriesMinifiedListLoadedSCS(List<SeriesMinified> seriesMinified),
     Result seriesLoadedSCS(Series series),
     Result seriesPublishedSCS(),
     Result seriesStatsCountLoadedSCS(int count),
@@ -6578,7 +6857,8 @@ class _$SeriesStatsCountUpdatedSCS implements SeriesStatsCountUpdatedSCS {
     Result chapterCoverDeletedSCS(),
     Result chapterCoverUploadedSCS(String coverUrl),
     Result chapterDeletedSCS(),
-    Result chapterListLoadedSCS(List<Chapter> chapters),
+    Result chapterMinifiedListLoadedSCS(List<ChapterMinified> chaptersMinified),
+    Result chapterMinifiedLoadedSCS(ChapterMinified chapterMinified),
     Result chapterLoadedSCS(Chapter chapter),
     Result chapterPublishedSCS(),
     Result chapterStatsCountLoadedSCS(int count),
@@ -6614,7 +6894,8 @@ class _$SeriesStatsCountUpdatedSCS implements SeriesStatsCountUpdatedSCS {
     @required Result seriesCoverDeletedSCS(SeriesCoverDeletedSCS value),
     @required Result seriesCoverUploadedSCS(SeriesCoverUploadedSCS value),
     @required Result seriesDeletedSCS(SeriesDeletedSCS value),
-    @required Result seriesListLoadedSCS(SeriesListLoadedSCS value),
+    @required
+        Result seriesMinifiedListLoadedSCS(SeriesMinifiedListLoadedSCS value),
     @required Result seriesLoadedSCS(SeriesLoadedSCS value),
     @required Result seriesPublishedSCS(SeriesPublishedSCS value),
     @required Result seriesStatsCountLoadedSCS(SeriesStatsCountLoadedSCS value),
@@ -6629,7 +6910,9 @@ class _$SeriesStatsCountUpdatedSCS implements SeriesStatsCountUpdatedSCS {
     @required Result chapterCoverDeletedSCS(ChapterCoverDeletedSCS value),
     @required Result chapterCoverUploadedSCS(ChapterCoverUploadedSCS value),
     @required Result chapterDeletedSCS(ChapterDeletedSCS value),
-    @required Result chapterListLoadedSCS(ChapterListLoadedSCS value),
+    @required
+        Result chapterMinifiedListLoadedSCS(ChapterMinifiedListLoadedSCS value),
+    @required Result chapterMinifiedLoadedSCS(ChapterMinifiedLoadedSCS value),
     @required Result chapterLoadedSCS(ChapterLoadedSCS value),
     @required Result chapterPublishedSCS(ChapterPublishedSCS value),
     @required
@@ -6657,7 +6940,7 @@ class _$SeriesStatsCountUpdatedSCS implements SeriesStatsCountUpdatedSCS {
     assert(seriesCoverDeletedSCS != null);
     assert(seriesCoverUploadedSCS != null);
     assert(seriesDeletedSCS != null);
-    assert(seriesListLoadedSCS != null);
+    assert(seriesMinifiedListLoadedSCS != null);
     assert(seriesLoadedSCS != null);
     assert(seriesPublishedSCS != null);
     assert(seriesStatsCountLoadedSCS != null);
@@ -6670,7 +6953,8 @@ class _$SeriesStatsCountUpdatedSCS implements SeriesStatsCountUpdatedSCS {
     assert(chapterCoverDeletedSCS != null);
     assert(chapterCoverUploadedSCS != null);
     assert(chapterDeletedSCS != null);
-    assert(chapterListLoadedSCS != null);
+    assert(chapterMinifiedListLoadedSCS != null);
+    assert(chapterMinifiedLoadedSCS != null);
     assert(chapterLoadedSCS != null);
     assert(chapterPublishedSCS != null);
     assert(chapterStatsCountLoadedSCS != null);
@@ -6700,7 +6984,7 @@ class _$SeriesStatsCountUpdatedSCS implements SeriesStatsCountUpdatedSCS {
     Result seriesCoverDeletedSCS(SeriesCoverDeletedSCS value),
     Result seriesCoverUploadedSCS(SeriesCoverUploadedSCS value),
     Result seriesDeletedSCS(SeriesDeletedSCS value),
-    Result seriesListLoadedSCS(SeriesListLoadedSCS value),
+    Result seriesMinifiedListLoadedSCS(SeriesMinifiedListLoadedSCS value),
     Result seriesLoadedSCS(SeriesLoadedSCS value),
     Result seriesPublishedSCS(SeriesPublishedSCS value),
     Result seriesStatsCountLoadedSCS(SeriesStatsCountLoadedSCS value),
@@ -6713,7 +6997,8 @@ class _$SeriesStatsCountUpdatedSCS implements SeriesStatsCountUpdatedSCS {
     Result chapterCoverDeletedSCS(ChapterCoverDeletedSCS value),
     Result chapterCoverUploadedSCS(ChapterCoverUploadedSCS value),
     Result chapterDeletedSCS(ChapterDeletedSCS value),
-    Result chapterListLoadedSCS(ChapterListLoadedSCS value),
+    Result chapterMinifiedListLoadedSCS(ChapterMinifiedListLoadedSCS value),
+    Result chapterMinifiedLoadedSCS(ChapterMinifiedLoadedSCS value),
     Result chapterLoadedSCS(ChapterLoadedSCS value),
     Result chapterPublishedSCS(ChapterPublishedSCS value),
     Result chapterStatsCountLoadedSCS(ChapterStatsCountLoadedSCS value),
@@ -6812,7 +7097,8 @@ class _$SeriesStatsStatusLoadedSCS implements SeriesStatsStatusLoadedSCS {
     @required Result seriesCoverDeletedSCS(),
     @required Result seriesCoverUploadedSCS(String coverUrl),
     @required Result seriesDeletedSCS(),
-    @required Result seriesListLoadedSCS(List<Series> series),
+    @required
+        Result seriesMinifiedListLoadedSCS(List<SeriesMinified> seriesMinified),
     @required Result seriesLoadedSCS(Series series),
     @required Result seriesPublishedSCS(),
     @required Result seriesStatsCountLoadedSCS(int count),
@@ -6825,7 +7111,10 @@ class _$SeriesStatsStatusLoadedSCS implements SeriesStatsStatusLoadedSCS {
     @required Result chapterCoverDeletedSCS(),
     @required Result chapterCoverUploadedSCS(String coverUrl),
     @required Result chapterDeletedSCS(),
-    @required Result chapterListLoadedSCS(List<Chapter> chapters),
+    @required
+        Result chapterMinifiedListLoadedSCS(
+            List<ChapterMinified> chaptersMinified),
+    @required Result chapterMinifiedLoadedSCS(ChapterMinified chapterMinified),
     @required Result chapterLoadedSCS(Chapter chapter),
     @required Result chapterPublishedSCS(),
     @required Result chapterStatsCountLoadedSCS(int count),
@@ -6850,7 +7139,7 @@ class _$SeriesStatsStatusLoadedSCS implements SeriesStatsStatusLoadedSCS {
     assert(seriesCoverDeletedSCS != null);
     assert(seriesCoverUploadedSCS != null);
     assert(seriesDeletedSCS != null);
-    assert(seriesListLoadedSCS != null);
+    assert(seriesMinifiedListLoadedSCS != null);
     assert(seriesLoadedSCS != null);
     assert(seriesPublishedSCS != null);
     assert(seriesStatsCountLoadedSCS != null);
@@ -6863,7 +7152,8 @@ class _$SeriesStatsStatusLoadedSCS implements SeriesStatsStatusLoadedSCS {
     assert(chapterCoverDeletedSCS != null);
     assert(chapterCoverUploadedSCS != null);
     assert(chapterDeletedSCS != null);
-    assert(chapterListLoadedSCS != null);
+    assert(chapterMinifiedListLoadedSCS != null);
+    assert(chapterMinifiedLoadedSCS != null);
     assert(chapterLoadedSCS != null);
     assert(chapterPublishedSCS != null);
     assert(chapterStatsCountLoadedSCS != null);
@@ -6893,7 +7183,7 @@ class _$SeriesStatsStatusLoadedSCS implements SeriesStatsStatusLoadedSCS {
     Result seriesCoverDeletedSCS(),
     Result seriesCoverUploadedSCS(String coverUrl),
     Result seriesDeletedSCS(),
-    Result seriesListLoadedSCS(List<Series> series),
+    Result seriesMinifiedListLoadedSCS(List<SeriesMinified> seriesMinified),
     Result seriesLoadedSCS(Series series),
     Result seriesPublishedSCS(),
     Result seriesStatsCountLoadedSCS(int count),
@@ -6906,7 +7196,8 @@ class _$SeriesStatsStatusLoadedSCS implements SeriesStatsStatusLoadedSCS {
     Result chapterCoverDeletedSCS(),
     Result chapterCoverUploadedSCS(String coverUrl),
     Result chapterDeletedSCS(),
-    Result chapterListLoadedSCS(List<Chapter> chapters),
+    Result chapterMinifiedListLoadedSCS(List<ChapterMinified> chaptersMinified),
+    Result chapterMinifiedLoadedSCS(ChapterMinified chapterMinified),
     Result chapterLoadedSCS(Chapter chapter),
     Result chapterPublishedSCS(),
     Result chapterStatsCountLoadedSCS(int count),
@@ -6942,7 +7233,8 @@ class _$SeriesStatsStatusLoadedSCS implements SeriesStatsStatusLoadedSCS {
     @required Result seriesCoverDeletedSCS(SeriesCoverDeletedSCS value),
     @required Result seriesCoverUploadedSCS(SeriesCoverUploadedSCS value),
     @required Result seriesDeletedSCS(SeriesDeletedSCS value),
-    @required Result seriesListLoadedSCS(SeriesListLoadedSCS value),
+    @required
+        Result seriesMinifiedListLoadedSCS(SeriesMinifiedListLoadedSCS value),
     @required Result seriesLoadedSCS(SeriesLoadedSCS value),
     @required Result seriesPublishedSCS(SeriesPublishedSCS value),
     @required Result seriesStatsCountLoadedSCS(SeriesStatsCountLoadedSCS value),
@@ -6957,7 +7249,9 @@ class _$SeriesStatsStatusLoadedSCS implements SeriesStatsStatusLoadedSCS {
     @required Result chapterCoverDeletedSCS(ChapterCoverDeletedSCS value),
     @required Result chapterCoverUploadedSCS(ChapterCoverUploadedSCS value),
     @required Result chapterDeletedSCS(ChapterDeletedSCS value),
-    @required Result chapterListLoadedSCS(ChapterListLoadedSCS value),
+    @required
+        Result chapterMinifiedListLoadedSCS(ChapterMinifiedListLoadedSCS value),
+    @required Result chapterMinifiedLoadedSCS(ChapterMinifiedLoadedSCS value),
     @required Result chapterLoadedSCS(ChapterLoadedSCS value),
     @required Result chapterPublishedSCS(ChapterPublishedSCS value),
     @required
@@ -6985,7 +7279,7 @@ class _$SeriesStatsStatusLoadedSCS implements SeriesStatsStatusLoadedSCS {
     assert(seriesCoverDeletedSCS != null);
     assert(seriesCoverUploadedSCS != null);
     assert(seriesDeletedSCS != null);
-    assert(seriesListLoadedSCS != null);
+    assert(seriesMinifiedListLoadedSCS != null);
     assert(seriesLoadedSCS != null);
     assert(seriesPublishedSCS != null);
     assert(seriesStatsCountLoadedSCS != null);
@@ -6998,7 +7292,8 @@ class _$SeriesStatsStatusLoadedSCS implements SeriesStatsStatusLoadedSCS {
     assert(chapterCoverDeletedSCS != null);
     assert(chapterCoverUploadedSCS != null);
     assert(chapterDeletedSCS != null);
-    assert(chapterListLoadedSCS != null);
+    assert(chapterMinifiedListLoadedSCS != null);
+    assert(chapterMinifiedLoadedSCS != null);
     assert(chapterLoadedSCS != null);
     assert(chapterPublishedSCS != null);
     assert(chapterStatsCountLoadedSCS != null);
@@ -7028,7 +7323,7 @@ class _$SeriesStatsStatusLoadedSCS implements SeriesStatsStatusLoadedSCS {
     Result seriesCoverDeletedSCS(SeriesCoverDeletedSCS value),
     Result seriesCoverUploadedSCS(SeriesCoverUploadedSCS value),
     Result seriesDeletedSCS(SeriesDeletedSCS value),
-    Result seriesListLoadedSCS(SeriesListLoadedSCS value),
+    Result seriesMinifiedListLoadedSCS(SeriesMinifiedListLoadedSCS value),
     Result seriesLoadedSCS(SeriesLoadedSCS value),
     Result seriesPublishedSCS(SeriesPublishedSCS value),
     Result seriesStatsCountLoadedSCS(SeriesStatsCountLoadedSCS value),
@@ -7041,7 +7336,8 @@ class _$SeriesStatsStatusLoadedSCS implements SeriesStatsStatusLoadedSCS {
     Result chapterCoverDeletedSCS(ChapterCoverDeletedSCS value),
     Result chapterCoverUploadedSCS(ChapterCoverUploadedSCS value),
     Result chapterDeletedSCS(ChapterDeletedSCS value),
-    Result chapterListLoadedSCS(ChapterListLoadedSCS value),
+    Result chapterMinifiedListLoadedSCS(ChapterMinifiedListLoadedSCS value),
+    Result chapterMinifiedLoadedSCS(ChapterMinifiedLoadedSCS value),
     Result chapterLoadedSCS(ChapterLoadedSCS value),
     Result chapterPublishedSCS(ChapterPublishedSCS value),
     Result chapterStatsCountLoadedSCS(ChapterStatsCountLoadedSCS value),
@@ -7119,7 +7415,8 @@ class _$ChapterDraftDeletedSCS implements ChapterDraftDeletedSCS {
     @required Result seriesCoverDeletedSCS(),
     @required Result seriesCoverUploadedSCS(String coverUrl),
     @required Result seriesDeletedSCS(),
-    @required Result seriesListLoadedSCS(List<Series> series),
+    @required
+        Result seriesMinifiedListLoadedSCS(List<SeriesMinified> seriesMinified),
     @required Result seriesLoadedSCS(Series series),
     @required Result seriesPublishedSCS(),
     @required Result seriesStatsCountLoadedSCS(int count),
@@ -7132,7 +7429,10 @@ class _$ChapterDraftDeletedSCS implements ChapterDraftDeletedSCS {
     @required Result chapterCoverDeletedSCS(),
     @required Result chapterCoverUploadedSCS(String coverUrl),
     @required Result chapterDeletedSCS(),
-    @required Result chapterListLoadedSCS(List<Chapter> chapters),
+    @required
+        Result chapterMinifiedListLoadedSCS(
+            List<ChapterMinified> chaptersMinified),
+    @required Result chapterMinifiedLoadedSCS(ChapterMinified chapterMinified),
     @required Result chapterLoadedSCS(Chapter chapter),
     @required Result chapterPublishedSCS(),
     @required Result chapterStatsCountLoadedSCS(int count),
@@ -7157,7 +7457,7 @@ class _$ChapterDraftDeletedSCS implements ChapterDraftDeletedSCS {
     assert(seriesCoverDeletedSCS != null);
     assert(seriesCoverUploadedSCS != null);
     assert(seriesDeletedSCS != null);
-    assert(seriesListLoadedSCS != null);
+    assert(seriesMinifiedListLoadedSCS != null);
     assert(seriesLoadedSCS != null);
     assert(seriesPublishedSCS != null);
     assert(seriesStatsCountLoadedSCS != null);
@@ -7170,7 +7470,8 @@ class _$ChapterDraftDeletedSCS implements ChapterDraftDeletedSCS {
     assert(chapterCoverDeletedSCS != null);
     assert(chapterCoverUploadedSCS != null);
     assert(chapterDeletedSCS != null);
-    assert(chapterListLoadedSCS != null);
+    assert(chapterMinifiedListLoadedSCS != null);
+    assert(chapterMinifiedLoadedSCS != null);
     assert(chapterLoadedSCS != null);
     assert(chapterPublishedSCS != null);
     assert(chapterStatsCountLoadedSCS != null);
@@ -7200,7 +7501,7 @@ class _$ChapterDraftDeletedSCS implements ChapterDraftDeletedSCS {
     Result seriesCoverDeletedSCS(),
     Result seriesCoverUploadedSCS(String coverUrl),
     Result seriesDeletedSCS(),
-    Result seriesListLoadedSCS(List<Series> series),
+    Result seriesMinifiedListLoadedSCS(List<SeriesMinified> seriesMinified),
     Result seriesLoadedSCS(Series series),
     Result seriesPublishedSCS(),
     Result seriesStatsCountLoadedSCS(int count),
@@ -7213,7 +7514,8 @@ class _$ChapterDraftDeletedSCS implements ChapterDraftDeletedSCS {
     Result chapterCoverDeletedSCS(),
     Result chapterCoverUploadedSCS(String coverUrl),
     Result chapterDeletedSCS(),
-    Result chapterListLoadedSCS(List<Chapter> chapters),
+    Result chapterMinifiedListLoadedSCS(List<ChapterMinified> chaptersMinified),
+    Result chapterMinifiedLoadedSCS(ChapterMinified chapterMinified),
     Result chapterLoadedSCS(Chapter chapter),
     Result chapterPublishedSCS(),
     Result chapterStatsCountLoadedSCS(int count),
@@ -7249,7 +7551,8 @@ class _$ChapterDraftDeletedSCS implements ChapterDraftDeletedSCS {
     @required Result seriesCoverDeletedSCS(SeriesCoverDeletedSCS value),
     @required Result seriesCoverUploadedSCS(SeriesCoverUploadedSCS value),
     @required Result seriesDeletedSCS(SeriesDeletedSCS value),
-    @required Result seriesListLoadedSCS(SeriesListLoadedSCS value),
+    @required
+        Result seriesMinifiedListLoadedSCS(SeriesMinifiedListLoadedSCS value),
     @required Result seriesLoadedSCS(SeriesLoadedSCS value),
     @required Result seriesPublishedSCS(SeriesPublishedSCS value),
     @required Result seriesStatsCountLoadedSCS(SeriesStatsCountLoadedSCS value),
@@ -7264,7 +7567,9 @@ class _$ChapterDraftDeletedSCS implements ChapterDraftDeletedSCS {
     @required Result chapterCoverDeletedSCS(ChapterCoverDeletedSCS value),
     @required Result chapterCoverUploadedSCS(ChapterCoverUploadedSCS value),
     @required Result chapterDeletedSCS(ChapterDeletedSCS value),
-    @required Result chapterListLoadedSCS(ChapterListLoadedSCS value),
+    @required
+        Result chapterMinifiedListLoadedSCS(ChapterMinifiedListLoadedSCS value),
+    @required Result chapterMinifiedLoadedSCS(ChapterMinifiedLoadedSCS value),
     @required Result chapterLoadedSCS(ChapterLoadedSCS value),
     @required Result chapterPublishedSCS(ChapterPublishedSCS value),
     @required
@@ -7292,7 +7597,7 @@ class _$ChapterDraftDeletedSCS implements ChapterDraftDeletedSCS {
     assert(seriesCoverDeletedSCS != null);
     assert(seriesCoverUploadedSCS != null);
     assert(seriesDeletedSCS != null);
-    assert(seriesListLoadedSCS != null);
+    assert(seriesMinifiedListLoadedSCS != null);
     assert(seriesLoadedSCS != null);
     assert(seriesPublishedSCS != null);
     assert(seriesStatsCountLoadedSCS != null);
@@ -7305,7 +7610,8 @@ class _$ChapterDraftDeletedSCS implements ChapterDraftDeletedSCS {
     assert(chapterCoverDeletedSCS != null);
     assert(chapterCoverUploadedSCS != null);
     assert(chapterDeletedSCS != null);
-    assert(chapterListLoadedSCS != null);
+    assert(chapterMinifiedListLoadedSCS != null);
+    assert(chapterMinifiedLoadedSCS != null);
     assert(chapterLoadedSCS != null);
     assert(chapterPublishedSCS != null);
     assert(chapterStatsCountLoadedSCS != null);
@@ -7335,7 +7641,7 @@ class _$ChapterDraftDeletedSCS implements ChapterDraftDeletedSCS {
     Result seriesCoverDeletedSCS(SeriesCoverDeletedSCS value),
     Result seriesCoverUploadedSCS(SeriesCoverUploadedSCS value),
     Result seriesDeletedSCS(SeriesDeletedSCS value),
-    Result seriesListLoadedSCS(SeriesListLoadedSCS value),
+    Result seriesMinifiedListLoadedSCS(SeriesMinifiedListLoadedSCS value),
     Result seriesLoadedSCS(SeriesLoadedSCS value),
     Result seriesPublishedSCS(SeriesPublishedSCS value),
     Result seriesStatsCountLoadedSCS(SeriesStatsCountLoadedSCS value),
@@ -7348,7 +7654,8 @@ class _$ChapterDraftDeletedSCS implements ChapterDraftDeletedSCS {
     Result chapterCoverDeletedSCS(ChapterCoverDeletedSCS value),
     Result chapterCoverUploadedSCS(ChapterCoverUploadedSCS value),
     Result chapterDeletedSCS(ChapterDeletedSCS value),
-    Result chapterListLoadedSCS(ChapterListLoadedSCS value),
+    Result chapterMinifiedListLoadedSCS(ChapterMinifiedListLoadedSCS value),
+    Result chapterMinifiedLoadedSCS(ChapterMinifiedLoadedSCS value),
     Result chapterLoadedSCS(ChapterLoadedSCS value),
     Result chapterPublishedSCS(ChapterPublishedSCS value),
     Result chapterStatsCountLoadedSCS(ChapterStatsCountLoadedSCS value),
@@ -7448,7 +7755,8 @@ class _$ChapterDraftFetchedSCS implements ChapterDraftFetchedSCS {
     @required Result seriesCoverDeletedSCS(),
     @required Result seriesCoverUploadedSCS(String coverUrl),
     @required Result seriesDeletedSCS(),
-    @required Result seriesListLoadedSCS(List<Series> series),
+    @required
+        Result seriesMinifiedListLoadedSCS(List<SeriesMinified> seriesMinified),
     @required Result seriesLoadedSCS(Series series),
     @required Result seriesPublishedSCS(),
     @required Result seriesStatsCountLoadedSCS(int count),
@@ -7461,7 +7769,10 @@ class _$ChapterDraftFetchedSCS implements ChapterDraftFetchedSCS {
     @required Result chapterCoverDeletedSCS(),
     @required Result chapterCoverUploadedSCS(String coverUrl),
     @required Result chapterDeletedSCS(),
-    @required Result chapterListLoadedSCS(List<Chapter> chapters),
+    @required
+        Result chapterMinifiedListLoadedSCS(
+            List<ChapterMinified> chaptersMinified),
+    @required Result chapterMinifiedLoadedSCS(ChapterMinified chapterMinified),
     @required Result chapterLoadedSCS(Chapter chapter),
     @required Result chapterPublishedSCS(),
     @required Result chapterStatsCountLoadedSCS(int count),
@@ -7486,7 +7797,7 @@ class _$ChapterDraftFetchedSCS implements ChapterDraftFetchedSCS {
     assert(seriesCoverDeletedSCS != null);
     assert(seriesCoverUploadedSCS != null);
     assert(seriesDeletedSCS != null);
-    assert(seriesListLoadedSCS != null);
+    assert(seriesMinifiedListLoadedSCS != null);
     assert(seriesLoadedSCS != null);
     assert(seriesPublishedSCS != null);
     assert(seriesStatsCountLoadedSCS != null);
@@ -7499,7 +7810,8 @@ class _$ChapterDraftFetchedSCS implements ChapterDraftFetchedSCS {
     assert(chapterCoverDeletedSCS != null);
     assert(chapterCoverUploadedSCS != null);
     assert(chapterDeletedSCS != null);
-    assert(chapterListLoadedSCS != null);
+    assert(chapterMinifiedListLoadedSCS != null);
+    assert(chapterMinifiedLoadedSCS != null);
     assert(chapterLoadedSCS != null);
     assert(chapterPublishedSCS != null);
     assert(chapterStatsCountLoadedSCS != null);
@@ -7529,7 +7841,7 @@ class _$ChapterDraftFetchedSCS implements ChapterDraftFetchedSCS {
     Result seriesCoverDeletedSCS(),
     Result seriesCoverUploadedSCS(String coverUrl),
     Result seriesDeletedSCS(),
-    Result seriesListLoadedSCS(List<Series> series),
+    Result seriesMinifiedListLoadedSCS(List<SeriesMinified> seriesMinified),
     Result seriesLoadedSCS(Series series),
     Result seriesPublishedSCS(),
     Result seriesStatsCountLoadedSCS(int count),
@@ -7542,7 +7854,8 @@ class _$ChapterDraftFetchedSCS implements ChapterDraftFetchedSCS {
     Result chapterCoverDeletedSCS(),
     Result chapterCoverUploadedSCS(String coverUrl),
     Result chapterDeletedSCS(),
-    Result chapterListLoadedSCS(List<Chapter> chapters),
+    Result chapterMinifiedListLoadedSCS(List<ChapterMinified> chaptersMinified),
+    Result chapterMinifiedLoadedSCS(ChapterMinified chapterMinified),
     Result chapterLoadedSCS(Chapter chapter),
     Result chapterPublishedSCS(),
     Result chapterStatsCountLoadedSCS(int count),
@@ -7578,7 +7891,8 @@ class _$ChapterDraftFetchedSCS implements ChapterDraftFetchedSCS {
     @required Result seriesCoverDeletedSCS(SeriesCoverDeletedSCS value),
     @required Result seriesCoverUploadedSCS(SeriesCoverUploadedSCS value),
     @required Result seriesDeletedSCS(SeriesDeletedSCS value),
-    @required Result seriesListLoadedSCS(SeriesListLoadedSCS value),
+    @required
+        Result seriesMinifiedListLoadedSCS(SeriesMinifiedListLoadedSCS value),
     @required Result seriesLoadedSCS(SeriesLoadedSCS value),
     @required Result seriesPublishedSCS(SeriesPublishedSCS value),
     @required Result seriesStatsCountLoadedSCS(SeriesStatsCountLoadedSCS value),
@@ -7593,7 +7907,9 @@ class _$ChapterDraftFetchedSCS implements ChapterDraftFetchedSCS {
     @required Result chapterCoverDeletedSCS(ChapterCoverDeletedSCS value),
     @required Result chapterCoverUploadedSCS(ChapterCoverUploadedSCS value),
     @required Result chapterDeletedSCS(ChapterDeletedSCS value),
-    @required Result chapterListLoadedSCS(ChapterListLoadedSCS value),
+    @required
+        Result chapterMinifiedListLoadedSCS(ChapterMinifiedListLoadedSCS value),
+    @required Result chapterMinifiedLoadedSCS(ChapterMinifiedLoadedSCS value),
     @required Result chapterLoadedSCS(ChapterLoadedSCS value),
     @required Result chapterPublishedSCS(ChapterPublishedSCS value),
     @required
@@ -7621,7 +7937,7 @@ class _$ChapterDraftFetchedSCS implements ChapterDraftFetchedSCS {
     assert(seriesCoverDeletedSCS != null);
     assert(seriesCoverUploadedSCS != null);
     assert(seriesDeletedSCS != null);
-    assert(seriesListLoadedSCS != null);
+    assert(seriesMinifiedListLoadedSCS != null);
     assert(seriesLoadedSCS != null);
     assert(seriesPublishedSCS != null);
     assert(seriesStatsCountLoadedSCS != null);
@@ -7634,7 +7950,8 @@ class _$ChapterDraftFetchedSCS implements ChapterDraftFetchedSCS {
     assert(chapterCoverDeletedSCS != null);
     assert(chapterCoverUploadedSCS != null);
     assert(chapterDeletedSCS != null);
-    assert(chapterListLoadedSCS != null);
+    assert(chapterMinifiedListLoadedSCS != null);
+    assert(chapterMinifiedLoadedSCS != null);
     assert(chapterLoadedSCS != null);
     assert(chapterPublishedSCS != null);
     assert(chapterStatsCountLoadedSCS != null);
@@ -7664,7 +7981,7 @@ class _$ChapterDraftFetchedSCS implements ChapterDraftFetchedSCS {
     Result seriesCoverDeletedSCS(SeriesCoverDeletedSCS value),
     Result seriesCoverUploadedSCS(SeriesCoverUploadedSCS value),
     Result seriesDeletedSCS(SeriesDeletedSCS value),
-    Result seriesListLoadedSCS(SeriesListLoadedSCS value),
+    Result seriesMinifiedListLoadedSCS(SeriesMinifiedListLoadedSCS value),
     Result seriesLoadedSCS(SeriesLoadedSCS value),
     Result seriesPublishedSCS(SeriesPublishedSCS value),
     Result seriesStatsCountLoadedSCS(SeriesStatsCountLoadedSCS value),
@@ -7677,7 +7994,8 @@ class _$ChapterDraftFetchedSCS implements ChapterDraftFetchedSCS {
     Result chapterCoverDeletedSCS(ChapterCoverDeletedSCS value),
     Result chapterCoverUploadedSCS(ChapterCoverUploadedSCS value),
     Result chapterDeletedSCS(ChapterDeletedSCS value),
-    Result chapterListLoadedSCS(ChapterListLoadedSCS value),
+    Result chapterMinifiedListLoadedSCS(ChapterMinifiedListLoadedSCS value),
+    Result chapterMinifiedLoadedSCS(ChapterMinifiedLoadedSCS value),
     Result chapterLoadedSCS(ChapterLoadedSCS value),
     Result chapterPublishedSCS(ChapterPublishedSCS value),
     Result chapterStatsCountLoadedSCS(ChapterStatsCountLoadedSCS value),
@@ -7755,7 +8073,8 @@ class _$ChapterDraftSavedSCS implements ChapterDraftSavedSCS {
     @required Result seriesCoverDeletedSCS(),
     @required Result seriesCoverUploadedSCS(String coverUrl),
     @required Result seriesDeletedSCS(),
-    @required Result seriesListLoadedSCS(List<Series> series),
+    @required
+        Result seriesMinifiedListLoadedSCS(List<SeriesMinified> seriesMinified),
     @required Result seriesLoadedSCS(Series series),
     @required Result seriesPublishedSCS(),
     @required Result seriesStatsCountLoadedSCS(int count),
@@ -7768,7 +8087,10 @@ class _$ChapterDraftSavedSCS implements ChapterDraftSavedSCS {
     @required Result chapterCoverDeletedSCS(),
     @required Result chapterCoverUploadedSCS(String coverUrl),
     @required Result chapterDeletedSCS(),
-    @required Result chapterListLoadedSCS(List<Chapter> chapters),
+    @required
+        Result chapterMinifiedListLoadedSCS(
+            List<ChapterMinified> chaptersMinified),
+    @required Result chapterMinifiedLoadedSCS(ChapterMinified chapterMinified),
     @required Result chapterLoadedSCS(Chapter chapter),
     @required Result chapterPublishedSCS(),
     @required Result chapterStatsCountLoadedSCS(int count),
@@ -7793,7 +8115,7 @@ class _$ChapterDraftSavedSCS implements ChapterDraftSavedSCS {
     assert(seriesCoverDeletedSCS != null);
     assert(seriesCoverUploadedSCS != null);
     assert(seriesDeletedSCS != null);
-    assert(seriesListLoadedSCS != null);
+    assert(seriesMinifiedListLoadedSCS != null);
     assert(seriesLoadedSCS != null);
     assert(seriesPublishedSCS != null);
     assert(seriesStatsCountLoadedSCS != null);
@@ -7806,7 +8128,8 @@ class _$ChapterDraftSavedSCS implements ChapterDraftSavedSCS {
     assert(chapterCoverDeletedSCS != null);
     assert(chapterCoverUploadedSCS != null);
     assert(chapterDeletedSCS != null);
-    assert(chapterListLoadedSCS != null);
+    assert(chapterMinifiedListLoadedSCS != null);
+    assert(chapterMinifiedLoadedSCS != null);
     assert(chapterLoadedSCS != null);
     assert(chapterPublishedSCS != null);
     assert(chapterStatsCountLoadedSCS != null);
@@ -7836,7 +8159,7 @@ class _$ChapterDraftSavedSCS implements ChapterDraftSavedSCS {
     Result seriesCoverDeletedSCS(),
     Result seriesCoverUploadedSCS(String coverUrl),
     Result seriesDeletedSCS(),
-    Result seriesListLoadedSCS(List<Series> series),
+    Result seriesMinifiedListLoadedSCS(List<SeriesMinified> seriesMinified),
     Result seriesLoadedSCS(Series series),
     Result seriesPublishedSCS(),
     Result seriesStatsCountLoadedSCS(int count),
@@ -7849,7 +8172,8 @@ class _$ChapterDraftSavedSCS implements ChapterDraftSavedSCS {
     Result chapterCoverDeletedSCS(),
     Result chapterCoverUploadedSCS(String coverUrl),
     Result chapterDeletedSCS(),
-    Result chapterListLoadedSCS(List<Chapter> chapters),
+    Result chapterMinifiedListLoadedSCS(List<ChapterMinified> chaptersMinified),
+    Result chapterMinifiedLoadedSCS(ChapterMinified chapterMinified),
     Result chapterLoadedSCS(Chapter chapter),
     Result chapterPublishedSCS(),
     Result chapterStatsCountLoadedSCS(int count),
@@ -7885,7 +8209,8 @@ class _$ChapterDraftSavedSCS implements ChapterDraftSavedSCS {
     @required Result seriesCoverDeletedSCS(SeriesCoverDeletedSCS value),
     @required Result seriesCoverUploadedSCS(SeriesCoverUploadedSCS value),
     @required Result seriesDeletedSCS(SeriesDeletedSCS value),
-    @required Result seriesListLoadedSCS(SeriesListLoadedSCS value),
+    @required
+        Result seriesMinifiedListLoadedSCS(SeriesMinifiedListLoadedSCS value),
     @required Result seriesLoadedSCS(SeriesLoadedSCS value),
     @required Result seriesPublishedSCS(SeriesPublishedSCS value),
     @required Result seriesStatsCountLoadedSCS(SeriesStatsCountLoadedSCS value),
@@ -7900,7 +8225,9 @@ class _$ChapterDraftSavedSCS implements ChapterDraftSavedSCS {
     @required Result chapterCoverDeletedSCS(ChapterCoverDeletedSCS value),
     @required Result chapterCoverUploadedSCS(ChapterCoverUploadedSCS value),
     @required Result chapterDeletedSCS(ChapterDeletedSCS value),
-    @required Result chapterListLoadedSCS(ChapterListLoadedSCS value),
+    @required
+        Result chapterMinifiedListLoadedSCS(ChapterMinifiedListLoadedSCS value),
+    @required Result chapterMinifiedLoadedSCS(ChapterMinifiedLoadedSCS value),
     @required Result chapterLoadedSCS(ChapterLoadedSCS value),
     @required Result chapterPublishedSCS(ChapterPublishedSCS value),
     @required
@@ -7928,7 +8255,7 @@ class _$ChapterDraftSavedSCS implements ChapterDraftSavedSCS {
     assert(seriesCoverDeletedSCS != null);
     assert(seriesCoverUploadedSCS != null);
     assert(seriesDeletedSCS != null);
-    assert(seriesListLoadedSCS != null);
+    assert(seriesMinifiedListLoadedSCS != null);
     assert(seriesLoadedSCS != null);
     assert(seriesPublishedSCS != null);
     assert(seriesStatsCountLoadedSCS != null);
@@ -7941,7 +8268,8 @@ class _$ChapterDraftSavedSCS implements ChapterDraftSavedSCS {
     assert(chapterCoverDeletedSCS != null);
     assert(chapterCoverUploadedSCS != null);
     assert(chapterDeletedSCS != null);
-    assert(chapterListLoadedSCS != null);
+    assert(chapterMinifiedListLoadedSCS != null);
+    assert(chapterMinifiedLoadedSCS != null);
     assert(chapterLoadedSCS != null);
     assert(chapterPublishedSCS != null);
     assert(chapterStatsCountLoadedSCS != null);
@@ -7971,7 +8299,7 @@ class _$ChapterDraftSavedSCS implements ChapterDraftSavedSCS {
     Result seriesCoverDeletedSCS(SeriesCoverDeletedSCS value),
     Result seriesCoverUploadedSCS(SeriesCoverUploadedSCS value),
     Result seriesDeletedSCS(SeriesDeletedSCS value),
-    Result seriesListLoadedSCS(SeriesListLoadedSCS value),
+    Result seriesMinifiedListLoadedSCS(SeriesMinifiedListLoadedSCS value),
     Result seriesLoadedSCS(SeriesLoadedSCS value),
     Result seriesPublishedSCS(SeriesPublishedSCS value),
     Result seriesStatsCountLoadedSCS(SeriesStatsCountLoadedSCS value),
@@ -7984,7 +8312,8 @@ class _$ChapterDraftSavedSCS implements ChapterDraftSavedSCS {
     Result chapterCoverDeletedSCS(ChapterCoverDeletedSCS value),
     Result chapterCoverUploadedSCS(ChapterCoverUploadedSCS value),
     Result chapterDeletedSCS(ChapterDeletedSCS value),
-    Result chapterListLoadedSCS(ChapterListLoadedSCS value),
+    Result chapterMinifiedListLoadedSCS(ChapterMinifiedListLoadedSCS value),
+    Result chapterMinifiedLoadedSCS(ChapterMinifiedLoadedSCS value),
     Result chapterLoadedSCS(ChapterLoadedSCS value),
     Result chapterPublishedSCS(ChapterPublishedSCS value),
     Result chapterStatsCountLoadedSCS(ChapterStatsCountLoadedSCS value),
@@ -8058,7 +8387,8 @@ class _$ChapterDraftUpdatedSCS implements ChapterDraftUpdatedSCS {
     @required Result seriesCoverDeletedSCS(),
     @required Result seriesCoverUploadedSCS(String coverUrl),
     @required Result seriesDeletedSCS(),
-    @required Result seriesListLoadedSCS(List<Series> series),
+    @required
+        Result seriesMinifiedListLoadedSCS(List<SeriesMinified> seriesMinified),
     @required Result seriesLoadedSCS(Series series),
     @required Result seriesPublishedSCS(),
     @required Result seriesStatsCountLoadedSCS(int count),
@@ -8071,7 +8401,10 @@ class _$ChapterDraftUpdatedSCS implements ChapterDraftUpdatedSCS {
     @required Result chapterCoverDeletedSCS(),
     @required Result chapterCoverUploadedSCS(String coverUrl),
     @required Result chapterDeletedSCS(),
-    @required Result chapterListLoadedSCS(List<Chapter> chapters),
+    @required
+        Result chapterMinifiedListLoadedSCS(
+            List<ChapterMinified> chaptersMinified),
+    @required Result chapterMinifiedLoadedSCS(ChapterMinified chapterMinified),
     @required Result chapterLoadedSCS(Chapter chapter),
     @required Result chapterPublishedSCS(),
     @required Result chapterStatsCountLoadedSCS(int count),
@@ -8096,7 +8429,7 @@ class _$ChapterDraftUpdatedSCS implements ChapterDraftUpdatedSCS {
     assert(seriesCoverDeletedSCS != null);
     assert(seriesCoverUploadedSCS != null);
     assert(seriesDeletedSCS != null);
-    assert(seriesListLoadedSCS != null);
+    assert(seriesMinifiedListLoadedSCS != null);
     assert(seriesLoadedSCS != null);
     assert(seriesPublishedSCS != null);
     assert(seriesStatsCountLoadedSCS != null);
@@ -8109,7 +8442,8 @@ class _$ChapterDraftUpdatedSCS implements ChapterDraftUpdatedSCS {
     assert(chapterCoverDeletedSCS != null);
     assert(chapterCoverUploadedSCS != null);
     assert(chapterDeletedSCS != null);
-    assert(chapterListLoadedSCS != null);
+    assert(chapterMinifiedListLoadedSCS != null);
+    assert(chapterMinifiedLoadedSCS != null);
     assert(chapterLoadedSCS != null);
     assert(chapterPublishedSCS != null);
     assert(chapterStatsCountLoadedSCS != null);
@@ -8139,7 +8473,7 @@ class _$ChapterDraftUpdatedSCS implements ChapterDraftUpdatedSCS {
     Result seriesCoverDeletedSCS(),
     Result seriesCoverUploadedSCS(String coverUrl),
     Result seriesDeletedSCS(),
-    Result seriesListLoadedSCS(List<Series> series),
+    Result seriesMinifiedListLoadedSCS(List<SeriesMinified> seriesMinified),
     Result seriesLoadedSCS(Series series),
     Result seriesPublishedSCS(),
     Result seriesStatsCountLoadedSCS(int count),
@@ -8152,7 +8486,8 @@ class _$ChapterDraftUpdatedSCS implements ChapterDraftUpdatedSCS {
     Result chapterCoverDeletedSCS(),
     Result chapterCoverUploadedSCS(String coverUrl),
     Result chapterDeletedSCS(),
-    Result chapterListLoadedSCS(List<Chapter> chapters),
+    Result chapterMinifiedListLoadedSCS(List<ChapterMinified> chaptersMinified),
+    Result chapterMinifiedLoadedSCS(ChapterMinified chapterMinified),
     Result chapterLoadedSCS(Chapter chapter),
     Result chapterPublishedSCS(),
     Result chapterStatsCountLoadedSCS(int count),
@@ -8188,7 +8523,8 @@ class _$ChapterDraftUpdatedSCS implements ChapterDraftUpdatedSCS {
     @required Result seriesCoverDeletedSCS(SeriesCoverDeletedSCS value),
     @required Result seriesCoverUploadedSCS(SeriesCoverUploadedSCS value),
     @required Result seriesDeletedSCS(SeriesDeletedSCS value),
-    @required Result seriesListLoadedSCS(SeriesListLoadedSCS value),
+    @required
+        Result seriesMinifiedListLoadedSCS(SeriesMinifiedListLoadedSCS value),
     @required Result seriesLoadedSCS(SeriesLoadedSCS value),
     @required Result seriesPublishedSCS(SeriesPublishedSCS value),
     @required Result seriesStatsCountLoadedSCS(SeriesStatsCountLoadedSCS value),
@@ -8203,7 +8539,9 @@ class _$ChapterDraftUpdatedSCS implements ChapterDraftUpdatedSCS {
     @required Result chapterCoverDeletedSCS(ChapterCoverDeletedSCS value),
     @required Result chapterCoverUploadedSCS(ChapterCoverUploadedSCS value),
     @required Result chapterDeletedSCS(ChapterDeletedSCS value),
-    @required Result chapterListLoadedSCS(ChapterListLoadedSCS value),
+    @required
+        Result chapterMinifiedListLoadedSCS(ChapterMinifiedListLoadedSCS value),
+    @required Result chapterMinifiedLoadedSCS(ChapterMinifiedLoadedSCS value),
     @required Result chapterLoadedSCS(ChapterLoadedSCS value),
     @required Result chapterPublishedSCS(ChapterPublishedSCS value),
     @required
@@ -8231,7 +8569,7 @@ class _$ChapterDraftUpdatedSCS implements ChapterDraftUpdatedSCS {
     assert(seriesCoverDeletedSCS != null);
     assert(seriesCoverUploadedSCS != null);
     assert(seriesDeletedSCS != null);
-    assert(seriesListLoadedSCS != null);
+    assert(seriesMinifiedListLoadedSCS != null);
     assert(seriesLoadedSCS != null);
     assert(seriesPublishedSCS != null);
     assert(seriesStatsCountLoadedSCS != null);
@@ -8244,7 +8582,8 @@ class _$ChapterDraftUpdatedSCS implements ChapterDraftUpdatedSCS {
     assert(chapterCoverDeletedSCS != null);
     assert(chapterCoverUploadedSCS != null);
     assert(chapterDeletedSCS != null);
-    assert(chapterListLoadedSCS != null);
+    assert(chapterMinifiedListLoadedSCS != null);
+    assert(chapterMinifiedLoadedSCS != null);
     assert(chapterLoadedSCS != null);
     assert(chapterPublishedSCS != null);
     assert(chapterStatsCountLoadedSCS != null);
@@ -8274,7 +8613,7 @@ class _$ChapterDraftUpdatedSCS implements ChapterDraftUpdatedSCS {
     Result seriesCoverDeletedSCS(SeriesCoverDeletedSCS value),
     Result seriesCoverUploadedSCS(SeriesCoverUploadedSCS value),
     Result seriesDeletedSCS(SeriesDeletedSCS value),
-    Result seriesListLoadedSCS(SeriesListLoadedSCS value),
+    Result seriesMinifiedListLoadedSCS(SeriesMinifiedListLoadedSCS value),
     Result seriesLoadedSCS(SeriesLoadedSCS value),
     Result seriesPublishedSCS(SeriesPublishedSCS value),
     Result seriesStatsCountLoadedSCS(SeriesStatsCountLoadedSCS value),
@@ -8287,7 +8626,8 @@ class _$ChapterDraftUpdatedSCS implements ChapterDraftUpdatedSCS {
     Result chapterCoverDeletedSCS(ChapterCoverDeletedSCS value),
     Result chapterCoverUploadedSCS(ChapterCoverUploadedSCS value),
     Result chapterDeletedSCS(ChapterDeletedSCS value),
-    Result chapterListLoadedSCS(ChapterListLoadedSCS value),
+    Result chapterMinifiedListLoadedSCS(ChapterMinifiedListLoadedSCS value),
+    Result chapterMinifiedLoadedSCS(ChapterMinifiedLoadedSCS value),
     Result chapterLoadedSCS(ChapterLoadedSCS value),
     Result chapterPublishedSCS(ChapterPublishedSCS value),
     Result chapterStatsCountLoadedSCS(ChapterStatsCountLoadedSCS value),
@@ -8361,7 +8701,8 @@ class _$ChapterCoverDeletedSCS implements ChapterCoverDeletedSCS {
     @required Result seriesCoverDeletedSCS(),
     @required Result seriesCoverUploadedSCS(String coverUrl),
     @required Result seriesDeletedSCS(),
-    @required Result seriesListLoadedSCS(List<Series> series),
+    @required
+        Result seriesMinifiedListLoadedSCS(List<SeriesMinified> seriesMinified),
     @required Result seriesLoadedSCS(Series series),
     @required Result seriesPublishedSCS(),
     @required Result seriesStatsCountLoadedSCS(int count),
@@ -8374,7 +8715,10 @@ class _$ChapterCoverDeletedSCS implements ChapterCoverDeletedSCS {
     @required Result chapterCoverDeletedSCS(),
     @required Result chapterCoverUploadedSCS(String coverUrl),
     @required Result chapterDeletedSCS(),
-    @required Result chapterListLoadedSCS(List<Chapter> chapters),
+    @required
+        Result chapterMinifiedListLoadedSCS(
+            List<ChapterMinified> chaptersMinified),
+    @required Result chapterMinifiedLoadedSCS(ChapterMinified chapterMinified),
     @required Result chapterLoadedSCS(Chapter chapter),
     @required Result chapterPublishedSCS(),
     @required Result chapterStatsCountLoadedSCS(int count),
@@ -8399,7 +8743,7 @@ class _$ChapterCoverDeletedSCS implements ChapterCoverDeletedSCS {
     assert(seriesCoverDeletedSCS != null);
     assert(seriesCoverUploadedSCS != null);
     assert(seriesDeletedSCS != null);
-    assert(seriesListLoadedSCS != null);
+    assert(seriesMinifiedListLoadedSCS != null);
     assert(seriesLoadedSCS != null);
     assert(seriesPublishedSCS != null);
     assert(seriesStatsCountLoadedSCS != null);
@@ -8412,7 +8756,8 @@ class _$ChapterCoverDeletedSCS implements ChapterCoverDeletedSCS {
     assert(chapterCoverDeletedSCS != null);
     assert(chapterCoverUploadedSCS != null);
     assert(chapterDeletedSCS != null);
-    assert(chapterListLoadedSCS != null);
+    assert(chapterMinifiedListLoadedSCS != null);
+    assert(chapterMinifiedLoadedSCS != null);
     assert(chapterLoadedSCS != null);
     assert(chapterPublishedSCS != null);
     assert(chapterStatsCountLoadedSCS != null);
@@ -8442,7 +8787,7 @@ class _$ChapterCoverDeletedSCS implements ChapterCoverDeletedSCS {
     Result seriesCoverDeletedSCS(),
     Result seriesCoverUploadedSCS(String coverUrl),
     Result seriesDeletedSCS(),
-    Result seriesListLoadedSCS(List<Series> series),
+    Result seriesMinifiedListLoadedSCS(List<SeriesMinified> seriesMinified),
     Result seriesLoadedSCS(Series series),
     Result seriesPublishedSCS(),
     Result seriesStatsCountLoadedSCS(int count),
@@ -8455,7 +8800,8 @@ class _$ChapterCoverDeletedSCS implements ChapterCoverDeletedSCS {
     Result chapterCoverDeletedSCS(),
     Result chapterCoverUploadedSCS(String coverUrl),
     Result chapterDeletedSCS(),
-    Result chapterListLoadedSCS(List<Chapter> chapters),
+    Result chapterMinifiedListLoadedSCS(List<ChapterMinified> chaptersMinified),
+    Result chapterMinifiedLoadedSCS(ChapterMinified chapterMinified),
     Result chapterLoadedSCS(Chapter chapter),
     Result chapterPublishedSCS(),
     Result chapterStatsCountLoadedSCS(int count),
@@ -8491,7 +8837,8 @@ class _$ChapterCoverDeletedSCS implements ChapterCoverDeletedSCS {
     @required Result seriesCoverDeletedSCS(SeriesCoverDeletedSCS value),
     @required Result seriesCoverUploadedSCS(SeriesCoverUploadedSCS value),
     @required Result seriesDeletedSCS(SeriesDeletedSCS value),
-    @required Result seriesListLoadedSCS(SeriesListLoadedSCS value),
+    @required
+        Result seriesMinifiedListLoadedSCS(SeriesMinifiedListLoadedSCS value),
     @required Result seriesLoadedSCS(SeriesLoadedSCS value),
     @required Result seriesPublishedSCS(SeriesPublishedSCS value),
     @required Result seriesStatsCountLoadedSCS(SeriesStatsCountLoadedSCS value),
@@ -8506,7 +8853,9 @@ class _$ChapterCoverDeletedSCS implements ChapterCoverDeletedSCS {
     @required Result chapterCoverDeletedSCS(ChapterCoverDeletedSCS value),
     @required Result chapterCoverUploadedSCS(ChapterCoverUploadedSCS value),
     @required Result chapterDeletedSCS(ChapterDeletedSCS value),
-    @required Result chapterListLoadedSCS(ChapterListLoadedSCS value),
+    @required
+        Result chapterMinifiedListLoadedSCS(ChapterMinifiedListLoadedSCS value),
+    @required Result chapterMinifiedLoadedSCS(ChapterMinifiedLoadedSCS value),
     @required Result chapterLoadedSCS(ChapterLoadedSCS value),
     @required Result chapterPublishedSCS(ChapterPublishedSCS value),
     @required
@@ -8534,7 +8883,7 @@ class _$ChapterCoverDeletedSCS implements ChapterCoverDeletedSCS {
     assert(seriesCoverDeletedSCS != null);
     assert(seriesCoverUploadedSCS != null);
     assert(seriesDeletedSCS != null);
-    assert(seriesListLoadedSCS != null);
+    assert(seriesMinifiedListLoadedSCS != null);
     assert(seriesLoadedSCS != null);
     assert(seriesPublishedSCS != null);
     assert(seriesStatsCountLoadedSCS != null);
@@ -8547,7 +8896,8 @@ class _$ChapterCoverDeletedSCS implements ChapterCoverDeletedSCS {
     assert(chapterCoverDeletedSCS != null);
     assert(chapterCoverUploadedSCS != null);
     assert(chapterDeletedSCS != null);
-    assert(chapterListLoadedSCS != null);
+    assert(chapterMinifiedListLoadedSCS != null);
+    assert(chapterMinifiedLoadedSCS != null);
     assert(chapterLoadedSCS != null);
     assert(chapterPublishedSCS != null);
     assert(chapterStatsCountLoadedSCS != null);
@@ -8577,7 +8927,7 @@ class _$ChapterCoverDeletedSCS implements ChapterCoverDeletedSCS {
     Result seriesCoverDeletedSCS(SeriesCoverDeletedSCS value),
     Result seriesCoverUploadedSCS(SeriesCoverUploadedSCS value),
     Result seriesDeletedSCS(SeriesDeletedSCS value),
-    Result seriesListLoadedSCS(SeriesListLoadedSCS value),
+    Result seriesMinifiedListLoadedSCS(SeriesMinifiedListLoadedSCS value),
     Result seriesLoadedSCS(SeriesLoadedSCS value),
     Result seriesPublishedSCS(SeriesPublishedSCS value),
     Result seriesStatsCountLoadedSCS(SeriesStatsCountLoadedSCS value),
@@ -8590,7 +8940,8 @@ class _$ChapterCoverDeletedSCS implements ChapterCoverDeletedSCS {
     Result chapterCoverDeletedSCS(ChapterCoverDeletedSCS value),
     Result chapterCoverUploadedSCS(ChapterCoverUploadedSCS value),
     Result chapterDeletedSCS(ChapterDeletedSCS value),
-    Result chapterListLoadedSCS(ChapterListLoadedSCS value),
+    Result chapterMinifiedListLoadedSCS(ChapterMinifiedListLoadedSCS value),
+    Result chapterMinifiedLoadedSCS(ChapterMinifiedLoadedSCS value),
     Result chapterLoadedSCS(ChapterLoadedSCS value),
     Result chapterPublishedSCS(ChapterPublishedSCS value),
     Result chapterStatsCountLoadedSCS(ChapterStatsCountLoadedSCS value),
@@ -8687,7 +9038,8 @@ class _$ChapterCoverUploadedSCS implements ChapterCoverUploadedSCS {
     @required Result seriesCoverDeletedSCS(),
     @required Result seriesCoverUploadedSCS(String coverUrl),
     @required Result seriesDeletedSCS(),
-    @required Result seriesListLoadedSCS(List<Series> series),
+    @required
+        Result seriesMinifiedListLoadedSCS(List<SeriesMinified> seriesMinified),
     @required Result seriesLoadedSCS(Series series),
     @required Result seriesPublishedSCS(),
     @required Result seriesStatsCountLoadedSCS(int count),
@@ -8700,7 +9052,10 @@ class _$ChapterCoverUploadedSCS implements ChapterCoverUploadedSCS {
     @required Result chapterCoverDeletedSCS(),
     @required Result chapterCoverUploadedSCS(String coverUrl),
     @required Result chapterDeletedSCS(),
-    @required Result chapterListLoadedSCS(List<Chapter> chapters),
+    @required
+        Result chapterMinifiedListLoadedSCS(
+            List<ChapterMinified> chaptersMinified),
+    @required Result chapterMinifiedLoadedSCS(ChapterMinified chapterMinified),
     @required Result chapterLoadedSCS(Chapter chapter),
     @required Result chapterPublishedSCS(),
     @required Result chapterStatsCountLoadedSCS(int count),
@@ -8725,7 +9080,7 @@ class _$ChapterCoverUploadedSCS implements ChapterCoverUploadedSCS {
     assert(seriesCoverDeletedSCS != null);
     assert(seriesCoverUploadedSCS != null);
     assert(seriesDeletedSCS != null);
-    assert(seriesListLoadedSCS != null);
+    assert(seriesMinifiedListLoadedSCS != null);
     assert(seriesLoadedSCS != null);
     assert(seriesPublishedSCS != null);
     assert(seriesStatsCountLoadedSCS != null);
@@ -8738,7 +9093,8 @@ class _$ChapterCoverUploadedSCS implements ChapterCoverUploadedSCS {
     assert(chapterCoverDeletedSCS != null);
     assert(chapterCoverUploadedSCS != null);
     assert(chapterDeletedSCS != null);
-    assert(chapterListLoadedSCS != null);
+    assert(chapterMinifiedListLoadedSCS != null);
+    assert(chapterMinifiedLoadedSCS != null);
     assert(chapterLoadedSCS != null);
     assert(chapterPublishedSCS != null);
     assert(chapterStatsCountLoadedSCS != null);
@@ -8768,7 +9124,7 @@ class _$ChapterCoverUploadedSCS implements ChapterCoverUploadedSCS {
     Result seriesCoverDeletedSCS(),
     Result seriesCoverUploadedSCS(String coverUrl),
     Result seriesDeletedSCS(),
-    Result seriesListLoadedSCS(List<Series> series),
+    Result seriesMinifiedListLoadedSCS(List<SeriesMinified> seriesMinified),
     Result seriesLoadedSCS(Series series),
     Result seriesPublishedSCS(),
     Result seriesStatsCountLoadedSCS(int count),
@@ -8781,7 +9137,8 @@ class _$ChapterCoverUploadedSCS implements ChapterCoverUploadedSCS {
     Result chapterCoverDeletedSCS(),
     Result chapterCoverUploadedSCS(String coverUrl),
     Result chapterDeletedSCS(),
-    Result chapterListLoadedSCS(List<Chapter> chapters),
+    Result chapterMinifiedListLoadedSCS(List<ChapterMinified> chaptersMinified),
+    Result chapterMinifiedLoadedSCS(ChapterMinified chapterMinified),
     Result chapterLoadedSCS(Chapter chapter),
     Result chapterPublishedSCS(),
     Result chapterStatsCountLoadedSCS(int count),
@@ -8817,7 +9174,8 @@ class _$ChapterCoverUploadedSCS implements ChapterCoverUploadedSCS {
     @required Result seriesCoverDeletedSCS(SeriesCoverDeletedSCS value),
     @required Result seriesCoverUploadedSCS(SeriesCoverUploadedSCS value),
     @required Result seriesDeletedSCS(SeriesDeletedSCS value),
-    @required Result seriesListLoadedSCS(SeriesListLoadedSCS value),
+    @required
+        Result seriesMinifiedListLoadedSCS(SeriesMinifiedListLoadedSCS value),
     @required Result seriesLoadedSCS(SeriesLoadedSCS value),
     @required Result seriesPublishedSCS(SeriesPublishedSCS value),
     @required Result seriesStatsCountLoadedSCS(SeriesStatsCountLoadedSCS value),
@@ -8832,7 +9190,9 @@ class _$ChapterCoverUploadedSCS implements ChapterCoverUploadedSCS {
     @required Result chapterCoverDeletedSCS(ChapterCoverDeletedSCS value),
     @required Result chapterCoverUploadedSCS(ChapterCoverUploadedSCS value),
     @required Result chapterDeletedSCS(ChapterDeletedSCS value),
-    @required Result chapterListLoadedSCS(ChapterListLoadedSCS value),
+    @required
+        Result chapterMinifiedListLoadedSCS(ChapterMinifiedListLoadedSCS value),
+    @required Result chapterMinifiedLoadedSCS(ChapterMinifiedLoadedSCS value),
     @required Result chapterLoadedSCS(ChapterLoadedSCS value),
     @required Result chapterPublishedSCS(ChapterPublishedSCS value),
     @required
@@ -8860,7 +9220,7 @@ class _$ChapterCoverUploadedSCS implements ChapterCoverUploadedSCS {
     assert(seriesCoverDeletedSCS != null);
     assert(seriesCoverUploadedSCS != null);
     assert(seriesDeletedSCS != null);
-    assert(seriesListLoadedSCS != null);
+    assert(seriesMinifiedListLoadedSCS != null);
     assert(seriesLoadedSCS != null);
     assert(seriesPublishedSCS != null);
     assert(seriesStatsCountLoadedSCS != null);
@@ -8873,7 +9233,8 @@ class _$ChapterCoverUploadedSCS implements ChapterCoverUploadedSCS {
     assert(chapterCoverDeletedSCS != null);
     assert(chapterCoverUploadedSCS != null);
     assert(chapterDeletedSCS != null);
-    assert(chapterListLoadedSCS != null);
+    assert(chapterMinifiedListLoadedSCS != null);
+    assert(chapterMinifiedLoadedSCS != null);
     assert(chapterLoadedSCS != null);
     assert(chapterPublishedSCS != null);
     assert(chapterStatsCountLoadedSCS != null);
@@ -8903,7 +9264,7 @@ class _$ChapterCoverUploadedSCS implements ChapterCoverUploadedSCS {
     Result seriesCoverDeletedSCS(SeriesCoverDeletedSCS value),
     Result seriesCoverUploadedSCS(SeriesCoverUploadedSCS value),
     Result seriesDeletedSCS(SeriesDeletedSCS value),
-    Result seriesListLoadedSCS(SeriesListLoadedSCS value),
+    Result seriesMinifiedListLoadedSCS(SeriesMinifiedListLoadedSCS value),
     Result seriesLoadedSCS(SeriesLoadedSCS value),
     Result seriesPublishedSCS(SeriesPublishedSCS value),
     Result seriesStatsCountLoadedSCS(SeriesStatsCountLoadedSCS value),
@@ -8916,7 +9277,8 @@ class _$ChapterCoverUploadedSCS implements ChapterCoverUploadedSCS {
     Result chapterCoverDeletedSCS(ChapterCoverDeletedSCS value),
     Result chapterCoverUploadedSCS(ChapterCoverUploadedSCS value),
     Result chapterDeletedSCS(ChapterDeletedSCS value),
-    Result chapterListLoadedSCS(ChapterListLoadedSCS value),
+    Result chapterMinifiedListLoadedSCS(ChapterMinifiedListLoadedSCS value),
+    Result chapterMinifiedLoadedSCS(ChapterMinifiedLoadedSCS value),
     Result chapterLoadedSCS(ChapterLoadedSCS value),
     Result chapterPublishedSCS(ChapterPublishedSCS value),
     Result chapterStatsCountLoadedSCS(ChapterStatsCountLoadedSCS value),
@@ -8994,7 +9356,8 @@ class _$ChapterDeletedSCS implements ChapterDeletedSCS {
     @required Result seriesCoverDeletedSCS(),
     @required Result seriesCoverUploadedSCS(String coverUrl),
     @required Result seriesDeletedSCS(),
-    @required Result seriesListLoadedSCS(List<Series> series),
+    @required
+        Result seriesMinifiedListLoadedSCS(List<SeriesMinified> seriesMinified),
     @required Result seriesLoadedSCS(Series series),
     @required Result seriesPublishedSCS(),
     @required Result seriesStatsCountLoadedSCS(int count),
@@ -9007,7 +9370,10 @@ class _$ChapterDeletedSCS implements ChapterDeletedSCS {
     @required Result chapterCoverDeletedSCS(),
     @required Result chapterCoverUploadedSCS(String coverUrl),
     @required Result chapterDeletedSCS(),
-    @required Result chapterListLoadedSCS(List<Chapter> chapters),
+    @required
+        Result chapterMinifiedListLoadedSCS(
+            List<ChapterMinified> chaptersMinified),
+    @required Result chapterMinifiedLoadedSCS(ChapterMinified chapterMinified),
     @required Result chapterLoadedSCS(Chapter chapter),
     @required Result chapterPublishedSCS(),
     @required Result chapterStatsCountLoadedSCS(int count),
@@ -9032,7 +9398,7 @@ class _$ChapterDeletedSCS implements ChapterDeletedSCS {
     assert(seriesCoverDeletedSCS != null);
     assert(seriesCoverUploadedSCS != null);
     assert(seriesDeletedSCS != null);
-    assert(seriesListLoadedSCS != null);
+    assert(seriesMinifiedListLoadedSCS != null);
     assert(seriesLoadedSCS != null);
     assert(seriesPublishedSCS != null);
     assert(seriesStatsCountLoadedSCS != null);
@@ -9045,7 +9411,8 @@ class _$ChapterDeletedSCS implements ChapterDeletedSCS {
     assert(chapterCoverDeletedSCS != null);
     assert(chapterCoverUploadedSCS != null);
     assert(chapterDeletedSCS != null);
-    assert(chapterListLoadedSCS != null);
+    assert(chapterMinifiedListLoadedSCS != null);
+    assert(chapterMinifiedLoadedSCS != null);
     assert(chapterLoadedSCS != null);
     assert(chapterPublishedSCS != null);
     assert(chapterStatsCountLoadedSCS != null);
@@ -9075,7 +9442,7 @@ class _$ChapterDeletedSCS implements ChapterDeletedSCS {
     Result seriesCoverDeletedSCS(),
     Result seriesCoverUploadedSCS(String coverUrl),
     Result seriesDeletedSCS(),
-    Result seriesListLoadedSCS(List<Series> series),
+    Result seriesMinifiedListLoadedSCS(List<SeriesMinified> seriesMinified),
     Result seriesLoadedSCS(Series series),
     Result seriesPublishedSCS(),
     Result seriesStatsCountLoadedSCS(int count),
@@ -9088,7 +9455,8 @@ class _$ChapterDeletedSCS implements ChapterDeletedSCS {
     Result chapterCoverDeletedSCS(),
     Result chapterCoverUploadedSCS(String coverUrl),
     Result chapterDeletedSCS(),
-    Result chapterListLoadedSCS(List<Chapter> chapters),
+    Result chapterMinifiedListLoadedSCS(List<ChapterMinified> chaptersMinified),
+    Result chapterMinifiedLoadedSCS(ChapterMinified chapterMinified),
     Result chapterLoadedSCS(Chapter chapter),
     Result chapterPublishedSCS(),
     Result chapterStatsCountLoadedSCS(int count),
@@ -9124,7 +9492,8 @@ class _$ChapterDeletedSCS implements ChapterDeletedSCS {
     @required Result seriesCoverDeletedSCS(SeriesCoverDeletedSCS value),
     @required Result seriesCoverUploadedSCS(SeriesCoverUploadedSCS value),
     @required Result seriesDeletedSCS(SeriesDeletedSCS value),
-    @required Result seriesListLoadedSCS(SeriesListLoadedSCS value),
+    @required
+        Result seriesMinifiedListLoadedSCS(SeriesMinifiedListLoadedSCS value),
     @required Result seriesLoadedSCS(SeriesLoadedSCS value),
     @required Result seriesPublishedSCS(SeriesPublishedSCS value),
     @required Result seriesStatsCountLoadedSCS(SeriesStatsCountLoadedSCS value),
@@ -9139,7 +9508,9 @@ class _$ChapterDeletedSCS implements ChapterDeletedSCS {
     @required Result chapterCoverDeletedSCS(ChapterCoverDeletedSCS value),
     @required Result chapterCoverUploadedSCS(ChapterCoverUploadedSCS value),
     @required Result chapterDeletedSCS(ChapterDeletedSCS value),
-    @required Result chapterListLoadedSCS(ChapterListLoadedSCS value),
+    @required
+        Result chapterMinifiedListLoadedSCS(ChapterMinifiedListLoadedSCS value),
+    @required Result chapterMinifiedLoadedSCS(ChapterMinifiedLoadedSCS value),
     @required Result chapterLoadedSCS(ChapterLoadedSCS value),
     @required Result chapterPublishedSCS(ChapterPublishedSCS value),
     @required
@@ -9167,7 +9538,7 @@ class _$ChapterDeletedSCS implements ChapterDeletedSCS {
     assert(seriesCoverDeletedSCS != null);
     assert(seriesCoverUploadedSCS != null);
     assert(seriesDeletedSCS != null);
-    assert(seriesListLoadedSCS != null);
+    assert(seriesMinifiedListLoadedSCS != null);
     assert(seriesLoadedSCS != null);
     assert(seriesPublishedSCS != null);
     assert(seriesStatsCountLoadedSCS != null);
@@ -9180,7 +9551,8 @@ class _$ChapterDeletedSCS implements ChapterDeletedSCS {
     assert(chapterCoverDeletedSCS != null);
     assert(chapterCoverUploadedSCS != null);
     assert(chapterDeletedSCS != null);
-    assert(chapterListLoadedSCS != null);
+    assert(chapterMinifiedListLoadedSCS != null);
+    assert(chapterMinifiedLoadedSCS != null);
     assert(chapterLoadedSCS != null);
     assert(chapterPublishedSCS != null);
     assert(chapterStatsCountLoadedSCS != null);
@@ -9210,7 +9582,7 @@ class _$ChapterDeletedSCS implements ChapterDeletedSCS {
     Result seriesCoverDeletedSCS(SeriesCoverDeletedSCS value),
     Result seriesCoverUploadedSCS(SeriesCoverUploadedSCS value),
     Result seriesDeletedSCS(SeriesDeletedSCS value),
-    Result seriesListLoadedSCS(SeriesListLoadedSCS value),
+    Result seriesMinifiedListLoadedSCS(SeriesMinifiedListLoadedSCS value),
     Result seriesLoadedSCS(SeriesLoadedSCS value),
     Result seriesPublishedSCS(SeriesPublishedSCS value),
     Result seriesStatsCountLoadedSCS(SeriesStatsCountLoadedSCS value),
@@ -9223,7 +9595,8 @@ class _$ChapterDeletedSCS implements ChapterDeletedSCS {
     Result chapterCoverDeletedSCS(ChapterCoverDeletedSCS value),
     Result chapterCoverUploadedSCS(ChapterCoverUploadedSCS value),
     Result chapterDeletedSCS(ChapterDeletedSCS value),
-    Result chapterListLoadedSCS(ChapterListLoadedSCS value),
+    Result chapterMinifiedListLoadedSCS(ChapterMinifiedListLoadedSCS value),
+    Result chapterMinifiedLoadedSCS(ChapterMinifiedLoadedSCS value),
     Result chapterLoadedSCS(ChapterLoadedSCS value),
     Result chapterPublishedSCS(ChapterPublishedSCS value),
     Result chapterStatsCountLoadedSCS(ChapterStatsCountLoadedSCS value),
@@ -9246,61 +9619,68 @@ abstract class ChapterDeletedSCS implements DatabaseSuccess {
   const factory ChapterDeletedSCS() = _$ChapterDeletedSCS;
 }
 
-abstract class $ChapterListLoadedSCSCopyWith<$Res> {
-  factory $ChapterListLoadedSCSCopyWith(ChapterListLoadedSCS value,
-          $Res Function(ChapterListLoadedSCS) then) =
-      _$ChapterListLoadedSCSCopyWithImpl<$Res>;
-  $Res call({List<Chapter> chapters});
+abstract class $ChapterMinifiedListLoadedSCSCopyWith<$Res> {
+  factory $ChapterMinifiedListLoadedSCSCopyWith(
+          ChapterMinifiedListLoadedSCS value,
+          $Res Function(ChapterMinifiedListLoadedSCS) then) =
+      _$ChapterMinifiedListLoadedSCSCopyWithImpl<$Res>;
+  $Res call({List<ChapterMinified> chaptersMinified});
 }
 
-class _$ChapterListLoadedSCSCopyWithImpl<$Res>
+class _$ChapterMinifiedListLoadedSCSCopyWithImpl<$Res>
     extends _$DatabaseSuccessCopyWithImpl<$Res>
-    implements $ChapterListLoadedSCSCopyWith<$Res> {
-  _$ChapterListLoadedSCSCopyWithImpl(
-      ChapterListLoadedSCS _value, $Res Function(ChapterListLoadedSCS) _then)
-      : super(_value, (v) => _then(v as ChapterListLoadedSCS));
+    implements $ChapterMinifiedListLoadedSCSCopyWith<$Res> {
+  _$ChapterMinifiedListLoadedSCSCopyWithImpl(
+      ChapterMinifiedListLoadedSCS _value,
+      $Res Function(ChapterMinifiedListLoadedSCS) _then)
+      : super(_value, (v) => _then(v as ChapterMinifiedListLoadedSCS));
 
   @override
-  ChapterListLoadedSCS get _value => super._value as ChapterListLoadedSCS;
+  ChapterMinifiedListLoadedSCS get _value =>
+      super._value as ChapterMinifiedListLoadedSCS;
 
   @override
   $Res call({
-    Object chapters = freezed,
+    Object chaptersMinified = freezed,
   }) {
-    return _then(ChapterListLoadedSCS(
-      chapters == freezed ? _value.chapters : chapters as List<Chapter>,
+    return _then(ChapterMinifiedListLoadedSCS(
+      chaptersMinified == freezed
+          ? _value.chaptersMinified
+          : chaptersMinified as List<ChapterMinified>,
     ));
   }
 }
 
-class _$ChapterListLoadedSCS implements ChapterListLoadedSCS {
-  const _$ChapterListLoadedSCS(this.chapters) : assert(chapters != null);
+class _$ChapterMinifiedListLoadedSCS implements ChapterMinifiedListLoadedSCS {
+  const _$ChapterMinifiedListLoadedSCS(this.chaptersMinified)
+      : assert(chaptersMinified != null);
 
   @override
-  final List<Chapter> chapters;
+  final List<ChapterMinified> chaptersMinified;
 
   @override
   String toString() {
-    return 'DatabaseSuccess.chapterListLoadedSCS(chapters: $chapters)';
+    return 'DatabaseSuccess.chapterMinifiedListLoadedSCS(chaptersMinified: $chaptersMinified)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is ChapterListLoadedSCS &&
-            (identical(other.chapters, chapters) ||
+        (other is ChapterMinifiedListLoadedSCS &&
+            (identical(other.chaptersMinified, chaptersMinified) ||
                 const DeepCollectionEquality()
-                    .equals(other.chapters, chapters)));
+                    .equals(other.chaptersMinified, chaptersMinified)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(chapters);
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(chaptersMinified);
 
   @override
-  $ChapterListLoadedSCSCopyWith<ChapterListLoadedSCS> get copyWith =>
-      _$ChapterListLoadedSCSCopyWithImpl<ChapterListLoadedSCS>(
-          this, _$identity);
+  $ChapterMinifiedListLoadedSCSCopyWith<ChapterMinifiedListLoadedSCS>
+      get copyWith => _$ChapterMinifiedListLoadedSCSCopyWithImpl<
+          ChapterMinifiedListLoadedSCS>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -9320,7 +9700,8 @@ class _$ChapterListLoadedSCS implements ChapterListLoadedSCS {
     @required Result seriesCoverDeletedSCS(),
     @required Result seriesCoverUploadedSCS(String coverUrl),
     @required Result seriesDeletedSCS(),
-    @required Result seriesListLoadedSCS(List<Series> series),
+    @required
+        Result seriesMinifiedListLoadedSCS(List<SeriesMinified> seriesMinified),
     @required Result seriesLoadedSCS(Series series),
     @required Result seriesPublishedSCS(),
     @required Result seriesStatsCountLoadedSCS(int count),
@@ -9333,7 +9714,10 @@ class _$ChapterListLoadedSCS implements ChapterListLoadedSCS {
     @required Result chapterCoverDeletedSCS(),
     @required Result chapterCoverUploadedSCS(String coverUrl),
     @required Result chapterDeletedSCS(),
-    @required Result chapterListLoadedSCS(List<Chapter> chapters),
+    @required
+        Result chapterMinifiedListLoadedSCS(
+            List<ChapterMinified> chaptersMinified),
+    @required Result chapterMinifiedLoadedSCS(ChapterMinified chapterMinified),
     @required Result chapterLoadedSCS(Chapter chapter),
     @required Result chapterPublishedSCS(),
     @required Result chapterStatsCountLoadedSCS(int count),
@@ -9358,7 +9742,7 @@ class _$ChapterListLoadedSCS implements ChapterListLoadedSCS {
     assert(seriesCoverDeletedSCS != null);
     assert(seriesCoverUploadedSCS != null);
     assert(seriesDeletedSCS != null);
-    assert(seriesListLoadedSCS != null);
+    assert(seriesMinifiedListLoadedSCS != null);
     assert(seriesLoadedSCS != null);
     assert(seriesPublishedSCS != null);
     assert(seriesStatsCountLoadedSCS != null);
@@ -9371,7 +9755,8 @@ class _$ChapterListLoadedSCS implements ChapterListLoadedSCS {
     assert(chapterCoverDeletedSCS != null);
     assert(chapterCoverUploadedSCS != null);
     assert(chapterDeletedSCS != null);
-    assert(chapterListLoadedSCS != null);
+    assert(chapterMinifiedListLoadedSCS != null);
+    assert(chapterMinifiedLoadedSCS != null);
     assert(chapterLoadedSCS != null);
     assert(chapterPublishedSCS != null);
     assert(chapterStatsCountLoadedSCS != null);
@@ -9380,7 +9765,7 @@ class _$ChapterListLoadedSCS implements ChapterListLoadedSCS {
     assert(placeholderFetchedSCS != null);
     assert(placeholdersSavedSCS != null);
     assert(placeholdersLoadedSCS != null);
-    return chapterListLoadedSCS(chapters);
+    return chapterMinifiedListLoadedSCS(chaptersMinified);
   }
 
   @override
@@ -9401,7 +9786,7 @@ class _$ChapterListLoadedSCS implements ChapterListLoadedSCS {
     Result seriesCoverDeletedSCS(),
     Result seriesCoverUploadedSCS(String coverUrl),
     Result seriesDeletedSCS(),
-    Result seriesListLoadedSCS(List<Series> series),
+    Result seriesMinifiedListLoadedSCS(List<SeriesMinified> seriesMinified),
     Result seriesLoadedSCS(Series series),
     Result seriesPublishedSCS(),
     Result seriesStatsCountLoadedSCS(int count),
@@ -9414,7 +9799,8 @@ class _$ChapterListLoadedSCS implements ChapterListLoadedSCS {
     Result chapterCoverDeletedSCS(),
     Result chapterCoverUploadedSCS(String coverUrl),
     Result chapterDeletedSCS(),
-    Result chapterListLoadedSCS(List<Chapter> chapters),
+    Result chapterMinifiedListLoadedSCS(List<ChapterMinified> chaptersMinified),
+    Result chapterMinifiedLoadedSCS(ChapterMinified chapterMinified),
     Result chapterLoadedSCS(Chapter chapter),
     Result chapterPublishedSCS(),
     Result chapterStatsCountLoadedSCS(int count),
@@ -9426,8 +9812,8 @@ class _$ChapterListLoadedSCS implements ChapterListLoadedSCS {
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (chapterListLoadedSCS != null) {
-      return chapterListLoadedSCS(chapters);
+    if (chapterMinifiedListLoadedSCS != null) {
+      return chapterMinifiedListLoadedSCS(chaptersMinified);
     }
     return orElse();
   }
@@ -9450,7 +9836,8 @@ class _$ChapterListLoadedSCS implements ChapterListLoadedSCS {
     @required Result seriesCoverDeletedSCS(SeriesCoverDeletedSCS value),
     @required Result seriesCoverUploadedSCS(SeriesCoverUploadedSCS value),
     @required Result seriesDeletedSCS(SeriesDeletedSCS value),
-    @required Result seriesListLoadedSCS(SeriesListLoadedSCS value),
+    @required
+        Result seriesMinifiedListLoadedSCS(SeriesMinifiedListLoadedSCS value),
     @required Result seriesLoadedSCS(SeriesLoadedSCS value),
     @required Result seriesPublishedSCS(SeriesPublishedSCS value),
     @required Result seriesStatsCountLoadedSCS(SeriesStatsCountLoadedSCS value),
@@ -9465,7 +9852,9 @@ class _$ChapterListLoadedSCS implements ChapterListLoadedSCS {
     @required Result chapterCoverDeletedSCS(ChapterCoverDeletedSCS value),
     @required Result chapterCoverUploadedSCS(ChapterCoverUploadedSCS value),
     @required Result chapterDeletedSCS(ChapterDeletedSCS value),
-    @required Result chapterListLoadedSCS(ChapterListLoadedSCS value),
+    @required
+        Result chapterMinifiedListLoadedSCS(ChapterMinifiedListLoadedSCS value),
+    @required Result chapterMinifiedLoadedSCS(ChapterMinifiedLoadedSCS value),
     @required Result chapterLoadedSCS(ChapterLoadedSCS value),
     @required Result chapterPublishedSCS(ChapterPublishedSCS value),
     @required
@@ -9493,7 +9882,7 @@ class _$ChapterListLoadedSCS implements ChapterListLoadedSCS {
     assert(seriesCoverDeletedSCS != null);
     assert(seriesCoverUploadedSCS != null);
     assert(seriesDeletedSCS != null);
-    assert(seriesListLoadedSCS != null);
+    assert(seriesMinifiedListLoadedSCS != null);
     assert(seriesLoadedSCS != null);
     assert(seriesPublishedSCS != null);
     assert(seriesStatsCountLoadedSCS != null);
@@ -9506,7 +9895,8 @@ class _$ChapterListLoadedSCS implements ChapterListLoadedSCS {
     assert(chapterCoverDeletedSCS != null);
     assert(chapterCoverUploadedSCS != null);
     assert(chapterDeletedSCS != null);
-    assert(chapterListLoadedSCS != null);
+    assert(chapterMinifiedListLoadedSCS != null);
+    assert(chapterMinifiedLoadedSCS != null);
     assert(chapterLoadedSCS != null);
     assert(chapterPublishedSCS != null);
     assert(chapterStatsCountLoadedSCS != null);
@@ -9515,7 +9905,7 @@ class _$ChapterListLoadedSCS implements ChapterListLoadedSCS {
     assert(placeholderFetchedSCS != null);
     assert(placeholdersSavedSCS != null);
     assert(placeholdersLoadedSCS != null);
-    return chapterListLoadedSCS(this);
+    return chapterMinifiedListLoadedSCS(this);
   }
 
   @override
@@ -9536,7 +9926,7 @@ class _$ChapterListLoadedSCS implements ChapterListLoadedSCS {
     Result seriesCoverDeletedSCS(SeriesCoverDeletedSCS value),
     Result seriesCoverUploadedSCS(SeriesCoverUploadedSCS value),
     Result seriesDeletedSCS(SeriesDeletedSCS value),
-    Result seriesListLoadedSCS(SeriesListLoadedSCS value),
+    Result seriesMinifiedListLoadedSCS(SeriesMinifiedListLoadedSCS value),
     Result seriesLoadedSCS(SeriesLoadedSCS value),
     Result seriesPublishedSCS(SeriesPublishedSCS value),
     Result seriesStatsCountLoadedSCS(SeriesStatsCountLoadedSCS value),
@@ -9549,7 +9939,8 @@ class _$ChapterListLoadedSCS implements ChapterListLoadedSCS {
     Result chapterCoverDeletedSCS(ChapterCoverDeletedSCS value),
     Result chapterCoverUploadedSCS(ChapterCoverUploadedSCS value),
     Result chapterDeletedSCS(ChapterDeletedSCS value),
-    Result chapterListLoadedSCS(ChapterListLoadedSCS value),
+    Result chapterMinifiedListLoadedSCS(ChapterMinifiedListLoadedSCS value),
+    Result chapterMinifiedLoadedSCS(ChapterMinifiedLoadedSCS value),
     Result chapterLoadedSCS(ChapterLoadedSCS value),
     Result chapterPublishedSCS(ChapterPublishedSCS value),
     Result chapterStatsCountLoadedSCS(ChapterStatsCountLoadedSCS value),
@@ -9561,19 +9952,366 @@ class _$ChapterListLoadedSCS implements ChapterListLoadedSCS {
     @required Result orElse(),
   }) {
     assert(orElse != null);
-    if (chapterListLoadedSCS != null) {
-      return chapterListLoadedSCS(this);
+    if (chapterMinifiedListLoadedSCS != null) {
+      return chapterMinifiedListLoadedSCS(this);
     }
     return orElse();
   }
 }
 
-abstract class ChapterListLoadedSCS implements DatabaseSuccess {
-  const factory ChapterListLoadedSCS(List<Chapter> chapters) =
-      _$ChapterListLoadedSCS;
+abstract class ChapterMinifiedListLoadedSCS implements DatabaseSuccess {
+  const factory ChapterMinifiedListLoadedSCS(
+      List<ChapterMinified> chaptersMinified) = _$ChapterMinifiedListLoadedSCS;
 
-  List<Chapter> get chapters;
-  $ChapterListLoadedSCSCopyWith<ChapterListLoadedSCS> get copyWith;
+  List<ChapterMinified> get chaptersMinified;
+  $ChapterMinifiedListLoadedSCSCopyWith<ChapterMinifiedListLoadedSCS>
+      get copyWith;
+}
+
+abstract class $ChapterMinifiedLoadedSCSCopyWith<$Res> {
+  factory $ChapterMinifiedLoadedSCSCopyWith(ChapterMinifiedLoadedSCS value,
+          $Res Function(ChapterMinifiedLoadedSCS) then) =
+      _$ChapterMinifiedLoadedSCSCopyWithImpl<$Res>;
+  $Res call({ChapterMinified chapterMinified});
+}
+
+class _$ChapterMinifiedLoadedSCSCopyWithImpl<$Res>
+    extends _$DatabaseSuccessCopyWithImpl<$Res>
+    implements $ChapterMinifiedLoadedSCSCopyWith<$Res> {
+  _$ChapterMinifiedLoadedSCSCopyWithImpl(ChapterMinifiedLoadedSCS _value,
+      $Res Function(ChapterMinifiedLoadedSCS) _then)
+      : super(_value, (v) => _then(v as ChapterMinifiedLoadedSCS));
+
+  @override
+  ChapterMinifiedLoadedSCS get _value =>
+      super._value as ChapterMinifiedLoadedSCS;
+
+  @override
+  $Res call({
+    Object chapterMinified = freezed,
+  }) {
+    return _then(ChapterMinifiedLoadedSCS(
+      chapterMinified == freezed
+          ? _value.chapterMinified
+          : chapterMinified as ChapterMinified,
+    ));
+  }
+}
+
+class _$ChapterMinifiedLoadedSCS implements ChapterMinifiedLoadedSCS {
+  const _$ChapterMinifiedLoadedSCS(this.chapterMinified)
+      : assert(chapterMinified != null);
+
+  @override
+  final ChapterMinified chapterMinified;
+
+  @override
+  String toString() {
+    return 'DatabaseSuccess.chapterMinifiedLoadedSCS(chapterMinified: $chapterMinified)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is ChapterMinifiedLoadedSCS &&
+            (identical(other.chapterMinified, chapterMinified) ||
+                const DeepCollectionEquality()
+                    .equals(other.chapterMinified, chapterMinified)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(chapterMinified);
+
+  @override
+  $ChapterMinifiedLoadedSCSCopyWith<ChapterMinifiedLoadedSCS> get copyWith =>
+      _$ChapterMinifiedLoadedSCSCopyWithImpl<ChapterMinifiedLoadedSCS>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  Result when<Result extends Object>({
+    @required Result sessionDeletedSCS(),
+    @required Result sessionFetchedSCS(Session session),
+    @required Result sessionSavedSCS(),
+    @required Result sessionUpdatedSCS(),
+    @required Result userAsMapLoadedSCS(Map<String, User> usersMap),
+    @required Result userDetailsSavedSCS(User user),
+    @required Result userLoadedSCS(User user),
+    @required Result seriesDraftDeletedSCS(),
+    @required Result seriesDraftFetchedSCS(SeriesDraft seriesDraft),
+    @required Result seriesDraftSavedSCS(SeriesDraft seriesDraft),
+    @required Result seriesDraftUpdatedSCS(),
+    @required Result seriesAsMapLoadedSCS(Map<String, Series> seriesMap),
+    @required Result seriesCoverDeletedSCS(),
+    @required Result seriesCoverUploadedSCS(String coverUrl),
+    @required Result seriesDeletedSCS(),
+    @required
+        Result seriesMinifiedListLoadedSCS(List<SeriesMinified> seriesMinified),
+    @required Result seriesLoadedSCS(Series series),
+    @required Result seriesPublishedSCS(),
+    @required Result seriesStatsCountLoadedSCS(int count),
+    @required Result seriesStatsCountUpdatedSCS(),
+    @required Result seriesStatsStatusLoadedSCS(bool status),
+    @required Result chapterDraftDeletedSCS(),
+    @required Result chapterDraftFetchedSCS(ChapterDraft chapterDraft),
+    @required Result chapterDraftSavedSCS(),
+    @required Result chapterDraftUpdatedSCS(),
+    @required Result chapterCoverDeletedSCS(),
+    @required Result chapterCoverUploadedSCS(String coverUrl),
+    @required Result chapterDeletedSCS(),
+    @required
+        Result chapterMinifiedListLoadedSCS(
+            List<ChapterMinified> chaptersMinified),
+    @required Result chapterMinifiedLoadedSCS(ChapterMinified chapterMinified),
+    @required Result chapterLoadedSCS(Chapter chapter),
+    @required Result chapterPublishedSCS(),
+    @required Result chapterStatsCountLoadedSCS(int count),
+    @required Result chapterStatsCountUpdatedSCS(),
+    @required Result chapterStatsStatusLoadedSCS(bool status),
+    @required Result placeholderFetchedSCS(String placeholderUrl),
+    @required Result placeholdersSavedSCS(),
+    @required Result placeholdersLoadedSCS(Map<String, String> placeholders),
+  }) {
+    assert(sessionDeletedSCS != null);
+    assert(sessionFetchedSCS != null);
+    assert(sessionSavedSCS != null);
+    assert(sessionUpdatedSCS != null);
+    assert(userAsMapLoadedSCS != null);
+    assert(userDetailsSavedSCS != null);
+    assert(userLoadedSCS != null);
+    assert(seriesDraftDeletedSCS != null);
+    assert(seriesDraftFetchedSCS != null);
+    assert(seriesDraftSavedSCS != null);
+    assert(seriesDraftUpdatedSCS != null);
+    assert(seriesAsMapLoadedSCS != null);
+    assert(seriesCoverDeletedSCS != null);
+    assert(seriesCoverUploadedSCS != null);
+    assert(seriesDeletedSCS != null);
+    assert(seriesMinifiedListLoadedSCS != null);
+    assert(seriesLoadedSCS != null);
+    assert(seriesPublishedSCS != null);
+    assert(seriesStatsCountLoadedSCS != null);
+    assert(seriesStatsCountUpdatedSCS != null);
+    assert(seriesStatsStatusLoadedSCS != null);
+    assert(chapterDraftDeletedSCS != null);
+    assert(chapterDraftFetchedSCS != null);
+    assert(chapterDraftSavedSCS != null);
+    assert(chapterDraftUpdatedSCS != null);
+    assert(chapterCoverDeletedSCS != null);
+    assert(chapterCoverUploadedSCS != null);
+    assert(chapterDeletedSCS != null);
+    assert(chapterMinifiedListLoadedSCS != null);
+    assert(chapterMinifiedLoadedSCS != null);
+    assert(chapterLoadedSCS != null);
+    assert(chapterPublishedSCS != null);
+    assert(chapterStatsCountLoadedSCS != null);
+    assert(chapterStatsCountUpdatedSCS != null);
+    assert(chapterStatsStatusLoadedSCS != null);
+    assert(placeholderFetchedSCS != null);
+    assert(placeholdersSavedSCS != null);
+    assert(placeholdersLoadedSCS != null);
+    return chapterMinifiedLoadedSCS(chapterMinified);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeWhen<Result extends Object>({
+    Result sessionDeletedSCS(),
+    Result sessionFetchedSCS(Session session),
+    Result sessionSavedSCS(),
+    Result sessionUpdatedSCS(),
+    Result userAsMapLoadedSCS(Map<String, User> usersMap),
+    Result userDetailsSavedSCS(User user),
+    Result userLoadedSCS(User user),
+    Result seriesDraftDeletedSCS(),
+    Result seriesDraftFetchedSCS(SeriesDraft seriesDraft),
+    Result seriesDraftSavedSCS(SeriesDraft seriesDraft),
+    Result seriesDraftUpdatedSCS(),
+    Result seriesAsMapLoadedSCS(Map<String, Series> seriesMap),
+    Result seriesCoverDeletedSCS(),
+    Result seriesCoverUploadedSCS(String coverUrl),
+    Result seriesDeletedSCS(),
+    Result seriesMinifiedListLoadedSCS(List<SeriesMinified> seriesMinified),
+    Result seriesLoadedSCS(Series series),
+    Result seriesPublishedSCS(),
+    Result seriesStatsCountLoadedSCS(int count),
+    Result seriesStatsCountUpdatedSCS(),
+    Result seriesStatsStatusLoadedSCS(bool status),
+    Result chapterDraftDeletedSCS(),
+    Result chapterDraftFetchedSCS(ChapterDraft chapterDraft),
+    Result chapterDraftSavedSCS(),
+    Result chapterDraftUpdatedSCS(),
+    Result chapterCoverDeletedSCS(),
+    Result chapterCoverUploadedSCS(String coverUrl),
+    Result chapterDeletedSCS(),
+    Result chapterMinifiedListLoadedSCS(List<ChapterMinified> chaptersMinified),
+    Result chapterMinifiedLoadedSCS(ChapterMinified chapterMinified),
+    Result chapterLoadedSCS(Chapter chapter),
+    Result chapterPublishedSCS(),
+    Result chapterStatsCountLoadedSCS(int count),
+    Result chapterStatsCountUpdatedSCS(),
+    Result chapterStatsStatusLoadedSCS(bool status),
+    Result placeholderFetchedSCS(String placeholderUrl),
+    Result placeholdersSavedSCS(),
+    Result placeholdersLoadedSCS(Map<String, String> placeholders),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (chapterMinifiedLoadedSCS != null) {
+      return chapterMinifiedLoadedSCS(chapterMinified);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  Result map<Result extends Object>({
+    @required Result sessionDeletedSCS(SessionDeletedSCS value),
+    @required Result sessionFetchedSCS(SessionFetchedSCS value),
+    @required Result sessionSavedSCS(SessionSavedSCS value),
+    @required Result sessionUpdatedSCS(SessionUpdatedSCS value),
+    @required Result userAsMapLoadedSCS(UserAsMapLoadedSCS value),
+    @required Result userDetailsSavedSCS(UserDetailsSavedSCS value),
+    @required Result userLoadedSCS(UserLoadedSCS value),
+    @required Result seriesDraftDeletedSCS(SeriesDraftDeletedSCS value),
+    @required Result seriesDraftFetchedSCS(SeriesDraftFetchedSCS value),
+    @required Result seriesDraftSavedSCS(SeriesDraftSavedSCS value),
+    @required Result seriesDraftUpdatedSCS(SeriesDraftUpdatedSCS value),
+    @required Result seriesAsMapLoadedSCS(SeriesAsMapLoadedSCS value),
+    @required Result seriesCoverDeletedSCS(SeriesCoverDeletedSCS value),
+    @required Result seriesCoverUploadedSCS(SeriesCoverUploadedSCS value),
+    @required Result seriesDeletedSCS(SeriesDeletedSCS value),
+    @required
+        Result seriesMinifiedListLoadedSCS(SeriesMinifiedListLoadedSCS value),
+    @required Result seriesLoadedSCS(SeriesLoadedSCS value),
+    @required Result seriesPublishedSCS(SeriesPublishedSCS value),
+    @required Result seriesStatsCountLoadedSCS(SeriesStatsCountLoadedSCS value),
+    @required
+        Result seriesStatsCountUpdatedSCS(SeriesStatsCountUpdatedSCS value),
+    @required
+        Result seriesStatsStatusLoadedSCS(SeriesStatsStatusLoadedSCS value),
+    @required Result chapterDraftDeletedSCS(ChapterDraftDeletedSCS value),
+    @required Result chapterDraftFetchedSCS(ChapterDraftFetchedSCS value),
+    @required Result chapterDraftSavedSCS(ChapterDraftSavedSCS value),
+    @required Result chapterDraftUpdatedSCS(ChapterDraftUpdatedSCS value),
+    @required Result chapterCoverDeletedSCS(ChapterCoverDeletedSCS value),
+    @required Result chapterCoverUploadedSCS(ChapterCoverUploadedSCS value),
+    @required Result chapterDeletedSCS(ChapterDeletedSCS value),
+    @required
+        Result chapterMinifiedListLoadedSCS(ChapterMinifiedListLoadedSCS value),
+    @required Result chapterMinifiedLoadedSCS(ChapterMinifiedLoadedSCS value),
+    @required Result chapterLoadedSCS(ChapterLoadedSCS value),
+    @required Result chapterPublishedSCS(ChapterPublishedSCS value),
+    @required
+        Result chapterStatsCountLoadedSCS(ChapterStatsCountLoadedSCS value),
+    @required
+        Result chapterStatsCountUpdatedSCS(ChapterStatsCountUpdatedSCS value),
+    @required
+        Result chapterStatsStatusLoadedSCS(ChapterStatsStatusLoadedSCS value),
+    @required Result placeholderFetchedSCS(PlaceholderFetchedSCS value),
+    @required Result placeholdersSavedSCS(PlaceholdersSavedSCS value),
+    @required Result placeholdersLoadedSCS(PlaceholdersLoadedSCS value),
+  }) {
+    assert(sessionDeletedSCS != null);
+    assert(sessionFetchedSCS != null);
+    assert(sessionSavedSCS != null);
+    assert(sessionUpdatedSCS != null);
+    assert(userAsMapLoadedSCS != null);
+    assert(userDetailsSavedSCS != null);
+    assert(userLoadedSCS != null);
+    assert(seriesDraftDeletedSCS != null);
+    assert(seriesDraftFetchedSCS != null);
+    assert(seriesDraftSavedSCS != null);
+    assert(seriesDraftUpdatedSCS != null);
+    assert(seriesAsMapLoadedSCS != null);
+    assert(seriesCoverDeletedSCS != null);
+    assert(seriesCoverUploadedSCS != null);
+    assert(seriesDeletedSCS != null);
+    assert(seriesMinifiedListLoadedSCS != null);
+    assert(seriesLoadedSCS != null);
+    assert(seriesPublishedSCS != null);
+    assert(seriesStatsCountLoadedSCS != null);
+    assert(seriesStatsCountUpdatedSCS != null);
+    assert(seriesStatsStatusLoadedSCS != null);
+    assert(chapterDraftDeletedSCS != null);
+    assert(chapterDraftFetchedSCS != null);
+    assert(chapterDraftSavedSCS != null);
+    assert(chapterDraftUpdatedSCS != null);
+    assert(chapterCoverDeletedSCS != null);
+    assert(chapterCoverUploadedSCS != null);
+    assert(chapterDeletedSCS != null);
+    assert(chapterMinifiedListLoadedSCS != null);
+    assert(chapterMinifiedLoadedSCS != null);
+    assert(chapterLoadedSCS != null);
+    assert(chapterPublishedSCS != null);
+    assert(chapterStatsCountLoadedSCS != null);
+    assert(chapterStatsCountUpdatedSCS != null);
+    assert(chapterStatsStatusLoadedSCS != null);
+    assert(placeholderFetchedSCS != null);
+    assert(placeholdersSavedSCS != null);
+    assert(placeholdersLoadedSCS != null);
+    return chapterMinifiedLoadedSCS(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  Result maybeMap<Result extends Object>({
+    Result sessionDeletedSCS(SessionDeletedSCS value),
+    Result sessionFetchedSCS(SessionFetchedSCS value),
+    Result sessionSavedSCS(SessionSavedSCS value),
+    Result sessionUpdatedSCS(SessionUpdatedSCS value),
+    Result userAsMapLoadedSCS(UserAsMapLoadedSCS value),
+    Result userDetailsSavedSCS(UserDetailsSavedSCS value),
+    Result userLoadedSCS(UserLoadedSCS value),
+    Result seriesDraftDeletedSCS(SeriesDraftDeletedSCS value),
+    Result seriesDraftFetchedSCS(SeriesDraftFetchedSCS value),
+    Result seriesDraftSavedSCS(SeriesDraftSavedSCS value),
+    Result seriesDraftUpdatedSCS(SeriesDraftUpdatedSCS value),
+    Result seriesAsMapLoadedSCS(SeriesAsMapLoadedSCS value),
+    Result seriesCoverDeletedSCS(SeriesCoverDeletedSCS value),
+    Result seriesCoverUploadedSCS(SeriesCoverUploadedSCS value),
+    Result seriesDeletedSCS(SeriesDeletedSCS value),
+    Result seriesMinifiedListLoadedSCS(SeriesMinifiedListLoadedSCS value),
+    Result seriesLoadedSCS(SeriesLoadedSCS value),
+    Result seriesPublishedSCS(SeriesPublishedSCS value),
+    Result seriesStatsCountLoadedSCS(SeriesStatsCountLoadedSCS value),
+    Result seriesStatsCountUpdatedSCS(SeriesStatsCountUpdatedSCS value),
+    Result seriesStatsStatusLoadedSCS(SeriesStatsStatusLoadedSCS value),
+    Result chapterDraftDeletedSCS(ChapterDraftDeletedSCS value),
+    Result chapterDraftFetchedSCS(ChapterDraftFetchedSCS value),
+    Result chapterDraftSavedSCS(ChapterDraftSavedSCS value),
+    Result chapterDraftUpdatedSCS(ChapterDraftUpdatedSCS value),
+    Result chapterCoverDeletedSCS(ChapterCoverDeletedSCS value),
+    Result chapterCoverUploadedSCS(ChapterCoverUploadedSCS value),
+    Result chapterDeletedSCS(ChapterDeletedSCS value),
+    Result chapterMinifiedListLoadedSCS(ChapterMinifiedListLoadedSCS value),
+    Result chapterMinifiedLoadedSCS(ChapterMinifiedLoadedSCS value),
+    Result chapterLoadedSCS(ChapterLoadedSCS value),
+    Result chapterPublishedSCS(ChapterPublishedSCS value),
+    Result chapterStatsCountLoadedSCS(ChapterStatsCountLoadedSCS value),
+    Result chapterStatsCountUpdatedSCS(ChapterStatsCountUpdatedSCS value),
+    Result chapterStatsStatusLoadedSCS(ChapterStatsStatusLoadedSCS value),
+    Result placeholderFetchedSCS(PlaceholderFetchedSCS value),
+    Result placeholdersSavedSCS(PlaceholdersSavedSCS value),
+    Result placeholdersLoadedSCS(PlaceholdersLoadedSCS value),
+    @required Result orElse(),
+  }) {
+    assert(orElse != null);
+    if (chapterMinifiedLoadedSCS != null) {
+      return chapterMinifiedLoadedSCS(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ChapterMinifiedLoadedSCS implements DatabaseSuccess {
+  const factory ChapterMinifiedLoadedSCS(ChapterMinified chapterMinified) =
+      _$ChapterMinifiedLoadedSCS;
+
+  ChapterMinified get chapterMinified;
+  $ChapterMinifiedLoadedSCSCopyWith<ChapterMinifiedLoadedSCS> get copyWith;
 }
 
 abstract class $ChapterLoadedSCSCopyWith<$Res> {
@@ -9648,7 +10386,8 @@ class _$ChapterLoadedSCS implements ChapterLoadedSCS {
     @required Result seriesCoverDeletedSCS(),
     @required Result seriesCoverUploadedSCS(String coverUrl),
     @required Result seriesDeletedSCS(),
-    @required Result seriesListLoadedSCS(List<Series> series),
+    @required
+        Result seriesMinifiedListLoadedSCS(List<SeriesMinified> seriesMinified),
     @required Result seriesLoadedSCS(Series series),
     @required Result seriesPublishedSCS(),
     @required Result seriesStatsCountLoadedSCS(int count),
@@ -9661,7 +10400,10 @@ class _$ChapterLoadedSCS implements ChapterLoadedSCS {
     @required Result chapterCoverDeletedSCS(),
     @required Result chapterCoverUploadedSCS(String coverUrl),
     @required Result chapterDeletedSCS(),
-    @required Result chapterListLoadedSCS(List<Chapter> chapters),
+    @required
+        Result chapterMinifiedListLoadedSCS(
+            List<ChapterMinified> chaptersMinified),
+    @required Result chapterMinifiedLoadedSCS(ChapterMinified chapterMinified),
     @required Result chapterLoadedSCS(Chapter chapter),
     @required Result chapterPublishedSCS(),
     @required Result chapterStatsCountLoadedSCS(int count),
@@ -9686,7 +10428,7 @@ class _$ChapterLoadedSCS implements ChapterLoadedSCS {
     assert(seriesCoverDeletedSCS != null);
     assert(seriesCoverUploadedSCS != null);
     assert(seriesDeletedSCS != null);
-    assert(seriesListLoadedSCS != null);
+    assert(seriesMinifiedListLoadedSCS != null);
     assert(seriesLoadedSCS != null);
     assert(seriesPublishedSCS != null);
     assert(seriesStatsCountLoadedSCS != null);
@@ -9699,7 +10441,8 @@ class _$ChapterLoadedSCS implements ChapterLoadedSCS {
     assert(chapterCoverDeletedSCS != null);
     assert(chapterCoverUploadedSCS != null);
     assert(chapterDeletedSCS != null);
-    assert(chapterListLoadedSCS != null);
+    assert(chapterMinifiedListLoadedSCS != null);
+    assert(chapterMinifiedLoadedSCS != null);
     assert(chapterLoadedSCS != null);
     assert(chapterPublishedSCS != null);
     assert(chapterStatsCountLoadedSCS != null);
@@ -9729,7 +10472,7 @@ class _$ChapterLoadedSCS implements ChapterLoadedSCS {
     Result seriesCoverDeletedSCS(),
     Result seriesCoverUploadedSCS(String coverUrl),
     Result seriesDeletedSCS(),
-    Result seriesListLoadedSCS(List<Series> series),
+    Result seriesMinifiedListLoadedSCS(List<SeriesMinified> seriesMinified),
     Result seriesLoadedSCS(Series series),
     Result seriesPublishedSCS(),
     Result seriesStatsCountLoadedSCS(int count),
@@ -9742,7 +10485,8 @@ class _$ChapterLoadedSCS implements ChapterLoadedSCS {
     Result chapterCoverDeletedSCS(),
     Result chapterCoverUploadedSCS(String coverUrl),
     Result chapterDeletedSCS(),
-    Result chapterListLoadedSCS(List<Chapter> chapters),
+    Result chapterMinifiedListLoadedSCS(List<ChapterMinified> chaptersMinified),
+    Result chapterMinifiedLoadedSCS(ChapterMinified chapterMinified),
     Result chapterLoadedSCS(Chapter chapter),
     Result chapterPublishedSCS(),
     Result chapterStatsCountLoadedSCS(int count),
@@ -9778,7 +10522,8 @@ class _$ChapterLoadedSCS implements ChapterLoadedSCS {
     @required Result seriesCoverDeletedSCS(SeriesCoverDeletedSCS value),
     @required Result seriesCoverUploadedSCS(SeriesCoverUploadedSCS value),
     @required Result seriesDeletedSCS(SeriesDeletedSCS value),
-    @required Result seriesListLoadedSCS(SeriesListLoadedSCS value),
+    @required
+        Result seriesMinifiedListLoadedSCS(SeriesMinifiedListLoadedSCS value),
     @required Result seriesLoadedSCS(SeriesLoadedSCS value),
     @required Result seriesPublishedSCS(SeriesPublishedSCS value),
     @required Result seriesStatsCountLoadedSCS(SeriesStatsCountLoadedSCS value),
@@ -9793,7 +10538,9 @@ class _$ChapterLoadedSCS implements ChapterLoadedSCS {
     @required Result chapterCoverDeletedSCS(ChapterCoverDeletedSCS value),
     @required Result chapterCoverUploadedSCS(ChapterCoverUploadedSCS value),
     @required Result chapterDeletedSCS(ChapterDeletedSCS value),
-    @required Result chapterListLoadedSCS(ChapterListLoadedSCS value),
+    @required
+        Result chapterMinifiedListLoadedSCS(ChapterMinifiedListLoadedSCS value),
+    @required Result chapterMinifiedLoadedSCS(ChapterMinifiedLoadedSCS value),
     @required Result chapterLoadedSCS(ChapterLoadedSCS value),
     @required Result chapterPublishedSCS(ChapterPublishedSCS value),
     @required
@@ -9821,7 +10568,7 @@ class _$ChapterLoadedSCS implements ChapterLoadedSCS {
     assert(seriesCoverDeletedSCS != null);
     assert(seriesCoverUploadedSCS != null);
     assert(seriesDeletedSCS != null);
-    assert(seriesListLoadedSCS != null);
+    assert(seriesMinifiedListLoadedSCS != null);
     assert(seriesLoadedSCS != null);
     assert(seriesPublishedSCS != null);
     assert(seriesStatsCountLoadedSCS != null);
@@ -9834,7 +10581,8 @@ class _$ChapterLoadedSCS implements ChapterLoadedSCS {
     assert(chapterCoverDeletedSCS != null);
     assert(chapterCoverUploadedSCS != null);
     assert(chapterDeletedSCS != null);
-    assert(chapterListLoadedSCS != null);
+    assert(chapterMinifiedListLoadedSCS != null);
+    assert(chapterMinifiedLoadedSCS != null);
     assert(chapterLoadedSCS != null);
     assert(chapterPublishedSCS != null);
     assert(chapterStatsCountLoadedSCS != null);
@@ -9864,7 +10612,7 @@ class _$ChapterLoadedSCS implements ChapterLoadedSCS {
     Result seriesCoverDeletedSCS(SeriesCoverDeletedSCS value),
     Result seriesCoverUploadedSCS(SeriesCoverUploadedSCS value),
     Result seriesDeletedSCS(SeriesDeletedSCS value),
-    Result seriesListLoadedSCS(SeriesListLoadedSCS value),
+    Result seriesMinifiedListLoadedSCS(SeriesMinifiedListLoadedSCS value),
     Result seriesLoadedSCS(SeriesLoadedSCS value),
     Result seriesPublishedSCS(SeriesPublishedSCS value),
     Result seriesStatsCountLoadedSCS(SeriesStatsCountLoadedSCS value),
@@ -9877,7 +10625,8 @@ class _$ChapterLoadedSCS implements ChapterLoadedSCS {
     Result chapterCoverDeletedSCS(ChapterCoverDeletedSCS value),
     Result chapterCoverUploadedSCS(ChapterCoverUploadedSCS value),
     Result chapterDeletedSCS(ChapterDeletedSCS value),
-    Result chapterListLoadedSCS(ChapterListLoadedSCS value),
+    Result chapterMinifiedListLoadedSCS(ChapterMinifiedListLoadedSCS value),
+    Result chapterMinifiedLoadedSCS(ChapterMinifiedLoadedSCS value),
     Result chapterLoadedSCS(ChapterLoadedSCS value),
     Result chapterPublishedSCS(ChapterPublishedSCS value),
     Result chapterStatsCountLoadedSCS(ChapterStatsCountLoadedSCS value),
@@ -9954,7 +10703,8 @@ class _$ChapterPublishedSCS implements ChapterPublishedSCS {
     @required Result seriesCoverDeletedSCS(),
     @required Result seriesCoverUploadedSCS(String coverUrl),
     @required Result seriesDeletedSCS(),
-    @required Result seriesListLoadedSCS(List<Series> series),
+    @required
+        Result seriesMinifiedListLoadedSCS(List<SeriesMinified> seriesMinified),
     @required Result seriesLoadedSCS(Series series),
     @required Result seriesPublishedSCS(),
     @required Result seriesStatsCountLoadedSCS(int count),
@@ -9967,7 +10717,10 @@ class _$ChapterPublishedSCS implements ChapterPublishedSCS {
     @required Result chapterCoverDeletedSCS(),
     @required Result chapterCoverUploadedSCS(String coverUrl),
     @required Result chapterDeletedSCS(),
-    @required Result chapterListLoadedSCS(List<Chapter> chapters),
+    @required
+        Result chapterMinifiedListLoadedSCS(
+            List<ChapterMinified> chaptersMinified),
+    @required Result chapterMinifiedLoadedSCS(ChapterMinified chapterMinified),
     @required Result chapterLoadedSCS(Chapter chapter),
     @required Result chapterPublishedSCS(),
     @required Result chapterStatsCountLoadedSCS(int count),
@@ -9992,7 +10745,7 @@ class _$ChapterPublishedSCS implements ChapterPublishedSCS {
     assert(seriesCoverDeletedSCS != null);
     assert(seriesCoverUploadedSCS != null);
     assert(seriesDeletedSCS != null);
-    assert(seriesListLoadedSCS != null);
+    assert(seriesMinifiedListLoadedSCS != null);
     assert(seriesLoadedSCS != null);
     assert(seriesPublishedSCS != null);
     assert(seriesStatsCountLoadedSCS != null);
@@ -10005,7 +10758,8 @@ class _$ChapterPublishedSCS implements ChapterPublishedSCS {
     assert(chapterCoverDeletedSCS != null);
     assert(chapterCoverUploadedSCS != null);
     assert(chapterDeletedSCS != null);
-    assert(chapterListLoadedSCS != null);
+    assert(chapterMinifiedListLoadedSCS != null);
+    assert(chapterMinifiedLoadedSCS != null);
     assert(chapterLoadedSCS != null);
     assert(chapterPublishedSCS != null);
     assert(chapterStatsCountLoadedSCS != null);
@@ -10035,7 +10789,7 @@ class _$ChapterPublishedSCS implements ChapterPublishedSCS {
     Result seriesCoverDeletedSCS(),
     Result seriesCoverUploadedSCS(String coverUrl),
     Result seriesDeletedSCS(),
-    Result seriesListLoadedSCS(List<Series> series),
+    Result seriesMinifiedListLoadedSCS(List<SeriesMinified> seriesMinified),
     Result seriesLoadedSCS(Series series),
     Result seriesPublishedSCS(),
     Result seriesStatsCountLoadedSCS(int count),
@@ -10048,7 +10802,8 @@ class _$ChapterPublishedSCS implements ChapterPublishedSCS {
     Result chapterCoverDeletedSCS(),
     Result chapterCoverUploadedSCS(String coverUrl),
     Result chapterDeletedSCS(),
-    Result chapterListLoadedSCS(List<Chapter> chapters),
+    Result chapterMinifiedListLoadedSCS(List<ChapterMinified> chaptersMinified),
+    Result chapterMinifiedLoadedSCS(ChapterMinified chapterMinified),
     Result chapterLoadedSCS(Chapter chapter),
     Result chapterPublishedSCS(),
     Result chapterStatsCountLoadedSCS(int count),
@@ -10084,7 +10839,8 @@ class _$ChapterPublishedSCS implements ChapterPublishedSCS {
     @required Result seriesCoverDeletedSCS(SeriesCoverDeletedSCS value),
     @required Result seriesCoverUploadedSCS(SeriesCoverUploadedSCS value),
     @required Result seriesDeletedSCS(SeriesDeletedSCS value),
-    @required Result seriesListLoadedSCS(SeriesListLoadedSCS value),
+    @required
+        Result seriesMinifiedListLoadedSCS(SeriesMinifiedListLoadedSCS value),
     @required Result seriesLoadedSCS(SeriesLoadedSCS value),
     @required Result seriesPublishedSCS(SeriesPublishedSCS value),
     @required Result seriesStatsCountLoadedSCS(SeriesStatsCountLoadedSCS value),
@@ -10099,7 +10855,9 @@ class _$ChapterPublishedSCS implements ChapterPublishedSCS {
     @required Result chapterCoverDeletedSCS(ChapterCoverDeletedSCS value),
     @required Result chapterCoverUploadedSCS(ChapterCoverUploadedSCS value),
     @required Result chapterDeletedSCS(ChapterDeletedSCS value),
-    @required Result chapterListLoadedSCS(ChapterListLoadedSCS value),
+    @required
+        Result chapterMinifiedListLoadedSCS(ChapterMinifiedListLoadedSCS value),
+    @required Result chapterMinifiedLoadedSCS(ChapterMinifiedLoadedSCS value),
     @required Result chapterLoadedSCS(ChapterLoadedSCS value),
     @required Result chapterPublishedSCS(ChapterPublishedSCS value),
     @required
@@ -10127,7 +10885,7 @@ class _$ChapterPublishedSCS implements ChapterPublishedSCS {
     assert(seriesCoverDeletedSCS != null);
     assert(seriesCoverUploadedSCS != null);
     assert(seriesDeletedSCS != null);
-    assert(seriesListLoadedSCS != null);
+    assert(seriesMinifiedListLoadedSCS != null);
     assert(seriesLoadedSCS != null);
     assert(seriesPublishedSCS != null);
     assert(seriesStatsCountLoadedSCS != null);
@@ -10140,7 +10898,8 @@ class _$ChapterPublishedSCS implements ChapterPublishedSCS {
     assert(chapterCoverDeletedSCS != null);
     assert(chapterCoverUploadedSCS != null);
     assert(chapterDeletedSCS != null);
-    assert(chapterListLoadedSCS != null);
+    assert(chapterMinifiedListLoadedSCS != null);
+    assert(chapterMinifiedLoadedSCS != null);
     assert(chapterLoadedSCS != null);
     assert(chapterPublishedSCS != null);
     assert(chapterStatsCountLoadedSCS != null);
@@ -10170,7 +10929,7 @@ class _$ChapterPublishedSCS implements ChapterPublishedSCS {
     Result seriesCoverDeletedSCS(SeriesCoverDeletedSCS value),
     Result seriesCoverUploadedSCS(SeriesCoverUploadedSCS value),
     Result seriesDeletedSCS(SeriesDeletedSCS value),
-    Result seriesListLoadedSCS(SeriesListLoadedSCS value),
+    Result seriesMinifiedListLoadedSCS(SeriesMinifiedListLoadedSCS value),
     Result seriesLoadedSCS(SeriesLoadedSCS value),
     Result seriesPublishedSCS(SeriesPublishedSCS value),
     Result seriesStatsCountLoadedSCS(SeriesStatsCountLoadedSCS value),
@@ -10183,7 +10942,8 @@ class _$ChapterPublishedSCS implements ChapterPublishedSCS {
     Result chapterCoverDeletedSCS(ChapterCoverDeletedSCS value),
     Result chapterCoverUploadedSCS(ChapterCoverUploadedSCS value),
     Result chapterDeletedSCS(ChapterDeletedSCS value),
-    Result chapterListLoadedSCS(ChapterListLoadedSCS value),
+    Result chapterMinifiedListLoadedSCS(ChapterMinifiedListLoadedSCS value),
+    Result chapterMinifiedLoadedSCS(ChapterMinifiedLoadedSCS value),
     Result chapterLoadedSCS(ChapterLoadedSCS value),
     Result chapterPublishedSCS(ChapterPublishedSCS value),
     Result chapterStatsCountLoadedSCS(ChapterStatsCountLoadedSCS value),
@@ -10281,7 +11041,8 @@ class _$ChapterStatsCountLoadedSCS implements ChapterStatsCountLoadedSCS {
     @required Result seriesCoverDeletedSCS(),
     @required Result seriesCoverUploadedSCS(String coverUrl),
     @required Result seriesDeletedSCS(),
-    @required Result seriesListLoadedSCS(List<Series> series),
+    @required
+        Result seriesMinifiedListLoadedSCS(List<SeriesMinified> seriesMinified),
     @required Result seriesLoadedSCS(Series series),
     @required Result seriesPublishedSCS(),
     @required Result seriesStatsCountLoadedSCS(int count),
@@ -10294,7 +11055,10 @@ class _$ChapterStatsCountLoadedSCS implements ChapterStatsCountLoadedSCS {
     @required Result chapterCoverDeletedSCS(),
     @required Result chapterCoverUploadedSCS(String coverUrl),
     @required Result chapterDeletedSCS(),
-    @required Result chapterListLoadedSCS(List<Chapter> chapters),
+    @required
+        Result chapterMinifiedListLoadedSCS(
+            List<ChapterMinified> chaptersMinified),
+    @required Result chapterMinifiedLoadedSCS(ChapterMinified chapterMinified),
     @required Result chapterLoadedSCS(Chapter chapter),
     @required Result chapterPublishedSCS(),
     @required Result chapterStatsCountLoadedSCS(int count),
@@ -10319,7 +11083,7 @@ class _$ChapterStatsCountLoadedSCS implements ChapterStatsCountLoadedSCS {
     assert(seriesCoverDeletedSCS != null);
     assert(seriesCoverUploadedSCS != null);
     assert(seriesDeletedSCS != null);
-    assert(seriesListLoadedSCS != null);
+    assert(seriesMinifiedListLoadedSCS != null);
     assert(seriesLoadedSCS != null);
     assert(seriesPublishedSCS != null);
     assert(seriesStatsCountLoadedSCS != null);
@@ -10332,7 +11096,8 @@ class _$ChapterStatsCountLoadedSCS implements ChapterStatsCountLoadedSCS {
     assert(chapterCoverDeletedSCS != null);
     assert(chapterCoverUploadedSCS != null);
     assert(chapterDeletedSCS != null);
-    assert(chapterListLoadedSCS != null);
+    assert(chapterMinifiedListLoadedSCS != null);
+    assert(chapterMinifiedLoadedSCS != null);
     assert(chapterLoadedSCS != null);
     assert(chapterPublishedSCS != null);
     assert(chapterStatsCountLoadedSCS != null);
@@ -10362,7 +11127,7 @@ class _$ChapterStatsCountLoadedSCS implements ChapterStatsCountLoadedSCS {
     Result seriesCoverDeletedSCS(),
     Result seriesCoverUploadedSCS(String coverUrl),
     Result seriesDeletedSCS(),
-    Result seriesListLoadedSCS(List<Series> series),
+    Result seriesMinifiedListLoadedSCS(List<SeriesMinified> seriesMinified),
     Result seriesLoadedSCS(Series series),
     Result seriesPublishedSCS(),
     Result seriesStatsCountLoadedSCS(int count),
@@ -10375,7 +11140,8 @@ class _$ChapterStatsCountLoadedSCS implements ChapterStatsCountLoadedSCS {
     Result chapterCoverDeletedSCS(),
     Result chapterCoverUploadedSCS(String coverUrl),
     Result chapterDeletedSCS(),
-    Result chapterListLoadedSCS(List<Chapter> chapters),
+    Result chapterMinifiedListLoadedSCS(List<ChapterMinified> chaptersMinified),
+    Result chapterMinifiedLoadedSCS(ChapterMinified chapterMinified),
     Result chapterLoadedSCS(Chapter chapter),
     Result chapterPublishedSCS(),
     Result chapterStatsCountLoadedSCS(int count),
@@ -10411,7 +11177,8 @@ class _$ChapterStatsCountLoadedSCS implements ChapterStatsCountLoadedSCS {
     @required Result seriesCoverDeletedSCS(SeriesCoverDeletedSCS value),
     @required Result seriesCoverUploadedSCS(SeriesCoverUploadedSCS value),
     @required Result seriesDeletedSCS(SeriesDeletedSCS value),
-    @required Result seriesListLoadedSCS(SeriesListLoadedSCS value),
+    @required
+        Result seriesMinifiedListLoadedSCS(SeriesMinifiedListLoadedSCS value),
     @required Result seriesLoadedSCS(SeriesLoadedSCS value),
     @required Result seriesPublishedSCS(SeriesPublishedSCS value),
     @required Result seriesStatsCountLoadedSCS(SeriesStatsCountLoadedSCS value),
@@ -10426,7 +11193,9 @@ class _$ChapterStatsCountLoadedSCS implements ChapterStatsCountLoadedSCS {
     @required Result chapterCoverDeletedSCS(ChapterCoverDeletedSCS value),
     @required Result chapterCoverUploadedSCS(ChapterCoverUploadedSCS value),
     @required Result chapterDeletedSCS(ChapterDeletedSCS value),
-    @required Result chapterListLoadedSCS(ChapterListLoadedSCS value),
+    @required
+        Result chapterMinifiedListLoadedSCS(ChapterMinifiedListLoadedSCS value),
+    @required Result chapterMinifiedLoadedSCS(ChapterMinifiedLoadedSCS value),
     @required Result chapterLoadedSCS(ChapterLoadedSCS value),
     @required Result chapterPublishedSCS(ChapterPublishedSCS value),
     @required
@@ -10454,7 +11223,7 @@ class _$ChapterStatsCountLoadedSCS implements ChapterStatsCountLoadedSCS {
     assert(seriesCoverDeletedSCS != null);
     assert(seriesCoverUploadedSCS != null);
     assert(seriesDeletedSCS != null);
-    assert(seriesListLoadedSCS != null);
+    assert(seriesMinifiedListLoadedSCS != null);
     assert(seriesLoadedSCS != null);
     assert(seriesPublishedSCS != null);
     assert(seriesStatsCountLoadedSCS != null);
@@ -10467,7 +11236,8 @@ class _$ChapterStatsCountLoadedSCS implements ChapterStatsCountLoadedSCS {
     assert(chapterCoverDeletedSCS != null);
     assert(chapterCoverUploadedSCS != null);
     assert(chapterDeletedSCS != null);
-    assert(chapterListLoadedSCS != null);
+    assert(chapterMinifiedListLoadedSCS != null);
+    assert(chapterMinifiedLoadedSCS != null);
     assert(chapterLoadedSCS != null);
     assert(chapterPublishedSCS != null);
     assert(chapterStatsCountLoadedSCS != null);
@@ -10497,7 +11267,7 @@ class _$ChapterStatsCountLoadedSCS implements ChapterStatsCountLoadedSCS {
     Result seriesCoverDeletedSCS(SeriesCoverDeletedSCS value),
     Result seriesCoverUploadedSCS(SeriesCoverUploadedSCS value),
     Result seriesDeletedSCS(SeriesDeletedSCS value),
-    Result seriesListLoadedSCS(SeriesListLoadedSCS value),
+    Result seriesMinifiedListLoadedSCS(SeriesMinifiedListLoadedSCS value),
     Result seriesLoadedSCS(SeriesLoadedSCS value),
     Result seriesPublishedSCS(SeriesPublishedSCS value),
     Result seriesStatsCountLoadedSCS(SeriesStatsCountLoadedSCS value),
@@ -10510,7 +11280,8 @@ class _$ChapterStatsCountLoadedSCS implements ChapterStatsCountLoadedSCS {
     Result chapterCoverDeletedSCS(ChapterCoverDeletedSCS value),
     Result chapterCoverUploadedSCS(ChapterCoverUploadedSCS value),
     Result chapterDeletedSCS(ChapterDeletedSCS value),
-    Result chapterListLoadedSCS(ChapterListLoadedSCS value),
+    Result chapterMinifiedListLoadedSCS(ChapterMinifiedListLoadedSCS value),
+    Result chapterMinifiedLoadedSCS(ChapterMinifiedLoadedSCS value),
     Result chapterLoadedSCS(ChapterLoadedSCS value),
     Result chapterPublishedSCS(ChapterPublishedSCS value),
     Result chapterStatsCountLoadedSCS(ChapterStatsCountLoadedSCS value),
@@ -10590,7 +11361,8 @@ class _$ChapterStatsCountUpdatedSCS implements ChapterStatsCountUpdatedSCS {
     @required Result seriesCoverDeletedSCS(),
     @required Result seriesCoverUploadedSCS(String coverUrl),
     @required Result seriesDeletedSCS(),
-    @required Result seriesListLoadedSCS(List<Series> series),
+    @required
+        Result seriesMinifiedListLoadedSCS(List<SeriesMinified> seriesMinified),
     @required Result seriesLoadedSCS(Series series),
     @required Result seriesPublishedSCS(),
     @required Result seriesStatsCountLoadedSCS(int count),
@@ -10603,7 +11375,10 @@ class _$ChapterStatsCountUpdatedSCS implements ChapterStatsCountUpdatedSCS {
     @required Result chapterCoverDeletedSCS(),
     @required Result chapterCoverUploadedSCS(String coverUrl),
     @required Result chapterDeletedSCS(),
-    @required Result chapterListLoadedSCS(List<Chapter> chapters),
+    @required
+        Result chapterMinifiedListLoadedSCS(
+            List<ChapterMinified> chaptersMinified),
+    @required Result chapterMinifiedLoadedSCS(ChapterMinified chapterMinified),
     @required Result chapterLoadedSCS(Chapter chapter),
     @required Result chapterPublishedSCS(),
     @required Result chapterStatsCountLoadedSCS(int count),
@@ -10628,7 +11403,7 @@ class _$ChapterStatsCountUpdatedSCS implements ChapterStatsCountUpdatedSCS {
     assert(seriesCoverDeletedSCS != null);
     assert(seriesCoverUploadedSCS != null);
     assert(seriesDeletedSCS != null);
-    assert(seriesListLoadedSCS != null);
+    assert(seriesMinifiedListLoadedSCS != null);
     assert(seriesLoadedSCS != null);
     assert(seriesPublishedSCS != null);
     assert(seriesStatsCountLoadedSCS != null);
@@ -10641,7 +11416,8 @@ class _$ChapterStatsCountUpdatedSCS implements ChapterStatsCountUpdatedSCS {
     assert(chapterCoverDeletedSCS != null);
     assert(chapterCoverUploadedSCS != null);
     assert(chapterDeletedSCS != null);
-    assert(chapterListLoadedSCS != null);
+    assert(chapterMinifiedListLoadedSCS != null);
+    assert(chapterMinifiedLoadedSCS != null);
     assert(chapterLoadedSCS != null);
     assert(chapterPublishedSCS != null);
     assert(chapterStatsCountLoadedSCS != null);
@@ -10671,7 +11447,7 @@ class _$ChapterStatsCountUpdatedSCS implements ChapterStatsCountUpdatedSCS {
     Result seriesCoverDeletedSCS(),
     Result seriesCoverUploadedSCS(String coverUrl),
     Result seriesDeletedSCS(),
-    Result seriesListLoadedSCS(List<Series> series),
+    Result seriesMinifiedListLoadedSCS(List<SeriesMinified> seriesMinified),
     Result seriesLoadedSCS(Series series),
     Result seriesPublishedSCS(),
     Result seriesStatsCountLoadedSCS(int count),
@@ -10684,7 +11460,8 @@ class _$ChapterStatsCountUpdatedSCS implements ChapterStatsCountUpdatedSCS {
     Result chapterCoverDeletedSCS(),
     Result chapterCoverUploadedSCS(String coverUrl),
     Result chapterDeletedSCS(),
-    Result chapterListLoadedSCS(List<Chapter> chapters),
+    Result chapterMinifiedListLoadedSCS(List<ChapterMinified> chaptersMinified),
+    Result chapterMinifiedLoadedSCS(ChapterMinified chapterMinified),
     Result chapterLoadedSCS(Chapter chapter),
     Result chapterPublishedSCS(),
     Result chapterStatsCountLoadedSCS(int count),
@@ -10720,7 +11497,8 @@ class _$ChapterStatsCountUpdatedSCS implements ChapterStatsCountUpdatedSCS {
     @required Result seriesCoverDeletedSCS(SeriesCoverDeletedSCS value),
     @required Result seriesCoverUploadedSCS(SeriesCoverUploadedSCS value),
     @required Result seriesDeletedSCS(SeriesDeletedSCS value),
-    @required Result seriesListLoadedSCS(SeriesListLoadedSCS value),
+    @required
+        Result seriesMinifiedListLoadedSCS(SeriesMinifiedListLoadedSCS value),
     @required Result seriesLoadedSCS(SeriesLoadedSCS value),
     @required Result seriesPublishedSCS(SeriesPublishedSCS value),
     @required Result seriesStatsCountLoadedSCS(SeriesStatsCountLoadedSCS value),
@@ -10735,7 +11513,9 @@ class _$ChapterStatsCountUpdatedSCS implements ChapterStatsCountUpdatedSCS {
     @required Result chapterCoverDeletedSCS(ChapterCoverDeletedSCS value),
     @required Result chapterCoverUploadedSCS(ChapterCoverUploadedSCS value),
     @required Result chapterDeletedSCS(ChapterDeletedSCS value),
-    @required Result chapterListLoadedSCS(ChapterListLoadedSCS value),
+    @required
+        Result chapterMinifiedListLoadedSCS(ChapterMinifiedListLoadedSCS value),
+    @required Result chapterMinifiedLoadedSCS(ChapterMinifiedLoadedSCS value),
     @required Result chapterLoadedSCS(ChapterLoadedSCS value),
     @required Result chapterPublishedSCS(ChapterPublishedSCS value),
     @required
@@ -10763,7 +11543,7 @@ class _$ChapterStatsCountUpdatedSCS implements ChapterStatsCountUpdatedSCS {
     assert(seriesCoverDeletedSCS != null);
     assert(seriesCoverUploadedSCS != null);
     assert(seriesDeletedSCS != null);
-    assert(seriesListLoadedSCS != null);
+    assert(seriesMinifiedListLoadedSCS != null);
     assert(seriesLoadedSCS != null);
     assert(seriesPublishedSCS != null);
     assert(seriesStatsCountLoadedSCS != null);
@@ -10776,7 +11556,8 @@ class _$ChapterStatsCountUpdatedSCS implements ChapterStatsCountUpdatedSCS {
     assert(chapterCoverDeletedSCS != null);
     assert(chapterCoverUploadedSCS != null);
     assert(chapterDeletedSCS != null);
-    assert(chapterListLoadedSCS != null);
+    assert(chapterMinifiedListLoadedSCS != null);
+    assert(chapterMinifiedLoadedSCS != null);
     assert(chapterLoadedSCS != null);
     assert(chapterPublishedSCS != null);
     assert(chapterStatsCountLoadedSCS != null);
@@ -10806,7 +11587,7 @@ class _$ChapterStatsCountUpdatedSCS implements ChapterStatsCountUpdatedSCS {
     Result seriesCoverDeletedSCS(SeriesCoverDeletedSCS value),
     Result seriesCoverUploadedSCS(SeriesCoverUploadedSCS value),
     Result seriesDeletedSCS(SeriesDeletedSCS value),
-    Result seriesListLoadedSCS(SeriesListLoadedSCS value),
+    Result seriesMinifiedListLoadedSCS(SeriesMinifiedListLoadedSCS value),
     Result seriesLoadedSCS(SeriesLoadedSCS value),
     Result seriesPublishedSCS(SeriesPublishedSCS value),
     Result seriesStatsCountLoadedSCS(SeriesStatsCountLoadedSCS value),
@@ -10819,7 +11600,8 @@ class _$ChapterStatsCountUpdatedSCS implements ChapterStatsCountUpdatedSCS {
     Result chapterCoverDeletedSCS(ChapterCoverDeletedSCS value),
     Result chapterCoverUploadedSCS(ChapterCoverUploadedSCS value),
     Result chapterDeletedSCS(ChapterDeletedSCS value),
-    Result chapterListLoadedSCS(ChapterListLoadedSCS value),
+    Result chapterMinifiedListLoadedSCS(ChapterMinifiedListLoadedSCS value),
+    Result chapterMinifiedLoadedSCS(ChapterMinifiedLoadedSCS value),
     Result chapterLoadedSCS(ChapterLoadedSCS value),
     Result chapterPublishedSCS(ChapterPublishedSCS value),
     Result chapterStatsCountLoadedSCS(ChapterStatsCountLoadedSCS value),
@@ -10918,7 +11700,8 @@ class _$ChapterStatsStatusLoadedSCS implements ChapterStatsStatusLoadedSCS {
     @required Result seriesCoverDeletedSCS(),
     @required Result seriesCoverUploadedSCS(String coverUrl),
     @required Result seriesDeletedSCS(),
-    @required Result seriesListLoadedSCS(List<Series> series),
+    @required
+        Result seriesMinifiedListLoadedSCS(List<SeriesMinified> seriesMinified),
     @required Result seriesLoadedSCS(Series series),
     @required Result seriesPublishedSCS(),
     @required Result seriesStatsCountLoadedSCS(int count),
@@ -10931,7 +11714,10 @@ class _$ChapterStatsStatusLoadedSCS implements ChapterStatsStatusLoadedSCS {
     @required Result chapterCoverDeletedSCS(),
     @required Result chapterCoverUploadedSCS(String coverUrl),
     @required Result chapterDeletedSCS(),
-    @required Result chapterListLoadedSCS(List<Chapter> chapters),
+    @required
+        Result chapterMinifiedListLoadedSCS(
+            List<ChapterMinified> chaptersMinified),
+    @required Result chapterMinifiedLoadedSCS(ChapterMinified chapterMinified),
     @required Result chapterLoadedSCS(Chapter chapter),
     @required Result chapterPublishedSCS(),
     @required Result chapterStatsCountLoadedSCS(int count),
@@ -10956,7 +11742,7 @@ class _$ChapterStatsStatusLoadedSCS implements ChapterStatsStatusLoadedSCS {
     assert(seriesCoverDeletedSCS != null);
     assert(seriesCoverUploadedSCS != null);
     assert(seriesDeletedSCS != null);
-    assert(seriesListLoadedSCS != null);
+    assert(seriesMinifiedListLoadedSCS != null);
     assert(seriesLoadedSCS != null);
     assert(seriesPublishedSCS != null);
     assert(seriesStatsCountLoadedSCS != null);
@@ -10969,7 +11755,8 @@ class _$ChapterStatsStatusLoadedSCS implements ChapterStatsStatusLoadedSCS {
     assert(chapterCoverDeletedSCS != null);
     assert(chapterCoverUploadedSCS != null);
     assert(chapterDeletedSCS != null);
-    assert(chapterListLoadedSCS != null);
+    assert(chapterMinifiedListLoadedSCS != null);
+    assert(chapterMinifiedLoadedSCS != null);
     assert(chapterLoadedSCS != null);
     assert(chapterPublishedSCS != null);
     assert(chapterStatsCountLoadedSCS != null);
@@ -10999,7 +11786,7 @@ class _$ChapterStatsStatusLoadedSCS implements ChapterStatsStatusLoadedSCS {
     Result seriesCoverDeletedSCS(),
     Result seriesCoverUploadedSCS(String coverUrl),
     Result seriesDeletedSCS(),
-    Result seriesListLoadedSCS(List<Series> series),
+    Result seriesMinifiedListLoadedSCS(List<SeriesMinified> seriesMinified),
     Result seriesLoadedSCS(Series series),
     Result seriesPublishedSCS(),
     Result seriesStatsCountLoadedSCS(int count),
@@ -11012,7 +11799,8 @@ class _$ChapterStatsStatusLoadedSCS implements ChapterStatsStatusLoadedSCS {
     Result chapterCoverDeletedSCS(),
     Result chapterCoverUploadedSCS(String coverUrl),
     Result chapterDeletedSCS(),
-    Result chapterListLoadedSCS(List<Chapter> chapters),
+    Result chapterMinifiedListLoadedSCS(List<ChapterMinified> chaptersMinified),
+    Result chapterMinifiedLoadedSCS(ChapterMinified chapterMinified),
     Result chapterLoadedSCS(Chapter chapter),
     Result chapterPublishedSCS(),
     Result chapterStatsCountLoadedSCS(int count),
@@ -11048,7 +11836,8 @@ class _$ChapterStatsStatusLoadedSCS implements ChapterStatsStatusLoadedSCS {
     @required Result seriesCoverDeletedSCS(SeriesCoverDeletedSCS value),
     @required Result seriesCoverUploadedSCS(SeriesCoverUploadedSCS value),
     @required Result seriesDeletedSCS(SeriesDeletedSCS value),
-    @required Result seriesListLoadedSCS(SeriesListLoadedSCS value),
+    @required
+        Result seriesMinifiedListLoadedSCS(SeriesMinifiedListLoadedSCS value),
     @required Result seriesLoadedSCS(SeriesLoadedSCS value),
     @required Result seriesPublishedSCS(SeriesPublishedSCS value),
     @required Result seriesStatsCountLoadedSCS(SeriesStatsCountLoadedSCS value),
@@ -11063,7 +11852,9 @@ class _$ChapterStatsStatusLoadedSCS implements ChapterStatsStatusLoadedSCS {
     @required Result chapterCoverDeletedSCS(ChapterCoverDeletedSCS value),
     @required Result chapterCoverUploadedSCS(ChapterCoverUploadedSCS value),
     @required Result chapterDeletedSCS(ChapterDeletedSCS value),
-    @required Result chapterListLoadedSCS(ChapterListLoadedSCS value),
+    @required
+        Result chapterMinifiedListLoadedSCS(ChapterMinifiedListLoadedSCS value),
+    @required Result chapterMinifiedLoadedSCS(ChapterMinifiedLoadedSCS value),
     @required Result chapterLoadedSCS(ChapterLoadedSCS value),
     @required Result chapterPublishedSCS(ChapterPublishedSCS value),
     @required
@@ -11091,7 +11882,7 @@ class _$ChapterStatsStatusLoadedSCS implements ChapterStatsStatusLoadedSCS {
     assert(seriesCoverDeletedSCS != null);
     assert(seriesCoverUploadedSCS != null);
     assert(seriesDeletedSCS != null);
-    assert(seriesListLoadedSCS != null);
+    assert(seriesMinifiedListLoadedSCS != null);
     assert(seriesLoadedSCS != null);
     assert(seriesPublishedSCS != null);
     assert(seriesStatsCountLoadedSCS != null);
@@ -11104,7 +11895,8 @@ class _$ChapterStatsStatusLoadedSCS implements ChapterStatsStatusLoadedSCS {
     assert(chapterCoverDeletedSCS != null);
     assert(chapterCoverUploadedSCS != null);
     assert(chapterDeletedSCS != null);
-    assert(chapterListLoadedSCS != null);
+    assert(chapterMinifiedListLoadedSCS != null);
+    assert(chapterMinifiedLoadedSCS != null);
     assert(chapterLoadedSCS != null);
     assert(chapterPublishedSCS != null);
     assert(chapterStatsCountLoadedSCS != null);
@@ -11134,7 +11926,7 @@ class _$ChapterStatsStatusLoadedSCS implements ChapterStatsStatusLoadedSCS {
     Result seriesCoverDeletedSCS(SeriesCoverDeletedSCS value),
     Result seriesCoverUploadedSCS(SeriesCoverUploadedSCS value),
     Result seriesDeletedSCS(SeriesDeletedSCS value),
-    Result seriesListLoadedSCS(SeriesListLoadedSCS value),
+    Result seriesMinifiedListLoadedSCS(SeriesMinifiedListLoadedSCS value),
     Result seriesLoadedSCS(SeriesLoadedSCS value),
     Result seriesPublishedSCS(SeriesPublishedSCS value),
     Result seriesStatsCountLoadedSCS(SeriesStatsCountLoadedSCS value),
@@ -11147,7 +11939,8 @@ class _$ChapterStatsStatusLoadedSCS implements ChapterStatsStatusLoadedSCS {
     Result chapterCoverDeletedSCS(ChapterCoverDeletedSCS value),
     Result chapterCoverUploadedSCS(ChapterCoverUploadedSCS value),
     Result chapterDeletedSCS(ChapterDeletedSCS value),
-    Result chapterListLoadedSCS(ChapterListLoadedSCS value),
+    Result chapterMinifiedListLoadedSCS(ChapterMinifiedListLoadedSCS value),
+    Result chapterMinifiedLoadedSCS(ChapterMinifiedLoadedSCS value),
     Result chapterLoadedSCS(ChapterLoadedSCS value),
     Result chapterPublishedSCS(ChapterPublishedSCS value),
     Result chapterStatsCountLoadedSCS(ChapterStatsCountLoadedSCS value),
@@ -11253,7 +12046,8 @@ class _$PlaceholderFetchedSCS implements PlaceholderFetchedSCS {
     @required Result seriesCoverDeletedSCS(),
     @required Result seriesCoverUploadedSCS(String coverUrl),
     @required Result seriesDeletedSCS(),
-    @required Result seriesListLoadedSCS(List<Series> series),
+    @required
+        Result seriesMinifiedListLoadedSCS(List<SeriesMinified> seriesMinified),
     @required Result seriesLoadedSCS(Series series),
     @required Result seriesPublishedSCS(),
     @required Result seriesStatsCountLoadedSCS(int count),
@@ -11266,7 +12060,10 @@ class _$PlaceholderFetchedSCS implements PlaceholderFetchedSCS {
     @required Result chapterCoverDeletedSCS(),
     @required Result chapterCoverUploadedSCS(String coverUrl),
     @required Result chapterDeletedSCS(),
-    @required Result chapterListLoadedSCS(List<Chapter> chapters),
+    @required
+        Result chapterMinifiedListLoadedSCS(
+            List<ChapterMinified> chaptersMinified),
+    @required Result chapterMinifiedLoadedSCS(ChapterMinified chapterMinified),
     @required Result chapterLoadedSCS(Chapter chapter),
     @required Result chapterPublishedSCS(),
     @required Result chapterStatsCountLoadedSCS(int count),
@@ -11291,7 +12088,7 @@ class _$PlaceholderFetchedSCS implements PlaceholderFetchedSCS {
     assert(seriesCoverDeletedSCS != null);
     assert(seriesCoverUploadedSCS != null);
     assert(seriesDeletedSCS != null);
-    assert(seriesListLoadedSCS != null);
+    assert(seriesMinifiedListLoadedSCS != null);
     assert(seriesLoadedSCS != null);
     assert(seriesPublishedSCS != null);
     assert(seriesStatsCountLoadedSCS != null);
@@ -11304,7 +12101,8 @@ class _$PlaceholderFetchedSCS implements PlaceholderFetchedSCS {
     assert(chapterCoverDeletedSCS != null);
     assert(chapterCoverUploadedSCS != null);
     assert(chapterDeletedSCS != null);
-    assert(chapterListLoadedSCS != null);
+    assert(chapterMinifiedListLoadedSCS != null);
+    assert(chapterMinifiedLoadedSCS != null);
     assert(chapterLoadedSCS != null);
     assert(chapterPublishedSCS != null);
     assert(chapterStatsCountLoadedSCS != null);
@@ -11334,7 +12132,7 @@ class _$PlaceholderFetchedSCS implements PlaceholderFetchedSCS {
     Result seriesCoverDeletedSCS(),
     Result seriesCoverUploadedSCS(String coverUrl),
     Result seriesDeletedSCS(),
-    Result seriesListLoadedSCS(List<Series> series),
+    Result seriesMinifiedListLoadedSCS(List<SeriesMinified> seriesMinified),
     Result seriesLoadedSCS(Series series),
     Result seriesPublishedSCS(),
     Result seriesStatsCountLoadedSCS(int count),
@@ -11347,7 +12145,8 @@ class _$PlaceholderFetchedSCS implements PlaceholderFetchedSCS {
     Result chapterCoverDeletedSCS(),
     Result chapterCoverUploadedSCS(String coverUrl),
     Result chapterDeletedSCS(),
-    Result chapterListLoadedSCS(List<Chapter> chapters),
+    Result chapterMinifiedListLoadedSCS(List<ChapterMinified> chaptersMinified),
+    Result chapterMinifiedLoadedSCS(ChapterMinified chapterMinified),
     Result chapterLoadedSCS(Chapter chapter),
     Result chapterPublishedSCS(),
     Result chapterStatsCountLoadedSCS(int count),
@@ -11383,7 +12182,8 @@ class _$PlaceholderFetchedSCS implements PlaceholderFetchedSCS {
     @required Result seriesCoverDeletedSCS(SeriesCoverDeletedSCS value),
     @required Result seriesCoverUploadedSCS(SeriesCoverUploadedSCS value),
     @required Result seriesDeletedSCS(SeriesDeletedSCS value),
-    @required Result seriesListLoadedSCS(SeriesListLoadedSCS value),
+    @required
+        Result seriesMinifiedListLoadedSCS(SeriesMinifiedListLoadedSCS value),
     @required Result seriesLoadedSCS(SeriesLoadedSCS value),
     @required Result seriesPublishedSCS(SeriesPublishedSCS value),
     @required Result seriesStatsCountLoadedSCS(SeriesStatsCountLoadedSCS value),
@@ -11398,7 +12198,9 @@ class _$PlaceholderFetchedSCS implements PlaceholderFetchedSCS {
     @required Result chapterCoverDeletedSCS(ChapterCoverDeletedSCS value),
     @required Result chapterCoverUploadedSCS(ChapterCoverUploadedSCS value),
     @required Result chapterDeletedSCS(ChapterDeletedSCS value),
-    @required Result chapterListLoadedSCS(ChapterListLoadedSCS value),
+    @required
+        Result chapterMinifiedListLoadedSCS(ChapterMinifiedListLoadedSCS value),
+    @required Result chapterMinifiedLoadedSCS(ChapterMinifiedLoadedSCS value),
     @required Result chapterLoadedSCS(ChapterLoadedSCS value),
     @required Result chapterPublishedSCS(ChapterPublishedSCS value),
     @required
@@ -11426,7 +12228,7 @@ class _$PlaceholderFetchedSCS implements PlaceholderFetchedSCS {
     assert(seriesCoverDeletedSCS != null);
     assert(seriesCoverUploadedSCS != null);
     assert(seriesDeletedSCS != null);
-    assert(seriesListLoadedSCS != null);
+    assert(seriesMinifiedListLoadedSCS != null);
     assert(seriesLoadedSCS != null);
     assert(seriesPublishedSCS != null);
     assert(seriesStatsCountLoadedSCS != null);
@@ -11439,7 +12241,8 @@ class _$PlaceholderFetchedSCS implements PlaceholderFetchedSCS {
     assert(chapterCoverDeletedSCS != null);
     assert(chapterCoverUploadedSCS != null);
     assert(chapterDeletedSCS != null);
-    assert(chapterListLoadedSCS != null);
+    assert(chapterMinifiedListLoadedSCS != null);
+    assert(chapterMinifiedLoadedSCS != null);
     assert(chapterLoadedSCS != null);
     assert(chapterPublishedSCS != null);
     assert(chapterStatsCountLoadedSCS != null);
@@ -11469,7 +12272,7 @@ class _$PlaceholderFetchedSCS implements PlaceholderFetchedSCS {
     Result seriesCoverDeletedSCS(SeriesCoverDeletedSCS value),
     Result seriesCoverUploadedSCS(SeriesCoverUploadedSCS value),
     Result seriesDeletedSCS(SeriesDeletedSCS value),
-    Result seriesListLoadedSCS(SeriesListLoadedSCS value),
+    Result seriesMinifiedListLoadedSCS(SeriesMinifiedListLoadedSCS value),
     Result seriesLoadedSCS(SeriesLoadedSCS value),
     Result seriesPublishedSCS(SeriesPublishedSCS value),
     Result seriesStatsCountLoadedSCS(SeriesStatsCountLoadedSCS value),
@@ -11482,7 +12285,8 @@ class _$PlaceholderFetchedSCS implements PlaceholderFetchedSCS {
     Result chapterCoverDeletedSCS(ChapterCoverDeletedSCS value),
     Result chapterCoverUploadedSCS(ChapterCoverUploadedSCS value),
     Result chapterDeletedSCS(ChapterDeletedSCS value),
-    Result chapterListLoadedSCS(ChapterListLoadedSCS value),
+    Result chapterMinifiedListLoadedSCS(ChapterMinifiedListLoadedSCS value),
+    Result chapterMinifiedLoadedSCS(ChapterMinifiedLoadedSCS value),
     Result chapterLoadedSCS(ChapterLoadedSCS value),
     Result chapterPublishedSCS(ChapterPublishedSCS value),
     Result chapterStatsCountLoadedSCS(ChapterStatsCountLoadedSCS value),
@@ -11560,7 +12364,8 @@ class _$PlaceholdersSavedSCS implements PlaceholdersSavedSCS {
     @required Result seriesCoverDeletedSCS(),
     @required Result seriesCoverUploadedSCS(String coverUrl),
     @required Result seriesDeletedSCS(),
-    @required Result seriesListLoadedSCS(List<Series> series),
+    @required
+        Result seriesMinifiedListLoadedSCS(List<SeriesMinified> seriesMinified),
     @required Result seriesLoadedSCS(Series series),
     @required Result seriesPublishedSCS(),
     @required Result seriesStatsCountLoadedSCS(int count),
@@ -11573,7 +12378,10 @@ class _$PlaceholdersSavedSCS implements PlaceholdersSavedSCS {
     @required Result chapterCoverDeletedSCS(),
     @required Result chapterCoverUploadedSCS(String coverUrl),
     @required Result chapterDeletedSCS(),
-    @required Result chapterListLoadedSCS(List<Chapter> chapters),
+    @required
+        Result chapterMinifiedListLoadedSCS(
+            List<ChapterMinified> chaptersMinified),
+    @required Result chapterMinifiedLoadedSCS(ChapterMinified chapterMinified),
     @required Result chapterLoadedSCS(Chapter chapter),
     @required Result chapterPublishedSCS(),
     @required Result chapterStatsCountLoadedSCS(int count),
@@ -11598,7 +12406,7 @@ class _$PlaceholdersSavedSCS implements PlaceholdersSavedSCS {
     assert(seriesCoverDeletedSCS != null);
     assert(seriesCoverUploadedSCS != null);
     assert(seriesDeletedSCS != null);
-    assert(seriesListLoadedSCS != null);
+    assert(seriesMinifiedListLoadedSCS != null);
     assert(seriesLoadedSCS != null);
     assert(seriesPublishedSCS != null);
     assert(seriesStatsCountLoadedSCS != null);
@@ -11611,7 +12419,8 @@ class _$PlaceholdersSavedSCS implements PlaceholdersSavedSCS {
     assert(chapterCoverDeletedSCS != null);
     assert(chapterCoverUploadedSCS != null);
     assert(chapterDeletedSCS != null);
-    assert(chapterListLoadedSCS != null);
+    assert(chapterMinifiedListLoadedSCS != null);
+    assert(chapterMinifiedLoadedSCS != null);
     assert(chapterLoadedSCS != null);
     assert(chapterPublishedSCS != null);
     assert(chapterStatsCountLoadedSCS != null);
@@ -11641,7 +12450,7 @@ class _$PlaceholdersSavedSCS implements PlaceholdersSavedSCS {
     Result seriesCoverDeletedSCS(),
     Result seriesCoverUploadedSCS(String coverUrl),
     Result seriesDeletedSCS(),
-    Result seriesListLoadedSCS(List<Series> series),
+    Result seriesMinifiedListLoadedSCS(List<SeriesMinified> seriesMinified),
     Result seriesLoadedSCS(Series series),
     Result seriesPublishedSCS(),
     Result seriesStatsCountLoadedSCS(int count),
@@ -11654,7 +12463,8 @@ class _$PlaceholdersSavedSCS implements PlaceholdersSavedSCS {
     Result chapterCoverDeletedSCS(),
     Result chapterCoverUploadedSCS(String coverUrl),
     Result chapterDeletedSCS(),
-    Result chapterListLoadedSCS(List<Chapter> chapters),
+    Result chapterMinifiedListLoadedSCS(List<ChapterMinified> chaptersMinified),
+    Result chapterMinifiedLoadedSCS(ChapterMinified chapterMinified),
     Result chapterLoadedSCS(Chapter chapter),
     Result chapterPublishedSCS(),
     Result chapterStatsCountLoadedSCS(int count),
@@ -11690,7 +12500,8 @@ class _$PlaceholdersSavedSCS implements PlaceholdersSavedSCS {
     @required Result seriesCoverDeletedSCS(SeriesCoverDeletedSCS value),
     @required Result seriesCoverUploadedSCS(SeriesCoverUploadedSCS value),
     @required Result seriesDeletedSCS(SeriesDeletedSCS value),
-    @required Result seriesListLoadedSCS(SeriesListLoadedSCS value),
+    @required
+        Result seriesMinifiedListLoadedSCS(SeriesMinifiedListLoadedSCS value),
     @required Result seriesLoadedSCS(SeriesLoadedSCS value),
     @required Result seriesPublishedSCS(SeriesPublishedSCS value),
     @required Result seriesStatsCountLoadedSCS(SeriesStatsCountLoadedSCS value),
@@ -11705,7 +12516,9 @@ class _$PlaceholdersSavedSCS implements PlaceholdersSavedSCS {
     @required Result chapterCoverDeletedSCS(ChapterCoverDeletedSCS value),
     @required Result chapterCoverUploadedSCS(ChapterCoverUploadedSCS value),
     @required Result chapterDeletedSCS(ChapterDeletedSCS value),
-    @required Result chapterListLoadedSCS(ChapterListLoadedSCS value),
+    @required
+        Result chapterMinifiedListLoadedSCS(ChapterMinifiedListLoadedSCS value),
+    @required Result chapterMinifiedLoadedSCS(ChapterMinifiedLoadedSCS value),
     @required Result chapterLoadedSCS(ChapterLoadedSCS value),
     @required Result chapterPublishedSCS(ChapterPublishedSCS value),
     @required
@@ -11733,7 +12546,7 @@ class _$PlaceholdersSavedSCS implements PlaceholdersSavedSCS {
     assert(seriesCoverDeletedSCS != null);
     assert(seriesCoverUploadedSCS != null);
     assert(seriesDeletedSCS != null);
-    assert(seriesListLoadedSCS != null);
+    assert(seriesMinifiedListLoadedSCS != null);
     assert(seriesLoadedSCS != null);
     assert(seriesPublishedSCS != null);
     assert(seriesStatsCountLoadedSCS != null);
@@ -11746,7 +12559,8 @@ class _$PlaceholdersSavedSCS implements PlaceholdersSavedSCS {
     assert(chapterCoverDeletedSCS != null);
     assert(chapterCoverUploadedSCS != null);
     assert(chapterDeletedSCS != null);
-    assert(chapterListLoadedSCS != null);
+    assert(chapterMinifiedListLoadedSCS != null);
+    assert(chapterMinifiedLoadedSCS != null);
     assert(chapterLoadedSCS != null);
     assert(chapterPublishedSCS != null);
     assert(chapterStatsCountLoadedSCS != null);
@@ -11776,7 +12590,7 @@ class _$PlaceholdersSavedSCS implements PlaceholdersSavedSCS {
     Result seriesCoverDeletedSCS(SeriesCoverDeletedSCS value),
     Result seriesCoverUploadedSCS(SeriesCoverUploadedSCS value),
     Result seriesDeletedSCS(SeriesDeletedSCS value),
-    Result seriesListLoadedSCS(SeriesListLoadedSCS value),
+    Result seriesMinifiedListLoadedSCS(SeriesMinifiedListLoadedSCS value),
     Result seriesLoadedSCS(SeriesLoadedSCS value),
     Result seriesPublishedSCS(SeriesPublishedSCS value),
     Result seriesStatsCountLoadedSCS(SeriesStatsCountLoadedSCS value),
@@ -11789,7 +12603,8 @@ class _$PlaceholdersSavedSCS implements PlaceholdersSavedSCS {
     Result chapterCoverDeletedSCS(ChapterCoverDeletedSCS value),
     Result chapterCoverUploadedSCS(ChapterCoverUploadedSCS value),
     Result chapterDeletedSCS(ChapterDeletedSCS value),
-    Result chapterListLoadedSCS(ChapterListLoadedSCS value),
+    Result chapterMinifiedListLoadedSCS(ChapterMinifiedListLoadedSCS value),
+    Result chapterMinifiedLoadedSCS(ChapterMinifiedLoadedSCS value),
     Result chapterLoadedSCS(ChapterLoadedSCS value),
     Result chapterPublishedSCS(ChapterPublishedSCS value),
     Result chapterStatsCountLoadedSCS(ChapterStatsCountLoadedSCS value),
@@ -11889,7 +12704,8 @@ class _$PlaceholdersLoadedSCS implements PlaceholdersLoadedSCS {
     @required Result seriesCoverDeletedSCS(),
     @required Result seriesCoverUploadedSCS(String coverUrl),
     @required Result seriesDeletedSCS(),
-    @required Result seriesListLoadedSCS(List<Series> series),
+    @required
+        Result seriesMinifiedListLoadedSCS(List<SeriesMinified> seriesMinified),
     @required Result seriesLoadedSCS(Series series),
     @required Result seriesPublishedSCS(),
     @required Result seriesStatsCountLoadedSCS(int count),
@@ -11902,7 +12718,10 @@ class _$PlaceholdersLoadedSCS implements PlaceholdersLoadedSCS {
     @required Result chapterCoverDeletedSCS(),
     @required Result chapterCoverUploadedSCS(String coverUrl),
     @required Result chapterDeletedSCS(),
-    @required Result chapterListLoadedSCS(List<Chapter> chapters),
+    @required
+        Result chapterMinifiedListLoadedSCS(
+            List<ChapterMinified> chaptersMinified),
+    @required Result chapterMinifiedLoadedSCS(ChapterMinified chapterMinified),
     @required Result chapterLoadedSCS(Chapter chapter),
     @required Result chapterPublishedSCS(),
     @required Result chapterStatsCountLoadedSCS(int count),
@@ -11927,7 +12746,7 @@ class _$PlaceholdersLoadedSCS implements PlaceholdersLoadedSCS {
     assert(seriesCoverDeletedSCS != null);
     assert(seriesCoverUploadedSCS != null);
     assert(seriesDeletedSCS != null);
-    assert(seriesListLoadedSCS != null);
+    assert(seriesMinifiedListLoadedSCS != null);
     assert(seriesLoadedSCS != null);
     assert(seriesPublishedSCS != null);
     assert(seriesStatsCountLoadedSCS != null);
@@ -11940,7 +12759,8 @@ class _$PlaceholdersLoadedSCS implements PlaceholdersLoadedSCS {
     assert(chapterCoverDeletedSCS != null);
     assert(chapterCoverUploadedSCS != null);
     assert(chapterDeletedSCS != null);
-    assert(chapterListLoadedSCS != null);
+    assert(chapterMinifiedListLoadedSCS != null);
+    assert(chapterMinifiedLoadedSCS != null);
     assert(chapterLoadedSCS != null);
     assert(chapterPublishedSCS != null);
     assert(chapterStatsCountLoadedSCS != null);
@@ -11970,7 +12790,7 @@ class _$PlaceholdersLoadedSCS implements PlaceholdersLoadedSCS {
     Result seriesCoverDeletedSCS(),
     Result seriesCoverUploadedSCS(String coverUrl),
     Result seriesDeletedSCS(),
-    Result seriesListLoadedSCS(List<Series> series),
+    Result seriesMinifiedListLoadedSCS(List<SeriesMinified> seriesMinified),
     Result seriesLoadedSCS(Series series),
     Result seriesPublishedSCS(),
     Result seriesStatsCountLoadedSCS(int count),
@@ -11983,7 +12803,8 @@ class _$PlaceholdersLoadedSCS implements PlaceholdersLoadedSCS {
     Result chapterCoverDeletedSCS(),
     Result chapterCoverUploadedSCS(String coverUrl),
     Result chapterDeletedSCS(),
-    Result chapterListLoadedSCS(List<Chapter> chapters),
+    Result chapterMinifiedListLoadedSCS(List<ChapterMinified> chaptersMinified),
+    Result chapterMinifiedLoadedSCS(ChapterMinified chapterMinified),
     Result chapterLoadedSCS(Chapter chapter),
     Result chapterPublishedSCS(),
     Result chapterStatsCountLoadedSCS(int count),
@@ -12019,7 +12840,8 @@ class _$PlaceholdersLoadedSCS implements PlaceholdersLoadedSCS {
     @required Result seriesCoverDeletedSCS(SeriesCoverDeletedSCS value),
     @required Result seriesCoverUploadedSCS(SeriesCoverUploadedSCS value),
     @required Result seriesDeletedSCS(SeriesDeletedSCS value),
-    @required Result seriesListLoadedSCS(SeriesListLoadedSCS value),
+    @required
+        Result seriesMinifiedListLoadedSCS(SeriesMinifiedListLoadedSCS value),
     @required Result seriesLoadedSCS(SeriesLoadedSCS value),
     @required Result seriesPublishedSCS(SeriesPublishedSCS value),
     @required Result seriesStatsCountLoadedSCS(SeriesStatsCountLoadedSCS value),
@@ -12034,7 +12856,9 @@ class _$PlaceholdersLoadedSCS implements PlaceholdersLoadedSCS {
     @required Result chapterCoverDeletedSCS(ChapterCoverDeletedSCS value),
     @required Result chapterCoverUploadedSCS(ChapterCoverUploadedSCS value),
     @required Result chapterDeletedSCS(ChapterDeletedSCS value),
-    @required Result chapterListLoadedSCS(ChapterListLoadedSCS value),
+    @required
+        Result chapterMinifiedListLoadedSCS(ChapterMinifiedListLoadedSCS value),
+    @required Result chapterMinifiedLoadedSCS(ChapterMinifiedLoadedSCS value),
     @required Result chapterLoadedSCS(ChapterLoadedSCS value),
     @required Result chapterPublishedSCS(ChapterPublishedSCS value),
     @required
@@ -12062,7 +12886,7 @@ class _$PlaceholdersLoadedSCS implements PlaceholdersLoadedSCS {
     assert(seriesCoverDeletedSCS != null);
     assert(seriesCoverUploadedSCS != null);
     assert(seriesDeletedSCS != null);
-    assert(seriesListLoadedSCS != null);
+    assert(seriesMinifiedListLoadedSCS != null);
     assert(seriesLoadedSCS != null);
     assert(seriesPublishedSCS != null);
     assert(seriesStatsCountLoadedSCS != null);
@@ -12075,7 +12899,8 @@ class _$PlaceholdersLoadedSCS implements PlaceholdersLoadedSCS {
     assert(chapterCoverDeletedSCS != null);
     assert(chapterCoverUploadedSCS != null);
     assert(chapterDeletedSCS != null);
-    assert(chapterListLoadedSCS != null);
+    assert(chapterMinifiedListLoadedSCS != null);
+    assert(chapterMinifiedLoadedSCS != null);
     assert(chapterLoadedSCS != null);
     assert(chapterPublishedSCS != null);
     assert(chapterStatsCountLoadedSCS != null);
@@ -12105,7 +12930,7 @@ class _$PlaceholdersLoadedSCS implements PlaceholdersLoadedSCS {
     Result seriesCoverDeletedSCS(SeriesCoverDeletedSCS value),
     Result seriesCoverUploadedSCS(SeriesCoverUploadedSCS value),
     Result seriesDeletedSCS(SeriesDeletedSCS value),
-    Result seriesListLoadedSCS(SeriesListLoadedSCS value),
+    Result seriesMinifiedListLoadedSCS(SeriesMinifiedListLoadedSCS value),
     Result seriesLoadedSCS(SeriesLoadedSCS value),
     Result seriesPublishedSCS(SeriesPublishedSCS value),
     Result seriesStatsCountLoadedSCS(SeriesStatsCountLoadedSCS value),
@@ -12118,7 +12943,8 @@ class _$PlaceholdersLoadedSCS implements PlaceholdersLoadedSCS {
     Result chapterCoverDeletedSCS(ChapterCoverDeletedSCS value),
     Result chapterCoverUploadedSCS(ChapterCoverUploadedSCS value),
     Result chapterDeletedSCS(ChapterDeletedSCS value),
-    Result chapterListLoadedSCS(ChapterListLoadedSCS value),
+    Result chapterMinifiedListLoadedSCS(ChapterMinifiedListLoadedSCS value),
+    Result chapterMinifiedLoadedSCS(ChapterMinifiedLoadedSCS value),
     Result chapterLoadedSCS(ChapterLoadedSCS value),
     Result chapterPublishedSCS(ChapterPublishedSCS value),
     Result chapterStatsCountLoadedSCS(ChapterStatsCountLoadedSCS value),

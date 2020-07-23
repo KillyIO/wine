@@ -5,7 +5,7 @@ abstract class SeriesDatabaseState with _$SeriesDatabaseState {
   const factory SeriesDatabaseState({
     @required bool isBookmarked,
     @required bool isLiked,
-    @required Chapter chapterOne,
+    @required ChapterMinified chapterOneMinified,
     @required int bookmarksCount,
     @required int likesCount,
     @required int viewsCount,
@@ -14,11 +14,13 @@ abstract class SeriesDatabaseState with _$SeriesDatabaseState {
     @required Option<Either<DatabaseFailure, DatabaseSuccess>> databaseFailureOrSuccessOption,
     @required Series series,
     @required Session session,
+    @required User author,
   }) = _SeriesDatabaseState;
 
   factory SeriesDatabaseState.initial() => SeriesDatabaseState(
+        author: User(),
         bookmarksCount: 0,
-        chapterOne: Chapter(),
+        chapterOneMinified: ChapterMinified(),
         databaseFailureOrSuccessOption: none(),
         genresMap: <String, String>{},
         isBookmarked: false,

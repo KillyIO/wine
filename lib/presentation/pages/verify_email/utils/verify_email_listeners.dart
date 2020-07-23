@@ -1,9 +1,9 @@
-import 'package:flutter/widgets.dart';
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:wine/application/authentication/create_account/create_account_authentication_bloc.dart';
-import 'package:wine/presentation/widgets/wine_error_dialog.dart';
-import 'package:wine/presentation/widgets/wine_info_dialog.dart';
-import 'package:wine/presentation/widgets/wine_show_dialog.dart';
+import 'package:wine/presentation/widgets/dialog/wine_error_dialog.dart';
+import 'package:wine/presentation/widgets/dialog/wine_info_dialog.dart';
+import 'package:wine/presentation/widgets/dialog/wine_show_dialog.dart';
 
 class VerifyEmailListeners {
   BlocListener<CreateAccountAuthenticationBloc, CreateAccountAuthenticationState> _authListener() =>
@@ -17,7 +17,7 @@ class VerifyEmailListeners {
                   context: context,
                   builder: (_) => WINEErrorDialog(
                     message: 'An unexpected error occured!',
-                    onPressed: () => Navigator.of(context).pop(true),
+                    onPressed: () async => ExtendedNavigator.of(context).pop<bool>(true),
                   ),
                 ),
                 orElse: () => null,
@@ -28,7 +28,7 @@ class VerifyEmailListeners {
                   builder: (_) => WINEInfoDialog(
                     message: 'A new verification email has been sent to your email address.',
                     buttonText: 'GOT IT!',
-                    onPressed: () => Navigator.of(context).pop(true),
+                    onPressed: () async => ExtendedNavigator.of(context).pop<bool>(true),
                   ),
                 ),
                 orElse: () => null,

@@ -12,7 +12,7 @@ class HomeNewSeriesLayout extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<HomeDatabaseBloc, HomeDatabaseState>(
       builder: (context, homeDbState) {
-        if (homeDbState.newSeries.isEmpty) {
+        if (homeDbState.newSeriesMinified.isEmpty) {
           return HomeNoSeriesFoundLayout(
             language: homeDbState.languagesMap[homeDbState.languageFilterKey],
             time: homeDbState.timesMap[homeDbState.timeFilterKey],
@@ -24,10 +24,10 @@ class HomeNewSeriesLayout extends StatelessWidget {
           child: StaggeredGridView.count(
             physics: const NeverScrollableScrollPhysics(),
             crossAxisCount: 3,
-            staggeredTiles: _homeMethods.generateStaggeredTiles(homeDbState.newSeries),
+            staggeredTiles: _homeMethods.generateStaggeredTiles(homeDbState.newSeriesMinified),
             crossAxisSpacing: 20.0,
             shrinkWrap: true,
-            children: _homeMethods.generateTiles(homeDbState.topSeries),
+            children: _homeMethods.generateTiles(homeDbState.topSeriesMinified),
           ),
         );
       },

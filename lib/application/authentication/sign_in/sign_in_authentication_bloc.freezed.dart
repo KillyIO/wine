@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named
+// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
 
 part of 'sign_in_authentication_bloc.dart';
 
@@ -12,22 +12,26 @@ T _$identity<T>(T value) => value;
 class _$SignInAuthenticationEventTearOff {
   const _$SignInAuthenticationEventTearOff();
 
+// ignore: unused_element
   EmailChangedEVT emailChangedEVT(String emailStr) {
     return EmailChangedEVT(
       emailStr,
     );
   }
 
+// ignore: unused_element
   PasswordChangedEVT passwordChangedEVT(String passwordStr) {
     return PasswordChangedEVT(
       passwordStr,
     );
   }
 
+// ignore: unused_element
   SignInWithEmailAndPasswordPressedEVT signInWithEmailAndPasswordPressedEVT() {
     return const SignInWithEmailAndPasswordPressedEVT();
   }
 
+// ignore: unused_element
   SignInWithGooglePressedEVT signInWithGooglePressedEVT() {
     return const SignInWithGooglePressedEVT();
   }
@@ -565,6 +569,7 @@ abstract class SignInWithGooglePressedEVT implements SignInAuthenticationEvent {
 class _$SignInAuthenticationStateTearOff {
   const _$SignInAuthenticationStateTearOff();
 
+// ignore: unused_element
   _SignInAuthenticationState call(
       {@required
           bool isSubmitting,

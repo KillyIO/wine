@@ -1,4 +1,5 @@
 import 'package:after_layout/after_layout.dart';
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:swipe_gesture_recognizer/swipe_gesture_recognizer.dart';
@@ -30,13 +31,13 @@ class _HomeLayoutState extends State<HomeLayout> with AfterLayoutMixin {
   @override
   void initState() {
     super.initState();
-    _homeNavMethods = HomeNavigationMethods(context);
+    _homeDbMethods = HomeDatabaseMethods(context);
     _homeNavMethods = HomeNavigationMethods(context);
   }
 
   @override
   void afterFirstLayout(BuildContext context) {
-    context.bloc<HomeDatabaseBloc>().add(const HomeDatabaseEvent.homePageLaunchedEVT());
+    context.bloc<HomeDatabaseBloc>().add(HomeDatabaseEvent.homePageLaunchedEVT(context: context));
     context.bloc<HomeNavigationBloc>().add(HomeNavigationEvent.homePageLaunchedEVT(context: context));
   }
 
@@ -58,7 +59,7 @@ class _HomeLayoutState extends State<HomeLayout> with AfterLayoutMixin {
             builder: (context, homeNavState) {
               return WillPopScope(
                 onWillPop: () async {
-                  final bool canPop = Navigator.of(context).canPop();
+                  final bool canPop = ExtendedNavigator.root.canPop();
 
                   if (homeNavState.isLeftDrawerOpen) {
                     _homeNavMethods.closeDrawer(isRight: false);

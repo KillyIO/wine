@@ -22,12 +22,20 @@ class SettingsAppVersion extends StatelessWidget {
               padding: const EdgeInsets.only(bottom: 5.0),
               child: Text(
                 '${settingsOutlierState.appName} v${settingsOutlierState.appVersion}',
-                style: TextStyle(color: Colors.black, fontSize: 15.0, fontWeight: FontWeight.w300),
+                style: TextStyle(
+                  color: Colors.black,
+                  fontSize: 15.0,
+                  fontWeight: FontWeight.w300,
+                ),
               ),
             ),
             Text(
               'Made in Montpellier',
-              style: TextStyle(color: Colors.black, fontSize: 15.0, fontWeight: FontWeight.w300),
+              style: TextStyle(
+                color: Colors.black,
+                fontSize: 15.0,
+                fontWeight: FontWeight.w300,
+              ),
             ),
           ],
         );

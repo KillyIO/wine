@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:wine/application/database/new_series/new_series_database_bloc.dart';
-import 'package:wine/domain/models/hive/series_draft.dart';
 import 'package:wine/presentation/pages/new_series/utils/new_series_database_methods.dart';
 import 'package:wine/presentation/pages/new_series/utils/new_series_database_validators.dart';
 import 'package:wine/presentation/pages/new_series/utils/new_series_listeners.dart';
@@ -11,12 +10,7 @@ import 'package:wine/presentation/widgets/wine_leading_image_button.dart';
 import 'package:wine/presentation/widgets/wine_loading_screen.dart';
 
 class NewSeriesFormLayout extends StatefulWidget {
-  final SeriesDraft seriesDraft;
-
-  const NewSeriesFormLayout({
-    Key key,
-    this.seriesDraft,
-  }) : super(key: key);
+  const NewSeriesFormLayout({Key key}) : super(key: key);
 
   @override
   _NewSeriesFormLayoutState createState() => _NewSeriesFormLayoutState();

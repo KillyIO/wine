@@ -5,7 +5,7 @@ import 'package:wine/domain/models/user.dart';
 
 abstract class IOnlineUserDatabaseFacade {
   // SECTION USER
-  Future<Either<DatabaseFailure, DatabaseSuccess>> saveDetailsFromUser(User user);
   Future<Either<DatabaseFailure, DatabaseSuccess>> loadUser(String sessionUid);
   Future<Either<DatabaseFailure, DatabaseSuccess>> loadUsersAsMapByUidList(List<String> userUids);
+  Future<Either<DatabaseFailure, DatabaseSuccess>> saveDetailsFromUser(User user);
 }

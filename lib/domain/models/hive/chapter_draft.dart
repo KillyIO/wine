@@ -180,4 +180,38 @@ class ChapterDraft extends HiveObject {
         genreOptional.hashCode ^
         coverUrl.hashCode;
   }
+
+  bool get isEmpty {
+    return uid == null &&
+        seriesUid == null &&
+        previousChapterUid == null &&
+        authorUid == null &&
+        title == null &&
+        story == null &&
+        index == null &&
+        language == null &&
+        copyrights == null &&
+        isNSFW == null &&
+        isEnd == null &&
+        genre == null &&
+        genreOptional == null &&
+        coverUrl == null;
+  }
+
+  bool get isNotEmpty {
+    return uid != null &&
+        seriesUid != null &&
+        previousChapterUid != null &&
+        authorUid != null &&
+        title != null &&
+        story != null &&
+        index != null &&
+        language != null &&
+        copyrights != null &&
+        isNSFW != null &&
+        isEnd != null &&
+        genre != null &&
+        genreOptional != null &&
+        coverUrl != null;
+  }
 }

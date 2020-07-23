@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named
+// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
 
 part of 'account_navigation_bloc.dart';
 
@@ -12,6 +12,7 @@ T _$identity<T>(T value) => value;
 class _$AccountNavigationEventTearOff {
   const _$AccountNavigationEventTearOff();
 
+// ignore: unused_element
   AccountPageLaunchedEVT accountPageLaunchedEVT(
       {@required BuildContext context}) {
     return AccountPageLaunchedEVT(
@@ -19,16 +20,19 @@ class _$AccountNavigationEventTearOff {
     );
   }
 
+// ignore: unused_element
   PageViewIndexChangedEVT pageViewIndexChangedEVT(int index) {
     return PageViewIndexChangedEVT(
       index,
     );
   }
 
+// ignore: unused_element
   ResetBlocEVT resetBlocEVT() {
     return const ResetBlocEVT();
   }
 
+// ignore: unused_element
   VerticalNavbarIndexChangedEVT verticalNavbarIndexChangedEVT(int index) {
     return VerticalNavbarIndexChangedEVT(
       index,
@@ -622,6 +626,7 @@ abstract class VerticalNavbarIndexChangedEVT implements AccountNavigationEvent {
 class _$AccountNavigationStateTearOff {
   const _$AccountNavigationStateTearOff();
 
+// ignore: unused_element
   _AccountNavigationState call(
       {@required int currentPageViewIdx,
       @required int currentVerticalNavbarIdx,

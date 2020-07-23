@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named
+// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
 
 part of 'new_series_database_bloc.dart';
 
@@ -12,48 +12,57 @@ T _$identity<T>(T value) => value;
 class _$NewSeriesDatabaseEventTearOff {
   const _$NewSeriesDatabaseEventTearOff();
 
+// ignore: unused_element
   AddCoverPressedEVT addCoverPressedEVT() {
     return const AddCoverPressedEVT();
   }
 
+// ignore: unused_element
   ChapterDraftDeletedEVT chapterDraftDeletedEVT() {
     return const ChapterDraftDeletedEVT();
   }
 
+// ignore: unused_element
   DeleteDraftButtonPressedEVT deleteDraftButtonPressedEVT() {
     return const DeleteDraftButtonPressedEVT();
   }
 
+// ignore: unused_element
   EditModeLaunchedEVT editModeLaunchedEVT(SeriesDraft seriesDraft) {
     return EditModeLaunchedEVT(
       seriesDraft,
     );
   }
 
+// ignore: unused_element
   GenreOptionalSelectedEVT genreOptionalSelectedEVT(String genreOptional) {
     return GenreOptionalSelectedEVT(
       genreOptional,
     );
   }
 
+// ignore: unused_element
   GenreSelectedEVT genreSelectedEVT(String genre) {
     return GenreSelectedEVT(
       genre,
     );
   }
 
+// ignore: unused_element
   IsNSFWChangedEVT isNSFWChangedEVT({@required bool isNSFW}) {
     return IsNSFWChangedEVT(
       isNSFW: isNSFW,
     );
   }
 
+// ignore: unused_element
   LanguageSelectedEVT languageSelectedEVT(String language) {
     return LanguageSelectedEVT(
       language,
     );
   }
 
+// ignore: unused_element
   NewSeriesPageLaunchedEVT newSeriesPageLaunchedEVT(
       {SeriesDraft seriesDraft, @required BuildContext context}) {
     return NewSeriesPageLaunchedEVT(
@@ -62,10 +71,12 @@ class _$NewSeriesDatabaseEventTearOff {
     );
   }
 
+// ignore: unused_element
   SaveSeriesDraftButtonPressedEVT saveSeriesDraftButtonPressedEVT() {
     return const SaveSeriesDraftButtonPressedEVT();
   }
 
+// ignore: unused_element
   SessionFetchedEVT sessionFetchedEVT(
       {@required Session session, @required SeriesDraft seriesDraft}) {
     return SessionFetchedEVT(
@@ -74,18 +85,21 @@ class _$NewSeriesDatabaseEventTearOff {
     );
   }
 
+// ignore: unused_element
   SubtitleChangedEVT subtitleChangedEVT(String subtitle) {
     return SubtitleChangedEVT(
       subtitle,
     );
   }
 
+// ignore: unused_element
   SummaryChangedEVT summaryChangedEVT(String summary) {
     return SummaryChangedEVT(
       summary,
     );
   }
 
+// ignore: unused_element
   TitleChangedEVT titleChangedEVT(String title) {
     return TitleChangedEVT(
       title,
@@ -2990,6 +3004,7 @@ abstract class TitleChangedEVT implements NewSeriesDatabaseEvent {
 class _$NewSeriesDatabaseStateTearOff {
   const _$NewSeriesDatabaseStateTearOff();
 
+// ignore: unused_element
   _NewSeriesDatabaseState call(
       {@required
           bool isCreatingOrDeleting,

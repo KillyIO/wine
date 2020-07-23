@@ -22,12 +22,10 @@ class CoreAuthenticationBloc extends Bloc<CoreAuthenticationEvent, CoreAuthentic
     yield* event.map(
       appLaunchedEVT: (event) async* {
         final bool isAnonymous = await _authenticationFacade.isAnonymous();
-
         yield state.copyWith(isAnonymous: isAnonymous);
       },
       userStatusChangedEVT: (event) async* {
         final bool isAnonymous = await _authenticationFacade.isAnonymous();
-
         yield state.copyWith(isAnonymous: isAnonymous);
       },
     );

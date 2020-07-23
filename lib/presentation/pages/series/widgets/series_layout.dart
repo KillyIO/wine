@@ -1,30 +1,23 @@
-import 'package:after_layout/after_layout.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:wine/application/database/series/series_database_bloc.dart';
 import 'package:wine/presentation/pages/series/utils/series_database_methods.dart';
 import 'package:wine/presentation/pages/series/utils/series_listeners.dart';
 import 'package:wine/presentation/pages/series/widgets/series_app_bar.dart';
+import 'package:wine/presentation/pages/series/widgets/series_chapter_one.dart';
 import 'package:wine/presentation/pages/series/widgets/series_details.dart';
-import 'package:wine/presentation/pages/series/widgets/series_summary.dart';
-import 'package:wine/presentation/widgets/wine_button.dart';
-import 'package:wine/presentation/widgets/wine_genre_container.dart';
-import 'package:wine/utils/arguments.dart';
-import 'package:wine/utils/extensions.dart';
+import 'package:wine/presentation/pages/series/widgets/series_genres.dart';
+import 'package:wine/presentation/pages/series/widgets/series_resume.dart';
+import 'package:wine/presentation/pages/series/widgets/series_summary_layout.dart';
 
 class SeriesLayout extends StatefulWidget {
-  final SeriesPageArgs args;
-
-  const SeriesLayout({
-    Key key,
-    @required this.args,
-  }) : super(key: key);
+  const SeriesLayout({Key key}) : super(key: key);
 
   @override
   _SeriesLayoutState createState() => _SeriesLayoutState();
 }
 
-class _SeriesLayoutState extends State<SeriesLayout> with AfterLayoutMixin {
+class _SeriesLayoutState extends State<SeriesLayout> {
   SeriesDatabaseMethods _seriesDbMethods;
   final SeriesListeners _seriesListeners = SeriesListeners();
 
@@ -32,11 +25,6 @@ class _SeriesLayoutState extends State<SeriesLayout> with AfterLayoutMixin {
   void initState() {
     super.initState();
     _seriesDbMethods = SeriesDatabaseMethods(context);
-  }
-
-  @override
-  void afterFirstLayout(BuildContext context) {
-    _seriesDbMethods.seriesPageLaunched(widget.args.series);
   }
 
   @override
@@ -56,30 +44,25 @@ class _SeriesLayoutState extends State<SeriesLayout> with AfterLayoutMixin {
             body: SafeArea(
               child: SingleChildScrollView(
                 child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: <Widget>[
                     const SizedBox(height: 20),
-                    SeriesDetails(series: widget.args.series, state: seriesDbState),
-                    SeriesSummary(summary: widget.args.series.summary),
-                    Row(
-                      children: <Widget>[
-                        const SizedBox(width: 20),
-                        WINEGenreContainer(seriesDbState.genresMap[widget.args.series.genre]),
-                        const SizedBox(width: 15),
-                        if (widget.args.series.genreOptional.isNotEmptyOrNull)
-                          WINEGenreContainer(seriesDbState.genresMap[widget.args.series.genreOptional]),
-                        const SizedBox(width: 20),
-                      ],
+                    SeriesDetails(seriesDbState: seriesDbState),
+                    const SizedBox(height: 20),
+                    SeriesSummaryLayout(seriesDbState: seriesDbState),
+                    const SizedBox(height: 20),
+                    SeriesGenres(
+                      genre: seriesDbState.genresMap[seriesDbState.series.genre],
+                      genreOptional: seriesDbState.genresMap[seriesDbState.series.genreOptional],
                     ),
                     const SizedBox(height: 50),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 15.0),
-                      child: WINEButton(
-                        title: 'READ FIRST CHAPTER',
-                        onPressed: _seriesDbMethods.readChapterOneButtonPressed,
-                        fontSize: 18.0,
-                        hasRoundedCorners: true,
-                      ),
+                    SeriesChapterOne(
+                      chapterMinified: seriesDbState.chapterOneMinified,
+                      authorUsername: seriesDbState.author.username,
+                      seriesTitle: seriesDbState.series.title,
                     ),
+                    const SizedBox(height: 50),
+                    SeriesResume(),
                     const SizedBox(height: 20),
                   ],
                 ),

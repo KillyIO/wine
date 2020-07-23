@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -13,9 +14,9 @@ class NewChapterDatabaseMethods {
   void addCoverPressed() =>
       context.bloc<NewChapterDatabaseBloc>().add(const NewChapterDatabaseEvent.addCoverPressedEVT());
 
-  void deleteDraft() {
+  Future<void> deleteDraft() async {
     context.bloc<NewChapterDatabaseBloc>().add(const NewChapterDatabaseEvent.deleteDraftButtonPressedEVT());
-    Navigator.of(context).pop(true);
+    ExtendedNavigator.of(context).pop<bool>(true);
   }
 
   void isEndChanged({@required bool value}) =>
@@ -25,7 +26,7 @@ class NewChapterDatabaseMethods {
       context.bloc<NewChapterDatabaseBloc>().add(NewChapterDatabaseEvent.isNSFWChangedEVT(isNSFW: value));
 
   Future<bool> onWillPop() async {
-    final bool canPop = Navigator.of(context).canPop();
+    final bool canPop = ExtendedNavigator.root.canPop();
 
     if (canPop) {
       saveOrBackButtonPressed();
@@ -41,7 +42,7 @@ class NewChapterDatabaseMethods {
     context.bloc<NewChapterDatabaseBloc>().add(const NewChapterDatabaseEvent.saveOrBackButtonPressedEVT());
   }
 
-  void selector(String value, String field) {
+  Future<void> selector(String value, String field) async {
     switch (field) {
       case 'genre':
         context.bloc<NewChapterDatabaseBloc>().add(NewChapterDatabaseEvent.genreSelectedEVT(value));
@@ -56,7 +57,7 @@ class NewChapterDatabaseMethods {
         context.bloc<NewChapterDatabaseBloc>().add(NewChapterDatabaseEvent.copyrightsSelectedEVT(value));
         break;
     }
-    Navigator.of(context).pop(true);
+    ExtendedNavigator.of(context).pop<bool>(true);
   }
 
   void storyChanged(String value) =>

@@ -24,10 +24,13 @@ class NewSeriesPage extends StatelessWidget {
         providers: [
           BlocProvider(
             create: (context) => getIt<NewSeriesDatabaseBloc>()
-              ..add(NewSeriesDatabaseEvent.newSeriesPageLaunchedEVT(seriesDraft: seriesDraft, context: context)),
+              ..add(NewSeriesDatabaseEvent.newSeriesPageLaunchedEVT(
+                context: context,
+                seriesDraft: seriesDraft,
+              )),
           ),
         ],
-        child: NewSeriesFormLayout(seriesDraft: seriesDraft),
+        child: const NewSeriesFormLayout(),
       ),
     );
   }

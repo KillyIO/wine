@@ -3,8 +3,8 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:wine/application/database/new_series/new_series_database_bloc.dart';
-import 'package:wine/presentation/widgets/wine_info_dialog.dart';
-import 'package:wine/presentation/widgets/wine_show_dialog.dart';
+import 'package:wine/presentation/widgets/dialog/wine_info_dialog.dart';
+import 'package:wine/presentation/widgets/dialog/wine_show_dialog.dart';
 
 class NewSeriesDatabaseMethods {
   final BuildContext context;
@@ -14,7 +14,7 @@ class NewSeriesDatabaseMethods {
   void addCoverPressed() =>
       context.bloc<NewSeriesDatabaseBloc>().add(const NewSeriesDatabaseEvent.addCoverPressedEVT());
 
-  void backButtonPressed({@required bool isEditMode}) {
+  Future<void> backButtonPressed({@required bool isEditMode}) async {
     FocusScope.of(context).requestFocus(FocusNode());
     if (isEditMode) {
       context.bloc<NewSeriesDatabaseBloc>().add(const NewSeriesDatabaseEvent.saveSeriesDraftButtonPressedEVT());
@@ -23,7 +23,7 @@ class NewSeriesDatabaseMethods {
     }
   }
 
-  void deleteDraft() {
+  Future<void> deleteDraft() async {
     context.bloc<NewSeriesDatabaseBloc>().add(const NewSeriesDatabaseEvent.deleteDraftButtonPressedEVT());
     ExtendedNavigator.root.pop();
   }
@@ -32,7 +32,7 @@ class NewSeriesDatabaseMethods {
       context.bloc<NewSeriesDatabaseBloc>().add(NewSeriesDatabaseEvent.isNSFWChangedEVT(isNSFW: value));
 
   Future<bool> onWillPop() async {
-    final bool canPop = Navigator.of(context).canPop();
+    final bool canPop = ExtendedNavigator.root.canPop();
 
     if (canPop) {
       FocusScope.of(context).requestFocus(FocusNode());
@@ -58,7 +58,7 @@ class NewSeriesDatabaseMethods {
     }
   }
 
-  void selector(String value, String field) {
+  Future<void> selector(String value, String field) async {
     switch (field) {
       case 'genre':
         context.bloc<NewSeriesDatabaseBloc>().add(NewSeriesDatabaseEvent.genreSelectedEVT(value));

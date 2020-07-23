@@ -1,19 +1,17 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:wine/application/database/account/account_database_bloc.dart';
-import 'package:wine/domain/models/chapter.dart';
-import 'package:wine/domain/models/user.dart';
-import 'package:wine/presentation/widgets/wine_chapter_tile.dart';
-import 'package:wine/routes.dart';
-import 'package:wine/utils/arguments.dart';
-import 'package:wine/utils/constants.dart';
+import 'package:wine/domain/models/chapter_minified.dart';
+import 'package:wine/presentation/routes/router.gr.dart';
+import 'package:wine/presentation/widgets/chapter_tile/wine_chapter_tile.dart';
 
 class AccountMyPublishedChaptersLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocBuilder<AccountDatabaseBloc, AccountDatabaseState>(
       builder: (context, acDbState) {
-        if (acDbState.series.isEmpty) {
+        if (acDbState.chaptersMinified.isEmpty) {
           return Center(
             child: Column(
               mainAxisSize: MainAxisSize.min,
@@ -31,21 +29,19 @@ class AccountMyPublishedChaptersLayout extends StatelessWidget {
         return ScrollConfiguration(
           behavior: const ScrollBehavior(),
           child: ListView.builder(
-            itemCount: acDbState.chapters.length,
+            itemCount: acDbState.chaptersMinified.length,
             itemBuilder: (BuildContext context, int index) {
-              final Chapter chapter = acDbState.chapters[index];
-              chapter.author = User.fromMap(acDbState.session.toMap());
+              final ChapterMinified chapterMinified = acDbState.chaptersMinified[index];
 
               return Padding(
                 padding: EdgeInsets.only(top: index == 0 ? 10.0 : 0.0),
                 child: WINEChapterTile(
-                  coverUrl: chapter.coverUrl,
-                  title: chapter.title,
-                  authorName: acDbState.session.username,
-                  seriesTitle: chapter.series.title,
-                  onPressed: () => sailor.navigate(
-                    Constants.chapterRoute,
-                    args: ChapterPageArgs(chapter: chapter, predicateRoute: Constants.accountRoute),
+                  coverUrl: chapterMinified.coverUrl,
+                  title: chapterMinified.title,
+                  authorUsername: acDbState.session.username,
+                  onPressed: () async => ExtendedNavigator.root.push(
+                    Routes.chapterPage,
+                    arguments: ChapterPageArguments(chapterUid: chapterMinified.uid),
                   ),
                 ),
               );
