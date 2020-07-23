@@ -5,7 +5,6 @@ import 'package:dartz/dartz.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/widgets.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:hive/hive.dart';
 import 'package:injectable/injectable.dart';
 import 'package:meta/meta.dart';
 import 'package:wine/domain/database/database_failure.dart';
@@ -13,12 +12,9 @@ import 'package:wine/domain/database/database_success.dart';
 import 'package:wine/domain/database/i_local_session_database_facade.dart';
 import 'package:wine/domain/database/i_online_chapter_database_facade.dart';
 import 'package:wine/domain/database/i_online_series_database_facade.dart';
-import 'package:wine/domain/models/chapter.dart';
-import 'package:wine/domain/models/hive/chapter_draft.dart';
-import 'package:wine/domain/models/hive/series_draft.dart';
+import 'package:wine/domain/models/chapter_minified.dart';
 import 'package:wine/domain/models/hive/session.dart';
-import 'package:wine/domain/models/series.dart';
-import 'package:wine/injection.dart';
+import 'package:wine/domain/models/series_minified.dart';
 import 'package:wine/utils/methods.dart';
 
 part 'account_database_event.dart';
@@ -66,91 +62,66 @@ class AccountDatabaseBloc extends Bloc<AccountDatabaseEvent, AccountDatabaseStat
           databaseFailureOrSuccessOption: optionOf(failureOrSuccess),
         );
       },
-      chaptersLoadedEVT: (event) async* {
-        final List<String> seriesUids =
-            getIt<Box<ChapterDraft>>().values.toList().map((chapterDraft) => chapterDraft.seriesUid).toList();
+      chapterTileHeldEVT: (event) async* {},
+      loadMoreSeriesMinifiedEVT: (event) async* {
+        final List<SeriesMinified> seriesMinified = state.seriesMinified;
 
-        if (seriesUids.isNotEmpty) {
-          Map<String, Series> seriesMap = <String, Series>{};
-
-          final Either<DatabaseFailure, DatabaseSuccess> failureOrSuccess =
-              await _onlineSeriesDatabaseFacade.loadSeriesAsMapByUidList(seriesUids);
-          failureOrSuccess.fold(
-            (_) {},
-            (success) {
-              if (success is SeriesAsMapLoadedSCS) {
-                seriesMap = success.seriesMap;
-                add(const AccountDatabaseEvent.seriesAsMapLoadedEVT());
-              }
-            },
-          );
-
-          yield state.copyWith(
-            databaseFailureOrSuccessOption: optionOf(failureOrSuccess),
-            isFetching: false,
-            seriesMap: seriesMap,
-          );
-        }
-      },
-      loadMoreSeriesEVT: (event) async* {
-        final List<Series> series = state.series;
-
-        final Either<DatabaseFailure, DatabaseSuccess> failureOrSuccess =
-            await _onlineSeriesDatabaseFacade.loadSeriesByUserId(state.session.uid, lastSeries: series.last);
+        final Either<DatabaseFailure, DatabaseSuccess> failureOrSuccess = await _onlineSeriesDatabaseFacade
+            .loadSeriesMinifiedByUserUid(state.session.uid, lastSeriesMinified: seriesMinified.last);
         failureOrSuccess.fold(
           (_) {},
           (success) {
-            if (success is SeriesListLoadedSCS) {
-              series.addAll(success.series);
+            if (success is SeriesMinifiedListLoadedSCS) {
+              seriesMinified.addAll(success.seriesMinified);
             }
           },
         );
 
-        yield state.copyWith(databaseFailureOrSuccessOption: optionOf(failureOrSuccess), series: series);
+        yield state.copyWith(
+          databaseFailureOrSuccessOption: optionOf(failureOrSuccess),
+          seriesMinified: seriesMinified,
+        );
       },
-      loadMoreChaptersEVT: (event) async* {},
-      seriesLoadedEVT: (event) async* {
-        final List<Chapter> chapters = <Chapter>[];
+      loadMoreChaptersMinifiedEVT: (event) async* {},
+      seriesMinifiedLoadedEVT: (event) async* {
+        final List<ChapterMinified> chaptersMinified = <ChapterMinified>[];
 
         final Either<DatabaseFailure, DatabaseSuccess> failureOrSuccess =
-            await _onlineChapterDatabaseFacade.loadChaptersByUserId(state.session.uid, loadSeries: true);
+            await _onlineChapterDatabaseFacade.loadChaptersMinifiedByUserUid(state.session.uid);
         failureOrSuccess.fold(
           (_) {},
           (success) {
-            if (success is ChapterListLoadedSCS) {
-              chapters.addAll(success.chapters);
-              add(const AccountDatabaseEvent.chaptersLoadedEVT());
+            if (success is ChapterMinifiedListLoadedSCS) {
+              chaptersMinified.addAll(success.chaptersMinified);
             }
           },
         );
 
-        yield state.copyWith(databaseFailureOrSuccessOption: optionOf(failureOrSuccess), chapters: chapters);
-      },
-      seriesAsMapLoadedEVT: (event) async* {
-        final List<SeriesDraft> seriesDraftsList = getIt<Box<SeriesDraft>>().values.toList();
-
-        final Map<String, SeriesDraft> seriesDraftsMap = {
-          for (final SeriesDraft seriesDraft in seriesDraftsList) seriesDraft.uid: seriesDraft,
-        };
-
-        yield state.copyWith(seriesDraftsMap: seriesDraftsMap);
+        yield state.copyWith(
+          chaptersMinified: chaptersMinified,
+          databaseFailureOrSuccessOption: optionOf(failureOrSuccess),
+          isFetching: false,
+        );
       },
       sessionFetchedEVT: (event) async* {
-        final List<Series> series = <Series>[];
+        final List<SeriesMinified> seriesMinified = <SeriesMinified>[];
 
         final Either<DatabaseFailure, DatabaseSuccess> failureOrSuccess =
-            await _onlineSeriesDatabaseFacade.loadSeriesByUserId(event.session.uid);
+            await _onlineSeriesDatabaseFacade.loadSeriesMinifiedByUserUid(event.session.uid);
         failureOrSuccess.fold(
           (_) {},
           (success) {
-            if (success is SeriesListLoadedSCS) {
-              series.addAll(success.series);
-              add(const AccountDatabaseEvent.seriesLoadedEVT());
+            if (success is SeriesMinifiedListLoadedSCS) {
+              seriesMinified.addAll(success.seriesMinified);
+              add(const AccountDatabaseEvent.seriesMinifiedLoadedEVT());
             }
           },
         );
 
-        yield state.copyWith(databaseFailureOrSuccessOption: optionOf(failureOrSuccess), series: series);
+        yield state.copyWith(
+          databaseFailureOrSuccessOption: optionOf(failureOrSuccess),
+          seriesMinified: seriesMinified,
+        );
       },
     );
   }

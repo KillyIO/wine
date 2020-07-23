@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named
+// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
 
 part of 'sign_in_database_bloc.dart';
 
@@ -12,12 +12,14 @@ T _$identity<T>(T value) => value;
 class _$SignInDatabaseEventTearOff {
   const _$SignInDatabaseEventTearOff();
 
+// ignore: unused_element
   SignedInEVT signedInEVT(User user) {
     return SignedInEVT(
       user,
     );
   }
 
+// ignore: unused_element
   UserDetailsSavedEVT userDetailsSavedEVT(User user) {
     return UserDetailsSavedEVT(
       user,
@@ -317,6 +319,7 @@ abstract class UserDetailsSavedEVT implements SignInDatabaseEvent {
 class _$SignInDatabaseStateTearOff {
   const _$SignInDatabaseStateTearOff();
 
+// ignore: unused_element
   _SignInDatabaseState call(
       {@required
           bool isUpdating,

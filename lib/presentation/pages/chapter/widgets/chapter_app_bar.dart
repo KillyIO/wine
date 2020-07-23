@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:time/time.dart';
 
@@ -32,7 +33,7 @@ class ChapterAppBar extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 5.0),
             child: WINELeadingImageButton(
               imagePath: 'assets/img/back_button.png',
-              onPressed: () => Navigator.of(context).pop(),
+              onPressed: () async => ExtendedNavigator.root.pop(),
             ),
           ),
         ),

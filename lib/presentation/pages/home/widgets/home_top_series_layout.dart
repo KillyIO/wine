@@ -13,7 +13,7 @@ class HomeTopSeriesLayout extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<HomeDatabaseBloc, HomeDatabaseState>(
       builder: (context, homeDbState) {
-        if (homeDbState.topFiveSeries.isEmpty && homeDbState.topSeries.isEmpty) {
+        if (homeDbState.topSeriesMinified.isEmpty) {
           return HomeNoSeriesFoundLayout(
             language: homeDbState.languagesMap[homeDbState.languageFilterKey],
             time: homeDbState.timesMap[homeDbState.timeFilterKey],
@@ -21,23 +21,23 @@ class HomeTopSeriesLayout extends StatelessWidget {
         }
         return ListView(
           children: <Widget>[
-            if (homeDbState.topFiveSeries.isNotEmpty)
+            if (homeDbState.topFiveSeriesMinified.isNotEmpty)
               HomeTopFiveSeriesLayout(
-                topFiveSeries: homeDbState.topFiveSeries,
+                topFiveSeriesMinified: homeDbState.topFiveSeriesMinified,
                 genreStr: homeDbState.genresMap[homeDbState.genreFilterKey],
                 timeStr: homeDbState.timesMap[homeDbState.timeFilterKey],
               ),
             const SizedBox(height: 20),
-            if (homeDbState.topSeries.isNotEmpty)
+            if (homeDbState.topSeriesMinified.isNotEmpty)
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 19.0),
                 child: StaggeredGridView.count(
                   physics: const NeverScrollableScrollPhysics(),
                   crossAxisCount: 3,
-                  staggeredTiles: _homeMethods.generateStaggeredTiles(homeDbState.topSeries),
+                  staggeredTiles: _homeMethods.generateStaggeredTiles(homeDbState.topSeriesMinified),
                   crossAxisSpacing: 20.0,
                   shrinkWrap: true,
-                  children: _homeMethods.generateTiles(homeDbState.topSeries),
+                  children: _homeMethods.generateTiles(homeDbState.topSeriesMinified),
                 ),
               ),
             const SizedBox(height: 20),

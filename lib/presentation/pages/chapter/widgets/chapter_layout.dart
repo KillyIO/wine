@@ -1,4 +1,3 @@
-import 'package:after_layout/after_layout.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:time/time.dart';
@@ -8,44 +7,36 @@ import 'package:wine/presentation/pages/chapter/utils/chapter_database_methods.d
 import 'package:wine/presentation/pages/chapter/widgets/chapter_app_bar.dart';
 import 'package:wine/presentation/pages/chapter/widgets/chapter_menu.dart';
 import 'package:wine/presentation/pages/chapter/widgets/chapter_next_chapters.dart';
-import 'package:wine/presentation/pages/chapter/widgets/chapter_story_view.dart';
+import 'package:wine/presentation/pages/chapter/widgets/chapter_same_author.dart';
+import 'package:wine/presentation/pages/chapter/widgets/chapter_story_layout.dart';
 import 'package:wine/presentation/pages/chapter/widgets/chapter_write_next_chapter_button.dart';
-import 'package:wine/utils/arguments.dart';
 
 class ChapterLayout extends StatefulWidget {
-  final ChapterPageArgs args;
-
-  const ChapterLayout({Key key, this.args}) : super(key: key);
+  const ChapterLayout({Key key}) : super(key: key);
 
   @override
   _ChapterLayoutState createState() => _ChapterLayoutState();
 }
 
-class _ChapterLayoutState extends State<ChapterLayout> with AfterLayoutMixin {
-  ScrollController _scrollController;
+class _ChapterLayoutState extends State<ChapterLayout> {
+  final ScrollController _scrollController = ScrollController();
   ChapterDatabaseMethods _chapterDbMethods;
 
-  bool nextChaptersLoaded = false;
+  bool nextChaptersMinifiedLoaded = false;
 
   @override
   void initState() {
     super.initState();
     _chapterDbMethods = ChapterDatabaseMethods(context);
 
-    _scrollController = ScrollController();
     _scrollController.addListener(_onScroll);
   }
 
-  @override
-  void afterFirstLayout(BuildContext context) {
-    _chapterDbMethods.chapterPageLaunched(widget.args.chapter);
-  }
-
   void _onScroll() {
-    if (_scrollController.offset >= _scrollController.position.maxScrollExtent / 2 && !nextChaptersLoaded) {
+    if (_scrollController.offset >= _scrollController.position.maxScrollExtent / 2 && !nextChaptersMinifiedLoaded) {
       context.bloc<ChapterDatabaseBloc>().add(const ChapterDatabaseEvent.loadNextChaptersEVT());
       setState(() {
-        nextChaptersLoaded = true;
+        nextChaptersMinifiedLoaded = true;
       });
     }
   }
@@ -75,29 +66,45 @@ class _ChapterLayoutState extends State<ChapterLayout> with AfterLayoutMixin {
                       }
                       return false;
                     },
-                    child: ListView(
-                      controller: _scrollController,
-                      children: <Widget>[
-                        ChapterStoryView(
-                          defaultAppBarHeight: defaultAppBarHeight,
-                          chapter: widget.args.chapter,
-                          onPressed: () => _chapterDbMethods.storyPressed(
-                              showChapterAdditionalInfo: chapterDbState.showChapterAdditionalInfo),
+                    child: GestureDetector(
+                      behavior: HitTestBehavior.translucent,
+                      onTap: () => _chapterDbMethods.storyPressed(
+                        showChapterAdditionalInfo: chapterDbState.showChapterAdditionalInfo,
+                      ),
+                      child: Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 15.0),
+                        child: ListView(
+                          controller: _scrollController,
+                          children: <Widget>[
+                            ChapterStoryLayout(
+                              defaultAppBarHeight: defaultAppBarHeight,
+                              chapter: chapterDbState.chapter,
+                            ),
+                            const SizedBox(height: 50),
+                            // SECTION Write next chapter
+                            if (_chapterDbMethods.showWriteChapterButton(chapterDbState))
+                              ChapterWriteNextChapterButton(
+                                chapterDbState: chapterDbState,
+                                chapterDbMethods: _chapterDbMethods,
+                              ),
+                            ChapterSameAuthor(chapterDbState: chapterDbState),
+                            const SizedBox(height: 25),
+                            Center(
+                              child: Container(
+                                height: 3.0,
+                                width: 50.0,
+                                decoration: BoxDecoration(
+                                  color: Colors.black38,
+                                  borderRadius: BorderRadius.circular(20),
+                                ),
+                              ),
+                            ),
+                            const SizedBox(height: 25),
+                            // SECTION next chapters
+                            ChapterNextChapters(chapterDbState: chapterDbState),
+                          ],
                         ),
-                        // SECTION Write next chapter
-                        ChapterWriteNextChapterButton(
-                          chapterDbState: chapterDbState,
-                          chapterDbMethods: _chapterDbMethods,
-                          chapter: widget.args.chapter,
-                        ),
-                        // SECTION next chapters
-                        ChapterNextChapters(
-                          chapterDbState: chapterDbState,
-                          currentChapter: widget.args.chapter,
-                          onPressed: () => _chapterDbMethods.storyPressed(
-                              showChapterAdditionalInfo: chapterDbState.showChapterAdditionalInfo),
-                        ),
-                      ],
+                      ),
                     ),
                   ),
                 ),
@@ -105,14 +112,20 @@ class _ChapterLayoutState extends State<ChapterLayout> with AfterLayoutMixin {
                   child: AnimatedOpacity(
                     duration: 200.milliseconds,
                     opacity: chapterDbState.showNavbar ? .75 : 0,
-                    child: Container(width: mediaQuery.width, height: mediaQuery.height, color: Colors.black54),
+                    child: Container(
+                      width: mediaQuery.width,
+                      height: mediaQuery.height,
+                      color: Colors.black54,
+                    ),
                   ),
                 ),
-                ChapterAppBar(showNavbar: chapterDbState.showNavbar, defaultAppBarHeight: defaultAppBarHeight),
+                ChapterAppBar(
+                  showNavbar: chapterDbState.showNavbar,
+                  defaultAppBarHeight: defaultAppBarHeight,
+                ),
                 ChapterMenu(
                   chapterDbState: chapterDbState,
                   chapterDbMethods: _chapterDbMethods,
-                  chapter: widget.args.chapter,
                 ),
               ],
             ),

@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:wine/application/authentication/core/core_authentication_bloc.dart';
@@ -56,7 +57,7 @@ class SeriesAppBar extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 10.0, vertical: 5.0),
             child: WINELeadingImageButton(
               imagePath: 'assets/img/back_button.png',
-              onPressed: () => Navigator.of(context).pop(),
+              onPressed: () async => ExtendedNavigator.root.pop(),
             ),
           ),
         );

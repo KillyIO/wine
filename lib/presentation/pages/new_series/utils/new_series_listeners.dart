@@ -10,18 +10,14 @@ class NewSeriesListeners {
         () {},
         (some) => some.fold(
           (_) {},
-          (success) {
-            if (success is SeriesDraftDeletedSCS && state.isEditMode) {
+          (success) async {
+            if ((success is SeriesDraftDeletedSCS || success is SeriesDraftSavedSCS) && state.isEditMode) {
               ExtendedNavigator.root.pop();
-            } else {
-              if (success is SeriesDraftSavedSCS) {
-                ExtendedNavigator.root.pushReplacementNamed(
-                  Routes.newChapterPage,
-                  arguments: NewChapterPageArguments(
-                    seriesDraft: success.seriesDraft,
-                  ),
-                );
-              }
+            } else if (success is SeriesDraftSavedSCS && !state.isEditMode) {
+              ExtendedNavigator.root.replace(
+                Routes.newChapterPage,
+                arguments: NewChapterPageArguments(seriesDraft: success.seriesDraft),
+              );
             }
           },
         ),

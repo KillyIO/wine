@@ -3,7 +3,7 @@ import 'package:wine/presentation/widgets/wine_genre_container.dart';
 import 'package:wine/utils/extensions.dart';
 
 class ChapterAdditionalInfo extends StatelessWidget {
-  final String authorName;
+  final String authorUsername;
   final String seriesName;
   final String genre;
   final String genreOptional;
@@ -11,7 +11,7 @@ class ChapterAdditionalInfo extends StatelessWidget {
 
   const ChapterAdditionalInfo({
     Key key,
-    @required this.authorName,
+    @required this.authorUsername,
     @required this.seriesName,
     @required this.genre,
     @required this.genreOptional,
@@ -30,23 +30,42 @@ class ChapterAdditionalInfo extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
+          const SizedBox(height: 5),
           RichText(
             text: TextSpan(
               children: <TextSpan>[
-                TextSpan(text: 'Author · ', style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold)),
-                TextSpan(text: authorName),
+                TextSpan(
+                  text: 'Author · ',
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                TextSpan(text: authorUsername),
               ],
-              style: TextStyle(color: Colors.black38, fontSize: 16.0),
+              style: TextStyle(
+                color: Colors.black38,
+                fontSize: 16.0,
+              ),
             ),
           ),
           const SizedBox(height: 5),
           RichText(
             text: TextSpan(
               children: <TextSpan>[
-                TextSpan(text: 'Series · ', style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold)),
+                TextSpan(
+                  text: 'Series · ',
+                  style: TextStyle(
+                    color: Colors.black,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
                 TextSpan(text: seriesName),
               ],
-              style: TextStyle(color: Colors.black38, fontSize: 16.0),
+              style: TextStyle(
+                color: Colors.black38,
+                fontSize: 16.0,
+              ),
             ),
           ),
           const SizedBox(height: 10),
@@ -62,7 +81,13 @@ class ChapterAdditionalInfo extends StatelessWidget {
             children: <Widget>[
               Icon(Icons.copyright, color: Colors.black54),
               const SizedBox(width: 5),
-              Text(copyrights, style: TextStyle(color: Colors.black54, fontSize: 16.0)),
+              Text(
+                copyrights,
+                style: TextStyle(
+                  color: Colors.black54,
+                  fontSize: 16.0,
+                ),
+              ),
             ],
           ),
         ],

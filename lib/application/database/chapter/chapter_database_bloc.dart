@@ -6,51 +6,68 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/widgets.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
+import 'package:wine/application/database/chapter/utils/chapter_database_methods_for_public_events.dart';
+
 import 'package:wine/domain/authentication/i_authentication_facade.dart';
 import 'package:wine/domain/database/database_failure.dart';
 import 'package:wine/domain/database/database_success.dart';
 import 'package:wine/domain/database/i_local_session_database_facade.dart';
 import 'package:wine/domain/database/i_online_chapter_database_facade.dart';
+import 'package:wine/domain/database/i_online_series_database_facade.dart';
+import 'package:wine/domain/database/i_online_user_database_facade.dart';
 import 'package:wine/domain/models/chapter.dart';
+import 'package:wine/domain/models/chapter_minified.dart';
 import 'package:wine/domain/models/hive/session.dart';
+import 'package:wine/domain/models/series.dart';
+import 'package:wine/domain/models/user.dart';
 import 'package:wine/utils/methods.dart';
 
+part 'chapter_database_bloc.freezed.dart';
 part 'chapter_database_event.dart';
 part 'chapter_database_state.dart';
 
-part 'chapter_database_bloc.freezed.dart';
-
 @injectable
-class ChapterDatabaseBloc extends Bloc<ChapterDatabaseEvent, ChapterDatabaseState> {
+class ChapterDatabaseBloc extends Bloc<ChapterDatabaseEvent, ChapterDatabaseState>
+    with ChapterDatabaseMethodsForPublicEvents {
   final IAuthenticationFacade _authenticationFacade;
   final ILocalSessionDatabaseFacade _localSessionDatabaseFacade;
   final IOnlineChapterDatabaseFacade _onlineChapterDatabaseFacade;
+  final IOnlineSeriesDatabaseFacade _onlineSeriesDatabaseFacade;
+  final IOnlineUserDatabaseFacade _onlineUserDatabaseFacade;
 
   ChapterDatabaseBloc(
     this._authenticationFacade,
     this._localSessionDatabaseFacade,
     this._onlineChapterDatabaseFacade,
+    this._onlineSeriesDatabaseFacade,
+    this._onlineUserDatabaseFacade,
   ) : super(ChapterDatabaseState.initial());
 
   @override
   Stream<ChapterDatabaseState> mapEventToState(ChapterDatabaseEvent event) async* {
     yield* event.map(
-      bookmarkButtonPressedEVT: (event) async* {
-        final Either<DatabaseFailure, DatabaseSuccess> failureOrSuccess = await _onlineChapterDatabaseFacade
-            .updateChapterBookmarks(userUid: state.session.uid, chapterUid: state.chapter.uid);
+      authorLoadedEVT: (event) async* {
+        Series series;
+
+        final Either<DatabaseFailure, DatabaseSuccess> failureOrSuccess =
+            await _onlineSeriesDatabaseFacade.loadSeriesByUid(state.chapter.seriesUid);
         failureOrSuccess.fold(
           (_) {},
           (success) {
-            if (success is ChapterStatsCountUpdatedSCS) {
-              add(const ChapterDatabaseEvent.bookmarksUpdatedEVT());
+            if (success is SeriesLoadedSCS) {
+              series = success.series;
+              add(const ChapterDatabaseEvent.seriesLoadedEVT());
             }
           },
         );
 
         yield state.copyWith(
           databaseFailureOrSuccessOption: optionOf(failureOrSuccess),
-          isBookmarked: !state.isBookmarked,
+          series: series,
         );
+      },
+      bookmarkButtonPressedEVT: (event) async* {
+        yield* updateChapterBookmarks(_onlineChapterDatabaseFacade);
       },
       bookmarksUpdatedEVT: (event) async* {
         int bookmarksCount = 0;
@@ -149,28 +166,47 @@ class ChapterDatabaseBloc extends Bloc<ChapterDatabaseEvent, ChapterDatabaseStat
           likesCount: likesCount,
         );
       },
-      chapterPageLaunchedEVT: (event) async* {
-        Session session = Session();
+      chapterLoadedEVT: (event) async* {
+        User author;
 
         final Either<DatabaseFailure, DatabaseSuccess> failureOrSuccess =
-            await _localSessionDatabaseFacade.fetchSession();
+            await _onlineUserDatabaseFacade.loadUser(state.chapter.authorUid);
         failureOrSuccess.fold(
           (_) {},
           (success) {
-            if (success is SessionFetchedSCS) {
-              session = success.session;
-              add(ChapterDatabaseEvent.sessionFetchedEVT(session));
+            if (success is UserLoadedSCS) {
+              author = success.user;
+              add(const ChapterDatabaseEvent.authorLoadedEVT());
             }
           },
         );
 
         yield state.copyWith(
-          chapter: event.chapter,
+          author: author,
+          databaseFailureOrSuccessOption: optionOf(failureOrSuccess),
+        );
+      },
+      chapterPageLaunchedEVT: (event) async* {
+        Chapter chapter = Chapter();
+
+        final Either<DatabaseFailure, DatabaseSuccess> failureOrSuccess =
+            await _onlineChapterDatabaseFacade.loadChapterByUid(event.chapterUid);
+        failureOrSuccess.fold(
+          (_) {},
+          (success) {
+            if (success is ChapterLoadedSCS) {
+              chapter = success.chapter;
+              add(const ChapterDatabaseEvent.chapterLoadedEVT());
+            }
+          },
+        );
+
+        yield state.copyWith(
+          chapter: chapter,
           copyrightsMap: Methods.getCopyrights(event.context),
           databaseFailureOrSuccessOption: optionOf(failureOrSuccess),
           genresMap: Methods.getGenres(event.context),
           languagesMap: Methods.getLanguages(event.context),
-          session: session,
         );
       },
       chapterViewsLoadedEVT: (event) async* {
@@ -264,31 +300,23 @@ class ChapterDatabaseBloc extends Bloc<ChapterDatabaseEvent, ChapterDatabaseStat
         yield state.copyWith(databaseFailureOrSuccessOption: optionOf(failureOrSuccess), likesCount: likesCount);
       },
       loadNextChaptersEVT: (event) async* {
-        Chapter sameAuthorChapter = Chapter();
-        List<Chapter> nextChapters = <Chapter>[];
+        ChapterMinified sameAuthorChapterMinified = ChapterMinified();
+        List<ChapterMinified> nextChaptersMinified = <ChapterMinified>[];
 
-        final Either<DatabaseFailure, DatabaseSuccess> failureOrSuccess =
-            await _onlineChapterDatabaseFacade.loadChaptersBySeriesUidAndIndex(
-          state.chapter.seriesUid,
-          state.chapter.index + 1,
-          loadAuthors: true,
-        );
+        final Either<DatabaseFailure, DatabaseSuccess> failureOrSuccess = await _onlineChapterDatabaseFacade
+            .loadChaptersMinifiedBySeriesUidAndIndex(state.chapter.seriesUid, state.chapter.index + 1);
         failureOrSuccess.fold(
           (_) {},
           (success) {
-            if (success is ChapterListLoadedSCS) {
-              if (success.chapters.isNotEmpty) {
-                for (final Chapter chapter in success.chapters) {
-                  chapter.series = state.chapter.series;
-                }
-
-                final int sameAuthorIdx =
-                    success.chapters.indexWhere((chapter) => chapter.authorUid == state.chapter.authorUid);
+            if (success is ChapterMinifiedListLoadedSCS) {
+              if (success.chaptersMinified.isNotEmpty) {
+                final int sameAuthorIdx = success.chaptersMinified
+                    .indexWhere((chapterMinified) => chapterMinified.authorUid == state.chapter.authorUid);
 
                 if (sameAuthorIdx != -1) {
-                  sameAuthorChapter = success.chapters.removeAt(sameAuthorIdx);
+                  sameAuthorChapterMinified = success.chaptersMinified.removeAt(sameAuthorIdx);
                 }
-                nextChapters = success.chapters;
+                nextChaptersMinified = success.chaptersMinified;
               }
             }
           },
@@ -296,8 +324,8 @@ class ChapterDatabaseBloc extends Bloc<ChapterDatabaseEvent, ChapterDatabaseStat
 
         yield state.copyWith(
           databaseFailureOrSuccessOption: optionOf(failureOrSuccess),
-          nextChapters: nextChapters,
-          nextSameAuthorChapter: sameAuthorChapter,
+          nextChaptersMinified: nextChaptersMinified,
+          nextSameAuthorChapterMinified: sameAuthorChapterMinified,
         );
       },
       previousChapterButtonPressedEVT: (event) async* {},
@@ -307,6 +335,26 @@ class ChapterDatabaseBloc extends Bloc<ChapterDatabaseEvent, ChapterDatabaseStat
         yield state.copyWith(
           percentProgress: percentProgress,
           databaseFailureOrSuccessOption: none(),
+        );
+      },
+      seriesLoadedEVT: (event) async* {
+        Session session = Session();
+
+        final Either<DatabaseFailure, DatabaseSuccess> failureOrSuccess =
+            await _localSessionDatabaseFacade.fetchSession();
+        failureOrSuccess.fold(
+          (_) {},
+          (success) {
+            if (success is SessionFetchedSCS) {
+              session = success.session;
+              add(ChapterDatabaseEvent.sessionFetchedEVT(session));
+            }
+          },
+        );
+
+        yield state.copyWith(
+          databaseFailureOrSuccessOption: optionOf(failureOrSuccess),
+          session: session,
         );
       },
       sessionFetchedEVT: (event) async* {

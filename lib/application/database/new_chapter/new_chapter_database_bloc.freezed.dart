@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named
+// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
 
 part of 'new_chapter_database_bloc.dart';
 
@@ -12,14 +12,17 @@ T _$identity<T>(T value) => value;
 class _$NewChapterDatabaseEventTearOff {
   const _$NewChapterDatabaseEventTearOff();
 
+// ignore: unused_element
   AddCoverPressedEVT addCoverPressedEVT() {
     return const AddCoverPressedEVT();
   }
 
+// ignore: unused_element
   ChapterCoverDeletedEVT chapterCoverDeletedEVT() {
     return const ChapterCoverDeletedEVT();
   }
 
+// ignore: unused_element
   ChapterCoverUploadedEVT chapterCoverUploadedEVT(
       String coverUrl, ChapterDraft chapterDraft) {
     return ChapterCoverUploadedEVT(
@@ -28,32 +31,38 @@ class _$NewChapterDatabaseEventTearOff {
     );
   }
 
+// ignore: unused_element
   ChapterPublishedEVT chapterPublishedEVT(Chapter chapter) {
     return ChapterPublishedEVT(
       chapter,
     );
   }
 
+// ignore: unused_element
   CopyrightsSelectedEVT copyrightsSelectedEVT(String copyrights) {
     return CopyrightsSelectedEVT(
       copyrights,
     );
   }
 
+// ignore: unused_element
   ChapterDeletedEVT chapterDeletedEVT() {
     return const ChapterDeletedEVT();
   }
 
+// ignore: unused_element
   DeleteDraftButtonPressedEVT deleteDraftButtonPressedEVT() {
     return const DeleteDraftButtonPressedEVT();
   }
 
+// ignore: unused_element
   EditModeLaunchedEVT editModeLaunchedEVT(ChapterDraft chapterDraft) {
     return EditModeLaunchedEVT(
       chapterDraft,
     );
   }
 
+// ignore: unused_element
   FailureWhenPublishingChapterEVT failureWhenPublishingChapterEVT(
       String coverUrl) {
     return FailureWhenPublishingChapterEVT(
@@ -61,6 +70,7 @@ class _$NewChapterDatabaseEventTearOff {
     );
   }
 
+// ignore: unused_element
   FailureWhenPublishingSeriesEVT failureWhenPublishingSeriesEVT(
       {String coverUrl}) {
     return FailureWhenPublishingSeriesEVT(
@@ -68,40 +78,47 @@ class _$NewChapterDatabaseEventTearOff {
     );
   }
 
+// ignore: unused_element
   FailureWhenUploadingSeriesCoverEVT failureWhenUploadingSeriesCoverEVT() {
     return const FailureWhenUploadingSeriesCoverEVT();
   }
 
+// ignore: unused_element
   GenreOptionalSelectedEVT genreOptionalSelectedEVT(String genreOptional) {
     return GenreOptionalSelectedEVT(
       genreOptional,
     );
   }
 
+// ignore: unused_element
   GenreSelectedEVT genreSelectedEVT(String genre) {
     return GenreSelectedEVT(
       genre,
     );
   }
 
+// ignore: unused_element
   IsEndChangedEVT isEndChangedEVT({@required bool isEnd}) {
     return IsEndChangedEVT(
       isEnd: isEnd,
     );
   }
 
+// ignore: unused_element
   IsNSFWChangedEVT isNSFWChangedEVT({@required bool isNSFW}) {
     return IsNSFWChangedEVT(
       isNSFW: isNSFW,
     );
   }
 
+// ignore: unused_element
   LanguageSelectedEVT languageSelectedEVT(String language) {
     return LanguageSelectedEVT(
       language,
     );
   }
 
+// ignore: unused_element
   NewChapterPageLaunchedEVT newChapterPageLaunchedEVT(
       {@required BuildContext context,
       Chapter previousChapter,
@@ -115,31 +132,34 @@ class _$NewChapterDatabaseEventTearOff {
     );
   }
 
+// ignore: unused_element
   PlaceholderFetchedEVT placeholderFetchedEVT(
       {Chapter previousChapter,
       SeriesDraft seriesDraft,
-      @required String sessionUid,
       @required String coverUrl}) {
     return PlaceholderFetchedEVT(
       previousChapter: previousChapter,
       seriesDraft: seriesDraft,
-      sessionUid: sessionUid,
       coverUrl: coverUrl,
     );
   }
 
+// ignore: unused_element
   PublishButtonPressedEVT publishButtonPressedEVT() {
     return const PublishButtonPressedEVT();
   }
 
+// ignore: unused_element
   SaveOrBackButtonPressedEVT saveOrBackButtonPressedEVT() {
     return const SaveOrBackButtonPressedEVT();
   }
 
+// ignore: unused_element
   SeriesCoverDeletedEVT seriesCoverDeletedEVT() {
     return const SeriesCoverDeletedEVT();
   }
 
+// ignore: unused_element
   SeriesCoverUploadedEVT seriesCoverUploadedEVT(
       String coverUrl, SeriesDraft seriesDraft) {
     return SeriesCoverUploadedEVT(
@@ -148,39 +168,42 @@ class _$NewChapterDatabaseEventTearOff {
     );
   }
 
+// ignore: unused_element
   SeriesDraftDeletedEVT seriesDraftDeletedEVT() {
     return const SeriesDraftDeletedEVT();
   }
 
+// ignore: unused_element
   SeriesDraftFetchedEVT seriesDraftFetchedEVT(SeriesDraft seriesDraft) {
     return SeriesDraftFetchedEVT(
       seriesDraft,
     );
   }
 
+// ignore: unused_element
   SeriesPublishedEVT seriesPublishedEVT(Series series) {
     return SeriesPublishedEVT(
       series,
     );
   }
 
+// ignore: unused_element
   SessionFetchedEVT sessionFetchedEVT(
-      {@required Session session,
-      Chapter previousChapter,
-      SeriesDraft seriesDraft}) {
+      {Chapter previousChapter, SeriesDraft seriesDraft}) {
     return SessionFetchedEVT(
-      session: session,
       previousChapter: previousChapter,
       seriesDraft: seriesDraft,
     );
   }
 
+// ignore: unused_element
   StoryChangedEVT storyChangedEVT(String story) {
     return StoryChangedEVT(
       story,
     );
   }
 
+// ignore: unused_element
   TitleChangedEVT titleChangedEVT(String title) {
     return TitleChangedEVT(
       title,
@@ -219,8 +242,8 @@ mixin _$NewChapterDatabaseEvent {
             ChapterDraft chapterDraft,
             SeriesDraft seriesDraft),
     @required
-        Result placeholderFetchedEVT(Chapter previousChapter,
-            SeriesDraft seriesDraft, String sessionUid, String coverUrl),
+        Result placeholderFetchedEVT(
+            Chapter previousChapter, SeriesDraft seriesDraft, String coverUrl),
     @required Result publishButtonPressedEVT(),
     @required Result saveOrBackButtonPressedEVT(),
     @required Result seriesCoverDeletedEVT(),
@@ -231,7 +254,7 @@ mixin _$NewChapterDatabaseEvent {
     @required Result seriesPublishedEVT(Series series),
     @required
         Result sessionFetchedEVT(
-            Session session, Chapter previousChapter, SeriesDraft seriesDraft),
+            Chapter previousChapter, SeriesDraft seriesDraft),
     @required Result storyChangedEVT(String story),
     @required Result titleChangedEVT(String title),
   });
@@ -258,8 +281,8 @@ mixin _$NewChapterDatabaseEvent {
         Chapter previousChapter,
         ChapterDraft chapterDraft,
         SeriesDraft seriesDraft),
-    Result placeholderFetchedEVT(Chapter previousChapter,
-        SeriesDraft seriesDraft, String sessionUid, String coverUrl),
+    Result placeholderFetchedEVT(
+        Chapter previousChapter, SeriesDraft seriesDraft, String coverUrl),
     Result publishButtonPressedEVT(),
     Result saveOrBackButtonPressedEVT(),
     Result seriesCoverDeletedEVT(),
@@ -267,8 +290,7 @@ mixin _$NewChapterDatabaseEvent {
     Result seriesDraftDeletedEVT(),
     Result seriesDraftFetchedEVT(SeriesDraft seriesDraft),
     Result seriesPublishedEVT(Series series),
-    Result sessionFetchedEVT(
-        Session session, Chapter previousChapter, SeriesDraft seriesDraft),
+    Result sessionFetchedEVT(Chapter previousChapter, SeriesDraft seriesDraft),
     Result storyChangedEVT(String story),
     Result titleChangedEVT(String title),
     @required Result orElse(),
@@ -434,8 +456,8 @@ class _$AddCoverPressedEVT
             ChapterDraft chapterDraft,
             SeriesDraft seriesDraft),
     @required
-        Result placeholderFetchedEVT(Chapter previousChapter,
-            SeriesDraft seriesDraft, String sessionUid, String coverUrl),
+        Result placeholderFetchedEVT(
+            Chapter previousChapter, SeriesDraft seriesDraft, String coverUrl),
     @required Result publishButtonPressedEVT(),
     @required Result saveOrBackButtonPressedEVT(),
     @required Result seriesCoverDeletedEVT(),
@@ -446,7 +468,7 @@ class _$AddCoverPressedEVT
     @required Result seriesPublishedEVT(Series series),
     @required
         Result sessionFetchedEVT(
-            Session session, Chapter previousChapter, SeriesDraft seriesDraft),
+            Chapter previousChapter, SeriesDraft seriesDraft),
     @required Result storyChangedEVT(String story),
     @required Result titleChangedEVT(String title),
   }) {
@@ -505,8 +527,8 @@ class _$AddCoverPressedEVT
         Chapter previousChapter,
         ChapterDraft chapterDraft,
         SeriesDraft seriesDraft),
-    Result placeholderFetchedEVT(Chapter previousChapter,
-        SeriesDraft seriesDraft, String sessionUid, String coverUrl),
+    Result placeholderFetchedEVT(
+        Chapter previousChapter, SeriesDraft seriesDraft, String coverUrl),
     Result publishButtonPressedEVT(),
     Result saveOrBackButtonPressedEVT(),
     Result seriesCoverDeletedEVT(),
@@ -514,8 +536,7 @@ class _$AddCoverPressedEVT
     Result seriesDraftDeletedEVT(),
     Result seriesDraftFetchedEVT(SeriesDraft seriesDraft),
     Result seriesPublishedEVT(Series series),
-    Result sessionFetchedEVT(
-        Session session, Chapter previousChapter, SeriesDraft seriesDraft),
+    Result sessionFetchedEVT(Chapter previousChapter, SeriesDraft seriesDraft),
     Result storyChangedEVT(String story),
     Result titleChangedEVT(String title),
     @required Result orElse(),
@@ -716,8 +737,8 @@ class _$ChapterCoverDeletedEVT
             ChapterDraft chapterDraft,
             SeriesDraft seriesDraft),
     @required
-        Result placeholderFetchedEVT(Chapter previousChapter,
-            SeriesDraft seriesDraft, String sessionUid, String coverUrl),
+        Result placeholderFetchedEVT(
+            Chapter previousChapter, SeriesDraft seriesDraft, String coverUrl),
     @required Result publishButtonPressedEVT(),
     @required Result saveOrBackButtonPressedEVT(),
     @required Result seriesCoverDeletedEVT(),
@@ -728,7 +749,7 @@ class _$ChapterCoverDeletedEVT
     @required Result seriesPublishedEVT(Series series),
     @required
         Result sessionFetchedEVT(
-            Session session, Chapter previousChapter, SeriesDraft seriesDraft),
+            Chapter previousChapter, SeriesDraft seriesDraft),
     @required Result storyChangedEVT(String story),
     @required Result titleChangedEVT(String title),
   }) {
@@ -787,8 +808,8 @@ class _$ChapterCoverDeletedEVT
         Chapter previousChapter,
         ChapterDraft chapterDraft,
         SeriesDraft seriesDraft),
-    Result placeholderFetchedEVT(Chapter previousChapter,
-        SeriesDraft seriesDraft, String sessionUid, String coverUrl),
+    Result placeholderFetchedEVT(
+        Chapter previousChapter, SeriesDraft seriesDraft, String coverUrl),
     Result publishButtonPressedEVT(),
     Result saveOrBackButtonPressedEVT(),
     Result seriesCoverDeletedEVT(),
@@ -796,8 +817,7 @@ class _$ChapterCoverDeletedEVT
     Result seriesDraftDeletedEVT(),
     Result seriesDraftFetchedEVT(SeriesDraft seriesDraft),
     Result seriesPublishedEVT(Series series),
-    Result sessionFetchedEVT(
-        Session session, Chapter previousChapter, SeriesDraft seriesDraft),
+    Result sessionFetchedEVT(Chapter previousChapter, SeriesDraft seriesDraft),
     Result storyChangedEVT(String story),
     Result titleChangedEVT(String title),
     @required Result orElse(),
@@ -1036,8 +1056,8 @@ class _$ChapterCoverUploadedEVT
             ChapterDraft chapterDraft,
             SeriesDraft seriesDraft),
     @required
-        Result placeholderFetchedEVT(Chapter previousChapter,
-            SeriesDraft seriesDraft, String sessionUid, String coverUrl),
+        Result placeholderFetchedEVT(
+            Chapter previousChapter, SeriesDraft seriesDraft, String coverUrl),
     @required Result publishButtonPressedEVT(),
     @required Result saveOrBackButtonPressedEVT(),
     @required Result seriesCoverDeletedEVT(),
@@ -1048,7 +1068,7 @@ class _$ChapterCoverUploadedEVT
     @required Result seriesPublishedEVT(Series series),
     @required
         Result sessionFetchedEVT(
-            Session session, Chapter previousChapter, SeriesDraft seriesDraft),
+            Chapter previousChapter, SeriesDraft seriesDraft),
     @required Result storyChangedEVT(String story),
     @required Result titleChangedEVT(String title),
   }) {
@@ -1107,8 +1127,8 @@ class _$ChapterCoverUploadedEVT
         Chapter previousChapter,
         ChapterDraft chapterDraft,
         SeriesDraft seriesDraft),
-    Result placeholderFetchedEVT(Chapter previousChapter,
-        SeriesDraft seriesDraft, String sessionUid, String coverUrl),
+    Result placeholderFetchedEVT(
+        Chapter previousChapter, SeriesDraft seriesDraft, String coverUrl),
     Result publishButtonPressedEVT(),
     Result saveOrBackButtonPressedEVT(),
     Result seriesCoverDeletedEVT(),
@@ -1116,8 +1136,7 @@ class _$ChapterCoverUploadedEVT
     Result seriesDraftDeletedEVT(),
     Result seriesDraftFetchedEVT(SeriesDraft seriesDraft),
     Result seriesPublishedEVT(Series series),
-    Result sessionFetchedEVT(
-        Session session, Chapter previousChapter, SeriesDraft seriesDraft),
+    Result sessionFetchedEVT(Chapter previousChapter, SeriesDraft seriesDraft),
     Result storyChangedEVT(String story),
     Result titleChangedEVT(String title),
     @required Result orElse(),
@@ -1345,8 +1364,8 @@ class _$ChapterPublishedEVT
             ChapterDraft chapterDraft,
             SeriesDraft seriesDraft),
     @required
-        Result placeholderFetchedEVT(Chapter previousChapter,
-            SeriesDraft seriesDraft, String sessionUid, String coverUrl),
+        Result placeholderFetchedEVT(
+            Chapter previousChapter, SeriesDraft seriesDraft, String coverUrl),
     @required Result publishButtonPressedEVT(),
     @required Result saveOrBackButtonPressedEVT(),
     @required Result seriesCoverDeletedEVT(),
@@ -1357,7 +1376,7 @@ class _$ChapterPublishedEVT
     @required Result seriesPublishedEVT(Series series),
     @required
         Result sessionFetchedEVT(
-            Session session, Chapter previousChapter, SeriesDraft seriesDraft),
+            Chapter previousChapter, SeriesDraft seriesDraft),
     @required Result storyChangedEVT(String story),
     @required Result titleChangedEVT(String title),
   }) {
@@ -1416,8 +1435,8 @@ class _$ChapterPublishedEVT
         Chapter previousChapter,
         ChapterDraft chapterDraft,
         SeriesDraft seriesDraft),
-    Result placeholderFetchedEVT(Chapter previousChapter,
-        SeriesDraft seriesDraft, String sessionUid, String coverUrl),
+    Result placeholderFetchedEVT(
+        Chapter previousChapter, SeriesDraft seriesDraft, String coverUrl),
     Result publishButtonPressedEVT(),
     Result saveOrBackButtonPressedEVT(),
     Result seriesCoverDeletedEVT(),
@@ -1425,8 +1444,7 @@ class _$ChapterPublishedEVT
     Result seriesDraftDeletedEVT(),
     Result seriesDraftFetchedEVT(SeriesDraft seriesDraft),
     Result seriesPublishedEVT(Series series),
-    Result sessionFetchedEVT(
-        Session session, Chapter previousChapter, SeriesDraft seriesDraft),
+    Result sessionFetchedEVT(Chapter previousChapter, SeriesDraft seriesDraft),
     Result storyChangedEVT(String story),
     Result titleChangedEVT(String title),
     @required Result orElse(),
@@ -1654,8 +1672,8 @@ class _$CopyrightsSelectedEVT
             ChapterDraft chapterDraft,
             SeriesDraft seriesDraft),
     @required
-        Result placeholderFetchedEVT(Chapter previousChapter,
-            SeriesDraft seriesDraft, String sessionUid, String coverUrl),
+        Result placeholderFetchedEVT(
+            Chapter previousChapter, SeriesDraft seriesDraft, String coverUrl),
     @required Result publishButtonPressedEVT(),
     @required Result saveOrBackButtonPressedEVT(),
     @required Result seriesCoverDeletedEVT(),
@@ -1666,7 +1684,7 @@ class _$CopyrightsSelectedEVT
     @required Result seriesPublishedEVT(Series series),
     @required
         Result sessionFetchedEVT(
-            Session session, Chapter previousChapter, SeriesDraft seriesDraft),
+            Chapter previousChapter, SeriesDraft seriesDraft),
     @required Result storyChangedEVT(String story),
     @required Result titleChangedEVT(String title),
   }) {
@@ -1725,8 +1743,8 @@ class _$CopyrightsSelectedEVT
         Chapter previousChapter,
         ChapterDraft chapterDraft,
         SeriesDraft seriesDraft),
-    Result placeholderFetchedEVT(Chapter previousChapter,
-        SeriesDraft seriesDraft, String sessionUid, String coverUrl),
+    Result placeholderFetchedEVT(
+        Chapter previousChapter, SeriesDraft seriesDraft, String coverUrl),
     Result publishButtonPressedEVT(),
     Result saveOrBackButtonPressedEVT(),
     Result seriesCoverDeletedEVT(),
@@ -1734,8 +1752,7 @@ class _$CopyrightsSelectedEVT
     Result seriesDraftDeletedEVT(),
     Result seriesDraftFetchedEVT(SeriesDraft seriesDraft),
     Result seriesPublishedEVT(Series series),
-    Result sessionFetchedEVT(
-        Session session, Chapter previousChapter, SeriesDraft seriesDraft),
+    Result sessionFetchedEVT(Chapter previousChapter, SeriesDraft seriesDraft),
     Result storyChangedEVT(String story),
     Result titleChangedEVT(String title),
     @required Result orElse(),
@@ -1940,8 +1957,8 @@ class _$ChapterDeletedEVT
             ChapterDraft chapterDraft,
             SeriesDraft seriesDraft),
     @required
-        Result placeholderFetchedEVT(Chapter previousChapter,
-            SeriesDraft seriesDraft, String sessionUid, String coverUrl),
+        Result placeholderFetchedEVT(
+            Chapter previousChapter, SeriesDraft seriesDraft, String coverUrl),
     @required Result publishButtonPressedEVT(),
     @required Result saveOrBackButtonPressedEVT(),
     @required Result seriesCoverDeletedEVT(),
@@ -1952,7 +1969,7 @@ class _$ChapterDeletedEVT
     @required Result seriesPublishedEVT(Series series),
     @required
         Result sessionFetchedEVT(
-            Session session, Chapter previousChapter, SeriesDraft seriesDraft),
+            Chapter previousChapter, SeriesDraft seriesDraft),
     @required Result storyChangedEVT(String story),
     @required Result titleChangedEVT(String title),
   }) {
@@ -2011,8 +2028,8 @@ class _$ChapterDeletedEVT
         Chapter previousChapter,
         ChapterDraft chapterDraft,
         SeriesDraft seriesDraft),
-    Result placeholderFetchedEVT(Chapter previousChapter,
-        SeriesDraft seriesDraft, String sessionUid, String coverUrl),
+    Result placeholderFetchedEVT(
+        Chapter previousChapter, SeriesDraft seriesDraft, String coverUrl),
     Result publishButtonPressedEVT(),
     Result saveOrBackButtonPressedEVT(),
     Result seriesCoverDeletedEVT(),
@@ -2020,8 +2037,7 @@ class _$ChapterDeletedEVT
     Result seriesDraftDeletedEVT(),
     Result seriesDraftFetchedEVT(SeriesDraft seriesDraft),
     Result seriesPublishedEVT(Series series),
-    Result sessionFetchedEVT(
-        Session session, Chapter previousChapter, SeriesDraft seriesDraft),
+    Result sessionFetchedEVT(Chapter previousChapter, SeriesDraft seriesDraft),
     Result storyChangedEVT(String story),
     Result titleChangedEVT(String title),
     @required Result orElse(),
@@ -2224,8 +2240,8 @@ class _$DeleteDraftButtonPressedEVT
             ChapterDraft chapterDraft,
             SeriesDraft seriesDraft),
     @required
-        Result placeholderFetchedEVT(Chapter previousChapter,
-            SeriesDraft seriesDraft, String sessionUid, String coverUrl),
+        Result placeholderFetchedEVT(
+            Chapter previousChapter, SeriesDraft seriesDraft, String coverUrl),
     @required Result publishButtonPressedEVT(),
     @required Result saveOrBackButtonPressedEVT(),
     @required Result seriesCoverDeletedEVT(),
@@ -2236,7 +2252,7 @@ class _$DeleteDraftButtonPressedEVT
     @required Result seriesPublishedEVT(Series series),
     @required
         Result sessionFetchedEVT(
-            Session session, Chapter previousChapter, SeriesDraft seriesDraft),
+            Chapter previousChapter, SeriesDraft seriesDraft),
     @required Result storyChangedEVT(String story),
     @required Result titleChangedEVT(String title),
   }) {
@@ -2295,8 +2311,8 @@ class _$DeleteDraftButtonPressedEVT
         Chapter previousChapter,
         ChapterDraft chapterDraft,
         SeriesDraft seriesDraft),
-    Result placeholderFetchedEVT(Chapter previousChapter,
-        SeriesDraft seriesDraft, String sessionUid, String coverUrl),
+    Result placeholderFetchedEVT(
+        Chapter previousChapter, SeriesDraft seriesDraft, String coverUrl),
     Result publishButtonPressedEVT(),
     Result saveOrBackButtonPressedEVT(),
     Result seriesCoverDeletedEVT(),
@@ -2304,8 +2320,7 @@ class _$DeleteDraftButtonPressedEVT
     Result seriesDraftDeletedEVT(),
     Result seriesDraftFetchedEVT(SeriesDraft seriesDraft),
     Result seriesPublishedEVT(Series series),
-    Result sessionFetchedEVT(
-        Session session, Chapter previousChapter, SeriesDraft seriesDraft),
+    Result sessionFetchedEVT(Chapter previousChapter, SeriesDraft seriesDraft),
     Result storyChangedEVT(String story),
     Result titleChangedEVT(String title),
     @required Result orElse(),
@@ -2531,8 +2546,8 @@ class _$EditModeLaunchedEVT
             ChapterDraft chapterDraft,
             SeriesDraft seriesDraft),
     @required
-        Result placeholderFetchedEVT(Chapter previousChapter,
-            SeriesDraft seriesDraft, String sessionUid, String coverUrl),
+        Result placeholderFetchedEVT(
+            Chapter previousChapter, SeriesDraft seriesDraft, String coverUrl),
     @required Result publishButtonPressedEVT(),
     @required Result saveOrBackButtonPressedEVT(),
     @required Result seriesCoverDeletedEVT(),
@@ -2543,7 +2558,7 @@ class _$EditModeLaunchedEVT
     @required Result seriesPublishedEVT(Series series),
     @required
         Result sessionFetchedEVT(
-            Session session, Chapter previousChapter, SeriesDraft seriesDraft),
+            Chapter previousChapter, SeriesDraft seriesDraft),
     @required Result storyChangedEVT(String story),
     @required Result titleChangedEVT(String title),
   }) {
@@ -2602,8 +2617,8 @@ class _$EditModeLaunchedEVT
         Chapter previousChapter,
         ChapterDraft chapterDraft,
         SeriesDraft seriesDraft),
-    Result placeholderFetchedEVT(Chapter previousChapter,
-        SeriesDraft seriesDraft, String sessionUid, String coverUrl),
+    Result placeholderFetchedEVT(
+        Chapter previousChapter, SeriesDraft seriesDraft, String coverUrl),
     Result publishButtonPressedEVT(),
     Result saveOrBackButtonPressedEVT(),
     Result seriesCoverDeletedEVT(),
@@ -2611,8 +2626,7 @@ class _$EditModeLaunchedEVT
     Result seriesDraftDeletedEVT(),
     Result seriesDraftFetchedEVT(SeriesDraft seriesDraft),
     Result seriesPublishedEVT(Series series),
-    Result sessionFetchedEVT(
-        Session session, Chapter previousChapter, SeriesDraft seriesDraft),
+    Result sessionFetchedEVT(Chapter previousChapter, SeriesDraft seriesDraft),
     Result storyChangedEVT(String story),
     Result titleChangedEVT(String title),
     @required Result orElse(),
@@ -2845,8 +2859,8 @@ class _$FailureWhenPublishingChapterEVT
             ChapterDraft chapterDraft,
             SeriesDraft seriesDraft),
     @required
-        Result placeholderFetchedEVT(Chapter previousChapter,
-            SeriesDraft seriesDraft, String sessionUid, String coverUrl),
+        Result placeholderFetchedEVT(
+            Chapter previousChapter, SeriesDraft seriesDraft, String coverUrl),
     @required Result publishButtonPressedEVT(),
     @required Result saveOrBackButtonPressedEVT(),
     @required Result seriesCoverDeletedEVT(),
@@ -2857,7 +2871,7 @@ class _$FailureWhenPublishingChapterEVT
     @required Result seriesPublishedEVT(Series series),
     @required
         Result sessionFetchedEVT(
-            Session session, Chapter previousChapter, SeriesDraft seriesDraft),
+            Chapter previousChapter, SeriesDraft seriesDraft),
     @required Result storyChangedEVT(String story),
     @required Result titleChangedEVT(String title),
   }) {
@@ -2916,8 +2930,8 @@ class _$FailureWhenPublishingChapterEVT
         Chapter previousChapter,
         ChapterDraft chapterDraft,
         SeriesDraft seriesDraft),
-    Result placeholderFetchedEVT(Chapter previousChapter,
-        SeriesDraft seriesDraft, String sessionUid, String coverUrl),
+    Result placeholderFetchedEVT(
+        Chapter previousChapter, SeriesDraft seriesDraft, String coverUrl),
     Result publishButtonPressedEVT(),
     Result saveOrBackButtonPressedEVT(),
     Result seriesCoverDeletedEVT(),
@@ -2925,8 +2939,7 @@ class _$FailureWhenPublishingChapterEVT
     Result seriesDraftDeletedEVT(),
     Result seriesDraftFetchedEVT(SeriesDraft seriesDraft),
     Result seriesPublishedEVT(Series series),
-    Result sessionFetchedEVT(
-        Session session, Chapter previousChapter, SeriesDraft seriesDraft),
+    Result sessionFetchedEVT(Chapter previousChapter, SeriesDraft seriesDraft),
     Result storyChangedEVT(String story),
     Result titleChangedEVT(String title),
     @required Result orElse(),
@@ -3160,8 +3173,8 @@ class _$FailureWhenPublishingSeriesEVT
             ChapterDraft chapterDraft,
             SeriesDraft seriesDraft),
     @required
-        Result placeholderFetchedEVT(Chapter previousChapter,
-            SeriesDraft seriesDraft, String sessionUid, String coverUrl),
+        Result placeholderFetchedEVT(
+            Chapter previousChapter, SeriesDraft seriesDraft, String coverUrl),
     @required Result publishButtonPressedEVT(),
     @required Result saveOrBackButtonPressedEVT(),
     @required Result seriesCoverDeletedEVT(),
@@ -3172,7 +3185,7 @@ class _$FailureWhenPublishingSeriesEVT
     @required Result seriesPublishedEVT(Series series),
     @required
         Result sessionFetchedEVT(
-            Session session, Chapter previousChapter, SeriesDraft seriesDraft),
+            Chapter previousChapter, SeriesDraft seriesDraft),
     @required Result storyChangedEVT(String story),
     @required Result titleChangedEVT(String title),
   }) {
@@ -3231,8 +3244,8 @@ class _$FailureWhenPublishingSeriesEVT
         Chapter previousChapter,
         ChapterDraft chapterDraft,
         SeriesDraft seriesDraft),
-    Result placeholderFetchedEVT(Chapter previousChapter,
-        SeriesDraft seriesDraft, String sessionUid, String coverUrl),
+    Result placeholderFetchedEVT(
+        Chapter previousChapter, SeriesDraft seriesDraft, String coverUrl),
     Result publishButtonPressedEVT(),
     Result saveOrBackButtonPressedEVT(),
     Result seriesCoverDeletedEVT(),
@@ -3240,8 +3253,7 @@ class _$FailureWhenPublishingSeriesEVT
     Result seriesDraftDeletedEVT(),
     Result seriesDraftFetchedEVT(SeriesDraft seriesDraft),
     Result seriesPublishedEVT(Series series),
-    Result sessionFetchedEVT(
-        Session session, Chapter previousChapter, SeriesDraft seriesDraft),
+    Result sessionFetchedEVT(Chapter previousChapter, SeriesDraft seriesDraft),
     Result storyChangedEVT(String story),
     Result titleChangedEVT(String title),
     @required Result orElse(),
@@ -3452,8 +3464,8 @@ class _$FailureWhenUploadingSeriesCoverEVT
             ChapterDraft chapterDraft,
             SeriesDraft seriesDraft),
     @required
-        Result placeholderFetchedEVT(Chapter previousChapter,
-            SeriesDraft seriesDraft, String sessionUid, String coverUrl),
+        Result placeholderFetchedEVT(
+            Chapter previousChapter, SeriesDraft seriesDraft, String coverUrl),
     @required Result publishButtonPressedEVT(),
     @required Result saveOrBackButtonPressedEVT(),
     @required Result seriesCoverDeletedEVT(),
@@ -3464,7 +3476,7 @@ class _$FailureWhenUploadingSeriesCoverEVT
     @required Result seriesPublishedEVT(Series series),
     @required
         Result sessionFetchedEVT(
-            Session session, Chapter previousChapter, SeriesDraft seriesDraft),
+            Chapter previousChapter, SeriesDraft seriesDraft),
     @required Result storyChangedEVT(String story),
     @required Result titleChangedEVT(String title),
   }) {
@@ -3523,8 +3535,8 @@ class _$FailureWhenUploadingSeriesCoverEVT
         Chapter previousChapter,
         ChapterDraft chapterDraft,
         SeriesDraft seriesDraft),
-    Result placeholderFetchedEVT(Chapter previousChapter,
-        SeriesDraft seriesDraft, String sessionUid, String coverUrl),
+    Result placeholderFetchedEVT(
+        Chapter previousChapter, SeriesDraft seriesDraft, String coverUrl),
     Result publishButtonPressedEVT(),
     Result saveOrBackButtonPressedEVT(),
     Result seriesCoverDeletedEVT(),
@@ -3532,8 +3544,7 @@ class _$FailureWhenUploadingSeriesCoverEVT
     Result seriesDraftDeletedEVT(),
     Result seriesDraftFetchedEVT(SeriesDraft seriesDraft),
     Result seriesPublishedEVT(Series series),
-    Result sessionFetchedEVT(
-        Session session, Chapter previousChapter, SeriesDraft seriesDraft),
+    Result sessionFetchedEVT(Chapter previousChapter, SeriesDraft seriesDraft),
     Result storyChangedEVT(String story),
     Result titleChangedEVT(String title),
     @required Result orElse(),
@@ -3762,8 +3773,8 @@ class _$GenreOptionalSelectedEVT
             ChapterDraft chapterDraft,
             SeriesDraft seriesDraft),
     @required
-        Result placeholderFetchedEVT(Chapter previousChapter,
-            SeriesDraft seriesDraft, String sessionUid, String coverUrl),
+        Result placeholderFetchedEVT(
+            Chapter previousChapter, SeriesDraft seriesDraft, String coverUrl),
     @required Result publishButtonPressedEVT(),
     @required Result saveOrBackButtonPressedEVT(),
     @required Result seriesCoverDeletedEVT(),
@@ -3774,7 +3785,7 @@ class _$GenreOptionalSelectedEVT
     @required Result seriesPublishedEVT(Series series),
     @required
         Result sessionFetchedEVT(
-            Session session, Chapter previousChapter, SeriesDraft seriesDraft),
+            Chapter previousChapter, SeriesDraft seriesDraft),
     @required Result storyChangedEVT(String story),
     @required Result titleChangedEVT(String title),
   }) {
@@ -3833,8 +3844,8 @@ class _$GenreOptionalSelectedEVT
         Chapter previousChapter,
         ChapterDraft chapterDraft,
         SeriesDraft seriesDraft),
-    Result placeholderFetchedEVT(Chapter previousChapter,
-        SeriesDraft seriesDraft, String sessionUid, String coverUrl),
+    Result placeholderFetchedEVT(
+        Chapter previousChapter, SeriesDraft seriesDraft, String coverUrl),
     Result publishButtonPressedEVT(),
     Result saveOrBackButtonPressedEVT(),
     Result seriesCoverDeletedEVT(),
@@ -3842,8 +3853,7 @@ class _$GenreOptionalSelectedEVT
     Result seriesDraftDeletedEVT(),
     Result seriesDraftFetchedEVT(SeriesDraft seriesDraft),
     Result seriesPublishedEVT(Series series),
-    Result sessionFetchedEVT(
-        Session session, Chapter previousChapter, SeriesDraft seriesDraft),
+    Result sessionFetchedEVT(Chapter previousChapter, SeriesDraft seriesDraft),
     Result storyChangedEVT(String story),
     Result titleChangedEVT(String title),
     @required Result orElse(),
@@ -4070,8 +4080,8 @@ class _$GenreSelectedEVT
             ChapterDraft chapterDraft,
             SeriesDraft seriesDraft),
     @required
-        Result placeholderFetchedEVT(Chapter previousChapter,
-            SeriesDraft seriesDraft, String sessionUid, String coverUrl),
+        Result placeholderFetchedEVT(
+            Chapter previousChapter, SeriesDraft seriesDraft, String coverUrl),
     @required Result publishButtonPressedEVT(),
     @required Result saveOrBackButtonPressedEVT(),
     @required Result seriesCoverDeletedEVT(),
@@ -4082,7 +4092,7 @@ class _$GenreSelectedEVT
     @required Result seriesPublishedEVT(Series series),
     @required
         Result sessionFetchedEVT(
-            Session session, Chapter previousChapter, SeriesDraft seriesDraft),
+            Chapter previousChapter, SeriesDraft seriesDraft),
     @required Result storyChangedEVT(String story),
     @required Result titleChangedEVT(String title),
   }) {
@@ -4141,8 +4151,8 @@ class _$GenreSelectedEVT
         Chapter previousChapter,
         ChapterDraft chapterDraft,
         SeriesDraft seriesDraft),
-    Result placeholderFetchedEVT(Chapter previousChapter,
-        SeriesDraft seriesDraft, String sessionUid, String coverUrl),
+    Result placeholderFetchedEVT(
+        Chapter previousChapter, SeriesDraft seriesDraft, String coverUrl),
     Result publishButtonPressedEVT(),
     Result saveOrBackButtonPressedEVT(),
     Result seriesCoverDeletedEVT(),
@@ -4150,8 +4160,7 @@ class _$GenreSelectedEVT
     Result seriesDraftDeletedEVT(),
     Result seriesDraftFetchedEVT(SeriesDraft seriesDraft),
     Result seriesPublishedEVT(Series series),
-    Result sessionFetchedEVT(
-        Session session, Chapter previousChapter, SeriesDraft seriesDraft),
+    Result sessionFetchedEVT(Chapter previousChapter, SeriesDraft seriesDraft),
     Result storyChangedEVT(String story),
     Result titleChangedEVT(String title),
     @required Result orElse(),
@@ -4377,8 +4386,8 @@ class _$IsEndChangedEVT
             ChapterDraft chapterDraft,
             SeriesDraft seriesDraft),
     @required
-        Result placeholderFetchedEVT(Chapter previousChapter,
-            SeriesDraft seriesDraft, String sessionUid, String coverUrl),
+        Result placeholderFetchedEVT(
+            Chapter previousChapter, SeriesDraft seriesDraft, String coverUrl),
     @required Result publishButtonPressedEVT(),
     @required Result saveOrBackButtonPressedEVT(),
     @required Result seriesCoverDeletedEVT(),
@@ -4389,7 +4398,7 @@ class _$IsEndChangedEVT
     @required Result seriesPublishedEVT(Series series),
     @required
         Result sessionFetchedEVT(
-            Session session, Chapter previousChapter, SeriesDraft seriesDraft),
+            Chapter previousChapter, SeriesDraft seriesDraft),
     @required Result storyChangedEVT(String story),
     @required Result titleChangedEVT(String title),
   }) {
@@ -4448,8 +4457,8 @@ class _$IsEndChangedEVT
         Chapter previousChapter,
         ChapterDraft chapterDraft,
         SeriesDraft seriesDraft),
-    Result placeholderFetchedEVT(Chapter previousChapter,
-        SeriesDraft seriesDraft, String sessionUid, String coverUrl),
+    Result placeholderFetchedEVT(
+        Chapter previousChapter, SeriesDraft seriesDraft, String coverUrl),
     Result publishButtonPressedEVT(),
     Result saveOrBackButtonPressedEVT(),
     Result seriesCoverDeletedEVT(),
@@ -4457,8 +4466,7 @@ class _$IsEndChangedEVT
     Result seriesDraftDeletedEVT(),
     Result seriesDraftFetchedEVT(SeriesDraft seriesDraft),
     Result seriesPublishedEVT(Series series),
-    Result sessionFetchedEVT(
-        Session session, Chapter previousChapter, SeriesDraft seriesDraft),
+    Result sessionFetchedEVT(Chapter previousChapter, SeriesDraft seriesDraft),
     Result storyChangedEVT(String story),
     Result titleChangedEVT(String title),
     @required Result orElse(),
@@ -4684,8 +4692,8 @@ class _$IsNSFWChangedEVT
             ChapterDraft chapterDraft,
             SeriesDraft seriesDraft),
     @required
-        Result placeholderFetchedEVT(Chapter previousChapter,
-            SeriesDraft seriesDraft, String sessionUid, String coverUrl),
+        Result placeholderFetchedEVT(
+            Chapter previousChapter, SeriesDraft seriesDraft, String coverUrl),
     @required Result publishButtonPressedEVT(),
     @required Result saveOrBackButtonPressedEVT(),
     @required Result seriesCoverDeletedEVT(),
@@ -4696,7 +4704,7 @@ class _$IsNSFWChangedEVT
     @required Result seriesPublishedEVT(Series series),
     @required
         Result sessionFetchedEVT(
-            Session session, Chapter previousChapter, SeriesDraft seriesDraft),
+            Chapter previousChapter, SeriesDraft seriesDraft),
     @required Result storyChangedEVT(String story),
     @required Result titleChangedEVT(String title),
   }) {
@@ -4755,8 +4763,8 @@ class _$IsNSFWChangedEVT
         Chapter previousChapter,
         ChapterDraft chapterDraft,
         SeriesDraft seriesDraft),
-    Result placeholderFetchedEVT(Chapter previousChapter,
-        SeriesDraft seriesDraft, String sessionUid, String coverUrl),
+    Result placeholderFetchedEVT(
+        Chapter previousChapter, SeriesDraft seriesDraft, String coverUrl),
     Result publishButtonPressedEVT(),
     Result saveOrBackButtonPressedEVT(),
     Result seriesCoverDeletedEVT(),
@@ -4764,8 +4772,7 @@ class _$IsNSFWChangedEVT
     Result seriesDraftDeletedEVT(),
     Result seriesDraftFetchedEVT(SeriesDraft seriesDraft),
     Result seriesPublishedEVT(Series series),
-    Result sessionFetchedEVT(
-        Session session, Chapter previousChapter, SeriesDraft seriesDraft),
+    Result sessionFetchedEVT(Chapter previousChapter, SeriesDraft seriesDraft),
     Result storyChangedEVT(String story),
     Result titleChangedEVT(String title),
     @required Result orElse(),
@@ -4992,8 +4999,8 @@ class _$LanguageSelectedEVT
             ChapterDraft chapterDraft,
             SeriesDraft seriesDraft),
     @required
-        Result placeholderFetchedEVT(Chapter previousChapter,
-            SeriesDraft seriesDraft, String sessionUid, String coverUrl),
+        Result placeholderFetchedEVT(
+            Chapter previousChapter, SeriesDraft seriesDraft, String coverUrl),
     @required Result publishButtonPressedEVT(),
     @required Result saveOrBackButtonPressedEVT(),
     @required Result seriesCoverDeletedEVT(),
@@ -5004,7 +5011,7 @@ class _$LanguageSelectedEVT
     @required Result seriesPublishedEVT(Series series),
     @required
         Result sessionFetchedEVT(
-            Session session, Chapter previousChapter, SeriesDraft seriesDraft),
+            Chapter previousChapter, SeriesDraft seriesDraft),
     @required Result storyChangedEVT(String story),
     @required Result titleChangedEVT(String title),
   }) {
@@ -5063,8 +5070,8 @@ class _$LanguageSelectedEVT
         Chapter previousChapter,
         ChapterDraft chapterDraft,
         SeriesDraft seriesDraft),
-    Result placeholderFetchedEVT(Chapter previousChapter,
-        SeriesDraft seriesDraft, String sessionUid, String coverUrl),
+    Result placeholderFetchedEVT(
+        Chapter previousChapter, SeriesDraft seriesDraft, String coverUrl),
     Result publishButtonPressedEVT(),
     Result saveOrBackButtonPressedEVT(),
     Result seriesCoverDeletedEVT(),
@@ -5072,8 +5079,7 @@ class _$LanguageSelectedEVT
     Result seriesDraftDeletedEVT(),
     Result seriesDraftFetchedEVT(SeriesDraft seriesDraft),
     Result seriesPublishedEVT(Series series),
-    Result sessionFetchedEVT(
-        Session session, Chapter previousChapter, SeriesDraft seriesDraft),
+    Result sessionFetchedEVT(Chapter previousChapter, SeriesDraft seriesDraft),
     Result storyChangedEVT(String story),
     Result titleChangedEVT(String title),
     @required Result orElse(),
@@ -5345,8 +5351,8 @@ class _$NewChapterPageLaunchedEVT
             ChapterDraft chapterDraft,
             SeriesDraft seriesDraft),
     @required
-        Result placeholderFetchedEVT(Chapter previousChapter,
-            SeriesDraft seriesDraft, String sessionUid, String coverUrl),
+        Result placeholderFetchedEVT(
+            Chapter previousChapter, SeriesDraft seriesDraft, String coverUrl),
     @required Result publishButtonPressedEVT(),
     @required Result saveOrBackButtonPressedEVT(),
     @required Result seriesCoverDeletedEVT(),
@@ -5357,7 +5363,7 @@ class _$NewChapterPageLaunchedEVT
     @required Result seriesPublishedEVT(Series series),
     @required
         Result sessionFetchedEVT(
-            Session session, Chapter previousChapter, SeriesDraft seriesDraft),
+            Chapter previousChapter, SeriesDraft seriesDraft),
     @required Result storyChangedEVT(String story),
     @required Result titleChangedEVT(String title),
   }) {
@@ -5417,8 +5423,8 @@ class _$NewChapterPageLaunchedEVT
         Chapter previousChapter,
         ChapterDraft chapterDraft,
         SeriesDraft seriesDraft),
-    Result placeholderFetchedEVT(Chapter previousChapter,
-        SeriesDraft seriesDraft, String sessionUid, String coverUrl),
+    Result placeholderFetchedEVT(
+        Chapter previousChapter, SeriesDraft seriesDraft, String coverUrl),
     Result publishButtonPressedEVT(),
     Result saveOrBackButtonPressedEVT(),
     Result seriesCoverDeletedEVT(),
@@ -5426,8 +5432,7 @@ class _$NewChapterPageLaunchedEVT
     Result seriesDraftDeletedEVT(),
     Result seriesDraftFetchedEVT(SeriesDraft seriesDraft),
     Result seriesPublishedEVT(Series series),
-    Result sessionFetchedEVT(
-        Session session, Chapter previousChapter, SeriesDraft seriesDraft),
+    Result sessionFetchedEVT(Chapter previousChapter, SeriesDraft seriesDraft),
     Result storyChangedEVT(String story),
     Result titleChangedEVT(String title),
     @required Result orElse(),
@@ -5573,10 +5578,7 @@ abstract class $PlaceholderFetchedEVTCopyWith<$Res> {
           $Res Function(PlaceholderFetchedEVT) then) =
       _$PlaceholderFetchedEVTCopyWithImpl<$Res>;
   $Res call(
-      {Chapter previousChapter,
-      SeriesDraft seriesDraft,
-      String sessionUid,
-      String coverUrl});
+      {Chapter previousChapter, SeriesDraft seriesDraft, String coverUrl});
 }
 
 class _$PlaceholderFetchedEVTCopyWithImpl<$Res>
@@ -5593,7 +5595,6 @@ class _$PlaceholderFetchedEVTCopyWithImpl<$Res>
   $Res call({
     Object previousChapter = freezed,
     Object seriesDraft = freezed,
-    Object sessionUid = freezed,
     Object coverUrl = freezed,
   }) {
     return _then(PlaceholderFetchedEVT(
@@ -5603,8 +5604,6 @@ class _$PlaceholderFetchedEVTCopyWithImpl<$Res>
       seriesDraft: seriesDraft == freezed
           ? _value.seriesDraft
           : seriesDraft as SeriesDraft,
-      sessionUid:
-          sessionUid == freezed ? _value.sessionUid : sessionUid as String,
       coverUrl: coverUrl == freezed ? _value.coverUrl : coverUrl as String,
     ));
   }
@@ -5614,25 +5613,19 @@ class _$PlaceholderFetchedEVT
     with DiagnosticableTreeMixin
     implements PlaceholderFetchedEVT {
   const _$PlaceholderFetchedEVT(
-      {this.previousChapter,
-      this.seriesDraft,
-      @required this.sessionUid,
-      @required this.coverUrl})
-      : assert(sessionUid != null),
-        assert(coverUrl != null);
+      {this.previousChapter, this.seriesDraft, @required this.coverUrl})
+      : assert(coverUrl != null);
 
   @override
   final Chapter previousChapter;
   @override
   final SeriesDraft seriesDraft;
   @override
-  final String sessionUid;
-  @override
   final String coverUrl;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'NewChapterDatabaseEvent.placeholderFetchedEVT(previousChapter: $previousChapter, seriesDraft: $seriesDraft, sessionUid: $sessionUid, coverUrl: $coverUrl)';
+    return 'NewChapterDatabaseEvent.placeholderFetchedEVT(previousChapter: $previousChapter, seriesDraft: $seriesDraft, coverUrl: $coverUrl)';
   }
 
   @override
@@ -5643,7 +5636,6 @@ class _$PlaceholderFetchedEVT
           'type', 'NewChapterDatabaseEvent.placeholderFetchedEVT'))
       ..add(DiagnosticsProperty('previousChapter', previousChapter))
       ..add(DiagnosticsProperty('seriesDraft', seriesDraft))
-      ..add(DiagnosticsProperty('sessionUid', sessionUid))
       ..add(DiagnosticsProperty('coverUrl', coverUrl));
   }
 
@@ -5657,9 +5649,6 @@ class _$PlaceholderFetchedEVT
             (identical(other.seriesDraft, seriesDraft) ||
                 const DeepCollectionEquality()
                     .equals(other.seriesDraft, seriesDraft)) &&
-            (identical(other.sessionUid, sessionUid) ||
-                const DeepCollectionEquality()
-                    .equals(other.sessionUid, sessionUid)) &&
             (identical(other.coverUrl, coverUrl) ||
                 const DeepCollectionEquality()
                     .equals(other.coverUrl, coverUrl)));
@@ -5670,7 +5659,6 @@ class _$PlaceholderFetchedEVT
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(previousChapter) ^
       const DeepCollectionEquality().hash(seriesDraft) ^
-      const DeepCollectionEquality().hash(sessionUid) ^
       const DeepCollectionEquality().hash(coverUrl);
 
   @override
@@ -5706,8 +5694,8 @@ class _$PlaceholderFetchedEVT
             ChapterDraft chapterDraft,
             SeriesDraft seriesDraft),
     @required
-        Result placeholderFetchedEVT(Chapter previousChapter,
-            SeriesDraft seriesDraft, String sessionUid, String coverUrl),
+        Result placeholderFetchedEVT(
+            Chapter previousChapter, SeriesDraft seriesDraft, String coverUrl),
     @required Result publishButtonPressedEVT(),
     @required Result saveOrBackButtonPressedEVT(),
     @required Result seriesCoverDeletedEVT(),
@@ -5718,7 +5706,7 @@ class _$PlaceholderFetchedEVT
     @required Result seriesPublishedEVT(Series series),
     @required
         Result sessionFetchedEVT(
-            Session session, Chapter previousChapter, SeriesDraft seriesDraft),
+            Chapter previousChapter, SeriesDraft seriesDraft),
     @required Result storyChangedEVT(String story),
     @required Result titleChangedEVT(String title),
   }) {
@@ -5750,8 +5738,7 @@ class _$PlaceholderFetchedEVT
     assert(sessionFetchedEVT != null);
     assert(storyChangedEVT != null);
     assert(titleChangedEVT != null);
-    return placeholderFetchedEVT(
-        previousChapter, seriesDraft, sessionUid, coverUrl);
+    return placeholderFetchedEVT(previousChapter, seriesDraft, coverUrl);
   }
 
   @override
@@ -5778,8 +5765,8 @@ class _$PlaceholderFetchedEVT
         Chapter previousChapter,
         ChapterDraft chapterDraft,
         SeriesDraft seriesDraft),
-    Result placeholderFetchedEVT(Chapter previousChapter,
-        SeriesDraft seriesDraft, String sessionUid, String coverUrl),
+    Result placeholderFetchedEVT(
+        Chapter previousChapter, SeriesDraft seriesDraft, String coverUrl),
     Result publishButtonPressedEVT(),
     Result saveOrBackButtonPressedEVT(),
     Result seriesCoverDeletedEVT(),
@@ -5787,16 +5774,14 @@ class _$PlaceholderFetchedEVT
     Result seriesDraftDeletedEVT(),
     Result seriesDraftFetchedEVT(SeriesDraft seriesDraft),
     Result seriesPublishedEVT(Series series),
-    Result sessionFetchedEVT(
-        Session session, Chapter previousChapter, SeriesDraft seriesDraft),
+    Result sessionFetchedEVT(Chapter previousChapter, SeriesDraft seriesDraft),
     Result storyChangedEVT(String story),
     Result titleChangedEVT(String title),
     @required Result orElse(),
   }) {
     assert(orElse != null);
     if (placeholderFetchedEVT != null) {
-      return placeholderFetchedEVT(
-          previousChapter, seriesDraft, sessionUid, coverUrl);
+      return placeholderFetchedEVT(previousChapter, seriesDraft, coverUrl);
     }
     return orElse();
   }
@@ -5919,12 +5904,10 @@ abstract class PlaceholderFetchedEVT implements NewChapterDatabaseEvent {
   const factory PlaceholderFetchedEVT(
       {Chapter previousChapter,
       SeriesDraft seriesDraft,
-      @required String sessionUid,
       @required String coverUrl}) = _$PlaceholderFetchedEVT;
 
   Chapter get previousChapter;
   SeriesDraft get seriesDraft;
-  String get sessionUid;
   String get coverUrl;
   $PlaceholderFetchedEVTCopyWith<PlaceholderFetchedEVT> get copyWith;
 }
@@ -6000,8 +5983,8 @@ class _$PublishButtonPressedEVT
             ChapterDraft chapterDraft,
             SeriesDraft seriesDraft),
     @required
-        Result placeholderFetchedEVT(Chapter previousChapter,
-            SeriesDraft seriesDraft, String sessionUid, String coverUrl),
+        Result placeholderFetchedEVT(
+            Chapter previousChapter, SeriesDraft seriesDraft, String coverUrl),
     @required Result publishButtonPressedEVT(),
     @required Result saveOrBackButtonPressedEVT(),
     @required Result seriesCoverDeletedEVT(),
@@ -6012,7 +5995,7 @@ class _$PublishButtonPressedEVT
     @required Result seriesPublishedEVT(Series series),
     @required
         Result sessionFetchedEVT(
-            Session session, Chapter previousChapter, SeriesDraft seriesDraft),
+            Chapter previousChapter, SeriesDraft seriesDraft),
     @required Result storyChangedEVT(String story),
     @required Result titleChangedEVT(String title),
   }) {
@@ -6071,8 +6054,8 @@ class _$PublishButtonPressedEVT
         Chapter previousChapter,
         ChapterDraft chapterDraft,
         SeriesDraft seriesDraft),
-    Result placeholderFetchedEVT(Chapter previousChapter,
-        SeriesDraft seriesDraft, String sessionUid, String coverUrl),
+    Result placeholderFetchedEVT(
+        Chapter previousChapter, SeriesDraft seriesDraft, String coverUrl),
     Result publishButtonPressedEVT(),
     Result saveOrBackButtonPressedEVT(),
     Result seriesCoverDeletedEVT(),
@@ -6080,8 +6063,7 @@ class _$PublishButtonPressedEVT
     Result seriesDraftDeletedEVT(),
     Result seriesDraftFetchedEVT(SeriesDraft seriesDraft),
     Result seriesPublishedEVT(Series series),
-    Result sessionFetchedEVT(
-        Session session, Chapter previousChapter, SeriesDraft seriesDraft),
+    Result sessionFetchedEVT(Chapter previousChapter, SeriesDraft seriesDraft),
     Result storyChangedEVT(String story),
     Result titleChangedEVT(String title),
     @required Result orElse(),
@@ -6283,8 +6265,8 @@ class _$SaveOrBackButtonPressedEVT
             ChapterDraft chapterDraft,
             SeriesDraft seriesDraft),
     @required
-        Result placeholderFetchedEVT(Chapter previousChapter,
-            SeriesDraft seriesDraft, String sessionUid, String coverUrl),
+        Result placeholderFetchedEVT(
+            Chapter previousChapter, SeriesDraft seriesDraft, String coverUrl),
     @required Result publishButtonPressedEVT(),
     @required Result saveOrBackButtonPressedEVT(),
     @required Result seriesCoverDeletedEVT(),
@@ -6295,7 +6277,7 @@ class _$SaveOrBackButtonPressedEVT
     @required Result seriesPublishedEVT(Series series),
     @required
         Result sessionFetchedEVT(
-            Session session, Chapter previousChapter, SeriesDraft seriesDraft),
+            Chapter previousChapter, SeriesDraft seriesDraft),
     @required Result storyChangedEVT(String story),
     @required Result titleChangedEVT(String title),
   }) {
@@ -6354,8 +6336,8 @@ class _$SaveOrBackButtonPressedEVT
         Chapter previousChapter,
         ChapterDraft chapterDraft,
         SeriesDraft seriesDraft),
-    Result placeholderFetchedEVT(Chapter previousChapter,
-        SeriesDraft seriesDraft, String sessionUid, String coverUrl),
+    Result placeholderFetchedEVT(
+        Chapter previousChapter, SeriesDraft seriesDraft, String coverUrl),
     Result publishButtonPressedEVT(),
     Result saveOrBackButtonPressedEVT(),
     Result seriesCoverDeletedEVT(),
@@ -6363,8 +6345,7 @@ class _$SaveOrBackButtonPressedEVT
     Result seriesDraftDeletedEVT(),
     Result seriesDraftFetchedEVT(SeriesDraft seriesDraft),
     Result seriesPublishedEVT(Series series),
-    Result sessionFetchedEVT(
-        Session session, Chapter previousChapter, SeriesDraft seriesDraft),
+    Result sessionFetchedEVT(Chapter previousChapter, SeriesDraft seriesDraft),
     Result storyChangedEVT(String story),
     Result titleChangedEVT(String title),
     @required Result orElse(),
@@ -6565,8 +6546,8 @@ class _$SeriesCoverDeletedEVT
             ChapterDraft chapterDraft,
             SeriesDraft seriesDraft),
     @required
-        Result placeholderFetchedEVT(Chapter previousChapter,
-            SeriesDraft seriesDraft, String sessionUid, String coverUrl),
+        Result placeholderFetchedEVT(
+            Chapter previousChapter, SeriesDraft seriesDraft, String coverUrl),
     @required Result publishButtonPressedEVT(),
     @required Result saveOrBackButtonPressedEVT(),
     @required Result seriesCoverDeletedEVT(),
@@ -6577,7 +6558,7 @@ class _$SeriesCoverDeletedEVT
     @required Result seriesPublishedEVT(Series series),
     @required
         Result sessionFetchedEVT(
-            Session session, Chapter previousChapter, SeriesDraft seriesDraft),
+            Chapter previousChapter, SeriesDraft seriesDraft),
     @required Result storyChangedEVT(String story),
     @required Result titleChangedEVT(String title),
   }) {
@@ -6636,8 +6617,8 @@ class _$SeriesCoverDeletedEVT
         Chapter previousChapter,
         ChapterDraft chapterDraft,
         SeriesDraft seriesDraft),
-    Result placeholderFetchedEVT(Chapter previousChapter,
-        SeriesDraft seriesDraft, String sessionUid, String coverUrl),
+    Result placeholderFetchedEVT(
+        Chapter previousChapter, SeriesDraft seriesDraft, String coverUrl),
     Result publishButtonPressedEVT(),
     Result saveOrBackButtonPressedEVT(),
     Result seriesCoverDeletedEVT(),
@@ -6645,8 +6626,7 @@ class _$SeriesCoverDeletedEVT
     Result seriesDraftDeletedEVT(),
     Result seriesDraftFetchedEVT(SeriesDraft seriesDraft),
     Result seriesPublishedEVT(Series series),
-    Result sessionFetchedEVT(
-        Session session, Chapter previousChapter, SeriesDraft seriesDraft),
+    Result sessionFetchedEVT(Chapter previousChapter, SeriesDraft seriesDraft),
     Result storyChangedEVT(String story),
     Result titleChangedEVT(String title),
     @required Result orElse(),
@@ -6883,8 +6863,8 @@ class _$SeriesCoverUploadedEVT
             ChapterDraft chapterDraft,
             SeriesDraft seriesDraft),
     @required
-        Result placeholderFetchedEVT(Chapter previousChapter,
-            SeriesDraft seriesDraft, String sessionUid, String coverUrl),
+        Result placeholderFetchedEVT(
+            Chapter previousChapter, SeriesDraft seriesDraft, String coverUrl),
     @required Result publishButtonPressedEVT(),
     @required Result saveOrBackButtonPressedEVT(),
     @required Result seriesCoverDeletedEVT(),
@@ -6895,7 +6875,7 @@ class _$SeriesCoverUploadedEVT
     @required Result seriesPublishedEVT(Series series),
     @required
         Result sessionFetchedEVT(
-            Session session, Chapter previousChapter, SeriesDraft seriesDraft),
+            Chapter previousChapter, SeriesDraft seriesDraft),
     @required Result storyChangedEVT(String story),
     @required Result titleChangedEVT(String title),
   }) {
@@ -6954,8 +6934,8 @@ class _$SeriesCoverUploadedEVT
         Chapter previousChapter,
         ChapterDraft chapterDraft,
         SeriesDraft seriesDraft),
-    Result placeholderFetchedEVT(Chapter previousChapter,
-        SeriesDraft seriesDraft, String sessionUid, String coverUrl),
+    Result placeholderFetchedEVT(
+        Chapter previousChapter, SeriesDraft seriesDraft, String coverUrl),
     Result publishButtonPressedEVT(),
     Result saveOrBackButtonPressedEVT(),
     Result seriesCoverDeletedEVT(),
@@ -6963,8 +6943,7 @@ class _$SeriesCoverUploadedEVT
     Result seriesDraftDeletedEVT(),
     Result seriesDraftFetchedEVT(SeriesDraft seriesDraft),
     Result seriesPublishedEVT(Series series),
-    Result sessionFetchedEVT(
-        Session session, Chapter previousChapter, SeriesDraft seriesDraft),
+    Result sessionFetchedEVT(Chapter previousChapter, SeriesDraft seriesDraft),
     Result storyChangedEVT(String story),
     Result titleChangedEVT(String title),
     @required Result orElse(),
@@ -7170,8 +7149,8 @@ class _$SeriesDraftDeletedEVT
             ChapterDraft chapterDraft,
             SeriesDraft seriesDraft),
     @required
-        Result placeholderFetchedEVT(Chapter previousChapter,
-            SeriesDraft seriesDraft, String sessionUid, String coverUrl),
+        Result placeholderFetchedEVT(
+            Chapter previousChapter, SeriesDraft seriesDraft, String coverUrl),
     @required Result publishButtonPressedEVT(),
     @required Result saveOrBackButtonPressedEVT(),
     @required Result seriesCoverDeletedEVT(),
@@ -7182,7 +7161,7 @@ class _$SeriesDraftDeletedEVT
     @required Result seriesPublishedEVT(Series series),
     @required
         Result sessionFetchedEVT(
-            Session session, Chapter previousChapter, SeriesDraft seriesDraft),
+            Chapter previousChapter, SeriesDraft seriesDraft),
     @required Result storyChangedEVT(String story),
     @required Result titleChangedEVT(String title),
   }) {
@@ -7241,8 +7220,8 @@ class _$SeriesDraftDeletedEVT
         Chapter previousChapter,
         ChapterDraft chapterDraft,
         SeriesDraft seriesDraft),
-    Result placeholderFetchedEVT(Chapter previousChapter,
-        SeriesDraft seriesDraft, String sessionUid, String coverUrl),
+    Result placeholderFetchedEVT(
+        Chapter previousChapter, SeriesDraft seriesDraft, String coverUrl),
     Result publishButtonPressedEVT(),
     Result saveOrBackButtonPressedEVT(),
     Result seriesCoverDeletedEVT(),
@@ -7250,8 +7229,7 @@ class _$SeriesDraftDeletedEVT
     Result seriesDraftDeletedEVT(),
     Result seriesDraftFetchedEVT(SeriesDraft seriesDraft),
     Result seriesPublishedEVT(Series series),
-    Result sessionFetchedEVT(
-        Session session, Chapter previousChapter, SeriesDraft seriesDraft),
+    Result sessionFetchedEVT(Chapter previousChapter, SeriesDraft seriesDraft),
     Result storyChangedEVT(String story),
     Result titleChangedEVT(String title),
     @required Result orElse(),
@@ -7476,8 +7454,8 @@ class _$SeriesDraftFetchedEVT
             ChapterDraft chapterDraft,
             SeriesDraft seriesDraft),
     @required
-        Result placeholderFetchedEVT(Chapter previousChapter,
-            SeriesDraft seriesDraft, String sessionUid, String coverUrl),
+        Result placeholderFetchedEVT(
+            Chapter previousChapter, SeriesDraft seriesDraft, String coverUrl),
     @required Result publishButtonPressedEVT(),
     @required Result saveOrBackButtonPressedEVT(),
     @required Result seriesCoverDeletedEVT(),
@@ -7488,7 +7466,7 @@ class _$SeriesDraftFetchedEVT
     @required Result seriesPublishedEVT(Series series),
     @required
         Result sessionFetchedEVT(
-            Session session, Chapter previousChapter, SeriesDraft seriesDraft),
+            Chapter previousChapter, SeriesDraft seriesDraft),
     @required Result storyChangedEVT(String story),
     @required Result titleChangedEVT(String title),
   }) {
@@ -7547,8 +7525,8 @@ class _$SeriesDraftFetchedEVT
         Chapter previousChapter,
         ChapterDraft chapterDraft,
         SeriesDraft seriesDraft),
-    Result placeholderFetchedEVT(Chapter previousChapter,
-        SeriesDraft seriesDraft, String sessionUid, String coverUrl),
+    Result placeholderFetchedEVT(
+        Chapter previousChapter, SeriesDraft seriesDraft, String coverUrl),
     Result publishButtonPressedEVT(),
     Result saveOrBackButtonPressedEVT(),
     Result seriesCoverDeletedEVT(),
@@ -7556,8 +7534,7 @@ class _$SeriesDraftFetchedEVT
     Result seriesDraftDeletedEVT(),
     Result seriesDraftFetchedEVT(SeriesDraft seriesDraft),
     Result seriesPublishedEVT(Series series),
-    Result sessionFetchedEVT(
-        Session session, Chapter previousChapter, SeriesDraft seriesDraft),
+    Result sessionFetchedEVT(Chapter previousChapter, SeriesDraft seriesDraft),
     Result storyChangedEVT(String story),
     Result titleChangedEVT(String title),
     @required Result orElse(),
@@ -7784,8 +7761,8 @@ class _$SeriesPublishedEVT
             ChapterDraft chapterDraft,
             SeriesDraft seriesDraft),
     @required
-        Result placeholderFetchedEVT(Chapter previousChapter,
-            SeriesDraft seriesDraft, String sessionUid, String coverUrl),
+        Result placeholderFetchedEVT(
+            Chapter previousChapter, SeriesDraft seriesDraft, String coverUrl),
     @required Result publishButtonPressedEVT(),
     @required Result saveOrBackButtonPressedEVT(),
     @required Result seriesCoverDeletedEVT(),
@@ -7796,7 +7773,7 @@ class _$SeriesPublishedEVT
     @required Result seriesPublishedEVT(Series series),
     @required
         Result sessionFetchedEVT(
-            Session session, Chapter previousChapter, SeriesDraft seriesDraft),
+            Chapter previousChapter, SeriesDraft seriesDraft),
     @required Result storyChangedEVT(String story),
     @required Result titleChangedEVT(String title),
   }) {
@@ -7855,8 +7832,8 @@ class _$SeriesPublishedEVT
         Chapter previousChapter,
         ChapterDraft chapterDraft,
         SeriesDraft seriesDraft),
-    Result placeholderFetchedEVT(Chapter previousChapter,
-        SeriesDraft seriesDraft, String sessionUid, String coverUrl),
+    Result placeholderFetchedEVT(
+        Chapter previousChapter, SeriesDraft seriesDraft, String coverUrl),
     Result publishButtonPressedEVT(),
     Result saveOrBackButtonPressedEVT(),
     Result seriesCoverDeletedEVT(),
@@ -7864,8 +7841,7 @@ class _$SeriesPublishedEVT
     Result seriesDraftDeletedEVT(),
     Result seriesDraftFetchedEVT(SeriesDraft seriesDraft),
     Result seriesPublishedEVT(Series series),
-    Result sessionFetchedEVT(
-        Session session, Chapter previousChapter, SeriesDraft seriesDraft),
+    Result sessionFetchedEVT(Chapter previousChapter, SeriesDraft seriesDraft),
     Result storyChangedEVT(String story),
     Result titleChangedEVT(String title),
     @required Result orElse(),
@@ -8002,8 +7978,7 @@ abstract class $SessionFetchedEVTCopyWith<$Res> {
   factory $SessionFetchedEVTCopyWith(
           SessionFetchedEVT value, $Res Function(SessionFetchedEVT) then) =
       _$SessionFetchedEVTCopyWithImpl<$Res>;
-  $Res call(
-      {Session session, Chapter previousChapter, SeriesDraft seriesDraft});
+  $Res call({Chapter previousChapter, SeriesDraft seriesDraft});
 }
 
 class _$SessionFetchedEVTCopyWithImpl<$Res>
@@ -8018,12 +7993,10 @@ class _$SessionFetchedEVTCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object session = freezed,
     Object previousChapter = freezed,
     Object seriesDraft = freezed,
   }) {
     return _then(SessionFetchedEVT(
-      session: session == freezed ? _value.session : session as Session,
       previousChapter: previousChapter == freezed
           ? _value.previousChapter
           : previousChapter as Chapter,
@@ -8037,12 +8010,8 @@ class _$SessionFetchedEVTCopyWithImpl<$Res>
 class _$SessionFetchedEVT
     with DiagnosticableTreeMixin
     implements SessionFetchedEVT {
-  const _$SessionFetchedEVT(
-      {@required this.session, this.previousChapter, this.seriesDraft})
-      : assert(session != null);
+  const _$SessionFetchedEVT({this.previousChapter, this.seriesDraft});
 
-  @override
-  final Session session;
   @override
   final Chapter previousChapter;
   @override
@@ -8050,7 +8019,7 @@ class _$SessionFetchedEVT
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'NewChapterDatabaseEvent.sessionFetchedEVT(session: $session, previousChapter: $previousChapter, seriesDraft: $seriesDraft)';
+    return 'NewChapterDatabaseEvent.sessionFetchedEVT(previousChapter: $previousChapter, seriesDraft: $seriesDraft)';
   }
 
   @override
@@ -8059,7 +8028,6 @@ class _$SessionFetchedEVT
     properties
       ..add(DiagnosticsProperty(
           'type', 'NewChapterDatabaseEvent.sessionFetchedEVT'))
-      ..add(DiagnosticsProperty('session', session))
       ..add(DiagnosticsProperty('previousChapter', previousChapter))
       ..add(DiagnosticsProperty('seriesDraft', seriesDraft));
   }
@@ -8068,9 +8036,6 @@ class _$SessionFetchedEVT
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is SessionFetchedEVT &&
-            (identical(other.session, session) ||
-                const DeepCollectionEquality()
-                    .equals(other.session, session)) &&
             (identical(other.previousChapter, previousChapter) ||
                 const DeepCollectionEquality()
                     .equals(other.previousChapter, previousChapter)) &&
@@ -8082,7 +8047,6 @@ class _$SessionFetchedEVT
   @override
   int get hashCode =>
       runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(session) ^
       const DeepCollectionEquality().hash(previousChapter) ^
       const DeepCollectionEquality().hash(seriesDraft);
 
@@ -8118,8 +8082,8 @@ class _$SessionFetchedEVT
             ChapterDraft chapterDraft,
             SeriesDraft seriesDraft),
     @required
-        Result placeholderFetchedEVT(Chapter previousChapter,
-            SeriesDraft seriesDraft, String sessionUid, String coverUrl),
+        Result placeholderFetchedEVT(
+            Chapter previousChapter, SeriesDraft seriesDraft, String coverUrl),
     @required Result publishButtonPressedEVT(),
     @required Result saveOrBackButtonPressedEVT(),
     @required Result seriesCoverDeletedEVT(),
@@ -8130,7 +8094,7 @@ class _$SessionFetchedEVT
     @required Result seriesPublishedEVT(Series series),
     @required
         Result sessionFetchedEVT(
-            Session session, Chapter previousChapter, SeriesDraft seriesDraft),
+            Chapter previousChapter, SeriesDraft seriesDraft),
     @required Result storyChangedEVT(String story),
     @required Result titleChangedEVT(String title),
   }) {
@@ -8162,7 +8126,7 @@ class _$SessionFetchedEVT
     assert(sessionFetchedEVT != null);
     assert(storyChangedEVT != null);
     assert(titleChangedEVT != null);
-    return sessionFetchedEVT(session, previousChapter, seriesDraft);
+    return sessionFetchedEVT(previousChapter, seriesDraft);
   }
 
   @override
@@ -8189,8 +8153,8 @@ class _$SessionFetchedEVT
         Chapter previousChapter,
         ChapterDraft chapterDraft,
         SeriesDraft seriesDraft),
-    Result placeholderFetchedEVT(Chapter previousChapter,
-        SeriesDraft seriesDraft, String sessionUid, String coverUrl),
+    Result placeholderFetchedEVT(
+        Chapter previousChapter, SeriesDraft seriesDraft, String coverUrl),
     Result publishButtonPressedEVT(),
     Result saveOrBackButtonPressedEVT(),
     Result seriesCoverDeletedEVT(),
@@ -8198,15 +8162,14 @@ class _$SessionFetchedEVT
     Result seriesDraftDeletedEVT(),
     Result seriesDraftFetchedEVT(SeriesDraft seriesDraft),
     Result seriesPublishedEVT(Series series),
-    Result sessionFetchedEVT(
-        Session session, Chapter previousChapter, SeriesDraft seriesDraft),
+    Result sessionFetchedEVT(Chapter previousChapter, SeriesDraft seriesDraft),
     Result storyChangedEVT(String story),
     Result titleChangedEVT(String title),
     @required Result orElse(),
   }) {
     assert(orElse != null);
     if (sessionFetchedEVT != null) {
-      return sessionFetchedEVT(session, previousChapter, seriesDraft);
+      return sessionFetchedEVT(previousChapter, seriesDraft);
     }
     return orElse();
   }
@@ -8327,11 +8290,8 @@ class _$SessionFetchedEVT
 
 abstract class SessionFetchedEVT implements NewChapterDatabaseEvent {
   const factory SessionFetchedEVT(
-      {@required Session session,
-      Chapter previousChapter,
-      SeriesDraft seriesDraft}) = _$SessionFetchedEVT;
+      {Chapter previousChapter, SeriesDraft seriesDraft}) = _$SessionFetchedEVT;
 
-  Session get session;
   Chapter get previousChapter;
   SeriesDraft get seriesDraft;
   $SessionFetchedEVTCopyWith<SessionFetchedEVT> get copyWith;
@@ -8430,8 +8390,8 @@ class _$StoryChangedEVT
             ChapterDraft chapterDraft,
             SeriesDraft seriesDraft),
     @required
-        Result placeholderFetchedEVT(Chapter previousChapter,
-            SeriesDraft seriesDraft, String sessionUid, String coverUrl),
+        Result placeholderFetchedEVT(
+            Chapter previousChapter, SeriesDraft seriesDraft, String coverUrl),
     @required Result publishButtonPressedEVT(),
     @required Result saveOrBackButtonPressedEVT(),
     @required Result seriesCoverDeletedEVT(),
@@ -8442,7 +8402,7 @@ class _$StoryChangedEVT
     @required Result seriesPublishedEVT(Series series),
     @required
         Result sessionFetchedEVT(
-            Session session, Chapter previousChapter, SeriesDraft seriesDraft),
+            Chapter previousChapter, SeriesDraft seriesDraft),
     @required Result storyChangedEVT(String story),
     @required Result titleChangedEVT(String title),
   }) {
@@ -8501,8 +8461,8 @@ class _$StoryChangedEVT
         Chapter previousChapter,
         ChapterDraft chapterDraft,
         SeriesDraft seriesDraft),
-    Result placeholderFetchedEVT(Chapter previousChapter,
-        SeriesDraft seriesDraft, String sessionUid, String coverUrl),
+    Result placeholderFetchedEVT(
+        Chapter previousChapter, SeriesDraft seriesDraft, String coverUrl),
     Result publishButtonPressedEVT(),
     Result saveOrBackButtonPressedEVT(),
     Result seriesCoverDeletedEVT(),
@@ -8510,8 +8470,7 @@ class _$StoryChangedEVT
     Result seriesDraftDeletedEVT(),
     Result seriesDraftFetchedEVT(SeriesDraft seriesDraft),
     Result seriesPublishedEVT(Series series),
-    Result sessionFetchedEVT(
-        Session session, Chapter previousChapter, SeriesDraft seriesDraft),
+    Result sessionFetchedEVT(Chapter previousChapter, SeriesDraft seriesDraft),
     Result storyChangedEVT(String story),
     Result titleChangedEVT(String title),
     @required Result orElse(),
@@ -8737,8 +8696,8 @@ class _$TitleChangedEVT
             ChapterDraft chapterDraft,
             SeriesDraft seriesDraft),
     @required
-        Result placeholderFetchedEVT(Chapter previousChapter,
-            SeriesDraft seriesDraft, String sessionUid, String coverUrl),
+        Result placeholderFetchedEVT(
+            Chapter previousChapter, SeriesDraft seriesDraft, String coverUrl),
     @required Result publishButtonPressedEVT(),
     @required Result saveOrBackButtonPressedEVT(),
     @required Result seriesCoverDeletedEVT(),
@@ -8749,7 +8708,7 @@ class _$TitleChangedEVT
     @required Result seriesPublishedEVT(Series series),
     @required
         Result sessionFetchedEVT(
-            Session session, Chapter previousChapter, SeriesDraft seriesDraft),
+            Chapter previousChapter, SeriesDraft seriesDraft),
     @required Result storyChangedEVT(String story),
     @required Result titleChangedEVT(String title),
   }) {
@@ -8808,8 +8767,8 @@ class _$TitleChangedEVT
         Chapter previousChapter,
         ChapterDraft chapterDraft,
         SeriesDraft seriesDraft),
-    Result placeholderFetchedEVT(Chapter previousChapter,
-        SeriesDraft seriesDraft, String sessionUid, String coverUrl),
+    Result placeholderFetchedEVT(
+        Chapter previousChapter, SeriesDraft seriesDraft, String coverUrl),
     Result publishButtonPressedEVT(),
     Result saveOrBackButtonPressedEVT(),
     Result seriesCoverDeletedEVT(),
@@ -8817,8 +8776,7 @@ class _$TitleChangedEVT
     Result seriesDraftDeletedEVT(),
     Result seriesDraftFetchedEVT(SeriesDraft seriesDraft),
     Result seriesPublishedEVT(Series series),
-    Result sessionFetchedEVT(
-        Session session, Chapter previousChapter, SeriesDraft seriesDraft),
+    Result sessionFetchedEVT(Chapter previousChapter, SeriesDraft seriesDraft),
     Result storyChangedEVT(String story),
     Result titleChangedEVT(String title),
     @required Result orElse(),
@@ -8954,6 +8912,7 @@ abstract class TitleChangedEVT implements NewChapterDatabaseEvent {
 class _$NewChapterDatabaseStateTearOff {
   const _$NewChapterDatabaseStateTearOff();
 
+// ignore: unused_element
   _NewChapterDatabaseState call(
       {@required
           bool isDeletingOrPublishingOrSaving,
@@ -8967,6 +8926,8 @@ class _$NewChapterDatabaseStateTearOff {
           bool isNSFW,
       @required
           bool showErrorMessages,
+      @required
+          Chapter previousChapter,
       @required
           ChapterDraft chapterDraft,
       @required
@@ -8990,6 +8951,10 @@ class _$NewChapterDatabaseStateTearOff {
       @required
           Option<Either<DatabaseFailure, dynamic>>
               databaseFailureOrSuccessOption,
+      @required
+          SeriesDraft seriesDraft,
+      @required
+          Session session,
       @required
           Story story,
       @required
@@ -9023,6 +8988,7 @@ class _$NewChapterDatabaseStateTearOff {
       isFirstChapter: isFirstChapter,
       isNSFW: isNSFW,
       showErrorMessages: showErrorMessages,
+      previousChapter: previousChapter,
       chapterDraft: chapterDraft,
       copyrights: copyrights,
       genre: genre,
@@ -9034,6 +9000,8 @@ class _$NewChapterDatabaseStateTearOff {
       genresMap: genresMap,
       languagesMap: languagesMap,
       databaseFailureOrSuccessOption: databaseFailureOrSuccessOption,
+      seriesDraft: seriesDraft,
+      session: session,
       story: story,
       chapterCoverUrl: chapterCoverUrl,
       copyrightsStr: copyrightsStr,
@@ -9061,6 +9029,7 @@ mixin _$NewChapterDatabaseState {
   bool get isFirstChapter;
   bool get isNSFW;
   bool get showErrorMessages;
+  Chapter get previousChapter;
   ChapterDraft get chapterDraft;
   Copyrights get copyrights;
   Genre get genre;
@@ -9072,6 +9041,8 @@ mixin _$NewChapterDatabaseState {
   Map<String, String> get genresMap;
   Map<String, String> get languagesMap;
   Option<Either<DatabaseFailure, dynamic>> get databaseFailureOrSuccessOption;
+  SeriesDraft get seriesDraft;
+  Session get session;
   Story get story;
   String get chapterCoverUrl;
   String get copyrightsStr;
@@ -9100,6 +9071,7 @@ abstract class $NewChapterDatabaseStateCopyWith<$Res> {
       bool isFirstChapter,
       bool isNSFW,
       bool showErrorMessages,
+      Chapter previousChapter,
       ChapterDraft chapterDraft,
       Copyrights copyrights,
       Genre genre,
@@ -9111,6 +9083,8 @@ abstract class $NewChapterDatabaseStateCopyWith<$Res> {
       Map<String, String> genresMap,
       Map<String, String> languagesMap,
       Option<Either<DatabaseFailure, dynamic>> databaseFailureOrSuccessOption,
+      SeriesDraft seriesDraft,
+      Session session,
       Story story,
       String chapterCoverUrl,
       String copyrightsStr,
@@ -9142,6 +9116,7 @@ class _$NewChapterDatabaseStateCopyWithImpl<$Res>
     Object isFirstChapter = freezed,
     Object isNSFW = freezed,
     Object showErrorMessages = freezed,
+    Object previousChapter = freezed,
     Object chapterDraft = freezed,
     Object copyrights = freezed,
     Object genre = freezed,
@@ -9153,6 +9128,8 @@ class _$NewChapterDatabaseStateCopyWithImpl<$Res>
     Object genresMap = freezed,
     Object languagesMap = freezed,
     Object databaseFailureOrSuccessOption = freezed,
+    Object seriesDraft = freezed,
+    Object session = freezed,
     Object story = freezed,
     Object chapterCoverUrl = freezed,
     Object copyrightsStr = freezed,
@@ -9181,6 +9158,9 @@ class _$NewChapterDatabaseStateCopyWithImpl<$Res>
       showErrorMessages: showErrorMessages == freezed
           ? _value.showErrorMessages
           : showErrorMessages as bool,
+      previousChapter: previousChapter == freezed
+          ? _value.previousChapter
+          : previousChapter as Chapter,
       chapterDraft: chapterDraft == freezed
           ? _value.chapterDraft
           : chapterDraft as ChapterDraft,
@@ -9210,6 +9190,10 @@ class _$NewChapterDatabaseStateCopyWithImpl<$Res>
           ? _value.databaseFailureOrSuccessOption
           : databaseFailureOrSuccessOption
               as Option<Either<DatabaseFailure, dynamic>>,
+      seriesDraft: seriesDraft == freezed
+          ? _value.seriesDraft
+          : seriesDraft as SeriesDraft,
+      session: session == freezed ? _value.session : session as Session,
       story: story == freezed ? _value.story : story as Story,
       chapterCoverUrl: chapterCoverUrl == freezed
           ? _value.chapterCoverUrl
@@ -9253,6 +9237,7 @@ abstract class _$NewChapterDatabaseStateCopyWith<$Res>
       bool isFirstChapter,
       bool isNSFW,
       bool showErrorMessages,
+      Chapter previousChapter,
       ChapterDraft chapterDraft,
       Copyrights copyrights,
       Genre genre,
@@ -9264,6 +9249,8 @@ abstract class _$NewChapterDatabaseStateCopyWith<$Res>
       Map<String, String> genresMap,
       Map<String, String> languagesMap,
       Option<Either<DatabaseFailure, dynamic>> databaseFailureOrSuccessOption,
+      SeriesDraft seriesDraft,
+      Session session,
       Story story,
       String chapterCoverUrl,
       String copyrightsStr,
@@ -9298,6 +9285,7 @@ class __$NewChapterDatabaseStateCopyWithImpl<$Res>
     Object isFirstChapter = freezed,
     Object isNSFW = freezed,
     Object showErrorMessages = freezed,
+    Object previousChapter = freezed,
     Object chapterDraft = freezed,
     Object copyrights = freezed,
     Object genre = freezed,
@@ -9309,6 +9297,8 @@ class __$NewChapterDatabaseStateCopyWithImpl<$Res>
     Object genresMap = freezed,
     Object languagesMap = freezed,
     Object databaseFailureOrSuccessOption = freezed,
+    Object seriesDraft = freezed,
+    Object session = freezed,
     Object story = freezed,
     Object chapterCoverUrl = freezed,
     Object copyrightsStr = freezed,
@@ -9337,6 +9327,9 @@ class __$NewChapterDatabaseStateCopyWithImpl<$Res>
       showErrorMessages: showErrorMessages == freezed
           ? _value.showErrorMessages
           : showErrorMessages as bool,
+      previousChapter: previousChapter == freezed
+          ? _value.previousChapter
+          : previousChapter as Chapter,
       chapterDraft: chapterDraft == freezed
           ? _value.chapterDraft
           : chapterDraft as ChapterDraft,
@@ -9366,6 +9359,10 @@ class __$NewChapterDatabaseStateCopyWithImpl<$Res>
           ? _value.databaseFailureOrSuccessOption
           : databaseFailureOrSuccessOption
               as Option<Either<DatabaseFailure, dynamic>>,
+      seriesDraft: seriesDraft == freezed
+          ? _value.seriesDraft
+          : seriesDraft as SeriesDraft,
+      session: session == freezed ? _value.session : session as Session,
       story: story == freezed ? _value.story : story as Story,
       chapterCoverUrl: chapterCoverUrl == freezed
           ? _value.chapterCoverUrl
@@ -9406,6 +9403,7 @@ class _$_NewChapterDatabaseState
       @required this.isFirstChapter,
       @required this.isNSFW,
       @required this.showErrorMessages,
+      @required this.previousChapter,
       @required this.chapterDraft,
       @required this.copyrights,
       @required this.genre,
@@ -9417,6 +9415,8 @@ class _$_NewChapterDatabaseState
       @required this.genresMap,
       @required this.languagesMap,
       @required this.databaseFailureOrSuccessOption,
+      @required this.seriesDraft,
+      @required this.session,
       @required this.story,
       @required this.chapterCoverUrl,
       @required this.copyrightsStr,
@@ -9436,6 +9436,7 @@ class _$_NewChapterDatabaseState
         assert(isFirstChapter != null),
         assert(isNSFW != null),
         assert(showErrorMessages != null),
+        assert(previousChapter != null),
         assert(chapterDraft != null),
         assert(copyrights != null),
         assert(genre != null),
@@ -9447,6 +9448,8 @@ class _$_NewChapterDatabaseState
         assert(genresMap != null),
         assert(languagesMap != null),
         assert(databaseFailureOrSuccessOption != null),
+        assert(seriesDraft != null),
+        assert(session != null),
         assert(story != null),
         assert(chapterCoverUrl != null),
         assert(copyrightsStr != null),
@@ -9474,6 +9477,8 @@ class _$_NewChapterDatabaseState
   @override
   final bool showErrorMessages;
   @override
+  final Chapter previousChapter;
+  @override
   final ChapterDraft chapterDraft;
   @override
   final Copyrights copyrights;
@@ -9495,6 +9500,10 @@ class _$_NewChapterDatabaseState
   final Map<String, String> languagesMap;
   @override
   final Option<Either<DatabaseFailure, dynamic>> databaseFailureOrSuccessOption;
+  @override
+  final SeriesDraft seriesDraft;
+  @override
+  final Session session;
   @override
   final Story story;
   @override
@@ -9524,7 +9533,7 @@ class _$_NewChapterDatabaseState
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'NewChapterDatabaseState(isDeletingOrPublishingOrSaving: $isDeletingOrPublishingOrSaving, isEditMode: $isEditMode, isEnd: $isEnd, isFirstChapter: $isFirstChapter, isNSFW: $isNSFW, showErrorMessages: $showErrorMessages, chapterDraft: $chapterDraft, copyrights: $copyrights, genre: $genre, genreOptional: $genreOptional, storyWordCount: $storyWordCount, titleWordCount: $titleWordCount, language: $language, copyrightsMap: $copyrightsMap, genresMap: $genresMap, languagesMap: $languagesMap, databaseFailureOrSuccessOption: $databaseFailureOrSuccessOption, story: $story, chapterCoverUrl: $chapterCoverUrl, copyrightsStr: $copyrightsStr, coverUrl: $coverUrl, genreOptionalStr: $genreOptionalStr, genreStr: $genreStr, languageStr: $languageStr, seriesCoverUrl: $seriesCoverUrl, storyStr: $storyStr, titleStr: $titleStr, storyController: $storyController, titleController: $titleController, title: $title)';
+    return 'NewChapterDatabaseState(isDeletingOrPublishingOrSaving: $isDeletingOrPublishingOrSaving, isEditMode: $isEditMode, isEnd: $isEnd, isFirstChapter: $isFirstChapter, isNSFW: $isNSFW, showErrorMessages: $showErrorMessages, previousChapter: $previousChapter, chapterDraft: $chapterDraft, copyrights: $copyrights, genre: $genre, genreOptional: $genreOptional, storyWordCount: $storyWordCount, titleWordCount: $titleWordCount, language: $language, copyrightsMap: $copyrightsMap, genresMap: $genresMap, languagesMap: $languagesMap, databaseFailureOrSuccessOption: $databaseFailureOrSuccessOption, seriesDraft: $seriesDraft, session: $session, story: $story, chapterCoverUrl: $chapterCoverUrl, copyrightsStr: $copyrightsStr, coverUrl: $coverUrl, genreOptionalStr: $genreOptionalStr, genreStr: $genreStr, languageStr: $languageStr, seriesCoverUrl: $seriesCoverUrl, storyStr: $storyStr, titleStr: $titleStr, storyController: $storyController, titleController: $titleController, title: $title)';
   }
 
   @override
@@ -9539,6 +9548,7 @@ class _$_NewChapterDatabaseState
       ..add(DiagnosticsProperty('isFirstChapter', isFirstChapter))
       ..add(DiagnosticsProperty('isNSFW', isNSFW))
       ..add(DiagnosticsProperty('showErrorMessages', showErrorMessages))
+      ..add(DiagnosticsProperty('previousChapter', previousChapter))
       ..add(DiagnosticsProperty('chapterDraft', chapterDraft))
       ..add(DiagnosticsProperty('copyrights', copyrights))
       ..add(DiagnosticsProperty('genre', genre))
@@ -9551,6 +9561,8 @@ class _$_NewChapterDatabaseState
       ..add(DiagnosticsProperty('languagesMap', languagesMap))
       ..add(DiagnosticsProperty(
           'databaseFailureOrSuccessOption', databaseFailureOrSuccessOption))
+      ..add(DiagnosticsProperty('seriesDraft', seriesDraft))
+      ..add(DiagnosticsProperty('session', session))
       ..add(DiagnosticsProperty('story', story))
       ..add(DiagnosticsProperty('chapterCoverUrl', chapterCoverUrl))
       ..add(DiagnosticsProperty('copyrightsStr', copyrightsStr))
@@ -9587,6 +9599,9 @@ class _$_NewChapterDatabaseState
             (identical(other.showErrorMessages, showErrorMessages) ||
                 const DeepCollectionEquality()
                     .equals(other.showErrorMessages, showErrorMessages)) &&
+            (identical(other.previousChapter, previousChapter) ||
+                const DeepCollectionEquality()
+                    .equals(other.previousChapter, previousChapter)) &&
             (identical(other.chapterDraft, chapterDraft) ||
                 const DeepCollectionEquality()
                     .equals(other.chapterDraft, chapterDraft)) &&
@@ -9617,9 +9632,10 @@ class _$_NewChapterDatabaseState
                 const DeepCollectionEquality()
                     .equals(other.languagesMap, languagesMap)) &&
             (identical(other.databaseFailureOrSuccessOption, databaseFailureOrSuccessOption) ||
-                const DeepCollectionEquality().equals(
-                    other.databaseFailureOrSuccessOption,
-                    databaseFailureOrSuccessOption)) &&
+                const DeepCollectionEquality()
+                    .equals(other.databaseFailureOrSuccessOption, databaseFailureOrSuccessOption)) &&
+            (identical(other.seriesDraft, seriesDraft) || const DeepCollectionEquality().equals(other.seriesDraft, seriesDraft)) &&
+            (identical(other.session, session) || const DeepCollectionEquality().equals(other.session, session)) &&
             (identical(other.story, story) || const DeepCollectionEquality().equals(other.story, story)) &&
             (identical(other.chapterCoverUrl, chapterCoverUrl) || const DeepCollectionEquality().equals(other.chapterCoverUrl, chapterCoverUrl)) &&
             (identical(other.copyrightsStr, copyrightsStr) || const DeepCollectionEquality().equals(other.copyrightsStr, copyrightsStr)) &&
@@ -9644,6 +9660,7 @@ class _$_NewChapterDatabaseState
       const DeepCollectionEquality().hash(isFirstChapter) ^
       const DeepCollectionEquality().hash(isNSFW) ^
       const DeepCollectionEquality().hash(showErrorMessages) ^
+      const DeepCollectionEquality().hash(previousChapter) ^
       const DeepCollectionEquality().hash(chapterDraft) ^
       const DeepCollectionEquality().hash(copyrights) ^
       const DeepCollectionEquality().hash(genre) ^
@@ -9655,6 +9672,8 @@ class _$_NewChapterDatabaseState
       const DeepCollectionEquality().hash(genresMap) ^
       const DeepCollectionEquality().hash(languagesMap) ^
       const DeepCollectionEquality().hash(databaseFailureOrSuccessOption) ^
+      const DeepCollectionEquality().hash(seriesDraft) ^
+      const DeepCollectionEquality().hash(session) ^
       const DeepCollectionEquality().hash(story) ^
       const DeepCollectionEquality().hash(chapterCoverUrl) ^
       const DeepCollectionEquality().hash(copyrightsStr) ^
@@ -9690,6 +9709,8 @@ abstract class _NewChapterDatabaseState implements NewChapterDatabaseState {
       @required
           bool showErrorMessages,
       @required
+          Chapter previousChapter,
+      @required
           ChapterDraft chapterDraft,
       @required
           Copyrights copyrights,
@@ -9712,6 +9733,10 @@ abstract class _NewChapterDatabaseState implements NewChapterDatabaseState {
       @required
           Option<Either<DatabaseFailure, dynamic>>
               databaseFailureOrSuccessOption,
+      @required
+          SeriesDraft seriesDraft,
+      @required
+          Session session,
       @required
           Story story,
       @required
@@ -9752,6 +9777,8 @@ abstract class _NewChapterDatabaseState implements NewChapterDatabaseState {
   @override
   bool get showErrorMessages;
   @override
+  Chapter get previousChapter;
+  @override
   ChapterDraft get chapterDraft;
   @override
   Copyrights get copyrights;
@@ -9773,6 +9800,10 @@ abstract class _NewChapterDatabaseState implements NewChapterDatabaseState {
   Map<String, String> get languagesMap;
   @override
   Option<Either<DatabaseFailure, dynamic>> get databaseFailureOrSuccessOption;
+  @override
+  SeriesDraft get seriesDraft;
+  @override
+  Session get session;
   @override
   Story get story;
   @override

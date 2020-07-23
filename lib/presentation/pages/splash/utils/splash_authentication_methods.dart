@@ -2,8 +2,8 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:wine/application/authentication/splash/splash_authentication_bloc.dart';
-import 'package:wine/presentation/widgets/wine_error_dialog.dart';
-import 'package:wine/presentation/widgets/wine_show_dialog.dart';
+import 'package:wine/presentation/widgets/dialog/wine_error_dialog.dart';
+import 'package:wine/presentation/widgets/dialog/wine_show_dialog.dart';
 
 class SplashAuthenticationMethods {
   Future<void> restartSplash(BuildContext context, String message) async {

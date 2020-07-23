@@ -64,7 +64,7 @@ class HomeRightDrawer extends StatelessWidget {
                           decoration: const BoxDecoration(border: Border(bottom: BorderSide(width: 3.0))),
                           height: 30.0,
                           child: GestureDetector(
-                            onTap: () => ExtendedNavigator.root.pushNamed(Routes.accountPage),
+                            onTap: () async => ExtendedNavigator.root.push(Routes.accountPage),
                             child: Text(
                               'MY ACCOUNT',
                               style: TextStyle(color: Colors.black, fontSize: 20.0, fontWeight: FontWeight.w300),
@@ -78,7 +78,7 @@ class HomeRightDrawer extends StatelessWidget {
                           decoration: const BoxDecoration(border: Border(bottom: BorderSide(width: 3.0))),
                           height: 30.0,
                           child: GestureDetector(
-                            onTap: () => ExtendedNavigator.root.pushNamed(Routes.settingsPage),
+                            onTap: () async => ExtendedNavigator.root.push(Routes.settingsPage),
                             child: Text(
                               'SETTINGS',
                               style: TextStyle(color: Colors.black, fontSize: 20.0, fontWeight: FontWeight.w300),

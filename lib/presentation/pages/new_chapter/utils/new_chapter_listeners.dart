@@ -1,11 +1,13 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/widgets.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:wine/application/database/core/core_database_bloc.dart';
 
 import 'package:wine/application/database/new_chapter/new_chapter_database_bloc.dart';
 import 'package:wine/domain/database/database_success.dart';
 import 'package:wine/presentation/pages/home/utils/home_navigation_methods.dart';
-import 'package:wine/presentation/widgets/wine_error_dialog.dart';
-import 'package:wine/presentation/widgets/wine_show_dialog.dart';
+import 'package:wine/presentation/widgets/dialog/wine_error_dialog.dart';
+import 'package:wine/presentation/widgets/dialog/wine_show_dialog.dart';
 
 class NewChapterListeners {
   final HomeNavigationMethods homeNavMethods;
@@ -25,12 +27,15 @@ class NewChapterListeners {
             ),
             orElse: () => null,
           ),
-          (success) {
+          (success) async {
             if (success is ChapterDraftSavedSCS) {
               ExtendedNavigator.root.pop();
             }
             if (success is ChapterDraftDeletedSCS) {
-              ExtendedNavigator.root.pop<String>('published');
+              if (state.seriesDraft.isNotEmpty) {
+                context.bloc<CoreDatabaseBloc>().add(const CoreDatabaseEvent.publishedFromHomeEVT());
+              }
+              ExtendedNavigator.root.pop();
             }
           },
         ),

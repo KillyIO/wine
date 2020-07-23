@@ -20,10 +20,7 @@ class SplashPage extends StatelessWidget {
         backgroundColor: Colors.white,
         body: MultiBlocProvider(
           providers: [
-            BlocProvider(
-              create: (context) =>
-                  getIt<SplashAuthenticationBloc>()..add(const SplashAuthenticationEvent.splashLaunchedEVT()),
-            ),
+            BlocProvider(create: (context) => getIt<SplashAuthenticationBloc>()),
             BlocProvider(create: (context) => getIt<SplashDatabaseBloc>()),
           ],
           child: SplashLayout(),

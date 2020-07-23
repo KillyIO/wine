@@ -8,9 +8,8 @@ import 'package:path/path.dart' as p;
 import 'package:wine/domain/database/database_failure.dart';
 import 'package:wine/domain/database/database_success.dart';
 import 'package:wine/domain/database/i_online_series_database_facade.dart';
-import 'package:wine/domain/database/i_online_user_database_facade.dart';
 import 'package:wine/domain/models/series.dart';
-import 'package:wine/domain/models/user.dart';
+import 'package:wine/domain/models/series_minified.dart';
 import 'package:wine/utils/methods.dart';
 import 'package:wine/utils/paths.dart';
 
@@ -18,13 +17,8 @@ import 'package:wine/utils/paths.dart';
 class FirebaseOnlineSeriesDatabaseFacade implements IOnlineSeriesDatabaseFacade {
   final Firestore _firestore;
   final FirebaseStorage _firebaseStorage;
-  final IOnlineUserDatabaseFacade _onlineUserDatabaseFacade;
 
-  FirebaseOnlineSeriesDatabaseFacade(
-    this._firestore,
-    this._firebaseStorage,
-    this._onlineUserDatabaseFacade,
-  );
+  FirebaseOnlineSeriesDatabaseFacade(this._firestore, this._firebaseStorage);
 
   @override
   Future<Either<DatabaseFailure, DatabaseSuccess>> deleteSeriesCover(String coverUrl) async {
@@ -35,71 +29,48 @@ class FirebaseOnlineSeriesDatabaseFacade implements IOnlineSeriesDatabaseFacade 
   }
 
   @override
-  Future<Either<DatabaseFailure, DatabaseSuccess>> loadNewSeries({
-    Series lastSeries,
-    Map<String, dynamic> filters,
-    bool loadAuthors = false,
+  Future<Either<DatabaseFailure, DatabaseSuccess>> loadNewSeriesMinified(
+    Map<String, dynamic> filters, {
+    SeriesMinified lastSeriesMinified,
   }) async {
-    final CollectionReference seriesCollection = _firestore.collection(Paths.seriesPath);
+    final CollectionReference seriesMinifiedCollection = _firestore.collection(Paths.seriesMinifiedPath);
 
     QuerySnapshot querySnapshot;
-    if (lastSeries != null) {
-      final DocumentSnapshot lastDocument = await seriesCollection.document(lastSeries.uid).get();
+    if (lastSeriesMinified != null) {
+      final DocumentSnapshot lastDocument = await seriesMinifiedCollection.document(lastSeriesMinified.uid).get();
 
-      querySnapshot = await seriesCollection
+      querySnapshot = await seriesMinifiedCollection
           .startAfterDocument(lastDocument)
           .where('createdAt', isGreaterThanOrEqualTo: filters['time'])
-          .where('genre',
-              whereIn: (filters['genre'] as String).isNotEmpty ? [filters['genre']] : Methods.getGenreKeys())
+          .where(
+            'genre',
+            whereIn: (filters['genre'] as String).isNotEmpty ? [filters['genre']] : Methods.getGenreKeys(),
+          )
           .where('language', isEqualTo: filters['language'])
           .orderBy('createdAt', descending: true)
           .limit(20)
           .getDocuments();
     } else {
-      querySnapshot = await seriesCollection
+      querySnapshot = await seriesMinifiedCollection
           .where('createdAt', isGreaterThanOrEqualTo: filters['time'])
-          .where('genre',
-              whereIn: (filters['genre'] as String).isNotEmpty ? [filters['genre']] : Methods.getGenreKeys())
+          .where(
+            'genre',
+            whereIn: (filters['genre'] as String).isNotEmpty ? [filters['genre']] : Methods.getGenreKeys(),
+          )
           .where('language', isEqualTo: filters['language'])
           .orderBy('createdAt', descending: true)
           .limit(20)
           .getDocuments();
     }
 
-    final List<Series> seriesList = <Series>[];
+    final List<SeriesMinified> seriesMinifiedList = <SeriesMinified>[];
     if (querySnapshot.documents.isNotEmpty) {
-      if (!loadAuthors) {
-        for (final DocumentSnapshot doc in querySnapshot.documents) {
-          seriesList.add(Series.fromFirestore(doc));
-        }
-      } else {
-        final List<String> userUid = <String>[];
-        for (final DocumentSnapshot doc in querySnapshot.documents) {
-          seriesList.add(Series.fromFirestore(doc));
-          userUid.add(doc.data['authorUid'] as String);
-        }
-
-        Map<String, User> usersMap = <String, User>{};
-
-        if (userUid.isNotEmpty) {
-          final Either<DatabaseFailure, DatabaseSuccess> failureOrSuccess =
-              await _onlineUserDatabaseFacade.loadUsersAsMapByUidList(userUid);
-          failureOrSuccess.fold(
-            (failure) => left(failure),
-            (success) {
-              if (success is UserAsMapLoadedSCS) {
-                usersMap = success.usersMap;
-              }
-            },
-          );
-
-          for (final Series series in seriesList) {
-            series.author = usersMap[series.authorUid];
-          }
-        }
+      for (final DocumentSnapshot doc in querySnapshot.documents) {
+        seriesMinifiedList.add(SeriesMinified.fromFirestore(doc));
       }
     }
-    return right(DatabaseSuccess.seriesListLoadedSCS(seriesList));
+
+    return right(DatabaseSuccess.seriesMinifiedListLoadedSCS(seriesMinifiedList));
   }
 
   @override
@@ -146,32 +117,35 @@ class FirebaseOnlineSeriesDatabaseFacade implements IOnlineSeriesDatabaseFacade 
   }
 
   @override
-  Future<Either<DatabaseFailure, DatabaseSuccess>> loadSeriesByUserId(String uid, {Series lastSeries}) async {
-    final CollectionReference seriesCollection = _firestore.collection(Paths.seriesPath);
+  Future<Either<DatabaseFailure, DatabaseSuccess>> loadSeriesMinifiedByUserUid(
+    String userUid, {
+    SeriesMinified lastSeriesMinified,
+  }) async {
+    final CollectionReference seriesMinifiedCollection = _firestore.collection(Paths.seriesMinifiedPath);
 
     QuerySnapshot querySnapshot;
-    if (lastSeries != null) {
-      final DocumentSnapshot lastDocument = await seriesCollection.document(lastSeries.uid).get();
+    if (lastSeriesMinified != null) {
+      final DocumentSnapshot lastDocument = await seriesMinifiedCollection.document(lastSeriesMinified.uid).get();
 
-      querySnapshot = await seriesCollection
+      querySnapshot = await seriesMinifiedCollection
           .startAfterDocument(lastDocument)
-          .where('authorUid', isEqualTo: uid)
+          .where('authorUid', isEqualTo: userUid)
           .orderBy('createdAt', descending: true)
           .limit(20)
           .getDocuments();
     } else {
-      querySnapshot = await seriesCollection
-          .where('authorUid', isEqualTo: uid)
+      querySnapshot = await seriesMinifiedCollection
+          .where('authorUid', isEqualTo: userUid)
           .orderBy('createdAt', descending: true)
           .limit(20)
           .getDocuments();
     }
 
-    final List<Series> seriesList = <Series>[];
+    final List<SeriesMinified> seriesMinifiedList = <SeriesMinified>[];
     for (final DocumentSnapshot doc in querySnapshot.documents) {
-      seriesList.add(Series.fromFirestore(doc));
+      seriesMinifiedList.add(SeriesMinified.fromFirestore(doc));
     }
-    return right(DatabaseSuccess.seriesListLoadedSCS(seriesList));
+    return right(DatabaseSuccess.seriesMinifiedListLoadedSCS(seriesMinifiedList));
   }
 
   @override
@@ -201,32 +175,35 @@ class FirebaseOnlineSeriesDatabaseFacade implements IOnlineSeriesDatabaseFacade 
   }
 
   @override
-  Future<Either<DatabaseFailure, DatabaseSuccess>> loadTopSeries({
-    Series lastSeries,
-    Map<String, dynamic> filters,
-    bool loadAuthors = false,
+  Future<Either<DatabaseFailure, DatabaseSuccess>> loadTopSeriesMinified(
+    Map<String, dynamic> filters, {
+    SeriesMinified lastSeriesMinified,
   }) async {
-    final CollectionReference seriesCollection = _firestore.collection(Paths.seriesPath);
+    final CollectionReference seriesMinifiedCollection = _firestore.collection(Paths.seriesMinifiedPath);
 
     QuerySnapshot querySnapshot;
-    if (lastSeries != null) {
-      final DocumentSnapshot lastDocument = await seriesCollection.document(lastSeries.uid).get();
+    if (lastSeriesMinified != null) {
+      final DocumentSnapshot lastDocument = await seriesMinifiedCollection.document(lastSeriesMinified.uid).get();
 
-      querySnapshot = await seriesCollection
+      querySnapshot = await seriesMinifiedCollection
           .startAfterDocument(lastDocument)
           .where('updatedAt', isGreaterThanOrEqualTo: filters['time'])
-          .where('genre',
-              whereIn: (filters['genre'] as String).isNotEmpty ? [filters['genre']] : Methods.getGenreKeys())
+          .where(
+            'genre',
+            whereIn: (filters['genre'] as String).isNotEmpty ? [filters['genre']] : Methods.getGenreKeys(),
+          )
           .where('language', isEqualTo: filters['language'])
           .orderBy('updatedAt', descending: true)
           .orderBy('likesCount', descending: true)
           .limit(20)
           .getDocuments();
     } else {
-      querySnapshot = await seriesCollection
+      querySnapshot = await seriesMinifiedCollection
           .where('updatedAt', isGreaterThanOrEqualTo: filters['time'])
-          .where('genre',
-              whereIn: (filters['genre'] as String).isNotEmpty ? [filters['genre']] : Methods.getGenreKeys())
+          .where(
+            'genre',
+            whereIn: (filters['genre'] as String).isNotEmpty ? [filters['genre']] : Methods.getGenreKeys(),
+          )
           .where('language', isEqualTo: filters['language'])
           .orderBy('updatedAt', descending: true)
           .orderBy('likesCount', descending: true)
@@ -234,41 +211,14 @@ class FirebaseOnlineSeriesDatabaseFacade implements IOnlineSeriesDatabaseFacade 
           .getDocuments();
     }
 
-    final List<Series> seriesList = <Series>[];
+    final List<SeriesMinified> seriesMinifiedList = <SeriesMinified>[];
     if (querySnapshot.documents.isNotEmpty) {
-      if (!loadAuthors) {
-        for (final DocumentSnapshot doc in querySnapshot.documents) {
-          seriesList.add(Series.fromFirestore(doc));
-        }
-      } else {
-        final List<String> userUid = <String>[];
-        for (final DocumentSnapshot doc in querySnapshot.documents) {
-          seriesList.add(Series.fromFirestore(doc));
-          userUid.add(doc.data['authorUid'] as String);
-        }
-
-        Map<String, User> usersMap = <String, User>{};
-
-        if (userUid.isNotEmpty) {
-          final Either<DatabaseFailure, DatabaseSuccess> failureOrSuccess =
-              await _onlineUserDatabaseFacade.loadUsersAsMapByUidList(userUid);
-          failureOrSuccess.fold(
-            (failure) => left(failure),
-            (success) {
-              if (success is UserAsMapLoadedSCS) {
-                usersMap = success.usersMap;
-              }
-            },
-          );
-
-          for (final Series series in seriesList) {
-            series.author = usersMap[series.authorUid];
-          }
-        }
+      for (final DocumentSnapshot doc in querySnapshot.documents) {
+        seriesMinifiedList.add(SeriesMinified.fromFirestore(doc));
       }
     }
-    seriesList.sort((b, a) => a.likesCount.compareTo(b.likesCount));
-    return right(DatabaseSuccess.seriesListLoadedSCS(seriesList));
+
+    return right(DatabaseSuccess.seriesMinifiedListLoadedSCS(seriesMinifiedList));
   }
 
   @override
@@ -308,15 +258,20 @@ class FirebaseOnlineSeriesDatabaseFacade implements IOnlineSeriesDatabaseFacade 
   }
 
   @override
-  Future<Either<DatabaseFailure, DatabaseSuccess>> publishSeries(Series series) async {
-    final DocumentReference ref = _firestore.collection(Paths.seriesPath).document(series.uid);
+  Future<Either<DatabaseFailure, DatabaseSuccess>> publishSeries(SeriesMinified seriesMinified, Series series) async {
+    final DocumentReference seriesMinifiedRef =
+        _firestore.collection(Paths.seriesMinifiedPath).document(seriesMinified.uid);
+    final DocumentReference seriesRef = _firestore.collection(Paths.seriesPath).document(series.uid);
 
-    series
+    seriesMinified
       ..likesCount = 0
       ..createdAt = DateTime.now().millisecondsSinceEpoch
       ..updatedAt = DateTime.now().millisecondsSinceEpoch;
 
-    await ref.setData(series.toMap(), merge: true);
+    Future.wait([
+      seriesMinifiedRef.setData(seriesMinified.toMap(), merge: true),
+      seriesRef.setData(series.toMap(), merge: true),
+    ]);
 
     return right(const DatabaseSuccess.seriesPublishedSCS());
   }
@@ -347,7 +302,8 @@ class FirebaseOnlineSeriesDatabaseFacade implements IOnlineSeriesDatabaseFacade 
     String userUid,
     String seriesUid,
   }) async {
-    final DocumentReference seriesReference = _firestore.collection(Paths.seriesPath).document(seriesUid);
+    final DocumentReference seriesMinifiedReference =
+        _firestore.collection(Paths.seriesMinifiedPath).document(seriesUid);
     final DocumentReference seriesLikesReference = _firestore.collection(Paths.seriesLikesPath).document(seriesUid);
 
     final DocumentSnapshot documentSnapshot = await seriesLikesReference.get();
@@ -360,7 +316,7 @@ class FirebaseOnlineSeriesDatabaseFacade implements IOnlineSeriesDatabaseFacade 
     }
 
     Future.wait([
-      seriesReference.setData({
+      seriesMinifiedReference.setData({
         'likesCount': FieldValue.increment(!isLiked ? 1 : -1),
         'updatedAt': DateTime.now().millisecondsSinceEpoch,
       }, merge: true),

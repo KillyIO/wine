@@ -5,9 +5,9 @@ abstract class HomeDatabaseState with _$HomeDatabaseState {
   const factory HomeDatabaseState({
     @required bool areFiltersApplied,
     @required bool isLoading,
-    @required List<Series> newSeries,
-    @required List<Series> topFiveSeries,
-    @required List<Series> topSeries,
+    @required List<SeriesMinified> newSeriesMinified,
+    @required List<SeriesMinified> topFiveSeriesMinified,
+    @required List<SeriesMinified> topSeriesMinified,
     @required Map<String, dynamic> filters,
     @required Map<String, String> genresMap,
     @required Map<String, String> languagesMap,
@@ -27,10 +27,10 @@ abstract class HomeDatabaseState with _$HomeDatabaseState {
         isLoading: false,
         languageFilterKey: '',
         languagesMap: <String, String>{},
-        newSeries: <Series>[],
+        newSeriesMinified: <SeriesMinified>[],
         timeFilterKey: 'today',
         timesMap: <String, String>{},
-        topFiveSeries: <Series>[],
-        topSeries: <Series>[],
+        topFiveSeriesMinified: <SeriesMinified>[],
+        topSeriesMinified: <SeriesMinified>[],
       );
 }

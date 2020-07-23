@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 import 'package:wine/application/database/account/account_database_bloc.dart';
-import 'package:wine/domain/models/user.dart';
 import 'package:wine/presentation/pages/account/utils/account_staggered_tile_methods.dart';
 
 class AccountMyPublishedSeriesLayout extends StatelessWidget {
@@ -12,7 +11,7 @@ class AccountMyPublishedSeriesLayout extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<AccountDatabaseBloc, AccountDatabaseState>(
       builder: (context, acDbState) {
-        if (acDbState.series.isEmpty) {
+        if (acDbState.seriesMinified.isEmpty) {
           return Center(
             child: Column(
               mainAxisSize: MainAxisSize.min,
@@ -35,13 +34,10 @@ class AccountMyPublishedSeriesLayout extends StatelessWidget {
               StaggeredGridView.count(
                 physics: const NeverScrollableScrollPhysics(),
                 crossAxisCount: 2,
-                staggeredTiles: _methods.generateStaggeredTiles(series: acDbState.series),
+                staggeredTiles: _methods.generateStaggeredTiles(seriesMinified: acDbState.seriesMinified),
                 crossAxisSpacing: 20.0,
                 shrinkWrap: true,
-                children: _methods.generateTiles(
-                  series: acDbState.series,
-                  author: User.fromMap(acDbState.session.toMap()),
-                ),
+                children: _methods.generateTiles(seriesMinified: acDbState.seriesMinified),
               ),
             ],
           ),

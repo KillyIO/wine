@@ -50,7 +50,7 @@ class _HomeAppBarState extends State<HomeAppBar> {
                 padding: const EdgeInsets.only(right: 20.0),
                 child: WINELeadingImageButton(
                   imagePath: 'assets/img/plus_button.png',
-                  onPressed: () => ExtendedNavigator.root.pushNamed(Routes.newSeriesPage),
+                  onPressed: () async => ExtendedNavigator.root.push(Routes.newSeriesPage),
                 ),
               ),
             Padding(

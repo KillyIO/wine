@@ -29,10 +29,12 @@ import 'package:wine/domain/database/language.dart';
 import 'package:wine/domain/database/story.dart';
 import 'package:wine/domain/database/title.dart';
 import 'package:wine/domain/models/chapter.dart';
+import 'package:wine/domain/models/chapter_minified.dart';
 import 'package:wine/domain/models/hive/chapter_draft.dart';
 import 'package:wine/domain/models/hive/series_draft.dart';
 import 'package:wine/domain/models/hive/session.dart';
 import 'package:wine/domain/models/series.dart';
+import 'package:wine/domain/models/series_minified.dart';
 import 'package:wine/utils/constants.dart';
 import 'package:wine/utils/extensions.dart';
 import 'package:wine/utils/methods.dart';
@@ -133,8 +135,13 @@ class NewChapterDatabaseBloc extends Bloc<NewChapterDatabaseEvent, NewChapterDat
         final Chapter chapter = Chapter.fromMap(event.chapterDraft.toMap());
         chapter.coverUrl = event.coverUrl;
 
+        final ChapterMinified chapterMinified = ChapterMinified.fromChapter(chapter);
+        chapterMinified
+          ..authorUid = state.session.uid
+          ..authorUsername = state.session.username;
+
         final Either<DatabaseFailure, DatabaseSuccess> failureOrSuccess =
-            await _onlineChapterDatabaseFacade.publishChapter(chapter);
+            await _onlineChapterDatabaseFacade.publishChapter(chapterMinified, chapter);
         failureOrSuccess.fold(
           (_) {
             add(NewChapterDatabaseEvent.failureWhenPublishingChapterEVT(event.coverUrl));
@@ -281,64 +288,71 @@ class NewChapterDatabaseBloc extends Bloc<NewChapterDatabaseEvent, NewChapterDat
         );
       },
       newChapterPageLaunchedEVT: (event) async* {
+        yield state.copyWith(
+          chapterDraft: event.chapterDraft ?? ChapterDraft(),
+          copyrightsMap: Methods.getCopyrights(event.context),
+          genresMap: Methods.getGenres(event.context),
+          languagesMap: Methods.getLanguages(event.context),
+          previousChapter: event.previousChapter ?? Chapter(),
+          seriesDraft: event.seriesDraft ?? SeriesDraft(),
+        );
+
         if (event.chapterDraft != null) {
           add(NewChapterDatabaseEvent.editModeLaunchedEVT(event.chapterDraft));
         } else {
+          Session session;
+
           final Either<DatabaseFailure, DatabaseSuccess> failureOrSuccess =
               await _localSessionDatabaseFacade.fetchSession();
           failureOrSuccess.fold(
             (_) {},
             (success) {
               if (success is SessionFetchedSCS) {
+                session = success.session;
                 add(NewChapterDatabaseEvent.sessionFetchedEVT(
                   previousChapter: event.previousChapter,
                   seriesDraft: event.seriesDraft,
-                  session: success.session,
                 ));
               }
             },
           );
-        }
 
-        yield state.copyWith(
-          genresMap: Methods.getGenres(event.context),
-          languagesMap: Methods.getLanguages(event.context),
-          copyrightsMap: Methods.getCopyrights(event.context),
-        );
+          yield state.copyWith(databaseFailureOrSuccessOption: optionOf(failureOrSuccess), session: session);
+        }
       },
       placeholderFetchedEVT: (event) async* {
-        final ChapterDraft chapterDraft = ChapterDraft(authorUid: event.sessionUid, uid: uuid.v4());
+        final ChapterDraft chapterDraft = ChapterDraft(authorUid: state.session.uid, uid: uuid.v4());
 
         bool isNSFW;
         String genreOptionalStr;
         String genreStr;
         String languageStr;
 
-        if (event.seriesDraft != null) {
+        if (state.seriesDraft.isNotEmpty) {
           chapterDraft
-            ..genre = event.seriesDraft.genre
-            ..genreOptional = event.seriesDraft.genreOptional
+            ..genre = state.seriesDraft.genre
+            ..genreOptional = state.seriesDraft.genreOptional
             ..index = 1
-            ..language = event.seriesDraft.language
-            ..seriesUid = event.seriesDraft.uid;
+            ..language = state.seriesDraft.language
+            ..seriesUid = state.seriesDraft.uid;
 
-          isNSFW = event.seriesDraft.isNSFW;
-          genreOptionalStr = event.seriesDraft.genreOptional;
-          genreStr = event.seriesDraft.genre;
-          languageStr = event.seriesDraft.language;
-        } else if (event.previousChapter != null) {
+          isNSFW = state.seriesDraft.isNSFW;
+          genreOptionalStr = state.seriesDraft.genreOptional;
+          genreStr = state.seriesDraft.genre;
+          languageStr = state.seriesDraft.language;
+        } else if (state.previousChapter.isNotEmpty) {
           chapterDraft
-            ..genre = event.previousChapter.genre
-            ..genreOptional = event.previousChapter.genreOptional ?? ''
-            ..index = event.previousChapter.index + 1
-            ..language = event.previousChapter.language
-            ..previousChapterUid = event.previousChapter.uid
-            ..seriesUid = event.previousChapter.seriesUid;
+            ..genre = state.previousChapter.genre
+            ..genreOptional = state.previousChapter.genreOptional ?? ''
+            ..index = state.previousChapter.index + 1
+            ..language = state.previousChapter.language
+            ..previousChapterUid = state.previousChapter.uid
+            ..seriesUid = state.previousChapter.seriesUid;
 
-          isNSFW = event.previousChapter.isNSFW;
-          genreOptionalStr = event.previousChapter.genreOptional ?? '';
-          genreStr = event.previousChapter.genre;
-          languageStr = event.previousChapter.language;
+          isNSFW = state.previousChapter.isNSFW;
+          genreOptionalStr = state.previousChapter.genreOptional ?? '';
+          genreStr = state.previousChapter.genre;
+          languageStr = state.previousChapter.language;
         }
 
         yield state.copyWith(
@@ -348,7 +362,7 @@ class NewChapterDatabaseBloc extends Bloc<NewChapterDatabaseEvent, NewChapterDat
           genreOptionalStr: genreOptionalStr,
           genreStr: genreStr,
           isEditMode: false,
-          isFirstChapter: event.seriesDraft != null,
+          isFirstChapter: state.seriesDraft.isNotEmpty,
           isNSFW: isNSFW,
           language: Language(languageStr),
           languageStr: languageStr,
@@ -389,7 +403,10 @@ class NewChapterDatabaseBloc extends Bloc<NewChapterDatabaseEvent, NewChapterDat
           } else {
             final Chapter chapter = Chapter.fromMap(chapterDraft.toMap());
 
-            failureOrSuccess = await _onlineChapterDatabaseFacade.publishChapter(chapter);
+            final ChapterMinified chapterMinified = ChapterMinified.fromChapter(chapter);
+            chapterMinified.authorUsername = state.session.username;
+
+            failureOrSuccess = await _onlineChapterDatabaseFacade.publishChapter(chapterMinified, chapter);
             failureOrSuccess.fold((_) {}, (success) {
               if (success is ChapterPublishedSCS) {
                 add(NewChapterDatabaseEvent.chapterPublishedEVT(chapter));
@@ -398,7 +415,7 @@ class NewChapterDatabaseBloc extends Bloc<NewChapterDatabaseEvent, NewChapterDat
           }
         }
 
-        yield state.copyWith(showErrorMessages: true, databaseFailureOrSuccessOption: optionOf(failureOrSuccess));
+        yield state.copyWith(databaseFailureOrSuccessOption: optionOf(failureOrSuccess), showErrorMessages: true);
       },
       saveOrBackButtonPressedEVT: (event) async* {
         yield state.copyWith(isDeletingOrPublishingOrSaving: true, databaseFailureOrSuccessOption: none());
@@ -433,8 +450,11 @@ class NewChapterDatabaseBloc extends Bloc<NewChapterDatabaseEvent, NewChapterDat
           ..subtitle = event.seriesDraft.subtitle.isEmptyToNull
           ..genreOptional = event.seriesDraft.genreOptional.isEmptyToNull;
 
+        final SeriesMinified seriesMinified = SeriesMinified.fromSeries(series);
+        seriesMinified.authorUsername = state.session.username;
+
         final Either<DatabaseFailure, DatabaseSuccess> failureOrSuccess =
-            await _onlineSeriesDatabaseFacade.publishSeries(series);
+            await _onlineSeriesDatabaseFacade.publishSeries(seriesMinified, series);
         failureOrSuccess.fold(
           (_) {
             add(NewChapterDatabaseEvent.failureWhenPublishingSeriesEVT(coverUrl: event.coverUrl));
@@ -480,7 +500,10 @@ class NewChapterDatabaseBloc extends Bloc<NewChapterDatabaseEvent, NewChapterDat
             ..subtitle = event.seriesDraft.subtitle.isEmptyToNull
             ..genreOptional = event.seriesDraft.genreOptional.isEmptyToNull;
 
-          failureOrSuccess = await _onlineSeriesDatabaseFacade.publishSeries(series);
+          final SeriesMinified seriesMinified = SeriesMinified.fromSeries(series);
+          seriesMinified.authorUsername = state.session.username;
+
+          failureOrSuccess = await _onlineSeriesDatabaseFacade.publishSeries(seriesMinified, series);
           failureOrSuccess.fold(
             (_) {
               add(const NewChapterDatabaseEvent.failureWhenPublishingSeriesEVT());
@@ -528,12 +551,7 @@ class NewChapterDatabaseBloc extends Bloc<NewChapterDatabaseEvent, NewChapterDat
             if (success is PlaceholderFetchedSCS) {
               coverUrl = success.placeholderUrl;
 
-              add(NewChapterDatabaseEvent.placeholderFetchedEVT(
-                coverUrl: coverUrl,
-                previousChapter: event.previousChapter,
-                seriesDraft: event.seriesDraft,
-                sessionUid: event.session.uid,
-              ));
+              add(NewChapterDatabaseEvent.placeholderFetchedEVT(coverUrl: coverUrl));
             }
           },
         );

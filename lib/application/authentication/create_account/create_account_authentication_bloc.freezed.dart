@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named
+// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
 
 part of 'create_account_authentication_bloc.dart';
 
@@ -12,6 +12,7 @@ T _$identity<T>(T value) => value;
 class _$CreateAccountAuthenticationEventTearOff {
   const _$CreateAccountAuthenticationEventTearOff();
 
+// ignore: unused_element
   ConfirmPasswordChangedEVT confirmPasswordChangedEVT(
       String confirmPasswordStr, String passwordStr) {
     return ConfirmPasswordChangedEVT(
@@ -20,26 +21,31 @@ class _$CreateAccountAuthenticationEventTearOff {
     );
   }
 
+// ignore: unused_element
   CreateAccountEVT createAccountEVT() {
     return const CreateAccountEVT();
   }
 
+// ignore: unused_element
   EmailChangedEVT emailChangedEVT(String emailStr) {
     return EmailChangedEVT(
       emailStr,
     );
   }
 
+// ignore: unused_element
   PasswordChangedEVT passwordChangedEVT(String passwordStr) {
     return PasswordChangedEVT(
       passwordStr,
     );
   }
 
+// ignore: unused_element
   ResendVerificationEmailEVT resendVerificationEmailEVT() {
     return const ResendVerificationEmailEVT();
   }
 
+// ignore: unused_element
   UsernameChangedEVT usernameChangedEVT(String usernameStr) {
     return UsernameChangedEVT(
       usernameStr,
@@ -932,6 +938,7 @@ abstract class UsernameChangedEVT implements CreateAccountAuthenticationEvent {
 class _$CreateAccountAuthenticationStateTearOff {
   const _$CreateAccountAuthenticationStateTearOff();
 
+// ignore: unused_element
   _CreateAccountAuthenticationState call(
       {@required
           bool isSubmitting,

@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:percent_indicator/linear_percent_indicator.dart';
 
 import 'package:wine/application/database/chapter/chapter_database_bloc.dart';
-import 'package:wine/domain/models/chapter.dart';
 import 'package:wine/presentation/pages/chapter/utils/chapter_database_methods.dart';
 import 'package:wine/presentation/pages/chapter/widgets/chapter_additional_info.dart';
 import 'package:wine/presentation/pages/chapter/widgets/chapter_navbar.dart';
@@ -12,13 +11,11 @@ import 'package:wine/utils/palettes.dart';
 class ChapterMenu extends StatelessWidget {
   final ChapterDatabaseState chapterDbState;
   final ChapterDatabaseMethods chapterDbMethods;
-  final Chapter chapter;
 
   const ChapterMenu({
     Key key,
     @required this.chapterDbState,
     @required this.chapterDbMethods,
-    @required this.chapter,
   }) : super(key: key);
 
   @override
@@ -35,11 +32,11 @@ class ChapterMenu extends StatelessWidget {
               children: <Widget>[
                 if (chapterDbState.showChapterAdditionalInfo)
                   ChapterAdditionalInfo(
-                    authorName: chapter.author.username,
-                    copyrights: chapterDbState.copyrightsMap[chapter.copyrights],
-                    genre: chapterDbState.genresMap[chapter.genre],
-                    genreOptional: chapterDbState.genresMap[chapter.genreOptional],
-                    seriesName: chapter.series.title,
+                    authorUsername: chapterDbState.author.username,
+                    copyrights: chapterDbState.copyrightsMap[chapterDbState.chapter.copyrights],
+                    genre: chapterDbState.genresMap[chapterDbState.chapter.genre],
+                    genreOptional: chapterDbState.genresMap[chapterDbState.chapter.genreOptional],
+                    seriesName: chapterDbState.series.title,
                   ),
                 const SizedBox(height: 15),
                 ChapterStats(
@@ -52,7 +49,7 @@ class ChapterMenu extends StatelessWidget {
                   chapterDbMethods: chapterDbMethods,
                   isBookmarked: chapterDbState.isBookmarked,
                   isLiked: chapterDbState.isLiked,
-                  previousChapterUid: chapter.previousChapterUid,
+                  previousChapterUid: chapterDbState.chapter.previousChapterUid,
                 ),
                 const SizedBox(height: 20),
                 LinearPercentIndicator(
@@ -62,7 +59,10 @@ class ChapterMenu extends StatelessWidget {
                   progressColor: Palettes.pastelPink,
                   center: Text(
                     '${(chapterDbState.percentProgress * 100.0).round()}%',
-                    style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.bold,
+                    ),
                   ),
                 ),
               ],

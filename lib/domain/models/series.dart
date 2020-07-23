@@ -1,109 +1,84 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 
-import 'package:wine/domain/models/user.dart';
-import 'package:wine/utils/extensions.dart';
-
 class Series {
-  String uid;
+  bool isNSFW;
   String authorUid;
-  User author;
-  String title;
-  String subtitle;
-  String summary;
+  String coverUrl;
   String genre;
   String genreOptional;
   String language;
-  bool isNSFW;
-  String coverUrl;
-  int likesCount;
-  int createdAt;
-  int updatedAt;
+  String subtitle;
+  String summary;
+  String title;
+  String uid;
 
   Series({
-    this.uid,
     this.authorUid,
-    this.author,
-    this.title,
-    this.subtitle,
-    this.summary,
+    this.coverUrl,
     this.genre,
     this.genreOptional,
-    this.language,
     this.isNSFW,
-    this.coverUrl,
-    this.likesCount,
-    this.createdAt,
-    this.updatedAt,
+    this.language,
+    this.subtitle,
+    this.summary,
+    this.title,
+    this.uid,
   });
 
   Series copyWith({
-    String uid,
+    bool isNSFW,
     String authorUid,
-    User author,
-    String title,
-    String subtitle,
-    String summary,
+    String coverUrl,
     String genre,
     String genreOptional,
     String language,
-    bool isNSFW,
-    String coverUrl,
-    int likesCount,
-    int createdAt,
-    int updatedAt,
+    String subtitle,
+    String summary,
+    String title,
+    String uid,
   }) {
     return Series(
-      uid: uid ?? this.uid,
       authorUid: authorUid ?? this.authorUid,
-      author: author ?? this.author,
-      title: title ?? this.title,
-      subtitle: subtitle ?? this.subtitle,
-      summary: summary ?? this.summary,
+      coverUrl: coverUrl ?? this.coverUrl,
       genre: genre ?? this.genre,
       genreOptional: genreOptional ?? this.genreOptional,
-      language: language ?? this.language,
       isNSFW: isNSFW ?? this.isNSFW,
-      coverUrl: coverUrl ?? this.coverUrl,
-      likesCount: likesCount ?? this.likesCount,
-      createdAt: createdAt ?? this.createdAt,
-      updatedAt: updatedAt ?? this.updatedAt,
+      language: language ?? this.language,
+      subtitle: subtitle ?? this.subtitle,
+      summary: summary ?? this.summary,
+      title: title ?? this.title,
+      uid: uid ?? this.uid,
     );
   }
 
   factory Series.fromFirestore(DocumentSnapshot document) {
     final Map<String, dynamic> data = document.data;
     return Series(
-      uid: data['uid'] as String,
       authorUid: data['authorUid'] as String,
-      title: data['title'] as String,
-      subtitle: data['subtitle'] as String,
-      summary: data['summary'] as String,
+      coverUrl: data['coverUrl'] as String,
       genre: data['genre'] as String,
       genreOptional: data['genreOptional'] as String,
-      language: data['language'] as String,
       isNSFW: data['isNSFW'] as bool,
-      coverUrl: data['coverUrl'] as String,
-      likesCount: data['likesCount'] as int,
-      createdAt: data['createdAt'] as int,
-      updatedAt: data['updatedAt'] as int,
+      language: data['language'] as String,
+      subtitle: data['subtitle'] as String,
+      summary: data['summary'] as String,
+      title: data['title'] as String,
+      uid: data['uid'] as String,
     );
   }
 
   Map<String, dynamic> toMap() {
     return {
-      'uid': uid,
       'authorUid': authorUid,
-      'title': title,
-      'subtitle': subtitle,
-      'summary': summary,
+      'coverUrl': coverUrl,
       'genre': genre,
       'genreOptional': genreOptional,
-      'language': language,
       'isNSFW': isNSFW,
-      'coverUrl': coverUrl,
-      'likesCount': likesCount,
-      'createdAt': createdAt,
-      'updatedAt': updatedAt,
+      'language': language,
+      'subtitle': subtitle,
+      'summary': summary,
+      'title': title,
+      'uid': uid,
     };
   }
 
@@ -111,25 +86,22 @@ class Series {
     if (map == null) return null;
 
     return Series(
-      uid: map['uid'] as String,
       authorUid: map['authorUid'] as String,
-      title: map['title'] as String,
-      subtitle: map['subtitle'] as String,
-      summary: map['summary'] as String,
+      coverUrl: map['coverUrl'] as String,
       genre: map['genre'] as String,
       genreOptional: map['genreOptional'] as String,
-      language: map['language'] as String,
       isNSFW: map['isNSFW'] as bool,
-      coverUrl: map['coverUrl'] as String,
-      likesCount: map['likesCount'] as int,
-      createdAt: map['createdAt'] as int,
-      updatedAt: map['updatedAt'] as int,
+      language: map['language'] as String,
+      subtitle: map['subtitle'] as String,
+      summary: map['summary'] as String,
+      title: map['title'] as String,
+      uid: map['uid'] as String,
     );
   }
 
   @override
   String toString() {
-    return 'Series(uid: $uid, authorUid: $authorUid, author: $author, title: $title, subtitle: $subtitle, summary: $summary, genre: $genre, genreOptional: $genreOptional, language: $language, isNSFW: $isNSFW, coverUrl: $coverUrl, likesCount: $likesCount, createdAt: $createdAt, updatedAt: $updatedAt)';
+    return 'Series(uid: $uid, authorUid: $authorUid, title: $title, subtitle: $subtitle, summary: $summary, genre: $genre, genreOptional: $genreOptional, language: $language, isNSFW: $isNSFW, coverUrl: $coverUrl)';
   }
 
   @override
@@ -137,41 +109,53 @@ class Series {
     if (identical(this, o)) return true;
 
     return o is Series &&
-        o.uid == uid &&
         o.authorUid == authorUid &&
-        o.author == author &&
-        o.title == title &&
-        o.subtitle == subtitle &&
-        o.summary == summary &&
+        o.coverUrl == coverUrl &&
         o.genre == genre &&
         o.genreOptional == genreOptional &&
-        o.language == language &&
         o.isNSFW == isNSFW &&
-        o.coverUrl == coverUrl &&
-        o.likesCount == likesCount &&
-        o.createdAt == createdAt &&
-        o.updatedAt == updatedAt;
+        o.language == language &&
+        o.subtitle == subtitle &&
+        o.summary == summary &&
+        o.title == title &&
+        o.uid == uid;
   }
 
   @override
   int get hashCode {
-    return uid.hashCode ^
-        authorUid.hashCode ^
-        author.hashCode ^
-        title.hashCode ^
-        subtitle.hashCode ^
-        summary.hashCode ^
+    return authorUid.hashCode ^
+        coverUrl.hashCode ^
         genre.hashCode ^
         genreOptional.hashCode ^
-        language.hashCode ^
         isNSFW.hashCode ^
-        coverUrl.hashCode ^
-        likesCount.hashCode ^
-        createdAt.hashCode ^
-        updatedAt.hashCode;
+        language.hashCode ^
+        subtitle.hashCode ^
+        summary.hashCode ^
+        title.hashCode ^
+        uid.hashCode;
   }
 
-  bool get isNotEmptyOrNull {
-    return this != null && uid.isNotEmptyOrNull;
+  bool get isEmpty {
+    return isNSFW == null &&
+        authorUid == null &&
+        coverUrl == null &&
+        genre == null &&
+        genreOptional == null &&
+        language == null &&
+        subtitle == null &&
+        summary == null &&
+        title == null &&
+        uid == null;
+  }
+
+  bool get isNotEmpty {
+    return isNSFW != null &&
+        authorUid != null &&
+        coverUrl != null &&
+        genre != null &&
+        language != null &&
+        summary != null &&
+        title != null &&
+        uid != null;
   }
 }

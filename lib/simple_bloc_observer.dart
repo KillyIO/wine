@@ -6,19 +6,25 @@ class SimpleBlocObserver extends BlocObserver {
 
   @override
   void onEvent(Bloc bloc, Object event) {
-    super.onEvent(bloc, event);
     _logger.d('event: $event');
+    super.onEvent(bloc, event);
+  }
+
+  @override
+  void onChange(Cubit cubit, Change change) {
+    _logger.d('event: $change');
+    super.onChange(cubit, change);
   }
 
   @override
   void onTransition(Bloc bloc, Transition transition) {
-    super.onTransition(bloc, transition);
     _logger.d('transition: $transition');
+    super.onTransition(bloc, transition);
   }
 
   @override
-  void onError(Bloc bloc, Object error, StackTrace stacktrace) {
-    super.onError(bloc, error, stacktrace);
+  void onError(Cubit cubit, Object error, StackTrace stacktrace) {
     _logger.e('error: $error, stacktrace: $stacktrace');
+    super.onError(cubit, error, stacktrace);
   }
 }

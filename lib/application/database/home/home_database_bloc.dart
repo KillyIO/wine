@@ -7,23 +7,20 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_device_locale/flutter_device_locale.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
+
 import 'package:wine/domain/database/database_failure.dart';
 import 'package:wine/domain/database/database_success.dart';
 import 'package:wine/domain/database/i_online_series_database_facade.dart';
-import 'package:wine/domain/models/series.dart';
+import 'package:wine/domain/models/series_minified.dart';
 import 'package:wine/utils/methods.dart';
 
+part 'home_database_bloc.freezed.dart';
 part 'home_database_event.dart';
 part 'home_database_state.dart';
-
-part 'home_database_bloc.freezed.dart';
 
 @injectable
 class HomeDatabaseBloc extends Bloc<HomeDatabaseEvent, HomeDatabaseState> {
   final IOnlineSeriesDatabaseFacade _onlineSeriesDatabaseFacade;
-
-  StreamSubscription<Either<DatabaseFailure, DatabaseSuccess>> _topSeriesStreamSubscription;
-  StreamSubscription<Either<DatabaseFailure, DatabaseSuccess>> _newSeriesStreamSubscription;
 
   HomeDatabaseBloc(this._onlineSeriesDatabaseFacade) : super(HomeDatabaseState.initial());
 
@@ -39,35 +36,37 @@ class HomeDatabaseBloc extends Bloc<HomeDatabaseEvent, HomeDatabaseState> {
         filters['genre'] = state.genreFilterKey;
         filters['language'] = state.languageFilterKey;
 
-        add(HomeDatabaseEvent.filtersAppliedEVT(filters));
+        add(const HomeDatabaseEvent.filtersAppliedEVT());
 
-        yield state.copyWith(areFiltersApplied: true);
+        yield state.copyWith(areFiltersApplied: true, filters: filters);
       },
       filtersAppliedEVT: (event) async* {
         Either<DatabaseFailure, DatabaseSuccess> failureOrSuccess;
 
-        final List<Series> topFiveSeries = <Series>[];
-        final List<Series> topSeries = <Series>[];
+        final List<SeriesMinified> topFiveSeriesMinified = <SeriesMinified>[];
+        final List<SeriesMinified> topSeriesMinified = <SeriesMinified>[];
 
-        failureOrSuccess = await _onlineSeriesDatabaseFacade.loadTopSeries(filters: event.filters, loadAuthors: true);
+        failureOrSuccess = await _onlineSeriesDatabaseFacade.loadTopSeriesMinified(state.filters);
         failureOrSuccess.fold(
           (_) {},
           (success) {
-            if (success is SeriesListLoadedSCS) {
-              topSeries.addAll(success.series);
-              if (topSeries.length >= 5) {
-                topFiveSeries.addAll(topSeries.sublist(0, 5));
-                topSeries.removeRange(0, 5);
+            if (success is SeriesMinifiedListLoadedSCS) {
+              topSeriesMinified.addAll(success.seriesMinified);
+
+              if (topSeriesMinified.length >= 5) {
+                topFiveSeriesMinified.addAll(topSeriesMinified.sublist(0, 5));
+                topSeriesMinified.removeRange(0, 5);
               }
-              add(const HomeDatabaseEvent.topSeriesLoadedEVT());
+
+              add(const HomeDatabaseEvent.topSeriesMinifiedLoadedEVT());
             }
           },
         );
 
         yield state.copyWith(
-          topFiveSeries: topFiveSeries,
-          topSeries: topSeries,
           databaseFailureOrSuccessOption: optionOf(failureOrSuccess),
+          topFiveSeriesMinified: topFiveSeriesMinified,
+          topSeriesMinified: topSeriesMinified,
         );
       },
       genreFilterKeyChangedEVT: (event) async* {
@@ -88,7 +87,7 @@ class HomeDatabaseBloc extends Bloc<HomeDatabaseEvent, HomeDatabaseState> {
         filters['genre'] = state.genreFilterKey;
         filters['language'] = currentLocale;
 
-        add(HomeDatabaseEvent.filtersAppliedEVT(filters));
+        add(const HomeDatabaseEvent.filtersAppliedEVT());
 
         yield state.copyWith(
           filters: filters,
@@ -107,8 +106,8 @@ class HomeDatabaseBloc extends Bloc<HomeDatabaseEvent, HomeDatabaseState> {
           );
         }
       },
-      loadMoreNewSeriesEVT: (event) async* {},
-      loadMoreTopSeriesEVT: (event) async* {},
+      loadMoreNewSeriesMinifiedEVT: (event) async* {},
+      loadMoreTopSeriesMinifiedEVT: (event) async* {},
       timeFilterKeyChangedEVT: (event) async* {
         if (state.timeFilterKey != event.key) {
           yield state.copyWith(
@@ -118,34 +117,27 @@ class HomeDatabaseBloc extends Bloc<HomeDatabaseEvent, HomeDatabaseState> {
           );
         }
       },
-      topSeriesLoadedEVT: (event) async* {
+      topSeriesMinifiedLoadedEVT: (event) async* {
         Either<DatabaseFailure, DatabaseSuccess> failureOrSuccess;
 
-        final List<Series> newSeries = <Series>[];
+        final List<SeriesMinified> newSeriesMinified = <SeriesMinified>[];
 
-        failureOrSuccess = await _onlineSeriesDatabaseFacade.loadNewSeries(filters: state.filters, loadAuthors: true);
+        failureOrSuccess = await _onlineSeriesDatabaseFacade.loadNewSeriesMinified(state.filters);
         failureOrSuccess.fold(
           (_) {},
           (success) {
-            if (success is SeriesListLoadedSCS) {
-              newSeries.addAll(success.series);
+            if (success is SeriesMinifiedListLoadedSCS) {
+              newSeriesMinified.addAll(success.seriesMinified);
             }
           },
         );
 
         yield state.copyWith(
-          newSeries: newSeries,
+          newSeriesMinified: newSeriesMinified,
           isLoading: false,
           databaseFailureOrSuccessOption: optionOf(failureOrSuccess),
         );
       },
     );
-  }
-
-  @override
-  Future<void> close() async {
-    await _topSeriesStreamSubscription.cancel();
-    await _newSeriesStreamSubscription.cancel();
-    return super.close();
   }
 }

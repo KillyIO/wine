@@ -1,4 +1,3 @@
-
 import 'package:hive/hive.dart';
 
 part 'series_draft.g.dart';
@@ -140,5 +139,29 @@ class SeriesDraft extends HiveObject {
         language.hashCode ^
         isNSFW.hashCode ^
         coverUrl.hashCode;
+  }
+
+  bool get isEmpty {
+    return uid == null &&
+        authorUid == null &&
+        title == null &&
+        subtitle == null &&
+        summary == null &&
+        genre == null &&
+        genreOptional == null &&
+        language == null &&
+        isNSFW == null &&
+        coverUrl == null;
+  }
+
+  bool get isNotEmpty {
+    return uid != null &&
+        authorUid != null &&
+        title != null &&
+        summary != null &&
+        genre != null &&
+        language != null &&
+        isNSFW != null &&
+        coverUrl != null;
   }
 }

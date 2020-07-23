@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 
@@ -6,9 +7,8 @@ import 'package:wine/presentation/pages/sign_in/utils/sign_in_authentication_met
 import 'package:wine/presentation/pages/sign_in/widgets/sign_in_create_account_button.dart';
 import 'package:wine/presentation/pages/sign_in/widgets/sign_in_separator.dart';
 import 'package:wine/presentation/pages/sign_in/widgets/sign_in_social_media_button.dart';
+import 'package:wine/presentation/routes/router.gr.dart';
 import 'package:wine/presentation/widgets/wine_authentication_textfield.dart';
-import 'package:wine/routes.dart';
-import 'package:wine/utils/constants.dart';
 import 'package:wine/utils/palettes.dart';
 
 class SignInForm extends StatelessWidget {
@@ -38,7 +38,11 @@ class SignInForm extends StatelessWidget {
                   child: const Text(
                     'Sign in to access more features.',
                     textAlign: TextAlign.start,
-                    style: TextStyle(color: Colors.black, fontSize: 20.0, fontWeight: FontWeight.w500),
+                    style: TextStyle(
+                      color: Colors.black,
+                      fontSize: 20.0,
+                      fontWeight: FontWeight.w500,
+                    ),
                   ),
                 ),
               ),
@@ -74,7 +78,11 @@ class SignInForm extends StatelessWidget {
                     onPressed: siAuthMethods.signInWithEmailAndPasswordButtonPressed,
                     child: Text(
                       'SIGN IN',
-                      style: TextStyle(color: Colors.white, fontSize: 20.0, fontWeight: FontWeight.w500),
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontSize: 20.0,
+                        fontWeight: FontWeight.w500,
+                      ),
                     ),
                   ),
                 ),
@@ -109,7 +117,11 @@ class SignInForm extends StatelessWidget {
                 ],
               ),
               const SizedBox(height: 50),
-              Align(child: SignInCreateAccountButton(onPressed: () => sailor(Constants.createAccountRoute))),
+              Align(
+                child: SignInCreateAccountButton(
+                  onPressed: () async => ExtendedNavigator.root.push(Routes.createAccountPage),
+                ),
+              ),
               const SizedBox(height: 50),
             ],
           ),

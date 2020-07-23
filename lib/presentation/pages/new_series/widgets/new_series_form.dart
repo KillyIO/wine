@@ -1,18 +1,19 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
 import 'package:wine/application/database/new_series/new_series_database_bloc.dart';
 import 'package:wine/presentation/pages/new_series/utils/new_series_database_methods.dart';
 import 'package:wine/presentation/pages/new_series/utils/new_series_database_validators.dart';
+import 'package:wine/presentation/routes/router.gr.dart';
 import 'package:wine/presentation/widgets/editor/wine_editor_cover.dart';
 import 'package:wine/presentation/widgets/editor/wine_editor_selector_dialog.dart';
 import 'package:wine/presentation/widgets/editor/wine_editor_text_form_field.dart';
 import 'package:wine/presentation/widgets/editor/wine_editor_top_title.dart';
 import 'package:wine/presentation/widgets/wine_button.dart';
-import 'package:wine/presentation/widgets/wine_show_dialog.dart';
+import 'package:wine/presentation/widgets/dialog/wine_show_dialog.dart';
 import 'package:wine/presentation/widgets/wine_switch_list_tile.dart';
 import 'package:wine/presentation/widgets/wine_text_field_label.dart';
-import 'package:wine/presentation/widgets/wine_warning_dialog.dart';
-import 'package:wine/routes.dart';
+import 'package:wine/presentation/widgets/dialog/wine_warning_dialog.dart';
 import 'package:wine/utils/constants.dart';
 import 'package:wine/utils/palettes.dart';
 
@@ -82,7 +83,7 @@ class NewSeriesForm extends StatelessWidget {
                 dialogTitle: 'GENRE',
                 trailingText: nsDbState.genresMap[nsDbState.genreStr],
                 onPressed: (String value) => nsDbMethods.selector(value, 'genre'),
-                onInfoPressed: () => sailor(Constants.genresRoute),
+                onInfoPressed: () async => ExtendedNavigator.root.push(Routes.genresPage),
                 showErrorMessage: nsDbState.genreStr == '' && nsDbState.showErrorMessages,
               ),
               // SECTION genre optional
@@ -93,7 +94,7 @@ class NewSeriesForm extends StatelessWidget {
                 dialogTitle: 'GENRE (OPTIONAL)',
                 trailingText: nsDbState.genresMap[nsDbState.genreOptionalStr],
                 onPressed: (String value) => nsDbMethods.selector(value, 'genreOptional'),
-                onInfoPressed: () => sailor(Constants.genresRoute),
+                onInfoPressed: () async => ExtendedNavigator.root.push(Routes.genresPage),
               ),
               // SECTION ADULT CONTENT
               WINESwitchListTile(
