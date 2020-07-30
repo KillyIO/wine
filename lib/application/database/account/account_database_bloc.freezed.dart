@@ -43,9 +43,9 @@ class _$AccountDatabaseEventTearOff {
   }
 
 // ignore: unused_element
-  SessionFetchedEVT sessionFetchedEVT(Session session) {
+  SessionFetchedEVT sessionFetchedEVT({Session session}) {
     return SessionFetchedEVT(
-      session,
+      session: session,
     );
   }
 }
@@ -804,7 +804,7 @@ class _$SessionFetchedEVTCopyWithImpl<$Res>
     Object session = freezed,
   }) {
     return _then(SessionFetchedEVT(
-      session == freezed ? _value.session : session as Session,
+      session: session == freezed ? _value.session : session as Session,
     ));
   }
 }
@@ -812,7 +812,7 @@ class _$SessionFetchedEVTCopyWithImpl<$Res>
 class _$SessionFetchedEVT
     with DiagnosticableTreeMixin
     implements SessionFetchedEVT {
-  const _$SessionFetchedEVT(this.session) : assert(session != null);
+  const _$SessionFetchedEVT({this.session});
 
   @override
   final Session session;
@@ -924,7 +924,7 @@ class _$SessionFetchedEVT
 }
 
 abstract class SessionFetchedEVT implements AccountDatabaseEvent {
-  const factory SessionFetchedEVT(Session session) = _$SessionFetchedEVT;
+  const factory SessionFetchedEVT({Session session}) = _$SessionFetchedEVT;
 
   Session get session;
   $SessionFetchedEVTCopyWith<SessionFetchedEVT> get copyWith;

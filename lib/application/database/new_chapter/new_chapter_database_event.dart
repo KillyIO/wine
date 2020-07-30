@@ -10,7 +10,6 @@ abstract class NewChapterDatabaseEvent with _$NewChapterDatabaseEvent {
   ) = ChapterCoverUploadedEVT;
   const factory NewChapterDatabaseEvent.chapterPublishedEVT(Chapter chapter) = ChapterPublishedEVT;
   const factory NewChapterDatabaseEvent.copyrightsSelectedEVT(String copyrights) = CopyrightsSelectedEVT;
-  const factory NewChapterDatabaseEvent.chapterDeletedEVT() = ChapterDeletedEVT;
   const factory NewChapterDatabaseEvent.deleteDraftButtonPressedEVT() = DeleteDraftButtonPressedEVT;
   const factory NewChapterDatabaseEvent.editModeLaunchedEVT(ChapterDraft chapterDraft) = EditModeLaunchedEVT;
   const factory NewChapterDatabaseEvent.failureWhenPublishingChapterEVT(String coverUrl) =

@@ -8,13 +8,13 @@ part of 'session.dart';
 
 class SessionAdapter extends TypeAdapter<Session> {
   @override
-  final typeId = 0;
+  final int typeId = 0;
 
   @override
   Session read(BinaryReader reader) {
-    var numOfFields = reader.readByte();
-    var fields = <int, dynamic>{
-      for (var i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
+    final numOfFields = reader.readByte();
+    final fields = <int, dynamic>{
+      for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
     return Session(
       uid: fields[0] as String,
@@ -49,4 +49,14 @@ class SessionAdapter extends TypeAdapter<Session> {
       ..writeByte(7)
       ..write(obj.bio);
   }
+
+  @override
+  int get hashCode => typeId.hashCode;
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is SessionAdapter &&
+          runtimeType == other.runtimeType &&
+          typeId == other.typeId;
 }

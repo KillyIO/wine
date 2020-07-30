@@ -197,7 +197,7 @@ class Chapter {
         coverUrl != null &&
         genre != null &&
         language != null &&
-        (previousChapterUid != null || seriesUid != null) &&
+        seriesUid != null &&
         story != null &&
         title != null &&
         uid != null;

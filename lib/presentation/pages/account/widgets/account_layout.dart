@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:wine/application/database/account/account_database_bloc.dart';
 import 'package:wine/application/navigation/account/account_navigation_bloc.dart';
 import 'package:wine/presentation/pages/account/utils/account_database_methods.dart';
+import 'package:wine/presentation/pages/account/utils/account_listeners.dart';
 import 'package:wine/presentation/pages/account/utils/account_navigation_methods.dart';
 import 'package:wine/presentation/pages/account/widgets/account_profile_layout.dart';
 import 'package:wine/presentation/pages/account/widgets/account_my_chapters_layout.dart';
@@ -16,7 +17,9 @@ class AccountLayout extends StatefulWidget {
 }
 
 class _AccountLayoutState extends State<AccountLayout> with TickerProviderStateMixin {
+  final AccountListeners _accountListeners = AccountListeners();
   final PageController _pageController = PageController(initialPage: 1002);
+
   AccountDatabaseMethods _acDbMethods;
   AccountNavigationMethods _acNavMethods;
   List<Widget> _pageViewLayouts;
@@ -41,36 +44,37 @@ class _AccountLayoutState extends State<AccountLayout> with TickerProviderStateM
 
   @override
   Widget build(BuildContext context) {
-    return BlocConsumer<AccountDatabaseBloc, AccountDatabaseState>(
-      listener: (context, state) {
-        // TODO: implement listener
-      },
-      builder: (context, acDbState) {
-        return BlocBuilder<AccountNavigationBloc, AccountNavigationState>(
-          builder: (context, acNavState) {
-            return SafeArea(
-              child: Column(
-                children: <Widget>[
-                  WINEHorizontalNavbar(
-                    pageController: _pageController,
-                    pageViewNavbarItems: acNavState.pageViewNavbarItems,
-                    currentPageViewIdx: acNavState.currentPageViewIdx,
-                    pageViewNavbarColors: <Color>[Palettes.pastelBlue, Palettes.pastelYellow, Palettes.pastelPink],
-                  ),
-                  Expanded(
-                    child: PageView.builder(
-                      controller: _pageController,
-                      itemBuilder: (BuildContext context, int index) =>
-                          _pageViewLayouts[index % _pageViewLayouts.length],
-                      onPageChanged: (int index) => _acNavMethods.pageViewIndexChanged(index, _pageViewLayouts.length),
+    return MultiBlocListener(
+      listeners: _accountListeners.listeners,
+      child: BlocBuilder<AccountDatabaseBloc, AccountDatabaseState>(
+        builder: (context, acDbState) {
+          return BlocBuilder<AccountNavigationBloc, AccountNavigationState>(
+            builder: (context, acNavState) {
+              return SafeArea(
+                child: Column(
+                  children: <Widget>[
+                    WINEHorizontalNavbar(
+                      pageController: _pageController,
+                      pageViewNavbarItems: acNavState.pageViewNavbarItems,
+                      currentPageViewIdx: acNavState.currentPageViewIdx,
+                      pageViewNavbarColors: <Color>[Palettes.pastelBlue, Palettes.pastelYellow, Palettes.pastelPink],
                     ),
-                  ),
-                ],
-              ),
-            );
-          },
-        );
-      },
+                    Expanded(
+                      child: PageView.builder(
+                        controller: _pageController,
+                        itemBuilder: (BuildContext context, int index) =>
+                            _pageViewLayouts[index % _pageViewLayouts.length],
+                        onPageChanged: (int index) =>
+                            _acNavMethods.pageViewIndexChanged(index, _pageViewLayouts.length),
+                      ),
+                    ),
+                  ],
+                ),
+              );
+            },
+          );
+        },
+      ),
     );
   }
 }

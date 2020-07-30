@@ -1,7 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 
-import 'package:wine/domain/models/series.dart';
-
 class SeriesMinified {
   int createdAt;
   int likesCount;
@@ -69,17 +67,6 @@ class SeriesMinified {
     );
   }
 
-  factory SeriesMinified.fromSeries(Series series) {
-    return SeriesMinified(
-      authorUid: series.authorUid,
-      coverUrl: series.coverUrl,
-      genre: series.genre,
-      language: series.language,
-      title: series.title,
-      uid: series.uid,
-    );
-  }
-
   Map<String, dynamic> toMap() {
     return {
       'authorUid': authorUid,
@@ -103,6 +90,8 @@ class SeriesMinified {
       authorUsername: map['authorUsername'] as String,
       coverUrl: map['coverUrl'] as String,
       createdAt: map['createdAt'] as int,
+      genre: map['genre'] as String,
+      language: map['language'] as String,
       likesCount: map['likesCount'] as int,
       title: map['title'] as String,
       uid: map['uid'] as String,

@@ -7,5 +7,5 @@ abstract class AccountDatabaseEvent with _$AccountDatabaseEvent {
   const factory AccountDatabaseEvent.loadMoreChaptersMinifiedEVT() = LoadMoreChaptersMinifiedEVT;
   const factory AccountDatabaseEvent.loadMoreSeriesMinifiedEVT() = LoadMoreSeriesMinifiedEVT;
   const factory AccountDatabaseEvent.seriesMinifiedLoadedEVT() = SeriesMinifiedLoadedEVT;
-  const factory AccountDatabaseEvent.sessionFetchedEVT(Session session) = SessionFetchedEVT;
+  const factory AccountDatabaseEvent.sessionFetchedEVT({Session session}) = SessionFetchedEVT;
 }

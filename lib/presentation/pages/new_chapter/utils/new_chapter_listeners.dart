@@ -31,9 +31,13 @@ class NewChapterListeners {
             if (success is ChapterDraftSavedSCS) {
               ExtendedNavigator.root.pop();
             }
-            if (success is ChapterDraftDeletedSCS) {
-              if (state.seriesDraft.isNotEmpty) {
+            if (success is ChapterDraftDeletedSCS || (success is ChapterPublishedSCS && !state.isFirstChapter)) {
+              if (state.chapterDraft.isNotEmpty && state.previousChapter.isEmpty) {
+                context.bloc<CoreDatabaseBloc>().add(const CoreDatabaseEvent.publishedFromAccountEVT());
+              } else if (state.seriesDraft.isNotEmpty) {
                 context.bloc<CoreDatabaseBloc>().add(const CoreDatabaseEvent.publishedFromHomeEVT());
+              } else if (state.previousChapter.isNotEmpty) {
+                context.bloc<CoreDatabaseBloc>().add(const CoreDatabaseEvent.publishedFromChapterEVT());
               }
               ExtendedNavigator.root.pop();
             }

@@ -1,7 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 
-import 'package:wine/domain/models/chapter.dart';
-
 class ChapterMinified {
   int createdAt;
   int index;
@@ -61,17 +59,6 @@ class ChapterMinified {
       title: data['title'] as String,
       uid: data['uid'] as String,
       updatedAt: data['updatedAt'] as int,
-    );
-  }
-
-  factory ChapterMinified.fromChapter(Chapter chapter) {
-    return ChapterMinified(
-      authorUid: chapter.authorUid,
-      coverUrl: chapter.coverUrl,
-      index: chapter.index,
-      seriesUid: chapter.seriesUid,
-      title: chapter.title,
-      uid: chapter.uid,
     );
   }
 

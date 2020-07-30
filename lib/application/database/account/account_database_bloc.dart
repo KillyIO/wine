@@ -49,7 +49,7 @@ class AccountDatabaseBloc extends Bloc<AccountDatabaseEvent, AccountDatabaseStat
           (success) {
             if (success is SessionFetchedSCS) {
               session = success.session;
-              add(AccountDatabaseEvent.sessionFetchedEVT(session));
+              add(AccountDatabaseEvent.sessionFetchedEVT(session: session));
             }
           },
         );
@@ -107,7 +107,7 @@ class AccountDatabaseBloc extends Bloc<AccountDatabaseEvent, AccountDatabaseStat
         final List<SeriesMinified> seriesMinified = <SeriesMinified>[];
 
         final Either<DatabaseFailure, DatabaseSuccess> failureOrSuccess =
-            await _onlineSeriesDatabaseFacade.loadSeriesMinifiedByUserUid(event.session.uid);
+            await _onlineSeriesDatabaseFacade.loadSeriesMinifiedByUserUid(event.session?.uid ?? state.session.uid);
         failureOrSuccess.fold(
           (_) {},
           (success) {

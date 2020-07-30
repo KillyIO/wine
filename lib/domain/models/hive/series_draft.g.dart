@@ -8,13 +8,13 @@ part of 'series_draft.dart';
 
 class SeriesDraftAdapter extends TypeAdapter<SeriesDraft> {
   @override
-  final typeId = 2;
+  final int typeId = 2;
 
   @override
   SeriesDraft read(BinaryReader reader) {
-    var numOfFields = reader.readByte();
-    var fields = <int, dynamic>{
-      for (var i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
+    final numOfFields = reader.readByte();
+    final fields = <int, dynamic>{
+      for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
     return SeriesDraft(
       uid: fields[0] as String,
@@ -27,13 +27,14 @@ class SeriesDraftAdapter extends TypeAdapter<SeriesDraft> {
       language: fields[7] as String,
       isNSFW: fields[8] as bool,
       coverUrl: fields[9] as String,
+      authorUsername: fields[10] as String,
     );
   }
 
   @override
   void write(BinaryWriter writer, SeriesDraft obj) {
     writer
-      ..writeByte(10)
+      ..writeByte(11)
       ..writeByte(0)
       ..write(obj.uid)
       ..writeByte(1)
@@ -53,6 +54,18 @@ class SeriesDraftAdapter extends TypeAdapter<SeriesDraft> {
       ..writeByte(8)
       ..write(obj.isNSFW)
       ..writeByte(9)
-      ..write(obj.coverUrl);
+      ..write(obj.coverUrl)
+      ..writeByte(10)
+      ..write(obj.authorUsername);
   }
+
+  @override
+  int get hashCode => typeId.hashCode;
+
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      other is SeriesDraftAdapter &&
+          runtimeType == other.runtimeType &&
+          typeId == other.typeId;
 }
