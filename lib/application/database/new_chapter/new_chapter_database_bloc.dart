@@ -121,7 +121,16 @@ class NewChapterDatabaseBloc extends Bloc<NewChapterDatabaseEvent, NewChapterDat
 
           yield state.copyWith(databaseFailureOrSuccessOption: optionOf(failureOrSuccess));
         } else {
-          yield state.copyWith(isDeletingOrPublishingOrSaving: false, databaseFailureOrSuccessOption: none());
+          Either<DatabaseFailure, DatabaseSuccess> failureOrSuccess;
+
+          if (state.previousChapter.isEmpty) {
+            failureOrSuccess = await _localChapterDraftDatabaseFacade.deleteChapterDraft(state.chapterDraft.uid);
+          }
+
+          yield state.copyWith(
+            isDeletingOrPublishingOrSaving: false,
+            databaseFailureOrSuccessOption: optionOf(failureOrSuccess),
+          );
         }
       },
       copyrightsSelectedEVT: (event) async* {
@@ -132,13 +141,10 @@ class NewChapterDatabaseBloc extends Bloc<NewChapterDatabaseEvent, NewChapterDat
         );
       },
       chapterCoverUploadedEVT: (event) async* {
-        final Chapter chapter = Chapter.fromMap(event.chapterDraft.toMap());
-        chapter.coverUrl = event.coverUrl;
+        final Chapter chapter = Chapter.fromMap(event.chapterDraft.toMap())..coverUrl = event.coverUrl;
 
-        final ChapterMinified chapterMinified = ChapterMinified.fromChapter(chapter);
-        chapterMinified
-          ..authorUid = state.session.uid
-          ..authorUsername = state.session.username;
+        final ChapterMinified chapterMinified = ChapterMinified.fromMap(event.chapterDraft.toMap())
+          ..coverUrl = event.coverUrl;
 
         final Either<DatabaseFailure, DatabaseSuccess> failureOrSuccess =
             await _onlineChapterDatabaseFacade.publishChapter(chapterMinified, chapter);
@@ -155,15 +161,6 @@ class NewChapterDatabaseBloc extends Bloc<NewChapterDatabaseEvent, NewChapterDat
 
         yield state.copyWith(
           chapterCoverUrl: event.coverUrl,
-          databaseFailureOrSuccessOption: optionOf(failureOrSuccess),
-        );
-      },
-      chapterDeletedEVT: (event) async* {
-        final Either<DatabaseFailure, DatabaseSuccess> failureOrSuccess =
-            await _onlineChapterDatabaseFacade.deleteChapter(state.chapterDraft.uid);
-
-        yield state.copyWith(
-          isDeletingOrPublishingOrSaving: false,
           databaseFailureOrSuccessOption: optionOf(failureOrSuccess),
         );
       },
@@ -245,7 +242,7 @@ class NewChapterDatabaseBloc extends Bloc<NewChapterDatabaseEvent, NewChapterDat
             (_) {},
             (success) {
               if (success is ChapterCoverDeletedSCS) {
-                add(const NewChapterDatabaseEvent.chapterDeletedEVT());
+                add(const NewChapterDatabaseEvent.chapterCoverDeletedEVT());
               }
             },
           );
@@ -321,7 +318,11 @@ class NewChapterDatabaseBloc extends Bloc<NewChapterDatabaseEvent, NewChapterDat
         }
       },
       placeholderFetchedEVT: (event) async* {
-        final ChapterDraft chapterDraft = ChapterDraft(authorUid: state.session.uid, uid: uuid.v4());
+        final ChapterDraft chapterDraft = ChapterDraft(
+          authorUid: state.session.uid,
+          authorUsername: state.session.username,
+          uid: uuid.v4(),
+        );
 
         bool isNSFW;
         String genreOptionalStr;
@@ -403,8 +404,7 @@ class NewChapterDatabaseBloc extends Bloc<NewChapterDatabaseEvent, NewChapterDat
           } else {
             final Chapter chapter = Chapter.fromMap(chapterDraft.toMap());
 
-            final ChapterMinified chapterMinified = ChapterMinified.fromChapter(chapter);
-            chapterMinified.authorUsername = state.session.username;
+            final ChapterMinified chapterMinified = ChapterMinified.fromMap(chapterDraft.toMap());
 
             failureOrSuccess = await _onlineChapterDatabaseFacade.publishChapter(chapterMinified, chapter);
             failureOrSuccess.fold((_) {}, (success) {
@@ -450,8 +450,8 @@ class NewChapterDatabaseBloc extends Bloc<NewChapterDatabaseEvent, NewChapterDat
           ..subtitle = event.seriesDraft.subtitle.isEmptyToNull
           ..genreOptional = event.seriesDraft.genreOptional.isEmptyToNull;
 
-        final SeriesMinified seriesMinified = SeriesMinified.fromSeries(series);
-        seriesMinified.authorUsername = state.session.username;
+        final SeriesMinified seriesMinified = SeriesMinified.fromMap(event.seriesDraft.toMap())
+          ..coverUrl = event.coverUrl;
 
         final Either<DatabaseFailure, DatabaseSuccess> failureOrSuccess =
             await _onlineSeriesDatabaseFacade.publishSeries(seriesMinified, series);
@@ -500,8 +500,7 @@ class NewChapterDatabaseBloc extends Bloc<NewChapterDatabaseEvent, NewChapterDat
             ..subtitle = event.seriesDraft.subtitle.isEmptyToNull
             ..genreOptional = event.seriesDraft.genreOptional.isEmptyToNull;
 
-          final SeriesMinified seriesMinified = SeriesMinified.fromSeries(series);
-          seriesMinified.authorUsername = state.session.username;
+          final SeriesMinified seriesMinified = SeriesMinified.fromMap(event.seriesDraft.toMap());
 
           failureOrSuccess = await _onlineSeriesDatabaseFacade.publishSeries(seriesMinified, series);
           failureOrSuccess.fold(

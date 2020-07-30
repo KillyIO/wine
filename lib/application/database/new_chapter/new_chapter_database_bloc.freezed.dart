@@ -46,11 +46,6 @@ class _$NewChapterDatabaseEventTearOff {
   }
 
 // ignore: unused_element
-  ChapterDeletedEVT chapterDeletedEVT() {
-    return const ChapterDeletedEVT();
-  }
-
-// ignore: unused_element
   DeleteDraftButtonPressedEVT deleteDraftButtonPressedEVT() {
     return const DeleteDraftButtonPressedEVT();
   }
@@ -224,7 +219,6 @@ mixin _$NewChapterDatabaseEvent {
             String coverUrl, ChapterDraft chapterDraft),
     @required Result chapterPublishedEVT(Chapter chapter),
     @required Result copyrightsSelectedEVT(String copyrights),
-    @required Result chapterDeletedEVT(),
     @required Result deleteDraftButtonPressedEVT(),
     @required Result editModeLaunchedEVT(ChapterDraft chapterDraft),
     @required Result failureWhenPublishingChapterEVT(String coverUrl),
@@ -265,7 +259,6 @@ mixin _$NewChapterDatabaseEvent {
     Result chapterCoverUploadedEVT(String coverUrl, ChapterDraft chapterDraft),
     Result chapterPublishedEVT(Chapter chapter),
     Result copyrightsSelectedEVT(String copyrights),
-    Result chapterDeletedEVT(),
     Result deleteDraftButtonPressedEVT(),
     Result editModeLaunchedEVT(ChapterDraft chapterDraft),
     Result failureWhenPublishingChapterEVT(String coverUrl),
@@ -302,7 +295,6 @@ mixin _$NewChapterDatabaseEvent {
     @required Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
     @required Result chapterPublishedEVT(ChapterPublishedEVT value),
     @required Result copyrightsSelectedEVT(CopyrightsSelectedEVT value),
-    @required Result chapterDeletedEVT(ChapterDeletedEVT value),
     @required
         Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
     @required Result editModeLaunchedEVT(EditModeLaunchedEVT value),
@@ -341,7 +333,6 @@ mixin _$NewChapterDatabaseEvent {
     Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
     Result chapterPublishedEVT(ChapterPublishedEVT value),
     Result copyrightsSelectedEVT(CopyrightsSelectedEVT value),
-    Result chapterDeletedEVT(ChapterDeletedEVT value),
     Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
     Result editModeLaunchedEVT(EditModeLaunchedEVT value),
     Result failureWhenPublishingChapterEVT(
@@ -438,7 +429,6 @@ class _$AddCoverPressedEVT
             String coverUrl, ChapterDraft chapterDraft),
     @required Result chapterPublishedEVT(Chapter chapter),
     @required Result copyrightsSelectedEVT(String copyrights),
-    @required Result chapterDeletedEVT(),
     @required Result deleteDraftButtonPressedEVT(),
     @required Result editModeLaunchedEVT(ChapterDraft chapterDraft),
     @required Result failureWhenPublishingChapterEVT(String coverUrl),
@@ -477,7 +467,6 @@ class _$AddCoverPressedEVT
     assert(chapterCoverUploadedEVT != null);
     assert(chapterPublishedEVT != null);
     assert(copyrightsSelectedEVT != null);
-    assert(chapterDeletedEVT != null);
     assert(deleteDraftButtonPressedEVT != null);
     assert(editModeLaunchedEVT != null);
     assert(failureWhenPublishingChapterEVT != null);
@@ -511,7 +500,6 @@ class _$AddCoverPressedEVT
     Result chapterCoverUploadedEVT(String coverUrl, ChapterDraft chapterDraft),
     Result chapterPublishedEVT(Chapter chapter),
     Result copyrightsSelectedEVT(String copyrights),
-    Result chapterDeletedEVT(),
     Result deleteDraftButtonPressedEVT(),
     Result editModeLaunchedEVT(ChapterDraft chapterDraft),
     Result failureWhenPublishingChapterEVT(String coverUrl),
@@ -556,7 +544,6 @@ class _$AddCoverPressedEVT
     @required Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
     @required Result chapterPublishedEVT(ChapterPublishedEVT value),
     @required Result copyrightsSelectedEVT(CopyrightsSelectedEVT value),
-    @required Result chapterDeletedEVT(ChapterDeletedEVT value),
     @required
         Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
     @required Result editModeLaunchedEVT(EditModeLaunchedEVT value),
@@ -593,7 +580,6 @@ class _$AddCoverPressedEVT
     assert(chapterCoverUploadedEVT != null);
     assert(chapterPublishedEVT != null);
     assert(copyrightsSelectedEVT != null);
-    assert(chapterDeletedEVT != null);
     assert(deleteDraftButtonPressedEVT != null);
     assert(editModeLaunchedEVT != null);
     assert(failureWhenPublishingChapterEVT != null);
@@ -627,7 +613,6 @@ class _$AddCoverPressedEVT
     Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
     Result chapterPublishedEVT(ChapterPublishedEVT value),
     Result copyrightsSelectedEVT(CopyrightsSelectedEVT value),
-    Result chapterDeletedEVT(ChapterDeletedEVT value),
     Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
     Result editModeLaunchedEVT(EditModeLaunchedEVT value),
     Result failureWhenPublishingChapterEVT(
@@ -719,7 +704,6 @@ class _$ChapterCoverDeletedEVT
             String coverUrl, ChapterDraft chapterDraft),
     @required Result chapterPublishedEVT(Chapter chapter),
     @required Result copyrightsSelectedEVT(String copyrights),
-    @required Result chapterDeletedEVT(),
     @required Result deleteDraftButtonPressedEVT(),
     @required Result editModeLaunchedEVT(ChapterDraft chapterDraft),
     @required Result failureWhenPublishingChapterEVT(String coverUrl),
@@ -758,7 +742,6 @@ class _$ChapterCoverDeletedEVT
     assert(chapterCoverUploadedEVT != null);
     assert(chapterPublishedEVT != null);
     assert(copyrightsSelectedEVT != null);
-    assert(chapterDeletedEVT != null);
     assert(deleteDraftButtonPressedEVT != null);
     assert(editModeLaunchedEVT != null);
     assert(failureWhenPublishingChapterEVT != null);
@@ -792,7 +775,6 @@ class _$ChapterCoverDeletedEVT
     Result chapterCoverUploadedEVT(String coverUrl, ChapterDraft chapterDraft),
     Result chapterPublishedEVT(Chapter chapter),
     Result copyrightsSelectedEVT(String copyrights),
-    Result chapterDeletedEVT(),
     Result deleteDraftButtonPressedEVT(),
     Result editModeLaunchedEVT(ChapterDraft chapterDraft),
     Result failureWhenPublishingChapterEVT(String coverUrl),
@@ -837,7 +819,6 @@ class _$ChapterCoverDeletedEVT
     @required Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
     @required Result chapterPublishedEVT(ChapterPublishedEVT value),
     @required Result copyrightsSelectedEVT(CopyrightsSelectedEVT value),
-    @required Result chapterDeletedEVT(ChapterDeletedEVT value),
     @required
         Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
     @required Result editModeLaunchedEVT(EditModeLaunchedEVT value),
@@ -874,7 +855,6 @@ class _$ChapterCoverDeletedEVT
     assert(chapterCoverUploadedEVT != null);
     assert(chapterPublishedEVT != null);
     assert(copyrightsSelectedEVT != null);
-    assert(chapterDeletedEVT != null);
     assert(deleteDraftButtonPressedEVT != null);
     assert(editModeLaunchedEVT != null);
     assert(failureWhenPublishingChapterEVT != null);
@@ -908,7 +888,6 @@ class _$ChapterCoverDeletedEVT
     Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
     Result chapterPublishedEVT(ChapterPublishedEVT value),
     Result copyrightsSelectedEVT(CopyrightsSelectedEVT value),
-    Result chapterDeletedEVT(ChapterDeletedEVT value),
     Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
     Result editModeLaunchedEVT(EditModeLaunchedEVT value),
     Result failureWhenPublishingChapterEVT(
@@ -1038,7 +1017,6 @@ class _$ChapterCoverUploadedEVT
             String coverUrl, ChapterDraft chapterDraft),
     @required Result chapterPublishedEVT(Chapter chapter),
     @required Result copyrightsSelectedEVT(String copyrights),
-    @required Result chapterDeletedEVT(),
     @required Result deleteDraftButtonPressedEVT(),
     @required Result editModeLaunchedEVT(ChapterDraft chapterDraft),
     @required Result failureWhenPublishingChapterEVT(String coverUrl),
@@ -1077,7 +1055,6 @@ class _$ChapterCoverUploadedEVT
     assert(chapterCoverUploadedEVT != null);
     assert(chapterPublishedEVT != null);
     assert(copyrightsSelectedEVT != null);
-    assert(chapterDeletedEVT != null);
     assert(deleteDraftButtonPressedEVT != null);
     assert(editModeLaunchedEVT != null);
     assert(failureWhenPublishingChapterEVT != null);
@@ -1111,7 +1088,6 @@ class _$ChapterCoverUploadedEVT
     Result chapterCoverUploadedEVT(String coverUrl, ChapterDraft chapterDraft),
     Result chapterPublishedEVT(Chapter chapter),
     Result copyrightsSelectedEVT(String copyrights),
-    Result chapterDeletedEVT(),
     Result deleteDraftButtonPressedEVT(),
     Result editModeLaunchedEVT(ChapterDraft chapterDraft),
     Result failureWhenPublishingChapterEVT(String coverUrl),
@@ -1156,7 +1132,6 @@ class _$ChapterCoverUploadedEVT
     @required Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
     @required Result chapterPublishedEVT(ChapterPublishedEVT value),
     @required Result copyrightsSelectedEVT(CopyrightsSelectedEVT value),
-    @required Result chapterDeletedEVT(ChapterDeletedEVT value),
     @required
         Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
     @required Result editModeLaunchedEVT(EditModeLaunchedEVT value),
@@ -1193,7 +1168,6 @@ class _$ChapterCoverUploadedEVT
     assert(chapterCoverUploadedEVT != null);
     assert(chapterPublishedEVT != null);
     assert(copyrightsSelectedEVT != null);
-    assert(chapterDeletedEVT != null);
     assert(deleteDraftButtonPressedEVT != null);
     assert(editModeLaunchedEVT != null);
     assert(failureWhenPublishingChapterEVT != null);
@@ -1227,7 +1201,6 @@ class _$ChapterCoverUploadedEVT
     Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
     Result chapterPublishedEVT(ChapterPublishedEVT value),
     Result copyrightsSelectedEVT(CopyrightsSelectedEVT value),
-    Result chapterDeletedEVT(ChapterDeletedEVT value),
     Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
     Result editModeLaunchedEVT(EditModeLaunchedEVT value),
     Result failureWhenPublishingChapterEVT(
@@ -1346,7 +1319,6 @@ class _$ChapterPublishedEVT
             String coverUrl, ChapterDraft chapterDraft),
     @required Result chapterPublishedEVT(Chapter chapter),
     @required Result copyrightsSelectedEVT(String copyrights),
-    @required Result chapterDeletedEVT(),
     @required Result deleteDraftButtonPressedEVT(),
     @required Result editModeLaunchedEVT(ChapterDraft chapterDraft),
     @required Result failureWhenPublishingChapterEVT(String coverUrl),
@@ -1385,7 +1357,6 @@ class _$ChapterPublishedEVT
     assert(chapterCoverUploadedEVT != null);
     assert(chapterPublishedEVT != null);
     assert(copyrightsSelectedEVT != null);
-    assert(chapterDeletedEVT != null);
     assert(deleteDraftButtonPressedEVT != null);
     assert(editModeLaunchedEVT != null);
     assert(failureWhenPublishingChapterEVT != null);
@@ -1419,7 +1390,6 @@ class _$ChapterPublishedEVT
     Result chapterCoverUploadedEVT(String coverUrl, ChapterDraft chapterDraft),
     Result chapterPublishedEVT(Chapter chapter),
     Result copyrightsSelectedEVT(String copyrights),
-    Result chapterDeletedEVT(),
     Result deleteDraftButtonPressedEVT(),
     Result editModeLaunchedEVT(ChapterDraft chapterDraft),
     Result failureWhenPublishingChapterEVT(String coverUrl),
@@ -1464,7 +1434,6 @@ class _$ChapterPublishedEVT
     @required Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
     @required Result chapterPublishedEVT(ChapterPublishedEVT value),
     @required Result copyrightsSelectedEVT(CopyrightsSelectedEVT value),
-    @required Result chapterDeletedEVT(ChapterDeletedEVT value),
     @required
         Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
     @required Result editModeLaunchedEVT(EditModeLaunchedEVT value),
@@ -1501,7 +1470,6 @@ class _$ChapterPublishedEVT
     assert(chapterCoverUploadedEVT != null);
     assert(chapterPublishedEVT != null);
     assert(copyrightsSelectedEVT != null);
-    assert(chapterDeletedEVT != null);
     assert(deleteDraftButtonPressedEVT != null);
     assert(editModeLaunchedEVT != null);
     assert(failureWhenPublishingChapterEVT != null);
@@ -1535,7 +1503,6 @@ class _$ChapterPublishedEVT
     Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
     Result chapterPublishedEVT(ChapterPublishedEVT value),
     Result copyrightsSelectedEVT(CopyrightsSelectedEVT value),
-    Result chapterDeletedEVT(ChapterDeletedEVT value),
     Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
     Result editModeLaunchedEVT(EditModeLaunchedEVT value),
     Result failureWhenPublishingChapterEVT(
@@ -1654,7 +1621,6 @@ class _$CopyrightsSelectedEVT
             String coverUrl, ChapterDraft chapterDraft),
     @required Result chapterPublishedEVT(Chapter chapter),
     @required Result copyrightsSelectedEVT(String copyrights),
-    @required Result chapterDeletedEVT(),
     @required Result deleteDraftButtonPressedEVT(),
     @required Result editModeLaunchedEVT(ChapterDraft chapterDraft),
     @required Result failureWhenPublishingChapterEVT(String coverUrl),
@@ -1693,7 +1659,6 @@ class _$CopyrightsSelectedEVT
     assert(chapterCoverUploadedEVT != null);
     assert(chapterPublishedEVT != null);
     assert(copyrightsSelectedEVT != null);
-    assert(chapterDeletedEVT != null);
     assert(deleteDraftButtonPressedEVT != null);
     assert(editModeLaunchedEVT != null);
     assert(failureWhenPublishingChapterEVT != null);
@@ -1727,7 +1692,6 @@ class _$CopyrightsSelectedEVT
     Result chapterCoverUploadedEVT(String coverUrl, ChapterDraft chapterDraft),
     Result chapterPublishedEVT(Chapter chapter),
     Result copyrightsSelectedEVT(String copyrights),
-    Result chapterDeletedEVT(),
     Result deleteDraftButtonPressedEVT(),
     Result editModeLaunchedEVT(ChapterDraft chapterDraft),
     Result failureWhenPublishingChapterEVT(String coverUrl),
@@ -1772,7 +1736,6 @@ class _$CopyrightsSelectedEVT
     @required Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
     @required Result chapterPublishedEVT(ChapterPublishedEVT value),
     @required Result copyrightsSelectedEVT(CopyrightsSelectedEVT value),
-    @required Result chapterDeletedEVT(ChapterDeletedEVT value),
     @required
         Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
     @required Result editModeLaunchedEVT(EditModeLaunchedEVT value),
@@ -1809,7 +1772,6 @@ class _$CopyrightsSelectedEVT
     assert(chapterCoverUploadedEVT != null);
     assert(chapterPublishedEVT != null);
     assert(copyrightsSelectedEVT != null);
-    assert(chapterDeletedEVT != null);
     assert(deleteDraftButtonPressedEVT != null);
     assert(editModeLaunchedEVT != null);
     assert(failureWhenPublishingChapterEVT != null);
@@ -1843,7 +1805,6 @@ class _$CopyrightsSelectedEVT
     Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
     Result chapterPublishedEVT(ChapterPublishedEVT value),
     Result copyrightsSelectedEVT(CopyrightsSelectedEVT value),
-    Result chapterDeletedEVT(ChapterDeletedEVT value),
     Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
     Result editModeLaunchedEVT(EditModeLaunchedEVT value),
     Result failureWhenPublishingChapterEVT(
@@ -1884,287 +1845,6 @@ abstract class CopyrightsSelectedEVT implements NewChapterDatabaseEvent {
 
   String get copyrights;
   $CopyrightsSelectedEVTCopyWith<CopyrightsSelectedEVT> get copyWith;
-}
-
-abstract class $ChapterDeletedEVTCopyWith<$Res> {
-  factory $ChapterDeletedEVTCopyWith(
-          ChapterDeletedEVT value, $Res Function(ChapterDeletedEVT) then) =
-      _$ChapterDeletedEVTCopyWithImpl<$Res>;
-}
-
-class _$ChapterDeletedEVTCopyWithImpl<$Res>
-    extends _$NewChapterDatabaseEventCopyWithImpl<$Res>
-    implements $ChapterDeletedEVTCopyWith<$Res> {
-  _$ChapterDeletedEVTCopyWithImpl(
-      ChapterDeletedEVT _value, $Res Function(ChapterDeletedEVT) _then)
-      : super(_value, (v) => _then(v as ChapterDeletedEVT));
-
-  @override
-  ChapterDeletedEVT get _value => super._value as ChapterDeletedEVT;
-}
-
-class _$ChapterDeletedEVT
-    with DiagnosticableTreeMixin
-    implements ChapterDeletedEVT {
-  const _$ChapterDeletedEVT();
-
-  @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'NewChapterDatabaseEvent.chapterDeletedEVT()';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty(
-          'type', 'NewChapterDatabaseEvent.chapterDeletedEVT'));
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) || (other is ChapterDeletedEVT);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result addCoverPressedEVT(),
-    @required Result chapterCoverDeletedEVT(),
-    @required
-        Result chapterCoverUploadedEVT(
-            String coverUrl, ChapterDraft chapterDraft),
-    @required Result chapterPublishedEVT(Chapter chapter),
-    @required Result copyrightsSelectedEVT(String copyrights),
-    @required Result chapterDeletedEVT(),
-    @required Result deleteDraftButtonPressedEVT(),
-    @required Result editModeLaunchedEVT(ChapterDraft chapterDraft),
-    @required Result failureWhenPublishingChapterEVT(String coverUrl),
-    @required Result failureWhenPublishingSeriesEVT(String coverUrl),
-    @required Result failureWhenUploadingSeriesCoverEVT(),
-    @required Result genreOptionalSelectedEVT(String genreOptional),
-    @required Result genreSelectedEVT(String genre),
-    @required Result isEndChangedEVT(bool isEnd),
-    @required Result isNSFWChangedEVT(bool isNSFW),
-    @required Result languageSelectedEVT(String language),
-    @required
-        Result newChapterPageLaunchedEVT(
-            BuildContext context,
-            Chapter previousChapter,
-            ChapterDraft chapterDraft,
-            SeriesDraft seriesDraft),
-    @required
-        Result placeholderFetchedEVT(
-            Chapter previousChapter, SeriesDraft seriesDraft, String coverUrl),
-    @required Result publishButtonPressedEVT(),
-    @required Result saveOrBackButtonPressedEVT(),
-    @required Result seriesCoverDeletedEVT(),
-    @required
-        Result seriesCoverUploadedEVT(String coverUrl, SeriesDraft seriesDraft),
-    @required Result seriesDraftDeletedEVT(),
-    @required Result seriesDraftFetchedEVT(SeriesDraft seriesDraft),
-    @required Result seriesPublishedEVT(Series series),
-    @required
-        Result sessionFetchedEVT(
-            Chapter previousChapter, SeriesDraft seriesDraft),
-    @required Result storyChangedEVT(String story),
-    @required Result titleChangedEVT(String title),
-  }) {
-    assert(addCoverPressedEVT != null);
-    assert(chapterCoverDeletedEVT != null);
-    assert(chapterCoverUploadedEVT != null);
-    assert(chapterPublishedEVT != null);
-    assert(copyrightsSelectedEVT != null);
-    assert(chapterDeletedEVT != null);
-    assert(deleteDraftButtonPressedEVT != null);
-    assert(editModeLaunchedEVT != null);
-    assert(failureWhenPublishingChapterEVT != null);
-    assert(failureWhenPublishingSeriesEVT != null);
-    assert(failureWhenUploadingSeriesCoverEVT != null);
-    assert(genreOptionalSelectedEVT != null);
-    assert(genreSelectedEVT != null);
-    assert(isEndChangedEVT != null);
-    assert(isNSFWChangedEVT != null);
-    assert(languageSelectedEVT != null);
-    assert(newChapterPageLaunchedEVT != null);
-    assert(placeholderFetchedEVT != null);
-    assert(publishButtonPressedEVT != null);
-    assert(saveOrBackButtonPressedEVT != null);
-    assert(seriesCoverDeletedEVT != null);
-    assert(seriesCoverUploadedEVT != null);
-    assert(seriesDraftDeletedEVT != null);
-    assert(seriesDraftFetchedEVT != null);
-    assert(seriesPublishedEVT != null);
-    assert(sessionFetchedEVT != null);
-    assert(storyChangedEVT != null);
-    assert(titleChangedEVT != null);
-    return chapterDeletedEVT();
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result addCoverPressedEVT(),
-    Result chapterCoverDeletedEVT(),
-    Result chapterCoverUploadedEVT(String coverUrl, ChapterDraft chapterDraft),
-    Result chapterPublishedEVT(Chapter chapter),
-    Result copyrightsSelectedEVT(String copyrights),
-    Result chapterDeletedEVT(),
-    Result deleteDraftButtonPressedEVT(),
-    Result editModeLaunchedEVT(ChapterDraft chapterDraft),
-    Result failureWhenPublishingChapterEVT(String coverUrl),
-    Result failureWhenPublishingSeriesEVT(String coverUrl),
-    Result failureWhenUploadingSeriesCoverEVT(),
-    Result genreOptionalSelectedEVT(String genreOptional),
-    Result genreSelectedEVT(String genre),
-    Result isEndChangedEVT(bool isEnd),
-    Result isNSFWChangedEVT(bool isNSFW),
-    Result languageSelectedEVT(String language),
-    Result newChapterPageLaunchedEVT(
-        BuildContext context,
-        Chapter previousChapter,
-        ChapterDraft chapterDraft,
-        SeriesDraft seriesDraft),
-    Result placeholderFetchedEVT(
-        Chapter previousChapter, SeriesDraft seriesDraft, String coverUrl),
-    Result publishButtonPressedEVT(),
-    Result saveOrBackButtonPressedEVT(),
-    Result seriesCoverDeletedEVT(),
-    Result seriesCoverUploadedEVT(String coverUrl, SeriesDraft seriesDraft),
-    Result seriesDraftDeletedEVT(),
-    Result seriesDraftFetchedEVT(SeriesDraft seriesDraft),
-    Result seriesPublishedEVT(Series series),
-    Result sessionFetchedEVT(Chapter previousChapter, SeriesDraft seriesDraft),
-    Result storyChangedEVT(String story),
-    Result titleChangedEVT(String title),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (chapterDeletedEVT != null) {
-      return chapterDeletedEVT();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result addCoverPressedEVT(AddCoverPressedEVT value),
-    @required Result chapterCoverDeletedEVT(ChapterCoverDeletedEVT value),
-    @required Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
-    @required Result chapterPublishedEVT(ChapterPublishedEVT value),
-    @required Result copyrightsSelectedEVT(CopyrightsSelectedEVT value),
-    @required Result chapterDeletedEVT(ChapterDeletedEVT value),
-    @required
-        Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
-    @required Result editModeLaunchedEVT(EditModeLaunchedEVT value),
-    @required
-        Result failureWhenPublishingChapterEVT(
-            FailureWhenPublishingChapterEVT value),
-    @required
-        Result failureWhenPublishingSeriesEVT(
-            FailureWhenPublishingSeriesEVT value),
-    @required
-        Result failureWhenUploadingSeriesCoverEVT(
-            FailureWhenUploadingSeriesCoverEVT value),
-    @required Result genreOptionalSelectedEVT(GenreOptionalSelectedEVT value),
-    @required Result genreSelectedEVT(GenreSelectedEVT value),
-    @required Result isEndChangedEVT(IsEndChangedEVT value),
-    @required Result isNSFWChangedEVT(IsNSFWChangedEVT value),
-    @required Result languageSelectedEVT(LanguageSelectedEVT value),
-    @required Result newChapterPageLaunchedEVT(NewChapterPageLaunchedEVT value),
-    @required Result placeholderFetchedEVT(PlaceholderFetchedEVT value),
-    @required Result publishButtonPressedEVT(PublishButtonPressedEVT value),
-    @required
-        Result saveOrBackButtonPressedEVT(SaveOrBackButtonPressedEVT value),
-    @required Result seriesCoverDeletedEVT(SeriesCoverDeletedEVT value),
-    @required Result seriesCoverUploadedEVT(SeriesCoverUploadedEVT value),
-    @required Result seriesDraftDeletedEVT(SeriesDraftDeletedEVT value),
-    @required Result seriesDraftFetchedEVT(SeriesDraftFetchedEVT value),
-    @required Result seriesPublishedEVT(SeriesPublishedEVT value),
-    @required Result sessionFetchedEVT(SessionFetchedEVT value),
-    @required Result storyChangedEVT(StoryChangedEVT value),
-    @required Result titleChangedEVT(TitleChangedEVT value),
-  }) {
-    assert(addCoverPressedEVT != null);
-    assert(chapterCoverDeletedEVT != null);
-    assert(chapterCoverUploadedEVT != null);
-    assert(chapterPublishedEVT != null);
-    assert(copyrightsSelectedEVT != null);
-    assert(chapterDeletedEVT != null);
-    assert(deleteDraftButtonPressedEVT != null);
-    assert(editModeLaunchedEVT != null);
-    assert(failureWhenPublishingChapterEVT != null);
-    assert(failureWhenPublishingSeriesEVT != null);
-    assert(failureWhenUploadingSeriesCoverEVT != null);
-    assert(genreOptionalSelectedEVT != null);
-    assert(genreSelectedEVT != null);
-    assert(isEndChangedEVT != null);
-    assert(isNSFWChangedEVT != null);
-    assert(languageSelectedEVT != null);
-    assert(newChapterPageLaunchedEVT != null);
-    assert(placeholderFetchedEVT != null);
-    assert(publishButtonPressedEVT != null);
-    assert(saveOrBackButtonPressedEVT != null);
-    assert(seriesCoverDeletedEVT != null);
-    assert(seriesCoverUploadedEVT != null);
-    assert(seriesDraftDeletedEVT != null);
-    assert(seriesDraftFetchedEVT != null);
-    assert(seriesPublishedEVT != null);
-    assert(sessionFetchedEVT != null);
-    assert(storyChangedEVT != null);
-    assert(titleChangedEVT != null);
-    return chapterDeletedEVT(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result addCoverPressedEVT(AddCoverPressedEVT value),
-    Result chapterCoverDeletedEVT(ChapterCoverDeletedEVT value),
-    Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
-    Result chapterPublishedEVT(ChapterPublishedEVT value),
-    Result copyrightsSelectedEVT(CopyrightsSelectedEVT value),
-    Result chapterDeletedEVT(ChapterDeletedEVT value),
-    Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
-    Result editModeLaunchedEVT(EditModeLaunchedEVT value),
-    Result failureWhenPublishingChapterEVT(
-        FailureWhenPublishingChapterEVT value),
-    Result failureWhenPublishingSeriesEVT(FailureWhenPublishingSeriesEVT value),
-    Result failureWhenUploadingSeriesCoverEVT(
-        FailureWhenUploadingSeriesCoverEVT value),
-    Result genreOptionalSelectedEVT(GenreOptionalSelectedEVT value),
-    Result genreSelectedEVT(GenreSelectedEVT value),
-    Result isEndChangedEVT(IsEndChangedEVT value),
-    Result isNSFWChangedEVT(IsNSFWChangedEVT value),
-    Result languageSelectedEVT(LanguageSelectedEVT value),
-    Result newChapterPageLaunchedEVT(NewChapterPageLaunchedEVT value),
-    Result placeholderFetchedEVT(PlaceholderFetchedEVT value),
-    Result publishButtonPressedEVT(PublishButtonPressedEVT value),
-    Result saveOrBackButtonPressedEVT(SaveOrBackButtonPressedEVT value),
-    Result seriesCoverDeletedEVT(SeriesCoverDeletedEVT value),
-    Result seriesCoverUploadedEVT(SeriesCoverUploadedEVT value),
-    Result seriesDraftDeletedEVT(SeriesDraftDeletedEVT value),
-    Result seriesDraftFetchedEVT(SeriesDraftFetchedEVT value),
-    Result seriesPublishedEVT(SeriesPublishedEVT value),
-    Result sessionFetchedEVT(SessionFetchedEVT value),
-    Result storyChangedEVT(StoryChangedEVT value),
-    Result titleChangedEVT(TitleChangedEVT value),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (chapterDeletedEVT != null) {
-      return chapterDeletedEVT(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class ChapterDeletedEVT implements NewChapterDatabaseEvent {
-  const factory ChapterDeletedEVT() = _$ChapterDeletedEVT;
 }
 
 abstract class $DeleteDraftButtonPressedEVTCopyWith<$Res> {
@@ -2222,7 +1902,6 @@ class _$DeleteDraftButtonPressedEVT
             String coverUrl, ChapterDraft chapterDraft),
     @required Result chapterPublishedEVT(Chapter chapter),
     @required Result copyrightsSelectedEVT(String copyrights),
-    @required Result chapterDeletedEVT(),
     @required Result deleteDraftButtonPressedEVT(),
     @required Result editModeLaunchedEVT(ChapterDraft chapterDraft),
     @required Result failureWhenPublishingChapterEVT(String coverUrl),
@@ -2261,7 +1940,6 @@ class _$DeleteDraftButtonPressedEVT
     assert(chapterCoverUploadedEVT != null);
     assert(chapterPublishedEVT != null);
     assert(copyrightsSelectedEVT != null);
-    assert(chapterDeletedEVT != null);
     assert(deleteDraftButtonPressedEVT != null);
     assert(editModeLaunchedEVT != null);
     assert(failureWhenPublishingChapterEVT != null);
@@ -2295,7 +1973,6 @@ class _$DeleteDraftButtonPressedEVT
     Result chapterCoverUploadedEVT(String coverUrl, ChapterDraft chapterDraft),
     Result chapterPublishedEVT(Chapter chapter),
     Result copyrightsSelectedEVT(String copyrights),
-    Result chapterDeletedEVT(),
     Result deleteDraftButtonPressedEVT(),
     Result editModeLaunchedEVT(ChapterDraft chapterDraft),
     Result failureWhenPublishingChapterEVT(String coverUrl),
@@ -2340,7 +2017,6 @@ class _$DeleteDraftButtonPressedEVT
     @required Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
     @required Result chapterPublishedEVT(ChapterPublishedEVT value),
     @required Result copyrightsSelectedEVT(CopyrightsSelectedEVT value),
-    @required Result chapterDeletedEVT(ChapterDeletedEVT value),
     @required
         Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
     @required Result editModeLaunchedEVT(EditModeLaunchedEVT value),
@@ -2377,7 +2053,6 @@ class _$DeleteDraftButtonPressedEVT
     assert(chapterCoverUploadedEVT != null);
     assert(chapterPublishedEVT != null);
     assert(copyrightsSelectedEVT != null);
-    assert(chapterDeletedEVT != null);
     assert(deleteDraftButtonPressedEVT != null);
     assert(editModeLaunchedEVT != null);
     assert(failureWhenPublishingChapterEVT != null);
@@ -2411,7 +2086,6 @@ class _$DeleteDraftButtonPressedEVT
     Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
     Result chapterPublishedEVT(ChapterPublishedEVT value),
     Result copyrightsSelectedEVT(CopyrightsSelectedEVT value),
-    Result chapterDeletedEVT(ChapterDeletedEVT value),
     Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
     Result editModeLaunchedEVT(EditModeLaunchedEVT value),
     Result failureWhenPublishingChapterEVT(
@@ -2528,7 +2202,6 @@ class _$EditModeLaunchedEVT
             String coverUrl, ChapterDraft chapterDraft),
     @required Result chapterPublishedEVT(Chapter chapter),
     @required Result copyrightsSelectedEVT(String copyrights),
-    @required Result chapterDeletedEVT(),
     @required Result deleteDraftButtonPressedEVT(),
     @required Result editModeLaunchedEVT(ChapterDraft chapterDraft),
     @required Result failureWhenPublishingChapterEVT(String coverUrl),
@@ -2567,7 +2240,6 @@ class _$EditModeLaunchedEVT
     assert(chapterCoverUploadedEVT != null);
     assert(chapterPublishedEVT != null);
     assert(copyrightsSelectedEVT != null);
-    assert(chapterDeletedEVT != null);
     assert(deleteDraftButtonPressedEVT != null);
     assert(editModeLaunchedEVT != null);
     assert(failureWhenPublishingChapterEVT != null);
@@ -2601,7 +2273,6 @@ class _$EditModeLaunchedEVT
     Result chapterCoverUploadedEVT(String coverUrl, ChapterDraft chapterDraft),
     Result chapterPublishedEVT(Chapter chapter),
     Result copyrightsSelectedEVT(String copyrights),
-    Result chapterDeletedEVT(),
     Result deleteDraftButtonPressedEVT(),
     Result editModeLaunchedEVT(ChapterDraft chapterDraft),
     Result failureWhenPublishingChapterEVT(String coverUrl),
@@ -2646,7 +2317,6 @@ class _$EditModeLaunchedEVT
     @required Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
     @required Result chapterPublishedEVT(ChapterPublishedEVT value),
     @required Result copyrightsSelectedEVT(CopyrightsSelectedEVT value),
-    @required Result chapterDeletedEVT(ChapterDeletedEVT value),
     @required
         Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
     @required Result editModeLaunchedEVT(EditModeLaunchedEVT value),
@@ -2683,7 +2353,6 @@ class _$EditModeLaunchedEVT
     assert(chapterCoverUploadedEVT != null);
     assert(chapterPublishedEVT != null);
     assert(copyrightsSelectedEVT != null);
-    assert(chapterDeletedEVT != null);
     assert(deleteDraftButtonPressedEVT != null);
     assert(editModeLaunchedEVT != null);
     assert(failureWhenPublishingChapterEVT != null);
@@ -2717,7 +2386,6 @@ class _$EditModeLaunchedEVT
     Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
     Result chapterPublishedEVT(ChapterPublishedEVT value),
     Result copyrightsSelectedEVT(CopyrightsSelectedEVT value),
-    Result chapterDeletedEVT(ChapterDeletedEVT value),
     Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
     Result editModeLaunchedEVT(EditModeLaunchedEVT value),
     Result failureWhenPublishingChapterEVT(
@@ -2841,7 +2509,6 @@ class _$FailureWhenPublishingChapterEVT
             String coverUrl, ChapterDraft chapterDraft),
     @required Result chapterPublishedEVT(Chapter chapter),
     @required Result copyrightsSelectedEVT(String copyrights),
-    @required Result chapterDeletedEVT(),
     @required Result deleteDraftButtonPressedEVT(),
     @required Result editModeLaunchedEVT(ChapterDraft chapterDraft),
     @required Result failureWhenPublishingChapterEVT(String coverUrl),
@@ -2880,7 +2547,6 @@ class _$FailureWhenPublishingChapterEVT
     assert(chapterCoverUploadedEVT != null);
     assert(chapterPublishedEVT != null);
     assert(copyrightsSelectedEVT != null);
-    assert(chapterDeletedEVT != null);
     assert(deleteDraftButtonPressedEVT != null);
     assert(editModeLaunchedEVT != null);
     assert(failureWhenPublishingChapterEVT != null);
@@ -2914,7 +2580,6 @@ class _$FailureWhenPublishingChapterEVT
     Result chapterCoverUploadedEVT(String coverUrl, ChapterDraft chapterDraft),
     Result chapterPublishedEVT(Chapter chapter),
     Result copyrightsSelectedEVT(String copyrights),
-    Result chapterDeletedEVT(),
     Result deleteDraftButtonPressedEVT(),
     Result editModeLaunchedEVT(ChapterDraft chapterDraft),
     Result failureWhenPublishingChapterEVT(String coverUrl),
@@ -2959,7 +2624,6 @@ class _$FailureWhenPublishingChapterEVT
     @required Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
     @required Result chapterPublishedEVT(ChapterPublishedEVT value),
     @required Result copyrightsSelectedEVT(CopyrightsSelectedEVT value),
-    @required Result chapterDeletedEVT(ChapterDeletedEVT value),
     @required
         Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
     @required Result editModeLaunchedEVT(EditModeLaunchedEVT value),
@@ -2996,7 +2660,6 @@ class _$FailureWhenPublishingChapterEVT
     assert(chapterCoverUploadedEVT != null);
     assert(chapterPublishedEVT != null);
     assert(copyrightsSelectedEVT != null);
-    assert(chapterDeletedEVT != null);
     assert(deleteDraftButtonPressedEVT != null);
     assert(editModeLaunchedEVT != null);
     assert(failureWhenPublishingChapterEVT != null);
@@ -3030,7 +2693,6 @@ class _$FailureWhenPublishingChapterEVT
     Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
     Result chapterPublishedEVT(ChapterPublishedEVT value),
     Result copyrightsSelectedEVT(CopyrightsSelectedEVT value),
-    Result chapterDeletedEVT(ChapterDeletedEVT value),
     Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
     Result editModeLaunchedEVT(EditModeLaunchedEVT value),
     Result failureWhenPublishingChapterEVT(
@@ -3155,7 +2817,6 @@ class _$FailureWhenPublishingSeriesEVT
             String coverUrl, ChapterDraft chapterDraft),
     @required Result chapterPublishedEVT(Chapter chapter),
     @required Result copyrightsSelectedEVT(String copyrights),
-    @required Result chapterDeletedEVT(),
     @required Result deleteDraftButtonPressedEVT(),
     @required Result editModeLaunchedEVT(ChapterDraft chapterDraft),
     @required Result failureWhenPublishingChapterEVT(String coverUrl),
@@ -3194,7 +2855,6 @@ class _$FailureWhenPublishingSeriesEVT
     assert(chapterCoverUploadedEVT != null);
     assert(chapterPublishedEVT != null);
     assert(copyrightsSelectedEVT != null);
-    assert(chapterDeletedEVT != null);
     assert(deleteDraftButtonPressedEVT != null);
     assert(editModeLaunchedEVT != null);
     assert(failureWhenPublishingChapterEVT != null);
@@ -3228,7 +2888,6 @@ class _$FailureWhenPublishingSeriesEVT
     Result chapterCoverUploadedEVT(String coverUrl, ChapterDraft chapterDraft),
     Result chapterPublishedEVT(Chapter chapter),
     Result copyrightsSelectedEVT(String copyrights),
-    Result chapterDeletedEVT(),
     Result deleteDraftButtonPressedEVT(),
     Result editModeLaunchedEVT(ChapterDraft chapterDraft),
     Result failureWhenPublishingChapterEVT(String coverUrl),
@@ -3273,7 +2932,6 @@ class _$FailureWhenPublishingSeriesEVT
     @required Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
     @required Result chapterPublishedEVT(ChapterPublishedEVT value),
     @required Result copyrightsSelectedEVT(CopyrightsSelectedEVT value),
-    @required Result chapterDeletedEVT(ChapterDeletedEVT value),
     @required
         Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
     @required Result editModeLaunchedEVT(EditModeLaunchedEVT value),
@@ -3310,7 +2968,6 @@ class _$FailureWhenPublishingSeriesEVT
     assert(chapterCoverUploadedEVT != null);
     assert(chapterPublishedEVT != null);
     assert(copyrightsSelectedEVT != null);
-    assert(chapterDeletedEVT != null);
     assert(deleteDraftButtonPressedEVT != null);
     assert(editModeLaunchedEVT != null);
     assert(failureWhenPublishingChapterEVT != null);
@@ -3344,7 +3001,6 @@ class _$FailureWhenPublishingSeriesEVT
     Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
     Result chapterPublishedEVT(ChapterPublishedEVT value),
     Result copyrightsSelectedEVT(CopyrightsSelectedEVT value),
-    Result chapterDeletedEVT(ChapterDeletedEVT value),
     Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
     Result editModeLaunchedEVT(EditModeLaunchedEVT value),
     Result failureWhenPublishingChapterEVT(
@@ -3446,7 +3102,6 @@ class _$FailureWhenUploadingSeriesCoverEVT
             String coverUrl, ChapterDraft chapterDraft),
     @required Result chapterPublishedEVT(Chapter chapter),
     @required Result copyrightsSelectedEVT(String copyrights),
-    @required Result chapterDeletedEVT(),
     @required Result deleteDraftButtonPressedEVT(),
     @required Result editModeLaunchedEVT(ChapterDraft chapterDraft),
     @required Result failureWhenPublishingChapterEVT(String coverUrl),
@@ -3485,7 +3140,6 @@ class _$FailureWhenUploadingSeriesCoverEVT
     assert(chapterCoverUploadedEVT != null);
     assert(chapterPublishedEVT != null);
     assert(copyrightsSelectedEVT != null);
-    assert(chapterDeletedEVT != null);
     assert(deleteDraftButtonPressedEVT != null);
     assert(editModeLaunchedEVT != null);
     assert(failureWhenPublishingChapterEVT != null);
@@ -3519,7 +3173,6 @@ class _$FailureWhenUploadingSeriesCoverEVT
     Result chapterCoverUploadedEVT(String coverUrl, ChapterDraft chapterDraft),
     Result chapterPublishedEVT(Chapter chapter),
     Result copyrightsSelectedEVT(String copyrights),
-    Result chapterDeletedEVT(),
     Result deleteDraftButtonPressedEVT(),
     Result editModeLaunchedEVT(ChapterDraft chapterDraft),
     Result failureWhenPublishingChapterEVT(String coverUrl),
@@ -3564,7 +3217,6 @@ class _$FailureWhenUploadingSeriesCoverEVT
     @required Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
     @required Result chapterPublishedEVT(ChapterPublishedEVT value),
     @required Result copyrightsSelectedEVT(CopyrightsSelectedEVT value),
-    @required Result chapterDeletedEVT(ChapterDeletedEVT value),
     @required
         Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
     @required Result editModeLaunchedEVT(EditModeLaunchedEVT value),
@@ -3601,7 +3253,6 @@ class _$FailureWhenUploadingSeriesCoverEVT
     assert(chapterCoverUploadedEVT != null);
     assert(chapterPublishedEVT != null);
     assert(copyrightsSelectedEVT != null);
-    assert(chapterDeletedEVT != null);
     assert(deleteDraftButtonPressedEVT != null);
     assert(editModeLaunchedEVT != null);
     assert(failureWhenPublishingChapterEVT != null);
@@ -3635,7 +3286,6 @@ class _$FailureWhenUploadingSeriesCoverEVT
     Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
     Result chapterPublishedEVT(ChapterPublishedEVT value),
     Result copyrightsSelectedEVT(CopyrightsSelectedEVT value),
-    Result chapterDeletedEVT(ChapterDeletedEVT value),
     Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
     Result editModeLaunchedEVT(EditModeLaunchedEVT value),
     Result failureWhenPublishingChapterEVT(
@@ -3755,7 +3405,6 @@ class _$GenreOptionalSelectedEVT
             String coverUrl, ChapterDraft chapterDraft),
     @required Result chapterPublishedEVT(Chapter chapter),
     @required Result copyrightsSelectedEVT(String copyrights),
-    @required Result chapterDeletedEVT(),
     @required Result deleteDraftButtonPressedEVT(),
     @required Result editModeLaunchedEVT(ChapterDraft chapterDraft),
     @required Result failureWhenPublishingChapterEVT(String coverUrl),
@@ -3794,7 +3443,6 @@ class _$GenreOptionalSelectedEVT
     assert(chapterCoverUploadedEVT != null);
     assert(chapterPublishedEVT != null);
     assert(copyrightsSelectedEVT != null);
-    assert(chapterDeletedEVT != null);
     assert(deleteDraftButtonPressedEVT != null);
     assert(editModeLaunchedEVT != null);
     assert(failureWhenPublishingChapterEVT != null);
@@ -3828,7 +3476,6 @@ class _$GenreOptionalSelectedEVT
     Result chapterCoverUploadedEVT(String coverUrl, ChapterDraft chapterDraft),
     Result chapterPublishedEVT(Chapter chapter),
     Result copyrightsSelectedEVT(String copyrights),
-    Result chapterDeletedEVT(),
     Result deleteDraftButtonPressedEVT(),
     Result editModeLaunchedEVT(ChapterDraft chapterDraft),
     Result failureWhenPublishingChapterEVT(String coverUrl),
@@ -3873,7 +3520,6 @@ class _$GenreOptionalSelectedEVT
     @required Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
     @required Result chapterPublishedEVT(ChapterPublishedEVT value),
     @required Result copyrightsSelectedEVT(CopyrightsSelectedEVT value),
-    @required Result chapterDeletedEVT(ChapterDeletedEVT value),
     @required
         Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
     @required Result editModeLaunchedEVT(EditModeLaunchedEVT value),
@@ -3910,7 +3556,6 @@ class _$GenreOptionalSelectedEVT
     assert(chapterCoverUploadedEVT != null);
     assert(chapterPublishedEVT != null);
     assert(copyrightsSelectedEVT != null);
-    assert(chapterDeletedEVT != null);
     assert(deleteDraftButtonPressedEVT != null);
     assert(editModeLaunchedEVT != null);
     assert(failureWhenPublishingChapterEVT != null);
@@ -3944,7 +3589,6 @@ class _$GenreOptionalSelectedEVT
     Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
     Result chapterPublishedEVT(ChapterPublishedEVT value),
     Result copyrightsSelectedEVT(CopyrightsSelectedEVT value),
-    Result chapterDeletedEVT(ChapterDeletedEVT value),
     Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
     Result editModeLaunchedEVT(EditModeLaunchedEVT value),
     Result failureWhenPublishingChapterEVT(
@@ -4062,7 +3706,6 @@ class _$GenreSelectedEVT
             String coverUrl, ChapterDraft chapterDraft),
     @required Result chapterPublishedEVT(Chapter chapter),
     @required Result copyrightsSelectedEVT(String copyrights),
-    @required Result chapterDeletedEVT(),
     @required Result deleteDraftButtonPressedEVT(),
     @required Result editModeLaunchedEVT(ChapterDraft chapterDraft),
     @required Result failureWhenPublishingChapterEVT(String coverUrl),
@@ -4101,7 +3744,6 @@ class _$GenreSelectedEVT
     assert(chapterCoverUploadedEVT != null);
     assert(chapterPublishedEVT != null);
     assert(copyrightsSelectedEVT != null);
-    assert(chapterDeletedEVT != null);
     assert(deleteDraftButtonPressedEVT != null);
     assert(editModeLaunchedEVT != null);
     assert(failureWhenPublishingChapterEVT != null);
@@ -4135,7 +3777,6 @@ class _$GenreSelectedEVT
     Result chapterCoverUploadedEVT(String coverUrl, ChapterDraft chapterDraft),
     Result chapterPublishedEVT(Chapter chapter),
     Result copyrightsSelectedEVT(String copyrights),
-    Result chapterDeletedEVT(),
     Result deleteDraftButtonPressedEVT(),
     Result editModeLaunchedEVT(ChapterDraft chapterDraft),
     Result failureWhenPublishingChapterEVT(String coverUrl),
@@ -4180,7 +3821,6 @@ class _$GenreSelectedEVT
     @required Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
     @required Result chapterPublishedEVT(ChapterPublishedEVT value),
     @required Result copyrightsSelectedEVT(CopyrightsSelectedEVT value),
-    @required Result chapterDeletedEVT(ChapterDeletedEVT value),
     @required
         Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
     @required Result editModeLaunchedEVT(EditModeLaunchedEVT value),
@@ -4217,7 +3857,6 @@ class _$GenreSelectedEVT
     assert(chapterCoverUploadedEVT != null);
     assert(chapterPublishedEVT != null);
     assert(copyrightsSelectedEVT != null);
-    assert(chapterDeletedEVT != null);
     assert(deleteDraftButtonPressedEVT != null);
     assert(editModeLaunchedEVT != null);
     assert(failureWhenPublishingChapterEVT != null);
@@ -4251,7 +3890,6 @@ class _$GenreSelectedEVT
     Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
     Result chapterPublishedEVT(ChapterPublishedEVT value),
     Result copyrightsSelectedEVT(CopyrightsSelectedEVT value),
-    Result chapterDeletedEVT(ChapterDeletedEVT value),
     Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
     Result editModeLaunchedEVT(EditModeLaunchedEVT value),
     Result failureWhenPublishingChapterEVT(
@@ -4368,7 +4006,6 @@ class _$IsEndChangedEVT
             String coverUrl, ChapterDraft chapterDraft),
     @required Result chapterPublishedEVT(Chapter chapter),
     @required Result copyrightsSelectedEVT(String copyrights),
-    @required Result chapterDeletedEVT(),
     @required Result deleteDraftButtonPressedEVT(),
     @required Result editModeLaunchedEVT(ChapterDraft chapterDraft),
     @required Result failureWhenPublishingChapterEVT(String coverUrl),
@@ -4407,7 +4044,6 @@ class _$IsEndChangedEVT
     assert(chapterCoverUploadedEVT != null);
     assert(chapterPublishedEVT != null);
     assert(copyrightsSelectedEVT != null);
-    assert(chapterDeletedEVT != null);
     assert(deleteDraftButtonPressedEVT != null);
     assert(editModeLaunchedEVT != null);
     assert(failureWhenPublishingChapterEVT != null);
@@ -4441,7 +4077,6 @@ class _$IsEndChangedEVT
     Result chapterCoverUploadedEVT(String coverUrl, ChapterDraft chapterDraft),
     Result chapterPublishedEVT(Chapter chapter),
     Result copyrightsSelectedEVT(String copyrights),
-    Result chapterDeletedEVT(),
     Result deleteDraftButtonPressedEVT(),
     Result editModeLaunchedEVT(ChapterDraft chapterDraft),
     Result failureWhenPublishingChapterEVT(String coverUrl),
@@ -4486,7 +4121,6 @@ class _$IsEndChangedEVT
     @required Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
     @required Result chapterPublishedEVT(ChapterPublishedEVT value),
     @required Result copyrightsSelectedEVT(CopyrightsSelectedEVT value),
-    @required Result chapterDeletedEVT(ChapterDeletedEVT value),
     @required
         Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
     @required Result editModeLaunchedEVT(EditModeLaunchedEVT value),
@@ -4523,7 +4157,6 @@ class _$IsEndChangedEVT
     assert(chapterCoverUploadedEVT != null);
     assert(chapterPublishedEVT != null);
     assert(copyrightsSelectedEVT != null);
-    assert(chapterDeletedEVT != null);
     assert(deleteDraftButtonPressedEVT != null);
     assert(editModeLaunchedEVT != null);
     assert(failureWhenPublishingChapterEVT != null);
@@ -4557,7 +4190,6 @@ class _$IsEndChangedEVT
     Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
     Result chapterPublishedEVT(ChapterPublishedEVT value),
     Result copyrightsSelectedEVT(CopyrightsSelectedEVT value),
-    Result chapterDeletedEVT(ChapterDeletedEVT value),
     Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
     Result editModeLaunchedEVT(EditModeLaunchedEVT value),
     Result failureWhenPublishingChapterEVT(
@@ -4674,7 +4306,6 @@ class _$IsNSFWChangedEVT
             String coverUrl, ChapterDraft chapterDraft),
     @required Result chapterPublishedEVT(Chapter chapter),
     @required Result copyrightsSelectedEVT(String copyrights),
-    @required Result chapterDeletedEVT(),
     @required Result deleteDraftButtonPressedEVT(),
     @required Result editModeLaunchedEVT(ChapterDraft chapterDraft),
     @required Result failureWhenPublishingChapterEVT(String coverUrl),
@@ -4713,7 +4344,6 @@ class _$IsNSFWChangedEVT
     assert(chapterCoverUploadedEVT != null);
     assert(chapterPublishedEVT != null);
     assert(copyrightsSelectedEVT != null);
-    assert(chapterDeletedEVT != null);
     assert(deleteDraftButtonPressedEVT != null);
     assert(editModeLaunchedEVT != null);
     assert(failureWhenPublishingChapterEVT != null);
@@ -4747,7 +4377,6 @@ class _$IsNSFWChangedEVT
     Result chapterCoverUploadedEVT(String coverUrl, ChapterDraft chapterDraft),
     Result chapterPublishedEVT(Chapter chapter),
     Result copyrightsSelectedEVT(String copyrights),
-    Result chapterDeletedEVT(),
     Result deleteDraftButtonPressedEVT(),
     Result editModeLaunchedEVT(ChapterDraft chapterDraft),
     Result failureWhenPublishingChapterEVT(String coverUrl),
@@ -4792,7 +4421,6 @@ class _$IsNSFWChangedEVT
     @required Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
     @required Result chapterPublishedEVT(ChapterPublishedEVT value),
     @required Result copyrightsSelectedEVT(CopyrightsSelectedEVT value),
-    @required Result chapterDeletedEVT(ChapterDeletedEVT value),
     @required
         Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
     @required Result editModeLaunchedEVT(EditModeLaunchedEVT value),
@@ -4829,7 +4457,6 @@ class _$IsNSFWChangedEVT
     assert(chapterCoverUploadedEVT != null);
     assert(chapterPublishedEVT != null);
     assert(copyrightsSelectedEVT != null);
-    assert(chapterDeletedEVT != null);
     assert(deleteDraftButtonPressedEVT != null);
     assert(editModeLaunchedEVT != null);
     assert(failureWhenPublishingChapterEVT != null);
@@ -4863,7 +4490,6 @@ class _$IsNSFWChangedEVT
     Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
     Result chapterPublishedEVT(ChapterPublishedEVT value),
     Result copyrightsSelectedEVT(CopyrightsSelectedEVT value),
-    Result chapterDeletedEVT(ChapterDeletedEVT value),
     Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
     Result editModeLaunchedEVT(EditModeLaunchedEVT value),
     Result failureWhenPublishingChapterEVT(
@@ -4981,7 +4607,6 @@ class _$LanguageSelectedEVT
             String coverUrl, ChapterDraft chapterDraft),
     @required Result chapterPublishedEVT(Chapter chapter),
     @required Result copyrightsSelectedEVT(String copyrights),
-    @required Result chapterDeletedEVT(),
     @required Result deleteDraftButtonPressedEVT(),
     @required Result editModeLaunchedEVT(ChapterDraft chapterDraft),
     @required Result failureWhenPublishingChapterEVT(String coverUrl),
@@ -5020,7 +4645,6 @@ class _$LanguageSelectedEVT
     assert(chapterCoverUploadedEVT != null);
     assert(chapterPublishedEVT != null);
     assert(copyrightsSelectedEVT != null);
-    assert(chapterDeletedEVT != null);
     assert(deleteDraftButtonPressedEVT != null);
     assert(editModeLaunchedEVT != null);
     assert(failureWhenPublishingChapterEVT != null);
@@ -5054,7 +4678,6 @@ class _$LanguageSelectedEVT
     Result chapterCoverUploadedEVT(String coverUrl, ChapterDraft chapterDraft),
     Result chapterPublishedEVT(Chapter chapter),
     Result copyrightsSelectedEVT(String copyrights),
-    Result chapterDeletedEVT(),
     Result deleteDraftButtonPressedEVT(),
     Result editModeLaunchedEVT(ChapterDraft chapterDraft),
     Result failureWhenPublishingChapterEVT(String coverUrl),
@@ -5099,7 +4722,6 @@ class _$LanguageSelectedEVT
     @required Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
     @required Result chapterPublishedEVT(ChapterPublishedEVT value),
     @required Result copyrightsSelectedEVT(CopyrightsSelectedEVT value),
-    @required Result chapterDeletedEVT(ChapterDeletedEVT value),
     @required
         Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
     @required Result editModeLaunchedEVT(EditModeLaunchedEVT value),
@@ -5136,7 +4758,6 @@ class _$LanguageSelectedEVT
     assert(chapterCoverUploadedEVT != null);
     assert(chapterPublishedEVT != null);
     assert(copyrightsSelectedEVT != null);
-    assert(chapterDeletedEVT != null);
     assert(deleteDraftButtonPressedEVT != null);
     assert(editModeLaunchedEVT != null);
     assert(failureWhenPublishingChapterEVT != null);
@@ -5170,7 +4791,6 @@ class _$LanguageSelectedEVT
     Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
     Result chapterPublishedEVT(ChapterPublishedEVT value),
     Result copyrightsSelectedEVT(CopyrightsSelectedEVT value),
-    Result chapterDeletedEVT(ChapterDeletedEVT value),
     Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
     Result editModeLaunchedEVT(EditModeLaunchedEVT value),
     Result failureWhenPublishingChapterEVT(
@@ -5333,7 +4953,6 @@ class _$NewChapterPageLaunchedEVT
             String coverUrl, ChapterDraft chapterDraft),
     @required Result chapterPublishedEVT(Chapter chapter),
     @required Result copyrightsSelectedEVT(String copyrights),
-    @required Result chapterDeletedEVT(),
     @required Result deleteDraftButtonPressedEVT(),
     @required Result editModeLaunchedEVT(ChapterDraft chapterDraft),
     @required Result failureWhenPublishingChapterEVT(String coverUrl),
@@ -5372,7 +4991,6 @@ class _$NewChapterPageLaunchedEVT
     assert(chapterCoverUploadedEVT != null);
     assert(chapterPublishedEVT != null);
     assert(copyrightsSelectedEVT != null);
-    assert(chapterDeletedEVT != null);
     assert(deleteDraftButtonPressedEVT != null);
     assert(editModeLaunchedEVT != null);
     assert(failureWhenPublishingChapterEVT != null);
@@ -5407,7 +5025,6 @@ class _$NewChapterPageLaunchedEVT
     Result chapterCoverUploadedEVT(String coverUrl, ChapterDraft chapterDraft),
     Result chapterPublishedEVT(Chapter chapter),
     Result copyrightsSelectedEVT(String copyrights),
-    Result chapterDeletedEVT(),
     Result deleteDraftButtonPressedEVT(),
     Result editModeLaunchedEVT(ChapterDraft chapterDraft),
     Result failureWhenPublishingChapterEVT(String coverUrl),
@@ -5453,7 +5070,6 @@ class _$NewChapterPageLaunchedEVT
     @required Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
     @required Result chapterPublishedEVT(ChapterPublishedEVT value),
     @required Result copyrightsSelectedEVT(CopyrightsSelectedEVT value),
-    @required Result chapterDeletedEVT(ChapterDeletedEVT value),
     @required
         Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
     @required Result editModeLaunchedEVT(EditModeLaunchedEVT value),
@@ -5490,7 +5106,6 @@ class _$NewChapterPageLaunchedEVT
     assert(chapterCoverUploadedEVT != null);
     assert(chapterPublishedEVT != null);
     assert(copyrightsSelectedEVT != null);
-    assert(chapterDeletedEVT != null);
     assert(deleteDraftButtonPressedEVT != null);
     assert(editModeLaunchedEVT != null);
     assert(failureWhenPublishingChapterEVT != null);
@@ -5524,7 +5139,6 @@ class _$NewChapterPageLaunchedEVT
     Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
     Result chapterPublishedEVT(ChapterPublishedEVT value),
     Result copyrightsSelectedEVT(CopyrightsSelectedEVT value),
-    Result chapterDeletedEVT(ChapterDeletedEVT value),
     Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
     Result editModeLaunchedEVT(EditModeLaunchedEVT value),
     Result failureWhenPublishingChapterEVT(
@@ -5676,7 +5290,6 @@ class _$PlaceholderFetchedEVT
             String coverUrl, ChapterDraft chapterDraft),
     @required Result chapterPublishedEVT(Chapter chapter),
     @required Result copyrightsSelectedEVT(String copyrights),
-    @required Result chapterDeletedEVT(),
     @required Result deleteDraftButtonPressedEVT(),
     @required Result editModeLaunchedEVT(ChapterDraft chapterDraft),
     @required Result failureWhenPublishingChapterEVT(String coverUrl),
@@ -5715,7 +5328,6 @@ class _$PlaceholderFetchedEVT
     assert(chapterCoverUploadedEVT != null);
     assert(chapterPublishedEVT != null);
     assert(copyrightsSelectedEVT != null);
-    assert(chapterDeletedEVT != null);
     assert(deleteDraftButtonPressedEVT != null);
     assert(editModeLaunchedEVT != null);
     assert(failureWhenPublishingChapterEVT != null);
@@ -5749,7 +5361,6 @@ class _$PlaceholderFetchedEVT
     Result chapterCoverUploadedEVT(String coverUrl, ChapterDraft chapterDraft),
     Result chapterPublishedEVT(Chapter chapter),
     Result copyrightsSelectedEVT(String copyrights),
-    Result chapterDeletedEVT(),
     Result deleteDraftButtonPressedEVT(),
     Result editModeLaunchedEVT(ChapterDraft chapterDraft),
     Result failureWhenPublishingChapterEVT(String coverUrl),
@@ -5794,7 +5405,6 @@ class _$PlaceholderFetchedEVT
     @required Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
     @required Result chapterPublishedEVT(ChapterPublishedEVT value),
     @required Result copyrightsSelectedEVT(CopyrightsSelectedEVT value),
-    @required Result chapterDeletedEVT(ChapterDeletedEVT value),
     @required
         Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
     @required Result editModeLaunchedEVT(EditModeLaunchedEVT value),
@@ -5831,7 +5441,6 @@ class _$PlaceholderFetchedEVT
     assert(chapterCoverUploadedEVT != null);
     assert(chapterPublishedEVT != null);
     assert(copyrightsSelectedEVT != null);
-    assert(chapterDeletedEVT != null);
     assert(deleteDraftButtonPressedEVT != null);
     assert(editModeLaunchedEVT != null);
     assert(failureWhenPublishingChapterEVT != null);
@@ -5865,7 +5474,6 @@ class _$PlaceholderFetchedEVT
     Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
     Result chapterPublishedEVT(ChapterPublishedEVT value),
     Result copyrightsSelectedEVT(CopyrightsSelectedEVT value),
-    Result chapterDeletedEVT(ChapterDeletedEVT value),
     Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
     Result editModeLaunchedEVT(EditModeLaunchedEVT value),
     Result failureWhenPublishingChapterEVT(
@@ -5965,7 +5573,6 @@ class _$PublishButtonPressedEVT
             String coverUrl, ChapterDraft chapterDraft),
     @required Result chapterPublishedEVT(Chapter chapter),
     @required Result copyrightsSelectedEVT(String copyrights),
-    @required Result chapterDeletedEVT(),
     @required Result deleteDraftButtonPressedEVT(),
     @required Result editModeLaunchedEVT(ChapterDraft chapterDraft),
     @required Result failureWhenPublishingChapterEVT(String coverUrl),
@@ -6004,7 +5611,6 @@ class _$PublishButtonPressedEVT
     assert(chapterCoverUploadedEVT != null);
     assert(chapterPublishedEVT != null);
     assert(copyrightsSelectedEVT != null);
-    assert(chapterDeletedEVT != null);
     assert(deleteDraftButtonPressedEVT != null);
     assert(editModeLaunchedEVT != null);
     assert(failureWhenPublishingChapterEVT != null);
@@ -6038,7 +5644,6 @@ class _$PublishButtonPressedEVT
     Result chapterCoverUploadedEVT(String coverUrl, ChapterDraft chapterDraft),
     Result chapterPublishedEVT(Chapter chapter),
     Result copyrightsSelectedEVT(String copyrights),
-    Result chapterDeletedEVT(),
     Result deleteDraftButtonPressedEVT(),
     Result editModeLaunchedEVT(ChapterDraft chapterDraft),
     Result failureWhenPublishingChapterEVT(String coverUrl),
@@ -6083,7 +5688,6 @@ class _$PublishButtonPressedEVT
     @required Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
     @required Result chapterPublishedEVT(ChapterPublishedEVT value),
     @required Result copyrightsSelectedEVT(CopyrightsSelectedEVT value),
-    @required Result chapterDeletedEVT(ChapterDeletedEVT value),
     @required
         Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
     @required Result editModeLaunchedEVT(EditModeLaunchedEVT value),
@@ -6120,7 +5724,6 @@ class _$PublishButtonPressedEVT
     assert(chapterCoverUploadedEVT != null);
     assert(chapterPublishedEVT != null);
     assert(copyrightsSelectedEVT != null);
-    assert(chapterDeletedEVT != null);
     assert(deleteDraftButtonPressedEVT != null);
     assert(editModeLaunchedEVT != null);
     assert(failureWhenPublishingChapterEVT != null);
@@ -6154,7 +5757,6 @@ class _$PublishButtonPressedEVT
     Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
     Result chapterPublishedEVT(ChapterPublishedEVT value),
     Result copyrightsSelectedEVT(CopyrightsSelectedEVT value),
-    Result chapterDeletedEVT(ChapterDeletedEVT value),
     Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
     Result editModeLaunchedEVT(EditModeLaunchedEVT value),
     Result failureWhenPublishingChapterEVT(
@@ -6247,7 +5849,6 @@ class _$SaveOrBackButtonPressedEVT
             String coverUrl, ChapterDraft chapterDraft),
     @required Result chapterPublishedEVT(Chapter chapter),
     @required Result copyrightsSelectedEVT(String copyrights),
-    @required Result chapterDeletedEVT(),
     @required Result deleteDraftButtonPressedEVT(),
     @required Result editModeLaunchedEVT(ChapterDraft chapterDraft),
     @required Result failureWhenPublishingChapterEVT(String coverUrl),
@@ -6286,7 +5887,6 @@ class _$SaveOrBackButtonPressedEVT
     assert(chapterCoverUploadedEVT != null);
     assert(chapterPublishedEVT != null);
     assert(copyrightsSelectedEVT != null);
-    assert(chapterDeletedEVT != null);
     assert(deleteDraftButtonPressedEVT != null);
     assert(editModeLaunchedEVT != null);
     assert(failureWhenPublishingChapterEVT != null);
@@ -6320,7 +5920,6 @@ class _$SaveOrBackButtonPressedEVT
     Result chapterCoverUploadedEVT(String coverUrl, ChapterDraft chapterDraft),
     Result chapterPublishedEVT(Chapter chapter),
     Result copyrightsSelectedEVT(String copyrights),
-    Result chapterDeletedEVT(),
     Result deleteDraftButtonPressedEVT(),
     Result editModeLaunchedEVT(ChapterDraft chapterDraft),
     Result failureWhenPublishingChapterEVT(String coverUrl),
@@ -6365,7 +5964,6 @@ class _$SaveOrBackButtonPressedEVT
     @required Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
     @required Result chapterPublishedEVT(ChapterPublishedEVT value),
     @required Result copyrightsSelectedEVT(CopyrightsSelectedEVT value),
-    @required Result chapterDeletedEVT(ChapterDeletedEVT value),
     @required
         Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
     @required Result editModeLaunchedEVT(EditModeLaunchedEVT value),
@@ -6402,7 +6000,6 @@ class _$SaveOrBackButtonPressedEVT
     assert(chapterCoverUploadedEVT != null);
     assert(chapterPublishedEVT != null);
     assert(copyrightsSelectedEVT != null);
-    assert(chapterDeletedEVT != null);
     assert(deleteDraftButtonPressedEVT != null);
     assert(editModeLaunchedEVT != null);
     assert(failureWhenPublishingChapterEVT != null);
@@ -6436,7 +6033,6 @@ class _$SaveOrBackButtonPressedEVT
     Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
     Result chapterPublishedEVT(ChapterPublishedEVT value),
     Result copyrightsSelectedEVT(CopyrightsSelectedEVT value),
-    Result chapterDeletedEVT(ChapterDeletedEVT value),
     Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
     Result editModeLaunchedEVT(EditModeLaunchedEVT value),
     Result failureWhenPublishingChapterEVT(
@@ -6528,7 +6124,6 @@ class _$SeriesCoverDeletedEVT
             String coverUrl, ChapterDraft chapterDraft),
     @required Result chapterPublishedEVT(Chapter chapter),
     @required Result copyrightsSelectedEVT(String copyrights),
-    @required Result chapterDeletedEVT(),
     @required Result deleteDraftButtonPressedEVT(),
     @required Result editModeLaunchedEVT(ChapterDraft chapterDraft),
     @required Result failureWhenPublishingChapterEVT(String coverUrl),
@@ -6567,7 +6162,6 @@ class _$SeriesCoverDeletedEVT
     assert(chapterCoverUploadedEVT != null);
     assert(chapterPublishedEVT != null);
     assert(copyrightsSelectedEVT != null);
-    assert(chapterDeletedEVT != null);
     assert(deleteDraftButtonPressedEVT != null);
     assert(editModeLaunchedEVT != null);
     assert(failureWhenPublishingChapterEVT != null);
@@ -6601,7 +6195,6 @@ class _$SeriesCoverDeletedEVT
     Result chapterCoverUploadedEVT(String coverUrl, ChapterDraft chapterDraft),
     Result chapterPublishedEVT(Chapter chapter),
     Result copyrightsSelectedEVT(String copyrights),
-    Result chapterDeletedEVT(),
     Result deleteDraftButtonPressedEVT(),
     Result editModeLaunchedEVT(ChapterDraft chapterDraft),
     Result failureWhenPublishingChapterEVT(String coverUrl),
@@ -6646,7 +6239,6 @@ class _$SeriesCoverDeletedEVT
     @required Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
     @required Result chapterPublishedEVT(ChapterPublishedEVT value),
     @required Result copyrightsSelectedEVT(CopyrightsSelectedEVT value),
-    @required Result chapterDeletedEVT(ChapterDeletedEVT value),
     @required
         Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
     @required Result editModeLaunchedEVT(EditModeLaunchedEVT value),
@@ -6683,7 +6275,6 @@ class _$SeriesCoverDeletedEVT
     assert(chapterCoverUploadedEVT != null);
     assert(chapterPublishedEVT != null);
     assert(copyrightsSelectedEVT != null);
-    assert(chapterDeletedEVT != null);
     assert(deleteDraftButtonPressedEVT != null);
     assert(editModeLaunchedEVT != null);
     assert(failureWhenPublishingChapterEVT != null);
@@ -6717,7 +6308,6 @@ class _$SeriesCoverDeletedEVT
     Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
     Result chapterPublishedEVT(ChapterPublishedEVT value),
     Result copyrightsSelectedEVT(CopyrightsSelectedEVT value),
-    Result chapterDeletedEVT(ChapterDeletedEVT value),
     Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
     Result editModeLaunchedEVT(EditModeLaunchedEVT value),
     Result failureWhenPublishingChapterEVT(
@@ -6845,7 +6435,6 @@ class _$SeriesCoverUploadedEVT
             String coverUrl, ChapterDraft chapterDraft),
     @required Result chapterPublishedEVT(Chapter chapter),
     @required Result copyrightsSelectedEVT(String copyrights),
-    @required Result chapterDeletedEVT(),
     @required Result deleteDraftButtonPressedEVT(),
     @required Result editModeLaunchedEVT(ChapterDraft chapterDraft),
     @required Result failureWhenPublishingChapterEVT(String coverUrl),
@@ -6884,7 +6473,6 @@ class _$SeriesCoverUploadedEVT
     assert(chapterCoverUploadedEVT != null);
     assert(chapterPublishedEVT != null);
     assert(copyrightsSelectedEVT != null);
-    assert(chapterDeletedEVT != null);
     assert(deleteDraftButtonPressedEVT != null);
     assert(editModeLaunchedEVT != null);
     assert(failureWhenPublishingChapterEVT != null);
@@ -6918,7 +6506,6 @@ class _$SeriesCoverUploadedEVT
     Result chapterCoverUploadedEVT(String coverUrl, ChapterDraft chapterDraft),
     Result chapterPublishedEVT(Chapter chapter),
     Result copyrightsSelectedEVT(String copyrights),
-    Result chapterDeletedEVT(),
     Result deleteDraftButtonPressedEVT(),
     Result editModeLaunchedEVT(ChapterDraft chapterDraft),
     Result failureWhenPublishingChapterEVT(String coverUrl),
@@ -6963,7 +6550,6 @@ class _$SeriesCoverUploadedEVT
     @required Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
     @required Result chapterPublishedEVT(ChapterPublishedEVT value),
     @required Result copyrightsSelectedEVT(CopyrightsSelectedEVT value),
-    @required Result chapterDeletedEVT(ChapterDeletedEVT value),
     @required
         Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
     @required Result editModeLaunchedEVT(EditModeLaunchedEVT value),
@@ -7000,7 +6586,6 @@ class _$SeriesCoverUploadedEVT
     assert(chapterCoverUploadedEVT != null);
     assert(chapterPublishedEVT != null);
     assert(copyrightsSelectedEVT != null);
-    assert(chapterDeletedEVT != null);
     assert(deleteDraftButtonPressedEVT != null);
     assert(editModeLaunchedEVT != null);
     assert(failureWhenPublishingChapterEVT != null);
@@ -7034,7 +6619,6 @@ class _$SeriesCoverUploadedEVT
     Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
     Result chapterPublishedEVT(ChapterPublishedEVT value),
     Result copyrightsSelectedEVT(CopyrightsSelectedEVT value),
-    Result chapterDeletedEVT(ChapterDeletedEVT value),
     Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
     Result editModeLaunchedEVT(EditModeLaunchedEVT value),
     Result failureWhenPublishingChapterEVT(
@@ -7131,7 +6715,6 @@ class _$SeriesDraftDeletedEVT
             String coverUrl, ChapterDraft chapterDraft),
     @required Result chapterPublishedEVT(Chapter chapter),
     @required Result copyrightsSelectedEVT(String copyrights),
-    @required Result chapterDeletedEVT(),
     @required Result deleteDraftButtonPressedEVT(),
     @required Result editModeLaunchedEVT(ChapterDraft chapterDraft),
     @required Result failureWhenPublishingChapterEVT(String coverUrl),
@@ -7170,7 +6753,6 @@ class _$SeriesDraftDeletedEVT
     assert(chapterCoverUploadedEVT != null);
     assert(chapterPublishedEVT != null);
     assert(copyrightsSelectedEVT != null);
-    assert(chapterDeletedEVT != null);
     assert(deleteDraftButtonPressedEVT != null);
     assert(editModeLaunchedEVT != null);
     assert(failureWhenPublishingChapterEVT != null);
@@ -7204,7 +6786,6 @@ class _$SeriesDraftDeletedEVT
     Result chapterCoverUploadedEVT(String coverUrl, ChapterDraft chapterDraft),
     Result chapterPublishedEVT(Chapter chapter),
     Result copyrightsSelectedEVT(String copyrights),
-    Result chapterDeletedEVT(),
     Result deleteDraftButtonPressedEVT(),
     Result editModeLaunchedEVT(ChapterDraft chapterDraft),
     Result failureWhenPublishingChapterEVT(String coverUrl),
@@ -7249,7 +6830,6 @@ class _$SeriesDraftDeletedEVT
     @required Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
     @required Result chapterPublishedEVT(ChapterPublishedEVT value),
     @required Result copyrightsSelectedEVT(CopyrightsSelectedEVT value),
-    @required Result chapterDeletedEVT(ChapterDeletedEVT value),
     @required
         Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
     @required Result editModeLaunchedEVT(EditModeLaunchedEVT value),
@@ -7286,7 +6866,6 @@ class _$SeriesDraftDeletedEVT
     assert(chapterCoverUploadedEVT != null);
     assert(chapterPublishedEVT != null);
     assert(copyrightsSelectedEVT != null);
-    assert(chapterDeletedEVT != null);
     assert(deleteDraftButtonPressedEVT != null);
     assert(editModeLaunchedEVT != null);
     assert(failureWhenPublishingChapterEVT != null);
@@ -7320,7 +6899,6 @@ class _$SeriesDraftDeletedEVT
     Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
     Result chapterPublishedEVT(ChapterPublishedEVT value),
     Result copyrightsSelectedEVT(CopyrightsSelectedEVT value),
-    Result chapterDeletedEVT(ChapterDeletedEVT value),
     Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
     Result editModeLaunchedEVT(EditModeLaunchedEVT value),
     Result failureWhenPublishingChapterEVT(
@@ -7436,7 +7014,6 @@ class _$SeriesDraftFetchedEVT
             String coverUrl, ChapterDraft chapterDraft),
     @required Result chapterPublishedEVT(Chapter chapter),
     @required Result copyrightsSelectedEVT(String copyrights),
-    @required Result chapterDeletedEVT(),
     @required Result deleteDraftButtonPressedEVT(),
     @required Result editModeLaunchedEVT(ChapterDraft chapterDraft),
     @required Result failureWhenPublishingChapterEVT(String coverUrl),
@@ -7475,7 +7052,6 @@ class _$SeriesDraftFetchedEVT
     assert(chapterCoverUploadedEVT != null);
     assert(chapterPublishedEVT != null);
     assert(copyrightsSelectedEVT != null);
-    assert(chapterDeletedEVT != null);
     assert(deleteDraftButtonPressedEVT != null);
     assert(editModeLaunchedEVT != null);
     assert(failureWhenPublishingChapterEVT != null);
@@ -7509,7 +7085,6 @@ class _$SeriesDraftFetchedEVT
     Result chapterCoverUploadedEVT(String coverUrl, ChapterDraft chapterDraft),
     Result chapterPublishedEVT(Chapter chapter),
     Result copyrightsSelectedEVT(String copyrights),
-    Result chapterDeletedEVT(),
     Result deleteDraftButtonPressedEVT(),
     Result editModeLaunchedEVT(ChapterDraft chapterDraft),
     Result failureWhenPublishingChapterEVT(String coverUrl),
@@ -7554,7 +7129,6 @@ class _$SeriesDraftFetchedEVT
     @required Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
     @required Result chapterPublishedEVT(ChapterPublishedEVT value),
     @required Result copyrightsSelectedEVT(CopyrightsSelectedEVT value),
-    @required Result chapterDeletedEVT(ChapterDeletedEVT value),
     @required
         Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
     @required Result editModeLaunchedEVT(EditModeLaunchedEVT value),
@@ -7591,7 +7165,6 @@ class _$SeriesDraftFetchedEVT
     assert(chapterCoverUploadedEVT != null);
     assert(chapterPublishedEVT != null);
     assert(copyrightsSelectedEVT != null);
-    assert(chapterDeletedEVT != null);
     assert(deleteDraftButtonPressedEVT != null);
     assert(editModeLaunchedEVT != null);
     assert(failureWhenPublishingChapterEVT != null);
@@ -7625,7 +7198,6 @@ class _$SeriesDraftFetchedEVT
     Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
     Result chapterPublishedEVT(ChapterPublishedEVT value),
     Result copyrightsSelectedEVT(CopyrightsSelectedEVT value),
-    Result chapterDeletedEVT(ChapterDeletedEVT value),
     Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
     Result editModeLaunchedEVT(EditModeLaunchedEVT value),
     Result failureWhenPublishingChapterEVT(
@@ -7743,7 +7315,6 @@ class _$SeriesPublishedEVT
             String coverUrl, ChapterDraft chapterDraft),
     @required Result chapterPublishedEVT(Chapter chapter),
     @required Result copyrightsSelectedEVT(String copyrights),
-    @required Result chapterDeletedEVT(),
     @required Result deleteDraftButtonPressedEVT(),
     @required Result editModeLaunchedEVT(ChapterDraft chapterDraft),
     @required Result failureWhenPublishingChapterEVT(String coverUrl),
@@ -7782,7 +7353,6 @@ class _$SeriesPublishedEVT
     assert(chapterCoverUploadedEVT != null);
     assert(chapterPublishedEVT != null);
     assert(copyrightsSelectedEVT != null);
-    assert(chapterDeletedEVT != null);
     assert(deleteDraftButtonPressedEVT != null);
     assert(editModeLaunchedEVT != null);
     assert(failureWhenPublishingChapterEVT != null);
@@ -7816,7 +7386,6 @@ class _$SeriesPublishedEVT
     Result chapterCoverUploadedEVT(String coverUrl, ChapterDraft chapterDraft),
     Result chapterPublishedEVT(Chapter chapter),
     Result copyrightsSelectedEVT(String copyrights),
-    Result chapterDeletedEVT(),
     Result deleteDraftButtonPressedEVT(),
     Result editModeLaunchedEVT(ChapterDraft chapterDraft),
     Result failureWhenPublishingChapterEVT(String coverUrl),
@@ -7861,7 +7430,6 @@ class _$SeriesPublishedEVT
     @required Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
     @required Result chapterPublishedEVT(ChapterPublishedEVT value),
     @required Result copyrightsSelectedEVT(CopyrightsSelectedEVT value),
-    @required Result chapterDeletedEVT(ChapterDeletedEVT value),
     @required
         Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
     @required Result editModeLaunchedEVT(EditModeLaunchedEVT value),
@@ -7898,7 +7466,6 @@ class _$SeriesPublishedEVT
     assert(chapterCoverUploadedEVT != null);
     assert(chapterPublishedEVT != null);
     assert(copyrightsSelectedEVT != null);
-    assert(chapterDeletedEVT != null);
     assert(deleteDraftButtonPressedEVT != null);
     assert(editModeLaunchedEVT != null);
     assert(failureWhenPublishingChapterEVT != null);
@@ -7932,7 +7499,6 @@ class _$SeriesPublishedEVT
     Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
     Result chapterPublishedEVT(ChapterPublishedEVT value),
     Result copyrightsSelectedEVT(CopyrightsSelectedEVT value),
-    Result chapterDeletedEVT(ChapterDeletedEVT value),
     Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
     Result editModeLaunchedEVT(EditModeLaunchedEVT value),
     Result failureWhenPublishingChapterEVT(
@@ -8064,7 +7630,6 @@ class _$SessionFetchedEVT
             String coverUrl, ChapterDraft chapterDraft),
     @required Result chapterPublishedEVT(Chapter chapter),
     @required Result copyrightsSelectedEVT(String copyrights),
-    @required Result chapterDeletedEVT(),
     @required Result deleteDraftButtonPressedEVT(),
     @required Result editModeLaunchedEVT(ChapterDraft chapterDraft),
     @required Result failureWhenPublishingChapterEVT(String coverUrl),
@@ -8103,7 +7668,6 @@ class _$SessionFetchedEVT
     assert(chapterCoverUploadedEVT != null);
     assert(chapterPublishedEVT != null);
     assert(copyrightsSelectedEVT != null);
-    assert(chapterDeletedEVT != null);
     assert(deleteDraftButtonPressedEVT != null);
     assert(editModeLaunchedEVT != null);
     assert(failureWhenPublishingChapterEVT != null);
@@ -8137,7 +7701,6 @@ class _$SessionFetchedEVT
     Result chapterCoverUploadedEVT(String coverUrl, ChapterDraft chapterDraft),
     Result chapterPublishedEVT(Chapter chapter),
     Result copyrightsSelectedEVT(String copyrights),
-    Result chapterDeletedEVT(),
     Result deleteDraftButtonPressedEVT(),
     Result editModeLaunchedEVT(ChapterDraft chapterDraft),
     Result failureWhenPublishingChapterEVT(String coverUrl),
@@ -8182,7 +7745,6 @@ class _$SessionFetchedEVT
     @required Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
     @required Result chapterPublishedEVT(ChapterPublishedEVT value),
     @required Result copyrightsSelectedEVT(CopyrightsSelectedEVT value),
-    @required Result chapterDeletedEVT(ChapterDeletedEVT value),
     @required
         Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
     @required Result editModeLaunchedEVT(EditModeLaunchedEVT value),
@@ -8219,7 +7781,6 @@ class _$SessionFetchedEVT
     assert(chapterCoverUploadedEVT != null);
     assert(chapterPublishedEVT != null);
     assert(copyrightsSelectedEVT != null);
-    assert(chapterDeletedEVT != null);
     assert(deleteDraftButtonPressedEVT != null);
     assert(editModeLaunchedEVT != null);
     assert(failureWhenPublishingChapterEVT != null);
@@ -8253,7 +7814,6 @@ class _$SessionFetchedEVT
     Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
     Result chapterPublishedEVT(ChapterPublishedEVT value),
     Result copyrightsSelectedEVT(CopyrightsSelectedEVT value),
-    Result chapterDeletedEVT(ChapterDeletedEVT value),
     Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
     Result editModeLaunchedEVT(EditModeLaunchedEVT value),
     Result failureWhenPublishingChapterEVT(
@@ -8372,7 +7932,6 @@ class _$StoryChangedEVT
             String coverUrl, ChapterDraft chapterDraft),
     @required Result chapterPublishedEVT(Chapter chapter),
     @required Result copyrightsSelectedEVT(String copyrights),
-    @required Result chapterDeletedEVT(),
     @required Result deleteDraftButtonPressedEVT(),
     @required Result editModeLaunchedEVT(ChapterDraft chapterDraft),
     @required Result failureWhenPublishingChapterEVT(String coverUrl),
@@ -8411,7 +7970,6 @@ class _$StoryChangedEVT
     assert(chapterCoverUploadedEVT != null);
     assert(chapterPublishedEVT != null);
     assert(copyrightsSelectedEVT != null);
-    assert(chapterDeletedEVT != null);
     assert(deleteDraftButtonPressedEVT != null);
     assert(editModeLaunchedEVT != null);
     assert(failureWhenPublishingChapterEVT != null);
@@ -8445,7 +8003,6 @@ class _$StoryChangedEVT
     Result chapterCoverUploadedEVT(String coverUrl, ChapterDraft chapterDraft),
     Result chapterPublishedEVT(Chapter chapter),
     Result copyrightsSelectedEVT(String copyrights),
-    Result chapterDeletedEVT(),
     Result deleteDraftButtonPressedEVT(),
     Result editModeLaunchedEVT(ChapterDraft chapterDraft),
     Result failureWhenPublishingChapterEVT(String coverUrl),
@@ -8490,7 +8047,6 @@ class _$StoryChangedEVT
     @required Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
     @required Result chapterPublishedEVT(ChapterPublishedEVT value),
     @required Result copyrightsSelectedEVT(CopyrightsSelectedEVT value),
-    @required Result chapterDeletedEVT(ChapterDeletedEVT value),
     @required
         Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
     @required Result editModeLaunchedEVT(EditModeLaunchedEVT value),
@@ -8527,7 +8083,6 @@ class _$StoryChangedEVT
     assert(chapterCoverUploadedEVT != null);
     assert(chapterPublishedEVT != null);
     assert(copyrightsSelectedEVT != null);
-    assert(chapterDeletedEVT != null);
     assert(deleteDraftButtonPressedEVT != null);
     assert(editModeLaunchedEVT != null);
     assert(failureWhenPublishingChapterEVT != null);
@@ -8561,7 +8116,6 @@ class _$StoryChangedEVT
     Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
     Result chapterPublishedEVT(ChapterPublishedEVT value),
     Result copyrightsSelectedEVT(CopyrightsSelectedEVT value),
-    Result chapterDeletedEVT(ChapterDeletedEVT value),
     Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
     Result editModeLaunchedEVT(EditModeLaunchedEVT value),
     Result failureWhenPublishingChapterEVT(
@@ -8678,7 +8232,6 @@ class _$TitleChangedEVT
             String coverUrl, ChapterDraft chapterDraft),
     @required Result chapterPublishedEVT(Chapter chapter),
     @required Result copyrightsSelectedEVT(String copyrights),
-    @required Result chapterDeletedEVT(),
     @required Result deleteDraftButtonPressedEVT(),
     @required Result editModeLaunchedEVT(ChapterDraft chapterDraft),
     @required Result failureWhenPublishingChapterEVT(String coverUrl),
@@ -8717,7 +8270,6 @@ class _$TitleChangedEVT
     assert(chapterCoverUploadedEVT != null);
     assert(chapterPublishedEVT != null);
     assert(copyrightsSelectedEVT != null);
-    assert(chapterDeletedEVT != null);
     assert(deleteDraftButtonPressedEVT != null);
     assert(editModeLaunchedEVT != null);
     assert(failureWhenPublishingChapterEVT != null);
@@ -8751,7 +8303,6 @@ class _$TitleChangedEVT
     Result chapterCoverUploadedEVT(String coverUrl, ChapterDraft chapterDraft),
     Result chapterPublishedEVT(Chapter chapter),
     Result copyrightsSelectedEVT(String copyrights),
-    Result chapterDeletedEVT(),
     Result deleteDraftButtonPressedEVT(),
     Result editModeLaunchedEVT(ChapterDraft chapterDraft),
     Result failureWhenPublishingChapterEVT(String coverUrl),
@@ -8796,7 +8347,6 @@ class _$TitleChangedEVT
     @required Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
     @required Result chapterPublishedEVT(ChapterPublishedEVT value),
     @required Result copyrightsSelectedEVT(CopyrightsSelectedEVT value),
-    @required Result chapterDeletedEVT(ChapterDeletedEVT value),
     @required
         Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
     @required Result editModeLaunchedEVT(EditModeLaunchedEVT value),
@@ -8833,7 +8383,6 @@ class _$TitleChangedEVT
     assert(chapterCoverUploadedEVT != null);
     assert(chapterPublishedEVT != null);
     assert(copyrightsSelectedEVT != null);
-    assert(chapterDeletedEVT != null);
     assert(deleteDraftButtonPressedEVT != null);
     assert(editModeLaunchedEVT != null);
     assert(failureWhenPublishingChapterEVT != null);
@@ -8867,7 +8416,6 @@ class _$TitleChangedEVT
     Result chapterCoverUploadedEVT(ChapterCoverUploadedEVT value),
     Result chapterPublishedEVT(ChapterPublishedEVT value),
     Result copyrightsSelectedEVT(CopyrightsSelectedEVT value),
-    Result chapterDeletedEVT(ChapterDeletedEVT value),
     Result deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
     Result editModeLaunchedEVT(EditModeLaunchedEVT value),
     Result failureWhenPublishingChapterEVT(

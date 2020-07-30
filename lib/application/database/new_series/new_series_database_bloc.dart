@@ -176,7 +176,11 @@ class NewSeriesDatabaseBloc extends Bloc<NewSeriesDatabaseEvent, NewSeriesDataba
             (_) {},
             (success) {
               if (success is SessionFetchedSCS) {
-                final SeriesDraft seriesDraft = SeriesDraft(uid: uuid.v4(), authorUid: success.session.uid);
+                final SeriesDraft seriesDraft = SeriesDraft(
+                  uid: uuid.v4(),
+                  authorUid: success.session.uid,
+                  authorUsername: success.session.username,
+                );
 
                 add(NewSeriesDatabaseEvent.sessionFetchedEVT(
                   seriesDraft: seriesDraft,

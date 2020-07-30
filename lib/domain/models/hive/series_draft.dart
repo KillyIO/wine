@@ -34,6 +34,9 @@ class SeriesDraft extends HiveObject {
   @HiveField(9)
   String coverUrl;
 
+  @HiveField(10)
+  String authorUsername;
+
   SeriesDraft({
     this.uid,
     this.authorUid,
@@ -45,6 +48,7 @@ class SeriesDraft extends HiveObject {
     this.language,
     this.isNSFW,
     this.coverUrl,
+    this.authorUsername,
   });
 
   SeriesDraft copyWith({
@@ -58,6 +62,7 @@ class SeriesDraft extends HiveObject {
     String language,
     bool isNSFW,
     String coverUrl,
+    String authorUsername,
   }) {
     return SeriesDraft(
       uid: uid ?? this.uid,
@@ -70,6 +75,7 @@ class SeriesDraft extends HiveObject {
       language: language ?? this.language,
       isNSFW: isNSFW ?? this.isNSFW,
       coverUrl: coverUrl ?? this.coverUrl,
+      authorUsername: authorUsername ?? this.authorUsername,
     );
   }
 
@@ -85,6 +91,7 @@ class SeriesDraft extends HiveObject {
       'language': language,
       'isNSFW': isNSFW,
       'coverUrl': coverUrl,
+      'authorUsername': authorUsername,
     };
   }
 
@@ -102,12 +109,13 @@ class SeriesDraft extends HiveObject {
       language: map['language'] as String,
       isNSFW: map['isNSFW'] as bool,
       coverUrl: map['coverUrl'] as String,
+      authorUsername: map['authorUsername'] as String,
     );
   }
 
   @override
   String toString() {
-    return 'SeriesDraft(uid: $uid, authorUid: $authorUid, title: $title, subtitle: $subtitle, summary: $summary, genre: $genre, genreOptional: $genreOptional, language: $language, isNSFW: $isNSFW, coverUrl: $coverUrl)';
+    return 'SeriesDraft(uid: $uid, authorUid: $authorUid, title: $title, subtitle: $subtitle, summary: $summary, genre: $genre, genreOptional: $genreOptional, language: $language, isNSFW: $isNSFW, coverUrl: $coverUrl, authorUsername: $authorUsername)';
   }
 
   @override
@@ -124,7 +132,8 @@ class SeriesDraft extends HiveObject {
         o.genreOptional == genreOptional &&
         o.language == language &&
         o.isNSFW == isNSFW &&
-        o.coverUrl == coverUrl;
+        o.coverUrl == coverUrl &&
+        o.authorUsername == authorUsername;
   }
 
   @override
@@ -138,20 +147,20 @@ class SeriesDraft extends HiveObject {
         genreOptional.hashCode ^
         language.hashCode ^
         isNSFW.hashCode ^
-        coverUrl.hashCode;
+        coverUrl.hashCode ^
+        authorUsername.hashCode;
   }
 
   bool get isEmpty {
     return uid == null &&
         authorUid == null &&
         title == null &&
-        subtitle == null &&
         summary == null &&
         genre == null &&
-        genreOptional == null &&
         language == null &&
         isNSFW == null &&
-        coverUrl == null;
+        coverUrl == null &&
+        authorUsername == null;
   }
 
   bool get isNotEmpty {
@@ -162,6 +171,7 @@ class SeriesDraft extends HiveObject {
         genre != null &&
         language != null &&
         isNSFW != null &&
-        coverUrl != null;
+        coverUrl != null &&
+        authorUsername != null;
   }
 }
