@@ -217,14 +217,19 @@ class FirebaseOnlineChapterDatabaseFacade implements IOnlineChapterDatabaseFacad
     final DocumentReference chapterMinifiedRef =
         _firestore.collection(Paths.chaptersMinifiedPath).document(chapterMinified.uid);
     final DocumentReference chapterRef = _firestore.collection(Paths.chaptersPath).document(chapter.uid);
+    final DocumentReference seriesMinifiedRef =
+        _firestore.collection(Paths.seriesMinifiedPath).document(chapterMinified.seriesUid);
+
+    final int currentTime = DateTime.now().millisecondsSinceEpoch;
 
     chapterMinified
-      ..createdAt = DateTime.now().millisecondsSinceEpoch
-      ..updatedAt = DateTime.now().millisecondsSinceEpoch;
+      ..createdAt = currentTime
+      ..updatedAt = currentTime;
 
     Future.wait([
       chapterMinifiedRef.setData(chapterMinified.toMap(), merge: true),
       chapterRef.setData(chapter.toMap(), merge: true),
+      seriesMinifiedRef.setData({'updatedAt': currentTime}, merge: true),
     ]);
 
     return right(const DatabaseSuccess.chapterPublishedSCS());

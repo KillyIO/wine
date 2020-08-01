@@ -263,10 +263,12 @@ class FirebaseOnlineSeriesDatabaseFacade implements IOnlineSeriesDatabaseFacade 
         _firestore.collection(Paths.seriesMinifiedPath).document(seriesMinified.uid);
     final DocumentReference seriesRef = _firestore.collection(Paths.seriesPath).document(series.uid);
 
+    final int currentTime = DateTime.now().millisecondsSinceEpoch;
+
     seriesMinified
       ..likesCount = 0
-      ..createdAt = DateTime.now().millisecondsSinceEpoch
-      ..updatedAt = DateTime.now().millisecondsSinceEpoch;
+      ..createdAt = currentTime
+      ..updatedAt = currentTime;
 
     Future.wait([
       seriesMinifiedRef.setData(seriesMinified.toMap(), merge: true),
@@ -316,10 +318,7 @@ class FirebaseOnlineSeriesDatabaseFacade implements IOnlineSeriesDatabaseFacade 
     }
 
     Future.wait([
-      seriesMinifiedReference.setData({
-        'likesCount': FieldValue.increment(!isLiked ? 1 : -1),
-        'updatedAt': DateTime.now().millisecondsSinceEpoch,
-      }, merge: true),
+      seriesMinifiedReference.setData({'likesCount': FieldValue.increment(!isLiked ? 1 : -1)}, merge: true),
       seriesLikesReference.setData({userUid: !isLiked}, merge: true),
     ]);
     return right(const DatabaseSuccess.seriesStatsCountUpdatedSCS());
