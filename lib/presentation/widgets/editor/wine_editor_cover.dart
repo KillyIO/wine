@@ -2,28 +2,37 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 
-import 'package:wine/utils/methods.dart';
+import 'package:wine/utils/extensions.dart';
 
+/// @nodoc
 class WINEEditorCover extends StatelessWidget {
-  const WINEEditorCover({Key key, @required this.coverUrl, @required this.onPressed}) : super(key: key);
+  /// @nodoc
+  const WINEEditorCover({
+    Key key,
+    @required this.coverURL,
+    @required this.onPressed,
+  }) : super(key: key);
 
-  final String coverUrl;
+  /// @nodoc
+  final String coverURL;
+
+  /// @nodoc
   final VoidCallback onPressed;
 
   @override
   Widget build(BuildContext context) {
-    final Size mediaQuery = MediaQuery.of(context).size;
+    final mediaQuery = MediaQuery.of(context).size;
 
     return Stack(
       children: <Widget>[
-        Container(
+        SizedBox(
           width: mediaQuery.width,
           height: 150.0,
-          child: coverUrl.isEmpty
+          child: coverURL.isEmpty
               ? Container()
-              : Methods.isUrl(coverUrl)
-                  ? Image.network(coverUrl, fit: BoxFit.fitWidth)
-                  : Image.file(File(coverUrl), fit: BoxFit.fitWidth),
+              : coverURL.isURL
+                  ? Image.network(coverURL, fit: BoxFit.fitWidth)
+                  : Image.file(File(coverURL), fit: BoxFit.fitWidth),
         ),
         GestureDetector(
           onTap: onPressed,
@@ -31,7 +40,11 @@ class WINEEditorCover extends StatelessWidget {
             width: mediaQuery.width,
             height: 150.0,
             color: Colors.white60,
-            child: Icon(Icons.camera_alt, color: Colors.black38, size: 40.0),
+            child: const Icon(
+              Icons.camera_alt,
+              color: Colors.black38,
+              size: 40.0,
+            ),
           ),
         ),
       ],

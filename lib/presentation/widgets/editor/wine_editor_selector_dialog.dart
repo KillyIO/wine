@@ -5,17 +5,9 @@ import 'package:wine/presentation/widgets/wine_selection_dialog.dart';
 import 'package:wine/presentation/widgets/dialog/wine_show_dialog.dart';
 import 'package:wine/utils/palettes.dart';
 
+/// @nodoc
 class WINEEditorSelectorDialog extends StatelessWidget {
-  final bool hasSelected;
-  final Map<String, String> selections;
-  final String title;
-  final String dialogTitle;
-  final String trailingText;
-  final void Function(String) onPressed;
-  final void Function() onInfoPressed;
-  final bool showErrorMessage;
-  final String errorMessage;
-
+  /// @nodoc
   const WINEEditorSelectorDialog({
     Key key,
     @required this.hasSelected,
@@ -28,6 +20,33 @@ class WINEEditorSelectorDialog extends StatelessWidget {
     this.showErrorMessage = false,
     this.errorMessage = 'Required.',
   }) : super(key: key);
+
+  /// @nodoc
+  final bool hasSelected;
+
+  /// @nodoc
+  final List<String> selections;
+
+  /// @nodoc
+  final String title;
+
+  /// @nodoc
+  final String dialogTitle;
+
+  /// @nodoc
+  final String trailingText;
+
+  /// @nodoc
+  final void Function(String) onPressed;
+
+  /// @nodoc
+  final void Function() onInfoPressed;
+
+  /// @nodoc
+  final bool showErrorMessage;
+
+  /// @nodoc
+  final String errorMessage;
 
   @override
   Widget build(BuildContext context) {
@@ -52,9 +71,18 @@ class WINEEditorSelectorDialog extends StatelessWidget {
         ),
         if (showErrorMessage) const SizedBox(height: 5),
         if (showErrorMessage)
-          Padding(
-            padding: const EdgeInsets.only(left: 20.0),
-            child: Text(errorMessage, style: TextStyle(color: Palettes.error, fontSize: 13.0)),
+          SizedBox(
+            width: MediaQuery.of(context).size.width,
+            child: Padding(
+              padding: const EdgeInsets.only(left: 16.5),
+              child: Text(
+                errorMessage,
+                style: const TextStyle(
+                  color: Palettes.error,
+                  fontSize: 13.0,
+                ),
+              ),
+            ),
           ),
         const SizedBox(height: 25),
       ],

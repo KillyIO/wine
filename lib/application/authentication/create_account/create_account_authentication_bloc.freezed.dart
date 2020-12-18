@@ -9,6 +9,7 @@ part of 'create_account_authentication_bloc.dart';
 
 T _$identity<T>(T value) => value;
 
+/// @nodoc
 class _$CreateAccountAuthenticationEventTearOff {
   const _$CreateAccountAuthenticationEventTearOff();
 
@@ -53,55 +54,59 @@ class _$CreateAccountAuthenticationEventTearOff {
   }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $CreateAccountAuthenticationEvent =
     _$CreateAccountAuthenticationEventTearOff();
 
+/// @nodoc
 mixin _$CreateAccountAuthenticationEvent {
   @optionalTypeArgs
-  Result when<Result extends Object>({
+  TResult when<TResult extends Object>({
     @required
-        Result confirmPasswordChangedEVT(
+        TResult confirmPasswordChangedEVT(
             String confirmPasswordStr, String passwordStr),
-    @required Result createAccountEVT(),
-    @required Result emailChangedEVT(String emailStr),
-    @required Result passwordChangedEVT(String passwordStr),
-    @required Result resendVerificationEmailEVT(),
-    @required Result usernameChangedEVT(String usernameStr),
+    @required TResult createAccountEVT(),
+    @required TResult emailChangedEVT(String emailStr),
+    @required TResult passwordChangedEVT(String passwordStr),
+    @required TResult resendVerificationEmailEVT(),
+    @required TResult usernameChangedEVT(String usernameStr),
   });
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result confirmPasswordChangedEVT(
+  TResult maybeWhen<TResult extends Object>({
+    TResult confirmPasswordChangedEVT(
         String confirmPasswordStr, String passwordStr),
-    Result createAccountEVT(),
-    Result emailChangedEVT(String emailStr),
-    Result passwordChangedEVT(String passwordStr),
-    Result resendVerificationEmailEVT(),
-    Result usernameChangedEVT(String usernameStr),
-    @required Result orElse(),
+    TResult createAccountEVT(),
+    TResult emailChangedEVT(String emailStr),
+    TResult passwordChangedEVT(String passwordStr),
+    TResult resendVerificationEmailEVT(),
+    TResult usernameChangedEVT(String usernameStr),
+    @required TResult orElse(),
   });
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result confirmPasswordChangedEVT(ConfirmPasswordChangedEVT value),
-    @required Result createAccountEVT(CreateAccountEVT value),
-    @required Result emailChangedEVT(EmailChangedEVT value),
-    @required Result passwordChangedEVT(PasswordChangedEVT value),
+  TResult map<TResult extends Object>({
     @required
-        Result resendVerificationEmailEVT(ResendVerificationEmailEVT value),
-    @required Result usernameChangedEVT(UsernameChangedEVT value),
+        TResult confirmPasswordChangedEVT(ConfirmPasswordChangedEVT value),
+    @required TResult createAccountEVT(CreateAccountEVT value),
+    @required TResult emailChangedEVT(EmailChangedEVT value),
+    @required TResult passwordChangedEVT(PasswordChangedEVT value),
+    @required
+        TResult resendVerificationEmailEVT(ResendVerificationEmailEVT value),
+    @required TResult usernameChangedEVT(UsernameChangedEVT value),
   });
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result confirmPasswordChangedEVT(ConfirmPasswordChangedEVT value),
-    Result createAccountEVT(CreateAccountEVT value),
-    Result emailChangedEVT(EmailChangedEVT value),
-    Result passwordChangedEVT(PasswordChangedEVT value),
-    Result resendVerificationEmailEVT(ResendVerificationEmailEVT value),
-    Result usernameChangedEVT(UsernameChangedEVT value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult confirmPasswordChangedEVT(ConfirmPasswordChangedEVT value),
+    TResult createAccountEVT(CreateAccountEVT value),
+    TResult emailChangedEVT(EmailChangedEVT value),
+    TResult passwordChangedEVT(PasswordChangedEVT value),
+    TResult resendVerificationEmailEVT(ResendVerificationEmailEVT value),
+    TResult usernameChangedEVT(UsernameChangedEVT value),
+    @required TResult orElse(),
   });
 }
 
+/// @nodoc
 abstract class $CreateAccountAuthenticationEventCopyWith<$Res> {
   factory $CreateAccountAuthenticationEventCopyWith(
           CreateAccountAuthenticationEvent value,
@@ -109,6 +114,7 @@ abstract class $CreateAccountAuthenticationEventCopyWith<$Res> {
       _$CreateAccountAuthenticationEventCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$CreateAccountAuthenticationEventCopyWithImpl<$Res>
     implements $CreateAccountAuthenticationEventCopyWith<$Res> {
   _$CreateAccountAuthenticationEventCopyWithImpl(this._value, this._then);
@@ -118,6 +124,7 @@ class _$CreateAccountAuthenticationEventCopyWithImpl<$Res>
   final $Res Function(CreateAccountAuthenticationEvent) _then;
 }
 
+/// @nodoc
 abstract class $ConfirmPasswordChangedEVTCopyWith<$Res> {
   factory $ConfirmPasswordChangedEVTCopyWith(ConfirmPasswordChangedEVT value,
           $Res Function(ConfirmPasswordChangedEVT) then) =
@@ -125,6 +132,7 @@ abstract class $ConfirmPasswordChangedEVTCopyWith<$Res> {
   $Res call({String confirmPasswordStr, String passwordStr});
 }
 
+/// @nodoc
 class _$ConfirmPasswordChangedEVTCopyWithImpl<$Res>
     extends _$CreateAccountAuthenticationEventCopyWithImpl<$Res>
     implements $ConfirmPasswordChangedEVTCopyWith<$Res> {
@@ -150,6 +158,7 @@ class _$ConfirmPasswordChangedEVTCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$ConfirmPasswordChangedEVT implements ConfirmPasswordChangedEVT {
   const _$ConfirmPasswordChangedEVT(this.confirmPasswordStr, this.passwordStr)
       : assert(confirmPasswordStr != null),
@@ -190,15 +199,15 @@ class _$ConfirmPasswordChangedEVT implements ConfirmPasswordChangedEVT {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
+  TResult when<TResult extends Object>({
     @required
-        Result confirmPasswordChangedEVT(
+        TResult confirmPasswordChangedEVT(
             String confirmPasswordStr, String passwordStr),
-    @required Result createAccountEVT(),
-    @required Result emailChangedEVT(String emailStr),
-    @required Result passwordChangedEVT(String passwordStr),
-    @required Result resendVerificationEmailEVT(),
-    @required Result usernameChangedEVT(String usernameStr),
+    @required TResult createAccountEVT(),
+    @required TResult emailChangedEVT(String emailStr),
+    @required TResult passwordChangedEVT(String passwordStr),
+    @required TResult resendVerificationEmailEVT(),
+    @required TResult usernameChangedEVT(String usernameStr),
   }) {
     assert(confirmPasswordChangedEVT != null);
     assert(createAccountEVT != null);
@@ -211,15 +220,15 @@ class _$ConfirmPasswordChangedEVT implements ConfirmPasswordChangedEVT {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result confirmPasswordChangedEVT(
+  TResult maybeWhen<TResult extends Object>({
+    TResult confirmPasswordChangedEVT(
         String confirmPasswordStr, String passwordStr),
-    Result createAccountEVT(),
-    Result emailChangedEVT(String emailStr),
-    Result passwordChangedEVT(String passwordStr),
-    Result resendVerificationEmailEVT(),
-    Result usernameChangedEVT(String usernameStr),
-    @required Result orElse(),
+    TResult createAccountEVT(),
+    TResult emailChangedEVT(String emailStr),
+    TResult passwordChangedEVT(String passwordStr),
+    TResult resendVerificationEmailEVT(),
+    TResult usernameChangedEVT(String usernameStr),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (confirmPasswordChangedEVT != null) {
@@ -230,14 +239,15 @@ class _$ConfirmPasswordChangedEVT implements ConfirmPasswordChangedEVT {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result confirmPasswordChangedEVT(ConfirmPasswordChangedEVT value),
-    @required Result createAccountEVT(CreateAccountEVT value),
-    @required Result emailChangedEVT(EmailChangedEVT value),
-    @required Result passwordChangedEVT(PasswordChangedEVT value),
+  TResult map<TResult extends Object>({
     @required
-        Result resendVerificationEmailEVT(ResendVerificationEmailEVT value),
-    @required Result usernameChangedEVT(UsernameChangedEVT value),
+        TResult confirmPasswordChangedEVT(ConfirmPasswordChangedEVT value),
+    @required TResult createAccountEVT(CreateAccountEVT value),
+    @required TResult emailChangedEVT(EmailChangedEVT value),
+    @required TResult passwordChangedEVT(PasswordChangedEVT value),
+    @required
+        TResult resendVerificationEmailEVT(ResendVerificationEmailEVT value),
+    @required TResult usernameChangedEVT(UsernameChangedEVT value),
   }) {
     assert(confirmPasswordChangedEVT != null);
     assert(createAccountEVT != null);
@@ -250,14 +260,14 @@ class _$ConfirmPasswordChangedEVT implements ConfirmPasswordChangedEVT {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result confirmPasswordChangedEVT(ConfirmPasswordChangedEVT value),
-    Result createAccountEVT(CreateAccountEVT value),
-    Result emailChangedEVT(EmailChangedEVT value),
-    Result passwordChangedEVT(PasswordChangedEVT value),
-    Result resendVerificationEmailEVT(ResendVerificationEmailEVT value),
-    Result usernameChangedEVT(UsernameChangedEVT value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult confirmPasswordChangedEVT(ConfirmPasswordChangedEVT value),
+    TResult createAccountEVT(CreateAccountEVT value),
+    TResult emailChangedEVT(EmailChangedEVT value),
+    TResult passwordChangedEVT(PasswordChangedEVT value),
+    TResult resendVerificationEmailEVT(ResendVerificationEmailEVT value),
+    TResult usernameChangedEVT(UsernameChangedEVT value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (confirmPasswordChangedEVT != null) {
@@ -278,12 +288,14 @@ abstract class ConfirmPasswordChangedEVT
   $ConfirmPasswordChangedEVTCopyWith<ConfirmPasswordChangedEVT> get copyWith;
 }
 
+/// @nodoc
 abstract class $CreateAccountEVTCopyWith<$Res> {
   factory $CreateAccountEVTCopyWith(
           CreateAccountEVT value, $Res Function(CreateAccountEVT) then) =
       _$CreateAccountEVTCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$CreateAccountEVTCopyWithImpl<$Res>
     extends _$CreateAccountAuthenticationEventCopyWithImpl<$Res>
     implements $CreateAccountEVTCopyWith<$Res> {
@@ -295,6 +307,7 @@ class _$CreateAccountEVTCopyWithImpl<$Res>
   CreateAccountEVT get _value => super._value as CreateAccountEVT;
 }
 
+/// @nodoc
 class _$CreateAccountEVT implements CreateAccountEVT {
   const _$CreateAccountEVT();
 
@@ -313,15 +326,15 @@ class _$CreateAccountEVT implements CreateAccountEVT {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
+  TResult when<TResult extends Object>({
     @required
-        Result confirmPasswordChangedEVT(
+        TResult confirmPasswordChangedEVT(
             String confirmPasswordStr, String passwordStr),
-    @required Result createAccountEVT(),
-    @required Result emailChangedEVT(String emailStr),
-    @required Result passwordChangedEVT(String passwordStr),
-    @required Result resendVerificationEmailEVT(),
-    @required Result usernameChangedEVT(String usernameStr),
+    @required TResult createAccountEVT(),
+    @required TResult emailChangedEVT(String emailStr),
+    @required TResult passwordChangedEVT(String passwordStr),
+    @required TResult resendVerificationEmailEVT(),
+    @required TResult usernameChangedEVT(String usernameStr),
   }) {
     assert(confirmPasswordChangedEVT != null);
     assert(createAccountEVT != null);
@@ -334,15 +347,15 @@ class _$CreateAccountEVT implements CreateAccountEVT {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result confirmPasswordChangedEVT(
+  TResult maybeWhen<TResult extends Object>({
+    TResult confirmPasswordChangedEVT(
         String confirmPasswordStr, String passwordStr),
-    Result createAccountEVT(),
-    Result emailChangedEVT(String emailStr),
-    Result passwordChangedEVT(String passwordStr),
-    Result resendVerificationEmailEVT(),
-    Result usernameChangedEVT(String usernameStr),
-    @required Result orElse(),
+    TResult createAccountEVT(),
+    TResult emailChangedEVT(String emailStr),
+    TResult passwordChangedEVT(String passwordStr),
+    TResult resendVerificationEmailEVT(),
+    TResult usernameChangedEVT(String usernameStr),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (createAccountEVT != null) {
@@ -353,14 +366,15 @@ class _$CreateAccountEVT implements CreateAccountEVT {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result confirmPasswordChangedEVT(ConfirmPasswordChangedEVT value),
-    @required Result createAccountEVT(CreateAccountEVT value),
-    @required Result emailChangedEVT(EmailChangedEVT value),
-    @required Result passwordChangedEVT(PasswordChangedEVT value),
+  TResult map<TResult extends Object>({
     @required
-        Result resendVerificationEmailEVT(ResendVerificationEmailEVT value),
-    @required Result usernameChangedEVT(UsernameChangedEVT value),
+        TResult confirmPasswordChangedEVT(ConfirmPasswordChangedEVT value),
+    @required TResult createAccountEVT(CreateAccountEVT value),
+    @required TResult emailChangedEVT(EmailChangedEVT value),
+    @required TResult passwordChangedEVT(PasswordChangedEVT value),
+    @required
+        TResult resendVerificationEmailEVT(ResendVerificationEmailEVT value),
+    @required TResult usernameChangedEVT(UsernameChangedEVT value),
   }) {
     assert(confirmPasswordChangedEVT != null);
     assert(createAccountEVT != null);
@@ -373,14 +387,14 @@ class _$CreateAccountEVT implements CreateAccountEVT {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result confirmPasswordChangedEVT(ConfirmPasswordChangedEVT value),
-    Result createAccountEVT(CreateAccountEVT value),
-    Result emailChangedEVT(EmailChangedEVT value),
-    Result passwordChangedEVT(PasswordChangedEVT value),
-    Result resendVerificationEmailEVT(ResendVerificationEmailEVT value),
-    Result usernameChangedEVT(UsernameChangedEVT value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult confirmPasswordChangedEVT(ConfirmPasswordChangedEVT value),
+    TResult createAccountEVT(CreateAccountEVT value),
+    TResult emailChangedEVT(EmailChangedEVT value),
+    TResult passwordChangedEVT(PasswordChangedEVT value),
+    TResult resendVerificationEmailEVT(ResendVerificationEmailEVT value),
+    TResult usernameChangedEVT(UsernameChangedEVT value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (createAccountEVT != null) {
@@ -394,6 +408,7 @@ abstract class CreateAccountEVT implements CreateAccountAuthenticationEvent {
   const factory CreateAccountEVT() = _$CreateAccountEVT;
 }
 
+/// @nodoc
 abstract class $EmailChangedEVTCopyWith<$Res> {
   factory $EmailChangedEVTCopyWith(
           EmailChangedEVT value, $Res Function(EmailChangedEVT) then) =
@@ -401,6 +416,7 @@ abstract class $EmailChangedEVTCopyWith<$Res> {
   $Res call({String emailStr});
 }
 
+/// @nodoc
 class _$EmailChangedEVTCopyWithImpl<$Res>
     extends _$CreateAccountAuthenticationEventCopyWithImpl<$Res>
     implements $EmailChangedEVTCopyWith<$Res> {
@@ -421,6 +437,7 @@ class _$EmailChangedEVTCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$EmailChangedEVT implements EmailChangedEVT {
   const _$EmailChangedEVT(this.emailStr) : assert(emailStr != null);
 
@@ -451,15 +468,15 @@ class _$EmailChangedEVT implements EmailChangedEVT {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
+  TResult when<TResult extends Object>({
     @required
-        Result confirmPasswordChangedEVT(
+        TResult confirmPasswordChangedEVT(
             String confirmPasswordStr, String passwordStr),
-    @required Result createAccountEVT(),
-    @required Result emailChangedEVT(String emailStr),
-    @required Result passwordChangedEVT(String passwordStr),
-    @required Result resendVerificationEmailEVT(),
-    @required Result usernameChangedEVT(String usernameStr),
+    @required TResult createAccountEVT(),
+    @required TResult emailChangedEVT(String emailStr),
+    @required TResult passwordChangedEVT(String passwordStr),
+    @required TResult resendVerificationEmailEVT(),
+    @required TResult usernameChangedEVT(String usernameStr),
   }) {
     assert(confirmPasswordChangedEVT != null);
     assert(createAccountEVT != null);
@@ -472,15 +489,15 @@ class _$EmailChangedEVT implements EmailChangedEVT {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result confirmPasswordChangedEVT(
+  TResult maybeWhen<TResult extends Object>({
+    TResult confirmPasswordChangedEVT(
         String confirmPasswordStr, String passwordStr),
-    Result createAccountEVT(),
-    Result emailChangedEVT(String emailStr),
-    Result passwordChangedEVT(String passwordStr),
-    Result resendVerificationEmailEVT(),
-    Result usernameChangedEVT(String usernameStr),
-    @required Result orElse(),
+    TResult createAccountEVT(),
+    TResult emailChangedEVT(String emailStr),
+    TResult passwordChangedEVT(String passwordStr),
+    TResult resendVerificationEmailEVT(),
+    TResult usernameChangedEVT(String usernameStr),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (emailChangedEVT != null) {
@@ -491,14 +508,15 @@ class _$EmailChangedEVT implements EmailChangedEVT {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result confirmPasswordChangedEVT(ConfirmPasswordChangedEVT value),
-    @required Result createAccountEVT(CreateAccountEVT value),
-    @required Result emailChangedEVT(EmailChangedEVT value),
-    @required Result passwordChangedEVT(PasswordChangedEVT value),
+  TResult map<TResult extends Object>({
     @required
-        Result resendVerificationEmailEVT(ResendVerificationEmailEVT value),
-    @required Result usernameChangedEVT(UsernameChangedEVT value),
+        TResult confirmPasswordChangedEVT(ConfirmPasswordChangedEVT value),
+    @required TResult createAccountEVT(CreateAccountEVT value),
+    @required TResult emailChangedEVT(EmailChangedEVT value),
+    @required TResult passwordChangedEVT(PasswordChangedEVT value),
+    @required
+        TResult resendVerificationEmailEVT(ResendVerificationEmailEVT value),
+    @required TResult usernameChangedEVT(UsernameChangedEVT value),
   }) {
     assert(confirmPasswordChangedEVT != null);
     assert(createAccountEVT != null);
@@ -511,14 +529,14 @@ class _$EmailChangedEVT implements EmailChangedEVT {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result confirmPasswordChangedEVT(ConfirmPasswordChangedEVT value),
-    Result createAccountEVT(CreateAccountEVT value),
-    Result emailChangedEVT(EmailChangedEVT value),
-    Result passwordChangedEVT(PasswordChangedEVT value),
-    Result resendVerificationEmailEVT(ResendVerificationEmailEVT value),
-    Result usernameChangedEVT(UsernameChangedEVT value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult confirmPasswordChangedEVT(ConfirmPasswordChangedEVT value),
+    TResult createAccountEVT(CreateAccountEVT value),
+    TResult emailChangedEVT(EmailChangedEVT value),
+    TResult passwordChangedEVT(PasswordChangedEVT value),
+    TResult resendVerificationEmailEVT(ResendVerificationEmailEVT value),
+    TResult usernameChangedEVT(UsernameChangedEVT value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (emailChangedEVT != null) {
@@ -535,6 +553,7 @@ abstract class EmailChangedEVT implements CreateAccountAuthenticationEvent {
   $EmailChangedEVTCopyWith<EmailChangedEVT> get copyWith;
 }
 
+/// @nodoc
 abstract class $PasswordChangedEVTCopyWith<$Res> {
   factory $PasswordChangedEVTCopyWith(
           PasswordChangedEVT value, $Res Function(PasswordChangedEVT) then) =
@@ -542,6 +561,7 @@ abstract class $PasswordChangedEVTCopyWith<$Res> {
   $Res call({String passwordStr});
 }
 
+/// @nodoc
 class _$PasswordChangedEVTCopyWithImpl<$Res>
     extends _$CreateAccountAuthenticationEventCopyWithImpl<$Res>
     implements $PasswordChangedEVTCopyWith<$Res> {
@@ -562,6 +582,7 @@ class _$PasswordChangedEVTCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$PasswordChangedEVT implements PasswordChangedEVT {
   const _$PasswordChangedEVT(this.passwordStr) : assert(passwordStr != null);
 
@@ -592,15 +613,15 @@ class _$PasswordChangedEVT implements PasswordChangedEVT {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
+  TResult when<TResult extends Object>({
     @required
-        Result confirmPasswordChangedEVT(
+        TResult confirmPasswordChangedEVT(
             String confirmPasswordStr, String passwordStr),
-    @required Result createAccountEVT(),
-    @required Result emailChangedEVT(String emailStr),
-    @required Result passwordChangedEVT(String passwordStr),
-    @required Result resendVerificationEmailEVT(),
-    @required Result usernameChangedEVT(String usernameStr),
+    @required TResult createAccountEVT(),
+    @required TResult emailChangedEVT(String emailStr),
+    @required TResult passwordChangedEVT(String passwordStr),
+    @required TResult resendVerificationEmailEVT(),
+    @required TResult usernameChangedEVT(String usernameStr),
   }) {
     assert(confirmPasswordChangedEVT != null);
     assert(createAccountEVT != null);
@@ -613,15 +634,15 @@ class _$PasswordChangedEVT implements PasswordChangedEVT {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result confirmPasswordChangedEVT(
+  TResult maybeWhen<TResult extends Object>({
+    TResult confirmPasswordChangedEVT(
         String confirmPasswordStr, String passwordStr),
-    Result createAccountEVT(),
-    Result emailChangedEVT(String emailStr),
-    Result passwordChangedEVT(String passwordStr),
-    Result resendVerificationEmailEVT(),
-    Result usernameChangedEVT(String usernameStr),
-    @required Result orElse(),
+    TResult createAccountEVT(),
+    TResult emailChangedEVT(String emailStr),
+    TResult passwordChangedEVT(String passwordStr),
+    TResult resendVerificationEmailEVT(),
+    TResult usernameChangedEVT(String usernameStr),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (passwordChangedEVT != null) {
@@ -632,14 +653,15 @@ class _$PasswordChangedEVT implements PasswordChangedEVT {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result confirmPasswordChangedEVT(ConfirmPasswordChangedEVT value),
-    @required Result createAccountEVT(CreateAccountEVT value),
-    @required Result emailChangedEVT(EmailChangedEVT value),
-    @required Result passwordChangedEVT(PasswordChangedEVT value),
+  TResult map<TResult extends Object>({
     @required
-        Result resendVerificationEmailEVT(ResendVerificationEmailEVT value),
-    @required Result usernameChangedEVT(UsernameChangedEVT value),
+        TResult confirmPasswordChangedEVT(ConfirmPasswordChangedEVT value),
+    @required TResult createAccountEVT(CreateAccountEVT value),
+    @required TResult emailChangedEVT(EmailChangedEVT value),
+    @required TResult passwordChangedEVT(PasswordChangedEVT value),
+    @required
+        TResult resendVerificationEmailEVT(ResendVerificationEmailEVT value),
+    @required TResult usernameChangedEVT(UsernameChangedEVT value),
   }) {
     assert(confirmPasswordChangedEVT != null);
     assert(createAccountEVT != null);
@@ -652,14 +674,14 @@ class _$PasswordChangedEVT implements PasswordChangedEVT {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result confirmPasswordChangedEVT(ConfirmPasswordChangedEVT value),
-    Result createAccountEVT(CreateAccountEVT value),
-    Result emailChangedEVT(EmailChangedEVT value),
-    Result passwordChangedEVT(PasswordChangedEVT value),
-    Result resendVerificationEmailEVT(ResendVerificationEmailEVT value),
-    Result usernameChangedEVT(UsernameChangedEVT value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult confirmPasswordChangedEVT(ConfirmPasswordChangedEVT value),
+    TResult createAccountEVT(CreateAccountEVT value),
+    TResult emailChangedEVT(EmailChangedEVT value),
+    TResult passwordChangedEVT(PasswordChangedEVT value),
+    TResult resendVerificationEmailEVT(ResendVerificationEmailEVT value),
+    TResult usernameChangedEVT(UsernameChangedEVT value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (passwordChangedEVT != null) {
@@ -676,12 +698,14 @@ abstract class PasswordChangedEVT implements CreateAccountAuthenticationEvent {
   $PasswordChangedEVTCopyWith<PasswordChangedEVT> get copyWith;
 }
 
+/// @nodoc
 abstract class $ResendVerificationEmailEVTCopyWith<$Res> {
   factory $ResendVerificationEmailEVTCopyWith(ResendVerificationEmailEVT value,
           $Res Function(ResendVerificationEmailEVT) then) =
       _$ResendVerificationEmailEVTCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$ResendVerificationEmailEVTCopyWithImpl<$Res>
     extends _$CreateAccountAuthenticationEventCopyWithImpl<$Res>
     implements $ResendVerificationEmailEVTCopyWith<$Res> {
@@ -694,6 +718,7 @@ class _$ResendVerificationEmailEVTCopyWithImpl<$Res>
       super._value as ResendVerificationEmailEVT;
 }
 
+/// @nodoc
 class _$ResendVerificationEmailEVT implements ResendVerificationEmailEVT {
   const _$ResendVerificationEmailEVT();
 
@@ -712,15 +737,15 @@ class _$ResendVerificationEmailEVT implements ResendVerificationEmailEVT {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
+  TResult when<TResult extends Object>({
     @required
-        Result confirmPasswordChangedEVT(
+        TResult confirmPasswordChangedEVT(
             String confirmPasswordStr, String passwordStr),
-    @required Result createAccountEVT(),
-    @required Result emailChangedEVT(String emailStr),
-    @required Result passwordChangedEVT(String passwordStr),
-    @required Result resendVerificationEmailEVT(),
-    @required Result usernameChangedEVT(String usernameStr),
+    @required TResult createAccountEVT(),
+    @required TResult emailChangedEVT(String emailStr),
+    @required TResult passwordChangedEVT(String passwordStr),
+    @required TResult resendVerificationEmailEVT(),
+    @required TResult usernameChangedEVT(String usernameStr),
   }) {
     assert(confirmPasswordChangedEVT != null);
     assert(createAccountEVT != null);
@@ -733,15 +758,15 @@ class _$ResendVerificationEmailEVT implements ResendVerificationEmailEVT {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result confirmPasswordChangedEVT(
+  TResult maybeWhen<TResult extends Object>({
+    TResult confirmPasswordChangedEVT(
         String confirmPasswordStr, String passwordStr),
-    Result createAccountEVT(),
-    Result emailChangedEVT(String emailStr),
-    Result passwordChangedEVT(String passwordStr),
-    Result resendVerificationEmailEVT(),
-    Result usernameChangedEVT(String usernameStr),
-    @required Result orElse(),
+    TResult createAccountEVT(),
+    TResult emailChangedEVT(String emailStr),
+    TResult passwordChangedEVT(String passwordStr),
+    TResult resendVerificationEmailEVT(),
+    TResult usernameChangedEVT(String usernameStr),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (resendVerificationEmailEVT != null) {
@@ -752,14 +777,15 @@ class _$ResendVerificationEmailEVT implements ResendVerificationEmailEVT {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result confirmPasswordChangedEVT(ConfirmPasswordChangedEVT value),
-    @required Result createAccountEVT(CreateAccountEVT value),
-    @required Result emailChangedEVT(EmailChangedEVT value),
-    @required Result passwordChangedEVT(PasswordChangedEVT value),
+  TResult map<TResult extends Object>({
     @required
-        Result resendVerificationEmailEVT(ResendVerificationEmailEVT value),
-    @required Result usernameChangedEVT(UsernameChangedEVT value),
+        TResult confirmPasswordChangedEVT(ConfirmPasswordChangedEVT value),
+    @required TResult createAccountEVT(CreateAccountEVT value),
+    @required TResult emailChangedEVT(EmailChangedEVT value),
+    @required TResult passwordChangedEVT(PasswordChangedEVT value),
+    @required
+        TResult resendVerificationEmailEVT(ResendVerificationEmailEVT value),
+    @required TResult usernameChangedEVT(UsernameChangedEVT value),
   }) {
     assert(confirmPasswordChangedEVT != null);
     assert(createAccountEVT != null);
@@ -772,14 +798,14 @@ class _$ResendVerificationEmailEVT implements ResendVerificationEmailEVT {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result confirmPasswordChangedEVT(ConfirmPasswordChangedEVT value),
-    Result createAccountEVT(CreateAccountEVT value),
-    Result emailChangedEVT(EmailChangedEVT value),
-    Result passwordChangedEVT(PasswordChangedEVT value),
-    Result resendVerificationEmailEVT(ResendVerificationEmailEVT value),
-    Result usernameChangedEVT(UsernameChangedEVT value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult confirmPasswordChangedEVT(ConfirmPasswordChangedEVT value),
+    TResult createAccountEVT(CreateAccountEVT value),
+    TResult emailChangedEVT(EmailChangedEVT value),
+    TResult passwordChangedEVT(PasswordChangedEVT value),
+    TResult resendVerificationEmailEVT(ResendVerificationEmailEVT value),
+    TResult usernameChangedEVT(UsernameChangedEVT value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (resendVerificationEmailEVT != null) {
@@ -794,6 +820,7 @@ abstract class ResendVerificationEmailEVT
   const factory ResendVerificationEmailEVT() = _$ResendVerificationEmailEVT;
 }
 
+/// @nodoc
 abstract class $UsernameChangedEVTCopyWith<$Res> {
   factory $UsernameChangedEVTCopyWith(
           UsernameChangedEVT value, $Res Function(UsernameChangedEVT) then) =
@@ -801,6 +828,7 @@ abstract class $UsernameChangedEVTCopyWith<$Res> {
   $Res call({String usernameStr});
 }
 
+/// @nodoc
 class _$UsernameChangedEVTCopyWithImpl<$Res>
     extends _$CreateAccountAuthenticationEventCopyWithImpl<$Res>
     implements $UsernameChangedEVTCopyWith<$Res> {
@@ -821,6 +849,7 @@ class _$UsernameChangedEVTCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$UsernameChangedEVT implements UsernameChangedEVT {
   const _$UsernameChangedEVT(this.usernameStr) : assert(usernameStr != null);
 
@@ -851,15 +880,15 @@ class _$UsernameChangedEVT implements UsernameChangedEVT {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
+  TResult when<TResult extends Object>({
     @required
-        Result confirmPasswordChangedEVT(
+        TResult confirmPasswordChangedEVT(
             String confirmPasswordStr, String passwordStr),
-    @required Result createAccountEVT(),
-    @required Result emailChangedEVT(String emailStr),
-    @required Result passwordChangedEVT(String passwordStr),
-    @required Result resendVerificationEmailEVT(),
-    @required Result usernameChangedEVT(String usernameStr),
+    @required TResult createAccountEVT(),
+    @required TResult emailChangedEVT(String emailStr),
+    @required TResult passwordChangedEVT(String passwordStr),
+    @required TResult resendVerificationEmailEVT(),
+    @required TResult usernameChangedEVT(String usernameStr),
   }) {
     assert(confirmPasswordChangedEVT != null);
     assert(createAccountEVT != null);
@@ -872,15 +901,15 @@ class _$UsernameChangedEVT implements UsernameChangedEVT {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result confirmPasswordChangedEVT(
+  TResult maybeWhen<TResult extends Object>({
+    TResult confirmPasswordChangedEVT(
         String confirmPasswordStr, String passwordStr),
-    Result createAccountEVT(),
-    Result emailChangedEVT(String emailStr),
-    Result passwordChangedEVT(String passwordStr),
-    Result resendVerificationEmailEVT(),
-    Result usernameChangedEVT(String usernameStr),
-    @required Result orElse(),
+    TResult createAccountEVT(),
+    TResult emailChangedEVT(String emailStr),
+    TResult passwordChangedEVT(String passwordStr),
+    TResult resendVerificationEmailEVT(),
+    TResult usernameChangedEVT(String usernameStr),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (usernameChangedEVT != null) {
@@ -891,14 +920,15 @@ class _$UsernameChangedEVT implements UsernameChangedEVT {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result confirmPasswordChangedEVT(ConfirmPasswordChangedEVT value),
-    @required Result createAccountEVT(CreateAccountEVT value),
-    @required Result emailChangedEVT(EmailChangedEVT value),
-    @required Result passwordChangedEVT(PasswordChangedEVT value),
+  TResult map<TResult extends Object>({
     @required
-        Result resendVerificationEmailEVT(ResendVerificationEmailEVT value),
-    @required Result usernameChangedEVT(UsernameChangedEVT value),
+        TResult confirmPasswordChangedEVT(ConfirmPasswordChangedEVT value),
+    @required TResult createAccountEVT(CreateAccountEVT value),
+    @required TResult emailChangedEVT(EmailChangedEVT value),
+    @required TResult passwordChangedEVT(PasswordChangedEVT value),
+    @required
+        TResult resendVerificationEmailEVT(ResendVerificationEmailEVT value),
+    @required TResult usernameChangedEVT(UsernameChangedEVT value),
   }) {
     assert(confirmPasswordChangedEVT != null);
     assert(createAccountEVT != null);
@@ -911,14 +941,14 @@ class _$UsernameChangedEVT implements UsernameChangedEVT {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result confirmPasswordChangedEVT(ConfirmPasswordChangedEVT value),
-    Result createAccountEVT(CreateAccountEVT value),
-    Result emailChangedEVT(EmailChangedEVT value),
-    Result passwordChangedEVT(PasswordChangedEVT value),
-    Result resendVerificationEmailEVT(ResendVerificationEmailEVT value),
-    Result usernameChangedEVT(UsernameChangedEVT value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult confirmPasswordChangedEVT(ConfirmPasswordChangedEVT value),
+    TResult createAccountEVT(CreateAccountEVT value),
+    TResult emailChangedEVT(EmailChangedEVT value),
+    TResult passwordChangedEVT(PasswordChangedEVT value),
+    TResult resendVerificationEmailEVT(ResendVerificationEmailEVT value),
+    TResult usernameChangedEVT(UsernameChangedEVT value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (usernameChangedEVT != null) {
@@ -935,6 +965,7 @@ abstract class UsernameChangedEVT implements CreateAccountAuthenticationEvent {
   $UsernameChangedEVTCopyWith<UsernameChangedEVT> get copyWith;
 }
 
+/// @nodoc
 class _$CreateAccountAuthenticationStateTearOff {
   const _$CreateAccountAuthenticationStateTearOff();
 
@@ -968,10 +999,12 @@ class _$CreateAccountAuthenticationStateTearOff {
   }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $CreateAccountAuthenticationState =
     _$CreateAccountAuthenticationStateTearOff();
 
+/// @nodoc
 mixin _$CreateAccountAuthenticationState {
   bool get isSubmitting;
   bool get showErrorMessages;
@@ -986,6 +1019,7 @@ mixin _$CreateAccountAuthenticationState {
       get copyWith;
 }
 
+/// @nodoc
 abstract class $CreateAccountAuthenticationStateCopyWith<$Res> {
   factory $CreateAccountAuthenticationStateCopyWith(
           CreateAccountAuthenticationState value,
@@ -1002,6 +1036,7 @@ abstract class $CreateAccountAuthenticationStateCopyWith<$Res> {
       Username username});
 }
 
+/// @nodoc
 class _$CreateAccountAuthenticationStateCopyWithImpl<$Res>
     implements $CreateAccountAuthenticationStateCopyWith<$Res> {
   _$CreateAccountAuthenticationStateCopyWithImpl(this._value, this._then);
@@ -1043,6 +1078,7 @@ class _$CreateAccountAuthenticationStateCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 abstract class _$CreateAccountAuthenticationStateCopyWith<$Res>
     implements $CreateAccountAuthenticationStateCopyWith<$Res> {
   factory _$CreateAccountAuthenticationStateCopyWith(
@@ -1061,6 +1097,7 @@ abstract class _$CreateAccountAuthenticationStateCopyWith<$Res>
       Username username});
 }
 
+/// @nodoc
 class __$CreateAccountAuthenticationStateCopyWithImpl<$Res>
     extends _$CreateAccountAuthenticationStateCopyWithImpl<$Res>
     implements _$CreateAccountAuthenticationStateCopyWith<$Res> {
@@ -1106,6 +1143,7 @@ class __$CreateAccountAuthenticationStateCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$_CreateAccountAuthenticationState
     implements _CreateAccountAuthenticationState {
   const _$_CreateAccountAuthenticationState(

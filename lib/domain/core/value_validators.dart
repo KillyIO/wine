@@ -1,12 +1,14 @@
 import 'package:dartz/dartz.dart';
-import 'package:stringprocess/stringprocess.dart';
+import 'package:flutter_stringprocess/flutter_stringprocess.dart';
 import 'package:wine/domain/core/failures.dart';
 import 'package:wine/utils/constants.dart';
 
+/// @nodoc
 final StringProcessor tps = StringProcessor();
 
+/// @nodoc
 Either<ValueFailure<String>, String> validateEmailAddress(String input) {
-  const String emailRegex =
+  const emailRegex =
       r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$';
   if (RegExp(emailRegex).hasMatch(input)) {
     return right(input);
@@ -15,11 +17,12 @@ Either<ValueFailure<String>, String> validateEmailAddress(String input) {
   }
 }
 
+/// @nodoc
 Either<ValueFailure<String>, String> validatePassword(
   String input, [
   String input2,
 ]) {
-  const String passwordRegex =
+  const passwordRegex =
       r'^(?=.*\d)(?=.*[~!@#$%^&*()_\-+=|\\{}[\]:;<>?/])(?=.*[A-Z])(?=.*[a-z])\S{6,256}$';
   if (input2 != null) {
     if (RegExp(passwordRegex).hasMatch(input) && input == input2) {
@@ -36,6 +39,7 @@ Either<ValueFailure<String>, String> validatePassword(
   }
 }
 
+/// @nodoc
 Either<ValueFailure<String>, String> validateUsername(String input) {
   if (input != null && input.isNotEmpty) {
     return right(input);
@@ -44,6 +48,7 @@ Either<ValueFailure<String>, String> validateUsername(String input) {
   }
 }
 
+/// @nodoc
 Either<ValueFailure<String>, String> validateTitle(String input) {
   if (input == null || input.isEmpty) {
     return left(ValueFailure.emptyInput(failedValue: input));
@@ -54,6 +59,7 @@ Either<ValueFailure<String>, String> validateTitle(String input) {
   }
 }
 
+/// @nodoc
 Either<ValueFailure<String>, String> validateSubtitle(String input) {
   if (tps.getWordCount(input) > Constants.seriesSubtitleMaxWords) {
     return left(ValueFailure.longInput(failedValue: input));
@@ -62,6 +68,7 @@ Either<ValueFailure<String>, String> validateSubtitle(String input) {
   }
 }
 
+/// @nodoc
 Either<ValueFailure<String>, String> validateSummary(String input) {
   if (input == null || input.isEmpty) {
     return left(ValueFailure.emptyInput(failedValue: input));
@@ -72,6 +79,7 @@ Either<ValueFailure<String>, String> validateSummary(String input) {
   }
 }
 
+/// @nodoc
 Either<ValueFailure<String>, String> validateGenre(
   String input, {
   bool isOptional,
@@ -83,6 +91,7 @@ Either<ValueFailure<String>, String> validateGenre(
   }
 }
 
+/// @nodoc
 Either<ValueFailure<String>, String> validateLanguage(String input) {
   if (input != null && input.isNotEmpty) {
     return right(input);
@@ -91,6 +100,7 @@ Either<ValueFailure<String>, String> validateLanguage(String input) {
   }
 }
 
+/// @nodoc
 Either<ValueFailure<String>, String> validateCopyrights(String input) {
   if (input != null && input.isNotEmpty) {
     return right(input);
@@ -99,6 +109,7 @@ Either<ValueFailure<String>, String> validateCopyrights(String input) {
   }
 }
 
+/// @nodoc
 Either<ValueFailure<String>, String> validateStory(String input) {
   if (input == null || input.isEmpty) {
     return left(ValueFailure.emptyInput(failedValue: input));

@@ -1,12 +1,8 @@
 import 'package:flutter/material.dart';
 
+/// @nodoc
 class WINELeadingImageButton extends StatelessWidget {
-  final Color color;
-  final double height;
-  final double width;
-  final String imagePath;
-  final VoidCallback onPressed;
-
+  /// @nodoc
   const WINELeadingImageButton({
     Key key,
     this.color = Colors.black,
@@ -16,11 +12,32 @@ class WINELeadingImageButton extends StatelessWidget {
     @required this.onPressed,
   }) : super(key: key);
 
+  /// @nodoc
+  final Color color;
+
+  /// @nodoc
+  final double height;
+
+  /// @nodoc
+  final double width;
+
+  /// @nodoc
+  final String imagePath;
+
+  /// @nodoc
+  final VoidCallback onPressed;
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: onPressed,
-      child: Image.asset(imagePath, color: color, fit: BoxFit.contain, height: height, width: width),
+      child: Image.asset(
+        imagePath,
+        color: color,
+        fit: BoxFit.contain,
+        height: height,
+        width: width,
+      ),
     );
   }
 }

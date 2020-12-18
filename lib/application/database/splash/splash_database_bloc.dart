@@ -5,115 +5,184 @@ import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:meta/meta.dart';
+
 import 'package:wine/domain/database/database_failure.dart';
-import 'package:wine/domain/database/database_success.dart';
-import 'package:wine/domain/database/i_local_placeholder_database_facade.dart';
-import 'package:wine/domain/database/i_local_session_database_facade.dart';
-import 'package:wine/domain/database/i_online_placeholder_database_facade.dart';
-import 'package:wine/domain/database/i_online_user_database_facade.dart';
+import 'package:wine/domain/database/facades/local/i_local_config_database_facade.dart';
+import 'package:wine/domain/database/facades/local/i_local_placeholder_database_facade.dart';
+import 'package:wine/domain/database/facades/local/i_local_session_database_facade.dart';
+import 'package:wine/domain/database/facades/online/i_online_placeholder_database_facade.dart';
+import 'package:wine/domain/database/facades/online/i_online_user_database_facade.dart';
+import 'package:wine/domain/database/failures/config_database_failure.dart';
+import 'package:wine/domain/database/failures/placeholder_database_failure.dart';
+import 'package:wine/domain/database/successes/config_database_success.dart';
+import 'package:wine/domain/database/successes/placeholder_database_success.dart';
+import 'package:wine/domain/database/successes/session_database_success.dart';
+import 'package:wine/domain/database/successes/user_database_success.dart';
 import 'package:wine/domain/models/hive/session.dart';
 import 'package:wine/domain/models/user.dart';
 
+part 'splash_database_bloc.freezed.dart';
 part 'splash_database_event.dart';
 part 'splash_database_state.dart';
 
-part 'splash_database_bloc.freezed.dart';
-
+/// @nodoc
 @injectable
-class SplashDatabaseBloc extends Bloc<SplashDatabaseEvent, SplashDatabaseState> {
-  final ILocalSessionDatabaseFacade _localSessionDatabaseFacade;
-  final IOnlineUserDatabaseFacade _onlineUserDatabaseFacade;
-  final ILocalPlaceholderDatabaseFacade _localPlaceholderDatabaseFacade;
-  final IOnlinePlaceholderDatabaseFacade _onlinePlaceholderDatabaseFacade;
-
+class SplashDatabaseBloc
+    extends Bloc<SplashDatabaseEvent, SplashDatabaseState> {
+  /// @nodoc
   SplashDatabaseBloc(
+    this._localConfigDatabaseFacade,
     this._localSessionDatabaseFacade,
     this._onlineUserDatabaseFacade,
     this._localPlaceholderDatabaseFacade,
     this._onlinePlaceholderDatabaseFacade,
   ) : super(SplashDatabaseState.initial());
 
+  final ILocalConfigDatabaseFacade _localConfigDatabaseFacade;
+  final ILocalSessionDatabaseFacade _localSessionDatabaseFacade;
+  final IOnlineUserDatabaseFacade _onlineUserDatabaseFacade;
+  final ILocalPlaceholderDatabaseFacade _localPlaceholderDatabaseFacade;
+  final IOnlinePlaceholderDatabaseFacade _onlinePlaceholderDatabaseFacade;
+
   @override
-  Stream<SplashDatabaseState> mapEventToState(SplashDatabaseEvent event) async* {
+  Stream<SplashDatabaseState> mapEventToState(
+      SplashDatabaseEvent event) async* {
     yield* event.map(
       authenticatedEVT: (event) async* {
-        Either<DatabaseFailure, DatabaseSuccess> failureOrSuccess;
-
-        yield state.copyWith(isUpdating: true, databaseFailureOrSuccessOption: none());
-
-        failureOrSuccess = await _onlinePlaceholderDatabaseFacade.getPlaceholderUrls();
-        failureOrSuccess.fold(
-          (_) {},
-          (success) {
-            if (success is PlaceholdersLoadedSCS) {
-              add(SplashDatabaseEvent.placeholdersLoadedEVT(success.placeholders));
-            }
-          },
-        );
-
         yield state.copyWith(
           isAnonymous: event.isAnonymous,
-          databaseFailureOrSuccessOption: optionOf(failureOrSuccess),
-        );
-      },
-      placeholdersLoadedEVT: (event) async* {
-        Either<DatabaseFailure, DatabaseSuccess> failureOrSuccess;
-
-        failureOrSuccess = await _localPlaceholderDatabaseFacade.savePlaceholderUrls(event.placeholders);
-        failureOrSuccess.fold(
-          (_) {},
-          (success) {
-            if (success is PlaceholdersSavedSCS) {
-              add(const SplashDatabaseEvent.placeholdersSavedEVT());
-            }
-          },
+          isUpdating: true,
         );
 
-        yield state.copyWith(databaseFailureOrSuccessOption: optionOf(failureOrSuccess));
-      },
-      placeholdersSavedEVT: (event) async* {
-        Either<DatabaseFailure, DatabaseSuccess> failureOrSuccess;
+        final failureOrSuccess = await _localConfigDatabaseFacade.fetchConfig();
+        final callSuccess = failureOrSuccess.isRight();
 
-        if (!state.isAnonymous) {
-          failureOrSuccess = await _localSessionDatabaseFacade.fetchSession();
+        yield state.copyWith(
+          configDatabaseFailureOrSuccessOption: optionOf(failureOrSuccess),
+          isUpdating: callSuccess,
+          placeholderDatabaseFailureOrSuccessOption: none(),
+          sessionDatabaseFailureOrSuccessOption: none(),
+          userDatabaseFailureOrSuccessOption: none(),
+        );
+
+        if (callSuccess) {
+          add(const SplashDatabaseEvent.configFetchedEVT());
+        }
+      },
+      configFetchedEVT: (event) async* {
+        var placeholders = <String, String>{};
+
+        final failureOrSuccess =
+            await _onlinePlaceholderDatabaseFacade.loadPlaceholders()
+              ..fold(
+                (_) {},
+                (success) {
+                  if (success is PlaceholdersLoadedSCS) {
+                    placeholders = success.placeholders;
+                  }
+                },
+              );
+        final callSuccess = failureOrSuccess.isRight();
+
+        yield state.copyWith(
+          configDatabaseFailureOrSuccessOption: none(),
+          isUpdating: callSuccess,
+          placeholderDatabaseFailureOrSuccessOption: optionOf(failureOrSuccess),
+          sessionDatabaseFailureOrSuccessOption: none(),
+          userDatabaseFailureOrSuccessOption: none(),
+        );
+
+        if (callSuccess) {
+          add(SplashDatabaseEvent.placeholdersLoadedEVT(placeholders));
+        }
+      },
+      placeholdersInitializedEVT: (event) async* {
+        final failureOrSuccess =
+            await _localSessionDatabaseFacade.fetchSession();
+        final callSuccess = failureOrSuccess.isRight();
+
+        yield state.copyWith(
+          configDatabaseFailureOrSuccessOption: none(),
+          isUpdating: callSuccess && !state.isAnonymous,
+          placeholderDatabaseFailureOrSuccessOption: none(),
+          sessionDatabaseFailureOrSuccessOption: optionOf(failureOrSuccess),
+          userDatabaseFailureOrSuccessOption: none(),
+        );
+
+        if (callSuccess && !state.isAnonymous) {
+          Session session;
+
           failureOrSuccess.fold(
             (_) {},
             (success) {
               if (success is SessionFetchedSCS) {
-                add(SplashDatabaseEvent.sessionFetchedEVT(success.session));
+                session = success.session;
               }
             },
           );
 
-          yield state.copyWith(databaseFailureOrSuccessOption: optionOf(failureOrSuccess));
-        } else {
-          failureOrSuccess = await _localSessionDatabaseFacade.saveSession(Session());
+          add(SplashDatabaseEvent.sessionFetchedEVT(session));
+        }
+      },
+      placeholdersLoadedEVT: (event) async* {
+        final failureOrSuccess = await _localPlaceholderDatabaseFacade
+            .initializePlaceholders(event.placeholders);
+        final callSuccess = failureOrSuccess.isRight();
 
-          yield state.copyWith(isUpdating: false, databaseFailureOrSuccessOption: optionOf(failureOrSuccess));
+        yield state.copyWith(
+          configDatabaseFailureOrSuccessOption: none(),
+          isUpdating: callSuccess,
+          placeholderDatabaseFailureOrSuccessOption: optionOf(failureOrSuccess),
+          sessionDatabaseFailureOrSuccessOption: none(),
+          userDatabaseFailureOrSuccessOption: none(),
+        );
+
+        if (callSuccess) {
+          add(const SplashDatabaseEvent.placeholdersInitializedEVT());
         }
       },
       sessionFetchedEVT: (event) async* {
-        Either<DatabaseFailure, DatabaseSuccess> failureOrSuccess;
+        final failureOrSuccess =
+            await _onlineUserDatabaseFacade.loadUser(event.session.uid);
+        final callSuccess = failureOrSuccess.isRight();
 
-        failureOrSuccess = await _onlineUserDatabaseFacade.loadUser(event.session.uid);
-        failureOrSuccess.fold(
-          (_) {},
-          (success) async {
-            if (success is UserLoadedSCS) {
-              add(SplashDatabaseEvent.userLoadedEVT(success.user));
-            }
-          },
+        yield state.copyWith(
+          configDatabaseFailureOrSuccessOption: none(),
+          isUpdating: callSuccess,
+          placeholderDatabaseFailureOrSuccessOption: none(),
+          sessionDatabaseFailureOrSuccessOption: none(),
+          userDatabaseFailureOrSuccessOption: optionOf(failureOrSuccess),
         );
 
-        yield state.copyWith(databaseFailureOrSuccessOption: optionOf(failureOrSuccess));
+        if (callSuccess) {
+          User user;
+
+          failureOrSuccess
+            ..fold(
+              (_) {},
+              (success) {
+                if (success is UserLoadedSCS) {
+                  user = success.user;
+                }
+              },
+            );
+
+          add(SplashDatabaseEvent.userLoadedEVT(user));
+        }
       },
       userLoadedEVT: (event) async* {
-        Either<DatabaseFailure, DatabaseSuccess> failureOrSuccess;
+        final session = Session.fromMap(event.user.toMap());
 
-        final Session session = Session.fromMap(event.user.toMap());
-        failureOrSuccess = await _localSessionDatabaseFacade.updateSession(session);
+        final failureOrSuccess =
+            await _localSessionDatabaseFacade.updateSession(session);
 
-        yield state.copyWith(isUpdating: false, databaseFailureOrSuccessOption: optionOf(failureOrSuccess));
+        yield state.copyWith(
+          configDatabaseFailureOrSuccessOption: none(),
+          isUpdating: false,
+          placeholderDatabaseFailureOrSuccessOption: none(),
+          sessionDatabaseFailureOrSuccessOption: optionOf(failureOrSuccess),
+          userDatabaseFailureOrSuccessOption: none(),
+        );
       },
     );
   }

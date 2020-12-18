@@ -1,11 +1,17 @@
 part of 'account_navigation_bloc.dart';
 
+/// @nodoc
 @freezed
 abstract class AccountNavigationEvent with _$AccountNavigationEvent {
-  const factory AccountNavigationEvent.accountPageLaunchedEVT({
-    @required BuildContext context,
-  }) = AccountPageLaunchedEVT;
-  const factory AccountNavigationEvent.pageViewIndexChangedEVT(int index) = PageViewIndexChangedEVT;
+  /// @nodoc
+  const factory AccountNavigationEvent.pageViewIndexChangedEVT(int index) =
+      PageViewIndexChangedEVT;
+
+  /// @nodoc
   const factory AccountNavigationEvent.resetBlocEVT() = ResetBlocEVT;
-  const factory AccountNavigationEvent.verticalNavbarIndexChangedEVT(int index) = VerticalNavbarIndexChangedEVT;
+
+  /// @nodoc
+  const factory AccountNavigationEvent.verticalNavbarIndexChangedEVT(
+    int index,
+  ) = VerticalNavbarIndexChangedEVT;
 }

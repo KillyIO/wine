@@ -3,10 +3,9 @@ import 'package:wine/domain/core/failures.dart';
 import 'package:wine/domain/core/value_objects.dart';
 import 'package:wine/domain/core/value_validators.dart';
 
+/// @nodoc
 class Genre extends ValueObject<String> {
-  @override
-  final Either<ValueFailure<String>, String> value;
-
+  /// @nodoc
   factory Genre(String input, {bool isOptional = false}) {
     assert(input != null);
     return Genre._(
@@ -15,5 +14,9 @@ class Genre extends ValueObject<String> {
   }
 
   // NOTE private contructor
+  /// @nodoc
   const Genre._(this.value);
+
+  @override
+  final Either<ValueFailure<String>, String> value;
 }

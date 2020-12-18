@@ -9,6 +9,7 @@ part of 'splash_authentication_bloc.dart';
 
 T _$identity<T>(T value) => value;
 
+/// @nodoc
 class _$SplashAuthenticationEventTearOff {
   const _$SplashAuthenticationEventTearOff();
 
@@ -18,36 +19,40 @@ class _$SplashAuthenticationEventTearOff {
   }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $SplashAuthenticationEvent = _$SplashAuthenticationEventTearOff();
 
+/// @nodoc
 mixin _$SplashAuthenticationEvent {
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result splashLaunchedEVT(),
+  TResult when<TResult extends Object>({
+    @required TResult splashLaunchedEVT(),
   });
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result splashLaunchedEVT(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult splashLaunchedEVT(),
+    @required TResult orElse(),
   });
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result splashLaunchedEVT(SplashLaunchedEVT value),
+  TResult map<TResult extends Object>({
+    @required TResult splashLaunchedEVT(SplashLaunchedEVT value),
   });
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result splashLaunchedEVT(SplashLaunchedEVT value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult splashLaunchedEVT(SplashLaunchedEVT value),
+    @required TResult orElse(),
   });
 }
 
+/// @nodoc
 abstract class $SplashAuthenticationEventCopyWith<$Res> {
   factory $SplashAuthenticationEventCopyWith(SplashAuthenticationEvent value,
           $Res Function(SplashAuthenticationEvent) then) =
       _$SplashAuthenticationEventCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$SplashAuthenticationEventCopyWithImpl<$Res>
     implements $SplashAuthenticationEventCopyWith<$Res> {
   _$SplashAuthenticationEventCopyWithImpl(this._value, this._then);
@@ -57,12 +62,14 @@ class _$SplashAuthenticationEventCopyWithImpl<$Res>
   final $Res Function(SplashAuthenticationEvent) _then;
 }
 
+/// @nodoc
 abstract class $SplashLaunchedEVTCopyWith<$Res> {
   factory $SplashLaunchedEVTCopyWith(
           SplashLaunchedEVT value, $Res Function(SplashLaunchedEVT) then) =
       _$SplashLaunchedEVTCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$SplashLaunchedEVTCopyWithImpl<$Res>
     extends _$SplashAuthenticationEventCopyWithImpl<$Res>
     implements $SplashLaunchedEVTCopyWith<$Res> {
@@ -74,6 +81,7 @@ class _$SplashLaunchedEVTCopyWithImpl<$Res>
   SplashLaunchedEVT get _value => super._value as SplashLaunchedEVT;
 }
 
+/// @nodoc
 class _$SplashLaunchedEVT implements SplashLaunchedEVT {
   const _$SplashLaunchedEVT();
 
@@ -92,8 +100,8 @@ class _$SplashLaunchedEVT implements SplashLaunchedEVT {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result splashLaunchedEVT(),
+  TResult when<TResult extends Object>({
+    @required TResult splashLaunchedEVT(),
   }) {
     assert(splashLaunchedEVT != null);
     return splashLaunchedEVT();
@@ -101,9 +109,9 @@ class _$SplashLaunchedEVT implements SplashLaunchedEVT {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result splashLaunchedEVT(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult splashLaunchedEVT(),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (splashLaunchedEVT != null) {
@@ -114,8 +122,8 @@ class _$SplashLaunchedEVT implements SplashLaunchedEVT {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result splashLaunchedEVT(SplashLaunchedEVT value),
+  TResult map<TResult extends Object>({
+    @required TResult splashLaunchedEVT(SplashLaunchedEVT value),
   }) {
     assert(splashLaunchedEVT != null);
     return splashLaunchedEVT(this);
@@ -123,9 +131,9 @@ class _$SplashLaunchedEVT implements SplashLaunchedEVT {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result splashLaunchedEVT(SplashLaunchedEVT value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult splashLaunchedEVT(SplashLaunchedEVT value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (splashLaunchedEVT != null) {
@@ -139,17 +147,21 @@ abstract class SplashLaunchedEVT implements SplashAuthenticationEvent {
   const factory SplashLaunchedEVT() = _$SplashLaunchedEVT;
 }
 
+/// @nodoc
 class _$SplashAuthenticationStateTearOff {
   const _$SplashAuthenticationStateTearOff();
 
 // ignore: unused_element
   _SplashAuthenticationState call(
       {@required
+          bool isAnonymous,
+      @required
           bool isAuthenticating,
       @required
           Option<Either<AuthenticationFailure, AuthenticationSuccess>>
               authenticationFailureOrSuccessOption}) {
     return _SplashAuthenticationState(
+      isAnonymous: isAnonymous,
       isAuthenticating: isAuthenticating,
       authenticationFailureOrSuccessOption:
           authenticationFailureOrSuccessOption,
@@ -157,10 +169,13 @@ class _$SplashAuthenticationStateTearOff {
   }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $SplashAuthenticationState = _$SplashAuthenticationStateTearOff();
 
+/// @nodoc
 mixin _$SplashAuthenticationState {
+  bool get isAnonymous;
   bool get isAuthenticating;
   Option<Either<AuthenticationFailure, AuthenticationSuccess>>
       get authenticationFailureOrSuccessOption;
@@ -168,16 +183,19 @@ mixin _$SplashAuthenticationState {
   $SplashAuthenticationStateCopyWith<SplashAuthenticationState> get copyWith;
 }
 
+/// @nodoc
 abstract class $SplashAuthenticationStateCopyWith<$Res> {
   factory $SplashAuthenticationStateCopyWith(SplashAuthenticationState value,
           $Res Function(SplashAuthenticationState) then) =
       _$SplashAuthenticationStateCopyWithImpl<$Res>;
   $Res call(
-      {bool isAuthenticating,
+      {bool isAnonymous,
+      bool isAuthenticating,
       Option<Either<AuthenticationFailure, AuthenticationSuccess>>
           authenticationFailureOrSuccessOption});
 }
 
+/// @nodoc
 class _$SplashAuthenticationStateCopyWithImpl<$Res>
     implements $SplashAuthenticationStateCopyWith<$Res> {
   _$SplashAuthenticationStateCopyWithImpl(this._value, this._then);
@@ -188,10 +206,13 @@ class _$SplashAuthenticationStateCopyWithImpl<$Res>
 
   @override
   $Res call({
+    Object isAnonymous = freezed,
     Object isAuthenticating = freezed,
     Object authenticationFailureOrSuccessOption = freezed,
   }) {
     return _then(_value.copyWith(
+      isAnonymous:
+          isAnonymous == freezed ? _value.isAnonymous : isAnonymous as bool,
       isAuthenticating: isAuthenticating == freezed
           ? _value.isAuthenticating
           : isAuthenticating as bool,
@@ -204,6 +225,7 @@ class _$SplashAuthenticationStateCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 abstract class _$SplashAuthenticationStateCopyWith<$Res>
     implements $SplashAuthenticationStateCopyWith<$Res> {
   factory _$SplashAuthenticationStateCopyWith(_SplashAuthenticationState value,
@@ -211,11 +233,13 @@ abstract class _$SplashAuthenticationStateCopyWith<$Res>
       __$SplashAuthenticationStateCopyWithImpl<$Res>;
   @override
   $Res call(
-      {bool isAuthenticating,
+      {bool isAnonymous,
+      bool isAuthenticating,
       Option<Either<AuthenticationFailure, AuthenticationSuccess>>
           authenticationFailureOrSuccessOption});
 }
 
+/// @nodoc
 class __$SplashAuthenticationStateCopyWithImpl<$Res>
     extends _$SplashAuthenticationStateCopyWithImpl<$Res>
     implements _$SplashAuthenticationStateCopyWith<$Res> {
@@ -229,10 +253,13 @@ class __$SplashAuthenticationStateCopyWithImpl<$Res>
 
   @override
   $Res call({
+    Object isAnonymous = freezed,
     Object isAuthenticating = freezed,
     Object authenticationFailureOrSuccessOption = freezed,
   }) {
     return _then(_SplashAuthenticationState(
+      isAnonymous:
+          isAnonymous == freezed ? _value.isAnonymous : isAnonymous as bool,
       isAuthenticating: isAuthenticating == freezed
           ? _value.isAuthenticating
           : isAuthenticating as bool,
@@ -245,13 +272,18 @@ class __$SplashAuthenticationStateCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$_SplashAuthenticationState implements _SplashAuthenticationState {
   const _$_SplashAuthenticationState(
-      {@required this.isAuthenticating,
+      {@required this.isAnonymous,
+      @required this.isAuthenticating,
       @required this.authenticationFailureOrSuccessOption})
-      : assert(isAuthenticating != null),
+      : assert(isAnonymous != null),
+        assert(isAuthenticating != null),
         assert(authenticationFailureOrSuccessOption != null);
 
+  @override
+  final bool isAnonymous;
   @override
   final bool isAuthenticating;
   @override
@@ -260,13 +292,16 @@ class _$_SplashAuthenticationState implements _SplashAuthenticationState {
 
   @override
   String toString() {
-    return 'SplashAuthenticationState(isAuthenticating: $isAuthenticating, authenticationFailureOrSuccessOption: $authenticationFailureOrSuccessOption)';
+    return 'SplashAuthenticationState(isAnonymous: $isAnonymous, isAuthenticating: $isAuthenticating, authenticationFailureOrSuccessOption: $authenticationFailureOrSuccessOption)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _SplashAuthenticationState &&
+            (identical(other.isAnonymous, isAnonymous) ||
+                const DeepCollectionEquality()
+                    .equals(other.isAnonymous, isAnonymous)) &&
             (identical(other.isAuthenticating, isAuthenticating) ||
                 const DeepCollectionEquality()
                     .equals(other.isAuthenticating, isAuthenticating)) &&
@@ -280,6 +315,7 @@ class _$_SplashAuthenticationState implements _SplashAuthenticationState {
   @override
   int get hashCode =>
       runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(isAnonymous) ^
       const DeepCollectionEquality().hash(isAuthenticating) ^
       const DeepCollectionEquality().hash(authenticationFailureOrSuccessOption);
 
@@ -293,12 +329,16 @@ class _$_SplashAuthenticationState implements _SplashAuthenticationState {
 abstract class _SplashAuthenticationState implements SplashAuthenticationState {
   const factory _SplashAuthenticationState(
           {@required
+              bool isAnonymous,
+          @required
               bool isAuthenticating,
           @required
               Option<Either<AuthenticationFailure, AuthenticationSuccess>>
                   authenticationFailureOrSuccessOption}) =
       _$_SplashAuthenticationState;
 
+  @override
+  bool get isAnonymous;
   @override
   bool get isAuthenticating;
   @override

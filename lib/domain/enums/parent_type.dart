@@ -1,4 +1,0 @@
-enum ParentType {
-  series,
-  chapter,
-}

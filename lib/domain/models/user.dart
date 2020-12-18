@@ -1,137 +1,183 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_auth/firebase_auth.dart' as auth;
 
+/// @nodoc
 class User {
-  String uid;
-  String name;
-  String username;
-  String email;
-  String profilePictureUrl;
-  int createdAt;
-  int updatedAt;
-  String bio;
-
+  /// @nodoc
   User({
-    this.uid,
-    this.name,
-    this.username,
-    this.email,
-    this.profilePictureUrl,
-    this.createdAt,
-    this.updatedAt,
     this.bio,
+    this.createdAt,
+    this.email,
+    this.name,
+    this.profilePictureURL,
+    this.uid,
+    this.updatedAt,
+    this.username,
   });
 
-  User copyWith({
-    String uid,
-    String name,
-    String username,
-    String email,
-    String profilePictureUrl,
-    int createdAt,
-    int updatedAt,
-    String bio,
-  }) {
+  /// @nodoc
+  factory User.fromFirebaseUser(auth.User user) {
     return User(
-      uid: uid ?? this.uid,
-      name: name ?? this.name,
-      username: username ?? this.username,
-      email: email ?? this.email,
-      profilePictureUrl: profilePictureUrl ?? this.profilePictureUrl,
-      createdAt: createdAt ?? this.createdAt,
-      updatedAt: updatedAt ?? this.updatedAt,
-      bio: bio ?? this.bio,
-    );
-  }
-
-  factory User.fromFirebaseUser(FirebaseUser user) {
-    return User(
-      uid: user.uid,
-      name: user.displayName,
       email: user.email,
-      profilePictureUrl: user.photoUrl,
+      name: user.displayName,
+      profilePictureURL: user.photoURL,
+      uid: user.uid,
     );
   }
 
+  /// @nodoc
   factory User.fromFirestore(DocumentSnapshot document) {
-    final Map<String, dynamic> data = document.data;
+    final data = document.data();
+
     return User(
-      uid: data['uid'] as String,
-      name: data['name'] as String,
-      username: data['username'] as String,
-      email: data['email'] as String,
-      profilePictureUrl: data['profilePictureUrl'] as String,
-      createdAt: data['createdAt'] as int,
-      updatedAt: data['updatedAt'] as int,
       bio: data['bio'] as String,
+      createdAt: data['createdAt'] as int,
+      email: data['email'] as String,
+      name: data['name'] as String,
+      profilePictureURL: data['profilePictureURL'] as String,
+      uid: data['uid'] as String,
+      updatedAt: data['updatedAt'] as int,
+      username: data['username'] as String,
     );
   }
 
-  Map<String, dynamic> toMap() {
-    return {
-      'uid': uid,
-      'name': name,
-      'username': username,
-      'email': email,
-      'profilePictureUrl': profilePictureUrl,
-      'createdAt': createdAt,
-      'updatedAt': updatedAt,
-      'bio': bio,
-    };
-  }
-
+  /// @nodoc
   factory User.fromMap(Map<String, dynamic> map) {
     if (map == null) return null;
 
     return User(
-      uid: map['uid'] as String,
-      name: map['name'] as String,
-      username: map['username'] as String,
-      email: map['email'] as String,
-      profilePictureUrl: map['profilePictureUrl'] as String,
-      createdAt: map['createdAt'] as int,
-      updatedAt: map['updatedAt'] as int,
       bio: map['bio'] as String,
+      createdAt: map['createdAt'] as int,
+      email: map['email'] as String,
+      name: map['name'] as String,
+      profilePictureURL: map['profilePictureURL'] as String,
+      uid: map['uid'] as String,
+      updatedAt: map['updatedAt'] as int,
+      username: map['username'] as String,
     );
+  }
+
+  /// @nodoc
+  int createdAt;
+
+  /// @nodoc
+  int updatedAt;
+
+  /// @nodoc
+  String bio;
+
+  /// @nodoc
+  String email;
+
+  /// @nodoc
+  String name;
+
+  /// @nodoc
+  String profilePictureURL;
+
+  /// @nodoc
+  String uid;
+
+  /// @nodoc
+  String username;
+
+  /// @nodoc
+  User copyWith({
+    int createdAt,
+    int updatedAt,
+    String bio,
+    String email,
+    String name,
+    String profilePictureURL,
+    String uid,
+    String username,
+  }) {
+    return User(
+      bio: bio ?? this.bio,
+      createdAt: createdAt ?? this.createdAt,
+      email: email ?? this.email,
+      name: name ?? this.name,
+      profilePictureURL: profilePictureURL ?? this.profilePictureURL,
+      uid: uid ?? this.uid,
+      updatedAt: updatedAt ?? this.updatedAt,
+      username: username ?? this.username,
+    );
+  }
+
+  /// @nodoc
+  Map<String, dynamic> toMap() {
+    return {
+      'bio': bio,
+      'createdAt': createdAt,
+      'email': email,
+      'name': name,
+      'profilePictureURL': profilePictureURL,
+      'uid': uid,
+      'updatedAt': updatedAt,
+      'username': username,
+    };
   }
 
   @override
   String toString() {
-    return 'User(uid: $uid, name: $name, username: $username, email: $email, profilePictureUrl: $profilePictureUrl, createdAt: $createdAt, updatedAt: $updatedAt, bio: $bio)';
+    return '''
+      User(
+        bio: $bio
+        createdAt: $createdAt,
+        email: $email,
+        name: $name,
+        profilePictureURL: $profilePictureURL,
+        uid: $uid,
+        updatedAt: $updatedAt,
+        username: $username,
+      )
+    ''';
   }
 
   @override
-  bool operator ==(Object o) {
-    if (identical(this, o)) return true;
+  bool operator ==(Object other) {
+    if (identical(this, other)) return true;
 
-    return o is User &&
-        o.uid == uid &&
-        o.name == name &&
-        o.username == username &&
-        o.email == email &&
-        o.profilePictureUrl == profilePictureUrl &&
-        o.createdAt == createdAt &&
-        o.updatedAt == updatedAt &&
-        o.bio == bio;
+    return other is User &&
+        other.bio == bio &&
+        other.createdAt == createdAt &&
+        other.email == email &&
+        other.name == name &&
+        other.profilePictureURL == profilePictureURL &&
+        other.uid == uid &&
+        other.updatedAt == updatedAt &&
+        other.username == username;
   }
 
   @override
   int get hashCode {
-    return uid.hashCode ^
-        name.hashCode ^
-        username.hashCode ^
-        email.hashCode ^
-        profilePictureUrl.hashCode ^
+    return bio.hashCode ^
         createdAt.hashCode ^
+        email.hashCode ^
+        name.hashCode ^
+        profilePictureURL.hashCode ^
         updatedAt.hashCode ^
-        bio.hashCode;
+        username.hashCode ^
+        uid.hashCode;
   }
 
+  /// @nodoc
   bool get isEmpty {
-    return uid == null && name == null && username == null && email == null && createdAt == null && updatedAt == null;
+    return createdAt == null &&
+        email == null &&
+        name == null &&
+        uid == null &&
+        updatedAt == null &&
+        username == null;
   }
 
+  /// @nodoc
   bool get isNotEmpty {
-    return uid != null && name != null && username != null && email != null && createdAt != null && updatedAt != null;
+    return createdAt != null &&
+        email != null &&
+        name != null &&
+        updatedAt != null &&
+        username != null &&
+        uid != null;
   }
 }

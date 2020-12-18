@@ -3,12 +3,9 @@ import 'package:time/time.dart';
 
 import 'package:wine/presentation/widgets/wine_horizontal_navbar_button.dart';
 
+/// @nodoc
 class WINEHorizontalNavbar extends StatelessWidget {
-  final PageController pageController;
-  final List<String> pageViewNavbarItems;
-  final List<Color> pageViewNavbarColors;
-  final int currentPageViewIdx;
-
+  /// @nodoc
   const WINEHorizontalNavbar({
     Key key,
     @required this.pageController,
@@ -16,6 +13,18 @@ class WINEHorizontalNavbar extends StatelessWidget {
     @required this.pageViewNavbarColors,
     @required this.currentPageViewIdx,
   }) : super(key: key);
+
+  /// @nodoc
+  final PageController pageController;
+
+  /// @nodoc
+  final List<String> pageViewNavbarItems;
+
+  /// @nodoc
+  final List<Color> pageViewNavbarColors;
+
+  /// @nodoc
+  final int currentPageViewIdx;
 
   @override
   Widget build(BuildContext context) {
@@ -26,10 +35,9 @@ class WINEHorizontalNavbar extends StatelessWidget {
       color: pageViewNavbarColors[currentPageViewIdx],
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
-        mainAxisSize: MainAxisSize.max,
         children: pageViewNavbarItems.asMap().entries.map((entry) {
-          final int index = entry.key;
-          final String value = entry.value;
+          final index = entry.key;
+          final value = entry.value;
 
           return WINEHorizontalNavbarButton(
             title: value,

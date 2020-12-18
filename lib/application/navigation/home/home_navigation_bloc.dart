@@ -6,34 +6,35 @@ import 'package:flutter/widgets.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:meta/meta.dart';
-import 'package:wine/utils/methods.dart';
 
+import 'package:wine/utils/getters.dart';
+
+part 'home_navigation_bloc.freezed.dart';
 part 'home_navigation_event.dart';
 part 'home_navigation_state.dart';
 
-part 'home_navigation_bloc.freezed.dart';
-
+/// @nodoc
 @injectable
-class HomeNavigationBloc extends Bloc<HomeNavigationEvent, HomeNavigationState> {
+class HomeNavigationBloc extends Bloc<HomeNavigationEvent, HomeNavigationState>
+    with Getters {
+  /// @nodoc
   HomeNavigationBloc() : super(HomeNavigationState.initial());
 
   @override
-  Stream<HomeNavigationState> mapEventToState(HomeNavigationEvent event) async* {
+  Stream<HomeNavigationState> mapEventToState(
+      HomeNavigationEvent event) async* {
     yield* event.map(
       leftDrawerIconPressedEVT: (event) async* {
-        yield state.copyWith(isLeftDrawerOpen: event.isDrawerOpen);
-      },
-      homePageLaunchedEVT: (event) async* {
-        yield state.copyWith(pageViewNavbarItems: Methods.getHomeNavbarItems(event.context));
+        yield state.copyWith(isLeftDrawerOpen: !state.isLeftDrawerOpen);
       },
       pageViewIndexChangedEVT: (event) async* {
         if (state.currentPageViewIdx != event.index) {
-          int newIdx = event.index;
-          if (event.index > state.pageViewNavbarItems.length - 1) {
+          var newIdx = event.index;
+          if (event.index > homeNavbarItemsKeys.length - 1) {
             newIdx = 0;
           }
           if (event.index < 0) {
-            newIdx = state.pageViewNavbarItems.length - 1;
+            newIdx = homeNavbarItemsKeys.length - 1;
           }
           yield state.copyWith(currentPageViewIdx: newIdx);
         }
@@ -46,7 +47,13 @@ class HomeNavigationBloc extends Bloc<HomeNavigationEvent, HomeNavigationState> 
         );
       },
       rightDrawerIconPressedEVT: (event) async* {
-        yield state.copyWith(isRightDrawerOpen: event.isDrawerOpen);
+        yield state.copyWith(isRightDrawerOpen: !state.isRightDrawerOpen);
+      },
+      willPopEVT: (event) async* {
+        yield state.copyWith(
+          isLeftDrawerOpen: false,
+          isRightDrawerOpen: false,
+        );
       },
     );
   }

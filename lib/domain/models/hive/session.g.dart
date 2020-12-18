@@ -17,14 +17,14 @@ class SessionAdapter extends TypeAdapter<Session> {
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
     return Session(
-      uid: fields[0] as String,
-      name: fields[1] as String,
-      username: fields[2] as String,
-      email: fields[3] as String,
-      profilePictureUrl: fields[4] as String,
-      createdAt: fields[5] as int,
-      updatedAt: fields[6] as int,
       bio: fields[7] as String,
+      createdAt: fields[5] as int,
+      email: fields[3] as String,
+      name: fields[1] as String,
+      profilePictureURL: fields[4] as String,
+      uid: fields[0] as String,
+      updatedAt: fields[6] as int,
+      username: fields[2] as String,
     );
   }
 
@@ -41,7 +41,7 @@ class SessionAdapter extends TypeAdapter<Session> {
       ..writeByte(3)
       ..write(obj.email)
       ..writeByte(4)
-      ..write(obj.profilePictureUrl)
+      ..write(obj.profilePictureURL)
       ..writeByte(5)
       ..write(obj.createdAt)
       ..writeByte(6)

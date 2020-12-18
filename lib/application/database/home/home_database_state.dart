@@ -1,36 +1,37 @@
 part of 'home_database_bloc.dart';
 
+/// @nodoc
 @freezed
 abstract class HomeDatabaseState with _$HomeDatabaseState {
+  /// @nodoc
   const factory HomeDatabaseState({
     @required bool areFiltersApplied,
     @required bool isLoading,
-    @required List<SeriesMinified> newSeriesMinified,
-    @required List<SeriesMinified> topFiveSeriesMinified,
-    @required List<SeriesMinified> topSeriesMinified,
+    @required List<bool> layoutDataUpdated,
+    @required List<Series> newSeriesList,
+    @required List<Series> topFiveSeriesList,
+    @required List<Series> topSeriesList,
     @required Map<String, dynamic> filters,
-    @required Map<String, String> genresMap,
-    @required Map<String, String> languagesMap,
-    @required Map<String, String> timesMap,
-    @required Option<Either<DatabaseFailure, DatabaseSuccess>> databaseFailureOrSuccessOption,
+    @required
+        Option<Either<DatabaseFailure, SeriesDatabaseSuccess>>
+            seriesDatabaseFailureOrSuccessOption,
     @required String genreFilterKey,
     @required String languageFilterKey,
     @required String timeFilterKey,
   }) = _HomeDatabaseState;
 
+  /// @nodoc
   factory HomeDatabaseState.initial() => HomeDatabaseState(
         areFiltersApplied: true,
-        databaseFailureOrSuccessOption: none(),
         filters: <String, dynamic>{},
         genreFilterKey: '',
-        genresMap: <String, String>{},
         isLoading: false,
         languageFilterKey: '',
-        languagesMap: <String, String>{},
-        newSeriesMinified: <SeriesMinified>[],
+        layoutDataUpdated: <bool>[],
+        newSeriesList: <Series>[],
+        seriesDatabaseFailureOrSuccessOption: none(),
         timeFilterKey: 'today',
-        timesMap: <String, String>{},
-        topFiveSeriesMinified: <SeriesMinified>[],
-        topSeriesMinified: <SeriesMinified>[],
+        topFiveSeriesList: <Series>[],
+        topSeriesList: <Series>[],
       );
 }

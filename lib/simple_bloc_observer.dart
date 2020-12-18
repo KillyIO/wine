@@ -1,6 +1,7 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:logger/logger.dart';
 
+/// @nodoc
 class SimpleBlocObserver extends BlocObserver {
   final Logger _logger = Logger();
 
@@ -23,8 +24,8 @@ class SimpleBlocObserver extends BlocObserver {
   }
 
   @override
-  void onError(Cubit cubit, Object error, StackTrace stacktrace) {
-    _logger.e('error: $error, stacktrace: $stacktrace');
-    super.onError(cubit, error, stacktrace);
+  void onError(Cubit cubit, Object error, StackTrace stackTrace) {
+    _logger.e('error: $error, stackTrace: $stackTrace');
+    super.onError(cubit, error, stackTrace);
   }
 }

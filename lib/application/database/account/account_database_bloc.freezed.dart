@@ -9,98 +9,203 @@ part of 'account_database_bloc.dart';
 
 T _$identity<T>(T value) => value;
 
+/// @nodoc
 class _$AccountDatabaseEventTearOff {
   const _$AccountDatabaseEventTearOff();
 
 // ignore: unused_element
-  AccountPageLaunchedEVT accountPageLaunchedEVT(
-      {@required BuildContext context}) {
-    return AccountPageLaunchedEVT(
-      context: context,
+  AccountLaunchedEVT accountLaunchedEVT() {
+    return const AccountLaunchedEVT();
+  }
+
+// ignore: unused_element
+  ChapterDraftDeletedEVT chapterDraftDeletedEVT(
+      {String chapterDraftUID, String seriesDraftUID}) {
+    return ChapterDraftDeletedEVT(
+      chapterDraftUID: chapterDraftUID,
+      seriesDraftUID: seriesDraftUID,
     );
   }
 
 // ignore: unused_element
-  ChapterTileHeldEVT chapterTileHeldEVT(String seriesUid) {
+  ChapterDraftSavedEVT chapterDraftSavedEVT(Chapter chapterDraft) {
+    return ChapterDraftSavedEVT(
+      chapterDraft,
+    );
+  }
+
+// ignore: unused_element
+  ChapterPublishedEVT chapterPublishedEVT(Chapter chapter) {
+    return ChapterPublishedEVT(
+      chapter,
+    );
+  }
+
+// ignore: unused_element
+  ChapterTileHeldEVT chapterTileHeldEVT(String seriesUID) {
     return ChapterTileHeldEVT(
-      seriesUid,
+      seriesUID,
     );
   }
 
 // ignore: unused_element
-  LoadMoreChaptersMinifiedEVT loadMoreChaptersMinifiedEVT() {
-    return const LoadMoreChaptersMinifiedEVT();
+  IndexChangedToChapterBookmarkedEVT indexChangedToChapterBookmarkedEVT() {
+    return const IndexChangedToChapterBookmarkedEVT();
   }
 
 // ignore: unused_element
-  LoadMoreSeriesMinifiedEVT loadMoreSeriesMinifiedEVT() {
-    return const LoadMoreSeriesMinifiedEVT();
+  IndexChangedToChapterDraftsEVT indexChangedToChapterDraftsEVT() {
+    return const IndexChangedToChapterDraftsEVT();
   }
 
 // ignore: unused_element
-  SeriesMinifiedLoadedEVT seriesMinifiedLoadedEVT() {
-    return const SeriesMinifiedLoadedEVT();
+  IndexChangedToChapterPublishedEVT indexChangedToChapterPublishedEVT() {
+    return const IndexChangedToChapterPublishedEVT();
   }
 
 // ignore: unused_element
-  SessionFetchedEVT sessionFetchedEVT({Session session}) {
-    return SessionFetchedEVT(
-      session: session,
+  IndexChangedToSeriesBookmarkedEVT indexChangedToSeriesBookmarkedEVT() {
+    return const IndexChangedToSeriesBookmarkedEVT();
+  }
+
+// ignore: unused_element
+  IndexChangedToSeriesDraftsEVT indexChangedToSeriesDraftsEVT() {
+    return const IndexChangedToSeriesDraftsEVT();
+  }
+
+// ignore: unused_element
+  IndexChangedToSeriesPublishedEVT indexChangedToSeriesPublishedEVT() {
+    return const IndexChangedToSeriesPublishedEVT();
+  }
+
+// ignore: unused_element
+  SeriesDraftDeletedEVT seriesDraftDeletedEVT(String seriesDraftUID) {
+    return SeriesDraftDeletedEVT(
+      seriesDraftUID,
+    );
+  }
+
+// ignore: unused_element
+  SeriesDraftSavedEVT seriesDraftSavedEVT(Series seriesDraft) {
+    return SeriesDraftSavedEVT(
+      seriesDraft,
+    );
+  }
+
+// ignore: unused_element
+  SeriesPublishedEVT seriesPublishedEVT(Series series) {
+    return SeriesPublishedEVT(
+      series,
     );
   }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $AccountDatabaseEvent = _$AccountDatabaseEventTearOff();
 
+/// @nodoc
 mixin _$AccountDatabaseEvent {
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result accountPageLaunchedEVT(BuildContext context),
-    @required Result chapterTileHeldEVT(String seriesUid),
-    @required Result loadMoreChaptersMinifiedEVT(),
-    @required Result loadMoreSeriesMinifiedEVT(),
-    @required Result seriesMinifiedLoadedEVT(),
-    @required Result sessionFetchedEVT(Session session),
-  });
-  @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result accountPageLaunchedEVT(BuildContext context),
-    Result chapterTileHeldEVT(String seriesUid),
-    Result loadMoreChaptersMinifiedEVT(),
-    Result loadMoreSeriesMinifiedEVT(),
-    Result seriesMinifiedLoadedEVT(),
-    Result sessionFetchedEVT(Session session),
-    @required Result orElse(),
-  });
-  @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result accountPageLaunchedEVT(AccountPageLaunchedEVT value),
-    @required Result chapterTileHeldEVT(ChapterTileHeldEVT value),
+  TResult when<TResult extends Object>({
+    @required TResult accountLaunchedEVT(),
     @required
-        Result loadMoreChaptersMinifiedEVT(LoadMoreChaptersMinifiedEVT value),
-    @required Result loadMoreSeriesMinifiedEVT(LoadMoreSeriesMinifiedEVT value),
-    @required Result seriesMinifiedLoadedEVT(SeriesMinifiedLoadedEVT value),
-    @required Result sessionFetchedEVT(SessionFetchedEVT value),
+        TResult chapterDraftDeletedEVT(
+            String chapterDraftUID, String seriesDraftUID),
+    @required TResult chapterDraftSavedEVT(Chapter chapterDraft),
+    @required TResult chapterPublishedEVT(Chapter chapter),
+    @required TResult chapterTileHeldEVT(String seriesUID),
+    @required TResult indexChangedToChapterBookmarkedEVT(),
+    @required TResult indexChangedToChapterDraftsEVT(),
+    @required TResult indexChangedToChapterPublishedEVT(),
+    @required TResult indexChangedToSeriesBookmarkedEVT(),
+    @required TResult indexChangedToSeriesDraftsEVT(),
+    @required TResult indexChangedToSeriesPublishedEVT(),
+    @required TResult seriesDraftDeletedEVT(String seriesDraftUID),
+    @required TResult seriesDraftSavedEVT(Series seriesDraft),
+    @required TResult seriesPublishedEVT(Series series),
   });
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result accountPageLaunchedEVT(AccountPageLaunchedEVT value),
-    Result chapterTileHeldEVT(ChapterTileHeldEVT value),
-    Result loadMoreChaptersMinifiedEVT(LoadMoreChaptersMinifiedEVT value),
-    Result loadMoreSeriesMinifiedEVT(LoadMoreSeriesMinifiedEVT value),
-    Result seriesMinifiedLoadedEVT(SeriesMinifiedLoadedEVT value),
-    Result sessionFetchedEVT(SessionFetchedEVT value),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult accountLaunchedEVT(),
+    TResult chapterDraftDeletedEVT(
+        String chapterDraftUID, String seriesDraftUID),
+    TResult chapterDraftSavedEVT(Chapter chapterDraft),
+    TResult chapterPublishedEVT(Chapter chapter),
+    TResult chapterTileHeldEVT(String seriesUID),
+    TResult indexChangedToChapterBookmarkedEVT(),
+    TResult indexChangedToChapterDraftsEVT(),
+    TResult indexChangedToChapterPublishedEVT(),
+    TResult indexChangedToSeriesBookmarkedEVT(),
+    TResult indexChangedToSeriesDraftsEVT(),
+    TResult indexChangedToSeriesPublishedEVT(),
+    TResult seriesDraftDeletedEVT(String seriesDraftUID),
+    TResult seriesDraftSavedEVT(Series seriesDraft),
+    TResult seriesPublishedEVT(Series series),
+    @required TResult orElse(),
+  });
+  @optionalTypeArgs
+  TResult map<TResult extends Object>({
+    @required TResult accountLaunchedEVT(AccountLaunchedEVT value),
+    @required TResult chapterDraftDeletedEVT(ChapterDraftDeletedEVT value),
+    @required TResult chapterDraftSavedEVT(ChapterDraftSavedEVT value),
+    @required TResult chapterPublishedEVT(ChapterPublishedEVT value),
+    @required TResult chapterTileHeldEVT(ChapterTileHeldEVT value),
+    @required
+        TResult indexChangedToChapterBookmarkedEVT(
+            IndexChangedToChapterBookmarkedEVT value),
+    @required
+        TResult indexChangedToChapterDraftsEVT(
+            IndexChangedToChapterDraftsEVT value),
+    @required
+        TResult indexChangedToChapterPublishedEVT(
+            IndexChangedToChapterPublishedEVT value),
+    @required
+        TResult indexChangedToSeriesBookmarkedEVT(
+            IndexChangedToSeriesBookmarkedEVT value),
+    @required
+        TResult indexChangedToSeriesDraftsEVT(
+            IndexChangedToSeriesDraftsEVT value),
+    @required
+        TResult indexChangedToSeriesPublishedEVT(
+            IndexChangedToSeriesPublishedEVT value),
+    @required TResult seriesDraftDeletedEVT(SeriesDraftDeletedEVT value),
+    @required TResult seriesDraftSavedEVT(SeriesDraftSavedEVT value),
+    @required TResult seriesPublishedEVT(SeriesPublishedEVT value),
+  });
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object>({
+    TResult accountLaunchedEVT(AccountLaunchedEVT value),
+    TResult chapterDraftDeletedEVT(ChapterDraftDeletedEVT value),
+    TResult chapterDraftSavedEVT(ChapterDraftSavedEVT value),
+    TResult chapterPublishedEVT(ChapterPublishedEVT value),
+    TResult chapterTileHeldEVT(ChapterTileHeldEVT value),
+    TResult indexChangedToChapterBookmarkedEVT(
+        IndexChangedToChapterBookmarkedEVT value),
+    TResult indexChangedToChapterDraftsEVT(
+        IndexChangedToChapterDraftsEVT value),
+    TResult indexChangedToChapterPublishedEVT(
+        IndexChangedToChapterPublishedEVT value),
+    TResult indexChangedToSeriesBookmarkedEVT(
+        IndexChangedToSeriesBookmarkedEVT value),
+    TResult indexChangedToSeriesDraftsEVT(IndexChangedToSeriesDraftsEVT value),
+    TResult indexChangedToSeriesPublishedEVT(
+        IndexChangedToSeriesPublishedEVT value),
+    TResult seriesDraftDeletedEVT(SeriesDraftDeletedEVT value),
+    TResult seriesDraftSavedEVT(SeriesDraftSavedEVT value),
+    TResult seriesPublishedEVT(SeriesPublishedEVT value),
+    @required TResult orElse(),
   });
 }
 
+/// @nodoc
 abstract class $AccountDatabaseEventCopyWith<$Res> {
   factory $AccountDatabaseEventCopyWith(AccountDatabaseEvent value,
           $Res Function(AccountDatabaseEvent) then) =
       _$AccountDatabaseEventCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$AccountDatabaseEventCopyWithImpl<$Res>
     implements $AccountDatabaseEventCopyWith<$Res> {
   _$AccountDatabaseEventCopyWithImpl(this._value, this._then);
@@ -110,45 +215,34 @@ class _$AccountDatabaseEventCopyWithImpl<$Res>
   final $Res Function(AccountDatabaseEvent) _then;
 }
 
-abstract class $AccountPageLaunchedEVTCopyWith<$Res> {
-  factory $AccountPageLaunchedEVTCopyWith(AccountPageLaunchedEVT value,
-          $Res Function(AccountPageLaunchedEVT) then) =
-      _$AccountPageLaunchedEVTCopyWithImpl<$Res>;
-  $Res call({BuildContext context});
+/// @nodoc
+abstract class $AccountLaunchedEVTCopyWith<$Res> {
+  factory $AccountLaunchedEVTCopyWith(
+          AccountLaunchedEVT value, $Res Function(AccountLaunchedEVT) then) =
+      _$AccountLaunchedEVTCopyWithImpl<$Res>;
 }
 
-class _$AccountPageLaunchedEVTCopyWithImpl<$Res>
+/// @nodoc
+class _$AccountLaunchedEVTCopyWithImpl<$Res>
     extends _$AccountDatabaseEventCopyWithImpl<$Res>
-    implements $AccountPageLaunchedEVTCopyWith<$Res> {
-  _$AccountPageLaunchedEVTCopyWithImpl(AccountPageLaunchedEVT _value,
-      $Res Function(AccountPageLaunchedEVT) _then)
-      : super(_value, (v) => _then(v as AccountPageLaunchedEVT));
+    implements $AccountLaunchedEVTCopyWith<$Res> {
+  _$AccountLaunchedEVTCopyWithImpl(
+      AccountLaunchedEVT _value, $Res Function(AccountLaunchedEVT) _then)
+      : super(_value, (v) => _then(v as AccountLaunchedEVT));
 
   @override
-  AccountPageLaunchedEVT get _value => super._value as AccountPageLaunchedEVT;
-
-  @override
-  $Res call({
-    Object context = freezed,
-  }) {
-    return _then(AccountPageLaunchedEVT(
-      context: context == freezed ? _value.context : context as BuildContext,
-    ));
-  }
+  AccountLaunchedEVT get _value => super._value as AccountLaunchedEVT;
 }
 
-class _$AccountPageLaunchedEVT
+/// @nodoc
+class _$AccountLaunchedEVT
     with DiagnosticableTreeMixin
-    implements AccountPageLaunchedEVT {
-  const _$AccountPageLaunchedEVT({@required this.context})
-      : assert(context != null);
-
-  @override
-  final BuildContext context;
+    implements AccountLaunchedEVT {
+  const _$AccountLaunchedEVT();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'AccountDatabaseEvent.accountPageLaunchedEVT(context: $context)';
+    return 'AccountDatabaseEvent.accountLaunchedEVT()';
   }
 
   @override
@@ -156,118 +250,850 @@ class _$AccountPageLaunchedEVT
     super.debugFillProperties(properties);
     properties
       ..add(DiagnosticsProperty(
-          'type', 'AccountDatabaseEvent.accountPageLaunchedEVT'))
-      ..add(DiagnosticsProperty('context', context));
+          'type', 'AccountDatabaseEvent.accountLaunchedEVT'));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is AccountLaunchedEVT);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object>({
+    @required TResult accountLaunchedEVT(),
+    @required
+        TResult chapterDraftDeletedEVT(
+            String chapterDraftUID, String seriesDraftUID),
+    @required TResult chapterDraftSavedEVT(Chapter chapterDraft),
+    @required TResult chapterPublishedEVT(Chapter chapter),
+    @required TResult chapterTileHeldEVT(String seriesUID),
+    @required TResult indexChangedToChapterBookmarkedEVT(),
+    @required TResult indexChangedToChapterDraftsEVT(),
+    @required TResult indexChangedToChapterPublishedEVT(),
+    @required TResult indexChangedToSeriesBookmarkedEVT(),
+    @required TResult indexChangedToSeriesDraftsEVT(),
+    @required TResult indexChangedToSeriesPublishedEVT(),
+    @required TResult seriesDraftDeletedEVT(String seriesDraftUID),
+    @required TResult seriesDraftSavedEVT(Series seriesDraft),
+    @required TResult seriesPublishedEVT(Series series),
+  }) {
+    assert(accountLaunchedEVT != null);
+    assert(chapterDraftDeletedEVT != null);
+    assert(chapterDraftSavedEVT != null);
+    assert(chapterPublishedEVT != null);
+    assert(chapterTileHeldEVT != null);
+    assert(indexChangedToChapterBookmarkedEVT != null);
+    assert(indexChangedToChapterDraftsEVT != null);
+    assert(indexChangedToChapterPublishedEVT != null);
+    assert(indexChangedToSeriesBookmarkedEVT != null);
+    assert(indexChangedToSeriesDraftsEVT != null);
+    assert(indexChangedToSeriesPublishedEVT != null);
+    assert(seriesDraftDeletedEVT != null);
+    assert(seriesDraftSavedEVT != null);
+    assert(seriesPublishedEVT != null);
+    return accountLaunchedEVT();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object>({
+    TResult accountLaunchedEVT(),
+    TResult chapterDraftDeletedEVT(
+        String chapterDraftUID, String seriesDraftUID),
+    TResult chapterDraftSavedEVT(Chapter chapterDraft),
+    TResult chapterPublishedEVT(Chapter chapter),
+    TResult chapterTileHeldEVT(String seriesUID),
+    TResult indexChangedToChapterBookmarkedEVT(),
+    TResult indexChangedToChapterDraftsEVT(),
+    TResult indexChangedToChapterPublishedEVT(),
+    TResult indexChangedToSeriesBookmarkedEVT(),
+    TResult indexChangedToSeriesDraftsEVT(),
+    TResult indexChangedToSeriesPublishedEVT(),
+    TResult seriesDraftDeletedEVT(String seriesDraftUID),
+    TResult seriesDraftSavedEVT(Series seriesDraft),
+    TResult seriesPublishedEVT(Series series),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (accountLaunchedEVT != null) {
+      return accountLaunchedEVT();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object>({
+    @required TResult accountLaunchedEVT(AccountLaunchedEVT value),
+    @required TResult chapterDraftDeletedEVT(ChapterDraftDeletedEVT value),
+    @required TResult chapterDraftSavedEVT(ChapterDraftSavedEVT value),
+    @required TResult chapterPublishedEVT(ChapterPublishedEVT value),
+    @required TResult chapterTileHeldEVT(ChapterTileHeldEVT value),
+    @required
+        TResult indexChangedToChapterBookmarkedEVT(
+            IndexChangedToChapterBookmarkedEVT value),
+    @required
+        TResult indexChangedToChapterDraftsEVT(
+            IndexChangedToChapterDraftsEVT value),
+    @required
+        TResult indexChangedToChapterPublishedEVT(
+            IndexChangedToChapterPublishedEVT value),
+    @required
+        TResult indexChangedToSeriesBookmarkedEVT(
+            IndexChangedToSeriesBookmarkedEVT value),
+    @required
+        TResult indexChangedToSeriesDraftsEVT(
+            IndexChangedToSeriesDraftsEVT value),
+    @required
+        TResult indexChangedToSeriesPublishedEVT(
+            IndexChangedToSeriesPublishedEVT value),
+    @required TResult seriesDraftDeletedEVT(SeriesDraftDeletedEVT value),
+    @required TResult seriesDraftSavedEVT(SeriesDraftSavedEVT value),
+    @required TResult seriesPublishedEVT(SeriesPublishedEVT value),
+  }) {
+    assert(accountLaunchedEVT != null);
+    assert(chapterDraftDeletedEVT != null);
+    assert(chapterDraftSavedEVT != null);
+    assert(chapterPublishedEVT != null);
+    assert(chapterTileHeldEVT != null);
+    assert(indexChangedToChapterBookmarkedEVT != null);
+    assert(indexChangedToChapterDraftsEVT != null);
+    assert(indexChangedToChapterPublishedEVT != null);
+    assert(indexChangedToSeriesBookmarkedEVT != null);
+    assert(indexChangedToSeriesDraftsEVT != null);
+    assert(indexChangedToSeriesPublishedEVT != null);
+    assert(seriesDraftDeletedEVT != null);
+    assert(seriesDraftSavedEVT != null);
+    assert(seriesPublishedEVT != null);
+    return accountLaunchedEVT(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object>({
+    TResult accountLaunchedEVT(AccountLaunchedEVT value),
+    TResult chapterDraftDeletedEVT(ChapterDraftDeletedEVT value),
+    TResult chapterDraftSavedEVT(ChapterDraftSavedEVT value),
+    TResult chapterPublishedEVT(ChapterPublishedEVT value),
+    TResult chapterTileHeldEVT(ChapterTileHeldEVT value),
+    TResult indexChangedToChapterBookmarkedEVT(
+        IndexChangedToChapterBookmarkedEVT value),
+    TResult indexChangedToChapterDraftsEVT(
+        IndexChangedToChapterDraftsEVT value),
+    TResult indexChangedToChapterPublishedEVT(
+        IndexChangedToChapterPublishedEVT value),
+    TResult indexChangedToSeriesBookmarkedEVT(
+        IndexChangedToSeriesBookmarkedEVT value),
+    TResult indexChangedToSeriesDraftsEVT(IndexChangedToSeriesDraftsEVT value),
+    TResult indexChangedToSeriesPublishedEVT(
+        IndexChangedToSeriesPublishedEVT value),
+    TResult seriesDraftDeletedEVT(SeriesDraftDeletedEVT value),
+    TResult seriesDraftSavedEVT(SeriesDraftSavedEVT value),
+    TResult seriesPublishedEVT(SeriesPublishedEVT value),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (accountLaunchedEVT != null) {
+      return accountLaunchedEVT(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class AccountLaunchedEVT implements AccountDatabaseEvent {
+  const factory AccountLaunchedEVT() = _$AccountLaunchedEVT;
+}
+
+/// @nodoc
+abstract class $ChapterDraftDeletedEVTCopyWith<$Res> {
+  factory $ChapterDraftDeletedEVTCopyWith(ChapterDraftDeletedEVT value,
+          $Res Function(ChapterDraftDeletedEVT) then) =
+      _$ChapterDraftDeletedEVTCopyWithImpl<$Res>;
+  $Res call({String chapterDraftUID, String seriesDraftUID});
+}
+
+/// @nodoc
+class _$ChapterDraftDeletedEVTCopyWithImpl<$Res>
+    extends _$AccountDatabaseEventCopyWithImpl<$Res>
+    implements $ChapterDraftDeletedEVTCopyWith<$Res> {
+  _$ChapterDraftDeletedEVTCopyWithImpl(ChapterDraftDeletedEVT _value,
+      $Res Function(ChapterDraftDeletedEVT) _then)
+      : super(_value, (v) => _then(v as ChapterDraftDeletedEVT));
+
+  @override
+  ChapterDraftDeletedEVT get _value => super._value as ChapterDraftDeletedEVT;
+
+  @override
+  $Res call({
+    Object chapterDraftUID = freezed,
+    Object seriesDraftUID = freezed,
+  }) {
+    return _then(ChapterDraftDeletedEVT(
+      chapterDraftUID: chapterDraftUID == freezed
+          ? _value.chapterDraftUID
+          : chapterDraftUID as String,
+      seriesDraftUID: seriesDraftUID == freezed
+          ? _value.seriesDraftUID
+          : seriesDraftUID as String,
+    ));
+  }
+}
+
+/// @nodoc
+class _$ChapterDraftDeletedEVT
+    with DiagnosticableTreeMixin
+    implements ChapterDraftDeletedEVT {
+  const _$ChapterDraftDeletedEVT({this.chapterDraftUID, this.seriesDraftUID});
+
+  @override
+  final String chapterDraftUID;
+  @override
+  final String seriesDraftUID;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'AccountDatabaseEvent.chapterDraftDeletedEVT(chapterDraftUID: $chapterDraftUID, seriesDraftUID: $seriesDraftUID)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty(
+          'type', 'AccountDatabaseEvent.chapterDraftDeletedEVT'))
+      ..add(DiagnosticsProperty('chapterDraftUID', chapterDraftUID))
+      ..add(DiagnosticsProperty('seriesDraftUID', seriesDraftUID));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is AccountPageLaunchedEVT &&
-            (identical(other.context, context) ||
-                const DeepCollectionEquality().equals(other.context, context)));
+        (other is ChapterDraftDeletedEVT &&
+            (identical(other.chapterDraftUID, chapterDraftUID) ||
+                const DeepCollectionEquality()
+                    .equals(other.chapterDraftUID, chapterDraftUID)) &&
+            (identical(other.seriesDraftUID, seriesDraftUID) ||
+                const DeepCollectionEquality()
+                    .equals(other.seriesDraftUID, seriesDraftUID)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(context);
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(chapterDraftUID) ^
+      const DeepCollectionEquality().hash(seriesDraftUID);
 
   @override
-  $AccountPageLaunchedEVTCopyWith<AccountPageLaunchedEVT> get copyWith =>
-      _$AccountPageLaunchedEVTCopyWithImpl<AccountPageLaunchedEVT>(
+  $ChapterDraftDeletedEVTCopyWith<ChapterDraftDeletedEVT> get copyWith =>
+      _$ChapterDraftDeletedEVTCopyWithImpl<ChapterDraftDeletedEVT>(
           this, _$identity);
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result accountPageLaunchedEVT(BuildContext context),
-    @required Result chapterTileHeldEVT(String seriesUid),
-    @required Result loadMoreChaptersMinifiedEVT(),
-    @required Result loadMoreSeriesMinifiedEVT(),
-    @required Result seriesMinifiedLoadedEVT(),
-    @required Result sessionFetchedEVT(Session session),
-  }) {
-    assert(accountPageLaunchedEVT != null);
-    assert(chapterTileHeldEVT != null);
-    assert(loadMoreChaptersMinifiedEVT != null);
-    assert(loadMoreSeriesMinifiedEVT != null);
-    assert(seriesMinifiedLoadedEVT != null);
-    assert(sessionFetchedEVT != null);
-    return accountPageLaunchedEVT(context);
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result accountPageLaunchedEVT(BuildContext context),
-    Result chapterTileHeldEVT(String seriesUid),
-    Result loadMoreChaptersMinifiedEVT(),
-    Result loadMoreSeriesMinifiedEVT(),
-    Result seriesMinifiedLoadedEVT(),
-    Result sessionFetchedEVT(Session session),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (accountPageLaunchedEVT != null) {
-      return accountPageLaunchedEVT(context);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result accountPageLaunchedEVT(AccountPageLaunchedEVT value),
-    @required Result chapterTileHeldEVT(ChapterTileHeldEVT value),
+  TResult when<TResult extends Object>({
+    @required TResult accountLaunchedEVT(),
     @required
-        Result loadMoreChaptersMinifiedEVT(LoadMoreChaptersMinifiedEVT value),
-    @required Result loadMoreSeriesMinifiedEVT(LoadMoreSeriesMinifiedEVT value),
-    @required Result seriesMinifiedLoadedEVT(SeriesMinifiedLoadedEVT value),
-    @required Result sessionFetchedEVT(SessionFetchedEVT value),
+        TResult chapterDraftDeletedEVT(
+            String chapterDraftUID, String seriesDraftUID),
+    @required TResult chapterDraftSavedEVT(Chapter chapterDraft),
+    @required TResult chapterPublishedEVT(Chapter chapter),
+    @required TResult chapterTileHeldEVT(String seriesUID),
+    @required TResult indexChangedToChapterBookmarkedEVT(),
+    @required TResult indexChangedToChapterDraftsEVT(),
+    @required TResult indexChangedToChapterPublishedEVT(),
+    @required TResult indexChangedToSeriesBookmarkedEVT(),
+    @required TResult indexChangedToSeriesDraftsEVT(),
+    @required TResult indexChangedToSeriesPublishedEVT(),
+    @required TResult seriesDraftDeletedEVT(String seriesDraftUID),
+    @required TResult seriesDraftSavedEVT(Series seriesDraft),
+    @required TResult seriesPublishedEVT(Series series),
   }) {
-    assert(accountPageLaunchedEVT != null);
+    assert(accountLaunchedEVT != null);
+    assert(chapterDraftDeletedEVT != null);
+    assert(chapterDraftSavedEVT != null);
+    assert(chapterPublishedEVT != null);
     assert(chapterTileHeldEVT != null);
-    assert(loadMoreChaptersMinifiedEVT != null);
-    assert(loadMoreSeriesMinifiedEVT != null);
-    assert(seriesMinifiedLoadedEVT != null);
-    assert(sessionFetchedEVT != null);
-    return accountPageLaunchedEVT(this);
+    assert(indexChangedToChapterBookmarkedEVT != null);
+    assert(indexChangedToChapterDraftsEVT != null);
+    assert(indexChangedToChapterPublishedEVT != null);
+    assert(indexChangedToSeriesBookmarkedEVT != null);
+    assert(indexChangedToSeriesDraftsEVT != null);
+    assert(indexChangedToSeriesPublishedEVT != null);
+    assert(seriesDraftDeletedEVT != null);
+    assert(seriesDraftSavedEVT != null);
+    assert(seriesPublishedEVT != null);
+    return chapterDraftDeletedEVT(chapterDraftUID, seriesDraftUID);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result accountPageLaunchedEVT(AccountPageLaunchedEVT value),
-    Result chapterTileHeldEVT(ChapterTileHeldEVT value),
-    Result loadMoreChaptersMinifiedEVT(LoadMoreChaptersMinifiedEVT value),
-    Result loadMoreSeriesMinifiedEVT(LoadMoreSeriesMinifiedEVT value),
-    Result seriesMinifiedLoadedEVT(SeriesMinifiedLoadedEVT value),
-    Result sessionFetchedEVT(SessionFetchedEVT value),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult accountLaunchedEVT(),
+    TResult chapterDraftDeletedEVT(
+        String chapterDraftUID, String seriesDraftUID),
+    TResult chapterDraftSavedEVT(Chapter chapterDraft),
+    TResult chapterPublishedEVT(Chapter chapter),
+    TResult chapterTileHeldEVT(String seriesUID),
+    TResult indexChangedToChapterBookmarkedEVT(),
+    TResult indexChangedToChapterDraftsEVT(),
+    TResult indexChangedToChapterPublishedEVT(),
+    TResult indexChangedToSeriesBookmarkedEVT(),
+    TResult indexChangedToSeriesDraftsEVT(),
+    TResult indexChangedToSeriesPublishedEVT(),
+    TResult seriesDraftDeletedEVT(String seriesDraftUID),
+    TResult seriesDraftSavedEVT(Series seriesDraft),
+    TResult seriesPublishedEVT(Series series),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (accountPageLaunchedEVT != null) {
-      return accountPageLaunchedEVT(this);
+    if (chapterDraftDeletedEVT != null) {
+      return chapterDraftDeletedEVT(chapterDraftUID, seriesDraftUID);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object>({
+    @required TResult accountLaunchedEVT(AccountLaunchedEVT value),
+    @required TResult chapterDraftDeletedEVT(ChapterDraftDeletedEVT value),
+    @required TResult chapterDraftSavedEVT(ChapterDraftSavedEVT value),
+    @required TResult chapterPublishedEVT(ChapterPublishedEVT value),
+    @required TResult chapterTileHeldEVT(ChapterTileHeldEVT value),
+    @required
+        TResult indexChangedToChapterBookmarkedEVT(
+            IndexChangedToChapterBookmarkedEVT value),
+    @required
+        TResult indexChangedToChapterDraftsEVT(
+            IndexChangedToChapterDraftsEVT value),
+    @required
+        TResult indexChangedToChapterPublishedEVT(
+            IndexChangedToChapterPublishedEVT value),
+    @required
+        TResult indexChangedToSeriesBookmarkedEVT(
+            IndexChangedToSeriesBookmarkedEVT value),
+    @required
+        TResult indexChangedToSeriesDraftsEVT(
+            IndexChangedToSeriesDraftsEVT value),
+    @required
+        TResult indexChangedToSeriesPublishedEVT(
+            IndexChangedToSeriesPublishedEVT value),
+    @required TResult seriesDraftDeletedEVT(SeriesDraftDeletedEVT value),
+    @required TResult seriesDraftSavedEVT(SeriesDraftSavedEVT value),
+    @required TResult seriesPublishedEVT(SeriesPublishedEVT value),
+  }) {
+    assert(accountLaunchedEVT != null);
+    assert(chapterDraftDeletedEVT != null);
+    assert(chapterDraftSavedEVT != null);
+    assert(chapterPublishedEVT != null);
+    assert(chapterTileHeldEVT != null);
+    assert(indexChangedToChapterBookmarkedEVT != null);
+    assert(indexChangedToChapterDraftsEVT != null);
+    assert(indexChangedToChapterPublishedEVT != null);
+    assert(indexChangedToSeriesBookmarkedEVT != null);
+    assert(indexChangedToSeriesDraftsEVT != null);
+    assert(indexChangedToSeriesPublishedEVT != null);
+    assert(seriesDraftDeletedEVT != null);
+    assert(seriesDraftSavedEVT != null);
+    assert(seriesPublishedEVT != null);
+    return chapterDraftDeletedEVT(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object>({
+    TResult accountLaunchedEVT(AccountLaunchedEVT value),
+    TResult chapterDraftDeletedEVT(ChapterDraftDeletedEVT value),
+    TResult chapterDraftSavedEVT(ChapterDraftSavedEVT value),
+    TResult chapterPublishedEVT(ChapterPublishedEVT value),
+    TResult chapterTileHeldEVT(ChapterTileHeldEVT value),
+    TResult indexChangedToChapterBookmarkedEVT(
+        IndexChangedToChapterBookmarkedEVT value),
+    TResult indexChangedToChapterDraftsEVT(
+        IndexChangedToChapterDraftsEVT value),
+    TResult indexChangedToChapterPublishedEVT(
+        IndexChangedToChapterPublishedEVT value),
+    TResult indexChangedToSeriesBookmarkedEVT(
+        IndexChangedToSeriesBookmarkedEVT value),
+    TResult indexChangedToSeriesDraftsEVT(IndexChangedToSeriesDraftsEVT value),
+    TResult indexChangedToSeriesPublishedEVT(
+        IndexChangedToSeriesPublishedEVT value),
+    TResult seriesDraftDeletedEVT(SeriesDraftDeletedEVT value),
+    TResult seriesDraftSavedEVT(SeriesDraftSavedEVT value),
+    TResult seriesPublishedEVT(SeriesPublishedEVT value),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (chapterDraftDeletedEVT != null) {
+      return chapterDraftDeletedEVT(this);
     }
     return orElse();
   }
 }
 
-abstract class AccountPageLaunchedEVT implements AccountDatabaseEvent {
-  const factory AccountPageLaunchedEVT({@required BuildContext context}) =
-      _$AccountPageLaunchedEVT;
+abstract class ChapterDraftDeletedEVT implements AccountDatabaseEvent {
+  const factory ChapterDraftDeletedEVT(
+      {String chapterDraftUID,
+      String seriesDraftUID}) = _$ChapterDraftDeletedEVT;
 
-  BuildContext get context;
-  $AccountPageLaunchedEVTCopyWith<AccountPageLaunchedEVT> get copyWith;
+  String get chapterDraftUID;
+  String get seriesDraftUID;
+  $ChapterDraftDeletedEVTCopyWith<ChapterDraftDeletedEVT> get copyWith;
 }
 
+/// @nodoc
+abstract class $ChapterDraftSavedEVTCopyWith<$Res> {
+  factory $ChapterDraftSavedEVTCopyWith(ChapterDraftSavedEVT value,
+          $Res Function(ChapterDraftSavedEVT) then) =
+      _$ChapterDraftSavedEVTCopyWithImpl<$Res>;
+  $Res call({Chapter chapterDraft});
+}
+
+/// @nodoc
+class _$ChapterDraftSavedEVTCopyWithImpl<$Res>
+    extends _$AccountDatabaseEventCopyWithImpl<$Res>
+    implements $ChapterDraftSavedEVTCopyWith<$Res> {
+  _$ChapterDraftSavedEVTCopyWithImpl(
+      ChapterDraftSavedEVT _value, $Res Function(ChapterDraftSavedEVT) _then)
+      : super(_value, (v) => _then(v as ChapterDraftSavedEVT));
+
+  @override
+  ChapterDraftSavedEVT get _value => super._value as ChapterDraftSavedEVT;
+
+  @override
+  $Res call({
+    Object chapterDraft = freezed,
+  }) {
+    return _then(ChapterDraftSavedEVT(
+      chapterDraft == freezed ? _value.chapterDraft : chapterDraft as Chapter,
+    ));
+  }
+}
+
+/// @nodoc
+class _$ChapterDraftSavedEVT
+    with DiagnosticableTreeMixin
+    implements ChapterDraftSavedEVT {
+  const _$ChapterDraftSavedEVT(this.chapterDraft)
+      : assert(chapterDraft != null);
+
+  @override
+  final Chapter chapterDraft;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'AccountDatabaseEvent.chapterDraftSavedEVT(chapterDraft: $chapterDraft)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty(
+          'type', 'AccountDatabaseEvent.chapterDraftSavedEVT'))
+      ..add(DiagnosticsProperty('chapterDraft', chapterDraft));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is ChapterDraftSavedEVT &&
+            (identical(other.chapterDraft, chapterDraft) ||
+                const DeepCollectionEquality()
+                    .equals(other.chapterDraft, chapterDraft)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(chapterDraft);
+
+  @override
+  $ChapterDraftSavedEVTCopyWith<ChapterDraftSavedEVT> get copyWith =>
+      _$ChapterDraftSavedEVTCopyWithImpl<ChapterDraftSavedEVT>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object>({
+    @required TResult accountLaunchedEVT(),
+    @required
+        TResult chapterDraftDeletedEVT(
+            String chapterDraftUID, String seriesDraftUID),
+    @required TResult chapterDraftSavedEVT(Chapter chapterDraft),
+    @required TResult chapterPublishedEVT(Chapter chapter),
+    @required TResult chapterTileHeldEVT(String seriesUID),
+    @required TResult indexChangedToChapterBookmarkedEVT(),
+    @required TResult indexChangedToChapterDraftsEVT(),
+    @required TResult indexChangedToChapterPublishedEVT(),
+    @required TResult indexChangedToSeriesBookmarkedEVT(),
+    @required TResult indexChangedToSeriesDraftsEVT(),
+    @required TResult indexChangedToSeriesPublishedEVT(),
+    @required TResult seriesDraftDeletedEVT(String seriesDraftUID),
+    @required TResult seriesDraftSavedEVT(Series seriesDraft),
+    @required TResult seriesPublishedEVT(Series series),
+  }) {
+    assert(accountLaunchedEVT != null);
+    assert(chapterDraftDeletedEVT != null);
+    assert(chapterDraftSavedEVT != null);
+    assert(chapterPublishedEVT != null);
+    assert(chapterTileHeldEVT != null);
+    assert(indexChangedToChapterBookmarkedEVT != null);
+    assert(indexChangedToChapterDraftsEVT != null);
+    assert(indexChangedToChapterPublishedEVT != null);
+    assert(indexChangedToSeriesBookmarkedEVT != null);
+    assert(indexChangedToSeriesDraftsEVT != null);
+    assert(indexChangedToSeriesPublishedEVT != null);
+    assert(seriesDraftDeletedEVT != null);
+    assert(seriesDraftSavedEVT != null);
+    assert(seriesPublishedEVT != null);
+    return chapterDraftSavedEVT(chapterDraft);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object>({
+    TResult accountLaunchedEVT(),
+    TResult chapterDraftDeletedEVT(
+        String chapterDraftUID, String seriesDraftUID),
+    TResult chapterDraftSavedEVT(Chapter chapterDraft),
+    TResult chapterPublishedEVT(Chapter chapter),
+    TResult chapterTileHeldEVT(String seriesUID),
+    TResult indexChangedToChapterBookmarkedEVT(),
+    TResult indexChangedToChapterDraftsEVT(),
+    TResult indexChangedToChapterPublishedEVT(),
+    TResult indexChangedToSeriesBookmarkedEVT(),
+    TResult indexChangedToSeriesDraftsEVT(),
+    TResult indexChangedToSeriesPublishedEVT(),
+    TResult seriesDraftDeletedEVT(String seriesDraftUID),
+    TResult seriesDraftSavedEVT(Series seriesDraft),
+    TResult seriesPublishedEVT(Series series),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (chapterDraftSavedEVT != null) {
+      return chapterDraftSavedEVT(chapterDraft);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object>({
+    @required TResult accountLaunchedEVT(AccountLaunchedEVT value),
+    @required TResult chapterDraftDeletedEVT(ChapterDraftDeletedEVT value),
+    @required TResult chapterDraftSavedEVT(ChapterDraftSavedEVT value),
+    @required TResult chapterPublishedEVT(ChapterPublishedEVT value),
+    @required TResult chapterTileHeldEVT(ChapterTileHeldEVT value),
+    @required
+        TResult indexChangedToChapterBookmarkedEVT(
+            IndexChangedToChapterBookmarkedEVT value),
+    @required
+        TResult indexChangedToChapterDraftsEVT(
+            IndexChangedToChapterDraftsEVT value),
+    @required
+        TResult indexChangedToChapterPublishedEVT(
+            IndexChangedToChapterPublishedEVT value),
+    @required
+        TResult indexChangedToSeriesBookmarkedEVT(
+            IndexChangedToSeriesBookmarkedEVT value),
+    @required
+        TResult indexChangedToSeriesDraftsEVT(
+            IndexChangedToSeriesDraftsEVT value),
+    @required
+        TResult indexChangedToSeriesPublishedEVT(
+            IndexChangedToSeriesPublishedEVT value),
+    @required TResult seriesDraftDeletedEVT(SeriesDraftDeletedEVT value),
+    @required TResult seriesDraftSavedEVT(SeriesDraftSavedEVT value),
+    @required TResult seriesPublishedEVT(SeriesPublishedEVT value),
+  }) {
+    assert(accountLaunchedEVT != null);
+    assert(chapterDraftDeletedEVT != null);
+    assert(chapterDraftSavedEVT != null);
+    assert(chapterPublishedEVT != null);
+    assert(chapterTileHeldEVT != null);
+    assert(indexChangedToChapterBookmarkedEVT != null);
+    assert(indexChangedToChapterDraftsEVT != null);
+    assert(indexChangedToChapterPublishedEVT != null);
+    assert(indexChangedToSeriesBookmarkedEVT != null);
+    assert(indexChangedToSeriesDraftsEVT != null);
+    assert(indexChangedToSeriesPublishedEVT != null);
+    assert(seriesDraftDeletedEVT != null);
+    assert(seriesDraftSavedEVT != null);
+    assert(seriesPublishedEVT != null);
+    return chapterDraftSavedEVT(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object>({
+    TResult accountLaunchedEVT(AccountLaunchedEVT value),
+    TResult chapterDraftDeletedEVT(ChapterDraftDeletedEVT value),
+    TResult chapterDraftSavedEVT(ChapterDraftSavedEVT value),
+    TResult chapterPublishedEVT(ChapterPublishedEVT value),
+    TResult chapterTileHeldEVT(ChapterTileHeldEVT value),
+    TResult indexChangedToChapterBookmarkedEVT(
+        IndexChangedToChapterBookmarkedEVT value),
+    TResult indexChangedToChapterDraftsEVT(
+        IndexChangedToChapterDraftsEVT value),
+    TResult indexChangedToChapterPublishedEVT(
+        IndexChangedToChapterPublishedEVT value),
+    TResult indexChangedToSeriesBookmarkedEVT(
+        IndexChangedToSeriesBookmarkedEVT value),
+    TResult indexChangedToSeriesDraftsEVT(IndexChangedToSeriesDraftsEVT value),
+    TResult indexChangedToSeriesPublishedEVT(
+        IndexChangedToSeriesPublishedEVT value),
+    TResult seriesDraftDeletedEVT(SeriesDraftDeletedEVT value),
+    TResult seriesDraftSavedEVT(SeriesDraftSavedEVT value),
+    TResult seriesPublishedEVT(SeriesPublishedEVT value),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (chapterDraftSavedEVT != null) {
+      return chapterDraftSavedEVT(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ChapterDraftSavedEVT implements AccountDatabaseEvent {
+  const factory ChapterDraftSavedEVT(Chapter chapterDraft) =
+      _$ChapterDraftSavedEVT;
+
+  Chapter get chapterDraft;
+  $ChapterDraftSavedEVTCopyWith<ChapterDraftSavedEVT> get copyWith;
+}
+
+/// @nodoc
+abstract class $ChapterPublishedEVTCopyWith<$Res> {
+  factory $ChapterPublishedEVTCopyWith(
+          ChapterPublishedEVT value, $Res Function(ChapterPublishedEVT) then) =
+      _$ChapterPublishedEVTCopyWithImpl<$Res>;
+  $Res call({Chapter chapter});
+}
+
+/// @nodoc
+class _$ChapterPublishedEVTCopyWithImpl<$Res>
+    extends _$AccountDatabaseEventCopyWithImpl<$Res>
+    implements $ChapterPublishedEVTCopyWith<$Res> {
+  _$ChapterPublishedEVTCopyWithImpl(
+      ChapterPublishedEVT _value, $Res Function(ChapterPublishedEVT) _then)
+      : super(_value, (v) => _then(v as ChapterPublishedEVT));
+
+  @override
+  ChapterPublishedEVT get _value => super._value as ChapterPublishedEVT;
+
+  @override
+  $Res call({
+    Object chapter = freezed,
+  }) {
+    return _then(ChapterPublishedEVT(
+      chapter == freezed ? _value.chapter : chapter as Chapter,
+    ));
+  }
+}
+
+/// @nodoc
+class _$ChapterPublishedEVT
+    with DiagnosticableTreeMixin
+    implements ChapterPublishedEVT {
+  const _$ChapterPublishedEVT(this.chapter) : assert(chapter != null);
+
+  @override
+  final Chapter chapter;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'AccountDatabaseEvent.chapterPublishedEVT(chapter: $chapter)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty(
+          'type', 'AccountDatabaseEvent.chapterPublishedEVT'))
+      ..add(DiagnosticsProperty('chapter', chapter));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is ChapterPublishedEVT &&
+            (identical(other.chapter, chapter) ||
+                const DeepCollectionEquality().equals(other.chapter, chapter)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(chapter);
+
+  @override
+  $ChapterPublishedEVTCopyWith<ChapterPublishedEVT> get copyWith =>
+      _$ChapterPublishedEVTCopyWithImpl<ChapterPublishedEVT>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object>({
+    @required TResult accountLaunchedEVT(),
+    @required
+        TResult chapterDraftDeletedEVT(
+            String chapterDraftUID, String seriesDraftUID),
+    @required TResult chapterDraftSavedEVT(Chapter chapterDraft),
+    @required TResult chapterPublishedEVT(Chapter chapter),
+    @required TResult chapterTileHeldEVT(String seriesUID),
+    @required TResult indexChangedToChapterBookmarkedEVT(),
+    @required TResult indexChangedToChapterDraftsEVT(),
+    @required TResult indexChangedToChapterPublishedEVT(),
+    @required TResult indexChangedToSeriesBookmarkedEVT(),
+    @required TResult indexChangedToSeriesDraftsEVT(),
+    @required TResult indexChangedToSeriesPublishedEVT(),
+    @required TResult seriesDraftDeletedEVT(String seriesDraftUID),
+    @required TResult seriesDraftSavedEVT(Series seriesDraft),
+    @required TResult seriesPublishedEVT(Series series),
+  }) {
+    assert(accountLaunchedEVT != null);
+    assert(chapterDraftDeletedEVT != null);
+    assert(chapterDraftSavedEVT != null);
+    assert(chapterPublishedEVT != null);
+    assert(chapterTileHeldEVT != null);
+    assert(indexChangedToChapterBookmarkedEVT != null);
+    assert(indexChangedToChapterDraftsEVT != null);
+    assert(indexChangedToChapterPublishedEVT != null);
+    assert(indexChangedToSeriesBookmarkedEVT != null);
+    assert(indexChangedToSeriesDraftsEVT != null);
+    assert(indexChangedToSeriesPublishedEVT != null);
+    assert(seriesDraftDeletedEVT != null);
+    assert(seriesDraftSavedEVT != null);
+    assert(seriesPublishedEVT != null);
+    return chapterPublishedEVT(chapter);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object>({
+    TResult accountLaunchedEVT(),
+    TResult chapterDraftDeletedEVT(
+        String chapterDraftUID, String seriesDraftUID),
+    TResult chapterDraftSavedEVT(Chapter chapterDraft),
+    TResult chapterPublishedEVT(Chapter chapter),
+    TResult chapterTileHeldEVT(String seriesUID),
+    TResult indexChangedToChapterBookmarkedEVT(),
+    TResult indexChangedToChapterDraftsEVT(),
+    TResult indexChangedToChapterPublishedEVT(),
+    TResult indexChangedToSeriesBookmarkedEVT(),
+    TResult indexChangedToSeriesDraftsEVT(),
+    TResult indexChangedToSeriesPublishedEVT(),
+    TResult seriesDraftDeletedEVT(String seriesDraftUID),
+    TResult seriesDraftSavedEVT(Series seriesDraft),
+    TResult seriesPublishedEVT(Series series),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (chapterPublishedEVT != null) {
+      return chapterPublishedEVT(chapter);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object>({
+    @required TResult accountLaunchedEVT(AccountLaunchedEVT value),
+    @required TResult chapterDraftDeletedEVT(ChapterDraftDeletedEVT value),
+    @required TResult chapterDraftSavedEVT(ChapterDraftSavedEVT value),
+    @required TResult chapterPublishedEVT(ChapterPublishedEVT value),
+    @required TResult chapterTileHeldEVT(ChapterTileHeldEVT value),
+    @required
+        TResult indexChangedToChapterBookmarkedEVT(
+            IndexChangedToChapterBookmarkedEVT value),
+    @required
+        TResult indexChangedToChapterDraftsEVT(
+            IndexChangedToChapterDraftsEVT value),
+    @required
+        TResult indexChangedToChapterPublishedEVT(
+            IndexChangedToChapterPublishedEVT value),
+    @required
+        TResult indexChangedToSeriesBookmarkedEVT(
+            IndexChangedToSeriesBookmarkedEVT value),
+    @required
+        TResult indexChangedToSeriesDraftsEVT(
+            IndexChangedToSeriesDraftsEVT value),
+    @required
+        TResult indexChangedToSeriesPublishedEVT(
+            IndexChangedToSeriesPublishedEVT value),
+    @required TResult seriesDraftDeletedEVT(SeriesDraftDeletedEVT value),
+    @required TResult seriesDraftSavedEVT(SeriesDraftSavedEVT value),
+    @required TResult seriesPublishedEVT(SeriesPublishedEVT value),
+  }) {
+    assert(accountLaunchedEVT != null);
+    assert(chapterDraftDeletedEVT != null);
+    assert(chapterDraftSavedEVT != null);
+    assert(chapterPublishedEVT != null);
+    assert(chapterTileHeldEVT != null);
+    assert(indexChangedToChapterBookmarkedEVT != null);
+    assert(indexChangedToChapterDraftsEVT != null);
+    assert(indexChangedToChapterPublishedEVT != null);
+    assert(indexChangedToSeriesBookmarkedEVT != null);
+    assert(indexChangedToSeriesDraftsEVT != null);
+    assert(indexChangedToSeriesPublishedEVT != null);
+    assert(seriesDraftDeletedEVT != null);
+    assert(seriesDraftSavedEVT != null);
+    assert(seriesPublishedEVT != null);
+    return chapterPublishedEVT(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object>({
+    TResult accountLaunchedEVT(AccountLaunchedEVT value),
+    TResult chapterDraftDeletedEVT(ChapterDraftDeletedEVT value),
+    TResult chapterDraftSavedEVT(ChapterDraftSavedEVT value),
+    TResult chapterPublishedEVT(ChapterPublishedEVT value),
+    TResult chapterTileHeldEVT(ChapterTileHeldEVT value),
+    TResult indexChangedToChapterBookmarkedEVT(
+        IndexChangedToChapterBookmarkedEVT value),
+    TResult indexChangedToChapterDraftsEVT(
+        IndexChangedToChapterDraftsEVT value),
+    TResult indexChangedToChapterPublishedEVT(
+        IndexChangedToChapterPublishedEVT value),
+    TResult indexChangedToSeriesBookmarkedEVT(
+        IndexChangedToSeriesBookmarkedEVT value),
+    TResult indexChangedToSeriesDraftsEVT(IndexChangedToSeriesDraftsEVT value),
+    TResult indexChangedToSeriesPublishedEVT(
+        IndexChangedToSeriesPublishedEVT value),
+    TResult seriesDraftDeletedEVT(SeriesDraftDeletedEVT value),
+    TResult seriesDraftSavedEVT(SeriesDraftSavedEVT value),
+    TResult seriesPublishedEVT(SeriesPublishedEVT value),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (chapterPublishedEVT != null) {
+      return chapterPublishedEVT(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ChapterPublishedEVT implements AccountDatabaseEvent {
+  const factory ChapterPublishedEVT(Chapter chapter) = _$ChapterPublishedEVT;
+
+  Chapter get chapter;
+  $ChapterPublishedEVTCopyWith<ChapterPublishedEVT> get copyWith;
+}
+
+/// @nodoc
 abstract class $ChapterTileHeldEVTCopyWith<$Res> {
   factory $ChapterTileHeldEVTCopyWith(
           ChapterTileHeldEVT value, $Res Function(ChapterTileHeldEVT) then) =
       _$ChapterTileHeldEVTCopyWithImpl<$Res>;
-  $Res call({String seriesUid});
+  $Res call({String seriesUID});
 }
 
+/// @nodoc
 class _$ChapterTileHeldEVTCopyWithImpl<$Res>
     extends _$AccountDatabaseEventCopyWithImpl<$Res>
     implements $ChapterTileHeldEVTCopyWith<$Res> {
@@ -280,25 +1106,26 @@ class _$ChapterTileHeldEVTCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object seriesUid = freezed,
+    Object seriesUID = freezed,
   }) {
     return _then(ChapterTileHeldEVT(
-      seriesUid == freezed ? _value.seriesUid : seriesUid as String,
+      seriesUID == freezed ? _value.seriesUID : seriesUID as String,
     ));
   }
 }
 
+/// @nodoc
 class _$ChapterTileHeldEVT
     with DiagnosticableTreeMixin
     implements ChapterTileHeldEVT {
-  const _$ChapterTileHeldEVT(this.seriesUid) : assert(seriesUid != null);
+  const _$ChapterTileHeldEVT(this.seriesUID) : assert(seriesUID != null);
 
   @override
-  final String seriesUid;
+  final String seriesUID;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'AccountDatabaseEvent.chapterTileHeldEVT(seriesUid: $seriesUid)';
+    return 'AccountDatabaseEvent.chapterTileHeldEVT(seriesUID: $seriesUID)';
   }
 
   @override
@@ -307,21 +1134,21 @@ class _$ChapterTileHeldEVT
     properties
       ..add(DiagnosticsProperty(
           'type', 'AccountDatabaseEvent.chapterTileHeldEVT'))
-      ..add(DiagnosticsProperty('seriesUid', seriesUid));
+      ..add(DiagnosticsProperty('seriesUID', seriesUID));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is ChapterTileHeldEVT &&
-            (identical(other.seriesUid, seriesUid) ||
+            (identical(other.seriesUID, seriesUID) ||
                 const DeepCollectionEquality()
-                    .equals(other.seriesUid, seriesUid)));
+                    .equals(other.seriesUID, seriesUID)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(seriesUid);
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(seriesUID);
 
   @override
   $ChapterTileHeldEVTCopyWith<ChapterTileHeldEVT> get copyWith =>
@@ -329,71 +1156,138 @@ class _$ChapterTileHeldEVT
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result accountPageLaunchedEVT(BuildContext context),
-    @required Result chapterTileHeldEVT(String seriesUid),
-    @required Result loadMoreChaptersMinifiedEVT(),
-    @required Result loadMoreSeriesMinifiedEVT(),
-    @required Result seriesMinifiedLoadedEVT(),
-    @required Result sessionFetchedEVT(Session session),
+  TResult when<TResult extends Object>({
+    @required TResult accountLaunchedEVT(),
+    @required
+        TResult chapterDraftDeletedEVT(
+            String chapterDraftUID, String seriesDraftUID),
+    @required TResult chapterDraftSavedEVT(Chapter chapterDraft),
+    @required TResult chapterPublishedEVT(Chapter chapter),
+    @required TResult chapterTileHeldEVT(String seriesUID),
+    @required TResult indexChangedToChapterBookmarkedEVT(),
+    @required TResult indexChangedToChapterDraftsEVT(),
+    @required TResult indexChangedToChapterPublishedEVT(),
+    @required TResult indexChangedToSeriesBookmarkedEVT(),
+    @required TResult indexChangedToSeriesDraftsEVT(),
+    @required TResult indexChangedToSeriesPublishedEVT(),
+    @required TResult seriesDraftDeletedEVT(String seriesDraftUID),
+    @required TResult seriesDraftSavedEVT(Series seriesDraft),
+    @required TResult seriesPublishedEVT(Series series),
   }) {
-    assert(accountPageLaunchedEVT != null);
+    assert(accountLaunchedEVT != null);
+    assert(chapterDraftDeletedEVT != null);
+    assert(chapterDraftSavedEVT != null);
+    assert(chapterPublishedEVT != null);
     assert(chapterTileHeldEVT != null);
-    assert(loadMoreChaptersMinifiedEVT != null);
-    assert(loadMoreSeriesMinifiedEVT != null);
-    assert(seriesMinifiedLoadedEVT != null);
-    assert(sessionFetchedEVT != null);
-    return chapterTileHeldEVT(seriesUid);
+    assert(indexChangedToChapterBookmarkedEVT != null);
+    assert(indexChangedToChapterDraftsEVT != null);
+    assert(indexChangedToChapterPublishedEVT != null);
+    assert(indexChangedToSeriesBookmarkedEVT != null);
+    assert(indexChangedToSeriesDraftsEVT != null);
+    assert(indexChangedToSeriesPublishedEVT != null);
+    assert(seriesDraftDeletedEVT != null);
+    assert(seriesDraftSavedEVT != null);
+    assert(seriesPublishedEVT != null);
+    return chapterTileHeldEVT(seriesUID);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result accountPageLaunchedEVT(BuildContext context),
-    Result chapterTileHeldEVT(String seriesUid),
-    Result loadMoreChaptersMinifiedEVT(),
-    Result loadMoreSeriesMinifiedEVT(),
-    Result seriesMinifiedLoadedEVT(),
-    Result sessionFetchedEVT(Session session),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult accountLaunchedEVT(),
+    TResult chapterDraftDeletedEVT(
+        String chapterDraftUID, String seriesDraftUID),
+    TResult chapterDraftSavedEVT(Chapter chapterDraft),
+    TResult chapterPublishedEVT(Chapter chapter),
+    TResult chapterTileHeldEVT(String seriesUID),
+    TResult indexChangedToChapterBookmarkedEVT(),
+    TResult indexChangedToChapterDraftsEVT(),
+    TResult indexChangedToChapterPublishedEVT(),
+    TResult indexChangedToSeriesBookmarkedEVT(),
+    TResult indexChangedToSeriesDraftsEVT(),
+    TResult indexChangedToSeriesPublishedEVT(),
+    TResult seriesDraftDeletedEVT(String seriesDraftUID),
+    TResult seriesDraftSavedEVT(Series seriesDraft),
+    TResult seriesPublishedEVT(Series series),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (chapterTileHeldEVT != null) {
-      return chapterTileHeldEVT(seriesUid);
+      return chapterTileHeldEVT(seriesUID);
     }
     return orElse();
   }
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result accountPageLaunchedEVT(AccountPageLaunchedEVT value),
-    @required Result chapterTileHeldEVT(ChapterTileHeldEVT value),
+  TResult map<TResult extends Object>({
+    @required TResult accountLaunchedEVT(AccountLaunchedEVT value),
+    @required TResult chapterDraftDeletedEVT(ChapterDraftDeletedEVT value),
+    @required TResult chapterDraftSavedEVT(ChapterDraftSavedEVT value),
+    @required TResult chapterPublishedEVT(ChapterPublishedEVT value),
+    @required TResult chapterTileHeldEVT(ChapterTileHeldEVT value),
     @required
-        Result loadMoreChaptersMinifiedEVT(LoadMoreChaptersMinifiedEVT value),
-    @required Result loadMoreSeriesMinifiedEVT(LoadMoreSeriesMinifiedEVT value),
-    @required Result seriesMinifiedLoadedEVT(SeriesMinifiedLoadedEVT value),
-    @required Result sessionFetchedEVT(SessionFetchedEVT value),
+        TResult indexChangedToChapterBookmarkedEVT(
+            IndexChangedToChapterBookmarkedEVT value),
+    @required
+        TResult indexChangedToChapterDraftsEVT(
+            IndexChangedToChapterDraftsEVT value),
+    @required
+        TResult indexChangedToChapterPublishedEVT(
+            IndexChangedToChapterPublishedEVT value),
+    @required
+        TResult indexChangedToSeriesBookmarkedEVT(
+            IndexChangedToSeriesBookmarkedEVT value),
+    @required
+        TResult indexChangedToSeriesDraftsEVT(
+            IndexChangedToSeriesDraftsEVT value),
+    @required
+        TResult indexChangedToSeriesPublishedEVT(
+            IndexChangedToSeriesPublishedEVT value),
+    @required TResult seriesDraftDeletedEVT(SeriesDraftDeletedEVT value),
+    @required TResult seriesDraftSavedEVT(SeriesDraftSavedEVT value),
+    @required TResult seriesPublishedEVT(SeriesPublishedEVT value),
   }) {
-    assert(accountPageLaunchedEVT != null);
+    assert(accountLaunchedEVT != null);
+    assert(chapterDraftDeletedEVT != null);
+    assert(chapterDraftSavedEVT != null);
+    assert(chapterPublishedEVT != null);
     assert(chapterTileHeldEVT != null);
-    assert(loadMoreChaptersMinifiedEVT != null);
-    assert(loadMoreSeriesMinifiedEVT != null);
-    assert(seriesMinifiedLoadedEVT != null);
-    assert(sessionFetchedEVT != null);
+    assert(indexChangedToChapterBookmarkedEVT != null);
+    assert(indexChangedToChapterDraftsEVT != null);
+    assert(indexChangedToChapterPublishedEVT != null);
+    assert(indexChangedToSeriesBookmarkedEVT != null);
+    assert(indexChangedToSeriesDraftsEVT != null);
+    assert(indexChangedToSeriesPublishedEVT != null);
+    assert(seriesDraftDeletedEVT != null);
+    assert(seriesDraftSavedEVT != null);
+    assert(seriesPublishedEVT != null);
     return chapterTileHeldEVT(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result accountPageLaunchedEVT(AccountPageLaunchedEVT value),
-    Result chapterTileHeldEVT(ChapterTileHeldEVT value),
-    Result loadMoreChaptersMinifiedEVT(LoadMoreChaptersMinifiedEVT value),
-    Result loadMoreSeriesMinifiedEVT(LoadMoreSeriesMinifiedEVT value),
-    Result seriesMinifiedLoadedEVT(SeriesMinifiedLoadedEVT value),
-    Result sessionFetchedEVT(SessionFetchedEVT value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult accountLaunchedEVT(AccountLaunchedEVT value),
+    TResult chapterDraftDeletedEVT(ChapterDraftDeletedEVT value),
+    TResult chapterDraftSavedEVT(ChapterDraftSavedEVT value),
+    TResult chapterPublishedEVT(ChapterPublishedEVT value),
+    TResult chapterTileHeldEVT(ChapterTileHeldEVT value),
+    TResult indexChangedToChapterBookmarkedEVT(
+        IndexChangedToChapterBookmarkedEVT value),
+    TResult indexChangedToChapterDraftsEVT(
+        IndexChangedToChapterDraftsEVT value),
+    TResult indexChangedToChapterPublishedEVT(
+        IndexChangedToChapterPublishedEVT value),
+    TResult indexChangedToSeriesBookmarkedEVT(
+        IndexChangedToSeriesBookmarkedEVT value),
+    TResult indexChangedToSeriesDraftsEVT(IndexChangedToSeriesDraftsEVT value),
+    TResult indexChangedToSeriesPublishedEVT(
+        IndexChangedToSeriesPublishedEVT value),
+    TResult seriesDraftDeletedEVT(SeriesDraftDeletedEVT value),
+    TResult seriesDraftSavedEVT(SeriesDraftSavedEVT value),
+    TResult seriesPublishedEVT(SeriesPublishedEVT value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (chapterTileHeldEVT != null) {
@@ -404,39 +1298,43 @@ class _$ChapterTileHeldEVT
 }
 
 abstract class ChapterTileHeldEVT implements AccountDatabaseEvent {
-  const factory ChapterTileHeldEVT(String seriesUid) = _$ChapterTileHeldEVT;
+  const factory ChapterTileHeldEVT(String seriesUID) = _$ChapterTileHeldEVT;
 
-  String get seriesUid;
+  String get seriesUID;
   $ChapterTileHeldEVTCopyWith<ChapterTileHeldEVT> get copyWith;
 }
 
-abstract class $LoadMoreChaptersMinifiedEVTCopyWith<$Res> {
-  factory $LoadMoreChaptersMinifiedEVTCopyWith(
-          LoadMoreChaptersMinifiedEVT value,
-          $Res Function(LoadMoreChaptersMinifiedEVT) then) =
-      _$LoadMoreChaptersMinifiedEVTCopyWithImpl<$Res>;
+/// @nodoc
+abstract class $IndexChangedToChapterBookmarkedEVTCopyWith<$Res> {
+  factory $IndexChangedToChapterBookmarkedEVTCopyWith(
+          IndexChangedToChapterBookmarkedEVT value,
+          $Res Function(IndexChangedToChapterBookmarkedEVT) then) =
+      _$IndexChangedToChapterBookmarkedEVTCopyWithImpl<$Res>;
 }
 
-class _$LoadMoreChaptersMinifiedEVTCopyWithImpl<$Res>
+/// @nodoc
+class _$IndexChangedToChapterBookmarkedEVTCopyWithImpl<$Res>
     extends _$AccountDatabaseEventCopyWithImpl<$Res>
-    implements $LoadMoreChaptersMinifiedEVTCopyWith<$Res> {
-  _$LoadMoreChaptersMinifiedEVTCopyWithImpl(LoadMoreChaptersMinifiedEVT _value,
-      $Res Function(LoadMoreChaptersMinifiedEVT) _then)
-      : super(_value, (v) => _then(v as LoadMoreChaptersMinifiedEVT));
+    implements $IndexChangedToChapterBookmarkedEVTCopyWith<$Res> {
+  _$IndexChangedToChapterBookmarkedEVTCopyWithImpl(
+      IndexChangedToChapterBookmarkedEVT _value,
+      $Res Function(IndexChangedToChapterBookmarkedEVT) _then)
+      : super(_value, (v) => _then(v as IndexChangedToChapterBookmarkedEVT));
 
   @override
-  LoadMoreChaptersMinifiedEVT get _value =>
-      super._value as LoadMoreChaptersMinifiedEVT;
+  IndexChangedToChapterBookmarkedEVT get _value =>
+      super._value as IndexChangedToChapterBookmarkedEVT;
 }
 
-class _$LoadMoreChaptersMinifiedEVT
+/// @nodoc
+class _$IndexChangedToChapterBookmarkedEVT
     with DiagnosticableTreeMixin
-    implements LoadMoreChaptersMinifiedEVT {
-  const _$LoadMoreChaptersMinifiedEVT();
+    implements IndexChangedToChapterBookmarkedEVT {
+  const _$IndexChangedToChapterBookmarkedEVT();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'AccountDatabaseEvent.loadMoreChaptersMinifiedEVT()';
+    return 'AccountDatabaseEvent.indexChangedToChapterBookmarkedEVT()';
   }
 
   @override
@@ -444,560 +1342,1940 @@ class _$LoadMoreChaptersMinifiedEVT
     super.debugFillProperties(properties);
     properties
       ..add(DiagnosticsProperty(
-          'type', 'AccountDatabaseEvent.loadMoreChaptersMinifiedEVT'));
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) || (other is LoadMoreChaptersMinifiedEVT);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result accountPageLaunchedEVT(BuildContext context),
-    @required Result chapterTileHeldEVT(String seriesUid),
-    @required Result loadMoreChaptersMinifiedEVT(),
-    @required Result loadMoreSeriesMinifiedEVT(),
-    @required Result seriesMinifiedLoadedEVT(),
-    @required Result sessionFetchedEVT(Session session),
-  }) {
-    assert(accountPageLaunchedEVT != null);
-    assert(chapterTileHeldEVT != null);
-    assert(loadMoreChaptersMinifiedEVT != null);
-    assert(loadMoreSeriesMinifiedEVT != null);
-    assert(seriesMinifiedLoadedEVT != null);
-    assert(sessionFetchedEVT != null);
-    return loadMoreChaptersMinifiedEVT();
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result accountPageLaunchedEVT(BuildContext context),
-    Result chapterTileHeldEVT(String seriesUid),
-    Result loadMoreChaptersMinifiedEVT(),
-    Result loadMoreSeriesMinifiedEVT(),
-    Result seriesMinifiedLoadedEVT(),
-    Result sessionFetchedEVT(Session session),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (loadMoreChaptersMinifiedEVT != null) {
-      return loadMoreChaptersMinifiedEVT();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result accountPageLaunchedEVT(AccountPageLaunchedEVT value),
-    @required Result chapterTileHeldEVT(ChapterTileHeldEVT value),
-    @required
-        Result loadMoreChaptersMinifiedEVT(LoadMoreChaptersMinifiedEVT value),
-    @required Result loadMoreSeriesMinifiedEVT(LoadMoreSeriesMinifiedEVT value),
-    @required Result seriesMinifiedLoadedEVT(SeriesMinifiedLoadedEVT value),
-    @required Result sessionFetchedEVT(SessionFetchedEVT value),
-  }) {
-    assert(accountPageLaunchedEVT != null);
-    assert(chapterTileHeldEVT != null);
-    assert(loadMoreChaptersMinifiedEVT != null);
-    assert(loadMoreSeriesMinifiedEVT != null);
-    assert(seriesMinifiedLoadedEVT != null);
-    assert(sessionFetchedEVT != null);
-    return loadMoreChaptersMinifiedEVT(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result accountPageLaunchedEVT(AccountPageLaunchedEVT value),
-    Result chapterTileHeldEVT(ChapterTileHeldEVT value),
-    Result loadMoreChaptersMinifiedEVT(LoadMoreChaptersMinifiedEVT value),
-    Result loadMoreSeriesMinifiedEVT(LoadMoreSeriesMinifiedEVT value),
-    Result seriesMinifiedLoadedEVT(SeriesMinifiedLoadedEVT value),
-    Result sessionFetchedEVT(SessionFetchedEVT value),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (loadMoreChaptersMinifiedEVT != null) {
-      return loadMoreChaptersMinifiedEVT(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class LoadMoreChaptersMinifiedEVT implements AccountDatabaseEvent {
-  const factory LoadMoreChaptersMinifiedEVT() = _$LoadMoreChaptersMinifiedEVT;
-}
-
-abstract class $LoadMoreSeriesMinifiedEVTCopyWith<$Res> {
-  factory $LoadMoreSeriesMinifiedEVTCopyWith(LoadMoreSeriesMinifiedEVT value,
-          $Res Function(LoadMoreSeriesMinifiedEVT) then) =
-      _$LoadMoreSeriesMinifiedEVTCopyWithImpl<$Res>;
-}
-
-class _$LoadMoreSeriesMinifiedEVTCopyWithImpl<$Res>
-    extends _$AccountDatabaseEventCopyWithImpl<$Res>
-    implements $LoadMoreSeriesMinifiedEVTCopyWith<$Res> {
-  _$LoadMoreSeriesMinifiedEVTCopyWithImpl(LoadMoreSeriesMinifiedEVT _value,
-      $Res Function(LoadMoreSeriesMinifiedEVT) _then)
-      : super(_value, (v) => _then(v as LoadMoreSeriesMinifiedEVT));
-
-  @override
-  LoadMoreSeriesMinifiedEVT get _value =>
-      super._value as LoadMoreSeriesMinifiedEVT;
-}
-
-class _$LoadMoreSeriesMinifiedEVT
-    with DiagnosticableTreeMixin
-    implements LoadMoreSeriesMinifiedEVT {
-  const _$LoadMoreSeriesMinifiedEVT();
-
-  @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'AccountDatabaseEvent.loadMoreSeriesMinifiedEVT()';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty(
-          'type', 'AccountDatabaseEvent.loadMoreSeriesMinifiedEVT'));
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) || (other is LoadMoreSeriesMinifiedEVT);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result accountPageLaunchedEVT(BuildContext context),
-    @required Result chapterTileHeldEVT(String seriesUid),
-    @required Result loadMoreChaptersMinifiedEVT(),
-    @required Result loadMoreSeriesMinifiedEVT(),
-    @required Result seriesMinifiedLoadedEVT(),
-    @required Result sessionFetchedEVT(Session session),
-  }) {
-    assert(accountPageLaunchedEVT != null);
-    assert(chapterTileHeldEVT != null);
-    assert(loadMoreChaptersMinifiedEVT != null);
-    assert(loadMoreSeriesMinifiedEVT != null);
-    assert(seriesMinifiedLoadedEVT != null);
-    assert(sessionFetchedEVT != null);
-    return loadMoreSeriesMinifiedEVT();
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result accountPageLaunchedEVT(BuildContext context),
-    Result chapterTileHeldEVT(String seriesUid),
-    Result loadMoreChaptersMinifiedEVT(),
-    Result loadMoreSeriesMinifiedEVT(),
-    Result seriesMinifiedLoadedEVT(),
-    Result sessionFetchedEVT(Session session),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (loadMoreSeriesMinifiedEVT != null) {
-      return loadMoreSeriesMinifiedEVT();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result accountPageLaunchedEVT(AccountPageLaunchedEVT value),
-    @required Result chapterTileHeldEVT(ChapterTileHeldEVT value),
-    @required
-        Result loadMoreChaptersMinifiedEVT(LoadMoreChaptersMinifiedEVT value),
-    @required Result loadMoreSeriesMinifiedEVT(LoadMoreSeriesMinifiedEVT value),
-    @required Result seriesMinifiedLoadedEVT(SeriesMinifiedLoadedEVT value),
-    @required Result sessionFetchedEVT(SessionFetchedEVT value),
-  }) {
-    assert(accountPageLaunchedEVT != null);
-    assert(chapterTileHeldEVT != null);
-    assert(loadMoreChaptersMinifiedEVT != null);
-    assert(loadMoreSeriesMinifiedEVT != null);
-    assert(seriesMinifiedLoadedEVT != null);
-    assert(sessionFetchedEVT != null);
-    return loadMoreSeriesMinifiedEVT(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result accountPageLaunchedEVT(AccountPageLaunchedEVT value),
-    Result chapterTileHeldEVT(ChapterTileHeldEVT value),
-    Result loadMoreChaptersMinifiedEVT(LoadMoreChaptersMinifiedEVT value),
-    Result loadMoreSeriesMinifiedEVT(LoadMoreSeriesMinifiedEVT value),
-    Result seriesMinifiedLoadedEVT(SeriesMinifiedLoadedEVT value),
-    Result sessionFetchedEVT(SessionFetchedEVT value),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (loadMoreSeriesMinifiedEVT != null) {
-      return loadMoreSeriesMinifiedEVT(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class LoadMoreSeriesMinifiedEVT implements AccountDatabaseEvent {
-  const factory LoadMoreSeriesMinifiedEVT() = _$LoadMoreSeriesMinifiedEVT;
-}
-
-abstract class $SeriesMinifiedLoadedEVTCopyWith<$Res> {
-  factory $SeriesMinifiedLoadedEVTCopyWith(SeriesMinifiedLoadedEVT value,
-          $Res Function(SeriesMinifiedLoadedEVT) then) =
-      _$SeriesMinifiedLoadedEVTCopyWithImpl<$Res>;
-}
-
-class _$SeriesMinifiedLoadedEVTCopyWithImpl<$Res>
-    extends _$AccountDatabaseEventCopyWithImpl<$Res>
-    implements $SeriesMinifiedLoadedEVTCopyWith<$Res> {
-  _$SeriesMinifiedLoadedEVTCopyWithImpl(SeriesMinifiedLoadedEVT _value,
-      $Res Function(SeriesMinifiedLoadedEVT) _then)
-      : super(_value, (v) => _then(v as SeriesMinifiedLoadedEVT));
-
-  @override
-  SeriesMinifiedLoadedEVT get _value => super._value as SeriesMinifiedLoadedEVT;
-}
-
-class _$SeriesMinifiedLoadedEVT
-    with DiagnosticableTreeMixin
-    implements SeriesMinifiedLoadedEVT {
-  const _$SeriesMinifiedLoadedEVT();
-
-  @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'AccountDatabaseEvent.seriesMinifiedLoadedEVT()';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty(
-          'type', 'AccountDatabaseEvent.seriesMinifiedLoadedEVT'));
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) || (other is SeriesMinifiedLoadedEVT);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result accountPageLaunchedEVT(BuildContext context),
-    @required Result chapterTileHeldEVT(String seriesUid),
-    @required Result loadMoreChaptersMinifiedEVT(),
-    @required Result loadMoreSeriesMinifiedEVT(),
-    @required Result seriesMinifiedLoadedEVT(),
-    @required Result sessionFetchedEVT(Session session),
-  }) {
-    assert(accountPageLaunchedEVT != null);
-    assert(chapterTileHeldEVT != null);
-    assert(loadMoreChaptersMinifiedEVT != null);
-    assert(loadMoreSeriesMinifiedEVT != null);
-    assert(seriesMinifiedLoadedEVT != null);
-    assert(sessionFetchedEVT != null);
-    return seriesMinifiedLoadedEVT();
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result accountPageLaunchedEVT(BuildContext context),
-    Result chapterTileHeldEVT(String seriesUid),
-    Result loadMoreChaptersMinifiedEVT(),
-    Result loadMoreSeriesMinifiedEVT(),
-    Result seriesMinifiedLoadedEVT(),
-    Result sessionFetchedEVT(Session session),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (seriesMinifiedLoadedEVT != null) {
-      return seriesMinifiedLoadedEVT();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result accountPageLaunchedEVT(AccountPageLaunchedEVT value),
-    @required Result chapterTileHeldEVT(ChapterTileHeldEVT value),
-    @required
-        Result loadMoreChaptersMinifiedEVT(LoadMoreChaptersMinifiedEVT value),
-    @required Result loadMoreSeriesMinifiedEVT(LoadMoreSeriesMinifiedEVT value),
-    @required Result seriesMinifiedLoadedEVT(SeriesMinifiedLoadedEVT value),
-    @required Result sessionFetchedEVT(SessionFetchedEVT value),
-  }) {
-    assert(accountPageLaunchedEVT != null);
-    assert(chapterTileHeldEVT != null);
-    assert(loadMoreChaptersMinifiedEVT != null);
-    assert(loadMoreSeriesMinifiedEVT != null);
-    assert(seriesMinifiedLoadedEVT != null);
-    assert(sessionFetchedEVT != null);
-    return seriesMinifiedLoadedEVT(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result accountPageLaunchedEVT(AccountPageLaunchedEVT value),
-    Result chapterTileHeldEVT(ChapterTileHeldEVT value),
-    Result loadMoreChaptersMinifiedEVT(LoadMoreChaptersMinifiedEVT value),
-    Result loadMoreSeriesMinifiedEVT(LoadMoreSeriesMinifiedEVT value),
-    Result seriesMinifiedLoadedEVT(SeriesMinifiedLoadedEVT value),
-    Result sessionFetchedEVT(SessionFetchedEVT value),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (seriesMinifiedLoadedEVT != null) {
-      return seriesMinifiedLoadedEVT(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class SeriesMinifiedLoadedEVT implements AccountDatabaseEvent {
-  const factory SeriesMinifiedLoadedEVT() = _$SeriesMinifiedLoadedEVT;
-}
-
-abstract class $SessionFetchedEVTCopyWith<$Res> {
-  factory $SessionFetchedEVTCopyWith(
-          SessionFetchedEVT value, $Res Function(SessionFetchedEVT) then) =
-      _$SessionFetchedEVTCopyWithImpl<$Res>;
-  $Res call({Session session});
-}
-
-class _$SessionFetchedEVTCopyWithImpl<$Res>
-    extends _$AccountDatabaseEventCopyWithImpl<$Res>
-    implements $SessionFetchedEVTCopyWith<$Res> {
-  _$SessionFetchedEVTCopyWithImpl(
-      SessionFetchedEVT _value, $Res Function(SessionFetchedEVT) _then)
-      : super(_value, (v) => _then(v as SessionFetchedEVT));
-
-  @override
-  SessionFetchedEVT get _value => super._value as SessionFetchedEVT;
-
-  @override
-  $Res call({
-    Object session = freezed,
-  }) {
-    return _then(SessionFetchedEVT(
-      session: session == freezed ? _value.session : session as Session,
-    ));
-  }
-}
-
-class _$SessionFetchedEVT
-    with DiagnosticableTreeMixin
-    implements SessionFetchedEVT {
-  const _$SessionFetchedEVT({this.session});
-
-  @override
-  final Session session;
-
-  @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'AccountDatabaseEvent.sessionFetchedEVT(session: $session)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(
-          DiagnosticsProperty('type', 'AccountDatabaseEvent.sessionFetchedEVT'))
-      ..add(DiagnosticsProperty('session', session));
+          'type', 'AccountDatabaseEvent.indexChangedToChapterBookmarkedEVT'));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is SessionFetchedEVT &&
-            (identical(other.session, session) ||
-                const DeepCollectionEquality().equals(other.session, session)));
+        (other is IndexChangedToChapterBookmarkedEVT);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object>({
+    @required TResult accountLaunchedEVT(),
+    @required
+        TResult chapterDraftDeletedEVT(
+            String chapterDraftUID, String seriesDraftUID),
+    @required TResult chapterDraftSavedEVT(Chapter chapterDraft),
+    @required TResult chapterPublishedEVT(Chapter chapter),
+    @required TResult chapterTileHeldEVT(String seriesUID),
+    @required TResult indexChangedToChapterBookmarkedEVT(),
+    @required TResult indexChangedToChapterDraftsEVT(),
+    @required TResult indexChangedToChapterPublishedEVT(),
+    @required TResult indexChangedToSeriesBookmarkedEVT(),
+    @required TResult indexChangedToSeriesDraftsEVT(),
+    @required TResult indexChangedToSeriesPublishedEVT(),
+    @required TResult seriesDraftDeletedEVT(String seriesDraftUID),
+    @required TResult seriesDraftSavedEVT(Series seriesDraft),
+    @required TResult seriesPublishedEVT(Series series),
+  }) {
+    assert(accountLaunchedEVT != null);
+    assert(chapterDraftDeletedEVT != null);
+    assert(chapterDraftSavedEVT != null);
+    assert(chapterPublishedEVT != null);
+    assert(chapterTileHeldEVT != null);
+    assert(indexChangedToChapterBookmarkedEVT != null);
+    assert(indexChangedToChapterDraftsEVT != null);
+    assert(indexChangedToChapterPublishedEVT != null);
+    assert(indexChangedToSeriesBookmarkedEVT != null);
+    assert(indexChangedToSeriesDraftsEVT != null);
+    assert(indexChangedToSeriesPublishedEVT != null);
+    assert(seriesDraftDeletedEVT != null);
+    assert(seriesDraftSavedEVT != null);
+    assert(seriesPublishedEVT != null);
+    return indexChangedToChapterBookmarkedEVT();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object>({
+    TResult accountLaunchedEVT(),
+    TResult chapterDraftDeletedEVT(
+        String chapterDraftUID, String seriesDraftUID),
+    TResult chapterDraftSavedEVT(Chapter chapterDraft),
+    TResult chapterPublishedEVT(Chapter chapter),
+    TResult chapterTileHeldEVT(String seriesUID),
+    TResult indexChangedToChapterBookmarkedEVT(),
+    TResult indexChangedToChapterDraftsEVT(),
+    TResult indexChangedToChapterPublishedEVT(),
+    TResult indexChangedToSeriesBookmarkedEVT(),
+    TResult indexChangedToSeriesDraftsEVT(),
+    TResult indexChangedToSeriesPublishedEVT(),
+    TResult seriesDraftDeletedEVT(String seriesDraftUID),
+    TResult seriesDraftSavedEVT(Series seriesDraft),
+    TResult seriesPublishedEVT(Series series),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (indexChangedToChapterBookmarkedEVT != null) {
+      return indexChangedToChapterBookmarkedEVT();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object>({
+    @required TResult accountLaunchedEVT(AccountLaunchedEVT value),
+    @required TResult chapterDraftDeletedEVT(ChapterDraftDeletedEVT value),
+    @required TResult chapterDraftSavedEVT(ChapterDraftSavedEVT value),
+    @required TResult chapterPublishedEVT(ChapterPublishedEVT value),
+    @required TResult chapterTileHeldEVT(ChapterTileHeldEVT value),
+    @required
+        TResult indexChangedToChapterBookmarkedEVT(
+            IndexChangedToChapterBookmarkedEVT value),
+    @required
+        TResult indexChangedToChapterDraftsEVT(
+            IndexChangedToChapterDraftsEVT value),
+    @required
+        TResult indexChangedToChapterPublishedEVT(
+            IndexChangedToChapterPublishedEVT value),
+    @required
+        TResult indexChangedToSeriesBookmarkedEVT(
+            IndexChangedToSeriesBookmarkedEVT value),
+    @required
+        TResult indexChangedToSeriesDraftsEVT(
+            IndexChangedToSeriesDraftsEVT value),
+    @required
+        TResult indexChangedToSeriesPublishedEVT(
+            IndexChangedToSeriesPublishedEVT value),
+    @required TResult seriesDraftDeletedEVT(SeriesDraftDeletedEVT value),
+    @required TResult seriesDraftSavedEVT(SeriesDraftSavedEVT value),
+    @required TResult seriesPublishedEVT(SeriesPublishedEVT value),
+  }) {
+    assert(accountLaunchedEVT != null);
+    assert(chapterDraftDeletedEVT != null);
+    assert(chapterDraftSavedEVT != null);
+    assert(chapterPublishedEVT != null);
+    assert(chapterTileHeldEVT != null);
+    assert(indexChangedToChapterBookmarkedEVT != null);
+    assert(indexChangedToChapterDraftsEVT != null);
+    assert(indexChangedToChapterPublishedEVT != null);
+    assert(indexChangedToSeriesBookmarkedEVT != null);
+    assert(indexChangedToSeriesDraftsEVT != null);
+    assert(indexChangedToSeriesPublishedEVT != null);
+    assert(seriesDraftDeletedEVT != null);
+    assert(seriesDraftSavedEVT != null);
+    assert(seriesPublishedEVT != null);
+    return indexChangedToChapterBookmarkedEVT(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object>({
+    TResult accountLaunchedEVT(AccountLaunchedEVT value),
+    TResult chapterDraftDeletedEVT(ChapterDraftDeletedEVT value),
+    TResult chapterDraftSavedEVT(ChapterDraftSavedEVT value),
+    TResult chapterPublishedEVT(ChapterPublishedEVT value),
+    TResult chapterTileHeldEVT(ChapterTileHeldEVT value),
+    TResult indexChangedToChapterBookmarkedEVT(
+        IndexChangedToChapterBookmarkedEVT value),
+    TResult indexChangedToChapterDraftsEVT(
+        IndexChangedToChapterDraftsEVT value),
+    TResult indexChangedToChapterPublishedEVT(
+        IndexChangedToChapterPublishedEVT value),
+    TResult indexChangedToSeriesBookmarkedEVT(
+        IndexChangedToSeriesBookmarkedEVT value),
+    TResult indexChangedToSeriesDraftsEVT(IndexChangedToSeriesDraftsEVT value),
+    TResult indexChangedToSeriesPublishedEVT(
+        IndexChangedToSeriesPublishedEVT value),
+    TResult seriesDraftDeletedEVT(SeriesDraftDeletedEVT value),
+    TResult seriesDraftSavedEVT(SeriesDraftSavedEVT value),
+    TResult seriesPublishedEVT(SeriesPublishedEVT value),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (indexChangedToChapterBookmarkedEVT != null) {
+      return indexChangedToChapterBookmarkedEVT(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class IndexChangedToChapterBookmarkedEVT
+    implements AccountDatabaseEvent {
+  const factory IndexChangedToChapterBookmarkedEVT() =
+      _$IndexChangedToChapterBookmarkedEVT;
+}
+
+/// @nodoc
+abstract class $IndexChangedToChapterDraftsEVTCopyWith<$Res> {
+  factory $IndexChangedToChapterDraftsEVTCopyWith(
+          IndexChangedToChapterDraftsEVT value,
+          $Res Function(IndexChangedToChapterDraftsEVT) then) =
+      _$IndexChangedToChapterDraftsEVTCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$IndexChangedToChapterDraftsEVTCopyWithImpl<$Res>
+    extends _$AccountDatabaseEventCopyWithImpl<$Res>
+    implements $IndexChangedToChapterDraftsEVTCopyWith<$Res> {
+  _$IndexChangedToChapterDraftsEVTCopyWithImpl(
+      IndexChangedToChapterDraftsEVT _value,
+      $Res Function(IndexChangedToChapterDraftsEVT) _then)
+      : super(_value, (v) => _then(v as IndexChangedToChapterDraftsEVT));
+
+  @override
+  IndexChangedToChapterDraftsEVT get _value =>
+      super._value as IndexChangedToChapterDraftsEVT;
+}
+
+/// @nodoc
+class _$IndexChangedToChapterDraftsEVT
+    with DiagnosticableTreeMixin
+    implements IndexChangedToChapterDraftsEVT {
+  const _$IndexChangedToChapterDraftsEVT();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'AccountDatabaseEvent.indexChangedToChapterDraftsEVT()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty(
+          'type', 'AccountDatabaseEvent.indexChangedToChapterDraftsEVT'));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is IndexChangedToChapterDraftsEVT);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object>({
+    @required TResult accountLaunchedEVT(),
+    @required
+        TResult chapterDraftDeletedEVT(
+            String chapterDraftUID, String seriesDraftUID),
+    @required TResult chapterDraftSavedEVT(Chapter chapterDraft),
+    @required TResult chapterPublishedEVT(Chapter chapter),
+    @required TResult chapterTileHeldEVT(String seriesUID),
+    @required TResult indexChangedToChapterBookmarkedEVT(),
+    @required TResult indexChangedToChapterDraftsEVT(),
+    @required TResult indexChangedToChapterPublishedEVT(),
+    @required TResult indexChangedToSeriesBookmarkedEVT(),
+    @required TResult indexChangedToSeriesDraftsEVT(),
+    @required TResult indexChangedToSeriesPublishedEVT(),
+    @required TResult seriesDraftDeletedEVT(String seriesDraftUID),
+    @required TResult seriesDraftSavedEVT(Series seriesDraft),
+    @required TResult seriesPublishedEVT(Series series),
+  }) {
+    assert(accountLaunchedEVT != null);
+    assert(chapterDraftDeletedEVT != null);
+    assert(chapterDraftSavedEVT != null);
+    assert(chapterPublishedEVT != null);
+    assert(chapterTileHeldEVT != null);
+    assert(indexChangedToChapterBookmarkedEVT != null);
+    assert(indexChangedToChapterDraftsEVT != null);
+    assert(indexChangedToChapterPublishedEVT != null);
+    assert(indexChangedToSeriesBookmarkedEVT != null);
+    assert(indexChangedToSeriesDraftsEVT != null);
+    assert(indexChangedToSeriesPublishedEVT != null);
+    assert(seriesDraftDeletedEVT != null);
+    assert(seriesDraftSavedEVT != null);
+    assert(seriesPublishedEVT != null);
+    return indexChangedToChapterDraftsEVT();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object>({
+    TResult accountLaunchedEVT(),
+    TResult chapterDraftDeletedEVT(
+        String chapterDraftUID, String seriesDraftUID),
+    TResult chapterDraftSavedEVT(Chapter chapterDraft),
+    TResult chapterPublishedEVT(Chapter chapter),
+    TResult chapterTileHeldEVT(String seriesUID),
+    TResult indexChangedToChapterBookmarkedEVT(),
+    TResult indexChangedToChapterDraftsEVT(),
+    TResult indexChangedToChapterPublishedEVT(),
+    TResult indexChangedToSeriesBookmarkedEVT(),
+    TResult indexChangedToSeriesDraftsEVT(),
+    TResult indexChangedToSeriesPublishedEVT(),
+    TResult seriesDraftDeletedEVT(String seriesDraftUID),
+    TResult seriesDraftSavedEVT(Series seriesDraft),
+    TResult seriesPublishedEVT(Series series),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (indexChangedToChapterDraftsEVT != null) {
+      return indexChangedToChapterDraftsEVT();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object>({
+    @required TResult accountLaunchedEVT(AccountLaunchedEVT value),
+    @required TResult chapterDraftDeletedEVT(ChapterDraftDeletedEVT value),
+    @required TResult chapterDraftSavedEVT(ChapterDraftSavedEVT value),
+    @required TResult chapterPublishedEVT(ChapterPublishedEVT value),
+    @required TResult chapterTileHeldEVT(ChapterTileHeldEVT value),
+    @required
+        TResult indexChangedToChapterBookmarkedEVT(
+            IndexChangedToChapterBookmarkedEVT value),
+    @required
+        TResult indexChangedToChapterDraftsEVT(
+            IndexChangedToChapterDraftsEVT value),
+    @required
+        TResult indexChangedToChapterPublishedEVT(
+            IndexChangedToChapterPublishedEVT value),
+    @required
+        TResult indexChangedToSeriesBookmarkedEVT(
+            IndexChangedToSeriesBookmarkedEVT value),
+    @required
+        TResult indexChangedToSeriesDraftsEVT(
+            IndexChangedToSeriesDraftsEVT value),
+    @required
+        TResult indexChangedToSeriesPublishedEVT(
+            IndexChangedToSeriesPublishedEVT value),
+    @required TResult seriesDraftDeletedEVT(SeriesDraftDeletedEVT value),
+    @required TResult seriesDraftSavedEVT(SeriesDraftSavedEVT value),
+    @required TResult seriesPublishedEVT(SeriesPublishedEVT value),
+  }) {
+    assert(accountLaunchedEVT != null);
+    assert(chapterDraftDeletedEVT != null);
+    assert(chapterDraftSavedEVT != null);
+    assert(chapterPublishedEVT != null);
+    assert(chapterTileHeldEVT != null);
+    assert(indexChangedToChapterBookmarkedEVT != null);
+    assert(indexChangedToChapterDraftsEVT != null);
+    assert(indexChangedToChapterPublishedEVT != null);
+    assert(indexChangedToSeriesBookmarkedEVT != null);
+    assert(indexChangedToSeriesDraftsEVT != null);
+    assert(indexChangedToSeriesPublishedEVT != null);
+    assert(seriesDraftDeletedEVT != null);
+    assert(seriesDraftSavedEVT != null);
+    assert(seriesPublishedEVT != null);
+    return indexChangedToChapterDraftsEVT(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object>({
+    TResult accountLaunchedEVT(AccountLaunchedEVT value),
+    TResult chapterDraftDeletedEVT(ChapterDraftDeletedEVT value),
+    TResult chapterDraftSavedEVT(ChapterDraftSavedEVT value),
+    TResult chapterPublishedEVT(ChapterPublishedEVT value),
+    TResult chapterTileHeldEVT(ChapterTileHeldEVT value),
+    TResult indexChangedToChapterBookmarkedEVT(
+        IndexChangedToChapterBookmarkedEVT value),
+    TResult indexChangedToChapterDraftsEVT(
+        IndexChangedToChapterDraftsEVT value),
+    TResult indexChangedToChapterPublishedEVT(
+        IndexChangedToChapterPublishedEVT value),
+    TResult indexChangedToSeriesBookmarkedEVT(
+        IndexChangedToSeriesBookmarkedEVT value),
+    TResult indexChangedToSeriesDraftsEVT(IndexChangedToSeriesDraftsEVT value),
+    TResult indexChangedToSeriesPublishedEVT(
+        IndexChangedToSeriesPublishedEVT value),
+    TResult seriesDraftDeletedEVT(SeriesDraftDeletedEVT value),
+    TResult seriesDraftSavedEVT(SeriesDraftSavedEVT value),
+    TResult seriesPublishedEVT(SeriesPublishedEVT value),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (indexChangedToChapterDraftsEVT != null) {
+      return indexChangedToChapterDraftsEVT(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class IndexChangedToChapterDraftsEVT implements AccountDatabaseEvent {
+  const factory IndexChangedToChapterDraftsEVT() =
+      _$IndexChangedToChapterDraftsEVT;
+}
+
+/// @nodoc
+abstract class $IndexChangedToChapterPublishedEVTCopyWith<$Res> {
+  factory $IndexChangedToChapterPublishedEVTCopyWith(
+          IndexChangedToChapterPublishedEVT value,
+          $Res Function(IndexChangedToChapterPublishedEVT) then) =
+      _$IndexChangedToChapterPublishedEVTCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$IndexChangedToChapterPublishedEVTCopyWithImpl<$Res>
+    extends _$AccountDatabaseEventCopyWithImpl<$Res>
+    implements $IndexChangedToChapterPublishedEVTCopyWith<$Res> {
+  _$IndexChangedToChapterPublishedEVTCopyWithImpl(
+      IndexChangedToChapterPublishedEVT _value,
+      $Res Function(IndexChangedToChapterPublishedEVT) _then)
+      : super(_value, (v) => _then(v as IndexChangedToChapterPublishedEVT));
+
+  @override
+  IndexChangedToChapterPublishedEVT get _value =>
+      super._value as IndexChangedToChapterPublishedEVT;
+}
+
+/// @nodoc
+class _$IndexChangedToChapterPublishedEVT
+    with DiagnosticableTreeMixin
+    implements IndexChangedToChapterPublishedEVT {
+  const _$IndexChangedToChapterPublishedEVT();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'AccountDatabaseEvent.indexChangedToChapterPublishedEVT()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty(
+          'type', 'AccountDatabaseEvent.indexChangedToChapterPublishedEVT'));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is IndexChangedToChapterPublishedEVT);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object>({
+    @required TResult accountLaunchedEVT(),
+    @required
+        TResult chapterDraftDeletedEVT(
+            String chapterDraftUID, String seriesDraftUID),
+    @required TResult chapterDraftSavedEVT(Chapter chapterDraft),
+    @required TResult chapterPublishedEVT(Chapter chapter),
+    @required TResult chapterTileHeldEVT(String seriesUID),
+    @required TResult indexChangedToChapterBookmarkedEVT(),
+    @required TResult indexChangedToChapterDraftsEVT(),
+    @required TResult indexChangedToChapterPublishedEVT(),
+    @required TResult indexChangedToSeriesBookmarkedEVT(),
+    @required TResult indexChangedToSeriesDraftsEVT(),
+    @required TResult indexChangedToSeriesPublishedEVT(),
+    @required TResult seriesDraftDeletedEVT(String seriesDraftUID),
+    @required TResult seriesDraftSavedEVT(Series seriesDraft),
+    @required TResult seriesPublishedEVT(Series series),
+  }) {
+    assert(accountLaunchedEVT != null);
+    assert(chapterDraftDeletedEVT != null);
+    assert(chapterDraftSavedEVT != null);
+    assert(chapterPublishedEVT != null);
+    assert(chapterTileHeldEVT != null);
+    assert(indexChangedToChapterBookmarkedEVT != null);
+    assert(indexChangedToChapterDraftsEVT != null);
+    assert(indexChangedToChapterPublishedEVT != null);
+    assert(indexChangedToSeriesBookmarkedEVT != null);
+    assert(indexChangedToSeriesDraftsEVT != null);
+    assert(indexChangedToSeriesPublishedEVT != null);
+    assert(seriesDraftDeletedEVT != null);
+    assert(seriesDraftSavedEVT != null);
+    assert(seriesPublishedEVT != null);
+    return indexChangedToChapterPublishedEVT();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object>({
+    TResult accountLaunchedEVT(),
+    TResult chapterDraftDeletedEVT(
+        String chapterDraftUID, String seriesDraftUID),
+    TResult chapterDraftSavedEVT(Chapter chapterDraft),
+    TResult chapterPublishedEVT(Chapter chapter),
+    TResult chapterTileHeldEVT(String seriesUID),
+    TResult indexChangedToChapterBookmarkedEVT(),
+    TResult indexChangedToChapterDraftsEVT(),
+    TResult indexChangedToChapterPublishedEVT(),
+    TResult indexChangedToSeriesBookmarkedEVT(),
+    TResult indexChangedToSeriesDraftsEVT(),
+    TResult indexChangedToSeriesPublishedEVT(),
+    TResult seriesDraftDeletedEVT(String seriesDraftUID),
+    TResult seriesDraftSavedEVT(Series seriesDraft),
+    TResult seriesPublishedEVT(Series series),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (indexChangedToChapterPublishedEVT != null) {
+      return indexChangedToChapterPublishedEVT();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object>({
+    @required TResult accountLaunchedEVT(AccountLaunchedEVT value),
+    @required TResult chapterDraftDeletedEVT(ChapterDraftDeletedEVT value),
+    @required TResult chapterDraftSavedEVT(ChapterDraftSavedEVT value),
+    @required TResult chapterPublishedEVT(ChapterPublishedEVT value),
+    @required TResult chapterTileHeldEVT(ChapterTileHeldEVT value),
+    @required
+        TResult indexChangedToChapterBookmarkedEVT(
+            IndexChangedToChapterBookmarkedEVT value),
+    @required
+        TResult indexChangedToChapterDraftsEVT(
+            IndexChangedToChapterDraftsEVT value),
+    @required
+        TResult indexChangedToChapterPublishedEVT(
+            IndexChangedToChapterPublishedEVT value),
+    @required
+        TResult indexChangedToSeriesBookmarkedEVT(
+            IndexChangedToSeriesBookmarkedEVT value),
+    @required
+        TResult indexChangedToSeriesDraftsEVT(
+            IndexChangedToSeriesDraftsEVT value),
+    @required
+        TResult indexChangedToSeriesPublishedEVT(
+            IndexChangedToSeriesPublishedEVT value),
+    @required TResult seriesDraftDeletedEVT(SeriesDraftDeletedEVT value),
+    @required TResult seriesDraftSavedEVT(SeriesDraftSavedEVT value),
+    @required TResult seriesPublishedEVT(SeriesPublishedEVT value),
+  }) {
+    assert(accountLaunchedEVT != null);
+    assert(chapterDraftDeletedEVT != null);
+    assert(chapterDraftSavedEVT != null);
+    assert(chapterPublishedEVT != null);
+    assert(chapterTileHeldEVT != null);
+    assert(indexChangedToChapterBookmarkedEVT != null);
+    assert(indexChangedToChapterDraftsEVT != null);
+    assert(indexChangedToChapterPublishedEVT != null);
+    assert(indexChangedToSeriesBookmarkedEVT != null);
+    assert(indexChangedToSeriesDraftsEVT != null);
+    assert(indexChangedToSeriesPublishedEVT != null);
+    assert(seriesDraftDeletedEVT != null);
+    assert(seriesDraftSavedEVT != null);
+    assert(seriesPublishedEVT != null);
+    return indexChangedToChapterPublishedEVT(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object>({
+    TResult accountLaunchedEVT(AccountLaunchedEVT value),
+    TResult chapterDraftDeletedEVT(ChapterDraftDeletedEVT value),
+    TResult chapterDraftSavedEVT(ChapterDraftSavedEVT value),
+    TResult chapterPublishedEVT(ChapterPublishedEVT value),
+    TResult chapterTileHeldEVT(ChapterTileHeldEVT value),
+    TResult indexChangedToChapterBookmarkedEVT(
+        IndexChangedToChapterBookmarkedEVT value),
+    TResult indexChangedToChapterDraftsEVT(
+        IndexChangedToChapterDraftsEVT value),
+    TResult indexChangedToChapterPublishedEVT(
+        IndexChangedToChapterPublishedEVT value),
+    TResult indexChangedToSeriesBookmarkedEVT(
+        IndexChangedToSeriesBookmarkedEVT value),
+    TResult indexChangedToSeriesDraftsEVT(IndexChangedToSeriesDraftsEVT value),
+    TResult indexChangedToSeriesPublishedEVT(
+        IndexChangedToSeriesPublishedEVT value),
+    TResult seriesDraftDeletedEVT(SeriesDraftDeletedEVT value),
+    TResult seriesDraftSavedEVT(SeriesDraftSavedEVT value),
+    TResult seriesPublishedEVT(SeriesPublishedEVT value),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (indexChangedToChapterPublishedEVT != null) {
+      return indexChangedToChapterPublishedEVT(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class IndexChangedToChapterPublishedEVT
+    implements AccountDatabaseEvent {
+  const factory IndexChangedToChapterPublishedEVT() =
+      _$IndexChangedToChapterPublishedEVT;
+}
+
+/// @nodoc
+abstract class $IndexChangedToSeriesBookmarkedEVTCopyWith<$Res> {
+  factory $IndexChangedToSeriesBookmarkedEVTCopyWith(
+          IndexChangedToSeriesBookmarkedEVT value,
+          $Res Function(IndexChangedToSeriesBookmarkedEVT) then) =
+      _$IndexChangedToSeriesBookmarkedEVTCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$IndexChangedToSeriesBookmarkedEVTCopyWithImpl<$Res>
+    extends _$AccountDatabaseEventCopyWithImpl<$Res>
+    implements $IndexChangedToSeriesBookmarkedEVTCopyWith<$Res> {
+  _$IndexChangedToSeriesBookmarkedEVTCopyWithImpl(
+      IndexChangedToSeriesBookmarkedEVT _value,
+      $Res Function(IndexChangedToSeriesBookmarkedEVT) _then)
+      : super(_value, (v) => _then(v as IndexChangedToSeriesBookmarkedEVT));
+
+  @override
+  IndexChangedToSeriesBookmarkedEVT get _value =>
+      super._value as IndexChangedToSeriesBookmarkedEVT;
+}
+
+/// @nodoc
+class _$IndexChangedToSeriesBookmarkedEVT
+    with DiagnosticableTreeMixin
+    implements IndexChangedToSeriesBookmarkedEVT {
+  const _$IndexChangedToSeriesBookmarkedEVT();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'AccountDatabaseEvent.indexChangedToSeriesBookmarkedEVT()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty(
+          'type', 'AccountDatabaseEvent.indexChangedToSeriesBookmarkedEVT'));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is IndexChangedToSeriesBookmarkedEVT);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object>({
+    @required TResult accountLaunchedEVT(),
+    @required
+        TResult chapterDraftDeletedEVT(
+            String chapterDraftUID, String seriesDraftUID),
+    @required TResult chapterDraftSavedEVT(Chapter chapterDraft),
+    @required TResult chapterPublishedEVT(Chapter chapter),
+    @required TResult chapterTileHeldEVT(String seriesUID),
+    @required TResult indexChangedToChapterBookmarkedEVT(),
+    @required TResult indexChangedToChapterDraftsEVT(),
+    @required TResult indexChangedToChapterPublishedEVT(),
+    @required TResult indexChangedToSeriesBookmarkedEVT(),
+    @required TResult indexChangedToSeriesDraftsEVT(),
+    @required TResult indexChangedToSeriesPublishedEVT(),
+    @required TResult seriesDraftDeletedEVT(String seriesDraftUID),
+    @required TResult seriesDraftSavedEVT(Series seriesDraft),
+    @required TResult seriesPublishedEVT(Series series),
+  }) {
+    assert(accountLaunchedEVT != null);
+    assert(chapterDraftDeletedEVT != null);
+    assert(chapterDraftSavedEVT != null);
+    assert(chapterPublishedEVT != null);
+    assert(chapterTileHeldEVT != null);
+    assert(indexChangedToChapterBookmarkedEVT != null);
+    assert(indexChangedToChapterDraftsEVT != null);
+    assert(indexChangedToChapterPublishedEVT != null);
+    assert(indexChangedToSeriesBookmarkedEVT != null);
+    assert(indexChangedToSeriesDraftsEVT != null);
+    assert(indexChangedToSeriesPublishedEVT != null);
+    assert(seriesDraftDeletedEVT != null);
+    assert(seriesDraftSavedEVT != null);
+    assert(seriesPublishedEVT != null);
+    return indexChangedToSeriesBookmarkedEVT();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object>({
+    TResult accountLaunchedEVT(),
+    TResult chapterDraftDeletedEVT(
+        String chapterDraftUID, String seriesDraftUID),
+    TResult chapterDraftSavedEVT(Chapter chapterDraft),
+    TResult chapterPublishedEVT(Chapter chapter),
+    TResult chapterTileHeldEVT(String seriesUID),
+    TResult indexChangedToChapterBookmarkedEVT(),
+    TResult indexChangedToChapterDraftsEVT(),
+    TResult indexChangedToChapterPublishedEVT(),
+    TResult indexChangedToSeriesBookmarkedEVT(),
+    TResult indexChangedToSeriesDraftsEVT(),
+    TResult indexChangedToSeriesPublishedEVT(),
+    TResult seriesDraftDeletedEVT(String seriesDraftUID),
+    TResult seriesDraftSavedEVT(Series seriesDraft),
+    TResult seriesPublishedEVT(Series series),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (indexChangedToSeriesBookmarkedEVT != null) {
+      return indexChangedToSeriesBookmarkedEVT();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object>({
+    @required TResult accountLaunchedEVT(AccountLaunchedEVT value),
+    @required TResult chapterDraftDeletedEVT(ChapterDraftDeletedEVT value),
+    @required TResult chapterDraftSavedEVT(ChapterDraftSavedEVT value),
+    @required TResult chapterPublishedEVT(ChapterPublishedEVT value),
+    @required TResult chapterTileHeldEVT(ChapterTileHeldEVT value),
+    @required
+        TResult indexChangedToChapterBookmarkedEVT(
+            IndexChangedToChapterBookmarkedEVT value),
+    @required
+        TResult indexChangedToChapterDraftsEVT(
+            IndexChangedToChapterDraftsEVT value),
+    @required
+        TResult indexChangedToChapterPublishedEVT(
+            IndexChangedToChapterPublishedEVT value),
+    @required
+        TResult indexChangedToSeriesBookmarkedEVT(
+            IndexChangedToSeriesBookmarkedEVT value),
+    @required
+        TResult indexChangedToSeriesDraftsEVT(
+            IndexChangedToSeriesDraftsEVT value),
+    @required
+        TResult indexChangedToSeriesPublishedEVT(
+            IndexChangedToSeriesPublishedEVT value),
+    @required TResult seriesDraftDeletedEVT(SeriesDraftDeletedEVT value),
+    @required TResult seriesDraftSavedEVT(SeriesDraftSavedEVT value),
+    @required TResult seriesPublishedEVT(SeriesPublishedEVT value),
+  }) {
+    assert(accountLaunchedEVT != null);
+    assert(chapterDraftDeletedEVT != null);
+    assert(chapterDraftSavedEVT != null);
+    assert(chapterPublishedEVT != null);
+    assert(chapterTileHeldEVT != null);
+    assert(indexChangedToChapterBookmarkedEVT != null);
+    assert(indexChangedToChapterDraftsEVT != null);
+    assert(indexChangedToChapterPublishedEVT != null);
+    assert(indexChangedToSeriesBookmarkedEVT != null);
+    assert(indexChangedToSeriesDraftsEVT != null);
+    assert(indexChangedToSeriesPublishedEVT != null);
+    assert(seriesDraftDeletedEVT != null);
+    assert(seriesDraftSavedEVT != null);
+    assert(seriesPublishedEVT != null);
+    return indexChangedToSeriesBookmarkedEVT(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object>({
+    TResult accountLaunchedEVT(AccountLaunchedEVT value),
+    TResult chapterDraftDeletedEVT(ChapterDraftDeletedEVT value),
+    TResult chapterDraftSavedEVT(ChapterDraftSavedEVT value),
+    TResult chapterPublishedEVT(ChapterPublishedEVT value),
+    TResult chapterTileHeldEVT(ChapterTileHeldEVT value),
+    TResult indexChangedToChapterBookmarkedEVT(
+        IndexChangedToChapterBookmarkedEVT value),
+    TResult indexChangedToChapterDraftsEVT(
+        IndexChangedToChapterDraftsEVT value),
+    TResult indexChangedToChapterPublishedEVT(
+        IndexChangedToChapterPublishedEVT value),
+    TResult indexChangedToSeriesBookmarkedEVT(
+        IndexChangedToSeriesBookmarkedEVT value),
+    TResult indexChangedToSeriesDraftsEVT(IndexChangedToSeriesDraftsEVT value),
+    TResult indexChangedToSeriesPublishedEVT(
+        IndexChangedToSeriesPublishedEVT value),
+    TResult seriesDraftDeletedEVT(SeriesDraftDeletedEVT value),
+    TResult seriesDraftSavedEVT(SeriesDraftSavedEVT value),
+    TResult seriesPublishedEVT(SeriesPublishedEVT value),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (indexChangedToSeriesBookmarkedEVT != null) {
+      return indexChangedToSeriesBookmarkedEVT(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class IndexChangedToSeriesBookmarkedEVT
+    implements AccountDatabaseEvent {
+  const factory IndexChangedToSeriesBookmarkedEVT() =
+      _$IndexChangedToSeriesBookmarkedEVT;
+}
+
+/// @nodoc
+abstract class $IndexChangedToSeriesDraftsEVTCopyWith<$Res> {
+  factory $IndexChangedToSeriesDraftsEVTCopyWith(
+          IndexChangedToSeriesDraftsEVT value,
+          $Res Function(IndexChangedToSeriesDraftsEVT) then) =
+      _$IndexChangedToSeriesDraftsEVTCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$IndexChangedToSeriesDraftsEVTCopyWithImpl<$Res>
+    extends _$AccountDatabaseEventCopyWithImpl<$Res>
+    implements $IndexChangedToSeriesDraftsEVTCopyWith<$Res> {
+  _$IndexChangedToSeriesDraftsEVTCopyWithImpl(
+      IndexChangedToSeriesDraftsEVT _value,
+      $Res Function(IndexChangedToSeriesDraftsEVT) _then)
+      : super(_value, (v) => _then(v as IndexChangedToSeriesDraftsEVT));
+
+  @override
+  IndexChangedToSeriesDraftsEVT get _value =>
+      super._value as IndexChangedToSeriesDraftsEVT;
+}
+
+/// @nodoc
+class _$IndexChangedToSeriesDraftsEVT
+    with DiagnosticableTreeMixin
+    implements IndexChangedToSeriesDraftsEVT {
+  const _$IndexChangedToSeriesDraftsEVT();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'AccountDatabaseEvent.indexChangedToSeriesDraftsEVT()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty(
+          'type', 'AccountDatabaseEvent.indexChangedToSeriesDraftsEVT'));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is IndexChangedToSeriesDraftsEVT);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object>({
+    @required TResult accountLaunchedEVT(),
+    @required
+        TResult chapterDraftDeletedEVT(
+            String chapterDraftUID, String seriesDraftUID),
+    @required TResult chapterDraftSavedEVT(Chapter chapterDraft),
+    @required TResult chapterPublishedEVT(Chapter chapter),
+    @required TResult chapterTileHeldEVT(String seriesUID),
+    @required TResult indexChangedToChapterBookmarkedEVT(),
+    @required TResult indexChangedToChapterDraftsEVT(),
+    @required TResult indexChangedToChapterPublishedEVT(),
+    @required TResult indexChangedToSeriesBookmarkedEVT(),
+    @required TResult indexChangedToSeriesDraftsEVT(),
+    @required TResult indexChangedToSeriesPublishedEVT(),
+    @required TResult seriesDraftDeletedEVT(String seriesDraftUID),
+    @required TResult seriesDraftSavedEVT(Series seriesDraft),
+    @required TResult seriesPublishedEVT(Series series),
+  }) {
+    assert(accountLaunchedEVT != null);
+    assert(chapterDraftDeletedEVT != null);
+    assert(chapterDraftSavedEVT != null);
+    assert(chapterPublishedEVT != null);
+    assert(chapterTileHeldEVT != null);
+    assert(indexChangedToChapterBookmarkedEVT != null);
+    assert(indexChangedToChapterDraftsEVT != null);
+    assert(indexChangedToChapterPublishedEVT != null);
+    assert(indexChangedToSeriesBookmarkedEVT != null);
+    assert(indexChangedToSeriesDraftsEVT != null);
+    assert(indexChangedToSeriesPublishedEVT != null);
+    assert(seriesDraftDeletedEVT != null);
+    assert(seriesDraftSavedEVT != null);
+    assert(seriesPublishedEVT != null);
+    return indexChangedToSeriesDraftsEVT();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object>({
+    TResult accountLaunchedEVT(),
+    TResult chapterDraftDeletedEVT(
+        String chapterDraftUID, String seriesDraftUID),
+    TResult chapterDraftSavedEVT(Chapter chapterDraft),
+    TResult chapterPublishedEVT(Chapter chapter),
+    TResult chapterTileHeldEVT(String seriesUID),
+    TResult indexChangedToChapterBookmarkedEVT(),
+    TResult indexChangedToChapterDraftsEVT(),
+    TResult indexChangedToChapterPublishedEVT(),
+    TResult indexChangedToSeriesBookmarkedEVT(),
+    TResult indexChangedToSeriesDraftsEVT(),
+    TResult indexChangedToSeriesPublishedEVT(),
+    TResult seriesDraftDeletedEVT(String seriesDraftUID),
+    TResult seriesDraftSavedEVT(Series seriesDraft),
+    TResult seriesPublishedEVT(Series series),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (indexChangedToSeriesDraftsEVT != null) {
+      return indexChangedToSeriesDraftsEVT();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object>({
+    @required TResult accountLaunchedEVT(AccountLaunchedEVT value),
+    @required TResult chapterDraftDeletedEVT(ChapterDraftDeletedEVT value),
+    @required TResult chapterDraftSavedEVT(ChapterDraftSavedEVT value),
+    @required TResult chapterPublishedEVT(ChapterPublishedEVT value),
+    @required TResult chapterTileHeldEVT(ChapterTileHeldEVT value),
+    @required
+        TResult indexChangedToChapterBookmarkedEVT(
+            IndexChangedToChapterBookmarkedEVT value),
+    @required
+        TResult indexChangedToChapterDraftsEVT(
+            IndexChangedToChapterDraftsEVT value),
+    @required
+        TResult indexChangedToChapterPublishedEVT(
+            IndexChangedToChapterPublishedEVT value),
+    @required
+        TResult indexChangedToSeriesBookmarkedEVT(
+            IndexChangedToSeriesBookmarkedEVT value),
+    @required
+        TResult indexChangedToSeriesDraftsEVT(
+            IndexChangedToSeriesDraftsEVT value),
+    @required
+        TResult indexChangedToSeriesPublishedEVT(
+            IndexChangedToSeriesPublishedEVT value),
+    @required TResult seriesDraftDeletedEVT(SeriesDraftDeletedEVT value),
+    @required TResult seriesDraftSavedEVT(SeriesDraftSavedEVT value),
+    @required TResult seriesPublishedEVT(SeriesPublishedEVT value),
+  }) {
+    assert(accountLaunchedEVT != null);
+    assert(chapterDraftDeletedEVT != null);
+    assert(chapterDraftSavedEVT != null);
+    assert(chapterPublishedEVT != null);
+    assert(chapterTileHeldEVT != null);
+    assert(indexChangedToChapterBookmarkedEVT != null);
+    assert(indexChangedToChapterDraftsEVT != null);
+    assert(indexChangedToChapterPublishedEVT != null);
+    assert(indexChangedToSeriesBookmarkedEVT != null);
+    assert(indexChangedToSeriesDraftsEVT != null);
+    assert(indexChangedToSeriesPublishedEVT != null);
+    assert(seriesDraftDeletedEVT != null);
+    assert(seriesDraftSavedEVT != null);
+    assert(seriesPublishedEVT != null);
+    return indexChangedToSeriesDraftsEVT(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object>({
+    TResult accountLaunchedEVT(AccountLaunchedEVT value),
+    TResult chapterDraftDeletedEVT(ChapterDraftDeletedEVT value),
+    TResult chapterDraftSavedEVT(ChapterDraftSavedEVT value),
+    TResult chapterPublishedEVT(ChapterPublishedEVT value),
+    TResult chapterTileHeldEVT(ChapterTileHeldEVT value),
+    TResult indexChangedToChapterBookmarkedEVT(
+        IndexChangedToChapterBookmarkedEVT value),
+    TResult indexChangedToChapterDraftsEVT(
+        IndexChangedToChapterDraftsEVT value),
+    TResult indexChangedToChapterPublishedEVT(
+        IndexChangedToChapterPublishedEVT value),
+    TResult indexChangedToSeriesBookmarkedEVT(
+        IndexChangedToSeriesBookmarkedEVT value),
+    TResult indexChangedToSeriesDraftsEVT(IndexChangedToSeriesDraftsEVT value),
+    TResult indexChangedToSeriesPublishedEVT(
+        IndexChangedToSeriesPublishedEVT value),
+    TResult seriesDraftDeletedEVT(SeriesDraftDeletedEVT value),
+    TResult seriesDraftSavedEVT(SeriesDraftSavedEVT value),
+    TResult seriesPublishedEVT(SeriesPublishedEVT value),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (indexChangedToSeriesDraftsEVT != null) {
+      return indexChangedToSeriesDraftsEVT(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class IndexChangedToSeriesDraftsEVT implements AccountDatabaseEvent {
+  const factory IndexChangedToSeriesDraftsEVT() =
+      _$IndexChangedToSeriesDraftsEVT;
+}
+
+/// @nodoc
+abstract class $IndexChangedToSeriesPublishedEVTCopyWith<$Res> {
+  factory $IndexChangedToSeriesPublishedEVTCopyWith(
+          IndexChangedToSeriesPublishedEVT value,
+          $Res Function(IndexChangedToSeriesPublishedEVT) then) =
+      _$IndexChangedToSeriesPublishedEVTCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$IndexChangedToSeriesPublishedEVTCopyWithImpl<$Res>
+    extends _$AccountDatabaseEventCopyWithImpl<$Res>
+    implements $IndexChangedToSeriesPublishedEVTCopyWith<$Res> {
+  _$IndexChangedToSeriesPublishedEVTCopyWithImpl(
+      IndexChangedToSeriesPublishedEVT _value,
+      $Res Function(IndexChangedToSeriesPublishedEVT) _then)
+      : super(_value, (v) => _then(v as IndexChangedToSeriesPublishedEVT));
+
+  @override
+  IndexChangedToSeriesPublishedEVT get _value =>
+      super._value as IndexChangedToSeriesPublishedEVT;
+}
+
+/// @nodoc
+class _$IndexChangedToSeriesPublishedEVT
+    with DiagnosticableTreeMixin
+    implements IndexChangedToSeriesPublishedEVT {
+  const _$IndexChangedToSeriesPublishedEVT();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'AccountDatabaseEvent.indexChangedToSeriesPublishedEVT()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty(
+          'type', 'AccountDatabaseEvent.indexChangedToSeriesPublishedEVT'));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is IndexChangedToSeriesPublishedEVT);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object>({
+    @required TResult accountLaunchedEVT(),
+    @required
+        TResult chapterDraftDeletedEVT(
+            String chapterDraftUID, String seriesDraftUID),
+    @required TResult chapterDraftSavedEVT(Chapter chapterDraft),
+    @required TResult chapterPublishedEVT(Chapter chapter),
+    @required TResult chapterTileHeldEVT(String seriesUID),
+    @required TResult indexChangedToChapterBookmarkedEVT(),
+    @required TResult indexChangedToChapterDraftsEVT(),
+    @required TResult indexChangedToChapterPublishedEVT(),
+    @required TResult indexChangedToSeriesBookmarkedEVT(),
+    @required TResult indexChangedToSeriesDraftsEVT(),
+    @required TResult indexChangedToSeriesPublishedEVT(),
+    @required TResult seriesDraftDeletedEVT(String seriesDraftUID),
+    @required TResult seriesDraftSavedEVT(Series seriesDraft),
+    @required TResult seriesPublishedEVT(Series series),
+  }) {
+    assert(accountLaunchedEVT != null);
+    assert(chapterDraftDeletedEVT != null);
+    assert(chapterDraftSavedEVT != null);
+    assert(chapterPublishedEVT != null);
+    assert(chapterTileHeldEVT != null);
+    assert(indexChangedToChapterBookmarkedEVT != null);
+    assert(indexChangedToChapterDraftsEVT != null);
+    assert(indexChangedToChapterPublishedEVT != null);
+    assert(indexChangedToSeriesBookmarkedEVT != null);
+    assert(indexChangedToSeriesDraftsEVT != null);
+    assert(indexChangedToSeriesPublishedEVT != null);
+    assert(seriesDraftDeletedEVT != null);
+    assert(seriesDraftSavedEVT != null);
+    assert(seriesPublishedEVT != null);
+    return indexChangedToSeriesPublishedEVT();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object>({
+    TResult accountLaunchedEVT(),
+    TResult chapterDraftDeletedEVT(
+        String chapterDraftUID, String seriesDraftUID),
+    TResult chapterDraftSavedEVT(Chapter chapterDraft),
+    TResult chapterPublishedEVT(Chapter chapter),
+    TResult chapterTileHeldEVT(String seriesUID),
+    TResult indexChangedToChapterBookmarkedEVT(),
+    TResult indexChangedToChapterDraftsEVT(),
+    TResult indexChangedToChapterPublishedEVT(),
+    TResult indexChangedToSeriesBookmarkedEVT(),
+    TResult indexChangedToSeriesDraftsEVT(),
+    TResult indexChangedToSeriesPublishedEVT(),
+    TResult seriesDraftDeletedEVT(String seriesDraftUID),
+    TResult seriesDraftSavedEVT(Series seriesDraft),
+    TResult seriesPublishedEVT(Series series),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (indexChangedToSeriesPublishedEVT != null) {
+      return indexChangedToSeriesPublishedEVT();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object>({
+    @required TResult accountLaunchedEVT(AccountLaunchedEVT value),
+    @required TResult chapterDraftDeletedEVT(ChapterDraftDeletedEVT value),
+    @required TResult chapterDraftSavedEVT(ChapterDraftSavedEVT value),
+    @required TResult chapterPublishedEVT(ChapterPublishedEVT value),
+    @required TResult chapterTileHeldEVT(ChapterTileHeldEVT value),
+    @required
+        TResult indexChangedToChapterBookmarkedEVT(
+            IndexChangedToChapterBookmarkedEVT value),
+    @required
+        TResult indexChangedToChapterDraftsEVT(
+            IndexChangedToChapterDraftsEVT value),
+    @required
+        TResult indexChangedToChapterPublishedEVT(
+            IndexChangedToChapterPublishedEVT value),
+    @required
+        TResult indexChangedToSeriesBookmarkedEVT(
+            IndexChangedToSeriesBookmarkedEVT value),
+    @required
+        TResult indexChangedToSeriesDraftsEVT(
+            IndexChangedToSeriesDraftsEVT value),
+    @required
+        TResult indexChangedToSeriesPublishedEVT(
+            IndexChangedToSeriesPublishedEVT value),
+    @required TResult seriesDraftDeletedEVT(SeriesDraftDeletedEVT value),
+    @required TResult seriesDraftSavedEVT(SeriesDraftSavedEVT value),
+    @required TResult seriesPublishedEVT(SeriesPublishedEVT value),
+  }) {
+    assert(accountLaunchedEVT != null);
+    assert(chapterDraftDeletedEVT != null);
+    assert(chapterDraftSavedEVT != null);
+    assert(chapterPublishedEVT != null);
+    assert(chapterTileHeldEVT != null);
+    assert(indexChangedToChapterBookmarkedEVT != null);
+    assert(indexChangedToChapterDraftsEVT != null);
+    assert(indexChangedToChapterPublishedEVT != null);
+    assert(indexChangedToSeriesBookmarkedEVT != null);
+    assert(indexChangedToSeriesDraftsEVT != null);
+    assert(indexChangedToSeriesPublishedEVT != null);
+    assert(seriesDraftDeletedEVT != null);
+    assert(seriesDraftSavedEVT != null);
+    assert(seriesPublishedEVT != null);
+    return indexChangedToSeriesPublishedEVT(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object>({
+    TResult accountLaunchedEVT(AccountLaunchedEVT value),
+    TResult chapterDraftDeletedEVT(ChapterDraftDeletedEVT value),
+    TResult chapterDraftSavedEVT(ChapterDraftSavedEVT value),
+    TResult chapterPublishedEVT(ChapterPublishedEVT value),
+    TResult chapterTileHeldEVT(ChapterTileHeldEVT value),
+    TResult indexChangedToChapterBookmarkedEVT(
+        IndexChangedToChapterBookmarkedEVT value),
+    TResult indexChangedToChapterDraftsEVT(
+        IndexChangedToChapterDraftsEVT value),
+    TResult indexChangedToChapterPublishedEVT(
+        IndexChangedToChapterPublishedEVT value),
+    TResult indexChangedToSeriesBookmarkedEVT(
+        IndexChangedToSeriesBookmarkedEVT value),
+    TResult indexChangedToSeriesDraftsEVT(IndexChangedToSeriesDraftsEVT value),
+    TResult indexChangedToSeriesPublishedEVT(
+        IndexChangedToSeriesPublishedEVT value),
+    TResult seriesDraftDeletedEVT(SeriesDraftDeletedEVT value),
+    TResult seriesDraftSavedEVT(SeriesDraftSavedEVT value),
+    TResult seriesPublishedEVT(SeriesPublishedEVT value),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (indexChangedToSeriesPublishedEVT != null) {
+      return indexChangedToSeriesPublishedEVT(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class IndexChangedToSeriesPublishedEVT
+    implements AccountDatabaseEvent {
+  const factory IndexChangedToSeriesPublishedEVT() =
+      _$IndexChangedToSeriesPublishedEVT;
+}
+
+/// @nodoc
+abstract class $SeriesDraftDeletedEVTCopyWith<$Res> {
+  factory $SeriesDraftDeletedEVTCopyWith(SeriesDraftDeletedEVT value,
+          $Res Function(SeriesDraftDeletedEVT) then) =
+      _$SeriesDraftDeletedEVTCopyWithImpl<$Res>;
+  $Res call({String seriesDraftUID});
+}
+
+/// @nodoc
+class _$SeriesDraftDeletedEVTCopyWithImpl<$Res>
+    extends _$AccountDatabaseEventCopyWithImpl<$Res>
+    implements $SeriesDraftDeletedEVTCopyWith<$Res> {
+  _$SeriesDraftDeletedEVTCopyWithImpl(
+      SeriesDraftDeletedEVT _value, $Res Function(SeriesDraftDeletedEVT) _then)
+      : super(_value, (v) => _then(v as SeriesDraftDeletedEVT));
+
+  @override
+  SeriesDraftDeletedEVT get _value => super._value as SeriesDraftDeletedEVT;
+
+  @override
+  $Res call({
+    Object seriesDraftUID = freezed,
+  }) {
+    return _then(SeriesDraftDeletedEVT(
+      seriesDraftUID == freezed
+          ? _value.seriesDraftUID
+          : seriesDraftUID as String,
+    ));
+  }
+}
+
+/// @nodoc
+class _$SeriesDraftDeletedEVT
+    with DiagnosticableTreeMixin
+    implements SeriesDraftDeletedEVT {
+  const _$SeriesDraftDeletedEVT(this.seriesDraftUID)
+      : assert(seriesDraftUID != null);
+
+  @override
+  final String seriesDraftUID;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'AccountDatabaseEvent.seriesDraftDeletedEVT(seriesDraftUID: $seriesDraftUID)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty(
+          'type', 'AccountDatabaseEvent.seriesDraftDeletedEVT'))
+      ..add(DiagnosticsProperty('seriesDraftUID', seriesDraftUID));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is SeriesDraftDeletedEVT &&
+            (identical(other.seriesDraftUID, seriesDraftUID) ||
+                const DeepCollectionEquality()
+                    .equals(other.seriesDraftUID, seriesDraftUID)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(session);
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(seriesDraftUID);
 
   @override
-  $SessionFetchedEVTCopyWith<SessionFetchedEVT> get copyWith =>
-      _$SessionFetchedEVTCopyWithImpl<SessionFetchedEVT>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result accountPageLaunchedEVT(BuildContext context),
-    @required Result chapterTileHeldEVT(String seriesUid),
-    @required Result loadMoreChaptersMinifiedEVT(),
-    @required Result loadMoreSeriesMinifiedEVT(),
-    @required Result seriesMinifiedLoadedEVT(),
-    @required Result sessionFetchedEVT(Session session),
-  }) {
-    assert(accountPageLaunchedEVT != null);
-    assert(chapterTileHeldEVT != null);
-    assert(loadMoreChaptersMinifiedEVT != null);
-    assert(loadMoreSeriesMinifiedEVT != null);
-    assert(seriesMinifiedLoadedEVT != null);
-    assert(sessionFetchedEVT != null);
-    return sessionFetchedEVT(session);
-  }
+  $SeriesDraftDeletedEVTCopyWith<SeriesDraftDeletedEVT> get copyWith =>
+      _$SeriesDraftDeletedEVTCopyWithImpl<SeriesDraftDeletedEVT>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result accountPageLaunchedEVT(BuildContext context),
-    Result chapterTileHeldEVT(String seriesUid),
-    Result loadMoreChaptersMinifiedEVT(),
-    Result loadMoreSeriesMinifiedEVT(),
-    Result seriesMinifiedLoadedEVT(),
-    Result sessionFetchedEVT(Session session),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (sessionFetchedEVT != null) {
-      return sessionFetchedEVT(session);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result accountPageLaunchedEVT(AccountPageLaunchedEVT value),
-    @required Result chapterTileHeldEVT(ChapterTileHeldEVT value),
+  TResult when<TResult extends Object>({
+    @required TResult accountLaunchedEVT(),
     @required
-        Result loadMoreChaptersMinifiedEVT(LoadMoreChaptersMinifiedEVT value),
-    @required Result loadMoreSeriesMinifiedEVT(LoadMoreSeriesMinifiedEVT value),
-    @required Result seriesMinifiedLoadedEVT(SeriesMinifiedLoadedEVT value),
-    @required Result sessionFetchedEVT(SessionFetchedEVT value),
+        TResult chapterDraftDeletedEVT(
+            String chapterDraftUID, String seriesDraftUID),
+    @required TResult chapterDraftSavedEVT(Chapter chapterDraft),
+    @required TResult chapterPublishedEVT(Chapter chapter),
+    @required TResult chapterTileHeldEVT(String seriesUID),
+    @required TResult indexChangedToChapterBookmarkedEVT(),
+    @required TResult indexChangedToChapterDraftsEVT(),
+    @required TResult indexChangedToChapterPublishedEVT(),
+    @required TResult indexChangedToSeriesBookmarkedEVT(),
+    @required TResult indexChangedToSeriesDraftsEVT(),
+    @required TResult indexChangedToSeriesPublishedEVT(),
+    @required TResult seriesDraftDeletedEVT(String seriesDraftUID),
+    @required TResult seriesDraftSavedEVT(Series seriesDraft),
+    @required TResult seriesPublishedEVT(Series series),
   }) {
-    assert(accountPageLaunchedEVT != null);
+    assert(accountLaunchedEVT != null);
+    assert(chapterDraftDeletedEVT != null);
+    assert(chapterDraftSavedEVT != null);
+    assert(chapterPublishedEVT != null);
     assert(chapterTileHeldEVT != null);
-    assert(loadMoreChaptersMinifiedEVT != null);
-    assert(loadMoreSeriesMinifiedEVT != null);
-    assert(seriesMinifiedLoadedEVT != null);
-    assert(sessionFetchedEVT != null);
-    return sessionFetchedEVT(this);
+    assert(indexChangedToChapterBookmarkedEVT != null);
+    assert(indexChangedToChapterDraftsEVT != null);
+    assert(indexChangedToChapterPublishedEVT != null);
+    assert(indexChangedToSeriesBookmarkedEVT != null);
+    assert(indexChangedToSeriesDraftsEVT != null);
+    assert(indexChangedToSeriesPublishedEVT != null);
+    assert(seriesDraftDeletedEVT != null);
+    assert(seriesDraftSavedEVT != null);
+    assert(seriesPublishedEVT != null);
+    return seriesDraftDeletedEVT(seriesDraftUID);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result accountPageLaunchedEVT(AccountPageLaunchedEVT value),
-    Result chapterTileHeldEVT(ChapterTileHeldEVT value),
-    Result loadMoreChaptersMinifiedEVT(LoadMoreChaptersMinifiedEVT value),
-    Result loadMoreSeriesMinifiedEVT(LoadMoreSeriesMinifiedEVT value),
-    Result seriesMinifiedLoadedEVT(SeriesMinifiedLoadedEVT value),
-    Result sessionFetchedEVT(SessionFetchedEVT value),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult accountLaunchedEVT(),
+    TResult chapterDraftDeletedEVT(
+        String chapterDraftUID, String seriesDraftUID),
+    TResult chapterDraftSavedEVT(Chapter chapterDraft),
+    TResult chapterPublishedEVT(Chapter chapter),
+    TResult chapterTileHeldEVT(String seriesUID),
+    TResult indexChangedToChapterBookmarkedEVT(),
+    TResult indexChangedToChapterDraftsEVT(),
+    TResult indexChangedToChapterPublishedEVT(),
+    TResult indexChangedToSeriesBookmarkedEVT(),
+    TResult indexChangedToSeriesDraftsEVT(),
+    TResult indexChangedToSeriesPublishedEVT(),
+    TResult seriesDraftDeletedEVT(String seriesDraftUID),
+    TResult seriesDraftSavedEVT(Series seriesDraft),
+    TResult seriesPublishedEVT(Series series),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (sessionFetchedEVT != null) {
-      return sessionFetchedEVT(this);
+    if (seriesDraftDeletedEVT != null) {
+      return seriesDraftDeletedEVT(seriesDraftUID);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object>({
+    @required TResult accountLaunchedEVT(AccountLaunchedEVT value),
+    @required TResult chapterDraftDeletedEVT(ChapterDraftDeletedEVT value),
+    @required TResult chapterDraftSavedEVT(ChapterDraftSavedEVT value),
+    @required TResult chapterPublishedEVT(ChapterPublishedEVT value),
+    @required TResult chapterTileHeldEVT(ChapterTileHeldEVT value),
+    @required
+        TResult indexChangedToChapterBookmarkedEVT(
+            IndexChangedToChapterBookmarkedEVT value),
+    @required
+        TResult indexChangedToChapterDraftsEVT(
+            IndexChangedToChapterDraftsEVT value),
+    @required
+        TResult indexChangedToChapterPublishedEVT(
+            IndexChangedToChapterPublishedEVT value),
+    @required
+        TResult indexChangedToSeriesBookmarkedEVT(
+            IndexChangedToSeriesBookmarkedEVT value),
+    @required
+        TResult indexChangedToSeriesDraftsEVT(
+            IndexChangedToSeriesDraftsEVT value),
+    @required
+        TResult indexChangedToSeriesPublishedEVT(
+            IndexChangedToSeriesPublishedEVT value),
+    @required TResult seriesDraftDeletedEVT(SeriesDraftDeletedEVT value),
+    @required TResult seriesDraftSavedEVT(SeriesDraftSavedEVT value),
+    @required TResult seriesPublishedEVT(SeriesPublishedEVT value),
+  }) {
+    assert(accountLaunchedEVT != null);
+    assert(chapterDraftDeletedEVT != null);
+    assert(chapterDraftSavedEVT != null);
+    assert(chapterPublishedEVT != null);
+    assert(chapterTileHeldEVT != null);
+    assert(indexChangedToChapterBookmarkedEVT != null);
+    assert(indexChangedToChapterDraftsEVT != null);
+    assert(indexChangedToChapterPublishedEVT != null);
+    assert(indexChangedToSeriesBookmarkedEVT != null);
+    assert(indexChangedToSeriesDraftsEVT != null);
+    assert(indexChangedToSeriesPublishedEVT != null);
+    assert(seriesDraftDeletedEVT != null);
+    assert(seriesDraftSavedEVT != null);
+    assert(seriesPublishedEVT != null);
+    return seriesDraftDeletedEVT(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object>({
+    TResult accountLaunchedEVT(AccountLaunchedEVT value),
+    TResult chapterDraftDeletedEVT(ChapterDraftDeletedEVT value),
+    TResult chapterDraftSavedEVT(ChapterDraftSavedEVT value),
+    TResult chapterPublishedEVT(ChapterPublishedEVT value),
+    TResult chapterTileHeldEVT(ChapterTileHeldEVT value),
+    TResult indexChangedToChapterBookmarkedEVT(
+        IndexChangedToChapterBookmarkedEVT value),
+    TResult indexChangedToChapterDraftsEVT(
+        IndexChangedToChapterDraftsEVT value),
+    TResult indexChangedToChapterPublishedEVT(
+        IndexChangedToChapterPublishedEVT value),
+    TResult indexChangedToSeriesBookmarkedEVT(
+        IndexChangedToSeriesBookmarkedEVT value),
+    TResult indexChangedToSeriesDraftsEVT(IndexChangedToSeriesDraftsEVT value),
+    TResult indexChangedToSeriesPublishedEVT(
+        IndexChangedToSeriesPublishedEVT value),
+    TResult seriesDraftDeletedEVT(SeriesDraftDeletedEVT value),
+    TResult seriesDraftSavedEVT(SeriesDraftSavedEVT value),
+    TResult seriesPublishedEVT(SeriesPublishedEVT value),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (seriesDraftDeletedEVT != null) {
+      return seriesDraftDeletedEVT(this);
     }
     return orElse();
   }
 }
 
-abstract class SessionFetchedEVT implements AccountDatabaseEvent {
-  const factory SessionFetchedEVT({Session session}) = _$SessionFetchedEVT;
+abstract class SeriesDraftDeletedEVT implements AccountDatabaseEvent {
+  const factory SeriesDraftDeletedEVT(String seriesDraftUID) =
+      _$SeriesDraftDeletedEVT;
 
-  Session get session;
-  $SessionFetchedEVTCopyWith<SessionFetchedEVT> get copyWith;
+  String get seriesDraftUID;
+  $SeriesDraftDeletedEVTCopyWith<SeriesDraftDeletedEVT> get copyWith;
 }
 
+/// @nodoc
+abstract class $SeriesDraftSavedEVTCopyWith<$Res> {
+  factory $SeriesDraftSavedEVTCopyWith(
+          SeriesDraftSavedEVT value, $Res Function(SeriesDraftSavedEVT) then) =
+      _$SeriesDraftSavedEVTCopyWithImpl<$Res>;
+  $Res call({Series seriesDraft});
+}
+
+/// @nodoc
+class _$SeriesDraftSavedEVTCopyWithImpl<$Res>
+    extends _$AccountDatabaseEventCopyWithImpl<$Res>
+    implements $SeriesDraftSavedEVTCopyWith<$Res> {
+  _$SeriesDraftSavedEVTCopyWithImpl(
+      SeriesDraftSavedEVT _value, $Res Function(SeriesDraftSavedEVT) _then)
+      : super(_value, (v) => _then(v as SeriesDraftSavedEVT));
+
+  @override
+  SeriesDraftSavedEVT get _value => super._value as SeriesDraftSavedEVT;
+
+  @override
+  $Res call({
+    Object seriesDraft = freezed,
+  }) {
+    return _then(SeriesDraftSavedEVT(
+      seriesDraft == freezed ? _value.seriesDraft : seriesDraft as Series,
+    ));
+  }
+}
+
+/// @nodoc
+class _$SeriesDraftSavedEVT
+    with DiagnosticableTreeMixin
+    implements SeriesDraftSavedEVT {
+  const _$SeriesDraftSavedEVT(this.seriesDraft) : assert(seriesDraft != null);
+
+  @override
+  final Series seriesDraft;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'AccountDatabaseEvent.seriesDraftSavedEVT(seriesDraft: $seriesDraft)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty(
+          'type', 'AccountDatabaseEvent.seriesDraftSavedEVT'))
+      ..add(DiagnosticsProperty('seriesDraft', seriesDraft));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is SeriesDraftSavedEVT &&
+            (identical(other.seriesDraft, seriesDraft) ||
+                const DeepCollectionEquality()
+                    .equals(other.seriesDraft, seriesDraft)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(seriesDraft);
+
+  @override
+  $SeriesDraftSavedEVTCopyWith<SeriesDraftSavedEVT> get copyWith =>
+      _$SeriesDraftSavedEVTCopyWithImpl<SeriesDraftSavedEVT>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object>({
+    @required TResult accountLaunchedEVT(),
+    @required
+        TResult chapterDraftDeletedEVT(
+            String chapterDraftUID, String seriesDraftUID),
+    @required TResult chapterDraftSavedEVT(Chapter chapterDraft),
+    @required TResult chapterPublishedEVT(Chapter chapter),
+    @required TResult chapterTileHeldEVT(String seriesUID),
+    @required TResult indexChangedToChapterBookmarkedEVT(),
+    @required TResult indexChangedToChapterDraftsEVT(),
+    @required TResult indexChangedToChapterPublishedEVT(),
+    @required TResult indexChangedToSeriesBookmarkedEVT(),
+    @required TResult indexChangedToSeriesDraftsEVT(),
+    @required TResult indexChangedToSeriesPublishedEVT(),
+    @required TResult seriesDraftDeletedEVT(String seriesDraftUID),
+    @required TResult seriesDraftSavedEVT(Series seriesDraft),
+    @required TResult seriesPublishedEVT(Series series),
+  }) {
+    assert(accountLaunchedEVT != null);
+    assert(chapterDraftDeletedEVT != null);
+    assert(chapterDraftSavedEVT != null);
+    assert(chapterPublishedEVT != null);
+    assert(chapterTileHeldEVT != null);
+    assert(indexChangedToChapterBookmarkedEVT != null);
+    assert(indexChangedToChapterDraftsEVT != null);
+    assert(indexChangedToChapterPublishedEVT != null);
+    assert(indexChangedToSeriesBookmarkedEVT != null);
+    assert(indexChangedToSeriesDraftsEVT != null);
+    assert(indexChangedToSeriesPublishedEVT != null);
+    assert(seriesDraftDeletedEVT != null);
+    assert(seriesDraftSavedEVT != null);
+    assert(seriesPublishedEVT != null);
+    return seriesDraftSavedEVT(seriesDraft);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object>({
+    TResult accountLaunchedEVT(),
+    TResult chapterDraftDeletedEVT(
+        String chapterDraftUID, String seriesDraftUID),
+    TResult chapterDraftSavedEVT(Chapter chapterDraft),
+    TResult chapterPublishedEVT(Chapter chapter),
+    TResult chapterTileHeldEVT(String seriesUID),
+    TResult indexChangedToChapterBookmarkedEVT(),
+    TResult indexChangedToChapterDraftsEVT(),
+    TResult indexChangedToChapterPublishedEVT(),
+    TResult indexChangedToSeriesBookmarkedEVT(),
+    TResult indexChangedToSeriesDraftsEVT(),
+    TResult indexChangedToSeriesPublishedEVT(),
+    TResult seriesDraftDeletedEVT(String seriesDraftUID),
+    TResult seriesDraftSavedEVT(Series seriesDraft),
+    TResult seriesPublishedEVT(Series series),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (seriesDraftSavedEVT != null) {
+      return seriesDraftSavedEVT(seriesDraft);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object>({
+    @required TResult accountLaunchedEVT(AccountLaunchedEVT value),
+    @required TResult chapterDraftDeletedEVT(ChapterDraftDeletedEVT value),
+    @required TResult chapterDraftSavedEVT(ChapterDraftSavedEVT value),
+    @required TResult chapterPublishedEVT(ChapterPublishedEVT value),
+    @required TResult chapterTileHeldEVT(ChapterTileHeldEVT value),
+    @required
+        TResult indexChangedToChapterBookmarkedEVT(
+            IndexChangedToChapterBookmarkedEVT value),
+    @required
+        TResult indexChangedToChapterDraftsEVT(
+            IndexChangedToChapterDraftsEVT value),
+    @required
+        TResult indexChangedToChapterPublishedEVT(
+            IndexChangedToChapterPublishedEVT value),
+    @required
+        TResult indexChangedToSeriesBookmarkedEVT(
+            IndexChangedToSeriesBookmarkedEVT value),
+    @required
+        TResult indexChangedToSeriesDraftsEVT(
+            IndexChangedToSeriesDraftsEVT value),
+    @required
+        TResult indexChangedToSeriesPublishedEVT(
+            IndexChangedToSeriesPublishedEVT value),
+    @required TResult seriesDraftDeletedEVT(SeriesDraftDeletedEVT value),
+    @required TResult seriesDraftSavedEVT(SeriesDraftSavedEVT value),
+    @required TResult seriesPublishedEVT(SeriesPublishedEVT value),
+  }) {
+    assert(accountLaunchedEVT != null);
+    assert(chapterDraftDeletedEVT != null);
+    assert(chapterDraftSavedEVT != null);
+    assert(chapterPublishedEVT != null);
+    assert(chapterTileHeldEVT != null);
+    assert(indexChangedToChapterBookmarkedEVT != null);
+    assert(indexChangedToChapterDraftsEVT != null);
+    assert(indexChangedToChapterPublishedEVT != null);
+    assert(indexChangedToSeriesBookmarkedEVT != null);
+    assert(indexChangedToSeriesDraftsEVT != null);
+    assert(indexChangedToSeriesPublishedEVT != null);
+    assert(seriesDraftDeletedEVT != null);
+    assert(seriesDraftSavedEVT != null);
+    assert(seriesPublishedEVT != null);
+    return seriesDraftSavedEVT(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object>({
+    TResult accountLaunchedEVT(AccountLaunchedEVT value),
+    TResult chapterDraftDeletedEVT(ChapterDraftDeletedEVT value),
+    TResult chapterDraftSavedEVT(ChapterDraftSavedEVT value),
+    TResult chapterPublishedEVT(ChapterPublishedEVT value),
+    TResult chapterTileHeldEVT(ChapterTileHeldEVT value),
+    TResult indexChangedToChapterBookmarkedEVT(
+        IndexChangedToChapterBookmarkedEVT value),
+    TResult indexChangedToChapterDraftsEVT(
+        IndexChangedToChapterDraftsEVT value),
+    TResult indexChangedToChapterPublishedEVT(
+        IndexChangedToChapterPublishedEVT value),
+    TResult indexChangedToSeriesBookmarkedEVT(
+        IndexChangedToSeriesBookmarkedEVT value),
+    TResult indexChangedToSeriesDraftsEVT(IndexChangedToSeriesDraftsEVT value),
+    TResult indexChangedToSeriesPublishedEVT(
+        IndexChangedToSeriesPublishedEVT value),
+    TResult seriesDraftDeletedEVT(SeriesDraftDeletedEVT value),
+    TResult seriesDraftSavedEVT(SeriesDraftSavedEVT value),
+    TResult seriesPublishedEVT(SeriesPublishedEVT value),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (seriesDraftSavedEVT != null) {
+      return seriesDraftSavedEVT(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SeriesDraftSavedEVT implements AccountDatabaseEvent {
+  const factory SeriesDraftSavedEVT(Series seriesDraft) = _$SeriesDraftSavedEVT;
+
+  Series get seriesDraft;
+  $SeriesDraftSavedEVTCopyWith<SeriesDraftSavedEVT> get copyWith;
+}
+
+/// @nodoc
+abstract class $SeriesPublishedEVTCopyWith<$Res> {
+  factory $SeriesPublishedEVTCopyWith(
+          SeriesPublishedEVT value, $Res Function(SeriesPublishedEVT) then) =
+      _$SeriesPublishedEVTCopyWithImpl<$Res>;
+  $Res call({Series series});
+}
+
+/// @nodoc
+class _$SeriesPublishedEVTCopyWithImpl<$Res>
+    extends _$AccountDatabaseEventCopyWithImpl<$Res>
+    implements $SeriesPublishedEVTCopyWith<$Res> {
+  _$SeriesPublishedEVTCopyWithImpl(
+      SeriesPublishedEVT _value, $Res Function(SeriesPublishedEVT) _then)
+      : super(_value, (v) => _then(v as SeriesPublishedEVT));
+
+  @override
+  SeriesPublishedEVT get _value => super._value as SeriesPublishedEVT;
+
+  @override
+  $Res call({
+    Object series = freezed,
+  }) {
+    return _then(SeriesPublishedEVT(
+      series == freezed ? _value.series : series as Series,
+    ));
+  }
+}
+
+/// @nodoc
+class _$SeriesPublishedEVT
+    with DiagnosticableTreeMixin
+    implements SeriesPublishedEVT {
+  const _$SeriesPublishedEVT(this.series) : assert(series != null);
+
+  @override
+  final Series series;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'AccountDatabaseEvent.seriesPublishedEVT(series: $series)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty(
+          'type', 'AccountDatabaseEvent.seriesPublishedEVT'))
+      ..add(DiagnosticsProperty('series', series));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is SeriesPublishedEVT &&
+            (identical(other.series, series) ||
+                const DeepCollectionEquality().equals(other.series, series)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(series);
+
+  @override
+  $SeriesPublishedEVTCopyWith<SeriesPublishedEVT> get copyWith =>
+      _$SeriesPublishedEVTCopyWithImpl<SeriesPublishedEVT>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object>({
+    @required TResult accountLaunchedEVT(),
+    @required
+        TResult chapterDraftDeletedEVT(
+            String chapterDraftUID, String seriesDraftUID),
+    @required TResult chapterDraftSavedEVT(Chapter chapterDraft),
+    @required TResult chapterPublishedEVT(Chapter chapter),
+    @required TResult chapterTileHeldEVT(String seriesUID),
+    @required TResult indexChangedToChapterBookmarkedEVT(),
+    @required TResult indexChangedToChapterDraftsEVT(),
+    @required TResult indexChangedToChapterPublishedEVT(),
+    @required TResult indexChangedToSeriesBookmarkedEVT(),
+    @required TResult indexChangedToSeriesDraftsEVT(),
+    @required TResult indexChangedToSeriesPublishedEVT(),
+    @required TResult seriesDraftDeletedEVT(String seriesDraftUID),
+    @required TResult seriesDraftSavedEVT(Series seriesDraft),
+    @required TResult seriesPublishedEVT(Series series),
+  }) {
+    assert(accountLaunchedEVT != null);
+    assert(chapterDraftDeletedEVT != null);
+    assert(chapterDraftSavedEVT != null);
+    assert(chapterPublishedEVT != null);
+    assert(chapterTileHeldEVT != null);
+    assert(indexChangedToChapterBookmarkedEVT != null);
+    assert(indexChangedToChapterDraftsEVT != null);
+    assert(indexChangedToChapterPublishedEVT != null);
+    assert(indexChangedToSeriesBookmarkedEVT != null);
+    assert(indexChangedToSeriesDraftsEVT != null);
+    assert(indexChangedToSeriesPublishedEVT != null);
+    assert(seriesDraftDeletedEVT != null);
+    assert(seriesDraftSavedEVT != null);
+    assert(seriesPublishedEVT != null);
+    return seriesPublishedEVT(series);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object>({
+    TResult accountLaunchedEVT(),
+    TResult chapterDraftDeletedEVT(
+        String chapterDraftUID, String seriesDraftUID),
+    TResult chapterDraftSavedEVT(Chapter chapterDraft),
+    TResult chapterPublishedEVT(Chapter chapter),
+    TResult chapterTileHeldEVT(String seriesUID),
+    TResult indexChangedToChapterBookmarkedEVT(),
+    TResult indexChangedToChapterDraftsEVT(),
+    TResult indexChangedToChapterPublishedEVT(),
+    TResult indexChangedToSeriesBookmarkedEVT(),
+    TResult indexChangedToSeriesDraftsEVT(),
+    TResult indexChangedToSeriesPublishedEVT(),
+    TResult seriesDraftDeletedEVT(String seriesDraftUID),
+    TResult seriesDraftSavedEVT(Series seriesDraft),
+    TResult seriesPublishedEVT(Series series),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (seriesPublishedEVT != null) {
+      return seriesPublishedEVT(series);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object>({
+    @required TResult accountLaunchedEVT(AccountLaunchedEVT value),
+    @required TResult chapterDraftDeletedEVT(ChapterDraftDeletedEVT value),
+    @required TResult chapterDraftSavedEVT(ChapterDraftSavedEVT value),
+    @required TResult chapterPublishedEVT(ChapterPublishedEVT value),
+    @required TResult chapterTileHeldEVT(ChapterTileHeldEVT value),
+    @required
+        TResult indexChangedToChapterBookmarkedEVT(
+            IndexChangedToChapterBookmarkedEVT value),
+    @required
+        TResult indexChangedToChapterDraftsEVT(
+            IndexChangedToChapterDraftsEVT value),
+    @required
+        TResult indexChangedToChapterPublishedEVT(
+            IndexChangedToChapterPublishedEVT value),
+    @required
+        TResult indexChangedToSeriesBookmarkedEVT(
+            IndexChangedToSeriesBookmarkedEVT value),
+    @required
+        TResult indexChangedToSeriesDraftsEVT(
+            IndexChangedToSeriesDraftsEVT value),
+    @required
+        TResult indexChangedToSeriesPublishedEVT(
+            IndexChangedToSeriesPublishedEVT value),
+    @required TResult seriesDraftDeletedEVT(SeriesDraftDeletedEVT value),
+    @required TResult seriesDraftSavedEVT(SeriesDraftSavedEVT value),
+    @required TResult seriesPublishedEVT(SeriesPublishedEVT value),
+  }) {
+    assert(accountLaunchedEVT != null);
+    assert(chapterDraftDeletedEVT != null);
+    assert(chapterDraftSavedEVT != null);
+    assert(chapterPublishedEVT != null);
+    assert(chapterTileHeldEVT != null);
+    assert(indexChangedToChapterBookmarkedEVT != null);
+    assert(indexChangedToChapterDraftsEVT != null);
+    assert(indexChangedToChapterPublishedEVT != null);
+    assert(indexChangedToSeriesBookmarkedEVT != null);
+    assert(indexChangedToSeriesDraftsEVT != null);
+    assert(indexChangedToSeriesPublishedEVT != null);
+    assert(seriesDraftDeletedEVT != null);
+    assert(seriesDraftSavedEVT != null);
+    assert(seriesPublishedEVT != null);
+    return seriesPublishedEVT(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object>({
+    TResult accountLaunchedEVT(AccountLaunchedEVT value),
+    TResult chapterDraftDeletedEVT(ChapterDraftDeletedEVT value),
+    TResult chapterDraftSavedEVT(ChapterDraftSavedEVT value),
+    TResult chapterPublishedEVT(ChapterPublishedEVT value),
+    TResult chapterTileHeldEVT(ChapterTileHeldEVT value),
+    TResult indexChangedToChapterBookmarkedEVT(
+        IndexChangedToChapterBookmarkedEVT value),
+    TResult indexChangedToChapterDraftsEVT(
+        IndexChangedToChapterDraftsEVT value),
+    TResult indexChangedToChapterPublishedEVT(
+        IndexChangedToChapterPublishedEVT value),
+    TResult indexChangedToSeriesBookmarkedEVT(
+        IndexChangedToSeriesBookmarkedEVT value),
+    TResult indexChangedToSeriesDraftsEVT(IndexChangedToSeriesDraftsEVT value),
+    TResult indexChangedToSeriesPublishedEVT(
+        IndexChangedToSeriesPublishedEVT value),
+    TResult seriesDraftDeletedEVT(SeriesDraftDeletedEVT value),
+    TResult seriesDraftSavedEVT(SeriesDraftSavedEVT value),
+    TResult seriesPublishedEVT(SeriesPublishedEVT value),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (seriesPublishedEVT != null) {
+      return seriesPublishedEVT(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SeriesPublishedEVT implements AccountDatabaseEvent {
+  const factory SeriesPublishedEVT(Series series) = _$SeriesPublishedEVT;
+
+  Series get series;
+  $SeriesPublishedEVTCopyWith<SeriesPublishedEVT> get copyWith;
+}
+
+/// @nodoc
 class _$AccountDatabaseStateTearOff {
   const _$AccountDatabaseStateTearOff();
 
 // ignore: unused_element
   _AccountDatabaseState call(
       {@required
-          bool isFetching,
+          bool isLoading,
       @required
-          List<ChapterMinified> chaptersMinified,
+          List<Chapter> bookmarkedChapters,
       @required
-          List<SeriesMinified> seriesMinified,
+          List<Chapter> chapterDrafts,
       @required
-          Map<String, String> copyrights,
+          List<Chapter> chapters,
       @required
-          Map<String, String> genres,
+          List<Series> bookmarkedSeriesList,
       @required
-          Map<String, String> languages,
+          List<Series> seriesList,
       @required
-          Option<Either<DatabaseFailure, DatabaseSuccess>>
-              databaseFailureOrSuccessOption,
+          List<Series> seriesDrafts,
+      @required
+          List<List<bool>> layoutDataUpdated,
+      @required
+          Option<Either<DatabaseFailure, ChapterDatabaseSuccess>>
+              chapterDatabaseFailureOrSuccessOption,
+      @required
+          Option<Either<DatabaseFailure, ChapterDraftDatabaseSuccess>>
+              chapterDraftDatabaseFailureOrSuccessOption,
+      @required
+          Option<Either<DatabaseFailure, SeriesDatabaseSuccess>>
+              seriesDatabaseFailureOrSuccessOption,
+      @required
+          Option<Either<DatabaseFailure, SeriesDraftDatabaseSuccess>>
+              seriesDraftDatabaseFailureOrSuccessOption,
+      @required
+          Option<Either<DatabaseFailure, SessionDatabaseSuccess>>
+              sessionDatabaseFailureOrSuccessOption,
       @required
           Session session}) {
     return _AccountDatabaseState(
-      isFetching: isFetching,
-      chaptersMinified: chaptersMinified,
-      seriesMinified: seriesMinified,
-      copyrights: copyrights,
-      genres: genres,
-      languages: languages,
-      databaseFailureOrSuccessOption: databaseFailureOrSuccessOption,
+      isLoading: isLoading,
+      bookmarkedChapters: bookmarkedChapters,
+      chapterDrafts: chapterDrafts,
+      chapters: chapters,
+      bookmarkedSeriesList: bookmarkedSeriesList,
+      seriesList: seriesList,
+      seriesDrafts: seriesDrafts,
+      layoutDataUpdated: layoutDataUpdated,
+      chapterDatabaseFailureOrSuccessOption:
+          chapterDatabaseFailureOrSuccessOption,
+      chapterDraftDatabaseFailureOrSuccessOption:
+          chapterDraftDatabaseFailureOrSuccessOption,
+      seriesDatabaseFailureOrSuccessOption:
+          seriesDatabaseFailureOrSuccessOption,
+      seriesDraftDatabaseFailureOrSuccessOption:
+          seriesDraftDatabaseFailureOrSuccessOption,
+      sessionDatabaseFailureOrSuccessOption:
+          sessionDatabaseFailureOrSuccessOption,
       session: session,
     );
   }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $AccountDatabaseState = _$AccountDatabaseStateTearOff();
 
+/// @nodoc
 mixin _$AccountDatabaseState {
-  bool get isFetching;
-  List<ChapterMinified> get chaptersMinified;
-  List<SeriesMinified> get seriesMinified;
-  Map<String, String> get copyrights;
-  Map<String, String> get genres;
-  Map<String, String> get languages;
-  Option<Either<DatabaseFailure, DatabaseSuccess>>
-      get databaseFailureOrSuccessOption;
+  bool get isLoading;
+  List<Chapter> get bookmarkedChapters;
+  List<Chapter> get chapterDrafts;
+  List<Chapter> get chapters;
+  List<Series> get bookmarkedSeriesList;
+  List<Series> get seriesList;
+  List<Series> get seriesDrafts;
+  List<List<bool>> get layoutDataUpdated;
+  Option<Either<DatabaseFailure, ChapterDatabaseSuccess>>
+      get chapterDatabaseFailureOrSuccessOption;
+  Option<Either<DatabaseFailure, ChapterDraftDatabaseSuccess>>
+      get chapterDraftDatabaseFailureOrSuccessOption;
+  Option<Either<DatabaseFailure, SeriesDatabaseSuccess>>
+      get seriesDatabaseFailureOrSuccessOption;
+  Option<Either<DatabaseFailure, SeriesDraftDatabaseSuccess>>
+      get seriesDraftDatabaseFailureOrSuccessOption;
+  Option<Either<DatabaseFailure, SessionDatabaseSuccess>>
+      get sessionDatabaseFailureOrSuccessOption;
   Session get session;
 
   $AccountDatabaseStateCopyWith<AccountDatabaseState> get copyWith;
 }
 
+/// @nodoc
 abstract class $AccountDatabaseStateCopyWith<$Res> {
   factory $AccountDatabaseStateCopyWith(AccountDatabaseState value,
           $Res Function(AccountDatabaseState) then) =
       _$AccountDatabaseStateCopyWithImpl<$Res>;
   $Res call(
-      {bool isFetching,
-      List<ChapterMinified> chaptersMinified,
-      List<SeriesMinified> seriesMinified,
-      Map<String, String> copyrights,
-      Map<String, String> genres,
-      Map<String, String> languages,
-      Option<Either<DatabaseFailure, DatabaseSuccess>>
-          databaseFailureOrSuccessOption,
+      {bool isLoading,
+      List<Chapter> bookmarkedChapters,
+      List<Chapter> chapterDrafts,
+      List<Chapter> chapters,
+      List<Series> bookmarkedSeriesList,
+      List<Series> seriesList,
+      List<Series> seriesDrafts,
+      List<List<bool>> layoutDataUpdated,
+      Option<Either<DatabaseFailure, ChapterDatabaseSuccess>>
+          chapterDatabaseFailureOrSuccessOption,
+      Option<Either<DatabaseFailure, ChapterDraftDatabaseSuccess>>
+          chapterDraftDatabaseFailureOrSuccessOption,
+      Option<Either<DatabaseFailure, SeriesDatabaseSuccess>>
+          seriesDatabaseFailureOrSuccessOption,
+      Option<Either<DatabaseFailure, SeriesDraftDatabaseSuccess>>
+          seriesDraftDatabaseFailureOrSuccessOption,
+      Option<Either<DatabaseFailure, SessionDatabaseSuccess>>
+          sessionDatabaseFailureOrSuccessOption,
       Session session});
 }
 
+/// @nodoc
 class _$AccountDatabaseStateCopyWithImpl<$Res>
     implements $AccountDatabaseStateCopyWith<$Res> {
   _$AccountDatabaseStateCopyWithImpl(this._value, this._then);
@@ -1008,40 +3286,74 @@ class _$AccountDatabaseStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object isFetching = freezed,
-    Object chaptersMinified = freezed,
-    Object seriesMinified = freezed,
-    Object copyrights = freezed,
-    Object genres = freezed,
-    Object languages = freezed,
-    Object databaseFailureOrSuccessOption = freezed,
+    Object isLoading = freezed,
+    Object bookmarkedChapters = freezed,
+    Object chapterDrafts = freezed,
+    Object chapters = freezed,
+    Object bookmarkedSeriesList = freezed,
+    Object seriesList = freezed,
+    Object seriesDrafts = freezed,
+    Object layoutDataUpdated = freezed,
+    Object chapterDatabaseFailureOrSuccessOption = freezed,
+    Object chapterDraftDatabaseFailureOrSuccessOption = freezed,
+    Object seriesDatabaseFailureOrSuccessOption = freezed,
+    Object seriesDraftDatabaseFailureOrSuccessOption = freezed,
+    Object sessionDatabaseFailureOrSuccessOption = freezed,
     Object session = freezed,
   }) {
     return _then(_value.copyWith(
-      isFetching:
-          isFetching == freezed ? _value.isFetching : isFetching as bool,
-      chaptersMinified: chaptersMinified == freezed
-          ? _value.chaptersMinified
-          : chaptersMinified as List<ChapterMinified>,
-      seriesMinified: seriesMinified == freezed
-          ? _value.seriesMinified
-          : seriesMinified as List<SeriesMinified>,
-      copyrights: copyrights == freezed
-          ? _value.copyrights
-          : copyrights as Map<String, String>,
-      genres: genres == freezed ? _value.genres : genres as Map<String, String>,
-      languages: languages == freezed
-          ? _value.languages
-          : languages as Map<String, String>,
-      databaseFailureOrSuccessOption: databaseFailureOrSuccessOption == freezed
-          ? _value.databaseFailureOrSuccessOption
-          : databaseFailureOrSuccessOption
-              as Option<Either<DatabaseFailure, DatabaseSuccess>>,
+      isLoading: isLoading == freezed ? _value.isLoading : isLoading as bool,
+      bookmarkedChapters: bookmarkedChapters == freezed
+          ? _value.bookmarkedChapters
+          : bookmarkedChapters as List<Chapter>,
+      chapterDrafts: chapterDrafts == freezed
+          ? _value.chapterDrafts
+          : chapterDrafts as List<Chapter>,
+      chapters:
+          chapters == freezed ? _value.chapters : chapters as List<Chapter>,
+      bookmarkedSeriesList: bookmarkedSeriesList == freezed
+          ? _value.bookmarkedSeriesList
+          : bookmarkedSeriesList as List<Series>,
+      seriesList: seriesList == freezed
+          ? _value.seriesList
+          : seriesList as List<Series>,
+      seriesDrafts: seriesDrafts == freezed
+          ? _value.seriesDrafts
+          : seriesDrafts as List<Series>,
+      layoutDataUpdated: layoutDataUpdated == freezed
+          ? _value.layoutDataUpdated
+          : layoutDataUpdated as List<List<bool>>,
+      chapterDatabaseFailureOrSuccessOption:
+          chapterDatabaseFailureOrSuccessOption == freezed
+              ? _value.chapterDatabaseFailureOrSuccessOption
+              : chapterDatabaseFailureOrSuccessOption
+                  as Option<Either<DatabaseFailure, ChapterDatabaseSuccess>>,
+      chapterDraftDatabaseFailureOrSuccessOption:
+          chapterDraftDatabaseFailureOrSuccessOption == freezed
+              ? _value.chapterDraftDatabaseFailureOrSuccessOption
+              : chapterDraftDatabaseFailureOrSuccessOption as Option<
+                  Either<DatabaseFailure, ChapterDraftDatabaseSuccess>>,
+      seriesDatabaseFailureOrSuccessOption:
+          seriesDatabaseFailureOrSuccessOption == freezed
+              ? _value.seriesDatabaseFailureOrSuccessOption
+              : seriesDatabaseFailureOrSuccessOption
+                  as Option<Either<DatabaseFailure, SeriesDatabaseSuccess>>,
+      seriesDraftDatabaseFailureOrSuccessOption:
+          seriesDraftDatabaseFailureOrSuccessOption == freezed
+              ? _value.seriesDraftDatabaseFailureOrSuccessOption
+              : seriesDraftDatabaseFailureOrSuccessOption as Option<
+                  Either<DatabaseFailure, SeriesDraftDatabaseSuccess>>,
+      sessionDatabaseFailureOrSuccessOption:
+          sessionDatabaseFailureOrSuccessOption == freezed
+              ? _value.sessionDatabaseFailureOrSuccessOption
+              : sessionDatabaseFailureOrSuccessOption
+                  as Option<Either<DatabaseFailure, SessionDatabaseSuccess>>,
       session: session == freezed ? _value.session : session as Session,
     ));
   }
 }
 
+/// @nodoc
 abstract class _$AccountDatabaseStateCopyWith<$Res>
     implements $AccountDatabaseStateCopyWith<$Res> {
   factory _$AccountDatabaseStateCopyWith(_AccountDatabaseState value,
@@ -1049,17 +3361,28 @@ abstract class _$AccountDatabaseStateCopyWith<$Res>
       __$AccountDatabaseStateCopyWithImpl<$Res>;
   @override
   $Res call(
-      {bool isFetching,
-      List<ChapterMinified> chaptersMinified,
-      List<SeriesMinified> seriesMinified,
-      Map<String, String> copyrights,
-      Map<String, String> genres,
-      Map<String, String> languages,
-      Option<Either<DatabaseFailure, DatabaseSuccess>>
-          databaseFailureOrSuccessOption,
+      {bool isLoading,
+      List<Chapter> bookmarkedChapters,
+      List<Chapter> chapterDrafts,
+      List<Chapter> chapters,
+      List<Series> bookmarkedSeriesList,
+      List<Series> seriesList,
+      List<Series> seriesDrafts,
+      List<List<bool>> layoutDataUpdated,
+      Option<Either<DatabaseFailure, ChapterDatabaseSuccess>>
+          chapterDatabaseFailureOrSuccessOption,
+      Option<Either<DatabaseFailure, ChapterDraftDatabaseSuccess>>
+          chapterDraftDatabaseFailureOrSuccessOption,
+      Option<Either<DatabaseFailure, SeriesDatabaseSuccess>>
+          seriesDatabaseFailureOrSuccessOption,
+      Option<Either<DatabaseFailure, SeriesDraftDatabaseSuccess>>
+          seriesDraftDatabaseFailureOrSuccessOption,
+      Option<Either<DatabaseFailure, SessionDatabaseSuccess>>
+          sessionDatabaseFailureOrSuccessOption,
       Session session});
 }
 
+/// @nodoc
 class __$AccountDatabaseStateCopyWithImpl<$Res>
     extends _$AccountDatabaseStateCopyWithImpl<$Res>
     implements _$AccountDatabaseStateCopyWith<$Res> {
@@ -1072,82 +3395,144 @@ class __$AccountDatabaseStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object isFetching = freezed,
-    Object chaptersMinified = freezed,
-    Object seriesMinified = freezed,
-    Object copyrights = freezed,
-    Object genres = freezed,
-    Object languages = freezed,
-    Object databaseFailureOrSuccessOption = freezed,
+    Object isLoading = freezed,
+    Object bookmarkedChapters = freezed,
+    Object chapterDrafts = freezed,
+    Object chapters = freezed,
+    Object bookmarkedSeriesList = freezed,
+    Object seriesList = freezed,
+    Object seriesDrafts = freezed,
+    Object layoutDataUpdated = freezed,
+    Object chapterDatabaseFailureOrSuccessOption = freezed,
+    Object chapterDraftDatabaseFailureOrSuccessOption = freezed,
+    Object seriesDatabaseFailureOrSuccessOption = freezed,
+    Object seriesDraftDatabaseFailureOrSuccessOption = freezed,
+    Object sessionDatabaseFailureOrSuccessOption = freezed,
     Object session = freezed,
   }) {
     return _then(_AccountDatabaseState(
-      isFetching:
-          isFetching == freezed ? _value.isFetching : isFetching as bool,
-      chaptersMinified: chaptersMinified == freezed
-          ? _value.chaptersMinified
-          : chaptersMinified as List<ChapterMinified>,
-      seriesMinified: seriesMinified == freezed
-          ? _value.seriesMinified
-          : seriesMinified as List<SeriesMinified>,
-      copyrights: copyrights == freezed
-          ? _value.copyrights
-          : copyrights as Map<String, String>,
-      genres: genres == freezed ? _value.genres : genres as Map<String, String>,
-      languages: languages == freezed
-          ? _value.languages
-          : languages as Map<String, String>,
-      databaseFailureOrSuccessOption: databaseFailureOrSuccessOption == freezed
-          ? _value.databaseFailureOrSuccessOption
-          : databaseFailureOrSuccessOption
-              as Option<Either<DatabaseFailure, DatabaseSuccess>>,
+      isLoading: isLoading == freezed ? _value.isLoading : isLoading as bool,
+      bookmarkedChapters: bookmarkedChapters == freezed
+          ? _value.bookmarkedChapters
+          : bookmarkedChapters as List<Chapter>,
+      chapterDrafts: chapterDrafts == freezed
+          ? _value.chapterDrafts
+          : chapterDrafts as List<Chapter>,
+      chapters:
+          chapters == freezed ? _value.chapters : chapters as List<Chapter>,
+      bookmarkedSeriesList: bookmarkedSeriesList == freezed
+          ? _value.bookmarkedSeriesList
+          : bookmarkedSeriesList as List<Series>,
+      seriesList: seriesList == freezed
+          ? _value.seriesList
+          : seriesList as List<Series>,
+      seriesDrafts: seriesDrafts == freezed
+          ? _value.seriesDrafts
+          : seriesDrafts as List<Series>,
+      layoutDataUpdated: layoutDataUpdated == freezed
+          ? _value.layoutDataUpdated
+          : layoutDataUpdated as List<List<bool>>,
+      chapterDatabaseFailureOrSuccessOption:
+          chapterDatabaseFailureOrSuccessOption == freezed
+              ? _value.chapterDatabaseFailureOrSuccessOption
+              : chapterDatabaseFailureOrSuccessOption
+                  as Option<Either<DatabaseFailure, ChapterDatabaseSuccess>>,
+      chapterDraftDatabaseFailureOrSuccessOption:
+          chapterDraftDatabaseFailureOrSuccessOption == freezed
+              ? _value.chapterDraftDatabaseFailureOrSuccessOption
+              : chapterDraftDatabaseFailureOrSuccessOption as Option<
+                  Either<DatabaseFailure, ChapterDraftDatabaseSuccess>>,
+      seriesDatabaseFailureOrSuccessOption:
+          seriesDatabaseFailureOrSuccessOption == freezed
+              ? _value.seriesDatabaseFailureOrSuccessOption
+              : seriesDatabaseFailureOrSuccessOption
+                  as Option<Either<DatabaseFailure, SeriesDatabaseSuccess>>,
+      seriesDraftDatabaseFailureOrSuccessOption:
+          seriesDraftDatabaseFailureOrSuccessOption == freezed
+              ? _value.seriesDraftDatabaseFailureOrSuccessOption
+              : seriesDraftDatabaseFailureOrSuccessOption as Option<
+                  Either<DatabaseFailure, SeriesDraftDatabaseSuccess>>,
+      sessionDatabaseFailureOrSuccessOption:
+          sessionDatabaseFailureOrSuccessOption == freezed
+              ? _value.sessionDatabaseFailureOrSuccessOption
+              : sessionDatabaseFailureOrSuccessOption
+                  as Option<Either<DatabaseFailure, SessionDatabaseSuccess>>,
       session: session == freezed ? _value.session : session as Session,
     ));
   }
 }
 
+/// @nodoc
 class _$_AccountDatabaseState
     with DiagnosticableTreeMixin
     implements _AccountDatabaseState {
   const _$_AccountDatabaseState(
-      {@required this.isFetching,
-      @required this.chaptersMinified,
-      @required this.seriesMinified,
-      @required this.copyrights,
-      @required this.genres,
-      @required this.languages,
-      @required this.databaseFailureOrSuccessOption,
+      {@required this.isLoading,
+      @required this.bookmarkedChapters,
+      @required this.chapterDrafts,
+      @required this.chapters,
+      @required this.bookmarkedSeriesList,
+      @required this.seriesList,
+      @required this.seriesDrafts,
+      @required this.layoutDataUpdated,
+      @required this.chapterDatabaseFailureOrSuccessOption,
+      @required this.chapterDraftDatabaseFailureOrSuccessOption,
+      @required this.seriesDatabaseFailureOrSuccessOption,
+      @required this.seriesDraftDatabaseFailureOrSuccessOption,
+      @required this.sessionDatabaseFailureOrSuccessOption,
       @required this.session})
-      : assert(isFetching != null),
-        assert(chaptersMinified != null),
-        assert(seriesMinified != null),
-        assert(copyrights != null),
-        assert(genres != null),
-        assert(languages != null),
-        assert(databaseFailureOrSuccessOption != null),
+      : assert(isLoading != null),
+        assert(bookmarkedChapters != null),
+        assert(chapterDrafts != null),
+        assert(chapters != null),
+        assert(bookmarkedSeriesList != null),
+        assert(seriesList != null),
+        assert(seriesDrafts != null),
+        assert(layoutDataUpdated != null),
+        assert(chapterDatabaseFailureOrSuccessOption != null),
+        assert(chapterDraftDatabaseFailureOrSuccessOption != null),
+        assert(seriesDatabaseFailureOrSuccessOption != null),
+        assert(seriesDraftDatabaseFailureOrSuccessOption != null),
+        assert(sessionDatabaseFailureOrSuccessOption != null),
         assert(session != null);
 
   @override
-  final bool isFetching;
+  final bool isLoading;
   @override
-  final List<ChapterMinified> chaptersMinified;
+  final List<Chapter> bookmarkedChapters;
   @override
-  final List<SeriesMinified> seriesMinified;
+  final List<Chapter> chapterDrafts;
   @override
-  final Map<String, String> copyrights;
+  final List<Chapter> chapters;
   @override
-  final Map<String, String> genres;
+  final List<Series> bookmarkedSeriesList;
   @override
-  final Map<String, String> languages;
+  final List<Series> seriesList;
   @override
-  final Option<Either<DatabaseFailure, DatabaseSuccess>>
-      databaseFailureOrSuccessOption;
+  final List<Series> seriesDrafts;
+  @override
+  final List<List<bool>> layoutDataUpdated;
+  @override
+  final Option<Either<DatabaseFailure, ChapterDatabaseSuccess>>
+      chapterDatabaseFailureOrSuccessOption;
+  @override
+  final Option<Either<DatabaseFailure, ChapterDraftDatabaseSuccess>>
+      chapterDraftDatabaseFailureOrSuccessOption;
+  @override
+  final Option<Either<DatabaseFailure, SeriesDatabaseSuccess>>
+      seriesDatabaseFailureOrSuccessOption;
+  @override
+  final Option<Either<DatabaseFailure, SeriesDraftDatabaseSuccess>>
+      seriesDraftDatabaseFailureOrSuccessOption;
+  @override
+  final Option<Either<DatabaseFailure, SessionDatabaseSuccess>>
+      sessionDatabaseFailureOrSuccessOption;
   @override
   final Session session;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'AccountDatabaseState(isFetching: $isFetching, chaptersMinified: $chaptersMinified, seriesMinified: $seriesMinified, copyrights: $copyrights, genres: $genres, languages: $languages, databaseFailureOrSuccessOption: $databaseFailureOrSuccessOption, session: $session)';
+    return 'AccountDatabaseState(isLoading: $isLoading, bookmarkedChapters: $bookmarkedChapters, chapterDrafts: $chapterDrafts, chapters: $chapters, bookmarkedSeriesList: $bookmarkedSeriesList, seriesList: $seriesList, seriesDrafts: $seriesDrafts, layoutDataUpdated: $layoutDataUpdated, chapterDatabaseFailureOrSuccessOption: $chapterDatabaseFailureOrSuccessOption, chapterDraftDatabaseFailureOrSuccessOption: $chapterDraftDatabaseFailureOrSuccessOption, seriesDatabaseFailureOrSuccessOption: $seriesDatabaseFailureOrSuccessOption, seriesDraftDatabaseFailureOrSuccessOption: $seriesDraftDatabaseFailureOrSuccessOption, sessionDatabaseFailureOrSuccessOption: $sessionDatabaseFailureOrSuccessOption, session: $session)';
   }
 
   @override
@@ -1155,14 +3540,24 @@ class _$_AccountDatabaseState
     super.debugFillProperties(properties);
     properties
       ..add(DiagnosticsProperty('type', 'AccountDatabaseState'))
-      ..add(DiagnosticsProperty('isFetching', isFetching))
-      ..add(DiagnosticsProperty('chaptersMinified', chaptersMinified))
-      ..add(DiagnosticsProperty('seriesMinified', seriesMinified))
-      ..add(DiagnosticsProperty('copyrights', copyrights))
-      ..add(DiagnosticsProperty('genres', genres))
-      ..add(DiagnosticsProperty('languages', languages))
-      ..add(DiagnosticsProperty(
-          'databaseFailureOrSuccessOption', databaseFailureOrSuccessOption))
+      ..add(DiagnosticsProperty('isLoading', isLoading))
+      ..add(DiagnosticsProperty('bookmarkedChapters', bookmarkedChapters))
+      ..add(DiagnosticsProperty('chapterDrafts', chapterDrafts))
+      ..add(DiagnosticsProperty('chapters', chapters))
+      ..add(DiagnosticsProperty('bookmarkedSeriesList', bookmarkedSeriesList))
+      ..add(DiagnosticsProperty('seriesList', seriesList))
+      ..add(DiagnosticsProperty('seriesDrafts', seriesDrafts))
+      ..add(DiagnosticsProperty('layoutDataUpdated', layoutDataUpdated))
+      ..add(DiagnosticsProperty('chapterDatabaseFailureOrSuccessOption',
+          chapterDatabaseFailureOrSuccessOption))
+      ..add(DiagnosticsProperty('chapterDraftDatabaseFailureOrSuccessOption',
+          chapterDraftDatabaseFailureOrSuccessOption))
+      ..add(DiagnosticsProperty('seriesDatabaseFailureOrSuccessOption',
+          seriesDatabaseFailureOrSuccessOption))
+      ..add(DiagnosticsProperty('seriesDraftDatabaseFailureOrSuccessOption',
+          seriesDraftDatabaseFailureOrSuccessOption))
+      ..add(DiagnosticsProperty('sessionDatabaseFailureOrSuccessOption',
+          sessionDatabaseFailureOrSuccessOption))
       ..add(DiagnosticsProperty('session', session));
   }
 
@@ -1170,42 +3565,75 @@ class _$_AccountDatabaseState
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _AccountDatabaseState &&
-            (identical(other.isFetching, isFetching) ||
+            (identical(other.isLoading, isLoading) ||
                 const DeepCollectionEquality()
-                    .equals(other.isFetching, isFetching)) &&
-            (identical(other.chaptersMinified, chaptersMinified) ||
+                    .equals(other.isLoading, isLoading)) &&
+            (identical(other.bookmarkedChapters, bookmarkedChapters) ||
                 const DeepCollectionEquality()
-                    .equals(other.chaptersMinified, chaptersMinified)) &&
-            (identical(other.seriesMinified, seriesMinified) ||
+                    .equals(other.bookmarkedChapters, bookmarkedChapters)) &&
+            (identical(other.chapterDrafts, chapterDrafts) ||
                 const DeepCollectionEquality()
-                    .equals(other.seriesMinified, seriesMinified)) &&
-            (identical(other.copyrights, copyrights) ||
+                    .equals(other.chapterDrafts, chapterDrafts)) &&
+            (identical(other.chapters, chapters) ||
                 const DeepCollectionEquality()
-                    .equals(other.copyrights, copyrights)) &&
-            (identical(other.genres, genres) ||
-                const DeepCollectionEquality().equals(other.genres, genres)) &&
-            (identical(other.languages, languages) ||
-                const DeepCollectionEquality()
-                    .equals(other.languages, languages)) &&
-            (identical(other.databaseFailureOrSuccessOption,
-                    databaseFailureOrSuccessOption) ||
+                    .equals(other.chapters, chapters)) &&
+            (identical(other.bookmarkedSeriesList, bookmarkedSeriesList) ||
                 const DeepCollectionEquality().equals(
-                    other.databaseFailureOrSuccessOption,
-                    databaseFailureOrSuccessOption)) &&
-            (identical(other.session, session) ||
-                const DeepCollectionEquality().equals(other.session, session)));
+                    other.bookmarkedSeriesList, bookmarkedSeriesList)) &&
+            (identical(other.seriesList, seriesList) ||
+                const DeepCollectionEquality()
+                    .equals(other.seriesList, seriesList)) &&
+            (identical(other.seriesDrafts, seriesDrafts) ||
+                const DeepCollectionEquality()
+                    .equals(other.seriesDrafts, seriesDrafts)) &&
+            (identical(other.layoutDataUpdated, layoutDataUpdated) ||
+                const DeepCollectionEquality()
+                    .equals(other.layoutDataUpdated, layoutDataUpdated)) &&
+            (identical(other.chapterDatabaseFailureOrSuccessOption, chapterDatabaseFailureOrSuccessOption) ||
+                const DeepCollectionEquality().equals(
+                    other.chapterDatabaseFailureOrSuccessOption,
+                    chapterDatabaseFailureOrSuccessOption)) &&
+            (identical(other.chapterDraftDatabaseFailureOrSuccessOption,
+                    chapterDraftDatabaseFailureOrSuccessOption) ||
+                const DeepCollectionEquality().equals(
+                    other.chapterDraftDatabaseFailureOrSuccessOption,
+                    chapterDraftDatabaseFailureOrSuccessOption)) &&
+            (identical(other.seriesDatabaseFailureOrSuccessOption, seriesDatabaseFailureOrSuccessOption) ||
+                const DeepCollectionEquality().equals(
+                    other.seriesDatabaseFailureOrSuccessOption,
+                    seriesDatabaseFailureOrSuccessOption)) &&
+            (identical(other.seriesDraftDatabaseFailureOrSuccessOption, seriesDraftDatabaseFailureOrSuccessOption) ||
+                const DeepCollectionEquality().equals(
+                    other.seriesDraftDatabaseFailureOrSuccessOption,
+                    seriesDraftDatabaseFailureOrSuccessOption)) &&
+            (identical(other.sessionDatabaseFailureOrSuccessOption, sessionDatabaseFailureOrSuccessOption) ||
+                const DeepCollectionEquality().equals(
+                    other.sessionDatabaseFailureOrSuccessOption,
+                    sessionDatabaseFailureOrSuccessOption)) &&
+            (identical(other.session, session) || const DeepCollectionEquality().equals(other.session, session)));
   }
 
   @override
   int get hashCode =>
       runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(isFetching) ^
-      const DeepCollectionEquality().hash(chaptersMinified) ^
-      const DeepCollectionEquality().hash(seriesMinified) ^
-      const DeepCollectionEquality().hash(copyrights) ^
-      const DeepCollectionEquality().hash(genres) ^
-      const DeepCollectionEquality().hash(languages) ^
-      const DeepCollectionEquality().hash(databaseFailureOrSuccessOption) ^
+      const DeepCollectionEquality().hash(isLoading) ^
+      const DeepCollectionEquality().hash(bookmarkedChapters) ^
+      const DeepCollectionEquality().hash(chapterDrafts) ^
+      const DeepCollectionEquality().hash(chapters) ^
+      const DeepCollectionEquality().hash(bookmarkedSeriesList) ^
+      const DeepCollectionEquality().hash(seriesList) ^
+      const DeepCollectionEquality().hash(seriesDrafts) ^
+      const DeepCollectionEquality().hash(layoutDataUpdated) ^
+      const DeepCollectionEquality()
+          .hash(chapterDatabaseFailureOrSuccessOption) ^
+      const DeepCollectionEquality()
+          .hash(chapterDraftDatabaseFailureOrSuccessOption) ^
+      const DeepCollectionEquality()
+          .hash(seriesDatabaseFailureOrSuccessOption) ^
+      const DeepCollectionEquality()
+          .hash(seriesDraftDatabaseFailureOrSuccessOption) ^
+      const DeepCollectionEquality()
+          .hash(sessionDatabaseFailureOrSuccessOption) ^
       const DeepCollectionEquality().hash(session);
 
   @override
@@ -1217,38 +3645,70 @@ class _$_AccountDatabaseState
 abstract class _AccountDatabaseState implements AccountDatabaseState {
   const factory _AccountDatabaseState(
       {@required
-          bool isFetching,
+          bool isLoading,
       @required
-          List<ChapterMinified> chaptersMinified,
+          List<Chapter> bookmarkedChapters,
       @required
-          List<SeriesMinified> seriesMinified,
+          List<Chapter> chapterDrafts,
       @required
-          Map<String, String> copyrights,
+          List<Chapter> chapters,
       @required
-          Map<String, String> genres,
+          List<Series> bookmarkedSeriesList,
       @required
-          Map<String, String> languages,
+          List<Series> seriesList,
       @required
-          Option<Either<DatabaseFailure, DatabaseSuccess>>
-              databaseFailureOrSuccessOption,
+          List<Series> seriesDrafts,
+      @required
+          List<List<bool>> layoutDataUpdated,
+      @required
+          Option<Either<DatabaseFailure, ChapterDatabaseSuccess>>
+              chapterDatabaseFailureOrSuccessOption,
+      @required
+          Option<Either<DatabaseFailure, ChapterDraftDatabaseSuccess>>
+              chapterDraftDatabaseFailureOrSuccessOption,
+      @required
+          Option<Either<DatabaseFailure, SeriesDatabaseSuccess>>
+              seriesDatabaseFailureOrSuccessOption,
+      @required
+          Option<Either<DatabaseFailure, SeriesDraftDatabaseSuccess>>
+              seriesDraftDatabaseFailureOrSuccessOption,
+      @required
+          Option<Either<DatabaseFailure, SessionDatabaseSuccess>>
+              sessionDatabaseFailureOrSuccessOption,
       @required
           Session session}) = _$_AccountDatabaseState;
 
   @override
-  bool get isFetching;
+  bool get isLoading;
   @override
-  List<ChapterMinified> get chaptersMinified;
+  List<Chapter> get bookmarkedChapters;
   @override
-  List<SeriesMinified> get seriesMinified;
+  List<Chapter> get chapterDrafts;
   @override
-  Map<String, String> get copyrights;
+  List<Chapter> get chapters;
   @override
-  Map<String, String> get genres;
+  List<Series> get bookmarkedSeriesList;
   @override
-  Map<String, String> get languages;
+  List<Series> get seriesList;
   @override
-  Option<Either<DatabaseFailure, DatabaseSuccess>>
-      get databaseFailureOrSuccessOption;
+  List<Series> get seriesDrafts;
+  @override
+  List<List<bool>> get layoutDataUpdated;
+  @override
+  Option<Either<DatabaseFailure, ChapterDatabaseSuccess>>
+      get chapterDatabaseFailureOrSuccessOption;
+  @override
+  Option<Either<DatabaseFailure, ChapterDraftDatabaseSuccess>>
+      get chapterDraftDatabaseFailureOrSuccessOption;
+  @override
+  Option<Either<DatabaseFailure, SeriesDatabaseSuccess>>
+      get seriesDatabaseFailureOrSuccessOption;
+  @override
+  Option<Either<DatabaseFailure, SeriesDraftDatabaseSuccess>>
+      get seriesDraftDatabaseFailureOrSuccessOption;
+  @override
+  Option<Either<DatabaseFailure, SessionDatabaseSuccess>>
+      get sessionDatabaseFailureOrSuccessOption;
   @override
   Session get session;
   @override

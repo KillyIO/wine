@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
 
+/// @nodoc
 class WINEEditorTopTitle extends StatelessWidget {
-  final String title;
+  /// @nodoc
+  const WINEEditorTopTitle({
+    Key key,
+    @required this.title,
+  }) : super(key: key);
 
-  const WINEEditorTopTitle({Key key, @required this.title}) : super(key: key);
+  /// @nodoc
+  final String title;
 
   @override
   Widget build(BuildContext context) {
@@ -13,7 +19,12 @@ class WINEEditorTopTitle extends StatelessWidget {
         child: Text(
           title,
           textAlign: TextAlign.center,
-          style: TextStyle(color: Colors.black, fontSize: 20.0, fontWeight: FontWeight.w400, letterSpacing: .5),
+          style: const TextStyle(
+            color: Colors.black,
+            fontSize: 20.0,
+            fontWeight: FontWeight.w400,
+            letterSpacing: .5,
+          ),
         ),
       ),
     );

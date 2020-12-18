@@ -5,348 +5,576 @@ import 'package:dartz/dartz.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:injectable/injectable.dart';
 import 'package:path/path.dart' as p;
+
 import 'package:wine/domain/database/database_failure.dart';
-import 'package:wine/domain/database/database_success.dart';
-import 'package:wine/domain/database/i_online_series_database_facade.dart';
+import 'package:wine/domain/database/facades/online/i_online_series_database_facade.dart';
+import 'package:wine/domain/database/successes/series_database_success.dart';
+import 'package:wine/domain/models/count.dart';
 import 'package:wine/domain/models/series.dart';
-import 'package:wine/domain/models/series_minified.dart';
-import 'package:wine/utils/methods.dart';
+import 'package:wine/utils/extensions.dart';
+import 'package:wine/utils/getters.dart';
 import 'package:wine/utils/paths.dart';
 
+/// @nodoc
 @LazySingleton(as: IOnlineSeriesDatabaseFacade)
-class FirebaseOnlineSeriesDatabaseFacade implements IOnlineSeriesDatabaseFacade {
-  final Firestore _firestore;
-  final FirebaseStorage _firebaseStorage;
-
+class FirebaseOnlineSeriesDatabaseFacade
+    with Getters
+    implements IOnlineSeriesDatabaseFacade {
+  /// @nodoc
   FirebaseOnlineSeriesDatabaseFacade(this._firestore, this._firebaseStorage);
 
-  @override
-  Future<Either<DatabaseFailure, DatabaseSuccess>> deleteSeriesCover(String coverUrl) async {
-    final StorageReference storageReference = await _firebaseStorage.getReferenceFromUrl(coverUrl);
+  final FirebaseFirestore _firestore;
+  final FirebaseStorage _firebaseStorage;
 
-    await storageReference.delete();
-    return right(const DatabaseSuccess.seriesCoverDeletedSCS());
+  @override
+  Future<Either<DatabaseFailure, SeriesDatabaseSuccess>> deleteSeries(
+    String seriesUID,
+  ) async {
+    final ref = _firestore.collection(Paths.seriesPath).doc(seriesUID);
+
+    await ref.delete();
+    return right(const SeriesDatabaseSuccess.seriesDeletedSCS());
   }
 
   @override
-  Future<Either<DatabaseFailure, DatabaseSuccess>> loadNewSeriesMinified(
-    Map<String, dynamic> filters, {
-    SeriesMinified lastSeriesMinified,
+  Future<Either<DatabaseFailure, SeriesDatabaseSuccess>> deleteSeriesCover(
+      String coverURL) async {
+    final storageReference = _firebaseStorage.refFromURL(coverURL);
+
+    await storageReference.delete();
+    return right(const SeriesDatabaseSuccess.seriesCoverDeletedSCS());
+  }
+
+  Future<List<String>> _loadBookmarkedSeriesUIDList(
+    String userUID, {
+    Series lastSeries,
   }) async {
-    final CollectionReference seriesMinifiedCollection = _firestore.collection(Paths.seriesMinifiedPath);
+    final seriesBookmarksCollection =
+        _firestore.collection(Paths.seriesBookmarksPath);
 
-    QuerySnapshot querySnapshot;
-    if (lastSeriesMinified != null) {
-      final DocumentSnapshot lastDocument = await seriesMinifiedCollection.document(lastSeriesMinified.uid).get();
+    Query query;
+    if (lastSeries != null) {
+      final lastDocument =
+          await seriesBookmarksCollection.doc(lastSeries.uid).get();
 
-      querySnapshot = await seriesMinifiedCollection
+      query = seriesBookmarksCollection
           .startAfterDocument(lastDocument)
-          .where('createdAt', isGreaterThanOrEqualTo: filters['time'])
-          .where(
-            'genre',
-            whereIn: (filters['genre'] as String).isNotEmpty ? [filters['genre']] : Methods.getGenreKeys(),
-          )
-          .where('language', isEqualTo: filters['language'])
-          .orderBy('createdAt', descending: true)
-          .limit(20)
-          .getDocuments();
+          .where(userUID, isEqualTo: true);
     } else {
-      querySnapshot = await seriesMinifiedCollection
-          .where('createdAt', isGreaterThanOrEqualTo: filters['time'])
-          .where(
-            'genre',
-            whereIn: (filters['genre'] as String).isNotEmpty ? [filters['genre']] : Methods.getGenreKeys(),
-          )
-          .where('language', isEqualTo: filters['language'])
-          .orderBy('createdAt', descending: true)
-          .limit(20)
-          .getDocuments();
+      query = seriesBookmarksCollection.where(userUID, isEqualTo: true);
+    }
+    query = query.limit(20);
+
+    final querySnapshot = await query.get();
+
+    final uidsList = <String>[];
+    for (final DocumentSnapshot doc in querySnapshot.docs) {
+      uidsList.add(doc.id);
     }
 
-    final List<SeriesMinified> seriesMinifiedList = <SeriesMinified>[];
-    if (querySnapshot.documents.isNotEmpty) {
-      for (final DocumentSnapshot doc in querySnapshot.documents) {
-        seriesMinifiedList.add(SeriesMinified.fromFirestore(doc));
+    return uidsList.toSet().toList();
+  }
+
+  @override
+  Future<Either<DatabaseFailure, SeriesDatabaseSuccess>>
+      loadBookmarkedSeriesListByUserUID(
+    String userUID, {
+    Series lastSeries,
+  }) async {
+    final uidsList = await _loadBookmarkedSeriesUIDList(userUID);
+
+    if (uidsList.isNotEmpty) {
+      final seriesCollection = _firestore.collection(Paths.seriesPath);
+
+      final querySnapshot =
+          await seriesCollection.where('uid', whereIn: uidsList).get();
+
+      final seriesList = <Series>[];
+      if (querySnapshot.docs.isNotEmpty) {
+        for (final DocumentSnapshot doc in querySnapshot.docs) {
+          seriesList.add(Series.fromFirestore(doc));
+        }
+      }
+
+      return right(SeriesDatabaseSuccess.seriesListLoadedSCS(seriesList));
+    }
+
+    return right(const SeriesDatabaseSuccess.seriesListLoadedSCS(<Series>[]));
+  }
+
+  @override
+  Future<Either<DatabaseFailure, SeriesDatabaseSuccess>> loadNewSeriesList(
+    Map<String, dynamic> filters, {
+    Series lastSeries,
+  }) async {
+    final seriesCollection = _firestore.collection(Paths.seriesPath);
+
+    Query query;
+    if (lastSeries != null) {
+      final lastDocument = await seriesCollection.doc(lastSeries.uid).get();
+
+      query = seriesCollection
+          .startAfterDocument(lastDocument)
+          .where('createdAt', isGreaterThanOrEqualTo: filters['time']);
+    } else {
+      query = seriesCollection.where('createdAt',
+          isGreaterThanOrEqualTo: filters['time']);
+    }
+
+    if ((filters['genre'] as String).isNotEmpty) {
+      query = query.where('genre', isEqualTo: filters['genre']);
+    }
+
+    query = query
+        .where('language', isEqualTo: filters['language'])
+        .orderBy('createdAt', descending: true)
+        .limit(20);
+
+    final querySnapshot = await query.get();
+
+    final seriesList = <Series>[];
+    if (querySnapshot.docs.isNotEmpty) {
+      for (final DocumentSnapshot doc in querySnapshot.docs) {
+        seriesList.add(Series.fromFirestore(doc));
       }
     }
 
-    return right(DatabaseSuccess.seriesMinifiedListLoadedSCS(seriesMinifiedList));
+    return right(SeriesDatabaseSuccess.seriesListLoadedSCS(seriesList));
   }
 
   @override
-  Future<Either<DatabaseFailure, DatabaseSuccess>> loadSeriesAsMapByUidList(List<String> seriesUids) async {
-    final List<String> filterSeriesUids = seriesUids.toSet().toList();
+  Future<Either<DatabaseFailure, SeriesDatabaseSuccess>>
+      loadSeriesAsMapByUIDList(List<String> seriesUIDs) async {
+    final filterSeriesUIDs = seriesUIDs.toSet().toList();
 
-    final CollectionReference usersCollection = _firestore.collection(Paths.seriesPath);
+    final usersCollection = _firestore.collection(Paths.seriesPath);
 
-    final QuerySnapshot querySnapshot = await usersCollection.where('uid', whereIn: filterSeriesUids).getDocuments();
+    final querySnapshot =
+        await usersCollection.where('uid', whereIn: filterSeriesUIDs).get();
 
-    final List<Series> seriesList = <Series>[];
-    for (final DocumentSnapshot doc in querySnapshot.documents) {
+    final seriesList = <Series>[];
+    for (final DocumentSnapshot doc in querySnapshot.docs) {
       seriesList.add(Series.fromFirestore(doc));
     }
 
-    final Map<String, Series> seriesMap = {for (final Series series in seriesList) series.uid: series};
+    final seriesMap = <String, Series>{
+      for (final Series series in seriesList) series.uid: series
+    };
 
-    return right(DatabaseSuccess.seriesAsMapLoadedSCS(seriesMap));
+    return right(SeriesDatabaseSuccess.seriesAsMapLoadedSCS(seriesMap));
   }
 
   @override
-  Future<Either<DatabaseFailure, DatabaseSuccess>> loadSeriesBookmarksCount(String seriesUid) async {
-    final DocumentSnapshot documentSnapshot =
-        await _firestore.collection(Paths.seriesBookmarksPath).document(seriesUid).get();
+  Future<Either<DatabaseFailure, SeriesDatabaseSuccess>>
+      loadSeriesBookmarksCount(String seriesUID) async {
+    final documentSnapshot = await _firestore
+        .collection(Paths.seriesBookmarksCountsPath)
+        .doc(seriesUID)
+        .get();
 
     if (!documentSnapshot.exists) {
-      return right(const DatabaseSuccess.seriesStatsCountLoadedSCS(0));
+      return right(SeriesDatabaseSuccess.seriesStatsCountLoadedSCS(
+        Count(count: 0),
+      ));
     }
-    final Map<String, dynamic> data = documentSnapshot.data;
-    final List<String> bookmarks = data.keys.where((key) => data[key] == true).toList();
-    return right(DatabaseSuccess.seriesStatsCountLoadedSCS(bookmarks.length));
+    final count = Count.fromFirestore(documentSnapshot);
+    return right(SeriesDatabaseSuccess.seriesStatsCountLoadedSCS(count));
   }
 
   @override
-  Future<Either<DatabaseFailure, DatabaseSuccess>> loadSeriesByUid(String seriesUid) async {
-    final DocumentReference ref = _firestore.collection(Paths.seriesPath).document(seriesUid);
+  Future<Either<DatabaseFailure, SeriesDatabaseSuccess>> loadSeriesByUID(
+    String seriesUID,
+  ) async {
+    final ref = _firestore.collection(Paths.seriesPath).doc(seriesUID);
 
-    final DocumentSnapshot snapshot = await ref.get();
+    final snapshot = await ref.get();
     if (snapshot != null && snapshot.exists) {
-      final Series series = Series.fromFirestore(snapshot);
-      return right(DatabaseSuccess.seriesLoadedSCS(series));
+      final series = Series.fromFirestore(snapshot);
+      return right(SeriesDatabaseSuccess.seriesLoadedSCS(series));
     }
-    return left(const DatabaseFailure.failedToFetchOnlineData());
+    return left(const DatabaseFailure.failedToLoadOnlineData());
   }
 
   @override
-  Future<Either<DatabaseFailure, DatabaseSuccess>> loadSeriesMinifiedByUserUid(
-    String userUid, {
-    SeriesMinified lastSeriesMinified,
+  Future<Either<DatabaseFailure, SeriesDatabaseSuccess>>
+      loadSeriesListByUserUID(
+    String userUID, {
+    Series lastSeries,
   }) async {
-    final CollectionReference seriesMinifiedCollection = _firestore.collection(Paths.seriesMinifiedPath);
+    final seriesCollection = _firestore.collection(Paths.seriesPath);
 
-    QuerySnapshot querySnapshot;
-    if (lastSeriesMinified != null) {
-      final DocumentSnapshot lastDocument = await seriesMinifiedCollection.document(lastSeriesMinified.uid).get();
+    Query query;
+    if (lastSeries != null) {
+      final lastDocument = await seriesCollection.doc(lastSeries.uid).get();
 
-      querySnapshot = await seriesMinifiedCollection
+      query = seriesCollection
           .startAfterDocument(lastDocument)
-          .where('authorUid', isEqualTo: userUid)
-          .orderBy('createdAt', descending: true)
-          .limit(20)
-          .getDocuments();
+          .where('authorUID', isEqualTo: userUID);
     } else {
-      querySnapshot = await seriesMinifiedCollection
-          .where('authorUid', isEqualTo: userUid)
-          .orderBy('createdAt', descending: true)
-          .limit(20)
-          .getDocuments();
+      query = seriesCollection.where('authorUID', isEqualTo: userUID);
     }
+    query = query.orderBy('createdAt', descending: true).limit(20);
 
-    final List<SeriesMinified> seriesMinifiedList = <SeriesMinified>[];
-    for (final DocumentSnapshot doc in querySnapshot.documents) {
-      seriesMinifiedList.add(SeriesMinified.fromFirestore(doc));
+    final querySnapshot = await query.get();
+
+    final seriesList = <Series>[];
+    for (final DocumentSnapshot doc in querySnapshot.docs) {
+      seriesList.add(Series.fromFirestore(doc));
     }
-    return right(DatabaseSuccess.seriesMinifiedListLoadedSCS(seriesMinifiedList));
+    return right(SeriesDatabaseSuccess.seriesListLoadedSCS(seriesList));
   }
 
   @override
-  Future<Either<DatabaseFailure, DatabaseSuccess>> loadSeriesLikesCount(String seriesUid) async {
-    final DocumentSnapshot documentSnapshot =
-        await _firestore.collection(Paths.seriesLikesPath).document(seriesUid).get();
+  Future<Either<DatabaseFailure, SeriesDatabaseSuccess>> loadSeriesLikesCount(
+    String seriesUID,
+  ) async {
+    final documentSnapshot = await _firestore
+        .collection(Paths.seriesLikesCountsPath)
+        .doc(seriesUID)
+        .get();
 
     if (!documentSnapshot.exists) {
-      return right(const DatabaseSuccess.seriesStatsCountLoadedSCS(0));
+      return right(SeriesDatabaseSuccess.seriesStatsCountLoadedSCS(
+        Count(count: 0),
+      ));
     }
-    final Map<String, dynamic> data = documentSnapshot.data;
-    final List<String> likes = data.keys.where((key) => data[key] == true).toList();
-    return right(DatabaseSuccess.seriesStatsCountLoadedSCS(likes.length));
+
+    final count = Count.fromFirestore(documentSnapshot);
+    return right(SeriesDatabaseSuccess.seriesStatsCountLoadedSCS(count));
   }
 
   @override
-  Future<Either<DatabaseFailure, DatabaseSuccess>> loadSeriesViewsCount(String seriesUid) async {
-    final DocumentSnapshot documentSnapshot =
-        await _firestore.collection(Paths.seriesViewsPath).document(seriesUid).get();
+  Future<Either<DatabaseFailure, SeriesDatabaseSuccess>> loadSeriesViewsCount(
+    String seriesUID,
+  ) async {
+    final documentSnapshot = await _firestore
+        .collection(Paths.seriesViewsCountsPath)
+        .doc(seriesUID)
+        .get();
 
     if (!documentSnapshot.exists) {
-      return right(const DatabaseSuccess.seriesStatsCountLoadedSCS(0));
+      return right(SeriesDatabaseSuccess.seriesStatsCountLoadedSCS(
+        Count(count: 0),
+      ));
     }
-    final Map<String, dynamic> data = documentSnapshot.data;
-    final List<String> views = data.keys.where((key) => data[key] == true).toList();
-    return right(DatabaseSuccess.seriesStatsCountLoadedSCS(views.length));
+    final count = Count.fromFirestore(documentSnapshot);
+    return right(SeriesDatabaseSuccess.seriesStatsCountLoadedSCS(count));
   }
 
-  @override
-  Future<Either<DatabaseFailure, DatabaseSuccess>> loadTopSeriesMinified(
+  Future<List<String>> _loadTopSeriesUIDList(
     Map<String, dynamic> filters, {
-    SeriesMinified lastSeriesMinified,
+    Series lastSeries,
   }) async {
-    final CollectionReference seriesMinifiedCollection = _firestore.collection(Paths.seriesMinifiedPath);
+    final seriesLikesCountsCollection =
+        _firestore.collection(Paths.seriesLikesCountsPath);
 
-    QuerySnapshot querySnapshot;
-    if (lastSeriesMinified != null) {
-      final DocumentSnapshot lastDocument = await seriesMinifiedCollection.document(lastSeriesMinified.uid).get();
+    Query query;
+    if (lastSeries != null) {
+      final lastDocument =
+          await seriesLikesCountsCollection.doc(lastSeries.uid).get();
 
-      querySnapshot = await seriesMinifiedCollection
+      query = seriesLikesCountsCollection
           .startAfterDocument(lastDocument)
-          .where('updatedAt', isGreaterThanOrEqualTo: filters['time'])
-          .where(
-            'genre',
-            whereIn: (filters['genre'] as String).isNotEmpty ? [filters['genre']] : Methods.getGenreKeys(),
-          )
-          .where('language', isEqualTo: filters['language'])
-          .orderBy('updatedAt', descending: true)
-          .orderBy('likesCount', descending: true)
-          .limit(20)
-          .getDocuments();
+          .where('updatedAt', isGreaterThanOrEqualTo: filters['time']);
     } else {
-      querySnapshot = await seriesMinifiedCollection
-          .where('updatedAt', isGreaterThanOrEqualTo: filters['time'])
-          .where(
-            'genre',
-            whereIn: (filters['genre'] as String).isNotEmpty ? [filters['genre']] : Methods.getGenreKeys(),
-          )
-          .where('language', isEqualTo: filters['language'])
-          .orderBy('updatedAt', descending: true)
-          .orderBy('likesCount', descending: true)
-          .limit(20)
-          .getDocuments();
+      query = seriesLikesCountsCollection.where('updatedAt',
+          isGreaterThanOrEqualTo: filters['time']);
     }
 
-    final List<SeriesMinified> seriesMinifiedList = <SeriesMinified>[];
-    if (querySnapshot.documents.isNotEmpty) {
-      for (final DocumentSnapshot doc in querySnapshot.documents) {
-        seriesMinifiedList.add(SeriesMinified.fromFirestore(doc));
-      }
+    if ((filters['genre'] as String).isNotEmpty) {
+      query = query.where('genre', isEqualTo: filters['genre']);
     }
 
-    return right(DatabaseSuccess.seriesMinifiedListLoadedSCS(seriesMinifiedList));
+    query = query
+        .where('language', isEqualTo: filters['language'])
+        .orderBy('updatedAt', descending: true)
+        .orderBy('count', descending: true)
+        .limit(20);
+
+    final querySnapshot = await query.get();
+
+    final uidsList = <String>[];
+    for (final DocumentSnapshot doc in querySnapshot.docs) {
+      uidsList.add(doc.id);
+    }
+
+    return uidsList.toSet().toList();
   }
 
   @override
-  Future<Either<DatabaseFailure, DatabaseSuccess>> loadUserBookmarkStatus({String userUid, String seriesUid}) async {
-    final DocumentSnapshot documentSnapshot =
-        await _firestore.collection(Paths.seriesBookmarksPath).document(seriesUid).get();
+  Future<Either<DatabaseFailure, SeriesDatabaseSuccess>> loadTopSeriesList(
+    Map<String, dynamic> filters, {
+    Series lastSeries,
+  }) async {
+    final uidsList =
+        await _loadTopSeriesUIDList(filters, lastSeries: lastSeries);
 
-    if (!documentSnapshot.exists) {
-      return right(const DatabaseSuccess.seriesStatsStatusLoadedSCS(status: false));
+    if (uidsList.isNotEmpty) {
+      final seriesCollection = _firestore.collection(Paths.seriesPath);
+
+      final uidsChunked = uidsList.chunk(10);
+
+      final seriesList = <Series>[];
+
+      for (final chunk in uidsChunked) {
+        final querySnapshot =
+            await seriesCollection.where('uid', whereIn: chunk).get();
+
+        if (querySnapshot.docs.isNotEmpty) {
+          for (final DocumentSnapshot doc in querySnapshot.docs) {
+            seriesList.add(Series.fromFirestore(doc));
+          }
+        }
+      }
+
+      return right(SeriesDatabaseSuccess.seriesListLoadedSCS(seriesList));
     }
 
-    final Map<String, dynamic> data = documentSnapshot.data;
-    final bool isBookmarked = data[userUid] as bool;
+    return right(const SeriesDatabaseSuccess.seriesListLoadedSCS(<Series>[]));
+  }
+
+  @override
+  Future<Either<DatabaseFailure, SeriesDatabaseSuccess>>
+      loadUserBookmarkStatus({
+    String userUID,
+    String seriesUID,
+  }) async {
+    final documentSnapshot = await _firestore
+        .collection(Paths.seriesBookmarksPath)
+        .doc(seriesUID)
+        .get();
+
+    if (!documentSnapshot.exists) {
+      return right(const SeriesDatabaseSuccess.seriesStatsStatusLoadedSCS(
+        status: false,
+      ));
+    }
+
+    final data = documentSnapshot.data();
+    final isBookmarked = data[userUID] as bool;
 
     if (isBookmarked != null) {
-      return right(DatabaseSuccess.seriesStatsStatusLoadedSCS(status: isBookmarked));
+      return right(SeriesDatabaseSuccess.seriesStatsStatusLoadedSCS(
+        status: isBookmarked,
+      ));
     }
-    return right(const DatabaseSuccess.seriesStatsStatusLoadedSCS(status: false));
+    return right(const SeriesDatabaseSuccess.seriesStatsStatusLoadedSCS(
+      status: false,
+    ));
   }
 
   @override
-  Future<Either<DatabaseFailure, DatabaseSuccess>> loadUserLikeStatus({String userUid, String seriesUid}) async {
-    final DocumentSnapshot documentSnapshot =
-        await _firestore.collection(Paths.seriesLikesPath).document(seriesUid).get();
+  Future<Either<DatabaseFailure, SeriesDatabaseSuccess>> loadUserLikeStatus({
+    String userUID,
+    String seriesUID,
+  }) async {
+    final documentSnapshot =
+        await _firestore.collection(Paths.seriesLikesPath).doc(seriesUID).get();
 
     if (!documentSnapshot.exists) {
-      return right(const DatabaseSuccess.seriesStatsStatusLoadedSCS(status: false));
+      return right(const SeriesDatabaseSuccess.seriesStatsStatusLoadedSCS(
+        status: false,
+      ));
     }
 
-    final Map<String, dynamic> data = documentSnapshot.data;
-    final bool isLiked = data[userUid] as bool;
+    final data = documentSnapshot.data();
+    final isLiked = data[userUID] as bool;
 
     if (isLiked != null) {
-      return right(DatabaseSuccess.seriesStatsStatusLoadedSCS(status: isLiked));
+      return right(SeriesDatabaseSuccess.seriesStatsStatusLoadedSCS(
+        status: isLiked,
+      ));
     }
-    return right(const DatabaseSuccess.seriesStatsStatusLoadedSCS(status: false));
+    return right(const SeriesDatabaseSuccess.seriesStatsStatusLoadedSCS(
+      status: false,
+    ));
   }
 
   @override
-  Future<Either<DatabaseFailure, DatabaseSuccess>> publishSeries(SeriesMinified seriesMinified, Series series) async {
-    final DocumentReference seriesMinifiedRef =
-        _firestore.collection(Paths.seriesMinifiedPath).document(seriesMinified.uid);
-    final DocumentReference seriesRef = _firestore.collection(Paths.seriesPath).document(series.uid);
+  Future<Either<DatabaseFailure, SeriesDatabaseSuccess>> publishSeries(
+    Series series,
+  ) async {
+    if (!series.coverURL.isURL) {
+      await uploadCover(File(series.coverURL))
+        ..fold(
+          (_) {},
+          (success) {
+            if (success is SeriesCoverUploadedSCS) {
+              series.coverURL = success.coverURL;
+            }
+          },
+        );
+    }
 
-    final int currentTime = DateTime.now().millisecondsSinceEpoch;
+    final seriesRef = _firestore.collection(Paths.seriesPath).doc(series.uid);
 
-    seriesMinified
-      ..likesCount = 0
-      ..createdAt = currentTime
-      ..updatedAt = currentTime;
+    final options = SetOptions(merge: true);
+    await seriesRef.set(series.toMap(), options);
 
-    Future.wait([
-      seriesMinifiedRef.setData(seriesMinified.toMap(), merge: true),
-      seriesRef.setData(series.toMap(), merge: true),
-    ]);
-
-    return right(const DatabaseSuccess.seriesPublishedSCS());
+    return right(SeriesDatabaseSuccess.seriesPublishedSCS(series));
   }
 
   @override
-  Future<Either<DatabaseFailure, DatabaseSuccess>> updateSeriesBookmarks({
-    String userUid,
-    String seriesUid,
+  Future<Either<DatabaseFailure, SeriesDatabaseSuccess>>
+      updateSeriesBookmarksAndBookmarksCount({
+    String userUID,
+    String seriesUID,
   }) async {
-    final DocumentReference seriesBookmarksReference =
-        _firestore.collection(Paths.seriesBookmarksPath).document(seriesUid);
+    final seriesBookmarksCountsReference =
+        _firestore.collection(Paths.seriesBookmarksCountsPath).doc(seriesUID);
+    final seriesBookmarksReference =
+        _firestore.collection(Paths.seriesBookmarksPath).doc(seriesUID);
 
-    final DocumentSnapshot documentSnapshot = await seriesBookmarksReference.get();
+    final documentSnapshot = await seriesBookmarksReference.get();
 
     bool isBookmarked;
-    if (!documentSnapshot.exists || documentSnapshot.data[userUid] as bool == null) {
+    if (!documentSnapshot.exists ||
+        documentSnapshot.data()[userUID] as bool == null) {
       isBookmarked = false;
     } else {
-      isBookmarked = documentSnapshot.data[userUid] as bool;
+      isBookmarked = documentSnapshot.data()[userUID] as bool;
     }
 
-    await seriesBookmarksReference.setData({userUid: !isBookmarked}, merge: true);
-    return right(const DatabaseSuccess.seriesStatsCountUpdatedSCS());
+    await Future.wait([
+      !documentSnapshot.exists
+          ? seriesBookmarksCountsReference.set(
+              {
+                'count': FieldValue.increment(!isBookmarked ? 1 : -1),
+                'createdAt': DateTime.now(),
+                'updatedAt': DateTime.now(),
+              },
+              SetOptions(merge: true),
+            )
+          : seriesBookmarksCountsReference.set(
+              {
+                'count': FieldValue.increment(!isBookmarked ? 1 : -1),
+                'updatedAt': DateTime.now(),
+              },
+              SetOptions(mergeFields: <FieldPath>[
+                FieldPath.fromString('count'),
+                FieldPath.fromString('updatedAt')
+              ]),
+            ),
+      seriesBookmarksReference.set(
+        {userUID: !isBookmarked},
+        SetOptions(mergeFields: <FieldPath>[FieldPath.fromString('userUID')]),
+      )
+    ]);
+
+    return right(const SeriesDatabaseSuccess.seriesStatsCountUpdatedSCS());
   }
 
   @override
-  Future<Either<DatabaseFailure, DatabaseSuccess>> updateSeriesLikesAndLikesCount({
-    String userUid,
-    String seriesUid,
+  Future<Either<DatabaseFailure, SeriesDatabaseSuccess>>
+      updateSeriesLikesAndLikesCount({
+    String userUID,
+    String seriesUID,
+    bool isInit = false,
+    Series series,
   }) async {
-    final DocumentReference seriesMinifiedReference =
-        _firestore.collection(Paths.seriesMinifiedPath).document(seriesUid);
-    final DocumentReference seriesLikesReference = _firestore.collection(Paths.seriesLikesPath).document(seriesUid);
+    final seriesLikesCountsReference =
+        _firestore.collection(Paths.seriesLikesCountsPath).doc(seriesUID);
+    final seriesLikesReference =
+        _firestore.collection(Paths.seriesLikesPath).doc(seriesUID);
 
-    final DocumentSnapshot documentSnapshot = await seriesLikesReference.get();
+    final documentSnapshot = await seriesLikesReference.get();
 
     bool isLiked;
-    if (!documentSnapshot.exists || documentSnapshot.data[userUid] as bool == null) {
+    if (!documentSnapshot.exists ||
+        documentSnapshot.data()[userUID] as bool == null) {
       isLiked = false;
     } else {
-      isLiked = documentSnapshot.data[userUid] as bool;
+      isLiked = documentSnapshot.data()[userUID] as bool;
     }
 
-    Future.wait([
-      seriesMinifiedReference.setData({'likesCount': FieldValue.increment(!isLiked ? 1 : -1)}, merge: true),
-      seriesLikesReference.setData({userUid: !isLiked}, merge: true),
+    await Future.wait([
+      isInit
+          ? seriesLikesCountsReference.set(
+              {
+                'count': FieldValue.increment(!isLiked ? 1 : -1),
+                'createdAt': DateTime.now(),
+                'updatedAt': DateTime.now(),
+                'genre': series.genre,
+                'genreOptional': series.genreOptional,
+                'language': series.language,
+              },
+              SetOptions(merge: true),
+            )
+          : seriesLikesCountsReference.set(
+              {
+                'count': FieldValue.increment(!isLiked ? 1 : -1),
+                'updatedAt': DateTime.now(),
+              },
+              SetOptions(mergeFields: <FieldPath>[
+                FieldPath.fromString('count'),
+                FieldPath.fromString('updatedAt')
+              ]),
+            ),
+      seriesLikesReference.set(
+        {userUID: !isLiked},
+        SetOptions(mergeFields: <FieldPath>[FieldPath.fromString('userUID')]),
+      ),
     ]);
-    return right(const DatabaseSuccess.seriesStatsCountUpdatedSCS());
+    return right(const SeriesDatabaseSuccess.seriesStatsCountUpdatedSCS());
   }
 
   @override
-  Future<Either<DatabaseFailure, DatabaseSuccess>> updateSeriesViews({
-    String userUid,
-    String seriesUid,
+  Future<Either<DatabaseFailure, SeriesDatabaseSuccess>>
+      updateSeriesViewsAndViewsCount({
+    String userUID,
+    String seriesUID,
+    bool isInit = false,
   }) async {
-    final DocumentReference seriesViewsReference = _firestore.collection(Paths.seriesViewsPath).document(seriesUid);
+    final seriesViewsCountsReference =
+        _firestore.collection(Paths.seriesViewsCountsPath).doc(seriesUID);
+    final seriesViewsReference =
+        _firestore.collection(Paths.seriesViewsPath).doc(seriesUID);
 
-    final DocumentSnapshot documentSnapshot = await seriesViewsReference.get();
+    final documentSnapshot = await seriesViewsReference.get();
 
-    if (!documentSnapshot.exists || documentSnapshot.data[userUid] == null) {
-      await seriesViewsReference.setData({userUid: true}, merge: true);
+    if (!documentSnapshot.exists || documentSnapshot.data()[userUID] == null) {
+      await Future.wait([
+        isInit
+            ? seriesViewsCountsReference.set(
+                {
+                  'count': FieldValue.increment(1),
+                  'createdAt': DateTime.now(),
+                  'updatedAt': DateTime.now(),
+                },
+                SetOptions(merge: true),
+              )
+            : seriesViewsCountsReference.set(
+                {
+                  'count': FieldValue.increment(1),
+                  'updatedAt': DateTime.now(),
+                },
+                SetOptions(mergeFields: <FieldPath>[
+                  FieldPath.fromString('count'),
+                  FieldPath.fromString('updatedAt')
+                ]),
+              ),
+        seriesViewsReference.set(
+          {userUID: true},
+          SetOptions(mergeFields: <FieldPath>[FieldPath.fromString('userUID')]),
+        )
+      ]);
     }
-    return right(const DatabaseSuccess.seriesStatsCountUpdatedSCS());
+    return right(const SeriesDatabaseSuccess.seriesStatsCountUpdatedSCS());
   }
 
   @override
-  Future<Either<DatabaseFailure, DatabaseSuccess>> uploadCover(File cover) async {
-    final String fileName = p.basename(cover.path);
-    final StorageReference ref =
-        _firebaseStorage.ref().child('${Paths.seriesCoversPaths}/${DateTime.now().millisecondsSinceEpoch}-$fileName');
-    final StorageUploadTask uploadTask = ref.putFile(cover);
-    final StorageTaskSnapshot result = await uploadTask.onComplete;
-    final String url = await result.ref.getDownloadURL() as String;
-    return right(DatabaseSuccess.seriesCoverUploadedSCS(url));
+  Future<Either<DatabaseFailure, SeriesDatabaseSuccess>> uploadCover(
+    File cover,
+  ) async {
+    final fileName = p.basename(cover.path);
+    final ref = _firebaseStorage.ref().child(
+        '${Paths.seriesCoversPaths}/${DateTime.now().millisecondsSinceEpoch}-$fileName');
+    final uploadTask = await ref.putFile(cover);
+    final state = uploadTask.state;
+    if (state == TaskState.success) {
+      final url = await ref.getDownloadURL();
+      return right(SeriesDatabaseSuccess.seriesCoverUploadedSCS(url));
+    }
+    return left(const DatabaseFailure.failedToCreateOnlineData());
   }
 }
