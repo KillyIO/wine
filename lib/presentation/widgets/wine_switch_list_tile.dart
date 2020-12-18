@@ -1,15 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 
-import 'package:wine/presentation/widgets/wine_switch.dart';
-import 'package:wine/utils/palettes.dart';
-
+/// @nodoc
 class WINESwitchListTile extends StatelessWidget {
-  final String title;
-  final VoidCallback onInfoPressed;
-  final bool value;
-  final ValueChanged<bool> onChanged;
-
+  /// @nodoc
   const WINESwitchListTile({
     Key key,
     @required this.title,
@@ -17,6 +11,18 @@ class WINESwitchListTile extends StatelessWidget {
     @required this.value,
     @required this.onChanged,
   }) : super(key: key);
+
+  /// @nodoc
+  final String title;
+
+  /// @nodoc
+  final VoidCallback onInfoPressed;
+
+  /// @nodoc
+  final bool value;
+
+  /// @nodoc
+  final ValueChanged<bool> onChanged;
 
   @override
   Widget build(BuildContext context) {
@@ -26,14 +32,29 @@ class WINESwitchListTile extends StatelessWidget {
         title: Row(
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
-            Text(title, style: TextStyle(color: Colors.white, fontWeight: FontWeight.w300)),
+            Text(
+              title,
+              style: const TextStyle(
+                color: Colors.white,
+                fontWeight: FontWeight.w300,
+              ),
+            ),
             IconButton(
-              icon: Icon(Feather.info, color: Colors.white, size: 20.0),
+              icon: const Icon(
+                Feather.info,
+                color: Colors.white,
+                size: 20.0,
+              ),
               onPressed: onInfoPressed,
             ),
           ],
         ),
-        trailing: WINESwitch(value: value, onChanged: onChanged, activeColor: Palettes.pastelBlue),
+        trailing: Switch(
+          value: value,
+          onChanged: onChanged,
+          inactiveTrackColor: Colors.grey[700],
+          inactiveThumbColor: Colors.grey,
+        ),
       ),
     );
   }

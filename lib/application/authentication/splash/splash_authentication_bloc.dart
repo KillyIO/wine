@@ -14,28 +14,40 @@ part 'splash_authentication_bloc.freezed.dart';
 part 'splash_authentication_event.dart';
 part 'splash_authentication_state.dart';
 
+/// @nodoc
 @injectable
-class SplashAuthenticationBloc extends Bloc<SplashAuthenticationEvent, SplashAuthenticationState> {
-  final IAuthenticationFacade _authenticationFacade;
-
+class SplashAuthenticationBloc
+    extends Bloc<SplashAuthenticationEvent, SplashAuthenticationState> {
+  /// @nodoc
   SplashAuthenticationBloc(
     this._authenticationFacade,
   ) : super(SplashAuthenticationState.initial());
 
+  final IAuthenticationFacade _authenticationFacade;
+
   @override
-  Stream<SplashAuthenticationState> mapEventToState(SplashAuthenticationEvent event) async* {
+  Stream<SplashAuthenticationState> mapEventToState(
+    SplashAuthenticationEvent event,
+  ) async* {
     if (event is SplashLaunchedEVT) {
       Either<AuthenticationFailure, AuthenticationSuccess> failureOrSuccess;
 
-      yield state.copyWith(isAuthenticating: true, authenticationFailureOrSuccessOption: none());
+      yield state.copyWith(
+        authenticationFailureOrSuccessOption: none(),
+        isAuthenticating: true,
+      );
 
-      final bool isSignedIn = await _authenticationFacade.isSignedIn();
-
-      if (!isSignedIn) {
+      if (!_authenticationFacade.isSignedIn()) {
         failureOrSuccess = await _authenticationFacade.signInAnonymously();
       }
 
-      yield state.copyWith(isAuthenticating: false, authenticationFailureOrSuccessOption: optionOf(failureOrSuccess));
+      final isAnonymous = _authenticationFacade.isAnonymous();
+
+      yield state.copyWith(
+        authenticationFailureOrSuccessOption: optionOf(failureOrSuccess),
+        isAnonymous: isAnonymous,
+        isAuthenticating: false,
+      );
     }
   }
 }

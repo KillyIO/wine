@@ -1,34 +1,47 @@
 part of 'series_database_bloc.dart';
 
+/// @nodoc
 @freezed
 abstract class SeriesDatabaseState with _$SeriesDatabaseState {
+  /// @nodoc
   const factory SeriesDatabaseState({
     @required bool isBookmarked,
     @required bool isLiked,
-    @required ChapterMinified chapterOneMinified,
-    @required int bookmarksCount,
-    @required int likesCount,
-    @required int viewsCount,
-    @required Map<String, String> genresMap,
-    @required Map<String, String> languagesMap,
-    @required Option<Either<DatabaseFailure, DatabaseSuccess>> databaseFailureOrSuccessOption,
+    @required Chapter chapterOne,
+    @required Config config,
+    @required Count bookmarksCount,
+    @required Count likesCount,
+    @required Count viewsCount,
+    @required
+        Option<Either<DatabaseFailure, ChapterDatabaseSuccess>>
+            chapterDatabaseFailureOrSuccessOption,
+    @required
+        Option<Either<ConfigDatabaseFailure, ConfigDatabaseSuccess>>
+            configDatabaseFailureOrSuccessOption,
+    @required
+        Option<Either<DatabaseFailure, SeriesDatabaseSuccess>>
+            seriesDatabaseFailureOrSuccessOption,
+    @required
+        Option<Either<DatabaseFailure, SessionDatabaseSuccess>>
+            sessionDatabaseFailureOrSuccessOption,
     @required Series series,
     @required Session session,
-    @required User author,
   }) = _SeriesDatabaseState;
 
+  /// @nodoc
   factory SeriesDatabaseState.initial() => SeriesDatabaseState(
-        author: User(),
-        bookmarksCount: 0,
-        chapterOneMinified: ChapterMinified(),
-        databaseFailureOrSuccessOption: none(),
-        genresMap: <String, String>{},
+        bookmarksCount: Count(count: 0),
+        chapterDatabaseFailureOrSuccessOption: none(),
+        configDatabaseFailureOrSuccessOption: none(),
+        chapterOne: Chapter(),
+        config: Config(),
         isBookmarked: false,
         isLiked: false,
-        languagesMap: <String, String>{},
-        likesCount: 0,
+        likesCount: Count(count: 0),
         series: Series(),
+        seriesDatabaseFailureOrSuccessOption: none(),
         session: Session(),
-        viewsCount: 0,
+        sessionDatabaseFailureOrSuccessOption: none(),
+        viewsCount: Count(count: 0),
       );
 }

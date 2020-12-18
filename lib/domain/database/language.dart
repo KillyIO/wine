@@ -3,10 +3,9 @@ import 'package:wine/domain/core/failures.dart';
 import 'package:wine/domain/core/value_objects.dart';
 import 'package:wine/domain/core/value_validators.dart';
 
+/// @nodoc
 class Language extends ValueObject<String> {
-  @override
-  final Either<ValueFailure<String>, String> value;
-
+  /// @nodoc
   factory Language(String input) {
     assert(input != null);
     return Language._(
@@ -15,5 +14,9 @@ class Language extends ValueObject<String> {
   }
 
   // NOTE private contructor
+  /// @nodoc
   const Language._(this.value);
+
+  @override
+  final Either<ValueFailure<String>, String> value;
 }

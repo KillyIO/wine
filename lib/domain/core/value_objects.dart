@@ -3,23 +3,29 @@ import 'package:flutter/foundation.dart';
 import 'package:wine/domain/core/errors.dart';
 import 'package:wine/domain/core/failures.dart';
 
+/// @nodoc
 @immutable
 abstract class ValueObject<T> {
+  /// @nodoc
   const ValueObject();
+
+  /// @nodoc
   Either<ValueFailure<T>, T> get value;
 
   /// Throws [UnexpectedValueError] containing the [ValueFailure]
   T getOrCrash() {
     // id = identity - same as writing (right) => right
+    // ignore: only_throw_errors
     return value.fold((f) => throw UnexpectedValueError(f), id);
   }
 
+  /// @nodoc
   bool isValid() => value.isRight();
 
   @override
-  bool operator ==(Object o) {
-    if (identical(this, o)) return true;
-    return o is ValueObject<T> && o.value == value;
+  bool operator ==(Object other) {
+    if (identical(this, other)) return true;
+    return other is ValueObject<T> && other.value == value;
   }
 
   @override

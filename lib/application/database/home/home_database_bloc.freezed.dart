@@ -9,17 +9,32 @@ part of 'home_database_bloc.dart';
 
 T _$identity<T>(T value) => value;
 
+/// @nodoc
 class _$HomeDatabaseEventTearOff {
   const _$HomeDatabaseEventTearOff();
 
 // ignore: unused_element
-  ApplyFilterChangesEVT applyFilterChangesEVT() {
-    return const ApplyFilterChangesEVT();
+  ApplyFiltersButtonPressedEVT applyFiltersButtonPressedEVT(int index) {
+    return ApplyFiltersButtonPressedEVT(
+      index,
+    );
   }
 
 // ignore: unused_element
-  FiltersAppliedEVT filtersAppliedEVT() {
-    return const FiltersAppliedEVT();
+  FiltersAppliedAtLaunchEVT filtersAppliedAtLaunchEVT() {
+    return const FiltersAppliedAtLaunchEVT();
+  }
+
+// ignore: unused_element
+  FiltersAppliedOrPageViewIndexChangedFromTopSeriesLayout
+      filtersAppliedOrPageViewIndexChangedFromTopSeriesLayout() {
+    return const FiltersAppliedOrPageViewIndexChangedFromTopSeriesLayout();
+  }
+
+// ignore: unused_element
+  FiltersAppliedOrPageViewIndexChangedFromNewSeriesLayout
+      filtersAppliedOrPageViewIndexChangedFromNewSeriesLayout() {
+    return const FiltersAppliedOrPageViewIndexChangedFromNewSeriesLayout();
   }
 
 // ignore: unused_element
@@ -30,9 +45,9 @@ class _$HomeDatabaseEventTearOff {
   }
 
 // ignore: unused_element
-  HomePageLaunchedEVT homePageLaunchedEVT({BuildContext context}) {
-    return HomePageLaunchedEVT(
-      context: context,
+  HomeLaunchedEVT homeLaunchedEVT(BuildContext context) {
+    return HomeLaunchedEVT(
+      context,
     );
   }
 
@@ -44,13 +59,20 @@ class _$HomeDatabaseEventTearOff {
   }
 
 // ignore: unused_element
-  LoadMoreNewSeriesMinifiedEVT loadMoreNewSeriesMinifiedEVT() {
-    return const LoadMoreNewSeriesMinifiedEVT();
+  LoadMoreNewSeriesEVT loadMoreNewSeriesEVT() {
+    return const LoadMoreNewSeriesEVT();
   }
 
 // ignore: unused_element
-  LoadMoreTopSeriesMinifiedEVT loadMoreTopSeriesMinifiedEVT() {
-    return const LoadMoreTopSeriesMinifiedEVT();
+  LoadMoreTopSeriesEVT loadMoreTopSeriesEVT() {
+    return const LoadMoreTopSeriesEVT();
+  }
+
+// ignore: unused_element
+  SeriesPublishedEVT seriesPublishedEVT(Series series) {
+    return SeriesPublishedEVT(
+      series,
+    );
   }
 
 // ignore: unused_element
@@ -59,79 +81,92 @@ class _$HomeDatabaseEventTearOff {
       key,
     );
   }
-
-// ignore: unused_element
-  TopSeriesMinifiedLoadedEVT topSeriesMinifiedLoadedEVT() {
-    return const TopSeriesMinifiedLoadedEVT();
-  }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $HomeDatabaseEvent = _$HomeDatabaseEventTearOff();
 
+/// @nodoc
 mixin _$HomeDatabaseEvent {
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result applyFilterChangesEVT(),
-    @required Result filtersAppliedEVT(),
-    @required Result genreFilterKeyChangedEVT(String key),
-    @required Result homePageLaunchedEVT(BuildContext context),
-    @required Result languageFilterKeyChangedEVT(String key),
-    @required Result loadMoreNewSeriesMinifiedEVT(),
-    @required Result loadMoreTopSeriesMinifiedEVT(),
-    @required Result timeFilterKeyChangedEVT(String key),
-    @required Result topSeriesMinifiedLoadedEVT(),
+  TResult when<TResult extends Object>({
+    @required TResult applyFiltersButtonPressedEVT(int index),
+    @required TResult filtersAppliedAtLaunchEVT(),
+    @required TResult filtersAppliedOrPageViewIndexChangedFromTopSeriesLayout(),
+    @required TResult filtersAppliedOrPageViewIndexChangedFromNewSeriesLayout(),
+    @required TResult genreFilterKeyChangedEVT(String key),
+    @required TResult homeLaunchedEVT(BuildContext context),
+    @required TResult languageFilterKeyChangedEVT(String key),
+    @required TResult loadMoreNewSeriesEVT(),
+    @required TResult loadMoreTopSeriesEVT(),
+    @required TResult seriesPublishedEVT(Series series),
+    @required TResult timeFilterKeyChangedEVT(String key),
   });
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result applyFilterChangesEVT(),
-    Result filtersAppliedEVT(),
-    Result genreFilterKeyChangedEVT(String key),
-    Result homePageLaunchedEVT(BuildContext context),
-    Result languageFilterKeyChangedEVT(String key),
-    Result loadMoreNewSeriesMinifiedEVT(),
-    Result loadMoreTopSeriesMinifiedEVT(),
-    Result timeFilterKeyChangedEVT(String key),
-    Result topSeriesMinifiedLoadedEVT(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult applyFiltersButtonPressedEVT(int index),
+    TResult filtersAppliedAtLaunchEVT(),
+    TResult filtersAppliedOrPageViewIndexChangedFromTopSeriesLayout(),
+    TResult filtersAppliedOrPageViewIndexChangedFromNewSeriesLayout(),
+    TResult genreFilterKeyChangedEVT(String key),
+    TResult homeLaunchedEVT(BuildContext context),
+    TResult languageFilterKeyChangedEVT(String key),
+    TResult loadMoreNewSeriesEVT(),
+    TResult loadMoreTopSeriesEVT(),
+    TResult seriesPublishedEVT(Series series),
+    TResult timeFilterKeyChangedEVT(String key),
+    @required TResult orElse(),
   });
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result applyFilterChangesEVT(ApplyFilterChangesEVT value),
-    @required Result filtersAppliedEVT(FiltersAppliedEVT value),
-    @required Result genreFilterKeyChangedEVT(GenreFilterKeyChangedEVT value),
-    @required Result homePageLaunchedEVT(HomePageLaunchedEVT value),
+  TResult map<TResult extends Object>({
     @required
-        Result languageFilterKeyChangedEVT(LanguageFilterKeyChangedEVT value),
+        TResult applyFiltersButtonPressedEVT(
+            ApplyFiltersButtonPressedEVT value),
     @required
-        Result loadMoreNewSeriesMinifiedEVT(LoadMoreNewSeriesMinifiedEVT value),
+        TResult filtersAppliedAtLaunchEVT(FiltersAppliedAtLaunchEVT value),
     @required
-        Result loadMoreTopSeriesMinifiedEVT(LoadMoreTopSeriesMinifiedEVT value),
-    @required Result timeFilterKeyChangedEVT(TimeFilterKeyChangedEVT value),
+        TResult filtersAppliedOrPageViewIndexChangedFromTopSeriesLayout(
+            FiltersAppliedOrPageViewIndexChangedFromTopSeriesLayout value),
     @required
-        Result topSeriesMinifiedLoadedEVT(TopSeriesMinifiedLoadedEVT value),
+        TResult filtersAppliedOrPageViewIndexChangedFromNewSeriesLayout(
+            FiltersAppliedOrPageViewIndexChangedFromNewSeriesLayout value),
+    @required TResult genreFilterKeyChangedEVT(GenreFilterKeyChangedEVT value),
+    @required TResult homeLaunchedEVT(HomeLaunchedEVT value),
+    @required
+        TResult languageFilterKeyChangedEVT(LanguageFilterKeyChangedEVT value),
+    @required TResult loadMoreNewSeriesEVT(LoadMoreNewSeriesEVT value),
+    @required TResult loadMoreTopSeriesEVT(LoadMoreTopSeriesEVT value),
+    @required TResult seriesPublishedEVT(SeriesPublishedEVT value),
+    @required TResult timeFilterKeyChangedEVT(TimeFilterKeyChangedEVT value),
   });
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result applyFilterChangesEVT(ApplyFilterChangesEVT value),
-    Result filtersAppliedEVT(FiltersAppliedEVT value),
-    Result genreFilterKeyChangedEVT(GenreFilterKeyChangedEVT value),
-    Result homePageLaunchedEVT(HomePageLaunchedEVT value),
-    Result languageFilterKeyChangedEVT(LanguageFilterKeyChangedEVT value),
-    Result loadMoreNewSeriesMinifiedEVT(LoadMoreNewSeriesMinifiedEVT value),
-    Result loadMoreTopSeriesMinifiedEVT(LoadMoreTopSeriesMinifiedEVT value),
-    Result timeFilterKeyChangedEVT(TimeFilterKeyChangedEVT value),
-    Result topSeriesMinifiedLoadedEVT(TopSeriesMinifiedLoadedEVT value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult applyFiltersButtonPressedEVT(ApplyFiltersButtonPressedEVT value),
+    TResult filtersAppliedAtLaunchEVT(FiltersAppliedAtLaunchEVT value),
+    TResult filtersAppliedOrPageViewIndexChangedFromTopSeriesLayout(
+        FiltersAppliedOrPageViewIndexChangedFromTopSeriesLayout value),
+    TResult filtersAppliedOrPageViewIndexChangedFromNewSeriesLayout(
+        FiltersAppliedOrPageViewIndexChangedFromNewSeriesLayout value),
+    TResult genreFilterKeyChangedEVT(GenreFilterKeyChangedEVT value),
+    TResult homeLaunchedEVT(HomeLaunchedEVT value),
+    TResult languageFilterKeyChangedEVT(LanguageFilterKeyChangedEVT value),
+    TResult loadMoreNewSeriesEVT(LoadMoreNewSeriesEVT value),
+    TResult loadMoreTopSeriesEVT(LoadMoreTopSeriesEVT value),
+    TResult seriesPublishedEVT(SeriesPublishedEVT value),
+    TResult timeFilterKeyChangedEVT(TimeFilterKeyChangedEVT value),
+    @required TResult orElse(),
   });
 }
 
+/// @nodoc
 abstract class $HomeDatabaseEventCopyWith<$Res> {
   factory $HomeDatabaseEventCopyWith(
           HomeDatabaseEvent value, $Res Function(HomeDatabaseEvent) then) =
       _$HomeDatabaseEventCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$HomeDatabaseEventCopyWithImpl<$Res>
     implements $HomeDatabaseEventCopyWith<$Res> {
   _$HomeDatabaseEventCopyWithImpl(this._value, this._then);
@@ -141,31 +176,50 @@ class _$HomeDatabaseEventCopyWithImpl<$Res>
   final $Res Function(HomeDatabaseEvent) _then;
 }
 
-abstract class $ApplyFilterChangesEVTCopyWith<$Res> {
-  factory $ApplyFilterChangesEVTCopyWith(ApplyFilterChangesEVT value,
-          $Res Function(ApplyFilterChangesEVT) then) =
-      _$ApplyFilterChangesEVTCopyWithImpl<$Res>;
+/// @nodoc
+abstract class $ApplyFiltersButtonPressedEVTCopyWith<$Res> {
+  factory $ApplyFiltersButtonPressedEVTCopyWith(
+          ApplyFiltersButtonPressedEVT value,
+          $Res Function(ApplyFiltersButtonPressedEVT) then) =
+      _$ApplyFiltersButtonPressedEVTCopyWithImpl<$Res>;
+  $Res call({int index});
 }
 
-class _$ApplyFilterChangesEVTCopyWithImpl<$Res>
+/// @nodoc
+class _$ApplyFiltersButtonPressedEVTCopyWithImpl<$Res>
     extends _$HomeDatabaseEventCopyWithImpl<$Res>
-    implements $ApplyFilterChangesEVTCopyWith<$Res> {
-  _$ApplyFilterChangesEVTCopyWithImpl(
-      ApplyFilterChangesEVT _value, $Res Function(ApplyFilterChangesEVT) _then)
-      : super(_value, (v) => _then(v as ApplyFilterChangesEVT));
+    implements $ApplyFiltersButtonPressedEVTCopyWith<$Res> {
+  _$ApplyFiltersButtonPressedEVTCopyWithImpl(
+      ApplyFiltersButtonPressedEVT _value,
+      $Res Function(ApplyFiltersButtonPressedEVT) _then)
+      : super(_value, (v) => _then(v as ApplyFiltersButtonPressedEVT));
 
   @override
-  ApplyFilterChangesEVT get _value => super._value as ApplyFilterChangesEVT;
+  ApplyFiltersButtonPressedEVT get _value =>
+      super._value as ApplyFiltersButtonPressedEVT;
+
+  @override
+  $Res call({
+    Object index = freezed,
+  }) {
+    return _then(ApplyFiltersButtonPressedEVT(
+      index == freezed ? _value.index : index as int,
+    ));
+  }
 }
 
-class _$ApplyFilterChangesEVT
+/// @nodoc
+class _$ApplyFiltersButtonPressedEVT
     with DiagnosticableTreeMixin
-    implements ApplyFilterChangesEVT {
-  const _$ApplyFilterChangesEVT();
+    implements ApplyFiltersButtonPressedEVT {
+  const _$ApplyFiltersButtonPressedEVT(this.index) : assert(index != null);
+
+  @override
+  final int index;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'HomeDatabaseEvent.applyFilterChangesEVT()';
+    return 'HomeDatabaseEvent.applyFiltersButtonPressedEVT(index: $index)';
   }
 
   @override
@@ -173,155 +227,193 @@ class _$ApplyFilterChangesEVT
     super.debugFillProperties(properties);
     properties
       ..add(DiagnosticsProperty(
-          'type', 'HomeDatabaseEvent.applyFilterChangesEVT'));
+          'type', 'HomeDatabaseEvent.applyFiltersButtonPressedEVT'))
+      ..add(DiagnosticsProperty('index', index));
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is ApplyFilterChangesEVT);
+    return identical(this, other) ||
+        (other is ApplyFiltersButtonPressedEVT &&
+            (identical(other.index, index) ||
+                const DeepCollectionEquality().equals(other.index, index)));
   }
 
   @override
-  int get hashCode => runtimeType.hashCode;
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(index);
+
+  @override
+  $ApplyFiltersButtonPressedEVTCopyWith<ApplyFiltersButtonPressedEVT>
+      get copyWith => _$ApplyFiltersButtonPressedEVTCopyWithImpl<
+          ApplyFiltersButtonPressedEVT>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result applyFilterChangesEVT(),
-    @required Result filtersAppliedEVT(),
-    @required Result genreFilterKeyChangedEVT(String key),
-    @required Result homePageLaunchedEVT(BuildContext context),
-    @required Result languageFilterKeyChangedEVT(String key),
-    @required Result loadMoreNewSeriesMinifiedEVT(),
-    @required Result loadMoreTopSeriesMinifiedEVT(),
-    @required Result timeFilterKeyChangedEVT(String key),
-    @required Result topSeriesMinifiedLoadedEVT(),
+  TResult when<TResult extends Object>({
+    @required TResult applyFiltersButtonPressedEVT(int index),
+    @required TResult filtersAppliedAtLaunchEVT(),
+    @required TResult filtersAppliedOrPageViewIndexChangedFromTopSeriesLayout(),
+    @required TResult filtersAppliedOrPageViewIndexChangedFromNewSeriesLayout(),
+    @required TResult genreFilterKeyChangedEVT(String key),
+    @required TResult homeLaunchedEVT(BuildContext context),
+    @required TResult languageFilterKeyChangedEVT(String key),
+    @required TResult loadMoreNewSeriesEVT(),
+    @required TResult loadMoreTopSeriesEVT(),
+    @required TResult seriesPublishedEVT(Series series),
+    @required TResult timeFilterKeyChangedEVT(String key),
   }) {
-    assert(applyFilterChangesEVT != null);
-    assert(filtersAppliedEVT != null);
+    assert(applyFiltersButtonPressedEVT != null);
+    assert(filtersAppliedAtLaunchEVT != null);
+    assert(filtersAppliedOrPageViewIndexChangedFromTopSeriesLayout != null);
+    assert(filtersAppliedOrPageViewIndexChangedFromNewSeriesLayout != null);
     assert(genreFilterKeyChangedEVT != null);
-    assert(homePageLaunchedEVT != null);
+    assert(homeLaunchedEVT != null);
     assert(languageFilterKeyChangedEVT != null);
-    assert(loadMoreNewSeriesMinifiedEVT != null);
-    assert(loadMoreTopSeriesMinifiedEVT != null);
+    assert(loadMoreNewSeriesEVT != null);
+    assert(loadMoreTopSeriesEVT != null);
+    assert(seriesPublishedEVT != null);
     assert(timeFilterKeyChangedEVT != null);
-    assert(topSeriesMinifiedLoadedEVT != null);
-    return applyFilterChangesEVT();
+    return applyFiltersButtonPressedEVT(index);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result applyFilterChangesEVT(),
-    Result filtersAppliedEVT(),
-    Result genreFilterKeyChangedEVT(String key),
-    Result homePageLaunchedEVT(BuildContext context),
-    Result languageFilterKeyChangedEVT(String key),
-    Result loadMoreNewSeriesMinifiedEVT(),
-    Result loadMoreTopSeriesMinifiedEVT(),
-    Result timeFilterKeyChangedEVT(String key),
-    Result topSeriesMinifiedLoadedEVT(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult applyFiltersButtonPressedEVT(int index),
+    TResult filtersAppliedAtLaunchEVT(),
+    TResult filtersAppliedOrPageViewIndexChangedFromTopSeriesLayout(),
+    TResult filtersAppliedOrPageViewIndexChangedFromNewSeriesLayout(),
+    TResult genreFilterKeyChangedEVT(String key),
+    TResult homeLaunchedEVT(BuildContext context),
+    TResult languageFilterKeyChangedEVT(String key),
+    TResult loadMoreNewSeriesEVT(),
+    TResult loadMoreTopSeriesEVT(),
+    TResult seriesPublishedEVT(Series series),
+    TResult timeFilterKeyChangedEVT(String key),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (applyFilterChangesEVT != null) {
-      return applyFilterChangesEVT();
+    if (applyFiltersButtonPressedEVT != null) {
+      return applyFiltersButtonPressedEVT(index);
     }
     return orElse();
   }
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result applyFilterChangesEVT(ApplyFilterChangesEVT value),
-    @required Result filtersAppliedEVT(FiltersAppliedEVT value),
-    @required Result genreFilterKeyChangedEVT(GenreFilterKeyChangedEVT value),
-    @required Result homePageLaunchedEVT(HomePageLaunchedEVT value),
+  TResult map<TResult extends Object>({
     @required
-        Result languageFilterKeyChangedEVT(LanguageFilterKeyChangedEVT value),
+        TResult applyFiltersButtonPressedEVT(
+            ApplyFiltersButtonPressedEVT value),
     @required
-        Result loadMoreNewSeriesMinifiedEVT(LoadMoreNewSeriesMinifiedEVT value),
+        TResult filtersAppliedAtLaunchEVT(FiltersAppliedAtLaunchEVT value),
     @required
-        Result loadMoreTopSeriesMinifiedEVT(LoadMoreTopSeriesMinifiedEVT value),
-    @required Result timeFilterKeyChangedEVT(TimeFilterKeyChangedEVT value),
+        TResult filtersAppliedOrPageViewIndexChangedFromTopSeriesLayout(
+            FiltersAppliedOrPageViewIndexChangedFromTopSeriesLayout value),
     @required
-        Result topSeriesMinifiedLoadedEVT(TopSeriesMinifiedLoadedEVT value),
+        TResult filtersAppliedOrPageViewIndexChangedFromNewSeriesLayout(
+            FiltersAppliedOrPageViewIndexChangedFromNewSeriesLayout value),
+    @required TResult genreFilterKeyChangedEVT(GenreFilterKeyChangedEVT value),
+    @required TResult homeLaunchedEVT(HomeLaunchedEVT value),
+    @required
+        TResult languageFilterKeyChangedEVT(LanguageFilterKeyChangedEVT value),
+    @required TResult loadMoreNewSeriesEVT(LoadMoreNewSeriesEVT value),
+    @required TResult loadMoreTopSeriesEVT(LoadMoreTopSeriesEVT value),
+    @required TResult seriesPublishedEVT(SeriesPublishedEVT value),
+    @required TResult timeFilterKeyChangedEVT(TimeFilterKeyChangedEVT value),
   }) {
-    assert(applyFilterChangesEVT != null);
-    assert(filtersAppliedEVT != null);
+    assert(applyFiltersButtonPressedEVT != null);
+    assert(filtersAppliedAtLaunchEVT != null);
+    assert(filtersAppliedOrPageViewIndexChangedFromTopSeriesLayout != null);
+    assert(filtersAppliedOrPageViewIndexChangedFromNewSeriesLayout != null);
     assert(genreFilterKeyChangedEVT != null);
-    assert(homePageLaunchedEVT != null);
+    assert(homeLaunchedEVT != null);
     assert(languageFilterKeyChangedEVT != null);
-    assert(loadMoreNewSeriesMinifiedEVT != null);
-    assert(loadMoreTopSeriesMinifiedEVT != null);
+    assert(loadMoreNewSeriesEVT != null);
+    assert(loadMoreTopSeriesEVT != null);
+    assert(seriesPublishedEVT != null);
     assert(timeFilterKeyChangedEVT != null);
-    assert(topSeriesMinifiedLoadedEVT != null);
-    return applyFilterChangesEVT(this);
+    return applyFiltersButtonPressedEVT(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result applyFilterChangesEVT(ApplyFilterChangesEVT value),
-    Result filtersAppliedEVT(FiltersAppliedEVT value),
-    Result genreFilterKeyChangedEVT(GenreFilterKeyChangedEVT value),
-    Result homePageLaunchedEVT(HomePageLaunchedEVT value),
-    Result languageFilterKeyChangedEVT(LanguageFilterKeyChangedEVT value),
-    Result loadMoreNewSeriesMinifiedEVT(LoadMoreNewSeriesMinifiedEVT value),
-    Result loadMoreTopSeriesMinifiedEVT(LoadMoreTopSeriesMinifiedEVT value),
-    Result timeFilterKeyChangedEVT(TimeFilterKeyChangedEVT value),
-    Result topSeriesMinifiedLoadedEVT(TopSeriesMinifiedLoadedEVT value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult applyFiltersButtonPressedEVT(ApplyFiltersButtonPressedEVT value),
+    TResult filtersAppliedAtLaunchEVT(FiltersAppliedAtLaunchEVT value),
+    TResult filtersAppliedOrPageViewIndexChangedFromTopSeriesLayout(
+        FiltersAppliedOrPageViewIndexChangedFromTopSeriesLayout value),
+    TResult filtersAppliedOrPageViewIndexChangedFromNewSeriesLayout(
+        FiltersAppliedOrPageViewIndexChangedFromNewSeriesLayout value),
+    TResult genreFilterKeyChangedEVT(GenreFilterKeyChangedEVT value),
+    TResult homeLaunchedEVT(HomeLaunchedEVT value),
+    TResult languageFilterKeyChangedEVT(LanguageFilterKeyChangedEVT value),
+    TResult loadMoreNewSeriesEVT(LoadMoreNewSeriesEVT value),
+    TResult loadMoreTopSeriesEVT(LoadMoreTopSeriesEVT value),
+    TResult seriesPublishedEVT(SeriesPublishedEVT value),
+    TResult timeFilterKeyChangedEVT(TimeFilterKeyChangedEVT value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (applyFilterChangesEVT != null) {
-      return applyFilterChangesEVT(this);
+    if (applyFiltersButtonPressedEVT != null) {
+      return applyFiltersButtonPressedEVT(this);
     }
     return orElse();
   }
 }
 
-abstract class ApplyFilterChangesEVT implements HomeDatabaseEvent {
-  const factory ApplyFilterChangesEVT() = _$ApplyFilterChangesEVT;
+abstract class ApplyFiltersButtonPressedEVT implements HomeDatabaseEvent {
+  const factory ApplyFiltersButtonPressedEVT(int index) =
+      _$ApplyFiltersButtonPressedEVT;
+
+  int get index;
+  $ApplyFiltersButtonPressedEVTCopyWith<ApplyFiltersButtonPressedEVT>
+      get copyWith;
 }
 
-abstract class $FiltersAppliedEVTCopyWith<$Res> {
-  factory $FiltersAppliedEVTCopyWith(
-          FiltersAppliedEVT value, $Res Function(FiltersAppliedEVT) then) =
-      _$FiltersAppliedEVTCopyWithImpl<$Res>;
+/// @nodoc
+abstract class $FiltersAppliedAtLaunchEVTCopyWith<$Res> {
+  factory $FiltersAppliedAtLaunchEVTCopyWith(FiltersAppliedAtLaunchEVT value,
+          $Res Function(FiltersAppliedAtLaunchEVT) then) =
+      _$FiltersAppliedAtLaunchEVTCopyWithImpl<$Res>;
 }
 
-class _$FiltersAppliedEVTCopyWithImpl<$Res>
+/// @nodoc
+class _$FiltersAppliedAtLaunchEVTCopyWithImpl<$Res>
     extends _$HomeDatabaseEventCopyWithImpl<$Res>
-    implements $FiltersAppliedEVTCopyWith<$Res> {
-  _$FiltersAppliedEVTCopyWithImpl(
-      FiltersAppliedEVT _value, $Res Function(FiltersAppliedEVT) _then)
-      : super(_value, (v) => _then(v as FiltersAppliedEVT));
+    implements $FiltersAppliedAtLaunchEVTCopyWith<$Res> {
+  _$FiltersAppliedAtLaunchEVTCopyWithImpl(FiltersAppliedAtLaunchEVT _value,
+      $Res Function(FiltersAppliedAtLaunchEVT) _then)
+      : super(_value, (v) => _then(v as FiltersAppliedAtLaunchEVT));
 
   @override
-  FiltersAppliedEVT get _value => super._value as FiltersAppliedEVT;
+  FiltersAppliedAtLaunchEVT get _value =>
+      super._value as FiltersAppliedAtLaunchEVT;
 }
 
-class _$FiltersAppliedEVT
+/// @nodoc
+class _$FiltersAppliedAtLaunchEVT
     with DiagnosticableTreeMixin
-    implements FiltersAppliedEVT {
-  const _$FiltersAppliedEVT();
+    implements FiltersAppliedAtLaunchEVT {
+  const _$FiltersAppliedAtLaunchEVT();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'HomeDatabaseEvent.filtersAppliedEVT()';
+    return 'HomeDatabaseEvent.filtersAppliedAtLaunchEVT()';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
-      ..add(DiagnosticsProperty('type', 'HomeDatabaseEvent.filtersAppliedEVT'));
+      ..add(DiagnosticsProperty(
+          'type', 'HomeDatabaseEvent.filtersAppliedAtLaunchEVT'));
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is FiltersAppliedEVT);
+    return identical(this, other) || (other is FiltersAppliedAtLaunchEVT);
   }
 
   @override
@@ -329,105 +421,482 @@ class _$FiltersAppliedEVT
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result applyFilterChangesEVT(),
-    @required Result filtersAppliedEVT(),
-    @required Result genreFilterKeyChangedEVT(String key),
-    @required Result homePageLaunchedEVT(BuildContext context),
-    @required Result languageFilterKeyChangedEVT(String key),
-    @required Result loadMoreNewSeriesMinifiedEVT(),
-    @required Result loadMoreTopSeriesMinifiedEVT(),
-    @required Result timeFilterKeyChangedEVT(String key),
-    @required Result topSeriesMinifiedLoadedEVT(),
+  TResult when<TResult extends Object>({
+    @required TResult applyFiltersButtonPressedEVT(int index),
+    @required TResult filtersAppliedAtLaunchEVT(),
+    @required TResult filtersAppliedOrPageViewIndexChangedFromTopSeriesLayout(),
+    @required TResult filtersAppliedOrPageViewIndexChangedFromNewSeriesLayout(),
+    @required TResult genreFilterKeyChangedEVT(String key),
+    @required TResult homeLaunchedEVT(BuildContext context),
+    @required TResult languageFilterKeyChangedEVT(String key),
+    @required TResult loadMoreNewSeriesEVT(),
+    @required TResult loadMoreTopSeriesEVT(),
+    @required TResult seriesPublishedEVT(Series series),
+    @required TResult timeFilterKeyChangedEVT(String key),
   }) {
-    assert(applyFilterChangesEVT != null);
-    assert(filtersAppliedEVT != null);
+    assert(applyFiltersButtonPressedEVT != null);
+    assert(filtersAppliedAtLaunchEVT != null);
+    assert(filtersAppliedOrPageViewIndexChangedFromTopSeriesLayout != null);
+    assert(filtersAppliedOrPageViewIndexChangedFromNewSeriesLayout != null);
     assert(genreFilterKeyChangedEVT != null);
-    assert(homePageLaunchedEVT != null);
+    assert(homeLaunchedEVT != null);
     assert(languageFilterKeyChangedEVT != null);
-    assert(loadMoreNewSeriesMinifiedEVT != null);
-    assert(loadMoreTopSeriesMinifiedEVT != null);
+    assert(loadMoreNewSeriesEVT != null);
+    assert(loadMoreTopSeriesEVT != null);
+    assert(seriesPublishedEVT != null);
     assert(timeFilterKeyChangedEVT != null);
-    assert(topSeriesMinifiedLoadedEVT != null);
-    return filtersAppliedEVT();
+    return filtersAppliedAtLaunchEVT();
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result applyFilterChangesEVT(),
-    Result filtersAppliedEVT(),
-    Result genreFilterKeyChangedEVT(String key),
-    Result homePageLaunchedEVT(BuildContext context),
-    Result languageFilterKeyChangedEVT(String key),
-    Result loadMoreNewSeriesMinifiedEVT(),
-    Result loadMoreTopSeriesMinifiedEVT(),
-    Result timeFilterKeyChangedEVT(String key),
-    Result topSeriesMinifiedLoadedEVT(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult applyFiltersButtonPressedEVT(int index),
+    TResult filtersAppliedAtLaunchEVT(),
+    TResult filtersAppliedOrPageViewIndexChangedFromTopSeriesLayout(),
+    TResult filtersAppliedOrPageViewIndexChangedFromNewSeriesLayout(),
+    TResult genreFilterKeyChangedEVT(String key),
+    TResult homeLaunchedEVT(BuildContext context),
+    TResult languageFilterKeyChangedEVT(String key),
+    TResult loadMoreNewSeriesEVT(),
+    TResult loadMoreTopSeriesEVT(),
+    TResult seriesPublishedEVT(Series series),
+    TResult timeFilterKeyChangedEVT(String key),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (filtersAppliedEVT != null) {
-      return filtersAppliedEVT();
+    if (filtersAppliedAtLaunchEVT != null) {
+      return filtersAppliedAtLaunchEVT();
     }
     return orElse();
   }
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result applyFilterChangesEVT(ApplyFilterChangesEVT value),
-    @required Result filtersAppliedEVT(FiltersAppliedEVT value),
-    @required Result genreFilterKeyChangedEVT(GenreFilterKeyChangedEVT value),
-    @required Result homePageLaunchedEVT(HomePageLaunchedEVT value),
+  TResult map<TResult extends Object>({
     @required
-        Result languageFilterKeyChangedEVT(LanguageFilterKeyChangedEVT value),
+        TResult applyFiltersButtonPressedEVT(
+            ApplyFiltersButtonPressedEVT value),
     @required
-        Result loadMoreNewSeriesMinifiedEVT(LoadMoreNewSeriesMinifiedEVT value),
+        TResult filtersAppliedAtLaunchEVT(FiltersAppliedAtLaunchEVT value),
     @required
-        Result loadMoreTopSeriesMinifiedEVT(LoadMoreTopSeriesMinifiedEVT value),
-    @required Result timeFilterKeyChangedEVT(TimeFilterKeyChangedEVT value),
+        TResult filtersAppliedOrPageViewIndexChangedFromTopSeriesLayout(
+            FiltersAppliedOrPageViewIndexChangedFromTopSeriesLayout value),
     @required
-        Result topSeriesMinifiedLoadedEVT(TopSeriesMinifiedLoadedEVT value),
+        TResult filtersAppliedOrPageViewIndexChangedFromNewSeriesLayout(
+            FiltersAppliedOrPageViewIndexChangedFromNewSeriesLayout value),
+    @required TResult genreFilterKeyChangedEVT(GenreFilterKeyChangedEVT value),
+    @required TResult homeLaunchedEVT(HomeLaunchedEVT value),
+    @required
+        TResult languageFilterKeyChangedEVT(LanguageFilterKeyChangedEVT value),
+    @required TResult loadMoreNewSeriesEVT(LoadMoreNewSeriesEVT value),
+    @required TResult loadMoreTopSeriesEVT(LoadMoreTopSeriesEVT value),
+    @required TResult seriesPublishedEVT(SeriesPublishedEVT value),
+    @required TResult timeFilterKeyChangedEVT(TimeFilterKeyChangedEVT value),
   }) {
-    assert(applyFilterChangesEVT != null);
-    assert(filtersAppliedEVT != null);
+    assert(applyFiltersButtonPressedEVT != null);
+    assert(filtersAppliedAtLaunchEVT != null);
+    assert(filtersAppliedOrPageViewIndexChangedFromTopSeriesLayout != null);
+    assert(filtersAppliedOrPageViewIndexChangedFromNewSeriesLayout != null);
     assert(genreFilterKeyChangedEVT != null);
-    assert(homePageLaunchedEVT != null);
+    assert(homeLaunchedEVT != null);
     assert(languageFilterKeyChangedEVT != null);
-    assert(loadMoreNewSeriesMinifiedEVT != null);
-    assert(loadMoreTopSeriesMinifiedEVT != null);
+    assert(loadMoreNewSeriesEVT != null);
+    assert(loadMoreTopSeriesEVT != null);
+    assert(seriesPublishedEVT != null);
     assert(timeFilterKeyChangedEVT != null);
-    assert(topSeriesMinifiedLoadedEVT != null);
-    return filtersAppliedEVT(this);
+    return filtersAppliedAtLaunchEVT(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result applyFilterChangesEVT(ApplyFilterChangesEVT value),
-    Result filtersAppliedEVT(FiltersAppliedEVT value),
-    Result genreFilterKeyChangedEVT(GenreFilterKeyChangedEVT value),
-    Result homePageLaunchedEVT(HomePageLaunchedEVT value),
-    Result languageFilterKeyChangedEVT(LanguageFilterKeyChangedEVT value),
-    Result loadMoreNewSeriesMinifiedEVT(LoadMoreNewSeriesMinifiedEVT value),
-    Result loadMoreTopSeriesMinifiedEVT(LoadMoreTopSeriesMinifiedEVT value),
-    Result timeFilterKeyChangedEVT(TimeFilterKeyChangedEVT value),
-    Result topSeriesMinifiedLoadedEVT(TopSeriesMinifiedLoadedEVT value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult applyFiltersButtonPressedEVT(ApplyFiltersButtonPressedEVT value),
+    TResult filtersAppliedAtLaunchEVT(FiltersAppliedAtLaunchEVT value),
+    TResult filtersAppliedOrPageViewIndexChangedFromTopSeriesLayout(
+        FiltersAppliedOrPageViewIndexChangedFromTopSeriesLayout value),
+    TResult filtersAppliedOrPageViewIndexChangedFromNewSeriesLayout(
+        FiltersAppliedOrPageViewIndexChangedFromNewSeriesLayout value),
+    TResult genreFilterKeyChangedEVT(GenreFilterKeyChangedEVT value),
+    TResult homeLaunchedEVT(HomeLaunchedEVT value),
+    TResult languageFilterKeyChangedEVT(LanguageFilterKeyChangedEVT value),
+    TResult loadMoreNewSeriesEVT(LoadMoreNewSeriesEVT value),
+    TResult loadMoreTopSeriesEVT(LoadMoreTopSeriesEVT value),
+    TResult seriesPublishedEVT(SeriesPublishedEVT value),
+    TResult timeFilterKeyChangedEVT(TimeFilterKeyChangedEVT value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (filtersAppliedEVT != null) {
-      return filtersAppliedEVT(this);
+    if (filtersAppliedAtLaunchEVT != null) {
+      return filtersAppliedAtLaunchEVT(this);
     }
     return orElse();
   }
 }
 
-abstract class FiltersAppliedEVT implements HomeDatabaseEvent {
-  const factory FiltersAppliedEVT() = _$FiltersAppliedEVT;
+abstract class FiltersAppliedAtLaunchEVT implements HomeDatabaseEvent {
+  const factory FiltersAppliedAtLaunchEVT() = _$FiltersAppliedAtLaunchEVT;
 }
 
+/// @nodoc
+abstract class $FiltersAppliedOrPageViewIndexChangedFromTopSeriesLayoutCopyWith<
+    $Res> {
+  factory $FiltersAppliedOrPageViewIndexChangedFromTopSeriesLayoutCopyWith(
+          FiltersAppliedOrPageViewIndexChangedFromTopSeriesLayout value,
+          $Res Function(FiltersAppliedOrPageViewIndexChangedFromTopSeriesLayout)
+              then) =
+      _$FiltersAppliedOrPageViewIndexChangedFromTopSeriesLayoutCopyWithImpl<
+          $Res>;
+}
+
+/// @nodoc
+class _$FiltersAppliedOrPageViewIndexChangedFromTopSeriesLayoutCopyWithImpl<
+        $Res> extends _$HomeDatabaseEventCopyWithImpl<$Res>
+    implements
+        $FiltersAppliedOrPageViewIndexChangedFromTopSeriesLayoutCopyWith<$Res> {
+  _$FiltersAppliedOrPageViewIndexChangedFromTopSeriesLayoutCopyWithImpl(
+      FiltersAppliedOrPageViewIndexChangedFromTopSeriesLayout _value,
+      $Res Function(FiltersAppliedOrPageViewIndexChangedFromTopSeriesLayout)
+          _then)
+      : super(
+            _value,
+            (v) => _then(
+                v as FiltersAppliedOrPageViewIndexChangedFromTopSeriesLayout));
+
+  @override
+  FiltersAppliedOrPageViewIndexChangedFromTopSeriesLayout get _value =>
+      super._value as FiltersAppliedOrPageViewIndexChangedFromTopSeriesLayout;
+}
+
+/// @nodoc
+class _$FiltersAppliedOrPageViewIndexChangedFromTopSeriesLayout
+    with DiagnosticableTreeMixin
+    implements FiltersAppliedOrPageViewIndexChangedFromTopSeriesLayout {
+  const _$FiltersAppliedOrPageViewIndexChangedFromTopSeriesLayout();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'HomeDatabaseEvent.filtersAppliedOrPageViewIndexChangedFromTopSeriesLayout()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type',
+          'HomeDatabaseEvent.filtersAppliedOrPageViewIndexChangedFromTopSeriesLayout'));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is FiltersAppliedOrPageViewIndexChangedFromTopSeriesLayout);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object>({
+    @required TResult applyFiltersButtonPressedEVT(int index),
+    @required TResult filtersAppliedAtLaunchEVT(),
+    @required TResult filtersAppliedOrPageViewIndexChangedFromTopSeriesLayout(),
+    @required TResult filtersAppliedOrPageViewIndexChangedFromNewSeriesLayout(),
+    @required TResult genreFilterKeyChangedEVT(String key),
+    @required TResult homeLaunchedEVT(BuildContext context),
+    @required TResult languageFilterKeyChangedEVT(String key),
+    @required TResult loadMoreNewSeriesEVT(),
+    @required TResult loadMoreTopSeriesEVT(),
+    @required TResult seriesPublishedEVT(Series series),
+    @required TResult timeFilterKeyChangedEVT(String key),
+  }) {
+    assert(applyFiltersButtonPressedEVT != null);
+    assert(filtersAppliedAtLaunchEVT != null);
+    assert(filtersAppliedOrPageViewIndexChangedFromTopSeriesLayout != null);
+    assert(filtersAppliedOrPageViewIndexChangedFromNewSeriesLayout != null);
+    assert(genreFilterKeyChangedEVT != null);
+    assert(homeLaunchedEVT != null);
+    assert(languageFilterKeyChangedEVT != null);
+    assert(loadMoreNewSeriesEVT != null);
+    assert(loadMoreTopSeriesEVT != null);
+    assert(seriesPublishedEVT != null);
+    assert(timeFilterKeyChangedEVT != null);
+    return filtersAppliedOrPageViewIndexChangedFromTopSeriesLayout();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object>({
+    TResult applyFiltersButtonPressedEVT(int index),
+    TResult filtersAppliedAtLaunchEVT(),
+    TResult filtersAppliedOrPageViewIndexChangedFromTopSeriesLayout(),
+    TResult filtersAppliedOrPageViewIndexChangedFromNewSeriesLayout(),
+    TResult genreFilterKeyChangedEVT(String key),
+    TResult homeLaunchedEVT(BuildContext context),
+    TResult languageFilterKeyChangedEVT(String key),
+    TResult loadMoreNewSeriesEVT(),
+    TResult loadMoreTopSeriesEVT(),
+    TResult seriesPublishedEVT(Series series),
+    TResult timeFilterKeyChangedEVT(String key),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (filtersAppliedOrPageViewIndexChangedFromTopSeriesLayout != null) {
+      return filtersAppliedOrPageViewIndexChangedFromTopSeriesLayout();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object>({
+    @required
+        TResult applyFiltersButtonPressedEVT(
+            ApplyFiltersButtonPressedEVT value),
+    @required
+        TResult filtersAppliedAtLaunchEVT(FiltersAppliedAtLaunchEVT value),
+    @required
+        TResult filtersAppliedOrPageViewIndexChangedFromTopSeriesLayout(
+            FiltersAppliedOrPageViewIndexChangedFromTopSeriesLayout value),
+    @required
+        TResult filtersAppliedOrPageViewIndexChangedFromNewSeriesLayout(
+            FiltersAppliedOrPageViewIndexChangedFromNewSeriesLayout value),
+    @required TResult genreFilterKeyChangedEVT(GenreFilterKeyChangedEVT value),
+    @required TResult homeLaunchedEVT(HomeLaunchedEVT value),
+    @required
+        TResult languageFilterKeyChangedEVT(LanguageFilterKeyChangedEVT value),
+    @required TResult loadMoreNewSeriesEVT(LoadMoreNewSeriesEVT value),
+    @required TResult loadMoreTopSeriesEVT(LoadMoreTopSeriesEVT value),
+    @required TResult seriesPublishedEVT(SeriesPublishedEVT value),
+    @required TResult timeFilterKeyChangedEVT(TimeFilterKeyChangedEVT value),
+  }) {
+    assert(applyFiltersButtonPressedEVT != null);
+    assert(filtersAppliedAtLaunchEVT != null);
+    assert(filtersAppliedOrPageViewIndexChangedFromTopSeriesLayout != null);
+    assert(filtersAppliedOrPageViewIndexChangedFromNewSeriesLayout != null);
+    assert(genreFilterKeyChangedEVT != null);
+    assert(homeLaunchedEVT != null);
+    assert(languageFilterKeyChangedEVT != null);
+    assert(loadMoreNewSeriesEVT != null);
+    assert(loadMoreTopSeriesEVT != null);
+    assert(seriesPublishedEVT != null);
+    assert(timeFilterKeyChangedEVT != null);
+    return filtersAppliedOrPageViewIndexChangedFromTopSeriesLayout(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object>({
+    TResult applyFiltersButtonPressedEVT(ApplyFiltersButtonPressedEVT value),
+    TResult filtersAppliedAtLaunchEVT(FiltersAppliedAtLaunchEVT value),
+    TResult filtersAppliedOrPageViewIndexChangedFromTopSeriesLayout(
+        FiltersAppliedOrPageViewIndexChangedFromTopSeriesLayout value),
+    TResult filtersAppliedOrPageViewIndexChangedFromNewSeriesLayout(
+        FiltersAppliedOrPageViewIndexChangedFromNewSeriesLayout value),
+    TResult genreFilterKeyChangedEVT(GenreFilterKeyChangedEVT value),
+    TResult homeLaunchedEVT(HomeLaunchedEVT value),
+    TResult languageFilterKeyChangedEVT(LanguageFilterKeyChangedEVT value),
+    TResult loadMoreNewSeriesEVT(LoadMoreNewSeriesEVT value),
+    TResult loadMoreTopSeriesEVT(LoadMoreTopSeriesEVT value),
+    TResult seriesPublishedEVT(SeriesPublishedEVT value),
+    TResult timeFilterKeyChangedEVT(TimeFilterKeyChangedEVT value),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (filtersAppliedOrPageViewIndexChangedFromTopSeriesLayout != null) {
+      return filtersAppliedOrPageViewIndexChangedFromTopSeriesLayout(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class FiltersAppliedOrPageViewIndexChangedFromTopSeriesLayout
+    implements HomeDatabaseEvent {
+  const factory FiltersAppliedOrPageViewIndexChangedFromTopSeriesLayout() =
+      _$FiltersAppliedOrPageViewIndexChangedFromTopSeriesLayout;
+}
+
+/// @nodoc
+abstract class $FiltersAppliedOrPageViewIndexChangedFromNewSeriesLayoutCopyWith<
+    $Res> {
+  factory $FiltersAppliedOrPageViewIndexChangedFromNewSeriesLayoutCopyWith(
+          FiltersAppliedOrPageViewIndexChangedFromNewSeriesLayout value,
+          $Res Function(FiltersAppliedOrPageViewIndexChangedFromNewSeriesLayout)
+              then) =
+      _$FiltersAppliedOrPageViewIndexChangedFromNewSeriesLayoutCopyWithImpl<
+          $Res>;
+}
+
+/// @nodoc
+class _$FiltersAppliedOrPageViewIndexChangedFromNewSeriesLayoutCopyWithImpl<
+        $Res> extends _$HomeDatabaseEventCopyWithImpl<$Res>
+    implements
+        $FiltersAppliedOrPageViewIndexChangedFromNewSeriesLayoutCopyWith<$Res> {
+  _$FiltersAppliedOrPageViewIndexChangedFromNewSeriesLayoutCopyWithImpl(
+      FiltersAppliedOrPageViewIndexChangedFromNewSeriesLayout _value,
+      $Res Function(FiltersAppliedOrPageViewIndexChangedFromNewSeriesLayout)
+          _then)
+      : super(
+            _value,
+            (v) => _then(
+                v as FiltersAppliedOrPageViewIndexChangedFromNewSeriesLayout));
+
+  @override
+  FiltersAppliedOrPageViewIndexChangedFromNewSeriesLayout get _value =>
+      super._value as FiltersAppliedOrPageViewIndexChangedFromNewSeriesLayout;
+}
+
+/// @nodoc
+class _$FiltersAppliedOrPageViewIndexChangedFromNewSeriesLayout
+    with DiagnosticableTreeMixin
+    implements FiltersAppliedOrPageViewIndexChangedFromNewSeriesLayout {
+  const _$FiltersAppliedOrPageViewIndexChangedFromNewSeriesLayout();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'HomeDatabaseEvent.filtersAppliedOrPageViewIndexChangedFromNewSeriesLayout()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type',
+          'HomeDatabaseEvent.filtersAppliedOrPageViewIndexChangedFromNewSeriesLayout'));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is FiltersAppliedOrPageViewIndexChangedFromNewSeriesLayout);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object>({
+    @required TResult applyFiltersButtonPressedEVT(int index),
+    @required TResult filtersAppliedAtLaunchEVT(),
+    @required TResult filtersAppliedOrPageViewIndexChangedFromTopSeriesLayout(),
+    @required TResult filtersAppliedOrPageViewIndexChangedFromNewSeriesLayout(),
+    @required TResult genreFilterKeyChangedEVT(String key),
+    @required TResult homeLaunchedEVT(BuildContext context),
+    @required TResult languageFilterKeyChangedEVT(String key),
+    @required TResult loadMoreNewSeriesEVT(),
+    @required TResult loadMoreTopSeriesEVT(),
+    @required TResult seriesPublishedEVT(Series series),
+    @required TResult timeFilterKeyChangedEVT(String key),
+  }) {
+    assert(applyFiltersButtonPressedEVT != null);
+    assert(filtersAppliedAtLaunchEVT != null);
+    assert(filtersAppliedOrPageViewIndexChangedFromTopSeriesLayout != null);
+    assert(filtersAppliedOrPageViewIndexChangedFromNewSeriesLayout != null);
+    assert(genreFilterKeyChangedEVT != null);
+    assert(homeLaunchedEVT != null);
+    assert(languageFilterKeyChangedEVT != null);
+    assert(loadMoreNewSeriesEVT != null);
+    assert(loadMoreTopSeriesEVT != null);
+    assert(seriesPublishedEVT != null);
+    assert(timeFilterKeyChangedEVT != null);
+    return filtersAppliedOrPageViewIndexChangedFromNewSeriesLayout();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object>({
+    TResult applyFiltersButtonPressedEVT(int index),
+    TResult filtersAppliedAtLaunchEVT(),
+    TResult filtersAppliedOrPageViewIndexChangedFromTopSeriesLayout(),
+    TResult filtersAppliedOrPageViewIndexChangedFromNewSeriesLayout(),
+    TResult genreFilterKeyChangedEVT(String key),
+    TResult homeLaunchedEVT(BuildContext context),
+    TResult languageFilterKeyChangedEVT(String key),
+    TResult loadMoreNewSeriesEVT(),
+    TResult loadMoreTopSeriesEVT(),
+    TResult seriesPublishedEVT(Series series),
+    TResult timeFilterKeyChangedEVT(String key),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (filtersAppliedOrPageViewIndexChangedFromNewSeriesLayout != null) {
+      return filtersAppliedOrPageViewIndexChangedFromNewSeriesLayout();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object>({
+    @required
+        TResult applyFiltersButtonPressedEVT(
+            ApplyFiltersButtonPressedEVT value),
+    @required
+        TResult filtersAppliedAtLaunchEVT(FiltersAppliedAtLaunchEVT value),
+    @required
+        TResult filtersAppliedOrPageViewIndexChangedFromTopSeriesLayout(
+            FiltersAppliedOrPageViewIndexChangedFromTopSeriesLayout value),
+    @required
+        TResult filtersAppliedOrPageViewIndexChangedFromNewSeriesLayout(
+            FiltersAppliedOrPageViewIndexChangedFromNewSeriesLayout value),
+    @required TResult genreFilterKeyChangedEVT(GenreFilterKeyChangedEVT value),
+    @required TResult homeLaunchedEVT(HomeLaunchedEVT value),
+    @required
+        TResult languageFilterKeyChangedEVT(LanguageFilterKeyChangedEVT value),
+    @required TResult loadMoreNewSeriesEVT(LoadMoreNewSeriesEVT value),
+    @required TResult loadMoreTopSeriesEVT(LoadMoreTopSeriesEVT value),
+    @required TResult seriesPublishedEVT(SeriesPublishedEVT value),
+    @required TResult timeFilterKeyChangedEVT(TimeFilterKeyChangedEVT value),
+  }) {
+    assert(applyFiltersButtonPressedEVT != null);
+    assert(filtersAppliedAtLaunchEVT != null);
+    assert(filtersAppliedOrPageViewIndexChangedFromTopSeriesLayout != null);
+    assert(filtersAppliedOrPageViewIndexChangedFromNewSeriesLayout != null);
+    assert(genreFilterKeyChangedEVT != null);
+    assert(homeLaunchedEVT != null);
+    assert(languageFilterKeyChangedEVT != null);
+    assert(loadMoreNewSeriesEVT != null);
+    assert(loadMoreTopSeriesEVT != null);
+    assert(seriesPublishedEVT != null);
+    assert(timeFilterKeyChangedEVT != null);
+    return filtersAppliedOrPageViewIndexChangedFromNewSeriesLayout(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object>({
+    TResult applyFiltersButtonPressedEVT(ApplyFiltersButtonPressedEVT value),
+    TResult filtersAppliedAtLaunchEVT(FiltersAppliedAtLaunchEVT value),
+    TResult filtersAppliedOrPageViewIndexChangedFromTopSeriesLayout(
+        FiltersAppliedOrPageViewIndexChangedFromTopSeriesLayout value),
+    TResult filtersAppliedOrPageViewIndexChangedFromNewSeriesLayout(
+        FiltersAppliedOrPageViewIndexChangedFromNewSeriesLayout value),
+    TResult genreFilterKeyChangedEVT(GenreFilterKeyChangedEVT value),
+    TResult homeLaunchedEVT(HomeLaunchedEVT value),
+    TResult languageFilterKeyChangedEVT(LanguageFilterKeyChangedEVT value),
+    TResult loadMoreNewSeriesEVT(LoadMoreNewSeriesEVT value),
+    TResult loadMoreTopSeriesEVT(LoadMoreTopSeriesEVT value),
+    TResult seriesPublishedEVT(SeriesPublishedEVT value),
+    TResult timeFilterKeyChangedEVT(TimeFilterKeyChangedEVT value),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (filtersAppliedOrPageViewIndexChangedFromNewSeriesLayout != null) {
+      return filtersAppliedOrPageViewIndexChangedFromNewSeriesLayout(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class FiltersAppliedOrPageViewIndexChangedFromNewSeriesLayout
+    implements HomeDatabaseEvent {
+  const factory FiltersAppliedOrPageViewIndexChangedFromNewSeriesLayout() =
+      _$FiltersAppliedOrPageViewIndexChangedFromNewSeriesLayout;
+}
+
+/// @nodoc
 abstract class $GenreFilterKeyChangedEVTCopyWith<$Res> {
   factory $GenreFilterKeyChangedEVTCopyWith(GenreFilterKeyChangedEVT value,
           $Res Function(GenreFilterKeyChangedEVT) then) =
@@ -435,6 +904,7 @@ abstract class $GenreFilterKeyChangedEVTCopyWith<$Res> {
   $Res call({String key});
 }
 
+/// @nodoc
 class _$GenreFilterKeyChangedEVTCopyWithImpl<$Res>
     extends _$HomeDatabaseEventCopyWithImpl<$Res>
     implements $GenreFilterKeyChangedEVTCopyWith<$Res> {
@@ -456,6 +926,7 @@ class _$GenreFilterKeyChangedEVTCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$GenreFilterKeyChangedEVT
     with DiagnosticableTreeMixin
     implements GenreFilterKeyChangedEVT {
@@ -497,42 +968,48 @@ class _$GenreFilterKeyChangedEVT
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result applyFilterChangesEVT(),
-    @required Result filtersAppliedEVT(),
-    @required Result genreFilterKeyChangedEVT(String key),
-    @required Result homePageLaunchedEVT(BuildContext context),
-    @required Result languageFilterKeyChangedEVT(String key),
-    @required Result loadMoreNewSeriesMinifiedEVT(),
-    @required Result loadMoreTopSeriesMinifiedEVT(),
-    @required Result timeFilterKeyChangedEVT(String key),
-    @required Result topSeriesMinifiedLoadedEVT(),
+  TResult when<TResult extends Object>({
+    @required TResult applyFiltersButtonPressedEVT(int index),
+    @required TResult filtersAppliedAtLaunchEVT(),
+    @required TResult filtersAppliedOrPageViewIndexChangedFromTopSeriesLayout(),
+    @required TResult filtersAppliedOrPageViewIndexChangedFromNewSeriesLayout(),
+    @required TResult genreFilterKeyChangedEVT(String key),
+    @required TResult homeLaunchedEVT(BuildContext context),
+    @required TResult languageFilterKeyChangedEVT(String key),
+    @required TResult loadMoreNewSeriesEVT(),
+    @required TResult loadMoreTopSeriesEVT(),
+    @required TResult seriesPublishedEVT(Series series),
+    @required TResult timeFilterKeyChangedEVT(String key),
   }) {
-    assert(applyFilterChangesEVT != null);
-    assert(filtersAppliedEVT != null);
+    assert(applyFiltersButtonPressedEVT != null);
+    assert(filtersAppliedAtLaunchEVT != null);
+    assert(filtersAppliedOrPageViewIndexChangedFromTopSeriesLayout != null);
+    assert(filtersAppliedOrPageViewIndexChangedFromNewSeriesLayout != null);
     assert(genreFilterKeyChangedEVT != null);
-    assert(homePageLaunchedEVT != null);
+    assert(homeLaunchedEVT != null);
     assert(languageFilterKeyChangedEVT != null);
-    assert(loadMoreNewSeriesMinifiedEVT != null);
-    assert(loadMoreTopSeriesMinifiedEVT != null);
+    assert(loadMoreNewSeriesEVT != null);
+    assert(loadMoreTopSeriesEVT != null);
+    assert(seriesPublishedEVT != null);
     assert(timeFilterKeyChangedEVT != null);
-    assert(topSeriesMinifiedLoadedEVT != null);
     return genreFilterKeyChangedEVT(key);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result applyFilterChangesEVT(),
-    Result filtersAppliedEVT(),
-    Result genreFilterKeyChangedEVT(String key),
-    Result homePageLaunchedEVT(BuildContext context),
-    Result languageFilterKeyChangedEVT(String key),
-    Result loadMoreNewSeriesMinifiedEVT(),
-    Result loadMoreTopSeriesMinifiedEVT(),
-    Result timeFilterKeyChangedEVT(String key),
-    Result topSeriesMinifiedLoadedEVT(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult applyFiltersButtonPressedEVT(int index),
+    TResult filtersAppliedAtLaunchEVT(),
+    TResult filtersAppliedOrPageViewIndexChangedFromTopSeriesLayout(),
+    TResult filtersAppliedOrPageViewIndexChangedFromNewSeriesLayout(),
+    TResult genreFilterKeyChangedEVT(String key),
+    TResult homeLaunchedEVT(BuildContext context),
+    TResult languageFilterKeyChangedEVT(String key),
+    TResult loadMoreNewSeriesEVT(),
+    TResult loadMoreTopSeriesEVT(),
+    TResult seriesPublishedEVT(Series series),
+    TResult timeFilterKeyChangedEVT(String key),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (genreFilterKeyChangedEVT != null) {
@@ -543,46 +1020,58 @@ class _$GenreFilterKeyChangedEVT
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result applyFilterChangesEVT(ApplyFilterChangesEVT value),
-    @required Result filtersAppliedEVT(FiltersAppliedEVT value),
-    @required Result genreFilterKeyChangedEVT(GenreFilterKeyChangedEVT value),
-    @required Result homePageLaunchedEVT(HomePageLaunchedEVT value),
+  TResult map<TResult extends Object>({
     @required
-        Result languageFilterKeyChangedEVT(LanguageFilterKeyChangedEVT value),
+        TResult applyFiltersButtonPressedEVT(
+            ApplyFiltersButtonPressedEVT value),
     @required
-        Result loadMoreNewSeriesMinifiedEVT(LoadMoreNewSeriesMinifiedEVT value),
+        TResult filtersAppliedAtLaunchEVT(FiltersAppliedAtLaunchEVT value),
     @required
-        Result loadMoreTopSeriesMinifiedEVT(LoadMoreTopSeriesMinifiedEVT value),
-    @required Result timeFilterKeyChangedEVT(TimeFilterKeyChangedEVT value),
+        TResult filtersAppliedOrPageViewIndexChangedFromTopSeriesLayout(
+            FiltersAppliedOrPageViewIndexChangedFromTopSeriesLayout value),
     @required
-        Result topSeriesMinifiedLoadedEVT(TopSeriesMinifiedLoadedEVT value),
+        TResult filtersAppliedOrPageViewIndexChangedFromNewSeriesLayout(
+            FiltersAppliedOrPageViewIndexChangedFromNewSeriesLayout value),
+    @required TResult genreFilterKeyChangedEVT(GenreFilterKeyChangedEVT value),
+    @required TResult homeLaunchedEVT(HomeLaunchedEVT value),
+    @required
+        TResult languageFilterKeyChangedEVT(LanguageFilterKeyChangedEVT value),
+    @required TResult loadMoreNewSeriesEVT(LoadMoreNewSeriesEVT value),
+    @required TResult loadMoreTopSeriesEVT(LoadMoreTopSeriesEVT value),
+    @required TResult seriesPublishedEVT(SeriesPublishedEVT value),
+    @required TResult timeFilterKeyChangedEVT(TimeFilterKeyChangedEVT value),
   }) {
-    assert(applyFilterChangesEVT != null);
-    assert(filtersAppliedEVT != null);
+    assert(applyFiltersButtonPressedEVT != null);
+    assert(filtersAppliedAtLaunchEVT != null);
+    assert(filtersAppliedOrPageViewIndexChangedFromTopSeriesLayout != null);
+    assert(filtersAppliedOrPageViewIndexChangedFromNewSeriesLayout != null);
     assert(genreFilterKeyChangedEVT != null);
-    assert(homePageLaunchedEVT != null);
+    assert(homeLaunchedEVT != null);
     assert(languageFilterKeyChangedEVT != null);
-    assert(loadMoreNewSeriesMinifiedEVT != null);
-    assert(loadMoreTopSeriesMinifiedEVT != null);
+    assert(loadMoreNewSeriesEVT != null);
+    assert(loadMoreTopSeriesEVT != null);
+    assert(seriesPublishedEVT != null);
     assert(timeFilterKeyChangedEVT != null);
-    assert(topSeriesMinifiedLoadedEVT != null);
     return genreFilterKeyChangedEVT(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result applyFilterChangesEVT(ApplyFilterChangesEVT value),
-    Result filtersAppliedEVT(FiltersAppliedEVT value),
-    Result genreFilterKeyChangedEVT(GenreFilterKeyChangedEVT value),
-    Result homePageLaunchedEVT(HomePageLaunchedEVT value),
-    Result languageFilterKeyChangedEVT(LanguageFilterKeyChangedEVT value),
-    Result loadMoreNewSeriesMinifiedEVT(LoadMoreNewSeriesMinifiedEVT value),
-    Result loadMoreTopSeriesMinifiedEVT(LoadMoreTopSeriesMinifiedEVT value),
-    Result timeFilterKeyChangedEVT(TimeFilterKeyChangedEVT value),
-    Result topSeriesMinifiedLoadedEVT(TopSeriesMinifiedLoadedEVT value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult applyFiltersButtonPressedEVT(ApplyFiltersButtonPressedEVT value),
+    TResult filtersAppliedAtLaunchEVT(FiltersAppliedAtLaunchEVT value),
+    TResult filtersAppliedOrPageViewIndexChangedFromTopSeriesLayout(
+        FiltersAppliedOrPageViewIndexChangedFromTopSeriesLayout value),
+    TResult filtersAppliedOrPageViewIndexChangedFromNewSeriesLayout(
+        FiltersAppliedOrPageViewIndexChangedFromNewSeriesLayout value),
+    TResult genreFilterKeyChangedEVT(GenreFilterKeyChangedEVT value),
+    TResult homeLaunchedEVT(HomeLaunchedEVT value),
+    TResult languageFilterKeyChangedEVT(LanguageFilterKeyChangedEVT value),
+    TResult loadMoreNewSeriesEVT(LoadMoreNewSeriesEVT value),
+    TResult loadMoreTopSeriesEVT(LoadMoreTopSeriesEVT value),
+    TResult seriesPublishedEVT(SeriesPublishedEVT value),
+    TResult timeFilterKeyChangedEVT(TimeFilterKeyChangedEVT value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (genreFilterKeyChangedEVT != null) {
@@ -600,59 +1089,61 @@ abstract class GenreFilterKeyChangedEVT implements HomeDatabaseEvent {
   $GenreFilterKeyChangedEVTCopyWith<GenreFilterKeyChangedEVT> get copyWith;
 }
 
-abstract class $HomePageLaunchedEVTCopyWith<$Res> {
-  factory $HomePageLaunchedEVTCopyWith(
-          HomePageLaunchedEVT value, $Res Function(HomePageLaunchedEVT) then) =
-      _$HomePageLaunchedEVTCopyWithImpl<$Res>;
+/// @nodoc
+abstract class $HomeLaunchedEVTCopyWith<$Res> {
+  factory $HomeLaunchedEVTCopyWith(
+          HomeLaunchedEVT value, $Res Function(HomeLaunchedEVT) then) =
+      _$HomeLaunchedEVTCopyWithImpl<$Res>;
   $Res call({BuildContext context});
 }
 
-class _$HomePageLaunchedEVTCopyWithImpl<$Res>
+/// @nodoc
+class _$HomeLaunchedEVTCopyWithImpl<$Res>
     extends _$HomeDatabaseEventCopyWithImpl<$Res>
-    implements $HomePageLaunchedEVTCopyWith<$Res> {
-  _$HomePageLaunchedEVTCopyWithImpl(
-      HomePageLaunchedEVT _value, $Res Function(HomePageLaunchedEVT) _then)
-      : super(_value, (v) => _then(v as HomePageLaunchedEVT));
+    implements $HomeLaunchedEVTCopyWith<$Res> {
+  _$HomeLaunchedEVTCopyWithImpl(
+      HomeLaunchedEVT _value, $Res Function(HomeLaunchedEVT) _then)
+      : super(_value, (v) => _then(v as HomeLaunchedEVT));
 
   @override
-  HomePageLaunchedEVT get _value => super._value as HomePageLaunchedEVT;
+  HomeLaunchedEVT get _value => super._value as HomeLaunchedEVT;
 
   @override
   $Res call({
     Object context = freezed,
   }) {
-    return _then(HomePageLaunchedEVT(
-      context: context == freezed ? _value.context : context as BuildContext,
+    return _then(HomeLaunchedEVT(
+      context == freezed ? _value.context : context as BuildContext,
     ));
   }
 }
 
-class _$HomePageLaunchedEVT
+/// @nodoc
+class _$HomeLaunchedEVT
     with DiagnosticableTreeMixin
-    implements HomePageLaunchedEVT {
-  const _$HomePageLaunchedEVT({this.context});
+    implements HomeLaunchedEVT {
+  const _$HomeLaunchedEVT(this.context) : assert(context != null);
 
   @override
   final BuildContext context;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'HomeDatabaseEvent.homePageLaunchedEVT(context: $context)';
+    return 'HomeDatabaseEvent.homeLaunchedEVT(context: $context)';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
-      ..add(
-          DiagnosticsProperty('type', 'HomeDatabaseEvent.homePageLaunchedEVT'))
+      ..add(DiagnosticsProperty('type', 'HomeDatabaseEvent.homeLaunchedEVT'))
       ..add(DiagnosticsProperty('context', context));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is HomePageLaunchedEVT &&
+        (other is HomeLaunchedEVT &&
             (identical(other.context, context) ||
                 const DeepCollectionEquality().equals(other.context, context)));
   }
@@ -662,114 +1153,132 @@ class _$HomePageLaunchedEVT
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(context);
 
   @override
-  $HomePageLaunchedEVTCopyWith<HomePageLaunchedEVT> get copyWith =>
-      _$HomePageLaunchedEVTCopyWithImpl<HomePageLaunchedEVT>(this, _$identity);
+  $HomeLaunchedEVTCopyWith<HomeLaunchedEVT> get copyWith =>
+      _$HomeLaunchedEVTCopyWithImpl<HomeLaunchedEVT>(this, _$identity);
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result applyFilterChangesEVT(),
-    @required Result filtersAppliedEVT(),
-    @required Result genreFilterKeyChangedEVT(String key),
-    @required Result homePageLaunchedEVT(BuildContext context),
-    @required Result languageFilterKeyChangedEVT(String key),
-    @required Result loadMoreNewSeriesMinifiedEVT(),
-    @required Result loadMoreTopSeriesMinifiedEVT(),
-    @required Result timeFilterKeyChangedEVT(String key),
-    @required Result topSeriesMinifiedLoadedEVT(),
+  TResult when<TResult extends Object>({
+    @required TResult applyFiltersButtonPressedEVT(int index),
+    @required TResult filtersAppliedAtLaunchEVT(),
+    @required TResult filtersAppliedOrPageViewIndexChangedFromTopSeriesLayout(),
+    @required TResult filtersAppliedOrPageViewIndexChangedFromNewSeriesLayout(),
+    @required TResult genreFilterKeyChangedEVT(String key),
+    @required TResult homeLaunchedEVT(BuildContext context),
+    @required TResult languageFilterKeyChangedEVT(String key),
+    @required TResult loadMoreNewSeriesEVT(),
+    @required TResult loadMoreTopSeriesEVT(),
+    @required TResult seriesPublishedEVT(Series series),
+    @required TResult timeFilterKeyChangedEVT(String key),
   }) {
-    assert(applyFilterChangesEVT != null);
-    assert(filtersAppliedEVT != null);
+    assert(applyFiltersButtonPressedEVT != null);
+    assert(filtersAppliedAtLaunchEVT != null);
+    assert(filtersAppliedOrPageViewIndexChangedFromTopSeriesLayout != null);
+    assert(filtersAppliedOrPageViewIndexChangedFromNewSeriesLayout != null);
     assert(genreFilterKeyChangedEVT != null);
-    assert(homePageLaunchedEVT != null);
+    assert(homeLaunchedEVT != null);
     assert(languageFilterKeyChangedEVT != null);
-    assert(loadMoreNewSeriesMinifiedEVT != null);
-    assert(loadMoreTopSeriesMinifiedEVT != null);
+    assert(loadMoreNewSeriesEVT != null);
+    assert(loadMoreTopSeriesEVT != null);
+    assert(seriesPublishedEVT != null);
     assert(timeFilterKeyChangedEVT != null);
-    assert(topSeriesMinifiedLoadedEVT != null);
-    return homePageLaunchedEVT(context);
+    return homeLaunchedEVT(context);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result applyFilterChangesEVT(),
-    Result filtersAppliedEVT(),
-    Result genreFilterKeyChangedEVT(String key),
-    Result homePageLaunchedEVT(BuildContext context),
-    Result languageFilterKeyChangedEVT(String key),
-    Result loadMoreNewSeriesMinifiedEVT(),
-    Result loadMoreTopSeriesMinifiedEVT(),
-    Result timeFilterKeyChangedEVT(String key),
-    Result topSeriesMinifiedLoadedEVT(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult applyFiltersButtonPressedEVT(int index),
+    TResult filtersAppliedAtLaunchEVT(),
+    TResult filtersAppliedOrPageViewIndexChangedFromTopSeriesLayout(),
+    TResult filtersAppliedOrPageViewIndexChangedFromNewSeriesLayout(),
+    TResult genreFilterKeyChangedEVT(String key),
+    TResult homeLaunchedEVT(BuildContext context),
+    TResult languageFilterKeyChangedEVT(String key),
+    TResult loadMoreNewSeriesEVT(),
+    TResult loadMoreTopSeriesEVT(),
+    TResult seriesPublishedEVT(Series series),
+    TResult timeFilterKeyChangedEVT(String key),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (homePageLaunchedEVT != null) {
-      return homePageLaunchedEVT(context);
+    if (homeLaunchedEVT != null) {
+      return homeLaunchedEVT(context);
     }
     return orElse();
   }
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result applyFilterChangesEVT(ApplyFilterChangesEVT value),
-    @required Result filtersAppliedEVT(FiltersAppliedEVT value),
-    @required Result genreFilterKeyChangedEVT(GenreFilterKeyChangedEVT value),
-    @required Result homePageLaunchedEVT(HomePageLaunchedEVT value),
+  TResult map<TResult extends Object>({
     @required
-        Result languageFilterKeyChangedEVT(LanguageFilterKeyChangedEVT value),
+        TResult applyFiltersButtonPressedEVT(
+            ApplyFiltersButtonPressedEVT value),
     @required
-        Result loadMoreNewSeriesMinifiedEVT(LoadMoreNewSeriesMinifiedEVT value),
+        TResult filtersAppliedAtLaunchEVT(FiltersAppliedAtLaunchEVT value),
     @required
-        Result loadMoreTopSeriesMinifiedEVT(LoadMoreTopSeriesMinifiedEVT value),
-    @required Result timeFilterKeyChangedEVT(TimeFilterKeyChangedEVT value),
+        TResult filtersAppliedOrPageViewIndexChangedFromTopSeriesLayout(
+            FiltersAppliedOrPageViewIndexChangedFromTopSeriesLayout value),
     @required
-        Result topSeriesMinifiedLoadedEVT(TopSeriesMinifiedLoadedEVT value),
+        TResult filtersAppliedOrPageViewIndexChangedFromNewSeriesLayout(
+            FiltersAppliedOrPageViewIndexChangedFromNewSeriesLayout value),
+    @required TResult genreFilterKeyChangedEVT(GenreFilterKeyChangedEVT value),
+    @required TResult homeLaunchedEVT(HomeLaunchedEVT value),
+    @required
+        TResult languageFilterKeyChangedEVT(LanguageFilterKeyChangedEVT value),
+    @required TResult loadMoreNewSeriesEVT(LoadMoreNewSeriesEVT value),
+    @required TResult loadMoreTopSeriesEVT(LoadMoreTopSeriesEVT value),
+    @required TResult seriesPublishedEVT(SeriesPublishedEVT value),
+    @required TResult timeFilterKeyChangedEVT(TimeFilterKeyChangedEVT value),
   }) {
-    assert(applyFilterChangesEVT != null);
-    assert(filtersAppliedEVT != null);
+    assert(applyFiltersButtonPressedEVT != null);
+    assert(filtersAppliedAtLaunchEVT != null);
+    assert(filtersAppliedOrPageViewIndexChangedFromTopSeriesLayout != null);
+    assert(filtersAppliedOrPageViewIndexChangedFromNewSeriesLayout != null);
     assert(genreFilterKeyChangedEVT != null);
-    assert(homePageLaunchedEVT != null);
+    assert(homeLaunchedEVT != null);
     assert(languageFilterKeyChangedEVT != null);
-    assert(loadMoreNewSeriesMinifiedEVT != null);
-    assert(loadMoreTopSeriesMinifiedEVT != null);
+    assert(loadMoreNewSeriesEVT != null);
+    assert(loadMoreTopSeriesEVT != null);
+    assert(seriesPublishedEVT != null);
     assert(timeFilterKeyChangedEVT != null);
-    assert(topSeriesMinifiedLoadedEVT != null);
-    return homePageLaunchedEVT(this);
+    return homeLaunchedEVT(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result applyFilterChangesEVT(ApplyFilterChangesEVT value),
-    Result filtersAppliedEVT(FiltersAppliedEVT value),
-    Result genreFilterKeyChangedEVT(GenreFilterKeyChangedEVT value),
-    Result homePageLaunchedEVT(HomePageLaunchedEVT value),
-    Result languageFilterKeyChangedEVT(LanguageFilterKeyChangedEVT value),
-    Result loadMoreNewSeriesMinifiedEVT(LoadMoreNewSeriesMinifiedEVT value),
-    Result loadMoreTopSeriesMinifiedEVT(LoadMoreTopSeriesMinifiedEVT value),
-    Result timeFilterKeyChangedEVT(TimeFilterKeyChangedEVT value),
-    Result topSeriesMinifiedLoadedEVT(TopSeriesMinifiedLoadedEVT value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult applyFiltersButtonPressedEVT(ApplyFiltersButtonPressedEVT value),
+    TResult filtersAppliedAtLaunchEVT(FiltersAppliedAtLaunchEVT value),
+    TResult filtersAppliedOrPageViewIndexChangedFromTopSeriesLayout(
+        FiltersAppliedOrPageViewIndexChangedFromTopSeriesLayout value),
+    TResult filtersAppliedOrPageViewIndexChangedFromNewSeriesLayout(
+        FiltersAppliedOrPageViewIndexChangedFromNewSeriesLayout value),
+    TResult genreFilterKeyChangedEVT(GenreFilterKeyChangedEVT value),
+    TResult homeLaunchedEVT(HomeLaunchedEVT value),
+    TResult languageFilterKeyChangedEVT(LanguageFilterKeyChangedEVT value),
+    TResult loadMoreNewSeriesEVT(LoadMoreNewSeriesEVT value),
+    TResult loadMoreTopSeriesEVT(LoadMoreTopSeriesEVT value),
+    TResult seriesPublishedEVT(SeriesPublishedEVT value),
+    TResult timeFilterKeyChangedEVT(TimeFilterKeyChangedEVT value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (homePageLaunchedEVT != null) {
-      return homePageLaunchedEVT(this);
+    if (homeLaunchedEVT != null) {
+      return homeLaunchedEVT(this);
     }
     return orElse();
   }
 }
 
-abstract class HomePageLaunchedEVT implements HomeDatabaseEvent {
-  const factory HomePageLaunchedEVT({BuildContext context}) =
-      _$HomePageLaunchedEVT;
+abstract class HomeLaunchedEVT implements HomeDatabaseEvent {
+  const factory HomeLaunchedEVT(BuildContext context) = _$HomeLaunchedEVT;
 
   BuildContext get context;
-  $HomePageLaunchedEVTCopyWith<HomePageLaunchedEVT> get copyWith;
+  $HomeLaunchedEVTCopyWith<HomeLaunchedEVT> get copyWith;
 }
 
+/// @nodoc
 abstract class $LanguageFilterKeyChangedEVTCopyWith<$Res> {
   factory $LanguageFilterKeyChangedEVTCopyWith(
           LanguageFilterKeyChangedEVT value,
@@ -778,6 +1287,7 @@ abstract class $LanguageFilterKeyChangedEVTCopyWith<$Res> {
   $Res call({String key});
 }
 
+/// @nodoc
 class _$LanguageFilterKeyChangedEVTCopyWithImpl<$Res>
     extends _$HomeDatabaseEventCopyWithImpl<$Res>
     implements $LanguageFilterKeyChangedEVTCopyWith<$Res> {
@@ -799,6 +1309,7 @@ class _$LanguageFilterKeyChangedEVTCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$LanguageFilterKeyChangedEVT
     with DiagnosticableTreeMixin
     implements LanguageFilterKeyChangedEVT {
@@ -840,42 +1351,48 @@ class _$LanguageFilterKeyChangedEVT
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result applyFilterChangesEVT(),
-    @required Result filtersAppliedEVT(),
-    @required Result genreFilterKeyChangedEVT(String key),
-    @required Result homePageLaunchedEVT(BuildContext context),
-    @required Result languageFilterKeyChangedEVT(String key),
-    @required Result loadMoreNewSeriesMinifiedEVT(),
-    @required Result loadMoreTopSeriesMinifiedEVT(),
-    @required Result timeFilterKeyChangedEVT(String key),
-    @required Result topSeriesMinifiedLoadedEVT(),
+  TResult when<TResult extends Object>({
+    @required TResult applyFiltersButtonPressedEVT(int index),
+    @required TResult filtersAppliedAtLaunchEVT(),
+    @required TResult filtersAppliedOrPageViewIndexChangedFromTopSeriesLayout(),
+    @required TResult filtersAppliedOrPageViewIndexChangedFromNewSeriesLayout(),
+    @required TResult genreFilterKeyChangedEVT(String key),
+    @required TResult homeLaunchedEVT(BuildContext context),
+    @required TResult languageFilterKeyChangedEVT(String key),
+    @required TResult loadMoreNewSeriesEVT(),
+    @required TResult loadMoreTopSeriesEVT(),
+    @required TResult seriesPublishedEVT(Series series),
+    @required TResult timeFilterKeyChangedEVT(String key),
   }) {
-    assert(applyFilterChangesEVT != null);
-    assert(filtersAppliedEVT != null);
+    assert(applyFiltersButtonPressedEVT != null);
+    assert(filtersAppliedAtLaunchEVT != null);
+    assert(filtersAppliedOrPageViewIndexChangedFromTopSeriesLayout != null);
+    assert(filtersAppliedOrPageViewIndexChangedFromNewSeriesLayout != null);
     assert(genreFilterKeyChangedEVT != null);
-    assert(homePageLaunchedEVT != null);
+    assert(homeLaunchedEVT != null);
     assert(languageFilterKeyChangedEVT != null);
-    assert(loadMoreNewSeriesMinifiedEVT != null);
-    assert(loadMoreTopSeriesMinifiedEVT != null);
+    assert(loadMoreNewSeriesEVT != null);
+    assert(loadMoreTopSeriesEVT != null);
+    assert(seriesPublishedEVT != null);
     assert(timeFilterKeyChangedEVT != null);
-    assert(topSeriesMinifiedLoadedEVT != null);
     return languageFilterKeyChangedEVT(key);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result applyFilterChangesEVT(),
-    Result filtersAppliedEVT(),
-    Result genreFilterKeyChangedEVT(String key),
-    Result homePageLaunchedEVT(BuildContext context),
-    Result languageFilterKeyChangedEVT(String key),
-    Result loadMoreNewSeriesMinifiedEVT(),
-    Result loadMoreTopSeriesMinifiedEVT(),
-    Result timeFilterKeyChangedEVT(String key),
-    Result topSeriesMinifiedLoadedEVT(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult applyFiltersButtonPressedEVT(int index),
+    TResult filtersAppliedAtLaunchEVT(),
+    TResult filtersAppliedOrPageViewIndexChangedFromTopSeriesLayout(),
+    TResult filtersAppliedOrPageViewIndexChangedFromNewSeriesLayout(),
+    TResult genreFilterKeyChangedEVT(String key),
+    TResult homeLaunchedEVT(BuildContext context),
+    TResult languageFilterKeyChangedEVT(String key),
+    TResult loadMoreNewSeriesEVT(),
+    TResult loadMoreTopSeriesEVT(),
+    TResult seriesPublishedEVT(Series series),
+    TResult timeFilterKeyChangedEVT(String key),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (languageFilterKeyChangedEVT != null) {
@@ -886,46 +1403,58 @@ class _$LanguageFilterKeyChangedEVT
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result applyFilterChangesEVT(ApplyFilterChangesEVT value),
-    @required Result filtersAppliedEVT(FiltersAppliedEVT value),
-    @required Result genreFilterKeyChangedEVT(GenreFilterKeyChangedEVT value),
-    @required Result homePageLaunchedEVT(HomePageLaunchedEVT value),
+  TResult map<TResult extends Object>({
     @required
-        Result languageFilterKeyChangedEVT(LanguageFilterKeyChangedEVT value),
+        TResult applyFiltersButtonPressedEVT(
+            ApplyFiltersButtonPressedEVT value),
     @required
-        Result loadMoreNewSeriesMinifiedEVT(LoadMoreNewSeriesMinifiedEVT value),
+        TResult filtersAppliedAtLaunchEVT(FiltersAppliedAtLaunchEVT value),
     @required
-        Result loadMoreTopSeriesMinifiedEVT(LoadMoreTopSeriesMinifiedEVT value),
-    @required Result timeFilterKeyChangedEVT(TimeFilterKeyChangedEVT value),
+        TResult filtersAppliedOrPageViewIndexChangedFromTopSeriesLayout(
+            FiltersAppliedOrPageViewIndexChangedFromTopSeriesLayout value),
     @required
-        Result topSeriesMinifiedLoadedEVT(TopSeriesMinifiedLoadedEVT value),
+        TResult filtersAppliedOrPageViewIndexChangedFromNewSeriesLayout(
+            FiltersAppliedOrPageViewIndexChangedFromNewSeriesLayout value),
+    @required TResult genreFilterKeyChangedEVT(GenreFilterKeyChangedEVT value),
+    @required TResult homeLaunchedEVT(HomeLaunchedEVT value),
+    @required
+        TResult languageFilterKeyChangedEVT(LanguageFilterKeyChangedEVT value),
+    @required TResult loadMoreNewSeriesEVT(LoadMoreNewSeriesEVT value),
+    @required TResult loadMoreTopSeriesEVT(LoadMoreTopSeriesEVT value),
+    @required TResult seriesPublishedEVT(SeriesPublishedEVT value),
+    @required TResult timeFilterKeyChangedEVT(TimeFilterKeyChangedEVT value),
   }) {
-    assert(applyFilterChangesEVT != null);
-    assert(filtersAppliedEVT != null);
+    assert(applyFiltersButtonPressedEVT != null);
+    assert(filtersAppliedAtLaunchEVT != null);
+    assert(filtersAppliedOrPageViewIndexChangedFromTopSeriesLayout != null);
+    assert(filtersAppliedOrPageViewIndexChangedFromNewSeriesLayout != null);
     assert(genreFilterKeyChangedEVT != null);
-    assert(homePageLaunchedEVT != null);
+    assert(homeLaunchedEVT != null);
     assert(languageFilterKeyChangedEVT != null);
-    assert(loadMoreNewSeriesMinifiedEVT != null);
-    assert(loadMoreTopSeriesMinifiedEVT != null);
+    assert(loadMoreNewSeriesEVT != null);
+    assert(loadMoreTopSeriesEVT != null);
+    assert(seriesPublishedEVT != null);
     assert(timeFilterKeyChangedEVT != null);
-    assert(topSeriesMinifiedLoadedEVT != null);
     return languageFilterKeyChangedEVT(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result applyFilterChangesEVT(ApplyFilterChangesEVT value),
-    Result filtersAppliedEVT(FiltersAppliedEVT value),
-    Result genreFilterKeyChangedEVT(GenreFilterKeyChangedEVT value),
-    Result homePageLaunchedEVT(HomePageLaunchedEVT value),
-    Result languageFilterKeyChangedEVT(LanguageFilterKeyChangedEVT value),
-    Result loadMoreNewSeriesMinifiedEVT(LoadMoreNewSeriesMinifiedEVT value),
-    Result loadMoreTopSeriesMinifiedEVT(LoadMoreTopSeriesMinifiedEVT value),
-    Result timeFilterKeyChangedEVT(TimeFilterKeyChangedEVT value),
-    Result topSeriesMinifiedLoadedEVT(TopSeriesMinifiedLoadedEVT value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult applyFiltersButtonPressedEVT(ApplyFiltersButtonPressedEVT value),
+    TResult filtersAppliedAtLaunchEVT(FiltersAppliedAtLaunchEVT value),
+    TResult filtersAppliedOrPageViewIndexChangedFromTopSeriesLayout(
+        FiltersAppliedOrPageViewIndexChangedFromTopSeriesLayout value),
+    TResult filtersAppliedOrPageViewIndexChangedFromNewSeriesLayout(
+        FiltersAppliedOrPageViewIndexChangedFromNewSeriesLayout value),
+    TResult genreFilterKeyChangedEVT(GenreFilterKeyChangedEVT value),
+    TResult homeLaunchedEVT(HomeLaunchedEVT value),
+    TResult languageFilterKeyChangedEVT(LanguageFilterKeyChangedEVT value),
+    TResult loadMoreNewSeriesEVT(LoadMoreNewSeriesEVT value),
+    TResult loadMoreTopSeriesEVT(LoadMoreTopSeriesEVT value),
+    TResult seriesPublishedEVT(SeriesPublishedEVT value),
+    TResult timeFilterKeyChangedEVT(TimeFilterKeyChangedEVT value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (languageFilterKeyChangedEVT != null) {
@@ -944,34 +1473,34 @@ abstract class LanguageFilterKeyChangedEVT implements HomeDatabaseEvent {
       get copyWith;
 }
 
-abstract class $LoadMoreNewSeriesMinifiedEVTCopyWith<$Res> {
-  factory $LoadMoreNewSeriesMinifiedEVTCopyWith(
-          LoadMoreNewSeriesMinifiedEVT value,
-          $Res Function(LoadMoreNewSeriesMinifiedEVT) then) =
-      _$LoadMoreNewSeriesMinifiedEVTCopyWithImpl<$Res>;
+/// @nodoc
+abstract class $LoadMoreNewSeriesEVTCopyWith<$Res> {
+  factory $LoadMoreNewSeriesEVTCopyWith(LoadMoreNewSeriesEVT value,
+          $Res Function(LoadMoreNewSeriesEVT) then) =
+      _$LoadMoreNewSeriesEVTCopyWithImpl<$Res>;
 }
 
-class _$LoadMoreNewSeriesMinifiedEVTCopyWithImpl<$Res>
+/// @nodoc
+class _$LoadMoreNewSeriesEVTCopyWithImpl<$Res>
     extends _$HomeDatabaseEventCopyWithImpl<$Res>
-    implements $LoadMoreNewSeriesMinifiedEVTCopyWith<$Res> {
-  _$LoadMoreNewSeriesMinifiedEVTCopyWithImpl(
-      LoadMoreNewSeriesMinifiedEVT _value,
-      $Res Function(LoadMoreNewSeriesMinifiedEVT) _then)
-      : super(_value, (v) => _then(v as LoadMoreNewSeriesMinifiedEVT));
+    implements $LoadMoreNewSeriesEVTCopyWith<$Res> {
+  _$LoadMoreNewSeriesEVTCopyWithImpl(
+      LoadMoreNewSeriesEVT _value, $Res Function(LoadMoreNewSeriesEVT) _then)
+      : super(_value, (v) => _then(v as LoadMoreNewSeriesEVT));
 
   @override
-  LoadMoreNewSeriesMinifiedEVT get _value =>
-      super._value as LoadMoreNewSeriesMinifiedEVT;
+  LoadMoreNewSeriesEVT get _value => super._value as LoadMoreNewSeriesEVT;
 }
 
-class _$LoadMoreNewSeriesMinifiedEVT
+/// @nodoc
+class _$LoadMoreNewSeriesEVT
     with DiagnosticableTreeMixin
-    implements LoadMoreNewSeriesMinifiedEVT {
-  const _$LoadMoreNewSeriesMinifiedEVT();
+    implements LoadMoreNewSeriesEVT {
+  const _$LoadMoreNewSeriesEVT();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'HomeDatabaseEvent.loadMoreNewSeriesMinifiedEVT()';
+    return 'HomeDatabaseEvent.loadMoreNewSeriesEVT()';
   }
 
   @override
@@ -979,12 +1508,12 @@ class _$LoadMoreNewSeriesMinifiedEVT
     super.debugFillProperties(properties);
     properties
       ..add(DiagnosticsProperty(
-          'type', 'HomeDatabaseEvent.loadMoreNewSeriesMinifiedEVT'));
+          'type', 'HomeDatabaseEvent.loadMoreNewSeriesEVT'));
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is LoadMoreNewSeriesMinifiedEVT);
+    return identical(this, other) || (other is LoadMoreNewSeriesEVT);
   }
 
   @override
@@ -992,133 +1521,151 @@ class _$LoadMoreNewSeriesMinifiedEVT
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result applyFilterChangesEVT(),
-    @required Result filtersAppliedEVT(),
-    @required Result genreFilterKeyChangedEVT(String key),
-    @required Result homePageLaunchedEVT(BuildContext context),
-    @required Result languageFilterKeyChangedEVT(String key),
-    @required Result loadMoreNewSeriesMinifiedEVT(),
-    @required Result loadMoreTopSeriesMinifiedEVT(),
-    @required Result timeFilterKeyChangedEVT(String key),
-    @required Result topSeriesMinifiedLoadedEVT(),
+  TResult when<TResult extends Object>({
+    @required TResult applyFiltersButtonPressedEVT(int index),
+    @required TResult filtersAppliedAtLaunchEVT(),
+    @required TResult filtersAppliedOrPageViewIndexChangedFromTopSeriesLayout(),
+    @required TResult filtersAppliedOrPageViewIndexChangedFromNewSeriesLayout(),
+    @required TResult genreFilterKeyChangedEVT(String key),
+    @required TResult homeLaunchedEVT(BuildContext context),
+    @required TResult languageFilterKeyChangedEVT(String key),
+    @required TResult loadMoreNewSeriesEVT(),
+    @required TResult loadMoreTopSeriesEVT(),
+    @required TResult seriesPublishedEVT(Series series),
+    @required TResult timeFilterKeyChangedEVT(String key),
   }) {
-    assert(applyFilterChangesEVT != null);
-    assert(filtersAppliedEVT != null);
+    assert(applyFiltersButtonPressedEVT != null);
+    assert(filtersAppliedAtLaunchEVT != null);
+    assert(filtersAppliedOrPageViewIndexChangedFromTopSeriesLayout != null);
+    assert(filtersAppliedOrPageViewIndexChangedFromNewSeriesLayout != null);
     assert(genreFilterKeyChangedEVT != null);
-    assert(homePageLaunchedEVT != null);
+    assert(homeLaunchedEVT != null);
     assert(languageFilterKeyChangedEVT != null);
-    assert(loadMoreNewSeriesMinifiedEVT != null);
-    assert(loadMoreTopSeriesMinifiedEVT != null);
+    assert(loadMoreNewSeriesEVT != null);
+    assert(loadMoreTopSeriesEVT != null);
+    assert(seriesPublishedEVT != null);
     assert(timeFilterKeyChangedEVT != null);
-    assert(topSeriesMinifiedLoadedEVT != null);
-    return loadMoreNewSeriesMinifiedEVT();
+    return loadMoreNewSeriesEVT();
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result applyFilterChangesEVT(),
-    Result filtersAppliedEVT(),
-    Result genreFilterKeyChangedEVT(String key),
-    Result homePageLaunchedEVT(BuildContext context),
-    Result languageFilterKeyChangedEVT(String key),
-    Result loadMoreNewSeriesMinifiedEVT(),
-    Result loadMoreTopSeriesMinifiedEVT(),
-    Result timeFilterKeyChangedEVT(String key),
-    Result topSeriesMinifiedLoadedEVT(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult applyFiltersButtonPressedEVT(int index),
+    TResult filtersAppliedAtLaunchEVT(),
+    TResult filtersAppliedOrPageViewIndexChangedFromTopSeriesLayout(),
+    TResult filtersAppliedOrPageViewIndexChangedFromNewSeriesLayout(),
+    TResult genreFilterKeyChangedEVT(String key),
+    TResult homeLaunchedEVT(BuildContext context),
+    TResult languageFilterKeyChangedEVT(String key),
+    TResult loadMoreNewSeriesEVT(),
+    TResult loadMoreTopSeriesEVT(),
+    TResult seriesPublishedEVT(Series series),
+    TResult timeFilterKeyChangedEVT(String key),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (loadMoreNewSeriesMinifiedEVT != null) {
-      return loadMoreNewSeriesMinifiedEVT();
+    if (loadMoreNewSeriesEVT != null) {
+      return loadMoreNewSeriesEVT();
     }
     return orElse();
   }
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result applyFilterChangesEVT(ApplyFilterChangesEVT value),
-    @required Result filtersAppliedEVT(FiltersAppliedEVT value),
-    @required Result genreFilterKeyChangedEVT(GenreFilterKeyChangedEVT value),
-    @required Result homePageLaunchedEVT(HomePageLaunchedEVT value),
+  TResult map<TResult extends Object>({
     @required
-        Result languageFilterKeyChangedEVT(LanguageFilterKeyChangedEVT value),
+        TResult applyFiltersButtonPressedEVT(
+            ApplyFiltersButtonPressedEVT value),
     @required
-        Result loadMoreNewSeriesMinifiedEVT(LoadMoreNewSeriesMinifiedEVT value),
+        TResult filtersAppliedAtLaunchEVT(FiltersAppliedAtLaunchEVT value),
     @required
-        Result loadMoreTopSeriesMinifiedEVT(LoadMoreTopSeriesMinifiedEVT value),
-    @required Result timeFilterKeyChangedEVT(TimeFilterKeyChangedEVT value),
+        TResult filtersAppliedOrPageViewIndexChangedFromTopSeriesLayout(
+            FiltersAppliedOrPageViewIndexChangedFromTopSeriesLayout value),
     @required
-        Result topSeriesMinifiedLoadedEVT(TopSeriesMinifiedLoadedEVT value),
+        TResult filtersAppliedOrPageViewIndexChangedFromNewSeriesLayout(
+            FiltersAppliedOrPageViewIndexChangedFromNewSeriesLayout value),
+    @required TResult genreFilterKeyChangedEVT(GenreFilterKeyChangedEVT value),
+    @required TResult homeLaunchedEVT(HomeLaunchedEVT value),
+    @required
+        TResult languageFilterKeyChangedEVT(LanguageFilterKeyChangedEVT value),
+    @required TResult loadMoreNewSeriesEVT(LoadMoreNewSeriesEVT value),
+    @required TResult loadMoreTopSeriesEVT(LoadMoreTopSeriesEVT value),
+    @required TResult seriesPublishedEVT(SeriesPublishedEVT value),
+    @required TResult timeFilterKeyChangedEVT(TimeFilterKeyChangedEVT value),
   }) {
-    assert(applyFilterChangesEVT != null);
-    assert(filtersAppliedEVT != null);
+    assert(applyFiltersButtonPressedEVT != null);
+    assert(filtersAppliedAtLaunchEVT != null);
+    assert(filtersAppliedOrPageViewIndexChangedFromTopSeriesLayout != null);
+    assert(filtersAppliedOrPageViewIndexChangedFromNewSeriesLayout != null);
     assert(genreFilterKeyChangedEVT != null);
-    assert(homePageLaunchedEVT != null);
+    assert(homeLaunchedEVT != null);
     assert(languageFilterKeyChangedEVT != null);
-    assert(loadMoreNewSeriesMinifiedEVT != null);
-    assert(loadMoreTopSeriesMinifiedEVT != null);
+    assert(loadMoreNewSeriesEVT != null);
+    assert(loadMoreTopSeriesEVT != null);
+    assert(seriesPublishedEVT != null);
     assert(timeFilterKeyChangedEVT != null);
-    assert(topSeriesMinifiedLoadedEVT != null);
-    return loadMoreNewSeriesMinifiedEVT(this);
+    return loadMoreNewSeriesEVT(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result applyFilterChangesEVT(ApplyFilterChangesEVT value),
-    Result filtersAppliedEVT(FiltersAppliedEVT value),
-    Result genreFilterKeyChangedEVT(GenreFilterKeyChangedEVT value),
-    Result homePageLaunchedEVT(HomePageLaunchedEVT value),
-    Result languageFilterKeyChangedEVT(LanguageFilterKeyChangedEVT value),
-    Result loadMoreNewSeriesMinifiedEVT(LoadMoreNewSeriesMinifiedEVT value),
-    Result loadMoreTopSeriesMinifiedEVT(LoadMoreTopSeriesMinifiedEVT value),
-    Result timeFilterKeyChangedEVT(TimeFilterKeyChangedEVT value),
-    Result topSeriesMinifiedLoadedEVT(TopSeriesMinifiedLoadedEVT value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult applyFiltersButtonPressedEVT(ApplyFiltersButtonPressedEVT value),
+    TResult filtersAppliedAtLaunchEVT(FiltersAppliedAtLaunchEVT value),
+    TResult filtersAppliedOrPageViewIndexChangedFromTopSeriesLayout(
+        FiltersAppliedOrPageViewIndexChangedFromTopSeriesLayout value),
+    TResult filtersAppliedOrPageViewIndexChangedFromNewSeriesLayout(
+        FiltersAppliedOrPageViewIndexChangedFromNewSeriesLayout value),
+    TResult genreFilterKeyChangedEVT(GenreFilterKeyChangedEVT value),
+    TResult homeLaunchedEVT(HomeLaunchedEVT value),
+    TResult languageFilterKeyChangedEVT(LanguageFilterKeyChangedEVT value),
+    TResult loadMoreNewSeriesEVT(LoadMoreNewSeriesEVT value),
+    TResult loadMoreTopSeriesEVT(LoadMoreTopSeriesEVT value),
+    TResult seriesPublishedEVT(SeriesPublishedEVT value),
+    TResult timeFilterKeyChangedEVT(TimeFilterKeyChangedEVT value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (loadMoreNewSeriesMinifiedEVT != null) {
-      return loadMoreNewSeriesMinifiedEVT(this);
+    if (loadMoreNewSeriesEVT != null) {
+      return loadMoreNewSeriesEVT(this);
     }
     return orElse();
   }
 }
 
-abstract class LoadMoreNewSeriesMinifiedEVT implements HomeDatabaseEvent {
-  const factory LoadMoreNewSeriesMinifiedEVT() = _$LoadMoreNewSeriesMinifiedEVT;
+abstract class LoadMoreNewSeriesEVT implements HomeDatabaseEvent {
+  const factory LoadMoreNewSeriesEVT() = _$LoadMoreNewSeriesEVT;
 }
 
-abstract class $LoadMoreTopSeriesMinifiedEVTCopyWith<$Res> {
-  factory $LoadMoreTopSeriesMinifiedEVTCopyWith(
-          LoadMoreTopSeriesMinifiedEVT value,
-          $Res Function(LoadMoreTopSeriesMinifiedEVT) then) =
-      _$LoadMoreTopSeriesMinifiedEVTCopyWithImpl<$Res>;
+/// @nodoc
+abstract class $LoadMoreTopSeriesEVTCopyWith<$Res> {
+  factory $LoadMoreTopSeriesEVTCopyWith(LoadMoreTopSeriesEVT value,
+          $Res Function(LoadMoreTopSeriesEVT) then) =
+      _$LoadMoreTopSeriesEVTCopyWithImpl<$Res>;
 }
 
-class _$LoadMoreTopSeriesMinifiedEVTCopyWithImpl<$Res>
+/// @nodoc
+class _$LoadMoreTopSeriesEVTCopyWithImpl<$Res>
     extends _$HomeDatabaseEventCopyWithImpl<$Res>
-    implements $LoadMoreTopSeriesMinifiedEVTCopyWith<$Res> {
-  _$LoadMoreTopSeriesMinifiedEVTCopyWithImpl(
-      LoadMoreTopSeriesMinifiedEVT _value,
-      $Res Function(LoadMoreTopSeriesMinifiedEVT) _then)
-      : super(_value, (v) => _then(v as LoadMoreTopSeriesMinifiedEVT));
+    implements $LoadMoreTopSeriesEVTCopyWith<$Res> {
+  _$LoadMoreTopSeriesEVTCopyWithImpl(
+      LoadMoreTopSeriesEVT _value, $Res Function(LoadMoreTopSeriesEVT) _then)
+      : super(_value, (v) => _then(v as LoadMoreTopSeriesEVT));
 
   @override
-  LoadMoreTopSeriesMinifiedEVT get _value =>
-      super._value as LoadMoreTopSeriesMinifiedEVT;
+  LoadMoreTopSeriesEVT get _value => super._value as LoadMoreTopSeriesEVT;
 }
 
-class _$LoadMoreTopSeriesMinifiedEVT
+/// @nodoc
+class _$LoadMoreTopSeriesEVT
     with DiagnosticableTreeMixin
-    implements LoadMoreTopSeriesMinifiedEVT {
-  const _$LoadMoreTopSeriesMinifiedEVT();
+    implements LoadMoreTopSeriesEVT {
+  const _$LoadMoreTopSeriesEVT();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'HomeDatabaseEvent.loadMoreTopSeriesMinifiedEVT()';
+    return 'HomeDatabaseEvent.loadMoreTopSeriesEVT()';
   }
 
   @override
@@ -1126,12 +1673,12 @@ class _$LoadMoreTopSeriesMinifiedEVT
     super.debugFillProperties(properties);
     properties
       ..add(DiagnosticsProperty(
-          'type', 'HomeDatabaseEvent.loadMoreTopSeriesMinifiedEVT'));
+          'type', 'HomeDatabaseEvent.loadMoreTopSeriesEVT'));
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is LoadMoreTopSeriesMinifiedEVT);
+    return identical(this, other) || (other is LoadMoreTopSeriesEVT);
   }
 
   @override
@@ -1139,105 +1686,313 @@ class _$LoadMoreTopSeriesMinifiedEVT
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result applyFilterChangesEVT(),
-    @required Result filtersAppliedEVT(),
-    @required Result genreFilterKeyChangedEVT(String key),
-    @required Result homePageLaunchedEVT(BuildContext context),
-    @required Result languageFilterKeyChangedEVT(String key),
-    @required Result loadMoreNewSeriesMinifiedEVT(),
-    @required Result loadMoreTopSeriesMinifiedEVT(),
-    @required Result timeFilterKeyChangedEVT(String key),
-    @required Result topSeriesMinifiedLoadedEVT(),
+  TResult when<TResult extends Object>({
+    @required TResult applyFiltersButtonPressedEVT(int index),
+    @required TResult filtersAppliedAtLaunchEVT(),
+    @required TResult filtersAppliedOrPageViewIndexChangedFromTopSeriesLayout(),
+    @required TResult filtersAppliedOrPageViewIndexChangedFromNewSeriesLayout(),
+    @required TResult genreFilterKeyChangedEVT(String key),
+    @required TResult homeLaunchedEVT(BuildContext context),
+    @required TResult languageFilterKeyChangedEVT(String key),
+    @required TResult loadMoreNewSeriesEVT(),
+    @required TResult loadMoreTopSeriesEVT(),
+    @required TResult seriesPublishedEVT(Series series),
+    @required TResult timeFilterKeyChangedEVT(String key),
   }) {
-    assert(applyFilterChangesEVT != null);
-    assert(filtersAppliedEVT != null);
+    assert(applyFiltersButtonPressedEVT != null);
+    assert(filtersAppliedAtLaunchEVT != null);
+    assert(filtersAppliedOrPageViewIndexChangedFromTopSeriesLayout != null);
+    assert(filtersAppliedOrPageViewIndexChangedFromNewSeriesLayout != null);
     assert(genreFilterKeyChangedEVT != null);
-    assert(homePageLaunchedEVT != null);
+    assert(homeLaunchedEVT != null);
     assert(languageFilterKeyChangedEVT != null);
-    assert(loadMoreNewSeriesMinifiedEVT != null);
-    assert(loadMoreTopSeriesMinifiedEVT != null);
+    assert(loadMoreNewSeriesEVT != null);
+    assert(loadMoreTopSeriesEVT != null);
+    assert(seriesPublishedEVT != null);
     assert(timeFilterKeyChangedEVT != null);
-    assert(topSeriesMinifiedLoadedEVT != null);
-    return loadMoreTopSeriesMinifiedEVT();
+    return loadMoreTopSeriesEVT();
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result applyFilterChangesEVT(),
-    Result filtersAppliedEVT(),
-    Result genreFilterKeyChangedEVT(String key),
-    Result homePageLaunchedEVT(BuildContext context),
-    Result languageFilterKeyChangedEVT(String key),
-    Result loadMoreNewSeriesMinifiedEVT(),
-    Result loadMoreTopSeriesMinifiedEVT(),
-    Result timeFilterKeyChangedEVT(String key),
-    Result topSeriesMinifiedLoadedEVT(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult applyFiltersButtonPressedEVT(int index),
+    TResult filtersAppliedAtLaunchEVT(),
+    TResult filtersAppliedOrPageViewIndexChangedFromTopSeriesLayout(),
+    TResult filtersAppliedOrPageViewIndexChangedFromNewSeriesLayout(),
+    TResult genreFilterKeyChangedEVT(String key),
+    TResult homeLaunchedEVT(BuildContext context),
+    TResult languageFilterKeyChangedEVT(String key),
+    TResult loadMoreNewSeriesEVT(),
+    TResult loadMoreTopSeriesEVT(),
+    TResult seriesPublishedEVT(Series series),
+    TResult timeFilterKeyChangedEVT(String key),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (loadMoreTopSeriesMinifiedEVT != null) {
-      return loadMoreTopSeriesMinifiedEVT();
+    if (loadMoreTopSeriesEVT != null) {
+      return loadMoreTopSeriesEVT();
     }
     return orElse();
   }
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result applyFilterChangesEVT(ApplyFilterChangesEVT value),
-    @required Result filtersAppliedEVT(FiltersAppliedEVT value),
-    @required Result genreFilterKeyChangedEVT(GenreFilterKeyChangedEVT value),
-    @required Result homePageLaunchedEVT(HomePageLaunchedEVT value),
+  TResult map<TResult extends Object>({
     @required
-        Result languageFilterKeyChangedEVT(LanguageFilterKeyChangedEVT value),
+        TResult applyFiltersButtonPressedEVT(
+            ApplyFiltersButtonPressedEVT value),
     @required
-        Result loadMoreNewSeriesMinifiedEVT(LoadMoreNewSeriesMinifiedEVT value),
+        TResult filtersAppliedAtLaunchEVT(FiltersAppliedAtLaunchEVT value),
     @required
-        Result loadMoreTopSeriesMinifiedEVT(LoadMoreTopSeriesMinifiedEVT value),
-    @required Result timeFilterKeyChangedEVT(TimeFilterKeyChangedEVT value),
+        TResult filtersAppliedOrPageViewIndexChangedFromTopSeriesLayout(
+            FiltersAppliedOrPageViewIndexChangedFromTopSeriesLayout value),
     @required
-        Result topSeriesMinifiedLoadedEVT(TopSeriesMinifiedLoadedEVT value),
+        TResult filtersAppliedOrPageViewIndexChangedFromNewSeriesLayout(
+            FiltersAppliedOrPageViewIndexChangedFromNewSeriesLayout value),
+    @required TResult genreFilterKeyChangedEVT(GenreFilterKeyChangedEVT value),
+    @required TResult homeLaunchedEVT(HomeLaunchedEVT value),
+    @required
+        TResult languageFilterKeyChangedEVT(LanguageFilterKeyChangedEVT value),
+    @required TResult loadMoreNewSeriesEVT(LoadMoreNewSeriesEVT value),
+    @required TResult loadMoreTopSeriesEVT(LoadMoreTopSeriesEVT value),
+    @required TResult seriesPublishedEVT(SeriesPublishedEVT value),
+    @required TResult timeFilterKeyChangedEVT(TimeFilterKeyChangedEVT value),
   }) {
-    assert(applyFilterChangesEVT != null);
-    assert(filtersAppliedEVT != null);
+    assert(applyFiltersButtonPressedEVT != null);
+    assert(filtersAppliedAtLaunchEVT != null);
+    assert(filtersAppliedOrPageViewIndexChangedFromTopSeriesLayout != null);
+    assert(filtersAppliedOrPageViewIndexChangedFromNewSeriesLayout != null);
     assert(genreFilterKeyChangedEVT != null);
-    assert(homePageLaunchedEVT != null);
+    assert(homeLaunchedEVT != null);
     assert(languageFilterKeyChangedEVT != null);
-    assert(loadMoreNewSeriesMinifiedEVT != null);
-    assert(loadMoreTopSeriesMinifiedEVT != null);
+    assert(loadMoreNewSeriesEVT != null);
+    assert(loadMoreTopSeriesEVT != null);
+    assert(seriesPublishedEVT != null);
     assert(timeFilterKeyChangedEVT != null);
-    assert(topSeriesMinifiedLoadedEVT != null);
-    return loadMoreTopSeriesMinifiedEVT(this);
+    return loadMoreTopSeriesEVT(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result applyFilterChangesEVT(ApplyFilterChangesEVT value),
-    Result filtersAppliedEVT(FiltersAppliedEVT value),
-    Result genreFilterKeyChangedEVT(GenreFilterKeyChangedEVT value),
-    Result homePageLaunchedEVT(HomePageLaunchedEVT value),
-    Result languageFilterKeyChangedEVT(LanguageFilterKeyChangedEVT value),
-    Result loadMoreNewSeriesMinifiedEVT(LoadMoreNewSeriesMinifiedEVT value),
-    Result loadMoreTopSeriesMinifiedEVT(LoadMoreTopSeriesMinifiedEVT value),
-    Result timeFilterKeyChangedEVT(TimeFilterKeyChangedEVT value),
-    Result topSeriesMinifiedLoadedEVT(TopSeriesMinifiedLoadedEVT value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult applyFiltersButtonPressedEVT(ApplyFiltersButtonPressedEVT value),
+    TResult filtersAppliedAtLaunchEVT(FiltersAppliedAtLaunchEVT value),
+    TResult filtersAppliedOrPageViewIndexChangedFromTopSeriesLayout(
+        FiltersAppliedOrPageViewIndexChangedFromTopSeriesLayout value),
+    TResult filtersAppliedOrPageViewIndexChangedFromNewSeriesLayout(
+        FiltersAppliedOrPageViewIndexChangedFromNewSeriesLayout value),
+    TResult genreFilterKeyChangedEVT(GenreFilterKeyChangedEVT value),
+    TResult homeLaunchedEVT(HomeLaunchedEVT value),
+    TResult languageFilterKeyChangedEVT(LanguageFilterKeyChangedEVT value),
+    TResult loadMoreNewSeriesEVT(LoadMoreNewSeriesEVT value),
+    TResult loadMoreTopSeriesEVT(LoadMoreTopSeriesEVT value),
+    TResult seriesPublishedEVT(SeriesPublishedEVT value),
+    TResult timeFilterKeyChangedEVT(TimeFilterKeyChangedEVT value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (loadMoreTopSeriesMinifiedEVT != null) {
-      return loadMoreTopSeriesMinifiedEVT(this);
+    if (loadMoreTopSeriesEVT != null) {
+      return loadMoreTopSeriesEVT(this);
     }
     return orElse();
   }
 }
 
-abstract class LoadMoreTopSeriesMinifiedEVT implements HomeDatabaseEvent {
-  const factory LoadMoreTopSeriesMinifiedEVT() = _$LoadMoreTopSeriesMinifiedEVT;
+abstract class LoadMoreTopSeriesEVT implements HomeDatabaseEvent {
+  const factory LoadMoreTopSeriesEVT() = _$LoadMoreTopSeriesEVT;
 }
 
+/// @nodoc
+abstract class $SeriesPublishedEVTCopyWith<$Res> {
+  factory $SeriesPublishedEVTCopyWith(
+          SeriesPublishedEVT value, $Res Function(SeriesPublishedEVT) then) =
+      _$SeriesPublishedEVTCopyWithImpl<$Res>;
+  $Res call({Series series});
+}
+
+/// @nodoc
+class _$SeriesPublishedEVTCopyWithImpl<$Res>
+    extends _$HomeDatabaseEventCopyWithImpl<$Res>
+    implements $SeriesPublishedEVTCopyWith<$Res> {
+  _$SeriesPublishedEVTCopyWithImpl(
+      SeriesPublishedEVT _value, $Res Function(SeriesPublishedEVT) _then)
+      : super(_value, (v) => _then(v as SeriesPublishedEVT));
+
+  @override
+  SeriesPublishedEVT get _value => super._value as SeriesPublishedEVT;
+
+  @override
+  $Res call({
+    Object series = freezed,
+  }) {
+    return _then(SeriesPublishedEVT(
+      series == freezed ? _value.series : series as Series,
+    ));
+  }
+}
+
+/// @nodoc
+class _$SeriesPublishedEVT
+    with DiagnosticableTreeMixin
+    implements SeriesPublishedEVT {
+  const _$SeriesPublishedEVT(this.series) : assert(series != null);
+
+  @override
+  final Series series;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'HomeDatabaseEvent.seriesPublishedEVT(series: $series)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'HomeDatabaseEvent.seriesPublishedEVT'))
+      ..add(DiagnosticsProperty('series', series));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is SeriesPublishedEVT &&
+            (identical(other.series, series) ||
+                const DeepCollectionEquality().equals(other.series, series)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(series);
+
+  @override
+  $SeriesPublishedEVTCopyWith<SeriesPublishedEVT> get copyWith =>
+      _$SeriesPublishedEVTCopyWithImpl<SeriesPublishedEVT>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object>({
+    @required TResult applyFiltersButtonPressedEVT(int index),
+    @required TResult filtersAppliedAtLaunchEVT(),
+    @required TResult filtersAppliedOrPageViewIndexChangedFromTopSeriesLayout(),
+    @required TResult filtersAppliedOrPageViewIndexChangedFromNewSeriesLayout(),
+    @required TResult genreFilterKeyChangedEVT(String key),
+    @required TResult homeLaunchedEVT(BuildContext context),
+    @required TResult languageFilterKeyChangedEVT(String key),
+    @required TResult loadMoreNewSeriesEVT(),
+    @required TResult loadMoreTopSeriesEVT(),
+    @required TResult seriesPublishedEVT(Series series),
+    @required TResult timeFilterKeyChangedEVT(String key),
+  }) {
+    assert(applyFiltersButtonPressedEVT != null);
+    assert(filtersAppliedAtLaunchEVT != null);
+    assert(filtersAppliedOrPageViewIndexChangedFromTopSeriesLayout != null);
+    assert(filtersAppliedOrPageViewIndexChangedFromNewSeriesLayout != null);
+    assert(genreFilterKeyChangedEVT != null);
+    assert(homeLaunchedEVT != null);
+    assert(languageFilterKeyChangedEVT != null);
+    assert(loadMoreNewSeriesEVT != null);
+    assert(loadMoreTopSeriesEVT != null);
+    assert(seriesPublishedEVT != null);
+    assert(timeFilterKeyChangedEVT != null);
+    return seriesPublishedEVT(series);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object>({
+    TResult applyFiltersButtonPressedEVT(int index),
+    TResult filtersAppliedAtLaunchEVT(),
+    TResult filtersAppliedOrPageViewIndexChangedFromTopSeriesLayout(),
+    TResult filtersAppliedOrPageViewIndexChangedFromNewSeriesLayout(),
+    TResult genreFilterKeyChangedEVT(String key),
+    TResult homeLaunchedEVT(BuildContext context),
+    TResult languageFilterKeyChangedEVT(String key),
+    TResult loadMoreNewSeriesEVT(),
+    TResult loadMoreTopSeriesEVT(),
+    TResult seriesPublishedEVT(Series series),
+    TResult timeFilterKeyChangedEVT(String key),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (seriesPublishedEVT != null) {
+      return seriesPublishedEVT(series);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object>({
+    @required
+        TResult applyFiltersButtonPressedEVT(
+            ApplyFiltersButtonPressedEVT value),
+    @required
+        TResult filtersAppliedAtLaunchEVT(FiltersAppliedAtLaunchEVT value),
+    @required
+        TResult filtersAppliedOrPageViewIndexChangedFromTopSeriesLayout(
+            FiltersAppliedOrPageViewIndexChangedFromTopSeriesLayout value),
+    @required
+        TResult filtersAppliedOrPageViewIndexChangedFromNewSeriesLayout(
+            FiltersAppliedOrPageViewIndexChangedFromNewSeriesLayout value),
+    @required TResult genreFilterKeyChangedEVT(GenreFilterKeyChangedEVT value),
+    @required TResult homeLaunchedEVT(HomeLaunchedEVT value),
+    @required
+        TResult languageFilterKeyChangedEVT(LanguageFilterKeyChangedEVT value),
+    @required TResult loadMoreNewSeriesEVT(LoadMoreNewSeriesEVT value),
+    @required TResult loadMoreTopSeriesEVT(LoadMoreTopSeriesEVT value),
+    @required TResult seriesPublishedEVT(SeriesPublishedEVT value),
+    @required TResult timeFilterKeyChangedEVT(TimeFilterKeyChangedEVT value),
+  }) {
+    assert(applyFiltersButtonPressedEVT != null);
+    assert(filtersAppliedAtLaunchEVT != null);
+    assert(filtersAppliedOrPageViewIndexChangedFromTopSeriesLayout != null);
+    assert(filtersAppliedOrPageViewIndexChangedFromNewSeriesLayout != null);
+    assert(genreFilterKeyChangedEVT != null);
+    assert(homeLaunchedEVT != null);
+    assert(languageFilterKeyChangedEVT != null);
+    assert(loadMoreNewSeriesEVT != null);
+    assert(loadMoreTopSeriesEVT != null);
+    assert(seriesPublishedEVT != null);
+    assert(timeFilterKeyChangedEVT != null);
+    return seriesPublishedEVT(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object>({
+    TResult applyFiltersButtonPressedEVT(ApplyFiltersButtonPressedEVT value),
+    TResult filtersAppliedAtLaunchEVT(FiltersAppliedAtLaunchEVT value),
+    TResult filtersAppliedOrPageViewIndexChangedFromTopSeriesLayout(
+        FiltersAppliedOrPageViewIndexChangedFromTopSeriesLayout value),
+    TResult filtersAppliedOrPageViewIndexChangedFromNewSeriesLayout(
+        FiltersAppliedOrPageViewIndexChangedFromNewSeriesLayout value),
+    TResult genreFilterKeyChangedEVT(GenreFilterKeyChangedEVT value),
+    TResult homeLaunchedEVT(HomeLaunchedEVT value),
+    TResult languageFilterKeyChangedEVT(LanguageFilterKeyChangedEVT value),
+    TResult loadMoreNewSeriesEVT(LoadMoreNewSeriesEVT value),
+    TResult loadMoreTopSeriesEVT(LoadMoreTopSeriesEVT value),
+    TResult seriesPublishedEVT(SeriesPublishedEVT value),
+    TResult timeFilterKeyChangedEVT(TimeFilterKeyChangedEVT value),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (seriesPublishedEVT != null) {
+      return seriesPublishedEVT(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SeriesPublishedEVT implements HomeDatabaseEvent {
+  const factory SeriesPublishedEVT(Series series) = _$SeriesPublishedEVT;
+
+  Series get series;
+  $SeriesPublishedEVTCopyWith<SeriesPublishedEVT> get copyWith;
+}
+
+/// @nodoc
 abstract class $TimeFilterKeyChangedEVTCopyWith<$Res> {
   factory $TimeFilterKeyChangedEVTCopyWith(TimeFilterKeyChangedEVT value,
           $Res Function(TimeFilterKeyChangedEVT) then) =
@@ -1245,6 +2000,7 @@ abstract class $TimeFilterKeyChangedEVTCopyWith<$Res> {
   $Res call({String key});
 }
 
+/// @nodoc
 class _$TimeFilterKeyChangedEVTCopyWithImpl<$Res>
     extends _$HomeDatabaseEventCopyWithImpl<$Res>
     implements $TimeFilterKeyChangedEVTCopyWith<$Res> {
@@ -1265,6 +2021,7 @@ class _$TimeFilterKeyChangedEVTCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$TimeFilterKeyChangedEVT
     with DiagnosticableTreeMixin
     implements TimeFilterKeyChangedEVT {
@@ -1306,42 +2063,48 @@ class _$TimeFilterKeyChangedEVT
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result applyFilterChangesEVT(),
-    @required Result filtersAppliedEVT(),
-    @required Result genreFilterKeyChangedEVT(String key),
-    @required Result homePageLaunchedEVT(BuildContext context),
-    @required Result languageFilterKeyChangedEVT(String key),
-    @required Result loadMoreNewSeriesMinifiedEVT(),
-    @required Result loadMoreTopSeriesMinifiedEVT(),
-    @required Result timeFilterKeyChangedEVT(String key),
-    @required Result topSeriesMinifiedLoadedEVT(),
+  TResult when<TResult extends Object>({
+    @required TResult applyFiltersButtonPressedEVT(int index),
+    @required TResult filtersAppliedAtLaunchEVT(),
+    @required TResult filtersAppliedOrPageViewIndexChangedFromTopSeriesLayout(),
+    @required TResult filtersAppliedOrPageViewIndexChangedFromNewSeriesLayout(),
+    @required TResult genreFilterKeyChangedEVT(String key),
+    @required TResult homeLaunchedEVT(BuildContext context),
+    @required TResult languageFilterKeyChangedEVT(String key),
+    @required TResult loadMoreNewSeriesEVT(),
+    @required TResult loadMoreTopSeriesEVT(),
+    @required TResult seriesPublishedEVT(Series series),
+    @required TResult timeFilterKeyChangedEVT(String key),
   }) {
-    assert(applyFilterChangesEVT != null);
-    assert(filtersAppliedEVT != null);
+    assert(applyFiltersButtonPressedEVT != null);
+    assert(filtersAppliedAtLaunchEVT != null);
+    assert(filtersAppliedOrPageViewIndexChangedFromTopSeriesLayout != null);
+    assert(filtersAppliedOrPageViewIndexChangedFromNewSeriesLayout != null);
     assert(genreFilterKeyChangedEVT != null);
-    assert(homePageLaunchedEVT != null);
+    assert(homeLaunchedEVT != null);
     assert(languageFilterKeyChangedEVT != null);
-    assert(loadMoreNewSeriesMinifiedEVT != null);
-    assert(loadMoreTopSeriesMinifiedEVT != null);
+    assert(loadMoreNewSeriesEVT != null);
+    assert(loadMoreTopSeriesEVT != null);
+    assert(seriesPublishedEVT != null);
     assert(timeFilterKeyChangedEVT != null);
-    assert(topSeriesMinifiedLoadedEVT != null);
     return timeFilterKeyChangedEVT(key);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result applyFilterChangesEVT(),
-    Result filtersAppliedEVT(),
-    Result genreFilterKeyChangedEVT(String key),
-    Result homePageLaunchedEVT(BuildContext context),
-    Result languageFilterKeyChangedEVT(String key),
-    Result loadMoreNewSeriesMinifiedEVT(),
-    Result loadMoreTopSeriesMinifiedEVT(),
-    Result timeFilterKeyChangedEVT(String key),
-    Result topSeriesMinifiedLoadedEVT(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult applyFiltersButtonPressedEVT(int index),
+    TResult filtersAppliedAtLaunchEVT(),
+    TResult filtersAppliedOrPageViewIndexChangedFromTopSeriesLayout(),
+    TResult filtersAppliedOrPageViewIndexChangedFromNewSeriesLayout(),
+    TResult genreFilterKeyChangedEVT(String key),
+    TResult homeLaunchedEVT(BuildContext context),
+    TResult languageFilterKeyChangedEVT(String key),
+    TResult loadMoreNewSeriesEVT(),
+    TResult loadMoreTopSeriesEVT(),
+    TResult seriesPublishedEVT(Series series),
+    TResult timeFilterKeyChangedEVT(String key),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (timeFilterKeyChangedEVT != null) {
@@ -1352,46 +2115,58 @@ class _$TimeFilterKeyChangedEVT
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result applyFilterChangesEVT(ApplyFilterChangesEVT value),
-    @required Result filtersAppliedEVT(FiltersAppliedEVT value),
-    @required Result genreFilterKeyChangedEVT(GenreFilterKeyChangedEVT value),
-    @required Result homePageLaunchedEVT(HomePageLaunchedEVT value),
+  TResult map<TResult extends Object>({
     @required
-        Result languageFilterKeyChangedEVT(LanguageFilterKeyChangedEVT value),
+        TResult applyFiltersButtonPressedEVT(
+            ApplyFiltersButtonPressedEVT value),
     @required
-        Result loadMoreNewSeriesMinifiedEVT(LoadMoreNewSeriesMinifiedEVT value),
+        TResult filtersAppliedAtLaunchEVT(FiltersAppliedAtLaunchEVT value),
     @required
-        Result loadMoreTopSeriesMinifiedEVT(LoadMoreTopSeriesMinifiedEVT value),
-    @required Result timeFilterKeyChangedEVT(TimeFilterKeyChangedEVT value),
+        TResult filtersAppliedOrPageViewIndexChangedFromTopSeriesLayout(
+            FiltersAppliedOrPageViewIndexChangedFromTopSeriesLayout value),
     @required
-        Result topSeriesMinifiedLoadedEVT(TopSeriesMinifiedLoadedEVT value),
+        TResult filtersAppliedOrPageViewIndexChangedFromNewSeriesLayout(
+            FiltersAppliedOrPageViewIndexChangedFromNewSeriesLayout value),
+    @required TResult genreFilterKeyChangedEVT(GenreFilterKeyChangedEVT value),
+    @required TResult homeLaunchedEVT(HomeLaunchedEVT value),
+    @required
+        TResult languageFilterKeyChangedEVT(LanguageFilterKeyChangedEVT value),
+    @required TResult loadMoreNewSeriesEVT(LoadMoreNewSeriesEVT value),
+    @required TResult loadMoreTopSeriesEVT(LoadMoreTopSeriesEVT value),
+    @required TResult seriesPublishedEVT(SeriesPublishedEVT value),
+    @required TResult timeFilterKeyChangedEVT(TimeFilterKeyChangedEVT value),
   }) {
-    assert(applyFilterChangesEVT != null);
-    assert(filtersAppliedEVT != null);
+    assert(applyFiltersButtonPressedEVT != null);
+    assert(filtersAppliedAtLaunchEVT != null);
+    assert(filtersAppliedOrPageViewIndexChangedFromTopSeriesLayout != null);
+    assert(filtersAppliedOrPageViewIndexChangedFromNewSeriesLayout != null);
     assert(genreFilterKeyChangedEVT != null);
-    assert(homePageLaunchedEVT != null);
+    assert(homeLaunchedEVT != null);
     assert(languageFilterKeyChangedEVT != null);
-    assert(loadMoreNewSeriesMinifiedEVT != null);
-    assert(loadMoreTopSeriesMinifiedEVT != null);
+    assert(loadMoreNewSeriesEVT != null);
+    assert(loadMoreTopSeriesEVT != null);
+    assert(seriesPublishedEVT != null);
     assert(timeFilterKeyChangedEVT != null);
-    assert(topSeriesMinifiedLoadedEVT != null);
     return timeFilterKeyChangedEVT(this);
   }
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result applyFilterChangesEVT(ApplyFilterChangesEVT value),
-    Result filtersAppliedEVT(FiltersAppliedEVT value),
-    Result genreFilterKeyChangedEVT(GenreFilterKeyChangedEVT value),
-    Result homePageLaunchedEVT(HomePageLaunchedEVT value),
-    Result languageFilterKeyChangedEVT(LanguageFilterKeyChangedEVT value),
-    Result loadMoreNewSeriesMinifiedEVT(LoadMoreNewSeriesMinifiedEVT value),
-    Result loadMoreTopSeriesMinifiedEVT(LoadMoreTopSeriesMinifiedEVT value),
-    Result timeFilterKeyChangedEVT(TimeFilterKeyChangedEVT value),
-    Result topSeriesMinifiedLoadedEVT(TopSeriesMinifiedLoadedEVT value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult applyFiltersButtonPressedEVT(ApplyFiltersButtonPressedEVT value),
+    TResult filtersAppliedAtLaunchEVT(FiltersAppliedAtLaunchEVT value),
+    TResult filtersAppliedOrPageViewIndexChangedFromTopSeriesLayout(
+        FiltersAppliedOrPageViewIndexChangedFromTopSeriesLayout value),
+    TResult filtersAppliedOrPageViewIndexChangedFromNewSeriesLayout(
+        FiltersAppliedOrPageViewIndexChangedFromNewSeriesLayout value),
+    TResult genreFilterKeyChangedEVT(GenreFilterKeyChangedEVT value),
+    TResult homeLaunchedEVT(HomeLaunchedEVT value),
+    TResult languageFilterKeyChangedEVT(LanguageFilterKeyChangedEVT value),
+    TResult loadMoreNewSeriesEVT(LoadMoreNewSeriesEVT value),
+    TResult loadMoreTopSeriesEVT(LoadMoreTopSeriesEVT value),
+    TResult seriesPublishedEVT(SeriesPublishedEVT value),
+    TResult timeFilterKeyChangedEVT(TimeFilterKeyChangedEVT value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (timeFilterKeyChangedEVT != null) {
@@ -1408,151 +2183,7 @@ abstract class TimeFilterKeyChangedEVT implements HomeDatabaseEvent {
   $TimeFilterKeyChangedEVTCopyWith<TimeFilterKeyChangedEVT> get copyWith;
 }
 
-abstract class $TopSeriesMinifiedLoadedEVTCopyWith<$Res> {
-  factory $TopSeriesMinifiedLoadedEVTCopyWith(TopSeriesMinifiedLoadedEVT value,
-          $Res Function(TopSeriesMinifiedLoadedEVT) then) =
-      _$TopSeriesMinifiedLoadedEVTCopyWithImpl<$Res>;
-}
-
-class _$TopSeriesMinifiedLoadedEVTCopyWithImpl<$Res>
-    extends _$HomeDatabaseEventCopyWithImpl<$Res>
-    implements $TopSeriesMinifiedLoadedEVTCopyWith<$Res> {
-  _$TopSeriesMinifiedLoadedEVTCopyWithImpl(TopSeriesMinifiedLoadedEVT _value,
-      $Res Function(TopSeriesMinifiedLoadedEVT) _then)
-      : super(_value, (v) => _then(v as TopSeriesMinifiedLoadedEVT));
-
-  @override
-  TopSeriesMinifiedLoadedEVT get _value =>
-      super._value as TopSeriesMinifiedLoadedEVT;
-}
-
-class _$TopSeriesMinifiedLoadedEVT
-    with DiagnosticableTreeMixin
-    implements TopSeriesMinifiedLoadedEVT {
-  const _$TopSeriesMinifiedLoadedEVT();
-
-  @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'HomeDatabaseEvent.topSeriesMinifiedLoadedEVT()';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty(
-          'type', 'HomeDatabaseEvent.topSeriesMinifiedLoadedEVT'));
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) || (other is TopSeriesMinifiedLoadedEVT);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result applyFilterChangesEVT(),
-    @required Result filtersAppliedEVT(),
-    @required Result genreFilterKeyChangedEVT(String key),
-    @required Result homePageLaunchedEVT(BuildContext context),
-    @required Result languageFilterKeyChangedEVT(String key),
-    @required Result loadMoreNewSeriesMinifiedEVT(),
-    @required Result loadMoreTopSeriesMinifiedEVT(),
-    @required Result timeFilterKeyChangedEVT(String key),
-    @required Result topSeriesMinifiedLoadedEVT(),
-  }) {
-    assert(applyFilterChangesEVT != null);
-    assert(filtersAppliedEVT != null);
-    assert(genreFilterKeyChangedEVT != null);
-    assert(homePageLaunchedEVT != null);
-    assert(languageFilterKeyChangedEVT != null);
-    assert(loadMoreNewSeriesMinifiedEVT != null);
-    assert(loadMoreTopSeriesMinifiedEVT != null);
-    assert(timeFilterKeyChangedEVT != null);
-    assert(topSeriesMinifiedLoadedEVT != null);
-    return topSeriesMinifiedLoadedEVT();
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result applyFilterChangesEVT(),
-    Result filtersAppliedEVT(),
-    Result genreFilterKeyChangedEVT(String key),
-    Result homePageLaunchedEVT(BuildContext context),
-    Result languageFilterKeyChangedEVT(String key),
-    Result loadMoreNewSeriesMinifiedEVT(),
-    Result loadMoreTopSeriesMinifiedEVT(),
-    Result timeFilterKeyChangedEVT(String key),
-    Result topSeriesMinifiedLoadedEVT(),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (topSeriesMinifiedLoadedEVT != null) {
-      return topSeriesMinifiedLoadedEVT();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result applyFilterChangesEVT(ApplyFilterChangesEVT value),
-    @required Result filtersAppliedEVT(FiltersAppliedEVT value),
-    @required Result genreFilterKeyChangedEVT(GenreFilterKeyChangedEVT value),
-    @required Result homePageLaunchedEVT(HomePageLaunchedEVT value),
-    @required
-        Result languageFilterKeyChangedEVT(LanguageFilterKeyChangedEVT value),
-    @required
-        Result loadMoreNewSeriesMinifiedEVT(LoadMoreNewSeriesMinifiedEVT value),
-    @required
-        Result loadMoreTopSeriesMinifiedEVT(LoadMoreTopSeriesMinifiedEVT value),
-    @required Result timeFilterKeyChangedEVT(TimeFilterKeyChangedEVT value),
-    @required
-        Result topSeriesMinifiedLoadedEVT(TopSeriesMinifiedLoadedEVT value),
-  }) {
-    assert(applyFilterChangesEVT != null);
-    assert(filtersAppliedEVT != null);
-    assert(genreFilterKeyChangedEVT != null);
-    assert(homePageLaunchedEVT != null);
-    assert(languageFilterKeyChangedEVT != null);
-    assert(loadMoreNewSeriesMinifiedEVT != null);
-    assert(loadMoreTopSeriesMinifiedEVT != null);
-    assert(timeFilterKeyChangedEVT != null);
-    assert(topSeriesMinifiedLoadedEVT != null);
-    return topSeriesMinifiedLoadedEVT(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result applyFilterChangesEVT(ApplyFilterChangesEVT value),
-    Result filtersAppliedEVT(FiltersAppliedEVT value),
-    Result genreFilterKeyChangedEVT(GenreFilterKeyChangedEVT value),
-    Result homePageLaunchedEVT(HomePageLaunchedEVT value),
-    Result languageFilterKeyChangedEVT(LanguageFilterKeyChangedEVT value),
-    Result loadMoreNewSeriesMinifiedEVT(LoadMoreNewSeriesMinifiedEVT value),
-    Result loadMoreTopSeriesMinifiedEVT(LoadMoreTopSeriesMinifiedEVT value),
-    Result timeFilterKeyChangedEVT(TimeFilterKeyChangedEVT value),
-    Result topSeriesMinifiedLoadedEVT(TopSeriesMinifiedLoadedEVT value),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (topSeriesMinifiedLoadedEVT != null) {
-      return topSeriesMinifiedLoadedEVT(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class TopSeriesMinifiedLoadedEVT implements HomeDatabaseEvent {
-  const factory TopSeriesMinifiedLoadedEVT() = _$TopSeriesMinifiedLoadedEVT;
-}
-
+/// @nodoc
 class _$HomeDatabaseStateTearOff {
   const _$HomeDatabaseStateTearOff();
 
@@ -1563,22 +2194,18 @@ class _$HomeDatabaseStateTearOff {
       @required
           bool isLoading,
       @required
-          List<SeriesMinified> newSeriesMinified,
+          List<bool> layoutDataUpdated,
       @required
-          List<SeriesMinified> topFiveSeriesMinified,
+          List<Series> newSeriesList,
       @required
-          List<SeriesMinified> topSeriesMinified,
+          List<Series> topFiveSeriesList,
+      @required
+          List<Series> topSeriesList,
       @required
           Map<String, dynamic> filters,
       @required
-          Map<String, String> genresMap,
-      @required
-          Map<String, String> languagesMap,
-      @required
-          Map<String, String> timesMap,
-      @required
-          Option<Either<DatabaseFailure, DatabaseSuccess>>
-              databaseFailureOrSuccessOption,
+          Option<Either<DatabaseFailure, SeriesDatabaseSuccess>>
+              seriesDatabaseFailureOrSuccessOption,
       @required
           String genreFilterKey,
       @required
@@ -1588,14 +2215,13 @@ class _$HomeDatabaseStateTearOff {
     return _HomeDatabaseState(
       areFiltersApplied: areFiltersApplied,
       isLoading: isLoading,
-      newSeriesMinified: newSeriesMinified,
-      topFiveSeriesMinified: topFiveSeriesMinified,
-      topSeriesMinified: topSeriesMinified,
+      layoutDataUpdated: layoutDataUpdated,
+      newSeriesList: newSeriesList,
+      topFiveSeriesList: topFiveSeriesList,
+      topSeriesList: topSeriesList,
       filters: filters,
-      genresMap: genresMap,
-      languagesMap: languagesMap,
-      timesMap: timesMap,
-      databaseFailureOrSuccessOption: databaseFailureOrSuccessOption,
+      seriesDatabaseFailureOrSuccessOption:
+          seriesDatabaseFailureOrSuccessOption,
       genreFilterKey: genreFilterKey,
       languageFilterKey: languageFilterKey,
       timeFilterKey: timeFilterKey,
@@ -1603,21 +2229,21 @@ class _$HomeDatabaseStateTearOff {
   }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $HomeDatabaseState = _$HomeDatabaseStateTearOff();
 
+/// @nodoc
 mixin _$HomeDatabaseState {
   bool get areFiltersApplied;
   bool get isLoading;
-  List<SeriesMinified> get newSeriesMinified;
-  List<SeriesMinified> get topFiveSeriesMinified;
-  List<SeriesMinified> get topSeriesMinified;
+  List<bool> get layoutDataUpdated;
+  List<Series> get newSeriesList;
+  List<Series> get topFiveSeriesList;
+  List<Series> get topSeriesList;
   Map<String, dynamic> get filters;
-  Map<String, String> get genresMap;
-  Map<String, String> get languagesMap;
-  Map<String, String> get timesMap;
-  Option<Either<DatabaseFailure, DatabaseSuccess>>
-      get databaseFailureOrSuccessOption;
+  Option<Either<DatabaseFailure, SeriesDatabaseSuccess>>
+      get seriesDatabaseFailureOrSuccessOption;
   String get genreFilterKey;
   String get languageFilterKey;
   String get timeFilterKey;
@@ -1625,6 +2251,7 @@ mixin _$HomeDatabaseState {
   $HomeDatabaseStateCopyWith<HomeDatabaseState> get copyWith;
 }
 
+/// @nodoc
 abstract class $HomeDatabaseStateCopyWith<$Res> {
   factory $HomeDatabaseStateCopyWith(
           HomeDatabaseState value, $Res Function(HomeDatabaseState) then) =
@@ -1632,20 +2259,19 @@ abstract class $HomeDatabaseStateCopyWith<$Res> {
   $Res call(
       {bool areFiltersApplied,
       bool isLoading,
-      List<SeriesMinified> newSeriesMinified,
-      List<SeriesMinified> topFiveSeriesMinified,
-      List<SeriesMinified> topSeriesMinified,
+      List<bool> layoutDataUpdated,
+      List<Series> newSeriesList,
+      List<Series> topFiveSeriesList,
+      List<Series> topSeriesList,
       Map<String, dynamic> filters,
-      Map<String, String> genresMap,
-      Map<String, String> languagesMap,
-      Map<String, String> timesMap,
-      Option<Either<DatabaseFailure, DatabaseSuccess>>
-          databaseFailureOrSuccessOption,
+      Option<Either<DatabaseFailure, SeriesDatabaseSuccess>>
+          seriesDatabaseFailureOrSuccessOption,
       String genreFilterKey,
       String languageFilterKey,
       String timeFilterKey});
 }
 
+/// @nodoc
 class _$HomeDatabaseStateCopyWithImpl<$Res>
     implements $HomeDatabaseStateCopyWith<$Res> {
   _$HomeDatabaseStateCopyWithImpl(this._value, this._then);
@@ -1658,14 +2284,12 @@ class _$HomeDatabaseStateCopyWithImpl<$Res>
   $Res call({
     Object areFiltersApplied = freezed,
     Object isLoading = freezed,
-    Object newSeriesMinified = freezed,
-    Object topFiveSeriesMinified = freezed,
-    Object topSeriesMinified = freezed,
+    Object layoutDataUpdated = freezed,
+    Object newSeriesList = freezed,
+    Object topFiveSeriesList = freezed,
+    Object topSeriesList = freezed,
     Object filters = freezed,
-    Object genresMap = freezed,
-    Object languagesMap = freezed,
-    Object timesMap = freezed,
-    Object databaseFailureOrSuccessOption = freezed,
+    Object seriesDatabaseFailureOrSuccessOption = freezed,
     Object genreFilterKey = freezed,
     Object languageFilterKey = freezed,
     Object timeFilterKey = freezed,
@@ -1675,30 +2299,25 @@ class _$HomeDatabaseStateCopyWithImpl<$Res>
           ? _value.areFiltersApplied
           : areFiltersApplied as bool,
       isLoading: isLoading == freezed ? _value.isLoading : isLoading as bool,
-      newSeriesMinified: newSeriesMinified == freezed
-          ? _value.newSeriesMinified
-          : newSeriesMinified as List<SeriesMinified>,
-      topFiveSeriesMinified: topFiveSeriesMinified == freezed
-          ? _value.topFiveSeriesMinified
-          : topFiveSeriesMinified as List<SeriesMinified>,
-      topSeriesMinified: topSeriesMinified == freezed
-          ? _value.topSeriesMinified
-          : topSeriesMinified as List<SeriesMinified>,
+      layoutDataUpdated: layoutDataUpdated == freezed
+          ? _value.layoutDataUpdated
+          : layoutDataUpdated as List<bool>,
+      newSeriesList: newSeriesList == freezed
+          ? _value.newSeriesList
+          : newSeriesList as List<Series>,
+      topFiveSeriesList: topFiveSeriesList == freezed
+          ? _value.topFiveSeriesList
+          : topFiveSeriesList as List<Series>,
+      topSeriesList: topSeriesList == freezed
+          ? _value.topSeriesList
+          : topSeriesList as List<Series>,
       filters:
           filters == freezed ? _value.filters : filters as Map<String, dynamic>,
-      genresMap: genresMap == freezed
-          ? _value.genresMap
-          : genresMap as Map<String, String>,
-      languagesMap: languagesMap == freezed
-          ? _value.languagesMap
-          : languagesMap as Map<String, String>,
-      timesMap: timesMap == freezed
-          ? _value.timesMap
-          : timesMap as Map<String, String>,
-      databaseFailureOrSuccessOption: databaseFailureOrSuccessOption == freezed
-          ? _value.databaseFailureOrSuccessOption
-          : databaseFailureOrSuccessOption
-              as Option<Either<DatabaseFailure, DatabaseSuccess>>,
+      seriesDatabaseFailureOrSuccessOption:
+          seriesDatabaseFailureOrSuccessOption == freezed
+              ? _value.seriesDatabaseFailureOrSuccessOption
+              : seriesDatabaseFailureOrSuccessOption
+                  as Option<Either<DatabaseFailure, SeriesDatabaseSuccess>>,
       genreFilterKey: genreFilterKey == freezed
           ? _value.genreFilterKey
           : genreFilterKey as String,
@@ -1712,6 +2331,7 @@ class _$HomeDatabaseStateCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 abstract class _$HomeDatabaseStateCopyWith<$Res>
     implements $HomeDatabaseStateCopyWith<$Res> {
   factory _$HomeDatabaseStateCopyWith(
@@ -1721,20 +2341,19 @@ abstract class _$HomeDatabaseStateCopyWith<$Res>
   $Res call(
       {bool areFiltersApplied,
       bool isLoading,
-      List<SeriesMinified> newSeriesMinified,
-      List<SeriesMinified> topFiveSeriesMinified,
-      List<SeriesMinified> topSeriesMinified,
+      List<bool> layoutDataUpdated,
+      List<Series> newSeriesList,
+      List<Series> topFiveSeriesList,
+      List<Series> topSeriesList,
       Map<String, dynamic> filters,
-      Map<String, String> genresMap,
-      Map<String, String> languagesMap,
-      Map<String, String> timesMap,
-      Option<Either<DatabaseFailure, DatabaseSuccess>>
-          databaseFailureOrSuccessOption,
+      Option<Either<DatabaseFailure, SeriesDatabaseSuccess>>
+          seriesDatabaseFailureOrSuccessOption,
       String genreFilterKey,
       String languageFilterKey,
       String timeFilterKey});
 }
 
+/// @nodoc
 class __$HomeDatabaseStateCopyWithImpl<$Res>
     extends _$HomeDatabaseStateCopyWithImpl<$Res>
     implements _$HomeDatabaseStateCopyWith<$Res> {
@@ -1749,14 +2368,12 @@ class __$HomeDatabaseStateCopyWithImpl<$Res>
   $Res call({
     Object areFiltersApplied = freezed,
     Object isLoading = freezed,
-    Object newSeriesMinified = freezed,
-    Object topFiveSeriesMinified = freezed,
-    Object topSeriesMinified = freezed,
+    Object layoutDataUpdated = freezed,
+    Object newSeriesList = freezed,
+    Object topFiveSeriesList = freezed,
+    Object topSeriesList = freezed,
     Object filters = freezed,
-    Object genresMap = freezed,
-    Object languagesMap = freezed,
-    Object timesMap = freezed,
-    Object databaseFailureOrSuccessOption = freezed,
+    Object seriesDatabaseFailureOrSuccessOption = freezed,
     Object genreFilterKey = freezed,
     Object languageFilterKey = freezed,
     Object timeFilterKey = freezed,
@@ -1766,30 +2383,25 @@ class __$HomeDatabaseStateCopyWithImpl<$Res>
           ? _value.areFiltersApplied
           : areFiltersApplied as bool,
       isLoading: isLoading == freezed ? _value.isLoading : isLoading as bool,
-      newSeriesMinified: newSeriesMinified == freezed
-          ? _value.newSeriesMinified
-          : newSeriesMinified as List<SeriesMinified>,
-      topFiveSeriesMinified: topFiveSeriesMinified == freezed
-          ? _value.topFiveSeriesMinified
-          : topFiveSeriesMinified as List<SeriesMinified>,
-      topSeriesMinified: topSeriesMinified == freezed
-          ? _value.topSeriesMinified
-          : topSeriesMinified as List<SeriesMinified>,
+      layoutDataUpdated: layoutDataUpdated == freezed
+          ? _value.layoutDataUpdated
+          : layoutDataUpdated as List<bool>,
+      newSeriesList: newSeriesList == freezed
+          ? _value.newSeriesList
+          : newSeriesList as List<Series>,
+      topFiveSeriesList: topFiveSeriesList == freezed
+          ? _value.topFiveSeriesList
+          : topFiveSeriesList as List<Series>,
+      topSeriesList: topSeriesList == freezed
+          ? _value.topSeriesList
+          : topSeriesList as List<Series>,
       filters:
           filters == freezed ? _value.filters : filters as Map<String, dynamic>,
-      genresMap: genresMap == freezed
-          ? _value.genresMap
-          : genresMap as Map<String, String>,
-      languagesMap: languagesMap == freezed
-          ? _value.languagesMap
-          : languagesMap as Map<String, String>,
-      timesMap: timesMap == freezed
-          ? _value.timesMap
-          : timesMap as Map<String, String>,
-      databaseFailureOrSuccessOption: databaseFailureOrSuccessOption == freezed
-          ? _value.databaseFailureOrSuccessOption
-          : databaseFailureOrSuccessOption
-              as Option<Either<DatabaseFailure, DatabaseSuccess>>,
+      seriesDatabaseFailureOrSuccessOption:
+          seriesDatabaseFailureOrSuccessOption == freezed
+              ? _value.seriesDatabaseFailureOrSuccessOption
+              : seriesDatabaseFailureOrSuccessOption
+                  as Option<Either<DatabaseFailure, SeriesDatabaseSuccess>>,
       genreFilterKey: genreFilterKey == freezed
           ? _value.genreFilterKey
           : genreFilterKey as String,
@@ -1803,33 +2415,30 @@ class __$HomeDatabaseStateCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$_HomeDatabaseState
     with DiagnosticableTreeMixin
     implements _HomeDatabaseState {
   const _$_HomeDatabaseState(
       {@required this.areFiltersApplied,
       @required this.isLoading,
-      @required this.newSeriesMinified,
-      @required this.topFiveSeriesMinified,
-      @required this.topSeriesMinified,
+      @required this.layoutDataUpdated,
+      @required this.newSeriesList,
+      @required this.topFiveSeriesList,
+      @required this.topSeriesList,
       @required this.filters,
-      @required this.genresMap,
-      @required this.languagesMap,
-      @required this.timesMap,
-      @required this.databaseFailureOrSuccessOption,
+      @required this.seriesDatabaseFailureOrSuccessOption,
       @required this.genreFilterKey,
       @required this.languageFilterKey,
       @required this.timeFilterKey})
       : assert(areFiltersApplied != null),
         assert(isLoading != null),
-        assert(newSeriesMinified != null),
-        assert(topFiveSeriesMinified != null),
-        assert(topSeriesMinified != null),
+        assert(layoutDataUpdated != null),
+        assert(newSeriesList != null),
+        assert(topFiveSeriesList != null),
+        assert(topSeriesList != null),
         assert(filters != null),
-        assert(genresMap != null),
-        assert(languagesMap != null),
-        assert(timesMap != null),
-        assert(databaseFailureOrSuccessOption != null),
+        assert(seriesDatabaseFailureOrSuccessOption != null),
         assert(genreFilterKey != null),
         assert(languageFilterKey != null),
         assert(timeFilterKey != null);
@@ -1839,22 +2448,18 @@ class _$_HomeDatabaseState
   @override
   final bool isLoading;
   @override
-  final List<SeriesMinified> newSeriesMinified;
+  final List<bool> layoutDataUpdated;
   @override
-  final List<SeriesMinified> topFiveSeriesMinified;
+  final List<Series> newSeriesList;
   @override
-  final List<SeriesMinified> topSeriesMinified;
+  final List<Series> topFiveSeriesList;
+  @override
+  final List<Series> topSeriesList;
   @override
   final Map<String, dynamic> filters;
   @override
-  final Map<String, String> genresMap;
-  @override
-  final Map<String, String> languagesMap;
-  @override
-  final Map<String, String> timesMap;
-  @override
-  final Option<Either<DatabaseFailure, DatabaseSuccess>>
-      databaseFailureOrSuccessOption;
+  final Option<Either<DatabaseFailure, SeriesDatabaseSuccess>>
+      seriesDatabaseFailureOrSuccessOption;
   @override
   final String genreFilterKey;
   @override
@@ -1864,7 +2469,7 @@ class _$_HomeDatabaseState
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'HomeDatabaseState(areFiltersApplied: $areFiltersApplied, isLoading: $isLoading, newSeriesMinified: $newSeriesMinified, topFiveSeriesMinified: $topFiveSeriesMinified, topSeriesMinified: $topSeriesMinified, filters: $filters, genresMap: $genresMap, languagesMap: $languagesMap, timesMap: $timesMap, databaseFailureOrSuccessOption: $databaseFailureOrSuccessOption, genreFilterKey: $genreFilterKey, languageFilterKey: $languageFilterKey, timeFilterKey: $timeFilterKey)';
+    return 'HomeDatabaseState(areFiltersApplied: $areFiltersApplied, isLoading: $isLoading, layoutDataUpdated: $layoutDataUpdated, newSeriesList: $newSeriesList, topFiveSeriesList: $topFiveSeriesList, topSeriesList: $topSeriesList, filters: $filters, seriesDatabaseFailureOrSuccessOption: $seriesDatabaseFailureOrSuccessOption, genreFilterKey: $genreFilterKey, languageFilterKey: $languageFilterKey, timeFilterKey: $timeFilterKey)';
   }
 
   @override
@@ -1874,15 +2479,13 @@ class _$_HomeDatabaseState
       ..add(DiagnosticsProperty('type', 'HomeDatabaseState'))
       ..add(DiagnosticsProperty('areFiltersApplied', areFiltersApplied))
       ..add(DiagnosticsProperty('isLoading', isLoading))
-      ..add(DiagnosticsProperty('newSeriesMinified', newSeriesMinified))
-      ..add(DiagnosticsProperty('topFiveSeriesMinified', topFiveSeriesMinified))
-      ..add(DiagnosticsProperty('topSeriesMinified', topSeriesMinified))
+      ..add(DiagnosticsProperty('layoutDataUpdated', layoutDataUpdated))
+      ..add(DiagnosticsProperty('newSeriesList', newSeriesList))
+      ..add(DiagnosticsProperty('topFiveSeriesList', topFiveSeriesList))
+      ..add(DiagnosticsProperty('topSeriesList', topSeriesList))
       ..add(DiagnosticsProperty('filters', filters))
-      ..add(DiagnosticsProperty('genresMap', genresMap))
-      ..add(DiagnosticsProperty('languagesMap', languagesMap))
-      ..add(DiagnosticsProperty('timesMap', timesMap))
-      ..add(DiagnosticsProperty(
-          'databaseFailureOrSuccessOption', databaseFailureOrSuccessOption))
+      ..add(DiagnosticsProperty('seriesDatabaseFailureOrSuccessOption',
+          seriesDatabaseFailureOrSuccessOption))
       ..add(DiagnosticsProperty('genreFilterKey', genreFilterKey))
       ..add(DiagnosticsProperty('languageFilterKey', languageFilterKey))
       ..add(DiagnosticsProperty('timeFilterKey', timeFilterKey));
@@ -1898,32 +2501,26 @@ class _$_HomeDatabaseState
             (identical(other.isLoading, isLoading) ||
                 const DeepCollectionEquality()
                     .equals(other.isLoading, isLoading)) &&
-            (identical(other.newSeriesMinified, newSeriesMinified) ||
+            (identical(other.layoutDataUpdated, layoutDataUpdated) ||
                 const DeepCollectionEquality()
-                    .equals(other.newSeriesMinified, newSeriesMinified)) &&
-            (identical(other.topFiveSeriesMinified, topFiveSeriesMinified) ||
-                const DeepCollectionEquality().equals(
-                    other.topFiveSeriesMinified, topFiveSeriesMinified)) &&
-            (identical(other.topSeriesMinified, topSeriesMinified) ||
+                    .equals(other.layoutDataUpdated, layoutDataUpdated)) &&
+            (identical(other.newSeriesList, newSeriesList) ||
                 const DeepCollectionEquality()
-                    .equals(other.topSeriesMinified, topSeriesMinified)) &&
+                    .equals(other.newSeriesList, newSeriesList)) &&
+            (identical(other.topFiveSeriesList, topFiveSeriesList) ||
+                const DeepCollectionEquality()
+                    .equals(other.topFiveSeriesList, topFiveSeriesList)) &&
+            (identical(other.topSeriesList, topSeriesList) ||
+                const DeepCollectionEquality()
+                    .equals(other.topSeriesList, topSeriesList)) &&
             (identical(other.filters, filters) ||
                 const DeepCollectionEquality()
                     .equals(other.filters, filters)) &&
-            (identical(other.genresMap, genresMap) ||
-                const DeepCollectionEquality()
-                    .equals(other.genresMap, genresMap)) &&
-            (identical(other.languagesMap, languagesMap) ||
-                const DeepCollectionEquality()
-                    .equals(other.languagesMap, languagesMap)) &&
-            (identical(other.timesMap, timesMap) ||
-                const DeepCollectionEquality()
-                    .equals(other.timesMap, timesMap)) &&
-            (identical(other.databaseFailureOrSuccessOption,
-                    databaseFailureOrSuccessOption) ||
+            (identical(other.seriesDatabaseFailureOrSuccessOption,
+                    seriesDatabaseFailureOrSuccessOption) ||
                 const DeepCollectionEquality().equals(
-                    other.databaseFailureOrSuccessOption,
-                    databaseFailureOrSuccessOption)) &&
+                    other.seriesDatabaseFailureOrSuccessOption,
+                    seriesDatabaseFailureOrSuccessOption)) &&
             (identical(other.genreFilterKey, genreFilterKey) ||
                 const DeepCollectionEquality()
                     .equals(other.genreFilterKey, genreFilterKey)) &&
@@ -1940,14 +2537,13 @@ class _$_HomeDatabaseState
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(areFiltersApplied) ^
       const DeepCollectionEquality().hash(isLoading) ^
-      const DeepCollectionEquality().hash(newSeriesMinified) ^
-      const DeepCollectionEquality().hash(topFiveSeriesMinified) ^
-      const DeepCollectionEquality().hash(topSeriesMinified) ^
+      const DeepCollectionEquality().hash(layoutDataUpdated) ^
+      const DeepCollectionEquality().hash(newSeriesList) ^
+      const DeepCollectionEquality().hash(topFiveSeriesList) ^
+      const DeepCollectionEquality().hash(topSeriesList) ^
       const DeepCollectionEquality().hash(filters) ^
-      const DeepCollectionEquality().hash(genresMap) ^
-      const DeepCollectionEquality().hash(languagesMap) ^
-      const DeepCollectionEquality().hash(timesMap) ^
-      const DeepCollectionEquality().hash(databaseFailureOrSuccessOption) ^
+      const DeepCollectionEquality()
+          .hash(seriesDatabaseFailureOrSuccessOption) ^
       const DeepCollectionEquality().hash(genreFilterKey) ^
       const DeepCollectionEquality().hash(languageFilterKey) ^
       const DeepCollectionEquality().hash(timeFilterKey);
@@ -1964,22 +2560,18 @@ abstract class _HomeDatabaseState implements HomeDatabaseState {
       @required
           bool isLoading,
       @required
-          List<SeriesMinified> newSeriesMinified,
+          List<bool> layoutDataUpdated,
       @required
-          List<SeriesMinified> topFiveSeriesMinified,
+          List<Series> newSeriesList,
       @required
-          List<SeriesMinified> topSeriesMinified,
+          List<Series> topFiveSeriesList,
+      @required
+          List<Series> topSeriesList,
       @required
           Map<String, dynamic> filters,
       @required
-          Map<String, String> genresMap,
-      @required
-          Map<String, String> languagesMap,
-      @required
-          Map<String, String> timesMap,
-      @required
-          Option<Either<DatabaseFailure, DatabaseSuccess>>
-              databaseFailureOrSuccessOption,
+          Option<Either<DatabaseFailure, SeriesDatabaseSuccess>>
+              seriesDatabaseFailureOrSuccessOption,
       @required
           String genreFilterKey,
       @required
@@ -1992,22 +2584,18 @@ abstract class _HomeDatabaseState implements HomeDatabaseState {
   @override
   bool get isLoading;
   @override
-  List<SeriesMinified> get newSeriesMinified;
+  List<bool> get layoutDataUpdated;
   @override
-  List<SeriesMinified> get topFiveSeriesMinified;
+  List<Series> get newSeriesList;
   @override
-  List<SeriesMinified> get topSeriesMinified;
+  List<Series> get topFiveSeriesList;
+  @override
+  List<Series> get topSeriesList;
   @override
   Map<String, dynamic> get filters;
   @override
-  Map<String, String> get genresMap;
-  @override
-  Map<String, String> get languagesMap;
-  @override
-  Map<String, String> get timesMap;
-  @override
-  Option<Either<DatabaseFailure, DatabaseSuccess>>
-      get databaseFailureOrSuccessOption;
+  Option<Either<DatabaseFailure, SeriesDatabaseSuccess>>
+      get seriesDatabaseFailureOrSuccessOption;
   @override
   String get genreFilterKey;
   @override

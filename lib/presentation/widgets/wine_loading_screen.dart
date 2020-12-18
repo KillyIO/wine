@@ -1,14 +1,19 @@
 import 'package:flutter/material.dart';
 
+/// @nodoc
 class WINELoadingScreen extends StatelessWidget {
-  final TickerProvider vsync;
-  final bool isLoading;
-
+  /// @nodoc
   const WINELoadingScreen({
     Key key,
     @required this.vsync,
     @required this.isLoading,
   }) : super(key: key);
+
+  /// @nodoc
+  final TickerProvider vsync;
+
+  /// @nodoc
+  final bool isLoading;
 
   @override
   Widget build(BuildContext context) {

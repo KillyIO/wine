@@ -18,9 +18,9 @@ class ChapterDraftAdapter extends TypeAdapter<ChapterDraft> {
     };
     return ChapterDraft(
       uid: fields[0] as String,
-      seriesUid: fields[1] as String,
-      previousChapterUid: fields[2] as String,
-      authorUid: fields[3] as String,
+      seriesUID: fields[1] as String,
+      previousChapterUID: fields[2] as String,
+      authorUID: fields[3] as String,
       title: fields[4] as String,
       story: fields[5] as String,
       index: fields[6] as int,
@@ -30,7 +30,7 @@ class ChapterDraftAdapter extends TypeAdapter<ChapterDraft> {
       isEnd: fields[10] as bool,
       genre: fields[11] as String,
       genreOptional: fields[12] as String,
-      coverUrl: fields[13] as String,
+      coverURL: fields[13] as String,
       authorUsername: fields[14] as String,
     );
   }
@@ -42,11 +42,11 @@ class ChapterDraftAdapter extends TypeAdapter<ChapterDraft> {
       ..writeByte(0)
       ..write(obj.uid)
       ..writeByte(1)
-      ..write(obj.seriesUid)
+      ..write(obj.seriesUID)
       ..writeByte(2)
-      ..write(obj.previousChapterUid)
+      ..write(obj.previousChapterUID)
       ..writeByte(3)
-      ..write(obj.authorUid)
+      ..write(obj.authorUID)
       ..writeByte(4)
       ..write(obj.title)
       ..writeByte(5)
@@ -66,7 +66,7 @@ class ChapterDraftAdapter extends TypeAdapter<ChapterDraft> {
       ..writeByte(12)
       ..write(obj.genreOptional)
       ..writeByte(13)
-      ..write(obj.coverUrl)
+      ..write(obj.coverURL)
       ..writeByte(14)
       ..write(obj.authorUsername);
   }

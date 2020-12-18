@@ -1,46 +1,53 @@
 part of 'chapter_database_bloc.dart';
 
+/// @nodoc
 @freezed
 abstract class ChapterDatabaseState with _$ChapterDatabaseState {
+  /// @nodoc
   const factory ChapterDatabaseState({
+    @required bool canWriteNextChapter,
     @required bool isBookmarked,
     @required bool isLiked,
     @required bool showChapterAdditionalInfo,
     @required bool showNavbar,
     @required Chapter chapter,
-    @required ChapterMinified nextSameAuthorChapterMinified,
+    @required Chapter nextSameAuthorChapter,
+    @required Config config,
+    @required Count bookmarksCount,
+    @required Count likesCount,
+    @required Count viewsCount,
     @required double percentProgress,
-    @required int bookmarksCount,
-    @required int likesCount,
-    @required int viewsCount,
-    @required List<ChapterMinified> nextChaptersMinified,
-    @required Map<String, String> copyrightsMap,
-    @required Map<String, String> genresMap,
-    @required Map<String, String> languagesMap,
-    @required Option<Either<DatabaseFailure, DatabaseSuccess>> databaseFailureOrSuccessOption,
-    @required Series series,
+    @required List<Chapter> nextChapters,
+    @required
+        Option<Either<DatabaseFailure, ChapterDatabaseSuccess>>
+            chapterDatabaseFailureOrSuccessOption,
+    @required
+        Option<Either<ConfigDatabaseFailure, ConfigDatabaseSuccess>>
+            configDatabaseFailureOrSuccessOption,
+    @required
+        Option<Either<DatabaseFailure, SessionDatabaseSuccess>>
+            sessionDatabaseFailureOrSuccessOption,
     @required Session session,
-    @required User author,
   }) = _ChapterDatabaseState;
 
+  /// @nodoc
   factory ChapterDatabaseState.initial() => ChapterDatabaseState(
-        author: User(),
-        bookmarksCount: 0,
+        bookmarksCount: Count(count: 0),
+        canWriteNextChapter: false,
         chapter: Chapter(),
-        copyrightsMap: <String, String>{},
-        databaseFailureOrSuccessOption: none(),
-        genresMap: <String, String>{},
+        chapterDatabaseFailureOrSuccessOption: none(),
+        config: Config(),
+        configDatabaseFailureOrSuccessOption: none(),
         isBookmarked: false,
         isLiked: false,
-        languagesMap: <String, String>{},
-        likesCount: 0,
-        nextChaptersMinified: <ChapterMinified>[],
-        nextSameAuthorChapterMinified: ChapterMinified(),
+        likesCount: Count(count: 0),
+        nextChapters: <Chapter>[],
+        nextSameAuthorChapter: Chapter(),
         percentProgress: 0.0,
-        series: Series(),
         session: Session(),
+        sessionDatabaseFailureOrSuccessOption: none(),
         showChapterAdditionalInfo: false,
         showNavbar: true,
-        viewsCount: 0,
+        viewsCount: Count(count: 0),
       );
 }

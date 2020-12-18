@@ -16,20 +16,29 @@ part 'sign_in_authentication_bloc.freezed.dart';
 part 'sign_in_authentication_event.dart';
 part 'sign_in_authentication_state.dart';
 
+/// @nodoc
 @injectable
-class SignInAuthenticationBloc extends Bloc<SignInAuthenticationEvent, SignInAuthenticationState> {
+class SignInAuthenticationBloc
+    extends Bloc<SignInAuthenticationEvent, SignInAuthenticationState> {
+  /// @nodoc
+  SignInAuthenticationBloc(this._authenticationFacade)
+      : super(SignInAuthenticationState.initial());
+
   final IAuthenticationFacade _authenticationFacade;
 
-  SignInAuthenticationBloc(this._authenticationFacade) : super(SignInAuthenticationState.initial());
-
   @override
-  Stream<SignInAuthenticationState> mapEventToState(SignInAuthenticationEvent event) async* {
+  Stream<SignInAuthenticationState> mapEventToState(
+      SignInAuthenticationEvent event) async* {
     yield* event.map(
       emailChangedEVT: (event) async* {
-        yield state.copyWith(emailAddress: EmailAddress(event.emailStr), authFailureOrSuccessOption: none());
+        yield state.copyWith(
+            emailAddress: EmailAddress(event.emailStr),
+            authFailureOrSuccessOption: none());
       },
       passwordChangedEVT: (event) async* {
-        yield state.copyWith(password: Password(event.passwordStr), authFailureOrSuccessOption: none());
+        yield state.copyWith(
+            password: Password(event.passwordStr),
+            authFailureOrSuccessOption: none());
       },
       signInWithEmailAndPasswordPressedEVT: (event) async* {
         Either<AuthenticationFailure, AuthenticationSuccess> failureOrSuccess;
@@ -38,9 +47,11 @@ class SignInAuthenticationBloc extends Bloc<SignInAuthenticationEvent, SignInAut
         final isPasswordValid = state.password.isValid();
 
         if (isEmailValid && isPasswordValid) {
-          yield state.copyWith(isSubmitting: true, authFailureOrSuccessOption: none());
+          yield state.copyWith(
+              isSubmitting: true, authFailureOrSuccessOption: none());
 
-          failureOrSuccess = await _authenticationFacade.signInWithEmailAndPassword(
+          failureOrSuccess =
+              await _authenticationFacade.signInWithEmailAndPassword(
             emailAddress: state.emailAddress,
             password: state.password,
           );
@@ -53,21 +64,25 @@ class SignInAuthenticationBloc extends Bloc<SignInAuthenticationEvent, SignInAut
         );
       },
       signInWithGooglePressedEVT: (event) async* {
-        yield state.copyWith(isSubmitting: true, authFailureOrSuccessOption: none());
+        yield state.copyWith(
+            isSubmitting: true, authFailureOrSuccessOption: none());
 
         final failureOrSuccess = await _authenticationFacade.signInWithGoogle();
         failureOrSuccess.fold(
           (_) {},
           (success) {
             if (success is UserAuthenticatedSCS) {
-              success.user.username = success.user.name.trim().replaceAll(RegExp('[ -]'), '_');
+              success.user.username =
+                  success.user.name.trim().replaceAll(RegExp('[ -]'), '_');
               success.user.createdAt = DateTime.now().millisecondsSinceEpoch;
               success.user.updatedAt = DateTime.now().millisecondsSinceEpoch;
             }
           },
         );
 
-        yield state.copyWith(isSubmitting: false, authFailureOrSuccessOption: some(failureOrSuccess));
+        yield state.copyWith(
+            isSubmitting: false,
+            authFailureOrSuccessOption: some(failureOrSuccess));
       },
     );
   }

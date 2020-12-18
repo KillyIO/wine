@@ -7,291 +7,509 @@ import 'package:injectable/injectable.dart';
 import 'package:path/path.dart' as p;
 
 import 'package:wine/domain/database/database_failure.dart';
-import 'package:wine/domain/database/database_success.dart';
-import 'package:wine/domain/database/i_online_chapter_database_facade.dart';
+import 'package:wine/domain/database/facades/online/i_online_chapter_database_facade.dart';
+import 'package:wine/domain/database/successes/chapter_database_success.dart';
 import 'package:wine/domain/models/chapter.dart';
-import 'package:wine/domain/models/chapter_minified.dart';
+import 'package:wine/domain/models/count.dart';
+import 'package:wine/utils/extensions.dart';
 import 'package:wine/utils/paths.dart';
 
+/// @nodoc
 @LazySingleton(as: IOnlineChapterDatabaseFacade)
-class FirebaseOnlineChapterDatabaseFacade implements IOnlineChapterDatabaseFacade {
-  final Firestore _firestore;
-  final FirebaseStorage _firebaseStorage;
-
+class FirebaseOnlineChapterDatabaseFacade
+    implements IOnlineChapterDatabaseFacade {
+  /// @nodoc
   FirebaseOnlineChapterDatabaseFacade(
     this._firestore,
     this._firebaseStorage,
   );
 
+  final FirebaseFirestore _firestore;
+  final FirebaseStorage _firebaseStorage;
+
   @override
-  Future<Either<DatabaseFailure, DatabaseSuccess>> deleteChapter(String chapterUid) async {
-    final DocumentReference ref = _firestore.collection(Paths.chaptersPath).document(chapterUid);
+  Future<Either<DatabaseFailure, ChapterDatabaseSuccess>> deleteChapter(
+    String chapterUID,
+  ) async {
+    final ref = _firestore.collection(Paths.chaptersPath).doc(chapterUID);
 
     await ref.delete();
-    return right(const DatabaseSuccess.chapterDeletedSCS());
+    return right(const ChapterDatabaseSuccess.chapterDeletedSCS());
   }
 
   @override
-  Future<Either<DatabaseFailure, DatabaseSuccess>> deleteChapterCover(String coverUrl) async {
-    final StorageReference storageReference = await _firebaseStorage.getReferenceFromUrl(coverUrl);
+  Future<Either<DatabaseFailure, ChapterDatabaseSuccess>> deleteChapterCover(
+    String coverURL,
+  ) async {
+    final storageReference = _firebaseStorage.refFromURL(coverURL);
 
     await storageReference.delete();
-    return right(const DatabaseSuccess.chapterCoverDeletedSCS());
+    return right(const ChapterDatabaseSuccess.chapterCoverDeletedSCS());
   }
 
-  @override
-  Future<Either<DatabaseFailure, DatabaseSuccess>> loadChapterBookmarksCount(String chapterUid) async {
-    final DocumentSnapshot documentSnapshot =
-        await _firestore.collection(Paths.chaptersBookmarksPath).document(chapterUid).get();
-
-    if (!documentSnapshot.exists) {
-      return right(const DatabaseSuccess.chapterStatsCountLoadedSCS(0));
-    }
-    final Map<String, dynamic> data = documentSnapshot.data;
-    final List<String> bookmarks = data.keys.where((key) => data[key] == true).toList();
-    return right(DatabaseSuccess.chapterStatsCountLoadedSCS(bookmarks.length));
-  }
-
-  @override
-  Future<Either<DatabaseFailure, DatabaseSuccess>> loadChapterByUid(String chapterUid) async {
-    final DocumentReference ref = _firestore.collection(Paths.chaptersPath).document(chapterUid);
-
-    final DocumentSnapshot snapshot = await ref.get();
-    if (snapshot != null && snapshot.exists) {
-      final Chapter chapter = Chapter.fromFirestore(snapshot);
-      return right(DatabaseSuccess.chapterLoadedSCS(chapter));
-    }
-    return left(const DatabaseFailure.failedToFetchOnlineData());
-  }
-
-  @override
-  Future<Either<DatabaseFailure, DatabaseSuccess>> loadChapterLikesCount(String chapterUid) async {
-    final DocumentSnapshot documentSnapshot =
-        await _firestore.collection(Paths.chaptersLikesPath).document(chapterUid).get();
-
-    if (!documentSnapshot.exists) {
-      return right(const DatabaseSuccess.chapterStatsCountLoadedSCS(0));
-    }
-    final Map<String, dynamic> data = documentSnapshot.data;
-    final List<String> likes = data.keys.where((key) => data[key] == true).toList();
-    return right(DatabaseSuccess.chapterStatsCountLoadedSCS(likes.length));
-  }
-
-  @override
-  Future<Either<DatabaseFailure, DatabaseSuccess>> loadChaptersMinifiedBySeriesUidAndIndex(
-    String seriesUid,
-    int index,
-  ) async {
-    final CollectionReference chaptersMinifiedCollection = _firestore.collection(Paths.chaptersMinifiedPath);
-
-    final QuerySnapshot querySnapshot = await chaptersMinifiedCollection
-        .where('seriesUid', isEqualTo: seriesUid)
-        .where('index', isEqualTo: index)
-        .getDocuments();
-
-    final List<ChapterMinified> chaptersMinifiedList = <ChapterMinified>[];
-    if (querySnapshot.documents.isNotEmpty) {
-      for (final DocumentSnapshot document in querySnapshot.documents) {
-        chaptersMinifiedList.add(ChapterMinified.fromFirestore(document));
-      }
-    }
-
-    return right(DatabaseSuccess.chapterMinifiedListLoadedSCS(chaptersMinifiedList));
-  }
-
-  @override
-  Future<Either<DatabaseFailure, DatabaseSuccess>> loadChaptersMinifiedByUserUid(
-    String uid, {
-    ChapterMinified lastChapterMinified,
+  Future<List<String>> _loadBookmarkedChaptersUIDList(
+    String userUID, {
+    Chapter lastChapter,
   }) async {
-    final CollectionReference chaptersMinifiedCollection = _firestore.collection(Paths.chaptersMinifiedPath);
+    final chaptersBookmarksCollection =
+        _firestore.collection(Paths.chaptersBookmarksPath);
 
-    QuerySnapshot querySnapshot;
-    if (lastChapterMinified != null) {
-      final DocumentSnapshot lastDocument = await chaptersMinifiedCollection.document(lastChapterMinified.uid).get();
+    Query query;
+    if (lastChapter != null) {
+      final lastDocument =
+          await chaptersBookmarksCollection.doc(lastChapter.uid).get();
 
-      querySnapshot = await chaptersMinifiedCollection
+      query = chaptersBookmarksCollection
           .startAfterDocument(lastDocument)
-          .where('authorUid', isEqualTo: uid)
-          .orderBy('createdAt', descending: true)
-          .limit(20)
-          .getDocuments();
+          .where(userUID, isEqualTo: true);
     } else {
-      querySnapshot = await chaptersMinifiedCollection
-          .where('authorUid', isEqualTo: uid)
-          .orderBy('createdAt', descending: true)
-          .limit(20)
-          .getDocuments();
+      query = chaptersBookmarksCollection.where(userUID, isEqualTo: true);
+    }
+    query.limit(20);
+
+    final querySnapshot = await query.get();
+
+    final uidsList = <String>[];
+    for (final DocumentSnapshot doc in querySnapshot.docs) {
+      uidsList.add(doc.id);
     }
 
-    final List<ChapterMinified> chaptersMinifiedList = <ChapterMinified>[];
-    if (querySnapshot.documents.isNotEmpty) {
-      for (final DocumentSnapshot doc in querySnapshot.documents) {
-        chaptersMinifiedList.add(ChapterMinified.fromFirestore(doc));
+    return uidsList.toSet().toList();
+  }
+
+  @override
+  Future<Either<DatabaseFailure, ChapterDatabaseSuccess>>
+      loadBookmarkedChaptersByUserUID(
+    String userUID, {
+    Chapter lastChapter,
+  }) async {
+    final uidsList =
+        await _loadBookmarkedChaptersUIDList(userUID, lastChapter: lastChapter);
+
+    if (uidsList.isNotEmpty) {
+      final chaptersCollection = _firestore.collection(Paths.chaptersPath);
+
+      final querySnapshot =
+          await chaptersCollection.where('uid', whereIn: uidsList).get();
+
+      final chapters = <Chapter>[];
+      if (querySnapshot.docs.isNotEmpty) {
+        for (final DocumentSnapshot doc in querySnapshot.docs) {
+          chapters.add(Chapter.fromFirestore(doc));
+        }
+      }
+
+      return right(ChapterDatabaseSuccess.chaptersLoadedSCS(chapters));
+    }
+
+    return right(const ChapterDatabaseSuccess.chaptersLoadedSCS(<Chapter>[]));
+  }
+
+  @override
+  Future<Either<DatabaseFailure, ChapterDatabaseSuccess>>
+      loadChapterBookmarksCount(String chapterUID) async {
+    final documentSnapshot = await _firestore
+        .collection(Paths.chaptersBookmarksCountsPath)
+        .doc(chapterUID)
+        .get();
+
+    if (!documentSnapshot.exists) {
+      return right(ChapterDatabaseSuccess.chapterStatsCountLoadedSCS(
+        Count(count: 0),
+      ));
+    }
+    final count = Count.fromFirestore(documentSnapshot);
+    return right(ChapterDatabaseSuccess.chapterStatsCountLoadedSCS(count));
+  }
+
+  @override
+  Future<Either<DatabaseFailure, ChapterDatabaseSuccess>> loadChapterByUID(
+    String chapterUID,
+  ) async {
+    final ref = _firestore.collection(Paths.chaptersPath).doc(chapterUID);
+
+    final snapshot = await ref.get();
+    if (snapshot != null && snapshot.exists) {
+      final chapter = Chapter.fromFirestore(snapshot);
+      return right(ChapterDatabaseSuccess.chapterLoadedSCS(chapter));
+    }
+    return left(const DatabaseFailure.failedToLoadOnlineData());
+  }
+
+  @override
+  Future<Either<DatabaseFailure, ChapterDatabaseSuccess>> loadChapterLikesCount(
+    String chapterUID,
+  ) async {
+    final documentSnapshot = await _firestore
+        .collection(Paths.chaptersLikesCountsPath)
+        .doc(chapterUID)
+        .get();
+
+    if (!documentSnapshot.exists) {
+      return right(ChapterDatabaseSuccess.chapterStatsCountLoadedSCS(
+        Count(count: 0),
+      ));
+    }
+    final count = Count.fromFirestore(documentSnapshot);
+    return right(ChapterDatabaseSuccess.chapterStatsCountLoadedSCS(count));
+  }
+
+  @override
+  Future<Either<DatabaseFailure, ChapterDatabaseSuccess>>
+      loadChaptersBySeriesUIDAndIndex(String seriesUID, int index) async {
+    final chaptersCollection = _firestore.collection(Paths.chaptersPath);
+
+    final querySnapshot = await chaptersCollection
+        .where('seriesUID', isEqualTo: seriesUID)
+        .where('index', isEqualTo: index)
+        .get();
+
+    final chapters = <Chapter>[];
+    if (querySnapshot.docs.isNotEmpty) {
+      for (final DocumentSnapshot document in querySnapshot.docs) {
+        chapters.add(Chapter.fromFirestore(document));
       }
     }
 
-    return right(DatabaseSuccess.chapterMinifiedListLoadedSCS(chaptersMinifiedList));
+    return right(ChapterDatabaseSuccess.chaptersLoadedSCS(chapters));
   }
 
   @override
-  Future<Either<DatabaseFailure, DatabaseSuccess>> loadChapterViewsCount(String chapterUid) async {
-    final DocumentSnapshot documentSnapshot =
-        await _firestore.collection(Paths.chaptersViewsPath).document(chapterUid).get();
+  Future<Either<DatabaseFailure, ChapterDatabaseSuccess>> loadChaptersByUserUID(
+    String uid, {
+    Chapter lastChapter,
+  }) async {
+    final chaptersCollection = _firestore.collection(Paths.chaptersPath);
+
+    Query query;
+    if (lastChapter != null) {
+      final lastDocument = await chaptersCollection.doc(lastChapter.uid).get();
+
+      query = chaptersCollection
+          .startAfterDocument(lastDocument)
+          .where('authorUID', isEqualTo: uid);
+    } else {
+      query = chaptersCollection.where('authorUID', isEqualTo: uid);
+    }
+    query.orderBy('createdAt', descending: true).limit(20);
+
+    final querySnapshot = await query.get();
+
+    final chapters = <Chapter>[];
+    if (querySnapshot.docs.isNotEmpty) {
+      for (final DocumentSnapshot doc in querySnapshot.docs) {
+        chapters.add(Chapter.fromFirestore(doc));
+      }
+    }
+
+    return right(ChapterDatabaseSuccess.chaptersLoadedSCS(chapters));
+  }
+
+  @override
+  Future<Either<DatabaseFailure, ChapterDatabaseSuccess>> loadChapterViewsCount(
+    String chapterUID,
+  ) async {
+    final documentSnapshot = await _firestore
+        .collection(Paths.chaptersViewsCountsPath)
+        .doc(chapterUID)
+        .get();
 
     if (!documentSnapshot.exists) {
-      return right(const DatabaseSuccess.chapterStatsCountLoadedSCS(0));
+      return right(ChapterDatabaseSuccess.chapterStatsCountLoadedSCS(
+        Count(count: 0),
+      ));
     }
-    final Map<String, dynamic> data = documentSnapshot.data;
-    final List<String> views = data.keys.where((key) => data[key] == true).toList();
-    return right(DatabaseSuccess.chapterStatsCountLoadedSCS(views.length));
+    final count = Count.fromFirestore(documentSnapshot);
+    return right(ChapterDatabaseSuccess.chapterStatsCountLoadedSCS(count));
   }
 
   @override
-  Future<Either<DatabaseFailure, DatabaseSuccess>> loadFirstChapter(String seriesUid) async {
-    final CollectionReference chaptersCollection = _firestore.collection(Paths.chaptersPath);
+  Future<Either<DatabaseFailure, ChapterDatabaseSuccess>> loadFirstChapter(
+    String seriesUID,
+  ) async {
+    final chaptersCollection = _firestore.collection(Paths.chaptersPath);
 
-    final QuerySnapshot querySnapshot =
-        await chaptersCollection.where('seriesUid', isEqualTo: seriesUid).where('index', isEqualTo: 1).getDocuments();
-
-    final Chapter chapterOne = Chapter.fromFirestore(querySnapshot.documents[0]);
-
-    return right(DatabaseSuccess.chapterLoadedSCS(chapterOne));
-  }
-
-  @override
-  Future<Either<DatabaseFailure, DatabaseSuccess>> loadFirstChapterMinified(String seriesUid) async {
-    final CollectionReference chaptersMinifiedCollection = _firestore.collection(Paths.chaptersMinifiedPath);
-
-    final QuerySnapshot querySnapshot = await chaptersMinifiedCollection
-        .where('seriesUid', isEqualTo: seriesUid)
+    final querySnapshot = await chaptersCollection
+        .where('seriesUID', isEqualTo: seriesUID)
         .where('index', isEqualTo: 1)
-        .getDocuments();
+        .get();
 
-    final ChapterMinified chapterOneMinified = ChapterMinified.fromFirestore(querySnapshot.documents[0]);
+    final chapter = Chapter.fromFirestore(querySnapshot.docs.first);
 
-    return right(DatabaseSuccess.chapterMinifiedLoadedSCS(chapterOneMinified));
+    return right(ChapterDatabaseSuccess.chapterLoadedSCS(chapter));
   }
 
   @override
-  Future<Either<DatabaseFailure, DatabaseSuccess>> loadUserBookmarkStatus({String userUid, String chapterUid}) async {
-    final DocumentSnapshot documentSnapshot =
-        await _firestore.collection(Paths.chaptersBookmarksPath).document(chapterUid).get();
+  Future<Either<DatabaseFailure, ChapterDatabaseSuccess>>
+      loadNextChaptersAuthorsMap(String chapterUID) async {
+    final documentSnapshot = await _firestore
+        .collection(Paths.nextChaptersAuthorsPath)
+        .doc(chapterUID)
+        .get();
 
     if (!documentSnapshot.exists) {
-      return right(const DatabaseSuccess.chapterStatsStatusLoadedSCS(status: false));
+      return right(const ChapterDatabaseSuccess.nextChaptersAuthorsMapLoadedSCS(
+        {},
+      ));
+    }
+    final nextChapterAuthorsMap = documentSnapshot.data();
+    return right(ChapterDatabaseSuccess.nextChaptersAuthorsMapLoadedSCS(
+      nextChapterAuthorsMap,
+    ));
+  }
+
+  @override
+  Future<Either<DatabaseFailure, ChapterDatabaseSuccess>>
+      loadUserBookmarkStatus({String userUID, String chapterUID}) async {
+    final documentSnapshot = await _firestore
+        .collection(Paths.chaptersBookmarksPath)
+        .doc(chapterUID)
+        .get();
+
+    if (!documentSnapshot.exists) {
+      return right(const ChapterDatabaseSuccess.chapterStatsStatusLoadedSCS(
+        status: false,
+      ));
     }
 
-    final Map<String, dynamic> data = documentSnapshot.data;
-    final bool isBookmarked = data[userUid] as bool;
+    final data = documentSnapshot.data();
+    final isBookmarked = data[userUID] as bool;
 
     if (isBookmarked != null) {
-      return right(DatabaseSuccess.chapterStatsStatusLoadedSCS(status: isBookmarked));
+      return right(ChapterDatabaseSuccess.chapterStatsStatusLoadedSCS(
+        status: isBookmarked,
+      ));
     }
-    return right(const DatabaseSuccess.chapterStatsStatusLoadedSCS(status: false));
+    return right(const ChapterDatabaseSuccess.chapterStatsStatusLoadedSCS(
+      status: false,
+    ));
   }
 
   @override
-  Future<Either<DatabaseFailure, DatabaseSuccess>> loadUserLikeStatus({String userUid, String chapterUid}) async {
-    final DocumentSnapshot documentSnapshot =
-        await _firestore.collection(Paths.chaptersLikesPath).document(chapterUid).get();
+  Future<Either<DatabaseFailure, ChapterDatabaseSuccess>> loadUserLikeStatus({
+    String userUID,
+    String chapterUID,
+  }) async {
+    final documentSnapshot = await _firestore
+        .collection(Paths.chaptersLikesPath)
+        .doc(chapterUID)
+        .get();
 
     if (!documentSnapshot.exists) {
-      return right(const DatabaseSuccess.chapterStatsStatusLoadedSCS(status: false));
+      return right(const ChapterDatabaseSuccess.chapterStatsStatusLoadedSCS(
+        status: false,
+      ));
     }
 
-    final Map<String, dynamic> data = documentSnapshot.data;
-    final bool isLiked = data[userUid] as bool;
+    final data = documentSnapshot.data();
+    final isLiked = data[userUID] as bool;
 
     if (isLiked != null) {
-      return right(DatabaseSuccess.chapterStatsStatusLoadedSCS(status: isLiked));
+      return right(
+          ChapterDatabaseSuccess.chapterStatsStatusLoadedSCS(status: isLiked));
     }
-    return right(const DatabaseSuccess.chapterStatsStatusLoadedSCS(status: false));
+    return right(const ChapterDatabaseSuccess.chapterStatsStatusLoadedSCS(
+      status: false,
+    ));
   }
 
   @override
-  Future<Either<DatabaseFailure, DatabaseSuccess>> publishChapter(
-    ChapterMinified chapterMinified,
+  Future<Either<DatabaseFailure, ChapterDatabaseSuccess>> publishChapter(
     Chapter chapter,
   ) async {
-    final DocumentReference chapterMinifiedRef =
-        _firestore.collection(Paths.chaptersMinifiedPath).document(chapterMinified.uid);
-    final DocumentReference chapterRef = _firestore.collection(Paths.chaptersPath).document(chapter.uid);
-    final DocumentReference seriesMinifiedRef =
-        _firestore.collection(Paths.seriesMinifiedPath).document(chapterMinified.seriesUid);
+    if (!chapter.coverURL.isURL) {
+      final result = await uploadCover(File(chapter.coverURL));
 
-    final int currentTime = DateTime.now().millisecondsSinceEpoch;
+      if (result.isLeft()) {
+        return result;
+      }
 
-    chapterMinified
-      ..createdAt = currentTime
-      ..updatedAt = currentTime;
+      result.fold(
+        (_) {},
+        (success) {
+          if (success is ChapterCoverUploadedSCS) {
+            chapter.coverURL = success.coverURL;
+          }
+        },
+      );
+    }
 
-    Future.wait([
-      chapterMinifiedRef.setData(chapterMinified.toMap(), merge: true),
-      chapterRef.setData(chapter.toMap(), merge: true),
-      seriesMinifiedRef.setData({'updatedAt': currentTime}, merge: true),
-    ]);
+    final chapterRef =
+        _firestore.collection(Paths.chaptersPath).doc(chapter.uid);
 
-    return right(const DatabaseSuccess.chapterPublishedSCS());
+    final options = SetOptions(merge: true);
+    await chapterRef.set(chapter.toMap(), options);
+
+    if (chapter.previousChapterUID != null) {
+      final nextChaptersCountsRef = _firestore
+          .collection(Paths.nextChaptersAuthorsPath)
+          .doc(chapter.previousChapterUID);
+
+      await nextChaptersCountsRef.set({chapter.authorUID: true}, options);
+    }
+
+    return right(ChapterDatabaseSuccess.chapterPublishedSCS(chapter));
   }
 
   @override
-  Future<Either<DatabaseFailure, DatabaseSuccess>> updateChapterBookmarks({String userUid, String chapterUid}) async {
-    final DocumentReference chaptersBookmarksReference =
-        _firestore.collection(Paths.chaptersBookmarksPath).document(chapterUid);
+  Future<Either<DatabaseFailure, ChapterDatabaseSuccess>>
+      updateChapterBookmarksAndBookmarksCount({
+    String userUID,
+    String chapterUID,
+  }) async {
+    final chaptersBookmarksCountsReference = _firestore
+        .collection(Paths.chaptersBookmarksCountsPath)
+        .doc(chapterUID);
+    final chaptersBookmarksReference =
+        _firestore.collection(Paths.chaptersBookmarksPath).doc(chapterUID);
 
-    final DocumentSnapshot documentSnapshot = await chaptersBookmarksReference.get();
+    final documentSnapshot = await chaptersBookmarksReference.get();
 
     bool isBookmarked;
-    if (!documentSnapshot.exists || documentSnapshot.data[userUid] as bool == null) {
+    if (!documentSnapshot.exists ||
+        documentSnapshot.data()[userUID] as bool == null) {
       isBookmarked = false;
     } else {
-      isBookmarked = documentSnapshot.data[userUid] as bool;
+      isBookmarked = documentSnapshot.data()[userUID] as bool;
     }
 
-    await chaptersBookmarksReference.setData({userUid: !isBookmarked}, merge: true);
-    return right(const DatabaseSuccess.chapterStatsCountUpdatedSCS());
+    await Future.wait([
+      !documentSnapshot.exists
+          ? chaptersBookmarksCountsReference.set(
+              {
+                'count': FieldValue.increment(!isBookmarked ? 1 : -1),
+                'createdAt': DateTime.now(),
+                'updatedAt': DateTime.now(),
+              },
+              SetOptions(merge: true),
+            )
+          : chaptersBookmarksCountsReference.set(
+              {
+                'count': FieldValue.increment(!isBookmarked ? 1 : -1),
+                'updatedAt': DateTime.now(),
+              },
+              SetOptions(mergeFields: <FieldPath>[
+                FieldPath.fromString('count'),
+                FieldPath.fromString('updatedAt')
+              ]),
+            ),
+      chaptersBookmarksReference.set(
+        {userUID: !isBookmarked},
+        SetOptions(mergeFields: <FieldPath>[FieldPath.fromString('userUID')]),
+      )
+    ]);
+
+    return right(const ChapterDatabaseSuccess.chapterStatsCountUpdatedSCS());
   }
 
   @override
-  Future<Either<DatabaseFailure, DatabaseSuccess>> updateChapterLikes({String userUid, String chapterUid}) async {
-    final DocumentReference chaptersLikesReference =
-        _firestore.collection(Paths.chaptersLikesPath).document(chapterUid);
+  Future<Either<DatabaseFailure, ChapterDatabaseSuccess>>
+      updateChapterLikesAndLikesCount({
+    String userUID,
+    String chapterUID,
+    bool isInit = false,
+  }) async {
+    final chaptersLikesCountsReference =
+        _firestore.collection(Paths.chaptersLikesCountsPath).doc(chapterUID);
+    final chaptersLikesReference =
+        _firestore.collection(Paths.chaptersLikesPath).doc(chapterUID);
 
-    final DocumentSnapshot documentSnapshot = await chaptersLikesReference.get();
+    final documentSnapshot = await chaptersLikesReference.get();
 
     bool isLiked;
-    if (!documentSnapshot.exists || documentSnapshot.data[userUid] as bool == null) {
+    if (!documentSnapshot.exists ||
+        documentSnapshot.data()[userUID] as bool == null) {
       isLiked = false;
     } else {
-      isLiked = documentSnapshot.data[userUid] as bool;
+      isLiked = documentSnapshot.data()[userUID] as bool;
     }
 
-    await chaptersLikesReference.setData({userUid: !isLiked}, merge: true);
-    return right(const DatabaseSuccess.chapterStatsCountUpdatedSCS());
+    await Future.wait([
+      isInit
+          ? chaptersLikesCountsReference.set(
+              {
+                'count': FieldValue.increment(!isLiked ? 1 : -1),
+                'createdAt': DateTime.now(),
+                'updatedAt': DateTime.now(),
+              },
+              SetOptions(merge: true),
+            )
+          : chaptersLikesCountsReference.set(
+              {
+                'count': FieldValue.increment(!isLiked ? 1 : -1),
+                'updatedAt': DateTime.now(),
+              },
+              SetOptions(mergeFields: <FieldPath>[
+                FieldPath.fromString('count'),
+                FieldPath.fromString('updatedAt')
+              ]),
+            ),
+      chaptersLikesReference.set(
+        {userUID: !isLiked},
+        SetOptions(mergeFields: <FieldPath>[FieldPath.fromString('userUID')]),
+      ),
+    ]);
+
+    return right(const ChapterDatabaseSuccess.chapterStatsCountUpdatedSCS());
   }
 
   @override
-  Future<Either<DatabaseFailure, DatabaseSuccess>> updateChapterViews({String userUid, String chapterUid}) async {
-    final DocumentReference chaptersViewsReference =
-        _firestore.collection(Paths.chaptersViewsPath).document(chapterUid);
+  Future<Either<DatabaseFailure, ChapterDatabaseSuccess>>
+      updateChapterViewsAndViewsCount({
+    String userUID,
+    String chapterUID,
+    bool isInit = false,
+  }) async {
+    final chaptersViewsCountsReference =
+        _firestore.collection(Paths.chaptersViewsCountsPath).doc(chapterUID);
+    final chaptersViewsReference =
+        _firestore.collection(Paths.chaptersViewsPath).doc(chapterUID);
 
-    final DocumentSnapshot documentSnapshot = await chaptersViewsReference.get();
+    final documentSnapshot = await chaptersViewsReference.get();
 
-    if (!documentSnapshot.exists || documentSnapshot.data[userUid] == null) {
-      await chaptersViewsReference.setData({userUid: true}, merge: true);
+    if (!documentSnapshot.exists || documentSnapshot.data()[userUID] == null) {
+      await Future.wait([
+        isInit
+            ? chaptersViewsCountsReference.set(
+                {
+                  'count': FieldValue.increment(1),
+                  'createdAt': DateTime.now(),
+                  'updatedAt': DateTime.now(),
+                },
+                SetOptions(merge: true),
+              )
+            : chaptersViewsCountsReference.set(
+                {
+                  'count': FieldValue.increment(1),
+                  'updatedAt': DateTime.now(),
+                },
+                SetOptions(mergeFields: <FieldPath>[
+                  FieldPath.fromString('count'),
+                  FieldPath.fromString('updatedAt')
+                ]),
+              ),
+        chaptersViewsReference.set(
+          {userUID: true},
+          SetOptions(mergeFields: <FieldPath>[FieldPath.fromString('userUID')]),
+        )
+      ]);
     }
-    return right(const DatabaseSuccess.chapterStatsCountUpdatedSCS());
+    return right(const ChapterDatabaseSuccess.chapterStatsCountUpdatedSCS());
   }
 
   @override
-  Future<Either<DatabaseFailure, DatabaseSuccess>> uploadCover(File cover) async {
-    final String fileName = p.basename(cover.path);
-    final StorageReference ref =
-        _firebaseStorage.ref().child('${Paths.chapterCoversPaths}/${DateTime.now().millisecondsSinceEpoch}-$fileName');
-    final StorageUploadTask uploadTask = ref.putFile(cover);
-    final StorageTaskSnapshot result = await uploadTask.onComplete;
-    final String url = await result.ref.getDownloadURL() as String;
-    return right(DatabaseSuccess.chapterCoverUploadedSCS(url));
+  Future<Either<DatabaseFailure, ChapterDatabaseSuccess>> uploadCover(
+    File cover,
+  ) async {
+    final fileName = p.basename(cover.path);
+    final ref = _firebaseStorage.ref().child(
+        '${Paths.chapterCoversPaths}/${DateTime.now().millisecondsSinceEpoch}-$fileName');
+    final uploadTask = await ref.putFile(cover);
+    final state = uploadTask.state;
+    if (state == TaskState.success) {
+      final url = await ref.getDownloadURL();
+      return right(ChapterDatabaseSuccess.chapterCoverUploadedSCS(url));
+    }
+    return left(const DatabaseFailure.failedToCreateOnlineData());
   }
 }

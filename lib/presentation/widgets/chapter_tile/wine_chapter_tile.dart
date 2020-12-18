@@ -1,34 +1,42 @@
 import 'package:flutter/material.dart';
 import 'package:wine/presentation/widgets/chapter_tile/wine_chapter_tile_author_username.dart';
 import 'package:wine/presentation/widgets/chapter_tile/wine_chapter_tile_cover.dart';
-import 'package:wine/presentation/widgets/chapter_tile/wine_chapter_tile_series_title.dart';
 import 'package:wine/presentation/widgets/chapter_tile/wine_chapter_tile_title.dart';
 
+/// @nodoc
 class WINEChapterTile extends StatelessWidget {
-  final String coverUrl;
-  final String title;
-  final String authorUsername;
-  final String seriesTitle;
-  final VoidCallback onPressed;
-
+  /// @nodoc
   const WINEChapterTile({
     Key key,
-    @required this.coverUrl,
+    @required this.coverURL,
     @required this.title,
     @required this.authorUsername,
-    this.seriesTitle,
     @required this.onPressed,
   }) : super(key: key);
 
+  /// @nodoc
+  final String coverURL;
+
+  /// @nodoc
+  final String title;
+
+  /// @nodoc
+  final String authorUsername;
+
+  /// @nodoc
+  final VoidCallback onPressed;
+
   @override
   Widget build(BuildContext context) {
-    final Size mediaQuery = MediaQuery.of(context).size;
+    final mediaQuery = MediaQuery.of(context).size;
 
     return GestureDetector(
-      onTap: coverUrl != null && title != null && authorUsername != null ? onPressed : null,
+      onTap: coverURL != null && title != null && authorUsername != null
+          ? onPressed
+          : null,
       child: Container(
         height: mediaQuery.height / 8,
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           border: Border(
             bottom: BorderSide(
               width: 0.5,
@@ -50,8 +58,6 @@ class WINEChapterTile extends StatelessWidget {
                     children: <Widget>[
                       const SizedBox(height: 2.5),
                       WINEChapterTileTitle(title: title),
-                      const SizedBox(height: 2.5),
-                      WINEChapterTileSeriesTitle(seriesTitle: seriesTitle),
                     ],
                   ),
                 ),
@@ -60,14 +66,16 @@ class WINEChapterTile extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
-                      WINEChapterTileAuthorUsername(authorUsername: authorUsername),
+                      WINEChapterTileAuthorUsername(
+                        authorUsername: authorUsername,
+                      ),
                       const SizedBox(height: 5),
                     ],
                   ),
                 ),
               ],
             ),
-            WINEChapterTileCover(coverUrl: coverUrl),
+            WINEChapterTileCover(coverURL: coverURL),
           ],
         ),
       ),

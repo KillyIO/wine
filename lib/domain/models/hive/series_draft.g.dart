@@ -18,7 +18,7 @@ class SeriesDraftAdapter extends TypeAdapter<SeriesDraft> {
     };
     return SeriesDraft(
       uid: fields[0] as String,
-      authorUid: fields[1] as String,
+      authorUID: fields[1] as String,
       title: fields[2] as String,
       subtitle: fields[3] as String,
       summary: fields[4] as String,
@@ -26,7 +26,7 @@ class SeriesDraftAdapter extends TypeAdapter<SeriesDraft> {
       genreOptional: fields[6] as String,
       language: fields[7] as String,
       isNSFW: fields[8] as bool,
-      coverUrl: fields[9] as String,
+      coverURL: fields[9] as String,
       authorUsername: fields[10] as String,
     );
   }
@@ -38,7 +38,7 @@ class SeriesDraftAdapter extends TypeAdapter<SeriesDraft> {
       ..writeByte(0)
       ..write(obj.uid)
       ..writeByte(1)
-      ..write(obj.authorUid)
+      ..write(obj.authorUID)
       ..writeByte(2)
       ..write(obj.title)
       ..writeByte(3)
@@ -54,7 +54,7 @@ class SeriesDraftAdapter extends TypeAdapter<SeriesDraft> {
       ..writeByte(8)
       ..write(obj.isNSFW)
       ..writeByte(9)
-      ..write(obj.coverUrl)
+      ..write(obj.coverURL)
       ..writeByte(10)
       ..write(obj.authorUsername);
   }

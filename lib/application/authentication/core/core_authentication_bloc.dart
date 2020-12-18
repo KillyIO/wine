@@ -11,22 +11,26 @@ part 'core_authentication_bloc.freezed.dart';
 part 'core_authentication_event.dart';
 part 'core_authentication_state.dart';
 
+/// @nodoc
 @injectable
-class CoreAuthenticationBloc extends Bloc<CoreAuthenticationEvent, CoreAuthenticationState> {
+class CoreAuthenticationBloc
+    extends Bloc<CoreAuthenticationEvent, CoreAuthenticationState> {
+  /// @nodoc
+  CoreAuthenticationBloc(this._authenticationFacade)
+      : super(CoreAuthenticationState.initial());
+
   final IAuthenticationFacade _authenticationFacade;
 
-  CoreAuthenticationBloc(this._authenticationFacade) : super(CoreAuthenticationState.initial());
-
   @override
-  Stream<CoreAuthenticationState> mapEventToState(CoreAuthenticationEvent event) async* {
+  Stream<CoreAuthenticationState> mapEventToState(
+    CoreAuthenticationEvent event,
+  ) async* {
     yield* event.map(
       appLaunchedEVT: (event) async* {
-        final bool isAnonymous = await _authenticationFacade.isAnonymous();
-        yield state.copyWith(isAnonymous: isAnonymous);
+        yield state.copyWith(isAnonymous: _authenticationFacade.isAnonymous());
       },
       userStatusChangedEVT: (event) async* {
-        final bool isAnonymous = await _authenticationFacade.isAnonymous();
-        yield state.copyWith(isAnonymous: isAnonymous);
+        yield state.copyWith(isAnonymous: _authenticationFacade.isAnonymous());
       },
     );
   }

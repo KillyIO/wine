@@ -9,6 +9,7 @@ part of 'failures.dart';
 
 T _$identity<T>(T value) => value;
 
+/// @nodoc
 class _$ValueFailureTearOff {
   const _$ValueFailureTearOff();
 
@@ -70,62 +71,65 @@ class _$ValueFailureTearOff {
   }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $ValueFailure = _$ValueFailureTearOff();
 
+/// @nodoc
 mixin _$ValueFailure<T> {
   String get failedValue;
 
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result invalidEmailAddress(String failedValue),
-    @required Result invalidPassword(String failedValue),
-    @required Result invalidConfirmPassword(String failedValue),
-    @required Result invalidUsername(String failedValue),
-    @required Result emptyInput(String failedValue),
-    @required Result shortInput(String failedValue),
-    @required Result longInput(String failedValue),
-    @required Result emptySelection(String failedValue),
+  TResult when<TResult extends Object>({
+    @required TResult invalidEmailAddress(String failedValue),
+    @required TResult invalidPassword(String failedValue),
+    @required TResult invalidConfirmPassword(String failedValue),
+    @required TResult invalidUsername(String failedValue),
+    @required TResult emptyInput(String failedValue),
+    @required TResult shortInput(String failedValue),
+    @required TResult longInput(String failedValue),
+    @required TResult emptySelection(String failedValue),
   });
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result invalidEmailAddress(String failedValue),
-    Result invalidPassword(String failedValue),
-    Result invalidConfirmPassword(String failedValue),
-    Result invalidUsername(String failedValue),
-    Result emptyInput(String failedValue),
-    Result shortInput(String failedValue),
-    Result longInput(String failedValue),
-    Result emptySelection(String failedValue),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult invalidEmailAddress(String failedValue),
+    TResult invalidPassword(String failedValue),
+    TResult invalidConfirmPassword(String failedValue),
+    TResult invalidUsername(String failedValue),
+    TResult emptyInput(String failedValue),
+    TResult shortInput(String failedValue),
+    TResult longInput(String failedValue),
+    TResult emptySelection(String failedValue),
+    @required TResult orElse(),
   });
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result invalidEmailAddress(InvalidEmail<T> value),
-    @required Result invalidPassword(InvalidPassword<T> value),
-    @required Result invalidConfirmPassword(InvalidConfirmPassword<T> value),
-    @required Result invalidUsername(InvalidUsername<T> value),
-    @required Result emptyInput(EmptyInput<T> value),
-    @required Result shortInput(ShortInput<T> value),
-    @required Result longInput(LongInput<T> value),
-    @required Result emptySelection(EmptySelection<T> value),
+  TResult map<TResult extends Object>({
+    @required TResult invalidEmailAddress(InvalidEmail<T> value),
+    @required TResult invalidPassword(InvalidPassword<T> value),
+    @required TResult invalidConfirmPassword(InvalidConfirmPassword<T> value),
+    @required TResult invalidUsername(InvalidUsername<T> value),
+    @required TResult emptyInput(EmptyInput<T> value),
+    @required TResult shortInput(ShortInput<T> value),
+    @required TResult longInput(LongInput<T> value),
+    @required TResult emptySelection(EmptySelection<T> value),
   });
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result invalidEmailAddress(InvalidEmail<T> value),
-    Result invalidPassword(InvalidPassword<T> value),
-    Result invalidConfirmPassword(InvalidConfirmPassword<T> value),
-    Result invalidUsername(InvalidUsername<T> value),
-    Result emptyInput(EmptyInput<T> value),
-    Result shortInput(ShortInput<T> value),
-    Result longInput(LongInput<T> value),
-    Result emptySelection(EmptySelection<T> value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult invalidEmailAddress(InvalidEmail<T> value),
+    TResult invalidPassword(InvalidPassword<T> value),
+    TResult invalidConfirmPassword(InvalidConfirmPassword<T> value),
+    TResult invalidUsername(InvalidUsername<T> value),
+    TResult emptyInput(EmptyInput<T> value),
+    TResult shortInput(ShortInput<T> value),
+    TResult longInput(LongInput<T> value),
+    TResult emptySelection(EmptySelection<T> value),
+    @required TResult orElse(),
   });
 
   $ValueFailureCopyWith<T, ValueFailure<T>> get copyWith;
 }
 
+/// @nodoc
 abstract class $ValueFailureCopyWith<T, $Res> {
   factory $ValueFailureCopyWith(
           ValueFailure<T> value, $Res Function(ValueFailure<T>) then) =
@@ -133,6 +137,7 @@ abstract class $ValueFailureCopyWith<T, $Res> {
   $Res call({String failedValue});
 }
 
+/// @nodoc
 class _$ValueFailureCopyWithImpl<T, $Res>
     implements $ValueFailureCopyWith<T, $Res> {
   _$ValueFailureCopyWithImpl(this._value, this._then);
@@ -152,6 +157,7 @@ class _$ValueFailureCopyWithImpl<T, $Res>
   }
 }
 
+/// @nodoc
 abstract class $InvalidEmailCopyWith<T, $Res>
     implements $ValueFailureCopyWith<T, $Res> {
   factory $InvalidEmailCopyWith(
@@ -161,6 +167,7 @@ abstract class $InvalidEmailCopyWith<T, $Res>
   $Res call({String failedValue});
 }
 
+/// @nodoc
 class _$InvalidEmailCopyWithImpl<T, $Res>
     extends _$ValueFailureCopyWithImpl<T, $Res>
     implements $InvalidEmailCopyWith<T, $Res> {
@@ -182,6 +189,7 @@ class _$InvalidEmailCopyWithImpl<T, $Res>
   }
 }
 
+/// @nodoc
 class _$InvalidEmail<T> implements InvalidEmail<T> {
   const _$InvalidEmail({@required this.failedValue})
       : assert(failedValue != null);
@@ -213,15 +221,15 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result invalidEmailAddress(String failedValue),
-    @required Result invalidPassword(String failedValue),
-    @required Result invalidConfirmPassword(String failedValue),
-    @required Result invalidUsername(String failedValue),
-    @required Result emptyInput(String failedValue),
-    @required Result shortInput(String failedValue),
-    @required Result longInput(String failedValue),
-    @required Result emptySelection(String failedValue),
+  TResult when<TResult extends Object>({
+    @required TResult invalidEmailAddress(String failedValue),
+    @required TResult invalidPassword(String failedValue),
+    @required TResult invalidConfirmPassword(String failedValue),
+    @required TResult invalidUsername(String failedValue),
+    @required TResult emptyInput(String failedValue),
+    @required TResult shortInput(String failedValue),
+    @required TResult longInput(String failedValue),
+    @required TResult emptySelection(String failedValue),
   }) {
     assert(invalidEmailAddress != null);
     assert(invalidPassword != null);
@@ -236,16 +244,16 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result invalidEmailAddress(String failedValue),
-    Result invalidPassword(String failedValue),
-    Result invalidConfirmPassword(String failedValue),
-    Result invalidUsername(String failedValue),
-    Result emptyInput(String failedValue),
-    Result shortInput(String failedValue),
-    Result longInput(String failedValue),
-    Result emptySelection(String failedValue),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult invalidEmailAddress(String failedValue),
+    TResult invalidPassword(String failedValue),
+    TResult invalidConfirmPassword(String failedValue),
+    TResult invalidUsername(String failedValue),
+    TResult emptyInput(String failedValue),
+    TResult shortInput(String failedValue),
+    TResult longInput(String failedValue),
+    TResult emptySelection(String failedValue),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (invalidEmailAddress != null) {
@@ -256,15 +264,15 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result invalidEmailAddress(InvalidEmail<T> value),
-    @required Result invalidPassword(InvalidPassword<T> value),
-    @required Result invalidConfirmPassword(InvalidConfirmPassword<T> value),
-    @required Result invalidUsername(InvalidUsername<T> value),
-    @required Result emptyInput(EmptyInput<T> value),
-    @required Result shortInput(ShortInput<T> value),
-    @required Result longInput(LongInput<T> value),
-    @required Result emptySelection(EmptySelection<T> value),
+  TResult map<TResult extends Object>({
+    @required TResult invalidEmailAddress(InvalidEmail<T> value),
+    @required TResult invalidPassword(InvalidPassword<T> value),
+    @required TResult invalidConfirmPassword(InvalidConfirmPassword<T> value),
+    @required TResult invalidUsername(InvalidUsername<T> value),
+    @required TResult emptyInput(EmptyInput<T> value),
+    @required TResult shortInput(ShortInput<T> value),
+    @required TResult longInput(LongInput<T> value),
+    @required TResult emptySelection(EmptySelection<T> value),
   }) {
     assert(invalidEmailAddress != null);
     assert(invalidPassword != null);
@@ -279,16 +287,16 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result invalidEmailAddress(InvalidEmail<T> value),
-    Result invalidPassword(InvalidPassword<T> value),
-    Result invalidConfirmPassword(InvalidConfirmPassword<T> value),
-    Result invalidUsername(InvalidUsername<T> value),
-    Result emptyInput(EmptyInput<T> value),
-    Result shortInput(ShortInput<T> value),
-    Result longInput(LongInput<T> value),
-    Result emptySelection(EmptySelection<T> value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult invalidEmailAddress(InvalidEmail<T> value),
+    TResult invalidPassword(InvalidPassword<T> value),
+    TResult invalidConfirmPassword(InvalidConfirmPassword<T> value),
+    TResult invalidUsername(InvalidUsername<T> value),
+    TResult emptyInput(EmptyInput<T> value),
+    TResult shortInput(ShortInput<T> value),
+    TResult longInput(LongInput<T> value),
+    TResult emptySelection(EmptySelection<T> value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (invalidEmailAddress != null) {
@@ -308,6 +316,7 @@ abstract class InvalidEmail<T> implements ValueFailure<T> {
   $InvalidEmailCopyWith<T, InvalidEmail<T>> get copyWith;
 }
 
+/// @nodoc
 abstract class $InvalidPasswordCopyWith<T, $Res>
     implements $ValueFailureCopyWith<T, $Res> {
   factory $InvalidPasswordCopyWith(
@@ -317,6 +326,7 @@ abstract class $InvalidPasswordCopyWith<T, $Res>
   $Res call({String failedValue});
 }
 
+/// @nodoc
 class _$InvalidPasswordCopyWithImpl<T, $Res>
     extends _$ValueFailureCopyWithImpl<T, $Res>
     implements $InvalidPasswordCopyWith<T, $Res> {
@@ -338,6 +348,7 @@ class _$InvalidPasswordCopyWithImpl<T, $Res>
   }
 }
 
+/// @nodoc
 class _$InvalidPassword<T> implements InvalidPassword<T> {
   const _$InvalidPassword({@required this.failedValue})
       : assert(failedValue != null);
@@ -369,15 +380,15 @@ class _$InvalidPassword<T> implements InvalidPassword<T> {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result invalidEmailAddress(String failedValue),
-    @required Result invalidPassword(String failedValue),
-    @required Result invalidConfirmPassword(String failedValue),
-    @required Result invalidUsername(String failedValue),
-    @required Result emptyInput(String failedValue),
-    @required Result shortInput(String failedValue),
-    @required Result longInput(String failedValue),
-    @required Result emptySelection(String failedValue),
+  TResult when<TResult extends Object>({
+    @required TResult invalidEmailAddress(String failedValue),
+    @required TResult invalidPassword(String failedValue),
+    @required TResult invalidConfirmPassword(String failedValue),
+    @required TResult invalidUsername(String failedValue),
+    @required TResult emptyInput(String failedValue),
+    @required TResult shortInput(String failedValue),
+    @required TResult longInput(String failedValue),
+    @required TResult emptySelection(String failedValue),
   }) {
     assert(invalidEmailAddress != null);
     assert(invalidPassword != null);
@@ -392,16 +403,16 @@ class _$InvalidPassword<T> implements InvalidPassword<T> {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result invalidEmailAddress(String failedValue),
-    Result invalidPassword(String failedValue),
-    Result invalidConfirmPassword(String failedValue),
-    Result invalidUsername(String failedValue),
-    Result emptyInput(String failedValue),
-    Result shortInput(String failedValue),
-    Result longInput(String failedValue),
-    Result emptySelection(String failedValue),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult invalidEmailAddress(String failedValue),
+    TResult invalidPassword(String failedValue),
+    TResult invalidConfirmPassword(String failedValue),
+    TResult invalidUsername(String failedValue),
+    TResult emptyInput(String failedValue),
+    TResult shortInput(String failedValue),
+    TResult longInput(String failedValue),
+    TResult emptySelection(String failedValue),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (invalidPassword != null) {
@@ -412,15 +423,15 @@ class _$InvalidPassword<T> implements InvalidPassword<T> {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result invalidEmailAddress(InvalidEmail<T> value),
-    @required Result invalidPassword(InvalidPassword<T> value),
-    @required Result invalidConfirmPassword(InvalidConfirmPassword<T> value),
-    @required Result invalidUsername(InvalidUsername<T> value),
-    @required Result emptyInput(EmptyInput<T> value),
-    @required Result shortInput(ShortInput<T> value),
-    @required Result longInput(LongInput<T> value),
-    @required Result emptySelection(EmptySelection<T> value),
+  TResult map<TResult extends Object>({
+    @required TResult invalidEmailAddress(InvalidEmail<T> value),
+    @required TResult invalidPassword(InvalidPassword<T> value),
+    @required TResult invalidConfirmPassword(InvalidConfirmPassword<T> value),
+    @required TResult invalidUsername(InvalidUsername<T> value),
+    @required TResult emptyInput(EmptyInput<T> value),
+    @required TResult shortInput(ShortInput<T> value),
+    @required TResult longInput(LongInput<T> value),
+    @required TResult emptySelection(EmptySelection<T> value),
   }) {
     assert(invalidEmailAddress != null);
     assert(invalidPassword != null);
@@ -435,16 +446,16 @@ class _$InvalidPassword<T> implements InvalidPassword<T> {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result invalidEmailAddress(InvalidEmail<T> value),
-    Result invalidPassword(InvalidPassword<T> value),
-    Result invalidConfirmPassword(InvalidConfirmPassword<T> value),
-    Result invalidUsername(InvalidUsername<T> value),
-    Result emptyInput(EmptyInput<T> value),
-    Result shortInput(ShortInput<T> value),
-    Result longInput(LongInput<T> value),
-    Result emptySelection(EmptySelection<T> value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult invalidEmailAddress(InvalidEmail<T> value),
+    TResult invalidPassword(InvalidPassword<T> value),
+    TResult invalidConfirmPassword(InvalidConfirmPassword<T> value),
+    TResult invalidUsername(InvalidUsername<T> value),
+    TResult emptyInput(EmptyInput<T> value),
+    TResult shortInput(ShortInput<T> value),
+    TResult longInput(LongInput<T> value),
+    TResult emptySelection(EmptySelection<T> value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (invalidPassword != null) {
@@ -464,6 +475,7 @@ abstract class InvalidPassword<T> implements ValueFailure<T> {
   $InvalidPasswordCopyWith<T, InvalidPassword<T>> get copyWith;
 }
 
+/// @nodoc
 abstract class $InvalidConfirmPasswordCopyWith<T, $Res>
     implements $ValueFailureCopyWith<T, $Res> {
   factory $InvalidConfirmPasswordCopyWith(InvalidConfirmPassword<T> value,
@@ -473,6 +485,7 @@ abstract class $InvalidConfirmPasswordCopyWith<T, $Res>
   $Res call({String failedValue});
 }
 
+/// @nodoc
 class _$InvalidConfirmPasswordCopyWithImpl<T, $Res>
     extends _$ValueFailureCopyWithImpl<T, $Res>
     implements $InvalidConfirmPasswordCopyWith<T, $Res> {
@@ -495,6 +508,7 @@ class _$InvalidConfirmPasswordCopyWithImpl<T, $Res>
   }
 }
 
+/// @nodoc
 class _$InvalidConfirmPassword<T> implements InvalidConfirmPassword<T> {
   const _$InvalidConfirmPassword({@required this.failedValue})
       : assert(failedValue != null);
@@ -527,15 +541,15 @@ class _$InvalidConfirmPassword<T> implements InvalidConfirmPassword<T> {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result invalidEmailAddress(String failedValue),
-    @required Result invalidPassword(String failedValue),
-    @required Result invalidConfirmPassword(String failedValue),
-    @required Result invalidUsername(String failedValue),
-    @required Result emptyInput(String failedValue),
-    @required Result shortInput(String failedValue),
-    @required Result longInput(String failedValue),
-    @required Result emptySelection(String failedValue),
+  TResult when<TResult extends Object>({
+    @required TResult invalidEmailAddress(String failedValue),
+    @required TResult invalidPassword(String failedValue),
+    @required TResult invalidConfirmPassword(String failedValue),
+    @required TResult invalidUsername(String failedValue),
+    @required TResult emptyInput(String failedValue),
+    @required TResult shortInput(String failedValue),
+    @required TResult longInput(String failedValue),
+    @required TResult emptySelection(String failedValue),
   }) {
     assert(invalidEmailAddress != null);
     assert(invalidPassword != null);
@@ -550,16 +564,16 @@ class _$InvalidConfirmPassword<T> implements InvalidConfirmPassword<T> {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result invalidEmailAddress(String failedValue),
-    Result invalidPassword(String failedValue),
-    Result invalidConfirmPassword(String failedValue),
-    Result invalidUsername(String failedValue),
-    Result emptyInput(String failedValue),
-    Result shortInput(String failedValue),
-    Result longInput(String failedValue),
-    Result emptySelection(String failedValue),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult invalidEmailAddress(String failedValue),
+    TResult invalidPassword(String failedValue),
+    TResult invalidConfirmPassword(String failedValue),
+    TResult invalidUsername(String failedValue),
+    TResult emptyInput(String failedValue),
+    TResult shortInput(String failedValue),
+    TResult longInput(String failedValue),
+    TResult emptySelection(String failedValue),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (invalidConfirmPassword != null) {
@@ -570,15 +584,15 @@ class _$InvalidConfirmPassword<T> implements InvalidConfirmPassword<T> {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result invalidEmailAddress(InvalidEmail<T> value),
-    @required Result invalidPassword(InvalidPassword<T> value),
-    @required Result invalidConfirmPassword(InvalidConfirmPassword<T> value),
-    @required Result invalidUsername(InvalidUsername<T> value),
-    @required Result emptyInput(EmptyInput<T> value),
-    @required Result shortInput(ShortInput<T> value),
-    @required Result longInput(LongInput<T> value),
-    @required Result emptySelection(EmptySelection<T> value),
+  TResult map<TResult extends Object>({
+    @required TResult invalidEmailAddress(InvalidEmail<T> value),
+    @required TResult invalidPassword(InvalidPassword<T> value),
+    @required TResult invalidConfirmPassword(InvalidConfirmPassword<T> value),
+    @required TResult invalidUsername(InvalidUsername<T> value),
+    @required TResult emptyInput(EmptyInput<T> value),
+    @required TResult shortInput(ShortInput<T> value),
+    @required TResult longInput(LongInput<T> value),
+    @required TResult emptySelection(EmptySelection<T> value),
   }) {
     assert(invalidEmailAddress != null);
     assert(invalidPassword != null);
@@ -593,16 +607,16 @@ class _$InvalidConfirmPassword<T> implements InvalidConfirmPassword<T> {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result invalidEmailAddress(InvalidEmail<T> value),
-    Result invalidPassword(InvalidPassword<T> value),
-    Result invalidConfirmPassword(InvalidConfirmPassword<T> value),
-    Result invalidUsername(InvalidUsername<T> value),
-    Result emptyInput(EmptyInput<T> value),
-    Result shortInput(ShortInput<T> value),
-    Result longInput(LongInput<T> value),
-    Result emptySelection(EmptySelection<T> value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult invalidEmailAddress(InvalidEmail<T> value),
+    TResult invalidPassword(InvalidPassword<T> value),
+    TResult invalidConfirmPassword(InvalidConfirmPassword<T> value),
+    TResult invalidUsername(InvalidUsername<T> value),
+    TResult emptyInput(EmptyInput<T> value),
+    TResult shortInput(ShortInput<T> value),
+    TResult longInput(LongInput<T> value),
+    TResult emptySelection(EmptySelection<T> value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (invalidConfirmPassword != null) {
@@ -622,6 +636,7 @@ abstract class InvalidConfirmPassword<T> implements ValueFailure<T> {
   $InvalidConfirmPasswordCopyWith<T, InvalidConfirmPassword<T>> get copyWith;
 }
 
+/// @nodoc
 abstract class $InvalidUsernameCopyWith<T, $Res>
     implements $ValueFailureCopyWith<T, $Res> {
   factory $InvalidUsernameCopyWith(
@@ -631,6 +646,7 @@ abstract class $InvalidUsernameCopyWith<T, $Res>
   $Res call({String failedValue});
 }
 
+/// @nodoc
 class _$InvalidUsernameCopyWithImpl<T, $Res>
     extends _$ValueFailureCopyWithImpl<T, $Res>
     implements $InvalidUsernameCopyWith<T, $Res> {
@@ -652,6 +668,7 @@ class _$InvalidUsernameCopyWithImpl<T, $Res>
   }
 }
 
+/// @nodoc
 class _$InvalidUsername<T> implements InvalidUsername<T> {
   const _$InvalidUsername({@required this.failedValue})
       : assert(failedValue != null);
@@ -683,15 +700,15 @@ class _$InvalidUsername<T> implements InvalidUsername<T> {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result invalidEmailAddress(String failedValue),
-    @required Result invalidPassword(String failedValue),
-    @required Result invalidConfirmPassword(String failedValue),
-    @required Result invalidUsername(String failedValue),
-    @required Result emptyInput(String failedValue),
-    @required Result shortInput(String failedValue),
-    @required Result longInput(String failedValue),
-    @required Result emptySelection(String failedValue),
+  TResult when<TResult extends Object>({
+    @required TResult invalidEmailAddress(String failedValue),
+    @required TResult invalidPassword(String failedValue),
+    @required TResult invalidConfirmPassword(String failedValue),
+    @required TResult invalidUsername(String failedValue),
+    @required TResult emptyInput(String failedValue),
+    @required TResult shortInput(String failedValue),
+    @required TResult longInput(String failedValue),
+    @required TResult emptySelection(String failedValue),
   }) {
     assert(invalidEmailAddress != null);
     assert(invalidPassword != null);
@@ -706,16 +723,16 @@ class _$InvalidUsername<T> implements InvalidUsername<T> {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result invalidEmailAddress(String failedValue),
-    Result invalidPassword(String failedValue),
-    Result invalidConfirmPassword(String failedValue),
-    Result invalidUsername(String failedValue),
-    Result emptyInput(String failedValue),
-    Result shortInput(String failedValue),
-    Result longInput(String failedValue),
-    Result emptySelection(String failedValue),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult invalidEmailAddress(String failedValue),
+    TResult invalidPassword(String failedValue),
+    TResult invalidConfirmPassword(String failedValue),
+    TResult invalidUsername(String failedValue),
+    TResult emptyInput(String failedValue),
+    TResult shortInput(String failedValue),
+    TResult longInput(String failedValue),
+    TResult emptySelection(String failedValue),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (invalidUsername != null) {
@@ -726,15 +743,15 @@ class _$InvalidUsername<T> implements InvalidUsername<T> {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result invalidEmailAddress(InvalidEmail<T> value),
-    @required Result invalidPassword(InvalidPassword<T> value),
-    @required Result invalidConfirmPassword(InvalidConfirmPassword<T> value),
-    @required Result invalidUsername(InvalidUsername<T> value),
-    @required Result emptyInput(EmptyInput<T> value),
-    @required Result shortInput(ShortInput<T> value),
-    @required Result longInput(LongInput<T> value),
-    @required Result emptySelection(EmptySelection<T> value),
+  TResult map<TResult extends Object>({
+    @required TResult invalidEmailAddress(InvalidEmail<T> value),
+    @required TResult invalidPassword(InvalidPassword<T> value),
+    @required TResult invalidConfirmPassword(InvalidConfirmPassword<T> value),
+    @required TResult invalidUsername(InvalidUsername<T> value),
+    @required TResult emptyInput(EmptyInput<T> value),
+    @required TResult shortInput(ShortInput<T> value),
+    @required TResult longInput(LongInput<T> value),
+    @required TResult emptySelection(EmptySelection<T> value),
   }) {
     assert(invalidEmailAddress != null);
     assert(invalidPassword != null);
@@ -749,16 +766,16 @@ class _$InvalidUsername<T> implements InvalidUsername<T> {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result invalidEmailAddress(InvalidEmail<T> value),
-    Result invalidPassword(InvalidPassword<T> value),
-    Result invalidConfirmPassword(InvalidConfirmPassword<T> value),
-    Result invalidUsername(InvalidUsername<T> value),
-    Result emptyInput(EmptyInput<T> value),
-    Result shortInput(ShortInput<T> value),
-    Result longInput(LongInput<T> value),
-    Result emptySelection(EmptySelection<T> value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult invalidEmailAddress(InvalidEmail<T> value),
+    TResult invalidPassword(InvalidPassword<T> value),
+    TResult invalidConfirmPassword(InvalidConfirmPassword<T> value),
+    TResult invalidUsername(InvalidUsername<T> value),
+    TResult emptyInput(EmptyInput<T> value),
+    TResult shortInput(ShortInput<T> value),
+    TResult longInput(LongInput<T> value),
+    TResult emptySelection(EmptySelection<T> value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (invalidUsername != null) {
@@ -778,6 +795,7 @@ abstract class InvalidUsername<T> implements ValueFailure<T> {
   $InvalidUsernameCopyWith<T, InvalidUsername<T>> get copyWith;
 }
 
+/// @nodoc
 abstract class $EmptyInputCopyWith<T, $Res>
     implements $ValueFailureCopyWith<T, $Res> {
   factory $EmptyInputCopyWith(
@@ -787,6 +805,7 @@ abstract class $EmptyInputCopyWith<T, $Res>
   $Res call({String failedValue});
 }
 
+/// @nodoc
 class _$EmptyInputCopyWithImpl<T, $Res>
     extends _$ValueFailureCopyWithImpl<T, $Res>
     implements $EmptyInputCopyWith<T, $Res> {
@@ -808,6 +827,7 @@ class _$EmptyInputCopyWithImpl<T, $Res>
   }
 }
 
+/// @nodoc
 class _$EmptyInput<T> implements EmptyInput<T> {
   const _$EmptyInput({@required this.failedValue})
       : assert(failedValue != null);
@@ -839,15 +859,15 @@ class _$EmptyInput<T> implements EmptyInput<T> {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result invalidEmailAddress(String failedValue),
-    @required Result invalidPassword(String failedValue),
-    @required Result invalidConfirmPassword(String failedValue),
-    @required Result invalidUsername(String failedValue),
-    @required Result emptyInput(String failedValue),
-    @required Result shortInput(String failedValue),
-    @required Result longInput(String failedValue),
-    @required Result emptySelection(String failedValue),
+  TResult when<TResult extends Object>({
+    @required TResult invalidEmailAddress(String failedValue),
+    @required TResult invalidPassword(String failedValue),
+    @required TResult invalidConfirmPassword(String failedValue),
+    @required TResult invalidUsername(String failedValue),
+    @required TResult emptyInput(String failedValue),
+    @required TResult shortInput(String failedValue),
+    @required TResult longInput(String failedValue),
+    @required TResult emptySelection(String failedValue),
   }) {
     assert(invalidEmailAddress != null);
     assert(invalidPassword != null);
@@ -862,16 +882,16 @@ class _$EmptyInput<T> implements EmptyInput<T> {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result invalidEmailAddress(String failedValue),
-    Result invalidPassword(String failedValue),
-    Result invalidConfirmPassword(String failedValue),
-    Result invalidUsername(String failedValue),
-    Result emptyInput(String failedValue),
-    Result shortInput(String failedValue),
-    Result longInput(String failedValue),
-    Result emptySelection(String failedValue),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult invalidEmailAddress(String failedValue),
+    TResult invalidPassword(String failedValue),
+    TResult invalidConfirmPassword(String failedValue),
+    TResult invalidUsername(String failedValue),
+    TResult emptyInput(String failedValue),
+    TResult shortInput(String failedValue),
+    TResult longInput(String failedValue),
+    TResult emptySelection(String failedValue),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (emptyInput != null) {
@@ -882,15 +902,15 @@ class _$EmptyInput<T> implements EmptyInput<T> {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result invalidEmailAddress(InvalidEmail<T> value),
-    @required Result invalidPassword(InvalidPassword<T> value),
-    @required Result invalidConfirmPassword(InvalidConfirmPassword<T> value),
-    @required Result invalidUsername(InvalidUsername<T> value),
-    @required Result emptyInput(EmptyInput<T> value),
-    @required Result shortInput(ShortInput<T> value),
-    @required Result longInput(LongInput<T> value),
-    @required Result emptySelection(EmptySelection<T> value),
+  TResult map<TResult extends Object>({
+    @required TResult invalidEmailAddress(InvalidEmail<T> value),
+    @required TResult invalidPassword(InvalidPassword<T> value),
+    @required TResult invalidConfirmPassword(InvalidConfirmPassword<T> value),
+    @required TResult invalidUsername(InvalidUsername<T> value),
+    @required TResult emptyInput(EmptyInput<T> value),
+    @required TResult shortInput(ShortInput<T> value),
+    @required TResult longInput(LongInput<T> value),
+    @required TResult emptySelection(EmptySelection<T> value),
   }) {
     assert(invalidEmailAddress != null);
     assert(invalidPassword != null);
@@ -905,16 +925,16 @@ class _$EmptyInput<T> implements EmptyInput<T> {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result invalidEmailAddress(InvalidEmail<T> value),
-    Result invalidPassword(InvalidPassword<T> value),
-    Result invalidConfirmPassword(InvalidConfirmPassword<T> value),
-    Result invalidUsername(InvalidUsername<T> value),
-    Result emptyInput(EmptyInput<T> value),
-    Result shortInput(ShortInput<T> value),
-    Result longInput(LongInput<T> value),
-    Result emptySelection(EmptySelection<T> value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult invalidEmailAddress(InvalidEmail<T> value),
+    TResult invalidPassword(InvalidPassword<T> value),
+    TResult invalidConfirmPassword(InvalidConfirmPassword<T> value),
+    TResult invalidUsername(InvalidUsername<T> value),
+    TResult emptyInput(EmptyInput<T> value),
+    TResult shortInput(ShortInput<T> value),
+    TResult longInput(LongInput<T> value),
+    TResult emptySelection(EmptySelection<T> value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (emptyInput != null) {
@@ -933,6 +953,7 @@ abstract class EmptyInput<T> implements ValueFailure<T> {
   $EmptyInputCopyWith<T, EmptyInput<T>> get copyWith;
 }
 
+/// @nodoc
 abstract class $ShortInputCopyWith<T, $Res>
     implements $ValueFailureCopyWith<T, $Res> {
   factory $ShortInputCopyWith(
@@ -942,6 +963,7 @@ abstract class $ShortInputCopyWith<T, $Res>
   $Res call({String failedValue});
 }
 
+/// @nodoc
 class _$ShortInputCopyWithImpl<T, $Res>
     extends _$ValueFailureCopyWithImpl<T, $Res>
     implements $ShortInputCopyWith<T, $Res> {
@@ -963,6 +985,7 @@ class _$ShortInputCopyWithImpl<T, $Res>
   }
 }
 
+/// @nodoc
 class _$ShortInput<T> implements ShortInput<T> {
   const _$ShortInput({@required this.failedValue})
       : assert(failedValue != null);
@@ -994,15 +1017,15 @@ class _$ShortInput<T> implements ShortInput<T> {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result invalidEmailAddress(String failedValue),
-    @required Result invalidPassword(String failedValue),
-    @required Result invalidConfirmPassword(String failedValue),
-    @required Result invalidUsername(String failedValue),
-    @required Result emptyInput(String failedValue),
-    @required Result shortInput(String failedValue),
-    @required Result longInput(String failedValue),
-    @required Result emptySelection(String failedValue),
+  TResult when<TResult extends Object>({
+    @required TResult invalidEmailAddress(String failedValue),
+    @required TResult invalidPassword(String failedValue),
+    @required TResult invalidConfirmPassword(String failedValue),
+    @required TResult invalidUsername(String failedValue),
+    @required TResult emptyInput(String failedValue),
+    @required TResult shortInput(String failedValue),
+    @required TResult longInput(String failedValue),
+    @required TResult emptySelection(String failedValue),
   }) {
     assert(invalidEmailAddress != null);
     assert(invalidPassword != null);
@@ -1017,16 +1040,16 @@ class _$ShortInput<T> implements ShortInput<T> {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result invalidEmailAddress(String failedValue),
-    Result invalidPassword(String failedValue),
-    Result invalidConfirmPassword(String failedValue),
-    Result invalidUsername(String failedValue),
-    Result emptyInput(String failedValue),
-    Result shortInput(String failedValue),
-    Result longInput(String failedValue),
-    Result emptySelection(String failedValue),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult invalidEmailAddress(String failedValue),
+    TResult invalidPassword(String failedValue),
+    TResult invalidConfirmPassword(String failedValue),
+    TResult invalidUsername(String failedValue),
+    TResult emptyInput(String failedValue),
+    TResult shortInput(String failedValue),
+    TResult longInput(String failedValue),
+    TResult emptySelection(String failedValue),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (shortInput != null) {
@@ -1037,15 +1060,15 @@ class _$ShortInput<T> implements ShortInput<T> {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result invalidEmailAddress(InvalidEmail<T> value),
-    @required Result invalidPassword(InvalidPassword<T> value),
-    @required Result invalidConfirmPassword(InvalidConfirmPassword<T> value),
-    @required Result invalidUsername(InvalidUsername<T> value),
-    @required Result emptyInput(EmptyInput<T> value),
-    @required Result shortInput(ShortInput<T> value),
-    @required Result longInput(LongInput<T> value),
-    @required Result emptySelection(EmptySelection<T> value),
+  TResult map<TResult extends Object>({
+    @required TResult invalidEmailAddress(InvalidEmail<T> value),
+    @required TResult invalidPassword(InvalidPassword<T> value),
+    @required TResult invalidConfirmPassword(InvalidConfirmPassword<T> value),
+    @required TResult invalidUsername(InvalidUsername<T> value),
+    @required TResult emptyInput(EmptyInput<T> value),
+    @required TResult shortInput(ShortInput<T> value),
+    @required TResult longInput(LongInput<T> value),
+    @required TResult emptySelection(EmptySelection<T> value),
   }) {
     assert(invalidEmailAddress != null);
     assert(invalidPassword != null);
@@ -1060,16 +1083,16 @@ class _$ShortInput<T> implements ShortInput<T> {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result invalidEmailAddress(InvalidEmail<T> value),
-    Result invalidPassword(InvalidPassword<T> value),
-    Result invalidConfirmPassword(InvalidConfirmPassword<T> value),
-    Result invalidUsername(InvalidUsername<T> value),
-    Result emptyInput(EmptyInput<T> value),
-    Result shortInput(ShortInput<T> value),
-    Result longInput(LongInput<T> value),
-    Result emptySelection(EmptySelection<T> value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult invalidEmailAddress(InvalidEmail<T> value),
+    TResult invalidPassword(InvalidPassword<T> value),
+    TResult invalidConfirmPassword(InvalidConfirmPassword<T> value),
+    TResult invalidUsername(InvalidUsername<T> value),
+    TResult emptyInput(EmptyInput<T> value),
+    TResult shortInput(ShortInput<T> value),
+    TResult longInput(LongInput<T> value),
+    TResult emptySelection(EmptySelection<T> value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (shortInput != null) {
@@ -1088,6 +1111,7 @@ abstract class ShortInput<T> implements ValueFailure<T> {
   $ShortInputCopyWith<T, ShortInput<T>> get copyWith;
 }
 
+/// @nodoc
 abstract class $LongInputCopyWith<T, $Res>
     implements $ValueFailureCopyWith<T, $Res> {
   factory $LongInputCopyWith(
@@ -1097,6 +1121,7 @@ abstract class $LongInputCopyWith<T, $Res>
   $Res call({String failedValue});
 }
 
+/// @nodoc
 class _$LongInputCopyWithImpl<T, $Res>
     extends _$ValueFailureCopyWithImpl<T, $Res>
     implements $LongInputCopyWith<T, $Res> {
@@ -1118,6 +1143,7 @@ class _$LongInputCopyWithImpl<T, $Res>
   }
 }
 
+/// @nodoc
 class _$LongInput<T> implements LongInput<T> {
   const _$LongInput({@required this.failedValue}) : assert(failedValue != null);
 
@@ -1148,15 +1174,15 @@ class _$LongInput<T> implements LongInput<T> {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result invalidEmailAddress(String failedValue),
-    @required Result invalidPassword(String failedValue),
-    @required Result invalidConfirmPassword(String failedValue),
-    @required Result invalidUsername(String failedValue),
-    @required Result emptyInput(String failedValue),
-    @required Result shortInput(String failedValue),
-    @required Result longInput(String failedValue),
-    @required Result emptySelection(String failedValue),
+  TResult when<TResult extends Object>({
+    @required TResult invalidEmailAddress(String failedValue),
+    @required TResult invalidPassword(String failedValue),
+    @required TResult invalidConfirmPassword(String failedValue),
+    @required TResult invalidUsername(String failedValue),
+    @required TResult emptyInput(String failedValue),
+    @required TResult shortInput(String failedValue),
+    @required TResult longInput(String failedValue),
+    @required TResult emptySelection(String failedValue),
   }) {
     assert(invalidEmailAddress != null);
     assert(invalidPassword != null);
@@ -1171,16 +1197,16 @@ class _$LongInput<T> implements LongInput<T> {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result invalidEmailAddress(String failedValue),
-    Result invalidPassword(String failedValue),
-    Result invalidConfirmPassword(String failedValue),
-    Result invalidUsername(String failedValue),
-    Result emptyInput(String failedValue),
-    Result shortInput(String failedValue),
-    Result longInput(String failedValue),
-    Result emptySelection(String failedValue),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult invalidEmailAddress(String failedValue),
+    TResult invalidPassword(String failedValue),
+    TResult invalidConfirmPassword(String failedValue),
+    TResult invalidUsername(String failedValue),
+    TResult emptyInput(String failedValue),
+    TResult shortInput(String failedValue),
+    TResult longInput(String failedValue),
+    TResult emptySelection(String failedValue),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (longInput != null) {
@@ -1191,15 +1217,15 @@ class _$LongInput<T> implements LongInput<T> {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result invalidEmailAddress(InvalidEmail<T> value),
-    @required Result invalidPassword(InvalidPassword<T> value),
-    @required Result invalidConfirmPassword(InvalidConfirmPassword<T> value),
-    @required Result invalidUsername(InvalidUsername<T> value),
-    @required Result emptyInput(EmptyInput<T> value),
-    @required Result shortInput(ShortInput<T> value),
-    @required Result longInput(LongInput<T> value),
-    @required Result emptySelection(EmptySelection<T> value),
+  TResult map<TResult extends Object>({
+    @required TResult invalidEmailAddress(InvalidEmail<T> value),
+    @required TResult invalidPassword(InvalidPassword<T> value),
+    @required TResult invalidConfirmPassword(InvalidConfirmPassword<T> value),
+    @required TResult invalidUsername(InvalidUsername<T> value),
+    @required TResult emptyInput(EmptyInput<T> value),
+    @required TResult shortInput(ShortInput<T> value),
+    @required TResult longInput(LongInput<T> value),
+    @required TResult emptySelection(EmptySelection<T> value),
   }) {
     assert(invalidEmailAddress != null);
     assert(invalidPassword != null);
@@ -1214,16 +1240,16 @@ class _$LongInput<T> implements LongInput<T> {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result invalidEmailAddress(InvalidEmail<T> value),
-    Result invalidPassword(InvalidPassword<T> value),
-    Result invalidConfirmPassword(InvalidConfirmPassword<T> value),
-    Result invalidUsername(InvalidUsername<T> value),
-    Result emptyInput(EmptyInput<T> value),
-    Result shortInput(ShortInput<T> value),
-    Result longInput(LongInput<T> value),
-    Result emptySelection(EmptySelection<T> value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult invalidEmailAddress(InvalidEmail<T> value),
+    TResult invalidPassword(InvalidPassword<T> value),
+    TResult invalidConfirmPassword(InvalidConfirmPassword<T> value),
+    TResult invalidUsername(InvalidUsername<T> value),
+    TResult emptyInput(EmptyInput<T> value),
+    TResult shortInput(ShortInput<T> value),
+    TResult longInput(LongInput<T> value),
+    TResult emptySelection(EmptySelection<T> value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (longInput != null) {
@@ -1242,6 +1268,7 @@ abstract class LongInput<T> implements ValueFailure<T> {
   $LongInputCopyWith<T, LongInput<T>> get copyWith;
 }
 
+/// @nodoc
 abstract class $EmptySelectionCopyWith<T, $Res>
     implements $ValueFailureCopyWith<T, $Res> {
   factory $EmptySelectionCopyWith(
@@ -1251,6 +1278,7 @@ abstract class $EmptySelectionCopyWith<T, $Res>
   $Res call({String failedValue});
 }
 
+/// @nodoc
 class _$EmptySelectionCopyWithImpl<T, $Res>
     extends _$ValueFailureCopyWithImpl<T, $Res>
     implements $EmptySelectionCopyWith<T, $Res> {
@@ -1272,6 +1300,7 @@ class _$EmptySelectionCopyWithImpl<T, $Res>
   }
 }
 
+/// @nodoc
 class _$EmptySelection<T> implements EmptySelection<T> {
   const _$EmptySelection({@required this.failedValue})
       : assert(failedValue != null);
@@ -1303,15 +1332,15 @@ class _$EmptySelection<T> implements EmptySelection<T> {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result invalidEmailAddress(String failedValue),
-    @required Result invalidPassword(String failedValue),
-    @required Result invalidConfirmPassword(String failedValue),
-    @required Result invalidUsername(String failedValue),
-    @required Result emptyInput(String failedValue),
-    @required Result shortInput(String failedValue),
-    @required Result longInput(String failedValue),
-    @required Result emptySelection(String failedValue),
+  TResult when<TResult extends Object>({
+    @required TResult invalidEmailAddress(String failedValue),
+    @required TResult invalidPassword(String failedValue),
+    @required TResult invalidConfirmPassword(String failedValue),
+    @required TResult invalidUsername(String failedValue),
+    @required TResult emptyInput(String failedValue),
+    @required TResult shortInput(String failedValue),
+    @required TResult longInput(String failedValue),
+    @required TResult emptySelection(String failedValue),
   }) {
     assert(invalidEmailAddress != null);
     assert(invalidPassword != null);
@@ -1326,16 +1355,16 @@ class _$EmptySelection<T> implements EmptySelection<T> {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result invalidEmailAddress(String failedValue),
-    Result invalidPassword(String failedValue),
-    Result invalidConfirmPassword(String failedValue),
-    Result invalidUsername(String failedValue),
-    Result emptyInput(String failedValue),
-    Result shortInput(String failedValue),
-    Result longInput(String failedValue),
-    Result emptySelection(String failedValue),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult invalidEmailAddress(String failedValue),
+    TResult invalidPassword(String failedValue),
+    TResult invalidConfirmPassword(String failedValue),
+    TResult invalidUsername(String failedValue),
+    TResult emptyInput(String failedValue),
+    TResult shortInput(String failedValue),
+    TResult longInput(String failedValue),
+    TResult emptySelection(String failedValue),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (emptySelection != null) {
@@ -1346,15 +1375,15 @@ class _$EmptySelection<T> implements EmptySelection<T> {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result invalidEmailAddress(InvalidEmail<T> value),
-    @required Result invalidPassword(InvalidPassword<T> value),
-    @required Result invalidConfirmPassword(InvalidConfirmPassword<T> value),
-    @required Result invalidUsername(InvalidUsername<T> value),
-    @required Result emptyInput(EmptyInput<T> value),
-    @required Result shortInput(ShortInput<T> value),
-    @required Result longInput(LongInput<T> value),
-    @required Result emptySelection(EmptySelection<T> value),
+  TResult map<TResult extends Object>({
+    @required TResult invalidEmailAddress(InvalidEmail<T> value),
+    @required TResult invalidPassword(InvalidPassword<T> value),
+    @required TResult invalidConfirmPassword(InvalidConfirmPassword<T> value),
+    @required TResult invalidUsername(InvalidUsername<T> value),
+    @required TResult emptyInput(EmptyInput<T> value),
+    @required TResult shortInput(ShortInput<T> value),
+    @required TResult longInput(LongInput<T> value),
+    @required TResult emptySelection(EmptySelection<T> value),
   }) {
     assert(invalidEmailAddress != null);
     assert(invalidPassword != null);
@@ -1369,16 +1398,16 @@ class _$EmptySelection<T> implements EmptySelection<T> {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result invalidEmailAddress(InvalidEmail<T> value),
-    Result invalidPassword(InvalidPassword<T> value),
-    Result invalidConfirmPassword(InvalidConfirmPassword<T> value),
-    Result invalidUsername(InvalidUsername<T> value),
-    Result emptyInput(EmptyInput<T> value),
-    Result shortInput(ShortInput<T> value),
-    Result longInput(LongInput<T> value),
-    Result emptySelection(EmptySelection<T> value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult invalidEmailAddress(InvalidEmail<T> value),
+    TResult invalidPassword(InvalidPassword<T> value),
+    TResult invalidConfirmPassword(InvalidConfirmPassword<T> value),
+    TResult invalidUsername(InvalidUsername<T> value),
+    TResult emptyInput(EmptyInput<T> value),
+    TResult shortInput(ShortInput<T> value),
+    TResult longInput(LongInput<T> value),
+    TResult emptySelection(EmptySelection<T> value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (emptySelection != null) {

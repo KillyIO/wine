@@ -3,10 +3,9 @@ import 'package:wine/domain/core/failures.dart';
 import 'package:wine/domain/core/value_objects.dart';
 import 'package:wine/domain/core/value_validators.dart';
 
+/// @nodoc
 class Subtitle extends ValueObject<String> {
-  @override
-  final Either<ValueFailure<String>, String> value;
-
+  /// @nodoc
   factory Subtitle(String input) {
     assert(input != null);
     return Subtitle._(
@@ -15,5 +14,9 @@ class Subtitle extends ValueObject<String> {
   }
 
   // NOTE private contructor
+  /// @nodoc
   const Subtitle._(this.value);
+
+  @override
+  final Either<ValueFailure<String>, String> value;
 }

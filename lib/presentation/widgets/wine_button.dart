@@ -2,13 +2,9 @@ import 'package:flutter/material.dart';
 
 import 'package:wine/utils/palettes.dart';
 
+/// @nodoc
 class WINEButton extends StatelessWidget {
-  final String title;
-  final Color color;
-  final VoidCallback onPressed;
-  final double fontSize;
-  final bool hasRoundedCorners;
-
+  /// @nodoc
   const WINEButton({
     Key key,
     @required this.title,
@@ -18,18 +14,44 @@ class WINEButton extends StatelessWidget {
     this.hasRoundedCorners = false,
   }) : super(key: key);
 
+  /// @nodoc
+  final String title;
+
+  /// @nodoc
+  final Color color;
+
+  /// @nodoc
+  final VoidCallback onPressed;
+
+  /// @nodoc
+  final double fontSize;
+
+  /// @nodoc
+  final bool hasRoundedCorners;
+
   @override
   Widget build(BuildContext context) {
-    final Size mediaQuery = MediaQuery.of(context).size;
+    final mediaQuery = MediaQuery.of(context).size;
 
-    return Container(
+    return SizedBox(
       height: 60.0,
       width: mediaQuery.width,
       child: FlatButton(
         color: color,
         onPressed: onPressed,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(hasRoundedCorners ? 10 : 0)),
-        child: Text(title, style: TextStyle(color: Colors.white, fontSize: fontSize, fontWeight: FontWeight.w500)),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(
+            hasRoundedCorners ? 10 : 0,
+          ),
+        ),
+        child: Text(
+          title,
+          style: TextStyle(
+            color: Colors.white,
+            fontSize: fontSize,
+            fontWeight: FontWeight.w500,
+          ),
+        ),
       ),
     );
   }

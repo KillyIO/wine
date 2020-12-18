@@ -2,74 +2,116 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
 import 'package:wine/domain/database/database_failure.dart';
-import 'package:wine/domain/database/database_success.dart';
-import 'package:wine/domain/database/i_online_user_database_facade.dart';
+import 'package:wine/domain/database/facades/online/i_online_user_database_facade.dart';
+import 'package:wine/domain/database/successes/user_database_success.dart';
 import 'package:wine/domain/models/user.dart';
+import 'package:wine/utils/extensions.dart';
 import 'package:wine/utils/paths.dart';
 
+/// @nodoc
 @LazySingleton(as: IOnlineUserDatabaseFacade)
 class FirebaseOnlineUserDatabaseFacade extends IOnlineUserDatabaseFacade {
-  final Firestore _firestore;
-
+  /// @nodoc
   FirebaseOnlineUserDatabaseFacade(this._firestore);
 
-  @override
-  Future<Either<DatabaseFailure, DatabaseSuccess>> loadUser(String sessionUid) async {
-    final DocumentReference ref = _firestore.collection(Paths.usersPath).document(sessionUid);
+  final FirebaseFirestore _firestore;
 
-    final DocumentSnapshot snapshot = await ref.get();
-    if (snapshot != null && snapshot.exists) {
-      final User user = User.fromFirestore(snapshot);
-      return right(DatabaseSuccess.userLoadedSCS(user));
+  @override
+  Future<Either<DatabaseFailure, UserDatabaseSuccess>> loadUser(
+    String userUID,
+  ) async {
+    final documentSnapshot =
+        await _firestore.collection(Paths.usersPath).doc(userUID).get();
+
+    if (documentSnapshot != null && documentSnapshot.exists) {
+      final user = User.fromFirestore(documentSnapshot);
+      return right(UserDatabaseSuccess.userLoadedSCS(user));
     }
-    return left(const DatabaseFailure.failedToFetchOnlineData());
+    return left(const DatabaseFailure.failedToLoadOnlineData());
   }
 
   @override
-  Future<Either<DatabaseFailure, DatabaseSuccess>> loadUsersAsMapByUidList(List<String> userUids) async {
-    final List<String> filterUserUids = userUids.toSet().toList();
+  Future<Either<DatabaseFailure, UserDatabaseSuccess>> loadUsersAsMapByUIDList(
+    List<String> userUIDs,
+  ) async {
+    final usersCollection = _firestore.collection(Paths.usersPath);
 
-    final CollectionReference usersCollection = _firestore.collection(Paths.usersPath);
+    final userUIDsChunked = userUIDs.chunk(10);
 
-    final QuerySnapshot querySnapshot = await usersCollection.where('uid', whereIn: filterUserUids).getDocuments();
+    final usersList = <User>[];
 
-    final List<User> usersList = <User>[];
-    for (final DocumentSnapshot doc in querySnapshot.documents) {
-      usersList.add(User.fromFirestore(doc));
+    for (final chunk in userUIDsChunked) {
+      final querySnapshot =
+          await usersCollection.where('uid', whereIn: chunk).get();
+
+      for (final DocumentSnapshot doc in querySnapshot.docs) {
+        usersList.add(User.fromFirestore(doc));
+      }
     }
 
-    final Map<String, User> usersMap = {for (final User user in usersList) user.uid: user};
+    final usersMap = <String, User>{
+      for (final User user in usersList) user.uid: user
+    };
 
-    return right(DatabaseSuccess.userAsMapLoadedSCS(usersMap));
+    return right(UserDatabaseSuccess.userAsMapLoadedSCS(usersMap));
   }
 
   @override
-  Future<Either<DatabaseFailure, DatabaseSuccess>> saveDetailsFromUser(User user) async {
-    User finalUser = user;
+  Future<Either<DatabaseFailure, UserDatabaseSuccess>> loadUsers(
+    List<String> userUIDs,
+  ) async {
+    final usersCollection = _firestore.collection(Paths.usersPath);
 
-    final DocumentReference ref = _firestore.collection(Paths.usersPath).document(finalUser.uid);
+    final userUIDsChunked = userUIDs.chunk(10);
+
+    final users = <User>[];
+    for (final chunk in userUIDsChunked) {
+      final querySnapshot =
+          await usersCollection.where('uid', whereIn: chunk).get();
+
+      for (final DocumentSnapshot doc in querySnapshot.docs) {
+        users.add(User.fromFirestore(doc));
+      }
+    }
+
+    return right(UserDatabaseSuccess.usersLoadedSCS(users));
+  }
+
+  @override
+  Future<Either<DatabaseFailure, UserDatabaseSuccess>> saveDetailsFromUser(
+    User user,
+  ) async {
+    var finalUser = user;
+
+    final usersRef = _firestore.collection(Paths.usersPath).doc(finalUser.uid);
 
     final failureOrSuccess = await loadUser(finalUser.uid);
 
     User dbUser;
-    failureOrSuccess.fold((_) {}, (success) {
-      if (success is UserLoadedSCS) {
-        dbUser = success.user;
-      }
-    });
+    failureOrSuccess.fold(
+      (_) {},
+      (success) {
+        if (success is UserLoadedSCS) {
+          dbUser = success.user;
+        }
+      },
+    );
 
     if (dbUser != null) {
-      finalUser = dbUser;
-      finalUser.updatedAt = DateTime.now().millisecondsSinceEpoch;
+      finalUser = dbUser..updatedAt = DateTime.now().millisecondsSinceEpoch;
     }
 
-    final DocumentReference mapReference = _firestore.collection(Paths.usernameUidMapPath).document(finalUser.username);
+    final mapReference =
+        _firestore.collection(Paths.usernameUIDMapPath).doc(finalUser.username);
 
     await Future.wait([
       // map the uid to the username
-      mapReference.setData({'uid': finalUser.uid}, merge: true),
-      ref.setData(finalUser.toMap(), merge: true),
+      mapReference.set(
+        {'uid': finalUser.uid},
+        SetOptions(mergeFields: <FieldPath>[FieldPath.fromString('uid')]),
+      ),
+      usersRef.set(finalUser.toMap(), SetOptions(merge: true)),
     ]);
-    return right(DatabaseSuccess.userDetailsSavedSCS(finalUser));
+    return right(UserDatabaseSuccess.userDetailsSavedSCS(finalUser));
   }
 }

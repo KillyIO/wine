@@ -1,20 +1,23 @@
 import 'package:assorted_layout_widgets/assorted_layout_widgets.dart';
 import 'package:flutter/material.dart';
 
+/// @nodoc
 class WINEChapterTileAuthorUsername extends StatelessWidget {
-  final String authorUsername;
-
+  /// @nodoc
   const WINEChapterTileAuthorUsername({
     Key key,
     @required this.authorUsername,
   }) : super(key: key);
+
+  /// @nodoc
+  final String authorUsername;
 
   @override
   Widget build(BuildContext context) {
     if (authorUsername != null) {
       return TextOneLine(
         authorUsername,
-        style: TextStyle(
+        style: const TextStyle(
           color: Colors.black38,
           fontWeight: FontWeight.w400,
         ),

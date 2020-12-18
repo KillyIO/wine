@@ -9,6 +9,7 @@ part of 'sign_in_database_bloc.dart';
 
 T _$identity<T>(T value) => value;
 
+/// @nodoc
 class _$SignInDatabaseEventTearOff {
   const _$SignInDatabaseEventTearOff();
 
@@ -27,38 +28,41 @@ class _$SignInDatabaseEventTearOff {
   }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $SignInDatabaseEvent = _$SignInDatabaseEventTearOff();
 
+/// @nodoc
 mixin _$SignInDatabaseEvent {
   User get user;
 
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result signedInEVT(User user),
-    @required Result userDetailsSavedEVT(User user),
+  TResult when<TResult extends Object>({
+    @required TResult signedInEVT(User user),
+    @required TResult userDetailsSavedEVT(User user),
   });
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result signedInEVT(User user),
-    Result userDetailsSavedEVT(User user),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult signedInEVT(User user),
+    TResult userDetailsSavedEVT(User user),
+    @required TResult orElse(),
   });
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result signedInEVT(SignedInEVT value),
-    @required Result userDetailsSavedEVT(UserDetailsSavedEVT value),
+  TResult map<TResult extends Object>({
+    @required TResult signedInEVT(SignedInEVT value),
+    @required TResult userDetailsSavedEVT(UserDetailsSavedEVT value),
   });
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result signedInEVT(SignedInEVT value),
-    Result userDetailsSavedEVT(UserDetailsSavedEVT value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult signedInEVT(SignedInEVT value),
+    TResult userDetailsSavedEVT(UserDetailsSavedEVT value),
+    @required TResult orElse(),
   });
 
   $SignInDatabaseEventCopyWith<SignInDatabaseEvent> get copyWith;
 }
 
+/// @nodoc
 abstract class $SignInDatabaseEventCopyWith<$Res> {
   factory $SignInDatabaseEventCopyWith(
           SignInDatabaseEvent value, $Res Function(SignInDatabaseEvent) then) =
@@ -66,6 +70,7 @@ abstract class $SignInDatabaseEventCopyWith<$Res> {
   $Res call({User user});
 }
 
+/// @nodoc
 class _$SignInDatabaseEventCopyWithImpl<$Res>
     implements $SignInDatabaseEventCopyWith<$Res> {
   _$SignInDatabaseEventCopyWithImpl(this._value, this._then);
@@ -84,6 +89,7 @@ class _$SignInDatabaseEventCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 abstract class $SignedInEVTCopyWith<$Res>
     implements $SignInDatabaseEventCopyWith<$Res> {
   factory $SignedInEVTCopyWith(
@@ -93,6 +99,7 @@ abstract class $SignedInEVTCopyWith<$Res>
   $Res call({User user});
 }
 
+/// @nodoc
 class _$SignedInEVTCopyWithImpl<$Res>
     extends _$SignInDatabaseEventCopyWithImpl<$Res>
     implements $SignedInEVTCopyWith<$Res> {
@@ -113,6 +120,7 @@ class _$SignedInEVTCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$SignedInEVT implements SignedInEVT {
   const _$SignedInEVT(this.user) : assert(user != null);
 
@@ -142,9 +150,9 @@ class _$SignedInEVT implements SignedInEVT {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result signedInEVT(User user),
-    @required Result userDetailsSavedEVT(User user),
+  TResult when<TResult extends Object>({
+    @required TResult signedInEVT(User user),
+    @required TResult userDetailsSavedEVT(User user),
   }) {
     assert(signedInEVT != null);
     assert(userDetailsSavedEVT != null);
@@ -153,10 +161,10 @@ class _$SignedInEVT implements SignedInEVT {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result signedInEVT(User user),
-    Result userDetailsSavedEVT(User user),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult signedInEVT(User user),
+    TResult userDetailsSavedEVT(User user),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (signedInEVT != null) {
@@ -167,9 +175,9 @@ class _$SignedInEVT implements SignedInEVT {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result signedInEVT(SignedInEVT value),
-    @required Result userDetailsSavedEVT(UserDetailsSavedEVT value),
+  TResult map<TResult extends Object>({
+    @required TResult signedInEVT(SignedInEVT value),
+    @required TResult userDetailsSavedEVT(UserDetailsSavedEVT value),
   }) {
     assert(signedInEVT != null);
     assert(userDetailsSavedEVT != null);
@@ -178,10 +186,10 @@ class _$SignedInEVT implements SignedInEVT {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result signedInEVT(SignedInEVT value),
-    Result userDetailsSavedEVT(UserDetailsSavedEVT value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult signedInEVT(SignedInEVT value),
+    TResult userDetailsSavedEVT(UserDetailsSavedEVT value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (signedInEVT != null) {
@@ -200,6 +208,7 @@ abstract class SignedInEVT implements SignInDatabaseEvent {
   $SignedInEVTCopyWith<SignedInEVT> get copyWith;
 }
 
+/// @nodoc
 abstract class $UserDetailsSavedEVTCopyWith<$Res>
     implements $SignInDatabaseEventCopyWith<$Res> {
   factory $UserDetailsSavedEVTCopyWith(
@@ -209,6 +218,7 @@ abstract class $UserDetailsSavedEVTCopyWith<$Res>
   $Res call({User user});
 }
 
+/// @nodoc
 class _$UserDetailsSavedEVTCopyWithImpl<$Res>
     extends _$SignInDatabaseEventCopyWithImpl<$Res>
     implements $UserDetailsSavedEVTCopyWith<$Res> {
@@ -229,6 +239,7 @@ class _$UserDetailsSavedEVTCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$UserDetailsSavedEVT implements UserDetailsSavedEVT {
   const _$UserDetailsSavedEVT(this.user) : assert(user != null);
 
@@ -258,9 +269,9 @@ class _$UserDetailsSavedEVT implements UserDetailsSavedEVT {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result signedInEVT(User user),
-    @required Result userDetailsSavedEVT(User user),
+  TResult when<TResult extends Object>({
+    @required TResult signedInEVT(User user),
+    @required TResult userDetailsSavedEVT(User user),
   }) {
     assert(signedInEVT != null);
     assert(userDetailsSavedEVT != null);
@@ -269,10 +280,10 @@ class _$UserDetailsSavedEVT implements UserDetailsSavedEVT {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result signedInEVT(User user),
-    Result userDetailsSavedEVT(User user),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult signedInEVT(User user),
+    TResult userDetailsSavedEVT(User user),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (userDetailsSavedEVT != null) {
@@ -283,9 +294,9 @@ class _$UserDetailsSavedEVT implements UserDetailsSavedEVT {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result signedInEVT(SignedInEVT value),
-    @required Result userDetailsSavedEVT(UserDetailsSavedEVT value),
+  TResult map<TResult extends Object>({
+    @required TResult signedInEVT(SignedInEVT value),
+    @required TResult userDetailsSavedEVT(UserDetailsSavedEVT value),
   }) {
     assert(signedInEVT != null);
     assert(userDetailsSavedEVT != null);
@@ -294,10 +305,10 @@ class _$UserDetailsSavedEVT implements UserDetailsSavedEVT {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result signedInEVT(SignedInEVT value),
-    Result userDetailsSavedEVT(UserDetailsSavedEVT value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult signedInEVT(SignedInEVT value),
+    TResult userDetailsSavedEVT(UserDetailsSavedEVT value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (userDetailsSavedEVT != null) {
@@ -316,6 +327,7 @@ abstract class UserDetailsSavedEVT implements SignInDatabaseEvent {
   $UserDetailsSavedEVTCopyWith<UserDetailsSavedEVT> get copyWith;
 }
 
+/// @nodoc
 class _$SignInDatabaseStateTearOff {
   const _$SignInDatabaseStateTearOff();
 
@@ -324,36 +336,49 @@ class _$SignInDatabaseStateTearOff {
       {@required
           bool isUpdating,
       @required
-          Option<Either<DatabaseFailure, DatabaseSuccess>>
-              databaseFailureOrSuccessOption}) {
+          Option<Either<DatabaseFailure, SessionDatabaseSuccess>>
+              sessionDatabaseFailureOrSuccessOption,
+      @required
+          Option<Either<DatabaseFailure, UserDatabaseSuccess>>
+              userDatabaseFailureOrSuccessOption}) {
     return _SignInDatabaseState(
       isUpdating: isUpdating,
-      databaseFailureOrSuccessOption: databaseFailureOrSuccessOption,
+      sessionDatabaseFailureOrSuccessOption:
+          sessionDatabaseFailureOrSuccessOption,
+      userDatabaseFailureOrSuccessOption: userDatabaseFailureOrSuccessOption,
     );
   }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $SignInDatabaseState = _$SignInDatabaseStateTearOff();
 
+/// @nodoc
 mixin _$SignInDatabaseState {
   bool get isUpdating;
-  Option<Either<DatabaseFailure, DatabaseSuccess>>
-      get databaseFailureOrSuccessOption;
+  Option<Either<DatabaseFailure, SessionDatabaseSuccess>>
+      get sessionDatabaseFailureOrSuccessOption;
+  Option<Either<DatabaseFailure, UserDatabaseSuccess>>
+      get userDatabaseFailureOrSuccessOption;
 
   $SignInDatabaseStateCopyWith<SignInDatabaseState> get copyWith;
 }
 
+/// @nodoc
 abstract class $SignInDatabaseStateCopyWith<$Res> {
   factory $SignInDatabaseStateCopyWith(
           SignInDatabaseState value, $Res Function(SignInDatabaseState) then) =
       _$SignInDatabaseStateCopyWithImpl<$Res>;
   $Res call(
       {bool isUpdating,
-      Option<Either<DatabaseFailure, DatabaseSuccess>>
-          databaseFailureOrSuccessOption});
+      Option<Either<DatabaseFailure, SessionDatabaseSuccess>>
+          sessionDatabaseFailureOrSuccessOption,
+      Option<Either<DatabaseFailure, UserDatabaseSuccess>>
+          userDatabaseFailureOrSuccessOption});
 }
 
+/// @nodoc
 class _$SignInDatabaseStateCopyWithImpl<$Res>
     implements $SignInDatabaseStateCopyWith<$Res> {
   _$SignInDatabaseStateCopyWithImpl(this._value, this._then);
@@ -365,19 +390,27 @@ class _$SignInDatabaseStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object isUpdating = freezed,
-    Object databaseFailureOrSuccessOption = freezed,
+    Object sessionDatabaseFailureOrSuccessOption = freezed,
+    Object userDatabaseFailureOrSuccessOption = freezed,
   }) {
     return _then(_value.copyWith(
       isUpdating:
           isUpdating == freezed ? _value.isUpdating : isUpdating as bool,
-      databaseFailureOrSuccessOption: databaseFailureOrSuccessOption == freezed
-          ? _value.databaseFailureOrSuccessOption
-          : databaseFailureOrSuccessOption
-              as Option<Either<DatabaseFailure, DatabaseSuccess>>,
+      sessionDatabaseFailureOrSuccessOption:
+          sessionDatabaseFailureOrSuccessOption == freezed
+              ? _value.sessionDatabaseFailureOrSuccessOption
+              : sessionDatabaseFailureOrSuccessOption
+                  as Option<Either<DatabaseFailure, SessionDatabaseSuccess>>,
+      userDatabaseFailureOrSuccessOption:
+          userDatabaseFailureOrSuccessOption == freezed
+              ? _value.userDatabaseFailureOrSuccessOption
+              : userDatabaseFailureOrSuccessOption
+                  as Option<Either<DatabaseFailure, UserDatabaseSuccess>>,
     ));
   }
 }
 
+/// @nodoc
 abstract class _$SignInDatabaseStateCopyWith<$Res>
     implements $SignInDatabaseStateCopyWith<$Res> {
   factory _$SignInDatabaseStateCopyWith(_SignInDatabaseState value,
@@ -386,10 +419,13 @@ abstract class _$SignInDatabaseStateCopyWith<$Res>
   @override
   $Res call(
       {bool isUpdating,
-      Option<Either<DatabaseFailure, DatabaseSuccess>>
-          databaseFailureOrSuccessOption});
+      Option<Either<DatabaseFailure, SessionDatabaseSuccess>>
+          sessionDatabaseFailureOrSuccessOption,
+      Option<Either<DatabaseFailure, UserDatabaseSuccess>>
+          userDatabaseFailureOrSuccessOption});
 }
 
+/// @nodoc
 class __$SignInDatabaseStateCopyWithImpl<$Res>
     extends _$SignInDatabaseStateCopyWithImpl<$Res>
     implements _$SignInDatabaseStateCopyWith<$Res> {
@@ -403,35 +439,48 @@ class __$SignInDatabaseStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object isUpdating = freezed,
-    Object databaseFailureOrSuccessOption = freezed,
+    Object sessionDatabaseFailureOrSuccessOption = freezed,
+    Object userDatabaseFailureOrSuccessOption = freezed,
   }) {
     return _then(_SignInDatabaseState(
       isUpdating:
           isUpdating == freezed ? _value.isUpdating : isUpdating as bool,
-      databaseFailureOrSuccessOption: databaseFailureOrSuccessOption == freezed
-          ? _value.databaseFailureOrSuccessOption
-          : databaseFailureOrSuccessOption
-              as Option<Either<DatabaseFailure, DatabaseSuccess>>,
+      sessionDatabaseFailureOrSuccessOption:
+          sessionDatabaseFailureOrSuccessOption == freezed
+              ? _value.sessionDatabaseFailureOrSuccessOption
+              : sessionDatabaseFailureOrSuccessOption
+                  as Option<Either<DatabaseFailure, SessionDatabaseSuccess>>,
+      userDatabaseFailureOrSuccessOption:
+          userDatabaseFailureOrSuccessOption == freezed
+              ? _value.userDatabaseFailureOrSuccessOption
+              : userDatabaseFailureOrSuccessOption
+                  as Option<Either<DatabaseFailure, UserDatabaseSuccess>>,
     ));
   }
 }
 
+/// @nodoc
 class _$_SignInDatabaseState implements _SignInDatabaseState {
   const _$_SignInDatabaseState(
       {@required this.isUpdating,
-      @required this.databaseFailureOrSuccessOption})
+      @required this.sessionDatabaseFailureOrSuccessOption,
+      @required this.userDatabaseFailureOrSuccessOption})
       : assert(isUpdating != null),
-        assert(databaseFailureOrSuccessOption != null);
+        assert(sessionDatabaseFailureOrSuccessOption != null),
+        assert(userDatabaseFailureOrSuccessOption != null);
 
   @override
   final bool isUpdating;
   @override
-  final Option<Either<DatabaseFailure, DatabaseSuccess>>
-      databaseFailureOrSuccessOption;
+  final Option<Either<DatabaseFailure, SessionDatabaseSuccess>>
+      sessionDatabaseFailureOrSuccessOption;
+  @override
+  final Option<Either<DatabaseFailure, UserDatabaseSuccess>>
+      userDatabaseFailureOrSuccessOption;
 
   @override
   String toString() {
-    return 'SignInDatabaseState(isUpdating: $isUpdating, databaseFailureOrSuccessOption: $databaseFailureOrSuccessOption)';
+    return 'SignInDatabaseState(isUpdating: $isUpdating, sessionDatabaseFailureOrSuccessOption: $sessionDatabaseFailureOrSuccessOption, userDatabaseFailureOrSuccessOption: $userDatabaseFailureOrSuccessOption)';
   }
 
   @override
@@ -441,18 +490,25 @@ class _$_SignInDatabaseState implements _SignInDatabaseState {
             (identical(other.isUpdating, isUpdating) ||
                 const DeepCollectionEquality()
                     .equals(other.isUpdating, isUpdating)) &&
-            (identical(other.databaseFailureOrSuccessOption,
-                    databaseFailureOrSuccessOption) ||
+            (identical(other.sessionDatabaseFailureOrSuccessOption,
+                    sessionDatabaseFailureOrSuccessOption) ||
                 const DeepCollectionEquality().equals(
-                    other.databaseFailureOrSuccessOption,
-                    databaseFailureOrSuccessOption)));
+                    other.sessionDatabaseFailureOrSuccessOption,
+                    sessionDatabaseFailureOrSuccessOption)) &&
+            (identical(other.userDatabaseFailureOrSuccessOption,
+                    userDatabaseFailureOrSuccessOption) ||
+                const DeepCollectionEquality().equals(
+                    other.userDatabaseFailureOrSuccessOption,
+                    userDatabaseFailureOrSuccessOption)));
   }
 
   @override
   int get hashCode =>
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(isUpdating) ^
-      const DeepCollectionEquality().hash(databaseFailureOrSuccessOption);
+      const DeepCollectionEquality()
+          .hash(sessionDatabaseFailureOrSuccessOption) ^
+      const DeepCollectionEquality().hash(userDatabaseFailureOrSuccessOption);
 
   @override
   _$SignInDatabaseStateCopyWith<_SignInDatabaseState> get copyWith =>
@@ -465,14 +521,20 @@ abstract class _SignInDatabaseState implements SignInDatabaseState {
       {@required
           bool isUpdating,
       @required
-          Option<Either<DatabaseFailure, DatabaseSuccess>>
-              databaseFailureOrSuccessOption}) = _$_SignInDatabaseState;
+          Option<Either<DatabaseFailure, SessionDatabaseSuccess>>
+              sessionDatabaseFailureOrSuccessOption,
+      @required
+          Option<Either<DatabaseFailure, UserDatabaseSuccess>>
+              userDatabaseFailureOrSuccessOption}) = _$_SignInDatabaseState;
 
   @override
   bool get isUpdating;
   @override
-  Option<Either<DatabaseFailure, DatabaseSuccess>>
-      get databaseFailureOrSuccessOption;
+  Option<Either<DatabaseFailure, SessionDatabaseSuccess>>
+      get sessionDatabaseFailureOrSuccessOption;
+  @override
+  Option<Either<DatabaseFailure, UserDatabaseSuccess>>
+      get userDatabaseFailureOrSuccessOption;
   @override
   _$SignInDatabaseStateCopyWith<_SignInDatabaseState> get copyWith;
 }

@@ -1,12 +1,8 @@
 import 'package:flutter/material.dart';
 
+/// @nodoc
 class WINEStatsButton extends StatelessWidget {
-  final IconData icon;
-  final Color iconColor;
-  final double iconSize;
-  final String statsCount;
-  final double statsSize;
-
+  /// @nodoc
   const WINEStatsButton({
     Key key,
     @required this.icon,
@@ -16,6 +12,21 @@ class WINEStatsButton extends StatelessWidget {
     this.statsSize,
   }) : super(key: key);
 
+  /// @nodoc
+  final IconData icon;
+
+  /// @nodoc
+  final Color iconColor;
+
+  /// @nodoc
+  final double iconSize;
+
+  /// @nodoc
+  final String statsCount;
+
+  /// @nodoc
+  final double statsSize;
+
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -23,7 +34,13 @@ class WINEStatsButton extends StatelessWidget {
       children: <Widget>[
         Icon(icon, color: iconColor, size: iconSize),
         const SizedBox(width: 5),
-        Text(statsCount, style: TextStyle(color: iconColor, fontSize: statsSize)),
+        Text(
+          statsCount,
+          style: TextStyle(
+            color: iconColor,
+            fontSize: statsSize,
+          ),
+        ),
       ],
     );
   }

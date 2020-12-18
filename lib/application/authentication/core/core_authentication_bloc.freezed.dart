@@ -9,6 +9,7 @@ part of 'core_authentication_bloc.dart';
 
 T _$identity<T>(T value) => value;
 
+/// @nodoc
 class _$CoreAuthenticationEventTearOff {
   const _$CoreAuthenticationEventTearOff();
 
@@ -23,40 +24,44 @@ class _$CoreAuthenticationEventTearOff {
   }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $CoreAuthenticationEvent = _$CoreAuthenticationEventTearOff();
 
+/// @nodoc
 mixin _$CoreAuthenticationEvent {
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result appLaunchedEVT(),
-    @required Result userStatusChangedEVT(),
+  TResult when<TResult extends Object>({
+    @required TResult appLaunchedEVT(),
+    @required TResult userStatusChangedEVT(),
   });
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result appLaunchedEVT(),
-    Result userStatusChangedEVT(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult appLaunchedEVT(),
+    TResult userStatusChangedEVT(),
+    @required TResult orElse(),
   });
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result appLaunchedEVT(AppLaunchedEVT value),
-    @required Result userStatusChangedEVT(UserStatusChangedEVT value),
+  TResult map<TResult extends Object>({
+    @required TResult appLaunchedEVT(AppLaunchedEVT value),
+    @required TResult userStatusChangedEVT(UserStatusChangedEVT value),
   });
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result appLaunchedEVT(AppLaunchedEVT value),
-    Result userStatusChangedEVT(UserStatusChangedEVT value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult appLaunchedEVT(AppLaunchedEVT value),
+    TResult userStatusChangedEVT(UserStatusChangedEVT value),
+    @required TResult orElse(),
   });
 }
 
+/// @nodoc
 abstract class $CoreAuthenticationEventCopyWith<$Res> {
   factory $CoreAuthenticationEventCopyWith(CoreAuthenticationEvent value,
           $Res Function(CoreAuthenticationEvent) then) =
       _$CoreAuthenticationEventCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$CoreAuthenticationEventCopyWithImpl<$Res>
     implements $CoreAuthenticationEventCopyWith<$Res> {
   _$CoreAuthenticationEventCopyWithImpl(this._value, this._then);
@@ -66,12 +71,14 @@ class _$CoreAuthenticationEventCopyWithImpl<$Res>
   final $Res Function(CoreAuthenticationEvent) _then;
 }
 
+/// @nodoc
 abstract class $AppLaunchedEVTCopyWith<$Res> {
   factory $AppLaunchedEVTCopyWith(
           AppLaunchedEVT value, $Res Function(AppLaunchedEVT) then) =
       _$AppLaunchedEVTCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$AppLaunchedEVTCopyWithImpl<$Res>
     extends _$CoreAuthenticationEventCopyWithImpl<$Res>
     implements $AppLaunchedEVTCopyWith<$Res> {
@@ -83,6 +90,7 @@ class _$AppLaunchedEVTCopyWithImpl<$Res>
   AppLaunchedEVT get _value => super._value as AppLaunchedEVT;
 }
 
+/// @nodoc
 class _$AppLaunchedEVT implements AppLaunchedEVT {
   const _$AppLaunchedEVT();
 
@@ -101,9 +109,9 @@ class _$AppLaunchedEVT implements AppLaunchedEVT {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result appLaunchedEVT(),
-    @required Result userStatusChangedEVT(),
+  TResult when<TResult extends Object>({
+    @required TResult appLaunchedEVT(),
+    @required TResult userStatusChangedEVT(),
   }) {
     assert(appLaunchedEVT != null);
     assert(userStatusChangedEVT != null);
@@ -112,10 +120,10 @@ class _$AppLaunchedEVT implements AppLaunchedEVT {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result appLaunchedEVT(),
-    Result userStatusChangedEVT(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult appLaunchedEVT(),
+    TResult userStatusChangedEVT(),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (appLaunchedEVT != null) {
@@ -126,9 +134,9 @@ class _$AppLaunchedEVT implements AppLaunchedEVT {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result appLaunchedEVT(AppLaunchedEVT value),
-    @required Result userStatusChangedEVT(UserStatusChangedEVT value),
+  TResult map<TResult extends Object>({
+    @required TResult appLaunchedEVT(AppLaunchedEVT value),
+    @required TResult userStatusChangedEVT(UserStatusChangedEVT value),
   }) {
     assert(appLaunchedEVT != null);
     assert(userStatusChangedEVT != null);
@@ -137,10 +145,10 @@ class _$AppLaunchedEVT implements AppLaunchedEVT {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result appLaunchedEVT(AppLaunchedEVT value),
-    Result userStatusChangedEVT(UserStatusChangedEVT value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult appLaunchedEVT(AppLaunchedEVT value),
+    TResult userStatusChangedEVT(UserStatusChangedEVT value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (appLaunchedEVT != null) {
@@ -154,12 +162,14 @@ abstract class AppLaunchedEVT implements CoreAuthenticationEvent {
   const factory AppLaunchedEVT() = _$AppLaunchedEVT;
 }
 
+/// @nodoc
 abstract class $UserStatusChangedEVTCopyWith<$Res> {
   factory $UserStatusChangedEVTCopyWith(UserStatusChangedEVT value,
           $Res Function(UserStatusChangedEVT) then) =
       _$UserStatusChangedEVTCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$UserStatusChangedEVTCopyWithImpl<$Res>
     extends _$CoreAuthenticationEventCopyWithImpl<$Res>
     implements $UserStatusChangedEVTCopyWith<$Res> {
@@ -171,6 +181,7 @@ class _$UserStatusChangedEVTCopyWithImpl<$Res>
   UserStatusChangedEVT get _value => super._value as UserStatusChangedEVT;
 }
 
+/// @nodoc
 class _$UserStatusChangedEVT implements UserStatusChangedEVT {
   const _$UserStatusChangedEVT();
 
@@ -189,9 +200,9 @@ class _$UserStatusChangedEVT implements UserStatusChangedEVT {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result appLaunchedEVT(),
-    @required Result userStatusChangedEVT(),
+  TResult when<TResult extends Object>({
+    @required TResult appLaunchedEVT(),
+    @required TResult userStatusChangedEVT(),
   }) {
     assert(appLaunchedEVT != null);
     assert(userStatusChangedEVT != null);
@@ -200,10 +211,10 @@ class _$UserStatusChangedEVT implements UserStatusChangedEVT {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result appLaunchedEVT(),
-    Result userStatusChangedEVT(),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult appLaunchedEVT(),
+    TResult userStatusChangedEVT(),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (userStatusChangedEVT != null) {
@@ -214,9 +225,9 @@ class _$UserStatusChangedEVT implements UserStatusChangedEVT {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result appLaunchedEVT(AppLaunchedEVT value),
-    @required Result userStatusChangedEVT(UserStatusChangedEVT value),
+  TResult map<TResult extends Object>({
+    @required TResult appLaunchedEVT(AppLaunchedEVT value),
+    @required TResult userStatusChangedEVT(UserStatusChangedEVT value),
   }) {
     assert(appLaunchedEVT != null);
     assert(userStatusChangedEVT != null);
@@ -225,10 +236,10 @@ class _$UserStatusChangedEVT implements UserStatusChangedEVT {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result appLaunchedEVT(AppLaunchedEVT value),
-    Result userStatusChangedEVT(UserStatusChangedEVT value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult appLaunchedEVT(AppLaunchedEVT value),
+    TResult userStatusChangedEVT(UserStatusChangedEVT value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (userStatusChangedEVT != null) {
@@ -242,6 +253,7 @@ abstract class UserStatusChangedEVT implements CoreAuthenticationEvent {
   const factory UserStatusChangedEVT() = _$UserStatusChangedEVT;
 }
 
+/// @nodoc
 class _$CoreAuthenticationStateTearOff {
   const _$CoreAuthenticationStateTearOff();
 
@@ -253,15 +265,18 @@ class _$CoreAuthenticationStateTearOff {
   }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $CoreAuthenticationState = _$CoreAuthenticationStateTearOff();
 
+/// @nodoc
 mixin _$CoreAuthenticationState {
   bool get isAnonymous;
 
   $CoreAuthenticationStateCopyWith<CoreAuthenticationState> get copyWith;
 }
 
+/// @nodoc
 abstract class $CoreAuthenticationStateCopyWith<$Res> {
   factory $CoreAuthenticationStateCopyWith(CoreAuthenticationState value,
           $Res Function(CoreAuthenticationState) then) =
@@ -269,6 +284,7 @@ abstract class $CoreAuthenticationStateCopyWith<$Res> {
   $Res call({bool isAnonymous});
 }
 
+/// @nodoc
 class _$CoreAuthenticationStateCopyWithImpl<$Res>
     implements $CoreAuthenticationStateCopyWith<$Res> {
   _$CoreAuthenticationStateCopyWithImpl(this._value, this._then);
@@ -288,6 +304,7 @@ class _$CoreAuthenticationStateCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 abstract class _$CoreAuthenticationStateCopyWith<$Res>
     implements $CoreAuthenticationStateCopyWith<$Res> {
   factory _$CoreAuthenticationStateCopyWith(_CoreAuthenticationState value,
@@ -297,6 +314,7 @@ abstract class _$CoreAuthenticationStateCopyWith<$Res>
   $Res call({bool isAnonymous});
 }
 
+/// @nodoc
 class __$CoreAuthenticationStateCopyWithImpl<$Res>
     extends _$CoreAuthenticationStateCopyWithImpl<$Res>
     implements _$CoreAuthenticationStateCopyWith<$Res> {
@@ -319,6 +337,7 @@ class __$CoreAuthenticationStateCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$_CoreAuthenticationState implements _CoreAuthenticationState {
   const _$_CoreAuthenticationState({@required this.isAnonymous})
       : assert(isAnonymous != null);
