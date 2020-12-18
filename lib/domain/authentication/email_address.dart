@@ -3,10 +3,9 @@ import 'package:wine/domain/core/failures.dart';
 import 'package:wine/domain/core/value_objects.dart';
 import 'package:wine/domain/core/value_validators.dart';
 
+/// @nodoc
 class EmailAddress extends ValueObject<String> {
-  @override
-  final Either<ValueFailure<String>, String> value;
-
+  /// @nodoc
   factory EmailAddress(String input) {
     assert(input != null);
     return EmailAddress._(
@@ -15,5 +14,9 @@ class EmailAddress extends ValueObject<String> {
   }
 
   // NOTE private contructor
+  /// @nodoc
   const EmailAddress._(this.value);
+
+  @override
+  final Either<ValueFailure<String>, String> value;
 }

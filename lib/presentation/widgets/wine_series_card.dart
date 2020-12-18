@@ -1,23 +1,17 @@
+import 'dart:io';
 import 'package:assorted_layout_widgets/assorted_layout_widgets.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:wine/utils/extensions.dart';
 
+/// @nodoc
 class WINESeriesCard extends StatelessWidget {
-  final String uid;
-  final String title;
-  final String coverUrl;
-  final String authorUsername;
-  final double height;
-  final double width;
-  final double titleFontSize;
-  final double authorUsernameFontSize;
-  final VoidCallback onPressed;
-
+  /// @nodoc
   const WINESeriesCard({
     Key key,
     @required this.uid,
     @required this.title,
-    @required this.coverUrl,
+    @required this.coverURL,
     @required this.authorUsername,
     this.height = 100,
     this.width = 50,
@@ -25,6 +19,33 @@ class WINESeriesCard extends StatelessWidget {
     this.authorUsernameFontSize = 10,
     @required this.onPressed,
   }) : super(key: key);
+
+  /// @nodoc
+  final String uid;
+
+  /// @nodoc
+  final String title;
+
+  /// @nodoc
+  final String coverURL;
+
+  /// @nodoc
+  final String authorUsername;
+
+  /// @nodoc
+  final double height;
+
+  /// @nodoc
+  final double width;
+
+  /// @nodoc
+  final double titleFontSize;
+
+  /// @nodoc
+  final double authorUsernameFontSize;
+
+  /// @nodoc
+  final VoidCallback onPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -52,10 +73,12 @@ class WINESeriesCard extends StatelessWidget {
                 borderRadius: BorderRadius.circular(6.0),
                 child: Hero(
                   tag: uid,
-                  child: CachedNetworkImage(
-                    fit: BoxFit.contain,
-                    imageUrl: coverUrl,
-                  ),
+                  child: coverURL.isURL
+                      ? CachedNetworkImage(
+                          fit: BoxFit.contain,
+                          imageUrl: coverURL,
+                        )
+                      : Image.file(File(coverURL)),
                 ),
               ),
             ),

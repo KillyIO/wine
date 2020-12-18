@@ -1,23 +1,47 @@
 part of 'series_database_bloc.dart';
 
+/// @nodoc
 @freezed
 abstract class SeriesDatabaseEvent with _$SeriesDatabaseEvent {
-  const factory SeriesDatabaseEvent.authorLoadedEVT() = AuthorLoadedEVT;
-  const factory SeriesDatabaseEvent.bookmarkButtonPressedEVT() = BookmarkButtonPressedEVT;
-  const factory SeriesDatabaseEvent.bookmarksUpdatedEVT() = BookmarksUpdatedEVT;
-  const factory SeriesDatabaseEvent.firstChapterMinifiedLoadedEVT() = FirstChapterMinifiedLoadedEVT;
-  const factory SeriesDatabaseEvent.likeButtonPressedEVT() = LikeButtonPressedEVT;
-  const factory SeriesDatabaseEvent.likesUpdatedEVT() = LikesUpdatedEVT;
-  const factory SeriesDatabaseEvent.seriesBookmarkStatusLoadedEVT() = SeriesBookmarkStatusLoadedEVT;
-  const factory SeriesDatabaseEvent.seriesLikesLoadedEVT() = SeriesLikesLoadedEVT;
-  const factory SeriesDatabaseEvent.seriesLikeStatusLoadedEVT() = SeriesLikeStatusLoadedEVT;
-  const factory SeriesDatabaseEvent.seriesLoadedEVT() = SeriesLoadedEVT;
-  const factory SeriesDatabaseEvent.seriesPageLaunchedEVT(
-    String seriesUid,
-    BuildContext context,
-  ) = SeriesPageLaunchedEVT;
-  const factory SeriesDatabaseEvent.seriesViewsLoadedEVT() = SeriesViewsLoadedEVT;
-  const factory SeriesDatabaseEvent.seriesViewsUpdatedEVT() = SeriesViewsUpdatedEVT;
-  const factory SeriesDatabaseEvent.sessionFetchedEVT(Session session) = SessionFetchedEVT;
-  const factory SeriesDatabaseEvent.showMoreSummaryButtonPressedEVT() = ShowMoreSummaryButtonPressedEVT;
+  /// @nodoc
+  const factory SeriesDatabaseEvent.bookmarkButtonPressedEVT() =
+      BookmarkButtonPressedEVT;
+
+  /// @nodoc
+  const factory SeriesDatabaseEvent.configFetchedEVT() = ConfigFetchedEVT;
+
+  /// @nodoc
+  const factory SeriesDatabaseEvent.firstChapterLoadedEVT() =
+      FirstChapterLoadedEVT;
+
+  /// @nodoc
+  const factory SeriesDatabaseEvent.likeButtonPressedEVT() =
+      LikeButtonPressedEVT;
+
+  /// @nodoc
+  const factory SeriesDatabaseEvent.seriesBookmarksLoadedEVT() =
+      SeriesBookmarksLoadedEVT;
+
+  /// @nodoc
+  const factory SeriesDatabaseEvent.seriesLikesLoadedEVT() =
+      SeriesLikesLoadedEVT;
+
+  /// @nodoc
+  const factory SeriesDatabaseEvent.seriesLikeStatusLoadedEVT() =
+      SeriesLikeStatusLoadedEVT;
+
+  /// @nodoc
+  const factory SeriesDatabaseEvent.seriesLaunchedEVT(Series series) =
+      SeriesLaunchedEVT;
+
+  /// @nodoc
+  const factory SeriesDatabaseEvent.seriesViewsLoadedEVT() =
+      SeriesViewsLoadedEVT;
+
+  /// @nodoc
+  const factory SeriesDatabaseEvent.seriesViewsUpdatedEVT() =
+      SeriesViewsUpdatedEVT;
+
+  /// @nodoc
+  const factory SeriesDatabaseEvent.sessionFetchedEVT() = SessionFetchedEVT;
 }

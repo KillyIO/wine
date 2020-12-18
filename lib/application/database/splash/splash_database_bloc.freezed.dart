@@ -9,6 +9,7 @@ part of 'splash_database_bloc.dart';
 
 T _$identity<T>(T value) => value;
 
+/// @nodoc
 class _$SplashDatabaseEventTearOff {
   const _$SplashDatabaseEventTearOff();
 
@@ -20,16 +21,21 @@ class _$SplashDatabaseEventTearOff {
   }
 
 // ignore: unused_element
+  ConfigFetchedEVT configFetchedEVT() {
+    return const ConfigFetchedEVT();
+  }
+
+// ignore: unused_element
+  PlaceholdersInitializedEVT placeholdersInitializedEVT() {
+    return const PlaceholdersInitializedEVT();
+  }
+
+// ignore: unused_element
   PlaceholdersLoadedEVT placeholdersLoadedEVT(
       Map<String, String> placeholders) {
     return PlaceholdersLoadedEVT(
       placeholders,
     );
-  }
-
-// ignore: unused_element
-  PlaceholdersSavedEVT placeholdersSavedEVT() {
-    return const PlaceholdersSavedEVT();
   }
 
 // ignore: unused_element
@@ -47,52 +53,61 @@ class _$SplashDatabaseEventTearOff {
   }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $SplashDatabaseEvent = _$SplashDatabaseEventTearOff();
 
+/// @nodoc
 mixin _$SplashDatabaseEvent {
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result authenticatedEVT(bool isAnonymous),
-    @required Result placeholdersLoadedEVT(Map<String, String> placeholders),
-    @required Result placeholdersSavedEVT(),
-    @required Result sessionFetchedEVT(Session session),
-    @required Result userLoadedEVT(User user),
+  TResult when<TResult extends Object>({
+    @required TResult authenticatedEVT(bool isAnonymous),
+    @required TResult configFetchedEVT(),
+    @required TResult placeholdersInitializedEVT(),
+    @required TResult placeholdersLoadedEVT(Map<String, String> placeholders),
+    @required TResult sessionFetchedEVT(Session session),
+    @required TResult userLoadedEVT(User user),
   });
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result authenticatedEVT(bool isAnonymous),
-    Result placeholdersLoadedEVT(Map<String, String> placeholders),
-    Result placeholdersSavedEVT(),
-    Result sessionFetchedEVT(Session session),
-    Result userLoadedEVT(User user),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult authenticatedEVT(bool isAnonymous),
+    TResult configFetchedEVT(),
+    TResult placeholdersInitializedEVT(),
+    TResult placeholdersLoadedEVT(Map<String, String> placeholders),
+    TResult sessionFetchedEVT(Session session),
+    TResult userLoadedEVT(User user),
+    @required TResult orElse(),
   });
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result authenticatedEVT(AuthenticatedEVT value),
-    @required Result placeholdersLoadedEVT(PlaceholdersLoadedEVT value),
-    @required Result placeholdersSavedEVT(PlaceholdersSavedEVT value),
-    @required Result sessionFetchedEVT(SessionFetchedEVT value),
-    @required Result userLoadedEVT(UserLoadedEVT value),
+  TResult map<TResult extends Object>({
+    @required TResult authenticatedEVT(AuthenticatedEVT value),
+    @required TResult configFetchedEVT(ConfigFetchedEVT value),
+    @required
+        TResult placeholdersInitializedEVT(PlaceholdersInitializedEVT value),
+    @required TResult placeholdersLoadedEVT(PlaceholdersLoadedEVT value),
+    @required TResult sessionFetchedEVT(SessionFetchedEVT value),
+    @required TResult userLoadedEVT(UserLoadedEVT value),
   });
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result authenticatedEVT(AuthenticatedEVT value),
-    Result placeholdersLoadedEVT(PlaceholdersLoadedEVT value),
-    Result placeholdersSavedEVT(PlaceholdersSavedEVT value),
-    Result sessionFetchedEVT(SessionFetchedEVT value),
-    Result userLoadedEVT(UserLoadedEVT value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult authenticatedEVT(AuthenticatedEVT value),
+    TResult configFetchedEVT(ConfigFetchedEVT value),
+    TResult placeholdersInitializedEVT(PlaceholdersInitializedEVT value),
+    TResult placeholdersLoadedEVT(PlaceholdersLoadedEVT value),
+    TResult sessionFetchedEVT(SessionFetchedEVT value),
+    TResult userLoadedEVT(UserLoadedEVT value),
+    @required TResult orElse(),
   });
 }
 
+/// @nodoc
 abstract class $SplashDatabaseEventCopyWith<$Res> {
   factory $SplashDatabaseEventCopyWith(
           SplashDatabaseEvent value, $Res Function(SplashDatabaseEvent) then) =
       _$SplashDatabaseEventCopyWithImpl<$Res>;
 }
 
+/// @nodoc
 class _$SplashDatabaseEventCopyWithImpl<$Res>
     implements $SplashDatabaseEventCopyWith<$Res> {
   _$SplashDatabaseEventCopyWithImpl(this._value, this._then);
@@ -102,6 +117,7 @@ class _$SplashDatabaseEventCopyWithImpl<$Res>
   final $Res Function(SplashDatabaseEvent) _then;
 }
 
+/// @nodoc
 abstract class $AuthenticatedEVTCopyWith<$Res> {
   factory $AuthenticatedEVTCopyWith(
           AuthenticatedEVT value, $Res Function(AuthenticatedEVT) then) =
@@ -109,6 +125,7 @@ abstract class $AuthenticatedEVTCopyWith<$Res> {
   $Res call({bool isAnonymous});
 }
 
+/// @nodoc
 class _$AuthenticatedEVTCopyWithImpl<$Res>
     extends _$SplashDatabaseEventCopyWithImpl<$Res>
     implements $AuthenticatedEVTCopyWith<$Res> {
@@ -130,6 +147,7 @@ class _$AuthenticatedEVTCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$AuthenticatedEVT implements AuthenticatedEVT {
   const _$AuthenticatedEVT({@required this.isAnonymous})
       : assert(isAnonymous != null);
@@ -161,16 +179,18 @@ class _$AuthenticatedEVT implements AuthenticatedEVT {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result authenticatedEVT(bool isAnonymous),
-    @required Result placeholdersLoadedEVT(Map<String, String> placeholders),
-    @required Result placeholdersSavedEVT(),
-    @required Result sessionFetchedEVT(Session session),
-    @required Result userLoadedEVT(User user),
+  TResult when<TResult extends Object>({
+    @required TResult authenticatedEVT(bool isAnonymous),
+    @required TResult configFetchedEVT(),
+    @required TResult placeholdersInitializedEVT(),
+    @required TResult placeholdersLoadedEVT(Map<String, String> placeholders),
+    @required TResult sessionFetchedEVT(Session session),
+    @required TResult userLoadedEVT(User user),
   }) {
     assert(authenticatedEVT != null);
+    assert(configFetchedEVT != null);
+    assert(placeholdersInitializedEVT != null);
     assert(placeholdersLoadedEVT != null);
-    assert(placeholdersSavedEVT != null);
     assert(sessionFetchedEVT != null);
     assert(userLoadedEVT != null);
     return authenticatedEVT(isAnonymous);
@@ -178,13 +198,14 @@ class _$AuthenticatedEVT implements AuthenticatedEVT {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result authenticatedEVT(bool isAnonymous),
-    Result placeholdersLoadedEVT(Map<String, String> placeholders),
-    Result placeholdersSavedEVT(),
-    Result sessionFetchedEVT(Session session),
-    Result userLoadedEVT(User user),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult authenticatedEVT(bool isAnonymous),
+    TResult configFetchedEVT(),
+    TResult placeholdersInitializedEVT(),
+    TResult placeholdersLoadedEVT(Map<String, String> placeholders),
+    TResult sessionFetchedEVT(Session session),
+    TResult userLoadedEVT(User user),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (authenticatedEVT != null) {
@@ -195,16 +216,19 @@ class _$AuthenticatedEVT implements AuthenticatedEVT {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result authenticatedEVT(AuthenticatedEVT value),
-    @required Result placeholdersLoadedEVT(PlaceholdersLoadedEVT value),
-    @required Result placeholdersSavedEVT(PlaceholdersSavedEVT value),
-    @required Result sessionFetchedEVT(SessionFetchedEVT value),
-    @required Result userLoadedEVT(UserLoadedEVT value),
+  TResult map<TResult extends Object>({
+    @required TResult authenticatedEVT(AuthenticatedEVT value),
+    @required TResult configFetchedEVT(ConfigFetchedEVT value),
+    @required
+        TResult placeholdersInitializedEVT(PlaceholdersInitializedEVT value),
+    @required TResult placeholdersLoadedEVT(PlaceholdersLoadedEVT value),
+    @required TResult sessionFetchedEVT(SessionFetchedEVT value),
+    @required TResult userLoadedEVT(UserLoadedEVT value),
   }) {
     assert(authenticatedEVT != null);
+    assert(configFetchedEVT != null);
+    assert(placeholdersInitializedEVT != null);
     assert(placeholdersLoadedEVT != null);
-    assert(placeholdersSavedEVT != null);
     assert(sessionFetchedEVT != null);
     assert(userLoadedEVT != null);
     return authenticatedEVT(this);
@@ -212,13 +236,14 @@ class _$AuthenticatedEVT implements AuthenticatedEVT {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result authenticatedEVT(AuthenticatedEVT value),
-    Result placeholdersLoadedEVT(PlaceholdersLoadedEVT value),
-    Result placeholdersSavedEVT(PlaceholdersSavedEVT value),
-    Result sessionFetchedEVT(SessionFetchedEVT value),
-    Result userLoadedEVT(UserLoadedEVT value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult authenticatedEVT(AuthenticatedEVT value),
+    TResult configFetchedEVT(ConfigFetchedEVT value),
+    TResult placeholdersInitializedEVT(PlaceholdersInitializedEVT value),
+    TResult placeholdersLoadedEVT(PlaceholdersLoadedEVT value),
+    TResult sessionFetchedEVT(SessionFetchedEVT value),
+    TResult userLoadedEVT(UserLoadedEVT value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (authenticatedEVT != null) {
@@ -236,6 +261,240 @@ abstract class AuthenticatedEVT implements SplashDatabaseEvent {
   $AuthenticatedEVTCopyWith<AuthenticatedEVT> get copyWith;
 }
 
+/// @nodoc
+abstract class $ConfigFetchedEVTCopyWith<$Res> {
+  factory $ConfigFetchedEVTCopyWith(
+          ConfigFetchedEVT value, $Res Function(ConfigFetchedEVT) then) =
+      _$ConfigFetchedEVTCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$ConfigFetchedEVTCopyWithImpl<$Res>
+    extends _$SplashDatabaseEventCopyWithImpl<$Res>
+    implements $ConfigFetchedEVTCopyWith<$Res> {
+  _$ConfigFetchedEVTCopyWithImpl(
+      ConfigFetchedEVT _value, $Res Function(ConfigFetchedEVT) _then)
+      : super(_value, (v) => _then(v as ConfigFetchedEVT));
+
+  @override
+  ConfigFetchedEVT get _value => super._value as ConfigFetchedEVT;
+}
+
+/// @nodoc
+class _$ConfigFetchedEVT implements ConfigFetchedEVT {
+  const _$ConfigFetchedEVT();
+
+  @override
+  String toString() {
+    return 'SplashDatabaseEvent.configFetchedEVT()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is ConfigFetchedEVT);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object>({
+    @required TResult authenticatedEVT(bool isAnonymous),
+    @required TResult configFetchedEVT(),
+    @required TResult placeholdersInitializedEVT(),
+    @required TResult placeholdersLoadedEVT(Map<String, String> placeholders),
+    @required TResult sessionFetchedEVT(Session session),
+    @required TResult userLoadedEVT(User user),
+  }) {
+    assert(authenticatedEVT != null);
+    assert(configFetchedEVT != null);
+    assert(placeholdersInitializedEVT != null);
+    assert(placeholdersLoadedEVT != null);
+    assert(sessionFetchedEVT != null);
+    assert(userLoadedEVT != null);
+    return configFetchedEVT();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object>({
+    TResult authenticatedEVT(bool isAnonymous),
+    TResult configFetchedEVT(),
+    TResult placeholdersInitializedEVT(),
+    TResult placeholdersLoadedEVT(Map<String, String> placeholders),
+    TResult sessionFetchedEVT(Session session),
+    TResult userLoadedEVT(User user),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (configFetchedEVT != null) {
+      return configFetchedEVT();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object>({
+    @required TResult authenticatedEVT(AuthenticatedEVT value),
+    @required TResult configFetchedEVT(ConfigFetchedEVT value),
+    @required
+        TResult placeholdersInitializedEVT(PlaceholdersInitializedEVT value),
+    @required TResult placeholdersLoadedEVT(PlaceholdersLoadedEVT value),
+    @required TResult sessionFetchedEVT(SessionFetchedEVT value),
+    @required TResult userLoadedEVT(UserLoadedEVT value),
+  }) {
+    assert(authenticatedEVT != null);
+    assert(configFetchedEVT != null);
+    assert(placeholdersInitializedEVT != null);
+    assert(placeholdersLoadedEVT != null);
+    assert(sessionFetchedEVT != null);
+    assert(userLoadedEVT != null);
+    return configFetchedEVT(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object>({
+    TResult authenticatedEVT(AuthenticatedEVT value),
+    TResult configFetchedEVT(ConfigFetchedEVT value),
+    TResult placeholdersInitializedEVT(PlaceholdersInitializedEVT value),
+    TResult placeholdersLoadedEVT(PlaceholdersLoadedEVT value),
+    TResult sessionFetchedEVT(SessionFetchedEVT value),
+    TResult userLoadedEVT(UserLoadedEVT value),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (configFetchedEVT != null) {
+      return configFetchedEVT(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ConfigFetchedEVT implements SplashDatabaseEvent {
+  const factory ConfigFetchedEVT() = _$ConfigFetchedEVT;
+}
+
+/// @nodoc
+abstract class $PlaceholdersInitializedEVTCopyWith<$Res> {
+  factory $PlaceholdersInitializedEVTCopyWith(PlaceholdersInitializedEVT value,
+          $Res Function(PlaceholdersInitializedEVT) then) =
+      _$PlaceholdersInitializedEVTCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$PlaceholdersInitializedEVTCopyWithImpl<$Res>
+    extends _$SplashDatabaseEventCopyWithImpl<$Res>
+    implements $PlaceholdersInitializedEVTCopyWith<$Res> {
+  _$PlaceholdersInitializedEVTCopyWithImpl(PlaceholdersInitializedEVT _value,
+      $Res Function(PlaceholdersInitializedEVT) _then)
+      : super(_value, (v) => _then(v as PlaceholdersInitializedEVT));
+
+  @override
+  PlaceholdersInitializedEVT get _value =>
+      super._value as PlaceholdersInitializedEVT;
+}
+
+/// @nodoc
+class _$PlaceholdersInitializedEVT implements PlaceholdersInitializedEVT {
+  const _$PlaceholdersInitializedEVT();
+
+  @override
+  String toString() {
+    return 'SplashDatabaseEvent.placeholdersInitializedEVT()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is PlaceholdersInitializedEVT);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object>({
+    @required TResult authenticatedEVT(bool isAnonymous),
+    @required TResult configFetchedEVT(),
+    @required TResult placeholdersInitializedEVT(),
+    @required TResult placeholdersLoadedEVT(Map<String, String> placeholders),
+    @required TResult sessionFetchedEVT(Session session),
+    @required TResult userLoadedEVT(User user),
+  }) {
+    assert(authenticatedEVT != null);
+    assert(configFetchedEVT != null);
+    assert(placeholdersInitializedEVT != null);
+    assert(placeholdersLoadedEVT != null);
+    assert(sessionFetchedEVT != null);
+    assert(userLoadedEVT != null);
+    return placeholdersInitializedEVT();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object>({
+    TResult authenticatedEVT(bool isAnonymous),
+    TResult configFetchedEVT(),
+    TResult placeholdersInitializedEVT(),
+    TResult placeholdersLoadedEVT(Map<String, String> placeholders),
+    TResult sessionFetchedEVT(Session session),
+    TResult userLoadedEVT(User user),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (placeholdersInitializedEVT != null) {
+      return placeholdersInitializedEVT();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object>({
+    @required TResult authenticatedEVT(AuthenticatedEVT value),
+    @required TResult configFetchedEVT(ConfigFetchedEVT value),
+    @required
+        TResult placeholdersInitializedEVT(PlaceholdersInitializedEVT value),
+    @required TResult placeholdersLoadedEVT(PlaceholdersLoadedEVT value),
+    @required TResult sessionFetchedEVT(SessionFetchedEVT value),
+    @required TResult userLoadedEVT(UserLoadedEVT value),
+  }) {
+    assert(authenticatedEVT != null);
+    assert(configFetchedEVT != null);
+    assert(placeholdersInitializedEVT != null);
+    assert(placeholdersLoadedEVT != null);
+    assert(sessionFetchedEVT != null);
+    assert(userLoadedEVT != null);
+    return placeholdersInitializedEVT(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object>({
+    TResult authenticatedEVT(AuthenticatedEVT value),
+    TResult configFetchedEVT(ConfigFetchedEVT value),
+    TResult placeholdersInitializedEVT(PlaceholdersInitializedEVT value),
+    TResult placeholdersLoadedEVT(PlaceholdersLoadedEVT value),
+    TResult sessionFetchedEVT(SessionFetchedEVT value),
+    TResult userLoadedEVT(UserLoadedEVT value),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (placeholdersInitializedEVT != null) {
+      return placeholdersInitializedEVT(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class PlaceholdersInitializedEVT implements SplashDatabaseEvent {
+  const factory PlaceholdersInitializedEVT() = _$PlaceholdersInitializedEVT;
+}
+
+/// @nodoc
 abstract class $PlaceholdersLoadedEVTCopyWith<$Res> {
   factory $PlaceholdersLoadedEVTCopyWith(PlaceholdersLoadedEVT value,
           $Res Function(PlaceholdersLoadedEVT) then) =
@@ -243,6 +502,7 @@ abstract class $PlaceholdersLoadedEVTCopyWith<$Res> {
   $Res call({Map<String, String> placeholders});
 }
 
+/// @nodoc
 class _$PlaceholdersLoadedEVTCopyWithImpl<$Res>
     extends _$SplashDatabaseEventCopyWithImpl<$Res>
     implements $PlaceholdersLoadedEVTCopyWith<$Res> {
@@ -265,6 +525,7 @@ class _$PlaceholdersLoadedEVTCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$PlaceholdersLoadedEVT implements PlaceholdersLoadedEVT {
   const _$PlaceholdersLoadedEVT(this.placeholders)
       : assert(placeholders != null);
@@ -297,16 +558,18 @@ class _$PlaceholdersLoadedEVT implements PlaceholdersLoadedEVT {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result authenticatedEVT(bool isAnonymous),
-    @required Result placeholdersLoadedEVT(Map<String, String> placeholders),
-    @required Result placeholdersSavedEVT(),
-    @required Result sessionFetchedEVT(Session session),
-    @required Result userLoadedEVT(User user),
+  TResult when<TResult extends Object>({
+    @required TResult authenticatedEVT(bool isAnonymous),
+    @required TResult configFetchedEVT(),
+    @required TResult placeholdersInitializedEVT(),
+    @required TResult placeholdersLoadedEVT(Map<String, String> placeholders),
+    @required TResult sessionFetchedEVT(Session session),
+    @required TResult userLoadedEVT(User user),
   }) {
     assert(authenticatedEVT != null);
+    assert(configFetchedEVT != null);
+    assert(placeholdersInitializedEVT != null);
     assert(placeholdersLoadedEVT != null);
-    assert(placeholdersSavedEVT != null);
     assert(sessionFetchedEVT != null);
     assert(userLoadedEVT != null);
     return placeholdersLoadedEVT(placeholders);
@@ -314,13 +577,14 @@ class _$PlaceholdersLoadedEVT implements PlaceholdersLoadedEVT {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result authenticatedEVT(bool isAnonymous),
-    Result placeholdersLoadedEVT(Map<String, String> placeholders),
-    Result placeholdersSavedEVT(),
-    Result sessionFetchedEVT(Session session),
-    Result userLoadedEVT(User user),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult authenticatedEVT(bool isAnonymous),
+    TResult configFetchedEVT(),
+    TResult placeholdersInitializedEVT(),
+    TResult placeholdersLoadedEVT(Map<String, String> placeholders),
+    TResult sessionFetchedEVT(Session session),
+    TResult userLoadedEVT(User user),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (placeholdersLoadedEVT != null) {
@@ -331,16 +595,19 @@ class _$PlaceholdersLoadedEVT implements PlaceholdersLoadedEVT {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result authenticatedEVT(AuthenticatedEVT value),
-    @required Result placeholdersLoadedEVT(PlaceholdersLoadedEVT value),
-    @required Result placeholdersSavedEVT(PlaceholdersSavedEVT value),
-    @required Result sessionFetchedEVT(SessionFetchedEVT value),
-    @required Result userLoadedEVT(UserLoadedEVT value),
+  TResult map<TResult extends Object>({
+    @required TResult authenticatedEVT(AuthenticatedEVT value),
+    @required TResult configFetchedEVT(ConfigFetchedEVT value),
+    @required
+        TResult placeholdersInitializedEVT(PlaceholdersInitializedEVT value),
+    @required TResult placeholdersLoadedEVT(PlaceholdersLoadedEVT value),
+    @required TResult sessionFetchedEVT(SessionFetchedEVT value),
+    @required TResult userLoadedEVT(UserLoadedEVT value),
   }) {
     assert(authenticatedEVT != null);
+    assert(configFetchedEVT != null);
+    assert(placeholdersInitializedEVT != null);
     assert(placeholdersLoadedEVT != null);
-    assert(placeholdersSavedEVT != null);
     assert(sessionFetchedEVT != null);
     assert(userLoadedEVT != null);
     return placeholdersLoadedEVT(this);
@@ -348,13 +615,14 @@ class _$PlaceholdersLoadedEVT implements PlaceholdersLoadedEVT {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result authenticatedEVT(AuthenticatedEVT value),
-    Result placeholdersLoadedEVT(PlaceholdersLoadedEVT value),
-    Result placeholdersSavedEVT(PlaceholdersSavedEVT value),
-    Result sessionFetchedEVT(SessionFetchedEVT value),
-    Result userLoadedEVT(UserLoadedEVT value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult authenticatedEVT(AuthenticatedEVT value),
+    TResult configFetchedEVT(ConfigFetchedEVT value),
+    TResult placeholdersInitializedEVT(PlaceholdersInitializedEVT value),
+    TResult placeholdersLoadedEVT(PlaceholdersLoadedEVT value),
+    TResult sessionFetchedEVT(SessionFetchedEVT value),
+    TResult userLoadedEVT(UserLoadedEVT value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (placeholdersLoadedEVT != null) {
@@ -372,112 +640,7 @@ abstract class PlaceholdersLoadedEVT implements SplashDatabaseEvent {
   $PlaceholdersLoadedEVTCopyWith<PlaceholdersLoadedEVT> get copyWith;
 }
 
-abstract class $PlaceholdersSavedEVTCopyWith<$Res> {
-  factory $PlaceholdersSavedEVTCopyWith(PlaceholdersSavedEVT value,
-          $Res Function(PlaceholdersSavedEVT) then) =
-      _$PlaceholdersSavedEVTCopyWithImpl<$Res>;
-}
-
-class _$PlaceholdersSavedEVTCopyWithImpl<$Res>
-    extends _$SplashDatabaseEventCopyWithImpl<$Res>
-    implements $PlaceholdersSavedEVTCopyWith<$Res> {
-  _$PlaceholdersSavedEVTCopyWithImpl(
-      PlaceholdersSavedEVT _value, $Res Function(PlaceholdersSavedEVT) _then)
-      : super(_value, (v) => _then(v as PlaceholdersSavedEVT));
-
-  @override
-  PlaceholdersSavedEVT get _value => super._value as PlaceholdersSavedEVT;
-}
-
-class _$PlaceholdersSavedEVT implements PlaceholdersSavedEVT {
-  const _$PlaceholdersSavedEVT();
-
-  @override
-  String toString() {
-    return 'SplashDatabaseEvent.placeholdersSavedEVT()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) || (other is PlaceholdersSavedEVT);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result authenticatedEVT(bool isAnonymous),
-    @required Result placeholdersLoadedEVT(Map<String, String> placeholders),
-    @required Result placeholdersSavedEVT(),
-    @required Result sessionFetchedEVT(Session session),
-    @required Result userLoadedEVT(User user),
-  }) {
-    assert(authenticatedEVT != null);
-    assert(placeholdersLoadedEVT != null);
-    assert(placeholdersSavedEVT != null);
-    assert(sessionFetchedEVT != null);
-    assert(userLoadedEVT != null);
-    return placeholdersSavedEVT();
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result authenticatedEVT(bool isAnonymous),
-    Result placeholdersLoadedEVT(Map<String, String> placeholders),
-    Result placeholdersSavedEVT(),
-    Result sessionFetchedEVT(Session session),
-    Result userLoadedEVT(User user),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (placeholdersSavedEVT != null) {
-      return placeholdersSavedEVT();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result authenticatedEVT(AuthenticatedEVT value),
-    @required Result placeholdersLoadedEVT(PlaceholdersLoadedEVT value),
-    @required Result placeholdersSavedEVT(PlaceholdersSavedEVT value),
-    @required Result sessionFetchedEVT(SessionFetchedEVT value),
-    @required Result userLoadedEVT(UserLoadedEVT value),
-  }) {
-    assert(authenticatedEVT != null);
-    assert(placeholdersLoadedEVT != null);
-    assert(placeholdersSavedEVT != null);
-    assert(sessionFetchedEVT != null);
-    assert(userLoadedEVT != null);
-    return placeholdersSavedEVT(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result authenticatedEVT(AuthenticatedEVT value),
-    Result placeholdersLoadedEVT(PlaceholdersLoadedEVT value),
-    Result placeholdersSavedEVT(PlaceholdersSavedEVT value),
-    Result sessionFetchedEVT(SessionFetchedEVT value),
-    Result userLoadedEVT(UserLoadedEVT value),
-    @required Result orElse(),
-  }) {
-    assert(orElse != null);
-    if (placeholdersSavedEVT != null) {
-      return placeholdersSavedEVT(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class PlaceholdersSavedEVT implements SplashDatabaseEvent {
-  const factory PlaceholdersSavedEVT() = _$PlaceholdersSavedEVT;
-}
-
+/// @nodoc
 abstract class $SessionFetchedEVTCopyWith<$Res> {
   factory $SessionFetchedEVTCopyWith(
           SessionFetchedEVT value, $Res Function(SessionFetchedEVT) then) =
@@ -485,6 +648,7 @@ abstract class $SessionFetchedEVTCopyWith<$Res> {
   $Res call({Session session});
 }
 
+/// @nodoc
 class _$SessionFetchedEVTCopyWithImpl<$Res>
     extends _$SplashDatabaseEventCopyWithImpl<$Res>
     implements $SessionFetchedEVTCopyWith<$Res> {
@@ -505,6 +669,7 @@ class _$SessionFetchedEVTCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$SessionFetchedEVT implements SessionFetchedEVT {
   const _$SessionFetchedEVT(this.session) : assert(session != null);
 
@@ -534,16 +699,18 @@ class _$SessionFetchedEVT implements SessionFetchedEVT {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result authenticatedEVT(bool isAnonymous),
-    @required Result placeholdersLoadedEVT(Map<String, String> placeholders),
-    @required Result placeholdersSavedEVT(),
-    @required Result sessionFetchedEVT(Session session),
-    @required Result userLoadedEVT(User user),
+  TResult when<TResult extends Object>({
+    @required TResult authenticatedEVT(bool isAnonymous),
+    @required TResult configFetchedEVT(),
+    @required TResult placeholdersInitializedEVT(),
+    @required TResult placeholdersLoadedEVT(Map<String, String> placeholders),
+    @required TResult sessionFetchedEVT(Session session),
+    @required TResult userLoadedEVT(User user),
   }) {
     assert(authenticatedEVT != null);
+    assert(configFetchedEVT != null);
+    assert(placeholdersInitializedEVT != null);
     assert(placeholdersLoadedEVT != null);
-    assert(placeholdersSavedEVT != null);
     assert(sessionFetchedEVT != null);
     assert(userLoadedEVT != null);
     return sessionFetchedEVT(session);
@@ -551,13 +718,14 @@ class _$SessionFetchedEVT implements SessionFetchedEVT {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result authenticatedEVT(bool isAnonymous),
-    Result placeholdersLoadedEVT(Map<String, String> placeholders),
-    Result placeholdersSavedEVT(),
-    Result sessionFetchedEVT(Session session),
-    Result userLoadedEVT(User user),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult authenticatedEVT(bool isAnonymous),
+    TResult configFetchedEVT(),
+    TResult placeholdersInitializedEVT(),
+    TResult placeholdersLoadedEVT(Map<String, String> placeholders),
+    TResult sessionFetchedEVT(Session session),
+    TResult userLoadedEVT(User user),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (sessionFetchedEVT != null) {
@@ -568,16 +736,19 @@ class _$SessionFetchedEVT implements SessionFetchedEVT {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result authenticatedEVT(AuthenticatedEVT value),
-    @required Result placeholdersLoadedEVT(PlaceholdersLoadedEVT value),
-    @required Result placeholdersSavedEVT(PlaceholdersSavedEVT value),
-    @required Result sessionFetchedEVT(SessionFetchedEVT value),
-    @required Result userLoadedEVT(UserLoadedEVT value),
+  TResult map<TResult extends Object>({
+    @required TResult authenticatedEVT(AuthenticatedEVT value),
+    @required TResult configFetchedEVT(ConfigFetchedEVT value),
+    @required
+        TResult placeholdersInitializedEVT(PlaceholdersInitializedEVT value),
+    @required TResult placeholdersLoadedEVT(PlaceholdersLoadedEVT value),
+    @required TResult sessionFetchedEVT(SessionFetchedEVT value),
+    @required TResult userLoadedEVT(UserLoadedEVT value),
   }) {
     assert(authenticatedEVT != null);
+    assert(configFetchedEVT != null);
+    assert(placeholdersInitializedEVT != null);
     assert(placeholdersLoadedEVT != null);
-    assert(placeholdersSavedEVT != null);
     assert(sessionFetchedEVT != null);
     assert(userLoadedEVT != null);
     return sessionFetchedEVT(this);
@@ -585,13 +756,14 @@ class _$SessionFetchedEVT implements SessionFetchedEVT {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result authenticatedEVT(AuthenticatedEVT value),
-    Result placeholdersLoadedEVT(PlaceholdersLoadedEVT value),
-    Result placeholdersSavedEVT(PlaceholdersSavedEVT value),
-    Result sessionFetchedEVT(SessionFetchedEVT value),
-    Result userLoadedEVT(UserLoadedEVT value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult authenticatedEVT(AuthenticatedEVT value),
+    TResult configFetchedEVT(ConfigFetchedEVT value),
+    TResult placeholdersInitializedEVT(PlaceholdersInitializedEVT value),
+    TResult placeholdersLoadedEVT(PlaceholdersLoadedEVT value),
+    TResult sessionFetchedEVT(SessionFetchedEVT value),
+    TResult userLoadedEVT(UserLoadedEVT value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (sessionFetchedEVT != null) {
@@ -608,6 +780,7 @@ abstract class SessionFetchedEVT implements SplashDatabaseEvent {
   $SessionFetchedEVTCopyWith<SessionFetchedEVT> get copyWith;
 }
 
+/// @nodoc
 abstract class $UserLoadedEVTCopyWith<$Res> {
   factory $UserLoadedEVTCopyWith(
           UserLoadedEVT value, $Res Function(UserLoadedEVT) then) =
@@ -615,6 +788,7 @@ abstract class $UserLoadedEVTCopyWith<$Res> {
   $Res call({User user});
 }
 
+/// @nodoc
 class _$UserLoadedEVTCopyWithImpl<$Res>
     extends _$SplashDatabaseEventCopyWithImpl<$Res>
     implements $UserLoadedEVTCopyWith<$Res> {
@@ -635,6 +809,7 @@ class _$UserLoadedEVTCopyWithImpl<$Res>
   }
 }
 
+/// @nodoc
 class _$UserLoadedEVT implements UserLoadedEVT {
   const _$UserLoadedEVT(this.user) : assert(user != null);
 
@@ -664,16 +839,18 @@ class _$UserLoadedEVT implements UserLoadedEVT {
 
   @override
   @optionalTypeArgs
-  Result when<Result extends Object>({
-    @required Result authenticatedEVT(bool isAnonymous),
-    @required Result placeholdersLoadedEVT(Map<String, String> placeholders),
-    @required Result placeholdersSavedEVT(),
-    @required Result sessionFetchedEVT(Session session),
-    @required Result userLoadedEVT(User user),
+  TResult when<TResult extends Object>({
+    @required TResult authenticatedEVT(bool isAnonymous),
+    @required TResult configFetchedEVT(),
+    @required TResult placeholdersInitializedEVT(),
+    @required TResult placeholdersLoadedEVT(Map<String, String> placeholders),
+    @required TResult sessionFetchedEVT(Session session),
+    @required TResult userLoadedEVT(User user),
   }) {
     assert(authenticatedEVT != null);
+    assert(configFetchedEVT != null);
+    assert(placeholdersInitializedEVT != null);
     assert(placeholdersLoadedEVT != null);
-    assert(placeholdersSavedEVT != null);
     assert(sessionFetchedEVT != null);
     assert(userLoadedEVT != null);
     return userLoadedEVT(user);
@@ -681,13 +858,14 @@ class _$UserLoadedEVT implements UserLoadedEVT {
 
   @override
   @optionalTypeArgs
-  Result maybeWhen<Result extends Object>({
-    Result authenticatedEVT(bool isAnonymous),
-    Result placeholdersLoadedEVT(Map<String, String> placeholders),
-    Result placeholdersSavedEVT(),
-    Result sessionFetchedEVT(Session session),
-    Result userLoadedEVT(User user),
-    @required Result orElse(),
+  TResult maybeWhen<TResult extends Object>({
+    TResult authenticatedEVT(bool isAnonymous),
+    TResult configFetchedEVT(),
+    TResult placeholdersInitializedEVT(),
+    TResult placeholdersLoadedEVT(Map<String, String> placeholders),
+    TResult sessionFetchedEVT(Session session),
+    TResult userLoadedEVT(User user),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (userLoadedEVT != null) {
@@ -698,16 +876,19 @@ class _$UserLoadedEVT implements UserLoadedEVT {
 
   @override
   @optionalTypeArgs
-  Result map<Result extends Object>({
-    @required Result authenticatedEVT(AuthenticatedEVT value),
-    @required Result placeholdersLoadedEVT(PlaceholdersLoadedEVT value),
-    @required Result placeholdersSavedEVT(PlaceholdersSavedEVT value),
-    @required Result sessionFetchedEVT(SessionFetchedEVT value),
-    @required Result userLoadedEVT(UserLoadedEVT value),
+  TResult map<TResult extends Object>({
+    @required TResult authenticatedEVT(AuthenticatedEVT value),
+    @required TResult configFetchedEVT(ConfigFetchedEVT value),
+    @required
+        TResult placeholdersInitializedEVT(PlaceholdersInitializedEVT value),
+    @required TResult placeholdersLoadedEVT(PlaceholdersLoadedEVT value),
+    @required TResult sessionFetchedEVT(SessionFetchedEVT value),
+    @required TResult userLoadedEVT(UserLoadedEVT value),
   }) {
     assert(authenticatedEVT != null);
+    assert(configFetchedEVT != null);
+    assert(placeholdersInitializedEVT != null);
     assert(placeholdersLoadedEVT != null);
-    assert(placeholdersSavedEVT != null);
     assert(sessionFetchedEVT != null);
     assert(userLoadedEVT != null);
     return userLoadedEVT(this);
@@ -715,13 +896,14 @@ class _$UserLoadedEVT implements UserLoadedEVT {
 
   @override
   @optionalTypeArgs
-  Result maybeMap<Result extends Object>({
-    Result authenticatedEVT(AuthenticatedEVT value),
-    Result placeholdersLoadedEVT(PlaceholdersLoadedEVT value),
-    Result placeholdersSavedEVT(PlaceholdersSavedEVT value),
-    Result sessionFetchedEVT(SessionFetchedEVT value),
-    Result userLoadedEVT(UserLoadedEVT value),
-    @required Result orElse(),
+  TResult maybeMap<TResult extends Object>({
+    TResult authenticatedEVT(AuthenticatedEVT value),
+    TResult configFetchedEVT(ConfigFetchedEVT value),
+    TResult placeholdersInitializedEVT(PlaceholdersInitializedEVT value),
+    TResult placeholdersLoadedEVT(PlaceholdersLoadedEVT value),
+    TResult sessionFetchedEVT(SessionFetchedEVT value),
+    TResult userLoadedEVT(UserLoadedEVT value),
+    @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (userLoadedEVT != null) {
@@ -738,6 +920,7 @@ abstract class UserLoadedEVT implements SplashDatabaseEvent {
   $UserLoadedEVTCopyWith<UserLoadedEVT> get copyWith;
 }
 
+/// @nodoc
 class _$SplashDatabaseStateTearOff {
   const _$SplashDatabaseStateTearOff();
 
@@ -748,28 +931,52 @@ class _$SplashDatabaseStateTearOff {
       @required
           bool isUpdating,
       @required
-          Option<Either<DatabaseFailure, DatabaseSuccess>>
-              databaseFailureOrSuccessOption}) {
+          Option<Either<ConfigDatabaseFailure, ConfigDatabaseSuccess>>
+              configDatabaseFailureOrSuccessOption,
+      @required
+          Option<Either<PlaceholderDatabaseFailure, PlaceholderDatabaseSuccess>>
+              placeholderDatabaseFailureOrSuccessOption,
+      @required
+          Option<Either<DatabaseFailure, SessionDatabaseSuccess>>
+              sessionDatabaseFailureOrSuccessOption,
+      @required
+          Option<Either<DatabaseFailure, UserDatabaseSuccess>>
+              userDatabaseFailureOrSuccessOption}) {
     return _SplashDatabaseState(
       isAnonymous: isAnonymous,
       isUpdating: isUpdating,
-      databaseFailureOrSuccessOption: databaseFailureOrSuccessOption,
+      configDatabaseFailureOrSuccessOption:
+          configDatabaseFailureOrSuccessOption,
+      placeholderDatabaseFailureOrSuccessOption:
+          placeholderDatabaseFailureOrSuccessOption,
+      sessionDatabaseFailureOrSuccessOption:
+          sessionDatabaseFailureOrSuccessOption,
+      userDatabaseFailureOrSuccessOption: userDatabaseFailureOrSuccessOption,
     );
   }
 }
 
+/// @nodoc
 // ignore: unused_element
 const $SplashDatabaseState = _$SplashDatabaseStateTearOff();
 
+/// @nodoc
 mixin _$SplashDatabaseState {
   bool get isAnonymous;
   bool get isUpdating;
-  Option<Either<DatabaseFailure, DatabaseSuccess>>
-      get databaseFailureOrSuccessOption;
+  Option<Either<ConfigDatabaseFailure, ConfigDatabaseSuccess>>
+      get configDatabaseFailureOrSuccessOption;
+  Option<Either<PlaceholderDatabaseFailure, PlaceholderDatabaseSuccess>>
+      get placeholderDatabaseFailureOrSuccessOption;
+  Option<Either<DatabaseFailure, SessionDatabaseSuccess>>
+      get sessionDatabaseFailureOrSuccessOption;
+  Option<Either<DatabaseFailure, UserDatabaseSuccess>>
+      get userDatabaseFailureOrSuccessOption;
 
   $SplashDatabaseStateCopyWith<SplashDatabaseState> get copyWith;
 }
 
+/// @nodoc
 abstract class $SplashDatabaseStateCopyWith<$Res> {
   factory $SplashDatabaseStateCopyWith(
           SplashDatabaseState value, $Res Function(SplashDatabaseState) then) =
@@ -777,10 +984,17 @@ abstract class $SplashDatabaseStateCopyWith<$Res> {
   $Res call(
       {bool isAnonymous,
       bool isUpdating,
-      Option<Either<DatabaseFailure, DatabaseSuccess>>
-          databaseFailureOrSuccessOption});
+      Option<Either<ConfigDatabaseFailure, ConfigDatabaseSuccess>>
+          configDatabaseFailureOrSuccessOption,
+      Option<Either<PlaceholderDatabaseFailure, PlaceholderDatabaseSuccess>>
+          placeholderDatabaseFailureOrSuccessOption,
+      Option<Either<DatabaseFailure, SessionDatabaseSuccess>>
+          sessionDatabaseFailureOrSuccessOption,
+      Option<Either<DatabaseFailure, UserDatabaseSuccess>>
+          userDatabaseFailureOrSuccessOption});
 }
 
+/// @nodoc
 class _$SplashDatabaseStateCopyWithImpl<$Res>
     implements $SplashDatabaseStateCopyWith<$Res> {
   _$SplashDatabaseStateCopyWithImpl(this._value, this._then);
@@ -793,21 +1007,42 @@ class _$SplashDatabaseStateCopyWithImpl<$Res>
   $Res call({
     Object isAnonymous = freezed,
     Object isUpdating = freezed,
-    Object databaseFailureOrSuccessOption = freezed,
+    Object configDatabaseFailureOrSuccessOption = freezed,
+    Object placeholderDatabaseFailureOrSuccessOption = freezed,
+    Object sessionDatabaseFailureOrSuccessOption = freezed,
+    Object userDatabaseFailureOrSuccessOption = freezed,
   }) {
     return _then(_value.copyWith(
       isAnonymous:
           isAnonymous == freezed ? _value.isAnonymous : isAnonymous as bool,
       isUpdating:
           isUpdating == freezed ? _value.isUpdating : isUpdating as bool,
-      databaseFailureOrSuccessOption: databaseFailureOrSuccessOption == freezed
-          ? _value.databaseFailureOrSuccessOption
-          : databaseFailureOrSuccessOption
-              as Option<Either<DatabaseFailure, DatabaseSuccess>>,
+      configDatabaseFailureOrSuccessOption:
+          configDatabaseFailureOrSuccessOption == freezed
+              ? _value.configDatabaseFailureOrSuccessOption
+              : configDatabaseFailureOrSuccessOption as Option<
+                  Either<ConfigDatabaseFailure, ConfigDatabaseSuccess>>,
+      placeholderDatabaseFailureOrSuccessOption:
+          placeholderDatabaseFailureOrSuccessOption == freezed
+              ? _value.placeholderDatabaseFailureOrSuccessOption
+              : placeholderDatabaseFailureOrSuccessOption as Option<
+                  Either<PlaceholderDatabaseFailure,
+                      PlaceholderDatabaseSuccess>>,
+      sessionDatabaseFailureOrSuccessOption:
+          sessionDatabaseFailureOrSuccessOption == freezed
+              ? _value.sessionDatabaseFailureOrSuccessOption
+              : sessionDatabaseFailureOrSuccessOption
+                  as Option<Either<DatabaseFailure, SessionDatabaseSuccess>>,
+      userDatabaseFailureOrSuccessOption:
+          userDatabaseFailureOrSuccessOption == freezed
+              ? _value.userDatabaseFailureOrSuccessOption
+              : userDatabaseFailureOrSuccessOption
+                  as Option<Either<DatabaseFailure, UserDatabaseSuccess>>,
     ));
   }
 }
 
+/// @nodoc
 abstract class _$SplashDatabaseStateCopyWith<$Res>
     implements $SplashDatabaseStateCopyWith<$Res> {
   factory _$SplashDatabaseStateCopyWith(_SplashDatabaseState value,
@@ -817,10 +1052,17 @@ abstract class _$SplashDatabaseStateCopyWith<$Res>
   $Res call(
       {bool isAnonymous,
       bool isUpdating,
-      Option<Either<DatabaseFailure, DatabaseSuccess>>
-          databaseFailureOrSuccessOption});
+      Option<Either<ConfigDatabaseFailure, ConfigDatabaseSuccess>>
+          configDatabaseFailureOrSuccessOption,
+      Option<Either<PlaceholderDatabaseFailure, PlaceholderDatabaseSuccess>>
+          placeholderDatabaseFailureOrSuccessOption,
+      Option<Either<DatabaseFailure, SessionDatabaseSuccess>>
+          sessionDatabaseFailureOrSuccessOption,
+      Option<Either<DatabaseFailure, UserDatabaseSuccess>>
+          userDatabaseFailureOrSuccessOption});
 }
 
+/// @nodoc
 class __$SplashDatabaseStateCopyWithImpl<$Res>
     extends _$SplashDatabaseStateCopyWithImpl<$Res>
     implements _$SplashDatabaseStateCopyWith<$Res> {
@@ -835,41 +1077,77 @@ class __$SplashDatabaseStateCopyWithImpl<$Res>
   $Res call({
     Object isAnonymous = freezed,
     Object isUpdating = freezed,
-    Object databaseFailureOrSuccessOption = freezed,
+    Object configDatabaseFailureOrSuccessOption = freezed,
+    Object placeholderDatabaseFailureOrSuccessOption = freezed,
+    Object sessionDatabaseFailureOrSuccessOption = freezed,
+    Object userDatabaseFailureOrSuccessOption = freezed,
   }) {
     return _then(_SplashDatabaseState(
       isAnonymous:
           isAnonymous == freezed ? _value.isAnonymous : isAnonymous as bool,
       isUpdating:
           isUpdating == freezed ? _value.isUpdating : isUpdating as bool,
-      databaseFailureOrSuccessOption: databaseFailureOrSuccessOption == freezed
-          ? _value.databaseFailureOrSuccessOption
-          : databaseFailureOrSuccessOption
-              as Option<Either<DatabaseFailure, DatabaseSuccess>>,
+      configDatabaseFailureOrSuccessOption:
+          configDatabaseFailureOrSuccessOption == freezed
+              ? _value.configDatabaseFailureOrSuccessOption
+              : configDatabaseFailureOrSuccessOption as Option<
+                  Either<ConfigDatabaseFailure, ConfigDatabaseSuccess>>,
+      placeholderDatabaseFailureOrSuccessOption:
+          placeholderDatabaseFailureOrSuccessOption == freezed
+              ? _value.placeholderDatabaseFailureOrSuccessOption
+              : placeholderDatabaseFailureOrSuccessOption as Option<
+                  Either<PlaceholderDatabaseFailure,
+                      PlaceholderDatabaseSuccess>>,
+      sessionDatabaseFailureOrSuccessOption:
+          sessionDatabaseFailureOrSuccessOption == freezed
+              ? _value.sessionDatabaseFailureOrSuccessOption
+              : sessionDatabaseFailureOrSuccessOption
+                  as Option<Either<DatabaseFailure, SessionDatabaseSuccess>>,
+      userDatabaseFailureOrSuccessOption:
+          userDatabaseFailureOrSuccessOption == freezed
+              ? _value.userDatabaseFailureOrSuccessOption
+              : userDatabaseFailureOrSuccessOption
+                  as Option<Either<DatabaseFailure, UserDatabaseSuccess>>,
     ));
   }
 }
 
+/// @nodoc
 class _$_SplashDatabaseState implements _SplashDatabaseState {
   const _$_SplashDatabaseState(
       {@required this.isAnonymous,
       @required this.isUpdating,
-      @required this.databaseFailureOrSuccessOption})
+      @required this.configDatabaseFailureOrSuccessOption,
+      @required this.placeholderDatabaseFailureOrSuccessOption,
+      @required this.sessionDatabaseFailureOrSuccessOption,
+      @required this.userDatabaseFailureOrSuccessOption})
       : assert(isAnonymous != null),
         assert(isUpdating != null),
-        assert(databaseFailureOrSuccessOption != null);
+        assert(configDatabaseFailureOrSuccessOption != null),
+        assert(placeholderDatabaseFailureOrSuccessOption != null),
+        assert(sessionDatabaseFailureOrSuccessOption != null),
+        assert(userDatabaseFailureOrSuccessOption != null);
 
   @override
   final bool isAnonymous;
   @override
   final bool isUpdating;
   @override
-  final Option<Either<DatabaseFailure, DatabaseSuccess>>
-      databaseFailureOrSuccessOption;
+  final Option<Either<ConfigDatabaseFailure, ConfigDatabaseSuccess>>
+      configDatabaseFailureOrSuccessOption;
+  @override
+  final Option<Either<PlaceholderDatabaseFailure, PlaceholderDatabaseSuccess>>
+      placeholderDatabaseFailureOrSuccessOption;
+  @override
+  final Option<Either<DatabaseFailure, SessionDatabaseSuccess>>
+      sessionDatabaseFailureOrSuccessOption;
+  @override
+  final Option<Either<DatabaseFailure, UserDatabaseSuccess>>
+      userDatabaseFailureOrSuccessOption;
 
   @override
   String toString() {
-    return 'SplashDatabaseState(isAnonymous: $isAnonymous, isUpdating: $isUpdating, databaseFailureOrSuccessOption: $databaseFailureOrSuccessOption)';
+    return 'SplashDatabaseState(isAnonymous: $isAnonymous, isUpdating: $isUpdating, configDatabaseFailureOrSuccessOption: $configDatabaseFailureOrSuccessOption, placeholderDatabaseFailureOrSuccessOption: $placeholderDatabaseFailureOrSuccessOption, sessionDatabaseFailureOrSuccessOption: $sessionDatabaseFailureOrSuccessOption, userDatabaseFailureOrSuccessOption: $userDatabaseFailureOrSuccessOption)';
   }
 
   @override
@@ -882,11 +1160,26 @@ class _$_SplashDatabaseState implements _SplashDatabaseState {
             (identical(other.isUpdating, isUpdating) ||
                 const DeepCollectionEquality()
                     .equals(other.isUpdating, isUpdating)) &&
-            (identical(other.databaseFailureOrSuccessOption,
-                    databaseFailureOrSuccessOption) ||
+            (identical(other.configDatabaseFailureOrSuccessOption,
+                    configDatabaseFailureOrSuccessOption) ||
                 const DeepCollectionEquality().equals(
-                    other.databaseFailureOrSuccessOption,
-                    databaseFailureOrSuccessOption)));
+                    other.configDatabaseFailureOrSuccessOption,
+                    configDatabaseFailureOrSuccessOption)) &&
+            (identical(other.placeholderDatabaseFailureOrSuccessOption,
+                    placeholderDatabaseFailureOrSuccessOption) ||
+                const DeepCollectionEquality().equals(
+                    other.placeholderDatabaseFailureOrSuccessOption,
+                    placeholderDatabaseFailureOrSuccessOption)) &&
+            (identical(other.sessionDatabaseFailureOrSuccessOption,
+                    sessionDatabaseFailureOrSuccessOption) ||
+                const DeepCollectionEquality().equals(
+                    other.sessionDatabaseFailureOrSuccessOption,
+                    sessionDatabaseFailureOrSuccessOption)) &&
+            (identical(other.userDatabaseFailureOrSuccessOption,
+                    userDatabaseFailureOrSuccessOption) ||
+                const DeepCollectionEquality().equals(
+                    other.userDatabaseFailureOrSuccessOption,
+                    userDatabaseFailureOrSuccessOption)));
   }
 
   @override
@@ -894,7 +1187,13 @@ class _$_SplashDatabaseState implements _SplashDatabaseState {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(isAnonymous) ^
       const DeepCollectionEquality().hash(isUpdating) ^
-      const DeepCollectionEquality().hash(databaseFailureOrSuccessOption);
+      const DeepCollectionEquality()
+          .hash(configDatabaseFailureOrSuccessOption) ^
+      const DeepCollectionEquality()
+          .hash(placeholderDatabaseFailureOrSuccessOption) ^
+      const DeepCollectionEquality()
+          .hash(sessionDatabaseFailureOrSuccessOption) ^
+      const DeepCollectionEquality().hash(userDatabaseFailureOrSuccessOption);
 
   @override
   _$SplashDatabaseStateCopyWith<_SplashDatabaseState> get copyWith =>
@@ -909,16 +1208,34 @@ abstract class _SplashDatabaseState implements SplashDatabaseState {
       @required
           bool isUpdating,
       @required
-          Option<Either<DatabaseFailure, DatabaseSuccess>>
-              databaseFailureOrSuccessOption}) = _$_SplashDatabaseState;
+          Option<Either<ConfigDatabaseFailure, ConfigDatabaseSuccess>>
+              configDatabaseFailureOrSuccessOption,
+      @required
+          Option<Either<PlaceholderDatabaseFailure, PlaceholderDatabaseSuccess>>
+              placeholderDatabaseFailureOrSuccessOption,
+      @required
+          Option<Either<DatabaseFailure, SessionDatabaseSuccess>>
+              sessionDatabaseFailureOrSuccessOption,
+      @required
+          Option<Either<DatabaseFailure, UserDatabaseSuccess>>
+              userDatabaseFailureOrSuccessOption}) = _$_SplashDatabaseState;
 
   @override
   bool get isAnonymous;
   @override
   bool get isUpdating;
   @override
-  Option<Either<DatabaseFailure, DatabaseSuccess>>
-      get databaseFailureOrSuccessOption;
+  Option<Either<ConfigDatabaseFailure, ConfigDatabaseSuccess>>
+      get configDatabaseFailureOrSuccessOption;
+  @override
+  Option<Either<PlaceholderDatabaseFailure, PlaceholderDatabaseSuccess>>
+      get placeholderDatabaseFailureOrSuccessOption;
+  @override
+  Option<Either<DatabaseFailure, SessionDatabaseSuccess>>
+      get sessionDatabaseFailureOrSuccessOption;
+  @override
+  Option<Either<DatabaseFailure, UserDatabaseSuccess>>
+      get userDatabaseFailureOrSuccessOption;
   @override
   _$SplashDatabaseStateCopyWith<_SplashDatabaseState> get copyWith;
 }

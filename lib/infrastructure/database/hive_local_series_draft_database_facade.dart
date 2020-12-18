@@ -2,63 +2,72 @@ import 'package:dartz/dartz.dart';
 import 'package:hive/hive.dart';
 import 'package:injectable/injectable.dart';
 import 'package:wine/domain/database/database_failure.dart';
-import 'package:wine/domain/database/database_success.dart';
-import 'package:wine/domain/database/i_local_series_draft_database_facade.dart';
+import 'package:wine/domain/database/facades/local/i_local_series_draft_database_facade.dart';
+import 'package:wine/domain/database/successes/series_draft_database_success.dart';
 import 'package:wine/domain/models/hive/series_draft.dart';
 
+/// @nodoc
 @LazySingleton(as: ILocalSeriesDraftDatabaseFacade)
 class HiveLocalSeriesDatabaseFacade implements ILocalSeriesDraftDatabaseFacade {
-  final Box<SeriesDraft> _seriesDraftsBox;
-
+  /// @nodoc
   HiveLocalSeriesDatabaseFacade(this._seriesDraftsBox);
 
+  final Box<SeriesDraft> _seriesDraftsBox;
+
   @override
-  Future<Either<DatabaseFailure, DatabaseSuccess>> deleteSeriesDraft(String uid) async {
+  Future<Either<DatabaseFailure, SeriesDraftDatabaseSuccess>> deleteSeriesDraft(
+    String uid,
+  ) async {
     await _seriesDraftsBox.delete(uid);
 
-    final SeriesDraft seriesDraft = _seriesDraftsBox.get(uid);
+    final seriesDraft = _seriesDraftsBox.get(uid);
     if (seriesDraft != null) {
       return left(const DatabaseFailure.failedToDeleteLocalData());
     }
-    return right(const DatabaseSuccess.seriesDraftDeletedSCS());
+    return right(const SeriesDraftDatabaseSuccess.localSeriesDraftDeletedSCS());
   }
 
   @override
-  Future<Either<DatabaseFailure, DatabaseSuccess>> fetchSeriesDraft(
+  Future<Either<DatabaseFailure, SeriesDraftDatabaseSuccess>> fetchSeriesDraft(
     String uid,
   ) async {
-    final SeriesDraft seriesDraft = _seriesDraftsBox.get(uid);
+    final seriesDraft = _seriesDraftsBox.get(uid);
 
     if (seriesDraft != null) {
-      return right(DatabaseSuccess.seriesDraftFetchedSCS(seriesDraft));
+      return right(SeriesDraftDatabaseSuccess.seriesDraftFetchedSCS(
+        seriesDraft,
+      ));
     }
-    return left(const DatabaseFailure.failedToRetrieveLocalData());
+    return left(const DatabaseFailure.failedToFetchLocalData());
   }
 
   @override
-  Future<Either<DatabaseFailure, DatabaseSuccess>> saveSeriesDraft(
+  Future<Either<DatabaseFailure, SeriesDraftDatabaseSuccess>> saveSeriesDraft(
     SeriesDraft seriesDraft,
   ) async {
     await _seriesDraftsBox.put(seriesDraft.uid, seriesDraft);
 
-    final SeriesDraft seriesDraftTest = _seriesDraftsBox.get(seriesDraft.uid);
+    final seriesDraftTest = _seriesDraftsBox.get(seriesDraft.uid);
     if (seriesDraftTest != null) {
-      return right(DatabaseSuccess.seriesDraftSavedSCS(seriesDraftTest));
+      return right(
+          SeriesDraftDatabaseSuccess.localSeriesDraftSavedSCS(seriesDraftTest));
     }
     return left(const DatabaseFailure.failedToCreateLocalData());
   }
 
   @override
-  Future<Either<DatabaseFailure, DatabaseSuccess>> updateSeriesDraft(
+  Future<Either<DatabaseFailure, SeriesDraftDatabaseSuccess>> updateSeriesDraft(
     SeriesDraft seriesDraft,
   ) async {
-    final SeriesDraft outdatedSeriesDraft = _seriesDraftsBox.get(seriesDraft.uid);
+    final outdatedSeriesDraft = _seriesDraftsBox.get(seriesDraft.uid);
 
     await _seriesDraftsBox.put(seriesDraft.uid, seriesDraft);
 
-    final SeriesDraft currentSeriesDraft = _seriesDraftsBox.get(seriesDraft.uid);
+    final currentSeriesDraft = _seriesDraftsBox.get(seriesDraft.uid);
     if (currentSeriesDraft != outdatedSeriesDraft) {
-      return right(const DatabaseSuccess.seriesDraftUpdatedSCS());
+      return right(
+        const SeriesDraftDatabaseSuccess.localSeriesDraftUpdatedSCS(),
+      );
     }
     return left(const DatabaseFailure.failedToUpdateLocalData());
   }

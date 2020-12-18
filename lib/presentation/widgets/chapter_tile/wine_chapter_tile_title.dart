@@ -1,20 +1,23 @@
 import 'package:assorted_layout_widgets/assorted_layout_widgets.dart';
 import 'package:flutter/material.dart';
 
+/// @nodoc
 class WINEChapterTileTitle extends StatelessWidget {
-  final String title;
-
+  /// @nodoc
   const WINEChapterTileTitle({
     Key key,
     @required this.title,
   }) : super(key: key);
+
+  /// @nodoc
+  final String title;
 
   @override
   Widget build(BuildContext context) {
     if (title != null) {
       return TextOneLine(
         title.isNotEmpty ? title : 'No title',
-        style: TextStyle(
+        style: const TextStyle(
           color: Colors.black,
           fontSize: 18.0,
           fontWeight: FontWeight.w400,

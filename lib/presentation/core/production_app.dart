@@ -4,7 +4,9 @@ import 'package:firebase_analytics/observer.dart';
 import 'package:flutter/material.dart';
 import 'package:wine/presentation/routes/router.gr.dart';
 
+/// @nodoc
 class ProductionApp extends StatelessWidget {
+  /// @nodoc
   final FirebaseAnalytics analytics = FirebaseAnalytics();
 
   @override
@@ -12,8 +14,8 @@ class ProductionApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'WINE',
-      builder: ExtendedNavigator<Router>(
-        router: Router(),
+      builder: ExtendedNavigator.builder<WINERouter>(
+        router: WINERouter(),
         observers: <NavigatorObserver>[
           FirebaseAnalyticsObserver(analytics: analytics),
         ],

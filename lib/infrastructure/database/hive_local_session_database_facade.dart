@@ -2,61 +2,64 @@ import 'package:dartz/dartz.dart';
 import 'package:hive/hive.dart';
 import 'package:injectable/injectable.dart';
 import 'package:wine/domain/database/database_failure.dart';
-import 'package:wine/domain/database/database_success.dart';
 
-import 'package:wine/domain/database/i_local_session_database_facade.dart';
+import 'package:wine/domain/database/facades/local/i_local_session_database_facade.dart';
+import 'package:wine/domain/database/successes/session_database_success.dart';
 import 'package:wine/domain/models/hive/session.dart';
 import 'package:wine/utils/constants.dart';
 
+/// @nodoc
 @LazySingleton(as: ILocalSessionDatabaseFacade)
 class HiveLocalSessionDatabaseFacade implements ILocalSessionDatabaseFacade {
-  final Box<Session> _sessionsBox;
-
+  /// @nodoc
   HiveLocalSessionDatabaseFacade(this._sessionsBox);
 
+  final Box<Session> _sessionsBox;
+
   @override
-  Future<Either<DatabaseFailure, DatabaseSuccess>> deleteSession() async {
+  Future<Either<DatabaseFailure, SessionDatabaseSuccess>>
+      deleteSession() async {
     await _sessionsBox.delete(Constants.session);
 
-    final Session session = _sessionsBox.get(Constants.session);
+    final session = _sessionsBox.get(Constants.session);
     if (session != null) {
       return left(const DatabaseFailure.failedToDeleteLocalData());
     }
-    return right(const DatabaseSuccess.sessionDeletedSCS());
+    return right(const SessionDatabaseSuccess.sessionDeletedSCS());
   }
 
   @override
-  Future<Either<DatabaseFailure, DatabaseSuccess>> fetchSession() async {
-    final Session session = _sessionsBox.get(Constants.session);
+  Future<Either<DatabaseFailure, SessionDatabaseSuccess>> fetchSession() async {
+    final session = _sessionsBox.get(Constants.session);
 
     if (session != null) {
-      return right(DatabaseSuccess.sessionFetchedSCS(session));
+      return right(SessionDatabaseSuccess.sessionFetchedSCS(session));
     }
-    return saveSession(Session());
+    return initializeSession();
   }
 
   @override
-  Future<Either<DatabaseFailure, DatabaseSuccess>> saveSession(
+  Future<Either<DatabaseFailure, SessionDatabaseSuccess>> initializeSession({
     Session session,
-  ) async {
-    await _sessionsBox.put(Constants.session, session);
+  }) async {
+    await _sessionsBox.put(Constants.session, session ?? Session());
 
-    final Session sessionTest = _sessionsBox.get(Constants.session);
+    final sessionTest = _sessionsBox.get(Constants.session);
     if (sessionTest != null) {
-      return right(const DatabaseSuccess.sessionSavedSCS());
+      return right(const SessionDatabaseSuccess.sessionInitializedSCS());
     }
     return left(const DatabaseFailure.failedToCreateLocalData());
   }
 
   @override
-  Future<Either<DatabaseFailure, DatabaseSuccess>> updateSession(
+  Future<Either<DatabaseFailure, SessionDatabaseSuccess>> updateSession(
     Session session,
   ) async {
     await _sessionsBox.put(Constants.session, session);
 
-    final Session currentSession = _sessionsBox.get(Constants.session);
+    final currentSession = _sessionsBox.get(Constants.session);
     if (currentSession != null) {
-      return right(const DatabaseSuccess.sessionUpdatedSCS());
+      return right(const SessionDatabaseSuccess.sessionUpdatedSCS());
     }
     return left(const DatabaseFailure.failedToUpdateLocalData());
   }

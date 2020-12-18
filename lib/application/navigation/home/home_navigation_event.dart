@@ -1,12 +1,23 @@
 part of 'home_navigation_bloc.dart';
 
+/// @nodoc
 @freezed
 abstract class HomeNavigationEvent with _$HomeNavigationEvent {
-  const factory HomeNavigationEvent.leftDrawerIconPressedEVT({@required bool isDrawerOpen}) = LeftDrawerIconPressedEVT;
-  const factory HomeNavigationEvent.homePageLaunchedEVT({BuildContext context}) = HomePageLaunchedEVT;
-  const factory HomeNavigationEvent.pageViewIndexChangedEVT({@required int index}) = PageViewIndexChangedEVT;
+  /// @nodoc
+  const factory HomeNavigationEvent.leftDrawerIconPressedEVT() =
+      LeftDrawerIconPressedEVT;
+
+  /// @nodoc
+  const factory HomeNavigationEvent.pageViewIndexChangedEVT(int index) =
+      PageViewIndexChangedEVT;
+
+  /// @nodoc
   const factory HomeNavigationEvent.resetBlocEVT() = ResetBlocEVT;
-  const factory HomeNavigationEvent.rightDrawerIconPressedEVT({
-    @required bool isDrawerOpen,
-  }) = RightDrawerIconPressedEVT;
+
+  /// @nodoc
+  const factory HomeNavigationEvent.rightDrawerIconPressedEVT() =
+      RightDrawerIconPressedEVT;
+
+  /// @nodoc
+  const factory HomeNavigationEvent.willPopEVT() = WillPopEVT;
 }

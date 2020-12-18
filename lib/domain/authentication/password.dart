@@ -3,10 +3,9 @@ import 'package:wine/domain/core/failures.dart';
 import 'package:wine/domain/core/value_objects.dart';
 import 'package:wine/domain/core/value_validators.dart';
 
+/// @nodoc
 class Password extends ValueObject<String> {
-  @override
-  final Either<ValueFailure<String>, String> value;
-
+  /// @nodoc
   factory Password(String input, [String input2]) {
     assert(input != null);
     return Password._(
@@ -15,5 +14,9 @@ class Password extends ValueObject<String> {
   }
 
   // NOTE private contructor
+  /// @nodoc
   const Password._(this.value);
+
+  @override
+  final Either<ValueFailure<String>, String> value;
 }

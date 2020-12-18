@@ -1,12 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 
+/// @nodoc
 class WINESelectionDialog extends StatelessWidget {
-  final String title;
-  final Map<String, String> selections;
-  final void Function(String) onPressed;
-  final VoidCallback onInfoPressed;
-
+  /// @nodoc
   const WINESelectionDialog({
     Key key,
     @required this.title,
@@ -14,6 +11,18 @@ class WINESelectionDialog extends StatelessWidget {
     @required this.onPressed,
     this.onInfoPressed,
   }) : super(key: key);
+
+  /// @nodoc
+  final String title;
+
+  /// @nodoc
+  final List<String> selections;
+
+  /// @nodoc
+  final void Function(String) onPressed;
+
+  /// @nodoc
+  final VoidCallback onInfoPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +34,11 @@ class WINESelectionDialog extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
             Container(
-              decoration: BoxDecoration(border: Border(bottom: BorderSide(color: Colors.black26))),
+              decoration: const BoxDecoration(
+                border: Border(
+                  bottom: BorderSide(color: Colors.black26),
+                ),
+              ),
               height: 50.0,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -35,31 +48,49 @@ class WINESelectionDialog extends StatelessWidget {
                     child: Text(
                       title,
                       textAlign: TextAlign.center,
-                      style: TextStyle(color: Colors.black, fontSize: 17.0, fontWeight: FontWeight.bold),
+                      style: const TextStyle(
+                        color: Colors.black,
+                        fontSize: 17.0,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                   ),
                   if (onInfoPressed != null)
-                    IconButton(icon: Icon(Feather.info, color: Colors.black), onPressed: onInfoPressed),
+                    IconButton(
+                      icon: const Icon(Feather.info, color: Colors.black),
+                      onPressed: onInfoPressed,
+                    ),
                 ],
               ),
             ),
-            ListView.builder(
-              itemCount: selections.length,
-              itemBuilder: (_, int idx) {
-                final String key = selections.keys.elementAt(idx);
-                return Container(
-                  decoration: BoxDecoration(border: Border(bottom: BorderSide(color: Colors.black12))),
-                  child: ListTile(
-                    onTap: () => onPressed(key),
-                    title: Text(
-                      selections[key],
-                      overflow: TextOverflow.ellipsis,
-                      style: TextStyle(color: Colors.black, fontSize: 15.0, fontWeight: FontWeight.w500),
-                    ),
-                  ),
-                );
-              },
-              shrinkWrap: true,
+            Expanded(
+              child: SingleChildScrollView(
+                child: Column(
+                  children: <Widget>[
+                    for (String item in selections) ...[
+                      Container(
+                        decoration: const BoxDecoration(
+                          border: Border(
+                            bottom: BorderSide(color: Colors.black12),
+                          ),
+                        ),
+                        child: ListTile(
+                          onTap: () => onPressed(item),
+                          title: Text(
+                            item,
+                            overflow: TextOverflow.ellipsis,
+                            style: const TextStyle(
+                              color: Colors.black,
+                              fontSize: 15.0,
+                              fontWeight: FontWeight.w500,
+                            ),
+                          ),
+                        ),
+                      )
+                    ],
+                  ],
+                ),
+              ),
             ),
           ],
         ),

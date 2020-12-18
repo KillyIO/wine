@@ -5,56 +5,68 @@ import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:meta/meta.dart';
+
 import 'package:wine/domain/database/database_failure.dart';
-import 'package:wine/domain/database/database_success.dart';
-import 'package:wine/domain/database/i_local_session_database_facade.dart';
-import 'package:wine/domain/database/i_online_user_database_facade.dart';
+import 'package:wine/domain/database/facades/local/i_local_session_database_facade.dart';
+import 'package:wine/domain/database/facades/online/i_online_user_database_facade.dart';
+import 'package:wine/domain/database/successes/session_database_success.dart';
+import 'package:wine/domain/database/successes/user_database_success.dart';
 import 'package:wine/domain/models/hive/session.dart';
 import 'package:wine/domain/models/user.dart';
 
+part 'sign_in_database_bloc.freezed.dart';
 part 'sign_in_database_event.dart';
 part 'sign_in_database_state.dart';
 
-part 'sign_in_database_bloc.freezed.dart';
-
+/// @nodoc
 @injectable
-class SignInDatabaseBloc extends Bloc<SignInDatabaseEvent, SignInDatabaseState> {
-  final ILocalSessionDatabaseFacade _localSessionDatabaseFacade;
-  final IOnlineUserDatabaseFacade _onlineUserDatabaseFacade;
-
+class SignInDatabaseBloc
+    extends Bloc<SignInDatabaseEvent, SignInDatabaseState> {
+  /// @nodoc
   SignInDatabaseBloc(
     this._localSessionDatabaseFacade,
     this._onlineUserDatabaseFacade,
   ) : super(SignInDatabaseState.initial());
 
+  final ILocalSessionDatabaseFacade _localSessionDatabaseFacade;
+  final IOnlineUserDatabaseFacade _onlineUserDatabaseFacade;
+
   @override
-  Stream<SignInDatabaseState> mapEventToState(SignInDatabaseEvent event) async* {
+  Stream<SignInDatabaseState> mapEventToState(
+      SignInDatabaseEvent event) async* {
     yield* event.map(
       signedInEVT: (event) async* {
-        Either<DatabaseFailure, DatabaseSuccess> failureOrSuccess;
-
-        yield state.copyWith(isUpdating: true, databaseFailureOrSuccessOption: none());
-
-        failureOrSuccess = await _onlineUserDatabaseFacade.saveDetailsFromUser(event.user);
-
-        failureOrSuccess.fold(
-          (_) {},
-          (success) {
-            if (success is UserDetailsSavedSCS) {
-              add(SignInDatabaseEvent.userDetailsSavedEVT(success.user));
-            }
-          },
+        yield state.copyWith(
+          isUpdating: true,
+          sessionDatabaseFailureOrSuccessOption: none(),
+          userDatabaseFailureOrSuccessOption: none(),
         );
 
-        yield state.copyWith(databaseFailureOrSuccessOption: optionOf(failureOrSuccess));
+        final failureOrSuccess =
+            await _onlineUserDatabaseFacade.saveDetailsFromUser(event.user)
+              ..fold(
+                (_) {},
+                (success) {
+                  if (success is UserDetailsSavedSCS) {
+                    add(SignInDatabaseEvent.userDetailsSavedEVT(success.user));
+                  }
+                },
+              );
+
+        yield state.copyWith(
+          userDatabaseFailureOrSuccessOption: optionOf(failureOrSuccess),
+        );
       },
       userDetailsSavedEVT: (event) async* {
-        Either<DatabaseFailure, DatabaseSuccess> failureOrSuccess;
+        final session = Session.fromMap(event.user.toMap());
 
-        final Session session = Session.fromMap(event.user.toMap());
-        failureOrSuccess = await _localSessionDatabaseFacade.saveSession(session);
+        final failureOrSuccess = await _localSessionDatabaseFacade
+            .initializeSession(session: session);
 
-        yield state.copyWith(isUpdating: false, databaseFailureOrSuccessOption: optionOf(failureOrSuccess));
+        yield state.copyWith(
+          isUpdating: false,
+          sessionDatabaseFailureOrSuccessOption: optionOf(failureOrSuccess),
+        );
       },
     );
   }

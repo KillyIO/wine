@@ -1,6 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
-import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_auth/firebase_auth.dart' as auth;
 import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:google_sign_in/google_sign_in.dart';
@@ -15,26 +15,29 @@ import 'package:wine/domain/authentication/username.dart';
 import 'package:wine/domain/models/user.dart';
 import 'package:wine/utils/paths.dart';
 
+/// @nodoc
 @LazySingleton(as: IAuthenticationFacade)
 class FirebaseAuthenticationFacade implements IAuthenticationFacade {
-  final FirebaseAuth _firebaseAuth;
-  final GoogleSignIn _googleSignIn;
-  final Firestore _firestore;
-
+  /// @nodoc
   FirebaseAuthenticationFacade(
     this._firebaseAuth,
     this._googleSignIn,
     this._firestore,
   );
 
+  final auth.FirebaseAuth _firebaseAuth;
+  final GoogleSignIn _googleSignIn;
+  final FirebaseFirestore _firestore;
+
   @override
-  Future<String> getCurrentUserUid() async {
-    final FirebaseUser currentUser = await _firebaseAuth.currentUser();
+  Future<String> getCurrentUserUID() async {
+    final currentUser = _firebaseAuth.currentUser;
     return currentUser.uid;
   }
 
   @override
-  Future<Either<AuthenticationFailure, AuthenticationSuccess>> convertWithEmailAndPassword({
+  Future<Either<AuthenticationFailure, AuthenticationSuccess>>
+      convertWithEmailAndPassword({
     @required EmailAddress emailAddress,
     @required Password password,
   }) async {
@@ -42,16 +45,19 @@ class FirebaseAuthenticationFacade implements IAuthenticationFacade {
       final emailAddressStr = emailAddress.getOrCrash();
       final passwordStr = password.getOrCrash();
 
-      FirebaseUser currentUser = await _firebaseAuth.currentUser();
+      var currentUser = _firebaseAuth.currentUser;
 
-      final AuthCredential credential = EmailAuthProvider.getCredential(email: emailAddressStr, password: passwordStr);
+      final credential = auth.EmailAuthProvider.credential(
+        email: emailAddressStr,
+        password: passwordStr,
+      );
 
       await currentUser.linkWithCredential(credential);
 
-      currentUser = await _firebaseAuth.currentUser();
-      currentUser.sendEmailVerification();
+      currentUser = _firebaseAuth.currentUser;
+      await currentUser.sendEmailVerification();
 
-      final User user = User.fromFirebaseUser(currentUser);
+      final user = User.fromFirebaseUser(currentUser);
       return right(AuthenticationSuccess.userAuthenticatedSCS(user));
     } on PlatformException catch (e) {
       if (e.code == 'ERROR_EMAIL_ALREADY_IN_USE') {
@@ -63,19 +69,22 @@ class FirebaseAuthenticationFacade implements IAuthenticationFacade {
   }
 
   @override
-  Future<bool> isAnonymous() async {
-    final FirebaseUser currentUser = await _firebaseAuth.currentUser();
+  bool isAnonymous() {
+    final currentUser = _firebaseAuth.currentUser;
     return currentUser != null && currentUser.isAnonymous;
   }
 
   @override
-  Future<Either<AuthenticationFailure, AuthenticationSuccess>> isUsernameAvailable({
+  Future<Either<AuthenticationFailure, AuthenticationSuccess>>
+      isUsernameAvailable({
     Username username,
   }) async {
     final usernameStr = username.getOrCrash();
 
-    final DocumentSnapshot documentSnapshot =
-        await _firestore.collection(Paths.usernameUidMapPath).document(usernameStr).get();
+    final documentSnapshot = await _firestore
+        .collection(Paths.usernameUIDMapPath)
+        .doc(usernameStr)
+        .get();
     if (documentSnapshot != null && documentSnapshot.exists) {
       return left(const AuthenticationFailure.usernameAlreadyInUse());
     } else {
@@ -84,14 +93,15 @@ class FirebaseAuthenticationFacade implements IAuthenticationFacade {
   }
 
   @override
-  Future<bool> isSignedIn() async {
-    final FirebaseUser currentUser = await _firebaseAuth.currentUser();
+  bool isSignedIn() {
+    final currentUser = _firebaseAuth.currentUser;
     return currentUser != null;
   }
 
   @override
-  Future<Either<AuthenticationFailure, AuthenticationSuccess>> resendVerificationEmail() async {
-    final FirebaseUser currentUser = await _firebaseAuth.currentUser();
+  Future<Either<AuthenticationFailure, AuthenticationSuccess>>
+      resendVerificationEmail() async {
+    final currentUser = _firebaseAuth.currentUser;
 
     if (currentUser != null) {
       await currentUser.sendEmailVerification();
@@ -101,7 +111,8 @@ class FirebaseAuthenticationFacade implements IAuthenticationFacade {
   }
 
   @override
-  Future<Either<AuthenticationFailure, AuthenticationSuccess>> signInAnonymously() async {
+  Future<Either<AuthenticationFailure, AuthenticationSuccess>>
+      signInAnonymously() async {
     try {
       await _firebaseAuth.signInAnonymously();
       return right(const AuthenticationSuccess.userSignedInAnonymouslySCS());
@@ -111,7 +122,8 @@ class FirebaseAuthenticationFacade implements IAuthenticationFacade {
   }
 
   @override
-  Future<Either<AuthenticationFailure, AuthenticationSuccess>> signInWithEmailAndPassword({
+  Future<Either<AuthenticationFailure, AuthenticationSuccess>>
+      signInWithEmailAndPassword({
     @required EmailAddress emailAddress,
     @required Password password,
   }) async {
@@ -119,96 +131,105 @@ class FirebaseAuthenticationFacade implements IAuthenticationFacade {
       final emailAddressStr = emailAddress.getOrCrash();
       final passwordStr = password.getOrCrash();
 
-      final FirebaseUser anonymousUser = await _firebaseAuth.currentUser();
+      final anonymousUser = _firebaseAuth.currentUser;
       await anonymousUser?.delete();
 
-      await _firebaseAuth.signInWithEmailAndPassword(email: emailAddressStr, password: passwordStr);
+      await _firebaseAuth.signInWithEmailAndPassword(
+        email: emailAddressStr,
+        password: passwordStr,
+      );
 
-      final FirebaseUser currentUser = await _firebaseAuth.currentUser();
-      final User user = User.fromFirebaseUser(currentUser);
+      final currentUser = _firebaseAuth.currentUser;
+      final user = User.fromFirebaseUser(currentUser);
 
       return right(AuthenticationSuccess.userAuthenticatedSCS(user));
-    } on PlatformException catch (e) {
+    } on FirebaseException catch (e) {
       await _firebaseAuth.signInAnonymously();
 
-      if (e.code == 'ERROR_WRONG_PASSWORD' || e.code == 'ERROR_USER_NOT_FOUND') {
-        return left(const AuthenticationFailure.invalidEmailAndPasswordCombination());
+      if (e.code == 'wrong-password' || e.code == 'user-not-found') {
+        return left(
+            const AuthenticationFailure.invalidEmailAndPasswordCombination());
       } else {
         return left(const AuthenticationFailure.serverError());
       }
+    } catch (e) {
+      return left(const AuthenticationFailure.serverError());
     }
   }
 
   @override
-  Future<Either<AuthenticationFailure, AuthenticationSuccess>> signInWithGoogle() async {
+  Future<Either<AuthenticationFailure, AuthenticationSuccess>>
+      signInWithGoogle() async {
     try {
-      final FirebaseUser anonymousUser = await _firebaseAuth.currentUser();
+      final anonymousUser = _firebaseAuth.currentUser;
 
-      final GoogleSignInAccount googleAccount = await _googleSignIn.signIn();
+      final googleAccount = await _googleSignIn.signIn();
       if (googleAccount == null) {
         return left(const AuthenticationFailure.cancelledByUser());
       }
 
-      final GoogleSignInAuthentication googleAuthentication = await googleAccount.authentication;
-      final AuthCredential authCredential = GoogleAuthProvider.getCredential(
+      final googleAuthentication = await googleAccount.authentication;
+      final auth.AuthCredential authCredential =
+          auth.GoogleAuthProvider.credential(
         idToken: googleAuthentication.idToken,
         accessToken: googleAuthentication.accessToken,
       );
 
       try {
         return right(await _trySignInWithGoogle(anonymousUser, authCredential));
-      } on PlatformException catch (e) {
-        if (e.code == 'ERROR_CREDENTIAL_ALREADY_IN_USE') {
-          return right(await _signInWithGoogleCredentialAlreadyInUse(anonymousUser, authCredential));
+      } on FirebaseException catch (e) {
+        if (e.code == 'credential-already-in-use') {
+          return right(await _signInWithGoogleCredentialAlreadyInUse(
+            anonymousUser,
+            authCredential,
+          ));
         }
         return left(const AuthenticationFailure.serverError());
       }
-    } on PlatformException catch (_) {
+    } catch (e) {
       return left(const AuthenticationFailure.serverError());
     }
   }
 
   Future<AuthenticationSuccess> _trySignInWithGoogle(
-    FirebaseUser anonymousUser,
-    AuthCredential authCredential,
+    auth.User anonymousUser,
+    auth.AuthCredential authCredential,
   ) async {
     await anonymousUser.linkWithCredential(authCredential);
     await _updateUserInfo(_googleSignIn.currentUser, anonymousUser);
 
-    final FirebaseUser anonymousUserTmp = await _firebaseAuth.currentUser();
+    final anonymousUserTmp = _firebaseAuth.currentUser;
 
-    final User user = User.fromFirebaseUser(anonymousUserTmp);
+    final user = User.fromFirebaseUser(anonymousUserTmp);
     return AuthenticationSuccess.userAuthenticatedSCS(user);
   }
 
   Future<AuthenticationSuccess> _signInWithGoogleCredentialAlreadyInUse(
-    FirebaseUser anonymousUser,
-    AuthCredential authCredential,
+    auth.User anonymousUser,
+    auth.AuthCredential authCredential,
   ) async {
-    anonymousUser.delete();
+    await anonymousUser.delete();
 
     await _firebaseAuth.signInWithCredential(authCredential);
 
-    FirebaseUser currentUser = await _firebaseAuth.currentUser();
+    var currentUser = _firebaseAuth.currentUser;
 
     await _updateUserInfo(_googleSignIn.currentUser, currentUser);
 
-    currentUser = await _firebaseAuth.currentUser();
+    currentUser = _firebaseAuth.currentUser;
 
-    final User user = User.fromFirebaseUser(currentUser);
+    final user = User.fromFirebaseUser(currentUser);
     return AuthenticationSuccess.userAuthenticatedSCS(user);
   }
 
   Future<void> _updateUserInfo(
     GoogleSignInAccount currentAccount,
-    FirebaseUser currentUser,
+    auth.User currentUser,
   ) async {
-    final UserUpdateInfo userUpdateInfo = UserUpdateInfo();
-
-    userUpdateInfo.displayName = currentAccount.displayName;
-    userUpdateInfo.photoUrl = currentAccount.photoUrl;
-
-    await currentUser.updateProfile(userUpdateInfo);
+    await currentUser.updateProfile(
+      displayName: currentAccount.displayName,
+      photoURL: currentAccount.photoUrl,
+    );
     await currentUser.reload();
   }
 
@@ -220,7 +241,7 @@ class FirebaseAuthenticationFacade implements IAuthenticationFacade {
         _googleSignIn.signOut(),
       ]);
 
-      final FirebaseUser currentUser = await _firebaseAuth.currentUser();
+      final currentUser = _firebaseAuth.currentUser;
       if (currentUser != null) {
         return left(const AuthenticationFailure.unableToSignOut());
       }

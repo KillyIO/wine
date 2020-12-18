@@ -1,20 +1,31 @@
+import 'dart:io';
+
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
-class WINEChapterTileCover extends StatelessWidget {
-  final String coverUrl;
+import 'package:wine/utils/extensions.dart';
 
+/// @nodoc
+class WINEChapterTileCover extends StatelessWidget {
+  /// @nodoc
   const WINEChapterTileCover({
     Key key,
-    @required this.coverUrl,
+    @required this.coverURL,
   }) : super(key: key);
+
+  /// @nodoc
+  final String coverURL;
 
   @override
   Widget build(BuildContext context) {
-    final Size mediaQuery = MediaQuery.of(context).size;
+    /// @nodoc
+    final mediaQuery = MediaQuery.of(context).size;
 
-    if (coverUrl != null) {
-      return CachedNetworkImage(imageUrl: coverUrl);
+    if (coverURL != null) {
+      if (coverURL.isURL) {
+        return CachedNetworkImage(imageUrl: coverURL);
+      }
+      return Image.file(File(coverURL));
     }
     return Container(
       color: Colors.black26,

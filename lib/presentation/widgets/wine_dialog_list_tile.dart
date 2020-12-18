@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
 
+/// @nodoc
 class WINEDialogListTile extends StatelessWidget {
-  final bool hasSelected;
-  final VoidCallback onPressed;
-  final String title;
-  final String trailingText;
-
+  /// @nodoc
   const WINEDialogListTile({
     Key key,
     @required this.hasSelected,
@@ -14,23 +11,47 @@ class WINEDialogListTile extends StatelessWidget {
     @required this.trailingText,
   }) : super(key: key);
 
+  /// @nodoc
+  final bool hasSelected;
+
+  /// @nodoc
+  final VoidCallback onPressed;
+
+  /// @nodoc
+  final String title;
+
+  /// @nodoc
+  final String trailingText;
+
   @override
   Widget build(BuildContext context) {
     return Container(
       color: Colors.black,
       child: ListTile(
         onTap: onPressed,
-        title: Text(title, style: TextStyle(color: Colors.white, fontWeight: FontWeight.w300)),
+        title: Text(
+          title,
+          style: const TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.w300,
+          ),
+        ),
         trailing: hasSelected
-            ? Icon(Icons.keyboard_arrow_right, color: Colors.white)
-            : Container(
+            ? const Icon(
+                Icons.keyboard_arrow_right,
+                color: Colors.white,
+              )
+            : SizedBox(
                 width: MediaQuery.of(context).size.width / 2,
                 child: Align(
                   alignment: Alignment.centerRight,
                   child: Text(
                     trailingText,
                     overflow: TextOverflow.ellipsis,
-                    style: TextStyle(color: Colors.white, fontWeight: FontWeight.w300),
+                    style: const TextStyle(
+                      color: Colors.white,
+                      fontWeight: FontWeight.w300,
+                    ),
                   ),
                 ),
               ),
