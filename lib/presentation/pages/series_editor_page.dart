@@ -26,9 +26,9 @@ class SeriesEditorPage extends StatelessWidget {
 
   SeriesEditorDatabaseBloc _getDatabaseBloc(BuildContext context) {
     switch (editorContentOrigin) {
-      case EditorContentOrigin.account:
+      case EditorContentOrigin.library:
         return getIt<SeriesEditorDatabaseBloc>()
-          ..add(SeriesEditorDatabaseEvent.seriesEditorLaunchedFromAccountEVT(
+          ..add(SeriesEditorDatabaseEvent.seriesEditorLaunchedFromLibraryEVT(
             context,
             seriesDraft,
           ));

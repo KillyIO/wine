@@ -25,11 +25,11 @@ class _$ChapterEditorDatabaseEventTearOff {
   }
 
 // ignore: unused_element
-  ChapterEditorLaunchedFromAccountEVT chapterEditorLaunchedFromAccountEVT(
+  ChapterEditorLaunchedFromLibraryEVT chapterEditorLaunchedFromLibraryEVT(
       BuildContext context,
       Chapter chapterDraft,
       EditorContentOrigin editorContentOrigin) {
-    return ChapterEditorLaunchedFromAccountEVT(
+    return ChapterEditorLaunchedFromLibraryEVT(
       context,
       chapterDraft,
       editorContentOrigin,
@@ -172,7 +172,7 @@ mixin _$ChapterEditorDatabaseEvent {
     @required
         TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(),
     @required
-        TResult chapterEditorLaunchedFromAccountEVT(BuildContext context,
+        TResult chapterEditorLaunchedFromLibraryEVT(BuildContext context,
             Chapter chapterDraft, EditorContentOrigin editorContentOrigin),
     @required
         TResult chapterEditorLaunchedFromPreviousChapterEVT(
@@ -203,7 +203,7 @@ mixin _$ChapterEditorDatabaseEvent {
   TResult maybeWhen<TResult extends Object>({
     TResult addCoverPressedEVT(),
     TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(),
-    TResult chapterEditorLaunchedFromAccountEVT(BuildContext context,
+    TResult chapterEditorLaunchedFromLibraryEVT(BuildContext context,
         Chapter chapterDraft, EditorContentOrigin editorContentOrigin),
     TResult chapterEditorLaunchedFromPreviousChapterEVT(BuildContext context,
         Chapter previousChapter, EditorContentOrigin editorContentOrigin),
@@ -234,8 +234,8 @@ mixin _$ChapterEditorDatabaseEvent {
         TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(
             ChapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT value),
     @required
-        TResult chapterEditorLaunchedFromAccountEVT(
-            ChapterEditorLaunchedFromAccountEVT value),
+        TResult chapterEditorLaunchedFromLibraryEVT(
+            ChapterEditorLaunchedFromLibraryEVT value),
     @required
         TResult chapterEditorLaunchedFromPreviousChapterEVT(
             ChapterEditorLaunchedFromPreviousChapterEVT value),
@@ -268,8 +268,8 @@ mixin _$ChapterEditorDatabaseEvent {
     TResult addCoverPressedEVT(AddCoverPressedEVT value),
     TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(
         ChapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT value),
-    TResult chapterEditorLaunchedFromAccountEVT(
-        ChapterEditorLaunchedFromAccountEVT value),
+    TResult chapterEditorLaunchedFromLibraryEVT(
+        ChapterEditorLaunchedFromLibraryEVT value),
     TResult chapterEditorLaunchedFromPreviousChapterEVT(
         ChapterEditorLaunchedFromPreviousChapterEVT value),
     TResult chapterEditorLaunchedFromSeriesEditorEVT(
@@ -365,7 +365,7 @@ class _$AddCoverPressedEVT
     @required
         TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(),
     @required
-        TResult chapterEditorLaunchedFromAccountEVT(BuildContext context,
+        TResult chapterEditorLaunchedFromLibraryEVT(BuildContext context,
             Chapter chapterDraft, EditorContentOrigin editorContentOrigin),
     @required
         TResult chapterEditorLaunchedFromPreviousChapterEVT(
@@ -394,7 +394,7 @@ class _$AddCoverPressedEVT
   }) {
     assert(addCoverPressedEVT != null);
     assert(chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT != null);
-    assert(chapterEditorLaunchedFromAccountEVT != null);
+    assert(chapterEditorLaunchedFromLibraryEVT != null);
     assert(chapterEditorLaunchedFromPreviousChapterEVT != null);
     assert(chapterEditorLaunchedFromSeriesEditorEVT != null);
     assert(chapterDraftDeletedOrPublishedEVT != null);
@@ -421,7 +421,7 @@ class _$AddCoverPressedEVT
   TResult maybeWhen<TResult extends Object>({
     TResult addCoverPressedEVT(),
     TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(),
-    TResult chapterEditorLaunchedFromAccountEVT(BuildContext context,
+    TResult chapterEditorLaunchedFromLibraryEVT(BuildContext context,
         Chapter chapterDraft, EditorContentOrigin editorContentOrigin),
     TResult chapterEditorLaunchedFromPreviousChapterEVT(BuildContext context,
         Chapter previousChapter, EditorContentOrigin editorContentOrigin),
@@ -460,8 +460,8 @@ class _$AddCoverPressedEVT
         TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(
             ChapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT value),
     @required
-        TResult chapterEditorLaunchedFromAccountEVT(
-            ChapterEditorLaunchedFromAccountEVT value),
+        TResult chapterEditorLaunchedFromLibraryEVT(
+            ChapterEditorLaunchedFromLibraryEVT value),
     @required
         TResult chapterEditorLaunchedFromPreviousChapterEVT(
             ChapterEditorLaunchedFromPreviousChapterEVT value),
@@ -491,7 +491,7 @@ class _$AddCoverPressedEVT
   }) {
     assert(addCoverPressedEVT != null);
     assert(chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT != null);
-    assert(chapterEditorLaunchedFromAccountEVT != null);
+    assert(chapterEditorLaunchedFromLibraryEVT != null);
     assert(chapterEditorLaunchedFromPreviousChapterEVT != null);
     assert(chapterEditorLaunchedFromSeriesEditorEVT != null);
     assert(chapterDraftDeletedOrPublishedEVT != null);
@@ -519,8 +519,8 @@ class _$AddCoverPressedEVT
     TResult addCoverPressedEVT(AddCoverPressedEVT value),
     TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(
         ChapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT value),
-    TResult chapterEditorLaunchedFromAccountEVT(
-        ChapterEditorLaunchedFromAccountEVT value),
+    TResult chapterEditorLaunchedFromLibraryEVT(
+        ChapterEditorLaunchedFromLibraryEVT value),
     TResult chapterEditorLaunchedFromPreviousChapterEVT(
         ChapterEditorLaunchedFromPreviousChapterEVT value),
     TResult chapterEditorLaunchedFromSeriesEditorEVT(
@@ -624,7 +624,7 @@ class _$ChapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT
     @required
         TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(),
     @required
-        TResult chapterEditorLaunchedFromAccountEVT(BuildContext context,
+        TResult chapterEditorLaunchedFromLibraryEVT(BuildContext context,
             Chapter chapterDraft, EditorContentOrigin editorContentOrigin),
     @required
         TResult chapterEditorLaunchedFromPreviousChapterEVT(
@@ -653,7 +653,7 @@ class _$ChapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT
   }) {
     assert(addCoverPressedEVT != null);
     assert(chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT != null);
-    assert(chapterEditorLaunchedFromAccountEVT != null);
+    assert(chapterEditorLaunchedFromLibraryEVT != null);
     assert(chapterEditorLaunchedFromPreviousChapterEVT != null);
     assert(chapterEditorLaunchedFromSeriesEditorEVT != null);
     assert(chapterDraftDeletedOrPublishedEVT != null);
@@ -680,7 +680,7 @@ class _$ChapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT
   TResult maybeWhen<TResult extends Object>({
     TResult addCoverPressedEVT(),
     TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(),
-    TResult chapterEditorLaunchedFromAccountEVT(BuildContext context,
+    TResult chapterEditorLaunchedFromLibraryEVT(BuildContext context,
         Chapter chapterDraft, EditorContentOrigin editorContentOrigin),
     TResult chapterEditorLaunchedFromPreviousChapterEVT(BuildContext context,
         Chapter previousChapter, EditorContentOrigin editorContentOrigin),
@@ -719,8 +719,8 @@ class _$ChapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT
         TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(
             ChapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT value),
     @required
-        TResult chapterEditorLaunchedFromAccountEVT(
-            ChapterEditorLaunchedFromAccountEVT value),
+        TResult chapterEditorLaunchedFromLibraryEVT(
+            ChapterEditorLaunchedFromLibraryEVT value),
     @required
         TResult chapterEditorLaunchedFromPreviousChapterEVT(
             ChapterEditorLaunchedFromPreviousChapterEVT value),
@@ -750,7 +750,7 @@ class _$ChapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT
   }) {
     assert(addCoverPressedEVT != null);
     assert(chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT != null);
-    assert(chapterEditorLaunchedFromAccountEVT != null);
+    assert(chapterEditorLaunchedFromLibraryEVT != null);
     assert(chapterEditorLaunchedFromPreviousChapterEVT != null);
     assert(chapterEditorLaunchedFromSeriesEditorEVT != null);
     assert(chapterDraftDeletedOrPublishedEVT != null);
@@ -778,8 +778,8 @@ class _$ChapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT
     TResult addCoverPressedEVT(AddCoverPressedEVT value),
     TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(
         ChapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT value),
-    TResult chapterEditorLaunchedFromAccountEVT(
-        ChapterEditorLaunchedFromAccountEVT value),
+    TResult chapterEditorLaunchedFromLibraryEVT(
+        ChapterEditorLaunchedFromLibraryEVT value),
     TResult chapterEditorLaunchedFromPreviousChapterEVT(
         ChapterEditorLaunchedFromPreviousChapterEVT value),
     TResult chapterEditorLaunchedFromSeriesEditorEVT(
@@ -818,11 +818,11 @@ abstract class ChapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT
 }
 
 /// @nodoc
-abstract class $ChapterEditorLaunchedFromAccountEVTCopyWith<$Res> {
-  factory $ChapterEditorLaunchedFromAccountEVTCopyWith(
-          ChapterEditorLaunchedFromAccountEVT value,
-          $Res Function(ChapterEditorLaunchedFromAccountEVT) then) =
-      _$ChapterEditorLaunchedFromAccountEVTCopyWithImpl<$Res>;
+abstract class $ChapterEditorLaunchedFromLibraryEVTCopyWith<$Res> {
+  factory $ChapterEditorLaunchedFromLibraryEVTCopyWith(
+          ChapterEditorLaunchedFromLibraryEVT value,
+          $Res Function(ChapterEditorLaunchedFromLibraryEVT) then) =
+      _$ChapterEditorLaunchedFromLibraryEVTCopyWithImpl<$Res>;
   $Res call(
       {BuildContext context,
       Chapter chapterDraft,
@@ -830,17 +830,17 @@ abstract class $ChapterEditorLaunchedFromAccountEVTCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$ChapterEditorLaunchedFromAccountEVTCopyWithImpl<$Res>
+class _$ChapterEditorLaunchedFromLibraryEVTCopyWithImpl<$Res>
     extends _$ChapterEditorDatabaseEventCopyWithImpl<$Res>
-    implements $ChapterEditorLaunchedFromAccountEVTCopyWith<$Res> {
-  _$ChapterEditorLaunchedFromAccountEVTCopyWithImpl(
-      ChapterEditorLaunchedFromAccountEVT _value,
-      $Res Function(ChapterEditorLaunchedFromAccountEVT) _then)
-      : super(_value, (v) => _then(v as ChapterEditorLaunchedFromAccountEVT));
+    implements $ChapterEditorLaunchedFromLibraryEVTCopyWith<$Res> {
+  _$ChapterEditorLaunchedFromLibraryEVTCopyWithImpl(
+      ChapterEditorLaunchedFromLibraryEVT _value,
+      $Res Function(ChapterEditorLaunchedFromLibraryEVT) _then)
+      : super(_value, (v) => _then(v as ChapterEditorLaunchedFromLibraryEVT));
 
   @override
-  ChapterEditorLaunchedFromAccountEVT get _value =>
-      super._value as ChapterEditorLaunchedFromAccountEVT;
+  ChapterEditorLaunchedFromLibraryEVT get _value =>
+      super._value as ChapterEditorLaunchedFromLibraryEVT;
 
   @override
   $Res call({
@@ -848,7 +848,7 @@ class _$ChapterEditorLaunchedFromAccountEVTCopyWithImpl<$Res>
     Object chapterDraft = freezed,
     Object editorContentOrigin = freezed,
   }) {
-    return _then(ChapterEditorLaunchedFromAccountEVT(
+    return _then(ChapterEditorLaunchedFromLibraryEVT(
       context == freezed ? _value.context : context as BuildContext,
       chapterDraft == freezed ? _value.chapterDraft : chapterDraft as Chapter,
       editorContentOrigin == freezed
@@ -859,10 +859,10 @@ class _$ChapterEditorLaunchedFromAccountEVTCopyWithImpl<$Res>
 }
 
 /// @nodoc
-class _$ChapterEditorLaunchedFromAccountEVT
+class _$ChapterEditorLaunchedFromLibraryEVT
     with DiagnosticableTreeMixin
-    implements ChapterEditorLaunchedFromAccountEVT {
-  const _$ChapterEditorLaunchedFromAccountEVT(
+    implements ChapterEditorLaunchedFromLibraryEVT {
+  const _$ChapterEditorLaunchedFromLibraryEVT(
       this.context, this.chapterDraft, this.editorContentOrigin)
       : assert(context != null),
         assert(chapterDraft != null),
@@ -877,7 +877,7 @@ class _$ChapterEditorLaunchedFromAccountEVT
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'ChapterEditorDatabaseEvent.chapterEditorLaunchedFromAccountEVT(context: $context, chapterDraft: $chapterDraft, editorContentOrigin: $editorContentOrigin)';
+    return 'ChapterEditorDatabaseEvent.chapterEditorLaunchedFromLibraryEVT(context: $context, chapterDraft: $chapterDraft, editorContentOrigin: $editorContentOrigin)';
   }
 
   @override
@@ -885,7 +885,7 @@ class _$ChapterEditorLaunchedFromAccountEVT
     super.debugFillProperties(properties);
     properties
       ..add(DiagnosticsProperty('type',
-          'ChapterEditorDatabaseEvent.chapterEditorLaunchedFromAccountEVT'))
+          'ChapterEditorDatabaseEvent.chapterEditorLaunchedFromLibraryEVT'))
       ..add(DiagnosticsProperty('context', context))
       ..add(DiagnosticsProperty('chapterDraft', chapterDraft))
       ..add(DiagnosticsProperty('editorContentOrigin', editorContentOrigin));
@@ -894,7 +894,7 @@ class _$ChapterEditorLaunchedFromAccountEVT
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is ChapterEditorLaunchedFromAccountEVT &&
+        (other is ChapterEditorLaunchedFromLibraryEVT &&
             (identical(other.context, context) ||
                 const DeepCollectionEquality()
                     .equals(other.context, context)) &&
@@ -914,10 +914,10 @@ class _$ChapterEditorLaunchedFromAccountEVT
       const DeepCollectionEquality().hash(editorContentOrigin);
 
   @override
-  $ChapterEditorLaunchedFromAccountEVTCopyWith<
-          ChapterEditorLaunchedFromAccountEVT>
-      get copyWith => _$ChapterEditorLaunchedFromAccountEVTCopyWithImpl<
-          ChapterEditorLaunchedFromAccountEVT>(this, _$identity);
+  $ChapterEditorLaunchedFromLibraryEVTCopyWith<
+          ChapterEditorLaunchedFromLibraryEVT>
+      get copyWith => _$ChapterEditorLaunchedFromLibraryEVTCopyWithImpl<
+          ChapterEditorLaunchedFromLibraryEVT>(this, _$identity);
 
   @override
   @optionalTypeArgs
@@ -926,7 +926,7 @@ class _$ChapterEditorLaunchedFromAccountEVT
     @required
         TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(),
     @required
-        TResult chapterEditorLaunchedFromAccountEVT(BuildContext context,
+        TResult chapterEditorLaunchedFromLibraryEVT(BuildContext context,
             Chapter chapterDraft, EditorContentOrigin editorContentOrigin),
     @required
         TResult chapterEditorLaunchedFromPreviousChapterEVT(
@@ -955,7 +955,7 @@ class _$ChapterEditorLaunchedFromAccountEVT
   }) {
     assert(addCoverPressedEVT != null);
     assert(chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT != null);
-    assert(chapterEditorLaunchedFromAccountEVT != null);
+    assert(chapterEditorLaunchedFromLibraryEVT != null);
     assert(chapterEditorLaunchedFromPreviousChapterEVT != null);
     assert(chapterEditorLaunchedFromSeriesEditorEVT != null);
     assert(chapterDraftDeletedOrPublishedEVT != null);
@@ -974,7 +974,7 @@ class _$ChapterEditorLaunchedFromAccountEVT
     assert(sessionFetchedEVT != null);
     assert(storyChangedEVT != null);
     assert(titleChangedEVT != null);
-    return chapterEditorLaunchedFromAccountEVT(
+    return chapterEditorLaunchedFromLibraryEVT(
         context, chapterDraft, editorContentOrigin);
   }
 
@@ -983,7 +983,7 @@ class _$ChapterEditorLaunchedFromAccountEVT
   TResult maybeWhen<TResult extends Object>({
     TResult addCoverPressedEVT(),
     TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(),
-    TResult chapterEditorLaunchedFromAccountEVT(BuildContext context,
+    TResult chapterEditorLaunchedFromLibraryEVT(BuildContext context,
         Chapter chapterDraft, EditorContentOrigin editorContentOrigin),
     TResult chapterEditorLaunchedFromPreviousChapterEVT(BuildContext context,
         Chapter previousChapter, EditorContentOrigin editorContentOrigin),
@@ -1008,8 +1008,8 @@ class _$ChapterEditorLaunchedFromAccountEVT
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (chapterEditorLaunchedFromAccountEVT != null) {
-      return chapterEditorLaunchedFromAccountEVT(
+    if (chapterEditorLaunchedFromLibraryEVT != null) {
+      return chapterEditorLaunchedFromLibraryEVT(
           context, chapterDraft, editorContentOrigin);
     }
     return orElse();
@@ -1023,8 +1023,8 @@ class _$ChapterEditorLaunchedFromAccountEVT
         TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(
             ChapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT value),
     @required
-        TResult chapterEditorLaunchedFromAccountEVT(
-            ChapterEditorLaunchedFromAccountEVT value),
+        TResult chapterEditorLaunchedFromLibraryEVT(
+            ChapterEditorLaunchedFromLibraryEVT value),
     @required
         TResult chapterEditorLaunchedFromPreviousChapterEVT(
             ChapterEditorLaunchedFromPreviousChapterEVT value),
@@ -1054,7 +1054,7 @@ class _$ChapterEditorLaunchedFromAccountEVT
   }) {
     assert(addCoverPressedEVT != null);
     assert(chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT != null);
-    assert(chapterEditorLaunchedFromAccountEVT != null);
+    assert(chapterEditorLaunchedFromLibraryEVT != null);
     assert(chapterEditorLaunchedFromPreviousChapterEVT != null);
     assert(chapterEditorLaunchedFromSeriesEditorEVT != null);
     assert(chapterDraftDeletedOrPublishedEVT != null);
@@ -1073,7 +1073,7 @@ class _$ChapterEditorLaunchedFromAccountEVT
     assert(sessionFetchedEVT != null);
     assert(storyChangedEVT != null);
     assert(titleChangedEVT != null);
-    return chapterEditorLaunchedFromAccountEVT(this);
+    return chapterEditorLaunchedFromLibraryEVT(this);
   }
 
   @override
@@ -1082,8 +1082,8 @@ class _$ChapterEditorLaunchedFromAccountEVT
     TResult addCoverPressedEVT(AddCoverPressedEVT value),
     TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(
         ChapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT value),
-    TResult chapterEditorLaunchedFromAccountEVT(
-        ChapterEditorLaunchedFromAccountEVT value),
+    TResult chapterEditorLaunchedFromLibraryEVT(
+        ChapterEditorLaunchedFromLibraryEVT value),
     TResult chapterEditorLaunchedFromPreviousChapterEVT(
         ChapterEditorLaunchedFromPreviousChapterEVT value),
     TResult chapterEditorLaunchedFromSeriesEditorEVT(
@@ -1108,24 +1108,24 @@ class _$ChapterEditorLaunchedFromAccountEVT
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (chapterEditorLaunchedFromAccountEVT != null) {
-      return chapterEditorLaunchedFromAccountEVT(this);
+    if (chapterEditorLaunchedFromLibraryEVT != null) {
+      return chapterEditorLaunchedFromLibraryEVT(this);
     }
     return orElse();
   }
 }
 
-abstract class ChapterEditorLaunchedFromAccountEVT
+abstract class ChapterEditorLaunchedFromLibraryEVT
     implements ChapterEditorDatabaseEvent {
-  const factory ChapterEditorLaunchedFromAccountEVT(BuildContext context,
+  const factory ChapterEditorLaunchedFromLibraryEVT(BuildContext context,
           Chapter chapterDraft, EditorContentOrigin editorContentOrigin) =
-      _$ChapterEditorLaunchedFromAccountEVT;
+      _$ChapterEditorLaunchedFromLibraryEVT;
 
   BuildContext get context;
   Chapter get chapterDraft;
   EditorContentOrigin get editorContentOrigin;
-  $ChapterEditorLaunchedFromAccountEVTCopyWith<
-      ChapterEditorLaunchedFromAccountEVT> get copyWith;
+  $ChapterEditorLaunchedFromLibraryEVTCopyWith<
+      ChapterEditorLaunchedFromLibraryEVT> get copyWith;
 }
 
 /// @nodoc
@@ -1240,7 +1240,7 @@ class _$ChapterEditorLaunchedFromPreviousChapterEVT
     @required
         TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(),
     @required
-        TResult chapterEditorLaunchedFromAccountEVT(BuildContext context,
+        TResult chapterEditorLaunchedFromLibraryEVT(BuildContext context,
             Chapter chapterDraft, EditorContentOrigin editorContentOrigin),
     @required
         TResult chapterEditorLaunchedFromPreviousChapterEVT(
@@ -1269,7 +1269,7 @@ class _$ChapterEditorLaunchedFromPreviousChapterEVT
   }) {
     assert(addCoverPressedEVT != null);
     assert(chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT != null);
-    assert(chapterEditorLaunchedFromAccountEVT != null);
+    assert(chapterEditorLaunchedFromLibraryEVT != null);
     assert(chapterEditorLaunchedFromPreviousChapterEVT != null);
     assert(chapterEditorLaunchedFromSeriesEditorEVT != null);
     assert(chapterDraftDeletedOrPublishedEVT != null);
@@ -1297,7 +1297,7 @@ class _$ChapterEditorLaunchedFromPreviousChapterEVT
   TResult maybeWhen<TResult extends Object>({
     TResult addCoverPressedEVT(),
     TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(),
-    TResult chapterEditorLaunchedFromAccountEVT(BuildContext context,
+    TResult chapterEditorLaunchedFromLibraryEVT(BuildContext context,
         Chapter chapterDraft, EditorContentOrigin editorContentOrigin),
     TResult chapterEditorLaunchedFromPreviousChapterEVT(BuildContext context,
         Chapter previousChapter, EditorContentOrigin editorContentOrigin),
@@ -1337,8 +1337,8 @@ class _$ChapterEditorLaunchedFromPreviousChapterEVT
         TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(
             ChapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT value),
     @required
-        TResult chapterEditorLaunchedFromAccountEVT(
-            ChapterEditorLaunchedFromAccountEVT value),
+        TResult chapterEditorLaunchedFromLibraryEVT(
+            ChapterEditorLaunchedFromLibraryEVT value),
     @required
         TResult chapterEditorLaunchedFromPreviousChapterEVT(
             ChapterEditorLaunchedFromPreviousChapterEVT value),
@@ -1368,7 +1368,7 @@ class _$ChapterEditorLaunchedFromPreviousChapterEVT
   }) {
     assert(addCoverPressedEVT != null);
     assert(chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT != null);
-    assert(chapterEditorLaunchedFromAccountEVT != null);
+    assert(chapterEditorLaunchedFromLibraryEVT != null);
     assert(chapterEditorLaunchedFromPreviousChapterEVT != null);
     assert(chapterEditorLaunchedFromSeriesEditorEVT != null);
     assert(chapterDraftDeletedOrPublishedEVT != null);
@@ -1396,8 +1396,8 @@ class _$ChapterEditorLaunchedFromPreviousChapterEVT
     TResult addCoverPressedEVT(AddCoverPressedEVT value),
     TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(
         ChapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT value),
-    TResult chapterEditorLaunchedFromAccountEVT(
-        ChapterEditorLaunchedFromAccountEVT value),
+    TResult chapterEditorLaunchedFromLibraryEVT(
+        ChapterEditorLaunchedFromLibraryEVT value),
     TResult chapterEditorLaunchedFromPreviousChapterEVT(
         ChapterEditorLaunchedFromPreviousChapterEVT value),
     TResult chapterEditorLaunchedFromSeriesEditorEVT(
@@ -1554,7 +1554,7 @@ class _$ChapterEditorLaunchedFromSeriesEditorEVT
     @required
         TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(),
     @required
-        TResult chapterEditorLaunchedFromAccountEVT(BuildContext context,
+        TResult chapterEditorLaunchedFromLibraryEVT(BuildContext context,
             Chapter chapterDraft, EditorContentOrigin editorContentOrigin),
     @required
         TResult chapterEditorLaunchedFromPreviousChapterEVT(
@@ -1583,7 +1583,7 @@ class _$ChapterEditorLaunchedFromSeriesEditorEVT
   }) {
     assert(addCoverPressedEVT != null);
     assert(chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT != null);
-    assert(chapterEditorLaunchedFromAccountEVT != null);
+    assert(chapterEditorLaunchedFromLibraryEVT != null);
     assert(chapterEditorLaunchedFromPreviousChapterEVT != null);
     assert(chapterEditorLaunchedFromSeriesEditorEVT != null);
     assert(chapterDraftDeletedOrPublishedEVT != null);
@@ -1611,7 +1611,7 @@ class _$ChapterEditorLaunchedFromSeriesEditorEVT
   TResult maybeWhen<TResult extends Object>({
     TResult addCoverPressedEVT(),
     TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(),
-    TResult chapterEditorLaunchedFromAccountEVT(BuildContext context,
+    TResult chapterEditorLaunchedFromLibraryEVT(BuildContext context,
         Chapter chapterDraft, EditorContentOrigin editorContentOrigin),
     TResult chapterEditorLaunchedFromPreviousChapterEVT(BuildContext context,
         Chapter previousChapter, EditorContentOrigin editorContentOrigin),
@@ -1651,8 +1651,8 @@ class _$ChapterEditorLaunchedFromSeriesEditorEVT
         TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(
             ChapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT value),
     @required
-        TResult chapterEditorLaunchedFromAccountEVT(
-            ChapterEditorLaunchedFromAccountEVT value),
+        TResult chapterEditorLaunchedFromLibraryEVT(
+            ChapterEditorLaunchedFromLibraryEVT value),
     @required
         TResult chapterEditorLaunchedFromPreviousChapterEVT(
             ChapterEditorLaunchedFromPreviousChapterEVT value),
@@ -1682,7 +1682,7 @@ class _$ChapterEditorLaunchedFromSeriesEditorEVT
   }) {
     assert(addCoverPressedEVT != null);
     assert(chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT != null);
-    assert(chapterEditorLaunchedFromAccountEVT != null);
+    assert(chapterEditorLaunchedFromLibraryEVT != null);
     assert(chapterEditorLaunchedFromPreviousChapterEVT != null);
     assert(chapterEditorLaunchedFromSeriesEditorEVT != null);
     assert(chapterDraftDeletedOrPublishedEVT != null);
@@ -1710,8 +1710,8 @@ class _$ChapterEditorLaunchedFromSeriesEditorEVT
     TResult addCoverPressedEVT(AddCoverPressedEVT value),
     TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(
         ChapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT value),
-    TResult chapterEditorLaunchedFromAccountEVT(
-        ChapterEditorLaunchedFromAccountEVT value),
+    TResult chapterEditorLaunchedFromLibraryEVT(
+        ChapterEditorLaunchedFromLibraryEVT value),
     TResult chapterEditorLaunchedFromPreviousChapterEVT(
         ChapterEditorLaunchedFromPreviousChapterEVT value),
     TResult chapterEditorLaunchedFromSeriesEditorEVT(
@@ -1814,7 +1814,7 @@ class _$ChapterDraftDeletedOrPublishedEVT
     @required
         TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(),
     @required
-        TResult chapterEditorLaunchedFromAccountEVT(BuildContext context,
+        TResult chapterEditorLaunchedFromLibraryEVT(BuildContext context,
             Chapter chapterDraft, EditorContentOrigin editorContentOrigin),
     @required
         TResult chapterEditorLaunchedFromPreviousChapterEVT(
@@ -1843,7 +1843,7 @@ class _$ChapterDraftDeletedOrPublishedEVT
   }) {
     assert(addCoverPressedEVT != null);
     assert(chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT != null);
-    assert(chapterEditorLaunchedFromAccountEVT != null);
+    assert(chapterEditorLaunchedFromLibraryEVT != null);
     assert(chapterEditorLaunchedFromPreviousChapterEVT != null);
     assert(chapterEditorLaunchedFromSeriesEditorEVT != null);
     assert(chapterDraftDeletedOrPublishedEVT != null);
@@ -1870,7 +1870,7 @@ class _$ChapterDraftDeletedOrPublishedEVT
   TResult maybeWhen<TResult extends Object>({
     TResult addCoverPressedEVT(),
     TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(),
-    TResult chapterEditorLaunchedFromAccountEVT(BuildContext context,
+    TResult chapterEditorLaunchedFromLibraryEVT(BuildContext context,
         Chapter chapterDraft, EditorContentOrigin editorContentOrigin),
     TResult chapterEditorLaunchedFromPreviousChapterEVT(BuildContext context,
         Chapter previousChapter, EditorContentOrigin editorContentOrigin),
@@ -1909,8 +1909,8 @@ class _$ChapterDraftDeletedOrPublishedEVT
         TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(
             ChapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT value),
     @required
-        TResult chapterEditorLaunchedFromAccountEVT(
-            ChapterEditorLaunchedFromAccountEVT value),
+        TResult chapterEditorLaunchedFromLibraryEVT(
+            ChapterEditorLaunchedFromLibraryEVT value),
     @required
         TResult chapterEditorLaunchedFromPreviousChapterEVT(
             ChapterEditorLaunchedFromPreviousChapterEVT value),
@@ -1940,7 +1940,7 @@ class _$ChapterDraftDeletedOrPublishedEVT
   }) {
     assert(addCoverPressedEVT != null);
     assert(chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT != null);
-    assert(chapterEditorLaunchedFromAccountEVT != null);
+    assert(chapterEditorLaunchedFromLibraryEVT != null);
     assert(chapterEditorLaunchedFromPreviousChapterEVT != null);
     assert(chapterEditorLaunchedFromSeriesEditorEVT != null);
     assert(chapterDraftDeletedOrPublishedEVT != null);
@@ -1968,8 +1968,8 @@ class _$ChapterDraftDeletedOrPublishedEVT
     TResult addCoverPressedEVT(AddCoverPressedEVT value),
     TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(
         ChapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT value),
-    TResult chapterEditorLaunchedFromAccountEVT(
-        ChapterEditorLaunchedFromAccountEVT value),
+    TResult chapterEditorLaunchedFromLibraryEVT(
+        ChapterEditorLaunchedFromLibraryEVT value),
     TResult chapterEditorLaunchedFromPreviousChapterEVT(
         ChapterEditorLaunchedFromPreviousChapterEVT value),
     TResult chapterEditorLaunchedFromSeriesEditorEVT(
@@ -2060,7 +2060,7 @@ class _$ChapterPublishedEVT
     @required
         TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(),
     @required
-        TResult chapterEditorLaunchedFromAccountEVT(BuildContext context,
+        TResult chapterEditorLaunchedFromLibraryEVT(BuildContext context,
             Chapter chapterDraft, EditorContentOrigin editorContentOrigin),
     @required
         TResult chapterEditorLaunchedFromPreviousChapterEVT(
@@ -2089,7 +2089,7 @@ class _$ChapterPublishedEVT
   }) {
     assert(addCoverPressedEVT != null);
     assert(chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT != null);
-    assert(chapterEditorLaunchedFromAccountEVT != null);
+    assert(chapterEditorLaunchedFromLibraryEVT != null);
     assert(chapterEditorLaunchedFromPreviousChapterEVT != null);
     assert(chapterEditorLaunchedFromSeriesEditorEVT != null);
     assert(chapterDraftDeletedOrPublishedEVT != null);
@@ -2116,7 +2116,7 @@ class _$ChapterPublishedEVT
   TResult maybeWhen<TResult extends Object>({
     TResult addCoverPressedEVT(),
     TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(),
-    TResult chapterEditorLaunchedFromAccountEVT(BuildContext context,
+    TResult chapterEditorLaunchedFromLibraryEVT(BuildContext context,
         Chapter chapterDraft, EditorContentOrigin editorContentOrigin),
     TResult chapterEditorLaunchedFromPreviousChapterEVT(BuildContext context,
         Chapter previousChapter, EditorContentOrigin editorContentOrigin),
@@ -2155,8 +2155,8 @@ class _$ChapterPublishedEVT
         TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(
             ChapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT value),
     @required
-        TResult chapterEditorLaunchedFromAccountEVT(
-            ChapterEditorLaunchedFromAccountEVT value),
+        TResult chapterEditorLaunchedFromLibraryEVT(
+            ChapterEditorLaunchedFromLibraryEVT value),
     @required
         TResult chapterEditorLaunchedFromPreviousChapterEVT(
             ChapterEditorLaunchedFromPreviousChapterEVT value),
@@ -2186,7 +2186,7 @@ class _$ChapterPublishedEVT
   }) {
     assert(addCoverPressedEVT != null);
     assert(chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT != null);
-    assert(chapterEditorLaunchedFromAccountEVT != null);
+    assert(chapterEditorLaunchedFromLibraryEVT != null);
     assert(chapterEditorLaunchedFromPreviousChapterEVT != null);
     assert(chapterEditorLaunchedFromSeriesEditorEVT != null);
     assert(chapterDraftDeletedOrPublishedEVT != null);
@@ -2214,8 +2214,8 @@ class _$ChapterPublishedEVT
     TResult addCoverPressedEVT(AddCoverPressedEVT value),
     TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(
         ChapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT value),
-    TResult chapterEditorLaunchedFromAccountEVT(
-        ChapterEditorLaunchedFromAccountEVT value),
+    TResult chapterEditorLaunchedFromLibraryEVT(
+        ChapterEditorLaunchedFromLibraryEVT value),
     TResult chapterEditorLaunchedFromPreviousChapterEVT(
         ChapterEditorLaunchedFromPreviousChapterEVT value),
     TResult chapterEditorLaunchedFromSeriesEditorEVT(
@@ -2328,7 +2328,7 @@ class _$CopyrightsSelectedEVT
     @required
         TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(),
     @required
-        TResult chapterEditorLaunchedFromAccountEVT(BuildContext context,
+        TResult chapterEditorLaunchedFromLibraryEVT(BuildContext context,
             Chapter chapterDraft, EditorContentOrigin editorContentOrigin),
     @required
         TResult chapterEditorLaunchedFromPreviousChapterEVT(
@@ -2357,7 +2357,7 @@ class _$CopyrightsSelectedEVT
   }) {
     assert(addCoverPressedEVT != null);
     assert(chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT != null);
-    assert(chapterEditorLaunchedFromAccountEVT != null);
+    assert(chapterEditorLaunchedFromLibraryEVT != null);
     assert(chapterEditorLaunchedFromPreviousChapterEVT != null);
     assert(chapterEditorLaunchedFromSeriesEditorEVT != null);
     assert(chapterDraftDeletedOrPublishedEVT != null);
@@ -2384,7 +2384,7 @@ class _$CopyrightsSelectedEVT
   TResult maybeWhen<TResult extends Object>({
     TResult addCoverPressedEVT(),
     TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(),
-    TResult chapterEditorLaunchedFromAccountEVT(BuildContext context,
+    TResult chapterEditorLaunchedFromLibraryEVT(BuildContext context,
         Chapter chapterDraft, EditorContentOrigin editorContentOrigin),
     TResult chapterEditorLaunchedFromPreviousChapterEVT(BuildContext context,
         Chapter previousChapter, EditorContentOrigin editorContentOrigin),
@@ -2423,8 +2423,8 @@ class _$CopyrightsSelectedEVT
         TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(
             ChapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT value),
     @required
-        TResult chapterEditorLaunchedFromAccountEVT(
-            ChapterEditorLaunchedFromAccountEVT value),
+        TResult chapterEditorLaunchedFromLibraryEVT(
+            ChapterEditorLaunchedFromLibraryEVT value),
     @required
         TResult chapterEditorLaunchedFromPreviousChapterEVT(
             ChapterEditorLaunchedFromPreviousChapterEVT value),
@@ -2454,7 +2454,7 @@ class _$CopyrightsSelectedEVT
   }) {
     assert(addCoverPressedEVT != null);
     assert(chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT != null);
-    assert(chapterEditorLaunchedFromAccountEVT != null);
+    assert(chapterEditorLaunchedFromLibraryEVT != null);
     assert(chapterEditorLaunchedFromPreviousChapterEVT != null);
     assert(chapterEditorLaunchedFromSeriesEditorEVT != null);
     assert(chapterDraftDeletedOrPublishedEVT != null);
@@ -2482,8 +2482,8 @@ class _$CopyrightsSelectedEVT
     TResult addCoverPressedEVT(AddCoverPressedEVT value),
     TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(
         ChapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT value),
-    TResult chapterEditorLaunchedFromAccountEVT(
-        ChapterEditorLaunchedFromAccountEVT value),
+    TResult chapterEditorLaunchedFromLibraryEVT(
+        ChapterEditorLaunchedFromLibraryEVT value),
     TResult chapterEditorLaunchedFromPreviousChapterEVT(
         ChapterEditorLaunchedFromPreviousChapterEVT value),
     TResult chapterEditorLaunchedFromSeriesEditorEVT(
@@ -2578,7 +2578,7 @@ class _$DeleteDraftButtonPressedEVT
     @required
         TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(),
     @required
-        TResult chapterEditorLaunchedFromAccountEVT(BuildContext context,
+        TResult chapterEditorLaunchedFromLibraryEVT(BuildContext context,
             Chapter chapterDraft, EditorContentOrigin editorContentOrigin),
     @required
         TResult chapterEditorLaunchedFromPreviousChapterEVT(
@@ -2607,7 +2607,7 @@ class _$DeleteDraftButtonPressedEVT
   }) {
     assert(addCoverPressedEVT != null);
     assert(chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT != null);
-    assert(chapterEditorLaunchedFromAccountEVT != null);
+    assert(chapterEditorLaunchedFromLibraryEVT != null);
     assert(chapterEditorLaunchedFromPreviousChapterEVT != null);
     assert(chapterEditorLaunchedFromSeriesEditorEVT != null);
     assert(chapterDraftDeletedOrPublishedEVT != null);
@@ -2634,7 +2634,7 @@ class _$DeleteDraftButtonPressedEVT
   TResult maybeWhen<TResult extends Object>({
     TResult addCoverPressedEVT(),
     TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(),
-    TResult chapterEditorLaunchedFromAccountEVT(BuildContext context,
+    TResult chapterEditorLaunchedFromLibraryEVT(BuildContext context,
         Chapter chapterDraft, EditorContentOrigin editorContentOrigin),
     TResult chapterEditorLaunchedFromPreviousChapterEVT(BuildContext context,
         Chapter previousChapter, EditorContentOrigin editorContentOrigin),
@@ -2673,8 +2673,8 @@ class _$DeleteDraftButtonPressedEVT
         TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(
             ChapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT value),
     @required
-        TResult chapterEditorLaunchedFromAccountEVT(
-            ChapterEditorLaunchedFromAccountEVT value),
+        TResult chapterEditorLaunchedFromLibraryEVT(
+            ChapterEditorLaunchedFromLibraryEVT value),
     @required
         TResult chapterEditorLaunchedFromPreviousChapterEVT(
             ChapterEditorLaunchedFromPreviousChapterEVT value),
@@ -2704,7 +2704,7 @@ class _$DeleteDraftButtonPressedEVT
   }) {
     assert(addCoverPressedEVT != null);
     assert(chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT != null);
-    assert(chapterEditorLaunchedFromAccountEVT != null);
+    assert(chapterEditorLaunchedFromLibraryEVT != null);
     assert(chapterEditorLaunchedFromPreviousChapterEVT != null);
     assert(chapterEditorLaunchedFromSeriesEditorEVT != null);
     assert(chapterDraftDeletedOrPublishedEVT != null);
@@ -2732,8 +2732,8 @@ class _$DeleteDraftButtonPressedEVT
     TResult addCoverPressedEVT(AddCoverPressedEVT value),
     TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(
         ChapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT value),
-    TResult chapterEditorLaunchedFromAccountEVT(
-        ChapterEditorLaunchedFromAccountEVT value),
+    TResult chapterEditorLaunchedFromLibraryEVT(
+        ChapterEditorLaunchedFromLibraryEVT value),
     TResult chapterEditorLaunchedFromPreviousChapterEVT(
         ChapterEditorLaunchedFromPreviousChapterEVT value),
     TResult chapterEditorLaunchedFromSeriesEditorEVT(
@@ -2849,7 +2849,7 @@ class _$GenreOptionalSelectedEVT
     @required
         TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(),
     @required
-        TResult chapterEditorLaunchedFromAccountEVT(BuildContext context,
+        TResult chapterEditorLaunchedFromLibraryEVT(BuildContext context,
             Chapter chapterDraft, EditorContentOrigin editorContentOrigin),
     @required
         TResult chapterEditorLaunchedFromPreviousChapterEVT(
@@ -2878,7 +2878,7 @@ class _$GenreOptionalSelectedEVT
   }) {
     assert(addCoverPressedEVT != null);
     assert(chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT != null);
-    assert(chapterEditorLaunchedFromAccountEVT != null);
+    assert(chapterEditorLaunchedFromLibraryEVT != null);
     assert(chapterEditorLaunchedFromPreviousChapterEVT != null);
     assert(chapterEditorLaunchedFromSeriesEditorEVT != null);
     assert(chapterDraftDeletedOrPublishedEVT != null);
@@ -2905,7 +2905,7 @@ class _$GenreOptionalSelectedEVT
   TResult maybeWhen<TResult extends Object>({
     TResult addCoverPressedEVT(),
     TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(),
-    TResult chapterEditorLaunchedFromAccountEVT(BuildContext context,
+    TResult chapterEditorLaunchedFromLibraryEVT(BuildContext context,
         Chapter chapterDraft, EditorContentOrigin editorContentOrigin),
     TResult chapterEditorLaunchedFromPreviousChapterEVT(BuildContext context,
         Chapter previousChapter, EditorContentOrigin editorContentOrigin),
@@ -2944,8 +2944,8 @@ class _$GenreOptionalSelectedEVT
         TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(
             ChapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT value),
     @required
-        TResult chapterEditorLaunchedFromAccountEVT(
-            ChapterEditorLaunchedFromAccountEVT value),
+        TResult chapterEditorLaunchedFromLibraryEVT(
+            ChapterEditorLaunchedFromLibraryEVT value),
     @required
         TResult chapterEditorLaunchedFromPreviousChapterEVT(
             ChapterEditorLaunchedFromPreviousChapterEVT value),
@@ -2975,7 +2975,7 @@ class _$GenreOptionalSelectedEVT
   }) {
     assert(addCoverPressedEVT != null);
     assert(chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT != null);
-    assert(chapterEditorLaunchedFromAccountEVT != null);
+    assert(chapterEditorLaunchedFromLibraryEVT != null);
     assert(chapterEditorLaunchedFromPreviousChapterEVT != null);
     assert(chapterEditorLaunchedFromSeriesEditorEVT != null);
     assert(chapterDraftDeletedOrPublishedEVT != null);
@@ -3003,8 +3003,8 @@ class _$GenreOptionalSelectedEVT
     TResult addCoverPressedEVT(AddCoverPressedEVT value),
     TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(
         ChapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT value),
-    TResult chapterEditorLaunchedFromAccountEVT(
-        ChapterEditorLaunchedFromAccountEVT value),
+    TResult chapterEditorLaunchedFromLibraryEVT(
+        ChapterEditorLaunchedFromLibraryEVT value),
     TResult chapterEditorLaunchedFromPreviousChapterEVT(
         ChapterEditorLaunchedFromPreviousChapterEVT value),
     TResult chapterEditorLaunchedFromSeriesEditorEVT(
@@ -3119,7 +3119,7 @@ class _$GenreSelectedEVT
     @required
         TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(),
     @required
-        TResult chapterEditorLaunchedFromAccountEVT(BuildContext context,
+        TResult chapterEditorLaunchedFromLibraryEVT(BuildContext context,
             Chapter chapterDraft, EditorContentOrigin editorContentOrigin),
     @required
         TResult chapterEditorLaunchedFromPreviousChapterEVT(
@@ -3148,7 +3148,7 @@ class _$GenreSelectedEVT
   }) {
     assert(addCoverPressedEVT != null);
     assert(chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT != null);
-    assert(chapterEditorLaunchedFromAccountEVT != null);
+    assert(chapterEditorLaunchedFromLibraryEVT != null);
     assert(chapterEditorLaunchedFromPreviousChapterEVT != null);
     assert(chapterEditorLaunchedFromSeriesEditorEVT != null);
     assert(chapterDraftDeletedOrPublishedEVT != null);
@@ -3175,7 +3175,7 @@ class _$GenreSelectedEVT
   TResult maybeWhen<TResult extends Object>({
     TResult addCoverPressedEVT(),
     TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(),
-    TResult chapterEditorLaunchedFromAccountEVT(BuildContext context,
+    TResult chapterEditorLaunchedFromLibraryEVT(BuildContext context,
         Chapter chapterDraft, EditorContentOrigin editorContentOrigin),
     TResult chapterEditorLaunchedFromPreviousChapterEVT(BuildContext context,
         Chapter previousChapter, EditorContentOrigin editorContentOrigin),
@@ -3214,8 +3214,8 @@ class _$GenreSelectedEVT
         TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(
             ChapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT value),
     @required
-        TResult chapterEditorLaunchedFromAccountEVT(
-            ChapterEditorLaunchedFromAccountEVT value),
+        TResult chapterEditorLaunchedFromLibraryEVT(
+            ChapterEditorLaunchedFromLibraryEVT value),
     @required
         TResult chapterEditorLaunchedFromPreviousChapterEVT(
             ChapterEditorLaunchedFromPreviousChapterEVT value),
@@ -3245,7 +3245,7 @@ class _$GenreSelectedEVT
   }) {
     assert(addCoverPressedEVT != null);
     assert(chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT != null);
-    assert(chapterEditorLaunchedFromAccountEVT != null);
+    assert(chapterEditorLaunchedFromLibraryEVT != null);
     assert(chapterEditorLaunchedFromPreviousChapterEVT != null);
     assert(chapterEditorLaunchedFromSeriesEditorEVT != null);
     assert(chapterDraftDeletedOrPublishedEVT != null);
@@ -3273,8 +3273,8 @@ class _$GenreSelectedEVT
     TResult addCoverPressedEVT(AddCoverPressedEVT value),
     TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(
         ChapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT value),
-    TResult chapterEditorLaunchedFromAccountEVT(
-        ChapterEditorLaunchedFromAccountEVT value),
+    TResult chapterEditorLaunchedFromLibraryEVT(
+        ChapterEditorLaunchedFromLibraryEVT value),
     TResult chapterEditorLaunchedFromPreviousChapterEVT(
         ChapterEditorLaunchedFromPreviousChapterEVT value),
     TResult chapterEditorLaunchedFromSeriesEditorEVT(
@@ -3393,7 +3393,7 @@ class _$IsLastChapterChangedEVT
     @required
         TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(),
     @required
-        TResult chapterEditorLaunchedFromAccountEVT(BuildContext context,
+        TResult chapterEditorLaunchedFromLibraryEVT(BuildContext context,
             Chapter chapterDraft, EditorContentOrigin editorContentOrigin),
     @required
         TResult chapterEditorLaunchedFromPreviousChapterEVT(
@@ -3422,7 +3422,7 @@ class _$IsLastChapterChangedEVT
   }) {
     assert(addCoverPressedEVT != null);
     assert(chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT != null);
-    assert(chapterEditorLaunchedFromAccountEVT != null);
+    assert(chapterEditorLaunchedFromLibraryEVT != null);
     assert(chapterEditorLaunchedFromPreviousChapterEVT != null);
     assert(chapterEditorLaunchedFromSeriesEditorEVT != null);
     assert(chapterDraftDeletedOrPublishedEVT != null);
@@ -3449,7 +3449,7 @@ class _$IsLastChapterChangedEVT
   TResult maybeWhen<TResult extends Object>({
     TResult addCoverPressedEVT(),
     TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(),
-    TResult chapterEditorLaunchedFromAccountEVT(BuildContext context,
+    TResult chapterEditorLaunchedFromLibraryEVT(BuildContext context,
         Chapter chapterDraft, EditorContentOrigin editorContentOrigin),
     TResult chapterEditorLaunchedFromPreviousChapterEVT(BuildContext context,
         Chapter previousChapter, EditorContentOrigin editorContentOrigin),
@@ -3488,8 +3488,8 @@ class _$IsLastChapterChangedEVT
         TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(
             ChapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT value),
     @required
-        TResult chapterEditorLaunchedFromAccountEVT(
-            ChapterEditorLaunchedFromAccountEVT value),
+        TResult chapterEditorLaunchedFromLibraryEVT(
+            ChapterEditorLaunchedFromLibraryEVT value),
     @required
         TResult chapterEditorLaunchedFromPreviousChapterEVT(
             ChapterEditorLaunchedFromPreviousChapterEVT value),
@@ -3519,7 +3519,7 @@ class _$IsLastChapterChangedEVT
   }) {
     assert(addCoverPressedEVT != null);
     assert(chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT != null);
-    assert(chapterEditorLaunchedFromAccountEVT != null);
+    assert(chapterEditorLaunchedFromLibraryEVT != null);
     assert(chapterEditorLaunchedFromPreviousChapterEVT != null);
     assert(chapterEditorLaunchedFromSeriesEditorEVT != null);
     assert(chapterDraftDeletedOrPublishedEVT != null);
@@ -3547,8 +3547,8 @@ class _$IsLastChapterChangedEVT
     TResult addCoverPressedEVT(AddCoverPressedEVT value),
     TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(
         ChapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT value),
-    TResult chapterEditorLaunchedFromAccountEVT(
-        ChapterEditorLaunchedFromAccountEVT value),
+    TResult chapterEditorLaunchedFromLibraryEVT(
+        ChapterEditorLaunchedFromLibraryEVT value),
     TResult chapterEditorLaunchedFromPreviousChapterEVT(
         ChapterEditorLaunchedFromPreviousChapterEVT value),
     TResult chapterEditorLaunchedFromSeriesEditorEVT(
@@ -3663,7 +3663,7 @@ class _$IsNSFWChangedEVT
     @required
         TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(),
     @required
-        TResult chapterEditorLaunchedFromAccountEVT(BuildContext context,
+        TResult chapterEditorLaunchedFromLibraryEVT(BuildContext context,
             Chapter chapterDraft, EditorContentOrigin editorContentOrigin),
     @required
         TResult chapterEditorLaunchedFromPreviousChapterEVT(
@@ -3692,7 +3692,7 @@ class _$IsNSFWChangedEVT
   }) {
     assert(addCoverPressedEVT != null);
     assert(chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT != null);
-    assert(chapterEditorLaunchedFromAccountEVT != null);
+    assert(chapterEditorLaunchedFromLibraryEVT != null);
     assert(chapterEditorLaunchedFromPreviousChapterEVT != null);
     assert(chapterEditorLaunchedFromSeriesEditorEVT != null);
     assert(chapterDraftDeletedOrPublishedEVT != null);
@@ -3719,7 +3719,7 @@ class _$IsNSFWChangedEVT
   TResult maybeWhen<TResult extends Object>({
     TResult addCoverPressedEVT(),
     TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(),
-    TResult chapterEditorLaunchedFromAccountEVT(BuildContext context,
+    TResult chapterEditorLaunchedFromLibraryEVT(BuildContext context,
         Chapter chapterDraft, EditorContentOrigin editorContentOrigin),
     TResult chapterEditorLaunchedFromPreviousChapterEVT(BuildContext context,
         Chapter previousChapter, EditorContentOrigin editorContentOrigin),
@@ -3758,8 +3758,8 @@ class _$IsNSFWChangedEVT
         TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(
             ChapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT value),
     @required
-        TResult chapterEditorLaunchedFromAccountEVT(
-            ChapterEditorLaunchedFromAccountEVT value),
+        TResult chapterEditorLaunchedFromLibraryEVT(
+            ChapterEditorLaunchedFromLibraryEVT value),
     @required
         TResult chapterEditorLaunchedFromPreviousChapterEVT(
             ChapterEditorLaunchedFromPreviousChapterEVT value),
@@ -3789,7 +3789,7 @@ class _$IsNSFWChangedEVT
   }) {
     assert(addCoverPressedEVT != null);
     assert(chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT != null);
-    assert(chapterEditorLaunchedFromAccountEVT != null);
+    assert(chapterEditorLaunchedFromLibraryEVT != null);
     assert(chapterEditorLaunchedFromPreviousChapterEVT != null);
     assert(chapterEditorLaunchedFromSeriesEditorEVT != null);
     assert(chapterDraftDeletedOrPublishedEVT != null);
@@ -3817,8 +3817,8 @@ class _$IsNSFWChangedEVT
     TResult addCoverPressedEVT(AddCoverPressedEVT value),
     TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(
         ChapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT value),
-    TResult chapterEditorLaunchedFromAccountEVT(
-        ChapterEditorLaunchedFromAccountEVT value),
+    TResult chapterEditorLaunchedFromLibraryEVT(
+        ChapterEditorLaunchedFromLibraryEVT value),
     TResult chapterEditorLaunchedFromPreviousChapterEVT(
         ChapterEditorLaunchedFromPreviousChapterEVT value),
     TResult chapterEditorLaunchedFromSeriesEditorEVT(
@@ -3933,7 +3933,7 @@ class _$LanguageSelectedEVT
     @required
         TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(),
     @required
-        TResult chapterEditorLaunchedFromAccountEVT(BuildContext context,
+        TResult chapterEditorLaunchedFromLibraryEVT(BuildContext context,
             Chapter chapterDraft, EditorContentOrigin editorContentOrigin),
     @required
         TResult chapterEditorLaunchedFromPreviousChapterEVT(
@@ -3962,7 +3962,7 @@ class _$LanguageSelectedEVT
   }) {
     assert(addCoverPressedEVT != null);
     assert(chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT != null);
-    assert(chapterEditorLaunchedFromAccountEVT != null);
+    assert(chapterEditorLaunchedFromLibraryEVT != null);
     assert(chapterEditorLaunchedFromPreviousChapterEVT != null);
     assert(chapterEditorLaunchedFromSeriesEditorEVT != null);
     assert(chapterDraftDeletedOrPublishedEVT != null);
@@ -3989,7 +3989,7 @@ class _$LanguageSelectedEVT
   TResult maybeWhen<TResult extends Object>({
     TResult addCoverPressedEVT(),
     TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(),
-    TResult chapterEditorLaunchedFromAccountEVT(BuildContext context,
+    TResult chapterEditorLaunchedFromLibraryEVT(BuildContext context,
         Chapter chapterDraft, EditorContentOrigin editorContentOrigin),
     TResult chapterEditorLaunchedFromPreviousChapterEVT(BuildContext context,
         Chapter previousChapter, EditorContentOrigin editorContentOrigin),
@@ -4028,8 +4028,8 @@ class _$LanguageSelectedEVT
         TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(
             ChapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT value),
     @required
-        TResult chapterEditorLaunchedFromAccountEVT(
-            ChapterEditorLaunchedFromAccountEVT value),
+        TResult chapterEditorLaunchedFromLibraryEVT(
+            ChapterEditorLaunchedFromLibraryEVT value),
     @required
         TResult chapterEditorLaunchedFromPreviousChapterEVT(
             ChapterEditorLaunchedFromPreviousChapterEVT value),
@@ -4059,7 +4059,7 @@ class _$LanguageSelectedEVT
   }) {
     assert(addCoverPressedEVT != null);
     assert(chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT != null);
-    assert(chapterEditorLaunchedFromAccountEVT != null);
+    assert(chapterEditorLaunchedFromLibraryEVT != null);
     assert(chapterEditorLaunchedFromPreviousChapterEVT != null);
     assert(chapterEditorLaunchedFromSeriesEditorEVT != null);
     assert(chapterDraftDeletedOrPublishedEVT != null);
@@ -4087,8 +4087,8 @@ class _$LanguageSelectedEVT
     TResult addCoverPressedEVT(AddCoverPressedEVT value),
     TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(
         ChapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT value),
-    TResult chapterEditorLaunchedFromAccountEVT(
-        ChapterEditorLaunchedFromAccountEVT value),
+    TResult chapterEditorLaunchedFromLibraryEVT(
+        ChapterEditorLaunchedFromLibraryEVT value),
     TResult chapterEditorLaunchedFromPreviousChapterEVT(
         ChapterEditorLaunchedFromPreviousChapterEVT value),
     TResult chapterEditorLaunchedFromSeriesEditorEVT(
@@ -4180,7 +4180,7 @@ class _$PublishButtonPressedEVT
     @required
         TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(),
     @required
-        TResult chapterEditorLaunchedFromAccountEVT(BuildContext context,
+        TResult chapterEditorLaunchedFromLibraryEVT(BuildContext context,
             Chapter chapterDraft, EditorContentOrigin editorContentOrigin),
     @required
         TResult chapterEditorLaunchedFromPreviousChapterEVT(
@@ -4209,7 +4209,7 @@ class _$PublishButtonPressedEVT
   }) {
     assert(addCoverPressedEVT != null);
     assert(chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT != null);
-    assert(chapterEditorLaunchedFromAccountEVT != null);
+    assert(chapterEditorLaunchedFromLibraryEVT != null);
     assert(chapterEditorLaunchedFromPreviousChapterEVT != null);
     assert(chapterEditorLaunchedFromSeriesEditorEVT != null);
     assert(chapterDraftDeletedOrPublishedEVT != null);
@@ -4236,7 +4236,7 @@ class _$PublishButtonPressedEVT
   TResult maybeWhen<TResult extends Object>({
     TResult addCoverPressedEVT(),
     TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(),
-    TResult chapterEditorLaunchedFromAccountEVT(BuildContext context,
+    TResult chapterEditorLaunchedFromLibraryEVT(BuildContext context,
         Chapter chapterDraft, EditorContentOrigin editorContentOrigin),
     TResult chapterEditorLaunchedFromPreviousChapterEVT(BuildContext context,
         Chapter previousChapter, EditorContentOrigin editorContentOrigin),
@@ -4275,8 +4275,8 @@ class _$PublishButtonPressedEVT
         TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(
             ChapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT value),
     @required
-        TResult chapterEditorLaunchedFromAccountEVT(
-            ChapterEditorLaunchedFromAccountEVT value),
+        TResult chapterEditorLaunchedFromLibraryEVT(
+            ChapterEditorLaunchedFromLibraryEVT value),
     @required
         TResult chapterEditorLaunchedFromPreviousChapterEVT(
             ChapterEditorLaunchedFromPreviousChapterEVT value),
@@ -4306,7 +4306,7 @@ class _$PublishButtonPressedEVT
   }) {
     assert(addCoverPressedEVT != null);
     assert(chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT != null);
-    assert(chapterEditorLaunchedFromAccountEVT != null);
+    assert(chapterEditorLaunchedFromLibraryEVT != null);
     assert(chapterEditorLaunchedFromPreviousChapterEVT != null);
     assert(chapterEditorLaunchedFromSeriesEditorEVT != null);
     assert(chapterDraftDeletedOrPublishedEVT != null);
@@ -4334,8 +4334,8 @@ class _$PublishButtonPressedEVT
     TResult addCoverPressedEVT(AddCoverPressedEVT value),
     TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(
         ChapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT value),
-    TResult chapterEditorLaunchedFromAccountEVT(
-        ChapterEditorLaunchedFromAccountEVT value),
+    TResult chapterEditorLaunchedFromLibraryEVT(
+        ChapterEditorLaunchedFromLibraryEVT value),
     TResult chapterEditorLaunchedFromPreviousChapterEVT(
         ChapterEditorLaunchedFromPreviousChapterEVT value),
     TResult chapterEditorLaunchedFromSeriesEditorEVT(
@@ -4425,7 +4425,7 @@ class _$SaveOrBackButtonPressedEVT
     @required
         TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(),
     @required
-        TResult chapterEditorLaunchedFromAccountEVT(BuildContext context,
+        TResult chapterEditorLaunchedFromLibraryEVT(BuildContext context,
             Chapter chapterDraft, EditorContentOrigin editorContentOrigin),
     @required
         TResult chapterEditorLaunchedFromPreviousChapterEVT(
@@ -4454,7 +4454,7 @@ class _$SaveOrBackButtonPressedEVT
   }) {
     assert(addCoverPressedEVT != null);
     assert(chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT != null);
-    assert(chapterEditorLaunchedFromAccountEVT != null);
+    assert(chapterEditorLaunchedFromLibraryEVT != null);
     assert(chapterEditorLaunchedFromPreviousChapterEVT != null);
     assert(chapterEditorLaunchedFromSeriesEditorEVT != null);
     assert(chapterDraftDeletedOrPublishedEVT != null);
@@ -4481,7 +4481,7 @@ class _$SaveOrBackButtonPressedEVT
   TResult maybeWhen<TResult extends Object>({
     TResult addCoverPressedEVT(),
     TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(),
-    TResult chapterEditorLaunchedFromAccountEVT(BuildContext context,
+    TResult chapterEditorLaunchedFromLibraryEVT(BuildContext context,
         Chapter chapterDraft, EditorContentOrigin editorContentOrigin),
     TResult chapterEditorLaunchedFromPreviousChapterEVT(BuildContext context,
         Chapter previousChapter, EditorContentOrigin editorContentOrigin),
@@ -4520,8 +4520,8 @@ class _$SaveOrBackButtonPressedEVT
         TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(
             ChapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT value),
     @required
-        TResult chapterEditorLaunchedFromAccountEVT(
-            ChapterEditorLaunchedFromAccountEVT value),
+        TResult chapterEditorLaunchedFromLibraryEVT(
+            ChapterEditorLaunchedFromLibraryEVT value),
     @required
         TResult chapterEditorLaunchedFromPreviousChapterEVT(
             ChapterEditorLaunchedFromPreviousChapterEVT value),
@@ -4551,7 +4551,7 @@ class _$SaveOrBackButtonPressedEVT
   }) {
     assert(addCoverPressedEVT != null);
     assert(chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT != null);
-    assert(chapterEditorLaunchedFromAccountEVT != null);
+    assert(chapterEditorLaunchedFromLibraryEVT != null);
     assert(chapterEditorLaunchedFromPreviousChapterEVT != null);
     assert(chapterEditorLaunchedFromSeriesEditorEVT != null);
     assert(chapterDraftDeletedOrPublishedEVT != null);
@@ -4579,8 +4579,8 @@ class _$SaveOrBackButtonPressedEVT
     TResult addCoverPressedEVT(AddCoverPressedEVT value),
     TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(
         ChapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT value),
-    TResult chapterEditorLaunchedFromAccountEVT(
-        ChapterEditorLaunchedFromAccountEVT value),
+    TResult chapterEditorLaunchedFromLibraryEVT(
+        ChapterEditorLaunchedFromLibraryEVT value),
     TResult chapterEditorLaunchedFromPreviousChapterEVT(
         ChapterEditorLaunchedFromPreviousChapterEVT value),
     TResult chapterEditorLaunchedFromSeriesEditorEVT(
@@ -4694,7 +4694,7 @@ class _$SeriesDraftLoadedEVT
     @required
         TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(),
     @required
-        TResult chapterEditorLaunchedFromAccountEVT(BuildContext context,
+        TResult chapterEditorLaunchedFromLibraryEVT(BuildContext context,
             Chapter chapterDraft, EditorContentOrigin editorContentOrigin),
     @required
         TResult chapterEditorLaunchedFromPreviousChapterEVT(
@@ -4723,7 +4723,7 @@ class _$SeriesDraftLoadedEVT
   }) {
     assert(addCoverPressedEVT != null);
     assert(chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT != null);
-    assert(chapterEditorLaunchedFromAccountEVT != null);
+    assert(chapterEditorLaunchedFromLibraryEVT != null);
     assert(chapterEditorLaunchedFromPreviousChapterEVT != null);
     assert(chapterEditorLaunchedFromSeriesEditorEVT != null);
     assert(chapterDraftDeletedOrPublishedEVT != null);
@@ -4750,7 +4750,7 @@ class _$SeriesDraftLoadedEVT
   TResult maybeWhen<TResult extends Object>({
     TResult addCoverPressedEVT(),
     TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(),
-    TResult chapterEditorLaunchedFromAccountEVT(BuildContext context,
+    TResult chapterEditorLaunchedFromLibraryEVT(BuildContext context,
         Chapter chapterDraft, EditorContentOrigin editorContentOrigin),
     TResult chapterEditorLaunchedFromPreviousChapterEVT(BuildContext context,
         Chapter previousChapter, EditorContentOrigin editorContentOrigin),
@@ -4789,8 +4789,8 @@ class _$SeriesDraftLoadedEVT
         TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(
             ChapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT value),
     @required
-        TResult chapterEditorLaunchedFromAccountEVT(
-            ChapterEditorLaunchedFromAccountEVT value),
+        TResult chapterEditorLaunchedFromLibraryEVT(
+            ChapterEditorLaunchedFromLibraryEVT value),
     @required
         TResult chapterEditorLaunchedFromPreviousChapterEVT(
             ChapterEditorLaunchedFromPreviousChapterEVT value),
@@ -4820,7 +4820,7 @@ class _$SeriesDraftLoadedEVT
   }) {
     assert(addCoverPressedEVT != null);
     assert(chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT != null);
-    assert(chapterEditorLaunchedFromAccountEVT != null);
+    assert(chapterEditorLaunchedFromLibraryEVT != null);
     assert(chapterEditorLaunchedFromPreviousChapterEVT != null);
     assert(chapterEditorLaunchedFromSeriesEditorEVT != null);
     assert(chapterDraftDeletedOrPublishedEVT != null);
@@ -4848,8 +4848,8 @@ class _$SeriesDraftLoadedEVT
     TResult addCoverPressedEVT(AddCoverPressedEVT value),
     TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(
         ChapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT value),
-    TResult chapterEditorLaunchedFromAccountEVT(
-        ChapterEditorLaunchedFromAccountEVT value),
+    TResult chapterEditorLaunchedFromLibraryEVT(
+        ChapterEditorLaunchedFromLibraryEVT value),
     TResult chapterEditorLaunchedFromPreviousChapterEVT(
         ChapterEditorLaunchedFromPreviousChapterEVT value),
     TResult chapterEditorLaunchedFromSeriesEditorEVT(
@@ -4969,7 +4969,7 @@ class _$SeriesPublishedEVT
     @required
         TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(),
     @required
-        TResult chapterEditorLaunchedFromAccountEVT(BuildContext context,
+        TResult chapterEditorLaunchedFromLibraryEVT(BuildContext context,
             Chapter chapterDraft, EditorContentOrigin editorContentOrigin),
     @required
         TResult chapterEditorLaunchedFromPreviousChapterEVT(
@@ -4998,7 +4998,7 @@ class _$SeriesPublishedEVT
   }) {
     assert(addCoverPressedEVT != null);
     assert(chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT != null);
-    assert(chapterEditorLaunchedFromAccountEVT != null);
+    assert(chapterEditorLaunchedFromLibraryEVT != null);
     assert(chapterEditorLaunchedFromPreviousChapterEVT != null);
     assert(chapterEditorLaunchedFromSeriesEditorEVT != null);
     assert(chapterDraftDeletedOrPublishedEVT != null);
@@ -5025,7 +5025,7 @@ class _$SeriesPublishedEVT
   TResult maybeWhen<TResult extends Object>({
     TResult addCoverPressedEVT(),
     TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(),
-    TResult chapterEditorLaunchedFromAccountEVT(BuildContext context,
+    TResult chapterEditorLaunchedFromLibraryEVT(BuildContext context,
         Chapter chapterDraft, EditorContentOrigin editorContentOrigin),
     TResult chapterEditorLaunchedFromPreviousChapterEVT(BuildContext context,
         Chapter previousChapter, EditorContentOrigin editorContentOrigin),
@@ -5064,8 +5064,8 @@ class _$SeriesPublishedEVT
         TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(
             ChapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT value),
     @required
-        TResult chapterEditorLaunchedFromAccountEVT(
-            ChapterEditorLaunchedFromAccountEVT value),
+        TResult chapterEditorLaunchedFromLibraryEVT(
+            ChapterEditorLaunchedFromLibraryEVT value),
     @required
         TResult chapterEditorLaunchedFromPreviousChapterEVT(
             ChapterEditorLaunchedFromPreviousChapterEVT value),
@@ -5095,7 +5095,7 @@ class _$SeriesPublishedEVT
   }) {
     assert(addCoverPressedEVT != null);
     assert(chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT != null);
-    assert(chapterEditorLaunchedFromAccountEVT != null);
+    assert(chapterEditorLaunchedFromLibraryEVT != null);
     assert(chapterEditorLaunchedFromPreviousChapterEVT != null);
     assert(chapterEditorLaunchedFromSeriesEditorEVT != null);
     assert(chapterDraftDeletedOrPublishedEVT != null);
@@ -5123,8 +5123,8 @@ class _$SeriesPublishedEVT
     TResult addCoverPressedEVT(AddCoverPressedEVT value),
     TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(
         ChapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT value),
-    TResult chapterEditorLaunchedFromAccountEVT(
-        ChapterEditorLaunchedFromAccountEVT value),
+    TResult chapterEditorLaunchedFromLibraryEVT(
+        ChapterEditorLaunchedFromLibraryEVT value),
     TResult chapterEditorLaunchedFromPreviousChapterEVT(
         ChapterEditorLaunchedFromPreviousChapterEVT value),
     TResult chapterEditorLaunchedFromSeriesEditorEVT(
@@ -5217,7 +5217,7 @@ class _$SessionFetchedEVT
     @required
         TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(),
     @required
-        TResult chapterEditorLaunchedFromAccountEVT(BuildContext context,
+        TResult chapterEditorLaunchedFromLibraryEVT(BuildContext context,
             Chapter chapterDraft, EditorContentOrigin editorContentOrigin),
     @required
         TResult chapterEditorLaunchedFromPreviousChapterEVT(
@@ -5246,7 +5246,7 @@ class _$SessionFetchedEVT
   }) {
     assert(addCoverPressedEVT != null);
     assert(chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT != null);
-    assert(chapterEditorLaunchedFromAccountEVT != null);
+    assert(chapterEditorLaunchedFromLibraryEVT != null);
     assert(chapterEditorLaunchedFromPreviousChapterEVT != null);
     assert(chapterEditorLaunchedFromSeriesEditorEVT != null);
     assert(chapterDraftDeletedOrPublishedEVT != null);
@@ -5273,7 +5273,7 @@ class _$SessionFetchedEVT
   TResult maybeWhen<TResult extends Object>({
     TResult addCoverPressedEVT(),
     TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(),
-    TResult chapterEditorLaunchedFromAccountEVT(BuildContext context,
+    TResult chapterEditorLaunchedFromLibraryEVT(BuildContext context,
         Chapter chapterDraft, EditorContentOrigin editorContentOrigin),
     TResult chapterEditorLaunchedFromPreviousChapterEVT(BuildContext context,
         Chapter previousChapter, EditorContentOrigin editorContentOrigin),
@@ -5312,8 +5312,8 @@ class _$SessionFetchedEVT
         TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(
             ChapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT value),
     @required
-        TResult chapterEditorLaunchedFromAccountEVT(
-            ChapterEditorLaunchedFromAccountEVT value),
+        TResult chapterEditorLaunchedFromLibraryEVT(
+            ChapterEditorLaunchedFromLibraryEVT value),
     @required
         TResult chapterEditorLaunchedFromPreviousChapterEVT(
             ChapterEditorLaunchedFromPreviousChapterEVT value),
@@ -5343,7 +5343,7 @@ class _$SessionFetchedEVT
   }) {
     assert(addCoverPressedEVT != null);
     assert(chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT != null);
-    assert(chapterEditorLaunchedFromAccountEVT != null);
+    assert(chapterEditorLaunchedFromLibraryEVT != null);
     assert(chapterEditorLaunchedFromPreviousChapterEVT != null);
     assert(chapterEditorLaunchedFromSeriesEditorEVT != null);
     assert(chapterDraftDeletedOrPublishedEVT != null);
@@ -5371,8 +5371,8 @@ class _$SessionFetchedEVT
     TResult addCoverPressedEVT(AddCoverPressedEVT value),
     TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(
         ChapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT value),
-    TResult chapterEditorLaunchedFromAccountEVT(
-        ChapterEditorLaunchedFromAccountEVT value),
+    TResult chapterEditorLaunchedFromLibraryEVT(
+        ChapterEditorLaunchedFromLibraryEVT value),
     TResult chapterEditorLaunchedFromPreviousChapterEVT(
         ChapterEditorLaunchedFromPreviousChapterEVT value),
     TResult chapterEditorLaunchedFromSeriesEditorEVT(
@@ -5483,7 +5483,7 @@ class _$StoryChangedEVT
     @required
         TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(),
     @required
-        TResult chapterEditorLaunchedFromAccountEVT(BuildContext context,
+        TResult chapterEditorLaunchedFromLibraryEVT(BuildContext context,
             Chapter chapterDraft, EditorContentOrigin editorContentOrigin),
     @required
         TResult chapterEditorLaunchedFromPreviousChapterEVT(
@@ -5512,7 +5512,7 @@ class _$StoryChangedEVT
   }) {
     assert(addCoverPressedEVT != null);
     assert(chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT != null);
-    assert(chapterEditorLaunchedFromAccountEVT != null);
+    assert(chapterEditorLaunchedFromLibraryEVT != null);
     assert(chapterEditorLaunchedFromPreviousChapterEVT != null);
     assert(chapterEditorLaunchedFromSeriesEditorEVT != null);
     assert(chapterDraftDeletedOrPublishedEVT != null);
@@ -5539,7 +5539,7 @@ class _$StoryChangedEVT
   TResult maybeWhen<TResult extends Object>({
     TResult addCoverPressedEVT(),
     TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(),
-    TResult chapterEditorLaunchedFromAccountEVT(BuildContext context,
+    TResult chapterEditorLaunchedFromLibraryEVT(BuildContext context,
         Chapter chapterDraft, EditorContentOrigin editorContentOrigin),
     TResult chapterEditorLaunchedFromPreviousChapterEVT(BuildContext context,
         Chapter previousChapter, EditorContentOrigin editorContentOrigin),
@@ -5578,8 +5578,8 @@ class _$StoryChangedEVT
         TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(
             ChapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT value),
     @required
-        TResult chapterEditorLaunchedFromAccountEVT(
-            ChapterEditorLaunchedFromAccountEVT value),
+        TResult chapterEditorLaunchedFromLibraryEVT(
+            ChapterEditorLaunchedFromLibraryEVT value),
     @required
         TResult chapterEditorLaunchedFromPreviousChapterEVT(
             ChapterEditorLaunchedFromPreviousChapterEVT value),
@@ -5609,7 +5609,7 @@ class _$StoryChangedEVT
   }) {
     assert(addCoverPressedEVT != null);
     assert(chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT != null);
-    assert(chapterEditorLaunchedFromAccountEVT != null);
+    assert(chapterEditorLaunchedFromLibraryEVT != null);
     assert(chapterEditorLaunchedFromPreviousChapterEVT != null);
     assert(chapterEditorLaunchedFromSeriesEditorEVT != null);
     assert(chapterDraftDeletedOrPublishedEVT != null);
@@ -5637,8 +5637,8 @@ class _$StoryChangedEVT
     TResult addCoverPressedEVT(AddCoverPressedEVT value),
     TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(
         ChapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT value),
-    TResult chapterEditorLaunchedFromAccountEVT(
-        ChapterEditorLaunchedFromAccountEVT value),
+    TResult chapterEditorLaunchedFromLibraryEVT(
+        ChapterEditorLaunchedFromLibraryEVT value),
     TResult chapterEditorLaunchedFromPreviousChapterEVT(
         ChapterEditorLaunchedFromPreviousChapterEVT value),
     TResult chapterEditorLaunchedFromSeriesEditorEVT(
@@ -5752,7 +5752,7 @@ class _$TitleChangedEVT
     @required
         TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(),
     @required
-        TResult chapterEditorLaunchedFromAccountEVT(BuildContext context,
+        TResult chapterEditorLaunchedFromLibraryEVT(BuildContext context,
             Chapter chapterDraft, EditorContentOrigin editorContentOrigin),
     @required
         TResult chapterEditorLaunchedFromPreviousChapterEVT(
@@ -5781,7 +5781,7 @@ class _$TitleChangedEVT
   }) {
     assert(addCoverPressedEVT != null);
     assert(chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT != null);
-    assert(chapterEditorLaunchedFromAccountEVT != null);
+    assert(chapterEditorLaunchedFromLibraryEVT != null);
     assert(chapterEditorLaunchedFromPreviousChapterEVT != null);
     assert(chapterEditorLaunchedFromSeriesEditorEVT != null);
     assert(chapterDraftDeletedOrPublishedEVT != null);
@@ -5808,7 +5808,7 @@ class _$TitleChangedEVT
   TResult maybeWhen<TResult extends Object>({
     TResult addCoverPressedEVT(),
     TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(),
-    TResult chapterEditorLaunchedFromAccountEVT(BuildContext context,
+    TResult chapterEditorLaunchedFromLibraryEVT(BuildContext context,
         Chapter chapterDraft, EditorContentOrigin editorContentOrigin),
     TResult chapterEditorLaunchedFromPreviousChapterEVT(BuildContext context,
         Chapter previousChapter, EditorContentOrigin editorContentOrigin),
@@ -5847,8 +5847,8 @@ class _$TitleChangedEVT
         TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(
             ChapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT value),
     @required
-        TResult chapterEditorLaunchedFromAccountEVT(
-            ChapterEditorLaunchedFromAccountEVT value),
+        TResult chapterEditorLaunchedFromLibraryEVT(
+            ChapterEditorLaunchedFromLibraryEVT value),
     @required
         TResult chapterEditorLaunchedFromPreviousChapterEVT(
             ChapterEditorLaunchedFromPreviousChapterEVT value),
@@ -5878,7 +5878,7 @@ class _$TitleChangedEVT
   }) {
     assert(addCoverPressedEVT != null);
     assert(chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT != null);
-    assert(chapterEditorLaunchedFromAccountEVT != null);
+    assert(chapterEditorLaunchedFromLibraryEVT != null);
     assert(chapterEditorLaunchedFromPreviousChapterEVT != null);
     assert(chapterEditorLaunchedFromSeriesEditorEVT != null);
     assert(chapterDraftDeletedOrPublishedEVT != null);
@@ -5906,8 +5906,8 @@ class _$TitleChangedEVT
     TResult addCoverPressedEVT(AddCoverPressedEVT value),
     TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(
         ChapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT value),
-    TResult chapterEditorLaunchedFromAccountEVT(
-        ChapterEditorLaunchedFromAccountEVT value),
+    TResult chapterEditorLaunchedFromLibraryEVT(
+        ChapterEditorLaunchedFromLibraryEVT value),
     TResult chapterEditorLaunchedFromPreviousChapterEVT(
         ChapterEditorLaunchedFromPreviousChapterEVT value),
     TResult chapterEditorLaunchedFromSeriesEditorEVT(

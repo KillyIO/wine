@@ -177,40 +177,6 @@ class SeriesEditorDatabaseBloc
           sessionDatabaseFailureOrSuccessOption: none(),
         );
       },
-      seriesEditorLaunchedFromAccountEVT: (event) async* {
-        state.subtitleController.text = state.seriesDraft.subtitle;
-        state.summaryController.text = state.seriesDraft.summary;
-        state.titleController.text = state.seriesDraft.title;
-
-        yield state.copyWith(
-          coverURL: state.seriesDraft.coverURL,
-          editorContentOrigin: EditorContentOrigin.account,
-          genre: Genre(state.seriesDraft.genre),
-          genreOptional: Genre(
-            state.seriesDraft.genreOptional,
-            isOptional: true,
-          ),
-          genreOptionalStr: state.seriesDraft.genreOptional,
-          genreStr: state.seriesDraft.genre,
-          isEditMode: true,
-          isNSFW: state.seriesDraft.isNSFW,
-          language: Language(state.seriesDraft.language),
-          languageStr: state.seriesDraft.language,
-          seriesDraft: state.seriesDraft,
-          subtitle: Subtitle(state.seriesDraft.subtitle),
-          subtitleController: state.subtitleController,
-          subtitleStr: state.seriesDraft.subtitle,
-          subtitleWordCount: tps.getWordCount(state.seriesDraft.subtitle),
-          summary: Summary(state.seriesDraft.summary),
-          summaryController: state.summaryController,
-          summaryStr: state.seriesDraft.summary,
-          summaryWordCount: tps.getWordCount(state.seriesDraft.summary),
-          title: Title(state.seriesDraft.title),
-          titleController: state.titleController,
-          titleStr: state.seriesDraft.title,
-          titleWordCount: tps.getWordCount(state.seriesDraft.title),
-        );
-      },
       seriesEditorLaunchedFromHomeEVT: (event) async* {
         yield state.copyWith(
           isLoading: true,
@@ -246,6 +212,40 @@ class SeriesEditorDatabaseBloc
         if (callSuccess) {
           add(const SeriesEditorDatabaseEvent.sessionFetchedEVT());
         }
+      },
+      seriesEditorLaunchedFromLibraryEVT: (event) async* {
+        state.subtitleController.text = state.seriesDraft.subtitle;
+        state.summaryController.text = state.seriesDraft.summary;
+        state.titleController.text = state.seriesDraft.title;
+
+        yield state.copyWith(
+          coverURL: state.seriesDraft.coverURL,
+          editorContentOrigin: EditorContentOrigin.library,
+          genre: Genre(state.seriesDraft.genre),
+          genreOptional: Genre(
+            state.seriesDraft.genreOptional,
+            isOptional: true,
+          ),
+          genreOptionalStr: state.seriesDraft.genreOptional,
+          genreStr: state.seriesDraft.genre,
+          isEditMode: true,
+          isNSFW: state.seriesDraft.isNSFW,
+          language: Language(state.seriesDraft.language),
+          languageStr: state.seriesDraft.language,
+          seriesDraft: state.seriesDraft,
+          subtitle: Subtitle(state.seriesDraft.subtitle),
+          subtitleController: state.subtitleController,
+          subtitleStr: state.seriesDraft.subtitle,
+          subtitleWordCount: tps.getWordCount(state.seriesDraft.subtitle),
+          summary: Summary(state.seriesDraft.summary),
+          summaryController: state.summaryController,
+          summaryStr: state.seriesDraft.summary,
+          summaryWordCount: tps.getWordCount(state.seriesDraft.summary),
+          title: Title(state.seriesDraft.title),
+          titleController: state.titleController,
+          titleStr: state.seriesDraft.title,
+          titleWordCount: tps.getWordCount(state.seriesDraft.title),
+        );
       },
       sessionFetchedEVT: (event) async* {
         final random = Random();

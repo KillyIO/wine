@@ -5,7 +5,7 @@ enum EditorContentOrigin {
   unknown,
 
   /// @nodoc
-  account,
+  library,
 
   /// Most probably the ```chapter_editor_page``` was launched
   /// to write a next chapter

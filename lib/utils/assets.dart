@@ -20,14 +20,15 @@ class Assets {
   static const String plusIcon = '${Constants.assetsIcons}plus.png';
 
   // SECTION images
-  /// @nodoc
-  static const String avatarImage = '${Constants.assetsImages}avatar.png';
 
   /// @nodoc
   static const String branchImage = '${Constants.assetsImages}branch.png';
 
   /// @nodoc
   static const String leafImage = '${Constants.assetsImages}leaf.png';
+
+  /// @nodoc
+  static const String logoImage = '${Constants.assetsImages}logo.png';
 
   /// @nodoc
   static const String treeImage = '${Constants.assetsImages}tree.png';

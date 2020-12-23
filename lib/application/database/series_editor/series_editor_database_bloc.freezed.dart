@@ -62,19 +62,19 @@ class _$SeriesEditorDatabaseEventTearOff {
   }
 
 // ignore: unused_element
-  SeriesEditorLaunchedFromAccountEVT seriesEditorLaunchedFromAccountEVT(
-      BuildContext context, Series seriesDraft) {
-    return SeriesEditorLaunchedFromAccountEVT(
-      context,
-      seriesDraft,
-    );
-  }
-
-// ignore: unused_element
   SeriesEditorLaunchedFromHomeEVT seriesEditorLaunchedFromHomeEVT(
       BuildContext context) {
     return SeriesEditorLaunchedFromHomeEVT(
       context,
+    );
+  }
+
+// ignore: unused_element
+  SeriesEditorLaunchedFromLibraryEVT seriesEditorLaunchedFromLibraryEVT(
+      BuildContext context, Series seriesDraft) {
+    return SeriesEditorLaunchedFromLibraryEVT(
+      context,
+      seriesDraft,
     );
   }
 
@@ -121,10 +121,10 @@ mixin _$SeriesEditorDatabaseEvent {
     @required TResult isNSFWChangedEVT(bool isNSFW),
     @required TResult languageSelectedEVT(String language),
     @required TResult saveSeriesDraftButtonPressedEVT(),
-    @required
-        TResult seriesEditorLaunchedFromAccountEVT(
-            BuildContext context, Series seriesDraft),
     @required TResult seriesEditorLaunchedFromHomeEVT(BuildContext context),
+    @required
+        TResult seriesEditorLaunchedFromLibraryEVT(
+            BuildContext context, Series seriesDraft),
     @required TResult sessionFetchedEVT(),
     @required TResult subtitleChangedEVT(String subtitle),
     @required TResult summaryChangedEVT(String summary),
@@ -140,9 +140,9 @@ mixin _$SeriesEditorDatabaseEvent {
     TResult isNSFWChangedEVT(bool isNSFW),
     TResult languageSelectedEVT(String language),
     TResult saveSeriesDraftButtonPressedEVT(),
-    TResult seriesEditorLaunchedFromAccountEVT(
-        BuildContext context, Series seriesDraft),
     TResult seriesEditorLaunchedFromHomeEVT(BuildContext context),
+    TResult seriesEditorLaunchedFromLibraryEVT(
+        BuildContext context, Series seriesDraft),
     TResult sessionFetchedEVT(),
     TResult subtitleChangedEVT(String subtitle),
     TResult summaryChangedEVT(String summary),
@@ -163,11 +163,11 @@ mixin _$SeriesEditorDatabaseEvent {
         TResult saveSeriesDraftButtonPressedEVT(
             SaveSeriesDraftButtonPressedEVT value),
     @required
-        TResult seriesEditorLaunchedFromAccountEVT(
-            SeriesEditorLaunchedFromAccountEVT value),
-    @required
         TResult seriesEditorLaunchedFromHomeEVT(
             SeriesEditorLaunchedFromHomeEVT value),
+    @required
+        TResult seriesEditorLaunchedFromLibraryEVT(
+            SeriesEditorLaunchedFromLibraryEVT value),
     @required TResult sessionFetchedEVT(SessionFetchedEVT value),
     @required TResult subtitleChangedEVT(SubtitleChangedEVT value),
     @required TResult summaryChangedEVT(SummaryChangedEVT value),
@@ -184,10 +184,10 @@ mixin _$SeriesEditorDatabaseEvent {
     TResult languageSelectedEVT(LanguageSelectedEVT value),
     TResult saveSeriesDraftButtonPressedEVT(
         SaveSeriesDraftButtonPressedEVT value),
-    TResult seriesEditorLaunchedFromAccountEVT(
-        SeriesEditorLaunchedFromAccountEVT value),
     TResult seriesEditorLaunchedFromHomeEVT(
         SeriesEditorLaunchedFromHomeEVT value),
+    TResult seriesEditorLaunchedFromLibraryEVT(
+        SeriesEditorLaunchedFromLibraryEVT value),
     TResult sessionFetchedEVT(SessionFetchedEVT value),
     TResult subtitleChangedEVT(SubtitleChangedEVT value),
     TResult summaryChangedEVT(SummaryChangedEVT value),
@@ -270,10 +270,10 @@ class _$AddCoverPressedEVT
     @required TResult isNSFWChangedEVT(bool isNSFW),
     @required TResult languageSelectedEVT(String language),
     @required TResult saveSeriesDraftButtonPressedEVT(),
-    @required
-        TResult seriesEditorLaunchedFromAccountEVT(
-            BuildContext context, Series seriesDraft),
     @required TResult seriesEditorLaunchedFromHomeEVT(BuildContext context),
+    @required
+        TResult seriesEditorLaunchedFromLibraryEVT(
+            BuildContext context, Series seriesDraft),
     @required TResult sessionFetchedEVT(),
     @required TResult subtitleChangedEVT(String subtitle),
     @required TResult summaryChangedEVT(String summary),
@@ -287,8 +287,8 @@ class _$AddCoverPressedEVT
     assert(isNSFWChangedEVT != null);
     assert(languageSelectedEVT != null);
     assert(saveSeriesDraftButtonPressedEVT != null);
-    assert(seriesEditorLaunchedFromAccountEVT != null);
     assert(seriesEditorLaunchedFromHomeEVT != null);
+    assert(seriesEditorLaunchedFromLibraryEVT != null);
     assert(sessionFetchedEVT != null);
     assert(subtitleChangedEVT != null);
     assert(summaryChangedEVT != null);
@@ -307,9 +307,9 @@ class _$AddCoverPressedEVT
     TResult isNSFWChangedEVT(bool isNSFW),
     TResult languageSelectedEVT(String language),
     TResult saveSeriesDraftButtonPressedEVT(),
-    TResult seriesEditorLaunchedFromAccountEVT(
-        BuildContext context, Series seriesDraft),
     TResult seriesEditorLaunchedFromHomeEVT(BuildContext context),
+    TResult seriesEditorLaunchedFromLibraryEVT(
+        BuildContext context, Series seriesDraft),
     TResult sessionFetchedEVT(),
     TResult subtitleChangedEVT(String subtitle),
     TResult summaryChangedEVT(String summary),
@@ -338,11 +338,11 @@ class _$AddCoverPressedEVT
         TResult saveSeriesDraftButtonPressedEVT(
             SaveSeriesDraftButtonPressedEVT value),
     @required
-        TResult seriesEditorLaunchedFromAccountEVT(
-            SeriesEditorLaunchedFromAccountEVT value),
-    @required
         TResult seriesEditorLaunchedFromHomeEVT(
             SeriesEditorLaunchedFromHomeEVT value),
+    @required
+        TResult seriesEditorLaunchedFromLibraryEVT(
+            SeriesEditorLaunchedFromLibraryEVT value),
     @required TResult sessionFetchedEVT(SessionFetchedEVT value),
     @required TResult subtitleChangedEVT(SubtitleChangedEVT value),
     @required TResult summaryChangedEVT(SummaryChangedEVT value),
@@ -356,8 +356,8 @@ class _$AddCoverPressedEVT
     assert(isNSFWChangedEVT != null);
     assert(languageSelectedEVT != null);
     assert(saveSeriesDraftButtonPressedEVT != null);
-    assert(seriesEditorLaunchedFromAccountEVT != null);
     assert(seriesEditorLaunchedFromHomeEVT != null);
+    assert(seriesEditorLaunchedFromLibraryEVT != null);
     assert(sessionFetchedEVT != null);
     assert(subtitleChangedEVT != null);
     assert(summaryChangedEVT != null);
@@ -377,10 +377,10 @@ class _$AddCoverPressedEVT
     TResult languageSelectedEVT(LanguageSelectedEVT value),
     TResult saveSeriesDraftButtonPressedEVT(
         SaveSeriesDraftButtonPressedEVT value),
-    TResult seriesEditorLaunchedFromAccountEVT(
-        SeriesEditorLaunchedFromAccountEVT value),
     TResult seriesEditorLaunchedFromHomeEVT(
         SeriesEditorLaunchedFromHomeEVT value),
+    TResult seriesEditorLaunchedFromLibraryEVT(
+        SeriesEditorLaunchedFromLibraryEVT value),
     TResult sessionFetchedEVT(SessionFetchedEVT value),
     TResult subtitleChangedEVT(SubtitleChangedEVT value),
     TResult summaryChangedEVT(SummaryChangedEVT value),
@@ -456,10 +456,10 @@ class _$ChapterDraftDeletedEVT
     @required TResult isNSFWChangedEVT(bool isNSFW),
     @required TResult languageSelectedEVT(String language),
     @required TResult saveSeriesDraftButtonPressedEVT(),
-    @required
-        TResult seriesEditorLaunchedFromAccountEVT(
-            BuildContext context, Series seriesDraft),
     @required TResult seriesEditorLaunchedFromHomeEVT(BuildContext context),
+    @required
+        TResult seriesEditorLaunchedFromLibraryEVT(
+            BuildContext context, Series seriesDraft),
     @required TResult sessionFetchedEVT(),
     @required TResult subtitleChangedEVT(String subtitle),
     @required TResult summaryChangedEVT(String summary),
@@ -473,8 +473,8 @@ class _$ChapterDraftDeletedEVT
     assert(isNSFWChangedEVT != null);
     assert(languageSelectedEVT != null);
     assert(saveSeriesDraftButtonPressedEVT != null);
-    assert(seriesEditorLaunchedFromAccountEVT != null);
     assert(seriesEditorLaunchedFromHomeEVT != null);
+    assert(seriesEditorLaunchedFromLibraryEVT != null);
     assert(sessionFetchedEVT != null);
     assert(subtitleChangedEVT != null);
     assert(summaryChangedEVT != null);
@@ -493,9 +493,9 @@ class _$ChapterDraftDeletedEVT
     TResult isNSFWChangedEVT(bool isNSFW),
     TResult languageSelectedEVT(String language),
     TResult saveSeriesDraftButtonPressedEVT(),
-    TResult seriesEditorLaunchedFromAccountEVT(
-        BuildContext context, Series seriesDraft),
     TResult seriesEditorLaunchedFromHomeEVT(BuildContext context),
+    TResult seriesEditorLaunchedFromLibraryEVT(
+        BuildContext context, Series seriesDraft),
     TResult sessionFetchedEVT(),
     TResult subtitleChangedEVT(String subtitle),
     TResult summaryChangedEVT(String summary),
@@ -524,11 +524,11 @@ class _$ChapterDraftDeletedEVT
         TResult saveSeriesDraftButtonPressedEVT(
             SaveSeriesDraftButtonPressedEVT value),
     @required
-        TResult seriesEditorLaunchedFromAccountEVT(
-            SeriesEditorLaunchedFromAccountEVT value),
-    @required
         TResult seriesEditorLaunchedFromHomeEVT(
             SeriesEditorLaunchedFromHomeEVT value),
+    @required
+        TResult seriesEditorLaunchedFromLibraryEVT(
+            SeriesEditorLaunchedFromLibraryEVT value),
     @required TResult sessionFetchedEVT(SessionFetchedEVT value),
     @required TResult subtitleChangedEVT(SubtitleChangedEVT value),
     @required TResult summaryChangedEVT(SummaryChangedEVT value),
@@ -542,8 +542,8 @@ class _$ChapterDraftDeletedEVT
     assert(isNSFWChangedEVT != null);
     assert(languageSelectedEVT != null);
     assert(saveSeriesDraftButtonPressedEVT != null);
-    assert(seriesEditorLaunchedFromAccountEVT != null);
     assert(seriesEditorLaunchedFromHomeEVT != null);
+    assert(seriesEditorLaunchedFromLibraryEVT != null);
     assert(sessionFetchedEVT != null);
     assert(subtitleChangedEVT != null);
     assert(summaryChangedEVT != null);
@@ -563,10 +563,10 @@ class _$ChapterDraftDeletedEVT
     TResult languageSelectedEVT(LanguageSelectedEVT value),
     TResult saveSeriesDraftButtonPressedEVT(
         SaveSeriesDraftButtonPressedEVT value),
-    TResult seriesEditorLaunchedFromAccountEVT(
-        SeriesEditorLaunchedFromAccountEVT value),
     TResult seriesEditorLaunchedFromHomeEVT(
         SeriesEditorLaunchedFromHomeEVT value),
+    TResult seriesEditorLaunchedFromLibraryEVT(
+        SeriesEditorLaunchedFromLibraryEVT value),
     TResult sessionFetchedEVT(SessionFetchedEVT value),
     TResult subtitleChangedEVT(SubtitleChangedEVT value),
     TResult summaryChangedEVT(SummaryChangedEVT value),
@@ -644,10 +644,10 @@ class _$DeleteDraftButtonPressedEVT
     @required TResult isNSFWChangedEVT(bool isNSFW),
     @required TResult languageSelectedEVT(String language),
     @required TResult saveSeriesDraftButtonPressedEVT(),
-    @required
-        TResult seriesEditorLaunchedFromAccountEVT(
-            BuildContext context, Series seriesDraft),
     @required TResult seriesEditorLaunchedFromHomeEVT(BuildContext context),
+    @required
+        TResult seriesEditorLaunchedFromLibraryEVT(
+            BuildContext context, Series seriesDraft),
     @required TResult sessionFetchedEVT(),
     @required TResult subtitleChangedEVT(String subtitle),
     @required TResult summaryChangedEVT(String summary),
@@ -661,8 +661,8 @@ class _$DeleteDraftButtonPressedEVT
     assert(isNSFWChangedEVT != null);
     assert(languageSelectedEVT != null);
     assert(saveSeriesDraftButtonPressedEVT != null);
-    assert(seriesEditorLaunchedFromAccountEVT != null);
     assert(seriesEditorLaunchedFromHomeEVT != null);
+    assert(seriesEditorLaunchedFromLibraryEVT != null);
     assert(sessionFetchedEVT != null);
     assert(subtitleChangedEVT != null);
     assert(summaryChangedEVT != null);
@@ -681,9 +681,9 @@ class _$DeleteDraftButtonPressedEVT
     TResult isNSFWChangedEVT(bool isNSFW),
     TResult languageSelectedEVT(String language),
     TResult saveSeriesDraftButtonPressedEVT(),
-    TResult seriesEditorLaunchedFromAccountEVT(
-        BuildContext context, Series seriesDraft),
     TResult seriesEditorLaunchedFromHomeEVT(BuildContext context),
+    TResult seriesEditorLaunchedFromLibraryEVT(
+        BuildContext context, Series seriesDraft),
     TResult sessionFetchedEVT(),
     TResult subtitleChangedEVT(String subtitle),
     TResult summaryChangedEVT(String summary),
@@ -712,11 +712,11 @@ class _$DeleteDraftButtonPressedEVT
         TResult saveSeriesDraftButtonPressedEVT(
             SaveSeriesDraftButtonPressedEVT value),
     @required
-        TResult seriesEditorLaunchedFromAccountEVT(
-            SeriesEditorLaunchedFromAccountEVT value),
-    @required
         TResult seriesEditorLaunchedFromHomeEVT(
             SeriesEditorLaunchedFromHomeEVT value),
+    @required
+        TResult seriesEditorLaunchedFromLibraryEVT(
+            SeriesEditorLaunchedFromLibraryEVT value),
     @required TResult sessionFetchedEVT(SessionFetchedEVT value),
     @required TResult subtitleChangedEVT(SubtitleChangedEVT value),
     @required TResult summaryChangedEVT(SummaryChangedEVT value),
@@ -730,8 +730,8 @@ class _$DeleteDraftButtonPressedEVT
     assert(isNSFWChangedEVT != null);
     assert(languageSelectedEVT != null);
     assert(saveSeriesDraftButtonPressedEVT != null);
-    assert(seriesEditorLaunchedFromAccountEVT != null);
     assert(seriesEditorLaunchedFromHomeEVT != null);
+    assert(seriesEditorLaunchedFromLibraryEVT != null);
     assert(sessionFetchedEVT != null);
     assert(subtitleChangedEVT != null);
     assert(summaryChangedEVT != null);
@@ -751,10 +751,10 @@ class _$DeleteDraftButtonPressedEVT
     TResult languageSelectedEVT(LanguageSelectedEVT value),
     TResult saveSeriesDraftButtonPressedEVT(
         SaveSeriesDraftButtonPressedEVT value),
-    TResult seriesEditorLaunchedFromAccountEVT(
-        SeriesEditorLaunchedFromAccountEVT value),
     TResult seriesEditorLaunchedFromHomeEVT(
         SeriesEditorLaunchedFromHomeEVT value),
+    TResult seriesEditorLaunchedFromLibraryEVT(
+        SeriesEditorLaunchedFromLibraryEVT value),
     TResult sessionFetchedEVT(SessionFetchedEVT value),
     TResult subtitleChangedEVT(SubtitleChangedEVT value),
     TResult summaryChangedEVT(SummaryChangedEVT value),
@@ -857,10 +857,10 @@ class _$GenreOptionalSelectedEVT
     @required TResult isNSFWChangedEVT(bool isNSFW),
     @required TResult languageSelectedEVT(String language),
     @required TResult saveSeriesDraftButtonPressedEVT(),
-    @required
-        TResult seriesEditorLaunchedFromAccountEVT(
-            BuildContext context, Series seriesDraft),
     @required TResult seriesEditorLaunchedFromHomeEVT(BuildContext context),
+    @required
+        TResult seriesEditorLaunchedFromLibraryEVT(
+            BuildContext context, Series seriesDraft),
     @required TResult sessionFetchedEVT(),
     @required TResult subtitleChangedEVT(String subtitle),
     @required TResult summaryChangedEVT(String summary),
@@ -874,8 +874,8 @@ class _$GenreOptionalSelectedEVT
     assert(isNSFWChangedEVT != null);
     assert(languageSelectedEVT != null);
     assert(saveSeriesDraftButtonPressedEVT != null);
-    assert(seriesEditorLaunchedFromAccountEVT != null);
     assert(seriesEditorLaunchedFromHomeEVT != null);
+    assert(seriesEditorLaunchedFromLibraryEVT != null);
     assert(sessionFetchedEVT != null);
     assert(subtitleChangedEVT != null);
     assert(summaryChangedEVT != null);
@@ -894,9 +894,9 @@ class _$GenreOptionalSelectedEVT
     TResult isNSFWChangedEVT(bool isNSFW),
     TResult languageSelectedEVT(String language),
     TResult saveSeriesDraftButtonPressedEVT(),
-    TResult seriesEditorLaunchedFromAccountEVT(
-        BuildContext context, Series seriesDraft),
     TResult seriesEditorLaunchedFromHomeEVT(BuildContext context),
+    TResult seriesEditorLaunchedFromLibraryEVT(
+        BuildContext context, Series seriesDraft),
     TResult sessionFetchedEVT(),
     TResult subtitleChangedEVT(String subtitle),
     TResult summaryChangedEVT(String summary),
@@ -925,11 +925,11 @@ class _$GenreOptionalSelectedEVT
         TResult saveSeriesDraftButtonPressedEVT(
             SaveSeriesDraftButtonPressedEVT value),
     @required
-        TResult seriesEditorLaunchedFromAccountEVT(
-            SeriesEditorLaunchedFromAccountEVT value),
-    @required
         TResult seriesEditorLaunchedFromHomeEVT(
             SeriesEditorLaunchedFromHomeEVT value),
+    @required
+        TResult seriesEditorLaunchedFromLibraryEVT(
+            SeriesEditorLaunchedFromLibraryEVT value),
     @required TResult sessionFetchedEVT(SessionFetchedEVT value),
     @required TResult subtitleChangedEVT(SubtitleChangedEVT value),
     @required TResult summaryChangedEVT(SummaryChangedEVT value),
@@ -943,8 +943,8 @@ class _$GenreOptionalSelectedEVT
     assert(isNSFWChangedEVT != null);
     assert(languageSelectedEVT != null);
     assert(saveSeriesDraftButtonPressedEVT != null);
-    assert(seriesEditorLaunchedFromAccountEVT != null);
     assert(seriesEditorLaunchedFromHomeEVT != null);
+    assert(seriesEditorLaunchedFromLibraryEVT != null);
     assert(sessionFetchedEVT != null);
     assert(subtitleChangedEVT != null);
     assert(summaryChangedEVT != null);
@@ -964,10 +964,10 @@ class _$GenreOptionalSelectedEVT
     TResult languageSelectedEVT(LanguageSelectedEVT value),
     TResult saveSeriesDraftButtonPressedEVT(
         SaveSeriesDraftButtonPressedEVT value),
-    TResult seriesEditorLaunchedFromAccountEVT(
-        SeriesEditorLaunchedFromAccountEVT value),
     TResult seriesEditorLaunchedFromHomeEVT(
         SeriesEditorLaunchedFromHomeEVT value),
+    TResult seriesEditorLaunchedFromLibraryEVT(
+        SeriesEditorLaunchedFromLibraryEVT value),
     TResult sessionFetchedEVT(SessionFetchedEVT value),
     TResult subtitleChangedEVT(SubtitleChangedEVT value),
     TResult summaryChangedEVT(SummaryChangedEVT value),
@@ -1069,10 +1069,10 @@ class _$GenreSelectedEVT
     @required TResult isNSFWChangedEVT(bool isNSFW),
     @required TResult languageSelectedEVT(String language),
     @required TResult saveSeriesDraftButtonPressedEVT(),
-    @required
-        TResult seriesEditorLaunchedFromAccountEVT(
-            BuildContext context, Series seriesDraft),
     @required TResult seriesEditorLaunchedFromHomeEVT(BuildContext context),
+    @required
+        TResult seriesEditorLaunchedFromLibraryEVT(
+            BuildContext context, Series seriesDraft),
     @required TResult sessionFetchedEVT(),
     @required TResult subtitleChangedEVT(String subtitle),
     @required TResult summaryChangedEVT(String summary),
@@ -1086,8 +1086,8 @@ class _$GenreSelectedEVT
     assert(isNSFWChangedEVT != null);
     assert(languageSelectedEVT != null);
     assert(saveSeriesDraftButtonPressedEVT != null);
-    assert(seriesEditorLaunchedFromAccountEVT != null);
     assert(seriesEditorLaunchedFromHomeEVT != null);
+    assert(seriesEditorLaunchedFromLibraryEVT != null);
     assert(sessionFetchedEVT != null);
     assert(subtitleChangedEVT != null);
     assert(summaryChangedEVT != null);
@@ -1106,9 +1106,9 @@ class _$GenreSelectedEVT
     TResult isNSFWChangedEVT(bool isNSFW),
     TResult languageSelectedEVT(String language),
     TResult saveSeriesDraftButtonPressedEVT(),
-    TResult seriesEditorLaunchedFromAccountEVT(
-        BuildContext context, Series seriesDraft),
     TResult seriesEditorLaunchedFromHomeEVT(BuildContext context),
+    TResult seriesEditorLaunchedFromLibraryEVT(
+        BuildContext context, Series seriesDraft),
     TResult sessionFetchedEVT(),
     TResult subtitleChangedEVT(String subtitle),
     TResult summaryChangedEVT(String summary),
@@ -1137,11 +1137,11 @@ class _$GenreSelectedEVT
         TResult saveSeriesDraftButtonPressedEVT(
             SaveSeriesDraftButtonPressedEVT value),
     @required
-        TResult seriesEditorLaunchedFromAccountEVT(
-            SeriesEditorLaunchedFromAccountEVT value),
-    @required
         TResult seriesEditorLaunchedFromHomeEVT(
             SeriesEditorLaunchedFromHomeEVT value),
+    @required
+        TResult seriesEditorLaunchedFromLibraryEVT(
+            SeriesEditorLaunchedFromLibraryEVT value),
     @required TResult sessionFetchedEVT(SessionFetchedEVT value),
     @required TResult subtitleChangedEVT(SubtitleChangedEVT value),
     @required TResult summaryChangedEVT(SummaryChangedEVT value),
@@ -1155,8 +1155,8 @@ class _$GenreSelectedEVT
     assert(isNSFWChangedEVT != null);
     assert(languageSelectedEVT != null);
     assert(saveSeriesDraftButtonPressedEVT != null);
-    assert(seriesEditorLaunchedFromAccountEVT != null);
     assert(seriesEditorLaunchedFromHomeEVT != null);
+    assert(seriesEditorLaunchedFromLibraryEVT != null);
     assert(sessionFetchedEVT != null);
     assert(subtitleChangedEVT != null);
     assert(summaryChangedEVT != null);
@@ -1176,10 +1176,10 @@ class _$GenreSelectedEVT
     TResult languageSelectedEVT(LanguageSelectedEVT value),
     TResult saveSeriesDraftButtonPressedEVT(
         SaveSeriesDraftButtonPressedEVT value),
-    TResult seriesEditorLaunchedFromAccountEVT(
-        SeriesEditorLaunchedFromAccountEVT value),
     TResult seriesEditorLaunchedFromHomeEVT(
         SeriesEditorLaunchedFromHomeEVT value),
+    TResult seriesEditorLaunchedFromLibraryEVT(
+        SeriesEditorLaunchedFromLibraryEVT value),
     TResult sessionFetchedEVT(SessionFetchedEVT value),
     TResult subtitleChangedEVT(SubtitleChangedEVT value),
     TResult summaryChangedEVT(SummaryChangedEVT value),
@@ -1280,10 +1280,10 @@ class _$IsNSFWChangedEVT
     @required TResult isNSFWChangedEVT(bool isNSFW),
     @required TResult languageSelectedEVT(String language),
     @required TResult saveSeriesDraftButtonPressedEVT(),
-    @required
-        TResult seriesEditorLaunchedFromAccountEVT(
-            BuildContext context, Series seriesDraft),
     @required TResult seriesEditorLaunchedFromHomeEVT(BuildContext context),
+    @required
+        TResult seriesEditorLaunchedFromLibraryEVT(
+            BuildContext context, Series seriesDraft),
     @required TResult sessionFetchedEVT(),
     @required TResult subtitleChangedEVT(String subtitle),
     @required TResult summaryChangedEVT(String summary),
@@ -1297,8 +1297,8 @@ class _$IsNSFWChangedEVT
     assert(isNSFWChangedEVT != null);
     assert(languageSelectedEVT != null);
     assert(saveSeriesDraftButtonPressedEVT != null);
-    assert(seriesEditorLaunchedFromAccountEVT != null);
     assert(seriesEditorLaunchedFromHomeEVT != null);
+    assert(seriesEditorLaunchedFromLibraryEVT != null);
     assert(sessionFetchedEVT != null);
     assert(subtitleChangedEVT != null);
     assert(summaryChangedEVT != null);
@@ -1317,9 +1317,9 @@ class _$IsNSFWChangedEVT
     TResult isNSFWChangedEVT(bool isNSFW),
     TResult languageSelectedEVT(String language),
     TResult saveSeriesDraftButtonPressedEVT(),
-    TResult seriesEditorLaunchedFromAccountEVT(
-        BuildContext context, Series seriesDraft),
     TResult seriesEditorLaunchedFromHomeEVT(BuildContext context),
+    TResult seriesEditorLaunchedFromLibraryEVT(
+        BuildContext context, Series seriesDraft),
     TResult sessionFetchedEVT(),
     TResult subtitleChangedEVT(String subtitle),
     TResult summaryChangedEVT(String summary),
@@ -1348,11 +1348,11 @@ class _$IsNSFWChangedEVT
         TResult saveSeriesDraftButtonPressedEVT(
             SaveSeriesDraftButtonPressedEVT value),
     @required
-        TResult seriesEditorLaunchedFromAccountEVT(
-            SeriesEditorLaunchedFromAccountEVT value),
-    @required
         TResult seriesEditorLaunchedFromHomeEVT(
             SeriesEditorLaunchedFromHomeEVT value),
+    @required
+        TResult seriesEditorLaunchedFromLibraryEVT(
+            SeriesEditorLaunchedFromLibraryEVT value),
     @required TResult sessionFetchedEVT(SessionFetchedEVT value),
     @required TResult subtitleChangedEVT(SubtitleChangedEVT value),
     @required TResult summaryChangedEVT(SummaryChangedEVT value),
@@ -1366,8 +1366,8 @@ class _$IsNSFWChangedEVT
     assert(isNSFWChangedEVT != null);
     assert(languageSelectedEVT != null);
     assert(saveSeriesDraftButtonPressedEVT != null);
-    assert(seriesEditorLaunchedFromAccountEVT != null);
     assert(seriesEditorLaunchedFromHomeEVT != null);
+    assert(seriesEditorLaunchedFromLibraryEVT != null);
     assert(sessionFetchedEVT != null);
     assert(subtitleChangedEVT != null);
     assert(summaryChangedEVT != null);
@@ -1387,10 +1387,10 @@ class _$IsNSFWChangedEVT
     TResult languageSelectedEVT(LanguageSelectedEVT value),
     TResult saveSeriesDraftButtonPressedEVT(
         SaveSeriesDraftButtonPressedEVT value),
-    TResult seriesEditorLaunchedFromAccountEVT(
-        SeriesEditorLaunchedFromAccountEVT value),
     TResult seriesEditorLaunchedFromHomeEVT(
         SeriesEditorLaunchedFromHomeEVT value),
+    TResult seriesEditorLaunchedFromLibraryEVT(
+        SeriesEditorLaunchedFromLibraryEVT value),
     TResult sessionFetchedEVT(SessionFetchedEVT value),
     TResult subtitleChangedEVT(SubtitleChangedEVT value),
     TResult summaryChangedEVT(SummaryChangedEVT value),
@@ -1492,10 +1492,10 @@ class _$LanguageSelectedEVT
     @required TResult isNSFWChangedEVT(bool isNSFW),
     @required TResult languageSelectedEVT(String language),
     @required TResult saveSeriesDraftButtonPressedEVT(),
-    @required
-        TResult seriesEditorLaunchedFromAccountEVT(
-            BuildContext context, Series seriesDraft),
     @required TResult seriesEditorLaunchedFromHomeEVT(BuildContext context),
+    @required
+        TResult seriesEditorLaunchedFromLibraryEVT(
+            BuildContext context, Series seriesDraft),
     @required TResult sessionFetchedEVT(),
     @required TResult subtitleChangedEVT(String subtitle),
     @required TResult summaryChangedEVT(String summary),
@@ -1509,8 +1509,8 @@ class _$LanguageSelectedEVT
     assert(isNSFWChangedEVT != null);
     assert(languageSelectedEVT != null);
     assert(saveSeriesDraftButtonPressedEVT != null);
-    assert(seriesEditorLaunchedFromAccountEVT != null);
     assert(seriesEditorLaunchedFromHomeEVT != null);
+    assert(seriesEditorLaunchedFromLibraryEVT != null);
     assert(sessionFetchedEVT != null);
     assert(subtitleChangedEVT != null);
     assert(summaryChangedEVT != null);
@@ -1529,9 +1529,9 @@ class _$LanguageSelectedEVT
     TResult isNSFWChangedEVT(bool isNSFW),
     TResult languageSelectedEVT(String language),
     TResult saveSeriesDraftButtonPressedEVT(),
-    TResult seriesEditorLaunchedFromAccountEVT(
-        BuildContext context, Series seriesDraft),
     TResult seriesEditorLaunchedFromHomeEVT(BuildContext context),
+    TResult seriesEditorLaunchedFromLibraryEVT(
+        BuildContext context, Series seriesDraft),
     TResult sessionFetchedEVT(),
     TResult subtitleChangedEVT(String subtitle),
     TResult summaryChangedEVT(String summary),
@@ -1560,11 +1560,11 @@ class _$LanguageSelectedEVT
         TResult saveSeriesDraftButtonPressedEVT(
             SaveSeriesDraftButtonPressedEVT value),
     @required
-        TResult seriesEditorLaunchedFromAccountEVT(
-            SeriesEditorLaunchedFromAccountEVT value),
-    @required
         TResult seriesEditorLaunchedFromHomeEVT(
             SeriesEditorLaunchedFromHomeEVT value),
+    @required
+        TResult seriesEditorLaunchedFromLibraryEVT(
+            SeriesEditorLaunchedFromLibraryEVT value),
     @required TResult sessionFetchedEVT(SessionFetchedEVT value),
     @required TResult subtitleChangedEVT(SubtitleChangedEVT value),
     @required TResult summaryChangedEVT(SummaryChangedEVT value),
@@ -1578,8 +1578,8 @@ class _$LanguageSelectedEVT
     assert(isNSFWChangedEVT != null);
     assert(languageSelectedEVT != null);
     assert(saveSeriesDraftButtonPressedEVT != null);
-    assert(seriesEditorLaunchedFromAccountEVT != null);
     assert(seriesEditorLaunchedFromHomeEVT != null);
+    assert(seriesEditorLaunchedFromLibraryEVT != null);
     assert(sessionFetchedEVT != null);
     assert(subtitleChangedEVT != null);
     assert(summaryChangedEVT != null);
@@ -1599,10 +1599,10 @@ class _$LanguageSelectedEVT
     TResult languageSelectedEVT(LanguageSelectedEVT value),
     TResult saveSeriesDraftButtonPressedEVT(
         SaveSeriesDraftButtonPressedEVT value),
-    TResult seriesEditorLaunchedFromAccountEVT(
-        SeriesEditorLaunchedFromAccountEVT value),
     TResult seriesEditorLaunchedFromHomeEVT(
         SeriesEditorLaunchedFromHomeEVT value),
+    TResult seriesEditorLaunchedFromLibraryEVT(
+        SeriesEditorLaunchedFromLibraryEVT value),
     TResult sessionFetchedEVT(SessionFetchedEVT value),
     TResult subtitleChangedEVT(SubtitleChangedEVT value),
     TResult summaryChangedEVT(SummaryChangedEVT value),
@@ -1684,10 +1684,10 @@ class _$SaveSeriesDraftButtonPressedEVT
     @required TResult isNSFWChangedEVT(bool isNSFW),
     @required TResult languageSelectedEVT(String language),
     @required TResult saveSeriesDraftButtonPressedEVT(),
-    @required
-        TResult seriesEditorLaunchedFromAccountEVT(
-            BuildContext context, Series seriesDraft),
     @required TResult seriesEditorLaunchedFromHomeEVT(BuildContext context),
+    @required
+        TResult seriesEditorLaunchedFromLibraryEVT(
+            BuildContext context, Series seriesDraft),
     @required TResult sessionFetchedEVT(),
     @required TResult subtitleChangedEVT(String subtitle),
     @required TResult summaryChangedEVT(String summary),
@@ -1701,8 +1701,8 @@ class _$SaveSeriesDraftButtonPressedEVT
     assert(isNSFWChangedEVT != null);
     assert(languageSelectedEVT != null);
     assert(saveSeriesDraftButtonPressedEVT != null);
-    assert(seriesEditorLaunchedFromAccountEVT != null);
     assert(seriesEditorLaunchedFromHomeEVT != null);
+    assert(seriesEditorLaunchedFromLibraryEVT != null);
     assert(sessionFetchedEVT != null);
     assert(subtitleChangedEVT != null);
     assert(summaryChangedEVT != null);
@@ -1721,9 +1721,9 @@ class _$SaveSeriesDraftButtonPressedEVT
     TResult isNSFWChangedEVT(bool isNSFW),
     TResult languageSelectedEVT(String language),
     TResult saveSeriesDraftButtonPressedEVT(),
-    TResult seriesEditorLaunchedFromAccountEVT(
-        BuildContext context, Series seriesDraft),
     TResult seriesEditorLaunchedFromHomeEVT(BuildContext context),
+    TResult seriesEditorLaunchedFromLibraryEVT(
+        BuildContext context, Series seriesDraft),
     TResult sessionFetchedEVT(),
     TResult subtitleChangedEVT(String subtitle),
     TResult summaryChangedEVT(String summary),
@@ -1752,11 +1752,11 @@ class _$SaveSeriesDraftButtonPressedEVT
         TResult saveSeriesDraftButtonPressedEVT(
             SaveSeriesDraftButtonPressedEVT value),
     @required
-        TResult seriesEditorLaunchedFromAccountEVT(
-            SeriesEditorLaunchedFromAccountEVT value),
-    @required
         TResult seriesEditorLaunchedFromHomeEVT(
             SeriesEditorLaunchedFromHomeEVT value),
+    @required
+        TResult seriesEditorLaunchedFromLibraryEVT(
+            SeriesEditorLaunchedFromLibraryEVT value),
     @required TResult sessionFetchedEVT(SessionFetchedEVT value),
     @required TResult subtitleChangedEVT(SubtitleChangedEVT value),
     @required TResult summaryChangedEVT(SummaryChangedEVT value),
@@ -1770,8 +1770,8 @@ class _$SaveSeriesDraftButtonPressedEVT
     assert(isNSFWChangedEVT != null);
     assert(languageSelectedEVT != null);
     assert(saveSeriesDraftButtonPressedEVT != null);
-    assert(seriesEditorLaunchedFromAccountEVT != null);
     assert(seriesEditorLaunchedFromHomeEVT != null);
+    assert(seriesEditorLaunchedFromLibraryEVT != null);
     assert(sessionFetchedEVT != null);
     assert(subtitleChangedEVT != null);
     assert(summaryChangedEVT != null);
@@ -1791,10 +1791,10 @@ class _$SaveSeriesDraftButtonPressedEVT
     TResult languageSelectedEVT(LanguageSelectedEVT value),
     TResult saveSeriesDraftButtonPressedEVT(
         SaveSeriesDraftButtonPressedEVT value),
-    TResult seriesEditorLaunchedFromAccountEVT(
-        SeriesEditorLaunchedFromAccountEVT value),
     TResult seriesEditorLaunchedFromHomeEVT(
         SeriesEditorLaunchedFromHomeEVT value),
+    TResult seriesEditorLaunchedFromLibraryEVT(
+        SeriesEditorLaunchedFromLibraryEVT value),
     TResult sessionFetchedEVT(SessionFetchedEVT value),
     TResult subtitleChangedEVT(SubtitleChangedEVT value),
     TResult summaryChangedEVT(SummaryChangedEVT value),
@@ -1813,240 +1813,6 @@ abstract class SaveSeriesDraftButtonPressedEVT
     implements SeriesEditorDatabaseEvent {
   const factory SaveSeriesDraftButtonPressedEVT() =
       _$SaveSeriesDraftButtonPressedEVT;
-}
-
-/// @nodoc
-abstract class $SeriesEditorLaunchedFromAccountEVTCopyWith<$Res> {
-  factory $SeriesEditorLaunchedFromAccountEVTCopyWith(
-          SeriesEditorLaunchedFromAccountEVT value,
-          $Res Function(SeriesEditorLaunchedFromAccountEVT) then) =
-      _$SeriesEditorLaunchedFromAccountEVTCopyWithImpl<$Res>;
-  $Res call({BuildContext context, Series seriesDraft});
-}
-
-/// @nodoc
-class _$SeriesEditorLaunchedFromAccountEVTCopyWithImpl<$Res>
-    extends _$SeriesEditorDatabaseEventCopyWithImpl<$Res>
-    implements $SeriesEditorLaunchedFromAccountEVTCopyWith<$Res> {
-  _$SeriesEditorLaunchedFromAccountEVTCopyWithImpl(
-      SeriesEditorLaunchedFromAccountEVT _value,
-      $Res Function(SeriesEditorLaunchedFromAccountEVT) _then)
-      : super(_value, (v) => _then(v as SeriesEditorLaunchedFromAccountEVT));
-
-  @override
-  SeriesEditorLaunchedFromAccountEVT get _value =>
-      super._value as SeriesEditorLaunchedFromAccountEVT;
-
-  @override
-  $Res call({
-    Object context = freezed,
-    Object seriesDraft = freezed,
-  }) {
-    return _then(SeriesEditorLaunchedFromAccountEVT(
-      context == freezed ? _value.context : context as BuildContext,
-      seriesDraft == freezed ? _value.seriesDraft : seriesDraft as Series,
-    ));
-  }
-}
-
-/// @nodoc
-class _$SeriesEditorLaunchedFromAccountEVT
-    with DiagnosticableTreeMixin
-    implements SeriesEditorLaunchedFromAccountEVT {
-  const _$SeriesEditorLaunchedFromAccountEVT(this.context, this.seriesDraft)
-      : assert(context != null),
-        assert(seriesDraft != null);
-
-  @override
-  final BuildContext context;
-  @override
-  final Series seriesDraft;
-
-  @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'SeriesEditorDatabaseEvent.seriesEditorLaunchedFromAccountEVT(context: $context, seriesDraft: $seriesDraft)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type',
-          'SeriesEditorDatabaseEvent.seriesEditorLaunchedFromAccountEVT'))
-      ..add(DiagnosticsProperty('context', context))
-      ..add(DiagnosticsProperty('seriesDraft', seriesDraft));
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is SeriesEditorLaunchedFromAccountEVT &&
-            (identical(other.context, context) ||
-                const DeepCollectionEquality()
-                    .equals(other.context, context)) &&
-            (identical(other.seriesDraft, seriesDraft) ||
-                const DeepCollectionEquality()
-                    .equals(other.seriesDraft, seriesDraft)));
-  }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(context) ^
-      const DeepCollectionEquality().hash(seriesDraft);
-
-  @override
-  $SeriesEditorLaunchedFromAccountEVTCopyWith<
-          SeriesEditorLaunchedFromAccountEVT>
-      get copyWith => _$SeriesEditorLaunchedFromAccountEVTCopyWithImpl<
-          SeriesEditorLaunchedFromAccountEVT>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult addCoverPressedEVT(),
-    @required TResult chapterDraftDeletedEVT(),
-    @required TResult deleteDraftButtonPressedEVT(),
-    @required TResult genreOptionalSelectedEVT(String genreOptional),
-    @required TResult genreSelectedEVT(String genre),
-    @required TResult isNSFWChangedEVT(bool isNSFW),
-    @required TResult languageSelectedEVT(String language),
-    @required TResult saveSeriesDraftButtonPressedEVT(),
-    @required
-        TResult seriesEditorLaunchedFromAccountEVT(
-            BuildContext context, Series seriesDraft),
-    @required TResult seriesEditorLaunchedFromHomeEVT(BuildContext context),
-    @required TResult sessionFetchedEVT(),
-    @required TResult subtitleChangedEVT(String subtitle),
-    @required TResult summaryChangedEVT(String summary),
-    @required TResult titleChangedEVT(String title),
-  }) {
-    assert(addCoverPressedEVT != null);
-    assert(chapterDraftDeletedEVT != null);
-    assert(deleteDraftButtonPressedEVT != null);
-    assert(genreOptionalSelectedEVT != null);
-    assert(genreSelectedEVT != null);
-    assert(isNSFWChangedEVT != null);
-    assert(languageSelectedEVT != null);
-    assert(saveSeriesDraftButtonPressedEVT != null);
-    assert(seriesEditorLaunchedFromAccountEVT != null);
-    assert(seriesEditorLaunchedFromHomeEVT != null);
-    assert(sessionFetchedEVT != null);
-    assert(subtitleChangedEVT != null);
-    assert(summaryChangedEVT != null);
-    assert(titleChangedEVT != null);
-    return seriesEditorLaunchedFromAccountEVT(context, seriesDraft);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult addCoverPressedEVT(),
-    TResult chapterDraftDeletedEVT(),
-    TResult deleteDraftButtonPressedEVT(),
-    TResult genreOptionalSelectedEVT(String genreOptional),
-    TResult genreSelectedEVT(String genre),
-    TResult isNSFWChangedEVT(bool isNSFW),
-    TResult languageSelectedEVT(String language),
-    TResult saveSeriesDraftButtonPressedEVT(),
-    TResult seriesEditorLaunchedFromAccountEVT(
-        BuildContext context, Series seriesDraft),
-    TResult seriesEditorLaunchedFromHomeEVT(BuildContext context),
-    TResult sessionFetchedEVT(),
-    TResult subtitleChangedEVT(String subtitle),
-    TResult summaryChangedEVT(String summary),
-    TResult titleChangedEVT(String title),
-    @required TResult orElse(),
-  }) {
-    assert(orElse != null);
-    if (seriesEditorLaunchedFromAccountEVT != null) {
-      return seriesEditorLaunchedFromAccountEVT(context, seriesDraft);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult addCoverPressedEVT(AddCoverPressedEVT value),
-    @required TResult chapterDraftDeletedEVT(ChapterDraftDeletedEVT value),
-    @required
-        TResult deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
-    @required TResult genreOptionalSelectedEVT(GenreOptionalSelectedEVT value),
-    @required TResult genreSelectedEVT(GenreSelectedEVT value),
-    @required TResult isNSFWChangedEVT(IsNSFWChangedEVT value),
-    @required TResult languageSelectedEVT(LanguageSelectedEVT value),
-    @required
-        TResult saveSeriesDraftButtonPressedEVT(
-            SaveSeriesDraftButtonPressedEVT value),
-    @required
-        TResult seriesEditorLaunchedFromAccountEVT(
-            SeriesEditorLaunchedFromAccountEVT value),
-    @required
-        TResult seriesEditorLaunchedFromHomeEVT(
-            SeriesEditorLaunchedFromHomeEVT value),
-    @required TResult sessionFetchedEVT(SessionFetchedEVT value),
-    @required TResult subtitleChangedEVT(SubtitleChangedEVT value),
-    @required TResult summaryChangedEVT(SummaryChangedEVT value),
-    @required TResult titleChangedEVT(TitleChangedEVT value),
-  }) {
-    assert(addCoverPressedEVT != null);
-    assert(chapterDraftDeletedEVT != null);
-    assert(deleteDraftButtonPressedEVT != null);
-    assert(genreOptionalSelectedEVT != null);
-    assert(genreSelectedEVT != null);
-    assert(isNSFWChangedEVT != null);
-    assert(languageSelectedEVT != null);
-    assert(saveSeriesDraftButtonPressedEVT != null);
-    assert(seriesEditorLaunchedFromAccountEVT != null);
-    assert(seriesEditorLaunchedFromHomeEVT != null);
-    assert(sessionFetchedEVT != null);
-    assert(subtitleChangedEVT != null);
-    assert(summaryChangedEVT != null);
-    assert(titleChangedEVT != null);
-    return seriesEditorLaunchedFromAccountEVT(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult addCoverPressedEVT(AddCoverPressedEVT value),
-    TResult chapterDraftDeletedEVT(ChapterDraftDeletedEVT value),
-    TResult deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
-    TResult genreOptionalSelectedEVT(GenreOptionalSelectedEVT value),
-    TResult genreSelectedEVT(GenreSelectedEVT value),
-    TResult isNSFWChangedEVT(IsNSFWChangedEVT value),
-    TResult languageSelectedEVT(LanguageSelectedEVT value),
-    TResult saveSeriesDraftButtonPressedEVT(
-        SaveSeriesDraftButtonPressedEVT value),
-    TResult seriesEditorLaunchedFromAccountEVT(
-        SeriesEditorLaunchedFromAccountEVT value),
-    TResult seriesEditorLaunchedFromHomeEVT(
-        SeriesEditorLaunchedFromHomeEVT value),
-    TResult sessionFetchedEVT(SessionFetchedEVT value),
-    TResult subtitleChangedEVT(SubtitleChangedEVT value),
-    TResult summaryChangedEVT(SummaryChangedEVT value),
-    TResult titleChangedEVT(TitleChangedEVT value),
-    @required TResult orElse(),
-  }) {
-    assert(orElse != null);
-    if (seriesEditorLaunchedFromAccountEVT != null) {
-      return seriesEditorLaunchedFromAccountEVT(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class SeriesEditorLaunchedFromAccountEVT
-    implements SeriesEditorDatabaseEvent {
-  const factory SeriesEditorLaunchedFromAccountEVT(
-          BuildContext context, Series seriesDraft) =
-      _$SeriesEditorLaunchedFromAccountEVT;
-
-  BuildContext get context;
-  Series get seriesDraft;
-  $SeriesEditorLaunchedFromAccountEVTCopyWith<
-      SeriesEditorLaunchedFromAccountEVT> get copyWith;
 }
 
 /// @nodoc
@@ -2133,10 +1899,10 @@ class _$SeriesEditorLaunchedFromHomeEVT
     @required TResult isNSFWChangedEVT(bool isNSFW),
     @required TResult languageSelectedEVT(String language),
     @required TResult saveSeriesDraftButtonPressedEVT(),
-    @required
-        TResult seriesEditorLaunchedFromAccountEVT(
-            BuildContext context, Series seriesDraft),
     @required TResult seriesEditorLaunchedFromHomeEVT(BuildContext context),
+    @required
+        TResult seriesEditorLaunchedFromLibraryEVT(
+            BuildContext context, Series seriesDraft),
     @required TResult sessionFetchedEVT(),
     @required TResult subtitleChangedEVT(String subtitle),
     @required TResult summaryChangedEVT(String summary),
@@ -2150,8 +1916,8 @@ class _$SeriesEditorLaunchedFromHomeEVT
     assert(isNSFWChangedEVT != null);
     assert(languageSelectedEVT != null);
     assert(saveSeriesDraftButtonPressedEVT != null);
-    assert(seriesEditorLaunchedFromAccountEVT != null);
     assert(seriesEditorLaunchedFromHomeEVT != null);
+    assert(seriesEditorLaunchedFromLibraryEVT != null);
     assert(sessionFetchedEVT != null);
     assert(subtitleChangedEVT != null);
     assert(summaryChangedEVT != null);
@@ -2170,9 +1936,9 @@ class _$SeriesEditorLaunchedFromHomeEVT
     TResult isNSFWChangedEVT(bool isNSFW),
     TResult languageSelectedEVT(String language),
     TResult saveSeriesDraftButtonPressedEVT(),
-    TResult seriesEditorLaunchedFromAccountEVT(
-        BuildContext context, Series seriesDraft),
     TResult seriesEditorLaunchedFromHomeEVT(BuildContext context),
+    TResult seriesEditorLaunchedFromLibraryEVT(
+        BuildContext context, Series seriesDraft),
     TResult sessionFetchedEVT(),
     TResult subtitleChangedEVT(String subtitle),
     TResult summaryChangedEVT(String summary),
@@ -2201,11 +1967,11 @@ class _$SeriesEditorLaunchedFromHomeEVT
         TResult saveSeriesDraftButtonPressedEVT(
             SaveSeriesDraftButtonPressedEVT value),
     @required
-        TResult seriesEditorLaunchedFromAccountEVT(
-            SeriesEditorLaunchedFromAccountEVT value),
-    @required
         TResult seriesEditorLaunchedFromHomeEVT(
             SeriesEditorLaunchedFromHomeEVT value),
+    @required
+        TResult seriesEditorLaunchedFromLibraryEVT(
+            SeriesEditorLaunchedFromLibraryEVT value),
     @required TResult sessionFetchedEVT(SessionFetchedEVT value),
     @required TResult subtitleChangedEVT(SubtitleChangedEVT value),
     @required TResult summaryChangedEVT(SummaryChangedEVT value),
@@ -2219,8 +1985,8 @@ class _$SeriesEditorLaunchedFromHomeEVT
     assert(isNSFWChangedEVT != null);
     assert(languageSelectedEVT != null);
     assert(saveSeriesDraftButtonPressedEVT != null);
-    assert(seriesEditorLaunchedFromAccountEVT != null);
     assert(seriesEditorLaunchedFromHomeEVT != null);
+    assert(seriesEditorLaunchedFromLibraryEVT != null);
     assert(sessionFetchedEVT != null);
     assert(subtitleChangedEVT != null);
     assert(summaryChangedEVT != null);
@@ -2240,10 +2006,10 @@ class _$SeriesEditorLaunchedFromHomeEVT
     TResult languageSelectedEVT(LanguageSelectedEVT value),
     TResult saveSeriesDraftButtonPressedEVT(
         SaveSeriesDraftButtonPressedEVT value),
-    TResult seriesEditorLaunchedFromAccountEVT(
-        SeriesEditorLaunchedFromAccountEVT value),
     TResult seriesEditorLaunchedFromHomeEVT(
         SeriesEditorLaunchedFromHomeEVT value),
+    TResult seriesEditorLaunchedFromLibraryEVT(
+        SeriesEditorLaunchedFromLibraryEVT value),
     TResult sessionFetchedEVT(SessionFetchedEVT value),
     TResult subtitleChangedEVT(SubtitleChangedEVT value),
     TResult summaryChangedEVT(SummaryChangedEVT value),
@@ -2266,6 +2032,240 @@ abstract class SeriesEditorLaunchedFromHomeEVT
   BuildContext get context;
   $SeriesEditorLaunchedFromHomeEVTCopyWith<SeriesEditorLaunchedFromHomeEVT>
       get copyWith;
+}
+
+/// @nodoc
+abstract class $SeriesEditorLaunchedFromLibraryEVTCopyWith<$Res> {
+  factory $SeriesEditorLaunchedFromLibraryEVTCopyWith(
+          SeriesEditorLaunchedFromLibraryEVT value,
+          $Res Function(SeriesEditorLaunchedFromLibraryEVT) then) =
+      _$SeriesEditorLaunchedFromLibraryEVTCopyWithImpl<$Res>;
+  $Res call({BuildContext context, Series seriesDraft});
+}
+
+/// @nodoc
+class _$SeriesEditorLaunchedFromLibraryEVTCopyWithImpl<$Res>
+    extends _$SeriesEditorDatabaseEventCopyWithImpl<$Res>
+    implements $SeriesEditorLaunchedFromLibraryEVTCopyWith<$Res> {
+  _$SeriesEditorLaunchedFromLibraryEVTCopyWithImpl(
+      SeriesEditorLaunchedFromLibraryEVT _value,
+      $Res Function(SeriesEditorLaunchedFromLibraryEVT) _then)
+      : super(_value, (v) => _then(v as SeriesEditorLaunchedFromLibraryEVT));
+
+  @override
+  SeriesEditorLaunchedFromLibraryEVT get _value =>
+      super._value as SeriesEditorLaunchedFromLibraryEVT;
+
+  @override
+  $Res call({
+    Object context = freezed,
+    Object seriesDraft = freezed,
+  }) {
+    return _then(SeriesEditorLaunchedFromLibraryEVT(
+      context == freezed ? _value.context : context as BuildContext,
+      seriesDraft == freezed ? _value.seriesDraft : seriesDraft as Series,
+    ));
+  }
+}
+
+/// @nodoc
+class _$SeriesEditorLaunchedFromLibraryEVT
+    with DiagnosticableTreeMixin
+    implements SeriesEditorLaunchedFromLibraryEVT {
+  const _$SeriesEditorLaunchedFromLibraryEVT(this.context, this.seriesDraft)
+      : assert(context != null),
+        assert(seriesDraft != null);
+
+  @override
+  final BuildContext context;
+  @override
+  final Series seriesDraft;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'SeriesEditorDatabaseEvent.seriesEditorLaunchedFromLibraryEVT(context: $context, seriesDraft: $seriesDraft)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type',
+          'SeriesEditorDatabaseEvent.seriesEditorLaunchedFromLibraryEVT'))
+      ..add(DiagnosticsProperty('context', context))
+      ..add(DiagnosticsProperty('seriesDraft', seriesDraft));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is SeriesEditorLaunchedFromLibraryEVT &&
+            (identical(other.context, context) ||
+                const DeepCollectionEquality()
+                    .equals(other.context, context)) &&
+            (identical(other.seriesDraft, seriesDraft) ||
+                const DeepCollectionEquality()
+                    .equals(other.seriesDraft, seriesDraft)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(context) ^
+      const DeepCollectionEquality().hash(seriesDraft);
+
+  @override
+  $SeriesEditorLaunchedFromLibraryEVTCopyWith<
+          SeriesEditorLaunchedFromLibraryEVT>
+      get copyWith => _$SeriesEditorLaunchedFromLibraryEVTCopyWithImpl<
+          SeriesEditorLaunchedFromLibraryEVT>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object>({
+    @required TResult addCoverPressedEVT(),
+    @required TResult chapterDraftDeletedEVT(),
+    @required TResult deleteDraftButtonPressedEVT(),
+    @required TResult genreOptionalSelectedEVT(String genreOptional),
+    @required TResult genreSelectedEVT(String genre),
+    @required TResult isNSFWChangedEVT(bool isNSFW),
+    @required TResult languageSelectedEVT(String language),
+    @required TResult saveSeriesDraftButtonPressedEVT(),
+    @required TResult seriesEditorLaunchedFromHomeEVT(BuildContext context),
+    @required
+        TResult seriesEditorLaunchedFromLibraryEVT(
+            BuildContext context, Series seriesDraft),
+    @required TResult sessionFetchedEVT(),
+    @required TResult subtitleChangedEVT(String subtitle),
+    @required TResult summaryChangedEVT(String summary),
+    @required TResult titleChangedEVT(String title),
+  }) {
+    assert(addCoverPressedEVT != null);
+    assert(chapterDraftDeletedEVT != null);
+    assert(deleteDraftButtonPressedEVT != null);
+    assert(genreOptionalSelectedEVT != null);
+    assert(genreSelectedEVT != null);
+    assert(isNSFWChangedEVT != null);
+    assert(languageSelectedEVT != null);
+    assert(saveSeriesDraftButtonPressedEVT != null);
+    assert(seriesEditorLaunchedFromHomeEVT != null);
+    assert(seriesEditorLaunchedFromLibraryEVT != null);
+    assert(sessionFetchedEVT != null);
+    assert(subtitleChangedEVT != null);
+    assert(summaryChangedEVT != null);
+    assert(titleChangedEVT != null);
+    return seriesEditorLaunchedFromLibraryEVT(context, seriesDraft);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object>({
+    TResult addCoverPressedEVT(),
+    TResult chapterDraftDeletedEVT(),
+    TResult deleteDraftButtonPressedEVT(),
+    TResult genreOptionalSelectedEVT(String genreOptional),
+    TResult genreSelectedEVT(String genre),
+    TResult isNSFWChangedEVT(bool isNSFW),
+    TResult languageSelectedEVT(String language),
+    TResult saveSeriesDraftButtonPressedEVT(),
+    TResult seriesEditorLaunchedFromHomeEVT(BuildContext context),
+    TResult seriesEditorLaunchedFromLibraryEVT(
+        BuildContext context, Series seriesDraft),
+    TResult sessionFetchedEVT(),
+    TResult subtitleChangedEVT(String subtitle),
+    TResult summaryChangedEVT(String summary),
+    TResult titleChangedEVT(String title),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (seriesEditorLaunchedFromLibraryEVT != null) {
+      return seriesEditorLaunchedFromLibraryEVT(context, seriesDraft);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object>({
+    @required TResult addCoverPressedEVT(AddCoverPressedEVT value),
+    @required TResult chapterDraftDeletedEVT(ChapterDraftDeletedEVT value),
+    @required
+        TResult deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
+    @required TResult genreOptionalSelectedEVT(GenreOptionalSelectedEVT value),
+    @required TResult genreSelectedEVT(GenreSelectedEVT value),
+    @required TResult isNSFWChangedEVT(IsNSFWChangedEVT value),
+    @required TResult languageSelectedEVT(LanguageSelectedEVT value),
+    @required
+        TResult saveSeriesDraftButtonPressedEVT(
+            SaveSeriesDraftButtonPressedEVT value),
+    @required
+        TResult seriesEditorLaunchedFromHomeEVT(
+            SeriesEditorLaunchedFromHomeEVT value),
+    @required
+        TResult seriesEditorLaunchedFromLibraryEVT(
+            SeriesEditorLaunchedFromLibraryEVT value),
+    @required TResult sessionFetchedEVT(SessionFetchedEVT value),
+    @required TResult subtitleChangedEVT(SubtitleChangedEVT value),
+    @required TResult summaryChangedEVT(SummaryChangedEVT value),
+    @required TResult titleChangedEVT(TitleChangedEVT value),
+  }) {
+    assert(addCoverPressedEVT != null);
+    assert(chapterDraftDeletedEVT != null);
+    assert(deleteDraftButtonPressedEVT != null);
+    assert(genreOptionalSelectedEVT != null);
+    assert(genreSelectedEVT != null);
+    assert(isNSFWChangedEVT != null);
+    assert(languageSelectedEVT != null);
+    assert(saveSeriesDraftButtonPressedEVT != null);
+    assert(seriesEditorLaunchedFromHomeEVT != null);
+    assert(seriesEditorLaunchedFromLibraryEVT != null);
+    assert(sessionFetchedEVT != null);
+    assert(subtitleChangedEVT != null);
+    assert(summaryChangedEVT != null);
+    assert(titleChangedEVT != null);
+    return seriesEditorLaunchedFromLibraryEVT(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object>({
+    TResult addCoverPressedEVT(AddCoverPressedEVT value),
+    TResult chapterDraftDeletedEVT(ChapterDraftDeletedEVT value),
+    TResult deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
+    TResult genreOptionalSelectedEVT(GenreOptionalSelectedEVT value),
+    TResult genreSelectedEVT(GenreSelectedEVT value),
+    TResult isNSFWChangedEVT(IsNSFWChangedEVT value),
+    TResult languageSelectedEVT(LanguageSelectedEVT value),
+    TResult saveSeriesDraftButtonPressedEVT(
+        SaveSeriesDraftButtonPressedEVT value),
+    TResult seriesEditorLaunchedFromHomeEVT(
+        SeriesEditorLaunchedFromHomeEVT value),
+    TResult seriesEditorLaunchedFromLibraryEVT(
+        SeriesEditorLaunchedFromLibraryEVT value),
+    TResult sessionFetchedEVT(SessionFetchedEVT value),
+    TResult subtitleChangedEVT(SubtitleChangedEVT value),
+    TResult summaryChangedEVT(SummaryChangedEVT value),
+    TResult titleChangedEVT(TitleChangedEVT value),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (seriesEditorLaunchedFromLibraryEVT != null) {
+      return seriesEditorLaunchedFromLibraryEVT(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SeriesEditorLaunchedFromLibraryEVT
+    implements SeriesEditorDatabaseEvent {
+  const factory SeriesEditorLaunchedFromLibraryEVT(
+          BuildContext context, Series seriesDraft) =
+      _$SeriesEditorLaunchedFromLibraryEVT;
+
+  BuildContext get context;
+  Series get seriesDraft;
+  $SeriesEditorLaunchedFromLibraryEVTCopyWith<
+      SeriesEditorLaunchedFromLibraryEVT> get copyWith;
 }
 
 /// @nodoc
@@ -2325,10 +2325,10 @@ class _$SessionFetchedEVT
     @required TResult isNSFWChangedEVT(bool isNSFW),
     @required TResult languageSelectedEVT(String language),
     @required TResult saveSeriesDraftButtonPressedEVT(),
-    @required
-        TResult seriesEditorLaunchedFromAccountEVT(
-            BuildContext context, Series seriesDraft),
     @required TResult seriesEditorLaunchedFromHomeEVT(BuildContext context),
+    @required
+        TResult seriesEditorLaunchedFromLibraryEVT(
+            BuildContext context, Series seriesDraft),
     @required TResult sessionFetchedEVT(),
     @required TResult subtitleChangedEVT(String subtitle),
     @required TResult summaryChangedEVT(String summary),
@@ -2342,8 +2342,8 @@ class _$SessionFetchedEVT
     assert(isNSFWChangedEVT != null);
     assert(languageSelectedEVT != null);
     assert(saveSeriesDraftButtonPressedEVT != null);
-    assert(seriesEditorLaunchedFromAccountEVT != null);
     assert(seriesEditorLaunchedFromHomeEVT != null);
+    assert(seriesEditorLaunchedFromLibraryEVT != null);
     assert(sessionFetchedEVT != null);
     assert(subtitleChangedEVT != null);
     assert(summaryChangedEVT != null);
@@ -2362,9 +2362,9 @@ class _$SessionFetchedEVT
     TResult isNSFWChangedEVT(bool isNSFW),
     TResult languageSelectedEVT(String language),
     TResult saveSeriesDraftButtonPressedEVT(),
-    TResult seriesEditorLaunchedFromAccountEVT(
-        BuildContext context, Series seriesDraft),
     TResult seriesEditorLaunchedFromHomeEVT(BuildContext context),
+    TResult seriesEditorLaunchedFromLibraryEVT(
+        BuildContext context, Series seriesDraft),
     TResult sessionFetchedEVT(),
     TResult subtitleChangedEVT(String subtitle),
     TResult summaryChangedEVT(String summary),
@@ -2393,11 +2393,11 @@ class _$SessionFetchedEVT
         TResult saveSeriesDraftButtonPressedEVT(
             SaveSeriesDraftButtonPressedEVT value),
     @required
-        TResult seriesEditorLaunchedFromAccountEVT(
-            SeriesEditorLaunchedFromAccountEVT value),
-    @required
         TResult seriesEditorLaunchedFromHomeEVT(
             SeriesEditorLaunchedFromHomeEVT value),
+    @required
+        TResult seriesEditorLaunchedFromLibraryEVT(
+            SeriesEditorLaunchedFromLibraryEVT value),
     @required TResult sessionFetchedEVT(SessionFetchedEVT value),
     @required TResult subtitleChangedEVT(SubtitleChangedEVT value),
     @required TResult summaryChangedEVT(SummaryChangedEVT value),
@@ -2411,8 +2411,8 @@ class _$SessionFetchedEVT
     assert(isNSFWChangedEVT != null);
     assert(languageSelectedEVT != null);
     assert(saveSeriesDraftButtonPressedEVT != null);
-    assert(seriesEditorLaunchedFromAccountEVT != null);
     assert(seriesEditorLaunchedFromHomeEVT != null);
+    assert(seriesEditorLaunchedFromLibraryEVT != null);
     assert(sessionFetchedEVT != null);
     assert(subtitleChangedEVT != null);
     assert(summaryChangedEVT != null);
@@ -2432,10 +2432,10 @@ class _$SessionFetchedEVT
     TResult languageSelectedEVT(LanguageSelectedEVT value),
     TResult saveSeriesDraftButtonPressedEVT(
         SaveSeriesDraftButtonPressedEVT value),
-    TResult seriesEditorLaunchedFromAccountEVT(
-        SeriesEditorLaunchedFromAccountEVT value),
     TResult seriesEditorLaunchedFromHomeEVT(
         SeriesEditorLaunchedFromHomeEVT value),
+    TResult seriesEditorLaunchedFromLibraryEVT(
+        SeriesEditorLaunchedFromLibraryEVT value),
     TResult sessionFetchedEVT(SessionFetchedEVT value),
     TResult subtitleChangedEVT(SubtitleChangedEVT value),
     TResult summaryChangedEVT(SummaryChangedEVT value),
@@ -2534,10 +2534,10 @@ class _$SubtitleChangedEVT
     @required TResult isNSFWChangedEVT(bool isNSFW),
     @required TResult languageSelectedEVT(String language),
     @required TResult saveSeriesDraftButtonPressedEVT(),
-    @required
-        TResult seriesEditorLaunchedFromAccountEVT(
-            BuildContext context, Series seriesDraft),
     @required TResult seriesEditorLaunchedFromHomeEVT(BuildContext context),
+    @required
+        TResult seriesEditorLaunchedFromLibraryEVT(
+            BuildContext context, Series seriesDraft),
     @required TResult sessionFetchedEVT(),
     @required TResult subtitleChangedEVT(String subtitle),
     @required TResult summaryChangedEVT(String summary),
@@ -2551,8 +2551,8 @@ class _$SubtitleChangedEVT
     assert(isNSFWChangedEVT != null);
     assert(languageSelectedEVT != null);
     assert(saveSeriesDraftButtonPressedEVT != null);
-    assert(seriesEditorLaunchedFromAccountEVT != null);
     assert(seriesEditorLaunchedFromHomeEVT != null);
+    assert(seriesEditorLaunchedFromLibraryEVT != null);
     assert(sessionFetchedEVT != null);
     assert(subtitleChangedEVT != null);
     assert(summaryChangedEVT != null);
@@ -2571,9 +2571,9 @@ class _$SubtitleChangedEVT
     TResult isNSFWChangedEVT(bool isNSFW),
     TResult languageSelectedEVT(String language),
     TResult saveSeriesDraftButtonPressedEVT(),
-    TResult seriesEditorLaunchedFromAccountEVT(
-        BuildContext context, Series seriesDraft),
     TResult seriesEditorLaunchedFromHomeEVT(BuildContext context),
+    TResult seriesEditorLaunchedFromLibraryEVT(
+        BuildContext context, Series seriesDraft),
     TResult sessionFetchedEVT(),
     TResult subtitleChangedEVT(String subtitle),
     TResult summaryChangedEVT(String summary),
@@ -2602,11 +2602,11 @@ class _$SubtitleChangedEVT
         TResult saveSeriesDraftButtonPressedEVT(
             SaveSeriesDraftButtonPressedEVT value),
     @required
-        TResult seriesEditorLaunchedFromAccountEVT(
-            SeriesEditorLaunchedFromAccountEVT value),
-    @required
         TResult seriesEditorLaunchedFromHomeEVT(
             SeriesEditorLaunchedFromHomeEVT value),
+    @required
+        TResult seriesEditorLaunchedFromLibraryEVT(
+            SeriesEditorLaunchedFromLibraryEVT value),
     @required TResult sessionFetchedEVT(SessionFetchedEVT value),
     @required TResult subtitleChangedEVT(SubtitleChangedEVT value),
     @required TResult summaryChangedEVT(SummaryChangedEVT value),
@@ -2620,8 +2620,8 @@ class _$SubtitleChangedEVT
     assert(isNSFWChangedEVT != null);
     assert(languageSelectedEVT != null);
     assert(saveSeriesDraftButtonPressedEVT != null);
-    assert(seriesEditorLaunchedFromAccountEVT != null);
     assert(seriesEditorLaunchedFromHomeEVT != null);
+    assert(seriesEditorLaunchedFromLibraryEVT != null);
     assert(sessionFetchedEVT != null);
     assert(subtitleChangedEVT != null);
     assert(summaryChangedEVT != null);
@@ -2641,10 +2641,10 @@ class _$SubtitleChangedEVT
     TResult languageSelectedEVT(LanguageSelectedEVT value),
     TResult saveSeriesDraftButtonPressedEVT(
         SaveSeriesDraftButtonPressedEVT value),
-    TResult seriesEditorLaunchedFromAccountEVT(
-        SeriesEditorLaunchedFromAccountEVT value),
     TResult seriesEditorLaunchedFromHomeEVT(
         SeriesEditorLaunchedFromHomeEVT value),
+    TResult seriesEditorLaunchedFromLibraryEVT(
+        SeriesEditorLaunchedFromLibraryEVT value),
     TResult sessionFetchedEVT(SessionFetchedEVT value),
     TResult subtitleChangedEVT(SubtitleChangedEVT value),
     TResult summaryChangedEVT(SummaryChangedEVT value),
@@ -2745,10 +2745,10 @@ class _$SummaryChangedEVT
     @required TResult isNSFWChangedEVT(bool isNSFW),
     @required TResult languageSelectedEVT(String language),
     @required TResult saveSeriesDraftButtonPressedEVT(),
-    @required
-        TResult seriesEditorLaunchedFromAccountEVT(
-            BuildContext context, Series seriesDraft),
     @required TResult seriesEditorLaunchedFromHomeEVT(BuildContext context),
+    @required
+        TResult seriesEditorLaunchedFromLibraryEVT(
+            BuildContext context, Series seriesDraft),
     @required TResult sessionFetchedEVT(),
     @required TResult subtitleChangedEVT(String subtitle),
     @required TResult summaryChangedEVT(String summary),
@@ -2762,8 +2762,8 @@ class _$SummaryChangedEVT
     assert(isNSFWChangedEVT != null);
     assert(languageSelectedEVT != null);
     assert(saveSeriesDraftButtonPressedEVT != null);
-    assert(seriesEditorLaunchedFromAccountEVT != null);
     assert(seriesEditorLaunchedFromHomeEVT != null);
+    assert(seriesEditorLaunchedFromLibraryEVT != null);
     assert(sessionFetchedEVT != null);
     assert(subtitleChangedEVT != null);
     assert(summaryChangedEVT != null);
@@ -2782,9 +2782,9 @@ class _$SummaryChangedEVT
     TResult isNSFWChangedEVT(bool isNSFW),
     TResult languageSelectedEVT(String language),
     TResult saveSeriesDraftButtonPressedEVT(),
-    TResult seriesEditorLaunchedFromAccountEVT(
-        BuildContext context, Series seriesDraft),
     TResult seriesEditorLaunchedFromHomeEVT(BuildContext context),
+    TResult seriesEditorLaunchedFromLibraryEVT(
+        BuildContext context, Series seriesDraft),
     TResult sessionFetchedEVT(),
     TResult subtitleChangedEVT(String subtitle),
     TResult summaryChangedEVT(String summary),
@@ -2813,11 +2813,11 @@ class _$SummaryChangedEVT
         TResult saveSeriesDraftButtonPressedEVT(
             SaveSeriesDraftButtonPressedEVT value),
     @required
-        TResult seriesEditorLaunchedFromAccountEVT(
-            SeriesEditorLaunchedFromAccountEVT value),
-    @required
         TResult seriesEditorLaunchedFromHomeEVT(
             SeriesEditorLaunchedFromHomeEVT value),
+    @required
+        TResult seriesEditorLaunchedFromLibraryEVT(
+            SeriesEditorLaunchedFromLibraryEVT value),
     @required TResult sessionFetchedEVT(SessionFetchedEVT value),
     @required TResult subtitleChangedEVT(SubtitleChangedEVT value),
     @required TResult summaryChangedEVT(SummaryChangedEVT value),
@@ -2831,8 +2831,8 @@ class _$SummaryChangedEVT
     assert(isNSFWChangedEVT != null);
     assert(languageSelectedEVT != null);
     assert(saveSeriesDraftButtonPressedEVT != null);
-    assert(seriesEditorLaunchedFromAccountEVT != null);
     assert(seriesEditorLaunchedFromHomeEVT != null);
+    assert(seriesEditorLaunchedFromLibraryEVT != null);
     assert(sessionFetchedEVT != null);
     assert(subtitleChangedEVT != null);
     assert(summaryChangedEVT != null);
@@ -2852,10 +2852,10 @@ class _$SummaryChangedEVT
     TResult languageSelectedEVT(LanguageSelectedEVT value),
     TResult saveSeriesDraftButtonPressedEVT(
         SaveSeriesDraftButtonPressedEVT value),
-    TResult seriesEditorLaunchedFromAccountEVT(
-        SeriesEditorLaunchedFromAccountEVT value),
     TResult seriesEditorLaunchedFromHomeEVT(
         SeriesEditorLaunchedFromHomeEVT value),
+    TResult seriesEditorLaunchedFromLibraryEVT(
+        SeriesEditorLaunchedFromLibraryEVT value),
     TResult sessionFetchedEVT(SessionFetchedEVT value),
     TResult subtitleChangedEVT(SubtitleChangedEVT value),
     TResult summaryChangedEVT(SummaryChangedEVT value),
@@ -2956,10 +2956,10 @@ class _$TitleChangedEVT
     @required TResult isNSFWChangedEVT(bool isNSFW),
     @required TResult languageSelectedEVT(String language),
     @required TResult saveSeriesDraftButtonPressedEVT(),
-    @required
-        TResult seriesEditorLaunchedFromAccountEVT(
-            BuildContext context, Series seriesDraft),
     @required TResult seriesEditorLaunchedFromHomeEVT(BuildContext context),
+    @required
+        TResult seriesEditorLaunchedFromLibraryEVT(
+            BuildContext context, Series seriesDraft),
     @required TResult sessionFetchedEVT(),
     @required TResult subtitleChangedEVT(String subtitle),
     @required TResult summaryChangedEVT(String summary),
@@ -2973,8 +2973,8 @@ class _$TitleChangedEVT
     assert(isNSFWChangedEVT != null);
     assert(languageSelectedEVT != null);
     assert(saveSeriesDraftButtonPressedEVT != null);
-    assert(seriesEditorLaunchedFromAccountEVT != null);
     assert(seriesEditorLaunchedFromHomeEVT != null);
+    assert(seriesEditorLaunchedFromLibraryEVT != null);
     assert(sessionFetchedEVT != null);
     assert(subtitleChangedEVT != null);
     assert(summaryChangedEVT != null);
@@ -2993,9 +2993,9 @@ class _$TitleChangedEVT
     TResult isNSFWChangedEVT(bool isNSFW),
     TResult languageSelectedEVT(String language),
     TResult saveSeriesDraftButtonPressedEVT(),
-    TResult seriesEditorLaunchedFromAccountEVT(
-        BuildContext context, Series seriesDraft),
     TResult seriesEditorLaunchedFromHomeEVT(BuildContext context),
+    TResult seriesEditorLaunchedFromLibraryEVT(
+        BuildContext context, Series seriesDraft),
     TResult sessionFetchedEVT(),
     TResult subtitleChangedEVT(String subtitle),
     TResult summaryChangedEVT(String summary),
@@ -3024,11 +3024,11 @@ class _$TitleChangedEVT
         TResult saveSeriesDraftButtonPressedEVT(
             SaveSeriesDraftButtonPressedEVT value),
     @required
-        TResult seriesEditorLaunchedFromAccountEVT(
-            SeriesEditorLaunchedFromAccountEVT value),
-    @required
         TResult seriesEditorLaunchedFromHomeEVT(
             SeriesEditorLaunchedFromHomeEVT value),
+    @required
+        TResult seriesEditorLaunchedFromLibraryEVT(
+            SeriesEditorLaunchedFromLibraryEVT value),
     @required TResult sessionFetchedEVT(SessionFetchedEVT value),
     @required TResult subtitleChangedEVT(SubtitleChangedEVT value),
     @required TResult summaryChangedEVT(SummaryChangedEVT value),
@@ -3042,8 +3042,8 @@ class _$TitleChangedEVT
     assert(isNSFWChangedEVT != null);
     assert(languageSelectedEVT != null);
     assert(saveSeriesDraftButtonPressedEVT != null);
-    assert(seriesEditorLaunchedFromAccountEVT != null);
     assert(seriesEditorLaunchedFromHomeEVT != null);
+    assert(seriesEditorLaunchedFromLibraryEVT != null);
     assert(sessionFetchedEVT != null);
     assert(subtitleChangedEVT != null);
     assert(summaryChangedEVT != null);
@@ -3063,10 +3063,10 @@ class _$TitleChangedEVT
     TResult languageSelectedEVT(LanguageSelectedEVT value),
     TResult saveSeriesDraftButtonPressedEVT(
         SaveSeriesDraftButtonPressedEVT value),
-    TResult seriesEditorLaunchedFromAccountEVT(
-        SeriesEditorLaunchedFromAccountEVT value),
     TResult seriesEditorLaunchedFromHomeEVT(
         SeriesEditorLaunchedFromHomeEVT value),
+    TResult seriesEditorLaunchedFromLibraryEVT(
+        SeriesEditorLaunchedFromLibraryEVT value),
     TResult sessionFetchedEVT(SessionFetchedEVT value),
     TResult subtitleChangedEVT(SubtitleChangedEVT value),
     TResult summaryChangedEVT(SummaryChangedEVT value),

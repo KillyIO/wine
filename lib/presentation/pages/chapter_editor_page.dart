@@ -36,9 +36,9 @@ class ChapterEditorPage extends StatelessWidget {
 
   ChapterEditorDatabaseBloc _getBloc(BuildContext context) {
     switch (editorContentOrigin) {
-      case EditorContentOrigin.account:
+      case EditorContentOrigin.library:
         return getIt<ChapterEditorDatabaseBloc>()
-          ..add(ChapterEditorDatabaseEvent.chapterEditorLaunchedFromAccountEVT(
+          ..add(ChapterEditorDatabaseEvent.chapterEditorLaunchedFromLibraryEVT(
             context,
             chapterDraft,
             editorContentOrigin,

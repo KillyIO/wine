@@ -7,20 +7,20 @@ abstract class CoreDatabaseState with _$CoreDatabaseState {
   const factory CoreDatabaseState.initial() = _Initial;
 
   /// @nodoc
-  const factory CoreDatabaseState.chapterDraftDeletedFromAccountSTE({
+  const factory CoreDatabaseState.chapterDraftDeletedFromLibrarySTE({
     String chapterDraftUID,
     String seriesDraftUID,
-  }) = _ChapterDraftDeletedFromAccountSTE;
+  }) = _ChapterDraftDeletedFromLibrarySTE;
 
   /// @nodoc
-  const factory CoreDatabaseState.chapterDraftSavedFromAccountSTE(
+  const factory CoreDatabaseState.chapterDraftSavedFromLibrarySTE(
     Chapter chapterDraft,
-  ) = _ChapterDraftSavedFromAccountSTE;
+  ) = _ChapterDraftSavedFromLibrarySTE;
 
   /// @nodoc
-  const factory CoreDatabaseState.chapterPublishedFromAccountSTE(
+  const factory CoreDatabaseState.chapterPublishedFromLibrarySTE(
     Chapter chapter,
-  ) = _ChapterPublishedFromAccountSTE;
+  ) = _ChapterPublishedFromLibrarySTE;
 
   /// @nodoc
   const factory CoreDatabaseState.chapterPublishedFromChapterSTE(
@@ -28,18 +28,18 @@ abstract class CoreDatabaseState with _$CoreDatabaseState {
   ) = _ChapterPublishedFromChapterSTE;
 
   /// @nodoc
-  const factory CoreDatabaseState.seriesDraftDeletedFromAccountSTE(
+  const factory CoreDatabaseState.seriesDraftDeletedFromLibrarySTE(
     String seriesDraftUID,
-  ) = _SeriesDraftDeletedFromAccountSTE;
+  ) = _SeriesDraftDeletedFromLibrarySTE;
 
   /// @nodoc
-  const factory CoreDatabaseState.seriesDraftSavedFromAccountSTE(
+  const factory CoreDatabaseState.seriesDraftSavedFromLibrarySTE(
     Series seriesDraft,
-  ) = _SeriesDraftSavedFromAccountSTE;
+  ) = _SeriesDraftSavedFromLibrarySTE;
 
   /// @nodoc
-  const factory CoreDatabaseState.seriesPublishedFromAccountSTE(Series series) =
-      _SeriesPublishedFromAccountSTE;
+  const factory CoreDatabaseState.seriesPublishedFromLibrarySTE(Series series) =
+      _SeriesPublishedFromLibrarySTE;
 
   /// @nodoc
   const factory CoreDatabaseState.seriesPublishedFromHomeSTE(Series series) =

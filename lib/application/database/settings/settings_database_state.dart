@@ -6,6 +6,10 @@ abstract class SettingsDatabaseState with _$SettingsDatabaseState {
   /// @nodoc
   const factory SettingsDatabaseState({
     @required bool isUpdating,
+    @required Config config,
+    @required
+        Option<Either<ConfigDatabaseFailure, ConfigDatabaseSuccess>>
+            configDatabaseFailureOrSuccessOption,
     @required
         Option<Either<DatabaseFailure, SessionDatabaseSuccess>>
             sessionDatabaseFailureOrSuccessOption,
@@ -14,6 +18,8 @@ abstract class SettingsDatabaseState with _$SettingsDatabaseState {
 
   /// @nodoc
   factory SettingsDatabaseState.initial() => SettingsDatabaseState(
+        config: Config(),
+        configDatabaseFailureOrSuccessOption: none(),
         isUpdating: false,
         session: Session(),
         sessionDatabaseFailureOrSuccessOption: none(),

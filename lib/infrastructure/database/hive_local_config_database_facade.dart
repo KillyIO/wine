@@ -69,12 +69,10 @@ class HiveLocalConfigDatabaseFacade implements ILocalConfigDatabaseFacade {
   Future<Either<ConfigDatabaseFailure, ConfigDatabaseSuccess>> updateConfig(
     Config config,
   ) async {
-    final outdatedConfig = _configsBox.get(Constants.sessionConfig);
-
     await _configsBox.put(Constants.sessionConfig, config);
 
-    final currentConfig = _configsBox.get(Constants.sessionConfig);
-    if (currentConfig != outdatedConfig) {
+    final savedConfig = _configsBox.get(Constants.sessionConfig);
+    if (savedConfig == config) {
       return right(const ConfigDatabaseSuccess.configUpdatedSCS());
     }
     return left(const ConfigDatabaseFailure.failedToUpdateConfigFLR());

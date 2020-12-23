@@ -38,15 +38,15 @@ abstract class SeriesEditorDatabaseEvent with _$SeriesEditorDatabaseEvent {
       SaveSeriesDraftButtonPressedEVT;
 
   /// @nodoc
-  const factory SeriesEditorDatabaseEvent.seriesEditorLaunchedFromAccountEVT(
-    BuildContext context,
-    Series seriesDraft,
-  ) = SeriesEditorLaunchedFromAccountEVT;
-
-  /// @nodoc
   const factory SeriesEditorDatabaseEvent.seriesEditorLaunchedFromHomeEVT(
     BuildContext context,
   ) = SeriesEditorLaunchedFromHomeEVT;
+
+  /// @nodoc
+  const factory SeriesEditorDatabaseEvent.seriesEditorLaunchedFromLibraryEVT(
+    BuildContext context,
+    Series seriesDraft,
+  ) = SeriesEditorLaunchedFromLibraryEVT;
 
   /// @nodoc
   const factory SeriesEditorDatabaseEvent.sessionFetchedEVT() =

@@ -19,6 +19,11 @@ class _$SettingsDatabaseEventTearOff {
   }
 
 // ignore: unused_element
+  SessionFetchedEVT sessionFetchedEVT() {
+    return const SessionFetchedEVT();
+  }
+
+// ignore: unused_element
   SettingsLaunchedEVT settingsLaunchedEVT() {
     return const SettingsLaunchedEVT();
   }
@@ -38,12 +43,14 @@ mixin _$SettingsDatabaseEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult resetBlocEVT(),
+    @required TResult sessionFetchedEVT(),
     @required TResult settingsLaunchedEVT(),
     @required TResult userSignedOutEVT(),
   });
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult resetBlocEVT(),
+    TResult sessionFetchedEVT(),
     TResult settingsLaunchedEVT(),
     TResult userSignedOutEVT(),
     @required TResult orElse(),
@@ -51,12 +58,14 @@ mixin _$SettingsDatabaseEvent {
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult resetBlocEVT(ResetBlocEVT value),
+    @required TResult sessionFetchedEVT(SessionFetchedEVT value),
     @required TResult settingsLaunchedEVT(SettingsLaunchedEVT value),
     @required TResult userSignedOutEVT(UserSignedOutEVT value),
   });
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult resetBlocEVT(ResetBlocEVT value),
+    TResult sessionFetchedEVT(SessionFetchedEVT value),
     TResult settingsLaunchedEVT(SettingsLaunchedEVT value),
     TResult userSignedOutEVT(UserSignedOutEVT value),
     @required TResult orElse(),
@@ -120,10 +129,12 @@ class _$ResetBlocEVT implements ResetBlocEVT {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult resetBlocEVT(),
+    @required TResult sessionFetchedEVT(),
     @required TResult settingsLaunchedEVT(),
     @required TResult userSignedOutEVT(),
   }) {
     assert(resetBlocEVT != null);
+    assert(sessionFetchedEVT != null);
     assert(settingsLaunchedEVT != null);
     assert(userSignedOutEVT != null);
     return resetBlocEVT();
@@ -133,6 +144,7 @@ class _$ResetBlocEVT implements ResetBlocEVT {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult resetBlocEVT(),
+    TResult sessionFetchedEVT(),
     TResult settingsLaunchedEVT(),
     TResult userSignedOutEVT(),
     @required TResult orElse(),
@@ -148,10 +160,12 @@ class _$ResetBlocEVT implements ResetBlocEVT {
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult resetBlocEVT(ResetBlocEVT value),
+    @required TResult sessionFetchedEVT(SessionFetchedEVT value),
     @required TResult settingsLaunchedEVT(SettingsLaunchedEVT value),
     @required TResult userSignedOutEVT(UserSignedOutEVT value),
   }) {
     assert(resetBlocEVT != null);
+    assert(sessionFetchedEVT != null);
     assert(settingsLaunchedEVT != null);
     assert(userSignedOutEVT != null);
     return resetBlocEVT(this);
@@ -161,6 +175,7 @@ class _$ResetBlocEVT implements ResetBlocEVT {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult resetBlocEVT(ResetBlocEVT value),
+    TResult sessionFetchedEVT(SessionFetchedEVT value),
     TResult settingsLaunchedEVT(SettingsLaunchedEVT value),
     TResult userSignedOutEVT(UserSignedOutEVT value),
     @required TResult orElse(),
@@ -175,6 +190,109 @@ class _$ResetBlocEVT implements ResetBlocEVT {
 
 abstract class ResetBlocEVT implements SettingsDatabaseEvent {
   const factory ResetBlocEVT() = _$ResetBlocEVT;
+}
+
+/// @nodoc
+abstract class $SessionFetchedEVTCopyWith<$Res> {
+  factory $SessionFetchedEVTCopyWith(
+          SessionFetchedEVT value, $Res Function(SessionFetchedEVT) then) =
+      _$SessionFetchedEVTCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$SessionFetchedEVTCopyWithImpl<$Res>
+    extends _$SettingsDatabaseEventCopyWithImpl<$Res>
+    implements $SessionFetchedEVTCopyWith<$Res> {
+  _$SessionFetchedEVTCopyWithImpl(
+      SessionFetchedEVT _value, $Res Function(SessionFetchedEVT) _then)
+      : super(_value, (v) => _then(v as SessionFetchedEVT));
+
+  @override
+  SessionFetchedEVT get _value => super._value as SessionFetchedEVT;
+}
+
+/// @nodoc
+class _$SessionFetchedEVT implements SessionFetchedEVT {
+  const _$SessionFetchedEVT();
+
+  @override
+  String toString() {
+    return 'SettingsDatabaseEvent.sessionFetchedEVT()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is SessionFetchedEVT);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object>({
+    @required TResult resetBlocEVT(),
+    @required TResult sessionFetchedEVT(),
+    @required TResult settingsLaunchedEVT(),
+    @required TResult userSignedOutEVT(),
+  }) {
+    assert(resetBlocEVT != null);
+    assert(sessionFetchedEVT != null);
+    assert(settingsLaunchedEVT != null);
+    assert(userSignedOutEVT != null);
+    return sessionFetchedEVT();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object>({
+    TResult resetBlocEVT(),
+    TResult sessionFetchedEVT(),
+    TResult settingsLaunchedEVT(),
+    TResult userSignedOutEVT(),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (sessionFetchedEVT != null) {
+      return sessionFetchedEVT();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object>({
+    @required TResult resetBlocEVT(ResetBlocEVT value),
+    @required TResult sessionFetchedEVT(SessionFetchedEVT value),
+    @required TResult settingsLaunchedEVT(SettingsLaunchedEVT value),
+    @required TResult userSignedOutEVT(UserSignedOutEVT value),
+  }) {
+    assert(resetBlocEVT != null);
+    assert(sessionFetchedEVT != null);
+    assert(settingsLaunchedEVT != null);
+    assert(userSignedOutEVT != null);
+    return sessionFetchedEVT(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object>({
+    TResult resetBlocEVT(ResetBlocEVT value),
+    TResult sessionFetchedEVT(SessionFetchedEVT value),
+    TResult settingsLaunchedEVT(SettingsLaunchedEVT value),
+    TResult userSignedOutEVT(UserSignedOutEVT value),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (sessionFetchedEVT != null) {
+      return sessionFetchedEVT(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SessionFetchedEVT implements SettingsDatabaseEvent {
+  const factory SessionFetchedEVT() = _$SessionFetchedEVT;
 }
 
 /// @nodoc
@@ -217,10 +335,12 @@ class _$SettingsLaunchedEVT implements SettingsLaunchedEVT {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult resetBlocEVT(),
+    @required TResult sessionFetchedEVT(),
     @required TResult settingsLaunchedEVT(),
     @required TResult userSignedOutEVT(),
   }) {
     assert(resetBlocEVT != null);
+    assert(sessionFetchedEVT != null);
     assert(settingsLaunchedEVT != null);
     assert(userSignedOutEVT != null);
     return settingsLaunchedEVT();
@@ -230,6 +350,7 @@ class _$SettingsLaunchedEVT implements SettingsLaunchedEVT {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult resetBlocEVT(),
+    TResult sessionFetchedEVT(),
     TResult settingsLaunchedEVT(),
     TResult userSignedOutEVT(),
     @required TResult orElse(),
@@ -245,10 +366,12 @@ class _$SettingsLaunchedEVT implements SettingsLaunchedEVT {
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult resetBlocEVT(ResetBlocEVT value),
+    @required TResult sessionFetchedEVT(SessionFetchedEVT value),
     @required TResult settingsLaunchedEVT(SettingsLaunchedEVT value),
     @required TResult userSignedOutEVT(UserSignedOutEVT value),
   }) {
     assert(resetBlocEVT != null);
+    assert(sessionFetchedEVT != null);
     assert(settingsLaunchedEVT != null);
     assert(userSignedOutEVT != null);
     return settingsLaunchedEVT(this);
@@ -258,6 +381,7 @@ class _$SettingsLaunchedEVT implements SettingsLaunchedEVT {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult resetBlocEVT(ResetBlocEVT value),
+    TResult sessionFetchedEVT(SessionFetchedEVT value),
     TResult settingsLaunchedEVT(SettingsLaunchedEVT value),
     TResult userSignedOutEVT(UserSignedOutEVT value),
     @required TResult orElse(),
@@ -314,10 +438,12 @@ class _$UserSignedOutEVT implements UserSignedOutEVT {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult resetBlocEVT(),
+    @required TResult sessionFetchedEVT(),
     @required TResult settingsLaunchedEVT(),
     @required TResult userSignedOutEVT(),
   }) {
     assert(resetBlocEVT != null);
+    assert(sessionFetchedEVT != null);
     assert(settingsLaunchedEVT != null);
     assert(userSignedOutEVT != null);
     return userSignedOutEVT();
@@ -327,6 +453,7 @@ class _$UserSignedOutEVT implements UserSignedOutEVT {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult resetBlocEVT(),
+    TResult sessionFetchedEVT(),
     TResult settingsLaunchedEVT(),
     TResult userSignedOutEVT(),
     @required TResult orElse(),
@@ -342,10 +469,12 @@ class _$UserSignedOutEVT implements UserSignedOutEVT {
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult resetBlocEVT(ResetBlocEVT value),
+    @required TResult sessionFetchedEVT(SessionFetchedEVT value),
     @required TResult settingsLaunchedEVT(SettingsLaunchedEVT value),
     @required TResult userSignedOutEVT(UserSignedOutEVT value),
   }) {
     assert(resetBlocEVT != null);
+    assert(sessionFetchedEVT != null);
     assert(settingsLaunchedEVT != null);
     assert(userSignedOutEVT != null);
     return userSignedOutEVT(this);
@@ -355,6 +484,7 @@ class _$UserSignedOutEVT implements UserSignedOutEVT {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult resetBlocEVT(ResetBlocEVT value),
+    TResult sessionFetchedEVT(SessionFetchedEVT value),
     TResult settingsLaunchedEVT(SettingsLaunchedEVT value),
     TResult userSignedOutEVT(UserSignedOutEVT value),
     @required TResult orElse(),
@@ -380,12 +510,20 @@ class _$SettingsDatabaseStateTearOff {
       {@required
           bool isUpdating,
       @required
+          Config config,
+      @required
+          Option<Either<ConfigDatabaseFailure, ConfigDatabaseSuccess>>
+              configDatabaseFailureOrSuccessOption,
+      @required
           Option<Either<DatabaseFailure, SessionDatabaseSuccess>>
               sessionDatabaseFailureOrSuccessOption,
       @required
           Session session}) {
     return _SettingsDatabaseState(
       isUpdating: isUpdating,
+      config: config,
+      configDatabaseFailureOrSuccessOption:
+          configDatabaseFailureOrSuccessOption,
       sessionDatabaseFailureOrSuccessOption:
           sessionDatabaseFailureOrSuccessOption,
       session: session,
@@ -400,6 +538,9 @@ const $SettingsDatabaseState = _$SettingsDatabaseStateTearOff();
 /// @nodoc
 mixin _$SettingsDatabaseState {
   bool get isUpdating;
+  Config get config;
+  Option<Either<ConfigDatabaseFailure, ConfigDatabaseSuccess>>
+      get configDatabaseFailureOrSuccessOption;
   Option<Either<DatabaseFailure, SessionDatabaseSuccess>>
       get sessionDatabaseFailureOrSuccessOption;
   Session get session;
@@ -414,6 +555,9 @@ abstract class $SettingsDatabaseStateCopyWith<$Res> {
       _$SettingsDatabaseStateCopyWithImpl<$Res>;
   $Res call(
       {bool isUpdating,
+      Config config,
+      Option<Either<ConfigDatabaseFailure, ConfigDatabaseSuccess>>
+          configDatabaseFailureOrSuccessOption,
       Option<Either<DatabaseFailure, SessionDatabaseSuccess>>
           sessionDatabaseFailureOrSuccessOption,
       Session session});
@@ -431,12 +575,20 @@ class _$SettingsDatabaseStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object isUpdating = freezed,
+    Object config = freezed,
+    Object configDatabaseFailureOrSuccessOption = freezed,
     Object sessionDatabaseFailureOrSuccessOption = freezed,
     Object session = freezed,
   }) {
     return _then(_value.copyWith(
       isUpdating:
           isUpdating == freezed ? _value.isUpdating : isUpdating as bool,
+      config: config == freezed ? _value.config : config as Config,
+      configDatabaseFailureOrSuccessOption:
+          configDatabaseFailureOrSuccessOption == freezed
+              ? _value.configDatabaseFailureOrSuccessOption
+              : configDatabaseFailureOrSuccessOption as Option<
+                  Either<ConfigDatabaseFailure, ConfigDatabaseSuccess>>,
       sessionDatabaseFailureOrSuccessOption:
           sessionDatabaseFailureOrSuccessOption == freezed
               ? _value.sessionDatabaseFailureOrSuccessOption
@@ -456,6 +608,9 @@ abstract class _$SettingsDatabaseStateCopyWith<$Res>
   @override
   $Res call(
       {bool isUpdating,
+      Config config,
+      Option<Either<ConfigDatabaseFailure, ConfigDatabaseSuccess>>
+          configDatabaseFailureOrSuccessOption,
       Option<Either<DatabaseFailure, SessionDatabaseSuccess>>
           sessionDatabaseFailureOrSuccessOption,
       Session session});
@@ -475,12 +630,20 @@ class __$SettingsDatabaseStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object isUpdating = freezed,
+    Object config = freezed,
+    Object configDatabaseFailureOrSuccessOption = freezed,
     Object sessionDatabaseFailureOrSuccessOption = freezed,
     Object session = freezed,
   }) {
     return _then(_SettingsDatabaseState(
       isUpdating:
           isUpdating == freezed ? _value.isUpdating : isUpdating as bool,
+      config: config == freezed ? _value.config : config as Config,
+      configDatabaseFailureOrSuccessOption:
+          configDatabaseFailureOrSuccessOption == freezed
+              ? _value.configDatabaseFailureOrSuccessOption
+              : configDatabaseFailureOrSuccessOption as Option<
+                  Either<ConfigDatabaseFailure, ConfigDatabaseSuccess>>,
       sessionDatabaseFailureOrSuccessOption:
           sessionDatabaseFailureOrSuccessOption == freezed
               ? _value.sessionDatabaseFailureOrSuccessOption
@@ -495,14 +658,23 @@ class __$SettingsDatabaseStateCopyWithImpl<$Res>
 class _$_SettingsDatabaseState implements _SettingsDatabaseState {
   const _$_SettingsDatabaseState(
       {@required this.isUpdating,
+      @required this.config,
+      @required this.configDatabaseFailureOrSuccessOption,
       @required this.sessionDatabaseFailureOrSuccessOption,
       @required this.session})
       : assert(isUpdating != null),
+        assert(config != null),
+        assert(configDatabaseFailureOrSuccessOption != null),
         assert(sessionDatabaseFailureOrSuccessOption != null),
         assert(session != null);
 
   @override
   final bool isUpdating;
+  @override
+  final Config config;
+  @override
+  final Option<Either<ConfigDatabaseFailure, ConfigDatabaseSuccess>>
+      configDatabaseFailureOrSuccessOption;
   @override
   final Option<Either<DatabaseFailure, SessionDatabaseSuccess>>
       sessionDatabaseFailureOrSuccessOption;
@@ -511,7 +683,7 @@ class _$_SettingsDatabaseState implements _SettingsDatabaseState {
 
   @override
   String toString() {
-    return 'SettingsDatabaseState(isUpdating: $isUpdating, sessionDatabaseFailureOrSuccessOption: $sessionDatabaseFailureOrSuccessOption, session: $session)';
+    return 'SettingsDatabaseState(isUpdating: $isUpdating, config: $config, configDatabaseFailureOrSuccessOption: $configDatabaseFailureOrSuccessOption, sessionDatabaseFailureOrSuccessOption: $sessionDatabaseFailureOrSuccessOption, session: $session)';
   }
 
   @override
@@ -521,6 +693,13 @@ class _$_SettingsDatabaseState implements _SettingsDatabaseState {
             (identical(other.isUpdating, isUpdating) ||
                 const DeepCollectionEquality()
                     .equals(other.isUpdating, isUpdating)) &&
+            (identical(other.config, config) ||
+                const DeepCollectionEquality().equals(other.config, config)) &&
+            (identical(other.configDatabaseFailureOrSuccessOption,
+                    configDatabaseFailureOrSuccessOption) ||
+                const DeepCollectionEquality().equals(
+                    other.configDatabaseFailureOrSuccessOption,
+                    configDatabaseFailureOrSuccessOption)) &&
             (identical(other.sessionDatabaseFailureOrSuccessOption,
                     sessionDatabaseFailureOrSuccessOption) ||
                 const DeepCollectionEquality().equals(
@@ -534,6 +713,9 @@ class _$_SettingsDatabaseState implements _SettingsDatabaseState {
   int get hashCode =>
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(isUpdating) ^
+      const DeepCollectionEquality().hash(config) ^
+      const DeepCollectionEquality()
+          .hash(configDatabaseFailureOrSuccessOption) ^
       const DeepCollectionEquality()
           .hash(sessionDatabaseFailureOrSuccessOption) ^
       const DeepCollectionEquality().hash(session);
@@ -549,6 +731,11 @@ abstract class _SettingsDatabaseState implements SettingsDatabaseState {
       {@required
           bool isUpdating,
       @required
+          Config config,
+      @required
+          Option<Either<ConfigDatabaseFailure, ConfigDatabaseSuccess>>
+              configDatabaseFailureOrSuccessOption,
+      @required
           Option<Either<DatabaseFailure, SessionDatabaseSuccess>>
               sessionDatabaseFailureOrSuccessOption,
       @required
@@ -556,6 +743,11 @@ abstract class _SettingsDatabaseState implements SettingsDatabaseState {
 
   @override
   bool get isUpdating;
+  @override
+  Config get config;
+  @override
+  Option<Either<ConfigDatabaseFailure, ConfigDatabaseSuccess>>
+      get configDatabaseFailureOrSuccessOption;
   @override
   Option<Either<DatabaseFailure, SessionDatabaseSuccess>>
       get sessionDatabaseFailureOrSuccessOption;

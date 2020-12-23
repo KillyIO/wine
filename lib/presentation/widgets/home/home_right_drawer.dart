@@ -79,9 +79,9 @@ class HomeRightDrawer extends StatelessWidget {
                           height: 30.0,
                           child: GestureDetector(
                             onTap: () async =>
-                                ExtendedNavigator.root.push(Routes.accountPage),
+                                ExtendedNavigator.root.push(Routes.libraryPage),
                             child: const Text(
-                              'MY ACCOUNT',
+                              'LIBRARY',
                               style: TextStyle(
                                 color: Colors.black,
                                 fontSize: 20.0,
@@ -106,9 +106,9 @@ class HomeRightDrawer extends StatelessWidget {
                       height: 30.0,
                       child: GestureDetector(
                         onTap: () async =>
-                            ExtendedNavigator.root.push(Routes.settingsPage),
+                            ExtendedNavigator.root.push(Routes.plusPage),
                         child: const Text(
-                          'SETTINGS',
+                          'PLUS',
                           style: TextStyle(
                             color: Colors.black,
                             fontSize: 20.0,
