@@ -12,47 +12,56 @@ import 'package:flutter/material.dart';
 import '../../domain/enums/editor_content_origin.dart';
 import '../../domain/models/chapter.dart';
 import '../../domain/models/series.dart';
-import '../pages/account_page.dart';
 import '../pages/chapter_editor_page.dart';
 import '../pages/chapter_page.dart';
+import '../pages/chapter_settings_page.dart';
 import '../pages/copyrights_page.dart';
 import '../pages/create_account_page.dart';
 import '../pages/genres_page.dart';
 import '../pages/home_page.dart';
+import '../pages/library_page.dart';
 import '../pages/onboarding_page.dart';
+import '../pages/plus_page.dart';
 import '../pages/series_editor_page.dart';
 import '../pages/series_page.dart';
+import '../pages/series_settings_page.dart';
 import '../pages/settings_page.dart';
 import '../pages/sign_in_page.dart';
 import '../pages/splash_page.dart';
 import '../pages/verify_email_page.dart';
 
 class Routes {
-  static const String accountPage = '/account-page';
   static const String chapterEditorPage = '/chapter-editor-page';
   static const String chapterPage = '/chapter-page';
+  static const String chapterSettingsPage = '/chapter-settings-page';
   static const String copyrightsPage = '/copyrights-page';
   static const String createAccountPage = '/create-account-page';
   static const String genresPage = '/genres-page';
   static const String homePage = '/home-page';
+  static const String libraryPage = '/library-page';
   static const String seriesEditorPage = '/series-editor-page';
   static const String onboardingPage = '/onboarding-page';
+  static const String plusPage = '/plus-page';
   static const String seriesPage = '/series-page';
+  static const String seriesSettingsPage = '/series-settings-page';
   static const String settingsPage = '/settings-page';
   static const String signInPage = '/sign-in-page';
   static const String splashPage = '/';
   static const String verifyEmailPage = '/verify-email-page';
   static const all = <String>{
-    accountPage,
     chapterEditorPage,
     chapterPage,
+    chapterSettingsPage,
     copyrightsPage,
     createAccountPage,
     genresPage,
     homePage,
+    libraryPage,
     seriesEditorPage,
     onboardingPage,
+    plusPage,
     seriesPage,
+    seriesSettingsPage,
     settingsPage,
     signInPage,
     splashPage,
@@ -64,16 +73,19 @@ class WINERouter extends RouterBase {
   @override
   List<RouteDef> get routes => _routes;
   final _routes = <RouteDef>[
-    RouteDef(Routes.accountPage, page: AccountPage),
     RouteDef(Routes.chapterEditorPage, page: ChapterEditorPage),
     RouteDef(Routes.chapterPage, page: ChapterPage),
+    RouteDef(Routes.chapterSettingsPage, page: ChapterSettingsPage),
     RouteDef(Routes.copyrightsPage, page: CopyrightsPage),
     RouteDef(Routes.createAccountPage, page: CreateAccountPage),
     RouteDef(Routes.genresPage, page: GenresPage),
     RouteDef(Routes.homePage, page: HomePage),
+    RouteDef(Routes.libraryPage, page: LibraryPage),
     RouteDef(Routes.seriesEditorPage, page: SeriesEditorPage),
     RouteDef(Routes.onboardingPage, page: OnboardingPage),
+    RouteDef(Routes.plusPage, page: PlusPage),
     RouteDef(Routes.seriesPage, page: SeriesPage),
+    RouteDef(Routes.seriesSettingsPage, page: SeriesSettingsPage),
     RouteDef(Routes.settingsPage, page: SettingsPage),
     RouteDef(Routes.signInPage, page: SignInPage),
     RouteDef(Routes.splashPage, page: SplashPage),
@@ -82,12 +94,6 @@ class WINERouter extends RouterBase {
   @override
   Map<Type, AutoRouteFactory> get pagesMap => _pagesMap;
   final _pagesMap = <Type, AutoRouteFactory>{
-    AccountPage: (data) {
-      return buildAdaptivePageRoute<dynamic>(
-        builder: (context) => AccountPage(),
-        settings: data,
-      );
-    },
     ChapterEditorPage: (data) {
       final args = data.getArgs<ChapterEditorPageArguments>(nullOk: false);
       return buildAdaptivePageRoute<dynamic>(
@@ -108,6 +114,12 @@ class WINERouter extends RouterBase {
           key: args.key,
           chapter: args.chapter,
         ),
+        settings: data,
+      );
+    },
+    ChapterSettingsPage: (data) {
+      return buildAdaptivePageRoute<dynamic>(
+        builder: (context) => ChapterSettingsPage(),
         settings: data,
       );
     },
@@ -135,6 +147,12 @@ class WINERouter extends RouterBase {
         settings: data,
       );
     },
+    LibraryPage: (data) {
+      return buildAdaptivePageRoute<dynamic>(
+        builder: (context) => LibraryPage(),
+        settings: data,
+      );
+    },
     SeriesEditorPage: (data) {
       final args = data.getArgs<SeriesEditorPageArguments>(nullOk: false);
       return buildAdaptivePageRoute<dynamic>(
@@ -152,6 +170,12 @@ class WINERouter extends RouterBase {
         settings: data,
       );
     },
+    PlusPage: (data) {
+      return buildAdaptivePageRoute<dynamic>(
+        builder: (context) => PlusPage(),
+        settings: data,
+      );
+    },
     SeriesPage: (data) {
       final args = data.getArgs<SeriesPageArguments>(nullOk: false);
       return buildAdaptivePageRoute<dynamic>(
@@ -159,6 +183,12 @@ class WINERouter extends RouterBase {
           key: args.key,
           series: args.series,
         ),
+        settings: data,
+      );
+    },
+    SeriesSettingsPage: (data) {
+      return buildAdaptivePageRoute<dynamic>(
+        builder: (context) => SeriesSettingsPage(),
         settings: data,
       );
     },

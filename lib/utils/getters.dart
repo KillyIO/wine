@@ -1,50 +1,10 @@
 import 'package:time/time.dart';
-import 'package:wine/application/database/account/account_database_bloc.dart';
+
 import 'package:wine/application/database/home/home_database_bloc.dart';
+import 'package:wine/application/database/library/library_database_bloc.dart';
 
 /// @nodoc
 mixin Getters {
-  /// @nodoc
-  final List<String> accountLayoutsContentType = <String>[
-    'published',
-    'drafts',
-    'bookmarked'
-  ];
-
-  /// @nodoc
-  List<String> get accountNavbarItemsKeys {
-    return <String>[
-      'mySeries',
-      'myChapters',
-    ];
-  }
-
-  /// @nodoc
-  List<List<AccountDatabaseEvent>>
-      get accountPageViewOrVerticalNavbarIndexEvents {
-    return [
-      <AccountDatabaseEvent>[
-        const AccountDatabaseEvent.indexChangedToSeriesPublishedEVT(),
-        const AccountDatabaseEvent.indexChangedToSeriesDraftsEVT(),
-        const AccountDatabaseEvent.indexChangedToSeriesBookmarkedEVT(),
-      ],
-      <AccountDatabaseEvent>[
-        const AccountDatabaseEvent.indexChangedToChapterPublishedEVT(),
-        const AccountDatabaseEvent.indexChangedToChapterDraftsEVT(),
-        const AccountDatabaseEvent.indexChangedToChapterBookmarkedEVT(),
-      ],
-    ];
-  }
-
-  /// @nodoc
-  List<String> get accountVerticalNavbarItemsKeys {
-    return <String>[
-      'published',
-      'drafts',
-      'bookmarks',
-    ];
-  }
-
   /// @nodoc
   List<String> get chapterEditorItemsKeys {
     return <String>[
@@ -106,6 +66,47 @@ mixin Getters {
     return <String>[
       'en',
       'fr',
+    ];
+  }
+
+  /// @nodoc
+  final List<String> libraryLayoutsContentType = <String>[
+    'published',
+    'drafts',
+    'bookmarked'
+  ];
+
+  /// @nodoc
+  List<String> get libraryNavbarItemsKeys {
+    return <String>[
+      'mySeries',
+      'myChapters',
+    ];
+  }
+
+  /// @nodoc
+  List<List<LibraryDatabaseEvent>>
+      get libraryPageViewOrVerticalNavbarIndexEvents {
+    return [
+      <LibraryDatabaseEvent>[
+        const LibraryDatabaseEvent.indexChangedToSeriesPublishedEVT(),
+        const LibraryDatabaseEvent.indexChangedToSeriesDraftsEVT(),
+        const LibraryDatabaseEvent.indexChangedToSeriesBookmarkedEVT(),
+      ],
+      <LibraryDatabaseEvent>[
+        const LibraryDatabaseEvent.indexChangedToChapterPublishedEVT(),
+        const LibraryDatabaseEvent.indexChangedToChapterDraftsEVT(),
+        const LibraryDatabaseEvent.indexChangedToChapterBookmarkedEVT(),
+      ],
+    ];
+  }
+
+  /// @nodoc
+  List<String> get libraryVerticalNavbarItemsKeys {
+    return <String>[
+      'published',
+      'drafts',
+      'bookmarks',
     ];
   }
 

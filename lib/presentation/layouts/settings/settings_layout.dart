@@ -1,34 +1,15 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:wine/application/authentication/settings/settings_authentication_bloc.dart';
-import 'package:wine/application/database/settings/settings_database_bloc.dart';
-import 'package:wine/presentation/utils/settings/settings_authentication_methods.dart';
-import 'package:wine/presentation/utils/settings/settings_listeners.dart';
-import 'package:wine/presentation/widgets/settings/settings_account_settings.dart';
-import 'package:wine/presentation/widgets/settings/settings_app_version.dart';
+import 'package:flutter_icons/flutter_icons.dart';
+import 'package:wine/application/authentication/core/core_authentication_bloc.dart';
+import 'package:wine/presentation/routes/router.gr.dart';
+import 'package:wine/presentation/widgets/plus/plus_button.dart';
 import 'package:wine/presentation/widgets/wine_leading_image_button.dart';
-import 'package:wine/presentation/widgets/wine_loading_screen.dart';
 import 'package:wine/utils/assets.dart';
 
 /// @nodoc
-class SettingsLayout extends StatefulWidget {
-  @override
-  _SettingsLayoutState createState() => _SettingsLayoutState();
-}
-
-class _SettingsLayoutState extends State<SettingsLayout>
-    with TickerProviderStateMixin {
-  final SettingsListeners _stgsListeners = SettingsListeners();
-
-  SettingsAuthenticationMethods _stgsAuthMethods;
-
-  @override
-  void initState() {
-    super.initState();
-    _stgsAuthMethods = SettingsAuthenticationMethods(context);
-  }
-
+class SettingsLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -62,43 +43,36 @@ class _SettingsLayoutState extends State<SettingsLayout>
           ),
         ),
       ),
-      body: MultiBlocListener(
-        listeners: _stgsListeners.listeners,
-        child: BlocBuilder<SettingsAuthenticationBloc,
-            SettingsAuthenticationState>(
-          builder: (context, settingsAuthState) {
-            return BlocBuilder<SettingsDatabaseBloc, SettingsDatabaseState>(
-              builder: (context, settingsDbState) {
-                return SafeArea(
-                  child: Stack(
-                    children: <Widget>[
-                      ScrollConfiguration(
-                        behavior: const ScrollBehavior(),
-                        child: ListView(
-                          children: <Widget>[
-                            SettingsAccountSettings(
-                              stgsAuthMethods: _stgsAuthMethods,
-                              session: settingsDbState.session,
-                            ),
-                            const Padding(
-                              padding: EdgeInsets.symmetric(vertical: 10.0),
-                              child: SettingsAppVersion(),
-                            ),
-                          ],
-                        ),
-                      ),
-                      WINELoadingScreen(
-                        vsync: this,
-                        isLoading: settingsAuthState.isSigningOut ||
-                            settingsDbState.isUpdating,
-                      ),
-                    ],
-                  ),
-                );
-              },
-            );
-          },
-        ),
+      body: ListView(
+        children: <Widget>[
+          BlocBuilder<CoreAuthenticationBloc, CoreAuthenticationState>(
+            builder: (context, coreAuthenticationstate) {
+              return PlusButton(
+                leadingIconData: Icons.account_circle_outlined,
+                title: 'ACCOUNT',
+                trailingIconData: Icons.keyboard_arrow_right,
+                onPressed: coreAuthenticationstate.isAnonymous
+                    ? () async => ExtendedNavigator.root.push(Routes.signInPage)
+                    : () {},
+                // TODO add push to account settings page
+              );
+            },
+          ),
+          PlusButton(
+            leadingIconData: Feather.book,
+            title: 'SERIES',
+            trailingIconData: Icons.keyboard_arrow_right,
+            onPressed: () async =>
+                ExtendedNavigator.root.push(Routes.seriesSettingsPage),
+          ),
+          PlusButton(
+            leadingIconData: Feather.book_open,
+            title: 'CHAPTER',
+            trailingIconData: Icons.keyboard_arrow_right,
+            onPressed: () async =>
+                ExtendedNavigator.root.push(Routes.chapterSettingsPage),
+          )
+        ],
       ),
     );
   }

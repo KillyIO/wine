@@ -27,10 +27,10 @@ class ChapterEditorListeners {
         (success) {
           if (success is ChapterPublishedSCS) {
             switch (state.editorContentOrigin) {
-              case EditorContentOrigin.account:
+              case EditorContentOrigin.library:
                 context
                     .read<CoreDatabaseBloc>()
-                    .add(CoreDatabaseEvent.chapterPublishedFromAccountEVT(
+                    .add(CoreDatabaseEvent.chapterPublishedFromLibraryEVT(
                       state.chapterDraft,
                     ));
                 break;
@@ -57,10 +57,10 @@ class ChapterEditorListeners {
         (success) {
           success.maybeMap(
             onlineChapterDraftDeletedSCS: (_) {
-              if (state.editorContentOrigin == EditorContentOrigin.account) {
+              if (state.editorContentOrigin == EditorContentOrigin.library) {
                 context
                     .read<CoreDatabaseBloc>()
-                    .add(CoreDatabaseEvent.chapterDraftDeletedFromAccountEVT(
+                    .add(CoreDatabaseEvent.chapterDraftDeletedFromLibraryEVT(
                       chapterDraftUID: state.chapterDraft.uid,
                     ));
 
@@ -70,10 +70,10 @@ class ChapterEditorListeners {
               }
             },
             onlineChapterDraftSavedSCS: (subSuccess) {
-              if (state.editorContentOrigin == EditorContentOrigin.account) {
+              if (state.editorContentOrigin == EditorContentOrigin.library) {
                 context
                     .read<CoreDatabaseBloc>()
-                    .add(CoreDatabaseEvent.chapterDraftSavedFromAccountEVT(
+                    .add(CoreDatabaseEvent.chapterDraftSavedFromLibraryEVT(
                       subSuccess.chapterDraft,
                     ));
 
@@ -98,10 +98,10 @@ class ChapterEditorListeners {
         (success) {
           if (success is SeriesPublishedSCS) {
             switch (state.editorContentOrigin) {
-              case EditorContentOrigin.account:
+              case EditorContentOrigin.library:
                 context
                     .read<CoreDatabaseBloc>()
-                    .add(CoreDatabaseEvent.seriesPublishedFromAccountEVT(
+                    .add(CoreDatabaseEvent.seriesPublishedFromLibraryEVT(
                       success.series,
                     ));
                 break;
@@ -125,7 +125,7 @@ class ChapterEditorListeners {
         (_) {},
         (success) {
           if (success is OnlineSeriesDraftDeletedSCS) {
-            if (state.editorContentOrigin == EditorContentOrigin.account ||
+            if (state.editorContentOrigin == EditorContentOrigin.library ||
                 state.editorContentOrigin == EditorContentOrigin.home) {
               ExtendedNavigator.root.pop();
             }

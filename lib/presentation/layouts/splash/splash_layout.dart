@@ -6,19 +6,8 @@ import 'package:wine/presentation/widgets/splash/splash_copyright.dart';
 import 'package:wine/utils/assets.dart';
 
 /// @nodoc
-class SplashLayout extends StatefulWidget {
-  @override
-  _SplashLayoutState createState() => _SplashLayoutState();
-}
-
-class _SplashLayoutState extends State<SplashLayout> {
-  SplashListeners _splashListeners;
-
-  @override
-  void initState() {
-    super.initState();
-    _splashListeners = SplashListeners();
-  }
+class SplashLayout extends StatelessWidget {
+  final SplashListeners _splashListeners = SplashListeners();
 
   @override
   Widget build(BuildContext context) {

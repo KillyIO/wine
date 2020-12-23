@@ -13,11 +13,11 @@ abstract class ChapterEditorDatabaseEvent with _$ChapterEditorDatabaseEvent {
       ChapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT;
 
   /// @nodoc
-  const factory ChapterEditorDatabaseEvent.chapterEditorLaunchedFromAccountEVT(
+  const factory ChapterEditorDatabaseEvent.chapterEditorLaunchedFromLibraryEVT(
     BuildContext context,
     Chapter chapterDraft,
     EditorContentOrigin editorContentOrigin,
-  ) = ChapterEditorLaunchedFromAccountEVT;
+  ) = ChapterEditorLaunchedFromLibraryEVT;
 
   /// @nodoc
   // ignore: lines_longer_than_80_chars

@@ -17,10 +17,10 @@ class SeriesEditorListeners {
       () {},
       (success) {
         if (state.isEditMode && success is OnlineChapterDraftDeletedSCS) {
-          if (state.editorContentOrigin == EditorContentOrigin.account) {
+          if (state.editorContentOrigin == EditorContentOrigin.library) {
             context
                 .read<CoreDatabaseBloc>()
-                .add(CoreDatabaseEvent.chapterDraftDeletedFromAccountEVT(
+                .add(CoreDatabaseEvent.chapterDraftDeletedFromLibraryEVT(
                   seriesDraftUID: state.seriesDraft.uid,
                 ));
           }
@@ -41,19 +41,19 @@ class SeriesEditorListeners {
           if (state.isEditMode) {
             success.maybeMap(
               onlineSeriesDraftDeletedSCS: (_) {
-                if (state.editorContentOrigin == EditorContentOrigin.account) {
+                if (state.editorContentOrigin == EditorContentOrigin.library) {
                   context
                       .read<CoreDatabaseBloc>()
-                      .add(CoreDatabaseEvent.seriesDraftDeletedFromAccountEVT(
+                      .add(CoreDatabaseEvent.seriesDraftDeletedFromLibraryEVT(
                         state.seriesDraft.uid,
                       ));
                 }
               },
               onlineSeriesDraftSavedSCS: (subSuccess) {
-                if (state.editorContentOrigin == EditorContentOrigin.account) {
+                if (state.editorContentOrigin == EditorContentOrigin.library) {
                   context
                       .read<CoreDatabaseBloc>()
-                      .add(CoreDatabaseEvent.seriesDraftSavedFromAccountEVT(
+                      .add(CoreDatabaseEvent.seriesDraftSavedFromLibraryEVT(
                         subSuccess.seriesDraft,
                       ));
                 }

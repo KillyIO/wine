@@ -4,20 +4,20 @@ part of 'core_database_bloc.dart';
 @freezed
 abstract class CoreDatabaseEvent with _$CoreDatabaseEvent {
   /// @nodoc
-  const factory CoreDatabaseEvent.chapterDraftDeletedFromAccountEVT({
+  const factory CoreDatabaseEvent.chapterDraftDeletedFromLibraryEVT({
     String chapterDraftUID,
     String seriesDraftUID,
-  }) = ChapterDraftDeletedFromAccountEVT;
+  }) = ChapterDraftDeletedFromLibraryEVT;
 
   /// @nodoc
-  const factory CoreDatabaseEvent.chapterDraftSavedFromAccountEVT(
+  const factory CoreDatabaseEvent.chapterDraftSavedFromLibraryEVT(
     Chapter chapterDraft,
-  ) = ChapterDraftSavedFromAccountEVT;
+  ) = ChapterDraftSavedFromLibraryEVT;
 
   /// @nodoc
-  const factory CoreDatabaseEvent.chapterPublishedFromAccountEVT(
+  const factory CoreDatabaseEvent.chapterPublishedFromLibraryEVT(
     Chapter chapter,
-  ) = ChapterPublishedFromAccountEVT;
+  ) = ChapterPublishedFromLibraryEVT;
 
   /// @nodoc
   const factory CoreDatabaseEvent.chapterPublishedFromChapterEVT(
@@ -28,18 +28,18 @@ abstract class CoreDatabaseEvent with _$CoreDatabaseEvent {
   const factory CoreDatabaseEvent.resetBlocEVT() = ResetBlocEVT;
 
   /// @nodoc
-  const factory CoreDatabaseEvent.seriesDraftDeletedFromAccountEVT(
+  const factory CoreDatabaseEvent.seriesDraftDeletedFromLibraryEVT(
     String seriesDraftUID,
-  ) = SeriesDraftDeletedFromAccountEVT;
+  ) = SeriesDraftDeletedFromLibraryEVT;
 
   /// @nodoc
-  const factory CoreDatabaseEvent.seriesDraftSavedFromAccountEVT(
+  const factory CoreDatabaseEvent.seriesDraftSavedFromLibraryEVT(
     Series seriesDraft,
-  ) = SeriesDraftSavedFromAccountEVT;
+  ) = SeriesDraftSavedFromLibraryEVT;
 
   /// @nodoc
-  const factory CoreDatabaseEvent.seriesPublishedFromAccountEVT(Series series) =
-      SeriesPublishedFromAccountEVT;
+  const factory CoreDatabaseEvent.seriesPublishedFromLibraryEVT(Series series) =
+      SeriesPublishedFromLibraryEVT;
 
   /// @nodoc
   const factory CoreDatabaseEvent.seriesPublishedFromHomeEVT(Series series) =

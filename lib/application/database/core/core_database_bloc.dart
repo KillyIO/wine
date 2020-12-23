@@ -19,21 +19,21 @@ class CoreDatabaseBloc extends Bloc<CoreDatabaseEvent, CoreDatabaseState> {
   @override
   Stream<CoreDatabaseState> mapEventToState(CoreDatabaseEvent event) async* {
     yield* event.map(
-      chapterDraftDeletedFromAccountEVT: (event) async* {
-        yield CoreDatabaseState.chapterDraftDeletedFromAccountSTE(
+      chapterDraftDeletedFromLibraryEVT: (event) async* {
+        yield CoreDatabaseState.chapterDraftDeletedFromLibrarySTE(
           chapterDraftUID: event.chapterDraftUID,
           seriesDraftUID: event.seriesDraftUID,
         );
       },
-      chapterDraftSavedFromAccountEVT: (event) async* {},
-      chapterPublishedFromAccountEVT: (event) async* {},
+      chapterDraftSavedFromLibraryEVT: (event) async* {},
+      chapterPublishedFromLibraryEVT: (event) async* {},
       chapterPublishedFromChapterEVT: (event) async* {},
       resetBlocEVT: (event) async* {
         yield const CoreDatabaseState.initial();
       },
-      seriesDraftDeletedFromAccountEVT: (event) async* {},
-      seriesDraftSavedFromAccountEVT: (event) async* {},
-      seriesPublishedFromAccountEVT: (event) async* {},
+      seriesDraftDeletedFromLibraryEVT: (event) async* {},
+      seriesDraftSavedFromLibraryEVT: (event) async* {},
+      seriesPublishedFromLibraryEVT: (event) async* {},
       seriesPublishedFromHomeEVT: (event) async* {
         yield CoreDatabaseState.seriesPublishedFromHomeSTE(event.series);
       },

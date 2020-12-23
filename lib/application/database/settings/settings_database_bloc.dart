@@ -6,8 +6,12 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 
 import 'package:wine/domain/database/database_failure.dart';
+import 'package:wine/domain/database/facades/local/i_local_config_database_facade.dart';
 import 'package:wine/domain/database/facades/local/i_local_session_database_facade.dart';
+import 'package:wine/domain/database/failures/config_database_failure.dart';
+import 'package:wine/domain/database/successes/config_database_success.dart';
 import 'package:wine/domain/database/successes/session_database_success.dart';
+import 'package:wine/domain/models/hive/config.dart';
 import 'package:wine/domain/models/hive/session.dart';
 
 part 'settings_database_bloc.freezed.dart';
@@ -19,9 +23,12 @@ part 'settings_database_state.dart';
 class SettingsDatabaseBloc
     extends Bloc<SettingsDatabaseEvent, SettingsDatabaseState> {
   /// @nodoc
-  SettingsDatabaseBloc(this._localSessionDatabaseFacade)
-      : super(SettingsDatabaseState.initial());
+  SettingsDatabaseBloc(
+    this._localConfigDatabaseFacade,
+    this._localSessionDatabaseFacade,
+  ) : super(SettingsDatabaseState.initial());
 
+  final ILocalConfigDatabaseFacade _localConfigDatabaseFacade;
   final ILocalSessionDatabaseFacade _localSessionDatabaseFacade;
 
   @override
@@ -31,6 +38,25 @@ class SettingsDatabaseBloc
       resetBlocEVT: (event) async* {
         yield state.copyWith(
           isUpdating: false,
+          sessionDatabaseFailureOrSuccessOption: none(),
+        );
+      },
+      sessionFetchedEVT: (event) async* {
+        var config = state.config;
+
+        final failureOrSuccess = await _localConfigDatabaseFacade.fetchConfig()
+          ..fold(
+            (_) {},
+            (success) {
+              if (success is ConfigFetchedSCS) {
+                config = success.config;
+              }
+            },
+          );
+
+        yield state.copyWith(
+          config: config,
+          configDatabaseFailureOrSuccessOption: optionOf(failureOrSuccess),
           sessionDatabaseFailureOrSuccessOption: none(),
         );
       },
@@ -52,6 +78,10 @@ class SettingsDatabaseBloc
           session: session,
           sessionDatabaseFailureOrSuccessOption: optionOf(failureOrSuccess),
         );
+
+        if (failureOrSuccess.isRight()) {
+          add(const SettingsDatabaseEvent.sessionFetchedEVT());
+        }
       },
       userSignedOutEVT: (event) async* {
         yield state.copyWith(

@@ -206,7 +206,7 @@ class ChapterEditorDatabaseBloc
           add(const ChapterEditorDatabaseEvent.sessionFetchedEVT());
         }
       },
-      chapterEditorLaunchedFromAccountEVT: (event) async* {
+      chapterEditorLaunchedFromLibraryEVT: (event) async* {
         state.storyController.text = event.chapterDraft.story;
         state.titleController.text = event.chapterDraft.title;
 
