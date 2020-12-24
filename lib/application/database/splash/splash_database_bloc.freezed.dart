@@ -940,7 +940,7 @@ class _$SplashDatabaseStateTearOff {
           Option<Either<DatabaseFailure, SessionDatabaseSuccess>>
               sessionDatabaseFailureOrSuccessOption,
       @required
-          Option<Either<DatabaseFailure, UserDatabaseSuccess>>
+          Option<Either<UserDatabaseFailure, UserDatabaseSuccess>>
               userDatabaseFailureOrSuccessOption}) {
     return _SplashDatabaseState(
       isAnonymous: isAnonymous,
@@ -970,7 +970,7 @@ mixin _$SplashDatabaseState {
       get placeholderDatabaseFailureOrSuccessOption;
   Option<Either<DatabaseFailure, SessionDatabaseSuccess>>
       get sessionDatabaseFailureOrSuccessOption;
-  Option<Either<DatabaseFailure, UserDatabaseSuccess>>
+  Option<Either<UserDatabaseFailure, UserDatabaseSuccess>>
       get userDatabaseFailureOrSuccessOption;
 
   $SplashDatabaseStateCopyWith<SplashDatabaseState> get copyWith;
@@ -990,7 +990,7 @@ abstract class $SplashDatabaseStateCopyWith<$Res> {
           placeholderDatabaseFailureOrSuccessOption,
       Option<Either<DatabaseFailure, SessionDatabaseSuccess>>
           sessionDatabaseFailureOrSuccessOption,
-      Option<Either<DatabaseFailure, UserDatabaseSuccess>>
+      Option<Either<UserDatabaseFailure, UserDatabaseSuccess>>
           userDatabaseFailureOrSuccessOption});
 }
 
@@ -1037,7 +1037,7 @@ class _$SplashDatabaseStateCopyWithImpl<$Res>
           userDatabaseFailureOrSuccessOption == freezed
               ? _value.userDatabaseFailureOrSuccessOption
               : userDatabaseFailureOrSuccessOption
-                  as Option<Either<DatabaseFailure, UserDatabaseSuccess>>,
+                  as Option<Either<UserDatabaseFailure, UserDatabaseSuccess>>,
     ));
   }
 }
@@ -1058,7 +1058,7 @@ abstract class _$SplashDatabaseStateCopyWith<$Res>
           placeholderDatabaseFailureOrSuccessOption,
       Option<Either<DatabaseFailure, SessionDatabaseSuccess>>
           sessionDatabaseFailureOrSuccessOption,
-      Option<Either<DatabaseFailure, UserDatabaseSuccess>>
+      Option<Either<UserDatabaseFailure, UserDatabaseSuccess>>
           userDatabaseFailureOrSuccessOption});
 }
 
@@ -1107,7 +1107,7 @@ class __$SplashDatabaseStateCopyWithImpl<$Res>
           userDatabaseFailureOrSuccessOption == freezed
               ? _value.userDatabaseFailureOrSuccessOption
               : userDatabaseFailureOrSuccessOption
-                  as Option<Either<DatabaseFailure, UserDatabaseSuccess>>,
+                  as Option<Either<UserDatabaseFailure, UserDatabaseSuccess>>,
     ));
   }
 }
@@ -1142,7 +1142,7 @@ class _$_SplashDatabaseState implements _SplashDatabaseState {
   final Option<Either<DatabaseFailure, SessionDatabaseSuccess>>
       sessionDatabaseFailureOrSuccessOption;
   @override
-  final Option<Either<DatabaseFailure, UserDatabaseSuccess>>
+  final Option<Either<UserDatabaseFailure, UserDatabaseSuccess>>
       userDatabaseFailureOrSuccessOption;
 
   @override
@@ -1217,7 +1217,7 @@ abstract class _SplashDatabaseState implements SplashDatabaseState {
           Option<Either<DatabaseFailure, SessionDatabaseSuccess>>
               sessionDatabaseFailureOrSuccessOption,
       @required
-          Option<Either<DatabaseFailure, UserDatabaseSuccess>>
+          Option<Either<UserDatabaseFailure, UserDatabaseSuccess>>
               userDatabaseFailureOrSuccessOption}) = _$_SplashDatabaseState;
 
   @override
@@ -1234,7 +1234,7 @@ abstract class _SplashDatabaseState implements SplashDatabaseState {
   Option<Either<DatabaseFailure, SessionDatabaseSuccess>>
       get sessionDatabaseFailureOrSuccessOption;
   @override
-  Option<Either<DatabaseFailure, UserDatabaseSuccess>>
+  Option<Either<UserDatabaseFailure, UserDatabaseSuccess>>
       get userDatabaseFailureOrSuccessOption;
   @override
   _$SplashDatabaseStateCopyWith<_SplashDatabaseState> get copyWith;

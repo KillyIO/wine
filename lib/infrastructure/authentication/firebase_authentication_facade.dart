@@ -60,7 +60,7 @@ class FirebaseAuthenticationFacade implements IAuthenticationFacade {
       final user = User.fromFirebaseUser(currentUser);
       return right(AuthenticationSuccess.userAuthenticatedSCS(user));
     } on PlatformException catch (e) {
-      if (e.code == 'ERROR_EMAIL_ALREADY_IN_USE') {
+      if (e.code == 'email-already-in-use') {
         return left(const AuthenticationFailure.emailAlreadyInUse());
       } else {
         return left(const AuthenticationFailure.serverError());

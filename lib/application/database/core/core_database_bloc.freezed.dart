@@ -31,17 +31,17 @@ class _$CoreDatabaseEventTearOff {
   }
 
 // ignore: unused_element
-  ChapterPublishedFromLibraryEVT chapterPublishedFromLibraryEVT(
+  ChapterPublishedFromChapterEVT chapterPublishedFromChapterEVT(
       Chapter chapter) {
-    return ChapterPublishedFromLibraryEVT(
+    return ChapterPublishedFromChapterEVT(
       chapter,
     );
   }
 
 // ignore: unused_element
-  ChapterPublishedFromChapterEVT chapterPublishedFromChapterEVT(
+  ChapterPublishedFromLibraryEVT chapterPublishedFromLibraryEVT(
       Chapter chapter) {
-    return ChapterPublishedFromChapterEVT(
+    return ChapterPublishedFromLibraryEVT(
       chapter,
     );
   }
@@ -68,15 +68,15 @@ class _$CoreDatabaseEventTearOff {
   }
 
 // ignore: unused_element
-  SeriesPublishedFromLibraryEVT seriesPublishedFromLibraryEVT(Series series) {
-    return SeriesPublishedFromLibraryEVT(
+  SeriesPublishedFromHomeEVT seriesPublishedFromHomeEVT(Series series) {
+    return SeriesPublishedFromHomeEVT(
       series,
     );
   }
 
 // ignore: unused_element
-  SeriesPublishedFromHomeEVT seriesPublishedFromHomeEVT(Series series) {
-    return SeriesPublishedFromHomeEVT(
+  SeriesPublishedFromLibraryEVT seriesPublishedFromLibraryEVT(Series series) {
+    return SeriesPublishedFromLibraryEVT(
       series,
     );
   }
@@ -94,26 +94,26 @@ mixin _$CoreDatabaseEvent {
         TResult chapterDraftDeletedFromLibraryEVT(
             String chapterDraftUID, String seriesDraftUID),
     @required TResult chapterDraftSavedFromLibraryEVT(Chapter chapterDraft),
-    @required TResult chapterPublishedFromLibraryEVT(Chapter chapter),
     @required TResult chapterPublishedFromChapterEVT(Chapter chapter),
+    @required TResult chapterPublishedFromLibraryEVT(Chapter chapter),
     @required TResult resetBlocEVT(),
     @required TResult seriesDraftDeletedFromLibraryEVT(String seriesDraftUID),
     @required TResult seriesDraftSavedFromLibraryEVT(Series seriesDraft),
-    @required TResult seriesPublishedFromLibraryEVT(Series series),
     @required TResult seriesPublishedFromHomeEVT(Series series),
+    @required TResult seriesPublishedFromLibraryEVT(Series series),
   });
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult chapterDraftDeletedFromLibraryEVT(
         String chapterDraftUID, String seriesDraftUID),
     TResult chapterDraftSavedFromLibraryEVT(Chapter chapterDraft),
-    TResult chapterPublishedFromLibraryEVT(Chapter chapter),
     TResult chapterPublishedFromChapterEVT(Chapter chapter),
+    TResult chapterPublishedFromLibraryEVT(Chapter chapter),
     TResult resetBlocEVT(),
     TResult seriesDraftDeletedFromLibraryEVT(String seriesDraftUID),
     TResult seriesDraftSavedFromLibraryEVT(Series seriesDraft),
-    TResult seriesPublishedFromLibraryEVT(Series series),
     TResult seriesPublishedFromHomeEVT(Series series),
+    TResult seriesPublishedFromLibraryEVT(Series series),
     @required TResult orElse(),
   });
   @optionalTypeArgs
@@ -125,11 +125,11 @@ mixin _$CoreDatabaseEvent {
         TResult chapterDraftSavedFromLibraryEVT(
             ChapterDraftSavedFromLibraryEVT value),
     @required
-        TResult chapterPublishedFromLibraryEVT(
-            ChapterPublishedFromLibraryEVT value),
-    @required
         TResult chapterPublishedFromChapterEVT(
             ChapterPublishedFromChapterEVT value),
+    @required
+        TResult chapterPublishedFromLibraryEVT(
+            ChapterPublishedFromLibraryEVT value),
     @required TResult resetBlocEVT(ResetBlocEVT value),
     @required
         TResult seriesDraftDeletedFromLibraryEVT(
@@ -138,10 +138,10 @@ mixin _$CoreDatabaseEvent {
         TResult seriesDraftSavedFromLibraryEVT(
             SeriesDraftSavedFromLibraryEVT value),
     @required
+        TResult seriesPublishedFromHomeEVT(SeriesPublishedFromHomeEVT value),
+    @required
         TResult seriesPublishedFromLibraryEVT(
             SeriesPublishedFromLibraryEVT value),
-    @required
-        TResult seriesPublishedFromHomeEVT(SeriesPublishedFromHomeEVT value),
   });
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
@@ -149,17 +149,17 @@ mixin _$CoreDatabaseEvent {
         ChapterDraftDeletedFromLibraryEVT value),
     TResult chapterDraftSavedFromLibraryEVT(
         ChapterDraftSavedFromLibraryEVT value),
-    TResult chapterPublishedFromLibraryEVT(
-        ChapterPublishedFromLibraryEVT value),
     TResult chapterPublishedFromChapterEVT(
         ChapterPublishedFromChapterEVT value),
+    TResult chapterPublishedFromLibraryEVT(
+        ChapterPublishedFromLibraryEVT value),
     TResult resetBlocEVT(ResetBlocEVT value),
     TResult seriesDraftDeletedFromLibraryEVT(
         SeriesDraftDeletedFromLibraryEVT value),
     TResult seriesDraftSavedFromLibraryEVT(
         SeriesDraftSavedFromLibraryEVT value),
-    TResult seriesPublishedFromLibraryEVT(SeriesPublishedFromLibraryEVT value),
     TResult seriesPublishedFromHomeEVT(SeriesPublishedFromHomeEVT value),
+    TResult seriesPublishedFromLibraryEVT(SeriesPublishedFromLibraryEVT value),
     @required TResult orElse(),
   });
 }
@@ -265,23 +265,23 @@ class _$ChapterDraftDeletedFromLibraryEVT
         TResult chapterDraftDeletedFromLibraryEVT(
             String chapterDraftUID, String seriesDraftUID),
     @required TResult chapterDraftSavedFromLibraryEVT(Chapter chapterDraft),
-    @required TResult chapterPublishedFromLibraryEVT(Chapter chapter),
     @required TResult chapterPublishedFromChapterEVT(Chapter chapter),
+    @required TResult chapterPublishedFromLibraryEVT(Chapter chapter),
     @required TResult resetBlocEVT(),
     @required TResult seriesDraftDeletedFromLibraryEVT(String seriesDraftUID),
     @required TResult seriesDraftSavedFromLibraryEVT(Series seriesDraft),
-    @required TResult seriesPublishedFromLibraryEVT(Series series),
     @required TResult seriesPublishedFromHomeEVT(Series series),
+    @required TResult seriesPublishedFromLibraryEVT(Series series),
   }) {
     assert(chapterDraftDeletedFromLibraryEVT != null);
     assert(chapterDraftSavedFromLibraryEVT != null);
-    assert(chapterPublishedFromLibraryEVT != null);
     assert(chapterPublishedFromChapterEVT != null);
+    assert(chapterPublishedFromLibraryEVT != null);
     assert(resetBlocEVT != null);
     assert(seriesDraftDeletedFromLibraryEVT != null);
     assert(seriesDraftSavedFromLibraryEVT != null);
-    assert(seriesPublishedFromLibraryEVT != null);
     assert(seriesPublishedFromHomeEVT != null);
+    assert(seriesPublishedFromLibraryEVT != null);
     return chapterDraftDeletedFromLibraryEVT(chapterDraftUID, seriesDraftUID);
   }
 
@@ -291,13 +291,13 @@ class _$ChapterDraftDeletedFromLibraryEVT
     TResult chapterDraftDeletedFromLibraryEVT(
         String chapterDraftUID, String seriesDraftUID),
     TResult chapterDraftSavedFromLibraryEVT(Chapter chapterDraft),
-    TResult chapterPublishedFromLibraryEVT(Chapter chapter),
     TResult chapterPublishedFromChapterEVT(Chapter chapter),
+    TResult chapterPublishedFromLibraryEVT(Chapter chapter),
     TResult resetBlocEVT(),
     TResult seriesDraftDeletedFromLibraryEVT(String seriesDraftUID),
     TResult seriesDraftSavedFromLibraryEVT(Series seriesDraft),
-    TResult seriesPublishedFromLibraryEVT(Series series),
     TResult seriesPublishedFromHomeEVT(Series series),
+    TResult seriesPublishedFromLibraryEVT(Series series),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -317,11 +317,11 @@ class _$ChapterDraftDeletedFromLibraryEVT
         TResult chapterDraftSavedFromLibraryEVT(
             ChapterDraftSavedFromLibraryEVT value),
     @required
-        TResult chapterPublishedFromLibraryEVT(
-            ChapterPublishedFromLibraryEVT value),
-    @required
         TResult chapterPublishedFromChapterEVT(
             ChapterPublishedFromChapterEVT value),
+    @required
+        TResult chapterPublishedFromLibraryEVT(
+            ChapterPublishedFromLibraryEVT value),
     @required TResult resetBlocEVT(ResetBlocEVT value),
     @required
         TResult seriesDraftDeletedFromLibraryEVT(
@@ -330,20 +330,20 @@ class _$ChapterDraftDeletedFromLibraryEVT
         TResult seriesDraftSavedFromLibraryEVT(
             SeriesDraftSavedFromLibraryEVT value),
     @required
+        TResult seriesPublishedFromHomeEVT(SeriesPublishedFromHomeEVT value),
+    @required
         TResult seriesPublishedFromLibraryEVT(
             SeriesPublishedFromLibraryEVT value),
-    @required
-        TResult seriesPublishedFromHomeEVT(SeriesPublishedFromHomeEVT value),
   }) {
     assert(chapterDraftDeletedFromLibraryEVT != null);
     assert(chapterDraftSavedFromLibraryEVT != null);
-    assert(chapterPublishedFromLibraryEVT != null);
     assert(chapterPublishedFromChapterEVT != null);
+    assert(chapterPublishedFromLibraryEVT != null);
     assert(resetBlocEVT != null);
     assert(seriesDraftDeletedFromLibraryEVT != null);
     assert(seriesDraftSavedFromLibraryEVT != null);
-    assert(seriesPublishedFromLibraryEVT != null);
     assert(seriesPublishedFromHomeEVT != null);
+    assert(seriesPublishedFromLibraryEVT != null);
     return chapterDraftDeletedFromLibraryEVT(this);
   }
 
@@ -354,17 +354,17 @@ class _$ChapterDraftDeletedFromLibraryEVT
         ChapterDraftDeletedFromLibraryEVT value),
     TResult chapterDraftSavedFromLibraryEVT(
         ChapterDraftSavedFromLibraryEVT value),
-    TResult chapterPublishedFromLibraryEVT(
-        ChapterPublishedFromLibraryEVT value),
     TResult chapterPublishedFromChapterEVT(
         ChapterPublishedFromChapterEVT value),
+    TResult chapterPublishedFromLibraryEVT(
+        ChapterPublishedFromLibraryEVT value),
     TResult resetBlocEVT(ResetBlocEVT value),
     TResult seriesDraftDeletedFromLibraryEVT(
         SeriesDraftDeletedFromLibraryEVT value),
     TResult seriesDraftSavedFromLibraryEVT(
         SeriesDraftSavedFromLibraryEVT value),
-    TResult seriesPublishedFromLibraryEVT(SeriesPublishedFromLibraryEVT value),
     TResult seriesPublishedFromHomeEVT(SeriesPublishedFromHomeEVT value),
+    TResult seriesPublishedFromLibraryEVT(SeriesPublishedFromLibraryEVT value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -457,23 +457,23 @@ class _$ChapterDraftSavedFromLibraryEVT
         TResult chapterDraftDeletedFromLibraryEVT(
             String chapterDraftUID, String seriesDraftUID),
     @required TResult chapterDraftSavedFromLibraryEVT(Chapter chapterDraft),
-    @required TResult chapterPublishedFromLibraryEVT(Chapter chapter),
     @required TResult chapterPublishedFromChapterEVT(Chapter chapter),
+    @required TResult chapterPublishedFromLibraryEVT(Chapter chapter),
     @required TResult resetBlocEVT(),
     @required TResult seriesDraftDeletedFromLibraryEVT(String seriesDraftUID),
     @required TResult seriesDraftSavedFromLibraryEVT(Series seriesDraft),
-    @required TResult seriesPublishedFromLibraryEVT(Series series),
     @required TResult seriesPublishedFromHomeEVT(Series series),
+    @required TResult seriesPublishedFromLibraryEVT(Series series),
   }) {
     assert(chapterDraftDeletedFromLibraryEVT != null);
     assert(chapterDraftSavedFromLibraryEVT != null);
-    assert(chapterPublishedFromLibraryEVT != null);
     assert(chapterPublishedFromChapterEVT != null);
+    assert(chapterPublishedFromLibraryEVT != null);
     assert(resetBlocEVT != null);
     assert(seriesDraftDeletedFromLibraryEVT != null);
     assert(seriesDraftSavedFromLibraryEVT != null);
-    assert(seriesPublishedFromLibraryEVT != null);
     assert(seriesPublishedFromHomeEVT != null);
+    assert(seriesPublishedFromLibraryEVT != null);
     return chapterDraftSavedFromLibraryEVT(chapterDraft);
   }
 
@@ -483,13 +483,13 @@ class _$ChapterDraftSavedFromLibraryEVT
     TResult chapterDraftDeletedFromLibraryEVT(
         String chapterDraftUID, String seriesDraftUID),
     TResult chapterDraftSavedFromLibraryEVT(Chapter chapterDraft),
-    TResult chapterPublishedFromLibraryEVT(Chapter chapter),
     TResult chapterPublishedFromChapterEVT(Chapter chapter),
+    TResult chapterPublishedFromLibraryEVT(Chapter chapter),
     TResult resetBlocEVT(),
     TResult seriesDraftDeletedFromLibraryEVT(String seriesDraftUID),
     TResult seriesDraftSavedFromLibraryEVT(Series seriesDraft),
-    TResult seriesPublishedFromLibraryEVT(Series series),
     TResult seriesPublishedFromHomeEVT(Series series),
+    TResult seriesPublishedFromLibraryEVT(Series series),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -509,11 +509,11 @@ class _$ChapterDraftSavedFromLibraryEVT
         TResult chapterDraftSavedFromLibraryEVT(
             ChapterDraftSavedFromLibraryEVT value),
     @required
-        TResult chapterPublishedFromLibraryEVT(
-            ChapterPublishedFromLibraryEVT value),
-    @required
         TResult chapterPublishedFromChapterEVT(
             ChapterPublishedFromChapterEVT value),
+    @required
+        TResult chapterPublishedFromLibraryEVT(
+            ChapterPublishedFromLibraryEVT value),
     @required TResult resetBlocEVT(ResetBlocEVT value),
     @required
         TResult seriesDraftDeletedFromLibraryEVT(
@@ -522,20 +522,20 @@ class _$ChapterDraftSavedFromLibraryEVT
         TResult seriesDraftSavedFromLibraryEVT(
             SeriesDraftSavedFromLibraryEVT value),
     @required
+        TResult seriesPublishedFromHomeEVT(SeriesPublishedFromHomeEVT value),
+    @required
         TResult seriesPublishedFromLibraryEVT(
             SeriesPublishedFromLibraryEVT value),
-    @required
-        TResult seriesPublishedFromHomeEVT(SeriesPublishedFromHomeEVT value),
   }) {
     assert(chapterDraftDeletedFromLibraryEVT != null);
     assert(chapterDraftSavedFromLibraryEVT != null);
-    assert(chapterPublishedFromLibraryEVT != null);
     assert(chapterPublishedFromChapterEVT != null);
+    assert(chapterPublishedFromLibraryEVT != null);
     assert(resetBlocEVT != null);
     assert(seriesDraftDeletedFromLibraryEVT != null);
     assert(seriesDraftSavedFromLibraryEVT != null);
-    assert(seriesPublishedFromLibraryEVT != null);
     assert(seriesPublishedFromHomeEVT != null);
+    assert(seriesPublishedFromLibraryEVT != null);
     return chapterDraftSavedFromLibraryEVT(this);
   }
 
@@ -546,17 +546,17 @@ class _$ChapterDraftSavedFromLibraryEVT
         ChapterDraftDeletedFromLibraryEVT value),
     TResult chapterDraftSavedFromLibraryEVT(
         ChapterDraftSavedFromLibraryEVT value),
-    TResult chapterPublishedFromLibraryEVT(
-        ChapterPublishedFromLibraryEVT value),
     TResult chapterPublishedFromChapterEVT(
         ChapterPublishedFromChapterEVT value),
+    TResult chapterPublishedFromLibraryEVT(
+        ChapterPublishedFromLibraryEVT value),
     TResult resetBlocEVT(ResetBlocEVT value),
     TResult seriesDraftDeletedFromLibraryEVT(
         SeriesDraftDeletedFromLibraryEVT value),
     TResult seriesDraftSavedFromLibraryEVT(
         SeriesDraftSavedFromLibraryEVT value),
-    TResult seriesPublishedFromLibraryEVT(SeriesPublishedFromLibraryEVT value),
     TResult seriesPublishedFromHomeEVT(SeriesPublishedFromHomeEVT value),
+    TResult seriesPublishedFromLibraryEVT(SeriesPublishedFromLibraryEVT value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -573,195 +573,6 @@ abstract class ChapterDraftSavedFromLibraryEVT implements CoreDatabaseEvent {
 
   Chapter get chapterDraft;
   $ChapterDraftSavedFromLibraryEVTCopyWith<ChapterDraftSavedFromLibraryEVT>
-      get copyWith;
-}
-
-/// @nodoc
-abstract class $ChapterPublishedFromLibraryEVTCopyWith<$Res> {
-  factory $ChapterPublishedFromLibraryEVTCopyWith(
-          ChapterPublishedFromLibraryEVT value,
-          $Res Function(ChapterPublishedFromLibraryEVT) then) =
-      _$ChapterPublishedFromLibraryEVTCopyWithImpl<$Res>;
-  $Res call({Chapter chapter});
-}
-
-/// @nodoc
-class _$ChapterPublishedFromLibraryEVTCopyWithImpl<$Res>
-    extends _$CoreDatabaseEventCopyWithImpl<$Res>
-    implements $ChapterPublishedFromLibraryEVTCopyWith<$Res> {
-  _$ChapterPublishedFromLibraryEVTCopyWithImpl(
-      ChapterPublishedFromLibraryEVT _value,
-      $Res Function(ChapterPublishedFromLibraryEVT) _then)
-      : super(_value, (v) => _then(v as ChapterPublishedFromLibraryEVT));
-
-  @override
-  ChapterPublishedFromLibraryEVT get _value =>
-      super._value as ChapterPublishedFromLibraryEVT;
-
-  @override
-  $Res call({
-    Object chapter = freezed,
-  }) {
-    return _then(ChapterPublishedFromLibraryEVT(
-      chapter == freezed ? _value.chapter : chapter as Chapter,
-    ));
-  }
-}
-
-/// @nodoc
-class _$ChapterPublishedFromLibraryEVT
-    implements ChapterPublishedFromLibraryEVT {
-  const _$ChapterPublishedFromLibraryEVT(this.chapter)
-      : assert(chapter != null);
-
-  @override
-  final Chapter chapter;
-
-  @override
-  String toString() {
-    return 'CoreDatabaseEvent.chapterPublishedFromLibraryEVT(chapter: $chapter)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is ChapterPublishedFromLibraryEVT &&
-            (identical(other.chapter, chapter) ||
-                const DeepCollectionEquality().equals(other.chapter, chapter)));
-  }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(chapter);
-
-  @override
-  $ChapterPublishedFromLibraryEVTCopyWith<ChapterPublishedFromLibraryEVT>
-      get copyWith => _$ChapterPublishedFromLibraryEVTCopyWithImpl<
-          ChapterPublishedFromLibraryEVT>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required
-        TResult chapterDraftDeletedFromLibraryEVT(
-            String chapterDraftUID, String seriesDraftUID),
-    @required TResult chapterDraftSavedFromLibraryEVT(Chapter chapterDraft),
-    @required TResult chapterPublishedFromLibraryEVT(Chapter chapter),
-    @required TResult chapterPublishedFromChapterEVT(Chapter chapter),
-    @required TResult resetBlocEVT(),
-    @required TResult seriesDraftDeletedFromLibraryEVT(String seriesDraftUID),
-    @required TResult seriesDraftSavedFromLibraryEVT(Series seriesDraft),
-    @required TResult seriesPublishedFromLibraryEVT(Series series),
-    @required TResult seriesPublishedFromHomeEVT(Series series),
-  }) {
-    assert(chapterDraftDeletedFromLibraryEVT != null);
-    assert(chapterDraftSavedFromLibraryEVT != null);
-    assert(chapterPublishedFromLibraryEVT != null);
-    assert(chapterPublishedFromChapterEVT != null);
-    assert(resetBlocEVT != null);
-    assert(seriesDraftDeletedFromLibraryEVT != null);
-    assert(seriesDraftSavedFromLibraryEVT != null);
-    assert(seriesPublishedFromLibraryEVT != null);
-    assert(seriesPublishedFromHomeEVT != null);
-    return chapterPublishedFromLibraryEVT(chapter);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult chapterDraftDeletedFromLibraryEVT(
-        String chapterDraftUID, String seriesDraftUID),
-    TResult chapterDraftSavedFromLibraryEVT(Chapter chapterDraft),
-    TResult chapterPublishedFromLibraryEVT(Chapter chapter),
-    TResult chapterPublishedFromChapterEVT(Chapter chapter),
-    TResult resetBlocEVT(),
-    TResult seriesDraftDeletedFromLibraryEVT(String seriesDraftUID),
-    TResult seriesDraftSavedFromLibraryEVT(Series seriesDraft),
-    TResult seriesPublishedFromLibraryEVT(Series series),
-    TResult seriesPublishedFromHomeEVT(Series series),
-    @required TResult orElse(),
-  }) {
-    assert(orElse != null);
-    if (chapterPublishedFromLibraryEVT != null) {
-      return chapterPublishedFromLibraryEVT(chapter);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required
-        TResult chapterDraftDeletedFromLibraryEVT(
-            ChapterDraftDeletedFromLibraryEVT value),
-    @required
-        TResult chapterDraftSavedFromLibraryEVT(
-            ChapterDraftSavedFromLibraryEVT value),
-    @required
-        TResult chapterPublishedFromLibraryEVT(
-            ChapterPublishedFromLibraryEVT value),
-    @required
-        TResult chapterPublishedFromChapterEVT(
-            ChapterPublishedFromChapterEVT value),
-    @required TResult resetBlocEVT(ResetBlocEVT value),
-    @required
-        TResult seriesDraftDeletedFromLibraryEVT(
-            SeriesDraftDeletedFromLibraryEVT value),
-    @required
-        TResult seriesDraftSavedFromLibraryEVT(
-            SeriesDraftSavedFromLibraryEVT value),
-    @required
-        TResult seriesPublishedFromLibraryEVT(
-            SeriesPublishedFromLibraryEVT value),
-    @required
-        TResult seriesPublishedFromHomeEVT(SeriesPublishedFromHomeEVT value),
-  }) {
-    assert(chapterDraftDeletedFromLibraryEVT != null);
-    assert(chapterDraftSavedFromLibraryEVT != null);
-    assert(chapterPublishedFromLibraryEVT != null);
-    assert(chapterPublishedFromChapterEVT != null);
-    assert(resetBlocEVT != null);
-    assert(seriesDraftDeletedFromLibraryEVT != null);
-    assert(seriesDraftSavedFromLibraryEVT != null);
-    assert(seriesPublishedFromLibraryEVT != null);
-    assert(seriesPublishedFromHomeEVT != null);
-    return chapterPublishedFromLibraryEVT(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult chapterDraftDeletedFromLibraryEVT(
-        ChapterDraftDeletedFromLibraryEVT value),
-    TResult chapterDraftSavedFromLibraryEVT(
-        ChapterDraftSavedFromLibraryEVT value),
-    TResult chapterPublishedFromLibraryEVT(
-        ChapterPublishedFromLibraryEVT value),
-    TResult chapterPublishedFromChapterEVT(
-        ChapterPublishedFromChapterEVT value),
-    TResult resetBlocEVT(ResetBlocEVT value),
-    TResult seriesDraftDeletedFromLibraryEVT(
-        SeriesDraftDeletedFromLibraryEVT value),
-    TResult seriesDraftSavedFromLibraryEVT(
-        SeriesDraftSavedFromLibraryEVT value),
-    TResult seriesPublishedFromLibraryEVT(SeriesPublishedFromLibraryEVT value),
-    TResult seriesPublishedFromHomeEVT(SeriesPublishedFromHomeEVT value),
-    @required TResult orElse(),
-  }) {
-    assert(orElse != null);
-    if (chapterPublishedFromLibraryEVT != null) {
-      return chapterPublishedFromLibraryEVT(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class ChapterPublishedFromLibraryEVT implements CoreDatabaseEvent {
-  const factory ChapterPublishedFromLibraryEVT(Chapter chapter) =
-      _$ChapterPublishedFromLibraryEVT;
-
-  Chapter get chapter;
-  $ChapterPublishedFromLibraryEVTCopyWith<ChapterPublishedFromLibraryEVT>
       get copyWith;
 }
 
@@ -835,23 +646,23 @@ class _$ChapterPublishedFromChapterEVT
         TResult chapterDraftDeletedFromLibraryEVT(
             String chapterDraftUID, String seriesDraftUID),
     @required TResult chapterDraftSavedFromLibraryEVT(Chapter chapterDraft),
-    @required TResult chapterPublishedFromLibraryEVT(Chapter chapter),
     @required TResult chapterPublishedFromChapterEVT(Chapter chapter),
+    @required TResult chapterPublishedFromLibraryEVT(Chapter chapter),
     @required TResult resetBlocEVT(),
     @required TResult seriesDraftDeletedFromLibraryEVT(String seriesDraftUID),
     @required TResult seriesDraftSavedFromLibraryEVT(Series seriesDraft),
-    @required TResult seriesPublishedFromLibraryEVT(Series series),
     @required TResult seriesPublishedFromHomeEVT(Series series),
+    @required TResult seriesPublishedFromLibraryEVT(Series series),
   }) {
     assert(chapterDraftDeletedFromLibraryEVT != null);
     assert(chapterDraftSavedFromLibraryEVT != null);
-    assert(chapterPublishedFromLibraryEVT != null);
     assert(chapterPublishedFromChapterEVT != null);
+    assert(chapterPublishedFromLibraryEVT != null);
     assert(resetBlocEVT != null);
     assert(seriesDraftDeletedFromLibraryEVT != null);
     assert(seriesDraftSavedFromLibraryEVT != null);
-    assert(seriesPublishedFromLibraryEVT != null);
     assert(seriesPublishedFromHomeEVT != null);
+    assert(seriesPublishedFromLibraryEVT != null);
     return chapterPublishedFromChapterEVT(chapter);
   }
 
@@ -861,13 +672,13 @@ class _$ChapterPublishedFromChapterEVT
     TResult chapterDraftDeletedFromLibraryEVT(
         String chapterDraftUID, String seriesDraftUID),
     TResult chapterDraftSavedFromLibraryEVT(Chapter chapterDraft),
-    TResult chapterPublishedFromLibraryEVT(Chapter chapter),
     TResult chapterPublishedFromChapterEVT(Chapter chapter),
+    TResult chapterPublishedFromLibraryEVT(Chapter chapter),
     TResult resetBlocEVT(),
     TResult seriesDraftDeletedFromLibraryEVT(String seriesDraftUID),
     TResult seriesDraftSavedFromLibraryEVT(Series seriesDraft),
-    TResult seriesPublishedFromLibraryEVT(Series series),
     TResult seriesPublishedFromHomeEVT(Series series),
+    TResult seriesPublishedFromLibraryEVT(Series series),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -887,11 +698,11 @@ class _$ChapterPublishedFromChapterEVT
         TResult chapterDraftSavedFromLibraryEVT(
             ChapterDraftSavedFromLibraryEVT value),
     @required
-        TResult chapterPublishedFromLibraryEVT(
-            ChapterPublishedFromLibraryEVT value),
-    @required
         TResult chapterPublishedFromChapterEVT(
             ChapterPublishedFromChapterEVT value),
+    @required
+        TResult chapterPublishedFromLibraryEVT(
+            ChapterPublishedFromLibraryEVT value),
     @required TResult resetBlocEVT(ResetBlocEVT value),
     @required
         TResult seriesDraftDeletedFromLibraryEVT(
@@ -900,20 +711,20 @@ class _$ChapterPublishedFromChapterEVT
         TResult seriesDraftSavedFromLibraryEVT(
             SeriesDraftSavedFromLibraryEVT value),
     @required
+        TResult seriesPublishedFromHomeEVT(SeriesPublishedFromHomeEVT value),
+    @required
         TResult seriesPublishedFromLibraryEVT(
             SeriesPublishedFromLibraryEVT value),
-    @required
-        TResult seriesPublishedFromHomeEVT(SeriesPublishedFromHomeEVT value),
   }) {
     assert(chapterDraftDeletedFromLibraryEVT != null);
     assert(chapterDraftSavedFromLibraryEVT != null);
-    assert(chapterPublishedFromLibraryEVT != null);
     assert(chapterPublishedFromChapterEVT != null);
+    assert(chapterPublishedFromLibraryEVT != null);
     assert(resetBlocEVT != null);
     assert(seriesDraftDeletedFromLibraryEVT != null);
     assert(seriesDraftSavedFromLibraryEVT != null);
-    assert(seriesPublishedFromLibraryEVT != null);
     assert(seriesPublishedFromHomeEVT != null);
+    assert(seriesPublishedFromLibraryEVT != null);
     return chapterPublishedFromChapterEVT(this);
   }
 
@@ -924,17 +735,17 @@ class _$ChapterPublishedFromChapterEVT
         ChapterDraftDeletedFromLibraryEVT value),
     TResult chapterDraftSavedFromLibraryEVT(
         ChapterDraftSavedFromLibraryEVT value),
-    TResult chapterPublishedFromLibraryEVT(
-        ChapterPublishedFromLibraryEVT value),
     TResult chapterPublishedFromChapterEVT(
         ChapterPublishedFromChapterEVT value),
+    TResult chapterPublishedFromLibraryEVT(
+        ChapterPublishedFromLibraryEVT value),
     TResult resetBlocEVT(ResetBlocEVT value),
     TResult seriesDraftDeletedFromLibraryEVT(
         SeriesDraftDeletedFromLibraryEVT value),
     TResult seriesDraftSavedFromLibraryEVT(
         SeriesDraftSavedFromLibraryEVT value),
-    TResult seriesPublishedFromLibraryEVT(SeriesPublishedFromLibraryEVT value),
     TResult seriesPublishedFromHomeEVT(SeriesPublishedFromHomeEVT value),
+    TResult seriesPublishedFromLibraryEVT(SeriesPublishedFromLibraryEVT value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -951,6 +762,195 @@ abstract class ChapterPublishedFromChapterEVT implements CoreDatabaseEvent {
 
   Chapter get chapter;
   $ChapterPublishedFromChapterEVTCopyWith<ChapterPublishedFromChapterEVT>
+      get copyWith;
+}
+
+/// @nodoc
+abstract class $ChapterPublishedFromLibraryEVTCopyWith<$Res> {
+  factory $ChapterPublishedFromLibraryEVTCopyWith(
+          ChapterPublishedFromLibraryEVT value,
+          $Res Function(ChapterPublishedFromLibraryEVT) then) =
+      _$ChapterPublishedFromLibraryEVTCopyWithImpl<$Res>;
+  $Res call({Chapter chapter});
+}
+
+/// @nodoc
+class _$ChapterPublishedFromLibraryEVTCopyWithImpl<$Res>
+    extends _$CoreDatabaseEventCopyWithImpl<$Res>
+    implements $ChapterPublishedFromLibraryEVTCopyWith<$Res> {
+  _$ChapterPublishedFromLibraryEVTCopyWithImpl(
+      ChapterPublishedFromLibraryEVT _value,
+      $Res Function(ChapterPublishedFromLibraryEVT) _then)
+      : super(_value, (v) => _then(v as ChapterPublishedFromLibraryEVT));
+
+  @override
+  ChapterPublishedFromLibraryEVT get _value =>
+      super._value as ChapterPublishedFromLibraryEVT;
+
+  @override
+  $Res call({
+    Object chapter = freezed,
+  }) {
+    return _then(ChapterPublishedFromLibraryEVT(
+      chapter == freezed ? _value.chapter : chapter as Chapter,
+    ));
+  }
+}
+
+/// @nodoc
+class _$ChapterPublishedFromLibraryEVT
+    implements ChapterPublishedFromLibraryEVT {
+  const _$ChapterPublishedFromLibraryEVT(this.chapter)
+      : assert(chapter != null);
+
+  @override
+  final Chapter chapter;
+
+  @override
+  String toString() {
+    return 'CoreDatabaseEvent.chapterPublishedFromLibraryEVT(chapter: $chapter)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is ChapterPublishedFromLibraryEVT &&
+            (identical(other.chapter, chapter) ||
+                const DeepCollectionEquality().equals(other.chapter, chapter)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(chapter);
+
+  @override
+  $ChapterPublishedFromLibraryEVTCopyWith<ChapterPublishedFromLibraryEVT>
+      get copyWith => _$ChapterPublishedFromLibraryEVTCopyWithImpl<
+          ChapterPublishedFromLibraryEVT>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object>({
+    @required
+        TResult chapterDraftDeletedFromLibraryEVT(
+            String chapterDraftUID, String seriesDraftUID),
+    @required TResult chapterDraftSavedFromLibraryEVT(Chapter chapterDraft),
+    @required TResult chapterPublishedFromChapterEVT(Chapter chapter),
+    @required TResult chapterPublishedFromLibraryEVT(Chapter chapter),
+    @required TResult resetBlocEVT(),
+    @required TResult seriesDraftDeletedFromLibraryEVT(String seriesDraftUID),
+    @required TResult seriesDraftSavedFromLibraryEVT(Series seriesDraft),
+    @required TResult seriesPublishedFromHomeEVT(Series series),
+    @required TResult seriesPublishedFromLibraryEVT(Series series),
+  }) {
+    assert(chapterDraftDeletedFromLibraryEVT != null);
+    assert(chapterDraftSavedFromLibraryEVT != null);
+    assert(chapterPublishedFromChapterEVT != null);
+    assert(chapterPublishedFromLibraryEVT != null);
+    assert(resetBlocEVT != null);
+    assert(seriesDraftDeletedFromLibraryEVT != null);
+    assert(seriesDraftSavedFromLibraryEVT != null);
+    assert(seriesPublishedFromHomeEVT != null);
+    assert(seriesPublishedFromLibraryEVT != null);
+    return chapterPublishedFromLibraryEVT(chapter);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object>({
+    TResult chapterDraftDeletedFromLibraryEVT(
+        String chapterDraftUID, String seriesDraftUID),
+    TResult chapterDraftSavedFromLibraryEVT(Chapter chapterDraft),
+    TResult chapterPublishedFromChapterEVT(Chapter chapter),
+    TResult chapterPublishedFromLibraryEVT(Chapter chapter),
+    TResult resetBlocEVT(),
+    TResult seriesDraftDeletedFromLibraryEVT(String seriesDraftUID),
+    TResult seriesDraftSavedFromLibraryEVT(Series seriesDraft),
+    TResult seriesPublishedFromHomeEVT(Series series),
+    TResult seriesPublishedFromLibraryEVT(Series series),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (chapterPublishedFromLibraryEVT != null) {
+      return chapterPublishedFromLibraryEVT(chapter);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object>({
+    @required
+        TResult chapterDraftDeletedFromLibraryEVT(
+            ChapterDraftDeletedFromLibraryEVT value),
+    @required
+        TResult chapterDraftSavedFromLibraryEVT(
+            ChapterDraftSavedFromLibraryEVT value),
+    @required
+        TResult chapterPublishedFromChapterEVT(
+            ChapterPublishedFromChapterEVT value),
+    @required
+        TResult chapterPublishedFromLibraryEVT(
+            ChapterPublishedFromLibraryEVT value),
+    @required TResult resetBlocEVT(ResetBlocEVT value),
+    @required
+        TResult seriesDraftDeletedFromLibraryEVT(
+            SeriesDraftDeletedFromLibraryEVT value),
+    @required
+        TResult seriesDraftSavedFromLibraryEVT(
+            SeriesDraftSavedFromLibraryEVT value),
+    @required
+        TResult seriesPublishedFromHomeEVT(SeriesPublishedFromHomeEVT value),
+    @required
+        TResult seriesPublishedFromLibraryEVT(
+            SeriesPublishedFromLibraryEVT value),
+  }) {
+    assert(chapterDraftDeletedFromLibraryEVT != null);
+    assert(chapterDraftSavedFromLibraryEVT != null);
+    assert(chapterPublishedFromChapterEVT != null);
+    assert(chapterPublishedFromLibraryEVT != null);
+    assert(resetBlocEVT != null);
+    assert(seriesDraftDeletedFromLibraryEVT != null);
+    assert(seriesDraftSavedFromLibraryEVT != null);
+    assert(seriesPublishedFromHomeEVT != null);
+    assert(seriesPublishedFromLibraryEVT != null);
+    return chapterPublishedFromLibraryEVT(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object>({
+    TResult chapterDraftDeletedFromLibraryEVT(
+        ChapterDraftDeletedFromLibraryEVT value),
+    TResult chapterDraftSavedFromLibraryEVT(
+        ChapterDraftSavedFromLibraryEVT value),
+    TResult chapterPublishedFromChapterEVT(
+        ChapterPublishedFromChapterEVT value),
+    TResult chapterPublishedFromLibraryEVT(
+        ChapterPublishedFromLibraryEVT value),
+    TResult resetBlocEVT(ResetBlocEVT value),
+    TResult seriesDraftDeletedFromLibraryEVT(
+        SeriesDraftDeletedFromLibraryEVT value),
+    TResult seriesDraftSavedFromLibraryEVT(
+        SeriesDraftSavedFromLibraryEVT value),
+    TResult seriesPublishedFromHomeEVT(SeriesPublishedFromHomeEVT value),
+    TResult seriesPublishedFromLibraryEVT(SeriesPublishedFromLibraryEVT value),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (chapterPublishedFromLibraryEVT != null) {
+      return chapterPublishedFromLibraryEVT(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ChapterPublishedFromLibraryEVT implements CoreDatabaseEvent {
+  const factory ChapterPublishedFromLibraryEVT(Chapter chapter) =
+      _$ChapterPublishedFromLibraryEVT;
+
+  Chapter get chapter;
+  $ChapterPublishedFromLibraryEVTCopyWith<ChapterPublishedFromLibraryEVT>
       get copyWith;
 }
 
@@ -997,23 +997,23 @@ class _$ResetBlocEVT implements ResetBlocEVT {
         TResult chapterDraftDeletedFromLibraryEVT(
             String chapterDraftUID, String seriesDraftUID),
     @required TResult chapterDraftSavedFromLibraryEVT(Chapter chapterDraft),
-    @required TResult chapterPublishedFromLibraryEVT(Chapter chapter),
     @required TResult chapterPublishedFromChapterEVT(Chapter chapter),
+    @required TResult chapterPublishedFromLibraryEVT(Chapter chapter),
     @required TResult resetBlocEVT(),
     @required TResult seriesDraftDeletedFromLibraryEVT(String seriesDraftUID),
     @required TResult seriesDraftSavedFromLibraryEVT(Series seriesDraft),
-    @required TResult seriesPublishedFromLibraryEVT(Series series),
     @required TResult seriesPublishedFromHomeEVT(Series series),
+    @required TResult seriesPublishedFromLibraryEVT(Series series),
   }) {
     assert(chapterDraftDeletedFromLibraryEVT != null);
     assert(chapterDraftSavedFromLibraryEVT != null);
-    assert(chapterPublishedFromLibraryEVT != null);
     assert(chapterPublishedFromChapterEVT != null);
+    assert(chapterPublishedFromLibraryEVT != null);
     assert(resetBlocEVT != null);
     assert(seriesDraftDeletedFromLibraryEVT != null);
     assert(seriesDraftSavedFromLibraryEVT != null);
-    assert(seriesPublishedFromLibraryEVT != null);
     assert(seriesPublishedFromHomeEVT != null);
+    assert(seriesPublishedFromLibraryEVT != null);
     return resetBlocEVT();
   }
 
@@ -1023,13 +1023,13 @@ class _$ResetBlocEVT implements ResetBlocEVT {
     TResult chapterDraftDeletedFromLibraryEVT(
         String chapterDraftUID, String seriesDraftUID),
     TResult chapterDraftSavedFromLibraryEVT(Chapter chapterDraft),
-    TResult chapterPublishedFromLibraryEVT(Chapter chapter),
     TResult chapterPublishedFromChapterEVT(Chapter chapter),
+    TResult chapterPublishedFromLibraryEVT(Chapter chapter),
     TResult resetBlocEVT(),
     TResult seriesDraftDeletedFromLibraryEVT(String seriesDraftUID),
     TResult seriesDraftSavedFromLibraryEVT(Series seriesDraft),
-    TResult seriesPublishedFromLibraryEVT(Series series),
     TResult seriesPublishedFromHomeEVT(Series series),
+    TResult seriesPublishedFromLibraryEVT(Series series),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -1049,11 +1049,11 @@ class _$ResetBlocEVT implements ResetBlocEVT {
         TResult chapterDraftSavedFromLibraryEVT(
             ChapterDraftSavedFromLibraryEVT value),
     @required
-        TResult chapterPublishedFromLibraryEVT(
-            ChapterPublishedFromLibraryEVT value),
-    @required
         TResult chapterPublishedFromChapterEVT(
             ChapterPublishedFromChapterEVT value),
+    @required
+        TResult chapterPublishedFromLibraryEVT(
+            ChapterPublishedFromLibraryEVT value),
     @required TResult resetBlocEVT(ResetBlocEVT value),
     @required
         TResult seriesDraftDeletedFromLibraryEVT(
@@ -1062,20 +1062,20 @@ class _$ResetBlocEVT implements ResetBlocEVT {
         TResult seriesDraftSavedFromLibraryEVT(
             SeriesDraftSavedFromLibraryEVT value),
     @required
+        TResult seriesPublishedFromHomeEVT(SeriesPublishedFromHomeEVT value),
+    @required
         TResult seriesPublishedFromLibraryEVT(
             SeriesPublishedFromLibraryEVT value),
-    @required
-        TResult seriesPublishedFromHomeEVT(SeriesPublishedFromHomeEVT value),
   }) {
     assert(chapterDraftDeletedFromLibraryEVT != null);
     assert(chapterDraftSavedFromLibraryEVT != null);
-    assert(chapterPublishedFromLibraryEVT != null);
     assert(chapterPublishedFromChapterEVT != null);
+    assert(chapterPublishedFromLibraryEVT != null);
     assert(resetBlocEVT != null);
     assert(seriesDraftDeletedFromLibraryEVT != null);
     assert(seriesDraftSavedFromLibraryEVT != null);
-    assert(seriesPublishedFromLibraryEVT != null);
     assert(seriesPublishedFromHomeEVT != null);
+    assert(seriesPublishedFromLibraryEVT != null);
     return resetBlocEVT(this);
   }
 
@@ -1086,17 +1086,17 @@ class _$ResetBlocEVT implements ResetBlocEVT {
         ChapterDraftDeletedFromLibraryEVT value),
     TResult chapterDraftSavedFromLibraryEVT(
         ChapterDraftSavedFromLibraryEVT value),
-    TResult chapterPublishedFromLibraryEVT(
-        ChapterPublishedFromLibraryEVT value),
     TResult chapterPublishedFromChapterEVT(
         ChapterPublishedFromChapterEVT value),
+    TResult chapterPublishedFromLibraryEVT(
+        ChapterPublishedFromLibraryEVT value),
     TResult resetBlocEVT(ResetBlocEVT value),
     TResult seriesDraftDeletedFromLibraryEVT(
         SeriesDraftDeletedFromLibraryEVT value),
     TResult seriesDraftSavedFromLibraryEVT(
         SeriesDraftSavedFromLibraryEVT value),
-    TResult seriesPublishedFromLibraryEVT(SeriesPublishedFromLibraryEVT value),
     TResult seriesPublishedFromHomeEVT(SeriesPublishedFromHomeEVT value),
+    TResult seriesPublishedFromLibraryEVT(SeriesPublishedFromLibraryEVT value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -1185,23 +1185,23 @@ class _$SeriesDraftDeletedFromLibraryEVT
         TResult chapterDraftDeletedFromLibraryEVT(
             String chapterDraftUID, String seriesDraftUID),
     @required TResult chapterDraftSavedFromLibraryEVT(Chapter chapterDraft),
-    @required TResult chapterPublishedFromLibraryEVT(Chapter chapter),
     @required TResult chapterPublishedFromChapterEVT(Chapter chapter),
+    @required TResult chapterPublishedFromLibraryEVT(Chapter chapter),
     @required TResult resetBlocEVT(),
     @required TResult seriesDraftDeletedFromLibraryEVT(String seriesDraftUID),
     @required TResult seriesDraftSavedFromLibraryEVT(Series seriesDraft),
-    @required TResult seriesPublishedFromLibraryEVT(Series series),
     @required TResult seriesPublishedFromHomeEVT(Series series),
+    @required TResult seriesPublishedFromLibraryEVT(Series series),
   }) {
     assert(chapterDraftDeletedFromLibraryEVT != null);
     assert(chapterDraftSavedFromLibraryEVT != null);
-    assert(chapterPublishedFromLibraryEVT != null);
     assert(chapterPublishedFromChapterEVT != null);
+    assert(chapterPublishedFromLibraryEVT != null);
     assert(resetBlocEVT != null);
     assert(seriesDraftDeletedFromLibraryEVT != null);
     assert(seriesDraftSavedFromLibraryEVT != null);
-    assert(seriesPublishedFromLibraryEVT != null);
     assert(seriesPublishedFromHomeEVT != null);
+    assert(seriesPublishedFromLibraryEVT != null);
     return seriesDraftDeletedFromLibraryEVT(seriesDraftUID);
   }
 
@@ -1211,13 +1211,13 @@ class _$SeriesDraftDeletedFromLibraryEVT
     TResult chapterDraftDeletedFromLibraryEVT(
         String chapterDraftUID, String seriesDraftUID),
     TResult chapterDraftSavedFromLibraryEVT(Chapter chapterDraft),
-    TResult chapterPublishedFromLibraryEVT(Chapter chapter),
     TResult chapterPublishedFromChapterEVT(Chapter chapter),
+    TResult chapterPublishedFromLibraryEVT(Chapter chapter),
     TResult resetBlocEVT(),
     TResult seriesDraftDeletedFromLibraryEVT(String seriesDraftUID),
     TResult seriesDraftSavedFromLibraryEVT(Series seriesDraft),
-    TResult seriesPublishedFromLibraryEVT(Series series),
     TResult seriesPublishedFromHomeEVT(Series series),
+    TResult seriesPublishedFromLibraryEVT(Series series),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -1237,11 +1237,11 @@ class _$SeriesDraftDeletedFromLibraryEVT
         TResult chapterDraftSavedFromLibraryEVT(
             ChapterDraftSavedFromLibraryEVT value),
     @required
-        TResult chapterPublishedFromLibraryEVT(
-            ChapterPublishedFromLibraryEVT value),
-    @required
         TResult chapterPublishedFromChapterEVT(
             ChapterPublishedFromChapterEVT value),
+    @required
+        TResult chapterPublishedFromLibraryEVT(
+            ChapterPublishedFromLibraryEVT value),
     @required TResult resetBlocEVT(ResetBlocEVT value),
     @required
         TResult seriesDraftDeletedFromLibraryEVT(
@@ -1250,20 +1250,20 @@ class _$SeriesDraftDeletedFromLibraryEVT
         TResult seriesDraftSavedFromLibraryEVT(
             SeriesDraftSavedFromLibraryEVT value),
     @required
+        TResult seriesPublishedFromHomeEVT(SeriesPublishedFromHomeEVT value),
+    @required
         TResult seriesPublishedFromLibraryEVT(
             SeriesPublishedFromLibraryEVT value),
-    @required
-        TResult seriesPublishedFromHomeEVT(SeriesPublishedFromHomeEVT value),
   }) {
     assert(chapterDraftDeletedFromLibraryEVT != null);
     assert(chapterDraftSavedFromLibraryEVT != null);
-    assert(chapterPublishedFromLibraryEVT != null);
     assert(chapterPublishedFromChapterEVT != null);
+    assert(chapterPublishedFromLibraryEVT != null);
     assert(resetBlocEVT != null);
     assert(seriesDraftDeletedFromLibraryEVT != null);
     assert(seriesDraftSavedFromLibraryEVT != null);
-    assert(seriesPublishedFromLibraryEVT != null);
     assert(seriesPublishedFromHomeEVT != null);
+    assert(seriesPublishedFromLibraryEVT != null);
     return seriesDraftDeletedFromLibraryEVT(this);
   }
 
@@ -1274,17 +1274,17 @@ class _$SeriesDraftDeletedFromLibraryEVT
         ChapterDraftDeletedFromLibraryEVT value),
     TResult chapterDraftSavedFromLibraryEVT(
         ChapterDraftSavedFromLibraryEVT value),
-    TResult chapterPublishedFromLibraryEVT(
-        ChapterPublishedFromLibraryEVT value),
     TResult chapterPublishedFromChapterEVT(
         ChapterPublishedFromChapterEVT value),
+    TResult chapterPublishedFromLibraryEVT(
+        ChapterPublishedFromLibraryEVT value),
     TResult resetBlocEVT(ResetBlocEVT value),
     TResult seriesDraftDeletedFromLibraryEVT(
         SeriesDraftDeletedFromLibraryEVT value),
     TResult seriesDraftSavedFromLibraryEVT(
         SeriesDraftSavedFromLibraryEVT value),
-    TResult seriesPublishedFromLibraryEVT(SeriesPublishedFromLibraryEVT value),
     TResult seriesPublishedFromHomeEVT(SeriesPublishedFromHomeEVT value),
+    TResult seriesPublishedFromLibraryEVT(SeriesPublishedFromLibraryEVT value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -1375,23 +1375,23 @@ class _$SeriesDraftSavedFromLibraryEVT
         TResult chapterDraftDeletedFromLibraryEVT(
             String chapterDraftUID, String seriesDraftUID),
     @required TResult chapterDraftSavedFromLibraryEVT(Chapter chapterDraft),
-    @required TResult chapterPublishedFromLibraryEVT(Chapter chapter),
     @required TResult chapterPublishedFromChapterEVT(Chapter chapter),
+    @required TResult chapterPublishedFromLibraryEVT(Chapter chapter),
     @required TResult resetBlocEVT(),
     @required TResult seriesDraftDeletedFromLibraryEVT(String seriesDraftUID),
     @required TResult seriesDraftSavedFromLibraryEVT(Series seriesDraft),
-    @required TResult seriesPublishedFromLibraryEVT(Series series),
     @required TResult seriesPublishedFromHomeEVT(Series series),
+    @required TResult seriesPublishedFromLibraryEVT(Series series),
   }) {
     assert(chapterDraftDeletedFromLibraryEVT != null);
     assert(chapterDraftSavedFromLibraryEVT != null);
-    assert(chapterPublishedFromLibraryEVT != null);
     assert(chapterPublishedFromChapterEVT != null);
+    assert(chapterPublishedFromLibraryEVT != null);
     assert(resetBlocEVT != null);
     assert(seriesDraftDeletedFromLibraryEVT != null);
     assert(seriesDraftSavedFromLibraryEVT != null);
-    assert(seriesPublishedFromLibraryEVT != null);
     assert(seriesPublishedFromHomeEVT != null);
+    assert(seriesPublishedFromLibraryEVT != null);
     return seriesDraftSavedFromLibraryEVT(seriesDraft);
   }
 
@@ -1401,13 +1401,13 @@ class _$SeriesDraftSavedFromLibraryEVT
     TResult chapterDraftDeletedFromLibraryEVT(
         String chapterDraftUID, String seriesDraftUID),
     TResult chapterDraftSavedFromLibraryEVT(Chapter chapterDraft),
-    TResult chapterPublishedFromLibraryEVT(Chapter chapter),
     TResult chapterPublishedFromChapterEVT(Chapter chapter),
+    TResult chapterPublishedFromLibraryEVT(Chapter chapter),
     TResult resetBlocEVT(),
     TResult seriesDraftDeletedFromLibraryEVT(String seriesDraftUID),
     TResult seriesDraftSavedFromLibraryEVT(Series seriesDraft),
-    TResult seriesPublishedFromLibraryEVT(Series series),
     TResult seriesPublishedFromHomeEVT(Series series),
+    TResult seriesPublishedFromLibraryEVT(Series series),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -1427,11 +1427,11 @@ class _$SeriesDraftSavedFromLibraryEVT
         TResult chapterDraftSavedFromLibraryEVT(
             ChapterDraftSavedFromLibraryEVT value),
     @required
-        TResult chapterPublishedFromLibraryEVT(
-            ChapterPublishedFromLibraryEVT value),
-    @required
         TResult chapterPublishedFromChapterEVT(
             ChapterPublishedFromChapterEVT value),
+    @required
+        TResult chapterPublishedFromLibraryEVT(
+            ChapterPublishedFromLibraryEVT value),
     @required TResult resetBlocEVT(ResetBlocEVT value),
     @required
         TResult seriesDraftDeletedFromLibraryEVT(
@@ -1440,20 +1440,20 @@ class _$SeriesDraftSavedFromLibraryEVT
         TResult seriesDraftSavedFromLibraryEVT(
             SeriesDraftSavedFromLibraryEVT value),
     @required
+        TResult seriesPublishedFromHomeEVT(SeriesPublishedFromHomeEVT value),
+    @required
         TResult seriesPublishedFromLibraryEVT(
             SeriesPublishedFromLibraryEVT value),
-    @required
-        TResult seriesPublishedFromHomeEVT(SeriesPublishedFromHomeEVT value),
   }) {
     assert(chapterDraftDeletedFromLibraryEVT != null);
     assert(chapterDraftSavedFromLibraryEVT != null);
-    assert(chapterPublishedFromLibraryEVT != null);
     assert(chapterPublishedFromChapterEVT != null);
+    assert(chapterPublishedFromLibraryEVT != null);
     assert(resetBlocEVT != null);
     assert(seriesDraftDeletedFromLibraryEVT != null);
     assert(seriesDraftSavedFromLibraryEVT != null);
-    assert(seriesPublishedFromLibraryEVT != null);
     assert(seriesPublishedFromHomeEVT != null);
+    assert(seriesPublishedFromLibraryEVT != null);
     return seriesDraftSavedFromLibraryEVT(this);
   }
 
@@ -1464,17 +1464,17 @@ class _$SeriesDraftSavedFromLibraryEVT
         ChapterDraftDeletedFromLibraryEVT value),
     TResult chapterDraftSavedFromLibraryEVT(
         ChapterDraftSavedFromLibraryEVT value),
-    TResult chapterPublishedFromLibraryEVT(
-        ChapterPublishedFromLibraryEVT value),
     TResult chapterPublishedFromChapterEVT(
         ChapterPublishedFromChapterEVT value),
+    TResult chapterPublishedFromLibraryEVT(
+        ChapterPublishedFromLibraryEVT value),
     TResult resetBlocEVT(ResetBlocEVT value),
     TResult seriesDraftDeletedFromLibraryEVT(
         SeriesDraftDeletedFromLibraryEVT value),
     TResult seriesDraftSavedFromLibraryEVT(
         SeriesDraftSavedFromLibraryEVT value),
-    TResult seriesPublishedFromLibraryEVT(SeriesPublishedFromLibraryEVT value),
     TResult seriesPublishedFromHomeEVT(SeriesPublishedFromHomeEVT value),
+    TResult seriesPublishedFromLibraryEVT(SeriesPublishedFromLibraryEVT value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -1491,193 +1491,6 @@ abstract class SeriesDraftSavedFromLibraryEVT implements CoreDatabaseEvent {
 
   Series get seriesDraft;
   $SeriesDraftSavedFromLibraryEVTCopyWith<SeriesDraftSavedFromLibraryEVT>
-      get copyWith;
-}
-
-/// @nodoc
-abstract class $SeriesPublishedFromLibraryEVTCopyWith<$Res> {
-  factory $SeriesPublishedFromLibraryEVTCopyWith(
-          SeriesPublishedFromLibraryEVT value,
-          $Res Function(SeriesPublishedFromLibraryEVT) then) =
-      _$SeriesPublishedFromLibraryEVTCopyWithImpl<$Res>;
-  $Res call({Series series});
-}
-
-/// @nodoc
-class _$SeriesPublishedFromLibraryEVTCopyWithImpl<$Res>
-    extends _$CoreDatabaseEventCopyWithImpl<$Res>
-    implements $SeriesPublishedFromLibraryEVTCopyWith<$Res> {
-  _$SeriesPublishedFromLibraryEVTCopyWithImpl(
-      SeriesPublishedFromLibraryEVT _value,
-      $Res Function(SeriesPublishedFromLibraryEVT) _then)
-      : super(_value, (v) => _then(v as SeriesPublishedFromLibraryEVT));
-
-  @override
-  SeriesPublishedFromLibraryEVT get _value =>
-      super._value as SeriesPublishedFromLibraryEVT;
-
-  @override
-  $Res call({
-    Object series = freezed,
-  }) {
-    return _then(SeriesPublishedFromLibraryEVT(
-      series == freezed ? _value.series : series as Series,
-    ));
-  }
-}
-
-/// @nodoc
-class _$SeriesPublishedFromLibraryEVT implements SeriesPublishedFromLibraryEVT {
-  const _$SeriesPublishedFromLibraryEVT(this.series) : assert(series != null);
-
-  @override
-  final Series series;
-
-  @override
-  String toString() {
-    return 'CoreDatabaseEvent.seriesPublishedFromLibraryEVT(series: $series)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is SeriesPublishedFromLibraryEVT &&
-            (identical(other.series, series) ||
-                const DeepCollectionEquality().equals(other.series, series)));
-  }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(series);
-
-  @override
-  $SeriesPublishedFromLibraryEVTCopyWith<SeriesPublishedFromLibraryEVT>
-      get copyWith => _$SeriesPublishedFromLibraryEVTCopyWithImpl<
-          SeriesPublishedFromLibraryEVT>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required
-        TResult chapterDraftDeletedFromLibraryEVT(
-            String chapterDraftUID, String seriesDraftUID),
-    @required TResult chapterDraftSavedFromLibraryEVT(Chapter chapterDraft),
-    @required TResult chapterPublishedFromLibraryEVT(Chapter chapter),
-    @required TResult chapterPublishedFromChapterEVT(Chapter chapter),
-    @required TResult resetBlocEVT(),
-    @required TResult seriesDraftDeletedFromLibraryEVT(String seriesDraftUID),
-    @required TResult seriesDraftSavedFromLibraryEVT(Series seriesDraft),
-    @required TResult seriesPublishedFromLibraryEVT(Series series),
-    @required TResult seriesPublishedFromHomeEVT(Series series),
-  }) {
-    assert(chapterDraftDeletedFromLibraryEVT != null);
-    assert(chapterDraftSavedFromLibraryEVT != null);
-    assert(chapterPublishedFromLibraryEVT != null);
-    assert(chapterPublishedFromChapterEVT != null);
-    assert(resetBlocEVT != null);
-    assert(seriesDraftDeletedFromLibraryEVT != null);
-    assert(seriesDraftSavedFromLibraryEVT != null);
-    assert(seriesPublishedFromLibraryEVT != null);
-    assert(seriesPublishedFromHomeEVT != null);
-    return seriesPublishedFromLibraryEVT(series);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult chapterDraftDeletedFromLibraryEVT(
-        String chapterDraftUID, String seriesDraftUID),
-    TResult chapterDraftSavedFromLibraryEVT(Chapter chapterDraft),
-    TResult chapterPublishedFromLibraryEVT(Chapter chapter),
-    TResult chapterPublishedFromChapterEVT(Chapter chapter),
-    TResult resetBlocEVT(),
-    TResult seriesDraftDeletedFromLibraryEVT(String seriesDraftUID),
-    TResult seriesDraftSavedFromLibraryEVT(Series seriesDraft),
-    TResult seriesPublishedFromLibraryEVT(Series series),
-    TResult seriesPublishedFromHomeEVT(Series series),
-    @required TResult orElse(),
-  }) {
-    assert(orElse != null);
-    if (seriesPublishedFromLibraryEVT != null) {
-      return seriesPublishedFromLibraryEVT(series);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required
-        TResult chapterDraftDeletedFromLibraryEVT(
-            ChapterDraftDeletedFromLibraryEVT value),
-    @required
-        TResult chapterDraftSavedFromLibraryEVT(
-            ChapterDraftSavedFromLibraryEVT value),
-    @required
-        TResult chapterPublishedFromLibraryEVT(
-            ChapterPublishedFromLibraryEVT value),
-    @required
-        TResult chapterPublishedFromChapterEVT(
-            ChapterPublishedFromChapterEVT value),
-    @required TResult resetBlocEVT(ResetBlocEVT value),
-    @required
-        TResult seriesDraftDeletedFromLibraryEVT(
-            SeriesDraftDeletedFromLibraryEVT value),
-    @required
-        TResult seriesDraftSavedFromLibraryEVT(
-            SeriesDraftSavedFromLibraryEVT value),
-    @required
-        TResult seriesPublishedFromLibraryEVT(
-            SeriesPublishedFromLibraryEVT value),
-    @required
-        TResult seriesPublishedFromHomeEVT(SeriesPublishedFromHomeEVT value),
-  }) {
-    assert(chapterDraftDeletedFromLibraryEVT != null);
-    assert(chapterDraftSavedFromLibraryEVT != null);
-    assert(chapterPublishedFromLibraryEVT != null);
-    assert(chapterPublishedFromChapterEVT != null);
-    assert(resetBlocEVT != null);
-    assert(seriesDraftDeletedFromLibraryEVT != null);
-    assert(seriesDraftSavedFromLibraryEVT != null);
-    assert(seriesPublishedFromLibraryEVT != null);
-    assert(seriesPublishedFromHomeEVT != null);
-    return seriesPublishedFromLibraryEVT(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult chapterDraftDeletedFromLibraryEVT(
-        ChapterDraftDeletedFromLibraryEVT value),
-    TResult chapterDraftSavedFromLibraryEVT(
-        ChapterDraftSavedFromLibraryEVT value),
-    TResult chapterPublishedFromLibraryEVT(
-        ChapterPublishedFromLibraryEVT value),
-    TResult chapterPublishedFromChapterEVT(
-        ChapterPublishedFromChapterEVT value),
-    TResult resetBlocEVT(ResetBlocEVT value),
-    TResult seriesDraftDeletedFromLibraryEVT(
-        SeriesDraftDeletedFromLibraryEVT value),
-    TResult seriesDraftSavedFromLibraryEVT(
-        SeriesDraftSavedFromLibraryEVT value),
-    TResult seriesPublishedFromLibraryEVT(SeriesPublishedFromLibraryEVT value),
-    TResult seriesPublishedFromHomeEVT(SeriesPublishedFromHomeEVT value),
-    @required TResult orElse(),
-  }) {
-    assert(orElse != null);
-    if (seriesPublishedFromLibraryEVT != null) {
-      return seriesPublishedFromLibraryEVT(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class SeriesPublishedFromLibraryEVT implements CoreDatabaseEvent {
-  const factory SeriesPublishedFromLibraryEVT(Series series) =
-      _$SeriesPublishedFromLibraryEVT;
-
-  Series get series;
-  $SeriesPublishedFromLibraryEVTCopyWith<SeriesPublishedFromLibraryEVT>
       get copyWith;
 }
 
@@ -1748,23 +1561,23 @@ class _$SeriesPublishedFromHomeEVT implements SeriesPublishedFromHomeEVT {
         TResult chapterDraftDeletedFromLibraryEVT(
             String chapterDraftUID, String seriesDraftUID),
     @required TResult chapterDraftSavedFromLibraryEVT(Chapter chapterDraft),
-    @required TResult chapterPublishedFromLibraryEVT(Chapter chapter),
     @required TResult chapterPublishedFromChapterEVT(Chapter chapter),
+    @required TResult chapterPublishedFromLibraryEVT(Chapter chapter),
     @required TResult resetBlocEVT(),
     @required TResult seriesDraftDeletedFromLibraryEVT(String seriesDraftUID),
     @required TResult seriesDraftSavedFromLibraryEVT(Series seriesDraft),
-    @required TResult seriesPublishedFromLibraryEVT(Series series),
     @required TResult seriesPublishedFromHomeEVT(Series series),
+    @required TResult seriesPublishedFromLibraryEVT(Series series),
   }) {
     assert(chapterDraftDeletedFromLibraryEVT != null);
     assert(chapterDraftSavedFromLibraryEVT != null);
-    assert(chapterPublishedFromLibraryEVT != null);
     assert(chapterPublishedFromChapterEVT != null);
+    assert(chapterPublishedFromLibraryEVT != null);
     assert(resetBlocEVT != null);
     assert(seriesDraftDeletedFromLibraryEVT != null);
     assert(seriesDraftSavedFromLibraryEVT != null);
-    assert(seriesPublishedFromLibraryEVT != null);
     assert(seriesPublishedFromHomeEVT != null);
+    assert(seriesPublishedFromLibraryEVT != null);
     return seriesPublishedFromHomeEVT(series);
   }
 
@@ -1774,13 +1587,13 @@ class _$SeriesPublishedFromHomeEVT implements SeriesPublishedFromHomeEVT {
     TResult chapterDraftDeletedFromLibraryEVT(
         String chapterDraftUID, String seriesDraftUID),
     TResult chapterDraftSavedFromLibraryEVT(Chapter chapterDraft),
-    TResult chapterPublishedFromLibraryEVT(Chapter chapter),
     TResult chapterPublishedFromChapterEVT(Chapter chapter),
+    TResult chapterPublishedFromLibraryEVT(Chapter chapter),
     TResult resetBlocEVT(),
     TResult seriesDraftDeletedFromLibraryEVT(String seriesDraftUID),
     TResult seriesDraftSavedFromLibraryEVT(Series seriesDraft),
-    TResult seriesPublishedFromLibraryEVT(Series series),
     TResult seriesPublishedFromHomeEVT(Series series),
+    TResult seriesPublishedFromLibraryEVT(Series series),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -1800,11 +1613,11 @@ class _$SeriesPublishedFromHomeEVT implements SeriesPublishedFromHomeEVT {
         TResult chapterDraftSavedFromLibraryEVT(
             ChapterDraftSavedFromLibraryEVT value),
     @required
-        TResult chapterPublishedFromLibraryEVT(
-            ChapterPublishedFromLibraryEVT value),
-    @required
         TResult chapterPublishedFromChapterEVT(
             ChapterPublishedFromChapterEVT value),
+    @required
+        TResult chapterPublishedFromLibraryEVT(
+            ChapterPublishedFromLibraryEVT value),
     @required TResult resetBlocEVT(ResetBlocEVT value),
     @required
         TResult seriesDraftDeletedFromLibraryEVT(
@@ -1813,20 +1626,20 @@ class _$SeriesPublishedFromHomeEVT implements SeriesPublishedFromHomeEVT {
         TResult seriesDraftSavedFromLibraryEVT(
             SeriesDraftSavedFromLibraryEVT value),
     @required
+        TResult seriesPublishedFromHomeEVT(SeriesPublishedFromHomeEVT value),
+    @required
         TResult seriesPublishedFromLibraryEVT(
             SeriesPublishedFromLibraryEVT value),
-    @required
-        TResult seriesPublishedFromHomeEVT(SeriesPublishedFromHomeEVT value),
   }) {
     assert(chapterDraftDeletedFromLibraryEVT != null);
     assert(chapterDraftSavedFromLibraryEVT != null);
-    assert(chapterPublishedFromLibraryEVT != null);
     assert(chapterPublishedFromChapterEVT != null);
+    assert(chapterPublishedFromLibraryEVT != null);
     assert(resetBlocEVT != null);
     assert(seriesDraftDeletedFromLibraryEVT != null);
     assert(seriesDraftSavedFromLibraryEVT != null);
-    assert(seriesPublishedFromLibraryEVT != null);
     assert(seriesPublishedFromHomeEVT != null);
+    assert(seriesPublishedFromLibraryEVT != null);
     return seriesPublishedFromHomeEVT(this);
   }
 
@@ -1837,17 +1650,17 @@ class _$SeriesPublishedFromHomeEVT implements SeriesPublishedFromHomeEVT {
         ChapterDraftDeletedFromLibraryEVT value),
     TResult chapterDraftSavedFromLibraryEVT(
         ChapterDraftSavedFromLibraryEVT value),
-    TResult chapterPublishedFromLibraryEVT(
-        ChapterPublishedFromLibraryEVT value),
     TResult chapterPublishedFromChapterEVT(
         ChapterPublishedFromChapterEVT value),
+    TResult chapterPublishedFromLibraryEVT(
+        ChapterPublishedFromLibraryEVT value),
     TResult resetBlocEVT(ResetBlocEVT value),
     TResult seriesDraftDeletedFromLibraryEVT(
         SeriesDraftDeletedFromLibraryEVT value),
     TResult seriesDraftSavedFromLibraryEVT(
         SeriesDraftSavedFromLibraryEVT value),
-    TResult seriesPublishedFromLibraryEVT(SeriesPublishedFromLibraryEVT value),
     TResult seriesPublishedFromHomeEVT(SeriesPublishedFromHomeEVT value),
+    TResult seriesPublishedFromLibraryEVT(SeriesPublishedFromLibraryEVT value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -1864,6 +1677,193 @@ abstract class SeriesPublishedFromHomeEVT implements CoreDatabaseEvent {
 
   Series get series;
   $SeriesPublishedFromHomeEVTCopyWith<SeriesPublishedFromHomeEVT> get copyWith;
+}
+
+/// @nodoc
+abstract class $SeriesPublishedFromLibraryEVTCopyWith<$Res> {
+  factory $SeriesPublishedFromLibraryEVTCopyWith(
+          SeriesPublishedFromLibraryEVT value,
+          $Res Function(SeriesPublishedFromLibraryEVT) then) =
+      _$SeriesPublishedFromLibraryEVTCopyWithImpl<$Res>;
+  $Res call({Series series});
+}
+
+/// @nodoc
+class _$SeriesPublishedFromLibraryEVTCopyWithImpl<$Res>
+    extends _$CoreDatabaseEventCopyWithImpl<$Res>
+    implements $SeriesPublishedFromLibraryEVTCopyWith<$Res> {
+  _$SeriesPublishedFromLibraryEVTCopyWithImpl(
+      SeriesPublishedFromLibraryEVT _value,
+      $Res Function(SeriesPublishedFromLibraryEVT) _then)
+      : super(_value, (v) => _then(v as SeriesPublishedFromLibraryEVT));
+
+  @override
+  SeriesPublishedFromLibraryEVT get _value =>
+      super._value as SeriesPublishedFromLibraryEVT;
+
+  @override
+  $Res call({
+    Object series = freezed,
+  }) {
+    return _then(SeriesPublishedFromLibraryEVT(
+      series == freezed ? _value.series : series as Series,
+    ));
+  }
+}
+
+/// @nodoc
+class _$SeriesPublishedFromLibraryEVT implements SeriesPublishedFromLibraryEVT {
+  const _$SeriesPublishedFromLibraryEVT(this.series) : assert(series != null);
+
+  @override
+  final Series series;
+
+  @override
+  String toString() {
+    return 'CoreDatabaseEvent.seriesPublishedFromLibraryEVT(series: $series)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is SeriesPublishedFromLibraryEVT &&
+            (identical(other.series, series) ||
+                const DeepCollectionEquality().equals(other.series, series)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(series);
+
+  @override
+  $SeriesPublishedFromLibraryEVTCopyWith<SeriesPublishedFromLibraryEVT>
+      get copyWith => _$SeriesPublishedFromLibraryEVTCopyWithImpl<
+          SeriesPublishedFromLibraryEVT>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object>({
+    @required
+        TResult chapterDraftDeletedFromLibraryEVT(
+            String chapterDraftUID, String seriesDraftUID),
+    @required TResult chapterDraftSavedFromLibraryEVT(Chapter chapterDraft),
+    @required TResult chapterPublishedFromChapterEVT(Chapter chapter),
+    @required TResult chapterPublishedFromLibraryEVT(Chapter chapter),
+    @required TResult resetBlocEVT(),
+    @required TResult seriesDraftDeletedFromLibraryEVT(String seriesDraftUID),
+    @required TResult seriesDraftSavedFromLibraryEVT(Series seriesDraft),
+    @required TResult seriesPublishedFromHomeEVT(Series series),
+    @required TResult seriesPublishedFromLibraryEVT(Series series),
+  }) {
+    assert(chapterDraftDeletedFromLibraryEVT != null);
+    assert(chapterDraftSavedFromLibraryEVT != null);
+    assert(chapterPublishedFromChapterEVT != null);
+    assert(chapterPublishedFromLibraryEVT != null);
+    assert(resetBlocEVT != null);
+    assert(seriesDraftDeletedFromLibraryEVT != null);
+    assert(seriesDraftSavedFromLibraryEVT != null);
+    assert(seriesPublishedFromHomeEVT != null);
+    assert(seriesPublishedFromLibraryEVT != null);
+    return seriesPublishedFromLibraryEVT(series);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object>({
+    TResult chapterDraftDeletedFromLibraryEVT(
+        String chapterDraftUID, String seriesDraftUID),
+    TResult chapterDraftSavedFromLibraryEVT(Chapter chapterDraft),
+    TResult chapterPublishedFromChapterEVT(Chapter chapter),
+    TResult chapterPublishedFromLibraryEVT(Chapter chapter),
+    TResult resetBlocEVT(),
+    TResult seriesDraftDeletedFromLibraryEVT(String seriesDraftUID),
+    TResult seriesDraftSavedFromLibraryEVT(Series seriesDraft),
+    TResult seriesPublishedFromHomeEVT(Series series),
+    TResult seriesPublishedFromLibraryEVT(Series series),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (seriesPublishedFromLibraryEVT != null) {
+      return seriesPublishedFromLibraryEVT(series);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object>({
+    @required
+        TResult chapterDraftDeletedFromLibraryEVT(
+            ChapterDraftDeletedFromLibraryEVT value),
+    @required
+        TResult chapterDraftSavedFromLibraryEVT(
+            ChapterDraftSavedFromLibraryEVT value),
+    @required
+        TResult chapterPublishedFromChapterEVT(
+            ChapterPublishedFromChapterEVT value),
+    @required
+        TResult chapterPublishedFromLibraryEVT(
+            ChapterPublishedFromLibraryEVT value),
+    @required TResult resetBlocEVT(ResetBlocEVT value),
+    @required
+        TResult seriesDraftDeletedFromLibraryEVT(
+            SeriesDraftDeletedFromLibraryEVT value),
+    @required
+        TResult seriesDraftSavedFromLibraryEVT(
+            SeriesDraftSavedFromLibraryEVT value),
+    @required
+        TResult seriesPublishedFromHomeEVT(SeriesPublishedFromHomeEVT value),
+    @required
+        TResult seriesPublishedFromLibraryEVT(
+            SeriesPublishedFromLibraryEVT value),
+  }) {
+    assert(chapterDraftDeletedFromLibraryEVT != null);
+    assert(chapterDraftSavedFromLibraryEVT != null);
+    assert(chapterPublishedFromChapterEVT != null);
+    assert(chapterPublishedFromLibraryEVT != null);
+    assert(resetBlocEVT != null);
+    assert(seriesDraftDeletedFromLibraryEVT != null);
+    assert(seriesDraftSavedFromLibraryEVT != null);
+    assert(seriesPublishedFromHomeEVT != null);
+    assert(seriesPublishedFromLibraryEVT != null);
+    return seriesPublishedFromLibraryEVT(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object>({
+    TResult chapterDraftDeletedFromLibraryEVT(
+        ChapterDraftDeletedFromLibraryEVT value),
+    TResult chapterDraftSavedFromLibraryEVT(
+        ChapterDraftSavedFromLibraryEVT value),
+    TResult chapterPublishedFromChapterEVT(
+        ChapterPublishedFromChapterEVT value),
+    TResult chapterPublishedFromLibraryEVT(
+        ChapterPublishedFromLibraryEVT value),
+    TResult resetBlocEVT(ResetBlocEVT value),
+    TResult seriesDraftDeletedFromLibraryEVT(
+        SeriesDraftDeletedFromLibraryEVT value),
+    TResult seriesDraftSavedFromLibraryEVT(
+        SeriesDraftSavedFromLibraryEVT value),
+    TResult seriesPublishedFromHomeEVT(SeriesPublishedFromHomeEVT value),
+    TResult seriesPublishedFromLibraryEVT(SeriesPublishedFromLibraryEVT value),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (seriesPublishedFromLibraryEVT != null) {
+      return seriesPublishedFromLibraryEVT(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SeriesPublishedFromLibraryEVT implements CoreDatabaseEvent {
+  const factory SeriesPublishedFromLibraryEVT(Series series) =
+      _$SeriesPublishedFromLibraryEVT;
+
+  Series get series;
+  $SeriesPublishedFromLibraryEVTCopyWith<SeriesPublishedFromLibraryEVT>
+      get copyWith;
 }
 
 /// @nodoc
@@ -1893,17 +1893,17 @@ class _$CoreDatabaseStateTearOff {
   }
 
 // ignore: unused_element
-  _ChapterPublishedFromLibrarySTE chapterPublishedFromLibrarySTE(
+  _ChapterPublishedFromChapterSTE chapterPublishedFromChapterSTE(
       Chapter chapter) {
-    return _ChapterPublishedFromLibrarySTE(
+    return _ChapterPublishedFromChapterSTE(
       chapter,
     );
   }
 
 // ignore: unused_element
-  _ChapterPublishedFromChapterSTE chapterPublishedFromChapterSTE(
+  _ChapterPublishedFromLibrarySTE chapterPublishedFromLibrarySTE(
       Chapter chapter) {
-    return _ChapterPublishedFromChapterSTE(
+    return _ChapterPublishedFromLibrarySTE(
       chapter,
     );
   }
@@ -1925,15 +1925,15 @@ class _$CoreDatabaseStateTearOff {
   }
 
 // ignore: unused_element
-  _SeriesPublishedFromLibrarySTE seriesPublishedFromLibrarySTE(Series series) {
-    return _SeriesPublishedFromLibrarySTE(
+  _SeriesPublishedFromHomeSTE seriesPublishedFromHomeSTE(Series series) {
+    return _SeriesPublishedFromHomeSTE(
       series,
     );
   }
 
 // ignore: unused_element
-  _SeriesPublishedFromHomeSTE seriesPublishedFromHomeSTE(Series series) {
-    return _SeriesPublishedFromHomeSTE(
+  _SeriesPublishedFromLibrarySTE seriesPublishedFromLibrarySTE(Series series) {
+    return _SeriesPublishedFromLibrarySTE(
       series,
     );
   }
@@ -1952,12 +1952,12 @@ mixin _$CoreDatabaseState {
         TResult chapterDraftDeletedFromLibrarySTE(
             String chapterDraftUID, String seriesDraftUID),
     @required TResult chapterDraftSavedFromLibrarySTE(Chapter chapterDraft),
-    @required TResult chapterPublishedFromLibrarySTE(Chapter chapter),
     @required TResult chapterPublishedFromChapterSTE(Chapter chapter),
+    @required TResult chapterPublishedFromLibrarySTE(Chapter chapter),
     @required TResult seriesDraftDeletedFromLibrarySTE(String seriesDraftUID),
     @required TResult seriesDraftSavedFromLibrarySTE(Series seriesDraft),
-    @required TResult seriesPublishedFromLibrarySTE(Series series),
     @required TResult seriesPublishedFromHomeSTE(Series series),
+    @required TResult seriesPublishedFromLibrarySTE(Series series),
   });
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
@@ -1965,12 +1965,12 @@ mixin _$CoreDatabaseState {
     TResult chapterDraftDeletedFromLibrarySTE(
         String chapterDraftUID, String seriesDraftUID),
     TResult chapterDraftSavedFromLibrarySTE(Chapter chapterDraft),
-    TResult chapterPublishedFromLibrarySTE(Chapter chapter),
     TResult chapterPublishedFromChapterSTE(Chapter chapter),
+    TResult chapterPublishedFromLibrarySTE(Chapter chapter),
     TResult seriesDraftDeletedFromLibrarySTE(String seriesDraftUID),
     TResult seriesDraftSavedFromLibrarySTE(Series seriesDraft),
-    TResult seriesPublishedFromLibrarySTE(Series series),
     TResult seriesPublishedFromHomeSTE(Series series),
+    TResult seriesPublishedFromLibrarySTE(Series series),
     @required TResult orElse(),
   });
   @optionalTypeArgs
@@ -1983,11 +1983,11 @@ mixin _$CoreDatabaseState {
         TResult chapterDraftSavedFromLibrarySTE(
             _ChapterDraftSavedFromLibrarySTE value),
     @required
-        TResult chapterPublishedFromLibrarySTE(
-            _ChapterPublishedFromLibrarySTE value),
-    @required
         TResult chapterPublishedFromChapterSTE(
             _ChapterPublishedFromChapterSTE value),
+    @required
+        TResult chapterPublishedFromLibrarySTE(
+            _ChapterPublishedFromLibrarySTE value),
     @required
         TResult seriesDraftDeletedFromLibrarySTE(
             _SeriesDraftDeletedFromLibrarySTE value),
@@ -1995,10 +1995,10 @@ mixin _$CoreDatabaseState {
         TResult seriesDraftSavedFromLibrarySTE(
             _SeriesDraftSavedFromLibrarySTE value),
     @required
+        TResult seriesPublishedFromHomeSTE(_SeriesPublishedFromHomeSTE value),
+    @required
         TResult seriesPublishedFromLibrarySTE(
             _SeriesPublishedFromLibrarySTE value),
-    @required
-        TResult seriesPublishedFromHomeSTE(_SeriesPublishedFromHomeSTE value),
   });
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
@@ -2007,16 +2007,16 @@ mixin _$CoreDatabaseState {
         _ChapterDraftDeletedFromLibrarySTE value),
     TResult chapterDraftSavedFromLibrarySTE(
         _ChapterDraftSavedFromLibrarySTE value),
-    TResult chapterPublishedFromLibrarySTE(
-        _ChapterPublishedFromLibrarySTE value),
     TResult chapterPublishedFromChapterSTE(
         _ChapterPublishedFromChapterSTE value),
+    TResult chapterPublishedFromLibrarySTE(
+        _ChapterPublishedFromLibrarySTE value),
     TResult seriesDraftDeletedFromLibrarySTE(
         _SeriesDraftDeletedFromLibrarySTE value),
     TResult seriesDraftSavedFromLibrarySTE(
         _SeriesDraftSavedFromLibrarySTE value),
-    TResult seriesPublishedFromLibrarySTE(_SeriesPublishedFromLibrarySTE value),
     TResult seriesPublishedFromHomeSTE(_SeriesPublishedFromHomeSTE value),
+    TResult seriesPublishedFromLibrarySTE(_SeriesPublishedFromLibrarySTE value),
     @required TResult orElse(),
   });
 }
@@ -2079,22 +2079,22 @@ class _$_Initial implements _Initial {
         TResult chapterDraftDeletedFromLibrarySTE(
             String chapterDraftUID, String seriesDraftUID),
     @required TResult chapterDraftSavedFromLibrarySTE(Chapter chapterDraft),
-    @required TResult chapterPublishedFromLibrarySTE(Chapter chapter),
     @required TResult chapterPublishedFromChapterSTE(Chapter chapter),
+    @required TResult chapterPublishedFromLibrarySTE(Chapter chapter),
     @required TResult seriesDraftDeletedFromLibrarySTE(String seriesDraftUID),
     @required TResult seriesDraftSavedFromLibrarySTE(Series seriesDraft),
-    @required TResult seriesPublishedFromLibrarySTE(Series series),
     @required TResult seriesPublishedFromHomeSTE(Series series),
+    @required TResult seriesPublishedFromLibrarySTE(Series series),
   }) {
     assert(initial != null);
     assert(chapterDraftDeletedFromLibrarySTE != null);
     assert(chapterDraftSavedFromLibrarySTE != null);
-    assert(chapterPublishedFromLibrarySTE != null);
     assert(chapterPublishedFromChapterSTE != null);
+    assert(chapterPublishedFromLibrarySTE != null);
     assert(seriesDraftDeletedFromLibrarySTE != null);
     assert(seriesDraftSavedFromLibrarySTE != null);
-    assert(seriesPublishedFromLibrarySTE != null);
     assert(seriesPublishedFromHomeSTE != null);
+    assert(seriesPublishedFromLibrarySTE != null);
     return initial();
   }
 
@@ -2105,12 +2105,12 @@ class _$_Initial implements _Initial {
     TResult chapterDraftDeletedFromLibrarySTE(
         String chapterDraftUID, String seriesDraftUID),
     TResult chapterDraftSavedFromLibrarySTE(Chapter chapterDraft),
-    TResult chapterPublishedFromLibrarySTE(Chapter chapter),
     TResult chapterPublishedFromChapterSTE(Chapter chapter),
+    TResult chapterPublishedFromLibrarySTE(Chapter chapter),
     TResult seriesDraftDeletedFromLibrarySTE(String seriesDraftUID),
     TResult seriesDraftSavedFromLibrarySTE(Series seriesDraft),
-    TResult seriesPublishedFromLibrarySTE(Series series),
     TResult seriesPublishedFromHomeSTE(Series series),
+    TResult seriesPublishedFromLibrarySTE(Series series),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -2131,11 +2131,11 @@ class _$_Initial implements _Initial {
         TResult chapterDraftSavedFromLibrarySTE(
             _ChapterDraftSavedFromLibrarySTE value),
     @required
-        TResult chapterPublishedFromLibrarySTE(
-            _ChapterPublishedFromLibrarySTE value),
-    @required
         TResult chapterPublishedFromChapterSTE(
             _ChapterPublishedFromChapterSTE value),
+    @required
+        TResult chapterPublishedFromLibrarySTE(
+            _ChapterPublishedFromLibrarySTE value),
     @required
         TResult seriesDraftDeletedFromLibrarySTE(
             _SeriesDraftDeletedFromLibrarySTE value),
@@ -2143,20 +2143,20 @@ class _$_Initial implements _Initial {
         TResult seriesDraftSavedFromLibrarySTE(
             _SeriesDraftSavedFromLibrarySTE value),
     @required
+        TResult seriesPublishedFromHomeSTE(_SeriesPublishedFromHomeSTE value),
+    @required
         TResult seriesPublishedFromLibrarySTE(
             _SeriesPublishedFromLibrarySTE value),
-    @required
-        TResult seriesPublishedFromHomeSTE(_SeriesPublishedFromHomeSTE value),
   }) {
     assert(initial != null);
     assert(chapterDraftDeletedFromLibrarySTE != null);
     assert(chapterDraftSavedFromLibrarySTE != null);
-    assert(chapterPublishedFromLibrarySTE != null);
     assert(chapterPublishedFromChapterSTE != null);
+    assert(chapterPublishedFromLibrarySTE != null);
     assert(seriesDraftDeletedFromLibrarySTE != null);
     assert(seriesDraftSavedFromLibrarySTE != null);
-    assert(seriesPublishedFromLibrarySTE != null);
     assert(seriesPublishedFromHomeSTE != null);
+    assert(seriesPublishedFromLibrarySTE != null);
     return initial(this);
   }
 
@@ -2168,16 +2168,16 @@ class _$_Initial implements _Initial {
         _ChapterDraftDeletedFromLibrarySTE value),
     TResult chapterDraftSavedFromLibrarySTE(
         _ChapterDraftSavedFromLibrarySTE value),
-    TResult chapterPublishedFromLibrarySTE(
-        _ChapterPublishedFromLibrarySTE value),
     TResult chapterPublishedFromChapterSTE(
         _ChapterPublishedFromChapterSTE value),
+    TResult chapterPublishedFromLibrarySTE(
+        _ChapterPublishedFromLibrarySTE value),
     TResult seriesDraftDeletedFromLibrarySTE(
         _SeriesDraftDeletedFromLibrarySTE value),
     TResult seriesDraftSavedFromLibrarySTE(
         _SeriesDraftSavedFromLibrarySTE value),
-    TResult seriesPublishedFromLibrarySTE(_SeriesPublishedFromLibrarySTE value),
     TResult seriesPublishedFromHomeSTE(_SeriesPublishedFromHomeSTE value),
+    TResult seriesPublishedFromLibrarySTE(_SeriesPublishedFromLibrarySTE value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -2278,22 +2278,22 @@ class _$_ChapterDraftDeletedFromLibrarySTE
         TResult chapterDraftDeletedFromLibrarySTE(
             String chapterDraftUID, String seriesDraftUID),
     @required TResult chapterDraftSavedFromLibrarySTE(Chapter chapterDraft),
-    @required TResult chapterPublishedFromLibrarySTE(Chapter chapter),
     @required TResult chapterPublishedFromChapterSTE(Chapter chapter),
+    @required TResult chapterPublishedFromLibrarySTE(Chapter chapter),
     @required TResult seriesDraftDeletedFromLibrarySTE(String seriesDraftUID),
     @required TResult seriesDraftSavedFromLibrarySTE(Series seriesDraft),
-    @required TResult seriesPublishedFromLibrarySTE(Series series),
     @required TResult seriesPublishedFromHomeSTE(Series series),
+    @required TResult seriesPublishedFromLibrarySTE(Series series),
   }) {
     assert(initial != null);
     assert(chapterDraftDeletedFromLibrarySTE != null);
     assert(chapterDraftSavedFromLibrarySTE != null);
-    assert(chapterPublishedFromLibrarySTE != null);
     assert(chapterPublishedFromChapterSTE != null);
+    assert(chapterPublishedFromLibrarySTE != null);
     assert(seriesDraftDeletedFromLibrarySTE != null);
     assert(seriesDraftSavedFromLibrarySTE != null);
-    assert(seriesPublishedFromLibrarySTE != null);
     assert(seriesPublishedFromHomeSTE != null);
+    assert(seriesPublishedFromLibrarySTE != null);
     return chapterDraftDeletedFromLibrarySTE(chapterDraftUID, seriesDraftUID);
   }
 
@@ -2304,12 +2304,12 @@ class _$_ChapterDraftDeletedFromLibrarySTE
     TResult chapterDraftDeletedFromLibrarySTE(
         String chapterDraftUID, String seriesDraftUID),
     TResult chapterDraftSavedFromLibrarySTE(Chapter chapterDraft),
-    TResult chapterPublishedFromLibrarySTE(Chapter chapter),
     TResult chapterPublishedFromChapterSTE(Chapter chapter),
+    TResult chapterPublishedFromLibrarySTE(Chapter chapter),
     TResult seriesDraftDeletedFromLibrarySTE(String seriesDraftUID),
     TResult seriesDraftSavedFromLibrarySTE(Series seriesDraft),
-    TResult seriesPublishedFromLibrarySTE(Series series),
     TResult seriesPublishedFromHomeSTE(Series series),
+    TResult seriesPublishedFromLibrarySTE(Series series),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -2330,11 +2330,11 @@ class _$_ChapterDraftDeletedFromLibrarySTE
         TResult chapterDraftSavedFromLibrarySTE(
             _ChapterDraftSavedFromLibrarySTE value),
     @required
-        TResult chapterPublishedFromLibrarySTE(
-            _ChapterPublishedFromLibrarySTE value),
-    @required
         TResult chapterPublishedFromChapterSTE(
             _ChapterPublishedFromChapterSTE value),
+    @required
+        TResult chapterPublishedFromLibrarySTE(
+            _ChapterPublishedFromLibrarySTE value),
     @required
         TResult seriesDraftDeletedFromLibrarySTE(
             _SeriesDraftDeletedFromLibrarySTE value),
@@ -2342,20 +2342,20 @@ class _$_ChapterDraftDeletedFromLibrarySTE
         TResult seriesDraftSavedFromLibrarySTE(
             _SeriesDraftSavedFromLibrarySTE value),
     @required
+        TResult seriesPublishedFromHomeSTE(_SeriesPublishedFromHomeSTE value),
+    @required
         TResult seriesPublishedFromLibrarySTE(
             _SeriesPublishedFromLibrarySTE value),
-    @required
-        TResult seriesPublishedFromHomeSTE(_SeriesPublishedFromHomeSTE value),
   }) {
     assert(initial != null);
     assert(chapterDraftDeletedFromLibrarySTE != null);
     assert(chapterDraftSavedFromLibrarySTE != null);
-    assert(chapterPublishedFromLibrarySTE != null);
     assert(chapterPublishedFromChapterSTE != null);
+    assert(chapterPublishedFromLibrarySTE != null);
     assert(seriesDraftDeletedFromLibrarySTE != null);
     assert(seriesDraftSavedFromLibrarySTE != null);
-    assert(seriesPublishedFromLibrarySTE != null);
     assert(seriesPublishedFromHomeSTE != null);
+    assert(seriesPublishedFromLibrarySTE != null);
     return chapterDraftDeletedFromLibrarySTE(this);
   }
 
@@ -2367,16 +2367,16 @@ class _$_ChapterDraftDeletedFromLibrarySTE
         _ChapterDraftDeletedFromLibrarySTE value),
     TResult chapterDraftSavedFromLibrarySTE(
         _ChapterDraftSavedFromLibrarySTE value),
-    TResult chapterPublishedFromLibrarySTE(
-        _ChapterPublishedFromLibrarySTE value),
     TResult chapterPublishedFromChapterSTE(
         _ChapterPublishedFromChapterSTE value),
+    TResult chapterPublishedFromLibrarySTE(
+        _ChapterPublishedFromLibrarySTE value),
     TResult seriesDraftDeletedFromLibrarySTE(
         _SeriesDraftDeletedFromLibrarySTE value),
     TResult seriesDraftSavedFromLibrarySTE(
         _SeriesDraftSavedFromLibrarySTE value),
-    TResult seriesPublishedFromLibrarySTE(_SeriesPublishedFromLibrarySTE value),
     TResult seriesPublishedFromHomeSTE(_SeriesPublishedFromHomeSTE value),
+    TResult seriesPublishedFromLibrarySTE(_SeriesPublishedFromLibrarySTE value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -2470,22 +2470,22 @@ class _$_ChapterDraftSavedFromLibrarySTE
         TResult chapterDraftDeletedFromLibrarySTE(
             String chapterDraftUID, String seriesDraftUID),
     @required TResult chapterDraftSavedFromLibrarySTE(Chapter chapterDraft),
-    @required TResult chapterPublishedFromLibrarySTE(Chapter chapter),
     @required TResult chapterPublishedFromChapterSTE(Chapter chapter),
+    @required TResult chapterPublishedFromLibrarySTE(Chapter chapter),
     @required TResult seriesDraftDeletedFromLibrarySTE(String seriesDraftUID),
     @required TResult seriesDraftSavedFromLibrarySTE(Series seriesDraft),
-    @required TResult seriesPublishedFromLibrarySTE(Series series),
     @required TResult seriesPublishedFromHomeSTE(Series series),
+    @required TResult seriesPublishedFromLibrarySTE(Series series),
   }) {
     assert(initial != null);
     assert(chapterDraftDeletedFromLibrarySTE != null);
     assert(chapterDraftSavedFromLibrarySTE != null);
-    assert(chapterPublishedFromLibrarySTE != null);
     assert(chapterPublishedFromChapterSTE != null);
+    assert(chapterPublishedFromLibrarySTE != null);
     assert(seriesDraftDeletedFromLibrarySTE != null);
     assert(seriesDraftSavedFromLibrarySTE != null);
-    assert(seriesPublishedFromLibrarySTE != null);
     assert(seriesPublishedFromHomeSTE != null);
+    assert(seriesPublishedFromLibrarySTE != null);
     return chapterDraftSavedFromLibrarySTE(chapterDraft);
   }
 
@@ -2496,12 +2496,12 @@ class _$_ChapterDraftSavedFromLibrarySTE
     TResult chapterDraftDeletedFromLibrarySTE(
         String chapterDraftUID, String seriesDraftUID),
     TResult chapterDraftSavedFromLibrarySTE(Chapter chapterDraft),
-    TResult chapterPublishedFromLibrarySTE(Chapter chapter),
     TResult chapterPublishedFromChapterSTE(Chapter chapter),
+    TResult chapterPublishedFromLibrarySTE(Chapter chapter),
     TResult seriesDraftDeletedFromLibrarySTE(String seriesDraftUID),
     TResult seriesDraftSavedFromLibrarySTE(Series seriesDraft),
-    TResult seriesPublishedFromLibrarySTE(Series series),
     TResult seriesPublishedFromHomeSTE(Series series),
+    TResult seriesPublishedFromLibrarySTE(Series series),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -2522,11 +2522,11 @@ class _$_ChapterDraftSavedFromLibrarySTE
         TResult chapterDraftSavedFromLibrarySTE(
             _ChapterDraftSavedFromLibrarySTE value),
     @required
-        TResult chapterPublishedFromLibrarySTE(
-            _ChapterPublishedFromLibrarySTE value),
-    @required
         TResult chapterPublishedFromChapterSTE(
             _ChapterPublishedFromChapterSTE value),
+    @required
+        TResult chapterPublishedFromLibrarySTE(
+            _ChapterPublishedFromLibrarySTE value),
     @required
         TResult seriesDraftDeletedFromLibrarySTE(
             _SeriesDraftDeletedFromLibrarySTE value),
@@ -2534,20 +2534,20 @@ class _$_ChapterDraftSavedFromLibrarySTE
         TResult seriesDraftSavedFromLibrarySTE(
             _SeriesDraftSavedFromLibrarySTE value),
     @required
+        TResult seriesPublishedFromHomeSTE(_SeriesPublishedFromHomeSTE value),
+    @required
         TResult seriesPublishedFromLibrarySTE(
             _SeriesPublishedFromLibrarySTE value),
-    @required
-        TResult seriesPublishedFromHomeSTE(_SeriesPublishedFromHomeSTE value),
   }) {
     assert(initial != null);
     assert(chapterDraftDeletedFromLibrarySTE != null);
     assert(chapterDraftSavedFromLibrarySTE != null);
-    assert(chapterPublishedFromLibrarySTE != null);
     assert(chapterPublishedFromChapterSTE != null);
+    assert(chapterPublishedFromLibrarySTE != null);
     assert(seriesDraftDeletedFromLibrarySTE != null);
     assert(seriesDraftSavedFromLibrarySTE != null);
-    assert(seriesPublishedFromLibrarySTE != null);
     assert(seriesPublishedFromHomeSTE != null);
+    assert(seriesPublishedFromLibrarySTE != null);
     return chapterDraftSavedFromLibrarySTE(this);
   }
 
@@ -2559,16 +2559,16 @@ class _$_ChapterDraftSavedFromLibrarySTE
         _ChapterDraftDeletedFromLibrarySTE value),
     TResult chapterDraftSavedFromLibrarySTE(
         _ChapterDraftSavedFromLibrarySTE value),
-    TResult chapterPublishedFromLibrarySTE(
-        _ChapterPublishedFromLibrarySTE value),
     TResult chapterPublishedFromChapterSTE(
         _ChapterPublishedFromChapterSTE value),
+    TResult chapterPublishedFromLibrarySTE(
+        _ChapterPublishedFromLibrarySTE value),
     TResult seriesDraftDeletedFromLibrarySTE(
         _SeriesDraftDeletedFromLibrarySTE value),
     TResult seriesDraftSavedFromLibrarySTE(
         _SeriesDraftSavedFromLibrarySTE value),
-    TResult seriesPublishedFromLibrarySTE(_SeriesPublishedFromLibrarySTE value),
     TResult seriesPublishedFromHomeSTE(_SeriesPublishedFromHomeSTE value),
+    TResult seriesPublishedFromLibrarySTE(_SeriesPublishedFromLibrarySTE value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -2585,195 +2585,6 @@ abstract class _ChapterDraftSavedFromLibrarySTE implements CoreDatabaseState {
 
   Chapter get chapterDraft;
   _$ChapterDraftSavedFromLibrarySTECopyWith<_ChapterDraftSavedFromLibrarySTE>
-      get copyWith;
-}
-
-/// @nodoc
-abstract class _$ChapterPublishedFromLibrarySTECopyWith<$Res> {
-  factory _$ChapterPublishedFromLibrarySTECopyWith(
-          _ChapterPublishedFromLibrarySTE value,
-          $Res Function(_ChapterPublishedFromLibrarySTE) then) =
-      __$ChapterPublishedFromLibrarySTECopyWithImpl<$Res>;
-  $Res call({Chapter chapter});
-}
-
-/// @nodoc
-class __$ChapterPublishedFromLibrarySTECopyWithImpl<$Res>
-    extends _$CoreDatabaseStateCopyWithImpl<$Res>
-    implements _$ChapterPublishedFromLibrarySTECopyWith<$Res> {
-  __$ChapterPublishedFromLibrarySTECopyWithImpl(
-      _ChapterPublishedFromLibrarySTE _value,
-      $Res Function(_ChapterPublishedFromLibrarySTE) _then)
-      : super(_value, (v) => _then(v as _ChapterPublishedFromLibrarySTE));
-
-  @override
-  _ChapterPublishedFromLibrarySTE get _value =>
-      super._value as _ChapterPublishedFromLibrarySTE;
-
-  @override
-  $Res call({
-    Object chapter = freezed,
-  }) {
-    return _then(_ChapterPublishedFromLibrarySTE(
-      chapter == freezed ? _value.chapter : chapter as Chapter,
-    ));
-  }
-}
-
-/// @nodoc
-class _$_ChapterPublishedFromLibrarySTE
-    implements _ChapterPublishedFromLibrarySTE {
-  const _$_ChapterPublishedFromLibrarySTE(this.chapter)
-      : assert(chapter != null);
-
-  @override
-  final Chapter chapter;
-
-  @override
-  String toString() {
-    return 'CoreDatabaseState.chapterPublishedFromLibrarySTE(chapter: $chapter)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is _ChapterPublishedFromLibrarySTE &&
-            (identical(other.chapter, chapter) ||
-                const DeepCollectionEquality().equals(other.chapter, chapter)));
-  }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(chapter);
-
-  @override
-  _$ChapterPublishedFromLibrarySTECopyWith<_ChapterPublishedFromLibrarySTE>
-      get copyWith => __$ChapterPublishedFromLibrarySTECopyWithImpl<
-          _ChapterPublishedFromLibrarySTE>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initial(),
-    @required
-        TResult chapterDraftDeletedFromLibrarySTE(
-            String chapterDraftUID, String seriesDraftUID),
-    @required TResult chapterDraftSavedFromLibrarySTE(Chapter chapterDraft),
-    @required TResult chapterPublishedFromLibrarySTE(Chapter chapter),
-    @required TResult chapterPublishedFromChapterSTE(Chapter chapter),
-    @required TResult seriesDraftDeletedFromLibrarySTE(String seriesDraftUID),
-    @required TResult seriesDraftSavedFromLibrarySTE(Series seriesDraft),
-    @required TResult seriesPublishedFromLibrarySTE(Series series),
-    @required TResult seriesPublishedFromHomeSTE(Series series),
-  }) {
-    assert(initial != null);
-    assert(chapterDraftDeletedFromLibrarySTE != null);
-    assert(chapterDraftSavedFromLibrarySTE != null);
-    assert(chapterPublishedFromLibrarySTE != null);
-    assert(chapterPublishedFromChapterSTE != null);
-    assert(seriesDraftDeletedFromLibrarySTE != null);
-    assert(seriesDraftSavedFromLibrarySTE != null);
-    assert(seriesPublishedFromLibrarySTE != null);
-    assert(seriesPublishedFromHomeSTE != null);
-    return chapterPublishedFromLibrarySTE(chapter);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initial(),
-    TResult chapterDraftDeletedFromLibrarySTE(
-        String chapterDraftUID, String seriesDraftUID),
-    TResult chapterDraftSavedFromLibrarySTE(Chapter chapterDraft),
-    TResult chapterPublishedFromLibrarySTE(Chapter chapter),
-    TResult chapterPublishedFromChapterSTE(Chapter chapter),
-    TResult seriesDraftDeletedFromLibrarySTE(String seriesDraftUID),
-    TResult seriesDraftSavedFromLibrarySTE(Series seriesDraft),
-    TResult seriesPublishedFromLibrarySTE(Series series),
-    TResult seriesPublishedFromHomeSTE(Series series),
-    @required TResult orElse(),
-  }) {
-    assert(orElse != null);
-    if (chapterPublishedFromLibrarySTE != null) {
-      return chapterPublishedFromLibrarySTE(chapter);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initial(_Initial value),
-    @required
-        TResult chapterDraftDeletedFromLibrarySTE(
-            _ChapterDraftDeletedFromLibrarySTE value),
-    @required
-        TResult chapterDraftSavedFromLibrarySTE(
-            _ChapterDraftSavedFromLibrarySTE value),
-    @required
-        TResult chapterPublishedFromLibrarySTE(
-            _ChapterPublishedFromLibrarySTE value),
-    @required
-        TResult chapterPublishedFromChapterSTE(
-            _ChapterPublishedFromChapterSTE value),
-    @required
-        TResult seriesDraftDeletedFromLibrarySTE(
-            _SeriesDraftDeletedFromLibrarySTE value),
-    @required
-        TResult seriesDraftSavedFromLibrarySTE(
-            _SeriesDraftSavedFromLibrarySTE value),
-    @required
-        TResult seriesPublishedFromLibrarySTE(
-            _SeriesPublishedFromLibrarySTE value),
-    @required
-        TResult seriesPublishedFromHomeSTE(_SeriesPublishedFromHomeSTE value),
-  }) {
-    assert(initial != null);
-    assert(chapterDraftDeletedFromLibrarySTE != null);
-    assert(chapterDraftSavedFromLibrarySTE != null);
-    assert(chapterPublishedFromLibrarySTE != null);
-    assert(chapterPublishedFromChapterSTE != null);
-    assert(seriesDraftDeletedFromLibrarySTE != null);
-    assert(seriesDraftSavedFromLibrarySTE != null);
-    assert(seriesPublishedFromLibrarySTE != null);
-    assert(seriesPublishedFromHomeSTE != null);
-    return chapterPublishedFromLibrarySTE(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initial(_Initial value),
-    TResult chapterDraftDeletedFromLibrarySTE(
-        _ChapterDraftDeletedFromLibrarySTE value),
-    TResult chapterDraftSavedFromLibrarySTE(
-        _ChapterDraftSavedFromLibrarySTE value),
-    TResult chapterPublishedFromLibrarySTE(
-        _ChapterPublishedFromLibrarySTE value),
-    TResult chapterPublishedFromChapterSTE(
-        _ChapterPublishedFromChapterSTE value),
-    TResult seriesDraftDeletedFromLibrarySTE(
-        _SeriesDraftDeletedFromLibrarySTE value),
-    TResult seriesDraftSavedFromLibrarySTE(
-        _SeriesDraftSavedFromLibrarySTE value),
-    TResult seriesPublishedFromLibrarySTE(_SeriesPublishedFromLibrarySTE value),
-    TResult seriesPublishedFromHomeSTE(_SeriesPublishedFromHomeSTE value),
-    @required TResult orElse(),
-  }) {
-    assert(orElse != null);
-    if (chapterPublishedFromLibrarySTE != null) {
-      return chapterPublishedFromLibrarySTE(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _ChapterPublishedFromLibrarySTE implements CoreDatabaseState {
-  const factory _ChapterPublishedFromLibrarySTE(Chapter chapter) =
-      _$_ChapterPublishedFromLibrarySTE;
-
-  Chapter get chapter;
-  _$ChapterPublishedFromLibrarySTECopyWith<_ChapterPublishedFromLibrarySTE>
       get copyWith;
 }
 
@@ -2848,22 +2659,22 @@ class _$_ChapterPublishedFromChapterSTE
         TResult chapterDraftDeletedFromLibrarySTE(
             String chapterDraftUID, String seriesDraftUID),
     @required TResult chapterDraftSavedFromLibrarySTE(Chapter chapterDraft),
-    @required TResult chapterPublishedFromLibrarySTE(Chapter chapter),
     @required TResult chapterPublishedFromChapterSTE(Chapter chapter),
+    @required TResult chapterPublishedFromLibrarySTE(Chapter chapter),
     @required TResult seriesDraftDeletedFromLibrarySTE(String seriesDraftUID),
     @required TResult seriesDraftSavedFromLibrarySTE(Series seriesDraft),
-    @required TResult seriesPublishedFromLibrarySTE(Series series),
     @required TResult seriesPublishedFromHomeSTE(Series series),
+    @required TResult seriesPublishedFromLibrarySTE(Series series),
   }) {
     assert(initial != null);
     assert(chapterDraftDeletedFromLibrarySTE != null);
     assert(chapterDraftSavedFromLibrarySTE != null);
-    assert(chapterPublishedFromLibrarySTE != null);
     assert(chapterPublishedFromChapterSTE != null);
+    assert(chapterPublishedFromLibrarySTE != null);
     assert(seriesDraftDeletedFromLibrarySTE != null);
     assert(seriesDraftSavedFromLibrarySTE != null);
-    assert(seriesPublishedFromLibrarySTE != null);
     assert(seriesPublishedFromHomeSTE != null);
+    assert(seriesPublishedFromLibrarySTE != null);
     return chapterPublishedFromChapterSTE(chapter);
   }
 
@@ -2874,12 +2685,12 @@ class _$_ChapterPublishedFromChapterSTE
     TResult chapterDraftDeletedFromLibrarySTE(
         String chapterDraftUID, String seriesDraftUID),
     TResult chapterDraftSavedFromLibrarySTE(Chapter chapterDraft),
-    TResult chapterPublishedFromLibrarySTE(Chapter chapter),
     TResult chapterPublishedFromChapterSTE(Chapter chapter),
+    TResult chapterPublishedFromLibrarySTE(Chapter chapter),
     TResult seriesDraftDeletedFromLibrarySTE(String seriesDraftUID),
     TResult seriesDraftSavedFromLibrarySTE(Series seriesDraft),
-    TResult seriesPublishedFromLibrarySTE(Series series),
     TResult seriesPublishedFromHomeSTE(Series series),
+    TResult seriesPublishedFromLibrarySTE(Series series),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -2900,11 +2711,11 @@ class _$_ChapterPublishedFromChapterSTE
         TResult chapterDraftSavedFromLibrarySTE(
             _ChapterDraftSavedFromLibrarySTE value),
     @required
-        TResult chapterPublishedFromLibrarySTE(
-            _ChapterPublishedFromLibrarySTE value),
-    @required
         TResult chapterPublishedFromChapterSTE(
             _ChapterPublishedFromChapterSTE value),
+    @required
+        TResult chapterPublishedFromLibrarySTE(
+            _ChapterPublishedFromLibrarySTE value),
     @required
         TResult seriesDraftDeletedFromLibrarySTE(
             _SeriesDraftDeletedFromLibrarySTE value),
@@ -2912,20 +2723,20 @@ class _$_ChapterPublishedFromChapterSTE
         TResult seriesDraftSavedFromLibrarySTE(
             _SeriesDraftSavedFromLibrarySTE value),
     @required
+        TResult seriesPublishedFromHomeSTE(_SeriesPublishedFromHomeSTE value),
+    @required
         TResult seriesPublishedFromLibrarySTE(
             _SeriesPublishedFromLibrarySTE value),
-    @required
-        TResult seriesPublishedFromHomeSTE(_SeriesPublishedFromHomeSTE value),
   }) {
     assert(initial != null);
     assert(chapterDraftDeletedFromLibrarySTE != null);
     assert(chapterDraftSavedFromLibrarySTE != null);
-    assert(chapterPublishedFromLibrarySTE != null);
     assert(chapterPublishedFromChapterSTE != null);
+    assert(chapterPublishedFromLibrarySTE != null);
     assert(seriesDraftDeletedFromLibrarySTE != null);
     assert(seriesDraftSavedFromLibrarySTE != null);
-    assert(seriesPublishedFromLibrarySTE != null);
     assert(seriesPublishedFromHomeSTE != null);
+    assert(seriesPublishedFromLibrarySTE != null);
     return chapterPublishedFromChapterSTE(this);
   }
 
@@ -2937,16 +2748,16 @@ class _$_ChapterPublishedFromChapterSTE
         _ChapterDraftDeletedFromLibrarySTE value),
     TResult chapterDraftSavedFromLibrarySTE(
         _ChapterDraftSavedFromLibrarySTE value),
-    TResult chapterPublishedFromLibrarySTE(
-        _ChapterPublishedFromLibrarySTE value),
     TResult chapterPublishedFromChapterSTE(
         _ChapterPublishedFromChapterSTE value),
+    TResult chapterPublishedFromLibrarySTE(
+        _ChapterPublishedFromLibrarySTE value),
     TResult seriesDraftDeletedFromLibrarySTE(
         _SeriesDraftDeletedFromLibrarySTE value),
     TResult seriesDraftSavedFromLibrarySTE(
         _SeriesDraftSavedFromLibrarySTE value),
-    TResult seriesPublishedFromLibrarySTE(_SeriesPublishedFromLibrarySTE value),
     TResult seriesPublishedFromHomeSTE(_SeriesPublishedFromHomeSTE value),
+    TResult seriesPublishedFromLibrarySTE(_SeriesPublishedFromLibrarySTE value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -2963,6 +2774,195 @@ abstract class _ChapterPublishedFromChapterSTE implements CoreDatabaseState {
 
   Chapter get chapter;
   _$ChapterPublishedFromChapterSTECopyWith<_ChapterPublishedFromChapterSTE>
+      get copyWith;
+}
+
+/// @nodoc
+abstract class _$ChapterPublishedFromLibrarySTECopyWith<$Res> {
+  factory _$ChapterPublishedFromLibrarySTECopyWith(
+          _ChapterPublishedFromLibrarySTE value,
+          $Res Function(_ChapterPublishedFromLibrarySTE) then) =
+      __$ChapterPublishedFromLibrarySTECopyWithImpl<$Res>;
+  $Res call({Chapter chapter});
+}
+
+/// @nodoc
+class __$ChapterPublishedFromLibrarySTECopyWithImpl<$Res>
+    extends _$CoreDatabaseStateCopyWithImpl<$Res>
+    implements _$ChapterPublishedFromLibrarySTECopyWith<$Res> {
+  __$ChapterPublishedFromLibrarySTECopyWithImpl(
+      _ChapterPublishedFromLibrarySTE _value,
+      $Res Function(_ChapterPublishedFromLibrarySTE) _then)
+      : super(_value, (v) => _then(v as _ChapterPublishedFromLibrarySTE));
+
+  @override
+  _ChapterPublishedFromLibrarySTE get _value =>
+      super._value as _ChapterPublishedFromLibrarySTE;
+
+  @override
+  $Res call({
+    Object chapter = freezed,
+  }) {
+    return _then(_ChapterPublishedFromLibrarySTE(
+      chapter == freezed ? _value.chapter : chapter as Chapter,
+    ));
+  }
+}
+
+/// @nodoc
+class _$_ChapterPublishedFromLibrarySTE
+    implements _ChapterPublishedFromLibrarySTE {
+  const _$_ChapterPublishedFromLibrarySTE(this.chapter)
+      : assert(chapter != null);
+
+  @override
+  final Chapter chapter;
+
+  @override
+  String toString() {
+    return 'CoreDatabaseState.chapterPublishedFromLibrarySTE(chapter: $chapter)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _ChapterPublishedFromLibrarySTE &&
+            (identical(other.chapter, chapter) ||
+                const DeepCollectionEquality().equals(other.chapter, chapter)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(chapter);
+
+  @override
+  _$ChapterPublishedFromLibrarySTECopyWith<_ChapterPublishedFromLibrarySTE>
+      get copyWith => __$ChapterPublishedFromLibrarySTECopyWithImpl<
+          _ChapterPublishedFromLibrarySTE>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object>({
+    @required TResult initial(),
+    @required
+        TResult chapterDraftDeletedFromLibrarySTE(
+            String chapterDraftUID, String seriesDraftUID),
+    @required TResult chapterDraftSavedFromLibrarySTE(Chapter chapterDraft),
+    @required TResult chapterPublishedFromChapterSTE(Chapter chapter),
+    @required TResult chapterPublishedFromLibrarySTE(Chapter chapter),
+    @required TResult seriesDraftDeletedFromLibrarySTE(String seriesDraftUID),
+    @required TResult seriesDraftSavedFromLibrarySTE(Series seriesDraft),
+    @required TResult seriesPublishedFromHomeSTE(Series series),
+    @required TResult seriesPublishedFromLibrarySTE(Series series),
+  }) {
+    assert(initial != null);
+    assert(chapterDraftDeletedFromLibrarySTE != null);
+    assert(chapterDraftSavedFromLibrarySTE != null);
+    assert(chapterPublishedFromChapterSTE != null);
+    assert(chapterPublishedFromLibrarySTE != null);
+    assert(seriesDraftDeletedFromLibrarySTE != null);
+    assert(seriesDraftSavedFromLibrarySTE != null);
+    assert(seriesPublishedFromHomeSTE != null);
+    assert(seriesPublishedFromLibrarySTE != null);
+    return chapterPublishedFromLibrarySTE(chapter);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object>({
+    TResult initial(),
+    TResult chapterDraftDeletedFromLibrarySTE(
+        String chapterDraftUID, String seriesDraftUID),
+    TResult chapterDraftSavedFromLibrarySTE(Chapter chapterDraft),
+    TResult chapterPublishedFromChapterSTE(Chapter chapter),
+    TResult chapterPublishedFromLibrarySTE(Chapter chapter),
+    TResult seriesDraftDeletedFromLibrarySTE(String seriesDraftUID),
+    TResult seriesDraftSavedFromLibrarySTE(Series seriesDraft),
+    TResult seriesPublishedFromHomeSTE(Series series),
+    TResult seriesPublishedFromLibrarySTE(Series series),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (chapterPublishedFromLibrarySTE != null) {
+      return chapterPublishedFromLibrarySTE(chapter);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object>({
+    @required TResult initial(_Initial value),
+    @required
+        TResult chapterDraftDeletedFromLibrarySTE(
+            _ChapterDraftDeletedFromLibrarySTE value),
+    @required
+        TResult chapterDraftSavedFromLibrarySTE(
+            _ChapterDraftSavedFromLibrarySTE value),
+    @required
+        TResult chapterPublishedFromChapterSTE(
+            _ChapterPublishedFromChapterSTE value),
+    @required
+        TResult chapterPublishedFromLibrarySTE(
+            _ChapterPublishedFromLibrarySTE value),
+    @required
+        TResult seriesDraftDeletedFromLibrarySTE(
+            _SeriesDraftDeletedFromLibrarySTE value),
+    @required
+        TResult seriesDraftSavedFromLibrarySTE(
+            _SeriesDraftSavedFromLibrarySTE value),
+    @required
+        TResult seriesPublishedFromHomeSTE(_SeriesPublishedFromHomeSTE value),
+    @required
+        TResult seriesPublishedFromLibrarySTE(
+            _SeriesPublishedFromLibrarySTE value),
+  }) {
+    assert(initial != null);
+    assert(chapterDraftDeletedFromLibrarySTE != null);
+    assert(chapterDraftSavedFromLibrarySTE != null);
+    assert(chapterPublishedFromChapterSTE != null);
+    assert(chapterPublishedFromLibrarySTE != null);
+    assert(seriesDraftDeletedFromLibrarySTE != null);
+    assert(seriesDraftSavedFromLibrarySTE != null);
+    assert(seriesPublishedFromHomeSTE != null);
+    assert(seriesPublishedFromLibrarySTE != null);
+    return chapterPublishedFromLibrarySTE(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object>({
+    TResult initial(_Initial value),
+    TResult chapterDraftDeletedFromLibrarySTE(
+        _ChapterDraftDeletedFromLibrarySTE value),
+    TResult chapterDraftSavedFromLibrarySTE(
+        _ChapterDraftSavedFromLibrarySTE value),
+    TResult chapterPublishedFromChapterSTE(
+        _ChapterPublishedFromChapterSTE value),
+    TResult chapterPublishedFromLibrarySTE(
+        _ChapterPublishedFromLibrarySTE value),
+    TResult seriesDraftDeletedFromLibrarySTE(
+        _SeriesDraftDeletedFromLibrarySTE value),
+    TResult seriesDraftSavedFromLibrarySTE(
+        _SeriesDraftSavedFromLibrarySTE value),
+    TResult seriesPublishedFromHomeSTE(_SeriesPublishedFromHomeSTE value),
+    TResult seriesPublishedFromLibrarySTE(_SeriesPublishedFromLibrarySTE value),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (chapterPublishedFromLibrarySTE != null) {
+      return chapterPublishedFromLibrarySTE(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _ChapterPublishedFromLibrarySTE implements CoreDatabaseState {
+  const factory _ChapterPublishedFromLibrarySTE(Chapter chapter) =
+      _$_ChapterPublishedFromLibrarySTE;
+
+  Chapter get chapter;
+  _$ChapterPublishedFromLibrarySTECopyWith<_ChapterPublishedFromLibrarySTE>
       get copyWith;
 }
 
@@ -3041,22 +3041,22 @@ class _$_SeriesDraftDeletedFromLibrarySTE
         TResult chapterDraftDeletedFromLibrarySTE(
             String chapterDraftUID, String seriesDraftUID),
     @required TResult chapterDraftSavedFromLibrarySTE(Chapter chapterDraft),
-    @required TResult chapterPublishedFromLibrarySTE(Chapter chapter),
     @required TResult chapterPublishedFromChapterSTE(Chapter chapter),
+    @required TResult chapterPublishedFromLibrarySTE(Chapter chapter),
     @required TResult seriesDraftDeletedFromLibrarySTE(String seriesDraftUID),
     @required TResult seriesDraftSavedFromLibrarySTE(Series seriesDraft),
-    @required TResult seriesPublishedFromLibrarySTE(Series series),
     @required TResult seriesPublishedFromHomeSTE(Series series),
+    @required TResult seriesPublishedFromLibrarySTE(Series series),
   }) {
     assert(initial != null);
     assert(chapterDraftDeletedFromLibrarySTE != null);
     assert(chapterDraftSavedFromLibrarySTE != null);
-    assert(chapterPublishedFromLibrarySTE != null);
     assert(chapterPublishedFromChapterSTE != null);
+    assert(chapterPublishedFromLibrarySTE != null);
     assert(seriesDraftDeletedFromLibrarySTE != null);
     assert(seriesDraftSavedFromLibrarySTE != null);
-    assert(seriesPublishedFromLibrarySTE != null);
     assert(seriesPublishedFromHomeSTE != null);
+    assert(seriesPublishedFromLibrarySTE != null);
     return seriesDraftDeletedFromLibrarySTE(seriesDraftUID);
   }
 
@@ -3067,12 +3067,12 @@ class _$_SeriesDraftDeletedFromLibrarySTE
     TResult chapterDraftDeletedFromLibrarySTE(
         String chapterDraftUID, String seriesDraftUID),
     TResult chapterDraftSavedFromLibrarySTE(Chapter chapterDraft),
-    TResult chapterPublishedFromLibrarySTE(Chapter chapter),
     TResult chapterPublishedFromChapterSTE(Chapter chapter),
+    TResult chapterPublishedFromLibrarySTE(Chapter chapter),
     TResult seriesDraftDeletedFromLibrarySTE(String seriesDraftUID),
     TResult seriesDraftSavedFromLibrarySTE(Series seriesDraft),
-    TResult seriesPublishedFromLibrarySTE(Series series),
     TResult seriesPublishedFromHomeSTE(Series series),
+    TResult seriesPublishedFromLibrarySTE(Series series),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -3093,11 +3093,11 @@ class _$_SeriesDraftDeletedFromLibrarySTE
         TResult chapterDraftSavedFromLibrarySTE(
             _ChapterDraftSavedFromLibrarySTE value),
     @required
-        TResult chapterPublishedFromLibrarySTE(
-            _ChapterPublishedFromLibrarySTE value),
-    @required
         TResult chapterPublishedFromChapterSTE(
             _ChapterPublishedFromChapterSTE value),
+    @required
+        TResult chapterPublishedFromLibrarySTE(
+            _ChapterPublishedFromLibrarySTE value),
     @required
         TResult seriesDraftDeletedFromLibrarySTE(
             _SeriesDraftDeletedFromLibrarySTE value),
@@ -3105,20 +3105,20 @@ class _$_SeriesDraftDeletedFromLibrarySTE
         TResult seriesDraftSavedFromLibrarySTE(
             _SeriesDraftSavedFromLibrarySTE value),
     @required
+        TResult seriesPublishedFromHomeSTE(_SeriesPublishedFromHomeSTE value),
+    @required
         TResult seriesPublishedFromLibrarySTE(
             _SeriesPublishedFromLibrarySTE value),
-    @required
-        TResult seriesPublishedFromHomeSTE(_SeriesPublishedFromHomeSTE value),
   }) {
     assert(initial != null);
     assert(chapterDraftDeletedFromLibrarySTE != null);
     assert(chapterDraftSavedFromLibrarySTE != null);
-    assert(chapterPublishedFromLibrarySTE != null);
     assert(chapterPublishedFromChapterSTE != null);
+    assert(chapterPublishedFromLibrarySTE != null);
     assert(seriesDraftDeletedFromLibrarySTE != null);
     assert(seriesDraftSavedFromLibrarySTE != null);
-    assert(seriesPublishedFromLibrarySTE != null);
     assert(seriesPublishedFromHomeSTE != null);
+    assert(seriesPublishedFromLibrarySTE != null);
     return seriesDraftDeletedFromLibrarySTE(this);
   }
 
@@ -3130,16 +3130,16 @@ class _$_SeriesDraftDeletedFromLibrarySTE
         _ChapterDraftDeletedFromLibrarySTE value),
     TResult chapterDraftSavedFromLibrarySTE(
         _ChapterDraftSavedFromLibrarySTE value),
-    TResult chapterPublishedFromLibrarySTE(
-        _ChapterPublishedFromLibrarySTE value),
     TResult chapterPublishedFromChapterSTE(
         _ChapterPublishedFromChapterSTE value),
+    TResult chapterPublishedFromLibrarySTE(
+        _ChapterPublishedFromLibrarySTE value),
     TResult seriesDraftDeletedFromLibrarySTE(
         _SeriesDraftDeletedFromLibrarySTE value),
     TResult seriesDraftSavedFromLibrarySTE(
         _SeriesDraftSavedFromLibrarySTE value),
-    TResult seriesPublishedFromLibrarySTE(_SeriesPublishedFromLibrarySTE value),
     TResult seriesPublishedFromHomeSTE(_SeriesPublishedFromHomeSTE value),
+    TResult seriesPublishedFromLibrarySTE(_SeriesPublishedFromLibrarySTE value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -3231,22 +3231,22 @@ class _$_SeriesDraftSavedFromLibrarySTE
         TResult chapterDraftDeletedFromLibrarySTE(
             String chapterDraftUID, String seriesDraftUID),
     @required TResult chapterDraftSavedFromLibrarySTE(Chapter chapterDraft),
-    @required TResult chapterPublishedFromLibrarySTE(Chapter chapter),
     @required TResult chapterPublishedFromChapterSTE(Chapter chapter),
+    @required TResult chapterPublishedFromLibrarySTE(Chapter chapter),
     @required TResult seriesDraftDeletedFromLibrarySTE(String seriesDraftUID),
     @required TResult seriesDraftSavedFromLibrarySTE(Series seriesDraft),
-    @required TResult seriesPublishedFromLibrarySTE(Series series),
     @required TResult seriesPublishedFromHomeSTE(Series series),
+    @required TResult seriesPublishedFromLibrarySTE(Series series),
   }) {
     assert(initial != null);
     assert(chapterDraftDeletedFromLibrarySTE != null);
     assert(chapterDraftSavedFromLibrarySTE != null);
-    assert(chapterPublishedFromLibrarySTE != null);
     assert(chapterPublishedFromChapterSTE != null);
+    assert(chapterPublishedFromLibrarySTE != null);
     assert(seriesDraftDeletedFromLibrarySTE != null);
     assert(seriesDraftSavedFromLibrarySTE != null);
-    assert(seriesPublishedFromLibrarySTE != null);
     assert(seriesPublishedFromHomeSTE != null);
+    assert(seriesPublishedFromLibrarySTE != null);
     return seriesDraftSavedFromLibrarySTE(seriesDraft);
   }
 
@@ -3257,12 +3257,12 @@ class _$_SeriesDraftSavedFromLibrarySTE
     TResult chapterDraftDeletedFromLibrarySTE(
         String chapterDraftUID, String seriesDraftUID),
     TResult chapterDraftSavedFromLibrarySTE(Chapter chapterDraft),
-    TResult chapterPublishedFromLibrarySTE(Chapter chapter),
     TResult chapterPublishedFromChapterSTE(Chapter chapter),
+    TResult chapterPublishedFromLibrarySTE(Chapter chapter),
     TResult seriesDraftDeletedFromLibrarySTE(String seriesDraftUID),
     TResult seriesDraftSavedFromLibrarySTE(Series seriesDraft),
-    TResult seriesPublishedFromLibrarySTE(Series series),
     TResult seriesPublishedFromHomeSTE(Series series),
+    TResult seriesPublishedFromLibrarySTE(Series series),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -3283,11 +3283,11 @@ class _$_SeriesDraftSavedFromLibrarySTE
         TResult chapterDraftSavedFromLibrarySTE(
             _ChapterDraftSavedFromLibrarySTE value),
     @required
-        TResult chapterPublishedFromLibrarySTE(
-            _ChapterPublishedFromLibrarySTE value),
-    @required
         TResult chapterPublishedFromChapterSTE(
             _ChapterPublishedFromChapterSTE value),
+    @required
+        TResult chapterPublishedFromLibrarySTE(
+            _ChapterPublishedFromLibrarySTE value),
     @required
         TResult seriesDraftDeletedFromLibrarySTE(
             _SeriesDraftDeletedFromLibrarySTE value),
@@ -3295,20 +3295,20 @@ class _$_SeriesDraftSavedFromLibrarySTE
         TResult seriesDraftSavedFromLibrarySTE(
             _SeriesDraftSavedFromLibrarySTE value),
     @required
+        TResult seriesPublishedFromHomeSTE(_SeriesPublishedFromHomeSTE value),
+    @required
         TResult seriesPublishedFromLibrarySTE(
             _SeriesPublishedFromLibrarySTE value),
-    @required
-        TResult seriesPublishedFromHomeSTE(_SeriesPublishedFromHomeSTE value),
   }) {
     assert(initial != null);
     assert(chapterDraftDeletedFromLibrarySTE != null);
     assert(chapterDraftSavedFromLibrarySTE != null);
-    assert(chapterPublishedFromLibrarySTE != null);
     assert(chapterPublishedFromChapterSTE != null);
+    assert(chapterPublishedFromLibrarySTE != null);
     assert(seriesDraftDeletedFromLibrarySTE != null);
     assert(seriesDraftSavedFromLibrarySTE != null);
-    assert(seriesPublishedFromLibrarySTE != null);
     assert(seriesPublishedFromHomeSTE != null);
+    assert(seriesPublishedFromLibrarySTE != null);
     return seriesDraftSavedFromLibrarySTE(this);
   }
 
@@ -3320,16 +3320,16 @@ class _$_SeriesDraftSavedFromLibrarySTE
         _ChapterDraftDeletedFromLibrarySTE value),
     TResult chapterDraftSavedFromLibrarySTE(
         _ChapterDraftSavedFromLibrarySTE value),
-    TResult chapterPublishedFromLibrarySTE(
-        _ChapterPublishedFromLibrarySTE value),
     TResult chapterPublishedFromChapterSTE(
         _ChapterPublishedFromChapterSTE value),
+    TResult chapterPublishedFromLibrarySTE(
+        _ChapterPublishedFromLibrarySTE value),
     TResult seriesDraftDeletedFromLibrarySTE(
         _SeriesDraftDeletedFromLibrarySTE value),
     TResult seriesDraftSavedFromLibrarySTE(
         _SeriesDraftSavedFromLibrarySTE value),
-    TResult seriesPublishedFromLibrarySTE(_SeriesPublishedFromLibrarySTE value),
     TResult seriesPublishedFromHomeSTE(_SeriesPublishedFromHomeSTE value),
+    TResult seriesPublishedFromLibrarySTE(_SeriesPublishedFromLibrarySTE value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -3346,6 +3346,192 @@ abstract class _SeriesDraftSavedFromLibrarySTE implements CoreDatabaseState {
 
   Series get seriesDraft;
   _$SeriesDraftSavedFromLibrarySTECopyWith<_SeriesDraftSavedFromLibrarySTE>
+      get copyWith;
+}
+
+/// @nodoc
+abstract class _$SeriesPublishedFromHomeSTECopyWith<$Res> {
+  factory _$SeriesPublishedFromHomeSTECopyWith(
+          _SeriesPublishedFromHomeSTE value,
+          $Res Function(_SeriesPublishedFromHomeSTE) then) =
+      __$SeriesPublishedFromHomeSTECopyWithImpl<$Res>;
+  $Res call({Series series});
+}
+
+/// @nodoc
+class __$SeriesPublishedFromHomeSTECopyWithImpl<$Res>
+    extends _$CoreDatabaseStateCopyWithImpl<$Res>
+    implements _$SeriesPublishedFromHomeSTECopyWith<$Res> {
+  __$SeriesPublishedFromHomeSTECopyWithImpl(_SeriesPublishedFromHomeSTE _value,
+      $Res Function(_SeriesPublishedFromHomeSTE) _then)
+      : super(_value, (v) => _then(v as _SeriesPublishedFromHomeSTE));
+
+  @override
+  _SeriesPublishedFromHomeSTE get _value =>
+      super._value as _SeriesPublishedFromHomeSTE;
+
+  @override
+  $Res call({
+    Object series = freezed,
+  }) {
+    return _then(_SeriesPublishedFromHomeSTE(
+      series == freezed ? _value.series : series as Series,
+    ));
+  }
+}
+
+/// @nodoc
+class _$_SeriesPublishedFromHomeSTE implements _SeriesPublishedFromHomeSTE {
+  const _$_SeriesPublishedFromHomeSTE(this.series) : assert(series != null);
+
+  @override
+  final Series series;
+
+  @override
+  String toString() {
+    return 'CoreDatabaseState.seriesPublishedFromHomeSTE(series: $series)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _SeriesPublishedFromHomeSTE &&
+            (identical(other.series, series) ||
+                const DeepCollectionEquality().equals(other.series, series)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(series);
+
+  @override
+  _$SeriesPublishedFromHomeSTECopyWith<_SeriesPublishedFromHomeSTE>
+      get copyWith => __$SeriesPublishedFromHomeSTECopyWithImpl<
+          _SeriesPublishedFromHomeSTE>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object>({
+    @required TResult initial(),
+    @required
+        TResult chapterDraftDeletedFromLibrarySTE(
+            String chapterDraftUID, String seriesDraftUID),
+    @required TResult chapterDraftSavedFromLibrarySTE(Chapter chapterDraft),
+    @required TResult chapterPublishedFromChapterSTE(Chapter chapter),
+    @required TResult chapterPublishedFromLibrarySTE(Chapter chapter),
+    @required TResult seriesDraftDeletedFromLibrarySTE(String seriesDraftUID),
+    @required TResult seriesDraftSavedFromLibrarySTE(Series seriesDraft),
+    @required TResult seriesPublishedFromHomeSTE(Series series),
+    @required TResult seriesPublishedFromLibrarySTE(Series series),
+  }) {
+    assert(initial != null);
+    assert(chapterDraftDeletedFromLibrarySTE != null);
+    assert(chapterDraftSavedFromLibrarySTE != null);
+    assert(chapterPublishedFromChapterSTE != null);
+    assert(chapterPublishedFromLibrarySTE != null);
+    assert(seriesDraftDeletedFromLibrarySTE != null);
+    assert(seriesDraftSavedFromLibrarySTE != null);
+    assert(seriesPublishedFromHomeSTE != null);
+    assert(seriesPublishedFromLibrarySTE != null);
+    return seriesPublishedFromHomeSTE(series);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object>({
+    TResult initial(),
+    TResult chapterDraftDeletedFromLibrarySTE(
+        String chapterDraftUID, String seriesDraftUID),
+    TResult chapterDraftSavedFromLibrarySTE(Chapter chapterDraft),
+    TResult chapterPublishedFromChapterSTE(Chapter chapter),
+    TResult chapterPublishedFromLibrarySTE(Chapter chapter),
+    TResult seriesDraftDeletedFromLibrarySTE(String seriesDraftUID),
+    TResult seriesDraftSavedFromLibrarySTE(Series seriesDraft),
+    TResult seriesPublishedFromHomeSTE(Series series),
+    TResult seriesPublishedFromLibrarySTE(Series series),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (seriesPublishedFromHomeSTE != null) {
+      return seriesPublishedFromHomeSTE(series);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object>({
+    @required TResult initial(_Initial value),
+    @required
+        TResult chapterDraftDeletedFromLibrarySTE(
+            _ChapterDraftDeletedFromLibrarySTE value),
+    @required
+        TResult chapterDraftSavedFromLibrarySTE(
+            _ChapterDraftSavedFromLibrarySTE value),
+    @required
+        TResult chapterPublishedFromChapterSTE(
+            _ChapterPublishedFromChapterSTE value),
+    @required
+        TResult chapterPublishedFromLibrarySTE(
+            _ChapterPublishedFromLibrarySTE value),
+    @required
+        TResult seriesDraftDeletedFromLibrarySTE(
+            _SeriesDraftDeletedFromLibrarySTE value),
+    @required
+        TResult seriesDraftSavedFromLibrarySTE(
+            _SeriesDraftSavedFromLibrarySTE value),
+    @required
+        TResult seriesPublishedFromHomeSTE(_SeriesPublishedFromHomeSTE value),
+    @required
+        TResult seriesPublishedFromLibrarySTE(
+            _SeriesPublishedFromLibrarySTE value),
+  }) {
+    assert(initial != null);
+    assert(chapterDraftDeletedFromLibrarySTE != null);
+    assert(chapterDraftSavedFromLibrarySTE != null);
+    assert(chapterPublishedFromChapterSTE != null);
+    assert(chapterPublishedFromLibrarySTE != null);
+    assert(seriesDraftDeletedFromLibrarySTE != null);
+    assert(seriesDraftSavedFromLibrarySTE != null);
+    assert(seriesPublishedFromHomeSTE != null);
+    assert(seriesPublishedFromLibrarySTE != null);
+    return seriesPublishedFromHomeSTE(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object>({
+    TResult initial(_Initial value),
+    TResult chapterDraftDeletedFromLibrarySTE(
+        _ChapterDraftDeletedFromLibrarySTE value),
+    TResult chapterDraftSavedFromLibrarySTE(
+        _ChapterDraftSavedFromLibrarySTE value),
+    TResult chapterPublishedFromChapterSTE(
+        _ChapterPublishedFromChapterSTE value),
+    TResult chapterPublishedFromLibrarySTE(
+        _ChapterPublishedFromLibrarySTE value),
+    TResult seriesDraftDeletedFromLibrarySTE(
+        _SeriesDraftDeletedFromLibrarySTE value),
+    TResult seriesDraftSavedFromLibrarySTE(
+        _SeriesDraftSavedFromLibrarySTE value),
+    TResult seriesPublishedFromHomeSTE(_SeriesPublishedFromHomeSTE value),
+    TResult seriesPublishedFromLibrarySTE(_SeriesPublishedFromLibrarySTE value),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (seriesPublishedFromHomeSTE != null) {
+      return seriesPublishedFromHomeSTE(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _SeriesPublishedFromHomeSTE implements CoreDatabaseState {
+  const factory _SeriesPublishedFromHomeSTE(Series series) =
+      _$_SeriesPublishedFromHomeSTE;
+
+  Series get series;
+  _$SeriesPublishedFromHomeSTECopyWith<_SeriesPublishedFromHomeSTE>
       get copyWith;
 }
 
@@ -3419,22 +3605,22 @@ class _$_SeriesPublishedFromLibrarySTE
         TResult chapterDraftDeletedFromLibrarySTE(
             String chapterDraftUID, String seriesDraftUID),
     @required TResult chapterDraftSavedFromLibrarySTE(Chapter chapterDraft),
-    @required TResult chapterPublishedFromLibrarySTE(Chapter chapter),
     @required TResult chapterPublishedFromChapterSTE(Chapter chapter),
+    @required TResult chapterPublishedFromLibrarySTE(Chapter chapter),
     @required TResult seriesDraftDeletedFromLibrarySTE(String seriesDraftUID),
     @required TResult seriesDraftSavedFromLibrarySTE(Series seriesDraft),
-    @required TResult seriesPublishedFromLibrarySTE(Series series),
     @required TResult seriesPublishedFromHomeSTE(Series series),
+    @required TResult seriesPublishedFromLibrarySTE(Series series),
   }) {
     assert(initial != null);
     assert(chapterDraftDeletedFromLibrarySTE != null);
     assert(chapterDraftSavedFromLibrarySTE != null);
-    assert(chapterPublishedFromLibrarySTE != null);
     assert(chapterPublishedFromChapterSTE != null);
+    assert(chapterPublishedFromLibrarySTE != null);
     assert(seriesDraftDeletedFromLibrarySTE != null);
     assert(seriesDraftSavedFromLibrarySTE != null);
-    assert(seriesPublishedFromLibrarySTE != null);
     assert(seriesPublishedFromHomeSTE != null);
+    assert(seriesPublishedFromLibrarySTE != null);
     return seriesPublishedFromLibrarySTE(series);
   }
 
@@ -3445,12 +3631,12 @@ class _$_SeriesPublishedFromLibrarySTE
     TResult chapterDraftDeletedFromLibrarySTE(
         String chapterDraftUID, String seriesDraftUID),
     TResult chapterDraftSavedFromLibrarySTE(Chapter chapterDraft),
-    TResult chapterPublishedFromLibrarySTE(Chapter chapter),
     TResult chapterPublishedFromChapterSTE(Chapter chapter),
+    TResult chapterPublishedFromLibrarySTE(Chapter chapter),
     TResult seriesDraftDeletedFromLibrarySTE(String seriesDraftUID),
     TResult seriesDraftSavedFromLibrarySTE(Series seriesDraft),
-    TResult seriesPublishedFromLibrarySTE(Series series),
     TResult seriesPublishedFromHomeSTE(Series series),
+    TResult seriesPublishedFromLibrarySTE(Series series),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -3471,11 +3657,11 @@ class _$_SeriesPublishedFromLibrarySTE
         TResult chapterDraftSavedFromLibrarySTE(
             _ChapterDraftSavedFromLibrarySTE value),
     @required
-        TResult chapterPublishedFromLibrarySTE(
-            _ChapterPublishedFromLibrarySTE value),
-    @required
         TResult chapterPublishedFromChapterSTE(
             _ChapterPublishedFromChapterSTE value),
+    @required
+        TResult chapterPublishedFromLibrarySTE(
+            _ChapterPublishedFromLibrarySTE value),
     @required
         TResult seriesDraftDeletedFromLibrarySTE(
             _SeriesDraftDeletedFromLibrarySTE value),
@@ -3483,20 +3669,20 @@ class _$_SeriesPublishedFromLibrarySTE
         TResult seriesDraftSavedFromLibrarySTE(
             _SeriesDraftSavedFromLibrarySTE value),
     @required
+        TResult seriesPublishedFromHomeSTE(_SeriesPublishedFromHomeSTE value),
+    @required
         TResult seriesPublishedFromLibrarySTE(
             _SeriesPublishedFromLibrarySTE value),
-    @required
-        TResult seriesPublishedFromHomeSTE(_SeriesPublishedFromHomeSTE value),
   }) {
     assert(initial != null);
     assert(chapterDraftDeletedFromLibrarySTE != null);
     assert(chapterDraftSavedFromLibrarySTE != null);
-    assert(chapterPublishedFromLibrarySTE != null);
     assert(chapterPublishedFromChapterSTE != null);
+    assert(chapterPublishedFromLibrarySTE != null);
     assert(seriesDraftDeletedFromLibrarySTE != null);
     assert(seriesDraftSavedFromLibrarySTE != null);
-    assert(seriesPublishedFromLibrarySTE != null);
     assert(seriesPublishedFromHomeSTE != null);
+    assert(seriesPublishedFromLibrarySTE != null);
     return seriesPublishedFromLibrarySTE(this);
   }
 
@@ -3508,16 +3694,16 @@ class _$_SeriesPublishedFromLibrarySTE
         _ChapterDraftDeletedFromLibrarySTE value),
     TResult chapterDraftSavedFromLibrarySTE(
         _ChapterDraftSavedFromLibrarySTE value),
-    TResult chapterPublishedFromLibrarySTE(
-        _ChapterPublishedFromLibrarySTE value),
     TResult chapterPublishedFromChapterSTE(
         _ChapterPublishedFromChapterSTE value),
+    TResult chapterPublishedFromLibrarySTE(
+        _ChapterPublishedFromLibrarySTE value),
     TResult seriesDraftDeletedFromLibrarySTE(
         _SeriesDraftDeletedFromLibrarySTE value),
     TResult seriesDraftSavedFromLibrarySTE(
         _SeriesDraftSavedFromLibrarySTE value),
-    TResult seriesPublishedFromLibrarySTE(_SeriesPublishedFromLibrarySTE value),
     TResult seriesPublishedFromHomeSTE(_SeriesPublishedFromHomeSTE value),
+    TResult seriesPublishedFromLibrarySTE(_SeriesPublishedFromLibrarySTE value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -3534,191 +3720,5 @@ abstract class _SeriesPublishedFromLibrarySTE implements CoreDatabaseState {
 
   Series get series;
   _$SeriesPublishedFromLibrarySTECopyWith<_SeriesPublishedFromLibrarySTE>
-      get copyWith;
-}
-
-/// @nodoc
-abstract class _$SeriesPublishedFromHomeSTECopyWith<$Res> {
-  factory _$SeriesPublishedFromHomeSTECopyWith(
-          _SeriesPublishedFromHomeSTE value,
-          $Res Function(_SeriesPublishedFromHomeSTE) then) =
-      __$SeriesPublishedFromHomeSTECopyWithImpl<$Res>;
-  $Res call({Series series});
-}
-
-/// @nodoc
-class __$SeriesPublishedFromHomeSTECopyWithImpl<$Res>
-    extends _$CoreDatabaseStateCopyWithImpl<$Res>
-    implements _$SeriesPublishedFromHomeSTECopyWith<$Res> {
-  __$SeriesPublishedFromHomeSTECopyWithImpl(_SeriesPublishedFromHomeSTE _value,
-      $Res Function(_SeriesPublishedFromHomeSTE) _then)
-      : super(_value, (v) => _then(v as _SeriesPublishedFromHomeSTE));
-
-  @override
-  _SeriesPublishedFromHomeSTE get _value =>
-      super._value as _SeriesPublishedFromHomeSTE;
-
-  @override
-  $Res call({
-    Object series = freezed,
-  }) {
-    return _then(_SeriesPublishedFromHomeSTE(
-      series == freezed ? _value.series : series as Series,
-    ));
-  }
-}
-
-/// @nodoc
-class _$_SeriesPublishedFromHomeSTE implements _SeriesPublishedFromHomeSTE {
-  const _$_SeriesPublishedFromHomeSTE(this.series) : assert(series != null);
-
-  @override
-  final Series series;
-
-  @override
-  String toString() {
-    return 'CoreDatabaseState.seriesPublishedFromHomeSTE(series: $series)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is _SeriesPublishedFromHomeSTE &&
-            (identical(other.series, series) ||
-                const DeepCollectionEquality().equals(other.series, series)));
-  }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(series);
-
-  @override
-  _$SeriesPublishedFromHomeSTECopyWith<_SeriesPublishedFromHomeSTE>
-      get copyWith => __$SeriesPublishedFromHomeSTECopyWithImpl<
-          _SeriesPublishedFromHomeSTE>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initial(),
-    @required
-        TResult chapterDraftDeletedFromLibrarySTE(
-            String chapterDraftUID, String seriesDraftUID),
-    @required TResult chapterDraftSavedFromLibrarySTE(Chapter chapterDraft),
-    @required TResult chapterPublishedFromLibrarySTE(Chapter chapter),
-    @required TResult chapterPublishedFromChapterSTE(Chapter chapter),
-    @required TResult seriesDraftDeletedFromLibrarySTE(String seriesDraftUID),
-    @required TResult seriesDraftSavedFromLibrarySTE(Series seriesDraft),
-    @required TResult seriesPublishedFromLibrarySTE(Series series),
-    @required TResult seriesPublishedFromHomeSTE(Series series),
-  }) {
-    assert(initial != null);
-    assert(chapterDraftDeletedFromLibrarySTE != null);
-    assert(chapterDraftSavedFromLibrarySTE != null);
-    assert(chapterPublishedFromLibrarySTE != null);
-    assert(chapterPublishedFromChapterSTE != null);
-    assert(seriesDraftDeletedFromLibrarySTE != null);
-    assert(seriesDraftSavedFromLibrarySTE != null);
-    assert(seriesPublishedFromLibrarySTE != null);
-    assert(seriesPublishedFromHomeSTE != null);
-    return seriesPublishedFromHomeSTE(series);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initial(),
-    TResult chapterDraftDeletedFromLibrarySTE(
-        String chapterDraftUID, String seriesDraftUID),
-    TResult chapterDraftSavedFromLibrarySTE(Chapter chapterDraft),
-    TResult chapterPublishedFromLibrarySTE(Chapter chapter),
-    TResult chapterPublishedFromChapterSTE(Chapter chapter),
-    TResult seriesDraftDeletedFromLibrarySTE(String seriesDraftUID),
-    TResult seriesDraftSavedFromLibrarySTE(Series seriesDraft),
-    TResult seriesPublishedFromLibrarySTE(Series series),
-    TResult seriesPublishedFromHomeSTE(Series series),
-    @required TResult orElse(),
-  }) {
-    assert(orElse != null);
-    if (seriesPublishedFromHomeSTE != null) {
-      return seriesPublishedFromHomeSTE(series);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initial(_Initial value),
-    @required
-        TResult chapterDraftDeletedFromLibrarySTE(
-            _ChapterDraftDeletedFromLibrarySTE value),
-    @required
-        TResult chapterDraftSavedFromLibrarySTE(
-            _ChapterDraftSavedFromLibrarySTE value),
-    @required
-        TResult chapterPublishedFromLibrarySTE(
-            _ChapterPublishedFromLibrarySTE value),
-    @required
-        TResult chapterPublishedFromChapterSTE(
-            _ChapterPublishedFromChapterSTE value),
-    @required
-        TResult seriesDraftDeletedFromLibrarySTE(
-            _SeriesDraftDeletedFromLibrarySTE value),
-    @required
-        TResult seriesDraftSavedFromLibrarySTE(
-            _SeriesDraftSavedFromLibrarySTE value),
-    @required
-        TResult seriesPublishedFromLibrarySTE(
-            _SeriesPublishedFromLibrarySTE value),
-    @required
-        TResult seriesPublishedFromHomeSTE(_SeriesPublishedFromHomeSTE value),
-  }) {
-    assert(initial != null);
-    assert(chapterDraftDeletedFromLibrarySTE != null);
-    assert(chapterDraftSavedFromLibrarySTE != null);
-    assert(chapterPublishedFromLibrarySTE != null);
-    assert(chapterPublishedFromChapterSTE != null);
-    assert(seriesDraftDeletedFromLibrarySTE != null);
-    assert(seriesDraftSavedFromLibrarySTE != null);
-    assert(seriesPublishedFromLibrarySTE != null);
-    assert(seriesPublishedFromHomeSTE != null);
-    return seriesPublishedFromHomeSTE(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initial(_Initial value),
-    TResult chapterDraftDeletedFromLibrarySTE(
-        _ChapterDraftDeletedFromLibrarySTE value),
-    TResult chapterDraftSavedFromLibrarySTE(
-        _ChapterDraftSavedFromLibrarySTE value),
-    TResult chapterPublishedFromLibrarySTE(
-        _ChapterPublishedFromLibrarySTE value),
-    TResult chapterPublishedFromChapterSTE(
-        _ChapterPublishedFromChapterSTE value),
-    TResult seriesDraftDeletedFromLibrarySTE(
-        _SeriesDraftDeletedFromLibrarySTE value),
-    TResult seriesDraftSavedFromLibrarySTE(
-        _SeriesDraftSavedFromLibrarySTE value),
-    TResult seriesPublishedFromLibrarySTE(_SeriesPublishedFromLibrarySTE value),
-    TResult seriesPublishedFromHomeSTE(_SeriesPublishedFromHomeSTE value),
-    @required TResult orElse(),
-  }) {
-    assert(orElse != null);
-    if (seriesPublishedFromHomeSTE != null) {
-      return seriesPublishedFromHomeSTE(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _SeriesPublishedFromHomeSTE implements CoreDatabaseState {
-  const factory _SeriesPublishedFromHomeSTE(Series series) =
-      _$_SeriesPublishedFromHomeSTE;
-
-  Series get series;
-  _$SeriesPublishedFromHomeSTECopyWith<_SeriesPublishedFromHomeSTE>
       get copyWith;
 }

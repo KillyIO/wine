@@ -14,6 +14,7 @@ import 'package:wine/domain/database/facades/online/i_online_placeholder_databas
 import 'package:wine/domain/database/facades/online/i_online_user_database_facade.dart';
 import 'package:wine/domain/database/failures/config_database_failure.dart';
 import 'package:wine/domain/database/failures/placeholder_database_failure.dart';
+import 'package:wine/domain/database/failures/user_database_failure.dart';
 import 'package:wine/domain/database/successes/config_database_success.dart';
 import 'package:wine/domain/database/successes/placeholder_database_success.dart';
 import 'package:wine/domain/database/successes/session_database_success.dart';

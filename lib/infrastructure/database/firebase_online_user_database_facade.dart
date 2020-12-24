@@ -3,6 +3,7 @@ import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
 import 'package:wine/domain/database/database_failure.dart';
 import 'package:wine/domain/database/facades/online/i_online_user_database_facade.dart';
+import 'package:wine/domain/database/failures/user_database_failure.dart';
 import 'package:wine/domain/database/successes/user_database_success.dart';
 import 'package:wine/domain/models/user.dart';
 import 'package:wine/utils/extensions.dart';
@@ -17,17 +18,21 @@ class FirebaseOnlineUserDatabaseFacade extends IOnlineUserDatabaseFacade {
   final FirebaseFirestore _firestore;
 
   @override
-  Future<Either<DatabaseFailure, UserDatabaseSuccess>> loadUser(
+  Future<Either<UserDatabaseFailure, UserDatabaseSuccess>> loadUser(
     String userUID,
   ) async {
-    final documentSnapshot =
-        await _firestore.collection(Paths.usersPath).doc(userUID).get();
+    try {
+      final documentSnapshot =
+          await _firestore.collection(Paths.usersPath).doc(userUID).get();
 
-    if (documentSnapshot != null && documentSnapshot.exists) {
-      final user = User.fromFirestore(documentSnapshot);
-      return right(UserDatabaseSuccess.userLoadedSCS(user));
+      if (documentSnapshot != null && documentSnapshot.exists) {
+        final user = User.fromFirestore(documentSnapshot);
+        return right(UserDatabaseSuccess.userLoadedSCS(user));
+      }
+      return left(const UserDatabaseFailure.userNotFoundFLR());
+    } catch (_) {
+      return left(const UserDatabaseFailure.serverErrorFLR());
     }
-    return left(const DatabaseFailure.failedToLoadOnlineData());
   }
 
   @override
