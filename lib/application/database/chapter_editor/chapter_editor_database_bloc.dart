@@ -175,7 +175,7 @@ class ChapterEditorDatabaseBloc
       chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT: (
         event,
       ) async* {
-        final chapterDraft = state.chapterDraft;
+        var chapterDraft = state.chapterDraft;
 
         final failureOrSuccess =
             await _localSessionDatabaseFacade.fetchSession()
@@ -183,9 +183,10 @@ class ChapterEditorDatabaseBloc
                 (_) {},
                 (success) {
                   if (success is SessionFetchedSCS) {
-                    chapterDraft
-                      ..authorUID = success.session.uid
-                      ..authorUsername = success.session.username;
+                    chapterDraft = chapterDraft.copyWith(
+                      authorUID: success.session.uid,
+                      authorUsername: success.session.username,
+                    );
                   }
                 },
               );
@@ -242,16 +243,17 @@ class ChapterEditorDatabaseBloc
       chapterEditorLaunchedFromPreviousChapterEVT: (event) async* {
         final uuid = Uuid();
 
-        final chapterDraft = state.chapterDraft
-          ..copyrights = event.previousChapter.copyrights
-          ..genre = event.previousChapter.genre
-          ..genreOptional = event.previousChapter.genreOptional
-          ..index = event.previousChapter.index + 1
-          ..isNSFW = event.previousChapter.isNSFW
-          ..language = event.previousChapter.language
-          ..previousChapterUID = event.previousChapter.uid
-          ..seriesUID = event.previousChapter.seriesUID
-          ..uid = uuid.v4();
+        final chapterDraft = state.chapterDraft.copyWith(
+          copyrights: event.previousChapter.copyrights,
+          genre: event.previousChapter.genre,
+          genreOptional: event.previousChapter.genreOptional,
+          index: event.previousChapter.index,
+          isNSFW: event.previousChapter.isNSFW,
+          language: event.previousChapter.language,
+          previousChapterUID: event.previousChapter.uid,
+          seriesUID: event.previousChapter.seriesUID,
+          uid: uuid.v4(),
+        );
 
         yield state.copyWith(
           chapterDraft: chapterDraft,
@@ -276,14 +278,15 @@ class ChapterEditorDatabaseBloc
       chapterEditorLaunchedFromSeriesEditorEVT: (event) async* {
         final uuid = Uuid();
 
-        final chapterDraft = state.chapterDraft
-          ..genre = event.seriesDraft.genre
-          ..genreOptional = event.seriesDraft.genreOptional
-          ..index = 1
-          ..isNSFW = event.seriesDraft.isNSFW
-          ..language = event.seriesDraft.language
-          ..seriesUID = event.seriesDraft.uid
-          ..uid = uuid.v4();
+        final chapterDraft = state.chapterDraft.copyWith(
+          genre: event.seriesDraft.genre,
+          genreOptional: event.seriesDraft.genreOptional,
+          index: 1,
+          isNSFW: event.seriesDraft.isNSFW,
+          language: event.seriesDraft.language,
+          seriesUID: event.seriesDraft.uid,
+          uid: uuid.v4(),
+        );
 
         yield state.copyWith(
           chapterDraft: chapterDraft,
@@ -406,7 +409,7 @@ class ChapterEditorDatabaseBloc
         final isLanguageValid = state.language.isValid();
         final isCopyrightsValid = state.copyrights.isValid();
 
-        final chapterDraft = state.chapterDraft;
+        var chapterDraft = state.chapterDraft;
 
         if (isTitleValid &&
             isStoryValid &&
@@ -414,18 +417,19 @@ class ChapterEditorDatabaseBloc
             isLanguageValid &&
             isCopyrightsValid) {
           final currentTime = DateTime.now().millisecondsSinceEpoch;
-          chapterDraft
-            ..copyrights = state.copyrights.getOrCrash()
-            ..coverURL = state.chapterCoverURL
-            ..createdAt = currentTime
-            ..genre = state.genre.getOrCrash()
-            ..genreOptional = state.genreOptional.getOrCrash().isEmptyToNull
-            ..isLastChapter = state.isLastChapter
-            ..isNSFW = state.isNSFW
-            ..language = state.language.getOrCrash()
-            ..story = state.story.getOrCrash()
-            ..title = state.title.getOrCrash()
-            ..updatedAt = currentTime;
+          chapterDraft = chapterDraft.copyWith(
+            copyrights: state.copyrights.getOrCrash(),
+            coverURL: state.chapterCoverURL,
+            createdAt: currentTime,
+            genre: state.genre.getOrCrash(),
+            genreOptional: state.genreOptional.getOrCrash().isEmptyToNull,
+            isLastChapter: state.isLastChapter,
+            isNSFW: state.isNSFW,
+            language: state.language.getOrCrash(),
+            story: state.story.getOrCrash(),
+            title: state.title.getOrCrash(),
+            updatedAt: currentTime,
+          );
 
           failureOrSuccess =
               await _onlineChapterDatabaseFacade.publishChapter(chapterDraft);
@@ -463,18 +467,19 @@ class ChapterEditorDatabaseBloc
         );
 
         final currentTime = DateTime.now().millisecondsSinceEpoch;
-        final chapterDraft = state.chapterDraft
-          ..copyrights = state.copyrightsStr
-          ..coverURL = state.chapterCoverURL
-          ..createdAt = currentTime
-          ..genre = state.genreStr
-          ..genreOptional = state.genreOptionalStr
-          ..isLastChapter = state.isLastChapter
-          ..isNSFW = state.isNSFW
-          ..language = state.languageStr
-          ..story = state.storyStr
-          ..title = state.titleStr
-          ..updatedAt = currentTime;
+        final chapterDraft = state.chapterDraft.copyWith(
+          copyrights: state.copyrightsStr,
+          coverURL: state.chapterCoverURL,
+          createdAt: currentTime,
+          genre: state.genreStr,
+          genreOptional: state.genreOptionalStr,
+          isLastChapter: state.isLastChapter,
+          isNSFW: state.isNSFW,
+          language: state.languageStr,
+          story: state.storyStr,
+          title: state.titleStr,
+          updatedAt: currentTime,
+        );
 
         final failureOrSuccess = await _onlineChapterDraftDatabaseFacade
             .saveChapterDraft(chapterDraft);
@@ -493,11 +498,12 @@ class ChapterEditorDatabaseBloc
       },
       seriesDraftLoadedEVT: (event) async* {
         final currentTime = DateTime.now().millisecondsSinceEpoch;
-        final series = event.seriesDraft
-          ..createdAt = currentTime
-          ..genreOptional = event.seriesDraft.genreOptional.isEmptyToNull
-          ..subtitle = event.seriesDraft.subtitle.isEmptyToNull
-          ..updatedAt = currentTime;
+        final series = event.seriesDraft.copyWith(
+          createdAt: currentTime,
+          genreOptional: event.seriesDraft.genreOptional.isEmptyToNull,
+          subtitle: event.seriesDraft.subtitle.isEmptyToNull,
+          updatedAt: currentTime,
+        );
 
         final failureOrSuccess =
             await _onlineSeriesDatabaseFacade.publishSeries(series);
@@ -529,7 +535,7 @@ class ChapterEditorDatabaseBloc
         final randomKey =
             placeholderKeys[random.nextInt(placeholderKeys.length)];
 
-        final chapterDraft = state.chapterDraft;
+        var chapterDraft = state.chapterDraft;
 
         final failureOrSuccess = await _localPlaceholderDatabaseFacade
             .fetchPlaceholderByKey(randomKey)
@@ -537,7 +543,8 @@ class ChapterEditorDatabaseBloc
             (_) {},
             (success) {
               if (success is PlaceholderFetchedSCS) {
-                chapterDraft.coverURL = success.placeholder;
+                chapterDraft =
+                    chapterDraft.copyWith(coverURL: success.placeholder);
               }
             },
           );

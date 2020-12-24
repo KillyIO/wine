@@ -98,7 +98,8 @@ class FirebaseOnlineUserDatabaseFacade extends IOnlineUserDatabaseFacade {
     );
 
     if (dbUser != null) {
-      finalUser = dbUser..updatedAt = DateTime.now().millisecondsSinceEpoch;
+      finalUser =
+          dbUser.copyWith(updatedAt: DateTime.now().millisecondsSinceEpoch);
     }
 
     final mapReference =

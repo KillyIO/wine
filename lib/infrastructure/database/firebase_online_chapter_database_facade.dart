@@ -328,7 +328,7 @@ class FirebaseOnlineChapterDatabaseFacade
         (_) {},
         (success) {
           if (success is ChapterCoverUploadedSCS) {
-            chapter.coverURL = success.coverURL;
+            chapter = chapter.copyWith(coverURL: success.coverURL);
           }
         },
       );

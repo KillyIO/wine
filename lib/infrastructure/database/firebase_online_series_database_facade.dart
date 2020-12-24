@@ -400,7 +400,7 @@ class FirebaseOnlineSeriesDatabaseFacade
           (_) {},
           (success) {
             if (success is SeriesCoverUploadedSCS) {
-              series.coverURL = success.coverURL;
+              series = series.copyWith(coverURL: success.coverURL);
             }
           },
         );
