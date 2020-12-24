@@ -76,9 +76,8 @@ class ChapterEditorListeners {
                     .add(CoreDatabaseEvent.chapterDraftSavedFromLibraryEVT(
                       subSuccess.chapterDraft,
                     ));
-
-                ExtendedNavigator.root.pop();
               }
+              ExtendedNavigator.root.pop();
             },
             orElse: () {},
           );

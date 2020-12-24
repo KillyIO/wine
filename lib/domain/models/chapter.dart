@@ -189,7 +189,7 @@ class Chapter extends Equatable {
   }
 
   @override
-  List<Object> get props => [authorUID, uid];
+  List<Object> get props => [authorUID, uid, seriesUID];
 
   @override
   bool get stringify => true;

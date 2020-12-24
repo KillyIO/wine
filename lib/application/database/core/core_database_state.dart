@@ -18,14 +18,14 @@ abstract class CoreDatabaseState with _$CoreDatabaseState {
   ) = _ChapterDraftSavedFromLibrarySTE;
 
   /// @nodoc
-  const factory CoreDatabaseState.chapterPublishedFromLibrarySTE(
-    Chapter chapter,
-  ) = _ChapterPublishedFromLibrarySTE;
-
-  /// @nodoc
   const factory CoreDatabaseState.chapterPublishedFromChapterSTE(
     Chapter chapter,
   ) = _ChapterPublishedFromChapterSTE;
+
+  /// @nodoc
+  const factory CoreDatabaseState.chapterPublishedFromLibrarySTE(
+    Chapter chapter,
+  ) = _ChapterPublishedFromLibrarySTE;
 
   /// @nodoc
   const factory CoreDatabaseState.seriesDraftDeletedFromLibrarySTE(
@@ -38,10 +38,10 @@ abstract class CoreDatabaseState with _$CoreDatabaseState {
   ) = _SeriesDraftSavedFromLibrarySTE;
 
   /// @nodoc
-  const factory CoreDatabaseState.seriesPublishedFromLibrarySTE(Series series) =
-      _SeriesPublishedFromLibrarySTE;
-
-  /// @nodoc
   const factory CoreDatabaseState.seriesPublishedFromHomeSTE(Series series) =
       _SeriesPublishedFromHomeSTE;
+
+  /// @nodoc
+  const factory CoreDatabaseState.seriesPublishedFromLibrarySTE(Series series) =
+      _SeriesPublishedFromLibrarySTE;
 }

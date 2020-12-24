@@ -25,17 +25,35 @@ class CoreDatabaseBloc extends Bloc<CoreDatabaseEvent, CoreDatabaseState> {
           seriesDraftUID: event.seriesDraftUID,
         );
       },
-      chapterDraftSavedFromLibraryEVT: (event) async* {},
-      chapterPublishedFromLibraryEVT: (event) async* {},
-      chapterPublishedFromChapterEVT: (event) async* {},
+      chapterDraftSavedFromLibraryEVT: (event) async* {
+        yield CoreDatabaseState.chapterDraftSavedFromLibrarySTE(
+          event.chapterDraft,
+        );
+      },
+      chapterPublishedFromChapterEVT: (event) async* {
+        yield CoreDatabaseState.chapterPublishedFromChapterSTE(event.chapter);
+      },
+      chapterPublishedFromLibraryEVT: (event) async* {
+        yield CoreDatabaseState.chapterPublishedFromLibrarySTE(event.chapter);
+      },
       resetBlocEVT: (event) async* {
         yield const CoreDatabaseState.initial();
       },
-      seriesDraftDeletedFromLibraryEVT: (event) async* {},
-      seriesDraftSavedFromLibraryEVT: (event) async* {},
-      seriesPublishedFromLibraryEVT: (event) async* {},
+      seriesDraftDeletedFromLibraryEVT: (event) async* {
+        yield CoreDatabaseState.seriesDraftDeletedFromLibrarySTE(
+          event.seriesDraftUID,
+        );
+      },
+      seriesDraftSavedFromLibraryEVT: (event) async* {
+        yield CoreDatabaseState.seriesDraftSavedFromLibrarySTE(
+          event.seriesDraft,
+        );
+      },
       seriesPublishedFromHomeEVT: (event) async* {
         yield CoreDatabaseState.seriesPublishedFromHomeSTE(event.series);
+      },
+      seriesPublishedFromLibraryEVT: (event) async* {
+        yield CoreDatabaseState.seriesPublishedFromLibrarySTE(event.series);
       },
     );
   }

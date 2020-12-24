@@ -88,7 +88,8 @@ class ChapterEditorFormLayout extends StatelessWidget with Getters {
                     hintText:
                         // ignore: lines_longer_than_80_chars
                         'More than ${Constants.chapterStoryMinWords} words and less than ${Constants.chapterStoryMaxWords} words',
-                    maxLines: null,
+                    keyboardType: TextInputType.multiline,
+                    maxLines: 10,
                     onChanged: chapterEditorDatabaseMethods.storyChanged,
                     validator: (_) =>
                         chapterEditorDatabaseValidators.storyValidator(),

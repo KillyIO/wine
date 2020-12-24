@@ -15,14 +15,14 @@ abstract class CoreDatabaseEvent with _$CoreDatabaseEvent {
   ) = ChapterDraftSavedFromLibraryEVT;
 
   /// @nodoc
-  const factory CoreDatabaseEvent.chapterPublishedFromLibraryEVT(
-    Chapter chapter,
-  ) = ChapterPublishedFromLibraryEVT;
-
-  /// @nodoc
   const factory CoreDatabaseEvent.chapterPublishedFromChapterEVT(
     Chapter chapter,
   ) = ChapterPublishedFromChapterEVT;
+
+  /// @nodoc
+  const factory CoreDatabaseEvent.chapterPublishedFromLibraryEVT(
+    Chapter chapter,
+  ) = ChapterPublishedFromLibraryEVT;
 
   /// @nodoc
   const factory CoreDatabaseEvent.resetBlocEVT() = ResetBlocEVT;
@@ -38,10 +38,10 @@ abstract class CoreDatabaseEvent with _$CoreDatabaseEvent {
   ) = SeriesDraftSavedFromLibraryEVT;
 
   /// @nodoc
-  const factory CoreDatabaseEvent.seriesPublishedFromLibraryEVT(Series series) =
-      SeriesPublishedFromLibraryEVT;
-
-  /// @nodoc
   const factory CoreDatabaseEvent.seriesPublishedFromHomeEVT(Series series) =
       SeriesPublishedFromHomeEVT;
+
+  /// @nodoc
+  const factory CoreDatabaseEvent.seriesPublishedFromLibraryEVT(Series series) =
+      SeriesPublishedFromLibraryEVT;
 }
