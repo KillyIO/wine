@@ -7,41 +7,42 @@ abstract class CoreDatabaseState with _$CoreDatabaseState {
   const factory CoreDatabaseState.initial() = _Initial;
 
   /// @nodoc
-  const factory CoreDatabaseState.chapterDraftDeletedFromLibrarySTE({
+  const factory CoreDatabaseState.chapterDraftDeletedFromLibraryState({
     String chapterDraftUID,
     String seriesDraftUID,
-  }) = _ChapterDraftDeletedFromLibrarySTE;
+  }) = _ChapterDraftDeletedFromLibraryState;
 
   /// @nodoc
-  const factory CoreDatabaseState.chapterDraftSavedFromLibrarySTE(
+  const factory CoreDatabaseState.chapterDraftSavedFromLibraryState(
     Chapter chapterDraft,
-  ) = _ChapterDraftSavedFromLibrarySTE;
+  ) = _ChapterDraftSavedFromLibraryState;
 
   /// @nodoc
-  const factory CoreDatabaseState.chapterPublishedFromChapterSTE(
+  const factory CoreDatabaseState.chapterPublishedFromChapterState(
     Chapter chapter,
-  ) = _ChapterPublishedFromChapterSTE;
+  ) = _ChapterPublishedFromChapterState;
 
   /// @nodoc
-  const factory CoreDatabaseState.chapterPublishedFromLibrarySTE(
+  const factory CoreDatabaseState.chapterPublishedFromLibraryState(
     Chapter chapter,
-  ) = _ChapterPublishedFromLibrarySTE;
+  ) = _ChapterPublishedFromLibraryState;
 
   /// @nodoc
-  const factory CoreDatabaseState.seriesDraftDeletedFromLibrarySTE(
+  const factory CoreDatabaseState.seriesDraftDeletedFromLibraryState(
     String seriesDraftUID,
-  ) = _SeriesDraftDeletedFromLibrarySTE;
+  ) = _SeriesDraftDeletedFromLibraryState;
 
   /// @nodoc
-  const factory CoreDatabaseState.seriesDraftSavedFromLibrarySTE(
+  const factory CoreDatabaseState.seriesDraftSavedFromLibraryState(
     Series seriesDraft,
-  ) = _SeriesDraftSavedFromLibrarySTE;
+  ) = _SeriesDraftSavedFromLibraryState;
 
   /// @nodoc
-  const factory CoreDatabaseState.seriesPublishedFromHomeSTE(Series series) =
-      _SeriesPublishedFromHomeSTE;
+  const factory CoreDatabaseState.seriesPublishedFromHomeState(Series series) =
+      _SeriesPublishedFromHomeState;
 
   /// @nodoc
-  const factory CoreDatabaseState.seriesPublishedFromLibrarySTE(Series series) =
-      _SeriesPublishedFromLibrarySTE;
+  const factory CoreDatabaseState.seriesPublishedFromLibraryState(
+    Series series,
+  ) = _SeriesPublishedFromLibraryState;
 }

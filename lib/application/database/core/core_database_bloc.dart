@@ -19,41 +19,41 @@ class CoreDatabaseBloc extends Bloc<CoreDatabaseEvent, CoreDatabaseState> {
   @override
   Stream<CoreDatabaseState> mapEventToState(CoreDatabaseEvent event) async* {
     yield* event.map(
-      chapterDraftDeletedFromLibraryEVT: (event) async* {
-        yield CoreDatabaseState.chapterDraftDeletedFromLibrarySTE(
+      chapterDraftDeletedFromLibraryEvent: (event) async* {
+        yield CoreDatabaseState.chapterDraftDeletedFromLibraryState(
           chapterDraftUID: event.chapterDraftUID,
           seriesDraftUID: event.seriesDraftUID,
         );
       },
-      chapterDraftSavedFromLibraryEVT: (event) async* {
-        yield CoreDatabaseState.chapterDraftSavedFromLibrarySTE(
+      chapterDraftSavedFromLibraryEvent: (event) async* {
+        yield CoreDatabaseState.chapterDraftSavedFromLibraryState(
           event.chapterDraft,
         );
       },
-      chapterPublishedFromChapterEVT: (event) async* {
-        yield CoreDatabaseState.chapterPublishedFromChapterSTE(event.chapter);
+      chapterPublishedFromChapterEvent: (event) async* {
+        yield CoreDatabaseState.chapterPublishedFromChapterState(event.chapter);
       },
-      chapterPublishedFromLibraryEVT: (event) async* {
-        yield CoreDatabaseState.chapterPublishedFromLibrarySTE(event.chapter);
+      chapterPublishedFromLibraryEvent: (event) async* {
+        yield CoreDatabaseState.chapterPublishedFromLibraryState(event.chapter);
       },
-      resetBlocEVT: (event) async* {
+      resetBlocEvent: (event) async* {
         yield const CoreDatabaseState.initial();
       },
-      seriesDraftDeletedFromLibraryEVT: (event) async* {
-        yield CoreDatabaseState.seriesDraftDeletedFromLibrarySTE(
+      seriesDraftDeletedFromLibraryEvent: (event) async* {
+        yield CoreDatabaseState.seriesDraftDeletedFromLibraryState(
           event.seriesDraftUID,
         );
       },
-      seriesDraftSavedFromLibraryEVT: (event) async* {
-        yield CoreDatabaseState.seriesDraftSavedFromLibrarySTE(
+      seriesDraftSavedFromLibraryEvent: (event) async* {
+        yield CoreDatabaseState.seriesDraftSavedFromLibraryState(
           event.seriesDraft,
         );
       },
-      seriesPublishedFromHomeEVT: (event) async* {
-        yield CoreDatabaseState.seriesPublishedFromHomeSTE(event.series);
+      seriesPublishedFromHomeEvent: (event) async* {
+        yield CoreDatabaseState.seriesPublishedFromHomeState(event.series);
       },
-      seriesPublishedFromLibraryEVT: (event) async* {
-        yield CoreDatabaseState.seriesPublishedFromLibrarySTE(event.series);
+      seriesPublishedFromLibraryEvent: (event) async* {
+        yield CoreDatabaseState.seriesPublishedFromLibraryState(event.series);
       },
     );
   }
