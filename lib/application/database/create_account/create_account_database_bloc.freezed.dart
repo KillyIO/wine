@@ -435,7 +435,7 @@ class _$CreateAccountDatabaseStateTearOff {
           Option<Either<DatabaseFailure, SessionDatabaseSuccess>>
               sessionDatabaseFailureOrSuccessOption,
       @required
-          Option<Either<DatabaseFailure, UserDatabaseSuccess>>
+          Option<Either<UserDatabaseFailure, UserDatabaseSuccess>>
               userDatabaseFailureOrSuccessOption,
       @required
           String email}) {
@@ -458,7 +458,7 @@ mixin _$CreateAccountDatabaseState {
   bool get isUpdating;
   Option<Either<DatabaseFailure, SessionDatabaseSuccess>>
       get sessionDatabaseFailureOrSuccessOption;
-  Option<Either<DatabaseFailure, UserDatabaseSuccess>>
+  Option<Either<UserDatabaseFailure, UserDatabaseSuccess>>
       get userDatabaseFailureOrSuccessOption;
   String get email;
 
@@ -474,7 +474,7 @@ abstract class $CreateAccountDatabaseStateCopyWith<$Res> {
       {bool isUpdating,
       Option<Either<DatabaseFailure, SessionDatabaseSuccess>>
           sessionDatabaseFailureOrSuccessOption,
-      Option<Either<DatabaseFailure, UserDatabaseSuccess>>
+      Option<Either<UserDatabaseFailure, UserDatabaseSuccess>>
           userDatabaseFailureOrSuccessOption,
       String email});
 }
@@ -507,7 +507,7 @@ class _$CreateAccountDatabaseStateCopyWithImpl<$Res>
           userDatabaseFailureOrSuccessOption == freezed
               ? _value.userDatabaseFailureOrSuccessOption
               : userDatabaseFailureOrSuccessOption
-                  as Option<Either<DatabaseFailure, UserDatabaseSuccess>>,
+                  as Option<Either<UserDatabaseFailure, UserDatabaseSuccess>>,
       email: email == freezed ? _value.email : email as String,
     ));
   }
@@ -525,7 +525,7 @@ abstract class _$CreateAccountDatabaseStateCopyWith<$Res>
       {bool isUpdating,
       Option<Either<DatabaseFailure, SessionDatabaseSuccess>>
           sessionDatabaseFailureOrSuccessOption,
-      Option<Either<DatabaseFailure, UserDatabaseSuccess>>
+      Option<Either<UserDatabaseFailure, UserDatabaseSuccess>>
           userDatabaseFailureOrSuccessOption,
       String email});
 }
@@ -561,7 +561,7 @@ class __$CreateAccountDatabaseStateCopyWithImpl<$Res>
           userDatabaseFailureOrSuccessOption == freezed
               ? _value.userDatabaseFailureOrSuccessOption
               : userDatabaseFailureOrSuccessOption
-                  as Option<Either<DatabaseFailure, UserDatabaseSuccess>>,
+                  as Option<Either<UserDatabaseFailure, UserDatabaseSuccess>>,
       email: email == freezed ? _value.email : email as String,
     ));
   }
@@ -585,7 +585,7 @@ class _$_CreateAccountDatabaseState implements _CreateAccountDatabaseState {
   final Option<Either<DatabaseFailure, SessionDatabaseSuccess>>
       sessionDatabaseFailureOrSuccessOption;
   @override
-  final Option<Either<DatabaseFailure, UserDatabaseSuccess>>
+  final Option<Either<UserDatabaseFailure, UserDatabaseSuccess>>
       userDatabaseFailureOrSuccessOption;
   @override
   final String email;
@@ -640,7 +640,7 @@ abstract class _CreateAccountDatabaseState
           Option<Either<DatabaseFailure, SessionDatabaseSuccess>>
               sessionDatabaseFailureOrSuccessOption,
       @required
-          Option<Either<DatabaseFailure, UserDatabaseSuccess>>
+          Option<Either<UserDatabaseFailure, UserDatabaseSuccess>>
               userDatabaseFailureOrSuccessOption,
       @required
           String email}) = _$_CreateAccountDatabaseState;
@@ -651,7 +651,7 @@ abstract class _CreateAccountDatabaseState
   Option<Either<DatabaseFailure, SessionDatabaseSuccess>>
       get sessionDatabaseFailureOrSuccessOption;
   @override
-  Option<Either<DatabaseFailure, UserDatabaseSuccess>>
+  Option<Either<UserDatabaseFailure, UserDatabaseSuccess>>
       get userDatabaseFailureOrSuccessOption;
   @override
   String get email;

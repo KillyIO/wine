@@ -1,6 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:wine/domain/models/chapter.dart';
-import 'package:wine/domain/models/hive/chapter_draft.dart';
 
 part 'chapter_draft_database_success.freezed.dart';
 
@@ -10,11 +9,6 @@ abstract class ChapterDraftDatabaseSuccess with _$ChapterDraftDatabaseSuccess {
   /// @nodoc
   const factory ChapterDraftDatabaseSuccess.localChapterDraftDeletedSCS() =
       LocalChapterDraftDeletedSCS;
-
-  /// @nodoc
-  const factory ChapterDraftDatabaseSuccess.chapterDraftFetchedSCS(
-    ChapterDraft chapterDraft,
-  ) = ChapterDraftFetchedSCS;
 
   /// @nodoc
   const factory ChapterDraftDatabaseSuccess.localChapterDraftSavedSCS() =

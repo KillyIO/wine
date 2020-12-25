@@ -13,7 +13,6 @@ import 'package:injectable/injectable.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 
 import 'application/database/chapter/chapter_database_bloc.dart';
-import 'domain/models/hive/chapter_draft.dart';
 import 'application/database/chapter_editor/chapter_editor_database_bloc.dart';
 import 'application/navigation/chapter_editor/chapter_editor_navigation_bloc.dart';
 import 'application/database/chapter_settings/chapter_settings_database_bloc.dart';
@@ -32,18 +31,14 @@ import 'infrastructure/database/firebase_online_series_database_facade.dart';
 import 'infrastructure/database/firebase_online_series_draft_database_facade.dart';
 import 'infrastructure/database/firebase_online_user_database_facade.dart';
 import 'infrastructure/core/hive_injectable_module.dart';
-import 'infrastructure/database/hive_local_chapter_draft_database_facade.dart';
 import 'infrastructure/database/hive_local_config_database_facade.dart';
 import 'infrastructure/database/hive_local_placeholder_database_facade.dart';
-import 'infrastructure/database/hive_local_series_draft_database_facade.dart';
 import 'infrastructure/database/hive_local_session_database_facade.dart';
 import 'application/database/home/home_database_bloc.dart';
 import 'application/navigation/home/home_navigation_bloc.dart';
 import 'domain/authentication/i_authentication_facade.dart';
-import 'domain/database/facades/local/i_local_chapter_draft_database_facade.dart';
 import 'domain/database/facades/local/i_local_config_database_facade.dart';
 import 'domain/database/facades/local/i_local_placeholder_database_facade.dart';
-import 'domain/database/facades/local/i_local_series_draft_database_facade.dart';
 import 'domain/database/facades/local/i_local_session_database_facade.dart';
 import 'domain/database/facades/online/i_online_chapter_database_facade.dart';
 import 'domain/database/facades/online/i_online_chapter_draft_database_facade.dart';
@@ -54,7 +49,6 @@ import 'domain/database/facades/online/i_online_user_database_facade.dart';
 import 'application/database/library/library_database_bloc.dart';
 import 'application/navigation/library/library_navigation_bloc.dart';
 import 'application/database/series/series_database_bloc.dart';
-import 'domain/models/hive/series_draft.dart';
 import 'application/database/series_editor/series_editor_database_bloc.dart';
 import 'application/database/series_settings/series_settings_database_bloc.dart';
 import 'domain/models/hive/session.dart';
@@ -77,16 +71,12 @@ Future<GetIt> $initGetIt(
   final gh = GetItHelper(get, environment, environmentFilter);
   final hiveInjectableModule = _$HiveInjectableModule();
   final firebaseInjectableModule = _$FirebaseInjectableModule();
-  final box = await hiveInjectableModule.openConfigsBox;
-  gh.lazySingleton<hive1.Box<Config>>(() => box);
-  final box1 = await hiveInjectableModule.openSessionsBox;
-  gh.lazySingleton<hive1.Box<Session>>(() => box1);
-  final box2 = await hiveInjectableModule.openPlaceholdersBox;
-  gh.lazySingleton<hive1.Box<String>>(() => box2);
-  final box3 = await hiveInjectableModule.openChapterDraftsBox;
-  gh.lazySingleton<hive1.Box<ChapterDraft>>(() => box3);
-  final box4 = await hiveInjectableModule.openSeriesDraftsBox;
-  gh.lazySingleton<hive1.Box<SeriesDraft>>(() => box4);
+  final box = await hiveInjectableModule.openSessionsBox;
+  gh.lazySingleton<hive1.Box<Session>>(() => box);
+  final box1 = await hiveInjectableModule.openPlaceholdersBox;
+  gh.lazySingleton<hive1.Box<String>>(() => box1);
+  final box2 = await hiveInjectableModule.openConfigsBox;
+  gh.lazySingleton<hive1.Box<Config>>(() => box2);
   gh.factory<ChapterEditorNavigationBloc>(() => ChapterEditorNavigationBloc());
   gh.factory<CoreDatabaseBloc>(() => CoreDatabaseBloc());
   gh.factory<CoreOtherBloc>(() => CoreOtherBloc());
@@ -101,14 +91,10 @@ Future<GetIt> $initGetIt(
         get<GoogleSignIn>(),
         get<FirebaseFirestore>(),
       ));
-  gh.lazySingleton<ILocalChapterDraftDatabaseFacade>(
-      () => HiveLocalChapterDatabaseFacade(get<hive1.Box<ChapterDraft>>()));
   gh.lazySingleton<ILocalConfigDatabaseFacade>(
       () => HiveLocalConfigDatabaseFacade(get<hive1.Box<Config>>()));
   gh.lazySingleton<ILocalPlaceholderDatabaseFacade>(
       () => HiveLocalPlaceholderDatabaseFacade(get<hive1.Box<String>>()));
-  gh.lazySingleton<ILocalSeriesDraftDatabaseFacade>(
-      () => HiveLocalSeriesDatabaseFacade(get<hive1.Box<SeriesDraft>>()));
   gh.lazySingleton<ILocalSessionDatabaseFacade>(
       () => HiveLocalSessionDatabaseFacade(get<hive1.Box<Session>>()));
   gh.lazySingleton<IOnlineChapterDatabaseFacade>(() =>

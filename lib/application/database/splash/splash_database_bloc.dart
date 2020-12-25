@@ -162,7 +162,7 @@ class SplashDatabaseBloc
             ..fold(
               (_) {},
               (success) {
-                if (success is UserLoadedSCS) {
+                if (success is UserLoadedSuccess) {
                   user = success.user;
                 }
               },

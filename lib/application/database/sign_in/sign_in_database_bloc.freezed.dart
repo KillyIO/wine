@@ -339,7 +339,7 @@ class _$SignInDatabaseStateTearOff {
           Option<Either<DatabaseFailure, SessionDatabaseSuccess>>
               sessionDatabaseFailureOrSuccessOption,
       @required
-          Option<Either<DatabaseFailure, UserDatabaseSuccess>>
+          Option<Either<UserDatabaseFailure, UserDatabaseSuccess>>
               userDatabaseFailureOrSuccessOption}) {
     return _SignInDatabaseState(
       isUpdating: isUpdating,
@@ -359,7 +359,7 @@ mixin _$SignInDatabaseState {
   bool get isUpdating;
   Option<Either<DatabaseFailure, SessionDatabaseSuccess>>
       get sessionDatabaseFailureOrSuccessOption;
-  Option<Either<DatabaseFailure, UserDatabaseSuccess>>
+  Option<Either<UserDatabaseFailure, UserDatabaseSuccess>>
       get userDatabaseFailureOrSuccessOption;
 
   $SignInDatabaseStateCopyWith<SignInDatabaseState> get copyWith;
@@ -374,7 +374,7 @@ abstract class $SignInDatabaseStateCopyWith<$Res> {
       {bool isUpdating,
       Option<Either<DatabaseFailure, SessionDatabaseSuccess>>
           sessionDatabaseFailureOrSuccessOption,
-      Option<Either<DatabaseFailure, UserDatabaseSuccess>>
+      Option<Either<UserDatabaseFailure, UserDatabaseSuccess>>
           userDatabaseFailureOrSuccessOption});
 }
 
@@ -405,7 +405,7 @@ class _$SignInDatabaseStateCopyWithImpl<$Res>
           userDatabaseFailureOrSuccessOption == freezed
               ? _value.userDatabaseFailureOrSuccessOption
               : userDatabaseFailureOrSuccessOption
-                  as Option<Either<DatabaseFailure, UserDatabaseSuccess>>,
+                  as Option<Either<UserDatabaseFailure, UserDatabaseSuccess>>,
     ));
   }
 }
@@ -421,7 +421,7 @@ abstract class _$SignInDatabaseStateCopyWith<$Res>
       {bool isUpdating,
       Option<Either<DatabaseFailure, SessionDatabaseSuccess>>
           sessionDatabaseFailureOrSuccessOption,
-      Option<Either<DatabaseFailure, UserDatabaseSuccess>>
+      Option<Either<UserDatabaseFailure, UserDatabaseSuccess>>
           userDatabaseFailureOrSuccessOption});
 }
 
@@ -454,7 +454,7 @@ class __$SignInDatabaseStateCopyWithImpl<$Res>
           userDatabaseFailureOrSuccessOption == freezed
               ? _value.userDatabaseFailureOrSuccessOption
               : userDatabaseFailureOrSuccessOption
-                  as Option<Either<DatabaseFailure, UserDatabaseSuccess>>,
+                  as Option<Either<UserDatabaseFailure, UserDatabaseSuccess>>,
     ));
   }
 }
@@ -475,7 +475,7 @@ class _$_SignInDatabaseState implements _SignInDatabaseState {
   final Option<Either<DatabaseFailure, SessionDatabaseSuccess>>
       sessionDatabaseFailureOrSuccessOption;
   @override
-  final Option<Either<DatabaseFailure, UserDatabaseSuccess>>
+  final Option<Either<UserDatabaseFailure, UserDatabaseSuccess>>
       userDatabaseFailureOrSuccessOption;
 
   @override
@@ -524,7 +524,7 @@ abstract class _SignInDatabaseState implements SignInDatabaseState {
           Option<Either<DatabaseFailure, SessionDatabaseSuccess>>
               sessionDatabaseFailureOrSuccessOption,
       @required
-          Option<Either<DatabaseFailure, UserDatabaseSuccess>>
+          Option<Either<UserDatabaseFailure, UserDatabaseSuccess>>
               userDatabaseFailureOrSuccessOption}) = _$_SignInDatabaseState;
 
   @override
@@ -533,7 +533,7 @@ abstract class _SignInDatabaseState implements SignInDatabaseState {
   Option<Either<DatabaseFailure, SessionDatabaseSuccess>>
       get sessionDatabaseFailureOrSuccessOption;
   @override
-  Option<Either<DatabaseFailure, UserDatabaseSuccess>>
+  Option<Either<UserDatabaseFailure, UserDatabaseSuccess>>
       get userDatabaseFailureOrSuccessOption;
   @override
   _$SignInDatabaseStateCopyWith<_SignInDatabaseState> get copyWith;

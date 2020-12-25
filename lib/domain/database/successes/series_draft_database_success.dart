@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:wine/domain/models/hive/series_draft.dart';
 import 'package:wine/domain/models/series.dart';
 
 part 'series_draft_database_success.freezed.dart';
@@ -10,16 +9,6 @@ abstract class SeriesDraftDatabaseSuccess with _$SeriesDraftDatabaseSuccess {
   /// @nodoc
   const factory SeriesDraftDatabaseSuccess.localSeriesDraftDeletedSCS() =
       LocalSeriesDraftDeletedSCS;
-
-  /// @nodoc
-  const factory SeriesDraftDatabaseSuccess.seriesDraftFetchedSCS(
-    SeriesDraft seriesDraft,
-  ) = SeriesDraftFetchedSCS;
-
-  /// @nodoc
-  const factory SeriesDraftDatabaseSuccess.localSeriesDraftSavedSCS(
-    SeriesDraft seriesDraft,
-  ) = LocalSeriesDraftSavedSCS;
 
   /// @nodoc
   const factory SeriesDraftDatabaseSuccess.localSeriesDraftUpdatedSCS() =

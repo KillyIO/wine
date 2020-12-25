@@ -12,17 +12,7 @@ abstract class IOnlineUserDatabaseFacade {
   );
 
   /// @nodoc
-  Future<Either<DatabaseFailure, UserDatabaseSuccess>> loadUsersAsMapByUIDList(
-    List<String> userUIDs,
-  );
-
-  /// @nodoc
-  Future<Either<DatabaseFailure, UserDatabaseSuccess>> loadUsers(
-    List<String> userUIDs,
-  );
-
-  /// @nodoc
-  Future<Either<DatabaseFailure, UserDatabaseSuccess>> saveDetailsFromUser(
+  Future<Either<UserDatabaseFailure, UserDatabaseSuccess>> saveDetailsFromUser(
     User user,
   );
 }

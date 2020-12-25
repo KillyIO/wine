@@ -8,7 +8,6 @@ void main() {
   group(
     'CoreDatabaseBloc',
     () {
-      CoreDatabaseBloc coreDatabaseBloc;
       final chapter = Chapter(
         authorUID: 'IhyAvFOnGegIFDBJYmL30nAbWu92',
         authorUsername: 'oncefilo',
@@ -46,6 +45,8 @@ void main() {
         uid: '4ee028bd-b819-48f3-b704-59ac275d2d7c',
         updatedAt: 1608326693128,
       );
+
+      CoreDatabaseBloc coreDatabaseBloc;
 
       setUp(() {
         coreDatabaseBloc = CoreDatabaseBloc();
