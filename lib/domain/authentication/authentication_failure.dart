@@ -9,14 +9,15 @@ abstract class AuthenticationFailure with _$AuthenticationFailure {
   const factory AuthenticationFailure.cancelledByUser() = CancelledByUser;
 
   /// @nodoc
-  const factory AuthenticationFailure.emailAlreadyInUse() = EmailAlreadyInUse;
+  const factory AuthenticationFailure.emailAlreadyInUseFailure() =
+      EmailAlreadyInUseFailure;
 
   /// @nodoc
   const factory AuthenticationFailure.invalidEmailAndPasswordCombination() =
       InvalidEmailAndPasswordCombination;
   // Serves as a "catch all" failure if we don't know what exactly went wrong
   /// @nodoc
-  const factory AuthenticationFailure.serverError() = ServerError;
+  const factory AuthenticationFailure.serverFailure() = ServerFailure;
 
   /// @nodoc
   const factory AuthenticationFailure.unableToSignOut() = UnableToSignOut;

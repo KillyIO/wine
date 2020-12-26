@@ -30,7 +30,7 @@ class FirebaseOnlineUserDatabaseFacade extends IOnlineUserDatabaseFacade {
       }
       return left(const UserDatabaseFailure.userNotFoundFailure());
     } catch (_) {
-      return left(const UserDatabaseFailure.serverErrorFailure());
+      return left(const UserDatabaseFailure.serverFailure());
     }
   }
 
@@ -65,7 +65,7 @@ class FirebaseOnlineUserDatabaseFacade extends IOnlineUserDatabaseFacade {
 
       return right(UserDatabaseSuccess.userDetailsSavedSuccess(finalUser));
     } catch (_) {
-      return left(const UserDatabaseFailure.serverErrorFailure());
+      return left(const UserDatabaseFailure.serverFailure());
     }
   }
 
@@ -82,7 +82,7 @@ class FirebaseOnlineUserDatabaseFacade extends IOnlineUserDatabaseFacade {
 
       return right(UserDatabaseSuccess.usernameSavedSuccess(username));
     } catch (_) {
-      return left(const UserDatabaseFailure.serverErrorFailure());
+      return left(const UserDatabaseFailure.serverFailure());
     }
   }
 }

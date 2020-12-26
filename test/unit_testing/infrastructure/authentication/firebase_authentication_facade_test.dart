@@ -1,56 +1,62 @@
-import 'package:cloud_firestore_mocks/cloud_firestore_mocks.dart';
 import 'package:dartz/dartz.dart';
-import 'package:firebase_auth_mocks/firebase_auth_mocks.dart';
-import 'package:google_sign_in_mocks/google_sign_in_mocks.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:mockito/mockito.dart';
 import 'package:test/test.dart';
+import 'package:wine/domain/authentication/authentication_failure.dart';
+
 import 'package:wine/domain/authentication/authentication_success.dart';
 import 'package:wine/domain/authentication/email_address.dart';
 import 'package:wine/domain/authentication/password.dart';
 import 'package:wine/domain/models/user.dart';
 import 'package:wine/infrastructure/authentication/firebase_authentication_facade.dart';
 
-class MockAuthenticationFacade extends Mock
-    implements FirebaseAuthenticationFacade {
-  /// @nodoc
-  MockAuthenticationFacade(
-    this._firebaseAuth,
-    this._googleSignIn,
-    this._firestore,
-  );
-
-  final MockFirebaseAuth _firebaseAuth;
-  final MockGoogleSignIn _googleSignIn;
-  final MockFirestoreInstance _firestore;
-}
+import '../../../mocks/firebase_auth_mocks.dart';
+import '../../../mocks/firebase_firestore_mocks.dart';
+import '../../../mocks/google_sign_in_mocks.dart';
 
 void main() {
-  const validEmail = 'oncefilo1@gmail.com';
+  const validEmail = 'hdima.riyal.99@tapiitudulu.com';
   const validPassword = 'Wd8G/[-2A+';
 
-  const invalidEmail = 'oncefilo1@gmailcom';
+  const invalidEmail = 'hdima.riyal.99_tapiitudulu.com';
   const invalidPassword = '123456';
 
   final user = User(
     bio: null,
     createdAt: 1592255973418,
     email: validEmail,
-    name: 'oncefilo',
+    name: 'hdima.riyal.99',
     profilePictureURL: null,
     uid: 'IhyAvFOnGegIFDBJYmL30nAbWu92',
     updatedAt: 1608137445032,
-    username: 'oncefilo',
+    username: 'hdima.riyal.99',
   );
 
-  MockAuthenticationFacade authenticationFacade;
+  MockFirebaseAuth firebaseAuth;
+  MockGoogleSignIn googleSignIn;
+  MockFirestore firestore;
+
+  MockFirebaseUser mockFirebaseUser;
+
+  MockDocumentSnapshot mockDocumentSnapshot;
+  MockCollectionReference mockCollectionReference;
+  MockDocumentReference mockDocumentReference;
+
+  FirebaseAuthenticationFacade authenticationFacade;
 
   setUp(() {
-    final firebaseAuth = MockFirebaseAuth();
-    final googleSignIn = MockGoogleSignIn();
-    final firestore = MockFirestoreInstance();
+    firebaseAuth = MockFirebaseAuth();
+    googleSignIn = MockGoogleSignIn();
+    firestore = MockFirestore();
+
+    mockFirebaseUser = MockFirebaseUser(isAnonymous: true);
+
+    mockDocumentSnapshot = MockDocumentSnapshot();
+    mockCollectionReference = MockCollectionReference();
+    mockDocumentReference = MockDocumentReference();
 
     authenticationFacade =
-        MockAuthenticationFacade(firebaseAuth, googleSignIn, firestore);
+        FirebaseAuthenticationFacade(firebaseAuth, googleSignIn, firestore);
   });
 
   group(
@@ -58,35 +64,31 @@ void main() {
     () {
       test(
         '''
-        Given a user (anonymous or not)
+        Given a user is logged in (anonymously or otherwise)
         When getCurrentUserUID() is called
         Then an UID is returned
         ''',
         () async {
-          when(
-            authenticationFacade.getCurrentUserUID(),
-          ).thenAnswer(
-            (_) => Future.value(user.uid),
-          );
+          when(firebaseAuth.currentUser).thenReturn(mockFirebaseUser);
 
-          expect(await authenticationFacade.getCurrentUserUID(), user.uid);
+          final result = await authenticationFacade.getCurrentUserUID();
+
+          expect(result, user.uid);
         },
       );
 
       test(
         '''
-        Given no user
+        Given no user is logged in
         When getCurrentUserUID() is called
         Then null is returned
         ''',
         () async {
-          when(
-            authenticationFacade.getCurrentUserUID(),
-          ).thenAnswer(
-            (_) => Future.value(null),
-          );
+          when(firebaseAuth.currentUser).thenReturn(null);
 
-          expect(await authenticationFacade.getCurrentUserUID(), null);
+          final result = await authenticationFacade.getCurrentUserUID();
+
+          expect(result, null);
         },
       );
 
@@ -97,16 +99,7 @@ void main() {
         Then userAuthenticatedSuccess() is returned with a User()
         ''',
         () async {
-          when(
-            authenticationFacade.convertWithEmailAndPassword(
-              EmailAddress(validEmail),
-              Password(validPassword),
-            ),
-          ).thenAnswer(
-            (_) => Future.value(
-              right(AuthenticationSuccess.userAuthenticatedSuccess(user)),
-            ),
-          );
+          when(firebaseAuth.currentUser).thenReturn(mockFirebaseUser);
 
           final result = await authenticationFacade.convertWithEmailAndPassword(
             EmailAddress(validEmail),
@@ -129,6 +122,121 @@ void main() {
               }
             },
           );
+        },
+      );
+
+      test(
+        '''
+        Given a invalid email
+        When convertWithEmailAndPassword() is called
+        Then serverErrorFailure() is returned
+        ''',
+        () async {
+          final result = await authenticationFacade.convertWithEmailAndPassword(
+            EmailAddress(invalidEmail),
+            Password(validPassword),
+          );
+
+          expect(result.isLeft(), true);
+          expect(
+            result,
+            const Left(AuthenticationFailure.serverFailure()),
+          );
+
+          result.fold(
+            (failure) => expect(failure is ServerFailure, true),
+            (_) {},
+          );
+        },
+      );
+
+      test(
+        '''
+        Given a invalid password
+        When convertWithEmailAndPassword() is called
+        Then serverErrorFailure() is returned
+        ''',
+        () async {
+          final result = await authenticationFacade.convertWithEmailAndPassword(
+            EmailAddress(validEmail),
+            Password(invalidPassword),
+          );
+
+          expect(result.isLeft(), true);
+          expect(
+            result,
+            const Left(AuthenticationFailure.serverFailure()),
+          );
+
+          result.fold(
+            (failure) => expect(failure is ServerFailure, true),
+            (_) {},
+          );
+        },
+      );
+
+      test(
+        '''
+        Given an email is already in use
+        When convertWithEmailAndPassword() is called
+        Then emailAlreadyInUseFailure() is returned
+        ''',
+        () async {
+          when(firebaseAuth.currentUser).thenAnswer(
+            (_) => throw FirebaseException(
+              plugin: 'auth',
+              message: 'Email already in use.',
+              code: 'email-already-in-use',
+            ),
+          );
+
+          final result = await authenticationFacade.convertWithEmailAndPassword(
+            EmailAddress(validEmail),
+            Password(validPassword),
+          );
+
+          expect(result.isLeft(), true);
+          expect(
+            result,
+            const Left(AuthenticationFailure.emailAlreadyInUseFailure()),
+          );
+
+          result.fold(
+            (failure) => expect(failure is EmailAlreadyInUseFailure, true),
+            (_) {},
+          );
+        },
+      );
+
+      test(
+        '''
+        Given an user is logged in anonymously
+        When isAnonymous() is called
+        Then true is returned
+        ''',
+        () async {
+          when(firebaseAuth.currentUser).thenReturn(mockFirebaseUser);
+
+          final result = authenticationFacade.isAnonymous();
+
+          expect(result, true);
+        },
+      );
+
+      test(
+        '''
+        Given an user is logged but not anonymous
+        When isAnonymous() is called
+        Then false is returned
+        ''',
+        () async {
+          mockFirebaseUser = MockFirebaseUser(isAnonymous: false);
+
+          when(firebaseAuth.currentUser).thenReturn(mockFirebaseUser);
+
+          final result = authenticationFacade.isAnonymous();
+
+          expect(result, false);
         },
       );
     },

@@ -21,7 +21,6 @@ dependencies:
     sdk: flutter
   assorted_layout_widgets: ^3.0.0
   auto_route: ^0.6.9
-  bloc_test: ^7.1.0
   cached_network_image: ^2.5.0
   cloud_firestore: ^0.14.4
   cupertino_icons: ^1.0.0
@@ -60,12 +59,10 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   auto_route_generator: ^0.6.10
+  bloc_test: ^7.1.0
   build_runner: ^1.10.11
-  cloud_firestore_mocks: ^0.5.2+1
-  firebase_auth_mocks: ^0.3.2
   flutter_launcher_icons: ^0.8.1
   freezed: 0.12.4
-  google_sign_in_mocks: ^0.1.0+2
   hive_generator: ^0.8.2
   injectable_generator: ^1.0.6
   mockito: ^4.1.3

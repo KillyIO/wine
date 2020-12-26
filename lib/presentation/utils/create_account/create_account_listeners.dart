@@ -17,7 +17,7 @@ class CreateAccountListeners {
             () {},
             (some) => some.fold(
               (failure) => failure.maybeMap(
-                serverError: (_) => wineShowDialog(
+                serverFailure: (_) => wineShowDialog(
                   context: context,
                   builder: (_) => WINEErrorDialog(
                     message: 'An unexpected error occured!',
@@ -25,7 +25,7 @@ class CreateAccountListeners {
                         ExtendedNavigator.of(context).pop<bool>(true),
                   ),
                 ),
-                emailAlreadyInUse: (_) => wineShowDialog(
+                emailAlreadyInUseFailure: (_) => wineShowDialog(
                   context: context,
                   builder: (_) => WINEErrorDialog(
                     message: 'The email address entered is already in use.',

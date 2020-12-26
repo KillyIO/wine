@@ -25,7 +25,7 @@ class SplashListeners {
                       )),
                   (some) => some.fold(
                     (failure) => failure.maybeMap(
-                      serverError: (_) async =>
+                      serverFailure: (_) async =>
                           _splashAuthenticationMethods.restartSplash(
                         context,
                         'An unexpected error occured!',

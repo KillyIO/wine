@@ -1,4 +1,3 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
 import 'package:mockito/mockito.dart';
 import 'package:test/test.dart';
@@ -7,24 +6,18 @@ import 'package:wine/domain/database/successes/user_database_success.dart';
 import 'package:wine/domain/models/user.dart';
 import 'package:wine/infrastructure/database/firebase_online_user_database_facade.dart';
 
-class MockFirestore extends Mock implements FirebaseFirestore {}
-
-class MockCollectionReference extends Mock implements CollectionReference {}
-
-class MockDocumentReference extends Mock implements DocumentReference {}
-
-class MockDocumentSnapshot extends Mock implements DocumentSnapshot {}
+import '../../../mocks/firebase_firestore_mocks.dart';
 
 void main() {
   final user = User(
     bio: null,
     createdAt: 1592255973418,
-    email: 'oncefilo1@gmail.com',
-    name: 'oncefilo1',
+    email: 'hdima.riyal.99@tapiitudulu.com',
+    name: 'hdima.riyal.99',
     profilePictureURL: null,
     uid: 'IhyAvFOnGegIFDBJYmL30nAbWu92',
     updatedAt: 1608137445032,
-    username: 'oncefilo1',
+    username: 'hdima.riyal.99',
   );
 
   MockFirestore firestore;
@@ -46,6 +39,7 @@ void main() {
   group(
     'FirebaseOnlineUserDatabaseFacade',
     () {
+      // SECTION: loadUser
       test(
         '''
         Given a valid user UID
@@ -99,8 +93,8 @@ void main() {
           expect(result, const Left(UserDatabaseFailure.userNotFoundFailure()));
 
           result.fold(
+            (failure) => expect(failure is UserNotFoundFailure, true),
             (_) {},
-            (success) => expect(success is UserNotFoundFailure, true),
           );
         },
       );
@@ -119,15 +113,16 @@ void main() {
           final result = await onlineUserDatabaseFacade.loadUser(user.uid);
 
           expect(result.isLeft(), true);
-          expect(result, const Left(UserDatabaseFailure.serverErrorFailure()));
+          expect(result, const Left(UserDatabaseFailure.serverFailure()));
 
           result.fold(
+            (failure) => expect(failure is ServerFailure, true),
             (_) {},
-            (success) => expect(success is ServerErrorFailure, true),
           );
         },
       );
 
+      // SECTION: saveDetailsFromUser
       test(
         '''
         Given a User() and user doesn't exists
@@ -241,16 +236,17 @@ void main() {
           expect(result.isLeft(), true);
           expect(
             result,
-            const Left(UserDatabaseFailure.serverErrorFailure()),
+            const Left(UserDatabaseFailure.serverFailure()),
           );
 
           result.fold(
+            (failure) => expect(failure is ServerFailure, true),
             (_) {},
-            (success) => expect(success is ServerErrorFailure, true),
           );
         },
       );
 
+      // SECTION: saveUsername
       test(
         '''
         Given a userUID and a username
@@ -310,12 +306,12 @@ void main() {
           expect(result.isLeft(), true);
           expect(
             result,
-            const Left(UserDatabaseFailure.serverErrorFailure()),
+            const Left(UserDatabaseFailure.serverFailure()),
           );
 
           result.fold(
+            (failure) => expect(failure is ServerFailure, true),
             (_) {},
-            (success) => expect(success is ServerErrorFailure, true),
           );
         },
       );

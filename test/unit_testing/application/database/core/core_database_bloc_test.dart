@@ -10,7 +10,7 @@ void main() {
     () {
       final chapter = Chapter(
         authorUID: 'IhyAvFOnGegIFDBJYmL30nAbWu92',
-        authorUsername: 'oncefilo',
+        authorUsername: 'hdima.riyal.99',
         copyrights: 'cc-by',
         coverURL:
             'https://firebasestorage.googleapis.com/v0/b/wine-dev-1db0c.appspot.com/o/placeholders%2Fbook_placeholder_pastel_yellow.png?alt=media&token=3ab84d84-829f-4d39-9ed6-698694e87abd',
@@ -31,7 +31,7 @@ void main() {
 
       final series = Series(
         authorUID: 'IhyAvFOnGegIFDBJYmL30nAbWu92',
-        authorUsername: 'oncefilo',
+        authorUsername: 'hdima.riyal.99',
         coverURL:
             'https://firebasestorage.googleapis.com/v0/b/wine-dev-1db0c.appspot.com/o/placeholders%2Fbook_placeholder_pastel_yellow.png?alt=media&token=3ab84d84-829f-4d39-9ed6-698694e87abd',
         createdAt: 1608326693128,
@@ -56,6 +56,7 @@ void main() {
         coreDatabaseBloc.close();
       });
 
+      // SECTION: initial
       test(
         '''
         Given CoreDatabaseBloc
@@ -67,6 +68,7 @@ void main() {
         },
       );
 
+      // SECTION: chapterDraftDeletedFromLibraryEvent
       blocTest(
         '''
         Given CoreDatabaseBloc
@@ -105,6 +107,7 @@ void main() {
         ],
       );
 
+      // SECTION: chapterDraftSavedFromLibraryEvent
       blocTest(
         '''
         Given CoreDatabaseBloc
@@ -118,6 +121,7 @@ void main() {
         expect: [CoreDatabaseState.chapterDraftSavedFromLibraryState(chapter)],
       );
 
+      // SECTION: chapterPublishedFromChapterEvent
       blocTest(
         '''
         Given CoreDatabaseBloc
@@ -131,6 +135,7 @@ void main() {
         expect: [CoreDatabaseState.chapterPublishedFromChapterState(chapter)],
       );
 
+      // SECTION: chapterPublishedFromLibraryEvent
       blocTest(
         '''
         Given CoreDatabaseBloc
@@ -144,10 +149,11 @@ void main() {
         expect: [CoreDatabaseState.chapterPublishedFromLibraryState(chapter)],
       );
 
+      // SECTION: resetBlocEvent
       blocTest(
         '''
         Given CoreDatabaseBloc
-        When resetBlocEVT() is called
+        When resetBlocEvent() is called
         Then initial() is yielded
         ''',
         build: () => coreDatabaseBloc,
@@ -155,6 +161,7 @@ void main() {
         expect: [const CoreDatabaseState.initial()],
       );
 
+      // SECTION: seriesDraftDeletedFromLibraryEvent
       blocTest(
         '''
         Given CoreDatabaseBloc
@@ -170,6 +177,7 @@ void main() {
         ],
       );
 
+      // SECTION: seriesDraftSavedFromLibraryEvent
       blocTest(
         '''
         Given CoreDatabaseBloc
@@ -183,6 +191,7 @@ void main() {
         expect: [CoreDatabaseState.seriesDraftSavedFromLibraryState(series)],
       );
 
+      // SECTION: seriesPublishedFromHomeEvent
       blocTest(
         '''
         Given CoreDatabaseBloc
@@ -196,6 +205,7 @@ void main() {
         expect: [CoreDatabaseState.seriesPublishedFromHomeState(series)],
       );
 
+      // SECTION: seriesPublishedFromLibraryEvent
       blocTest(
         '''
         Given CoreDatabaseBloc
