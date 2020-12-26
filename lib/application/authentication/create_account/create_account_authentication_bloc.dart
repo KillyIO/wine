@@ -67,7 +67,8 @@ class CreateAccountAuthenticationBloc extends Bloc<
           yield state.copyWith(
               isSubmitting: true, authenticationFailureOrSuccessOption: none());
           failureOrSuccess = await _authenticationFacade.isUsernameAvailable(
-              username: state.username);
+            state.username,
+          );
           isUsernameValid = failureOrSuccess.isRight();
         }
 
@@ -81,8 +82,8 @@ class CreateAccountAuthenticationBloc extends Bloc<
             isUsernameValid) {
           failureOrSuccess =
               await _authenticationFacade.convertWithEmailAndPassword(
-            emailAddress: state.emailAddress,
-            password: state.password,
+            state.emailAddress,
+            state.password,
           );
           failureOrSuccess.fold(
             (_) {},

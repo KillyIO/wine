@@ -1,7 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
 import 'package:firebase_auth/firebase_auth.dart' as auth;
-import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:injectable/injectable.dart';
@@ -37,10 +36,10 @@ class FirebaseAuthenticationFacade implements IAuthenticationFacade {
 
   @override
   Future<Either<AuthenticationFailure, AuthenticationSuccess>>
-      convertWithEmailAndPassword({
-    @required EmailAddress emailAddress,
-    @required Password password,
-  }) async {
+      convertWithEmailAndPassword(
+    EmailAddress emailAddress,
+    Password password,
+  ) async {
     try {
       final emailAddressStr = emailAddress.getOrCrash();
       final passwordStr = password.getOrCrash();
@@ -77,9 +76,7 @@ class FirebaseAuthenticationFacade implements IAuthenticationFacade {
 
   @override
   Future<Either<AuthenticationFailure, AuthenticationSuccess>>
-      isUsernameAvailable({
-    Username username,
-  }) async {
+      isUsernameAvailable(Username username) async {
     final usernameStr = username.getOrCrash();
 
     final documentSnapshot = await _firestore
@@ -87,9 +84,9 @@ class FirebaseAuthenticationFacade implements IAuthenticationFacade {
         .doc(usernameStr)
         .get();
     if (documentSnapshot != null && documentSnapshot.exists) {
-      return left(const AuthenticationFailure.usernameAlreadyInUse());
+      return left(const AuthenticationFailure.usernameAlreadyInUseFailure());
     } else {
-      return right(const AuthenticationSuccess.usernameAvailableSCS());
+      return right(const AuthenticationSuccess.usernameAvailableSuccess());
     }
   }
 
@@ -124,10 +121,10 @@ class FirebaseAuthenticationFacade implements IAuthenticationFacade {
 
   @override
   Future<Either<AuthenticationFailure, AuthenticationSuccess>>
-      signInWithEmailAndPassword({
-    @required EmailAddress emailAddress,
-    @required Password password,
-  }) async {
+      signInWithEmailAndPassword(
+    EmailAddress emailAddress,
+    Password password,
+  ) async {
     try {
       final emailAddressStr = emailAddress.getOrCrash();
       final passwordStr = password.getOrCrash();

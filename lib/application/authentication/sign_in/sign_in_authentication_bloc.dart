@@ -54,8 +54,8 @@ class SignInAuthenticationBloc
 
           failureOrSuccess =
               await _authenticationFacade.signInWithEmailAndPassword(
-            emailAddress: state.emailAddress,
-            password: state.password,
+            state.emailAddress,
+            state.password,
           );
         }
 
@@ -77,8 +77,11 @@ class SignInAuthenticationBloc
           (success) {
             if (success is UserAuthenticatedSuccess) {
               final user = success.user.copyWith(
-                username:
-                    success.user.name.trim().replaceAll(RegExp('[ -]'), '_'),
+                username: success.user.email
+                    .trim()
+                    .split('@')
+                    .first
+                    .replaceAll(RegExp('[ -]'), '_'),
                 createdAt: DateTime.now().millisecondsSinceEpoch,
                 updatedAt: DateTime.now().millisecondsSinceEpoch,
               );

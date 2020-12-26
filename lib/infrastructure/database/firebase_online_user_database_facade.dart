@@ -61,19 +61,26 @@ class FirebaseOnlineUserDatabaseFacade extends IOnlineUserDatabaseFacade {
             dbUser.copyWith(updatedAt: DateTime.now().millisecondsSinceEpoch);
       }
 
-      final mapReference = _firestore
-          .collection(Paths.usernameUIDMapPath)
-          .doc(finalUser.username);
+      await usersRef.set(finalUser.toMap(), SetOptions(merge: true));
 
-      await Future.wait([
-        // map the uid to the username
-        mapReference.set(
-          {'uid': finalUser.uid},
-          SetOptions(mergeFields: <FieldPath>[FieldPath.fromString('uid')]),
-        ),
-        usersRef.set(finalUser.toMap(), SetOptions(merge: true)),
-      ]);
       return right(UserDatabaseSuccess.userDetailsSavedSuccess(finalUser));
+    } catch (_) {
+      return left(const UserDatabaseFailure.serverErrorFailure());
+    }
+  }
+
+  @override
+  Future<Either<UserDatabaseFailure, UserDatabaseSuccess>> saveUsername(
+    String userUID,
+    String username,
+  ) async {
+    try {
+      final mapReference =
+          _firestore.collection(Paths.usernameUIDMapPath).doc(username);
+
+      await mapReference.set({'uid': userUID}, SetOptions(merge: true));
+
+      return right(UserDatabaseSuccess.usernameSavedSuccess(username));
     } catch (_) {
       return left(const UserDatabaseFailure.serverErrorFailure());
     }

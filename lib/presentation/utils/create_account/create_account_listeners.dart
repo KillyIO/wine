@@ -33,7 +33,7 @@ class CreateAccountListeners {
                         ExtendedNavigator.of(context).pop<bool>(true),
                   ),
                 ),
-                usernameAlreadyInUse: (_) => wineShowDialog(
+                usernameAlreadyInUseFailure: (_) => wineShowDialog(
                   context: context,
                   builder: (_) => WINEErrorDialog(
                     message: 'The username entered is already in use.',

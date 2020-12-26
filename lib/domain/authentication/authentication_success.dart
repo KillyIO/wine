@@ -11,8 +11,8 @@ abstract class AuthenticationSuccess with _$AuthenticationSuccess {
       UserAuthenticatedSuccess;
 
   /// @nodoc
-  const factory AuthenticationSuccess.usernameAvailableSCS() =
-      UsernameAvailableSCS;
+  const factory AuthenticationSuccess.usernameAvailableSuccess() =
+      UsernameAvailableSuccess;
 
   /// @nodoc
   const factory AuthenticationSuccess.userSignedInAnonymouslySCS() =

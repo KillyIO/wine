@@ -22,6 +22,6 @@ abstract class AuthenticationFailure with _$AuthenticationFailure {
   const factory AuthenticationFailure.unableToSignOut() = UnableToSignOut;
 
   /// @nodoc
-  const factory AuthenticationFailure.usernameAlreadyInUse() =
-      UsernameAlreadyInUse;
+  const factory AuthenticationFailure.usernameAlreadyInUseFailure() =
+      UsernameAlreadyInUseFailure;
 }

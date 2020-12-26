@@ -1,4 +1,4 @@
-import 'package:cloud_firestore_mocks/cloud_firestore_mocks.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
 import 'package:mockito/mockito.dart';
 import 'package:test/test.dart';
@@ -7,32 +7,40 @@ import 'package:wine/domain/database/successes/user_database_success.dart';
 import 'package:wine/domain/models/user.dart';
 import 'package:wine/infrastructure/database/firebase_online_user_database_facade.dart';
 
-class MockOnlineUserDatabaseFacade extends Mock
-    implements FirebaseOnlineUserDatabaseFacade {
-  /// @nodoc
-  MockOnlineUserDatabaseFacade(this._firestore);
+class MockFirestore extends Mock implements FirebaseFirestore {}
 
-  final MockFirestoreInstance _firestore;
-}
+class MockCollectionReference extends Mock implements CollectionReference {}
+
+class MockDocumentReference extends Mock implements DocumentReference {}
+
+class MockDocumentSnapshot extends Mock implements DocumentSnapshot {}
 
 void main() {
   final user = User(
     bio: null,
     createdAt: 1592255973418,
     email: 'oncefilo1@gmail.com',
-    name: 'oncefilo',
+    name: 'oncefilo1',
     profilePictureURL: null,
     uid: 'IhyAvFOnGegIFDBJYmL30nAbWu92',
     updatedAt: 1608137445032,
-    username: 'oncefilo',
+    username: 'oncefilo1',
   );
 
-  MockOnlineUserDatabaseFacade onlineUserDatabaseFacade;
+  MockFirestore firestore;
+  MockDocumentSnapshot mockDocumentSnapshot;
+  MockCollectionReference mockCollectionReference;
+  MockDocumentReference mockDocumentReference;
+
+  FirebaseOnlineUserDatabaseFacade onlineUserDatabaseFacade;
 
   setUp(() {
-    final firestore = MockFirestoreInstance();
+    firestore = MockFirestore();
+    mockCollectionReference = MockCollectionReference();
+    mockDocumentReference = MockDocumentReference();
+    mockDocumentSnapshot = MockDocumentSnapshot();
 
-    onlineUserDatabaseFacade = MockOnlineUserDatabaseFacade(firestore);
+    onlineUserDatabaseFacade = FirebaseOnlineUserDatabaseFacade(firestore);
   });
 
   group(
@@ -45,13 +53,13 @@ void main() {
         Then userLoadedSuccess() is returned with a User()
         ''',
         () async {
-          when(
-            onlineUserDatabaseFacade.loadUser(user.uid),
-          ).thenAnswer(
-            (_) => Future.value(
-              right(UserDatabaseSuccess.userLoadedSuccess(user)),
-            ),
-          );
+          when(firestore.collection(any)).thenReturn(mockCollectionReference);
+          when(mockCollectionReference.doc(any))
+              .thenReturn(mockDocumentReference);
+          when(mockDocumentReference.get())
+              .thenAnswer((_) async => mockDocumentSnapshot);
+          when(mockDocumentSnapshot.exists).thenReturn(true);
+          when(mockDocumentSnapshot.data()).thenReturn(user.toMap());
 
           final result = await onlineUserDatabaseFacade.loadUser(user.uid);
 
@@ -78,13 +86,12 @@ void main() {
         Then userNotFoundFailure() is returned
         ''',
         () async {
-          when(
-            onlineUserDatabaseFacade.loadUser('123456'),
-          ).thenAnswer(
-            (_) => Future.value(
-              left(const UserDatabaseFailure.userNotFoundFailure()),
-            ),
-          );
+          when(firestore.collection(any)).thenReturn(mockCollectionReference);
+          when(mockCollectionReference.doc(any))
+              .thenReturn(mockDocumentReference);
+          when(mockDocumentReference.get())
+              .thenAnswer((_) async => mockDocumentSnapshot);
+          when(mockDocumentSnapshot.exists).thenReturn(false);
 
           final result = await onlineUserDatabaseFacade.loadUser('123456');
 
@@ -105,12 +112,8 @@ void main() {
         Then serverErrorFailure() is returned
         ''',
         () async {
-          when(
-            onlineUserDatabaseFacade.loadUser(user.uid),
-          ).thenAnswer(
-            (_) => Future.value(
-              left(const UserDatabaseFailure.serverErrorFailure()),
-            ),
+          when(firestore.collection(any)).thenAnswer(
+            (_) => throw Exception('An unexpected error occured!'),
           );
 
           final result = await onlineUserDatabaseFacade.loadUser(user.uid);
@@ -127,24 +130,26 @@ void main() {
 
       test(
         '''
-        Given a User()
+        Given a User() and user doesn't exists
         When saveDetailsFromUser() is called
-        Then userDetailsSavedSuccess() with User().updatedAt == currentTime
+        Then userDetailsSavedSuccess() with User()
         ''',
         () async {
-          final currentTime = DateTime.now().millisecondsSinceEpoch;
+          // Create documentReference to user
+          when(firestore.collection(any)).thenReturn(mockCollectionReference);
+          when(mockCollectionReference.doc(any))
+              .thenReturn(mockDocumentReference);
 
-          when(
-            onlineUserDatabaseFacade.saveDetailsFromUser(user),
-          ).thenAnswer(
-            (_) => Future.value(
-              right(
-                UserDatabaseSuccess.userDetailsSavedSuccess(
-                  user.copyWith(updatedAt: currentTime),
-                ),
-              ),
-            ),
-          );
+          // Load user document if it exists
+          when(firestore.collection(any)).thenReturn(mockCollectionReference);
+          when(mockCollectionReference.doc(any))
+              .thenReturn(mockDocumentReference);
+          when(mockDocumentReference.get())
+              .thenAnswer((_) async => mockDocumentSnapshot);
+          when(mockDocumentSnapshot.exists).thenReturn(false);
+
+          // Set data in Firestore
+          when(mockDocumentReference.set(any)).thenAnswer((_) async => null);
 
           final result =
               await onlineUserDatabaseFacade.saveDetailsFromUser(user);
@@ -153,7 +158,55 @@ void main() {
           expect(
             result,
             Right(UserDatabaseSuccess.userDetailsSavedSuccess(
-              user.copyWith(updatedAt: currentTime),
+              user.copyWith(updatedAt: DateTime.now().millisecondsSinceEpoch),
+            )),
+          );
+
+          result.fold(
+            (_) {},
+            (success) {
+              expect(success is UserDetailsSavedSuccess, true);
+
+              if (success is UserDetailsSavedSuccess) {
+                expect(success.user, user);
+              }
+            },
+          );
+        },
+      );
+
+      test(
+        '''
+        Given a User() and user exists
+        When saveDetailsFromUser() is called
+        Then userDetailsSavedSuccess() with User()
+        ''',
+        () async {
+          // Create documentReference to user
+          when(firestore.collection(any)).thenReturn(mockCollectionReference);
+          when(mockCollectionReference.doc(any))
+              .thenReturn(mockDocumentReference);
+
+          // Load user document if it exists
+          when(firestore.collection(any)).thenReturn(mockCollectionReference);
+          when(mockCollectionReference.doc(any))
+              .thenReturn(mockDocumentReference);
+          when(mockDocumentReference.get())
+              .thenAnswer((_) async => mockDocumentSnapshot);
+          when(mockDocumentSnapshot.exists).thenReturn(true);
+          when(mockDocumentSnapshot.data()).thenReturn(user.toMap());
+
+          // Set data in Firestore
+          when(mockDocumentReference.set(any)).thenAnswer((_) async => null);
+
+          final result =
+              await onlineUserDatabaseFacade.saveDetailsFromUser(user);
+
+          expect(result.isRight(), true);
+          expect(
+            result,
+            Right(UserDatabaseSuccess.userDetailsSavedSuccess(
+              user.copyWith(updatedAt: DateTime.now().millisecondsSinceEpoch),
             )),
           );
 
@@ -177,16 +230,82 @@ void main() {
         Then serverErrorFailure() is returned
         ''',
         () async {
-          when(
-            onlineUserDatabaseFacade.saveDetailsFromUser(user),
-          ).thenAnswer(
-            (_) => Future.value(
-              left(const UserDatabaseFailure.serverErrorFailure()),
-            ),
+          // Create documentReference to user
+          when(firestore.collection(any)).thenAnswer(
+            (_) => throw Exception('An unexpected error occured!'),
           );
 
           final result =
               await onlineUserDatabaseFacade.saveDetailsFromUser(user);
+
+          expect(result.isLeft(), true);
+          expect(
+            result,
+            const Left(UserDatabaseFailure.serverErrorFailure()),
+          );
+
+          result.fold(
+            (_) {},
+            (success) => expect(success is ServerErrorFailure, true),
+          );
+        },
+      );
+
+      test(
+        '''
+        Given a userUID and a username
+        When saveUsername() is called
+        Then usernameSavedSuccess() is returned
+        ''',
+        () async {
+          // Create documentReference to user
+          when(firestore.collection(any)).thenReturn(mockCollectionReference);
+          when(mockCollectionReference.doc(any))
+              .thenReturn(mockDocumentReference);
+
+          // Set data in Firestore
+          when(mockDocumentReference.set(any)).thenAnswer((_) async => null);
+
+          final result = await onlineUserDatabaseFacade.saveUsername(
+            user.uid,
+            user.username,
+          );
+
+          expect(result.isRight(), true);
+          expect(
+            result,
+            Right(UserDatabaseSuccess.usernameSavedSuccess(user.username)),
+          );
+
+          result.fold(
+            (_) {},
+            (success) {
+              expect(success is UsernameSavedSuccess, true);
+
+              if (success is UsernameSavedSuccess) {
+                expect(success.username, user.username);
+              }
+            },
+          );
+        },
+      );
+
+      test(
+        '''
+        Given an error is thrown server side
+        When saveUsername() is called
+        Then serverErrorFailure() is returned
+        ''',
+        () async {
+          // Create documentReference to user
+          when(firestore.collection(any)).thenAnswer(
+            (_) => throw Exception('An unexpected error occured!'),
+          );
+
+          final result = await onlineUserDatabaseFacade.saveUsername(
+            user.uid,
+            user.username,
+          );
 
           expect(result.isLeft(), true);
           expect(

@@ -99,8 +99,8 @@ void main() {
         () async {
           when(
             authenticationFacade.convertWithEmailAndPassword(
-              emailAddress: EmailAddress(validEmail),
-              password: Password(validPassword),
+              EmailAddress(validEmail),
+              Password(validPassword),
             ),
           ).thenAnswer(
             (_) => Future.value(
@@ -109,8 +109,8 @@ void main() {
           );
 
           final result = await authenticationFacade.convertWithEmailAndPassword(
-            emailAddress: EmailAddress(validEmail),
-            password: Password(validPassword),
+            EmailAddress(validEmail),
+            Password(validPassword),
           );
 
           expect(result.isRight(), true);

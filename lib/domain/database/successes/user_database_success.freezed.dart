@@ -26,6 +26,13 @@ class _$UserDatabaseSuccessTearOff {
       user,
     );
   }
+
+// ignore: unused_element
+  UsernameSavedSuccess usernameSavedSuccess(String username) {
+    return UsernameSavedSuccess(
+      username,
+    );
+  }
 }
 
 /// @nodoc
@@ -34,32 +41,32 @@ const $UserDatabaseSuccess = _$UserDatabaseSuccessTearOff();
 
 /// @nodoc
 mixin _$UserDatabaseSuccess {
-  User get user;
-
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult userDetailsSavedSuccess(User user),
     @required TResult userLoadedSuccess(User user),
+    @required TResult usernameSavedSuccess(String username),
   });
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult userDetailsSavedSuccess(User user),
     TResult userLoadedSuccess(User user),
+    TResult usernameSavedSuccess(String username),
     @required TResult orElse(),
   });
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult userDetailsSavedSuccess(UserDetailsSavedSuccess value),
     @required TResult userLoadedSuccess(UserLoadedSuccess value),
+    @required TResult usernameSavedSuccess(UsernameSavedSuccess value),
   });
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult userDetailsSavedSuccess(UserDetailsSavedSuccess value),
     TResult userLoadedSuccess(UserLoadedSuccess value),
+    TResult usernameSavedSuccess(UsernameSavedSuccess value),
     @required TResult orElse(),
   });
-
-  $UserDatabaseSuccessCopyWith<UserDatabaseSuccess> get copyWith;
 }
 
 /// @nodoc
@@ -67,7 +74,6 @@ abstract class $UserDatabaseSuccessCopyWith<$Res> {
   factory $UserDatabaseSuccessCopyWith(
           UserDatabaseSuccess value, $Res Function(UserDatabaseSuccess) then) =
       _$UserDatabaseSuccessCopyWithImpl<$Res>;
-  $Res call({User user});
 }
 
 /// @nodoc
@@ -78,24 +84,13 @@ class _$UserDatabaseSuccessCopyWithImpl<$Res>
   final UserDatabaseSuccess _value;
   // ignore: unused_field
   final $Res Function(UserDatabaseSuccess) _then;
-
-  @override
-  $Res call({
-    Object user = freezed,
-  }) {
-    return _then(_value.copyWith(
-      user: user == freezed ? _value.user : user as User,
-    ));
-  }
 }
 
 /// @nodoc
-abstract class $UserDetailsSavedSuccessCopyWith<$Res>
-    implements $UserDatabaseSuccessCopyWith<$Res> {
+abstract class $UserDetailsSavedSuccessCopyWith<$Res> {
   factory $UserDetailsSavedSuccessCopyWith(UserDetailsSavedSuccess value,
           $Res Function(UserDetailsSavedSuccess) then) =
       _$UserDetailsSavedSuccessCopyWithImpl<$Res>;
-  @override
   $Res call({User user});
 }
 
@@ -154,9 +149,11 @@ class _$UserDetailsSavedSuccess implements UserDetailsSavedSuccess {
   TResult when<TResult extends Object>({
     @required TResult userDetailsSavedSuccess(User user),
     @required TResult userLoadedSuccess(User user),
+    @required TResult usernameSavedSuccess(String username),
   }) {
     assert(userDetailsSavedSuccess != null);
     assert(userLoadedSuccess != null);
+    assert(usernameSavedSuccess != null);
     return userDetailsSavedSuccess(user);
   }
 
@@ -165,6 +162,7 @@ class _$UserDetailsSavedSuccess implements UserDetailsSavedSuccess {
   TResult maybeWhen<TResult extends Object>({
     TResult userDetailsSavedSuccess(User user),
     TResult userLoadedSuccess(User user),
+    TResult usernameSavedSuccess(String username),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -179,9 +177,11 @@ class _$UserDetailsSavedSuccess implements UserDetailsSavedSuccess {
   TResult map<TResult extends Object>({
     @required TResult userDetailsSavedSuccess(UserDetailsSavedSuccess value),
     @required TResult userLoadedSuccess(UserLoadedSuccess value),
+    @required TResult usernameSavedSuccess(UsernameSavedSuccess value),
   }) {
     assert(userDetailsSavedSuccess != null);
     assert(userLoadedSuccess != null);
+    assert(usernameSavedSuccess != null);
     return userDetailsSavedSuccess(this);
   }
 
@@ -190,6 +190,7 @@ class _$UserDetailsSavedSuccess implements UserDetailsSavedSuccess {
   TResult maybeMap<TResult extends Object>({
     TResult userDetailsSavedSuccess(UserDetailsSavedSuccess value),
     TResult userLoadedSuccess(UserLoadedSuccess value),
+    TResult usernameSavedSuccess(UsernameSavedSuccess value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -203,19 +204,15 @@ class _$UserDetailsSavedSuccess implements UserDetailsSavedSuccess {
 abstract class UserDetailsSavedSuccess implements UserDatabaseSuccess {
   const factory UserDetailsSavedSuccess(User user) = _$UserDetailsSavedSuccess;
 
-  @override
   User get user;
-  @override
   $UserDetailsSavedSuccessCopyWith<UserDetailsSavedSuccess> get copyWith;
 }
 
 /// @nodoc
-abstract class $UserLoadedSuccessCopyWith<$Res>
-    implements $UserDatabaseSuccessCopyWith<$Res> {
+abstract class $UserLoadedSuccessCopyWith<$Res> {
   factory $UserLoadedSuccessCopyWith(
           UserLoadedSuccess value, $Res Function(UserLoadedSuccess) then) =
       _$UserLoadedSuccessCopyWithImpl<$Res>;
-  @override
   $Res call({User user});
 }
 
@@ -273,9 +270,11 @@ class _$UserLoadedSuccess implements UserLoadedSuccess {
   TResult when<TResult extends Object>({
     @required TResult userDetailsSavedSuccess(User user),
     @required TResult userLoadedSuccess(User user),
+    @required TResult usernameSavedSuccess(String username),
   }) {
     assert(userDetailsSavedSuccess != null);
     assert(userLoadedSuccess != null);
+    assert(usernameSavedSuccess != null);
     return userLoadedSuccess(user);
   }
 
@@ -284,6 +283,7 @@ class _$UserLoadedSuccess implements UserLoadedSuccess {
   TResult maybeWhen<TResult extends Object>({
     TResult userDetailsSavedSuccess(User user),
     TResult userLoadedSuccess(User user),
+    TResult usernameSavedSuccess(String username),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -298,9 +298,11 @@ class _$UserLoadedSuccess implements UserLoadedSuccess {
   TResult map<TResult extends Object>({
     @required TResult userDetailsSavedSuccess(UserDetailsSavedSuccess value),
     @required TResult userLoadedSuccess(UserLoadedSuccess value),
+    @required TResult usernameSavedSuccess(UsernameSavedSuccess value),
   }) {
     assert(userDetailsSavedSuccess != null);
     assert(userLoadedSuccess != null);
+    assert(usernameSavedSuccess != null);
     return userLoadedSuccess(this);
   }
 
@@ -309,6 +311,7 @@ class _$UserLoadedSuccess implements UserLoadedSuccess {
   TResult maybeMap<TResult extends Object>({
     TResult userDetailsSavedSuccess(UserDetailsSavedSuccess value),
     TResult userLoadedSuccess(UserLoadedSuccess value),
+    TResult usernameSavedSuccess(UsernameSavedSuccess value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -322,8 +325,129 @@ class _$UserLoadedSuccess implements UserLoadedSuccess {
 abstract class UserLoadedSuccess implements UserDatabaseSuccess {
   const factory UserLoadedSuccess(User user) = _$UserLoadedSuccess;
 
-  @override
   User get user;
-  @override
   $UserLoadedSuccessCopyWith<UserLoadedSuccess> get copyWith;
+}
+
+/// @nodoc
+abstract class $UsernameSavedSuccessCopyWith<$Res> {
+  factory $UsernameSavedSuccessCopyWith(UsernameSavedSuccess value,
+          $Res Function(UsernameSavedSuccess) then) =
+      _$UsernameSavedSuccessCopyWithImpl<$Res>;
+  $Res call({String username});
+}
+
+/// @nodoc
+class _$UsernameSavedSuccessCopyWithImpl<$Res>
+    extends _$UserDatabaseSuccessCopyWithImpl<$Res>
+    implements $UsernameSavedSuccessCopyWith<$Res> {
+  _$UsernameSavedSuccessCopyWithImpl(
+      UsernameSavedSuccess _value, $Res Function(UsernameSavedSuccess) _then)
+      : super(_value, (v) => _then(v as UsernameSavedSuccess));
+
+  @override
+  UsernameSavedSuccess get _value => super._value as UsernameSavedSuccess;
+
+  @override
+  $Res call({
+    Object username = freezed,
+  }) {
+    return _then(UsernameSavedSuccess(
+      username == freezed ? _value.username : username as String,
+    ));
+  }
+}
+
+/// @nodoc
+class _$UsernameSavedSuccess implements UsernameSavedSuccess {
+  const _$UsernameSavedSuccess(this.username) : assert(username != null);
+
+  @override
+  final String username;
+
+  @override
+  String toString() {
+    return 'UserDatabaseSuccess.usernameSavedSuccess(username: $username)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is UsernameSavedSuccess &&
+            (identical(other.username, username) ||
+                const DeepCollectionEquality()
+                    .equals(other.username, username)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(username);
+
+  @override
+  $UsernameSavedSuccessCopyWith<UsernameSavedSuccess> get copyWith =>
+      _$UsernameSavedSuccessCopyWithImpl<UsernameSavedSuccess>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object>({
+    @required TResult userDetailsSavedSuccess(User user),
+    @required TResult userLoadedSuccess(User user),
+    @required TResult usernameSavedSuccess(String username),
+  }) {
+    assert(userDetailsSavedSuccess != null);
+    assert(userLoadedSuccess != null);
+    assert(usernameSavedSuccess != null);
+    return usernameSavedSuccess(username);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object>({
+    TResult userDetailsSavedSuccess(User user),
+    TResult userLoadedSuccess(User user),
+    TResult usernameSavedSuccess(String username),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (usernameSavedSuccess != null) {
+      return usernameSavedSuccess(username);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object>({
+    @required TResult userDetailsSavedSuccess(UserDetailsSavedSuccess value),
+    @required TResult userLoadedSuccess(UserLoadedSuccess value),
+    @required TResult usernameSavedSuccess(UsernameSavedSuccess value),
+  }) {
+    assert(userDetailsSavedSuccess != null);
+    assert(userLoadedSuccess != null);
+    assert(usernameSavedSuccess != null);
+    return usernameSavedSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object>({
+    TResult userDetailsSavedSuccess(UserDetailsSavedSuccess value),
+    TResult userLoadedSuccess(UserLoadedSuccess value),
+    TResult usernameSavedSuccess(UsernameSavedSuccess value),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (usernameSavedSuccess != null) {
+      return usernameSavedSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UsernameSavedSuccess implements UserDatabaseSuccess {
+  const factory UsernameSavedSuccess(String username) = _$UsernameSavedSuccess;
+
+  String get username;
+  $UsernameSavedSuccessCopyWith<UsernameSavedSuccess> get copyWith;
 }

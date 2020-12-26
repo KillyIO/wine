@@ -14,4 +14,10 @@ abstract class IOnlineUserDatabaseFacade {
   Future<Either<UserDatabaseFailure, UserDatabaseSuccess>> saveDetailsFromUser(
     User user,
   );
+
+  /// @nodoc
+  Future<Either<UserDatabaseFailure, UserDatabaseSuccess>> saveUsername(
+    String userUID,
+    String username,
+  );
 }

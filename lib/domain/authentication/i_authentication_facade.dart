@@ -1,5 +1,4 @@
 import 'package:dartz/dartz.dart';
-import 'package:flutter/foundation.dart';
 import 'package:wine/domain/authentication/authentication_failure.dart';
 import 'package:wine/domain/authentication/authentication_success.dart';
 import 'package:wine/domain/authentication/email_address.dart';
@@ -13,17 +12,14 @@ abstract class IAuthenticationFacade {
 
   /// @nodoc
   Future<Either<AuthenticationFailure, AuthenticationSuccess>>
-      convertWithEmailAndPassword({
-    @required EmailAddress emailAddress,
-    @required Password password,
-  });
+      convertWithEmailAndPassword(EmailAddress emailAddress, Password password);
 
   /// @nodoc
   bool isAnonymous();
 
   /// @nodoc
   Future<Either<AuthenticationFailure, AuthenticationSuccess>>
-      isUsernameAvailable({@required Username username});
+      isUsernameAvailable(Username username);
 
   /// @nodoc
   bool isSignedIn();
@@ -38,10 +34,7 @@ abstract class IAuthenticationFacade {
 
   /// @nodoc
   Future<Either<AuthenticationFailure, AuthenticationSuccess>>
-      signInWithEmailAndPassword({
-    @required EmailAddress emailAddress,
-    @required Password password,
-  });
+      signInWithEmailAndPassword(EmailAddress emailAddress, Password password);
 
   /// @nodoc
   Future<Either<AuthenticationFailure, AuthenticationSuccess>>

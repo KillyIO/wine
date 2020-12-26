@@ -13,4 +13,8 @@ abstract class UserDatabaseSuccess with _$UserDatabaseSuccess {
   /// @nodoc
   const factory UserDatabaseSuccess.userLoadedSuccess(User user) =
       UserLoadedSuccess;
+
+  /// @nodoc
+  const factory UserDatabaseSuccess.usernameSavedSuccess(String username) =
+      UsernameSavedSuccess;
 }
