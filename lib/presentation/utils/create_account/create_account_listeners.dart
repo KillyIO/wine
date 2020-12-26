@@ -44,7 +44,7 @@ class CreateAccountListeners {
                 orElse: () => null,
               ),
               (success) {
-                if (success is UserAuthenticatedSCS) {
+                if (success is UserAuthenticatedSuccess) {
                   context
                       .read<CreateAccountDatabaseBloc>()
                       .add(CreateAccountDatabaseEvent.accountCreatedEVT(

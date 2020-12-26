@@ -87,7 +87,7 @@ class CreateAccountAuthenticationBloc extends Bloc<
           failureOrSuccess.fold(
             (_) {},
             (success) {
-              if (success is UserAuthenticatedSCS) {
+              if (success is UserAuthenticatedSuccess) {
                 final user = success.user.copyWith(
                   username: state.username
                       .getOrCrash()
@@ -99,7 +99,7 @@ class CreateAccountAuthenticationBloc extends Bloc<
                 );
 
                 failureOrSuccess =
-                    right(AuthenticationSuccess.userAuthenticatedSCS(user));
+                    right(AuthenticationSuccess.userAuthenticatedSuccess(user));
               }
             },
           );

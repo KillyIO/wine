@@ -7,8 +7,8 @@ part 'authentication_success.freezed.dart';
 @freezed
 abstract class AuthenticationSuccess with _$AuthenticationSuccess {
   /// @nodoc
-  const factory AuthenticationSuccess.userAuthenticatedSCS(User user) =
-      UserAuthenticatedSCS;
+  const factory AuthenticationSuccess.userAuthenticatedSuccess(User user) =
+      UserAuthenticatedSuccess;
 
   /// @nodoc
   const factory AuthenticationSuccess.usernameAvailableSCS() =

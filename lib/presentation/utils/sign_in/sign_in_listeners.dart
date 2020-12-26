@@ -45,7 +45,7 @@ class SignInListeners {
                     orElse: () => null,
                   ),
                   (success) {
-                    if (success is UserAuthenticatedSCS) {
+                    if (success is UserAuthenticatedSuccess) {
                       context
                           .read<SignInDatabaseBloc>()
                           .add(SignInDatabaseEvent.signedInEVT(success.user));

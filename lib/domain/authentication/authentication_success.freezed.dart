@@ -14,8 +14,8 @@ class _$AuthenticationSuccessTearOff {
   const _$AuthenticationSuccessTearOff();
 
 // ignore: unused_element
-  UserAuthenticatedSCS userAuthenticatedSCS(User user) {
-    return UserAuthenticatedSCS(
+  UserAuthenticatedSuccess userAuthenticatedSuccess(User user) {
+    return UserAuthenticatedSuccess(
       user,
     );
   }
@@ -49,7 +49,7 @@ const $AuthenticationSuccess = _$AuthenticationSuccessTearOff();
 mixin _$AuthenticationSuccess {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
-    @required TResult userAuthenticatedSCS(User user),
+    @required TResult userAuthenticatedSuccess(User user),
     @required TResult usernameAvailableSCS(),
     @required TResult userSignedInAnonymouslySCS(),
     @required TResult userSignedOutSCS(),
@@ -57,7 +57,7 @@ mixin _$AuthenticationSuccess {
   });
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
-    TResult userAuthenticatedSCS(User user),
+    TResult userAuthenticatedSuccess(User user),
     TResult usernameAvailableSCS(),
     TResult userSignedInAnonymouslySCS(),
     TResult userSignedOutSCS(),
@@ -66,7 +66,7 @@ mixin _$AuthenticationSuccess {
   });
   @optionalTypeArgs
   TResult map<TResult extends Object>({
-    @required TResult userAuthenticatedSCS(UserAuthenticatedSCS value),
+    @required TResult userAuthenticatedSuccess(UserAuthenticatedSuccess value),
     @required TResult usernameAvailableSCS(UsernameAvailableSCS value),
     @required
         TResult userSignedInAnonymouslySCS(UserSignedInAnonymouslySCS value),
@@ -75,7 +75,7 @@ mixin _$AuthenticationSuccess {
   });
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
-    TResult userAuthenticatedSCS(UserAuthenticatedSCS value),
+    TResult userAuthenticatedSuccess(UserAuthenticatedSuccess value),
     TResult usernameAvailableSCS(UsernameAvailableSCS value),
     TResult userSignedInAnonymouslySCS(UserSignedInAnonymouslySCS value),
     TResult userSignedOutSCS(UserSignedOutSCS value),
@@ -102,50 +102,51 @@ class _$AuthenticationSuccessCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class $UserAuthenticatedSCSCopyWith<$Res> {
-  factory $UserAuthenticatedSCSCopyWith(UserAuthenticatedSCS value,
-          $Res Function(UserAuthenticatedSCS) then) =
-      _$UserAuthenticatedSCSCopyWithImpl<$Res>;
+abstract class $UserAuthenticatedSuccessCopyWith<$Res> {
+  factory $UserAuthenticatedSuccessCopyWith(UserAuthenticatedSuccess value,
+          $Res Function(UserAuthenticatedSuccess) then) =
+      _$UserAuthenticatedSuccessCopyWithImpl<$Res>;
   $Res call({User user});
 }
 
 /// @nodoc
-class _$UserAuthenticatedSCSCopyWithImpl<$Res>
+class _$UserAuthenticatedSuccessCopyWithImpl<$Res>
     extends _$AuthenticationSuccessCopyWithImpl<$Res>
-    implements $UserAuthenticatedSCSCopyWith<$Res> {
-  _$UserAuthenticatedSCSCopyWithImpl(
-      UserAuthenticatedSCS _value, $Res Function(UserAuthenticatedSCS) _then)
-      : super(_value, (v) => _then(v as UserAuthenticatedSCS));
+    implements $UserAuthenticatedSuccessCopyWith<$Res> {
+  _$UserAuthenticatedSuccessCopyWithImpl(UserAuthenticatedSuccess _value,
+      $Res Function(UserAuthenticatedSuccess) _then)
+      : super(_value, (v) => _then(v as UserAuthenticatedSuccess));
 
   @override
-  UserAuthenticatedSCS get _value => super._value as UserAuthenticatedSCS;
+  UserAuthenticatedSuccess get _value =>
+      super._value as UserAuthenticatedSuccess;
 
   @override
   $Res call({
     Object user = freezed,
   }) {
-    return _then(UserAuthenticatedSCS(
+    return _then(UserAuthenticatedSuccess(
       user == freezed ? _value.user : user as User,
     ));
   }
 }
 
 /// @nodoc
-class _$UserAuthenticatedSCS implements UserAuthenticatedSCS {
-  const _$UserAuthenticatedSCS(this.user) : assert(user != null);
+class _$UserAuthenticatedSuccess implements UserAuthenticatedSuccess {
+  const _$UserAuthenticatedSuccess(this.user) : assert(user != null);
 
   @override
   final User user;
 
   @override
   String toString() {
-    return 'AuthenticationSuccess.userAuthenticatedSCS(user: $user)';
+    return 'AuthenticationSuccess.userAuthenticatedSuccess(user: $user)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is UserAuthenticatedSCS &&
+        (other is UserAuthenticatedSuccess &&
             (identical(other.user, user) ||
                 const DeepCollectionEquality().equals(other.user, user)));
   }
@@ -155,31 +156,31 @@ class _$UserAuthenticatedSCS implements UserAuthenticatedSCS {
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(user);
 
   @override
-  $UserAuthenticatedSCSCopyWith<UserAuthenticatedSCS> get copyWith =>
-      _$UserAuthenticatedSCSCopyWithImpl<UserAuthenticatedSCS>(
+  $UserAuthenticatedSuccessCopyWith<UserAuthenticatedSuccess> get copyWith =>
+      _$UserAuthenticatedSuccessCopyWithImpl<UserAuthenticatedSuccess>(
           this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
-    @required TResult userAuthenticatedSCS(User user),
+    @required TResult userAuthenticatedSuccess(User user),
     @required TResult usernameAvailableSCS(),
     @required TResult userSignedInAnonymouslySCS(),
     @required TResult userSignedOutSCS(),
     @required TResult verificationEmailSentSCS(),
   }) {
-    assert(userAuthenticatedSCS != null);
+    assert(userAuthenticatedSuccess != null);
     assert(usernameAvailableSCS != null);
     assert(userSignedInAnonymouslySCS != null);
     assert(userSignedOutSCS != null);
     assert(verificationEmailSentSCS != null);
-    return userAuthenticatedSCS(user);
+    return userAuthenticatedSuccess(user);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
-    TResult userAuthenticatedSCS(User user),
+    TResult userAuthenticatedSuccess(User user),
     TResult usernameAvailableSCS(),
     TResult userSignedInAnonymouslySCS(),
     TResult userSignedOutSCS(),
@@ -187,8 +188,8 @@ class _$UserAuthenticatedSCS implements UserAuthenticatedSCS {
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (userAuthenticatedSCS != null) {
-      return userAuthenticatedSCS(user);
+    if (userAuthenticatedSuccess != null) {
+      return userAuthenticatedSuccess(user);
     }
     return orElse();
   }
@@ -196,25 +197,25 @@ class _$UserAuthenticatedSCS implements UserAuthenticatedSCS {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object>({
-    @required TResult userAuthenticatedSCS(UserAuthenticatedSCS value),
+    @required TResult userAuthenticatedSuccess(UserAuthenticatedSuccess value),
     @required TResult usernameAvailableSCS(UsernameAvailableSCS value),
     @required
         TResult userSignedInAnonymouslySCS(UserSignedInAnonymouslySCS value),
     @required TResult userSignedOutSCS(UserSignedOutSCS value),
     @required TResult verificationEmailSentSCS(VerificationEmailSentSCS value),
   }) {
-    assert(userAuthenticatedSCS != null);
+    assert(userAuthenticatedSuccess != null);
     assert(usernameAvailableSCS != null);
     assert(userSignedInAnonymouslySCS != null);
     assert(userSignedOutSCS != null);
     assert(verificationEmailSentSCS != null);
-    return userAuthenticatedSCS(this);
+    return userAuthenticatedSuccess(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
-    TResult userAuthenticatedSCS(UserAuthenticatedSCS value),
+    TResult userAuthenticatedSuccess(UserAuthenticatedSuccess value),
     TResult usernameAvailableSCS(UsernameAvailableSCS value),
     TResult userSignedInAnonymouslySCS(UserSignedInAnonymouslySCS value),
     TResult userSignedOutSCS(UserSignedOutSCS value),
@@ -222,18 +223,19 @@ class _$UserAuthenticatedSCS implements UserAuthenticatedSCS {
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (userAuthenticatedSCS != null) {
-      return userAuthenticatedSCS(this);
+    if (userAuthenticatedSuccess != null) {
+      return userAuthenticatedSuccess(this);
     }
     return orElse();
   }
 }
 
-abstract class UserAuthenticatedSCS implements AuthenticationSuccess {
-  const factory UserAuthenticatedSCS(User user) = _$UserAuthenticatedSCS;
+abstract class UserAuthenticatedSuccess implements AuthenticationSuccess {
+  const factory UserAuthenticatedSuccess(User user) =
+      _$UserAuthenticatedSuccess;
 
   User get user;
-  $UserAuthenticatedSCSCopyWith<UserAuthenticatedSCS> get copyWith;
+  $UserAuthenticatedSuccessCopyWith<UserAuthenticatedSuccess> get copyWith;
 }
 
 /// @nodoc
@@ -275,13 +277,13 @@ class _$UsernameAvailableSCS implements UsernameAvailableSCS {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
-    @required TResult userAuthenticatedSCS(User user),
+    @required TResult userAuthenticatedSuccess(User user),
     @required TResult usernameAvailableSCS(),
     @required TResult userSignedInAnonymouslySCS(),
     @required TResult userSignedOutSCS(),
     @required TResult verificationEmailSentSCS(),
   }) {
-    assert(userAuthenticatedSCS != null);
+    assert(userAuthenticatedSuccess != null);
     assert(usernameAvailableSCS != null);
     assert(userSignedInAnonymouslySCS != null);
     assert(userSignedOutSCS != null);
@@ -292,7 +294,7 @@ class _$UsernameAvailableSCS implements UsernameAvailableSCS {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
-    TResult userAuthenticatedSCS(User user),
+    TResult userAuthenticatedSuccess(User user),
     TResult usernameAvailableSCS(),
     TResult userSignedInAnonymouslySCS(),
     TResult userSignedOutSCS(),
@@ -309,14 +311,14 @@ class _$UsernameAvailableSCS implements UsernameAvailableSCS {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object>({
-    @required TResult userAuthenticatedSCS(UserAuthenticatedSCS value),
+    @required TResult userAuthenticatedSuccess(UserAuthenticatedSuccess value),
     @required TResult usernameAvailableSCS(UsernameAvailableSCS value),
     @required
         TResult userSignedInAnonymouslySCS(UserSignedInAnonymouslySCS value),
     @required TResult userSignedOutSCS(UserSignedOutSCS value),
     @required TResult verificationEmailSentSCS(VerificationEmailSentSCS value),
   }) {
-    assert(userAuthenticatedSCS != null);
+    assert(userAuthenticatedSuccess != null);
     assert(usernameAvailableSCS != null);
     assert(userSignedInAnonymouslySCS != null);
     assert(userSignedOutSCS != null);
@@ -327,7 +329,7 @@ class _$UsernameAvailableSCS implements UsernameAvailableSCS {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
-    TResult userAuthenticatedSCS(UserAuthenticatedSCS value),
+    TResult userAuthenticatedSuccess(UserAuthenticatedSuccess value),
     TResult usernameAvailableSCS(UsernameAvailableSCS value),
     TResult userSignedInAnonymouslySCS(UserSignedInAnonymouslySCS value),
     TResult userSignedOutSCS(UserSignedOutSCS value),
@@ -386,13 +388,13 @@ class _$UserSignedInAnonymouslySCS implements UserSignedInAnonymouslySCS {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
-    @required TResult userAuthenticatedSCS(User user),
+    @required TResult userAuthenticatedSuccess(User user),
     @required TResult usernameAvailableSCS(),
     @required TResult userSignedInAnonymouslySCS(),
     @required TResult userSignedOutSCS(),
     @required TResult verificationEmailSentSCS(),
   }) {
-    assert(userAuthenticatedSCS != null);
+    assert(userAuthenticatedSuccess != null);
     assert(usernameAvailableSCS != null);
     assert(userSignedInAnonymouslySCS != null);
     assert(userSignedOutSCS != null);
@@ -403,7 +405,7 @@ class _$UserSignedInAnonymouslySCS implements UserSignedInAnonymouslySCS {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
-    TResult userAuthenticatedSCS(User user),
+    TResult userAuthenticatedSuccess(User user),
     TResult usernameAvailableSCS(),
     TResult userSignedInAnonymouslySCS(),
     TResult userSignedOutSCS(),
@@ -420,14 +422,14 @@ class _$UserSignedInAnonymouslySCS implements UserSignedInAnonymouslySCS {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object>({
-    @required TResult userAuthenticatedSCS(UserAuthenticatedSCS value),
+    @required TResult userAuthenticatedSuccess(UserAuthenticatedSuccess value),
     @required TResult usernameAvailableSCS(UsernameAvailableSCS value),
     @required
         TResult userSignedInAnonymouslySCS(UserSignedInAnonymouslySCS value),
     @required TResult userSignedOutSCS(UserSignedOutSCS value),
     @required TResult verificationEmailSentSCS(VerificationEmailSentSCS value),
   }) {
-    assert(userAuthenticatedSCS != null);
+    assert(userAuthenticatedSuccess != null);
     assert(usernameAvailableSCS != null);
     assert(userSignedInAnonymouslySCS != null);
     assert(userSignedOutSCS != null);
@@ -438,7 +440,7 @@ class _$UserSignedInAnonymouslySCS implements UserSignedInAnonymouslySCS {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
-    TResult userAuthenticatedSCS(UserAuthenticatedSCS value),
+    TResult userAuthenticatedSuccess(UserAuthenticatedSuccess value),
     TResult usernameAvailableSCS(UsernameAvailableSCS value),
     TResult userSignedInAnonymouslySCS(UserSignedInAnonymouslySCS value),
     TResult userSignedOutSCS(UserSignedOutSCS value),
@@ -496,13 +498,13 @@ class _$UserSignedOutSCS implements UserSignedOutSCS {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
-    @required TResult userAuthenticatedSCS(User user),
+    @required TResult userAuthenticatedSuccess(User user),
     @required TResult usernameAvailableSCS(),
     @required TResult userSignedInAnonymouslySCS(),
     @required TResult userSignedOutSCS(),
     @required TResult verificationEmailSentSCS(),
   }) {
-    assert(userAuthenticatedSCS != null);
+    assert(userAuthenticatedSuccess != null);
     assert(usernameAvailableSCS != null);
     assert(userSignedInAnonymouslySCS != null);
     assert(userSignedOutSCS != null);
@@ -513,7 +515,7 @@ class _$UserSignedOutSCS implements UserSignedOutSCS {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
-    TResult userAuthenticatedSCS(User user),
+    TResult userAuthenticatedSuccess(User user),
     TResult usernameAvailableSCS(),
     TResult userSignedInAnonymouslySCS(),
     TResult userSignedOutSCS(),
@@ -530,14 +532,14 @@ class _$UserSignedOutSCS implements UserSignedOutSCS {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object>({
-    @required TResult userAuthenticatedSCS(UserAuthenticatedSCS value),
+    @required TResult userAuthenticatedSuccess(UserAuthenticatedSuccess value),
     @required TResult usernameAvailableSCS(UsernameAvailableSCS value),
     @required
         TResult userSignedInAnonymouslySCS(UserSignedInAnonymouslySCS value),
     @required TResult userSignedOutSCS(UserSignedOutSCS value),
     @required TResult verificationEmailSentSCS(VerificationEmailSentSCS value),
   }) {
-    assert(userAuthenticatedSCS != null);
+    assert(userAuthenticatedSuccess != null);
     assert(usernameAvailableSCS != null);
     assert(userSignedInAnonymouslySCS != null);
     assert(userSignedOutSCS != null);
@@ -548,7 +550,7 @@ class _$UserSignedOutSCS implements UserSignedOutSCS {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
-    TResult userAuthenticatedSCS(UserAuthenticatedSCS value),
+    TResult userAuthenticatedSuccess(UserAuthenticatedSuccess value),
     TResult usernameAvailableSCS(UsernameAvailableSCS value),
     TResult userSignedInAnonymouslySCS(UserSignedInAnonymouslySCS value),
     TResult userSignedOutSCS(UserSignedOutSCS value),
@@ -607,13 +609,13 @@ class _$VerificationEmailSentSCS implements VerificationEmailSentSCS {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
-    @required TResult userAuthenticatedSCS(User user),
+    @required TResult userAuthenticatedSuccess(User user),
     @required TResult usernameAvailableSCS(),
     @required TResult userSignedInAnonymouslySCS(),
     @required TResult userSignedOutSCS(),
     @required TResult verificationEmailSentSCS(),
   }) {
-    assert(userAuthenticatedSCS != null);
+    assert(userAuthenticatedSuccess != null);
     assert(usernameAvailableSCS != null);
     assert(userSignedInAnonymouslySCS != null);
     assert(userSignedOutSCS != null);
@@ -624,7 +626,7 @@ class _$VerificationEmailSentSCS implements VerificationEmailSentSCS {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
-    TResult userAuthenticatedSCS(User user),
+    TResult userAuthenticatedSuccess(User user),
     TResult usernameAvailableSCS(),
     TResult userSignedInAnonymouslySCS(),
     TResult userSignedOutSCS(),
@@ -641,14 +643,14 @@ class _$VerificationEmailSentSCS implements VerificationEmailSentSCS {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object>({
-    @required TResult userAuthenticatedSCS(UserAuthenticatedSCS value),
+    @required TResult userAuthenticatedSuccess(UserAuthenticatedSuccess value),
     @required TResult usernameAvailableSCS(UsernameAvailableSCS value),
     @required
         TResult userSignedInAnonymouslySCS(UserSignedInAnonymouslySCS value),
     @required TResult userSignedOutSCS(UserSignedOutSCS value),
     @required TResult verificationEmailSentSCS(VerificationEmailSentSCS value),
   }) {
-    assert(userAuthenticatedSCS != null);
+    assert(userAuthenticatedSuccess != null);
     assert(usernameAvailableSCS != null);
     assert(userSignedInAnonymouslySCS != null);
     assert(userSignedOutSCS != null);
@@ -659,7 +661,7 @@ class _$VerificationEmailSentSCS implements VerificationEmailSentSCS {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
-    TResult userAuthenticatedSCS(UserAuthenticatedSCS value),
+    TResult userAuthenticatedSuccess(UserAuthenticatedSuccess value),
     TResult usernameAvailableSCS(UsernameAvailableSCS value),
     TResult userSignedInAnonymouslySCS(UserSignedInAnonymouslySCS value),
     TResult userSignedOutSCS(UserSignedOutSCS value),

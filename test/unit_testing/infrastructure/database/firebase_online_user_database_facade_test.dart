@@ -32,13 +32,9 @@ void main() {
   MockOnlineUserDatabaseFacade onlineUserDatabaseFacade;
 
   setUp(() {
-    final instance = MockFirestoreInstance();
-    instance
-        .collection(Paths.usersPath)
-        .doc(user.uid)
-        .set(user.toMap(), SetOptions(merge: true));
+    final firestore = MockFirestoreInstance();
 
-    onlineUserDatabaseFacade = MockOnlineUserDatabaseFacade(instance);
+    onlineUserDatabaseFacade = MockOnlineUserDatabaseFacade(firestore);
   });
 
   group(
@@ -59,9 +55,20 @@ void main() {
             ),
           );
 
-          expect(
-            await onlineUserDatabaseFacade.loadUser(user.uid),
-            Right(UserDatabaseSuccess.userLoadedSuccess(user)),
+          final result = await onlineUserDatabaseFacade.loadUser(user.uid);
+
+          expect(result.isRight(), true);
+          expect(result, Right(UserDatabaseSuccess.userLoadedSuccess(user)));
+
+          result.fold(
+            (_) {},
+            (success) {
+              expect(success is UserLoadedSuccess, true);
+
+              if (success is UserLoadedSuccess) {
+                expect(success.user, user);
+              }
+            },
           );
         },
       );
@@ -81,9 +88,14 @@ void main() {
             ),
           );
 
-          expect(
-            await onlineUserDatabaseFacade.loadUser('123456'),
-            const Left(UserDatabaseFailure.userNotFoundFailure()),
+          final result = await onlineUserDatabaseFacade.loadUser('123456');
+
+          expect(result.isLeft(), true);
+          expect(result, const Left(UserDatabaseFailure.userNotFoundFailure()));
+
+          result.fold(
+            (_) {},
+            (success) => expect(success is UserNotFoundFailure, true),
           );
         },
       );
@@ -103,9 +115,14 @@ void main() {
             ),
           );
 
-          expect(
-            await onlineUserDatabaseFacade.loadUser(user.uid),
-            const Left(UserDatabaseFailure.serverErrorFailure()),
+          final result = await onlineUserDatabaseFacade.loadUser(user.uid);
+
+          expect(result.isLeft(), true);
+          expect(result, const Left(UserDatabaseFailure.serverErrorFailure()));
+
+          result.fold(
+            (_) {},
+            (success) => expect(success is ServerErrorFailure, true),
           );
         },
       );
@@ -131,11 +148,26 @@ void main() {
             ),
           );
 
+          final result =
+              await onlineUserDatabaseFacade.saveDetailsFromUser(user);
+
+          expect(result.isRight(), true);
           expect(
-            await onlineUserDatabaseFacade.saveDetailsFromUser(user),
+            result,
             Right(UserDatabaseSuccess.userDetailsSavedSuccess(
               user.copyWith(updatedAt: currentTime),
             )),
+          );
+
+          result.fold(
+            (_) {},
+            (success) {
+              expect(success is UserDetailsSavedSuccess, true);
+
+              if (success is UserDetailsSavedSuccess) {
+                expect(success.user, user);
+              }
+            },
           );
         },
       );
@@ -155,9 +187,18 @@ void main() {
             ),
           );
 
+          final result =
+              await onlineUserDatabaseFacade.saveDetailsFromUser(user);
+
+          expect(result.isLeft(), true);
           expect(
-            await onlineUserDatabaseFacade.saveDetailsFromUser(user),
+            result,
             const Left(UserDatabaseFailure.serverErrorFailure()),
+          );
+
+          result.fold(
+            (_) {},
+            (success) => expect(success is ServerErrorFailure, true),
           );
         },
       );

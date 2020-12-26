@@ -58,13 +58,14 @@ class FirebaseAuthenticationFacade implements IAuthenticationFacade {
       await currentUser.sendEmailVerification();
 
       final user = User.fromFirebaseUser(currentUser);
-      return right(AuthenticationSuccess.userAuthenticatedSCS(user));
-    } on PlatformException catch (e) {
+      return right(AuthenticationSuccess.userAuthenticatedSuccess(user));
+    } on FirebaseException catch (e) {
       if (e.code == 'email-already-in-use') {
         return left(const AuthenticationFailure.emailAlreadyInUse());
-      } else {
-        return left(const AuthenticationFailure.serverError());
       }
+      return left(const AuthenticationFailure.serverError());
+    } catch (_) {
+      return left(const AuthenticationFailure.serverError());
     }
   }
 
@@ -142,7 +143,7 @@ class FirebaseAuthenticationFacade implements IAuthenticationFacade {
       final currentUser = _firebaseAuth.currentUser;
       final user = User.fromFirebaseUser(currentUser);
 
-      return right(AuthenticationSuccess.userAuthenticatedSCS(user));
+      return right(AuthenticationSuccess.userAuthenticatedSuccess(user));
     } on FirebaseException catch (e) {
       await _firebaseAuth.signInAnonymously();
 
@@ -201,7 +202,7 @@ class FirebaseAuthenticationFacade implements IAuthenticationFacade {
     final anonymousUserTmp = _firebaseAuth.currentUser;
 
     final user = User.fromFirebaseUser(anonymousUserTmp);
-    return AuthenticationSuccess.userAuthenticatedSCS(user);
+    return AuthenticationSuccess.userAuthenticatedSuccess(user);
   }
 
   Future<AuthenticationSuccess> _signInWithGoogleCredentialAlreadyInUse(
@@ -219,7 +220,7 @@ class FirebaseAuthenticationFacade implements IAuthenticationFacade {
     currentUser = _firebaseAuth.currentUser;
 
     final user = User.fromFirebaseUser(currentUser);
-    return AuthenticationSuccess.userAuthenticatedSCS(user);
+    return AuthenticationSuccess.userAuthenticatedSuccess(user);
   }
 
   Future<void> _updateUserInfo(

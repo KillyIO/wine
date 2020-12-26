@@ -75,7 +75,7 @@ class SignInAuthenticationBloc
         failureOrSuccess.fold(
           (_) {},
           (success) {
-            if (success is UserAuthenticatedSCS) {
+            if (success is UserAuthenticatedSuccess) {
               final user = success.user.copyWith(
                 username:
                     success.user.name.trim().replaceAll(RegExp('[ -]'), '_'),
@@ -84,7 +84,7 @@ class SignInAuthenticationBloc
               );
 
               failureOrSuccess =
-                  right(AuthenticationSuccess.userAuthenticatedSCS(user));
+                  right(AuthenticationSuccess.userAuthenticatedSuccess(user));
             }
           },
         );
