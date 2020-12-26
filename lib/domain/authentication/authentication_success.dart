@@ -15,13 +15,14 @@ abstract class AuthenticationSuccess with _$AuthenticationSuccess {
       UsernameAvailableSuccess;
 
   /// @nodoc
-  const factory AuthenticationSuccess.userSignedInAnonymouslySCS() =
-      UserSignedInAnonymouslySCS;
+  const factory AuthenticationSuccess.userSignedInAnonymouslySuccess() =
+      UserSignedInAnonymouslySuccess;
 
   /// @nodoc
-  const factory AuthenticationSuccess.userSignedOutSCS() = UserSignedOutSCS;
+  const factory AuthenticationSuccess.userSignedOutSuccess() =
+      UserSignedOutSuccess;
 
   /// @nodoc
-  const factory AuthenticationSuccess.verificationEmailSentSCS() =
-      VerificationEmailSentSCS;
+  const factory AuthenticationSuccess.verificationEmailSentSuccess() =
+      VerificationEmailSentSuccess;
 }

@@ -35,5 +35,3 @@ class MockUserCredential extends Mock implements UserCredential {
   @override
   User get user => MockFirebaseUser(isAnonymous: _isAnonymous);
 }
-
-class MockAuthCredential extends Mock implements AuthCredential {}

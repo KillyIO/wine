@@ -26,7 +26,7 @@ class VerifyEmailListeners {
                 orElse: () => null,
               ),
               (success) => success.maybeMap(
-                verificationEmailSentSCS: (_) => wineShowDialog(
+                verificationEmailSentSuccess: (_) => wineShowDialog(
                   context: context,
                   builder: (_) => WINEInfoDialog(
                     message:

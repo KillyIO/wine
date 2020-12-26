@@ -33,7 +33,7 @@ class SplashListeners {
                       orElse: () => null,
                     ),
                     (success) {
-                      if (success is UserSignedInAnonymouslySCS) {
+                      if (success is UserSignedInAnonymouslySuccess) {
                         context
                             .read<SplashDatabaseBloc>()
                             .add(const SplashDatabaseEvent.authenticatedEVT(

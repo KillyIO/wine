@@ -58,12 +58,11 @@ void main() {
           final result = await onlineUserDatabaseFacade.loadUser(user.uid);
 
           expect(result.isRight(), true);
-          expect(result, Right(UserDatabaseSuccess.userLoadedSuccess(user)));
 
           result.fold(
             (_) {},
             (success) {
-              expect(success is UserLoadedSuccess, true);
+              expect(success, isA<UserLoadedSuccess>());
 
               if (success is UserLoadedSuccess) {
                 expect(success.user, user);
@@ -90,10 +89,9 @@ void main() {
           final result = await onlineUserDatabaseFacade.loadUser('123456');
 
           expect(result.isLeft(), true);
-          expect(result, const Left(UserDatabaseFailure.userNotFoundFailure()));
 
           result.fold(
-            (failure) => expect(failure is UserNotFoundFailure, true),
+            (failure) => expect(failure, isA<UserNotFoundFailure>()),
             (_) {},
           );
         },
@@ -101,7 +99,7 @@ void main() {
 
       test(
         '''
-        Given an error is thrown server side
+        Given an error is thrown
         When loadUser() is called
         Then serverErrorFailure() is returned
         ''',
@@ -116,7 +114,7 @@ void main() {
           expect(result, const Left(UserDatabaseFailure.serverFailure()));
 
           result.fold(
-            (failure) => expect(failure is ServerFailure, true),
+            (failure) => expect(failure, isA<ServerFailure>()),
             (_) {},
           );
         },
@@ -150,17 +148,11 @@ void main() {
               await onlineUserDatabaseFacade.saveDetailsFromUser(user);
 
           expect(result.isRight(), true);
-          expect(
-            result,
-            Right(UserDatabaseSuccess.userDetailsSavedSuccess(
-              user.copyWith(updatedAt: DateTime.now().millisecondsSinceEpoch),
-            )),
-          );
 
           result.fold(
             (_) {},
             (success) {
-              expect(success is UserDetailsSavedSuccess, true);
+              expect(success, isA<UserDetailsSavedSuccess>());
 
               if (success is UserDetailsSavedSuccess) {
                 expect(success.user, user);
@@ -198,17 +190,11 @@ void main() {
               await onlineUserDatabaseFacade.saveDetailsFromUser(user);
 
           expect(result.isRight(), true);
-          expect(
-            result,
-            Right(UserDatabaseSuccess.userDetailsSavedSuccess(
-              user.copyWith(updatedAt: DateTime.now().millisecondsSinceEpoch),
-            )),
-          );
 
           result.fold(
             (_) {},
             (success) {
-              expect(success is UserDetailsSavedSuccess, true);
+              expect(success, isA<UserDetailsSavedSuccess>());
 
               if (success is UserDetailsSavedSuccess) {
                 expect(success.user, user);
@@ -220,7 +206,7 @@ void main() {
 
       test(
         '''
-        Given an error is thrown server side
+        Given an error is thrown
         When saveDetailsFromUser() is called
         Then serverErrorFailure() is returned
         ''',
@@ -234,13 +220,9 @@ void main() {
               await onlineUserDatabaseFacade.saveDetailsFromUser(user);
 
           expect(result.isLeft(), true);
-          expect(
-            result,
-            const Left(UserDatabaseFailure.serverFailure()),
-          );
 
           result.fold(
-            (failure) => expect(failure is ServerFailure, true),
+            (failure) => expect(failure, isA<ServerFailure>()),
             (_) {},
           );
         },
@@ -268,15 +250,11 @@ void main() {
           );
 
           expect(result.isRight(), true);
-          expect(
-            result,
-            Right(UserDatabaseSuccess.usernameSavedSuccess(user.username)),
-          );
 
           result.fold(
             (_) {},
             (success) {
-              expect(success is UsernameSavedSuccess, true);
+              expect(success, isA<UsernameSavedSuccess>());
 
               if (success is UsernameSavedSuccess) {
                 expect(success.username, user.username);
@@ -288,7 +266,7 @@ void main() {
 
       test(
         '''
-        Given an error is thrown server side
+        Given an error is thrown
         When saveUsername() is called
         Then serverErrorFailure() is returned
         ''',
@@ -304,13 +282,9 @@ void main() {
           );
 
           expect(result.isLeft(), true);
-          expect(
-            result,
-            const Left(UserDatabaseFailure.serverFailure()),
-          );
 
           result.fold(
-            (failure) => expect(failure is ServerFailure, true),
+            (failure) => expect(failure, isA<ServerFailure>()),
             (_) {},
           );
         },

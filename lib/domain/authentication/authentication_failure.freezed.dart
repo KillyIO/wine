@@ -14,8 +14,8 @@ class _$AuthenticationFailureTearOff {
   const _$AuthenticationFailureTearOff();
 
 // ignore: unused_element
-  CancelledByUser cancelledByUser() {
-    return const CancelledByUser();
+  CancelledByUserFailure cancelledByUserFailure() {
+    return const CancelledByUserFailure();
   }
 
 // ignore: unused_element
@@ -24,8 +24,9 @@ class _$AuthenticationFailureTearOff {
   }
 
 // ignore: unused_element
-  InvalidEmailAndPasswordCombination invalidEmailAndPasswordCombination() {
-    return const InvalidEmailAndPasswordCombination();
+  InvalidEmailAndPasswordCombinationFailure
+      invalidEmailAndPasswordCombinationFailure() {
+    return const InvalidEmailAndPasswordCombinationFailure();
   }
 
 // ignore: unused_element
@@ -34,8 +35,8 @@ class _$AuthenticationFailureTearOff {
   }
 
 // ignore: unused_element
-  UnableToSignOut unableToSignOut() {
-    return const UnableToSignOut();
+  UnableToSignOutFailure unableToSignOutFailure() {
+    return const UnableToSignOutFailure();
   }
 
 // ignore: unused_element
@@ -52,43 +53,43 @@ const $AuthenticationFailure = _$AuthenticationFailureTearOff();
 mixin _$AuthenticationFailure {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
-    @required TResult cancelledByUser(),
+    @required TResult cancelledByUserFailure(),
     @required TResult emailAlreadyInUseFailure(),
-    @required TResult invalidEmailAndPasswordCombination(),
+    @required TResult invalidEmailAndPasswordCombinationFailure(),
     @required TResult serverFailure(),
-    @required TResult unableToSignOut(),
+    @required TResult unableToSignOutFailure(),
     @required TResult usernameAlreadyInUseFailure(),
   });
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
-    TResult cancelledByUser(),
+    TResult cancelledByUserFailure(),
     TResult emailAlreadyInUseFailure(),
-    TResult invalidEmailAndPasswordCombination(),
+    TResult invalidEmailAndPasswordCombinationFailure(),
     TResult serverFailure(),
-    TResult unableToSignOut(),
+    TResult unableToSignOutFailure(),
     TResult usernameAlreadyInUseFailure(),
     @required TResult orElse(),
   });
   @optionalTypeArgs
   TResult map<TResult extends Object>({
-    @required TResult cancelledByUser(CancelledByUser value),
+    @required TResult cancelledByUserFailure(CancelledByUserFailure value),
     @required TResult emailAlreadyInUseFailure(EmailAlreadyInUseFailure value),
     @required
-        TResult invalidEmailAndPasswordCombination(
-            InvalidEmailAndPasswordCombination value),
+        TResult invalidEmailAndPasswordCombinationFailure(
+            InvalidEmailAndPasswordCombinationFailure value),
     @required TResult serverFailure(ServerFailure value),
-    @required TResult unableToSignOut(UnableToSignOut value),
+    @required TResult unableToSignOutFailure(UnableToSignOutFailure value),
     @required
         TResult usernameAlreadyInUseFailure(UsernameAlreadyInUseFailure value),
   });
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
-    TResult cancelledByUser(CancelledByUser value),
+    TResult cancelledByUserFailure(CancelledByUserFailure value),
     TResult emailAlreadyInUseFailure(EmailAlreadyInUseFailure value),
-    TResult invalidEmailAndPasswordCombination(
-        InvalidEmailAndPasswordCombination value),
+    TResult invalidEmailAndPasswordCombinationFailure(
+        InvalidEmailAndPasswordCombinationFailure value),
     TResult serverFailure(ServerFailure value),
-    TResult unableToSignOut(UnableToSignOut value),
+    TResult unableToSignOutFailure(UnableToSignOutFailure value),
     TResult usernameAlreadyInUseFailure(UsernameAlreadyInUseFailure value),
     @required TResult orElse(),
   });
@@ -112,36 +113,36 @@ class _$AuthenticationFailureCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class $CancelledByUserCopyWith<$Res> {
-  factory $CancelledByUserCopyWith(
-          CancelledByUser value, $Res Function(CancelledByUser) then) =
-      _$CancelledByUserCopyWithImpl<$Res>;
+abstract class $CancelledByUserFailureCopyWith<$Res> {
+  factory $CancelledByUserFailureCopyWith(CancelledByUserFailure value,
+          $Res Function(CancelledByUserFailure) then) =
+      _$CancelledByUserFailureCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$CancelledByUserCopyWithImpl<$Res>
+class _$CancelledByUserFailureCopyWithImpl<$Res>
     extends _$AuthenticationFailureCopyWithImpl<$Res>
-    implements $CancelledByUserCopyWith<$Res> {
-  _$CancelledByUserCopyWithImpl(
-      CancelledByUser _value, $Res Function(CancelledByUser) _then)
-      : super(_value, (v) => _then(v as CancelledByUser));
+    implements $CancelledByUserFailureCopyWith<$Res> {
+  _$CancelledByUserFailureCopyWithImpl(CancelledByUserFailure _value,
+      $Res Function(CancelledByUserFailure) _then)
+      : super(_value, (v) => _then(v as CancelledByUserFailure));
 
   @override
-  CancelledByUser get _value => super._value as CancelledByUser;
+  CancelledByUserFailure get _value => super._value as CancelledByUserFailure;
 }
 
 /// @nodoc
-class _$CancelledByUser implements CancelledByUser {
-  const _$CancelledByUser();
+class _$CancelledByUserFailure implements CancelledByUserFailure {
+  const _$CancelledByUserFailure();
 
   @override
   String toString() {
-    return 'AuthenticationFailure.cancelledByUser()';
+    return 'AuthenticationFailure.cancelledByUserFailure()';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is CancelledByUser);
+    return identical(this, other) || (other is CancelledByUserFailure);
   }
 
   @override
@@ -150,36 +151,36 @@ class _$CancelledByUser implements CancelledByUser {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
-    @required TResult cancelledByUser(),
+    @required TResult cancelledByUserFailure(),
     @required TResult emailAlreadyInUseFailure(),
-    @required TResult invalidEmailAndPasswordCombination(),
+    @required TResult invalidEmailAndPasswordCombinationFailure(),
     @required TResult serverFailure(),
-    @required TResult unableToSignOut(),
+    @required TResult unableToSignOutFailure(),
     @required TResult usernameAlreadyInUseFailure(),
   }) {
-    assert(cancelledByUser != null);
+    assert(cancelledByUserFailure != null);
     assert(emailAlreadyInUseFailure != null);
-    assert(invalidEmailAndPasswordCombination != null);
+    assert(invalidEmailAndPasswordCombinationFailure != null);
     assert(serverFailure != null);
-    assert(unableToSignOut != null);
+    assert(unableToSignOutFailure != null);
     assert(usernameAlreadyInUseFailure != null);
-    return cancelledByUser();
+    return cancelledByUserFailure();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
-    TResult cancelledByUser(),
+    TResult cancelledByUserFailure(),
     TResult emailAlreadyInUseFailure(),
-    TResult invalidEmailAndPasswordCombination(),
+    TResult invalidEmailAndPasswordCombinationFailure(),
     TResult serverFailure(),
-    TResult unableToSignOut(),
+    TResult unableToSignOutFailure(),
     TResult usernameAlreadyInUseFailure(),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (cancelledByUser != null) {
-      return cancelledByUser();
+    if (cancelledByUserFailure != null) {
+      return cancelledByUserFailure();
     }
     return orElse();
   }
@@ -187,47 +188,47 @@ class _$CancelledByUser implements CancelledByUser {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object>({
-    @required TResult cancelledByUser(CancelledByUser value),
+    @required TResult cancelledByUserFailure(CancelledByUserFailure value),
     @required TResult emailAlreadyInUseFailure(EmailAlreadyInUseFailure value),
     @required
-        TResult invalidEmailAndPasswordCombination(
-            InvalidEmailAndPasswordCombination value),
+        TResult invalidEmailAndPasswordCombinationFailure(
+            InvalidEmailAndPasswordCombinationFailure value),
     @required TResult serverFailure(ServerFailure value),
-    @required TResult unableToSignOut(UnableToSignOut value),
+    @required TResult unableToSignOutFailure(UnableToSignOutFailure value),
     @required
         TResult usernameAlreadyInUseFailure(UsernameAlreadyInUseFailure value),
   }) {
-    assert(cancelledByUser != null);
+    assert(cancelledByUserFailure != null);
     assert(emailAlreadyInUseFailure != null);
-    assert(invalidEmailAndPasswordCombination != null);
+    assert(invalidEmailAndPasswordCombinationFailure != null);
     assert(serverFailure != null);
-    assert(unableToSignOut != null);
+    assert(unableToSignOutFailure != null);
     assert(usernameAlreadyInUseFailure != null);
-    return cancelledByUser(this);
+    return cancelledByUserFailure(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
-    TResult cancelledByUser(CancelledByUser value),
+    TResult cancelledByUserFailure(CancelledByUserFailure value),
     TResult emailAlreadyInUseFailure(EmailAlreadyInUseFailure value),
-    TResult invalidEmailAndPasswordCombination(
-        InvalidEmailAndPasswordCombination value),
+    TResult invalidEmailAndPasswordCombinationFailure(
+        InvalidEmailAndPasswordCombinationFailure value),
     TResult serverFailure(ServerFailure value),
-    TResult unableToSignOut(UnableToSignOut value),
+    TResult unableToSignOutFailure(UnableToSignOutFailure value),
     TResult usernameAlreadyInUseFailure(UsernameAlreadyInUseFailure value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (cancelledByUser != null) {
-      return cancelledByUser(this);
+    if (cancelledByUserFailure != null) {
+      return cancelledByUserFailure(this);
     }
     return orElse();
   }
 }
 
-abstract class CancelledByUser implements AuthenticationFailure {
-  const factory CancelledByUser() = _$CancelledByUser;
+abstract class CancelledByUserFailure implements AuthenticationFailure {
+  const factory CancelledByUserFailure() = _$CancelledByUserFailure;
 }
 
 /// @nodoc
@@ -270,18 +271,18 @@ class _$EmailAlreadyInUseFailure implements EmailAlreadyInUseFailure {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
-    @required TResult cancelledByUser(),
+    @required TResult cancelledByUserFailure(),
     @required TResult emailAlreadyInUseFailure(),
-    @required TResult invalidEmailAndPasswordCombination(),
+    @required TResult invalidEmailAndPasswordCombinationFailure(),
     @required TResult serverFailure(),
-    @required TResult unableToSignOut(),
+    @required TResult unableToSignOutFailure(),
     @required TResult usernameAlreadyInUseFailure(),
   }) {
-    assert(cancelledByUser != null);
+    assert(cancelledByUserFailure != null);
     assert(emailAlreadyInUseFailure != null);
-    assert(invalidEmailAndPasswordCombination != null);
+    assert(invalidEmailAndPasswordCombinationFailure != null);
     assert(serverFailure != null);
-    assert(unableToSignOut != null);
+    assert(unableToSignOutFailure != null);
     assert(usernameAlreadyInUseFailure != null);
     return emailAlreadyInUseFailure();
   }
@@ -289,11 +290,11 @@ class _$EmailAlreadyInUseFailure implements EmailAlreadyInUseFailure {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
-    TResult cancelledByUser(),
+    TResult cancelledByUserFailure(),
     TResult emailAlreadyInUseFailure(),
-    TResult invalidEmailAndPasswordCombination(),
+    TResult invalidEmailAndPasswordCombinationFailure(),
     TResult serverFailure(),
-    TResult unableToSignOut(),
+    TResult unableToSignOutFailure(),
     TResult usernameAlreadyInUseFailure(),
     @required TResult orElse(),
   }) {
@@ -307,21 +308,21 @@ class _$EmailAlreadyInUseFailure implements EmailAlreadyInUseFailure {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object>({
-    @required TResult cancelledByUser(CancelledByUser value),
+    @required TResult cancelledByUserFailure(CancelledByUserFailure value),
     @required TResult emailAlreadyInUseFailure(EmailAlreadyInUseFailure value),
     @required
-        TResult invalidEmailAndPasswordCombination(
-            InvalidEmailAndPasswordCombination value),
+        TResult invalidEmailAndPasswordCombinationFailure(
+            InvalidEmailAndPasswordCombinationFailure value),
     @required TResult serverFailure(ServerFailure value),
-    @required TResult unableToSignOut(UnableToSignOut value),
+    @required TResult unableToSignOutFailure(UnableToSignOutFailure value),
     @required
         TResult usernameAlreadyInUseFailure(UsernameAlreadyInUseFailure value),
   }) {
-    assert(cancelledByUser != null);
+    assert(cancelledByUserFailure != null);
     assert(emailAlreadyInUseFailure != null);
-    assert(invalidEmailAndPasswordCombination != null);
+    assert(invalidEmailAndPasswordCombinationFailure != null);
     assert(serverFailure != null);
-    assert(unableToSignOut != null);
+    assert(unableToSignOutFailure != null);
     assert(usernameAlreadyInUseFailure != null);
     return emailAlreadyInUseFailure(this);
   }
@@ -329,12 +330,12 @@ class _$EmailAlreadyInUseFailure implements EmailAlreadyInUseFailure {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
-    TResult cancelledByUser(CancelledByUser value),
+    TResult cancelledByUserFailure(CancelledByUserFailure value),
     TResult emailAlreadyInUseFailure(EmailAlreadyInUseFailure value),
-    TResult invalidEmailAndPasswordCombination(
-        InvalidEmailAndPasswordCombination value),
+    TResult invalidEmailAndPasswordCombinationFailure(
+        InvalidEmailAndPasswordCombinationFailure value),
     TResult serverFailure(ServerFailure value),
-    TResult unableToSignOut(UnableToSignOut value),
+    TResult unableToSignOutFailure(UnableToSignOutFailure value),
     TResult usernameAlreadyInUseFailure(UsernameAlreadyInUseFailure value),
     @required TResult orElse(),
   }) {
@@ -351,41 +352,42 @@ abstract class EmailAlreadyInUseFailure implements AuthenticationFailure {
 }
 
 /// @nodoc
-abstract class $InvalidEmailAndPasswordCombinationCopyWith<$Res> {
-  factory $InvalidEmailAndPasswordCombinationCopyWith(
-          InvalidEmailAndPasswordCombination value,
-          $Res Function(InvalidEmailAndPasswordCombination) then) =
-      _$InvalidEmailAndPasswordCombinationCopyWithImpl<$Res>;
+abstract class $InvalidEmailAndPasswordCombinationFailureCopyWith<$Res> {
+  factory $InvalidEmailAndPasswordCombinationFailureCopyWith(
+          InvalidEmailAndPasswordCombinationFailure value,
+          $Res Function(InvalidEmailAndPasswordCombinationFailure) then) =
+      _$InvalidEmailAndPasswordCombinationFailureCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$InvalidEmailAndPasswordCombinationCopyWithImpl<$Res>
+class _$InvalidEmailAndPasswordCombinationFailureCopyWithImpl<$Res>
     extends _$AuthenticationFailureCopyWithImpl<$Res>
-    implements $InvalidEmailAndPasswordCombinationCopyWith<$Res> {
-  _$InvalidEmailAndPasswordCombinationCopyWithImpl(
-      InvalidEmailAndPasswordCombination _value,
-      $Res Function(InvalidEmailAndPasswordCombination) _then)
-      : super(_value, (v) => _then(v as InvalidEmailAndPasswordCombination));
+    implements $InvalidEmailAndPasswordCombinationFailureCopyWith<$Res> {
+  _$InvalidEmailAndPasswordCombinationFailureCopyWithImpl(
+      InvalidEmailAndPasswordCombinationFailure _value,
+      $Res Function(InvalidEmailAndPasswordCombinationFailure) _then)
+      : super(_value,
+            (v) => _then(v as InvalidEmailAndPasswordCombinationFailure));
 
   @override
-  InvalidEmailAndPasswordCombination get _value =>
-      super._value as InvalidEmailAndPasswordCombination;
+  InvalidEmailAndPasswordCombinationFailure get _value =>
+      super._value as InvalidEmailAndPasswordCombinationFailure;
 }
 
 /// @nodoc
-class _$InvalidEmailAndPasswordCombination
-    implements InvalidEmailAndPasswordCombination {
-  const _$InvalidEmailAndPasswordCombination();
+class _$InvalidEmailAndPasswordCombinationFailure
+    implements InvalidEmailAndPasswordCombinationFailure {
+  const _$InvalidEmailAndPasswordCombinationFailure();
 
   @override
   String toString() {
-    return 'AuthenticationFailure.invalidEmailAndPasswordCombination()';
+    return 'AuthenticationFailure.invalidEmailAndPasswordCombinationFailure()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is InvalidEmailAndPasswordCombination);
+        (other is InvalidEmailAndPasswordCombinationFailure);
   }
 
   @override
@@ -394,36 +396,36 @@ class _$InvalidEmailAndPasswordCombination
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
-    @required TResult cancelledByUser(),
+    @required TResult cancelledByUserFailure(),
     @required TResult emailAlreadyInUseFailure(),
-    @required TResult invalidEmailAndPasswordCombination(),
+    @required TResult invalidEmailAndPasswordCombinationFailure(),
     @required TResult serverFailure(),
-    @required TResult unableToSignOut(),
+    @required TResult unableToSignOutFailure(),
     @required TResult usernameAlreadyInUseFailure(),
   }) {
-    assert(cancelledByUser != null);
+    assert(cancelledByUserFailure != null);
     assert(emailAlreadyInUseFailure != null);
-    assert(invalidEmailAndPasswordCombination != null);
+    assert(invalidEmailAndPasswordCombinationFailure != null);
     assert(serverFailure != null);
-    assert(unableToSignOut != null);
+    assert(unableToSignOutFailure != null);
     assert(usernameAlreadyInUseFailure != null);
-    return invalidEmailAndPasswordCombination();
+    return invalidEmailAndPasswordCombinationFailure();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
-    TResult cancelledByUser(),
+    TResult cancelledByUserFailure(),
     TResult emailAlreadyInUseFailure(),
-    TResult invalidEmailAndPasswordCombination(),
+    TResult invalidEmailAndPasswordCombinationFailure(),
     TResult serverFailure(),
-    TResult unableToSignOut(),
+    TResult unableToSignOutFailure(),
     TResult usernameAlreadyInUseFailure(),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (invalidEmailAndPasswordCombination != null) {
-      return invalidEmailAndPasswordCombination();
+    if (invalidEmailAndPasswordCombinationFailure != null) {
+      return invalidEmailAndPasswordCombinationFailure();
     }
     return orElse();
   }
@@ -431,49 +433,49 @@ class _$InvalidEmailAndPasswordCombination
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object>({
-    @required TResult cancelledByUser(CancelledByUser value),
+    @required TResult cancelledByUserFailure(CancelledByUserFailure value),
     @required TResult emailAlreadyInUseFailure(EmailAlreadyInUseFailure value),
     @required
-        TResult invalidEmailAndPasswordCombination(
-            InvalidEmailAndPasswordCombination value),
+        TResult invalidEmailAndPasswordCombinationFailure(
+            InvalidEmailAndPasswordCombinationFailure value),
     @required TResult serverFailure(ServerFailure value),
-    @required TResult unableToSignOut(UnableToSignOut value),
+    @required TResult unableToSignOutFailure(UnableToSignOutFailure value),
     @required
         TResult usernameAlreadyInUseFailure(UsernameAlreadyInUseFailure value),
   }) {
-    assert(cancelledByUser != null);
+    assert(cancelledByUserFailure != null);
     assert(emailAlreadyInUseFailure != null);
-    assert(invalidEmailAndPasswordCombination != null);
+    assert(invalidEmailAndPasswordCombinationFailure != null);
     assert(serverFailure != null);
-    assert(unableToSignOut != null);
+    assert(unableToSignOutFailure != null);
     assert(usernameAlreadyInUseFailure != null);
-    return invalidEmailAndPasswordCombination(this);
+    return invalidEmailAndPasswordCombinationFailure(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
-    TResult cancelledByUser(CancelledByUser value),
+    TResult cancelledByUserFailure(CancelledByUserFailure value),
     TResult emailAlreadyInUseFailure(EmailAlreadyInUseFailure value),
-    TResult invalidEmailAndPasswordCombination(
-        InvalidEmailAndPasswordCombination value),
+    TResult invalidEmailAndPasswordCombinationFailure(
+        InvalidEmailAndPasswordCombinationFailure value),
     TResult serverFailure(ServerFailure value),
-    TResult unableToSignOut(UnableToSignOut value),
+    TResult unableToSignOutFailure(UnableToSignOutFailure value),
     TResult usernameAlreadyInUseFailure(UsernameAlreadyInUseFailure value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (invalidEmailAndPasswordCombination != null) {
-      return invalidEmailAndPasswordCombination(this);
+    if (invalidEmailAndPasswordCombinationFailure != null) {
+      return invalidEmailAndPasswordCombinationFailure(this);
     }
     return orElse();
   }
 }
 
-abstract class InvalidEmailAndPasswordCombination
+abstract class InvalidEmailAndPasswordCombinationFailure
     implements AuthenticationFailure {
-  const factory InvalidEmailAndPasswordCombination() =
-      _$InvalidEmailAndPasswordCombination;
+  const factory InvalidEmailAndPasswordCombinationFailure() =
+      _$InvalidEmailAndPasswordCombinationFailure;
 }
 
 /// @nodoc
@@ -515,18 +517,18 @@ class _$ServerFailure implements ServerFailure {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
-    @required TResult cancelledByUser(),
+    @required TResult cancelledByUserFailure(),
     @required TResult emailAlreadyInUseFailure(),
-    @required TResult invalidEmailAndPasswordCombination(),
+    @required TResult invalidEmailAndPasswordCombinationFailure(),
     @required TResult serverFailure(),
-    @required TResult unableToSignOut(),
+    @required TResult unableToSignOutFailure(),
     @required TResult usernameAlreadyInUseFailure(),
   }) {
-    assert(cancelledByUser != null);
+    assert(cancelledByUserFailure != null);
     assert(emailAlreadyInUseFailure != null);
-    assert(invalidEmailAndPasswordCombination != null);
+    assert(invalidEmailAndPasswordCombinationFailure != null);
     assert(serverFailure != null);
-    assert(unableToSignOut != null);
+    assert(unableToSignOutFailure != null);
     assert(usernameAlreadyInUseFailure != null);
     return serverFailure();
   }
@@ -534,11 +536,11 @@ class _$ServerFailure implements ServerFailure {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
-    TResult cancelledByUser(),
+    TResult cancelledByUserFailure(),
     TResult emailAlreadyInUseFailure(),
-    TResult invalidEmailAndPasswordCombination(),
+    TResult invalidEmailAndPasswordCombinationFailure(),
     TResult serverFailure(),
-    TResult unableToSignOut(),
+    TResult unableToSignOutFailure(),
     TResult usernameAlreadyInUseFailure(),
     @required TResult orElse(),
   }) {
@@ -552,21 +554,21 @@ class _$ServerFailure implements ServerFailure {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object>({
-    @required TResult cancelledByUser(CancelledByUser value),
+    @required TResult cancelledByUserFailure(CancelledByUserFailure value),
     @required TResult emailAlreadyInUseFailure(EmailAlreadyInUseFailure value),
     @required
-        TResult invalidEmailAndPasswordCombination(
-            InvalidEmailAndPasswordCombination value),
+        TResult invalidEmailAndPasswordCombinationFailure(
+            InvalidEmailAndPasswordCombinationFailure value),
     @required TResult serverFailure(ServerFailure value),
-    @required TResult unableToSignOut(UnableToSignOut value),
+    @required TResult unableToSignOutFailure(UnableToSignOutFailure value),
     @required
         TResult usernameAlreadyInUseFailure(UsernameAlreadyInUseFailure value),
   }) {
-    assert(cancelledByUser != null);
+    assert(cancelledByUserFailure != null);
     assert(emailAlreadyInUseFailure != null);
-    assert(invalidEmailAndPasswordCombination != null);
+    assert(invalidEmailAndPasswordCombinationFailure != null);
     assert(serverFailure != null);
-    assert(unableToSignOut != null);
+    assert(unableToSignOutFailure != null);
     assert(usernameAlreadyInUseFailure != null);
     return serverFailure(this);
   }
@@ -574,12 +576,12 @@ class _$ServerFailure implements ServerFailure {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
-    TResult cancelledByUser(CancelledByUser value),
+    TResult cancelledByUserFailure(CancelledByUserFailure value),
     TResult emailAlreadyInUseFailure(EmailAlreadyInUseFailure value),
-    TResult invalidEmailAndPasswordCombination(
-        InvalidEmailAndPasswordCombination value),
+    TResult invalidEmailAndPasswordCombinationFailure(
+        InvalidEmailAndPasswordCombinationFailure value),
     TResult serverFailure(ServerFailure value),
-    TResult unableToSignOut(UnableToSignOut value),
+    TResult unableToSignOutFailure(UnableToSignOutFailure value),
     TResult usernameAlreadyInUseFailure(UsernameAlreadyInUseFailure value),
     @required TResult orElse(),
   }) {
@@ -596,36 +598,36 @@ abstract class ServerFailure implements AuthenticationFailure {
 }
 
 /// @nodoc
-abstract class $UnableToSignOutCopyWith<$Res> {
-  factory $UnableToSignOutCopyWith(
-          UnableToSignOut value, $Res Function(UnableToSignOut) then) =
-      _$UnableToSignOutCopyWithImpl<$Res>;
+abstract class $UnableToSignOutFailureCopyWith<$Res> {
+  factory $UnableToSignOutFailureCopyWith(UnableToSignOutFailure value,
+          $Res Function(UnableToSignOutFailure) then) =
+      _$UnableToSignOutFailureCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$UnableToSignOutCopyWithImpl<$Res>
+class _$UnableToSignOutFailureCopyWithImpl<$Res>
     extends _$AuthenticationFailureCopyWithImpl<$Res>
-    implements $UnableToSignOutCopyWith<$Res> {
-  _$UnableToSignOutCopyWithImpl(
-      UnableToSignOut _value, $Res Function(UnableToSignOut) _then)
-      : super(_value, (v) => _then(v as UnableToSignOut));
+    implements $UnableToSignOutFailureCopyWith<$Res> {
+  _$UnableToSignOutFailureCopyWithImpl(UnableToSignOutFailure _value,
+      $Res Function(UnableToSignOutFailure) _then)
+      : super(_value, (v) => _then(v as UnableToSignOutFailure));
 
   @override
-  UnableToSignOut get _value => super._value as UnableToSignOut;
+  UnableToSignOutFailure get _value => super._value as UnableToSignOutFailure;
 }
 
 /// @nodoc
-class _$UnableToSignOut implements UnableToSignOut {
-  const _$UnableToSignOut();
+class _$UnableToSignOutFailure implements UnableToSignOutFailure {
+  const _$UnableToSignOutFailure();
 
   @override
   String toString() {
-    return 'AuthenticationFailure.unableToSignOut()';
+    return 'AuthenticationFailure.unableToSignOutFailure()';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is UnableToSignOut);
+    return identical(this, other) || (other is UnableToSignOutFailure);
   }
 
   @override
@@ -634,36 +636,36 @@ class _$UnableToSignOut implements UnableToSignOut {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
-    @required TResult cancelledByUser(),
+    @required TResult cancelledByUserFailure(),
     @required TResult emailAlreadyInUseFailure(),
-    @required TResult invalidEmailAndPasswordCombination(),
+    @required TResult invalidEmailAndPasswordCombinationFailure(),
     @required TResult serverFailure(),
-    @required TResult unableToSignOut(),
+    @required TResult unableToSignOutFailure(),
     @required TResult usernameAlreadyInUseFailure(),
   }) {
-    assert(cancelledByUser != null);
+    assert(cancelledByUserFailure != null);
     assert(emailAlreadyInUseFailure != null);
-    assert(invalidEmailAndPasswordCombination != null);
+    assert(invalidEmailAndPasswordCombinationFailure != null);
     assert(serverFailure != null);
-    assert(unableToSignOut != null);
+    assert(unableToSignOutFailure != null);
     assert(usernameAlreadyInUseFailure != null);
-    return unableToSignOut();
+    return unableToSignOutFailure();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
-    TResult cancelledByUser(),
+    TResult cancelledByUserFailure(),
     TResult emailAlreadyInUseFailure(),
-    TResult invalidEmailAndPasswordCombination(),
+    TResult invalidEmailAndPasswordCombinationFailure(),
     TResult serverFailure(),
-    TResult unableToSignOut(),
+    TResult unableToSignOutFailure(),
     TResult usernameAlreadyInUseFailure(),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (unableToSignOut != null) {
-      return unableToSignOut();
+    if (unableToSignOutFailure != null) {
+      return unableToSignOutFailure();
     }
     return orElse();
   }
@@ -671,47 +673,47 @@ class _$UnableToSignOut implements UnableToSignOut {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object>({
-    @required TResult cancelledByUser(CancelledByUser value),
+    @required TResult cancelledByUserFailure(CancelledByUserFailure value),
     @required TResult emailAlreadyInUseFailure(EmailAlreadyInUseFailure value),
     @required
-        TResult invalidEmailAndPasswordCombination(
-            InvalidEmailAndPasswordCombination value),
+        TResult invalidEmailAndPasswordCombinationFailure(
+            InvalidEmailAndPasswordCombinationFailure value),
     @required TResult serverFailure(ServerFailure value),
-    @required TResult unableToSignOut(UnableToSignOut value),
+    @required TResult unableToSignOutFailure(UnableToSignOutFailure value),
     @required
         TResult usernameAlreadyInUseFailure(UsernameAlreadyInUseFailure value),
   }) {
-    assert(cancelledByUser != null);
+    assert(cancelledByUserFailure != null);
     assert(emailAlreadyInUseFailure != null);
-    assert(invalidEmailAndPasswordCombination != null);
+    assert(invalidEmailAndPasswordCombinationFailure != null);
     assert(serverFailure != null);
-    assert(unableToSignOut != null);
+    assert(unableToSignOutFailure != null);
     assert(usernameAlreadyInUseFailure != null);
-    return unableToSignOut(this);
+    return unableToSignOutFailure(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
-    TResult cancelledByUser(CancelledByUser value),
+    TResult cancelledByUserFailure(CancelledByUserFailure value),
     TResult emailAlreadyInUseFailure(EmailAlreadyInUseFailure value),
-    TResult invalidEmailAndPasswordCombination(
-        InvalidEmailAndPasswordCombination value),
+    TResult invalidEmailAndPasswordCombinationFailure(
+        InvalidEmailAndPasswordCombinationFailure value),
     TResult serverFailure(ServerFailure value),
-    TResult unableToSignOut(UnableToSignOut value),
+    TResult unableToSignOutFailure(UnableToSignOutFailure value),
     TResult usernameAlreadyInUseFailure(UsernameAlreadyInUseFailure value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (unableToSignOut != null) {
-      return unableToSignOut(this);
+    if (unableToSignOutFailure != null) {
+      return unableToSignOutFailure(this);
     }
     return orElse();
   }
 }
 
-abstract class UnableToSignOut implements AuthenticationFailure {
-  const factory UnableToSignOut() = _$UnableToSignOut;
+abstract class UnableToSignOutFailure implements AuthenticationFailure {
+  const factory UnableToSignOutFailure() = _$UnableToSignOutFailure;
 }
 
 /// @nodoc
@@ -755,18 +757,18 @@ class _$UsernameAlreadyInUseFailure implements UsernameAlreadyInUseFailure {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
-    @required TResult cancelledByUser(),
+    @required TResult cancelledByUserFailure(),
     @required TResult emailAlreadyInUseFailure(),
-    @required TResult invalidEmailAndPasswordCombination(),
+    @required TResult invalidEmailAndPasswordCombinationFailure(),
     @required TResult serverFailure(),
-    @required TResult unableToSignOut(),
+    @required TResult unableToSignOutFailure(),
     @required TResult usernameAlreadyInUseFailure(),
   }) {
-    assert(cancelledByUser != null);
+    assert(cancelledByUserFailure != null);
     assert(emailAlreadyInUseFailure != null);
-    assert(invalidEmailAndPasswordCombination != null);
+    assert(invalidEmailAndPasswordCombinationFailure != null);
     assert(serverFailure != null);
-    assert(unableToSignOut != null);
+    assert(unableToSignOutFailure != null);
     assert(usernameAlreadyInUseFailure != null);
     return usernameAlreadyInUseFailure();
   }
@@ -774,11 +776,11 @@ class _$UsernameAlreadyInUseFailure implements UsernameAlreadyInUseFailure {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
-    TResult cancelledByUser(),
+    TResult cancelledByUserFailure(),
     TResult emailAlreadyInUseFailure(),
-    TResult invalidEmailAndPasswordCombination(),
+    TResult invalidEmailAndPasswordCombinationFailure(),
     TResult serverFailure(),
-    TResult unableToSignOut(),
+    TResult unableToSignOutFailure(),
     TResult usernameAlreadyInUseFailure(),
     @required TResult orElse(),
   }) {
@@ -792,21 +794,21 @@ class _$UsernameAlreadyInUseFailure implements UsernameAlreadyInUseFailure {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object>({
-    @required TResult cancelledByUser(CancelledByUser value),
+    @required TResult cancelledByUserFailure(CancelledByUserFailure value),
     @required TResult emailAlreadyInUseFailure(EmailAlreadyInUseFailure value),
     @required
-        TResult invalidEmailAndPasswordCombination(
-            InvalidEmailAndPasswordCombination value),
+        TResult invalidEmailAndPasswordCombinationFailure(
+            InvalidEmailAndPasswordCombinationFailure value),
     @required TResult serverFailure(ServerFailure value),
-    @required TResult unableToSignOut(UnableToSignOut value),
+    @required TResult unableToSignOutFailure(UnableToSignOutFailure value),
     @required
         TResult usernameAlreadyInUseFailure(UsernameAlreadyInUseFailure value),
   }) {
-    assert(cancelledByUser != null);
+    assert(cancelledByUserFailure != null);
     assert(emailAlreadyInUseFailure != null);
-    assert(invalidEmailAndPasswordCombination != null);
+    assert(invalidEmailAndPasswordCombinationFailure != null);
     assert(serverFailure != null);
-    assert(unableToSignOut != null);
+    assert(unableToSignOutFailure != null);
     assert(usernameAlreadyInUseFailure != null);
     return usernameAlreadyInUseFailure(this);
   }
@@ -814,12 +816,12 @@ class _$UsernameAlreadyInUseFailure implements UsernameAlreadyInUseFailure {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
-    TResult cancelledByUser(CancelledByUser value),
+    TResult cancelledByUserFailure(CancelledByUserFailure value),
     TResult emailAlreadyInUseFailure(EmailAlreadyInUseFailure value),
-    TResult invalidEmailAndPasswordCombination(
-        InvalidEmailAndPasswordCombination value),
+    TResult invalidEmailAndPasswordCombinationFailure(
+        InvalidEmailAndPasswordCombinationFailure value),
     TResult serverFailure(ServerFailure value),
-    TResult unableToSignOut(UnableToSignOut value),
+    TResult unableToSignOutFailure(UnableToSignOutFailure value),
     TResult usernameAlreadyInUseFailure(UsernameAlreadyInUseFailure value),
     @required TResult orElse(),
   }) {

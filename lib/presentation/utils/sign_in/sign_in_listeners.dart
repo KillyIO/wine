@@ -34,7 +34,8 @@ class SignInListeners {
                             ExtendedNavigator.of(context).pop<bool>(true),
                       ),
                     ),
-                    invalidEmailAndPasswordCombination: (_) => wineShowDialog(
+                    invalidEmailAndPasswordCombinationFailure: (_) =>
+                        wineShowDialog(
                       context: context,
                       builder: (_) => WINEErrorDialog(
                         message: 'Incorrect email or password.',

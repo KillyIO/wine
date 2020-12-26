@@ -102,13 +102,18 @@ class FirebaseAuthenticationFacade implements IAuthenticationFacade {
   @override
   Future<Either<AuthenticationFailure, AuthenticationSuccess>>
       resendVerificationEmail() async {
-    final currentUser = _firebaseAuth.currentUser;
+    try {
+      final currentUser = _firebaseAuth.currentUser;
 
-    if (currentUser != null) {
-      await currentUser.sendEmailVerification();
-      return right(const AuthenticationSuccess.verificationEmailSentSCS());
+      if (currentUser != null) {
+        await currentUser.sendEmailVerification();
+        return right(
+            const AuthenticationSuccess.verificationEmailSentSuccess());
+      }
+      return left(const AuthenticationFailure.serverFailure());
+    } catch (_) {
+      return left(const AuthenticationFailure.serverFailure());
     }
-    return left(const AuthenticationFailure.serverFailure());
   }
 
   @override
@@ -116,7 +121,9 @@ class FirebaseAuthenticationFacade implements IAuthenticationFacade {
       signInAnonymously() async {
     try {
       await _firebaseAuth.signInAnonymously();
-      return right(const AuthenticationSuccess.userSignedInAnonymouslySCS());
+      return right(
+        const AuthenticationSuccess.userSignedInAnonymouslySuccess(),
+      );
     } catch (_) {
       return left(const AuthenticationFailure.serverFailure());
     }
@@ -149,7 +156,9 @@ class FirebaseAuthenticationFacade implements IAuthenticationFacade {
 
       if (e.code == 'wrong-password' || e.code == 'user-not-found') {
         return left(
-            const AuthenticationFailure.invalidEmailAndPasswordCombination());
+          const AuthenticationFailure
+              .invalidEmailAndPasswordCombinationFailure(),
+        );
       } else {
         return left(const AuthenticationFailure.serverFailure());
       }
@@ -166,7 +175,7 @@ class FirebaseAuthenticationFacade implements IAuthenticationFacade {
 
       final googleAccount = await _googleSignIn.signIn();
       if (googleAccount == null) {
-        return left(const AuthenticationFailure.cancelledByUser());
+        return left(const AuthenticationFailure.cancelledByUserFailure());
       }
 
       final googleAuthentication = await googleAccount.authentication;
@@ -244,11 +253,11 @@ class FirebaseAuthenticationFacade implements IAuthenticationFacade {
 
       final currentUser = _firebaseAuth.currentUser;
       if (currentUser != null) {
-        return left(const AuthenticationFailure.unableToSignOut());
+        return left(const AuthenticationFailure.unableToSignOutFailure());
       }
 
       await _firebaseAuth.signInAnonymously();
-      return right(const AuthenticationSuccess.userSignedOutSCS());
+      return right(const AuthenticationSuccess.userSignedOutSuccess());
     } catch (_) {
       return left(const AuthenticationFailure.serverFailure());
     }
