@@ -1,4 +1,3 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:cloud_firestore_mocks/cloud_firestore_mocks.dart';
 import 'package:dartz/dartz.dart';
 import 'package:mockito/mockito.dart';
@@ -7,7 +6,6 @@ import 'package:wine/domain/database/failures/user_database_failure.dart';
 import 'package:wine/domain/database/successes/user_database_success.dart';
 import 'package:wine/domain/models/user.dart';
 import 'package:wine/infrastructure/database/firebase_online_user_database_facade.dart';
-import 'package:wine/utils/paths.dart';
 
 class MockOnlineUserDatabaseFacade extends Mock
     implements FirebaseOnlineUserDatabaseFacade {

@@ -25,11 +25,11 @@ class MockAuthenticationFacade extends Mock
 }
 
 void main() {
-  final validEmail = 'oncefilo1@gmail.com';
-  final validPassword = 'Wd8G/[-2A+';
+  const validEmail = 'oncefilo1@gmail.com';
+  const validPassword = 'Wd8G/[-2A+';
 
-  final invalidEmail = 'oncefilo1@gmailcom';
-  final invalidPassword = '123456';
+  const invalidEmail = 'oncefilo1@gmailcom';
+  const invalidPassword = '123456';
 
   final user = User(
     bio: null,
