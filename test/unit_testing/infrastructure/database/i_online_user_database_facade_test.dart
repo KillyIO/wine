@@ -1,6 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:mockito/mockito.dart';
 import 'package:test/test.dart';
+import 'package:wine/domain/database/facades/online/i_online_user_database_facade.dart';
 import 'package:wine/domain/database/failures/user_database_failure.dart';
 import 'package:wine/domain/database/successes/user_database_success.dart';
 import 'package:wine/domain/models/user.dart';
@@ -25,7 +26,7 @@ void main() {
   MockCollectionReference mockCollectionReference;
   MockDocumentReference mockDocumentReference;
 
-  FirebaseOnlineUserDatabaseFacade onlineUserDatabaseFacade;
+  IOnlineUserDatabaseFacade onlineUserDatabaseFacade;
 
   setUp(() {
     mockFirestore = MockFirestore();

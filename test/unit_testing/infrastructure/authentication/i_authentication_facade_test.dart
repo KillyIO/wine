@@ -5,6 +5,7 @@ import 'package:wine/domain/authentication/authentication_failure.dart';
 
 import 'package:wine/domain/authentication/authentication_success.dart';
 import 'package:wine/domain/authentication/email_address.dart';
+import 'package:wine/domain/authentication/i_authentication_facade.dart';
 import 'package:wine/domain/authentication/password.dart';
 import 'package:wine/domain/authentication/username.dart';
 import 'package:wine/domain/models/user.dart';
@@ -47,7 +48,7 @@ void main() {
   MockCollectionReference mockCollectionReference;
   MockDocumentReference mockDocumentReference;
 
-  FirebaseAuthenticationFacade authenticationFacade;
+  IAuthenticationFacade authenticationFacade;
 
   setUp(() {
     mockFirebaseAuth = MockFirebaseAuth();
