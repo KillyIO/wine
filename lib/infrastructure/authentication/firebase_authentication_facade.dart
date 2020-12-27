@@ -159,9 +159,8 @@ class FirebaseAuthenticationFacade implements IAuthenticationFacade {
           const AuthenticationFailure
               .invalidEmailAndPasswordCombinationFailure(),
         );
-      } else {
-        return left(const AuthenticationFailure.serverFailure());
       }
+      return left(const AuthenticationFailure.serverFailure());
     } catch (_) {
       return left(const AuthenticationFailure.serverFailure());
     }

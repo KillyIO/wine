@@ -20,7 +20,7 @@ void main() {
     username: 'hdima.riyal.99',
   );
 
-  MockFirestore firestore;
+  MockFirestore mockFirestore;
   MockDocumentSnapshot mockDocumentSnapshot;
   MockCollectionReference mockCollectionReference;
   MockDocumentReference mockDocumentReference;
@@ -28,12 +28,12 @@ void main() {
   FirebaseOnlineUserDatabaseFacade onlineUserDatabaseFacade;
 
   setUp(() {
-    firestore = MockFirestore();
+    mockFirestore = MockFirestore();
     mockCollectionReference = MockCollectionReference();
     mockDocumentReference = MockDocumentReference();
     mockDocumentSnapshot = MockDocumentSnapshot();
 
-    onlineUserDatabaseFacade = FirebaseOnlineUserDatabaseFacade(firestore);
+    onlineUserDatabaseFacade = FirebaseOnlineUserDatabaseFacade(mockFirestore);
   });
 
   group(
@@ -47,7 +47,8 @@ void main() {
         Then userLoadedSuccess() is returned with a User()
         ''',
         () async {
-          when(firestore.collection(any)).thenReturn(mockCollectionReference);
+          when(mockFirestore.collection(any))
+              .thenReturn(mockCollectionReference);
           when(mockCollectionReference.doc(any))
               .thenReturn(mockDocumentReference);
           when(mockDocumentReference.get())
@@ -79,7 +80,8 @@ void main() {
         Then userNotFoundFailure() is returned
         ''',
         () async {
-          when(firestore.collection(any)).thenReturn(mockCollectionReference);
+          when(mockFirestore.collection(any))
+              .thenReturn(mockCollectionReference);
           when(mockCollectionReference.doc(any))
               .thenReturn(mockDocumentReference);
           when(mockDocumentReference.get())
@@ -101,10 +103,10 @@ void main() {
         '''
         Given an error is thrown
         When loadUser() is called
-        Then serverErrorFailure() is returned
+        Then serverFailure() is returned
         ''',
         () async {
-          when(firestore.collection(any)).thenAnswer(
+          when(mockFirestore.collection(any)).thenAnswer(
             (_) => throw Exception('An unexpected error occured!'),
           );
 
@@ -129,12 +131,14 @@ void main() {
         ''',
         () async {
           // Create documentReference to user
-          when(firestore.collection(any)).thenReturn(mockCollectionReference);
+          when(mockFirestore.collection(any))
+              .thenReturn(mockCollectionReference);
           when(mockCollectionReference.doc(any))
               .thenReturn(mockDocumentReference);
 
           // Load user document if it exists
-          when(firestore.collection(any)).thenReturn(mockCollectionReference);
+          when(mockFirestore.collection(any))
+              .thenReturn(mockCollectionReference);
           when(mockCollectionReference.doc(any))
               .thenReturn(mockDocumentReference);
           when(mockDocumentReference.get())
@@ -170,12 +174,14 @@ void main() {
         ''',
         () async {
           // Create documentReference to user
-          when(firestore.collection(any)).thenReturn(mockCollectionReference);
+          when(mockFirestore.collection(any))
+              .thenReturn(mockCollectionReference);
           when(mockCollectionReference.doc(any))
               .thenReturn(mockDocumentReference);
 
           // Load user document if it exists
-          when(firestore.collection(any)).thenReturn(mockCollectionReference);
+          when(mockFirestore.collection(any))
+              .thenReturn(mockCollectionReference);
           when(mockCollectionReference.doc(any))
               .thenReturn(mockDocumentReference);
           when(mockDocumentReference.get())
@@ -208,11 +214,11 @@ void main() {
         '''
         Given an error is thrown
         When saveDetailsFromUser() is called
-        Then serverErrorFailure() is returned
+        Then serverFailure() is returned
         ''',
         () async {
           // Create documentReference to user
-          when(firestore.collection(any)).thenAnswer(
+          when(mockFirestore.collection(any)).thenAnswer(
             (_) => throw Exception('An unexpected error occured!'),
           );
 
@@ -237,7 +243,8 @@ void main() {
         ''',
         () async {
           // Create documentReference to user
-          when(firestore.collection(any)).thenReturn(mockCollectionReference);
+          when(mockFirestore.collection(any))
+              .thenReturn(mockCollectionReference);
           when(mockCollectionReference.doc(any))
               .thenReturn(mockDocumentReference);
 
@@ -268,11 +275,11 @@ void main() {
         '''
         Given an error is thrown
         When saveUsername() is called
-        Then serverErrorFailure() is returned
+        Then serverFailure() is returned
         ''',
         () async {
           // Create documentReference to user
-          when(firestore.collection(any)).thenAnswer(
+          when(mockFirestore.collection(any)).thenAnswer(
             (_) => throw Exception('An unexpected error occured!'),
           );
 

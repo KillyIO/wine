@@ -34,9 +34,9 @@ void main() {
     username: 'hdima.riyal.99',
   );
 
-  MockFirebaseAuth firebaseAuth;
-  MockGoogleSignIn googleSignIn;
-  MockFirestore firestore;
+  MockFirebaseAuth mockFirebaseAuth;
+  MockGoogleSignIn mockGoogleSignIn;
+  MockFirestore mockFirestore;
 
   MockFirebaseUser mockFirebaseUser;
   MockUserCredential mockUserCredential;
@@ -50,9 +50,9 @@ void main() {
   FirebaseAuthenticationFacade authenticationFacade;
 
   setUp(() {
-    firebaseAuth = MockFirebaseAuth();
-    googleSignIn = MockGoogleSignIn();
-    firestore = MockFirestore();
+    mockFirebaseAuth = MockFirebaseAuth();
+    mockGoogleSignIn = MockGoogleSignIn();
+    mockFirestore = MockFirestore();
 
     mockFirebaseUser = MockFirebaseUser(isAnonymous: true);
     mockUserCredential = MockUserCredential(isAnonymous: true);
@@ -63,8 +63,11 @@ void main() {
     mockCollectionReference = MockCollectionReference();
     mockDocumentReference = MockDocumentReference();
 
-    authenticationFacade =
-        FirebaseAuthenticationFacade(firebaseAuth, googleSignIn, firestore);
+    authenticationFacade = FirebaseAuthenticationFacade(
+      mockFirebaseAuth,
+      mockGoogleSignIn,
+      mockFirestore,
+    );
   });
 
   group(
@@ -78,7 +81,7 @@ void main() {
         Then an UID is returned
         ''',
         () async {
-          when(firebaseAuth.currentUser).thenReturn(mockFirebaseUser);
+          when(mockFirebaseAuth.currentUser).thenReturn(mockFirebaseUser);
 
           final result = await authenticationFacade.getCurrentUserUID();
 
@@ -93,7 +96,7 @@ void main() {
         Then null is returned
         ''',
         () async {
-          when(firebaseAuth.currentUser).thenReturn(null);
+          when(mockFirebaseAuth.currentUser).thenReturn(null);
 
           final result = await authenticationFacade.getCurrentUserUID();
 
@@ -109,7 +112,7 @@ void main() {
         Then userAuthenticatedSuccess() is returned with a User()
         ''',
         () async {
-          when(firebaseAuth.currentUser).thenReturn(mockFirebaseUser);
+          when(mockFirebaseAuth.currentUser).thenReturn(mockFirebaseUser);
 
           final result = await authenticationFacade.convertWithEmailAndPassword(
             EmailAddress(validEmail),
@@ -135,7 +138,7 @@ void main() {
         '''
         Given a invalid email
         When convertWithEmailAndPassword() is called
-        Then serverErrorFailure() is returned
+        Then serverFailure() is returned
         ''',
         () async {
           final result = await authenticationFacade.convertWithEmailAndPassword(
@@ -156,7 +159,7 @@ void main() {
         '''
         Given a invalid password
         When convertWithEmailAndPassword() is called
-        Then serverErrorFailure() is returned
+        Then serverFailure() is returned
         ''',
         () async {
           final result = await authenticationFacade.convertWithEmailAndPassword(
@@ -180,7 +183,7 @@ void main() {
         Then emailAlreadyInUseFailure() is returned
         ''',
         () async {
-          when(firebaseAuth.currentUser).thenReturn(mockFirebaseUser);
+          when(mockFirebaseAuth.currentUser).thenReturn(mockFirebaseUser);
           when(mockFirebaseUser.linkWithCredential(any)).thenAnswer(
             (_) => throw FirebaseException(
               plugin: 'auth',
@@ -203,6 +206,62 @@ void main() {
         },
       );
 
+      test(
+        '''
+        Given a Firebase exception other than 'email-already-in-use' is thrown
+        When convertWithEmailAndPassword() is called
+        Then serverFailure() is returned
+        ''',
+        () async {
+          when(mockFirebaseAuth.currentUser).thenReturn(mockFirebaseUser);
+          when(mockFirebaseUser.linkWithCredential(any)).thenAnswer(
+            (_) => throw FirebaseException(
+              plugin: 'auth',
+              message: 'Provider already linked.',
+              code: 'provider-already-linked',
+            ),
+          );
+
+          final result = await authenticationFacade.convertWithEmailAndPassword(
+            EmailAddress(validEmail),
+            Password(validPassword),
+          );
+
+          expect(result.isLeft(), true);
+
+          result.fold(
+            (failure) => expect(failure, isA<ServerFailure>()),
+            (_) {},
+          );
+        },
+      );
+
+      test(
+        '''
+        Given an exception is thrown
+        When convertWithEmailAndPassword() is called
+        Then serverFailure() is returned
+        ''',
+        () async {
+          when(mockFirebaseAuth.currentUser).thenReturn(mockFirebaseUser);
+          when(mockFirebaseUser.linkWithCredential(any)).thenAnswer(
+            (_) => throw Exception('An unexpected error occured!'),
+          );
+
+          final result = await authenticationFacade.convertWithEmailAndPassword(
+            EmailAddress(validEmail),
+            Password(validPassword),
+          );
+
+          expect(result.isLeft(), true);
+
+          result.fold(
+            (failure) => expect(failure, isA<ServerFailure>()),
+            (_) {},
+          );
+        },
+      );
+
       // SECTION: isAnonymous
       test(
         '''
@@ -211,7 +270,7 @@ void main() {
         Then true is returned
         ''',
         () async {
-          when(firebaseAuth.currentUser).thenReturn(mockFirebaseUser);
+          when(mockFirebaseAuth.currentUser).thenReturn(mockFirebaseUser);
 
           final result = authenticationFacade.isAnonymous();
 
@@ -228,7 +287,7 @@ void main() {
         () async {
           mockFirebaseUser = MockFirebaseUser(isAnonymous: false);
 
-          when(firebaseAuth.currentUser).thenReturn(mockFirebaseUser);
+          when(mockFirebaseAuth.currentUser).thenReturn(mockFirebaseUser);
 
           final result = authenticationFacade.isAnonymous();
 
@@ -244,7 +303,8 @@ void main() {
         Then usernameAvailableSuccess() is returned
         ''',
         () async {
-          when(firestore.collection(any)).thenReturn(mockCollectionReference);
+          when(mockFirestore.collection(any))
+              .thenReturn(mockCollectionReference);
           when(mockCollectionReference.doc(any))
               .thenReturn(mockDocumentReference);
           when(mockDocumentReference.get())
@@ -270,7 +330,8 @@ void main() {
         Then usernameAlreadyInUseFailure() is returned
         ''',
         () async {
-          when(firestore.collection(any)).thenReturn(mockCollectionReference);
+          when(mockFirestore.collection(any))
+              .thenReturn(mockCollectionReference);
           when(mockCollectionReference.doc(any))
               .thenReturn(mockDocumentReference);
           when(mockDocumentReference.get())
@@ -296,7 +357,8 @@ void main() {
         Then serverFailure() is returned
         ''',
         () async {
-          when(firestore.collection(any)).thenReturn(mockCollectionReference);
+          when(mockFirestore.collection(any))
+              .thenReturn(mockCollectionReference);
           when(mockCollectionReference.doc(any))
               .thenReturn(mockDocumentReference);
           when(mockDocumentReference.get())
@@ -323,7 +385,7 @@ void main() {
         Then true is returned
         ''',
         () {
-          when(firebaseAuth.currentUser).thenReturn(mockFirebaseUser);
+          when(mockFirebaseAuth.currentUser).thenReturn(mockFirebaseUser);
 
           final result = authenticationFacade.isSignedIn();
 
@@ -338,7 +400,7 @@ void main() {
         Then false is returned
         ''',
         () {
-          when(firebaseAuth.currentUser).thenReturn(null);
+          when(mockFirebaseAuth.currentUser).thenReturn(null);
 
           final result = authenticationFacade.isSignedIn();
 
@@ -354,7 +416,7 @@ void main() {
         Then verificationEmailSentSuccess() is returned
         ''',
         () async {
-          when(firebaseAuth.currentUser).thenReturn(mockFirebaseUser);
+          when(mockFirebaseAuth.currentUser).thenReturn(mockFirebaseUser);
 
           final result = await authenticationFacade.resendVerificationEmail();
 
@@ -374,7 +436,7 @@ void main() {
         Then serverFailure() is returned
         ''',
         () async {
-          when(firebaseAuth.currentUser).thenReturn(null);
+          when(mockFirebaseAuth.currentUser).thenReturn(null);
 
           final result = await authenticationFacade.resendVerificationEmail();
 
@@ -394,7 +456,7 @@ void main() {
         Then serverFailure() is returned
         ''',
         () async {
-          when(firebaseAuth.currentUser).thenReturn(mockFirebaseUser);
+          when(mockFirebaseAuth.currentUser).thenReturn(mockFirebaseUser);
           when(mockFirebaseUser.sendEmailVerification()).thenAnswer(
             (_) => throw Exception('An unexpected error occured!'),
           );
@@ -418,7 +480,7 @@ void main() {
         Then userSignedInAnonymouslySuccess() is returned
         ''',
         () async {
-          when(firebaseAuth.signInAnonymously())
+          when(mockFirebaseAuth.signInAnonymously())
               .thenAnswer((_) async => mockUserCredential);
 
           final result = await authenticationFacade.signInAnonymously();
@@ -439,7 +501,7 @@ void main() {
         Then serverFailure() is returned
         ''',
         () async {
-          when(firebaseAuth.signInAnonymously()).thenAnswer(
+          when(mockFirebaseAuth.signInAnonymously()).thenAnswer(
             (_) => throw Exception('An unexpected error occured!'),
           );
 
@@ -462,9 +524,9 @@ void main() {
         Then userAuthenticatedSuccess() is returned with User()
         ''',
         () async {
-          when(firebaseAuth.currentUser).thenReturn(mockFirebaseUser);
+          when(mockFirebaseAuth.currentUser).thenReturn(mockFirebaseUser);
           when(
-            firebaseAuth.signInWithEmailAndPassword(
+            mockFirebaseAuth.signInWithEmailAndPassword(
               email: anyNamed('email'),
               password: anyNamed('password'),
             ),
@@ -497,9 +559,9 @@ void main() {
         Then serverFailure() is returned
         ''',
         () async {
-          when(firebaseAuth.currentUser).thenReturn(mockFirebaseUser);
+          when(mockFirebaseAuth.currentUser).thenReturn(mockFirebaseUser);
           when(
-            firebaseAuth.signInWithEmailAndPassword(
+            mockFirebaseAuth.signInWithEmailAndPassword(
               email: anyNamed('email'),
               password: anyNamed('password'),
             ),
@@ -526,9 +588,9 @@ void main() {
         Then serverFailure() is returned
         ''',
         () async {
-          when(firebaseAuth.currentUser).thenReturn(mockFirebaseUser);
+          when(mockFirebaseAuth.currentUser).thenReturn(mockFirebaseUser);
           when(
-            firebaseAuth.signInWithEmailAndPassword(
+            mockFirebaseAuth.signInWithEmailAndPassword(
               email: anyNamed('email'),
               password: anyNamed('password'),
             ),
@@ -555,9 +617,9 @@ void main() {
         Then invalidEmailAndPasswordCombinationFailure() is returned
         ''',
         () async {
-          when(firebaseAuth.currentUser).thenReturn(mockFirebaseUser);
+          when(mockFirebaseAuth.currentUser).thenReturn(mockFirebaseUser);
           when(
-            firebaseAuth.signInWithEmailAndPassword(
+            mockFirebaseAuth.signInWithEmailAndPassword(
               email: anyNamed('email'),
               password: anyNamed('password'),
             ),
@@ -588,14 +650,49 @@ void main() {
 
       test(
         '''
+        Given a Firebase exception other than 'wrong-password' and 'user-not-found' is thrown
+        When signInWithEmailAndPassword() is called
+        Then serverFailure() is returned
+        ''',
+        () async {
+          when(mockFirebaseAuth.currentUser).thenReturn(mockFirebaseUser);
+          when(
+            mockFirebaseAuth.signInWithEmailAndPassword(
+              email: anyNamed('email'),
+              password: anyNamed('password'),
+            ),
+          ).thenAnswer(
+            (_) async => throw FirebaseException(
+              plugin: 'auth',
+              message: 'An unexpected error occured!',
+              code: 'user-disabled',
+            ),
+          );
+
+          final result = await authenticationFacade.signInWithEmailAndPassword(
+            EmailAddress(validEmail),
+            Password(validPassword),
+          );
+
+          expect(result.isLeft(), true);
+
+          result.fold(
+            (failure) => expect(failure, isA<ServerFailure>()),
+            (_) {},
+          );
+        },
+      );
+
+      test(
+        '''
         Given an exception is thrown
         When signInWithEmailAndPassword() is called
         Then serverFailure() is returned
         ''',
         () async {
-          when(firebaseAuth.currentUser).thenReturn(mockFirebaseUser);
+          when(mockFirebaseAuth.currentUser).thenReturn(mockFirebaseUser);
           when(
-            firebaseAuth.signInWithEmailAndPassword(
+            mockFirebaseAuth.signInWithEmailAndPassword(
               email: anyNamed('email'),
               password: anyNamed('password'),
             ),
@@ -625,13 +722,14 @@ void main() {
         Then userAuthenticatedSuccess() is returned with User()
         ''',
         () async {
-          when(firebaseAuth.currentUser).thenReturn(mockFirebaseUser);
-          when(googleSignIn.signIn()).thenAnswer(
+          when(mockFirebaseAuth.currentUser).thenReturn(mockFirebaseUser);
+          when(mockGoogleSignIn.signIn()).thenAnswer(
             (_) async => mockGoogleSignInAccount,
           );
           when(mockFirebaseUser.linkWithCredential(any))
               .thenAnswer((_) async => mockUserCredential);
-          when(googleSignIn.currentUser).thenReturn(mockGoogleSignInAccount);
+          when(mockGoogleSignIn.currentUser)
+              .thenReturn(mockGoogleSignInAccount);
 
           final result = await authenticationFacade.signInWithGoogle();
 
@@ -647,20 +745,6 @@ void main() {
               }
             },
           );
-
-          verifyInOrder([
-            firebaseAuth.currentUser,
-            googleSignIn.signIn(),
-            mockGoogleSignInAccount.authentication,
-            mockFirebaseUser.linkWithCredential(any),
-            googleSignIn.currentUser,
-            mockFirebaseUser.updateProfile(
-              displayName: anyNamed('displayName'),
-              photoURL: anyNamed('photoURL'),
-            ),
-            mockFirebaseUser.reload(),
-            firebaseAuth.currentUser,
-          ]);
         },
       );
 
@@ -671,8 +755,8 @@ void main() {
         Then cancelledByUserFailure() is returned
         ''',
         () async {
-          when(firebaseAuth.currentUser).thenReturn(mockFirebaseUser);
-          when(googleSignIn.signIn()).thenAnswer((_) => null);
+          when(mockFirebaseAuth.currentUser).thenReturn(mockFirebaseUser);
+          when(mockGoogleSignIn.signIn()).thenAnswer((_) async => null);
 
           final result = await authenticationFacade.signInWithGoogle();
 
@@ -685,7 +769,166 @@ void main() {
         },
       );
 
+      test(
+        '''
+        Given user credential already in use
+        When signInWithGoogle() is called
+        Then userAuthenticatedSucess() is returned with User()
+        ''',
+        () async {
+          when(mockFirebaseAuth.currentUser).thenReturn(mockFirebaseUser);
+          when(mockGoogleSignIn.signIn())
+              .thenAnswer((_) async => mockGoogleSignInAccount);
+          when(mockFirebaseUser.linkWithCredential(any)).thenAnswer(
+            (_) async => throw FirebaseException(
+              plugin: 'auth',
+              message: 'Credential already in use!',
+              code: 'credential-already-in-use',
+            ),
+          );
+          when(mockFirebaseAuth.signInWithCredential(any))
+              .thenAnswer((_) async => mockUserCredential);
+          when(mockGoogleSignIn.currentUser)
+              .thenReturn(mockGoogleSignInAccount);
+
+          final result = await authenticationFacade.signInWithGoogle();
+
+          expect(result.isRight(), true);
+
+          result.fold(
+            (_) {},
+            (success) {
+              expect(success, isA<UserAuthenticatedSuccess>());
+
+              if (success is UserAuthenticatedSuccess) {
+                expect(success.user, user);
+              }
+            },
+          );
+        },
+      );
+
+      test(
+        '''
+        Given a Firebase exception other than 'credential-already-in-use' is thrown
+        When signInWithGoogle() is called
+        Then serverFailure() is returned
+        ''',
+        () async {
+          when(mockFirebaseAuth.currentUser).thenReturn(mockFirebaseUser);
+          when(mockGoogleSignIn.signIn()).thenAnswer(
+            (_) async => throw FirebaseException(
+              plugin: 'auth',
+              message: 'Email already in use!',
+              code: 'email-already-in-use',
+            ),
+          );
+
+          final result = await authenticationFacade.signInWithGoogle();
+
+          expect(result.isLeft(), true);
+
+          result.fold(
+            (failure) => expect(failure, isA<ServerFailure>()),
+            (_) {},
+          );
+        },
+      );
+
+      test(
+        '''
+        Given an exception is thrown
+        When signInWithGoogle() is called
+        Then serverFailure() is returned
+        ''',
+        () async {
+          when(mockFirebaseAuth.currentUser).thenReturn(mockFirebaseUser);
+          when(mockGoogleSignIn.signIn()).thenAnswer(
+            (_) async => throw Exception('An unexpected error occured!'),
+          );
+
+          final result = await authenticationFacade.signInWithGoogle();
+
+          expect(result.isLeft(), true);
+
+          result.fold(
+            (failure) => expect(failure, isA<ServerFailure>()),
+            (_) {},
+          );
+        },
+      );
+
       // SECTION: signOut
+      test(
+        '''
+        Given logged in user try to log out
+        When signOut() is called
+        Then userSignedOutSuccess() is returned
+        ''',
+        () async {
+          when(mockFirebaseAuth.signOut()).thenAnswer((_) async => null);
+          when(mockGoogleSignIn.signOut())
+              .thenAnswer((_) async => mockGoogleSignInAccount);
+          when(mockFirebaseAuth.currentUser).thenReturn(null);
+          when(mockFirebaseAuth.signInAnonymously())
+              .thenAnswer((_) async => mockUserCredential);
+
+          final result = await authenticationFacade.signOut();
+
+          expect(result.isRight(), true);
+
+          result.fold(
+            (_) {},
+            (success) => expect(success, isA<UserSignedOutSuccess>()),
+          );
+        },
+      );
+
+      test(
+        '''
+        Given logged in user try to log out and fails
+        When signOut() is called
+        Then unableToSignOutFailure() is returned
+        ''',
+        () async {
+          when(mockFirebaseAuth.signOut()).thenAnswer((_) async => null);
+          when(mockGoogleSignIn.signOut())
+              .thenAnswer((_) async => mockGoogleSignInAccount);
+          when(mockFirebaseAuth.currentUser).thenReturn(mockFirebaseUser);
+
+          final result = await authenticationFacade.signOut();
+
+          expect(result.isLeft(), true);
+
+          result.fold(
+            (failure) => expect(failure, isA<UnableToSignOutFailure>()),
+            (_) {},
+          );
+        },
+      );
+
+      test(
+        '''
+        Given an exception is thrown
+        When signOut() is called
+        Then serverFailure() is returned
+        ''',
+        () async {
+          when(mockFirebaseAuth.signOut()).thenAnswer((_) async => null);
+          when(mockGoogleSignIn.signOut()).thenAnswer(
+            (_) async => throw Exception('An unexpected error occured!'),
+          );
+
+          final result = await authenticationFacade.signOut();
+
+          expect(result.isLeft(), true);
+
+          result.fold(
+            (failure) => expect(failure, isA<ServerFailure>()),
+            (_) {},
+          );
+        },
+      );
     },
   );
 }
