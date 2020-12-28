@@ -107,9 +107,8 @@ void main() {
         Then serverFailure() is returned
         ''',
         () async {
-          when(mockFirestore.collection(any)).thenAnswer(
-            (_) => throw Exception('An unexpected error occured!'),
-          );
+          when(mockFirestore.collection(any))
+              .thenThrow(Exception('An unexpected error occured!'));
 
           final result = await onlineUserDatabaseFacade.loadUser(user.uid);
 
@@ -138,10 +137,6 @@ void main() {
               .thenReturn(mockDocumentReference);
 
           // Load user document if it exists
-          when(mockFirestore.collection(any))
-              .thenReturn(mockCollectionReference);
-          when(mockCollectionReference.doc(any))
-              .thenReturn(mockDocumentReference);
           when(mockDocumentReference.get())
               .thenAnswer((_) async => mockDocumentSnapshot);
           when(mockDocumentSnapshot.exists).thenReturn(false);
@@ -181,10 +176,6 @@ void main() {
               .thenReturn(mockDocumentReference);
 
           // Load user document if it exists
-          when(mockFirestore.collection(any))
-              .thenReturn(mockCollectionReference);
-          when(mockCollectionReference.doc(any))
-              .thenReturn(mockDocumentReference);
           when(mockDocumentReference.get())
               .thenAnswer((_) async => mockDocumentSnapshot);
           when(mockDocumentSnapshot.exists).thenReturn(true);
@@ -219,9 +210,8 @@ void main() {
         ''',
         () async {
           // Create documentReference to user
-          when(mockFirestore.collection(any)).thenAnswer(
-            (_) => throw Exception('An unexpected error occured!'),
-          );
+          when(mockFirestore.collection(any))
+              .thenThrow(Exception('An unexpected error occured!'));
 
           final result =
               await onlineUserDatabaseFacade.saveDetailsFromUser(user);
@@ -280,9 +270,8 @@ void main() {
         ''',
         () async {
           // Create documentReference to user
-          when(mockFirestore.collection(any)).thenAnswer(
-            (_) => throw Exception('An unexpected error occured!'),
-          );
+          when(mockFirestore.collection(any))
+              .thenThrow(Exception('An unexpected error occured!'));
 
           final result = await onlineUserDatabaseFacade.saveUsername(
             user.uid,

@@ -185,8 +185,8 @@ void main() {
         ''',
         () async {
           when(mockFirebaseAuth.currentUser).thenReturn(mockFirebaseUser);
-          when(mockFirebaseUser.linkWithCredential(any)).thenAnswer(
-            (_) => throw FirebaseException(
+          when(mockFirebaseUser.linkWithCredential(any)).thenThrow(
+            FirebaseException(
               plugin: 'auth',
               message: 'Email already in use.',
               code: 'email-already-in-use',
@@ -215,8 +215,8 @@ void main() {
         ''',
         () async {
           when(mockFirebaseAuth.currentUser).thenReturn(mockFirebaseUser);
-          when(mockFirebaseUser.linkWithCredential(any)).thenAnswer(
-            (_) => throw FirebaseException(
+          when(mockFirebaseUser.linkWithCredential(any)).thenThrow(
+            FirebaseException(
               plugin: 'auth',
               message: 'Provider already linked.',
               code: 'provider-already-linked',
@@ -245,9 +245,8 @@ void main() {
         ''',
         () async {
           when(mockFirebaseAuth.currentUser).thenReturn(mockFirebaseUser);
-          when(mockFirebaseUser.linkWithCredential(any)).thenAnswer(
-            (_) => throw Exception('An unexpected error occured!'),
-          );
+          when(mockFirebaseUser.linkWithCredential(any))
+              .thenThrow(Exception('An unexpected error occured!'));
 
           final result = await authenticationFacade.convertWithEmailAndPassword(
             EmailAddress(validEmail),
@@ -458,9 +457,8 @@ void main() {
         ''',
         () async {
           when(mockFirebaseAuth.currentUser).thenReturn(mockFirebaseUser);
-          when(mockFirebaseUser.sendEmailVerification()).thenAnswer(
-            (_) => throw Exception('An unexpected error occured!'),
-          );
+          when(mockFirebaseUser.sendEmailVerification())
+              .thenThrow(Exception('An unexpected error occured!'));
 
           final result = await authenticationFacade.resendVerificationEmail();
 
@@ -502,9 +500,8 @@ void main() {
         Then serverFailure() is returned
         ''',
         () async {
-          when(mockFirebaseAuth.signInAnonymously()).thenAnswer(
-            (_) => throw Exception('An unexpected error occured!'),
-          );
+          when(mockFirebaseAuth.signInAnonymously())
+              .thenThrow(Exception('An unexpected error occured!'));
 
           final result = await authenticationFacade.signInAnonymously();
 
@@ -624,13 +621,11 @@ void main() {
               email: anyNamed('email'),
               password: anyNamed('password'),
             ),
-          ).thenAnswer(
-            (_) async => throw FirebaseException(
-              plugin: 'auth',
-              message: 'Wrong email/password combination',
-              code: 'user-not-found',
-            ),
-          );
+          ).thenThrow(FirebaseException(
+            plugin: 'auth',
+            message: 'Wrong email/password combination',
+            code: 'user-not-found',
+          ));
 
           final result = await authenticationFacade.signInWithEmailAndPassword(
             EmailAddress(validEmail),
@@ -662,13 +657,11 @@ void main() {
               email: anyNamed('email'),
               password: anyNamed('password'),
             ),
-          ).thenAnswer(
-            (_) async => throw FirebaseException(
-              plugin: 'auth',
-              message: 'An unexpected error occured!',
-              code: 'user-disabled',
-            ),
-          );
+          ).thenThrow(FirebaseException(
+            plugin: 'auth',
+            message: 'An unexpected error occured!',
+            code: 'user-disabled',
+          ));
 
           final result = await authenticationFacade.signInWithEmailAndPassword(
             EmailAddress(validEmail),
@@ -697,9 +690,7 @@ void main() {
               email: anyNamed('email'),
               password: anyNamed('password'),
             ),
-          ).thenAnswer(
-            (_) async => throw Exception('An unexpected error occured!'),
-          );
+          ).thenThrow(Exception('An unexpected error occured!'));
 
           final result = await authenticationFacade.signInWithEmailAndPassword(
             EmailAddress(validEmail),
@@ -780,8 +771,8 @@ void main() {
           when(mockFirebaseAuth.currentUser).thenReturn(mockFirebaseUser);
           when(mockGoogleSignIn.signIn())
               .thenAnswer((_) async => mockGoogleSignInAccount);
-          when(mockFirebaseUser.linkWithCredential(any)).thenAnswer(
-            (_) async => throw FirebaseException(
+          when(mockFirebaseUser.linkWithCredential(any)).thenThrow(
+            FirebaseException(
               plugin: 'auth',
               message: 'Credential already in use!',
               code: 'credential-already-in-use',
@@ -817,13 +808,11 @@ void main() {
         ''',
         () async {
           when(mockFirebaseAuth.currentUser).thenReturn(mockFirebaseUser);
-          when(mockGoogleSignIn.signIn()).thenAnswer(
-            (_) async => throw FirebaseException(
-              plugin: 'auth',
-              message: 'Email already in use!',
-              code: 'email-already-in-use',
-            ),
-          );
+          when(mockGoogleSignIn.signIn()).thenThrow(FirebaseException(
+            plugin: 'auth',
+            message: 'Email already in use!',
+            code: 'email-already-in-use',
+          ));
 
           final result = await authenticationFacade.signInWithGoogle();
 
@@ -844,9 +833,8 @@ void main() {
         ''',
         () async {
           when(mockFirebaseAuth.currentUser).thenReturn(mockFirebaseUser);
-          when(mockGoogleSignIn.signIn()).thenAnswer(
-            (_) async => throw Exception('An unexpected error occured!'),
-          );
+          when(mockGoogleSignIn.signIn())
+              .thenThrow(Exception('An unexpected error occured!'));
 
           final result = await authenticationFacade.signInWithGoogle();
 
@@ -916,9 +904,8 @@ void main() {
         ''',
         () async {
           when(mockFirebaseAuth.signOut()).thenAnswer((_) async => null);
-          when(mockGoogleSignIn.signOut()).thenAnswer(
-            (_) async => throw Exception('An unexpected error occured!'),
-          );
+          when(mockGoogleSignIn.signOut())
+              .thenThrow(Exception('An unexpected error occured!'));
 
           final result = await authenticationFacade.signOut();
 

@@ -23,9 +23,9 @@ class HiveLocalConfigDatabaseFacade implements ILocalConfigDatabaseFacade {
 
     final config = _configsBox.get(Constants.sessionConfig);
     if (config != null) {
-      return left(const ConfigDatabaseFailure.failedToDeleteConfigFLR());
+      return left(const ConfigDatabaseFailure.deleteConfigFailure());
     }
-    return right(const ConfigDatabaseSuccess.configDeletedSCS());
+    return right(const ConfigDatabaseSuccess.configDeletedSuccess());
   }
 
   @override
@@ -34,7 +34,7 @@ class HiveLocalConfigDatabaseFacade implements ILocalConfigDatabaseFacade {
     final config = _configsBox.get(Constants.sessionConfig);
 
     if (config != null) {
-      return right(ConfigDatabaseSuccess.configFetchedSCS(config));
+      return right(ConfigDatabaseSuccess.configFetchedSuccess(config));
     }
     return initializeConfig();
   }
@@ -58,11 +58,11 @@ class HiveLocalConfigDatabaseFacade implements ILocalConfigDatabaseFacade {
           ),
     );
 
-    final configTest = _configsBox.get(Constants.sessionConfig);
-    if (configTest != null) {
-      return right(const ConfigDatabaseSuccess.configInitializedSCS());
+    final newConfig = _configsBox.get(Constants.sessionConfig);
+    if (newConfig != null) {
+      return right(const ConfigDatabaseSuccess.configInitializedSuccess());
     }
-    return left(const ConfigDatabaseFailure.failedToInitializeConfigFLR());
+    return left(const ConfigDatabaseFailure.initializeConfigFailure());
   }
 
   @override
@@ -73,8 +73,8 @@ class HiveLocalConfigDatabaseFacade implements ILocalConfigDatabaseFacade {
 
     final savedConfig = _configsBox.get(Constants.sessionConfig);
     if (savedConfig == config) {
-      return right(const ConfigDatabaseSuccess.configUpdatedSCS());
+      return right(const ConfigDatabaseSuccess.configUpdatedSuccess());
     }
-    return left(const ConfigDatabaseFailure.failedToUpdateConfigFLR());
+    return left(const ConfigDatabaseFailure.updateConfigFailure());
   }
 }

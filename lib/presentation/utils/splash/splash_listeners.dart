@@ -54,20 +54,19 @@ class SplashListeners {
             () => null,
             (some) => some.fold(
               (failure) => failure.maybeMap(
-                failedToDeleteConfigFLR: (_) {},
-                failedToFetchConfigFLR: (_) {},
-                failedToInitializeConfigFLR: (_) {},
-                failedToUpdateConfigFLR: (_) {},
+                deleteConfigFailure: (_) {},
+                initializeConfigFailure: (_) {},
+                updateConfigFailure: (_) {},
                 orElse: () => null,
               ),
               (success) => success.map(
-                configDeletedSCS: (_) {},
-                configFetchedSCS: (_) async =>
+                configDeletedSuccess: (_) {},
+                configFetchedSuccess: (_) async =>
                     await ExtendedNavigator.root.replace(Routes.homePage),
                 // TODO replace route for onboarding route
-                configInitializedSCS: (_) async =>
+                configInitializedSuccess: (_) async =>
                     await ExtendedNavigator.root.replace(Routes.homePage),
-                configUpdatedSCS: (_) {},
+                configUpdatedSuccess: (_) {},
               ),
             ),
           );
