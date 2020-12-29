@@ -15,10 +15,10 @@ abstract class ConfigDatabaseSuccess with _$ConfigDatabaseSuccess {
       ConfigFetchedSuccess;
 
   /// @nodoc
-  const factory ConfigDatabaseSuccess.configInitializedSuccess() =
+  const factory ConfigDatabaseSuccess.configInitializedSuccess(Config config) =
       ConfigInitializedSuccess;
 
   /// @nodoc
-  const factory ConfigDatabaseSuccess.configUpdatedSuccess() =
+  const factory ConfigDatabaseSuccess.configUpdatedSuccess(Config config) =
       ConfigUpdatedSuccess;
 }

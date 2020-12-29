@@ -12,16 +12,16 @@ void main() {
   Config config;
 
   MockHiveInterface mockHiveInterface;
-  MockConfigBox mockConfigsBox;
+  MockConfigsBox mockConfigsBox;
 
   ILocalConfigDatabaseFacade localConfigDatabaseFacade;
 
   group(
-    'HiveLocalConfigDatabaseFacade',
+    'ILocalConfigDatabaseFacade -',
     () {
       setUp(() {
         config = Config(
-          firstRun: false,
+          firstRun: true,
           enableSeriesViewsCount: false,
           enableSeriesLikesCount: false,
           enableSeriesBookmarksCount: false,
@@ -31,7 +31,7 @@ void main() {
         );
 
         mockHiveInterface = MockHiveInterface();
-        mockConfigsBox = MockConfigBox();
+        mockConfigsBox = MockConfigsBox();
 
         localConfigDatabaseFacade =
             HiveLocalConfigDatabaseFacade(mockConfigsBox);
@@ -44,238 +44,238 @@ void main() {
         await mockConfigsBox.close();
       });
 
-      // SECTION: deleteConfig
-      test(
-        '''
-        Given a successful deletion
-        When deleteConfig() is called
-        Then configDeletedSuccess() is returned
-        ''',
-        () async {
-          when(mockConfigsBox.get(any)).thenReturn(null);
+      group(
+        'deleteConfig -',
+        () {
+          test(
+            '''
+            Given Config() stored in the box
+            When no Config() found in the box
+            Then configDeletedSuccess() returned
+            ''',
+            () async {
+              when(mockConfigsBox.get(any)).thenReturn(null);
 
-          final result = await localConfigDatabaseFacade.deleteConfig();
+              final result = await localConfigDatabaseFacade.deleteConfig();
 
-          expect(result.isRight(), true);
+              expect(result.isRight(), true);
 
-          result.fold(
-            (_) {},
-            (success) => expect(success, isA<ConfigDeletedSuccess>()),
+              result.fold(
+                (_) {},
+                (success) => expect(success, isA<ConfigDeletedSuccess>()),
+              );
+            },
           );
-        },
-      );
 
-      test(
-        '''
-        Given a failed deletion
-        When deleteConfig() is called
-        Then deleteConfigFailure() is returned
-        ''',
-        () async {
-          when(mockConfigsBox.get(any)).thenReturn(config);
+          test(
+            '''
+            Given Config() stored in the box
+            When Config() still in the box
+            Then deleteConfigFailure() returned
+            ''',
+            () async {
+              when(mockConfigsBox.get(any)).thenReturn(config);
 
-          final result = await localConfigDatabaseFacade.deleteConfig();
+              final result = await localConfigDatabaseFacade.deleteConfig();
 
-          expect(result.isLeft(), true);
+              expect(result.isLeft(), true);
 
-          result.fold(
-            (failure) => expect(failure, isA<DeleteConfigFailure>()),
-            (_) {},
+              result.fold(
+                (failure) => expect(failure, isA<DeleteConfigFailure>()),
+                (_) {},
+              );
+            },
           );
         },
       );
 
       // SECTION: fetchConfig
-      test(
-        '''
-        Given no config found and then initialized successfully
-        When fetchConfig() is called
-        Then configInitializedSuccess() is returned
-        ''',
-        () async {
-          final answers = [null, config];
-          when(mockConfigsBox.get(any)).thenAnswer((_) => answers.removeAt(0));
+      group(
+        'fetchConfig -',
+        () {
+          test(
+            '''
+            Given Config() stored in the box
+            When Config() is found in the box
+            Then configFetchedSuccess() returned with Config()
+            ''',
+            () async {
+              when(mockConfigsBox.get(any)).thenReturn(config);
 
-          final result = await localConfigDatabaseFacade.fetchConfig();
+              final result = await localConfigDatabaseFacade.fetchConfig();
 
-          expect(result.isRight(), true);
+              expect(result.isRight(), true);
 
-          result.fold(
-            (_) {},
-            (success) => expect(success, isA<ConfigInitializedSuccess>()),
+              result.fold(
+                (_) {},
+                (success) {
+                  expect(success, isA<ConfigFetchedSuccess>());
+
+                  if (success is ConfigFetchedSuccess) {
+                    expect(success.config, config);
+                  }
+                },
+              );
+            },
           );
-        },
-      );
 
-      test(
-        '''
-        Given no config found and then initialization fails
-        When fetchConfig() is called
-        Then initializeConfigFailure() is returned
-        ''',
-        () async {
-          when(mockConfigsBox.get(any)).thenReturn(null);
-          when(mockConfigsBox.get(any)).thenReturn(null);
+          test(
+            '''
+            Given no Config() stored in the box
+            When no Config() found in the box
+            Then ConfigInitializedSuccess() or InitializeConfigFailure() returned
+            ''',
+            () async {
+              final answers = [null, config];
+              when(mockConfigsBox.get(any))
+                  .thenAnswer((_) => answers.removeAt(0));
 
-          final result = await localConfigDatabaseFacade.fetchConfig();
+              final result = await localConfigDatabaseFacade.fetchConfig();
 
-          expect(result.isLeft(), true);
-
-          result.fold(
-            (failure) => expect(failure, isA<InitializeConfigFailure>()),
-            (_) {},
-          );
-        },
-      );
-
-      test(
-        '''
-        Given a config is found
-        When fetchConfig() is called
-        Then configFetchedSuccess() is returned
-        ''',
-        () async {
-          when(mockConfigsBox.get(any)).thenReturn(config);
-
-          final result = await localConfigDatabaseFacade.fetchConfig();
-
-          expect(result.isRight(), true);
-
-          result.fold(
-            (_) {},
-            (success) {
-              expect(success, isA<ConfigFetchedSuccess>());
-
-              if (success is ConfigFetchedSuccess) {
-                expect(success.config, config);
-              }
+              result.fold(
+                (failure) => expect(failure, isA<InitializeConfigFailure>()),
+                (success) => expect(success, isA<ConfigInitializedSuccess>()),
+              );
             },
           );
         },
       );
 
       // SECTION: initializeConfig
-      test(
-        '''
-        Given a config is provided and initialized successfully
-        When initializeConfig() is called
-        Then configInitializedSuccess() is returned
-        ''',
-        () async {
-          when(mockConfigsBox.get(any)).thenReturn(config);
+      group(
+        'initializeConfig -',
+        () {
+          test(
+            '''
+            Given no Config() stored in the box
+            And Config() is provided
+            When Config() is found in the box
+            Then configInitializedSuccess() returned with Config()
+            ''',
+            () async {
+              when(mockConfigsBox.get(any)).thenReturn(config);
 
-          final result =
-              await localConfigDatabaseFacade.initializeConfig(config: config);
+              final result = await localConfigDatabaseFacade.initializeConfig(
+                config: config,
+              );
 
-          expect(result.isRight(), true);
+              expect(result.isRight(), true);
 
-          result.fold(
-            (_) {},
-            (success) => expect(success, isA<ConfigInitializedSuccess>()),
+              result.fold(
+                (_) {},
+                (success) {
+                  expect(success, isA<ConfigInitializedSuccess>());
+
+                  if (success is ConfigInitializedSuccess) {
+                    expect(success.config, config);
+                  }
+                },
+              );
+            },
           );
-        },
-      );
 
-      test(
-        '''
-        Given a config's not provided and initialized successfully
-        When initializeConfig() is called
-        Then configInitializedSuccess() is returned
-        ''',
-        () async {
-          when(mockConfigsBox.get(any)).thenReturn(config);
+          test(
+            '''
+            Given no Config() stored in the box
+            And Config() not provided
+            When Config() found in the box
+            Then configInitializedSuccess() returned
+            ''',
+            () async {
+              when(mockConfigsBox.get(any))
+                  .thenReturn(config.copyWith(firstRun: false));
 
-          final result = await localConfigDatabaseFacade.initializeConfig();
+              final result = await localConfigDatabaseFacade.initializeConfig();
 
-          expect(result.isRight(), true);
+              expect(result.isRight(), true);
 
-          result.fold(
-            (_) {},
-            (success) => expect(success, isA<ConfigInitializedSuccess>()),
+              result.fold(
+                (_) {},
+                (success) {
+                  expect(success, isA<ConfigInitializedSuccess>());
+
+                  if (success is ConfigInitializedSuccess) {
+                    expect(success.config, config.copyWith(firstRun: false));
+                  }
+                },
+              );
+            },
           );
-        },
-      );
 
-      test(
-        '''
-        Given initization fails
-        When initializeConfig() is called
-        Then initializeConfigFailure() is returned
-        ''',
-        () async {
-          when(mockConfigsBox.get(any)).thenReturn(null);
+          test(
+            '''
+            Given no Config() stored in the box
+            When no Config() found in the box
+            Then initializeConfigFailure() is returned
+            ''',
+            () async {
+              when(mockConfigsBox.get(any)).thenReturn(null);
 
-          final result = await localConfigDatabaseFacade.initializeConfig();
+              final result = await localConfigDatabaseFacade.initializeConfig();
 
-          expect(result.isLeft(), true);
+              expect(result.isLeft(), true);
 
-          result.fold(
-            (failure) => expect(failure, isA<InitializeConfigFailure>()),
-            (_) {},
+              result.fold(
+                (failure) => expect(failure, isA<InitializeConfigFailure>()),
+                (_) {},
+              );
+            },
           );
         },
       );
 
       // SECTION: updateConfig
-      test(
-        '''
-        Given config found in box and updated successfully
-        When updateConfig() is called
-        Then configUpdatedSuccess() is returned
-        ''',
-        () async {
-          when(mockConfigsBox.get(any)).thenReturn(config);
+      group(
+        'updateConfig -',
+        () {
+          test(
+            '''
+            Given Config() stored in the box
+            When Config() stored the same has new Config()
+            Then configUpdatedSuccess() is returned
+            ''',
+            () async {
+              when(mockConfigsBox.get(any)).thenReturn(config);
 
-          final result = await localConfigDatabaseFacade.updateConfig(config);
+              final result =
+                  await localConfigDatabaseFacade.updateConfig(config);
 
-          expect(result.isRight(), true);
+              expect(result.isRight(), true);
 
-          result.fold(
-            (_) {},
-            (success) => expect(success, isA<ConfigUpdatedSuccess>()),
+              result.fold(
+                (_) {},
+                (success) {
+                  expect(success, isA<ConfigUpdatedSuccess>());
+
+                  if (success is ConfigUpdatedSuccess) {
+                    expect(success.config, config);
+                  }
+                },
+              );
+            },
           );
-        },
-      );
 
-      test(
-        '''
-        Given config found in box and update fails
-        When updateConfig() is called
-        Then updateConfigFailure() is returned
-        ''',
-        () async {
-          final newConfig = config.copyWith(firstRun: true);
+          test(
+            '''
+            Given Config() stored in the box
+            When Config() stored not the same has the new Config()
+            Then updateConfigFailure() is returned
+            ''',
+            () async {
+              final newConfig = config.copyWith(firstRun: false);
 
-          when(mockConfigsBox.get(any)).thenReturn(config);
+              when(mockConfigsBox.get(any)).thenReturn(config);
 
-          final result =
-              await localConfigDatabaseFacade.updateConfig(newConfig);
+              final result =
+                  await localConfigDatabaseFacade.updateConfig(newConfig);
 
-          expect(result.isLeft(), true);
+              expect(result.isLeft(), true);
 
-          result.fold(
-            (failure) => expect(failure, isA<UpdateConfigFailure>()),
-            (_) {},
-          );
-        },
-      );
-
-      test(
-        '''
-        Given no config found in box
-        When updateConfig() is called
-        Then updateConfigFailure() is returned
-        ''',
-        () async {
-          when(mockConfigsBox.get(any)).thenReturn(null);
-
-          final result = await localConfigDatabaseFacade.updateConfig(config);
-
-          expect(result.isLeft(), true);
-
-          result.fold(
-            (failure) => expect(failure, isA<UpdateConfigFailure>()),
-            (_) {},
+              result.fold(
+                (failure) => expect(failure, isA<UpdateConfigFailure>()),
+                (_) {},
+              );
+            },
           );
         },
       );

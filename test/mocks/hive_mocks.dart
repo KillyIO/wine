@@ -4,4 +4,6 @@ import 'package:wine/domain/models/hive/config.dart';
 
 class MockHiveInterface extends Mock implements HiveInterface {}
 
-class MockConfigBox extends Mock implements Box<Config> {}
+class MockConfigsBox extends Mock implements Box<Config> {}
+
+class MockPlaceholdersBox extends Mock implements Box<String> {}

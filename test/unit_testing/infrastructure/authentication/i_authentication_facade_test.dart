@@ -24,16 +24,7 @@ void main() {
   const invalidPassword = '123456';
   const invalidUsername = '';
 
-  final user = User(
-    bio: null,
-    createdAt: 1592255973418,
-    email: validEmail,
-    name: 'hdima.riyal.99',
-    profilePictureURL: null,
-    uid: 'IhyAvFOnGegIFDBJYmL30nAbWu92',
-    updatedAt: 1608137445032,
-    username: 'hdima.riyal.99',
-  );
+  User user;
 
   MockFirebaseAuth mockFirebaseAuth;
   MockGoogleSignIn mockGoogleSignIn;
@@ -51,6 +42,17 @@ void main() {
   IAuthenticationFacade authenticationFacade;
 
   setUp(() {
+    user = User(
+      bio: null,
+      createdAt: 1592255973418,
+      email: validEmail,
+      name: 'hdima.riyal.99',
+      profilePictureURL: null,
+      uid: 'IhyAvFOnGegIFDBJYmL30nAbWu92',
+      updatedAt: 1608137445032,
+      username: 'hdima.riyal.99',
+    );
+
     mockFirebaseAuth = MockFirebaseAuth();
     mockGoogleSignIn = MockGoogleSignIn();
     mockFirestore = MockFirestore();
@@ -72,7 +74,7 @@ void main() {
   });
 
   group(
-    'FirebaseAuthenticationFacade',
+    'IAuthenticationFacade',
     () {
       // SECTION: getCurrentUserUID
       test(

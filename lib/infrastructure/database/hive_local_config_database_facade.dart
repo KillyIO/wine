@@ -60,7 +60,7 @@ class HiveLocalConfigDatabaseFacade implements ILocalConfigDatabaseFacade {
 
     final newConfig = _configsBox.get(Constants.sessionConfig);
     if (newConfig != null) {
-      return right(const ConfigDatabaseSuccess.configInitializedSuccess());
+      return right(ConfigDatabaseSuccess.configInitializedSuccess(newConfig));
     }
     return left(const ConfigDatabaseFailure.initializeConfigFailure());
   }
@@ -73,7 +73,7 @@ class HiveLocalConfigDatabaseFacade implements ILocalConfigDatabaseFacade {
 
     final savedConfig = _configsBox.get(Constants.sessionConfig);
     if (savedConfig == config) {
-      return right(const ConfigDatabaseSuccess.configUpdatedSuccess());
+      return right(ConfigDatabaseSuccess.configUpdatedSuccess(savedConfig));
     }
     return left(const ConfigDatabaseFailure.updateConfigFailure());
   }

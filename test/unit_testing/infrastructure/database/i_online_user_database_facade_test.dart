@@ -38,7 +38,7 @@ void main() {
   });
 
   group(
-    'FirebaseOnlineUserDatabaseFacade',
+    'IOnlineUserDatabaseFacade',
     () {
       // SECTION: loadUser
       test(
