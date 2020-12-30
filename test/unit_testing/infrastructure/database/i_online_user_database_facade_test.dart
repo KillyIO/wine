@@ -48,10 +48,10 @@ void main() {
         () {
           test(
             '''
-            Scenario: We try to load the use details from the database [SUCCESS CASE]
+            Scenario: We trying to load the user details from the online database [SUCCESS CASE]
             Given user UID
             And User() exists inside Database
-            When loadUser is called
+            When loadUser() is called
             Then userLoadedSuccess() returned with User()
             ''',
             () async {
@@ -83,8 +83,10 @@ void main() {
 
           test(
             '''
+            Scenario: We trying to load the user details from the online database [FAILURE CASE]
             Given user UID
-            When User() not found inside Database
+            And User() doesn't exist inside Database
+            When loadUser() is called
             Then userNotFoundFailure() returned
             ''',
             () async {
@@ -109,8 +111,10 @@ void main() {
 
           test(
             '''
+            Scenario: We trying to load the user details from the online database [SERVER FAILURE CASE]
             Given user UID
-            When Exception thrown
+            And User() exists inside Database
+            When loadUser() is called
             Then serverFailure() returned
             ''',
             () async {
@@ -136,8 +140,10 @@ void main() {
         () {
           test(
             '''
+            Scenario: We trying to save the user's details into the online database [SUCCESS CASE]
             Given User()
-            When User() not found inside Database
+            And User() doesn't exist inside Database
+            When saveDetailsFromUser() is called
             Then userDetailsSavedSuccess() returned with User()
             ''',
             () async {
@@ -176,8 +182,10 @@ void main() {
 
           test(
             '''
+            Scenario: We trying to save the user's details into the online database [SUCCESS CASE]
             Given a User()
-            When User() found inside Database
+            And User() exists inside Database
+            When saveDetailsFromUser() is called
             Then userDetailsSavedSuccess() with User()
             ''',
             () async {
@@ -217,8 +225,9 @@ void main() {
 
           test(
             '''
+            Scenario: We trying to save the user's details into the online database [SERVER FAILURE CASE]
             Given a User()
-            When Exception is thrown
+            When saveDetailsFromUser() is called
             Then serverFailure() is returned
             ''',
             () async {
@@ -246,9 +255,10 @@ void main() {
         () {
           test(
             '''
-            Given userUID and username
-            When username saved inside Database
-            Then usernameSavedSuccess() returned with username
+            Scenario: We trying to save the user's username inside the online database [SUCCESS CASE]
+            Given userUID and Username()
+            When saveUsername() is called
+            Then usernameSavedSuccess() returned with username as a String
             ''',
             () async {
               // Create documentReference to user
@@ -283,8 +293,9 @@ void main() {
 
           test(
             '''
-            Given userUID and username
-            When Exception thrown
+            Scenario: We trying to save the user's username inside the online database [SERVER FAILURE CASE]
+            Given userUID and Username()
+            When saveUsername() is called
             Then serverFailure() returned
             ''',
             () async {
