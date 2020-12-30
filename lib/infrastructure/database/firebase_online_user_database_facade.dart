@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
+import 'package:wine/domain/authentication/username.dart';
 
 import 'package:wine/domain/database/facades/online/i_online_user_database_facade.dart';
 import 'package:wine/domain/database/failures/user_database_failure.dart';
@@ -72,15 +73,17 @@ class FirebaseOnlineUserDatabaseFacade extends IOnlineUserDatabaseFacade {
   @override
   Future<Either<UserDatabaseFailure, UserDatabaseSuccess>> saveUsername(
     String userUID,
-    String username,
+    Username username,
   ) async {
     try {
+      final usernameStr = username.getOrCrash();
+
       final mapReference =
-          _firestore.collection(Paths.usernameUIDMapPath).doc(username);
+          _firestore.collection(Paths.usernameUIDMapPath).doc(usernameStr);
 
       await mapReference.set({'uid': userUID}, SetOptions(merge: true));
 
-      return right(UserDatabaseSuccess.usernameSavedSuccess(username));
+      return right(UserDatabaseSuccess.usernameSavedSuccess(usernameStr));
     } catch (_) {
       return left(const UserDatabaseFailure.serverFailure());
     }

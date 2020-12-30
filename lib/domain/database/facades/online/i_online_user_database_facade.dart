@@ -1,4 +1,5 @@
 import 'package:dartz/dartz.dart';
+import 'package:wine/domain/authentication/username.dart';
 import 'package:wine/domain/database/failures/user_database_failure.dart';
 import 'package:wine/domain/database/successes/user_database_success.dart';
 import 'package:wine/domain/models/user.dart';
@@ -18,6 +19,6 @@ abstract class IOnlineUserDatabaseFacade {
   /// @nodoc
   Future<Either<UserDatabaseFailure, UserDatabaseSuccess>> saveUsername(
     String userUID,
-    String username,
+    Username username,
   );
 }

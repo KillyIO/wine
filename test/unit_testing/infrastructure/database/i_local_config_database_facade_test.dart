@@ -49,9 +49,10 @@ void main() {
         () {
           test(
             '''
-            Given Config() stored in the box
-            When no Config() found in the box
-            Then configDeletedSuccess() returned
+            Scenario: We trying to delete the config inside the local database [SUCCESS CASE]
+            Given the Box is not empty
+            When deleteConfig() is called
+            Then configDeletedSuccess() is returned
             ''',
             () async {
               when(mockConfigsBox.get(any)).thenReturn(null);
@@ -69,9 +70,10 @@ void main() {
 
           test(
             '''
-            Given Config() stored in the box
-            When Config() still in the box
-            Then deleteConfigFailure() returned
+            Scenario: We trying to delete the config inside the local database [FAILURE CASE]
+            Given the Box is not empty
+            When deleteConfig() is called
+            Then deleteConfigFailure() is returned
             ''',
             () async {
               when(mockConfigsBox.get(any)).thenReturn(config);
@@ -95,9 +97,10 @@ void main() {
         () {
           test(
             '''
-            Given Config() stored in the box
-            When Config() is found in the box
-            Then configFetchedSuccess() returned with Config()
+            Scenario: We trying to fetch the config inside the local database [SUCCESS CASE]
+            Given the Box is not empty
+            When fetchConfig() is called
+            Then configFetchedSuccess() is returned with the Config()
             ''',
             () async {
               when(mockConfigsBox.get(any)).thenReturn(config);
@@ -121,9 +124,10 @@ void main() {
 
           test(
             '''
-            Given no Config() stored in the box
-            When no Config() found in the box
-            Then ConfigInitializedSuccess() or InitializeConfigFailure() returned
+            Scenario: We trying to fetch the config inside the local database [FAILURE CASE]
+            Given the Box is empty
+            When fetchConfig() is called
+            Then ConfigInitializedSuccess() or InitializeConfigFailure() are returned
             ''',
             () async {
               final answers = [null, config];
@@ -147,9 +151,9 @@ void main() {
         () {
           test(
             '''
-            Given no Config() stored in the box
-            And Config() is provided
-            When Config() is found in the box
+            Scenario: We trying to initialize the config inside the local database [Config PROVIDED] [SUCCESS CASE]
+            Given the Box is empty
+            When initializeConfig() is called
             Then configInitializedSuccess() returned with Config()
             ''',
             () async {
@@ -176,9 +180,9 @@ void main() {
 
           test(
             '''
-            Given no Config() stored in the box
-            And Config() not provided
-            When Config() found in the box
+            Scenario: We trying to initialize the config inside the local database [Config() NOT PROVIDED] [SUCCESS CASE]
+            Given the Box is empty
+            When initializeConfig() is called
             Then configInitializedSuccess() returned
             ''',
             () async {
@@ -204,9 +208,10 @@ void main() {
 
           test(
             '''
-            Given no Config() stored in the box
-            When no Config() found in the box
-            Then initializeConfigFailure() is returned
+            Scenario: We trying to initialize the config inside the local database [Config() (NOT) PROVIDED] [FAILURE CASE]
+            Given the Box is empty
+            When initializeConfig() is called
+            Then initializeConfigFailure() returned
             ''',
             () async {
               when(mockConfigsBox.get(any)).thenReturn(null);
@@ -230,9 +235,10 @@ void main() {
         () {
           test(
             '''
-            Given Config() stored in the box
-            When Config() stored the same has new Config()
-            Then configUpdatedSuccess() is returned
+            Scenario: We trying to update the config inside the local database [SUCCESS CASE]
+            Given the Box is not empty
+            When updateConfig() is called
+            Then configUpdatedSuccess() returned
             ''',
             () async {
               when(mockConfigsBox.get(any)).thenReturn(config);
@@ -257,9 +263,10 @@ void main() {
 
           test(
             '''
-            Given Config() stored in the box
-            When Config() stored not the same has the new Config()
-            Then updateConfigFailure() is returned
+            Scenario: We trying to update the config inside the local database [FAILURE CASE]
+            Given the Box is not empty
+            When updateConfig() is called
+            Then updateConfigFailure() returned
             ''',
             () async {
               final newConfig = config.copyWith(firstRun: false);
