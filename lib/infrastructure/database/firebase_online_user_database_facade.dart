@@ -2,6 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
 import 'package:wine/domain/authentication/username.dart';
+import 'package:wine/domain/core/errors.dart';
 
 import 'package:wine/domain/database/facades/online/i_online_user_database_facade.dart';
 import 'package:wine/domain/database/failures/user_database_failure.dart';
@@ -30,8 +31,10 @@ class FirebaseOnlineUserDatabaseFacade extends IOnlineUserDatabaseFacade {
         return right(UserDatabaseSuccess.userLoadedSuccess(user));
       }
       return left(const UserDatabaseFailure.userNotFoundFailure());
-    } catch (_) {
+    } on FirebaseException catch (_) {
       return left(const UserDatabaseFailure.serverFailure());
+    } catch (_) {
+      return left(const UserDatabaseFailure.unexpectedFailure());
     }
   }
 
@@ -65,8 +68,10 @@ class FirebaseOnlineUserDatabaseFacade extends IOnlineUserDatabaseFacade {
       await usersRef.set(finalUser.toMap(), SetOptions(merge: true));
 
       return right(UserDatabaseSuccess.userDetailsSavedSuccess(finalUser));
-    } catch (_) {
+    } on FirebaseException catch (_) {
       return left(const UserDatabaseFailure.serverFailure());
+    } catch (_) {
+      return left(const UserDatabaseFailure.unexpectedFailure());
     }
   }
 
@@ -76,7 +81,7 @@ class FirebaseOnlineUserDatabaseFacade extends IOnlineUserDatabaseFacade {
     Username username,
   ) async {
     try {
-      final usernameStr = username.getOrCrash();
+      final usernameStr = username.value.getOrElse(() => 'INVALID USERNAME');
 
       final mapReference =
           _firestore.collection(Paths.usernameUIDMapPath).doc(usernameStr);
@@ -84,8 +89,10 @@ class FirebaseOnlineUserDatabaseFacade extends IOnlineUserDatabaseFacade {
       await mapReference.set({'uid': userUID}, SetOptions(merge: true));
 
       return right(UserDatabaseSuccess.usernameSavedSuccess(usernameStr));
-    } catch (_) {
+    } on FirebaseException catch (_) {
       return left(const UserDatabaseFailure.serverFailure());
+    } catch (_) {
+      return left(const UserDatabaseFailure.unexpectedFailure());
     }
   }
 }

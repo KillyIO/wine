@@ -74,86 +74,102 @@ void main() {
   });
 
   group(
-    'IAuthenticationFacade',
+    'IAuthenticationFacade -',
     () {
       // SECTION: getCurrentUserUID
-      test(
-        '''
-        Given a user is logged in (anonymously or otherwise)
-        When getCurrentUserUID() is called
-        Then an UID is returned
-        ''',
-        () async {
-          when(mockFirebaseAuth.currentUser).thenReturn(mockFirebaseUser);
+      group(
+        'getCurrentUserUID -',
+        () {
+          test(
+            '''
+            Scenario: We trying to get the current user uid [SUCCESS CASE]
+            Given a user is logged in (anonymously or otherwise)
+            When getCurrentUserUID() is called
+            Then an uid is returned
+            ''',
+            () async {
+              when(mockFirebaseAuth.currentUser).thenReturn(mockFirebaseUser);
 
-          final result = await authenticationFacade.getCurrentUserUID();
+              final result = await authenticationFacade.getCurrentUserUID();
 
-          expect(result, user.uid);
-        },
-      );
-
-      test(
-        '''
-        Given no user is logged in
-        When getCurrentUserUID() is called
-        Then null is returned
-        ''',
-        () async {
-          when(mockFirebaseAuth.currentUser).thenReturn(null);
-
-          final result = await authenticationFacade.getCurrentUserUID();
-
-          expect(result, null);
-        },
-      );
-
-      // SECTION: convertWithEmailAndPassword
-      test(
-        '''
-        Given a valid email and a valid password
-        When convertWithEmailAndPassword() is called
-        Then userAuthenticatedSuccess() is returned with a User()
-        ''',
-        () async {
-          when(mockFirebaseAuth.currentUser).thenReturn(mockFirebaseUser);
-
-          final result = await authenticationFacade.convertWithEmailAndPassword(
-            EmailAddress(validEmail),
-            Password(validPassword),
+              expect(result, user.uid);
+            },
           );
 
-          expect(result.isRight(), true);
+          test(
+            '''
+            Scenario: We trying to get the current user uid [FAILURE CASE]
+            Given the user is not logged in (anonymously or otherwise)
+            When getCurrentUserUID() is called
+            Then null is returned
+            ''',
+            () async {
+              when(mockFirebaseAuth.currentUser).thenReturn(null);
 
-          result.fold(
-            (_) {},
-            (success) {
-              expect(success, isA<UserAuthenticatedSuccess>());
+              final result = await authenticationFacade.getCurrentUserUID();
 
-              if (success is UserAuthenticatedSuccess) {
-                expect(success.user, user);
-              }
+              expect(result, null);
             },
           );
         },
       );
 
-      test(
-        '''
-        Given a invalid email
-        When convertWithEmailAndPassword() is called
-        Then serverFailure() is returned
-        ''',
-        () async {
-          final result = await authenticationFacade.convertWithEmailAndPassword(
-            EmailAddress(invalidEmail),
-            Password(validPassword),
+      // SECTION: convertWithEmailAndPassword
+      group(
+        'convertWithEmailAndPassword -',
+        () {
+          test(
+            '''
+            Scenario: We trying to convert an anonymous user to a registered user with an email and a password [SUCCESS CASE]
+            Given a valid EmailAddress() and a valid Password()
+            When convertWithEmailAndPassword() is called
+            Then userAuthenticatedSuccess() is returned with a User()
+            ''',
+            () async {
+              when(mockFirebaseAuth.currentUser).thenReturn(mockFirebaseUser);
+
+              final result =
+                  await authenticationFacade.convertWithEmailAndPassword(
+                EmailAddress(validEmail),
+                Password(validPassword),
+              );
+
+              expect(result.isRight(), true);
+
+              result.fold(
+                (_) {},
+                (success) {
+                  expect(success, isA<UserAuthenticatedSuccess>());
+
+                  if (success is UserAuthenticatedSuccess) {
+                    expect(success.user, user);
+                  }
+                },
+              );
+            },
           );
 
-          expect(result.isLeft(), true);
+          test(
+            '''
+            Scenario: We trying to convert an anonymous user to a registered user with an email and a password [SERVER FAILURE CASE]
+            Given a invalid EmailAddress() and a valid Password()
+            When convertWithEmailAndPassword() is called
+            Then serverFailure() is returned
+            ''',
+            () async {
+              final result =
+                  await authenticationFacade.convertWithEmailAndPassword(
+                EmailAddress(invalidEmail),
+                Password(validPassword),
+              );
 
-          result.fold(
-            (failure) => expect(failure, isA<ServerFailure>()),
-            (_) {},
+              expect(result.isLeft(), true);
+
+              result.fold(
+                (failure) => expect(failure, isA<ServerFailure>()),
+                (_) {},
+              );
+            },
           );
         },
       );

@@ -9,5 +9,8 @@ abstract class UserDatabaseFailure with _$UserDatabaseFailure {
   const factory UserDatabaseFailure.serverFailure() = ServerFailure;
 
   /// @nodoc
+  const factory UserDatabaseFailure.unexpectedFailure() = UnexpectedFailure;
+
+  /// @nodoc
   const factory UserDatabaseFailure.userNotFoundFailure() = UserNotFoundFailure;
 }

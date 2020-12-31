@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
 import 'package:mockito/mockito.dart';
 import 'package:test/test.dart';
@@ -118,16 +119,43 @@ void main() {
             Then serverFailure() returned
             ''',
             () async {
+              when(mockFirestore.collection(any)).thenThrow(
+                FirebaseException(
+                  code: 'unsufficient-permissions',
+                  message: 'An unexpected error occured!',
+                  plugin: 'firestore',
+                ),
+              );
+
+              final result = await onlineUserDatabaseFacade.loadUser(user.uid);
+
+              expect(result.isLeft(), true);
+
+              result.fold(
+                (failure) => expect(failure, isA<ServerFailure>()),
+                (_) {},
+              );
+            },
+          );
+
+          test(
+            '''
+            Scenario: We trying to load the user details from the online database [UNEXPECTED FAILURE CASE]
+            Given user UID
+            And User() exists inside Database
+            When loadUser() is called
+            Then unexpectedFailure() returned
+            ''',
+            () async {
               when(mockFirestore.collection(any))
                   .thenThrow(Exception('An unexpected error occured!'));
 
               final result = await onlineUserDatabaseFacade.loadUser(user.uid);
 
               expect(result.isLeft(), true);
-              expect(result, const Left(UserDatabaseFailure.serverFailure()));
 
               result.fold(
-                (failure) => expect(failure, isA<ServerFailure>()),
+                (failure) => expect(failure, isA<UnexpectedFailure>()),
                 (_) {},
               );
             },
@@ -141,7 +169,7 @@ void main() {
           test(
             '''
             Scenario: We trying to save the user's details into the online database [SUCCESS CASE]
-            Given User()
+            Given a User()
             And User() doesn't exist inside Database
             When saveDetailsFromUser() is called
             Then userDetailsSavedSuccess() returned with User()
@@ -232,8 +260,13 @@ void main() {
             ''',
             () async {
               // Create documentReference to user
-              when(mockFirestore.collection(any))
-                  .thenThrow(Exception('An unexpected error occured!'));
+              when(mockFirestore.collection(any)).thenThrow(
+                FirebaseException(
+                  code: 'unsufficient-permissions',
+                  message: 'An unexpected error occured!',
+                  plugin: 'firestore',
+                ),
+              );
 
               final result =
                   await onlineUserDatabaseFacade.saveDetailsFromUser(user);
@@ -246,19 +279,42 @@ void main() {
               );
             },
           );
+
+          test(
+            '''
+            Scenario: We trying to save the user's details into the online database [UNEXPECTED FAILURE CASE]
+            Given a User()
+            When saveDetailsFromUser() is called
+            Then unexpectedFailure() is returned
+            ''',
+            () async {
+              // Create documentReference to user
+              when(mockFirestore.collection(any))
+                  .thenThrow(Exception('An unexpected error occured!'));
+
+              final result =
+                  await onlineUserDatabaseFacade.saveDetailsFromUser(user);
+
+              expect(result.isLeft(), true);
+
+              result.fold(
+                (failure) => expect(failure, isA<UnexpectedFailure>()),
+                (_) {},
+              );
+            },
+          );
         },
       );
 
-      // SECTION: saveUsername
       group(
         'saveUsername -',
         () {
           test(
             '''
             Scenario: We trying to save the user's username inside the online database [SUCCESS CASE]
-            Given userUID and Username()
+            Given the user uid and a Username()
             When saveUsername() is called
-            Then usernameSavedSuccess() returned with username as a String
+            Then usernameSavedSuccess() returned with the username as a String
             ''',
             () async {
               // Create documentReference to user
@@ -294,14 +350,19 @@ void main() {
           test(
             '''
             Scenario: We trying to save the user's username inside the online database [SERVER FAILURE CASE]
-            Given userUID and Username()
+            Given the user uid and a Username()
             When saveUsername() is called
             Then serverFailure() returned
             ''',
             () async {
               // Create documentReference to user
-              when(mockFirestore.collection(any))
-                  .thenThrow(Exception('An unexpected error occured!'));
+              when(mockFirestore.collection(any)).thenThrow(
+                FirebaseException(
+                  code: 'unsufficient-permissions',
+                  message: 'An unexpected error occured!',
+                  plugin: 'firestore',
+                ),
+              );
 
               final result = await onlineUserDatabaseFacade.saveUsername(
                 user.uid,
@@ -312,6 +373,30 @@ void main() {
 
               result.fold(
                 (failure) => expect(failure, isA<ServerFailure>()),
+                (_) {},
+              );
+            },
+          );
+
+          test(
+            '''
+            Scenario: We trying to save the user's username inside the online database [UNEXPECTED FAILURE CASE]
+            Given the user uid and a Username()
+            When saveUsername() is called
+            Then unexpectedFailure() returned
+            ''',
+            () async {
+              const invalidUsername = '';
+
+              final result = await onlineUserDatabaseFacade.saveUsername(
+                user.uid,
+                Username(invalidUsername),
+              );
+
+              expect(result.isLeft(), true);
+
+              result.fold(
+                (failure) => expect(failure, isA<UnexpectedFailure>()),
                 (_) {},
               );
             },
