@@ -752,6 +752,7 @@ class _$ChapterDraftLoadedSCS implements ChapterDraftLoadedSCS {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(chapterDraft);
 
+  @JsonKey(ignore: true)
   @override
   $ChapterDraftLoadedSCSCopyWith<ChapterDraftLoadedSCS> get copyWith =>
       _$ChapterDraftLoadedSCSCopyWithImpl<ChapterDraftLoadedSCS>(
@@ -858,6 +859,7 @@ abstract class ChapterDraftLoadedSCS implements ChapterDraftDatabaseSuccess {
       _$ChapterDraftLoadedSCS;
 
   Chapter get chapterDraft;
+  @JsonKey(ignore: true)
   $ChapterDraftLoadedSCSCopyWith<ChapterDraftLoadedSCS> get copyWith;
 }
 
@@ -918,6 +920,7 @@ class _$ChapterDraftsLoadedSCS implements ChapterDraftsLoadedSCS {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(chapterDrafts);
 
+  @JsonKey(ignore: true)
   @override
   $ChapterDraftsLoadedSCSCopyWith<ChapterDraftsLoadedSCS> get copyWith =>
       _$ChapterDraftsLoadedSCSCopyWithImpl<ChapterDraftsLoadedSCS>(
@@ -1024,6 +1027,7 @@ abstract class ChapterDraftsLoadedSCS implements ChapterDraftDatabaseSuccess {
       _$ChapterDraftsLoadedSCS;
 
   List<Chapter> get chapterDrafts;
+  @JsonKey(ignore: true)
   $ChapterDraftsLoadedSCSCopyWith<ChapterDraftsLoadedSCS> get copyWith;
 }
 
@@ -1083,6 +1087,7 @@ class _$OnlineChapterDraftSavedSCS implements OnlineChapterDraftSavedSCS {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(chapterDraft);
 
+  @JsonKey(ignore: true)
   @override
   $OnlineChapterDraftSavedSCSCopyWith<OnlineChapterDraftSavedSCS>
       get copyWith =>
@@ -1191,6 +1196,7 @@ abstract class OnlineChapterDraftSavedSCS
       _$OnlineChapterDraftSavedSCS;
 
   Chapter get chapterDraft;
+  @JsonKey(ignore: true)
   $OnlineChapterDraftSavedSCSCopyWith<OnlineChapterDraftSavedSCS> get copyWith;
 }
 

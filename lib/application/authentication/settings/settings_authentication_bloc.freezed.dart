@@ -283,6 +283,7 @@ mixin _$SettingsAuthenticationState {
   Option<Either<AuthenticationFailure, AuthenticationSuccess>>
       get authenticationFailureOrSuccessOption;
 
+  @JsonKey(ignore: true)
   $SettingsAuthenticationStateCopyWith<SettingsAuthenticationState>
       get copyWith;
 }
@@ -408,6 +409,7 @@ class _$_SettingsAuthenticationState implements _SettingsAuthenticationState {
       const DeepCollectionEquality().hash(isSigningOut) ^
       const DeepCollectionEquality().hash(authenticationFailureOrSuccessOption);
 
+  @JsonKey(ignore: true)
   @override
   _$SettingsAuthenticationStateCopyWith<_SettingsAuthenticationState>
       get copyWith => __$SettingsAuthenticationStateCopyWithImpl<
@@ -430,6 +432,7 @@ abstract class _SettingsAuthenticationState
   Option<Either<AuthenticationFailure, AuthenticationSuccess>>
       get authenticationFailureOrSuccessOption;
   @override
+  @JsonKey(ignore: true)
   _$SettingsAuthenticationStateCopyWith<_SettingsAuthenticationState>
       get copyWith;
 }

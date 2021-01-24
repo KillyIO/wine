@@ -35,6 +35,11 @@ class _$AuthenticationFailureTearOff {
   }
 
 // ignore: unused_element
+  UnexpectedFailure unexpectedFailure() {
+    return const UnexpectedFailure();
+  }
+
+// ignore: unused_element
   UnableToSignOutFailure unableToSignOutFailure() {
     return const UnableToSignOutFailure();
   }
@@ -57,6 +62,7 @@ mixin _$AuthenticationFailure {
     @required TResult emailAlreadyInUseFailure(),
     @required TResult invalidEmailAndPasswordCombinationFailure(),
     @required TResult serverFailure(),
+    @required TResult unexpectedFailure(),
     @required TResult unableToSignOutFailure(),
     @required TResult usernameAlreadyInUseFailure(),
   });
@@ -66,6 +72,7 @@ mixin _$AuthenticationFailure {
     TResult emailAlreadyInUseFailure(),
     TResult invalidEmailAndPasswordCombinationFailure(),
     TResult serverFailure(),
+    TResult unexpectedFailure(),
     TResult unableToSignOutFailure(),
     TResult usernameAlreadyInUseFailure(),
     @required TResult orElse(),
@@ -78,6 +85,7 @@ mixin _$AuthenticationFailure {
         TResult invalidEmailAndPasswordCombinationFailure(
             InvalidEmailAndPasswordCombinationFailure value),
     @required TResult serverFailure(ServerFailure value),
+    @required TResult unexpectedFailure(UnexpectedFailure value),
     @required TResult unableToSignOutFailure(UnableToSignOutFailure value),
     @required
         TResult usernameAlreadyInUseFailure(UsernameAlreadyInUseFailure value),
@@ -89,6 +97,7 @@ mixin _$AuthenticationFailure {
     TResult invalidEmailAndPasswordCombinationFailure(
         InvalidEmailAndPasswordCombinationFailure value),
     TResult serverFailure(ServerFailure value),
+    TResult unexpectedFailure(UnexpectedFailure value),
     TResult unableToSignOutFailure(UnableToSignOutFailure value),
     TResult usernameAlreadyInUseFailure(UsernameAlreadyInUseFailure value),
     @required TResult orElse(),
@@ -155,6 +164,7 @@ class _$CancelledByUserFailure implements CancelledByUserFailure {
     @required TResult emailAlreadyInUseFailure(),
     @required TResult invalidEmailAndPasswordCombinationFailure(),
     @required TResult serverFailure(),
+    @required TResult unexpectedFailure(),
     @required TResult unableToSignOutFailure(),
     @required TResult usernameAlreadyInUseFailure(),
   }) {
@@ -162,6 +172,7 @@ class _$CancelledByUserFailure implements CancelledByUserFailure {
     assert(emailAlreadyInUseFailure != null);
     assert(invalidEmailAndPasswordCombinationFailure != null);
     assert(serverFailure != null);
+    assert(unexpectedFailure != null);
     assert(unableToSignOutFailure != null);
     assert(usernameAlreadyInUseFailure != null);
     return cancelledByUserFailure();
@@ -174,6 +185,7 @@ class _$CancelledByUserFailure implements CancelledByUserFailure {
     TResult emailAlreadyInUseFailure(),
     TResult invalidEmailAndPasswordCombinationFailure(),
     TResult serverFailure(),
+    TResult unexpectedFailure(),
     TResult unableToSignOutFailure(),
     TResult usernameAlreadyInUseFailure(),
     @required TResult orElse(),
@@ -194,6 +206,7 @@ class _$CancelledByUserFailure implements CancelledByUserFailure {
         TResult invalidEmailAndPasswordCombinationFailure(
             InvalidEmailAndPasswordCombinationFailure value),
     @required TResult serverFailure(ServerFailure value),
+    @required TResult unexpectedFailure(UnexpectedFailure value),
     @required TResult unableToSignOutFailure(UnableToSignOutFailure value),
     @required
         TResult usernameAlreadyInUseFailure(UsernameAlreadyInUseFailure value),
@@ -202,6 +215,7 @@ class _$CancelledByUserFailure implements CancelledByUserFailure {
     assert(emailAlreadyInUseFailure != null);
     assert(invalidEmailAndPasswordCombinationFailure != null);
     assert(serverFailure != null);
+    assert(unexpectedFailure != null);
     assert(unableToSignOutFailure != null);
     assert(usernameAlreadyInUseFailure != null);
     return cancelledByUserFailure(this);
@@ -215,6 +229,7 @@ class _$CancelledByUserFailure implements CancelledByUserFailure {
     TResult invalidEmailAndPasswordCombinationFailure(
         InvalidEmailAndPasswordCombinationFailure value),
     TResult serverFailure(ServerFailure value),
+    TResult unexpectedFailure(UnexpectedFailure value),
     TResult unableToSignOutFailure(UnableToSignOutFailure value),
     TResult usernameAlreadyInUseFailure(UsernameAlreadyInUseFailure value),
     @required TResult orElse(),
@@ -275,6 +290,7 @@ class _$EmailAlreadyInUseFailure implements EmailAlreadyInUseFailure {
     @required TResult emailAlreadyInUseFailure(),
     @required TResult invalidEmailAndPasswordCombinationFailure(),
     @required TResult serverFailure(),
+    @required TResult unexpectedFailure(),
     @required TResult unableToSignOutFailure(),
     @required TResult usernameAlreadyInUseFailure(),
   }) {
@@ -282,6 +298,7 @@ class _$EmailAlreadyInUseFailure implements EmailAlreadyInUseFailure {
     assert(emailAlreadyInUseFailure != null);
     assert(invalidEmailAndPasswordCombinationFailure != null);
     assert(serverFailure != null);
+    assert(unexpectedFailure != null);
     assert(unableToSignOutFailure != null);
     assert(usernameAlreadyInUseFailure != null);
     return emailAlreadyInUseFailure();
@@ -294,6 +311,7 @@ class _$EmailAlreadyInUseFailure implements EmailAlreadyInUseFailure {
     TResult emailAlreadyInUseFailure(),
     TResult invalidEmailAndPasswordCombinationFailure(),
     TResult serverFailure(),
+    TResult unexpectedFailure(),
     TResult unableToSignOutFailure(),
     TResult usernameAlreadyInUseFailure(),
     @required TResult orElse(),
@@ -314,6 +332,7 @@ class _$EmailAlreadyInUseFailure implements EmailAlreadyInUseFailure {
         TResult invalidEmailAndPasswordCombinationFailure(
             InvalidEmailAndPasswordCombinationFailure value),
     @required TResult serverFailure(ServerFailure value),
+    @required TResult unexpectedFailure(UnexpectedFailure value),
     @required TResult unableToSignOutFailure(UnableToSignOutFailure value),
     @required
         TResult usernameAlreadyInUseFailure(UsernameAlreadyInUseFailure value),
@@ -322,6 +341,7 @@ class _$EmailAlreadyInUseFailure implements EmailAlreadyInUseFailure {
     assert(emailAlreadyInUseFailure != null);
     assert(invalidEmailAndPasswordCombinationFailure != null);
     assert(serverFailure != null);
+    assert(unexpectedFailure != null);
     assert(unableToSignOutFailure != null);
     assert(usernameAlreadyInUseFailure != null);
     return emailAlreadyInUseFailure(this);
@@ -335,6 +355,7 @@ class _$EmailAlreadyInUseFailure implements EmailAlreadyInUseFailure {
     TResult invalidEmailAndPasswordCombinationFailure(
         InvalidEmailAndPasswordCombinationFailure value),
     TResult serverFailure(ServerFailure value),
+    TResult unexpectedFailure(UnexpectedFailure value),
     TResult unableToSignOutFailure(UnableToSignOutFailure value),
     TResult usernameAlreadyInUseFailure(UsernameAlreadyInUseFailure value),
     @required TResult orElse(),
@@ -400,6 +421,7 @@ class _$InvalidEmailAndPasswordCombinationFailure
     @required TResult emailAlreadyInUseFailure(),
     @required TResult invalidEmailAndPasswordCombinationFailure(),
     @required TResult serverFailure(),
+    @required TResult unexpectedFailure(),
     @required TResult unableToSignOutFailure(),
     @required TResult usernameAlreadyInUseFailure(),
   }) {
@@ -407,6 +429,7 @@ class _$InvalidEmailAndPasswordCombinationFailure
     assert(emailAlreadyInUseFailure != null);
     assert(invalidEmailAndPasswordCombinationFailure != null);
     assert(serverFailure != null);
+    assert(unexpectedFailure != null);
     assert(unableToSignOutFailure != null);
     assert(usernameAlreadyInUseFailure != null);
     return invalidEmailAndPasswordCombinationFailure();
@@ -419,6 +442,7 @@ class _$InvalidEmailAndPasswordCombinationFailure
     TResult emailAlreadyInUseFailure(),
     TResult invalidEmailAndPasswordCombinationFailure(),
     TResult serverFailure(),
+    TResult unexpectedFailure(),
     TResult unableToSignOutFailure(),
     TResult usernameAlreadyInUseFailure(),
     @required TResult orElse(),
@@ -439,6 +463,7 @@ class _$InvalidEmailAndPasswordCombinationFailure
         TResult invalidEmailAndPasswordCombinationFailure(
             InvalidEmailAndPasswordCombinationFailure value),
     @required TResult serverFailure(ServerFailure value),
+    @required TResult unexpectedFailure(UnexpectedFailure value),
     @required TResult unableToSignOutFailure(UnableToSignOutFailure value),
     @required
         TResult usernameAlreadyInUseFailure(UsernameAlreadyInUseFailure value),
@@ -447,6 +472,7 @@ class _$InvalidEmailAndPasswordCombinationFailure
     assert(emailAlreadyInUseFailure != null);
     assert(invalidEmailAndPasswordCombinationFailure != null);
     assert(serverFailure != null);
+    assert(unexpectedFailure != null);
     assert(unableToSignOutFailure != null);
     assert(usernameAlreadyInUseFailure != null);
     return invalidEmailAndPasswordCombinationFailure(this);
@@ -460,6 +486,7 @@ class _$InvalidEmailAndPasswordCombinationFailure
     TResult invalidEmailAndPasswordCombinationFailure(
         InvalidEmailAndPasswordCombinationFailure value),
     TResult serverFailure(ServerFailure value),
+    TResult unexpectedFailure(UnexpectedFailure value),
     TResult unableToSignOutFailure(UnableToSignOutFailure value),
     TResult usernameAlreadyInUseFailure(UsernameAlreadyInUseFailure value),
     @required TResult orElse(),
@@ -521,6 +548,7 @@ class _$ServerFailure implements ServerFailure {
     @required TResult emailAlreadyInUseFailure(),
     @required TResult invalidEmailAndPasswordCombinationFailure(),
     @required TResult serverFailure(),
+    @required TResult unexpectedFailure(),
     @required TResult unableToSignOutFailure(),
     @required TResult usernameAlreadyInUseFailure(),
   }) {
@@ -528,6 +556,7 @@ class _$ServerFailure implements ServerFailure {
     assert(emailAlreadyInUseFailure != null);
     assert(invalidEmailAndPasswordCombinationFailure != null);
     assert(serverFailure != null);
+    assert(unexpectedFailure != null);
     assert(unableToSignOutFailure != null);
     assert(usernameAlreadyInUseFailure != null);
     return serverFailure();
@@ -540,6 +569,7 @@ class _$ServerFailure implements ServerFailure {
     TResult emailAlreadyInUseFailure(),
     TResult invalidEmailAndPasswordCombinationFailure(),
     TResult serverFailure(),
+    TResult unexpectedFailure(),
     TResult unableToSignOutFailure(),
     TResult usernameAlreadyInUseFailure(),
     @required TResult orElse(),
@@ -560,6 +590,7 @@ class _$ServerFailure implements ServerFailure {
         TResult invalidEmailAndPasswordCombinationFailure(
             InvalidEmailAndPasswordCombinationFailure value),
     @required TResult serverFailure(ServerFailure value),
+    @required TResult unexpectedFailure(UnexpectedFailure value),
     @required TResult unableToSignOutFailure(UnableToSignOutFailure value),
     @required
         TResult usernameAlreadyInUseFailure(UsernameAlreadyInUseFailure value),
@@ -568,6 +599,7 @@ class _$ServerFailure implements ServerFailure {
     assert(emailAlreadyInUseFailure != null);
     assert(invalidEmailAndPasswordCombinationFailure != null);
     assert(serverFailure != null);
+    assert(unexpectedFailure != null);
     assert(unableToSignOutFailure != null);
     assert(usernameAlreadyInUseFailure != null);
     return serverFailure(this);
@@ -581,6 +613,7 @@ class _$ServerFailure implements ServerFailure {
     TResult invalidEmailAndPasswordCombinationFailure(
         InvalidEmailAndPasswordCombinationFailure value),
     TResult serverFailure(ServerFailure value),
+    TResult unexpectedFailure(UnexpectedFailure value),
     TResult unableToSignOutFailure(UnableToSignOutFailure value),
     TResult usernameAlreadyInUseFailure(UsernameAlreadyInUseFailure value),
     @required TResult orElse(),
@@ -595,6 +628,131 @@ class _$ServerFailure implements ServerFailure {
 
 abstract class ServerFailure implements AuthenticationFailure {
   const factory ServerFailure() = _$ServerFailure;
+}
+
+/// @nodoc
+abstract class $UnexpectedFailureCopyWith<$Res> {
+  factory $UnexpectedFailureCopyWith(
+          UnexpectedFailure value, $Res Function(UnexpectedFailure) then) =
+      _$UnexpectedFailureCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$UnexpectedFailureCopyWithImpl<$Res>
+    extends _$AuthenticationFailureCopyWithImpl<$Res>
+    implements $UnexpectedFailureCopyWith<$Res> {
+  _$UnexpectedFailureCopyWithImpl(
+      UnexpectedFailure _value, $Res Function(UnexpectedFailure) _then)
+      : super(_value, (v) => _then(v as UnexpectedFailure));
+
+  @override
+  UnexpectedFailure get _value => super._value as UnexpectedFailure;
+}
+
+/// @nodoc
+class _$UnexpectedFailure implements UnexpectedFailure {
+  const _$UnexpectedFailure();
+
+  @override
+  String toString() {
+    return 'AuthenticationFailure.unexpectedFailure()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is UnexpectedFailure);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object>({
+    @required TResult cancelledByUserFailure(),
+    @required TResult emailAlreadyInUseFailure(),
+    @required TResult invalidEmailAndPasswordCombinationFailure(),
+    @required TResult serverFailure(),
+    @required TResult unexpectedFailure(),
+    @required TResult unableToSignOutFailure(),
+    @required TResult usernameAlreadyInUseFailure(),
+  }) {
+    assert(cancelledByUserFailure != null);
+    assert(emailAlreadyInUseFailure != null);
+    assert(invalidEmailAndPasswordCombinationFailure != null);
+    assert(serverFailure != null);
+    assert(unexpectedFailure != null);
+    assert(unableToSignOutFailure != null);
+    assert(usernameAlreadyInUseFailure != null);
+    return unexpectedFailure();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object>({
+    TResult cancelledByUserFailure(),
+    TResult emailAlreadyInUseFailure(),
+    TResult invalidEmailAndPasswordCombinationFailure(),
+    TResult serverFailure(),
+    TResult unexpectedFailure(),
+    TResult unableToSignOutFailure(),
+    TResult usernameAlreadyInUseFailure(),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (unexpectedFailure != null) {
+      return unexpectedFailure();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object>({
+    @required TResult cancelledByUserFailure(CancelledByUserFailure value),
+    @required TResult emailAlreadyInUseFailure(EmailAlreadyInUseFailure value),
+    @required
+        TResult invalidEmailAndPasswordCombinationFailure(
+            InvalidEmailAndPasswordCombinationFailure value),
+    @required TResult serverFailure(ServerFailure value),
+    @required TResult unexpectedFailure(UnexpectedFailure value),
+    @required TResult unableToSignOutFailure(UnableToSignOutFailure value),
+    @required
+        TResult usernameAlreadyInUseFailure(UsernameAlreadyInUseFailure value),
+  }) {
+    assert(cancelledByUserFailure != null);
+    assert(emailAlreadyInUseFailure != null);
+    assert(invalidEmailAndPasswordCombinationFailure != null);
+    assert(serverFailure != null);
+    assert(unexpectedFailure != null);
+    assert(unableToSignOutFailure != null);
+    assert(usernameAlreadyInUseFailure != null);
+    return unexpectedFailure(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object>({
+    TResult cancelledByUserFailure(CancelledByUserFailure value),
+    TResult emailAlreadyInUseFailure(EmailAlreadyInUseFailure value),
+    TResult invalidEmailAndPasswordCombinationFailure(
+        InvalidEmailAndPasswordCombinationFailure value),
+    TResult serverFailure(ServerFailure value),
+    TResult unexpectedFailure(UnexpectedFailure value),
+    TResult unableToSignOutFailure(UnableToSignOutFailure value),
+    TResult usernameAlreadyInUseFailure(UsernameAlreadyInUseFailure value),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (unexpectedFailure != null) {
+      return unexpectedFailure(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UnexpectedFailure implements AuthenticationFailure {
+  const factory UnexpectedFailure() = _$UnexpectedFailure;
 }
 
 /// @nodoc
@@ -640,6 +798,7 @@ class _$UnableToSignOutFailure implements UnableToSignOutFailure {
     @required TResult emailAlreadyInUseFailure(),
     @required TResult invalidEmailAndPasswordCombinationFailure(),
     @required TResult serverFailure(),
+    @required TResult unexpectedFailure(),
     @required TResult unableToSignOutFailure(),
     @required TResult usernameAlreadyInUseFailure(),
   }) {
@@ -647,6 +806,7 @@ class _$UnableToSignOutFailure implements UnableToSignOutFailure {
     assert(emailAlreadyInUseFailure != null);
     assert(invalidEmailAndPasswordCombinationFailure != null);
     assert(serverFailure != null);
+    assert(unexpectedFailure != null);
     assert(unableToSignOutFailure != null);
     assert(usernameAlreadyInUseFailure != null);
     return unableToSignOutFailure();
@@ -659,6 +819,7 @@ class _$UnableToSignOutFailure implements UnableToSignOutFailure {
     TResult emailAlreadyInUseFailure(),
     TResult invalidEmailAndPasswordCombinationFailure(),
     TResult serverFailure(),
+    TResult unexpectedFailure(),
     TResult unableToSignOutFailure(),
     TResult usernameAlreadyInUseFailure(),
     @required TResult orElse(),
@@ -679,6 +840,7 @@ class _$UnableToSignOutFailure implements UnableToSignOutFailure {
         TResult invalidEmailAndPasswordCombinationFailure(
             InvalidEmailAndPasswordCombinationFailure value),
     @required TResult serverFailure(ServerFailure value),
+    @required TResult unexpectedFailure(UnexpectedFailure value),
     @required TResult unableToSignOutFailure(UnableToSignOutFailure value),
     @required
         TResult usernameAlreadyInUseFailure(UsernameAlreadyInUseFailure value),
@@ -687,6 +849,7 @@ class _$UnableToSignOutFailure implements UnableToSignOutFailure {
     assert(emailAlreadyInUseFailure != null);
     assert(invalidEmailAndPasswordCombinationFailure != null);
     assert(serverFailure != null);
+    assert(unexpectedFailure != null);
     assert(unableToSignOutFailure != null);
     assert(usernameAlreadyInUseFailure != null);
     return unableToSignOutFailure(this);
@@ -700,6 +863,7 @@ class _$UnableToSignOutFailure implements UnableToSignOutFailure {
     TResult invalidEmailAndPasswordCombinationFailure(
         InvalidEmailAndPasswordCombinationFailure value),
     TResult serverFailure(ServerFailure value),
+    TResult unexpectedFailure(UnexpectedFailure value),
     TResult unableToSignOutFailure(UnableToSignOutFailure value),
     TResult usernameAlreadyInUseFailure(UsernameAlreadyInUseFailure value),
     @required TResult orElse(),
@@ -761,6 +925,7 @@ class _$UsernameAlreadyInUseFailure implements UsernameAlreadyInUseFailure {
     @required TResult emailAlreadyInUseFailure(),
     @required TResult invalidEmailAndPasswordCombinationFailure(),
     @required TResult serverFailure(),
+    @required TResult unexpectedFailure(),
     @required TResult unableToSignOutFailure(),
     @required TResult usernameAlreadyInUseFailure(),
   }) {
@@ -768,6 +933,7 @@ class _$UsernameAlreadyInUseFailure implements UsernameAlreadyInUseFailure {
     assert(emailAlreadyInUseFailure != null);
     assert(invalidEmailAndPasswordCombinationFailure != null);
     assert(serverFailure != null);
+    assert(unexpectedFailure != null);
     assert(unableToSignOutFailure != null);
     assert(usernameAlreadyInUseFailure != null);
     return usernameAlreadyInUseFailure();
@@ -780,6 +946,7 @@ class _$UsernameAlreadyInUseFailure implements UsernameAlreadyInUseFailure {
     TResult emailAlreadyInUseFailure(),
     TResult invalidEmailAndPasswordCombinationFailure(),
     TResult serverFailure(),
+    TResult unexpectedFailure(),
     TResult unableToSignOutFailure(),
     TResult usernameAlreadyInUseFailure(),
     @required TResult orElse(),
@@ -800,6 +967,7 @@ class _$UsernameAlreadyInUseFailure implements UsernameAlreadyInUseFailure {
         TResult invalidEmailAndPasswordCombinationFailure(
             InvalidEmailAndPasswordCombinationFailure value),
     @required TResult serverFailure(ServerFailure value),
+    @required TResult unexpectedFailure(UnexpectedFailure value),
     @required TResult unableToSignOutFailure(UnableToSignOutFailure value),
     @required
         TResult usernameAlreadyInUseFailure(UsernameAlreadyInUseFailure value),
@@ -808,6 +976,7 @@ class _$UsernameAlreadyInUseFailure implements UsernameAlreadyInUseFailure {
     assert(emailAlreadyInUseFailure != null);
     assert(invalidEmailAndPasswordCombinationFailure != null);
     assert(serverFailure != null);
+    assert(unexpectedFailure != null);
     assert(unableToSignOutFailure != null);
     assert(usernameAlreadyInUseFailure != null);
     return usernameAlreadyInUseFailure(this);
@@ -821,6 +990,7 @@ class _$UsernameAlreadyInUseFailure implements UsernameAlreadyInUseFailure {
     TResult invalidEmailAndPasswordCombinationFailure(
         InvalidEmailAndPasswordCombinationFailure value),
     TResult serverFailure(ServerFailure value),
+    TResult unexpectedFailure(UnexpectedFailure value),
     TResult unableToSignOutFailure(UnableToSignOutFailure value),
     TResult usernameAlreadyInUseFailure(UsernameAlreadyInUseFailure value),
     @required TResult orElse(),

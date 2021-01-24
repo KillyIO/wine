@@ -137,6 +137,7 @@ class _$AccountCreated implements AccountCreated {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(user);
 
+  @JsonKey(ignore: true)
   @override
   $AccountCreatedCopyWith<AccountCreated> get copyWith =>
       _$AccountCreatedCopyWithImpl<AccountCreated>(this, _$identity);
@@ -202,6 +203,7 @@ abstract class AccountCreated implements CreateAccountDatabaseEvent {
   const factory AccountCreated(User user) = _$AccountCreated;
 
   User get user;
+  @JsonKey(ignore: true)
   $AccountCreatedCopyWith<AccountCreated> get copyWith;
 }
 
@@ -258,6 +260,7 @@ class _$UserDetailsSavedEVT implements UserDetailsSavedEVT {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(user);
 
+  @JsonKey(ignore: true)
   @override
   $UserDetailsSavedEVTCopyWith<UserDetailsSavedEVT> get copyWith =>
       _$UserDetailsSavedEVTCopyWithImpl<UserDetailsSavedEVT>(this, _$identity);
@@ -323,6 +326,7 @@ abstract class UserDetailsSavedEVT implements CreateAccountDatabaseEvent {
   const factory UserDetailsSavedEVT(User user) = _$UserDetailsSavedEVT;
 
   User get user;
+  @JsonKey(ignore: true)
   $UserDetailsSavedEVTCopyWith<UserDetailsSavedEVT> get copyWith;
 }
 
@@ -462,6 +466,7 @@ mixin _$CreateAccountDatabaseState {
       get userDatabaseFailureOrSuccessOption;
   String get email;
 
+  @JsonKey(ignore: true)
   $CreateAccountDatabaseStateCopyWith<CreateAccountDatabaseState> get copyWith;
 }
 
@@ -625,6 +630,7 @@ class _$_CreateAccountDatabaseState implements _CreateAccountDatabaseState {
       const DeepCollectionEquality().hash(userDatabaseFailureOrSuccessOption) ^
       const DeepCollectionEquality().hash(email);
 
+  @JsonKey(ignore: true)
   @override
   _$CreateAccountDatabaseStateCopyWith<_CreateAccountDatabaseState>
       get copyWith => __$CreateAccountDatabaseStateCopyWithImpl<
@@ -656,6 +662,7 @@ abstract class _CreateAccountDatabaseState
   @override
   String get email;
   @override
+  @JsonKey(ignore: true)
   _$CreateAccountDatabaseStateCopyWith<_CreateAccountDatabaseState>
       get copyWith;
 }

@@ -1,5 +1,4 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:dartz/dartz.dart';
 import 'package:mockito/mockito.dart';
 import 'package:test/test.dart';
 import 'package:wine/domain/authentication/username.dart';

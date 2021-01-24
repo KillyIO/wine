@@ -192,6 +192,7 @@ class _$ConfirmPasswordChangedEVT implements ConfirmPasswordChangedEVT {
       const DeepCollectionEquality().hash(confirmPasswordStr) ^
       const DeepCollectionEquality().hash(passwordStr);
 
+  @JsonKey(ignore: true)
   @override
   $ConfirmPasswordChangedEVTCopyWith<ConfirmPasswordChangedEVT> get copyWith =>
       _$ConfirmPasswordChangedEVTCopyWithImpl<ConfirmPasswordChangedEVT>(
@@ -285,6 +286,7 @@ abstract class ConfirmPasswordChangedEVT
 
   String get confirmPasswordStr;
   String get passwordStr;
+  @JsonKey(ignore: true)
   $ConfirmPasswordChangedEVTCopyWith<ConfirmPasswordChangedEVT> get copyWith;
 }
 
@@ -462,6 +464,7 @@ class _$EmailChangedEVT implements EmailChangedEVT {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(emailStr);
 
+  @JsonKey(ignore: true)
   @override
   $EmailChangedEVTCopyWith<EmailChangedEVT> get copyWith =>
       _$EmailChangedEVTCopyWithImpl<EmailChangedEVT>(this, _$identity);
@@ -550,6 +553,7 @@ abstract class EmailChangedEVT implements CreateAccountAuthenticationEvent {
   const factory EmailChangedEVT(String emailStr) = _$EmailChangedEVT;
 
   String get emailStr;
+  @JsonKey(ignore: true)
   $EmailChangedEVTCopyWith<EmailChangedEVT> get copyWith;
 }
 
@@ -607,6 +611,7 @@ class _$PasswordChangedEVT implements PasswordChangedEVT {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(passwordStr);
 
+  @JsonKey(ignore: true)
   @override
   $PasswordChangedEVTCopyWith<PasswordChangedEVT> get copyWith =>
       _$PasswordChangedEVTCopyWithImpl<PasswordChangedEVT>(this, _$identity);
@@ -695,6 +700,7 @@ abstract class PasswordChangedEVT implements CreateAccountAuthenticationEvent {
   const factory PasswordChangedEVT(String passwordStr) = _$PasswordChangedEVT;
 
   String get passwordStr;
+  @JsonKey(ignore: true)
   $PasswordChangedEVTCopyWith<PasswordChangedEVT> get copyWith;
 }
 
@@ -874,6 +880,7 @@ class _$UsernameChangedEVT implements UsernameChangedEVT {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(usernameStr);
 
+  @JsonKey(ignore: true)
   @override
   $UsernameChangedEVTCopyWith<UsernameChangedEVT> get copyWith =>
       _$UsernameChangedEVTCopyWithImpl<UsernameChangedEVT>(this, _$identity);
@@ -962,6 +969,7 @@ abstract class UsernameChangedEVT implements CreateAccountAuthenticationEvent {
   const factory UsernameChangedEVT(String usernameStr) = _$UsernameChangedEVT;
 
   String get usernameStr;
+  @JsonKey(ignore: true)
   $UsernameChangedEVTCopyWith<UsernameChangedEVT> get copyWith;
 }
 
@@ -1015,6 +1023,7 @@ mixin _$CreateAccountAuthenticationState {
   Password get password;
   Username get username;
 
+  @JsonKey(ignore: true)
   $CreateAccountAuthenticationStateCopyWith<CreateAccountAuthenticationState>
       get copyWith;
 }
@@ -1224,6 +1233,7 @@ class _$_CreateAccountAuthenticationState
       const DeepCollectionEquality().hash(password) ^
       const DeepCollectionEquality().hash(username);
 
+  @JsonKey(ignore: true)
   @override
   _$CreateAccountAuthenticationStateCopyWith<_CreateAccountAuthenticationState>
       get copyWith => __$CreateAccountAuthenticationStateCopyWithImpl<
@@ -1265,6 +1275,7 @@ abstract class _CreateAccountAuthenticationState
   @override
   Username get username;
   @override
+  @JsonKey(ignore: true)
   _$CreateAccountAuthenticationStateCopyWith<_CreateAccountAuthenticationState>
       get copyWith;
 }

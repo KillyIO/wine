@@ -243,6 +243,7 @@ class _$ApplyFiltersButtonPressedEVT
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(index);
 
+  @JsonKey(ignore: true)
   @override
   $ApplyFiltersButtonPressedEVTCopyWith<ApplyFiltersButtonPressedEVT>
       get copyWith => _$ApplyFiltersButtonPressedEVTCopyWithImpl<
@@ -368,6 +369,7 @@ abstract class ApplyFiltersButtonPressedEVT implements HomeDatabaseEvent {
       _$ApplyFiltersButtonPressedEVT;
 
   int get index;
+  @JsonKey(ignore: true)
   $ApplyFiltersButtonPressedEVTCopyWith<ApplyFiltersButtonPressedEVT>
       get copyWith;
 }
@@ -961,6 +963,7 @@ class _$GenreFilterKeyChangedEVT
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(key);
 
+  @JsonKey(ignore: true)
   @override
   $GenreFilterKeyChangedEVTCopyWith<GenreFilterKeyChangedEVT> get copyWith =>
       _$GenreFilterKeyChangedEVTCopyWithImpl<GenreFilterKeyChangedEVT>(
@@ -1086,6 +1089,7 @@ abstract class GenreFilterKeyChangedEVT implements HomeDatabaseEvent {
       _$GenreFilterKeyChangedEVT;
 
   String get key;
+  @JsonKey(ignore: true)
   $GenreFilterKeyChangedEVTCopyWith<GenreFilterKeyChangedEVT> get copyWith;
 }
 
@@ -1152,6 +1156,7 @@ class _$HomeLaunchedEVT
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(context);
 
+  @JsonKey(ignore: true)
   @override
   $HomeLaunchedEVTCopyWith<HomeLaunchedEVT> get copyWith =>
       _$HomeLaunchedEVTCopyWithImpl<HomeLaunchedEVT>(this, _$identity);
@@ -1275,6 +1280,7 @@ abstract class HomeLaunchedEVT implements HomeDatabaseEvent {
   const factory HomeLaunchedEVT(BuildContext context) = _$HomeLaunchedEVT;
 
   BuildContext get context;
+  @JsonKey(ignore: true)
   $HomeLaunchedEVTCopyWith<HomeLaunchedEVT> get copyWith;
 }
 
@@ -1344,6 +1350,7 @@ class _$LanguageFilterKeyChangedEVT
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(key);
 
+  @JsonKey(ignore: true)
   @override
   $LanguageFilterKeyChangedEVTCopyWith<LanguageFilterKeyChangedEVT>
       get copyWith => _$LanguageFilterKeyChangedEVTCopyWithImpl<
@@ -1469,6 +1476,7 @@ abstract class LanguageFilterKeyChangedEVT implements HomeDatabaseEvent {
       _$LanguageFilterKeyChangedEVT;
 
   String get key;
+  @JsonKey(ignore: true)
   $LanguageFilterKeyChangedEVTCopyWith<LanguageFilterKeyChangedEVT>
       get copyWith;
 }
@@ -1866,6 +1874,7 @@ class _$SeriesPublishedEVT
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(series);
 
+  @JsonKey(ignore: true)
   @override
   $SeriesPublishedEVTCopyWith<SeriesPublishedEVT> get copyWith =>
       _$SeriesPublishedEVTCopyWithImpl<SeriesPublishedEVT>(this, _$identity);
@@ -1989,6 +1998,7 @@ abstract class SeriesPublishedEVT implements HomeDatabaseEvent {
   const factory SeriesPublishedEVT(Series series) = _$SeriesPublishedEVT;
 
   Series get series;
+  @JsonKey(ignore: true)
   $SeriesPublishedEVTCopyWith<SeriesPublishedEVT> get copyWith;
 }
 
@@ -2056,6 +2066,7 @@ class _$TimeFilterKeyChangedEVT
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(key);
 
+  @JsonKey(ignore: true)
   @override
   $TimeFilterKeyChangedEVTCopyWith<TimeFilterKeyChangedEVT> get copyWith =>
       _$TimeFilterKeyChangedEVTCopyWithImpl<TimeFilterKeyChangedEVT>(
@@ -2180,6 +2191,7 @@ abstract class TimeFilterKeyChangedEVT implements HomeDatabaseEvent {
   const factory TimeFilterKeyChangedEVT(String key) = _$TimeFilterKeyChangedEVT;
 
   String get key;
+  @JsonKey(ignore: true)
   $TimeFilterKeyChangedEVTCopyWith<TimeFilterKeyChangedEVT> get copyWith;
 }
 
@@ -2248,6 +2260,7 @@ mixin _$HomeDatabaseState {
   String get languageFilterKey;
   String get timeFilterKey;
 
+  @JsonKey(ignore: true)
   $HomeDatabaseStateCopyWith<HomeDatabaseState> get copyWith;
 }
 
@@ -2548,6 +2561,7 @@ class _$_HomeDatabaseState
       const DeepCollectionEquality().hash(languageFilterKey) ^
       const DeepCollectionEquality().hash(timeFilterKey);
 
+  @JsonKey(ignore: true)
   @override
   _$HomeDatabaseStateCopyWith<_HomeDatabaseState> get copyWith =>
       __$HomeDatabaseStateCopyWithImpl<_HomeDatabaseState>(this, _$identity);
@@ -2603,5 +2617,6 @@ abstract class _HomeDatabaseState implements HomeDatabaseState {
   @override
   String get timeFilterKey;
   @override
+  @JsonKey(ignore: true)
   _$HomeDatabaseStateCopyWith<_HomeDatabaseState> get copyWith;
 }

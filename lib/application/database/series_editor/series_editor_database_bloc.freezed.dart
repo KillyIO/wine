@@ -841,6 +841,7 @@ class _$GenreOptionalSelectedEVT
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(genreOptional);
 
+  @JsonKey(ignore: true)
   @override
   $GenreOptionalSelectedEVTCopyWith<GenreOptionalSelectedEVT> get copyWith =>
       _$GenreOptionalSelectedEVTCopyWithImpl<GenreOptionalSelectedEVT>(
@@ -987,6 +988,7 @@ abstract class GenreOptionalSelectedEVT implements SeriesEditorDatabaseEvent {
       _$GenreOptionalSelectedEVT;
 
   String get genreOptional;
+  @JsonKey(ignore: true)
   $GenreOptionalSelectedEVTCopyWith<GenreOptionalSelectedEVT> get copyWith;
 }
 
@@ -1054,6 +1056,7 @@ class _$GenreSelectedEVT
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(genre);
 
+  @JsonKey(ignore: true)
   @override
   $GenreSelectedEVTCopyWith<GenreSelectedEVT> get copyWith =>
       _$GenreSelectedEVTCopyWithImpl<GenreSelectedEVT>(this, _$identity);
@@ -1198,6 +1201,7 @@ abstract class GenreSelectedEVT implements SeriesEditorDatabaseEvent {
   const factory GenreSelectedEVT(String genre) = _$GenreSelectedEVT;
 
   String get genre;
+  @JsonKey(ignore: true)
   $GenreSelectedEVTCopyWith<GenreSelectedEVT> get copyWith;
 }
 
@@ -1265,6 +1269,7 @@ class _$IsNSFWChangedEVT
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(isNSFW);
 
+  @JsonKey(ignore: true)
   @override
   $IsNSFWChangedEVTCopyWith<IsNSFWChangedEVT> get copyWith =>
       _$IsNSFWChangedEVTCopyWithImpl<IsNSFWChangedEVT>(this, _$identity);
@@ -1409,6 +1414,7 @@ abstract class IsNSFWChangedEVT implements SeriesEditorDatabaseEvent {
   const factory IsNSFWChangedEVT({@required bool isNSFW}) = _$IsNSFWChangedEVT;
 
   bool get isNSFW;
+  @JsonKey(ignore: true)
   $IsNSFWChangedEVTCopyWith<IsNSFWChangedEVT> get copyWith;
 }
 
@@ -1477,6 +1483,7 @@ class _$LanguageSelectedEVT
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(language);
 
+  @JsonKey(ignore: true)
   @override
   $LanguageSelectedEVTCopyWith<LanguageSelectedEVT> get copyWith =>
       _$LanguageSelectedEVTCopyWithImpl<LanguageSelectedEVT>(this, _$identity);
@@ -1621,6 +1628,7 @@ abstract class LanguageSelectedEVT implements SeriesEditorDatabaseEvent {
   const factory LanguageSelectedEVT(String language) = _$LanguageSelectedEVT;
 
   String get language;
+  @JsonKey(ignore: true)
   $LanguageSelectedEVTCopyWith<LanguageSelectedEVT> get copyWith;
 }
 
@@ -1883,6 +1891,7 @@ class _$SeriesEditorLaunchedFromHomeEVT
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(context);
 
+  @JsonKey(ignore: true)
   @override
   $SeriesEditorLaunchedFromHomeEVTCopyWith<SeriesEditorLaunchedFromHomeEVT>
       get copyWith => _$SeriesEditorLaunchedFromHomeEVTCopyWithImpl<
@@ -2030,6 +2039,7 @@ abstract class SeriesEditorLaunchedFromHomeEVT
       _$SeriesEditorLaunchedFromHomeEVT;
 
   BuildContext get context;
+  @JsonKey(ignore: true)
   $SeriesEditorLaunchedFromHomeEVTCopyWith<SeriesEditorLaunchedFromHomeEVT>
       get copyWith;
 }
@@ -2114,6 +2124,7 @@ class _$SeriesEditorLaunchedFromLibraryEVT
       const DeepCollectionEquality().hash(context) ^
       const DeepCollectionEquality().hash(seriesDraft);
 
+  @JsonKey(ignore: true)
   @override
   $SeriesEditorLaunchedFromLibraryEVTCopyWith<
           SeriesEditorLaunchedFromLibraryEVT>
@@ -2264,6 +2275,7 @@ abstract class SeriesEditorLaunchedFromLibraryEVT
 
   BuildContext get context;
   Series get seriesDraft;
+  @JsonKey(ignore: true)
   $SeriesEditorLaunchedFromLibraryEVTCopyWith<
       SeriesEditorLaunchedFromLibraryEVT> get copyWith;
 }
@@ -2519,6 +2531,7 @@ class _$SubtitleChangedEVT
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(subtitle);
 
+  @JsonKey(ignore: true)
   @override
   $SubtitleChangedEVTCopyWith<SubtitleChangedEVT> get copyWith =>
       _$SubtitleChangedEVTCopyWithImpl<SubtitleChangedEVT>(this, _$identity);
@@ -2663,6 +2676,7 @@ abstract class SubtitleChangedEVT implements SeriesEditorDatabaseEvent {
   const factory SubtitleChangedEVT(String subtitle) = _$SubtitleChangedEVT;
 
   String get subtitle;
+  @JsonKey(ignore: true)
   $SubtitleChangedEVTCopyWith<SubtitleChangedEVT> get copyWith;
 }
 
@@ -2730,6 +2744,7 @@ class _$SummaryChangedEVT
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(summary);
 
+  @JsonKey(ignore: true)
   @override
   $SummaryChangedEVTCopyWith<SummaryChangedEVT> get copyWith =>
       _$SummaryChangedEVTCopyWithImpl<SummaryChangedEVT>(this, _$identity);
@@ -2874,6 +2889,7 @@ abstract class SummaryChangedEVT implements SeriesEditorDatabaseEvent {
   const factory SummaryChangedEVT(String summary) = _$SummaryChangedEVT;
 
   String get summary;
+  @JsonKey(ignore: true)
   $SummaryChangedEVTCopyWith<SummaryChangedEVT> get copyWith;
 }
 
@@ -2941,6 +2957,7 @@ class _$TitleChangedEVT
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(title);
 
+  @JsonKey(ignore: true)
   @override
   $TitleChangedEVTCopyWith<TitleChangedEVT> get copyWith =>
       _$TitleChangedEVTCopyWithImpl<TitleChangedEVT>(this, _$identity);
@@ -3085,6 +3102,7 @@ abstract class TitleChangedEVT implements SeriesEditorDatabaseEvent {
   const factory TitleChangedEVT(String title) = _$TitleChangedEVT;
 
   String get title;
+  @JsonKey(ignore: true)
   $TitleChangedEVTCopyWith<TitleChangedEVT> get copyWith;
 }
 
@@ -3238,6 +3256,7 @@ mixin _$SeriesEditorDatabaseState {
   TextEditingController get titleController;
   Title get title;
 
+  @JsonKey(ignore: true)
   $SeriesEditorDatabaseStateCopyWith<SeriesEditorDatabaseState> get copyWith;
 }
 
@@ -3856,6 +3875,7 @@ class _$_SeriesEditorDatabaseState
       const DeepCollectionEquality().hash(titleController) ^
       const DeepCollectionEquality().hash(title);
 
+  @JsonKey(ignore: true)
   @override
   _$SeriesEditorDatabaseStateCopyWith<_SeriesEditorDatabaseState>
       get copyWith =>
@@ -3995,5 +4015,6 @@ abstract class _SeriesEditorDatabaseState implements SeriesEditorDatabaseState {
   @override
   Title get title;
   @override
+  @JsonKey(ignore: true)
   _$SeriesEditorDatabaseStateCopyWith<_SeriesEditorDatabaseState> get copyWith;
 }

@@ -294,6 +294,7 @@ class _$ChapterDraftDeletedEVT
       const DeepCollectionEquality().hash(chapterDraftUID) ^
       const DeepCollectionEquality().hash(seriesDraftUID);
 
+  @JsonKey(ignore: true)
   @override
   $ChapterDraftDeletedEVTCopyWith<ChapterDraftDeletedEVT> get copyWith =>
       _$ChapterDraftDeletedEVTCopyWithImpl<ChapterDraftDeletedEVT>(
@@ -449,6 +450,7 @@ abstract class ChapterDraftDeletedEVT implements LibraryDatabaseEvent {
 
   String get chapterDraftUID;
   String get seriesDraftUID;
+  @JsonKey(ignore: true)
   $ChapterDraftDeletedEVTCopyWith<ChapterDraftDeletedEVT> get copyWith;
 }
 
@@ -518,6 +520,7 @@ class _$ChapterDraftSavedEVT
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(chapterDraft);
 
+  @JsonKey(ignore: true)
   @override
   $ChapterDraftSavedEVTCopyWith<ChapterDraftSavedEVT> get copyWith =>
       _$ChapterDraftSavedEVTCopyWithImpl<ChapterDraftSavedEVT>(
@@ -671,6 +674,7 @@ abstract class ChapterDraftSavedEVT implements LibraryDatabaseEvent {
       _$ChapterDraftSavedEVT;
 
   Chapter get chapterDraft;
+  @JsonKey(ignore: true)
   $ChapterDraftSavedEVTCopyWith<ChapterDraftSavedEVT> get copyWith;
 }
 
@@ -738,6 +742,7 @@ class _$ChapterPublishedEVT
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(chapter);
 
+  @JsonKey(ignore: true)
   @override
   $ChapterPublishedEVTCopyWith<ChapterPublishedEVT> get copyWith =>
       _$ChapterPublishedEVTCopyWithImpl<ChapterPublishedEVT>(this, _$identity);
@@ -889,6 +894,7 @@ abstract class ChapterPublishedEVT implements LibraryDatabaseEvent {
   const factory ChapterPublishedEVT(Chapter chapter) = _$ChapterPublishedEVT;
 
   Chapter get chapter;
+  @JsonKey(ignore: true)
   $ChapterPublishedEVTCopyWith<ChapterPublishedEVT> get copyWith;
 }
 
@@ -957,6 +963,7 @@ class _$ChapterTileHeldEVT
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(seriesUID);
 
+  @JsonKey(ignore: true)
   @override
   $ChapterTileHeldEVTCopyWith<ChapterTileHeldEVT> get copyWith =>
       _$ChapterTileHeldEVTCopyWithImpl<ChapterTileHeldEVT>(this, _$identity);
@@ -1108,6 +1115,7 @@ abstract class ChapterTileHeldEVT implements LibraryDatabaseEvent {
   const factory ChapterTileHeldEVT(String seriesUID) = _$ChapterTileHeldEVT;
 
   String get seriesUID;
+  @JsonKey(ignore: true)
   $ChapterTileHeldEVTCopyWith<ChapterTileHeldEVT> get copyWith;
 }
 
@@ -2563,6 +2571,7 @@ class _$SeriesDraftDeletedEVT
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(seriesDraftUID);
 
+  @JsonKey(ignore: true)
   @override
   $SeriesDraftDeletedEVTCopyWith<SeriesDraftDeletedEVT> get copyWith =>
       _$SeriesDraftDeletedEVTCopyWithImpl<SeriesDraftDeletedEVT>(
@@ -2716,6 +2725,7 @@ abstract class SeriesDraftDeletedEVT implements LibraryDatabaseEvent {
       _$SeriesDraftDeletedEVT;
 
   String get seriesDraftUID;
+  @JsonKey(ignore: true)
   $SeriesDraftDeletedEVTCopyWith<SeriesDraftDeletedEVT> get copyWith;
 }
 
@@ -2784,6 +2794,7 @@ class _$SeriesDraftSavedEVT
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(seriesDraft);
 
+  @JsonKey(ignore: true)
   @override
   $SeriesDraftSavedEVTCopyWith<SeriesDraftSavedEVT> get copyWith =>
       _$SeriesDraftSavedEVTCopyWithImpl<SeriesDraftSavedEVT>(this, _$identity);
@@ -2935,6 +2946,7 @@ abstract class SeriesDraftSavedEVT implements LibraryDatabaseEvent {
   const factory SeriesDraftSavedEVT(Series seriesDraft) = _$SeriesDraftSavedEVT;
 
   Series get seriesDraft;
+  @JsonKey(ignore: true)
   $SeriesDraftSavedEVTCopyWith<SeriesDraftSavedEVT> get copyWith;
 }
 
@@ -3002,6 +3014,7 @@ class _$SeriesPublishedEVT
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(series);
 
+  @JsonKey(ignore: true)
   @override
   $SeriesPublishedEVTCopyWith<SeriesPublishedEVT> get copyWith =>
       _$SeriesPublishedEVTCopyWithImpl<SeriesPublishedEVT>(this, _$identity);
@@ -3153,6 +3166,7 @@ abstract class SeriesPublishedEVT implements LibraryDatabaseEvent {
   const factory SeriesPublishedEVT(Series series) = _$SeriesPublishedEVT;
 
   Series get series;
+  @JsonKey(ignore: true)
   $SeriesPublishedEVTCopyWith<SeriesPublishedEVT> get copyWith;
 }
 
@@ -3245,6 +3259,7 @@ mixin _$LibraryDatabaseState {
       get sessionDatabaseFailureOrSuccessOption;
   Session get session;
 
+  @JsonKey(ignore: true)
   $LibraryDatabaseStateCopyWith<LibraryDatabaseState> get copyWith;
 }
 
@@ -3636,6 +3651,7 @@ class _$_LibraryDatabaseState
           .hash(sessionDatabaseFailureOrSuccessOption) ^
       const DeepCollectionEquality().hash(session);
 
+  @JsonKey(ignore: true)
   @override
   _$LibraryDatabaseStateCopyWith<_LibraryDatabaseState> get copyWith =>
       __$LibraryDatabaseStateCopyWithImpl<_LibraryDatabaseState>(
@@ -3712,5 +3728,6 @@ abstract class _LibraryDatabaseState implements LibraryDatabaseState {
   @override
   Session get session;
   @override
+  @JsonKey(ignore: true)
   _$LibraryDatabaseStateCopyWith<_LibraryDatabaseState> get copyWith;
 }

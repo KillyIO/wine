@@ -574,6 +574,7 @@ class _$SeriesDraftLoadedSCS implements SeriesDraftLoadedSCS {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(seriesDraft);
 
+  @JsonKey(ignore: true)
   @override
   $SeriesDraftLoadedSCSCopyWith<SeriesDraftLoadedSCS> get copyWith =>
       _$SeriesDraftLoadedSCSCopyWithImpl<SeriesDraftLoadedSCS>(
@@ -672,6 +673,7 @@ abstract class SeriesDraftLoadedSCS implements SeriesDraftDatabaseSuccess {
       _$SeriesDraftLoadedSCS;
 
   Series get seriesDraft;
+  @JsonKey(ignore: true)
   $SeriesDraftLoadedSCSCopyWith<SeriesDraftLoadedSCS> get copyWith;
 }
 
@@ -732,6 +734,7 @@ class _$SeriesDraftsLoadedSCS implements SeriesDraftsLoadedSCS {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(seriesDrafts);
 
+  @JsonKey(ignore: true)
   @override
   $SeriesDraftsLoadedSCSCopyWith<SeriesDraftsLoadedSCS> get copyWith =>
       _$SeriesDraftsLoadedSCSCopyWithImpl<SeriesDraftsLoadedSCS>(
@@ -830,6 +833,7 @@ abstract class SeriesDraftsLoadedSCS implements SeriesDraftDatabaseSuccess {
       _$SeriesDraftsLoadedSCS;
 
   List<Series> get seriesDrafts;
+  @JsonKey(ignore: true)
   $SeriesDraftsLoadedSCSCopyWith<SeriesDraftsLoadedSCS> get copyWith;
 }
 
@@ -889,6 +893,7 @@ class _$OnlineSeriesDraftSavedSCS implements OnlineSeriesDraftSavedSCS {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(seriesDraft);
 
+  @JsonKey(ignore: true)
   @override
   $OnlineSeriesDraftSavedSCSCopyWith<OnlineSeriesDraftSavedSCS> get copyWith =>
       _$OnlineSeriesDraftSavedSCSCopyWithImpl<OnlineSeriesDraftSavedSCS>(
@@ -987,6 +992,7 @@ abstract class OnlineSeriesDraftSavedSCS implements SeriesDraftDatabaseSuccess {
       _$OnlineSeriesDraftSavedSCS;
 
   Series get seriesDraft;
+  @JsonKey(ignore: true)
   $OnlineSeriesDraftSavedSCSCopyWith<OnlineSeriesDraftSavedSCS> get copyWith;
 }
 

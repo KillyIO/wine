@@ -140,6 +140,7 @@ class _$PlaceholderFetchedSCS implements PlaceholderFetchedSCS {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(placeholder);
 
+  @JsonKey(ignore: true)
   @override
   $PlaceholderFetchedSCSCopyWith<PlaceholderFetchedSCS> get copyWith =>
       _$PlaceholderFetchedSCSCopyWithImpl<PlaceholderFetchedSCS>(
@@ -208,6 +209,7 @@ abstract class PlaceholderFetchedSCS implements PlaceholderDatabaseSuccess {
       _$PlaceholderFetchedSCS;
 
   String get placeholder;
+  @JsonKey(ignore: true)
   $PlaceholderFetchedSCSCopyWith<PlaceholderFetchedSCS> get copyWith;
 }
 
@@ -368,6 +370,7 @@ class _$PlaceholdersLoadedSCS implements PlaceholdersLoadedSCS {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(placeholders);
 
+  @JsonKey(ignore: true)
   @override
   $PlaceholdersLoadedSCSCopyWith<PlaceholdersLoadedSCS> get copyWith =>
       _$PlaceholdersLoadedSCSCopyWithImpl<PlaceholdersLoadedSCS>(
@@ -436,5 +439,6 @@ abstract class PlaceholdersLoadedSCS implements PlaceholderDatabaseSuccess {
       _$PlaceholdersLoadedSCS;
 
   Map<String, String> get placeholders;
+  @JsonKey(ignore: true)
   $PlaceholdersLoadedSCSCopyWith<PlaceholdersLoadedSCS> get copyWith;
 }

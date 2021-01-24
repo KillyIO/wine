@@ -256,6 +256,7 @@ class _$ChapterDraftDeletedFromLibraryEvent
       const DeepCollectionEquality().hash(chapterDraftUID) ^
       const DeepCollectionEquality().hash(seriesDraftUID);
 
+  @JsonKey(ignore: true)
   @override
   $ChapterDraftDeletedFromLibraryEventCopyWith<
           ChapterDraftDeletedFromLibraryEvent>
@@ -390,6 +391,7 @@ abstract class ChapterDraftDeletedFromLibraryEvent
 
   String get chapterDraftUID;
   String get seriesDraftUID;
+  @JsonKey(ignore: true)
   $ChapterDraftDeletedFromLibraryEventCopyWith<
       ChapterDraftDeletedFromLibraryEvent> get copyWith;
 }
@@ -453,6 +455,7 @@ class _$ChapterDraftSavedFromLibraryEvent
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(chapterDraft);
 
+  @JsonKey(ignore: true)
   @override
   $ChapterDraftSavedFromLibraryEventCopyWith<ChapterDraftSavedFromLibraryEvent>
       get copyWith => _$ChapterDraftSavedFromLibraryEventCopyWithImpl<
@@ -582,6 +585,7 @@ abstract class ChapterDraftSavedFromLibraryEvent implements CoreDatabaseEvent {
       _$ChapterDraftSavedFromLibraryEvent;
 
   Chapter get chapterDraft;
+  @JsonKey(ignore: true)
   $ChapterDraftSavedFromLibraryEventCopyWith<ChapterDraftSavedFromLibraryEvent>
       get copyWith;
 }
@@ -644,6 +648,7 @@ class _$ChapterPublishedFromChapterEvent
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(chapter);
 
+  @JsonKey(ignore: true)
   @override
   $ChapterPublishedFromChapterEventCopyWith<ChapterPublishedFromChapterEvent>
       get copyWith => _$ChapterPublishedFromChapterEventCopyWithImpl<
@@ -773,6 +778,7 @@ abstract class ChapterPublishedFromChapterEvent implements CoreDatabaseEvent {
       _$ChapterPublishedFromChapterEvent;
 
   Chapter get chapter;
+  @JsonKey(ignore: true)
   $ChapterPublishedFromChapterEventCopyWith<ChapterPublishedFromChapterEvent>
       get copyWith;
 }
@@ -835,6 +841,7 @@ class _$ChapterPublishedFromLibraryEvent
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(chapter);
 
+  @JsonKey(ignore: true)
   @override
   $ChapterPublishedFromLibraryEventCopyWith<ChapterPublishedFromLibraryEvent>
       get copyWith => _$ChapterPublishedFromLibraryEventCopyWithImpl<
@@ -964,6 +971,7 @@ abstract class ChapterPublishedFromLibraryEvent implements CoreDatabaseEvent {
       _$ChapterPublishedFromLibraryEvent;
 
   Chapter get chapter;
+  @JsonKey(ignore: true)
   $ChapterPublishedFromLibraryEventCopyWith<ChapterPublishedFromLibraryEvent>
       get copyWith;
 }
@@ -1189,6 +1197,7 @@ class _$SeriesDraftDeletedFromLibraryEvent
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(seriesDraftUID);
 
+  @JsonKey(ignore: true)
   @override
   $SeriesDraftDeletedFromLibraryEventCopyWith<
           SeriesDraftDeletedFromLibraryEvent>
@@ -1319,6 +1328,7 @@ abstract class SeriesDraftDeletedFromLibraryEvent implements CoreDatabaseEvent {
       _$SeriesDraftDeletedFromLibraryEvent;
 
   String get seriesDraftUID;
+  @JsonKey(ignore: true)
   $SeriesDraftDeletedFromLibraryEventCopyWith<
       SeriesDraftDeletedFromLibraryEvent> get copyWith;
 }
@@ -1382,6 +1392,7 @@ class _$SeriesDraftSavedFromLibraryEvent
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(seriesDraft);
 
+  @JsonKey(ignore: true)
   @override
   $SeriesDraftSavedFromLibraryEventCopyWith<SeriesDraftSavedFromLibraryEvent>
       get copyWith => _$SeriesDraftSavedFromLibraryEventCopyWithImpl<
@@ -1511,6 +1522,7 @@ abstract class SeriesDraftSavedFromLibraryEvent implements CoreDatabaseEvent {
       _$SeriesDraftSavedFromLibraryEvent;
 
   Series get seriesDraft;
+  @JsonKey(ignore: true)
   $SeriesDraftSavedFromLibraryEventCopyWith<SeriesDraftSavedFromLibraryEvent>
       get copyWith;
 }
@@ -1571,6 +1583,7 @@ class _$SeriesPublishedFromHomeEvent implements SeriesPublishedFromHomeEvent {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(series);
 
+  @JsonKey(ignore: true)
   @override
   $SeriesPublishedFromHomeEventCopyWith<SeriesPublishedFromHomeEvent>
       get copyWith => _$SeriesPublishedFromHomeEventCopyWithImpl<
@@ -1700,6 +1713,7 @@ abstract class SeriesPublishedFromHomeEvent implements CoreDatabaseEvent {
       _$SeriesPublishedFromHomeEvent;
 
   Series get series;
+  @JsonKey(ignore: true)
   $SeriesPublishedFromHomeEventCopyWith<SeriesPublishedFromHomeEvent>
       get copyWith;
 }
@@ -1761,6 +1775,7 @@ class _$SeriesPublishedFromLibraryEvent
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(series);
 
+  @JsonKey(ignore: true)
   @override
   $SeriesPublishedFromLibraryEventCopyWith<SeriesPublishedFromLibraryEvent>
       get copyWith => _$SeriesPublishedFromLibraryEventCopyWithImpl<
@@ -1890,6 +1905,7 @@ abstract class SeriesPublishedFromLibraryEvent implements CoreDatabaseEvent {
       _$SeriesPublishedFromLibraryEvent;
 
   Series get series;
+  @JsonKey(ignore: true)
   $SeriesPublishedFromLibraryEventCopyWith<SeriesPublishedFromLibraryEvent>
       get copyWith;
 }
@@ -2297,6 +2313,7 @@ class _$_ChapterDraftDeletedFromLibraryState
       const DeepCollectionEquality().hash(chapterDraftUID) ^
       const DeepCollectionEquality().hash(seriesDraftUID);
 
+  @JsonKey(ignore: true)
   @override
   _$ChapterDraftDeletedFromLibraryStateCopyWith<
           _ChapterDraftDeletedFromLibraryState>
@@ -2431,6 +2448,7 @@ abstract class _ChapterDraftDeletedFromLibraryState
 
   String get chapterDraftUID;
   String get seriesDraftUID;
+  @JsonKey(ignore: true)
   _$ChapterDraftDeletedFromLibraryStateCopyWith<
       _ChapterDraftDeletedFromLibraryState> get copyWith;
 }
@@ -2494,6 +2512,7 @@ class _$_ChapterDraftSavedFromLibraryState
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(chapterDraft);
 
+  @JsonKey(ignore: true)
   @override
   _$ChapterDraftSavedFromLibraryStateCopyWith<
           _ChapterDraftSavedFromLibraryState>
@@ -2624,6 +2643,7 @@ abstract class _ChapterDraftSavedFromLibraryState implements CoreDatabaseState {
       _$_ChapterDraftSavedFromLibraryState;
 
   Chapter get chapterDraft;
+  @JsonKey(ignore: true)
   _$ChapterDraftSavedFromLibraryStateCopyWith<
       _ChapterDraftSavedFromLibraryState> get copyWith;
 }
@@ -2686,6 +2706,7 @@ class _$_ChapterPublishedFromChapterState
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(chapter);
 
+  @JsonKey(ignore: true)
   @override
   _$ChapterPublishedFromChapterStateCopyWith<_ChapterPublishedFromChapterState>
       get copyWith => __$ChapterPublishedFromChapterStateCopyWithImpl<
@@ -2815,6 +2836,7 @@ abstract class _ChapterPublishedFromChapterState implements CoreDatabaseState {
       _$_ChapterPublishedFromChapterState;
 
   Chapter get chapter;
+  @JsonKey(ignore: true)
   _$ChapterPublishedFromChapterStateCopyWith<_ChapterPublishedFromChapterState>
       get copyWith;
 }
@@ -2877,6 +2899,7 @@ class _$_ChapterPublishedFromLibraryState
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(chapter);
 
+  @JsonKey(ignore: true)
   @override
   _$ChapterPublishedFromLibraryStateCopyWith<_ChapterPublishedFromLibraryState>
       get copyWith => __$ChapterPublishedFromLibraryStateCopyWithImpl<
@@ -3006,6 +3029,7 @@ abstract class _ChapterPublishedFromLibraryState implements CoreDatabaseState {
       _$_ChapterPublishedFromLibraryState;
 
   Chapter get chapter;
+  @JsonKey(ignore: true)
   _$ChapterPublishedFromLibraryStateCopyWith<_ChapterPublishedFromLibraryState>
       get copyWith;
 }
@@ -3072,6 +3096,7 @@ class _$_SeriesDraftDeletedFromLibraryState
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(seriesDraftUID);
 
+  @JsonKey(ignore: true)
   @override
   _$SeriesDraftDeletedFromLibraryStateCopyWith<
           _SeriesDraftDeletedFromLibraryState>
@@ -3203,6 +3228,7 @@ abstract class _SeriesDraftDeletedFromLibraryState
       _$_SeriesDraftDeletedFromLibraryState;
 
   String get seriesDraftUID;
+  @JsonKey(ignore: true)
   _$SeriesDraftDeletedFromLibraryStateCopyWith<
       _SeriesDraftDeletedFromLibraryState> get copyWith;
 }
@@ -3266,6 +3292,7 @@ class _$_SeriesDraftSavedFromLibraryState
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(seriesDraft);
 
+  @JsonKey(ignore: true)
   @override
   _$SeriesDraftSavedFromLibraryStateCopyWith<_SeriesDraftSavedFromLibraryState>
       get copyWith => __$SeriesDraftSavedFromLibraryStateCopyWithImpl<
@@ -3395,6 +3422,7 @@ abstract class _SeriesDraftSavedFromLibraryState implements CoreDatabaseState {
       _$_SeriesDraftSavedFromLibraryState;
 
   Series get seriesDraft;
+  @JsonKey(ignore: true)
   _$SeriesDraftSavedFromLibraryStateCopyWith<_SeriesDraftSavedFromLibraryState>
       get copyWith;
 }
@@ -3455,6 +3483,7 @@ class _$_SeriesPublishedFromHomeState implements _SeriesPublishedFromHomeState {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(series);
 
+  @JsonKey(ignore: true)
   @override
   _$SeriesPublishedFromHomeStateCopyWith<_SeriesPublishedFromHomeState>
       get copyWith => __$SeriesPublishedFromHomeStateCopyWithImpl<
@@ -3584,6 +3613,7 @@ abstract class _SeriesPublishedFromHomeState implements CoreDatabaseState {
       _$_SeriesPublishedFromHomeState;
 
   Series get series;
+  @JsonKey(ignore: true)
   _$SeriesPublishedFromHomeStateCopyWith<_SeriesPublishedFromHomeState>
       get copyWith;
 }
@@ -3646,6 +3676,7 @@ class _$_SeriesPublishedFromLibraryState
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(series);
 
+  @JsonKey(ignore: true)
   @override
   _$SeriesPublishedFromLibraryStateCopyWith<_SeriesPublishedFromLibraryState>
       get copyWith => __$SeriesPublishedFromLibraryStateCopyWithImpl<
@@ -3775,6 +3806,7 @@ abstract class _SeriesPublishedFromLibraryState implements CoreDatabaseState {
       _$_SeriesPublishedFromLibraryState;
 
   Series get series;
+  @JsonKey(ignore: true)
   _$SeriesPublishedFromLibraryStateCopyWith<_SeriesPublishedFromLibraryState>
       get copyWith;
 }

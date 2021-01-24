@@ -139,6 +139,7 @@ class _$UserDetailsSavedSuccess implements UserDetailsSavedSuccess {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(user);
 
+  @JsonKey(ignore: true)
   @override
   $UserDetailsSavedSuccessCopyWith<UserDetailsSavedSuccess> get copyWith =>
       _$UserDetailsSavedSuccessCopyWithImpl<UserDetailsSavedSuccess>(
@@ -205,6 +206,7 @@ abstract class UserDetailsSavedSuccess implements UserDatabaseSuccess {
   const factory UserDetailsSavedSuccess(User user) = _$UserDetailsSavedSuccess;
 
   User get user;
+  @JsonKey(ignore: true)
   $UserDetailsSavedSuccessCopyWith<UserDetailsSavedSuccess> get copyWith;
 }
 
@@ -261,6 +263,7 @@ class _$UserLoadedSuccess implements UserLoadedSuccess {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(user);
 
+  @JsonKey(ignore: true)
   @override
   $UserLoadedSuccessCopyWith<UserLoadedSuccess> get copyWith =>
       _$UserLoadedSuccessCopyWithImpl<UserLoadedSuccess>(this, _$identity);
@@ -326,6 +329,7 @@ abstract class UserLoadedSuccess implements UserDatabaseSuccess {
   const factory UserLoadedSuccess(User user) = _$UserLoadedSuccess;
 
   User get user;
+  @JsonKey(ignore: true)
   $UserLoadedSuccessCopyWith<UserLoadedSuccess> get copyWith;
 }
 
@@ -383,6 +387,7 @@ class _$UsernameSavedSuccess implements UsernameSavedSuccess {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(username);
 
+  @JsonKey(ignore: true)
   @override
   $UsernameSavedSuccessCopyWith<UsernameSavedSuccess> get copyWith =>
       _$UsernameSavedSuccessCopyWithImpl<UsernameSavedSuccess>(
@@ -449,5 +454,6 @@ abstract class UsernameSavedSuccess implements UserDatabaseSuccess {
   const factory UsernameSavedSuccess(String username) = _$UsernameSavedSuccess;
 
   String get username;
+  @JsonKey(ignore: true)
   $UsernameSavedSuccessCopyWith<UsernameSavedSuccess> get copyWith;
 }

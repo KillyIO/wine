@@ -150,6 +150,7 @@ class _$PageViewIndexChangedEVT
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(index);
 
+  @JsonKey(ignore: true)
   @override
   $PageViewIndexChangedEVTCopyWith<PageViewIndexChangedEVT> get copyWith =>
       _$PageViewIndexChangedEVTCopyWithImpl<PageViewIndexChangedEVT>(
@@ -218,6 +219,7 @@ abstract class PageViewIndexChangedEVT implements LibraryNavigationEvent {
   const factory PageViewIndexChangedEVT(int index) = _$PageViewIndexChangedEVT;
 
   int get index;
+  @JsonKey(ignore: true)
   $PageViewIndexChangedEVTCopyWith<PageViewIndexChangedEVT> get copyWith;
 }
 
@@ -394,6 +396,7 @@ class _$VerticalNavbarIndexChangedEVT
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(index);
 
+  @JsonKey(ignore: true)
   @override
   $VerticalNavbarIndexChangedEVTCopyWith<VerticalNavbarIndexChangedEVT>
       get copyWith => _$VerticalNavbarIndexChangedEVTCopyWithImpl<
@@ -463,6 +466,7 @@ abstract class VerticalNavbarIndexChangedEVT implements LibraryNavigationEvent {
       _$VerticalNavbarIndexChangedEVT;
 
   int get index;
+  @JsonKey(ignore: true)
   $VerticalNavbarIndexChangedEVTCopyWith<VerticalNavbarIndexChangedEVT>
       get copyWith;
 }
@@ -491,6 +495,7 @@ mixin _$LibraryNavigationState {
   int get currentPageViewIdx;
   int get currentVerticalNavbarIdx;
 
+  @JsonKey(ignore: true)
   $LibraryNavigationStateCopyWith<LibraryNavigationState> get copyWith;
 }
 
@@ -613,6 +618,7 @@ class _$_LibraryNavigationState
       const DeepCollectionEquality().hash(currentPageViewIdx) ^
       const DeepCollectionEquality().hash(currentVerticalNavbarIdx);
 
+  @JsonKey(ignore: true)
   @override
   _$LibraryNavigationStateCopyWith<_LibraryNavigationState> get copyWith =>
       __$LibraryNavigationStateCopyWithImpl<_LibraryNavigationState>(
@@ -629,5 +635,6 @@ abstract class _LibraryNavigationState implements LibraryNavigationState {
   @override
   int get currentVerticalNavbarIdx;
   @override
+  @JsonKey(ignore: true)
   _$LibraryNavigationStateCopyWith<_LibraryNavigationState> get copyWith;
 }

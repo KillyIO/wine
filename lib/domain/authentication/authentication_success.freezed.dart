@@ -159,6 +159,7 @@ class _$UserAuthenticatedSuccess implements UserAuthenticatedSuccess {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(user);
 
+  @JsonKey(ignore: true)
   @override
   $UserAuthenticatedSuccessCopyWith<UserAuthenticatedSuccess> get copyWith =>
       _$UserAuthenticatedSuccessCopyWithImpl<UserAuthenticatedSuccess>(
@@ -243,6 +244,7 @@ abstract class UserAuthenticatedSuccess implements AuthenticationSuccess {
       _$UserAuthenticatedSuccess;
 
   User get user;
+  @JsonKey(ignore: true)
   $UserAuthenticatedSuccessCopyWith<UserAuthenticatedSuccess> get copyWith;
 }
 

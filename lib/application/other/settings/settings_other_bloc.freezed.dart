@@ -170,6 +170,7 @@ mixin _$SettingsOtherState {
   String get appName;
   String get appVersion;
 
+  @JsonKey(ignore: true)
   $SettingsOtherStateCopyWith<SettingsOtherState> get copyWith;
 }
 
@@ -272,6 +273,7 @@ class _$_SettingsOtherState implements _SettingsOtherState {
       const DeepCollectionEquality().hash(appName) ^
       const DeepCollectionEquality().hash(appVersion);
 
+  @JsonKey(ignore: true)
   @override
   _$SettingsOtherStateCopyWith<_SettingsOtherState> get copyWith =>
       __$SettingsOtherStateCopyWithImpl<_SettingsOtherState>(this, _$identity);
@@ -287,5 +289,6 @@ abstract class _SettingsOtherState implements SettingsOtherState {
   @override
   String get appVersion;
   @override
+  @JsonKey(ignore: true)
   _$SettingsOtherStateCopyWith<_SettingsOtherState> get copyWith;
 }

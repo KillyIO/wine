@@ -180,6 +180,7 @@ mixin _$SplashAuthenticationState {
   Option<Either<AuthenticationFailure, AuthenticationSuccess>>
       get authenticationFailureOrSuccessOption;
 
+  @JsonKey(ignore: true)
   $SplashAuthenticationStateCopyWith<SplashAuthenticationState> get copyWith;
 }
 
@@ -319,6 +320,7 @@ class _$_SplashAuthenticationState implements _SplashAuthenticationState {
       const DeepCollectionEquality().hash(isAuthenticating) ^
       const DeepCollectionEquality().hash(authenticationFailureOrSuccessOption);
 
+  @JsonKey(ignore: true)
   @override
   _$SplashAuthenticationStateCopyWith<_SplashAuthenticationState>
       get copyWith =>
@@ -345,5 +347,6 @@ abstract class _SplashAuthenticationState implements SplashAuthenticationState {
   Option<Either<AuthenticationFailure, AuthenticationSuccess>>
       get authenticationFailureOrSuccessOption;
   @override
+  @JsonKey(ignore: true)
   _$SplashAuthenticationStateCopyWith<_SplashAuthenticationState> get copyWith;
 }

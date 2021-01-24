@@ -167,6 +167,7 @@ const $CoreOtherState = _$CoreOtherStateTearOff();
 mixin _$CoreOtherState {
   String get deviceLocale;
 
+  @JsonKey(ignore: true)
   $CoreOtherStateCopyWith<CoreOtherState> get copyWith;
 }
 
@@ -258,6 +259,7 @@ class _$_CoreOtherState implements _CoreOtherState {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(deviceLocale);
 
+  @JsonKey(ignore: true)
   @override
   _$CoreOtherStateCopyWith<_CoreOtherState> get copyWith =>
       __$CoreOtherStateCopyWithImpl<_CoreOtherState>(this, _$identity);
@@ -270,5 +272,6 @@ abstract class _CoreOtherState implements CoreOtherState {
   @override
   String get deviceLocale;
   @override
+  @JsonKey(ignore: true)
   _$CoreOtherStateCopyWith<_CoreOtherState> get copyWith;
 }

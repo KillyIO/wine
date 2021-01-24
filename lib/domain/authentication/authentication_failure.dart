@@ -22,6 +22,9 @@ abstract class AuthenticationFailure with _$AuthenticationFailure {
   const factory AuthenticationFailure.serverFailure() = ServerFailure;
 
   /// @nodoc
+  const factory AuthenticationFailure.unexpectedFailure() = UnexpectedFailure;
+
+  /// @nodoc
   const factory AuthenticationFailure.unableToSignOutFailure() =
       UnableToSignOutFailure;
 

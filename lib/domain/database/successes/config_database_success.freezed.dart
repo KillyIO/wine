@@ -251,6 +251,7 @@ class _$ConfigFetchedSuccess implements ConfigFetchedSuccess {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(config);
 
+  @JsonKey(ignore: true)
   @override
   $ConfigFetchedSuccessCopyWith<ConfigFetchedSuccess> get copyWith =>
       _$ConfigFetchedSuccessCopyWithImpl<ConfigFetchedSuccess>(
@@ -323,6 +324,7 @@ abstract class ConfigFetchedSuccess implements ConfigDatabaseSuccess {
   const factory ConfigFetchedSuccess(Config config) = _$ConfigFetchedSuccess;
 
   Config get config;
+  @JsonKey(ignore: true)
   $ConfigFetchedSuccessCopyWith<ConfigFetchedSuccess> get copyWith;
 }
 
@@ -380,6 +382,7 @@ class _$ConfigInitializedSuccess implements ConfigInitializedSuccess {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(config);
 
+  @JsonKey(ignore: true)
   @override
   $ConfigInitializedSuccessCopyWith<ConfigInitializedSuccess> get copyWith =>
       _$ConfigInitializedSuccessCopyWithImpl<ConfigInitializedSuccess>(
@@ -453,6 +456,7 @@ abstract class ConfigInitializedSuccess implements ConfigDatabaseSuccess {
       _$ConfigInitializedSuccess;
 
   Config get config;
+  @JsonKey(ignore: true)
   $ConfigInitializedSuccessCopyWith<ConfigInitializedSuccess> get copyWith;
 }
 
@@ -509,6 +513,7 @@ class _$ConfigUpdatedSuccess implements ConfigUpdatedSuccess {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(config);
 
+  @JsonKey(ignore: true)
   @override
   $ConfigUpdatedSuccessCopyWith<ConfigUpdatedSuccess> get copyWith =>
       _$ConfigUpdatedSuccessCopyWithImpl<ConfigUpdatedSuccess>(
@@ -581,5 +586,6 @@ abstract class ConfigUpdatedSuccess implements ConfigDatabaseSuccess {
   const factory ConfigUpdatedSuccess(Config config) = _$ConfigUpdatedSuccess;
 
   Config get config;
+  @JsonKey(ignore: true)
   $ConfigUpdatedSuccessCopyWith<ConfigUpdatedSuccess> get copyWith;
 }

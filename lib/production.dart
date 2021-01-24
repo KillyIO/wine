@@ -5,16 +5,20 @@ import 'package:injectable/injectable.dart';
 import 'package:wine/application/authentication/core/core_authentication_bloc.dart';
 import 'package:wine/application/database/core/core_database_bloc.dart';
 import 'package:wine/application/other/core/core_other_bloc.dart';
+import 'package:wine/flavors.dart';
 import 'package:wine/injection.dart';
 import 'package:wine/presentation/core/production_app.dart';
 
 Future<void> main() async {
+  F.appFlavor = Flavor.PRODUCTION;
+
   WidgetsFlutterBinding.ensureInitialized();
 
   await Future.wait([
     configureInjection(Environment.prod),
     Firebase.initializeApp(),
   ]);
+
   runApp(
     MultiBlocProvider(
       providers: [

@@ -1314,6 +1314,7 @@ class _$SeriesLaunchedEVT
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(series);
 
+  @JsonKey(ignore: true)
   @override
   $SeriesLaunchedEVTCopyWith<SeriesLaunchedEVT> get copyWith =>
       _$SeriesLaunchedEVTCopyWithImpl<SeriesLaunchedEVT>(this, _$identity);
@@ -1428,6 +1429,7 @@ abstract class SeriesLaunchedEVT implements SeriesDatabaseEvent {
   const factory SeriesLaunchedEVT(Series series) = _$SeriesLaunchedEVT;
 
   Series get series;
+  @JsonKey(ignore: true)
   $SeriesLaunchedEVTCopyWith<SeriesLaunchedEVT> get copyWith;
 }
 
@@ -1981,6 +1983,7 @@ mixin _$SeriesDatabaseState {
   Series get series;
   Session get session;
 
+  @JsonKey(ignore: true)
   $SeriesDatabaseStateCopyWith<SeriesDatabaseState> get copyWith;
 }
 
@@ -2329,6 +2332,7 @@ class _$_SeriesDatabaseState
       const DeepCollectionEquality().hash(series) ^
       const DeepCollectionEquality().hash(session);
 
+  @JsonKey(ignore: true)
   @override
   _$SeriesDatabaseStateCopyWith<_SeriesDatabaseState> get copyWith =>
       __$SeriesDatabaseStateCopyWithImpl<_SeriesDatabaseState>(
@@ -2399,5 +2403,6 @@ abstract class _SeriesDatabaseState implements SeriesDatabaseState {
   @override
   Session get session;
   @override
+  @JsonKey(ignore: true)
   _$SeriesDatabaseStateCopyWith<_SeriesDatabaseState> get copyWith;
 }

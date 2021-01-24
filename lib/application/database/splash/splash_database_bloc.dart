@@ -47,7 +47,8 @@ class SplashDatabaseBloc
 
   @override
   Stream<SplashDatabaseState> mapEventToState(
-      SplashDatabaseEvent event) async* {
+    SplashDatabaseEvent event,
+  ) async* {
     yield* event.map(
       authenticatedEVT: (event) async* {
         yield state.copyWith(

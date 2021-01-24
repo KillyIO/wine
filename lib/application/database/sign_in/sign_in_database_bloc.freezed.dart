@@ -59,6 +59,7 @@ mixin _$SignInDatabaseEvent {
     @required TResult orElse(),
   });
 
+  @JsonKey(ignore: true)
   $SignInDatabaseEventCopyWith<SignInDatabaseEvent> get copyWith;
 }
 
@@ -144,6 +145,7 @@ class _$SignedInEVT implements SignedInEVT {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(user);
 
+  @JsonKey(ignore: true)
   @override
   $SignedInEVTCopyWith<SignedInEVT> get copyWith =>
       _$SignedInEVTCopyWithImpl<SignedInEVT>(this, _$identity);
@@ -205,6 +207,7 @@ abstract class SignedInEVT implements SignInDatabaseEvent {
   @override
   User get user;
   @override
+  @JsonKey(ignore: true)
   $SignedInEVTCopyWith<SignedInEVT> get copyWith;
 }
 
@@ -263,6 +266,7 @@ class _$UserDetailsSavedEVT implements UserDetailsSavedEVT {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(user);
 
+  @JsonKey(ignore: true)
   @override
   $UserDetailsSavedEVTCopyWith<UserDetailsSavedEVT> get copyWith =>
       _$UserDetailsSavedEVTCopyWithImpl<UserDetailsSavedEVT>(this, _$identity);
@@ -324,6 +328,7 @@ abstract class UserDetailsSavedEVT implements SignInDatabaseEvent {
   @override
   User get user;
   @override
+  @JsonKey(ignore: true)
   $UserDetailsSavedEVTCopyWith<UserDetailsSavedEVT> get copyWith;
 }
 
@@ -362,6 +367,7 @@ mixin _$SignInDatabaseState {
   Option<Either<UserDatabaseFailure, UserDatabaseSuccess>>
       get userDatabaseFailureOrSuccessOption;
 
+  @JsonKey(ignore: true)
   $SignInDatabaseStateCopyWith<SignInDatabaseState> get copyWith;
 }
 
@@ -510,6 +516,7 @@ class _$_SignInDatabaseState implements _SignInDatabaseState {
           .hash(sessionDatabaseFailureOrSuccessOption) ^
       const DeepCollectionEquality().hash(userDatabaseFailureOrSuccessOption);
 
+  @JsonKey(ignore: true)
   @override
   _$SignInDatabaseStateCopyWith<_SignInDatabaseState> get copyWith =>
       __$SignInDatabaseStateCopyWithImpl<_SignInDatabaseState>(
@@ -536,5 +543,6 @@ abstract class _SignInDatabaseState implements SignInDatabaseState {
   Option<Either<UserDatabaseFailure, UserDatabaseSuccess>>
       get userDatabaseFailureOrSuccessOption;
   @override
+  @JsonKey(ignore: true)
   _$SignInDatabaseStateCopyWith<_SignInDatabaseState> get copyWith;
 }
