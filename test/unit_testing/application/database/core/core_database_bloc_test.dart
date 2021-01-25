@@ -1,4 +1,5 @@
 import 'package:bloc_test/bloc_test.dart';
+import 'package:faker/faker.dart';
 import 'package:test/test.dart';
 import 'package:wine/application/database/core/core_database_bloc.dart';
 import 'package:wine/domain/models/chapter.dart';
@@ -8,8 +9,15 @@ void main() {
   group(
     'CoreDatabaseBloc',
     () {
+      const faker = Faker();
+
+      final authorUID = faker.guid.guid();
+
+      final chapterUID = faker.guid.guid();
+      final seriesUID = faker.guid.guid();
+
       final chapter = Chapter(
-        authorUID: 'IhyAvFOnGegIFDBJYmL30nAbWu92',
+        authorUID: authorUID,
         authorUsername: 'hdima.riyal.99',
         copyrights: 'cc-by',
         coverURL:
@@ -22,15 +30,15 @@ void main() {
         isNSFW: false,
         language: 'en',
         previousChapterUID: null,
-        seriesUID: '58ed5de4-5d61-423b-bfe5-536b326c283a',
+        seriesUID: seriesUID,
         story: 'story',
         title: 'diam vulputate',
-        uid: '29616ca3-d403-427c-8cfa-c29d977cc8e0',
+        uid: chapterUID,
         updatedAt: 1608807831084,
       );
 
       final series = Series(
-        authorUID: 'IhyAvFOnGegIFDBJYmL30nAbWu92',
+        authorUID: authorUID,
         authorUsername: 'hdima.riyal.99',
         coverURL:
             'https://firebasestorage.googleapis.com/v0/b/wine-dev-1db0c.appspot.com/o/placeholders%2Fbook_placeholder_pastel_yellow.png?alt=media&token=3ab84d84-829f-4d39-9ed6-698694e87abd',
@@ -42,7 +50,7 @@ void main() {
         subtitle: null,
         summary: 'summary',
         title: 'integer vitae',
-        uid: '4ee028bd-b819-48f3-b704-59ac275d2d7c',
+        uid: seriesUID,
         updatedAt: 1608326693128,
       );
 
