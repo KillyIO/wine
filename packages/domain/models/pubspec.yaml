@@ -1,0 +1,23 @@
+name: models
+description: A new Flutter package project.
+version: 0.0.1
+author: SSebigo
+homepage: https://gitlab.com/codename-wine/wine
+
+environment:
+  sdk: ">=2.7.0 <3.0.0"
+  flutter: ">=1.17.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  equatable: ^1.2.5
+  hive: ^1.4.4+1
+  hive_flutter: ^0.3.1
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  hive_generator: ^0.8.2
+
+flutter: null

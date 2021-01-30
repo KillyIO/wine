@@ -14,7 +14,7 @@ description: WINE is a collaborative story writing app based on a tree of possib
 version: 0.5.2+113
 
 environment:
-  sdk: ">=2.8.0 <3.0.0"
+  sdk: ">=2.7.0 <3.0.0"
 
 dependencies:
   flutter:
