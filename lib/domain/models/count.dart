@@ -1,7 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:equatable/equatable.dart';
 
 /// @nodoc
-class Count {
+class Count extends Equatable {
   /// @nodoc
   Count({
     this.count,
@@ -29,13 +30,13 @@ class Count {
   }
 
   /// @nodoc
-  int count;
+  final int count;
 
   /// @nodoc
-  int updatedAt;
+  final int updatedAt;
 
   /// @nodoc
-  String uid;
+  final String uid;
 
   /// @nodoc
   Count copyWith({
@@ -60,18 +61,8 @@ class Count {
   }
 
   @override
-  String toString() => 'Count(count: $count, uid: $uid, updatedAt: $updatedAt)';
+  List<Object> get props => [count, uid];
 
   @override
-  bool operator ==(Object other) {
-    if (identical(this, other)) return true;
-
-    return other is Count &&
-        other.count == count &&
-        other.uid == uid &&
-        other.updatedAt == updatedAt;
-  }
-
-  @override
-  int get hashCode => count.hashCode ^ uid.hashCode ^ updatedAt.hashCode;
+  bool get stringify => true;
 }

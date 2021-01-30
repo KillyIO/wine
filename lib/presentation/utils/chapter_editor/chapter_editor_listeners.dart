@@ -30,14 +30,14 @@ class ChapterEditorListeners {
               case EditorContentOrigin.library:
                 context
                     .read<CoreDatabaseBloc>()
-                    .add(CoreDatabaseEvent.chapterPublishedFromLibraryEVT(
+                    .add(CoreDatabaseEvent.chapterPublishedFromLibraryEvent(
                       state.chapterDraft,
                     ));
                 break;
               case EditorContentOrigin.chapter:
                 context
                     .read<CoreDatabaseBloc>()
-                    .add(CoreDatabaseEvent.chapterPublishedFromChapterEVT(
+                    .add(CoreDatabaseEvent.chapterPublishedFromChapterEvent(
                       state.chapterDraft,
                     ));
 
@@ -60,7 +60,7 @@ class ChapterEditorListeners {
               if (state.editorContentOrigin == EditorContentOrigin.library) {
                 context
                     .read<CoreDatabaseBloc>()
-                    .add(CoreDatabaseEvent.chapterDraftDeletedFromLibraryEVT(
+                    .add(CoreDatabaseEvent.chapterDraftDeletedFromLibraryEvent(
                       chapterDraftUID: state.chapterDraft.uid,
                     ));
 
@@ -73,12 +73,11 @@ class ChapterEditorListeners {
               if (state.editorContentOrigin == EditorContentOrigin.library) {
                 context
                     .read<CoreDatabaseBloc>()
-                    .add(CoreDatabaseEvent.chapterDraftSavedFromLibraryEVT(
+                    .add(CoreDatabaseEvent.chapterDraftSavedFromLibraryEvent(
                       subSuccess.chapterDraft,
                     ));
-
-                ExtendedNavigator.root.pop();
               }
+              ExtendedNavigator.root.pop();
             },
             orElse: () {},
           );
@@ -101,14 +100,14 @@ class ChapterEditorListeners {
               case EditorContentOrigin.library:
                 context
                     .read<CoreDatabaseBloc>()
-                    .add(CoreDatabaseEvent.seriesPublishedFromLibraryEVT(
+                    .add(CoreDatabaseEvent.seriesPublishedFromLibraryEvent(
                       success.series,
                     ));
                 break;
               case EditorContentOrigin.home:
                 context
                     .read<CoreDatabaseBloc>()
-                    .add(CoreDatabaseEvent.seriesPublishedFromHomeEVT(
+                    .add(CoreDatabaseEvent.seriesPublishedFromHomeEvent(
                       success.series,
                     ));
                 break;

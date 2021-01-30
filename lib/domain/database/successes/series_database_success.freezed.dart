@@ -217,6 +217,7 @@ class _$SeriesAsMapLoadedSCS implements SeriesAsMapLoadedSCS {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(seriesMap);
 
+  @JsonKey(ignore: true)
   @override
   $SeriesAsMapLoadedSCSCopyWith<SeriesAsMapLoadedSCS> get copyWith =>
       _$SeriesAsMapLoadedSCSCopyWithImpl<SeriesAsMapLoadedSCS>(
@@ -329,6 +330,7 @@ abstract class SeriesAsMapLoadedSCS implements SeriesDatabaseSuccess {
       _$SeriesAsMapLoadedSCS;
 
   Map<String, Series> get seriesMap;
+  @JsonKey(ignore: true)
   $SeriesAsMapLoadedSCSCopyWith<SeriesAsMapLoadedSCS> get copyWith;
 }
 
@@ -528,6 +530,7 @@ class _$SeriesCoverUploadedSCS implements SeriesCoverUploadedSCS {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(coverURL);
 
+  @JsonKey(ignore: true)
   @override
   $SeriesCoverUploadedSCSCopyWith<SeriesCoverUploadedSCS> get copyWith =>
       _$SeriesCoverUploadedSCSCopyWithImpl<SeriesCoverUploadedSCS>(
@@ -640,6 +643,7 @@ abstract class SeriesCoverUploadedSCS implements SeriesDatabaseSuccess {
       _$SeriesCoverUploadedSCS;
 
   String get coverURL;
+  @JsonKey(ignore: true)
   $SeriesCoverUploadedSCSCopyWith<SeriesCoverUploadedSCS> get copyWith;
 }
 
@@ -839,6 +843,7 @@ class _$SeriesListLoadedSCS implements SeriesListLoadedSCS {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(seriesList);
 
+  @JsonKey(ignore: true)
   @override
   $SeriesListLoadedSCSCopyWith<SeriesListLoadedSCS> get copyWith =>
       _$SeriesListLoadedSCSCopyWithImpl<SeriesListLoadedSCS>(this, _$identity);
@@ -950,6 +955,7 @@ abstract class SeriesListLoadedSCS implements SeriesDatabaseSuccess {
       _$SeriesListLoadedSCS;
 
   List<Series> get seriesList;
+  @JsonKey(ignore: true)
   $SeriesListLoadedSCSCopyWith<SeriesListLoadedSCS> get copyWith;
 }
 
@@ -1006,6 +1012,7 @@ class _$SeriesLoadedSCS implements SeriesLoadedSCS {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(series);
 
+  @JsonKey(ignore: true)
   @override
   $SeriesLoadedSCSCopyWith<SeriesLoadedSCS> get copyWith =>
       _$SeriesLoadedSCSCopyWithImpl<SeriesLoadedSCS>(this, _$identity);
@@ -1116,6 +1123,7 @@ abstract class SeriesLoadedSCS implements SeriesDatabaseSuccess {
   const factory SeriesLoadedSCS(Series series) = _$SeriesLoadedSCS;
 
   Series get series;
+  @JsonKey(ignore: true)
   $SeriesLoadedSCSCopyWith<SeriesLoadedSCS> get copyWith;
 }
 
@@ -1172,6 +1180,7 @@ class _$SeriesPublishedSCS implements SeriesPublishedSCS {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(series);
 
+  @JsonKey(ignore: true)
   @override
   $SeriesPublishedSCSCopyWith<SeriesPublishedSCS> get copyWith =>
       _$SeriesPublishedSCSCopyWithImpl<SeriesPublishedSCS>(this, _$identity);
@@ -1282,6 +1291,7 @@ abstract class SeriesPublishedSCS implements SeriesDatabaseSuccess {
   const factory SeriesPublishedSCS(Series series) = _$SeriesPublishedSCS;
 
   Series get series;
+  @JsonKey(ignore: true)
   $SeriesPublishedSCSCopyWith<SeriesPublishedSCS> get copyWith;
 }
 
@@ -1339,6 +1349,7 @@ class _$SeriesStatsCountLoadedSCS implements SeriesStatsCountLoadedSCS {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(count);
 
+  @JsonKey(ignore: true)
   @override
   $SeriesStatsCountLoadedSCSCopyWith<SeriesStatsCountLoadedSCS> get copyWith =>
       _$SeriesStatsCountLoadedSCSCopyWithImpl<SeriesStatsCountLoadedSCS>(
@@ -1451,6 +1462,7 @@ abstract class SeriesStatsCountLoadedSCS implements SeriesDatabaseSuccess {
       _$SeriesStatsCountLoadedSCS;
 
   Count get count;
+  @JsonKey(ignore: true)
   $SeriesStatsCountLoadedSCSCopyWith<SeriesStatsCountLoadedSCS> get copyWith;
 }
 
@@ -1652,6 +1664,7 @@ class _$SeriesStatsStatusLoadedSCS implements SeriesStatsStatusLoadedSCS {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(status);
 
+  @JsonKey(ignore: true)
   @override
   $SeriesStatsStatusLoadedSCSCopyWith<SeriesStatsStatusLoadedSCS>
       get copyWith =>
@@ -1765,5 +1778,6 @@ abstract class SeriesStatsStatusLoadedSCS implements SeriesDatabaseSuccess {
       _$SeriesStatsStatusLoadedSCS;
 
   bool get status;
+  @JsonKey(ignore: true)
   $SeriesStatsStatusLoadedSCSCopyWith<SeriesStatsStatusLoadedSCS> get copyWith;
 }

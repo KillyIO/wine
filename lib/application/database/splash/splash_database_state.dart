@@ -17,7 +17,7 @@ abstract class SplashDatabaseState with _$SplashDatabaseState {
         Option<Either<DatabaseFailure, SessionDatabaseSuccess>>
             sessionDatabaseFailureOrSuccessOption,
     @required
-        Option<Either<DatabaseFailure, UserDatabaseSuccess>>
+        Option<Either<UserDatabaseFailure, UserDatabaseSuccess>>
             userDatabaseFailureOrSuccessOption,
   }) = _SplashDatabaseState;
 

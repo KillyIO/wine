@@ -545,6 +545,7 @@ mixin _$SettingsDatabaseState {
       get sessionDatabaseFailureOrSuccessOption;
   Session get session;
 
+  @JsonKey(ignore: true)
   $SettingsDatabaseStateCopyWith<SettingsDatabaseState> get copyWith;
 }
 
@@ -720,6 +721,7 @@ class _$_SettingsDatabaseState implements _SettingsDatabaseState {
           .hash(sessionDatabaseFailureOrSuccessOption) ^
       const DeepCollectionEquality().hash(session);
 
+  @JsonKey(ignore: true)
   @override
   _$SettingsDatabaseStateCopyWith<_SettingsDatabaseState> get copyWith =>
       __$SettingsDatabaseStateCopyWithImpl<_SettingsDatabaseState>(
@@ -754,5 +756,6 @@ abstract class _SettingsDatabaseState implements SettingsDatabaseState {
   @override
   Session get session;
   @override
+  @JsonKey(ignore: true)
   _$SettingsDatabaseStateCopyWith<_SettingsDatabaseState> get copyWith;
 }

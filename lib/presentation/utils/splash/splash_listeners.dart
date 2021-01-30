@@ -25,7 +25,7 @@ class SplashListeners {
                       )),
                   (some) => some.fold(
                     (failure) => failure.maybeMap(
-                      serverError: (_) async =>
+                      serverFailure: (_) async =>
                           _splashAuthenticationMethods.restartSplash(
                         context,
                         'An unexpected error occured!',
@@ -33,7 +33,7 @@ class SplashListeners {
                       orElse: () => null,
                     ),
                     (success) {
-                      if (success is UserSignedInAnonymouslySCS) {
+                      if (success is UserSignedInAnonymouslySuccess) {
                         context
                             .read<SplashDatabaseBloc>()
                             .add(const SplashDatabaseEvent.authenticatedEVT(
@@ -54,20 +54,19 @@ class SplashListeners {
             () => null,
             (some) => some.fold(
               (failure) => failure.maybeMap(
-                failedToDeleteConfigFLR: (_) {},
-                failedToFetchConfigFLR: (_) {},
-                failedToInitializeConfigFLR: (_) {},
-                failedToUpdateConfigFLR: (_) {},
+                deleteConfigFailure: (_) {},
+                initializeConfigFailure: (_) {},
+                updateConfigFailure: (_) {},
                 orElse: () => null,
               ),
               (success) => success.map(
-                configDeletedSCS: (_) {},
-                configFetchedSCS: (_) async =>
+                configDeletedSuccess: (_) {},
+                configFetchedSuccess: (_) async =>
                     await ExtendedNavigator.root.replace(Routes.homePage),
                 // TODO replace route for onboarding route
-                configInitializedSCS: (_) async =>
+                configInitializedSuccess: (_) async =>
                     await ExtendedNavigator.root.replace(Routes.homePage),
-                configUpdatedSCS: (_) {},
+                configUpdatedSuccess: (_) {},
               ),
             ),
           );

@@ -137,6 +137,7 @@ class _$AccountCreated implements AccountCreated {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(user);
 
+  @JsonKey(ignore: true)
   @override
   $AccountCreatedCopyWith<AccountCreated> get copyWith =>
       _$AccountCreatedCopyWithImpl<AccountCreated>(this, _$identity);
@@ -202,6 +203,7 @@ abstract class AccountCreated implements CreateAccountDatabaseEvent {
   const factory AccountCreated(User user) = _$AccountCreated;
 
   User get user;
+  @JsonKey(ignore: true)
   $AccountCreatedCopyWith<AccountCreated> get copyWith;
 }
 
@@ -258,6 +260,7 @@ class _$UserDetailsSavedEVT implements UserDetailsSavedEVT {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(user);
 
+  @JsonKey(ignore: true)
   @override
   $UserDetailsSavedEVTCopyWith<UserDetailsSavedEVT> get copyWith =>
       _$UserDetailsSavedEVTCopyWithImpl<UserDetailsSavedEVT>(this, _$identity);
@@ -323,6 +326,7 @@ abstract class UserDetailsSavedEVT implements CreateAccountDatabaseEvent {
   const factory UserDetailsSavedEVT(User user) = _$UserDetailsSavedEVT;
 
   User get user;
+  @JsonKey(ignore: true)
   $UserDetailsSavedEVTCopyWith<UserDetailsSavedEVT> get copyWith;
 }
 
@@ -435,7 +439,7 @@ class _$CreateAccountDatabaseStateTearOff {
           Option<Either<DatabaseFailure, SessionDatabaseSuccess>>
               sessionDatabaseFailureOrSuccessOption,
       @required
-          Option<Either<DatabaseFailure, UserDatabaseSuccess>>
+          Option<Either<UserDatabaseFailure, UserDatabaseSuccess>>
               userDatabaseFailureOrSuccessOption,
       @required
           String email}) {
@@ -458,10 +462,11 @@ mixin _$CreateAccountDatabaseState {
   bool get isUpdating;
   Option<Either<DatabaseFailure, SessionDatabaseSuccess>>
       get sessionDatabaseFailureOrSuccessOption;
-  Option<Either<DatabaseFailure, UserDatabaseSuccess>>
+  Option<Either<UserDatabaseFailure, UserDatabaseSuccess>>
       get userDatabaseFailureOrSuccessOption;
   String get email;
 
+  @JsonKey(ignore: true)
   $CreateAccountDatabaseStateCopyWith<CreateAccountDatabaseState> get copyWith;
 }
 
@@ -474,7 +479,7 @@ abstract class $CreateAccountDatabaseStateCopyWith<$Res> {
       {bool isUpdating,
       Option<Either<DatabaseFailure, SessionDatabaseSuccess>>
           sessionDatabaseFailureOrSuccessOption,
-      Option<Either<DatabaseFailure, UserDatabaseSuccess>>
+      Option<Either<UserDatabaseFailure, UserDatabaseSuccess>>
           userDatabaseFailureOrSuccessOption,
       String email});
 }
@@ -507,7 +512,7 @@ class _$CreateAccountDatabaseStateCopyWithImpl<$Res>
           userDatabaseFailureOrSuccessOption == freezed
               ? _value.userDatabaseFailureOrSuccessOption
               : userDatabaseFailureOrSuccessOption
-                  as Option<Either<DatabaseFailure, UserDatabaseSuccess>>,
+                  as Option<Either<UserDatabaseFailure, UserDatabaseSuccess>>,
       email: email == freezed ? _value.email : email as String,
     ));
   }
@@ -525,7 +530,7 @@ abstract class _$CreateAccountDatabaseStateCopyWith<$Res>
       {bool isUpdating,
       Option<Either<DatabaseFailure, SessionDatabaseSuccess>>
           sessionDatabaseFailureOrSuccessOption,
-      Option<Either<DatabaseFailure, UserDatabaseSuccess>>
+      Option<Either<UserDatabaseFailure, UserDatabaseSuccess>>
           userDatabaseFailureOrSuccessOption,
       String email});
 }
@@ -561,7 +566,7 @@ class __$CreateAccountDatabaseStateCopyWithImpl<$Res>
           userDatabaseFailureOrSuccessOption == freezed
               ? _value.userDatabaseFailureOrSuccessOption
               : userDatabaseFailureOrSuccessOption
-                  as Option<Either<DatabaseFailure, UserDatabaseSuccess>>,
+                  as Option<Either<UserDatabaseFailure, UserDatabaseSuccess>>,
       email: email == freezed ? _value.email : email as String,
     ));
   }
@@ -585,7 +590,7 @@ class _$_CreateAccountDatabaseState implements _CreateAccountDatabaseState {
   final Option<Either<DatabaseFailure, SessionDatabaseSuccess>>
       sessionDatabaseFailureOrSuccessOption;
   @override
-  final Option<Either<DatabaseFailure, UserDatabaseSuccess>>
+  final Option<Either<UserDatabaseFailure, UserDatabaseSuccess>>
       userDatabaseFailureOrSuccessOption;
   @override
   final String email;
@@ -625,6 +630,7 @@ class _$_CreateAccountDatabaseState implements _CreateAccountDatabaseState {
       const DeepCollectionEquality().hash(userDatabaseFailureOrSuccessOption) ^
       const DeepCollectionEquality().hash(email);
 
+  @JsonKey(ignore: true)
   @override
   _$CreateAccountDatabaseStateCopyWith<_CreateAccountDatabaseState>
       get copyWith => __$CreateAccountDatabaseStateCopyWithImpl<
@@ -640,7 +646,7 @@ abstract class _CreateAccountDatabaseState
           Option<Either<DatabaseFailure, SessionDatabaseSuccess>>
               sessionDatabaseFailureOrSuccessOption,
       @required
-          Option<Either<DatabaseFailure, UserDatabaseSuccess>>
+          Option<Either<UserDatabaseFailure, UserDatabaseSuccess>>
               userDatabaseFailureOrSuccessOption,
       @required
           String email}) = _$_CreateAccountDatabaseState;
@@ -651,11 +657,12 @@ abstract class _CreateAccountDatabaseState
   Option<Either<DatabaseFailure, SessionDatabaseSuccess>>
       get sessionDatabaseFailureOrSuccessOption;
   @override
-  Option<Either<DatabaseFailure, UserDatabaseSuccess>>
+  Option<Either<UserDatabaseFailure, UserDatabaseSuccess>>
       get userDatabaseFailureOrSuccessOption;
   @override
   String get email;
   @override
+  @JsonKey(ignore: true)
   _$CreateAccountDatabaseStateCopyWith<_CreateAccountDatabaseState>
       get copyWith;
 }

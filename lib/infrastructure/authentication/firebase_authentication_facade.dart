@@ -1,8 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
 import 'package:firebase_auth/firebase_auth.dart' as auth;
-import 'package:flutter/foundation.dart';
-import 'package:flutter/services.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:injectable/injectable.dart';
 
@@ -32,18 +30,19 @@ class FirebaseAuthenticationFacade implements IAuthenticationFacade {
   @override
   Future<String> getCurrentUserUID() async {
     final currentUser = _firebaseAuth.currentUser;
-    return currentUser.uid;
+    return currentUser?.uid;
   }
 
   @override
   Future<Either<AuthenticationFailure, AuthenticationSuccess>>
-      convertWithEmailAndPassword({
-    @required EmailAddress emailAddress,
-    @required Password password,
-  }) async {
+      convertWithEmailAndPassword(
+    EmailAddress emailAddress,
+    Password password,
+  ) async {
     try {
-      final emailAddressStr = emailAddress.getOrCrash();
-      final passwordStr = password.getOrCrash();
+      final emailAddressStr =
+          emailAddress.value.getOrElse(() => 'INVALID EMAIL ADDRESS');
+      final passwordStr = password.value.getOrElse(() => 'INVALID PASSWORD');
 
       var currentUser = _firebaseAuth.currentUser;
 
@@ -58,13 +57,14 @@ class FirebaseAuthenticationFacade implements IAuthenticationFacade {
       await currentUser.sendEmailVerification();
 
       final user = User.fromFirebaseUser(currentUser);
-      return right(AuthenticationSuccess.userAuthenticatedSCS(user));
-    } on PlatformException catch (e) {
-      if (e.code == 'ERROR_EMAIL_ALREADY_IN_USE') {
-        return left(const AuthenticationFailure.emailAlreadyInUse());
-      } else {
-        return left(const AuthenticationFailure.serverError());
+      return right(AuthenticationSuccess.userAuthenticatedSuccess(user));
+    } on FirebaseException catch (e) {
+      if (e.code == 'email-already-in-use') {
+        return left(const AuthenticationFailure.emailAlreadyInUseFailure());
       }
+      return left(const AuthenticationFailure.serverFailure());
+    } catch (_) {
+      return left(const AuthenticationFailure.unexpectedFailure());
     }
   }
 
@@ -76,19 +76,22 @@ class FirebaseAuthenticationFacade implements IAuthenticationFacade {
 
   @override
   Future<Either<AuthenticationFailure, AuthenticationSuccess>>
-      isUsernameAvailable({
-    Username username,
-  }) async {
-    final usernameStr = username.getOrCrash();
+      isUsernameAvailable(Username username) async {
+    try {
+      final usernameStr = username.value.getOrElse(() => 'INVALID USERNAME');
 
-    final documentSnapshot = await _firestore
-        .collection(Paths.usernameUIDMapPath)
-        .doc(usernameStr)
-        .get();
-    if (documentSnapshot != null && documentSnapshot.exists) {
-      return left(const AuthenticationFailure.usernameAlreadyInUse());
-    } else {
-      return right(const AuthenticationSuccess.usernameAvailableSCS());
+      final documentSnapshot = await _firestore
+          .collection(Paths.usernameUIDMapPath)
+          .doc(usernameStr)
+          .get();
+      if (documentSnapshot != null && documentSnapshot.exists) {
+        return left(const AuthenticationFailure.usernameAlreadyInUseFailure());
+      }
+      return right(const AuthenticationSuccess.usernameAvailableSuccess());
+    } on FirebaseException catch (_) {
+      return left(const AuthenticationFailure.serverFailure());
+    } catch (_) {
+      return left(const AuthenticationFailure.unexpectedFailure());
     }
   }
 
@@ -101,13 +104,20 @@ class FirebaseAuthenticationFacade implements IAuthenticationFacade {
   @override
   Future<Either<AuthenticationFailure, AuthenticationSuccess>>
       resendVerificationEmail() async {
-    final currentUser = _firebaseAuth.currentUser;
+    try {
+      final currentUser = _firebaseAuth.currentUser;
 
-    if (currentUser != null) {
-      await currentUser.sendEmailVerification();
-      return right(const AuthenticationSuccess.verificationEmailSentSCS());
+      if (currentUser != null) {
+        await currentUser.sendEmailVerification();
+        return right(
+            const AuthenticationSuccess.verificationEmailSentSuccess());
+      }
+      return left(const AuthenticationFailure.unexpectedFailure());
+    } on FirebaseException catch (_) {
+      return left(const AuthenticationFailure.serverFailure());
+    } catch (_) {
+      return left(const AuthenticationFailure.unexpectedFailure());
     }
-    return left(const AuthenticationFailure.serverError());
   }
 
   @override
@@ -115,21 +125,26 @@ class FirebaseAuthenticationFacade implements IAuthenticationFacade {
       signInAnonymously() async {
     try {
       await _firebaseAuth.signInAnonymously();
-      return right(const AuthenticationSuccess.userSignedInAnonymouslySCS());
-    } on PlatformException catch (_) {
-      return left(const AuthenticationFailure.serverError());
+      return right(
+        const AuthenticationSuccess.userSignedInAnonymouslySuccess(),
+      );
+    } on FirebaseException catch (_) {
+      return left(const AuthenticationFailure.serverFailure());
+    } catch (_) {
+      return left(const AuthenticationFailure.unexpectedFailure());
     }
   }
 
   @override
   Future<Either<AuthenticationFailure, AuthenticationSuccess>>
-      signInWithEmailAndPassword({
-    @required EmailAddress emailAddress,
-    @required Password password,
-  }) async {
+      signInWithEmailAndPassword(
+    EmailAddress emailAddress,
+    Password password,
+  ) async {
     try {
-      final emailAddressStr = emailAddress.getOrCrash();
-      final passwordStr = password.getOrCrash();
+      final emailAddressStr =
+          emailAddress.value.getOrElse(() => 'INVALID EMAIL ADDRESS');
+      final passwordStr = password.value.getOrElse(() => 'INVALID PASSWORD');
 
       final anonymousUser = _firebaseAuth.currentUser;
       await anonymousUser?.delete();
@@ -142,18 +157,19 @@ class FirebaseAuthenticationFacade implements IAuthenticationFacade {
       final currentUser = _firebaseAuth.currentUser;
       final user = User.fromFirebaseUser(currentUser);
 
-      return right(AuthenticationSuccess.userAuthenticatedSCS(user));
+      return right(AuthenticationSuccess.userAuthenticatedSuccess(user));
     } on FirebaseException catch (e) {
       await _firebaseAuth.signInAnonymously();
 
       if (e.code == 'wrong-password' || e.code == 'user-not-found') {
         return left(
-            const AuthenticationFailure.invalidEmailAndPasswordCombination());
-      } else {
-        return left(const AuthenticationFailure.serverError());
+          const AuthenticationFailure
+              .invalidEmailAndPasswordCombinationFailure(),
+        );
       }
-    } catch (e) {
-      return left(const AuthenticationFailure.serverError());
+      return left(const AuthenticationFailure.serverFailure());
+    } catch (_) {
+      return left(const AuthenticationFailure.unexpectedFailure());
     }
   }
 
@@ -165,7 +181,7 @@ class FirebaseAuthenticationFacade implements IAuthenticationFacade {
 
       final googleAccount = await _googleSignIn.signIn();
       if (googleAccount == null) {
-        return left(const AuthenticationFailure.cancelledByUser());
+        return left(const AuthenticationFailure.cancelledByUserFailure());
       }
 
       final googleAuthentication = await googleAccount.authentication;
@@ -184,10 +200,14 @@ class FirebaseAuthenticationFacade implements IAuthenticationFacade {
             authCredential,
           ));
         }
-        return left(const AuthenticationFailure.serverError());
+        return left(const AuthenticationFailure.serverFailure());
+      } catch (_) {
+        return left(const AuthenticationFailure.unexpectedFailure());
       }
-    } catch (e) {
-      return left(const AuthenticationFailure.serverError());
+    } on FirebaseException catch (_) {
+      return left(const AuthenticationFailure.serverFailure());
+    } catch (_) {
+      return left(const AuthenticationFailure.unexpectedFailure());
     }
   }
 
@@ -201,7 +221,7 @@ class FirebaseAuthenticationFacade implements IAuthenticationFacade {
     final anonymousUserTmp = _firebaseAuth.currentUser;
 
     final user = User.fromFirebaseUser(anonymousUserTmp);
-    return AuthenticationSuccess.userAuthenticatedSCS(user);
+    return AuthenticationSuccess.userAuthenticatedSuccess(user);
   }
 
   Future<AuthenticationSuccess> _signInWithGoogleCredentialAlreadyInUse(
@@ -219,7 +239,7 @@ class FirebaseAuthenticationFacade implements IAuthenticationFacade {
     currentUser = _firebaseAuth.currentUser;
 
     final user = User.fromFirebaseUser(currentUser);
-    return AuthenticationSuccess.userAuthenticatedSCS(user);
+    return AuthenticationSuccess.userAuthenticatedSuccess(user);
   }
 
   Future<void> _updateUserInfo(
@@ -243,13 +263,15 @@ class FirebaseAuthenticationFacade implements IAuthenticationFacade {
 
       final currentUser = _firebaseAuth.currentUser;
       if (currentUser != null) {
-        return left(const AuthenticationFailure.unableToSignOut());
+        return left(const AuthenticationFailure.unableToSignOutFailure());
       }
 
       await _firebaseAuth.signInAnonymously();
-      return right(const AuthenticationSuccess.userSignedOutSCS());
-    } on PlatformException catch (_) {
-      return left(const AuthenticationFailure.serverError());
+      return right(const AuthenticationSuccess.userSignedOutSuccess());
+    } on FirebaseException catch (_) {
+      return left(const AuthenticationFailure.serverFailure());
+    } catch (_) {
+      return left(const AuthenticationFailure.unexpectedFailure());
     }
   }
 }

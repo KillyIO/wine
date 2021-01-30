@@ -1,7 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:equatable/equatable.dart';
 
 /// @nodoc
-class Chapter {
+class Chapter extends Equatable {
   /// @nodoc
   Chapter({
     this.authorUID,
@@ -73,55 +74,55 @@ class Chapter {
   }
 
   /// @nodoc
-  bool isLastChapter;
+  final bool isLastChapter;
 
   /// @nodoc
-  bool isNSFW;
+  final bool isNSFW;
 
   /// @nodoc
-  int createdAt;
+  final int createdAt;
 
   /// @nodoc
-  int index;
+  final int index;
 
   /// @nodoc
-  int updatedAt;
+  final int updatedAt;
 
   /// @nodoc
-  String authorUID;
+  final String authorUID;
 
   /// @nodoc
-  String authorUsername;
+  final String authorUsername;
 
   /// @nodoc
-  String copyrights;
+  final String copyrights;
 
   /// @nodoc
-  String coverURL;
+  final String coverURL;
 
   /// @nodoc
-  String genre;
+  final String genre;
 
   /// @nodoc
-  String genreOptional;
+  final String genreOptional;
 
   /// @nodoc
-  String language;
+  final String language;
 
   /// @nodoc
-  String previousChapterUID;
+  final String previousChapterUID;
 
   /// @nodoc
-  String seriesUID;
+  final String seriesUID;
 
   /// @nodoc
-  String story;
+  final String story;
 
   /// @nodoc
-  String title;
+  final String title;
 
   /// @nodoc
-  String uid;
+  final String uid;
 
   /// @nodoc
   Chapter copyWith({
@@ -188,74 +189,10 @@ class Chapter {
   }
 
   @override
-  String toString() {
-    return '''
-      Chapter(
-        authorUID: $authorUID,
-        authorUsername: $authorUsername,
-        copyrights: $copyrights,
-        coverURL: $coverURL,
-        createdAt: $createdAt,
-        genre: $genre,
-        genreOptional; $genreOptional,
-        index: $index,
-        isLastChapter: $isLastChapter,
-        isNSFW: $isNSFW,
-        language: $language,
-        previousChapterUID: $previousChapterUID,
-        seriesUID: $seriesUID,
-        story: $story,
-        title: $title,
-        uid: $uid,
-        updatedAt: $updatedAt,
-      )
-    ''';
-  }
+  List<Object> get props => [authorUID, uid, seriesUID];
 
   @override
-  bool operator ==(Object other) {
-    if (identical(this, other)) return true;
-
-    return other is Chapter &&
-        other.authorUID == authorUID &&
-        other.authorUsername == authorUsername &&
-        other.copyrights == copyrights &&
-        other.coverURL == coverURL &&
-        other.createdAt == createdAt &&
-        other.genre == genre &&
-        other.genreOptional == genreOptional &&
-        other.index == index &&
-        other.isLastChapter == isLastChapter &&
-        other.isNSFW == isNSFW &&
-        other.language == language &&
-        other.previousChapterUID == previousChapterUID &&
-        other.seriesUID == seriesUID &&
-        other.story == story &&
-        other.title == title &&
-        other.uid == uid &&
-        other.updatedAt == updatedAt;
-  }
-
-  @override
-  int get hashCode {
-    return authorUID.hashCode ^
-        authorUsername.hashCode ^
-        copyrights.hashCode ^
-        coverURL.hashCode ^
-        createdAt.hashCode ^
-        genre.hashCode ^
-        genreOptional.hashCode ^
-        index.hashCode ^
-        isLastChapter.hashCode ^
-        isNSFW.hashCode ^
-        language.hashCode ^
-        previousChapterUID.hashCode ^
-        seriesUID.hashCode ^
-        story.hashCode ^
-        title.hashCode ^
-        uid.hashCode ^
-        updatedAt.hashCode;
-  }
+  bool get stringify => true;
 
   /// @nodoc
   bool get isEmpty {

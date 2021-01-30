@@ -1,5 +1,4 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:wine/domain/models/count.dart';
 import 'package:wine/domain/models/user.dart';
 
 part 'user_database_success.freezed.dart';
@@ -8,31 +7,14 @@ part 'user_database_success.freezed.dart';
 @freezed
 abstract class UserDatabaseSuccess with _$UserDatabaseSuccess {
   /// @nodoc
-  const factory UserDatabaseSuccess.followCountLoadedSCS(Count count) =
-      FollowCountLoadedSCS;
+  const factory UserDatabaseSuccess.userDetailsSavedSuccess(User user) =
+      UserDetailsSavedSuccess;
 
   /// @nodoc
-  const factory UserDatabaseSuccess.followCountUpdatedSCS() =
-      FollowCountUpdatedSCS;
+  const factory UserDatabaseSuccess.userLoadedSuccess(User user) =
+      UserLoadedSuccess;
 
   /// @nodoc
-  const factory UserDatabaseSuccess.followingStatusLoadedSCS({
-    @required bool status,
-  }) = FollowingStatusLoadedSCS;
-
-  /// @nodoc
-  const factory UserDatabaseSuccess.userAsMapLoadedSCS(
-    Map<String, User> usersMap,
-  ) = UserAsMapLoadedSCS;
-
-  /// @nodoc
-  const factory UserDatabaseSuccess.userDetailsSavedSCS(User user) =
-      UserDetailsSavedSCS;
-
-  /// @nodoc
-  const factory UserDatabaseSuccess.userLoadedSCS(User user) = UserLoadedSCS;
-
-  /// @nodoc
-  const factory UserDatabaseSuccess.usersLoadedSCS(List<User> users) =
-      UsersLoadedSCS;
+  const factory UserDatabaseSuccess.usernameSavedSuccess(String username) =
+      UsernameSavedSuccess;
 }

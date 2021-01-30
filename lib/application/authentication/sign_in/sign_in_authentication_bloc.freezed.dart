@@ -151,6 +151,7 @@ class _$EmailChangedEVT implements EmailChangedEVT {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(emailStr);
 
+  @JsonKey(ignore: true)
   @override
   $EmailChangedEVTCopyWith<EmailChangedEVT> get copyWith =>
       _$EmailChangedEVTCopyWithImpl<EmailChangedEVT>(this, _$identity);
@@ -226,6 +227,7 @@ abstract class EmailChangedEVT implements SignInAuthenticationEvent {
   const factory EmailChangedEVT(String emailStr) = _$EmailChangedEVT;
 
   String get emailStr;
+  @JsonKey(ignore: true)
   $EmailChangedEVTCopyWith<EmailChangedEVT> get copyWith;
 }
 
@@ -283,6 +285,7 @@ class _$PasswordChangedEVT implements PasswordChangedEVT {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(passwordStr);
 
+  @JsonKey(ignore: true)
   @override
   $PasswordChangedEVTCopyWith<PasswordChangedEVT> get copyWith =>
       _$PasswordChangedEVTCopyWithImpl<PasswordChangedEVT>(this, _$identity);
@@ -358,6 +361,7 @@ abstract class PasswordChangedEVT implements SignInAuthenticationEvent {
   const factory PasswordChangedEVT(String passwordStr) = _$PasswordChangedEVT;
 
   String get passwordStr;
+  @JsonKey(ignore: true)
   $PasswordChangedEVTCopyWith<PasswordChangedEVT> get copyWith;
 }
 
@@ -623,6 +627,7 @@ mixin _$SignInAuthenticationState {
       get authFailureOrSuccessOption;
   Password get password;
 
+  @JsonKey(ignore: true)
   $SignInAuthenticationStateCopyWith<SignInAuthenticationState> get copyWith;
 }
 
@@ -792,6 +797,7 @@ class _$_SignInAuthenticationState implements _SignInAuthenticationState {
       const DeepCollectionEquality().hash(authFailureOrSuccessOption) ^
       const DeepCollectionEquality().hash(password);
 
+  @JsonKey(ignore: true)
   @override
   _$SignInAuthenticationStateCopyWith<_SignInAuthenticationState>
       get copyWith =>
@@ -825,5 +831,6 @@ abstract class _SignInAuthenticationState implements SignInAuthenticationState {
   @override
   Password get password;
   @override
+  @JsonKey(ignore: true)
   _$SignInAuthenticationStateCopyWith<_SignInAuthenticationState> get copyWith;
 }

@@ -14,49 +14,23 @@ class _$UserDatabaseSuccessTearOff {
   const _$UserDatabaseSuccessTearOff();
 
 // ignore: unused_element
-  FollowCountLoadedSCS followCountLoadedSCS(Count count) {
-    return FollowCountLoadedSCS(
-      count,
-    );
-  }
-
-// ignore: unused_element
-  FollowCountUpdatedSCS followCountUpdatedSCS() {
-    return const FollowCountUpdatedSCS();
-  }
-
-// ignore: unused_element
-  FollowingStatusLoadedSCS followingStatusLoadedSCS({@required bool status}) {
-    return FollowingStatusLoadedSCS(
-      status: status,
-    );
-  }
-
-// ignore: unused_element
-  UserAsMapLoadedSCS userAsMapLoadedSCS(Map<String, User> usersMap) {
-    return UserAsMapLoadedSCS(
-      usersMap,
-    );
-  }
-
-// ignore: unused_element
-  UserDetailsSavedSCS userDetailsSavedSCS(User user) {
-    return UserDetailsSavedSCS(
+  UserDetailsSavedSuccess userDetailsSavedSuccess(User user) {
+    return UserDetailsSavedSuccess(
       user,
     );
   }
 
 // ignore: unused_element
-  UserLoadedSCS userLoadedSCS(User user) {
-    return UserLoadedSCS(
+  UserLoadedSuccess userLoadedSuccess(User user) {
+    return UserLoadedSuccess(
       user,
     );
   }
 
 // ignore: unused_element
-  UsersLoadedSCS usersLoadedSCS(List<User> users) {
-    return UsersLoadedSCS(
-      users,
+  UsernameSavedSuccess usernameSavedSuccess(String username) {
+    return UsernameSavedSuccess(
+      username,
     );
   }
 }
@@ -69,44 +43,28 @@ const $UserDatabaseSuccess = _$UserDatabaseSuccessTearOff();
 mixin _$UserDatabaseSuccess {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
-    @required TResult followCountLoadedSCS(Count count),
-    @required TResult followCountUpdatedSCS(),
-    @required TResult followingStatusLoadedSCS(bool status),
-    @required TResult userAsMapLoadedSCS(Map<String, User> usersMap),
-    @required TResult userDetailsSavedSCS(User user),
-    @required TResult userLoadedSCS(User user),
-    @required TResult usersLoadedSCS(List<User> users),
+    @required TResult userDetailsSavedSuccess(User user),
+    @required TResult userLoadedSuccess(User user),
+    @required TResult usernameSavedSuccess(String username),
   });
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
-    TResult followCountLoadedSCS(Count count),
-    TResult followCountUpdatedSCS(),
-    TResult followingStatusLoadedSCS(bool status),
-    TResult userAsMapLoadedSCS(Map<String, User> usersMap),
-    TResult userDetailsSavedSCS(User user),
-    TResult userLoadedSCS(User user),
-    TResult usersLoadedSCS(List<User> users),
+    TResult userDetailsSavedSuccess(User user),
+    TResult userLoadedSuccess(User user),
+    TResult usernameSavedSuccess(String username),
     @required TResult orElse(),
   });
   @optionalTypeArgs
   TResult map<TResult extends Object>({
-    @required TResult followCountLoadedSCS(FollowCountLoadedSCS value),
-    @required TResult followCountUpdatedSCS(FollowCountUpdatedSCS value),
-    @required TResult followingStatusLoadedSCS(FollowingStatusLoadedSCS value),
-    @required TResult userAsMapLoadedSCS(UserAsMapLoadedSCS value),
-    @required TResult userDetailsSavedSCS(UserDetailsSavedSCS value),
-    @required TResult userLoadedSCS(UserLoadedSCS value),
-    @required TResult usersLoadedSCS(UsersLoadedSCS value),
+    @required TResult userDetailsSavedSuccess(UserDetailsSavedSuccess value),
+    @required TResult userLoadedSuccess(UserLoadedSuccess value),
+    @required TResult usernameSavedSuccess(UsernameSavedSuccess value),
   });
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
-    TResult followCountLoadedSCS(FollowCountLoadedSCS value),
-    TResult followCountUpdatedSCS(FollowCountUpdatedSCS value),
-    TResult followingStatusLoadedSCS(FollowingStatusLoadedSCS value),
-    TResult userAsMapLoadedSCS(UserAsMapLoadedSCS value),
-    TResult userDetailsSavedSCS(UserDetailsSavedSCS value),
-    TResult userLoadedSCS(UserLoadedSCS value),
-    TResult usersLoadedSCS(UsersLoadedSCS value),
+    TResult userDetailsSavedSuccess(UserDetailsSavedSuccess value),
+    TResult userLoadedSuccess(UserLoadedSuccess value),
+    TResult usernameSavedSuccess(UsernameSavedSuccess value),
     @required TResult orElse(),
   });
 }
@@ -129,99 +87,88 @@ class _$UserDatabaseSuccessCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class $FollowCountLoadedSCSCopyWith<$Res> {
-  factory $FollowCountLoadedSCSCopyWith(FollowCountLoadedSCS value,
-          $Res Function(FollowCountLoadedSCS) then) =
-      _$FollowCountLoadedSCSCopyWithImpl<$Res>;
-  $Res call({Count count});
+abstract class $UserDetailsSavedSuccessCopyWith<$Res> {
+  factory $UserDetailsSavedSuccessCopyWith(UserDetailsSavedSuccess value,
+          $Res Function(UserDetailsSavedSuccess) then) =
+      _$UserDetailsSavedSuccessCopyWithImpl<$Res>;
+  $Res call({User user});
 }
 
 /// @nodoc
-class _$FollowCountLoadedSCSCopyWithImpl<$Res>
+class _$UserDetailsSavedSuccessCopyWithImpl<$Res>
     extends _$UserDatabaseSuccessCopyWithImpl<$Res>
-    implements $FollowCountLoadedSCSCopyWith<$Res> {
-  _$FollowCountLoadedSCSCopyWithImpl(
-      FollowCountLoadedSCS _value, $Res Function(FollowCountLoadedSCS) _then)
-      : super(_value, (v) => _then(v as FollowCountLoadedSCS));
+    implements $UserDetailsSavedSuccessCopyWith<$Res> {
+  _$UserDetailsSavedSuccessCopyWithImpl(UserDetailsSavedSuccess _value,
+      $Res Function(UserDetailsSavedSuccess) _then)
+      : super(_value, (v) => _then(v as UserDetailsSavedSuccess));
 
   @override
-  FollowCountLoadedSCS get _value => super._value as FollowCountLoadedSCS;
+  UserDetailsSavedSuccess get _value => super._value as UserDetailsSavedSuccess;
 
   @override
   $Res call({
-    Object count = freezed,
+    Object user = freezed,
   }) {
-    return _then(FollowCountLoadedSCS(
-      count == freezed ? _value.count : count as Count,
+    return _then(UserDetailsSavedSuccess(
+      user == freezed ? _value.user : user as User,
     ));
   }
 }
 
 /// @nodoc
-class _$FollowCountLoadedSCS implements FollowCountLoadedSCS {
-  const _$FollowCountLoadedSCS(this.count) : assert(count != null);
+class _$UserDetailsSavedSuccess implements UserDetailsSavedSuccess {
+  const _$UserDetailsSavedSuccess(this.user) : assert(user != null);
 
   @override
-  final Count count;
+  final User user;
 
   @override
   String toString() {
-    return 'UserDatabaseSuccess.followCountLoadedSCS(count: $count)';
+    return 'UserDatabaseSuccess.userDetailsSavedSuccess(user: $user)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is FollowCountLoadedSCS &&
-            (identical(other.count, count) ||
-                const DeepCollectionEquality().equals(other.count, count)));
+        (other is UserDetailsSavedSuccess &&
+            (identical(other.user, user) ||
+                const DeepCollectionEquality().equals(other.user, user)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(count);
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(user);
 
+  @JsonKey(ignore: true)
   @override
-  $FollowCountLoadedSCSCopyWith<FollowCountLoadedSCS> get copyWith =>
-      _$FollowCountLoadedSCSCopyWithImpl<FollowCountLoadedSCS>(
+  $UserDetailsSavedSuccessCopyWith<UserDetailsSavedSuccess> get copyWith =>
+      _$UserDetailsSavedSuccessCopyWithImpl<UserDetailsSavedSuccess>(
           this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
-    @required TResult followCountLoadedSCS(Count count),
-    @required TResult followCountUpdatedSCS(),
-    @required TResult followingStatusLoadedSCS(bool status),
-    @required TResult userAsMapLoadedSCS(Map<String, User> usersMap),
-    @required TResult userDetailsSavedSCS(User user),
-    @required TResult userLoadedSCS(User user),
-    @required TResult usersLoadedSCS(List<User> users),
+    @required TResult userDetailsSavedSuccess(User user),
+    @required TResult userLoadedSuccess(User user),
+    @required TResult usernameSavedSuccess(String username),
   }) {
-    assert(followCountLoadedSCS != null);
-    assert(followCountUpdatedSCS != null);
-    assert(followingStatusLoadedSCS != null);
-    assert(userAsMapLoadedSCS != null);
-    assert(userDetailsSavedSCS != null);
-    assert(userLoadedSCS != null);
-    assert(usersLoadedSCS != null);
-    return followCountLoadedSCS(count);
+    assert(userDetailsSavedSuccess != null);
+    assert(userLoadedSuccess != null);
+    assert(usernameSavedSuccess != null);
+    return userDetailsSavedSuccess(user);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
-    TResult followCountLoadedSCS(Count count),
-    TResult followCountUpdatedSCS(),
-    TResult followingStatusLoadedSCS(bool status),
-    TResult userAsMapLoadedSCS(Map<String, User> usersMap),
-    TResult userDetailsSavedSCS(User user),
-    TResult userLoadedSCS(User user),
-    TResult usersLoadedSCS(List<User> users),
+    TResult userDetailsSavedSuccess(User user),
+    TResult userLoadedSuccess(User user),
+    TResult usernameSavedSuccess(String username),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (followCountLoadedSCS != null) {
-      return followCountLoadedSCS(count);
+    if (userDetailsSavedSuccess != null) {
+      return userDetailsSavedSuccess(user);
     }
     return orElse();
   }
@@ -229,268 +176,122 @@ class _$FollowCountLoadedSCS implements FollowCountLoadedSCS {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object>({
-    @required TResult followCountLoadedSCS(FollowCountLoadedSCS value),
-    @required TResult followCountUpdatedSCS(FollowCountUpdatedSCS value),
-    @required TResult followingStatusLoadedSCS(FollowingStatusLoadedSCS value),
-    @required TResult userAsMapLoadedSCS(UserAsMapLoadedSCS value),
-    @required TResult userDetailsSavedSCS(UserDetailsSavedSCS value),
-    @required TResult userLoadedSCS(UserLoadedSCS value),
-    @required TResult usersLoadedSCS(UsersLoadedSCS value),
+    @required TResult userDetailsSavedSuccess(UserDetailsSavedSuccess value),
+    @required TResult userLoadedSuccess(UserLoadedSuccess value),
+    @required TResult usernameSavedSuccess(UsernameSavedSuccess value),
   }) {
-    assert(followCountLoadedSCS != null);
-    assert(followCountUpdatedSCS != null);
-    assert(followingStatusLoadedSCS != null);
-    assert(userAsMapLoadedSCS != null);
-    assert(userDetailsSavedSCS != null);
-    assert(userLoadedSCS != null);
-    assert(usersLoadedSCS != null);
-    return followCountLoadedSCS(this);
+    assert(userDetailsSavedSuccess != null);
+    assert(userLoadedSuccess != null);
+    assert(usernameSavedSuccess != null);
+    return userDetailsSavedSuccess(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
-    TResult followCountLoadedSCS(FollowCountLoadedSCS value),
-    TResult followCountUpdatedSCS(FollowCountUpdatedSCS value),
-    TResult followingStatusLoadedSCS(FollowingStatusLoadedSCS value),
-    TResult userAsMapLoadedSCS(UserAsMapLoadedSCS value),
-    TResult userDetailsSavedSCS(UserDetailsSavedSCS value),
-    TResult userLoadedSCS(UserLoadedSCS value),
-    TResult usersLoadedSCS(UsersLoadedSCS value),
+    TResult userDetailsSavedSuccess(UserDetailsSavedSuccess value),
+    TResult userLoadedSuccess(UserLoadedSuccess value),
+    TResult usernameSavedSuccess(UsernameSavedSuccess value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (followCountLoadedSCS != null) {
-      return followCountLoadedSCS(this);
+    if (userDetailsSavedSuccess != null) {
+      return userDetailsSavedSuccess(this);
     }
     return orElse();
   }
 }
 
-abstract class FollowCountLoadedSCS implements UserDatabaseSuccess {
-  const factory FollowCountLoadedSCS(Count count) = _$FollowCountLoadedSCS;
+abstract class UserDetailsSavedSuccess implements UserDatabaseSuccess {
+  const factory UserDetailsSavedSuccess(User user) = _$UserDetailsSavedSuccess;
 
-  Count get count;
-  $FollowCountLoadedSCSCopyWith<FollowCountLoadedSCS> get copyWith;
+  User get user;
+  @JsonKey(ignore: true)
+  $UserDetailsSavedSuccessCopyWith<UserDetailsSavedSuccess> get copyWith;
 }
 
 /// @nodoc
-abstract class $FollowCountUpdatedSCSCopyWith<$Res> {
-  factory $FollowCountUpdatedSCSCopyWith(FollowCountUpdatedSCS value,
-          $Res Function(FollowCountUpdatedSCS) then) =
-      _$FollowCountUpdatedSCSCopyWithImpl<$Res>;
+abstract class $UserLoadedSuccessCopyWith<$Res> {
+  factory $UserLoadedSuccessCopyWith(
+          UserLoadedSuccess value, $Res Function(UserLoadedSuccess) then) =
+      _$UserLoadedSuccessCopyWithImpl<$Res>;
+  $Res call({User user});
 }
 
 /// @nodoc
-class _$FollowCountUpdatedSCSCopyWithImpl<$Res>
+class _$UserLoadedSuccessCopyWithImpl<$Res>
     extends _$UserDatabaseSuccessCopyWithImpl<$Res>
-    implements $FollowCountUpdatedSCSCopyWith<$Res> {
-  _$FollowCountUpdatedSCSCopyWithImpl(
-      FollowCountUpdatedSCS _value, $Res Function(FollowCountUpdatedSCS) _then)
-      : super(_value, (v) => _then(v as FollowCountUpdatedSCS));
+    implements $UserLoadedSuccessCopyWith<$Res> {
+  _$UserLoadedSuccessCopyWithImpl(
+      UserLoadedSuccess _value, $Res Function(UserLoadedSuccess) _then)
+      : super(_value, (v) => _then(v as UserLoadedSuccess));
 
   @override
-  FollowCountUpdatedSCS get _value => super._value as FollowCountUpdatedSCS;
-}
-
-/// @nodoc
-class _$FollowCountUpdatedSCS implements FollowCountUpdatedSCS {
-  const _$FollowCountUpdatedSCS();
-
-  @override
-  String toString() {
-    return 'UserDatabaseSuccess.followCountUpdatedSCS()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) || (other is FollowCountUpdatedSCS);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult followCountLoadedSCS(Count count),
-    @required TResult followCountUpdatedSCS(),
-    @required TResult followingStatusLoadedSCS(bool status),
-    @required TResult userAsMapLoadedSCS(Map<String, User> usersMap),
-    @required TResult userDetailsSavedSCS(User user),
-    @required TResult userLoadedSCS(User user),
-    @required TResult usersLoadedSCS(List<User> users),
-  }) {
-    assert(followCountLoadedSCS != null);
-    assert(followCountUpdatedSCS != null);
-    assert(followingStatusLoadedSCS != null);
-    assert(userAsMapLoadedSCS != null);
-    assert(userDetailsSavedSCS != null);
-    assert(userLoadedSCS != null);
-    assert(usersLoadedSCS != null);
-    return followCountUpdatedSCS();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult followCountLoadedSCS(Count count),
-    TResult followCountUpdatedSCS(),
-    TResult followingStatusLoadedSCS(bool status),
-    TResult userAsMapLoadedSCS(Map<String, User> usersMap),
-    TResult userDetailsSavedSCS(User user),
-    TResult userLoadedSCS(User user),
-    TResult usersLoadedSCS(List<User> users),
-    @required TResult orElse(),
-  }) {
-    assert(orElse != null);
-    if (followCountUpdatedSCS != null) {
-      return followCountUpdatedSCS();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult followCountLoadedSCS(FollowCountLoadedSCS value),
-    @required TResult followCountUpdatedSCS(FollowCountUpdatedSCS value),
-    @required TResult followingStatusLoadedSCS(FollowingStatusLoadedSCS value),
-    @required TResult userAsMapLoadedSCS(UserAsMapLoadedSCS value),
-    @required TResult userDetailsSavedSCS(UserDetailsSavedSCS value),
-    @required TResult userLoadedSCS(UserLoadedSCS value),
-    @required TResult usersLoadedSCS(UsersLoadedSCS value),
-  }) {
-    assert(followCountLoadedSCS != null);
-    assert(followCountUpdatedSCS != null);
-    assert(followingStatusLoadedSCS != null);
-    assert(userAsMapLoadedSCS != null);
-    assert(userDetailsSavedSCS != null);
-    assert(userLoadedSCS != null);
-    assert(usersLoadedSCS != null);
-    return followCountUpdatedSCS(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult followCountLoadedSCS(FollowCountLoadedSCS value),
-    TResult followCountUpdatedSCS(FollowCountUpdatedSCS value),
-    TResult followingStatusLoadedSCS(FollowingStatusLoadedSCS value),
-    TResult userAsMapLoadedSCS(UserAsMapLoadedSCS value),
-    TResult userDetailsSavedSCS(UserDetailsSavedSCS value),
-    TResult userLoadedSCS(UserLoadedSCS value),
-    TResult usersLoadedSCS(UsersLoadedSCS value),
-    @required TResult orElse(),
-  }) {
-    assert(orElse != null);
-    if (followCountUpdatedSCS != null) {
-      return followCountUpdatedSCS(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class FollowCountUpdatedSCS implements UserDatabaseSuccess {
-  const factory FollowCountUpdatedSCS() = _$FollowCountUpdatedSCS;
-}
-
-/// @nodoc
-abstract class $FollowingStatusLoadedSCSCopyWith<$Res> {
-  factory $FollowingStatusLoadedSCSCopyWith(FollowingStatusLoadedSCS value,
-          $Res Function(FollowingStatusLoadedSCS) then) =
-      _$FollowingStatusLoadedSCSCopyWithImpl<$Res>;
-  $Res call({bool status});
-}
-
-/// @nodoc
-class _$FollowingStatusLoadedSCSCopyWithImpl<$Res>
-    extends _$UserDatabaseSuccessCopyWithImpl<$Res>
-    implements $FollowingStatusLoadedSCSCopyWith<$Res> {
-  _$FollowingStatusLoadedSCSCopyWithImpl(FollowingStatusLoadedSCS _value,
-      $Res Function(FollowingStatusLoadedSCS) _then)
-      : super(_value, (v) => _then(v as FollowingStatusLoadedSCS));
-
-  @override
-  FollowingStatusLoadedSCS get _value =>
-      super._value as FollowingStatusLoadedSCS;
+  UserLoadedSuccess get _value => super._value as UserLoadedSuccess;
 
   @override
   $Res call({
-    Object status = freezed,
+    Object user = freezed,
   }) {
-    return _then(FollowingStatusLoadedSCS(
-      status: status == freezed ? _value.status : status as bool,
+    return _then(UserLoadedSuccess(
+      user == freezed ? _value.user : user as User,
     ));
   }
 }
 
 /// @nodoc
-class _$FollowingStatusLoadedSCS implements FollowingStatusLoadedSCS {
-  const _$FollowingStatusLoadedSCS({@required this.status})
-      : assert(status != null);
+class _$UserLoadedSuccess implements UserLoadedSuccess {
+  const _$UserLoadedSuccess(this.user) : assert(user != null);
 
   @override
-  final bool status;
+  final User user;
 
   @override
   String toString() {
-    return 'UserDatabaseSuccess.followingStatusLoadedSCS(status: $status)';
+    return 'UserDatabaseSuccess.userLoadedSuccess(user: $user)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is FollowingStatusLoadedSCS &&
-            (identical(other.status, status) ||
-                const DeepCollectionEquality().equals(other.status, status)));
+        (other is UserLoadedSuccess &&
+            (identical(other.user, user) ||
+                const DeepCollectionEquality().equals(other.user, user)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(status);
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(user);
 
+  @JsonKey(ignore: true)
   @override
-  $FollowingStatusLoadedSCSCopyWith<FollowingStatusLoadedSCS> get copyWith =>
-      _$FollowingStatusLoadedSCSCopyWithImpl<FollowingStatusLoadedSCS>(
-          this, _$identity);
+  $UserLoadedSuccessCopyWith<UserLoadedSuccess> get copyWith =>
+      _$UserLoadedSuccessCopyWithImpl<UserLoadedSuccess>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
-    @required TResult followCountLoadedSCS(Count count),
-    @required TResult followCountUpdatedSCS(),
-    @required TResult followingStatusLoadedSCS(bool status),
-    @required TResult userAsMapLoadedSCS(Map<String, User> usersMap),
-    @required TResult userDetailsSavedSCS(User user),
-    @required TResult userLoadedSCS(User user),
-    @required TResult usersLoadedSCS(List<User> users),
+    @required TResult userDetailsSavedSuccess(User user),
+    @required TResult userLoadedSuccess(User user),
+    @required TResult usernameSavedSuccess(String username),
   }) {
-    assert(followCountLoadedSCS != null);
-    assert(followCountUpdatedSCS != null);
-    assert(followingStatusLoadedSCS != null);
-    assert(userAsMapLoadedSCS != null);
-    assert(userDetailsSavedSCS != null);
-    assert(userLoadedSCS != null);
-    assert(usersLoadedSCS != null);
-    return followingStatusLoadedSCS(status);
+    assert(userDetailsSavedSuccess != null);
+    assert(userLoadedSuccess != null);
+    assert(usernameSavedSuccess != null);
+    return userLoadedSuccess(user);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
-    TResult followCountLoadedSCS(Count count),
-    TResult followCountUpdatedSCS(),
-    TResult followingStatusLoadedSCS(bool status),
-    TResult userAsMapLoadedSCS(Map<String, User> usersMap),
-    TResult userDetailsSavedSCS(User user),
-    TResult userLoadedSCS(User user),
-    TResult usersLoadedSCS(List<User> users),
+    TResult userDetailsSavedSuccess(User user),
+    TResult userLoadedSuccess(User user),
+    TResult usernameSavedSuccess(String username),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (followingStatusLoadedSCS != null) {
-      return followingStatusLoadedSCS(status);
+    if (userLoadedSuccess != null) {
+      return userLoadedSuccess(user);
     }
     return orElse();
   }
@@ -498,146 +299,124 @@ class _$FollowingStatusLoadedSCS implements FollowingStatusLoadedSCS {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object>({
-    @required TResult followCountLoadedSCS(FollowCountLoadedSCS value),
-    @required TResult followCountUpdatedSCS(FollowCountUpdatedSCS value),
-    @required TResult followingStatusLoadedSCS(FollowingStatusLoadedSCS value),
-    @required TResult userAsMapLoadedSCS(UserAsMapLoadedSCS value),
-    @required TResult userDetailsSavedSCS(UserDetailsSavedSCS value),
-    @required TResult userLoadedSCS(UserLoadedSCS value),
-    @required TResult usersLoadedSCS(UsersLoadedSCS value),
+    @required TResult userDetailsSavedSuccess(UserDetailsSavedSuccess value),
+    @required TResult userLoadedSuccess(UserLoadedSuccess value),
+    @required TResult usernameSavedSuccess(UsernameSavedSuccess value),
   }) {
-    assert(followCountLoadedSCS != null);
-    assert(followCountUpdatedSCS != null);
-    assert(followingStatusLoadedSCS != null);
-    assert(userAsMapLoadedSCS != null);
-    assert(userDetailsSavedSCS != null);
-    assert(userLoadedSCS != null);
-    assert(usersLoadedSCS != null);
-    return followingStatusLoadedSCS(this);
+    assert(userDetailsSavedSuccess != null);
+    assert(userLoadedSuccess != null);
+    assert(usernameSavedSuccess != null);
+    return userLoadedSuccess(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
-    TResult followCountLoadedSCS(FollowCountLoadedSCS value),
-    TResult followCountUpdatedSCS(FollowCountUpdatedSCS value),
-    TResult followingStatusLoadedSCS(FollowingStatusLoadedSCS value),
-    TResult userAsMapLoadedSCS(UserAsMapLoadedSCS value),
-    TResult userDetailsSavedSCS(UserDetailsSavedSCS value),
-    TResult userLoadedSCS(UserLoadedSCS value),
-    TResult usersLoadedSCS(UsersLoadedSCS value),
+    TResult userDetailsSavedSuccess(UserDetailsSavedSuccess value),
+    TResult userLoadedSuccess(UserLoadedSuccess value),
+    TResult usernameSavedSuccess(UsernameSavedSuccess value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (followingStatusLoadedSCS != null) {
-      return followingStatusLoadedSCS(this);
+    if (userLoadedSuccess != null) {
+      return userLoadedSuccess(this);
     }
     return orElse();
   }
 }
 
-abstract class FollowingStatusLoadedSCS implements UserDatabaseSuccess {
-  const factory FollowingStatusLoadedSCS({@required bool status}) =
-      _$FollowingStatusLoadedSCS;
+abstract class UserLoadedSuccess implements UserDatabaseSuccess {
+  const factory UserLoadedSuccess(User user) = _$UserLoadedSuccess;
 
-  bool get status;
-  $FollowingStatusLoadedSCSCopyWith<FollowingStatusLoadedSCS> get copyWith;
+  User get user;
+  @JsonKey(ignore: true)
+  $UserLoadedSuccessCopyWith<UserLoadedSuccess> get copyWith;
 }
 
 /// @nodoc
-abstract class $UserAsMapLoadedSCSCopyWith<$Res> {
-  factory $UserAsMapLoadedSCSCopyWith(
-          UserAsMapLoadedSCS value, $Res Function(UserAsMapLoadedSCS) then) =
-      _$UserAsMapLoadedSCSCopyWithImpl<$Res>;
-  $Res call({Map<String, User> usersMap});
+abstract class $UsernameSavedSuccessCopyWith<$Res> {
+  factory $UsernameSavedSuccessCopyWith(UsernameSavedSuccess value,
+          $Res Function(UsernameSavedSuccess) then) =
+      _$UsernameSavedSuccessCopyWithImpl<$Res>;
+  $Res call({String username});
 }
 
 /// @nodoc
-class _$UserAsMapLoadedSCSCopyWithImpl<$Res>
+class _$UsernameSavedSuccessCopyWithImpl<$Res>
     extends _$UserDatabaseSuccessCopyWithImpl<$Res>
-    implements $UserAsMapLoadedSCSCopyWith<$Res> {
-  _$UserAsMapLoadedSCSCopyWithImpl(
-      UserAsMapLoadedSCS _value, $Res Function(UserAsMapLoadedSCS) _then)
-      : super(_value, (v) => _then(v as UserAsMapLoadedSCS));
+    implements $UsernameSavedSuccessCopyWith<$Res> {
+  _$UsernameSavedSuccessCopyWithImpl(
+      UsernameSavedSuccess _value, $Res Function(UsernameSavedSuccess) _then)
+      : super(_value, (v) => _then(v as UsernameSavedSuccess));
 
   @override
-  UserAsMapLoadedSCS get _value => super._value as UserAsMapLoadedSCS;
+  UsernameSavedSuccess get _value => super._value as UsernameSavedSuccess;
 
   @override
   $Res call({
-    Object usersMap = freezed,
+    Object username = freezed,
   }) {
-    return _then(UserAsMapLoadedSCS(
-      usersMap == freezed ? _value.usersMap : usersMap as Map<String, User>,
+    return _then(UsernameSavedSuccess(
+      username == freezed ? _value.username : username as String,
     ));
   }
 }
 
 /// @nodoc
-class _$UserAsMapLoadedSCS implements UserAsMapLoadedSCS {
-  const _$UserAsMapLoadedSCS(this.usersMap) : assert(usersMap != null);
+class _$UsernameSavedSuccess implements UsernameSavedSuccess {
+  const _$UsernameSavedSuccess(this.username) : assert(username != null);
 
   @override
-  final Map<String, User> usersMap;
+  final String username;
 
   @override
   String toString() {
-    return 'UserDatabaseSuccess.userAsMapLoadedSCS(usersMap: $usersMap)';
+    return 'UserDatabaseSuccess.usernameSavedSuccess(username: $username)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is UserAsMapLoadedSCS &&
-            (identical(other.usersMap, usersMap) ||
+        (other is UsernameSavedSuccess &&
+            (identical(other.username, username) ||
                 const DeepCollectionEquality()
-                    .equals(other.usersMap, usersMap)));
+                    .equals(other.username, username)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(usersMap);
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(username);
 
+  @JsonKey(ignore: true)
   @override
-  $UserAsMapLoadedSCSCopyWith<UserAsMapLoadedSCS> get copyWith =>
-      _$UserAsMapLoadedSCSCopyWithImpl<UserAsMapLoadedSCS>(this, _$identity);
+  $UsernameSavedSuccessCopyWith<UsernameSavedSuccess> get copyWith =>
+      _$UsernameSavedSuccessCopyWithImpl<UsernameSavedSuccess>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
-    @required TResult followCountLoadedSCS(Count count),
-    @required TResult followCountUpdatedSCS(),
-    @required TResult followingStatusLoadedSCS(bool status),
-    @required TResult userAsMapLoadedSCS(Map<String, User> usersMap),
-    @required TResult userDetailsSavedSCS(User user),
-    @required TResult userLoadedSCS(User user),
-    @required TResult usersLoadedSCS(List<User> users),
+    @required TResult userDetailsSavedSuccess(User user),
+    @required TResult userLoadedSuccess(User user),
+    @required TResult usernameSavedSuccess(String username),
   }) {
-    assert(followCountLoadedSCS != null);
-    assert(followCountUpdatedSCS != null);
-    assert(followingStatusLoadedSCS != null);
-    assert(userAsMapLoadedSCS != null);
-    assert(userDetailsSavedSCS != null);
-    assert(userLoadedSCS != null);
-    assert(usersLoadedSCS != null);
-    return userAsMapLoadedSCS(usersMap);
+    assert(userDetailsSavedSuccess != null);
+    assert(userLoadedSuccess != null);
+    assert(usernameSavedSuccess != null);
+    return usernameSavedSuccess(username);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
-    TResult followCountLoadedSCS(Count count),
-    TResult followCountUpdatedSCS(),
-    TResult followingStatusLoadedSCS(bool status),
-    TResult userAsMapLoadedSCS(Map<String, User> usersMap),
-    TResult userDetailsSavedSCS(User user),
-    TResult userLoadedSCS(User user),
-    TResult usersLoadedSCS(List<User> users),
+    TResult userDetailsSavedSuccess(User user),
+    TResult userLoadedSuccess(User user),
+    TResult usernameSavedSuccess(String username),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (userAsMapLoadedSCS != null) {
-      return userAsMapLoadedSCS(usersMap);
+    if (usernameSavedSuccess != null) {
+      return usernameSavedSuccess(username);
     }
     return orElse();
   }
@@ -645,483 +424,36 @@ class _$UserAsMapLoadedSCS implements UserAsMapLoadedSCS {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object>({
-    @required TResult followCountLoadedSCS(FollowCountLoadedSCS value),
-    @required TResult followCountUpdatedSCS(FollowCountUpdatedSCS value),
-    @required TResult followingStatusLoadedSCS(FollowingStatusLoadedSCS value),
-    @required TResult userAsMapLoadedSCS(UserAsMapLoadedSCS value),
-    @required TResult userDetailsSavedSCS(UserDetailsSavedSCS value),
-    @required TResult userLoadedSCS(UserLoadedSCS value),
-    @required TResult usersLoadedSCS(UsersLoadedSCS value),
+    @required TResult userDetailsSavedSuccess(UserDetailsSavedSuccess value),
+    @required TResult userLoadedSuccess(UserLoadedSuccess value),
+    @required TResult usernameSavedSuccess(UsernameSavedSuccess value),
   }) {
-    assert(followCountLoadedSCS != null);
-    assert(followCountUpdatedSCS != null);
-    assert(followingStatusLoadedSCS != null);
-    assert(userAsMapLoadedSCS != null);
-    assert(userDetailsSavedSCS != null);
-    assert(userLoadedSCS != null);
-    assert(usersLoadedSCS != null);
-    return userAsMapLoadedSCS(this);
+    assert(userDetailsSavedSuccess != null);
+    assert(userLoadedSuccess != null);
+    assert(usernameSavedSuccess != null);
+    return usernameSavedSuccess(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
-    TResult followCountLoadedSCS(FollowCountLoadedSCS value),
-    TResult followCountUpdatedSCS(FollowCountUpdatedSCS value),
-    TResult followingStatusLoadedSCS(FollowingStatusLoadedSCS value),
-    TResult userAsMapLoadedSCS(UserAsMapLoadedSCS value),
-    TResult userDetailsSavedSCS(UserDetailsSavedSCS value),
-    TResult userLoadedSCS(UserLoadedSCS value),
-    TResult usersLoadedSCS(UsersLoadedSCS value),
+    TResult userDetailsSavedSuccess(UserDetailsSavedSuccess value),
+    TResult userLoadedSuccess(UserLoadedSuccess value),
+    TResult usernameSavedSuccess(UsernameSavedSuccess value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (userAsMapLoadedSCS != null) {
-      return userAsMapLoadedSCS(this);
+    if (usernameSavedSuccess != null) {
+      return usernameSavedSuccess(this);
     }
     return orElse();
   }
 }
 
-abstract class UserAsMapLoadedSCS implements UserDatabaseSuccess {
-  const factory UserAsMapLoadedSCS(Map<String, User> usersMap) =
-      _$UserAsMapLoadedSCS;
+abstract class UsernameSavedSuccess implements UserDatabaseSuccess {
+  const factory UsernameSavedSuccess(String username) = _$UsernameSavedSuccess;
 
-  Map<String, User> get usersMap;
-  $UserAsMapLoadedSCSCopyWith<UserAsMapLoadedSCS> get copyWith;
-}
-
-/// @nodoc
-abstract class $UserDetailsSavedSCSCopyWith<$Res> {
-  factory $UserDetailsSavedSCSCopyWith(
-          UserDetailsSavedSCS value, $Res Function(UserDetailsSavedSCS) then) =
-      _$UserDetailsSavedSCSCopyWithImpl<$Res>;
-  $Res call({User user});
-}
-
-/// @nodoc
-class _$UserDetailsSavedSCSCopyWithImpl<$Res>
-    extends _$UserDatabaseSuccessCopyWithImpl<$Res>
-    implements $UserDetailsSavedSCSCopyWith<$Res> {
-  _$UserDetailsSavedSCSCopyWithImpl(
-      UserDetailsSavedSCS _value, $Res Function(UserDetailsSavedSCS) _then)
-      : super(_value, (v) => _then(v as UserDetailsSavedSCS));
-
-  @override
-  UserDetailsSavedSCS get _value => super._value as UserDetailsSavedSCS;
-
-  @override
-  $Res call({
-    Object user = freezed,
-  }) {
-    return _then(UserDetailsSavedSCS(
-      user == freezed ? _value.user : user as User,
-    ));
-  }
-}
-
-/// @nodoc
-class _$UserDetailsSavedSCS implements UserDetailsSavedSCS {
-  const _$UserDetailsSavedSCS(this.user) : assert(user != null);
-
-  @override
-  final User user;
-
-  @override
-  String toString() {
-    return 'UserDatabaseSuccess.userDetailsSavedSCS(user: $user)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is UserDetailsSavedSCS &&
-            (identical(other.user, user) ||
-                const DeepCollectionEquality().equals(other.user, user)));
-  }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(user);
-
-  @override
-  $UserDetailsSavedSCSCopyWith<UserDetailsSavedSCS> get copyWith =>
-      _$UserDetailsSavedSCSCopyWithImpl<UserDetailsSavedSCS>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult followCountLoadedSCS(Count count),
-    @required TResult followCountUpdatedSCS(),
-    @required TResult followingStatusLoadedSCS(bool status),
-    @required TResult userAsMapLoadedSCS(Map<String, User> usersMap),
-    @required TResult userDetailsSavedSCS(User user),
-    @required TResult userLoadedSCS(User user),
-    @required TResult usersLoadedSCS(List<User> users),
-  }) {
-    assert(followCountLoadedSCS != null);
-    assert(followCountUpdatedSCS != null);
-    assert(followingStatusLoadedSCS != null);
-    assert(userAsMapLoadedSCS != null);
-    assert(userDetailsSavedSCS != null);
-    assert(userLoadedSCS != null);
-    assert(usersLoadedSCS != null);
-    return userDetailsSavedSCS(user);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult followCountLoadedSCS(Count count),
-    TResult followCountUpdatedSCS(),
-    TResult followingStatusLoadedSCS(bool status),
-    TResult userAsMapLoadedSCS(Map<String, User> usersMap),
-    TResult userDetailsSavedSCS(User user),
-    TResult userLoadedSCS(User user),
-    TResult usersLoadedSCS(List<User> users),
-    @required TResult orElse(),
-  }) {
-    assert(orElse != null);
-    if (userDetailsSavedSCS != null) {
-      return userDetailsSavedSCS(user);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult followCountLoadedSCS(FollowCountLoadedSCS value),
-    @required TResult followCountUpdatedSCS(FollowCountUpdatedSCS value),
-    @required TResult followingStatusLoadedSCS(FollowingStatusLoadedSCS value),
-    @required TResult userAsMapLoadedSCS(UserAsMapLoadedSCS value),
-    @required TResult userDetailsSavedSCS(UserDetailsSavedSCS value),
-    @required TResult userLoadedSCS(UserLoadedSCS value),
-    @required TResult usersLoadedSCS(UsersLoadedSCS value),
-  }) {
-    assert(followCountLoadedSCS != null);
-    assert(followCountUpdatedSCS != null);
-    assert(followingStatusLoadedSCS != null);
-    assert(userAsMapLoadedSCS != null);
-    assert(userDetailsSavedSCS != null);
-    assert(userLoadedSCS != null);
-    assert(usersLoadedSCS != null);
-    return userDetailsSavedSCS(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult followCountLoadedSCS(FollowCountLoadedSCS value),
-    TResult followCountUpdatedSCS(FollowCountUpdatedSCS value),
-    TResult followingStatusLoadedSCS(FollowingStatusLoadedSCS value),
-    TResult userAsMapLoadedSCS(UserAsMapLoadedSCS value),
-    TResult userDetailsSavedSCS(UserDetailsSavedSCS value),
-    TResult userLoadedSCS(UserLoadedSCS value),
-    TResult usersLoadedSCS(UsersLoadedSCS value),
-    @required TResult orElse(),
-  }) {
-    assert(orElse != null);
-    if (userDetailsSavedSCS != null) {
-      return userDetailsSavedSCS(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class UserDetailsSavedSCS implements UserDatabaseSuccess {
-  const factory UserDetailsSavedSCS(User user) = _$UserDetailsSavedSCS;
-
-  User get user;
-  $UserDetailsSavedSCSCopyWith<UserDetailsSavedSCS> get copyWith;
-}
-
-/// @nodoc
-abstract class $UserLoadedSCSCopyWith<$Res> {
-  factory $UserLoadedSCSCopyWith(
-          UserLoadedSCS value, $Res Function(UserLoadedSCS) then) =
-      _$UserLoadedSCSCopyWithImpl<$Res>;
-  $Res call({User user});
-}
-
-/// @nodoc
-class _$UserLoadedSCSCopyWithImpl<$Res>
-    extends _$UserDatabaseSuccessCopyWithImpl<$Res>
-    implements $UserLoadedSCSCopyWith<$Res> {
-  _$UserLoadedSCSCopyWithImpl(
-      UserLoadedSCS _value, $Res Function(UserLoadedSCS) _then)
-      : super(_value, (v) => _then(v as UserLoadedSCS));
-
-  @override
-  UserLoadedSCS get _value => super._value as UserLoadedSCS;
-
-  @override
-  $Res call({
-    Object user = freezed,
-  }) {
-    return _then(UserLoadedSCS(
-      user == freezed ? _value.user : user as User,
-    ));
-  }
-}
-
-/// @nodoc
-class _$UserLoadedSCS implements UserLoadedSCS {
-  const _$UserLoadedSCS(this.user) : assert(user != null);
-
-  @override
-  final User user;
-
-  @override
-  String toString() {
-    return 'UserDatabaseSuccess.userLoadedSCS(user: $user)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is UserLoadedSCS &&
-            (identical(other.user, user) ||
-                const DeepCollectionEquality().equals(other.user, user)));
-  }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(user);
-
-  @override
-  $UserLoadedSCSCopyWith<UserLoadedSCS> get copyWith =>
-      _$UserLoadedSCSCopyWithImpl<UserLoadedSCS>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult followCountLoadedSCS(Count count),
-    @required TResult followCountUpdatedSCS(),
-    @required TResult followingStatusLoadedSCS(bool status),
-    @required TResult userAsMapLoadedSCS(Map<String, User> usersMap),
-    @required TResult userDetailsSavedSCS(User user),
-    @required TResult userLoadedSCS(User user),
-    @required TResult usersLoadedSCS(List<User> users),
-  }) {
-    assert(followCountLoadedSCS != null);
-    assert(followCountUpdatedSCS != null);
-    assert(followingStatusLoadedSCS != null);
-    assert(userAsMapLoadedSCS != null);
-    assert(userDetailsSavedSCS != null);
-    assert(userLoadedSCS != null);
-    assert(usersLoadedSCS != null);
-    return userLoadedSCS(user);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult followCountLoadedSCS(Count count),
-    TResult followCountUpdatedSCS(),
-    TResult followingStatusLoadedSCS(bool status),
-    TResult userAsMapLoadedSCS(Map<String, User> usersMap),
-    TResult userDetailsSavedSCS(User user),
-    TResult userLoadedSCS(User user),
-    TResult usersLoadedSCS(List<User> users),
-    @required TResult orElse(),
-  }) {
-    assert(orElse != null);
-    if (userLoadedSCS != null) {
-      return userLoadedSCS(user);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult followCountLoadedSCS(FollowCountLoadedSCS value),
-    @required TResult followCountUpdatedSCS(FollowCountUpdatedSCS value),
-    @required TResult followingStatusLoadedSCS(FollowingStatusLoadedSCS value),
-    @required TResult userAsMapLoadedSCS(UserAsMapLoadedSCS value),
-    @required TResult userDetailsSavedSCS(UserDetailsSavedSCS value),
-    @required TResult userLoadedSCS(UserLoadedSCS value),
-    @required TResult usersLoadedSCS(UsersLoadedSCS value),
-  }) {
-    assert(followCountLoadedSCS != null);
-    assert(followCountUpdatedSCS != null);
-    assert(followingStatusLoadedSCS != null);
-    assert(userAsMapLoadedSCS != null);
-    assert(userDetailsSavedSCS != null);
-    assert(userLoadedSCS != null);
-    assert(usersLoadedSCS != null);
-    return userLoadedSCS(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult followCountLoadedSCS(FollowCountLoadedSCS value),
-    TResult followCountUpdatedSCS(FollowCountUpdatedSCS value),
-    TResult followingStatusLoadedSCS(FollowingStatusLoadedSCS value),
-    TResult userAsMapLoadedSCS(UserAsMapLoadedSCS value),
-    TResult userDetailsSavedSCS(UserDetailsSavedSCS value),
-    TResult userLoadedSCS(UserLoadedSCS value),
-    TResult usersLoadedSCS(UsersLoadedSCS value),
-    @required TResult orElse(),
-  }) {
-    assert(orElse != null);
-    if (userLoadedSCS != null) {
-      return userLoadedSCS(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class UserLoadedSCS implements UserDatabaseSuccess {
-  const factory UserLoadedSCS(User user) = _$UserLoadedSCS;
-
-  User get user;
-  $UserLoadedSCSCopyWith<UserLoadedSCS> get copyWith;
-}
-
-/// @nodoc
-abstract class $UsersLoadedSCSCopyWith<$Res> {
-  factory $UsersLoadedSCSCopyWith(
-          UsersLoadedSCS value, $Res Function(UsersLoadedSCS) then) =
-      _$UsersLoadedSCSCopyWithImpl<$Res>;
-  $Res call({List<User> users});
-}
-
-/// @nodoc
-class _$UsersLoadedSCSCopyWithImpl<$Res>
-    extends _$UserDatabaseSuccessCopyWithImpl<$Res>
-    implements $UsersLoadedSCSCopyWith<$Res> {
-  _$UsersLoadedSCSCopyWithImpl(
-      UsersLoadedSCS _value, $Res Function(UsersLoadedSCS) _then)
-      : super(_value, (v) => _then(v as UsersLoadedSCS));
-
-  @override
-  UsersLoadedSCS get _value => super._value as UsersLoadedSCS;
-
-  @override
-  $Res call({
-    Object users = freezed,
-  }) {
-    return _then(UsersLoadedSCS(
-      users == freezed ? _value.users : users as List<User>,
-    ));
-  }
-}
-
-/// @nodoc
-class _$UsersLoadedSCS implements UsersLoadedSCS {
-  const _$UsersLoadedSCS(this.users) : assert(users != null);
-
-  @override
-  final List<User> users;
-
-  @override
-  String toString() {
-    return 'UserDatabaseSuccess.usersLoadedSCS(users: $users)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is UsersLoadedSCS &&
-            (identical(other.users, users) ||
-                const DeepCollectionEquality().equals(other.users, users)));
-  }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(users);
-
-  @override
-  $UsersLoadedSCSCopyWith<UsersLoadedSCS> get copyWith =>
-      _$UsersLoadedSCSCopyWithImpl<UsersLoadedSCS>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult followCountLoadedSCS(Count count),
-    @required TResult followCountUpdatedSCS(),
-    @required TResult followingStatusLoadedSCS(bool status),
-    @required TResult userAsMapLoadedSCS(Map<String, User> usersMap),
-    @required TResult userDetailsSavedSCS(User user),
-    @required TResult userLoadedSCS(User user),
-    @required TResult usersLoadedSCS(List<User> users),
-  }) {
-    assert(followCountLoadedSCS != null);
-    assert(followCountUpdatedSCS != null);
-    assert(followingStatusLoadedSCS != null);
-    assert(userAsMapLoadedSCS != null);
-    assert(userDetailsSavedSCS != null);
-    assert(userLoadedSCS != null);
-    assert(usersLoadedSCS != null);
-    return usersLoadedSCS(users);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult followCountLoadedSCS(Count count),
-    TResult followCountUpdatedSCS(),
-    TResult followingStatusLoadedSCS(bool status),
-    TResult userAsMapLoadedSCS(Map<String, User> usersMap),
-    TResult userDetailsSavedSCS(User user),
-    TResult userLoadedSCS(User user),
-    TResult usersLoadedSCS(List<User> users),
-    @required TResult orElse(),
-  }) {
-    assert(orElse != null);
-    if (usersLoadedSCS != null) {
-      return usersLoadedSCS(users);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult followCountLoadedSCS(FollowCountLoadedSCS value),
-    @required TResult followCountUpdatedSCS(FollowCountUpdatedSCS value),
-    @required TResult followingStatusLoadedSCS(FollowingStatusLoadedSCS value),
-    @required TResult userAsMapLoadedSCS(UserAsMapLoadedSCS value),
-    @required TResult userDetailsSavedSCS(UserDetailsSavedSCS value),
-    @required TResult userLoadedSCS(UserLoadedSCS value),
-    @required TResult usersLoadedSCS(UsersLoadedSCS value),
-  }) {
-    assert(followCountLoadedSCS != null);
-    assert(followCountUpdatedSCS != null);
-    assert(followingStatusLoadedSCS != null);
-    assert(userAsMapLoadedSCS != null);
-    assert(userDetailsSavedSCS != null);
-    assert(userLoadedSCS != null);
-    assert(usersLoadedSCS != null);
-    return usersLoadedSCS(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult followCountLoadedSCS(FollowCountLoadedSCS value),
-    TResult followCountUpdatedSCS(FollowCountUpdatedSCS value),
-    TResult followingStatusLoadedSCS(FollowingStatusLoadedSCS value),
-    TResult userAsMapLoadedSCS(UserAsMapLoadedSCS value),
-    TResult userDetailsSavedSCS(UserDetailsSavedSCS value),
-    TResult userLoadedSCS(UserLoadedSCS value),
-    TResult usersLoadedSCS(UsersLoadedSCS value),
-    @required TResult orElse(),
-  }) {
-    assert(orElse != null);
-    if (usersLoadedSCS != null) {
-      return usersLoadedSCS(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class UsersLoadedSCS implements UserDatabaseSuccess {
-  const factory UsersLoadedSCS(List<User> users) = _$UsersLoadedSCS;
-
-  List<User> get users;
-  $UsersLoadedSCSCopyWith<UsersLoadedSCS> get copyWith;
+  String get username;
+  @JsonKey(ignore: true)
+  $UsernameSavedSuccessCopyWith<UsernameSavedSuccess> get copyWith;
 }

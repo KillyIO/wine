@@ -1,8 +1,9 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:equatable/equatable.dart';
 import 'package:firebase_auth/firebase_auth.dart' as auth;
 
 /// @nodoc
-class User {
+class User extends Equatable {
   /// @nodoc
   User({
     this.bio,
@@ -58,28 +59,28 @@ class User {
   }
 
   /// @nodoc
-  int createdAt;
+  final int createdAt;
 
   /// @nodoc
-  int updatedAt;
+  final int updatedAt;
 
   /// @nodoc
-  String bio;
+  final String bio;
 
   /// @nodoc
-  String email;
+  final String email;
 
   /// @nodoc
-  String name;
+  final String name;
 
   /// @nodoc
-  String profilePictureURL;
+  final String profilePictureURL;
 
   /// @nodoc
-  String uid;
+  final String uid;
 
   /// @nodoc
-  String username;
+  final String username;
 
   /// @nodoc
   User copyWith({
@@ -119,47 +120,10 @@ class User {
   }
 
   @override
-  String toString() {
-    return '''
-      User(
-        bio: $bio
-        createdAt: $createdAt,
-        email: $email,
-        name: $name,
-        profilePictureURL: $profilePictureURL,
-        uid: $uid,
-        updatedAt: $updatedAt,
-        username: $username,
-      )
-    ''';
-  }
+  List<Object> get props => [uid];
 
   @override
-  bool operator ==(Object other) {
-    if (identical(this, other)) return true;
-
-    return other is User &&
-        other.bio == bio &&
-        other.createdAt == createdAt &&
-        other.email == email &&
-        other.name == name &&
-        other.profilePictureURL == profilePictureURL &&
-        other.uid == uid &&
-        other.updatedAt == updatedAt &&
-        other.username == username;
-  }
-
-  @override
-  int get hashCode {
-    return bio.hashCode ^
-        createdAt.hashCode ^
-        email.hashCode ^
-        name.hashCode ^
-        profilePictureURL.hashCode ^
-        updatedAt.hashCode ^
-        username.hashCode ^
-        uid.hashCode;
-  }
+  bool get stringify => true;
 
   /// @nodoc
   bool get isEmpty {

@@ -19,20 +19,6 @@ class _$SeriesDraftDatabaseSuccessTearOff {
   }
 
 // ignore: unused_element
-  SeriesDraftFetchedSCS seriesDraftFetchedSCS(SeriesDraft seriesDraft) {
-    return SeriesDraftFetchedSCS(
-      seriesDraft,
-    );
-  }
-
-// ignore: unused_element
-  LocalSeriesDraftSavedSCS localSeriesDraftSavedSCS(SeriesDraft seriesDraft) {
-    return LocalSeriesDraftSavedSCS(
-      seriesDraft,
-    );
-  }
-
-// ignore: unused_element
   LocalSeriesDraftUpdatedSCS localSeriesDraftUpdatedSCS() {
     return const LocalSeriesDraftUpdatedSCS();
   }
@@ -78,8 +64,6 @@ mixin _$SeriesDraftDatabaseSuccess {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult localSeriesDraftDeletedSCS(),
-    @required TResult seriesDraftFetchedSCS(SeriesDraft seriesDraft),
-    @required TResult localSeriesDraftSavedSCS(SeriesDraft seriesDraft),
     @required TResult localSeriesDraftUpdatedSCS(),
     @required TResult onlineSeriesDraftDeletedSCS(),
     @required TResult seriesDraftLoadedSCS(Series seriesDraft),
@@ -90,8 +74,6 @@ mixin _$SeriesDraftDatabaseSuccess {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult localSeriesDraftDeletedSCS(),
-    TResult seriesDraftFetchedSCS(SeriesDraft seriesDraft),
-    TResult localSeriesDraftSavedSCS(SeriesDraft seriesDraft),
     TResult localSeriesDraftUpdatedSCS(),
     TResult onlineSeriesDraftDeletedSCS(),
     TResult seriesDraftLoadedSCS(Series seriesDraft),
@@ -104,8 +86,6 @@ mixin _$SeriesDraftDatabaseSuccess {
   TResult map<TResult extends Object>({
     @required
         TResult localSeriesDraftDeletedSCS(LocalSeriesDraftDeletedSCS value),
-    @required TResult seriesDraftFetchedSCS(SeriesDraftFetchedSCS value),
-    @required TResult localSeriesDraftSavedSCS(LocalSeriesDraftSavedSCS value),
     @required
         TResult localSeriesDraftUpdatedSCS(LocalSeriesDraftUpdatedSCS value),
     @required
@@ -121,8 +101,6 @@ mixin _$SeriesDraftDatabaseSuccess {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult localSeriesDraftDeletedSCS(LocalSeriesDraftDeletedSCS value),
-    TResult seriesDraftFetchedSCS(SeriesDraftFetchedSCS value),
-    TResult localSeriesDraftSavedSCS(LocalSeriesDraftSavedSCS value),
     TResult localSeriesDraftUpdatedSCS(LocalSeriesDraftUpdatedSCS value),
     TResult onlineSeriesDraftDeletedSCS(OnlineSeriesDraftDeletedSCS value),
     TResult seriesDraftLoadedSCS(SeriesDraftLoadedSCS value),
@@ -192,8 +170,6 @@ class _$LocalSeriesDraftDeletedSCS implements LocalSeriesDraftDeletedSCS {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult localSeriesDraftDeletedSCS(),
-    @required TResult seriesDraftFetchedSCS(SeriesDraft seriesDraft),
-    @required TResult localSeriesDraftSavedSCS(SeriesDraft seriesDraft),
     @required TResult localSeriesDraftUpdatedSCS(),
     @required TResult onlineSeriesDraftDeletedSCS(),
     @required TResult seriesDraftLoadedSCS(Series seriesDraft),
@@ -202,8 +178,6 @@ class _$LocalSeriesDraftDeletedSCS implements LocalSeriesDraftDeletedSCS {
     @required TResult onlineSeriesDraftCoverDeletedSCS(),
   }) {
     assert(localSeriesDraftDeletedSCS != null);
-    assert(seriesDraftFetchedSCS != null);
-    assert(localSeriesDraftSavedSCS != null);
     assert(localSeriesDraftUpdatedSCS != null);
     assert(onlineSeriesDraftDeletedSCS != null);
     assert(seriesDraftLoadedSCS != null);
@@ -217,8 +191,6 @@ class _$LocalSeriesDraftDeletedSCS implements LocalSeriesDraftDeletedSCS {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult localSeriesDraftDeletedSCS(),
-    TResult seriesDraftFetchedSCS(SeriesDraft seriesDraft),
-    TResult localSeriesDraftSavedSCS(SeriesDraft seriesDraft),
     TResult localSeriesDraftUpdatedSCS(),
     TResult onlineSeriesDraftDeletedSCS(),
     TResult seriesDraftLoadedSCS(Series seriesDraft),
@@ -239,8 +211,6 @@ class _$LocalSeriesDraftDeletedSCS implements LocalSeriesDraftDeletedSCS {
   TResult map<TResult extends Object>({
     @required
         TResult localSeriesDraftDeletedSCS(LocalSeriesDraftDeletedSCS value),
-    @required TResult seriesDraftFetchedSCS(SeriesDraftFetchedSCS value),
-    @required TResult localSeriesDraftSavedSCS(LocalSeriesDraftSavedSCS value),
     @required
         TResult localSeriesDraftUpdatedSCS(LocalSeriesDraftUpdatedSCS value),
     @required
@@ -254,8 +224,6 @@ class _$LocalSeriesDraftDeletedSCS implements LocalSeriesDraftDeletedSCS {
             OnlineSeriesDraftCoverDeletedSCS value),
   }) {
     assert(localSeriesDraftDeletedSCS != null);
-    assert(seriesDraftFetchedSCS != null);
-    assert(localSeriesDraftSavedSCS != null);
     assert(localSeriesDraftUpdatedSCS != null);
     assert(onlineSeriesDraftDeletedSCS != null);
     assert(seriesDraftLoadedSCS != null);
@@ -269,8 +237,6 @@ class _$LocalSeriesDraftDeletedSCS implements LocalSeriesDraftDeletedSCS {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult localSeriesDraftDeletedSCS(LocalSeriesDraftDeletedSCS value),
-    TResult seriesDraftFetchedSCS(SeriesDraftFetchedSCS value),
-    TResult localSeriesDraftSavedSCS(LocalSeriesDraftSavedSCS value),
     TResult localSeriesDraftUpdatedSCS(LocalSeriesDraftUpdatedSCS value),
     TResult onlineSeriesDraftDeletedSCS(OnlineSeriesDraftDeletedSCS value),
     TResult seriesDraftLoadedSCS(SeriesDraftLoadedSCS value),
@@ -291,342 +257,6 @@ class _$LocalSeriesDraftDeletedSCS implements LocalSeriesDraftDeletedSCS {
 abstract class LocalSeriesDraftDeletedSCS
     implements SeriesDraftDatabaseSuccess {
   const factory LocalSeriesDraftDeletedSCS() = _$LocalSeriesDraftDeletedSCS;
-}
-
-/// @nodoc
-abstract class $SeriesDraftFetchedSCSCopyWith<$Res> {
-  factory $SeriesDraftFetchedSCSCopyWith(SeriesDraftFetchedSCS value,
-          $Res Function(SeriesDraftFetchedSCS) then) =
-      _$SeriesDraftFetchedSCSCopyWithImpl<$Res>;
-  $Res call({SeriesDraft seriesDraft});
-}
-
-/// @nodoc
-class _$SeriesDraftFetchedSCSCopyWithImpl<$Res>
-    extends _$SeriesDraftDatabaseSuccessCopyWithImpl<$Res>
-    implements $SeriesDraftFetchedSCSCopyWith<$Res> {
-  _$SeriesDraftFetchedSCSCopyWithImpl(
-      SeriesDraftFetchedSCS _value, $Res Function(SeriesDraftFetchedSCS) _then)
-      : super(_value, (v) => _then(v as SeriesDraftFetchedSCS));
-
-  @override
-  SeriesDraftFetchedSCS get _value => super._value as SeriesDraftFetchedSCS;
-
-  @override
-  $Res call({
-    Object seriesDraft = freezed,
-  }) {
-    return _then(SeriesDraftFetchedSCS(
-      seriesDraft == freezed ? _value.seriesDraft : seriesDraft as SeriesDraft,
-    ));
-  }
-}
-
-/// @nodoc
-class _$SeriesDraftFetchedSCS implements SeriesDraftFetchedSCS {
-  const _$SeriesDraftFetchedSCS(this.seriesDraft) : assert(seriesDraft != null);
-
-  @override
-  final SeriesDraft seriesDraft;
-
-  @override
-  String toString() {
-    return 'SeriesDraftDatabaseSuccess.seriesDraftFetchedSCS(seriesDraft: $seriesDraft)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is SeriesDraftFetchedSCS &&
-            (identical(other.seriesDraft, seriesDraft) ||
-                const DeepCollectionEquality()
-                    .equals(other.seriesDraft, seriesDraft)));
-  }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(seriesDraft);
-
-  @override
-  $SeriesDraftFetchedSCSCopyWith<SeriesDraftFetchedSCS> get copyWith =>
-      _$SeriesDraftFetchedSCSCopyWithImpl<SeriesDraftFetchedSCS>(
-          this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult localSeriesDraftDeletedSCS(),
-    @required TResult seriesDraftFetchedSCS(SeriesDraft seriesDraft),
-    @required TResult localSeriesDraftSavedSCS(SeriesDraft seriesDraft),
-    @required TResult localSeriesDraftUpdatedSCS(),
-    @required TResult onlineSeriesDraftDeletedSCS(),
-    @required TResult seriesDraftLoadedSCS(Series seriesDraft),
-    @required TResult seriesDraftsLoadedSCS(List<Series> seriesDrafts),
-    @required TResult onlineSeriesDraftSavedSCS(Series seriesDraft),
-    @required TResult onlineSeriesDraftCoverDeletedSCS(),
-  }) {
-    assert(localSeriesDraftDeletedSCS != null);
-    assert(seriesDraftFetchedSCS != null);
-    assert(localSeriesDraftSavedSCS != null);
-    assert(localSeriesDraftUpdatedSCS != null);
-    assert(onlineSeriesDraftDeletedSCS != null);
-    assert(seriesDraftLoadedSCS != null);
-    assert(seriesDraftsLoadedSCS != null);
-    assert(onlineSeriesDraftSavedSCS != null);
-    assert(onlineSeriesDraftCoverDeletedSCS != null);
-    return seriesDraftFetchedSCS(seriesDraft);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult localSeriesDraftDeletedSCS(),
-    TResult seriesDraftFetchedSCS(SeriesDraft seriesDraft),
-    TResult localSeriesDraftSavedSCS(SeriesDraft seriesDraft),
-    TResult localSeriesDraftUpdatedSCS(),
-    TResult onlineSeriesDraftDeletedSCS(),
-    TResult seriesDraftLoadedSCS(Series seriesDraft),
-    TResult seriesDraftsLoadedSCS(List<Series> seriesDrafts),
-    TResult onlineSeriesDraftSavedSCS(Series seriesDraft),
-    TResult onlineSeriesDraftCoverDeletedSCS(),
-    @required TResult orElse(),
-  }) {
-    assert(orElse != null);
-    if (seriesDraftFetchedSCS != null) {
-      return seriesDraftFetchedSCS(seriesDraft);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required
-        TResult localSeriesDraftDeletedSCS(LocalSeriesDraftDeletedSCS value),
-    @required TResult seriesDraftFetchedSCS(SeriesDraftFetchedSCS value),
-    @required TResult localSeriesDraftSavedSCS(LocalSeriesDraftSavedSCS value),
-    @required
-        TResult localSeriesDraftUpdatedSCS(LocalSeriesDraftUpdatedSCS value),
-    @required
-        TResult onlineSeriesDraftDeletedSCS(OnlineSeriesDraftDeletedSCS value),
-    @required TResult seriesDraftLoadedSCS(SeriesDraftLoadedSCS value),
-    @required TResult seriesDraftsLoadedSCS(SeriesDraftsLoadedSCS value),
-    @required
-        TResult onlineSeriesDraftSavedSCS(OnlineSeriesDraftSavedSCS value),
-    @required
-        TResult onlineSeriesDraftCoverDeletedSCS(
-            OnlineSeriesDraftCoverDeletedSCS value),
-  }) {
-    assert(localSeriesDraftDeletedSCS != null);
-    assert(seriesDraftFetchedSCS != null);
-    assert(localSeriesDraftSavedSCS != null);
-    assert(localSeriesDraftUpdatedSCS != null);
-    assert(onlineSeriesDraftDeletedSCS != null);
-    assert(seriesDraftLoadedSCS != null);
-    assert(seriesDraftsLoadedSCS != null);
-    assert(onlineSeriesDraftSavedSCS != null);
-    assert(onlineSeriesDraftCoverDeletedSCS != null);
-    return seriesDraftFetchedSCS(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult localSeriesDraftDeletedSCS(LocalSeriesDraftDeletedSCS value),
-    TResult seriesDraftFetchedSCS(SeriesDraftFetchedSCS value),
-    TResult localSeriesDraftSavedSCS(LocalSeriesDraftSavedSCS value),
-    TResult localSeriesDraftUpdatedSCS(LocalSeriesDraftUpdatedSCS value),
-    TResult onlineSeriesDraftDeletedSCS(OnlineSeriesDraftDeletedSCS value),
-    TResult seriesDraftLoadedSCS(SeriesDraftLoadedSCS value),
-    TResult seriesDraftsLoadedSCS(SeriesDraftsLoadedSCS value),
-    TResult onlineSeriesDraftSavedSCS(OnlineSeriesDraftSavedSCS value),
-    TResult onlineSeriesDraftCoverDeletedSCS(
-        OnlineSeriesDraftCoverDeletedSCS value),
-    @required TResult orElse(),
-  }) {
-    assert(orElse != null);
-    if (seriesDraftFetchedSCS != null) {
-      return seriesDraftFetchedSCS(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class SeriesDraftFetchedSCS implements SeriesDraftDatabaseSuccess {
-  const factory SeriesDraftFetchedSCS(SeriesDraft seriesDraft) =
-      _$SeriesDraftFetchedSCS;
-
-  SeriesDraft get seriesDraft;
-  $SeriesDraftFetchedSCSCopyWith<SeriesDraftFetchedSCS> get copyWith;
-}
-
-/// @nodoc
-abstract class $LocalSeriesDraftSavedSCSCopyWith<$Res> {
-  factory $LocalSeriesDraftSavedSCSCopyWith(LocalSeriesDraftSavedSCS value,
-          $Res Function(LocalSeriesDraftSavedSCS) then) =
-      _$LocalSeriesDraftSavedSCSCopyWithImpl<$Res>;
-  $Res call({SeriesDraft seriesDraft});
-}
-
-/// @nodoc
-class _$LocalSeriesDraftSavedSCSCopyWithImpl<$Res>
-    extends _$SeriesDraftDatabaseSuccessCopyWithImpl<$Res>
-    implements $LocalSeriesDraftSavedSCSCopyWith<$Res> {
-  _$LocalSeriesDraftSavedSCSCopyWithImpl(LocalSeriesDraftSavedSCS _value,
-      $Res Function(LocalSeriesDraftSavedSCS) _then)
-      : super(_value, (v) => _then(v as LocalSeriesDraftSavedSCS));
-
-  @override
-  LocalSeriesDraftSavedSCS get _value =>
-      super._value as LocalSeriesDraftSavedSCS;
-
-  @override
-  $Res call({
-    Object seriesDraft = freezed,
-  }) {
-    return _then(LocalSeriesDraftSavedSCS(
-      seriesDraft == freezed ? _value.seriesDraft : seriesDraft as SeriesDraft,
-    ));
-  }
-}
-
-/// @nodoc
-class _$LocalSeriesDraftSavedSCS implements LocalSeriesDraftSavedSCS {
-  const _$LocalSeriesDraftSavedSCS(this.seriesDraft)
-      : assert(seriesDraft != null);
-
-  @override
-  final SeriesDraft seriesDraft;
-
-  @override
-  String toString() {
-    return 'SeriesDraftDatabaseSuccess.localSeriesDraftSavedSCS(seriesDraft: $seriesDraft)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is LocalSeriesDraftSavedSCS &&
-            (identical(other.seriesDraft, seriesDraft) ||
-                const DeepCollectionEquality()
-                    .equals(other.seriesDraft, seriesDraft)));
-  }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(seriesDraft);
-
-  @override
-  $LocalSeriesDraftSavedSCSCopyWith<LocalSeriesDraftSavedSCS> get copyWith =>
-      _$LocalSeriesDraftSavedSCSCopyWithImpl<LocalSeriesDraftSavedSCS>(
-          this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult localSeriesDraftDeletedSCS(),
-    @required TResult seriesDraftFetchedSCS(SeriesDraft seriesDraft),
-    @required TResult localSeriesDraftSavedSCS(SeriesDraft seriesDraft),
-    @required TResult localSeriesDraftUpdatedSCS(),
-    @required TResult onlineSeriesDraftDeletedSCS(),
-    @required TResult seriesDraftLoadedSCS(Series seriesDraft),
-    @required TResult seriesDraftsLoadedSCS(List<Series> seriesDrafts),
-    @required TResult onlineSeriesDraftSavedSCS(Series seriesDraft),
-    @required TResult onlineSeriesDraftCoverDeletedSCS(),
-  }) {
-    assert(localSeriesDraftDeletedSCS != null);
-    assert(seriesDraftFetchedSCS != null);
-    assert(localSeriesDraftSavedSCS != null);
-    assert(localSeriesDraftUpdatedSCS != null);
-    assert(onlineSeriesDraftDeletedSCS != null);
-    assert(seriesDraftLoadedSCS != null);
-    assert(seriesDraftsLoadedSCS != null);
-    assert(onlineSeriesDraftSavedSCS != null);
-    assert(onlineSeriesDraftCoverDeletedSCS != null);
-    return localSeriesDraftSavedSCS(seriesDraft);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult localSeriesDraftDeletedSCS(),
-    TResult seriesDraftFetchedSCS(SeriesDraft seriesDraft),
-    TResult localSeriesDraftSavedSCS(SeriesDraft seriesDraft),
-    TResult localSeriesDraftUpdatedSCS(),
-    TResult onlineSeriesDraftDeletedSCS(),
-    TResult seriesDraftLoadedSCS(Series seriesDraft),
-    TResult seriesDraftsLoadedSCS(List<Series> seriesDrafts),
-    TResult onlineSeriesDraftSavedSCS(Series seriesDraft),
-    TResult onlineSeriesDraftCoverDeletedSCS(),
-    @required TResult orElse(),
-  }) {
-    assert(orElse != null);
-    if (localSeriesDraftSavedSCS != null) {
-      return localSeriesDraftSavedSCS(seriesDraft);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required
-        TResult localSeriesDraftDeletedSCS(LocalSeriesDraftDeletedSCS value),
-    @required TResult seriesDraftFetchedSCS(SeriesDraftFetchedSCS value),
-    @required TResult localSeriesDraftSavedSCS(LocalSeriesDraftSavedSCS value),
-    @required
-        TResult localSeriesDraftUpdatedSCS(LocalSeriesDraftUpdatedSCS value),
-    @required
-        TResult onlineSeriesDraftDeletedSCS(OnlineSeriesDraftDeletedSCS value),
-    @required TResult seriesDraftLoadedSCS(SeriesDraftLoadedSCS value),
-    @required TResult seriesDraftsLoadedSCS(SeriesDraftsLoadedSCS value),
-    @required
-        TResult onlineSeriesDraftSavedSCS(OnlineSeriesDraftSavedSCS value),
-    @required
-        TResult onlineSeriesDraftCoverDeletedSCS(
-            OnlineSeriesDraftCoverDeletedSCS value),
-  }) {
-    assert(localSeriesDraftDeletedSCS != null);
-    assert(seriesDraftFetchedSCS != null);
-    assert(localSeriesDraftSavedSCS != null);
-    assert(localSeriesDraftUpdatedSCS != null);
-    assert(onlineSeriesDraftDeletedSCS != null);
-    assert(seriesDraftLoadedSCS != null);
-    assert(seriesDraftsLoadedSCS != null);
-    assert(onlineSeriesDraftSavedSCS != null);
-    assert(onlineSeriesDraftCoverDeletedSCS != null);
-    return localSeriesDraftSavedSCS(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult localSeriesDraftDeletedSCS(LocalSeriesDraftDeletedSCS value),
-    TResult seriesDraftFetchedSCS(SeriesDraftFetchedSCS value),
-    TResult localSeriesDraftSavedSCS(LocalSeriesDraftSavedSCS value),
-    TResult localSeriesDraftUpdatedSCS(LocalSeriesDraftUpdatedSCS value),
-    TResult onlineSeriesDraftDeletedSCS(OnlineSeriesDraftDeletedSCS value),
-    TResult seriesDraftLoadedSCS(SeriesDraftLoadedSCS value),
-    TResult seriesDraftsLoadedSCS(SeriesDraftsLoadedSCS value),
-    TResult onlineSeriesDraftSavedSCS(OnlineSeriesDraftSavedSCS value),
-    TResult onlineSeriesDraftCoverDeletedSCS(
-        OnlineSeriesDraftCoverDeletedSCS value),
-    @required TResult orElse(),
-  }) {
-    assert(orElse != null);
-    if (localSeriesDraftSavedSCS != null) {
-      return localSeriesDraftSavedSCS(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class LocalSeriesDraftSavedSCS implements SeriesDraftDatabaseSuccess {
-  const factory LocalSeriesDraftSavedSCS(SeriesDraft seriesDraft) =
-      _$LocalSeriesDraftSavedSCS;
-
-  SeriesDraft get seriesDraft;
-  $LocalSeriesDraftSavedSCSCopyWith<LocalSeriesDraftSavedSCS> get copyWith;
 }
 
 /// @nodoc
@@ -670,8 +300,6 @@ class _$LocalSeriesDraftUpdatedSCS implements LocalSeriesDraftUpdatedSCS {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult localSeriesDraftDeletedSCS(),
-    @required TResult seriesDraftFetchedSCS(SeriesDraft seriesDraft),
-    @required TResult localSeriesDraftSavedSCS(SeriesDraft seriesDraft),
     @required TResult localSeriesDraftUpdatedSCS(),
     @required TResult onlineSeriesDraftDeletedSCS(),
     @required TResult seriesDraftLoadedSCS(Series seriesDraft),
@@ -680,8 +308,6 @@ class _$LocalSeriesDraftUpdatedSCS implements LocalSeriesDraftUpdatedSCS {
     @required TResult onlineSeriesDraftCoverDeletedSCS(),
   }) {
     assert(localSeriesDraftDeletedSCS != null);
-    assert(seriesDraftFetchedSCS != null);
-    assert(localSeriesDraftSavedSCS != null);
     assert(localSeriesDraftUpdatedSCS != null);
     assert(onlineSeriesDraftDeletedSCS != null);
     assert(seriesDraftLoadedSCS != null);
@@ -695,8 +321,6 @@ class _$LocalSeriesDraftUpdatedSCS implements LocalSeriesDraftUpdatedSCS {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult localSeriesDraftDeletedSCS(),
-    TResult seriesDraftFetchedSCS(SeriesDraft seriesDraft),
-    TResult localSeriesDraftSavedSCS(SeriesDraft seriesDraft),
     TResult localSeriesDraftUpdatedSCS(),
     TResult onlineSeriesDraftDeletedSCS(),
     TResult seriesDraftLoadedSCS(Series seriesDraft),
@@ -717,8 +341,6 @@ class _$LocalSeriesDraftUpdatedSCS implements LocalSeriesDraftUpdatedSCS {
   TResult map<TResult extends Object>({
     @required
         TResult localSeriesDraftDeletedSCS(LocalSeriesDraftDeletedSCS value),
-    @required TResult seriesDraftFetchedSCS(SeriesDraftFetchedSCS value),
-    @required TResult localSeriesDraftSavedSCS(LocalSeriesDraftSavedSCS value),
     @required
         TResult localSeriesDraftUpdatedSCS(LocalSeriesDraftUpdatedSCS value),
     @required
@@ -732,8 +354,6 @@ class _$LocalSeriesDraftUpdatedSCS implements LocalSeriesDraftUpdatedSCS {
             OnlineSeriesDraftCoverDeletedSCS value),
   }) {
     assert(localSeriesDraftDeletedSCS != null);
-    assert(seriesDraftFetchedSCS != null);
-    assert(localSeriesDraftSavedSCS != null);
     assert(localSeriesDraftUpdatedSCS != null);
     assert(onlineSeriesDraftDeletedSCS != null);
     assert(seriesDraftLoadedSCS != null);
@@ -747,8 +367,6 @@ class _$LocalSeriesDraftUpdatedSCS implements LocalSeriesDraftUpdatedSCS {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult localSeriesDraftDeletedSCS(LocalSeriesDraftDeletedSCS value),
-    TResult seriesDraftFetchedSCS(SeriesDraftFetchedSCS value),
-    TResult localSeriesDraftSavedSCS(LocalSeriesDraftSavedSCS value),
     TResult localSeriesDraftUpdatedSCS(LocalSeriesDraftUpdatedSCS value),
     TResult onlineSeriesDraftDeletedSCS(OnlineSeriesDraftDeletedSCS value),
     TResult seriesDraftLoadedSCS(SeriesDraftLoadedSCS value),
@@ -813,8 +431,6 @@ class _$OnlineSeriesDraftDeletedSCS implements OnlineSeriesDraftDeletedSCS {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult localSeriesDraftDeletedSCS(),
-    @required TResult seriesDraftFetchedSCS(SeriesDraft seriesDraft),
-    @required TResult localSeriesDraftSavedSCS(SeriesDraft seriesDraft),
     @required TResult localSeriesDraftUpdatedSCS(),
     @required TResult onlineSeriesDraftDeletedSCS(),
     @required TResult seriesDraftLoadedSCS(Series seriesDraft),
@@ -823,8 +439,6 @@ class _$OnlineSeriesDraftDeletedSCS implements OnlineSeriesDraftDeletedSCS {
     @required TResult onlineSeriesDraftCoverDeletedSCS(),
   }) {
     assert(localSeriesDraftDeletedSCS != null);
-    assert(seriesDraftFetchedSCS != null);
-    assert(localSeriesDraftSavedSCS != null);
     assert(localSeriesDraftUpdatedSCS != null);
     assert(onlineSeriesDraftDeletedSCS != null);
     assert(seriesDraftLoadedSCS != null);
@@ -838,8 +452,6 @@ class _$OnlineSeriesDraftDeletedSCS implements OnlineSeriesDraftDeletedSCS {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult localSeriesDraftDeletedSCS(),
-    TResult seriesDraftFetchedSCS(SeriesDraft seriesDraft),
-    TResult localSeriesDraftSavedSCS(SeriesDraft seriesDraft),
     TResult localSeriesDraftUpdatedSCS(),
     TResult onlineSeriesDraftDeletedSCS(),
     TResult seriesDraftLoadedSCS(Series seriesDraft),
@@ -860,8 +472,6 @@ class _$OnlineSeriesDraftDeletedSCS implements OnlineSeriesDraftDeletedSCS {
   TResult map<TResult extends Object>({
     @required
         TResult localSeriesDraftDeletedSCS(LocalSeriesDraftDeletedSCS value),
-    @required TResult seriesDraftFetchedSCS(SeriesDraftFetchedSCS value),
-    @required TResult localSeriesDraftSavedSCS(LocalSeriesDraftSavedSCS value),
     @required
         TResult localSeriesDraftUpdatedSCS(LocalSeriesDraftUpdatedSCS value),
     @required
@@ -875,8 +485,6 @@ class _$OnlineSeriesDraftDeletedSCS implements OnlineSeriesDraftDeletedSCS {
             OnlineSeriesDraftCoverDeletedSCS value),
   }) {
     assert(localSeriesDraftDeletedSCS != null);
-    assert(seriesDraftFetchedSCS != null);
-    assert(localSeriesDraftSavedSCS != null);
     assert(localSeriesDraftUpdatedSCS != null);
     assert(onlineSeriesDraftDeletedSCS != null);
     assert(seriesDraftLoadedSCS != null);
@@ -890,8 +498,6 @@ class _$OnlineSeriesDraftDeletedSCS implements OnlineSeriesDraftDeletedSCS {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult localSeriesDraftDeletedSCS(LocalSeriesDraftDeletedSCS value),
-    TResult seriesDraftFetchedSCS(SeriesDraftFetchedSCS value),
-    TResult localSeriesDraftSavedSCS(LocalSeriesDraftSavedSCS value),
     TResult localSeriesDraftUpdatedSCS(LocalSeriesDraftUpdatedSCS value),
     TResult onlineSeriesDraftDeletedSCS(OnlineSeriesDraftDeletedSCS value),
     TResult seriesDraftLoadedSCS(SeriesDraftLoadedSCS value),
@@ -968,6 +574,7 @@ class _$SeriesDraftLoadedSCS implements SeriesDraftLoadedSCS {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(seriesDraft);
 
+  @JsonKey(ignore: true)
   @override
   $SeriesDraftLoadedSCSCopyWith<SeriesDraftLoadedSCS> get copyWith =>
       _$SeriesDraftLoadedSCSCopyWithImpl<SeriesDraftLoadedSCS>(
@@ -977,8 +584,6 @@ class _$SeriesDraftLoadedSCS implements SeriesDraftLoadedSCS {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult localSeriesDraftDeletedSCS(),
-    @required TResult seriesDraftFetchedSCS(SeriesDraft seriesDraft),
-    @required TResult localSeriesDraftSavedSCS(SeriesDraft seriesDraft),
     @required TResult localSeriesDraftUpdatedSCS(),
     @required TResult onlineSeriesDraftDeletedSCS(),
     @required TResult seriesDraftLoadedSCS(Series seriesDraft),
@@ -987,8 +592,6 @@ class _$SeriesDraftLoadedSCS implements SeriesDraftLoadedSCS {
     @required TResult onlineSeriesDraftCoverDeletedSCS(),
   }) {
     assert(localSeriesDraftDeletedSCS != null);
-    assert(seriesDraftFetchedSCS != null);
-    assert(localSeriesDraftSavedSCS != null);
     assert(localSeriesDraftUpdatedSCS != null);
     assert(onlineSeriesDraftDeletedSCS != null);
     assert(seriesDraftLoadedSCS != null);
@@ -1002,8 +605,6 @@ class _$SeriesDraftLoadedSCS implements SeriesDraftLoadedSCS {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult localSeriesDraftDeletedSCS(),
-    TResult seriesDraftFetchedSCS(SeriesDraft seriesDraft),
-    TResult localSeriesDraftSavedSCS(SeriesDraft seriesDraft),
     TResult localSeriesDraftUpdatedSCS(),
     TResult onlineSeriesDraftDeletedSCS(),
     TResult seriesDraftLoadedSCS(Series seriesDraft),
@@ -1024,8 +625,6 @@ class _$SeriesDraftLoadedSCS implements SeriesDraftLoadedSCS {
   TResult map<TResult extends Object>({
     @required
         TResult localSeriesDraftDeletedSCS(LocalSeriesDraftDeletedSCS value),
-    @required TResult seriesDraftFetchedSCS(SeriesDraftFetchedSCS value),
-    @required TResult localSeriesDraftSavedSCS(LocalSeriesDraftSavedSCS value),
     @required
         TResult localSeriesDraftUpdatedSCS(LocalSeriesDraftUpdatedSCS value),
     @required
@@ -1039,8 +638,6 @@ class _$SeriesDraftLoadedSCS implements SeriesDraftLoadedSCS {
             OnlineSeriesDraftCoverDeletedSCS value),
   }) {
     assert(localSeriesDraftDeletedSCS != null);
-    assert(seriesDraftFetchedSCS != null);
-    assert(localSeriesDraftSavedSCS != null);
     assert(localSeriesDraftUpdatedSCS != null);
     assert(onlineSeriesDraftDeletedSCS != null);
     assert(seriesDraftLoadedSCS != null);
@@ -1054,8 +651,6 @@ class _$SeriesDraftLoadedSCS implements SeriesDraftLoadedSCS {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult localSeriesDraftDeletedSCS(LocalSeriesDraftDeletedSCS value),
-    TResult seriesDraftFetchedSCS(SeriesDraftFetchedSCS value),
-    TResult localSeriesDraftSavedSCS(LocalSeriesDraftSavedSCS value),
     TResult localSeriesDraftUpdatedSCS(LocalSeriesDraftUpdatedSCS value),
     TResult onlineSeriesDraftDeletedSCS(OnlineSeriesDraftDeletedSCS value),
     TResult seriesDraftLoadedSCS(SeriesDraftLoadedSCS value),
@@ -1078,6 +673,7 @@ abstract class SeriesDraftLoadedSCS implements SeriesDraftDatabaseSuccess {
       _$SeriesDraftLoadedSCS;
 
   Series get seriesDraft;
+  @JsonKey(ignore: true)
   $SeriesDraftLoadedSCSCopyWith<SeriesDraftLoadedSCS> get copyWith;
 }
 
@@ -1138,6 +734,7 @@ class _$SeriesDraftsLoadedSCS implements SeriesDraftsLoadedSCS {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(seriesDrafts);
 
+  @JsonKey(ignore: true)
   @override
   $SeriesDraftsLoadedSCSCopyWith<SeriesDraftsLoadedSCS> get copyWith =>
       _$SeriesDraftsLoadedSCSCopyWithImpl<SeriesDraftsLoadedSCS>(
@@ -1147,8 +744,6 @@ class _$SeriesDraftsLoadedSCS implements SeriesDraftsLoadedSCS {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult localSeriesDraftDeletedSCS(),
-    @required TResult seriesDraftFetchedSCS(SeriesDraft seriesDraft),
-    @required TResult localSeriesDraftSavedSCS(SeriesDraft seriesDraft),
     @required TResult localSeriesDraftUpdatedSCS(),
     @required TResult onlineSeriesDraftDeletedSCS(),
     @required TResult seriesDraftLoadedSCS(Series seriesDraft),
@@ -1157,8 +752,6 @@ class _$SeriesDraftsLoadedSCS implements SeriesDraftsLoadedSCS {
     @required TResult onlineSeriesDraftCoverDeletedSCS(),
   }) {
     assert(localSeriesDraftDeletedSCS != null);
-    assert(seriesDraftFetchedSCS != null);
-    assert(localSeriesDraftSavedSCS != null);
     assert(localSeriesDraftUpdatedSCS != null);
     assert(onlineSeriesDraftDeletedSCS != null);
     assert(seriesDraftLoadedSCS != null);
@@ -1172,8 +765,6 @@ class _$SeriesDraftsLoadedSCS implements SeriesDraftsLoadedSCS {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult localSeriesDraftDeletedSCS(),
-    TResult seriesDraftFetchedSCS(SeriesDraft seriesDraft),
-    TResult localSeriesDraftSavedSCS(SeriesDraft seriesDraft),
     TResult localSeriesDraftUpdatedSCS(),
     TResult onlineSeriesDraftDeletedSCS(),
     TResult seriesDraftLoadedSCS(Series seriesDraft),
@@ -1194,8 +785,6 @@ class _$SeriesDraftsLoadedSCS implements SeriesDraftsLoadedSCS {
   TResult map<TResult extends Object>({
     @required
         TResult localSeriesDraftDeletedSCS(LocalSeriesDraftDeletedSCS value),
-    @required TResult seriesDraftFetchedSCS(SeriesDraftFetchedSCS value),
-    @required TResult localSeriesDraftSavedSCS(LocalSeriesDraftSavedSCS value),
     @required
         TResult localSeriesDraftUpdatedSCS(LocalSeriesDraftUpdatedSCS value),
     @required
@@ -1209,8 +798,6 @@ class _$SeriesDraftsLoadedSCS implements SeriesDraftsLoadedSCS {
             OnlineSeriesDraftCoverDeletedSCS value),
   }) {
     assert(localSeriesDraftDeletedSCS != null);
-    assert(seriesDraftFetchedSCS != null);
-    assert(localSeriesDraftSavedSCS != null);
     assert(localSeriesDraftUpdatedSCS != null);
     assert(onlineSeriesDraftDeletedSCS != null);
     assert(seriesDraftLoadedSCS != null);
@@ -1224,8 +811,6 @@ class _$SeriesDraftsLoadedSCS implements SeriesDraftsLoadedSCS {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult localSeriesDraftDeletedSCS(LocalSeriesDraftDeletedSCS value),
-    TResult seriesDraftFetchedSCS(SeriesDraftFetchedSCS value),
-    TResult localSeriesDraftSavedSCS(LocalSeriesDraftSavedSCS value),
     TResult localSeriesDraftUpdatedSCS(LocalSeriesDraftUpdatedSCS value),
     TResult onlineSeriesDraftDeletedSCS(OnlineSeriesDraftDeletedSCS value),
     TResult seriesDraftLoadedSCS(SeriesDraftLoadedSCS value),
@@ -1248,6 +833,7 @@ abstract class SeriesDraftsLoadedSCS implements SeriesDraftDatabaseSuccess {
       _$SeriesDraftsLoadedSCS;
 
   List<Series> get seriesDrafts;
+  @JsonKey(ignore: true)
   $SeriesDraftsLoadedSCSCopyWith<SeriesDraftsLoadedSCS> get copyWith;
 }
 
@@ -1307,6 +893,7 @@ class _$OnlineSeriesDraftSavedSCS implements OnlineSeriesDraftSavedSCS {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(seriesDraft);
 
+  @JsonKey(ignore: true)
   @override
   $OnlineSeriesDraftSavedSCSCopyWith<OnlineSeriesDraftSavedSCS> get copyWith =>
       _$OnlineSeriesDraftSavedSCSCopyWithImpl<OnlineSeriesDraftSavedSCS>(
@@ -1316,8 +903,6 @@ class _$OnlineSeriesDraftSavedSCS implements OnlineSeriesDraftSavedSCS {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult localSeriesDraftDeletedSCS(),
-    @required TResult seriesDraftFetchedSCS(SeriesDraft seriesDraft),
-    @required TResult localSeriesDraftSavedSCS(SeriesDraft seriesDraft),
     @required TResult localSeriesDraftUpdatedSCS(),
     @required TResult onlineSeriesDraftDeletedSCS(),
     @required TResult seriesDraftLoadedSCS(Series seriesDraft),
@@ -1326,8 +911,6 @@ class _$OnlineSeriesDraftSavedSCS implements OnlineSeriesDraftSavedSCS {
     @required TResult onlineSeriesDraftCoverDeletedSCS(),
   }) {
     assert(localSeriesDraftDeletedSCS != null);
-    assert(seriesDraftFetchedSCS != null);
-    assert(localSeriesDraftSavedSCS != null);
     assert(localSeriesDraftUpdatedSCS != null);
     assert(onlineSeriesDraftDeletedSCS != null);
     assert(seriesDraftLoadedSCS != null);
@@ -1341,8 +924,6 @@ class _$OnlineSeriesDraftSavedSCS implements OnlineSeriesDraftSavedSCS {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult localSeriesDraftDeletedSCS(),
-    TResult seriesDraftFetchedSCS(SeriesDraft seriesDraft),
-    TResult localSeriesDraftSavedSCS(SeriesDraft seriesDraft),
     TResult localSeriesDraftUpdatedSCS(),
     TResult onlineSeriesDraftDeletedSCS(),
     TResult seriesDraftLoadedSCS(Series seriesDraft),
@@ -1363,8 +944,6 @@ class _$OnlineSeriesDraftSavedSCS implements OnlineSeriesDraftSavedSCS {
   TResult map<TResult extends Object>({
     @required
         TResult localSeriesDraftDeletedSCS(LocalSeriesDraftDeletedSCS value),
-    @required TResult seriesDraftFetchedSCS(SeriesDraftFetchedSCS value),
-    @required TResult localSeriesDraftSavedSCS(LocalSeriesDraftSavedSCS value),
     @required
         TResult localSeriesDraftUpdatedSCS(LocalSeriesDraftUpdatedSCS value),
     @required
@@ -1378,8 +957,6 @@ class _$OnlineSeriesDraftSavedSCS implements OnlineSeriesDraftSavedSCS {
             OnlineSeriesDraftCoverDeletedSCS value),
   }) {
     assert(localSeriesDraftDeletedSCS != null);
-    assert(seriesDraftFetchedSCS != null);
-    assert(localSeriesDraftSavedSCS != null);
     assert(localSeriesDraftUpdatedSCS != null);
     assert(onlineSeriesDraftDeletedSCS != null);
     assert(seriesDraftLoadedSCS != null);
@@ -1393,8 +970,6 @@ class _$OnlineSeriesDraftSavedSCS implements OnlineSeriesDraftSavedSCS {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult localSeriesDraftDeletedSCS(LocalSeriesDraftDeletedSCS value),
-    TResult seriesDraftFetchedSCS(SeriesDraftFetchedSCS value),
-    TResult localSeriesDraftSavedSCS(LocalSeriesDraftSavedSCS value),
     TResult localSeriesDraftUpdatedSCS(LocalSeriesDraftUpdatedSCS value),
     TResult onlineSeriesDraftDeletedSCS(OnlineSeriesDraftDeletedSCS value),
     TResult seriesDraftLoadedSCS(SeriesDraftLoadedSCS value),
@@ -1417,6 +992,7 @@ abstract class OnlineSeriesDraftSavedSCS implements SeriesDraftDatabaseSuccess {
       _$OnlineSeriesDraftSavedSCS;
 
   Series get seriesDraft;
+  @JsonKey(ignore: true)
   $OnlineSeriesDraftSavedSCSCopyWith<OnlineSeriesDraftSavedSCS> get copyWith;
 }
 
@@ -1465,8 +1041,6 @@ class _$OnlineSeriesDraftCoverDeletedSCS
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult localSeriesDraftDeletedSCS(),
-    @required TResult seriesDraftFetchedSCS(SeriesDraft seriesDraft),
-    @required TResult localSeriesDraftSavedSCS(SeriesDraft seriesDraft),
     @required TResult localSeriesDraftUpdatedSCS(),
     @required TResult onlineSeriesDraftDeletedSCS(),
     @required TResult seriesDraftLoadedSCS(Series seriesDraft),
@@ -1475,8 +1049,6 @@ class _$OnlineSeriesDraftCoverDeletedSCS
     @required TResult onlineSeriesDraftCoverDeletedSCS(),
   }) {
     assert(localSeriesDraftDeletedSCS != null);
-    assert(seriesDraftFetchedSCS != null);
-    assert(localSeriesDraftSavedSCS != null);
     assert(localSeriesDraftUpdatedSCS != null);
     assert(onlineSeriesDraftDeletedSCS != null);
     assert(seriesDraftLoadedSCS != null);
@@ -1490,8 +1062,6 @@ class _$OnlineSeriesDraftCoverDeletedSCS
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult localSeriesDraftDeletedSCS(),
-    TResult seriesDraftFetchedSCS(SeriesDraft seriesDraft),
-    TResult localSeriesDraftSavedSCS(SeriesDraft seriesDraft),
     TResult localSeriesDraftUpdatedSCS(),
     TResult onlineSeriesDraftDeletedSCS(),
     TResult seriesDraftLoadedSCS(Series seriesDraft),
@@ -1512,8 +1082,6 @@ class _$OnlineSeriesDraftCoverDeletedSCS
   TResult map<TResult extends Object>({
     @required
         TResult localSeriesDraftDeletedSCS(LocalSeriesDraftDeletedSCS value),
-    @required TResult seriesDraftFetchedSCS(SeriesDraftFetchedSCS value),
-    @required TResult localSeriesDraftSavedSCS(LocalSeriesDraftSavedSCS value),
     @required
         TResult localSeriesDraftUpdatedSCS(LocalSeriesDraftUpdatedSCS value),
     @required
@@ -1527,8 +1095,6 @@ class _$OnlineSeriesDraftCoverDeletedSCS
             OnlineSeriesDraftCoverDeletedSCS value),
   }) {
     assert(localSeriesDraftDeletedSCS != null);
-    assert(seriesDraftFetchedSCS != null);
-    assert(localSeriesDraftSavedSCS != null);
     assert(localSeriesDraftUpdatedSCS != null);
     assert(onlineSeriesDraftDeletedSCS != null);
     assert(seriesDraftLoadedSCS != null);
@@ -1542,8 +1108,6 @@ class _$OnlineSeriesDraftCoverDeletedSCS
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult localSeriesDraftDeletedSCS(LocalSeriesDraftDeletedSCS value),
-    TResult seriesDraftFetchedSCS(SeriesDraftFetchedSCS value),
-    TResult localSeriesDraftSavedSCS(LocalSeriesDraftSavedSCS value),
     TResult localSeriesDraftUpdatedSCS(LocalSeriesDraftUpdatedSCS value),
     TResult onlineSeriesDraftDeletedSCS(OnlineSeriesDraftDeletedSCS value),
     TResult seriesDraftLoadedSCS(SeriesDraftLoadedSCS value),

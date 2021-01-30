@@ -6,12 +6,12 @@ import 'package:wine/application/database/home/home_database_bloc.dart';
 class HomeListeners {
   BlocListener<CoreDatabaseBloc, CoreDatabaseState> _coreDatabaseListener() =>
       BlocListener<CoreDatabaseBloc, CoreDatabaseState>(
-        listener: (context, state) {
-          state.maybeMap(
-            seriesPublishedFromHomeSTE: (otherState) {
+        listener: (context, coreDatabaseState) {
+          coreDatabaseState.maybeMap(
+            seriesPublishedFromHomeState: (state) {
               context
                   .read<HomeDatabaseBloc>()
-                  .add(HomeDatabaseEvent.seriesPublishedEVT(otherState.series));
+                  .add(HomeDatabaseEvent.seriesPublishedEVT(state.series));
             },
             orElse: () {},
           );

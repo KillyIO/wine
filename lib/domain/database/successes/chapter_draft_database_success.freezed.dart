@@ -19,13 +19,6 @@ class _$ChapterDraftDatabaseSuccessTearOff {
   }
 
 // ignore: unused_element
-  ChapterDraftFetchedSCS chapterDraftFetchedSCS(ChapterDraft chapterDraft) {
-    return ChapterDraftFetchedSCS(
-      chapterDraft,
-    );
-  }
-
-// ignore: unused_element
   LocalChapterDraftSavedSCS localChapterDraftSavedSCS() {
     return const LocalChapterDraftSavedSCS();
   }
@@ -76,7 +69,6 @@ mixin _$ChapterDraftDatabaseSuccess {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult localChapterDraftDeletedSCS(),
-    @required TResult chapterDraftFetchedSCS(ChapterDraft chapterDraft),
     @required TResult localChapterDraftSavedSCS(),
     @required TResult localChapterDraftUpdatedSCS(),
     @required TResult onlineChapterDraftDeletedSCS(),
@@ -88,7 +80,6 @@ mixin _$ChapterDraftDatabaseSuccess {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult localChapterDraftDeletedSCS(),
-    TResult chapterDraftFetchedSCS(ChapterDraft chapterDraft),
     TResult localChapterDraftSavedSCS(),
     TResult localChapterDraftUpdatedSCS(),
     TResult onlineChapterDraftDeletedSCS(),
@@ -102,7 +93,6 @@ mixin _$ChapterDraftDatabaseSuccess {
   TResult map<TResult extends Object>({
     @required
         TResult localChapterDraftDeletedSCS(LocalChapterDraftDeletedSCS value),
-    @required TResult chapterDraftFetchedSCS(ChapterDraftFetchedSCS value),
     @required
         TResult localChapterDraftSavedSCS(LocalChapterDraftSavedSCS value),
     @required
@@ -121,7 +111,6 @@ mixin _$ChapterDraftDatabaseSuccess {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult localChapterDraftDeletedSCS(LocalChapterDraftDeletedSCS value),
-    TResult chapterDraftFetchedSCS(ChapterDraftFetchedSCS value),
     TResult localChapterDraftSavedSCS(LocalChapterDraftSavedSCS value),
     TResult localChapterDraftUpdatedSCS(LocalChapterDraftUpdatedSCS value),
     TResult onlineChapterDraftDeletedSCS(OnlineChapterDraftDeletedSCS value),
@@ -194,7 +183,6 @@ class _$LocalChapterDraftDeletedSCS implements LocalChapterDraftDeletedSCS {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult localChapterDraftDeletedSCS(),
-    @required TResult chapterDraftFetchedSCS(ChapterDraft chapterDraft),
     @required TResult localChapterDraftSavedSCS(),
     @required TResult localChapterDraftUpdatedSCS(),
     @required TResult onlineChapterDraftDeletedSCS(),
@@ -204,7 +192,6 @@ class _$LocalChapterDraftDeletedSCS implements LocalChapterDraftDeletedSCS {
     @required TResult onlineChapterDraftCoverDeletedSCS(),
   }) {
     assert(localChapterDraftDeletedSCS != null);
-    assert(chapterDraftFetchedSCS != null);
     assert(localChapterDraftSavedSCS != null);
     assert(localChapterDraftUpdatedSCS != null);
     assert(onlineChapterDraftDeletedSCS != null);
@@ -219,7 +206,6 @@ class _$LocalChapterDraftDeletedSCS implements LocalChapterDraftDeletedSCS {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult localChapterDraftDeletedSCS(),
-    TResult chapterDraftFetchedSCS(ChapterDraft chapterDraft),
     TResult localChapterDraftSavedSCS(),
     TResult localChapterDraftUpdatedSCS(),
     TResult onlineChapterDraftDeletedSCS(),
@@ -241,7 +227,6 @@ class _$LocalChapterDraftDeletedSCS implements LocalChapterDraftDeletedSCS {
   TResult map<TResult extends Object>({
     @required
         TResult localChapterDraftDeletedSCS(LocalChapterDraftDeletedSCS value),
-    @required TResult chapterDraftFetchedSCS(ChapterDraftFetchedSCS value),
     @required
         TResult localChapterDraftSavedSCS(LocalChapterDraftSavedSCS value),
     @required
@@ -258,7 +243,6 @@ class _$LocalChapterDraftDeletedSCS implements LocalChapterDraftDeletedSCS {
             OnlineChapterDraftCoverDeletedSCS value),
   }) {
     assert(localChapterDraftDeletedSCS != null);
-    assert(chapterDraftFetchedSCS != null);
     assert(localChapterDraftSavedSCS != null);
     assert(localChapterDraftUpdatedSCS != null);
     assert(onlineChapterDraftDeletedSCS != null);
@@ -273,7 +257,6 @@ class _$LocalChapterDraftDeletedSCS implements LocalChapterDraftDeletedSCS {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult localChapterDraftDeletedSCS(LocalChapterDraftDeletedSCS value),
-    TResult chapterDraftFetchedSCS(ChapterDraftFetchedSCS value),
     TResult localChapterDraftSavedSCS(LocalChapterDraftSavedSCS value),
     TResult localChapterDraftUpdatedSCS(LocalChapterDraftUpdatedSCS value),
     TResult onlineChapterDraftDeletedSCS(OnlineChapterDraftDeletedSCS value),
@@ -295,178 +278,6 @@ class _$LocalChapterDraftDeletedSCS implements LocalChapterDraftDeletedSCS {
 abstract class LocalChapterDraftDeletedSCS
     implements ChapterDraftDatabaseSuccess {
   const factory LocalChapterDraftDeletedSCS() = _$LocalChapterDraftDeletedSCS;
-}
-
-/// @nodoc
-abstract class $ChapterDraftFetchedSCSCopyWith<$Res> {
-  factory $ChapterDraftFetchedSCSCopyWith(ChapterDraftFetchedSCS value,
-          $Res Function(ChapterDraftFetchedSCS) then) =
-      _$ChapterDraftFetchedSCSCopyWithImpl<$Res>;
-  $Res call({ChapterDraft chapterDraft});
-}
-
-/// @nodoc
-class _$ChapterDraftFetchedSCSCopyWithImpl<$Res>
-    extends _$ChapterDraftDatabaseSuccessCopyWithImpl<$Res>
-    implements $ChapterDraftFetchedSCSCopyWith<$Res> {
-  _$ChapterDraftFetchedSCSCopyWithImpl(ChapterDraftFetchedSCS _value,
-      $Res Function(ChapterDraftFetchedSCS) _then)
-      : super(_value, (v) => _then(v as ChapterDraftFetchedSCS));
-
-  @override
-  ChapterDraftFetchedSCS get _value => super._value as ChapterDraftFetchedSCS;
-
-  @override
-  $Res call({
-    Object chapterDraft = freezed,
-  }) {
-    return _then(ChapterDraftFetchedSCS(
-      chapterDraft == freezed
-          ? _value.chapterDraft
-          : chapterDraft as ChapterDraft,
-    ));
-  }
-}
-
-/// @nodoc
-class _$ChapterDraftFetchedSCS implements ChapterDraftFetchedSCS {
-  const _$ChapterDraftFetchedSCS(this.chapterDraft)
-      : assert(chapterDraft != null);
-
-  @override
-  final ChapterDraft chapterDraft;
-
-  @override
-  String toString() {
-    return 'ChapterDraftDatabaseSuccess.chapterDraftFetchedSCS(chapterDraft: $chapterDraft)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is ChapterDraftFetchedSCS &&
-            (identical(other.chapterDraft, chapterDraft) ||
-                const DeepCollectionEquality()
-                    .equals(other.chapterDraft, chapterDraft)));
-  }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(chapterDraft);
-
-  @override
-  $ChapterDraftFetchedSCSCopyWith<ChapterDraftFetchedSCS> get copyWith =>
-      _$ChapterDraftFetchedSCSCopyWithImpl<ChapterDraftFetchedSCS>(
-          this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult localChapterDraftDeletedSCS(),
-    @required TResult chapterDraftFetchedSCS(ChapterDraft chapterDraft),
-    @required TResult localChapterDraftSavedSCS(),
-    @required TResult localChapterDraftUpdatedSCS(),
-    @required TResult onlineChapterDraftDeletedSCS(),
-    @required TResult chapterDraftLoadedSCS(Chapter chapterDraft),
-    @required TResult chapterDraftsLoadedSCS(List<Chapter> chapterDrafts),
-    @required TResult onlineChapterDraftSavedSCS(Chapter chapterDraft),
-    @required TResult onlineChapterDraftCoverDeletedSCS(),
-  }) {
-    assert(localChapterDraftDeletedSCS != null);
-    assert(chapterDraftFetchedSCS != null);
-    assert(localChapterDraftSavedSCS != null);
-    assert(localChapterDraftUpdatedSCS != null);
-    assert(onlineChapterDraftDeletedSCS != null);
-    assert(chapterDraftLoadedSCS != null);
-    assert(chapterDraftsLoadedSCS != null);
-    assert(onlineChapterDraftSavedSCS != null);
-    assert(onlineChapterDraftCoverDeletedSCS != null);
-    return chapterDraftFetchedSCS(chapterDraft);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult localChapterDraftDeletedSCS(),
-    TResult chapterDraftFetchedSCS(ChapterDraft chapterDraft),
-    TResult localChapterDraftSavedSCS(),
-    TResult localChapterDraftUpdatedSCS(),
-    TResult onlineChapterDraftDeletedSCS(),
-    TResult chapterDraftLoadedSCS(Chapter chapterDraft),
-    TResult chapterDraftsLoadedSCS(List<Chapter> chapterDrafts),
-    TResult onlineChapterDraftSavedSCS(Chapter chapterDraft),
-    TResult onlineChapterDraftCoverDeletedSCS(),
-    @required TResult orElse(),
-  }) {
-    assert(orElse != null);
-    if (chapterDraftFetchedSCS != null) {
-      return chapterDraftFetchedSCS(chapterDraft);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required
-        TResult localChapterDraftDeletedSCS(LocalChapterDraftDeletedSCS value),
-    @required TResult chapterDraftFetchedSCS(ChapterDraftFetchedSCS value),
-    @required
-        TResult localChapterDraftSavedSCS(LocalChapterDraftSavedSCS value),
-    @required
-        TResult localChapterDraftUpdatedSCS(LocalChapterDraftUpdatedSCS value),
-    @required
-        TResult onlineChapterDraftDeletedSCS(
-            OnlineChapterDraftDeletedSCS value),
-    @required TResult chapterDraftLoadedSCS(ChapterDraftLoadedSCS value),
-    @required TResult chapterDraftsLoadedSCS(ChapterDraftsLoadedSCS value),
-    @required
-        TResult onlineChapterDraftSavedSCS(OnlineChapterDraftSavedSCS value),
-    @required
-        TResult onlineChapterDraftCoverDeletedSCS(
-            OnlineChapterDraftCoverDeletedSCS value),
-  }) {
-    assert(localChapterDraftDeletedSCS != null);
-    assert(chapterDraftFetchedSCS != null);
-    assert(localChapterDraftSavedSCS != null);
-    assert(localChapterDraftUpdatedSCS != null);
-    assert(onlineChapterDraftDeletedSCS != null);
-    assert(chapterDraftLoadedSCS != null);
-    assert(chapterDraftsLoadedSCS != null);
-    assert(onlineChapterDraftSavedSCS != null);
-    assert(onlineChapterDraftCoverDeletedSCS != null);
-    return chapterDraftFetchedSCS(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult localChapterDraftDeletedSCS(LocalChapterDraftDeletedSCS value),
-    TResult chapterDraftFetchedSCS(ChapterDraftFetchedSCS value),
-    TResult localChapterDraftSavedSCS(LocalChapterDraftSavedSCS value),
-    TResult localChapterDraftUpdatedSCS(LocalChapterDraftUpdatedSCS value),
-    TResult onlineChapterDraftDeletedSCS(OnlineChapterDraftDeletedSCS value),
-    TResult chapterDraftLoadedSCS(ChapterDraftLoadedSCS value),
-    TResult chapterDraftsLoadedSCS(ChapterDraftsLoadedSCS value),
-    TResult onlineChapterDraftSavedSCS(OnlineChapterDraftSavedSCS value),
-    TResult onlineChapterDraftCoverDeletedSCS(
-        OnlineChapterDraftCoverDeletedSCS value),
-    @required TResult orElse(),
-  }) {
-    assert(orElse != null);
-    if (chapterDraftFetchedSCS != null) {
-      return chapterDraftFetchedSCS(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class ChapterDraftFetchedSCS implements ChapterDraftDatabaseSuccess {
-  const factory ChapterDraftFetchedSCS(ChapterDraft chapterDraft) =
-      _$ChapterDraftFetchedSCS;
-
-  ChapterDraft get chapterDraft;
-  $ChapterDraftFetchedSCSCopyWith<ChapterDraftFetchedSCS> get copyWith;
 }
 
 /// @nodoc
@@ -510,7 +321,6 @@ class _$LocalChapterDraftSavedSCS implements LocalChapterDraftSavedSCS {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult localChapterDraftDeletedSCS(),
-    @required TResult chapterDraftFetchedSCS(ChapterDraft chapterDraft),
     @required TResult localChapterDraftSavedSCS(),
     @required TResult localChapterDraftUpdatedSCS(),
     @required TResult onlineChapterDraftDeletedSCS(),
@@ -520,7 +330,6 @@ class _$LocalChapterDraftSavedSCS implements LocalChapterDraftSavedSCS {
     @required TResult onlineChapterDraftCoverDeletedSCS(),
   }) {
     assert(localChapterDraftDeletedSCS != null);
-    assert(chapterDraftFetchedSCS != null);
     assert(localChapterDraftSavedSCS != null);
     assert(localChapterDraftUpdatedSCS != null);
     assert(onlineChapterDraftDeletedSCS != null);
@@ -535,7 +344,6 @@ class _$LocalChapterDraftSavedSCS implements LocalChapterDraftSavedSCS {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult localChapterDraftDeletedSCS(),
-    TResult chapterDraftFetchedSCS(ChapterDraft chapterDraft),
     TResult localChapterDraftSavedSCS(),
     TResult localChapterDraftUpdatedSCS(),
     TResult onlineChapterDraftDeletedSCS(),
@@ -557,7 +365,6 @@ class _$LocalChapterDraftSavedSCS implements LocalChapterDraftSavedSCS {
   TResult map<TResult extends Object>({
     @required
         TResult localChapterDraftDeletedSCS(LocalChapterDraftDeletedSCS value),
-    @required TResult chapterDraftFetchedSCS(ChapterDraftFetchedSCS value),
     @required
         TResult localChapterDraftSavedSCS(LocalChapterDraftSavedSCS value),
     @required
@@ -574,7 +381,6 @@ class _$LocalChapterDraftSavedSCS implements LocalChapterDraftSavedSCS {
             OnlineChapterDraftCoverDeletedSCS value),
   }) {
     assert(localChapterDraftDeletedSCS != null);
-    assert(chapterDraftFetchedSCS != null);
     assert(localChapterDraftSavedSCS != null);
     assert(localChapterDraftUpdatedSCS != null);
     assert(onlineChapterDraftDeletedSCS != null);
@@ -589,7 +395,6 @@ class _$LocalChapterDraftSavedSCS implements LocalChapterDraftSavedSCS {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult localChapterDraftDeletedSCS(LocalChapterDraftDeletedSCS value),
-    TResult chapterDraftFetchedSCS(ChapterDraftFetchedSCS value),
     TResult localChapterDraftSavedSCS(LocalChapterDraftSavedSCS value),
     TResult localChapterDraftUpdatedSCS(LocalChapterDraftUpdatedSCS value),
     TResult onlineChapterDraftDeletedSCS(OnlineChapterDraftDeletedSCS value),
@@ -655,7 +460,6 @@ class _$LocalChapterDraftUpdatedSCS implements LocalChapterDraftUpdatedSCS {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult localChapterDraftDeletedSCS(),
-    @required TResult chapterDraftFetchedSCS(ChapterDraft chapterDraft),
     @required TResult localChapterDraftSavedSCS(),
     @required TResult localChapterDraftUpdatedSCS(),
     @required TResult onlineChapterDraftDeletedSCS(),
@@ -665,7 +469,6 @@ class _$LocalChapterDraftUpdatedSCS implements LocalChapterDraftUpdatedSCS {
     @required TResult onlineChapterDraftCoverDeletedSCS(),
   }) {
     assert(localChapterDraftDeletedSCS != null);
-    assert(chapterDraftFetchedSCS != null);
     assert(localChapterDraftSavedSCS != null);
     assert(localChapterDraftUpdatedSCS != null);
     assert(onlineChapterDraftDeletedSCS != null);
@@ -680,7 +483,6 @@ class _$LocalChapterDraftUpdatedSCS implements LocalChapterDraftUpdatedSCS {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult localChapterDraftDeletedSCS(),
-    TResult chapterDraftFetchedSCS(ChapterDraft chapterDraft),
     TResult localChapterDraftSavedSCS(),
     TResult localChapterDraftUpdatedSCS(),
     TResult onlineChapterDraftDeletedSCS(),
@@ -702,7 +504,6 @@ class _$LocalChapterDraftUpdatedSCS implements LocalChapterDraftUpdatedSCS {
   TResult map<TResult extends Object>({
     @required
         TResult localChapterDraftDeletedSCS(LocalChapterDraftDeletedSCS value),
-    @required TResult chapterDraftFetchedSCS(ChapterDraftFetchedSCS value),
     @required
         TResult localChapterDraftSavedSCS(LocalChapterDraftSavedSCS value),
     @required
@@ -719,7 +520,6 @@ class _$LocalChapterDraftUpdatedSCS implements LocalChapterDraftUpdatedSCS {
             OnlineChapterDraftCoverDeletedSCS value),
   }) {
     assert(localChapterDraftDeletedSCS != null);
-    assert(chapterDraftFetchedSCS != null);
     assert(localChapterDraftSavedSCS != null);
     assert(localChapterDraftUpdatedSCS != null);
     assert(onlineChapterDraftDeletedSCS != null);
@@ -734,7 +534,6 @@ class _$LocalChapterDraftUpdatedSCS implements LocalChapterDraftUpdatedSCS {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult localChapterDraftDeletedSCS(LocalChapterDraftDeletedSCS value),
-    TResult chapterDraftFetchedSCS(ChapterDraftFetchedSCS value),
     TResult localChapterDraftSavedSCS(LocalChapterDraftSavedSCS value),
     TResult localChapterDraftUpdatedSCS(LocalChapterDraftUpdatedSCS value),
     TResult onlineChapterDraftDeletedSCS(OnlineChapterDraftDeletedSCS value),
@@ -801,7 +600,6 @@ class _$OnlineChapterDraftDeletedSCS implements OnlineChapterDraftDeletedSCS {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult localChapterDraftDeletedSCS(),
-    @required TResult chapterDraftFetchedSCS(ChapterDraft chapterDraft),
     @required TResult localChapterDraftSavedSCS(),
     @required TResult localChapterDraftUpdatedSCS(),
     @required TResult onlineChapterDraftDeletedSCS(),
@@ -811,7 +609,6 @@ class _$OnlineChapterDraftDeletedSCS implements OnlineChapterDraftDeletedSCS {
     @required TResult onlineChapterDraftCoverDeletedSCS(),
   }) {
     assert(localChapterDraftDeletedSCS != null);
-    assert(chapterDraftFetchedSCS != null);
     assert(localChapterDraftSavedSCS != null);
     assert(localChapterDraftUpdatedSCS != null);
     assert(onlineChapterDraftDeletedSCS != null);
@@ -826,7 +623,6 @@ class _$OnlineChapterDraftDeletedSCS implements OnlineChapterDraftDeletedSCS {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult localChapterDraftDeletedSCS(),
-    TResult chapterDraftFetchedSCS(ChapterDraft chapterDraft),
     TResult localChapterDraftSavedSCS(),
     TResult localChapterDraftUpdatedSCS(),
     TResult onlineChapterDraftDeletedSCS(),
@@ -848,7 +644,6 @@ class _$OnlineChapterDraftDeletedSCS implements OnlineChapterDraftDeletedSCS {
   TResult map<TResult extends Object>({
     @required
         TResult localChapterDraftDeletedSCS(LocalChapterDraftDeletedSCS value),
-    @required TResult chapterDraftFetchedSCS(ChapterDraftFetchedSCS value),
     @required
         TResult localChapterDraftSavedSCS(LocalChapterDraftSavedSCS value),
     @required
@@ -865,7 +660,6 @@ class _$OnlineChapterDraftDeletedSCS implements OnlineChapterDraftDeletedSCS {
             OnlineChapterDraftCoverDeletedSCS value),
   }) {
     assert(localChapterDraftDeletedSCS != null);
-    assert(chapterDraftFetchedSCS != null);
     assert(localChapterDraftSavedSCS != null);
     assert(localChapterDraftUpdatedSCS != null);
     assert(onlineChapterDraftDeletedSCS != null);
@@ -880,7 +674,6 @@ class _$OnlineChapterDraftDeletedSCS implements OnlineChapterDraftDeletedSCS {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult localChapterDraftDeletedSCS(LocalChapterDraftDeletedSCS value),
-    TResult chapterDraftFetchedSCS(ChapterDraftFetchedSCS value),
     TResult localChapterDraftSavedSCS(LocalChapterDraftSavedSCS value),
     TResult localChapterDraftUpdatedSCS(LocalChapterDraftUpdatedSCS value),
     TResult onlineChapterDraftDeletedSCS(OnlineChapterDraftDeletedSCS value),
@@ -959,6 +752,7 @@ class _$ChapterDraftLoadedSCS implements ChapterDraftLoadedSCS {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(chapterDraft);
 
+  @JsonKey(ignore: true)
   @override
   $ChapterDraftLoadedSCSCopyWith<ChapterDraftLoadedSCS> get copyWith =>
       _$ChapterDraftLoadedSCSCopyWithImpl<ChapterDraftLoadedSCS>(
@@ -968,7 +762,6 @@ class _$ChapterDraftLoadedSCS implements ChapterDraftLoadedSCS {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult localChapterDraftDeletedSCS(),
-    @required TResult chapterDraftFetchedSCS(ChapterDraft chapterDraft),
     @required TResult localChapterDraftSavedSCS(),
     @required TResult localChapterDraftUpdatedSCS(),
     @required TResult onlineChapterDraftDeletedSCS(),
@@ -978,7 +771,6 @@ class _$ChapterDraftLoadedSCS implements ChapterDraftLoadedSCS {
     @required TResult onlineChapterDraftCoverDeletedSCS(),
   }) {
     assert(localChapterDraftDeletedSCS != null);
-    assert(chapterDraftFetchedSCS != null);
     assert(localChapterDraftSavedSCS != null);
     assert(localChapterDraftUpdatedSCS != null);
     assert(onlineChapterDraftDeletedSCS != null);
@@ -993,7 +785,6 @@ class _$ChapterDraftLoadedSCS implements ChapterDraftLoadedSCS {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult localChapterDraftDeletedSCS(),
-    TResult chapterDraftFetchedSCS(ChapterDraft chapterDraft),
     TResult localChapterDraftSavedSCS(),
     TResult localChapterDraftUpdatedSCS(),
     TResult onlineChapterDraftDeletedSCS(),
@@ -1015,7 +806,6 @@ class _$ChapterDraftLoadedSCS implements ChapterDraftLoadedSCS {
   TResult map<TResult extends Object>({
     @required
         TResult localChapterDraftDeletedSCS(LocalChapterDraftDeletedSCS value),
-    @required TResult chapterDraftFetchedSCS(ChapterDraftFetchedSCS value),
     @required
         TResult localChapterDraftSavedSCS(LocalChapterDraftSavedSCS value),
     @required
@@ -1032,7 +822,6 @@ class _$ChapterDraftLoadedSCS implements ChapterDraftLoadedSCS {
             OnlineChapterDraftCoverDeletedSCS value),
   }) {
     assert(localChapterDraftDeletedSCS != null);
-    assert(chapterDraftFetchedSCS != null);
     assert(localChapterDraftSavedSCS != null);
     assert(localChapterDraftUpdatedSCS != null);
     assert(onlineChapterDraftDeletedSCS != null);
@@ -1047,7 +836,6 @@ class _$ChapterDraftLoadedSCS implements ChapterDraftLoadedSCS {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult localChapterDraftDeletedSCS(LocalChapterDraftDeletedSCS value),
-    TResult chapterDraftFetchedSCS(ChapterDraftFetchedSCS value),
     TResult localChapterDraftSavedSCS(LocalChapterDraftSavedSCS value),
     TResult localChapterDraftUpdatedSCS(LocalChapterDraftUpdatedSCS value),
     TResult onlineChapterDraftDeletedSCS(OnlineChapterDraftDeletedSCS value),
@@ -1071,6 +859,7 @@ abstract class ChapterDraftLoadedSCS implements ChapterDraftDatabaseSuccess {
       _$ChapterDraftLoadedSCS;
 
   Chapter get chapterDraft;
+  @JsonKey(ignore: true)
   $ChapterDraftLoadedSCSCopyWith<ChapterDraftLoadedSCS> get copyWith;
 }
 
@@ -1131,6 +920,7 @@ class _$ChapterDraftsLoadedSCS implements ChapterDraftsLoadedSCS {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(chapterDrafts);
 
+  @JsonKey(ignore: true)
   @override
   $ChapterDraftsLoadedSCSCopyWith<ChapterDraftsLoadedSCS> get copyWith =>
       _$ChapterDraftsLoadedSCSCopyWithImpl<ChapterDraftsLoadedSCS>(
@@ -1140,7 +930,6 @@ class _$ChapterDraftsLoadedSCS implements ChapterDraftsLoadedSCS {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult localChapterDraftDeletedSCS(),
-    @required TResult chapterDraftFetchedSCS(ChapterDraft chapterDraft),
     @required TResult localChapterDraftSavedSCS(),
     @required TResult localChapterDraftUpdatedSCS(),
     @required TResult onlineChapterDraftDeletedSCS(),
@@ -1150,7 +939,6 @@ class _$ChapterDraftsLoadedSCS implements ChapterDraftsLoadedSCS {
     @required TResult onlineChapterDraftCoverDeletedSCS(),
   }) {
     assert(localChapterDraftDeletedSCS != null);
-    assert(chapterDraftFetchedSCS != null);
     assert(localChapterDraftSavedSCS != null);
     assert(localChapterDraftUpdatedSCS != null);
     assert(onlineChapterDraftDeletedSCS != null);
@@ -1165,7 +953,6 @@ class _$ChapterDraftsLoadedSCS implements ChapterDraftsLoadedSCS {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult localChapterDraftDeletedSCS(),
-    TResult chapterDraftFetchedSCS(ChapterDraft chapterDraft),
     TResult localChapterDraftSavedSCS(),
     TResult localChapterDraftUpdatedSCS(),
     TResult onlineChapterDraftDeletedSCS(),
@@ -1187,7 +974,6 @@ class _$ChapterDraftsLoadedSCS implements ChapterDraftsLoadedSCS {
   TResult map<TResult extends Object>({
     @required
         TResult localChapterDraftDeletedSCS(LocalChapterDraftDeletedSCS value),
-    @required TResult chapterDraftFetchedSCS(ChapterDraftFetchedSCS value),
     @required
         TResult localChapterDraftSavedSCS(LocalChapterDraftSavedSCS value),
     @required
@@ -1204,7 +990,6 @@ class _$ChapterDraftsLoadedSCS implements ChapterDraftsLoadedSCS {
             OnlineChapterDraftCoverDeletedSCS value),
   }) {
     assert(localChapterDraftDeletedSCS != null);
-    assert(chapterDraftFetchedSCS != null);
     assert(localChapterDraftSavedSCS != null);
     assert(localChapterDraftUpdatedSCS != null);
     assert(onlineChapterDraftDeletedSCS != null);
@@ -1219,7 +1004,6 @@ class _$ChapterDraftsLoadedSCS implements ChapterDraftsLoadedSCS {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult localChapterDraftDeletedSCS(LocalChapterDraftDeletedSCS value),
-    TResult chapterDraftFetchedSCS(ChapterDraftFetchedSCS value),
     TResult localChapterDraftSavedSCS(LocalChapterDraftSavedSCS value),
     TResult localChapterDraftUpdatedSCS(LocalChapterDraftUpdatedSCS value),
     TResult onlineChapterDraftDeletedSCS(OnlineChapterDraftDeletedSCS value),
@@ -1243,6 +1027,7 @@ abstract class ChapterDraftsLoadedSCS implements ChapterDraftDatabaseSuccess {
       _$ChapterDraftsLoadedSCS;
 
   List<Chapter> get chapterDrafts;
+  @JsonKey(ignore: true)
   $ChapterDraftsLoadedSCSCopyWith<ChapterDraftsLoadedSCS> get copyWith;
 }
 
@@ -1302,6 +1087,7 @@ class _$OnlineChapterDraftSavedSCS implements OnlineChapterDraftSavedSCS {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(chapterDraft);
 
+  @JsonKey(ignore: true)
   @override
   $OnlineChapterDraftSavedSCSCopyWith<OnlineChapterDraftSavedSCS>
       get copyWith =>
@@ -1312,7 +1098,6 @@ class _$OnlineChapterDraftSavedSCS implements OnlineChapterDraftSavedSCS {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult localChapterDraftDeletedSCS(),
-    @required TResult chapterDraftFetchedSCS(ChapterDraft chapterDraft),
     @required TResult localChapterDraftSavedSCS(),
     @required TResult localChapterDraftUpdatedSCS(),
     @required TResult onlineChapterDraftDeletedSCS(),
@@ -1322,7 +1107,6 @@ class _$OnlineChapterDraftSavedSCS implements OnlineChapterDraftSavedSCS {
     @required TResult onlineChapterDraftCoverDeletedSCS(),
   }) {
     assert(localChapterDraftDeletedSCS != null);
-    assert(chapterDraftFetchedSCS != null);
     assert(localChapterDraftSavedSCS != null);
     assert(localChapterDraftUpdatedSCS != null);
     assert(onlineChapterDraftDeletedSCS != null);
@@ -1337,7 +1121,6 @@ class _$OnlineChapterDraftSavedSCS implements OnlineChapterDraftSavedSCS {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult localChapterDraftDeletedSCS(),
-    TResult chapterDraftFetchedSCS(ChapterDraft chapterDraft),
     TResult localChapterDraftSavedSCS(),
     TResult localChapterDraftUpdatedSCS(),
     TResult onlineChapterDraftDeletedSCS(),
@@ -1359,7 +1142,6 @@ class _$OnlineChapterDraftSavedSCS implements OnlineChapterDraftSavedSCS {
   TResult map<TResult extends Object>({
     @required
         TResult localChapterDraftDeletedSCS(LocalChapterDraftDeletedSCS value),
-    @required TResult chapterDraftFetchedSCS(ChapterDraftFetchedSCS value),
     @required
         TResult localChapterDraftSavedSCS(LocalChapterDraftSavedSCS value),
     @required
@@ -1376,7 +1158,6 @@ class _$OnlineChapterDraftSavedSCS implements OnlineChapterDraftSavedSCS {
             OnlineChapterDraftCoverDeletedSCS value),
   }) {
     assert(localChapterDraftDeletedSCS != null);
-    assert(chapterDraftFetchedSCS != null);
     assert(localChapterDraftSavedSCS != null);
     assert(localChapterDraftUpdatedSCS != null);
     assert(onlineChapterDraftDeletedSCS != null);
@@ -1391,7 +1172,6 @@ class _$OnlineChapterDraftSavedSCS implements OnlineChapterDraftSavedSCS {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult localChapterDraftDeletedSCS(LocalChapterDraftDeletedSCS value),
-    TResult chapterDraftFetchedSCS(ChapterDraftFetchedSCS value),
     TResult localChapterDraftSavedSCS(LocalChapterDraftSavedSCS value),
     TResult localChapterDraftUpdatedSCS(LocalChapterDraftUpdatedSCS value),
     TResult onlineChapterDraftDeletedSCS(OnlineChapterDraftDeletedSCS value),
@@ -1416,6 +1196,7 @@ abstract class OnlineChapterDraftSavedSCS
       _$OnlineChapterDraftSavedSCS;
 
   Chapter get chapterDraft;
+  @JsonKey(ignore: true)
   $OnlineChapterDraftSavedSCSCopyWith<OnlineChapterDraftSavedSCS> get copyWith;
 }
 
@@ -1464,7 +1245,6 @@ class _$OnlineChapterDraftCoverDeletedSCS
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult localChapterDraftDeletedSCS(),
-    @required TResult chapterDraftFetchedSCS(ChapterDraft chapterDraft),
     @required TResult localChapterDraftSavedSCS(),
     @required TResult localChapterDraftUpdatedSCS(),
     @required TResult onlineChapterDraftDeletedSCS(),
@@ -1474,7 +1254,6 @@ class _$OnlineChapterDraftCoverDeletedSCS
     @required TResult onlineChapterDraftCoverDeletedSCS(),
   }) {
     assert(localChapterDraftDeletedSCS != null);
-    assert(chapterDraftFetchedSCS != null);
     assert(localChapterDraftSavedSCS != null);
     assert(localChapterDraftUpdatedSCS != null);
     assert(onlineChapterDraftDeletedSCS != null);
@@ -1489,7 +1268,6 @@ class _$OnlineChapterDraftCoverDeletedSCS
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult localChapterDraftDeletedSCS(),
-    TResult chapterDraftFetchedSCS(ChapterDraft chapterDraft),
     TResult localChapterDraftSavedSCS(),
     TResult localChapterDraftUpdatedSCS(),
     TResult onlineChapterDraftDeletedSCS(),
@@ -1511,7 +1289,6 @@ class _$OnlineChapterDraftCoverDeletedSCS
   TResult map<TResult extends Object>({
     @required
         TResult localChapterDraftDeletedSCS(LocalChapterDraftDeletedSCS value),
-    @required TResult chapterDraftFetchedSCS(ChapterDraftFetchedSCS value),
     @required
         TResult localChapterDraftSavedSCS(LocalChapterDraftSavedSCS value),
     @required
@@ -1528,7 +1305,6 @@ class _$OnlineChapterDraftCoverDeletedSCS
             OnlineChapterDraftCoverDeletedSCS value),
   }) {
     assert(localChapterDraftDeletedSCS != null);
-    assert(chapterDraftFetchedSCS != null);
     assert(localChapterDraftSavedSCS != null);
     assert(localChapterDraftUpdatedSCS != null);
     assert(onlineChapterDraftDeletedSCS != null);
@@ -1543,7 +1319,6 @@ class _$OnlineChapterDraftCoverDeletedSCS
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult localChapterDraftDeletedSCS(LocalChapterDraftDeletedSCS value),
-    TResult chapterDraftFetchedSCS(ChapterDraftFetchedSCS value),
     TResult localChapterDraftSavedSCS(LocalChapterDraftSavedSCS value),
     TResult localChapterDraftUpdatedSCS(LocalChapterDraftUpdatedSCS value),
     TResult onlineChapterDraftDeletedSCS(OnlineChapterDraftDeletedSCS value),

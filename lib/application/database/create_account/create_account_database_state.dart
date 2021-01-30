@@ -10,7 +10,7 @@ abstract class CreateAccountDatabaseState with _$CreateAccountDatabaseState {
         Option<Either<DatabaseFailure, SessionDatabaseSuccess>>
             sessionDatabaseFailureOrSuccessOption,
     @required
-        Option<Either<DatabaseFailure, UserDatabaseSuccess>>
+        Option<Either<UserDatabaseFailure, UserDatabaseSuccess>>
             userDatabaseFailureOrSuccessOption,
     @required String email,
   }) = _CreateAccountDatabaseState;

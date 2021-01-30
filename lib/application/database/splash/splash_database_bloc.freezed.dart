@@ -173,6 +173,7 @@ class _$AuthenticatedEVT implements AuthenticatedEVT {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(isAnonymous);
 
+  @JsonKey(ignore: true)
   @override
   $AuthenticatedEVTCopyWith<AuthenticatedEVT> get copyWith =>
       _$AuthenticatedEVTCopyWithImpl<AuthenticatedEVT>(this, _$identity);
@@ -258,6 +259,7 @@ abstract class AuthenticatedEVT implements SplashDatabaseEvent {
       _$AuthenticatedEVT;
 
   bool get isAnonymous;
+  @JsonKey(ignore: true)
   $AuthenticatedEVTCopyWith<AuthenticatedEVT> get copyWith;
 }
 
@@ -551,6 +553,7 @@ class _$PlaceholdersLoadedEVT implements PlaceholdersLoadedEVT {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(placeholders);
 
+  @JsonKey(ignore: true)
   @override
   $PlaceholdersLoadedEVTCopyWith<PlaceholdersLoadedEVT> get copyWith =>
       _$PlaceholdersLoadedEVTCopyWithImpl<PlaceholdersLoadedEVT>(
@@ -637,6 +640,7 @@ abstract class PlaceholdersLoadedEVT implements SplashDatabaseEvent {
       _$PlaceholdersLoadedEVT;
 
   Map<String, String> get placeholders;
+  @JsonKey(ignore: true)
   $PlaceholdersLoadedEVTCopyWith<PlaceholdersLoadedEVT> get copyWith;
 }
 
@@ -693,6 +697,7 @@ class _$SessionFetchedEVT implements SessionFetchedEVT {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(session);
 
+  @JsonKey(ignore: true)
   @override
   $SessionFetchedEVTCopyWith<SessionFetchedEVT> get copyWith =>
       _$SessionFetchedEVTCopyWithImpl<SessionFetchedEVT>(this, _$identity);
@@ -777,6 +782,7 @@ abstract class SessionFetchedEVT implements SplashDatabaseEvent {
   const factory SessionFetchedEVT(Session session) = _$SessionFetchedEVT;
 
   Session get session;
+  @JsonKey(ignore: true)
   $SessionFetchedEVTCopyWith<SessionFetchedEVT> get copyWith;
 }
 
@@ -833,6 +839,7 @@ class _$UserLoadedEVT implements UserLoadedEVT {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(user);
 
+  @JsonKey(ignore: true)
   @override
   $UserLoadedEVTCopyWith<UserLoadedEVT> get copyWith =>
       _$UserLoadedEVTCopyWithImpl<UserLoadedEVT>(this, _$identity);
@@ -917,6 +924,7 @@ abstract class UserLoadedEVT implements SplashDatabaseEvent {
   const factory UserLoadedEVT(User user) = _$UserLoadedEVT;
 
   User get user;
+  @JsonKey(ignore: true)
   $UserLoadedEVTCopyWith<UserLoadedEVT> get copyWith;
 }
 
@@ -940,7 +948,7 @@ class _$SplashDatabaseStateTearOff {
           Option<Either<DatabaseFailure, SessionDatabaseSuccess>>
               sessionDatabaseFailureOrSuccessOption,
       @required
-          Option<Either<DatabaseFailure, UserDatabaseSuccess>>
+          Option<Either<UserDatabaseFailure, UserDatabaseSuccess>>
               userDatabaseFailureOrSuccessOption}) {
     return _SplashDatabaseState(
       isAnonymous: isAnonymous,
@@ -970,9 +978,10 @@ mixin _$SplashDatabaseState {
       get placeholderDatabaseFailureOrSuccessOption;
   Option<Either<DatabaseFailure, SessionDatabaseSuccess>>
       get sessionDatabaseFailureOrSuccessOption;
-  Option<Either<DatabaseFailure, UserDatabaseSuccess>>
+  Option<Either<UserDatabaseFailure, UserDatabaseSuccess>>
       get userDatabaseFailureOrSuccessOption;
 
+  @JsonKey(ignore: true)
   $SplashDatabaseStateCopyWith<SplashDatabaseState> get copyWith;
 }
 
@@ -990,7 +999,7 @@ abstract class $SplashDatabaseStateCopyWith<$Res> {
           placeholderDatabaseFailureOrSuccessOption,
       Option<Either<DatabaseFailure, SessionDatabaseSuccess>>
           sessionDatabaseFailureOrSuccessOption,
-      Option<Either<DatabaseFailure, UserDatabaseSuccess>>
+      Option<Either<UserDatabaseFailure, UserDatabaseSuccess>>
           userDatabaseFailureOrSuccessOption});
 }
 
@@ -1037,7 +1046,7 @@ class _$SplashDatabaseStateCopyWithImpl<$Res>
           userDatabaseFailureOrSuccessOption == freezed
               ? _value.userDatabaseFailureOrSuccessOption
               : userDatabaseFailureOrSuccessOption
-                  as Option<Either<DatabaseFailure, UserDatabaseSuccess>>,
+                  as Option<Either<UserDatabaseFailure, UserDatabaseSuccess>>,
     ));
   }
 }
@@ -1058,7 +1067,7 @@ abstract class _$SplashDatabaseStateCopyWith<$Res>
           placeholderDatabaseFailureOrSuccessOption,
       Option<Either<DatabaseFailure, SessionDatabaseSuccess>>
           sessionDatabaseFailureOrSuccessOption,
-      Option<Either<DatabaseFailure, UserDatabaseSuccess>>
+      Option<Either<UserDatabaseFailure, UserDatabaseSuccess>>
           userDatabaseFailureOrSuccessOption});
 }
 
@@ -1107,7 +1116,7 @@ class __$SplashDatabaseStateCopyWithImpl<$Res>
           userDatabaseFailureOrSuccessOption == freezed
               ? _value.userDatabaseFailureOrSuccessOption
               : userDatabaseFailureOrSuccessOption
-                  as Option<Either<DatabaseFailure, UserDatabaseSuccess>>,
+                  as Option<Either<UserDatabaseFailure, UserDatabaseSuccess>>,
     ));
   }
 }
@@ -1142,7 +1151,7 @@ class _$_SplashDatabaseState implements _SplashDatabaseState {
   final Option<Either<DatabaseFailure, SessionDatabaseSuccess>>
       sessionDatabaseFailureOrSuccessOption;
   @override
-  final Option<Either<DatabaseFailure, UserDatabaseSuccess>>
+  final Option<Either<UserDatabaseFailure, UserDatabaseSuccess>>
       userDatabaseFailureOrSuccessOption;
 
   @override
@@ -1195,6 +1204,7 @@ class _$_SplashDatabaseState implements _SplashDatabaseState {
           .hash(sessionDatabaseFailureOrSuccessOption) ^
       const DeepCollectionEquality().hash(userDatabaseFailureOrSuccessOption);
 
+  @JsonKey(ignore: true)
   @override
   _$SplashDatabaseStateCopyWith<_SplashDatabaseState> get copyWith =>
       __$SplashDatabaseStateCopyWithImpl<_SplashDatabaseState>(
@@ -1217,7 +1227,7 @@ abstract class _SplashDatabaseState implements SplashDatabaseState {
           Option<Either<DatabaseFailure, SessionDatabaseSuccess>>
               sessionDatabaseFailureOrSuccessOption,
       @required
-          Option<Either<DatabaseFailure, UserDatabaseSuccess>>
+          Option<Either<UserDatabaseFailure, UserDatabaseSuccess>>
               userDatabaseFailureOrSuccessOption}) = _$_SplashDatabaseState;
 
   @override
@@ -1234,8 +1244,9 @@ abstract class _SplashDatabaseState implements SplashDatabaseState {
   Option<Either<DatabaseFailure, SessionDatabaseSuccess>>
       get sessionDatabaseFailureOrSuccessOption;
   @override
-  Option<Either<DatabaseFailure, UserDatabaseSuccess>>
+  Option<Either<UserDatabaseFailure, UserDatabaseSuccess>>
       get userDatabaseFailureOrSuccessOption;
   @override
+  @JsonKey(ignore: true)
   _$SplashDatabaseStateCopyWith<_SplashDatabaseState> get copyWith;
 }

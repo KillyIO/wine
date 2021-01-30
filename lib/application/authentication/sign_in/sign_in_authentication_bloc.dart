@@ -32,13 +32,15 @@ class SignInAuthenticationBloc
     yield* event.map(
       emailChangedEVT: (event) async* {
         yield state.copyWith(
-            emailAddress: EmailAddress(event.emailStr),
-            authFailureOrSuccessOption: none());
+          authFailureOrSuccessOption: none(),
+          emailAddress: EmailAddress(event.emailStr),
+        );
       },
       passwordChangedEVT: (event) async* {
         yield state.copyWith(
-            password: Password(event.passwordStr),
-            authFailureOrSuccessOption: none());
+          authFailureOrSuccessOption: none(),
+          password: Password(event.passwordStr),
+        );
       },
       signInWithEmailAndPasswordPressedEVT: (event) async* {
         Either<AuthenticationFailure, AuthenticationSuccess> failureOrSuccess;
@@ -52,37 +54,48 @@ class SignInAuthenticationBloc
 
           failureOrSuccess =
               await _authenticationFacade.signInWithEmailAndPassword(
-            emailAddress: state.emailAddress,
-            password: state.password,
+            state.emailAddress,
+            state.password,
           );
         }
 
         yield state.copyWith(
+          authFailureOrSuccessOption: optionOf(failureOrSuccess),
           isSubmitting: false,
           showErrorMessages: true,
-          authFailureOrSuccessOption: optionOf(failureOrSuccess),
         );
       },
       signInWithGooglePressedEVT: (event) async* {
         yield state.copyWith(
-            isSubmitting: true, authFailureOrSuccessOption: none());
+          authFailureOrSuccessOption: none(),
+          isSubmitting: true,
+        );
 
-        final failureOrSuccess = await _authenticationFacade.signInWithGoogle();
+        var failureOrSuccess = await _authenticationFacade.signInWithGoogle();
         failureOrSuccess.fold(
           (_) {},
           (success) {
-            if (success is UserAuthenticatedSCS) {
-              success.user.username =
-                  success.user.name.trim().replaceAll(RegExp('[ -]'), '_');
-              success.user.createdAt = DateTime.now().millisecondsSinceEpoch;
-              success.user.updatedAt = DateTime.now().millisecondsSinceEpoch;
+            if (success is UserAuthenticatedSuccess) {
+              final user = success.user.copyWith(
+                username: success.user.email
+                    .trim()
+                    .split('@')
+                    .first
+                    .replaceAll(RegExp('[ -]'), '_'),
+                createdAt: DateTime.now().millisecondsSinceEpoch,
+                updatedAt: DateTime.now().millisecondsSinceEpoch,
+              );
+
+              failureOrSuccess =
+                  right(AuthenticationSuccess.userAuthenticatedSuccess(user));
             }
           },
         );
 
         yield state.copyWith(
-            isSubmitting: false,
-            authFailureOrSuccessOption: some(failureOrSuccess));
+          authFailureOrSuccessOption: optionOf(failureOrSuccess),
+          isSubmitting: false,
+        );
       },
     );
   }

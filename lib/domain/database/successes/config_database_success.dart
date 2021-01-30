@@ -7,16 +7,18 @@ part 'config_database_success.freezed.dart';
 @freezed
 abstract class ConfigDatabaseSuccess with _$ConfigDatabaseSuccess {
   /// @nodoc
-  const factory ConfigDatabaseSuccess.configDeletedSCS() = ConfigDeletedSCS;
+  const factory ConfigDatabaseSuccess.configDeletedSuccess() =
+      ConfigDeletedSuccess;
 
   /// @nodoc
-  const factory ConfigDatabaseSuccess.configFetchedSCS(Config config) =
-      ConfigFetchedSCS;
+  const factory ConfigDatabaseSuccess.configFetchedSuccess(Config config) =
+      ConfigFetchedSuccess;
 
   /// @nodoc
-  const factory ConfigDatabaseSuccess.configInitializedSCS() =
-      ConfigInitializedSCS;
+  const factory ConfigDatabaseSuccess.configInitializedSuccess(Config config) =
+      ConfigInitializedSuccess;
 
   /// @nodoc
-  const factory ConfigDatabaseSuccess.configUpdatedSCS() = ConfigUpdatedSCS;
+  const factory ConfigDatabaseSuccess.configUpdatedSuccess(Config config) =
+      ConfigUpdatedSuccess;
 }

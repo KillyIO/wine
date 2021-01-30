@@ -286,6 +286,7 @@ class _$PageViewIndexChangedEVT
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(index);
 
+  @JsonKey(ignore: true)
   @override
   $PageViewIndexChangedEVTCopyWith<PageViewIndexChangedEVT> get copyWith =>
       _$PageViewIndexChangedEVTCopyWithImpl<PageViewIndexChangedEVT>(
@@ -365,6 +366,7 @@ abstract class PageViewIndexChangedEVT implements HomeNavigationEvent {
   const factory PageViewIndexChangedEVT(int index) = _$PageViewIndexChangedEVT;
 
   int get index;
+  @JsonKey(ignore: true)
   $PageViewIndexChangedEVTCopyWith<PageViewIndexChangedEVT> get copyWith;
 }
 
@@ -749,6 +751,7 @@ mixin _$HomeNavigationState {
   bool get isRightDrawerOpen;
   int get currentPageViewIdx;
 
+  @JsonKey(ignore: true)
   $HomeNavigationStateCopyWith<HomeNavigationState> get copyWith;
 }
 
@@ -888,6 +891,7 @@ class _$_HomeNavigationState
       const DeepCollectionEquality().hash(isRightDrawerOpen) ^
       const DeepCollectionEquality().hash(currentPageViewIdx);
 
+  @JsonKey(ignore: true)
   @override
   _$HomeNavigationStateCopyWith<_HomeNavigationState> get copyWith =>
       __$HomeNavigationStateCopyWithImpl<_HomeNavigationState>(
@@ -907,5 +911,6 @@ abstract class _HomeNavigationState implements HomeNavigationState {
   @override
   int get currentPageViewIdx;
   @override
+  @JsonKey(ignore: true)
   _$HomeNavigationStateCopyWith<_HomeNavigationState> get copyWith;
 }

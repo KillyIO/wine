@@ -26,7 +26,7 @@ class SignInListeners {
                 () {},
                 (some) => some.fold(
                   (failure) => failure.maybeMap(
-                    serverError: (_) => wineShowDialog(
+                    serverFailure: (_) => wineShowDialog(
                       context: context,
                       builder: (_) => WINEErrorDialog(
                         message: 'An unexpected error occured!',
@@ -34,7 +34,8 @@ class SignInListeners {
                             ExtendedNavigator.of(context).pop<bool>(true),
                       ),
                     ),
-                    invalidEmailAndPasswordCombination: (_) => wineShowDialog(
+                    invalidEmailAndPasswordCombinationFailure: (_) =>
+                        wineShowDialog(
                       context: context,
                       builder: (_) => WINEErrorDialog(
                         message: 'Incorrect email or password.',
@@ -45,7 +46,7 @@ class SignInListeners {
                     orElse: () => null,
                   ),
                   (success) {
-                    if (success is UserAuthenticatedSCS) {
+                    if (success is UserAuthenticatedSuccess) {
                       context
                           .read<SignInDatabaseBloc>()
                           .add(SignInDatabaseEvent.signedInEVT(success.user));

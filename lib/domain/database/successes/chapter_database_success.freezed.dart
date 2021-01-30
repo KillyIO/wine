@@ -370,6 +370,7 @@ class _$ChapterCoverUploadedSCS implements ChapterCoverUploadedSCS {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(coverURL);
 
+  @JsonKey(ignore: true)
   @override
   $ChapterCoverUploadedSCSCopyWith<ChapterCoverUploadedSCS> get copyWith =>
       _$ChapterCoverUploadedSCSCopyWithImpl<ChapterCoverUploadedSCS>(
@@ -488,6 +489,7 @@ abstract class ChapterCoverUploadedSCS implements ChapterDatabaseSuccess {
       _$ChapterCoverUploadedSCS;
 
   String get coverURL;
+  @JsonKey(ignore: true)
   $ChapterCoverUploadedSCSCopyWith<ChapterCoverUploadedSCS> get copyWith;
 }
 
@@ -693,6 +695,7 @@ class _$ChaptersLoadedSCS implements ChaptersLoadedSCS {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(chapters);
 
+  @JsonKey(ignore: true)
   @override
   $ChaptersLoadedSCSCopyWith<ChaptersLoadedSCS> get copyWith =>
       _$ChaptersLoadedSCSCopyWithImpl<ChaptersLoadedSCS>(this, _$identity);
@@ -809,6 +812,7 @@ abstract class ChaptersLoadedSCS implements ChapterDatabaseSuccess {
   const factory ChaptersLoadedSCS(List<Chapter> chapters) = _$ChaptersLoadedSCS;
 
   List<Chapter> get chapters;
+  @JsonKey(ignore: true)
   $ChaptersLoadedSCSCopyWith<ChaptersLoadedSCS> get copyWith;
 }
 
@@ -865,6 +869,7 @@ class _$ChapterLoadedSCS implements ChapterLoadedSCS {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(chapter);
 
+  @JsonKey(ignore: true)
   @override
   $ChapterLoadedSCSCopyWith<ChapterLoadedSCS> get copyWith =>
       _$ChapterLoadedSCSCopyWithImpl<ChapterLoadedSCS>(this, _$identity);
@@ -981,6 +986,7 @@ abstract class ChapterLoadedSCS implements ChapterDatabaseSuccess {
   const factory ChapterLoadedSCS(Chapter chapter) = _$ChapterLoadedSCS;
 
   Chapter get chapter;
+  @JsonKey(ignore: true)
   $ChapterLoadedSCSCopyWith<ChapterLoadedSCS> get copyWith;
 }
 
@@ -1037,6 +1043,7 @@ class _$ChapterPublishedSCS implements ChapterPublishedSCS {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(chapter);
 
+  @JsonKey(ignore: true)
   @override
   $ChapterPublishedSCSCopyWith<ChapterPublishedSCS> get copyWith =>
       _$ChapterPublishedSCSCopyWithImpl<ChapterPublishedSCS>(this, _$identity);
@@ -1153,6 +1160,7 @@ abstract class ChapterPublishedSCS implements ChapterDatabaseSuccess {
   const factory ChapterPublishedSCS(Chapter chapter) = _$ChapterPublishedSCS;
 
   Chapter get chapter;
+  @JsonKey(ignore: true)
   $ChapterPublishedSCSCopyWith<ChapterPublishedSCS> get copyWith;
 }
 
@@ -1210,6 +1218,7 @@ class _$ChapterStatsCountLoadedSCS implements ChapterStatsCountLoadedSCS {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(count);
 
+  @JsonKey(ignore: true)
   @override
   $ChapterStatsCountLoadedSCSCopyWith<ChapterStatsCountLoadedSCS>
       get copyWith =>
@@ -1329,6 +1338,7 @@ abstract class ChapterStatsCountLoadedSCS implements ChapterDatabaseSuccess {
       _$ChapterStatsCountLoadedSCS;
 
   Count get count;
+  @JsonKey(ignore: true)
   $ChapterStatsCountLoadedSCSCopyWith<ChapterStatsCountLoadedSCS> get copyWith;
 }
 
@@ -1538,6 +1548,7 @@ class _$ChapterStatsStatusLoadedSCS implements ChapterStatsStatusLoadedSCS {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(status);
 
+  @JsonKey(ignore: true)
   @override
   $ChapterStatsStatusLoadedSCSCopyWith<ChapterStatsStatusLoadedSCS>
       get copyWith => _$ChapterStatsStatusLoadedSCSCopyWithImpl<
@@ -1656,6 +1667,7 @@ abstract class ChapterStatsStatusLoadedSCS implements ChapterDatabaseSuccess {
       _$ChapterStatsStatusLoadedSCS;
 
   bool get status;
+  @JsonKey(ignore: true)
   $ChapterStatsStatusLoadedSCSCopyWith<ChapterStatsStatusLoadedSCS>
       get copyWith;
 }
@@ -1722,6 +1734,7 @@ class _$NextChaptersAuthorsMapLoadedSCS
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(nextChaptersAuthorsMap);
 
+  @JsonKey(ignore: true)
   @override
   $NextChaptersAuthorsMapLoadedSCSCopyWith<NextChaptersAuthorsMapLoadedSCS>
       get copyWith => _$NextChaptersAuthorsMapLoadedSCSCopyWithImpl<
@@ -1842,6 +1855,7 @@ abstract class NextChaptersAuthorsMapLoadedSCS
       _$NextChaptersAuthorsMapLoadedSCS;
 
   Map<String, bool> get nextChaptersAuthorsMap;
+  @JsonKey(ignore: true)
   $NextChaptersAuthorsMapLoadedSCSCopyWith<NextChaptersAuthorsMapLoadedSCS>
       get copyWith;
 }

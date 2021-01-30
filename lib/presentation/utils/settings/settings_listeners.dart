@@ -19,7 +19,7 @@ class SettingsListeners {
                 () {},
                 (some) => some.fold(
                   (failure) => failure.maybeMap(
-                    serverError: (_) => wineShowDialog(
+                    serverFailure: (_) => wineShowDialog(
                       context: context,
                       builder: (_) => WINEErrorDialog(
                         message: 'An unexpected error occured!',
@@ -27,7 +27,7 @@ class SettingsListeners {
                             ExtendedNavigator.of(context).pop<bool>(true),
                       ),
                     ),
-                    unableToSignOut: (_) => wineShowDialog(
+                    unableToSignOutFailure: (_) => wineShowDialog(
                       context: context,
                       builder: (_) => WINEErrorDialog(
                         message:
@@ -40,7 +40,7 @@ class SettingsListeners {
                     orElse: () => null,
                   ),
                   (success) {
-                    if (success is UserSignedOutSCS) {
+                    if (success is UserSignedOutSuccess) {
                       context
                           .read<SettingsDatabaseBloc>()
                           .add(const SettingsDatabaseEvent.userSignedOutEVT());

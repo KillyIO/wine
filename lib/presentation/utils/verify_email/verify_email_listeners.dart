@@ -15,7 +15,7 @@ class VerifyEmailListeners {
             () {},
             (some) => some.fold(
               (failure) => failure.maybeMap(
-                serverError: (_) => wineShowDialog(
+                serverFailure: (_) => wineShowDialog(
                   context: context,
                   builder: (_) => WINEErrorDialog(
                     message: 'An unexpected error occured!',
@@ -26,7 +26,7 @@ class VerifyEmailListeners {
                 orElse: () => null,
               ),
               (success) => success.maybeMap(
-                verificationEmailSentSCS: (_) => wineShowDialog(
+                verificationEmailSentSuccess: (_) => wineShowDialog(
                   context: context,
                   builder: (_) => WINEInfoDialog(
                     message:

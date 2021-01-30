@@ -14,23 +14,18 @@ class _$ConfigDatabaseFailureTearOff {
   const _$ConfigDatabaseFailureTearOff();
 
 // ignore: unused_element
-  FailedToDeleteConfigFLR failedToDeleteConfigFLR() {
-    return const FailedToDeleteConfigFLR();
+  DeleteConfigFailure deleteConfigFailure() {
+    return const DeleteConfigFailure();
   }
 
 // ignore: unused_element
-  FailedToFetchConfigFLR failedToFetchConfigFLR() {
-    return const FailedToFetchConfigFLR();
+  InitializeConfigFailure initializeConfigFailure() {
+    return const InitializeConfigFailure();
   }
 
 // ignore: unused_element
-  FailedToInitializeConfigFLR failedToInitializeConfigFLR() {
-    return const FailedToInitializeConfigFLR();
-  }
-
-// ignore: unused_element
-  FailedToUpdateConfigFLR failedToUpdateConfigFLR() {
-    return const FailedToUpdateConfigFLR();
+  UpdateConfigFailure updateConfigFailure() {
+    return const UpdateConfigFailure();
   }
 }
 
@@ -42,33 +37,28 @@ const $ConfigDatabaseFailure = _$ConfigDatabaseFailureTearOff();
 mixin _$ConfigDatabaseFailure {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
-    @required TResult failedToDeleteConfigFLR(),
-    @required TResult failedToFetchConfigFLR(),
-    @required TResult failedToInitializeConfigFLR(),
-    @required TResult failedToUpdateConfigFLR(),
+    @required TResult deleteConfigFailure(),
+    @required TResult initializeConfigFailure(),
+    @required TResult updateConfigFailure(),
   });
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
-    TResult failedToDeleteConfigFLR(),
-    TResult failedToFetchConfigFLR(),
-    TResult failedToInitializeConfigFLR(),
-    TResult failedToUpdateConfigFLR(),
+    TResult deleteConfigFailure(),
+    TResult initializeConfigFailure(),
+    TResult updateConfigFailure(),
     @required TResult orElse(),
   });
   @optionalTypeArgs
   TResult map<TResult extends Object>({
-    @required TResult failedToDeleteConfigFLR(FailedToDeleteConfigFLR value),
-    @required TResult failedToFetchConfigFLR(FailedToFetchConfigFLR value),
-    @required
-        TResult failedToInitializeConfigFLR(FailedToInitializeConfigFLR value),
-    @required TResult failedToUpdateConfigFLR(FailedToUpdateConfigFLR value),
+    @required TResult deleteConfigFailure(DeleteConfigFailure value),
+    @required TResult initializeConfigFailure(InitializeConfigFailure value),
+    @required TResult updateConfigFailure(UpdateConfigFailure value),
   });
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
-    TResult failedToDeleteConfigFLR(FailedToDeleteConfigFLR value),
-    TResult failedToFetchConfigFLR(FailedToFetchConfigFLR value),
-    TResult failedToInitializeConfigFLR(FailedToInitializeConfigFLR value),
-    TResult failedToUpdateConfigFLR(FailedToUpdateConfigFLR value),
+    TResult deleteConfigFailure(DeleteConfigFailure value),
+    TResult initializeConfigFailure(InitializeConfigFailure value),
+    TResult updateConfigFailure(UpdateConfigFailure value),
     @required TResult orElse(),
   });
 }
@@ -91,36 +81,36 @@ class _$ConfigDatabaseFailureCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class $FailedToDeleteConfigFLRCopyWith<$Res> {
-  factory $FailedToDeleteConfigFLRCopyWith(FailedToDeleteConfigFLR value,
-          $Res Function(FailedToDeleteConfigFLR) then) =
-      _$FailedToDeleteConfigFLRCopyWithImpl<$Res>;
+abstract class $DeleteConfigFailureCopyWith<$Res> {
+  factory $DeleteConfigFailureCopyWith(
+          DeleteConfigFailure value, $Res Function(DeleteConfigFailure) then) =
+      _$DeleteConfigFailureCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$FailedToDeleteConfigFLRCopyWithImpl<$Res>
+class _$DeleteConfigFailureCopyWithImpl<$Res>
     extends _$ConfigDatabaseFailureCopyWithImpl<$Res>
-    implements $FailedToDeleteConfigFLRCopyWith<$Res> {
-  _$FailedToDeleteConfigFLRCopyWithImpl(FailedToDeleteConfigFLR _value,
-      $Res Function(FailedToDeleteConfigFLR) _then)
-      : super(_value, (v) => _then(v as FailedToDeleteConfigFLR));
+    implements $DeleteConfigFailureCopyWith<$Res> {
+  _$DeleteConfigFailureCopyWithImpl(
+      DeleteConfigFailure _value, $Res Function(DeleteConfigFailure) _then)
+      : super(_value, (v) => _then(v as DeleteConfigFailure));
 
   @override
-  FailedToDeleteConfigFLR get _value => super._value as FailedToDeleteConfigFLR;
+  DeleteConfigFailure get _value => super._value as DeleteConfigFailure;
 }
 
 /// @nodoc
-class _$FailedToDeleteConfigFLR implements FailedToDeleteConfigFLR {
-  const _$FailedToDeleteConfigFLR();
+class _$DeleteConfigFailure implements DeleteConfigFailure {
+  const _$DeleteConfigFailure();
 
   @override
   String toString() {
-    return 'ConfigDatabaseFailure.failedToDeleteConfigFLR()';
+    return 'ConfigDatabaseFailure.deleteConfigFailure()';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is FailedToDeleteConfigFLR);
+    return identical(this, other) || (other is DeleteConfigFailure);
   }
 
   @override
@@ -129,30 +119,27 @@ class _$FailedToDeleteConfigFLR implements FailedToDeleteConfigFLR {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
-    @required TResult failedToDeleteConfigFLR(),
-    @required TResult failedToFetchConfigFLR(),
-    @required TResult failedToInitializeConfigFLR(),
-    @required TResult failedToUpdateConfigFLR(),
+    @required TResult deleteConfigFailure(),
+    @required TResult initializeConfigFailure(),
+    @required TResult updateConfigFailure(),
   }) {
-    assert(failedToDeleteConfigFLR != null);
-    assert(failedToFetchConfigFLR != null);
-    assert(failedToInitializeConfigFLR != null);
-    assert(failedToUpdateConfigFLR != null);
-    return failedToDeleteConfigFLR();
+    assert(deleteConfigFailure != null);
+    assert(initializeConfigFailure != null);
+    assert(updateConfigFailure != null);
+    return deleteConfigFailure();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
-    TResult failedToDeleteConfigFLR(),
-    TResult failedToFetchConfigFLR(),
-    TResult failedToInitializeConfigFLR(),
-    TResult failedToUpdateConfigFLR(),
+    TResult deleteConfigFailure(),
+    TResult initializeConfigFailure(),
+    TResult updateConfigFailure(),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (failedToDeleteConfigFLR != null) {
-      return failedToDeleteConfigFLR();
+    if (deleteConfigFailure != null) {
+      return deleteConfigFailure();
     }
     return orElse();
   }
@@ -160,71 +147,67 @@ class _$FailedToDeleteConfigFLR implements FailedToDeleteConfigFLR {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object>({
-    @required TResult failedToDeleteConfigFLR(FailedToDeleteConfigFLR value),
-    @required TResult failedToFetchConfigFLR(FailedToFetchConfigFLR value),
-    @required
-        TResult failedToInitializeConfigFLR(FailedToInitializeConfigFLR value),
-    @required TResult failedToUpdateConfigFLR(FailedToUpdateConfigFLR value),
+    @required TResult deleteConfigFailure(DeleteConfigFailure value),
+    @required TResult initializeConfigFailure(InitializeConfigFailure value),
+    @required TResult updateConfigFailure(UpdateConfigFailure value),
   }) {
-    assert(failedToDeleteConfigFLR != null);
-    assert(failedToFetchConfigFLR != null);
-    assert(failedToInitializeConfigFLR != null);
-    assert(failedToUpdateConfigFLR != null);
-    return failedToDeleteConfigFLR(this);
+    assert(deleteConfigFailure != null);
+    assert(initializeConfigFailure != null);
+    assert(updateConfigFailure != null);
+    return deleteConfigFailure(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
-    TResult failedToDeleteConfigFLR(FailedToDeleteConfigFLR value),
-    TResult failedToFetchConfigFLR(FailedToFetchConfigFLR value),
-    TResult failedToInitializeConfigFLR(FailedToInitializeConfigFLR value),
-    TResult failedToUpdateConfigFLR(FailedToUpdateConfigFLR value),
+    TResult deleteConfigFailure(DeleteConfigFailure value),
+    TResult initializeConfigFailure(InitializeConfigFailure value),
+    TResult updateConfigFailure(UpdateConfigFailure value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (failedToDeleteConfigFLR != null) {
-      return failedToDeleteConfigFLR(this);
+    if (deleteConfigFailure != null) {
+      return deleteConfigFailure(this);
     }
     return orElse();
   }
 }
 
-abstract class FailedToDeleteConfigFLR implements ConfigDatabaseFailure {
-  const factory FailedToDeleteConfigFLR() = _$FailedToDeleteConfigFLR;
+abstract class DeleteConfigFailure implements ConfigDatabaseFailure {
+  const factory DeleteConfigFailure() = _$DeleteConfigFailure;
 }
 
 /// @nodoc
-abstract class $FailedToFetchConfigFLRCopyWith<$Res> {
-  factory $FailedToFetchConfigFLRCopyWith(FailedToFetchConfigFLR value,
-          $Res Function(FailedToFetchConfigFLR) then) =
-      _$FailedToFetchConfigFLRCopyWithImpl<$Res>;
+abstract class $InitializeConfigFailureCopyWith<$Res> {
+  factory $InitializeConfigFailureCopyWith(InitializeConfigFailure value,
+          $Res Function(InitializeConfigFailure) then) =
+      _$InitializeConfigFailureCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$FailedToFetchConfigFLRCopyWithImpl<$Res>
+class _$InitializeConfigFailureCopyWithImpl<$Res>
     extends _$ConfigDatabaseFailureCopyWithImpl<$Res>
-    implements $FailedToFetchConfigFLRCopyWith<$Res> {
-  _$FailedToFetchConfigFLRCopyWithImpl(FailedToFetchConfigFLR _value,
-      $Res Function(FailedToFetchConfigFLR) _then)
-      : super(_value, (v) => _then(v as FailedToFetchConfigFLR));
+    implements $InitializeConfigFailureCopyWith<$Res> {
+  _$InitializeConfigFailureCopyWithImpl(InitializeConfigFailure _value,
+      $Res Function(InitializeConfigFailure) _then)
+      : super(_value, (v) => _then(v as InitializeConfigFailure));
 
   @override
-  FailedToFetchConfigFLR get _value => super._value as FailedToFetchConfigFLR;
+  InitializeConfigFailure get _value => super._value as InitializeConfigFailure;
 }
 
 /// @nodoc
-class _$FailedToFetchConfigFLR implements FailedToFetchConfigFLR {
-  const _$FailedToFetchConfigFLR();
+class _$InitializeConfigFailure implements InitializeConfigFailure {
+  const _$InitializeConfigFailure();
 
   @override
   String toString() {
-    return 'ConfigDatabaseFailure.failedToFetchConfigFLR()';
+    return 'ConfigDatabaseFailure.initializeConfigFailure()';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is FailedToFetchConfigFLR);
+    return identical(this, other) || (other is InitializeConfigFailure);
   }
 
   @override
@@ -233,30 +216,27 @@ class _$FailedToFetchConfigFLR implements FailedToFetchConfigFLR {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
-    @required TResult failedToDeleteConfigFLR(),
-    @required TResult failedToFetchConfigFLR(),
-    @required TResult failedToInitializeConfigFLR(),
-    @required TResult failedToUpdateConfigFLR(),
+    @required TResult deleteConfigFailure(),
+    @required TResult initializeConfigFailure(),
+    @required TResult updateConfigFailure(),
   }) {
-    assert(failedToDeleteConfigFLR != null);
-    assert(failedToFetchConfigFLR != null);
-    assert(failedToInitializeConfigFLR != null);
-    assert(failedToUpdateConfigFLR != null);
-    return failedToFetchConfigFLR();
+    assert(deleteConfigFailure != null);
+    assert(initializeConfigFailure != null);
+    assert(updateConfigFailure != null);
+    return initializeConfigFailure();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
-    TResult failedToDeleteConfigFLR(),
-    TResult failedToFetchConfigFLR(),
-    TResult failedToInitializeConfigFLR(),
-    TResult failedToUpdateConfigFLR(),
+    TResult deleteConfigFailure(),
+    TResult initializeConfigFailure(),
+    TResult updateConfigFailure(),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (failedToFetchConfigFLR != null) {
-      return failedToFetchConfigFLR();
+    if (initializeConfigFailure != null) {
+      return initializeConfigFailure();
     }
     return orElse();
   }
@@ -264,73 +244,67 @@ class _$FailedToFetchConfigFLR implements FailedToFetchConfigFLR {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object>({
-    @required TResult failedToDeleteConfigFLR(FailedToDeleteConfigFLR value),
-    @required TResult failedToFetchConfigFLR(FailedToFetchConfigFLR value),
-    @required
-        TResult failedToInitializeConfigFLR(FailedToInitializeConfigFLR value),
-    @required TResult failedToUpdateConfigFLR(FailedToUpdateConfigFLR value),
+    @required TResult deleteConfigFailure(DeleteConfigFailure value),
+    @required TResult initializeConfigFailure(InitializeConfigFailure value),
+    @required TResult updateConfigFailure(UpdateConfigFailure value),
   }) {
-    assert(failedToDeleteConfigFLR != null);
-    assert(failedToFetchConfigFLR != null);
-    assert(failedToInitializeConfigFLR != null);
-    assert(failedToUpdateConfigFLR != null);
-    return failedToFetchConfigFLR(this);
+    assert(deleteConfigFailure != null);
+    assert(initializeConfigFailure != null);
+    assert(updateConfigFailure != null);
+    return initializeConfigFailure(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
-    TResult failedToDeleteConfigFLR(FailedToDeleteConfigFLR value),
-    TResult failedToFetchConfigFLR(FailedToFetchConfigFLR value),
-    TResult failedToInitializeConfigFLR(FailedToInitializeConfigFLR value),
-    TResult failedToUpdateConfigFLR(FailedToUpdateConfigFLR value),
+    TResult deleteConfigFailure(DeleteConfigFailure value),
+    TResult initializeConfigFailure(InitializeConfigFailure value),
+    TResult updateConfigFailure(UpdateConfigFailure value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (failedToFetchConfigFLR != null) {
-      return failedToFetchConfigFLR(this);
+    if (initializeConfigFailure != null) {
+      return initializeConfigFailure(this);
     }
     return orElse();
   }
 }
 
-abstract class FailedToFetchConfigFLR implements ConfigDatabaseFailure {
-  const factory FailedToFetchConfigFLR() = _$FailedToFetchConfigFLR;
+abstract class InitializeConfigFailure implements ConfigDatabaseFailure {
+  const factory InitializeConfigFailure() = _$InitializeConfigFailure;
 }
 
 /// @nodoc
-abstract class $FailedToInitializeConfigFLRCopyWith<$Res> {
-  factory $FailedToInitializeConfigFLRCopyWith(
-          FailedToInitializeConfigFLR value,
-          $Res Function(FailedToInitializeConfigFLR) then) =
-      _$FailedToInitializeConfigFLRCopyWithImpl<$Res>;
+abstract class $UpdateConfigFailureCopyWith<$Res> {
+  factory $UpdateConfigFailureCopyWith(
+          UpdateConfigFailure value, $Res Function(UpdateConfigFailure) then) =
+      _$UpdateConfigFailureCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$FailedToInitializeConfigFLRCopyWithImpl<$Res>
+class _$UpdateConfigFailureCopyWithImpl<$Res>
     extends _$ConfigDatabaseFailureCopyWithImpl<$Res>
-    implements $FailedToInitializeConfigFLRCopyWith<$Res> {
-  _$FailedToInitializeConfigFLRCopyWithImpl(FailedToInitializeConfigFLR _value,
-      $Res Function(FailedToInitializeConfigFLR) _then)
-      : super(_value, (v) => _then(v as FailedToInitializeConfigFLR));
+    implements $UpdateConfigFailureCopyWith<$Res> {
+  _$UpdateConfigFailureCopyWithImpl(
+      UpdateConfigFailure _value, $Res Function(UpdateConfigFailure) _then)
+      : super(_value, (v) => _then(v as UpdateConfigFailure));
 
   @override
-  FailedToInitializeConfigFLR get _value =>
-      super._value as FailedToInitializeConfigFLR;
+  UpdateConfigFailure get _value => super._value as UpdateConfigFailure;
 }
 
 /// @nodoc
-class _$FailedToInitializeConfigFLR implements FailedToInitializeConfigFLR {
-  const _$FailedToInitializeConfigFLR();
+class _$UpdateConfigFailure implements UpdateConfigFailure {
+  const _$UpdateConfigFailure();
 
   @override
   String toString() {
-    return 'ConfigDatabaseFailure.failedToInitializeConfigFLR()';
+    return 'ConfigDatabaseFailure.updateConfigFailure()';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is FailedToInitializeConfigFLR);
+    return identical(this, other) || (other is UpdateConfigFailure);
   }
 
   @override
@@ -339,30 +313,27 @@ class _$FailedToInitializeConfigFLR implements FailedToInitializeConfigFLR {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
-    @required TResult failedToDeleteConfigFLR(),
-    @required TResult failedToFetchConfigFLR(),
-    @required TResult failedToInitializeConfigFLR(),
-    @required TResult failedToUpdateConfigFLR(),
+    @required TResult deleteConfigFailure(),
+    @required TResult initializeConfigFailure(),
+    @required TResult updateConfigFailure(),
   }) {
-    assert(failedToDeleteConfigFLR != null);
-    assert(failedToFetchConfigFLR != null);
-    assert(failedToInitializeConfigFLR != null);
-    assert(failedToUpdateConfigFLR != null);
-    return failedToInitializeConfigFLR();
+    assert(deleteConfigFailure != null);
+    assert(initializeConfigFailure != null);
+    assert(updateConfigFailure != null);
+    return updateConfigFailure();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
-    TResult failedToDeleteConfigFLR(),
-    TResult failedToFetchConfigFLR(),
-    TResult failedToInitializeConfigFLR(),
-    TResult failedToUpdateConfigFLR(),
+    TResult deleteConfigFailure(),
+    TResult initializeConfigFailure(),
+    TResult updateConfigFailure(),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (failedToInitializeConfigFLR != null) {
-      return failedToInitializeConfigFLR();
+    if (updateConfigFailure != null) {
+      return updateConfigFailure();
     }
     return orElse();
   }
@@ -370,140 +341,32 @@ class _$FailedToInitializeConfigFLR implements FailedToInitializeConfigFLR {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object>({
-    @required TResult failedToDeleteConfigFLR(FailedToDeleteConfigFLR value),
-    @required TResult failedToFetchConfigFLR(FailedToFetchConfigFLR value),
-    @required
-        TResult failedToInitializeConfigFLR(FailedToInitializeConfigFLR value),
-    @required TResult failedToUpdateConfigFLR(FailedToUpdateConfigFLR value),
+    @required TResult deleteConfigFailure(DeleteConfigFailure value),
+    @required TResult initializeConfigFailure(InitializeConfigFailure value),
+    @required TResult updateConfigFailure(UpdateConfigFailure value),
   }) {
-    assert(failedToDeleteConfigFLR != null);
-    assert(failedToFetchConfigFLR != null);
-    assert(failedToInitializeConfigFLR != null);
-    assert(failedToUpdateConfigFLR != null);
-    return failedToInitializeConfigFLR(this);
+    assert(deleteConfigFailure != null);
+    assert(initializeConfigFailure != null);
+    assert(updateConfigFailure != null);
+    return updateConfigFailure(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
-    TResult failedToDeleteConfigFLR(FailedToDeleteConfigFLR value),
-    TResult failedToFetchConfigFLR(FailedToFetchConfigFLR value),
-    TResult failedToInitializeConfigFLR(FailedToInitializeConfigFLR value),
-    TResult failedToUpdateConfigFLR(FailedToUpdateConfigFLR value),
+    TResult deleteConfigFailure(DeleteConfigFailure value),
+    TResult initializeConfigFailure(InitializeConfigFailure value),
+    TResult updateConfigFailure(UpdateConfigFailure value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (failedToInitializeConfigFLR != null) {
-      return failedToInitializeConfigFLR(this);
+    if (updateConfigFailure != null) {
+      return updateConfigFailure(this);
     }
     return orElse();
   }
 }
 
-abstract class FailedToInitializeConfigFLR implements ConfigDatabaseFailure {
-  const factory FailedToInitializeConfigFLR() = _$FailedToInitializeConfigFLR;
-}
-
-/// @nodoc
-abstract class $FailedToUpdateConfigFLRCopyWith<$Res> {
-  factory $FailedToUpdateConfigFLRCopyWith(FailedToUpdateConfigFLR value,
-          $Res Function(FailedToUpdateConfigFLR) then) =
-      _$FailedToUpdateConfigFLRCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class _$FailedToUpdateConfigFLRCopyWithImpl<$Res>
-    extends _$ConfigDatabaseFailureCopyWithImpl<$Res>
-    implements $FailedToUpdateConfigFLRCopyWith<$Res> {
-  _$FailedToUpdateConfigFLRCopyWithImpl(FailedToUpdateConfigFLR _value,
-      $Res Function(FailedToUpdateConfigFLR) _then)
-      : super(_value, (v) => _then(v as FailedToUpdateConfigFLR));
-
-  @override
-  FailedToUpdateConfigFLR get _value => super._value as FailedToUpdateConfigFLR;
-}
-
-/// @nodoc
-class _$FailedToUpdateConfigFLR implements FailedToUpdateConfigFLR {
-  const _$FailedToUpdateConfigFLR();
-
-  @override
-  String toString() {
-    return 'ConfigDatabaseFailure.failedToUpdateConfigFLR()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) || (other is FailedToUpdateConfigFLR);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult failedToDeleteConfigFLR(),
-    @required TResult failedToFetchConfigFLR(),
-    @required TResult failedToInitializeConfigFLR(),
-    @required TResult failedToUpdateConfigFLR(),
-  }) {
-    assert(failedToDeleteConfigFLR != null);
-    assert(failedToFetchConfigFLR != null);
-    assert(failedToInitializeConfigFLR != null);
-    assert(failedToUpdateConfigFLR != null);
-    return failedToUpdateConfigFLR();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult failedToDeleteConfigFLR(),
-    TResult failedToFetchConfigFLR(),
-    TResult failedToInitializeConfigFLR(),
-    TResult failedToUpdateConfigFLR(),
-    @required TResult orElse(),
-  }) {
-    assert(orElse != null);
-    if (failedToUpdateConfigFLR != null) {
-      return failedToUpdateConfigFLR();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult failedToDeleteConfigFLR(FailedToDeleteConfigFLR value),
-    @required TResult failedToFetchConfigFLR(FailedToFetchConfigFLR value),
-    @required
-        TResult failedToInitializeConfigFLR(FailedToInitializeConfigFLR value),
-    @required TResult failedToUpdateConfigFLR(FailedToUpdateConfigFLR value),
-  }) {
-    assert(failedToDeleteConfigFLR != null);
-    assert(failedToFetchConfigFLR != null);
-    assert(failedToInitializeConfigFLR != null);
-    assert(failedToUpdateConfigFLR != null);
-    return failedToUpdateConfigFLR(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult failedToDeleteConfigFLR(FailedToDeleteConfigFLR value),
-    TResult failedToFetchConfigFLR(FailedToFetchConfigFLR value),
-    TResult failedToInitializeConfigFLR(FailedToInitializeConfigFLR value),
-    TResult failedToUpdateConfigFLR(FailedToUpdateConfigFLR value),
-    @required TResult orElse(),
-  }) {
-    assert(orElse != null);
-    if (failedToUpdateConfigFLR != null) {
-      return failedToUpdateConfigFLR(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class FailedToUpdateConfigFLR implements ConfigDatabaseFailure {
-  const factory FailedToUpdateConfigFLR() = _$FailedToUpdateConfigFLR;
+abstract class UpdateConfigFailure implements ConfigDatabaseFailure {
+  const factory UpdateConfigFailure() = _$UpdateConfigFailure;
 }

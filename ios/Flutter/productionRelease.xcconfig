@@ -1,0 +1,6 @@
+#include "Generated.xcconfig"
+
+FLUTTER_TARGET=lib/production.dart
+
+ASSET_PREFIX=production
+BUNDLE_NAME=WINE

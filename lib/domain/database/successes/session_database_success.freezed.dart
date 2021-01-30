@@ -247,6 +247,7 @@ class _$SessionFetchedSCS implements SessionFetchedSCS {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(session);
 
+  @JsonKey(ignore: true)
   @override
   $SessionFetchedSCSCopyWith<SessionFetchedSCS> get copyWith =>
       _$SessionFetchedSCSCopyWithImpl<SessionFetchedSCS>(this, _$identity);
@@ -318,6 +319,7 @@ abstract class SessionFetchedSCS implements SessionDatabaseSuccess {
   const factory SessionFetchedSCS(Session session) = _$SessionFetchedSCS;
 
   Session get session;
+  @JsonKey(ignore: true)
   $SessionFetchedSCSCopyWith<SessionFetchedSCS> get copyWith;
 }
 

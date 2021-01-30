@@ -20,7 +20,7 @@ class SeriesEditorListeners {
           if (state.editorContentOrigin == EditorContentOrigin.library) {
             context
                 .read<CoreDatabaseBloc>()
-                .add(CoreDatabaseEvent.chapterDraftDeletedFromLibraryEVT(
+                .add(CoreDatabaseEvent.chapterDraftDeletedFromLibraryEvent(
                   seriesDraftUID: state.seriesDraft.uid,
                 ));
           }
@@ -44,7 +44,7 @@ class SeriesEditorListeners {
                 if (state.editorContentOrigin == EditorContentOrigin.library) {
                   context
                       .read<CoreDatabaseBloc>()
-                      .add(CoreDatabaseEvent.seriesDraftDeletedFromLibraryEVT(
+                      .add(CoreDatabaseEvent.seriesDraftDeletedFromLibraryEvent(
                         state.seriesDraft.uid,
                       ));
                 }
@@ -53,7 +53,7 @@ class SeriesEditorListeners {
                 if (state.editorContentOrigin == EditorContentOrigin.library) {
                   context
                       .read<CoreDatabaseBloc>()
-                      .add(CoreDatabaseEvent.seriesDraftSavedFromLibraryEVT(
+                      .add(CoreDatabaseEvent.seriesDraftSavedFromLibraryEvent(
                         subSuccess.seriesDraft,
                       ));
                 }

@@ -159,6 +159,7 @@ class _$EnableBookmarksCountToggledEVT
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(value);
 
+  @JsonKey(ignore: true)
   @override
   $EnableBookmarksCountToggledEVTCopyWith<EnableBookmarksCountToggledEVT>
       get copyWith => _$EnableBookmarksCountToggledEVTCopyWithImpl<
@@ -239,6 +240,7 @@ abstract class EnableBookmarksCountToggledEVT
       _$EnableBookmarksCountToggledEVT;
 
   bool get value;
+  @JsonKey(ignore: true)
   $EnableBookmarksCountToggledEVTCopyWith<EnableBookmarksCountToggledEVT>
       get copyWith;
 }
@@ -297,6 +299,7 @@ class _$EnableLikesCountToggledEVT implements EnableLikesCountToggledEVT {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(value);
 
+  @JsonKey(ignore: true)
   @override
   $EnableLikesCountToggledEVTCopyWith<EnableLikesCountToggledEVT>
       get copyWith =>
@@ -378,6 +381,7 @@ abstract class EnableLikesCountToggledEVT
       _$EnableLikesCountToggledEVT;
 
   bool get value;
+  @JsonKey(ignore: true)
   $EnableLikesCountToggledEVTCopyWith<EnableLikesCountToggledEVT> get copyWith;
 }
 
@@ -435,6 +439,7 @@ class _$EnableViewsCountToggledEVT implements EnableViewsCountToggledEVT {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(value);
 
+  @JsonKey(ignore: true)
   @override
   $EnableViewsCountToggledEVTCopyWith<EnableViewsCountToggledEVT>
       get copyWith =>
@@ -516,6 +521,7 @@ abstract class EnableViewsCountToggledEVT
       _$EnableViewsCountToggledEVT;
 
   bool get value;
+  @JsonKey(ignore: true)
   $EnableViewsCountToggledEVTCopyWith<EnableViewsCountToggledEVT> get copyWith;
 }
 
@@ -663,6 +669,7 @@ mixin _$SeriesSettingsDatabaseState {
   Option<Either<ConfigDatabaseFailure, ConfigDatabaseSuccess>>
       get configDatabaseFailureOrSuccessOption;
 
+  @JsonKey(ignore: true)
   $SeriesSettingsDatabaseStateCopyWith<SeriesSettingsDatabaseState>
       get copyWith;
 }
@@ -799,6 +806,7 @@ class _$_SeriesSettingsDatabaseState implements _SeriesSettingsDatabaseState {
       const DeepCollectionEquality().hash(config) ^
       const DeepCollectionEquality().hash(configDatabaseFailureOrSuccessOption);
 
+  @JsonKey(ignore: true)
   @override
   _$SeriesSettingsDatabaseStateCopyWith<_SeriesSettingsDatabaseState>
       get copyWith => __$SeriesSettingsDatabaseStateCopyWithImpl<
@@ -825,6 +833,7 @@ abstract class _SeriesSettingsDatabaseState
   Option<Either<ConfigDatabaseFailure, ConfigDatabaseSuccess>>
       get configDatabaseFailureOrSuccessOption;
   @override
+  @JsonKey(ignore: true)
   _$SeriesSettingsDatabaseStateCopyWith<_SeriesSettingsDatabaseState>
       get copyWith;
 }

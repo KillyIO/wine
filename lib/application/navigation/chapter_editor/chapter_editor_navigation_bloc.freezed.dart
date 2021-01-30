@@ -48,6 +48,7 @@ mixin _$ChapterEditorNavigationEvent {
     @required TResult orElse(),
   });
 
+  @JsonKey(ignore: true)
   $ChapterEditorNavigationEventCopyWith<ChapterEditorNavigationEvent>
       get copyWith;
 }
@@ -135,6 +136,7 @@ class _$PageViewIndexChangedEVT implements PageViewIndexChangedEVT {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(index);
 
+  @JsonKey(ignore: true)
   @override
   $PageViewIndexChangedEVTCopyWith<PageViewIndexChangedEVT> get copyWith =>
       _$PageViewIndexChangedEVTCopyWithImpl<PageViewIndexChangedEVT>(
@@ -191,6 +193,7 @@ abstract class PageViewIndexChangedEVT implements ChapterEditorNavigationEvent {
   @override
   int get index;
   @override
+  @JsonKey(ignore: true)
   $PageViewIndexChangedEVTCopyWith<PageViewIndexChangedEVT> get copyWith;
 }
 
@@ -214,6 +217,7 @@ const $ChapterEditorNavigationState = _$ChapterEditorNavigationStateTearOff();
 mixin _$ChapterEditorNavigationState {
   int get currentPageViewIdx;
 
+  @JsonKey(ignore: true)
   $ChapterEditorNavigationStateCopyWith<ChapterEditorNavigationState>
       get copyWith;
 }
@@ -311,6 +315,7 @@ class _$_ChapterEditorNavigationState implements _ChapterEditorNavigationState {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(currentPageViewIdx);
 
+  @JsonKey(ignore: true)
   @override
   _$ChapterEditorNavigationStateCopyWith<_ChapterEditorNavigationState>
       get copyWith => __$ChapterEditorNavigationStateCopyWithImpl<
@@ -325,6 +330,7 @@ abstract class _ChapterEditorNavigationState
   @override
   int get currentPageViewIdx;
   @override
+  @JsonKey(ignore: true)
   _$ChapterEditorNavigationStateCopyWith<_ChapterEditorNavigationState>
       get copyWith;
 }

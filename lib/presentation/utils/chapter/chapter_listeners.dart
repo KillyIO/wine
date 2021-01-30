@@ -6,14 +6,12 @@ import 'package:wine/application/database/core/core_database_bloc.dart';
 class ChapterListeners {
   BlocListener<CoreDatabaseBloc, CoreDatabaseState> _coreDatabaseListener() =>
       BlocListener<CoreDatabaseBloc, CoreDatabaseState>(
-        listener: (context, state) {
-          state.maybeMap(
-            chapterPublishedFromChapterSTE: (otherState) {
+        listener: (context, coreDatabaseState) {
+          coreDatabaseState.maybeMap(
+            chapterPublishedFromChapterState: (state) {
               context
                   .read<ChapterDatabaseBloc>()
-                  .add(ChapterDatabaseEvent.chapterPublishedEVT(
-                    otherState.chapter,
-                  ));
+                  .add(ChapterDatabaseEvent.chapterPublishedEVT(state.chapter));
             },
             orElse: () {},
           );

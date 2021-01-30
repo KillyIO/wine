@@ -60,7 +60,9 @@ class SeriesDatabaseBloc
 
         final isBookmarked = !state.isBookmarked;
 
-        final count = state.bookmarksCount..count += isBookmarked ? 1 : -1;
+        final count = state.bookmarksCount.copyWith(
+          count: state.bookmarksCount.count + (isBookmarked ? 1 : -1),
+        );
 
         yield state.copyWith(
           bookmarksCount: count,
@@ -121,7 +123,9 @@ class SeriesDatabaseBloc
 
         final isLiked = !state.isLiked;
 
-        final count = state.likesCount..count += isLiked ? 1 : -1;
+        final count = state.likesCount.copyWith(
+          count: state.likesCount.count + (isLiked ? 1 : -1),
+        );
 
         yield state.copyWith(
           isLiked: !state.isLiked,
@@ -290,7 +294,7 @@ class SeriesDatabaseBloc
           ..fold(
             (_) {},
             (success) {
-              if (success is ConfigFetchedSCS) {
+              if (success is ConfigFetchedSuccess) {
                 config = success.config;
               }
             },

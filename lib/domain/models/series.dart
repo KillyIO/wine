@@ -1,7 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:equatable/equatable.dart';
 
 /// @nodoc
-class Series {
+class Series extends Equatable {
   /// @nodoc
   Series({
     this.authorUID,
@@ -62,43 +63,43 @@ class Series {
   }
 
   /// @nodoc
-  bool isNSFW;
+  final bool isNSFW;
 
   /// @nodoc
-  int createdAt;
+  final int createdAt;
 
   /// @nodoc
-  int updatedAt;
+  final int updatedAt;
 
   /// @nodoc
-  String authorUID;
+  final String authorUID;
 
   /// @nodoc
-  String authorUsername;
+  final String authorUsername;
 
   /// @nodoc
-  String coverURL;
+  final String coverURL;
 
   /// @nodoc
-  String genre;
+  final String genre;
 
   /// @nodoc
-  String genreOptional;
+  final String genreOptional;
 
   /// @nodoc
-  String language;
+  final String language;
 
   /// @nodoc
-  String subtitle;
+  final String subtitle;
 
   /// @nodoc
-  String summary;
+  final String summary;
 
   /// @nodoc
-  String title;
+  final String title;
 
   /// @nodoc
-  String uid;
+  final String uid;
 
   /// @nodoc
   Series copyWith({
@@ -153,61 +154,10 @@ class Series {
   }
 
   @override
-  String toString() {
-    return '''
-      Series(
-        authorUID: $authorUID,
-        coverURL: $coverURL
-        createAt: $createdAt,
-        genre: $genre,
-        genreOptional: $genreOptional,
-        isNSFW: $isNSFW,
-        language: $language,
-        subtitle: $subtitle,
-        summary: $summary,
-        title: $title,
-        uid: $uid,
-        updatedAt: $updatedAt,
-      )
-    ''';
-  }
+  List<Object> get props => [authorUID, uid];
 
   @override
-  bool operator ==(Object other) {
-    if (identical(this, other)) return true;
-
-    return other is Series &&
-        other.authorUID == authorUID &&
-        other.authorUsername == authorUsername &&
-        other.coverURL == coverURL &&
-        other.createdAt == createdAt &&
-        other.genre == genre &&
-        other.genreOptional == genreOptional &&
-        other.isNSFW == isNSFW &&
-        other.language == language &&
-        other.subtitle == subtitle &&
-        other.summary == summary &&
-        other.title == title &&
-        other.uid == uid &&
-        other.updatedAt == updatedAt;
-  }
-
-  @override
-  int get hashCode {
-    return authorUID.hashCode ^
-        authorUsername.hashCode ^
-        coverURL.hashCode ^
-        createdAt.hashCode ^
-        genre.hashCode ^
-        genreOptional.hashCode ^
-        isNSFW.hashCode ^
-        language.hashCode ^
-        subtitle.hashCode ^
-        summary.hashCode ^
-        title.hashCode ^
-        uid.hashCode ^
-        updatedAt.hashCode;
-  }
+  bool get stringify => true;
 
   /// @nodoc
   bool get isEmpty {

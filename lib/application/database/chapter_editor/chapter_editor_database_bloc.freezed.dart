@@ -913,6 +913,7 @@ class _$ChapterEditorLaunchedFromLibraryEVT
       const DeepCollectionEquality().hash(chapterDraft) ^
       const DeepCollectionEquality().hash(editorContentOrigin);
 
+  @JsonKey(ignore: true)
   @override
   $ChapterEditorLaunchedFromLibraryEVTCopyWith<
           ChapterEditorLaunchedFromLibraryEVT>
@@ -1124,6 +1125,7 @@ abstract class ChapterEditorLaunchedFromLibraryEVT
   BuildContext get context;
   Chapter get chapterDraft;
   EditorContentOrigin get editorContentOrigin;
+  @JsonKey(ignore: true)
   $ChapterEditorLaunchedFromLibraryEVTCopyWith<
       ChapterEditorLaunchedFromLibraryEVT> get copyWith;
 }
@@ -1227,6 +1229,7 @@ class _$ChapterEditorLaunchedFromPreviousChapterEVT
       const DeepCollectionEquality().hash(previousChapter) ^
       const DeepCollectionEquality().hash(editorContentOrigin);
 
+  @JsonKey(ignore: true)
   @override
   $ChapterEditorLaunchedFromPreviousChapterEVTCopyWith<
           ChapterEditorLaunchedFromPreviousChapterEVT>
@@ -1440,6 +1443,7 @@ abstract class ChapterEditorLaunchedFromPreviousChapterEVT
   BuildContext get context;
   Chapter get previousChapter;
   EditorContentOrigin get editorContentOrigin;
+  @JsonKey(ignore: true)
   $ChapterEditorLaunchedFromPreviousChapterEVTCopyWith<
       ChapterEditorLaunchedFromPreviousChapterEVT> get copyWith;
 }
@@ -1541,6 +1545,7 @@ class _$ChapterEditorLaunchedFromSeriesEditorEVT
       const DeepCollectionEquality().hash(editorContentOrigin) ^
       const DeepCollectionEquality().hash(seriesDraft);
 
+  @JsonKey(ignore: true)
   @override
   $ChapterEditorLaunchedFromSeriesEditorEVTCopyWith<
           ChapterEditorLaunchedFromSeriesEditorEVT>
@@ -1753,6 +1758,7 @@ abstract class ChapterEditorLaunchedFromSeriesEditorEVT
   BuildContext get context;
   EditorContentOrigin get editorContentOrigin;
   Series get seriesDraft;
+  @JsonKey(ignore: true)
   $ChapterEditorLaunchedFromSeriesEditorEVTCopyWith<
       ChapterEditorLaunchedFromSeriesEditorEVT> get copyWith;
 }
@@ -2316,6 +2322,7 @@ class _$CopyrightsSelectedEVT
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(copyrights);
 
+  @JsonKey(ignore: true)
   @override
   $CopyrightsSelectedEVTCopyWith<CopyrightsSelectedEVT> get copyWith =>
       _$CopyrightsSelectedEVTCopyWithImpl<CopyrightsSelectedEVT>(
@@ -2520,6 +2527,7 @@ abstract class CopyrightsSelectedEVT implements ChapterEditorDatabaseEvent {
       _$CopyrightsSelectedEVT;
 
   String get copyrights;
+  @JsonKey(ignore: true)
   $CopyrightsSelectedEVTCopyWith<CopyrightsSelectedEVT> get copyWith;
 }
 
@@ -2837,6 +2845,7 @@ class _$GenreOptionalSelectedEVT
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(genreOptional);
 
+  @JsonKey(ignore: true)
   @override
   $GenreOptionalSelectedEVTCopyWith<GenreOptionalSelectedEVT> get copyWith =>
       _$GenreOptionalSelectedEVTCopyWithImpl<GenreOptionalSelectedEVT>(
@@ -3041,6 +3050,7 @@ abstract class GenreOptionalSelectedEVT implements ChapterEditorDatabaseEvent {
       _$GenreOptionalSelectedEVT;
 
   String get genreOptional;
+  @JsonKey(ignore: true)
   $GenreOptionalSelectedEVTCopyWith<GenreOptionalSelectedEVT> get copyWith;
 }
 
@@ -3108,6 +3118,7 @@ class _$GenreSelectedEVT
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(genre);
 
+  @JsonKey(ignore: true)
   @override
   $GenreSelectedEVTCopyWith<GenreSelectedEVT> get copyWith =>
       _$GenreSelectedEVTCopyWithImpl<GenreSelectedEVT>(this, _$identity);
@@ -3310,6 +3321,7 @@ abstract class GenreSelectedEVT implements ChapterEditorDatabaseEvent {
   const factory GenreSelectedEVT(String genre) = _$GenreSelectedEVT;
 
   String get genre;
+  @JsonKey(ignore: true)
   $GenreSelectedEVTCopyWith<GenreSelectedEVT> get copyWith;
 }
 
@@ -3381,6 +3393,7 @@ class _$IsLastChapterChangedEVT
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(isLastChapter);
 
+  @JsonKey(ignore: true)
   @override
   $IsLastChapterChangedEVTCopyWith<IsLastChapterChangedEVT> get copyWith =>
       _$IsLastChapterChangedEVTCopyWithImpl<IsLastChapterChangedEVT>(
@@ -3585,6 +3598,7 @@ abstract class IsLastChapterChangedEVT implements ChapterEditorDatabaseEvent {
       _$IsLastChapterChangedEVT;
 
   bool get isLastChapter;
+  @JsonKey(ignore: true)
   $IsLastChapterChangedEVTCopyWith<IsLastChapterChangedEVT> get copyWith;
 }
 
@@ -3652,6 +3666,7 @@ class _$IsNSFWChangedEVT
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(isNSFW);
 
+  @JsonKey(ignore: true)
   @override
   $IsNSFWChangedEVTCopyWith<IsNSFWChangedEVT> get copyWith =>
       _$IsNSFWChangedEVTCopyWithImpl<IsNSFWChangedEVT>(this, _$identity);
@@ -3854,6 +3869,7 @@ abstract class IsNSFWChangedEVT implements ChapterEditorDatabaseEvent {
   const factory IsNSFWChangedEVT({@required bool isNSFW}) = _$IsNSFWChangedEVT;
 
   bool get isNSFW;
+  @JsonKey(ignore: true)
   $IsNSFWChangedEVTCopyWith<IsNSFWChangedEVT> get copyWith;
 }
 
@@ -3922,6 +3938,7 @@ class _$LanguageSelectedEVT
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(language);
 
+  @JsonKey(ignore: true)
   @override
   $LanguageSelectedEVTCopyWith<LanguageSelectedEVT> get copyWith =>
       _$LanguageSelectedEVTCopyWithImpl<LanguageSelectedEVT>(this, _$identity);
@@ -4124,6 +4141,7 @@ abstract class LanguageSelectedEVT implements ChapterEditorDatabaseEvent {
   const factory LanguageSelectedEVT(String language) = _$LanguageSelectedEVT;
 
   String get language;
+  @JsonKey(ignore: true)
   $LanguageSelectedEVTCopyWith<LanguageSelectedEVT> get copyWith;
 }
 
@@ -4682,6 +4700,7 @@ class _$SeriesDraftLoadedEVT
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(seriesDraft);
 
+  @JsonKey(ignore: true)
   @override
   $SeriesDraftLoadedEVTCopyWith<SeriesDraftLoadedEVT> get copyWith =>
       _$SeriesDraftLoadedEVTCopyWithImpl<SeriesDraftLoadedEVT>(
@@ -4886,6 +4905,7 @@ abstract class SeriesDraftLoadedEVT implements ChapterEditorDatabaseEvent {
       _$SeriesDraftLoadedEVT;
 
   Series get seriesDraft;
+  @JsonKey(ignore: true)
   $SeriesDraftLoadedEVTCopyWith<SeriesDraftLoadedEVT> get copyWith;
 }
 
@@ -4958,6 +4978,7 @@ class _$SeriesPublishedEVT
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(seriesDraftUID);
 
+  @JsonKey(ignore: true)
   @override
   $SeriesPublishedEVTCopyWith<SeriesPublishedEVT> get copyWith =>
       _$SeriesPublishedEVTCopyWithImpl<SeriesPublishedEVT>(this, _$identity);
@@ -5161,6 +5182,7 @@ abstract class SeriesPublishedEVT implements ChapterEditorDatabaseEvent {
       _$SeriesPublishedEVT;
 
   String get seriesDraftUID;
+  @JsonKey(ignore: true)
   $SeriesPublishedEVTCopyWith<SeriesPublishedEVT> get copyWith;
 }
 
@@ -5472,6 +5494,7 @@ class _$StoryChangedEVT
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(story);
 
+  @JsonKey(ignore: true)
   @override
   $StoryChangedEVTCopyWith<StoryChangedEVT> get copyWith =>
       _$StoryChangedEVTCopyWithImpl<StoryChangedEVT>(this, _$identity);
@@ -5674,6 +5697,7 @@ abstract class StoryChangedEVT implements ChapterEditorDatabaseEvent {
   const factory StoryChangedEVT(String story) = _$StoryChangedEVT;
 
   String get story;
+  @JsonKey(ignore: true)
   $StoryChangedEVTCopyWith<StoryChangedEVT> get copyWith;
 }
 
@@ -5741,6 +5765,7 @@ class _$TitleChangedEVT
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(title);
 
+  @JsonKey(ignore: true)
   @override
   $TitleChangedEVTCopyWith<TitleChangedEVT> get copyWith =>
       _$TitleChangedEVTCopyWithImpl<TitleChangedEVT>(this, _$identity);
@@ -5943,6 +5968,7 @@ abstract class TitleChangedEVT implements ChapterEditorDatabaseEvent {
   const factory TitleChangedEVT(String title) = _$TitleChangedEVT;
 
   String get title;
+  @JsonKey(ignore: true)
   $TitleChangedEVTCopyWith<TitleChangedEVT> get copyWith;
 }
 
@@ -6118,6 +6144,7 @@ mixin _$ChapterEditorDatabaseState {
   TextEditingController get titleController;
   Title get title;
 
+  @JsonKey(ignore: true)
   $ChapterEditorDatabaseStateCopyWith<ChapterEditorDatabaseState> get copyWith;
 }
 
@@ -6836,6 +6863,7 @@ class _$_ChapterEditorDatabaseState
       const DeepCollectionEquality().hash(titleController) ^
       const DeepCollectionEquality().hash(title);
 
+  @JsonKey(ignore: true)
   @override
   _$ChapterEditorDatabaseStateCopyWith<_ChapterEditorDatabaseState>
       get copyWith => __$ChapterEditorDatabaseStateCopyWithImpl<
@@ -6995,6 +7023,7 @@ abstract class _ChapterEditorDatabaseState
   @override
   Title get title;
   @override
+  @JsonKey(ignore: true)
   _$ChapterEditorDatabaseStateCopyWith<_ChapterEditorDatabaseState>
       get copyWith;
 }

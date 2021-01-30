@@ -9,6 +9,7 @@ import 'package:meta/meta.dart';
 import 'package:wine/domain/database/database_failure.dart';
 import 'package:wine/domain/database/facades/local/i_local_session_database_facade.dart';
 import 'package:wine/domain/database/facades/online/i_online_user_database_facade.dart';
+import 'package:wine/domain/database/failures/user_database_failure.dart';
 import 'package:wine/domain/database/successes/session_database_success.dart';
 import 'package:wine/domain/database/successes/user_database_success.dart';
 import 'package:wine/domain/models/hive/session.dart';
@@ -47,7 +48,7 @@ class CreateAccountDatabaseBloc
               ..fold(
                 (_) {},
                 (success) {
-                  if (success is UserDetailsSavedSCS) {
+                  if (success is UserDetailsSavedSuccess) {
                     add(CreateAccountDatabaseEvent.userDetailsSavedEVT(
                       success.user,
                     ));

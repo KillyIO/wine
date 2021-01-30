@@ -7,49 +7,49 @@ import 'package:wine/application/database/library/library_database_bloc.dart';
 class LibraryListeners {
   BlocListener<CoreDatabaseBloc, CoreDatabaseState> _coreDatabaseListener() =>
       BlocListener<CoreDatabaseBloc, CoreDatabaseState>(
-        listener: (context, state) {
-          state.maybeMap(
-            chapterDraftDeletedFromLibrarySTE: (otherState) {
+        listener: (context, coreDatabaseState) {
+          coreDatabaseState.maybeMap(
+            chapterDraftDeletedFromLibraryState: (state) {
               context
                   .read<LibraryDatabaseBloc>()
                   .add(LibraryDatabaseEvent.chapterDraftDeletedEVT(
-                    chapterDraftUID: otherState.chapterDraftUID,
-                    seriesDraftUID: otherState.seriesDraftUID,
+                    chapterDraftUID: state.chapterDraftUID,
+                    seriesDraftUID: state.seriesDraftUID,
                   ));
             },
-            chapterDraftSavedFromLibrarySTE: (otherState) {
+            chapterDraftSavedFromLibraryState: (state) {
               context
                   .read<LibraryDatabaseBloc>()
                   .add(LibraryDatabaseEvent.chapterDraftSavedEVT(
-                    otherState.chapterDraft,
+                    state.chapterDraft,
                   ));
             },
-            chapterPublishedFromLibrarySTE: (otherState) {
+            chapterPublishedFromLibraryState: (state) {
               context
                   .read<LibraryDatabaseBloc>()
                   .add(LibraryDatabaseEvent.chapterPublishedEVT(
-                    otherState.chapter,
+                    state.chapter,
                   ));
             },
-            seriesDraftDeletedFromLibrarySTE: (otherState) {
+            seriesDraftDeletedFromLibraryState: (state) {
               context
                   .read<LibraryDatabaseBloc>()
                   .add(LibraryDatabaseEvent.seriesDraftDeletedEVT(
-                    otherState.seriesDraftUID,
+                    state.seriesDraftUID,
                   ));
             },
-            seriesDraftSavedFromLibrarySTE: (otherState) {
+            seriesDraftSavedFromLibraryState: (state) {
               context
                   .read<LibraryDatabaseBloc>()
                   .add(LibraryDatabaseEvent.seriesDraftSavedEVT(
-                    otherState.seriesDraft,
+                    state.seriesDraft,
                   ));
             },
-            seriesPublishedFromLibrarySTE: (otherState) {
+            seriesPublishedFromLibraryState: (state) {
               context
                   .read<LibraryDatabaseBloc>()
                   .add(LibraryDatabaseEvent.seriesPublishedEVT(
-                    otherState.series,
+                    state.series,
                   ));
             },
             orElse: () {},

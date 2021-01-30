@@ -77,7 +77,7 @@ class SeriesSettingsDatabaseBloc
           ..fold(
             (_) {},
             (success) {
-              if (success is ConfigFetchedSCS) {
+              if (success is ConfigFetchedSuccess) {
                 config = success.config;
               }
             },

@@ -1329,6 +1329,7 @@ class _$ChapterLaunchedEVT
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(chapter);
 
+  @JsonKey(ignore: true)
   @override
   $ChapterLaunchedEVTCopyWith<ChapterLaunchedEVT> get copyWith =>
       _$ChapterLaunchedEVTCopyWithImpl<ChapterLaunchedEVT>(this, _$identity);
@@ -1493,6 +1494,7 @@ abstract class ChapterLaunchedEVT implements ChapterDatabaseEvent {
   const factory ChapterLaunchedEVT(Chapter chapter) = _$ChapterLaunchedEVT;
 
   Chapter get chapter;
+  @JsonKey(ignore: true)
   $ChapterLaunchedEVTCopyWith<ChapterLaunchedEVT> get copyWith;
 }
 
@@ -1560,6 +1562,7 @@ class _$ChapterPublishedEVT
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(chapter);
 
+  @JsonKey(ignore: true)
   @override
   $ChapterPublishedEVTCopyWith<ChapterPublishedEVT> get copyWith =>
       _$ChapterPublishedEVTCopyWithImpl<ChapterPublishedEVT>(this, _$identity);
@@ -1724,6 +1727,7 @@ abstract class ChapterPublishedEVT implements ChapterDatabaseEvent {
   const factory ChapterPublishedEVT(Chapter chapter) = _$ChapterPublishedEVT;
 
   Chapter get chapter;
+  @JsonKey(ignore: true)
   $ChapterPublishedEVTCopyWith<ChapterPublishedEVT> get copyWith;
 }
 
@@ -3250,6 +3254,7 @@ class _$ScrollEVT with DiagnosticableTreeMixin implements ScrollEVT {
       const DeepCollectionEquality().hash(currentScrollPosition) ^
       const DeepCollectionEquality().hash(maxScrollPosition);
 
+  @JsonKey(ignore: true)
   @override
   $ScrollEVTCopyWith<ScrollEVT> get copyWith =>
       _$ScrollEVTCopyWithImpl<ScrollEVT>(this, _$identity);
@@ -3417,6 +3422,7 @@ abstract class ScrollEVT implements ChapterDatabaseEvent {
 
   int get currentScrollPosition;
   int get maxScrollPosition;
+  @JsonKey(ignore: true)
   $ScrollEVTCopyWith<ScrollEVT> get copyWith;
 }
 
@@ -4137,6 +4143,7 @@ mixin _$ChapterDatabaseState {
       get sessionDatabaseFailureOrSuccessOption;
   Session get session;
 
+  @JsonKey(ignore: true)
   $ChapterDatabaseStateCopyWith<ChapterDatabaseState> get copyWith;
 }
 
@@ -4549,6 +4556,7 @@ class _$_ChapterDatabaseState
           .hash(sessionDatabaseFailureOrSuccessOption) ^
       const DeepCollectionEquality().hash(session);
 
+  @JsonKey(ignore: true)
   @override
   _$ChapterDatabaseStateCopyWith<_ChapterDatabaseState> get copyWith =>
       __$ChapterDatabaseStateCopyWithImpl<_ChapterDatabaseState>(
@@ -4633,5 +4641,6 @@ abstract class _ChapterDatabaseState implements ChapterDatabaseState {
   @override
   Session get session;
   @override
+  @JsonKey(ignore: true)
   _$ChapterDatabaseStateCopyWith<_ChapterDatabaseState> get copyWith;
 }

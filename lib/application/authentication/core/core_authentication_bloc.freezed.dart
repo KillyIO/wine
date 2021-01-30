@@ -273,6 +273,7 @@ const $CoreAuthenticationState = _$CoreAuthenticationStateTearOff();
 mixin _$CoreAuthenticationState {
   bool get isAnonymous;
 
+  @JsonKey(ignore: true)
   $CoreAuthenticationStateCopyWith<CoreAuthenticationState> get copyWith;
 }
 
@@ -363,6 +364,7 @@ class _$_CoreAuthenticationState implements _CoreAuthenticationState {
   int get hashCode =>
       runtimeType.hashCode ^ const DeepCollectionEquality().hash(isAnonymous);
 
+  @JsonKey(ignore: true)
   @override
   _$CoreAuthenticationStateCopyWith<_CoreAuthenticationState> get copyWith =>
       __$CoreAuthenticationStateCopyWithImpl<_CoreAuthenticationState>(
@@ -376,5 +378,6 @@ abstract class _CoreAuthenticationState implements CoreAuthenticationState {
   @override
   bool get isAnonymous;
   @override
+  @JsonKey(ignore: true)
   _$CoreAuthenticationStateCopyWith<_CoreAuthenticationState> get copyWith;
 }

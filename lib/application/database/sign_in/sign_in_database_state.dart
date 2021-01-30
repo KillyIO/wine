@@ -10,7 +10,7 @@ abstract class SignInDatabaseState with _$SignInDatabaseState {
         Option<Either<DatabaseFailure, SessionDatabaseSuccess>>
             sessionDatabaseFailureOrSuccessOption,
     @required
-        Option<Either<DatabaseFailure, UserDatabaseSuccess>>
+        Option<Either<UserDatabaseFailure, UserDatabaseSuccess>>
             userDatabaseFailureOrSuccessOption,
   }) = _SignInDatabaseState;
 

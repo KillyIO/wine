@@ -33,25 +33,30 @@ class CreateAccountAuthenticationBloc extends Bloc<
     yield* event.map(
       emailChangedEVT: (event) async* {
         yield state.copyWith(
-            authenticationFailureOrSuccessOption: none(),
-            emailAddress: EmailAddress(event.emailStr));
+          authenticationFailureOrSuccessOption: none(),
+          emailAddress: EmailAddress(event.emailStr),
+        );
       },
       passwordChangedEVT: (event) async* {
         yield state.copyWith(
-            authenticationFailureOrSuccessOption: none(),
-            password: Password(event.passwordStr));
+          authenticationFailureOrSuccessOption: none(),
+          password: Password(event.passwordStr),
+        );
       },
       confirmPasswordChangedEVT: (event) async* {
         yield state.copyWith(
           authenticationFailureOrSuccessOption: none(),
-          confirmPassword:
-              Password(event.confirmPasswordStr, event.passwordStr),
+          confirmPassword: Password(
+            event.confirmPasswordStr,
+            event.passwordStr,
+          ),
         );
       },
       usernameChangedEVT: (event) async* {
         yield state.copyWith(
-            username: Username(event.usernameStr),
-            authenticationFailureOrSuccessOption: none());
+          username: Username(event.usernameStr),
+          authenticationFailureOrSuccessOption: none(),
+        );
       },
       createAccountEVT: (event) async* {
         Either<AuthenticationFailure, AuthenticationSuccess> failureOrSuccess;
@@ -62,7 +67,8 @@ class CreateAccountAuthenticationBloc extends Bloc<
           yield state.copyWith(
               isSubmitting: true, authenticationFailureOrSuccessOption: none());
           failureOrSuccess = await _authenticationFacade.isUsernameAvailable(
-              username: state.username);
+            state.username,
+          );
           isUsernameValid = failureOrSuccess.isRight();
         }
 
@@ -76,24 +82,28 @@ class CreateAccountAuthenticationBloc extends Bloc<
             isUsernameValid) {
           failureOrSuccess =
               await _authenticationFacade.convertWithEmailAndPassword(
-            emailAddress: state.emailAddress,
-            password: state.password,
-          )
-                ..fold(
-                  (_) {},
-                  (success) {
-                    if (success is UserAuthenticatedSCS) {
-                      success.user
-                        ..username = state.username
-                            .getOrCrash()
-                            .trim()
-                            .replaceAll(RegExp('[ -]'), '_')
-                        ..name = state.username.getOrCrash().trim()
-                        ..createdAt = DateTime.now().millisecondsSinceEpoch
-                        ..updatedAt = DateTime.now().millisecondsSinceEpoch;
-                    }
-                  },
+            state.emailAddress,
+            state.password,
+          );
+          failureOrSuccess.fold(
+            (_) {},
+            (success) {
+              if (success is UserAuthenticatedSuccess) {
+                final user = success.user.copyWith(
+                  username: state.username
+                      .getOrCrash()
+                      .trim()
+                      .replaceAll(RegExp('[ -]'), '_'),
+                  name: state.username.getOrCrash().trim(),
+                  createdAt: DateTime.now().millisecondsSinceEpoch,
+                  updatedAt: DateTime.now().millisecondsSinceEpoch,
                 );
+
+                failureOrSuccess =
+                    right(AuthenticationSuccess.userAuthenticatedSuccess(user));
+              }
+            },
+          );
         }
 
         yield state.copyWith(
@@ -109,7 +119,8 @@ class CreateAccountAuthenticationBloc extends Bloc<
             await _authenticationFacade.resendVerificationEmail();
 
         yield state.copyWith(
-            authenticationFailureOrSuccessOption: optionOf(failureOrSuccess));
+          authenticationFailureOrSuccessOption: optionOf(failureOrSuccess),
+        );
       },
     );
   }

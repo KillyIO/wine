@@ -184,7 +184,7 @@ class SeriesEditorDatabaseBloc
 
         final uuid = Uuid();
 
-        final seriesDraft = state.seriesDraft;
+        var seriesDraft = state.seriesDraft;
 
         final failureOrSuccess =
             await _localSessionDatabaseFacade.fetchSession()
@@ -192,10 +192,11 @@ class SeriesEditorDatabaseBloc
                 (_) {},
                 (success) {
                   if (success is SessionFetchedSCS) {
-                    seriesDraft
-                      ..authorUID = success.session.uid
-                      ..authorUsername = success.session.username
-                      ..uid = uuid.v4();
+                    seriesDraft = seriesDraft.copyWith(
+                      authorUID: success.session.uid,
+                      authorUsername: success.session.username,
+                      uid: uuid.v4(),
+                    );
                   }
                 },
               );
@@ -281,7 +282,7 @@ class SeriesEditorDatabaseBloc
         final isGenreValid = state.genre.isValid();
         final isLanguageValid = state.language.isValid();
 
-        final seriesDraft = state.seriesDraft;
+        var seriesDraft = state.seriesDraft;
 
         if (isTitleValid && isSummaryValid && isGenreValid && isLanguageValid) {
           yield state.copyWith(
@@ -294,17 +295,18 @@ class SeriesEditorDatabaseBloc
           );
 
           final currentTime = DateTime.now().millisecondsSinceEpoch;
-          seriesDraft
-            ..coverURL = state.coverURL
-            ..createdAt = currentTime
-            ..genre = state.genre.getOrCrash()
-            ..genreOptional = state.genreOptional.getOrCrash()
-            ..isNSFW = state.isNSFW
-            ..language = state.language.getOrCrash()
-            ..subtitle = state.subtitle.getOrCrash()
-            ..summary = state.summary.getOrCrash()
-            ..title = state.title.getOrCrash()
-            ..updatedAt = currentTime;
+          seriesDraft = seriesDraft.copyWith(
+            coverURL: state.coverURL,
+            createdAt: currentTime,
+            genre: state.genre.getOrCrash(),
+            genreOptional: state.genreOptional.getOrCrash(),
+            isNSFW: state.isNSFW,
+            language: state.language.getOrCrash(),
+            subtitle: state.subtitle.getOrCrash(),
+            summary: state.summary.getOrCrash(),
+            title: state.title.getOrCrash(),
+            updatedAt: currentTime,
+          );
 
           failureOrSuccess = await _onlineSeriesDraftDatabaseFacade
               .saveSeriesDraft(seriesDraft);

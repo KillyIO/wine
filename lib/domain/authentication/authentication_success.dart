@@ -7,21 +7,22 @@ part 'authentication_success.freezed.dart';
 @freezed
 abstract class AuthenticationSuccess with _$AuthenticationSuccess {
   /// @nodoc
-  const factory AuthenticationSuccess.userAuthenticatedSCS(User user) =
-      UserAuthenticatedSCS;
+  const factory AuthenticationSuccess.userAuthenticatedSuccess(User user) =
+      UserAuthenticatedSuccess;
 
   /// @nodoc
-  const factory AuthenticationSuccess.usernameAvailableSCS() =
-      UsernameAvailableSCS;
+  const factory AuthenticationSuccess.usernameAvailableSuccess() =
+      UsernameAvailableSuccess;
 
   /// @nodoc
-  const factory AuthenticationSuccess.userSignedInAnonymouslySCS() =
-      UserSignedInAnonymouslySCS;
+  const factory AuthenticationSuccess.userSignedInAnonymouslySuccess() =
+      UserSignedInAnonymouslySuccess;
 
   /// @nodoc
-  const factory AuthenticationSuccess.userSignedOutSCS() = UserSignedOutSCS;
+  const factory AuthenticationSuccess.userSignedOutSuccess() =
+      UserSignedOutSuccess;
 
   /// @nodoc
-  const factory AuthenticationSuccess.verificationEmailSentSCS() =
-      VerificationEmailSentSCS;
+  const factory AuthenticationSuccess.verificationEmailSentSuccess() =
+      VerificationEmailSentSuccess;
 }
