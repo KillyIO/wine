@@ -12,7 +12,7 @@ import 'package:wine/presentation/core/development_app.dart';
 import 'package:wine/simple_bloc_observer.dart';
 
 Future<void> main() async {
-  F.appFlavor = Flavor.DEVELOPMENT;
+  F.appFlavor = Flavor.development;
 
   WidgetsFlutterBinding.ensureInitialized();
 

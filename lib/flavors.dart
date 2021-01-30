@@ -1,23 +1,31 @@
+/// Build flavors.
 enum Flavor {
-  BETA,
-  DEVELOPMENT,
-  PRODUCTION,
+  /// Build for beta testers.
+  beta,
+
+  /// Build for developers and internal testing.
+  development,
+
+  /// Build for final users.
+  production,
 }
 
+/// [F] is class containing values that depend on the build type.
 class F {
+  /// @nodoc
   static Flavor appFlavor;
 
+  /// App title.
   static String get title {
     switch (appFlavor) {
-      case Flavor.BETA:
+      case Flavor.beta:
         return 'WINE Beta';
-      case Flavor.DEVELOPMENT:
+      case Flavor.development:
         return 'WINE Dev';
-      case Flavor.PRODUCTION:
+      case Flavor.production:
         return 'WINE';
       default:
         return 'title';
     }
   }
-
 }

@@ -10,7 +10,7 @@ import 'package:wine/injection.dart';
 import 'package:wine/presentation/core/production_app.dart';
 
 Future<void> main() async {
-  F.appFlavor = Flavor.BETA;
+  F.appFlavor = Flavor.beta;
 
   WidgetsFlutterBinding.ensureInitialized();
 
