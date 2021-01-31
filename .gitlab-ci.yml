@@ -1,7 +1,10 @@
 image: cirrusci/flutter:stable
 
 before_script:
-  - flutter pub get
+  - pub global activate melos
+  - pub global activate tuneup
+  - pub global activate flutter_plugin_tools
+  - melos bs
 
 stages:
   - analyze-and-test
@@ -9,6 +12,6 @@ stages:
 analyze-and-test:
   stage: analyze-and-test
   script:
-    - flutter analyze
-    - flutter test
+    - melos run analyze
+    - melos run test
 
