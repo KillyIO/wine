@@ -19,6 +19,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  models:
+    path: packages/domain/models
   assorted_layout_widgets: ^3.0.1
   auto_route: ^0.6.9
   cached_network_image: ^2.5.0
