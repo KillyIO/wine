@@ -10,13 +10,13 @@ class MockFirebaseUser extends Mock implements auth.User {
   final bool _isAnonymous;
 
   @override
-  String get displayName => 'hdima.riyal.99';
+  String get displayName => 'display-name';
 
   @override
-  String get uid => 'IhyAvFOnGegIFDBJYmL30nAbWu92';
+  String get uid => 'uid';
 
   @override
-  String get email => 'hdima.riyal.99@tapiitudulu.com';
+  String get email => 'email@email.com';
 
   @override
   bool get isAnonymous => _isAnonymous;

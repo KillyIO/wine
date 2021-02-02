@@ -1,6 +1,7 @@
 image: cirrusci/flutter:stable
 
 before_script:
+  - export PATH="$PATH":"$HOME/.pub-cache/bin"
   - pub global activate melos
   - pub global activate tuneup
   - pub global activate flutter_plugin_tools

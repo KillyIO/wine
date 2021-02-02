@@ -11,7 +11,9 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  cloud_firestore: ^0.16.0
   equatable: ^1.2.5
+  firebase_auth: ^0.20.0+1
   hive: ^1.4.4+1
   hive_flutter: ^0.3.1
 

@@ -17,6 +17,39 @@ class User extends Equatable {
     this.username,
   });
 
+  /// @nodoc
+  factory User.fromFirebaseUser(auth.User user) {
+    if (user == null) return null;
+
+    return User(
+      email: user.email,
+      name: user.displayName,
+      profilePictureURL: user.photoURL,
+      uid: user.uid,
+    );
+  }
+
+  /// @nodoc
+  factory User.fromFirestore(DocumentSnapshot document) {
+    final data = document.data();
+
+    return User(
+      isBanned: data['isBanned'],
+      isDeleted: data['isDeleted'],
+      banDeadline: data['banDeadline'],
+      createdAt: data['createdAt'],
+      updatedAt: data['updatedAt'],
+      banReason: data['banReason'],
+      bio: data['bio'],
+      deletionReason: data['deletionReason'],
+      email: data['email'],
+      name: data['name'],
+      profilePictureURL: data['profilePictureURL'],
+      uid: data['uid'],
+      username: data['username'],
+    );
+  }
+
   factory User.fromMap(Map<String, dynamic> map) {
     if (map == null) return null;
 
@@ -148,15 +181,10 @@ class User extends Equatable {
   bool get isEmpty =>
       isBanned == null &&
       isDeleted == null &&
-      banDeadline == null &&
       createdAt == null &&
       updatedAt == null &&
-      banReason == null &&
-      bio == null &&
-      deletionReason == null &&
       email == null &&
       name == null &&
-      profilePictureURL == null &&
       uid == null &&
       username == null;
 }

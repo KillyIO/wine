@@ -3,6 +3,7 @@ import 'package:dartz/dartz.dart';
 import 'package:firebase_auth/firebase_auth.dart' as auth;
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:injectable/injectable.dart';
+import 'package:models/models.dart';
 
 import 'package:wine/domain/authentication/authentication_failure.dart';
 import 'package:wine/domain/authentication/authentication_success.dart';
@@ -10,7 +11,6 @@ import 'package:wine/domain/authentication/email_address.dart';
 import 'package:wine/domain/authentication/i_authentication_facade.dart';
 import 'package:wine/domain/authentication/password.dart';
 import 'package:wine/domain/authentication/username.dart';
-import 'package:wine/domain/models/user.dart';
 import 'package:wine/utils/paths.dart';
 
 /// @nodoc

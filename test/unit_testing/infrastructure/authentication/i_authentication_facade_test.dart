@@ -11,7 +11,7 @@ import 'package:wine/domain/authentication/username.dart';
 import 'package:wine/domain/models/user.dart';
 import 'package:wine/infrastructure/authentication/firebase_authentication_facade.dart';
 
-import '../../../mocks/firebase_auth_mocks.dart';
+import '../../../../packages/domain/models/test/mocks/firebase_auth_mocks.dart';
 import '../../../mocks/firebase_firestore_mocks.dart';
 import '../../../mocks/google_sign_in_mocks.dart';
 
