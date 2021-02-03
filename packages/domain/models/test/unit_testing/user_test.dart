@@ -2,6 +2,8 @@ import 'package:flutter_test/flutter_test.dart';
 
 import 'package:models/models.dart';
 
+import '../mocks/firebase_auth_mocks.dart';
+
 void main() {
   Map<String, dynamic> data = <String, dynamic>{};
 
@@ -27,10 +29,23 @@ void main() {
       group(
         'fromFirebaseUser -',
         () {
-          test('When auth.User null Then User null', () {
+          test('When auth.User null Then return null', () {
             final user = User.fromFirebaseUser(null);
 
             expect(user, null);
+          });
+
+          test('When auth.User not null Then return User', () {
+            final MockFirebaseUser mockFirebaseUser =
+                MockFirebaseUser(isAnonymous: false);
+
+            final user = User.fromFirebaseUser(mockFirebaseUser);
+
+            expect(user, isA<User>());
+            expect(user.email, mockFirebaseUser.email);
+            expect(user.name, mockFirebaseUser.displayName);
+            expect(user.profilePictureURL, mockFirebaseUser.photoURL);
+            expect(user.uid, mockFirebaseUser.uid);
           });
         },
       );

@@ -21,6 +21,7 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   hive_generator: ^0.8.2
+  mockito: ^4.1.4
   very_good_analysis: ^1.0.4
 
 flutter: null
