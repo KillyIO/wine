@@ -7,7 +7,7 @@ Future<T> wineShowDialog<T>({
   WidgetBuilder builder,
 }) {
   assert(debugCheckHasMaterialLocalizations(context));
-  final theme = Theme.of(context, shadowThemeOnly: true);
+  final theme = Theme.of(context);
   return showGeneralDialog(
     context: context,
     pageBuilder: (BuildContext buildContext, Animation<double> animation,

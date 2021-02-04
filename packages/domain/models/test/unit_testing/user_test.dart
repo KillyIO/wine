@@ -1,11 +1,13 @@
 import 'package:flutter_test/flutter_test.dart';
+import 'package:mockito/mockito.dart';
 
 import 'package:models/models.dart';
 
 import '../mocks/firebase_auth_mocks.dart';
+import '../mocks/firebase_firestore_mocks.dart';
 
 void main() {
-  Map<String, dynamic> data = <String, dynamic>{};
+  final data = <String, dynamic>{};
 
   setUp(() {
     data['isBanned'] = false;
@@ -36,8 +38,7 @@ void main() {
           });
 
           test('When auth.User not null Then return User', () {
-            final MockFirebaseUser mockFirebaseUser =
-                MockFirebaseUser(isAnonymous: false);
+            final mockFirebaseUser = MockFirebaseUser(isAnonymous: false);
 
             final user = User.fromFirebaseUser(mockFirebaseUser);
 
@@ -51,23 +52,70 @@ void main() {
       );
 
       group(
-        'isEmpty -',
+        'fromFirestore -',
         () {
-          test('When all User members null Then User is empty', () {
-            final user = User();
+          test('When DocumentSnapshot null Then return null', () {
+            final user = User.fromFirestore(null);
 
-            expect(user, isA<User>());
-            expect(user.isEmpty, true);
+            expect(user, null);
           });
 
-          test('When one User member non-null Then User is not empty', () {
+          test('When DocumentSnapshot.data null Then return null', () {
+            final mockDocumentSnapshot = MockDocumentSnapshot();
+
+            when(mockDocumentSnapshot.data()).thenReturn(null);
+
+            final user = User.fromFirestore(mockDocumentSnapshot);
+
+            expect(user, null);
+          });
+
+          test(
+            '''When DocumentSnapshot And DocumentSnapshot.data not null Then return User''',
+            () {
+              final mockDocumentSnapshot = MockDocumentSnapshot();
+
+              when(mockDocumentSnapshot.data()).thenReturn(data);
+
+              final user = User.fromFirestore(mockDocumentSnapshot);
+
+              expect(user.isBanned, data['isBanned']);
+              expect(user.isDeleted, data['isDeleted']);
+              expect(user.banDeadline, data['banDeadline']);
+              expect(user.createdAt, data['createdAt']);
+              expect(user.updatedAt, data['updatedAt']);
+              expect(user.banReason, data['banReason']);
+              expect(user.bio, data['bio']);
+              expect(user.deletionReason, data['deletionReason']);
+              expect(user.email, data['email']);
+              expect(user.name, data['name']);
+              expect(user.profilePictureURL, data['profilePictureURL']);
+              expect(user.uid, data['uid']);
+              expect(user.username, data['username']);
+            },
+          );
+        },
+      );
+
+      group(
+        'isComplete -',
+        () {
+          test(
+            'When all required members null Then User is not incomplete',
+            () {
+              final user = User();
+
+              expect(user.isComplete, false);
+            },
+          );
+
+          test('When one required member non-null Then User is incomplete', () {
             final user = User(uid: data['uid']);
 
-            expect(user.isEmpty, false);
+            expect(user.isComplete, false);
           });
 
-          test('When all required User member non-null Then User is not empty',
-              () {
+          test('When all required members non-null Then User is complete', () {
             final user = User(
               isBanned: data['isBanned'],
               isDeleted: data['isDeleted'],
@@ -79,7 +127,7 @@ void main() {
               username: data['username'],
             );
 
-            expect(user.isEmpty, false);
+            expect(user.isComplete, true);
           });
         },
       );

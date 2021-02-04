@@ -5,6 +5,7 @@ import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:meta/meta.dart';
+import 'package:models/models.dart';
 
 import 'package:wine/domain/database/database_failure.dart';
 import 'package:wine/domain/database/facades/local/i_local_session_database_facade.dart';
@@ -13,7 +14,6 @@ import 'package:wine/domain/database/failures/user_database_failure.dart';
 import 'package:wine/domain/database/successes/session_database_success.dart';
 import 'package:wine/domain/database/successes/user_database_success.dart';
 import 'package:wine/domain/models/hive/session.dart';
-import 'package:wine/domain/models/user.dart';
 
 part 'sign_in_database_bloc.freezed.dart';
 part 'sign_in_database_event.dart';

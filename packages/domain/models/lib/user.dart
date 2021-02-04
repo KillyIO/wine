@@ -1,6 +1,8 @@
 part of 'models.dart';
 
+/// @nodoc
 class User extends Equatable {
+  /// @nodoc
   User({
     this.isBanned,
     this.isDeleted,
@@ -31,7 +33,10 @@ class User extends Equatable {
 
   /// @nodoc
   factory User.fromFirestore(DocumentSnapshot document) {
+    if (document == null) return null;
+
     final data = document.data();
+    if (data == null) return null;
 
     return User(
       isBanned: data['isBanned'],
@@ -50,6 +55,7 @@ class User extends Equatable {
     );
   }
 
+  /// @nodoc
   factory User.fromMap(Map<String, dynamic> map) {
     if (map == null) return null;
 
@@ -114,6 +120,7 @@ class User extends Equatable {
   /// @nodoc
   final String username;
 
+  /// @nodoc
   User copyWith({
     bool isBanned,
     bool isDeleted,
@@ -146,6 +153,7 @@ class User extends Equatable {
     );
   }
 
+  /// @nodoc
   Map<String, dynamic> toMap() {
     return {
       'isBanned': isBanned,
@@ -170,21 +178,14 @@ class User extends Equatable {
   @override
   bool get stringify => true;
 
+  /// Check if the user account is complete.
   bool get isComplete =>
+      isBanned != null &&
+      isDeleted != null &&
       createdAt != null &&
       updatedAt != null &&
       email != null &&
       name != null &&
       uid != null &&
       username != null;
-
-  bool get isEmpty =>
-      isBanned == null &&
-      isDeleted == null &&
-      createdAt == null &&
-      updatedAt == null &&
-      email == null &&
-      name == null &&
-      uid == null &&
-      username == null;
 }
