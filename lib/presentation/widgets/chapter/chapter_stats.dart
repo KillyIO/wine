@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:wine/domain/models/count.dart';
+import 'package:models/models.dart';
 import 'package:wine/utils/palettes.dart';
 import 'package:wine/presentation/widgets/wine_stats_button.dart';
 

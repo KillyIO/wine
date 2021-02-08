@@ -1,5 +1,4 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:equatable/equatable.dart';
+part of 'models.dart';
 
 /// @nodoc
 class Count extends Equatable {
@@ -12,9 +11,14 @@ class Count extends Equatable {
 
   /// @nodoc
   factory Count.fromFirestore(DocumentSnapshot document) {
+    if (document == null || document.data() == null) return null;
+
     final data = document.data();
+
     return Count(
       count: data['count'] as int,
+      uid: data['uid'] as String,
+      updatedAt: data['updatedAt'] as int,
     );
   }
 

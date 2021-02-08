@@ -33,10 +33,9 @@ class User extends Equatable {
 
   /// @nodoc
   factory User.fromFirestore(DocumentSnapshot document) {
-    if (document == null) return null;
+    if (document == null || document.data() == null) return null;
 
     final data = document.data();
-    if (data == null) return null;
 
     return User(
       isBanned: data['isBanned'],

@@ -6,6 +6,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/widgets.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
+import 'package:models/models.dart';
 
 import 'package:wine/domain/authentication/i_authentication_facade.dart';
 import 'package:wine/domain/database/database_failure.dart';
@@ -17,7 +18,6 @@ import 'package:wine/domain/database/successes/chapter_database_success.dart';
 import 'package:wine/domain/database/successes/config_database_success.dart';
 import 'package:wine/domain/database/successes/session_database_success.dart';
 import 'package:wine/domain/models/chapter.dart';
-import 'package:wine/domain/models/count.dart';
 import 'package:wine/domain/models/hive/config.dart';
 import 'package:wine/domain/models/hive/session.dart';
 

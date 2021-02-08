@@ -4,12 +4,12 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:injectable/injectable.dart';
+import 'package:models/models.dart';
 import 'package:path/path.dart' as p;
 
 import 'package:wine/domain/database/database_failure.dart';
 import 'package:wine/domain/database/facades/online/i_online_series_database_facade.dart';
 import 'package:wine/domain/database/successes/series_database_success.dart';
-import 'package:wine/domain/models/count.dart';
 import 'package:wine/domain/models/series.dart';
 import 'package:wine/utils/extensions.dart';
 import 'package:wine/utils/getters.dart';
