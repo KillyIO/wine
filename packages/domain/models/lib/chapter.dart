@@ -1,5 +1,7 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:equatable/equatable.dart';
+part of 'models.dart';
+
+/// @nodoc
+final StringProcessor tps = StringProcessor();
 
 /// @nodoc
 class Chapter extends Equatable {
@@ -10,9 +12,11 @@ class Chapter extends Equatable {
     this.copyrights,
     this.coverURL,
     this.createdAt,
+    this.deletionReason,
     this.genre,
     this.genreOptional,
     this.index,
+    this.isDeleted,
     this.isLastChapter,
     this.isNSFW,
     this.language,
@@ -33,9 +37,11 @@ class Chapter extends Equatable {
       copyrights: data['copyrights'] as String,
       coverURL: data['coverURL'] as String,
       createdAt: data['createdAt'] as int,
+      deletionReason: data['deletionReason'] as String,
       genre: data['genre'] as String,
       genreOptional: data['genreOptional'] as String,
       index: data['index'] as int,
+      isDeleted: data['isDeleted'] as bool,
       isLastChapter: data['isLastChapter'] as bool,
       isNSFW: data['isNSFW'] as bool,
       language: data['language'] as String,
@@ -58,9 +64,11 @@ class Chapter extends Equatable {
       copyrights: map['copyrights'] as String,
       coverURL: map['coverURL'] as String,
       createdAt: map['createdAt'] as int,
+      deletionReason: map['deletionReason'] as String,
       genre: map['genre'] as String,
       genreOptional: map['genreOptional'] as String,
       index: map['index'] as int,
+      isDeleted: map['isDeleted'] as bool,
       isLastChapter: map['isLastChapter'] as bool,
       isNSFW: map['isNSFW'] as bool,
       language: map['language'] as String,
@@ -72,6 +80,9 @@ class Chapter extends Equatable {
       updatedAt: map['updatedAt'] as int,
     );
   }
+
+  /// @nodoc
+  final bool isDeleted;
 
   /// @nodoc
   final bool isLastChapter;
@@ -101,6 +112,9 @@ class Chapter extends Equatable {
   final String coverURL;
 
   /// @nodoc
+  final String deletionReason;
+
+  /// @nodoc
   final String genre;
 
   /// @nodoc
@@ -126,6 +140,7 @@ class Chapter extends Equatable {
 
   /// @nodoc
   Chapter copyWith({
+    bool isDeleted,
     bool isLastChapter,
     bool isNSFW,
     int createdAt,
@@ -135,6 +150,7 @@ class Chapter extends Equatable {
     String authorUsername,
     String copyrights,
     String coverURL,
+    String deletionReason,
     String genre,
     String genreOptional,
     String language,
@@ -150,9 +166,11 @@ class Chapter extends Equatable {
       copyrights: copyrights ?? this.copyrights,
       coverURL: coverURL ?? this.coverURL,
       createdAt: createdAt ?? this.createdAt,
+      deletionReason: deletionReason ?? this.deletionReason,
       genre: genre ?? this.genre,
       genreOptional: genreOptional ?? this.genreOptional,
       index: index ?? this.index,
+      isDeleted: isDeleted ?? this.isDeleted,
       isLastChapter: isLastChapter ?? this.isLastChapter,
       isNSFW: isNSFW ?? this.isNSFW,
       language: language ?? this.language,
@@ -173,9 +191,11 @@ class Chapter extends Equatable {
       'copyrights': copyrights,
       'coverURL': coverURL,
       'createdAt': createdAt,
+      'deletionReason': deletionReason,
       'genre': genre,
       'genreOptional': genreOptional,
       'index': index,
+      'isDeleted': isDeleted,
       'isLastChapter': isLastChapter,
       'isNSFW': isNSFW,
       'language': language,
@@ -189,46 +209,39 @@ class Chapter extends Equatable {
   }
 
   @override
-  List<Object> get props => [authorUID, uid, seriesUID];
+  List<Object> get props => [authorUID, seriesUID, uid];
 
   @override
   bool get stringify => true;
 
   /// @nodoc
-  bool get isEmpty {
-    return authorUID == null &&
-        authorUsername == null &&
-        copyrights == null &&
-        coverURL == null &&
-        createdAt == null &&
-        genre == null &&
-        index == null &&
-        isLastChapter == null &&
-        isNSFW == null &&
-        language == null &&
-        seriesUID == null &&
-        story == null &&
-        title == null &&
-        uid == null &&
-        updatedAt == null;
-  }
+  bool get isPublishable =>
+      authorUID != null &&
+      authorUsername != null &&
+      copyrights != null &&
+      coverURL != null &&
+      createdAt != null &&
+      genre != null &&
+      index != null &&
+      isDeleted != null &&
+      isLastChapter != null &&
+      isNSFW != null &&
+      language != null &&
+      seriesUID != null &&
+      story != null &&
+      story.isNotEmpty &&
+      tps.getWordCount(story) >= Constants.chapterStoryMinWords &&
+      tps.getWordCount(story) <= Constants.chapterStoryMaxWords &&
+      title != null &&
+      title.isNotEmpty &&
+      tps.getWordCount(title) <= Constants.seriesTitleMaxWords &&
+      uid != null &&
+      updatedAt != null;
 
-  /// @nodoc
-  bool get isNotEmpty {
-    return authorUID != null &&
-        authorUsername != null &&
-        copyrights != null &&
-        coverURL != null &&
-        createdAt != null &&
-        genre != null &&
-        index != null &&
-        isLastChapter != null &&
-        isNSFW != null &&
-        language != null &&
-        seriesUID != null &&
-        story != null &&
-        title != null &&
-        uid != null &&
-        updatedAt != null;
-  }
+  /// Whether or not a chapter can be saved as a draft.
+  bool get isSaveable =>
+      authorUID != null &&
+      authorUsername != null &&
+      seriesUID != null &&
+      uid != null;
 }
