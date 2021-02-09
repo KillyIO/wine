@@ -1,10 +1,4 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:equatable/equatable.dart';
-import 'package:flutter_stringprocess/flutter_stringprocess.dart';
-import 'package:utils/utils.dart';
-
-/// @nodoc
-final StringProcessor tps = StringProcessor();
+part of 'models.dart';
 
 /// @nodoc
 class Series extends Equatable {

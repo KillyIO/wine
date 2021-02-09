@@ -8,4 +8,8 @@ import 'package:utils/utils.dart';
 
 part 'chapter.dart';
 part 'count.dart';
+part 'series.dart';
 part 'user.dart';
+
+/// @nodoc
+final StringProcessor tps = StringProcessor();

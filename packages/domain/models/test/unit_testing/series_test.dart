@@ -1,8 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
-
 import 'package:models/models.dart';
-import 'package:models/series.dart';
 
 import '../mocks/firebase_firestore_mocks.dart';
 
@@ -33,9 +31,9 @@ void main() {
         'fromFirestore -',
         () {
           test('When DocumentSnapshot null Then return null', () {
-            final user = User.fromFirestore(null);
+            final series = Series.fromFirestore(null);
 
-            expect(user, null);
+            expect(series, null);
           });
 
           test('When DocumentSnapshot.data null Then return null', () {
@@ -43,9 +41,9 @@ void main() {
 
             when(mockDocumentSnapshot.data()).thenReturn(null);
 
-            final user = User.fromFirestore(mockDocumentSnapshot);
+            final series = Series.fromFirestore(mockDocumentSnapshot);
 
-            expect(user, null);
+            expect(series, null);
           });
 
           test(

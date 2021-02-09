@@ -1,9 +1,6 @@
 part of 'models.dart';
 
 /// @nodoc
-final StringProcessor tps = StringProcessor();
-
-/// @nodoc
 class Chapter extends Equatable {
   /// @nodoc
   Chapter({
@@ -29,7 +26,10 @@ class Chapter extends Equatable {
 
   /// @nodoc
   factory Chapter.fromFirestore(DocumentSnapshot document) {
+    if (document == null || document.data() == null) return null;
+
     final data = document.data();
+
     return Chapter(
       authorUID: data['authorUID'] as String,
       copyrights: data['copyrights'] as String,

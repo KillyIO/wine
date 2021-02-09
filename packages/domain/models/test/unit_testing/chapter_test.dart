@@ -36,9 +36,9 @@ void main() {
         'fromFirestore -',
         () {
           test('When DocumentSnapshot null Then return null', () {
-            final user = User.fromFirestore(null);
+            final chapter = Chapter.fromFirestore(null);
 
-            expect(user, null);
+            expect(chapter, null);
           });
 
           test('When DocumentSnapshot.data null Then return null', () {
@@ -46,9 +46,9 @@ void main() {
 
             when(mockDocumentSnapshot.data()).thenReturn(null);
 
-            final user = User.fromFirestore(mockDocumentSnapshot);
+            final chapter = Chapter.fromFirestore(mockDocumentSnapshot);
 
-            expect(user, null);
+            expect(chapter, null);
           });
 
           test(
