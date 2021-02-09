@@ -1,16 +1,22 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:equatable/equatable.dart';
+import 'package:flutter_stringprocess/flutter_stringprocess.dart';
+import 'package:utils/utils.dart';
+
+/// @nodoc
+final StringProcessor tps = StringProcessor();
 
 /// @nodoc
 class Series extends Equatable {
   /// @nodoc
   Series({
     this.authorUID,
-    this.authorUsername,
     this.coverURL,
     this.createdAt,
+    this.deletionReason,
     this.genre,
     this.genreOptional,
+    this.isDeleted,
     this.isNSFW,
     this.language,
     this.subtitle,
@@ -22,15 +28,18 @@ class Series extends Equatable {
 
   /// @nodoc
   factory Series.fromFirestore(DocumentSnapshot document) {
+    if (document == null || document.data() == null) return null;
+
     final data = document.data();
 
     return Series(
       authorUID: data['authorUID'] as String,
-      authorUsername: data['authorUsername'] as String,
       coverURL: data['coverURL'] as String,
+      deletionReason: data['deletionReason'] as String,
       createdAt: data['createdAt'] as int,
       genre: data['genre'] as String,
       genreOptional: data['genreOptional'] as String,
+      isDeleted: data['isDeleted'] as bool,
       isNSFW: data['isNSFW'] as bool,
       language: data['language'] as String,
       subtitle: data['subtitle'] as String,
@@ -47,11 +56,12 @@ class Series extends Equatable {
 
     return Series(
       authorUID: map['authorUID'] as String,
-      authorUsername: map['authorUsername'] as String,
       coverURL: map['coverURL'] as String,
       createdAt: map['createdAt'] as int,
+      deletionReason: map['deletionReason'] as String,
       genre: map['genre'] as String,
       genreOptional: map['genreOptional'] as String,
+      isDeleted: map['isDeleted'] as bool,
       isNSFW: map['isNSFW'] as bool,
       language: map['language'] as String,
       subtitle: map['subtitle'] as String,
@@ -61,6 +71,9 @@ class Series extends Equatable {
       updatedAt: map['updatedAt'] as int,
     );
   }
+
+  /// @nodoc
+  final bool isDeleted;
 
   /// @nodoc
   final bool isNSFW;
@@ -75,10 +88,10 @@ class Series extends Equatable {
   final String authorUID;
 
   /// @nodoc
-  final String authorUsername;
+  final String coverURL;
 
   /// @nodoc
-  final String coverURL;
+  final String deletionReason;
 
   /// @nodoc
   final String genre;
@@ -103,12 +116,13 @@ class Series extends Equatable {
 
   /// @nodoc
   Series copyWith({
+    bool isDeleted,
     bool isNSFW,
     int createdAt,
     int updatedAt,
     String authorUID,
-    String authorUsername,
     String coverURL,
+    String deletionReason,
     String genre,
     String genreOptional,
     String language,
@@ -119,11 +133,12 @@ class Series extends Equatable {
   }) {
     return Series(
       authorUID: authorUID ?? this.authorUID,
-      authorUsername: authorUsername ?? this.authorUsername,
       coverURL: coverURL ?? this.coverURL,
       createdAt: createdAt ?? this.createdAt,
+      deletionReason: deletionReason ?? this.deletionReason,
       genre: genre ?? this.genre,
       genreOptional: genreOptional ?? this.genreOptional,
+      isDeleted: isDeleted ?? this.isDeleted,
       isNSFW: isNSFW ?? this.isNSFW,
       language: language ?? this.language,
       subtitle: subtitle ?? this.subtitle,
@@ -138,11 +153,12 @@ class Series extends Equatable {
   Map<String, dynamic> toMap() {
     return {
       'authorUID': authorUID,
-      'authorUsername': authorUsername,
       'coverURL': coverURL,
       'createdAt': createdAt,
+      'deletionReason': deletionReason,
       'genre': genre,
       'genreOptional': genreOptional,
+      'isDeleted': isDeleted,
       'isNSFW': isNSFW,
       'language': language,
       'subtitle': subtitle,
@@ -160,32 +176,23 @@ class Series extends Equatable {
   bool get stringify => true;
 
   /// @nodoc
-  bool get isEmpty {
-    return authorUsername == null &&
-        authorUID == null &&
-        coverURL == null &&
-        createdAt == null &&
-        genre == null &&
-        isNSFW == null &&
-        language == null &&
-        summary == null &&
-        title == null &&
-        uid == null &&
-        updatedAt == null;
-  }
+  bool get isPublishable =>
+      authorUID != null &&
+      coverURL != null &&
+      createdAt != null &&
+      genre != null &&
+      isDeleted != null &&
+      isNSFW != null &&
+      language != null &&
+      summary != null &&
+      summary.isNotEmpty &&
+      tps.getWordCount(summary) <= SeriesConstants.summaryMaxWords &&
+      title != null &&
+      title.isNotEmpty &&
+      tps.getWordCount(title) <= SeriesConstants.titleMaxWords &&
+      uid != null &&
+      updatedAt != null;
 
   /// @nodoc
-  bool get isNotEmpty {
-    return authorUID != null &&
-        authorUsername != null &&
-        coverURL != null &&
-        createdAt != null &&
-        genre != null &&
-        isNSFW != null &&
-        language != null &&
-        summary != null &&
-        title != null &&
-        uid != null &&
-        updatedAt != null;
-  }
+  bool get isSaveable => authorUID != null && uid != null;
 }

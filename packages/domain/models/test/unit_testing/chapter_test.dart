@@ -52,7 +52,7 @@ void main() {
           });
 
           test(
-            '''When DocumentSnapshot And DocumentSnapshot.data not null Then return User''',
+            '''When DocumentSnapshot And DocumentSnapshot.data not null Then return Chapter''',
             () {
               final mockDocumentSnapshot = MockDocumentSnapshot();
 
@@ -155,15 +155,18 @@ void main() {
             },
           );
 
-          test('When all required members non-null Then User is complete', () {
-            final chapter = Chapter(
-              authorUID: data['authorUID'],
-              seriesUID: data['seriesUID'],
-              uid: data['uid'],
-            );
+          test(
+            'When all required members non-null Then Chapter is saveable',
+            () {
+              final chapter = Chapter(
+                authorUID: data['authorUID'],
+                seriesUID: data['seriesUID'],
+                uid: data['uid'],
+              );
 
-            expect(chapter.isSaveable, true);
-          });
+              expect(chapter.isSaveable, true);
+            },
+          );
         },
       );
     },
