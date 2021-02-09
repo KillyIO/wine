@@ -8,7 +8,6 @@ class Chapter extends Equatable {
   /// @nodoc
   Chapter({
     this.authorUID,
-    this.authorUsername,
     this.copyrights,
     this.coverURL,
     this.createdAt,
@@ -33,7 +32,6 @@ class Chapter extends Equatable {
     final data = document.data();
     return Chapter(
       authorUID: data['authorUID'] as String,
-      authorUsername: data['authorUsername'] as String,
       copyrights: data['copyrights'] as String,
       coverURL: data['coverURL'] as String,
       createdAt: data['createdAt'] as int,
@@ -60,7 +58,6 @@ class Chapter extends Equatable {
 
     return Chapter(
       authorUID: map['authorUID'] as String,
-      authorUsername: map['authorUsername'] as String,
       copyrights: map['copyrights'] as String,
       coverURL: map['coverURL'] as String,
       createdAt: map['createdAt'] as int,
@@ -101,9 +98,6 @@ class Chapter extends Equatable {
 
   /// @nodoc
   final String authorUID;
-
-  /// @nodoc
-  final String authorUsername;
 
   /// @nodoc
   final String copyrights;
@@ -147,7 +141,6 @@ class Chapter extends Equatable {
     int index,
     int updatedAt,
     String authorUID,
-    String authorUsername,
     String copyrights,
     String coverURL,
     String deletionReason,
@@ -162,7 +155,6 @@ class Chapter extends Equatable {
   }) {
     return Chapter(
       authorUID: authorUID ?? this.authorUID,
-      authorUsername: authorUsername ?? this.authorUsername,
       copyrights: copyrights ?? this.copyrights,
       coverURL: coverURL ?? this.coverURL,
       createdAt: createdAt ?? this.createdAt,
@@ -187,7 +179,6 @@ class Chapter extends Equatable {
   Map<String, dynamic> toMap() {
     return {
       'authorUID': authorUID,
-      'authorUsername': authorUsername,
       'copyrights': copyrights,
       'coverURL': coverURL,
       'createdAt': createdAt,
@@ -217,7 +208,6 @@ class Chapter extends Equatable {
   /// @nodoc
   bool get isPublishable =>
       authorUID != null &&
-      authorUsername != null &&
       copyrights != null &&
       coverURL != null &&
       createdAt != null &&
@@ -230,18 +220,14 @@ class Chapter extends Equatable {
       seriesUID != null &&
       story != null &&
       story.isNotEmpty &&
-      tps.getWordCount(story) >= Constants.chapterStoryMinWords &&
-      tps.getWordCount(story) <= Constants.chapterStoryMaxWords &&
+      tps.getWordCount(story) >= ChapterConstants.storyMinWords &&
+      tps.getWordCount(story) <= ChapterConstants.storyMaxWords &&
       title != null &&
       title.isNotEmpty &&
-      tps.getWordCount(title) <= Constants.seriesTitleMaxWords &&
+      tps.getWordCount(title) <= ChapterConstants.titleMaxWords &&
       uid != null &&
       updatedAt != null;
 
   /// Whether or not a chapter can be saved as a draft.
-  bool get isSaveable =>
-      authorUID != null &&
-      authorUsername != null &&
-      seriesUID != null &&
-      uid != null;
+  bool get isSaveable => authorUID != null && seriesUID != null && uid != null;
 }

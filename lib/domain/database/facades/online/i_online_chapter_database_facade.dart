@@ -2,9 +2,9 @@ import 'dart:io';
 
 import 'package:dartz/dartz.dart';
 import 'package:flutter/material.dart';
+import 'package:models/models.dart';
 import 'package:wine/domain/database/database_failure.dart';
 import 'package:wine/domain/database/successes/chapter_database_success.dart';
-import 'package:wine/domain/models/chapter.dart';
 
 /// @nodoc
 abstract class IOnlineChapterDatabaseFacade {

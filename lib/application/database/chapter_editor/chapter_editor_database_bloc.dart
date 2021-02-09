@@ -11,6 +11,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:image_cropper/image_cropper.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:injectable/injectable.dart';
+import 'package:models/models.dart';
 import 'package:path/path.dart' as p;
 import 'package:path_provider/path_provider.dart';
 import 'package:uuid/uuid.dart';
@@ -35,7 +36,6 @@ import 'package:wine/domain/database/successes/series_draft_database_success.dar
 import 'package:wine/domain/database/successes/session_database_success.dart';
 import 'package:wine/domain/database/title.dart';
 import 'package:wine/domain/enums/editor_content_origin.dart';
-import 'package:wine/domain/models/chapter.dart';
 import 'package:wine/domain/models/series.dart';
 import 'package:wine/utils/constants.dart';
 import 'package:wine/utils/extensions.dart';
@@ -185,7 +185,6 @@ class ChapterEditorDatabaseBloc
                   if (success is SessionFetchedSCS) {
                     chapterDraft = chapterDraft.copyWith(
                       authorUID: success.session.uid,
-                      authorUsername: success.session.username,
                     );
                   }
                 },

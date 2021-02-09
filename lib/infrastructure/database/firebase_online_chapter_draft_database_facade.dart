@@ -2,9 +2,9 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:injectable/injectable.dart';
+import 'package:models/models.dart';
 import 'package:wine/domain/database/database_failure.dart';
 import 'package:wine/domain/database/facades/online/i_online_chapter_draft_database_facade.dart';
-import 'package:wine/domain/models/chapter.dart';
 import 'package:wine/domain/database/successes/chapter_draft_database_success.dart';
 import 'package:wine/utils/paths.dart';
 

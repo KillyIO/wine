@@ -10,7 +10,6 @@ import 'package:path/path.dart' as p;
 import 'package:wine/domain/database/database_failure.dart';
 import 'package:wine/domain/database/facades/online/i_online_chapter_database_facade.dart';
 import 'package:wine/domain/database/successes/chapter_database_success.dart';
-import 'package:wine/domain/models/chapter.dart';
 import 'package:wine/utils/extensions.dart';
 import 'package:wine/utils/paths.dart';
 

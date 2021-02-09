@@ -17,7 +17,6 @@ import 'package:wine/domain/database/failures/config_database_failure.dart';
 import 'package:wine/domain/database/successes/chapter_database_success.dart';
 import 'package:wine/domain/database/successes/config_database_success.dart';
 import 'package:wine/domain/database/successes/session_database_success.dart';
-import 'package:wine/domain/models/chapter.dart';
 import 'package:wine/domain/models/hive/config.dart';
 import 'package:wine/domain/models/hive/session.dart';
 

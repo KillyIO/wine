@@ -10,7 +10,6 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
 import '../../domain/enums/editor_content_origin.dart';
-import '../../domain/models/chapter.dart';
 import '../../domain/models/series.dart';
 import '../pages/chapter_editor_page.dart';
 import '../pages/chapter_page.dart';
@@ -226,9 +225,9 @@ class WINERouter extends RouterBase {
 /// ChapterEditorPage arguments holder class
 class ChapterEditorPageArguments {
   final Key key;
-  final Chapter chapterDraft;
+  final dynamic chapterDraft;
   final EditorContentOrigin editorContentOrigin;
-  final Chapter previousChapter;
+  final dynamic previousChapter;
   final Series seriesDraft;
   ChapterEditorPageArguments(
       {this.key,
@@ -241,7 +240,7 @@ class ChapterEditorPageArguments {
 /// ChapterPage arguments holder class
 class ChapterPageArguments {
   final Key key;
-  final Chapter chapter;
+  final dynamic chapter;
   ChapterPageArguments({this.key, @required this.chapter});
 }
 

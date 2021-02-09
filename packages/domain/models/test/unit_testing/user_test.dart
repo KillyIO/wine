@@ -101,7 +101,7 @@ void main() {
         'isComplete -',
         () {
           test(
-            'When all required members null Then User is not incomplete',
+            'When all required members null Then User is incomplete',
             () {
               final user = User();
 

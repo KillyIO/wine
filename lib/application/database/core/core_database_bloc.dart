@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
-import 'package:wine/domain/models/chapter.dart';
+import 'package:models/models.dart';
 import 'package:wine/domain/models/series.dart';
 
 part 'core_database_bloc.freezed.dart';

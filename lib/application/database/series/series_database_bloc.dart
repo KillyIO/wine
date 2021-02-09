@@ -19,7 +19,6 @@ import 'package:wine/domain/database/successes/chapter_database_success.dart';
 import 'package:wine/domain/database/successes/config_database_success.dart';
 import 'package:wine/domain/database/successes/series_database_success.dart';
 import 'package:wine/domain/database/successes/session_database_success.dart';
-import 'package:wine/domain/models/chapter.dart';
 import 'package:wine/domain/models/hive/config.dart';
 import 'package:wine/domain/models/hive/session.dart';
 import 'package:wine/domain/models/series.dart';
