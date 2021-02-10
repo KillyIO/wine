@@ -1,6 +1,6 @@
 import 'package:hive/hive.dart';
 import 'package:mockito/mockito.dart';
-import 'package:wine/domain/models/hive/config.dart';
+import 'package:models/models.dart';
 
 class MockHiveInterface extends Mock implements HiveInterface {}
 

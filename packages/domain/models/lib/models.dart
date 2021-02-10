@@ -6,6 +6,7 @@ import 'package:firebase_auth/firebase_auth.dart' as auth;
 import 'package:flutter_stringprocess/flutter_stringprocess.dart';
 import 'package:utils/utils.dart';
 
+export 'config.dart';
 export 'session.dart';
 
 part 'chapter.dart';
