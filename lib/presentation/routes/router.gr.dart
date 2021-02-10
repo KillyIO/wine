@@ -10,7 +10,6 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
 import '../../domain/enums/editor_content_origin.dart';
-import '../../domain/models/series.dart';
 import '../pages/chapter_editor_page.dart';
 import '../pages/chapter_page.dart';
 import '../pages/chapter_settings_page.dart';
@@ -228,7 +227,7 @@ class ChapterEditorPageArguments {
   final dynamic chapterDraft;
   final EditorContentOrigin editorContentOrigin;
   final dynamic previousChapter;
-  final Series seriesDraft;
+  final dynamic seriesDraft;
   ChapterEditorPageArguments(
       {this.key,
       this.chapterDraft,
@@ -248,7 +247,7 @@ class ChapterPageArguments {
 class SeriesEditorPageArguments {
   final Key key;
   final EditorContentOrigin editorContentOrigin;
-  final Series seriesDraft;
+  final dynamic seriesDraft;
   SeriesEditorPageArguments(
       {this.key, @required this.editorContentOrigin, this.seriesDraft});
 }
@@ -256,6 +255,6 @@ class SeriesEditorPageArguments {
 /// SeriesPage arguments holder class
 class SeriesPageArguments {
   final Key key;
-  final Series series;
+  final dynamic series;
   SeriesPageArguments({this.key, @required this.series});
 }

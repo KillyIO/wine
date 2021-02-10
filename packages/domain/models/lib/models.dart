@@ -6,6 +6,8 @@ import 'package:firebase_auth/firebase_auth.dart' as auth;
 import 'package:flutter_stringprocess/flutter_stringprocess.dart';
 import 'package:utils/utils.dart';
 
+export 'session.dart';
+
 part 'chapter.dart';
 part 'count.dart';
 part 'series.dart';
