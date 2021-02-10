@@ -17,13 +17,13 @@ class ConfigAdapter extends TypeAdapter<Config> {
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
     return Config(
-      firstRun: fields[0] as bool,
-      enableSeriesViewsCount: fields[1] as bool,
-      enableSeriesLikesCount: fields[2] as bool,
+      enableChaptersBookmarksCount: fields[0] as bool,
+      enableChaptersLikesCount: fields[1] as bool,
+      enableChaptersViewsCount: fields[2] as bool,
       enableSeriesBookmarksCount: fields[3] as bool,
-      enableChaptersViewsCount: fields[4] as bool,
-      enableChaptersLikesCount: fields[5] as bool,
-      enableChaptersBookmarksCount: fields[6] as bool,
+      enableSeriesLikesCount: fields[4] as bool,
+      enableSeriesViewsCount: fields[5] as bool,
+      firstRun: fields[6] as bool,
     );
   }
 
@@ -32,19 +32,19 @@ class ConfigAdapter extends TypeAdapter<Config> {
     writer
       ..writeByte(7)
       ..writeByte(0)
-      ..write(obj.firstRun)
+      ..write(obj.enableChaptersBookmarksCount)
       ..writeByte(1)
-      ..write(obj.enableSeriesViewsCount)
+      ..write(obj.enableChaptersLikesCount)
       ..writeByte(2)
-      ..write(obj.enableSeriesLikesCount)
+      ..write(obj.enableChaptersViewsCount)
       ..writeByte(3)
       ..write(obj.enableSeriesBookmarksCount)
       ..writeByte(4)
-      ..write(obj.enableChaptersViewsCount)
+      ..write(obj.enableSeriesLikesCount)
       ..writeByte(5)
-      ..write(obj.enableChaptersLikesCount)
+      ..write(obj.enableSeriesViewsCount)
       ..writeByte(6)
-      ..write(obj.enableChaptersBookmarksCount);
+      ..write(obj.firstRun);
   }
 
   @override
