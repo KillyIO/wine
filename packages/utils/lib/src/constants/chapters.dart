@@ -9,3 +9,11 @@ const int chapterStoryMaxWords = 1350;
 
 /// @nodoc
 const int chapterTitleMaxWords = 10;
+
+/// @nodoc
+List<String> get chapterEditorItemsKeys {
+  return <String>[
+    'editor',
+    'preview',
+  ];
+}
