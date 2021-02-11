@@ -1,6 +1,12 @@
-part of 'models.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:equatable/equatable.dart';
+import 'package:firebase_auth/firebase_auth.dart' as auth;
+import 'package:hive/hive.dart';
+
+part 'user.g.dart';
 
 /// @nodoc
+@HiveType(typeId: 0)
 class User extends Equatable {
   /// @nodoc
   User({
@@ -76,47 +82,64 @@ class User extends Equatable {
   }
 
   /// Whether the user is banned or not.
+  ///
   /// [banReason] and [banDeadline] must not be null if [isBanned] is true.
+  @HiveField(0)
   final bool isBanned;
 
   /// Whether the user is deleted or not.
+  ///
   /// [deletionReason] must not be null if [isBanned] not null.
+  @HiveField(1)
   final bool isDeleted;
 
   /// Deadline for the ban (in milliseconds).
   /// [isBanned] and [banReason] must not be null if [banDeadline] not null.
+  @HiveField(2)
   final int banDeadline;
 
   /// The date on which the user signed up (in milliseconds).
+  @HiveField(3)
   final int createdAt;
 
   /// Last time the user updated his profile or logged in (in milliseconds).
+  @HiveField(4)
   final int updatedAt;
 
   /// The reason the user was banned.
+  ///
   /// [isBanned] and [banDeadline] must not be null if [banReason] not null.
+  @HiveField(5)
   final String banReason;
 
   /// @nodoc
+  @HiveField(6)
   final String bio;
 
   /// The reason the user account was deleted.
+  ///
   /// [isDeleted] must not be null if [deletionReason] not null.
+  @HiveField(7)
   final String deletionReason;
 
   /// @nodoc
+  @HiveField(8)
   final String email;
 
   /// @nodoc
+  @HiveField(9)
   final String name;
 
   /// @nodoc
+  @HiveField(10)
   final String profilePictureURL;
 
   /// @nodoc
+  @HiveField(11)
   final String uid;
 
   /// @nodoc
+  @HiveField(12)
   final String username;
 
   /// @nodoc

@@ -17,5 +17,6 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   freezed: ^0.12.7
+  very_good_analysis: ^1.0.4
 
 flutter: null
