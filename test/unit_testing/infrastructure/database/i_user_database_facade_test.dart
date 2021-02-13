@@ -6,7 +6,7 @@ import 'package:wine/domain/database/facades/online/i_online_user_database_facad
 import 'package:wine/domain/database/failures/user_database_failure.dart';
 import 'package:wine/domain/database/successes/user_database_success.dart';
 import 'package:wine/domain/models/user.dart';
-import 'package:wine/infrastructure/database/firebase_online_user_database_facade.dart';
+import 'package:wine/infrastructure/database/firebase_user_database_facade.dart';
 
 import '../../../mocks/firebase_firestore_mocks.dart';
 
@@ -18,18 +18,18 @@ void main() {
   MockCollectionReference mockCollectionReference;
   MockDocumentReference mockDocumentReference;
 
-  IOnlineUserDatabaseFacade onlineUserDatabaseFacade;
+  IUserDatabaseFacade userDatabaseFacade;
 
   setUp(() {
     user = User(
       bio: null,
       createdAt: 1592255973418,
-      email: 'hdima.riyal.99@tapiitudulu.com',
-      name: 'hdima.riyal.99',
+      email: 'email@email.com',
+      name: 'Name',
       profilePictureURL: null,
-      uid: 'IhyAvFOnGegIFDBJYmL30nAbWu92',
+      uid: 'uid',
       updatedAt: 1608137445032,
-      username: 'hdima.riyal.99',
+      username: 'username',
     );
 
     mockFirestore = MockFirestore();
@@ -37,23 +37,17 @@ void main() {
     mockDocumentReference = MockDocumentReference();
     mockDocumentSnapshot = MockDocumentSnapshot();
 
-    onlineUserDatabaseFacade = FirebaseOnlineUserDatabaseFacade(mockFirestore);
+    userDatabaseFacade = FirebaseUserDatabaseFacade(mockFirestore);
   });
 
   group(
-    'IOnlineUserDatabaseFacade -',
+    'IUserDatabaseFacade -',
     () {
       group(
         'loadUser -',
         () {
           test(
-            '''
-            Scenario: We trying to load the user details from the online database [SUCCESS CASE]
-            Given user UID
-            And User() exists inside Database
-            When loadUser() is called
-            Then userLoadedSuccess() returned with User()
-            ''',
+            '''When loading user data successful Then return UserLoadedSuccess''',
             () async {
               when(mockFirestore.collection(any))
                   .thenReturn(mockCollectionReference);
@@ -64,7 +58,7 @@ void main() {
               when(mockDocumentSnapshot.exists).thenReturn(true);
               when(mockDocumentSnapshot.data()).thenReturn(user.toMap());
 
-              final result = await onlineUserDatabaseFacade.loadUser(user.uid);
+              final result = await userDatabaseFacade.loadUser(user.uid);
 
               expect(result.isRight(), true);
 
@@ -82,13 +76,7 @@ void main() {
           );
 
           test(
-            '''
-            Scenario: We trying to load the user details from the online database [FAILURE CASE]
-            Given user UID
-            And User() doesn't exist inside Database
-            When loadUser() is called
-            Then userNotFoundFailure() returned
-            ''',
+            'When User not found Then return UserNotFoundFailure',
             () async {
               when(mockFirestore.collection(any))
                   .thenReturn(mockCollectionReference);
@@ -98,7 +86,7 @@ void main() {
                   .thenAnswer((_) async => mockDocumentSnapshot);
               when(mockDocumentSnapshot.exists).thenReturn(false);
 
-              final result = await onlineUserDatabaseFacade.loadUser('123456');
+              final result = await userDatabaseFacade.loadUser('123456');
 
               expect(result.isLeft(), true);
 
@@ -110,13 +98,7 @@ void main() {
           );
 
           test(
-            '''
-            Scenario: We trying to load the user details from the online database [SERVER FAILURE CASE]
-            Given user UID
-            And User() exists inside Database
-            When loadUser() is called
-            Then serverFailure() returned
-            ''',
+            'When server exception occurs Then return ServerFailure',
             () async {
               when(mockFirestore.collection(any)).thenThrow(
                 FirebaseException(
@@ -126,7 +108,7 @@ void main() {
                 ),
               );
 
-              final result = await onlineUserDatabaseFacade.loadUser(user.uid);
+              final result = await userDatabaseFacade.loadUser(user.uid);
 
               expect(result.isLeft(), true);
 

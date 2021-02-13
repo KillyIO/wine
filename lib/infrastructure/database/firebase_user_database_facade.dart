@@ -1,19 +1,19 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
-import 'package:models/models.dart';
 import 'package:wine/domain/authentication/username.dart';
-
 import 'package:wine/domain/database/facades/online/i_online_user_database_facade.dart';
+
 import 'package:wine/domain/database/failures/user_database_failure.dart';
 import 'package:wine/domain/database/successes/user_database_success.dart';
-import 'package:wine/utils/paths.dart';
+import 'package:wine/domain/models/user.dart';
+import 'package:wine/utils/paths/users.dart';
 
 /// @nodoc
-@LazySingleton(as: IOnlineUserDatabaseFacade)
-class FirebaseOnlineUserDatabaseFacade extends IOnlineUserDatabaseFacade {
+@LazySingleton(as: IUserDatabaseFacade)
+class FirebaseUserDatabaseFacade extends IUserDatabaseFacade {
   /// @nodoc
-  FirebaseOnlineUserDatabaseFacade(this._firestore);
+  FirebaseUserDatabaseFacade(this._firestore);
 
   final FirebaseFirestore _firestore;
 
@@ -23,7 +23,7 @@ class FirebaseOnlineUserDatabaseFacade extends IOnlineUserDatabaseFacade {
   ) async {
     try {
       final documentSnapshot =
-          await _firestore.collection(Paths.usersPath).doc(userUID).get();
+          await _firestore.collection(usersPath).doc(userUID).get();
 
       if (documentSnapshot != null && documentSnapshot.exists) {
         final user = User.fromFirestore(documentSnapshot);
@@ -44,8 +44,7 @@ class FirebaseOnlineUserDatabaseFacade extends IOnlineUserDatabaseFacade {
     try {
       var finalUser = user;
 
-      final usersRef =
-          _firestore.collection(Paths.usersPath).doc(finalUser.uid);
+      final usersRef = _firestore.collection(usersPath).doc(finalUser.uid);
 
       final failureOrSuccess = await loadUser(finalUser.uid);
 
@@ -83,7 +82,7 @@ class FirebaseOnlineUserDatabaseFacade extends IOnlineUserDatabaseFacade {
       final usernameStr = username.value.getOrElse(() => 'INVALID USERNAME');
 
       final mapReference =
-          _firestore.collection(Paths.usernameUIDMapPath).doc(usernameStr);
+          _firestore.collection(usernameUIDMapPath).doc(usernameStr);
 
       await mapReference.set({'uid': userUID}, SetOptions(merge: true));
 

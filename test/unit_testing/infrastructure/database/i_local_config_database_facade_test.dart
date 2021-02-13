@@ -1,10 +1,11 @@
+import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
-import 'package:test/test.dart';
+
 import 'package:wine/domain/database/facades/local/i_local_config_database_facade.dart';
 import 'package:wine/domain/database/failures/config_database_failure.dart';
 import 'package:wine/domain/database/successes/config_database_success.dart';
 import 'package:wine/domain/models/config.dart';
-import 'package:wine/infrastructure/database/hive_local_config_database_facade.dart';
+import 'package:wine/infrastructure/database/hive_config_database_facade.dart';
 
 import '../../../mocks/hive_mocks.dart';
 
@@ -32,8 +33,7 @@ void main() {
         mockHiveInterface = MockHiveInterface();
         mockConfigsBox = MockConfigsBox();
 
-        localConfigDatabaseFacade =
-            HiveLocalConfigDatabaseFacade(mockConfigsBox);
+        localConfigDatabaseFacade = HiveConfigDatabaseFacade(mockConfigsBox);
 
         when(mockHiveInterface.openBox(any))
             .thenAnswer((_) async => mockConfigsBox);
@@ -47,12 +47,7 @@ void main() {
         'deleteConfig -',
         () {
           test(
-            '''
-            Scenario: We trying to delete the config inside the local database [SUCCESS CASE]
-            Given the Box is not empty
-            When deleteConfig() is called
-            Then configDeletedSuccess() is returned
-            ''',
+            'When deleting config successful Then return ConfigDeletedSuccess',
             () async {
               when(mockConfigsBox.get(any)).thenReturn(null);
 
@@ -68,12 +63,7 @@ void main() {
           );
 
           test(
-            '''
-            Scenario: We trying to delete the config inside the local database [FAILURE CASE]
-            Given the Box is not empty
-            When deleteConfig() is called
-            Then deleteConfigFailure() is returned
-            ''',
+            'When deleting config fails Then return DeleteConfigFailure',
             () async {
               when(mockConfigsBox.get(any)).thenReturn(config);
 

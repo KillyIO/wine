@@ -12,8 +12,8 @@ void main() {
     data['isBanned'] = false;
     data['isDeleted'] = false;
     data['banDeadline'] = null;
-    data['createdAt'] = 1563133854;
-    data['updatedAt'] = 1568534351;
+    data['createdAt'] = 854841600000;
+    data['updatedAt'] = 854841600000;
     data['banReason'] = null;
     data['bio'] = null;
     data['deletionReason'] = null;

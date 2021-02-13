@@ -2,19 +2,19 @@ import 'package:dartz/dartz.dart';
 import 'package:hive/hive.dart';
 import 'package:injectable/injectable.dart';
 import 'package:wine/domain/database/database_failure.dart';
+import 'package:wine/domain/database/facades/local/i_session_database_facade.dart';
 
-import 'package:wine/domain/database/facades/local/i_local_session_database_facade.dart';
 import 'package:wine/domain/database/successes/session_database_success.dart';
-import 'package:wine/domain/models/hive/session.dart';
+import 'package:wine/domain/models/user.dart';
 import 'package:wine/utils/constants.dart';
 
 /// @nodoc
-@LazySingleton(as: ILocalSessionDatabaseFacade)
-class HiveLocalSessionDatabaseFacade implements ILocalSessionDatabaseFacade {
+@LazySingleton(as: ISessionDatabaseFacade)
+class HiveSessionDatabaseFacade implements ISessionDatabaseFacade {
   /// @nodoc
-  HiveLocalSessionDatabaseFacade(this._sessionsBox);
+  HiveSessionDatabaseFacade(this._sessionsBox);
 
-  final Box<Session> _sessionsBox;
+  final Box<User> _sessionsBox;
 
   @override
   Future<Either<DatabaseFailure, SessionDatabaseSuccess>>
@@ -40,9 +40,9 @@ class HiveLocalSessionDatabaseFacade implements ILocalSessionDatabaseFacade {
 
   @override
   Future<Either<DatabaseFailure, SessionDatabaseSuccess>> initializeSession({
-    Session session,
+    User user,
   }) async {
-    await _sessionsBox.put(Constants.session, session ?? Session());
+    await _sessionsBox.put(Constants.session, user ?? User());
 
     final sessionTest = _sessionsBox.get(Constants.session);
     if (sessionTest != null) {
@@ -53,9 +53,9 @@ class HiveLocalSessionDatabaseFacade implements ILocalSessionDatabaseFacade {
 
   @override
   Future<Either<DatabaseFailure, SessionDatabaseSuccess>> updateSession(
-    Session session,
+    User user,
   ) async {
-    await _sessionsBox.put(Constants.session, session);
+    await _sessionsBox.put(Constants.session, user);
 
     final currentSession = _sessionsBox.get(Constants.session);
     if (currentSession != null) {

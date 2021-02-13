@@ -44,6 +44,7 @@ dependencies:
   package_info: ^0.4.3+4
   path_provider: ^1.6.27
   percent_indicator: ^2.1.9+1
+  string_validator: ^0.1.4
   swipe_gesture_recognizer: ^0.0.2
   time: ^1.4.0
   uuid: ^2.2.2

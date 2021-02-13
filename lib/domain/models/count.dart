@@ -6,8 +6,8 @@ class Count extends Equatable {
   /// @nodoc
   Count({
     this.count,
-    this.uid,
     this.updatedAt,
+    this.uid,
   });
 
   /// @nodoc
@@ -18,8 +18,8 @@ class Count extends Equatable {
 
     return Count(
       count: data['count'] as int,
-      uid: data['uid'] as String,
       updatedAt: data['updatedAt'] as int,
+      uid: data['uid'] as String,
     );
   }
 
@@ -29,8 +29,8 @@ class Count extends Equatable {
 
     return Count(
       count: map['count'] as int,
-      uid: map['uid'] as String,
       updatedAt: map['updatedAt'] as int,
+      uid: map['uid'] as String,
     );
   }
 
@@ -51,8 +51,8 @@ class Count extends Equatable {
   }) {
     return Count(
       count: count ?? this.count,
-      uid: uid ?? this.uid,
       updatedAt: updatedAt ?? this.updatedAt,
+      uid: uid ?? this.uid,
     );
   }
 
@@ -60,8 +60,8 @@ class Count extends Equatable {
   Map<String, dynamic> toMap() {
     return {
       'count': count,
-      'uid': uid,
       'updatedAt': updatedAt,
+      'uid': uid,
     };
   }
 

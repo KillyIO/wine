@@ -7,24 +7,24 @@ import 'package:wine/utils/constants/chapters.dart';
 class Chapter extends Equatable {
   /// @nodoc
   Chapter({
-    this.authorUID,
-    this.copyrights,
-    this.coverURL,
-    this.createdAt,
-    this.deletionReason,
-    this.genre,
-    this.genreOptional,
-    this.index,
     this.isDeleted,
     this.isLastChapter,
     this.isNSFW,
+    this.createdAt,
+    this.index,
+    this.updatedAt,
+    this.authorUID,
+    this.copyrights,
+    this.coverURL,
+    this.deletionReason,
+    this.genre,
+    this.genreOptional,
     this.language,
     this.previousChapterUID,
     this.seriesUID,
     this.story,
     this.title,
     this.uid,
-    this.updatedAt,
   });
 
   /// @nodoc
@@ -34,24 +34,24 @@ class Chapter extends Equatable {
     final data = document.data();
 
     return Chapter(
-      authorUID: data['authorUID'] as String,
-      copyrights: data['copyrights'] as String,
-      coverURL: data['coverURL'] as String,
-      createdAt: data['createdAt'] as int,
-      deletionReason: data['deletionReason'] as String,
-      genre: data['genre'] as String,
-      genreOptional: data['genreOptional'] as String,
-      index: data['index'] as int,
       isDeleted: data['isDeleted'] as bool,
       isLastChapter: data['isLastChapter'] as bool,
       isNSFW: data['isNSFW'] as bool,
+      createdAt: data['createdAt'] as int,
+      index: data['index'] as int,
+      updatedAt: data['updatedAt'] as int,
+      authorUID: data['authorUID'] as String,
+      copyrights: data['copyrights'] as String,
+      coverURL: data['coverURL'] as String,
+      deletionReason: data['deletionReason'] as String,
+      genre: data['genre'] as String,
+      genreOptional: data['genreOptional'] as String,
       language: data['language'] as String,
       previousChapterUID: data['previousChapterUID'] as String,
       seriesUID: data['seriesUID'] as String,
       story: data['story'] as String,
       title: data['title'] as String,
       uid: data['uid'] as String,
-      updatedAt: data['updatedAt'] as int,
     );
   }
 
@@ -60,24 +60,24 @@ class Chapter extends Equatable {
     if (map == null) return null;
 
     return Chapter(
-      authorUID: map['authorUID'] as String,
-      copyrights: map['copyrights'] as String,
-      coverURL: map['coverURL'] as String,
-      createdAt: map['createdAt'] as int,
-      deletionReason: map['deletionReason'] as String,
-      genre: map['genre'] as String,
-      genreOptional: map['genreOptional'] as String,
-      index: map['index'] as int,
       isDeleted: map['isDeleted'] as bool,
       isLastChapter: map['isLastChapter'] as bool,
       isNSFW: map['isNSFW'] as bool,
+      createdAt: map['createdAt'] as int,
+      index: map['index'] as int,
+      updatedAt: map['updatedAt'] as int,
+      authorUID: map['authorUID'] as String,
+      copyrights: map['copyrights'] as String,
+      coverURL: map['coverURL'] as String,
+      deletionReason: map['deletionReason'] as String,
+      genre: map['genre'] as String,
+      genreOptional: map['genreOptional'] as String,
       language: map['language'] as String,
       previousChapterUID: map['previousChapterUID'] as String,
       seriesUID: map['seriesUID'] as String,
       story: map['story'] as String,
       title: map['title'] as String,
       uid: map['uid'] as String,
-      updatedAt: map['updatedAt'] as int,
     );
   }
 
@@ -157,48 +157,48 @@ class Chapter extends Equatable {
     String uid,
   }) {
     return Chapter(
-      authorUID: authorUID ?? this.authorUID,
-      copyrights: copyrights ?? this.copyrights,
-      coverURL: coverURL ?? this.coverURL,
-      createdAt: createdAt ?? this.createdAt,
-      deletionReason: deletionReason ?? this.deletionReason,
-      genre: genre ?? this.genre,
-      genreOptional: genreOptional ?? this.genreOptional,
-      index: index ?? this.index,
       isDeleted: isDeleted ?? this.isDeleted,
       isLastChapter: isLastChapter ?? this.isLastChapter,
       isNSFW: isNSFW ?? this.isNSFW,
+      createdAt: createdAt ?? this.createdAt,
+      index: index ?? this.index,
+      updatedAt: updatedAt ?? this.updatedAt,
+      authorUID: authorUID ?? this.authorUID,
+      copyrights: copyrights ?? this.copyrights,
+      coverURL: coverURL ?? this.coverURL,
+      deletionReason: deletionReason ?? this.deletionReason,
+      genre: genre ?? this.genre,
+      genreOptional: genreOptional ?? this.genreOptional,
       language: language ?? this.language,
       previousChapterUID: previousChapterUID ?? this.previousChapterUID,
       seriesUID: seriesUID ?? this.seriesUID,
       story: story ?? this.story,
       title: title ?? this.title,
       uid: uid ?? this.uid,
-      updatedAt: updatedAt ?? this.updatedAt,
     );
   }
 
   /// @nodoc
   Map<String, dynamic> toMap() {
     return {
-      'authorUID': authorUID,
-      'copyrights': copyrights,
-      'coverURL': coverURL,
-      'createdAt': createdAt,
-      'deletionReason': deletionReason,
-      'genre': genre,
-      'genreOptional': genreOptional,
-      'index': index,
       'isDeleted': isDeleted,
       'isLastChapter': isLastChapter,
       'isNSFW': isNSFW,
+      'createdAt': createdAt,
+      'index': index,
+      'updatedAt': updatedAt,
+      'authorUID': authorUID,
+      'copyrights': copyrights,
+      'coverURL': coverURL,
+      'deletionReason': deletionReason,
+      'genre': genre,
+      'genreOptional': genreOptional,
       'language': language,
       'previousChapterUID': previousChapterUID,
       'seriesUID': seriesUID,
       'story': story,
       'title': title,
       'uid': uid,
-      'updatedAt': updatedAt
     };
   }
 
@@ -210,15 +210,16 @@ class Chapter extends Equatable {
 
   /// @nodoc
   bool get isPublishable =>
-      authorUID != null &&
-      copyrights != null &&
-      coverURL != null &&
-      createdAt != null &&
-      genre != null &&
-      index != null &&
       isDeleted != null &&
       isLastChapter != null &&
       isNSFW != null &&
+      createdAt != null &&
+      index != null &&
+      updatedAt != null &&
+      authorUID != null &&
+      copyrights != null &&
+      coverURL != null &&
+      genre != null &&
       language != null &&
       seriesUID != null &&
       story != null &&
@@ -228,8 +229,7 @@ class Chapter extends Equatable {
       title != null &&
       title.isNotEmpty &&
       StringProcessor().getWordCount(title) <= chapterTitleMaxWords &&
-      uid != null &&
-      updatedAt != null;
+      uid != null;
 
   /// Whether or not a chapter can be saved as a draft.
   bool get isSaveable => authorUID != null && seriesUID != null && uid != null;

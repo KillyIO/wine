@@ -1,21 +1,21 @@
 import 'package:test/test.dart';
-// import 'package:wine/domain/database/facades/local/i_local_placeholder_database_facade.dart';
-// import 'package:wine/infrastructure/database/hive_local_placeholder_database_facade.dart';
+import 'package:wine/domain/database/facades/local/i_local_placeholder_database_facade.dart';
+import 'package:wine/infrastructure/database/hive_placeholder_database_facade.dart';
 
-// import '../../../mocks/hive_mocks.dart';
+import '../../../mocks/hive_mocks.dart';
 
 void main() {
-  // MockHiveInterface mockHiveInterface;
-  // MockPlaceholdersBox mockPlaceholdersBox;
+  MockHiveInterface mockHiveInterface;
+  MockPlaceholdersBox mockPlaceholdersBox;
 
-  // ILocalPlaceholderDatabaseFacade localPlaceholderDatabaseFacade;
+  ILocalPlaceholderDatabaseFacade localPlaceholderDatabaseFacade;
 
   setUp(() {
-    // mockHiveInterface = MockHiveInterface();
-    // mockPlaceholdersBox = MockPlaceholdersBox();
+    mockHiveInterface = MockHiveInterface();
+    mockPlaceholdersBox = MockPlaceholdersBox();
 
-    // localPlaceholderDatabaseFacade =
-    //     HiveLocalPlaceholderDatabaseFacade(mockPlaceholdersBox);
+    localPlaceholderDatabaseFacade =
+        HivePlaceholderDatabaseFacade(mockPlaceholdersBox);
   });
 
   group(

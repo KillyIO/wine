@@ -5,14 +5,14 @@ import 'package:injectable/injectable.dart';
 import 'package:wine/domain/database/facades/local/i_local_config_database_facade.dart';
 import 'package:wine/domain/database/failures/config_database_failure.dart';
 import 'package:wine/domain/database/successes/config_database_success.dart';
-import 'package:wine/domain/models/hive/config.dart';
+import 'package:wine/domain/models/config.dart';
 import 'package:wine/utils/constants.dart';
 
 /// @nodoc
 @LazySingleton(as: ILocalConfigDatabaseFacade)
-class HiveLocalConfigDatabaseFacade implements ILocalConfigDatabaseFacade {
+class HiveConfigDatabaseFacade implements ILocalConfigDatabaseFacade {
   /// @nodoc
-  HiveLocalConfigDatabaseFacade(this._configsBox);
+  HiveConfigDatabaseFacade(this._configsBox);
 
   final Box<Config> _configsBox;
 
@@ -48,7 +48,6 @@ class HiveLocalConfigDatabaseFacade implements ILocalConfigDatabaseFacade {
       Constants.sessionConfig,
       config ??
           Config(
-            firstRun: false,
             enableSeriesViewsCount: false,
             enableSeriesLikesCount: false,
             enableSeriesBookmarksCount: false,

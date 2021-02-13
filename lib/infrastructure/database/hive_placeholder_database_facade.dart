@@ -7,10 +7,9 @@ import 'package:wine/domain/database/successes/placeholder_database_success.dart
 
 /// @nodoc
 @LazySingleton(as: ILocalPlaceholderDatabaseFacade)
-class HiveLocalPlaceholderDatabaseFacade
-    implements ILocalPlaceholderDatabaseFacade {
+class HivePlaceholderDatabaseFacade implements ILocalPlaceholderDatabaseFacade {
   /// @nodoc
-  HiveLocalPlaceholderDatabaseFacade(this._placeholdersBox);
+  HivePlaceholderDatabaseFacade(this._placeholdersBox);
 
   final Box<String> _placeholdersBox;
 
