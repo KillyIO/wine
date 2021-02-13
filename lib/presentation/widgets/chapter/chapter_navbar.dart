@@ -5,7 +5,7 @@ import 'package:wine/application/authentication/core/core_authentication_bloc.da
 
 import 'package:wine/presentation/utils/chapter/chapter_database_methods.dart';
 import 'package:wine/presentation/widgets/chapter/chapter_navbar_button.dart';
-import 'package:wine/utils/palettes.dart';
+import 'package:wine/utils/palette.dart';
 
 /// @nodoc
 class ChapterNavbar extends StatelessWidget {

@@ -11,16 +11,16 @@ import 'package:wine/domain/authentication/username.dart';
 import 'package:wine/domain/models/user.dart';
 import 'package:wine/infrastructure/authentication/firebase_authentication_facade.dart';
 
-import '../../../../packages/domain/models/test/mocks/firebase_auth_mocks.dart';
+import '../../../mocks/firebase_auth_mocks.dart';
 import '../../../mocks/firebase_firestore_mocks.dart';
 import '../../../mocks/google_sign_in_mocks.dart';
 
 void main() {
-  const validEmail = 'hdima.riyal.99@tapiitudulu.com';
+  const validEmail = 'email@email.com';
   const validPassword = 'Wd8G/[-2A+';
-  const validUsername = 'hdima.riyal.99';
+  const validUsername = 'email';
 
-  const invalidEmail = 'hdima.riyal.99_tapiitudulu.com';
+  const invalidEmail = 'email.email.com';
   const invalidPassword = '123456';
   const invalidUsername = '';
 
@@ -43,14 +43,19 @@ void main() {
 
   setUp(() {
     user = User(
-      bio: null,
+      isBanned: false,
+      isDeleted: false,
+      banDeadline: null,
       createdAt: 1592255973418,
-      email: validEmail,
-      name: 'hdima.riyal.99',
-      profilePictureURL: null,
-      uid: 'IhyAvFOnGegIFDBJYmL30nAbWu92',
       updatedAt: 1608137445032,
-      username: 'hdima.riyal.99',
+      banReason: null,
+      bio: null,
+      deletionReason: null,
+      email: validEmail,
+      name: 'Email',
+      profilePictureURL: null,
+      uid: 'uid',
+      username: 'email',
     );
 
     mockFirebaseAuth = MockFirebaseAuth();

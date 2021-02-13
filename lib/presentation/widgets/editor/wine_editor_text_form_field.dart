@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'package:wine/presentation/widgets/wine_text_field_label.dart';
-import 'package:wine/utils/palettes.dart';
+import 'package:wine/utils/palette.dart';
 
 /// @nodoc
 class WINEEditorTextFormField extends StatelessWidget {

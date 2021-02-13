@@ -19,9 +19,9 @@ class _$SessionDatabaseSuccessTearOff {
   }
 
 // ignore: unused_element
-  SessionFetchedSCS sessionFetchedSCS(Session session) {
+  SessionFetchedSCS sessionFetchedSCS(User user) {
     return SessionFetchedSCS(
-      session,
+      user,
     );
   }
 
@@ -45,14 +45,14 @@ mixin _$SessionDatabaseSuccess {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult sessionDeletedSCS(),
-    @required TResult sessionFetchedSCS(Session session),
+    @required TResult sessionFetchedSCS(User user),
     @required TResult sessionInitializedSCS(),
     @required TResult sessionUpdatedSCS(),
   });
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult sessionDeletedSCS(),
-    TResult sessionFetchedSCS(Session session),
+    TResult sessionFetchedSCS(User user),
     TResult sessionInitializedSCS(),
     TResult sessionUpdatedSCS(),
     @required TResult orElse(),
@@ -131,7 +131,7 @@ class _$SessionDeletedSCS implements SessionDeletedSCS {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult sessionDeletedSCS(),
-    @required TResult sessionFetchedSCS(Session session),
+    @required TResult sessionFetchedSCS(User user),
     @required TResult sessionInitializedSCS(),
     @required TResult sessionUpdatedSCS(),
   }) {
@@ -146,7 +146,7 @@ class _$SessionDeletedSCS implements SessionDeletedSCS {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult sessionDeletedSCS(),
-    TResult sessionFetchedSCS(Session session),
+    TResult sessionFetchedSCS(User user),
     TResult sessionInitializedSCS(),
     TResult sessionUpdatedSCS(),
     @required TResult orElse(),
@@ -199,7 +199,7 @@ abstract class $SessionFetchedSCSCopyWith<$Res> {
   factory $SessionFetchedSCSCopyWith(
           SessionFetchedSCS value, $Res Function(SessionFetchedSCS) then) =
       _$SessionFetchedSCSCopyWithImpl<$Res>;
-  $Res call({Session session});
+  $Res call({User user});
 }
 
 /// @nodoc
@@ -215,37 +215,37 @@ class _$SessionFetchedSCSCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object session = freezed,
+    Object user = freezed,
   }) {
     return _then(SessionFetchedSCS(
-      session == freezed ? _value.session : session as Session,
+      user == freezed ? _value.user : user as User,
     ));
   }
 }
 
 /// @nodoc
 class _$SessionFetchedSCS implements SessionFetchedSCS {
-  const _$SessionFetchedSCS(this.session) : assert(session != null);
+  const _$SessionFetchedSCS(this.user) : assert(user != null);
 
   @override
-  final Session session;
+  final User user;
 
   @override
   String toString() {
-    return 'SessionDatabaseSuccess.sessionFetchedSCS(session: $session)';
+    return 'SessionDatabaseSuccess.sessionFetchedSCS(user: $user)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is SessionFetchedSCS &&
-            (identical(other.session, session) ||
-                const DeepCollectionEquality().equals(other.session, session)));
+            (identical(other.user, user) ||
+                const DeepCollectionEquality().equals(other.user, user)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(session);
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(user);
 
   @JsonKey(ignore: true)
   @override
@@ -256,7 +256,7 @@ class _$SessionFetchedSCS implements SessionFetchedSCS {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult sessionDeletedSCS(),
-    @required TResult sessionFetchedSCS(Session session),
+    @required TResult sessionFetchedSCS(User user),
     @required TResult sessionInitializedSCS(),
     @required TResult sessionUpdatedSCS(),
   }) {
@@ -264,21 +264,21 @@ class _$SessionFetchedSCS implements SessionFetchedSCS {
     assert(sessionFetchedSCS != null);
     assert(sessionInitializedSCS != null);
     assert(sessionUpdatedSCS != null);
-    return sessionFetchedSCS(session);
+    return sessionFetchedSCS(user);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult sessionDeletedSCS(),
-    TResult sessionFetchedSCS(Session session),
+    TResult sessionFetchedSCS(User user),
     TResult sessionInitializedSCS(),
     TResult sessionUpdatedSCS(),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (sessionFetchedSCS != null) {
-      return sessionFetchedSCS(session);
+      return sessionFetchedSCS(user);
     }
     return orElse();
   }
@@ -316,9 +316,9 @@ class _$SessionFetchedSCS implements SessionFetchedSCS {
 }
 
 abstract class SessionFetchedSCS implements SessionDatabaseSuccess {
-  const factory SessionFetchedSCS(Session session) = _$SessionFetchedSCS;
+  const factory SessionFetchedSCS(User user) = _$SessionFetchedSCS;
 
-  Session get session;
+  User get user;
   @JsonKey(ignore: true)
   $SessionFetchedSCSCopyWith<SessionFetchedSCS> get copyWith;
 }
@@ -363,7 +363,7 @@ class _$SessionInitializedSCS implements SessionInitializedSCS {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult sessionDeletedSCS(),
-    @required TResult sessionFetchedSCS(Session session),
+    @required TResult sessionFetchedSCS(User user),
     @required TResult sessionInitializedSCS(),
     @required TResult sessionUpdatedSCS(),
   }) {
@@ -378,7 +378,7 @@ class _$SessionInitializedSCS implements SessionInitializedSCS {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult sessionDeletedSCS(),
-    TResult sessionFetchedSCS(Session session),
+    TResult sessionFetchedSCS(User user),
     TResult sessionInitializedSCS(),
     TResult sessionUpdatedSCS(),
     @required TResult orElse(),
@@ -466,7 +466,7 @@ class _$SessionUpdatedSCS implements SessionUpdatedSCS {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult sessionDeletedSCS(),
-    @required TResult sessionFetchedSCS(Session session),
+    @required TResult sessionFetchedSCS(User user),
     @required TResult sessionInitializedSCS(),
     @required TResult sessionUpdatedSCS(),
   }) {
@@ -481,7 +481,7 @@ class _$SessionUpdatedSCS implements SessionUpdatedSCS {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult sessionDeletedSCS(),
-    TResult sessionFetchedSCS(Session session),
+    TResult sessionFetchedSCS(User user),
     TResult sessionInitializedSCS(),
     TResult sessionUpdatedSCS(),
     @required TResult orElse(),

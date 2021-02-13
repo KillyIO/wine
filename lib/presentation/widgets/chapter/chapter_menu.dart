@@ -6,7 +6,7 @@ import 'package:wine/presentation/utils/chapter/chapter_database_methods.dart';
 import 'package:wine/presentation/widgets/chapter/chapter_additional_info.dart';
 import 'package:wine/presentation/widgets/chapter/chapter_navbar.dart';
 import 'package:wine/presentation/widgets/chapter/chapter_stats.dart';
-import 'package:wine/utils/palettes.dart';
+import 'package:wine/utils/palette.dart';
 
 /// @nodoc
 class ChapterMenu extends StatelessWidget {

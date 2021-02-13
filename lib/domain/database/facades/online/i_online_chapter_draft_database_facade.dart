@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart';
-import 'package:models/models.dart';
 import 'package:wine/domain/database/database_failure.dart';
 import 'package:wine/domain/database/successes/chapter_draft_database_success.dart';
+import 'package:wine/domain/models/chapter.dart';
 
 /// @nodoc
 abstract class IOnlineChapterDraftDatabaseFacade {

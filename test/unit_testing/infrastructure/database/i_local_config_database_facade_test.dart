@@ -3,7 +3,7 @@ import 'package:test/test.dart';
 import 'package:wine/domain/database/facades/local/i_local_config_database_facade.dart';
 import 'package:wine/domain/database/failures/config_database_failure.dart';
 import 'package:wine/domain/database/successes/config_database_success.dart';
-import 'package:wine/domain/models/hive/config.dart';
+import 'package:wine/domain/models/config.dart';
 import 'package:wine/infrastructure/database/hive_local_config_database_facade.dart';
 
 import '../../../mocks/hive_mocks.dart';
@@ -21,7 +21,6 @@ void main() {
     () {
       setUp(() {
         config = Config(
-          firstRun: true,
           enableSeriesViewsCount: false,
           enableSeriesLikesCount: false,
           enableSeriesBookmarksCount: false,

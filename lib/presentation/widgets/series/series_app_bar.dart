@@ -7,7 +7,7 @@ import 'package:wine/application/database/series/series_database_bloc.dart';
 import 'package:wine/presentation/utils/series/series_database_methods.dart';
 import 'package:wine/presentation/widgets/wine_leading_image_button.dart';
 import 'package:wine/utils/assets.dart';
-import 'package:wine/utils/palettes.dart';
+import 'package:wine/utils/palette.dart';
 
 /// @nodoc
 class SeriesAppBar extends StatelessWidget {

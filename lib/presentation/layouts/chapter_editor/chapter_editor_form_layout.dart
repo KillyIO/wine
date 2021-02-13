@@ -16,7 +16,7 @@ import 'package:wine/presentation/widgets/wine_switch_list_tile.dart';
 import 'package:wine/presentation/widgets/wine_text_field_label.dart';
 import 'package:wine/utils/constants.dart';
 import 'package:wine/utils/getters.dart';
-import 'package:wine/utils/palettes.dart';
+import 'package:wine/utils/palette.dart';
 
 /// @nodoc
 class ChapterEditorFormLayout extends StatelessWidget with Getters {

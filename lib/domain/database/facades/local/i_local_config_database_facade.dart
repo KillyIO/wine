@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:wine/domain/database/failures/config_database_failure.dart';
 import 'package:wine/domain/database/successes/config_database_success.dart';
-import 'package:wine/domain/models/hive/config.dart';
+import 'package:wine/domain/models/config.dart';
 
 /// @nodoc
 abstract class ILocalConfigDatabaseFacade {

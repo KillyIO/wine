@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:models/models.dart';
+import 'package:wine/domain/models/user.dart';
 
 part 'user_database_success.freezed.dart';
 

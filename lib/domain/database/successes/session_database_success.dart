@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:wine/domain/models/hive/session.dart';
+import 'package:wine/domain/models/user.dart';
 
 part 'session_database_success.freezed.dart';
 
@@ -10,7 +10,7 @@ abstract class SessionDatabaseSuccess with _$SessionDatabaseSuccess {
   const factory SessionDatabaseSuccess.sessionDeletedSCS() = SessionDeletedSCS;
 
   /// @nodoc
-  const factory SessionDatabaseSuccess.sessionFetchedSCS(Session session) =
+  const factory SessionDatabaseSuccess.sessionFetchedSCS(User user) =
       SessionFetchedSCS;
 
   /// @nodoc

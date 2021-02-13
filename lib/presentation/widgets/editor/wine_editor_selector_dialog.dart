@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:wine/presentation/widgets/wine_dialog_list_tile.dart';
 import 'package:wine/presentation/widgets/wine_selection_dialog.dart';
 import 'package:wine/presentation/widgets/dialog/wine_show_dialog.dart';
-import 'package:wine/utils/palettes.dart';
+import 'package:wine/utils/palette.dart';
 
 /// @nodoc
 class WINEEditorSelectorDialog extends StatelessWidget {

@@ -6,7 +6,7 @@ import 'package:wine/presentation/widgets/series/series_cover.dart';
 import 'package:wine/presentation/widgets/series/series_title.dart';
 import 'package:wine/presentation/widgets/series/series_author_username.dart';
 import 'package:wine/presentation/widgets/wine_stats_button.dart';
-import 'package:wine/utils/palettes.dart';
+import 'package:wine/utils/palette.dart';
 
 /// @nodoc
 class SeriesDetails extends StatelessWidget {

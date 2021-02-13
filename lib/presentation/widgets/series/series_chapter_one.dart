@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:wine/domain/models/chapter.dart';
 import 'package:wine/presentation/routes/router.gr.dart';
 import 'package:wine/presentation/widgets/chapter_tile/wine_chapter_tile.dart';
-import 'package:wine/utils/palettes.dart';
+import 'package:wine/utils/palette.dart';
 
 /// @nodoc
 class SeriesChapterOne extends StatelessWidget {

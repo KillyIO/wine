@@ -6,7 +6,7 @@ import 'package:wine/application/authentication/core/core_authentication_bloc.da
 import 'package:wine/domain/models/hive/session.dart';
 import 'package:wine/presentation/utils/settings/settings_authentication_methods.dart';
 import 'package:wine/presentation/routes/router.gr.dart';
-import 'package:wine/utils/palettes.dart';
+import 'package:wine/utils/palette.dart';
 
 /// @nodoc
 class SettingsAccountSettings extends StatelessWidget {

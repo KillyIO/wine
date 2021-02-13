@@ -16,7 +16,7 @@ import 'package:wine/presentation/widgets/wine_leading_image_button.dart';
 import 'package:wine/presentation/widgets/wine_loading_screen.dart';
 import 'package:wine/utils/assets.dart';
 import 'package:wine/utils/getters.dart';
-import 'package:wine/utils/palettes.dart';
+import 'package:wine/utils/palette.dart';
 
 /// @nodoc
 class ChapterEditorLayout extends StatefulWidget {

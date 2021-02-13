@@ -11,7 +11,7 @@ import 'package:wine/presentation/widgets/library/library_page_view_builder.dart
 import 'package:wine/presentation/widgets/wine_horizontal_navbar.dart';
 import 'package:wine/presentation/widgets/wine_loading_screen.dart';
 import 'package:wine/utils/getters.dart';
-import 'package:wine/utils/palettes.dart';
+import 'package:wine/utils/palette.dart';
 
 /// @nodoc
 class LibraryLayout extends StatefulWidget {

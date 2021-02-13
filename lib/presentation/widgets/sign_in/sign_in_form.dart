@@ -9,7 +9,7 @@ import 'package:wine/presentation/widgets/sign_in/sign_in_separator.dart';
 import 'package:wine/presentation/widgets/sign_in/sign_in_social_media_button.dart';
 import 'package:wine/presentation/routes/router.gr.dart';
 import 'package:wine/presentation/widgets/wine_authentication_textfield.dart';
-import 'package:wine/utils/palettes.dart';
+import 'package:wine/utils/palette.dart';
 
 /// @nodoc
 class SignInForm extends StatelessWidget {
