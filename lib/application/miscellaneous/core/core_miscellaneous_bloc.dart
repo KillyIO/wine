@@ -6,19 +6,21 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:meta/meta.dart';
 
-part 'core_other_bloc.freezed.dart';
-part 'core_other_event.dart';
-part 'core_other_state.dart';
+part 'core_miscellaneous_bloc.freezed.dart';
+part 'core_miscellaneous_event.dart';
+part 'core_miscellaneous_state.dart';
 
 /// @nodoc
 @injectable
-class CoreOtherBloc extends Bloc<CoreOtherEvent, CoreOtherState> {
+class CoreMiscellaneousBloc
+    extends Bloc<CoreMiscellaneousEvent, CoreMiscellaneousState> {
   /// @nodoc
-  CoreOtherBloc() : super(CoreOtherState.initial());
+  CoreMiscellaneousBloc() : super(CoreMiscellaneousState.initial());
 
   @override
-  Stream<CoreOtherState> mapEventToState(CoreOtherEvent event) async* {
-    if (event is AppLaunchedEVT) {
+  Stream<CoreMiscellaneousState> mapEventToState(
+      CoreMiscellaneousEvent event) async* {
+    if (event is AppLaunchedEvent) {
       final currentLocale = (await DeviceLocale.getCurrentLocale()).toString();
 
       yield state.copyWith(deviceLocale: currentLocale);

@@ -101,7 +101,7 @@ Either<ValueFailure<String>, String> validateLanguage(String input) {
 }
 
 /// @nodoc
-Either<ValueFailure<String>, String> validateCopyrights(String input) {
+Either<ValueFailure<String>, String> validateLicence(String input) {
   if (input != null && input.isNotEmpty) {
     return right(input);
   } else {

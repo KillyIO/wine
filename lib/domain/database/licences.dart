@@ -4,18 +4,18 @@ import 'package:wine/domain/core/value_objects.dart';
 import 'package:wine/domain/core/value_validators.dart';
 
 /// @nodoc
-class Copyrights extends ValueObject<String> {
+class Licences extends ValueObject<String> {
   /// @nodoc
-  factory Copyrights(String input) {
+  factory Licences(String input) {
     assert(input != null);
-    return Copyrights._(
-      validateCopyrights(input),
+    return Licences._(
+      validateLicence(input),
     );
   }
 
   // NOTE private contructor
   /// @nodoc
-  const Copyrights._(this.value);
+  const Licences._(this.value);
 
   @override
   final Either<ValueFailure<String>, String> value;

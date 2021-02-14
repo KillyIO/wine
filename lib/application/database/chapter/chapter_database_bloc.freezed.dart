@@ -4090,7 +4090,7 @@ class _$ChapterDatabaseStateTearOff {
           Option<Either<DatabaseFailure, SessionDatabaseSuccess>>
               sessionDatabaseFailureOrSuccessOption,
       @required
-          Session session}) {
+          User session}) {
     return _ChapterDatabaseState(
       canWriteNextChapter: canWriteNextChapter,
       isBookmarked: isBookmarked,
@@ -4141,7 +4141,7 @@ mixin _$ChapterDatabaseState {
       get configDatabaseFailureOrSuccessOption;
   Option<Either<DatabaseFailure, SessionDatabaseSuccess>>
       get sessionDatabaseFailureOrSuccessOption;
-  Session get session;
+  User get session;
 
   @JsonKey(ignore: true)
   $ChapterDatabaseStateCopyWith<ChapterDatabaseState> get copyWith;
@@ -4172,7 +4172,7 @@ abstract class $ChapterDatabaseStateCopyWith<$Res> {
           configDatabaseFailureOrSuccessOption,
       Option<Either<DatabaseFailure, SessionDatabaseSuccess>>
           sessionDatabaseFailureOrSuccessOption,
-      Session session});
+      User session});
 }
 
 /// @nodoc
@@ -4249,7 +4249,7 @@ class _$ChapterDatabaseStateCopyWithImpl<$Res>
               ? _value.sessionDatabaseFailureOrSuccessOption
               : sessionDatabaseFailureOrSuccessOption
                   as Option<Either<DatabaseFailure, SessionDatabaseSuccess>>,
-      session: session == freezed ? _value.session : session as Session,
+      session: session == freezed ? _value.session : session as User,
     ));
   }
 }
@@ -4281,7 +4281,7 @@ abstract class _$ChapterDatabaseStateCopyWith<$Res>
           configDatabaseFailureOrSuccessOption,
       Option<Either<DatabaseFailure, SessionDatabaseSuccess>>
           sessionDatabaseFailureOrSuccessOption,
-      Session session});
+      User session});
 }
 
 /// @nodoc
@@ -4360,7 +4360,7 @@ class __$ChapterDatabaseStateCopyWithImpl<$Res>
               ? _value.sessionDatabaseFailureOrSuccessOption
               : sessionDatabaseFailureOrSuccessOption
                   as Option<Either<DatabaseFailure, SessionDatabaseSuccess>>,
-      session: session == freezed ? _value.session : session as Session,
+      session: session == freezed ? _value.session : session as User,
     ));
   }
 }
@@ -4441,7 +4441,7 @@ class _$_ChapterDatabaseState
   final Option<Either<DatabaseFailure, SessionDatabaseSuccess>>
       sessionDatabaseFailureOrSuccessOption;
   @override
-  final Session session;
+  final User session;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
@@ -4601,7 +4601,7 @@ abstract class _ChapterDatabaseState implements ChapterDatabaseState {
           Option<Either<DatabaseFailure, SessionDatabaseSuccess>>
               sessionDatabaseFailureOrSuccessOption,
       @required
-          Session session}) = _$_ChapterDatabaseState;
+          User session}) = _$_ChapterDatabaseState;
 
   @override
   bool get canWriteNextChapter;
@@ -4639,7 +4639,7 @@ abstract class _ChapterDatabaseState implements ChapterDatabaseState {
   Option<Either<DatabaseFailure, SessionDatabaseSuccess>>
       get sessionDatabaseFailureOrSuccessOption;
   @override
-  Session get session;
+  User get session;
   @override
   @JsonKey(ignore: true)
   _$ChapterDatabaseStateCopyWith<_ChapterDatabaseState> get copyWith;
