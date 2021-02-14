@@ -1,10 +1,10 @@
-part of 'sign_in_authentication_bloc.dart';
+part of 'log_in_authentication_bloc.dart';
 
 /// @nodoc
 @freezed
-abstract class SignInAuthenticationState with _$SignInAuthenticationState {
+abstract class LogInAuthenticationState with _$LogInAuthenticationState {
   /// @nodoc
-  const factory SignInAuthenticationState({
+  const factory LogInAuthenticationState({
     @required bool isSubmitting,
     @required bool showErrorMessages,
     @required EmailAddress emailAddress,
@@ -12,10 +12,10 @@ abstract class SignInAuthenticationState with _$SignInAuthenticationState {
         Option<Either<AuthenticationFailure, AuthenticationSuccess>>
             authFailureOrSuccessOption,
     @required Password password,
-  }) = _SignInAuthenticationState;
+  }) = _LogInAuthenticationState;
 
   /// @nodoc
-  factory SignInAuthenticationState.initial() => SignInAuthenticationState(
+  factory LogInAuthenticationState.initial() => LogInAuthenticationState(
         authFailureOrSuccessOption: none(),
         emailAddress: EmailAddress(''),
         isSubmitting: false,

@@ -12,37 +12,37 @@ import 'package:wine/domain/authentication/email_address.dart';
 import 'package:wine/domain/authentication/i_authentication_facade.dart';
 import 'package:wine/domain/authentication/password.dart';
 
-part 'sign_in_authentication_bloc.freezed.dart';
-part 'sign_in_authentication_event.dart';
-part 'sign_in_authentication_state.dart';
+part 'log_in_authentication_bloc.freezed.dart';
+part 'log_in_authentication_event.dart';
+part 'log_in_authentication_state.dart';
 
 /// @nodoc
 @injectable
-class SignInAuthenticationBloc
-    extends Bloc<SignInAuthenticationEvent, SignInAuthenticationState> {
+class LogInAuthenticationBloc
+    extends Bloc<LogInAuthenticationEvent, LogInAuthenticationState> {
   /// @nodoc
-  SignInAuthenticationBloc(this._authenticationFacade)
-      : super(SignInAuthenticationState.initial());
+  LogInAuthenticationBloc(this._authenticationFacade)
+      : super(LogInAuthenticationState.initial());
 
   final IAuthenticationFacade _authenticationFacade;
 
   @override
-  Stream<SignInAuthenticationState> mapEventToState(
-      SignInAuthenticationEvent event) async* {
+  Stream<LogInAuthenticationState> mapEventToState(
+      LogInAuthenticationEvent event) async* {
     yield* event.map(
-      emailChangedEVT: (event) async* {
+      emailChanged: (event) async* {
         yield state.copyWith(
           authFailureOrSuccessOption: none(),
           emailAddress: EmailAddress(event.emailStr),
         );
       },
-      passwordChangedEVT: (event) async* {
+      passwordChanged: (event) async* {
         yield state.copyWith(
           authFailureOrSuccessOption: none(),
           password: Password(event.passwordStr),
         );
       },
-      signInWithEmailAndPasswordPressedEVT: (event) async* {
+      signInWithEmailAndPasswordPressed: (event) async* {
         Either<AuthenticationFailure, AuthenticationSuccess> failureOrSuccess;
 
         final isEmailValid = state.emailAddress.isValid();
@@ -65,7 +65,7 @@ class SignInAuthenticationBloc
           showErrorMessages: true,
         );
       },
-      signInWithGooglePressedEVT: (event) async* {
+      signInWithGooglePressed: (event) async* {
         yield state.copyWith(
           authFailureOrSuccessOption: none(),
           isSubmitting: true,

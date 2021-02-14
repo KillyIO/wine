@@ -1,11 +1,10 @@
-part of 'create_account_authentication_bloc.dart';
+part of 'sign_up_authentication_bloc.dart';
 
 /// @nodoc
 @freezed
-abstract class CreateAccountAuthenticationState
-    with _$CreateAccountAuthenticationState {
+abstract class SignUpAuthenticationState with _$SignUpAuthenticationState {
   /// @nodoc
-  const factory CreateAccountAuthenticationState({
+  const factory SignUpAuthenticationState({
     @required bool isSubmitting,
     @required bool showErrorMessages,
     @required EmailAddress emailAddress,
@@ -15,11 +14,10 @@ abstract class CreateAccountAuthenticationState
     @required Password confirmPassword,
     @required Password password,
     @required Username username,
-  }) = _CreateAccountAuthenticationState;
+  }) = _SignUpAuthenticationState;
 
   /// @nodoc
-  factory CreateAccountAuthenticationState.initial() =>
-      CreateAccountAuthenticationState(
+  factory SignUpAuthenticationState.initial() => SignUpAuthenticationState(
         authenticationFailureOrSuccessOption: none(),
         confirmPassword: Password('', ''),
         emailAddress: EmailAddress(''),

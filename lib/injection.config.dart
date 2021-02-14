@@ -20,7 +20,6 @@ import 'domain/models/config.dart';
 import 'application/authentication/core/core_authentication_bloc.dart';
 import 'application/database/core/core_database_bloc.dart';
 import 'application/miscellaneous/core/core_miscellaneous_bloc.dart';
-import 'application/authentication/create_account/create_account_authentication_bloc.dart';
 import 'application/database/create_account/create_account_database_bloc.dart';
 import 'infrastructure/authentication/firebase_authentication_facade.dart';
 import 'infrastructure/database/firebase_chapter_draft_database_facade.dart';
@@ -48,14 +47,15 @@ import 'domain/database/facades/local/i_session_database_facade.dart';
 import 'domain/database/facades/online/i_user_database_facade.dart';
 import 'application/database/library/library_database_bloc.dart';
 import 'application/navigation/library/library_navigation_bloc.dart';
+import 'application/authentication/log_in/log_in_authentication_bloc.dart';
 import 'application/database/series/series_database_bloc.dart';
 import 'application/database/series_editor/series_editor_database_bloc.dart';
 import 'application/database/series_settings/series_settings_database_bloc.dart';
 import 'application/authentication/settings/settings_authentication_bloc.dart';
 import 'application/database/settings/settings_database_bloc.dart';
 import 'application/miscellaneous/settings/settings_miscellaneous_bloc.dart';
-import 'application/authentication/sign_in/sign_in_authentication_bloc.dart';
 import 'application/database/sign_in/sign_in_database_bloc.dart';
+import 'application/authentication/sign_up/sign_up_authentication_bloc.dart';
 import 'application/authentication/splash/splash_authentication_bloc.dart';
 import 'application/database/splash/splash_database_bloc.dart';
 import 'domain/models/user.dart';
@@ -71,10 +71,10 @@ Future<GetIt> $initGetIt(
   final gh = GetItHelper(get, environment, environmentFilter);
   final hiveInjectableModule = _$HiveInjectableModule();
   final firebaseInjectableModule = _$FirebaseInjectableModule();
-  final resolvedBox = await hiveInjectableModule.openSessionsBox;
-  gh.lazySingleton<hive1.Box<User>>(() => resolvedBox);
-  final resolvedBox1 = await hiveInjectableModule.openPlaceholdersBox;
-  gh.lazySingleton<hive1.Box<String>>(() => resolvedBox1);
+  final resolvedBox = await hiveInjectableModule.openPlaceholdersBox;
+  gh.lazySingleton<hive1.Box<String>>(() => resolvedBox);
+  final resolvedBox1 = await hiveInjectableModule.openSessionsBox;
+  gh.lazySingleton<hive1.Box<User>>(() => resolvedBox1);
   final resolvedBox2 = await hiveInjectableModule.openConfigsBox;
   gh.lazySingleton<hive1.Box<Config>>(() => resolvedBox2);
   gh.factory<ChapterEditorNavigationBloc>(() => ChapterEditorNavigationBloc());
@@ -123,6 +123,8 @@ Future<GetIt> $initGetIt(
         get<IOnlineChapterDraftDatabaseFacade>(),
       ));
   gh.factory<LibraryNavigationBloc>(() => LibraryNavigationBloc());
+  gh.factory<LogInAuthenticationBloc>(
+      () => LogInAuthenticationBloc(get<IAuthenticationFacade>()));
   gh.factory<SeriesDatabaseBloc>(() => SeriesDatabaseBloc(
         get<IAuthenticationFacade>(),
         get<ILocalConfigDatabaseFacade>(),
@@ -143,9 +145,9 @@ Future<GetIt> $initGetIt(
   gh.factory<SettingsDatabaseBloc>(
       () => SettingsDatabaseBloc(get<ILocalConfigDatabaseFacade>(), get()));
   gh.factory<SettingsMiscellaneousBloc>(() => SettingsMiscellaneousBloc());
-  gh.factory<SignInAuthenticationBloc>(
-      () => SignInAuthenticationBloc(get<IAuthenticationFacade>()));
   gh.factory<SignInDatabaseBloc>(() => SignInDatabaseBloc(get(), get()));
+  gh.factory<SignUpAuthenticationBloc>(
+      () => SignUpAuthenticationBloc(get<IAuthenticationFacade>()));
   gh.factory<SplashAuthenticationBloc>(
       () => SplashAuthenticationBloc(get<IAuthenticationFacade>()));
   gh.factory<SplashDatabaseBloc>(() => SplashDatabaseBloc(
@@ -173,8 +175,6 @@ Future<GetIt> $initGetIt(
       () => ChapterSettingsDatabaseBloc(get<ILocalConfigDatabaseFacade>()));
   gh.factory<CoreAuthenticationBloc>(
       () => CoreAuthenticationBloc(get<IAuthenticationFacade>()));
-  gh.factory<CreateAccountAuthenticationBloc>(
-      () => CreateAccountAuthenticationBloc(get<IAuthenticationFacade>()));
   gh.factory<HomeDatabaseBloc>(
       () => HomeDatabaseBloc(get<IOnlineSeriesDatabaseFacade>()));
   return get;

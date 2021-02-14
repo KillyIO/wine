@@ -13,37 +13,26 @@ import 'package:wine/domain/authentication/i_authentication_facade.dart';
 import 'package:wine/domain/authentication/password.dart';
 import 'package:wine/domain/authentication/username.dart';
 
-part 'create_account_authentication_bloc.freezed.dart';
-part 'create_account_authentication_event.dart';
-part 'create_account_authentication_state.dart';
+part 'sign_up_authentication_bloc.freezed.dart';
+part 'sign_up_authentication_event.dart';
+part 'sign_up_authentication_state.dart';
 
 /// @nodoc
 @injectable
-class CreateAccountAuthenticationBloc extends Bloc<
-    CreateAccountAuthenticationEvent, CreateAccountAuthenticationState> {
+class SignUpAuthenticationBloc
+    extends Bloc<SignUpAuthenticationEvent, SignUpAuthenticationState> {
   /// @nodoc
-  CreateAccountAuthenticationBloc(this._authenticationFacade)
-      : super(CreateAccountAuthenticationState.initial());
+  SignUpAuthenticationBloc(this._authenticationFacade)
+      : super(SignUpAuthenticationState.initial());
 
   final IAuthenticationFacade _authenticationFacade;
 
   @override
-  Stream<CreateAccountAuthenticationState> mapEventToState(
-      CreateAccountAuthenticationEvent event) async* {
+  Stream<SignUpAuthenticationState> mapEventToState(
+    SignUpAuthenticationEvent event,
+  ) async* {
     yield* event.map(
-      emailChangedEVT: (event) async* {
-        yield state.copyWith(
-          authenticationFailureOrSuccessOption: none(),
-          emailAddress: EmailAddress(event.emailStr),
-        );
-      },
-      passwordChangedEVT: (event) async* {
-        yield state.copyWith(
-          authenticationFailureOrSuccessOption: none(),
-          password: Password(event.passwordStr),
-        );
-      },
-      confirmPasswordChangedEVT: (event) async* {
+      confirmPasswordChanged: (event) async* {
         yield state.copyWith(
           authenticationFailureOrSuccessOption: none(),
           confirmPassword: Password(
@@ -52,13 +41,29 @@ class CreateAccountAuthenticationBloc extends Bloc<
           ),
         );
       },
-      usernameChangedEVT: (event) async* {
+      emailChanged: (event) async* {
         yield state.copyWith(
-          username: Username(event.usernameStr),
           authenticationFailureOrSuccessOption: none(),
+          emailAddress: EmailAddress(event.emailStr),
         );
       },
-      createAccountEVT: (event) async* {
+      passwordChanged: (event) async* {
+        yield state.copyWith(
+          authenticationFailureOrSuccessOption: none(),
+          password: Password(event.passwordStr),
+        );
+      },
+      resendVerificationEmail: (event) async* {
+        Either<AuthenticationFailure, AuthenticationSuccess> failureOrSuccess;
+
+        failureOrSuccess =
+            await _authenticationFacade.resendVerificationEmail();
+
+        yield state.copyWith(
+          authenticationFailureOrSuccessOption: optionOf(failureOrSuccess),
+        );
+      },
+      signUpPressed: (event) async* {
         Either<AuthenticationFailure, AuthenticationSuccess> failureOrSuccess;
 
         var isUsernameValid = state.username.isValid();
@@ -112,14 +117,10 @@ class CreateAccountAuthenticationBloc extends Bloc<
           showErrorMessages: true,
         );
       },
-      resendVerificationEmailEVT: (event) async* {
-        Either<AuthenticationFailure, AuthenticationSuccess> failureOrSuccess;
-
-        failureOrSuccess =
-            await _authenticationFacade.resendVerificationEmail();
-
+      usernameChanged: (event) async* {
         yield state.copyWith(
-          authenticationFailureOrSuccessOption: optionOf(failureOrSuccess),
+          username: Username(event.usernameStr),
+          authenticationFailureOrSuccessOption: none(),
         );
       },
     );
