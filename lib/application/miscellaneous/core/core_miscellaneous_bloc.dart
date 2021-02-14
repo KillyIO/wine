@@ -20,7 +20,7 @@ class CoreMiscellaneousBloc
   @override
   Stream<CoreMiscellaneousState> mapEventToState(
       CoreMiscellaneousEvent event) async* {
-    if (event is AppLaunchedEvent) {
+    if (event is AppLaunched) {
       final currentLocale = (await DeviceLocale.getCurrentLocale()).toString();
 
       yield state.copyWith(deviceLocale: currentLocale);

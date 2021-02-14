@@ -21,7 +21,7 @@ abstract class SplashDatabaseEvent with _$SplashDatabaseEvent {
   ) = PlaceholdersLoadedEVT;
 
   /// @nodoc
-  const factory SplashDatabaseEvent.sessionFetchedEVT(Session session) =
+  const factory SplashDatabaseEvent.sessionFetchedEVT(User session) =
       SessionFetchedEVT;
 
   /// @nodoc

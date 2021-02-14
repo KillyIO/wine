@@ -14,8 +14,8 @@ class _$SettingsMiscellaneousEventTearOff {
   const _$SettingsMiscellaneousEventTearOff();
 
 // ignore: unused_element
-  SettingsLaunchedEvent settingsLaunchedEvent() {
-    return const SettingsLaunchedEvent();
+  SettingsLaunched settingsLaunched() {
+    return const SettingsLaunched();
   }
 }
 
@@ -27,20 +27,20 @@ const $SettingsMiscellaneousEvent = _$SettingsMiscellaneousEventTearOff();
 mixin _$SettingsMiscellaneousEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
-    @required TResult settingsLaunchedEvent(),
+    @required TResult settingsLaunched(),
   });
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
-    TResult settingsLaunchedEvent(),
+    TResult settingsLaunched(),
     @required TResult orElse(),
   });
   @optionalTypeArgs
   TResult map<TResult extends Object>({
-    @required TResult settingsLaunchedEvent(SettingsLaunchedEvent value),
+    @required TResult settingsLaunched(SettingsLaunched value),
   });
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
-    TResult settingsLaunchedEvent(SettingsLaunchedEvent value),
+    TResult settingsLaunched(SettingsLaunched value),
     @required TResult orElse(),
   });
 }
@@ -63,36 +63,36 @@ class _$SettingsMiscellaneousEventCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class $SettingsLaunchedEventCopyWith<$Res> {
-  factory $SettingsLaunchedEventCopyWith(SettingsLaunchedEvent value,
-          $Res Function(SettingsLaunchedEvent) then) =
-      _$SettingsLaunchedEventCopyWithImpl<$Res>;
+abstract class $SettingsLaunchedCopyWith<$Res> {
+  factory $SettingsLaunchedCopyWith(
+          SettingsLaunched value, $Res Function(SettingsLaunched) then) =
+      _$SettingsLaunchedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$SettingsLaunchedEventCopyWithImpl<$Res>
+class _$SettingsLaunchedCopyWithImpl<$Res>
     extends _$SettingsMiscellaneousEventCopyWithImpl<$Res>
-    implements $SettingsLaunchedEventCopyWith<$Res> {
-  _$SettingsLaunchedEventCopyWithImpl(
-      SettingsLaunchedEvent _value, $Res Function(SettingsLaunchedEvent) _then)
-      : super(_value, (v) => _then(v as SettingsLaunchedEvent));
+    implements $SettingsLaunchedCopyWith<$Res> {
+  _$SettingsLaunchedCopyWithImpl(
+      SettingsLaunched _value, $Res Function(SettingsLaunched) _then)
+      : super(_value, (v) => _then(v as SettingsLaunched));
 
   @override
-  SettingsLaunchedEvent get _value => super._value as SettingsLaunchedEvent;
+  SettingsLaunched get _value => super._value as SettingsLaunched;
 }
 
 /// @nodoc
-class _$SettingsLaunchedEvent implements SettingsLaunchedEvent {
-  const _$SettingsLaunchedEvent();
+class _$SettingsLaunched implements SettingsLaunched {
+  const _$SettingsLaunched();
 
   @override
   String toString() {
-    return 'SettingsMiscellaneousEvent.settingsLaunchedEvent()';
+    return 'SettingsMiscellaneousEvent.settingsLaunched()';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is SettingsLaunchedEvent);
+    return identical(this, other) || (other is SettingsLaunched);
   }
 
   @override
@@ -101,21 +101,21 @@ class _$SettingsLaunchedEvent implements SettingsLaunchedEvent {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
-    @required TResult settingsLaunchedEvent(),
+    @required TResult settingsLaunched(),
   }) {
-    assert(settingsLaunchedEvent != null);
-    return settingsLaunchedEvent();
+    assert(settingsLaunched != null);
+    return settingsLaunched();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
-    TResult settingsLaunchedEvent(),
+    TResult settingsLaunched(),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (settingsLaunchedEvent != null) {
-      return settingsLaunchedEvent();
+    if (settingsLaunched != null) {
+      return settingsLaunched();
     }
     return orElse();
   }
@@ -123,28 +123,28 @@ class _$SettingsLaunchedEvent implements SettingsLaunchedEvent {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object>({
-    @required TResult settingsLaunchedEvent(SettingsLaunchedEvent value),
+    @required TResult settingsLaunched(SettingsLaunched value),
   }) {
-    assert(settingsLaunchedEvent != null);
-    return settingsLaunchedEvent(this);
+    assert(settingsLaunched != null);
+    return settingsLaunched(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
-    TResult settingsLaunchedEvent(SettingsLaunchedEvent value),
+    TResult settingsLaunched(SettingsLaunched value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (settingsLaunchedEvent != null) {
-      return settingsLaunchedEvent(this);
+    if (settingsLaunched != null) {
+      return settingsLaunched(this);
     }
     return orElse();
   }
 }
 
-abstract class SettingsLaunchedEvent implements SettingsMiscellaneousEvent {
-  const factory SettingsLaunchedEvent() = _$SettingsLaunchedEvent;
+abstract class SettingsLaunched implements SettingsMiscellaneousEvent {
+  const factory SettingsLaunched() = _$SettingsLaunched;
 }
 
 /// @nodoc

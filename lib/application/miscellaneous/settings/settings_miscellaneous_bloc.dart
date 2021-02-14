@@ -20,7 +20,7 @@ class SettingsMiscellaneousBloc
   @override
   Stream<SettingsMiscellaneousState> mapEventToState(
       SettingsMiscellaneousEvent event) async* {
-    if (event is SettingsLaunchedEvent) {
+    if (event is SettingsLaunched) {
       final packageInfo = await PackageInfo.fromPlatform();
 
       yield state.copyWith(

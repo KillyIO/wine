@@ -2,7 +2,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
 import 'package:wine/domain/authentication/username.dart';
-import 'package:wine/domain/database/facades/online/i_online_user_database_facade.dart';
+import 'package:wine/domain/database/facades/online/i_user_database_facade.dart';
 
 import 'package:wine/domain/database/failures/user_database_failure.dart';
 import 'package:wine/domain/database/successes/user_database_success.dart';

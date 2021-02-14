@@ -4,105 +4,105 @@ part of 'chapter_editor_database_bloc.dart';
 @freezed
 abstract class ChapterEditorDatabaseEvent with _$ChapterEditorDatabaseEvent {
   /// @nodoc
-  const factory ChapterEditorDatabaseEvent.addCoverPressedEVT() =
-      AddCoverPressedEVT;
+  const factory ChapterEditorDatabaseEvent.addCoverPressedEvent() =
+      AddCoverPressedEvent;
+
+  /// @nodoc
+  const factory ChapterEditorDatabaseEvent.chapterDraftDeletedOrPublishedEvent() =
+      ChapterDraftDeletedOrPublishedEvent;
+
+  /// @nodoc
+  const factory ChapterEditorDatabaseEvent.chapterPublishedEvent() =
+      ChapterPublishedEvent;
+
+  /// @nodoc
+  const factory ChapterEditorDatabaseEvent.deleteDraftButtonPressedEvent() =
+      DeleteDraftButtonPressedEvent;
+
+  /// @nodoc
+  const factory ChapterEditorDatabaseEvent.genreOptionalSelectedEvent(
+    String genreOptional,
+  ) = GenreOptionalSelectedEvent;
+
+  /// @nodoc
+  const factory ChapterEditorDatabaseEvent.genreSelectedEvent(String genre) =
+      GenreSelectedEvent;
 
   /// @nodoc
   // ignore: lines_longer_than_80_chars
-  const factory ChapterEditorDatabaseEvent.chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT() =
-      ChapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT;
+  const factory ChapterEditorDatabaseEvent.initializedWithPreviousChapterOrSeriesDraftEvent() =
+      InitializedWithPreviousChapterOrSeriesDraftEvent;
 
   /// @nodoc
-  const factory ChapterEditorDatabaseEvent.chapterEditorLaunchedFromLibraryEVT(
+  const factory ChapterEditorDatabaseEvent.isLastChapterChangedEvent({
+    @required bool isLastChapter,
+  }) = IsLastChapterChangedEvent;
+
+  /// @nodoc
+  const factory ChapterEditorDatabaseEvent.isNSFWChangedEvent({
+    @required bool isNSFW,
+  }) = IsNSFWChangedEvent;
+
+  /// @nodoc
+  const factory ChapterEditorDatabaseEvent.languageSelectedEvent(
+    String language,
+  ) = LanguageSelectedEvent;
+
+  /// @nodoc
+  const factory ChapterEditorDatabaseEvent.launchedFromLibraryEvent(
     BuildContext context,
     Chapter chapterDraft,
     EditorContentOrigin editorContentOrigin,
-  ) = ChapterEditorLaunchedFromLibraryEVT;
+  ) = LaunchedFromLibraryEvent;
 
   /// @nodoc
   // ignore: lines_longer_than_80_chars
-  const factory ChapterEditorDatabaseEvent.chapterEditorLaunchedFromPreviousChapterEVT(
+  const factory ChapterEditorDatabaseEvent.launchedFromPreviousChapterEvent(
     BuildContext context,
     Chapter previousChapter,
     EditorContentOrigin editorContentOrigin,
-  ) = ChapterEditorLaunchedFromPreviousChapterEVT;
+  ) = LaunchedFromPreviousChapterEvent;
 
   /// @nodoc
   // ignore: lines_longer_than_80_chars
-  const factory ChapterEditorDatabaseEvent.chapterEditorLaunchedFromSeriesEditorEVT(
+  const factory ChapterEditorDatabaseEvent.launchedFromSeriesEditorEvent(
     BuildContext context,
     EditorContentOrigin editorContentOrigin,
     Series seriesDraft,
-  ) = ChapterEditorLaunchedFromSeriesEditorEVT;
+  ) = LaunchedFromSeriesEditorEvent;
 
   /// @nodoc
-  const factory ChapterEditorDatabaseEvent.chapterDraftDeletedOrPublishedEVT() =
-      ChapterDraftDeletedOrPublishedEVT;
+  const factory ChapterEditorDatabaseEvent.licenceSelectedEvent(
+    String licence,
+  ) = LicenceSelectedEvent;
 
   /// @nodoc
-  const factory ChapterEditorDatabaseEvent.chapterPublishedEVT() =
-      ChapterPublishedEVT;
+  const factory ChapterEditorDatabaseEvent.publishButtonPressedEvent() =
+      PublishButtonPressedEvent;
 
   /// @nodoc
-  const factory ChapterEditorDatabaseEvent.copyrightsSelectedEVT(
-    String copyrights,
-  ) = CopyrightsSelectedEVT;
+  const factory ChapterEditorDatabaseEvent.saveOrBackButtonPressedEvent() =
+      SaveOrBackButtonPressedEvent;
 
   /// @nodoc
-  const factory ChapterEditorDatabaseEvent.deleteDraftButtonPressedEVT() =
-      DeleteDraftButtonPressedEVT;
-
-  /// @nodoc
-  const factory ChapterEditorDatabaseEvent.genreOptionalSelectedEVT(
-    String genreOptional,
-  ) = GenreOptionalSelectedEVT;
-
-  /// @nodoc
-  const factory ChapterEditorDatabaseEvent.genreSelectedEVT(String genre) =
-      GenreSelectedEVT;
-
-  /// @nodoc
-  const factory ChapterEditorDatabaseEvent.isLastChapterChangedEVT({
-    @required bool isLastChapter,
-  }) = IsLastChapterChangedEVT;
-
-  /// @nodoc
-  const factory ChapterEditorDatabaseEvent.isNSFWChangedEVT({
-    @required bool isNSFW,
-  }) = IsNSFWChangedEVT;
-
-  /// @nodoc
-  const factory ChapterEditorDatabaseEvent.languageSelectedEVT(
-    String language,
-  ) = LanguageSelectedEVT;
-
-  /// @nodoc
-  const factory ChapterEditorDatabaseEvent.publishButtonPressedEVT() =
-      PublishButtonPressedEVT;
-
-  /// @nodoc
-  const factory ChapterEditorDatabaseEvent.saveOrBackButtonPressedEVT() =
-      SaveOrBackButtonPressedEVT;
-
-  /// @nodoc
-  const factory ChapterEditorDatabaseEvent.seriesDraftLoadedEVT(
+  const factory ChapterEditorDatabaseEvent.seriesDraftLoadedEvent(
     Series seriesDraft,
-  ) = SeriesDraftLoadedEVT;
+  ) = SeriesDraftLoadedEvent;
 
   /// @nodoc
-  const factory ChapterEditorDatabaseEvent.seriesPublishedEVT(
+  const factory ChapterEditorDatabaseEvent.seriesPublishedEvent(
     String seriesDraftUID,
-  ) = SeriesPublishedEVT;
+  ) = SeriesPublishedEvent;
 
   /// @nodoc
-  const factory ChapterEditorDatabaseEvent.sessionFetchedEVT() =
-      SessionFetchedEVT;
+  const factory ChapterEditorDatabaseEvent.sessionFetchedEvent() =
+      SessionFetchedEvent;
 
   /// @nodoc
-  const factory ChapterEditorDatabaseEvent.storyChangedEVT(String story) =
-      StoryChangedEVT;
+  const factory ChapterEditorDatabaseEvent.storyChangedEvent(String story) =
+      StoryChangedEvent;
 
   /// @nodoc
-  const factory ChapterEditorDatabaseEvent.titleChangedEVT(String title) =
-      TitleChangedEVT;
+  const factory ChapterEditorDatabaseEvent.titleChangedEvent(String title) =
+      TitleChangedEvent;
 }

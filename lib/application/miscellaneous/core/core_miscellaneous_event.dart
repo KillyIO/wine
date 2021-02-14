@@ -4,5 +4,5 @@ part of 'core_miscellaneous_bloc.dart';
 @freezed
 abstract class CoreMiscellaneousEvent with _$CoreMiscellaneousEvent {
   /// @nodoc
-  const factory CoreMiscellaneousEvent.appLaunchedEvent() = AppLaunchedEvent;
+  const factory CoreMiscellaneousEvent.appLaunched() = AppLaunched;
 }

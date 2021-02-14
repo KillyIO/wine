@@ -14,8 +14,8 @@ class _$CoreMiscellaneousEventTearOff {
   const _$CoreMiscellaneousEventTearOff();
 
 // ignore: unused_element
-  AppLaunchedEvent appLaunchedEvent() {
-    return const AppLaunchedEvent();
+  AppLaunched appLaunched() {
+    return const AppLaunched();
   }
 }
 
@@ -27,20 +27,20 @@ const $CoreMiscellaneousEvent = _$CoreMiscellaneousEventTearOff();
 mixin _$CoreMiscellaneousEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
-    @required TResult appLaunchedEvent(),
+    @required TResult appLaunched(),
   });
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
-    TResult appLaunchedEvent(),
+    TResult appLaunched(),
     @required TResult orElse(),
   });
   @optionalTypeArgs
   TResult map<TResult extends Object>({
-    @required TResult appLaunchedEvent(AppLaunchedEvent value),
+    @required TResult appLaunched(AppLaunched value),
   });
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
-    TResult appLaunchedEvent(AppLaunchedEvent value),
+    TResult appLaunched(AppLaunched value),
     @required TResult orElse(),
   });
 }
@@ -63,36 +63,36 @@ class _$CoreMiscellaneousEventCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class $AppLaunchedEventCopyWith<$Res> {
-  factory $AppLaunchedEventCopyWith(
-          AppLaunchedEvent value, $Res Function(AppLaunchedEvent) then) =
-      _$AppLaunchedEventCopyWithImpl<$Res>;
+abstract class $AppLaunchedCopyWith<$Res> {
+  factory $AppLaunchedCopyWith(
+          AppLaunched value, $Res Function(AppLaunched) then) =
+      _$AppLaunchedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$AppLaunchedEventCopyWithImpl<$Res>
+class _$AppLaunchedCopyWithImpl<$Res>
     extends _$CoreMiscellaneousEventCopyWithImpl<$Res>
-    implements $AppLaunchedEventCopyWith<$Res> {
-  _$AppLaunchedEventCopyWithImpl(
-      AppLaunchedEvent _value, $Res Function(AppLaunchedEvent) _then)
-      : super(_value, (v) => _then(v as AppLaunchedEvent));
+    implements $AppLaunchedCopyWith<$Res> {
+  _$AppLaunchedCopyWithImpl(
+      AppLaunched _value, $Res Function(AppLaunched) _then)
+      : super(_value, (v) => _then(v as AppLaunched));
 
   @override
-  AppLaunchedEvent get _value => super._value as AppLaunchedEvent;
+  AppLaunched get _value => super._value as AppLaunched;
 }
 
 /// @nodoc
-class _$AppLaunchedEvent implements AppLaunchedEvent {
-  const _$AppLaunchedEvent();
+class _$AppLaunched implements AppLaunched {
+  const _$AppLaunched();
 
   @override
   String toString() {
-    return 'CoreMiscellaneousEvent.appLaunchedEvent()';
+    return 'CoreMiscellaneousEvent.appLaunched()';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is AppLaunchedEvent);
+    return identical(this, other) || (other is AppLaunched);
   }
 
   @override
@@ -101,21 +101,21 @@ class _$AppLaunchedEvent implements AppLaunchedEvent {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
-    @required TResult appLaunchedEvent(),
+    @required TResult appLaunched(),
   }) {
-    assert(appLaunchedEvent != null);
-    return appLaunchedEvent();
+    assert(appLaunched != null);
+    return appLaunched();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
-    TResult appLaunchedEvent(),
+    TResult appLaunched(),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (appLaunchedEvent != null) {
-      return appLaunchedEvent();
+    if (appLaunched != null) {
+      return appLaunched();
     }
     return orElse();
   }
@@ -123,28 +123,28 @@ class _$AppLaunchedEvent implements AppLaunchedEvent {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object>({
-    @required TResult appLaunchedEvent(AppLaunchedEvent value),
+    @required TResult appLaunched(AppLaunched value),
   }) {
-    assert(appLaunchedEvent != null);
-    return appLaunchedEvent(this);
+    assert(appLaunched != null);
+    return appLaunched(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
-    TResult appLaunchedEvent(AppLaunchedEvent value),
+    TResult appLaunched(AppLaunched value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (appLaunchedEvent != null) {
-      return appLaunchedEvent(this);
+    if (appLaunched != null) {
+      return appLaunched(this);
     }
     return orElse();
   }
 }
 
-abstract class AppLaunchedEvent implements CoreMiscellaneousEvent {
-  const factory AppLaunchedEvent() = _$AppLaunchedEvent;
+abstract class AppLaunched implements CoreMiscellaneousEvent {
+  const factory AppLaunched() = _$AppLaunched;
 }
 
 /// @nodoc

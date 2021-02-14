@@ -39,7 +39,7 @@ class _$SplashDatabaseEventTearOff {
   }
 
 // ignore: unused_element
-  SessionFetchedEVT sessionFetchedEVT(Session session) {
+  SessionFetchedEVT sessionFetchedEVT(User session) {
     return SessionFetchedEVT(
       session,
     );
@@ -65,7 +65,7 @@ mixin _$SplashDatabaseEvent {
     @required TResult configFetchedEVT(),
     @required TResult placeholdersInitializedEVT(),
     @required TResult placeholdersLoadedEVT(Map<String, String> placeholders),
-    @required TResult sessionFetchedEVT(Session session),
+    @required TResult sessionFetchedEVT(User session),
     @required TResult userLoadedEVT(User user),
   });
   @optionalTypeArgs
@@ -74,7 +74,7 @@ mixin _$SplashDatabaseEvent {
     TResult configFetchedEVT(),
     TResult placeholdersInitializedEVT(),
     TResult placeholdersLoadedEVT(Map<String, String> placeholders),
-    TResult sessionFetchedEVT(Session session),
+    TResult sessionFetchedEVT(User session),
     TResult userLoadedEVT(User user),
     @required TResult orElse(),
   });
@@ -185,7 +185,7 @@ class _$AuthenticatedEVT implements AuthenticatedEVT {
     @required TResult configFetchedEVT(),
     @required TResult placeholdersInitializedEVT(),
     @required TResult placeholdersLoadedEVT(Map<String, String> placeholders),
-    @required TResult sessionFetchedEVT(Session session),
+    @required TResult sessionFetchedEVT(User session),
     @required TResult userLoadedEVT(User user),
   }) {
     assert(authenticatedEVT != null);
@@ -204,7 +204,7 @@ class _$AuthenticatedEVT implements AuthenticatedEVT {
     TResult configFetchedEVT(),
     TResult placeholdersInitializedEVT(),
     TResult placeholdersLoadedEVT(Map<String, String> placeholders),
-    TResult sessionFetchedEVT(Session session),
+    TResult sessionFetchedEVT(User session),
     TResult userLoadedEVT(User user),
     @required TResult orElse(),
   }) {
@@ -306,7 +306,7 @@ class _$ConfigFetchedEVT implements ConfigFetchedEVT {
     @required TResult configFetchedEVT(),
     @required TResult placeholdersInitializedEVT(),
     @required TResult placeholdersLoadedEVT(Map<String, String> placeholders),
-    @required TResult sessionFetchedEVT(Session session),
+    @required TResult sessionFetchedEVT(User session),
     @required TResult userLoadedEVT(User user),
   }) {
     assert(authenticatedEVT != null);
@@ -325,7 +325,7 @@ class _$ConfigFetchedEVT implements ConfigFetchedEVT {
     TResult configFetchedEVT(),
     TResult placeholdersInitializedEVT(),
     TResult placeholdersLoadedEVT(Map<String, String> placeholders),
-    TResult sessionFetchedEVT(Session session),
+    TResult sessionFetchedEVT(User session),
     TResult userLoadedEVT(User user),
     @required TResult orElse(),
   }) {
@@ -423,7 +423,7 @@ class _$PlaceholdersInitializedEVT implements PlaceholdersInitializedEVT {
     @required TResult configFetchedEVT(),
     @required TResult placeholdersInitializedEVT(),
     @required TResult placeholdersLoadedEVT(Map<String, String> placeholders),
-    @required TResult sessionFetchedEVT(Session session),
+    @required TResult sessionFetchedEVT(User session),
     @required TResult userLoadedEVT(User user),
   }) {
     assert(authenticatedEVT != null);
@@ -442,7 +442,7 @@ class _$PlaceholdersInitializedEVT implements PlaceholdersInitializedEVT {
     TResult configFetchedEVT(),
     TResult placeholdersInitializedEVT(),
     TResult placeholdersLoadedEVT(Map<String, String> placeholders),
-    TResult sessionFetchedEVT(Session session),
+    TResult sessionFetchedEVT(User session),
     TResult userLoadedEVT(User user),
     @required TResult orElse(),
   }) {
@@ -566,7 +566,7 @@ class _$PlaceholdersLoadedEVT implements PlaceholdersLoadedEVT {
     @required TResult configFetchedEVT(),
     @required TResult placeholdersInitializedEVT(),
     @required TResult placeholdersLoadedEVT(Map<String, String> placeholders),
-    @required TResult sessionFetchedEVT(Session session),
+    @required TResult sessionFetchedEVT(User session),
     @required TResult userLoadedEVT(User user),
   }) {
     assert(authenticatedEVT != null);
@@ -585,7 +585,7 @@ class _$PlaceholdersLoadedEVT implements PlaceholdersLoadedEVT {
     TResult configFetchedEVT(),
     TResult placeholdersInitializedEVT(),
     TResult placeholdersLoadedEVT(Map<String, String> placeholders),
-    TResult sessionFetchedEVT(Session session),
+    TResult sessionFetchedEVT(User session),
     TResult userLoadedEVT(User user),
     @required TResult orElse(),
   }) {
@@ -649,7 +649,7 @@ abstract class $SessionFetchedEVTCopyWith<$Res> {
   factory $SessionFetchedEVTCopyWith(
           SessionFetchedEVT value, $Res Function(SessionFetchedEVT) then) =
       _$SessionFetchedEVTCopyWithImpl<$Res>;
-  $Res call({Session session});
+  $Res call({User session});
 }
 
 /// @nodoc
@@ -668,7 +668,7 @@ class _$SessionFetchedEVTCopyWithImpl<$Res>
     Object session = freezed,
   }) {
     return _then(SessionFetchedEVT(
-      session == freezed ? _value.session : session as Session,
+      session == freezed ? _value.session : session as User,
     ));
   }
 }
@@ -678,7 +678,7 @@ class _$SessionFetchedEVT implements SessionFetchedEVT {
   const _$SessionFetchedEVT(this.session) : assert(session != null);
 
   @override
-  final Session session;
+  final User session;
 
   @override
   String toString() {
@@ -709,7 +709,7 @@ class _$SessionFetchedEVT implements SessionFetchedEVT {
     @required TResult configFetchedEVT(),
     @required TResult placeholdersInitializedEVT(),
     @required TResult placeholdersLoadedEVT(Map<String, String> placeholders),
-    @required TResult sessionFetchedEVT(Session session),
+    @required TResult sessionFetchedEVT(User session),
     @required TResult userLoadedEVT(User user),
   }) {
     assert(authenticatedEVT != null);
@@ -728,7 +728,7 @@ class _$SessionFetchedEVT implements SessionFetchedEVT {
     TResult configFetchedEVT(),
     TResult placeholdersInitializedEVT(),
     TResult placeholdersLoadedEVT(Map<String, String> placeholders),
-    TResult sessionFetchedEVT(Session session),
+    TResult sessionFetchedEVT(User session),
     TResult userLoadedEVT(User user),
     @required TResult orElse(),
   }) {
@@ -779,9 +779,9 @@ class _$SessionFetchedEVT implements SessionFetchedEVT {
 }
 
 abstract class SessionFetchedEVT implements SplashDatabaseEvent {
-  const factory SessionFetchedEVT(Session session) = _$SessionFetchedEVT;
+  const factory SessionFetchedEVT(User session) = _$SessionFetchedEVT;
 
-  Session get session;
+  User get session;
   @JsonKey(ignore: true)
   $SessionFetchedEVTCopyWith<SessionFetchedEVT> get copyWith;
 }
@@ -851,7 +851,7 @@ class _$UserLoadedEVT implements UserLoadedEVT {
     @required TResult configFetchedEVT(),
     @required TResult placeholdersInitializedEVT(),
     @required TResult placeholdersLoadedEVT(Map<String, String> placeholders),
-    @required TResult sessionFetchedEVT(Session session),
+    @required TResult sessionFetchedEVT(User session),
     @required TResult userLoadedEVT(User user),
   }) {
     assert(authenticatedEVT != null);
@@ -870,7 +870,7 @@ class _$UserLoadedEVT implements UserLoadedEVT {
     TResult configFetchedEVT(),
     TResult placeholdersInitializedEVT(),
     TResult placeholdersLoadedEVT(Map<String, String> placeholders),
-    TResult sessionFetchedEVT(Session session),
+    TResult sessionFetchedEVT(User session),
     TResult userLoadedEVT(User user),
     @required TResult orElse(),
   }) {

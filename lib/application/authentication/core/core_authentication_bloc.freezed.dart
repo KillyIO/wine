@@ -14,13 +14,13 @@ class _$CoreAuthenticationEventTearOff {
   const _$CoreAuthenticationEventTearOff();
 
 // ignore: unused_element
-  AppLaunchedEVT appLaunchedEVT() {
-    return const AppLaunchedEVT();
+  AppLaunched appLaunched() {
+    return const AppLaunched();
   }
 
 // ignore: unused_element
-  UserStatusChangedEVT userStatusChangedEVT() {
-    return const UserStatusChangedEVT();
+  UserStatusChanged userStatusChanged() {
+    return const UserStatusChanged();
   }
 }
 
@@ -32,24 +32,24 @@ const $CoreAuthenticationEvent = _$CoreAuthenticationEventTearOff();
 mixin _$CoreAuthenticationEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
-    @required TResult appLaunchedEVT(),
-    @required TResult userStatusChangedEVT(),
+    @required TResult appLaunched(),
+    @required TResult userStatusChanged(),
   });
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
-    TResult appLaunchedEVT(),
-    TResult userStatusChangedEVT(),
+    TResult appLaunched(),
+    TResult userStatusChanged(),
     @required TResult orElse(),
   });
   @optionalTypeArgs
   TResult map<TResult extends Object>({
-    @required TResult appLaunchedEVT(AppLaunchedEVT value),
-    @required TResult userStatusChangedEVT(UserStatusChangedEVT value),
+    @required TResult appLaunched(AppLaunched value),
+    @required TResult userStatusChanged(UserStatusChanged value),
   });
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
-    TResult appLaunchedEVT(AppLaunchedEVT value),
-    TResult userStatusChangedEVT(UserStatusChangedEVT value),
+    TResult appLaunched(AppLaunched value),
+    TResult userStatusChanged(UserStatusChanged value),
     @required TResult orElse(),
   });
 }
@@ -72,36 +72,36 @@ class _$CoreAuthenticationEventCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class $AppLaunchedEVTCopyWith<$Res> {
-  factory $AppLaunchedEVTCopyWith(
-          AppLaunchedEVT value, $Res Function(AppLaunchedEVT) then) =
-      _$AppLaunchedEVTCopyWithImpl<$Res>;
+abstract class $AppLaunchedCopyWith<$Res> {
+  factory $AppLaunchedCopyWith(
+          AppLaunched value, $Res Function(AppLaunched) then) =
+      _$AppLaunchedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$AppLaunchedEVTCopyWithImpl<$Res>
+class _$AppLaunchedCopyWithImpl<$Res>
     extends _$CoreAuthenticationEventCopyWithImpl<$Res>
-    implements $AppLaunchedEVTCopyWith<$Res> {
-  _$AppLaunchedEVTCopyWithImpl(
-      AppLaunchedEVT _value, $Res Function(AppLaunchedEVT) _then)
-      : super(_value, (v) => _then(v as AppLaunchedEVT));
+    implements $AppLaunchedCopyWith<$Res> {
+  _$AppLaunchedCopyWithImpl(
+      AppLaunched _value, $Res Function(AppLaunched) _then)
+      : super(_value, (v) => _then(v as AppLaunched));
 
   @override
-  AppLaunchedEVT get _value => super._value as AppLaunchedEVT;
+  AppLaunched get _value => super._value as AppLaunched;
 }
 
 /// @nodoc
-class _$AppLaunchedEVT implements AppLaunchedEVT {
-  const _$AppLaunchedEVT();
+class _$AppLaunched implements AppLaunched {
+  const _$AppLaunched();
 
   @override
   String toString() {
-    return 'CoreAuthenticationEvent.appLaunchedEVT()';
+    return 'CoreAuthenticationEvent.appLaunched()';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is AppLaunchedEVT);
+    return identical(this, other) || (other is AppLaunched);
   }
 
   @override
@@ -110,24 +110,24 @@ class _$AppLaunchedEVT implements AppLaunchedEVT {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
-    @required TResult appLaunchedEVT(),
-    @required TResult userStatusChangedEVT(),
+    @required TResult appLaunched(),
+    @required TResult userStatusChanged(),
   }) {
-    assert(appLaunchedEVT != null);
-    assert(userStatusChangedEVT != null);
-    return appLaunchedEVT();
+    assert(appLaunched != null);
+    assert(userStatusChanged != null);
+    return appLaunched();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
-    TResult appLaunchedEVT(),
-    TResult userStatusChangedEVT(),
+    TResult appLaunched(),
+    TResult userStatusChanged(),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (appLaunchedEVT != null) {
-      return appLaunchedEVT();
+    if (appLaunched != null) {
+      return appLaunched();
     }
     return orElse();
   }
@@ -135,64 +135,64 @@ class _$AppLaunchedEVT implements AppLaunchedEVT {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object>({
-    @required TResult appLaunchedEVT(AppLaunchedEVT value),
-    @required TResult userStatusChangedEVT(UserStatusChangedEVT value),
+    @required TResult appLaunched(AppLaunched value),
+    @required TResult userStatusChanged(UserStatusChanged value),
   }) {
-    assert(appLaunchedEVT != null);
-    assert(userStatusChangedEVT != null);
-    return appLaunchedEVT(this);
+    assert(appLaunched != null);
+    assert(userStatusChanged != null);
+    return appLaunched(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
-    TResult appLaunchedEVT(AppLaunchedEVT value),
-    TResult userStatusChangedEVT(UserStatusChangedEVT value),
+    TResult appLaunched(AppLaunched value),
+    TResult userStatusChanged(UserStatusChanged value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (appLaunchedEVT != null) {
-      return appLaunchedEVT(this);
+    if (appLaunched != null) {
+      return appLaunched(this);
     }
     return orElse();
   }
 }
 
-abstract class AppLaunchedEVT implements CoreAuthenticationEvent {
-  const factory AppLaunchedEVT() = _$AppLaunchedEVT;
+abstract class AppLaunched implements CoreAuthenticationEvent {
+  const factory AppLaunched() = _$AppLaunched;
 }
 
 /// @nodoc
-abstract class $UserStatusChangedEVTCopyWith<$Res> {
-  factory $UserStatusChangedEVTCopyWith(UserStatusChangedEVT value,
-          $Res Function(UserStatusChangedEVT) then) =
-      _$UserStatusChangedEVTCopyWithImpl<$Res>;
+abstract class $UserStatusChangedCopyWith<$Res> {
+  factory $UserStatusChangedCopyWith(
+          UserStatusChanged value, $Res Function(UserStatusChanged) then) =
+      _$UserStatusChangedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$UserStatusChangedEVTCopyWithImpl<$Res>
+class _$UserStatusChangedCopyWithImpl<$Res>
     extends _$CoreAuthenticationEventCopyWithImpl<$Res>
-    implements $UserStatusChangedEVTCopyWith<$Res> {
-  _$UserStatusChangedEVTCopyWithImpl(
-      UserStatusChangedEVT _value, $Res Function(UserStatusChangedEVT) _then)
-      : super(_value, (v) => _then(v as UserStatusChangedEVT));
+    implements $UserStatusChangedCopyWith<$Res> {
+  _$UserStatusChangedCopyWithImpl(
+      UserStatusChanged _value, $Res Function(UserStatusChanged) _then)
+      : super(_value, (v) => _then(v as UserStatusChanged));
 
   @override
-  UserStatusChangedEVT get _value => super._value as UserStatusChangedEVT;
+  UserStatusChanged get _value => super._value as UserStatusChanged;
 }
 
 /// @nodoc
-class _$UserStatusChangedEVT implements UserStatusChangedEVT {
-  const _$UserStatusChangedEVT();
+class _$UserStatusChanged implements UserStatusChanged {
+  const _$UserStatusChanged();
 
   @override
   String toString() {
-    return 'CoreAuthenticationEvent.userStatusChangedEVT()';
+    return 'CoreAuthenticationEvent.userStatusChanged()';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is UserStatusChangedEVT);
+    return identical(this, other) || (other is UserStatusChanged);
   }
 
   @override
@@ -201,24 +201,24 @@ class _$UserStatusChangedEVT implements UserStatusChangedEVT {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
-    @required TResult appLaunchedEVT(),
-    @required TResult userStatusChangedEVT(),
+    @required TResult appLaunched(),
+    @required TResult userStatusChanged(),
   }) {
-    assert(appLaunchedEVT != null);
-    assert(userStatusChangedEVT != null);
-    return userStatusChangedEVT();
+    assert(appLaunched != null);
+    assert(userStatusChanged != null);
+    return userStatusChanged();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
-    TResult appLaunchedEVT(),
-    TResult userStatusChangedEVT(),
+    TResult appLaunched(),
+    TResult userStatusChanged(),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (userStatusChangedEVT != null) {
-      return userStatusChangedEVT();
+    if (userStatusChanged != null) {
+      return userStatusChanged();
     }
     return orElse();
   }
@@ -226,31 +226,31 @@ class _$UserStatusChangedEVT implements UserStatusChangedEVT {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object>({
-    @required TResult appLaunchedEVT(AppLaunchedEVT value),
-    @required TResult userStatusChangedEVT(UserStatusChangedEVT value),
+    @required TResult appLaunched(AppLaunched value),
+    @required TResult userStatusChanged(UserStatusChanged value),
   }) {
-    assert(appLaunchedEVT != null);
-    assert(userStatusChangedEVT != null);
-    return userStatusChangedEVT(this);
+    assert(appLaunched != null);
+    assert(userStatusChanged != null);
+    return userStatusChanged(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
-    TResult appLaunchedEVT(AppLaunchedEVT value),
-    TResult userStatusChangedEVT(UserStatusChangedEVT value),
+    TResult appLaunched(AppLaunched value),
+    TResult userStatusChanged(UserStatusChanged value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (userStatusChangedEVT != null) {
-      return userStatusChangedEVT(this);
+    if (userStatusChanged != null) {
+      return userStatusChanged(this);
     }
     return orElse();
   }
 }
 
-abstract class UserStatusChangedEVT implements CoreAuthenticationEvent {
-  const factory UserStatusChangedEVT() = _$UserStatusChangedEVT;
+abstract class UserStatusChanged implements CoreAuthenticationEvent {
+  const factory UserStatusChanged() = _$UserStatusChanged;
 }
 
 /// @nodoc

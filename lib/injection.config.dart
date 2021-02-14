@@ -45,6 +45,7 @@ import 'domain/database/facades/online/i_online_placeholder_database_facade.dart
 import 'domain/database/facades/online/i_online_series_database_facade.dart';
 import 'domain/database/facades/online/i_online_series_draft_database_facade.dart';
 import 'domain/database/facades/local/i_session_database_facade.dart';
+import 'domain/database/facades/online/i_user_database_facade.dart';
 import 'application/database/library/library_database_bloc.dart';
 import 'application/navigation/library/library_navigation_bloc.dart';
 import 'application/database/series/series_database_bloc.dart';
@@ -85,8 +86,6 @@ Future<GetIt> $initGetIt(
   gh.lazySingleton<FirebaseFirestore>(() => firebaseInjectableModule.firestore);
   gh.lazySingleton<FirebaseStorage>(
       () => firebaseInjectableModule.firebaseStorage);
-  gh.lazySingleton<FirebaseUserDatabaseFacade>(
-      () => FirebaseUserDatabaseFacade(get<FirebaseFirestore>()));
   gh.lazySingleton<GoogleSignIn>(() => firebaseInjectableModule.googleSignIn);
   gh.factory<HomeNavigationBloc>(() => HomeNavigationBloc());
   gh.lazySingleton<IAuthenticationFacade>(() => FirebaseAuthenticationFacade(
@@ -114,6 +113,8 @@ Future<GetIt> $initGetIt(
           get<FirebaseFirestore>(), get<FirebaseStorage>()));
   gh.lazySingleton<ISessionDatabaseFacade>(
       () => HiveSessionDatabaseFacade(get<hive1.Box<User>>()));
+  gh.lazySingleton<IUserDatabaseFacade>(
+      () => FirebaseUserDatabaseFacade(get<FirebaseFirestore>()));
   gh.factory<LibraryDatabaseBloc>(() => LibraryDatabaseBloc(
         get(),
         get<IOnlineSeriesDatabaseFacade>(),
@@ -161,12 +162,12 @@ Future<GetIt> $initGetIt(
         get<ISessionDatabaseFacade>(),
       ));
   gh.factory<ChapterEditorDatabaseBloc>(() => ChapterEditorDatabaseBloc(
-        get(),
         get<IOnlineChapterDatabaseFacade>(),
         get<IOnlineChapterDraftDatabaseFacade>(),
         get<IOnlineSeriesDatabaseFacade>(),
         get<IOnlineSeriesDraftDatabaseFacade>(),
         get<ILocalPlaceholderDatabaseFacade>(),
+        get<ISessionDatabaseFacade>(),
       ));
   gh.factory<ChapterSettingsDatabaseBloc>(
       () => ChapterSettingsDatabaseBloc(get<ILocalConfigDatabaseFacade>()));

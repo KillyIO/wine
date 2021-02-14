@@ -26,10 +26,10 @@ class CoreAuthenticationBloc
     CoreAuthenticationEvent event,
   ) async* {
     yield* event.map(
-      appLaunchedEVT: (event) async* {
+      appLaunched: (event) async* {
         yield state.copyWith(isAnonymous: _authenticationFacade.isAnonymous());
       },
-      userStatusChangedEVT: (event) async* {
+      userStatusChanged: (event) async* {
         yield state.copyWith(isAnonymous: _authenticationFacade.isAnonymous());
       },
     );

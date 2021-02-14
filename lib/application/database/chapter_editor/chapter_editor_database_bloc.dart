@@ -11,15 +11,13 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:image_cropper/image_cropper.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:injectable/injectable.dart';
-import 'package:models/models.dart';
 import 'package:path/path.dart' as p;
 import 'package:path_provider/path_provider.dart';
 import 'package:uuid/uuid.dart';
 
-import 'package:wine/domain/database/copyrights.dart';
 import 'package:wine/domain/database/database_failure.dart';
 import 'package:wine/domain/database/facades/local/i_local_placeholder_database_facade.dart';
-import 'package:wine/domain/database/facades/local/i_local_session_database_facade.dart';
+import 'package:wine/domain/database/facades/local/i_session_database_facade.dart';
 import 'package:wine/domain/database/facades/online/i_online_chapter_database_facade.dart';
 import 'package:wine/domain/database/facades/online/i_online_chapter_draft_database_facade.dart';
 import 'package:wine/domain/database/facades/online/i_online_series_database_facade.dart';
@@ -27,6 +25,7 @@ import 'package:wine/domain/database/facades/online/i_online_series_draft_databa
 import 'package:wine/domain/database/failures/placeholder_database_failure.dart';
 import 'package:wine/domain/database/genre.dart';
 import 'package:wine/domain/database/language.dart';
+import 'package:wine/domain/database/licence.dart';
 import 'package:wine/domain/database/story.dart';
 import 'package:wine/domain/database/successes/chapter_database_success.dart';
 import 'package:wine/domain/database/successes/chapter_draft_database_success.dart';
@@ -36,10 +35,9 @@ import 'package:wine/domain/database/successes/series_draft_database_success.dar
 import 'package:wine/domain/database/successes/session_database_success.dart';
 import 'package:wine/domain/database/title.dart';
 import 'package:wine/domain/enums/editor_content_origin.dart';
+import 'package:wine/domain/models/chapter.dart';
 import 'package:wine/domain/models/series.dart';
 import 'package:wine/utils/constants.dart';
-import 'package:wine/utils/extensions.dart';
-import 'package:wine/utils/getters.dart';
 
 part 'chapter_editor_database_bloc.freezed.dart';
 part 'chapter_editor_database_event.dart';
@@ -48,24 +46,23 @@ part 'chapter_editor_database_state.dart';
 /// @nodoc
 @injectable
 class ChapterEditorDatabaseBloc
-    extends Bloc<ChapterEditorDatabaseEvent, ChapterEditorDatabaseState>
-    with Getters {
+    extends Bloc<ChapterEditorDatabaseEvent, ChapterEditorDatabaseState> {
   /// @nodoc
   ChapterEditorDatabaseBloc(
-    this._localSessionDatabaseFacade,
     this._onlineChapterDatabaseFacade,
     this._onlineChapterDraftDatabaseFacade,
     this._onlineSeriesDatabaseFacade,
     this._onlineSeriesDraftDatabaseFacade,
     this._localPlaceholderDatabaseFacade,
+    this._sessionDatabaseFacade,
   ) : super(ChapterEditorDatabaseState.initial());
 
-  final ILocalSessionDatabaseFacade _localSessionDatabaseFacade;
   final IOnlineChapterDatabaseFacade _onlineChapterDatabaseFacade;
   final IOnlineChapterDraftDatabaseFacade _onlineChapterDraftDatabaseFacade;
   final IOnlineSeriesDatabaseFacade _onlineSeriesDatabaseFacade;
   final IOnlineSeriesDraftDatabaseFacade _onlineSeriesDraftDatabaseFacade;
   final ILocalPlaceholderDatabaseFacade _localPlaceholderDatabaseFacade;
+  final ISessionDatabaseFacade _sessionDatabaseFacade;
 
   /// @nodoc
   final StringProcessor tps = StringProcessor();

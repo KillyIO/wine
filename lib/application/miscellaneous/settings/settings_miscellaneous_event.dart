@@ -4,6 +4,6 @@ part of 'settings_miscellaneous_bloc.dart';
 @freezed
 abstract class SettingsMiscellaneousEvent with _$SettingsMiscellaneousEvent {
   /// @nodoc
-  const factory SettingsMiscellaneousEvent.settingsLaunchedEvent() =
-      SettingsLaunchedEvent;
+  const factory SettingsMiscellaneousEvent.settingsLaunched() =
+      SettingsLaunched;
 }

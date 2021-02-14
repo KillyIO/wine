@@ -14,22 +14,71 @@ class _$ChapterEditorDatabaseEventTearOff {
   const _$ChapterEditorDatabaseEventTearOff();
 
 // ignore: unused_element
-  AddCoverPressedEVT addCoverPressedEVT() {
-    return const AddCoverPressedEVT();
+  AddCoverPressedEvent addCoverPressedEvent() {
+    return const AddCoverPressedEvent();
   }
 
 // ignore: unused_element
-  ChapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT
-      chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT() {
-    return const ChapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT();
+  ChapterDraftDeletedOrPublishedEvent chapterDraftDeletedOrPublishedEvent() {
+    return const ChapterDraftDeletedOrPublishedEvent();
   }
 
 // ignore: unused_element
-  ChapterEditorLaunchedFromLibraryEVT chapterEditorLaunchedFromLibraryEVT(
-      BuildContext context,
-      Chapter chapterDraft,
-      EditorContentOrigin editorContentOrigin) {
-    return ChapterEditorLaunchedFromLibraryEVT(
+  ChapterPublishedEvent chapterPublishedEvent() {
+    return const ChapterPublishedEvent();
+  }
+
+// ignore: unused_element
+  DeleteDraftButtonPressedEvent deleteDraftButtonPressedEvent() {
+    return const DeleteDraftButtonPressedEvent();
+  }
+
+// ignore: unused_element
+  GenreOptionalSelectedEvent genreOptionalSelectedEvent(String genreOptional) {
+    return GenreOptionalSelectedEvent(
+      genreOptional,
+    );
+  }
+
+// ignore: unused_element
+  GenreSelectedEvent genreSelectedEvent(String genre) {
+    return GenreSelectedEvent(
+      genre,
+    );
+  }
+
+// ignore: unused_element
+  InitializedWithPreviousChapterOrSeriesDraftEvent
+      initializedWithPreviousChapterOrSeriesDraftEvent() {
+    return const InitializedWithPreviousChapterOrSeriesDraftEvent();
+  }
+
+// ignore: unused_element
+  IsLastChapterChangedEvent isLastChapterChangedEvent(
+      {@required bool isLastChapter}) {
+    return IsLastChapterChangedEvent(
+      isLastChapter: isLastChapter,
+    );
+  }
+
+// ignore: unused_element
+  IsNSFWChangedEvent isNSFWChangedEvent({@required bool isNSFW}) {
+    return IsNSFWChangedEvent(
+      isNSFW: isNSFW,
+    );
+  }
+
+// ignore: unused_element
+  LanguageSelectedEvent languageSelectedEvent(String language) {
+    return LanguageSelectedEvent(
+      language,
+    );
+  }
+
+// ignore: unused_element
+  LaunchedFromLibraryEvent launchedFromLibraryEvent(BuildContext context,
+      Chapter chapterDraft, EditorContentOrigin editorContentOrigin) {
+    return LaunchedFromLibraryEvent(
       context,
       chapterDraft,
       editorContentOrigin,
@@ -37,10 +86,11 @@ class _$ChapterEditorDatabaseEventTearOff {
   }
 
 // ignore: unused_element
-  ChapterEditorLaunchedFromPreviousChapterEVT
-      chapterEditorLaunchedFromPreviousChapterEVT(BuildContext context,
-          Chapter previousChapter, EditorContentOrigin editorContentOrigin) {
-    return ChapterEditorLaunchedFromPreviousChapterEVT(
+  LaunchedFromPreviousChapterEvent launchedFromPreviousChapterEvent(
+      BuildContext context,
+      Chapter previousChapter,
+      EditorContentOrigin editorContentOrigin) {
+    return LaunchedFromPreviousChapterEvent(
       context,
       previousChapter,
       editorContentOrigin,
@@ -48,10 +98,11 @@ class _$ChapterEditorDatabaseEventTearOff {
   }
 
 // ignore: unused_element
-  ChapterEditorLaunchedFromSeriesEditorEVT
-      chapterEditorLaunchedFromSeriesEditorEVT(BuildContext context,
-          EditorContentOrigin editorContentOrigin, Series seriesDraft) {
-    return ChapterEditorLaunchedFromSeriesEditorEVT(
+  LaunchedFromSeriesEditorEvent launchedFromSeriesEditorEvent(
+      BuildContext context,
+      EditorContentOrigin editorContentOrigin,
+      Series seriesDraft) {
+    return LaunchedFromSeriesEditorEvent(
       context,
       editorContentOrigin,
       seriesDraft,
@@ -59,102 +110,51 @@ class _$ChapterEditorDatabaseEventTearOff {
   }
 
 // ignore: unused_element
-  ChapterDraftDeletedOrPublishedEVT chapterDraftDeletedOrPublishedEVT() {
-    return const ChapterDraftDeletedOrPublishedEVT();
-  }
-
-// ignore: unused_element
-  ChapterPublishedEVT chapterPublishedEVT() {
-    return const ChapterPublishedEVT();
-  }
-
-// ignore: unused_element
-  CopyrightsSelectedEVT copyrightsSelectedEVT(String copyrights) {
-    return CopyrightsSelectedEVT(
-      copyrights,
+  LicenceSelectedEvent licenceSelectedEvent(String licence) {
+    return LicenceSelectedEvent(
+      licence,
     );
   }
 
 // ignore: unused_element
-  DeleteDraftButtonPressedEVT deleteDraftButtonPressedEVT() {
-    return const DeleteDraftButtonPressedEVT();
+  PublishButtonPressedEvent publishButtonPressedEvent() {
+    return const PublishButtonPressedEvent();
   }
 
 // ignore: unused_element
-  GenreOptionalSelectedEVT genreOptionalSelectedEVT(String genreOptional) {
-    return GenreOptionalSelectedEVT(
-      genreOptional,
-    );
+  SaveOrBackButtonPressedEvent saveOrBackButtonPressedEvent() {
+    return const SaveOrBackButtonPressedEvent();
   }
 
 // ignore: unused_element
-  GenreSelectedEVT genreSelectedEVT(String genre) {
-    return GenreSelectedEVT(
-      genre,
-    );
-  }
-
-// ignore: unused_element
-  IsLastChapterChangedEVT isLastChapterChangedEVT(
-      {@required bool isLastChapter}) {
-    return IsLastChapterChangedEVT(
-      isLastChapter: isLastChapter,
-    );
-  }
-
-// ignore: unused_element
-  IsNSFWChangedEVT isNSFWChangedEVT({@required bool isNSFW}) {
-    return IsNSFWChangedEVT(
-      isNSFW: isNSFW,
-    );
-  }
-
-// ignore: unused_element
-  LanguageSelectedEVT languageSelectedEVT(String language) {
-    return LanguageSelectedEVT(
-      language,
-    );
-  }
-
-// ignore: unused_element
-  PublishButtonPressedEVT publishButtonPressedEVT() {
-    return const PublishButtonPressedEVT();
-  }
-
-// ignore: unused_element
-  SaveOrBackButtonPressedEVT saveOrBackButtonPressedEVT() {
-    return const SaveOrBackButtonPressedEVT();
-  }
-
-// ignore: unused_element
-  SeriesDraftLoadedEVT seriesDraftLoadedEVT(Series seriesDraft) {
-    return SeriesDraftLoadedEVT(
+  SeriesDraftLoadedEvent seriesDraftLoadedEvent(Series seriesDraft) {
+    return SeriesDraftLoadedEvent(
       seriesDraft,
     );
   }
 
 // ignore: unused_element
-  SeriesPublishedEVT seriesPublishedEVT(String seriesDraftUID) {
-    return SeriesPublishedEVT(
+  SeriesPublishedEvent seriesPublishedEvent(String seriesDraftUID) {
+    return SeriesPublishedEvent(
       seriesDraftUID,
     );
   }
 
 // ignore: unused_element
-  SessionFetchedEVT sessionFetchedEVT() {
-    return const SessionFetchedEVT();
+  SessionFetchedEvent sessionFetchedEvent() {
+    return const SessionFetchedEvent();
   }
 
 // ignore: unused_element
-  StoryChangedEVT storyChangedEVT(String story) {
-    return StoryChangedEVT(
+  StoryChangedEvent storyChangedEvent(String story) {
+    return StoryChangedEvent(
       story,
     );
   }
 
 // ignore: unused_element
-  TitleChangedEVT titleChangedEVT(String title) {
-    return TitleChangedEVT(
+  TitleChangedEvent titleChangedEvent(String title) {
+    return TitleChangedEvent(
       title,
     );
   }
@@ -168,129 +168,127 @@ const $ChapterEditorDatabaseEvent = _$ChapterEditorDatabaseEventTearOff();
 mixin _$ChapterEditorDatabaseEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
-    @required TResult addCoverPressedEVT(),
+    @required TResult addCoverPressedEvent(),
+    @required TResult chapterDraftDeletedOrPublishedEvent(),
+    @required TResult chapterPublishedEvent(),
+    @required TResult deleteDraftButtonPressedEvent(),
+    @required TResult genreOptionalSelectedEvent(String genreOptional),
+    @required TResult genreSelectedEvent(String genre),
+    @required TResult initializedWithPreviousChapterOrSeriesDraftEvent(),
+    @required TResult isLastChapterChangedEvent(bool isLastChapter),
+    @required TResult isNSFWChangedEvent(bool isNSFW),
+    @required TResult languageSelectedEvent(String language),
     @required
-        TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(),
-    @required
-        TResult chapterEditorLaunchedFromLibraryEVT(BuildContext context,
+        TResult launchedFromLibraryEvent(BuildContext context,
             Chapter chapterDraft, EditorContentOrigin editorContentOrigin),
     @required
-        TResult chapterEditorLaunchedFromPreviousChapterEVT(
-            BuildContext context,
-            Chapter previousChapter,
-            EditorContentOrigin editorContentOrigin),
+        TResult launchedFromPreviousChapterEvent(BuildContext context,
+            Chapter previousChapter, EditorContentOrigin editorContentOrigin),
     @required
-        TResult chapterEditorLaunchedFromSeriesEditorEVT(BuildContext context,
+        TResult launchedFromSeriesEditorEvent(BuildContext context,
             EditorContentOrigin editorContentOrigin, Series seriesDraft),
-    @required TResult chapterDraftDeletedOrPublishedEVT(),
-    @required TResult chapterPublishedEVT(),
-    @required TResult copyrightsSelectedEVT(String copyrights),
-    @required TResult deleteDraftButtonPressedEVT(),
-    @required TResult genreOptionalSelectedEVT(String genreOptional),
-    @required TResult genreSelectedEVT(String genre),
-    @required TResult isLastChapterChangedEVT(bool isLastChapter),
-    @required TResult isNSFWChangedEVT(bool isNSFW),
-    @required TResult languageSelectedEVT(String language),
-    @required TResult publishButtonPressedEVT(),
-    @required TResult saveOrBackButtonPressedEVT(),
-    @required TResult seriesDraftLoadedEVT(Series seriesDraft),
-    @required TResult seriesPublishedEVT(String seriesDraftUID),
-    @required TResult sessionFetchedEVT(),
-    @required TResult storyChangedEVT(String story),
-    @required TResult titleChangedEVT(String title),
+    @required TResult licenceSelectedEvent(String licence),
+    @required TResult publishButtonPressedEvent(),
+    @required TResult saveOrBackButtonPressedEvent(),
+    @required TResult seriesDraftLoadedEvent(Series seriesDraft),
+    @required TResult seriesPublishedEvent(String seriesDraftUID),
+    @required TResult sessionFetchedEvent(),
+    @required TResult storyChangedEvent(String story),
+    @required TResult titleChangedEvent(String title),
   });
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
-    TResult addCoverPressedEVT(),
-    TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(),
-    TResult chapterEditorLaunchedFromLibraryEVT(BuildContext context,
-        Chapter chapterDraft, EditorContentOrigin editorContentOrigin),
-    TResult chapterEditorLaunchedFromPreviousChapterEVT(BuildContext context,
+    TResult addCoverPressedEvent(),
+    TResult chapterDraftDeletedOrPublishedEvent(),
+    TResult chapterPublishedEvent(),
+    TResult deleteDraftButtonPressedEvent(),
+    TResult genreOptionalSelectedEvent(String genreOptional),
+    TResult genreSelectedEvent(String genre),
+    TResult initializedWithPreviousChapterOrSeriesDraftEvent(),
+    TResult isLastChapterChangedEvent(bool isLastChapter),
+    TResult isNSFWChangedEvent(bool isNSFW),
+    TResult languageSelectedEvent(String language),
+    TResult launchedFromLibraryEvent(BuildContext context, Chapter chapterDraft,
+        EditorContentOrigin editorContentOrigin),
+    TResult launchedFromPreviousChapterEvent(BuildContext context,
         Chapter previousChapter, EditorContentOrigin editorContentOrigin),
-    TResult chapterEditorLaunchedFromSeriesEditorEVT(BuildContext context,
+    TResult launchedFromSeriesEditorEvent(BuildContext context,
         EditorContentOrigin editorContentOrigin, Series seriesDraft),
-    TResult chapterDraftDeletedOrPublishedEVT(),
-    TResult chapterPublishedEVT(),
-    TResult copyrightsSelectedEVT(String copyrights),
-    TResult deleteDraftButtonPressedEVT(),
-    TResult genreOptionalSelectedEVT(String genreOptional),
-    TResult genreSelectedEVT(String genre),
-    TResult isLastChapterChangedEVT(bool isLastChapter),
-    TResult isNSFWChangedEVT(bool isNSFW),
-    TResult languageSelectedEVT(String language),
-    TResult publishButtonPressedEVT(),
-    TResult saveOrBackButtonPressedEVT(),
-    TResult seriesDraftLoadedEVT(Series seriesDraft),
-    TResult seriesPublishedEVT(String seriesDraftUID),
-    TResult sessionFetchedEVT(),
-    TResult storyChangedEVT(String story),
-    TResult titleChangedEVT(String title),
+    TResult licenceSelectedEvent(String licence),
+    TResult publishButtonPressedEvent(),
+    TResult saveOrBackButtonPressedEvent(),
+    TResult seriesDraftLoadedEvent(Series seriesDraft),
+    TResult seriesPublishedEvent(String seriesDraftUID),
+    TResult sessionFetchedEvent(),
+    TResult storyChangedEvent(String story),
+    TResult titleChangedEvent(String title),
     @required TResult orElse(),
   });
   @optionalTypeArgs
   TResult map<TResult extends Object>({
-    @required TResult addCoverPressedEVT(AddCoverPressedEVT value),
+    @required TResult addCoverPressedEvent(AddCoverPressedEvent value),
     @required
-        TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(
-            ChapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT value),
+        TResult chapterDraftDeletedOrPublishedEvent(
+            ChapterDraftDeletedOrPublishedEvent value),
+    @required TResult chapterPublishedEvent(ChapterPublishedEvent value),
     @required
-        TResult chapterEditorLaunchedFromLibraryEVT(
-            ChapterEditorLaunchedFromLibraryEVT value),
+        TResult deleteDraftButtonPressedEvent(
+            DeleteDraftButtonPressedEvent value),
     @required
-        TResult chapterEditorLaunchedFromPreviousChapterEVT(
-            ChapterEditorLaunchedFromPreviousChapterEVT value),
+        TResult genreOptionalSelectedEvent(GenreOptionalSelectedEvent value),
+    @required TResult genreSelectedEvent(GenreSelectedEvent value),
     @required
-        TResult chapterEditorLaunchedFromSeriesEditorEVT(
-            ChapterEditorLaunchedFromSeriesEditorEVT value),
+        TResult initializedWithPreviousChapterOrSeriesDraftEvent(
+            InitializedWithPreviousChapterOrSeriesDraftEvent value),
     @required
-        TResult chapterDraftDeletedOrPublishedEVT(
-            ChapterDraftDeletedOrPublishedEVT value),
-    @required TResult chapterPublishedEVT(ChapterPublishedEVT value),
-    @required TResult copyrightsSelectedEVT(CopyrightsSelectedEVT value),
+        TResult isLastChapterChangedEvent(IsLastChapterChangedEvent value),
+    @required TResult isNSFWChangedEvent(IsNSFWChangedEvent value),
+    @required TResult languageSelectedEvent(LanguageSelectedEvent value),
+    @required TResult launchedFromLibraryEvent(LaunchedFromLibraryEvent value),
     @required
-        TResult deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
-    @required TResult genreOptionalSelectedEVT(GenreOptionalSelectedEVT value),
-    @required TResult genreSelectedEVT(GenreSelectedEVT value),
-    @required TResult isLastChapterChangedEVT(IsLastChapterChangedEVT value),
-    @required TResult isNSFWChangedEVT(IsNSFWChangedEVT value),
-    @required TResult languageSelectedEVT(LanguageSelectedEVT value),
-    @required TResult publishButtonPressedEVT(PublishButtonPressedEVT value),
+        TResult launchedFromPreviousChapterEvent(
+            LaunchedFromPreviousChapterEvent value),
     @required
-        TResult saveOrBackButtonPressedEVT(SaveOrBackButtonPressedEVT value),
-    @required TResult seriesDraftLoadedEVT(SeriesDraftLoadedEVT value),
-    @required TResult seriesPublishedEVT(SeriesPublishedEVT value),
-    @required TResult sessionFetchedEVT(SessionFetchedEVT value),
-    @required TResult storyChangedEVT(StoryChangedEVT value),
-    @required TResult titleChangedEVT(TitleChangedEVT value),
+        TResult launchedFromSeriesEditorEvent(
+            LaunchedFromSeriesEditorEvent value),
+    @required TResult licenceSelectedEvent(LicenceSelectedEvent value),
+    @required
+        TResult publishButtonPressedEvent(PublishButtonPressedEvent value),
+    @required
+        TResult saveOrBackButtonPressedEvent(
+            SaveOrBackButtonPressedEvent value),
+    @required TResult seriesDraftLoadedEvent(SeriesDraftLoadedEvent value),
+    @required TResult seriesPublishedEvent(SeriesPublishedEvent value),
+    @required TResult sessionFetchedEvent(SessionFetchedEvent value),
+    @required TResult storyChangedEvent(StoryChangedEvent value),
+    @required TResult titleChangedEvent(TitleChangedEvent value),
   });
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
-    TResult addCoverPressedEVT(AddCoverPressedEVT value),
-    TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(
-        ChapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT value),
-    TResult chapterEditorLaunchedFromLibraryEVT(
-        ChapterEditorLaunchedFromLibraryEVT value),
-    TResult chapterEditorLaunchedFromPreviousChapterEVT(
-        ChapterEditorLaunchedFromPreviousChapterEVT value),
-    TResult chapterEditorLaunchedFromSeriesEditorEVT(
-        ChapterEditorLaunchedFromSeriesEditorEVT value),
-    TResult chapterDraftDeletedOrPublishedEVT(
-        ChapterDraftDeletedOrPublishedEVT value),
-    TResult chapterPublishedEVT(ChapterPublishedEVT value),
-    TResult copyrightsSelectedEVT(CopyrightsSelectedEVT value),
-    TResult deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
-    TResult genreOptionalSelectedEVT(GenreOptionalSelectedEVT value),
-    TResult genreSelectedEVT(GenreSelectedEVT value),
-    TResult isLastChapterChangedEVT(IsLastChapterChangedEVT value),
-    TResult isNSFWChangedEVT(IsNSFWChangedEVT value),
-    TResult languageSelectedEVT(LanguageSelectedEVT value),
-    TResult publishButtonPressedEVT(PublishButtonPressedEVT value),
-    TResult saveOrBackButtonPressedEVT(SaveOrBackButtonPressedEVT value),
-    TResult seriesDraftLoadedEVT(SeriesDraftLoadedEVT value),
-    TResult seriesPublishedEVT(SeriesPublishedEVT value),
-    TResult sessionFetchedEVT(SessionFetchedEVT value),
-    TResult storyChangedEVT(StoryChangedEVT value),
-    TResult titleChangedEVT(TitleChangedEVT value),
+    TResult addCoverPressedEvent(AddCoverPressedEvent value),
+    TResult chapterDraftDeletedOrPublishedEvent(
+        ChapterDraftDeletedOrPublishedEvent value),
+    TResult chapterPublishedEvent(ChapterPublishedEvent value),
+    TResult deleteDraftButtonPressedEvent(DeleteDraftButtonPressedEvent value),
+    TResult genreOptionalSelectedEvent(GenreOptionalSelectedEvent value),
+    TResult genreSelectedEvent(GenreSelectedEvent value),
+    TResult initializedWithPreviousChapterOrSeriesDraftEvent(
+        InitializedWithPreviousChapterOrSeriesDraftEvent value),
+    TResult isLastChapterChangedEvent(IsLastChapterChangedEvent value),
+    TResult isNSFWChangedEvent(IsNSFWChangedEvent value),
+    TResult languageSelectedEvent(LanguageSelectedEvent value),
+    TResult launchedFromLibraryEvent(LaunchedFromLibraryEvent value),
+    TResult launchedFromPreviousChapterEvent(
+        LaunchedFromPreviousChapterEvent value),
+    TResult launchedFromSeriesEditorEvent(LaunchedFromSeriesEditorEvent value),
+    TResult licenceSelectedEvent(LicenceSelectedEvent value),
+    TResult publishButtonPressedEvent(PublishButtonPressedEvent value),
+    TResult saveOrBackButtonPressedEvent(SaveOrBackButtonPressedEvent value),
+    TResult seriesDraftLoadedEvent(SeriesDraftLoadedEvent value),
+    TResult seriesPublishedEvent(SeriesPublishedEvent value),
+    TResult sessionFetchedEvent(SessionFetchedEvent value),
+    TResult storyChangedEvent(StoryChangedEvent value),
+    TResult titleChangedEvent(TitleChangedEvent value),
     @required TResult orElse(),
   });
 }
@@ -313,33 +311,33 @@ class _$ChapterEditorDatabaseEventCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class $AddCoverPressedEVTCopyWith<$Res> {
-  factory $AddCoverPressedEVTCopyWith(
-          AddCoverPressedEVT value, $Res Function(AddCoverPressedEVT) then) =
-      _$AddCoverPressedEVTCopyWithImpl<$Res>;
+abstract class $AddCoverPressedEventCopyWith<$Res> {
+  factory $AddCoverPressedEventCopyWith(AddCoverPressedEvent value,
+          $Res Function(AddCoverPressedEvent) then) =
+      _$AddCoverPressedEventCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$AddCoverPressedEVTCopyWithImpl<$Res>
+class _$AddCoverPressedEventCopyWithImpl<$Res>
     extends _$ChapterEditorDatabaseEventCopyWithImpl<$Res>
-    implements $AddCoverPressedEVTCopyWith<$Res> {
-  _$AddCoverPressedEVTCopyWithImpl(
-      AddCoverPressedEVT _value, $Res Function(AddCoverPressedEVT) _then)
-      : super(_value, (v) => _then(v as AddCoverPressedEVT));
+    implements $AddCoverPressedEventCopyWith<$Res> {
+  _$AddCoverPressedEventCopyWithImpl(
+      AddCoverPressedEvent _value, $Res Function(AddCoverPressedEvent) _then)
+      : super(_value, (v) => _then(v as AddCoverPressedEvent));
 
   @override
-  AddCoverPressedEVT get _value => super._value as AddCoverPressedEVT;
+  AddCoverPressedEvent get _value => super._value as AddCoverPressedEvent;
 }
 
 /// @nodoc
-class _$AddCoverPressedEVT
+class _$AddCoverPressedEvent
     with DiagnosticableTreeMixin
-    implements AddCoverPressedEVT {
-  const _$AddCoverPressedEVT();
+    implements AddCoverPressedEvent {
+  const _$AddCoverPressedEvent();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'ChapterEditorDatabaseEvent.addCoverPressedEVT()';
+    return 'ChapterEditorDatabaseEvent.addCoverPressedEvent()';
   }
 
   @override
@@ -347,12 +345,12 @@ class _$AddCoverPressedEVT
     super.debugFillProperties(properties);
     properties
       ..add(DiagnosticsProperty(
-          'type', 'ChapterEditorDatabaseEvent.addCoverPressedEVT'));
+          'type', 'ChapterEditorDatabaseEvent.addCoverPressedEvent'));
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is AddCoverPressedEVT);
+    return identical(this, other) || (other is AddCoverPressedEvent);
   }
 
   @override
@@ -361,93 +359,90 @@ class _$AddCoverPressedEVT
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
-    @required TResult addCoverPressedEVT(),
+    @required TResult addCoverPressedEvent(),
+    @required TResult chapterDraftDeletedOrPublishedEvent(),
+    @required TResult chapterPublishedEvent(),
+    @required TResult deleteDraftButtonPressedEvent(),
+    @required TResult genreOptionalSelectedEvent(String genreOptional),
+    @required TResult genreSelectedEvent(String genre),
+    @required TResult initializedWithPreviousChapterOrSeriesDraftEvent(),
+    @required TResult isLastChapterChangedEvent(bool isLastChapter),
+    @required TResult isNSFWChangedEvent(bool isNSFW),
+    @required TResult languageSelectedEvent(String language),
     @required
-        TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(),
-    @required
-        TResult chapterEditorLaunchedFromLibraryEVT(BuildContext context,
+        TResult launchedFromLibraryEvent(BuildContext context,
             Chapter chapterDraft, EditorContentOrigin editorContentOrigin),
     @required
-        TResult chapterEditorLaunchedFromPreviousChapterEVT(
-            BuildContext context,
-            Chapter previousChapter,
-            EditorContentOrigin editorContentOrigin),
+        TResult launchedFromPreviousChapterEvent(BuildContext context,
+            Chapter previousChapter, EditorContentOrigin editorContentOrigin),
     @required
-        TResult chapterEditorLaunchedFromSeriesEditorEVT(BuildContext context,
+        TResult launchedFromSeriesEditorEvent(BuildContext context,
             EditorContentOrigin editorContentOrigin, Series seriesDraft),
-    @required TResult chapterDraftDeletedOrPublishedEVT(),
-    @required TResult chapterPublishedEVT(),
-    @required TResult copyrightsSelectedEVT(String copyrights),
-    @required TResult deleteDraftButtonPressedEVT(),
-    @required TResult genreOptionalSelectedEVT(String genreOptional),
-    @required TResult genreSelectedEVT(String genre),
-    @required TResult isLastChapterChangedEVT(bool isLastChapter),
-    @required TResult isNSFWChangedEVT(bool isNSFW),
-    @required TResult languageSelectedEVT(String language),
-    @required TResult publishButtonPressedEVT(),
-    @required TResult saveOrBackButtonPressedEVT(),
-    @required TResult seriesDraftLoadedEVT(Series seriesDraft),
-    @required TResult seriesPublishedEVT(String seriesDraftUID),
-    @required TResult sessionFetchedEVT(),
-    @required TResult storyChangedEVT(String story),
-    @required TResult titleChangedEVT(String title),
+    @required TResult licenceSelectedEvent(String licence),
+    @required TResult publishButtonPressedEvent(),
+    @required TResult saveOrBackButtonPressedEvent(),
+    @required TResult seriesDraftLoadedEvent(Series seriesDraft),
+    @required TResult seriesPublishedEvent(String seriesDraftUID),
+    @required TResult sessionFetchedEvent(),
+    @required TResult storyChangedEvent(String story),
+    @required TResult titleChangedEvent(String title),
   }) {
-    assert(addCoverPressedEVT != null);
-    assert(chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT != null);
-    assert(chapterEditorLaunchedFromLibraryEVT != null);
-    assert(chapterEditorLaunchedFromPreviousChapterEVT != null);
-    assert(chapterEditorLaunchedFromSeriesEditorEVT != null);
-    assert(chapterDraftDeletedOrPublishedEVT != null);
-    assert(chapterPublishedEVT != null);
-    assert(copyrightsSelectedEVT != null);
-    assert(deleteDraftButtonPressedEVT != null);
-    assert(genreOptionalSelectedEVT != null);
-    assert(genreSelectedEVT != null);
-    assert(isLastChapterChangedEVT != null);
-    assert(isNSFWChangedEVT != null);
-    assert(languageSelectedEVT != null);
-    assert(publishButtonPressedEVT != null);
-    assert(saveOrBackButtonPressedEVT != null);
-    assert(seriesDraftLoadedEVT != null);
-    assert(seriesPublishedEVT != null);
-    assert(sessionFetchedEVT != null);
-    assert(storyChangedEVT != null);
-    assert(titleChangedEVT != null);
-    return addCoverPressedEVT();
+    assert(addCoverPressedEvent != null);
+    assert(chapterDraftDeletedOrPublishedEvent != null);
+    assert(chapterPublishedEvent != null);
+    assert(deleteDraftButtonPressedEvent != null);
+    assert(genreOptionalSelectedEvent != null);
+    assert(genreSelectedEvent != null);
+    assert(initializedWithPreviousChapterOrSeriesDraftEvent != null);
+    assert(isLastChapterChangedEvent != null);
+    assert(isNSFWChangedEvent != null);
+    assert(languageSelectedEvent != null);
+    assert(launchedFromLibraryEvent != null);
+    assert(launchedFromPreviousChapterEvent != null);
+    assert(launchedFromSeriesEditorEvent != null);
+    assert(licenceSelectedEvent != null);
+    assert(publishButtonPressedEvent != null);
+    assert(saveOrBackButtonPressedEvent != null);
+    assert(seriesDraftLoadedEvent != null);
+    assert(seriesPublishedEvent != null);
+    assert(sessionFetchedEvent != null);
+    assert(storyChangedEvent != null);
+    assert(titleChangedEvent != null);
+    return addCoverPressedEvent();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
-    TResult addCoverPressedEVT(),
-    TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(),
-    TResult chapterEditorLaunchedFromLibraryEVT(BuildContext context,
-        Chapter chapterDraft, EditorContentOrigin editorContentOrigin),
-    TResult chapterEditorLaunchedFromPreviousChapterEVT(BuildContext context,
+    TResult addCoverPressedEvent(),
+    TResult chapterDraftDeletedOrPublishedEvent(),
+    TResult chapterPublishedEvent(),
+    TResult deleteDraftButtonPressedEvent(),
+    TResult genreOptionalSelectedEvent(String genreOptional),
+    TResult genreSelectedEvent(String genre),
+    TResult initializedWithPreviousChapterOrSeriesDraftEvent(),
+    TResult isLastChapterChangedEvent(bool isLastChapter),
+    TResult isNSFWChangedEvent(bool isNSFW),
+    TResult languageSelectedEvent(String language),
+    TResult launchedFromLibraryEvent(BuildContext context, Chapter chapterDraft,
+        EditorContentOrigin editorContentOrigin),
+    TResult launchedFromPreviousChapterEvent(BuildContext context,
         Chapter previousChapter, EditorContentOrigin editorContentOrigin),
-    TResult chapterEditorLaunchedFromSeriesEditorEVT(BuildContext context,
+    TResult launchedFromSeriesEditorEvent(BuildContext context,
         EditorContentOrigin editorContentOrigin, Series seriesDraft),
-    TResult chapterDraftDeletedOrPublishedEVT(),
-    TResult chapterPublishedEVT(),
-    TResult copyrightsSelectedEVT(String copyrights),
-    TResult deleteDraftButtonPressedEVT(),
-    TResult genreOptionalSelectedEVT(String genreOptional),
-    TResult genreSelectedEVT(String genre),
-    TResult isLastChapterChangedEVT(bool isLastChapter),
-    TResult isNSFWChangedEVT(bool isNSFW),
-    TResult languageSelectedEVT(String language),
-    TResult publishButtonPressedEVT(),
-    TResult saveOrBackButtonPressedEVT(),
-    TResult seriesDraftLoadedEVT(Series seriesDraft),
-    TResult seriesPublishedEVT(String seriesDraftUID),
-    TResult sessionFetchedEVT(),
-    TResult storyChangedEVT(String story),
-    TResult titleChangedEVT(String title),
+    TResult licenceSelectedEvent(String licence),
+    TResult publishButtonPressedEvent(),
+    TResult saveOrBackButtonPressedEvent(),
+    TResult seriesDraftLoadedEvent(Series seriesDraft),
+    TResult seriesPublishedEvent(String seriesDraftUID),
+    TResult sessionFetchedEvent(),
+    TResult storyChangedEvent(String story),
+    TResult titleChangedEvent(String title),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (addCoverPressedEVT != null) {
-      return addCoverPressedEVT();
+    if (addCoverPressedEvent != null) {
+      return addCoverPressedEvent();
     }
     return orElse();
   }
@@ -455,149 +450,139 @@ class _$AddCoverPressedEVT
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object>({
-    @required TResult addCoverPressedEVT(AddCoverPressedEVT value),
+    @required TResult addCoverPressedEvent(AddCoverPressedEvent value),
     @required
-        TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(
-            ChapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT value),
+        TResult chapterDraftDeletedOrPublishedEvent(
+            ChapterDraftDeletedOrPublishedEvent value),
+    @required TResult chapterPublishedEvent(ChapterPublishedEvent value),
     @required
-        TResult chapterEditorLaunchedFromLibraryEVT(
-            ChapterEditorLaunchedFromLibraryEVT value),
+        TResult deleteDraftButtonPressedEvent(
+            DeleteDraftButtonPressedEvent value),
     @required
-        TResult chapterEditorLaunchedFromPreviousChapterEVT(
-            ChapterEditorLaunchedFromPreviousChapterEVT value),
+        TResult genreOptionalSelectedEvent(GenreOptionalSelectedEvent value),
+    @required TResult genreSelectedEvent(GenreSelectedEvent value),
     @required
-        TResult chapterEditorLaunchedFromSeriesEditorEVT(
-            ChapterEditorLaunchedFromSeriesEditorEVT value),
+        TResult initializedWithPreviousChapterOrSeriesDraftEvent(
+            InitializedWithPreviousChapterOrSeriesDraftEvent value),
     @required
-        TResult chapterDraftDeletedOrPublishedEVT(
-            ChapterDraftDeletedOrPublishedEVT value),
-    @required TResult chapterPublishedEVT(ChapterPublishedEVT value),
-    @required TResult copyrightsSelectedEVT(CopyrightsSelectedEVT value),
+        TResult isLastChapterChangedEvent(IsLastChapterChangedEvent value),
+    @required TResult isNSFWChangedEvent(IsNSFWChangedEvent value),
+    @required TResult languageSelectedEvent(LanguageSelectedEvent value),
+    @required TResult launchedFromLibraryEvent(LaunchedFromLibraryEvent value),
     @required
-        TResult deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
-    @required TResult genreOptionalSelectedEVT(GenreOptionalSelectedEVT value),
-    @required TResult genreSelectedEVT(GenreSelectedEVT value),
-    @required TResult isLastChapterChangedEVT(IsLastChapterChangedEVT value),
-    @required TResult isNSFWChangedEVT(IsNSFWChangedEVT value),
-    @required TResult languageSelectedEVT(LanguageSelectedEVT value),
-    @required TResult publishButtonPressedEVT(PublishButtonPressedEVT value),
+        TResult launchedFromPreviousChapterEvent(
+            LaunchedFromPreviousChapterEvent value),
     @required
-        TResult saveOrBackButtonPressedEVT(SaveOrBackButtonPressedEVT value),
-    @required TResult seriesDraftLoadedEVT(SeriesDraftLoadedEVT value),
-    @required TResult seriesPublishedEVT(SeriesPublishedEVT value),
-    @required TResult sessionFetchedEVT(SessionFetchedEVT value),
-    @required TResult storyChangedEVT(StoryChangedEVT value),
-    @required TResult titleChangedEVT(TitleChangedEVT value),
+        TResult launchedFromSeriesEditorEvent(
+            LaunchedFromSeriesEditorEvent value),
+    @required TResult licenceSelectedEvent(LicenceSelectedEvent value),
+    @required
+        TResult publishButtonPressedEvent(PublishButtonPressedEvent value),
+    @required
+        TResult saveOrBackButtonPressedEvent(
+            SaveOrBackButtonPressedEvent value),
+    @required TResult seriesDraftLoadedEvent(SeriesDraftLoadedEvent value),
+    @required TResult seriesPublishedEvent(SeriesPublishedEvent value),
+    @required TResult sessionFetchedEvent(SessionFetchedEvent value),
+    @required TResult storyChangedEvent(StoryChangedEvent value),
+    @required TResult titleChangedEvent(TitleChangedEvent value),
   }) {
-    assert(addCoverPressedEVT != null);
-    assert(chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT != null);
-    assert(chapterEditorLaunchedFromLibraryEVT != null);
-    assert(chapterEditorLaunchedFromPreviousChapterEVT != null);
-    assert(chapterEditorLaunchedFromSeriesEditorEVT != null);
-    assert(chapterDraftDeletedOrPublishedEVT != null);
-    assert(chapterPublishedEVT != null);
-    assert(copyrightsSelectedEVT != null);
-    assert(deleteDraftButtonPressedEVT != null);
-    assert(genreOptionalSelectedEVT != null);
-    assert(genreSelectedEVT != null);
-    assert(isLastChapterChangedEVT != null);
-    assert(isNSFWChangedEVT != null);
-    assert(languageSelectedEVT != null);
-    assert(publishButtonPressedEVT != null);
-    assert(saveOrBackButtonPressedEVT != null);
-    assert(seriesDraftLoadedEVT != null);
-    assert(seriesPublishedEVT != null);
-    assert(sessionFetchedEVT != null);
-    assert(storyChangedEVT != null);
-    assert(titleChangedEVT != null);
-    return addCoverPressedEVT(this);
+    assert(addCoverPressedEvent != null);
+    assert(chapterDraftDeletedOrPublishedEvent != null);
+    assert(chapterPublishedEvent != null);
+    assert(deleteDraftButtonPressedEvent != null);
+    assert(genreOptionalSelectedEvent != null);
+    assert(genreSelectedEvent != null);
+    assert(initializedWithPreviousChapterOrSeriesDraftEvent != null);
+    assert(isLastChapterChangedEvent != null);
+    assert(isNSFWChangedEvent != null);
+    assert(languageSelectedEvent != null);
+    assert(launchedFromLibraryEvent != null);
+    assert(launchedFromPreviousChapterEvent != null);
+    assert(launchedFromSeriesEditorEvent != null);
+    assert(licenceSelectedEvent != null);
+    assert(publishButtonPressedEvent != null);
+    assert(saveOrBackButtonPressedEvent != null);
+    assert(seriesDraftLoadedEvent != null);
+    assert(seriesPublishedEvent != null);
+    assert(sessionFetchedEvent != null);
+    assert(storyChangedEvent != null);
+    assert(titleChangedEvent != null);
+    return addCoverPressedEvent(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
-    TResult addCoverPressedEVT(AddCoverPressedEVT value),
-    TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(
-        ChapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT value),
-    TResult chapterEditorLaunchedFromLibraryEVT(
-        ChapterEditorLaunchedFromLibraryEVT value),
-    TResult chapterEditorLaunchedFromPreviousChapterEVT(
-        ChapterEditorLaunchedFromPreviousChapterEVT value),
-    TResult chapterEditorLaunchedFromSeriesEditorEVT(
-        ChapterEditorLaunchedFromSeriesEditorEVT value),
-    TResult chapterDraftDeletedOrPublishedEVT(
-        ChapterDraftDeletedOrPublishedEVT value),
-    TResult chapterPublishedEVT(ChapterPublishedEVT value),
-    TResult copyrightsSelectedEVT(CopyrightsSelectedEVT value),
-    TResult deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
-    TResult genreOptionalSelectedEVT(GenreOptionalSelectedEVT value),
-    TResult genreSelectedEVT(GenreSelectedEVT value),
-    TResult isLastChapterChangedEVT(IsLastChapterChangedEVT value),
-    TResult isNSFWChangedEVT(IsNSFWChangedEVT value),
-    TResult languageSelectedEVT(LanguageSelectedEVT value),
-    TResult publishButtonPressedEVT(PublishButtonPressedEVT value),
-    TResult saveOrBackButtonPressedEVT(SaveOrBackButtonPressedEVT value),
-    TResult seriesDraftLoadedEVT(SeriesDraftLoadedEVT value),
-    TResult seriesPublishedEVT(SeriesPublishedEVT value),
-    TResult sessionFetchedEVT(SessionFetchedEVT value),
-    TResult storyChangedEVT(StoryChangedEVT value),
-    TResult titleChangedEVT(TitleChangedEVT value),
+    TResult addCoverPressedEvent(AddCoverPressedEvent value),
+    TResult chapterDraftDeletedOrPublishedEvent(
+        ChapterDraftDeletedOrPublishedEvent value),
+    TResult chapterPublishedEvent(ChapterPublishedEvent value),
+    TResult deleteDraftButtonPressedEvent(DeleteDraftButtonPressedEvent value),
+    TResult genreOptionalSelectedEvent(GenreOptionalSelectedEvent value),
+    TResult genreSelectedEvent(GenreSelectedEvent value),
+    TResult initializedWithPreviousChapterOrSeriesDraftEvent(
+        InitializedWithPreviousChapterOrSeriesDraftEvent value),
+    TResult isLastChapterChangedEvent(IsLastChapterChangedEvent value),
+    TResult isNSFWChangedEvent(IsNSFWChangedEvent value),
+    TResult languageSelectedEvent(LanguageSelectedEvent value),
+    TResult launchedFromLibraryEvent(LaunchedFromLibraryEvent value),
+    TResult launchedFromPreviousChapterEvent(
+        LaunchedFromPreviousChapterEvent value),
+    TResult launchedFromSeriesEditorEvent(LaunchedFromSeriesEditorEvent value),
+    TResult licenceSelectedEvent(LicenceSelectedEvent value),
+    TResult publishButtonPressedEvent(PublishButtonPressedEvent value),
+    TResult saveOrBackButtonPressedEvent(SaveOrBackButtonPressedEvent value),
+    TResult seriesDraftLoadedEvent(SeriesDraftLoadedEvent value),
+    TResult seriesPublishedEvent(SeriesPublishedEvent value),
+    TResult sessionFetchedEvent(SessionFetchedEvent value),
+    TResult storyChangedEvent(StoryChangedEvent value),
+    TResult titleChangedEvent(TitleChangedEvent value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (addCoverPressedEVT != null) {
-      return addCoverPressedEVT(this);
+    if (addCoverPressedEvent != null) {
+      return addCoverPressedEvent(this);
     }
     return orElse();
   }
 }
 
-abstract class AddCoverPressedEVT implements ChapterEditorDatabaseEvent {
-  const factory AddCoverPressedEVT() = _$AddCoverPressedEVT;
+abstract class AddCoverPressedEvent implements ChapterEditorDatabaseEvent {
+  const factory AddCoverPressedEvent() = _$AddCoverPressedEvent;
 }
 
 /// @nodoc
-abstract class $ChapterDraftInitializedWithPreviousChapterOrSeriesDraftEVTCopyWith<
-    $Res> {
-  factory $ChapterDraftInitializedWithPreviousChapterOrSeriesDraftEVTCopyWith(
-          ChapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT value,
-          $Res Function(
-                  ChapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT)
-              then) =
-      _$ChapterDraftInitializedWithPreviousChapterOrSeriesDraftEVTCopyWithImpl<
-          $Res>;
+abstract class $ChapterDraftDeletedOrPublishedEventCopyWith<$Res> {
+  factory $ChapterDraftDeletedOrPublishedEventCopyWith(
+          ChapterDraftDeletedOrPublishedEvent value,
+          $Res Function(ChapterDraftDeletedOrPublishedEvent) then) =
+      _$ChapterDraftDeletedOrPublishedEventCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$ChapterDraftInitializedWithPreviousChapterOrSeriesDraftEVTCopyWithImpl<
-        $Res> extends _$ChapterEditorDatabaseEventCopyWithImpl<$Res>
-    implements
-        $ChapterDraftInitializedWithPreviousChapterOrSeriesDraftEVTCopyWith<
-            $Res> {
-  _$ChapterDraftInitializedWithPreviousChapterOrSeriesDraftEVTCopyWithImpl(
-      ChapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT _value,
-      $Res Function(ChapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT)
-          _then)
-      : super(
-            _value,
-            (v) => _then(v
-                as ChapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT));
+class _$ChapterDraftDeletedOrPublishedEventCopyWithImpl<$Res>
+    extends _$ChapterEditorDatabaseEventCopyWithImpl<$Res>
+    implements $ChapterDraftDeletedOrPublishedEventCopyWith<$Res> {
+  _$ChapterDraftDeletedOrPublishedEventCopyWithImpl(
+      ChapterDraftDeletedOrPublishedEvent _value,
+      $Res Function(ChapterDraftDeletedOrPublishedEvent) _then)
+      : super(_value, (v) => _then(v as ChapterDraftDeletedOrPublishedEvent));
 
   @override
-  ChapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT get _value =>
-      super._value
-          as ChapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT;
+  ChapterDraftDeletedOrPublishedEvent get _value =>
+      super._value as ChapterDraftDeletedOrPublishedEvent;
 }
 
 /// @nodoc
-class _$ChapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT
+class _$ChapterDraftDeletedOrPublishedEvent
     with DiagnosticableTreeMixin
-    implements ChapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT {
-  const _$ChapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT();
+    implements ChapterDraftDeletedOrPublishedEvent {
+  const _$ChapterDraftDeletedOrPublishedEvent();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'ChapterEditorDatabaseEvent.chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT()';
+    return 'ChapterEditorDatabaseEvent.chapterDraftDeletedOrPublishedEvent()';
   }
 
   @override
@@ -605,13 +590,13 @@ class _$ChapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT
     super.debugFillProperties(properties);
     properties
       ..add(DiagnosticsProperty('type',
-          'ChapterEditorDatabaseEvent.chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT'));
+          'ChapterEditorDatabaseEvent.chapterDraftDeletedOrPublishedEvent'));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is ChapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT);
+        (other is ChapterDraftDeletedOrPublishedEvent);
   }
 
   @override
@@ -620,93 +605,90 @@ class _$ChapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
-    @required TResult addCoverPressedEVT(),
+    @required TResult addCoverPressedEvent(),
+    @required TResult chapterDraftDeletedOrPublishedEvent(),
+    @required TResult chapterPublishedEvent(),
+    @required TResult deleteDraftButtonPressedEvent(),
+    @required TResult genreOptionalSelectedEvent(String genreOptional),
+    @required TResult genreSelectedEvent(String genre),
+    @required TResult initializedWithPreviousChapterOrSeriesDraftEvent(),
+    @required TResult isLastChapterChangedEvent(bool isLastChapter),
+    @required TResult isNSFWChangedEvent(bool isNSFW),
+    @required TResult languageSelectedEvent(String language),
     @required
-        TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(),
-    @required
-        TResult chapterEditorLaunchedFromLibraryEVT(BuildContext context,
+        TResult launchedFromLibraryEvent(BuildContext context,
             Chapter chapterDraft, EditorContentOrigin editorContentOrigin),
     @required
-        TResult chapterEditorLaunchedFromPreviousChapterEVT(
-            BuildContext context,
-            Chapter previousChapter,
-            EditorContentOrigin editorContentOrigin),
+        TResult launchedFromPreviousChapterEvent(BuildContext context,
+            Chapter previousChapter, EditorContentOrigin editorContentOrigin),
     @required
-        TResult chapterEditorLaunchedFromSeriesEditorEVT(BuildContext context,
+        TResult launchedFromSeriesEditorEvent(BuildContext context,
             EditorContentOrigin editorContentOrigin, Series seriesDraft),
-    @required TResult chapterDraftDeletedOrPublishedEVT(),
-    @required TResult chapterPublishedEVT(),
-    @required TResult copyrightsSelectedEVT(String copyrights),
-    @required TResult deleteDraftButtonPressedEVT(),
-    @required TResult genreOptionalSelectedEVT(String genreOptional),
-    @required TResult genreSelectedEVT(String genre),
-    @required TResult isLastChapterChangedEVT(bool isLastChapter),
-    @required TResult isNSFWChangedEVT(bool isNSFW),
-    @required TResult languageSelectedEVT(String language),
-    @required TResult publishButtonPressedEVT(),
-    @required TResult saveOrBackButtonPressedEVT(),
-    @required TResult seriesDraftLoadedEVT(Series seriesDraft),
-    @required TResult seriesPublishedEVT(String seriesDraftUID),
-    @required TResult sessionFetchedEVT(),
-    @required TResult storyChangedEVT(String story),
-    @required TResult titleChangedEVT(String title),
+    @required TResult licenceSelectedEvent(String licence),
+    @required TResult publishButtonPressedEvent(),
+    @required TResult saveOrBackButtonPressedEvent(),
+    @required TResult seriesDraftLoadedEvent(Series seriesDraft),
+    @required TResult seriesPublishedEvent(String seriesDraftUID),
+    @required TResult sessionFetchedEvent(),
+    @required TResult storyChangedEvent(String story),
+    @required TResult titleChangedEvent(String title),
   }) {
-    assert(addCoverPressedEVT != null);
-    assert(chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT != null);
-    assert(chapterEditorLaunchedFromLibraryEVT != null);
-    assert(chapterEditorLaunchedFromPreviousChapterEVT != null);
-    assert(chapterEditorLaunchedFromSeriesEditorEVT != null);
-    assert(chapterDraftDeletedOrPublishedEVT != null);
-    assert(chapterPublishedEVT != null);
-    assert(copyrightsSelectedEVT != null);
-    assert(deleteDraftButtonPressedEVT != null);
-    assert(genreOptionalSelectedEVT != null);
-    assert(genreSelectedEVT != null);
-    assert(isLastChapterChangedEVT != null);
-    assert(isNSFWChangedEVT != null);
-    assert(languageSelectedEVT != null);
-    assert(publishButtonPressedEVT != null);
-    assert(saveOrBackButtonPressedEVT != null);
-    assert(seriesDraftLoadedEVT != null);
-    assert(seriesPublishedEVT != null);
-    assert(sessionFetchedEVT != null);
-    assert(storyChangedEVT != null);
-    assert(titleChangedEVT != null);
-    return chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT();
+    assert(addCoverPressedEvent != null);
+    assert(chapterDraftDeletedOrPublishedEvent != null);
+    assert(chapterPublishedEvent != null);
+    assert(deleteDraftButtonPressedEvent != null);
+    assert(genreOptionalSelectedEvent != null);
+    assert(genreSelectedEvent != null);
+    assert(initializedWithPreviousChapterOrSeriesDraftEvent != null);
+    assert(isLastChapterChangedEvent != null);
+    assert(isNSFWChangedEvent != null);
+    assert(languageSelectedEvent != null);
+    assert(launchedFromLibraryEvent != null);
+    assert(launchedFromPreviousChapterEvent != null);
+    assert(launchedFromSeriesEditorEvent != null);
+    assert(licenceSelectedEvent != null);
+    assert(publishButtonPressedEvent != null);
+    assert(saveOrBackButtonPressedEvent != null);
+    assert(seriesDraftLoadedEvent != null);
+    assert(seriesPublishedEvent != null);
+    assert(sessionFetchedEvent != null);
+    assert(storyChangedEvent != null);
+    assert(titleChangedEvent != null);
+    return chapterDraftDeletedOrPublishedEvent();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
-    TResult addCoverPressedEVT(),
-    TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(),
-    TResult chapterEditorLaunchedFromLibraryEVT(BuildContext context,
-        Chapter chapterDraft, EditorContentOrigin editorContentOrigin),
-    TResult chapterEditorLaunchedFromPreviousChapterEVT(BuildContext context,
+    TResult addCoverPressedEvent(),
+    TResult chapterDraftDeletedOrPublishedEvent(),
+    TResult chapterPublishedEvent(),
+    TResult deleteDraftButtonPressedEvent(),
+    TResult genreOptionalSelectedEvent(String genreOptional),
+    TResult genreSelectedEvent(String genre),
+    TResult initializedWithPreviousChapterOrSeriesDraftEvent(),
+    TResult isLastChapterChangedEvent(bool isLastChapter),
+    TResult isNSFWChangedEvent(bool isNSFW),
+    TResult languageSelectedEvent(String language),
+    TResult launchedFromLibraryEvent(BuildContext context, Chapter chapterDraft,
+        EditorContentOrigin editorContentOrigin),
+    TResult launchedFromPreviousChapterEvent(BuildContext context,
         Chapter previousChapter, EditorContentOrigin editorContentOrigin),
-    TResult chapterEditorLaunchedFromSeriesEditorEVT(BuildContext context,
+    TResult launchedFromSeriesEditorEvent(BuildContext context,
         EditorContentOrigin editorContentOrigin, Series seriesDraft),
-    TResult chapterDraftDeletedOrPublishedEVT(),
-    TResult chapterPublishedEVT(),
-    TResult copyrightsSelectedEVT(String copyrights),
-    TResult deleteDraftButtonPressedEVT(),
-    TResult genreOptionalSelectedEVT(String genreOptional),
-    TResult genreSelectedEVT(String genre),
-    TResult isLastChapterChangedEVT(bool isLastChapter),
-    TResult isNSFWChangedEVT(bool isNSFW),
-    TResult languageSelectedEVT(String language),
-    TResult publishButtonPressedEVT(),
-    TResult saveOrBackButtonPressedEVT(),
-    TResult seriesDraftLoadedEVT(Series seriesDraft),
-    TResult seriesPublishedEVT(String seriesDraftUID),
-    TResult sessionFetchedEVT(),
-    TResult storyChangedEVT(String story),
-    TResult titleChangedEVT(String title),
+    TResult licenceSelectedEvent(String licence),
+    TResult publishButtonPressedEvent(),
+    TResult saveOrBackButtonPressedEvent(),
+    TResult seriesDraftLoadedEvent(Series seriesDraft),
+    TResult seriesPublishedEvent(String seriesDraftUID),
+    TResult sessionFetchedEvent(),
+    TResult storyChangedEvent(String story),
+    TResult titleChangedEvent(String title),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT != null) {
-      return chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT();
+    if (chapterDraftDeletedOrPublishedEvent != null) {
+      return chapterDraftDeletedOrPublishedEvent();
     }
     return orElse();
   }
@@ -714,115 +696,2219 @@ class _$ChapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object>({
-    @required TResult addCoverPressedEVT(AddCoverPressedEVT value),
+    @required TResult addCoverPressedEvent(AddCoverPressedEvent value),
     @required
-        TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(
-            ChapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT value),
+        TResult chapterDraftDeletedOrPublishedEvent(
+            ChapterDraftDeletedOrPublishedEvent value),
+    @required TResult chapterPublishedEvent(ChapterPublishedEvent value),
     @required
-        TResult chapterEditorLaunchedFromLibraryEVT(
-            ChapterEditorLaunchedFromLibraryEVT value),
+        TResult deleteDraftButtonPressedEvent(
+            DeleteDraftButtonPressedEvent value),
     @required
-        TResult chapterEditorLaunchedFromPreviousChapterEVT(
-            ChapterEditorLaunchedFromPreviousChapterEVT value),
+        TResult genreOptionalSelectedEvent(GenreOptionalSelectedEvent value),
+    @required TResult genreSelectedEvent(GenreSelectedEvent value),
     @required
-        TResult chapterEditorLaunchedFromSeriesEditorEVT(
-            ChapterEditorLaunchedFromSeriesEditorEVT value),
+        TResult initializedWithPreviousChapterOrSeriesDraftEvent(
+            InitializedWithPreviousChapterOrSeriesDraftEvent value),
     @required
-        TResult chapterDraftDeletedOrPublishedEVT(
-            ChapterDraftDeletedOrPublishedEVT value),
-    @required TResult chapterPublishedEVT(ChapterPublishedEVT value),
-    @required TResult copyrightsSelectedEVT(CopyrightsSelectedEVT value),
+        TResult isLastChapterChangedEvent(IsLastChapterChangedEvent value),
+    @required TResult isNSFWChangedEvent(IsNSFWChangedEvent value),
+    @required TResult languageSelectedEvent(LanguageSelectedEvent value),
+    @required TResult launchedFromLibraryEvent(LaunchedFromLibraryEvent value),
     @required
-        TResult deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
-    @required TResult genreOptionalSelectedEVT(GenreOptionalSelectedEVT value),
-    @required TResult genreSelectedEVT(GenreSelectedEVT value),
-    @required TResult isLastChapterChangedEVT(IsLastChapterChangedEVT value),
-    @required TResult isNSFWChangedEVT(IsNSFWChangedEVT value),
-    @required TResult languageSelectedEVT(LanguageSelectedEVT value),
-    @required TResult publishButtonPressedEVT(PublishButtonPressedEVT value),
+        TResult launchedFromPreviousChapterEvent(
+            LaunchedFromPreviousChapterEvent value),
     @required
-        TResult saveOrBackButtonPressedEVT(SaveOrBackButtonPressedEVT value),
-    @required TResult seriesDraftLoadedEVT(SeriesDraftLoadedEVT value),
-    @required TResult seriesPublishedEVT(SeriesPublishedEVT value),
-    @required TResult sessionFetchedEVT(SessionFetchedEVT value),
-    @required TResult storyChangedEVT(StoryChangedEVT value),
-    @required TResult titleChangedEVT(TitleChangedEVT value),
+        TResult launchedFromSeriesEditorEvent(
+            LaunchedFromSeriesEditorEvent value),
+    @required TResult licenceSelectedEvent(LicenceSelectedEvent value),
+    @required
+        TResult publishButtonPressedEvent(PublishButtonPressedEvent value),
+    @required
+        TResult saveOrBackButtonPressedEvent(
+            SaveOrBackButtonPressedEvent value),
+    @required TResult seriesDraftLoadedEvent(SeriesDraftLoadedEvent value),
+    @required TResult seriesPublishedEvent(SeriesPublishedEvent value),
+    @required TResult sessionFetchedEvent(SessionFetchedEvent value),
+    @required TResult storyChangedEvent(StoryChangedEvent value),
+    @required TResult titleChangedEvent(TitleChangedEvent value),
   }) {
-    assert(addCoverPressedEVT != null);
-    assert(chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT != null);
-    assert(chapterEditorLaunchedFromLibraryEVT != null);
-    assert(chapterEditorLaunchedFromPreviousChapterEVT != null);
-    assert(chapterEditorLaunchedFromSeriesEditorEVT != null);
-    assert(chapterDraftDeletedOrPublishedEVT != null);
-    assert(chapterPublishedEVT != null);
-    assert(copyrightsSelectedEVT != null);
-    assert(deleteDraftButtonPressedEVT != null);
-    assert(genreOptionalSelectedEVT != null);
-    assert(genreSelectedEVT != null);
-    assert(isLastChapterChangedEVT != null);
-    assert(isNSFWChangedEVT != null);
-    assert(languageSelectedEVT != null);
-    assert(publishButtonPressedEVT != null);
-    assert(saveOrBackButtonPressedEVT != null);
-    assert(seriesDraftLoadedEVT != null);
-    assert(seriesPublishedEVT != null);
-    assert(sessionFetchedEVT != null);
-    assert(storyChangedEVT != null);
-    assert(titleChangedEVT != null);
-    return chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(this);
+    assert(addCoverPressedEvent != null);
+    assert(chapterDraftDeletedOrPublishedEvent != null);
+    assert(chapterPublishedEvent != null);
+    assert(deleteDraftButtonPressedEvent != null);
+    assert(genreOptionalSelectedEvent != null);
+    assert(genreSelectedEvent != null);
+    assert(initializedWithPreviousChapterOrSeriesDraftEvent != null);
+    assert(isLastChapterChangedEvent != null);
+    assert(isNSFWChangedEvent != null);
+    assert(languageSelectedEvent != null);
+    assert(launchedFromLibraryEvent != null);
+    assert(launchedFromPreviousChapterEvent != null);
+    assert(launchedFromSeriesEditorEvent != null);
+    assert(licenceSelectedEvent != null);
+    assert(publishButtonPressedEvent != null);
+    assert(saveOrBackButtonPressedEvent != null);
+    assert(seriesDraftLoadedEvent != null);
+    assert(seriesPublishedEvent != null);
+    assert(sessionFetchedEvent != null);
+    assert(storyChangedEvent != null);
+    assert(titleChangedEvent != null);
+    return chapterDraftDeletedOrPublishedEvent(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
-    TResult addCoverPressedEVT(AddCoverPressedEVT value),
-    TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(
-        ChapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT value),
-    TResult chapterEditorLaunchedFromLibraryEVT(
-        ChapterEditorLaunchedFromLibraryEVT value),
-    TResult chapterEditorLaunchedFromPreviousChapterEVT(
-        ChapterEditorLaunchedFromPreviousChapterEVT value),
-    TResult chapterEditorLaunchedFromSeriesEditorEVT(
-        ChapterEditorLaunchedFromSeriesEditorEVT value),
-    TResult chapterDraftDeletedOrPublishedEVT(
-        ChapterDraftDeletedOrPublishedEVT value),
-    TResult chapterPublishedEVT(ChapterPublishedEVT value),
-    TResult copyrightsSelectedEVT(CopyrightsSelectedEVT value),
-    TResult deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
-    TResult genreOptionalSelectedEVT(GenreOptionalSelectedEVT value),
-    TResult genreSelectedEVT(GenreSelectedEVT value),
-    TResult isLastChapterChangedEVT(IsLastChapterChangedEVT value),
-    TResult isNSFWChangedEVT(IsNSFWChangedEVT value),
-    TResult languageSelectedEVT(LanguageSelectedEVT value),
-    TResult publishButtonPressedEVT(PublishButtonPressedEVT value),
-    TResult saveOrBackButtonPressedEVT(SaveOrBackButtonPressedEVT value),
-    TResult seriesDraftLoadedEVT(SeriesDraftLoadedEVT value),
-    TResult seriesPublishedEVT(SeriesPublishedEVT value),
-    TResult sessionFetchedEVT(SessionFetchedEVT value),
-    TResult storyChangedEVT(StoryChangedEVT value),
-    TResult titleChangedEVT(TitleChangedEVT value),
+    TResult addCoverPressedEvent(AddCoverPressedEvent value),
+    TResult chapterDraftDeletedOrPublishedEvent(
+        ChapterDraftDeletedOrPublishedEvent value),
+    TResult chapterPublishedEvent(ChapterPublishedEvent value),
+    TResult deleteDraftButtonPressedEvent(DeleteDraftButtonPressedEvent value),
+    TResult genreOptionalSelectedEvent(GenreOptionalSelectedEvent value),
+    TResult genreSelectedEvent(GenreSelectedEvent value),
+    TResult initializedWithPreviousChapterOrSeriesDraftEvent(
+        InitializedWithPreviousChapterOrSeriesDraftEvent value),
+    TResult isLastChapterChangedEvent(IsLastChapterChangedEvent value),
+    TResult isNSFWChangedEvent(IsNSFWChangedEvent value),
+    TResult languageSelectedEvent(LanguageSelectedEvent value),
+    TResult launchedFromLibraryEvent(LaunchedFromLibraryEvent value),
+    TResult launchedFromPreviousChapterEvent(
+        LaunchedFromPreviousChapterEvent value),
+    TResult launchedFromSeriesEditorEvent(LaunchedFromSeriesEditorEvent value),
+    TResult licenceSelectedEvent(LicenceSelectedEvent value),
+    TResult publishButtonPressedEvent(PublishButtonPressedEvent value),
+    TResult saveOrBackButtonPressedEvent(SaveOrBackButtonPressedEvent value),
+    TResult seriesDraftLoadedEvent(SeriesDraftLoadedEvent value),
+    TResult seriesPublishedEvent(SeriesPublishedEvent value),
+    TResult sessionFetchedEvent(SessionFetchedEvent value),
+    TResult storyChangedEvent(StoryChangedEvent value),
+    TResult titleChangedEvent(TitleChangedEvent value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT != null) {
-      return chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(this);
+    if (chapterDraftDeletedOrPublishedEvent != null) {
+      return chapterDraftDeletedOrPublishedEvent(this);
     }
     return orElse();
   }
 }
 
-abstract class ChapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT
+abstract class ChapterDraftDeletedOrPublishedEvent
     implements ChapterEditorDatabaseEvent {
-  const factory ChapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT() =
-      _$ChapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT;
+  const factory ChapterDraftDeletedOrPublishedEvent() =
+      _$ChapterDraftDeletedOrPublishedEvent;
 }
 
 /// @nodoc
-abstract class $ChapterEditorLaunchedFromLibraryEVTCopyWith<$Res> {
-  factory $ChapterEditorLaunchedFromLibraryEVTCopyWith(
-          ChapterEditorLaunchedFromLibraryEVT value,
-          $Res Function(ChapterEditorLaunchedFromLibraryEVT) then) =
-      _$ChapterEditorLaunchedFromLibraryEVTCopyWithImpl<$Res>;
+abstract class $ChapterPublishedEventCopyWith<$Res> {
+  factory $ChapterPublishedEventCopyWith(ChapterPublishedEvent value,
+          $Res Function(ChapterPublishedEvent) then) =
+      _$ChapterPublishedEventCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$ChapterPublishedEventCopyWithImpl<$Res>
+    extends _$ChapterEditorDatabaseEventCopyWithImpl<$Res>
+    implements $ChapterPublishedEventCopyWith<$Res> {
+  _$ChapterPublishedEventCopyWithImpl(
+      ChapterPublishedEvent _value, $Res Function(ChapterPublishedEvent) _then)
+      : super(_value, (v) => _then(v as ChapterPublishedEvent));
+
+  @override
+  ChapterPublishedEvent get _value => super._value as ChapterPublishedEvent;
+}
+
+/// @nodoc
+class _$ChapterPublishedEvent
+    with DiagnosticableTreeMixin
+    implements ChapterPublishedEvent {
+  const _$ChapterPublishedEvent();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'ChapterEditorDatabaseEvent.chapterPublishedEvent()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty(
+          'type', 'ChapterEditorDatabaseEvent.chapterPublishedEvent'));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is ChapterPublishedEvent);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object>({
+    @required TResult addCoverPressedEvent(),
+    @required TResult chapterDraftDeletedOrPublishedEvent(),
+    @required TResult chapterPublishedEvent(),
+    @required TResult deleteDraftButtonPressedEvent(),
+    @required TResult genreOptionalSelectedEvent(String genreOptional),
+    @required TResult genreSelectedEvent(String genre),
+    @required TResult initializedWithPreviousChapterOrSeriesDraftEvent(),
+    @required TResult isLastChapterChangedEvent(bool isLastChapter),
+    @required TResult isNSFWChangedEvent(bool isNSFW),
+    @required TResult languageSelectedEvent(String language),
+    @required
+        TResult launchedFromLibraryEvent(BuildContext context,
+            Chapter chapterDraft, EditorContentOrigin editorContentOrigin),
+    @required
+        TResult launchedFromPreviousChapterEvent(BuildContext context,
+            Chapter previousChapter, EditorContentOrigin editorContentOrigin),
+    @required
+        TResult launchedFromSeriesEditorEvent(BuildContext context,
+            EditorContentOrigin editorContentOrigin, Series seriesDraft),
+    @required TResult licenceSelectedEvent(String licence),
+    @required TResult publishButtonPressedEvent(),
+    @required TResult saveOrBackButtonPressedEvent(),
+    @required TResult seriesDraftLoadedEvent(Series seriesDraft),
+    @required TResult seriesPublishedEvent(String seriesDraftUID),
+    @required TResult sessionFetchedEvent(),
+    @required TResult storyChangedEvent(String story),
+    @required TResult titleChangedEvent(String title),
+  }) {
+    assert(addCoverPressedEvent != null);
+    assert(chapterDraftDeletedOrPublishedEvent != null);
+    assert(chapterPublishedEvent != null);
+    assert(deleteDraftButtonPressedEvent != null);
+    assert(genreOptionalSelectedEvent != null);
+    assert(genreSelectedEvent != null);
+    assert(initializedWithPreviousChapterOrSeriesDraftEvent != null);
+    assert(isLastChapterChangedEvent != null);
+    assert(isNSFWChangedEvent != null);
+    assert(languageSelectedEvent != null);
+    assert(launchedFromLibraryEvent != null);
+    assert(launchedFromPreviousChapterEvent != null);
+    assert(launchedFromSeriesEditorEvent != null);
+    assert(licenceSelectedEvent != null);
+    assert(publishButtonPressedEvent != null);
+    assert(saveOrBackButtonPressedEvent != null);
+    assert(seriesDraftLoadedEvent != null);
+    assert(seriesPublishedEvent != null);
+    assert(sessionFetchedEvent != null);
+    assert(storyChangedEvent != null);
+    assert(titleChangedEvent != null);
+    return chapterPublishedEvent();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object>({
+    TResult addCoverPressedEvent(),
+    TResult chapterDraftDeletedOrPublishedEvent(),
+    TResult chapterPublishedEvent(),
+    TResult deleteDraftButtonPressedEvent(),
+    TResult genreOptionalSelectedEvent(String genreOptional),
+    TResult genreSelectedEvent(String genre),
+    TResult initializedWithPreviousChapterOrSeriesDraftEvent(),
+    TResult isLastChapterChangedEvent(bool isLastChapter),
+    TResult isNSFWChangedEvent(bool isNSFW),
+    TResult languageSelectedEvent(String language),
+    TResult launchedFromLibraryEvent(BuildContext context, Chapter chapterDraft,
+        EditorContentOrigin editorContentOrigin),
+    TResult launchedFromPreviousChapterEvent(BuildContext context,
+        Chapter previousChapter, EditorContentOrigin editorContentOrigin),
+    TResult launchedFromSeriesEditorEvent(BuildContext context,
+        EditorContentOrigin editorContentOrigin, Series seriesDraft),
+    TResult licenceSelectedEvent(String licence),
+    TResult publishButtonPressedEvent(),
+    TResult saveOrBackButtonPressedEvent(),
+    TResult seriesDraftLoadedEvent(Series seriesDraft),
+    TResult seriesPublishedEvent(String seriesDraftUID),
+    TResult sessionFetchedEvent(),
+    TResult storyChangedEvent(String story),
+    TResult titleChangedEvent(String title),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (chapterPublishedEvent != null) {
+      return chapterPublishedEvent();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object>({
+    @required TResult addCoverPressedEvent(AddCoverPressedEvent value),
+    @required
+        TResult chapterDraftDeletedOrPublishedEvent(
+            ChapterDraftDeletedOrPublishedEvent value),
+    @required TResult chapterPublishedEvent(ChapterPublishedEvent value),
+    @required
+        TResult deleteDraftButtonPressedEvent(
+            DeleteDraftButtonPressedEvent value),
+    @required
+        TResult genreOptionalSelectedEvent(GenreOptionalSelectedEvent value),
+    @required TResult genreSelectedEvent(GenreSelectedEvent value),
+    @required
+        TResult initializedWithPreviousChapterOrSeriesDraftEvent(
+            InitializedWithPreviousChapterOrSeriesDraftEvent value),
+    @required
+        TResult isLastChapterChangedEvent(IsLastChapterChangedEvent value),
+    @required TResult isNSFWChangedEvent(IsNSFWChangedEvent value),
+    @required TResult languageSelectedEvent(LanguageSelectedEvent value),
+    @required TResult launchedFromLibraryEvent(LaunchedFromLibraryEvent value),
+    @required
+        TResult launchedFromPreviousChapterEvent(
+            LaunchedFromPreviousChapterEvent value),
+    @required
+        TResult launchedFromSeriesEditorEvent(
+            LaunchedFromSeriesEditorEvent value),
+    @required TResult licenceSelectedEvent(LicenceSelectedEvent value),
+    @required
+        TResult publishButtonPressedEvent(PublishButtonPressedEvent value),
+    @required
+        TResult saveOrBackButtonPressedEvent(
+            SaveOrBackButtonPressedEvent value),
+    @required TResult seriesDraftLoadedEvent(SeriesDraftLoadedEvent value),
+    @required TResult seriesPublishedEvent(SeriesPublishedEvent value),
+    @required TResult sessionFetchedEvent(SessionFetchedEvent value),
+    @required TResult storyChangedEvent(StoryChangedEvent value),
+    @required TResult titleChangedEvent(TitleChangedEvent value),
+  }) {
+    assert(addCoverPressedEvent != null);
+    assert(chapterDraftDeletedOrPublishedEvent != null);
+    assert(chapterPublishedEvent != null);
+    assert(deleteDraftButtonPressedEvent != null);
+    assert(genreOptionalSelectedEvent != null);
+    assert(genreSelectedEvent != null);
+    assert(initializedWithPreviousChapterOrSeriesDraftEvent != null);
+    assert(isLastChapterChangedEvent != null);
+    assert(isNSFWChangedEvent != null);
+    assert(languageSelectedEvent != null);
+    assert(launchedFromLibraryEvent != null);
+    assert(launchedFromPreviousChapterEvent != null);
+    assert(launchedFromSeriesEditorEvent != null);
+    assert(licenceSelectedEvent != null);
+    assert(publishButtonPressedEvent != null);
+    assert(saveOrBackButtonPressedEvent != null);
+    assert(seriesDraftLoadedEvent != null);
+    assert(seriesPublishedEvent != null);
+    assert(sessionFetchedEvent != null);
+    assert(storyChangedEvent != null);
+    assert(titleChangedEvent != null);
+    return chapterPublishedEvent(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object>({
+    TResult addCoverPressedEvent(AddCoverPressedEvent value),
+    TResult chapterDraftDeletedOrPublishedEvent(
+        ChapterDraftDeletedOrPublishedEvent value),
+    TResult chapterPublishedEvent(ChapterPublishedEvent value),
+    TResult deleteDraftButtonPressedEvent(DeleteDraftButtonPressedEvent value),
+    TResult genreOptionalSelectedEvent(GenreOptionalSelectedEvent value),
+    TResult genreSelectedEvent(GenreSelectedEvent value),
+    TResult initializedWithPreviousChapterOrSeriesDraftEvent(
+        InitializedWithPreviousChapterOrSeriesDraftEvent value),
+    TResult isLastChapterChangedEvent(IsLastChapterChangedEvent value),
+    TResult isNSFWChangedEvent(IsNSFWChangedEvent value),
+    TResult languageSelectedEvent(LanguageSelectedEvent value),
+    TResult launchedFromLibraryEvent(LaunchedFromLibraryEvent value),
+    TResult launchedFromPreviousChapterEvent(
+        LaunchedFromPreviousChapterEvent value),
+    TResult launchedFromSeriesEditorEvent(LaunchedFromSeriesEditorEvent value),
+    TResult licenceSelectedEvent(LicenceSelectedEvent value),
+    TResult publishButtonPressedEvent(PublishButtonPressedEvent value),
+    TResult saveOrBackButtonPressedEvent(SaveOrBackButtonPressedEvent value),
+    TResult seriesDraftLoadedEvent(SeriesDraftLoadedEvent value),
+    TResult seriesPublishedEvent(SeriesPublishedEvent value),
+    TResult sessionFetchedEvent(SessionFetchedEvent value),
+    TResult storyChangedEvent(StoryChangedEvent value),
+    TResult titleChangedEvent(TitleChangedEvent value),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (chapterPublishedEvent != null) {
+      return chapterPublishedEvent(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ChapterPublishedEvent implements ChapterEditorDatabaseEvent {
+  const factory ChapterPublishedEvent() = _$ChapterPublishedEvent;
+}
+
+/// @nodoc
+abstract class $DeleteDraftButtonPressedEventCopyWith<$Res> {
+  factory $DeleteDraftButtonPressedEventCopyWith(
+          DeleteDraftButtonPressedEvent value,
+          $Res Function(DeleteDraftButtonPressedEvent) then) =
+      _$DeleteDraftButtonPressedEventCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$DeleteDraftButtonPressedEventCopyWithImpl<$Res>
+    extends _$ChapterEditorDatabaseEventCopyWithImpl<$Res>
+    implements $DeleteDraftButtonPressedEventCopyWith<$Res> {
+  _$DeleteDraftButtonPressedEventCopyWithImpl(
+      DeleteDraftButtonPressedEvent _value,
+      $Res Function(DeleteDraftButtonPressedEvent) _then)
+      : super(_value, (v) => _then(v as DeleteDraftButtonPressedEvent));
+
+  @override
+  DeleteDraftButtonPressedEvent get _value =>
+      super._value as DeleteDraftButtonPressedEvent;
+}
+
+/// @nodoc
+class _$DeleteDraftButtonPressedEvent
+    with DiagnosticableTreeMixin
+    implements DeleteDraftButtonPressedEvent {
+  const _$DeleteDraftButtonPressedEvent();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'ChapterEditorDatabaseEvent.deleteDraftButtonPressedEvent()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty(
+          'type', 'ChapterEditorDatabaseEvent.deleteDraftButtonPressedEvent'));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is DeleteDraftButtonPressedEvent);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object>({
+    @required TResult addCoverPressedEvent(),
+    @required TResult chapterDraftDeletedOrPublishedEvent(),
+    @required TResult chapterPublishedEvent(),
+    @required TResult deleteDraftButtonPressedEvent(),
+    @required TResult genreOptionalSelectedEvent(String genreOptional),
+    @required TResult genreSelectedEvent(String genre),
+    @required TResult initializedWithPreviousChapterOrSeriesDraftEvent(),
+    @required TResult isLastChapterChangedEvent(bool isLastChapter),
+    @required TResult isNSFWChangedEvent(bool isNSFW),
+    @required TResult languageSelectedEvent(String language),
+    @required
+        TResult launchedFromLibraryEvent(BuildContext context,
+            Chapter chapterDraft, EditorContentOrigin editorContentOrigin),
+    @required
+        TResult launchedFromPreviousChapterEvent(BuildContext context,
+            Chapter previousChapter, EditorContentOrigin editorContentOrigin),
+    @required
+        TResult launchedFromSeriesEditorEvent(BuildContext context,
+            EditorContentOrigin editorContentOrigin, Series seriesDraft),
+    @required TResult licenceSelectedEvent(String licence),
+    @required TResult publishButtonPressedEvent(),
+    @required TResult saveOrBackButtonPressedEvent(),
+    @required TResult seriesDraftLoadedEvent(Series seriesDraft),
+    @required TResult seriesPublishedEvent(String seriesDraftUID),
+    @required TResult sessionFetchedEvent(),
+    @required TResult storyChangedEvent(String story),
+    @required TResult titleChangedEvent(String title),
+  }) {
+    assert(addCoverPressedEvent != null);
+    assert(chapterDraftDeletedOrPublishedEvent != null);
+    assert(chapterPublishedEvent != null);
+    assert(deleteDraftButtonPressedEvent != null);
+    assert(genreOptionalSelectedEvent != null);
+    assert(genreSelectedEvent != null);
+    assert(initializedWithPreviousChapterOrSeriesDraftEvent != null);
+    assert(isLastChapterChangedEvent != null);
+    assert(isNSFWChangedEvent != null);
+    assert(languageSelectedEvent != null);
+    assert(launchedFromLibraryEvent != null);
+    assert(launchedFromPreviousChapterEvent != null);
+    assert(launchedFromSeriesEditorEvent != null);
+    assert(licenceSelectedEvent != null);
+    assert(publishButtonPressedEvent != null);
+    assert(saveOrBackButtonPressedEvent != null);
+    assert(seriesDraftLoadedEvent != null);
+    assert(seriesPublishedEvent != null);
+    assert(sessionFetchedEvent != null);
+    assert(storyChangedEvent != null);
+    assert(titleChangedEvent != null);
+    return deleteDraftButtonPressedEvent();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object>({
+    TResult addCoverPressedEvent(),
+    TResult chapterDraftDeletedOrPublishedEvent(),
+    TResult chapterPublishedEvent(),
+    TResult deleteDraftButtonPressedEvent(),
+    TResult genreOptionalSelectedEvent(String genreOptional),
+    TResult genreSelectedEvent(String genre),
+    TResult initializedWithPreviousChapterOrSeriesDraftEvent(),
+    TResult isLastChapterChangedEvent(bool isLastChapter),
+    TResult isNSFWChangedEvent(bool isNSFW),
+    TResult languageSelectedEvent(String language),
+    TResult launchedFromLibraryEvent(BuildContext context, Chapter chapterDraft,
+        EditorContentOrigin editorContentOrigin),
+    TResult launchedFromPreviousChapterEvent(BuildContext context,
+        Chapter previousChapter, EditorContentOrigin editorContentOrigin),
+    TResult launchedFromSeriesEditorEvent(BuildContext context,
+        EditorContentOrigin editorContentOrigin, Series seriesDraft),
+    TResult licenceSelectedEvent(String licence),
+    TResult publishButtonPressedEvent(),
+    TResult saveOrBackButtonPressedEvent(),
+    TResult seriesDraftLoadedEvent(Series seriesDraft),
+    TResult seriesPublishedEvent(String seriesDraftUID),
+    TResult sessionFetchedEvent(),
+    TResult storyChangedEvent(String story),
+    TResult titleChangedEvent(String title),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (deleteDraftButtonPressedEvent != null) {
+      return deleteDraftButtonPressedEvent();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object>({
+    @required TResult addCoverPressedEvent(AddCoverPressedEvent value),
+    @required
+        TResult chapterDraftDeletedOrPublishedEvent(
+            ChapterDraftDeletedOrPublishedEvent value),
+    @required TResult chapterPublishedEvent(ChapterPublishedEvent value),
+    @required
+        TResult deleteDraftButtonPressedEvent(
+            DeleteDraftButtonPressedEvent value),
+    @required
+        TResult genreOptionalSelectedEvent(GenreOptionalSelectedEvent value),
+    @required TResult genreSelectedEvent(GenreSelectedEvent value),
+    @required
+        TResult initializedWithPreviousChapterOrSeriesDraftEvent(
+            InitializedWithPreviousChapterOrSeriesDraftEvent value),
+    @required
+        TResult isLastChapterChangedEvent(IsLastChapterChangedEvent value),
+    @required TResult isNSFWChangedEvent(IsNSFWChangedEvent value),
+    @required TResult languageSelectedEvent(LanguageSelectedEvent value),
+    @required TResult launchedFromLibraryEvent(LaunchedFromLibraryEvent value),
+    @required
+        TResult launchedFromPreviousChapterEvent(
+            LaunchedFromPreviousChapterEvent value),
+    @required
+        TResult launchedFromSeriesEditorEvent(
+            LaunchedFromSeriesEditorEvent value),
+    @required TResult licenceSelectedEvent(LicenceSelectedEvent value),
+    @required
+        TResult publishButtonPressedEvent(PublishButtonPressedEvent value),
+    @required
+        TResult saveOrBackButtonPressedEvent(
+            SaveOrBackButtonPressedEvent value),
+    @required TResult seriesDraftLoadedEvent(SeriesDraftLoadedEvent value),
+    @required TResult seriesPublishedEvent(SeriesPublishedEvent value),
+    @required TResult sessionFetchedEvent(SessionFetchedEvent value),
+    @required TResult storyChangedEvent(StoryChangedEvent value),
+    @required TResult titleChangedEvent(TitleChangedEvent value),
+  }) {
+    assert(addCoverPressedEvent != null);
+    assert(chapterDraftDeletedOrPublishedEvent != null);
+    assert(chapterPublishedEvent != null);
+    assert(deleteDraftButtonPressedEvent != null);
+    assert(genreOptionalSelectedEvent != null);
+    assert(genreSelectedEvent != null);
+    assert(initializedWithPreviousChapterOrSeriesDraftEvent != null);
+    assert(isLastChapterChangedEvent != null);
+    assert(isNSFWChangedEvent != null);
+    assert(languageSelectedEvent != null);
+    assert(launchedFromLibraryEvent != null);
+    assert(launchedFromPreviousChapterEvent != null);
+    assert(launchedFromSeriesEditorEvent != null);
+    assert(licenceSelectedEvent != null);
+    assert(publishButtonPressedEvent != null);
+    assert(saveOrBackButtonPressedEvent != null);
+    assert(seriesDraftLoadedEvent != null);
+    assert(seriesPublishedEvent != null);
+    assert(sessionFetchedEvent != null);
+    assert(storyChangedEvent != null);
+    assert(titleChangedEvent != null);
+    return deleteDraftButtonPressedEvent(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object>({
+    TResult addCoverPressedEvent(AddCoverPressedEvent value),
+    TResult chapterDraftDeletedOrPublishedEvent(
+        ChapterDraftDeletedOrPublishedEvent value),
+    TResult chapterPublishedEvent(ChapterPublishedEvent value),
+    TResult deleteDraftButtonPressedEvent(DeleteDraftButtonPressedEvent value),
+    TResult genreOptionalSelectedEvent(GenreOptionalSelectedEvent value),
+    TResult genreSelectedEvent(GenreSelectedEvent value),
+    TResult initializedWithPreviousChapterOrSeriesDraftEvent(
+        InitializedWithPreviousChapterOrSeriesDraftEvent value),
+    TResult isLastChapterChangedEvent(IsLastChapterChangedEvent value),
+    TResult isNSFWChangedEvent(IsNSFWChangedEvent value),
+    TResult languageSelectedEvent(LanguageSelectedEvent value),
+    TResult launchedFromLibraryEvent(LaunchedFromLibraryEvent value),
+    TResult launchedFromPreviousChapterEvent(
+        LaunchedFromPreviousChapterEvent value),
+    TResult launchedFromSeriesEditorEvent(LaunchedFromSeriesEditorEvent value),
+    TResult licenceSelectedEvent(LicenceSelectedEvent value),
+    TResult publishButtonPressedEvent(PublishButtonPressedEvent value),
+    TResult saveOrBackButtonPressedEvent(SaveOrBackButtonPressedEvent value),
+    TResult seriesDraftLoadedEvent(SeriesDraftLoadedEvent value),
+    TResult seriesPublishedEvent(SeriesPublishedEvent value),
+    TResult sessionFetchedEvent(SessionFetchedEvent value),
+    TResult storyChangedEvent(StoryChangedEvent value),
+    TResult titleChangedEvent(TitleChangedEvent value),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (deleteDraftButtonPressedEvent != null) {
+      return deleteDraftButtonPressedEvent(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class DeleteDraftButtonPressedEvent
+    implements ChapterEditorDatabaseEvent {
+  const factory DeleteDraftButtonPressedEvent() =
+      _$DeleteDraftButtonPressedEvent;
+}
+
+/// @nodoc
+abstract class $GenreOptionalSelectedEventCopyWith<$Res> {
+  factory $GenreOptionalSelectedEventCopyWith(GenreOptionalSelectedEvent value,
+          $Res Function(GenreOptionalSelectedEvent) then) =
+      _$GenreOptionalSelectedEventCopyWithImpl<$Res>;
+  $Res call({String genreOptional});
+}
+
+/// @nodoc
+class _$GenreOptionalSelectedEventCopyWithImpl<$Res>
+    extends _$ChapterEditorDatabaseEventCopyWithImpl<$Res>
+    implements $GenreOptionalSelectedEventCopyWith<$Res> {
+  _$GenreOptionalSelectedEventCopyWithImpl(GenreOptionalSelectedEvent _value,
+      $Res Function(GenreOptionalSelectedEvent) _then)
+      : super(_value, (v) => _then(v as GenreOptionalSelectedEvent));
+
+  @override
+  GenreOptionalSelectedEvent get _value =>
+      super._value as GenreOptionalSelectedEvent;
+
+  @override
+  $Res call({
+    Object genreOptional = freezed,
+  }) {
+    return _then(GenreOptionalSelectedEvent(
+      genreOptional == freezed ? _value.genreOptional : genreOptional as String,
+    ));
+  }
+}
+
+/// @nodoc
+class _$GenreOptionalSelectedEvent
+    with DiagnosticableTreeMixin
+    implements GenreOptionalSelectedEvent {
+  const _$GenreOptionalSelectedEvent(this.genreOptional)
+      : assert(genreOptional != null);
+
+  @override
+  final String genreOptional;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'ChapterEditorDatabaseEvent.genreOptionalSelectedEvent(genreOptional: $genreOptional)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty(
+          'type', 'ChapterEditorDatabaseEvent.genreOptionalSelectedEvent'))
+      ..add(DiagnosticsProperty('genreOptional', genreOptional));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is GenreOptionalSelectedEvent &&
+            (identical(other.genreOptional, genreOptional) ||
+                const DeepCollectionEquality()
+                    .equals(other.genreOptional, genreOptional)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(genreOptional);
+
+  @JsonKey(ignore: true)
+  @override
+  $GenreOptionalSelectedEventCopyWith<GenreOptionalSelectedEvent>
+      get copyWith =>
+          _$GenreOptionalSelectedEventCopyWithImpl<GenreOptionalSelectedEvent>(
+              this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object>({
+    @required TResult addCoverPressedEvent(),
+    @required TResult chapterDraftDeletedOrPublishedEvent(),
+    @required TResult chapterPublishedEvent(),
+    @required TResult deleteDraftButtonPressedEvent(),
+    @required TResult genreOptionalSelectedEvent(String genreOptional),
+    @required TResult genreSelectedEvent(String genre),
+    @required TResult initializedWithPreviousChapterOrSeriesDraftEvent(),
+    @required TResult isLastChapterChangedEvent(bool isLastChapter),
+    @required TResult isNSFWChangedEvent(bool isNSFW),
+    @required TResult languageSelectedEvent(String language),
+    @required
+        TResult launchedFromLibraryEvent(BuildContext context,
+            Chapter chapterDraft, EditorContentOrigin editorContentOrigin),
+    @required
+        TResult launchedFromPreviousChapterEvent(BuildContext context,
+            Chapter previousChapter, EditorContentOrigin editorContentOrigin),
+    @required
+        TResult launchedFromSeriesEditorEvent(BuildContext context,
+            EditorContentOrigin editorContentOrigin, Series seriesDraft),
+    @required TResult licenceSelectedEvent(String licence),
+    @required TResult publishButtonPressedEvent(),
+    @required TResult saveOrBackButtonPressedEvent(),
+    @required TResult seriesDraftLoadedEvent(Series seriesDraft),
+    @required TResult seriesPublishedEvent(String seriesDraftUID),
+    @required TResult sessionFetchedEvent(),
+    @required TResult storyChangedEvent(String story),
+    @required TResult titleChangedEvent(String title),
+  }) {
+    assert(addCoverPressedEvent != null);
+    assert(chapterDraftDeletedOrPublishedEvent != null);
+    assert(chapterPublishedEvent != null);
+    assert(deleteDraftButtonPressedEvent != null);
+    assert(genreOptionalSelectedEvent != null);
+    assert(genreSelectedEvent != null);
+    assert(initializedWithPreviousChapterOrSeriesDraftEvent != null);
+    assert(isLastChapterChangedEvent != null);
+    assert(isNSFWChangedEvent != null);
+    assert(languageSelectedEvent != null);
+    assert(launchedFromLibraryEvent != null);
+    assert(launchedFromPreviousChapterEvent != null);
+    assert(launchedFromSeriesEditorEvent != null);
+    assert(licenceSelectedEvent != null);
+    assert(publishButtonPressedEvent != null);
+    assert(saveOrBackButtonPressedEvent != null);
+    assert(seriesDraftLoadedEvent != null);
+    assert(seriesPublishedEvent != null);
+    assert(sessionFetchedEvent != null);
+    assert(storyChangedEvent != null);
+    assert(titleChangedEvent != null);
+    return genreOptionalSelectedEvent(genreOptional);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object>({
+    TResult addCoverPressedEvent(),
+    TResult chapterDraftDeletedOrPublishedEvent(),
+    TResult chapterPublishedEvent(),
+    TResult deleteDraftButtonPressedEvent(),
+    TResult genreOptionalSelectedEvent(String genreOptional),
+    TResult genreSelectedEvent(String genre),
+    TResult initializedWithPreviousChapterOrSeriesDraftEvent(),
+    TResult isLastChapterChangedEvent(bool isLastChapter),
+    TResult isNSFWChangedEvent(bool isNSFW),
+    TResult languageSelectedEvent(String language),
+    TResult launchedFromLibraryEvent(BuildContext context, Chapter chapterDraft,
+        EditorContentOrigin editorContentOrigin),
+    TResult launchedFromPreviousChapterEvent(BuildContext context,
+        Chapter previousChapter, EditorContentOrigin editorContentOrigin),
+    TResult launchedFromSeriesEditorEvent(BuildContext context,
+        EditorContentOrigin editorContentOrigin, Series seriesDraft),
+    TResult licenceSelectedEvent(String licence),
+    TResult publishButtonPressedEvent(),
+    TResult saveOrBackButtonPressedEvent(),
+    TResult seriesDraftLoadedEvent(Series seriesDraft),
+    TResult seriesPublishedEvent(String seriesDraftUID),
+    TResult sessionFetchedEvent(),
+    TResult storyChangedEvent(String story),
+    TResult titleChangedEvent(String title),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (genreOptionalSelectedEvent != null) {
+      return genreOptionalSelectedEvent(genreOptional);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object>({
+    @required TResult addCoverPressedEvent(AddCoverPressedEvent value),
+    @required
+        TResult chapterDraftDeletedOrPublishedEvent(
+            ChapterDraftDeletedOrPublishedEvent value),
+    @required TResult chapterPublishedEvent(ChapterPublishedEvent value),
+    @required
+        TResult deleteDraftButtonPressedEvent(
+            DeleteDraftButtonPressedEvent value),
+    @required
+        TResult genreOptionalSelectedEvent(GenreOptionalSelectedEvent value),
+    @required TResult genreSelectedEvent(GenreSelectedEvent value),
+    @required
+        TResult initializedWithPreviousChapterOrSeriesDraftEvent(
+            InitializedWithPreviousChapterOrSeriesDraftEvent value),
+    @required
+        TResult isLastChapterChangedEvent(IsLastChapterChangedEvent value),
+    @required TResult isNSFWChangedEvent(IsNSFWChangedEvent value),
+    @required TResult languageSelectedEvent(LanguageSelectedEvent value),
+    @required TResult launchedFromLibraryEvent(LaunchedFromLibraryEvent value),
+    @required
+        TResult launchedFromPreviousChapterEvent(
+            LaunchedFromPreviousChapterEvent value),
+    @required
+        TResult launchedFromSeriesEditorEvent(
+            LaunchedFromSeriesEditorEvent value),
+    @required TResult licenceSelectedEvent(LicenceSelectedEvent value),
+    @required
+        TResult publishButtonPressedEvent(PublishButtonPressedEvent value),
+    @required
+        TResult saveOrBackButtonPressedEvent(
+            SaveOrBackButtonPressedEvent value),
+    @required TResult seriesDraftLoadedEvent(SeriesDraftLoadedEvent value),
+    @required TResult seriesPublishedEvent(SeriesPublishedEvent value),
+    @required TResult sessionFetchedEvent(SessionFetchedEvent value),
+    @required TResult storyChangedEvent(StoryChangedEvent value),
+    @required TResult titleChangedEvent(TitleChangedEvent value),
+  }) {
+    assert(addCoverPressedEvent != null);
+    assert(chapterDraftDeletedOrPublishedEvent != null);
+    assert(chapterPublishedEvent != null);
+    assert(deleteDraftButtonPressedEvent != null);
+    assert(genreOptionalSelectedEvent != null);
+    assert(genreSelectedEvent != null);
+    assert(initializedWithPreviousChapterOrSeriesDraftEvent != null);
+    assert(isLastChapterChangedEvent != null);
+    assert(isNSFWChangedEvent != null);
+    assert(languageSelectedEvent != null);
+    assert(launchedFromLibraryEvent != null);
+    assert(launchedFromPreviousChapterEvent != null);
+    assert(launchedFromSeriesEditorEvent != null);
+    assert(licenceSelectedEvent != null);
+    assert(publishButtonPressedEvent != null);
+    assert(saveOrBackButtonPressedEvent != null);
+    assert(seriesDraftLoadedEvent != null);
+    assert(seriesPublishedEvent != null);
+    assert(sessionFetchedEvent != null);
+    assert(storyChangedEvent != null);
+    assert(titleChangedEvent != null);
+    return genreOptionalSelectedEvent(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object>({
+    TResult addCoverPressedEvent(AddCoverPressedEvent value),
+    TResult chapterDraftDeletedOrPublishedEvent(
+        ChapterDraftDeletedOrPublishedEvent value),
+    TResult chapterPublishedEvent(ChapterPublishedEvent value),
+    TResult deleteDraftButtonPressedEvent(DeleteDraftButtonPressedEvent value),
+    TResult genreOptionalSelectedEvent(GenreOptionalSelectedEvent value),
+    TResult genreSelectedEvent(GenreSelectedEvent value),
+    TResult initializedWithPreviousChapterOrSeriesDraftEvent(
+        InitializedWithPreviousChapterOrSeriesDraftEvent value),
+    TResult isLastChapterChangedEvent(IsLastChapterChangedEvent value),
+    TResult isNSFWChangedEvent(IsNSFWChangedEvent value),
+    TResult languageSelectedEvent(LanguageSelectedEvent value),
+    TResult launchedFromLibraryEvent(LaunchedFromLibraryEvent value),
+    TResult launchedFromPreviousChapterEvent(
+        LaunchedFromPreviousChapterEvent value),
+    TResult launchedFromSeriesEditorEvent(LaunchedFromSeriesEditorEvent value),
+    TResult licenceSelectedEvent(LicenceSelectedEvent value),
+    TResult publishButtonPressedEvent(PublishButtonPressedEvent value),
+    TResult saveOrBackButtonPressedEvent(SaveOrBackButtonPressedEvent value),
+    TResult seriesDraftLoadedEvent(SeriesDraftLoadedEvent value),
+    TResult seriesPublishedEvent(SeriesPublishedEvent value),
+    TResult sessionFetchedEvent(SessionFetchedEvent value),
+    TResult storyChangedEvent(StoryChangedEvent value),
+    TResult titleChangedEvent(TitleChangedEvent value),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (genreOptionalSelectedEvent != null) {
+      return genreOptionalSelectedEvent(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GenreOptionalSelectedEvent
+    implements ChapterEditorDatabaseEvent {
+  const factory GenreOptionalSelectedEvent(String genreOptional) =
+      _$GenreOptionalSelectedEvent;
+
+  String get genreOptional;
+  @JsonKey(ignore: true)
+  $GenreOptionalSelectedEventCopyWith<GenreOptionalSelectedEvent> get copyWith;
+}
+
+/// @nodoc
+abstract class $GenreSelectedEventCopyWith<$Res> {
+  factory $GenreSelectedEventCopyWith(
+          GenreSelectedEvent value, $Res Function(GenreSelectedEvent) then) =
+      _$GenreSelectedEventCopyWithImpl<$Res>;
+  $Res call({String genre});
+}
+
+/// @nodoc
+class _$GenreSelectedEventCopyWithImpl<$Res>
+    extends _$ChapterEditorDatabaseEventCopyWithImpl<$Res>
+    implements $GenreSelectedEventCopyWith<$Res> {
+  _$GenreSelectedEventCopyWithImpl(
+      GenreSelectedEvent _value, $Res Function(GenreSelectedEvent) _then)
+      : super(_value, (v) => _then(v as GenreSelectedEvent));
+
+  @override
+  GenreSelectedEvent get _value => super._value as GenreSelectedEvent;
+
+  @override
+  $Res call({
+    Object genre = freezed,
+  }) {
+    return _then(GenreSelectedEvent(
+      genre == freezed ? _value.genre : genre as String,
+    ));
+  }
+}
+
+/// @nodoc
+class _$GenreSelectedEvent
+    with DiagnosticableTreeMixin
+    implements GenreSelectedEvent {
+  const _$GenreSelectedEvent(this.genre) : assert(genre != null);
+
+  @override
+  final String genre;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'ChapterEditorDatabaseEvent.genreSelectedEvent(genre: $genre)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty(
+          'type', 'ChapterEditorDatabaseEvent.genreSelectedEvent'))
+      ..add(DiagnosticsProperty('genre', genre));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is GenreSelectedEvent &&
+            (identical(other.genre, genre) ||
+                const DeepCollectionEquality().equals(other.genre, genre)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(genre);
+
+  @JsonKey(ignore: true)
+  @override
+  $GenreSelectedEventCopyWith<GenreSelectedEvent> get copyWith =>
+      _$GenreSelectedEventCopyWithImpl<GenreSelectedEvent>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object>({
+    @required TResult addCoverPressedEvent(),
+    @required TResult chapterDraftDeletedOrPublishedEvent(),
+    @required TResult chapterPublishedEvent(),
+    @required TResult deleteDraftButtonPressedEvent(),
+    @required TResult genreOptionalSelectedEvent(String genreOptional),
+    @required TResult genreSelectedEvent(String genre),
+    @required TResult initializedWithPreviousChapterOrSeriesDraftEvent(),
+    @required TResult isLastChapterChangedEvent(bool isLastChapter),
+    @required TResult isNSFWChangedEvent(bool isNSFW),
+    @required TResult languageSelectedEvent(String language),
+    @required
+        TResult launchedFromLibraryEvent(BuildContext context,
+            Chapter chapterDraft, EditorContentOrigin editorContentOrigin),
+    @required
+        TResult launchedFromPreviousChapterEvent(BuildContext context,
+            Chapter previousChapter, EditorContentOrigin editorContentOrigin),
+    @required
+        TResult launchedFromSeriesEditorEvent(BuildContext context,
+            EditorContentOrigin editorContentOrigin, Series seriesDraft),
+    @required TResult licenceSelectedEvent(String licence),
+    @required TResult publishButtonPressedEvent(),
+    @required TResult saveOrBackButtonPressedEvent(),
+    @required TResult seriesDraftLoadedEvent(Series seriesDraft),
+    @required TResult seriesPublishedEvent(String seriesDraftUID),
+    @required TResult sessionFetchedEvent(),
+    @required TResult storyChangedEvent(String story),
+    @required TResult titleChangedEvent(String title),
+  }) {
+    assert(addCoverPressedEvent != null);
+    assert(chapterDraftDeletedOrPublishedEvent != null);
+    assert(chapterPublishedEvent != null);
+    assert(deleteDraftButtonPressedEvent != null);
+    assert(genreOptionalSelectedEvent != null);
+    assert(genreSelectedEvent != null);
+    assert(initializedWithPreviousChapterOrSeriesDraftEvent != null);
+    assert(isLastChapterChangedEvent != null);
+    assert(isNSFWChangedEvent != null);
+    assert(languageSelectedEvent != null);
+    assert(launchedFromLibraryEvent != null);
+    assert(launchedFromPreviousChapterEvent != null);
+    assert(launchedFromSeriesEditorEvent != null);
+    assert(licenceSelectedEvent != null);
+    assert(publishButtonPressedEvent != null);
+    assert(saveOrBackButtonPressedEvent != null);
+    assert(seriesDraftLoadedEvent != null);
+    assert(seriesPublishedEvent != null);
+    assert(sessionFetchedEvent != null);
+    assert(storyChangedEvent != null);
+    assert(titleChangedEvent != null);
+    return genreSelectedEvent(genre);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object>({
+    TResult addCoverPressedEvent(),
+    TResult chapterDraftDeletedOrPublishedEvent(),
+    TResult chapterPublishedEvent(),
+    TResult deleteDraftButtonPressedEvent(),
+    TResult genreOptionalSelectedEvent(String genreOptional),
+    TResult genreSelectedEvent(String genre),
+    TResult initializedWithPreviousChapterOrSeriesDraftEvent(),
+    TResult isLastChapterChangedEvent(bool isLastChapter),
+    TResult isNSFWChangedEvent(bool isNSFW),
+    TResult languageSelectedEvent(String language),
+    TResult launchedFromLibraryEvent(BuildContext context, Chapter chapterDraft,
+        EditorContentOrigin editorContentOrigin),
+    TResult launchedFromPreviousChapterEvent(BuildContext context,
+        Chapter previousChapter, EditorContentOrigin editorContentOrigin),
+    TResult launchedFromSeriesEditorEvent(BuildContext context,
+        EditorContentOrigin editorContentOrigin, Series seriesDraft),
+    TResult licenceSelectedEvent(String licence),
+    TResult publishButtonPressedEvent(),
+    TResult saveOrBackButtonPressedEvent(),
+    TResult seriesDraftLoadedEvent(Series seriesDraft),
+    TResult seriesPublishedEvent(String seriesDraftUID),
+    TResult sessionFetchedEvent(),
+    TResult storyChangedEvent(String story),
+    TResult titleChangedEvent(String title),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (genreSelectedEvent != null) {
+      return genreSelectedEvent(genre);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object>({
+    @required TResult addCoverPressedEvent(AddCoverPressedEvent value),
+    @required
+        TResult chapterDraftDeletedOrPublishedEvent(
+            ChapterDraftDeletedOrPublishedEvent value),
+    @required TResult chapterPublishedEvent(ChapterPublishedEvent value),
+    @required
+        TResult deleteDraftButtonPressedEvent(
+            DeleteDraftButtonPressedEvent value),
+    @required
+        TResult genreOptionalSelectedEvent(GenreOptionalSelectedEvent value),
+    @required TResult genreSelectedEvent(GenreSelectedEvent value),
+    @required
+        TResult initializedWithPreviousChapterOrSeriesDraftEvent(
+            InitializedWithPreviousChapterOrSeriesDraftEvent value),
+    @required
+        TResult isLastChapterChangedEvent(IsLastChapterChangedEvent value),
+    @required TResult isNSFWChangedEvent(IsNSFWChangedEvent value),
+    @required TResult languageSelectedEvent(LanguageSelectedEvent value),
+    @required TResult launchedFromLibraryEvent(LaunchedFromLibraryEvent value),
+    @required
+        TResult launchedFromPreviousChapterEvent(
+            LaunchedFromPreviousChapterEvent value),
+    @required
+        TResult launchedFromSeriesEditorEvent(
+            LaunchedFromSeriesEditorEvent value),
+    @required TResult licenceSelectedEvent(LicenceSelectedEvent value),
+    @required
+        TResult publishButtonPressedEvent(PublishButtonPressedEvent value),
+    @required
+        TResult saveOrBackButtonPressedEvent(
+            SaveOrBackButtonPressedEvent value),
+    @required TResult seriesDraftLoadedEvent(SeriesDraftLoadedEvent value),
+    @required TResult seriesPublishedEvent(SeriesPublishedEvent value),
+    @required TResult sessionFetchedEvent(SessionFetchedEvent value),
+    @required TResult storyChangedEvent(StoryChangedEvent value),
+    @required TResult titleChangedEvent(TitleChangedEvent value),
+  }) {
+    assert(addCoverPressedEvent != null);
+    assert(chapterDraftDeletedOrPublishedEvent != null);
+    assert(chapterPublishedEvent != null);
+    assert(deleteDraftButtonPressedEvent != null);
+    assert(genreOptionalSelectedEvent != null);
+    assert(genreSelectedEvent != null);
+    assert(initializedWithPreviousChapterOrSeriesDraftEvent != null);
+    assert(isLastChapterChangedEvent != null);
+    assert(isNSFWChangedEvent != null);
+    assert(languageSelectedEvent != null);
+    assert(launchedFromLibraryEvent != null);
+    assert(launchedFromPreviousChapterEvent != null);
+    assert(launchedFromSeriesEditorEvent != null);
+    assert(licenceSelectedEvent != null);
+    assert(publishButtonPressedEvent != null);
+    assert(saveOrBackButtonPressedEvent != null);
+    assert(seriesDraftLoadedEvent != null);
+    assert(seriesPublishedEvent != null);
+    assert(sessionFetchedEvent != null);
+    assert(storyChangedEvent != null);
+    assert(titleChangedEvent != null);
+    return genreSelectedEvent(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object>({
+    TResult addCoverPressedEvent(AddCoverPressedEvent value),
+    TResult chapterDraftDeletedOrPublishedEvent(
+        ChapterDraftDeletedOrPublishedEvent value),
+    TResult chapterPublishedEvent(ChapterPublishedEvent value),
+    TResult deleteDraftButtonPressedEvent(DeleteDraftButtonPressedEvent value),
+    TResult genreOptionalSelectedEvent(GenreOptionalSelectedEvent value),
+    TResult genreSelectedEvent(GenreSelectedEvent value),
+    TResult initializedWithPreviousChapterOrSeriesDraftEvent(
+        InitializedWithPreviousChapterOrSeriesDraftEvent value),
+    TResult isLastChapterChangedEvent(IsLastChapterChangedEvent value),
+    TResult isNSFWChangedEvent(IsNSFWChangedEvent value),
+    TResult languageSelectedEvent(LanguageSelectedEvent value),
+    TResult launchedFromLibraryEvent(LaunchedFromLibraryEvent value),
+    TResult launchedFromPreviousChapterEvent(
+        LaunchedFromPreviousChapterEvent value),
+    TResult launchedFromSeriesEditorEvent(LaunchedFromSeriesEditorEvent value),
+    TResult licenceSelectedEvent(LicenceSelectedEvent value),
+    TResult publishButtonPressedEvent(PublishButtonPressedEvent value),
+    TResult saveOrBackButtonPressedEvent(SaveOrBackButtonPressedEvent value),
+    TResult seriesDraftLoadedEvent(SeriesDraftLoadedEvent value),
+    TResult seriesPublishedEvent(SeriesPublishedEvent value),
+    TResult sessionFetchedEvent(SessionFetchedEvent value),
+    TResult storyChangedEvent(StoryChangedEvent value),
+    TResult titleChangedEvent(TitleChangedEvent value),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (genreSelectedEvent != null) {
+      return genreSelectedEvent(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GenreSelectedEvent implements ChapterEditorDatabaseEvent {
+  const factory GenreSelectedEvent(String genre) = _$GenreSelectedEvent;
+
+  String get genre;
+  @JsonKey(ignore: true)
+  $GenreSelectedEventCopyWith<GenreSelectedEvent> get copyWith;
+}
+
+/// @nodoc
+abstract class $InitializedWithPreviousChapterOrSeriesDraftEventCopyWith<$Res> {
+  factory $InitializedWithPreviousChapterOrSeriesDraftEventCopyWith(
+          InitializedWithPreviousChapterOrSeriesDraftEvent value,
+          $Res Function(InitializedWithPreviousChapterOrSeriesDraftEvent)
+              then) =
+      _$InitializedWithPreviousChapterOrSeriesDraftEventCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$InitializedWithPreviousChapterOrSeriesDraftEventCopyWithImpl<$Res>
+    extends _$ChapterEditorDatabaseEventCopyWithImpl<$Res>
+    implements $InitializedWithPreviousChapterOrSeriesDraftEventCopyWith<$Res> {
+  _$InitializedWithPreviousChapterOrSeriesDraftEventCopyWithImpl(
+      InitializedWithPreviousChapterOrSeriesDraftEvent _value,
+      $Res Function(InitializedWithPreviousChapterOrSeriesDraftEvent) _then)
+      : super(
+            _value,
+            (v) =>
+                _then(v as InitializedWithPreviousChapterOrSeriesDraftEvent));
+
+  @override
+  InitializedWithPreviousChapterOrSeriesDraftEvent get _value =>
+      super._value as InitializedWithPreviousChapterOrSeriesDraftEvent;
+}
+
+/// @nodoc
+class _$InitializedWithPreviousChapterOrSeriesDraftEvent
+    with DiagnosticableTreeMixin
+    implements InitializedWithPreviousChapterOrSeriesDraftEvent {
+  const _$InitializedWithPreviousChapterOrSeriesDraftEvent();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'ChapterEditorDatabaseEvent.initializedWithPreviousChapterOrSeriesDraftEvent()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type',
+          'ChapterEditorDatabaseEvent.initializedWithPreviousChapterOrSeriesDraftEvent'));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is InitializedWithPreviousChapterOrSeriesDraftEvent);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object>({
+    @required TResult addCoverPressedEvent(),
+    @required TResult chapterDraftDeletedOrPublishedEvent(),
+    @required TResult chapterPublishedEvent(),
+    @required TResult deleteDraftButtonPressedEvent(),
+    @required TResult genreOptionalSelectedEvent(String genreOptional),
+    @required TResult genreSelectedEvent(String genre),
+    @required TResult initializedWithPreviousChapterOrSeriesDraftEvent(),
+    @required TResult isLastChapterChangedEvent(bool isLastChapter),
+    @required TResult isNSFWChangedEvent(bool isNSFW),
+    @required TResult languageSelectedEvent(String language),
+    @required
+        TResult launchedFromLibraryEvent(BuildContext context,
+            Chapter chapterDraft, EditorContentOrigin editorContentOrigin),
+    @required
+        TResult launchedFromPreviousChapterEvent(BuildContext context,
+            Chapter previousChapter, EditorContentOrigin editorContentOrigin),
+    @required
+        TResult launchedFromSeriesEditorEvent(BuildContext context,
+            EditorContentOrigin editorContentOrigin, Series seriesDraft),
+    @required TResult licenceSelectedEvent(String licence),
+    @required TResult publishButtonPressedEvent(),
+    @required TResult saveOrBackButtonPressedEvent(),
+    @required TResult seriesDraftLoadedEvent(Series seriesDraft),
+    @required TResult seriesPublishedEvent(String seriesDraftUID),
+    @required TResult sessionFetchedEvent(),
+    @required TResult storyChangedEvent(String story),
+    @required TResult titleChangedEvent(String title),
+  }) {
+    assert(addCoverPressedEvent != null);
+    assert(chapterDraftDeletedOrPublishedEvent != null);
+    assert(chapterPublishedEvent != null);
+    assert(deleteDraftButtonPressedEvent != null);
+    assert(genreOptionalSelectedEvent != null);
+    assert(genreSelectedEvent != null);
+    assert(initializedWithPreviousChapterOrSeriesDraftEvent != null);
+    assert(isLastChapterChangedEvent != null);
+    assert(isNSFWChangedEvent != null);
+    assert(languageSelectedEvent != null);
+    assert(launchedFromLibraryEvent != null);
+    assert(launchedFromPreviousChapterEvent != null);
+    assert(launchedFromSeriesEditorEvent != null);
+    assert(licenceSelectedEvent != null);
+    assert(publishButtonPressedEvent != null);
+    assert(saveOrBackButtonPressedEvent != null);
+    assert(seriesDraftLoadedEvent != null);
+    assert(seriesPublishedEvent != null);
+    assert(sessionFetchedEvent != null);
+    assert(storyChangedEvent != null);
+    assert(titleChangedEvent != null);
+    return initializedWithPreviousChapterOrSeriesDraftEvent();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object>({
+    TResult addCoverPressedEvent(),
+    TResult chapterDraftDeletedOrPublishedEvent(),
+    TResult chapterPublishedEvent(),
+    TResult deleteDraftButtonPressedEvent(),
+    TResult genreOptionalSelectedEvent(String genreOptional),
+    TResult genreSelectedEvent(String genre),
+    TResult initializedWithPreviousChapterOrSeriesDraftEvent(),
+    TResult isLastChapterChangedEvent(bool isLastChapter),
+    TResult isNSFWChangedEvent(bool isNSFW),
+    TResult languageSelectedEvent(String language),
+    TResult launchedFromLibraryEvent(BuildContext context, Chapter chapterDraft,
+        EditorContentOrigin editorContentOrigin),
+    TResult launchedFromPreviousChapterEvent(BuildContext context,
+        Chapter previousChapter, EditorContentOrigin editorContentOrigin),
+    TResult launchedFromSeriesEditorEvent(BuildContext context,
+        EditorContentOrigin editorContentOrigin, Series seriesDraft),
+    TResult licenceSelectedEvent(String licence),
+    TResult publishButtonPressedEvent(),
+    TResult saveOrBackButtonPressedEvent(),
+    TResult seriesDraftLoadedEvent(Series seriesDraft),
+    TResult seriesPublishedEvent(String seriesDraftUID),
+    TResult sessionFetchedEvent(),
+    TResult storyChangedEvent(String story),
+    TResult titleChangedEvent(String title),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (initializedWithPreviousChapterOrSeriesDraftEvent != null) {
+      return initializedWithPreviousChapterOrSeriesDraftEvent();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object>({
+    @required TResult addCoverPressedEvent(AddCoverPressedEvent value),
+    @required
+        TResult chapterDraftDeletedOrPublishedEvent(
+            ChapterDraftDeletedOrPublishedEvent value),
+    @required TResult chapterPublishedEvent(ChapterPublishedEvent value),
+    @required
+        TResult deleteDraftButtonPressedEvent(
+            DeleteDraftButtonPressedEvent value),
+    @required
+        TResult genreOptionalSelectedEvent(GenreOptionalSelectedEvent value),
+    @required TResult genreSelectedEvent(GenreSelectedEvent value),
+    @required
+        TResult initializedWithPreviousChapterOrSeriesDraftEvent(
+            InitializedWithPreviousChapterOrSeriesDraftEvent value),
+    @required
+        TResult isLastChapterChangedEvent(IsLastChapterChangedEvent value),
+    @required TResult isNSFWChangedEvent(IsNSFWChangedEvent value),
+    @required TResult languageSelectedEvent(LanguageSelectedEvent value),
+    @required TResult launchedFromLibraryEvent(LaunchedFromLibraryEvent value),
+    @required
+        TResult launchedFromPreviousChapterEvent(
+            LaunchedFromPreviousChapterEvent value),
+    @required
+        TResult launchedFromSeriesEditorEvent(
+            LaunchedFromSeriesEditorEvent value),
+    @required TResult licenceSelectedEvent(LicenceSelectedEvent value),
+    @required
+        TResult publishButtonPressedEvent(PublishButtonPressedEvent value),
+    @required
+        TResult saveOrBackButtonPressedEvent(
+            SaveOrBackButtonPressedEvent value),
+    @required TResult seriesDraftLoadedEvent(SeriesDraftLoadedEvent value),
+    @required TResult seriesPublishedEvent(SeriesPublishedEvent value),
+    @required TResult sessionFetchedEvent(SessionFetchedEvent value),
+    @required TResult storyChangedEvent(StoryChangedEvent value),
+    @required TResult titleChangedEvent(TitleChangedEvent value),
+  }) {
+    assert(addCoverPressedEvent != null);
+    assert(chapterDraftDeletedOrPublishedEvent != null);
+    assert(chapterPublishedEvent != null);
+    assert(deleteDraftButtonPressedEvent != null);
+    assert(genreOptionalSelectedEvent != null);
+    assert(genreSelectedEvent != null);
+    assert(initializedWithPreviousChapterOrSeriesDraftEvent != null);
+    assert(isLastChapterChangedEvent != null);
+    assert(isNSFWChangedEvent != null);
+    assert(languageSelectedEvent != null);
+    assert(launchedFromLibraryEvent != null);
+    assert(launchedFromPreviousChapterEvent != null);
+    assert(launchedFromSeriesEditorEvent != null);
+    assert(licenceSelectedEvent != null);
+    assert(publishButtonPressedEvent != null);
+    assert(saveOrBackButtonPressedEvent != null);
+    assert(seriesDraftLoadedEvent != null);
+    assert(seriesPublishedEvent != null);
+    assert(sessionFetchedEvent != null);
+    assert(storyChangedEvent != null);
+    assert(titleChangedEvent != null);
+    return initializedWithPreviousChapterOrSeriesDraftEvent(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object>({
+    TResult addCoverPressedEvent(AddCoverPressedEvent value),
+    TResult chapterDraftDeletedOrPublishedEvent(
+        ChapterDraftDeletedOrPublishedEvent value),
+    TResult chapterPublishedEvent(ChapterPublishedEvent value),
+    TResult deleteDraftButtonPressedEvent(DeleteDraftButtonPressedEvent value),
+    TResult genreOptionalSelectedEvent(GenreOptionalSelectedEvent value),
+    TResult genreSelectedEvent(GenreSelectedEvent value),
+    TResult initializedWithPreviousChapterOrSeriesDraftEvent(
+        InitializedWithPreviousChapterOrSeriesDraftEvent value),
+    TResult isLastChapterChangedEvent(IsLastChapterChangedEvent value),
+    TResult isNSFWChangedEvent(IsNSFWChangedEvent value),
+    TResult languageSelectedEvent(LanguageSelectedEvent value),
+    TResult launchedFromLibraryEvent(LaunchedFromLibraryEvent value),
+    TResult launchedFromPreviousChapterEvent(
+        LaunchedFromPreviousChapterEvent value),
+    TResult launchedFromSeriesEditorEvent(LaunchedFromSeriesEditorEvent value),
+    TResult licenceSelectedEvent(LicenceSelectedEvent value),
+    TResult publishButtonPressedEvent(PublishButtonPressedEvent value),
+    TResult saveOrBackButtonPressedEvent(SaveOrBackButtonPressedEvent value),
+    TResult seriesDraftLoadedEvent(SeriesDraftLoadedEvent value),
+    TResult seriesPublishedEvent(SeriesPublishedEvent value),
+    TResult sessionFetchedEvent(SessionFetchedEvent value),
+    TResult storyChangedEvent(StoryChangedEvent value),
+    TResult titleChangedEvent(TitleChangedEvent value),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (initializedWithPreviousChapterOrSeriesDraftEvent != null) {
+      return initializedWithPreviousChapterOrSeriesDraftEvent(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class InitializedWithPreviousChapterOrSeriesDraftEvent
+    implements ChapterEditorDatabaseEvent {
+  const factory InitializedWithPreviousChapterOrSeriesDraftEvent() =
+      _$InitializedWithPreviousChapterOrSeriesDraftEvent;
+}
+
+/// @nodoc
+abstract class $IsLastChapterChangedEventCopyWith<$Res> {
+  factory $IsLastChapterChangedEventCopyWith(IsLastChapterChangedEvent value,
+          $Res Function(IsLastChapterChangedEvent) then) =
+      _$IsLastChapterChangedEventCopyWithImpl<$Res>;
+  $Res call({bool isLastChapter});
+}
+
+/// @nodoc
+class _$IsLastChapterChangedEventCopyWithImpl<$Res>
+    extends _$ChapterEditorDatabaseEventCopyWithImpl<$Res>
+    implements $IsLastChapterChangedEventCopyWith<$Res> {
+  _$IsLastChapterChangedEventCopyWithImpl(IsLastChapterChangedEvent _value,
+      $Res Function(IsLastChapterChangedEvent) _then)
+      : super(_value, (v) => _then(v as IsLastChapterChangedEvent));
+
+  @override
+  IsLastChapterChangedEvent get _value =>
+      super._value as IsLastChapterChangedEvent;
+
+  @override
+  $Res call({
+    Object isLastChapter = freezed,
+  }) {
+    return _then(IsLastChapterChangedEvent(
+      isLastChapter: isLastChapter == freezed
+          ? _value.isLastChapter
+          : isLastChapter as bool,
+    ));
+  }
+}
+
+/// @nodoc
+class _$IsLastChapterChangedEvent
+    with DiagnosticableTreeMixin
+    implements IsLastChapterChangedEvent {
+  const _$IsLastChapterChangedEvent({@required this.isLastChapter})
+      : assert(isLastChapter != null);
+
+  @override
+  final bool isLastChapter;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'ChapterEditorDatabaseEvent.isLastChapterChangedEvent(isLastChapter: $isLastChapter)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty(
+          'type', 'ChapterEditorDatabaseEvent.isLastChapterChangedEvent'))
+      ..add(DiagnosticsProperty('isLastChapter', isLastChapter));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is IsLastChapterChangedEvent &&
+            (identical(other.isLastChapter, isLastChapter) ||
+                const DeepCollectionEquality()
+                    .equals(other.isLastChapter, isLastChapter)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(isLastChapter);
+
+  @JsonKey(ignore: true)
+  @override
+  $IsLastChapterChangedEventCopyWith<IsLastChapterChangedEvent> get copyWith =>
+      _$IsLastChapterChangedEventCopyWithImpl<IsLastChapterChangedEvent>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object>({
+    @required TResult addCoverPressedEvent(),
+    @required TResult chapterDraftDeletedOrPublishedEvent(),
+    @required TResult chapterPublishedEvent(),
+    @required TResult deleteDraftButtonPressedEvent(),
+    @required TResult genreOptionalSelectedEvent(String genreOptional),
+    @required TResult genreSelectedEvent(String genre),
+    @required TResult initializedWithPreviousChapterOrSeriesDraftEvent(),
+    @required TResult isLastChapterChangedEvent(bool isLastChapter),
+    @required TResult isNSFWChangedEvent(bool isNSFW),
+    @required TResult languageSelectedEvent(String language),
+    @required
+        TResult launchedFromLibraryEvent(BuildContext context,
+            Chapter chapterDraft, EditorContentOrigin editorContentOrigin),
+    @required
+        TResult launchedFromPreviousChapterEvent(BuildContext context,
+            Chapter previousChapter, EditorContentOrigin editorContentOrigin),
+    @required
+        TResult launchedFromSeriesEditorEvent(BuildContext context,
+            EditorContentOrigin editorContentOrigin, Series seriesDraft),
+    @required TResult licenceSelectedEvent(String licence),
+    @required TResult publishButtonPressedEvent(),
+    @required TResult saveOrBackButtonPressedEvent(),
+    @required TResult seriesDraftLoadedEvent(Series seriesDraft),
+    @required TResult seriesPublishedEvent(String seriesDraftUID),
+    @required TResult sessionFetchedEvent(),
+    @required TResult storyChangedEvent(String story),
+    @required TResult titleChangedEvent(String title),
+  }) {
+    assert(addCoverPressedEvent != null);
+    assert(chapterDraftDeletedOrPublishedEvent != null);
+    assert(chapterPublishedEvent != null);
+    assert(deleteDraftButtonPressedEvent != null);
+    assert(genreOptionalSelectedEvent != null);
+    assert(genreSelectedEvent != null);
+    assert(initializedWithPreviousChapterOrSeriesDraftEvent != null);
+    assert(isLastChapterChangedEvent != null);
+    assert(isNSFWChangedEvent != null);
+    assert(languageSelectedEvent != null);
+    assert(launchedFromLibraryEvent != null);
+    assert(launchedFromPreviousChapterEvent != null);
+    assert(launchedFromSeriesEditorEvent != null);
+    assert(licenceSelectedEvent != null);
+    assert(publishButtonPressedEvent != null);
+    assert(saveOrBackButtonPressedEvent != null);
+    assert(seriesDraftLoadedEvent != null);
+    assert(seriesPublishedEvent != null);
+    assert(sessionFetchedEvent != null);
+    assert(storyChangedEvent != null);
+    assert(titleChangedEvent != null);
+    return isLastChapterChangedEvent(isLastChapter);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object>({
+    TResult addCoverPressedEvent(),
+    TResult chapterDraftDeletedOrPublishedEvent(),
+    TResult chapterPublishedEvent(),
+    TResult deleteDraftButtonPressedEvent(),
+    TResult genreOptionalSelectedEvent(String genreOptional),
+    TResult genreSelectedEvent(String genre),
+    TResult initializedWithPreviousChapterOrSeriesDraftEvent(),
+    TResult isLastChapterChangedEvent(bool isLastChapter),
+    TResult isNSFWChangedEvent(bool isNSFW),
+    TResult languageSelectedEvent(String language),
+    TResult launchedFromLibraryEvent(BuildContext context, Chapter chapterDraft,
+        EditorContentOrigin editorContentOrigin),
+    TResult launchedFromPreviousChapterEvent(BuildContext context,
+        Chapter previousChapter, EditorContentOrigin editorContentOrigin),
+    TResult launchedFromSeriesEditorEvent(BuildContext context,
+        EditorContentOrigin editorContentOrigin, Series seriesDraft),
+    TResult licenceSelectedEvent(String licence),
+    TResult publishButtonPressedEvent(),
+    TResult saveOrBackButtonPressedEvent(),
+    TResult seriesDraftLoadedEvent(Series seriesDraft),
+    TResult seriesPublishedEvent(String seriesDraftUID),
+    TResult sessionFetchedEvent(),
+    TResult storyChangedEvent(String story),
+    TResult titleChangedEvent(String title),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (isLastChapterChangedEvent != null) {
+      return isLastChapterChangedEvent(isLastChapter);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object>({
+    @required TResult addCoverPressedEvent(AddCoverPressedEvent value),
+    @required
+        TResult chapterDraftDeletedOrPublishedEvent(
+            ChapterDraftDeletedOrPublishedEvent value),
+    @required TResult chapterPublishedEvent(ChapterPublishedEvent value),
+    @required
+        TResult deleteDraftButtonPressedEvent(
+            DeleteDraftButtonPressedEvent value),
+    @required
+        TResult genreOptionalSelectedEvent(GenreOptionalSelectedEvent value),
+    @required TResult genreSelectedEvent(GenreSelectedEvent value),
+    @required
+        TResult initializedWithPreviousChapterOrSeriesDraftEvent(
+            InitializedWithPreviousChapterOrSeriesDraftEvent value),
+    @required
+        TResult isLastChapterChangedEvent(IsLastChapterChangedEvent value),
+    @required TResult isNSFWChangedEvent(IsNSFWChangedEvent value),
+    @required TResult languageSelectedEvent(LanguageSelectedEvent value),
+    @required TResult launchedFromLibraryEvent(LaunchedFromLibraryEvent value),
+    @required
+        TResult launchedFromPreviousChapterEvent(
+            LaunchedFromPreviousChapterEvent value),
+    @required
+        TResult launchedFromSeriesEditorEvent(
+            LaunchedFromSeriesEditorEvent value),
+    @required TResult licenceSelectedEvent(LicenceSelectedEvent value),
+    @required
+        TResult publishButtonPressedEvent(PublishButtonPressedEvent value),
+    @required
+        TResult saveOrBackButtonPressedEvent(
+            SaveOrBackButtonPressedEvent value),
+    @required TResult seriesDraftLoadedEvent(SeriesDraftLoadedEvent value),
+    @required TResult seriesPublishedEvent(SeriesPublishedEvent value),
+    @required TResult sessionFetchedEvent(SessionFetchedEvent value),
+    @required TResult storyChangedEvent(StoryChangedEvent value),
+    @required TResult titleChangedEvent(TitleChangedEvent value),
+  }) {
+    assert(addCoverPressedEvent != null);
+    assert(chapterDraftDeletedOrPublishedEvent != null);
+    assert(chapterPublishedEvent != null);
+    assert(deleteDraftButtonPressedEvent != null);
+    assert(genreOptionalSelectedEvent != null);
+    assert(genreSelectedEvent != null);
+    assert(initializedWithPreviousChapterOrSeriesDraftEvent != null);
+    assert(isLastChapterChangedEvent != null);
+    assert(isNSFWChangedEvent != null);
+    assert(languageSelectedEvent != null);
+    assert(launchedFromLibraryEvent != null);
+    assert(launchedFromPreviousChapterEvent != null);
+    assert(launchedFromSeriesEditorEvent != null);
+    assert(licenceSelectedEvent != null);
+    assert(publishButtonPressedEvent != null);
+    assert(saveOrBackButtonPressedEvent != null);
+    assert(seriesDraftLoadedEvent != null);
+    assert(seriesPublishedEvent != null);
+    assert(sessionFetchedEvent != null);
+    assert(storyChangedEvent != null);
+    assert(titleChangedEvent != null);
+    return isLastChapterChangedEvent(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object>({
+    TResult addCoverPressedEvent(AddCoverPressedEvent value),
+    TResult chapterDraftDeletedOrPublishedEvent(
+        ChapterDraftDeletedOrPublishedEvent value),
+    TResult chapterPublishedEvent(ChapterPublishedEvent value),
+    TResult deleteDraftButtonPressedEvent(DeleteDraftButtonPressedEvent value),
+    TResult genreOptionalSelectedEvent(GenreOptionalSelectedEvent value),
+    TResult genreSelectedEvent(GenreSelectedEvent value),
+    TResult initializedWithPreviousChapterOrSeriesDraftEvent(
+        InitializedWithPreviousChapterOrSeriesDraftEvent value),
+    TResult isLastChapterChangedEvent(IsLastChapterChangedEvent value),
+    TResult isNSFWChangedEvent(IsNSFWChangedEvent value),
+    TResult languageSelectedEvent(LanguageSelectedEvent value),
+    TResult launchedFromLibraryEvent(LaunchedFromLibraryEvent value),
+    TResult launchedFromPreviousChapterEvent(
+        LaunchedFromPreviousChapterEvent value),
+    TResult launchedFromSeriesEditorEvent(LaunchedFromSeriesEditorEvent value),
+    TResult licenceSelectedEvent(LicenceSelectedEvent value),
+    TResult publishButtonPressedEvent(PublishButtonPressedEvent value),
+    TResult saveOrBackButtonPressedEvent(SaveOrBackButtonPressedEvent value),
+    TResult seriesDraftLoadedEvent(SeriesDraftLoadedEvent value),
+    TResult seriesPublishedEvent(SeriesPublishedEvent value),
+    TResult sessionFetchedEvent(SessionFetchedEvent value),
+    TResult storyChangedEvent(StoryChangedEvent value),
+    TResult titleChangedEvent(TitleChangedEvent value),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (isLastChapterChangedEvent != null) {
+      return isLastChapterChangedEvent(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class IsLastChapterChangedEvent implements ChapterEditorDatabaseEvent {
+  const factory IsLastChapterChangedEvent({@required bool isLastChapter}) =
+      _$IsLastChapterChangedEvent;
+
+  bool get isLastChapter;
+  @JsonKey(ignore: true)
+  $IsLastChapterChangedEventCopyWith<IsLastChapterChangedEvent> get copyWith;
+}
+
+/// @nodoc
+abstract class $IsNSFWChangedEventCopyWith<$Res> {
+  factory $IsNSFWChangedEventCopyWith(
+          IsNSFWChangedEvent value, $Res Function(IsNSFWChangedEvent) then) =
+      _$IsNSFWChangedEventCopyWithImpl<$Res>;
+  $Res call({bool isNSFW});
+}
+
+/// @nodoc
+class _$IsNSFWChangedEventCopyWithImpl<$Res>
+    extends _$ChapterEditorDatabaseEventCopyWithImpl<$Res>
+    implements $IsNSFWChangedEventCopyWith<$Res> {
+  _$IsNSFWChangedEventCopyWithImpl(
+      IsNSFWChangedEvent _value, $Res Function(IsNSFWChangedEvent) _then)
+      : super(_value, (v) => _then(v as IsNSFWChangedEvent));
+
+  @override
+  IsNSFWChangedEvent get _value => super._value as IsNSFWChangedEvent;
+
+  @override
+  $Res call({
+    Object isNSFW = freezed,
+  }) {
+    return _then(IsNSFWChangedEvent(
+      isNSFW: isNSFW == freezed ? _value.isNSFW : isNSFW as bool,
+    ));
+  }
+}
+
+/// @nodoc
+class _$IsNSFWChangedEvent
+    with DiagnosticableTreeMixin
+    implements IsNSFWChangedEvent {
+  const _$IsNSFWChangedEvent({@required this.isNSFW}) : assert(isNSFW != null);
+
+  @override
+  final bool isNSFW;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'ChapterEditorDatabaseEvent.isNSFWChangedEvent(isNSFW: $isNSFW)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty(
+          'type', 'ChapterEditorDatabaseEvent.isNSFWChangedEvent'))
+      ..add(DiagnosticsProperty('isNSFW', isNSFW));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is IsNSFWChangedEvent &&
+            (identical(other.isNSFW, isNSFW) ||
+                const DeepCollectionEquality().equals(other.isNSFW, isNSFW)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(isNSFW);
+
+  @JsonKey(ignore: true)
+  @override
+  $IsNSFWChangedEventCopyWith<IsNSFWChangedEvent> get copyWith =>
+      _$IsNSFWChangedEventCopyWithImpl<IsNSFWChangedEvent>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object>({
+    @required TResult addCoverPressedEvent(),
+    @required TResult chapterDraftDeletedOrPublishedEvent(),
+    @required TResult chapterPublishedEvent(),
+    @required TResult deleteDraftButtonPressedEvent(),
+    @required TResult genreOptionalSelectedEvent(String genreOptional),
+    @required TResult genreSelectedEvent(String genre),
+    @required TResult initializedWithPreviousChapterOrSeriesDraftEvent(),
+    @required TResult isLastChapterChangedEvent(bool isLastChapter),
+    @required TResult isNSFWChangedEvent(bool isNSFW),
+    @required TResult languageSelectedEvent(String language),
+    @required
+        TResult launchedFromLibraryEvent(BuildContext context,
+            Chapter chapterDraft, EditorContentOrigin editorContentOrigin),
+    @required
+        TResult launchedFromPreviousChapterEvent(BuildContext context,
+            Chapter previousChapter, EditorContentOrigin editorContentOrigin),
+    @required
+        TResult launchedFromSeriesEditorEvent(BuildContext context,
+            EditorContentOrigin editorContentOrigin, Series seriesDraft),
+    @required TResult licenceSelectedEvent(String licence),
+    @required TResult publishButtonPressedEvent(),
+    @required TResult saveOrBackButtonPressedEvent(),
+    @required TResult seriesDraftLoadedEvent(Series seriesDraft),
+    @required TResult seriesPublishedEvent(String seriesDraftUID),
+    @required TResult sessionFetchedEvent(),
+    @required TResult storyChangedEvent(String story),
+    @required TResult titleChangedEvent(String title),
+  }) {
+    assert(addCoverPressedEvent != null);
+    assert(chapterDraftDeletedOrPublishedEvent != null);
+    assert(chapterPublishedEvent != null);
+    assert(deleteDraftButtonPressedEvent != null);
+    assert(genreOptionalSelectedEvent != null);
+    assert(genreSelectedEvent != null);
+    assert(initializedWithPreviousChapterOrSeriesDraftEvent != null);
+    assert(isLastChapterChangedEvent != null);
+    assert(isNSFWChangedEvent != null);
+    assert(languageSelectedEvent != null);
+    assert(launchedFromLibraryEvent != null);
+    assert(launchedFromPreviousChapterEvent != null);
+    assert(launchedFromSeriesEditorEvent != null);
+    assert(licenceSelectedEvent != null);
+    assert(publishButtonPressedEvent != null);
+    assert(saveOrBackButtonPressedEvent != null);
+    assert(seriesDraftLoadedEvent != null);
+    assert(seriesPublishedEvent != null);
+    assert(sessionFetchedEvent != null);
+    assert(storyChangedEvent != null);
+    assert(titleChangedEvent != null);
+    return isNSFWChangedEvent(isNSFW);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object>({
+    TResult addCoverPressedEvent(),
+    TResult chapterDraftDeletedOrPublishedEvent(),
+    TResult chapterPublishedEvent(),
+    TResult deleteDraftButtonPressedEvent(),
+    TResult genreOptionalSelectedEvent(String genreOptional),
+    TResult genreSelectedEvent(String genre),
+    TResult initializedWithPreviousChapterOrSeriesDraftEvent(),
+    TResult isLastChapterChangedEvent(bool isLastChapter),
+    TResult isNSFWChangedEvent(bool isNSFW),
+    TResult languageSelectedEvent(String language),
+    TResult launchedFromLibraryEvent(BuildContext context, Chapter chapterDraft,
+        EditorContentOrigin editorContentOrigin),
+    TResult launchedFromPreviousChapterEvent(BuildContext context,
+        Chapter previousChapter, EditorContentOrigin editorContentOrigin),
+    TResult launchedFromSeriesEditorEvent(BuildContext context,
+        EditorContentOrigin editorContentOrigin, Series seriesDraft),
+    TResult licenceSelectedEvent(String licence),
+    TResult publishButtonPressedEvent(),
+    TResult saveOrBackButtonPressedEvent(),
+    TResult seriesDraftLoadedEvent(Series seriesDraft),
+    TResult seriesPublishedEvent(String seriesDraftUID),
+    TResult sessionFetchedEvent(),
+    TResult storyChangedEvent(String story),
+    TResult titleChangedEvent(String title),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (isNSFWChangedEvent != null) {
+      return isNSFWChangedEvent(isNSFW);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object>({
+    @required TResult addCoverPressedEvent(AddCoverPressedEvent value),
+    @required
+        TResult chapterDraftDeletedOrPublishedEvent(
+            ChapterDraftDeletedOrPublishedEvent value),
+    @required TResult chapterPublishedEvent(ChapterPublishedEvent value),
+    @required
+        TResult deleteDraftButtonPressedEvent(
+            DeleteDraftButtonPressedEvent value),
+    @required
+        TResult genreOptionalSelectedEvent(GenreOptionalSelectedEvent value),
+    @required TResult genreSelectedEvent(GenreSelectedEvent value),
+    @required
+        TResult initializedWithPreviousChapterOrSeriesDraftEvent(
+            InitializedWithPreviousChapterOrSeriesDraftEvent value),
+    @required
+        TResult isLastChapterChangedEvent(IsLastChapterChangedEvent value),
+    @required TResult isNSFWChangedEvent(IsNSFWChangedEvent value),
+    @required TResult languageSelectedEvent(LanguageSelectedEvent value),
+    @required TResult launchedFromLibraryEvent(LaunchedFromLibraryEvent value),
+    @required
+        TResult launchedFromPreviousChapterEvent(
+            LaunchedFromPreviousChapterEvent value),
+    @required
+        TResult launchedFromSeriesEditorEvent(
+            LaunchedFromSeriesEditorEvent value),
+    @required TResult licenceSelectedEvent(LicenceSelectedEvent value),
+    @required
+        TResult publishButtonPressedEvent(PublishButtonPressedEvent value),
+    @required
+        TResult saveOrBackButtonPressedEvent(
+            SaveOrBackButtonPressedEvent value),
+    @required TResult seriesDraftLoadedEvent(SeriesDraftLoadedEvent value),
+    @required TResult seriesPublishedEvent(SeriesPublishedEvent value),
+    @required TResult sessionFetchedEvent(SessionFetchedEvent value),
+    @required TResult storyChangedEvent(StoryChangedEvent value),
+    @required TResult titleChangedEvent(TitleChangedEvent value),
+  }) {
+    assert(addCoverPressedEvent != null);
+    assert(chapterDraftDeletedOrPublishedEvent != null);
+    assert(chapterPublishedEvent != null);
+    assert(deleteDraftButtonPressedEvent != null);
+    assert(genreOptionalSelectedEvent != null);
+    assert(genreSelectedEvent != null);
+    assert(initializedWithPreviousChapterOrSeriesDraftEvent != null);
+    assert(isLastChapterChangedEvent != null);
+    assert(isNSFWChangedEvent != null);
+    assert(languageSelectedEvent != null);
+    assert(launchedFromLibraryEvent != null);
+    assert(launchedFromPreviousChapterEvent != null);
+    assert(launchedFromSeriesEditorEvent != null);
+    assert(licenceSelectedEvent != null);
+    assert(publishButtonPressedEvent != null);
+    assert(saveOrBackButtonPressedEvent != null);
+    assert(seriesDraftLoadedEvent != null);
+    assert(seriesPublishedEvent != null);
+    assert(sessionFetchedEvent != null);
+    assert(storyChangedEvent != null);
+    assert(titleChangedEvent != null);
+    return isNSFWChangedEvent(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object>({
+    TResult addCoverPressedEvent(AddCoverPressedEvent value),
+    TResult chapterDraftDeletedOrPublishedEvent(
+        ChapterDraftDeletedOrPublishedEvent value),
+    TResult chapterPublishedEvent(ChapterPublishedEvent value),
+    TResult deleteDraftButtonPressedEvent(DeleteDraftButtonPressedEvent value),
+    TResult genreOptionalSelectedEvent(GenreOptionalSelectedEvent value),
+    TResult genreSelectedEvent(GenreSelectedEvent value),
+    TResult initializedWithPreviousChapterOrSeriesDraftEvent(
+        InitializedWithPreviousChapterOrSeriesDraftEvent value),
+    TResult isLastChapterChangedEvent(IsLastChapterChangedEvent value),
+    TResult isNSFWChangedEvent(IsNSFWChangedEvent value),
+    TResult languageSelectedEvent(LanguageSelectedEvent value),
+    TResult launchedFromLibraryEvent(LaunchedFromLibraryEvent value),
+    TResult launchedFromPreviousChapterEvent(
+        LaunchedFromPreviousChapterEvent value),
+    TResult launchedFromSeriesEditorEvent(LaunchedFromSeriesEditorEvent value),
+    TResult licenceSelectedEvent(LicenceSelectedEvent value),
+    TResult publishButtonPressedEvent(PublishButtonPressedEvent value),
+    TResult saveOrBackButtonPressedEvent(SaveOrBackButtonPressedEvent value),
+    TResult seriesDraftLoadedEvent(SeriesDraftLoadedEvent value),
+    TResult seriesPublishedEvent(SeriesPublishedEvent value),
+    TResult sessionFetchedEvent(SessionFetchedEvent value),
+    TResult storyChangedEvent(StoryChangedEvent value),
+    TResult titleChangedEvent(TitleChangedEvent value),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (isNSFWChangedEvent != null) {
+      return isNSFWChangedEvent(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class IsNSFWChangedEvent implements ChapterEditorDatabaseEvent {
+  const factory IsNSFWChangedEvent({@required bool isNSFW}) =
+      _$IsNSFWChangedEvent;
+
+  bool get isNSFW;
+  @JsonKey(ignore: true)
+  $IsNSFWChangedEventCopyWith<IsNSFWChangedEvent> get copyWith;
+}
+
+/// @nodoc
+abstract class $LanguageSelectedEventCopyWith<$Res> {
+  factory $LanguageSelectedEventCopyWith(LanguageSelectedEvent value,
+          $Res Function(LanguageSelectedEvent) then) =
+      _$LanguageSelectedEventCopyWithImpl<$Res>;
+  $Res call({String language});
+}
+
+/// @nodoc
+class _$LanguageSelectedEventCopyWithImpl<$Res>
+    extends _$ChapterEditorDatabaseEventCopyWithImpl<$Res>
+    implements $LanguageSelectedEventCopyWith<$Res> {
+  _$LanguageSelectedEventCopyWithImpl(
+      LanguageSelectedEvent _value, $Res Function(LanguageSelectedEvent) _then)
+      : super(_value, (v) => _then(v as LanguageSelectedEvent));
+
+  @override
+  LanguageSelectedEvent get _value => super._value as LanguageSelectedEvent;
+
+  @override
+  $Res call({
+    Object language = freezed,
+  }) {
+    return _then(LanguageSelectedEvent(
+      language == freezed ? _value.language : language as String,
+    ));
+  }
+}
+
+/// @nodoc
+class _$LanguageSelectedEvent
+    with DiagnosticableTreeMixin
+    implements LanguageSelectedEvent {
+  const _$LanguageSelectedEvent(this.language) : assert(language != null);
+
+  @override
+  final String language;
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'ChapterEditorDatabaseEvent.languageSelectedEvent(language: $language)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty(
+          'type', 'ChapterEditorDatabaseEvent.languageSelectedEvent'))
+      ..add(DiagnosticsProperty('language', language));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is LanguageSelectedEvent &&
+            (identical(other.language, language) ||
+                const DeepCollectionEquality()
+                    .equals(other.language, language)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(language);
+
+  @JsonKey(ignore: true)
+  @override
+  $LanguageSelectedEventCopyWith<LanguageSelectedEvent> get copyWith =>
+      _$LanguageSelectedEventCopyWithImpl<LanguageSelectedEvent>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object>({
+    @required TResult addCoverPressedEvent(),
+    @required TResult chapterDraftDeletedOrPublishedEvent(),
+    @required TResult chapterPublishedEvent(),
+    @required TResult deleteDraftButtonPressedEvent(),
+    @required TResult genreOptionalSelectedEvent(String genreOptional),
+    @required TResult genreSelectedEvent(String genre),
+    @required TResult initializedWithPreviousChapterOrSeriesDraftEvent(),
+    @required TResult isLastChapterChangedEvent(bool isLastChapter),
+    @required TResult isNSFWChangedEvent(bool isNSFW),
+    @required TResult languageSelectedEvent(String language),
+    @required
+        TResult launchedFromLibraryEvent(BuildContext context,
+            Chapter chapterDraft, EditorContentOrigin editorContentOrigin),
+    @required
+        TResult launchedFromPreviousChapterEvent(BuildContext context,
+            Chapter previousChapter, EditorContentOrigin editorContentOrigin),
+    @required
+        TResult launchedFromSeriesEditorEvent(BuildContext context,
+            EditorContentOrigin editorContentOrigin, Series seriesDraft),
+    @required TResult licenceSelectedEvent(String licence),
+    @required TResult publishButtonPressedEvent(),
+    @required TResult saveOrBackButtonPressedEvent(),
+    @required TResult seriesDraftLoadedEvent(Series seriesDraft),
+    @required TResult seriesPublishedEvent(String seriesDraftUID),
+    @required TResult sessionFetchedEvent(),
+    @required TResult storyChangedEvent(String story),
+    @required TResult titleChangedEvent(String title),
+  }) {
+    assert(addCoverPressedEvent != null);
+    assert(chapterDraftDeletedOrPublishedEvent != null);
+    assert(chapterPublishedEvent != null);
+    assert(deleteDraftButtonPressedEvent != null);
+    assert(genreOptionalSelectedEvent != null);
+    assert(genreSelectedEvent != null);
+    assert(initializedWithPreviousChapterOrSeriesDraftEvent != null);
+    assert(isLastChapterChangedEvent != null);
+    assert(isNSFWChangedEvent != null);
+    assert(languageSelectedEvent != null);
+    assert(launchedFromLibraryEvent != null);
+    assert(launchedFromPreviousChapterEvent != null);
+    assert(launchedFromSeriesEditorEvent != null);
+    assert(licenceSelectedEvent != null);
+    assert(publishButtonPressedEvent != null);
+    assert(saveOrBackButtonPressedEvent != null);
+    assert(seriesDraftLoadedEvent != null);
+    assert(seriesPublishedEvent != null);
+    assert(sessionFetchedEvent != null);
+    assert(storyChangedEvent != null);
+    assert(titleChangedEvent != null);
+    return languageSelectedEvent(language);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object>({
+    TResult addCoverPressedEvent(),
+    TResult chapterDraftDeletedOrPublishedEvent(),
+    TResult chapterPublishedEvent(),
+    TResult deleteDraftButtonPressedEvent(),
+    TResult genreOptionalSelectedEvent(String genreOptional),
+    TResult genreSelectedEvent(String genre),
+    TResult initializedWithPreviousChapterOrSeriesDraftEvent(),
+    TResult isLastChapterChangedEvent(bool isLastChapter),
+    TResult isNSFWChangedEvent(bool isNSFW),
+    TResult languageSelectedEvent(String language),
+    TResult launchedFromLibraryEvent(BuildContext context, Chapter chapterDraft,
+        EditorContentOrigin editorContentOrigin),
+    TResult launchedFromPreviousChapterEvent(BuildContext context,
+        Chapter previousChapter, EditorContentOrigin editorContentOrigin),
+    TResult launchedFromSeriesEditorEvent(BuildContext context,
+        EditorContentOrigin editorContentOrigin, Series seriesDraft),
+    TResult licenceSelectedEvent(String licence),
+    TResult publishButtonPressedEvent(),
+    TResult saveOrBackButtonPressedEvent(),
+    TResult seriesDraftLoadedEvent(Series seriesDraft),
+    TResult seriesPublishedEvent(String seriesDraftUID),
+    TResult sessionFetchedEvent(),
+    TResult storyChangedEvent(String story),
+    TResult titleChangedEvent(String title),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (languageSelectedEvent != null) {
+      return languageSelectedEvent(language);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object>({
+    @required TResult addCoverPressedEvent(AddCoverPressedEvent value),
+    @required
+        TResult chapterDraftDeletedOrPublishedEvent(
+            ChapterDraftDeletedOrPublishedEvent value),
+    @required TResult chapterPublishedEvent(ChapterPublishedEvent value),
+    @required
+        TResult deleteDraftButtonPressedEvent(
+            DeleteDraftButtonPressedEvent value),
+    @required
+        TResult genreOptionalSelectedEvent(GenreOptionalSelectedEvent value),
+    @required TResult genreSelectedEvent(GenreSelectedEvent value),
+    @required
+        TResult initializedWithPreviousChapterOrSeriesDraftEvent(
+            InitializedWithPreviousChapterOrSeriesDraftEvent value),
+    @required
+        TResult isLastChapterChangedEvent(IsLastChapterChangedEvent value),
+    @required TResult isNSFWChangedEvent(IsNSFWChangedEvent value),
+    @required TResult languageSelectedEvent(LanguageSelectedEvent value),
+    @required TResult launchedFromLibraryEvent(LaunchedFromLibraryEvent value),
+    @required
+        TResult launchedFromPreviousChapterEvent(
+            LaunchedFromPreviousChapterEvent value),
+    @required
+        TResult launchedFromSeriesEditorEvent(
+            LaunchedFromSeriesEditorEvent value),
+    @required TResult licenceSelectedEvent(LicenceSelectedEvent value),
+    @required
+        TResult publishButtonPressedEvent(PublishButtonPressedEvent value),
+    @required
+        TResult saveOrBackButtonPressedEvent(
+            SaveOrBackButtonPressedEvent value),
+    @required TResult seriesDraftLoadedEvent(SeriesDraftLoadedEvent value),
+    @required TResult seriesPublishedEvent(SeriesPublishedEvent value),
+    @required TResult sessionFetchedEvent(SessionFetchedEvent value),
+    @required TResult storyChangedEvent(StoryChangedEvent value),
+    @required TResult titleChangedEvent(TitleChangedEvent value),
+  }) {
+    assert(addCoverPressedEvent != null);
+    assert(chapterDraftDeletedOrPublishedEvent != null);
+    assert(chapterPublishedEvent != null);
+    assert(deleteDraftButtonPressedEvent != null);
+    assert(genreOptionalSelectedEvent != null);
+    assert(genreSelectedEvent != null);
+    assert(initializedWithPreviousChapterOrSeriesDraftEvent != null);
+    assert(isLastChapterChangedEvent != null);
+    assert(isNSFWChangedEvent != null);
+    assert(languageSelectedEvent != null);
+    assert(launchedFromLibraryEvent != null);
+    assert(launchedFromPreviousChapterEvent != null);
+    assert(launchedFromSeriesEditorEvent != null);
+    assert(licenceSelectedEvent != null);
+    assert(publishButtonPressedEvent != null);
+    assert(saveOrBackButtonPressedEvent != null);
+    assert(seriesDraftLoadedEvent != null);
+    assert(seriesPublishedEvent != null);
+    assert(sessionFetchedEvent != null);
+    assert(storyChangedEvent != null);
+    assert(titleChangedEvent != null);
+    return languageSelectedEvent(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object>({
+    TResult addCoverPressedEvent(AddCoverPressedEvent value),
+    TResult chapterDraftDeletedOrPublishedEvent(
+        ChapterDraftDeletedOrPublishedEvent value),
+    TResult chapterPublishedEvent(ChapterPublishedEvent value),
+    TResult deleteDraftButtonPressedEvent(DeleteDraftButtonPressedEvent value),
+    TResult genreOptionalSelectedEvent(GenreOptionalSelectedEvent value),
+    TResult genreSelectedEvent(GenreSelectedEvent value),
+    TResult initializedWithPreviousChapterOrSeriesDraftEvent(
+        InitializedWithPreviousChapterOrSeriesDraftEvent value),
+    TResult isLastChapterChangedEvent(IsLastChapterChangedEvent value),
+    TResult isNSFWChangedEvent(IsNSFWChangedEvent value),
+    TResult languageSelectedEvent(LanguageSelectedEvent value),
+    TResult launchedFromLibraryEvent(LaunchedFromLibraryEvent value),
+    TResult launchedFromPreviousChapterEvent(
+        LaunchedFromPreviousChapterEvent value),
+    TResult launchedFromSeriesEditorEvent(LaunchedFromSeriesEditorEvent value),
+    TResult licenceSelectedEvent(LicenceSelectedEvent value),
+    TResult publishButtonPressedEvent(PublishButtonPressedEvent value),
+    TResult saveOrBackButtonPressedEvent(SaveOrBackButtonPressedEvent value),
+    TResult seriesDraftLoadedEvent(SeriesDraftLoadedEvent value),
+    TResult seriesPublishedEvent(SeriesPublishedEvent value),
+    TResult sessionFetchedEvent(SessionFetchedEvent value),
+    TResult storyChangedEvent(StoryChangedEvent value),
+    TResult titleChangedEvent(TitleChangedEvent value),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (languageSelectedEvent != null) {
+      return languageSelectedEvent(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class LanguageSelectedEvent implements ChapterEditorDatabaseEvent {
+  const factory LanguageSelectedEvent(String language) =
+      _$LanguageSelectedEvent;
+
+  String get language;
+  @JsonKey(ignore: true)
+  $LanguageSelectedEventCopyWith<LanguageSelectedEvent> get copyWith;
+}
+
+/// @nodoc
+abstract class $LaunchedFromLibraryEventCopyWith<$Res> {
+  factory $LaunchedFromLibraryEventCopyWith(LaunchedFromLibraryEvent value,
+          $Res Function(LaunchedFromLibraryEvent) then) =
+      _$LaunchedFromLibraryEventCopyWithImpl<$Res>;
   $Res call(
       {BuildContext context,
       Chapter chapterDraft,
@@ -830,17 +2916,16 @@ abstract class $ChapterEditorLaunchedFromLibraryEVTCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$ChapterEditorLaunchedFromLibraryEVTCopyWithImpl<$Res>
+class _$LaunchedFromLibraryEventCopyWithImpl<$Res>
     extends _$ChapterEditorDatabaseEventCopyWithImpl<$Res>
-    implements $ChapterEditorLaunchedFromLibraryEVTCopyWith<$Res> {
-  _$ChapterEditorLaunchedFromLibraryEVTCopyWithImpl(
-      ChapterEditorLaunchedFromLibraryEVT _value,
-      $Res Function(ChapterEditorLaunchedFromLibraryEVT) _then)
-      : super(_value, (v) => _then(v as ChapterEditorLaunchedFromLibraryEVT));
+    implements $LaunchedFromLibraryEventCopyWith<$Res> {
+  _$LaunchedFromLibraryEventCopyWithImpl(LaunchedFromLibraryEvent _value,
+      $Res Function(LaunchedFromLibraryEvent) _then)
+      : super(_value, (v) => _then(v as LaunchedFromLibraryEvent));
 
   @override
-  ChapterEditorLaunchedFromLibraryEVT get _value =>
-      super._value as ChapterEditorLaunchedFromLibraryEVT;
+  LaunchedFromLibraryEvent get _value =>
+      super._value as LaunchedFromLibraryEvent;
 
   @override
   $Res call({
@@ -848,7 +2933,7 @@ class _$ChapterEditorLaunchedFromLibraryEVTCopyWithImpl<$Res>
     Object chapterDraft = freezed,
     Object editorContentOrigin = freezed,
   }) {
-    return _then(ChapterEditorLaunchedFromLibraryEVT(
+    return _then(LaunchedFromLibraryEvent(
       context == freezed ? _value.context : context as BuildContext,
       chapterDraft == freezed ? _value.chapterDraft : chapterDraft as Chapter,
       editorContentOrigin == freezed
@@ -859,10 +2944,10 @@ class _$ChapterEditorLaunchedFromLibraryEVTCopyWithImpl<$Res>
 }
 
 /// @nodoc
-class _$ChapterEditorLaunchedFromLibraryEVT
+class _$LaunchedFromLibraryEvent
     with DiagnosticableTreeMixin
-    implements ChapterEditorLaunchedFromLibraryEVT {
-  const _$ChapterEditorLaunchedFromLibraryEVT(
+    implements LaunchedFromLibraryEvent {
+  const _$LaunchedFromLibraryEvent(
       this.context, this.chapterDraft, this.editorContentOrigin)
       : assert(context != null),
         assert(chapterDraft != null),
@@ -877,15 +2962,15 @@ class _$ChapterEditorLaunchedFromLibraryEVT
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'ChapterEditorDatabaseEvent.chapterEditorLaunchedFromLibraryEVT(context: $context, chapterDraft: $chapterDraft, editorContentOrigin: $editorContentOrigin)';
+    return 'ChapterEditorDatabaseEvent.launchedFromLibraryEvent(context: $context, chapterDraft: $chapterDraft, editorContentOrigin: $editorContentOrigin)';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
-      ..add(DiagnosticsProperty('type',
-          'ChapterEditorDatabaseEvent.chapterEditorLaunchedFromLibraryEVT'))
+      ..add(DiagnosticsProperty(
+          'type', 'ChapterEditorDatabaseEvent.launchedFromLibraryEvent'))
       ..add(DiagnosticsProperty('context', context))
       ..add(DiagnosticsProperty('chapterDraft', chapterDraft))
       ..add(DiagnosticsProperty('editorContentOrigin', editorContentOrigin));
@@ -894,7 +2979,7 @@ class _$ChapterEditorLaunchedFromLibraryEVT
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is ChapterEditorLaunchedFromLibraryEVT &&
+        (other is LaunchedFromLibraryEvent &&
             (identical(other.context, context) ||
                 const DeepCollectionEquality()
                     .equals(other.context, context)) &&
@@ -915,102 +3000,97 @@ class _$ChapterEditorLaunchedFromLibraryEVT
 
   @JsonKey(ignore: true)
   @override
-  $ChapterEditorLaunchedFromLibraryEVTCopyWith<
-          ChapterEditorLaunchedFromLibraryEVT>
-      get copyWith => _$ChapterEditorLaunchedFromLibraryEVTCopyWithImpl<
-          ChapterEditorLaunchedFromLibraryEVT>(this, _$identity);
+  $LaunchedFromLibraryEventCopyWith<LaunchedFromLibraryEvent> get copyWith =>
+      _$LaunchedFromLibraryEventCopyWithImpl<LaunchedFromLibraryEvent>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
-    @required TResult addCoverPressedEVT(),
+    @required TResult addCoverPressedEvent(),
+    @required TResult chapterDraftDeletedOrPublishedEvent(),
+    @required TResult chapterPublishedEvent(),
+    @required TResult deleteDraftButtonPressedEvent(),
+    @required TResult genreOptionalSelectedEvent(String genreOptional),
+    @required TResult genreSelectedEvent(String genre),
+    @required TResult initializedWithPreviousChapterOrSeriesDraftEvent(),
+    @required TResult isLastChapterChangedEvent(bool isLastChapter),
+    @required TResult isNSFWChangedEvent(bool isNSFW),
+    @required TResult languageSelectedEvent(String language),
     @required
-        TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(),
-    @required
-        TResult chapterEditorLaunchedFromLibraryEVT(BuildContext context,
+        TResult launchedFromLibraryEvent(BuildContext context,
             Chapter chapterDraft, EditorContentOrigin editorContentOrigin),
     @required
-        TResult chapterEditorLaunchedFromPreviousChapterEVT(
-            BuildContext context,
-            Chapter previousChapter,
-            EditorContentOrigin editorContentOrigin),
+        TResult launchedFromPreviousChapterEvent(BuildContext context,
+            Chapter previousChapter, EditorContentOrigin editorContentOrigin),
     @required
-        TResult chapterEditorLaunchedFromSeriesEditorEVT(BuildContext context,
+        TResult launchedFromSeriesEditorEvent(BuildContext context,
             EditorContentOrigin editorContentOrigin, Series seriesDraft),
-    @required TResult chapterDraftDeletedOrPublishedEVT(),
-    @required TResult chapterPublishedEVT(),
-    @required TResult copyrightsSelectedEVT(String copyrights),
-    @required TResult deleteDraftButtonPressedEVT(),
-    @required TResult genreOptionalSelectedEVT(String genreOptional),
-    @required TResult genreSelectedEVT(String genre),
-    @required TResult isLastChapterChangedEVT(bool isLastChapter),
-    @required TResult isNSFWChangedEVT(bool isNSFW),
-    @required TResult languageSelectedEVT(String language),
-    @required TResult publishButtonPressedEVT(),
-    @required TResult saveOrBackButtonPressedEVT(),
-    @required TResult seriesDraftLoadedEVT(Series seriesDraft),
-    @required TResult seriesPublishedEVT(String seriesDraftUID),
-    @required TResult sessionFetchedEVT(),
-    @required TResult storyChangedEVT(String story),
-    @required TResult titleChangedEVT(String title),
+    @required TResult licenceSelectedEvent(String licence),
+    @required TResult publishButtonPressedEvent(),
+    @required TResult saveOrBackButtonPressedEvent(),
+    @required TResult seriesDraftLoadedEvent(Series seriesDraft),
+    @required TResult seriesPublishedEvent(String seriesDraftUID),
+    @required TResult sessionFetchedEvent(),
+    @required TResult storyChangedEvent(String story),
+    @required TResult titleChangedEvent(String title),
   }) {
-    assert(addCoverPressedEVT != null);
-    assert(chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT != null);
-    assert(chapterEditorLaunchedFromLibraryEVT != null);
-    assert(chapterEditorLaunchedFromPreviousChapterEVT != null);
-    assert(chapterEditorLaunchedFromSeriesEditorEVT != null);
-    assert(chapterDraftDeletedOrPublishedEVT != null);
-    assert(chapterPublishedEVT != null);
-    assert(copyrightsSelectedEVT != null);
-    assert(deleteDraftButtonPressedEVT != null);
-    assert(genreOptionalSelectedEVT != null);
-    assert(genreSelectedEVT != null);
-    assert(isLastChapterChangedEVT != null);
-    assert(isNSFWChangedEVT != null);
-    assert(languageSelectedEVT != null);
-    assert(publishButtonPressedEVT != null);
-    assert(saveOrBackButtonPressedEVT != null);
-    assert(seriesDraftLoadedEVT != null);
-    assert(seriesPublishedEVT != null);
-    assert(sessionFetchedEVT != null);
-    assert(storyChangedEVT != null);
-    assert(titleChangedEVT != null);
-    return chapterEditorLaunchedFromLibraryEVT(
-        context, chapterDraft, editorContentOrigin);
+    assert(addCoverPressedEvent != null);
+    assert(chapterDraftDeletedOrPublishedEvent != null);
+    assert(chapterPublishedEvent != null);
+    assert(deleteDraftButtonPressedEvent != null);
+    assert(genreOptionalSelectedEvent != null);
+    assert(genreSelectedEvent != null);
+    assert(initializedWithPreviousChapterOrSeriesDraftEvent != null);
+    assert(isLastChapterChangedEvent != null);
+    assert(isNSFWChangedEvent != null);
+    assert(languageSelectedEvent != null);
+    assert(launchedFromLibraryEvent != null);
+    assert(launchedFromPreviousChapterEvent != null);
+    assert(launchedFromSeriesEditorEvent != null);
+    assert(licenceSelectedEvent != null);
+    assert(publishButtonPressedEvent != null);
+    assert(saveOrBackButtonPressedEvent != null);
+    assert(seriesDraftLoadedEvent != null);
+    assert(seriesPublishedEvent != null);
+    assert(sessionFetchedEvent != null);
+    assert(storyChangedEvent != null);
+    assert(titleChangedEvent != null);
+    return launchedFromLibraryEvent(context, chapterDraft, editorContentOrigin);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
-    TResult addCoverPressedEVT(),
-    TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(),
-    TResult chapterEditorLaunchedFromLibraryEVT(BuildContext context,
-        Chapter chapterDraft, EditorContentOrigin editorContentOrigin),
-    TResult chapterEditorLaunchedFromPreviousChapterEVT(BuildContext context,
+    TResult addCoverPressedEvent(),
+    TResult chapterDraftDeletedOrPublishedEvent(),
+    TResult chapterPublishedEvent(),
+    TResult deleteDraftButtonPressedEvent(),
+    TResult genreOptionalSelectedEvent(String genreOptional),
+    TResult genreSelectedEvent(String genre),
+    TResult initializedWithPreviousChapterOrSeriesDraftEvent(),
+    TResult isLastChapterChangedEvent(bool isLastChapter),
+    TResult isNSFWChangedEvent(bool isNSFW),
+    TResult languageSelectedEvent(String language),
+    TResult launchedFromLibraryEvent(BuildContext context, Chapter chapterDraft,
+        EditorContentOrigin editorContentOrigin),
+    TResult launchedFromPreviousChapterEvent(BuildContext context,
         Chapter previousChapter, EditorContentOrigin editorContentOrigin),
-    TResult chapterEditorLaunchedFromSeriesEditorEVT(BuildContext context,
+    TResult launchedFromSeriesEditorEvent(BuildContext context,
         EditorContentOrigin editorContentOrigin, Series seriesDraft),
-    TResult chapterDraftDeletedOrPublishedEVT(),
-    TResult chapterPublishedEVT(),
-    TResult copyrightsSelectedEVT(String copyrights),
-    TResult deleteDraftButtonPressedEVT(),
-    TResult genreOptionalSelectedEVT(String genreOptional),
-    TResult genreSelectedEVT(String genre),
-    TResult isLastChapterChangedEVT(bool isLastChapter),
-    TResult isNSFWChangedEVT(bool isNSFW),
-    TResult languageSelectedEVT(String language),
-    TResult publishButtonPressedEVT(),
-    TResult saveOrBackButtonPressedEVT(),
-    TResult seriesDraftLoadedEVT(Series seriesDraft),
-    TResult seriesPublishedEVT(String seriesDraftUID),
-    TResult sessionFetchedEVT(),
-    TResult storyChangedEVT(String story),
-    TResult titleChangedEVT(String title),
+    TResult licenceSelectedEvent(String licence),
+    TResult publishButtonPressedEvent(),
+    TResult saveOrBackButtonPressedEvent(),
+    TResult seriesDraftLoadedEvent(Series seriesDraft),
+    TResult seriesPublishedEvent(String seriesDraftUID),
+    TResult sessionFetchedEvent(),
+    TResult storyChangedEvent(String story),
+    TResult titleChangedEvent(String title),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (chapterEditorLaunchedFromLibraryEVT != null) {
-      return chapterEditorLaunchedFromLibraryEVT(
+    if (launchedFromLibraryEvent != null) {
+      return launchedFromLibraryEvent(
           context, chapterDraft, editorContentOrigin);
     }
     return orElse();
@@ -1019,123 +3099,123 @@ class _$ChapterEditorLaunchedFromLibraryEVT
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object>({
-    @required TResult addCoverPressedEVT(AddCoverPressedEVT value),
+    @required TResult addCoverPressedEvent(AddCoverPressedEvent value),
     @required
-        TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(
-            ChapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT value),
+        TResult chapterDraftDeletedOrPublishedEvent(
+            ChapterDraftDeletedOrPublishedEvent value),
+    @required TResult chapterPublishedEvent(ChapterPublishedEvent value),
     @required
-        TResult chapterEditorLaunchedFromLibraryEVT(
-            ChapterEditorLaunchedFromLibraryEVT value),
+        TResult deleteDraftButtonPressedEvent(
+            DeleteDraftButtonPressedEvent value),
     @required
-        TResult chapterEditorLaunchedFromPreviousChapterEVT(
-            ChapterEditorLaunchedFromPreviousChapterEVT value),
+        TResult genreOptionalSelectedEvent(GenreOptionalSelectedEvent value),
+    @required TResult genreSelectedEvent(GenreSelectedEvent value),
     @required
-        TResult chapterEditorLaunchedFromSeriesEditorEVT(
-            ChapterEditorLaunchedFromSeriesEditorEVT value),
+        TResult initializedWithPreviousChapterOrSeriesDraftEvent(
+            InitializedWithPreviousChapterOrSeriesDraftEvent value),
     @required
-        TResult chapterDraftDeletedOrPublishedEVT(
-            ChapterDraftDeletedOrPublishedEVT value),
-    @required TResult chapterPublishedEVT(ChapterPublishedEVT value),
-    @required TResult copyrightsSelectedEVT(CopyrightsSelectedEVT value),
+        TResult isLastChapterChangedEvent(IsLastChapterChangedEvent value),
+    @required TResult isNSFWChangedEvent(IsNSFWChangedEvent value),
+    @required TResult languageSelectedEvent(LanguageSelectedEvent value),
+    @required TResult launchedFromLibraryEvent(LaunchedFromLibraryEvent value),
     @required
-        TResult deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
-    @required TResult genreOptionalSelectedEVT(GenreOptionalSelectedEVT value),
-    @required TResult genreSelectedEVT(GenreSelectedEVT value),
-    @required TResult isLastChapterChangedEVT(IsLastChapterChangedEVT value),
-    @required TResult isNSFWChangedEVT(IsNSFWChangedEVT value),
-    @required TResult languageSelectedEVT(LanguageSelectedEVT value),
-    @required TResult publishButtonPressedEVT(PublishButtonPressedEVT value),
+        TResult launchedFromPreviousChapterEvent(
+            LaunchedFromPreviousChapterEvent value),
     @required
-        TResult saveOrBackButtonPressedEVT(SaveOrBackButtonPressedEVT value),
-    @required TResult seriesDraftLoadedEVT(SeriesDraftLoadedEVT value),
-    @required TResult seriesPublishedEVT(SeriesPublishedEVT value),
-    @required TResult sessionFetchedEVT(SessionFetchedEVT value),
-    @required TResult storyChangedEVT(StoryChangedEVT value),
-    @required TResult titleChangedEVT(TitleChangedEVT value),
+        TResult launchedFromSeriesEditorEvent(
+            LaunchedFromSeriesEditorEvent value),
+    @required TResult licenceSelectedEvent(LicenceSelectedEvent value),
+    @required
+        TResult publishButtonPressedEvent(PublishButtonPressedEvent value),
+    @required
+        TResult saveOrBackButtonPressedEvent(
+            SaveOrBackButtonPressedEvent value),
+    @required TResult seriesDraftLoadedEvent(SeriesDraftLoadedEvent value),
+    @required TResult seriesPublishedEvent(SeriesPublishedEvent value),
+    @required TResult sessionFetchedEvent(SessionFetchedEvent value),
+    @required TResult storyChangedEvent(StoryChangedEvent value),
+    @required TResult titleChangedEvent(TitleChangedEvent value),
   }) {
-    assert(addCoverPressedEVT != null);
-    assert(chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT != null);
-    assert(chapterEditorLaunchedFromLibraryEVT != null);
-    assert(chapterEditorLaunchedFromPreviousChapterEVT != null);
-    assert(chapterEditorLaunchedFromSeriesEditorEVT != null);
-    assert(chapterDraftDeletedOrPublishedEVT != null);
-    assert(chapterPublishedEVT != null);
-    assert(copyrightsSelectedEVT != null);
-    assert(deleteDraftButtonPressedEVT != null);
-    assert(genreOptionalSelectedEVT != null);
-    assert(genreSelectedEVT != null);
-    assert(isLastChapterChangedEVT != null);
-    assert(isNSFWChangedEVT != null);
-    assert(languageSelectedEVT != null);
-    assert(publishButtonPressedEVT != null);
-    assert(saveOrBackButtonPressedEVT != null);
-    assert(seriesDraftLoadedEVT != null);
-    assert(seriesPublishedEVT != null);
-    assert(sessionFetchedEVT != null);
-    assert(storyChangedEVT != null);
-    assert(titleChangedEVT != null);
-    return chapterEditorLaunchedFromLibraryEVT(this);
+    assert(addCoverPressedEvent != null);
+    assert(chapterDraftDeletedOrPublishedEvent != null);
+    assert(chapterPublishedEvent != null);
+    assert(deleteDraftButtonPressedEvent != null);
+    assert(genreOptionalSelectedEvent != null);
+    assert(genreSelectedEvent != null);
+    assert(initializedWithPreviousChapterOrSeriesDraftEvent != null);
+    assert(isLastChapterChangedEvent != null);
+    assert(isNSFWChangedEvent != null);
+    assert(languageSelectedEvent != null);
+    assert(launchedFromLibraryEvent != null);
+    assert(launchedFromPreviousChapterEvent != null);
+    assert(launchedFromSeriesEditorEvent != null);
+    assert(licenceSelectedEvent != null);
+    assert(publishButtonPressedEvent != null);
+    assert(saveOrBackButtonPressedEvent != null);
+    assert(seriesDraftLoadedEvent != null);
+    assert(seriesPublishedEvent != null);
+    assert(sessionFetchedEvent != null);
+    assert(storyChangedEvent != null);
+    assert(titleChangedEvent != null);
+    return launchedFromLibraryEvent(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
-    TResult addCoverPressedEVT(AddCoverPressedEVT value),
-    TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(
-        ChapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT value),
-    TResult chapterEditorLaunchedFromLibraryEVT(
-        ChapterEditorLaunchedFromLibraryEVT value),
-    TResult chapterEditorLaunchedFromPreviousChapterEVT(
-        ChapterEditorLaunchedFromPreviousChapterEVT value),
-    TResult chapterEditorLaunchedFromSeriesEditorEVT(
-        ChapterEditorLaunchedFromSeriesEditorEVT value),
-    TResult chapterDraftDeletedOrPublishedEVT(
-        ChapterDraftDeletedOrPublishedEVT value),
-    TResult chapterPublishedEVT(ChapterPublishedEVT value),
-    TResult copyrightsSelectedEVT(CopyrightsSelectedEVT value),
-    TResult deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
-    TResult genreOptionalSelectedEVT(GenreOptionalSelectedEVT value),
-    TResult genreSelectedEVT(GenreSelectedEVT value),
-    TResult isLastChapterChangedEVT(IsLastChapterChangedEVT value),
-    TResult isNSFWChangedEVT(IsNSFWChangedEVT value),
-    TResult languageSelectedEVT(LanguageSelectedEVT value),
-    TResult publishButtonPressedEVT(PublishButtonPressedEVT value),
-    TResult saveOrBackButtonPressedEVT(SaveOrBackButtonPressedEVT value),
-    TResult seriesDraftLoadedEVT(SeriesDraftLoadedEVT value),
-    TResult seriesPublishedEVT(SeriesPublishedEVT value),
-    TResult sessionFetchedEVT(SessionFetchedEVT value),
-    TResult storyChangedEVT(StoryChangedEVT value),
-    TResult titleChangedEVT(TitleChangedEVT value),
+    TResult addCoverPressedEvent(AddCoverPressedEvent value),
+    TResult chapterDraftDeletedOrPublishedEvent(
+        ChapterDraftDeletedOrPublishedEvent value),
+    TResult chapterPublishedEvent(ChapterPublishedEvent value),
+    TResult deleteDraftButtonPressedEvent(DeleteDraftButtonPressedEvent value),
+    TResult genreOptionalSelectedEvent(GenreOptionalSelectedEvent value),
+    TResult genreSelectedEvent(GenreSelectedEvent value),
+    TResult initializedWithPreviousChapterOrSeriesDraftEvent(
+        InitializedWithPreviousChapterOrSeriesDraftEvent value),
+    TResult isLastChapterChangedEvent(IsLastChapterChangedEvent value),
+    TResult isNSFWChangedEvent(IsNSFWChangedEvent value),
+    TResult languageSelectedEvent(LanguageSelectedEvent value),
+    TResult launchedFromLibraryEvent(LaunchedFromLibraryEvent value),
+    TResult launchedFromPreviousChapterEvent(
+        LaunchedFromPreviousChapterEvent value),
+    TResult launchedFromSeriesEditorEvent(LaunchedFromSeriesEditorEvent value),
+    TResult licenceSelectedEvent(LicenceSelectedEvent value),
+    TResult publishButtonPressedEvent(PublishButtonPressedEvent value),
+    TResult saveOrBackButtonPressedEvent(SaveOrBackButtonPressedEvent value),
+    TResult seriesDraftLoadedEvent(SeriesDraftLoadedEvent value),
+    TResult seriesPublishedEvent(SeriesPublishedEvent value),
+    TResult sessionFetchedEvent(SessionFetchedEvent value),
+    TResult storyChangedEvent(StoryChangedEvent value),
+    TResult titleChangedEvent(TitleChangedEvent value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (chapterEditorLaunchedFromLibraryEVT != null) {
-      return chapterEditorLaunchedFromLibraryEVT(this);
+    if (launchedFromLibraryEvent != null) {
+      return launchedFromLibraryEvent(this);
     }
     return orElse();
   }
 }
 
-abstract class ChapterEditorLaunchedFromLibraryEVT
-    implements ChapterEditorDatabaseEvent {
-  const factory ChapterEditorLaunchedFromLibraryEVT(BuildContext context,
-          Chapter chapterDraft, EditorContentOrigin editorContentOrigin) =
-      _$ChapterEditorLaunchedFromLibraryEVT;
+abstract class LaunchedFromLibraryEvent implements ChapterEditorDatabaseEvent {
+  const factory LaunchedFromLibraryEvent(
+      BuildContext context,
+      Chapter chapterDraft,
+      EditorContentOrigin editorContentOrigin) = _$LaunchedFromLibraryEvent;
 
   BuildContext get context;
   Chapter get chapterDraft;
   EditorContentOrigin get editorContentOrigin;
   @JsonKey(ignore: true)
-  $ChapterEditorLaunchedFromLibraryEVTCopyWith<
-      ChapterEditorLaunchedFromLibraryEVT> get copyWith;
+  $LaunchedFromLibraryEventCopyWith<LaunchedFromLibraryEvent> get copyWith;
 }
 
 /// @nodoc
-abstract class $ChapterEditorLaunchedFromPreviousChapterEVTCopyWith<$Res> {
-  factory $ChapterEditorLaunchedFromPreviousChapterEVTCopyWith(
-          ChapterEditorLaunchedFromPreviousChapterEVT value,
-          $Res Function(ChapterEditorLaunchedFromPreviousChapterEVT) then) =
-      _$ChapterEditorLaunchedFromPreviousChapterEVTCopyWithImpl<$Res>;
+abstract class $LaunchedFromPreviousChapterEventCopyWith<$Res> {
+  factory $LaunchedFromPreviousChapterEventCopyWith(
+          LaunchedFromPreviousChapterEvent value,
+          $Res Function(LaunchedFromPreviousChapterEvent) then) =
+      _$LaunchedFromPreviousChapterEventCopyWithImpl<$Res>;
   $Res call(
       {BuildContext context,
       Chapter previousChapter,
@@ -1143,18 +3223,17 @@ abstract class $ChapterEditorLaunchedFromPreviousChapterEVTCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$ChapterEditorLaunchedFromPreviousChapterEVTCopyWithImpl<$Res>
+class _$LaunchedFromPreviousChapterEventCopyWithImpl<$Res>
     extends _$ChapterEditorDatabaseEventCopyWithImpl<$Res>
-    implements $ChapterEditorLaunchedFromPreviousChapterEVTCopyWith<$Res> {
-  _$ChapterEditorLaunchedFromPreviousChapterEVTCopyWithImpl(
-      ChapterEditorLaunchedFromPreviousChapterEVT _value,
-      $Res Function(ChapterEditorLaunchedFromPreviousChapterEVT) _then)
-      : super(_value,
-            (v) => _then(v as ChapterEditorLaunchedFromPreviousChapterEVT));
+    implements $LaunchedFromPreviousChapterEventCopyWith<$Res> {
+  _$LaunchedFromPreviousChapterEventCopyWithImpl(
+      LaunchedFromPreviousChapterEvent _value,
+      $Res Function(LaunchedFromPreviousChapterEvent) _then)
+      : super(_value, (v) => _then(v as LaunchedFromPreviousChapterEvent));
 
   @override
-  ChapterEditorLaunchedFromPreviousChapterEVT get _value =>
-      super._value as ChapterEditorLaunchedFromPreviousChapterEVT;
+  LaunchedFromPreviousChapterEvent get _value =>
+      super._value as LaunchedFromPreviousChapterEvent;
 
   @override
   $Res call({
@@ -1162,7 +3241,7 @@ class _$ChapterEditorLaunchedFromPreviousChapterEVTCopyWithImpl<$Res>
     Object previousChapter = freezed,
     Object editorContentOrigin = freezed,
   }) {
-    return _then(ChapterEditorLaunchedFromPreviousChapterEVT(
+    return _then(LaunchedFromPreviousChapterEvent(
       context == freezed ? _value.context : context as BuildContext,
       previousChapter == freezed
           ? _value.previousChapter
@@ -1175,10 +3254,10 @@ class _$ChapterEditorLaunchedFromPreviousChapterEVTCopyWithImpl<$Res>
 }
 
 /// @nodoc
-class _$ChapterEditorLaunchedFromPreviousChapterEVT
+class _$LaunchedFromPreviousChapterEvent
     with DiagnosticableTreeMixin
-    implements ChapterEditorLaunchedFromPreviousChapterEVT {
-  const _$ChapterEditorLaunchedFromPreviousChapterEVT(
+    implements LaunchedFromPreviousChapterEvent {
+  const _$LaunchedFromPreviousChapterEvent(
       this.context, this.previousChapter, this.editorContentOrigin)
       : assert(context != null),
         assert(previousChapter != null),
@@ -1193,7 +3272,7 @@ class _$ChapterEditorLaunchedFromPreviousChapterEVT
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'ChapterEditorDatabaseEvent.chapterEditorLaunchedFromPreviousChapterEVT(context: $context, previousChapter: $previousChapter, editorContentOrigin: $editorContentOrigin)';
+    return 'ChapterEditorDatabaseEvent.launchedFromPreviousChapterEvent(context: $context, previousChapter: $previousChapter, editorContentOrigin: $editorContentOrigin)';
   }
 
   @override
@@ -1201,7 +3280,7 @@ class _$ChapterEditorLaunchedFromPreviousChapterEVT
     super.debugFillProperties(properties);
     properties
       ..add(DiagnosticsProperty('type',
-          'ChapterEditorDatabaseEvent.chapterEditorLaunchedFromPreviousChapterEVT'))
+          'ChapterEditorDatabaseEvent.launchedFromPreviousChapterEvent'))
       ..add(DiagnosticsProperty('context', context))
       ..add(DiagnosticsProperty('previousChapter', previousChapter))
       ..add(DiagnosticsProperty('editorContentOrigin', editorContentOrigin));
@@ -1210,7 +3289,7 @@ class _$ChapterEditorLaunchedFromPreviousChapterEVT
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is ChapterEditorLaunchedFromPreviousChapterEVT &&
+        (other is LaunchedFromPreviousChapterEvent &&
             (identical(other.context, context) ||
                 const DeepCollectionEquality()
                     .equals(other.context, context)) &&
@@ -1231,102 +3310,98 @@ class _$ChapterEditorLaunchedFromPreviousChapterEVT
 
   @JsonKey(ignore: true)
   @override
-  $ChapterEditorLaunchedFromPreviousChapterEVTCopyWith<
-          ChapterEditorLaunchedFromPreviousChapterEVT>
-      get copyWith => _$ChapterEditorLaunchedFromPreviousChapterEVTCopyWithImpl<
-          ChapterEditorLaunchedFromPreviousChapterEVT>(this, _$identity);
+  $LaunchedFromPreviousChapterEventCopyWith<LaunchedFromPreviousChapterEvent>
+      get copyWith => _$LaunchedFromPreviousChapterEventCopyWithImpl<
+          LaunchedFromPreviousChapterEvent>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
-    @required TResult addCoverPressedEVT(),
+    @required TResult addCoverPressedEvent(),
+    @required TResult chapterDraftDeletedOrPublishedEvent(),
+    @required TResult chapterPublishedEvent(),
+    @required TResult deleteDraftButtonPressedEvent(),
+    @required TResult genreOptionalSelectedEvent(String genreOptional),
+    @required TResult genreSelectedEvent(String genre),
+    @required TResult initializedWithPreviousChapterOrSeriesDraftEvent(),
+    @required TResult isLastChapterChangedEvent(bool isLastChapter),
+    @required TResult isNSFWChangedEvent(bool isNSFW),
+    @required TResult languageSelectedEvent(String language),
     @required
-        TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(),
-    @required
-        TResult chapterEditorLaunchedFromLibraryEVT(BuildContext context,
+        TResult launchedFromLibraryEvent(BuildContext context,
             Chapter chapterDraft, EditorContentOrigin editorContentOrigin),
     @required
-        TResult chapterEditorLaunchedFromPreviousChapterEVT(
-            BuildContext context,
-            Chapter previousChapter,
-            EditorContentOrigin editorContentOrigin),
+        TResult launchedFromPreviousChapterEvent(BuildContext context,
+            Chapter previousChapter, EditorContentOrigin editorContentOrigin),
     @required
-        TResult chapterEditorLaunchedFromSeriesEditorEVT(BuildContext context,
+        TResult launchedFromSeriesEditorEvent(BuildContext context,
             EditorContentOrigin editorContentOrigin, Series seriesDraft),
-    @required TResult chapterDraftDeletedOrPublishedEVT(),
-    @required TResult chapterPublishedEVT(),
-    @required TResult copyrightsSelectedEVT(String copyrights),
-    @required TResult deleteDraftButtonPressedEVT(),
-    @required TResult genreOptionalSelectedEVT(String genreOptional),
-    @required TResult genreSelectedEVT(String genre),
-    @required TResult isLastChapterChangedEVT(bool isLastChapter),
-    @required TResult isNSFWChangedEVT(bool isNSFW),
-    @required TResult languageSelectedEVT(String language),
-    @required TResult publishButtonPressedEVT(),
-    @required TResult saveOrBackButtonPressedEVT(),
-    @required TResult seriesDraftLoadedEVT(Series seriesDraft),
-    @required TResult seriesPublishedEVT(String seriesDraftUID),
-    @required TResult sessionFetchedEVT(),
-    @required TResult storyChangedEVT(String story),
-    @required TResult titleChangedEVT(String title),
+    @required TResult licenceSelectedEvent(String licence),
+    @required TResult publishButtonPressedEvent(),
+    @required TResult saveOrBackButtonPressedEvent(),
+    @required TResult seriesDraftLoadedEvent(Series seriesDraft),
+    @required TResult seriesPublishedEvent(String seriesDraftUID),
+    @required TResult sessionFetchedEvent(),
+    @required TResult storyChangedEvent(String story),
+    @required TResult titleChangedEvent(String title),
   }) {
-    assert(addCoverPressedEVT != null);
-    assert(chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT != null);
-    assert(chapterEditorLaunchedFromLibraryEVT != null);
-    assert(chapterEditorLaunchedFromPreviousChapterEVT != null);
-    assert(chapterEditorLaunchedFromSeriesEditorEVT != null);
-    assert(chapterDraftDeletedOrPublishedEVT != null);
-    assert(chapterPublishedEVT != null);
-    assert(copyrightsSelectedEVT != null);
-    assert(deleteDraftButtonPressedEVT != null);
-    assert(genreOptionalSelectedEVT != null);
-    assert(genreSelectedEVT != null);
-    assert(isLastChapterChangedEVT != null);
-    assert(isNSFWChangedEVT != null);
-    assert(languageSelectedEVT != null);
-    assert(publishButtonPressedEVT != null);
-    assert(saveOrBackButtonPressedEVT != null);
-    assert(seriesDraftLoadedEVT != null);
-    assert(seriesPublishedEVT != null);
-    assert(sessionFetchedEVT != null);
-    assert(storyChangedEVT != null);
-    assert(titleChangedEVT != null);
-    return chapterEditorLaunchedFromPreviousChapterEVT(
+    assert(addCoverPressedEvent != null);
+    assert(chapterDraftDeletedOrPublishedEvent != null);
+    assert(chapterPublishedEvent != null);
+    assert(deleteDraftButtonPressedEvent != null);
+    assert(genreOptionalSelectedEvent != null);
+    assert(genreSelectedEvent != null);
+    assert(initializedWithPreviousChapterOrSeriesDraftEvent != null);
+    assert(isLastChapterChangedEvent != null);
+    assert(isNSFWChangedEvent != null);
+    assert(languageSelectedEvent != null);
+    assert(launchedFromLibraryEvent != null);
+    assert(launchedFromPreviousChapterEvent != null);
+    assert(launchedFromSeriesEditorEvent != null);
+    assert(licenceSelectedEvent != null);
+    assert(publishButtonPressedEvent != null);
+    assert(saveOrBackButtonPressedEvent != null);
+    assert(seriesDraftLoadedEvent != null);
+    assert(seriesPublishedEvent != null);
+    assert(sessionFetchedEvent != null);
+    assert(storyChangedEvent != null);
+    assert(titleChangedEvent != null);
+    return launchedFromPreviousChapterEvent(
         context, previousChapter, editorContentOrigin);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
-    TResult addCoverPressedEVT(),
-    TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(),
-    TResult chapterEditorLaunchedFromLibraryEVT(BuildContext context,
-        Chapter chapterDraft, EditorContentOrigin editorContentOrigin),
-    TResult chapterEditorLaunchedFromPreviousChapterEVT(BuildContext context,
+    TResult addCoverPressedEvent(),
+    TResult chapterDraftDeletedOrPublishedEvent(),
+    TResult chapterPublishedEvent(),
+    TResult deleteDraftButtonPressedEvent(),
+    TResult genreOptionalSelectedEvent(String genreOptional),
+    TResult genreSelectedEvent(String genre),
+    TResult initializedWithPreviousChapterOrSeriesDraftEvent(),
+    TResult isLastChapterChangedEvent(bool isLastChapter),
+    TResult isNSFWChangedEvent(bool isNSFW),
+    TResult languageSelectedEvent(String language),
+    TResult launchedFromLibraryEvent(BuildContext context, Chapter chapterDraft,
+        EditorContentOrigin editorContentOrigin),
+    TResult launchedFromPreviousChapterEvent(BuildContext context,
         Chapter previousChapter, EditorContentOrigin editorContentOrigin),
-    TResult chapterEditorLaunchedFromSeriesEditorEVT(BuildContext context,
+    TResult launchedFromSeriesEditorEvent(BuildContext context,
         EditorContentOrigin editorContentOrigin, Series seriesDraft),
-    TResult chapterDraftDeletedOrPublishedEVT(),
-    TResult chapterPublishedEVT(),
-    TResult copyrightsSelectedEVT(String copyrights),
-    TResult deleteDraftButtonPressedEVT(),
-    TResult genreOptionalSelectedEVT(String genreOptional),
-    TResult genreSelectedEVT(String genre),
-    TResult isLastChapterChangedEVT(bool isLastChapter),
-    TResult isNSFWChangedEVT(bool isNSFW),
-    TResult languageSelectedEVT(String language),
-    TResult publishButtonPressedEVT(),
-    TResult saveOrBackButtonPressedEVT(),
-    TResult seriesDraftLoadedEVT(Series seriesDraft),
-    TResult seriesPublishedEVT(String seriesDraftUID),
-    TResult sessionFetchedEVT(),
-    TResult storyChangedEVT(String story),
-    TResult titleChangedEVT(String title),
+    TResult licenceSelectedEvent(String licence),
+    TResult publishButtonPressedEvent(),
+    TResult saveOrBackButtonPressedEvent(),
+    TResult seriesDraftLoadedEvent(Series seriesDraft),
+    TResult seriesPublishedEvent(String seriesDraftUID),
+    TResult sessionFetchedEvent(),
+    TResult storyChangedEvent(String story),
+    TResult titleChangedEvent(String title),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (chapterEditorLaunchedFromPreviousChapterEVT != null) {
-      return chapterEditorLaunchedFromPreviousChapterEVT(
+    if (launchedFromPreviousChapterEvent != null) {
+      return launchedFromPreviousChapterEvent(
           context, previousChapter, editorContentOrigin);
     }
     return orElse();
@@ -1335,125 +3410,124 @@ class _$ChapterEditorLaunchedFromPreviousChapterEVT
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object>({
-    @required TResult addCoverPressedEVT(AddCoverPressedEVT value),
+    @required TResult addCoverPressedEvent(AddCoverPressedEvent value),
     @required
-        TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(
-            ChapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT value),
+        TResult chapterDraftDeletedOrPublishedEvent(
+            ChapterDraftDeletedOrPublishedEvent value),
+    @required TResult chapterPublishedEvent(ChapterPublishedEvent value),
     @required
-        TResult chapterEditorLaunchedFromLibraryEVT(
-            ChapterEditorLaunchedFromLibraryEVT value),
+        TResult deleteDraftButtonPressedEvent(
+            DeleteDraftButtonPressedEvent value),
     @required
-        TResult chapterEditorLaunchedFromPreviousChapterEVT(
-            ChapterEditorLaunchedFromPreviousChapterEVT value),
+        TResult genreOptionalSelectedEvent(GenreOptionalSelectedEvent value),
+    @required TResult genreSelectedEvent(GenreSelectedEvent value),
     @required
-        TResult chapterEditorLaunchedFromSeriesEditorEVT(
-            ChapterEditorLaunchedFromSeriesEditorEVT value),
+        TResult initializedWithPreviousChapterOrSeriesDraftEvent(
+            InitializedWithPreviousChapterOrSeriesDraftEvent value),
     @required
-        TResult chapterDraftDeletedOrPublishedEVT(
-            ChapterDraftDeletedOrPublishedEVT value),
-    @required TResult chapterPublishedEVT(ChapterPublishedEVT value),
-    @required TResult copyrightsSelectedEVT(CopyrightsSelectedEVT value),
+        TResult isLastChapterChangedEvent(IsLastChapterChangedEvent value),
+    @required TResult isNSFWChangedEvent(IsNSFWChangedEvent value),
+    @required TResult languageSelectedEvent(LanguageSelectedEvent value),
+    @required TResult launchedFromLibraryEvent(LaunchedFromLibraryEvent value),
     @required
-        TResult deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
-    @required TResult genreOptionalSelectedEVT(GenreOptionalSelectedEVT value),
-    @required TResult genreSelectedEVT(GenreSelectedEVT value),
-    @required TResult isLastChapterChangedEVT(IsLastChapterChangedEVT value),
-    @required TResult isNSFWChangedEVT(IsNSFWChangedEVT value),
-    @required TResult languageSelectedEVT(LanguageSelectedEVT value),
-    @required TResult publishButtonPressedEVT(PublishButtonPressedEVT value),
+        TResult launchedFromPreviousChapterEvent(
+            LaunchedFromPreviousChapterEvent value),
     @required
-        TResult saveOrBackButtonPressedEVT(SaveOrBackButtonPressedEVT value),
-    @required TResult seriesDraftLoadedEVT(SeriesDraftLoadedEVT value),
-    @required TResult seriesPublishedEVT(SeriesPublishedEVT value),
-    @required TResult sessionFetchedEVT(SessionFetchedEVT value),
-    @required TResult storyChangedEVT(StoryChangedEVT value),
-    @required TResult titleChangedEVT(TitleChangedEVT value),
+        TResult launchedFromSeriesEditorEvent(
+            LaunchedFromSeriesEditorEvent value),
+    @required TResult licenceSelectedEvent(LicenceSelectedEvent value),
+    @required
+        TResult publishButtonPressedEvent(PublishButtonPressedEvent value),
+    @required
+        TResult saveOrBackButtonPressedEvent(
+            SaveOrBackButtonPressedEvent value),
+    @required TResult seriesDraftLoadedEvent(SeriesDraftLoadedEvent value),
+    @required TResult seriesPublishedEvent(SeriesPublishedEvent value),
+    @required TResult sessionFetchedEvent(SessionFetchedEvent value),
+    @required TResult storyChangedEvent(StoryChangedEvent value),
+    @required TResult titleChangedEvent(TitleChangedEvent value),
   }) {
-    assert(addCoverPressedEVT != null);
-    assert(chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT != null);
-    assert(chapterEditorLaunchedFromLibraryEVT != null);
-    assert(chapterEditorLaunchedFromPreviousChapterEVT != null);
-    assert(chapterEditorLaunchedFromSeriesEditorEVT != null);
-    assert(chapterDraftDeletedOrPublishedEVT != null);
-    assert(chapterPublishedEVT != null);
-    assert(copyrightsSelectedEVT != null);
-    assert(deleteDraftButtonPressedEVT != null);
-    assert(genreOptionalSelectedEVT != null);
-    assert(genreSelectedEVT != null);
-    assert(isLastChapterChangedEVT != null);
-    assert(isNSFWChangedEVT != null);
-    assert(languageSelectedEVT != null);
-    assert(publishButtonPressedEVT != null);
-    assert(saveOrBackButtonPressedEVT != null);
-    assert(seriesDraftLoadedEVT != null);
-    assert(seriesPublishedEVT != null);
-    assert(sessionFetchedEVT != null);
-    assert(storyChangedEVT != null);
-    assert(titleChangedEVT != null);
-    return chapterEditorLaunchedFromPreviousChapterEVT(this);
+    assert(addCoverPressedEvent != null);
+    assert(chapterDraftDeletedOrPublishedEvent != null);
+    assert(chapterPublishedEvent != null);
+    assert(deleteDraftButtonPressedEvent != null);
+    assert(genreOptionalSelectedEvent != null);
+    assert(genreSelectedEvent != null);
+    assert(initializedWithPreviousChapterOrSeriesDraftEvent != null);
+    assert(isLastChapterChangedEvent != null);
+    assert(isNSFWChangedEvent != null);
+    assert(languageSelectedEvent != null);
+    assert(launchedFromLibraryEvent != null);
+    assert(launchedFromPreviousChapterEvent != null);
+    assert(launchedFromSeriesEditorEvent != null);
+    assert(licenceSelectedEvent != null);
+    assert(publishButtonPressedEvent != null);
+    assert(saveOrBackButtonPressedEvent != null);
+    assert(seriesDraftLoadedEvent != null);
+    assert(seriesPublishedEvent != null);
+    assert(sessionFetchedEvent != null);
+    assert(storyChangedEvent != null);
+    assert(titleChangedEvent != null);
+    return launchedFromPreviousChapterEvent(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
-    TResult addCoverPressedEVT(AddCoverPressedEVT value),
-    TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(
-        ChapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT value),
-    TResult chapterEditorLaunchedFromLibraryEVT(
-        ChapterEditorLaunchedFromLibraryEVT value),
-    TResult chapterEditorLaunchedFromPreviousChapterEVT(
-        ChapterEditorLaunchedFromPreviousChapterEVT value),
-    TResult chapterEditorLaunchedFromSeriesEditorEVT(
-        ChapterEditorLaunchedFromSeriesEditorEVT value),
-    TResult chapterDraftDeletedOrPublishedEVT(
-        ChapterDraftDeletedOrPublishedEVT value),
-    TResult chapterPublishedEVT(ChapterPublishedEVT value),
-    TResult copyrightsSelectedEVT(CopyrightsSelectedEVT value),
-    TResult deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
-    TResult genreOptionalSelectedEVT(GenreOptionalSelectedEVT value),
-    TResult genreSelectedEVT(GenreSelectedEVT value),
-    TResult isLastChapterChangedEVT(IsLastChapterChangedEVT value),
-    TResult isNSFWChangedEVT(IsNSFWChangedEVT value),
-    TResult languageSelectedEVT(LanguageSelectedEVT value),
-    TResult publishButtonPressedEVT(PublishButtonPressedEVT value),
-    TResult saveOrBackButtonPressedEVT(SaveOrBackButtonPressedEVT value),
-    TResult seriesDraftLoadedEVT(SeriesDraftLoadedEVT value),
-    TResult seriesPublishedEVT(SeriesPublishedEVT value),
-    TResult sessionFetchedEVT(SessionFetchedEVT value),
-    TResult storyChangedEVT(StoryChangedEVT value),
-    TResult titleChangedEVT(TitleChangedEVT value),
+    TResult addCoverPressedEvent(AddCoverPressedEvent value),
+    TResult chapterDraftDeletedOrPublishedEvent(
+        ChapterDraftDeletedOrPublishedEvent value),
+    TResult chapterPublishedEvent(ChapterPublishedEvent value),
+    TResult deleteDraftButtonPressedEvent(DeleteDraftButtonPressedEvent value),
+    TResult genreOptionalSelectedEvent(GenreOptionalSelectedEvent value),
+    TResult genreSelectedEvent(GenreSelectedEvent value),
+    TResult initializedWithPreviousChapterOrSeriesDraftEvent(
+        InitializedWithPreviousChapterOrSeriesDraftEvent value),
+    TResult isLastChapterChangedEvent(IsLastChapterChangedEvent value),
+    TResult isNSFWChangedEvent(IsNSFWChangedEvent value),
+    TResult languageSelectedEvent(LanguageSelectedEvent value),
+    TResult launchedFromLibraryEvent(LaunchedFromLibraryEvent value),
+    TResult launchedFromPreviousChapterEvent(
+        LaunchedFromPreviousChapterEvent value),
+    TResult launchedFromSeriesEditorEvent(LaunchedFromSeriesEditorEvent value),
+    TResult licenceSelectedEvent(LicenceSelectedEvent value),
+    TResult publishButtonPressedEvent(PublishButtonPressedEvent value),
+    TResult saveOrBackButtonPressedEvent(SaveOrBackButtonPressedEvent value),
+    TResult seriesDraftLoadedEvent(SeriesDraftLoadedEvent value),
+    TResult seriesPublishedEvent(SeriesPublishedEvent value),
+    TResult sessionFetchedEvent(SessionFetchedEvent value),
+    TResult storyChangedEvent(StoryChangedEvent value),
+    TResult titleChangedEvent(TitleChangedEvent value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (chapterEditorLaunchedFromPreviousChapterEVT != null) {
-      return chapterEditorLaunchedFromPreviousChapterEVT(this);
+    if (launchedFromPreviousChapterEvent != null) {
+      return launchedFromPreviousChapterEvent(this);
     }
     return orElse();
   }
 }
 
-abstract class ChapterEditorLaunchedFromPreviousChapterEVT
+abstract class LaunchedFromPreviousChapterEvent
     implements ChapterEditorDatabaseEvent {
-  const factory ChapterEditorLaunchedFromPreviousChapterEVT(
-          BuildContext context,
-          Chapter previousChapter,
-          EditorContentOrigin editorContentOrigin) =
-      _$ChapterEditorLaunchedFromPreviousChapterEVT;
+  const factory LaunchedFromPreviousChapterEvent(BuildContext context,
+          Chapter previousChapter, EditorContentOrigin editorContentOrigin) =
+      _$LaunchedFromPreviousChapterEvent;
 
   BuildContext get context;
   Chapter get previousChapter;
   EditorContentOrigin get editorContentOrigin;
   @JsonKey(ignore: true)
-  $ChapterEditorLaunchedFromPreviousChapterEVTCopyWith<
-      ChapterEditorLaunchedFromPreviousChapterEVT> get copyWith;
+  $LaunchedFromPreviousChapterEventCopyWith<LaunchedFromPreviousChapterEvent>
+      get copyWith;
 }
 
 /// @nodoc
-abstract class $ChapterEditorLaunchedFromSeriesEditorEVTCopyWith<$Res> {
-  factory $ChapterEditorLaunchedFromSeriesEditorEVTCopyWith(
-          ChapterEditorLaunchedFromSeriesEditorEVT value,
-          $Res Function(ChapterEditorLaunchedFromSeriesEditorEVT) then) =
-      _$ChapterEditorLaunchedFromSeriesEditorEVTCopyWithImpl<$Res>;
+abstract class $LaunchedFromSeriesEditorEventCopyWith<$Res> {
+  factory $LaunchedFromSeriesEditorEventCopyWith(
+          LaunchedFromSeriesEditorEvent value,
+          $Res Function(LaunchedFromSeriesEditorEvent) then) =
+      _$LaunchedFromSeriesEditorEventCopyWithImpl<$Res>;
   $Res call(
       {BuildContext context,
       EditorContentOrigin editorContentOrigin,
@@ -1461,18 +3535,17 @@ abstract class $ChapterEditorLaunchedFromSeriesEditorEVTCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$ChapterEditorLaunchedFromSeriesEditorEVTCopyWithImpl<$Res>
+class _$LaunchedFromSeriesEditorEventCopyWithImpl<$Res>
     extends _$ChapterEditorDatabaseEventCopyWithImpl<$Res>
-    implements $ChapterEditorLaunchedFromSeriesEditorEVTCopyWith<$Res> {
-  _$ChapterEditorLaunchedFromSeriesEditorEVTCopyWithImpl(
-      ChapterEditorLaunchedFromSeriesEditorEVT _value,
-      $Res Function(ChapterEditorLaunchedFromSeriesEditorEVT) _then)
-      : super(_value,
-            (v) => _then(v as ChapterEditorLaunchedFromSeriesEditorEVT));
+    implements $LaunchedFromSeriesEditorEventCopyWith<$Res> {
+  _$LaunchedFromSeriesEditorEventCopyWithImpl(
+      LaunchedFromSeriesEditorEvent _value,
+      $Res Function(LaunchedFromSeriesEditorEvent) _then)
+      : super(_value, (v) => _then(v as LaunchedFromSeriesEditorEvent));
 
   @override
-  ChapterEditorLaunchedFromSeriesEditorEVT get _value =>
-      super._value as ChapterEditorLaunchedFromSeriesEditorEVT;
+  LaunchedFromSeriesEditorEvent get _value =>
+      super._value as LaunchedFromSeriesEditorEvent;
 
   @override
   $Res call({
@@ -1480,7 +3553,7 @@ class _$ChapterEditorLaunchedFromSeriesEditorEVTCopyWithImpl<$Res>
     Object editorContentOrigin = freezed,
     Object seriesDraft = freezed,
   }) {
-    return _then(ChapterEditorLaunchedFromSeriesEditorEVT(
+    return _then(LaunchedFromSeriesEditorEvent(
       context == freezed ? _value.context : context as BuildContext,
       editorContentOrigin == freezed
           ? _value.editorContentOrigin
@@ -1491,10 +3564,10 @@ class _$ChapterEditorLaunchedFromSeriesEditorEVTCopyWithImpl<$Res>
 }
 
 /// @nodoc
-class _$ChapterEditorLaunchedFromSeriesEditorEVT
+class _$LaunchedFromSeriesEditorEvent
     with DiagnosticableTreeMixin
-    implements ChapterEditorLaunchedFromSeriesEditorEVT {
-  const _$ChapterEditorLaunchedFromSeriesEditorEVT(
+    implements LaunchedFromSeriesEditorEvent {
+  const _$LaunchedFromSeriesEditorEvent(
       this.context, this.editorContentOrigin, this.seriesDraft)
       : assert(context != null),
         assert(editorContentOrigin != null),
@@ -1509,15 +3582,15 @@ class _$ChapterEditorLaunchedFromSeriesEditorEVT
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'ChapterEditorDatabaseEvent.chapterEditorLaunchedFromSeriesEditorEVT(context: $context, editorContentOrigin: $editorContentOrigin, seriesDraft: $seriesDraft)';
+    return 'ChapterEditorDatabaseEvent.launchedFromSeriesEditorEvent(context: $context, editorContentOrigin: $editorContentOrigin, seriesDraft: $seriesDraft)';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
     properties
-      ..add(DiagnosticsProperty('type',
-          'ChapterEditorDatabaseEvent.chapterEditorLaunchedFromSeriesEditorEVT'))
+      ..add(DiagnosticsProperty(
+          'type', 'ChapterEditorDatabaseEvent.launchedFromSeriesEditorEvent'))
       ..add(DiagnosticsProperty('context', context))
       ..add(DiagnosticsProperty('editorContentOrigin', editorContentOrigin))
       ..add(DiagnosticsProperty('seriesDraft', seriesDraft));
@@ -1526,7 +3599,7 @@ class _$ChapterEditorLaunchedFromSeriesEditorEVT
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is ChapterEditorLaunchedFromSeriesEditorEVT &&
+        (other is LaunchedFromSeriesEditorEvent &&
             (identical(other.context, context) ||
                 const DeepCollectionEquality()
                     .equals(other.context, context)) &&
@@ -1547,102 +3620,98 @@ class _$ChapterEditorLaunchedFromSeriesEditorEVT
 
   @JsonKey(ignore: true)
   @override
-  $ChapterEditorLaunchedFromSeriesEditorEVTCopyWith<
-          ChapterEditorLaunchedFromSeriesEditorEVT>
-      get copyWith => _$ChapterEditorLaunchedFromSeriesEditorEVTCopyWithImpl<
-          ChapterEditorLaunchedFromSeriesEditorEVT>(this, _$identity);
+  $LaunchedFromSeriesEditorEventCopyWith<LaunchedFromSeriesEditorEvent>
+      get copyWith => _$LaunchedFromSeriesEditorEventCopyWithImpl<
+          LaunchedFromSeriesEditorEvent>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
-    @required TResult addCoverPressedEVT(),
+    @required TResult addCoverPressedEvent(),
+    @required TResult chapterDraftDeletedOrPublishedEvent(),
+    @required TResult chapterPublishedEvent(),
+    @required TResult deleteDraftButtonPressedEvent(),
+    @required TResult genreOptionalSelectedEvent(String genreOptional),
+    @required TResult genreSelectedEvent(String genre),
+    @required TResult initializedWithPreviousChapterOrSeriesDraftEvent(),
+    @required TResult isLastChapterChangedEvent(bool isLastChapter),
+    @required TResult isNSFWChangedEvent(bool isNSFW),
+    @required TResult languageSelectedEvent(String language),
     @required
-        TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(),
-    @required
-        TResult chapterEditorLaunchedFromLibraryEVT(BuildContext context,
+        TResult launchedFromLibraryEvent(BuildContext context,
             Chapter chapterDraft, EditorContentOrigin editorContentOrigin),
     @required
-        TResult chapterEditorLaunchedFromPreviousChapterEVT(
-            BuildContext context,
-            Chapter previousChapter,
-            EditorContentOrigin editorContentOrigin),
+        TResult launchedFromPreviousChapterEvent(BuildContext context,
+            Chapter previousChapter, EditorContentOrigin editorContentOrigin),
     @required
-        TResult chapterEditorLaunchedFromSeriesEditorEVT(BuildContext context,
+        TResult launchedFromSeriesEditorEvent(BuildContext context,
             EditorContentOrigin editorContentOrigin, Series seriesDraft),
-    @required TResult chapterDraftDeletedOrPublishedEVT(),
-    @required TResult chapterPublishedEVT(),
-    @required TResult copyrightsSelectedEVT(String copyrights),
-    @required TResult deleteDraftButtonPressedEVT(),
-    @required TResult genreOptionalSelectedEVT(String genreOptional),
-    @required TResult genreSelectedEVT(String genre),
-    @required TResult isLastChapterChangedEVT(bool isLastChapter),
-    @required TResult isNSFWChangedEVT(bool isNSFW),
-    @required TResult languageSelectedEVT(String language),
-    @required TResult publishButtonPressedEVT(),
-    @required TResult saveOrBackButtonPressedEVT(),
-    @required TResult seriesDraftLoadedEVT(Series seriesDraft),
-    @required TResult seriesPublishedEVT(String seriesDraftUID),
-    @required TResult sessionFetchedEVT(),
-    @required TResult storyChangedEVT(String story),
-    @required TResult titleChangedEVT(String title),
+    @required TResult licenceSelectedEvent(String licence),
+    @required TResult publishButtonPressedEvent(),
+    @required TResult saveOrBackButtonPressedEvent(),
+    @required TResult seriesDraftLoadedEvent(Series seriesDraft),
+    @required TResult seriesPublishedEvent(String seriesDraftUID),
+    @required TResult sessionFetchedEvent(),
+    @required TResult storyChangedEvent(String story),
+    @required TResult titleChangedEvent(String title),
   }) {
-    assert(addCoverPressedEVT != null);
-    assert(chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT != null);
-    assert(chapterEditorLaunchedFromLibraryEVT != null);
-    assert(chapterEditorLaunchedFromPreviousChapterEVT != null);
-    assert(chapterEditorLaunchedFromSeriesEditorEVT != null);
-    assert(chapterDraftDeletedOrPublishedEVT != null);
-    assert(chapterPublishedEVT != null);
-    assert(copyrightsSelectedEVT != null);
-    assert(deleteDraftButtonPressedEVT != null);
-    assert(genreOptionalSelectedEVT != null);
-    assert(genreSelectedEVT != null);
-    assert(isLastChapterChangedEVT != null);
-    assert(isNSFWChangedEVT != null);
-    assert(languageSelectedEVT != null);
-    assert(publishButtonPressedEVT != null);
-    assert(saveOrBackButtonPressedEVT != null);
-    assert(seriesDraftLoadedEVT != null);
-    assert(seriesPublishedEVT != null);
-    assert(sessionFetchedEVT != null);
-    assert(storyChangedEVT != null);
-    assert(titleChangedEVT != null);
-    return chapterEditorLaunchedFromSeriesEditorEVT(
+    assert(addCoverPressedEvent != null);
+    assert(chapterDraftDeletedOrPublishedEvent != null);
+    assert(chapterPublishedEvent != null);
+    assert(deleteDraftButtonPressedEvent != null);
+    assert(genreOptionalSelectedEvent != null);
+    assert(genreSelectedEvent != null);
+    assert(initializedWithPreviousChapterOrSeriesDraftEvent != null);
+    assert(isLastChapterChangedEvent != null);
+    assert(isNSFWChangedEvent != null);
+    assert(languageSelectedEvent != null);
+    assert(launchedFromLibraryEvent != null);
+    assert(launchedFromPreviousChapterEvent != null);
+    assert(launchedFromSeriesEditorEvent != null);
+    assert(licenceSelectedEvent != null);
+    assert(publishButtonPressedEvent != null);
+    assert(saveOrBackButtonPressedEvent != null);
+    assert(seriesDraftLoadedEvent != null);
+    assert(seriesPublishedEvent != null);
+    assert(sessionFetchedEvent != null);
+    assert(storyChangedEvent != null);
+    assert(titleChangedEvent != null);
+    return launchedFromSeriesEditorEvent(
         context, editorContentOrigin, seriesDraft);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
-    TResult addCoverPressedEVT(),
-    TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(),
-    TResult chapterEditorLaunchedFromLibraryEVT(BuildContext context,
-        Chapter chapterDraft, EditorContentOrigin editorContentOrigin),
-    TResult chapterEditorLaunchedFromPreviousChapterEVT(BuildContext context,
+    TResult addCoverPressedEvent(),
+    TResult chapterDraftDeletedOrPublishedEvent(),
+    TResult chapterPublishedEvent(),
+    TResult deleteDraftButtonPressedEvent(),
+    TResult genreOptionalSelectedEvent(String genreOptional),
+    TResult genreSelectedEvent(String genre),
+    TResult initializedWithPreviousChapterOrSeriesDraftEvent(),
+    TResult isLastChapterChangedEvent(bool isLastChapter),
+    TResult isNSFWChangedEvent(bool isNSFW),
+    TResult languageSelectedEvent(String language),
+    TResult launchedFromLibraryEvent(BuildContext context, Chapter chapterDraft,
+        EditorContentOrigin editorContentOrigin),
+    TResult launchedFromPreviousChapterEvent(BuildContext context,
         Chapter previousChapter, EditorContentOrigin editorContentOrigin),
-    TResult chapterEditorLaunchedFromSeriesEditorEVT(BuildContext context,
+    TResult launchedFromSeriesEditorEvent(BuildContext context,
         EditorContentOrigin editorContentOrigin, Series seriesDraft),
-    TResult chapterDraftDeletedOrPublishedEVT(),
-    TResult chapterPublishedEVT(),
-    TResult copyrightsSelectedEVT(String copyrights),
-    TResult deleteDraftButtonPressedEVT(),
-    TResult genreOptionalSelectedEVT(String genreOptional),
-    TResult genreSelectedEVT(String genre),
-    TResult isLastChapterChangedEVT(bool isLastChapter),
-    TResult isNSFWChangedEVT(bool isNSFW),
-    TResult languageSelectedEVT(String language),
-    TResult publishButtonPressedEVT(),
-    TResult saveOrBackButtonPressedEVT(),
-    TResult seriesDraftLoadedEVT(Series seriesDraft),
-    TResult seriesPublishedEVT(String seriesDraftUID),
-    TResult sessionFetchedEVT(),
-    TResult storyChangedEVT(String story),
-    TResult titleChangedEVT(String title),
+    TResult licenceSelectedEvent(String licence),
+    TResult publishButtonPressedEvent(),
+    TResult saveOrBackButtonPressedEvent(),
+    TResult seriesDraftLoadedEvent(Series seriesDraft),
+    TResult seriesPublishedEvent(String seriesDraftUID),
+    TResult sessionFetchedEvent(),
+    TResult storyChangedEvent(String story),
+    TResult titleChangedEvent(String title),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (chapterEditorLaunchedFromSeriesEditorEVT != null) {
-      return chapterEditorLaunchedFromSeriesEditorEVT(
+    if (launchedFromSeriesEditorEvent != null) {
+      return launchedFromSeriesEditorEvent(
           context, editorContentOrigin, seriesDraft);
     }
     return orElse();
@@ -1651,653 +3720,160 @@ class _$ChapterEditorLaunchedFromSeriesEditorEVT
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object>({
-    @required TResult addCoverPressedEVT(AddCoverPressedEVT value),
+    @required TResult addCoverPressedEvent(AddCoverPressedEvent value),
     @required
-        TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(
-            ChapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT value),
+        TResult chapterDraftDeletedOrPublishedEvent(
+            ChapterDraftDeletedOrPublishedEvent value),
+    @required TResult chapterPublishedEvent(ChapterPublishedEvent value),
     @required
-        TResult chapterEditorLaunchedFromLibraryEVT(
-            ChapterEditorLaunchedFromLibraryEVT value),
+        TResult deleteDraftButtonPressedEvent(
+            DeleteDraftButtonPressedEvent value),
     @required
-        TResult chapterEditorLaunchedFromPreviousChapterEVT(
-            ChapterEditorLaunchedFromPreviousChapterEVT value),
+        TResult genreOptionalSelectedEvent(GenreOptionalSelectedEvent value),
+    @required TResult genreSelectedEvent(GenreSelectedEvent value),
     @required
-        TResult chapterEditorLaunchedFromSeriesEditorEVT(
-            ChapterEditorLaunchedFromSeriesEditorEVT value),
+        TResult initializedWithPreviousChapterOrSeriesDraftEvent(
+            InitializedWithPreviousChapterOrSeriesDraftEvent value),
     @required
-        TResult chapterDraftDeletedOrPublishedEVT(
-            ChapterDraftDeletedOrPublishedEVT value),
-    @required TResult chapterPublishedEVT(ChapterPublishedEVT value),
-    @required TResult copyrightsSelectedEVT(CopyrightsSelectedEVT value),
+        TResult isLastChapterChangedEvent(IsLastChapterChangedEvent value),
+    @required TResult isNSFWChangedEvent(IsNSFWChangedEvent value),
+    @required TResult languageSelectedEvent(LanguageSelectedEvent value),
+    @required TResult launchedFromLibraryEvent(LaunchedFromLibraryEvent value),
     @required
-        TResult deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
-    @required TResult genreOptionalSelectedEVT(GenreOptionalSelectedEVT value),
-    @required TResult genreSelectedEVT(GenreSelectedEVT value),
-    @required TResult isLastChapterChangedEVT(IsLastChapterChangedEVT value),
-    @required TResult isNSFWChangedEVT(IsNSFWChangedEVT value),
-    @required TResult languageSelectedEVT(LanguageSelectedEVT value),
-    @required TResult publishButtonPressedEVT(PublishButtonPressedEVT value),
+        TResult launchedFromPreviousChapterEvent(
+            LaunchedFromPreviousChapterEvent value),
     @required
-        TResult saveOrBackButtonPressedEVT(SaveOrBackButtonPressedEVT value),
-    @required TResult seriesDraftLoadedEVT(SeriesDraftLoadedEVT value),
-    @required TResult seriesPublishedEVT(SeriesPublishedEVT value),
-    @required TResult sessionFetchedEVT(SessionFetchedEVT value),
-    @required TResult storyChangedEVT(StoryChangedEVT value),
-    @required TResult titleChangedEVT(TitleChangedEVT value),
+        TResult launchedFromSeriesEditorEvent(
+            LaunchedFromSeriesEditorEvent value),
+    @required TResult licenceSelectedEvent(LicenceSelectedEvent value),
+    @required
+        TResult publishButtonPressedEvent(PublishButtonPressedEvent value),
+    @required
+        TResult saveOrBackButtonPressedEvent(
+            SaveOrBackButtonPressedEvent value),
+    @required TResult seriesDraftLoadedEvent(SeriesDraftLoadedEvent value),
+    @required TResult seriesPublishedEvent(SeriesPublishedEvent value),
+    @required TResult sessionFetchedEvent(SessionFetchedEvent value),
+    @required TResult storyChangedEvent(StoryChangedEvent value),
+    @required TResult titleChangedEvent(TitleChangedEvent value),
   }) {
-    assert(addCoverPressedEVT != null);
-    assert(chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT != null);
-    assert(chapterEditorLaunchedFromLibraryEVT != null);
-    assert(chapterEditorLaunchedFromPreviousChapterEVT != null);
-    assert(chapterEditorLaunchedFromSeriesEditorEVT != null);
-    assert(chapterDraftDeletedOrPublishedEVT != null);
-    assert(chapterPublishedEVT != null);
-    assert(copyrightsSelectedEVT != null);
-    assert(deleteDraftButtonPressedEVT != null);
-    assert(genreOptionalSelectedEVT != null);
-    assert(genreSelectedEVT != null);
-    assert(isLastChapterChangedEVT != null);
-    assert(isNSFWChangedEVT != null);
-    assert(languageSelectedEVT != null);
-    assert(publishButtonPressedEVT != null);
-    assert(saveOrBackButtonPressedEVT != null);
-    assert(seriesDraftLoadedEVT != null);
-    assert(seriesPublishedEVT != null);
-    assert(sessionFetchedEVT != null);
-    assert(storyChangedEVT != null);
-    assert(titleChangedEVT != null);
-    return chapterEditorLaunchedFromSeriesEditorEVT(this);
+    assert(addCoverPressedEvent != null);
+    assert(chapterDraftDeletedOrPublishedEvent != null);
+    assert(chapterPublishedEvent != null);
+    assert(deleteDraftButtonPressedEvent != null);
+    assert(genreOptionalSelectedEvent != null);
+    assert(genreSelectedEvent != null);
+    assert(initializedWithPreviousChapterOrSeriesDraftEvent != null);
+    assert(isLastChapterChangedEvent != null);
+    assert(isNSFWChangedEvent != null);
+    assert(languageSelectedEvent != null);
+    assert(launchedFromLibraryEvent != null);
+    assert(launchedFromPreviousChapterEvent != null);
+    assert(launchedFromSeriesEditorEvent != null);
+    assert(licenceSelectedEvent != null);
+    assert(publishButtonPressedEvent != null);
+    assert(saveOrBackButtonPressedEvent != null);
+    assert(seriesDraftLoadedEvent != null);
+    assert(seriesPublishedEvent != null);
+    assert(sessionFetchedEvent != null);
+    assert(storyChangedEvent != null);
+    assert(titleChangedEvent != null);
+    return launchedFromSeriesEditorEvent(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
-    TResult addCoverPressedEVT(AddCoverPressedEVT value),
-    TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(
-        ChapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT value),
-    TResult chapterEditorLaunchedFromLibraryEVT(
-        ChapterEditorLaunchedFromLibraryEVT value),
-    TResult chapterEditorLaunchedFromPreviousChapterEVT(
-        ChapterEditorLaunchedFromPreviousChapterEVT value),
-    TResult chapterEditorLaunchedFromSeriesEditorEVT(
-        ChapterEditorLaunchedFromSeriesEditorEVT value),
-    TResult chapterDraftDeletedOrPublishedEVT(
-        ChapterDraftDeletedOrPublishedEVT value),
-    TResult chapterPublishedEVT(ChapterPublishedEVT value),
-    TResult copyrightsSelectedEVT(CopyrightsSelectedEVT value),
-    TResult deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
-    TResult genreOptionalSelectedEVT(GenreOptionalSelectedEVT value),
-    TResult genreSelectedEVT(GenreSelectedEVT value),
-    TResult isLastChapterChangedEVT(IsLastChapterChangedEVT value),
-    TResult isNSFWChangedEVT(IsNSFWChangedEVT value),
-    TResult languageSelectedEVT(LanguageSelectedEVT value),
-    TResult publishButtonPressedEVT(PublishButtonPressedEVT value),
-    TResult saveOrBackButtonPressedEVT(SaveOrBackButtonPressedEVT value),
-    TResult seriesDraftLoadedEVT(SeriesDraftLoadedEVT value),
-    TResult seriesPublishedEVT(SeriesPublishedEVT value),
-    TResult sessionFetchedEVT(SessionFetchedEVT value),
-    TResult storyChangedEVT(StoryChangedEVT value),
-    TResult titleChangedEVT(TitleChangedEVT value),
+    TResult addCoverPressedEvent(AddCoverPressedEvent value),
+    TResult chapterDraftDeletedOrPublishedEvent(
+        ChapterDraftDeletedOrPublishedEvent value),
+    TResult chapterPublishedEvent(ChapterPublishedEvent value),
+    TResult deleteDraftButtonPressedEvent(DeleteDraftButtonPressedEvent value),
+    TResult genreOptionalSelectedEvent(GenreOptionalSelectedEvent value),
+    TResult genreSelectedEvent(GenreSelectedEvent value),
+    TResult initializedWithPreviousChapterOrSeriesDraftEvent(
+        InitializedWithPreviousChapterOrSeriesDraftEvent value),
+    TResult isLastChapterChangedEvent(IsLastChapterChangedEvent value),
+    TResult isNSFWChangedEvent(IsNSFWChangedEvent value),
+    TResult languageSelectedEvent(LanguageSelectedEvent value),
+    TResult launchedFromLibraryEvent(LaunchedFromLibraryEvent value),
+    TResult launchedFromPreviousChapterEvent(
+        LaunchedFromPreviousChapterEvent value),
+    TResult launchedFromSeriesEditorEvent(LaunchedFromSeriesEditorEvent value),
+    TResult licenceSelectedEvent(LicenceSelectedEvent value),
+    TResult publishButtonPressedEvent(PublishButtonPressedEvent value),
+    TResult saveOrBackButtonPressedEvent(SaveOrBackButtonPressedEvent value),
+    TResult seriesDraftLoadedEvent(SeriesDraftLoadedEvent value),
+    TResult seriesPublishedEvent(SeriesPublishedEvent value),
+    TResult sessionFetchedEvent(SessionFetchedEvent value),
+    TResult storyChangedEvent(StoryChangedEvent value),
+    TResult titleChangedEvent(TitleChangedEvent value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (chapterEditorLaunchedFromSeriesEditorEVT != null) {
-      return chapterEditorLaunchedFromSeriesEditorEVT(this);
+    if (launchedFromSeriesEditorEvent != null) {
+      return launchedFromSeriesEditorEvent(this);
     }
     return orElse();
   }
 }
 
-abstract class ChapterEditorLaunchedFromSeriesEditorEVT
+abstract class LaunchedFromSeriesEditorEvent
     implements ChapterEditorDatabaseEvent {
-  const factory ChapterEditorLaunchedFromSeriesEditorEVT(
+  const factory LaunchedFromSeriesEditorEvent(
       BuildContext context,
       EditorContentOrigin editorContentOrigin,
-      Series seriesDraft) = _$ChapterEditorLaunchedFromSeriesEditorEVT;
+      Series seriesDraft) = _$LaunchedFromSeriesEditorEvent;
 
   BuildContext get context;
   EditorContentOrigin get editorContentOrigin;
   Series get seriesDraft;
   @JsonKey(ignore: true)
-  $ChapterEditorLaunchedFromSeriesEditorEVTCopyWith<
-      ChapterEditorLaunchedFromSeriesEditorEVT> get copyWith;
+  $LaunchedFromSeriesEditorEventCopyWith<LaunchedFromSeriesEditorEvent>
+      get copyWith;
 }
 
 /// @nodoc
-abstract class $ChapterDraftDeletedOrPublishedEVTCopyWith<$Res> {
-  factory $ChapterDraftDeletedOrPublishedEVTCopyWith(
-          ChapterDraftDeletedOrPublishedEVT value,
-          $Res Function(ChapterDraftDeletedOrPublishedEVT) then) =
-      _$ChapterDraftDeletedOrPublishedEVTCopyWithImpl<$Res>;
+abstract class $LicenceSelectedEventCopyWith<$Res> {
+  factory $LicenceSelectedEventCopyWith(LicenceSelectedEvent value,
+          $Res Function(LicenceSelectedEvent) then) =
+      _$LicenceSelectedEventCopyWithImpl<$Res>;
+  $Res call({String licence});
 }
 
 /// @nodoc
-class _$ChapterDraftDeletedOrPublishedEVTCopyWithImpl<$Res>
+class _$LicenceSelectedEventCopyWithImpl<$Res>
     extends _$ChapterEditorDatabaseEventCopyWithImpl<$Res>
-    implements $ChapterDraftDeletedOrPublishedEVTCopyWith<$Res> {
-  _$ChapterDraftDeletedOrPublishedEVTCopyWithImpl(
-      ChapterDraftDeletedOrPublishedEVT _value,
-      $Res Function(ChapterDraftDeletedOrPublishedEVT) _then)
-      : super(_value, (v) => _then(v as ChapterDraftDeletedOrPublishedEVT));
+    implements $LicenceSelectedEventCopyWith<$Res> {
+  _$LicenceSelectedEventCopyWithImpl(
+      LicenceSelectedEvent _value, $Res Function(LicenceSelectedEvent) _then)
+      : super(_value, (v) => _then(v as LicenceSelectedEvent));
 
   @override
-  ChapterDraftDeletedOrPublishedEVT get _value =>
-      super._value as ChapterDraftDeletedOrPublishedEVT;
-}
-
-/// @nodoc
-class _$ChapterDraftDeletedOrPublishedEVT
-    with DiagnosticableTreeMixin
-    implements ChapterDraftDeletedOrPublishedEVT {
-  const _$ChapterDraftDeletedOrPublishedEVT();
-
-  @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'ChapterEditorDatabaseEvent.chapterDraftDeletedOrPublishedEVT()';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type',
-          'ChapterEditorDatabaseEvent.chapterDraftDeletedOrPublishedEVT'));
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is ChapterDraftDeletedOrPublishedEVT);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult addCoverPressedEVT(),
-    @required
-        TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(),
-    @required
-        TResult chapterEditorLaunchedFromLibraryEVT(BuildContext context,
-            Chapter chapterDraft, EditorContentOrigin editorContentOrigin),
-    @required
-        TResult chapterEditorLaunchedFromPreviousChapterEVT(
-            BuildContext context,
-            Chapter previousChapter,
-            EditorContentOrigin editorContentOrigin),
-    @required
-        TResult chapterEditorLaunchedFromSeriesEditorEVT(BuildContext context,
-            EditorContentOrigin editorContentOrigin, Series seriesDraft),
-    @required TResult chapterDraftDeletedOrPublishedEVT(),
-    @required TResult chapterPublishedEVT(),
-    @required TResult copyrightsSelectedEVT(String copyrights),
-    @required TResult deleteDraftButtonPressedEVT(),
-    @required TResult genreOptionalSelectedEVT(String genreOptional),
-    @required TResult genreSelectedEVT(String genre),
-    @required TResult isLastChapterChangedEVT(bool isLastChapter),
-    @required TResult isNSFWChangedEVT(bool isNSFW),
-    @required TResult languageSelectedEVT(String language),
-    @required TResult publishButtonPressedEVT(),
-    @required TResult saveOrBackButtonPressedEVT(),
-    @required TResult seriesDraftLoadedEVT(Series seriesDraft),
-    @required TResult seriesPublishedEVT(String seriesDraftUID),
-    @required TResult sessionFetchedEVT(),
-    @required TResult storyChangedEVT(String story),
-    @required TResult titleChangedEVT(String title),
-  }) {
-    assert(addCoverPressedEVT != null);
-    assert(chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT != null);
-    assert(chapterEditorLaunchedFromLibraryEVT != null);
-    assert(chapterEditorLaunchedFromPreviousChapterEVT != null);
-    assert(chapterEditorLaunchedFromSeriesEditorEVT != null);
-    assert(chapterDraftDeletedOrPublishedEVT != null);
-    assert(chapterPublishedEVT != null);
-    assert(copyrightsSelectedEVT != null);
-    assert(deleteDraftButtonPressedEVT != null);
-    assert(genreOptionalSelectedEVT != null);
-    assert(genreSelectedEVT != null);
-    assert(isLastChapterChangedEVT != null);
-    assert(isNSFWChangedEVT != null);
-    assert(languageSelectedEVT != null);
-    assert(publishButtonPressedEVT != null);
-    assert(saveOrBackButtonPressedEVT != null);
-    assert(seriesDraftLoadedEVT != null);
-    assert(seriesPublishedEVT != null);
-    assert(sessionFetchedEVT != null);
-    assert(storyChangedEVT != null);
-    assert(titleChangedEVT != null);
-    return chapterDraftDeletedOrPublishedEVT();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult addCoverPressedEVT(),
-    TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(),
-    TResult chapterEditorLaunchedFromLibraryEVT(BuildContext context,
-        Chapter chapterDraft, EditorContentOrigin editorContentOrigin),
-    TResult chapterEditorLaunchedFromPreviousChapterEVT(BuildContext context,
-        Chapter previousChapter, EditorContentOrigin editorContentOrigin),
-    TResult chapterEditorLaunchedFromSeriesEditorEVT(BuildContext context,
-        EditorContentOrigin editorContentOrigin, Series seriesDraft),
-    TResult chapterDraftDeletedOrPublishedEVT(),
-    TResult chapterPublishedEVT(),
-    TResult copyrightsSelectedEVT(String copyrights),
-    TResult deleteDraftButtonPressedEVT(),
-    TResult genreOptionalSelectedEVT(String genreOptional),
-    TResult genreSelectedEVT(String genre),
-    TResult isLastChapterChangedEVT(bool isLastChapter),
-    TResult isNSFWChangedEVT(bool isNSFW),
-    TResult languageSelectedEVT(String language),
-    TResult publishButtonPressedEVT(),
-    TResult saveOrBackButtonPressedEVT(),
-    TResult seriesDraftLoadedEVT(Series seriesDraft),
-    TResult seriesPublishedEVT(String seriesDraftUID),
-    TResult sessionFetchedEVT(),
-    TResult storyChangedEVT(String story),
-    TResult titleChangedEVT(String title),
-    @required TResult orElse(),
-  }) {
-    assert(orElse != null);
-    if (chapterDraftDeletedOrPublishedEVT != null) {
-      return chapterDraftDeletedOrPublishedEVT();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult addCoverPressedEVT(AddCoverPressedEVT value),
-    @required
-        TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(
-            ChapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT value),
-    @required
-        TResult chapterEditorLaunchedFromLibraryEVT(
-            ChapterEditorLaunchedFromLibraryEVT value),
-    @required
-        TResult chapterEditorLaunchedFromPreviousChapterEVT(
-            ChapterEditorLaunchedFromPreviousChapterEVT value),
-    @required
-        TResult chapterEditorLaunchedFromSeriesEditorEVT(
-            ChapterEditorLaunchedFromSeriesEditorEVT value),
-    @required
-        TResult chapterDraftDeletedOrPublishedEVT(
-            ChapterDraftDeletedOrPublishedEVT value),
-    @required TResult chapterPublishedEVT(ChapterPublishedEVT value),
-    @required TResult copyrightsSelectedEVT(CopyrightsSelectedEVT value),
-    @required
-        TResult deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
-    @required TResult genreOptionalSelectedEVT(GenreOptionalSelectedEVT value),
-    @required TResult genreSelectedEVT(GenreSelectedEVT value),
-    @required TResult isLastChapterChangedEVT(IsLastChapterChangedEVT value),
-    @required TResult isNSFWChangedEVT(IsNSFWChangedEVT value),
-    @required TResult languageSelectedEVT(LanguageSelectedEVT value),
-    @required TResult publishButtonPressedEVT(PublishButtonPressedEVT value),
-    @required
-        TResult saveOrBackButtonPressedEVT(SaveOrBackButtonPressedEVT value),
-    @required TResult seriesDraftLoadedEVT(SeriesDraftLoadedEVT value),
-    @required TResult seriesPublishedEVT(SeriesPublishedEVT value),
-    @required TResult sessionFetchedEVT(SessionFetchedEVT value),
-    @required TResult storyChangedEVT(StoryChangedEVT value),
-    @required TResult titleChangedEVT(TitleChangedEVT value),
-  }) {
-    assert(addCoverPressedEVT != null);
-    assert(chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT != null);
-    assert(chapterEditorLaunchedFromLibraryEVT != null);
-    assert(chapterEditorLaunchedFromPreviousChapterEVT != null);
-    assert(chapterEditorLaunchedFromSeriesEditorEVT != null);
-    assert(chapterDraftDeletedOrPublishedEVT != null);
-    assert(chapterPublishedEVT != null);
-    assert(copyrightsSelectedEVT != null);
-    assert(deleteDraftButtonPressedEVT != null);
-    assert(genreOptionalSelectedEVT != null);
-    assert(genreSelectedEVT != null);
-    assert(isLastChapterChangedEVT != null);
-    assert(isNSFWChangedEVT != null);
-    assert(languageSelectedEVT != null);
-    assert(publishButtonPressedEVT != null);
-    assert(saveOrBackButtonPressedEVT != null);
-    assert(seriesDraftLoadedEVT != null);
-    assert(seriesPublishedEVT != null);
-    assert(sessionFetchedEVT != null);
-    assert(storyChangedEVT != null);
-    assert(titleChangedEVT != null);
-    return chapterDraftDeletedOrPublishedEVT(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult addCoverPressedEVT(AddCoverPressedEVT value),
-    TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(
-        ChapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT value),
-    TResult chapterEditorLaunchedFromLibraryEVT(
-        ChapterEditorLaunchedFromLibraryEVT value),
-    TResult chapterEditorLaunchedFromPreviousChapterEVT(
-        ChapterEditorLaunchedFromPreviousChapterEVT value),
-    TResult chapterEditorLaunchedFromSeriesEditorEVT(
-        ChapterEditorLaunchedFromSeriesEditorEVT value),
-    TResult chapterDraftDeletedOrPublishedEVT(
-        ChapterDraftDeletedOrPublishedEVT value),
-    TResult chapterPublishedEVT(ChapterPublishedEVT value),
-    TResult copyrightsSelectedEVT(CopyrightsSelectedEVT value),
-    TResult deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
-    TResult genreOptionalSelectedEVT(GenreOptionalSelectedEVT value),
-    TResult genreSelectedEVT(GenreSelectedEVT value),
-    TResult isLastChapterChangedEVT(IsLastChapterChangedEVT value),
-    TResult isNSFWChangedEVT(IsNSFWChangedEVT value),
-    TResult languageSelectedEVT(LanguageSelectedEVT value),
-    TResult publishButtonPressedEVT(PublishButtonPressedEVT value),
-    TResult saveOrBackButtonPressedEVT(SaveOrBackButtonPressedEVT value),
-    TResult seriesDraftLoadedEVT(SeriesDraftLoadedEVT value),
-    TResult seriesPublishedEVT(SeriesPublishedEVT value),
-    TResult sessionFetchedEVT(SessionFetchedEVT value),
-    TResult storyChangedEVT(StoryChangedEVT value),
-    TResult titleChangedEVT(TitleChangedEVT value),
-    @required TResult orElse(),
-  }) {
-    assert(orElse != null);
-    if (chapterDraftDeletedOrPublishedEVT != null) {
-      return chapterDraftDeletedOrPublishedEVT(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class ChapterDraftDeletedOrPublishedEVT
-    implements ChapterEditorDatabaseEvent {
-  const factory ChapterDraftDeletedOrPublishedEVT() =
-      _$ChapterDraftDeletedOrPublishedEVT;
-}
-
-/// @nodoc
-abstract class $ChapterPublishedEVTCopyWith<$Res> {
-  factory $ChapterPublishedEVTCopyWith(
-          ChapterPublishedEVT value, $Res Function(ChapterPublishedEVT) then) =
-      _$ChapterPublishedEVTCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class _$ChapterPublishedEVTCopyWithImpl<$Res>
-    extends _$ChapterEditorDatabaseEventCopyWithImpl<$Res>
-    implements $ChapterPublishedEVTCopyWith<$Res> {
-  _$ChapterPublishedEVTCopyWithImpl(
-      ChapterPublishedEVT _value, $Res Function(ChapterPublishedEVT) _then)
-      : super(_value, (v) => _then(v as ChapterPublishedEVT));
-
-  @override
-  ChapterPublishedEVT get _value => super._value as ChapterPublishedEVT;
-}
-
-/// @nodoc
-class _$ChapterPublishedEVT
-    with DiagnosticableTreeMixin
-    implements ChapterPublishedEVT {
-  const _$ChapterPublishedEVT();
-
-  @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'ChapterEditorDatabaseEvent.chapterPublishedEVT()';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty(
-          'type', 'ChapterEditorDatabaseEvent.chapterPublishedEVT'));
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) || (other is ChapterPublishedEVT);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult addCoverPressedEVT(),
-    @required
-        TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(),
-    @required
-        TResult chapterEditorLaunchedFromLibraryEVT(BuildContext context,
-            Chapter chapterDraft, EditorContentOrigin editorContentOrigin),
-    @required
-        TResult chapterEditorLaunchedFromPreviousChapterEVT(
-            BuildContext context,
-            Chapter previousChapter,
-            EditorContentOrigin editorContentOrigin),
-    @required
-        TResult chapterEditorLaunchedFromSeriesEditorEVT(BuildContext context,
-            EditorContentOrigin editorContentOrigin, Series seriesDraft),
-    @required TResult chapterDraftDeletedOrPublishedEVT(),
-    @required TResult chapterPublishedEVT(),
-    @required TResult copyrightsSelectedEVT(String copyrights),
-    @required TResult deleteDraftButtonPressedEVT(),
-    @required TResult genreOptionalSelectedEVT(String genreOptional),
-    @required TResult genreSelectedEVT(String genre),
-    @required TResult isLastChapterChangedEVT(bool isLastChapter),
-    @required TResult isNSFWChangedEVT(bool isNSFW),
-    @required TResult languageSelectedEVT(String language),
-    @required TResult publishButtonPressedEVT(),
-    @required TResult saveOrBackButtonPressedEVT(),
-    @required TResult seriesDraftLoadedEVT(Series seriesDraft),
-    @required TResult seriesPublishedEVT(String seriesDraftUID),
-    @required TResult sessionFetchedEVT(),
-    @required TResult storyChangedEVT(String story),
-    @required TResult titleChangedEVT(String title),
-  }) {
-    assert(addCoverPressedEVT != null);
-    assert(chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT != null);
-    assert(chapterEditorLaunchedFromLibraryEVT != null);
-    assert(chapterEditorLaunchedFromPreviousChapterEVT != null);
-    assert(chapterEditorLaunchedFromSeriesEditorEVT != null);
-    assert(chapterDraftDeletedOrPublishedEVT != null);
-    assert(chapterPublishedEVT != null);
-    assert(copyrightsSelectedEVT != null);
-    assert(deleteDraftButtonPressedEVT != null);
-    assert(genreOptionalSelectedEVT != null);
-    assert(genreSelectedEVT != null);
-    assert(isLastChapterChangedEVT != null);
-    assert(isNSFWChangedEVT != null);
-    assert(languageSelectedEVT != null);
-    assert(publishButtonPressedEVT != null);
-    assert(saveOrBackButtonPressedEVT != null);
-    assert(seriesDraftLoadedEVT != null);
-    assert(seriesPublishedEVT != null);
-    assert(sessionFetchedEVT != null);
-    assert(storyChangedEVT != null);
-    assert(titleChangedEVT != null);
-    return chapterPublishedEVT();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult addCoverPressedEVT(),
-    TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(),
-    TResult chapterEditorLaunchedFromLibraryEVT(BuildContext context,
-        Chapter chapterDraft, EditorContentOrigin editorContentOrigin),
-    TResult chapterEditorLaunchedFromPreviousChapterEVT(BuildContext context,
-        Chapter previousChapter, EditorContentOrigin editorContentOrigin),
-    TResult chapterEditorLaunchedFromSeriesEditorEVT(BuildContext context,
-        EditorContentOrigin editorContentOrigin, Series seriesDraft),
-    TResult chapterDraftDeletedOrPublishedEVT(),
-    TResult chapterPublishedEVT(),
-    TResult copyrightsSelectedEVT(String copyrights),
-    TResult deleteDraftButtonPressedEVT(),
-    TResult genreOptionalSelectedEVT(String genreOptional),
-    TResult genreSelectedEVT(String genre),
-    TResult isLastChapterChangedEVT(bool isLastChapter),
-    TResult isNSFWChangedEVT(bool isNSFW),
-    TResult languageSelectedEVT(String language),
-    TResult publishButtonPressedEVT(),
-    TResult saveOrBackButtonPressedEVT(),
-    TResult seriesDraftLoadedEVT(Series seriesDraft),
-    TResult seriesPublishedEVT(String seriesDraftUID),
-    TResult sessionFetchedEVT(),
-    TResult storyChangedEVT(String story),
-    TResult titleChangedEVT(String title),
-    @required TResult orElse(),
-  }) {
-    assert(orElse != null);
-    if (chapterPublishedEVT != null) {
-      return chapterPublishedEVT();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult addCoverPressedEVT(AddCoverPressedEVT value),
-    @required
-        TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(
-            ChapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT value),
-    @required
-        TResult chapterEditorLaunchedFromLibraryEVT(
-            ChapterEditorLaunchedFromLibraryEVT value),
-    @required
-        TResult chapterEditorLaunchedFromPreviousChapterEVT(
-            ChapterEditorLaunchedFromPreviousChapterEVT value),
-    @required
-        TResult chapterEditorLaunchedFromSeriesEditorEVT(
-            ChapterEditorLaunchedFromSeriesEditorEVT value),
-    @required
-        TResult chapterDraftDeletedOrPublishedEVT(
-            ChapterDraftDeletedOrPublishedEVT value),
-    @required TResult chapterPublishedEVT(ChapterPublishedEVT value),
-    @required TResult copyrightsSelectedEVT(CopyrightsSelectedEVT value),
-    @required
-        TResult deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
-    @required TResult genreOptionalSelectedEVT(GenreOptionalSelectedEVT value),
-    @required TResult genreSelectedEVT(GenreSelectedEVT value),
-    @required TResult isLastChapterChangedEVT(IsLastChapterChangedEVT value),
-    @required TResult isNSFWChangedEVT(IsNSFWChangedEVT value),
-    @required TResult languageSelectedEVT(LanguageSelectedEVT value),
-    @required TResult publishButtonPressedEVT(PublishButtonPressedEVT value),
-    @required
-        TResult saveOrBackButtonPressedEVT(SaveOrBackButtonPressedEVT value),
-    @required TResult seriesDraftLoadedEVT(SeriesDraftLoadedEVT value),
-    @required TResult seriesPublishedEVT(SeriesPublishedEVT value),
-    @required TResult sessionFetchedEVT(SessionFetchedEVT value),
-    @required TResult storyChangedEVT(StoryChangedEVT value),
-    @required TResult titleChangedEVT(TitleChangedEVT value),
-  }) {
-    assert(addCoverPressedEVT != null);
-    assert(chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT != null);
-    assert(chapterEditorLaunchedFromLibraryEVT != null);
-    assert(chapterEditorLaunchedFromPreviousChapterEVT != null);
-    assert(chapterEditorLaunchedFromSeriesEditorEVT != null);
-    assert(chapterDraftDeletedOrPublishedEVT != null);
-    assert(chapterPublishedEVT != null);
-    assert(copyrightsSelectedEVT != null);
-    assert(deleteDraftButtonPressedEVT != null);
-    assert(genreOptionalSelectedEVT != null);
-    assert(genreSelectedEVT != null);
-    assert(isLastChapterChangedEVT != null);
-    assert(isNSFWChangedEVT != null);
-    assert(languageSelectedEVT != null);
-    assert(publishButtonPressedEVT != null);
-    assert(saveOrBackButtonPressedEVT != null);
-    assert(seriesDraftLoadedEVT != null);
-    assert(seriesPublishedEVT != null);
-    assert(sessionFetchedEVT != null);
-    assert(storyChangedEVT != null);
-    assert(titleChangedEVT != null);
-    return chapterPublishedEVT(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult addCoverPressedEVT(AddCoverPressedEVT value),
-    TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(
-        ChapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT value),
-    TResult chapterEditorLaunchedFromLibraryEVT(
-        ChapterEditorLaunchedFromLibraryEVT value),
-    TResult chapterEditorLaunchedFromPreviousChapterEVT(
-        ChapterEditorLaunchedFromPreviousChapterEVT value),
-    TResult chapterEditorLaunchedFromSeriesEditorEVT(
-        ChapterEditorLaunchedFromSeriesEditorEVT value),
-    TResult chapterDraftDeletedOrPublishedEVT(
-        ChapterDraftDeletedOrPublishedEVT value),
-    TResult chapterPublishedEVT(ChapterPublishedEVT value),
-    TResult copyrightsSelectedEVT(CopyrightsSelectedEVT value),
-    TResult deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
-    TResult genreOptionalSelectedEVT(GenreOptionalSelectedEVT value),
-    TResult genreSelectedEVT(GenreSelectedEVT value),
-    TResult isLastChapterChangedEVT(IsLastChapterChangedEVT value),
-    TResult isNSFWChangedEVT(IsNSFWChangedEVT value),
-    TResult languageSelectedEVT(LanguageSelectedEVT value),
-    TResult publishButtonPressedEVT(PublishButtonPressedEVT value),
-    TResult saveOrBackButtonPressedEVT(SaveOrBackButtonPressedEVT value),
-    TResult seriesDraftLoadedEVT(SeriesDraftLoadedEVT value),
-    TResult seriesPublishedEVT(SeriesPublishedEVT value),
-    TResult sessionFetchedEVT(SessionFetchedEVT value),
-    TResult storyChangedEVT(StoryChangedEVT value),
-    TResult titleChangedEVT(TitleChangedEVT value),
-    @required TResult orElse(),
-  }) {
-    assert(orElse != null);
-    if (chapterPublishedEVT != null) {
-      return chapterPublishedEVT(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class ChapterPublishedEVT implements ChapterEditorDatabaseEvent {
-  const factory ChapterPublishedEVT() = _$ChapterPublishedEVT;
-}
-
-/// @nodoc
-abstract class $CopyrightsSelectedEVTCopyWith<$Res> {
-  factory $CopyrightsSelectedEVTCopyWith(CopyrightsSelectedEVT value,
-          $Res Function(CopyrightsSelectedEVT) then) =
-      _$CopyrightsSelectedEVTCopyWithImpl<$Res>;
-  $Res call({String copyrights});
-}
-
-/// @nodoc
-class _$CopyrightsSelectedEVTCopyWithImpl<$Res>
-    extends _$ChapterEditorDatabaseEventCopyWithImpl<$Res>
-    implements $CopyrightsSelectedEVTCopyWith<$Res> {
-  _$CopyrightsSelectedEVTCopyWithImpl(
-      CopyrightsSelectedEVT _value, $Res Function(CopyrightsSelectedEVT) _then)
-      : super(_value, (v) => _then(v as CopyrightsSelectedEVT));
-
-  @override
-  CopyrightsSelectedEVT get _value => super._value as CopyrightsSelectedEVT;
+  LicenceSelectedEvent get _value => super._value as LicenceSelectedEvent;
 
   @override
   $Res call({
-    Object copyrights = freezed,
+    Object licence = freezed,
   }) {
-    return _then(CopyrightsSelectedEVT(
-      copyrights == freezed ? _value.copyrights : copyrights as String,
+    return _then(LicenceSelectedEvent(
+      licence == freezed ? _value.licence : licence as String,
     ));
   }
 }
 
 /// @nodoc
-class _$CopyrightsSelectedEVT
+class _$LicenceSelectedEvent
     with DiagnosticableTreeMixin
-    implements CopyrightsSelectedEVT {
-  const _$CopyrightsSelectedEVT(this.copyrights) : assert(copyrights != null);
+    implements LicenceSelectedEvent {
+  const _$LicenceSelectedEvent(this.licence) : assert(licence != null);
 
   @override
-  final String copyrights;
+  final String licence;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'ChapterEditorDatabaseEvent.copyrightsSelectedEVT(copyrights: $copyrights)';
+    return 'ChapterEditorDatabaseEvent.licenceSelectedEvent(licence: $licence)';
   }
 
   @override
@@ -2305,119 +3881,115 @@ class _$CopyrightsSelectedEVT
     super.debugFillProperties(properties);
     properties
       ..add(DiagnosticsProperty(
-          'type', 'ChapterEditorDatabaseEvent.copyrightsSelectedEVT'))
-      ..add(DiagnosticsProperty('copyrights', copyrights));
+          'type', 'ChapterEditorDatabaseEvent.licenceSelectedEvent'))
+      ..add(DiagnosticsProperty('licence', licence));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is CopyrightsSelectedEVT &&
-            (identical(other.copyrights, copyrights) ||
-                const DeepCollectionEquality()
-                    .equals(other.copyrights, copyrights)));
+        (other is LicenceSelectedEvent &&
+            (identical(other.licence, licence) ||
+                const DeepCollectionEquality().equals(other.licence, licence)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(copyrights);
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(licence);
 
   @JsonKey(ignore: true)
   @override
-  $CopyrightsSelectedEVTCopyWith<CopyrightsSelectedEVT> get copyWith =>
-      _$CopyrightsSelectedEVTCopyWithImpl<CopyrightsSelectedEVT>(
+  $LicenceSelectedEventCopyWith<LicenceSelectedEvent> get copyWith =>
+      _$LicenceSelectedEventCopyWithImpl<LicenceSelectedEvent>(
           this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
-    @required TResult addCoverPressedEVT(),
+    @required TResult addCoverPressedEvent(),
+    @required TResult chapterDraftDeletedOrPublishedEvent(),
+    @required TResult chapterPublishedEvent(),
+    @required TResult deleteDraftButtonPressedEvent(),
+    @required TResult genreOptionalSelectedEvent(String genreOptional),
+    @required TResult genreSelectedEvent(String genre),
+    @required TResult initializedWithPreviousChapterOrSeriesDraftEvent(),
+    @required TResult isLastChapterChangedEvent(bool isLastChapter),
+    @required TResult isNSFWChangedEvent(bool isNSFW),
+    @required TResult languageSelectedEvent(String language),
     @required
-        TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(),
-    @required
-        TResult chapterEditorLaunchedFromLibraryEVT(BuildContext context,
+        TResult launchedFromLibraryEvent(BuildContext context,
             Chapter chapterDraft, EditorContentOrigin editorContentOrigin),
     @required
-        TResult chapterEditorLaunchedFromPreviousChapterEVT(
-            BuildContext context,
-            Chapter previousChapter,
-            EditorContentOrigin editorContentOrigin),
+        TResult launchedFromPreviousChapterEvent(BuildContext context,
+            Chapter previousChapter, EditorContentOrigin editorContentOrigin),
     @required
-        TResult chapterEditorLaunchedFromSeriesEditorEVT(BuildContext context,
+        TResult launchedFromSeriesEditorEvent(BuildContext context,
             EditorContentOrigin editorContentOrigin, Series seriesDraft),
-    @required TResult chapterDraftDeletedOrPublishedEVT(),
-    @required TResult chapterPublishedEVT(),
-    @required TResult copyrightsSelectedEVT(String copyrights),
-    @required TResult deleteDraftButtonPressedEVT(),
-    @required TResult genreOptionalSelectedEVT(String genreOptional),
-    @required TResult genreSelectedEVT(String genre),
-    @required TResult isLastChapterChangedEVT(bool isLastChapter),
-    @required TResult isNSFWChangedEVT(bool isNSFW),
-    @required TResult languageSelectedEVT(String language),
-    @required TResult publishButtonPressedEVT(),
-    @required TResult saveOrBackButtonPressedEVT(),
-    @required TResult seriesDraftLoadedEVT(Series seriesDraft),
-    @required TResult seriesPublishedEVT(String seriesDraftUID),
-    @required TResult sessionFetchedEVT(),
-    @required TResult storyChangedEVT(String story),
-    @required TResult titleChangedEVT(String title),
+    @required TResult licenceSelectedEvent(String licence),
+    @required TResult publishButtonPressedEvent(),
+    @required TResult saveOrBackButtonPressedEvent(),
+    @required TResult seriesDraftLoadedEvent(Series seriesDraft),
+    @required TResult seriesPublishedEvent(String seriesDraftUID),
+    @required TResult sessionFetchedEvent(),
+    @required TResult storyChangedEvent(String story),
+    @required TResult titleChangedEvent(String title),
   }) {
-    assert(addCoverPressedEVT != null);
-    assert(chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT != null);
-    assert(chapterEditorLaunchedFromLibraryEVT != null);
-    assert(chapterEditorLaunchedFromPreviousChapterEVT != null);
-    assert(chapterEditorLaunchedFromSeriesEditorEVT != null);
-    assert(chapterDraftDeletedOrPublishedEVT != null);
-    assert(chapterPublishedEVT != null);
-    assert(copyrightsSelectedEVT != null);
-    assert(deleteDraftButtonPressedEVT != null);
-    assert(genreOptionalSelectedEVT != null);
-    assert(genreSelectedEVT != null);
-    assert(isLastChapterChangedEVT != null);
-    assert(isNSFWChangedEVT != null);
-    assert(languageSelectedEVT != null);
-    assert(publishButtonPressedEVT != null);
-    assert(saveOrBackButtonPressedEVT != null);
-    assert(seriesDraftLoadedEVT != null);
-    assert(seriesPublishedEVT != null);
-    assert(sessionFetchedEVT != null);
-    assert(storyChangedEVT != null);
-    assert(titleChangedEVT != null);
-    return copyrightsSelectedEVT(copyrights);
+    assert(addCoverPressedEvent != null);
+    assert(chapterDraftDeletedOrPublishedEvent != null);
+    assert(chapterPublishedEvent != null);
+    assert(deleteDraftButtonPressedEvent != null);
+    assert(genreOptionalSelectedEvent != null);
+    assert(genreSelectedEvent != null);
+    assert(initializedWithPreviousChapterOrSeriesDraftEvent != null);
+    assert(isLastChapterChangedEvent != null);
+    assert(isNSFWChangedEvent != null);
+    assert(languageSelectedEvent != null);
+    assert(launchedFromLibraryEvent != null);
+    assert(launchedFromPreviousChapterEvent != null);
+    assert(launchedFromSeriesEditorEvent != null);
+    assert(licenceSelectedEvent != null);
+    assert(publishButtonPressedEvent != null);
+    assert(saveOrBackButtonPressedEvent != null);
+    assert(seriesDraftLoadedEvent != null);
+    assert(seriesPublishedEvent != null);
+    assert(sessionFetchedEvent != null);
+    assert(storyChangedEvent != null);
+    assert(titleChangedEvent != null);
+    return licenceSelectedEvent(licence);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
-    TResult addCoverPressedEVT(),
-    TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(),
-    TResult chapterEditorLaunchedFromLibraryEVT(BuildContext context,
-        Chapter chapterDraft, EditorContentOrigin editorContentOrigin),
-    TResult chapterEditorLaunchedFromPreviousChapterEVT(BuildContext context,
+    TResult addCoverPressedEvent(),
+    TResult chapterDraftDeletedOrPublishedEvent(),
+    TResult chapterPublishedEvent(),
+    TResult deleteDraftButtonPressedEvent(),
+    TResult genreOptionalSelectedEvent(String genreOptional),
+    TResult genreSelectedEvent(String genre),
+    TResult initializedWithPreviousChapterOrSeriesDraftEvent(),
+    TResult isLastChapterChangedEvent(bool isLastChapter),
+    TResult isNSFWChangedEvent(bool isNSFW),
+    TResult languageSelectedEvent(String language),
+    TResult launchedFromLibraryEvent(BuildContext context, Chapter chapterDraft,
+        EditorContentOrigin editorContentOrigin),
+    TResult launchedFromPreviousChapterEvent(BuildContext context,
         Chapter previousChapter, EditorContentOrigin editorContentOrigin),
-    TResult chapterEditorLaunchedFromSeriesEditorEVT(BuildContext context,
+    TResult launchedFromSeriesEditorEvent(BuildContext context,
         EditorContentOrigin editorContentOrigin, Series seriesDraft),
-    TResult chapterDraftDeletedOrPublishedEVT(),
-    TResult chapterPublishedEVT(),
-    TResult copyrightsSelectedEVT(String copyrights),
-    TResult deleteDraftButtonPressedEVT(),
-    TResult genreOptionalSelectedEVT(String genreOptional),
-    TResult genreSelectedEVT(String genre),
-    TResult isLastChapterChangedEVT(bool isLastChapter),
-    TResult isNSFWChangedEVT(bool isNSFW),
-    TResult languageSelectedEVT(String language),
-    TResult publishButtonPressedEVT(),
-    TResult saveOrBackButtonPressedEVT(),
-    TResult seriesDraftLoadedEVT(Series seriesDraft),
-    TResult seriesPublishedEVT(String seriesDraftUID),
-    TResult sessionFetchedEVT(),
-    TResult storyChangedEVT(String story),
-    TResult titleChangedEVT(String title),
+    TResult licenceSelectedEvent(String licence),
+    TResult publishButtonPressedEvent(),
+    TResult saveOrBackButtonPressedEvent(),
+    TResult seriesDraftLoadedEvent(Series seriesDraft),
+    TResult seriesPublishedEvent(String seriesDraftUID),
+    TResult sessionFetchedEvent(),
+    TResult storyChangedEvent(String story),
+    TResult titleChangedEvent(String title),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (copyrightsSelectedEVT != null) {
-      return copyrightsSelectedEVT(copyrights);
+    if (licenceSelectedEvent != null) {
+      return licenceSelectedEvent(licence);
     }
     return orElse();
   }
@@ -2425,142 +3997,141 @@ class _$CopyrightsSelectedEVT
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object>({
-    @required TResult addCoverPressedEVT(AddCoverPressedEVT value),
+    @required TResult addCoverPressedEvent(AddCoverPressedEvent value),
     @required
-        TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(
-            ChapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT value),
+        TResult chapterDraftDeletedOrPublishedEvent(
+            ChapterDraftDeletedOrPublishedEvent value),
+    @required TResult chapterPublishedEvent(ChapterPublishedEvent value),
     @required
-        TResult chapterEditorLaunchedFromLibraryEVT(
-            ChapterEditorLaunchedFromLibraryEVT value),
+        TResult deleteDraftButtonPressedEvent(
+            DeleteDraftButtonPressedEvent value),
     @required
-        TResult chapterEditorLaunchedFromPreviousChapterEVT(
-            ChapterEditorLaunchedFromPreviousChapterEVT value),
+        TResult genreOptionalSelectedEvent(GenreOptionalSelectedEvent value),
+    @required TResult genreSelectedEvent(GenreSelectedEvent value),
     @required
-        TResult chapterEditorLaunchedFromSeriesEditorEVT(
-            ChapterEditorLaunchedFromSeriesEditorEVT value),
+        TResult initializedWithPreviousChapterOrSeriesDraftEvent(
+            InitializedWithPreviousChapterOrSeriesDraftEvent value),
     @required
-        TResult chapterDraftDeletedOrPublishedEVT(
-            ChapterDraftDeletedOrPublishedEVT value),
-    @required TResult chapterPublishedEVT(ChapterPublishedEVT value),
-    @required TResult copyrightsSelectedEVT(CopyrightsSelectedEVT value),
+        TResult isLastChapterChangedEvent(IsLastChapterChangedEvent value),
+    @required TResult isNSFWChangedEvent(IsNSFWChangedEvent value),
+    @required TResult languageSelectedEvent(LanguageSelectedEvent value),
+    @required TResult launchedFromLibraryEvent(LaunchedFromLibraryEvent value),
     @required
-        TResult deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
-    @required TResult genreOptionalSelectedEVT(GenreOptionalSelectedEVT value),
-    @required TResult genreSelectedEVT(GenreSelectedEVT value),
-    @required TResult isLastChapterChangedEVT(IsLastChapterChangedEVT value),
-    @required TResult isNSFWChangedEVT(IsNSFWChangedEVT value),
-    @required TResult languageSelectedEVT(LanguageSelectedEVT value),
-    @required TResult publishButtonPressedEVT(PublishButtonPressedEVT value),
+        TResult launchedFromPreviousChapterEvent(
+            LaunchedFromPreviousChapterEvent value),
     @required
-        TResult saveOrBackButtonPressedEVT(SaveOrBackButtonPressedEVT value),
-    @required TResult seriesDraftLoadedEVT(SeriesDraftLoadedEVT value),
-    @required TResult seriesPublishedEVT(SeriesPublishedEVT value),
-    @required TResult sessionFetchedEVT(SessionFetchedEVT value),
-    @required TResult storyChangedEVT(StoryChangedEVT value),
-    @required TResult titleChangedEVT(TitleChangedEVT value),
+        TResult launchedFromSeriesEditorEvent(
+            LaunchedFromSeriesEditorEvent value),
+    @required TResult licenceSelectedEvent(LicenceSelectedEvent value),
+    @required
+        TResult publishButtonPressedEvent(PublishButtonPressedEvent value),
+    @required
+        TResult saveOrBackButtonPressedEvent(
+            SaveOrBackButtonPressedEvent value),
+    @required TResult seriesDraftLoadedEvent(SeriesDraftLoadedEvent value),
+    @required TResult seriesPublishedEvent(SeriesPublishedEvent value),
+    @required TResult sessionFetchedEvent(SessionFetchedEvent value),
+    @required TResult storyChangedEvent(StoryChangedEvent value),
+    @required TResult titleChangedEvent(TitleChangedEvent value),
   }) {
-    assert(addCoverPressedEVT != null);
-    assert(chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT != null);
-    assert(chapterEditorLaunchedFromLibraryEVT != null);
-    assert(chapterEditorLaunchedFromPreviousChapterEVT != null);
-    assert(chapterEditorLaunchedFromSeriesEditorEVT != null);
-    assert(chapterDraftDeletedOrPublishedEVT != null);
-    assert(chapterPublishedEVT != null);
-    assert(copyrightsSelectedEVT != null);
-    assert(deleteDraftButtonPressedEVT != null);
-    assert(genreOptionalSelectedEVT != null);
-    assert(genreSelectedEVT != null);
-    assert(isLastChapterChangedEVT != null);
-    assert(isNSFWChangedEVT != null);
-    assert(languageSelectedEVT != null);
-    assert(publishButtonPressedEVT != null);
-    assert(saveOrBackButtonPressedEVT != null);
-    assert(seriesDraftLoadedEVT != null);
-    assert(seriesPublishedEVT != null);
-    assert(sessionFetchedEVT != null);
-    assert(storyChangedEVT != null);
-    assert(titleChangedEVT != null);
-    return copyrightsSelectedEVT(this);
+    assert(addCoverPressedEvent != null);
+    assert(chapterDraftDeletedOrPublishedEvent != null);
+    assert(chapterPublishedEvent != null);
+    assert(deleteDraftButtonPressedEvent != null);
+    assert(genreOptionalSelectedEvent != null);
+    assert(genreSelectedEvent != null);
+    assert(initializedWithPreviousChapterOrSeriesDraftEvent != null);
+    assert(isLastChapterChangedEvent != null);
+    assert(isNSFWChangedEvent != null);
+    assert(languageSelectedEvent != null);
+    assert(launchedFromLibraryEvent != null);
+    assert(launchedFromPreviousChapterEvent != null);
+    assert(launchedFromSeriesEditorEvent != null);
+    assert(licenceSelectedEvent != null);
+    assert(publishButtonPressedEvent != null);
+    assert(saveOrBackButtonPressedEvent != null);
+    assert(seriesDraftLoadedEvent != null);
+    assert(seriesPublishedEvent != null);
+    assert(sessionFetchedEvent != null);
+    assert(storyChangedEvent != null);
+    assert(titleChangedEvent != null);
+    return licenceSelectedEvent(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
-    TResult addCoverPressedEVT(AddCoverPressedEVT value),
-    TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(
-        ChapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT value),
-    TResult chapterEditorLaunchedFromLibraryEVT(
-        ChapterEditorLaunchedFromLibraryEVT value),
-    TResult chapterEditorLaunchedFromPreviousChapterEVT(
-        ChapterEditorLaunchedFromPreviousChapterEVT value),
-    TResult chapterEditorLaunchedFromSeriesEditorEVT(
-        ChapterEditorLaunchedFromSeriesEditorEVT value),
-    TResult chapterDraftDeletedOrPublishedEVT(
-        ChapterDraftDeletedOrPublishedEVT value),
-    TResult chapterPublishedEVT(ChapterPublishedEVT value),
-    TResult copyrightsSelectedEVT(CopyrightsSelectedEVT value),
-    TResult deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
-    TResult genreOptionalSelectedEVT(GenreOptionalSelectedEVT value),
-    TResult genreSelectedEVT(GenreSelectedEVT value),
-    TResult isLastChapterChangedEVT(IsLastChapterChangedEVT value),
-    TResult isNSFWChangedEVT(IsNSFWChangedEVT value),
-    TResult languageSelectedEVT(LanguageSelectedEVT value),
-    TResult publishButtonPressedEVT(PublishButtonPressedEVT value),
-    TResult saveOrBackButtonPressedEVT(SaveOrBackButtonPressedEVT value),
-    TResult seriesDraftLoadedEVT(SeriesDraftLoadedEVT value),
-    TResult seriesPublishedEVT(SeriesPublishedEVT value),
-    TResult sessionFetchedEVT(SessionFetchedEVT value),
-    TResult storyChangedEVT(StoryChangedEVT value),
-    TResult titleChangedEVT(TitleChangedEVT value),
+    TResult addCoverPressedEvent(AddCoverPressedEvent value),
+    TResult chapterDraftDeletedOrPublishedEvent(
+        ChapterDraftDeletedOrPublishedEvent value),
+    TResult chapterPublishedEvent(ChapterPublishedEvent value),
+    TResult deleteDraftButtonPressedEvent(DeleteDraftButtonPressedEvent value),
+    TResult genreOptionalSelectedEvent(GenreOptionalSelectedEvent value),
+    TResult genreSelectedEvent(GenreSelectedEvent value),
+    TResult initializedWithPreviousChapterOrSeriesDraftEvent(
+        InitializedWithPreviousChapterOrSeriesDraftEvent value),
+    TResult isLastChapterChangedEvent(IsLastChapterChangedEvent value),
+    TResult isNSFWChangedEvent(IsNSFWChangedEvent value),
+    TResult languageSelectedEvent(LanguageSelectedEvent value),
+    TResult launchedFromLibraryEvent(LaunchedFromLibraryEvent value),
+    TResult launchedFromPreviousChapterEvent(
+        LaunchedFromPreviousChapterEvent value),
+    TResult launchedFromSeriesEditorEvent(LaunchedFromSeriesEditorEvent value),
+    TResult licenceSelectedEvent(LicenceSelectedEvent value),
+    TResult publishButtonPressedEvent(PublishButtonPressedEvent value),
+    TResult saveOrBackButtonPressedEvent(SaveOrBackButtonPressedEvent value),
+    TResult seriesDraftLoadedEvent(SeriesDraftLoadedEvent value),
+    TResult seriesPublishedEvent(SeriesPublishedEvent value),
+    TResult sessionFetchedEvent(SessionFetchedEvent value),
+    TResult storyChangedEvent(StoryChangedEvent value),
+    TResult titleChangedEvent(TitleChangedEvent value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (copyrightsSelectedEVT != null) {
-      return copyrightsSelectedEVT(this);
+    if (licenceSelectedEvent != null) {
+      return licenceSelectedEvent(this);
     }
     return orElse();
   }
 }
 
-abstract class CopyrightsSelectedEVT implements ChapterEditorDatabaseEvent {
-  const factory CopyrightsSelectedEVT(String copyrights) =
-      _$CopyrightsSelectedEVT;
+abstract class LicenceSelectedEvent implements ChapterEditorDatabaseEvent {
+  const factory LicenceSelectedEvent(String licence) = _$LicenceSelectedEvent;
 
-  String get copyrights;
+  String get licence;
   @JsonKey(ignore: true)
-  $CopyrightsSelectedEVTCopyWith<CopyrightsSelectedEVT> get copyWith;
+  $LicenceSelectedEventCopyWith<LicenceSelectedEvent> get copyWith;
 }
 
 /// @nodoc
-abstract class $DeleteDraftButtonPressedEVTCopyWith<$Res> {
-  factory $DeleteDraftButtonPressedEVTCopyWith(
-          DeleteDraftButtonPressedEVT value,
-          $Res Function(DeleteDraftButtonPressedEVT) then) =
-      _$DeleteDraftButtonPressedEVTCopyWithImpl<$Res>;
+abstract class $PublishButtonPressedEventCopyWith<$Res> {
+  factory $PublishButtonPressedEventCopyWith(PublishButtonPressedEvent value,
+          $Res Function(PublishButtonPressedEvent) then) =
+      _$PublishButtonPressedEventCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$DeleteDraftButtonPressedEVTCopyWithImpl<$Res>
+class _$PublishButtonPressedEventCopyWithImpl<$Res>
     extends _$ChapterEditorDatabaseEventCopyWithImpl<$Res>
-    implements $DeleteDraftButtonPressedEVTCopyWith<$Res> {
-  _$DeleteDraftButtonPressedEVTCopyWithImpl(DeleteDraftButtonPressedEVT _value,
-      $Res Function(DeleteDraftButtonPressedEVT) _then)
-      : super(_value, (v) => _then(v as DeleteDraftButtonPressedEVT));
+    implements $PublishButtonPressedEventCopyWith<$Res> {
+  _$PublishButtonPressedEventCopyWithImpl(PublishButtonPressedEvent _value,
+      $Res Function(PublishButtonPressedEvent) _then)
+      : super(_value, (v) => _then(v as PublishButtonPressedEvent));
 
   @override
-  DeleteDraftButtonPressedEVT get _value =>
-      super._value as DeleteDraftButtonPressedEVT;
+  PublishButtonPressedEvent get _value =>
+      super._value as PublishButtonPressedEvent;
 }
 
 /// @nodoc
-class _$DeleteDraftButtonPressedEVT
+class _$PublishButtonPressedEvent
     with DiagnosticableTreeMixin
-    implements DeleteDraftButtonPressedEVT {
-  const _$DeleteDraftButtonPressedEVT();
+    implements PublishButtonPressedEvent {
+  const _$PublishButtonPressedEvent();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'ChapterEditorDatabaseEvent.deleteDraftButtonPressedEVT()';
+    return 'ChapterEditorDatabaseEvent.publishButtonPressedEvent()';
   }
 
   @override
@@ -2568,12 +4139,12 @@ class _$DeleteDraftButtonPressedEVT
     super.debugFillProperties(properties);
     properties
       ..add(DiagnosticsProperty(
-          'type', 'ChapterEditorDatabaseEvent.deleteDraftButtonPressedEVT'));
+          'type', 'ChapterEditorDatabaseEvent.publishButtonPressedEvent'));
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is DeleteDraftButtonPressedEVT);
+    return identical(this, other) || (other is PublishButtonPressedEvent);
   }
 
   @override
@@ -2582,93 +4153,90 @@ class _$DeleteDraftButtonPressedEVT
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
-    @required TResult addCoverPressedEVT(),
+    @required TResult addCoverPressedEvent(),
+    @required TResult chapterDraftDeletedOrPublishedEvent(),
+    @required TResult chapterPublishedEvent(),
+    @required TResult deleteDraftButtonPressedEvent(),
+    @required TResult genreOptionalSelectedEvent(String genreOptional),
+    @required TResult genreSelectedEvent(String genre),
+    @required TResult initializedWithPreviousChapterOrSeriesDraftEvent(),
+    @required TResult isLastChapterChangedEvent(bool isLastChapter),
+    @required TResult isNSFWChangedEvent(bool isNSFW),
+    @required TResult languageSelectedEvent(String language),
     @required
-        TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(),
-    @required
-        TResult chapterEditorLaunchedFromLibraryEVT(BuildContext context,
+        TResult launchedFromLibraryEvent(BuildContext context,
             Chapter chapterDraft, EditorContentOrigin editorContentOrigin),
     @required
-        TResult chapterEditorLaunchedFromPreviousChapterEVT(
-            BuildContext context,
-            Chapter previousChapter,
-            EditorContentOrigin editorContentOrigin),
+        TResult launchedFromPreviousChapterEvent(BuildContext context,
+            Chapter previousChapter, EditorContentOrigin editorContentOrigin),
     @required
-        TResult chapterEditorLaunchedFromSeriesEditorEVT(BuildContext context,
+        TResult launchedFromSeriesEditorEvent(BuildContext context,
             EditorContentOrigin editorContentOrigin, Series seriesDraft),
-    @required TResult chapterDraftDeletedOrPublishedEVT(),
-    @required TResult chapterPublishedEVT(),
-    @required TResult copyrightsSelectedEVT(String copyrights),
-    @required TResult deleteDraftButtonPressedEVT(),
-    @required TResult genreOptionalSelectedEVT(String genreOptional),
-    @required TResult genreSelectedEVT(String genre),
-    @required TResult isLastChapterChangedEVT(bool isLastChapter),
-    @required TResult isNSFWChangedEVT(bool isNSFW),
-    @required TResult languageSelectedEVT(String language),
-    @required TResult publishButtonPressedEVT(),
-    @required TResult saveOrBackButtonPressedEVT(),
-    @required TResult seriesDraftLoadedEVT(Series seriesDraft),
-    @required TResult seriesPublishedEVT(String seriesDraftUID),
-    @required TResult sessionFetchedEVT(),
-    @required TResult storyChangedEVT(String story),
-    @required TResult titleChangedEVT(String title),
+    @required TResult licenceSelectedEvent(String licence),
+    @required TResult publishButtonPressedEvent(),
+    @required TResult saveOrBackButtonPressedEvent(),
+    @required TResult seriesDraftLoadedEvent(Series seriesDraft),
+    @required TResult seriesPublishedEvent(String seriesDraftUID),
+    @required TResult sessionFetchedEvent(),
+    @required TResult storyChangedEvent(String story),
+    @required TResult titleChangedEvent(String title),
   }) {
-    assert(addCoverPressedEVT != null);
-    assert(chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT != null);
-    assert(chapterEditorLaunchedFromLibraryEVT != null);
-    assert(chapterEditorLaunchedFromPreviousChapterEVT != null);
-    assert(chapterEditorLaunchedFromSeriesEditorEVT != null);
-    assert(chapterDraftDeletedOrPublishedEVT != null);
-    assert(chapterPublishedEVT != null);
-    assert(copyrightsSelectedEVT != null);
-    assert(deleteDraftButtonPressedEVT != null);
-    assert(genreOptionalSelectedEVT != null);
-    assert(genreSelectedEVT != null);
-    assert(isLastChapterChangedEVT != null);
-    assert(isNSFWChangedEVT != null);
-    assert(languageSelectedEVT != null);
-    assert(publishButtonPressedEVT != null);
-    assert(saveOrBackButtonPressedEVT != null);
-    assert(seriesDraftLoadedEVT != null);
-    assert(seriesPublishedEVT != null);
-    assert(sessionFetchedEVT != null);
-    assert(storyChangedEVT != null);
-    assert(titleChangedEVT != null);
-    return deleteDraftButtonPressedEVT();
+    assert(addCoverPressedEvent != null);
+    assert(chapterDraftDeletedOrPublishedEvent != null);
+    assert(chapterPublishedEvent != null);
+    assert(deleteDraftButtonPressedEvent != null);
+    assert(genreOptionalSelectedEvent != null);
+    assert(genreSelectedEvent != null);
+    assert(initializedWithPreviousChapterOrSeriesDraftEvent != null);
+    assert(isLastChapterChangedEvent != null);
+    assert(isNSFWChangedEvent != null);
+    assert(languageSelectedEvent != null);
+    assert(launchedFromLibraryEvent != null);
+    assert(launchedFromPreviousChapterEvent != null);
+    assert(launchedFromSeriesEditorEvent != null);
+    assert(licenceSelectedEvent != null);
+    assert(publishButtonPressedEvent != null);
+    assert(saveOrBackButtonPressedEvent != null);
+    assert(seriesDraftLoadedEvent != null);
+    assert(seriesPublishedEvent != null);
+    assert(sessionFetchedEvent != null);
+    assert(storyChangedEvent != null);
+    assert(titleChangedEvent != null);
+    return publishButtonPressedEvent();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
-    TResult addCoverPressedEVT(),
-    TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(),
-    TResult chapterEditorLaunchedFromLibraryEVT(BuildContext context,
-        Chapter chapterDraft, EditorContentOrigin editorContentOrigin),
-    TResult chapterEditorLaunchedFromPreviousChapterEVT(BuildContext context,
+    TResult addCoverPressedEvent(),
+    TResult chapterDraftDeletedOrPublishedEvent(),
+    TResult chapterPublishedEvent(),
+    TResult deleteDraftButtonPressedEvent(),
+    TResult genreOptionalSelectedEvent(String genreOptional),
+    TResult genreSelectedEvent(String genre),
+    TResult initializedWithPreviousChapterOrSeriesDraftEvent(),
+    TResult isLastChapterChangedEvent(bool isLastChapter),
+    TResult isNSFWChangedEvent(bool isNSFW),
+    TResult languageSelectedEvent(String language),
+    TResult launchedFromLibraryEvent(BuildContext context, Chapter chapterDraft,
+        EditorContentOrigin editorContentOrigin),
+    TResult launchedFromPreviousChapterEvent(BuildContext context,
         Chapter previousChapter, EditorContentOrigin editorContentOrigin),
-    TResult chapterEditorLaunchedFromSeriesEditorEVT(BuildContext context,
+    TResult launchedFromSeriesEditorEvent(BuildContext context,
         EditorContentOrigin editorContentOrigin, Series seriesDraft),
-    TResult chapterDraftDeletedOrPublishedEVT(),
-    TResult chapterPublishedEVT(),
-    TResult copyrightsSelectedEVT(String copyrights),
-    TResult deleteDraftButtonPressedEVT(),
-    TResult genreOptionalSelectedEVT(String genreOptional),
-    TResult genreSelectedEVT(String genre),
-    TResult isLastChapterChangedEVT(bool isLastChapter),
-    TResult isNSFWChangedEVT(bool isNSFW),
-    TResult languageSelectedEVT(String language),
-    TResult publishButtonPressedEVT(),
-    TResult saveOrBackButtonPressedEVT(),
-    TResult seriesDraftLoadedEVT(Series seriesDraft),
-    TResult seriesPublishedEVT(String seriesDraftUID),
-    TResult sessionFetchedEVT(),
-    TResult storyChangedEVT(String story),
-    TResult titleChangedEVT(String title),
+    TResult licenceSelectedEvent(String licence),
+    TResult publishButtonPressedEvent(),
+    TResult saveOrBackButtonPressedEvent(),
+    TResult seriesDraftLoadedEvent(Series seriesDraft),
+    TResult seriesPublishedEvent(String seriesDraftUID),
+    TResult sessionFetchedEvent(),
+    TResult storyChangedEvent(String story),
+    TResult titleChangedEvent(String title),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (deleteDraftButtonPressedEVT != null) {
-      return deleteDraftButtonPressedEVT();
+    if (publishButtonPressedEvent != null) {
+      return publishButtonPressedEvent();
     }
     return orElse();
   }
@@ -2676,2006 +4244,396 @@ class _$DeleteDraftButtonPressedEVT
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object>({
-    @required TResult addCoverPressedEVT(AddCoverPressedEVT value),
+    @required TResult addCoverPressedEvent(AddCoverPressedEvent value),
     @required
-        TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(
-            ChapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT value),
+        TResult chapterDraftDeletedOrPublishedEvent(
+            ChapterDraftDeletedOrPublishedEvent value),
+    @required TResult chapterPublishedEvent(ChapterPublishedEvent value),
     @required
-        TResult chapterEditorLaunchedFromLibraryEVT(
-            ChapterEditorLaunchedFromLibraryEVT value),
+        TResult deleteDraftButtonPressedEvent(
+            DeleteDraftButtonPressedEvent value),
     @required
-        TResult chapterEditorLaunchedFromPreviousChapterEVT(
-            ChapterEditorLaunchedFromPreviousChapterEVT value),
+        TResult genreOptionalSelectedEvent(GenreOptionalSelectedEvent value),
+    @required TResult genreSelectedEvent(GenreSelectedEvent value),
     @required
-        TResult chapterEditorLaunchedFromSeriesEditorEVT(
-            ChapterEditorLaunchedFromSeriesEditorEVT value),
+        TResult initializedWithPreviousChapterOrSeriesDraftEvent(
+            InitializedWithPreviousChapterOrSeriesDraftEvent value),
     @required
-        TResult chapterDraftDeletedOrPublishedEVT(
-            ChapterDraftDeletedOrPublishedEVT value),
-    @required TResult chapterPublishedEVT(ChapterPublishedEVT value),
-    @required TResult copyrightsSelectedEVT(CopyrightsSelectedEVT value),
+        TResult isLastChapterChangedEvent(IsLastChapterChangedEvent value),
+    @required TResult isNSFWChangedEvent(IsNSFWChangedEvent value),
+    @required TResult languageSelectedEvent(LanguageSelectedEvent value),
+    @required TResult launchedFromLibraryEvent(LaunchedFromLibraryEvent value),
     @required
-        TResult deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
-    @required TResult genreOptionalSelectedEVT(GenreOptionalSelectedEVT value),
-    @required TResult genreSelectedEVT(GenreSelectedEVT value),
-    @required TResult isLastChapterChangedEVT(IsLastChapterChangedEVT value),
-    @required TResult isNSFWChangedEVT(IsNSFWChangedEVT value),
-    @required TResult languageSelectedEVT(LanguageSelectedEVT value),
-    @required TResult publishButtonPressedEVT(PublishButtonPressedEVT value),
+        TResult launchedFromPreviousChapterEvent(
+            LaunchedFromPreviousChapterEvent value),
     @required
-        TResult saveOrBackButtonPressedEVT(SaveOrBackButtonPressedEVT value),
-    @required TResult seriesDraftLoadedEVT(SeriesDraftLoadedEVT value),
-    @required TResult seriesPublishedEVT(SeriesPublishedEVT value),
-    @required TResult sessionFetchedEVT(SessionFetchedEVT value),
-    @required TResult storyChangedEVT(StoryChangedEVT value),
-    @required TResult titleChangedEVT(TitleChangedEVT value),
+        TResult launchedFromSeriesEditorEvent(
+            LaunchedFromSeriesEditorEvent value),
+    @required TResult licenceSelectedEvent(LicenceSelectedEvent value),
+    @required
+        TResult publishButtonPressedEvent(PublishButtonPressedEvent value),
+    @required
+        TResult saveOrBackButtonPressedEvent(
+            SaveOrBackButtonPressedEvent value),
+    @required TResult seriesDraftLoadedEvent(SeriesDraftLoadedEvent value),
+    @required TResult seriesPublishedEvent(SeriesPublishedEvent value),
+    @required TResult sessionFetchedEvent(SessionFetchedEvent value),
+    @required TResult storyChangedEvent(StoryChangedEvent value),
+    @required TResult titleChangedEvent(TitleChangedEvent value),
   }) {
-    assert(addCoverPressedEVT != null);
-    assert(chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT != null);
-    assert(chapterEditorLaunchedFromLibraryEVT != null);
-    assert(chapterEditorLaunchedFromPreviousChapterEVT != null);
-    assert(chapterEditorLaunchedFromSeriesEditorEVT != null);
-    assert(chapterDraftDeletedOrPublishedEVT != null);
-    assert(chapterPublishedEVT != null);
-    assert(copyrightsSelectedEVT != null);
-    assert(deleteDraftButtonPressedEVT != null);
-    assert(genreOptionalSelectedEVT != null);
-    assert(genreSelectedEVT != null);
-    assert(isLastChapterChangedEVT != null);
-    assert(isNSFWChangedEVT != null);
-    assert(languageSelectedEVT != null);
-    assert(publishButtonPressedEVT != null);
-    assert(saveOrBackButtonPressedEVT != null);
-    assert(seriesDraftLoadedEVT != null);
-    assert(seriesPublishedEVT != null);
-    assert(sessionFetchedEVT != null);
-    assert(storyChangedEVT != null);
-    assert(titleChangedEVT != null);
-    return deleteDraftButtonPressedEVT(this);
+    assert(addCoverPressedEvent != null);
+    assert(chapterDraftDeletedOrPublishedEvent != null);
+    assert(chapterPublishedEvent != null);
+    assert(deleteDraftButtonPressedEvent != null);
+    assert(genreOptionalSelectedEvent != null);
+    assert(genreSelectedEvent != null);
+    assert(initializedWithPreviousChapterOrSeriesDraftEvent != null);
+    assert(isLastChapterChangedEvent != null);
+    assert(isNSFWChangedEvent != null);
+    assert(languageSelectedEvent != null);
+    assert(launchedFromLibraryEvent != null);
+    assert(launchedFromPreviousChapterEvent != null);
+    assert(launchedFromSeriesEditorEvent != null);
+    assert(licenceSelectedEvent != null);
+    assert(publishButtonPressedEvent != null);
+    assert(saveOrBackButtonPressedEvent != null);
+    assert(seriesDraftLoadedEvent != null);
+    assert(seriesPublishedEvent != null);
+    assert(sessionFetchedEvent != null);
+    assert(storyChangedEvent != null);
+    assert(titleChangedEvent != null);
+    return publishButtonPressedEvent(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
-    TResult addCoverPressedEVT(AddCoverPressedEVT value),
-    TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(
-        ChapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT value),
-    TResult chapterEditorLaunchedFromLibraryEVT(
-        ChapterEditorLaunchedFromLibraryEVT value),
-    TResult chapterEditorLaunchedFromPreviousChapterEVT(
-        ChapterEditorLaunchedFromPreviousChapterEVT value),
-    TResult chapterEditorLaunchedFromSeriesEditorEVT(
-        ChapterEditorLaunchedFromSeriesEditorEVT value),
-    TResult chapterDraftDeletedOrPublishedEVT(
-        ChapterDraftDeletedOrPublishedEVT value),
-    TResult chapterPublishedEVT(ChapterPublishedEVT value),
-    TResult copyrightsSelectedEVT(CopyrightsSelectedEVT value),
-    TResult deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
-    TResult genreOptionalSelectedEVT(GenreOptionalSelectedEVT value),
-    TResult genreSelectedEVT(GenreSelectedEVT value),
-    TResult isLastChapterChangedEVT(IsLastChapterChangedEVT value),
-    TResult isNSFWChangedEVT(IsNSFWChangedEVT value),
-    TResult languageSelectedEVT(LanguageSelectedEVT value),
-    TResult publishButtonPressedEVT(PublishButtonPressedEVT value),
-    TResult saveOrBackButtonPressedEVT(SaveOrBackButtonPressedEVT value),
-    TResult seriesDraftLoadedEVT(SeriesDraftLoadedEVT value),
-    TResult seriesPublishedEVT(SeriesPublishedEVT value),
-    TResult sessionFetchedEVT(SessionFetchedEVT value),
-    TResult storyChangedEVT(StoryChangedEVT value),
-    TResult titleChangedEVT(TitleChangedEVT value),
+    TResult addCoverPressedEvent(AddCoverPressedEvent value),
+    TResult chapterDraftDeletedOrPublishedEvent(
+        ChapterDraftDeletedOrPublishedEvent value),
+    TResult chapterPublishedEvent(ChapterPublishedEvent value),
+    TResult deleteDraftButtonPressedEvent(DeleteDraftButtonPressedEvent value),
+    TResult genreOptionalSelectedEvent(GenreOptionalSelectedEvent value),
+    TResult genreSelectedEvent(GenreSelectedEvent value),
+    TResult initializedWithPreviousChapterOrSeriesDraftEvent(
+        InitializedWithPreviousChapterOrSeriesDraftEvent value),
+    TResult isLastChapterChangedEvent(IsLastChapterChangedEvent value),
+    TResult isNSFWChangedEvent(IsNSFWChangedEvent value),
+    TResult languageSelectedEvent(LanguageSelectedEvent value),
+    TResult launchedFromLibraryEvent(LaunchedFromLibraryEvent value),
+    TResult launchedFromPreviousChapterEvent(
+        LaunchedFromPreviousChapterEvent value),
+    TResult launchedFromSeriesEditorEvent(LaunchedFromSeriesEditorEvent value),
+    TResult licenceSelectedEvent(LicenceSelectedEvent value),
+    TResult publishButtonPressedEvent(PublishButtonPressedEvent value),
+    TResult saveOrBackButtonPressedEvent(SaveOrBackButtonPressedEvent value),
+    TResult seriesDraftLoadedEvent(SeriesDraftLoadedEvent value),
+    TResult seriesPublishedEvent(SeriesPublishedEvent value),
+    TResult sessionFetchedEvent(SessionFetchedEvent value),
+    TResult storyChangedEvent(StoryChangedEvent value),
+    TResult titleChangedEvent(TitleChangedEvent value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (deleteDraftButtonPressedEVT != null) {
-      return deleteDraftButtonPressedEVT(this);
+    if (publishButtonPressedEvent != null) {
+      return publishButtonPressedEvent(this);
     }
     return orElse();
   }
 }
 
-abstract class DeleteDraftButtonPressedEVT
+abstract class PublishButtonPressedEvent implements ChapterEditorDatabaseEvent {
+  const factory PublishButtonPressedEvent() = _$PublishButtonPressedEvent;
+}
+
+/// @nodoc
+abstract class $SaveOrBackButtonPressedEventCopyWith<$Res> {
+  factory $SaveOrBackButtonPressedEventCopyWith(
+          SaveOrBackButtonPressedEvent value,
+          $Res Function(SaveOrBackButtonPressedEvent) then) =
+      _$SaveOrBackButtonPressedEventCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$SaveOrBackButtonPressedEventCopyWithImpl<$Res>
+    extends _$ChapterEditorDatabaseEventCopyWithImpl<$Res>
+    implements $SaveOrBackButtonPressedEventCopyWith<$Res> {
+  _$SaveOrBackButtonPressedEventCopyWithImpl(
+      SaveOrBackButtonPressedEvent _value,
+      $Res Function(SaveOrBackButtonPressedEvent) _then)
+      : super(_value, (v) => _then(v as SaveOrBackButtonPressedEvent));
+
+  @override
+  SaveOrBackButtonPressedEvent get _value =>
+      super._value as SaveOrBackButtonPressedEvent;
+}
+
+/// @nodoc
+class _$SaveOrBackButtonPressedEvent
+    with DiagnosticableTreeMixin
+    implements SaveOrBackButtonPressedEvent {
+  const _$SaveOrBackButtonPressedEvent();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'ChapterEditorDatabaseEvent.saveOrBackButtonPressedEvent()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty(
+          'type', 'ChapterEditorDatabaseEvent.saveOrBackButtonPressedEvent'));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is SaveOrBackButtonPressedEvent);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object>({
+    @required TResult addCoverPressedEvent(),
+    @required TResult chapterDraftDeletedOrPublishedEvent(),
+    @required TResult chapterPublishedEvent(),
+    @required TResult deleteDraftButtonPressedEvent(),
+    @required TResult genreOptionalSelectedEvent(String genreOptional),
+    @required TResult genreSelectedEvent(String genre),
+    @required TResult initializedWithPreviousChapterOrSeriesDraftEvent(),
+    @required TResult isLastChapterChangedEvent(bool isLastChapter),
+    @required TResult isNSFWChangedEvent(bool isNSFW),
+    @required TResult languageSelectedEvent(String language),
+    @required
+        TResult launchedFromLibraryEvent(BuildContext context,
+            Chapter chapterDraft, EditorContentOrigin editorContentOrigin),
+    @required
+        TResult launchedFromPreviousChapterEvent(BuildContext context,
+            Chapter previousChapter, EditorContentOrigin editorContentOrigin),
+    @required
+        TResult launchedFromSeriesEditorEvent(BuildContext context,
+            EditorContentOrigin editorContentOrigin, Series seriesDraft),
+    @required TResult licenceSelectedEvent(String licence),
+    @required TResult publishButtonPressedEvent(),
+    @required TResult saveOrBackButtonPressedEvent(),
+    @required TResult seriesDraftLoadedEvent(Series seriesDraft),
+    @required TResult seriesPublishedEvent(String seriesDraftUID),
+    @required TResult sessionFetchedEvent(),
+    @required TResult storyChangedEvent(String story),
+    @required TResult titleChangedEvent(String title),
+  }) {
+    assert(addCoverPressedEvent != null);
+    assert(chapterDraftDeletedOrPublishedEvent != null);
+    assert(chapterPublishedEvent != null);
+    assert(deleteDraftButtonPressedEvent != null);
+    assert(genreOptionalSelectedEvent != null);
+    assert(genreSelectedEvent != null);
+    assert(initializedWithPreviousChapterOrSeriesDraftEvent != null);
+    assert(isLastChapterChangedEvent != null);
+    assert(isNSFWChangedEvent != null);
+    assert(languageSelectedEvent != null);
+    assert(launchedFromLibraryEvent != null);
+    assert(launchedFromPreviousChapterEvent != null);
+    assert(launchedFromSeriesEditorEvent != null);
+    assert(licenceSelectedEvent != null);
+    assert(publishButtonPressedEvent != null);
+    assert(saveOrBackButtonPressedEvent != null);
+    assert(seriesDraftLoadedEvent != null);
+    assert(seriesPublishedEvent != null);
+    assert(sessionFetchedEvent != null);
+    assert(storyChangedEvent != null);
+    assert(titleChangedEvent != null);
+    return saveOrBackButtonPressedEvent();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object>({
+    TResult addCoverPressedEvent(),
+    TResult chapterDraftDeletedOrPublishedEvent(),
+    TResult chapterPublishedEvent(),
+    TResult deleteDraftButtonPressedEvent(),
+    TResult genreOptionalSelectedEvent(String genreOptional),
+    TResult genreSelectedEvent(String genre),
+    TResult initializedWithPreviousChapterOrSeriesDraftEvent(),
+    TResult isLastChapterChangedEvent(bool isLastChapter),
+    TResult isNSFWChangedEvent(bool isNSFW),
+    TResult languageSelectedEvent(String language),
+    TResult launchedFromLibraryEvent(BuildContext context, Chapter chapterDraft,
+        EditorContentOrigin editorContentOrigin),
+    TResult launchedFromPreviousChapterEvent(BuildContext context,
+        Chapter previousChapter, EditorContentOrigin editorContentOrigin),
+    TResult launchedFromSeriesEditorEvent(BuildContext context,
+        EditorContentOrigin editorContentOrigin, Series seriesDraft),
+    TResult licenceSelectedEvent(String licence),
+    TResult publishButtonPressedEvent(),
+    TResult saveOrBackButtonPressedEvent(),
+    TResult seriesDraftLoadedEvent(Series seriesDraft),
+    TResult seriesPublishedEvent(String seriesDraftUID),
+    TResult sessionFetchedEvent(),
+    TResult storyChangedEvent(String story),
+    TResult titleChangedEvent(String title),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (saveOrBackButtonPressedEvent != null) {
+      return saveOrBackButtonPressedEvent();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object>({
+    @required TResult addCoverPressedEvent(AddCoverPressedEvent value),
+    @required
+        TResult chapterDraftDeletedOrPublishedEvent(
+            ChapterDraftDeletedOrPublishedEvent value),
+    @required TResult chapterPublishedEvent(ChapterPublishedEvent value),
+    @required
+        TResult deleteDraftButtonPressedEvent(
+            DeleteDraftButtonPressedEvent value),
+    @required
+        TResult genreOptionalSelectedEvent(GenreOptionalSelectedEvent value),
+    @required TResult genreSelectedEvent(GenreSelectedEvent value),
+    @required
+        TResult initializedWithPreviousChapterOrSeriesDraftEvent(
+            InitializedWithPreviousChapterOrSeriesDraftEvent value),
+    @required
+        TResult isLastChapterChangedEvent(IsLastChapterChangedEvent value),
+    @required TResult isNSFWChangedEvent(IsNSFWChangedEvent value),
+    @required TResult languageSelectedEvent(LanguageSelectedEvent value),
+    @required TResult launchedFromLibraryEvent(LaunchedFromLibraryEvent value),
+    @required
+        TResult launchedFromPreviousChapterEvent(
+            LaunchedFromPreviousChapterEvent value),
+    @required
+        TResult launchedFromSeriesEditorEvent(
+            LaunchedFromSeriesEditorEvent value),
+    @required TResult licenceSelectedEvent(LicenceSelectedEvent value),
+    @required
+        TResult publishButtonPressedEvent(PublishButtonPressedEvent value),
+    @required
+        TResult saveOrBackButtonPressedEvent(
+            SaveOrBackButtonPressedEvent value),
+    @required TResult seriesDraftLoadedEvent(SeriesDraftLoadedEvent value),
+    @required TResult seriesPublishedEvent(SeriesPublishedEvent value),
+    @required TResult sessionFetchedEvent(SessionFetchedEvent value),
+    @required TResult storyChangedEvent(StoryChangedEvent value),
+    @required TResult titleChangedEvent(TitleChangedEvent value),
+  }) {
+    assert(addCoverPressedEvent != null);
+    assert(chapterDraftDeletedOrPublishedEvent != null);
+    assert(chapterPublishedEvent != null);
+    assert(deleteDraftButtonPressedEvent != null);
+    assert(genreOptionalSelectedEvent != null);
+    assert(genreSelectedEvent != null);
+    assert(initializedWithPreviousChapterOrSeriesDraftEvent != null);
+    assert(isLastChapterChangedEvent != null);
+    assert(isNSFWChangedEvent != null);
+    assert(languageSelectedEvent != null);
+    assert(launchedFromLibraryEvent != null);
+    assert(launchedFromPreviousChapterEvent != null);
+    assert(launchedFromSeriesEditorEvent != null);
+    assert(licenceSelectedEvent != null);
+    assert(publishButtonPressedEvent != null);
+    assert(saveOrBackButtonPressedEvent != null);
+    assert(seriesDraftLoadedEvent != null);
+    assert(seriesPublishedEvent != null);
+    assert(sessionFetchedEvent != null);
+    assert(storyChangedEvent != null);
+    assert(titleChangedEvent != null);
+    return saveOrBackButtonPressedEvent(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object>({
+    TResult addCoverPressedEvent(AddCoverPressedEvent value),
+    TResult chapterDraftDeletedOrPublishedEvent(
+        ChapterDraftDeletedOrPublishedEvent value),
+    TResult chapterPublishedEvent(ChapterPublishedEvent value),
+    TResult deleteDraftButtonPressedEvent(DeleteDraftButtonPressedEvent value),
+    TResult genreOptionalSelectedEvent(GenreOptionalSelectedEvent value),
+    TResult genreSelectedEvent(GenreSelectedEvent value),
+    TResult initializedWithPreviousChapterOrSeriesDraftEvent(
+        InitializedWithPreviousChapterOrSeriesDraftEvent value),
+    TResult isLastChapterChangedEvent(IsLastChapterChangedEvent value),
+    TResult isNSFWChangedEvent(IsNSFWChangedEvent value),
+    TResult languageSelectedEvent(LanguageSelectedEvent value),
+    TResult launchedFromLibraryEvent(LaunchedFromLibraryEvent value),
+    TResult launchedFromPreviousChapterEvent(
+        LaunchedFromPreviousChapterEvent value),
+    TResult launchedFromSeriesEditorEvent(LaunchedFromSeriesEditorEvent value),
+    TResult licenceSelectedEvent(LicenceSelectedEvent value),
+    TResult publishButtonPressedEvent(PublishButtonPressedEvent value),
+    TResult saveOrBackButtonPressedEvent(SaveOrBackButtonPressedEvent value),
+    TResult seriesDraftLoadedEvent(SeriesDraftLoadedEvent value),
+    TResult seriesPublishedEvent(SeriesPublishedEvent value),
+    TResult sessionFetchedEvent(SessionFetchedEvent value),
+    TResult storyChangedEvent(StoryChangedEvent value),
+    TResult titleChangedEvent(TitleChangedEvent value),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (saveOrBackButtonPressedEvent != null) {
+      return saveOrBackButtonPressedEvent(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SaveOrBackButtonPressedEvent
     implements ChapterEditorDatabaseEvent {
-  const factory DeleteDraftButtonPressedEVT() = _$DeleteDraftButtonPressedEVT;
+  const factory SaveOrBackButtonPressedEvent() = _$SaveOrBackButtonPressedEvent;
 }
 
 /// @nodoc
-abstract class $GenreOptionalSelectedEVTCopyWith<$Res> {
-  factory $GenreOptionalSelectedEVTCopyWith(GenreOptionalSelectedEVT value,
-          $Res Function(GenreOptionalSelectedEVT) then) =
-      _$GenreOptionalSelectedEVTCopyWithImpl<$Res>;
-  $Res call({String genreOptional});
-}
-
-/// @nodoc
-class _$GenreOptionalSelectedEVTCopyWithImpl<$Res>
-    extends _$ChapterEditorDatabaseEventCopyWithImpl<$Res>
-    implements $GenreOptionalSelectedEVTCopyWith<$Res> {
-  _$GenreOptionalSelectedEVTCopyWithImpl(GenreOptionalSelectedEVT _value,
-      $Res Function(GenreOptionalSelectedEVT) _then)
-      : super(_value, (v) => _then(v as GenreOptionalSelectedEVT));
-
-  @override
-  GenreOptionalSelectedEVT get _value =>
-      super._value as GenreOptionalSelectedEVT;
-
-  @override
-  $Res call({
-    Object genreOptional = freezed,
-  }) {
-    return _then(GenreOptionalSelectedEVT(
-      genreOptional == freezed ? _value.genreOptional : genreOptional as String,
-    ));
-  }
-}
-
-/// @nodoc
-class _$GenreOptionalSelectedEVT
-    with DiagnosticableTreeMixin
-    implements GenreOptionalSelectedEVT {
-  const _$GenreOptionalSelectedEVT(this.genreOptional)
-      : assert(genreOptional != null);
-
-  @override
-  final String genreOptional;
-
-  @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'ChapterEditorDatabaseEvent.genreOptionalSelectedEVT(genreOptional: $genreOptional)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty(
-          'type', 'ChapterEditorDatabaseEvent.genreOptionalSelectedEVT'))
-      ..add(DiagnosticsProperty('genreOptional', genreOptional));
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is GenreOptionalSelectedEVT &&
-            (identical(other.genreOptional, genreOptional) ||
-                const DeepCollectionEquality()
-                    .equals(other.genreOptional, genreOptional)));
-  }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(genreOptional);
-
-  @JsonKey(ignore: true)
-  @override
-  $GenreOptionalSelectedEVTCopyWith<GenreOptionalSelectedEVT> get copyWith =>
-      _$GenreOptionalSelectedEVTCopyWithImpl<GenreOptionalSelectedEVT>(
-          this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult addCoverPressedEVT(),
-    @required
-        TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(),
-    @required
-        TResult chapterEditorLaunchedFromLibraryEVT(BuildContext context,
-            Chapter chapterDraft, EditorContentOrigin editorContentOrigin),
-    @required
-        TResult chapterEditorLaunchedFromPreviousChapterEVT(
-            BuildContext context,
-            Chapter previousChapter,
-            EditorContentOrigin editorContentOrigin),
-    @required
-        TResult chapterEditorLaunchedFromSeriesEditorEVT(BuildContext context,
-            EditorContentOrigin editorContentOrigin, Series seriesDraft),
-    @required TResult chapterDraftDeletedOrPublishedEVT(),
-    @required TResult chapterPublishedEVT(),
-    @required TResult copyrightsSelectedEVT(String copyrights),
-    @required TResult deleteDraftButtonPressedEVT(),
-    @required TResult genreOptionalSelectedEVT(String genreOptional),
-    @required TResult genreSelectedEVT(String genre),
-    @required TResult isLastChapterChangedEVT(bool isLastChapter),
-    @required TResult isNSFWChangedEVT(bool isNSFW),
-    @required TResult languageSelectedEVT(String language),
-    @required TResult publishButtonPressedEVT(),
-    @required TResult saveOrBackButtonPressedEVT(),
-    @required TResult seriesDraftLoadedEVT(Series seriesDraft),
-    @required TResult seriesPublishedEVT(String seriesDraftUID),
-    @required TResult sessionFetchedEVT(),
-    @required TResult storyChangedEVT(String story),
-    @required TResult titleChangedEVT(String title),
-  }) {
-    assert(addCoverPressedEVT != null);
-    assert(chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT != null);
-    assert(chapterEditorLaunchedFromLibraryEVT != null);
-    assert(chapterEditorLaunchedFromPreviousChapterEVT != null);
-    assert(chapterEditorLaunchedFromSeriesEditorEVT != null);
-    assert(chapterDraftDeletedOrPublishedEVT != null);
-    assert(chapterPublishedEVT != null);
-    assert(copyrightsSelectedEVT != null);
-    assert(deleteDraftButtonPressedEVT != null);
-    assert(genreOptionalSelectedEVT != null);
-    assert(genreSelectedEVT != null);
-    assert(isLastChapterChangedEVT != null);
-    assert(isNSFWChangedEVT != null);
-    assert(languageSelectedEVT != null);
-    assert(publishButtonPressedEVT != null);
-    assert(saveOrBackButtonPressedEVT != null);
-    assert(seriesDraftLoadedEVT != null);
-    assert(seriesPublishedEVT != null);
-    assert(sessionFetchedEVT != null);
-    assert(storyChangedEVT != null);
-    assert(titleChangedEVT != null);
-    return genreOptionalSelectedEVT(genreOptional);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult addCoverPressedEVT(),
-    TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(),
-    TResult chapterEditorLaunchedFromLibraryEVT(BuildContext context,
-        Chapter chapterDraft, EditorContentOrigin editorContentOrigin),
-    TResult chapterEditorLaunchedFromPreviousChapterEVT(BuildContext context,
-        Chapter previousChapter, EditorContentOrigin editorContentOrigin),
-    TResult chapterEditorLaunchedFromSeriesEditorEVT(BuildContext context,
-        EditorContentOrigin editorContentOrigin, Series seriesDraft),
-    TResult chapterDraftDeletedOrPublishedEVT(),
-    TResult chapterPublishedEVT(),
-    TResult copyrightsSelectedEVT(String copyrights),
-    TResult deleteDraftButtonPressedEVT(),
-    TResult genreOptionalSelectedEVT(String genreOptional),
-    TResult genreSelectedEVT(String genre),
-    TResult isLastChapterChangedEVT(bool isLastChapter),
-    TResult isNSFWChangedEVT(bool isNSFW),
-    TResult languageSelectedEVT(String language),
-    TResult publishButtonPressedEVT(),
-    TResult saveOrBackButtonPressedEVT(),
-    TResult seriesDraftLoadedEVT(Series seriesDraft),
-    TResult seriesPublishedEVT(String seriesDraftUID),
-    TResult sessionFetchedEVT(),
-    TResult storyChangedEVT(String story),
-    TResult titleChangedEVT(String title),
-    @required TResult orElse(),
-  }) {
-    assert(orElse != null);
-    if (genreOptionalSelectedEVT != null) {
-      return genreOptionalSelectedEVT(genreOptional);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult addCoverPressedEVT(AddCoverPressedEVT value),
-    @required
-        TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(
-            ChapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT value),
-    @required
-        TResult chapterEditorLaunchedFromLibraryEVT(
-            ChapterEditorLaunchedFromLibraryEVT value),
-    @required
-        TResult chapterEditorLaunchedFromPreviousChapterEVT(
-            ChapterEditorLaunchedFromPreviousChapterEVT value),
-    @required
-        TResult chapterEditorLaunchedFromSeriesEditorEVT(
-            ChapterEditorLaunchedFromSeriesEditorEVT value),
-    @required
-        TResult chapterDraftDeletedOrPublishedEVT(
-            ChapterDraftDeletedOrPublishedEVT value),
-    @required TResult chapterPublishedEVT(ChapterPublishedEVT value),
-    @required TResult copyrightsSelectedEVT(CopyrightsSelectedEVT value),
-    @required
-        TResult deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
-    @required TResult genreOptionalSelectedEVT(GenreOptionalSelectedEVT value),
-    @required TResult genreSelectedEVT(GenreSelectedEVT value),
-    @required TResult isLastChapterChangedEVT(IsLastChapterChangedEVT value),
-    @required TResult isNSFWChangedEVT(IsNSFWChangedEVT value),
-    @required TResult languageSelectedEVT(LanguageSelectedEVT value),
-    @required TResult publishButtonPressedEVT(PublishButtonPressedEVT value),
-    @required
-        TResult saveOrBackButtonPressedEVT(SaveOrBackButtonPressedEVT value),
-    @required TResult seriesDraftLoadedEVT(SeriesDraftLoadedEVT value),
-    @required TResult seriesPublishedEVT(SeriesPublishedEVT value),
-    @required TResult sessionFetchedEVT(SessionFetchedEVT value),
-    @required TResult storyChangedEVT(StoryChangedEVT value),
-    @required TResult titleChangedEVT(TitleChangedEVT value),
-  }) {
-    assert(addCoverPressedEVT != null);
-    assert(chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT != null);
-    assert(chapterEditorLaunchedFromLibraryEVT != null);
-    assert(chapterEditorLaunchedFromPreviousChapterEVT != null);
-    assert(chapterEditorLaunchedFromSeriesEditorEVT != null);
-    assert(chapterDraftDeletedOrPublishedEVT != null);
-    assert(chapterPublishedEVT != null);
-    assert(copyrightsSelectedEVT != null);
-    assert(deleteDraftButtonPressedEVT != null);
-    assert(genreOptionalSelectedEVT != null);
-    assert(genreSelectedEVT != null);
-    assert(isLastChapterChangedEVT != null);
-    assert(isNSFWChangedEVT != null);
-    assert(languageSelectedEVT != null);
-    assert(publishButtonPressedEVT != null);
-    assert(saveOrBackButtonPressedEVT != null);
-    assert(seriesDraftLoadedEVT != null);
-    assert(seriesPublishedEVT != null);
-    assert(sessionFetchedEVT != null);
-    assert(storyChangedEVT != null);
-    assert(titleChangedEVT != null);
-    return genreOptionalSelectedEVT(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult addCoverPressedEVT(AddCoverPressedEVT value),
-    TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(
-        ChapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT value),
-    TResult chapterEditorLaunchedFromLibraryEVT(
-        ChapterEditorLaunchedFromLibraryEVT value),
-    TResult chapterEditorLaunchedFromPreviousChapterEVT(
-        ChapterEditorLaunchedFromPreviousChapterEVT value),
-    TResult chapterEditorLaunchedFromSeriesEditorEVT(
-        ChapterEditorLaunchedFromSeriesEditorEVT value),
-    TResult chapterDraftDeletedOrPublishedEVT(
-        ChapterDraftDeletedOrPublishedEVT value),
-    TResult chapterPublishedEVT(ChapterPublishedEVT value),
-    TResult copyrightsSelectedEVT(CopyrightsSelectedEVT value),
-    TResult deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
-    TResult genreOptionalSelectedEVT(GenreOptionalSelectedEVT value),
-    TResult genreSelectedEVT(GenreSelectedEVT value),
-    TResult isLastChapterChangedEVT(IsLastChapterChangedEVT value),
-    TResult isNSFWChangedEVT(IsNSFWChangedEVT value),
-    TResult languageSelectedEVT(LanguageSelectedEVT value),
-    TResult publishButtonPressedEVT(PublishButtonPressedEVT value),
-    TResult saveOrBackButtonPressedEVT(SaveOrBackButtonPressedEVT value),
-    TResult seriesDraftLoadedEVT(SeriesDraftLoadedEVT value),
-    TResult seriesPublishedEVT(SeriesPublishedEVT value),
-    TResult sessionFetchedEVT(SessionFetchedEVT value),
-    TResult storyChangedEVT(StoryChangedEVT value),
-    TResult titleChangedEVT(TitleChangedEVT value),
-    @required TResult orElse(),
-  }) {
-    assert(orElse != null);
-    if (genreOptionalSelectedEVT != null) {
-      return genreOptionalSelectedEVT(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class GenreOptionalSelectedEVT implements ChapterEditorDatabaseEvent {
-  const factory GenreOptionalSelectedEVT(String genreOptional) =
-      _$GenreOptionalSelectedEVT;
-
-  String get genreOptional;
-  @JsonKey(ignore: true)
-  $GenreOptionalSelectedEVTCopyWith<GenreOptionalSelectedEVT> get copyWith;
-}
-
-/// @nodoc
-abstract class $GenreSelectedEVTCopyWith<$Res> {
-  factory $GenreSelectedEVTCopyWith(
-          GenreSelectedEVT value, $Res Function(GenreSelectedEVT) then) =
-      _$GenreSelectedEVTCopyWithImpl<$Res>;
-  $Res call({String genre});
-}
-
-/// @nodoc
-class _$GenreSelectedEVTCopyWithImpl<$Res>
-    extends _$ChapterEditorDatabaseEventCopyWithImpl<$Res>
-    implements $GenreSelectedEVTCopyWith<$Res> {
-  _$GenreSelectedEVTCopyWithImpl(
-      GenreSelectedEVT _value, $Res Function(GenreSelectedEVT) _then)
-      : super(_value, (v) => _then(v as GenreSelectedEVT));
-
-  @override
-  GenreSelectedEVT get _value => super._value as GenreSelectedEVT;
-
-  @override
-  $Res call({
-    Object genre = freezed,
-  }) {
-    return _then(GenreSelectedEVT(
-      genre == freezed ? _value.genre : genre as String,
-    ));
-  }
-}
-
-/// @nodoc
-class _$GenreSelectedEVT
-    with DiagnosticableTreeMixin
-    implements GenreSelectedEVT {
-  const _$GenreSelectedEVT(this.genre) : assert(genre != null);
-
-  @override
-  final String genre;
-
-  @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'ChapterEditorDatabaseEvent.genreSelectedEVT(genre: $genre)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty(
-          'type', 'ChapterEditorDatabaseEvent.genreSelectedEVT'))
-      ..add(DiagnosticsProperty('genre', genre));
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is GenreSelectedEVT &&
-            (identical(other.genre, genre) ||
-                const DeepCollectionEquality().equals(other.genre, genre)));
-  }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(genre);
-
-  @JsonKey(ignore: true)
-  @override
-  $GenreSelectedEVTCopyWith<GenreSelectedEVT> get copyWith =>
-      _$GenreSelectedEVTCopyWithImpl<GenreSelectedEVT>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult addCoverPressedEVT(),
-    @required
-        TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(),
-    @required
-        TResult chapterEditorLaunchedFromLibraryEVT(BuildContext context,
-            Chapter chapterDraft, EditorContentOrigin editorContentOrigin),
-    @required
-        TResult chapterEditorLaunchedFromPreviousChapterEVT(
-            BuildContext context,
-            Chapter previousChapter,
-            EditorContentOrigin editorContentOrigin),
-    @required
-        TResult chapterEditorLaunchedFromSeriesEditorEVT(BuildContext context,
-            EditorContentOrigin editorContentOrigin, Series seriesDraft),
-    @required TResult chapterDraftDeletedOrPublishedEVT(),
-    @required TResult chapterPublishedEVT(),
-    @required TResult copyrightsSelectedEVT(String copyrights),
-    @required TResult deleteDraftButtonPressedEVT(),
-    @required TResult genreOptionalSelectedEVT(String genreOptional),
-    @required TResult genreSelectedEVT(String genre),
-    @required TResult isLastChapterChangedEVT(bool isLastChapter),
-    @required TResult isNSFWChangedEVT(bool isNSFW),
-    @required TResult languageSelectedEVT(String language),
-    @required TResult publishButtonPressedEVT(),
-    @required TResult saveOrBackButtonPressedEVT(),
-    @required TResult seriesDraftLoadedEVT(Series seriesDraft),
-    @required TResult seriesPublishedEVT(String seriesDraftUID),
-    @required TResult sessionFetchedEVT(),
-    @required TResult storyChangedEVT(String story),
-    @required TResult titleChangedEVT(String title),
-  }) {
-    assert(addCoverPressedEVT != null);
-    assert(chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT != null);
-    assert(chapterEditorLaunchedFromLibraryEVT != null);
-    assert(chapterEditorLaunchedFromPreviousChapterEVT != null);
-    assert(chapterEditorLaunchedFromSeriesEditorEVT != null);
-    assert(chapterDraftDeletedOrPublishedEVT != null);
-    assert(chapterPublishedEVT != null);
-    assert(copyrightsSelectedEVT != null);
-    assert(deleteDraftButtonPressedEVT != null);
-    assert(genreOptionalSelectedEVT != null);
-    assert(genreSelectedEVT != null);
-    assert(isLastChapterChangedEVT != null);
-    assert(isNSFWChangedEVT != null);
-    assert(languageSelectedEVT != null);
-    assert(publishButtonPressedEVT != null);
-    assert(saveOrBackButtonPressedEVT != null);
-    assert(seriesDraftLoadedEVT != null);
-    assert(seriesPublishedEVT != null);
-    assert(sessionFetchedEVT != null);
-    assert(storyChangedEVT != null);
-    assert(titleChangedEVT != null);
-    return genreSelectedEVT(genre);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult addCoverPressedEVT(),
-    TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(),
-    TResult chapterEditorLaunchedFromLibraryEVT(BuildContext context,
-        Chapter chapterDraft, EditorContentOrigin editorContentOrigin),
-    TResult chapterEditorLaunchedFromPreviousChapterEVT(BuildContext context,
-        Chapter previousChapter, EditorContentOrigin editorContentOrigin),
-    TResult chapterEditorLaunchedFromSeriesEditorEVT(BuildContext context,
-        EditorContentOrigin editorContentOrigin, Series seriesDraft),
-    TResult chapterDraftDeletedOrPublishedEVT(),
-    TResult chapterPublishedEVT(),
-    TResult copyrightsSelectedEVT(String copyrights),
-    TResult deleteDraftButtonPressedEVT(),
-    TResult genreOptionalSelectedEVT(String genreOptional),
-    TResult genreSelectedEVT(String genre),
-    TResult isLastChapterChangedEVT(bool isLastChapter),
-    TResult isNSFWChangedEVT(bool isNSFW),
-    TResult languageSelectedEVT(String language),
-    TResult publishButtonPressedEVT(),
-    TResult saveOrBackButtonPressedEVT(),
-    TResult seriesDraftLoadedEVT(Series seriesDraft),
-    TResult seriesPublishedEVT(String seriesDraftUID),
-    TResult sessionFetchedEVT(),
-    TResult storyChangedEVT(String story),
-    TResult titleChangedEVT(String title),
-    @required TResult orElse(),
-  }) {
-    assert(orElse != null);
-    if (genreSelectedEVT != null) {
-      return genreSelectedEVT(genre);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult addCoverPressedEVT(AddCoverPressedEVT value),
-    @required
-        TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(
-            ChapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT value),
-    @required
-        TResult chapterEditorLaunchedFromLibraryEVT(
-            ChapterEditorLaunchedFromLibraryEVT value),
-    @required
-        TResult chapterEditorLaunchedFromPreviousChapterEVT(
-            ChapterEditorLaunchedFromPreviousChapterEVT value),
-    @required
-        TResult chapterEditorLaunchedFromSeriesEditorEVT(
-            ChapterEditorLaunchedFromSeriesEditorEVT value),
-    @required
-        TResult chapterDraftDeletedOrPublishedEVT(
-            ChapterDraftDeletedOrPublishedEVT value),
-    @required TResult chapterPublishedEVT(ChapterPublishedEVT value),
-    @required TResult copyrightsSelectedEVT(CopyrightsSelectedEVT value),
-    @required
-        TResult deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
-    @required TResult genreOptionalSelectedEVT(GenreOptionalSelectedEVT value),
-    @required TResult genreSelectedEVT(GenreSelectedEVT value),
-    @required TResult isLastChapterChangedEVT(IsLastChapterChangedEVT value),
-    @required TResult isNSFWChangedEVT(IsNSFWChangedEVT value),
-    @required TResult languageSelectedEVT(LanguageSelectedEVT value),
-    @required TResult publishButtonPressedEVT(PublishButtonPressedEVT value),
-    @required
-        TResult saveOrBackButtonPressedEVT(SaveOrBackButtonPressedEVT value),
-    @required TResult seriesDraftLoadedEVT(SeriesDraftLoadedEVT value),
-    @required TResult seriesPublishedEVT(SeriesPublishedEVT value),
-    @required TResult sessionFetchedEVT(SessionFetchedEVT value),
-    @required TResult storyChangedEVT(StoryChangedEVT value),
-    @required TResult titleChangedEVT(TitleChangedEVT value),
-  }) {
-    assert(addCoverPressedEVT != null);
-    assert(chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT != null);
-    assert(chapterEditorLaunchedFromLibraryEVT != null);
-    assert(chapterEditorLaunchedFromPreviousChapterEVT != null);
-    assert(chapterEditorLaunchedFromSeriesEditorEVT != null);
-    assert(chapterDraftDeletedOrPublishedEVT != null);
-    assert(chapterPublishedEVT != null);
-    assert(copyrightsSelectedEVT != null);
-    assert(deleteDraftButtonPressedEVT != null);
-    assert(genreOptionalSelectedEVT != null);
-    assert(genreSelectedEVT != null);
-    assert(isLastChapterChangedEVT != null);
-    assert(isNSFWChangedEVT != null);
-    assert(languageSelectedEVT != null);
-    assert(publishButtonPressedEVT != null);
-    assert(saveOrBackButtonPressedEVT != null);
-    assert(seriesDraftLoadedEVT != null);
-    assert(seriesPublishedEVT != null);
-    assert(sessionFetchedEVT != null);
-    assert(storyChangedEVT != null);
-    assert(titleChangedEVT != null);
-    return genreSelectedEVT(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult addCoverPressedEVT(AddCoverPressedEVT value),
-    TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(
-        ChapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT value),
-    TResult chapterEditorLaunchedFromLibraryEVT(
-        ChapterEditorLaunchedFromLibraryEVT value),
-    TResult chapterEditorLaunchedFromPreviousChapterEVT(
-        ChapterEditorLaunchedFromPreviousChapterEVT value),
-    TResult chapterEditorLaunchedFromSeriesEditorEVT(
-        ChapterEditorLaunchedFromSeriesEditorEVT value),
-    TResult chapterDraftDeletedOrPublishedEVT(
-        ChapterDraftDeletedOrPublishedEVT value),
-    TResult chapterPublishedEVT(ChapterPublishedEVT value),
-    TResult copyrightsSelectedEVT(CopyrightsSelectedEVT value),
-    TResult deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
-    TResult genreOptionalSelectedEVT(GenreOptionalSelectedEVT value),
-    TResult genreSelectedEVT(GenreSelectedEVT value),
-    TResult isLastChapterChangedEVT(IsLastChapterChangedEVT value),
-    TResult isNSFWChangedEVT(IsNSFWChangedEVT value),
-    TResult languageSelectedEVT(LanguageSelectedEVT value),
-    TResult publishButtonPressedEVT(PublishButtonPressedEVT value),
-    TResult saveOrBackButtonPressedEVT(SaveOrBackButtonPressedEVT value),
-    TResult seriesDraftLoadedEVT(SeriesDraftLoadedEVT value),
-    TResult seriesPublishedEVT(SeriesPublishedEVT value),
-    TResult sessionFetchedEVT(SessionFetchedEVT value),
-    TResult storyChangedEVT(StoryChangedEVT value),
-    TResult titleChangedEVT(TitleChangedEVT value),
-    @required TResult orElse(),
-  }) {
-    assert(orElse != null);
-    if (genreSelectedEVT != null) {
-      return genreSelectedEVT(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class GenreSelectedEVT implements ChapterEditorDatabaseEvent {
-  const factory GenreSelectedEVT(String genre) = _$GenreSelectedEVT;
-
-  String get genre;
-  @JsonKey(ignore: true)
-  $GenreSelectedEVTCopyWith<GenreSelectedEVT> get copyWith;
-}
-
-/// @nodoc
-abstract class $IsLastChapterChangedEVTCopyWith<$Res> {
-  factory $IsLastChapterChangedEVTCopyWith(IsLastChapterChangedEVT value,
-          $Res Function(IsLastChapterChangedEVT) then) =
-      _$IsLastChapterChangedEVTCopyWithImpl<$Res>;
-  $Res call({bool isLastChapter});
-}
-
-/// @nodoc
-class _$IsLastChapterChangedEVTCopyWithImpl<$Res>
-    extends _$ChapterEditorDatabaseEventCopyWithImpl<$Res>
-    implements $IsLastChapterChangedEVTCopyWith<$Res> {
-  _$IsLastChapterChangedEVTCopyWithImpl(IsLastChapterChangedEVT _value,
-      $Res Function(IsLastChapterChangedEVT) _then)
-      : super(_value, (v) => _then(v as IsLastChapterChangedEVT));
-
-  @override
-  IsLastChapterChangedEVT get _value => super._value as IsLastChapterChangedEVT;
-
-  @override
-  $Res call({
-    Object isLastChapter = freezed,
-  }) {
-    return _then(IsLastChapterChangedEVT(
-      isLastChapter: isLastChapter == freezed
-          ? _value.isLastChapter
-          : isLastChapter as bool,
-    ));
-  }
-}
-
-/// @nodoc
-class _$IsLastChapterChangedEVT
-    with DiagnosticableTreeMixin
-    implements IsLastChapterChangedEVT {
-  const _$IsLastChapterChangedEVT({@required this.isLastChapter})
-      : assert(isLastChapter != null);
-
-  @override
-  final bool isLastChapter;
-
-  @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'ChapterEditorDatabaseEvent.isLastChapterChangedEVT(isLastChapter: $isLastChapter)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty(
-          'type', 'ChapterEditorDatabaseEvent.isLastChapterChangedEVT'))
-      ..add(DiagnosticsProperty('isLastChapter', isLastChapter));
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is IsLastChapterChangedEVT &&
-            (identical(other.isLastChapter, isLastChapter) ||
-                const DeepCollectionEquality()
-                    .equals(other.isLastChapter, isLastChapter)));
-  }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(isLastChapter);
-
-  @JsonKey(ignore: true)
-  @override
-  $IsLastChapterChangedEVTCopyWith<IsLastChapterChangedEVT> get copyWith =>
-      _$IsLastChapterChangedEVTCopyWithImpl<IsLastChapterChangedEVT>(
-          this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult addCoverPressedEVT(),
-    @required
-        TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(),
-    @required
-        TResult chapterEditorLaunchedFromLibraryEVT(BuildContext context,
-            Chapter chapterDraft, EditorContentOrigin editorContentOrigin),
-    @required
-        TResult chapterEditorLaunchedFromPreviousChapterEVT(
-            BuildContext context,
-            Chapter previousChapter,
-            EditorContentOrigin editorContentOrigin),
-    @required
-        TResult chapterEditorLaunchedFromSeriesEditorEVT(BuildContext context,
-            EditorContentOrigin editorContentOrigin, Series seriesDraft),
-    @required TResult chapterDraftDeletedOrPublishedEVT(),
-    @required TResult chapterPublishedEVT(),
-    @required TResult copyrightsSelectedEVT(String copyrights),
-    @required TResult deleteDraftButtonPressedEVT(),
-    @required TResult genreOptionalSelectedEVT(String genreOptional),
-    @required TResult genreSelectedEVT(String genre),
-    @required TResult isLastChapterChangedEVT(bool isLastChapter),
-    @required TResult isNSFWChangedEVT(bool isNSFW),
-    @required TResult languageSelectedEVT(String language),
-    @required TResult publishButtonPressedEVT(),
-    @required TResult saveOrBackButtonPressedEVT(),
-    @required TResult seriesDraftLoadedEVT(Series seriesDraft),
-    @required TResult seriesPublishedEVT(String seriesDraftUID),
-    @required TResult sessionFetchedEVT(),
-    @required TResult storyChangedEVT(String story),
-    @required TResult titleChangedEVT(String title),
-  }) {
-    assert(addCoverPressedEVT != null);
-    assert(chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT != null);
-    assert(chapterEditorLaunchedFromLibraryEVT != null);
-    assert(chapterEditorLaunchedFromPreviousChapterEVT != null);
-    assert(chapterEditorLaunchedFromSeriesEditorEVT != null);
-    assert(chapterDraftDeletedOrPublishedEVT != null);
-    assert(chapterPublishedEVT != null);
-    assert(copyrightsSelectedEVT != null);
-    assert(deleteDraftButtonPressedEVT != null);
-    assert(genreOptionalSelectedEVT != null);
-    assert(genreSelectedEVT != null);
-    assert(isLastChapterChangedEVT != null);
-    assert(isNSFWChangedEVT != null);
-    assert(languageSelectedEVT != null);
-    assert(publishButtonPressedEVT != null);
-    assert(saveOrBackButtonPressedEVT != null);
-    assert(seriesDraftLoadedEVT != null);
-    assert(seriesPublishedEVT != null);
-    assert(sessionFetchedEVT != null);
-    assert(storyChangedEVT != null);
-    assert(titleChangedEVT != null);
-    return isLastChapterChangedEVT(isLastChapter);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult addCoverPressedEVT(),
-    TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(),
-    TResult chapterEditorLaunchedFromLibraryEVT(BuildContext context,
-        Chapter chapterDraft, EditorContentOrigin editorContentOrigin),
-    TResult chapterEditorLaunchedFromPreviousChapterEVT(BuildContext context,
-        Chapter previousChapter, EditorContentOrigin editorContentOrigin),
-    TResult chapterEditorLaunchedFromSeriesEditorEVT(BuildContext context,
-        EditorContentOrigin editorContentOrigin, Series seriesDraft),
-    TResult chapterDraftDeletedOrPublishedEVT(),
-    TResult chapterPublishedEVT(),
-    TResult copyrightsSelectedEVT(String copyrights),
-    TResult deleteDraftButtonPressedEVT(),
-    TResult genreOptionalSelectedEVT(String genreOptional),
-    TResult genreSelectedEVT(String genre),
-    TResult isLastChapterChangedEVT(bool isLastChapter),
-    TResult isNSFWChangedEVT(bool isNSFW),
-    TResult languageSelectedEVT(String language),
-    TResult publishButtonPressedEVT(),
-    TResult saveOrBackButtonPressedEVT(),
-    TResult seriesDraftLoadedEVT(Series seriesDraft),
-    TResult seriesPublishedEVT(String seriesDraftUID),
-    TResult sessionFetchedEVT(),
-    TResult storyChangedEVT(String story),
-    TResult titleChangedEVT(String title),
-    @required TResult orElse(),
-  }) {
-    assert(orElse != null);
-    if (isLastChapterChangedEVT != null) {
-      return isLastChapterChangedEVT(isLastChapter);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult addCoverPressedEVT(AddCoverPressedEVT value),
-    @required
-        TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(
-            ChapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT value),
-    @required
-        TResult chapterEditorLaunchedFromLibraryEVT(
-            ChapterEditorLaunchedFromLibraryEVT value),
-    @required
-        TResult chapterEditorLaunchedFromPreviousChapterEVT(
-            ChapterEditorLaunchedFromPreviousChapterEVT value),
-    @required
-        TResult chapterEditorLaunchedFromSeriesEditorEVT(
-            ChapterEditorLaunchedFromSeriesEditorEVT value),
-    @required
-        TResult chapterDraftDeletedOrPublishedEVT(
-            ChapterDraftDeletedOrPublishedEVT value),
-    @required TResult chapterPublishedEVT(ChapterPublishedEVT value),
-    @required TResult copyrightsSelectedEVT(CopyrightsSelectedEVT value),
-    @required
-        TResult deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
-    @required TResult genreOptionalSelectedEVT(GenreOptionalSelectedEVT value),
-    @required TResult genreSelectedEVT(GenreSelectedEVT value),
-    @required TResult isLastChapterChangedEVT(IsLastChapterChangedEVT value),
-    @required TResult isNSFWChangedEVT(IsNSFWChangedEVT value),
-    @required TResult languageSelectedEVT(LanguageSelectedEVT value),
-    @required TResult publishButtonPressedEVT(PublishButtonPressedEVT value),
-    @required
-        TResult saveOrBackButtonPressedEVT(SaveOrBackButtonPressedEVT value),
-    @required TResult seriesDraftLoadedEVT(SeriesDraftLoadedEVT value),
-    @required TResult seriesPublishedEVT(SeriesPublishedEVT value),
-    @required TResult sessionFetchedEVT(SessionFetchedEVT value),
-    @required TResult storyChangedEVT(StoryChangedEVT value),
-    @required TResult titleChangedEVT(TitleChangedEVT value),
-  }) {
-    assert(addCoverPressedEVT != null);
-    assert(chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT != null);
-    assert(chapterEditorLaunchedFromLibraryEVT != null);
-    assert(chapterEditorLaunchedFromPreviousChapterEVT != null);
-    assert(chapterEditorLaunchedFromSeriesEditorEVT != null);
-    assert(chapterDraftDeletedOrPublishedEVT != null);
-    assert(chapterPublishedEVT != null);
-    assert(copyrightsSelectedEVT != null);
-    assert(deleteDraftButtonPressedEVT != null);
-    assert(genreOptionalSelectedEVT != null);
-    assert(genreSelectedEVT != null);
-    assert(isLastChapterChangedEVT != null);
-    assert(isNSFWChangedEVT != null);
-    assert(languageSelectedEVT != null);
-    assert(publishButtonPressedEVT != null);
-    assert(saveOrBackButtonPressedEVT != null);
-    assert(seriesDraftLoadedEVT != null);
-    assert(seriesPublishedEVT != null);
-    assert(sessionFetchedEVT != null);
-    assert(storyChangedEVT != null);
-    assert(titleChangedEVT != null);
-    return isLastChapterChangedEVT(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult addCoverPressedEVT(AddCoverPressedEVT value),
-    TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(
-        ChapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT value),
-    TResult chapterEditorLaunchedFromLibraryEVT(
-        ChapterEditorLaunchedFromLibraryEVT value),
-    TResult chapterEditorLaunchedFromPreviousChapterEVT(
-        ChapterEditorLaunchedFromPreviousChapterEVT value),
-    TResult chapterEditorLaunchedFromSeriesEditorEVT(
-        ChapterEditorLaunchedFromSeriesEditorEVT value),
-    TResult chapterDraftDeletedOrPublishedEVT(
-        ChapterDraftDeletedOrPublishedEVT value),
-    TResult chapterPublishedEVT(ChapterPublishedEVT value),
-    TResult copyrightsSelectedEVT(CopyrightsSelectedEVT value),
-    TResult deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
-    TResult genreOptionalSelectedEVT(GenreOptionalSelectedEVT value),
-    TResult genreSelectedEVT(GenreSelectedEVT value),
-    TResult isLastChapterChangedEVT(IsLastChapterChangedEVT value),
-    TResult isNSFWChangedEVT(IsNSFWChangedEVT value),
-    TResult languageSelectedEVT(LanguageSelectedEVT value),
-    TResult publishButtonPressedEVT(PublishButtonPressedEVT value),
-    TResult saveOrBackButtonPressedEVT(SaveOrBackButtonPressedEVT value),
-    TResult seriesDraftLoadedEVT(SeriesDraftLoadedEVT value),
-    TResult seriesPublishedEVT(SeriesPublishedEVT value),
-    TResult sessionFetchedEVT(SessionFetchedEVT value),
-    TResult storyChangedEVT(StoryChangedEVT value),
-    TResult titleChangedEVT(TitleChangedEVT value),
-    @required TResult orElse(),
-  }) {
-    assert(orElse != null);
-    if (isLastChapterChangedEVT != null) {
-      return isLastChapterChangedEVT(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class IsLastChapterChangedEVT implements ChapterEditorDatabaseEvent {
-  const factory IsLastChapterChangedEVT({@required bool isLastChapter}) =
-      _$IsLastChapterChangedEVT;
-
-  bool get isLastChapter;
-  @JsonKey(ignore: true)
-  $IsLastChapterChangedEVTCopyWith<IsLastChapterChangedEVT> get copyWith;
-}
-
-/// @nodoc
-abstract class $IsNSFWChangedEVTCopyWith<$Res> {
-  factory $IsNSFWChangedEVTCopyWith(
-          IsNSFWChangedEVT value, $Res Function(IsNSFWChangedEVT) then) =
-      _$IsNSFWChangedEVTCopyWithImpl<$Res>;
-  $Res call({bool isNSFW});
-}
-
-/// @nodoc
-class _$IsNSFWChangedEVTCopyWithImpl<$Res>
-    extends _$ChapterEditorDatabaseEventCopyWithImpl<$Res>
-    implements $IsNSFWChangedEVTCopyWith<$Res> {
-  _$IsNSFWChangedEVTCopyWithImpl(
-      IsNSFWChangedEVT _value, $Res Function(IsNSFWChangedEVT) _then)
-      : super(_value, (v) => _then(v as IsNSFWChangedEVT));
-
-  @override
-  IsNSFWChangedEVT get _value => super._value as IsNSFWChangedEVT;
-
-  @override
-  $Res call({
-    Object isNSFW = freezed,
-  }) {
-    return _then(IsNSFWChangedEVT(
-      isNSFW: isNSFW == freezed ? _value.isNSFW : isNSFW as bool,
-    ));
-  }
-}
-
-/// @nodoc
-class _$IsNSFWChangedEVT
-    with DiagnosticableTreeMixin
-    implements IsNSFWChangedEVT {
-  const _$IsNSFWChangedEVT({@required this.isNSFW}) : assert(isNSFW != null);
-
-  @override
-  final bool isNSFW;
-
-  @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'ChapterEditorDatabaseEvent.isNSFWChangedEVT(isNSFW: $isNSFW)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty(
-          'type', 'ChapterEditorDatabaseEvent.isNSFWChangedEVT'))
-      ..add(DiagnosticsProperty('isNSFW', isNSFW));
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is IsNSFWChangedEVT &&
-            (identical(other.isNSFW, isNSFW) ||
-                const DeepCollectionEquality().equals(other.isNSFW, isNSFW)));
-  }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(isNSFW);
-
-  @JsonKey(ignore: true)
-  @override
-  $IsNSFWChangedEVTCopyWith<IsNSFWChangedEVT> get copyWith =>
-      _$IsNSFWChangedEVTCopyWithImpl<IsNSFWChangedEVT>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult addCoverPressedEVT(),
-    @required
-        TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(),
-    @required
-        TResult chapterEditorLaunchedFromLibraryEVT(BuildContext context,
-            Chapter chapterDraft, EditorContentOrigin editorContentOrigin),
-    @required
-        TResult chapterEditorLaunchedFromPreviousChapterEVT(
-            BuildContext context,
-            Chapter previousChapter,
-            EditorContentOrigin editorContentOrigin),
-    @required
-        TResult chapterEditorLaunchedFromSeriesEditorEVT(BuildContext context,
-            EditorContentOrigin editorContentOrigin, Series seriesDraft),
-    @required TResult chapterDraftDeletedOrPublishedEVT(),
-    @required TResult chapterPublishedEVT(),
-    @required TResult copyrightsSelectedEVT(String copyrights),
-    @required TResult deleteDraftButtonPressedEVT(),
-    @required TResult genreOptionalSelectedEVT(String genreOptional),
-    @required TResult genreSelectedEVT(String genre),
-    @required TResult isLastChapterChangedEVT(bool isLastChapter),
-    @required TResult isNSFWChangedEVT(bool isNSFW),
-    @required TResult languageSelectedEVT(String language),
-    @required TResult publishButtonPressedEVT(),
-    @required TResult saveOrBackButtonPressedEVT(),
-    @required TResult seriesDraftLoadedEVT(Series seriesDraft),
-    @required TResult seriesPublishedEVT(String seriesDraftUID),
-    @required TResult sessionFetchedEVT(),
-    @required TResult storyChangedEVT(String story),
-    @required TResult titleChangedEVT(String title),
-  }) {
-    assert(addCoverPressedEVT != null);
-    assert(chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT != null);
-    assert(chapterEditorLaunchedFromLibraryEVT != null);
-    assert(chapterEditorLaunchedFromPreviousChapterEVT != null);
-    assert(chapterEditorLaunchedFromSeriesEditorEVT != null);
-    assert(chapterDraftDeletedOrPublishedEVT != null);
-    assert(chapterPublishedEVT != null);
-    assert(copyrightsSelectedEVT != null);
-    assert(deleteDraftButtonPressedEVT != null);
-    assert(genreOptionalSelectedEVT != null);
-    assert(genreSelectedEVT != null);
-    assert(isLastChapterChangedEVT != null);
-    assert(isNSFWChangedEVT != null);
-    assert(languageSelectedEVT != null);
-    assert(publishButtonPressedEVT != null);
-    assert(saveOrBackButtonPressedEVT != null);
-    assert(seriesDraftLoadedEVT != null);
-    assert(seriesPublishedEVT != null);
-    assert(sessionFetchedEVT != null);
-    assert(storyChangedEVT != null);
-    assert(titleChangedEVT != null);
-    return isNSFWChangedEVT(isNSFW);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult addCoverPressedEVT(),
-    TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(),
-    TResult chapterEditorLaunchedFromLibraryEVT(BuildContext context,
-        Chapter chapterDraft, EditorContentOrigin editorContentOrigin),
-    TResult chapterEditorLaunchedFromPreviousChapterEVT(BuildContext context,
-        Chapter previousChapter, EditorContentOrigin editorContentOrigin),
-    TResult chapterEditorLaunchedFromSeriesEditorEVT(BuildContext context,
-        EditorContentOrigin editorContentOrigin, Series seriesDraft),
-    TResult chapterDraftDeletedOrPublishedEVT(),
-    TResult chapterPublishedEVT(),
-    TResult copyrightsSelectedEVT(String copyrights),
-    TResult deleteDraftButtonPressedEVT(),
-    TResult genreOptionalSelectedEVT(String genreOptional),
-    TResult genreSelectedEVT(String genre),
-    TResult isLastChapterChangedEVT(bool isLastChapter),
-    TResult isNSFWChangedEVT(bool isNSFW),
-    TResult languageSelectedEVT(String language),
-    TResult publishButtonPressedEVT(),
-    TResult saveOrBackButtonPressedEVT(),
-    TResult seriesDraftLoadedEVT(Series seriesDraft),
-    TResult seriesPublishedEVT(String seriesDraftUID),
-    TResult sessionFetchedEVT(),
-    TResult storyChangedEVT(String story),
-    TResult titleChangedEVT(String title),
-    @required TResult orElse(),
-  }) {
-    assert(orElse != null);
-    if (isNSFWChangedEVT != null) {
-      return isNSFWChangedEVT(isNSFW);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult addCoverPressedEVT(AddCoverPressedEVT value),
-    @required
-        TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(
-            ChapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT value),
-    @required
-        TResult chapterEditorLaunchedFromLibraryEVT(
-            ChapterEditorLaunchedFromLibraryEVT value),
-    @required
-        TResult chapterEditorLaunchedFromPreviousChapterEVT(
-            ChapterEditorLaunchedFromPreviousChapterEVT value),
-    @required
-        TResult chapterEditorLaunchedFromSeriesEditorEVT(
-            ChapterEditorLaunchedFromSeriesEditorEVT value),
-    @required
-        TResult chapterDraftDeletedOrPublishedEVT(
-            ChapterDraftDeletedOrPublishedEVT value),
-    @required TResult chapterPublishedEVT(ChapterPublishedEVT value),
-    @required TResult copyrightsSelectedEVT(CopyrightsSelectedEVT value),
-    @required
-        TResult deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
-    @required TResult genreOptionalSelectedEVT(GenreOptionalSelectedEVT value),
-    @required TResult genreSelectedEVT(GenreSelectedEVT value),
-    @required TResult isLastChapterChangedEVT(IsLastChapterChangedEVT value),
-    @required TResult isNSFWChangedEVT(IsNSFWChangedEVT value),
-    @required TResult languageSelectedEVT(LanguageSelectedEVT value),
-    @required TResult publishButtonPressedEVT(PublishButtonPressedEVT value),
-    @required
-        TResult saveOrBackButtonPressedEVT(SaveOrBackButtonPressedEVT value),
-    @required TResult seriesDraftLoadedEVT(SeriesDraftLoadedEVT value),
-    @required TResult seriesPublishedEVT(SeriesPublishedEVT value),
-    @required TResult sessionFetchedEVT(SessionFetchedEVT value),
-    @required TResult storyChangedEVT(StoryChangedEVT value),
-    @required TResult titleChangedEVT(TitleChangedEVT value),
-  }) {
-    assert(addCoverPressedEVT != null);
-    assert(chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT != null);
-    assert(chapterEditorLaunchedFromLibraryEVT != null);
-    assert(chapterEditorLaunchedFromPreviousChapterEVT != null);
-    assert(chapterEditorLaunchedFromSeriesEditorEVT != null);
-    assert(chapterDraftDeletedOrPublishedEVT != null);
-    assert(chapterPublishedEVT != null);
-    assert(copyrightsSelectedEVT != null);
-    assert(deleteDraftButtonPressedEVT != null);
-    assert(genreOptionalSelectedEVT != null);
-    assert(genreSelectedEVT != null);
-    assert(isLastChapterChangedEVT != null);
-    assert(isNSFWChangedEVT != null);
-    assert(languageSelectedEVT != null);
-    assert(publishButtonPressedEVT != null);
-    assert(saveOrBackButtonPressedEVT != null);
-    assert(seriesDraftLoadedEVT != null);
-    assert(seriesPublishedEVT != null);
-    assert(sessionFetchedEVT != null);
-    assert(storyChangedEVT != null);
-    assert(titleChangedEVT != null);
-    return isNSFWChangedEVT(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult addCoverPressedEVT(AddCoverPressedEVT value),
-    TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(
-        ChapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT value),
-    TResult chapterEditorLaunchedFromLibraryEVT(
-        ChapterEditorLaunchedFromLibraryEVT value),
-    TResult chapterEditorLaunchedFromPreviousChapterEVT(
-        ChapterEditorLaunchedFromPreviousChapterEVT value),
-    TResult chapterEditorLaunchedFromSeriesEditorEVT(
-        ChapterEditorLaunchedFromSeriesEditorEVT value),
-    TResult chapterDraftDeletedOrPublishedEVT(
-        ChapterDraftDeletedOrPublishedEVT value),
-    TResult chapterPublishedEVT(ChapterPublishedEVT value),
-    TResult copyrightsSelectedEVT(CopyrightsSelectedEVT value),
-    TResult deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
-    TResult genreOptionalSelectedEVT(GenreOptionalSelectedEVT value),
-    TResult genreSelectedEVT(GenreSelectedEVT value),
-    TResult isLastChapterChangedEVT(IsLastChapterChangedEVT value),
-    TResult isNSFWChangedEVT(IsNSFWChangedEVT value),
-    TResult languageSelectedEVT(LanguageSelectedEVT value),
-    TResult publishButtonPressedEVT(PublishButtonPressedEVT value),
-    TResult saveOrBackButtonPressedEVT(SaveOrBackButtonPressedEVT value),
-    TResult seriesDraftLoadedEVT(SeriesDraftLoadedEVT value),
-    TResult seriesPublishedEVT(SeriesPublishedEVT value),
-    TResult sessionFetchedEVT(SessionFetchedEVT value),
-    TResult storyChangedEVT(StoryChangedEVT value),
-    TResult titleChangedEVT(TitleChangedEVT value),
-    @required TResult orElse(),
-  }) {
-    assert(orElse != null);
-    if (isNSFWChangedEVT != null) {
-      return isNSFWChangedEVT(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class IsNSFWChangedEVT implements ChapterEditorDatabaseEvent {
-  const factory IsNSFWChangedEVT({@required bool isNSFW}) = _$IsNSFWChangedEVT;
-
-  bool get isNSFW;
-  @JsonKey(ignore: true)
-  $IsNSFWChangedEVTCopyWith<IsNSFWChangedEVT> get copyWith;
-}
-
-/// @nodoc
-abstract class $LanguageSelectedEVTCopyWith<$Res> {
-  factory $LanguageSelectedEVTCopyWith(
-          LanguageSelectedEVT value, $Res Function(LanguageSelectedEVT) then) =
-      _$LanguageSelectedEVTCopyWithImpl<$Res>;
-  $Res call({String language});
-}
-
-/// @nodoc
-class _$LanguageSelectedEVTCopyWithImpl<$Res>
-    extends _$ChapterEditorDatabaseEventCopyWithImpl<$Res>
-    implements $LanguageSelectedEVTCopyWith<$Res> {
-  _$LanguageSelectedEVTCopyWithImpl(
-      LanguageSelectedEVT _value, $Res Function(LanguageSelectedEVT) _then)
-      : super(_value, (v) => _then(v as LanguageSelectedEVT));
-
-  @override
-  LanguageSelectedEVT get _value => super._value as LanguageSelectedEVT;
-
-  @override
-  $Res call({
-    Object language = freezed,
-  }) {
-    return _then(LanguageSelectedEVT(
-      language == freezed ? _value.language : language as String,
-    ));
-  }
-}
-
-/// @nodoc
-class _$LanguageSelectedEVT
-    with DiagnosticableTreeMixin
-    implements LanguageSelectedEVT {
-  const _$LanguageSelectedEVT(this.language) : assert(language != null);
-
-  @override
-  final String language;
-
-  @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'ChapterEditorDatabaseEvent.languageSelectedEVT(language: $language)';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty(
-          'type', 'ChapterEditorDatabaseEvent.languageSelectedEVT'))
-      ..add(DiagnosticsProperty('language', language));
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is LanguageSelectedEVT &&
-            (identical(other.language, language) ||
-                const DeepCollectionEquality()
-                    .equals(other.language, language)));
-  }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(language);
-
-  @JsonKey(ignore: true)
-  @override
-  $LanguageSelectedEVTCopyWith<LanguageSelectedEVT> get copyWith =>
-      _$LanguageSelectedEVTCopyWithImpl<LanguageSelectedEVT>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult addCoverPressedEVT(),
-    @required
-        TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(),
-    @required
-        TResult chapterEditorLaunchedFromLibraryEVT(BuildContext context,
-            Chapter chapterDraft, EditorContentOrigin editorContentOrigin),
-    @required
-        TResult chapterEditorLaunchedFromPreviousChapterEVT(
-            BuildContext context,
-            Chapter previousChapter,
-            EditorContentOrigin editorContentOrigin),
-    @required
-        TResult chapterEditorLaunchedFromSeriesEditorEVT(BuildContext context,
-            EditorContentOrigin editorContentOrigin, Series seriesDraft),
-    @required TResult chapterDraftDeletedOrPublishedEVT(),
-    @required TResult chapterPublishedEVT(),
-    @required TResult copyrightsSelectedEVT(String copyrights),
-    @required TResult deleteDraftButtonPressedEVT(),
-    @required TResult genreOptionalSelectedEVT(String genreOptional),
-    @required TResult genreSelectedEVT(String genre),
-    @required TResult isLastChapterChangedEVT(bool isLastChapter),
-    @required TResult isNSFWChangedEVT(bool isNSFW),
-    @required TResult languageSelectedEVT(String language),
-    @required TResult publishButtonPressedEVT(),
-    @required TResult saveOrBackButtonPressedEVT(),
-    @required TResult seriesDraftLoadedEVT(Series seriesDraft),
-    @required TResult seriesPublishedEVT(String seriesDraftUID),
-    @required TResult sessionFetchedEVT(),
-    @required TResult storyChangedEVT(String story),
-    @required TResult titleChangedEVT(String title),
-  }) {
-    assert(addCoverPressedEVT != null);
-    assert(chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT != null);
-    assert(chapterEditorLaunchedFromLibraryEVT != null);
-    assert(chapterEditorLaunchedFromPreviousChapterEVT != null);
-    assert(chapterEditorLaunchedFromSeriesEditorEVT != null);
-    assert(chapterDraftDeletedOrPublishedEVT != null);
-    assert(chapterPublishedEVT != null);
-    assert(copyrightsSelectedEVT != null);
-    assert(deleteDraftButtonPressedEVT != null);
-    assert(genreOptionalSelectedEVT != null);
-    assert(genreSelectedEVT != null);
-    assert(isLastChapterChangedEVT != null);
-    assert(isNSFWChangedEVT != null);
-    assert(languageSelectedEVT != null);
-    assert(publishButtonPressedEVT != null);
-    assert(saveOrBackButtonPressedEVT != null);
-    assert(seriesDraftLoadedEVT != null);
-    assert(seriesPublishedEVT != null);
-    assert(sessionFetchedEVT != null);
-    assert(storyChangedEVT != null);
-    assert(titleChangedEVT != null);
-    return languageSelectedEVT(language);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult addCoverPressedEVT(),
-    TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(),
-    TResult chapterEditorLaunchedFromLibraryEVT(BuildContext context,
-        Chapter chapterDraft, EditorContentOrigin editorContentOrigin),
-    TResult chapterEditorLaunchedFromPreviousChapterEVT(BuildContext context,
-        Chapter previousChapter, EditorContentOrigin editorContentOrigin),
-    TResult chapterEditorLaunchedFromSeriesEditorEVT(BuildContext context,
-        EditorContentOrigin editorContentOrigin, Series seriesDraft),
-    TResult chapterDraftDeletedOrPublishedEVT(),
-    TResult chapterPublishedEVT(),
-    TResult copyrightsSelectedEVT(String copyrights),
-    TResult deleteDraftButtonPressedEVT(),
-    TResult genreOptionalSelectedEVT(String genreOptional),
-    TResult genreSelectedEVT(String genre),
-    TResult isLastChapterChangedEVT(bool isLastChapter),
-    TResult isNSFWChangedEVT(bool isNSFW),
-    TResult languageSelectedEVT(String language),
-    TResult publishButtonPressedEVT(),
-    TResult saveOrBackButtonPressedEVT(),
-    TResult seriesDraftLoadedEVT(Series seriesDraft),
-    TResult seriesPublishedEVT(String seriesDraftUID),
-    TResult sessionFetchedEVT(),
-    TResult storyChangedEVT(String story),
-    TResult titleChangedEVT(String title),
-    @required TResult orElse(),
-  }) {
-    assert(orElse != null);
-    if (languageSelectedEVT != null) {
-      return languageSelectedEVT(language);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult addCoverPressedEVT(AddCoverPressedEVT value),
-    @required
-        TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(
-            ChapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT value),
-    @required
-        TResult chapterEditorLaunchedFromLibraryEVT(
-            ChapterEditorLaunchedFromLibraryEVT value),
-    @required
-        TResult chapterEditorLaunchedFromPreviousChapterEVT(
-            ChapterEditorLaunchedFromPreviousChapterEVT value),
-    @required
-        TResult chapterEditorLaunchedFromSeriesEditorEVT(
-            ChapterEditorLaunchedFromSeriesEditorEVT value),
-    @required
-        TResult chapterDraftDeletedOrPublishedEVT(
-            ChapterDraftDeletedOrPublishedEVT value),
-    @required TResult chapterPublishedEVT(ChapterPublishedEVT value),
-    @required TResult copyrightsSelectedEVT(CopyrightsSelectedEVT value),
-    @required
-        TResult deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
-    @required TResult genreOptionalSelectedEVT(GenreOptionalSelectedEVT value),
-    @required TResult genreSelectedEVT(GenreSelectedEVT value),
-    @required TResult isLastChapterChangedEVT(IsLastChapterChangedEVT value),
-    @required TResult isNSFWChangedEVT(IsNSFWChangedEVT value),
-    @required TResult languageSelectedEVT(LanguageSelectedEVT value),
-    @required TResult publishButtonPressedEVT(PublishButtonPressedEVT value),
-    @required
-        TResult saveOrBackButtonPressedEVT(SaveOrBackButtonPressedEVT value),
-    @required TResult seriesDraftLoadedEVT(SeriesDraftLoadedEVT value),
-    @required TResult seriesPublishedEVT(SeriesPublishedEVT value),
-    @required TResult sessionFetchedEVT(SessionFetchedEVT value),
-    @required TResult storyChangedEVT(StoryChangedEVT value),
-    @required TResult titleChangedEVT(TitleChangedEVT value),
-  }) {
-    assert(addCoverPressedEVT != null);
-    assert(chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT != null);
-    assert(chapterEditorLaunchedFromLibraryEVT != null);
-    assert(chapterEditorLaunchedFromPreviousChapterEVT != null);
-    assert(chapterEditorLaunchedFromSeriesEditorEVT != null);
-    assert(chapterDraftDeletedOrPublishedEVT != null);
-    assert(chapterPublishedEVT != null);
-    assert(copyrightsSelectedEVT != null);
-    assert(deleteDraftButtonPressedEVT != null);
-    assert(genreOptionalSelectedEVT != null);
-    assert(genreSelectedEVT != null);
-    assert(isLastChapterChangedEVT != null);
-    assert(isNSFWChangedEVT != null);
-    assert(languageSelectedEVT != null);
-    assert(publishButtonPressedEVT != null);
-    assert(saveOrBackButtonPressedEVT != null);
-    assert(seriesDraftLoadedEVT != null);
-    assert(seriesPublishedEVT != null);
-    assert(sessionFetchedEVT != null);
-    assert(storyChangedEVT != null);
-    assert(titleChangedEVT != null);
-    return languageSelectedEVT(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult addCoverPressedEVT(AddCoverPressedEVT value),
-    TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(
-        ChapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT value),
-    TResult chapterEditorLaunchedFromLibraryEVT(
-        ChapterEditorLaunchedFromLibraryEVT value),
-    TResult chapterEditorLaunchedFromPreviousChapterEVT(
-        ChapterEditorLaunchedFromPreviousChapterEVT value),
-    TResult chapterEditorLaunchedFromSeriesEditorEVT(
-        ChapterEditorLaunchedFromSeriesEditorEVT value),
-    TResult chapterDraftDeletedOrPublishedEVT(
-        ChapterDraftDeletedOrPublishedEVT value),
-    TResult chapterPublishedEVT(ChapterPublishedEVT value),
-    TResult copyrightsSelectedEVT(CopyrightsSelectedEVT value),
-    TResult deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
-    TResult genreOptionalSelectedEVT(GenreOptionalSelectedEVT value),
-    TResult genreSelectedEVT(GenreSelectedEVT value),
-    TResult isLastChapterChangedEVT(IsLastChapterChangedEVT value),
-    TResult isNSFWChangedEVT(IsNSFWChangedEVT value),
-    TResult languageSelectedEVT(LanguageSelectedEVT value),
-    TResult publishButtonPressedEVT(PublishButtonPressedEVT value),
-    TResult saveOrBackButtonPressedEVT(SaveOrBackButtonPressedEVT value),
-    TResult seriesDraftLoadedEVT(SeriesDraftLoadedEVT value),
-    TResult seriesPublishedEVT(SeriesPublishedEVT value),
-    TResult sessionFetchedEVT(SessionFetchedEVT value),
-    TResult storyChangedEVT(StoryChangedEVT value),
-    TResult titleChangedEVT(TitleChangedEVT value),
-    @required TResult orElse(),
-  }) {
-    assert(orElse != null);
-    if (languageSelectedEVT != null) {
-      return languageSelectedEVT(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class LanguageSelectedEVT implements ChapterEditorDatabaseEvent {
-  const factory LanguageSelectedEVT(String language) = _$LanguageSelectedEVT;
-
-  String get language;
-  @JsonKey(ignore: true)
-  $LanguageSelectedEVTCopyWith<LanguageSelectedEVT> get copyWith;
-}
-
-/// @nodoc
-abstract class $PublishButtonPressedEVTCopyWith<$Res> {
-  factory $PublishButtonPressedEVTCopyWith(PublishButtonPressedEVT value,
-          $Res Function(PublishButtonPressedEVT) then) =
-      _$PublishButtonPressedEVTCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class _$PublishButtonPressedEVTCopyWithImpl<$Res>
-    extends _$ChapterEditorDatabaseEventCopyWithImpl<$Res>
-    implements $PublishButtonPressedEVTCopyWith<$Res> {
-  _$PublishButtonPressedEVTCopyWithImpl(PublishButtonPressedEVT _value,
-      $Res Function(PublishButtonPressedEVT) _then)
-      : super(_value, (v) => _then(v as PublishButtonPressedEVT));
-
-  @override
-  PublishButtonPressedEVT get _value => super._value as PublishButtonPressedEVT;
-}
-
-/// @nodoc
-class _$PublishButtonPressedEVT
-    with DiagnosticableTreeMixin
-    implements PublishButtonPressedEVT {
-  const _$PublishButtonPressedEVT();
-
-  @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'ChapterEditorDatabaseEvent.publishButtonPressedEVT()';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty(
-          'type', 'ChapterEditorDatabaseEvent.publishButtonPressedEVT'));
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) || (other is PublishButtonPressedEVT);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult addCoverPressedEVT(),
-    @required
-        TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(),
-    @required
-        TResult chapterEditorLaunchedFromLibraryEVT(BuildContext context,
-            Chapter chapterDraft, EditorContentOrigin editorContentOrigin),
-    @required
-        TResult chapterEditorLaunchedFromPreviousChapterEVT(
-            BuildContext context,
-            Chapter previousChapter,
-            EditorContentOrigin editorContentOrigin),
-    @required
-        TResult chapterEditorLaunchedFromSeriesEditorEVT(BuildContext context,
-            EditorContentOrigin editorContentOrigin, Series seriesDraft),
-    @required TResult chapterDraftDeletedOrPublishedEVT(),
-    @required TResult chapterPublishedEVT(),
-    @required TResult copyrightsSelectedEVT(String copyrights),
-    @required TResult deleteDraftButtonPressedEVT(),
-    @required TResult genreOptionalSelectedEVT(String genreOptional),
-    @required TResult genreSelectedEVT(String genre),
-    @required TResult isLastChapterChangedEVT(bool isLastChapter),
-    @required TResult isNSFWChangedEVT(bool isNSFW),
-    @required TResult languageSelectedEVT(String language),
-    @required TResult publishButtonPressedEVT(),
-    @required TResult saveOrBackButtonPressedEVT(),
-    @required TResult seriesDraftLoadedEVT(Series seriesDraft),
-    @required TResult seriesPublishedEVT(String seriesDraftUID),
-    @required TResult sessionFetchedEVT(),
-    @required TResult storyChangedEVT(String story),
-    @required TResult titleChangedEVT(String title),
-  }) {
-    assert(addCoverPressedEVT != null);
-    assert(chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT != null);
-    assert(chapterEditorLaunchedFromLibraryEVT != null);
-    assert(chapterEditorLaunchedFromPreviousChapterEVT != null);
-    assert(chapterEditorLaunchedFromSeriesEditorEVT != null);
-    assert(chapterDraftDeletedOrPublishedEVT != null);
-    assert(chapterPublishedEVT != null);
-    assert(copyrightsSelectedEVT != null);
-    assert(deleteDraftButtonPressedEVT != null);
-    assert(genreOptionalSelectedEVT != null);
-    assert(genreSelectedEVT != null);
-    assert(isLastChapterChangedEVT != null);
-    assert(isNSFWChangedEVT != null);
-    assert(languageSelectedEVT != null);
-    assert(publishButtonPressedEVT != null);
-    assert(saveOrBackButtonPressedEVT != null);
-    assert(seriesDraftLoadedEVT != null);
-    assert(seriesPublishedEVT != null);
-    assert(sessionFetchedEVT != null);
-    assert(storyChangedEVT != null);
-    assert(titleChangedEVT != null);
-    return publishButtonPressedEVT();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult addCoverPressedEVT(),
-    TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(),
-    TResult chapterEditorLaunchedFromLibraryEVT(BuildContext context,
-        Chapter chapterDraft, EditorContentOrigin editorContentOrigin),
-    TResult chapterEditorLaunchedFromPreviousChapterEVT(BuildContext context,
-        Chapter previousChapter, EditorContentOrigin editorContentOrigin),
-    TResult chapterEditorLaunchedFromSeriesEditorEVT(BuildContext context,
-        EditorContentOrigin editorContentOrigin, Series seriesDraft),
-    TResult chapterDraftDeletedOrPublishedEVT(),
-    TResult chapterPublishedEVT(),
-    TResult copyrightsSelectedEVT(String copyrights),
-    TResult deleteDraftButtonPressedEVT(),
-    TResult genreOptionalSelectedEVT(String genreOptional),
-    TResult genreSelectedEVT(String genre),
-    TResult isLastChapterChangedEVT(bool isLastChapter),
-    TResult isNSFWChangedEVT(bool isNSFW),
-    TResult languageSelectedEVT(String language),
-    TResult publishButtonPressedEVT(),
-    TResult saveOrBackButtonPressedEVT(),
-    TResult seriesDraftLoadedEVT(Series seriesDraft),
-    TResult seriesPublishedEVT(String seriesDraftUID),
-    TResult sessionFetchedEVT(),
-    TResult storyChangedEVT(String story),
-    TResult titleChangedEVT(String title),
-    @required TResult orElse(),
-  }) {
-    assert(orElse != null);
-    if (publishButtonPressedEVT != null) {
-      return publishButtonPressedEVT();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult addCoverPressedEVT(AddCoverPressedEVT value),
-    @required
-        TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(
-            ChapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT value),
-    @required
-        TResult chapterEditorLaunchedFromLibraryEVT(
-            ChapterEditorLaunchedFromLibraryEVT value),
-    @required
-        TResult chapterEditorLaunchedFromPreviousChapterEVT(
-            ChapterEditorLaunchedFromPreviousChapterEVT value),
-    @required
-        TResult chapterEditorLaunchedFromSeriesEditorEVT(
-            ChapterEditorLaunchedFromSeriesEditorEVT value),
-    @required
-        TResult chapterDraftDeletedOrPublishedEVT(
-            ChapterDraftDeletedOrPublishedEVT value),
-    @required TResult chapterPublishedEVT(ChapterPublishedEVT value),
-    @required TResult copyrightsSelectedEVT(CopyrightsSelectedEVT value),
-    @required
-        TResult deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
-    @required TResult genreOptionalSelectedEVT(GenreOptionalSelectedEVT value),
-    @required TResult genreSelectedEVT(GenreSelectedEVT value),
-    @required TResult isLastChapterChangedEVT(IsLastChapterChangedEVT value),
-    @required TResult isNSFWChangedEVT(IsNSFWChangedEVT value),
-    @required TResult languageSelectedEVT(LanguageSelectedEVT value),
-    @required TResult publishButtonPressedEVT(PublishButtonPressedEVT value),
-    @required
-        TResult saveOrBackButtonPressedEVT(SaveOrBackButtonPressedEVT value),
-    @required TResult seriesDraftLoadedEVT(SeriesDraftLoadedEVT value),
-    @required TResult seriesPublishedEVT(SeriesPublishedEVT value),
-    @required TResult sessionFetchedEVT(SessionFetchedEVT value),
-    @required TResult storyChangedEVT(StoryChangedEVT value),
-    @required TResult titleChangedEVT(TitleChangedEVT value),
-  }) {
-    assert(addCoverPressedEVT != null);
-    assert(chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT != null);
-    assert(chapterEditorLaunchedFromLibraryEVT != null);
-    assert(chapterEditorLaunchedFromPreviousChapterEVT != null);
-    assert(chapterEditorLaunchedFromSeriesEditorEVT != null);
-    assert(chapterDraftDeletedOrPublishedEVT != null);
-    assert(chapterPublishedEVT != null);
-    assert(copyrightsSelectedEVT != null);
-    assert(deleteDraftButtonPressedEVT != null);
-    assert(genreOptionalSelectedEVT != null);
-    assert(genreSelectedEVT != null);
-    assert(isLastChapterChangedEVT != null);
-    assert(isNSFWChangedEVT != null);
-    assert(languageSelectedEVT != null);
-    assert(publishButtonPressedEVT != null);
-    assert(saveOrBackButtonPressedEVT != null);
-    assert(seriesDraftLoadedEVT != null);
-    assert(seriesPublishedEVT != null);
-    assert(sessionFetchedEVT != null);
-    assert(storyChangedEVT != null);
-    assert(titleChangedEVT != null);
-    return publishButtonPressedEVT(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult addCoverPressedEVT(AddCoverPressedEVT value),
-    TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(
-        ChapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT value),
-    TResult chapterEditorLaunchedFromLibraryEVT(
-        ChapterEditorLaunchedFromLibraryEVT value),
-    TResult chapterEditorLaunchedFromPreviousChapterEVT(
-        ChapterEditorLaunchedFromPreviousChapterEVT value),
-    TResult chapterEditorLaunchedFromSeriesEditorEVT(
-        ChapterEditorLaunchedFromSeriesEditorEVT value),
-    TResult chapterDraftDeletedOrPublishedEVT(
-        ChapterDraftDeletedOrPublishedEVT value),
-    TResult chapterPublishedEVT(ChapterPublishedEVT value),
-    TResult copyrightsSelectedEVT(CopyrightsSelectedEVT value),
-    TResult deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
-    TResult genreOptionalSelectedEVT(GenreOptionalSelectedEVT value),
-    TResult genreSelectedEVT(GenreSelectedEVT value),
-    TResult isLastChapterChangedEVT(IsLastChapterChangedEVT value),
-    TResult isNSFWChangedEVT(IsNSFWChangedEVT value),
-    TResult languageSelectedEVT(LanguageSelectedEVT value),
-    TResult publishButtonPressedEVT(PublishButtonPressedEVT value),
-    TResult saveOrBackButtonPressedEVT(SaveOrBackButtonPressedEVT value),
-    TResult seriesDraftLoadedEVT(SeriesDraftLoadedEVT value),
-    TResult seriesPublishedEVT(SeriesPublishedEVT value),
-    TResult sessionFetchedEVT(SessionFetchedEVT value),
-    TResult storyChangedEVT(StoryChangedEVT value),
-    TResult titleChangedEVT(TitleChangedEVT value),
-    @required TResult orElse(),
-  }) {
-    assert(orElse != null);
-    if (publishButtonPressedEVT != null) {
-      return publishButtonPressedEVT(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class PublishButtonPressedEVT implements ChapterEditorDatabaseEvent {
-  const factory PublishButtonPressedEVT() = _$PublishButtonPressedEVT;
-}
-
-/// @nodoc
-abstract class $SaveOrBackButtonPressedEVTCopyWith<$Res> {
-  factory $SaveOrBackButtonPressedEVTCopyWith(SaveOrBackButtonPressedEVT value,
-          $Res Function(SaveOrBackButtonPressedEVT) then) =
-      _$SaveOrBackButtonPressedEVTCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class _$SaveOrBackButtonPressedEVTCopyWithImpl<$Res>
-    extends _$ChapterEditorDatabaseEventCopyWithImpl<$Res>
-    implements $SaveOrBackButtonPressedEVTCopyWith<$Res> {
-  _$SaveOrBackButtonPressedEVTCopyWithImpl(SaveOrBackButtonPressedEVT _value,
-      $Res Function(SaveOrBackButtonPressedEVT) _then)
-      : super(_value, (v) => _then(v as SaveOrBackButtonPressedEVT));
-
-  @override
-  SaveOrBackButtonPressedEVT get _value =>
-      super._value as SaveOrBackButtonPressedEVT;
-}
-
-/// @nodoc
-class _$SaveOrBackButtonPressedEVT
-    with DiagnosticableTreeMixin
-    implements SaveOrBackButtonPressedEVT {
-  const _$SaveOrBackButtonPressedEVT();
-
-  @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'ChapterEditorDatabaseEvent.saveOrBackButtonPressedEVT()';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty(
-          'type', 'ChapterEditorDatabaseEvent.saveOrBackButtonPressedEVT'));
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) || (other is SaveOrBackButtonPressedEVT);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult addCoverPressedEVT(),
-    @required
-        TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(),
-    @required
-        TResult chapterEditorLaunchedFromLibraryEVT(BuildContext context,
-            Chapter chapterDraft, EditorContentOrigin editorContentOrigin),
-    @required
-        TResult chapterEditorLaunchedFromPreviousChapterEVT(
-            BuildContext context,
-            Chapter previousChapter,
-            EditorContentOrigin editorContentOrigin),
-    @required
-        TResult chapterEditorLaunchedFromSeriesEditorEVT(BuildContext context,
-            EditorContentOrigin editorContentOrigin, Series seriesDraft),
-    @required TResult chapterDraftDeletedOrPublishedEVT(),
-    @required TResult chapterPublishedEVT(),
-    @required TResult copyrightsSelectedEVT(String copyrights),
-    @required TResult deleteDraftButtonPressedEVT(),
-    @required TResult genreOptionalSelectedEVT(String genreOptional),
-    @required TResult genreSelectedEVT(String genre),
-    @required TResult isLastChapterChangedEVT(bool isLastChapter),
-    @required TResult isNSFWChangedEVT(bool isNSFW),
-    @required TResult languageSelectedEVT(String language),
-    @required TResult publishButtonPressedEVT(),
-    @required TResult saveOrBackButtonPressedEVT(),
-    @required TResult seriesDraftLoadedEVT(Series seriesDraft),
-    @required TResult seriesPublishedEVT(String seriesDraftUID),
-    @required TResult sessionFetchedEVT(),
-    @required TResult storyChangedEVT(String story),
-    @required TResult titleChangedEVT(String title),
-  }) {
-    assert(addCoverPressedEVT != null);
-    assert(chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT != null);
-    assert(chapterEditorLaunchedFromLibraryEVT != null);
-    assert(chapterEditorLaunchedFromPreviousChapterEVT != null);
-    assert(chapterEditorLaunchedFromSeriesEditorEVT != null);
-    assert(chapterDraftDeletedOrPublishedEVT != null);
-    assert(chapterPublishedEVT != null);
-    assert(copyrightsSelectedEVT != null);
-    assert(deleteDraftButtonPressedEVT != null);
-    assert(genreOptionalSelectedEVT != null);
-    assert(genreSelectedEVT != null);
-    assert(isLastChapterChangedEVT != null);
-    assert(isNSFWChangedEVT != null);
-    assert(languageSelectedEVT != null);
-    assert(publishButtonPressedEVT != null);
-    assert(saveOrBackButtonPressedEVT != null);
-    assert(seriesDraftLoadedEVT != null);
-    assert(seriesPublishedEVT != null);
-    assert(sessionFetchedEVT != null);
-    assert(storyChangedEVT != null);
-    assert(titleChangedEVT != null);
-    return saveOrBackButtonPressedEVT();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult addCoverPressedEVT(),
-    TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(),
-    TResult chapterEditorLaunchedFromLibraryEVT(BuildContext context,
-        Chapter chapterDraft, EditorContentOrigin editorContentOrigin),
-    TResult chapterEditorLaunchedFromPreviousChapterEVT(BuildContext context,
-        Chapter previousChapter, EditorContentOrigin editorContentOrigin),
-    TResult chapterEditorLaunchedFromSeriesEditorEVT(BuildContext context,
-        EditorContentOrigin editorContentOrigin, Series seriesDraft),
-    TResult chapterDraftDeletedOrPublishedEVT(),
-    TResult chapterPublishedEVT(),
-    TResult copyrightsSelectedEVT(String copyrights),
-    TResult deleteDraftButtonPressedEVT(),
-    TResult genreOptionalSelectedEVT(String genreOptional),
-    TResult genreSelectedEVT(String genre),
-    TResult isLastChapterChangedEVT(bool isLastChapter),
-    TResult isNSFWChangedEVT(bool isNSFW),
-    TResult languageSelectedEVT(String language),
-    TResult publishButtonPressedEVT(),
-    TResult saveOrBackButtonPressedEVT(),
-    TResult seriesDraftLoadedEVT(Series seriesDraft),
-    TResult seriesPublishedEVT(String seriesDraftUID),
-    TResult sessionFetchedEVT(),
-    TResult storyChangedEVT(String story),
-    TResult titleChangedEVT(String title),
-    @required TResult orElse(),
-  }) {
-    assert(orElse != null);
-    if (saveOrBackButtonPressedEVT != null) {
-      return saveOrBackButtonPressedEVT();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult addCoverPressedEVT(AddCoverPressedEVT value),
-    @required
-        TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(
-            ChapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT value),
-    @required
-        TResult chapterEditorLaunchedFromLibraryEVT(
-            ChapterEditorLaunchedFromLibraryEVT value),
-    @required
-        TResult chapterEditorLaunchedFromPreviousChapterEVT(
-            ChapterEditorLaunchedFromPreviousChapterEVT value),
-    @required
-        TResult chapterEditorLaunchedFromSeriesEditorEVT(
-            ChapterEditorLaunchedFromSeriesEditorEVT value),
-    @required
-        TResult chapterDraftDeletedOrPublishedEVT(
-            ChapterDraftDeletedOrPublishedEVT value),
-    @required TResult chapterPublishedEVT(ChapterPublishedEVT value),
-    @required TResult copyrightsSelectedEVT(CopyrightsSelectedEVT value),
-    @required
-        TResult deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
-    @required TResult genreOptionalSelectedEVT(GenreOptionalSelectedEVT value),
-    @required TResult genreSelectedEVT(GenreSelectedEVT value),
-    @required TResult isLastChapterChangedEVT(IsLastChapterChangedEVT value),
-    @required TResult isNSFWChangedEVT(IsNSFWChangedEVT value),
-    @required TResult languageSelectedEVT(LanguageSelectedEVT value),
-    @required TResult publishButtonPressedEVT(PublishButtonPressedEVT value),
-    @required
-        TResult saveOrBackButtonPressedEVT(SaveOrBackButtonPressedEVT value),
-    @required TResult seriesDraftLoadedEVT(SeriesDraftLoadedEVT value),
-    @required TResult seriesPublishedEVT(SeriesPublishedEVT value),
-    @required TResult sessionFetchedEVT(SessionFetchedEVT value),
-    @required TResult storyChangedEVT(StoryChangedEVT value),
-    @required TResult titleChangedEVT(TitleChangedEVT value),
-  }) {
-    assert(addCoverPressedEVT != null);
-    assert(chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT != null);
-    assert(chapterEditorLaunchedFromLibraryEVT != null);
-    assert(chapterEditorLaunchedFromPreviousChapterEVT != null);
-    assert(chapterEditorLaunchedFromSeriesEditorEVT != null);
-    assert(chapterDraftDeletedOrPublishedEVT != null);
-    assert(chapterPublishedEVT != null);
-    assert(copyrightsSelectedEVT != null);
-    assert(deleteDraftButtonPressedEVT != null);
-    assert(genreOptionalSelectedEVT != null);
-    assert(genreSelectedEVT != null);
-    assert(isLastChapterChangedEVT != null);
-    assert(isNSFWChangedEVT != null);
-    assert(languageSelectedEVT != null);
-    assert(publishButtonPressedEVT != null);
-    assert(saveOrBackButtonPressedEVT != null);
-    assert(seriesDraftLoadedEVT != null);
-    assert(seriesPublishedEVT != null);
-    assert(sessionFetchedEVT != null);
-    assert(storyChangedEVT != null);
-    assert(titleChangedEVT != null);
-    return saveOrBackButtonPressedEVT(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult addCoverPressedEVT(AddCoverPressedEVT value),
-    TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(
-        ChapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT value),
-    TResult chapterEditorLaunchedFromLibraryEVT(
-        ChapterEditorLaunchedFromLibraryEVT value),
-    TResult chapterEditorLaunchedFromPreviousChapterEVT(
-        ChapterEditorLaunchedFromPreviousChapterEVT value),
-    TResult chapterEditorLaunchedFromSeriesEditorEVT(
-        ChapterEditorLaunchedFromSeriesEditorEVT value),
-    TResult chapterDraftDeletedOrPublishedEVT(
-        ChapterDraftDeletedOrPublishedEVT value),
-    TResult chapterPublishedEVT(ChapterPublishedEVT value),
-    TResult copyrightsSelectedEVT(CopyrightsSelectedEVT value),
-    TResult deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
-    TResult genreOptionalSelectedEVT(GenreOptionalSelectedEVT value),
-    TResult genreSelectedEVT(GenreSelectedEVT value),
-    TResult isLastChapterChangedEVT(IsLastChapterChangedEVT value),
-    TResult isNSFWChangedEVT(IsNSFWChangedEVT value),
-    TResult languageSelectedEVT(LanguageSelectedEVT value),
-    TResult publishButtonPressedEVT(PublishButtonPressedEVT value),
-    TResult saveOrBackButtonPressedEVT(SaveOrBackButtonPressedEVT value),
-    TResult seriesDraftLoadedEVT(SeriesDraftLoadedEVT value),
-    TResult seriesPublishedEVT(SeriesPublishedEVT value),
-    TResult sessionFetchedEVT(SessionFetchedEVT value),
-    TResult storyChangedEVT(StoryChangedEVT value),
-    TResult titleChangedEVT(TitleChangedEVT value),
-    @required TResult orElse(),
-  }) {
-    assert(orElse != null);
-    if (saveOrBackButtonPressedEVT != null) {
-      return saveOrBackButtonPressedEVT(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class SaveOrBackButtonPressedEVT
-    implements ChapterEditorDatabaseEvent {
-  const factory SaveOrBackButtonPressedEVT() = _$SaveOrBackButtonPressedEVT;
-}
-
-/// @nodoc
-abstract class $SeriesDraftLoadedEVTCopyWith<$Res> {
-  factory $SeriesDraftLoadedEVTCopyWith(SeriesDraftLoadedEVT value,
-          $Res Function(SeriesDraftLoadedEVT) then) =
-      _$SeriesDraftLoadedEVTCopyWithImpl<$Res>;
+abstract class $SeriesDraftLoadedEventCopyWith<$Res> {
+  factory $SeriesDraftLoadedEventCopyWith(SeriesDraftLoadedEvent value,
+          $Res Function(SeriesDraftLoadedEvent) then) =
+      _$SeriesDraftLoadedEventCopyWithImpl<$Res>;
   $Res call({Series seriesDraft});
 }
 
 /// @nodoc
-class _$SeriesDraftLoadedEVTCopyWithImpl<$Res>
+class _$SeriesDraftLoadedEventCopyWithImpl<$Res>
     extends _$ChapterEditorDatabaseEventCopyWithImpl<$Res>
-    implements $SeriesDraftLoadedEVTCopyWith<$Res> {
-  _$SeriesDraftLoadedEVTCopyWithImpl(
-      SeriesDraftLoadedEVT _value, $Res Function(SeriesDraftLoadedEVT) _then)
-      : super(_value, (v) => _then(v as SeriesDraftLoadedEVT));
+    implements $SeriesDraftLoadedEventCopyWith<$Res> {
+  _$SeriesDraftLoadedEventCopyWithImpl(SeriesDraftLoadedEvent _value,
+      $Res Function(SeriesDraftLoadedEvent) _then)
+      : super(_value, (v) => _then(v as SeriesDraftLoadedEvent));
 
   @override
-  SeriesDraftLoadedEVT get _value => super._value as SeriesDraftLoadedEVT;
+  SeriesDraftLoadedEvent get _value => super._value as SeriesDraftLoadedEvent;
 
   @override
   $Res call({
     Object seriesDraft = freezed,
   }) {
-    return _then(SeriesDraftLoadedEVT(
+    return _then(SeriesDraftLoadedEvent(
       seriesDraft == freezed ? _value.seriesDraft : seriesDraft as Series,
     ));
   }
 }
 
 /// @nodoc
-class _$SeriesDraftLoadedEVT
+class _$SeriesDraftLoadedEvent
     with DiagnosticableTreeMixin
-    implements SeriesDraftLoadedEVT {
-  const _$SeriesDraftLoadedEVT(this.seriesDraft) : assert(seriesDraft != null);
+    implements SeriesDraftLoadedEvent {
+  const _$SeriesDraftLoadedEvent(this.seriesDraft)
+      : assert(seriesDraft != null);
 
   @override
   final Series seriesDraft;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'ChapterEditorDatabaseEvent.seriesDraftLoadedEVT(seriesDraft: $seriesDraft)';
+    return 'ChapterEditorDatabaseEvent.seriesDraftLoadedEvent(seriesDraft: $seriesDraft)';
   }
 
   @override
@@ -4683,14 +4641,14 @@ class _$SeriesDraftLoadedEVT
     super.debugFillProperties(properties);
     properties
       ..add(DiagnosticsProperty(
-          'type', 'ChapterEditorDatabaseEvent.seriesDraftLoadedEVT'))
+          'type', 'ChapterEditorDatabaseEvent.seriesDraftLoadedEvent'))
       ..add(DiagnosticsProperty('seriesDraft', seriesDraft));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is SeriesDraftLoadedEVT &&
+        (other is SeriesDraftLoadedEvent &&
             (identical(other.seriesDraft, seriesDraft) ||
                 const DeepCollectionEquality()
                     .equals(other.seriesDraft, seriesDraft)));
@@ -4702,100 +4660,97 @@ class _$SeriesDraftLoadedEVT
 
   @JsonKey(ignore: true)
   @override
-  $SeriesDraftLoadedEVTCopyWith<SeriesDraftLoadedEVT> get copyWith =>
-      _$SeriesDraftLoadedEVTCopyWithImpl<SeriesDraftLoadedEVT>(
+  $SeriesDraftLoadedEventCopyWith<SeriesDraftLoadedEvent> get copyWith =>
+      _$SeriesDraftLoadedEventCopyWithImpl<SeriesDraftLoadedEvent>(
           this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
-    @required TResult addCoverPressedEVT(),
+    @required TResult addCoverPressedEvent(),
+    @required TResult chapterDraftDeletedOrPublishedEvent(),
+    @required TResult chapterPublishedEvent(),
+    @required TResult deleteDraftButtonPressedEvent(),
+    @required TResult genreOptionalSelectedEvent(String genreOptional),
+    @required TResult genreSelectedEvent(String genre),
+    @required TResult initializedWithPreviousChapterOrSeriesDraftEvent(),
+    @required TResult isLastChapterChangedEvent(bool isLastChapter),
+    @required TResult isNSFWChangedEvent(bool isNSFW),
+    @required TResult languageSelectedEvent(String language),
     @required
-        TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(),
-    @required
-        TResult chapterEditorLaunchedFromLibraryEVT(BuildContext context,
+        TResult launchedFromLibraryEvent(BuildContext context,
             Chapter chapterDraft, EditorContentOrigin editorContentOrigin),
     @required
-        TResult chapterEditorLaunchedFromPreviousChapterEVT(
-            BuildContext context,
-            Chapter previousChapter,
-            EditorContentOrigin editorContentOrigin),
+        TResult launchedFromPreviousChapterEvent(BuildContext context,
+            Chapter previousChapter, EditorContentOrigin editorContentOrigin),
     @required
-        TResult chapterEditorLaunchedFromSeriesEditorEVT(BuildContext context,
+        TResult launchedFromSeriesEditorEvent(BuildContext context,
             EditorContentOrigin editorContentOrigin, Series seriesDraft),
-    @required TResult chapterDraftDeletedOrPublishedEVT(),
-    @required TResult chapterPublishedEVT(),
-    @required TResult copyrightsSelectedEVT(String copyrights),
-    @required TResult deleteDraftButtonPressedEVT(),
-    @required TResult genreOptionalSelectedEVT(String genreOptional),
-    @required TResult genreSelectedEVT(String genre),
-    @required TResult isLastChapterChangedEVT(bool isLastChapter),
-    @required TResult isNSFWChangedEVT(bool isNSFW),
-    @required TResult languageSelectedEVT(String language),
-    @required TResult publishButtonPressedEVT(),
-    @required TResult saveOrBackButtonPressedEVT(),
-    @required TResult seriesDraftLoadedEVT(Series seriesDraft),
-    @required TResult seriesPublishedEVT(String seriesDraftUID),
-    @required TResult sessionFetchedEVT(),
-    @required TResult storyChangedEVT(String story),
-    @required TResult titleChangedEVT(String title),
+    @required TResult licenceSelectedEvent(String licence),
+    @required TResult publishButtonPressedEvent(),
+    @required TResult saveOrBackButtonPressedEvent(),
+    @required TResult seriesDraftLoadedEvent(Series seriesDraft),
+    @required TResult seriesPublishedEvent(String seriesDraftUID),
+    @required TResult sessionFetchedEvent(),
+    @required TResult storyChangedEvent(String story),
+    @required TResult titleChangedEvent(String title),
   }) {
-    assert(addCoverPressedEVT != null);
-    assert(chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT != null);
-    assert(chapterEditorLaunchedFromLibraryEVT != null);
-    assert(chapterEditorLaunchedFromPreviousChapterEVT != null);
-    assert(chapterEditorLaunchedFromSeriesEditorEVT != null);
-    assert(chapterDraftDeletedOrPublishedEVT != null);
-    assert(chapterPublishedEVT != null);
-    assert(copyrightsSelectedEVT != null);
-    assert(deleteDraftButtonPressedEVT != null);
-    assert(genreOptionalSelectedEVT != null);
-    assert(genreSelectedEVT != null);
-    assert(isLastChapterChangedEVT != null);
-    assert(isNSFWChangedEVT != null);
-    assert(languageSelectedEVT != null);
-    assert(publishButtonPressedEVT != null);
-    assert(saveOrBackButtonPressedEVT != null);
-    assert(seriesDraftLoadedEVT != null);
-    assert(seriesPublishedEVT != null);
-    assert(sessionFetchedEVT != null);
-    assert(storyChangedEVT != null);
-    assert(titleChangedEVT != null);
-    return seriesDraftLoadedEVT(seriesDraft);
+    assert(addCoverPressedEvent != null);
+    assert(chapterDraftDeletedOrPublishedEvent != null);
+    assert(chapterPublishedEvent != null);
+    assert(deleteDraftButtonPressedEvent != null);
+    assert(genreOptionalSelectedEvent != null);
+    assert(genreSelectedEvent != null);
+    assert(initializedWithPreviousChapterOrSeriesDraftEvent != null);
+    assert(isLastChapterChangedEvent != null);
+    assert(isNSFWChangedEvent != null);
+    assert(languageSelectedEvent != null);
+    assert(launchedFromLibraryEvent != null);
+    assert(launchedFromPreviousChapterEvent != null);
+    assert(launchedFromSeriesEditorEvent != null);
+    assert(licenceSelectedEvent != null);
+    assert(publishButtonPressedEvent != null);
+    assert(saveOrBackButtonPressedEvent != null);
+    assert(seriesDraftLoadedEvent != null);
+    assert(seriesPublishedEvent != null);
+    assert(sessionFetchedEvent != null);
+    assert(storyChangedEvent != null);
+    assert(titleChangedEvent != null);
+    return seriesDraftLoadedEvent(seriesDraft);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
-    TResult addCoverPressedEVT(),
-    TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(),
-    TResult chapterEditorLaunchedFromLibraryEVT(BuildContext context,
-        Chapter chapterDraft, EditorContentOrigin editorContentOrigin),
-    TResult chapterEditorLaunchedFromPreviousChapterEVT(BuildContext context,
+    TResult addCoverPressedEvent(),
+    TResult chapterDraftDeletedOrPublishedEvent(),
+    TResult chapterPublishedEvent(),
+    TResult deleteDraftButtonPressedEvent(),
+    TResult genreOptionalSelectedEvent(String genreOptional),
+    TResult genreSelectedEvent(String genre),
+    TResult initializedWithPreviousChapterOrSeriesDraftEvent(),
+    TResult isLastChapterChangedEvent(bool isLastChapter),
+    TResult isNSFWChangedEvent(bool isNSFW),
+    TResult languageSelectedEvent(String language),
+    TResult launchedFromLibraryEvent(BuildContext context, Chapter chapterDraft,
+        EditorContentOrigin editorContentOrigin),
+    TResult launchedFromPreviousChapterEvent(BuildContext context,
         Chapter previousChapter, EditorContentOrigin editorContentOrigin),
-    TResult chapterEditorLaunchedFromSeriesEditorEVT(BuildContext context,
+    TResult launchedFromSeriesEditorEvent(BuildContext context,
         EditorContentOrigin editorContentOrigin, Series seriesDraft),
-    TResult chapterDraftDeletedOrPublishedEVT(),
-    TResult chapterPublishedEVT(),
-    TResult copyrightsSelectedEVT(String copyrights),
-    TResult deleteDraftButtonPressedEVT(),
-    TResult genreOptionalSelectedEVT(String genreOptional),
-    TResult genreSelectedEVT(String genre),
-    TResult isLastChapterChangedEVT(bool isLastChapter),
-    TResult isNSFWChangedEVT(bool isNSFW),
-    TResult languageSelectedEVT(String language),
-    TResult publishButtonPressedEVT(),
-    TResult saveOrBackButtonPressedEVT(),
-    TResult seriesDraftLoadedEVT(Series seriesDraft),
-    TResult seriesPublishedEVT(String seriesDraftUID),
-    TResult sessionFetchedEVT(),
-    TResult storyChangedEVT(String story),
-    TResult titleChangedEVT(String title),
+    TResult licenceSelectedEvent(String licence),
+    TResult publishButtonPressedEvent(),
+    TResult saveOrBackButtonPressedEvent(),
+    TResult seriesDraftLoadedEvent(Series seriesDraft),
+    TResult seriesPublishedEvent(String seriesDraftUID),
+    TResult sessionFetchedEvent(),
+    TResult storyChangedEvent(String story),
+    TResult titleChangedEvent(String title),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (seriesDraftLoadedEVT != null) {
-      return seriesDraftLoadedEVT(seriesDraft);
+    if (seriesDraftLoadedEvent != null) {
+      return seriesDraftLoadedEvent(seriesDraft);
     }
     return orElse();
   }
@@ -4803,136 +4758,137 @@ class _$SeriesDraftLoadedEVT
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object>({
-    @required TResult addCoverPressedEVT(AddCoverPressedEVT value),
+    @required TResult addCoverPressedEvent(AddCoverPressedEvent value),
     @required
-        TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(
-            ChapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT value),
+        TResult chapterDraftDeletedOrPublishedEvent(
+            ChapterDraftDeletedOrPublishedEvent value),
+    @required TResult chapterPublishedEvent(ChapterPublishedEvent value),
     @required
-        TResult chapterEditorLaunchedFromLibraryEVT(
-            ChapterEditorLaunchedFromLibraryEVT value),
+        TResult deleteDraftButtonPressedEvent(
+            DeleteDraftButtonPressedEvent value),
     @required
-        TResult chapterEditorLaunchedFromPreviousChapterEVT(
-            ChapterEditorLaunchedFromPreviousChapterEVT value),
+        TResult genreOptionalSelectedEvent(GenreOptionalSelectedEvent value),
+    @required TResult genreSelectedEvent(GenreSelectedEvent value),
     @required
-        TResult chapterEditorLaunchedFromSeriesEditorEVT(
-            ChapterEditorLaunchedFromSeriesEditorEVT value),
+        TResult initializedWithPreviousChapterOrSeriesDraftEvent(
+            InitializedWithPreviousChapterOrSeriesDraftEvent value),
     @required
-        TResult chapterDraftDeletedOrPublishedEVT(
-            ChapterDraftDeletedOrPublishedEVT value),
-    @required TResult chapterPublishedEVT(ChapterPublishedEVT value),
-    @required TResult copyrightsSelectedEVT(CopyrightsSelectedEVT value),
+        TResult isLastChapterChangedEvent(IsLastChapterChangedEvent value),
+    @required TResult isNSFWChangedEvent(IsNSFWChangedEvent value),
+    @required TResult languageSelectedEvent(LanguageSelectedEvent value),
+    @required TResult launchedFromLibraryEvent(LaunchedFromLibraryEvent value),
     @required
-        TResult deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
-    @required TResult genreOptionalSelectedEVT(GenreOptionalSelectedEVT value),
-    @required TResult genreSelectedEVT(GenreSelectedEVT value),
-    @required TResult isLastChapterChangedEVT(IsLastChapterChangedEVT value),
-    @required TResult isNSFWChangedEVT(IsNSFWChangedEVT value),
-    @required TResult languageSelectedEVT(LanguageSelectedEVT value),
-    @required TResult publishButtonPressedEVT(PublishButtonPressedEVT value),
+        TResult launchedFromPreviousChapterEvent(
+            LaunchedFromPreviousChapterEvent value),
     @required
-        TResult saveOrBackButtonPressedEVT(SaveOrBackButtonPressedEVT value),
-    @required TResult seriesDraftLoadedEVT(SeriesDraftLoadedEVT value),
-    @required TResult seriesPublishedEVT(SeriesPublishedEVT value),
-    @required TResult sessionFetchedEVT(SessionFetchedEVT value),
-    @required TResult storyChangedEVT(StoryChangedEVT value),
-    @required TResult titleChangedEVT(TitleChangedEVT value),
+        TResult launchedFromSeriesEditorEvent(
+            LaunchedFromSeriesEditorEvent value),
+    @required TResult licenceSelectedEvent(LicenceSelectedEvent value),
+    @required
+        TResult publishButtonPressedEvent(PublishButtonPressedEvent value),
+    @required
+        TResult saveOrBackButtonPressedEvent(
+            SaveOrBackButtonPressedEvent value),
+    @required TResult seriesDraftLoadedEvent(SeriesDraftLoadedEvent value),
+    @required TResult seriesPublishedEvent(SeriesPublishedEvent value),
+    @required TResult sessionFetchedEvent(SessionFetchedEvent value),
+    @required TResult storyChangedEvent(StoryChangedEvent value),
+    @required TResult titleChangedEvent(TitleChangedEvent value),
   }) {
-    assert(addCoverPressedEVT != null);
-    assert(chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT != null);
-    assert(chapterEditorLaunchedFromLibraryEVT != null);
-    assert(chapterEditorLaunchedFromPreviousChapterEVT != null);
-    assert(chapterEditorLaunchedFromSeriesEditorEVT != null);
-    assert(chapterDraftDeletedOrPublishedEVT != null);
-    assert(chapterPublishedEVT != null);
-    assert(copyrightsSelectedEVT != null);
-    assert(deleteDraftButtonPressedEVT != null);
-    assert(genreOptionalSelectedEVT != null);
-    assert(genreSelectedEVT != null);
-    assert(isLastChapterChangedEVT != null);
-    assert(isNSFWChangedEVT != null);
-    assert(languageSelectedEVT != null);
-    assert(publishButtonPressedEVT != null);
-    assert(saveOrBackButtonPressedEVT != null);
-    assert(seriesDraftLoadedEVT != null);
-    assert(seriesPublishedEVT != null);
-    assert(sessionFetchedEVT != null);
-    assert(storyChangedEVT != null);
-    assert(titleChangedEVT != null);
-    return seriesDraftLoadedEVT(this);
+    assert(addCoverPressedEvent != null);
+    assert(chapterDraftDeletedOrPublishedEvent != null);
+    assert(chapterPublishedEvent != null);
+    assert(deleteDraftButtonPressedEvent != null);
+    assert(genreOptionalSelectedEvent != null);
+    assert(genreSelectedEvent != null);
+    assert(initializedWithPreviousChapterOrSeriesDraftEvent != null);
+    assert(isLastChapterChangedEvent != null);
+    assert(isNSFWChangedEvent != null);
+    assert(languageSelectedEvent != null);
+    assert(launchedFromLibraryEvent != null);
+    assert(launchedFromPreviousChapterEvent != null);
+    assert(launchedFromSeriesEditorEvent != null);
+    assert(licenceSelectedEvent != null);
+    assert(publishButtonPressedEvent != null);
+    assert(saveOrBackButtonPressedEvent != null);
+    assert(seriesDraftLoadedEvent != null);
+    assert(seriesPublishedEvent != null);
+    assert(sessionFetchedEvent != null);
+    assert(storyChangedEvent != null);
+    assert(titleChangedEvent != null);
+    return seriesDraftLoadedEvent(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
-    TResult addCoverPressedEVT(AddCoverPressedEVT value),
-    TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(
-        ChapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT value),
-    TResult chapterEditorLaunchedFromLibraryEVT(
-        ChapterEditorLaunchedFromLibraryEVT value),
-    TResult chapterEditorLaunchedFromPreviousChapterEVT(
-        ChapterEditorLaunchedFromPreviousChapterEVT value),
-    TResult chapterEditorLaunchedFromSeriesEditorEVT(
-        ChapterEditorLaunchedFromSeriesEditorEVT value),
-    TResult chapterDraftDeletedOrPublishedEVT(
-        ChapterDraftDeletedOrPublishedEVT value),
-    TResult chapterPublishedEVT(ChapterPublishedEVT value),
-    TResult copyrightsSelectedEVT(CopyrightsSelectedEVT value),
-    TResult deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
-    TResult genreOptionalSelectedEVT(GenreOptionalSelectedEVT value),
-    TResult genreSelectedEVT(GenreSelectedEVT value),
-    TResult isLastChapterChangedEVT(IsLastChapterChangedEVT value),
-    TResult isNSFWChangedEVT(IsNSFWChangedEVT value),
-    TResult languageSelectedEVT(LanguageSelectedEVT value),
-    TResult publishButtonPressedEVT(PublishButtonPressedEVT value),
-    TResult saveOrBackButtonPressedEVT(SaveOrBackButtonPressedEVT value),
-    TResult seriesDraftLoadedEVT(SeriesDraftLoadedEVT value),
-    TResult seriesPublishedEVT(SeriesPublishedEVT value),
-    TResult sessionFetchedEVT(SessionFetchedEVT value),
-    TResult storyChangedEVT(StoryChangedEVT value),
-    TResult titleChangedEVT(TitleChangedEVT value),
+    TResult addCoverPressedEvent(AddCoverPressedEvent value),
+    TResult chapterDraftDeletedOrPublishedEvent(
+        ChapterDraftDeletedOrPublishedEvent value),
+    TResult chapterPublishedEvent(ChapterPublishedEvent value),
+    TResult deleteDraftButtonPressedEvent(DeleteDraftButtonPressedEvent value),
+    TResult genreOptionalSelectedEvent(GenreOptionalSelectedEvent value),
+    TResult genreSelectedEvent(GenreSelectedEvent value),
+    TResult initializedWithPreviousChapterOrSeriesDraftEvent(
+        InitializedWithPreviousChapterOrSeriesDraftEvent value),
+    TResult isLastChapterChangedEvent(IsLastChapterChangedEvent value),
+    TResult isNSFWChangedEvent(IsNSFWChangedEvent value),
+    TResult languageSelectedEvent(LanguageSelectedEvent value),
+    TResult launchedFromLibraryEvent(LaunchedFromLibraryEvent value),
+    TResult launchedFromPreviousChapterEvent(
+        LaunchedFromPreviousChapterEvent value),
+    TResult launchedFromSeriesEditorEvent(LaunchedFromSeriesEditorEvent value),
+    TResult licenceSelectedEvent(LicenceSelectedEvent value),
+    TResult publishButtonPressedEvent(PublishButtonPressedEvent value),
+    TResult saveOrBackButtonPressedEvent(SaveOrBackButtonPressedEvent value),
+    TResult seriesDraftLoadedEvent(SeriesDraftLoadedEvent value),
+    TResult seriesPublishedEvent(SeriesPublishedEvent value),
+    TResult sessionFetchedEvent(SessionFetchedEvent value),
+    TResult storyChangedEvent(StoryChangedEvent value),
+    TResult titleChangedEvent(TitleChangedEvent value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (seriesDraftLoadedEVT != null) {
-      return seriesDraftLoadedEVT(this);
+    if (seriesDraftLoadedEvent != null) {
+      return seriesDraftLoadedEvent(this);
     }
     return orElse();
   }
 }
 
-abstract class SeriesDraftLoadedEVT implements ChapterEditorDatabaseEvent {
-  const factory SeriesDraftLoadedEVT(Series seriesDraft) =
-      _$SeriesDraftLoadedEVT;
+abstract class SeriesDraftLoadedEvent implements ChapterEditorDatabaseEvent {
+  const factory SeriesDraftLoadedEvent(Series seriesDraft) =
+      _$SeriesDraftLoadedEvent;
 
   Series get seriesDraft;
   @JsonKey(ignore: true)
-  $SeriesDraftLoadedEVTCopyWith<SeriesDraftLoadedEVT> get copyWith;
+  $SeriesDraftLoadedEventCopyWith<SeriesDraftLoadedEvent> get copyWith;
 }
 
 /// @nodoc
-abstract class $SeriesPublishedEVTCopyWith<$Res> {
-  factory $SeriesPublishedEVTCopyWith(
-          SeriesPublishedEVT value, $Res Function(SeriesPublishedEVT) then) =
-      _$SeriesPublishedEVTCopyWithImpl<$Res>;
+abstract class $SeriesPublishedEventCopyWith<$Res> {
+  factory $SeriesPublishedEventCopyWith(SeriesPublishedEvent value,
+          $Res Function(SeriesPublishedEvent) then) =
+      _$SeriesPublishedEventCopyWithImpl<$Res>;
   $Res call({String seriesDraftUID});
 }
 
 /// @nodoc
-class _$SeriesPublishedEVTCopyWithImpl<$Res>
+class _$SeriesPublishedEventCopyWithImpl<$Res>
     extends _$ChapterEditorDatabaseEventCopyWithImpl<$Res>
-    implements $SeriesPublishedEVTCopyWith<$Res> {
-  _$SeriesPublishedEVTCopyWithImpl(
-      SeriesPublishedEVT _value, $Res Function(SeriesPublishedEVT) _then)
-      : super(_value, (v) => _then(v as SeriesPublishedEVT));
+    implements $SeriesPublishedEventCopyWith<$Res> {
+  _$SeriesPublishedEventCopyWithImpl(
+      SeriesPublishedEvent _value, $Res Function(SeriesPublishedEvent) _then)
+      : super(_value, (v) => _then(v as SeriesPublishedEvent));
 
   @override
-  SeriesPublishedEVT get _value => super._value as SeriesPublishedEVT;
+  SeriesPublishedEvent get _value => super._value as SeriesPublishedEvent;
 
   @override
   $Res call({
     Object seriesDraftUID = freezed,
   }) {
-    return _then(SeriesPublishedEVT(
+    return _then(SeriesPublishedEvent(
       seriesDraftUID == freezed
           ? _value.seriesDraftUID
           : seriesDraftUID as String,
@@ -4941,10 +4897,10 @@ class _$SeriesPublishedEVTCopyWithImpl<$Res>
 }
 
 /// @nodoc
-class _$SeriesPublishedEVT
+class _$SeriesPublishedEvent
     with DiagnosticableTreeMixin
-    implements SeriesPublishedEVT {
-  const _$SeriesPublishedEVT(this.seriesDraftUID)
+    implements SeriesPublishedEvent {
+  const _$SeriesPublishedEvent(this.seriesDraftUID)
       : assert(seriesDraftUID != null);
 
   @override
@@ -4952,7 +4908,7 @@ class _$SeriesPublishedEVT
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'ChapterEditorDatabaseEvent.seriesPublishedEVT(seriesDraftUID: $seriesDraftUID)';
+    return 'ChapterEditorDatabaseEvent.seriesPublishedEvent(seriesDraftUID: $seriesDraftUID)';
   }
 
   @override
@@ -4960,14 +4916,14 @@ class _$SeriesPublishedEVT
     super.debugFillProperties(properties);
     properties
       ..add(DiagnosticsProperty(
-          'type', 'ChapterEditorDatabaseEvent.seriesPublishedEVT'))
+          'type', 'ChapterEditorDatabaseEvent.seriesPublishedEvent'))
       ..add(DiagnosticsProperty('seriesDraftUID', seriesDraftUID));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is SeriesPublishedEVT &&
+        (other is SeriesPublishedEvent &&
             (identical(other.seriesDraftUID, seriesDraftUID) ||
                 const DeepCollectionEquality()
                     .equals(other.seriesDraftUID, seriesDraftUID)));
@@ -4980,99 +4936,97 @@ class _$SeriesPublishedEVT
 
   @JsonKey(ignore: true)
   @override
-  $SeriesPublishedEVTCopyWith<SeriesPublishedEVT> get copyWith =>
-      _$SeriesPublishedEVTCopyWithImpl<SeriesPublishedEVT>(this, _$identity);
+  $SeriesPublishedEventCopyWith<SeriesPublishedEvent> get copyWith =>
+      _$SeriesPublishedEventCopyWithImpl<SeriesPublishedEvent>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
-    @required TResult addCoverPressedEVT(),
+    @required TResult addCoverPressedEvent(),
+    @required TResult chapterDraftDeletedOrPublishedEvent(),
+    @required TResult chapterPublishedEvent(),
+    @required TResult deleteDraftButtonPressedEvent(),
+    @required TResult genreOptionalSelectedEvent(String genreOptional),
+    @required TResult genreSelectedEvent(String genre),
+    @required TResult initializedWithPreviousChapterOrSeriesDraftEvent(),
+    @required TResult isLastChapterChangedEvent(bool isLastChapter),
+    @required TResult isNSFWChangedEvent(bool isNSFW),
+    @required TResult languageSelectedEvent(String language),
     @required
-        TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(),
-    @required
-        TResult chapterEditorLaunchedFromLibraryEVT(BuildContext context,
+        TResult launchedFromLibraryEvent(BuildContext context,
             Chapter chapterDraft, EditorContentOrigin editorContentOrigin),
     @required
-        TResult chapterEditorLaunchedFromPreviousChapterEVT(
-            BuildContext context,
-            Chapter previousChapter,
-            EditorContentOrigin editorContentOrigin),
+        TResult launchedFromPreviousChapterEvent(BuildContext context,
+            Chapter previousChapter, EditorContentOrigin editorContentOrigin),
     @required
-        TResult chapterEditorLaunchedFromSeriesEditorEVT(BuildContext context,
+        TResult launchedFromSeriesEditorEvent(BuildContext context,
             EditorContentOrigin editorContentOrigin, Series seriesDraft),
-    @required TResult chapterDraftDeletedOrPublishedEVT(),
-    @required TResult chapterPublishedEVT(),
-    @required TResult copyrightsSelectedEVT(String copyrights),
-    @required TResult deleteDraftButtonPressedEVT(),
-    @required TResult genreOptionalSelectedEVT(String genreOptional),
-    @required TResult genreSelectedEVT(String genre),
-    @required TResult isLastChapterChangedEVT(bool isLastChapter),
-    @required TResult isNSFWChangedEVT(bool isNSFW),
-    @required TResult languageSelectedEVT(String language),
-    @required TResult publishButtonPressedEVT(),
-    @required TResult saveOrBackButtonPressedEVT(),
-    @required TResult seriesDraftLoadedEVT(Series seriesDraft),
-    @required TResult seriesPublishedEVT(String seriesDraftUID),
-    @required TResult sessionFetchedEVT(),
-    @required TResult storyChangedEVT(String story),
-    @required TResult titleChangedEVT(String title),
+    @required TResult licenceSelectedEvent(String licence),
+    @required TResult publishButtonPressedEvent(),
+    @required TResult saveOrBackButtonPressedEvent(),
+    @required TResult seriesDraftLoadedEvent(Series seriesDraft),
+    @required TResult seriesPublishedEvent(String seriesDraftUID),
+    @required TResult sessionFetchedEvent(),
+    @required TResult storyChangedEvent(String story),
+    @required TResult titleChangedEvent(String title),
   }) {
-    assert(addCoverPressedEVT != null);
-    assert(chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT != null);
-    assert(chapterEditorLaunchedFromLibraryEVT != null);
-    assert(chapterEditorLaunchedFromPreviousChapterEVT != null);
-    assert(chapterEditorLaunchedFromSeriesEditorEVT != null);
-    assert(chapterDraftDeletedOrPublishedEVT != null);
-    assert(chapterPublishedEVT != null);
-    assert(copyrightsSelectedEVT != null);
-    assert(deleteDraftButtonPressedEVT != null);
-    assert(genreOptionalSelectedEVT != null);
-    assert(genreSelectedEVT != null);
-    assert(isLastChapterChangedEVT != null);
-    assert(isNSFWChangedEVT != null);
-    assert(languageSelectedEVT != null);
-    assert(publishButtonPressedEVT != null);
-    assert(saveOrBackButtonPressedEVT != null);
-    assert(seriesDraftLoadedEVT != null);
-    assert(seriesPublishedEVT != null);
-    assert(sessionFetchedEVT != null);
-    assert(storyChangedEVT != null);
-    assert(titleChangedEVT != null);
-    return seriesPublishedEVT(seriesDraftUID);
+    assert(addCoverPressedEvent != null);
+    assert(chapterDraftDeletedOrPublishedEvent != null);
+    assert(chapterPublishedEvent != null);
+    assert(deleteDraftButtonPressedEvent != null);
+    assert(genreOptionalSelectedEvent != null);
+    assert(genreSelectedEvent != null);
+    assert(initializedWithPreviousChapterOrSeriesDraftEvent != null);
+    assert(isLastChapterChangedEvent != null);
+    assert(isNSFWChangedEvent != null);
+    assert(languageSelectedEvent != null);
+    assert(launchedFromLibraryEvent != null);
+    assert(launchedFromPreviousChapterEvent != null);
+    assert(launchedFromSeriesEditorEvent != null);
+    assert(licenceSelectedEvent != null);
+    assert(publishButtonPressedEvent != null);
+    assert(saveOrBackButtonPressedEvent != null);
+    assert(seriesDraftLoadedEvent != null);
+    assert(seriesPublishedEvent != null);
+    assert(sessionFetchedEvent != null);
+    assert(storyChangedEvent != null);
+    assert(titleChangedEvent != null);
+    return seriesPublishedEvent(seriesDraftUID);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
-    TResult addCoverPressedEVT(),
-    TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(),
-    TResult chapterEditorLaunchedFromLibraryEVT(BuildContext context,
-        Chapter chapterDraft, EditorContentOrigin editorContentOrigin),
-    TResult chapterEditorLaunchedFromPreviousChapterEVT(BuildContext context,
+    TResult addCoverPressedEvent(),
+    TResult chapterDraftDeletedOrPublishedEvent(),
+    TResult chapterPublishedEvent(),
+    TResult deleteDraftButtonPressedEvent(),
+    TResult genreOptionalSelectedEvent(String genreOptional),
+    TResult genreSelectedEvent(String genre),
+    TResult initializedWithPreviousChapterOrSeriesDraftEvent(),
+    TResult isLastChapterChangedEvent(bool isLastChapter),
+    TResult isNSFWChangedEvent(bool isNSFW),
+    TResult languageSelectedEvent(String language),
+    TResult launchedFromLibraryEvent(BuildContext context, Chapter chapterDraft,
+        EditorContentOrigin editorContentOrigin),
+    TResult launchedFromPreviousChapterEvent(BuildContext context,
         Chapter previousChapter, EditorContentOrigin editorContentOrigin),
-    TResult chapterEditorLaunchedFromSeriesEditorEVT(BuildContext context,
+    TResult launchedFromSeriesEditorEvent(BuildContext context,
         EditorContentOrigin editorContentOrigin, Series seriesDraft),
-    TResult chapterDraftDeletedOrPublishedEVT(),
-    TResult chapterPublishedEVT(),
-    TResult copyrightsSelectedEVT(String copyrights),
-    TResult deleteDraftButtonPressedEVT(),
-    TResult genreOptionalSelectedEVT(String genreOptional),
-    TResult genreSelectedEVT(String genre),
-    TResult isLastChapterChangedEVT(bool isLastChapter),
-    TResult isNSFWChangedEVT(bool isNSFW),
-    TResult languageSelectedEVT(String language),
-    TResult publishButtonPressedEVT(),
-    TResult saveOrBackButtonPressedEVT(),
-    TResult seriesDraftLoadedEVT(Series seriesDraft),
-    TResult seriesPublishedEVT(String seriesDraftUID),
-    TResult sessionFetchedEVT(),
-    TResult storyChangedEVT(String story),
-    TResult titleChangedEVT(String title),
+    TResult licenceSelectedEvent(String licence),
+    TResult publishButtonPressedEvent(),
+    TResult saveOrBackButtonPressedEvent(),
+    TResult seriesDraftLoadedEvent(Series seriesDraft),
+    TResult seriesPublishedEvent(String seriesDraftUID),
+    TResult sessionFetchedEvent(),
+    TResult storyChangedEvent(String story),
+    TResult titleChangedEvent(String title),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (seriesPublishedEVT != null) {
-      return seriesPublishedEVT(seriesDraftUID);
+    if (seriesPublishedEvent != null) {
+      return seriesPublishedEvent(seriesDraftUID);
     }
     return orElse();
   }
@@ -5080,140 +5034,141 @@ class _$SeriesPublishedEVT
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object>({
-    @required TResult addCoverPressedEVT(AddCoverPressedEVT value),
+    @required TResult addCoverPressedEvent(AddCoverPressedEvent value),
     @required
-        TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(
-            ChapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT value),
+        TResult chapterDraftDeletedOrPublishedEvent(
+            ChapterDraftDeletedOrPublishedEvent value),
+    @required TResult chapterPublishedEvent(ChapterPublishedEvent value),
     @required
-        TResult chapterEditorLaunchedFromLibraryEVT(
-            ChapterEditorLaunchedFromLibraryEVT value),
+        TResult deleteDraftButtonPressedEvent(
+            DeleteDraftButtonPressedEvent value),
     @required
-        TResult chapterEditorLaunchedFromPreviousChapterEVT(
-            ChapterEditorLaunchedFromPreviousChapterEVT value),
+        TResult genreOptionalSelectedEvent(GenreOptionalSelectedEvent value),
+    @required TResult genreSelectedEvent(GenreSelectedEvent value),
     @required
-        TResult chapterEditorLaunchedFromSeriesEditorEVT(
-            ChapterEditorLaunchedFromSeriesEditorEVT value),
+        TResult initializedWithPreviousChapterOrSeriesDraftEvent(
+            InitializedWithPreviousChapterOrSeriesDraftEvent value),
     @required
-        TResult chapterDraftDeletedOrPublishedEVT(
-            ChapterDraftDeletedOrPublishedEVT value),
-    @required TResult chapterPublishedEVT(ChapterPublishedEVT value),
-    @required TResult copyrightsSelectedEVT(CopyrightsSelectedEVT value),
+        TResult isLastChapterChangedEvent(IsLastChapterChangedEvent value),
+    @required TResult isNSFWChangedEvent(IsNSFWChangedEvent value),
+    @required TResult languageSelectedEvent(LanguageSelectedEvent value),
+    @required TResult launchedFromLibraryEvent(LaunchedFromLibraryEvent value),
     @required
-        TResult deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
-    @required TResult genreOptionalSelectedEVT(GenreOptionalSelectedEVT value),
-    @required TResult genreSelectedEVT(GenreSelectedEVT value),
-    @required TResult isLastChapterChangedEVT(IsLastChapterChangedEVT value),
-    @required TResult isNSFWChangedEVT(IsNSFWChangedEVT value),
-    @required TResult languageSelectedEVT(LanguageSelectedEVT value),
-    @required TResult publishButtonPressedEVT(PublishButtonPressedEVT value),
+        TResult launchedFromPreviousChapterEvent(
+            LaunchedFromPreviousChapterEvent value),
     @required
-        TResult saveOrBackButtonPressedEVT(SaveOrBackButtonPressedEVT value),
-    @required TResult seriesDraftLoadedEVT(SeriesDraftLoadedEVT value),
-    @required TResult seriesPublishedEVT(SeriesPublishedEVT value),
-    @required TResult sessionFetchedEVT(SessionFetchedEVT value),
-    @required TResult storyChangedEVT(StoryChangedEVT value),
-    @required TResult titleChangedEVT(TitleChangedEVT value),
+        TResult launchedFromSeriesEditorEvent(
+            LaunchedFromSeriesEditorEvent value),
+    @required TResult licenceSelectedEvent(LicenceSelectedEvent value),
+    @required
+        TResult publishButtonPressedEvent(PublishButtonPressedEvent value),
+    @required
+        TResult saveOrBackButtonPressedEvent(
+            SaveOrBackButtonPressedEvent value),
+    @required TResult seriesDraftLoadedEvent(SeriesDraftLoadedEvent value),
+    @required TResult seriesPublishedEvent(SeriesPublishedEvent value),
+    @required TResult sessionFetchedEvent(SessionFetchedEvent value),
+    @required TResult storyChangedEvent(StoryChangedEvent value),
+    @required TResult titleChangedEvent(TitleChangedEvent value),
   }) {
-    assert(addCoverPressedEVT != null);
-    assert(chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT != null);
-    assert(chapterEditorLaunchedFromLibraryEVT != null);
-    assert(chapterEditorLaunchedFromPreviousChapterEVT != null);
-    assert(chapterEditorLaunchedFromSeriesEditorEVT != null);
-    assert(chapterDraftDeletedOrPublishedEVT != null);
-    assert(chapterPublishedEVT != null);
-    assert(copyrightsSelectedEVT != null);
-    assert(deleteDraftButtonPressedEVT != null);
-    assert(genreOptionalSelectedEVT != null);
-    assert(genreSelectedEVT != null);
-    assert(isLastChapterChangedEVT != null);
-    assert(isNSFWChangedEVT != null);
-    assert(languageSelectedEVT != null);
-    assert(publishButtonPressedEVT != null);
-    assert(saveOrBackButtonPressedEVT != null);
-    assert(seriesDraftLoadedEVT != null);
-    assert(seriesPublishedEVT != null);
-    assert(sessionFetchedEVT != null);
-    assert(storyChangedEVT != null);
-    assert(titleChangedEVT != null);
-    return seriesPublishedEVT(this);
+    assert(addCoverPressedEvent != null);
+    assert(chapterDraftDeletedOrPublishedEvent != null);
+    assert(chapterPublishedEvent != null);
+    assert(deleteDraftButtonPressedEvent != null);
+    assert(genreOptionalSelectedEvent != null);
+    assert(genreSelectedEvent != null);
+    assert(initializedWithPreviousChapterOrSeriesDraftEvent != null);
+    assert(isLastChapterChangedEvent != null);
+    assert(isNSFWChangedEvent != null);
+    assert(languageSelectedEvent != null);
+    assert(launchedFromLibraryEvent != null);
+    assert(launchedFromPreviousChapterEvent != null);
+    assert(launchedFromSeriesEditorEvent != null);
+    assert(licenceSelectedEvent != null);
+    assert(publishButtonPressedEvent != null);
+    assert(saveOrBackButtonPressedEvent != null);
+    assert(seriesDraftLoadedEvent != null);
+    assert(seriesPublishedEvent != null);
+    assert(sessionFetchedEvent != null);
+    assert(storyChangedEvent != null);
+    assert(titleChangedEvent != null);
+    return seriesPublishedEvent(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
-    TResult addCoverPressedEVT(AddCoverPressedEVT value),
-    TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(
-        ChapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT value),
-    TResult chapterEditorLaunchedFromLibraryEVT(
-        ChapterEditorLaunchedFromLibraryEVT value),
-    TResult chapterEditorLaunchedFromPreviousChapterEVT(
-        ChapterEditorLaunchedFromPreviousChapterEVT value),
-    TResult chapterEditorLaunchedFromSeriesEditorEVT(
-        ChapterEditorLaunchedFromSeriesEditorEVT value),
-    TResult chapterDraftDeletedOrPublishedEVT(
-        ChapterDraftDeletedOrPublishedEVT value),
-    TResult chapterPublishedEVT(ChapterPublishedEVT value),
-    TResult copyrightsSelectedEVT(CopyrightsSelectedEVT value),
-    TResult deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
-    TResult genreOptionalSelectedEVT(GenreOptionalSelectedEVT value),
-    TResult genreSelectedEVT(GenreSelectedEVT value),
-    TResult isLastChapterChangedEVT(IsLastChapterChangedEVT value),
-    TResult isNSFWChangedEVT(IsNSFWChangedEVT value),
-    TResult languageSelectedEVT(LanguageSelectedEVT value),
-    TResult publishButtonPressedEVT(PublishButtonPressedEVT value),
-    TResult saveOrBackButtonPressedEVT(SaveOrBackButtonPressedEVT value),
-    TResult seriesDraftLoadedEVT(SeriesDraftLoadedEVT value),
-    TResult seriesPublishedEVT(SeriesPublishedEVT value),
-    TResult sessionFetchedEVT(SessionFetchedEVT value),
-    TResult storyChangedEVT(StoryChangedEVT value),
-    TResult titleChangedEVT(TitleChangedEVT value),
+    TResult addCoverPressedEvent(AddCoverPressedEvent value),
+    TResult chapterDraftDeletedOrPublishedEvent(
+        ChapterDraftDeletedOrPublishedEvent value),
+    TResult chapterPublishedEvent(ChapterPublishedEvent value),
+    TResult deleteDraftButtonPressedEvent(DeleteDraftButtonPressedEvent value),
+    TResult genreOptionalSelectedEvent(GenreOptionalSelectedEvent value),
+    TResult genreSelectedEvent(GenreSelectedEvent value),
+    TResult initializedWithPreviousChapterOrSeriesDraftEvent(
+        InitializedWithPreviousChapterOrSeriesDraftEvent value),
+    TResult isLastChapterChangedEvent(IsLastChapterChangedEvent value),
+    TResult isNSFWChangedEvent(IsNSFWChangedEvent value),
+    TResult languageSelectedEvent(LanguageSelectedEvent value),
+    TResult launchedFromLibraryEvent(LaunchedFromLibraryEvent value),
+    TResult launchedFromPreviousChapterEvent(
+        LaunchedFromPreviousChapterEvent value),
+    TResult launchedFromSeriesEditorEvent(LaunchedFromSeriesEditorEvent value),
+    TResult licenceSelectedEvent(LicenceSelectedEvent value),
+    TResult publishButtonPressedEvent(PublishButtonPressedEvent value),
+    TResult saveOrBackButtonPressedEvent(SaveOrBackButtonPressedEvent value),
+    TResult seriesDraftLoadedEvent(SeriesDraftLoadedEvent value),
+    TResult seriesPublishedEvent(SeriesPublishedEvent value),
+    TResult sessionFetchedEvent(SessionFetchedEvent value),
+    TResult storyChangedEvent(StoryChangedEvent value),
+    TResult titleChangedEvent(TitleChangedEvent value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (seriesPublishedEVT != null) {
-      return seriesPublishedEVT(this);
+    if (seriesPublishedEvent != null) {
+      return seriesPublishedEvent(this);
     }
     return orElse();
   }
 }
 
-abstract class SeriesPublishedEVT implements ChapterEditorDatabaseEvent {
-  const factory SeriesPublishedEVT(String seriesDraftUID) =
-      _$SeriesPublishedEVT;
+abstract class SeriesPublishedEvent implements ChapterEditorDatabaseEvent {
+  const factory SeriesPublishedEvent(String seriesDraftUID) =
+      _$SeriesPublishedEvent;
 
   String get seriesDraftUID;
   @JsonKey(ignore: true)
-  $SeriesPublishedEVTCopyWith<SeriesPublishedEVT> get copyWith;
+  $SeriesPublishedEventCopyWith<SeriesPublishedEvent> get copyWith;
 }
 
 /// @nodoc
-abstract class $SessionFetchedEVTCopyWith<$Res> {
-  factory $SessionFetchedEVTCopyWith(
-          SessionFetchedEVT value, $Res Function(SessionFetchedEVT) then) =
-      _$SessionFetchedEVTCopyWithImpl<$Res>;
+abstract class $SessionFetchedEventCopyWith<$Res> {
+  factory $SessionFetchedEventCopyWith(
+          SessionFetchedEvent value, $Res Function(SessionFetchedEvent) then) =
+      _$SessionFetchedEventCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$SessionFetchedEVTCopyWithImpl<$Res>
+class _$SessionFetchedEventCopyWithImpl<$Res>
     extends _$ChapterEditorDatabaseEventCopyWithImpl<$Res>
-    implements $SessionFetchedEVTCopyWith<$Res> {
-  _$SessionFetchedEVTCopyWithImpl(
-      SessionFetchedEVT _value, $Res Function(SessionFetchedEVT) _then)
-      : super(_value, (v) => _then(v as SessionFetchedEVT));
+    implements $SessionFetchedEventCopyWith<$Res> {
+  _$SessionFetchedEventCopyWithImpl(
+      SessionFetchedEvent _value, $Res Function(SessionFetchedEvent) _then)
+      : super(_value, (v) => _then(v as SessionFetchedEvent));
 
   @override
-  SessionFetchedEVT get _value => super._value as SessionFetchedEVT;
+  SessionFetchedEvent get _value => super._value as SessionFetchedEvent;
 }
 
 /// @nodoc
-class _$SessionFetchedEVT
+class _$SessionFetchedEvent
     with DiagnosticableTreeMixin
-    implements SessionFetchedEVT {
-  const _$SessionFetchedEVT();
+    implements SessionFetchedEvent {
+  const _$SessionFetchedEvent();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'ChapterEditorDatabaseEvent.sessionFetchedEVT()';
+    return 'ChapterEditorDatabaseEvent.sessionFetchedEvent()';
   }
 
   @override
@@ -5221,12 +5176,12 @@ class _$SessionFetchedEVT
     super.debugFillProperties(properties);
     properties
       ..add(DiagnosticsProperty(
-          'type', 'ChapterEditorDatabaseEvent.sessionFetchedEVT'));
+          'type', 'ChapterEditorDatabaseEvent.sessionFetchedEvent'));
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is SessionFetchedEVT);
+    return identical(this, other) || (other is SessionFetchedEvent);
   }
 
   @override
@@ -5235,93 +5190,90 @@ class _$SessionFetchedEVT
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
-    @required TResult addCoverPressedEVT(),
+    @required TResult addCoverPressedEvent(),
+    @required TResult chapterDraftDeletedOrPublishedEvent(),
+    @required TResult chapterPublishedEvent(),
+    @required TResult deleteDraftButtonPressedEvent(),
+    @required TResult genreOptionalSelectedEvent(String genreOptional),
+    @required TResult genreSelectedEvent(String genre),
+    @required TResult initializedWithPreviousChapterOrSeriesDraftEvent(),
+    @required TResult isLastChapterChangedEvent(bool isLastChapter),
+    @required TResult isNSFWChangedEvent(bool isNSFW),
+    @required TResult languageSelectedEvent(String language),
     @required
-        TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(),
-    @required
-        TResult chapterEditorLaunchedFromLibraryEVT(BuildContext context,
+        TResult launchedFromLibraryEvent(BuildContext context,
             Chapter chapterDraft, EditorContentOrigin editorContentOrigin),
     @required
-        TResult chapterEditorLaunchedFromPreviousChapterEVT(
-            BuildContext context,
-            Chapter previousChapter,
-            EditorContentOrigin editorContentOrigin),
+        TResult launchedFromPreviousChapterEvent(BuildContext context,
+            Chapter previousChapter, EditorContentOrigin editorContentOrigin),
     @required
-        TResult chapterEditorLaunchedFromSeriesEditorEVT(BuildContext context,
+        TResult launchedFromSeriesEditorEvent(BuildContext context,
             EditorContentOrigin editorContentOrigin, Series seriesDraft),
-    @required TResult chapterDraftDeletedOrPublishedEVT(),
-    @required TResult chapterPublishedEVT(),
-    @required TResult copyrightsSelectedEVT(String copyrights),
-    @required TResult deleteDraftButtonPressedEVT(),
-    @required TResult genreOptionalSelectedEVT(String genreOptional),
-    @required TResult genreSelectedEVT(String genre),
-    @required TResult isLastChapterChangedEVT(bool isLastChapter),
-    @required TResult isNSFWChangedEVT(bool isNSFW),
-    @required TResult languageSelectedEVT(String language),
-    @required TResult publishButtonPressedEVT(),
-    @required TResult saveOrBackButtonPressedEVT(),
-    @required TResult seriesDraftLoadedEVT(Series seriesDraft),
-    @required TResult seriesPublishedEVT(String seriesDraftUID),
-    @required TResult sessionFetchedEVT(),
-    @required TResult storyChangedEVT(String story),
-    @required TResult titleChangedEVT(String title),
+    @required TResult licenceSelectedEvent(String licence),
+    @required TResult publishButtonPressedEvent(),
+    @required TResult saveOrBackButtonPressedEvent(),
+    @required TResult seriesDraftLoadedEvent(Series seriesDraft),
+    @required TResult seriesPublishedEvent(String seriesDraftUID),
+    @required TResult sessionFetchedEvent(),
+    @required TResult storyChangedEvent(String story),
+    @required TResult titleChangedEvent(String title),
   }) {
-    assert(addCoverPressedEVT != null);
-    assert(chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT != null);
-    assert(chapterEditorLaunchedFromLibraryEVT != null);
-    assert(chapterEditorLaunchedFromPreviousChapterEVT != null);
-    assert(chapterEditorLaunchedFromSeriesEditorEVT != null);
-    assert(chapterDraftDeletedOrPublishedEVT != null);
-    assert(chapterPublishedEVT != null);
-    assert(copyrightsSelectedEVT != null);
-    assert(deleteDraftButtonPressedEVT != null);
-    assert(genreOptionalSelectedEVT != null);
-    assert(genreSelectedEVT != null);
-    assert(isLastChapterChangedEVT != null);
-    assert(isNSFWChangedEVT != null);
-    assert(languageSelectedEVT != null);
-    assert(publishButtonPressedEVT != null);
-    assert(saveOrBackButtonPressedEVT != null);
-    assert(seriesDraftLoadedEVT != null);
-    assert(seriesPublishedEVT != null);
-    assert(sessionFetchedEVT != null);
-    assert(storyChangedEVT != null);
-    assert(titleChangedEVT != null);
-    return sessionFetchedEVT();
+    assert(addCoverPressedEvent != null);
+    assert(chapterDraftDeletedOrPublishedEvent != null);
+    assert(chapterPublishedEvent != null);
+    assert(deleteDraftButtonPressedEvent != null);
+    assert(genreOptionalSelectedEvent != null);
+    assert(genreSelectedEvent != null);
+    assert(initializedWithPreviousChapterOrSeriesDraftEvent != null);
+    assert(isLastChapterChangedEvent != null);
+    assert(isNSFWChangedEvent != null);
+    assert(languageSelectedEvent != null);
+    assert(launchedFromLibraryEvent != null);
+    assert(launchedFromPreviousChapterEvent != null);
+    assert(launchedFromSeriesEditorEvent != null);
+    assert(licenceSelectedEvent != null);
+    assert(publishButtonPressedEvent != null);
+    assert(saveOrBackButtonPressedEvent != null);
+    assert(seriesDraftLoadedEvent != null);
+    assert(seriesPublishedEvent != null);
+    assert(sessionFetchedEvent != null);
+    assert(storyChangedEvent != null);
+    assert(titleChangedEvent != null);
+    return sessionFetchedEvent();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
-    TResult addCoverPressedEVT(),
-    TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(),
-    TResult chapterEditorLaunchedFromLibraryEVT(BuildContext context,
-        Chapter chapterDraft, EditorContentOrigin editorContentOrigin),
-    TResult chapterEditorLaunchedFromPreviousChapterEVT(BuildContext context,
+    TResult addCoverPressedEvent(),
+    TResult chapterDraftDeletedOrPublishedEvent(),
+    TResult chapterPublishedEvent(),
+    TResult deleteDraftButtonPressedEvent(),
+    TResult genreOptionalSelectedEvent(String genreOptional),
+    TResult genreSelectedEvent(String genre),
+    TResult initializedWithPreviousChapterOrSeriesDraftEvent(),
+    TResult isLastChapterChangedEvent(bool isLastChapter),
+    TResult isNSFWChangedEvent(bool isNSFW),
+    TResult languageSelectedEvent(String language),
+    TResult launchedFromLibraryEvent(BuildContext context, Chapter chapterDraft,
+        EditorContentOrigin editorContentOrigin),
+    TResult launchedFromPreviousChapterEvent(BuildContext context,
         Chapter previousChapter, EditorContentOrigin editorContentOrigin),
-    TResult chapterEditorLaunchedFromSeriesEditorEVT(BuildContext context,
+    TResult launchedFromSeriesEditorEvent(BuildContext context,
         EditorContentOrigin editorContentOrigin, Series seriesDraft),
-    TResult chapterDraftDeletedOrPublishedEVT(),
-    TResult chapterPublishedEVT(),
-    TResult copyrightsSelectedEVT(String copyrights),
-    TResult deleteDraftButtonPressedEVT(),
-    TResult genreOptionalSelectedEVT(String genreOptional),
-    TResult genreSelectedEVT(String genre),
-    TResult isLastChapterChangedEVT(bool isLastChapter),
-    TResult isNSFWChangedEVT(bool isNSFW),
-    TResult languageSelectedEVT(String language),
-    TResult publishButtonPressedEVT(),
-    TResult saveOrBackButtonPressedEVT(),
-    TResult seriesDraftLoadedEVT(Series seriesDraft),
-    TResult seriesPublishedEVT(String seriesDraftUID),
-    TResult sessionFetchedEVT(),
-    TResult storyChangedEVT(String story),
-    TResult titleChangedEVT(String title),
+    TResult licenceSelectedEvent(String licence),
+    TResult publishButtonPressedEvent(),
+    TResult saveOrBackButtonPressedEvent(),
+    TResult seriesDraftLoadedEvent(Series seriesDraft),
+    TResult seriesPublishedEvent(String seriesDraftUID),
+    TResult sessionFetchedEvent(),
+    TResult storyChangedEvent(String story),
+    TResult titleChangedEvent(String title),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (sessionFetchedEVT != null) {
-      return sessionFetchedEVT();
+    if (sessionFetchedEvent != null) {
+      return sessionFetchedEvent();
     }
     return orElse();
   }
@@ -5329,148 +5281,149 @@ class _$SessionFetchedEVT
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object>({
-    @required TResult addCoverPressedEVT(AddCoverPressedEVT value),
+    @required TResult addCoverPressedEvent(AddCoverPressedEvent value),
     @required
-        TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(
-            ChapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT value),
+        TResult chapterDraftDeletedOrPublishedEvent(
+            ChapterDraftDeletedOrPublishedEvent value),
+    @required TResult chapterPublishedEvent(ChapterPublishedEvent value),
     @required
-        TResult chapterEditorLaunchedFromLibraryEVT(
-            ChapterEditorLaunchedFromLibraryEVT value),
+        TResult deleteDraftButtonPressedEvent(
+            DeleteDraftButtonPressedEvent value),
     @required
-        TResult chapterEditorLaunchedFromPreviousChapterEVT(
-            ChapterEditorLaunchedFromPreviousChapterEVT value),
+        TResult genreOptionalSelectedEvent(GenreOptionalSelectedEvent value),
+    @required TResult genreSelectedEvent(GenreSelectedEvent value),
     @required
-        TResult chapterEditorLaunchedFromSeriesEditorEVT(
-            ChapterEditorLaunchedFromSeriesEditorEVT value),
+        TResult initializedWithPreviousChapterOrSeriesDraftEvent(
+            InitializedWithPreviousChapterOrSeriesDraftEvent value),
     @required
-        TResult chapterDraftDeletedOrPublishedEVT(
-            ChapterDraftDeletedOrPublishedEVT value),
-    @required TResult chapterPublishedEVT(ChapterPublishedEVT value),
-    @required TResult copyrightsSelectedEVT(CopyrightsSelectedEVT value),
+        TResult isLastChapterChangedEvent(IsLastChapterChangedEvent value),
+    @required TResult isNSFWChangedEvent(IsNSFWChangedEvent value),
+    @required TResult languageSelectedEvent(LanguageSelectedEvent value),
+    @required TResult launchedFromLibraryEvent(LaunchedFromLibraryEvent value),
     @required
-        TResult deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
-    @required TResult genreOptionalSelectedEVT(GenreOptionalSelectedEVT value),
-    @required TResult genreSelectedEVT(GenreSelectedEVT value),
-    @required TResult isLastChapterChangedEVT(IsLastChapterChangedEVT value),
-    @required TResult isNSFWChangedEVT(IsNSFWChangedEVT value),
-    @required TResult languageSelectedEVT(LanguageSelectedEVT value),
-    @required TResult publishButtonPressedEVT(PublishButtonPressedEVT value),
+        TResult launchedFromPreviousChapterEvent(
+            LaunchedFromPreviousChapterEvent value),
     @required
-        TResult saveOrBackButtonPressedEVT(SaveOrBackButtonPressedEVT value),
-    @required TResult seriesDraftLoadedEVT(SeriesDraftLoadedEVT value),
-    @required TResult seriesPublishedEVT(SeriesPublishedEVT value),
-    @required TResult sessionFetchedEVT(SessionFetchedEVT value),
-    @required TResult storyChangedEVT(StoryChangedEVT value),
-    @required TResult titleChangedEVT(TitleChangedEVT value),
+        TResult launchedFromSeriesEditorEvent(
+            LaunchedFromSeriesEditorEvent value),
+    @required TResult licenceSelectedEvent(LicenceSelectedEvent value),
+    @required
+        TResult publishButtonPressedEvent(PublishButtonPressedEvent value),
+    @required
+        TResult saveOrBackButtonPressedEvent(
+            SaveOrBackButtonPressedEvent value),
+    @required TResult seriesDraftLoadedEvent(SeriesDraftLoadedEvent value),
+    @required TResult seriesPublishedEvent(SeriesPublishedEvent value),
+    @required TResult sessionFetchedEvent(SessionFetchedEvent value),
+    @required TResult storyChangedEvent(StoryChangedEvent value),
+    @required TResult titleChangedEvent(TitleChangedEvent value),
   }) {
-    assert(addCoverPressedEVT != null);
-    assert(chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT != null);
-    assert(chapterEditorLaunchedFromLibraryEVT != null);
-    assert(chapterEditorLaunchedFromPreviousChapterEVT != null);
-    assert(chapterEditorLaunchedFromSeriesEditorEVT != null);
-    assert(chapterDraftDeletedOrPublishedEVT != null);
-    assert(chapterPublishedEVT != null);
-    assert(copyrightsSelectedEVT != null);
-    assert(deleteDraftButtonPressedEVT != null);
-    assert(genreOptionalSelectedEVT != null);
-    assert(genreSelectedEVT != null);
-    assert(isLastChapterChangedEVT != null);
-    assert(isNSFWChangedEVT != null);
-    assert(languageSelectedEVT != null);
-    assert(publishButtonPressedEVT != null);
-    assert(saveOrBackButtonPressedEVT != null);
-    assert(seriesDraftLoadedEVT != null);
-    assert(seriesPublishedEVT != null);
-    assert(sessionFetchedEVT != null);
-    assert(storyChangedEVT != null);
-    assert(titleChangedEVT != null);
-    return sessionFetchedEVT(this);
+    assert(addCoverPressedEvent != null);
+    assert(chapterDraftDeletedOrPublishedEvent != null);
+    assert(chapterPublishedEvent != null);
+    assert(deleteDraftButtonPressedEvent != null);
+    assert(genreOptionalSelectedEvent != null);
+    assert(genreSelectedEvent != null);
+    assert(initializedWithPreviousChapterOrSeriesDraftEvent != null);
+    assert(isLastChapterChangedEvent != null);
+    assert(isNSFWChangedEvent != null);
+    assert(languageSelectedEvent != null);
+    assert(launchedFromLibraryEvent != null);
+    assert(launchedFromPreviousChapterEvent != null);
+    assert(launchedFromSeriesEditorEvent != null);
+    assert(licenceSelectedEvent != null);
+    assert(publishButtonPressedEvent != null);
+    assert(saveOrBackButtonPressedEvent != null);
+    assert(seriesDraftLoadedEvent != null);
+    assert(seriesPublishedEvent != null);
+    assert(sessionFetchedEvent != null);
+    assert(storyChangedEvent != null);
+    assert(titleChangedEvent != null);
+    return sessionFetchedEvent(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
-    TResult addCoverPressedEVT(AddCoverPressedEVT value),
-    TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(
-        ChapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT value),
-    TResult chapterEditorLaunchedFromLibraryEVT(
-        ChapterEditorLaunchedFromLibraryEVT value),
-    TResult chapterEditorLaunchedFromPreviousChapterEVT(
-        ChapterEditorLaunchedFromPreviousChapterEVT value),
-    TResult chapterEditorLaunchedFromSeriesEditorEVT(
-        ChapterEditorLaunchedFromSeriesEditorEVT value),
-    TResult chapterDraftDeletedOrPublishedEVT(
-        ChapterDraftDeletedOrPublishedEVT value),
-    TResult chapterPublishedEVT(ChapterPublishedEVT value),
-    TResult copyrightsSelectedEVT(CopyrightsSelectedEVT value),
-    TResult deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
-    TResult genreOptionalSelectedEVT(GenreOptionalSelectedEVT value),
-    TResult genreSelectedEVT(GenreSelectedEVT value),
-    TResult isLastChapterChangedEVT(IsLastChapterChangedEVT value),
-    TResult isNSFWChangedEVT(IsNSFWChangedEVT value),
-    TResult languageSelectedEVT(LanguageSelectedEVT value),
-    TResult publishButtonPressedEVT(PublishButtonPressedEVT value),
-    TResult saveOrBackButtonPressedEVT(SaveOrBackButtonPressedEVT value),
-    TResult seriesDraftLoadedEVT(SeriesDraftLoadedEVT value),
-    TResult seriesPublishedEVT(SeriesPublishedEVT value),
-    TResult sessionFetchedEVT(SessionFetchedEVT value),
-    TResult storyChangedEVT(StoryChangedEVT value),
-    TResult titleChangedEVT(TitleChangedEVT value),
+    TResult addCoverPressedEvent(AddCoverPressedEvent value),
+    TResult chapterDraftDeletedOrPublishedEvent(
+        ChapterDraftDeletedOrPublishedEvent value),
+    TResult chapterPublishedEvent(ChapterPublishedEvent value),
+    TResult deleteDraftButtonPressedEvent(DeleteDraftButtonPressedEvent value),
+    TResult genreOptionalSelectedEvent(GenreOptionalSelectedEvent value),
+    TResult genreSelectedEvent(GenreSelectedEvent value),
+    TResult initializedWithPreviousChapterOrSeriesDraftEvent(
+        InitializedWithPreviousChapterOrSeriesDraftEvent value),
+    TResult isLastChapterChangedEvent(IsLastChapterChangedEvent value),
+    TResult isNSFWChangedEvent(IsNSFWChangedEvent value),
+    TResult languageSelectedEvent(LanguageSelectedEvent value),
+    TResult launchedFromLibraryEvent(LaunchedFromLibraryEvent value),
+    TResult launchedFromPreviousChapterEvent(
+        LaunchedFromPreviousChapterEvent value),
+    TResult launchedFromSeriesEditorEvent(LaunchedFromSeriesEditorEvent value),
+    TResult licenceSelectedEvent(LicenceSelectedEvent value),
+    TResult publishButtonPressedEvent(PublishButtonPressedEvent value),
+    TResult saveOrBackButtonPressedEvent(SaveOrBackButtonPressedEvent value),
+    TResult seriesDraftLoadedEvent(SeriesDraftLoadedEvent value),
+    TResult seriesPublishedEvent(SeriesPublishedEvent value),
+    TResult sessionFetchedEvent(SessionFetchedEvent value),
+    TResult storyChangedEvent(StoryChangedEvent value),
+    TResult titleChangedEvent(TitleChangedEvent value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (sessionFetchedEVT != null) {
-      return sessionFetchedEVT(this);
+    if (sessionFetchedEvent != null) {
+      return sessionFetchedEvent(this);
     }
     return orElse();
   }
 }
 
-abstract class SessionFetchedEVT implements ChapterEditorDatabaseEvent {
-  const factory SessionFetchedEVT() = _$SessionFetchedEVT;
+abstract class SessionFetchedEvent implements ChapterEditorDatabaseEvent {
+  const factory SessionFetchedEvent() = _$SessionFetchedEvent;
 }
 
 /// @nodoc
-abstract class $StoryChangedEVTCopyWith<$Res> {
-  factory $StoryChangedEVTCopyWith(
-          StoryChangedEVT value, $Res Function(StoryChangedEVT) then) =
-      _$StoryChangedEVTCopyWithImpl<$Res>;
+abstract class $StoryChangedEventCopyWith<$Res> {
+  factory $StoryChangedEventCopyWith(
+          StoryChangedEvent value, $Res Function(StoryChangedEvent) then) =
+      _$StoryChangedEventCopyWithImpl<$Res>;
   $Res call({String story});
 }
 
 /// @nodoc
-class _$StoryChangedEVTCopyWithImpl<$Res>
+class _$StoryChangedEventCopyWithImpl<$Res>
     extends _$ChapterEditorDatabaseEventCopyWithImpl<$Res>
-    implements $StoryChangedEVTCopyWith<$Res> {
-  _$StoryChangedEVTCopyWithImpl(
-      StoryChangedEVT _value, $Res Function(StoryChangedEVT) _then)
-      : super(_value, (v) => _then(v as StoryChangedEVT));
+    implements $StoryChangedEventCopyWith<$Res> {
+  _$StoryChangedEventCopyWithImpl(
+      StoryChangedEvent _value, $Res Function(StoryChangedEvent) _then)
+      : super(_value, (v) => _then(v as StoryChangedEvent));
 
   @override
-  StoryChangedEVT get _value => super._value as StoryChangedEVT;
+  StoryChangedEvent get _value => super._value as StoryChangedEvent;
 
   @override
   $Res call({
     Object story = freezed,
   }) {
-    return _then(StoryChangedEVT(
+    return _then(StoryChangedEvent(
       story == freezed ? _value.story : story as String,
     ));
   }
 }
 
 /// @nodoc
-class _$StoryChangedEVT
+class _$StoryChangedEvent
     with DiagnosticableTreeMixin
-    implements StoryChangedEVT {
-  const _$StoryChangedEVT(this.story) : assert(story != null);
+    implements StoryChangedEvent {
+  const _$StoryChangedEvent(this.story) : assert(story != null);
 
   @override
   final String story;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'ChapterEditorDatabaseEvent.storyChangedEVT(story: $story)';
+    return 'ChapterEditorDatabaseEvent.storyChangedEvent(story: $story)';
   }
 
   @override
@@ -5478,14 +5431,14 @@ class _$StoryChangedEVT
     super.debugFillProperties(properties);
     properties
       ..add(DiagnosticsProperty(
-          'type', 'ChapterEditorDatabaseEvent.storyChangedEVT'))
+          'type', 'ChapterEditorDatabaseEvent.storyChangedEvent'))
       ..add(DiagnosticsProperty('story', story));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is StoryChangedEVT &&
+        (other is StoryChangedEvent &&
             (identical(other.story, story) ||
                 const DeepCollectionEquality().equals(other.story, story)));
   }
@@ -5496,99 +5449,96 @@ class _$StoryChangedEVT
 
   @JsonKey(ignore: true)
   @override
-  $StoryChangedEVTCopyWith<StoryChangedEVT> get copyWith =>
-      _$StoryChangedEVTCopyWithImpl<StoryChangedEVT>(this, _$identity);
+  $StoryChangedEventCopyWith<StoryChangedEvent> get copyWith =>
+      _$StoryChangedEventCopyWithImpl<StoryChangedEvent>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
-    @required TResult addCoverPressedEVT(),
+    @required TResult addCoverPressedEvent(),
+    @required TResult chapterDraftDeletedOrPublishedEvent(),
+    @required TResult chapterPublishedEvent(),
+    @required TResult deleteDraftButtonPressedEvent(),
+    @required TResult genreOptionalSelectedEvent(String genreOptional),
+    @required TResult genreSelectedEvent(String genre),
+    @required TResult initializedWithPreviousChapterOrSeriesDraftEvent(),
+    @required TResult isLastChapterChangedEvent(bool isLastChapter),
+    @required TResult isNSFWChangedEvent(bool isNSFW),
+    @required TResult languageSelectedEvent(String language),
     @required
-        TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(),
-    @required
-        TResult chapterEditorLaunchedFromLibraryEVT(BuildContext context,
+        TResult launchedFromLibraryEvent(BuildContext context,
             Chapter chapterDraft, EditorContentOrigin editorContentOrigin),
     @required
-        TResult chapterEditorLaunchedFromPreviousChapterEVT(
-            BuildContext context,
-            Chapter previousChapter,
-            EditorContentOrigin editorContentOrigin),
+        TResult launchedFromPreviousChapterEvent(BuildContext context,
+            Chapter previousChapter, EditorContentOrigin editorContentOrigin),
     @required
-        TResult chapterEditorLaunchedFromSeriesEditorEVT(BuildContext context,
+        TResult launchedFromSeriesEditorEvent(BuildContext context,
             EditorContentOrigin editorContentOrigin, Series seriesDraft),
-    @required TResult chapterDraftDeletedOrPublishedEVT(),
-    @required TResult chapterPublishedEVT(),
-    @required TResult copyrightsSelectedEVT(String copyrights),
-    @required TResult deleteDraftButtonPressedEVT(),
-    @required TResult genreOptionalSelectedEVT(String genreOptional),
-    @required TResult genreSelectedEVT(String genre),
-    @required TResult isLastChapterChangedEVT(bool isLastChapter),
-    @required TResult isNSFWChangedEVT(bool isNSFW),
-    @required TResult languageSelectedEVT(String language),
-    @required TResult publishButtonPressedEVT(),
-    @required TResult saveOrBackButtonPressedEVT(),
-    @required TResult seriesDraftLoadedEVT(Series seriesDraft),
-    @required TResult seriesPublishedEVT(String seriesDraftUID),
-    @required TResult sessionFetchedEVT(),
-    @required TResult storyChangedEVT(String story),
-    @required TResult titleChangedEVT(String title),
+    @required TResult licenceSelectedEvent(String licence),
+    @required TResult publishButtonPressedEvent(),
+    @required TResult saveOrBackButtonPressedEvent(),
+    @required TResult seriesDraftLoadedEvent(Series seriesDraft),
+    @required TResult seriesPublishedEvent(String seriesDraftUID),
+    @required TResult sessionFetchedEvent(),
+    @required TResult storyChangedEvent(String story),
+    @required TResult titleChangedEvent(String title),
   }) {
-    assert(addCoverPressedEVT != null);
-    assert(chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT != null);
-    assert(chapterEditorLaunchedFromLibraryEVT != null);
-    assert(chapterEditorLaunchedFromPreviousChapterEVT != null);
-    assert(chapterEditorLaunchedFromSeriesEditorEVT != null);
-    assert(chapterDraftDeletedOrPublishedEVT != null);
-    assert(chapterPublishedEVT != null);
-    assert(copyrightsSelectedEVT != null);
-    assert(deleteDraftButtonPressedEVT != null);
-    assert(genreOptionalSelectedEVT != null);
-    assert(genreSelectedEVT != null);
-    assert(isLastChapterChangedEVT != null);
-    assert(isNSFWChangedEVT != null);
-    assert(languageSelectedEVT != null);
-    assert(publishButtonPressedEVT != null);
-    assert(saveOrBackButtonPressedEVT != null);
-    assert(seriesDraftLoadedEVT != null);
-    assert(seriesPublishedEVT != null);
-    assert(sessionFetchedEVT != null);
-    assert(storyChangedEVT != null);
-    assert(titleChangedEVT != null);
-    return storyChangedEVT(story);
+    assert(addCoverPressedEvent != null);
+    assert(chapterDraftDeletedOrPublishedEvent != null);
+    assert(chapterPublishedEvent != null);
+    assert(deleteDraftButtonPressedEvent != null);
+    assert(genreOptionalSelectedEvent != null);
+    assert(genreSelectedEvent != null);
+    assert(initializedWithPreviousChapterOrSeriesDraftEvent != null);
+    assert(isLastChapterChangedEvent != null);
+    assert(isNSFWChangedEvent != null);
+    assert(languageSelectedEvent != null);
+    assert(launchedFromLibraryEvent != null);
+    assert(launchedFromPreviousChapterEvent != null);
+    assert(launchedFromSeriesEditorEvent != null);
+    assert(licenceSelectedEvent != null);
+    assert(publishButtonPressedEvent != null);
+    assert(saveOrBackButtonPressedEvent != null);
+    assert(seriesDraftLoadedEvent != null);
+    assert(seriesPublishedEvent != null);
+    assert(sessionFetchedEvent != null);
+    assert(storyChangedEvent != null);
+    assert(titleChangedEvent != null);
+    return storyChangedEvent(story);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
-    TResult addCoverPressedEVT(),
-    TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(),
-    TResult chapterEditorLaunchedFromLibraryEVT(BuildContext context,
-        Chapter chapterDraft, EditorContentOrigin editorContentOrigin),
-    TResult chapterEditorLaunchedFromPreviousChapterEVT(BuildContext context,
+    TResult addCoverPressedEvent(),
+    TResult chapterDraftDeletedOrPublishedEvent(),
+    TResult chapterPublishedEvent(),
+    TResult deleteDraftButtonPressedEvent(),
+    TResult genreOptionalSelectedEvent(String genreOptional),
+    TResult genreSelectedEvent(String genre),
+    TResult initializedWithPreviousChapterOrSeriesDraftEvent(),
+    TResult isLastChapterChangedEvent(bool isLastChapter),
+    TResult isNSFWChangedEvent(bool isNSFW),
+    TResult languageSelectedEvent(String language),
+    TResult launchedFromLibraryEvent(BuildContext context, Chapter chapterDraft,
+        EditorContentOrigin editorContentOrigin),
+    TResult launchedFromPreviousChapterEvent(BuildContext context,
         Chapter previousChapter, EditorContentOrigin editorContentOrigin),
-    TResult chapterEditorLaunchedFromSeriesEditorEVT(BuildContext context,
+    TResult launchedFromSeriesEditorEvent(BuildContext context,
         EditorContentOrigin editorContentOrigin, Series seriesDraft),
-    TResult chapterDraftDeletedOrPublishedEVT(),
-    TResult chapterPublishedEVT(),
-    TResult copyrightsSelectedEVT(String copyrights),
-    TResult deleteDraftButtonPressedEVT(),
-    TResult genreOptionalSelectedEVT(String genreOptional),
-    TResult genreSelectedEVT(String genre),
-    TResult isLastChapterChangedEVT(bool isLastChapter),
-    TResult isNSFWChangedEVT(bool isNSFW),
-    TResult languageSelectedEVT(String language),
-    TResult publishButtonPressedEVT(),
-    TResult saveOrBackButtonPressedEVT(),
-    TResult seriesDraftLoadedEVT(Series seriesDraft),
-    TResult seriesPublishedEVT(String seriesDraftUID),
-    TResult sessionFetchedEVT(),
-    TResult storyChangedEVT(String story),
-    TResult titleChangedEVT(String title),
+    TResult licenceSelectedEvent(String licence),
+    TResult publishButtonPressedEvent(),
+    TResult saveOrBackButtonPressedEvent(),
+    TResult seriesDraftLoadedEvent(Series seriesDraft),
+    TResult seriesPublishedEvent(String seriesDraftUID),
+    TResult sessionFetchedEvent(),
+    TResult storyChangedEvent(String story),
+    TResult titleChangedEvent(String title),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (storyChangedEVT != null) {
-      return storyChangedEVT(story);
+    if (storyChangedEvent != null) {
+      return storyChangedEvent(story);
     }
     return orElse();
   }
@@ -5596,152 +5546,153 @@ class _$StoryChangedEVT
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object>({
-    @required TResult addCoverPressedEVT(AddCoverPressedEVT value),
+    @required TResult addCoverPressedEvent(AddCoverPressedEvent value),
     @required
-        TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(
-            ChapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT value),
+        TResult chapterDraftDeletedOrPublishedEvent(
+            ChapterDraftDeletedOrPublishedEvent value),
+    @required TResult chapterPublishedEvent(ChapterPublishedEvent value),
     @required
-        TResult chapterEditorLaunchedFromLibraryEVT(
-            ChapterEditorLaunchedFromLibraryEVT value),
+        TResult deleteDraftButtonPressedEvent(
+            DeleteDraftButtonPressedEvent value),
     @required
-        TResult chapterEditorLaunchedFromPreviousChapterEVT(
-            ChapterEditorLaunchedFromPreviousChapterEVT value),
+        TResult genreOptionalSelectedEvent(GenreOptionalSelectedEvent value),
+    @required TResult genreSelectedEvent(GenreSelectedEvent value),
     @required
-        TResult chapterEditorLaunchedFromSeriesEditorEVT(
-            ChapterEditorLaunchedFromSeriesEditorEVT value),
+        TResult initializedWithPreviousChapterOrSeriesDraftEvent(
+            InitializedWithPreviousChapterOrSeriesDraftEvent value),
     @required
-        TResult chapterDraftDeletedOrPublishedEVT(
-            ChapterDraftDeletedOrPublishedEVT value),
-    @required TResult chapterPublishedEVT(ChapterPublishedEVT value),
-    @required TResult copyrightsSelectedEVT(CopyrightsSelectedEVT value),
+        TResult isLastChapterChangedEvent(IsLastChapterChangedEvent value),
+    @required TResult isNSFWChangedEvent(IsNSFWChangedEvent value),
+    @required TResult languageSelectedEvent(LanguageSelectedEvent value),
+    @required TResult launchedFromLibraryEvent(LaunchedFromLibraryEvent value),
     @required
-        TResult deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
-    @required TResult genreOptionalSelectedEVT(GenreOptionalSelectedEVT value),
-    @required TResult genreSelectedEVT(GenreSelectedEVT value),
-    @required TResult isLastChapterChangedEVT(IsLastChapterChangedEVT value),
-    @required TResult isNSFWChangedEVT(IsNSFWChangedEVT value),
-    @required TResult languageSelectedEVT(LanguageSelectedEVT value),
-    @required TResult publishButtonPressedEVT(PublishButtonPressedEVT value),
+        TResult launchedFromPreviousChapterEvent(
+            LaunchedFromPreviousChapterEvent value),
     @required
-        TResult saveOrBackButtonPressedEVT(SaveOrBackButtonPressedEVT value),
-    @required TResult seriesDraftLoadedEVT(SeriesDraftLoadedEVT value),
-    @required TResult seriesPublishedEVT(SeriesPublishedEVT value),
-    @required TResult sessionFetchedEVT(SessionFetchedEVT value),
-    @required TResult storyChangedEVT(StoryChangedEVT value),
-    @required TResult titleChangedEVT(TitleChangedEVT value),
+        TResult launchedFromSeriesEditorEvent(
+            LaunchedFromSeriesEditorEvent value),
+    @required TResult licenceSelectedEvent(LicenceSelectedEvent value),
+    @required
+        TResult publishButtonPressedEvent(PublishButtonPressedEvent value),
+    @required
+        TResult saveOrBackButtonPressedEvent(
+            SaveOrBackButtonPressedEvent value),
+    @required TResult seriesDraftLoadedEvent(SeriesDraftLoadedEvent value),
+    @required TResult seriesPublishedEvent(SeriesPublishedEvent value),
+    @required TResult sessionFetchedEvent(SessionFetchedEvent value),
+    @required TResult storyChangedEvent(StoryChangedEvent value),
+    @required TResult titleChangedEvent(TitleChangedEvent value),
   }) {
-    assert(addCoverPressedEVT != null);
-    assert(chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT != null);
-    assert(chapterEditorLaunchedFromLibraryEVT != null);
-    assert(chapterEditorLaunchedFromPreviousChapterEVT != null);
-    assert(chapterEditorLaunchedFromSeriesEditorEVT != null);
-    assert(chapterDraftDeletedOrPublishedEVT != null);
-    assert(chapterPublishedEVT != null);
-    assert(copyrightsSelectedEVT != null);
-    assert(deleteDraftButtonPressedEVT != null);
-    assert(genreOptionalSelectedEVT != null);
-    assert(genreSelectedEVT != null);
-    assert(isLastChapterChangedEVT != null);
-    assert(isNSFWChangedEVT != null);
-    assert(languageSelectedEVT != null);
-    assert(publishButtonPressedEVT != null);
-    assert(saveOrBackButtonPressedEVT != null);
-    assert(seriesDraftLoadedEVT != null);
-    assert(seriesPublishedEVT != null);
-    assert(sessionFetchedEVT != null);
-    assert(storyChangedEVT != null);
-    assert(titleChangedEVT != null);
-    return storyChangedEVT(this);
+    assert(addCoverPressedEvent != null);
+    assert(chapterDraftDeletedOrPublishedEvent != null);
+    assert(chapterPublishedEvent != null);
+    assert(deleteDraftButtonPressedEvent != null);
+    assert(genreOptionalSelectedEvent != null);
+    assert(genreSelectedEvent != null);
+    assert(initializedWithPreviousChapterOrSeriesDraftEvent != null);
+    assert(isLastChapterChangedEvent != null);
+    assert(isNSFWChangedEvent != null);
+    assert(languageSelectedEvent != null);
+    assert(launchedFromLibraryEvent != null);
+    assert(launchedFromPreviousChapterEvent != null);
+    assert(launchedFromSeriesEditorEvent != null);
+    assert(licenceSelectedEvent != null);
+    assert(publishButtonPressedEvent != null);
+    assert(saveOrBackButtonPressedEvent != null);
+    assert(seriesDraftLoadedEvent != null);
+    assert(seriesPublishedEvent != null);
+    assert(sessionFetchedEvent != null);
+    assert(storyChangedEvent != null);
+    assert(titleChangedEvent != null);
+    return storyChangedEvent(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
-    TResult addCoverPressedEVT(AddCoverPressedEVT value),
-    TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(
-        ChapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT value),
-    TResult chapterEditorLaunchedFromLibraryEVT(
-        ChapterEditorLaunchedFromLibraryEVT value),
-    TResult chapterEditorLaunchedFromPreviousChapterEVT(
-        ChapterEditorLaunchedFromPreviousChapterEVT value),
-    TResult chapterEditorLaunchedFromSeriesEditorEVT(
-        ChapterEditorLaunchedFromSeriesEditorEVT value),
-    TResult chapterDraftDeletedOrPublishedEVT(
-        ChapterDraftDeletedOrPublishedEVT value),
-    TResult chapterPublishedEVT(ChapterPublishedEVT value),
-    TResult copyrightsSelectedEVT(CopyrightsSelectedEVT value),
-    TResult deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
-    TResult genreOptionalSelectedEVT(GenreOptionalSelectedEVT value),
-    TResult genreSelectedEVT(GenreSelectedEVT value),
-    TResult isLastChapterChangedEVT(IsLastChapterChangedEVT value),
-    TResult isNSFWChangedEVT(IsNSFWChangedEVT value),
-    TResult languageSelectedEVT(LanguageSelectedEVT value),
-    TResult publishButtonPressedEVT(PublishButtonPressedEVT value),
-    TResult saveOrBackButtonPressedEVT(SaveOrBackButtonPressedEVT value),
-    TResult seriesDraftLoadedEVT(SeriesDraftLoadedEVT value),
-    TResult seriesPublishedEVT(SeriesPublishedEVT value),
-    TResult sessionFetchedEVT(SessionFetchedEVT value),
-    TResult storyChangedEVT(StoryChangedEVT value),
-    TResult titleChangedEVT(TitleChangedEVT value),
+    TResult addCoverPressedEvent(AddCoverPressedEvent value),
+    TResult chapterDraftDeletedOrPublishedEvent(
+        ChapterDraftDeletedOrPublishedEvent value),
+    TResult chapterPublishedEvent(ChapterPublishedEvent value),
+    TResult deleteDraftButtonPressedEvent(DeleteDraftButtonPressedEvent value),
+    TResult genreOptionalSelectedEvent(GenreOptionalSelectedEvent value),
+    TResult genreSelectedEvent(GenreSelectedEvent value),
+    TResult initializedWithPreviousChapterOrSeriesDraftEvent(
+        InitializedWithPreviousChapterOrSeriesDraftEvent value),
+    TResult isLastChapterChangedEvent(IsLastChapterChangedEvent value),
+    TResult isNSFWChangedEvent(IsNSFWChangedEvent value),
+    TResult languageSelectedEvent(LanguageSelectedEvent value),
+    TResult launchedFromLibraryEvent(LaunchedFromLibraryEvent value),
+    TResult launchedFromPreviousChapterEvent(
+        LaunchedFromPreviousChapterEvent value),
+    TResult launchedFromSeriesEditorEvent(LaunchedFromSeriesEditorEvent value),
+    TResult licenceSelectedEvent(LicenceSelectedEvent value),
+    TResult publishButtonPressedEvent(PublishButtonPressedEvent value),
+    TResult saveOrBackButtonPressedEvent(SaveOrBackButtonPressedEvent value),
+    TResult seriesDraftLoadedEvent(SeriesDraftLoadedEvent value),
+    TResult seriesPublishedEvent(SeriesPublishedEvent value),
+    TResult sessionFetchedEvent(SessionFetchedEvent value),
+    TResult storyChangedEvent(StoryChangedEvent value),
+    TResult titleChangedEvent(TitleChangedEvent value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (storyChangedEVT != null) {
-      return storyChangedEVT(this);
+    if (storyChangedEvent != null) {
+      return storyChangedEvent(this);
     }
     return orElse();
   }
 }
 
-abstract class StoryChangedEVT implements ChapterEditorDatabaseEvent {
-  const factory StoryChangedEVT(String story) = _$StoryChangedEVT;
+abstract class StoryChangedEvent implements ChapterEditorDatabaseEvent {
+  const factory StoryChangedEvent(String story) = _$StoryChangedEvent;
 
   String get story;
   @JsonKey(ignore: true)
-  $StoryChangedEVTCopyWith<StoryChangedEVT> get copyWith;
+  $StoryChangedEventCopyWith<StoryChangedEvent> get copyWith;
 }
 
 /// @nodoc
-abstract class $TitleChangedEVTCopyWith<$Res> {
-  factory $TitleChangedEVTCopyWith(
-          TitleChangedEVT value, $Res Function(TitleChangedEVT) then) =
-      _$TitleChangedEVTCopyWithImpl<$Res>;
+abstract class $TitleChangedEventCopyWith<$Res> {
+  factory $TitleChangedEventCopyWith(
+          TitleChangedEvent value, $Res Function(TitleChangedEvent) then) =
+      _$TitleChangedEventCopyWithImpl<$Res>;
   $Res call({String title});
 }
 
 /// @nodoc
-class _$TitleChangedEVTCopyWithImpl<$Res>
+class _$TitleChangedEventCopyWithImpl<$Res>
     extends _$ChapterEditorDatabaseEventCopyWithImpl<$Res>
-    implements $TitleChangedEVTCopyWith<$Res> {
-  _$TitleChangedEVTCopyWithImpl(
-      TitleChangedEVT _value, $Res Function(TitleChangedEVT) _then)
-      : super(_value, (v) => _then(v as TitleChangedEVT));
+    implements $TitleChangedEventCopyWith<$Res> {
+  _$TitleChangedEventCopyWithImpl(
+      TitleChangedEvent _value, $Res Function(TitleChangedEvent) _then)
+      : super(_value, (v) => _then(v as TitleChangedEvent));
 
   @override
-  TitleChangedEVT get _value => super._value as TitleChangedEVT;
+  TitleChangedEvent get _value => super._value as TitleChangedEvent;
 
   @override
   $Res call({
     Object title = freezed,
   }) {
-    return _then(TitleChangedEVT(
+    return _then(TitleChangedEvent(
       title == freezed ? _value.title : title as String,
     ));
   }
 }
 
 /// @nodoc
-class _$TitleChangedEVT
+class _$TitleChangedEvent
     with DiagnosticableTreeMixin
-    implements TitleChangedEVT {
-  const _$TitleChangedEVT(this.title) : assert(title != null);
+    implements TitleChangedEvent {
+  const _$TitleChangedEvent(this.title) : assert(title != null);
 
   @override
   final String title;
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'ChapterEditorDatabaseEvent.titleChangedEVT(title: $title)';
+    return 'ChapterEditorDatabaseEvent.titleChangedEvent(title: $title)';
   }
 
   @override
@@ -5749,14 +5700,14 @@ class _$TitleChangedEVT
     super.debugFillProperties(properties);
     properties
       ..add(DiagnosticsProperty(
-          'type', 'ChapterEditorDatabaseEvent.titleChangedEVT'))
+          'type', 'ChapterEditorDatabaseEvent.titleChangedEvent'))
       ..add(DiagnosticsProperty('title', title));
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is TitleChangedEVT &&
+        (other is TitleChangedEvent &&
             (identical(other.title, title) ||
                 const DeepCollectionEquality().equals(other.title, title)));
   }
@@ -5767,99 +5718,96 @@ class _$TitleChangedEVT
 
   @JsonKey(ignore: true)
   @override
-  $TitleChangedEVTCopyWith<TitleChangedEVT> get copyWith =>
-      _$TitleChangedEVTCopyWithImpl<TitleChangedEVT>(this, _$identity);
+  $TitleChangedEventCopyWith<TitleChangedEvent> get copyWith =>
+      _$TitleChangedEventCopyWithImpl<TitleChangedEvent>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
-    @required TResult addCoverPressedEVT(),
+    @required TResult addCoverPressedEvent(),
+    @required TResult chapterDraftDeletedOrPublishedEvent(),
+    @required TResult chapterPublishedEvent(),
+    @required TResult deleteDraftButtonPressedEvent(),
+    @required TResult genreOptionalSelectedEvent(String genreOptional),
+    @required TResult genreSelectedEvent(String genre),
+    @required TResult initializedWithPreviousChapterOrSeriesDraftEvent(),
+    @required TResult isLastChapterChangedEvent(bool isLastChapter),
+    @required TResult isNSFWChangedEvent(bool isNSFW),
+    @required TResult languageSelectedEvent(String language),
     @required
-        TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(),
-    @required
-        TResult chapterEditorLaunchedFromLibraryEVT(BuildContext context,
+        TResult launchedFromLibraryEvent(BuildContext context,
             Chapter chapterDraft, EditorContentOrigin editorContentOrigin),
     @required
-        TResult chapterEditorLaunchedFromPreviousChapterEVT(
-            BuildContext context,
-            Chapter previousChapter,
-            EditorContentOrigin editorContentOrigin),
+        TResult launchedFromPreviousChapterEvent(BuildContext context,
+            Chapter previousChapter, EditorContentOrigin editorContentOrigin),
     @required
-        TResult chapterEditorLaunchedFromSeriesEditorEVT(BuildContext context,
+        TResult launchedFromSeriesEditorEvent(BuildContext context,
             EditorContentOrigin editorContentOrigin, Series seriesDraft),
-    @required TResult chapterDraftDeletedOrPublishedEVT(),
-    @required TResult chapterPublishedEVT(),
-    @required TResult copyrightsSelectedEVT(String copyrights),
-    @required TResult deleteDraftButtonPressedEVT(),
-    @required TResult genreOptionalSelectedEVT(String genreOptional),
-    @required TResult genreSelectedEVT(String genre),
-    @required TResult isLastChapterChangedEVT(bool isLastChapter),
-    @required TResult isNSFWChangedEVT(bool isNSFW),
-    @required TResult languageSelectedEVT(String language),
-    @required TResult publishButtonPressedEVT(),
-    @required TResult saveOrBackButtonPressedEVT(),
-    @required TResult seriesDraftLoadedEVT(Series seriesDraft),
-    @required TResult seriesPublishedEVT(String seriesDraftUID),
-    @required TResult sessionFetchedEVT(),
-    @required TResult storyChangedEVT(String story),
-    @required TResult titleChangedEVT(String title),
+    @required TResult licenceSelectedEvent(String licence),
+    @required TResult publishButtonPressedEvent(),
+    @required TResult saveOrBackButtonPressedEvent(),
+    @required TResult seriesDraftLoadedEvent(Series seriesDraft),
+    @required TResult seriesPublishedEvent(String seriesDraftUID),
+    @required TResult sessionFetchedEvent(),
+    @required TResult storyChangedEvent(String story),
+    @required TResult titleChangedEvent(String title),
   }) {
-    assert(addCoverPressedEVT != null);
-    assert(chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT != null);
-    assert(chapterEditorLaunchedFromLibraryEVT != null);
-    assert(chapterEditorLaunchedFromPreviousChapterEVT != null);
-    assert(chapterEditorLaunchedFromSeriesEditorEVT != null);
-    assert(chapterDraftDeletedOrPublishedEVT != null);
-    assert(chapterPublishedEVT != null);
-    assert(copyrightsSelectedEVT != null);
-    assert(deleteDraftButtonPressedEVT != null);
-    assert(genreOptionalSelectedEVT != null);
-    assert(genreSelectedEVT != null);
-    assert(isLastChapterChangedEVT != null);
-    assert(isNSFWChangedEVT != null);
-    assert(languageSelectedEVT != null);
-    assert(publishButtonPressedEVT != null);
-    assert(saveOrBackButtonPressedEVT != null);
-    assert(seriesDraftLoadedEVT != null);
-    assert(seriesPublishedEVT != null);
-    assert(sessionFetchedEVT != null);
-    assert(storyChangedEVT != null);
-    assert(titleChangedEVT != null);
-    return titleChangedEVT(title);
+    assert(addCoverPressedEvent != null);
+    assert(chapterDraftDeletedOrPublishedEvent != null);
+    assert(chapterPublishedEvent != null);
+    assert(deleteDraftButtonPressedEvent != null);
+    assert(genreOptionalSelectedEvent != null);
+    assert(genreSelectedEvent != null);
+    assert(initializedWithPreviousChapterOrSeriesDraftEvent != null);
+    assert(isLastChapterChangedEvent != null);
+    assert(isNSFWChangedEvent != null);
+    assert(languageSelectedEvent != null);
+    assert(launchedFromLibraryEvent != null);
+    assert(launchedFromPreviousChapterEvent != null);
+    assert(launchedFromSeriesEditorEvent != null);
+    assert(licenceSelectedEvent != null);
+    assert(publishButtonPressedEvent != null);
+    assert(saveOrBackButtonPressedEvent != null);
+    assert(seriesDraftLoadedEvent != null);
+    assert(seriesPublishedEvent != null);
+    assert(sessionFetchedEvent != null);
+    assert(storyChangedEvent != null);
+    assert(titleChangedEvent != null);
+    return titleChangedEvent(title);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
-    TResult addCoverPressedEVT(),
-    TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(),
-    TResult chapterEditorLaunchedFromLibraryEVT(BuildContext context,
-        Chapter chapterDraft, EditorContentOrigin editorContentOrigin),
-    TResult chapterEditorLaunchedFromPreviousChapterEVT(BuildContext context,
+    TResult addCoverPressedEvent(),
+    TResult chapterDraftDeletedOrPublishedEvent(),
+    TResult chapterPublishedEvent(),
+    TResult deleteDraftButtonPressedEvent(),
+    TResult genreOptionalSelectedEvent(String genreOptional),
+    TResult genreSelectedEvent(String genre),
+    TResult initializedWithPreviousChapterOrSeriesDraftEvent(),
+    TResult isLastChapterChangedEvent(bool isLastChapter),
+    TResult isNSFWChangedEvent(bool isNSFW),
+    TResult languageSelectedEvent(String language),
+    TResult launchedFromLibraryEvent(BuildContext context, Chapter chapterDraft,
+        EditorContentOrigin editorContentOrigin),
+    TResult launchedFromPreviousChapterEvent(BuildContext context,
         Chapter previousChapter, EditorContentOrigin editorContentOrigin),
-    TResult chapterEditorLaunchedFromSeriesEditorEVT(BuildContext context,
+    TResult launchedFromSeriesEditorEvent(BuildContext context,
         EditorContentOrigin editorContentOrigin, Series seriesDraft),
-    TResult chapterDraftDeletedOrPublishedEVT(),
-    TResult chapterPublishedEVT(),
-    TResult copyrightsSelectedEVT(String copyrights),
-    TResult deleteDraftButtonPressedEVT(),
-    TResult genreOptionalSelectedEVT(String genreOptional),
-    TResult genreSelectedEVT(String genre),
-    TResult isLastChapterChangedEVT(bool isLastChapter),
-    TResult isNSFWChangedEVT(bool isNSFW),
-    TResult languageSelectedEVT(String language),
-    TResult publishButtonPressedEVT(),
-    TResult saveOrBackButtonPressedEVT(),
-    TResult seriesDraftLoadedEVT(Series seriesDraft),
-    TResult seriesPublishedEVT(String seriesDraftUID),
-    TResult sessionFetchedEVT(),
-    TResult storyChangedEVT(String story),
-    TResult titleChangedEVT(String title),
+    TResult licenceSelectedEvent(String licence),
+    TResult publishButtonPressedEvent(),
+    TResult saveOrBackButtonPressedEvent(),
+    TResult seriesDraftLoadedEvent(Series seriesDraft),
+    TResult seriesPublishedEvent(String seriesDraftUID),
+    TResult sessionFetchedEvent(),
+    TResult storyChangedEvent(String story),
+    TResult titleChangedEvent(String title),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (titleChangedEVT != null) {
-      return titleChangedEVT(title);
+    if (titleChangedEvent != null) {
+      return titleChangedEvent(title);
     }
     return orElse();
   }
@@ -5867,109 +5815,110 @@ class _$TitleChangedEVT
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object>({
-    @required TResult addCoverPressedEVT(AddCoverPressedEVT value),
+    @required TResult addCoverPressedEvent(AddCoverPressedEvent value),
     @required
-        TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(
-            ChapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT value),
+        TResult chapterDraftDeletedOrPublishedEvent(
+            ChapterDraftDeletedOrPublishedEvent value),
+    @required TResult chapterPublishedEvent(ChapterPublishedEvent value),
     @required
-        TResult chapterEditorLaunchedFromLibraryEVT(
-            ChapterEditorLaunchedFromLibraryEVT value),
+        TResult deleteDraftButtonPressedEvent(
+            DeleteDraftButtonPressedEvent value),
     @required
-        TResult chapterEditorLaunchedFromPreviousChapterEVT(
-            ChapterEditorLaunchedFromPreviousChapterEVT value),
+        TResult genreOptionalSelectedEvent(GenreOptionalSelectedEvent value),
+    @required TResult genreSelectedEvent(GenreSelectedEvent value),
     @required
-        TResult chapterEditorLaunchedFromSeriesEditorEVT(
-            ChapterEditorLaunchedFromSeriesEditorEVT value),
+        TResult initializedWithPreviousChapterOrSeriesDraftEvent(
+            InitializedWithPreviousChapterOrSeriesDraftEvent value),
     @required
-        TResult chapterDraftDeletedOrPublishedEVT(
-            ChapterDraftDeletedOrPublishedEVT value),
-    @required TResult chapterPublishedEVT(ChapterPublishedEVT value),
-    @required TResult copyrightsSelectedEVT(CopyrightsSelectedEVT value),
+        TResult isLastChapterChangedEvent(IsLastChapterChangedEvent value),
+    @required TResult isNSFWChangedEvent(IsNSFWChangedEvent value),
+    @required TResult languageSelectedEvent(LanguageSelectedEvent value),
+    @required TResult launchedFromLibraryEvent(LaunchedFromLibraryEvent value),
     @required
-        TResult deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
-    @required TResult genreOptionalSelectedEVT(GenreOptionalSelectedEVT value),
-    @required TResult genreSelectedEVT(GenreSelectedEVT value),
-    @required TResult isLastChapterChangedEVT(IsLastChapterChangedEVT value),
-    @required TResult isNSFWChangedEVT(IsNSFWChangedEVT value),
-    @required TResult languageSelectedEVT(LanguageSelectedEVT value),
-    @required TResult publishButtonPressedEVT(PublishButtonPressedEVT value),
+        TResult launchedFromPreviousChapterEvent(
+            LaunchedFromPreviousChapterEvent value),
     @required
-        TResult saveOrBackButtonPressedEVT(SaveOrBackButtonPressedEVT value),
-    @required TResult seriesDraftLoadedEVT(SeriesDraftLoadedEVT value),
-    @required TResult seriesPublishedEVT(SeriesPublishedEVT value),
-    @required TResult sessionFetchedEVT(SessionFetchedEVT value),
-    @required TResult storyChangedEVT(StoryChangedEVT value),
-    @required TResult titleChangedEVT(TitleChangedEVT value),
+        TResult launchedFromSeriesEditorEvent(
+            LaunchedFromSeriesEditorEvent value),
+    @required TResult licenceSelectedEvent(LicenceSelectedEvent value),
+    @required
+        TResult publishButtonPressedEvent(PublishButtonPressedEvent value),
+    @required
+        TResult saveOrBackButtonPressedEvent(
+            SaveOrBackButtonPressedEvent value),
+    @required TResult seriesDraftLoadedEvent(SeriesDraftLoadedEvent value),
+    @required TResult seriesPublishedEvent(SeriesPublishedEvent value),
+    @required TResult sessionFetchedEvent(SessionFetchedEvent value),
+    @required TResult storyChangedEvent(StoryChangedEvent value),
+    @required TResult titleChangedEvent(TitleChangedEvent value),
   }) {
-    assert(addCoverPressedEVT != null);
-    assert(chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT != null);
-    assert(chapterEditorLaunchedFromLibraryEVT != null);
-    assert(chapterEditorLaunchedFromPreviousChapterEVT != null);
-    assert(chapterEditorLaunchedFromSeriesEditorEVT != null);
-    assert(chapterDraftDeletedOrPublishedEVT != null);
-    assert(chapterPublishedEVT != null);
-    assert(copyrightsSelectedEVT != null);
-    assert(deleteDraftButtonPressedEVT != null);
-    assert(genreOptionalSelectedEVT != null);
-    assert(genreSelectedEVT != null);
-    assert(isLastChapterChangedEVT != null);
-    assert(isNSFWChangedEVT != null);
-    assert(languageSelectedEVT != null);
-    assert(publishButtonPressedEVT != null);
-    assert(saveOrBackButtonPressedEVT != null);
-    assert(seriesDraftLoadedEVT != null);
-    assert(seriesPublishedEVT != null);
-    assert(sessionFetchedEVT != null);
-    assert(storyChangedEVT != null);
-    assert(titleChangedEVT != null);
-    return titleChangedEVT(this);
+    assert(addCoverPressedEvent != null);
+    assert(chapterDraftDeletedOrPublishedEvent != null);
+    assert(chapterPublishedEvent != null);
+    assert(deleteDraftButtonPressedEvent != null);
+    assert(genreOptionalSelectedEvent != null);
+    assert(genreSelectedEvent != null);
+    assert(initializedWithPreviousChapterOrSeriesDraftEvent != null);
+    assert(isLastChapterChangedEvent != null);
+    assert(isNSFWChangedEvent != null);
+    assert(languageSelectedEvent != null);
+    assert(launchedFromLibraryEvent != null);
+    assert(launchedFromPreviousChapterEvent != null);
+    assert(launchedFromSeriesEditorEvent != null);
+    assert(licenceSelectedEvent != null);
+    assert(publishButtonPressedEvent != null);
+    assert(saveOrBackButtonPressedEvent != null);
+    assert(seriesDraftLoadedEvent != null);
+    assert(seriesPublishedEvent != null);
+    assert(sessionFetchedEvent != null);
+    assert(storyChangedEvent != null);
+    assert(titleChangedEvent != null);
+    return titleChangedEvent(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
-    TResult addCoverPressedEVT(AddCoverPressedEVT value),
-    TResult chapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT(
-        ChapterDraftInitializedWithPreviousChapterOrSeriesDraftEVT value),
-    TResult chapterEditorLaunchedFromLibraryEVT(
-        ChapterEditorLaunchedFromLibraryEVT value),
-    TResult chapterEditorLaunchedFromPreviousChapterEVT(
-        ChapterEditorLaunchedFromPreviousChapterEVT value),
-    TResult chapterEditorLaunchedFromSeriesEditorEVT(
-        ChapterEditorLaunchedFromSeriesEditorEVT value),
-    TResult chapterDraftDeletedOrPublishedEVT(
-        ChapterDraftDeletedOrPublishedEVT value),
-    TResult chapterPublishedEVT(ChapterPublishedEVT value),
-    TResult copyrightsSelectedEVT(CopyrightsSelectedEVT value),
-    TResult deleteDraftButtonPressedEVT(DeleteDraftButtonPressedEVT value),
-    TResult genreOptionalSelectedEVT(GenreOptionalSelectedEVT value),
-    TResult genreSelectedEVT(GenreSelectedEVT value),
-    TResult isLastChapterChangedEVT(IsLastChapterChangedEVT value),
-    TResult isNSFWChangedEVT(IsNSFWChangedEVT value),
-    TResult languageSelectedEVT(LanguageSelectedEVT value),
-    TResult publishButtonPressedEVT(PublishButtonPressedEVT value),
-    TResult saveOrBackButtonPressedEVT(SaveOrBackButtonPressedEVT value),
-    TResult seriesDraftLoadedEVT(SeriesDraftLoadedEVT value),
-    TResult seriesPublishedEVT(SeriesPublishedEVT value),
-    TResult sessionFetchedEVT(SessionFetchedEVT value),
-    TResult storyChangedEVT(StoryChangedEVT value),
-    TResult titleChangedEVT(TitleChangedEVT value),
+    TResult addCoverPressedEvent(AddCoverPressedEvent value),
+    TResult chapterDraftDeletedOrPublishedEvent(
+        ChapterDraftDeletedOrPublishedEvent value),
+    TResult chapterPublishedEvent(ChapterPublishedEvent value),
+    TResult deleteDraftButtonPressedEvent(DeleteDraftButtonPressedEvent value),
+    TResult genreOptionalSelectedEvent(GenreOptionalSelectedEvent value),
+    TResult genreSelectedEvent(GenreSelectedEvent value),
+    TResult initializedWithPreviousChapterOrSeriesDraftEvent(
+        InitializedWithPreviousChapterOrSeriesDraftEvent value),
+    TResult isLastChapterChangedEvent(IsLastChapterChangedEvent value),
+    TResult isNSFWChangedEvent(IsNSFWChangedEvent value),
+    TResult languageSelectedEvent(LanguageSelectedEvent value),
+    TResult launchedFromLibraryEvent(LaunchedFromLibraryEvent value),
+    TResult launchedFromPreviousChapterEvent(
+        LaunchedFromPreviousChapterEvent value),
+    TResult launchedFromSeriesEditorEvent(LaunchedFromSeriesEditorEvent value),
+    TResult licenceSelectedEvent(LicenceSelectedEvent value),
+    TResult publishButtonPressedEvent(PublishButtonPressedEvent value),
+    TResult saveOrBackButtonPressedEvent(SaveOrBackButtonPressedEvent value),
+    TResult seriesDraftLoadedEvent(SeriesDraftLoadedEvent value),
+    TResult seriesPublishedEvent(SeriesPublishedEvent value),
+    TResult sessionFetchedEvent(SessionFetchedEvent value),
+    TResult storyChangedEvent(StoryChangedEvent value),
+    TResult titleChangedEvent(TitleChangedEvent value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (titleChangedEVT != null) {
-      return titleChangedEVT(this);
+    if (titleChangedEvent != null) {
+      return titleChangedEvent(this);
     }
     return orElse();
   }
 }
 
-abstract class TitleChangedEVT implements ChapterEditorDatabaseEvent {
-  const factory TitleChangedEVT(String title) = _$TitleChangedEVT;
+abstract class TitleChangedEvent implements ChapterEditorDatabaseEvent {
+  const factory TitleChangedEvent(String title) = _$TitleChangedEvent;
 
   String get title;
   @JsonKey(ignore: true)
-  $TitleChangedEVTCopyWith<TitleChangedEVT> get copyWith;
+  $TitleChangedEventCopyWith<TitleChangedEvent> get copyWith;
 }
 
 /// @nodoc
@@ -5995,7 +5944,7 @@ class _$ChapterEditorDatabaseStateTearOff {
       @required
           Chapter previousChapter,
       @required
-          Copyrights copyrights,
+          Licence licence,
       @required
           EditorContentOrigin editorContentOrigin,
       @required
@@ -6061,7 +6010,7 @@ class _$ChapterEditorDatabaseStateTearOff {
       showErrorMessages: showErrorMessages,
       chapterDraft: chapterDraft,
       previousChapter: previousChapter,
-      copyrights: copyrights,
+      licence: licence,
       editorContentOrigin: editorContentOrigin,
       genre: genre,
       genreOptional: genreOptional,
@@ -6111,7 +6060,7 @@ mixin _$ChapterEditorDatabaseState {
   bool get showErrorMessages;
   Chapter get chapterDraft;
   Chapter get previousChapter;
-  Copyrights get copyrights;
+  Licence get licence;
   EditorContentOrigin get editorContentOrigin;
   Genre get genre;
   Genre get genreOptional;
@@ -6162,7 +6111,7 @@ abstract class $ChapterEditorDatabaseStateCopyWith<$Res> {
       bool showErrorMessages,
       Chapter chapterDraft,
       Chapter previousChapter,
-      Copyrights copyrights,
+      Licence licence,
       EditorContentOrigin editorContentOrigin,
       Genre genre,
       Genre genreOptional,
@@ -6215,7 +6164,7 @@ class _$ChapterEditorDatabaseStateCopyWithImpl<$Res>
     Object showErrorMessages = freezed,
     Object chapterDraft = freezed,
     Object previousChapter = freezed,
-    Object copyrights = freezed,
+    Object licence = freezed,
     Object editorContentOrigin = freezed,
     Object genre = freezed,
     Object genreOptional = freezed,
@@ -6262,8 +6211,7 @@ class _$ChapterEditorDatabaseStateCopyWithImpl<$Res>
       previousChapter: previousChapter == freezed
           ? _value.previousChapter
           : previousChapter as Chapter,
-      copyrights:
-          copyrights == freezed ? _value.copyrights : copyrights as Copyrights,
+      licence: licence == freezed ? _value.licence : licence as Licence,
       editorContentOrigin: editorContentOrigin == freezed
           ? _value.editorContentOrigin
           : editorContentOrigin as EditorContentOrigin,
@@ -6357,7 +6305,7 @@ abstract class _$ChapterEditorDatabaseStateCopyWith<$Res>
       bool showErrorMessages,
       Chapter chapterDraft,
       Chapter previousChapter,
-      Copyrights copyrights,
+      Licence licence,
       EditorContentOrigin editorContentOrigin,
       Genre genre,
       Genre genreOptional,
@@ -6413,7 +6361,7 @@ class __$ChapterEditorDatabaseStateCopyWithImpl<$Res>
     Object showErrorMessages = freezed,
     Object chapterDraft = freezed,
     Object previousChapter = freezed,
-    Object copyrights = freezed,
+    Object licence = freezed,
     Object editorContentOrigin = freezed,
     Object genre = freezed,
     Object genreOptional = freezed,
@@ -6460,8 +6408,7 @@ class __$ChapterEditorDatabaseStateCopyWithImpl<$Res>
       previousChapter: previousChapter == freezed
           ? _value.previousChapter
           : previousChapter as Chapter,
-      copyrights:
-          copyrights == freezed ? _value.copyrights : copyrights as Copyrights,
+      licence: licence == freezed ? _value.licence : licence as Licence,
       editorContentOrigin: editorContentOrigin == freezed
           ? _value.editorContentOrigin
           : editorContentOrigin as EditorContentOrigin,
@@ -6551,7 +6498,7 @@ class _$_ChapterEditorDatabaseState
       @required this.showErrorMessages,
       @required this.chapterDraft,
       @required this.previousChapter,
-      @required this.copyrights,
+      @required this.licence,
       @required this.editorContentOrigin,
       @required this.genre,
       @required this.genreOptional,
@@ -6585,7 +6532,7 @@ class _$_ChapterEditorDatabaseState
         assert(showErrorMessages != null),
         assert(chapterDraft != null),
         assert(previousChapter != null),
-        assert(copyrights != null),
+        assert(licence != null),
         assert(editorContentOrigin != null),
         assert(genre != null),
         assert(genreOptional != null),
@@ -6629,7 +6576,7 @@ class _$_ChapterEditorDatabaseState
   @override
   final Chapter previousChapter;
   @override
-  final Copyrights copyrights;
+  final Licence licence;
   @override
   final EditorContentOrigin editorContentOrigin;
   @override
@@ -6689,7 +6636,7 @@ class _$_ChapterEditorDatabaseState
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'ChapterEditorDatabaseState(isEditMode: $isEditMode, isFirstChapter: $isFirstChapter, isLastChapter: $isLastChapter, isLoading: $isLoading, isNSFW: $isNSFW, showErrorMessages: $showErrorMessages, chapterDraft: $chapterDraft, previousChapter: $previousChapter, copyrights: $copyrights, editorContentOrigin: $editorContentOrigin, genre: $genre, genreOptional: $genreOptional, storyWordCount: $storyWordCount, titleWordCount: $titleWordCount, language: $language, chapterDatabaseFailureOrSuccessOption: $chapterDatabaseFailureOrSuccessOption, chapterDraftDatabaseFailureOrSuccessOption: $chapterDraftDatabaseFailureOrSuccessOption, placeholderDatabaseFailureOrSuccessOption: $placeholderDatabaseFailureOrSuccessOption, seriesDatabaseFailureOrSuccessOption: $seriesDatabaseFailureOrSuccessOption, seriesDraftDatabaseFailureOrSuccessOption: $seriesDraftDatabaseFailureOrSuccessOption, sessionDatabaseFailureOrSuccessOption: $sessionDatabaseFailureOrSuccessOption, seriesDraft: $seriesDraft, story: $story, chapterCoverURL: $chapterCoverURL, copyrightsStr: $copyrightsStr, genreOptionalStr: $genreOptionalStr, genreStr: $genreStr, languageStr: $languageStr, seriesCoverURL: $seriesCoverURL, storyStr: $storyStr, titleStr: $titleStr, storyController: $storyController, titleController: $titleController, title: $title)';
+    return 'ChapterEditorDatabaseState(isEditMode: $isEditMode, isFirstChapter: $isFirstChapter, isLastChapter: $isLastChapter, isLoading: $isLoading, isNSFW: $isNSFW, showErrorMessages: $showErrorMessages, chapterDraft: $chapterDraft, previousChapter: $previousChapter, licence: $licence, editorContentOrigin: $editorContentOrigin, genre: $genre, genreOptional: $genreOptional, storyWordCount: $storyWordCount, titleWordCount: $titleWordCount, language: $language, chapterDatabaseFailureOrSuccessOption: $chapterDatabaseFailureOrSuccessOption, chapterDraftDatabaseFailureOrSuccessOption: $chapterDraftDatabaseFailureOrSuccessOption, placeholderDatabaseFailureOrSuccessOption: $placeholderDatabaseFailureOrSuccessOption, seriesDatabaseFailureOrSuccessOption: $seriesDatabaseFailureOrSuccessOption, seriesDraftDatabaseFailureOrSuccessOption: $seriesDraftDatabaseFailureOrSuccessOption, sessionDatabaseFailureOrSuccessOption: $sessionDatabaseFailureOrSuccessOption, seriesDraft: $seriesDraft, story: $story, chapterCoverURL: $chapterCoverURL, copyrightsStr: $copyrightsStr, genreOptionalStr: $genreOptionalStr, genreStr: $genreStr, languageStr: $languageStr, seriesCoverURL: $seriesCoverURL, storyStr: $storyStr, titleStr: $titleStr, storyController: $storyController, titleController: $titleController, title: $title)';
   }
 
   @override
@@ -6705,7 +6652,7 @@ class _$_ChapterEditorDatabaseState
       ..add(DiagnosticsProperty('showErrorMessages', showErrorMessages))
       ..add(DiagnosticsProperty('chapterDraft', chapterDraft))
       ..add(DiagnosticsProperty('previousChapter', previousChapter))
-      ..add(DiagnosticsProperty('copyrights', copyrights))
+      ..add(DiagnosticsProperty('licence', licence))
       ..add(DiagnosticsProperty('editorContentOrigin', editorContentOrigin))
       ..add(DiagnosticsProperty('genre', genre))
       ..add(DiagnosticsProperty('genreOptional', genreOptional))
@@ -6766,9 +6713,9 @@ class _$_ChapterEditorDatabaseState
             (identical(other.previousChapter, previousChapter) ||
                 const DeepCollectionEquality()
                     .equals(other.previousChapter, previousChapter)) &&
-            (identical(other.copyrights, copyrights) ||
+            (identical(other.licence, licence) ||
                 const DeepCollectionEquality()
-                    .equals(other.copyrights, copyrights)) &&
+                    .equals(other.licence, licence)) &&
             (identical(other.editorContentOrigin, editorContentOrigin) ||
                 const DeepCollectionEquality()
                     .equals(other.editorContentOrigin, editorContentOrigin)) &&
@@ -6830,7 +6777,7 @@ class _$_ChapterEditorDatabaseState
       const DeepCollectionEquality().hash(showErrorMessages) ^
       const DeepCollectionEquality().hash(chapterDraft) ^
       const DeepCollectionEquality().hash(previousChapter) ^
-      const DeepCollectionEquality().hash(copyrights) ^
+      const DeepCollectionEquality().hash(licence) ^
       const DeepCollectionEquality().hash(editorContentOrigin) ^
       const DeepCollectionEquality().hash(genre) ^
       const DeepCollectionEquality().hash(genreOptional) ^
@@ -6890,7 +6837,7 @@ abstract class _ChapterEditorDatabaseState
       @required
           Chapter previousChapter,
       @required
-          Copyrights copyrights,
+          Licence licence,
       @required
           EditorContentOrigin editorContentOrigin,
       @required
@@ -6965,7 +6912,7 @@ abstract class _ChapterEditorDatabaseState
   @override
   Chapter get previousChapter;
   @override
-  Copyrights get copyrights;
+  Licence get licence;
   @override
   EditorContentOrigin get editorContentOrigin;
   @override

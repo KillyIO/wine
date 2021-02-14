@@ -5,7 +5,7 @@ import 'package:injectable/injectable.dart';
 
 import 'package:wine/application/authentication/core/core_authentication_bloc.dart';
 import 'package:wine/application/database/core/core_database_bloc.dart';
-import 'package:wine/application/other/core/core_other_bloc.dart';
+import 'package:wine/application/miscellaneous/core/core_miscellaneous_bloc.dart';
 import 'package:wine/flavors.dart';
 import 'package:wine/injection.dart';
 import 'package:wine/presentation/core/development_app.dart';
@@ -28,14 +28,14 @@ Future<void> main() async {
       providers: [
         BlocProvider<CoreAuthenticationBloc>(
           create: (_) => getIt<CoreAuthenticationBloc>()
-            ..add(const CoreAuthenticationEvent.appLaunchedEVT()),
+            ..add(const CoreAuthenticationEvent.appLaunched()),
         ),
         BlocProvider<CoreDatabaseBloc>(
           create: (_) => getIt<CoreDatabaseBloc>(),
         ),
-        BlocProvider<CoreOtherBloc>(
-          create: (_) => getIt<CoreOtherBloc>()
-            ..add(const CoreOtherEvent.appLaunchedEVT()),
+        BlocProvider<CoreMiscellaneousBloc>(
+          create: (_) => getIt<CoreMiscellaneousBloc>()
+            ..add(const CoreMiscellaneousEvent.appLaunched()),
         ),
       ],
       child: DevelopmentApp(),
