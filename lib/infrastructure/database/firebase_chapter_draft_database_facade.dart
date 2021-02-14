@@ -2,11 +2,12 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:injectable/injectable.dart';
-import 'package:models/models.dart';
+
 import 'package:wine/domain/database/database_failure.dart';
 import 'package:wine/domain/database/facades/online/i_online_chapter_draft_database_facade.dart';
 import 'package:wine/domain/database/successes/chapter_draft_database_success.dart';
-import 'package:wine/utils/paths.dart';
+import 'package:wine/domain/models/chapter.dart';
+import 'package:wine/utils/paths/chapters.dart';
 
 /// @nodoc
 @LazySingleton(as: IOnlineChapterDraftDatabaseFacade)
@@ -28,13 +29,11 @@ class FirebaseChapterDraftDatabaseFacade
     String seriesDraftUID,
   }) async {
     if (chapterDraftUID != null) {
-      final ref =
-          _firestore.collection(Paths.chapterDraftsPath).doc(chapterDraftUID);
+      final ref = _firestore.collection(chapterDraftsPath).doc(chapterDraftUID);
 
       await ref.delete();
     } else {
-      final chapterDraftsCollection =
-          _firestore.collection(Paths.chapterDraftsPath);
+      final chapterDraftsCollection = _firestore.collection(chapterDraftsPath);
 
       final querySnapshot = await chapterDraftsCollection
           .where('seriesUID', isEqualTo: seriesDraftUID)
@@ -44,7 +43,7 @@ class FirebaseChapterDraftDatabaseFacade
       final chapterDraft = Chapter.fromFirestore(doc);
 
       final ref =
-          _firestore.collection(Paths.chapterDraftsPath).doc(chapterDraft.uid);
+          _firestore.collection(chapterDraftsPath).doc(chapterDraft.uid);
 
       await ref.delete();
     }
@@ -69,8 +68,7 @@ class FirebaseChapterDraftDatabaseFacade
   Future<Either<DatabaseFailure, ChapterDraftDatabaseSuccess>> loadChapterDraft(
     String chapterDraftUID,
   ) async {
-    final chapterDraftsCollection =
-        _firestore.collection(Paths.chapterDraftsPath);
+    final chapterDraftsCollection = _firestore.collection(chapterDraftsPath);
 
     final querySnapshot =
         await chapterDraftsCollection.doc(chapterDraftUID).get();
@@ -87,8 +85,7 @@ class FirebaseChapterDraftDatabaseFacade
   @override
   Future<Either<DatabaseFailure, ChapterDraftDatabaseSuccess>>
       loadChapterDraftsByUserUID(String userUID) async {
-    final chapterDraftsCollection =
-        _firestore.collection(Paths.chapterDraftsPath);
+    final chapterDraftsCollection = _firestore.collection(chapterDraftsPath);
 
     final querySnapshot = await chapterDraftsCollection
         .where('authorUID', isEqualTo: userUID)
@@ -109,7 +106,7 @@ class FirebaseChapterDraftDatabaseFacade
     Chapter chapterDraft,
   ) async {
     final chapterDraftRef =
-        _firestore.collection(Paths.chapterDraftsPath).doc(chapterDraft.uid);
+        _firestore.collection(chapterDraftsPath).doc(chapterDraft.uid);
 
     await chapterDraftRef.set(chapterDraft.toMap(), SetOptions(merge: true));
 

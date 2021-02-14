@@ -21,3 +21,6 @@ const String chaptersViewsCountsPath = 'chapters_views_counts';
 
 /// @nodoc
 const String chaptersViewsPath = 'chapters_views';
+
+/// @nodoc
+const String nextChaptersAuthorsPath = 'next_chapters_authors';

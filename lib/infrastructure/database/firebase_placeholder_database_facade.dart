@@ -4,22 +4,21 @@ import 'package:injectable/injectable.dart';
 import 'package:wine/domain/database/facades/online/i_online_placeholder_database_facade.dart';
 import 'package:wine/domain/database/failures/placeholder_database_failure.dart';
 import 'package:wine/domain/database/successes/placeholder_database_success.dart';
-import 'package:wine/utils/paths.dart';
+import 'package:wine/utils/paths/placeholders.dart';
 
 /// @nodoc
 @LazySingleton(as: IOnlinePlaceholderDatabaseFacade)
-class FirebaseOnlinePlaceholderDatabaseFacade
+class FirebasePlaceholderDatabaseFacade
     implements IOnlinePlaceholderDatabaseFacade {
   /// @nodoc
-  FirebaseOnlinePlaceholderDatabaseFacade(this._firestore);
+  FirebasePlaceholderDatabaseFacade(this._firestore);
 
   final FirebaseFirestore _firestore;
 
   @override
   Future<Either<PlaceholderDatabaseFailure, PlaceholderDatabaseSuccess>>
       loadPlaceholders() async {
-    final querySnapshot =
-        await _firestore.collection(Paths.placeholdersPath).get();
+    final querySnapshot = await _firestore.collection(placeholdersPath).get();
 
     final data = <String, String>{};
     for (final document in querySnapshot.docs) {

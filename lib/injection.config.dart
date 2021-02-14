@@ -29,11 +29,11 @@ import 'infrastructure/database/firebase_online_chapter_database_facade.dart';
 import 'infrastructure/database/firebase_online_placeholder_database_facade.dart';
 import 'infrastructure/database/firebase_online_series_database_facade.dart';
 import 'infrastructure/database/firebase_online_series_draft_database_facade.dart';
-import 'infrastructure/database/firebase_online_user_database_facade.dart';
+import 'infrastructure/database/firebase_user_database_facade.dart';
+import 'infrastructure/database/hive_config_database_facade.dart';
 import 'infrastructure/core/hive_injectable_module.dart';
-import 'infrastructure/database/hive_local_config_database_facade.dart';
-import 'infrastructure/database/hive_local_placeholder_database_facade.dart';
-import 'infrastructure/database/hive_local_session_database_facade.dart';
+import 'infrastructure/database/hive_placeholder_database_facade.dart';
+import 'infrastructure/database/hive_session_database_facade.dart';
 import 'application/database/home/home_database_bloc.dart';
 import 'application/navigation/home/home_navigation_bloc.dart';
 import 'domain/authentication/i_authentication_facade.dart';
@@ -44,6 +44,8 @@ import 'domain/database/facades/online/i_online_chapter_draft_database_facade.da
 import 'domain/database/facades/online/i_online_placeholder_database_facade.dart';
 import 'domain/database/facades/online/i_online_series_database_facade.dart';
 import 'domain/database/facades/online/i_online_series_draft_database_facade.dart';
+import 'domain/database/facades/local/i_session_database_facade.dart';
+import 'domain/database/facades/online/i_online_user_database_facade.dart';
 import 'application/database/library/library_database_bloc.dart';
 import 'application/navigation/library/library_navigation_bloc.dart';
 import 'application/database/series/series_database_bloc.dart';
@@ -82,13 +84,9 @@ Future<GetIt> $initGetIt(
       () => CreateAccountDatabaseBloc(get(), get()));
   gh.lazySingleton<FirebaseAuth>(() => firebaseInjectableModule.firebaseAuth);
   gh.lazySingleton<FirebaseFirestore>(() => firebaseInjectableModule.firestore);
-  gh.lazySingleton<FirebaseOnlineUserDatabaseFacade>(
-      () => FirebaseOnlineUserDatabaseFacade(get<FirebaseFirestore>()));
   gh.lazySingleton<FirebaseStorage>(
       () => firebaseInjectableModule.firebaseStorage);
   gh.lazySingleton<GoogleSignIn>(() => firebaseInjectableModule.googleSignIn);
-  gh.lazySingleton<HiveLocalSessionDatabaseFacade>(
-      () => HiveLocalSessionDatabaseFacade(get<hive1.Box<dynamic>>()));
   gh.factory<HomeNavigationBloc>(() => HomeNavigationBloc());
   gh.lazySingleton<IAuthenticationFacade>(() => FirebaseAuthenticationFacade(
         get<FirebaseAuth>(),
@@ -96,9 +94,9 @@ Future<GetIt> $initGetIt(
         get<FirebaseFirestore>(),
       ));
   gh.lazySingleton<ILocalConfigDatabaseFacade>(
-      () => HiveLocalConfigDatabaseFacade(get<hive1.Box<dynamic>>()));
+      () => HiveConfigDatabaseFacade(get<hive1.Box<Config>>()));
   gh.lazySingleton<ILocalPlaceholderDatabaseFacade>(
-      () => HiveLocalPlaceholderDatabaseFacade(get<hive1.Box<String>>()));
+      () => HivePlaceholderDatabaseFacade(get<hive1.Box<String>>()));
   gh.lazySingleton<IOnlineChapterDatabaseFacade>(() =>
       FirebaseOnlineChapterDatabaseFacade(
           get<FirebaseFirestore>(), get<FirebaseStorage>()));
@@ -113,6 +111,10 @@ Future<GetIt> $initGetIt(
   gh.lazySingleton<IOnlineSeriesDraftDatabaseFacade>(() =>
       FirebaseOnlineSeriesDraftDatabaseFacade(
           get<FirebaseFirestore>(), get<FirebaseStorage>()));
+  gh.lazySingleton<ISessionDatabaseFacade>(
+      () => HiveSessionDatabaseFacade(get<hive1.Box<User>>()));
+  gh.lazySingleton<IUserDatabaseFacade>(
+      () => FirebaseUserDatabaseFacade(get<FirebaseFirestore>()));
   gh.factory<LibraryDatabaseBloc>(() => LibraryDatabaseBloc(
         get(),
         get<IOnlineSeriesDatabaseFacade>(),

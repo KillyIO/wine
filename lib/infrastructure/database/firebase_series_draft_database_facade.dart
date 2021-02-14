@@ -6,15 +6,17 @@ import 'package:wine/domain/database/database_failure.dart';
 import 'package:wine/domain/database/facades/online/i_online_series_draft_database_facade.dart';
 import 'package:wine/domain/models/series.dart';
 import 'package:wine/domain/database/successes/series_draft_database_success.dart';
-import 'package:wine/utils/paths.dart';
+import 'package:wine/utils/paths/series.dart';
 
 /// @nodoc
 @LazySingleton(as: IOnlineSeriesDraftDatabaseFacade)
-class FirebaseOnlineSeriesDraftDatabaseFacade
+class FirebaseSeriesDraftDatabaseFacade
     implements IOnlineSeriesDraftDatabaseFacade {
   /// @nodoc
-  FirebaseOnlineSeriesDraftDatabaseFacade(
-      this._firestore, this._firebaseStorage);
+  FirebaseSeriesDraftDatabaseFacade(
+    this._firestore,
+    this._firebaseStorage,
+  );
 
   final FirebaseFirestore _firestore;
   final FirebaseStorage _firebaseStorage;
@@ -23,8 +25,7 @@ class FirebaseOnlineSeriesDraftDatabaseFacade
   Future<Either<DatabaseFailure, SeriesDraftDatabaseSuccess>> deleteSeriesDraft(
     String seriesDraftUID,
   ) async {
-    final ref =
-        _firestore.collection(Paths.seriesDraftsPath).doc(seriesDraftUID);
+    final ref = _firestore.collection(seriesDraftsPath).doc(seriesDraftUID);
 
     await ref.delete();
 
@@ -48,8 +49,7 @@ class FirebaseOnlineSeriesDraftDatabaseFacade
   Future<Either<DatabaseFailure, SeriesDraftDatabaseSuccess>> loadSeriesDraft(
     String seriesDraftUID,
   ) async {
-    final seriesDraftsCollection =
-        _firestore.collection(Paths.seriesDraftsPath);
+    final seriesDraftsCollection = _firestore.collection(seriesDraftsPath);
 
     final querySnapshot =
         await seriesDraftsCollection.doc(seriesDraftUID).get();
@@ -66,8 +66,7 @@ class FirebaseOnlineSeriesDraftDatabaseFacade
   @override
   Future<Either<DatabaseFailure, SeriesDraftDatabaseSuccess>>
       loadSeriesDraftsByUserUID(String userUID) async {
-    final seriesDraftsCollection =
-        _firestore.collection(Paths.seriesDraftsPath);
+    final seriesDraftsCollection = _firestore.collection(seriesDraftsPath);
 
     final querySnapshot = await seriesDraftsCollection
         .where('authorUID', isEqualTo: userUID)
@@ -88,7 +87,7 @@ class FirebaseOnlineSeriesDraftDatabaseFacade
     Series seriesDraft,
   ) async {
     final seriesDraftRef =
-        _firestore.collection(Paths.seriesDraftsPath).doc(seriesDraft.uid);
+        _firestore.collection(seriesDraftsPath).doc(seriesDraft.uid);
 
     await seriesDraftRef.set(seriesDraft.toMap(), SetOptions(merge: true));
 

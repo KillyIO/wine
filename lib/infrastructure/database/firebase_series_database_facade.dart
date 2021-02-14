@@ -4,24 +4,26 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:injectable/injectable.dart';
-import 'package:models/models.dart';
 import 'package:path/path.dart' as p;
+import 'package:string_validator/string_validator.dart';
 
 import 'package:wine/domain/database/database_failure.dart';
 import 'package:wine/domain/database/facades/online/i_online_series_database_facade.dart';
 import 'package:wine/domain/database/successes/series_database_success.dart';
+import 'package:wine/domain/models/count.dart';
 import 'package:wine/domain/models/series.dart';
-import 'package:wine/utils/extensions.dart';
-import 'package:wine/utils/getters.dart';
-import 'package:wine/utils/paths.dart';
+import 'package:wine/utils/paths/series.dart';
+import 'package:wine/utils/extensions/list.dart';
+import 'package:wine/utils/paths/storages.dart';
 
 /// @nodoc
 @LazySingleton(as: IOnlineSeriesDatabaseFacade)
-class FirebaseOnlineSeriesDatabaseFacade
-    with Getters
-    implements IOnlineSeriesDatabaseFacade {
+class FirebaseSeriesDatabaseFacade implements IOnlineSeriesDatabaseFacade {
   /// @nodoc
-  FirebaseOnlineSeriesDatabaseFacade(this._firestore, this._firebaseStorage);
+  FirebaseSeriesDatabaseFacade(
+    this._firestore,
+    this._firebaseStorage,
+  );
 
   final FirebaseFirestore _firestore;
   final FirebaseStorage _firebaseStorage;
@@ -30,7 +32,7 @@ class FirebaseOnlineSeriesDatabaseFacade
   Future<Either<DatabaseFailure, SeriesDatabaseSuccess>> deleteSeries(
     String seriesUID,
   ) async {
-    final ref = _firestore.collection(Paths.seriesPath).doc(seriesUID);
+    final ref = _firestore.collection(seriesPath).doc(seriesUID);
 
     await ref.delete();
     return right(const SeriesDatabaseSuccess.seriesDeletedSCS());
@@ -50,7 +52,7 @@ class FirebaseOnlineSeriesDatabaseFacade
     Series lastSeries,
   }) async {
     final seriesBookmarksCollection =
-        _firestore.collection(Paths.seriesBookmarksPath);
+        _firestore.collection(seriesBookmarksPath);
 
     Query query;
     if (lastSeries != null) {
@@ -84,7 +86,7 @@ class FirebaseOnlineSeriesDatabaseFacade
     final uidsList = await _loadBookmarkedSeriesUIDList(userUID);
 
     if (uidsList.isNotEmpty) {
-      final seriesCollection = _firestore.collection(Paths.seriesPath);
+      final seriesCollection = _firestore.collection(seriesPath);
 
       final querySnapshot =
           await seriesCollection.where('uid', whereIn: uidsList).get();
@@ -107,7 +109,7 @@ class FirebaseOnlineSeriesDatabaseFacade
     Map<String, dynamic> filters, {
     Series lastSeries,
   }) async {
-    final seriesCollection = _firestore.collection(Paths.seriesPath);
+    final seriesCollection = _firestore.collection(seriesPath);
 
     Query query;
     if (lastSeries != null) {
@@ -147,7 +149,7 @@ class FirebaseOnlineSeriesDatabaseFacade
       loadSeriesAsMapByUIDList(List<String> seriesUIDs) async {
     final filterSeriesUIDs = seriesUIDs.toSet().toList();
 
-    final usersCollection = _firestore.collection(Paths.seriesPath);
+    final usersCollection = _firestore.collection(seriesPath);
 
     final querySnapshot =
         await usersCollection.where('uid', whereIn: filterSeriesUIDs).get();
@@ -168,7 +170,7 @@ class FirebaseOnlineSeriesDatabaseFacade
   Future<Either<DatabaseFailure, SeriesDatabaseSuccess>>
       loadSeriesBookmarksCount(String seriesUID) async {
     final documentSnapshot = await _firestore
-        .collection(Paths.seriesBookmarksCountsPath)
+        .collection(seriesBookmarksCountsPath)
         .doc(seriesUID)
         .get();
 
@@ -185,7 +187,7 @@ class FirebaseOnlineSeriesDatabaseFacade
   Future<Either<DatabaseFailure, SeriesDatabaseSuccess>> loadSeriesByUID(
     String seriesUID,
   ) async {
-    final ref = _firestore.collection(Paths.seriesPath).doc(seriesUID);
+    final ref = _firestore.collection(seriesPath).doc(seriesUID);
 
     final snapshot = await ref.get();
     if (snapshot != null && snapshot.exists) {
@@ -201,7 +203,7 @@ class FirebaseOnlineSeriesDatabaseFacade
     String userUID, {
     Series lastSeries,
   }) async {
-    final seriesCollection = _firestore.collection(Paths.seriesPath);
+    final seriesCollection = _firestore.collection(seriesPath);
 
     Query query;
     if (lastSeries != null) {
@@ -228,10 +230,8 @@ class FirebaseOnlineSeriesDatabaseFacade
   Future<Either<DatabaseFailure, SeriesDatabaseSuccess>> loadSeriesLikesCount(
     String seriesUID,
   ) async {
-    final documentSnapshot = await _firestore
-        .collection(Paths.seriesLikesCountsPath)
-        .doc(seriesUID)
-        .get();
+    final documentSnapshot =
+        await _firestore.collection(seriesLikesCountsPath).doc(seriesUID).get();
 
     if (!documentSnapshot.exists) {
       return right(SeriesDatabaseSuccess.seriesStatsCountLoadedSCS(
@@ -247,10 +247,8 @@ class FirebaseOnlineSeriesDatabaseFacade
   Future<Either<DatabaseFailure, SeriesDatabaseSuccess>> loadSeriesViewsCount(
     String seriesUID,
   ) async {
-    final documentSnapshot = await _firestore
-        .collection(Paths.seriesViewsCountsPath)
-        .doc(seriesUID)
-        .get();
+    final documentSnapshot =
+        await _firestore.collection(seriesViewsCountsPath).doc(seriesUID).get();
 
     if (!documentSnapshot.exists) {
       return right(SeriesDatabaseSuccess.seriesStatsCountLoadedSCS(
@@ -266,7 +264,7 @@ class FirebaseOnlineSeriesDatabaseFacade
     Series lastSeries,
   }) async {
     final seriesLikesCountsCollection =
-        _firestore.collection(Paths.seriesLikesCountsPath);
+        _firestore.collection(seriesLikesCountsPath);
 
     Query query;
     if (lastSeries != null) {
@@ -310,7 +308,7 @@ class FirebaseOnlineSeriesDatabaseFacade
         await _loadTopSeriesUIDList(filters, lastSeries: lastSeries);
 
     if (uidsList.isNotEmpty) {
-      final seriesCollection = _firestore.collection(Paths.seriesPath);
+      final seriesCollection = _firestore.collection(seriesPath);
 
       final uidsChunked = uidsList.chunk(10);
 
@@ -339,10 +337,8 @@ class FirebaseOnlineSeriesDatabaseFacade
     String userUID,
     String seriesUID,
   }) async {
-    final documentSnapshot = await _firestore
-        .collection(Paths.seriesBookmarksPath)
-        .doc(seriesUID)
-        .get();
+    final documentSnapshot =
+        await _firestore.collection(seriesBookmarksPath).doc(seriesUID).get();
 
     if (!documentSnapshot.exists) {
       return right(const SeriesDatabaseSuccess.seriesStatsStatusLoadedSCS(
@@ -369,7 +365,7 @@ class FirebaseOnlineSeriesDatabaseFacade
     String seriesUID,
   }) async {
     final documentSnapshot =
-        await _firestore.collection(Paths.seriesLikesPath).doc(seriesUID).get();
+        await _firestore.collection(seriesLikesPath).doc(seriesUID).get();
 
     if (!documentSnapshot.exists) {
       return right(const SeriesDatabaseSuccess.seriesStatsStatusLoadedSCS(
@@ -394,7 +390,7 @@ class FirebaseOnlineSeriesDatabaseFacade
   Future<Either<DatabaseFailure, SeriesDatabaseSuccess>> publishSeries(
     Series series,
   ) async {
-    if (!series.coverURL.isURL) {
+    if (!isURL(series.coverURL)) {
       await uploadCover(File(series.coverURL))
         ..fold(
           (_) {},
@@ -406,7 +402,7 @@ class FirebaseOnlineSeriesDatabaseFacade
         );
     }
 
-    final seriesRef = _firestore.collection(Paths.seriesPath).doc(series.uid);
+    final seriesRef = _firestore.collection(seriesPath).doc(series.uid);
 
     final options = SetOptions(merge: true);
     await seriesRef.set(series.toMap(), options);
@@ -421,9 +417,9 @@ class FirebaseOnlineSeriesDatabaseFacade
     String seriesUID,
   }) async {
     final seriesBookmarksCountsReference =
-        _firestore.collection(Paths.seriesBookmarksCountsPath).doc(seriesUID);
+        _firestore.collection(seriesBookmarksCountsPath).doc(seriesUID);
     final seriesBookmarksReference =
-        _firestore.collection(Paths.seriesBookmarksPath).doc(seriesUID);
+        _firestore.collection(seriesBookmarksPath).doc(seriesUID);
 
     final documentSnapshot = await seriesBookmarksReference.get();
 
@@ -473,9 +469,9 @@ class FirebaseOnlineSeriesDatabaseFacade
     Series series,
   }) async {
     final seriesLikesCountsReference =
-        _firestore.collection(Paths.seriesLikesCountsPath).doc(seriesUID);
+        _firestore.collection(seriesLikesCountsPath).doc(seriesUID);
     final seriesLikesReference =
-        _firestore.collection(Paths.seriesLikesPath).doc(seriesUID);
+        _firestore.collection(seriesLikesPath).doc(seriesUID);
 
     final documentSnapshot = await seriesLikesReference.get();
 
@@ -526,9 +522,9 @@ class FirebaseOnlineSeriesDatabaseFacade
     bool isInit = false,
   }) async {
     final seriesViewsCountsReference =
-        _firestore.collection(Paths.seriesViewsCountsPath).doc(seriesUID);
+        _firestore.collection(seriesViewsCountsPath).doc(seriesUID);
     final seriesViewsReference =
-        _firestore.collection(Paths.seriesViewsPath).doc(seriesUID);
+        _firestore.collection(seriesViewsPath).doc(seriesUID);
 
     final documentSnapshot = await seriesViewsReference.get();
 
@@ -568,7 +564,7 @@ class FirebaseOnlineSeriesDatabaseFacade
   ) async {
     final fileName = p.basename(cover.path);
     final ref = _firebaseStorage.ref().child(
-        '${Paths.seriesCoversPaths}/${DateTime.now().millisecondsSinceEpoch}-$fileName');
+        '$seriesCoversPath/${DateTime.now().millisecondsSinceEpoch}-$fileName');
     final uploadTask = await ref.putFile(cover);
     final state = uploadTask.state;
     if (state == TaskState.success) {

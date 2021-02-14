@@ -4,14 +4,16 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:injectable/injectable.dart';
-import 'package:models/models.dart';
 import 'package:path/path.dart' as p;
+import 'package:string_validator/string_validator.dart';
 
 import 'package:wine/domain/database/database_failure.dart';
 import 'package:wine/domain/database/facades/online/i_online_chapter_database_facade.dart';
 import 'package:wine/domain/database/successes/chapter_database_success.dart';
-import 'package:wine/utils/extensions.dart';
-import 'package:wine/utils/paths.dart';
+import 'package:wine/domain/models/chapter.dart';
+import 'package:wine/domain/models/count.dart';
+import 'package:wine/utils/paths/chapters.dart';
+import 'package:wine/utils/paths/storages.dart';
 
 /// @nodoc
 @LazySingleton(as: IOnlineChapterDatabaseFacade)
@@ -30,7 +32,7 @@ class FirebaseOnlineChapterDatabaseFacade
   Future<Either<DatabaseFailure, ChapterDatabaseSuccess>> deleteChapter(
     String chapterUID,
   ) async {
-    final ref = _firestore.collection(Paths.chaptersPath).doc(chapterUID);
+    final ref = _firestore.collection(chaptersPath).doc(chapterUID);
 
     await ref.delete();
     return right(const ChapterDatabaseSuccess.chapterDeletedSCS());
@@ -51,7 +53,7 @@ class FirebaseOnlineChapterDatabaseFacade
     Chapter lastChapter,
   }) async {
     final chaptersBookmarksCollection =
-        _firestore.collection(Paths.chaptersBookmarksPath);
+        _firestore.collection(chaptersBookmarksPath);
 
     Query query;
     if (lastChapter != null) {
@@ -86,7 +88,7 @@ class FirebaseOnlineChapterDatabaseFacade
         await _loadBookmarkedChaptersUIDList(userUID, lastChapter: lastChapter);
 
     if (uidsList.isNotEmpty) {
-      final chaptersCollection = _firestore.collection(Paths.chaptersPath);
+      final chaptersCollection = _firestore.collection(chaptersPath);
 
       final querySnapshot =
           await chaptersCollection.where('uid', whereIn: uidsList).get();
@@ -108,7 +110,7 @@ class FirebaseOnlineChapterDatabaseFacade
   Future<Either<DatabaseFailure, ChapterDatabaseSuccess>>
       loadChapterBookmarksCount(String chapterUID) async {
     final documentSnapshot = await _firestore
-        .collection(Paths.chaptersBookmarksCountsPath)
+        .collection(chaptersBookmarksCountsPath)
         .doc(chapterUID)
         .get();
 
@@ -125,7 +127,7 @@ class FirebaseOnlineChapterDatabaseFacade
   Future<Either<DatabaseFailure, ChapterDatabaseSuccess>> loadChapterByUID(
     String chapterUID,
   ) async {
-    final ref = _firestore.collection(Paths.chaptersPath).doc(chapterUID);
+    final ref = _firestore.collection(chaptersPath).doc(chapterUID);
 
     final snapshot = await ref.get();
     if (snapshot != null && snapshot.exists) {
@@ -140,7 +142,7 @@ class FirebaseOnlineChapterDatabaseFacade
     String chapterUID,
   ) async {
     final documentSnapshot = await _firestore
-        .collection(Paths.chaptersLikesCountsPath)
+        .collection(chaptersLikesCountsPath)
         .doc(chapterUID)
         .get();
 
@@ -156,7 +158,7 @@ class FirebaseOnlineChapterDatabaseFacade
   @override
   Future<Either<DatabaseFailure, ChapterDatabaseSuccess>>
       loadChaptersBySeriesUIDAndIndex(String seriesUID, int index) async {
-    final chaptersCollection = _firestore.collection(Paths.chaptersPath);
+    final chaptersCollection = _firestore.collection(chaptersPath);
 
     final querySnapshot = await chaptersCollection
         .where('seriesUID', isEqualTo: seriesUID)
@@ -178,7 +180,7 @@ class FirebaseOnlineChapterDatabaseFacade
     String uid, {
     Chapter lastChapter,
   }) async {
-    final chaptersCollection = _firestore.collection(Paths.chaptersPath);
+    final chaptersCollection = _firestore.collection(chaptersPath);
 
     Query query;
     if (lastChapter != null) {
@@ -209,7 +211,7 @@ class FirebaseOnlineChapterDatabaseFacade
     String chapterUID,
   ) async {
     final documentSnapshot = await _firestore
-        .collection(Paths.chaptersViewsCountsPath)
+        .collection(chaptersViewsCountsPath)
         .doc(chapterUID)
         .get();
 
@@ -226,7 +228,7 @@ class FirebaseOnlineChapterDatabaseFacade
   Future<Either<DatabaseFailure, ChapterDatabaseSuccess>> loadFirstChapter(
     String seriesUID,
   ) async {
-    final chaptersCollection = _firestore.collection(Paths.chaptersPath);
+    final chaptersCollection = _firestore.collection(chaptersPath);
 
     final querySnapshot = await chaptersCollection
         .where('seriesUID', isEqualTo: seriesUID)
@@ -242,7 +244,7 @@ class FirebaseOnlineChapterDatabaseFacade
   Future<Either<DatabaseFailure, ChapterDatabaseSuccess>>
       loadNextChaptersAuthorsMap(String chapterUID) async {
     final documentSnapshot = await _firestore
-        .collection(Paths.nextChaptersAuthorsPath)
+        .collection(nextChaptersAuthorsPath)
         .doc(chapterUID)
         .get();
 
@@ -261,7 +263,7 @@ class FirebaseOnlineChapterDatabaseFacade
   Future<Either<DatabaseFailure, ChapterDatabaseSuccess>>
       loadUserBookmarkStatus({String userUID, String chapterUID}) async {
     final documentSnapshot = await _firestore
-        .collection(Paths.chaptersBookmarksPath)
+        .collection(chaptersBookmarksPath)
         .doc(chapterUID)
         .get();
 
@@ -289,10 +291,8 @@ class FirebaseOnlineChapterDatabaseFacade
     String userUID,
     String chapterUID,
   }) async {
-    final documentSnapshot = await _firestore
-        .collection(Paths.chaptersLikesPath)
-        .doc(chapterUID)
-        .get();
+    final documentSnapshot =
+        await _firestore.collection(chaptersLikesPath).doc(chapterUID).get();
 
     if (!documentSnapshot.exists) {
       return right(const ChapterDatabaseSuccess.chapterStatsStatusLoadedSCS(
@@ -316,7 +316,7 @@ class FirebaseOnlineChapterDatabaseFacade
   Future<Either<DatabaseFailure, ChapterDatabaseSuccess>> publishChapter(
     Chapter chapter,
   ) async {
-    if (!chapter.coverURL.isURL) {
+    if (!isURL(chapter.coverURL)) {
       final result = await uploadCover(File(chapter.coverURL));
 
       if (result.isLeft()) {
@@ -333,15 +333,14 @@ class FirebaseOnlineChapterDatabaseFacade
       );
     }
 
-    final chapterRef =
-        _firestore.collection(Paths.chaptersPath).doc(chapter.uid);
+    final chapterRef = _firestore.collection(chaptersPath).doc(chapter.uid);
 
     final options = SetOptions(merge: true);
     await chapterRef.set(chapter.toMap(), options);
 
     if (chapter.previousChapterUID != null) {
       final nextChaptersCountsRef = _firestore
-          .collection(Paths.nextChaptersAuthorsPath)
+          .collection(nextChaptersAuthorsPath)
           .doc(chapter.previousChapterUID);
 
       await nextChaptersCountsRef.set({chapter.authorUID: true}, options);
@@ -356,11 +355,10 @@ class FirebaseOnlineChapterDatabaseFacade
     String userUID,
     String chapterUID,
   }) async {
-    final chaptersBookmarksCountsReference = _firestore
-        .collection(Paths.chaptersBookmarksCountsPath)
-        .doc(chapterUID);
+    final chaptersBookmarksCountsReference =
+        _firestore.collection(chaptersBookmarksCountsPath).doc(chapterUID);
     final chaptersBookmarksReference =
-        _firestore.collection(Paths.chaptersBookmarksPath).doc(chapterUID);
+        _firestore.collection(chaptersBookmarksPath).doc(chapterUID);
 
     final documentSnapshot = await chaptersBookmarksReference.get();
 
@@ -409,9 +407,9 @@ class FirebaseOnlineChapterDatabaseFacade
     bool isInit = false,
   }) async {
     final chaptersLikesCountsReference =
-        _firestore.collection(Paths.chaptersLikesCountsPath).doc(chapterUID);
+        _firestore.collection(chaptersLikesCountsPath).doc(chapterUID);
     final chaptersLikesReference =
-        _firestore.collection(Paths.chaptersLikesPath).doc(chapterUID);
+        _firestore.collection(chaptersLikesPath).doc(chapterUID);
 
     final documentSnapshot = await chaptersLikesReference.get();
 
@@ -460,9 +458,9 @@ class FirebaseOnlineChapterDatabaseFacade
     bool isInit = false,
   }) async {
     final chaptersViewsCountsReference =
-        _firestore.collection(Paths.chaptersViewsCountsPath).doc(chapterUID);
+        _firestore.collection(chaptersViewsCountsPath).doc(chapterUID);
     final chaptersViewsReference =
-        _firestore.collection(Paths.chaptersViewsPath).doc(chapterUID);
+        _firestore.collection(chaptersViewsPath).doc(chapterUID);
 
     final documentSnapshot = await chaptersViewsReference.get();
 
@@ -502,7 +500,7 @@ class FirebaseOnlineChapterDatabaseFacade
   ) async {
     final fileName = p.basename(cover.path);
     final ref = _firebaseStorage.ref().child(
-        '${Paths.chapterCoversPaths}/${DateTime.now().millisecondsSinceEpoch}-$fileName');
+        '$chapterCoversPath/${DateTime.now().millisecondsSinceEpoch}-$fileName');
     final uploadTask = await ref.putFile(cover);
     final state = uploadTask.state;
     if (state == TaskState.success) {
