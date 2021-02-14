@@ -27,7 +27,7 @@ abstract class ChapterDatabaseState with _$ChapterDatabaseState {
     @required
         Option<Either<DatabaseFailure, SessionDatabaseSuccess>>
             sessionDatabaseFailureOrSuccessOption,
-    @required Session session,
+    @required User session,
   }) = _ChapterDatabaseState;
 
   /// @nodoc
@@ -44,7 +44,7 @@ abstract class ChapterDatabaseState with _$ChapterDatabaseState {
         nextChapters: <Chapter>[],
         nextSameAuthorChapter: Chapter(),
         percentProgress: 0.0,
-        session: Session(),
+        session: User(),
         sessionDatabaseFailureOrSuccessOption: none(),
         showChapterAdditionalInfo: false,
         showNavbar: true,

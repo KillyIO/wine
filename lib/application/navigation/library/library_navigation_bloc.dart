@@ -6,8 +6,7 @@ import 'package:flutter/widgets.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:meta/meta.dart';
-
-import 'package:wine/utils/getters.dart';
+import 'package:wine/utils/constants/library.dart';
 
 part 'library_navigation_bloc.freezed.dart';
 part 'library_navigation_event.dart';
@@ -16,7 +15,7 @@ part 'library_navigation_state.dart';
 /// @nodoc
 @injectable
 class LibraryNavigationBloc
-    extends Bloc<LibraryNavigationEvent, LibraryNavigationState> with Getters {
+    extends Bloc<LibraryNavigationEvent, LibraryNavigationState> {
   /// @nodoc
   LibraryNavigationBloc() : super(LibraryNavigationState.initial());
 
@@ -28,11 +27,11 @@ class LibraryNavigationBloc
       pageViewIndexChangedEVT: (event) async* {
         if (state.currentPageViewIdx != event.index) {
           var newIdx = event.index;
-          if (event.index > libraryNavbarItemsKeys.length - 1) {
+          if (event.index > libraryHorizontalNavbarKeys.length - 1) {
             newIdx = 0;
           }
           if (event.index < 0) {
-            newIdx = libraryNavbarItemsKeys.length - 1;
+            newIdx = libraryHorizontalNavbarKeys.length - 1;
           }
           yield state.copyWith(currentPageViewIdx: newIdx);
         }

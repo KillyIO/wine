@@ -6,8 +6,7 @@ import 'package:flutter/widgets.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:meta/meta.dart';
-
-import 'package:wine/utils/getters.dart';
+import 'package:wine/utils/constants/home.dart';
 
 part 'home_navigation_bloc.freezed.dart';
 part 'home_navigation_event.dart';
@@ -15,8 +14,8 @@ part 'home_navigation_state.dart';
 
 /// @nodoc
 @injectable
-class HomeNavigationBloc extends Bloc<HomeNavigationEvent, HomeNavigationState>
-    with Getters {
+class HomeNavigationBloc
+    extends Bloc<HomeNavigationEvent, HomeNavigationState> {
   /// @nodoc
   HomeNavigationBloc() : super(HomeNavigationState.initial());
 
@@ -30,11 +29,11 @@ class HomeNavigationBloc extends Bloc<HomeNavigationEvent, HomeNavigationState>
       pageViewIndexChangedEVT: (event) async* {
         if (state.currentPageViewIdx != event.index) {
           var newIdx = event.index;
-          if (event.index > homeNavbarItemsKeys.length - 1) {
+          if (event.index > homeNavbarKeys.length - 1) {
             newIdx = 0;
           }
           if (event.index < 0) {
-            newIdx = homeNavbarItemsKeys.length - 1;
+            newIdx = homeNavbarKeys.length - 1;
           }
           yield state.copyWith(currentPageViewIdx: newIdx);
         }

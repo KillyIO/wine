@@ -6,19 +6,20 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/widgets.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
-import 'package:models/models.dart';
 
 import 'package:wine/domain/authentication/i_authentication_facade.dart';
 import 'package:wine/domain/database/database_failure.dart';
 import 'package:wine/domain/database/facades/local/i_local_config_database_facade.dart';
-import 'package:wine/domain/database/facades/local/i_local_session_database_facade.dart';
+import 'package:wine/domain/database/facades/local/i_session_database_facade.dart';
 import 'package:wine/domain/database/facades/online/i_online_chapter_database_facade.dart';
 import 'package:wine/domain/database/failures/config_database_failure.dart';
 import 'package:wine/domain/database/successes/chapter_database_success.dart';
 import 'package:wine/domain/database/successes/config_database_success.dart';
 import 'package:wine/domain/database/successes/session_database_success.dart';
-import 'package:wine/domain/models/hive/config.dart';
-import 'package:wine/domain/models/hive/session.dart';
+import 'package:wine/domain/models/chapter.dart';
+import 'package:wine/domain/models/config.dart';
+import 'package:wine/domain/models/count.dart';
+import 'package:wine/domain/models/user.dart';
 
 part 'chapter_database_bloc.freezed.dart';
 part 'chapter_database_event.dart';
@@ -32,14 +33,14 @@ class ChapterDatabaseBloc
   ChapterDatabaseBloc(
     this._authenticationFacade,
     this._localConfigDatabaseFacade,
-    this._localSessionDatabaseFacade,
     this._onlineChapterDatabaseFacade,
+    this._sessionDatabaseFacade,
   ) : super(ChapterDatabaseState.initial());
 
   final IAuthenticationFacade _authenticationFacade;
   final ILocalConfigDatabaseFacade _localConfigDatabaseFacade;
-  final ILocalSessionDatabaseFacade _localSessionDatabaseFacade;
   final IOnlineChapterDatabaseFacade _onlineChapterDatabaseFacade;
+  final ISessionDatabaseFacade _sessionDatabaseFacade;
 
   @override
   Stream<ChapterDatabaseState> mapEventToState(
@@ -162,16 +163,15 @@ class ChapterDatabaseBloc
       chapterLaunchedEVT: (event) async* {
         var session = state.session;
 
-        final failureOrSuccess =
-            await _localSessionDatabaseFacade.fetchSession()
-              ..fold(
-                (_) {},
-                (success) {
-                  if (success is SessionFetchedSCS) {
-                    session = success.session;
-                  }
-                },
-              );
+        final failureOrSuccess = await _sessionDatabaseFacade.fetchSession()
+          ..fold(
+            (_) {},
+            (success) {
+              if (success is SessionFetchedSCS) {
+                session = success.user;
+              }
+            },
+          );
 
         yield state.copyWith(
           chapter: event.chapter,
