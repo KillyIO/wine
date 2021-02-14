@@ -4,44 +4,42 @@ part of 'core_database_bloc.dart';
 @freezed
 abstract class CoreDatabaseEvent with _$CoreDatabaseEvent {
   /// @nodoc
-  const factory CoreDatabaseEvent.chapterDraftDeletedFromLibraryEvent({
+  const factory CoreDatabaseEvent.chapterDraftDeletedFromLibrary({
     String chapterDraftUID,
     String seriesDraftUID,
-  }) = ChapterDraftDeletedFromLibraryEvent;
+  }) = ChapterDraftDeletedFromLibrary;
 
   /// @nodoc
-  const factory CoreDatabaseEvent.chapterDraftSavedFromLibraryEvent(
+  const factory CoreDatabaseEvent.chapterDraftSavedFromLibrary(
     Chapter chapterDraft,
-  ) = ChapterDraftSavedFromLibraryEvent;
+  ) = ChapterDraftSavedFromLibrary;
 
   /// @nodoc
-  const factory CoreDatabaseEvent.chapterPublishedFromChapterEvent(
-    Chapter chapter,
-  ) = ChapterPublishedFromChapterEvent;
+  const factory CoreDatabaseEvent.chapterPublishedFromChapter(Chapter chapter) =
+      ChapterPublishedFromChapter;
 
   /// @nodoc
-  const factory CoreDatabaseEvent.chapterPublishedFromLibraryEvent(
-    Chapter chapter,
-  ) = ChapterPublishedFromLibraryEvent;
+  const factory CoreDatabaseEvent.chapterPublishedFromLibrary(Chapter chapter) =
+      ChapterPublishedFromLibrary;
 
   /// @nodoc
-  const factory CoreDatabaseEvent.resetBlocEvent() = ResetBlocEvent;
+  const factory CoreDatabaseEvent.resetBloc() = ResetBloc;
 
   /// @nodoc
-  const factory CoreDatabaseEvent.seriesDraftDeletedFromLibraryEvent(
+  const factory CoreDatabaseEvent.seriesDraftDeletedFromLibrary(
     String seriesDraftUID,
-  ) = SeriesDraftDeletedFromLibraryEvent;
+  ) = SeriesDraftDeletedFromLibrary;
 
   /// @nodoc
-  const factory CoreDatabaseEvent.seriesDraftSavedFromLibraryEvent(
+  const factory CoreDatabaseEvent.seriesDraftSavedFromLibrary(
     Series seriesDraft,
-  ) = SeriesDraftSavedFromLibraryEvent;
+  ) = SeriesDraftSavedFromLibrary;
 
   /// @nodoc
-  const factory CoreDatabaseEvent.seriesPublishedFromHomeEvent(Series series) =
-      SeriesPublishedFromHomeEvent;
+  const factory CoreDatabaseEvent.seriesPublishedFromHome(Series series) =
+      SeriesPublishedFromHome;
 
   /// @nodoc
-  const factory CoreDatabaseEvent.seriesPublishedFromLibraryEvent(
-      Series series) = SeriesPublishedFromLibraryEvent;
+  const factory CoreDatabaseEvent.seriesPublishedFromLibrary(Series series) =
+      SeriesPublishedFromLibrary;
 }

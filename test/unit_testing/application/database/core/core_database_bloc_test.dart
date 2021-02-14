@@ -18,9 +18,7 @@ void main() {
 
       final chapter = Chapter(
         authorUID: authorUID,
-        copyrights: 'cc-by',
-        coverURL:
-            'https://firebasestorage.googleapis.com/v0/b/wine-dev-1db0c.appspot.com/o/placeholders%2Fbook_placeholder_pastel_yellow.png?alt=media&token=3ab84d84-829f-4d39-9ed6-698694e87abd',
+        coverURL: 'https://www.website.com/cover.png',
         createdAt: 1608807831084,
         genre: 'comedy',
         genreOptional: 'romance',
@@ -28,6 +26,7 @@ void main() {
         isLastChapter: true,
         isNSFW: false,
         language: 'en',
+        licence: 'licence',
         previousChapterUID: null,
         seriesUID: seriesUID,
         story: 'story',
@@ -64,11 +63,7 @@ void main() {
 
       // SECTION: initial
       test(
-        '''
-        Given CoreDatabaseBloc
-        When the Bloc is created
-        Then the initial state is initial()
-        ''',
+        'When Bloc created Then state is _Initial',
         () {
           expect(coreDatabaseBloc.state, const CoreDatabaseState.initial());
         },

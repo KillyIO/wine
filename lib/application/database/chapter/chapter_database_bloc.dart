@@ -46,7 +46,7 @@ class ChapterDatabaseBloc
   Stream<ChapterDatabaseState> mapEventToState(
       ChapterDatabaseEvent event) async* {
     yield* event.map(
-      bookmarkButtonPressedEVT: (event) async* {
+      bookmarkButtonPressed: (event) async* {
         final failureOrSuccess = await _onlineChapterDatabaseFacade
             .updateChapterBookmarksAndBookmarksCount(
           userUID: state.session.uid,
@@ -65,7 +65,7 @@ class ChapterDatabaseBloc
           isBookmarked: isBookmarked,
         );
       },
-      bookmarksUpdatedEVT: (event) async* {
+      bookmarksUpdated: (event) async* {
         var bookmarksCount = Count(count: 0);
 
         final failureOrSuccess = await _onlineChapterDatabaseFacade
@@ -84,7 +84,7 @@ class ChapterDatabaseBloc
           chapterDatabaseFailureOrSuccessOption: optionOf(failureOrSuccess),
         );
       },
-      chapterBookmarksLoadedEVT: (event) async* {
+      chapterBookmarksLoaded: (event) async* {
         var isLiked = state.isLiked;
 
         final failureOrSuccess =
@@ -107,10 +107,10 @@ class ChapterDatabaseBloc
         );
 
         if (failureOrSuccess.isRight()) {
-          add(const ChapterDatabaseEvent.chapterLikeStatusLoadedEVT());
+          add(const ChapterDatabaseEvent.chapterLikeStatusLoaded());
         }
       },
-      chapterLikesLoadedEVT: (event) async* {
+      chapterLikesLoaded: (event) async* {
         Either<DatabaseFailure, ChapterDatabaseSuccess> failureOrSuccess;
 
         var bookmarksCount = Count(count: 0);
@@ -135,10 +135,10 @@ class ChapterDatabaseBloc
 
         if (!_authenticationFacade.isAnonymous() &&
             (failureOrSuccess == null || failureOrSuccess.isRight())) {
-          add(const ChapterDatabaseEvent.chapterBookmarksLoadedEVT());
+          add(const ChapterDatabaseEvent.chapterBookmarksLoaded());
         }
       },
-      chapterLikeStatusLoadedEVT: (event) async* {
+      chapterLikeStatusLoaded: (event) async* {
         var isBookmarked = state.isBookmarked;
 
         final failureOrSuccess =
@@ -160,7 +160,7 @@ class ChapterDatabaseBloc
           isBookmarked: isBookmarked,
         );
       },
-      chapterLaunchedEVT: (event) async* {
+      chapterLaunched: (event) async* {
         var session = state.session;
 
         final failureOrSuccess = await _sessionDatabaseFacade.fetchSession()
@@ -180,11 +180,11 @@ class ChapterDatabaseBloc
         );
 
         if (failureOrSuccess.isRight()) {
-          add(const ChapterDatabaseEvent.sessionFetchedEVT());
+          add(const ChapterDatabaseEvent.sessionFetched());
         }
       },
-      chapterPublishedEVT: (event) async* {},
-      chapterViewsLoadedEVT: (event) async* {
+      chapterPublished: (event) async* {},
+      chapterViewsLoaded: (event) async* {
         Either<DatabaseFailure, ChapterDatabaseSuccess> failureOrSuccess;
 
         var likesCount = Count(count: 0);
@@ -208,10 +208,10 @@ class ChapterDatabaseBloc
         );
 
         if (failureOrSuccess == null || failureOrSuccess.isRight()) {
-          add(const ChapterDatabaseEvent.chapterLikesLoadedEVT());
+          add(const ChapterDatabaseEvent.chapterLikesLoaded());
         }
       },
-      chapterViewsUpdatedEVT: (event) async* {
+      chapterViewsUpdated: (event) async* {
         var viewsCount = Count(count: 0);
 
         Either<DatabaseFailure, ChapterDatabaseSuccess> failureOrSuccess;
@@ -235,10 +235,10 @@ class ChapterDatabaseBloc
         );
 
         if (failureOrSuccess == null || failureOrSuccess.isRight()) {
-          add(const ChapterDatabaseEvent.chapterViewsLoadedEVT());
+          add(const ChapterDatabaseEvent.chapterViewsLoaded());
         }
       },
-      configFetchedEVT: (event) async* {
+      configFetched: (event) async* {
         Either<DatabaseFailure, ChapterDatabaseSuccess> failureOrSuccess;
 
         if (!_authenticationFacade.isAnonymous()) {
@@ -255,10 +255,10 @@ class ChapterDatabaseBloc
         );
 
         if (failureOrSuccess == null || failureOrSuccess.isRight()) {
-          add(const ChapterDatabaseEvent.chapterViewsUpdatedEVT());
+          add(const ChapterDatabaseEvent.chapterViewsUpdated());
         }
       },
-      likeButtonPressedEVT: (event) async* {
+      likeButtonPressed: (event) async* {
         final failureOrSuccess =
             await _onlineChapterDatabaseFacade.updateChapterLikesAndLikesCount(
           userUID: state.session.uid,
@@ -277,7 +277,7 @@ class ChapterDatabaseBloc
           isLiked: isLiked,
         );
       },
-      likesUpdatedEVT: (event) async* {
+      likesUpdated: (event) async* {
         var likesCount = Count(count: 0);
 
         final failureOrSuccess = await _onlineChapterDatabaseFacade
@@ -296,7 +296,7 @@ class ChapterDatabaseBloc
           likesCount: likesCount,
         );
       },
-      loadNextChaptersEVT: (event) async* {
+      loadNextChapters: (event) async* {
         var sameAuthorChapter = Chapter();
         var nextChapters = <Chapter>[];
 
@@ -330,8 +330,8 @@ class ChapterDatabaseBloc
           nextSameAuthorChapter: sameAuthorChapter,
         );
       },
-      previousChapterButtonPressedEVT: (event) async* {},
-      scrollEVT: (event) async* {
+      previousChapterButtonPressed: (event) async* {},
+      scroll: (event) async* {
         final percentProgress =
             event.currentScrollPosition / event.maxScrollPosition;
 
@@ -341,7 +341,7 @@ class ChapterDatabaseBloc
           sessionDatabaseFailureOrSuccessOption: none(),
         );
       },
-      sessionFetchedEVT: (event) async* {
+      sessionFetched: (event) async* {
         var config = state.config;
 
         final failureOrSuccess = await _localConfigDatabaseFacade.fetchConfig()
@@ -361,17 +361,17 @@ class ChapterDatabaseBloc
         );
 
         if (failureOrSuccess.isRight()) {
-          add(const ChapterDatabaseEvent.configFetchedEVT());
+          add(const ChapterDatabaseEvent.configFetched());
         }
       },
-      showOrHideNavbarEVT: (event) async* {
+      showOrHideNavbar: (event) async* {
         yield state.copyWith(
           chapterDatabaseFailureOrSuccessOption: none(),
           sessionDatabaseFailureOrSuccessOption: none(),
           showNavbar: !state.showNavbar,
         );
       },
-      toggleChapterAdditionalInfoEVT: (event) async* {
+      toggleChapterAdditionalInfo: (event) async* {
         yield state.copyWith(
           chapterDatabaseFailureOrSuccessOption: none(),
           sessionDatabaseFailureOrSuccessOption: none(),

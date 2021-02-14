@@ -15,8 +15,8 @@ void main() {
     data['index'] = 1;
     data['updatedAt'] = 854841600000;
     data['authorUID'] = 'uid';
-    data['copyrights'] = 'copyrights';
-    data['coverURL'] = 'https:/www.website.com/cover.png';
+    data['licence'] = 'licence';
+    data['coverURL'] = 'https://www.website.com/cover.png';
     data['deletionReason'] = null;
     data['genre'] = 'genre';
     data['genreOptional'] = null;
@@ -60,7 +60,7 @@ void main() {
               final chapter = Chapter.fromFirestore(mockDocumentSnapshot);
 
               expect(chapter.authorUID, data['authorUID']);
-              expect(chapter.copyrights, data['copyrights']);
+              expect(chapter.licence, data['licence']);
               expect(chapter.coverURL, data['coverURL']);
               expect(chapter.createdAt, data['createdAt']);
               expect(chapter.deletionReason, data['deletionReason']);
@@ -109,7 +109,7 @@ void main() {
 
             final chapter = Chapter(
               authorUID: data['authorUID'],
-              copyrights: data['copyrights'],
+              licence: data['licence'],
               coverURL: data['coverURL'],
               createdAt: data['createdAt'],
               deletionReason: data['deletionReason'],

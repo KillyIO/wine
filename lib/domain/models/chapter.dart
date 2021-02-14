@@ -14,12 +14,12 @@ class Chapter extends Equatable {
     this.index,
     this.updatedAt,
     this.authorUID,
-    this.copyrights,
     this.coverURL,
     this.deletionReason,
     this.genre,
     this.genreOptional,
     this.language,
+    this.licence,
     this.previousChapterUID,
     this.seriesUID,
     this.story,
@@ -41,12 +41,12 @@ class Chapter extends Equatable {
       index: data['index'] as int,
       updatedAt: data['updatedAt'] as int,
       authorUID: data['authorUID'] as String,
-      copyrights: data['copyrights'] as String,
       coverURL: data['coverURL'] as String,
       deletionReason: data['deletionReason'] as String,
       genre: data['genre'] as String,
       genreOptional: data['genreOptional'] as String,
       language: data['language'] as String,
+      licence: data['licence'] as String,
       previousChapterUID: data['previousChapterUID'] as String,
       seriesUID: data['seriesUID'] as String,
       story: data['story'] as String,
@@ -67,12 +67,12 @@ class Chapter extends Equatable {
       index: map['index'] as int,
       updatedAt: map['updatedAt'] as int,
       authorUID: map['authorUID'] as String,
-      copyrights: map['copyrights'] as String,
       coverURL: map['coverURL'] as String,
       deletionReason: map['deletionReason'] as String,
       genre: map['genre'] as String,
       genreOptional: map['genreOptional'] as String,
       language: map['language'] as String,
+      licence: map['licence'] as String,
       previousChapterUID: map['previousChapterUID'] as String,
       seriesUID: map['seriesUID'] as String,
       story: map['story'] as String,
@@ -103,9 +103,6 @@ class Chapter extends Equatable {
   final String authorUID;
 
   /// @nodoc
-  final String copyrights;
-
-  /// @nodoc
   final String coverURL;
 
   /// @nodoc
@@ -119,6 +116,9 @@ class Chapter extends Equatable {
 
   /// @nodoc
   final String language;
+
+  /// @nodoc
+  final String licence;
 
   /// @nodoc
   final String previousChapterUID;
@@ -144,12 +144,12 @@ class Chapter extends Equatable {
     int index,
     int updatedAt,
     String authorUID,
-    String copyrights,
     String coverURL,
     String deletionReason,
     String genre,
     String genreOptional,
     String language,
+    String licence,
     String previousChapterUID,
     String seriesUID,
     String story,
@@ -164,12 +164,12 @@ class Chapter extends Equatable {
       index: index ?? this.index,
       updatedAt: updatedAt ?? this.updatedAt,
       authorUID: authorUID ?? this.authorUID,
-      copyrights: copyrights ?? this.copyrights,
       coverURL: coverURL ?? this.coverURL,
       deletionReason: deletionReason ?? this.deletionReason,
       genre: genre ?? this.genre,
       genreOptional: genreOptional ?? this.genreOptional,
       language: language ?? this.language,
+      licence: licence ?? this.licence,
       previousChapterUID: previousChapterUID ?? this.previousChapterUID,
       seriesUID: seriesUID ?? this.seriesUID,
       story: story ?? this.story,
@@ -188,12 +188,12 @@ class Chapter extends Equatable {
       'index': index,
       'updatedAt': updatedAt,
       'authorUID': authorUID,
-      'copyrights': copyrights,
       'coverURL': coverURL,
       'deletionReason': deletionReason,
       'genre': genre,
       'genreOptional': genreOptional,
       'language': language,
+      'licence': licence,
       'previousChapterUID': previousChapterUID,
       'seriesUID': seriesUID,
       'story': story,
@@ -217,10 +217,10 @@ class Chapter extends Equatable {
       index != null &&
       updatedAt != null &&
       authorUID != null &&
-      copyrights != null &&
       coverURL != null &&
       genre != null &&
       language != null &&
+      licence != null &&
       seriesUID != null &&
       story != null &&
       story.isNotEmpty &&

@@ -4,73 +4,67 @@ part of 'chapter_database_bloc.dart';
 @freezed
 abstract class ChapterDatabaseEvent with _$ChapterDatabaseEvent {
   /// @nodoc
-  const factory ChapterDatabaseEvent.bookmarkButtonPressedEVT() =
-      BookmarkButtonPressedEVT;
+  const factory ChapterDatabaseEvent.bookmarkButtonPressed() =
+      BookmarkButtonPressed;
 
   /// @nodoc
-  const factory ChapterDatabaseEvent.bookmarksUpdatedEVT() =
-      BookmarksUpdatedEVT;
+  const factory ChapterDatabaseEvent.bookmarksUpdated() = BookmarksUpdated;
 
   /// @nodoc
-  const factory ChapterDatabaseEvent.chapterBookmarksLoadedEVT() =
-      ChapterBookmarksLoadedEVT;
+  const factory ChapterDatabaseEvent.chapterBookmarksLoaded() =
+      ChapterBookmarksLoaded;
 
   /// @nodoc
-  const factory ChapterDatabaseEvent.chapterLikesLoadedEVT() =
-      ChapterLikesLoadedEVT;
+  const factory ChapterDatabaseEvent.chapterLikesLoaded() = ChapterLikesLoaded;
 
   /// @nodoc
-  const factory ChapterDatabaseEvent.chapterLikeStatusLoadedEVT() =
-      ChapterLikeStatusLoadedEVT;
+  const factory ChapterDatabaseEvent.chapterLikeStatusLoaded() =
+      ChapterLikeStatusLoaded;
 
   /// @nodoc
-  const factory ChapterDatabaseEvent.chapterLaunchedEVT(Chapter chapter) =
-      ChapterLaunchedEVT;
+  const factory ChapterDatabaseEvent.chapterLaunched(Chapter chapter) =
+      ChapterLaunched;
 
   /// @nodoc
-  const factory ChapterDatabaseEvent.chapterPublishedEVT(Chapter chapter) =
-      ChapterPublishedEVT;
+  const factory ChapterDatabaseEvent.chapterPublished(Chapter chapter) =
+      ChapterPublished;
 
   /// @nodoc
-  const factory ChapterDatabaseEvent.chapterViewsLoadedEVT() =
-      ChapterViewsLoadedEVT;
+  const factory ChapterDatabaseEvent.chapterViewsLoaded() = ChapterViewsLoaded;
 
   /// @nodoc
-  const factory ChapterDatabaseEvent.chapterViewsUpdatedEVT() =
-      ChapterViewsUpdatedEVT;
+  const factory ChapterDatabaseEvent.chapterViewsUpdated() =
+      ChapterViewsUpdated;
 
   /// @nodoc
-  const factory ChapterDatabaseEvent.configFetchedEVT() = ConfigFetchedEVT;
+  const factory ChapterDatabaseEvent.configFetched() = ConfigFetched;
 
   /// @nodoc
-  const factory ChapterDatabaseEvent.likeButtonPressedEVT() =
-      LikeButtonPressedEVT;
+  const factory ChapterDatabaseEvent.likeButtonPressed() = LikeButtonPressed;
 
   /// @nodoc
-  const factory ChapterDatabaseEvent.likesUpdatedEVT() = LikesUpdatedEVT;
+  const factory ChapterDatabaseEvent.likesUpdated() = LikesUpdated;
 
   /// @nodoc
-  const factory ChapterDatabaseEvent.loadNextChaptersEVT() =
-      LoadNextChaptersEVT;
+  const factory ChapterDatabaseEvent.loadNextChapters() = LoadNextChapters;
 
   /// @nodoc
-  const factory ChapterDatabaseEvent.previousChapterButtonPressedEVT() =
-      PreviousChapterButtonPressedEVT;
+  const factory ChapterDatabaseEvent.previousChapterButtonPressed() =
+      PreviousChapterButtonPressed;
 
   /// @nodoc
-  const factory ChapterDatabaseEvent.scrollEVT({
+  const factory ChapterDatabaseEvent.scroll({
     @required int currentScrollPosition,
     @required int maxScrollPosition,
-  }) = ScrollEVT;
+  }) = Scroll;
 
   /// @nodoc
-  const factory ChapterDatabaseEvent.sessionFetchedEVT() = SessionFetchedEVT;
+  const factory ChapterDatabaseEvent.sessionFetched() = SessionFetched;
 
   /// @nodoc
-  const factory ChapterDatabaseEvent.showOrHideNavbarEVT() =
-      ShowOrHideNavbarEVT;
+  const factory ChapterDatabaseEvent.showOrHideNavbar() = ShowOrHideNavbar;
 
   /// @nodoc
-  const factory ChapterDatabaseEvent.toggleChapterAdditionalInfoEVT() =
-      ToggleChapterAdditionalInfoEVT;
+  const factory ChapterDatabaseEvent.toggleChapterAdditionalInfo() =
+      ToggleChapterAdditionalInfo;
 }

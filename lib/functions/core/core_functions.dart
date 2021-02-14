@@ -10,7 +10,7 @@ void pseudoRestart(BuildContext context) {
   ExtendedNavigator.root.pushAndRemoveUntil(Routes.homePage, (route) => false);
   context
       .read<CoreAuthenticationBloc>()
-      .add(const CoreAuthenticationEvent.userStatusChangedEVT());
+      .add(const CoreAuthenticationEvent.userStatusChanged());
   context
       .read<HomeNavigationBloc>()
       .add(const HomeNavigationEvent.resetBlocEVT());
