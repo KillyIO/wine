@@ -75,7 +75,7 @@ class ChapterEditorDatabaseBloc
     ChapterEditorDatabaseEvent event,
   ) async* {
     yield* event.map(
-      addCoverPressedEVT: (event) async* {
+      addCoverPressed: (event) async* {
         final imagePicker = ImagePicker();
 
         final pickedFile = await imagePicker.getImage(
@@ -115,7 +115,7 @@ class ChapterEditorDatabaseBloc
           }
         }
       },
-      chapterDraftDeletedOrPublishedEVT: (event) async* {
+      chapterDraftDeleted: (event) async* {
         Series seriesDraft;
 
         final failureOrSuccess = await _onlineSeriesDraftDatabaseFacade
@@ -137,10 +137,10 @@ class ChapterEditorDatabaseBloc
         );
 
         if (callSuccess) {
-          add(ChapterEditorDatabaseEvent.seriesDraftLoadedEVT(seriesDraft));
+          add(ChapterEditorDatabaseEvent.seriesDraftLoaded(seriesDraft));
         }
       },
-      chapterPublishedEVT: (event) async* {
+      chapterPublished: (event) async* {
         final failureOrSuccess = await _onlineChapterDraftDatabaseFacade
             .deleteChapterDraft(chapterDraftUID: state.chapterDraft.uid);
         final callSuccess = failureOrSuccess.isRight();
@@ -154,7 +154,7 @@ class ChapterEditorDatabaseBloc
 
         if (callSuccess && state.isFirstChapter) {
           add(const ChapterEditorDatabaseEvent
-              .chapterDraftDeletedOrPublishedEVT());
+              .chapterDraftDeletedOrPublished());
         }
       },
       copyrightsSelectedEVT: (event) async* {

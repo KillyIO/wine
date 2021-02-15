@@ -4,105 +4,100 @@ part of 'chapter_editor_database_bloc.dart';
 @freezed
 abstract class ChapterEditorDatabaseEvent with _$ChapterEditorDatabaseEvent {
   /// @nodoc
-  const factory ChapterEditorDatabaseEvent.addCoverPressedEvent() =
-      AddCoverPressedEvent;
+  const factory ChapterEditorDatabaseEvent.addCoverPressed() = AddCoverPressed;
 
   /// @nodoc
-  const factory ChapterEditorDatabaseEvent.chapterDraftDeletedOrPublishedEvent() =
-      ChapterDraftDeletedOrPublishedEvent;
+  const factory ChapterEditorDatabaseEvent.chapterDraftDeleted() =
+      ChapterDraftDeleted;
 
   /// @nodoc
-  const factory ChapterEditorDatabaseEvent.chapterPublishedEvent() =
-      ChapterPublishedEvent;
+  const factory ChapterEditorDatabaseEvent.chapterPublished() =
+      ChapterPublished;
 
   /// @nodoc
-  const factory ChapterEditorDatabaseEvent.deleteDraftButtonPressedEvent() =
-      DeleteDraftButtonPressedEvent;
+  const factory ChapterEditorDatabaseEvent.deleteDraftPressed() =
+      DeleteDraftPressed;
 
   /// @nodoc
-  const factory ChapterEditorDatabaseEvent.genreOptionalSelectedEvent(
+  const factory ChapterEditorDatabaseEvent.genreOptionalSelected(
     String genreOptional,
-  ) = GenreOptionalSelectedEvent;
+  ) = GenreOptionalSelected;
 
   /// @nodoc
-  const factory ChapterEditorDatabaseEvent.genreSelectedEvent(String genre) =
-      GenreSelectedEvent;
+  const factory ChapterEditorDatabaseEvent.genreSelected(String genre) =
+      GenreSelected;
 
   /// @nodoc
-  // ignore: lines_longer_than_80_chars
-  const factory ChapterEditorDatabaseEvent.initializedWithPreviousChapterOrSeriesDraftEvent() =
-      InitializedWithPreviousChapterOrSeriesDraftEvent;
+  const factory ChapterEditorDatabaseEvent.initializedWithPreviousChapter() =
+      InitializedWithPreviousChapter;
 
   /// @nodoc
-  const factory ChapterEditorDatabaseEvent.isLastChapterChangedEvent({
+  const factory ChapterEditorDatabaseEvent.initializedWithSeriesDraft() =
+      InitializedWithSeriesDraft;
+
+  /// @nodoc
+  const factory ChapterEditorDatabaseEvent.isLastChapterChanged({
     @required bool isLastChapter,
-  }) = IsLastChapterChangedEvent;
+  }) = IsLastChapterChanged;
 
   /// @nodoc
-  const factory ChapterEditorDatabaseEvent.isNSFWChangedEvent({
+  const factory ChapterEditorDatabaseEvent.isNSFWChanged({
     @required bool isNSFW,
-  }) = IsNSFWChangedEvent;
+  }) = IsNSFWChanged;
 
   /// @nodoc
-  const factory ChapterEditorDatabaseEvent.languageSelectedEvent(
+  const factory ChapterEditorDatabaseEvent.languageSelected(
     String language,
-  ) = LanguageSelectedEvent;
+  ) = LanguageSelected;
 
   /// @nodoc
-  const factory ChapterEditorDatabaseEvent.launchedFromLibraryEvent(
-    BuildContext context,
+  const factory ChapterEditorDatabaseEvent.launchedFromLibrary(
     Chapter chapterDraft,
     EditorContentOrigin editorContentOrigin,
-  ) = LaunchedFromLibraryEvent;
+  ) = LaunchedFromLibrary;
 
   /// @nodoc
-  // ignore: lines_longer_than_80_chars
-  const factory ChapterEditorDatabaseEvent.launchedFromPreviousChapterEvent(
-    BuildContext context,
+  const factory ChapterEditorDatabaseEvent.launchedFromPreviousChapter(
     Chapter previousChapter,
     EditorContentOrigin editorContentOrigin,
-  ) = LaunchedFromPreviousChapterEvent;
+  ) = LaunchedFromPreviousChapter;
 
   /// @nodoc
-  // ignore: lines_longer_than_80_chars
-  const factory ChapterEditorDatabaseEvent.launchedFromSeriesEditorEvent(
-    BuildContext context,
+  const factory ChapterEditorDatabaseEvent.launchedFromSeriesEditor(
     EditorContentOrigin editorContentOrigin,
     Series seriesDraft,
-  ) = LaunchedFromSeriesEditorEvent;
+  ) = LaunchedFromSeriesEditor;
 
   /// @nodoc
-  const factory ChapterEditorDatabaseEvent.licenceSelectedEvent(
+  const factory ChapterEditorDatabaseEvent.licenceSelected(
     String licence,
-  ) = LicenceSelectedEvent;
+  ) = LicenceSelected;
 
   /// @nodoc
-  const factory ChapterEditorDatabaseEvent.publishButtonPressedEvent() =
-      PublishButtonPressedEvent;
+  const factory ChapterEditorDatabaseEvent.publishPressed() = PublishPressed;
 
   /// @nodoc
-  const factory ChapterEditorDatabaseEvent.saveOrBackButtonPressedEvent() =
-      SaveOrBackButtonPressedEvent;
+  const factory ChapterEditorDatabaseEvent.saveOrBackPressed() =
+      SaveOrBackPressed;
 
   /// @nodoc
-  const factory ChapterEditorDatabaseEvent.seriesDraftLoadedEvent(
+  const factory ChapterEditorDatabaseEvent.seriesDraftLoaded(
     Series seriesDraft,
-  ) = SeriesDraftLoadedEvent;
+  ) = SeriesDraftLoaded;
 
   /// @nodoc
-  const factory ChapterEditorDatabaseEvent.seriesPublishedEvent(
+  const factory ChapterEditorDatabaseEvent.seriesPublished(
     String seriesDraftUID,
-  ) = SeriesPublishedEvent;
+  ) = SeriesPublished;
 
   /// @nodoc
-  const factory ChapterEditorDatabaseEvent.sessionFetchedEvent() =
-      SessionFetchedEvent;
+  const factory ChapterEditorDatabaseEvent.sessionFetched() = SessionFetched;
 
   /// @nodoc
-  const factory ChapterEditorDatabaseEvent.storyChangedEvent(String story) =
-      StoryChangedEvent;
+  const factory ChapterEditorDatabaseEvent.storyChanged(String story) =
+      StoryChanged;
 
   /// @nodoc
-  const factory ChapterEditorDatabaseEvent.titleChangedEvent(String title) =
-      TitleChangedEvent;
+  const factory ChapterEditorDatabaseEvent.titleChanged(String title) =
+      TitleChanged;
 }

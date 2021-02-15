@@ -27,21 +27,26 @@ class SettingsAuthenticationBloc
   Stream<SettingsAuthenticationState> mapEventToState(
       SettingsAuthenticationEvent event) async* {
     yield* event.map(
-      signOutPressedEVT: (event) async* {
+      signOutPressed: (event) async* {
         Either<AuthenticationFailure, AuthenticationSuccess> failureOrSuccess;
 
         yield state.copyWith(
-            isSigningOut: true, authenticationFailureOrSuccessOption: none());
+          authenticationFailureOrSuccessOption: none(),
+          isSigningOut: true,
+        );
 
         failureOrSuccess = await _authenticationFacade.signOut();
 
         yield state.copyWith(
-            isSigningOut: false,
-            authenticationFailureOrSuccessOption: optionOf(failureOrSuccess));
+          authenticationFailureOrSuccessOption: optionOf(failureOrSuccess),
+          isSigningOut: false,
+        );
       },
-      resetBlocEVT: (event) async* {
+      resetBloc: (event) async* {
         yield state.copyWith(
-            isSigningOut: false, authenticationFailureOrSuccessOption: none());
+          authenticationFailureOrSuccessOption: none(),
+          isSigningOut: false,
+        );
       },
     );
   }

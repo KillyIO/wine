@@ -29,25 +29,23 @@ class SplashAuthenticationBloc
   Stream<SplashAuthenticationState> mapEventToState(
     SplashAuthenticationEvent event,
   ) async* {
-    if (event is SplashLaunchedEVT) {
-      Either<AuthenticationFailure, AuthenticationSuccess> failureOrSuccess;
+    yield* event.map(
+      splashLaunched: (value) async* {
+        Either<AuthenticationFailure, AuthenticationSuccess> failureOrSuccess;
 
-      yield state.copyWith(
-        authenticationFailureOrSuccessOption: none(),
-        isAuthenticating: true,
-      );
+        yield const SplashAuthenticationState.authenticating();
 
-      if (!_authenticationFacade.isSignedIn()) {
-        failureOrSuccess = await _authenticationFacade.signInAnonymously();
-      }
+        if (!_authenticationFacade.isSignedIn()) {
+          failureOrSuccess = await _authenticationFacade.signInAnonymously();
+        }
 
-      final isAnonymous = _authenticationFacade.isAnonymous();
+        final isAnonymous = _authenticationFacade.isAnonymous();
 
-      yield state.copyWith(
-        authenticationFailureOrSuccessOption: optionOf(failureOrSuccess),
-        isAnonymous: isAnonymous,
-        isAuthenticating: false,
-      );
-    }
+        yield SplashAuthenticationState.authenticated(
+          isAnonymous,
+          optionOf(failureOrSuccess),
+        );
+      },
+    );
   }
 }

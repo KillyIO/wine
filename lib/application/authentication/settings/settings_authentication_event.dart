@@ -4,9 +4,9 @@ part of 'settings_authentication_bloc.dart';
 @freezed
 abstract class SettingsAuthenticationEvent with _$SettingsAuthenticationEvent {
   /// @nodoc
-  const factory SettingsAuthenticationEvent.resetBlocEVT() = ResetBlocEVT;
+  const factory SettingsAuthenticationEvent.resetBloc() = ResetBloc;
 
   /// @nodoc
-  const factory SettingsAuthenticationEvent.signOutPressedEVT() =
-      SignOutPressedEVT;
+  const factory SettingsAuthenticationEvent.signOutPressed() =
+      SignOutPressed;
 }

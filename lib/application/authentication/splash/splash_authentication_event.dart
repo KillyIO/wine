@@ -4,6 +4,5 @@ part of 'splash_authentication_bloc.dart';
 @freezed
 abstract class SplashAuthenticationEvent with _$SplashAuthenticationEvent {
   /// @nodoc
-  const factory SplashAuthenticationEvent.splashLaunchedEVT() =
-      SplashLaunchedEVT;
+  const factory SplashAuthenticationEvent.splashLaunched() = SplashLaunched;
 }

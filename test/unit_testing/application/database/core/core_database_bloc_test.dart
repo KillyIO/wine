@@ -78,12 +78,12 @@ void main() {
         ''',
         build: () => coreDatabaseBloc,
         act: (bloc) => bloc.add(
-          CoreDatabaseEvent.chapterDraftDeletedFromLibraryEvent(
+          CoreDatabaseEvent.chapterDraftDeletedFromLibrary(
             chapterDraftUID: chapter.uid,
           ),
         ),
         expect: [
-          CoreDatabaseState.chapterDraftDeletedFromLibraryState(
+          CoreDatabaseState.chapterDraftDeletedFromLibrary(
             chapterDraftUID: chapter.uid,
           ),
         ],
@@ -97,12 +97,12 @@ void main() {
         ''',
         build: () => coreDatabaseBloc,
         act: (bloc) => bloc.add(
-          CoreDatabaseEvent.chapterDraftDeletedFromLibraryEvent(
+          CoreDatabaseEvent.chapterDraftDeletedFromLibrary(
             seriesDraftUID: series.uid,
           ),
         ),
         expect: [
-          CoreDatabaseState.chapterDraftDeletedFromLibraryState(
+          CoreDatabaseState.chapterDraftDeletedFromLibrary(
             seriesDraftUID: series.uid,
           ),
         ],

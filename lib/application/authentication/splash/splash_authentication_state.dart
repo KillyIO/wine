@@ -4,18 +4,15 @@ part of 'splash_authentication_bloc.dart';
 @freezed
 abstract class SplashAuthenticationState with _$SplashAuthenticationState {
   /// @nodoc
-  const factory SplashAuthenticationState({
-    @required bool isAnonymous,
-    @required bool isAuthenticating,
-    @required
-        Option<Either<AuthenticationFailure, AuthenticationSuccess>>
-            authenticationFailureOrSuccessOption,
-  }) = _SplashAuthenticationState;
+  const factory SplashAuthenticationState.initial() = _Initial;
 
   /// @nodoc
-  factory SplashAuthenticationState.initial() => SplashAuthenticationState(
-        authenticationFailureOrSuccessOption: none(),
-        isAnonymous: false,
-        isAuthenticating: false,
-      );
+  const factory SplashAuthenticationState.authenticating() = _Authenticating;
+
+  /// @nodoc
+  const factory SplashAuthenticationState.authenticated(
+    bool iaAnonymous,
+    Option<Either<AuthenticationFailure, AuthenticationSuccess>>
+        authenticationFailureOrSuccessOption,
+  ) = _Authenticated;
 }

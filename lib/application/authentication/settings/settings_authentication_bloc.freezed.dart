@@ -14,13 +14,13 @@ class _$SettingsAuthenticationEventTearOff {
   const _$SettingsAuthenticationEventTearOff();
 
 // ignore: unused_element
-  ResetBlocEVT resetBlocEVT() {
-    return const ResetBlocEVT();
+  ResetBloc resetBloc() {
+    return const ResetBloc();
   }
 
 // ignore: unused_element
-  SignOutPressedEVT signOutPressedEVT() {
-    return const SignOutPressedEVT();
+  SignOutPressed signOutPressed() {
+    return const SignOutPressed();
   }
 }
 
@@ -32,24 +32,24 @@ const $SettingsAuthenticationEvent = _$SettingsAuthenticationEventTearOff();
 mixin _$SettingsAuthenticationEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
-    @required TResult resetBlocEVT(),
-    @required TResult signOutPressedEVT(),
+    @required TResult resetBloc(),
+    @required TResult signOutPressed(),
   });
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
-    TResult resetBlocEVT(),
-    TResult signOutPressedEVT(),
+    TResult resetBloc(),
+    TResult signOutPressed(),
     @required TResult orElse(),
   });
   @optionalTypeArgs
   TResult map<TResult extends Object>({
-    @required TResult resetBlocEVT(ResetBlocEVT value),
-    @required TResult signOutPressedEVT(SignOutPressedEVT value),
+    @required TResult resetBloc(ResetBloc value),
+    @required TResult signOutPressed(SignOutPressed value),
   });
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
-    TResult resetBlocEVT(ResetBlocEVT value),
-    TResult signOutPressedEVT(SignOutPressedEVT value),
+    TResult resetBloc(ResetBloc value),
+    TResult signOutPressed(SignOutPressed value),
     @required TResult orElse(),
   });
 }
@@ -73,36 +73,34 @@ class _$SettingsAuthenticationEventCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class $ResetBlocEVTCopyWith<$Res> {
-  factory $ResetBlocEVTCopyWith(
-          ResetBlocEVT value, $Res Function(ResetBlocEVT) then) =
-      _$ResetBlocEVTCopyWithImpl<$Res>;
+abstract class $ResetBlocCopyWith<$Res> {
+  factory $ResetBlocCopyWith(ResetBloc value, $Res Function(ResetBloc) then) =
+      _$ResetBlocCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$ResetBlocEVTCopyWithImpl<$Res>
+class _$ResetBlocCopyWithImpl<$Res>
     extends _$SettingsAuthenticationEventCopyWithImpl<$Res>
-    implements $ResetBlocEVTCopyWith<$Res> {
-  _$ResetBlocEVTCopyWithImpl(
-      ResetBlocEVT _value, $Res Function(ResetBlocEVT) _then)
-      : super(_value, (v) => _then(v as ResetBlocEVT));
+    implements $ResetBlocCopyWith<$Res> {
+  _$ResetBlocCopyWithImpl(ResetBloc _value, $Res Function(ResetBloc) _then)
+      : super(_value, (v) => _then(v as ResetBloc));
 
   @override
-  ResetBlocEVT get _value => super._value as ResetBlocEVT;
+  ResetBloc get _value => super._value as ResetBloc;
 }
 
 /// @nodoc
-class _$ResetBlocEVT implements ResetBlocEVT {
-  const _$ResetBlocEVT();
+class _$ResetBloc implements ResetBloc {
+  const _$ResetBloc();
 
   @override
   String toString() {
-    return 'SettingsAuthenticationEvent.resetBlocEVT()';
+    return 'SettingsAuthenticationEvent.resetBloc()';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is ResetBlocEVT);
+    return identical(this, other) || (other is ResetBloc);
   }
 
   @override
@@ -111,24 +109,24 @@ class _$ResetBlocEVT implements ResetBlocEVT {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
-    @required TResult resetBlocEVT(),
-    @required TResult signOutPressedEVT(),
+    @required TResult resetBloc(),
+    @required TResult signOutPressed(),
   }) {
-    assert(resetBlocEVT != null);
-    assert(signOutPressedEVT != null);
-    return resetBlocEVT();
+    assert(resetBloc != null);
+    assert(signOutPressed != null);
+    return resetBloc();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
-    TResult resetBlocEVT(),
-    TResult signOutPressedEVT(),
+    TResult resetBloc(),
+    TResult signOutPressed(),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (resetBlocEVT != null) {
-      return resetBlocEVT();
+    if (resetBloc != null) {
+      return resetBloc();
     }
     return orElse();
   }
@@ -136,64 +134,64 @@ class _$ResetBlocEVT implements ResetBlocEVT {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object>({
-    @required TResult resetBlocEVT(ResetBlocEVT value),
-    @required TResult signOutPressedEVT(SignOutPressedEVT value),
+    @required TResult resetBloc(ResetBloc value),
+    @required TResult signOutPressed(SignOutPressed value),
   }) {
-    assert(resetBlocEVT != null);
-    assert(signOutPressedEVT != null);
-    return resetBlocEVT(this);
+    assert(resetBloc != null);
+    assert(signOutPressed != null);
+    return resetBloc(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
-    TResult resetBlocEVT(ResetBlocEVT value),
-    TResult signOutPressedEVT(SignOutPressedEVT value),
+    TResult resetBloc(ResetBloc value),
+    TResult signOutPressed(SignOutPressed value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (resetBlocEVT != null) {
-      return resetBlocEVT(this);
+    if (resetBloc != null) {
+      return resetBloc(this);
     }
     return orElse();
   }
 }
 
-abstract class ResetBlocEVT implements SettingsAuthenticationEvent {
-  const factory ResetBlocEVT() = _$ResetBlocEVT;
+abstract class ResetBloc implements SettingsAuthenticationEvent {
+  const factory ResetBloc() = _$ResetBloc;
 }
 
 /// @nodoc
-abstract class $SignOutPressedEVTCopyWith<$Res> {
-  factory $SignOutPressedEVTCopyWith(
-          SignOutPressedEVT value, $Res Function(SignOutPressedEVT) then) =
-      _$SignOutPressedEVTCopyWithImpl<$Res>;
+abstract class $SignOutPressedCopyWith<$Res> {
+  factory $SignOutPressedCopyWith(
+          SignOutPressed value, $Res Function(SignOutPressed) then) =
+      _$SignOutPressedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$SignOutPressedEVTCopyWithImpl<$Res>
+class _$SignOutPressedCopyWithImpl<$Res>
     extends _$SettingsAuthenticationEventCopyWithImpl<$Res>
-    implements $SignOutPressedEVTCopyWith<$Res> {
-  _$SignOutPressedEVTCopyWithImpl(
-      SignOutPressedEVT _value, $Res Function(SignOutPressedEVT) _then)
-      : super(_value, (v) => _then(v as SignOutPressedEVT));
+    implements $SignOutPressedCopyWith<$Res> {
+  _$SignOutPressedCopyWithImpl(
+      SignOutPressed _value, $Res Function(SignOutPressed) _then)
+      : super(_value, (v) => _then(v as SignOutPressed));
 
   @override
-  SignOutPressedEVT get _value => super._value as SignOutPressedEVT;
+  SignOutPressed get _value => super._value as SignOutPressed;
 }
 
 /// @nodoc
-class _$SignOutPressedEVT implements SignOutPressedEVT {
-  const _$SignOutPressedEVT();
+class _$SignOutPressed implements SignOutPressed {
+  const _$SignOutPressed();
 
   @override
   String toString() {
-    return 'SettingsAuthenticationEvent.signOutPressedEVT()';
+    return 'SettingsAuthenticationEvent.signOutPressed()';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is SignOutPressedEVT);
+    return identical(this, other) || (other is SignOutPressed);
   }
 
   @override
@@ -202,24 +200,24 @@ class _$SignOutPressedEVT implements SignOutPressedEVT {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
-    @required TResult resetBlocEVT(),
-    @required TResult signOutPressedEVT(),
+    @required TResult resetBloc(),
+    @required TResult signOutPressed(),
   }) {
-    assert(resetBlocEVT != null);
-    assert(signOutPressedEVT != null);
-    return signOutPressedEVT();
+    assert(resetBloc != null);
+    assert(signOutPressed != null);
+    return signOutPressed();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
-    TResult resetBlocEVT(),
-    TResult signOutPressedEVT(),
+    TResult resetBloc(),
+    TResult signOutPressed(),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (signOutPressedEVT != null) {
-      return signOutPressedEVT();
+    if (signOutPressed != null) {
+      return signOutPressed();
     }
     return orElse();
   }
@@ -227,31 +225,31 @@ class _$SignOutPressedEVT implements SignOutPressedEVT {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object>({
-    @required TResult resetBlocEVT(ResetBlocEVT value),
-    @required TResult signOutPressedEVT(SignOutPressedEVT value),
+    @required TResult resetBloc(ResetBloc value),
+    @required TResult signOutPressed(SignOutPressed value),
   }) {
-    assert(resetBlocEVT != null);
-    assert(signOutPressedEVT != null);
-    return signOutPressedEVT(this);
+    assert(resetBloc != null);
+    assert(signOutPressed != null);
+    return signOutPressed(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
-    TResult resetBlocEVT(ResetBlocEVT value),
-    TResult signOutPressedEVT(SignOutPressedEVT value),
+    TResult resetBloc(ResetBloc value),
+    TResult signOutPressed(SignOutPressed value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (signOutPressedEVT != null) {
-      return signOutPressedEVT(this);
+    if (signOutPressed != null) {
+      return signOutPressed(this);
     }
     return orElse();
   }
 }
 
-abstract class SignOutPressedEVT implements SettingsAuthenticationEvent {
-  const factory SignOutPressedEVT() = _$SignOutPressedEVT;
+abstract class SignOutPressed implements SettingsAuthenticationEvent {
+  const factory SignOutPressed() = _$SignOutPressed;
 }
 
 /// @nodoc
