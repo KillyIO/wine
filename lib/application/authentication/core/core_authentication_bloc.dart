@@ -17,7 +17,7 @@ class CoreAuthenticationBloc
     extends Bloc<CoreAuthenticationEvent, CoreAuthenticationState> {
   /// @nodoc
   CoreAuthenticationBloc(this._authenticationFacade)
-      : super(CoreAuthenticationState.initial());
+      : super(const CoreAuthenticationState.initial());
 
   final IAuthenticationFacade _authenticationFacade;
 
@@ -26,12 +26,23 @@ class CoreAuthenticationBloc
     CoreAuthenticationEvent event,
   ) async* {
     yield* event.map(
-      appLaunched: (event) async* {
-        yield state.copyWith(isAnonymous: _authenticationFacade.isAnonymous());
+      appLaunched: (_) async* {
+        yield* _checkAnonymity();
       },
-      userStatusChanged: (event) async* {
-        yield state.copyWith(isAnonymous: _authenticationFacade.isAnonymous());
+      userAuthenticated: (event) async* {
+        yield* _checkAnonymity();
       },
+      userLoggedOut: (event) async* {
+        yield* _checkAnonymity();
+      },
+    );
+  }
+
+  Stream<CoreAuthenticationState> _checkAnonymity() async* {
+    yield const CoreAuthenticationState.checkingUserAnonymity();
+
+    yield CoreAuthenticationState.userAnonymityChecked(
+      _authenticationFacade.isAnonymous(),
     );
   }
 }

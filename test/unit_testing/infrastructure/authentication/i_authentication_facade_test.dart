@@ -14,6 +14,7 @@ import 'package:wine/infrastructure/authentication/firebase_authentication_facad
 import '../../../mocks/firebase_auth_mocks.dart';
 import '../../../mocks/firebase_firestore_mocks.dart';
 import '../../../mocks/google_sign_in_mocks.dart';
+import '../../../utils/constants.dart';
 
 void main() {
   const validEmail = 'email@email.com';
@@ -46,16 +47,16 @@ void main() {
       isBanned: false,
       isDeleted: false,
       banDeadline: null,
-      createdAt: 1592255973418,
-      updatedAt: 1608137445032,
+      createdAt: testTimeStamp,
+      updatedAt: testTimeStamp,
       banReason: null,
       bio: null,
       deletionReason: null,
       email: validEmail,
-      name: 'Email',
+      name: testName,
       profilePictureURL: null,
-      uid: 'uid',
-      username: 'email',
+      uid: testUserUID,
+      username: testUsername,
     );
 
     mockFirebaseAuth = MockFirebaseAuth();
@@ -85,12 +86,7 @@ void main() {
         'getCurrentUserUID -',
         () {
           test(
-            '''
-            Scenario: We trying to get the current user uid [SUCCESS CASE]
-            Given a user is logged in (anonymously or otherwise)
-            When getCurrentUserUID() is called
-            Then an uid is returned
-            ''',
+            'When user authenticated Then return user UID',
             () async {
               when(mockFirebaseAuth.currentUser).thenReturn(mockFirebaseUser);
 
@@ -101,12 +97,7 @@ void main() {
           );
 
           test(
-            '''
-            Scenario: We trying to get the current user uid [FAILURE CASE]
-            Given the user is not logged in (anonymously or otherwise)
-            When getCurrentUserUID() is called
-            Then null is returned
-            ''',
+            'When user unauthenticated Then return null',
             () async {
               when(mockFirebaseAuth.currentUser).thenReturn(null);
 

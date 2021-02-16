@@ -21,7 +21,7 @@ class SplashAuthenticationBloc
   /// @nodoc
   SplashAuthenticationBloc(
     this._authenticationFacade,
-  ) : super(SplashAuthenticationState.initial());
+  ) : super(const SplashAuthenticationState.initial());
 
   final IAuthenticationFacade _authenticationFacade;
 

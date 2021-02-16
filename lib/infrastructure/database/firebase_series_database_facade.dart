@@ -275,8 +275,10 @@ class FirebaseSeriesDatabaseFacade implements IOnlineSeriesDatabaseFacade {
           .startAfterDocument(lastDocument)
           .where('updatedAt', isGreaterThanOrEqualTo: filters['time']);
     } else {
-      query = seriesLikesCountsCollection.where('updatedAt',
-          isGreaterThanOrEqualTo: filters['time']);
+      query = seriesLikesCountsCollection.where(
+        'updatedAt',
+        isGreaterThanOrEqualTo: filters['time'],
+      );
     }
 
     if ((filters['genre'] as String).isNotEmpty) {

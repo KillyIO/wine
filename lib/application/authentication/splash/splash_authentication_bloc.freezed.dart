@@ -163,11 +163,11 @@ class _$SplashAuthenticationStateTearOff {
 
 // ignore: unused_element
   _Authenticated authenticated(
-      bool iaAnonymous,
+      bool isAnonymous,
       Option<Either<AuthenticationFailure, AuthenticationSuccess>>
           authenticationFailureOrSuccessOption) {
     return _Authenticated(
-      iaAnonymous,
+      isAnonymous,
       authenticationFailureOrSuccessOption,
     );
   }
@@ -185,7 +185,7 @@ mixin _$SplashAuthenticationState {
     @required TResult authenticating(),
     @required
         TResult authenticated(
-            bool iaAnonymous,
+            bool isAnonymous,
             Option<Either<AuthenticationFailure, AuthenticationSuccess>>
                 authenticationFailureOrSuccessOption),
   });
@@ -194,7 +194,7 @@ mixin _$SplashAuthenticationState {
     TResult initial(),
     TResult authenticating(),
     TResult authenticated(
-        bool iaAnonymous,
+        bool isAnonymous,
         Option<Either<AuthenticationFailure, AuthenticationSuccess>>
             authenticationFailureOrSuccessOption),
     @required TResult orElse(),
@@ -272,7 +272,7 @@ class _$_Initial implements _Initial {
     @required TResult authenticating(),
     @required
         TResult authenticated(
-            bool iaAnonymous,
+            bool isAnonymous,
             Option<Either<AuthenticationFailure, AuthenticationSuccess>>
                 authenticationFailureOrSuccessOption),
   }) {
@@ -288,7 +288,7 @@ class _$_Initial implements _Initial {
     TResult initial(),
     TResult authenticating(),
     TResult authenticated(
-        bool iaAnonymous,
+        bool isAnonymous,
         Option<Either<AuthenticationFailure, AuthenticationSuccess>>
             authenticationFailureOrSuccessOption),
     @required TResult orElse(),
@@ -376,7 +376,7 @@ class _$_Authenticating implements _Authenticating {
     @required TResult authenticating(),
     @required
         TResult authenticated(
-            bool iaAnonymous,
+            bool isAnonymous,
             Option<Either<AuthenticationFailure, AuthenticationSuccess>>
                 authenticationFailureOrSuccessOption),
   }) {
@@ -392,7 +392,7 @@ class _$_Authenticating implements _Authenticating {
     TResult initial(),
     TResult authenticating(),
     TResult authenticated(
-        bool iaAnonymous,
+        bool isAnonymous,
         Option<Either<AuthenticationFailure, AuthenticationSuccess>>
             authenticationFailureOrSuccessOption),
     @required TResult orElse(),
@@ -443,7 +443,7 @@ abstract class _$AuthenticatedCopyWith<$Res> {
           _Authenticated value, $Res Function(_Authenticated) then) =
       __$AuthenticatedCopyWithImpl<$Res>;
   $Res call(
-      {bool iaAnonymous,
+      {bool isAnonymous,
       Option<Either<AuthenticationFailure, AuthenticationSuccess>>
           authenticationFailureOrSuccessOption});
 }
@@ -461,11 +461,11 @@ class __$AuthenticatedCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object iaAnonymous = freezed,
+    Object isAnonymous = freezed,
     Object authenticationFailureOrSuccessOption = freezed,
   }) {
     return _then(_Authenticated(
-      iaAnonymous == freezed ? _value.iaAnonymous : iaAnonymous as bool,
+      isAnonymous == freezed ? _value.isAnonymous : isAnonymous as bool,
       authenticationFailureOrSuccessOption == freezed
           ? _value.authenticationFailureOrSuccessOption
           : authenticationFailureOrSuccessOption
@@ -477,28 +477,28 @@ class __$AuthenticatedCopyWithImpl<$Res>
 /// @nodoc
 class _$_Authenticated implements _Authenticated {
   const _$_Authenticated(
-      this.iaAnonymous, this.authenticationFailureOrSuccessOption)
-      : assert(iaAnonymous != null),
+      this.isAnonymous, this.authenticationFailureOrSuccessOption)
+      : assert(isAnonymous != null),
         assert(authenticationFailureOrSuccessOption != null);
 
   @override
-  final bool iaAnonymous;
+  final bool isAnonymous;
   @override
   final Option<Either<AuthenticationFailure, AuthenticationSuccess>>
       authenticationFailureOrSuccessOption;
 
   @override
   String toString() {
-    return 'SplashAuthenticationState.authenticated(iaAnonymous: $iaAnonymous, authenticationFailureOrSuccessOption: $authenticationFailureOrSuccessOption)';
+    return 'SplashAuthenticationState.authenticated(isAnonymous: $isAnonymous, authenticationFailureOrSuccessOption: $authenticationFailureOrSuccessOption)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _Authenticated &&
-            (identical(other.iaAnonymous, iaAnonymous) ||
+            (identical(other.isAnonymous, isAnonymous) ||
                 const DeepCollectionEquality()
-                    .equals(other.iaAnonymous, iaAnonymous)) &&
+                    .equals(other.isAnonymous, isAnonymous)) &&
             (identical(other.authenticationFailureOrSuccessOption,
                     authenticationFailureOrSuccessOption) ||
                 const DeepCollectionEquality().equals(
@@ -509,7 +509,7 @@ class _$_Authenticated implements _Authenticated {
   @override
   int get hashCode =>
       runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(iaAnonymous) ^
+      const DeepCollectionEquality().hash(isAnonymous) ^
       const DeepCollectionEquality().hash(authenticationFailureOrSuccessOption);
 
   @JsonKey(ignore: true)
@@ -524,14 +524,14 @@ class _$_Authenticated implements _Authenticated {
     @required TResult authenticating(),
     @required
         TResult authenticated(
-            bool iaAnonymous,
+            bool isAnonymous,
             Option<Either<AuthenticationFailure, AuthenticationSuccess>>
                 authenticationFailureOrSuccessOption),
   }) {
     assert(initial != null);
     assert(authenticating != null);
     assert(authenticated != null);
-    return authenticated(iaAnonymous, authenticationFailureOrSuccessOption);
+    return authenticated(isAnonymous, authenticationFailureOrSuccessOption);
   }
 
   @override
@@ -540,14 +540,14 @@ class _$_Authenticated implements _Authenticated {
     TResult initial(),
     TResult authenticating(),
     TResult authenticated(
-        bool iaAnonymous,
+        bool isAnonymous,
         Option<Either<AuthenticationFailure, AuthenticationSuccess>>
             authenticationFailureOrSuccessOption),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (authenticated != null) {
-      return authenticated(iaAnonymous, authenticationFailureOrSuccessOption);
+      return authenticated(isAnonymous, authenticationFailureOrSuccessOption);
     }
     return orElse();
   }
@@ -583,11 +583,11 @@ class _$_Authenticated implements _Authenticated {
 
 abstract class _Authenticated implements SplashAuthenticationState {
   const factory _Authenticated(
-      bool iaAnonymous,
+      bool isAnonymous,
       Option<Either<AuthenticationFailure, AuthenticationSuccess>>
           authenticationFailureOrSuccessOption) = _$_Authenticated;
 
-  bool get iaAnonymous;
+  bool get isAnonymous;
   Option<Either<AuthenticationFailure, AuthenticationSuccess>>
       get authenticationFailureOrSuccessOption;
   @JsonKey(ignore: true)

@@ -4,11 +4,13 @@ part of 'core_authentication_bloc.dart';
 @freezed
 abstract class CoreAuthenticationState with _$CoreAuthenticationState {
   /// @nodoc
-  const factory CoreAuthenticationState({
-    @required bool isAnonymous,
-  }) = _CoreAuthenticationState;
+  const factory CoreAuthenticationState.checkingUserAnonymity() =
+      _CheckingUserAnonymity;
 
   /// @nodoc
-  factory CoreAuthenticationState.initial() =>
-      const CoreAuthenticationState(isAnonymous: false);
+  const factory CoreAuthenticationState.initial() = _Initial;
+
+  /// @nodoc
+  const factory CoreAuthenticationState.userAnonymityChecked(bool isAnonymous) =
+      _UserAnonymityChecked;
 }

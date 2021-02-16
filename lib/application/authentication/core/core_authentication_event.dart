@@ -7,5 +7,8 @@ abstract class CoreAuthenticationEvent with _$CoreAuthenticationEvent {
   const factory CoreAuthenticationEvent.appLaunched() = AppLaunched;
 
   /// @nodoc
-  const factory CoreAuthenticationEvent.userStatusChanged() = UserStatusChanged;
+  const factory CoreAuthenticationEvent.userAuthenticated() = UserAuthenticated;
+
+  /// @nodoc
+  const factory CoreAuthenticationEvent.userLoggedOut() = UserLoggedOut;
 }

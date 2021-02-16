@@ -4,6 +4,7 @@ import 'package:wine/domain/models/user.dart';
 
 import '../../../mocks/firebase_auth_mocks.dart';
 import '../../../mocks/firebase_firestore_mocks.dart';
+import '../../../utils/constants.dart';
 
 void main() {
   final data = <String, dynamic>{};
@@ -12,16 +13,16 @@ void main() {
     data['isBanned'] = false;
     data['isDeleted'] = false;
     data['banDeadline'] = null;
-    data['createdAt'] = 854841600000;
-    data['updatedAt'] = 854841600000;
+    data['createdAt'] = testTimeStamp;
+    data['updatedAt'] = testTimeStamp;
     data['banReason'] = null;
     data['bio'] = null;
     data['deletionReason'] = null;
-    data['email'] = 'email@email.com';
-    data['name'] = 'name';
+    data['email'] = testEmail;
+    data['name'] = testName;
     data['profilePictureURL'] = null;
-    data['uid'] = 'uid';
-    data['username'] = 'username';
+    data['uid'] = testUserUID;
+    data['username'] = testUsername;
   });
 
   group(

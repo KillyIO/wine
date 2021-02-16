@@ -9,7 +9,7 @@ const String testTitle =
 const String testTitleEmpty = '';
 
 // SECTION: Count
-const String testCountUID = '4c782acf-e352-4164-a8e1-29cb94af7112';
+const String testCountUID = 'e4f0d3e1-3dc5-43e9-90ab-d030258bb178';
 
 // SECTION: Chapter
 const String testChapterUID = '4c782acf-e352-4164-a8e1-29cb94af7112';
@@ -75,5 +75,5 @@ const String testSummaryEmpty = '';
 // SECTION: User
 const String testEmail = 'hdima.riyal.99@tapiitudulu.com';
 const String testName = 'Hdima Riyal';
-const String testUserrname = 'hdima';
+const String testUsername = 'hdima';
 const String testUserUID = '9518b7a5-33bd-41ca-ad9c-d1dcd5abcd4c';

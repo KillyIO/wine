@@ -6,30 +6,27 @@ part 'authentication_failure.freezed.dart';
 @freezed
 abstract class AuthenticationFailure with _$AuthenticationFailure {
   /// @nodoc
-  const factory AuthenticationFailure.cancelledByUserFailure() =
-      CancelledByUserFailure;
+  const factory AuthenticationFailure.cancelledByUser() = CancelledByUser;
 
   /// @nodoc
-  const factory AuthenticationFailure.emailAlreadyInUseFailure() =
-      EmailAlreadyInUseFailure;
+  const factory AuthenticationFailure.emailAlreadyInUse() = EmailAlreadyInUse;
 
   /// @nodoc
-  // ignore: lines_longer_than_80_chars
-  const factory AuthenticationFailure.invalidEmailAndPasswordCombinationFailure() =
-      InvalidEmailAndPasswordCombinationFailure;
-  // Serves as a "catch all" failure if we don't know what exactly went wrong
+  const factory AuthenticationFailure.invalidEmailAndPasswordCombination() =
+      InvalidEmailAndPasswordCombination;
 
   /// @nodoc
-  const factory AuthenticationFailure.serverFailure() = ServerFailure;
+  const factory AuthenticationFailure.unableToSignOut() = UnableToSignOut;
 
   /// @nodoc
-  const factory AuthenticationFailure.unableToSignOutFailure() =
-      UnableToSignOutFailure;
+  const factory AuthenticationFailure.unexpected() = Unexpected;
+
+  /// Serves as a "catch all" failure if we don't know what went wrong.
+  ///
+  /// Previously ServerFailure.
+  const factory AuthenticationFailure.unknown() = Unknown;
 
   /// @nodoc
-  const factory AuthenticationFailure.unexpectedFailure() = UnexpectedFailure;
-
-  /// @nodoc
-  const factory AuthenticationFailure.usernameAlreadyInUseFailure() =
-      UsernameAlreadyInUseFailure;
+  const factory AuthenticationFailure.usernameAlreadyInUse() =
+      UsernameAlreadyInUse;
 }

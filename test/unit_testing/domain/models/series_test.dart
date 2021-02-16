@@ -3,6 +3,7 @@ import 'package:mockito/mockito.dart';
 import 'package:wine/domain/models/series.dart';
 
 import '../../../mocks/firebase_firestore_mocks.dart';
+import '../../../utils/constants.dart';
 
 void main() {
   final data = <String, dynamic>{};
@@ -10,18 +11,18 @@ void main() {
   setUp(() {
     data['isDeleted'] = false;
     data['isNSFW'] = false;
-    data['createdAt'] = 854841600000;
-    data['updatedAt'] = 854841600000;
-    data['authorUID'] = 'uid';
-    data['coverURL'] = 'https:/www.website.com/cover.png';
+    data['createdAt'] = testTimeStamp;
+    data['updatedAt'] = testTimeStamp;
+    data['authorUID'] = testUserUID;
+    data['coverURL'] = testCoverURL;
     data['deletionReason'] = null;
-    data['genre'] = 'genre';
+    data['genre'] = testGenre;
     data['genreOptional'] = null;
-    data['language'] = 'iso';
+    data['language'] = testLanguage;
     data['subtitle'] = null;
-    data['summary'] = 'summary';
-    data['title'] = 'title';
-    data['uid'] = 'uid';
+    data['summary'] = testSummaryEmpty;
+    data['title'] = testTitle;
+    data['uid'] = testSeriesUID;
   });
 
   group(
@@ -78,7 +79,7 @@ void main() {
         'isPublishable -',
         () {
           test(
-            'When all required members null Then Series is not publishable',
+            'When all required members null Then Series not publishable',
             () {
               final series = Series();
 
@@ -87,7 +88,7 @@ void main() {
           );
 
           test(
-            '''When one required member non-null Then Series is not publishable''',
+            'When one required member non-null Then Series not publishable',
             () {
               final series = Series(uid: data['uid']);
 
@@ -95,7 +96,9 @@ void main() {
             },
           );
 
-          test('When all required members valid Then Series is complete', () {
+          test('When all required members valid Then Series complete', () {
+            data['summary'] = testSummary;
+
             final series = Series(
               authorUID: data['authorUID'],
               coverURL: data['coverURL'],
@@ -122,7 +125,7 @@ void main() {
         'isSaveable -',
         () {
           test(
-            'When all required members null Then Series is not saveable',
+            'When all required members null Then Series not saveable',
             () {
               final series = Series();
 
@@ -131,7 +134,7 @@ void main() {
           );
 
           test(
-            '''When one required member non-null Then Series is not saveable''',
+            'When one required member non-null Then Series not saveable',
             () {
               final series = Series(uid: data['uid']);
 
@@ -140,7 +143,7 @@ void main() {
           );
 
           test(
-            'When all required members non-null Then Series is complete',
+            'When all required members non-null Then Series complete',
             () {
               final series = Series(
                 authorUID: data['authorUID'],

@@ -1,6 +1,7 @@
-import 'package:faker/faker.dart';
 import 'package:firebase_auth/firebase_auth.dart' as auth;
 import 'package:mockito/mockito.dart';
+
+import '../utils/constants.dart';
 
 class MockFirebaseAuth extends Mock implements auth.FirebaseAuth {}
 
@@ -10,13 +11,13 @@ class MockFirebaseUser extends Mock implements auth.User {
   final bool _isAnonymous;
 
   @override
-  String get displayName => const Faker().person.name();
+  String get displayName => testName;
 
   @override
-  String get uid => const Faker().guid.guid();
+  String get uid => testUserUID;
 
   @override
-  String get email => const Faker().internet.email();
+  String get email => testEmail;
 
   @override
   bool get isAnonymous => _isAnonymous;

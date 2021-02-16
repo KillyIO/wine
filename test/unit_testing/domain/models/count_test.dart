@@ -3,14 +3,15 @@ import 'package:mockito/mockito.dart';
 import 'package:wine/domain/models/count.dart';
 
 import '../../../mocks/firebase_firestore_mocks.dart';
+import '../../../utils/constants.dart';
 
 void main() {
   final data = <String, dynamic>{};
 
   setUp(() {
     data['count'] = 0;
-    data['updatedAt'] = 854841600000;
-    data['uid'] = 'uid';
+    data['updatedAt'] = testTimeStamp;
+    data['uid'] = testCountUID;
   });
 
   group('Count -', () {
