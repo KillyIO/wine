@@ -40,9 +40,8 @@ class FirebaseAuthenticationFacade implements IAuthenticationFacade {
     Password password,
   ) async {
     try {
-      final emailAddressStr =
-          emailAddress.value.getOrElse(() => 'INVALID EMAIL ADDRESS');
-      final passwordStr = password.value.getOrElse(() => 'INVALID PASSWORD');
+      final emailAddressStr = emailAddress.getOrCrash();
+      final passwordStr = password.getOrCrash();
 
       var currentUser = _firebaseAuth.currentUser;
 
@@ -57,14 +56,14 @@ class FirebaseAuthenticationFacade implements IAuthenticationFacade {
       await currentUser.sendEmailVerification();
 
       final user = User.fromFirebaseUser(currentUser);
-      return right(AuthenticationSuccess.userAuthenticatedSuccess(user));
+      return right(AuthenticationSuccess.userAuthenticated(user));
     } on FirebaseException catch (e) {
       if (e.code == 'email-already-in-use') {
-        return left(const AuthenticationFailure.emailAlreadyInUseFailure());
+        return left(const AuthenticationFailure.emailAlreadyInUse());
       }
-      return left(const AuthenticationFailure.serverFailure());
+      return left(const AuthenticationFailure.serverError());
     } catch (_) {
-      return left(const AuthenticationFailure.unexpectedFailure());
+      return left(const AuthenticationFailure.unexpectedError());
     }
   }
 
@@ -78,20 +77,20 @@ class FirebaseAuthenticationFacade implements IAuthenticationFacade {
   Future<Either<AuthenticationFailure, AuthenticationSuccess>>
       isUsernameAvailable(Username username) async {
     try {
-      final usernameStr = username.value.getOrElse(() => 'INVALID USERNAME');
+      final usernameStr = username.getOrCrash();
 
       final documentSnapshot = await _firestore
           .collection(usernameUIDMapPath)
           .doc(usernameStr)
           .get();
       if (documentSnapshot != null && documentSnapshot.exists) {
-        return left(const AuthenticationFailure.usernameAlreadyInUseFailure());
+        return left(const AuthenticationFailure.usernameAlreadyInUse());
       }
-      return right(const AuthenticationSuccess.usernameAvailableSuccess());
+      return right(const AuthenticationSuccess.usernameAvailable());
     } on FirebaseException catch (_) {
-      return left(const AuthenticationFailure.serverFailure());
+      return left(const AuthenticationFailure.serverError());
     } catch (_) {
-      return left(const AuthenticationFailure.unexpectedFailure());
+      return left(const AuthenticationFailure.unexpectedError());
     }
   }
 
@@ -109,14 +108,13 @@ class FirebaseAuthenticationFacade implements IAuthenticationFacade {
 
       if (currentUser != null) {
         await currentUser.sendEmailVerification();
-        return right(
-            const AuthenticationSuccess.verificationEmailSentSuccess());
+        return right(const AuthenticationSuccess.verificationEmailSent());
       }
-      return left(const AuthenticationFailure.unexpectedFailure());
+      return left(const AuthenticationFailure.unexpectedError());
     } on FirebaseException catch (_) {
-      return left(const AuthenticationFailure.serverFailure());
+      return left(const AuthenticationFailure.serverError());
     } catch (_) {
-      return left(const AuthenticationFailure.unexpectedFailure());
+      return left(const AuthenticationFailure.unexpectedError());
     }
   }
 
@@ -126,12 +124,12 @@ class FirebaseAuthenticationFacade implements IAuthenticationFacade {
     try {
       await _firebaseAuth.signInAnonymously();
       return right(
-        const AuthenticationSuccess.userSignedInAnonymouslySuccess(),
+        const AuthenticationSuccess.userSignedInAnonymously(),
       );
     } on FirebaseException catch (_) {
-      return left(const AuthenticationFailure.serverFailure());
+      return left(const AuthenticationFailure.serverError());
     } catch (_) {
-      return left(const AuthenticationFailure.unexpectedFailure());
+      return left(const AuthenticationFailure.unexpectedError());
     }
   }
 
@@ -142,9 +140,8 @@ class FirebaseAuthenticationFacade implements IAuthenticationFacade {
     Password password,
   ) async {
     try {
-      final emailAddressStr =
-          emailAddress.value.getOrElse(() => 'INVALID EMAIL ADDRESS');
-      final passwordStr = password.value.getOrElse(() => 'INVALID PASSWORD');
+      final emailAddressStr = emailAddress.getOrCrash();
+      final passwordStr = password.getOrCrash();
 
       final anonymousUser = _firebaseAuth.currentUser;
       await anonymousUser?.delete();
@@ -157,19 +154,18 @@ class FirebaseAuthenticationFacade implements IAuthenticationFacade {
       final currentUser = _firebaseAuth.currentUser;
       final user = User.fromFirebaseUser(currentUser);
 
-      return right(AuthenticationSuccess.userAuthenticatedSuccess(user));
+      return right(AuthenticationSuccess.userAuthenticated(user));
     } on FirebaseException catch (e) {
       await _firebaseAuth.signInAnonymously();
 
       if (e.code == 'wrong-password' || e.code == 'user-not-found') {
         return left(
-          const AuthenticationFailure
-              .invalidEmailAndPasswordCombinationFailure(),
+          const AuthenticationFailure.invalidEmailAndPasswordCombination(),
         );
       }
-      return left(const AuthenticationFailure.serverFailure());
+      return left(const AuthenticationFailure.serverError());
     } catch (_) {
-      return left(const AuthenticationFailure.unexpectedFailure());
+      return left(const AuthenticationFailure.unexpectedError());
     }
   }
 
@@ -181,7 +177,7 @@ class FirebaseAuthenticationFacade implements IAuthenticationFacade {
 
       final googleAccount = await _googleSignIn.signIn();
       if (googleAccount == null) {
-        return left(const AuthenticationFailure.cancelledByUserFailure());
+        return left(const AuthenticationFailure.cancelledByUser());
       }
 
       final googleAuthentication = await googleAccount.authentication;
@@ -200,14 +196,14 @@ class FirebaseAuthenticationFacade implements IAuthenticationFacade {
             authCredential,
           ));
         }
-        return left(const AuthenticationFailure.serverFailure());
+        return left(const AuthenticationFailure.serverError());
       } catch (_) {
-        return left(const AuthenticationFailure.unexpectedFailure());
+        return left(const AuthenticationFailure.unexpectedError());
       }
     } on FirebaseException catch (_) {
-      return left(const AuthenticationFailure.serverFailure());
+      return left(const AuthenticationFailure.serverError());
     } catch (_) {
-      return left(const AuthenticationFailure.unexpectedFailure());
+      return left(const AuthenticationFailure.unexpectedError());
     }
   }
 
@@ -221,7 +217,7 @@ class FirebaseAuthenticationFacade implements IAuthenticationFacade {
     final anonymousUserTmp = _firebaseAuth.currentUser;
 
     final user = User.fromFirebaseUser(anonymousUserTmp);
-    return AuthenticationSuccess.userAuthenticatedSuccess(user);
+    return AuthenticationSuccess.userAuthenticated(user);
   }
 
   Future<AuthenticationSuccess> _signInWithGoogleCredentialAlreadyInUse(
@@ -239,7 +235,7 @@ class FirebaseAuthenticationFacade implements IAuthenticationFacade {
     currentUser = _firebaseAuth.currentUser;
 
     final user = User.fromFirebaseUser(currentUser);
-    return AuthenticationSuccess.userAuthenticatedSuccess(user);
+    return AuthenticationSuccess.userAuthenticated(user);
   }
 
   Future<void> _updateUserInfo(
@@ -263,15 +259,15 @@ class FirebaseAuthenticationFacade implements IAuthenticationFacade {
 
       final currentUser = _firebaseAuth.currentUser;
       if (currentUser != null) {
-        return left(const AuthenticationFailure.unableToSignOutFailure());
+        return left(const AuthenticationFailure.unableToSignOut());
       }
 
       await _firebaseAuth.signInAnonymously();
-      return right(const AuthenticationSuccess.userSignedOutSuccess());
+      return right(const AuthenticationSuccess.userSignedOut());
     } on FirebaseException catch (_) {
-      return left(const AuthenticationFailure.serverFailure());
+      return left(const AuthenticationFailure.serverError());
     } catch (_) {
-      return left(const AuthenticationFailure.unexpectedFailure());
+      return left(const AuthenticationFailure.unexpectedError());
     }
   }
 }

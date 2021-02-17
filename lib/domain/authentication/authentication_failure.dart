@@ -15,16 +15,16 @@ abstract class AuthenticationFailure with _$AuthenticationFailure {
   const factory AuthenticationFailure.invalidEmailAndPasswordCombination() =
       InvalidEmailAndPasswordCombination;
 
+  /// Serves as a "catch all" failure if we don't know what went wrong.
+  ///
+  /// Previously ServerFailure.
+  const factory AuthenticationFailure.serverError() = ServerError;
+
   /// @nodoc
   const factory AuthenticationFailure.unableToSignOut() = UnableToSignOut;
 
   /// @nodoc
-  const factory AuthenticationFailure.unexpected() = Unexpected;
-
-  /// Serves as a "catch all" failure if we don't know what went wrong.
-  ///
-  /// Previously ServerFailure.
-  const factory AuthenticationFailure.unknown() = Unknown;
+  const factory AuthenticationFailure.unexpectedError() = UnexpectedError;
 
   /// @nodoc
   const factory AuthenticationFailure.usernameAlreadyInUse() =

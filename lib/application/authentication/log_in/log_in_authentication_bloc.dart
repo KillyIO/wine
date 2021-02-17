@@ -75,7 +75,7 @@ class LogInAuthenticationBloc
         failureOrSuccess.fold(
           (_) {},
           (success) {
-            if (success is UserAuthenticatedSuccess) {
+            if (success is UserAuthenticated) {
               final user = success.user.copyWith(
                 username: success.user.email
                     .trim()
@@ -87,7 +87,7 @@ class LogInAuthenticationBloc
               );
 
               failureOrSuccess =
-                  right(AuthenticationSuccess.userAuthenticatedSuccess(user));
+                  right(AuthenticationSuccess.userAuthenticated(user));
             }
           },
         );

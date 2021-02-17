@@ -93,7 +93,7 @@ class SignUpAuthenticationBloc
           failureOrSuccess.fold(
             (_) {},
             (success) {
-              if (success is UserAuthenticatedSuccess) {
+              if (success is UserAuthenticated) {
                 final user = success.user.copyWith(
                   username: state.username
                       .getOrCrash()
@@ -105,7 +105,7 @@ class SignUpAuthenticationBloc
                 );
 
                 failureOrSuccess =
-                    right(AuthenticationSuccess.userAuthenticatedSuccess(user));
+                    right(AuthenticationSuccess.userAuthenticated(user));
               }
             },
           );

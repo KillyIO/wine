@@ -1,5 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter_stringprocess/flutter_stringprocess.dart';
+import 'package:string_validator/string_validator.dart';
 import 'package:wine/domain/core/failures.dart';
 import 'package:wine/utils/constants.dart';
 
@@ -8,9 +9,7 @@ final StringProcessor tps = StringProcessor();
 
 /// @nodoc
 Either<ValueFailure<String>, String> validateEmailAddress(String input) {
-  const emailRegex =
-      r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$';
-  if (RegExp(emailRegex).hasMatch(input)) {
+  if (isEmail(input)) {
     return right(input);
   } else {
     return left(ValueFailure.invalidEmailAddress(failedValue: input));

@@ -79,7 +79,7 @@ class FirebaseUserDatabaseFacade extends IUserDatabaseFacade {
     Username username,
   ) async {
     try {
-      final usernameStr = username.value.getOrElse(() => 'INVALID USERNAME');
+      final usernameStr = username.getOrCrash();
 
       final mapReference =
           _firestore.collection(usernameUIDMapPath).doc(usernameStr);

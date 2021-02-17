@@ -1,9 +1,10 @@
 import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter/material.dart';
 import 'package:mockito/mockito.dart';
 import 'package:test/test.dart';
 import 'package:wine/domain/authentication/authentication_failure.dart';
-
 import 'package:wine/domain/authentication/authentication_success.dart';
+
 import 'package:wine/domain/authentication/email_address.dart';
 import 'package:wine/domain/authentication/i_authentication_facade.dart';
 import 'package:wine/domain/authentication/password.dart';
@@ -86,17 +87,6 @@ void main() {
         'getCurrentUserUID -',
         () {
           test(
-            'When user authenticated Then return user UID',
-            () async {
-              when(mockFirebaseAuth.currentUser).thenReturn(mockFirebaseUser);
-
-              final result = await authenticationFacade.getCurrentUserUID();
-
-              expect(result, user.uid);
-            },
-          );
-
-          test(
             'When user unauthenticated Then return null',
             () async {
               when(mockFirebaseAuth.currentUser).thenReturn(null);
@@ -106,6 +96,17 @@ void main() {
               expect(result, null);
             },
           );
+
+          test(
+            'When user authenticated Then return user UID',
+            () async {
+              when(mockFirebaseAuth.currentUser).thenReturn(mockFirebaseUser);
+
+              final result = await authenticationFacade.getCurrentUserUID();
+
+              expect(result, user.uid);
+            },
+          );
         },
       );
 
@@ -113,12 +114,7 @@ void main() {
         'convertWithEmailAndPassword -',
         () {
           test(
-            '''
-            Scenario: We trying to convert an anonymous user to a registered user with an email and a password [SUCCESS CASE]
-            Given a valid EmailAddress() and a valid Password()
-            When convertWithEmailAndPassword() is called
-            Then userAuthenticatedSuccess() is returned with a User()
-            ''',
+            '''When credential valid Then return UserAuthenticated with user data''',
             () async {
               when(mockFirebaseAuth.currentUser).thenReturn(mockFirebaseUser);
 
@@ -133,9 +129,9 @@ void main() {
               result.fold(
                 (_) {},
                 (success) {
-                  expect(success, isA<UserAuthenticatedSuccess>());
+                  expect(success, isA<UserAuthenticated>());
 
-                  if (success is UserAuthenticatedSuccess) {
+                  if (success is UserAuthenticated) {
                     expect(success.user, user);
                   }
                 },
@@ -144,12 +140,7 @@ void main() {
           );
 
           test(
-            '''
-            Scenario: We trying to convert an anonymous user to a registered user with an email and a password [UNEXPECTED FAILURE CASE]
-            Given an invalid EmailAddress() and a valid Password()
-            When convertWithEmailAndPassword() is called
-            Then unexpectedFailure() is returned
-            ''',
+            'When email invalid Then return UnexpectedError',
             () async {
               final result =
                   await authenticationFacade.convertWithEmailAndPassword(
@@ -160,19 +151,14 @@ void main() {
               expect(result.isLeft(), true);
 
               result.fold(
-                (failure) => expect(failure, isA<UnexpectedFailure>()),
+                (failure) => expect(failure, isA<UnexpectedError>()),
                 (_) {},
               );
             },
           );
 
           test(
-            '''
-            Scenario: We trying to convert an anonymous user to a registered user with an email and a password [UNEXPECTED FAILURE CASE]
-            Given a valid EmailAddress() and an invalid Password()
-            When convertWithEmailAndPassword() is called
-            Then unexpectedFailure() is returned
-            ''',
+            'When password invalid Then return UnexpectedError',
             () async {
               final result =
                   await authenticationFacade.convertWithEmailAndPassword(
@@ -183,19 +169,14 @@ void main() {
               expect(result.isLeft(), true);
 
               result.fold(
-                (failure) => expect(failure, isA<UnexpectedFailure>()),
+                (failure) => expect(failure, isA<UnexpectedError>()),
                 (_) {},
               );
             },
           );
 
           test(
-            '''
-            Scenario: We trying to convert an anonymous user to a registered user with an email and a password [SERVER FAILURE CASE]
-            Given an email address is already in use
-            When convertWithEmailAndPassword() is called
-            Then emailAlreadyInUseFailure() is returned
-            ''',
+            'When email already registered Then return EmailAlreadyInUse',
             () async {
               when(mockFirebaseAuth.currentUser).thenReturn(mockFirebaseUser);
               when(mockFirebaseUser.linkWithCredential(any)).thenThrow(
@@ -215,19 +196,14 @@ void main() {
               expect(result.isLeft(), true);
 
               result.fold(
-                (failure) => expect(failure, isA<EmailAlreadyInUseFailure>()),
+                (failure) => expect(failure, isA<EmailAlreadyInUse>()),
                 (_) {},
               );
             },
           );
 
           test(
-            '''
-            Scenario: We trying to convert an anonymous user to a registered user with an email and a password [SERVER FAILURE CASE]
-            Given the user credential is already linked to an account
-            When convertWithEmailAndPassword() is called
-            Then serverFailure() is returned
-            ''',
+            'When FirebaseException thrown Then return ServerError',
             () async {
               when(mockFirebaseAuth.currentUser).thenReturn(mockFirebaseUser);
               when(mockFirebaseUser.linkWithCredential(any)).thenThrow(
@@ -247,19 +223,14 @@ void main() {
               expect(result.isLeft(), true);
 
               result.fold(
-                (failure) => expect(failure, isA<ServerFailure>()),
+                (failure) => expect(failure, isA<ServerError>()),
                 (_) {},
               );
             },
           );
 
           test(
-            '''
-            Scenario: We trying to convert an anonymous user to a registered user with an email and a password [UNEXPECTED FAILURE CASE]
-            Given a valid EmailAddress() and a valid Password()
-            When convertWithEmailAndPassword() is called
-            Then unexpectedFailure() is returned
-            ''',
+            'When Exception thrown Then return UnexpectedError',
             () async {
               when(mockFirebaseAuth.currentUser).thenReturn(mockFirebaseUser);
               when(mockFirebaseUser.linkWithCredential(any))
@@ -274,7 +245,7 @@ void main() {
               expect(result.isLeft(), true);
 
               result.fold(
-                (failure) => expect(failure, isA<UnexpectedFailure>()),
+                (failure) => expect(failure, isA<UnexpectedError>()),
                 (_) {},
               );
             },
@@ -282,17 +253,11 @@ void main() {
         },
       );
 
-      // SECTION: isAnonymous
       group(
         'isAnonymous -',
         () {
           test(
-            '''
-            Scenario: We trying to know if the user is anonymous [TRUE CASE]
-            Given an user is logged in anonymously
-            When isAnonymous() is called
-            Then true is returned
-            ''',
+            'When user anonymous Then return true',
             () async {
               when(mockFirebaseAuth.currentUser).thenReturn(mockFirebaseUser);
 
@@ -303,12 +268,7 @@ void main() {
           );
 
           test(
-            '''
-            Scenario: We trying to know if the user is anonymous [FALSE CASE]
-            Given an user is logged as a registered user
-            When isAnonymous() is called
-            Then false is returned
-            ''',
+            'When user authenticated Then return false',
             () async {
               mockFirebaseUser = MockFirebaseUser(isAnonymous: false);
 
@@ -322,17 +282,11 @@ void main() {
         },
       );
 
-      // SECTION: isUsernameAvailable
       group(
         'isUsernameAvailable -',
         () {
           test(
-            '''
-            Scenario: We trying to know if the username is available [SUCCESS CASE]
-            Given a valid and non-existent username
-            When isUsernameAvailable() is called
-            Then usernameAvailableSuccess() is returned
-            ''',
+            '''When username valid and not registered Then return UsernameAvailable''',
             () async {
               when(mockFirestore.collection(any))
                   .thenReturn(mockCollectionReference);
@@ -349,18 +303,13 @@ void main() {
 
               result.fold(
                 (_) {},
-                (success) => expect(success, isA<UsernameAvailableSuccess>()),
+                (success) => expect(success, isA<UsernameAvailable>()),
               );
             },
           );
 
           test(
-            '''
-            Scenario: We trying to know if the username is available [FAILURE CASE]
-            Given a valid and existent username
-            When isUsernameAvailable() is called
-            Then usernameAlreadyInUseFailure() is returned
-            ''',
+            '''When username valid But already registered Then return UsernameAlreadyInUse''',
             () async {
               when(mockFirestore.collection(any))
                   .thenReturn(mockCollectionReference);
@@ -376,20 +325,14 @@ void main() {
               expect(result.isLeft(), true);
 
               result.fold(
-                (failure) =>
-                    expect(failure, isA<UsernameAlreadyInUseFailure>()),
+                (failure) => expect(failure, isA<UsernameAlreadyInUse>()),
                 (_) {},
               );
             },
           );
 
           test(
-            '''
-            Scenario: We trying to know if the username is available [UNEXPECTED FAILURE CASE]
-            Given an invalid username
-            When isUsernameAvailable() is called
-            Then unexpectedFailure() is returned
-            ''',
+            'When Exception thrown Then return UnexpectedError',
             () async {
               when(mockFirestore.collection(any))
                   .thenThrow(Exception('An unexpected error occured!'));
@@ -400,19 +343,14 @@ void main() {
               expect(result.isLeft(), true);
 
               result.fold(
-                (failure) => expect(failure, isA<UnexpectedFailure>()),
+                (failure) => expect(failure, isA<UnexpectedError>()),
                 (_) {},
               );
             },
           );
 
           test(
-            '''
-            Scenario: We trying to know if the username is available [SERVER FAILURE CASE]
-            Given an valid username
-            When isUsernameAvailable() is called
-            Then serverFailure() is returned
-            ''',
+            'When FirebaseException thrown Then return ServerError',
             () async {
               when(mockFirestore.collection(any)).thenThrow(
                 FirebaseException(
@@ -428,7 +366,7 @@ void main() {
               expect(result.isLeft(), true);
 
               result.fold(
-                (failure) => expect(failure, isA<ServerFailure>()),
+                (failure) => expect(failure, isA<ServerError>()),
                 (_) {},
               );
             },
@@ -436,546 +374,475 @@ void main() {
         },
       );
 
-      // SECTION: isSignedIn
-      test(
-        '''
-        Given is signed in
-        When isSignedIn() is called
-        Then true is returned
-        ''',
-        () {
-          when(mockFirebaseAuth.currentUser).thenReturn(mockFirebaseUser);
+      group('isSignedIn -', () {
+        test(
+          'When user signed in Then return true',
+          () {
+            when(mockFirebaseAuth.currentUser).thenReturn(mockFirebaseUser);
 
-          final result = authenticationFacade.isSignedIn();
+            final result = authenticationFacade.isSignedIn();
 
-          expect(result, true);
-        },
-      );
+            expect(result, true);
+          },
+        );
 
-      test(
-        '''
-        Given is not signed in
-        When isSignedIn() is called
-        Then false is returned
-        ''',
-        () {
-          when(mockFirebaseAuth.currentUser).thenReturn(null);
+        test(
+          'When user not signed in Then return false',
+          () {
+            when(mockFirebaseAuth.currentUser).thenReturn(null);
 
-          final result = authenticationFacade.isSignedIn();
+            final result = authenticationFacade.isSignedIn();
 
-          expect(result, false);
-        },
-      );
+            expect(result, false);
+          },
+        );
+      });
 
-      // SECTION: resendVerificationEmail
-      test(
-        '''
-        Given currentUser is not null
-        When resendVerificationEmail() is called
-        Then verificationEmailSentSuccess() is returned
-        ''',
-        () async {
-          when(mockFirebaseAuth.currentUser).thenReturn(mockFirebaseUser);
+      group('resendVerificationEmail -', () {
+        test(
+          'When user null Then return UnexpectedError',
+          () async {
+            when(mockFirebaseAuth.currentUser).thenReturn(null);
 
-          final result = await authenticationFacade.resendVerificationEmail();
+            final result = await authenticationFacade.resendVerificationEmail();
 
-          expect(result.isRight(), true);
+            expect(result.isLeft(), true);
 
-          result.fold(
-            (_) {},
-            (success) => expect(success, isA<VerificationEmailSentSuccess>()),
-          );
-        },
-      );
+            result.fold(
+              (failure) => expect(failure, isA<UnexpectedError>()),
+              (_) {},
+            );
+          },
+        );
 
-      test(
-        '''
-        Given currentUser is null
-        When resendVerificationEmail() is called
-        Then serverFailure() is returned
-        ''',
-        () async {
-          when(mockFirebaseAuth.currentUser).thenReturn(null);
+        test(
+          'When verification email sent Then return VerificationEmailSent',
+          () async {
+            when(mockFirebaseAuth.currentUser).thenReturn(mockFirebaseUser);
 
-          final result = await authenticationFacade.resendVerificationEmail();
+            final result = await authenticationFacade.resendVerificationEmail();
 
-          expect(result.isLeft(), true);
+            expect(result.isRight(), true);
 
-          result.fold(
-            (failure) => expect(failure, isA<ServerFailure>()),
-            (_) {},
-          );
-        },
-      );
+            result.fold(
+              (_) {},
+              (success) => expect(success, isA<VerificationEmailSent>()),
+            );
+          },
+        );
 
-      test(
-        '''
-        Given an exception is thrown
-        When resendVerificationEmail() is called
-        Then serverFailure() is returned
-        ''',
-        () async {
-          when(mockFirebaseAuth.currentUser).thenReturn(mockFirebaseUser);
-          when(mockFirebaseUser.sendEmailVerification())
-              .thenThrow(Exception('An unexpected error occured!'));
+        test(
+          'When Exception thrown Then return UnexpectedError',
+          () async {
+            when(mockFirebaseAuth.currentUser).thenReturn(mockFirebaseUser);
+            when(mockFirebaseUser.sendEmailVerification())
+                .thenThrow(Exception('An unexpected error occured!'));
 
-          final result = await authenticationFacade.resendVerificationEmail();
+            final result = await authenticationFacade.resendVerificationEmail();
 
-          expect(result.isLeft(), true);
+            expect(result.isLeft(), true);
 
-          result.fold(
-            (failure) => expect(failure, isA<ServerFailure>()),
-            (_) {},
-          );
-        },
-      );
+            result.fold(
+              (failure) => expect(failure, isA<UnexpectedError>()),
+              (_) {},
+            );
+          },
+        );
+      });
 
-      // SECTION: signInAnonymously
-      test(
-        '''
-        Given the user sign in anonymously
-        When signInAnonymously() is called
-        Then userSignedInAnonymouslySuccess() is returned
-        ''',
-        () async {
-          when(mockFirebaseAuth.signInAnonymously())
-              .thenAnswer((_) async => mockUserCredential);
+      group('signInAnonymously -', () {
+        test(
+          'When user signed in Then return UserSignedInAnonymously',
+          () async {
+            when(mockFirebaseAuth.signInAnonymously())
+                .thenAnswer((_) async => mockUserCredential);
 
-          final result = await authenticationFacade.signInAnonymously();
+            final result = await authenticationFacade.signInAnonymously();
 
-          expect(result.isRight(), true);
+            expect(result.isRight(), true);
 
-          result.fold(
-            (_) {},
-            (success) => expect(success, isA<UserSignedInAnonymouslySuccess>()),
-          );
-        },
-      );
+            result.fold(
+              (_) {},
+              (success) => expect(success, isA<UserSignedInAnonymously>()),
+            );
+          },
+        );
 
-      test(
-        '''
-        Given an exception is thrown
-        When resendVerificationEmail() is called
-        Then serverFailure() is returned
-        ''',
-        () async {
-          when(mockFirebaseAuth.signInAnonymously())
-              .thenThrow(Exception('An unexpected error occured!'));
+        test(
+          'When Exception thrown Then return UnexpectedError',
+          () async {
+            when(mockFirebaseAuth.signInAnonymously())
+                .thenThrow(Exception('An unexpected error occured!'));
 
-          final result = await authenticationFacade.signInAnonymously();
+            final result = await authenticationFacade.signInAnonymously();
 
-          expect(result.isLeft(), true);
+            expect(result.isLeft(), true);
 
-          result.fold(
-            (failure) => expect(failure, isA<ServerFailure>()),
-            (_) {},
-          );
-        },
-      );
+            result.fold(
+              (failure) => expect(failure, isA<UnexpectedError>()),
+              (_) {},
+            );
+          },
+        );
+      });
 
-      // SECTION: signInWithEmailAndPassword
-      test(
-        '''
-        Given valid email and password
-        When signInWithEmailAndPassword() is called
-        Then userAuthenticatedSuccess() is returned with User()
-        ''',
-        () async {
-          when(mockFirebaseAuth.currentUser).thenReturn(mockFirebaseUser);
-          when(
-            mockFirebaseAuth.signInWithEmailAndPassword(
-              email: anyNamed('email'),
-              password: anyNamed('password'),
-            ),
-          ).thenAnswer((_) async => mockUserCredential);
+      group('signInWithEmailAndPassword -', () {
+        test(
+          '''When user authenticated Then return UserAuthenticated with user data''',
+          () async {
+            when(mockFirebaseAuth.currentUser).thenReturn(mockFirebaseUser);
+            when(
+              mockFirebaseAuth.signInWithEmailAndPassword(
+                email: anyNamed('email'),
+                password: anyNamed('password'),
+              ),
+            ).thenAnswer((_) async => mockUserCredential);
 
-          final result = await authenticationFacade.signInWithEmailAndPassword(
-            EmailAddress(validEmail),
-            Password(validPassword),
-          );
+            final result =
+                await authenticationFacade.signInWithEmailAndPassword(
+              EmailAddress(validEmail),
+              Password(validPassword),
+            );
 
-          expect(result.isRight(), true);
+            expect(result.isRight(), true);
 
-          result.fold(
-            (_) {},
-            (success) {
-              expect(success, isA<UserAuthenticatedSuccess>());
+            result.fold(
+              (_) {},
+              (success) {
+                expect(success, isA<UserAuthenticated>());
 
-              if (success is UserAuthenticatedSuccess) {
-                expect(success.user, user);
-              }
-            },
-          );
-        },
-      );
+                if (success is UserAuthenticated) {
+                  expect(success.user, user);
+                }
+              },
+            );
+          },
+        );
 
-      test(
-        '''
-        Given invalid email
-        When signInWithEmailAndPassword() is called
-        Then serverFailure() is returned
-        ''',
-        () async {
-          when(mockFirebaseAuth.currentUser).thenReturn(mockFirebaseUser);
-          when(
-            mockFirebaseAuth.signInWithEmailAndPassword(
-              email: anyNamed('email'),
-              password: anyNamed('password'),
-            ),
-          ).thenAnswer((_) async => mockUserCredential);
+        test(
+          'When email invalid Then return UnexpectedError',
+          () async {
+            when(mockFirebaseAuth.currentUser).thenReturn(mockFirebaseUser);
+            when(
+              mockFirebaseAuth.signInWithEmailAndPassword(
+                email: anyNamed('email'),
+                password: anyNamed('password'),
+              ),
+            ).thenAnswer((_) async => mockUserCredential);
 
-          final result = await authenticationFacade.signInWithEmailAndPassword(
-            EmailAddress(invalidEmail),
-            Password(validPassword),
-          );
+            final result =
+                await authenticationFacade.signInWithEmailAndPassword(
+              EmailAddress(invalidEmail),
+              Password(validPassword),
+            );
+            debugPrint(result.toString());
 
-          expect(result.isLeft(), true);
+            expect(result.isLeft(), true);
 
-          result.fold(
-            (failure) => expect(failure, isA<ServerFailure>()),
-            (_) {},
-          );
-        },
-      );
+            result.fold(
+              (failure) => expect(failure, isA<UnexpectedError>()),
+              (_) {},
+            );
+          },
+        );
 
-      test(
-        '''
-        Given invalid password
-        When signInWithEmailAndPassword() is called
-        Then serverFailure() is returned
-        ''',
-        () async {
-          when(mockFirebaseAuth.currentUser).thenReturn(mockFirebaseUser);
-          when(
-            mockFirebaseAuth.signInWithEmailAndPassword(
-              email: anyNamed('email'),
-              password: anyNamed('password'),
-            ),
-          ).thenAnswer((_) async => mockUserCredential);
+        test(
+          'When password invalid Then return UnexpectedError',
+          () async {
+            when(mockFirebaseAuth.currentUser).thenReturn(mockFirebaseUser);
+            when(
+              mockFirebaseAuth.signInWithEmailAndPassword(
+                email: anyNamed('email'),
+                password: anyNamed('password'),
+              ),
+            ).thenAnswer((_) async => mockUserCredential);
 
-          final result = await authenticationFacade.signInWithEmailAndPassword(
-            EmailAddress(validEmail),
-            Password(invalidPassword),
-          );
+            final result =
+                await authenticationFacade.signInWithEmailAndPassword(
+              EmailAddress(validEmail),
+              Password(invalidPassword),
+            );
 
-          expect(result.isLeft(), true);
+            expect(result.isLeft(), true);
 
-          result.fold(
-            (failure) => expect(failure, isA<ServerFailure>()),
-            (_) {},
-          );
-        },
-      );
+            result.fold(
+              (failure) => expect(failure, isA<UnexpectedError>()),
+              (_) {},
+            );
+          },
+        );
 
-      test(
-        '''
-        Given valid email and password but wrong combination of credentials
-        When signInWithEmailAndPassword() is called
-        Then invalidEmailAndPasswordCombinationFailure() is returned
-        ''',
-        () async {
-          when(mockFirebaseAuth.currentUser).thenReturn(mockFirebaseUser);
-          when(
-            mockFirebaseAuth.signInWithEmailAndPassword(
-              email: anyNamed('email'),
-              password: anyNamed('password'),
-            ),
-          ).thenThrow(FirebaseException(
-            plugin: 'auth',
-            message: 'Wrong email/password combination',
-            code: 'user-not-found',
-          ));
-
-          final result = await authenticationFacade.signInWithEmailAndPassword(
-            EmailAddress(validEmail),
-            Password(validPassword),
-          );
-
-          expect(result.isLeft(), true);
-
-          result.fold(
-            (failure) => expect(
-              failure,
-              isA<InvalidEmailAndPasswordCombinationFailure>(),
-            ),
-            (_) {},
-          );
-        },
-      );
-
-      test(
-        '''
-        Given a Firebase exception other than 'wrong-password' and 'user-not-found' is thrown
-        When signInWithEmailAndPassword() is called
-        Then serverFailure() is returned
-        ''',
-        () async {
-          when(mockFirebaseAuth.currentUser).thenReturn(mockFirebaseUser);
-          when(
-            mockFirebaseAuth.signInWithEmailAndPassword(
-              email: anyNamed('email'),
-              password: anyNamed('password'),
-            ),
-          ).thenThrow(FirebaseException(
-            plugin: 'auth',
-            message: 'An unexpected error occured!',
-            code: 'user-disabled',
-          ));
-
-          final result = await authenticationFacade.signInWithEmailAndPassword(
-            EmailAddress(validEmail),
-            Password(validPassword),
-          );
-
-          expect(result.isLeft(), true);
-
-          result.fold(
-            (failure) => expect(failure, isA<ServerFailure>()),
-            (_) {},
-          );
-        },
-      );
-
-      test(
-        '''
-        Given an exception is thrown
-        When signInWithEmailAndPassword() is called
-        Then serverFailure() is returned
-        ''',
-        () async {
-          when(mockFirebaseAuth.currentUser).thenReturn(mockFirebaseUser);
-          when(
-            mockFirebaseAuth.signInWithEmailAndPassword(
-              email: anyNamed('email'),
-              password: anyNamed('password'),
-            ),
-          ).thenThrow(Exception('An unexpected error occured!'));
-
-          final result = await authenticationFacade.signInWithEmailAndPassword(
-            EmailAddress(validEmail),
-            Password(validPassword),
-          );
-
-          expect(result.isLeft(), true);
-
-          result.fold(
-            (failure) => expect(failure, isA<ServerFailure>()),
-            (_) {},
-          );
-        },
-      );
-
-      // SECTION: signInWithGoogle
-      test(
-        '''
-        Given user logs with Google
-        When signInWithGoogle() is called
-        Then userAuthenticatedSuccess() is returned with User()
-        ''',
-        () async {
-          when(mockFirebaseAuth.currentUser).thenReturn(mockFirebaseUser);
-          when(mockGoogleSignIn.signIn()).thenAnswer(
-            (_) async => mockGoogleSignInAccount,
-          );
-          when(mockFirebaseUser.linkWithCredential(any))
-              .thenAnswer((_) async => mockUserCredential);
-          when(mockGoogleSignIn.currentUser)
-              .thenReturn(mockGoogleSignInAccount);
-
-          final result = await authenticationFacade.signInWithGoogle();
-
-          expect(result.isRight(), true);
-
-          result.fold(
-            (_) {},
-            (success) {
-              expect(success, isA<UserAuthenticatedSuccess>());
-
-              if (success is UserAuthenticatedSuccess) {
-                expect(success.user, user);
-              }
-            },
-          );
-        },
-      );
-
-      test(
-        '''
-        Given user tries to log with Google and cancel
-        When signInWithGoogle() is called
-        Then cancelledByUserFailure() is returned
-        ''',
-        () async {
-          when(mockFirebaseAuth.currentUser).thenReturn(mockFirebaseUser);
-          when(mockGoogleSignIn.signIn()).thenAnswer((_) async => null);
-
-          final result = await authenticationFacade.signInWithGoogle();
-
-          expect(result.isLeft(), true);
-
-          result.fold(
-            (failure) => expect(failure, isA<CancelledByUserFailure>()),
-            (_) {},
-          );
-        },
-      );
-
-      test(
-        '''
-        Given user credential already in use
-        When signInWithGoogle() is called
-        Then userAuthenticatedSucess() is returned with User()
-        ''',
-        () async {
-          when(mockFirebaseAuth.currentUser).thenReturn(mockFirebaseUser);
-          when(mockGoogleSignIn.signIn())
-              .thenAnswer((_) async => mockGoogleSignInAccount);
-          when(mockFirebaseUser.linkWithCredential(any)).thenThrow(
-            FirebaseException(
+        test(
+          '''When wrong email/password combination Then return InvalidEmailAndPasswordCombination''',
+          () async {
+            when(mockFirebaseAuth.currentUser).thenReturn(mockFirebaseUser);
+            when(
+              mockFirebaseAuth.signInWithEmailAndPassword(
+                email: anyNamed('email'),
+                password: anyNamed('password'),
+              ),
+            ).thenThrow(FirebaseException(
               plugin: 'auth',
-              message: 'Credential already in use!',
-              code: 'credential-already-in-use',
-            ),
-          );
-          when(mockFirebaseAuth.signInWithCredential(any))
-              .thenAnswer((_) async => mockUserCredential);
-          when(mockGoogleSignIn.currentUser)
-              .thenReturn(mockGoogleSignInAccount);
+              message: 'Wrong email/password combination',
+              code: 'user-not-found',
+            ));
 
-          final result = await authenticationFacade.signInWithGoogle();
+            final result =
+                await authenticationFacade.signInWithEmailAndPassword(
+              EmailAddress(validEmail),
+              Password(validPassword),
+            );
 
-          expect(result.isRight(), true);
+            expect(result.isLeft(), true);
 
-          result.fold(
-            (_) {},
-            (success) {
-              expect(success, isA<UserAuthenticatedSuccess>());
+            result.fold(
+              (failure) => expect(
+                failure,
+                isA<InvalidEmailAndPasswordCombination>(),
+              ),
+              (_) {},
+            );
+          },
+        );
 
-              if (success is UserAuthenticatedSuccess) {
-                expect(success.user, user);
-              }
-            },
-          );
-        },
-      );
+        test(
+          'When FirebaseException thrown (wrong-password/user-not-found excluded) Then return ServerError',
+          () async {
+            when(mockFirebaseAuth.currentUser).thenReturn(mockFirebaseUser);
+            when(
+              mockFirebaseAuth.signInWithEmailAndPassword(
+                email: anyNamed('email'),
+                password: anyNamed('password'),
+              ),
+            ).thenThrow(FirebaseException(
+              plugin: 'auth',
+              message: 'An unexpected error occured!',
+              code: 'user-disabled',
+            ));
 
-      test(
-        '''
-        Given a Firebase exception other than 'credential-already-in-use' is thrown
-        When signInWithGoogle() is called
-        Then serverFailure() is returned
-        ''',
-        () async {
-          when(mockFirebaseAuth.currentUser).thenReturn(mockFirebaseUser);
-          when(mockGoogleSignIn.signIn()).thenThrow(FirebaseException(
-            plugin: 'auth',
-            message: 'Email already in use!',
-            code: 'email-already-in-use',
-          ));
+            final result =
+                await authenticationFacade.signInWithEmailAndPassword(
+              EmailAddress(validEmail),
+              Password(validPassword),
+            );
 
-          final result = await authenticationFacade.signInWithGoogle();
+            expect(result.isLeft(), true);
 
-          expect(result.isLeft(), true);
+            result.fold(
+              (failure) => expect(failure, isA<ServerError>()),
+              (_) {},
+            );
+          },
+        );
 
-          result.fold(
-            (failure) => expect(failure, isA<ServerFailure>()),
-            (_) {},
-          );
-        },
-      );
+        test(
+          'When Exception thrown Then return UnexpectedError',
+          () async {
+            when(mockFirebaseAuth.currentUser).thenReturn(mockFirebaseUser);
+            when(
+              mockFirebaseAuth.signInWithEmailAndPassword(
+                email: anyNamed('email'),
+                password: anyNamed('password'),
+              ),
+            ).thenThrow(Exception('An unexpected error occured!'));
 
-      test(
-        '''
-        Given an exception is thrown
-        When signInWithGoogle() is called
-        Then serverFailure() is returned
-        ''',
-        () async {
-          when(mockFirebaseAuth.currentUser).thenReturn(mockFirebaseUser);
-          when(mockGoogleSignIn.signIn())
-              .thenThrow(Exception('An unexpected error occured!'));
+            final result =
+                await authenticationFacade.signInWithEmailAndPassword(
+              EmailAddress(validEmail),
+              Password(validPassword),
+            );
 
-          final result = await authenticationFacade.signInWithGoogle();
+            expect(result.isLeft(), true);
 
-          expect(result.isLeft(), true);
+            result.fold(
+              (failure) => expect(failure, isA<UnexpectedError>()),
+              (_) {},
+            );
+          },
+        );
+      });
 
-          result.fold(
-            (failure) => expect(failure, isA<ServerFailure>()),
-            (_) {},
-          );
-        },
-      );
+      group('signInWithGoogle -', () {
+        test(
+          'When user signed in Then return UserAuthenticated with user data',
+          () async {
+            when(mockFirebaseAuth.currentUser).thenReturn(mockFirebaseUser);
+            when(mockGoogleSignIn.signIn()).thenAnswer(
+              (_) async => mockGoogleSignInAccount,
+            );
+            when(mockFirebaseUser.linkWithCredential(any))
+                .thenAnswer((_) async => mockUserCredential);
+            when(mockGoogleSignIn.currentUser)
+                .thenReturn(mockGoogleSignInAccount);
 
-      // SECTION: signOut
-      test(
-        '''
-        Given logged in user try to log out
-        When signOut() is called
-        Then userSignedOutSuccess() is returned
-        ''',
-        () async {
-          when(mockFirebaseAuth.signOut()).thenAnswer((_) async => null);
-          when(mockGoogleSignIn.signOut())
-              .thenAnswer((_) async => mockGoogleSignInAccount);
-          when(mockFirebaseAuth.currentUser).thenReturn(null);
-          when(mockFirebaseAuth.signInAnonymously())
-              .thenAnswer((_) async => mockUserCredential);
+            final result = await authenticationFacade.signInWithGoogle();
 
-          final result = await authenticationFacade.signOut();
+            expect(result.isRight(), true);
 
-          expect(result.isRight(), true);
+            result.fold(
+              (_) {},
+              (success) {
+                expect(success, isA<UserAuthenticated>());
 
-          result.fold(
-            (_) {},
-            (success) => expect(success, isA<UserSignedOutSuccess>()),
-          );
-        },
-      );
+                if (success is UserAuthenticated) {
+                  expect(success.user, user);
+                }
+              },
+            );
+          },
+        );
 
-      test(
-        '''
-        Given logged in user try to log out and fails
-        When signOut() is called
-        Then unableToSignOutFailure() is returned
-        ''',
-        () async {
-          when(mockFirebaseAuth.signOut()).thenAnswer((_) async => null);
-          when(mockGoogleSignIn.signOut())
-              .thenAnswer((_) async => mockGoogleSignInAccount);
-          when(mockFirebaseAuth.currentUser).thenReturn(mockFirebaseUser);
+        test(
+          'When user cancel Then return CancelledByUser',
+          () async {
+            when(mockFirebaseAuth.currentUser).thenReturn(mockFirebaseUser);
+            when(mockGoogleSignIn.signIn()).thenAnswer((_) async => null);
 
-          final result = await authenticationFacade.signOut();
+            final result = await authenticationFacade.signInWithGoogle();
 
-          expect(result.isLeft(), true);
+            expect(result.isLeft(), true);
 
-          result.fold(
-            (failure) => expect(failure, isA<UnableToSignOutFailure>()),
-            (_) {},
-          );
-        },
-      );
+            result.fold(
+              (failure) => expect(failure, isA<CancelledByUser>()),
+              (_) {},
+            );
+          },
+        );
 
-      test(
-        '''
-        Given an exception is thrown
-        When signOut() is called
-        Then serverFailure() is returned
-        ''',
-        () async {
-          when(mockFirebaseAuth.signOut()).thenAnswer((_) async => null);
-          when(mockGoogleSignIn.signOut())
-              .thenThrow(Exception('An unexpected error occured!'));
+        test(
+          'When credential already in use Then return UserAuthenticated',
+          () async {
+            when(mockFirebaseAuth.currentUser).thenReturn(mockFirebaseUser);
+            when(mockGoogleSignIn.signIn())
+                .thenAnswer((_) async => mockGoogleSignInAccount);
+            when(mockFirebaseUser.linkWithCredential(any)).thenThrow(
+              FirebaseException(
+                plugin: 'auth',
+                message: 'Credential already in use!',
+                code: 'credential-already-in-use',
+              ),
+            );
+            when(mockFirebaseAuth.signInWithCredential(any))
+                .thenAnswer((_) async => mockUserCredential);
+            when(mockGoogleSignIn.currentUser)
+                .thenReturn(mockGoogleSignInAccount);
 
-          final result = await authenticationFacade.signOut();
+            final result = await authenticationFacade.signInWithGoogle();
 
-          expect(result.isLeft(), true);
+            expect(result.isRight(), true);
 
-          result.fold(
-            (failure) => expect(failure, isA<ServerFailure>()),
-            (_) {},
-          );
-        },
-      );
+            result.fold(
+              (_) {},
+              (success) {
+                expect(success, isA<UserAuthenticated>());
+
+                if (success is UserAuthenticated) {
+                  expect(success.user, user);
+                }
+              },
+            );
+          },
+        );
+
+        test(
+          '''When FirebaseException thrown (credential-already-in-use excluded) Then return ServerError''',
+          () async {
+            when(mockFirebaseAuth.currentUser).thenReturn(mockFirebaseUser);
+            when(mockGoogleSignIn.signIn()).thenThrow(FirebaseException(
+              plugin: 'auth',
+              message: 'Email already in use!',
+              code: 'email-already-in-use',
+            ));
+
+            final result = await authenticationFacade.signInWithGoogle();
+
+            expect(result.isLeft(), true);
+
+            result.fold(
+              (failure) => expect(failure, isA<ServerError>()),
+              (_) {},
+            );
+          },
+        );
+
+        test(
+          'When Exception thrown Then return UnexpectedError',
+          () async {
+            when(mockFirebaseAuth.currentUser).thenReturn(mockFirebaseUser);
+            when(mockGoogleSignIn.signIn())
+                .thenThrow(Exception('An unexpected error occured!'));
+
+            final result = await authenticationFacade.signInWithGoogle();
+
+            expect(result.isLeft(), true);
+
+            result.fold(
+              (failure) => expect(failure, isA<UnexpectedError>()),
+              (_) {},
+            );
+          },
+        );
+      });
+
+      group('signOut -', () {
+        test(
+          'When user signed out Then return UserSignedOut',
+          () async {
+            when(mockFirebaseAuth.signOut()).thenAnswer((_) async => null);
+            when(mockGoogleSignIn.signOut())
+                .thenAnswer((_) async => mockGoogleSignInAccount);
+            when(mockFirebaseAuth.currentUser).thenReturn(null);
+            when(mockFirebaseAuth.signInAnonymously())
+                .thenAnswer((_) async => mockUserCredential);
+
+            final result = await authenticationFacade.signOut();
+
+            expect(result.isRight(), true);
+
+            result.fold(
+              (_) {},
+              (success) => expect(success, isA<UserSignedOut>()),
+            );
+          },
+        );
+
+        test(
+          'When user not signed out Then return UnableToSignOut',
+          () async {
+            when(mockFirebaseAuth.signOut()).thenAnswer((_) async => null);
+            when(mockGoogleSignIn.signOut())
+                .thenAnswer((_) async => mockGoogleSignInAccount);
+            when(mockFirebaseAuth.currentUser).thenReturn(mockFirebaseUser);
+
+            final result = await authenticationFacade.signOut();
+
+            expect(result.isLeft(), true);
+
+            result.fold(
+              (failure) => expect(failure, isA<UnableToSignOut>()),
+              (_) {},
+            );
+          },
+        );
+
+        test(
+          'When Exception thrown Then return UnexpectedError',
+          () async {
+            when(mockFirebaseAuth.signOut()).thenAnswer((_) async => null);
+            when(mockGoogleSignIn.signOut())
+                .thenThrow(Exception('An unexpected error occured!'));
+
+            final result = await authenticationFacade.signOut();
+
+            expect(result.isLeft(), true);
+
+            result.fold(
+              (failure) => expect(failure, isA<UnexpectedError>()),
+              (_) {},
+            );
+          },
+        );
+      });
     },
   );
 }
