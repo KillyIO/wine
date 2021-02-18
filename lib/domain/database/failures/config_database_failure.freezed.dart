@@ -14,18 +14,18 @@ class _$ConfigDatabaseFailureTearOff {
   const _$ConfigDatabaseFailureTearOff();
 
 // ignore: unused_element
-  DeleteConfigFailure deleteConfigFailure() {
-    return const DeleteConfigFailure();
+  ConfigNotDeleted configNotDeleted() {
+    return const ConfigNotDeleted();
   }
 
 // ignore: unused_element
-  InitializeConfigFailure initializeConfigFailure() {
-    return const InitializeConfigFailure();
+  ConfigNotInitialized configNotInitialized() {
+    return const ConfigNotInitialized();
   }
 
 // ignore: unused_element
-  UpdateConfigFailure updateConfigFailure() {
-    return const UpdateConfigFailure();
+  ConfigNotUpdated configNotUpdated() {
+    return const ConfigNotUpdated();
   }
 }
 
@@ -37,28 +37,28 @@ const $ConfigDatabaseFailure = _$ConfigDatabaseFailureTearOff();
 mixin _$ConfigDatabaseFailure {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
-    @required TResult deleteConfigFailure(),
-    @required TResult initializeConfigFailure(),
-    @required TResult updateConfigFailure(),
+    @required TResult configNotDeleted(),
+    @required TResult configNotInitialized(),
+    @required TResult configNotUpdated(),
   });
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
-    TResult deleteConfigFailure(),
-    TResult initializeConfigFailure(),
-    TResult updateConfigFailure(),
+    TResult configNotDeleted(),
+    TResult configNotInitialized(),
+    TResult configNotUpdated(),
     @required TResult orElse(),
   });
   @optionalTypeArgs
   TResult map<TResult extends Object>({
-    @required TResult deleteConfigFailure(DeleteConfigFailure value),
-    @required TResult initializeConfigFailure(InitializeConfigFailure value),
-    @required TResult updateConfigFailure(UpdateConfigFailure value),
+    @required TResult configNotDeleted(ConfigNotDeleted value),
+    @required TResult configNotInitialized(ConfigNotInitialized value),
+    @required TResult configNotUpdated(ConfigNotUpdated value),
   });
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
-    TResult deleteConfigFailure(DeleteConfigFailure value),
-    TResult initializeConfigFailure(InitializeConfigFailure value),
-    TResult updateConfigFailure(UpdateConfigFailure value),
+    TResult configNotDeleted(ConfigNotDeleted value),
+    TResult configNotInitialized(ConfigNotInitialized value),
+    TResult configNotUpdated(ConfigNotUpdated value),
     @required TResult orElse(),
   });
 }
@@ -81,36 +81,36 @@ class _$ConfigDatabaseFailureCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class $DeleteConfigFailureCopyWith<$Res> {
-  factory $DeleteConfigFailureCopyWith(
-          DeleteConfigFailure value, $Res Function(DeleteConfigFailure) then) =
-      _$DeleteConfigFailureCopyWithImpl<$Res>;
+abstract class $ConfigNotDeletedCopyWith<$Res> {
+  factory $ConfigNotDeletedCopyWith(
+          ConfigNotDeleted value, $Res Function(ConfigNotDeleted) then) =
+      _$ConfigNotDeletedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$DeleteConfigFailureCopyWithImpl<$Res>
+class _$ConfigNotDeletedCopyWithImpl<$Res>
     extends _$ConfigDatabaseFailureCopyWithImpl<$Res>
-    implements $DeleteConfigFailureCopyWith<$Res> {
-  _$DeleteConfigFailureCopyWithImpl(
-      DeleteConfigFailure _value, $Res Function(DeleteConfigFailure) _then)
-      : super(_value, (v) => _then(v as DeleteConfigFailure));
+    implements $ConfigNotDeletedCopyWith<$Res> {
+  _$ConfigNotDeletedCopyWithImpl(
+      ConfigNotDeleted _value, $Res Function(ConfigNotDeleted) _then)
+      : super(_value, (v) => _then(v as ConfigNotDeleted));
 
   @override
-  DeleteConfigFailure get _value => super._value as DeleteConfigFailure;
+  ConfigNotDeleted get _value => super._value as ConfigNotDeleted;
 }
 
 /// @nodoc
-class _$DeleteConfigFailure implements DeleteConfigFailure {
-  const _$DeleteConfigFailure();
+class _$ConfigNotDeleted implements ConfigNotDeleted {
+  const _$ConfigNotDeleted();
 
   @override
   String toString() {
-    return 'ConfigDatabaseFailure.deleteConfigFailure()';
+    return 'ConfigDatabaseFailure.configNotDeleted()';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is DeleteConfigFailure);
+    return identical(this, other) || (other is ConfigNotDeleted);
   }
 
   @override
@@ -119,27 +119,27 @@ class _$DeleteConfigFailure implements DeleteConfigFailure {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
-    @required TResult deleteConfigFailure(),
-    @required TResult initializeConfigFailure(),
-    @required TResult updateConfigFailure(),
+    @required TResult configNotDeleted(),
+    @required TResult configNotInitialized(),
+    @required TResult configNotUpdated(),
   }) {
-    assert(deleteConfigFailure != null);
-    assert(initializeConfigFailure != null);
-    assert(updateConfigFailure != null);
-    return deleteConfigFailure();
+    assert(configNotDeleted != null);
+    assert(configNotInitialized != null);
+    assert(configNotUpdated != null);
+    return configNotDeleted();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
-    TResult deleteConfigFailure(),
-    TResult initializeConfigFailure(),
-    TResult updateConfigFailure(),
+    TResult configNotDeleted(),
+    TResult configNotInitialized(),
+    TResult configNotUpdated(),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (deleteConfigFailure != null) {
-      return deleteConfigFailure();
+    if (configNotDeleted != null) {
+      return configNotDeleted();
     }
     return orElse();
   }
@@ -147,67 +147,67 @@ class _$DeleteConfigFailure implements DeleteConfigFailure {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object>({
-    @required TResult deleteConfigFailure(DeleteConfigFailure value),
-    @required TResult initializeConfigFailure(InitializeConfigFailure value),
-    @required TResult updateConfigFailure(UpdateConfigFailure value),
+    @required TResult configNotDeleted(ConfigNotDeleted value),
+    @required TResult configNotInitialized(ConfigNotInitialized value),
+    @required TResult configNotUpdated(ConfigNotUpdated value),
   }) {
-    assert(deleteConfigFailure != null);
-    assert(initializeConfigFailure != null);
-    assert(updateConfigFailure != null);
-    return deleteConfigFailure(this);
+    assert(configNotDeleted != null);
+    assert(configNotInitialized != null);
+    assert(configNotUpdated != null);
+    return configNotDeleted(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
-    TResult deleteConfigFailure(DeleteConfigFailure value),
-    TResult initializeConfigFailure(InitializeConfigFailure value),
-    TResult updateConfigFailure(UpdateConfigFailure value),
+    TResult configNotDeleted(ConfigNotDeleted value),
+    TResult configNotInitialized(ConfigNotInitialized value),
+    TResult configNotUpdated(ConfigNotUpdated value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (deleteConfigFailure != null) {
-      return deleteConfigFailure(this);
+    if (configNotDeleted != null) {
+      return configNotDeleted(this);
     }
     return orElse();
   }
 }
 
-abstract class DeleteConfigFailure implements ConfigDatabaseFailure {
-  const factory DeleteConfigFailure() = _$DeleteConfigFailure;
+abstract class ConfigNotDeleted implements ConfigDatabaseFailure {
+  const factory ConfigNotDeleted() = _$ConfigNotDeleted;
 }
 
 /// @nodoc
-abstract class $InitializeConfigFailureCopyWith<$Res> {
-  factory $InitializeConfigFailureCopyWith(InitializeConfigFailure value,
-          $Res Function(InitializeConfigFailure) then) =
-      _$InitializeConfigFailureCopyWithImpl<$Res>;
+abstract class $ConfigNotInitializedCopyWith<$Res> {
+  factory $ConfigNotInitializedCopyWith(ConfigNotInitialized value,
+          $Res Function(ConfigNotInitialized) then) =
+      _$ConfigNotInitializedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$InitializeConfigFailureCopyWithImpl<$Res>
+class _$ConfigNotInitializedCopyWithImpl<$Res>
     extends _$ConfigDatabaseFailureCopyWithImpl<$Res>
-    implements $InitializeConfigFailureCopyWith<$Res> {
-  _$InitializeConfigFailureCopyWithImpl(InitializeConfigFailure _value,
-      $Res Function(InitializeConfigFailure) _then)
-      : super(_value, (v) => _then(v as InitializeConfigFailure));
+    implements $ConfigNotInitializedCopyWith<$Res> {
+  _$ConfigNotInitializedCopyWithImpl(
+      ConfigNotInitialized _value, $Res Function(ConfigNotInitialized) _then)
+      : super(_value, (v) => _then(v as ConfigNotInitialized));
 
   @override
-  InitializeConfigFailure get _value => super._value as InitializeConfigFailure;
+  ConfigNotInitialized get _value => super._value as ConfigNotInitialized;
 }
 
 /// @nodoc
-class _$InitializeConfigFailure implements InitializeConfigFailure {
-  const _$InitializeConfigFailure();
+class _$ConfigNotInitialized implements ConfigNotInitialized {
+  const _$ConfigNotInitialized();
 
   @override
   String toString() {
-    return 'ConfigDatabaseFailure.initializeConfigFailure()';
+    return 'ConfigDatabaseFailure.configNotInitialized()';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is InitializeConfigFailure);
+    return identical(this, other) || (other is ConfigNotInitialized);
   }
 
   @override
@@ -216,27 +216,27 @@ class _$InitializeConfigFailure implements InitializeConfigFailure {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
-    @required TResult deleteConfigFailure(),
-    @required TResult initializeConfigFailure(),
-    @required TResult updateConfigFailure(),
+    @required TResult configNotDeleted(),
+    @required TResult configNotInitialized(),
+    @required TResult configNotUpdated(),
   }) {
-    assert(deleteConfigFailure != null);
-    assert(initializeConfigFailure != null);
-    assert(updateConfigFailure != null);
-    return initializeConfigFailure();
+    assert(configNotDeleted != null);
+    assert(configNotInitialized != null);
+    assert(configNotUpdated != null);
+    return configNotInitialized();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
-    TResult deleteConfigFailure(),
-    TResult initializeConfigFailure(),
-    TResult updateConfigFailure(),
+    TResult configNotDeleted(),
+    TResult configNotInitialized(),
+    TResult configNotUpdated(),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (initializeConfigFailure != null) {
-      return initializeConfigFailure();
+    if (configNotInitialized != null) {
+      return configNotInitialized();
     }
     return orElse();
   }
@@ -244,67 +244,67 @@ class _$InitializeConfigFailure implements InitializeConfigFailure {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object>({
-    @required TResult deleteConfigFailure(DeleteConfigFailure value),
-    @required TResult initializeConfigFailure(InitializeConfigFailure value),
-    @required TResult updateConfigFailure(UpdateConfigFailure value),
+    @required TResult configNotDeleted(ConfigNotDeleted value),
+    @required TResult configNotInitialized(ConfigNotInitialized value),
+    @required TResult configNotUpdated(ConfigNotUpdated value),
   }) {
-    assert(deleteConfigFailure != null);
-    assert(initializeConfigFailure != null);
-    assert(updateConfigFailure != null);
-    return initializeConfigFailure(this);
+    assert(configNotDeleted != null);
+    assert(configNotInitialized != null);
+    assert(configNotUpdated != null);
+    return configNotInitialized(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
-    TResult deleteConfigFailure(DeleteConfigFailure value),
-    TResult initializeConfigFailure(InitializeConfigFailure value),
-    TResult updateConfigFailure(UpdateConfigFailure value),
+    TResult configNotDeleted(ConfigNotDeleted value),
+    TResult configNotInitialized(ConfigNotInitialized value),
+    TResult configNotUpdated(ConfigNotUpdated value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (initializeConfigFailure != null) {
-      return initializeConfigFailure(this);
+    if (configNotInitialized != null) {
+      return configNotInitialized(this);
     }
     return orElse();
   }
 }
 
-abstract class InitializeConfigFailure implements ConfigDatabaseFailure {
-  const factory InitializeConfigFailure() = _$InitializeConfigFailure;
+abstract class ConfigNotInitialized implements ConfigDatabaseFailure {
+  const factory ConfigNotInitialized() = _$ConfigNotInitialized;
 }
 
 /// @nodoc
-abstract class $UpdateConfigFailureCopyWith<$Res> {
-  factory $UpdateConfigFailureCopyWith(
-          UpdateConfigFailure value, $Res Function(UpdateConfigFailure) then) =
-      _$UpdateConfigFailureCopyWithImpl<$Res>;
+abstract class $ConfigNotUpdatedCopyWith<$Res> {
+  factory $ConfigNotUpdatedCopyWith(
+          ConfigNotUpdated value, $Res Function(ConfigNotUpdated) then) =
+      _$ConfigNotUpdatedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$UpdateConfigFailureCopyWithImpl<$Res>
+class _$ConfigNotUpdatedCopyWithImpl<$Res>
     extends _$ConfigDatabaseFailureCopyWithImpl<$Res>
-    implements $UpdateConfigFailureCopyWith<$Res> {
-  _$UpdateConfigFailureCopyWithImpl(
-      UpdateConfigFailure _value, $Res Function(UpdateConfigFailure) _then)
-      : super(_value, (v) => _then(v as UpdateConfigFailure));
+    implements $ConfigNotUpdatedCopyWith<$Res> {
+  _$ConfigNotUpdatedCopyWithImpl(
+      ConfigNotUpdated _value, $Res Function(ConfigNotUpdated) _then)
+      : super(_value, (v) => _then(v as ConfigNotUpdated));
 
   @override
-  UpdateConfigFailure get _value => super._value as UpdateConfigFailure;
+  ConfigNotUpdated get _value => super._value as ConfigNotUpdated;
 }
 
 /// @nodoc
-class _$UpdateConfigFailure implements UpdateConfigFailure {
-  const _$UpdateConfigFailure();
+class _$ConfigNotUpdated implements ConfigNotUpdated {
+  const _$ConfigNotUpdated();
 
   @override
   String toString() {
-    return 'ConfigDatabaseFailure.updateConfigFailure()';
+    return 'ConfigDatabaseFailure.configNotUpdated()';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is UpdateConfigFailure);
+    return identical(this, other) || (other is ConfigNotUpdated);
   }
 
   @override
@@ -313,27 +313,27 @@ class _$UpdateConfigFailure implements UpdateConfigFailure {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
-    @required TResult deleteConfigFailure(),
-    @required TResult initializeConfigFailure(),
-    @required TResult updateConfigFailure(),
+    @required TResult configNotDeleted(),
+    @required TResult configNotInitialized(),
+    @required TResult configNotUpdated(),
   }) {
-    assert(deleteConfigFailure != null);
-    assert(initializeConfigFailure != null);
-    assert(updateConfigFailure != null);
-    return updateConfigFailure();
+    assert(configNotDeleted != null);
+    assert(configNotInitialized != null);
+    assert(configNotUpdated != null);
+    return configNotUpdated();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
-    TResult deleteConfigFailure(),
-    TResult initializeConfigFailure(),
-    TResult updateConfigFailure(),
+    TResult configNotDeleted(),
+    TResult configNotInitialized(),
+    TResult configNotUpdated(),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (updateConfigFailure != null) {
-      return updateConfigFailure();
+    if (configNotUpdated != null) {
+      return configNotUpdated();
     }
     return orElse();
   }
@@ -341,32 +341,32 @@ class _$UpdateConfigFailure implements UpdateConfigFailure {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object>({
-    @required TResult deleteConfigFailure(DeleteConfigFailure value),
-    @required TResult initializeConfigFailure(InitializeConfigFailure value),
-    @required TResult updateConfigFailure(UpdateConfigFailure value),
+    @required TResult configNotDeleted(ConfigNotDeleted value),
+    @required TResult configNotInitialized(ConfigNotInitialized value),
+    @required TResult configNotUpdated(ConfigNotUpdated value),
   }) {
-    assert(deleteConfigFailure != null);
-    assert(initializeConfigFailure != null);
-    assert(updateConfigFailure != null);
-    return updateConfigFailure(this);
+    assert(configNotDeleted != null);
+    assert(configNotInitialized != null);
+    assert(configNotUpdated != null);
+    return configNotUpdated(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
-    TResult deleteConfigFailure(DeleteConfigFailure value),
-    TResult initializeConfigFailure(InitializeConfigFailure value),
-    TResult updateConfigFailure(UpdateConfigFailure value),
+    TResult configNotDeleted(ConfigNotDeleted value),
+    TResult configNotInitialized(ConfigNotInitialized value),
+    TResult configNotUpdated(ConfigNotUpdated value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (updateConfigFailure != null) {
-      return updateConfigFailure(this);
+    if (configNotUpdated != null) {
+      return configNotUpdated(this);
     }
     return orElse();
   }
 }
 
-abstract class UpdateConfigFailure implements ConfigDatabaseFailure {
-  const factory UpdateConfigFailure() = _$UpdateConfigFailure;
+abstract class ConfigNotUpdated implements ConfigDatabaseFailure {
+  const factory ConfigNotUpdated() = _$ConfigNotUpdated;
 }

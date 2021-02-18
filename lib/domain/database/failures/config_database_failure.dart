@@ -6,14 +6,12 @@ part 'config_database_failure.freezed.dart';
 @freezed
 abstract class ConfigDatabaseFailure with _$ConfigDatabaseFailure {
   /// @nodoc
-  const factory ConfigDatabaseFailure.deleteConfigFailure() =
-      DeleteConfigFailure;
+  const factory ConfigDatabaseFailure.configNotDeleted() = ConfigNotDeleted;
 
   /// @nodoc
-  const factory ConfigDatabaseFailure.initializeConfigFailure() =
-      InitializeConfigFailure;
+  const factory ConfigDatabaseFailure.configNotInitialized() =
+      ConfigNotInitialized;
 
   /// @nodoc
-  const factory ConfigDatabaseFailure.updateConfigFailure() =
-      UpdateConfigFailure;
+  const factory ConfigDatabaseFailure.configNotUpdated() = ConfigNotUpdated;
 }

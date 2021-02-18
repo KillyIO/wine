@@ -1,11 +1,11 @@
+import 'package:dartz/dartz.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:mockito/mockito.dart';
 import 'package:test/test.dart';
-import 'package:wine/domain/authentication/authentication_failure.dart';
-import 'package:wine/domain/authentication/authentication_success.dart';
 
 import 'package:wine/domain/authentication/email_address.dart';
+import 'package:wine/domain/authentication/failures/authentication_failure.dart';
 import 'package:wine/domain/authentication/i_authentication_facade.dart';
 import 'package:wine/domain/authentication/password.dart';
 import 'package:wine/domain/authentication/username.dart';
@@ -114,7 +114,7 @@ void main() {
         'convertWithEmailAndPassword -',
         () {
           test(
-            '''When credential valid Then return UserAuthenticated with user data''',
+            'When credential valid Then return user data',
             () async {
               when(mockFirebaseAuth.currentUser).thenReturn(mockFirebaseUser);
 
@@ -128,13 +128,7 @@ void main() {
 
               result.fold(
                 (_) {},
-                (success) {
-                  expect(success, isA<UserAuthenticated>());
-
-                  if (success is UserAuthenticated) {
-                    expect(success.user, user);
-                  }
-                },
+                (usuccess) => expect(usuccess, user),
               );
             },
           );
@@ -286,7 +280,7 @@ void main() {
         'isUsernameAvailable -',
         () {
           test(
-            '''When username valid and not registered Then return UsernameAvailable''',
+            'When username valid and not registered Then return true',
             () async {
               when(mockFirestore.collection(any))
                   .thenReturn(mockCollectionReference);
@@ -303,13 +297,13 @@ void main() {
 
               result.fold(
                 (_) {},
-                (success) => expect(success, isA<UsernameAvailable>()),
+                (success) => expect(success, true),
               );
             },
           );
 
           test(
-            '''When username valid But already registered Then return UsernameAlreadyInUse''',
+            'When username valid But already registered Then return false',
             () async {
               when(mockFirestore.collection(any))
                   .thenReturn(mockCollectionReference);
@@ -322,11 +316,11 @@ void main() {
               final result = await authenticationFacade
                   .isUsernameAvailable(Username(validUsername));
 
-              expect(result.isLeft(), true);
+              expect(result.isRight(), true);
 
               result.fold(
-                (failure) => expect(failure, isA<UsernameAlreadyInUse>()),
                 (_) {},
+                (success) => expect(success, false),
               );
             },
           );
@@ -416,7 +410,7 @@ void main() {
         );
 
         test(
-          'When verification email sent Then return VerificationEmailSent',
+          'When verification email sent Then return unit',
           () async {
             when(mockFirebaseAuth.currentUser).thenReturn(mockFirebaseUser);
 
@@ -426,7 +420,7 @@ void main() {
 
             result.fold(
               (_) {},
-              (success) => expect(success, isA<VerificationEmailSent>()),
+              (success) => expect(success, isA<Unit>()),
             );
           },
         );
@@ -452,7 +446,7 @@ void main() {
 
       group('signInAnonymously -', () {
         test(
-          'When user signed in Then return UserSignedInAnonymously',
+          'When user signed in Then return Unit',
           () async {
             when(mockFirebaseAuth.signInAnonymously())
                 .thenAnswer((_) async => mockUserCredential);
@@ -463,7 +457,7 @@ void main() {
 
             result.fold(
               (_) {},
-              (success) => expect(success, isA<UserSignedInAnonymously>()),
+              (success) => expect(success, isA<Unit>()),
             );
           },
         );
@@ -488,7 +482,7 @@ void main() {
 
       group('signInWithEmailAndPassword -', () {
         test(
-          '''When user authenticated Then return UserAuthenticated with user data''',
+          'When user authenticated Then return user data',
           () async {
             when(mockFirebaseAuth.currentUser).thenReturn(mockFirebaseUser);
             when(
@@ -508,13 +502,7 @@ void main() {
 
             result.fold(
               (_) {},
-              (success) {
-                expect(success, isA<UserAuthenticated>());
-
-                if (success is UserAuthenticated) {
-                  expect(success.user, user);
-                }
-              },
+              (success) => expect(success, user),
             );
           },
         );
@@ -664,7 +652,7 @@ void main() {
 
       group('signInWithGoogle -', () {
         test(
-          'When user signed in Then return UserAuthenticated with user data',
+          'When user signed in Then return user data',
           () async {
             when(mockFirebaseAuth.currentUser).thenReturn(mockFirebaseUser);
             when(mockGoogleSignIn.signIn()).thenAnswer(
@@ -681,13 +669,7 @@ void main() {
 
             result.fold(
               (_) {},
-              (success) {
-                expect(success, isA<UserAuthenticated>());
-
-                if (success is UserAuthenticated) {
-                  expect(success.user, user);
-                }
-              },
+              (success) => expect(success, user),
             );
           },
         );
@@ -710,7 +692,7 @@ void main() {
         );
 
         test(
-          'When credential already in use Then return UserAuthenticated',
+          'When credential already in use Then return user data',
           () async {
             when(mockFirebaseAuth.currentUser).thenReturn(mockFirebaseUser);
             when(mockGoogleSignIn.signIn())
@@ -733,13 +715,7 @@ void main() {
 
             result.fold(
               (_) {},
-              (success) {
-                expect(success, isA<UserAuthenticated>());
-
-                if (success is UserAuthenticated) {
-                  expect(success.user, user);
-                }
-              },
+              (success) => expect(success, user),
             );
           },
         );
@@ -786,7 +762,7 @@ void main() {
 
       group('signOut -', () {
         test(
-          'When user signed out Then return UserSignedOut',
+          'When user signed out Then return Unit',
           () async {
             when(mockFirebaseAuth.signOut()).thenAnswer((_) async => null);
             when(mockGoogleSignIn.signOut())
@@ -801,7 +777,7 @@ void main() {
 
             result.fold(
               (_) {},
-              (success) => expect(success, isA<UserSignedOut>()),
+              (success) => expect(success, isA<Unit>()),
             );
           },
         );

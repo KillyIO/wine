@@ -14,27 +14,27 @@ class _$ConfigDatabaseSuccessTearOff {
   const _$ConfigDatabaseSuccessTearOff();
 
 // ignore: unused_element
-  ConfigDeletedSuccess configDeletedSuccess() {
+  ConfigDeletedSuccess configDeleted() {
     return const ConfigDeletedSuccess();
   }
 
 // ignore: unused_element
-  ConfigFetchedSuccess configFetchedSuccess(Config config) {
-    return ConfigFetchedSuccess(
+  ConfigFetched configFetched(Config config) {
+    return ConfigFetched(
       config,
     );
   }
 
 // ignore: unused_element
-  ConfigInitializedSuccess configInitializedSuccess(Config config) {
-    return ConfigInitializedSuccess(
+  ConfigInitialized configInitialized(Config config) {
+    return ConfigInitialized(
       config,
     );
   }
 
 // ignore: unused_element
-  ConfigUpdatedSuccess configUpdatedSuccess(Config config) {
-    return ConfigUpdatedSuccess(
+  ConfigUpdated configUpdated(Config config) {
+    return ConfigUpdated(
       config,
     );
   }
@@ -48,32 +48,32 @@ const $ConfigDatabaseSuccess = _$ConfigDatabaseSuccessTearOff();
 mixin _$ConfigDatabaseSuccess {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
-    @required TResult configDeletedSuccess(),
-    @required TResult configFetchedSuccess(Config config),
-    @required TResult configInitializedSuccess(Config config),
-    @required TResult configUpdatedSuccess(Config config),
+    @required TResult configDeleted(),
+    @required TResult configFetched(Config config),
+    @required TResult configInitialized(Config config),
+    @required TResult configUpdated(Config config),
   });
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
-    TResult configDeletedSuccess(),
-    TResult configFetchedSuccess(Config config),
-    TResult configInitializedSuccess(Config config),
-    TResult configUpdatedSuccess(Config config),
+    TResult configDeleted(),
+    TResult configFetched(Config config),
+    TResult configInitialized(Config config),
+    TResult configUpdated(Config config),
     @required TResult orElse(),
   });
   @optionalTypeArgs
   TResult map<TResult extends Object>({
-    @required TResult configDeletedSuccess(ConfigDeletedSuccess value),
-    @required TResult configFetchedSuccess(ConfigFetchedSuccess value),
-    @required TResult configInitializedSuccess(ConfigInitializedSuccess value),
-    @required TResult configUpdatedSuccess(ConfigUpdatedSuccess value),
+    @required TResult configDeleted(ConfigDeletedSuccess value),
+    @required TResult configFetched(ConfigFetched value),
+    @required TResult configInitialized(ConfigInitialized value),
+    @required TResult configUpdated(ConfigUpdated value),
   });
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
-    TResult configDeletedSuccess(ConfigDeletedSuccess value),
-    TResult configFetchedSuccess(ConfigFetchedSuccess value),
-    TResult configInitializedSuccess(ConfigInitializedSuccess value),
-    TResult configUpdatedSuccess(ConfigUpdatedSuccess value),
+    TResult configDeleted(ConfigDeletedSuccess value),
+    TResult configFetched(ConfigFetched value),
+    TResult configInitialized(ConfigInitialized value),
+    TResult configUpdated(ConfigUpdated value),
     @required TResult orElse(),
   });
 }
@@ -120,7 +120,7 @@ class _$ConfigDeletedSuccess implements ConfigDeletedSuccess {
 
   @override
   String toString() {
-    return 'ConfigDatabaseSuccess.configDeletedSuccess()';
+    return 'ConfigDatabaseSuccess.configDeleted()';
   }
 
   @override
@@ -134,30 +134,30 @@ class _$ConfigDeletedSuccess implements ConfigDeletedSuccess {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
-    @required TResult configDeletedSuccess(),
-    @required TResult configFetchedSuccess(Config config),
-    @required TResult configInitializedSuccess(Config config),
-    @required TResult configUpdatedSuccess(Config config),
+    @required TResult configDeleted(),
+    @required TResult configFetched(Config config),
+    @required TResult configInitialized(Config config),
+    @required TResult configUpdated(Config config),
   }) {
-    assert(configDeletedSuccess != null);
-    assert(configFetchedSuccess != null);
-    assert(configInitializedSuccess != null);
-    assert(configUpdatedSuccess != null);
-    return configDeletedSuccess();
+    assert(configDeleted != null);
+    assert(configFetched != null);
+    assert(configInitialized != null);
+    assert(configUpdated != null);
+    return configDeleted();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
-    TResult configDeletedSuccess(),
-    TResult configFetchedSuccess(Config config),
-    TResult configInitializedSuccess(Config config),
-    TResult configUpdatedSuccess(Config config),
+    TResult configDeleted(),
+    TResult configFetched(Config config),
+    TResult configInitialized(Config config),
+    TResult configUpdated(Config config),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (configDeletedSuccess != null) {
-      return configDeletedSuccess();
+    if (configDeleted != null) {
+      return configDeleted();
     }
     return orElse();
   }
@@ -165,30 +165,30 @@ class _$ConfigDeletedSuccess implements ConfigDeletedSuccess {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object>({
-    @required TResult configDeletedSuccess(ConfigDeletedSuccess value),
-    @required TResult configFetchedSuccess(ConfigFetchedSuccess value),
-    @required TResult configInitializedSuccess(ConfigInitializedSuccess value),
-    @required TResult configUpdatedSuccess(ConfigUpdatedSuccess value),
+    @required TResult configDeleted(ConfigDeletedSuccess value),
+    @required TResult configFetched(ConfigFetched value),
+    @required TResult configInitialized(ConfigInitialized value),
+    @required TResult configUpdated(ConfigUpdated value),
   }) {
-    assert(configDeletedSuccess != null);
-    assert(configFetchedSuccess != null);
-    assert(configInitializedSuccess != null);
-    assert(configUpdatedSuccess != null);
-    return configDeletedSuccess(this);
+    assert(configDeleted != null);
+    assert(configFetched != null);
+    assert(configInitialized != null);
+    assert(configUpdated != null);
+    return configDeleted(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
-    TResult configDeletedSuccess(ConfigDeletedSuccess value),
-    TResult configFetchedSuccess(ConfigFetchedSuccess value),
-    TResult configInitializedSuccess(ConfigInitializedSuccess value),
-    TResult configUpdatedSuccess(ConfigUpdatedSuccess value),
+    TResult configDeleted(ConfigDeletedSuccess value),
+    TResult configFetched(ConfigFetched value),
+    TResult configInitialized(ConfigInitialized value),
+    TResult configUpdated(ConfigUpdated value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (configDeletedSuccess != null) {
-      return configDeletedSuccess(this);
+    if (configDeleted != null) {
+      return configDeleted(this);
     }
     return orElse();
   }
@@ -199,50 +199,50 @@ abstract class ConfigDeletedSuccess implements ConfigDatabaseSuccess {
 }
 
 /// @nodoc
-abstract class $ConfigFetchedSuccessCopyWith<$Res> {
-  factory $ConfigFetchedSuccessCopyWith(ConfigFetchedSuccess value,
-          $Res Function(ConfigFetchedSuccess) then) =
-      _$ConfigFetchedSuccessCopyWithImpl<$Res>;
+abstract class $ConfigFetchedCopyWith<$Res> {
+  factory $ConfigFetchedCopyWith(
+          ConfigFetched value, $Res Function(ConfigFetched) then) =
+      _$ConfigFetchedCopyWithImpl<$Res>;
   $Res call({Config config});
 }
 
 /// @nodoc
-class _$ConfigFetchedSuccessCopyWithImpl<$Res>
+class _$ConfigFetchedCopyWithImpl<$Res>
     extends _$ConfigDatabaseSuccessCopyWithImpl<$Res>
-    implements $ConfigFetchedSuccessCopyWith<$Res> {
-  _$ConfigFetchedSuccessCopyWithImpl(
-      ConfigFetchedSuccess _value, $Res Function(ConfigFetchedSuccess) _then)
-      : super(_value, (v) => _then(v as ConfigFetchedSuccess));
+    implements $ConfigFetchedCopyWith<$Res> {
+  _$ConfigFetchedCopyWithImpl(
+      ConfigFetched _value, $Res Function(ConfigFetched) _then)
+      : super(_value, (v) => _then(v as ConfigFetched));
 
   @override
-  ConfigFetchedSuccess get _value => super._value as ConfigFetchedSuccess;
+  ConfigFetched get _value => super._value as ConfigFetched;
 
   @override
   $Res call({
     Object config = freezed,
   }) {
-    return _then(ConfigFetchedSuccess(
+    return _then(ConfigFetched(
       config == freezed ? _value.config : config as Config,
     ));
   }
 }
 
 /// @nodoc
-class _$ConfigFetchedSuccess implements ConfigFetchedSuccess {
-  const _$ConfigFetchedSuccess(this.config) : assert(config != null);
+class _$ConfigFetched implements ConfigFetched {
+  const _$ConfigFetched(this.config) : assert(config != null);
 
   @override
   final Config config;
 
   @override
   String toString() {
-    return 'ConfigDatabaseSuccess.configFetchedSuccess(config: $config)';
+    return 'ConfigDatabaseSuccess.configFetched(config: $config)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is ConfigFetchedSuccess &&
+        (other is ConfigFetched &&
             (identical(other.config, config) ||
                 const DeepCollectionEquality().equals(other.config, config)));
   }
@@ -253,37 +253,36 @@ class _$ConfigFetchedSuccess implements ConfigFetchedSuccess {
 
   @JsonKey(ignore: true)
   @override
-  $ConfigFetchedSuccessCopyWith<ConfigFetchedSuccess> get copyWith =>
-      _$ConfigFetchedSuccessCopyWithImpl<ConfigFetchedSuccess>(
-          this, _$identity);
+  $ConfigFetchedCopyWith<ConfigFetched> get copyWith =>
+      _$ConfigFetchedCopyWithImpl<ConfigFetched>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
-    @required TResult configDeletedSuccess(),
-    @required TResult configFetchedSuccess(Config config),
-    @required TResult configInitializedSuccess(Config config),
-    @required TResult configUpdatedSuccess(Config config),
+    @required TResult configDeleted(),
+    @required TResult configFetched(Config config),
+    @required TResult configInitialized(Config config),
+    @required TResult configUpdated(Config config),
   }) {
-    assert(configDeletedSuccess != null);
-    assert(configFetchedSuccess != null);
-    assert(configInitializedSuccess != null);
-    assert(configUpdatedSuccess != null);
-    return configFetchedSuccess(config);
+    assert(configDeleted != null);
+    assert(configFetched != null);
+    assert(configInitialized != null);
+    assert(configUpdated != null);
+    return configFetched(config);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
-    TResult configDeletedSuccess(),
-    TResult configFetchedSuccess(Config config),
-    TResult configInitializedSuccess(Config config),
-    TResult configUpdatedSuccess(Config config),
+    TResult configDeleted(),
+    TResult configFetched(Config config),
+    TResult configInitialized(Config config),
+    TResult configUpdated(Config config),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (configFetchedSuccess != null) {
-      return configFetchedSuccess(config);
+    if (configFetched != null) {
+      return configFetched(config);
     }
     return orElse();
   }
@@ -291,89 +290,88 @@ class _$ConfigFetchedSuccess implements ConfigFetchedSuccess {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object>({
-    @required TResult configDeletedSuccess(ConfigDeletedSuccess value),
-    @required TResult configFetchedSuccess(ConfigFetchedSuccess value),
-    @required TResult configInitializedSuccess(ConfigInitializedSuccess value),
-    @required TResult configUpdatedSuccess(ConfigUpdatedSuccess value),
+    @required TResult configDeleted(ConfigDeletedSuccess value),
+    @required TResult configFetched(ConfigFetched value),
+    @required TResult configInitialized(ConfigInitialized value),
+    @required TResult configUpdated(ConfigUpdated value),
   }) {
-    assert(configDeletedSuccess != null);
-    assert(configFetchedSuccess != null);
-    assert(configInitializedSuccess != null);
-    assert(configUpdatedSuccess != null);
-    return configFetchedSuccess(this);
+    assert(configDeleted != null);
+    assert(configFetched != null);
+    assert(configInitialized != null);
+    assert(configUpdated != null);
+    return configFetched(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
-    TResult configDeletedSuccess(ConfigDeletedSuccess value),
-    TResult configFetchedSuccess(ConfigFetchedSuccess value),
-    TResult configInitializedSuccess(ConfigInitializedSuccess value),
-    TResult configUpdatedSuccess(ConfigUpdatedSuccess value),
+    TResult configDeleted(ConfigDeletedSuccess value),
+    TResult configFetched(ConfigFetched value),
+    TResult configInitialized(ConfigInitialized value),
+    TResult configUpdated(ConfigUpdated value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (configFetchedSuccess != null) {
-      return configFetchedSuccess(this);
+    if (configFetched != null) {
+      return configFetched(this);
     }
     return orElse();
   }
 }
 
-abstract class ConfigFetchedSuccess implements ConfigDatabaseSuccess {
-  const factory ConfigFetchedSuccess(Config config) = _$ConfigFetchedSuccess;
+abstract class ConfigFetched implements ConfigDatabaseSuccess {
+  const factory ConfigFetched(Config config) = _$ConfigFetched;
 
   Config get config;
   @JsonKey(ignore: true)
-  $ConfigFetchedSuccessCopyWith<ConfigFetchedSuccess> get copyWith;
+  $ConfigFetchedCopyWith<ConfigFetched> get copyWith;
 }
 
 /// @nodoc
-abstract class $ConfigInitializedSuccessCopyWith<$Res> {
-  factory $ConfigInitializedSuccessCopyWith(ConfigInitializedSuccess value,
-          $Res Function(ConfigInitializedSuccess) then) =
-      _$ConfigInitializedSuccessCopyWithImpl<$Res>;
+abstract class $ConfigInitializedCopyWith<$Res> {
+  factory $ConfigInitializedCopyWith(
+          ConfigInitialized value, $Res Function(ConfigInitialized) then) =
+      _$ConfigInitializedCopyWithImpl<$Res>;
   $Res call({Config config});
 }
 
 /// @nodoc
-class _$ConfigInitializedSuccessCopyWithImpl<$Res>
+class _$ConfigInitializedCopyWithImpl<$Res>
     extends _$ConfigDatabaseSuccessCopyWithImpl<$Res>
-    implements $ConfigInitializedSuccessCopyWith<$Res> {
-  _$ConfigInitializedSuccessCopyWithImpl(ConfigInitializedSuccess _value,
-      $Res Function(ConfigInitializedSuccess) _then)
-      : super(_value, (v) => _then(v as ConfigInitializedSuccess));
+    implements $ConfigInitializedCopyWith<$Res> {
+  _$ConfigInitializedCopyWithImpl(
+      ConfigInitialized _value, $Res Function(ConfigInitialized) _then)
+      : super(_value, (v) => _then(v as ConfigInitialized));
 
   @override
-  ConfigInitializedSuccess get _value =>
-      super._value as ConfigInitializedSuccess;
+  ConfigInitialized get _value => super._value as ConfigInitialized;
 
   @override
   $Res call({
     Object config = freezed,
   }) {
-    return _then(ConfigInitializedSuccess(
+    return _then(ConfigInitialized(
       config == freezed ? _value.config : config as Config,
     ));
   }
 }
 
 /// @nodoc
-class _$ConfigInitializedSuccess implements ConfigInitializedSuccess {
-  const _$ConfigInitializedSuccess(this.config) : assert(config != null);
+class _$ConfigInitialized implements ConfigInitialized {
+  const _$ConfigInitialized(this.config) : assert(config != null);
 
   @override
   final Config config;
 
   @override
   String toString() {
-    return 'ConfigDatabaseSuccess.configInitializedSuccess(config: $config)';
+    return 'ConfigDatabaseSuccess.configInitialized(config: $config)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is ConfigInitializedSuccess &&
+        (other is ConfigInitialized &&
             (identical(other.config, config) ||
                 const DeepCollectionEquality().equals(other.config, config)));
   }
@@ -384,37 +382,36 @@ class _$ConfigInitializedSuccess implements ConfigInitializedSuccess {
 
   @JsonKey(ignore: true)
   @override
-  $ConfigInitializedSuccessCopyWith<ConfigInitializedSuccess> get copyWith =>
-      _$ConfigInitializedSuccessCopyWithImpl<ConfigInitializedSuccess>(
-          this, _$identity);
+  $ConfigInitializedCopyWith<ConfigInitialized> get copyWith =>
+      _$ConfigInitializedCopyWithImpl<ConfigInitialized>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
-    @required TResult configDeletedSuccess(),
-    @required TResult configFetchedSuccess(Config config),
-    @required TResult configInitializedSuccess(Config config),
-    @required TResult configUpdatedSuccess(Config config),
+    @required TResult configDeleted(),
+    @required TResult configFetched(Config config),
+    @required TResult configInitialized(Config config),
+    @required TResult configUpdated(Config config),
   }) {
-    assert(configDeletedSuccess != null);
-    assert(configFetchedSuccess != null);
-    assert(configInitializedSuccess != null);
-    assert(configUpdatedSuccess != null);
-    return configInitializedSuccess(config);
+    assert(configDeleted != null);
+    assert(configFetched != null);
+    assert(configInitialized != null);
+    assert(configUpdated != null);
+    return configInitialized(config);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
-    TResult configDeletedSuccess(),
-    TResult configFetchedSuccess(Config config),
-    TResult configInitializedSuccess(Config config),
-    TResult configUpdatedSuccess(Config config),
+    TResult configDeleted(),
+    TResult configFetched(Config config),
+    TResult configInitialized(Config config),
+    TResult configUpdated(Config config),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (configInitializedSuccess != null) {
-      return configInitializedSuccess(config);
+    if (configInitialized != null) {
+      return configInitialized(config);
     }
     return orElse();
   }
@@ -422,89 +419,88 @@ class _$ConfigInitializedSuccess implements ConfigInitializedSuccess {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object>({
-    @required TResult configDeletedSuccess(ConfigDeletedSuccess value),
-    @required TResult configFetchedSuccess(ConfigFetchedSuccess value),
-    @required TResult configInitializedSuccess(ConfigInitializedSuccess value),
-    @required TResult configUpdatedSuccess(ConfigUpdatedSuccess value),
+    @required TResult configDeleted(ConfigDeletedSuccess value),
+    @required TResult configFetched(ConfigFetched value),
+    @required TResult configInitialized(ConfigInitialized value),
+    @required TResult configUpdated(ConfigUpdated value),
   }) {
-    assert(configDeletedSuccess != null);
-    assert(configFetchedSuccess != null);
-    assert(configInitializedSuccess != null);
-    assert(configUpdatedSuccess != null);
-    return configInitializedSuccess(this);
+    assert(configDeleted != null);
+    assert(configFetched != null);
+    assert(configInitialized != null);
+    assert(configUpdated != null);
+    return configInitialized(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
-    TResult configDeletedSuccess(ConfigDeletedSuccess value),
-    TResult configFetchedSuccess(ConfigFetchedSuccess value),
-    TResult configInitializedSuccess(ConfigInitializedSuccess value),
-    TResult configUpdatedSuccess(ConfigUpdatedSuccess value),
+    TResult configDeleted(ConfigDeletedSuccess value),
+    TResult configFetched(ConfigFetched value),
+    TResult configInitialized(ConfigInitialized value),
+    TResult configUpdated(ConfigUpdated value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (configInitializedSuccess != null) {
-      return configInitializedSuccess(this);
+    if (configInitialized != null) {
+      return configInitialized(this);
     }
     return orElse();
   }
 }
 
-abstract class ConfigInitializedSuccess implements ConfigDatabaseSuccess {
-  const factory ConfigInitializedSuccess(Config config) =
-      _$ConfigInitializedSuccess;
+abstract class ConfigInitialized implements ConfigDatabaseSuccess {
+  const factory ConfigInitialized(Config config) = _$ConfigInitialized;
 
   Config get config;
   @JsonKey(ignore: true)
-  $ConfigInitializedSuccessCopyWith<ConfigInitializedSuccess> get copyWith;
+  $ConfigInitializedCopyWith<ConfigInitialized> get copyWith;
 }
 
 /// @nodoc
-abstract class $ConfigUpdatedSuccessCopyWith<$Res> {
-  factory $ConfigUpdatedSuccessCopyWith(ConfigUpdatedSuccess value,
-          $Res Function(ConfigUpdatedSuccess) then) =
-      _$ConfigUpdatedSuccessCopyWithImpl<$Res>;
+abstract class $ConfigUpdatedCopyWith<$Res> {
+  factory $ConfigUpdatedCopyWith(
+          ConfigUpdated value, $Res Function(ConfigUpdated) then) =
+      _$ConfigUpdatedCopyWithImpl<$Res>;
   $Res call({Config config});
 }
 
 /// @nodoc
-class _$ConfigUpdatedSuccessCopyWithImpl<$Res>
+class _$ConfigUpdatedCopyWithImpl<$Res>
     extends _$ConfigDatabaseSuccessCopyWithImpl<$Res>
-    implements $ConfigUpdatedSuccessCopyWith<$Res> {
-  _$ConfigUpdatedSuccessCopyWithImpl(
-      ConfigUpdatedSuccess _value, $Res Function(ConfigUpdatedSuccess) _then)
-      : super(_value, (v) => _then(v as ConfigUpdatedSuccess));
+    implements $ConfigUpdatedCopyWith<$Res> {
+  _$ConfigUpdatedCopyWithImpl(
+      ConfigUpdated _value, $Res Function(ConfigUpdated) _then)
+      : super(_value, (v) => _then(v as ConfigUpdated));
 
   @override
-  ConfigUpdatedSuccess get _value => super._value as ConfigUpdatedSuccess;
+  ConfigUpdated get _value => super._value as ConfigUpdated;
 
   @override
   $Res call({
     Object config = freezed,
   }) {
-    return _then(ConfigUpdatedSuccess(
+    return _then(ConfigUpdated(
       config == freezed ? _value.config : config as Config,
     ));
   }
 }
 
 /// @nodoc
-class _$ConfigUpdatedSuccess implements ConfigUpdatedSuccess {
-  const _$ConfigUpdatedSuccess(this.config) : assert(config != null);
+class _$ConfigUpdated implements ConfigUpdated {
+  const _$ConfigUpdated(this.config) : assert(config != null);
 
   @override
   final Config config;
 
   @override
   String toString() {
-    return 'ConfigDatabaseSuccess.configUpdatedSuccess(config: $config)';
+    return 'ConfigDatabaseSuccess.configUpdated(config: $config)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is ConfigUpdatedSuccess &&
+        (other is ConfigUpdated &&
             (identical(other.config, config) ||
                 const DeepCollectionEquality().equals(other.config, config)));
   }
@@ -515,37 +511,36 @@ class _$ConfigUpdatedSuccess implements ConfigUpdatedSuccess {
 
   @JsonKey(ignore: true)
   @override
-  $ConfigUpdatedSuccessCopyWith<ConfigUpdatedSuccess> get copyWith =>
-      _$ConfigUpdatedSuccessCopyWithImpl<ConfigUpdatedSuccess>(
-          this, _$identity);
+  $ConfigUpdatedCopyWith<ConfigUpdated> get copyWith =>
+      _$ConfigUpdatedCopyWithImpl<ConfigUpdated>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
-    @required TResult configDeletedSuccess(),
-    @required TResult configFetchedSuccess(Config config),
-    @required TResult configInitializedSuccess(Config config),
-    @required TResult configUpdatedSuccess(Config config),
+    @required TResult configDeleted(),
+    @required TResult configFetched(Config config),
+    @required TResult configInitialized(Config config),
+    @required TResult configUpdated(Config config),
   }) {
-    assert(configDeletedSuccess != null);
-    assert(configFetchedSuccess != null);
-    assert(configInitializedSuccess != null);
-    assert(configUpdatedSuccess != null);
-    return configUpdatedSuccess(config);
+    assert(configDeleted != null);
+    assert(configFetched != null);
+    assert(configInitialized != null);
+    assert(configUpdated != null);
+    return configUpdated(config);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
-    TResult configDeletedSuccess(),
-    TResult configFetchedSuccess(Config config),
-    TResult configInitializedSuccess(Config config),
-    TResult configUpdatedSuccess(Config config),
+    TResult configDeleted(),
+    TResult configFetched(Config config),
+    TResult configInitialized(Config config),
+    TResult configUpdated(Config config),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (configUpdatedSuccess != null) {
-      return configUpdatedSuccess(config);
+    if (configUpdated != null) {
+      return configUpdated(config);
     }
     return orElse();
   }
@@ -553,39 +548,39 @@ class _$ConfigUpdatedSuccess implements ConfigUpdatedSuccess {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object>({
-    @required TResult configDeletedSuccess(ConfigDeletedSuccess value),
-    @required TResult configFetchedSuccess(ConfigFetchedSuccess value),
-    @required TResult configInitializedSuccess(ConfigInitializedSuccess value),
-    @required TResult configUpdatedSuccess(ConfigUpdatedSuccess value),
+    @required TResult configDeleted(ConfigDeletedSuccess value),
+    @required TResult configFetched(ConfigFetched value),
+    @required TResult configInitialized(ConfigInitialized value),
+    @required TResult configUpdated(ConfigUpdated value),
   }) {
-    assert(configDeletedSuccess != null);
-    assert(configFetchedSuccess != null);
-    assert(configInitializedSuccess != null);
-    assert(configUpdatedSuccess != null);
-    return configUpdatedSuccess(this);
+    assert(configDeleted != null);
+    assert(configFetched != null);
+    assert(configInitialized != null);
+    assert(configUpdated != null);
+    return configUpdated(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
-    TResult configDeletedSuccess(ConfigDeletedSuccess value),
-    TResult configFetchedSuccess(ConfigFetchedSuccess value),
-    TResult configInitializedSuccess(ConfigInitializedSuccess value),
-    TResult configUpdatedSuccess(ConfigUpdatedSuccess value),
+    TResult configDeleted(ConfigDeletedSuccess value),
+    TResult configFetched(ConfigFetched value),
+    TResult configInitialized(ConfigInitialized value),
+    TResult configUpdated(ConfigUpdated value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (configUpdatedSuccess != null) {
-      return configUpdatedSuccess(this);
+    if (configUpdated != null) {
+      return configUpdated(this);
     }
     return orElse();
   }
 }
 
-abstract class ConfigUpdatedSuccess implements ConfigDatabaseSuccess {
-  const factory ConfigUpdatedSuccess(Config config) = _$ConfigUpdatedSuccess;
+abstract class ConfigUpdated implements ConfigDatabaseSuccess {
+  const factory ConfigUpdated(Config config) = _$ConfigUpdated;
 
   Config get config;
   @JsonKey(ignore: true)
-  $ConfigUpdatedSuccessCopyWith<ConfigUpdatedSuccess> get copyWith;
+  $ConfigUpdatedCopyWith<ConfigUpdated> get copyWith;
 }

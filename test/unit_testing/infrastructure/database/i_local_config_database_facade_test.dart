@@ -80,7 +80,6 @@ void main() {
         },
       );
 
-      // SECTION: fetchConfig
       group(
         'fetchConfig -',
         () {
