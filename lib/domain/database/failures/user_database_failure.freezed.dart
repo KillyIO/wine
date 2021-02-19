@@ -14,18 +14,18 @@ class _$UserDatabaseFailureTearOff {
   const _$UserDatabaseFailureTearOff();
 
 // ignore: unused_element
-  ServerFailure serverFailure() {
-    return const ServerFailure();
+  ServerErrorr serverError() {
+    return const ServerErrorr();
   }
 
 // ignore: unused_element
-  UnexpectedFailure unexpectedFailure() {
-    return const UnexpectedFailure();
+  UnexpectedError unexpectedError() {
+    return const UnexpectedError();
   }
 
 // ignore: unused_element
-  UserNotFoundFailure userNotFoundFailure() {
-    return const UserNotFoundFailure();
+  UserNotFound userNotFound() {
+    return const UserNotFound();
   }
 }
 
@@ -37,28 +37,28 @@ const $UserDatabaseFailure = _$UserDatabaseFailureTearOff();
 mixin _$UserDatabaseFailure {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
-    @required TResult serverFailure(),
-    @required TResult unexpectedFailure(),
-    @required TResult userNotFoundFailure(),
+    @required TResult serverError(),
+    @required TResult unexpectedError(),
+    @required TResult userNotFound(),
   });
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
-    TResult serverFailure(),
-    TResult unexpectedFailure(),
-    TResult userNotFoundFailure(),
+    TResult serverError(),
+    TResult unexpectedError(),
+    TResult userNotFound(),
     @required TResult orElse(),
   });
   @optionalTypeArgs
   TResult map<TResult extends Object>({
-    @required TResult serverFailure(ServerFailure value),
-    @required TResult unexpectedFailure(UnexpectedFailure value),
-    @required TResult userNotFoundFailure(UserNotFoundFailure value),
+    @required TResult serverError(ServerErrorr value),
+    @required TResult unexpectedError(UnexpectedError value),
+    @required TResult userNotFound(UserNotFound value),
   });
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
-    TResult serverFailure(ServerFailure value),
-    TResult unexpectedFailure(UnexpectedFailure value),
-    TResult userNotFoundFailure(UserNotFoundFailure value),
+    TResult serverError(ServerErrorr value),
+    TResult unexpectedError(UnexpectedError value),
+    TResult userNotFound(UserNotFound value),
     @required TResult orElse(),
   });
 }
@@ -81,36 +81,36 @@ class _$UserDatabaseFailureCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class $ServerFailureCopyWith<$Res> {
-  factory $ServerFailureCopyWith(
-          ServerFailure value, $Res Function(ServerFailure) then) =
-      _$ServerFailureCopyWithImpl<$Res>;
+abstract class $ServerErrorrCopyWith<$Res> {
+  factory $ServerErrorrCopyWith(
+          ServerErrorr value, $Res Function(ServerErrorr) then) =
+      _$ServerErrorrCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$ServerFailureCopyWithImpl<$Res>
+class _$ServerErrorrCopyWithImpl<$Res>
     extends _$UserDatabaseFailureCopyWithImpl<$Res>
-    implements $ServerFailureCopyWith<$Res> {
-  _$ServerFailureCopyWithImpl(
-      ServerFailure _value, $Res Function(ServerFailure) _then)
-      : super(_value, (v) => _then(v as ServerFailure));
+    implements $ServerErrorrCopyWith<$Res> {
+  _$ServerErrorrCopyWithImpl(
+      ServerErrorr _value, $Res Function(ServerErrorr) _then)
+      : super(_value, (v) => _then(v as ServerErrorr));
 
   @override
-  ServerFailure get _value => super._value as ServerFailure;
+  ServerErrorr get _value => super._value as ServerErrorr;
 }
 
 /// @nodoc
-class _$ServerFailure implements ServerFailure {
-  const _$ServerFailure();
+class _$ServerErrorr implements ServerErrorr {
+  const _$ServerErrorr();
 
   @override
   String toString() {
-    return 'UserDatabaseFailure.serverFailure()';
+    return 'UserDatabaseFailure.serverError()';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is ServerFailure);
+    return identical(this, other) || (other is ServerErrorr);
   }
 
   @override
@@ -119,27 +119,27 @@ class _$ServerFailure implements ServerFailure {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
-    @required TResult serverFailure(),
-    @required TResult unexpectedFailure(),
-    @required TResult userNotFoundFailure(),
+    @required TResult serverError(),
+    @required TResult unexpectedError(),
+    @required TResult userNotFound(),
   }) {
-    assert(serverFailure != null);
-    assert(unexpectedFailure != null);
-    assert(userNotFoundFailure != null);
-    return serverFailure();
+    assert(serverError != null);
+    assert(unexpectedError != null);
+    assert(userNotFound != null);
+    return serverError();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
-    TResult serverFailure(),
-    TResult unexpectedFailure(),
-    TResult userNotFoundFailure(),
+    TResult serverError(),
+    TResult unexpectedError(),
+    TResult userNotFound(),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (serverFailure != null) {
-      return serverFailure();
+    if (serverError != null) {
+      return serverError();
     }
     return orElse();
   }
@@ -147,67 +147,67 @@ class _$ServerFailure implements ServerFailure {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object>({
-    @required TResult serverFailure(ServerFailure value),
-    @required TResult unexpectedFailure(UnexpectedFailure value),
-    @required TResult userNotFoundFailure(UserNotFoundFailure value),
+    @required TResult serverError(ServerErrorr value),
+    @required TResult unexpectedError(UnexpectedError value),
+    @required TResult userNotFound(UserNotFound value),
   }) {
-    assert(serverFailure != null);
-    assert(unexpectedFailure != null);
-    assert(userNotFoundFailure != null);
-    return serverFailure(this);
+    assert(serverError != null);
+    assert(unexpectedError != null);
+    assert(userNotFound != null);
+    return serverError(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
-    TResult serverFailure(ServerFailure value),
-    TResult unexpectedFailure(UnexpectedFailure value),
-    TResult userNotFoundFailure(UserNotFoundFailure value),
+    TResult serverError(ServerErrorr value),
+    TResult unexpectedError(UnexpectedError value),
+    TResult userNotFound(UserNotFound value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (serverFailure != null) {
-      return serverFailure(this);
+    if (serverError != null) {
+      return serverError(this);
     }
     return orElse();
   }
 }
 
-abstract class ServerFailure implements UserDatabaseFailure {
-  const factory ServerFailure() = _$ServerFailure;
+abstract class ServerErrorr implements UserDatabaseFailure {
+  const factory ServerErrorr() = _$ServerErrorr;
 }
 
 /// @nodoc
-abstract class $UnexpectedFailureCopyWith<$Res> {
-  factory $UnexpectedFailureCopyWith(
-          UnexpectedFailure value, $Res Function(UnexpectedFailure) then) =
-      _$UnexpectedFailureCopyWithImpl<$Res>;
+abstract class $UnexpectedErrorCopyWith<$Res> {
+  factory $UnexpectedErrorCopyWith(
+          UnexpectedError value, $Res Function(UnexpectedError) then) =
+      _$UnexpectedErrorCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$UnexpectedFailureCopyWithImpl<$Res>
+class _$UnexpectedErrorCopyWithImpl<$Res>
     extends _$UserDatabaseFailureCopyWithImpl<$Res>
-    implements $UnexpectedFailureCopyWith<$Res> {
-  _$UnexpectedFailureCopyWithImpl(
-      UnexpectedFailure _value, $Res Function(UnexpectedFailure) _then)
-      : super(_value, (v) => _then(v as UnexpectedFailure));
+    implements $UnexpectedErrorCopyWith<$Res> {
+  _$UnexpectedErrorCopyWithImpl(
+      UnexpectedError _value, $Res Function(UnexpectedError) _then)
+      : super(_value, (v) => _then(v as UnexpectedError));
 
   @override
-  UnexpectedFailure get _value => super._value as UnexpectedFailure;
+  UnexpectedError get _value => super._value as UnexpectedError;
 }
 
 /// @nodoc
-class _$UnexpectedFailure implements UnexpectedFailure {
-  const _$UnexpectedFailure();
+class _$UnexpectedError implements UnexpectedError {
+  const _$UnexpectedError();
 
   @override
   String toString() {
-    return 'UserDatabaseFailure.unexpectedFailure()';
+    return 'UserDatabaseFailure.unexpectedError()';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is UnexpectedFailure);
+    return identical(this, other) || (other is UnexpectedError);
   }
 
   @override
@@ -216,27 +216,27 @@ class _$UnexpectedFailure implements UnexpectedFailure {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
-    @required TResult serverFailure(),
-    @required TResult unexpectedFailure(),
-    @required TResult userNotFoundFailure(),
+    @required TResult serverError(),
+    @required TResult unexpectedError(),
+    @required TResult userNotFound(),
   }) {
-    assert(serverFailure != null);
-    assert(unexpectedFailure != null);
-    assert(userNotFoundFailure != null);
-    return unexpectedFailure();
+    assert(serverError != null);
+    assert(unexpectedError != null);
+    assert(userNotFound != null);
+    return unexpectedError();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
-    TResult serverFailure(),
-    TResult unexpectedFailure(),
-    TResult userNotFoundFailure(),
+    TResult serverError(),
+    TResult unexpectedError(),
+    TResult userNotFound(),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (unexpectedFailure != null) {
-      return unexpectedFailure();
+    if (unexpectedError != null) {
+      return unexpectedError();
     }
     return orElse();
   }
@@ -244,67 +244,67 @@ class _$UnexpectedFailure implements UnexpectedFailure {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object>({
-    @required TResult serverFailure(ServerFailure value),
-    @required TResult unexpectedFailure(UnexpectedFailure value),
-    @required TResult userNotFoundFailure(UserNotFoundFailure value),
+    @required TResult serverError(ServerErrorr value),
+    @required TResult unexpectedError(UnexpectedError value),
+    @required TResult userNotFound(UserNotFound value),
   }) {
-    assert(serverFailure != null);
-    assert(unexpectedFailure != null);
-    assert(userNotFoundFailure != null);
-    return unexpectedFailure(this);
+    assert(serverError != null);
+    assert(unexpectedError != null);
+    assert(userNotFound != null);
+    return unexpectedError(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
-    TResult serverFailure(ServerFailure value),
-    TResult unexpectedFailure(UnexpectedFailure value),
-    TResult userNotFoundFailure(UserNotFoundFailure value),
+    TResult serverError(ServerErrorr value),
+    TResult unexpectedError(UnexpectedError value),
+    TResult userNotFound(UserNotFound value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (unexpectedFailure != null) {
-      return unexpectedFailure(this);
+    if (unexpectedError != null) {
+      return unexpectedError(this);
     }
     return orElse();
   }
 }
 
-abstract class UnexpectedFailure implements UserDatabaseFailure {
-  const factory UnexpectedFailure() = _$UnexpectedFailure;
+abstract class UnexpectedError implements UserDatabaseFailure {
+  const factory UnexpectedError() = _$UnexpectedError;
 }
 
 /// @nodoc
-abstract class $UserNotFoundFailureCopyWith<$Res> {
-  factory $UserNotFoundFailureCopyWith(
-          UserNotFoundFailure value, $Res Function(UserNotFoundFailure) then) =
-      _$UserNotFoundFailureCopyWithImpl<$Res>;
+abstract class $UserNotFoundCopyWith<$Res> {
+  factory $UserNotFoundCopyWith(
+          UserNotFound value, $Res Function(UserNotFound) then) =
+      _$UserNotFoundCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$UserNotFoundFailureCopyWithImpl<$Res>
+class _$UserNotFoundCopyWithImpl<$Res>
     extends _$UserDatabaseFailureCopyWithImpl<$Res>
-    implements $UserNotFoundFailureCopyWith<$Res> {
-  _$UserNotFoundFailureCopyWithImpl(
-      UserNotFoundFailure _value, $Res Function(UserNotFoundFailure) _then)
-      : super(_value, (v) => _then(v as UserNotFoundFailure));
+    implements $UserNotFoundCopyWith<$Res> {
+  _$UserNotFoundCopyWithImpl(
+      UserNotFound _value, $Res Function(UserNotFound) _then)
+      : super(_value, (v) => _then(v as UserNotFound));
 
   @override
-  UserNotFoundFailure get _value => super._value as UserNotFoundFailure;
+  UserNotFound get _value => super._value as UserNotFound;
 }
 
 /// @nodoc
-class _$UserNotFoundFailure implements UserNotFoundFailure {
-  const _$UserNotFoundFailure();
+class _$UserNotFound implements UserNotFound {
+  const _$UserNotFound();
 
   @override
   String toString() {
-    return 'UserDatabaseFailure.userNotFoundFailure()';
+    return 'UserDatabaseFailure.userNotFound()';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is UserNotFoundFailure);
+    return identical(this, other) || (other is UserNotFound);
   }
 
   @override
@@ -313,27 +313,27 @@ class _$UserNotFoundFailure implements UserNotFoundFailure {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
-    @required TResult serverFailure(),
-    @required TResult unexpectedFailure(),
-    @required TResult userNotFoundFailure(),
+    @required TResult serverError(),
+    @required TResult unexpectedError(),
+    @required TResult userNotFound(),
   }) {
-    assert(serverFailure != null);
-    assert(unexpectedFailure != null);
-    assert(userNotFoundFailure != null);
-    return userNotFoundFailure();
+    assert(serverError != null);
+    assert(unexpectedError != null);
+    assert(userNotFound != null);
+    return userNotFound();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
-    TResult serverFailure(),
-    TResult unexpectedFailure(),
-    TResult userNotFoundFailure(),
+    TResult serverError(),
+    TResult unexpectedError(),
+    TResult userNotFound(),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (userNotFoundFailure != null) {
-      return userNotFoundFailure();
+    if (userNotFound != null) {
+      return userNotFound();
     }
     return orElse();
   }
@@ -341,32 +341,32 @@ class _$UserNotFoundFailure implements UserNotFoundFailure {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object>({
-    @required TResult serverFailure(ServerFailure value),
-    @required TResult unexpectedFailure(UnexpectedFailure value),
-    @required TResult userNotFoundFailure(UserNotFoundFailure value),
+    @required TResult serverError(ServerErrorr value),
+    @required TResult unexpectedError(UnexpectedError value),
+    @required TResult userNotFound(UserNotFound value),
   }) {
-    assert(serverFailure != null);
-    assert(unexpectedFailure != null);
-    assert(userNotFoundFailure != null);
-    return userNotFoundFailure(this);
+    assert(serverError != null);
+    assert(unexpectedError != null);
+    assert(userNotFound != null);
+    return userNotFound(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
-    TResult serverFailure(ServerFailure value),
-    TResult unexpectedFailure(UnexpectedFailure value),
-    TResult userNotFoundFailure(UserNotFoundFailure value),
+    TResult serverError(ServerErrorr value),
+    TResult unexpectedError(UnexpectedError value),
+    TResult userNotFound(UserNotFound value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (userNotFoundFailure != null) {
-      return userNotFoundFailure(this);
+    if (userNotFound != null) {
+      return userNotFound(this);
     }
     return orElse();
   }
 }
 
-abstract class UserNotFoundFailure implements UserDatabaseFailure {
-  const factory UserNotFoundFailure() = _$UserNotFoundFailure;
+abstract class UserNotFound implements UserDatabaseFailure {
+  const factory UserNotFound() = _$UserNotFound;
 }

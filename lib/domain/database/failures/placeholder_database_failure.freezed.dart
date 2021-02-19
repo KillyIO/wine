@@ -14,18 +14,18 @@ class _$PlaceholderDatabaseFailureTearOff {
   const _$PlaceholderDatabaseFailureTearOff();
 
 // ignore: unused_element
-  FailedToFetchPlaceholderFLR failedToFetchPlaceholderFLR() {
-    return const FailedToFetchPlaceholderFLR();
+  PlaceholderNotFetched placeholderNotFetched() {
+    return const PlaceholderNotFetched();
   }
 
 // ignore: unused_element
-  FailedToInitializePlaceholdersFLR failedToInitializePlaceholdersFLR() {
-    return const FailedToInitializePlaceholdersFLR();
+  PlaceholdersNotInitialized placeholdersNotInitialized() {
+    return const PlaceholdersNotInitialized();
   }
 
 // ignore: unused_element
-  FailedToLoadPlaceholdersFLR failedToLoadPlaceholdersFLR() {
-    return const FailedToLoadPlaceholdersFLR();
+  PlaceholdersNotLoaded placeholdersNotLoaded() {
+    return const PlaceholdersNotLoaded();
   }
 }
 
@@ -37,33 +37,29 @@ const $PlaceholderDatabaseFailure = _$PlaceholderDatabaseFailureTearOff();
 mixin _$PlaceholderDatabaseFailure {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
-    @required TResult failedToFetchPlaceholderFLR(),
-    @required TResult failedToInitializePlaceholdersFLR(),
-    @required TResult failedToLoadPlaceholdersFLR(),
+    @required TResult placeholderNotFetched(),
+    @required TResult placeholdersNotInitialized(),
+    @required TResult placeholdersNotLoaded(),
   });
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
-    TResult failedToFetchPlaceholderFLR(),
-    TResult failedToInitializePlaceholdersFLR(),
-    TResult failedToLoadPlaceholdersFLR(),
+    TResult placeholderNotFetched(),
+    TResult placeholdersNotInitialized(),
+    TResult placeholdersNotLoaded(),
     @required TResult orElse(),
   });
   @optionalTypeArgs
   TResult map<TResult extends Object>({
+    @required TResult placeholderNotFetched(PlaceholderNotFetched value),
     @required
-        TResult failedToFetchPlaceholderFLR(FailedToFetchPlaceholderFLR value),
-    @required
-        TResult failedToInitializePlaceholdersFLR(
-            FailedToInitializePlaceholdersFLR value),
-    @required
-        TResult failedToLoadPlaceholdersFLR(FailedToLoadPlaceholdersFLR value),
+        TResult placeholdersNotInitialized(PlaceholdersNotInitialized value),
+    @required TResult placeholdersNotLoaded(PlaceholdersNotLoaded value),
   });
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
-    TResult failedToFetchPlaceholderFLR(FailedToFetchPlaceholderFLR value),
-    TResult failedToInitializePlaceholdersFLR(
-        FailedToInitializePlaceholdersFLR value),
-    TResult failedToLoadPlaceholdersFLR(FailedToLoadPlaceholdersFLR value),
+    TResult placeholderNotFetched(PlaceholderNotFetched value),
+    TResult placeholdersNotInitialized(PlaceholdersNotInitialized value),
+    TResult placeholdersNotLoaded(PlaceholdersNotLoaded value),
     @required TResult orElse(),
   });
 }
@@ -86,38 +82,36 @@ class _$PlaceholderDatabaseFailureCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class $FailedToFetchPlaceholderFLRCopyWith<$Res> {
-  factory $FailedToFetchPlaceholderFLRCopyWith(
-          FailedToFetchPlaceholderFLR value,
-          $Res Function(FailedToFetchPlaceholderFLR) then) =
-      _$FailedToFetchPlaceholderFLRCopyWithImpl<$Res>;
+abstract class $PlaceholderNotFetchedCopyWith<$Res> {
+  factory $PlaceholderNotFetchedCopyWith(PlaceholderNotFetched value,
+          $Res Function(PlaceholderNotFetched) then) =
+      _$PlaceholderNotFetchedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$FailedToFetchPlaceholderFLRCopyWithImpl<$Res>
+class _$PlaceholderNotFetchedCopyWithImpl<$Res>
     extends _$PlaceholderDatabaseFailureCopyWithImpl<$Res>
-    implements $FailedToFetchPlaceholderFLRCopyWith<$Res> {
-  _$FailedToFetchPlaceholderFLRCopyWithImpl(FailedToFetchPlaceholderFLR _value,
-      $Res Function(FailedToFetchPlaceholderFLR) _then)
-      : super(_value, (v) => _then(v as FailedToFetchPlaceholderFLR));
+    implements $PlaceholderNotFetchedCopyWith<$Res> {
+  _$PlaceholderNotFetchedCopyWithImpl(
+      PlaceholderNotFetched _value, $Res Function(PlaceholderNotFetched) _then)
+      : super(_value, (v) => _then(v as PlaceholderNotFetched));
 
   @override
-  FailedToFetchPlaceholderFLR get _value =>
-      super._value as FailedToFetchPlaceholderFLR;
+  PlaceholderNotFetched get _value => super._value as PlaceholderNotFetched;
 }
 
 /// @nodoc
-class _$FailedToFetchPlaceholderFLR implements FailedToFetchPlaceholderFLR {
-  const _$FailedToFetchPlaceholderFLR();
+class _$PlaceholderNotFetched implements PlaceholderNotFetched {
+  const _$PlaceholderNotFetched();
 
   @override
   String toString() {
-    return 'PlaceholderDatabaseFailure.failedToFetchPlaceholderFLR()';
+    return 'PlaceholderDatabaseFailure.placeholderNotFetched()';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is FailedToFetchPlaceholderFLR);
+    return identical(this, other) || (other is PlaceholderNotFetched);
   }
 
   @override
@@ -126,27 +120,27 @@ class _$FailedToFetchPlaceholderFLR implements FailedToFetchPlaceholderFLR {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
-    @required TResult failedToFetchPlaceholderFLR(),
-    @required TResult failedToInitializePlaceholdersFLR(),
-    @required TResult failedToLoadPlaceholdersFLR(),
+    @required TResult placeholderNotFetched(),
+    @required TResult placeholdersNotInitialized(),
+    @required TResult placeholdersNotLoaded(),
   }) {
-    assert(failedToFetchPlaceholderFLR != null);
-    assert(failedToInitializePlaceholdersFLR != null);
-    assert(failedToLoadPlaceholdersFLR != null);
-    return failedToFetchPlaceholderFLR();
+    assert(placeholderNotFetched != null);
+    assert(placeholdersNotInitialized != null);
+    assert(placeholdersNotLoaded != null);
+    return placeholderNotFetched();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
-    TResult failedToFetchPlaceholderFLR(),
-    TResult failedToInitializePlaceholdersFLR(),
-    TResult failedToLoadPlaceholdersFLR(),
+    TResult placeholderNotFetched(),
+    TResult placeholdersNotInitialized(),
+    TResult placeholdersNotLoaded(),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (failedToFetchPlaceholderFLR != null) {
-      return failedToFetchPlaceholderFLR();
+    if (placeholderNotFetched != null) {
+      return placeholderNotFetched();
     }
     return orElse();
   }
@@ -154,78 +148,69 @@ class _$FailedToFetchPlaceholderFLR implements FailedToFetchPlaceholderFLR {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object>({
+    @required TResult placeholderNotFetched(PlaceholderNotFetched value),
     @required
-        TResult failedToFetchPlaceholderFLR(FailedToFetchPlaceholderFLR value),
-    @required
-        TResult failedToInitializePlaceholdersFLR(
-            FailedToInitializePlaceholdersFLR value),
-    @required
-        TResult failedToLoadPlaceholdersFLR(FailedToLoadPlaceholdersFLR value),
+        TResult placeholdersNotInitialized(PlaceholdersNotInitialized value),
+    @required TResult placeholdersNotLoaded(PlaceholdersNotLoaded value),
   }) {
-    assert(failedToFetchPlaceholderFLR != null);
-    assert(failedToInitializePlaceholdersFLR != null);
-    assert(failedToLoadPlaceholdersFLR != null);
-    return failedToFetchPlaceholderFLR(this);
+    assert(placeholderNotFetched != null);
+    assert(placeholdersNotInitialized != null);
+    assert(placeholdersNotLoaded != null);
+    return placeholderNotFetched(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
-    TResult failedToFetchPlaceholderFLR(FailedToFetchPlaceholderFLR value),
-    TResult failedToInitializePlaceholdersFLR(
-        FailedToInitializePlaceholdersFLR value),
-    TResult failedToLoadPlaceholdersFLR(FailedToLoadPlaceholdersFLR value),
+    TResult placeholderNotFetched(PlaceholderNotFetched value),
+    TResult placeholdersNotInitialized(PlaceholdersNotInitialized value),
+    TResult placeholdersNotLoaded(PlaceholdersNotLoaded value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (failedToFetchPlaceholderFLR != null) {
-      return failedToFetchPlaceholderFLR(this);
+    if (placeholderNotFetched != null) {
+      return placeholderNotFetched(this);
     }
     return orElse();
   }
 }
 
-abstract class FailedToFetchPlaceholderFLR
-    implements PlaceholderDatabaseFailure {
-  const factory FailedToFetchPlaceholderFLR() = _$FailedToFetchPlaceholderFLR;
+abstract class PlaceholderNotFetched implements PlaceholderDatabaseFailure {
+  const factory PlaceholderNotFetched() = _$PlaceholderNotFetched;
 }
 
 /// @nodoc
-abstract class $FailedToInitializePlaceholdersFLRCopyWith<$Res> {
-  factory $FailedToInitializePlaceholdersFLRCopyWith(
-          FailedToInitializePlaceholdersFLR value,
-          $Res Function(FailedToInitializePlaceholdersFLR) then) =
-      _$FailedToInitializePlaceholdersFLRCopyWithImpl<$Res>;
+abstract class $PlaceholdersNotInitializedCopyWith<$Res> {
+  factory $PlaceholdersNotInitializedCopyWith(PlaceholdersNotInitialized value,
+          $Res Function(PlaceholdersNotInitialized) then) =
+      _$PlaceholdersNotInitializedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$FailedToInitializePlaceholdersFLRCopyWithImpl<$Res>
+class _$PlaceholdersNotInitializedCopyWithImpl<$Res>
     extends _$PlaceholderDatabaseFailureCopyWithImpl<$Res>
-    implements $FailedToInitializePlaceholdersFLRCopyWith<$Res> {
-  _$FailedToInitializePlaceholdersFLRCopyWithImpl(
-      FailedToInitializePlaceholdersFLR _value,
-      $Res Function(FailedToInitializePlaceholdersFLR) _then)
-      : super(_value, (v) => _then(v as FailedToInitializePlaceholdersFLR));
+    implements $PlaceholdersNotInitializedCopyWith<$Res> {
+  _$PlaceholdersNotInitializedCopyWithImpl(PlaceholdersNotInitialized _value,
+      $Res Function(PlaceholdersNotInitialized) _then)
+      : super(_value, (v) => _then(v as PlaceholdersNotInitialized));
 
   @override
-  FailedToInitializePlaceholdersFLR get _value =>
-      super._value as FailedToInitializePlaceholdersFLR;
+  PlaceholdersNotInitialized get _value =>
+      super._value as PlaceholdersNotInitialized;
 }
 
 /// @nodoc
-class _$FailedToInitializePlaceholdersFLR
-    implements FailedToInitializePlaceholdersFLR {
-  const _$FailedToInitializePlaceholdersFLR();
+class _$PlaceholdersNotInitialized implements PlaceholdersNotInitialized {
+  const _$PlaceholdersNotInitialized();
 
   @override
   String toString() {
-    return 'PlaceholderDatabaseFailure.failedToInitializePlaceholdersFLR()';
+    return 'PlaceholderDatabaseFailure.placeholdersNotInitialized()';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is FailedToInitializePlaceholdersFLR);
+    return identical(this, other) || (other is PlaceholdersNotInitialized);
   }
 
   @override
@@ -234,27 +219,27 @@ class _$FailedToInitializePlaceholdersFLR
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
-    @required TResult failedToFetchPlaceholderFLR(),
-    @required TResult failedToInitializePlaceholdersFLR(),
-    @required TResult failedToLoadPlaceholdersFLR(),
+    @required TResult placeholderNotFetched(),
+    @required TResult placeholdersNotInitialized(),
+    @required TResult placeholdersNotLoaded(),
   }) {
-    assert(failedToFetchPlaceholderFLR != null);
-    assert(failedToInitializePlaceholdersFLR != null);
-    assert(failedToLoadPlaceholdersFLR != null);
-    return failedToInitializePlaceholdersFLR();
+    assert(placeholderNotFetched != null);
+    assert(placeholdersNotInitialized != null);
+    assert(placeholdersNotLoaded != null);
+    return placeholdersNotInitialized();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
-    TResult failedToFetchPlaceholderFLR(),
-    TResult failedToInitializePlaceholdersFLR(),
-    TResult failedToLoadPlaceholdersFLR(),
+    TResult placeholderNotFetched(),
+    TResult placeholdersNotInitialized(),
+    TResult placeholdersNotLoaded(),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (failedToInitializePlaceholdersFLR != null) {
-      return failedToInitializePlaceholdersFLR();
+    if (placeholdersNotInitialized != null) {
+      return placeholdersNotInitialized();
     }
     return orElse();
   }
@@ -262,76 +247,69 @@ class _$FailedToInitializePlaceholdersFLR
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object>({
+    @required TResult placeholderNotFetched(PlaceholderNotFetched value),
     @required
-        TResult failedToFetchPlaceholderFLR(FailedToFetchPlaceholderFLR value),
-    @required
-        TResult failedToInitializePlaceholdersFLR(
-            FailedToInitializePlaceholdersFLR value),
-    @required
-        TResult failedToLoadPlaceholdersFLR(FailedToLoadPlaceholdersFLR value),
+        TResult placeholdersNotInitialized(PlaceholdersNotInitialized value),
+    @required TResult placeholdersNotLoaded(PlaceholdersNotLoaded value),
   }) {
-    assert(failedToFetchPlaceholderFLR != null);
-    assert(failedToInitializePlaceholdersFLR != null);
-    assert(failedToLoadPlaceholdersFLR != null);
-    return failedToInitializePlaceholdersFLR(this);
+    assert(placeholderNotFetched != null);
+    assert(placeholdersNotInitialized != null);
+    assert(placeholdersNotLoaded != null);
+    return placeholdersNotInitialized(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
-    TResult failedToFetchPlaceholderFLR(FailedToFetchPlaceholderFLR value),
-    TResult failedToInitializePlaceholdersFLR(
-        FailedToInitializePlaceholdersFLR value),
-    TResult failedToLoadPlaceholdersFLR(FailedToLoadPlaceholdersFLR value),
+    TResult placeholderNotFetched(PlaceholderNotFetched value),
+    TResult placeholdersNotInitialized(PlaceholdersNotInitialized value),
+    TResult placeholdersNotLoaded(PlaceholdersNotLoaded value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (failedToInitializePlaceholdersFLR != null) {
-      return failedToInitializePlaceholdersFLR(this);
+    if (placeholdersNotInitialized != null) {
+      return placeholdersNotInitialized(this);
     }
     return orElse();
   }
 }
 
-abstract class FailedToInitializePlaceholdersFLR
+abstract class PlaceholdersNotInitialized
     implements PlaceholderDatabaseFailure {
-  const factory FailedToInitializePlaceholdersFLR() =
-      _$FailedToInitializePlaceholdersFLR;
+  const factory PlaceholdersNotInitialized() = _$PlaceholdersNotInitialized;
 }
 
 /// @nodoc
-abstract class $FailedToLoadPlaceholdersFLRCopyWith<$Res> {
-  factory $FailedToLoadPlaceholdersFLRCopyWith(
-          FailedToLoadPlaceholdersFLR value,
-          $Res Function(FailedToLoadPlaceholdersFLR) then) =
-      _$FailedToLoadPlaceholdersFLRCopyWithImpl<$Res>;
+abstract class $PlaceholdersNotLoadedCopyWith<$Res> {
+  factory $PlaceholdersNotLoadedCopyWith(PlaceholdersNotLoaded value,
+          $Res Function(PlaceholdersNotLoaded) then) =
+      _$PlaceholdersNotLoadedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$FailedToLoadPlaceholdersFLRCopyWithImpl<$Res>
+class _$PlaceholdersNotLoadedCopyWithImpl<$Res>
     extends _$PlaceholderDatabaseFailureCopyWithImpl<$Res>
-    implements $FailedToLoadPlaceholdersFLRCopyWith<$Res> {
-  _$FailedToLoadPlaceholdersFLRCopyWithImpl(FailedToLoadPlaceholdersFLR _value,
-      $Res Function(FailedToLoadPlaceholdersFLR) _then)
-      : super(_value, (v) => _then(v as FailedToLoadPlaceholdersFLR));
+    implements $PlaceholdersNotLoadedCopyWith<$Res> {
+  _$PlaceholdersNotLoadedCopyWithImpl(
+      PlaceholdersNotLoaded _value, $Res Function(PlaceholdersNotLoaded) _then)
+      : super(_value, (v) => _then(v as PlaceholdersNotLoaded));
 
   @override
-  FailedToLoadPlaceholdersFLR get _value =>
-      super._value as FailedToLoadPlaceholdersFLR;
+  PlaceholdersNotLoaded get _value => super._value as PlaceholdersNotLoaded;
 }
 
 /// @nodoc
-class _$FailedToLoadPlaceholdersFLR implements FailedToLoadPlaceholdersFLR {
-  const _$FailedToLoadPlaceholdersFLR();
+class _$PlaceholdersNotLoaded implements PlaceholdersNotLoaded {
+  const _$PlaceholdersNotLoaded();
 
   @override
   String toString() {
-    return 'PlaceholderDatabaseFailure.failedToLoadPlaceholdersFLR()';
+    return 'PlaceholderDatabaseFailure.placeholdersNotLoaded()';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is FailedToLoadPlaceholdersFLR);
+    return identical(this, other) || (other is PlaceholdersNotLoaded);
   }
 
   @override
@@ -340,27 +318,27 @@ class _$FailedToLoadPlaceholdersFLR implements FailedToLoadPlaceholdersFLR {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
-    @required TResult failedToFetchPlaceholderFLR(),
-    @required TResult failedToInitializePlaceholdersFLR(),
-    @required TResult failedToLoadPlaceholdersFLR(),
+    @required TResult placeholderNotFetched(),
+    @required TResult placeholdersNotInitialized(),
+    @required TResult placeholdersNotLoaded(),
   }) {
-    assert(failedToFetchPlaceholderFLR != null);
-    assert(failedToInitializePlaceholdersFLR != null);
-    assert(failedToLoadPlaceholdersFLR != null);
-    return failedToLoadPlaceholdersFLR();
+    assert(placeholderNotFetched != null);
+    assert(placeholdersNotInitialized != null);
+    assert(placeholdersNotLoaded != null);
+    return placeholdersNotLoaded();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
-    TResult failedToFetchPlaceholderFLR(),
-    TResult failedToInitializePlaceholdersFLR(),
-    TResult failedToLoadPlaceholdersFLR(),
+    TResult placeholderNotFetched(),
+    TResult placeholdersNotInitialized(),
+    TResult placeholdersNotLoaded(),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (failedToLoadPlaceholdersFLR != null) {
-      return failedToLoadPlaceholdersFLR();
+    if (placeholdersNotLoaded != null) {
+      return placeholdersNotLoaded();
     }
     return orElse();
   }
@@ -368,38 +346,33 @@ class _$FailedToLoadPlaceholdersFLR implements FailedToLoadPlaceholdersFLR {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object>({
+    @required TResult placeholderNotFetched(PlaceholderNotFetched value),
     @required
-        TResult failedToFetchPlaceholderFLR(FailedToFetchPlaceholderFLR value),
-    @required
-        TResult failedToInitializePlaceholdersFLR(
-            FailedToInitializePlaceholdersFLR value),
-    @required
-        TResult failedToLoadPlaceholdersFLR(FailedToLoadPlaceholdersFLR value),
+        TResult placeholdersNotInitialized(PlaceholdersNotInitialized value),
+    @required TResult placeholdersNotLoaded(PlaceholdersNotLoaded value),
   }) {
-    assert(failedToFetchPlaceholderFLR != null);
-    assert(failedToInitializePlaceholdersFLR != null);
-    assert(failedToLoadPlaceholdersFLR != null);
-    return failedToLoadPlaceholdersFLR(this);
+    assert(placeholderNotFetched != null);
+    assert(placeholdersNotInitialized != null);
+    assert(placeholdersNotLoaded != null);
+    return placeholdersNotLoaded(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
-    TResult failedToFetchPlaceholderFLR(FailedToFetchPlaceholderFLR value),
-    TResult failedToInitializePlaceholdersFLR(
-        FailedToInitializePlaceholdersFLR value),
-    TResult failedToLoadPlaceholdersFLR(FailedToLoadPlaceholdersFLR value),
+    TResult placeholderNotFetched(PlaceholderNotFetched value),
+    TResult placeholdersNotInitialized(PlaceholdersNotInitialized value),
+    TResult placeholdersNotLoaded(PlaceholdersNotLoaded value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (failedToLoadPlaceholdersFLR != null) {
-      return failedToLoadPlaceholdersFLR(this);
+    if (placeholdersNotLoaded != null) {
+      return placeholdersNotLoaded(this);
     }
     return orElse();
   }
 }
 
-abstract class FailedToLoadPlaceholdersFLR
-    implements PlaceholderDatabaseFailure {
-  const factory FailedToLoadPlaceholdersFLR() = _$FailedToLoadPlaceholdersFLR;
+abstract class PlaceholdersNotLoaded implements PlaceholderDatabaseFailure {
+  const factory PlaceholdersNotLoaded() = _$PlaceholdersNotLoaded;
 }

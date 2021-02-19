@@ -6,11 +6,11 @@ part 'user_database_failure.freezed.dart';
 @freezed
 abstract class UserDatabaseFailure with _$UserDatabaseFailure {
   /// @nodoc
-  const factory UserDatabaseFailure.serverFailure() = ServerFailure;
+  const factory UserDatabaseFailure.serverError() = ServerErrorr;
 
   /// @nodoc
-  const factory UserDatabaseFailure.unexpectedFailure() = UnexpectedFailure;
+  const factory UserDatabaseFailure.unexpectedError() = UnexpectedError;
 
   /// @nodoc
-  const factory UserDatabaseFailure.userNotFoundFailure() = UserNotFoundFailure;
+  const factory UserDatabaseFailure.userNotFound() = UserNotFound;
 }
