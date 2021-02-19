@@ -6,14 +6,12 @@ abstract class SettingsAuthenticationState with _$SettingsAuthenticationState {
   /// @nodoc
   const factory SettingsAuthenticationState({
     @required bool isSigningOut,
-    @required
-        Option<Either<AuthenticationFailure, AuthenticationSuccess>>
-            authenticationFailureOrSuccessOption,
+    @required Option<Either<AuthenticationFailure, Unit>> authenticationOption,
   }) = _SettingsAuthenticationState;
 
   /// @nodoc
   factory SettingsAuthenticationState.initial() => SettingsAuthenticationState(
-        authenticationFailureOrSuccessOption: none(),
+        authenticationOption: none(),
         isSigningOut: false,
       );
 }

@@ -8,15 +8,13 @@ abstract class LogInAuthenticationState with _$LogInAuthenticationState {
     @required bool isSubmitting,
     @required bool showErrorMessages,
     @required EmailAddress emailAddress,
-    @required
-        Option<Either<AuthenticationFailure, AuthenticationSuccess>>
-            authFailureOrSuccessOption,
+    @required Option<Either<AuthenticationFailure, User>> authenticationOption,
     @required Password password,
   }) = _LogInAuthenticationState;
 
   /// @nodoc
   factory LogInAuthenticationState.initial() => LogInAuthenticationState(
-        authFailureOrSuccessOption: none(),
+        authenticationOption: none(),
         emailAddress: EmailAddress(''),
         isSubmitting: false,
         password: Password(''),

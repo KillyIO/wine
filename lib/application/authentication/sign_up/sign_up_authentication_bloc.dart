@@ -6,12 +6,12 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:meta/meta.dart';
 
-import 'package:wine/domain/authentication/authentication_failure.dart';
-import 'package:wine/domain/authentication/authentication_success.dart';
 import 'package:wine/domain/authentication/email_address.dart';
+import 'package:wine/domain/authentication/failures/authentication_failure.dart';
 import 'package:wine/domain/authentication/i_authentication_facade.dart';
 import 'package:wine/domain/authentication/password.dart';
 import 'package:wine/domain/authentication/username.dart';
+import 'package:wine/domain/models/user.dart';
 
 part 'sign_up_authentication_bloc.freezed.dart';
 part 'sign_up_authentication_event.dart';
@@ -34,7 +34,7 @@ class SignUpAuthenticationBloc
     yield* event.map(
       confirmPasswordChanged: (event) async* {
         yield state.copyWith(
-          authenticationFailureOrSuccessOption: none(),
+          authenticationOption: none(),
           confirmPassword: Password(
             event.confirmPasswordStr,
             event.passwordStr,
@@ -43,38 +43,42 @@ class SignUpAuthenticationBloc
       },
       emailChanged: (event) async* {
         yield state.copyWith(
-          authenticationFailureOrSuccessOption: none(),
+          authenticationOption: none(),
           emailAddress: EmailAddress(event.emailStr),
         );
       },
       passwordChanged: (event) async* {
         yield state.copyWith(
-          authenticationFailureOrSuccessOption: none(),
+          authenticationOption: none(),
           password: Password(event.passwordStr),
         );
       },
       resendVerificationEmail: (event) async* {
-        Either<AuthenticationFailure, AuthenticationSuccess> failureOrSuccess;
+        Either<AuthenticationFailure, Unit> failureOrSuccess;
 
         failureOrSuccess =
             await _authenticationFacade.resendVerificationEmail();
 
-        yield state.copyWith(
-          authenticationFailureOrSuccessOption: optionOf(failureOrSuccess),
-        );
+        yield state.copyWith(authenticationOption: optionOf(failureOrSuccess));
       },
       signUpPressed: (event) async* {
-        Either<AuthenticationFailure, AuthenticationSuccess> failureOrSuccess;
+        Either<AuthenticationFailure, dynamic> failureOrSuccess;
 
         var isUsernameValid = state.username.isValid();
+        var isUsernameAvailable = false;
 
         if (isUsernameValid) {
           yield state.copyWith(
-              isSubmitting: true, authenticationFailureOrSuccessOption: none());
-          failureOrSuccess = await _authenticationFacade.isUsernameAvailable(
-            state.username,
+            authenticationOption: none(),
+            isSubmitting: true,
           );
-          isUsernameValid = failureOrSuccess.isRight();
+
+          failureOrSuccess =
+              await _authenticationFacade.isUsernameAvailable(state.username)
+                ..fold(
+                  (_) {},
+                  (success) => isUsernameAvailable = success,
+                );
         }
 
         final isEmailValid = state.emailAddress.isValid();
@@ -85,42 +89,37 @@ class SignUpAuthenticationBloc
             isPasswordValid &&
             isConfirmPasswordValid &&
             isUsernameValid) {
-          failureOrSuccess =
-              await _authenticationFacade.convertWithEmailAndPassword(
-            state.emailAddress,
-            state.password,
-          );
+          failureOrSuccess = await _authenticationFacade
+              .convertWithEmailAndPassword(state.emailAddress, state.password);
+
           failureOrSuccess.fold(
             (_) {},
             (success) {
-              if (success is UserAuthenticated) {
-                final user = success.user.copyWith(
-                  username: state.username
-                      .getOrCrash()
-                      .trim()
-                      .replaceAll(RegExp('[ -]'), '_'),
-                  name: state.username.getOrCrash().trim(),
-                  createdAt: DateTime.now().millisecondsSinceEpoch,
-                  updatedAt: DateTime.now().millisecondsSinceEpoch,
-                );
+              final user = (success as User).copyWith(
+                username: state.username
+                    .getOrCrash()
+                    .trim()
+                    .replaceAll(RegExp('[ -]'), '_'),
+                name: state.username.getOrCrash().trim(),
+                createdAt: DateTime.now().millisecondsSinceEpoch,
+                updatedAt: DateTime.now().millisecondsSinceEpoch,
+              );
 
-                failureOrSuccess =
-                    right(AuthenticationSuccess.userAuthenticated(user));
-              }
+              failureOrSuccess = right(user);
             },
           );
         }
 
         yield state.copyWith(
-          authenticationFailureOrSuccessOption: optionOf(failureOrSuccess),
+          authenticationOption: optionOf(failureOrSuccess),
           isSubmitting: false,
           showErrorMessages: true,
         );
       },
       usernameChanged: (event) async* {
         yield state.copyWith(
+          authenticationOption: none(),
           username: Username(event.usernameStr),
-          authenticationFailureOrSuccessOption: none(),
         );
       },
     );

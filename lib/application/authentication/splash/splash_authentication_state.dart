@@ -12,7 +12,6 @@ abstract class SplashAuthenticationState with _$SplashAuthenticationState {
   /// @nodoc
   const factory SplashAuthenticationState.authenticated(
     bool isAnonymous,
-    Option<Either<AuthenticationFailure, AuthenticationSuccess>>
-        authenticationFailureOrSuccessOption,
+    Option<Either<AuthenticationFailure, Unit>> authenticationOption,
   ) = _Authenticated;
 }

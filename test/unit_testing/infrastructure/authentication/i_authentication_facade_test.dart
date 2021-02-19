@@ -280,7 +280,7 @@ void main() {
         'isUsernameAvailable -',
         () {
           test(
-            'When username valid and not registered Then return true',
+            'When username valid And not registered Then return true',
             () async {
               when(mockFirestore.collection(any))
                   .thenReturn(mockCollectionReference);

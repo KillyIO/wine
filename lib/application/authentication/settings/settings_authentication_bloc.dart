@@ -5,8 +5,7 @@ import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 
-import 'package:wine/domain/authentication/authentication_failure.dart';
-import 'package:wine/domain/authentication/authentication_success.dart';
+import 'package:wine/domain/authentication/failures/authentication_failure.dart';
 import 'package:wine/domain/authentication/i_authentication_facade.dart';
 
 part 'settings_authentication_bloc.freezed.dart';
@@ -28,23 +27,23 @@ class SettingsAuthenticationBloc
       SettingsAuthenticationEvent event) async* {
     yield* event.map(
       signOutPressed: (event) async* {
-        Either<AuthenticationFailure, AuthenticationSuccess> failureOrSuccess;
+        Either<AuthenticationFailure, Unit> failureOrSuccess;
 
         yield state.copyWith(
-          authenticationFailureOrSuccessOption: none(),
+          authenticationOption: none(),
           isSigningOut: true,
         );
 
         failureOrSuccess = await _authenticationFacade.signOut();
 
         yield state.copyWith(
-          authenticationFailureOrSuccessOption: optionOf(failureOrSuccess),
+          authenticationOption: optionOf(failureOrSuccess),
           isSigningOut: false,
         );
       },
       resetBloc: (event) async* {
         yield state.copyWith(
-          authenticationFailureOrSuccessOption: none(),
+          authenticationOption: none(),
           isSigningOut: false,
         );
       },

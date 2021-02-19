@@ -6,11 +6,11 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:meta/meta.dart';
 
-import 'package:wine/domain/authentication/authentication_failure.dart';
-import 'package:wine/domain/authentication/authentication_success.dart';
+import 'package:wine/domain/authentication/failures/authentication_failure.dart';
 import 'package:wine/domain/authentication/email_address.dart';
 import 'package:wine/domain/authentication/i_authentication_facade.dart';
 import 'package:wine/domain/authentication/password.dart';
+import 'package:wine/domain/models/user.dart';
 
 part 'log_in_authentication_bloc.freezed.dart';
 part 'log_in_authentication_event.dart';
@@ -32,25 +32,27 @@ class LogInAuthenticationBloc
     yield* event.map(
       emailChanged: (event) async* {
         yield state.copyWith(
-          authFailureOrSuccessOption: none(),
+          authenticationOption: none(),
           emailAddress: EmailAddress(event.emailStr),
         );
       },
       passwordChanged: (event) async* {
         yield state.copyWith(
-          authFailureOrSuccessOption: none(),
+          authenticationOption: none(),
           password: Password(event.passwordStr),
         );
       },
       signInWithEmailAndPasswordPressed: (event) async* {
-        Either<AuthenticationFailure, AuthenticationSuccess> failureOrSuccess;
+        Either<AuthenticationFailure, User> failureOrSuccess;
 
         final isEmailValid = state.emailAddress.isValid();
         final isPasswordValid = state.password.isValid();
 
         if (isEmailValid && isPasswordValid) {
           yield state.copyWith(
-              isSubmitting: true, authFailureOrSuccessOption: none());
+            authenticationOption: none(),
+            isSubmitting: true,
+          );
 
           failureOrSuccess =
               await _authenticationFacade.signInWithEmailAndPassword(
@@ -60,14 +62,14 @@ class LogInAuthenticationBloc
         }
 
         yield state.copyWith(
-          authFailureOrSuccessOption: optionOf(failureOrSuccess),
+          authenticationOption: optionOf(failureOrSuccess),
           isSubmitting: false,
           showErrorMessages: true,
         );
       },
       signInWithGooglePressed: (event) async* {
         yield state.copyWith(
-          authFailureOrSuccessOption: none(),
+          authenticationOption: none(),
           isSubmitting: true,
         );
 
@@ -75,25 +77,22 @@ class LogInAuthenticationBloc
         failureOrSuccess.fold(
           (_) {},
           (success) {
-            if (success is UserAuthenticated) {
-              final user = success.user.copyWith(
-                username: success.user.email
-                    .trim()
-                    .split('@')
-                    .first
-                    .replaceAll(RegExp('[ -]'), '_'),
-                createdAt: DateTime.now().millisecondsSinceEpoch,
-                updatedAt: DateTime.now().millisecondsSinceEpoch,
-              );
+            final user = success.copyWith(
+              username: success.email
+                  .trim()
+                  .split('@')
+                  .first
+                  .replaceAll(RegExp('[ -]'), '_'),
+              createdAt: DateTime.now().millisecondsSinceEpoch,
+              updatedAt: DateTime.now().millisecondsSinceEpoch,
+            );
 
-              failureOrSuccess =
-                  right(AuthenticationSuccess.userAuthenticated(user));
-            }
+            failureOrSuccess = right(user);
           },
         );
 
         yield state.copyWith(
-          authFailureOrSuccessOption: optionOf(failureOrSuccess),
+          authenticationOption: optionOf(failureOrSuccess),
           isSubmitting: false,
         );
       },

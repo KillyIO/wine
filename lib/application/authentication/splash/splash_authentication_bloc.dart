@@ -6,8 +6,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:meta/meta.dart';
 
-import 'package:wine/domain/authentication/authentication_failure.dart';
-import 'package:wine/domain/authentication/authentication_success.dart';
+import 'package:wine/domain/authentication/failures/authentication_failure.dart';
 import 'package:wine/domain/authentication/i_authentication_facade.dart';
 
 part 'splash_authentication_bloc.freezed.dart';
@@ -31,7 +30,7 @@ class SplashAuthenticationBloc
   ) async* {
     yield* event.map(
       splashLaunched: (value) async* {
-        Either<AuthenticationFailure, AuthenticationSuccess> failureOrSuccess;
+        Either<AuthenticationFailure, Unit> failureOrSuccess;
 
         yield const SplashAuthenticationState.authenticating();
 

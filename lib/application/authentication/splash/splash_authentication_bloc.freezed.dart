@@ -162,13 +162,11 @@ class _$SplashAuthenticationStateTearOff {
   }
 
 // ignore: unused_element
-  _Authenticated authenticated(
-      bool isAnonymous,
-      Option<Either<AuthenticationFailure, AuthenticationSuccess>>
-          authenticationFailureOrSuccessOption) {
+  _Authenticated authenticated(bool isAnonymous,
+      Option<Either<AuthenticationFailure, Unit>> authenticationOption) {
     return _Authenticated(
       isAnonymous,
-      authenticationFailureOrSuccessOption,
+      authenticationOption,
     );
   }
 }
@@ -184,19 +182,15 @@ mixin _$SplashAuthenticationState {
     @required TResult initial(),
     @required TResult authenticating(),
     @required
-        TResult authenticated(
-            bool isAnonymous,
-            Option<Either<AuthenticationFailure, AuthenticationSuccess>>
-                authenticationFailureOrSuccessOption),
+        TResult authenticated(bool isAnonymous,
+            Option<Either<AuthenticationFailure, Unit>> authenticationOption),
   });
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult initial(),
     TResult authenticating(),
-    TResult authenticated(
-        bool isAnonymous,
-        Option<Either<AuthenticationFailure, AuthenticationSuccess>>
-            authenticationFailureOrSuccessOption),
+    TResult authenticated(bool isAnonymous,
+        Option<Either<AuthenticationFailure, Unit>> authenticationOption),
     @required TResult orElse(),
   });
   @optionalTypeArgs
@@ -271,10 +265,8 @@ class _$_Initial implements _Initial {
     @required TResult initial(),
     @required TResult authenticating(),
     @required
-        TResult authenticated(
-            bool isAnonymous,
-            Option<Either<AuthenticationFailure, AuthenticationSuccess>>
-                authenticationFailureOrSuccessOption),
+        TResult authenticated(bool isAnonymous,
+            Option<Either<AuthenticationFailure, Unit>> authenticationOption),
   }) {
     assert(initial != null);
     assert(authenticating != null);
@@ -287,10 +279,8 @@ class _$_Initial implements _Initial {
   TResult maybeWhen<TResult extends Object>({
     TResult initial(),
     TResult authenticating(),
-    TResult authenticated(
-        bool isAnonymous,
-        Option<Either<AuthenticationFailure, AuthenticationSuccess>>
-            authenticationFailureOrSuccessOption),
+    TResult authenticated(bool isAnonymous,
+        Option<Either<AuthenticationFailure, Unit>> authenticationOption),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -375,10 +365,8 @@ class _$_Authenticating implements _Authenticating {
     @required TResult initial(),
     @required TResult authenticating(),
     @required
-        TResult authenticated(
-            bool isAnonymous,
-            Option<Either<AuthenticationFailure, AuthenticationSuccess>>
-                authenticationFailureOrSuccessOption),
+        TResult authenticated(bool isAnonymous,
+            Option<Either<AuthenticationFailure, Unit>> authenticationOption),
   }) {
     assert(initial != null);
     assert(authenticating != null);
@@ -391,10 +379,8 @@ class _$_Authenticating implements _Authenticating {
   TResult maybeWhen<TResult extends Object>({
     TResult initial(),
     TResult authenticating(),
-    TResult authenticated(
-        bool isAnonymous,
-        Option<Either<AuthenticationFailure, AuthenticationSuccess>>
-            authenticationFailureOrSuccessOption),
+    TResult authenticated(bool isAnonymous,
+        Option<Either<AuthenticationFailure, Unit>> authenticationOption),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -444,8 +430,7 @@ abstract class _$AuthenticatedCopyWith<$Res> {
       __$AuthenticatedCopyWithImpl<$Res>;
   $Res call(
       {bool isAnonymous,
-      Option<Either<AuthenticationFailure, AuthenticationSuccess>>
-          authenticationFailureOrSuccessOption});
+      Option<Either<AuthenticationFailure, Unit>> authenticationOption});
 }
 
 /// @nodoc
@@ -462,34 +447,31 @@ class __$AuthenticatedCopyWithImpl<$Res>
   @override
   $Res call({
     Object isAnonymous = freezed,
-    Object authenticationFailureOrSuccessOption = freezed,
+    Object authenticationOption = freezed,
   }) {
     return _then(_Authenticated(
       isAnonymous == freezed ? _value.isAnonymous : isAnonymous as bool,
-      authenticationFailureOrSuccessOption == freezed
-          ? _value.authenticationFailureOrSuccessOption
-          : authenticationFailureOrSuccessOption
-              as Option<Either<AuthenticationFailure, AuthenticationSuccess>>,
+      authenticationOption == freezed
+          ? _value.authenticationOption
+          : authenticationOption as Option<Either<AuthenticationFailure, Unit>>,
     ));
   }
 }
 
 /// @nodoc
 class _$_Authenticated implements _Authenticated {
-  const _$_Authenticated(
-      this.isAnonymous, this.authenticationFailureOrSuccessOption)
+  const _$_Authenticated(this.isAnonymous, this.authenticationOption)
       : assert(isAnonymous != null),
-        assert(authenticationFailureOrSuccessOption != null);
+        assert(authenticationOption != null);
 
   @override
   final bool isAnonymous;
   @override
-  final Option<Either<AuthenticationFailure, AuthenticationSuccess>>
-      authenticationFailureOrSuccessOption;
+  final Option<Either<AuthenticationFailure, Unit>> authenticationOption;
 
   @override
   String toString() {
-    return 'SplashAuthenticationState.authenticated(isAnonymous: $isAnonymous, authenticationFailureOrSuccessOption: $authenticationFailureOrSuccessOption)';
+    return 'SplashAuthenticationState.authenticated(isAnonymous: $isAnonymous, authenticationOption: $authenticationOption)';
   }
 
   @override
@@ -499,18 +481,16 @@ class _$_Authenticated implements _Authenticated {
             (identical(other.isAnonymous, isAnonymous) ||
                 const DeepCollectionEquality()
                     .equals(other.isAnonymous, isAnonymous)) &&
-            (identical(other.authenticationFailureOrSuccessOption,
-                    authenticationFailureOrSuccessOption) ||
-                const DeepCollectionEquality().equals(
-                    other.authenticationFailureOrSuccessOption,
-                    authenticationFailureOrSuccessOption)));
+            (identical(other.authenticationOption, authenticationOption) ||
+                const DeepCollectionEquality()
+                    .equals(other.authenticationOption, authenticationOption)));
   }
 
   @override
   int get hashCode =>
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(isAnonymous) ^
-      const DeepCollectionEquality().hash(authenticationFailureOrSuccessOption);
+      const DeepCollectionEquality().hash(authenticationOption);
 
   @JsonKey(ignore: true)
   @override
@@ -523,15 +503,13 @@ class _$_Authenticated implements _Authenticated {
     @required TResult initial(),
     @required TResult authenticating(),
     @required
-        TResult authenticated(
-            bool isAnonymous,
-            Option<Either<AuthenticationFailure, AuthenticationSuccess>>
-                authenticationFailureOrSuccessOption),
+        TResult authenticated(bool isAnonymous,
+            Option<Either<AuthenticationFailure, Unit>> authenticationOption),
   }) {
     assert(initial != null);
     assert(authenticating != null);
     assert(authenticated != null);
-    return authenticated(isAnonymous, authenticationFailureOrSuccessOption);
+    return authenticated(isAnonymous, authenticationOption);
   }
 
   @override
@@ -539,15 +517,13 @@ class _$_Authenticated implements _Authenticated {
   TResult maybeWhen<TResult extends Object>({
     TResult initial(),
     TResult authenticating(),
-    TResult authenticated(
-        bool isAnonymous,
-        Option<Either<AuthenticationFailure, AuthenticationSuccess>>
-            authenticationFailureOrSuccessOption),
+    TResult authenticated(bool isAnonymous,
+        Option<Either<AuthenticationFailure, Unit>> authenticationOption),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
     if (authenticated != null) {
-      return authenticated(isAnonymous, authenticationFailureOrSuccessOption);
+      return authenticated(isAnonymous, authenticationOption);
     }
     return orElse();
   }
@@ -582,14 +558,12 @@ class _$_Authenticated implements _Authenticated {
 }
 
 abstract class _Authenticated implements SplashAuthenticationState {
-  const factory _Authenticated(
-      bool isAnonymous,
-      Option<Either<AuthenticationFailure, AuthenticationSuccess>>
-          authenticationFailureOrSuccessOption) = _$_Authenticated;
+  const factory _Authenticated(bool isAnonymous,
+          Option<Either<AuthenticationFailure, Unit>> authenticationOption) =
+      _$_Authenticated;
 
   bool get isAnonymous;
-  Option<Either<AuthenticationFailure, AuthenticationSuccess>>
-      get authenticationFailureOrSuccessOption;
+  Option<Either<AuthenticationFailure, Unit>> get authenticationOption;
   @JsonKey(ignore: true)
   _$AuthenticatedCopyWith<_Authenticated> get copyWith;
 }

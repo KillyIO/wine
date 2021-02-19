@@ -594,15 +594,14 @@ class _$LogInAuthenticationStateTearOff {
       @required
           EmailAddress emailAddress,
       @required
-          Option<Either<AuthenticationFailure, AuthenticationSuccess>>
-              authFailureOrSuccessOption,
+          Option<Either<AuthenticationFailure, User>> authenticationOption,
       @required
           Password password}) {
     return _LogInAuthenticationState(
       isSubmitting: isSubmitting,
       showErrorMessages: showErrorMessages,
       emailAddress: emailAddress,
-      authFailureOrSuccessOption: authFailureOrSuccessOption,
+      authenticationOption: authenticationOption,
       password: password,
     );
   }
@@ -617,8 +616,7 @@ mixin _$LogInAuthenticationState {
   bool get isSubmitting;
   bool get showErrorMessages;
   EmailAddress get emailAddress;
-  Option<Either<AuthenticationFailure, AuthenticationSuccess>>
-      get authFailureOrSuccessOption;
+  Option<Either<AuthenticationFailure, User>> get authenticationOption;
   Password get password;
 
   @JsonKey(ignore: true)
@@ -634,8 +632,7 @@ abstract class $LogInAuthenticationStateCopyWith<$Res> {
       {bool isSubmitting,
       bool showErrorMessages,
       EmailAddress emailAddress,
-      Option<Either<AuthenticationFailure, AuthenticationSuccess>>
-          authFailureOrSuccessOption,
+      Option<Either<AuthenticationFailure, User>> authenticationOption,
       Password password});
 }
 
@@ -653,7 +650,7 @@ class _$LogInAuthenticationStateCopyWithImpl<$Res>
     Object isSubmitting = freezed,
     Object showErrorMessages = freezed,
     Object emailAddress = freezed,
-    Object authFailureOrSuccessOption = freezed,
+    Object authenticationOption = freezed,
     Object password = freezed,
   }) {
     return _then(_value.copyWith(
@@ -665,10 +662,9 @@ class _$LogInAuthenticationStateCopyWithImpl<$Res>
       emailAddress: emailAddress == freezed
           ? _value.emailAddress
           : emailAddress as EmailAddress,
-      authFailureOrSuccessOption: authFailureOrSuccessOption == freezed
-          ? _value.authFailureOrSuccessOption
-          : authFailureOrSuccessOption
-              as Option<Either<AuthenticationFailure, AuthenticationSuccess>>,
+      authenticationOption: authenticationOption == freezed
+          ? _value.authenticationOption
+          : authenticationOption as Option<Either<AuthenticationFailure, User>>,
       password: password == freezed ? _value.password : password as Password,
     ));
   }
@@ -685,8 +681,7 @@ abstract class _$LogInAuthenticationStateCopyWith<$Res>
       {bool isSubmitting,
       bool showErrorMessages,
       EmailAddress emailAddress,
-      Option<Either<AuthenticationFailure, AuthenticationSuccess>>
-          authFailureOrSuccessOption,
+      Option<Either<AuthenticationFailure, User>> authenticationOption,
       Password password});
 }
 
@@ -707,7 +702,7 @@ class __$LogInAuthenticationStateCopyWithImpl<$Res>
     Object isSubmitting = freezed,
     Object showErrorMessages = freezed,
     Object emailAddress = freezed,
-    Object authFailureOrSuccessOption = freezed,
+    Object authenticationOption = freezed,
     Object password = freezed,
   }) {
     return _then(_LogInAuthenticationState(
@@ -719,10 +714,9 @@ class __$LogInAuthenticationStateCopyWithImpl<$Res>
       emailAddress: emailAddress == freezed
           ? _value.emailAddress
           : emailAddress as EmailAddress,
-      authFailureOrSuccessOption: authFailureOrSuccessOption == freezed
-          ? _value.authFailureOrSuccessOption
-          : authFailureOrSuccessOption
-              as Option<Either<AuthenticationFailure, AuthenticationSuccess>>,
+      authenticationOption: authenticationOption == freezed
+          ? _value.authenticationOption
+          : authenticationOption as Option<Either<AuthenticationFailure, User>>,
       password: password == freezed ? _value.password : password as Password,
     ));
   }
@@ -734,12 +728,12 @@ class _$_LogInAuthenticationState implements _LogInAuthenticationState {
       {@required this.isSubmitting,
       @required this.showErrorMessages,
       @required this.emailAddress,
-      @required this.authFailureOrSuccessOption,
+      @required this.authenticationOption,
       @required this.password})
       : assert(isSubmitting != null),
         assert(showErrorMessages != null),
         assert(emailAddress != null),
-        assert(authFailureOrSuccessOption != null),
+        assert(authenticationOption != null),
         assert(password != null);
 
   @override
@@ -749,14 +743,13 @@ class _$_LogInAuthenticationState implements _LogInAuthenticationState {
   @override
   final EmailAddress emailAddress;
   @override
-  final Option<Either<AuthenticationFailure, AuthenticationSuccess>>
-      authFailureOrSuccessOption;
+  final Option<Either<AuthenticationFailure, User>> authenticationOption;
   @override
   final Password password;
 
   @override
   String toString() {
-    return 'LogInAuthenticationState(isSubmitting: $isSubmitting, showErrorMessages: $showErrorMessages, emailAddress: $emailAddress, authFailureOrSuccessOption: $authFailureOrSuccessOption, password: $password)';
+    return 'LogInAuthenticationState(isSubmitting: $isSubmitting, showErrorMessages: $showErrorMessages, emailAddress: $emailAddress, authenticationOption: $authenticationOption, password: $password)';
   }
 
   @override
@@ -772,11 +765,9 @@ class _$_LogInAuthenticationState implements _LogInAuthenticationState {
             (identical(other.emailAddress, emailAddress) ||
                 const DeepCollectionEquality()
                     .equals(other.emailAddress, emailAddress)) &&
-            (identical(other.authFailureOrSuccessOption,
-                    authFailureOrSuccessOption) ||
+            (identical(other.authenticationOption, authenticationOption) ||
                 const DeepCollectionEquality().equals(
-                    other.authFailureOrSuccessOption,
-                    authFailureOrSuccessOption)) &&
+                    other.authenticationOption, authenticationOption)) &&
             (identical(other.password, password) ||
                 const DeepCollectionEquality()
                     .equals(other.password, password)));
@@ -788,7 +779,7 @@ class _$_LogInAuthenticationState implements _LogInAuthenticationState {
       const DeepCollectionEquality().hash(isSubmitting) ^
       const DeepCollectionEquality().hash(showErrorMessages) ^
       const DeepCollectionEquality().hash(emailAddress) ^
-      const DeepCollectionEquality().hash(authFailureOrSuccessOption) ^
+      const DeepCollectionEquality().hash(authenticationOption) ^
       const DeepCollectionEquality().hash(password);
 
   @JsonKey(ignore: true)
@@ -807,8 +798,7 @@ abstract class _LogInAuthenticationState implements LogInAuthenticationState {
       @required
           EmailAddress emailAddress,
       @required
-          Option<Either<AuthenticationFailure, AuthenticationSuccess>>
-              authFailureOrSuccessOption,
+          Option<Either<AuthenticationFailure, User>> authenticationOption,
       @required
           Password password}) = _$_LogInAuthenticationState;
 
@@ -819,8 +809,7 @@ abstract class _LogInAuthenticationState implements LogInAuthenticationState {
   @override
   EmailAddress get emailAddress;
   @override
-  Option<Either<AuthenticationFailure, AuthenticationSuccess>>
-      get authFailureOrSuccessOption;
+  Option<Either<AuthenticationFailure, User>> get authenticationOption;
   @override
   Password get password;
   @override

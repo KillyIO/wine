@@ -9,8 +9,7 @@ abstract class SignUpAuthenticationState with _$SignUpAuthenticationState {
     @required bool showErrorMessages,
     @required EmailAddress emailAddress,
     @required
-        Option<Either<AuthenticationFailure, AuthenticationSuccess>>
-            authenticationFailureOrSuccessOption,
+        Option<Either<AuthenticationFailure, dynamic>> authenticationOption,
     @required Password confirmPassword,
     @required Password password,
     @required Username username,
@@ -18,7 +17,7 @@ abstract class SignUpAuthenticationState with _$SignUpAuthenticationState {
 
   /// @nodoc
   factory SignUpAuthenticationState.initial() => SignUpAuthenticationState(
-        authenticationFailureOrSuccessOption: none(),
+        authenticationOption: none(),
         confirmPassword: Password('', ''),
         emailAddress: EmailAddress(''),
         isSubmitting: false,

@@ -261,12 +261,10 @@ class _$SettingsAuthenticationStateTearOff {
       {@required
           bool isSigningOut,
       @required
-          Option<Either<AuthenticationFailure, AuthenticationSuccess>>
-              authenticationFailureOrSuccessOption}) {
+          Option<Either<AuthenticationFailure, Unit>> authenticationOption}) {
     return _SettingsAuthenticationState(
       isSigningOut: isSigningOut,
-      authenticationFailureOrSuccessOption:
-          authenticationFailureOrSuccessOption,
+      authenticationOption: authenticationOption,
     );
   }
 }
@@ -278,8 +276,7 @@ const $SettingsAuthenticationState = _$SettingsAuthenticationStateTearOff();
 /// @nodoc
 mixin _$SettingsAuthenticationState {
   bool get isSigningOut;
-  Option<Either<AuthenticationFailure, AuthenticationSuccess>>
-      get authenticationFailureOrSuccessOption;
+  Option<Either<AuthenticationFailure, Unit>> get authenticationOption;
 
   @JsonKey(ignore: true)
   $SettingsAuthenticationStateCopyWith<SettingsAuthenticationState>
@@ -294,8 +291,7 @@ abstract class $SettingsAuthenticationStateCopyWith<$Res> {
       _$SettingsAuthenticationStateCopyWithImpl<$Res>;
   $Res call(
       {bool isSigningOut,
-      Option<Either<AuthenticationFailure, AuthenticationSuccess>>
-          authenticationFailureOrSuccessOption});
+      Option<Either<AuthenticationFailure, Unit>> authenticationOption});
 }
 
 /// @nodoc
@@ -310,16 +306,14 @@ class _$SettingsAuthenticationStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object isSigningOut = freezed,
-    Object authenticationFailureOrSuccessOption = freezed,
+    Object authenticationOption = freezed,
   }) {
     return _then(_value.copyWith(
       isSigningOut:
           isSigningOut == freezed ? _value.isSigningOut : isSigningOut as bool,
-      authenticationFailureOrSuccessOption:
-          authenticationFailureOrSuccessOption == freezed
-              ? _value.authenticationFailureOrSuccessOption
-              : authenticationFailureOrSuccessOption as Option<
-                  Either<AuthenticationFailure, AuthenticationSuccess>>,
+      authenticationOption: authenticationOption == freezed
+          ? _value.authenticationOption
+          : authenticationOption as Option<Either<AuthenticationFailure, Unit>>,
     ));
   }
 }
@@ -334,8 +328,7 @@ abstract class _$SettingsAuthenticationStateCopyWith<$Res>
   @override
   $Res call(
       {bool isSigningOut,
-      Option<Either<AuthenticationFailure, AuthenticationSuccess>>
-          authenticationFailureOrSuccessOption});
+      Option<Either<AuthenticationFailure, Unit>> authenticationOption});
 }
 
 /// @nodoc
@@ -354,16 +347,14 @@ class __$SettingsAuthenticationStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object isSigningOut = freezed,
-    Object authenticationFailureOrSuccessOption = freezed,
+    Object authenticationOption = freezed,
   }) {
     return _then(_SettingsAuthenticationState(
       isSigningOut:
           isSigningOut == freezed ? _value.isSigningOut : isSigningOut as bool,
-      authenticationFailureOrSuccessOption:
-          authenticationFailureOrSuccessOption == freezed
-              ? _value.authenticationFailureOrSuccessOption
-              : authenticationFailureOrSuccessOption as Option<
-                  Either<AuthenticationFailure, AuthenticationSuccess>>,
+      authenticationOption: authenticationOption == freezed
+          ? _value.authenticationOption
+          : authenticationOption as Option<Either<AuthenticationFailure, Unit>>,
     ));
   }
 }
@@ -371,20 +362,18 @@ class __$SettingsAuthenticationStateCopyWithImpl<$Res>
 /// @nodoc
 class _$_SettingsAuthenticationState implements _SettingsAuthenticationState {
   const _$_SettingsAuthenticationState(
-      {@required this.isSigningOut,
-      @required this.authenticationFailureOrSuccessOption})
+      {@required this.isSigningOut, @required this.authenticationOption})
       : assert(isSigningOut != null),
-        assert(authenticationFailureOrSuccessOption != null);
+        assert(authenticationOption != null);
 
   @override
   final bool isSigningOut;
   @override
-  final Option<Either<AuthenticationFailure, AuthenticationSuccess>>
-      authenticationFailureOrSuccessOption;
+  final Option<Either<AuthenticationFailure, Unit>> authenticationOption;
 
   @override
   String toString() {
-    return 'SettingsAuthenticationState(isSigningOut: $isSigningOut, authenticationFailureOrSuccessOption: $authenticationFailureOrSuccessOption)';
+    return 'SettingsAuthenticationState(isSigningOut: $isSigningOut, authenticationOption: $authenticationOption)';
   }
 
   @override
@@ -394,18 +383,16 @@ class _$_SettingsAuthenticationState implements _SettingsAuthenticationState {
             (identical(other.isSigningOut, isSigningOut) ||
                 const DeepCollectionEquality()
                     .equals(other.isSigningOut, isSigningOut)) &&
-            (identical(other.authenticationFailureOrSuccessOption,
-                    authenticationFailureOrSuccessOption) ||
-                const DeepCollectionEquality().equals(
-                    other.authenticationFailureOrSuccessOption,
-                    authenticationFailureOrSuccessOption)));
+            (identical(other.authenticationOption, authenticationOption) ||
+                const DeepCollectionEquality()
+                    .equals(other.authenticationOption, authenticationOption)));
   }
 
   @override
   int get hashCode =>
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(isSigningOut) ^
-      const DeepCollectionEquality().hash(authenticationFailureOrSuccessOption);
+      const DeepCollectionEquality().hash(authenticationOption);
 
   @JsonKey(ignore: true)
   @override
@@ -417,18 +404,16 @@ class _$_SettingsAuthenticationState implements _SettingsAuthenticationState {
 abstract class _SettingsAuthenticationState
     implements SettingsAuthenticationState {
   const factory _SettingsAuthenticationState(
-          {@required
-              bool isSigningOut,
-          @required
-              Option<Either<AuthenticationFailure, AuthenticationSuccess>>
-                  authenticationFailureOrSuccessOption}) =
-      _$_SettingsAuthenticationState;
+      {@required
+          bool isSigningOut,
+      @required
+          Option<Either<AuthenticationFailure, Unit>>
+              authenticationOption}) = _$_SettingsAuthenticationState;
 
   @override
   bool get isSigningOut;
   @override
-  Option<Either<AuthenticationFailure, AuthenticationSuccess>>
-      get authenticationFailureOrSuccessOption;
+  Option<Either<AuthenticationFailure, Unit>> get authenticationOption;
   @override
   @JsonKey(ignore: true)
   _$SettingsAuthenticationStateCopyWith<_SettingsAuthenticationState>

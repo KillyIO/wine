@@ -965,8 +965,7 @@ class _$SignUpAuthenticationStateTearOff {
       @required
           EmailAddress emailAddress,
       @required
-          Option<Either<AuthenticationFailure, AuthenticationSuccess>>
-              authenticationFailureOrSuccessOption,
+          Option<Either<AuthenticationFailure, dynamic>> authenticationOption,
       @required
           Password confirmPassword,
       @required
@@ -977,8 +976,7 @@ class _$SignUpAuthenticationStateTearOff {
       isSubmitting: isSubmitting,
       showErrorMessages: showErrorMessages,
       emailAddress: emailAddress,
-      authenticationFailureOrSuccessOption:
-          authenticationFailureOrSuccessOption,
+      authenticationOption: authenticationOption,
       confirmPassword: confirmPassword,
       password: password,
       username: username,
@@ -995,8 +993,7 @@ mixin _$SignUpAuthenticationState {
   bool get isSubmitting;
   bool get showErrorMessages;
   EmailAddress get emailAddress;
-  Option<Either<AuthenticationFailure, AuthenticationSuccess>>
-      get authenticationFailureOrSuccessOption;
+  Option<Either<AuthenticationFailure, dynamic>> get authenticationOption;
   Password get confirmPassword;
   Password get password;
   Username get username;
@@ -1014,8 +1011,7 @@ abstract class $SignUpAuthenticationStateCopyWith<$Res> {
       {bool isSubmitting,
       bool showErrorMessages,
       EmailAddress emailAddress,
-      Option<Either<AuthenticationFailure, AuthenticationSuccess>>
-          authenticationFailureOrSuccessOption,
+      Option<Either<AuthenticationFailure, dynamic>> authenticationOption,
       Password confirmPassword,
       Password password,
       Username username});
@@ -1035,7 +1031,7 @@ class _$SignUpAuthenticationStateCopyWithImpl<$Res>
     Object isSubmitting = freezed,
     Object showErrorMessages = freezed,
     Object emailAddress = freezed,
-    Object authenticationFailureOrSuccessOption = freezed,
+    Object authenticationOption = freezed,
     Object confirmPassword = freezed,
     Object password = freezed,
     Object username = freezed,
@@ -1049,11 +1045,10 @@ class _$SignUpAuthenticationStateCopyWithImpl<$Res>
       emailAddress: emailAddress == freezed
           ? _value.emailAddress
           : emailAddress as EmailAddress,
-      authenticationFailureOrSuccessOption:
-          authenticationFailureOrSuccessOption == freezed
-              ? _value.authenticationFailureOrSuccessOption
-              : authenticationFailureOrSuccessOption as Option<
-                  Either<AuthenticationFailure, AuthenticationSuccess>>,
+      authenticationOption: authenticationOption == freezed
+          ? _value.authenticationOption
+          : authenticationOption
+              as Option<Either<AuthenticationFailure, dynamic>>,
       confirmPassword: confirmPassword == freezed
           ? _value.confirmPassword
           : confirmPassword as Password,
@@ -1074,8 +1069,7 @@ abstract class _$SignUpAuthenticationStateCopyWith<$Res>
       {bool isSubmitting,
       bool showErrorMessages,
       EmailAddress emailAddress,
-      Option<Either<AuthenticationFailure, AuthenticationSuccess>>
-          authenticationFailureOrSuccessOption,
+      Option<Either<AuthenticationFailure, dynamic>> authenticationOption,
       Password confirmPassword,
       Password password,
       Username username});
@@ -1098,7 +1092,7 @@ class __$SignUpAuthenticationStateCopyWithImpl<$Res>
     Object isSubmitting = freezed,
     Object showErrorMessages = freezed,
     Object emailAddress = freezed,
-    Object authenticationFailureOrSuccessOption = freezed,
+    Object authenticationOption = freezed,
     Object confirmPassword = freezed,
     Object password = freezed,
     Object username = freezed,
@@ -1112,11 +1106,10 @@ class __$SignUpAuthenticationStateCopyWithImpl<$Res>
       emailAddress: emailAddress == freezed
           ? _value.emailAddress
           : emailAddress as EmailAddress,
-      authenticationFailureOrSuccessOption:
-          authenticationFailureOrSuccessOption == freezed
-              ? _value.authenticationFailureOrSuccessOption
-              : authenticationFailureOrSuccessOption as Option<
-                  Either<AuthenticationFailure, AuthenticationSuccess>>,
+      authenticationOption: authenticationOption == freezed
+          ? _value.authenticationOption
+          : authenticationOption
+              as Option<Either<AuthenticationFailure, dynamic>>,
       confirmPassword: confirmPassword == freezed
           ? _value.confirmPassword
           : confirmPassword as Password,
@@ -1132,14 +1125,14 @@ class _$_SignUpAuthenticationState implements _SignUpAuthenticationState {
       {@required this.isSubmitting,
       @required this.showErrorMessages,
       @required this.emailAddress,
-      @required this.authenticationFailureOrSuccessOption,
+      @required this.authenticationOption,
       @required this.confirmPassword,
       @required this.password,
       @required this.username})
       : assert(isSubmitting != null),
         assert(showErrorMessages != null),
         assert(emailAddress != null),
-        assert(authenticationFailureOrSuccessOption != null),
+        assert(authenticationOption != null),
         assert(confirmPassword != null),
         assert(password != null),
         assert(username != null);
@@ -1151,8 +1144,7 @@ class _$_SignUpAuthenticationState implements _SignUpAuthenticationState {
   @override
   final EmailAddress emailAddress;
   @override
-  final Option<Either<AuthenticationFailure, AuthenticationSuccess>>
-      authenticationFailureOrSuccessOption;
+  final Option<Either<AuthenticationFailure, dynamic>> authenticationOption;
   @override
   final Password confirmPassword;
   @override
@@ -1162,7 +1154,7 @@ class _$_SignUpAuthenticationState implements _SignUpAuthenticationState {
 
   @override
   String toString() {
-    return 'SignUpAuthenticationState(isSubmitting: $isSubmitting, showErrorMessages: $showErrorMessages, emailAddress: $emailAddress, authenticationFailureOrSuccessOption: $authenticationFailureOrSuccessOption, confirmPassword: $confirmPassword, password: $password, username: $username)';
+    return 'SignUpAuthenticationState(isSubmitting: $isSubmitting, showErrorMessages: $showErrorMessages, emailAddress: $emailAddress, authenticationOption: $authenticationOption, confirmPassword: $confirmPassword, password: $password, username: $username)';
   }
 
   @override
@@ -1178,11 +1170,9 @@ class _$_SignUpAuthenticationState implements _SignUpAuthenticationState {
             (identical(other.emailAddress, emailAddress) ||
                 const DeepCollectionEquality()
                     .equals(other.emailAddress, emailAddress)) &&
-            (identical(other.authenticationFailureOrSuccessOption,
-                    authenticationFailureOrSuccessOption) ||
+            (identical(other.authenticationOption, authenticationOption) ||
                 const DeepCollectionEquality().equals(
-                    other.authenticationFailureOrSuccessOption,
-                    authenticationFailureOrSuccessOption)) &&
+                    other.authenticationOption, authenticationOption)) &&
             (identical(other.confirmPassword, confirmPassword) ||
                 const DeepCollectionEquality()
                     .equals(other.confirmPassword, confirmPassword)) &&
@@ -1200,8 +1190,7 @@ class _$_SignUpAuthenticationState implements _SignUpAuthenticationState {
       const DeepCollectionEquality().hash(isSubmitting) ^
       const DeepCollectionEquality().hash(showErrorMessages) ^
       const DeepCollectionEquality().hash(emailAddress) ^
-      const DeepCollectionEquality()
-          .hash(authenticationFailureOrSuccessOption) ^
+      const DeepCollectionEquality().hash(authenticationOption) ^
       const DeepCollectionEquality().hash(confirmPassword) ^
       const DeepCollectionEquality().hash(password) ^
       const DeepCollectionEquality().hash(username);
@@ -1223,8 +1212,7 @@ abstract class _SignUpAuthenticationState implements SignUpAuthenticationState {
       @required
           EmailAddress emailAddress,
       @required
-          Option<Either<AuthenticationFailure, AuthenticationSuccess>>
-              authenticationFailureOrSuccessOption,
+          Option<Either<AuthenticationFailure, dynamic>> authenticationOption,
       @required
           Password confirmPassword,
       @required
@@ -1239,8 +1227,7 @@ abstract class _SignUpAuthenticationState implements SignUpAuthenticationState {
   @override
   EmailAddress get emailAddress;
   @override
-  Option<Either<AuthenticationFailure, AuthenticationSuccess>>
-      get authenticationFailureOrSuccessOption;
+  Option<Either<AuthenticationFailure, dynamic>> get authenticationOption;
   @override
   Password get confirmPassword;
   @override
