@@ -2,11 +2,10 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:mockito/mockito.dart';
 import 'package:test/test.dart';
 import 'package:wine/domain/authentication/username.dart';
-import 'package:wine/domain/database/facades/online/i_online_user_database_facade.dart';
-import 'package:wine/domain/database/failures/user_database_failure.dart';
 import 'package:wine/domain/database/successes/user_database_success.dart';
 import 'package:wine/domain/models/user.dart';
-import 'package:wine/infrastructure/database/firebase_user_database_facade.dart';
+import 'package:wine/domain/user/i_user_facade.dart';
+import 'package:wine/infrastructure/user/firebase_user_database_facade.dart';
 
 import '../../../mocks/firebase_firestore_mocks.dart';
 
@@ -18,7 +17,7 @@ void main() {
   MockCollectionReference mockCollectionReference;
   MockDocumentReference mockDocumentReference;
 
-  IUserDatabaseFacade userDatabaseFacade;
+  IUserFacade userFacade;
 
   setUp(() {
     user = User(
@@ -37,7 +36,7 @@ void main() {
     mockDocumentReference = MockDocumentReference();
     mockDocumentSnapshot = MockDocumentSnapshot();
 
-    userDatabaseFacade = FirebaseUserDatabaseFacade(mockFirestore);
+    userFacade = FirebaseUserFacade(mockFirestore);
   });
 
   group(
@@ -47,7 +46,7 @@ void main() {
         'loadUser -',
         () {
           test(
-            '''When loading user data successful Then return UserLoadedSuccess''',
+            'When user loaded Then return user',
             () async {
               when(mockFirestore.collection(any))
                   .thenReturn(mockCollectionReference);
@@ -58,19 +57,13 @@ void main() {
               when(mockDocumentSnapshot.exists).thenReturn(true);
               when(mockDocumentSnapshot.data()).thenReturn(user.toMap());
 
-              final result = await userDatabaseFacade.loadUser(user.uid);
+              final result = await userFacade.loadUser(user.uid);
 
               expect(result.isRight(), true);
 
               result.fold(
                 (_) {},
-                (success) {
-                  expect(success, isA<UserLoadedSuccess>());
-
-                  if (success is UserLoadedSuccess) {
-                    expect(success.user, user);
-                  }
-                },
+                (success) => expect(success, user),
               );
             },
           );
@@ -86,7 +79,7 @@ void main() {
                   .thenAnswer((_) async => mockDocumentSnapshot);
               when(mockDocumentSnapshot.exists).thenReturn(false);
 
-              final result = await userDatabaseFacade.loadUser('123456');
+              final result = await userFacade.loadUser('123456');
 
               expect(result.isLeft(), true);
 

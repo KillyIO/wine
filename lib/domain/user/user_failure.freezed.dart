@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
 
-part of 'user_database_failure.dart';
+part of 'user_failure.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -10,8 +10,8 @@ part of 'user_database_failure.dart';
 T _$identity<T>(T value) => value;
 
 /// @nodoc
-class _$UserDatabaseFailureTearOff {
-  const _$UserDatabaseFailureTearOff();
+class _$UserFailureTearOff {
+  const _$UserFailureTearOff();
 
 // ignore: unused_element
   ServerErrorr serverError() {
@@ -31,10 +31,10 @@ class _$UserDatabaseFailureTearOff {
 
 /// @nodoc
 // ignore: unused_element
-const $UserDatabaseFailure = _$UserDatabaseFailureTearOff();
+const $UserFailure = _$UserFailureTearOff();
 
 /// @nodoc
-mixin _$UserDatabaseFailure {
+mixin _$UserFailure {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult serverError(),
@@ -64,20 +64,19 @@ mixin _$UserDatabaseFailure {
 }
 
 /// @nodoc
-abstract class $UserDatabaseFailureCopyWith<$Res> {
-  factory $UserDatabaseFailureCopyWith(
-          UserDatabaseFailure value, $Res Function(UserDatabaseFailure) then) =
-      _$UserDatabaseFailureCopyWithImpl<$Res>;
+abstract class $UserFailureCopyWith<$Res> {
+  factory $UserFailureCopyWith(
+          UserFailure value, $Res Function(UserFailure) then) =
+      _$UserFailureCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$UserDatabaseFailureCopyWithImpl<$Res>
-    implements $UserDatabaseFailureCopyWith<$Res> {
-  _$UserDatabaseFailureCopyWithImpl(this._value, this._then);
+class _$UserFailureCopyWithImpl<$Res> implements $UserFailureCopyWith<$Res> {
+  _$UserFailureCopyWithImpl(this._value, this._then);
 
-  final UserDatabaseFailure _value;
+  final UserFailure _value;
   // ignore: unused_field
-  final $Res Function(UserDatabaseFailure) _then;
+  final $Res Function(UserFailure) _then;
 }
 
 /// @nodoc
@@ -88,8 +87,7 @@ abstract class $ServerErrorrCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$ServerErrorrCopyWithImpl<$Res>
-    extends _$UserDatabaseFailureCopyWithImpl<$Res>
+class _$ServerErrorrCopyWithImpl<$Res> extends _$UserFailureCopyWithImpl<$Res>
     implements $ServerErrorrCopyWith<$Res> {
   _$ServerErrorrCopyWithImpl(
       ServerErrorr _value, $Res Function(ServerErrorr) _then)
@@ -105,7 +103,7 @@ class _$ServerErrorr implements ServerErrorr {
 
   @override
   String toString() {
-    return 'UserDatabaseFailure.serverError()';
+    return 'UserFailure.serverError()';
   }
 
   @override
@@ -173,7 +171,7 @@ class _$ServerErrorr implements ServerErrorr {
   }
 }
 
-abstract class ServerErrorr implements UserDatabaseFailure {
+abstract class ServerErrorr implements UserFailure {
   const factory ServerErrorr() = _$ServerErrorr;
 }
 
@@ -186,7 +184,7 @@ abstract class $UnexpectedErrorCopyWith<$Res> {
 
 /// @nodoc
 class _$UnexpectedErrorCopyWithImpl<$Res>
-    extends _$UserDatabaseFailureCopyWithImpl<$Res>
+    extends _$UserFailureCopyWithImpl<$Res>
     implements $UnexpectedErrorCopyWith<$Res> {
   _$UnexpectedErrorCopyWithImpl(
       UnexpectedError _value, $Res Function(UnexpectedError) _then)
@@ -202,7 +200,7 @@ class _$UnexpectedError implements UnexpectedError {
 
   @override
   String toString() {
-    return 'UserDatabaseFailure.unexpectedError()';
+    return 'UserFailure.unexpectedError()';
   }
 
   @override
@@ -270,7 +268,7 @@ class _$UnexpectedError implements UnexpectedError {
   }
 }
 
-abstract class UnexpectedError implements UserDatabaseFailure {
+abstract class UnexpectedError implements UserFailure {
   const factory UnexpectedError() = _$UnexpectedError;
 }
 
@@ -282,8 +280,7 @@ abstract class $UserNotFoundCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$UserNotFoundCopyWithImpl<$Res>
-    extends _$UserDatabaseFailureCopyWithImpl<$Res>
+class _$UserNotFoundCopyWithImpl<$Res> extends _$UserFailureCopyWithImpl<$Res>
     implements $UserNotFoundCopyWith<$Res> {
   _$UserNotFoundCopyWithImpl(
       UserNotFound _value, $Res Function(UserNotFound) _then)
@@ -299,7 +296,7 @@ class _$UserNotFound implements UserNotFound {
 
   @override
   String toString() {
-    return 'UserDatabaseFailure.userNotFound()';
+    return 'UserFailure.userNotFound()';
   }
 
   @override
@@ -367,6 +364,6 @@ class _$UserNotFound implements UserNotFound {
   }
 }
 
-abstract class UserNotFound implements UserDatabaseFailure {
+abstract class UserNotFound implements UserFailure {
   const factory UserNotFound() = _$UserNotFound;
 }

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
 
-part of 'sign_up_authentication_bloc.dart';
+part of 'sign_up_form_bloc.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -10,8 +10,8 @@ part of 'sign_up_authentication_bloc.dart';
 T _$identity<T>(T value) => value;
 
 /// @nodoc
-class _$SignUpAuthenticationEventTearOff {
-  const _$SignUpAuthenticationEventTearOff();
+class _$SignUpFormEventTearOff {
+  const _$SignUpFormEventTearOff();
 
 // ignore: unused_element
   ConfirmPasswordChanged confirmPasswordChanged(
@@ -56,10 +56,10 @@ class _$SignUpAuthenticationEventTearOff {
 
 /// @nodoc
 // ignore: unused_element
-const $SignUpAuthenticationEvent = _$SignUpAuthenticationEventTearOff();
+const $SignUpFormEvent = _$SignUpFormEventTearOff();
 
 /// @nodoc
-mixin _$SignUpAuthenticationEvent {
+mixin _$SignUpFormEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required
@@ -104,20 +104,20 @@ mixin _$SignUpAuthenticationEvent {
 }
 
 /// @nodoc
-abstract class $SignUpAuthenticationEventCopyWith<$Res> {
-  factory $SignUpAuthenticationEventCopyWith(SignUpAuthenticationEvent value,
-          $Res Function(SignUpAuthenticationEvent) then) =
-      _$SignUpAuthenticationEventCopyWithImpl<$Res>;
+abstract class $SignUpFormEventCopyWith<$Res> {
+  factory $SignUpFormEventCopyWith(
+          SignUpFormEvent value, $Res Function(SignUpFormEvent) then) =
+      _$SignUpFormEventCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$SignUpAuthenticationEventCopyWithImpl<$Res>
-    implements $SignUpAuthenticationEventCopyWith<$Res> {
-  _$SignUpAuthenticationEventCopyWithImpl(this._value, this._then);
+class _$SignUpFormEventCopyWithImpl<$Res>
+    implements $SignUpFormEventCopyWith<$Res> {
+  _$SignUpFormEventCopyWithImpl(this._value, this._then);
 
-  final SignUpAuthenticationEvent _value;
+  final SignUpFormEvent _value;
   // ignore: unused_field
-  final $Res Function(SignUpAuthenticationEvent) _then;
+  final $Res Function(SignUpFormEvent) _then;
 }
 
 /// @nodoc
@@ -130,7 +130,7 @@ abstract class $ConfirmPasswordChangedCopyWith<$Res> {
 
 /// @nodoc
 class _$ConfirmPasswordChangedCopyWithImpl<$Res>
-    extends _$SignUpAuthenticationEventCopyWithImpl<$Res>
+    extends _$SignUpFormEventCopyWithImpl<$Res>
     implements $ConfirmPasswordChangedCopyWith<$Res> {
   _$ConfirmPasswordChangedCopyWithImpl(ConfirmPasswordChanged _value,
       $Res Function(ConfirmPasswordChanged) _then)
@@ -166,7 +166,7 @@ class _$ConfirmPasswordChanged implements ConfirmPasswordChanged {
 
   @override
   String toString() {
-    return 'SignUpAuthenticationEvent.confirmPasswordChanged(confirmPasswordStr: $confirmPasswordStr, passwordStr: $passwordStr)';
+    return 'SignUpFormEvent.confirmPasswordChanged(confirmPasswordStr: $confirmPasswordStr, passwordStr: $passwordStr)';
   }
 
   @override
@@ -271,7 +271,7 @@ class _$ConfirmPasswordChanged implements ConfirmPasswordChanged {
   }
 }
 
-abstract class ConfirmPasswordChanged implements SignUpAuthenticationEvent {
+abstract class ConfirmPasswordChanged implements SignUpFormEvent {
   const factory ConfirmPasswordChanged(
       String confirmPasswordStr, String passwordStr) = _$ConfirmPasswordChanged;
 
@@ -291,7 +291,7 @@ abstract class $EmailChangedCopyWith<$Res> {
 
 /// @nodoc
 class _$EmailChangedCopyWithImpl<$Res>
-    extends _$SignUpAuthenticationEventCopyWithImpl<$Res>
+    extends _$SignUpFormEventCopyWithImpl<$Res>
     implements $EmailChangedCopyWith<$Res> {
   _$EmailChangedCopyWithImpl(
       EmailChanged _value, $Res Function(EmailChanged) _then)
@@ -319,7 +319,7 @@ class _$EmailChanged implements EmailChanged {
 
   @override
   String toString() {
-    return 'SignUpAuthenticationEvent.emailChanged(emailStr: $emailStr)';
+    return 'SignUpFormEvent.emailChanged(emailStr: $emailStr)';
   }
 
   @override
@@ -418,7 +418,7 @@ class _$EmailChanged implements EmailChanged {
   }
 }
 
-abstract class EmailChanged implements SignUpAuthenticationEvent {
+abstract class EmailChanged implements SignUpFormEvent {
   const factory EmailChanged(String emailStr) = _$EmailChanged;
 
   String get emailStr;
@@ -436,7 +436,7 @@ abstract class $PasswordChangedCopyWith<$Res> {
 
 /// @nodoc
 class _$PasswordChangedCopyWithImpl<$Res>
-    extends _$SignUpAuthenticationEventCopyWithImpl<$Res>
+    extends _$SignUpFormEventCopyWithImpl<$Res>
     implements $PasswordChangedCopyWith<$Res> {
   _$PasswordChangedCopyWithImpl(
       PasswordChanged _value, $Res Function(PasswordChanged) _then)
@@ -464,7 +464,7 @@ class _$PasswordChanged implements PasswordChanged {
 
   @override
   String toString() {
-    return 'SignUpAuthenticationEvent.passwordChanged(passwordStr: $passwordStr)';
+    return 'SignUpFormEvent.passwordChanged(passwordStr: $passwordStr)';
   }
 
   @override
@@ -563,7 +563,7 @@ class _$PasswordChanged implements PasswordChanged {
   }
 }
 
-abstract class PasswordChanged implements SignUpAuthenticationEvent {
+abstract class PasswordChanged implements SignUpFormEvent {
   const factory PasswordChanged(String passwordStr) = _$PasswordChanged;
 
   String get passwordStr;
@@ -580,7 +580,7 @@ abstract class $ResendVerificationEmailCopyWith<$Res> {
 
 /// @nodoc
 class _$ResendVerificationEmailCopyWithImpl<$Res>
-    extends _$SignUpAuthenticationEventCopyWithImpl<$Res>
+    extends _$SignUpFormEventCopyWithImpl<$Res>
     implements $ResendVerificationEmailCopyWith<$Res> {
   _$ResendVerificationEmailCopyWithImpl(ResendVerificationEmail _value,
       $Res Function(ResendVerificationEmail) _then)
@@ -596,7 +596,7 @@ class _$ResendVerificationEmail implements ResendVerificationEmail {
 
   @override
   String toString() {
-    return 'SignUpAuthenticationEvent.resendVerificationEmail()';
+    return 'SignUpFormEvent.resendVerificationEmail()';
   }
 
   @override
@@ -685,7 +685,7 @@ class _$ResendVerificationEmail implements ResendVerificationEmail {
   }
 }
 
-abstract class ResendVerificationEmail implements SignUpAuthenticationEvent {
+abstract class ResendVerificationEmail implements SignUpFormEvent {
   const factory ResendVerificationEmail() = _$ResendVerificationEmail;
 }
 
@@ -698,7 +698,7 @@ abstract class $SignUpPressedCopyWith<$Res> {
 
 /// @nodoc
 class _$SignUpPressedCopyWithImpl<$Res>
-    extends _$SignUpAuthenticationEventCopyWithImpl<$Res>
+    extends _$SignUpFormEventCopyWithImpl<$Res>
     implements $SignUpPressedCopyWith<$Res> {
   _$SignUpPressedCopyWithImpl(
       SignUpPressed _value, $Res Function(SignUpPressed) _then)
@@ -714,7 +714,7 @@ class _$SignUpPressed implements SignUpPressed {
 
   @override
   String toString() {
-    return 'SignUpAuthenticationEvent.signUpPressed()';
+    return 'SignUpFormEvent.signUpPressed()';
   }
 
   @override
@@ -803,7 +803,7 @@ class _$SignUpPressed implements SignUpPressed {
   }
 }
 
-abstract class SignUpPressed implements SignUpAuthenticationEvent {
+abstract class SignUpPressed implements SignUpFormEvent {
   const factory SignUpPressed() = _$SignUpPressed;
 }
 
@@ -817,7 +817,7 @@ abstract class $UsernameChangedCopyWith<$Res> {
 
 /// @nodoc
 class _$UsernameChangedCopyWithImpl<$Res>
-    extends _$SignUpAuthenticationEventCopyWithImpl<$Res>
+    extends _$SignUpFormEventCopyWithImpl<$Res>
     implements $UsernameChangedCopyWith<$Res> {
   _$UsernameChangedCopyWithImpl(
       UsernameChanged _value, $Res Function(UsernameChanged) _then)
@@ -845,7 +845,7 @@ class _$UsernameChanged implements UsernameChanged {
 
   @override
   String toString() {
-    return 'SignUpAuthenticationEvent.usernameChanged(usernameStr: $usernameStr)';
+    return 'SignUpFormEvent.usernameChanged(usernameStr: $usernameStr)';
   }
 
   @override
@@ -944,7 +944,7 @@ class _$UsernameChanged implements UsernameChanged {
   }
 }
 
-abstract class UsernameChanged implements SignUpAuthenticationEvent {
+abstract class UsernameChanged implements SignUpFormEvent {
   const factory UsernameChanged(String usernameStr) = _$UsernameChanged;
 
   String get usernameStr;
@@ -953,11 +953,11 @@ abstract class UsernameChanged implements SignUpAuthenticationEvent {
 }
 
 /// @nodoc
-class _$SignUpAuthenticationStateTearOff {
-  const _$SignUpAuthenticationStateTearOff();
+class _$SignUpFormStateTearOff {
+  const _$SignUpFormStateTearOff();
 
 // ignore: unused_element
-  _SignUpAuthenticationState call(
+  _SignUpFormState call(
       {@required
           bool isSubmitting,
       @required
@@ -972,7 +972,7 @@ class _$SignUpAuthenticationStateTearOff {
           Password password,
       @required
           Username username}) {
-    return _SignUpAuthenticationState(
+    return _SignUpFormState(
       isSubmitting: isSubmitting,
       showErrorMessages: showErrorMessages,
       emailAddress: emailAddress,
@@ -986,10 +986,10 @@ class _$SignUpAuthenticationStateTearOff {
 
 /// @nodoc
 // ignore: unused_element
-const $SignUpAuthenticationState = _$SignUpAuthenticationStateTearOff();
+const $SignUpFormState = _$SignUpFormStateTearOff();
 
 /// @nodoc
-mixin _$SignUpAuthenticationState {
+mixin _$SignUpFormState {
   bool get isSubmitting;
   bool get showErrorMessages;
   EmailAddress get emailAddress;
@@ -999,14 +999,14 @@ mixin _$SignUpAuthenticationState {
   Username get username;
 
   @JsonKey(ignore: true)
-  $SignUpAuthenticationStateCopyWith<SignUpAuthenticationState> get copyWith;
+  $SignUpFormStateCopyWith<SignUpFormState> get copyWith;
 }
 
 /// @nodoc
-abstract class $SignUpAuthenticationStateCopyWith<$Res> {
-  factory $SignUpAuthenticationStateCopyWith(SignUpAuthenticationState value,
-          $Res Function(SignUpAuthenticationState) then) =
-      _$SignUpAuthenticationStateCopyWithImpl<$Res>;
+abstract class $SignUpFormStateCopyWith<$Res> {
+  factory $SignUpFormStateCopyWith(
+          SignUpFormState value, $Res Function(SignUpFormState) then) =
+      _$SignUpFormStateCopyWithImpl<$Res>;
   $Res call(
       {bool isSubmitting,
       bool showErrorMessages,
@@ -1018,13 +1018,13 @@ abstract class $SignUpAuthenticationStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$SignUpAuthenticationStateCopyWithImpl<$Res>
-    implements $SignUpAuthenticationStateCopyWith<$Res> {
-  _$SignUpAuthenticationStateCopyWithImpl(this._value, this._then);
+class _$SignUpFormStateCopyWithImpl<$Res>
+    implements $SignUpFormStateCopyWith<$Res> {
+  _$SignUpFormStateCopyWithImpl(this._value, this._then);
 
-  final SignUpAuthenticationState _value;
+  final SignUpFormState _value;
   // ignore: unused_field
-  final $Res Function(SignUpAuthenticationState) _then;
+  final $Res Function(SignUpFormState) _then;
 
   @override
   $Res call({
@@ -1059,11 +1059,11 @@ class _$SignUpAuthenticationStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class _$SignUpAuthenticationStateCopyWith<$Res>
-    implements $SignUpAuthenticationStateCopyWith<$Res> {
-  factory _$SignUpAuthenticationStateCopyWith(_SignUpAuthenticationState value,
-          $Res Function(_SignUpAuthenticationState) then) =
-      __$SignUpAuthenticationStateCopyWithImpl<$Res>;
+abstract class _$SignUpFormStateCopyWith<$Res>
+    implements $SignUpFormStateCopyWith<$Res> {
+  factory _$SignUpFormStateCopyWith(
+          _SignUpFormState value, $Res Function(_SignUpFormState) then) =
+      __$SignUpFormStateCopyWithImpl<$Res>;
   @override
   $Res call(
       {bool isSubmitting,
@@ -1076,16 +1076,15 @@ abstract class _$SignUpAuthenticationStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$SignUpAuthenticationStateCopyWithImpl<$Res>
-    extends _$SignUpAuthenticationStateCopyWithImpl<$Res>
-    implements _$SignUpAuthenticationStateCopyWith<$Res> {
-  __$SignUpAuthenticationStateCopyWithImpl(_SignUpAuthenticationState _value,
-      $Res Function(_SignUpAuthenticationState) _then)
-      : super(_value, (v) => _then(v as _SignUpAuthenticationState));
+class __$SignUpFormStateCopyWithImpl<$Res>
+    extends _$SignUpFormStateCopyWithImpl<$Res>
+    implements _$SignUpFormStateCopyWith<$Res> {
+  __$SignUpFormStateCopyWithImpl(
+      _SignUpFormState _value, $Res Function(_SignUpFormState) _then)
+      : super(_value, (v) => _then(v as _SignUpFormState));
 
   @override
-  _SignUpAuthenticationState get _value =>
-      super._value as _SignUpAuthenticationState;
+  _SignUpFormState get _value => super._value as _SignUpFormState;
 
   @override
   $Res call({
@@ -1097,7 +1096,7 @@ class __$SignUpAuthenticationStateCopyWithImpl<$Res>
     Object password = freezed,
     Object username = freezed,
   }) {
-    return _then(_SignUpAuthenticationState(
+    return _then(_SignUpFormState(
       isSubmitting:
           isSubmitting == freezed ? _value.isSubmitting : isSubmitting as bool,
       showErrorMessages: showErrorMessages == freezed
@@ -1120,8 +1119,8 @@ class __$SignUpAuthenticationStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
-class _$_SignUpAuthenticationState implements _SignUpAuthenticationState {
-  const _$_SignUpAuthenticationState(
+class _$_SignUpFormState implements _SignUpFormState {
+  const _$_SignUpFormState(
       {@required this.isSubmitting,
       @required this.showErrorMessages,
       @required this.emailAddress,
@@ -1154,13 +1153,13 @@ class _$_SignUpAuthenticationState implements _SignUpAuthenticationState {
 
   @override
   String toString() {
-    return 'SignUpAuthenticationState(isSubmitting: $isSubmitting, showErrorMessages: $showErrorMessages, emailAddress: $emailAddress, authenticationOption: $authenticationOption, confirmPassword: $confirmPassword, password: $password, username: $username)';
+    return 'SignUpFormState(isSubmitting: $isSubmitting, showErrorMessages: $showErrorMessages, emailAddress: $emailAddress, authenticationOption: $authenticationOption, confirmPassword: $confirmPassword, password: $password, username: $username)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _SignUpAuthenticationState &&
+        (other is _SignUpFormState &&
             (identical(other.isSubmitting, isSubmitting) ||
                 const DeepCollectionEquality()
                     .equals(other.isSubmitting, isSubmitting)) &&
@@ -1197,14 +1196,12 @@ class _$_SignUpAuthenticationState implements _SignUpAuthenticationState {
 
   @JsonKey(ignore: true)
   @override
-  _$SignUpAuthenticationStateCopyWith<_SignUpAuthenticationState>
-      get copyWith =>
-          __$SignUpAuthenticationStateCopyWithImpl<_SignUpAuthenticationState>(
-              this, _$identity);
+  _$SignUpFormStateCopyWith<_SignUpFormState> get copyWith =>
+      __$SignUpFormStateCopyWithImpl<_SignUpFormState>(this, _$identity);
 }
 
-abstract class _SignUpAuthenticationState implements SignUpAuthenticationState {
-  const factory _SignUpAuthenticationState(
+abstract class _SignUpFormState implements SignUpFormState {
+  const factory _SignUpFormState(
       {@required
           bool isSubmitting,
       @required
@@ -1218,7 +1215,7 @@ abstract class _SignUpAuthenticationState implements SignUpAuthenticationState {
       @required
           Password password,
       @required
-          Username username}) = _$_SignUpAuthenticationState;
+          Username username}) = _$_SignUpFormState;
 
   @override
   bool get isSubmitting;
@@ -1236,5 +1233,5 @@ abstract class _SignUpAuthenticationState implements SignUpAuthenticationState {
   Username get username;
   @override
   @JsonKey(ignore: true)
-  _$SignUpAuthenticationStateCopyWith<_SignUpAuthenticationState> get copyWith;
+  _$SignUpFormStateCopyWith<_SignUpFormState> get copyWith;
 }

@@ -13,24 +13,20 @@ import 'package:wine/domain/authentication/password.dart';
 import 'package:wine/domain/authentication/username.dart';
 import 'package:wine/domain/models/user.dart';
 
-part 'sign_up_authentication_bloc.freezed.dart';
-part 'sign_up_authentication_event.dart';
-part 'sign_up_authentication_state.dart';
+part 'sign_up_form_bloc.freezed.dart';
+part 'sign_up_form_event.dart';
+part 'sign_up_form_state.dart';
 
 /// @nodoc
 @injectable
-class SignUpAuthenticationBloc
-    extends Bloc<SignUpAuthenticationEvent, SignUpAuthenticationState> {
+class SignUpFormBloc extends Bloc<SignUpFormEvent, SignUpFormState> {
   /// @nodoc
-  SignUpAuthenticationBloc(this._authenticationFacade)
-      : super(SignUpAuthenticationState.initial());
+  SignUpFormBloc(this._authenticationFacade) : super(SignUpFormState.initial());
 
   final IAuthenticationFacade _authenticationFacade;
 
   @override
-  Stream<SignUpAuthenticationState> mapEventToState(
-    SignUpAuthenticationEvent event,
-  ) async* {
+  Stream<SignUpFormState> mapEventToState(SignUpFormEvent event) async* {
     yield* event.map(
       confirmPasswordChanged: (event) async* {
         yield state.copyWith(

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
 
-part of 'log_in_authentication_bloc.dart';
+part of 'log_in_bloc.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -10,8 +10,8 @@ part of 'log_in_authentication_bloc.dart';
 T _$identity<T>(T value) => value;
 
 /// @nodoc
-class _$LogInAuthenticationEventTearOff {
-  const _$LogInAuthenticationEventTearOff();
+class _$LogInEventTearOff {
+  const _$LogInEventTearOff();
 
 // ignore: unused_element
   EmailChanged emailChanged(String emailStr) {
@@ -28,6 +28,13 @@ class _$LogInAuthenticationEventTearOff {
   }
 
 // ignore: unused_element
+  SignedIn signedIn(User user) {
+    return SignedIn(
+      user,
+    );
+  }
+
+// ignore: unused_element
   LogInWithEmailAndPasswordPressed signInWithEmailAndPasswordPressed() {
     return const LogInWithEmailAndPasswordPressed();
   }
@@ -36,64 +43,78 @@ class _$LogInAuthenticationEventTearOff {
   LogInWithGooglePressed signInWithGooglePressed() {
     return const LogInWithGooglePressed();
   }
+
+// ignore: unused_element
+  UserDetailsSaved userDetailsSaved(User user) {
+    return UserDetailsSaved(
+      user,
+    );
+  }
 }
 
 /// @nodoc
 // ignore: unused_element
-const $LogInAuthenticationEvent = _$LogInAuthenticationEventTearOff();
+const $LogInEvent = _$LogInEventTearOff();
 
 /// @nodoc
-mixin _$LogInAuthenticationEvent {
+mixin _$LogInEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult emailChanged(String emailStr),
     @required TResult passwordChanged(String passwordStr),
+    @required TResult signedIn(User user),
     @required TResult signInWithEmailAndPasswordPressed(),
     @required TResult signInWithGooglePressed(),
+    @required TResult userDetailsSaved(User user),
   });
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult emailChanged(String emailStr),
     TResult passwordChanged(String passwordStr),
+    TResult signedIn(User user),
     TResult signInWithEmailAndPasswordPressed(),
     TResult signInWithGooglePressed(),
+    TResult userDetailsSaved(User user),
     @required TResult orElse(),
   });
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult emailChanged(EmailChanged value),
     @required TResult passwordChanged(PasswordChanged value),
+    @required TResult signedIn(SignedIn value),
     @required
         TResult signInWithEmailAndPasswordPressed(
             LogInWithEmailAndPasswordPressed value),
     @required TResult signInWithGooglePressed(LogInWithGooglePressed value),
+    @required TResult userDetailsSaved(UserDetailsSaved value),
   });
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult emailChanged(EmailChanged value),
     TResult passwordChanged(PasswordChanged value),
+    TResult signedIn(SignedIn value),
     TResult signInWithEmailAndPasswordPressed(
         LogInWithEmailAndPasswordPressed value),
     TResult signInWithGooglePressed(LogInWithGooglePressed value),
+    TResult userDetailsSaved(UserDetailsSaved value),
     @required TResult orElse(),
   });
 }
 
 /// @nodoc
-abstract class $LogInAuthenticationEventCopyWith<$Res> {
-  factory $LogInAuthenticationEventCopyWith(LogInAuthenticationEvent value,
-          $Res Function(LogInAuthenticationEvent) then) =
-      _$LogInAuthenticationEventCopyWithImpl<$Res>;
+abstract class $LogInEventCopyWith<$Res> {
+  factory $LogInEventCopyWith(
+          LogInEvent value, $Res Function(LogInEvent) then) =
+      _$LogInEventCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$LogInAuthenticationEventCopyWithImpl<$Res>
-    implements $LogInAuthenticationEventCopyWith<$Res> {
-  _$LogInAuthenticationEventCopyWithImpl(this._value, this._then);
+class _$LogInEventCopyWithImpl<$Res> implements $LogInEventCopyWith<$Res> {
+  _$LogInEventCopyWithImpl(this._value, this._then);
 
-  final LogInAuthenticationEvent _value;
+  final LogInEvent _value;
   // ignore: unused_field
-  final $Res Function(LogInAuthenticationEvent) _then;
+  final $Res Function(LogInEvent) _then;
 }
 
 /// @nodoc
@@ -105,8 +126,7 @@ abstract class $EmailChangedCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$EmailChangedCopyWithImpl<$Res>
-    extends _$LogInAuthenticationEventCopyWithImpl<$Res>
+class _$EmailChangedCopyWithImpl<$Res> extends _$LogInEventCopyWithImpl<$Res>
     implements $EmailChangedCopyWith<$Res> {
   _$EmailChangedCopyWithImpl(
       EmailChanged _value, $Res Function(EmailChanged) _then)
@@ -134,7 +154,7 @@ class _$EmailChanged implements EmailChanged {
 
   @override
   String toString() {
-    return 'LogInAuthenticationEvent.emailChanged(emailStr: $emailStr)';
+    return 'LogInEvent.emailChanged(emailStr: $emailStr)';
   }
 
   @override
@@ -160,13 +180,17 @@ class _$EmailChanged implements EmailChanged {
   TResult when<TResult extends Object>({
     @required TResult emailChanged(String emailStr),
     @required TResult passwordChanged(String passwordStr),
+    @required TResult signedIn(User user),
     @required TResult signInWithEmailAndPasswordPressed(),
     @required TResult signInWithGooglePressed(),
+    @required TResult userDetailsSaved(User user),
   }) {
     assert(emailChanged != null);
     assert(passwordChanged != null);
+    assert(signedIn != null);
     assert(signInWithEmailAndPasswordPressed != null);
     assert(signInWithGooglePressed != null);
+    assert(userDetailsSaved != null);
     return emailChanged(emailStr);
   }
 
@@ -175,8 +199,10 @@ class _$EmailChanged implements EmailChanged {
   TResult maybeWhen<TResult extends Object>({
     TResult emailChanged(String emailStr),
     TResult passwordChanged(String passwordStr),
+    TResult signedIn(User user),
     TResult signInWithEmailAndPasswordPressed(),
     TResult signInWithGooglePressed(),
+    TResult userDetailsSaved(User user),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -191,15 +217,19 @@ class _$EmailChanged implements EmailChanged {
   TResult map<TResult extends Object>({
     @required TResult emailChanged(EmailChanged value),
     @required TResult passwordChanged(PasswordChanged value),
+    @required TResult signedIn(SignedIn value),
     @required
         TResult signInWithEmailAndPasswordPressed(
             LogInWithEmailAndPasswordPressed value),
     @required TResult signInWithGooglePressed(LogInWithGooglePressed value),
+    @required TResult userDetailsSaved(UserDetailsSaved value),
   }) {
     assert(emailChanged != null);
     assert(passwordChanged != null);
+    assert(signedIn != null);
     assert(signInWithEmailAndPasswordPressed != null);
     assert(signInWithGooglePressed != null);
+    assert(userDetailsSaved != null);
     return emailChanged(this);
   }
 
@@ -208,9 +238,11 @@ class _$EmailChanged implements EmailChanged {
   TResult maybeMap<TResult extends Object>({
     TResult emailChanged(EmailChanged value),
     TResult passwordChanged(PasswordChanged value),
+    TResult signedIn(SignedIn value),
     TResult signInWithEmailAndPasswordPressed(
         LogInWithEmailAndPasswordPressed value),
     TResult signInWithGooglePressed(LogInWithGooglePressed value),
+    TResult userDetailsSaved(UserDetailsSaved value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -221,7 +253,7 @@ class _$EmailChanged implements EmailChanged {
   }
 }
 
-abstract class EmailChanged implements LogInAuthenticationEvent {
+abstract class EmailChanged implements LogInEvent {
   const factory EmailChanged(String emailStr) = _$EmailChanged;
 
   String get emailStr;
@@ -238,8 +270,7 @@ abstract class $PasswordChangedCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$PasswordChangedCopyWithImpl<$Res>
-    extends _$LogInAuthenticationEventCopyWithImpl<$Res>
+class _$PasswordChangedCopyWithImpl<$Res> extends _$LogInEventCopyWithImpl<$Res>
     implements $PasswordChangedCopyWith<$Res> {
   _$PasswordChangedCopyWithImpl(
       PasswordChanged _value, $Res Function(PasswordChanged) _then)
@@ -267,7 +298,7 @@ class _$PasswordChanged implements PasswordChanged {
 
   @override
   String toString() {
-    return 'LogInAuthenticationEvent.passwordChanged(passwordStr: $passwordStr)';
+    return 'LogInEvent.passwordChanged(passwordStr: $passwordStr)';
   }
 
   @override
@@ -293,13 +324,17 @@ class _$PasswordChanged implements PasswordChanged {
   TResult when<TResult extends Object>({
     @required TResult emailChanged(String emailStr),
     @required TResult passwordChanged(String passwordStr),
+    @required TResult signedIn(User user),
     @required TResult signInWithEmailAndPasswordPressed(),
     @required TResult signInWithGooglePressed(),
+    @required TResult userDetailsSaved(User user),
   }) {
     assert(emailChanged != null);
     assert(passwordChanged != null);
+    assert(signedIn != null);
     assert(signInWithEmailAndPasswordPressed != null);
     assert(signInWithGooglePressed != null);
+    assert(userDetailsSaved != null);
     return passwordChanged(passwordStr);
   }
 
@@ -308,8 +343,10 @@ class _$PasswordChanged implements PasswordChanged {
   TResult maybeWhen<TResult extends Object>({
     TResult emailChanged(String emailStr),
     TResult passwordChanged(String passwordStr),
+    TResult signedIn(User user),
     TResult signInWithEmailAndPasswordPressed(),
     TResult signInWithGooglePressed(),
+    TResult userDetailsSaved(User user),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -324,15 +361,19 @@ class _$PasswordChanged implements PasswordChanged {
   TResult map<TResult extends Object>({
     @required TResult emailChanged(EmailChanged value),
     @required TResult passwordChanged(PasswordChanged value),
+    @required TResult signedIn(SignedIn value),
     @required
         TResult signInWithEmailAndPasswordPressed(
             LogInWithEmailAndPasswordPressed value),
     @required TResult signInWithGooglePressed(LogInWithGooglePressed value),
+    @required TResult userDetailsSaved(UserDetailsSaved value),
   }) {
     assert(emailChanged != null);
     assert(passwordChanged != null);
+    assert(signedIn != null);
     assert(signInWithEmailAndPasswordPressed != null);
     assert(signInWithGooglePressed != null);
+    assert(userDetailsSaved != null);
     return passwordChanged(this);
   }
 
@@ -341,9 +382,11 @@ class _$PasswordChanged implements PasswordChanged {
   TResult maybeMap<TResult extends Object>({
     TResult emailChanged(EmailChanged value),
     TResult passwordChanged(PasswordChanged value),
+    TResult signedIn(SignedIn value),
     TResult signInWithEmailAndPasswordPressed(
         LogInWithEmailAndPasswordPressed value),
     TResult signInWithGooglePressed(LogInWithGooglePressed value),
+    TResult userDetailsSaved(UserDetailsSaved value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -354,12 +397,153 @@ class _$PasswordChanged implements PasswordChanged {
   }
 }
 
-abstract class PasswordChanged implements LogInAuthenticationEvent {
+abstract class PasswordChanged implements LogInEvent {
   const factory PasswordChanged(String passwordStr) = _$PasswordChanged;
 
   String get passwordStr;
   @JsonKey(ignore: true)
   $PasswordChangedCopyWith<PasswordChanged> get copyWith;
+}
+
+/// @nodoc
+abstract class $SignedInCopyWith<$Res> {
+  factory $SignedInCopyWith(SignedIn value, $Res Function(SignedIn) then) =
+      _$SignedInCopyWithImpl<$Res>;
+  $Res call({User user});
+}
+
+/// @nodoc
+class _$SignedInCopyWithImpl<$Res> extends _$LogInEventCopyWithImpl<$Res>
+    implements $SignedInCopyWith<$Res> {
+  _$SignedInCopyWithImpl(SignedIn _value, $Res Function(SignedIn) _then)
+      : super(_value, (v) => _then(v as SignedIn));
+
+  @override
+  SignedIn get _value => super._value as SignedIn;
+
+  @override
+  $Res call({
+    Object user = freezed,
+  }) {
+    return _then(SignedIn(
+      user == freezed ? _value.user : user as User,
+    ));
+  }
+}
+
+/// @nodoc
+class _$SignedIn implements SignedIn {
+  const _$SignedIn(this.user) : assert(user != null);
+
+  @override
+  final User user;
+
+  @override
+  String toString() {
+    return 'LogInEvent.signedIn(user: $user)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is SignedIn &&
+            (identical(other.user, user) ||
+                const DeepCollectionEquality().equals(other.user, user)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(user);
+
+  @JsonKey(ignore: true)
+  @override
+  $SignedInCopyWith<SignedIn> get copyWith =>
+      _$SignedInCopyWithImpl<SignedIn>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object>({
+    @required TResult emailChanged(String emailStr),
+    @required TResult passwordChanged(String passwordStr),
+    @required TResult signedIn(User user),
+    @required TResult signInWithEmailAndPasswordPressed(),
+    @required TResult signInWithGooglePressed(),
+    @required TResult userDetailsSaved(User user),
+  }) {
+    assert(emailChanged != null);
+    assert(passwordChanged != null);
+    assert(signedIn != null);
+    assert(signInWithEmailAndPasswordPressed != null);
+    assert(signInWithGooglePressed != null);
+    assert(userDetailsSaved != null);
+    return signedIn(user);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object>({
+    TResult emailChanged(String emailStr),
+    TResult passwordChanged(String passwordStr),
+    TResult signedIn(User user),
+    TResult signInWithEmailAndPasswordPressed(),
+    TResult signInWithGooglePressed(),
+    TResult userDetailsSaved(User user),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (signedIn != null) {
+      return signedIn(user);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object>({
+    @required TResult emailChanged(EmailChanged value),
+    @required TResult passwordChanged(PasswordChanged value),
+    @required TResult signedIn(SignedIn value),
+    @required
+        TResult signInWithEmailAndPasswordPressed(
+            LogInWithEmailAndPasswordPressed value),
+    @required TResult signInWithGooglePressed(LogInWithGooglePressed value),
+    @required TResult userDetailsSaved(UserDetailsSaved value),
+  }) {
+    assert(emailChanged != null);
+    assert(passwordChanged != null);
+    assert(signedIn != null);
+    assert(signInWithEmailAndPasswordPressed != null);
+    assert(signInWithGooglePressed != null);
+    assert(userDetailsSaved != null);
+    return signedIn(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object>({
+    TResult emailChanged(EmailChanged value),
+    TResult passwordChanged(PasswordChanged value),
+    TResult signedIn(SignedIn value),
+    TResult signInWithEmailAndPasswordPressed(
+        LogInWithEmailAndPasswordPressed value),
+    TResult signInWithGooglePressed(LogInWithGooglePressed value),
+    TResult userDetailsSaved(UserDetailsSaved value),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (signedIn != null) {
+      return signedIn(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SignedIn implements LogInEvent {
+  const factory SignedIn(User user) = _$SignedIn;
+
+  User get user;
+  @JsonKey(ignore: true)
+  $SignedInCopyWith<SignedIn> get copyWith;
 }
 
 /// @nodoc
@@ -372,7 +556,7 @@ abstract class $LogInWithEmailAndPasswordPressedCopyWith<$Res> {
 
 /// @nodoc
 class _$LogInWithEmailAndPasswordPressedCopyWithImpl<$Res>
-    extends _$LogInAuthenticationEventCopyWithImpl<$Res>
+    extends _$LogInEventCopyWithImpl<$Res>
     implements $LogInWithEmailAndPasswordPressedCopyWith<$Res> {
   _$LogInWithEmailAndPasswordPressedCopyWithImpl(
       LogInWithEmailAndPasswordPressed _value,
@@ -391,7 +575,7 @@ class _$LogInWithEmailAndPasswordPressed
 
   @override
   String toString() {
-    return 'LogInAuthenticationEvent.signInWithEmailAndPasswordPressed()';
+    return 'LogInEvent.signInWithEmailAndPasswordPressed()';
   }
 
   @override
@@ -408,13 +592,17 @@ class _$LogInWithEmailAndPasswordPressed
   TResult when<TResult extends Object>({
     @required TResult emailChanged(String emailStr),
     @required TResult passwordChanged(String passwordStr),
+    @required TResult signedIn(User user),
     @required TResult signInWithEmailAndPasswordPressed(),
     @required TResult signInWithGooglePressed(),
+    @required TResult userDetailsSaved(User user),
   }) {
     assert(emailChanged != null);
     assert(passwordChanged != null);
+    assert(signedIn != null);
     assert(signInWithEmailAndPasswordPressed != null);
     assert(signInWithGooglePressed != null);
+    assert(userDetailsSaved != null);
     return signInWithEmailAndPasswordPressed();
   }
 
@@ -423,8 +611,10 @@ class _$LogInWithEmailAndPasswordPressed
   TResult maybeWhen<TResult extends Object>({
     TResult emailChanged(String emailStr),
     TResult passwordChanged(String passwordStr),
+    TResult signedIn(User user),
     TResult signInWithEmailAndPasswordPressed(),
     TResult signInWithGooglePressed(),
+    TResult userDetailsSaved(User user),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -439,15 +629,19 @@ class _$LogInWithEmailAndPasswordPressed
   TResult map<TResult extends Object>({
     @required TResult emailChanged(EmailChanged value),
     @required TResult passwordChanged(PasswordChanged value),
+    @required TResult signedIn(SignedIn value),
     @required
         TResult signInWithEmailAndPasswordPressed(
             LogInWithEmailAndPasswordPressed value),
     @required TResult signInWithGooglePressed(LogInWithGooglePressed value),
+    @required TResult userDetailsSaved(UserDetailsSaved value),
   }) {
     assert(emailChanged != null);
     assert(passwordChanged != null);
+    assert(signedIn != null);
     assert(signInWithEmailAndPasswordPressed != null);
     assert(signInWithGooglePressed != null);
+    assert(userDetailsSaved != null);
     return signInWithEmailAndPasswordPressed(this);
   }
 
@@ -456,9 +650,11 @@ class _$LogInWithEmailAndPasswordPressed
   TResult maybeMap<TResult extends Object>({
     TResult emailChanged(EmailChanged value),
     TResult passwordChanged(PasswordChanged value),
+    TResult signedIn(SignedIn value),
     TResult signInWithEmailAndPasswordPressed(
         LogInWithEmailAndPasswordPressed value),
     TResult signInWithGooglePressed(LogInWithGooglePressed value),
+    TResult userDetailsSaved(UserDetailsSaved value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -469,8 +665,7 @@ class _$LogInWithEmailAndPasswordPressed
   }
 }
 
-abstract class LogInWithEmailAndPasswordPressed
-    implements LogInAuthenticationEvent {
+abstract class LogInWithEmailAndPasswordPressed implements LogInEvent {
   const factory LogInWithEmailAndPasswordPressed() =
       _$LogInWithEmailAndPasswordPressed;
 }
@@ -484,7 +679,7 @@ abstract class $LogInWithGooglePressedCopyWith<$Res> {
 
 /// @nodoc
 class _$LogInWithGooglePressedCopyWithImpl<$Res>
-    extends _$LogInAuthenticationEventCopyWithImpl<$Res>
+    extends _$LogInEventCopyWithImpl<$Res>
     implements $LogInWithGooglePressedCopyWith<$Res> {
   _$LogInWithGooglePressedCopyWithImpl(LogInWithGooglePressed _value,
       $Res Function(LogInWithGooglePressed) _then)
@@ -500,7 +695,7 @@ class _$LogInWithGooglePressed implements LogInWithGooglePressed {
 
   @override
   String toString() {
-    return 'LogInAuthenticationEvent.signInWithGooglePressed()';
+    return 'LogInEvent.signInWithGooglePressed()';
   }
 
   @override
@@ -516,13 +711,17 @@ class _$LogInWithGooglePressed implements LogInWithGooglePressed {
   TResult when<TResult extends Object>({
     @required TResult emailChanged(String emailStr),
     @required TResult passwordChanged(String passwordStr),
+    @required TResult signedIn(User user),
     @required TResult signInWithEmailAndPasswordPressed(),
     @required TResult signInWithGooglePressed(),
+    @required TResult userDetailsSaved(User user),
   }) {
     assert(emailChanged != null);
     assert(passwordChanged != null);
+    assert(signedIn != null);
     assert(signInWithEmailAndPasswordPressed != null);
     assert(signInWithGooglePressed != null);
+    assert(userDetailsSaved != null);
     return signInWithGooglePressed();
   }
 
@@ -531,8 +730,10 @@ class _$LogInWithGooglePressed implements LogInWithGooglePressed {
   TResult maybeWhen<TResult extends Object>({
     TResult emailChanged(String emailStr),
     TResult passwordChanged(String passwordStr),
+    TResult signedIn(User user),
     TResult signInWithEmailAndPasswordPressed(),
     TResult signInWithGooglePressed(),
+    TResult userDetailsSaved(User user),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -547,15 +748,19 @@ class _$LogInWithGooglePressed implements LogInWithGooglePressed {
   TResult map<TResult extends Object>({
     @required TResult emailChanged(EmailChanged value),
     @required TResult passwordChanged(PasswordChanged value),
+    @required TResult signedIn(SignedIn value),
     @required
         TResult signInWithEmailAndPasswordPressed(
             LogInWithEmailAndPasswordPressed value),
     @required TResult signInWithGooglePressed(LogInWithGooglePressed value),
+    @required TResult userDetailsSaved(UserDetailsSaved value),
   }) {
     assert(emailChanged != null);
     assert(passwordChanged != null);
+    assert(signedIn != null);
     assert(signInWithEmailAndPasswordPressed != null);
     assert(signInWithGooglePressed != null);
+    assert(userDetailsSaved != null);
     return signInWithGooglePressed(this);
   }
 
@@ -564,9 +769,11 @@ class _$LogInWithGooglePressed implements LogInWithGooglePressed {
   TResult maybeMap<TResult extends Object>({
     TResult emailChanged(EmailChanged value),
     TResult passwordChanged(PasswordChanged value),
+    TResult signedIn(SignedIn value),
     TResult signInWithEmailAndPasswordPressed(
         LogInWithEmailAndPasswordPressed value),
     TResult signInWithGooglePressed(LogInWithGooglePressed value),
+    TResult userDetailsSaved(UserDetailsSaved value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -577,18 +784,162 @@ class _$LogInWithGooglePressed implements LogInWithGooglePressed {
   }
 }
 
-abstract class LogInWithGooglePressed implements LogInAuthenticationEvent {
+abstract class LogInWithGooglePressed implements LogInEvent {
   const factory LogInWithGooglePressed() = _$LogInWithGooglePressed;
 }
 
 /// @nodoc
-class _$LogInAuthenticationStateTearOff {
-  const _$LogInAuthenticationStateTearOff();
+abstract class $UserDetailsSavedCopyWith<$Res> {
+  factory $UserDetailsSavedCopyWith(
+          UserDetailsSaved value, $Res Function(UserDetailsSaved) then) =
+      _$UserDetailsSavedCopyWithImpl<$Res>;
+  $Res call({User user});
+}
+
+/// @nodoc
+class _$UserDetailsSavedCopyWithImpl<$Res>
+    extends _$LogInEventCopyWithImpl<$Res>
+    implements $UserDetailsSavedCopyWith<$Res> {
+  _$UserDetailsSavedCopyWithImpl(
+      UserDetailsSaved _value, $Res Function(UserDetailsSaved) _then)
+      : super(_value, (v) => _then(v as UserDetailsSaved));
+
+  @override
+  UserDetailsSaved get _value => super._value as UserDetailsSaved;
+
+  @override
+  $Res call({
+    Object user = freezed,
+  }) {
+    return _then(UserDetailsSaved(
+      user == freezed ? _value.user : user as User,
+    ));
+  }
+}
+
+/// @nodoc
+class _$UserDetailsSaved implements UserDetailsSaved {
+  const _$UserDetailsSaved(this.user) : assert(user != null);
+
+  @override
+  final User user;
+
+  @override
+  String toString() {
+    return 'LogInEvent.userDetailsSaved(user: $user)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is UserDetailsSaved &&
+            (identical(other.user, user) ||
+                const DeepCollectionEquality().equals(other.user, user)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(user);
+
+  @JsonKey(ignore: true)
+  @override
+  $UserDetailsSavedCopyWith<UserDetailsSaved> get copyWith =>
+      _$UserDetailsSavedCopyWithImpl<UserDetailsSaved>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object>({
+    @required TResult emailChanged(String emailStr),
+    @required TResult passwordChanged(String passwordStr),
+    @required TResult signedIn(User user),
+    @required TResult signInWithEmailAndPasswordPressed(),
+    @required TResult signInWithGooglePressed(),
+    @required TResult userDetailsSaved(User user),
+  }) {
+    assert(emailChanged != null);
+    assert(passwordChanged != null);
+    assert(signedIn != null);
+    assert(signInWithEmailAndPasswordPressed != null);
+    assert(signInWithGooglePressed != null);
+    assert(userDetailsSaved != null);
+    return userDetailsSaved(user);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object>({
+    TResult emailChanged(String emailStr),
+    TResult passwordChanged(String passwordStr),
+    TResult signedIn(User user),
+    TResult signInWithEmailAndPasswordPressed(),
+    TResult signInWithGooglePressed(),
+    TResult userDetailsSaved(User user),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (userDetailsSaved != null) {
+      return userDetailsSaved(user);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object>({
+    @required TResult emailChanged(EmailChanged value),
+    @required TResult passwordChanged(PasswordChanged value),
+    @required TResult signedIn(SignedIn value),
+    @required
+        TResult signInWithEmailAndPasswordPressed(
+            LogInWithEmailAndPasswordPressed value),
+    @required TResult signInWithGooglePressed(LogInWithGooglePressed value),
+    @required TResult userDetailsSaved(UserDetailsSaved value),
+  }) {
+    assert(emailChanged != null);
+    assert(passwordChanged != null);
+    assert(signedIn != null);
+    assert(signInWithEmailAndPasswordPressed != null);
+    assert(signInWithGooglePressed != null);
+    assert(userDetailsSaved != null);
+    return userDetailsSaved(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object>({
+    TResult emailChanged(EmailChanged value),
+    TResult passwordChanged(PasswordChanged value),
+    TResult signedIn(SignedIn value),
+    TResult signInWithEmailAndPasswordPressed(
+        LogInWithEmailAndPasswordPressed value),
+    TResult signInWithGooglePressed(LogInWithGooglePressed value),
+    TResult userDetailsSaved(UserDetailsSaved value),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (userDetailsSaved != null) {
+      return userDetailsSaved(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UserDetailsSaved implements LogInEvent {
+  const factory UserDetailsSaved(User user) = _$UserDetailsSaved;
+
+  User get user;
+  @JsonKey(ignore: true)
+  $UserDetailsSavedCopyWith<UserDetailsSaved> get copyWith;
+}
+
+/// @nodoc
+class _$LogInStateTearOff {
+  const _$LogInStateTearOff();
 
 // ignore: unused_element
-  _LogInAuthenticationState call(
+  _LogInState call(
       {@required
-          bool isSubmitting,
+          bool isProcessing,
       @required
           bool showErrorMessages,
       @required
@@ -596,12 +947,18 @@ class _$LogInAuthenticationStateTearOff {
       @required
           Option<Either<AuthenticationFailure, User>> authenticationOption,
       @required
+          Option<Either<SessionFailure, dynamic>> sessionOption,
+      @required
+          Option<Either<UserFailure, dynamic>> userOption,
+      @required
           Password password}) {
-    return _LogInAuthenticationState(
-      isSubmitting: isSubmitting,
+    return _LogInState(
+      isProcessing: isProcessing,
       showErrorMessages: showErrorMessages,
       emailAddress: emailAddress,
       authenticationOption: authenticationOption,
+      sessionOption: sessionOption,
+      userOption: userOption,
       password: password,
     );
   }
@@ -609,53 +966,58 @@ class _$LogInAuthenticationStateTearOff {
 
 /// @nodoc
 // ignore: unused_element
-const $LogInAuthenticationState = _$LogInAuthenticationStateTearOff();
+const $LogInState = _$LogInStateTearOff();
 
 /// @nodoc
-mixin _$LogInAuthenticationState {
-  bool get isSubmitting;
+mixin _$LogInState {
+  bool get isProcessing;
   bool get showErrorMessages;
   EmailAddress get emailAddress;
   Option<Either<AuthenticationFailure, User>> get authenticationOption;
+  Option<Either<SessionFailure, dynamic>> get sessionOption;
+  Option<Either<UserFailure, dynamic>> get userOption;
   Password get password;
 
   @JsonKey(ignore: true)
-  $LogInAuthenticationStateCopyWith<LogInAuthenticationState> get copyWith;
+  $LogInStateCopyWith<LogInState> get copyWith;
 }
 
 /// @nodoc
-abstract class $LogInAuthenticationStateCopyWith<$Res> {
-  factory $LogInAuthenticationStateCopyWith(LogInAuthenticationState value,
-          $Res Function(LogInAuthenticationState) then) =
-      _$LogInAuthenticationStateCopyWithImpl<$Res>;
+abstract class $LogInStateCopyWith<$Res> {
+  factory $LogInStateCopyWith(
+          LogInState value, $Res Function(LogInState) then) =
+      _$LogInStateCopyWithImpl<$Res>;
   $Res call(
-      {bool isSubmitting,
+      {bool isProcessing,
       bool showErrorMessages,
       EmailAddress emailAddress,
       Option<Either<AuthenticationFailure, User>> authenticationOption,
+      Option<Either<SessionFailure, dynamic>> sessionOption,
+      Option<Either<UserFailure, dynamic>> userOption,
       Password password});
 }
 
 /// @nodoc
-class _$LogInAuthenticationStateCopyWithImpl<$Res>
-    implements $LogInAuthenticationStateCopyWith<$Res> {
-  _$LogInAuthenticationStateCopyWithImpl(this._value, this._then);
+class _$LogInStateCopyWithImpl<$Res> implements $LogInStateCopyWith<$Res> {
+  _$LogInStateCopyWithImpl(this._value, this._then);
 
-  final LogInAuthenticationState _value;
+  final LogInState _value;
   // ignore: unused_field
-  final $Res Function(LogInAuthenticationState) _then;
+  final $Res Function(LogInState) _then;
 
   @override
   $Res call({
-    Object isSubmitting = freezed,
+    Object isProcessing = freezed,
     Object showErrorMessages = freezed,
     Object emailAddress = freezed,
     Object authenticationOption = freezed,
+    Object sessionOption = freezed,
+    Object userOption = freezed,
     Object password = freezed,
   }) {
     return _then(_value.copyWith(
-      isSubmitting:
-          isSubmitting == freezed ? _value.isSubmitting : isSubmitting as bool,
+      isProcessing:
+          isProcessing == freezed ? _value.isProcessing : isProcessing as bool,
       showErrorMessages: showErrorMessages == freezed
           ? _value.showErrorMessages
           : showErrorMessages as bool,
@@ -665,49 +1027,56 @@ class _$LogInAuthenticationStateCopyWithImpl<$Res>
       authenticationOption: authenticationOption == freezed
           ? _value.authenticationOption
           : authenticationOption as Option<Either<AuthenticationFailure, User>>,
+      sessionOption: sessionOption == freezed
+          ? _value.sessionOption
+          : sessionOption as Option<Either<SessionFailure, dynamic>>,
+      userOption: userOption == freezed
+          ? _value.userOption
+          : userOption as Option<Either<UserFailure, dynamic>>,
       password: password == freezed ? _value.password : password as Password,
     ));
   }
 }
 
 /// @nodoc
-abstract class _$LogInAuthenticationStateCopyWith<$Res>
-    implements $LogInAuthenticationStateCopyWith<$Res> {
-  factory _$LogInAuthenticationStateCopyWith(_LogInAuthenticationState value,
-          $Res Function(_LogInAuthenticationState) then) =
-      __$LogInAuthenticationStateCopyWithImpl<$Res>;
+abstract class _$LogInStateCopyWith<$Res> implements $LogInStateCopyWith<$Res> {
+  factory _$LogInStateCopyWith(
+          _LogInState value, $Res Function(_LogInState) then) =
+      __$LogInStateCopyWithImpl<$Res>;
   @override
   $Res call(
-      {bool isSubmitting,
+      {bool isProcessing,
       bool showErrorMessages,
       EmailAddress emailAddress,
       Option<Either<AuthenticationFailure, User>> authenticationOption,
+      Option<Either<SessionFailure, dynamic>> sessionOption,
+      Option<Either<UserFailure, dynamic>> userOption,
       Password password});
 }
 
 /// @nodoc
-class __$LogInAuthenticationStateCopyWithImpl<$Res>
-    extends _$LogInAuthenticationStateCopyWithImpl<$Res>
-    implements _$LogInAuthenticationStateCopyWith<$Res> {
-  __$LogInAuthenticationStateCopyWithImpl(_LogInAuthenticationState _value,
-      $Res Function(_LogInAuthenticationState) _then)
-      : super(_value, (v) => _then(v as _LogInAuthenticationState));
+class __$LogInStateCopyWithImpl<$Res> extends _$LogInStateCopyWithImpl<$Res>
+    implements _$LogInStateCopyWith<$Res> {
+  __$LogInStateCopyWithImpl(
+      _LogInState _value, $Res Function(_LogInState) _then)
+      : super(_value, (v) => _then(v as _LogInState));
 
   @override
-  _LogInAuthenticationState get _value =>
-      super._value as _LogInAuthenticationState;
+  _LogInState get _value => super._value as _LogInState;
 
   @override
   $Res call({
-    Object isSubmitting = freezed,
+    Object isProcessing = freezed,
     Object showErrorMessages = freezed,
     Object emailAddress = freezed,
     Object authenticationOption = freezed,
+    Object sessionOption = freezed,
+    Object userOption = freezed,
     Object password = freezed,
   }) {
-    return _then(_LogInAuthenticationState(
-      isSubmitting:
-          isSubmitting == freezed ? _value.isSubmitting : isSubmitting as bool,
+    return _then(_LogInState(
+      isProcessing:
+          isProcessing == freezed ? _value.isProcessing : isProcessing as bool,
       showErrorMessages: showErrorMessages == freezed
           ? _value.showErrorMessages
           : showErrorMessages as bool,
@@ -717,27 +1086,37 @@ class __$LogInAuthenticationStateCopyWithImpl<$Res>
       authenticationOption: authenticationOption == freezed
           ? _value.authenticationOption
           : authenticationOption as Option<Either<AuthenticationFailure, User>>,
+      sessionOption: sessionOption == freezed
+          ? _value.sessionOption
+          : sessionOption as Option<Either<SessionFailure, dynamic>>,
+      userOption: userOption == freezed
+          ? _value.userOption
+          : userOption as Option<Either<UserFailure, dynamic>>,
       password: password == freezed ? _value.password : password as Password,
     ));
   }
 }
 
 /// @nodoc
-class _$_LogInAuthenticationState implements _LogInAuthenticationState {
-  const _$_LogInAuthenticationState(
-      {@required this.isSubmitting,
+class _$_LogInState implements _LogInState {
+  const _$_LogInState(
+      {@required this.isProcessing,
       @required this.showErrorMessages,
       @required this.emailAddress,
       @required this.authenticationOption,
+      @required this.sessionOption,
+      @required this.userOption,
       @required this.password})
-      : assert(isSubmitting != null),
+      : assert(isProcessing != null),
         assert(showErrorMessages != null),
         assert(emailAddress != null),
         assert(authenticationOption != null),
+        assert(sessionOption != null),
+        assert(userOption != null),
         assert(password != null);
 
   @override
-  final bool isSubmitting;
+  final bool isProcessing;
   @override
   final bool showErrorMessages;
   @override
@@ -745,20 +1124,24 @@ class _$_LogInAuthenticationState implements _LogInAuthenticationState {
   @override
   final Option<Either<AuthenticationFailure, User>> authenticationOption;
   @override
+  final Option<Either<SessionFailure, dynamic>> sessionOption;
+  @override
+  final Option<Either<UserFailure, dynamic>> userOption;
+  @override
   final Password password;
 
   @override
   String toString() {
-    return 'LogInAuthenticationState(isSubmitting: $isSubmitting, showErrorMessages: $showErrorMessages, emailAddress: $emailAddress, authenticationOption: $authenticationOption, password: $password)';
+    return 'LogInState(isProcessing: $isProcessing, showErrorMessages: $showErrorMessages, emailAddress: $emailAddress, authenticationOption: $authenticationOption, sessionOption: $sessionOption, userOption: $userOption, password: $password)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _LogInAuthenticationState &&
-            (identical(other.isSubmitting, isSubmitting) ||
+        (other is _LogInState &&
+            (identical(other.isProcessing, isProcessing) ||
                 const DeepCollectionEquality()
-                    .equals(other.isSubmitting, isSubmitting)) &&
+                    .equals(other.isProcessing, isProcessing)) &&
             (identical(other.showErrorMessages, showErrorMessages) ||
                 const DeepCollectionEquality()
                     .equals(other.showErrorMessages, showErrorMessages)) &&
@@ -768,6 +1151,12 @@ class _$_LogInAuthenticationState implements _LogInAuthenticationState {
             (identical(other.authenticationOption, authenticationOption) ||
                 const DeepCollectionEquality().equals(
                     other.authenticationOption, authenticationOption)) &&
+            (identical(other.sessionOption, sessionOption) ||
+                const DeepCollectionEquality()
+                    .equals(other.sessionOption, sessionOption)) &&
+            (identical(other.userOption, userOption) ||
+                const DeepCollectionEquality()
+                    .equals(other.userOption, userOption)) &&
             (identical(other.password, password) ||
                 const DeepCollectionEquality()
                     .equals(other.password, password)));
@@ -776,23 +1165,24 @@ class _$_LogInAuthenticationState implements _LogInAuthenticationState {
   @override
   int get hashCode =>
       runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(isSubmitting) ^
+      const DeepCollectionEquality().hash(isProcessing) ^
       const DeepCollectionEquality().hash(showErrorMessages) ^
       const DeepCollectionEquality().hash(emailAddress) ^
       const DeepCollectionEquality().hash(authenticationOption) ^
+      const DeepCollectionEquality().hash(sessionOption) ^
+      const DeepCollectionEquality().hash(userOption) ^
       const DeepCollectionEquality().hash(password);
 
   @JsonKey(ignore: true)
   @override
-  _$LogInAuthenticationStateCopyWith<_LogInAuthenticationState> get copyWith =>
-      __$LogInAuthenticationStateCopyWithImpl<_LogInAuthenticationState>(
-          this, _$identity);
+  _$LogInStateCopyWith<_LogInState> get copyWith =>
+      __$LogInStateCopyWithImpl<_LogInState>(this, _$identity);
 }
 
-abstract class _LogInAuthenticationState implements LogInAuthenticationState {
-  const factory _LogInAuthenticationState(
+abstract class _LogInState implements LogInState {
+  const factory _LogInState(
       {@required
-          bool isSubmitting,
+          bool isProcessing,
       @required
           bool showErrorMessages,
       @required
@@ -800,10 +1190,14 @@ abstract class _LogInAuthenticationState implements LogInAuthenticationState {
       @required
           Option<Either<AuthenticationFailure, User>> authenticationOption,
       @required
-          Password password}) = _$_LogInAuthenticationState;
+          Option<Either<SessionFailure, dynamic>> sessionOption,
+      @required
+          Option<Either<UserFailure, dynamic>> userOption,
+      @required
+          Password password}) = _$_LogInState;
 
   @override
-  bool get isSubmitting;
+  bool get isProcessing;
   @override
   bool get showErrorMessages;
   @override
@@ -811,8 +1205,12 @@ abstract class _LogInAuthenticationState implements LogInAuthenticationState {
   @override
   Option<Either<AuthenticationFailure, User>> get authenticationOption;
   @override
+  Option<Either<SessionFailure, dynamic>> get sessionOption;
+  @override
+  Option<Either<UserFailure, dynamic>> get userOption;
+  @override
   Password get password;
   @override
   @JsonKey(ignore: true)
-  _$LogInAuthenticationStateCopyWith<_LogInAuthenticationState> get copyWith;
+  _$LogInStateCopyWith<_LogInState> get copyWith;
 }

@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart';
 
+import 'package:wine/domain/authentication/authentication_failure.dart';
 import 'package:wine/domain/authentication/email_address.dart';
-import 'package:wine/domain/authentication/failures/authentication_failure.dart';
 import 'package:wine/domain/authentication/password.dart';
 import 'package:wine/domain/authentication/username.dart';
 import 'package:wine/domain/models/user.dart';

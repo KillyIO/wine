@@ -47,7 +47,7 @@ void main() {
         'deleteConfig -',
         () {
           test(
-            'When deleting config successful Then return ConfigDeletedSuccess',
+            'When config deleted Then return Unit',
             () async {
               when(mockConfigsBox.get(any)).thenReturn(null);
 
@@ -63,7 +63,7 @@ void main() {
           );
 
           test(
-            'When deleting config fails Then return DeleteConfigFailure',
+            'When coinfig not deleted Then return ConfigNotDeleted',
             () async {
               when(mockConfigsBox.get(any)).thenReturn(config);
 
@@ -72,7 +72,7 @@ void main() {
               expect(result.isLeft(), true);
 
               result.fold(
-                (failure) => expect(failure, isA<DeleteConfigFailure>()),
+                (failure) => expect(failure, isA<ConfigNotDeleted>()),
                 (_) {},
               );
             },
@@ -84,12 +84,7 @@ void main() {
         'fetchConfig -',
         () {
           test(
-            '''
-            Scenario: We trying to fetch the config inside the local database [SUCCESS CASE]
-            Given the Box is not empty
-            When fetchConfig() is called
-            Then configFetchedSuccess() is returned with the Config()
-            ''',
+            'When config fetched Then return config',
             () async {
               when(mockConfigsBox.get(any)).thenReturn(config);
 
@@ -99,13 +94,7 @@ void main() {
 
               result.fold(
                 (_) {},
-                (success) {
-                  expect(success, isA<ConfigFetchedSuccess>());
-
-                  if (success is ConfigFetchedSuccess) {
-                    expect(success.config, config);
-                  }
-                },
+                (success) => expect(success, config),
               );
             },
           );

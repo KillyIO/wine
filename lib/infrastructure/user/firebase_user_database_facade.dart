@@ -2,23 +2,22 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
 import 'package:wine/domain/authentication/username.dart';
-import 'package:wine/domain/database/facades/online/i_user_database_facade.dart';
 
-import 'package:wine/domain/database/failures/user_database_failure.dart';
-import 'package:wine/domain/database/successes/user_database_success.dart';
 import 'package:wine/domain/models/user.dart';
+import 'package:wine/domain/user/i_user_facade.dart';
+import 'package:wine/domain/user/user_failure.dart';
 import 'package:wine/utils/paths/users.dart';
 
 /// @nodoc
-@LazySingleton(as: IUserDatabaseFacade)
-class FirebaseUserDatabaseFacade extends IUserDatabaseFacade {
+@LazySingleton(as: IUserFacade)
+class FirebaseUserFacade extends IUserFacade {
   /// @nodoc
-  FirebaseUserDatabaseFacade(this._firestore);
+  FirebaseUserFacade(this._firestore);
 
   final FirebaseFirestore _firestore;
 
   @override
-  Future<Either<UserDatabaseFailure, UserDatabaseSuccess>> loadUser(
+  Future<Either<UserFailure, User>> loadUser(
     String userUID,
   ) async {
     try {
@@ -27,18 +26,18 @@ class FirebaseUserDatabaseFacade extends IUserDatabaseFacade {
 
       if (documentSnapshot != null && documentSnapshot.exists) {
         final user = User.fromFirestore(documentSnapshot);
-        return right(UserDatabaseSuccess.userLoadedSuccess(user));
+        return right(user);
       }
-      return left(const UserDatabaseFailure.userNotFoundFailure());
+      return left(const UserFailure.userNotFound());
     } on FirebaseException catch (_) {
-      return left(const UserDatabaseFailure.serverFailure());
+      return left(const UserFailure.serverError());
     } catch (_) {
-      return left(const UserDatabaseFailure.unexpectedFailure());
+      return left(const UserFailure.unexpectedError());
     }
   }
 
   @override
-  Future<Either<UserDatabaseFailure, UserDatabaseSuccess>> saveDetailsFromUser(
+  Future<Either<UserFailure, User>> saveDetailsFromUser(
     User user,
   ) async {
     try {
@@ -51,11 +50,7 @@ class FirebaseUserDatabaseFacade extends IUserDatabaseFacade {
       User dbUser;
       failureOrSuccess.fold(
         (_) {},
-        (success) {
-          if (success is UserLoadedSuccess) {
-            dbUser = success.user;
-          }
-        },
+        (success) => dbUser = success,
       );
 
       if (dbUser != null) {
@@ -65,16 +60,16 @@ class FirebaseUserDatabaseFacade extends IUserDatabaseFacade {
 
       await usersRef.set(finalUser.toMap(), SetOptions(merge: true));
 
-      return right(UserDatabaseSuccess.userDetailsSavedSuccess(finalUser));
+      return right(finalUser);
     } on FirebaseException catch (_) {
-      return left(const UserDatabaseFailure.serverFailure());
+      return left(const UserFailure.serverError());
     } catch (_) {
-      return left(const UserDatabaseFailure.unexpectedFailure());
+      return left(const UserFailure.unexpectedError());
     }
   }
 
   @override
-  Future<Either<UserDatabaseFailure, UserDatabaseSuccess>> saveUsername(
+  Future<Either<UserFailure, Unit>> saveUsername(
     String userUID,
     Username username,
   ) async {
@@ -86,11 +81,11 @@ class FirebaseUserDatabaseFacade extends IUserDatabaseFacade {
 
       await mapReference.set({'uid': userUID}, SetOptions(merge: true));
 
-      return right(UserDatabaseSuccess.usernameSavedSuccess(usernameStr));
+      return right(unit);
     } on FirebaseException catch (_) {
-      return left(const UserDatabaseFailure.serverFailure());
+      return left(const UserFailure.serverError());
     } catch (_) {
-      return left(const UserDatabaseFailure.unexpectedFailure());
+      return left(const UserFailure.unexpectedError());
     }
   }
 }
