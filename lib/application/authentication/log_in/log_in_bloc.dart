@@ -143,8 +143,7 @@ class LogInBloc extends Bloc<LogInEvent, LogInState> {
         }
       },
       userDetailsSaved: (value) async* {
-        final failureOrSuccess =
-            await _sessionFacade.initializeSession(user: value.user);
+        final failureOrSuccess = await _sessionFacade.createSession(value.user);
 
         yield state.copyWith(
           authenticationOption: none(),

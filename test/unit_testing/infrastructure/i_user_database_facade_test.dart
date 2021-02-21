@@ -9,8 +9,8 @@ import 'package:wine/domain/user/i_user_facade.dart';
 import 'package:wine/domain/user/user_failure.dart';
 import 'package:wine/infrastructure/user/firebase_user_database_facade.dart';
 
-import '../../../mocks/firebase_firestore_mocks.dart';
-import '../../../utils/constants.dart';
+import '../../mocks/firebase_firestore_mocks.dart';
+import '../../utils/constants.dart';
 
 void main() {
   User user;

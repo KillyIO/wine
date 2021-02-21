@@ -6,8 +6,8 @@ import 'package:wine/domain/session/i_session_facade.dart';
 import 'package:wine/domain/session/session_failure.dart';
 import 'package:wine/infrastructure/session/hive_session_facade.dart';
 
-import '../../../mocks/hive_mocks.dart';
-import '../../../utils/constants.dart';
+import '../../mocks/hive_mocks.dart';
+import '../../utils/constants.dart';
 
 void main() {
   User user;

@@ -12,10 +12,10 @@ import 'package:wine/domain/authentication/username.dart';
 import 'package:wine/domain/models/user.dart';
 import 'package:wine/infrastructure/authentication/firebase_authentication_facade.dart';
 
-import '../../../mocks/firebase_auth_mocks.dart';
-import '../../../mocks/firebase_firestore_mocks.dart';
-import '../../../mocks/google_sign_in_mocks.dart';
-import '../../../utils/constants.dart';
+import '../../mocks/firebase_auth_mocks.dart';
+import '../../mocks/firebase_firestore_mocks.dart';
+import '../../mocks/google_sign_in_mocks.dart';
+import '../../utils/constants.dart';
 
 void main() {
   const validEmail = 'email@email.com';

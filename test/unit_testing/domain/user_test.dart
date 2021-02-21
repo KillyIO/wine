@@ -2,9 +2,9 @@ import 'package:mockito/mockito.dart';
 import 'package:test/test.dart';
 import 'package:wine/domain/models/user.dart';
 
-import '../../../mocks/firebase_auth_mocks.dart';
-import '../../../mocks/firebase_firestore_mocks.dart';
-import '../../../utils/constants.dart';
+import '../../mocks/firebase_auth_mocks.dart';
+import '../../mocks/firebase_firestore_mocks.dart';
+import '../../utils/constants.dart';
 
 void main() {
   final data = <String, dynamic>{};

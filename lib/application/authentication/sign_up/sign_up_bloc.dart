@@ -5,28 +5,28 @@ import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:meta/meta.dart';
+import 'package:wine/domain/authentication/authentication_failure.dart';
 
 import 'package:wine/domain/authentication/email_address.dart';
-import 'package:wine/domain/authentication/failures/authentication_failure.dart';
 import 'package:wine/domain/authentication/i_authentication_facade.dart';
 import 'package:wine/domain/authentication/password.dart';
 import 'package:wine/domain/authentication/username.dart';
 import 'package:wine/domain/models/user.dart';
 
-part 'sign_up_form_bloc.freezed.dart';
-part 'sign_up_form_event.dart';
-part 'sign_up_form_state.dart';
+part 'sign_up_bloc.freezed.dart';
+part 'sign_up_event.dart';
+part 'sign_up_state.dart';
 
 /// @nodoc
 @injectable
-class SignUpFormBloc extends Bloc<SignUpFormEvent, SignUpFormState> {
+class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
   /// @nodoc
-  SignUpFormBloc(this._authenticationFacade) : super(SignUpFormState.initial());
+  SignUpBloc(this._authenticationFacade) : super(SignUpState.initial());
 
   final IAuthenticationFacade _authenticationFacade;
 
   @override
-  Stream<SignUpFormState> mapEventToState(SignUpFormEvent event) async* {
+  Stream<SignUpState> mapEventToState(SignUpEvent event) async* {
     yield* event.map(
       confirmPasswordChanged: (event) async* {
         yield state.copyWith(

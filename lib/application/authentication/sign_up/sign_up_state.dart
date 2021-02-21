@@ -1,11 +1,11 @@
-part of 'sign_up_form_bloc.dart';
+part of 'sign_up_bloc.dart';
 
 /// @nodoc
 @freezed
-abstract class SignUpFormState with _$SignUpFormState {
+abstract class SignUpState with _$SignUpState {
   /// @nodoc
-  const factory SignUpFormState({
-    @required bool isSubmitting,
+  const factory SignUpState({
+    @required bool isProcessing,
     @required bool showErrorMessages,
     @required EmailAddress emailAddress,
     @required
@@ -13,14 +13,14 @@ abstract class SignUpFormState with _$SignUpFormState {
     @required Password confirmPassword,
     @required Password password,
     @required Username username,
-  }) = _SignUpFormState;
+  }) = _SignUpState;
 
   /// @nodoc
-  factory SignUpFormState.initial() => SignUpFormState(
+  factory SignUpState.initial() => SignUpState(
         authenticationOption: none(),
         confirmPassword: Password('', ''),
         emailAddress: EmailAddress(''),
-        isSubmitting: false,
+        isProcessing: false,
         password: Password(''),
         showErrorMessages: false,
         username: Username(''),

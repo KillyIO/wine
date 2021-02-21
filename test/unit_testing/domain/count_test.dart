@@ -2,8 +2,8 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mockito/mockito.dart';
 import 'package:wine/domain/models/count.dart';
 
-import '../../../mocks/firebase_firestore_mocks.dart';
-import '../../../utils/constants.dart';
+import '../../mocks/firebase_firestore_mocks.dart';
+import '../../utils/constants.dart';
 
 void main() {
   final data = <String, dynamic>{};
