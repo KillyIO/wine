@@ -1,13 +1,16 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:dartz/dartz.dart';
 import 'package:mockito/mockito.dart';
 import 'package:test/test.dart';
+
 import 'package:wine/domain/authentication/username.dart';
-import 'package:wine/domain/database/successes/user_database_success.dart';
 import 'package:wine/domain/models/user.dart';
 import 'package:wine/domain/user/i_user_facade.dart';
+import 'package:wine/domain/user/user_failure.dart';
 import 'package:wine/infrastructure/user/firebase_user_database_facade.dart';
 
 import '../../../mocks/firebase_firestore_mocks.dart';
+import '../../../utils/constants.dart';
 
 void main() {
   User user;
@@ -21,14 +24,19 @@ void main() {
 
   setUp(() {
     user = User(
+      isBanned: false,
+      isDeleted: false,
+      banDeadline: null,
+      createdAt: testTimeStamp,
+      updatedAt: testTimeStamp,
+      banReason: null,
       bio: null,
-      createdAt: 1592255973418,
-      email: 'email@email.com',
-      name: 'Name',
+      deletionReason: null,
+      email: testEmail,
+      name: testName,
       profilePictureURL: null,
-      uid: 'uid',
-      updatedAt: 1608137445032,
-      username: 'username',
+      uid: testUserUID,
+      username: testUsername,
     );
 
     mockFirestore = MockFirestore();
@@ -46,7 +54,7 @@ void main() {
         'loadUser -',
         () {
           test(
-            'When user loaded Then return user',
+            'When user found Then return user',
             () async {
               when(mockFirestore.collection(any))
                   .thenReturn(mockCollectionReference);
@@ -60,7 +68,6 @@ void main() {
               final result = await userFacade.loadUser(user.uid);
 
               expect(result.isRight(), true);
-
               result.fold(
                 (_) {},
                 (success) => expect(success, user),
@@ -69,7 +76,7 @@ void main() {
           );
 
           test(
-            'When User not found Then return UserNotFoundFailure',
+            'When user not found Then return UserNotFound',
             () async {
               when(mockFirestore.collection(any))
                   .thenReturn(mockCollectionReference);
@@ -82,16 +89,15 @@ void main() {
               final result = await userFacade.loadUser('123456');
 
               expect(result.isLeft(), true);
-
               result.fold(
-                (failure) => expect(failure, isA<UserNotFoundFailure>()),
+                (failure) => expect(failure, isA<UserNotFound>()),
                 (_) {},
               );
             },
           );
 
           test(
-            'When server exception occurs Then return ServerFailure',
+            'When FirebaseException thrown Then return ServerError',
             () async {
               when(mockFirestore.collection(any)).thenThrow(
                 FirebaseException(
@@ -101,35 +107,27 @@ void main() {
                 ),
               );
 
-              final result = await userDatabaseFacade.loadUser(user.uid);
+              final result = await userFacade.loadUser(user.uid);
 
               expect(result.isLeft(), true);
-
               result.fold(
-                (failure) => expect(failure, isA<ServerFailure>()),
+                (failure) => expect(failure, isA<ServerError>()),
                 (_) {},
               );
             },
           );
 
           test(
-            '''
-            Scenario: We trying to load the user details from the online database [UNEXPECTED FAILURE CASE]
-            Given user UID
-            And User() exists inside Database
-            When loadUser() is called
-            Then unexpectedFailure() returned
-            ''',
+            'When Exception thrown Then return UnexpectedError',
             () async {
               when(mockFirestore.collection(any))
                   .thenThrow(Exception('An unexpected error occured!'));
 
-              final result = await onlineUserDatabaseFacade.loadUser(user.uid);
+              final result = await userFacade.loadUser(user.uid);
 
               expect(result.isLeft(), true);
-
               result.fold(
-                (failure) => expect(failure, isA<UnexpectedFailure>()),
+                (failure) => expect(failure, isA<UnexpectedError>()),
                 (_) {},
               );
             },
@@ -141,13 +139,7 @@ void main() {
         'saveDetailsFromUser -',
         () {
           test(
-            '''
-            Scenario: We trying to save the user's details into the online database [SUCCESS CASE]
-            Given a User()
-            And User() doesn't exist inside Database
-            When saveDetailsFromUser() is called
-            Then userDetailsSavedSuccess() returned with User()
-            ''',
+            'When user created Then return user',
             () async {
               // Create documentReference to user
               when(mockFirestore.collection(any))
@@ -164,32 +156,18 @@ void main() {
               when(mockDocumentReference.set(any))
                   .thenAnswer((_) async => null);
 
-              final result =
-                  await onlineUserDatabaseFacade.saveDetailsFromUser(user);
+              final result = await userFacade.saveDetailsFromUser(user);
 
               expect(result.isRight(), true);
-
               result.fold(
                 (_) {},
-                (success) {
-                  expect(success, isA<UserDetailsSavedSuccess>());
-
-                  if (success is UserDetailsSavedSuccess) {
-                    expect(success.user, user);
-                  }
-                },
+                (success) => expect(success, user),
               );
             },
           );
 
           test(
-            '''
-            Scenario: We trying to save the user's details into the online database [SUCCESS CASE]
-            Given a User()
-            And User() exists inside Database
-            When saveDetailsFromUser() is called
-            Then userDetailsSavedSuccess() with User()
-            ''',
+            'When user updated Then return user',
             () async {
               // Create documentReference to user
               when(mockFirestore.collection(any))
@@ -207,31 +185,18 @@ void main() {
               when(mockDocumentReference.set(any))
                   .thenAnswer((_) async => null);
 
-              final result =
-                  await onlineUserDatabaseFacade.saveDetailsFromUser(user);
+              final result = await userFacade.saveDetailsFromUser(user);
 
               expect(result.isRight(), true);
-
               result.fold(
                 (_) {},
-                (success) {
-                  expect(success, isA<UserDetailsSavedSuccess>());
-
-                  if (success is UserDetailsSavedSuccess) {
-                    expect(success.user, user);
-                  }
-                },
+                (success) => expect(success, user),
               );
             },
           );
 
           test(
-            '''
-            Scenario: We trying to save the user's details into the online database [SERVER FAILURE CASE]
-            Given a User()
-            When saveDetailsFromUser() is called
-            Then serverFailure() is returned
-            ''',
+            'When FirebaseException thrown Then return ServerError',
             () async {
               // Create documentReference to user
               when(mockFirestore.collection(any)).thenThrow(
@@ -242,37 +207,28 @@ void main() {
                 ),
               );
 
-              final result =
-                  await onlineUserDatabaseFacade.saveDetailsFromUser(user);
+              final result = await userFacade.saveDetailsFromUser(user);
 
               expect(result.isLeft(), true);
-
               result.fold(
-                (failure) => expect(failure, isA<ServerFailure>()),
+                (failure) => expect(failure, isA<ServerError>()),
                 (_) {},
               );
             },
           );
 
           test(
-            '''
-            Scenario: We trying to save the user's details into the online database [UNEXPECTED FAILURE CASE]
-            Given a User()
-            When saveDetailsFromUser() is called
-            Then unexpectedFailure() is returned
-            ''',
+            'When Exception thrown Then return UnexpectedError',
             () async {
               // Create documentReference to user
               when(mockFirestore.collection(any))
                   .thenThrow(Exception('An unexpected error occured!'));
 
-              final result =
-                  await onlineUserDatabaseFacade.saveDetailsFromUser(user);
+              final result = await userFacade.saveDetailsFromUser(user);
 
               expect(result.isLeft(), true);
-
               result.fold(
-                (failure) => expect(failure, isA<UnexpectedFailure>()),
+                (failure) => expect(failure, isA<UnexpectedError>()),
                 (_) {},
               );
             },
@@ -284,12 +240,7 @@ void main() {
         'saveUsername -',
         () {
           test(
-            '''
-            Scenario: We trying to save the user's username inside the online database [SUCCESS CASE]
-            Given the user uid and a Username()
-            When saveUsername() is called
-            Then usernameSavedSuccess() returned with the username as a String
-            ''',
+            'When username saved Then return unit',
             () async {
               // Create documentReference to user
               when(mockFirestore.collection(any))
@@ -301,33 +252,21 @@ void main() {
               when(mockDocumentReference.set(any))
                   .thenAnswer((_) async => null);
 
-              final result = await onlineUserDatabaseFacade.saveUsername(
+              final result = await userFacade.saveUsername(
                 user.uid,
                 Username(user.username),
               );
 
               expect(result.isRight(), true);
-
               result.fold(
                 (_) {},
-                (success) {
-                  expect(success, isA<UsernameSavedSuccess>());
-
-                  if (success is UsernameSavedSuccess) {
-                    expect(success.username, user.username);
-                  }
-                },
+                (success) => expect(success, isA<Unit>()),
               );
             },
           );
 
           test(
-            '''
-            Scenario: We trying to save the user's username inside the online database [SERVER FAILURE CASE]
-            Given the user uid and a Username()
-            When saveUsername() is called
-            Then serverFailure() returned
-            ''',
+            'When FirebaseException thrown Then return ServerError',
             () async {
               // Create documentReference to user
               when(mockFirestore.collection(any)).thenThrow(
@@ -338,39 +277,32 @@ void main() {
                 ),
               );
 
-              final result = await onlineUserDatabaseFacade.saveUsername(
+              final result = await userFacade.saveUsername(
                 user.uid,
                 Username(user.username),
               );
 
               expect(result.isLeft(), true);
-
               result.fold(
-                (failure) => expect(failure, isA<ServerFailure>()),
+                (failure) => expect(failure, isA<ServerError>()),
                 (_) {},
               );
             },
           );
 
           test(
-            '''
-            Scenario: We trying to save the user's username inside the online database [UNEXPECTED FAILURE CASE]
-            Given the user uid and a Username()
-            When saveUsername() is called
-            Then unexpectedFailure() returned
-            ''',
+            'When Exception thrown Then return UnexpectedError',
             () async {
               const invalidUsername = '';
 
-              final result = await onlineUserDatabaseFacade.saveUsername(
+              final result = await userFacade.saveUsername(
                 user.uid,
                 Username(invalidUsername),
               );
 
               expect(result.isLeft(), true);
-
               result.fold(
-                (failure) => expect(failure, isA<UnexpectedFailure>()),
+                (failure) => expect(failure, isA<UnexpectedError>()),
                 (_) {},
               );
             },

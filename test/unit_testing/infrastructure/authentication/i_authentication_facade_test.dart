@@ -125,7 +125,6 @@ void main() {
               );
 
               expect(result.isRight(), true);
-
               result.fold(
                 (_) {},
                 (usuccess) => expect(usuccess, user),
@@ -143,7 +142,6 @@ void main() {
               );
 
               expect(result.isLeft(), true);
-
               result.fold(
                 (failure) => expect(failure, isA<UnexpectedError>()),
                 (_) {},
@@ -161,7 +159,6 @@ void main() {
               );
 
               expect(result.isLeft(), true);
-
               result.fold(
                 (failure) => expect(failure, isA<UnexpectedError>()),
                 (_) {},
@@ -188,7 +185,6 @@ void main() {
               );
 
               expect(result.isLeft(), true);
-
               result.fold(
                 (failure) => expect(failure, isA<EmailAlreadyInUse>()),
                 (_) {},
@@ -215,7 +211,6 @@ void main() {
               );
 
               expect(result.isLeft(), true);
-
               result.fold(
                 (failure) => expect(failure, isA<ServerError>()),
                 (_) {},
@@ -237,7 +232,6 @@ void main() {
               );
 
               expect(result.isLeft(), true);
-
               result.fold(
                 (failure) => expect(failure, isA<UnexpectedError>()),
                 (_) {},
@@ -294,7 +288,6 @@ void main() {
                   .isUsernameAvailable(Username(validUsername));
 
               expect(result.isRight(), true);
-
               result.fold(
                 (_) {},
                 (success) => expect(success, true),
@@ -317,7 +310,6 @@ void main() {
                   .isUsernameAvailable(Username(validUsername));
 
               expect(result.isRight(), true);
-
               result.fold(
                 (_) {},
                 (success) => expect(success, false),
@@ -358,7 +350,6 @@ void main() {
                   .isUsernameAvailable(Username(validUsername));
 
               expect(result.isLeft(), true);
-
               result.fold(
                 (failure) => expect(failure, isA<ServerError>()),
                 (_) {},
@@ -401,7 +392,6 @@ void main() {
             final result = await authenticationFacade.resendVerificationEmail();
 
             expect(result.isLeft(), true);
-
             result.fold(
               (failure) => expect(failure, isA<UnexpectedError>()),
               (_) {},
@@ -417,7 +407,6 @@ void main() {
             final result = await authenticationFacade.resendVerificationEmail();
 
             expect(result.isRight(), true);
-
             result.fold(
               (_) {},
               (success) => expect(success, isA<Unit>()),
@@ -435,7 +424,6 @@ void main() {
             final result = await authenticationFacade.resendVerificationEmail();
 
             expect(result.isLeft(), true);
-
             result.fold(
               (failure) => expect(failure, isA<UnexpectedError>()),
               (_) {},
@@ -454,7 +442,6 @@ void main() {
             final result = await authenticationFacade.signInAnonymously();
 
             expect(result.isRight(), true);
-
             result.fold(
               (_) {},
               (success) => expect(success, isA<Unit>()),
@@ -471,7 +458,6 @@ void main() {
             final result = await authenticationFacade.signInAnonymously();
 
             expect(result.isLeft(), true);
-
             result.fold(
               (failure) => expect(failure, isA<UnexpectedError>()),
               (_) {},
@@ -499,7 +485,6 @@ void main() {
             );
 
             expect(result.isRight(), true);
-
             result.fold(
               (_) {},
               (success) => expect(success, user),
@@ -526,7 +511,6 @@ void main() {
             debugPrint(result.toString());
 
             expect(result.isLeft(), true);
-
             result.fold(
               (failure) => expect(failure, isA<UnexpectedError>()),
               (_) {},
@@ -552,7 +536,6 @@ void main() {
             );
 
             expect(result.isLeft(), true);
-
             result.fold(
               (failure) => expect(failure, isA<UnexpectedError>()),
               (_) {},
@@ -582,7 +565,6 @@ void main() {
             );
 
             expect(result.isLeft(), true);
-
             result.fold(
               (failure) => expect(
                 failure,
@@ -615,7 +597,6 @@ void main() {
             );
 
             expect(result.isLeft(), true);
-
             result.fold(
               (failure) => expect(failure, isA<ServerError>()),
               (_) {},
@@ -641,7 +622,6 @@ void main() {
             );
 
             expect(result.isLeft(), true);
-
             result.fold(
               (failure) => expect(failure, isA<UnexpectedError>()),
               (_) {},
@@ -666,7 +646,6 @@ void main() {
             final result = await authenticationFacade.signInWithGoogle();
 
             expect(result.isRight(), true);
-
             result.fold(
               (_) {},
               (success) => expect(success, user),
@@ -683,7 +662,6 @@ void main() {
             final result = await authenticationFacade.signInWithGoogle();
 
             expect(result.isLeft(), true);
-
             result.fold(
               (failure) => expect(failure, isA<CancelledByUser>()),
               (_) {},
@@ -712,7 +690,6 @@ void main() {
             final result = await authenticationFacade.signInWithGoogle();
 
             expect(result.isRight(), true);
-
             result.fold(
               (_) {},
               (success) => expect(success, user),
@@ -733,7 +710,6 @@ void main() {
             final result = await authenticationFacade.signInWithGoogle();
 
             expect(result.isLeft(), true);
-
             result.fold(
               (failure) => expect(failure, isA<ServerError>()),
               (_) {},
@@ -751,7 +727,6 @@ void main() {
             final result = await authenticationFacade.signInWithGoogle();
 
             expect(result.isLeft(), true);
-
             result.fold(
               (failure) => expect(failure, isA<UnexpectedError>()),
               (_) {},
@@ -774,7 +749,6 @@ void main() {
             final result = await authenticationFacade.signOut();
 
             expect(result.isRight(), true);
-
             result.fold(
               (_) {},
               (success) => expect(success, isA<Unit>()),
@@ -793,7 +767,6 @@ void main() {
             final result = await authenticationFacade.signOut();
 
             expect(result.isLeft(), true);
-
             result.fold(
               (failure) => expect(failure, isA<UnableToSignOut>()),
               (_) {},
@@ -811,7 +784,6 @@ void main() {
             final result = await authenticationFacade.signOut();
 
             expect(result.isLeft(), true);
-
             result.fold(
               (failure) => expect(failure, isA<UnexpectedError>()),
               (_) {},

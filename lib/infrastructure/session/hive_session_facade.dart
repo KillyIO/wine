@@ -16,6 +16,16 @@ class HiveSessionFacade implements ISessionFacade {
   final Box<User> _sessionsBox;
 
   @override
+  Future<Either<SessionFailure, Unit>> createSession(User user) async {
+    await _sessionsBox.put(Constants.session, user ?? User());
+
+    final sessionTest = _sessionsBox.get(Constants.session);
+    if (sessionTest != null) return right(unit);
+
+    return left(const SessionFailure.sessionNotCreated());
+  }
+
+  @override
   Future<Either<SessionFailure, Unit>> deleteSession() async {
     await _sessionsBox.delete(Constants.session);
 
@@ -37,23 +47,11 @@ class HiveSessionFacade implements ISessionFacade {
   }
 
   @override
-  Future<Either<SessionFailure, User>> initializeSession({
-    User user,
-  }) async {
-    await _sessionsBox.put(Constants.session, user ?? User());
-
-    final sessionTest = _sessionsBox.get(Constants.session);
-    if (sessionTest != null) return right(user);
-
-    return left(const SessionFailure.sessionNotInitialized());
-  }
-
-  @override
   Future<Either<SessionFailure, Unit>> updateSession(User user) async {
     await _sessionsBox.put(Constants.session, user);
 
     final currentSession = _sessionsBox.get(Constants.session);
-    if (currentSession != null) return right(unit);
+    if (currentSession == user) return right(unit);
 
     return left(const SessionFailure.sessionNotUpdated());
   }

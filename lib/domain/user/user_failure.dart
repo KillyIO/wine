@@ -9,7 +9,7 @@ part 'user_failure.freezed.dart';
 @freezed
 abstract class UserFailure with _$UserFailure {
   /// @nodoc
-  const factory UserFailure.serverError() = ServerErrorr;
+  const factory UserFailure.serverError() = ServerError;
 
   /// @nodoc
   const factory UserFailure.unexpectedError() = UnexpectedError;

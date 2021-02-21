@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:equatable/equatable.dart';
 import 'package:firebase_auth/firebase_auth.dart' as auth;
@@ -195,7 +197,23 @@ class User extends Equatable {
   }
 
   @override
-  List<Object> get props => [uid];
+  List<Object> get props {
+    return [
+      isBanned,
+      isDeleted,
+      banDeadline,
+      createdAt,
+      updatedAt,
+      banReason,
+      bio,
+      deletionReason,
+      email,
+      name,
+      profilePictureURL,
+      uid,
+      username,
+    ];
+  }
 
   @override
   bool get stringify => true;

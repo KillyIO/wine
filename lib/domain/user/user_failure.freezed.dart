@@ -14,8 +14,8 @@ class _$UserFailureTearOff {
   const _$UserFailureTearOff();
 
 // ignore: unused_element
-  ServerErrorr serverError() {
-    return const ServerErrorr();
+  ServerError serverError() {
+    return const ServerError();
   }
 
 // ignore: unused_element
@@ -50,13 +50,13 @@ mixin _$UserFailure {
   });
   @optionalTypeArgs
   TResult map<TResult extends Object>({
-    @required TResult serverError(ServerErrorr value),
+    @required TResult serverError(ServerError value),
     @required TResult unexpectedError(UnexpectedError value),
     @required TResult userNotFound(UserNotFound value),
   });
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
-    TResult serverError(ServerErrorr value),
+    TResult serverError(ServerError value),
     TResult unexpectedError(UnexpectedError value),
     TResult userNotFound(UserNotFound value),
     @required TResult orElse(),
@@ -80,26 +80,26 @@ class _$UserFailureCopyWithImpl<$Res> implements $UserFailureCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class $ServerErrorrCopyWith<$Res> {
-  factory $ServerErrorrCopyWith(
-          ServerErrorr value, $Res Function(ServerErrorr) then) =
-      _$ServerErrorrCopyWithImpl<$Res>;
+abstract class $ServerErrorCopyWith<$Res> {
+  factory $ServerErrorCopyWith(
+          ServerError value, $Res Function(ServerError) then) =
+      _$ServerErrorCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$ServerErrorrCopyWithImpl<$Res> extends _$UserFailureCopyWithImpl<$Res>
-    implements $ServerErrorrCopyWith<$Res> {
-  _$ServerErrorrCopyWithImpl(
-      ServerErrorr _value, $Res Function(ServerErrorr) _then)
-      : super(_value, (v) => _then(v as ServerErrorr));
+class _$ServerErrorCopyWithImpl<$Res> extends _$UserFailureCopyWithImpl<$Res>
+    implements $ServerErrorCopyWith<$Res> {
+  _$ServerErrorCopyWithImpl(
+      ServerError _value, $Res Function(ServerError) _then)
+      : super(_value, (v) => _then(v as ServerError));
 
   @override
-  ServerErrorr get _value => super._value as ServerErrorr;
+  ServerError get _value => super._value as ServerError;
 }
 
 /// @nodoc
-class _$ServerErrorr implements ServerErrorr {
-  const _$ServerErrorr();
+class _$ServerError implements ServerError {
+  const _$ServerError();
 
   @override
   String toString() {
@@ -108,7 +108,7 @@ class _$ServerErrorr implements ServerErrorr {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is ServerErrorr);
+    return identical(this, other) || (other is ServerError);
   }
 
   @override
@@ -145,7 +145,7 @@ class _$ServerErrorr implements ServerErrorr {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object>({
-    @required TResult serverError(ServerErrorr value),
+    @required TResult serverError(ServerError value),
     @required TResult unexpectedError(UnexpectedError value),
     @required TResult userNotFound(UserNotFound value),
   }) {
@@ -158,7 +158,7 @@ class _$ServerErrorr implements ServerErrorr {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
-    TResult serverError(ServerErrorr value),
+    TResult serverError(ServerError value),
     TResult unexpectedError(UnexpectedError value),
     TResult userNotFound(UserNotFound value),
     @required TResult orElse(),
@@ -171,8 +171,8 @@ class _$ServerErrorr implements ServerErrorr {
   }
 }
 
-abstract class ServerErrorr implements UserFailure {
-  const factory ServerErrorr() = _$ServerErrorr;
+abstract class ServerError implements UserFailure {
+  const factory ServerError() = _$ServerError;
 }
 
 /// @nodoc
@@ -242,7 +242,7 @@ class _$UnexpectedError implements UnexpectedError {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object>({
-    @required TResult serverError(ServerErrorr value),
+    @required TResult serverError(ServerError value),
     @required TResult unexpectedError(UnexpectedError value),
     @required TResult userNotFound(UserNotFound value),
   }) {
@@ -255,7 +255,7 @@ class _$UnexpectedError implements UnexpectedError {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
-    TResult serverError(ServerErrorr value),
+    TResult serverError(ServerError value),
     TResult unexpectedError(UnexpectedError value),
     TResult userNotFound(UserNotFound value),
     @required TResult orElse(),
@@ -338,7 +338,7 @@ class _$UserNotFound implements UserNotFound {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object>({
-    @required TResult serverError(ServerErrorr value),
+    @required TResult serverError(ServerError value),
     @required TResult unexpectedError(UnexpectedError value),
     @required TResult userNotFound(UserNotFound value),
   }) {
@@ -351,7 +351,7 @@ class _$UserNotFound implements UserNotFound {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
-    TResult serverError(ServerErrorr value),
+    TResult serverError(ServerError value),
     TResult unexpectedError(UnexpectedError value),
     TResult userNotFound(UserNotFound value),
     @required TResult orElse(),
