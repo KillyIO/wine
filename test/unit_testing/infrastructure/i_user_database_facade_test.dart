@@ -32,11 +32,11 @@ void main() {
       banReason: null,
       bio: null,
       deletionReason: null,
-      email: testEmail,
+      email: testEmailValid,
       name: testName,
       profilePictureURL: null,
       uid: testUserUID,
-      username: testUsername,
+      username: testUsernameValid,
     );
 
     mockFirestore = MockFirestore();
@@ -190,7 +190,10 @@ void main() {
               expect(result.isRight(), true);
               result.fold(
                 (_) {},
-                (success) => expect(success, user),
+                (success) => expect(
+                  success.updatedAt,
+                  isNot(equals(user.updatedAt)),
+                ),
               );
             },
           );

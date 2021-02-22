@@ -17,7 +17,7 @@ class MockFirebaseUser extends Mock implements auth.User {
   String get uid => testUserUID;
 
   @override
-  String get email => testEmail;
+  String get email => testEmailValid;
 
   @override
   bool get isAnonymous => _isAnonymous;

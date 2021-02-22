@@ -18,14 +18,6 @@ import '../../mocks/google_sign_in_mocks.dart';
 import '../../utils/constants.dart';
 
 void main() {
-  const validEmail = 'email@email.com';
-  const validPassword = 'Wd8G/[-2A+';
-  const validUsername = 'email';
-
-  const invalidEmail = 'email.email.com';
-  const invalidPassword = '123456';
-  const invalidUsername = '';
-
   User user;
 
   MockFirebaseAuth mockFirebaseAuth;
@@ -53,11 +45,11 @@ void main() {
       banReason: null,
       bio: null,
       deletionReason: null,
-      email: validEmail,
+      email: testEmailValid,
       name: testName,
       profilePictureURL: null,
       uid: testUserUID,
-      username: testUsername,
+      username: testUsernameValid,
     );
 
     mockFirebaseAuth = MockFirebaseAuth();
@@ -120,14 +112,15 @@ void main() {
 
               final result =
                   await authenticationFacade.convertWithEmailAndPassword(
-                EmailAddress(validEmail),
-                Password(validPassword),
+                EmailAddress(testEmailValid),
+                Password(testPasswordValid),
               );
 
               expect(result.isRight(), true);
               result.fold(
                 (_) {},
-                (usuccess) => expect(usuccess, user),
+                (usuccess) =>
+                    expect(usuccess, User.fromFirebaseUser(mockFirebaseUser)),
               );
             },
           );
@@ -137,8 +130,8 @@ void main() {
             () async {
               final result =
                   await authenticationFacade.convertWithEmailAndPassword(
-                EmailAddress(invalidEmail),
-                Password(validPassword),
+                EmailAddress(testEmailInvalid),
+                Password(testPasswordValid),
               );
 
               expect(result.isLeft(), true);
@@ -154,8 +147,8 @@ void main() {
             () async {
               final result =
                   await authenticationFacade.convertWithEmailAndPassword(
-                EmailAddress(validEmail),
-                Password(invalidPassword),
+                EmailAddress(testEmailValid),
+                Password(testPasswordInvalid),
               );
 
               expect(result.isLeft(), true);
@@ -180,8 +173,8 @@ void main() {
 
               final result =
                   await authenticationFacade.convertWithEmailAndPassword(
-                EmailAddress(validEmail),
-                Password(validPassword),
+                EmailAddress(testEmailValid),
+                Password(testPasswordValid),
               );
 
               expect(result.isLeft(), true);
@@ -206,8 +199,8 @@ void main() {
 
               final result =
                   await authenticationFacade.convertWithEmailAndPassword(
-                EmailAddress(validEmail),
-                Password(validPassword),
+                EmailAddress(testEmailValid),
+                Password(testPasswordValid),
               );
 
               expect(result.isLeft(), true);
@@ -227,8 +220,8 @@ void main() {
 
               final result =
                   await authenticationFacade.convertWithEmailAndPassword(
-                EmailAddress(validEmail),
-                Password(validPassword),
+                EmailAddress(testEmailValid),
+                Password(testPasswordValid),
               );
 
               expect(result.isLeft(), true);
@@ -285,7 +278,7 @@ void main() {
               when(mockDocumentSnapshot.exists).thenReturn(false);
 
               final result = await authenticationFacade
-                  .isUsernameAvailable(Username(validUsername));
+                  .isUsernameAvailable(Username(testUsernameValid));
 
               expect(result.isRight(), true);
               result.fold(
@@ -307,7 +300,7 @@ void main() {
               when(mockDocumentSnapshot.exists).thenReturn(true);
 
               final result = await authenticationFacade
-                  .isUsernameAvailable(Username(validUsername));
+                  .isUsernameAvailable(Username(testUsernameValid));
 
               expect(result.isRight(), true);
               result.fold(
@@ -323,8 +316,8 @@ void main() {
               when(mockFirestore.collection(any))
                   .thenThrow(Exception('An unexpected error occured!'));
 
-              final result = await authenticationFacade
-                  .isUsernameAvailable(Username(invalidUsername));
+              final result =
+                  await authenticationFacade.isUsernameAvailable(Username(''));
 
               expect(result.isLeft(), true);
 
@@ -347,7 +340,7 @@ void main() {
               );
 
               final result = await authenticationFacade
-                  .isUsernameAvailable(Username(validUsername));
+                  .isUsernameAvailable(Username(testUsernameValid));
 
               expect(result.isLeft(), true);
               result.fold(
@@ -480,14 +473,15 @@ void main() {
 
             final result =
                 await authenticationFacade.signInWithEmailAndPassword(
-              EmailAddress(validEmail),
-              Password(validPassword),
+              EmailAddress(testEmailValid),
+              Password(testPasswordValid),
             );
 
             expect(result.isRight(), true);
             result.fold(
               (_) {},
-              (success) => expect(success, user),
+              (success) =>
+                  expect(success, User.fromFirebaseUser(mockFirebaseUser)),
             );
           },
         );
@@ -505,8 +499,8 @@ void main() {
 
             final result =
                 await authenticationFacade.signInWithEmailAndPassword(
-              EmailAddress(invalidEmail),
-              Password(validPassword),
+              EmailAddress(testEmailInvalid),
+              Password(testPasswordValid),
             );
             debugPrint(result.toString());
 
@@ -531,8 +525,8 @@ void main() {
 
             final result =
                 await authenticationFacade.signInWithEmailAndPassword(
-              EmailAddress(validEmail),
-              Password(invalidPassword),
+              EmailAddress(testEmailValid),
+              Password(testPasswordInvalid),
             );
 
             expect(result.isLeft(), true);
@@ -560,8 +554,8 @@ void main() {
 
             final result =
                 await authenticationFacade.signInWithEmailAndPassword(
-              EmailAddress(validEmail),
-              Password(validPassword),
+              EmailAddress(testEmailValid),
+              Password(testPasswordValid),
             );
 
             expect(result.isLeft(), true);
@@ -592,8 +586,8 @@ void main() {
 
             final result =
                 await authenticationFacade.signInWithEmailAndPassword(
-              EmailAddress(validEmail),
-              Password(validPassword),
+              EmailAddress(testEmailValid),
+              Password(testPasswordValid),
             );
 
             expect(result.isLeft(), true);
@@ -617,8 +611,8 @@ void main() {
 
             final result =
                 await authenticationFacade.signInWithEmailAndPassword(
-              EmailAddress(validEmail),
-              Password(validPassword),
+              EmailAddress(testEmailValid),
+              Password(testPasswordValid),
             );
 
             expect(result.isLeft(), true);
@@ -648,7 +642,8 @@ void main() {
             expect(result.isRight(), true);
             result.fold(
               (_) {},
-              (success) => expect(success, user),
+              (success) =>
+                  expect(success, User.fromFirebaseUser(mockFirebaseUser)),
             );
           },
         );
@@ -692,7 +687,8 @@ void main() {
             expect(result.isRight(), true);
             result.fold(
               (_) {},
-              (success) => expect(success, user),
+              (success) =>
+                  expect(success, User.fromFirebaseUser(mockFirebaseUser)),
             );
           },
         );

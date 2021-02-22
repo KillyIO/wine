@@ -73,7 +73,11 @@ ornare
 const String testSummaryEmpty = '';
 
 // SECTION: User
-const String testEmail = 'hdima.riyal.99@tapiitudulu.com';
+const String testEmailValid = 'hdima.riyal.99@tapiitudulu.com';
+const String testEmailInvalid = 'hdima.riyal.99%tapiitudulu.com';
 const String testName = 'Hdima Riyal';
-const String testUsername = 'hdima';
+const String testUsernameValid = 'hdima';
+const String testUsernameInvalid = '';
 const String testUserUID = '9518b7a5-33bd-41ca-ad9c-d1dcd5abcd4c';
+const String testPasswordValid = 'Wd8G/[-2A+';
+const String testPasswordInvalid = '123456';

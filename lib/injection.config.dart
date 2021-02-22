@@ -54,8 +54,7 @@ import 'application/database/series_settings/series_settings_database_bloc.dart'
 import 'application/authentication/settings/settings_authentication_bloc.dart';
 import 'application/database/settings/settings_database_bloc.dart';
 import 'application/miscellaneous/settings/settings_miscellaneous_bloc.dart';
-import 'application/database/sign_in/sign_in_database_bloc.dart';
-import 'application/authentication/sign_up_form/sign_up_form_bloc.dart';
+import 'application/authentication/sign_up/sign_up_bloc.dart';
 import 'application/authentication/splash/splash_authentication_bloc.dart';
 import 'application/database/splash/splash_database_bloc.dart';
 import 'domain/models/user.dart';
@@ -71,10 +70,10 @@ Future<GetIt> $initGetIt(
   final gh = GetItHelper(get, environment, environmentFilter);
   final hiveInjectableModule = _$HiveInjectableModule();
   final firebaseInjectableModule = _$FirebaseInjectableModule();
-  final resolvedBox = await hiveInjectableModule.openSessionsBox;
-  gh.lazySingleton<hive1.Box<User>>(() => resolvedBox);
-  final resolvedBox1 = await hiveInjectableModule.openConfigsBox;
-  gh.lazySingleton<hive1.Box<Config>>(() => resolvedBox1);
+  final resolvedBox = await hiveInjectableModule.openConfigsBox;
+  gh.lazySingleton<hive1.Box<Config>>(() => resolvedBox);
+  final resolvedBox1 = await hiveInjectableModule.openSessionsBox;
+  gh.lazySingleton<hive1.Box<User>>(() => resolvedBox1);
   final resolvedBox2 = await hiveInjectableModule.openPlaceholdersBox;
   gh.lazySingleton<hive1.Box<String>>(() => resolvedBox2);
   gh.factory<ChapterEditorNavigationBloc>(() => ChapterEditorNavigationBloc());
@@ -148,9 +147,7 @@ Future<GetIt> $initGetIt(
   gh.factory<SettingsDatabaseBloc>(
       () => SettingsDatabaseBloc(get<ILocalConfigDatabaseFacade>(), get()));
   gh.factory<SettingsMiscellaneousBloc>(() => SettingsMiscellaneousBloc());
-  gh.factory<SignInDatabaseBloc>(() => SignInDatabaseBloc(get(), get()));
-  gh.factory<SignUpFormBloc>(
-      () => SignUpFormBloc(get<IAuthenticationFacade>()));
+  gh.factory<SignUpBloc>(() => SignUpBloc(get<IAuthenticationFacade>()));
   gh.factory<SplashAuthenticationBloc>(
       () => SplashAuthenticationBloc(get<IAuthenticationFacade>()));
   gh.factory<SplashDatabaseBloc>(() => SplashDatabaseBloc(

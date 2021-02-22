@@ -27,11 +27,11 @@ void main() {
       banReason: null,
       bio: null,
       deletionReason: null,
-      email: testEmail,
+      email: testEmailValid,
       name: testName,
       profilePictureURL: null,
       uid: testUserUID,
-      username: testUsername,
+      username: testUsernameValid,
     );
 
     mockHiveInterface = MockHiveInterface();

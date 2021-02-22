@@ -12,6 +12,8 @@ import 'package:wine/domain/authentication/i_authentication_facade.dart';
 import 'package:wine/domain/authentication/password.dart';
 import 'package:wine/domain/authentication/username.dart';
 import 'package:wine/domain/models/user.dart';
+import 'package:wine/domain/session/session_failure.dart';
+import 'package:wine/domain/user/user_failure.dart';
 
 part 'sign_up_bloc.freezed.dart';
 part 'sign_up_event.dart';
@@ -28,28 +30,29 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
   @override
   Stream<SignUpState> mapEventToState(SignUpEvent event) async* {
     yield* event.map(
-      confirmPasswordChanged: (event) async* {
+      accountCreated: (value) async* {},
+      confirmPasswordChanged: (value) async* {
         yield state.copyWith(
           authenticationOption: none(),
           confirmPassword: Password(
-            event.confirmPasswordStr,
-            event.passwordStr,
+            value.confirmPasswordStr,
+            value.passwordStr,
           ),
         );
       },
-      emailChanged: (event) async* {
+      emailChanged: (value) async* {
         yield state.copyWith(
           authenticationOption: none(),
-          emailAddress: EmailAddress(event.emailStr),
+          emailAddress: EmailAddress(value.emailStr),
         );
       },
-      passwordChanged: (event) async* {
+      passwordChanged: (value) async* {
         yield state.copyWith(
           authenticationOption: none(),
-          password: Password(event.passwordStr),
+          password: Password(value.passwordStr),
         );
       },
-      resendVerificationEmail: (event) async* {
+      resendVerificationEmail: (value) async* {
         Either<AuthenticationFailure, Unit> failureOrSuccess;
 
         failureOrSuccess =
@@ -57,7 +60,7 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
 
         yield state.copyWith(authenticationOption: optionOf(failureOrSuccess));
       },
-      signUpPressed: (event) async* {
+      signUpPressed: (value) async* {
         Either<AuthenticationFailure, dynamic> failureOrSuccess;
 
         var isUsernameValid = state.username.isValid();
@@ -66,7 +69,7 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
         if (isUsernameValid) {
           yield state.copyWith(
             authenticationOption: none(),
-            isSubmitting: true,
+            isProcessing: true,
           );
 
           failureOrSuccess =
@@ -108,16 +111,18 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
 
         yield state.copyWith(
           authenticationOption: optionOf(failureOrSuccess),
-          isSubmitting: false,
+          isProcessing: false,
           showErrorMessages: true,
         );
       },
-      usernameChanged: (event) async* {
+      userDetailsSaved: (value) async* {},
+      usernameChanged: (value) async* {
         yield state.copyWith(
           authenticationOption: none(),
-          username: Username(event.usernameStr),
+          username: Username(value.usernameStr),
         );
       },
+      verifyEmailLaunched: (value) async* {},
     );
   }
 }

@@ -10,8 +10,11 @@ abstract class SignUpState with _$SignUpState {
     @required EmailAddress emailAddress,
     @required
         Option<Either<AuthenticationFailure, dynamic>> authenticationOption,
+    @required Option<Either<SessionFailure, dynamic>> sessionOption,
+    @required Option<Either<UserFailure, dynamic>> userOption,
     @required Password confirmPassword,
     @required Password password,
+    @required String emailAddressStr,
     @required Username username,
   }) = _SignUpState;
 
@@ -20,9 +23,12 @@ abstract class SignUpState with _$SignUpState {
         authenticationOption: none(),
         confirmPassword: Password('', ''),
         emailAddress: EmailAddress(''),
+        emailAddressStr: '',
         isProcessing: false,
         password: Password(''),
+        sessionOption: none(),
         showErrorMessages: false,
+        userOption: none(),
         username: Username(''),
       );
 }
