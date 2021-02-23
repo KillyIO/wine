@@ -14,12 +14,12 @@ dependencies:
   assorted_layout_widgets: ^3.0.1
   auto_route: ^0.6.9
   cached_network_image: ^2.5.0
-  cloud_firestore: ^0.16.0
+  cloud_firestore: ^0.16.0+1
   cupertino_icons: ^1.0.0
   dartz: ^0.9.2
   equatable: ^1.2.6
   firebase_analytics: ^7.0.1
-  firebase_auth: ^0.20.0+1
+  firebase_auth: ^0.20.1
   firebase_core: ^0.7.0
   firebase_storage: ^7.0.0
   flare_flutter: ^2.0.6
@@ -60,7 +60,7 @@ dev_dependencies:
   flutter_launcher_icons: ^0.8.1
   freezed: ^0.12.7
   hive_generator: ^0.8.2
-  injectable_generator: ^1.0.7
+  injectable_generator: ^1.1.0
   mockito: ^4.1.4
   very_good_analysis: ^1.0.4
 

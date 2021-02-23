@@ -33,7 +33,7 @@ void main() {
   MockCollectionReference mockCollectionReference;
   MockDocumentReference mockDocumentReference;
 
-  IAuthenticationFacade authenticationFacade;
+  IAuthenticationFacade mockAuthenticationFacade;
 
   setUp(() {
     user = User(
@@ -65,7 +65,7 @@ void main() {
     mockCollectionReference = MockCollectionReference();
     mockDocumentReference = MockDocumentReference();
 
-    authenticationFacade = FirebaseAuthenticationFacade(
+    mockAuthenticationFacade = FirebaseAuthenticationFacade(
       mockFirebaseAuth,
       mockGoogleSignIn,
       mockFirestore,
@@ -83,7 +83,7 @@ void main() {
             () async {
               when(mockFirebaseAuth.currentUser).thenReturn(null);
 
-              final result = await authenticationFacade.getCurrentUserUID();
+              final result = await mockAuthenticationFacade.getCurrentUserUID();
 
               expect(result, null);
             },
@@ -94,7 +94,7 @@ void main() {
             () async {
               when(mockFirebaseAuth.currentUser).thenReturn(mockFirebaseUser);
 
-              final result = await authenticationFacade.getCurrentUserUID();
+              final result = await mockAuthenticationFacade.getCurrentUserUID();
 
               expect(result, user.uid);
             },
@@ -111,7 +111,7 @@ void main() {
               when(mockFirebaseAuth.currentUser).thenReturn(mockFirebaseUser);
 
               final result =
-                  await authenticationFacade.convertWithEmailAndPassword(
+                  await mockAuthenticationFacade.convertWithEmailAndPassword(
                 EmailAddress(testEmailValid),
                 Password(testPasswordValid),
               );
@@ -129,7 +129,7 @@ void main() {
             'When email invalid Then return UnexpectedError',
             () async {
               final result =
-                  await authenticationFacade.convertWithEmailAndPassword(
+                  await mockAuthenticationFacade.convertWithEmailAndPassword(
                 EmailAddress(testEmailInvalid),
                 Password(testPasswordValid),
               );
@@ -146,7 +146,7 @@ void main() {
             'When password invalid Then return UnexpectedError',
             () async {
               final result =
-                  await authenticationFacade.convertWithEmailAndPassword(
+                  await mockAuthenticationFacade.convertWithEmailAndPassword(
                 EmailAddress(testEmailValid),
                 Password(testPasswordInvalid),
               );
@@ -172,7 +172,7 @@ void main() {
               );
 
               final result =
-                  await authenticationFacade.convertWithEmailAndPassword(
+                  await mockAuthenticationFacade.convertWithEmailAndPassword(
                 EmailAddress(testEmailValid),
                 Password(testPasswordValid),
               );
@@ -198,7 +198,7 @@ void main() {
               );
 
               final result =
-                  await authenticationFacade.convertWithEmailAndPassword(
+                  await mockAuthenticationFacade.convertWithEmailAndPassword(
                 EmailAddress(testEmailValid),
                 Password(testPasswordValid),
               );
@@ -219,7 +219,7 @@ void main() {
                   .thenThrow(Exception('An unexpected error occured!'));
 
               final result =
-                  await authenticationFacade.convertWithEmailAndPassword(
+                  await mockAuthenticationFacade.convertWithEmailAndPassword(
                 EmailAddress(testEmailValid),
                 Password(testPasswordValid),
               );
@@ -242,7 +242,7 @@ void main() {
             () async {
               when(mockFirebaseAuth.currentUser).thenReturn(mockFirebaseUser);
 
-              final result = authenticationFacade.isAnonymous();
+              final result = mockAuthenticationFacade.isAnonymous();
 
               expect(result, true);
             },
@@ -255,7 +255,7 @@ void main() {
 
               when(mockFirebaseAuth.currentUser).thenReturn(mockFirebaseUser);
 
-              final result = authenticationFacade.isAnonymous();
+              final result = mockAuthenticationFacade.isAnonymous();
 
               expect(result, false);
             },
@@ -277,7 +277,7 @@ void main() {
                   .thenAnswer((_) async => mockDocumentSnapshot);
               when(mockDocumentSnapshot.exists).thenReturn(false);
 
-              final result = await authenticationFacade
+              final result = await mockAuthenticationFacade
                   .isUsernameAvailable(Username(testUsernameValid));
 
               expect(result.isRight(), true);
@@ -299,7 +299,7 @@ void main() {
                   .thenAnswer((_) async => mockDocumentSnapshot);
               when(mockDocumentSnapshot.exists).thenReturn(true);
 
-              final result = await authenticationFacade
+              final result = await mockAuthenticationFacade
                   .isUsernameAvailable(Username(testUsernameValid));
 
               expect(result.isRight(), true);
@@ -316,8 +316,8 @@ void main() {
               when(mockFirestore.collection(any))
                   .thenThrow(Exception('An unexpected error occured!'));
 
-              final result =
-                  await authenticationFacade.isUsernameAvailable(Username(''));
+              final result = await mockAuthenticationFacade
+                  .isUsernameAvailable(Username(''));
 
               expect(result.isLeft(), true);
 
@@ -339,7 +339,7 @@ void main() {
                 ),
               );
 
-              final result = await authenticationFacade
+              final result = await mockAuthenticationFacade
                   .isUsernameAvailable(Username(testUsernameValid));
 
               expect(result.isLeft(), true);
@@ -358,7 +358,7 @@ void main() {
           () {
             when(mockFirebaseAuth.currentUser).thenReturn(mockFirebaseUser);
 
-            final result = authenticationFacade.isSignedIn();
+            final result = mockAuthenticationFacade.isSignedIn();
 
             expect(result, true);
           },
@@ -369,7 +369,7 @@ void main() {
           () {
             when(mockFirebaseAuth.currentUser).thenReturn(null);
 
-            final result = authenticationFacade.isSignedIn();
+            final result = mockAuthenticationFacade.isSignedIn();
 
             expect(result, false);
           },
@@ -382,7 +382,8 @@ void main() {
           () async {
             when(mockFirebaseAuth.currentUser).thenReturn(null);
 
-            final result = await authenticationFacade.resendVerificationEmail();
+            final result =
+                await mockAuthenticationFacade.resendVerificationEmail();
 
             expect(result.isLeft(), true);
             result.fold(
@@ -397,7 +398,8 @@ void main() {
           () async {
             when(mockFirebaseAuth.currentUser).thenReturn(mockFirebaseUser);
 
-            final result = await authenticationFacade.resendVerificationEmail();
+            final result =
+                await mockAuthenticationFacade.resendVerificationEmail();
 
             expect(result.isRight(), true);
             result.fold(
@@ -414,7 +416,8 @@ void main() {
             when(mockFirebaseUser.sendEmailVerification())
                 .thenThrow(Exception('An unexpected error occured!'));
 
-            final result = await authenticationFacade.resendVerificationEmail();
+            final result =
+                await mockAuthenticationFacade.resendVerificationEmail();
 
             expect(result.isLeft(), true);
             result.fold(
@@ -432,7 +435,7 @@ void main() {
             when(mockFirebaseAuth.signInAnonymously())
                 .thenAnswer((_) async => mockUserCredential);
 
-            final result = await authenticationFacade.signInAnonymously();
+            final result = await mockAuthenticationFacade.signInAnonymously();
 
             expect(result.isRight(), true);
             result.fold(
@@ -448,7 +451,7 @@ void main() {
             when(mockFirebaseAuth.signInAnonymously())
                 .thenThrow(Exception('An unexpected error occured!'));
 
-            final result = await authenticationFacade.signInAnonymously();
+            final result = await mockAuthenticationFacade.signInAnonymously();
 
             expect(result.isLeft(), true);
             result.fold(
@@ -472,7 +475,7 @@ void main() {
             ).thenAnswer((_) async => mockUserCredential);
 
             final result =
-                await authenticationFacade.signInWithEmailAndPassword(
+                await mockAuthenticationFacade.signInWithEmailAndPassword(
               EmailAddress(testEmailValid),
               Password(testPasswordValid),
             );
@@ -498,7 +501,7 @@ void main() {
             ).thenAnswer((_) async => mockUserCredential);
 
             final result =
-                await authenticationFacade.signInWithEmailAndPassword(
+                await mockAuthenticationFacade.signInWithEmailAndPassword(
               EmailAddress(testEmailInvalid),
               Password(testPasswordValid),
             );
@@ -524,7 +527,7 @@ void main() {
             ).thenAnswer((_) async => mockUserCredential);
 
             final result =
-                await authenticationFacade.signInWithEmailAndPassword(
+                await mockAuthenticationFacade.signInWithEmailAndPassword(
               EmailAddress(testEmailValid),
               Password(testPasswordInvalid),
             );
@@ -553,7 +556,7 @@ void main() {
             ));
 
             final result =
-                await authenticationFacade.signInWithEmailAndPassword(
+                await mockAuthenticationFacade.signInWithEmailAndPassword(
               EmailAddress(testEmailValid),
               Password(testPasswordValid),
             );
@@ -585,7 +588,7 @@ void main() {
             ));
 
             final result =
-                await authenticationFacade.signInWithEmailAndPassword(
+                await mockAuthenticationFacade.signInWithEmailAndPassword(
               EmailAddress(testEmailValid),
               Password(testPasswordValid),
             );
@@ -610,7 +613,7 @@ void main() {
             ).thenThrow(Exception('An unexpected error occured!'));
 
             final result =
-                await authenticationFacade.signInWithEmailAndPassword(
+                await mockAuthenticationFacade.signInWithEmailAndPassword(
               EmailAddress(testEmailValid),
               Password(testPasswordValid),
             );
@@ -637,7 +640,7 @@ void main() {
             when(mockGoogleSignIn.currentUser)
                 .thenReturn(mockGoogleSignInAccount);
 
-            final result = await authenticationFacade.signInWithGoogle();
+            final result = await mockAuthenticationFacade.signInWithGoogle();
 
             expect(result.isRight(), true);
             result.fold(
@@ -654,7 +657,7 @@ void main() {
             when(mockFirebaseAuth.currentUser).thenReturn(mockFirebaseUser);
             when(mockGoogleSignIn.signIn()).thenAnswer((_) async => null);
 
-            final result = await authenticationFacade.signInWithGoogle();
+            final result = await mockAuthenticationFacade.signInWithGoogle();
 
             expect(result.isLeft(), true);
             result.fold(
@@ -682,7 +685,7 @@ void main() {
             when(mockGoogleSignIn.currentUser)
                 .thenReturn(mockGoogleSignInAccount);
 
-            final result = await authenticationFacade.signInWithGoogle();
+            final result = await mockAuthenticationFacade.signInWithGoogle();
 
             expect(result.isRight(), true);
             result.fold(
@@ -703,7 +706,7 @@ void main() {
               code: 'email-already-in-use',
             ));
 
-            final result = await authenticationFacade.signInWithGoogle();
+            final result = await mockAuthenticationFacade.signInWithGoogle();
 
             expect(result.isLeft(), true);
             result.fold(
@@ -720,7 +723,7 @@ void main() {
             when(mockGoogleSignIn.signIn())
                 .thenThrow(Exception('An unexpected error occured!'));
 
-            final result = await authenticationFacade.signInWithGoogle();
+            final result = await mockAuthenticationFacade.signInWithGoogle();
 
             expect(result.isLeft(), true);
             result.fold(
@@ -742,7 +745,7 @@ void main() {
             when(mockFirebaseAuth.signInAnonymously())
                 .thenAnswer((_) async => mockUserCredential);
 
-            final result = await authenticationFacade.signOut();
+            final result = await mockAuthenticationFacade.signOut();
 
             expect(result.isRight(), true);
             result.fold(
@@ -760,7 +763,7 @@ void main() {
                 .thenAnswer((_) async => mockGoogleSignInAccount);
             when(mockFirebaseAuth.currentUser).thenReturn(mockFirebaseUser);
 
-            final result = await authenticationFacade.signOut();
+            final result = await mockAuthenticationFacade.signOut();
 
             expect(result.isLeft(), true);
             result.fold(
@@ -777,7 +780,7 @@ void main() {
             when(mockGoogleSignIn.signOut())
                 .thenThrow(Exception('An unexpected error occured!'));
 
-            final result = await authenticationFacade.signOut();
+            final result = await mockAuthenticationFacade.signOut();
 
             expect(result.isLeft(), true);
             result.fold(

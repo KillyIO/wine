@@ -53,6 +53,35 @@ class LogInBloc extends Bloc<LogInEvent, LogInState> {
           userOption: none(),
         );
       },
+      signedIn: (value) async* {
+        yield state.copyWith(
+          authenticationOption: none(),
+          sessionOption: none(),
+          userOption: none(),
+        );
+
+        User user;
+
+        final failureOrSuccess =
+            await _userFacade.saveDetailsFromUser(value.user)
+              ..fold(
+                (_) {},
+                (success) => user = success,
+              );
+
+        final isSuccess = failureOrSuccess.isRight();
+
+        yield state.copyWith(
+          authenticationOption: none(),
+          isProcessing: isSuccess,
+          sessionOption: none(),
+          userOption: optionOf(failureOrSuccess),
+        );
+
+        if (failureOrSuccess.isRight()) {
+          add(LogInEvent.userDetailsSaved(user));
+        }
+      },
       signInWithEmailAndPasswordPressed: (value) async* {
         Either<AuthenticationFailure, User> failureOrSuccess;
 
@@ -112,35 +141,6 @@ class LogInBloc extends Bloc<LogInEvent, LogInState> {
         final isSuccess = failureOrSuccess.isRight();
 
         yield* _signedIn(isSuccess, user, failureOrSuccess);
-      },
-      signedIn: (value) async* {
-        yield state.copyWith(
-          authenticationOption: none(),
-          sessionOption: none(),
-          userOption: none(),
-        );
-
-        User user;
-
-        final failureOrSuccess =
-            await _userFacade.saveDetailsFromUser(value.user)
-              ..fold(
-                (_) {},
-                (success) => user = success,
-              );
-
-        final isSuccess = failureOrSuccess.isRight();
-
-        yield state.copyWith(
-          authenticationOption: none(),
-          isProcessing: isSuccess,
-          sessionOption: none(),
-          userOption: optionOf(failureOrSuccess),
-        );
-
-        if (failureOrSuccess.isRight()) {
-          add(LogInEvent.userDetailsSaved(user));
-        }
       },
       userDetailsSaved: (value) async* {
         final failureOrSuccess = await _sessionFacade.createSession(value.user);
