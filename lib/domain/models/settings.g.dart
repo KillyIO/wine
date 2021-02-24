@@ -1,22 +1,22 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'config.dart';
+part of 'settings.dart';
 
 // **************************************************************************
 // TypeAdapterGenerator
 // **************************************************************************
 
-class ConfigAdapter extends TypeAdapter<Config> {
+class SettingsAdapter extends TypeAdapter<Settings> {
   @override
   final int typeId = 1;
 
   @override
-  Config read(BinaryReader reader) {
+  Settings read(BinaryReader reader) {
     final numOfFields = reader.readByte();
     final fields = <int, dynamic>{
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
-    return Config(
+    return Settings(
       enableChaptersBookmarksCount: fields[0] as bool,
       enableChaptersLikesCount: fields[1] as bool,
       enableChaptersViewsCount: fields[2] as bool,
@@ -27,7 +27,7 @@ class ConfigAdapter extends TypeAdapter<Config> {
   }
 
   @override
-  void write(BinaryWriter writer, Config obj) {
+  void write(BinaryWriter writer, Settings obj) {
     writer
       ..writeByte(6)
       ..writeByte(0)
@@ -50,7 +50,7 @@ class ConfigAdapter extends TypeAdapter<Config> {
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
-      other is ConfigAdapter &&
+      other is SettingsAdapter &&
           runtimeType == other.runtimeType &&
           typeId == other.typeId;
 }

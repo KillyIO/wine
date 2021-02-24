@@ -1,13 +1,13 @@
 import 'package:equatable/equatable.dart';
 import 'package:hive/hive.dart';
 
-part 'config.g.dart';
+part 'settings.g.dart';
 
 /// @nodoc
 @HiveType(typeId: 1)
-class Config extends Equatable {
+class Settings extends Equatable {
   /// @nodoc
-  Config({
+  Settings({
     this.enableChaptersBookmarksCount,
     this.enableChaptersLikesCount,
     this.enableChaptersViewsCount,
@@ -17,10 +17,10 @@ class Config extends Equatable {
   });
 
   /// @nodoc
-  factory Config.fromMap(Map<String, dynamic> map) {
+  factory Settings.fromMap(Map<String, dynamic> map) {
     if (map == null) return null;
 
-    return Config(
+    return Settings(
       enableChaptersBookmarksCount: map['enableChaptersBookmarksCount'] as bool,
       enableChaptersLikesCount: map['enableChaptersLikesCount'] as bool,
       enableChaptersViewsCount: map['enableChaptersViewsCount'] as bool,
@@ -55,7 +55,7 @@ class Config extends Equatable {
   final bool enableSeriesViewsCount;
 
   /// @nodoc
-  Config copyWith({
+  Settings copyWith({
     bool enableChaptersBookmarksCount,
     bool enableChaptersLikesCount,
     bool enableChaptersViewsCount,
@@ -63,7 +63,7 @@ class Config extends Equatable {
     bool enableSeriesLikesCount,
     bool enableSeriesViewsCount,
   }) {
-    return Config(
+    return Settings(
       enableChaptersBookmarksCount:
           enableChaptersBookmarksCount ?? this.enableChaptersBookmarksCount,
       enableChaptersLikesCount:
