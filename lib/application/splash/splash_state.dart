@@ -9,22 +9,17 @@ abstract class SplashState with _$SplashState {
   ) = _Authenticated;
 
   /// @nodoc
+  const factory SplashState.defaultCoverURLsCached(
+    Option<Either<DefaultCoverFailure, Unit>> defaultCoverOption,
+  ) = _DefaultCoverURLsCached;
+
+  /// @nodoc
+  const factory SplashState.defaultCoverURLsLoaded(
+    Option<Either<DefaultCoverFailure, Map<String, String>>> defaultCoverOption,
+  ) = _DefaultCoverURLsLoaded;
+
+  /// @nodoc
   const factory SplashState.initial() = _Initial;
-
-  /// @nodoc
-  const factory SplashState.configFetched(
-    Option<Either<ConfigFailure, Config>> configOption,
-  ) = _ConfigFetched;
-
-  /// @nodoc
-  const factory SplashState.placeholdersCached(
-    Option<Either<PlaceholderFailure, Unit>> palceholderOption,
-  ) = _PlaceholdersCached;
-
-  /// @nodoc
-  const factory SplashState.placeholdersLoaded(
-    Option<Either<PlaceholderFailure, Map<String, String>>> palceholderOption,
-  ) = _PlaceholdersLoaded;
 
   /// @nodoc
   const factory SplashState.processing() = _Processing;
@@ -33,6 +28,11 @@ abstract class SplashState with _$SplashState {
   const factory SplashState.sessionFetched(
     Option<Either<SessionFailure, User>> sessionOption,
   ) = _SessionFetched;
+
+  /// @nodoc
+  const factory SplashState.settingsFetched(
+    Option<Either<SettingsFailure, Settings>> settingsOption,
+  ) = _ConfigFetched;
 
   /// @nodoc
   const factory SplashState.userLoaded(

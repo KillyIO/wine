@@ -19,14 +19,15 @@ class _$SplashEventTearOff {
   }
 
 // ignore: unused_element
-  PlaceholdersCached placeholdersCached() {
-    return const PlaceholdersCached();
+  DefaultCoverURLsCached defaultCoverURLsCached() {
+    return const DefaultCoverURLsCached();
   }
 
 // ignore: unused_element
-  PlaceholdersLoaded placeholdersLoaded(Map<String, String> placeholders) {
-    return PlaceholdersLoaded(
-      placeholders,
+  DefaultCoverURLsLoaded defaultCoverURLsLoaded(
+      Map<String, String> defaultCoverURLs) {
+    return DefaultCoverURLsLoaded(
+      defaultCoverURLs,
     );
   }
 
@@ -38,13 +39,13 @@ class _$SplashEventTearOff {
   }
 
 // ignore: unused_element
-  SettingsInitialized settingsInitialized() {
-    return const SettingsInitialized();
+  SplashPageLaunched splashPageLaunched() {
+    return const SplashPageLaunched();
   }
 
 // ignore: unused_element
-  SplashPageLaunched splashPageLaunched() {
-    return const SplashPageLaunched();
+  SettingsInitialized settingsInitialized() {
+    return const SettingsInitialized();
   }
 
 // ignore: unused_element
@@ -64,42 +65,43 @@ mixin _$SplashEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult authenticated(),
-    @required TResult placeholdersCached(),
-    @required TResult placeholdersLoaded(Map<String, String> placeholders),
+    @required TResult defaultCoverURLsCached(),
+    @required
+        TResult defaultCoverURLsLoaded(Map<String, String> defaultCoverURLs),
     @required TResult sessionFetched(User session),
-    @required TResult settingsInitialized(),
     @required TResult splashPageLaunched(),
+    @required TResult settingsInitialized(),
     @required TResult userLoaded(User user),
   });
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult authenticated(),
-    TResult placeholdersCached(),
-    TResult placeholdersLoaded(Map<String, String> placeholders),
+    TResult defaultCoverURLsCached(),
+    TResult defaultCoverURLsLoaded(Map<String, String> defaultCoverURLs),
     TResult sessionFetched(User session),
-    TResult settingsInitialized(),
     TResult splashPageLaunched(),
+    TResult settingsInitialized(),
     TResult userLoaded(User user),
     @required TResult orElse(),
   });
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult authenticated(Authenticated value),
-    @required TResult placeholdersCached(PlaceholdersCached value),
-    @required TResult placeholdersLoaded(PlaceholdersLoaded value),
+    @required TResult defaultCoverURLsCached(DefaultCoverURLsCached value),
+    @required TResult defaultCoverURLsLoaded(DefaultCoverURLsLoaded value),
     @required TResult sessionFetched(SessionFetched value),
-    @required TResult settingsInitialized(SettingsInitialized value),
     @required TResult splashPageLaunched(SplashPageLaunched value),
+    @required TResult settingsInitialized(SettingsInitialized value),
     @required TResult userLoaded(UserLoaded value),
   });
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult authenticated(Authenticated value),
-    TResult placeholdersCached(PlaceholdersCached value),
-    TResult placeholdersLoaded(PlaceholdersLoaded value),
+    TResult defaultCoverURLsCached(DefaultCoverURLsCached value),
+    TResult defaultCoverURLsLoaded(DefaultCoverURLsLoaded value),
     TResult sessionFetched(SessionFetched value),
-    TResult settingsInitialized(SettingsInitialized value),
     TResult splashPageLaunched(SplashPageLaunched value),
+    TResult settingsInitialized(SettingsInitialized value),
     TResult userLoaded(UserLoaded value),
     @required TResult orElse(),
   });
@@ -160,19 +162,20 @@ class _$Authenticated implements Authenticated {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult authenticated(),
-    @required TResult placeholdersCached(),
-    @required TResult placeholdersLoaded(Map<String, String> placeholders),
+    @required TResult defaultCoverURLsCached(),
+    @required
+        TResult defaultCoverURLsLoaded(Map<String, String> defaultCoverURLs),
     @required TResult sessionFetched(User session),
-    @required TResult settingsInitialized(),
     @required TResult splashPageLaunched(),
+    @required TResult settingsInitialized(),
     @required TResult userLoaded(User user),
   }) {
     assert(authenticated != null);
-    assert(placeholdersCached != null);
-    assert(placeholdersLoaded != null);
+    assert(defaultCoverURLsCached != null);
+    assert(defaultCoverURLsLoaded != null);
     assert(sessionFetched != null);
-    assert(settingsInitialized != null);
     assert(splashPageLaunched != null);
+    assert(settingsInitialized != null);
     assert(userLoaded != null);
     return authenticated();
   }
@@ -181,11 +184,11 @@ class _$Authenticated implements Authenticated {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult authenticated(),
-    TResult placeholdersCached(),
-    TResult placeholdersLoaded(Map<String, String> placeholders),
+    TResult defaultCoverURLsCached(),
+    TResult defaultCoverURLsLoaded(Map<String, String> defaultCoverURLs),
     TResult sessionFetched(User session),
-    TResult settingsInitialized(),
     TResult splashPageLaunched(),
+    TResult settingsInitialized(),
     TResult userLoaded(User user),
     @required TResult orElse(),
   }) {
@@ -200,19 +203,19 @@ class _$Authenticated implements Authenticated {
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult authenticated(Authenticated value),
-    @required TResult placeholdersCached(PlaceholdersCached value),
-    @required TResult placeholdersLoaded(PlaceholdersLoaded value),
+    @required TResult defaultCoverURLsCached(DefaultCoverURLsCached value),
+    @required TResult defaultCoverURLsLoaded(DefaultCoverURLsLoaded value),
     @required TResult sessionFetched(SessionFetched value),
-    @required TResult settingsInitialized(SettingsInitialized value),
     @required TResult splashPageLaunched(SplashPageLaunched value),
+    @required TResult settingsInitialized(SettingsInitialized value),
     @required TResult userLoaded(UserLoaded value),
   }) {
     assert(authenticated != null);
-    assert(placeholdersCached != null);
-    assert(placeholdersLoaded != null);
+    assert(defaultCoverURLsCached != null);
+    assert(defaultCoverURLsLoaded != null);
     assert(sessionFetched != null);
-    assert(settingsInitialized != null);
     assert(splashPageLaunched != null);
+    assert(settingsInitialized != null);
     assert(userLoaded != null);
     return authenticated(this);
   }
@@ -221,11 +224,11 @@ class _$Authenticated implements Authenticated {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult authenticated(Authenticated value),
-    TResult placeholdersCached(PlaceholdersCached value),
-    TResult placeholdersLoaded(PlaceholdersLoaded value),
+    TResult defaultCoverURLsCached(DefaultCoverURLsCached value),
+    TResult defaultCoverURLsLoaded(DefaultCoverURLsLoaded value),
     TResult sessionFetched(SessionFetched value),
-    TResult settingsInitialized(SettingsInitialized value),
     TResult splashPageLaunched(SplashPageLaunched value),
+    TResult settingsInitialized(SettingsInitialized value),
     TResult userLoaded(UserLoaded value),
     @required TResult orElse(),
   }) {
@@ -242,36 +245,36 @@ abstract class Authenticated implements SplashEvent {
 }
 
 /// @nodoc
-abstract class $PlaceholdersCachedCopyWith<$Res> {
-  factory $PlaceholdersCachedCopyWith(
-          PlaceholdersCached value, $Res Function(PlaceholdersCached) then) =
-      _$PlaceholdersCachedCopyWithImpl<$Res>;
+abstract class $DefaultCoverURLsCachedCopyWith<$Res> {
+  factory $DefaultCoverURLsCachedCopyWith(DefaultCoverURLsCached value,
+          $Res Function(DefaultCoverURLsCached) then) =
+      _$DefaultCoverURLsCachedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$PlaceholdersCachedCopyWithImpl<$Res>
+class _$DefaultCoverURLsCachedCopyWithImpl<$Res>
     extends _$SplashEventCopyWithImpl<$Res>
-    implements $PlaceholdersCachedCopyWith<$Res> {
-  _$PlaceholdersCachedCopyWithImpl(
-      PlaceholdersCached _value, $Res Function(PlaceholdersCached) _then)
-      : super(_value, (v) => _then(v as PlaceholdersCached));
+    implements $DefaultCoverURLsCachedCopyWith<$Res> {
+  _$DefaultCoverURLsCachedCopyWithImpl(DefaultCoverURLsCached _value,
+      $Res Function(DefaultCoverURLsCached) _then)
+      : super(_value, (v) => _then(v as DefaultCoverURLsCached));
 
   @override
-  PlaceholdersCached get _value => super._value as PlaceholdersCached;
+  DefaultCoverURLsCached get _value => super._value as DefaultCoverURLsCached;
 }
 
 /// @nodoc
-class _$PlaceholdersCached implements PlaceholdersCached {
-  const _$PlaceholdersCached();
+class _$DefaultCoverURLsCached implements DefaultCoverURLsCached {
+  const _$DefaultCoverURLsCached();
 
   @override
   String toString() {
-    return 'SplashEvent.placeholdersCached()';
+    return 'SplashEvent.defaultCoverURLsCached()';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is PlaceholdersCached);
+    return identical(this, other) || (other is DefaultCoverURLsCached);
   }
 
   @override
@@ -281,38 +284,39 @@ class _$PlaceholdersCached implements PlaceholdersCached {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult authenticated(),
-    @required TResult placeholdersCached(),
-    @required TResult placeholdersLoaded(Map<String, String> placeholders),
+    @required TResult defaultCoverURLsCached(),
+    @required
+        TResult defaultCoverURLsLoaded(Map<String, String> defaultCoverURLs),
     @required TResult sessionFetched(User session),
-    @required TResult settingsInitialized(),
     @required TResult splashPageLaunched(),
+    @required TResult settingsInitialized(),
     @required TResult userLoaded(User user),
   }) {
     assert(authenticated != null);
-    assert(placeholdersCached != null);
-    assert(placeholdersLoaded != null);
+    assert(defaultCoverURLsCached != null);
+    assert(defaultCoverURLsLoaded != null);
     assert(sessionFetched != null);
-    assert(settingsInitialized != null);
     assert(splashPageLaunched != null);
+    assert(settingsInitialized != null);
     assert(userLoaded != null);
-    return placeholdersCached();
+    return defaultCoverURLsCached();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult authenticated(),
-    TResult placeholdersCached(),
-    TResult placeholdersLoaded(Map<String, String> placeholders),
+    TResult defaultCoverURLsCached(),
+    TResult defaultCoverURLsLoaded(Map<String, String> defaultCoverURLs),
     TResult sessionFetched(User session),
-    TResult settingsInitialized(),
     TResult splashPageLaunched(),
+    TResult settingsInitialized(),
     TResult userLoaded(User user),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (placeholdersCached != null) {
-      return placeholdersCached();
+    if (defaultCoverURLsCached != null) {
+      return defaultCoverURLsCached();
     }
     return orElse();
   }
@@ -321,144 +325,148 @@ class _$PlaceholdersCached implements PlaceholdersCached {
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult authenticated(Authenticated value),
-    @required TResult placeholdersCached(PlaceholdersCached value),
-    @required TResult placeholdersLoaded(PlaceholdersLoaded value),
+    @required TResult defaultCoverURLsCached(DefaultCoverURLsCached value),
+    @required TResult defaultCoverURLsLoaded(DefaultCoverURLsLoaded value),
     @required TResult sessionFetched(SessionFetched value),
-    @required TResult settingsInitialized(SettingsInitialized value),
     @required TResult splashPageLaunched(SplashPageLaunched value),
+    @required TResult settingsInitialized(SettingsInitialized value),
     @required TResult userLoaded(UserLoaded value),
   }) {
     assert(authenticated != null);
-    assert(placeholdersCached != null);
-    assert(placeholdersLoaded != null);
+    assert(defaultCoverURLsCached != null);
+    assert(defaultCoverURLsLoaded != null);
     assert(sessionFetched != null);
-    assert(settingsInitialized != null);
     assert(splashPageLaunched != null);
+    assert(settingsInitialized != null);
     assert(userLoaded != null);
-    return placeholdersCached(this);
+    return defaultCoverURLsCached(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult authenticated(Authenticated value),
-    TResult placeholdersCached(PlaceholdersCached value),
-    TResult placeholdersLoaded(PlaceholdersLoaded value),
+    TResult defaultCoverURLsCached(DefaultCoverURLsCached value),
+    TResult defaultCoverURLsLoaded(DefaultCoverURLsLoaded value),
     TResult sessionFetched(SessionFetched value),
-    TResult settingsInitialized(SettingsInitialized value),
     TResult splashPageLaunched(SplashPageLaunched value),
+    TResult settingsInitialized(SettingsInitialized value),
     TResult userLoaded(UserLoaded value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (placeholdersCached != null) {
-      return placeholdersCached(this);
+    if (defaultCoverURLsCached != null) {
+      return defaultCoverURLsCached(this);
     }
     return orElse();
   }
 }
 
-abstract class PlaceholdersCached implements SplashEvent {
-  const factory PlaceholdersCached() = _$PlaceholdersCached;
+abstract class DefaultCoverURLsCached implements SplashEvent {
+  const factory DefaultCoverURLsCached() = _$DefaultCoverURLsCached;
 }
 
 /// @nodoc
-abstract class $PlaceholdersLoadedCopyWith<$Res> {
-  factory $PlaceholdersLoadedCopyWith(
-          PlaceholdersLoaded value, $Res Function(PlaceholdersLoaded) then) =
-      _$PlaceholdersLoadedCopyWithImpl<$Res>;
-  $Res call({Map<String, String> placeholders});
+abstract class $DefaultCoverURLsLoadedCopyWith<$Res> {
+  factory $DefaultCoverURLsLoadedCopyWith(DefaultCoverURLsLoaded value,
+          $Res Function(DefaultCoverURLsLoaded) then) =
+      _$DefaultCoverURLsLoadedCopyWithImpl<$Res>;
+  $Res call({Map<String, String> defaultCoverURLs});
 }
 
 /// @nodoc
-class _$PlaceholdersLoadedCopyWithImpl<$Res>
+class _$DefaultCoverURLsLoadedCopyWithImpl<$Res>
     extends _$SplashEventCopyWithImpl<$Res>
-    implements $PlaceholdersLoadedCopyWith<$Res> {
-  _$PlaceholdersLoadedCopyWithImpl(
-      PlaceholdersLoaded _value, $Res Function(PlaceholdersLoaded) _then)
-      : super(_value, (v) => _then(v as PlaceholdersLoaded));
+    implements $DefaultCoverURLsLoadedCopyWith<$Res> {
+  _$DefaultCoverURLsLoadedCopyWithImpl(DefaultCoverURLsLoaded _value,
+      $Res Function(DefaultCoverURLsLoaded) _then)
+      : super(_value, (v) => _then(v as DefaultCoverURLsLoaded));
 
   @override
-  PlaceholdersLoaded get _value => super._value as PlaceholdersLoaded;
+  DefaultCoverURLsLoaded get _value => super._value as DefaultCoverURLsLoaded;
 
   @override
   $Res call({
-    Object placeholders = freezed,
+    Object defaultCoverURLs = freezed,
   }) {
-    return _then(PlaceholdersLoaded(
-      placeholders == freezed
-          ? _value.placeholders
-          : placeholders as Map<String, String>,
+    return _then(DefaultCoverURLsLoaded(
+      defaultCoverURLs == freezed
+          ? _value.defaultCoverURLs
+          : defaultCoverURLs as Map<String, String>,
     ));
   }
 }
 
 /// @nodoc
-class _$PlaceholdersLoaded implements PlaceholdersLoaded {
-  const _$PlaceholdersLoaded(this.placeholders) : assert(placeholders != null);
+class _$DefaultCoverURLsLoaded implements DefaultCoverURLsLoaded {
+  const _$DefaultCoverURLsLoaded(this.defaultCoverURLs)
+      : assert(defaultCoverURLs != null);
 
   @override
-  final Map<String, String> placeholders;
+  final Map<String, String> defaultCoverURLs;
 
   @override
   String toString() {
-    return 'SplashEvent.placeholdersLoaded(placeholders: $placeholders)';
+    return 'SplashEvent.defaultCoverURLsLoaded(defaultCoverURLs: $defaultCoverURLs)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is PlaceholdersLoaded &&
-            (identical(other.placeholders, placeholders) ||
+        (other is DefaultCoverURLsLoaded &&
+            (identical(other.defaultCoverURLs, defaultCoverURLs) ||
                 const DeepCollectionEquality()
-                    .equals(other.placeholders, placeholders)));
+                    .equals(other.defaultCoverURLs, defaultCoverURLs)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(placeholders);
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(defaultCoverURLs);
 
   @JsonKey(ignore: true)
   @override
-  $PlaceholdersLoadedCopyWith<PlaceholdersLoaded> get copyWith =>
-      _$PlaceholdersLoadedCopyWithImpl<PlaceholdersLoaded>(this, _$identity);
+  $DefaultCoverURLsLoadedCopyWith<DefaultCoverURLsLoaded> get copyWith =>
+      _$DefaultCoverURLsLoadedCopyWithImpl<DefaultCoverURLsLoaded>(
+          this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult authenticated(),
-    @required TResult placeholdersCached(),
-    @required TResult placeholdersLoaded(Map<String, String> placeholders),
+    @required TResult defaultCoverURLsCached(),
+    @required
+        TResult defaultCoverURLsLoaded(Map<String, String> defaultCoverURLs),
     @required TResult sessionFetched(User session),
-    @required TResult settingsInitialized(),
     @required TResult splashPageLaunched(),
+    @required TResult settingsInitialized(),
     @required TResult userLoaded(User user),
   }) {
     assert(authenticated != null);
-    assert(placeholdersCached != null);
-    assert(placeholdersLoaded != null);
+    assert(defaultCoverURLsCached != null);
+    assert(defaultCoverURLsLoaded != null);
     assert(sessionFetched != null);
-    assert(settingsInitialized != null);
     assert(splashPageLaunched != null);
+    assert(settingsInitialized != null);
     assert(userLoaded != null);
-    return placeholdersLoaded(placeholders);
+    return defaultCoverURLsLoaded(defaultCoverURLs);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult authenticated(),
-    TResult placeholdersCached(),
-    TResult placeholdersLoaded(Map<String, String> placeholders),
+    TResult defaultCoverURLsCached(),
+    TResult defaultCoverURLsLoaded(Map<String, String> defaultCoverURLs),
     TResult sessionFetched(User session),
-    TResult settingsInitialized(),
     TResult splashPageLaunched(),
+    TResult settingsInitialized(),
     TResult userLoaded(User user),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (placeholdersLoaded != null) {
-      return placeholdersLoaded(placeholders);
+    if (defaultCoverURLsLoaded != null) {
+      return defaultCoverURLsLoaded(defaultCoverURLs);
     }
     return orElse();
   }
@@ -467,50 +475,50 @@ class _$PlaceholdersLoaded implements PlaceholdersLoaded {
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult authenticated(Authenticated value),
-    @required TResult placeholdersCached(PlaceholdersCached value),
-    @required TResult placeholdersLoaded(PlaceholdersLoaded value),
+    @required TResult defaultCoverURLsCached(DefaultCoverURLsCached value),
+    @required TResult defaultCoverURLsLoaded(DefaultCoverURLsLoaded value),
     @required TResult sessionFetched(SessionFetched value),
-    @required TResult settingsInitialized(SettingsInitialized value),
     @required TResult splashPageLaunched(SplashPageLaunched value),
+    @required TResult settingsInitialized(SettingsInitialized value),
     @required TResult userLoaded(UserLoaded value),
   }) {
     assert(authenticated != null);
-    assert(placeholdersCached != null);
-    assert(placeholdersLoaded != null);
+    assert(defaultCoverURLsCached != null);
+    assert(defaultCoverURLsLoaded != null);
     assert(sessionFetched != null);
-    assert(settingsInitialized != null);
     assert(splashPageLaunched != null);
+    assert(settingsInitialized != null);
     assert(userLoaded != null);
-    return placeholdersLoaded(this);
+    return defaultCoverURLsLoaded(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult authenticated(Authenticated value),
-    TResult placeholdersCached(PlaceholdersCached value),
-    TResult placeholdersLoaded(PlaceholdersLoaded value),
+    TResult defaultCoverURLsCached(DefaultCoverURLsCached value),
+    TResult defaultCoverURLsLoaded(DefaultCoverURLsLoaded value),
     TResult sessionFetched(SessionFetched value),
-    TResult settingsInitialized(SettingsInitialized value),
     TResult splashPageLaunched(SplashPageLaunched value),
+    TResult settingsInitialized(SettingsInitialized value),
     TResult userLoaded(UserLoaded value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (placeholdersLoaded != null) {
-      return placeholdersLoaded(this);
+    if (defaultCoverURLsLoaded != null) {
+      return defaultCoverURLsLoaded(this);
     }
     return orElse();
   }
 }
 
-abstract class PlaceholdersLoaded implements SplashEvent {
-  const factory PlaceholdersLoaded(Map<String, String> placeholders) =
-      _$PlaceholdersLoaded;
+abstract class DefaultCoverURLsLoaded implements SplashEvent {
+  const factory DefaultCoverURLsLoaded(Map<String, String> defaultCoverURLs) =
+      _$DefaultCoverURLsLoaded;
 
-  Map<String, String> get placeholders;
+  Map<String, String> get defaultCoverURLs;
   @JsonKey(ignore: true)
-  $PlaceholdersLoadedCopyWith<PlaceholdersLoaded> get copyWith;
+  $DefaultCoverURLsLoadedCopyWith<DefaultCoverURLsLoaded> get copyWith;
 }
 
 /// @nodoc
@@ -574,19 +582,20 @@ class _$SessionFetched implements SessionFetched {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult authenticated(),
-    @required TResult placeholdersCached(),
-    @required TResult placeholdersLoaded(Map<String, String> placeholders),
+    @required TResult defaultCoverURLsCached(),
+    @required
+        TResult defaultCoverURLsLoaded(Map<String, String> defaultCoverURLs),
     @required TResult sessionFetched(User session),
-    @required TResult settingsInitialized(),
     @required TResult splashPageLaunched(),
+    @required TResult settingsInitialized(),
     @required TResult userLoaded(User user),
   }) {
     assert(authenticated != null);
-    assert(placeholdersCached != null);
-    assert(placeholdersLoaded != null);
+    assert(defaultCoverURLsCached != null);
+    assert(defaultCoverURLsLoaded != null);
     assert(sessionFetched != null);
-    assert(settingsInitialized != null);
     assert(splashPageLaunched != null);
+    assert(settingsInitialized != null);
     assert(userLoaded != null);
     return sessionFetched(session);
   }
@@ -595,11 +604,11 @@ class _$SessionFetched implements SessionFetched {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult authenticated(),
-    TResult placeholdersCached(),
-    TResult placeholdersLoaded(Map<String, String> placeholders),
+    TResult defaultCoverURLsCached(),
+    TResult defaultCoverURLsLoaded(Map<String, String> defaultCoverURLs),
     TResult sessionFetched(User session),
-    TResult settingsInitialized(),
     TResult splashPageLaunched(),
+    TResult settingsInitialized(),
     TResult userLoaded(User user),
     @required TResult orElse(),
   }) {
@@ -614,19 +623,19 @@ class _$SessionFetched implements SessionFetched {
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult authenticated(Authenticated value),
-    @required TResult placeholdersCached(PlaceholdersCached value),
-    @required TResult placeholdersLoaded(PlaceholdersLoaded value),
+    @required TResult defaultCoverURLsCached(DefaultCoverURLsCached value),
+    @required TResult defaultCoverURLsLoaded(DefaultCoverURLsLoaded value),
     @required TResult sessionFetched(SessionFetched value),
-    @required TResult settingsInitialized(SettingsInitialized value),
     @required TResult splashPageLaunched(SplashPageLaunched value),
+    @required TResult settingsInitialized(SettingsInitialized value),
     @required TResult userLoaded(UserLoaded value),
   }) {
     assert(authenticated != null);
-    assert(placeholdersCached != null);
-    assert(placeholdersLoaded != null);
+    assert(defaultCoverURLsCached != null);
+    assert(defaultCoverURLsLoaded != null);
     assert(sessionFetched != null);
-    assert(settingsInitialized != null);
     assert(splashPageLaunched != null);
+    assert(settingsInitialized != null);
     assert(userLoaded != null);
     return sessionFetched(this);
   }
@@ -635,11 +644,11 @@ class _$SessionFetched implements SessionFetched {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult authenticated(Authenticated value),
-    TResult placeholdersCached(PlaceholdersCached value),
-    TResult placeholdersLoaded(PlaceholdersLoaded value),
+    TResult defaultCoverURLsCached(DefaultCoverURLsCached value),
+    TResult defaultCoverURLsLoaded(DefaultCoverURLsLoaded value),
     TResult sessionFetched(SessionFetched value),
-    TResult settingsInitialized(SettingsInitialized value),
     TResult splashPageLaunched(SplashPageLaunched value),
+    TResult settingsInitialized(SettingsInitialized value),
     TResult userLoaded(UserLoaded value),
     @required TResult orElse(),
   }) {
@@ -657,127 +666,6 @@ abstract class SessionFetched implements SplashEvent {
   User get session;
   @JsonKey(ignore: true)
   $SessionFetchedCopyWith<SessionFetched> get copyWith;
-}
-
-/// @nodoc
-abstract class $SettingsInitializedCopyWith<$Res> {
-  factory $SettingsInitializedCopyWith(
-          SettingsInitialized value, $Res Function(SettingsInitialized) then) =
-      _$SettingsInitializedCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class _$SettingsInitializedCopyWithImpl<$Res>
-    extends _$SplashEventCopyWithImpl<$Res>
-    implements $SettingsInitializedCopyWith<$Res> {
-  _$SettingsInitializedCopyWithImpl(
-      SettingsInitialized _value, $Res Function(SettingsInitialized) _then)
-      : super(_value, (v) => _then(v as SettingsInitialized));
-
-  @override
-  SettingsInitialized get _value => super._value as SettingsInitialized;
-}
-
-/// @nodoc
-class _$SettingsInitialized implements SettingsInitialized {
-  const _$SettingsInitialized();
-
-  @override
-  String toString() {
-    return 'SplashEvent.settingsInitialized()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) || (other is SettingsInitialized);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult authenticated(),
-    @required TResult placeholdersCached(),
-    @required TResult placeholdersLoaded(Map<String, String> placeholders),
-    @required TResult sessionFetched(User session),
-    @required TResult settingsInitialized(),
-    @required TResult splashPageLaunched(),
-    @required TResult userLoaded(User user),
-  }) {
-    assert(authenticated != null);
-    assert(placeholdersCached != null);
-    assert(placeholdersLoaded != null);
-    assert(sessionFetched != null);
-    assert(settingsInitialized != null);
-    assert(splashPageLaunched != null);
-    assert(userLoaded != null);
-    return settingsInitialized();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult authenticated(),
-    TResult placeholdersCached(),
-    TResult placeholdersLoaded(Map<String, String> placeholders),
-    TResult sessionFetched(User session),
-    TResult settingsInitialized(),
-    TResult splashPageLaunched(),
-    TResult userLoaded(User user),
-    @required TResult orElse(),
-  }) {
-    assert(orElse != null);
-    if (settingsInitialized != null) {
-      return settingsInitialized();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult authenticated(Authenticated value),
-    @required TResult placeholdersCached(PlaceholdersCached value),
-    @required TResult placeholdersLoaded(PlaceholdersLoaded value),
-    @required TResult sessionFetched(SessionFetched value),
-    @required TResult settingsInitialized(SettingsInitialized value),
-    @required TResult splashPageLaunched(SplashPageLaunched value),
-    @required TResult userLoaded(UserLoaded value),
-  }) {
-    assert(authenticated != null);
-    assert(placeholdersCached != null);
-    assert(placeholdersLoaded != null);
-    assert(sessionFetched != null);
-    assert(settingsInitialized != null);
-    assert(splashPageLaunched != null);
-    assert(userLoaded != null);
-    return settingsInitialized(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult authenticated(Authenticated value),
-    TResult placeholdersCached(PlaceholdersCached value),
-    TResult placeholdersLoaded(PlaceholdersLoaded value),
-    TResult sessionFetched(SessionFetched value),
-    TResult settingsInitialized(SettingsInitialized value),
-    TResult splashPageLaunched(SplashPageLaunched value),
-    TResult userLoaded(UserLoaded value),
-    @required TResult orElse(),
-  }) {
-    assert(orElse != null);
-    if (settingsInitialized != null) {
-      return settingsInitialized(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class SettingsInitialized implements SplashEvent {
-  const factory SettingsInitialized() = _$SettingsInitialized;
 }
 
 /// @nodoc
@@ -820,19 +708,20 @@ class _$SplashPageLaunched implements SplashPageLaunched {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult authenticated(),
-    @required TResult placeholdersCached(),
-    @required TResult placeholdersLoaded(Map<String, String> placeholders),
+    @required TResult defaultCoverURLsCached(),
+    @required
+        TResult defaultCoverURLsLoaded(Map<String, String> defaultCoverURLs),
     @required TResult sessionFetched(User session),
-    @required TResult settingsInitialized(),
     @required TResult splashPageLaunched(),
+    @required TResult settingsInitialized(),
     @required TResult userLoaded(User user),
   }) {
     assert(authenticated != null);
-    assert(placeholdersCached != null);
-    assert(placeholdersLoaded != null);
+    assert(defaultCoverURLsCached != null);
+    assert(defaultCoverURLsLoaded != null);
     assert(sessionFetched != null);
-    assert(settingsInitialized != null);
     assert(splashPageLaunched != null);
+    assert(settingsInitialized != null);
     assert(userLoaded != null);
     return splashPageLaunched();
   }
@@ -841,11 +730,11 @@ class _$SplashPageLaunched implements SplashPageLaunched {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult authenticated(),
-    TResult placeholdersCached(),
-    TResult placeholdersLoaded(Map<String, String> placeholders),
+    TResult defaultCoverURLsCached(),
+    TResult defaultCoverURLsLoaded(Map<String, String> defaultCoverURLs),
     TResult sessionFetched(User session),
-    TResult settingsInitialized(),
     TResult splashPageLaunched(),
+    TResult settingsInitialized(),
     TResult userLoaded(User user),
     @required TResult orElse(),
   }) {
@@ -860,19 +749,19 @@ class _$SplashPageLaunched implements SplashPageLaunched {
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult authenticated(Authenticated value),
-    @required TResult placeholdersCached(PlaceholdersCached value),
-    @required TResult placeholdersLoaded(PlaceholdersLoaded value),
+    @required TResult defaultCoverURLsCached(DefaultCoverURLsCached value),
+    @required TResult defaultCoverURLsLoaded(DefaultCoverURLsLoaded value),
     @required TResult sessionFetched(SessionFetched value),
-    @required TResult settingsInitialized(SettingsInitialized value),
     @required TResult splashPageLaunched(SplashPageLaunched value),
+    @required TResult settingsInitialized(SettingsInitialized value),
     @required TResult userLoaded(UserLoaded value),
   }) {
     assert(authenticated != null);
-    assert(placeholdersCached != null);
-    assert(placeholdersLoaded != null);
+    assert(defaultCoverURLsCached != null);
+    assert(defaultCoverURLsLoaded != null);
     assert(sessionFetched != null);
-    assert(settingsInitialized != null);
     assert(splashPageLaunched != null);
+    assert(settingsInitialized != null);
     assert(userLoaded != null);
     return splashPageLaunched(this);
   }
@@ -881,11 +770,11 @@ class _$SplashPageLaunched implements SplashPageLaunched {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult authenticated(Authenticated value),
-    TResult placeholdersCached(PlaceholdersCached value),
-    TResult placeholdersLoaded(PlaceholdersLoaded value),
+    TResult defaultCoverURLsCached(DefaultCoverURLsCached value),
+    TResult defaultCoverURLsLoaded(DefaultCoverURLsLoaded value),
     TResult sessionFetched(SessionFetched value),
-    TResult settingsInitialized(SettingsInitialized value),
     TResult splashPageLaunched(SplashPageLaunched value),
+    TResult settingsInitialized(SettingsInitialized value),
     TResult userLoaded(UserLoaded value),
     @required TResult orElse(),
   }) {
@@ -899,6 +788,128 @@ class _$SplashPageLaunched implements SplashPageLaunched {
 
 abstract class SplashPageLaunched implements SplashEvent {
   const factory SplashPageLaunched() = _$SplashPageLaunched;
+}
+
+/// @nodoc
+abstract class $SettingsInitializedCopyWith<$Res> {
+  factory $SettingsInitializedCopyWith(
+          SettingsInitialized value, $Res Function(SettingsInitialized) then) =
+      _$SettingsInitializedCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$SettingsInitializedCopyWithImpl<$Res>
+    extends _$SplashEventCopyWithImpl<$Res>
+    implements $SettingsInitializedCopyWith<$Res> {
+  _$SettingsInitializedCopyWithImpl(
+      SettingsInitialized _value, $Res Function(SettingsInitialized) _then)
+      : super(_value, (v) => _then(v as SettingsInitialized));
+
+  @override
+  SettingsInitialized get _value => super._value as SettingsInitialized;
+}
+
+/// @nodoc
+class _$SettingsInitialized implements SettingsInitialized {
+  const _$SettingsInitialized();
+
+  @override
+  String toString() {
+    return 'SplashEvent.settingsInitialized()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is SettingsInitialized);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object>({
+    @required TResult authenticated(),
+    @required TResult defaultCoverURLsCached(),
+    @required
+        TResult defaultCoverURLsLoaded(Map<String, String> defaultCoverURLs),
+    @required TResult sessionFetched(User session),
+    @required TResult splashPageLaunched(),
+    @required TResult settingsInitialized(),
+    @required TResult userLoaded(User user),
+  }) {
+    assert(authenticated != null);
+    assert(defaultCoverURLsCached != null);
+    assert(defaultCoverURLsLoaded != null);
+    assert(sessionFetched != null);
+    assert(splashPageLaunched != null);
+    assert(settingsInitialized != null);
+    assert(userLoaded != null);
+    return settingsInitialized();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object>({
+    TResult authenticated(),
+    TResult defaultCoverURLsCached(),
+    TResult defaultCoverURLsLoaded(Map<String, String> defaultCoverURLs),
+    TResult sessionFetched(User session),
+    TResult splashPageLaunched(),
+    TResult settingsInitialized(),
+    TResult userLoaded(User user),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (settingsInitialized != null) {
+      return settingsInitialized();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object>({
+    @required TResult authenticated(Authenticated value),
+    @required TResult defaultCoverURLsCached(DefaultCoverURLsCached value),
+    @required TResult defaultCoverURLsLoaded(DefaultCoverURLsLoaded value),
+    @required TResult sessionFetched(SessionFetched value),
+    @required TResult splashPageLaunched(SplashPageLaunched value),
+    @required TResult settingsInitialized(SettingsInitialized value),
+    @required TResult userLoaded(UserLoaded value),
+  }) {
+    assert(authenticated != null);
+    assert(defaultCoverURLsCached != null);
+    assert(defaultCoverURLsLoaded != null);
+    assert(sessionFetched != null);
+    assert(splashPageLaunched != null);
+    assert(settingsInitialized != null);
+    assert(userLoaded != null);
+    return settingsInitialized(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object>({
+    TResult authenticated(Authenticated value),
+    TResult defaultCoverURLsCached(DefaultCoverURLsCached value),
+    TResult defaultCoverURLsLoaded(DefaultCoverURLsLoaded value),
+    TResult sessionFetched(SessionFetched value),
+    TResult splashPageLaunched(SplashPageLaunched value),
+    TResult settingsInitialized(SettingsInitialized value),
+    TResult userLoaded(UserLoaded value),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (settingsInitialized != null) {
+      return settingsInitialized(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SettingsInitialized implements SplashEvent {
+  const factory SettingsInitialized() = _$SettingsInitialized;
 }
 
 /// @nodoc
@@ -961,19 +972,20 @@ class _$UserLoaded implements UserLoaded {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult authenticated(),
-    @required TResult placeholdersCached(),
-    @required TResult placeholdersLoaded(Map<String, String> placeholders),
+    @required TResult defaultCoverURLsCached(),
+    @required
+        TResult defaultCoverURLsLoaded(Map<String, String> defaultCoverURLs),
     @required TResult sessionFetched(User session),
-    @required TResult settingsInitialized(),
     @required TResult splashPageLaunched(),
+    @required TResult settingsInitialized(),
     @required TResult userLoaded(User user),
   }) {
     assert(authenticated != null);
-    assert(placeholdersCached != null);
-    assert(placeholdersLoaded != null);
+    assert(defaultCoverURLsCached != null);
+    assert(defaultCoverURLsLoaded != null);
     assert(sessionFetched != null);
-    assert(settingsInitialized != null);
     assert(splashPageLaunched != null);
+    assert(settingsInitialized != null);
     assert(userLoaded != null);
     return userLoaded(user);
   }
@@ -982,11 +994,11 @@ class _$UserLoaded implements UserLoaded {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult authenticated(),
-    TResult placeholdersCached(),
-    TResult placeholdersLoaded(Map<String, String> placeholders),
+    TResult defaultCoverURLsCached(),
+    TResult defaultCoverURLsLoaded(Map<String, String> defaultCoverURLs),
     TResult sessionFetched(User session),
-    TResult settingsInitialized(),
     TResult splashPageLaunched(),
+    TResult settingsInitialized(),
     TResult userLoaded(User user),
     @required TResult orElse(),
   }) {
@@ -1001,19 +1013,19 @@ class _$UserLoaded implements UserLoaded {
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult authenticated(Authenticated value),
-    @required TResult placeholdersCached(PlaceholdersCached value),
-    @required TResult placeholdersLoaded(PlaceholdersLoaded value),
+    @required TResult defaultCoverURLsCached(DefaultCoverURLsCached value),
+    @required TResult defaultCoverURLsLoaded(DefaultCoverURLsLoaded value),
     @required TResult sessionFetched(SessionFetched value),
-    @required TResult settingsInitialized(SettingsInitialized value),
     @required TResult splashPageLaunched(SplashPageLaunched value),
+    @required TResult settingsInitialized(SettingsInitialized value),
     @required TResult userLoaded(UserLoaded value),
   }) {
     assert(authenticated != null);
-    assert(placeholdersCached != null);
-    assert(placeholdersLoaded != null);
+    assert(defaultCoverURLsCached != null);
+    assert(defaultCoverURLsLoaded != null);
     assert(sessionFetched != null);
-    assert(settingsInitialized != null);
     assert(splashPageLaunched != null);
+    assert(settingsInitialized != null);
     assert(userLoaded != null);
     return userLoaded(this);
   }
@@ -1022,11 +1034,11 @@ class _$UserLoaded implements UserLoaded {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult authenticated(Authenticated value),
-    TResult placeholdersCached(PlaceholdersCached value),
-    TResult placeholdersLoaded(PlaceholdersLoaded value),
+    TResult defaultCoverURLsCached(DefaultCoverURLsCached value),
+    TResult defaultCoverURLsLoaded(DefaultCoverURLsLoaded value),
     TResult sessionFetched(SessionFetched value),
-    TResult settingsInitialized(SettingsInitialized value),
     TResult splashPageLaunched(SplashPageLaunched value),
+    TResult settingsInitialized(SettingsInitialized value),
     TResult userLoaded(UserLoaded value),
     @required TResult orElse(),
   }) {
@@ -1059,33 +1071,25 @@ class _$SplashStateTearOff {
   }
 
 // ignore: unused_element
+  _DefaultCoverURLsCached defaultCoverURLsCached(
+      Option<Either<DefaultCoverFailure, Unit>> defaultCoverOption) {
+    return _DefaultCoverURLsCached(
+      defaultCoverOption,
+    );
+  }
+
+// ignore: unused_element
+  _DefaultCoverURLsLoaded defaultCoverURLsLoaded(
+      Option<Either<DefaultCoverFailure, Map<String, String>>>
+          defaultCoverOption) {
+    return _DefaultCoverURLsLoaded(
+      defaultCoverOption,
+    );
+  }
+
+// ignore: unused_element
   _Initial initial() {
     return const _Initial();
-  }
-
-// ignore: unused_element
-  _ConfigFetched configFetched(
-      Option<Either<ConfigFailure, Config>> configOption) {
-    return _ConfigFetched(
-      configOption,
-    );
-  }
-
-// ignore: unused_element
-  _PlaceholdersCached placeholdersCached(
-      Option<Either<PlaceholderFailure, Unit>> palceholderOption) {
-    return _PlaceholdersCached(
-      palceholderOption,
-    );
-  }
-
-// ignore: unused_element
-  _PlaceholdersLoaded placeholdersLoaded(
-      Option<Either<PlaceholderFailure, Map<String, String>>>
-          palceholderOption) {
-    return _PlaceholdersLoaded(
-      palceholderOption,
-    );
   }
 
 // ignore: unused_element
@@ -1098,6 +1102,14 @@ class _$SplashStateTearOff {
       Option<Either<SessionFailure, User>> sessionOption) {
     return _SessionFetched(
       sessionOption,
+    );
+  }
+
+// ignore: unused_element
+  _ConfigFetched settingsFetched(
+      Option<Either<SettingsFailure, Settings>> settingsOption) {
+    return _ConfigFetched(
+      settingsOption,
     );
   }
 
@@ -1120,59 +1132,60 @@ mixin _$SplashState {
     @required
         TResult authenticated(
             Option<Either<AuthenticationFailure, Unit>> authenticationOption),
+    @required
+        TResult defaultCoverURLsCached(
+            Option<Either<DefaultCoverFailure, Unit>> defaultCoverOption),
+    @required
+        TResult defaultCoverURLsLoaded(
+            Option<Either<DefaultCoverFailure, Map<String, String>>>
+                defaultCoverOption),
     @required TResult initial(),
-    @required
-        TResult configFetched(
-            Option<Either<ConfigFailure, Config>> configOption),
-    @required
-        TResult placeholdersCached(
-            Option<Either<PlaceholderFailure, Unit>> palceholderOption),
-    @required
-        TResult placeholdersLoaded(
-            Option<Either<PlaceholderFailure, Map<String, String>>>
-                palceholderOption),
     @required TResult processing(),
     @required
         TResult sessionFetched(
             Option<Either<SessionFailure, User>> sessionOption),
+    @required
+        TResult settingsFetched(
+            Option<Either<SettingsFailure, Settings>> settingsOption),
     @required TResult userLoaded(Option<Either<UserFailure, User>> userOption),
   });
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult authenticated(
         Option<Either<AuthenticationFailure, Unit>> authenticationOption),
+    TResult defaultCoverURLsCached(
+        Option<Either<DefaultCoverFailure, Unit>> defaultCoverOption),
+    TResult defaultCoverURLsLoaded(
+        Option<Either<DefaultCoverFailure, Map<String, String>>>
+            defaultCoverOption),
     TResult initial(),
-    TResult configFetched(Option<Either<ConfigFailure, Config>> configOption),
-    TResult placeholdersCached(
-        Option<Either<PlaceholderFailure, Unit>> palceholderOption),
-    TResult placeholdersLoaded(
-        Option<Either<PlaceholderFailure, Map<String, String>>>
-            palceholderOption),
     TResult processing(),
     TResult sessionFetched(Option<Either<SessionFailure, User>> sessionOption),
+    TResult settingsFetched(
+        Option<Either<SettingsFailure, Settings>> settingsOption),
     TResult userLoaded(Option<Either<UserFailure, User>> userOption),
     @required TResult orElse(),
   });
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult authenticated(_Authenticated value),
+    @required TResult defaultCoverURLsCached(_DefaultCoverURLsCached value),
+    @required TResult defaultCoverURLsLoaded(_DefaultCoverURLsLoaded value),
     @required TResult initial(_Initial value),
-    @required TResult configFetched(_ConfigFetched value),
-    @required TResult placeholdersCached(_PlaceholdersCached value),
-    @required TResult placeholdersLoaded(_PlaceholdersLoaded value),
     @required TResult processing(_Processing value),
     @required TResult sessionFetched(_SessionFetched value),
+    @required TResult settingsFetched(_ConfigFetched value),
     @required TResult userLoaded(_UserLoaded value),
   });
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult authenticated(_Authenticated value),
+    TResult defaultCoverURLsCached(_DefaultCoverURLsCached value),
+    TResult defaultCoverURLsLoaded(_DefaultCoverURLsLoaded value),
     TResult initial(_Initial value),
-    TResult configFetched(_ConfigFetched value),
-    TResult placeholdersCached(_PlaceholdersCached value),
-    TResult placeholdersLoaded(_PlaceholdersLoaded value),
     TResult processing(_Processing value),
     TResult sessionFetched(_SessionFetched value),
+    TResult settingsFetched(_ConfigFetched value),
     TResult userLoaded(_UserLoaded value),
     @required TResult orElse(),
   });
@@ -1262,30 +1275,30 @@ class _$_Authenticated implements _Authenticated {
     @required
         TResult authenticated(
             Option<Either<AuthenticationFailure, Unit>> authenticationOption),
+    @required
+        TResult defaultCoverURLsCached(
+            Option<Either<DefaultCoverFailure, Unit>> defaultCoverOption),
+    @required
+        TResult defaultCoverURLsLoaded(
+            Option<Either<DefaultCoverFailure, Map<String, String>>>
+                defaultCoverOption),
     @required TResult initial(),
-    @required
-        TResult configFetched(
-            Option<Either<ConfigFailure, Config>> configOption),
-    @required
-        TResult placeholdersCached(
-            Option<Either<PlaceholderFailure, Unit>> palceholderOption),
-    @required
-        TResult placeholdersLoaded(
-            Option<Either<PlaceholderFailure, Map<String, String>>>
-                palceholderOption),
     @required TResult processing(),
     @required
         TResult sessionFetched(
             Option<Either<SessionFailure, User>> sessionOption),
+    @required
+        TResult settingsFetched(
+            Option<Either<SettingsFailure, Settings>> settingsOption),
     @required TResult userLoaded(Option<Either<UserFailure, User>> userOption),
   }) {
     assert(authenticated != null);
+    assert(defaultCoverURLsCached != null);
+    assert(defaultCoverURLsLoaded != null);
     assert(initial != null);
-    assert(configFetched != null);
-    assert(placeholdersCached != null);
-    assert(placeholdersLoaded != null);
     assert(processing != null);
     assert(sessionFetched != null);
+    assert(settingsFetched != null);
     assert(userLoaded != null);
     return authenticated(authenticationOption);
   }
@@ -1295,15 +1308,16 @@ class _$_Authenticated implements _Authenticated {
   TResult maybeWhen<TResult extends Object>({
     TResult authenticated(
         Option<Either<AuthenticationFailure, Unit>> authenticationOption),
+    TResult defaultCoverURLsCached(
+        Option<Either<DefaultCoverFailure, Unit>> defaultCoverOption),
+    TResult defaultCoverURLsLoaded(
+        Option<Either<DefaultCoverFailure, Map<String, String>>>
+            defaultCoverOption),
     TResult initial(),
-    TResult configFetched(Option<Either<ConfigFailure, Config>> configOption),
-    TResult placeholdersCached(
-        Option<Either<PlaceholderFailure, Unit>> palceholderOption),
-    TResult placeholdersLoaded(
-        Option<Either<PlaceholderFailure, Map<String, String>>>
-            palceholderOption),
     TResult processing(),
     TResult sessionFetched(Option<Either<SessionFailure, User>> sessionOption),
+    TResult settingsFetched(
+        Option<Either<SettingsFailure, Settings>> settingsOption),
     TResult userLoaded(Option<Either<UserFailure, User>> userOption),
     @required TResult orElse(),
   }) {
@@ -1318,21 +1332,21 @@ class _$_Authenticated implements _Authenticated {
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult authenticated(_Authenticated value),
+    @required TResult defaultCoverURLsCached(_DefaultCoverURLsCached value),
+    @required TResult defaultCoverURLsLoaded(_DefaultCoverURLsLoaded value),
     @required TResult initial(_Initial value),
-    @required TResult configFetched(_ConfigFetched value),
-    @required TResult placeholdersCached(_PlaceholdersCached value),
-    @required TResult placeholdersLoaded(_PlaceholdersLoaded value),
     @required TResult processing(_Processing value),
     @required TResult sessionFetched(_SessionFetched value),
+    @required TResult settingsFetched(_ConfigFetched value),
     @required TResult userLoaded(_UserLoaded value),
   }) {
     assert(authenticated != null);
+    assert(defaultCoverURLsCached != null);
+    assert(defaultCoverURLsLoaded != null);
     assert(initial != null);
-    assert(configFetched != null);
-    assert(placeholdersCached != null);
-    assert(placeholdersLoaded != null);
     assert(processing != null);
     assert(sessionFetched != null);
+    assert(settingsFetched != null);
     assert(userLoaded != null);
     return authenticated(this);
   }
@@ -1341,12 +1355,12 @@ class _$_Authenticated implements _Authenticated {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult authenticated(_Authenticated value),
+    TResult defaultCoverURLsCached(_DefaultCoverURLsCached value),
+    TResult defaultCoverURLsLoaded(_DefaultCoverURLsLoaded value),
     TResult initial(_Initial value),
-    TResult configFetched(_ConfigFetched value),
-    TResult placeholdersCached(_PlaceholdersCached value),
-    TResult placeholdersLoaded(_PlaceholdersLoaded value),
     TResult processing(_Processing value),
     TResult sessionFetched(_SessionFetched value),
+    TResult settingsFetched(_ConfigFetched value),
     TResult userLoaded(_UserLoaded value),
     @required TResult orElse(),
   }) {
@@ -1366,6 +1380,365 @@ abstract class _Authenticated implements SplashState {
   Option<Either<AuthenticationFailure, Unit>> get authenticationOption;
   @JsonKey(ignore: true)
   _$AuthenticatedCopyWith<_Authenticated> get copyWith;
+}
+
+/// @nodoc
+abstract class _$DefaultCoverURLsCachedCopyWith<$Res> {
+  factory _$DefaultCoverURLsCachedCopyWith(_DefaultCoverURLsCached value,
+          $Res Function(_DefaultCoverURLsCached) then) =
+      __$DefaultCoverURLsCachedCopyWithImpl<$Res>;
+  $Res call({Option<Either<DefaultCoverFailure, Unit>> defaultCoverOption});
+}
+
+/// @nodoc
+class __$DefaultCoverURLsCachedCopyWithImpl<$Res>
+    extends _$SplashStateCopyWithImpl<$Res>
+    implements _$DefaultCoverURLsCachedCopyWith<$Res> {
+  __$DefaultCoverURLsCachedCopyWithImpl(_DefaultCoverURLsCached _value,
+      $Res Function(_DefaultCoverURLsCached) _then)
+      : super(_value, (v) => _then(v as _DefaultCoverURLsCached));
+
+  @override
+  _DefaultCoverURLsCached get _value => super._value as _DefaultCoverURLsCached;
+
+  @override
+  $Res call({
+    Object defaultCoverOption = freezed,
+  }) {
+    return _then(_DefaultCoverURLsCached(
+      defaultCoverOption == freezed
+          ? _value.defaultCoverOption
+          : defaultCoverOption as Option<Either<DefaultCoverFailure, Unit>>,
+    ));
+  }
+}
+
+/// @nodoc
+class _$_DefaultCoverURLsCached implements _DefaultCoverURLsCached {
+  const _$_DefaultCoverURLsCached(this.defaultCoverOption)
+      : assert(defaultCoverOption != null);
+
+  @override
+  final Option<Either<DefaultCoverFailure, Unit>> defaultCoverOption;
+
+  @override
+  String toString() {
+    return 'SplashState.defaultCoverURLsCached(defaultCoverOption: $defaultCoverOption)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _DefaultCoverURLsCached &&
+            (identical(other.defaultCoverOption, defaultCoverOption) ||
+                const DeepCollectionEquality()
+                    .equals(other.defaultCoverOption, defaultCoverOption)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(defaultCoverOption);
+
+  @JsonKey(ignore: true)
+  @override
+  _$DefaultCoverURLsCachedCopyWith<_DefaultCoverURLsCached> get copyWith =>
+      __$DefaultCoverURLsCachedCopyWithImpl<_DefaultCoverURLsCached>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object>({
+    @required
+        TResult authenticated(
+            Option<Either<AuthenticationFailure, Unit>> authenticationOption),
+    @required
+        TResult defaultCoverURLsCached(
+            Option<Either<DefaultCoverFailure, Unit>> defaultCoverOption),
+    @required
+        TResult defaultCoverURLsLoaded(
+            Option<Either<DefaultCoverFailure, Map<String, String>>>
+                defaultCoverOption),
+    @required TResult initial(),
+    @required TResult processing(),
+    @required
+        TResult sessionFetched(
+            Option<Either<SessionFailure, User>> sessionOption),
+    @required
+        TResult settingsFetched(
+            Option<Either<SettingsFailure, Settings>> settingsOption),
+    @required TResult userLoaded(Option<Either<UserFailure, User>> userOption),
+  }) {
+    assert(authenticated != null);
+    assert(defaultCoverURLsCached != null);
+    assert(defaultCoverURLsLoaded != null);
+    assert(initial != null);
+    assert(processing != null);
+    assert(sessionFetched != null);
+    assert(settingsFetched != null);
+    assert(userLoaded != null);
+    return defaultCoverURLsCached(defaultCoverOption);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object>({
+    TResult authenticated(
+        Option<Either<AuthenticationFailure, Unit>> authenticationOption),
+    TResult defaultCoverURLsCached(
+        Option<Either<DefaultCoverFailure, Unit>> defaultCoverOption),
+    TResult defaultCoverURLsLoaded(
+        Option<Either<DefaultCoverFailure, Map<String, String>>>
+            defaultCoverOption),
+    TResult initial(),
+    TResult processing(),
+    TResult sessionFetched(Option<Either<SessionFailure, User>> sessionOption),
+    TResult settingsFetched(
+        Option<Either<SettingsFailure, Settings>> settingsOption),
+    TResult userLoaded(Option<Either<UserFailure, User>> userOption),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (defaultCoverURLsCached != null) {
+      return defaultCoverURLsCached(defaultCoverOption);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object>({
+    @required TResult authenticated(_Authenticated value),
+    @required TResult defaultCoverURLsCached(_DefaultCoverURLsCached value),
+    @required TResult defaultCoverURLsLoaded(_DefaultCoverURLsLoaded value),
+    @required TResult initial(_Initial value),
+    @required TResult processing(_Processing value),
+    @required TResult sessionFetched(_SessionFetched value),
+    @required TResult settingsFetched(_ConfigFetched value),
+    @required TResult userLoaded(_UserLoaded value),
+  }) {
+    assert(authenticated != null);
+    assert(defaultCoverURLsCached != null);
+    assert(defaultCoverURLsLoaded != null);
+    assert(initial != null);
+    assert(processing != null);
+    assert(sessionFetched != null);
+    assert(settingsFetched != null);
+    assert(userLoaded != null);
+    return defaultCoverURLsCached(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object>({
+    TResult authenticated(_Authenticated value),
+    TResult defaultCoverURLsCached(_DefaultCoverURLsCached value),
+    TResult defaultCoverURLsLoaded(_DefaultCoverURLsLoaded value),
+    TResult initial(_Initial value),
+    TResult processing(_Processing value),
+    TResult sessionFetched(_SessionFetched value),
+    TResult settingsFetched(_ConfigFetched value),
+    TResult userLoaded(_UserLoaded value),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (defaultCoverURLsCached != null) {
+      return defaultCoverURLsCached(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _DefaultCoverURLsCached implements SplashState {
+  const factory _DefaultCoverURLsCached(
+          Option<Either<DefaultCoverFailure, Unit>> defaultCoverOption) =
+      _$_DefaultCoverURLsCached;
+
+  Option<Either<DefaultCoverFailure, Unit>> get defaultCoverOption;
+  @JsonKey(ignore: true)
+  _$DefaultCoverURLsCachedCopyWith<_DefaultCoverURLsCached> get copyWith;
+}
+
+/// @nodoc
+abstract class _$DefaultCoverURLsLoadedCopyWith<$Res> {
+  factory _$DefaultCoverURLsLoadedCopyWith(_DefaultCoverURLsLoaded value,
+          $Res Function(_DefaultCoverURLsLoaded) then) =
+      __$DefaultCoverURLsLoadedCopyWithImpl<$Res>;
+  $Res call(
+      {Option<Either<DefaultCoverFailure, Map<String, String>>>
+          defaultCoverOption});
+}
+
+/// @nodoc
+class __$DefaultCoverURLsLoadedCopyWithImpl<$Res>
+    extends _$SplashStateCopyWithImpl<$Res>
+    implements _$DefaultCoverURLsLoadedCopyWith<$Res> {
+  __$DefaultCoverURLsLoadedCopyWithImpl(_DefaultCoverURLsLoaded _value,
+      $Res Function(_DefaultCoverURLsLoaded) _then)
+      : super(_value, (v) => _then(v as _DefaultCoverURLsLoaded));
+
+  @override
+  _DefaultCoverURLsLoaded get _value => super._value as _DefaultCoverURLsLoaded;
+
+  @override
+  $Res call({
+    Object defaultCoverOption = freezed,
+  }) {
+    return _then(_DefaultCoverURLsLoaded(
+      defaultCoverOption == freezed
+          ? _value.defaultCoverOption
+          : defaultCoverOption
+              as Option<Either<DefaultCoverFailure, Map<String, String>>>,
+    ));
+  }
+}
+
+/// @nodoc
+class _$_DefaultCoverURLsLoaded implements _DefaultCoverURLsLoaded {
+  const _$_DefaultCoverURLsLoaded(this.defaultCoverOption)
+      : assert(defaultCoverOption != null);
+
+  @override
+  final Option<Either<DefaultCoverFailure, Map<String, String>>>
+      defaultCoverOption;
+
+  @override
+  String toString() {
+    return 'SplashState.defaultCoverURLsLoaded(defaultCoverOption: $defaultCoverOption)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _DefaultCoverURLsLoaded &&
+            (identical(other.defaultCoverOption, defaultCoverOption) ||
+                const DeepCollectionEquality()
+                    .equals(other.defaultCoverOption, defaultCoverOption)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(defaultCoverOption);
+
+  @JsonKey(ignore: true)
+  @override
+  _$DefaultCoverURLsLoadedCopyWith<_DefaultCoverURLsLoaded> get copyWith =>
+      __$DefaultCoverURLsLoadedCopyWithImpl<_DefaultCoverURLsLoaded>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object>({
+    @required
+        TResult authenticated(
+            Option<Either<AuthenticationFailure, Unit>> authenticationOption),
+    @required
+        TResult defaultCoverURLsCached(
+            Option<Either<DefaultCoverFailure, Unit>> defaultCoverOption),
+    @required
+        TResult defaultCoverURLsLoaded(
+            Option<Either<DefaultCoverFailure, Map<String, String>>>
+                defaultCoverOption),
+    @required TResult initial(),
+    @required TResult processing(),
+    @required
+        TResult sessionFetched(
+            Option<Either<SessionFailure, User>> sessionOption),
+    @required
+        TResult settingsFetched(
+            Option<Either<SettingsFailure, Settings>> settingsOption),
+    @required TResult userLoaded(Option<Either<UserFailure, User>> userOption),
+  }) {
+    assert(authenticated != null);
+    assert(defaultCoverURLsCached != null);
+    assert(defaultCoverURLsLoaded != null);
+    assert(initial != null);
+    assert(processing != null);
+    assert(sessionFetched != null);
+    assert(settingsFetched != null);
+    assert(userLoaded != null);
+    return defaultCoverURLsLoaded(defaultCoverOption);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object>({
+    TResult authenticated(
+        Option<Either<AuthenticationFailure, Unit>> authenticationOption),
+    TResult defaultCoverURLsCached(
+        Option<Either<DefaultCoverFailure, Unit>> defaultCoverOption),
+    TResult defaultCoverURLsLoaded(
+        Option<Either<DefaultCoverFailure, Map<String, String>>>
+            defaultCoverOption),
+    TResult initial(),
+    TResult processing(),
+    TResult sessionFetched(Option<Either<SessionFailure, User>> sessionOption),
+    TResult settingsFetched(
+        Option<Either<SettingsFailure, Settings>> settingsOption),
+    TResult userLoaded(Option<Either<UserFailure, User>> userOption),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (defaultCoverURLsLoaded != null) {
+      return defaultCoverURLsLoaded(defaultCoverOption);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object>({
+    @required TResult authenticated(_Authenticated value),
+    @required TResult defaultCoverURLsCached(_DefaultCoverURLsCached value),
+    @required TResult defaultCoverURLsLoaded(_DefaultCoverURLsLoaded value),
+    @required TResult initial(_Initial value),
+    @required TResult processing(_Processing value),
+    @required TResult sessionFetched(_SessionFetched value),
+    @required TResult settingsFetched(_ConfigFetched value),
+    @required TResult userLoaded(_UserLoaded value),
+  }) {
+    assert(authenticated != null);
+    assert(defaultCoverURLsCached != null);
+    assert(defaultCoverURLsLoaded != null);
+    assert(initial != null);
+    assert(processing != null);
+    assert(sessionFetched != null);
+    assert(settingsFetched != null);
+    assert(userLoaded != null);
+    return defaultCoverURLsLoaded(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object>({
+    TResult authenticated(_Authenticated value),
+    TResult defaultCoverURLsCached(_DefaultCoverURLsCached value),
+    TResult defaultCoverURLsLoaded(_DefaultCoverURLsLoaded value),
+    TResult initial(_Initial value),
+    TResult processing(_Processing value),
+    TResult sessionFetched(_SessionFetched value),
+    TResult settingsFetched(_ConfigFetched value),
+    TResult userLoaded(_UserLoaded value),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (defaultCoverURLsLoaded != null) {
+      return defaultCoverURLsLoaded(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _DefaultCoverURLsLoaded implements SplashState {
+  const factory _DefaultCoverURLsLoaded(
+      Option<Either<DefaultCoverFailure, Map<String, String>>>
+          defaultCoverOption) = _$_DefaultCoverURLsLoaded;
+
+  Option<Either<DefaultCoverFailure, Map<String, String>>>
+      get defaultCoverOption;
+  @JsonKey(ignore: true)
+  _$DefaultCoverURLsLoadedCopyWith<_DefaultCoverURLsLoaded> get copyWith;
 }
 
 /// @nodoc
@@ -1407,30 +1780,30 @@ class _$_Initial implements _Initial {
     @required
         TResult authenticated(
             Option<Either<AuthenticationFailure, Unit>> authenticationOption),
+    @required
+        TResult defaultCoverURLsCached(
+            Option<Either<DefaultCoverFailure, Unit>> defaultCoverOption),
+    @required
+        TResult defaultCoverURLsLoaded(
+            Option<Either<DefaultCoverFailure, Map<String, String>>>
+                defaultCoverOption),
     @required TResult initial(),
-    @required
-        TResult configFetched(
-            Option<Either<ConfigFailure, Config>> configOption),
-    @required
-        TResult placeholdersCached(
-            Option<Either<PlaceholderFailure, Unit>> palceholderOption),
-    @required
-        TResult placeholdersLoaded(
-            Option<Either<PlaceholderFailure, Map<String, String>>>
-                palceholderOption),
     @required TResult processing(),
     @required
         TResult sessionFetched(
             Option<Either<SessionFailure, User>> sessionOption),
+    @required
+        TResult settingsFetched(
+            Option<Either<SettingsFailure, Settings>> settingsOption),
     @required TResult userLoaded(Option<Either<UserFailure, User>> userOption),
   }) {
     assert(authenticated != null);
+    assert(defaultCoverURLsCached != null);
+    assert(defaultCoverURLsLoaded != null);
     assert(initial != null);
-    assert(configFetched != null);
-    assert(placeholdersCached != null);
-    assert(placeholdersLoaded != null);
     assert(processing != null);
     assert(sessionFetched != null);
+    assert(settingsFetched != null);
     assert(userLoaded != null);
     return initial();
   }
@@ -1440,15 +1813,16 @@ class _$_Initial implements _Initial {
   TResult maybeWhen<TResult extends Object>({
     TResult authenticated(
         Option<Either<AuthenticationFailure, Unit>> authenticationOption),
+    TResult defaultCoverURLsCached(
+        Option<Either<DefaultCoverFailure, Unit>> defaultCoverOption),
+    TResult defaultCoverURLsLoaded(
+        Option<Either<DefaultCoverFailure, Map<String, String>>>
+            defaultCoverOption),
     TResult initial(),
-    TResult configFetched(Option<Either<ConfigFailure, Config>> configOption),
-    TResult placeholdersCached(
-        Option<Either<PlaceholderFailure, Unit>> palceholderOption),
-    TResult placeholdersLoaded(
-        Option<Either<PlaceholderFailure, Map<String, String>>>
-            palceholderOption),
     TResult processing(),
     TResult sessionFetched(Option<Either<SessionFailure, User>> sessionOption),
+    TResult settingsFetched(
+        Option<Either<SettingsFailure, Settings>> settingsOption),
     TResult userLoaded(Option<Either<UserFailure, User>> userOption),
     @required TResult orElse(),
   }) {
@@ -1463,21 +1837,21 @@ class _$_Initial implements _Initial {
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult authenticated(_Authenticated value),
+    @required TResult defaultCoverURLsCached(_DefaultCoverURLsCached value),
+    @required TResult defaultCoverURLsLoaded(_DefaultCoverURLsLoaded value),
     @required TResult initial(_Initial value),
-    @required TResult configFetched(_ConfigFetched value),
-    @required TResult placeholdersCached(_PlaceholdersCached value),
-    @required TResult placeholdersLoaded(_PlaceholdersLoaded value),
     @required TResult processing(_Processing value),
     @required TResult sessionFetched(_SessionFetched value),
+    @required TResult settingsFetched(_ConfigFetched value),
     @required TResult userLoaded(_UserLoaded value),
   }) {
     assert(authenticated != null);
+    assert(defaultCoverURLsCached != null);
+    assert(defaultCoverURLsLoaded != null);
     assert(initial != null);
-    assert(configFetched != null);
-    assert(placeholdersCached != null);
-    assert(placeholdersLoaded != null);
     assert(processing != null);
     assert(sessionFetched != null);
+    assert(settingsFetched != null);
     assert(userLoaded != null);
     return initial(this);
   }
@@ -1486,12 +1860,12 @@ class _$_Initial implements _Initial {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult authenticated(_Authenticated value),
+    TResult defaultCoverURLsCached(_DefaultCoverURLsCached value),
+    TResult defaultCoverURLsLoaded(_DefaultCoverURLsLoaded value),
     TResult initial(_Initial value),
-    TResult configFetched(_ConfigFetched value),
-    TResult placeholdersCached(_PlaceholdersCached value),
-    TResult placeholdersLoaded(_PlaceholdersLoaded value),
     TResult processing(_Processing value),
     TResult sessionFetched(_SessionFetched value),
+    TResult settingsFetched(_ConfigFetched value),
     TResult userLoaded(_UserLoaded value),
     @required TResult orElse(),
   }) {
@@ -1505,531 +1879,6 @@ class _$_Initial implements _Initial {
 
 abstract class _Initial implements SplashState {
   const factory _Initial() = _$_Initial;
-}
-
-/// @nodoc
-abstract class _$ConfigFetchedCopyWith<$Res> {
-  factory _$ConfigFetchedCopyWith(
-          _ConfigFetched value, $Res Function(_ConfigFetched) then) =
-      __$ConfigFetchedCopyWithImpl<$Res>;
-  $Res call({Option<Either<ConfigFailure, Config>> configOption});
-}
-
-/// @nodoc
-class __$ConfigFetchedCopyWithImpl<$Res> extends _$SplashStateCopyWithImpl<$Res>
-    implements _$ConfigFetchedCopyWith<$Res> {
-  __$ConfigFetchedCopyWithImpl(
-      _ConfigFetched _value, $Res Function(_ConfigFetched) _then)
-      : super(_value, (v) => _then(v as _ConfigFetched));
-
-  @override
-  _ConfigFetched get _value => super._value as _ConfigFetched;
-
-  @override
-  $Res call({
-    Object configOption = freezed,
-  }) {
-    return _then(_ConfigFetched(
-      configOption == freezed
-          ? _value.configOption
-          : configOption as Option<Either<ConfigFailure, Config>>,
-    ));
-  }
-}
-
-/// @nodoc
-class _$_ConfigFetched implements _ConfigFetched {
-  const _$_ConfigFetched(this.configOption) : assert(configOption != null);
-
-  @override
-  final Option<Either<ConfigFailure, Config>> configOption;
-
-  @override
-  String toString() {
-    return 'SplashState.configFetched(configOption: $configOption)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is _ConfigFetched &&
-            (identical(other.configOption, configOption) ||
-                const DeepCollectionEquality()
-                    .equals(other.configOption, configOption)));
-  }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(configOption);
-
-  @JsonKey(ignore: true)
-  @override
-  _$ConfigFetchedCopyWith<_ConfigFetched> get copyWith =>
-      __$ConfigFetchedCopyWithImpl<_ConfigFetched>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required
-        TResult authenticated(
-            Option<Either<AuthenticationFailure, Unit>> authenticationOption),
-    @required TResult initial(),
-    @required
-        TResult configFetched(
-            Option<Either<ConfigFailure, Config>> configOption),
-    @required
-        TResult placeholdersCached(
-            Option<Either<PlaceholderFailure, Unit>> palceholderOption),
-    @required
-        TResult placeholdersLoaded(
-            Option<Either<PlaceholderFailure, Map<String, String>>>
-                palceholderOption),
-    @required TResult processing(),
-    @required
-        TResult sessionFetched(
-            Option<Either<SessionFailure, User>> sessionOption),
-    @required TResult userLoaded(Option<Either<UserFailure, User>> userOption),
-  }) {
-    assert(authenticated != null);
-    assert(initial != null);
-    assert(configFetched != null);
-    assert(placeholdersCached != null);
-    assert(placeholdersLoaded != null);
-    assert(processing != null);
-    assert(sessionFetched != null);
-    assert(userLoaded != null);
-    return configFetched(configOption);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult authenticated(
-        Option<Either<AuthenticationFailure, Unit>> authenticationOption),
-    TResult initial(),
-    TResult configFetched(Option<Either<ConfigFailure, Config>> configOption),
-    TResult placeholdersCached(
-        Option<Either<PlaceholderFailure, Unit>> palceholderOption),
-    TResult placeholdersLoaded(
-        Option<Either<PlaceholderFailure, Map<String, String>>>
-            palceholderOption),
-    TResult processing(),
-    TResult sessionFetched(Option<Either<SessionFailure, User>> sessionOption),
-    TResult userLoaded(Option<Either<UserFailure, User>> userOption),
-    @required TResult orElse(),
-  }) {
-    assert(orElse != null);
-    if (configFetched != null) {
-      return configFetched(configOption);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult authenticated(_Authenticated value),
-    @required TResult initial(_Initial value),
-    @required TResult configFetched(_ConfigFetched value),
-    @required TResult placeholdersCached(_PlaceholdersCached value),
-    @required TResult placeholdersLoaded(_PlaceholdersLoaded value),
-    @required TResult processing(_Processing value),
-    @required TResult sessionFetched(_SessionFetched value),
-    @required TResult userLoaded(_UserLoaded value),
-  }) {
-    assert(authenticated != null);
-    assert(initial != null);
-    assert(configFetched != null);
-    assert(placeholdersCached != null);
-    assert(placeholdersLoaded != null);
-    assert(processing != null);
-    assert(sessionFetched != null);
-    assert(userLoaded != null);
-    return configFetched(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult authenticated(_Authenticated value),
-    TResult initial(_Initial value),
-    TResult configFetched(_ConfigFetched value),
-    TResult placeholdersCached(_PlaceholdersCached value),
-    TResult placeholdersLoaded(_PlaceholdersLoaded value),
-    TResult processing(_Processing value),
-    TResult sessionFetched(_SessionFetched value),
-    TResult userLoaded(_UserLoaded value),
-    @required TResult orElse(),
-  }) {
-    assert(orElse != null);
-    if (configFetched != null) {
-      return configFetched(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _ConfigFetched implements SplashState {
-  const factory _ConfigFetched(
-      Option<Either<ConfigFailure, Config>> configOption) = _$_ConfigFetched;
-
-  Option<Either<ConfigFailure, Config>> get configOption;
-  @JsonKey(ignore: true)
-  _$ConfigFetchedCopyWith<_ConfigFetched> get copyWith;
-}
-
-/// @nodoc
-abstract class _$PlaceholdersCachedCopyWith<$Res> {
-  factory _$PlaceholdersCachedCopyWith(
-          _PlaceholdersCached value, $Res Function(_PlaceholdersCached) then) =
-      __$PlaceholdersCachedCopyWithImpl<$Res>;
-  $Res call({Option<Either<PlaceholderFailure, Unit>> palceholderOption});
-}
-
-/// @nodoc
-class __$PlaceholdersCachedCopyWithImpl<$Res>
-    extends _$SplashStateCopyWithImpl<$Res>
-    implements _$PlaceholdersCachedCopyWith<$Res> {
-  __$PlaceholdersCachedCopyWithImpl(
-      _PlaceholdersCached _value, $Res Function(_PlaceholdersCached) _then)
-      : super(_value, (v) => _then(v as _PlaceholdersCached));
-
-  @override
-  _PlaceholdersCached get _value => super._value as _PlaceholdersCached;
-
-  @override
-  $Res call({
-    Object palceholderOption = freezed,
-  }) {
-    return _then(_PlaceholdersCached(
-      palceholderOption == freezed
-          ? _value.palceholderOption
-          : palceholderOption as Option<Either<PlaceholderFailure, Unit>>,
-    ));
-  }
-}
-
-/// @nodoc
-class _$_PlaceholdersCached implements _PlaceholdersCached {
-  const _$_PlaceholdersCached(this.palceholderOption)
-      : assert(palceholderOption != null);
-
-  @override
-  final Option<Either<PlaceholderFailure, Unit>> palceholderOption;
-
-  @override
-  String toString() {
-    return 'SplashState.placeholdersCached(palceholderOption: $palceholderOption)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is _PlaceholdersCached &&
-            (identical(other.palceholderOption, palceholderOption) ||
-                const DeepCollectionEquality()
-                    .equals(other.palceholderOption, palceholderOption)));
-  }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(palceholderOption);
-
-  @JsonKey(ignore: true)
-  @override
-  _$PlaceholdersCachedCopyWith<_PlaceholdersCached> get copyWith =>
-      __$PlaceholdersCachedCopyWithImpl<_PlaceholdersCached>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required
-        TResult authenticated(
-            Option<Either<AuthenticationFailure, Unit>> authenticationOption),
-    @required TResult initial(),
-    @required
-        TResult configFetched(
-            Option<Either<ConfigFailure, Config>> configOption),
-    @required
-        TResult placeholdersCached(
-            Option<Either<PlaceholderFailure, Unit>> palceholderOption),
-    @required
-        TResult placeholdersLoaded(
-            Option<Either<PlaceholderFailure, Map<String, String>>>
-                palceholderOption),
-    @required TResult processing(),
-    @required
-        TResult sessionFetched(
-            Option<Either<SessionFailure, User>> sessionOption),
-    @required TResult userLoaded(Option<Either<UserFailure, User>> userOption),
-  }) {
-    assert(authenticated != null);
-    assert(initial != null);
-    assert(configFetched != null);
-    assert(placeholdersCached != null);
-    assert(placeholdersLoaded != null);
-    assert(processing != null);
-    assert(sessionFetched != null);
-    assert(userLoaded != null);
-    return placeholdersCached(palceholderOption);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult authenticated(
-        Option<Either<AuthenticationFailure, Unit>> authenticationOption),
-    TResult initial(),
-    TResult configFetched(Option<Either<ConfigFailure, Config>> configOption),
-    TResult placeholdersCached(
-        Option<Either<PlaceholderFailure, Unit>> palceholderOption),
-    TResult placeholdersLoaded(
-        Option<Either<PlaceholderFailure, Map<String, String>>>
-            palceholderOption),
-    TResult processing(),
-    TResult sessionFetched(Option<Either<SessionFailure, User>> sessionOption),
-    TResult userLoaded(Option<Either<UserFailure, User>> userOption),
-    @required TResult orElse(),
-  }) {
-    assert(orElse != null);
-    if (placeholdersCached != null) {
-      return placeholdersCached(palceholderOption);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult authenticated(_Authenticated value),
-    @required TResult initial(_Initial value),
-    @required TResult configFetched(_ConfigFetched value),
-    @required TResult placeholdersCached(_PlaceholdersCached value),
-    @required TResult placeholdersLoaded(_PlaceholdersLoaded value),
-    @required TResult processing(_Processing value),
-    @required TResult sessionFetched(_SessionFetched value),
-    @required TResult userLoaded(_UserLoaded value),
-  }) {
-    assert(authenticated != null);
-    assert(initial != null);
-    assert(configFetched != null);
-    assert(placeholdersCached != null);
-    assert(placeholdersLoaded != null);
-    assert(processing != null);
-    assert(sessionFetched != null);
-    assert(userLoaded != null);
-    return placeholdersCached(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult authenticated(_Authenticated value),
-    TResult initial(_Initial value),
-    TResult configFetched(_ConfigFetched value),
-    TResult placeholdersCached(_PlaceholdersCached value),
-    TResult placeholdersLoaded(_PlaceholdersLoaded value),
-    TResult processing(_Processing value),
-    TResult sessionFetched(_SessionFetched value),
-    TResult userLoaded(_UserLoaded value),
-    @required TResult orElse(),
-  }) {
-    assert(orElse != null);
-    if (placeholdersCached != null) {
-      return placeholdersCached(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _PlaceholdersCached implements SplashState {
-  const factory _PlaceholdersCached(
-          Option<Either<PlaceholderFailure, Unit>> palceholderOption) =
-      _$_PlaceholdersCached;
-
-  Option<Either<PlaceholderFailure, Unit>> get palceholderOption;
-  @JsonKey(ignore: true)
-  _$PlaceholdersCachedCopyWith<_PlaceholdersCached> get copyWith;
-}
-
-/// @nodoc
-abstract class _$PlaceholdersLoadedCopyWith<$Res> {
-  factory _$PlaceholdersLoadedCopyWith(
-          _PlaceholdersLoaded value, $Res Function(_PlaceholdersLoaded) then) =
-      __$PlaceholdersLoadedCopyWithImpl<$Res>;
-  $Res call(
-      {Option<Either<PlaceholderFailure, Map<String, String>>>
-          palceholderOption});
-}
-
-/// @nodoc
-class __$PlaceholdersLoadedCopyWithImpl<$Res>
-    extends _$SplashStateCopyWithImpl<$Res>
-    implements _$PlaceholdersLoadedCopyWith<$Res> {
-  __$PlaceholdersLoadedCopyWithImpl(
-      _PlaceholdersLoaded _value, $Res Function(_PlaceholdersLoaded) _then)
-      : super(_value, (v) => _then(v as _PlaceholdersLoaded));
-
-  @override
-  _PlaceholdersLoaded get _value => super._value as _PlaceholdersLoaded;
-
-  @override
-  $Res call({
-    Object palceholderOption = freezed,
-  }) {
-    return _then(_PlaceholdersLoaded(
-      palceholderOption == freezed
-          ? _value.palceholderOption
-          : palceholderOption
-              as Option<Either<PlaceholderFailure, Map<String, String>>>,
-    ));
-  }
-}
-
-/// @nodoc
-class _$_PlaceholdersLoaded implements _PlaceholdersLoaded {
-  const _$_PlaceholdersLoaded(this.palceholderOption)
-      : assert(palceholderOption != null);
-
-  @override
-  final Option<Either<PlaceholderFailure, Map<String, String>>>
-      palceholderOption;
-
-  @override
-  String toString() {
-    return 'SplashState.placeholdersLoaded(palceholderOption: $palceholderOption)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is _PlaceholdersLoaded &&
-            (identical(other.palceholderOption, palceholderOption) ||
-                const DeepCollectionEquality()
-                    .equals(other.palceholderOption, palceholderOption)));
-  }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(palceholderOption);
-
-  @JsonKey(ignore: true)
-  @override
-  _$PlaceholdersLoadedCopyWith<_PlaceholdersLoaded> get copyWith =>
-      __$PlaceholdersLoadedCopyWithImpl<_PlaceholdersLoaded>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required
-        TResult authenticated(
-            Option<Either<AuthenticationFailure, Unit>> authenticationOption),
-    @required TResult initial(),
-    @required
-        TResult configFetched(
-            Option<Either<ConfigFailure, Config>> configOption),
-    @required
-        TResult placeholdersCached(
-            Option<Either<PlaceholderFailure, Unit>> palceholderOption),
-    @required
-        TResult placeholdersLoaded(
-            Option<Either<PlaceholderFailure, Map<String, String>>>
-                palceholderOption),
-    @required TResult processing(),
-    @required
-        TResult sessionFetched(
-            Option<Either<SessionFailure, User>> sessionOption),
-    @required TResult userLoaded(Option<Either<UserFailure, User>> userOption),
-  }) {
-    assert(authenticated != null);
-    assert(initial != null);
-    assert(configFetched != null);
-    assert(placeholdersCached != null);
-    assert(placeholdersLoaded != null);
-    assert(processing != null);
-    assert(sessionFetched != null);
-    assert(userLoaded != null);
-    return placeholdersLoaded(palceholderOption);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult authenticated(
-        Option<Either<AuthenticationFailure, Unit>> authenticationOption),
-    TResult initial(),
-    TResult configFetched(Option<Either<ConfigFailure, Config>> configOption),
-    TResult placeholdersCached(
-        Option<Either<PlaceholderFailure, Unit>> palceholderOption),
-    TResult placeholdersLoaded(
-        Option<Either<PlaceholderFailure, Map<String, String>>>
-            palceholderOption),
-    TResult processing(),
-    TResult sessionFetched(Option<Either<SessionFailure, User>> sessionOption),
-    TResult userLoaded(Option<Either<UserFailure, User>> userOption),
-    @required TResult orElse(),
-  }) {
-    assert(orElse != null);
-    if (placeholdersLoaded != null) {
-      return placeholdersLoaded(palceholderOption);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult authenticated(_Authenticated value),
-    @required TResult initial(_Initial value),
-    @required TResult configFetched(_ConfigFetched value),
-    @required TResult placeholdersCached(_PlaceholdersCached value),
-    @required TResult placeholdersLoaded(_PlaceholdersLoaded value),
-    @required TResult processing(_Processing value),
-    @required TResult sessionFetched(_SessionFetched value),
-    @required TResult userLoaded(_UserLoaded value),
-  }) {
-    assert(authenticated != null);
-    assert(initial != null);
-    assert(configFetched != null);
-    assert(placeholdersCached != null);
-    assert(placeholdersLoaded != null);
-    assert(processing != null);
-    assert(sessionFetched != null);
-    assert(userLoaded != null);
-    return placeholdersLoaded(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult authenticated(_Authenticated value),
-    TResult initial(_Initial value),
-    TResult configFetched(_ConfigFetched value),
-    TResult placeholdersCached(_PlaceholdersCached value),
-    TResult placeholdersLoaded(_PlaceholdersLoaded value),
-    TResult processing(_Processing value),
-    TResult sessionFetched(_SessionFetched value),
-    TResult userLoaded(_UserLoaded value),
-    @required TResult orElse(),
-  }) {
-    assert(orElse != null);
-    if (placeholdersLoaded != null) {
-      return placeholdersLoaded(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _PlaceholdersLoaded implements SplashState {
-  const factory _PlaceholdersLoaded(
-      Option<Either<PlaceholderFailure, Map<String, String>>>
-          palceholderOption) = _$_PlaceholdersLoaded;
-
-  Option<Either<PlaceholderFailure, Map<String, String>>> get palceholderOption;
-  @JsonKey(ignore: true)
-  _$PlaceholdersLoadedCopyWith<_PlaceholdersLoaded> get copyWith;
 }
 
 /// @nodoc
@@ -2073,30 +1922,30 @@ class _$_Processing implements _Processing {
     @required
         TResult authenticated(
             Option<Either<AuthenticationFailure, Unit>> authenticationOption),
+    @required
+        TResult defaultCoverURLsCached(
+            Option<Either<DefaultCoverFailure, Unit>> defaultCoverOption),
+    @required
+        TResult defaultCoverURLsLoaded(
+            Option<Either<DefaultCoverFailure, Map<String, String>>>
+                defaultCoverOption),
     @required TResult initial(),
-    @required
-        TResult configFetched(
-            Option<Either<ConfigFailure, Config>> configOption),
-    @required
-        TResult placeholdersCached(
-            Option<Either<PlaceholderFailure, Unit>> palceholderOption),
-    @required
-        TResult placeholdersLoaded(
-            Option<Either<PlaceholderFailure, Map<String, String>>>
-                palceholderOption),
     @required TResult processing(),
     @required
         TResult sessionFetched(
             Option<Either<SessionFailure, User>> sessionOption),
+    @required
+        TResult settingsFetched(
+            Option<Either<SettingsFailure, Settings>> settingsOption),
     @required TResult userLoaded(Option<Either<UserFailure, User>> userOption),
   }) {
     assert(authenticated != null);
+    assert(defaultCoverURLsCached != null);
+    assert(defaultCoverURLsLoaded != null);
     assert(initial != null);
-    assert(configFetched != null);
-    assert(placeholdersCached != null);
-    assert(placeholdersLoaded != null);
     assert(processing != null);
     assert(sessionFetched != null);
+    assert(settingsFetched != null);
     assert(userLoaded != null);
     return processing();
   }
@@ -2106,15 +1955,16 @@ class _$_Processing implements _Processing {
   TResult maybeWhen<TResult extends Object>({
     TResult authenticated(
         Option<Either<AuthenticationFailure, Unit>> authenticationOption),
+    TResult defaultCoverURLsCached(
+        Option<Either<DefaultCoverFailure, Unit>> defaultCoverOption),
+    TResult defaultCoverURLsLoaded(
+        Option<Either<DefaultCoverFailure, Map<String, String>>>
+            defaultCoverOption),
     TResult initial(),
-    TResult configFetched(Option<Either<ConfigFailure, Config>> configOption),
-    TResult placeholdersCached(
-        Option<Either<PlaceholderFailure, Unit>> palceholderOption),
-    TResult placeholdersLoaded(
-        Option<Either<PlaceholderFailure, Map<String, String>>>
-            palceholderOption),
     TResult processing(),
     TResult sessionFetched(Option<Either<SessionFailure, User>> sessionOption),
+    TResult settingsFetched(
+        Option<Either<SettingsFailure, Settings>> settingsOption),
     TResult userLoaded(Option<Either<UserFailure, User>> userOption),
     @required TResult orElse(),
   }) {
@@ -2129,21 +1979,21 @@ class _$_Processing implements _Processing {
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult authenticated(_Authenticated value),
+    @required TResult defaultCoverURLsCached(_DefaultCoverURLsCached value),
+    @required TResult defaultCoverURLsLoaded(_DefaultCoverURLsLoaded value),
     @required TResult initial(_Initial value),
-    @required TResult configFetched(_ConfigFetched value),
-    @required TResult placeholdersCached(_PlaceholdersCached value),
-    @required TResult placeholdersLoaded(_PlaceholdersLoaded value),
     @required TResult processing(_Processing value),
     @required TResult sessionFetched(_SessionFetched value),
+    @required TResult settingsFetched(_ConfigFetched value),
     @required TResult userLoaded(_UserLoaded value),
   }) {
     assert(authenticated != null);
+    assert(defaultCoverURLsCached != null);
+    assert(defaultCoverURLsLoaded != null);
     assert(initial != null);
-    assert(configFetched != null);
-    assert(placeholdersCached != null);
-    assert(placeholdersLoaded != null);
     assert(processing != null);
     assert(sessionFetched != null);
+    assert(settingsFetched != null);
     assert(userLoaded != null);
     return processing(this);
   }
@@ -2152,12 +2002,12 @@ class _$_Processing implements _Processing {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult authenticated(_Authenticated value),
+    TResult defaultCoverURLsCached(_DefaultCoverURLsCached value),
+    TResult defaultCoverURLsLoaded(_DefaultCoverURLsLoaded value),
     TResult initial(_Initial value),
-    TResult configFetched(_ConfigFetched value),
-    TResult placeholdersCached(_PlaceholdersCached value),
-    TResult placeholdersLoaded(_PlaceholdersLoaded value),
     TResult processing(_Processing value),
     TResult sessionFetched(_SessionFetched value),
+    TResult settingsFetched(_ConfigFetched value),
     TResult userLoaded(_UserLoaded value),
     @required TResult orElse(),
   }) {
@@ -2240,30 +2090,30 @@ class _$_SessionFetched implements _SessionFetched {
     @required
         TResult authenticated(
             Option<Either<AuthenticationFailure, Unit>> authenticationOption),
+    @required
+        TResult defaultCoverURLsCached(
+            Option<Either<DefaultCoverFailure, Unit>> defaultCoverOption),
+    @required
+        TResult defaultCoverURLsLoaded(
+            Option<Either<DefaultCoverFailure, Map<String, String>>>
+                defaultCoverOption),
     @required TResult initial(),
-    @required
-        TResult configFetched(
-            Option<Either<ConfigFailure, Config>> configOption),
-    @required
-        TResult placeholdersCached(
-            Option<Either<PlaceholderFailure, Unit>> palceholderOption),
-    @required
-        TResult placeholdersLoaded(
-            Option<Either<PlaceholderFailure, Map<String, String>>>
-                palceholderOption),
     @required TResult processing(),
     @required
         TResult sessionFetched(
             Option<Either<SessionFailure, User>> sessionOption),
+    @required
+        TResult settingsFetched(
+            Option<Either<SettingsFailure, Settings>> settingsOption),
     @required TResult userLoaded(Option<Either<UserFailure, User>> userOption),
   }) {
     assert(authenticated != null);
+    assert(defaultCoverURLsCached != null);
+    assert(defaultCoverURLsLoaded != null);
     assert(initial != null);
-    assert(configFetched != null);
-    assert(placeholdersCached != null);
-    assert(placeholdersLoaded != null);
     assert(processing != null);
     assert(sessionFetched != null);
+    assert(settingsFetched != null);
     assert(userLoaded != null);
     return sessionFetched(sessionOption);
   }
@@ -2273,15 +2123,16 @@ class _$_SessionFetched implements _SessionFetched {
   TResult maybeWhen<TResult extends Object>({
     TResult authenticated(
         Option<Either<AuthenticationFailure, Unit>> authenticationOption),
+    TResult defaultCoverURLsCached(
+        Option<Either<DefaultCoverFailure, Unit>> defaultCoverOption),
+    TResult defaultCoverURLsLoaded(
+        Option<Either<DefaultCoverFailure, Map<String, String>>>
+            defaultCoverOption),
     TResult initial(),
-    TResult configFetched(Option<Either<ConfigFailure, Config>> configOption),
-    TResult placeholdersCached(
-        Option<Either<PlaceholderFailure, Unit>> palceholderOption),
-    TResult placeholdersLoaded(
-        Option<Either<PlaceholderFailure, Map<String, String>>>
-            palceholderOption),
     TResult processing(),
     TResult sessionFetched(Option<Either<SessionFailure, User>> sessionOption),
+    TResult settingsFetched(
+        Option<Either<SettingsFailure, Settings>> settingsOption),
     TResult userLoaded(Option<Either<UserFailure, User>> userOption),
     @required TResult orElse(),
   }) {
@@ -2296,21 +2147,21 @@ class _$_SessionFetched implements _SessionFetched {
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult authenticated(_Authenticated value),
+    @required TResult defaultCoverURLsCached(_DefaultCoverURLsCached value),
+    @required TResult defaultCoverURLsLoaded(_DefaultCoverURLsLoaded value),
     @required TResult initial(_Initial value),
-    @required TResult configFetched(_ConfigFetched value),
-    @required TResult placeholdersCached(_PlaceholdersCached value),
-    @required TResult placeholdersLoaded(_PlaceholdersLoaded value),
     @required TResult processing(_Processing value),
     @required TResult sessionFetched(_SessionFetched value),
+    @required TResult settingsFetched(_ConfigFetched value),
     @required TResult userLoaded(_UserLoaded value),
   }) {
     assert(authenticated != null);
+    assert(defaultCoverURLsCached != null);
+    assert(defaultCoverURLsLoaded != null);
     assert(initial != null);
-    assert(configFetched != null);
-    assert(placeholdersCached != null);
-    assert(placeholdersLoaded != null);
     assert(processing != null);
     assert(sessionFetched != null);
+    assert(settingsFetched != null);
     assert(userLoaded != null);
     return sessionFetched(this);
   }
@@ -2319,12 +2170,12 @@ class _$_SessionFetched implements _SessionFetched {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult authenticated(_Authenticated value),
+    TResult defaultCoverURLsCached(_DefaultCoverURLsCached value),
+    TResult defaultCoverURLsLoaded(_DefaultCoverURLsLoaded value),
     TResult initial(_Initial value),
-    TResult configFetched(_ConfigFetched value),
-    TResult placeholdersCached(_PlaceholdersCached value),
-    TResult placeholdersLoaded(_PlaceholdersLoaded value),
     TResult processing(_Processing value),
     TResult sessionFetched(_SessionFetched value),
+    TResult settingsFetched(_ConfigFetched value),
     TResult userLoaded(_UserLoaded value),
     @required TResult orElse(),
   }) {
@@ -2343,6 +2194,180 @@ abstract class _SessionFetched implements SplashState {
   Option<Either<SessionFailure, User>> get sessionOption;
   @JsonKey(ignore: true)
   _$SessionFetchedCopyWith<_SessionFetched> get copyWith;
+}
+
+/// @nodoc
+abstract class _$ConfigFetchedCopyWith<$Res> {
+  factory _$ConfigFetchedCopyWith(
+          _ConfigFetched value, $Res Function(_ConfigFetched) then) =
+      __$ConfigFetchedCopyWithImpl<$Res>;
+  $Res call({Option<Either<SettingsFailure, Settings>> settingsOption});
+}
+
+/// @nodoc
+class __$ConfigFetchedCopyWithImpl<$Res> extends _$SplashStateCopyWithImpl<$Res>
+    implements _$ConfigFetchedCopyWith<$Res> {
+  __$ConfigFetchedCopyWithImpl(
+      _ConfigFetched _value, $Res Function(_ConfigFetched) _then)
+      : super(_value, (v) => _then(v as _ConfigFetched));
+
+  @override
+  _ConfigFetched get _value => super._value as _ConfigFetched;
+
+  @override
+  $Res call({
+    Object settingsOption = freezed,
+  }) {
+    return _then(_ConfigFetched(
+      settingsOption == freezed
+          ? _value.settingsOption
+          : settingsOption as Option<Either<SettingsFailure, Settings>>,
+    ));
+  }
+}
+
+/// @nodoc
+class _$_ConfigFetched implements _ConfigFetched {
+  const _$_ConfigFetched(this.settingsOption) : assert(settingsOption != null);
+
+  @override
+  final Option<Either<SettingsFailure, Settings>> settingsOption;
+
+  @override
+  String toString() {
+    return 'SplashState.settingsFetched(settingsOption: $settingsOption)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is _ConfigFetched &&
+            (identical(other.settingsOption, settingsOption) ||
+                const DeepCollectionEquality()
+                    .equals(other.settingsOption, settingsOption)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(settingsOption);
+
+  @JsonKey(ignore: true)
+  @override
+  _$ConfigFetchedCopyWith<_ConfigFetched> get copyWith =>
+      __$ConfigFetchedCopyWithImpl<_ConfigFetched>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object>({
+    @required
+        TResult authenticated(
+            Option<Either<AuthenticationFailure, Unit>> authenticationOption),
+    @required
+        TResult defaultCoverURLsCached(
+            Option<Either<DefaultCoverFailure, Unit>> defaultCoverOption),
+    @required
+        TResult defaultCoverURLsLoaded(
+            Option<Either<DefaultCoverFailure, Map<String, String>>>
+                defaultCoverOption),
+    @required TResult initial(),
+    @required TResult processing(),
+    @required
+        TResult sessionFetched(
+            Option<Either<SessionFailure, User>> sessionOption),
+    @required
+        TResult settingsFetched(
+            Option<Either<SettingsFailure, Settings>> settingsOption),
+    @required TResult userLoaded(Option<Either<UserFailure, User>> userOption),
+  }) {
+    assert(authenticated != null);
+    assert(defaultCoverURLsCached != null);
+    assert(defaultCoverURLsLoaded != null);
+    assert(initial != null);
+    assert(processing != null);
+    assert(sessionFetched != null);
+    assert(settingsFetched != null);
+    assert(userLoaded != null);
+    return settingsFetched(settingsOption);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object>({
+    TResult authenticated(
+        Option<Either<AuthenticationFailure, Unit>> authenticationOption),
+    TResult defaultCoverURLsCached(
+        Option<Either<DefaultCoverFailure, Unit>> defaultCoverOption),
+    TResult defaultCoverURLsLoaded(
+        Option<Either<DefaultCoverFailure, Map<String, String>>>
+            defaultCoverOption),
+    TResult initial(),
+    TResult processing(),
+    TResult sessionFetched(Option<Either<SessionFailure, User>> sessionOption),
+    TResult settingsFetched(
+        Option<Either<SettingsFailure, Settings>> settingsOption),
+    TResult userLoaded(Option<Either<UserFailure, User>> userOption),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (settingsFetched != null) {
+      return settingsFetched(settingsOption);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object>({
+    @required TResult authenticated(_Authenticated value),
+    @required TResult defaultCoverURLsCached(_DefaultCoverURLsCached value),
+    @required TResult defaultCoverURLsLoaded(_DefaultCoverURLsLoaded value),
+    @required TResult initial(_Initial value),
+    @required TResult processing(_Processing value),
+    @required TResult sessionFetched(_SessionFetched value),
+    @required TResult settingsFetched(_ConfigFetched value),
+    @required TResult userLoaded(_UserLoaded value),
+  }) {
+    assert(authenticated != null);
+    assert(defaultCoverURLsCached != null);
+    assert(defaultCoverURLsLoaded != null);
+    assert(initial != null);
+    assert(processing != null);
+    assert(sessionFetched != null);
+    assert(settingsFetched != null);
+    assert(userLoaded != null);
+    return settingsFetched(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object>({
+    TResult authenticated(_Authenticated value),
+    TResult defaultCoverURLsCached(_DefaultCoverURLsCached value),
+    TResult defaultCoverURLsLoaded(_DefaultCoverURLsLoaded value),
+    TResult initial(_Initial value),
+    TResult processing(_Processing value),
+    TResult sessionFetched(_SessionFetched value),
+    TResult settingsFetched(_ConfigFetched value),
+    TResult userLoaded(_UserLoaded value),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (settingsFetched != null) {
+      return settingsFetched(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _ConfigFetched implements SplashState {
+  const factory _ConfigFetched(
+          Option<Either<SettingsFailure, Settings>> settingsOption) =
+      _$_ConfigFetched;
+
+  Option<Either<SettingsFailure, Settings>> get settingsOption;
+  @JsonKey(ignore: true)
+  _$ConfigFetchedCopyWith<_ConfigFetched> get copyWith;
 }
 
 /// @nodoc
@@ -2411,30 +2436,30 @@ class _$_UserLoaded implements _UserLoaded {
     @required
         TResult authenticated(
             Option<Either<AuthenticationFailure, Unit>> authenticationOption),
+    @required
+        TResult defaultCoverURLsCached(
+            Option<Either<DefaultCoverFailure, Unit>> defaultCoverOption),
+    @required
+        TResult defaultCoverURLsLoaded(
+            Option<Either<DefaultCoverFailure, Map<String, String>>>
+                defaultCoverOption),
     @required TResult initial(),
-    @required
-        TResult configFetched(
-            Option<Either<ConfigFailure, Config>> configOption),
-    @required
-        TResult placeholdersCached(
-            Option<Either<PlaceholderFailure, Unit>> palceholderOption),
-    @required
-        TResult placeholdersLoaded(
-            Option<Either<PlaceholderFailure, Map<String, String>>>
-                palceholderOption),
     @required TResult processing(),
     @required
         TResult sessionFetched(
             Option<Either<SessionFailure, User>> sessionOption),
+    @required
+        TResult settingsFetched(
+            Option<Either<SettingsFailure, Settings>> settingsOption),
     @required TResult userLoaded(Option<Either<UserFailure, User>> userOption),
   }) {
     assert(authenticated != null);
+    assert(defaultCoverURLsCached != null);
+    assert(defaultCoverURLsLoaded != null);
     assert(initial != null);
-    assert(configFetched != null);
-    assert(placeholdersCached != null);
-    assert(placeholdersLoaded != null);
     assert(processing != null);
     assert(sessionFetched != null);
+    assert(settingsFetched != null);
     assert(userLoaded != null);
     return userLoaded(userOption);
   }
@@ -2444,15 +2469,16 @@ class _$_UserLoaded implements _UserLoaded {
   TResult maybeWhen<TResult extends Object>({
     TResult authenticated(
         Option<Either<AuthenticationFailure, Unit>> authenticationOption),
+    TResult defaultCoverURLsCached(
+        Option<Either<DefaultCoverFailure, Unit>> defaultCoverOption),
+    TResult defaultCoverURLsLoaded(
+        Option<Either<DefaultCoverFailure, Map<String, String>>>
+            defaultCoverOption),
     TResult initial(),
-    TResult configFetched(Option<Either<ConfigFailure, Config>> configOption),
-    TResult placeholdersCached(
-        Option<Either<PlaceholderFailure, Unit>> palceholderOption),
-    TResult placeholdersLoaded(
-        Option<Either<PlaceholderFailure, Map<String, String>>>
-            palceholderOption),
     TResult processing(),
     TResult sessionFetched(Option<Either<SessionFailure, User>> sessionOption),
+    TResult settingsFetched(
+        Option<Either<SettingsFailure, Settings>> settingsOption),
     TResult userLoaded(Option<Either<UserFailure, User>> userOption),
     @required TResult orElse(),
   }) {
@@ -2467,21 +2493,21 @@ class _$_UserLoaded implements _UserLoaded {
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult authenticated(_Authenticated value),
+    @required TResult defaultCoverURLsCached(_DefaultCoverURLsCached value),
+    @required TResult defaultCoverURLsLoaded(_DefaultCoverURLsLoaded value),
     @required TResult initial(_Initial value),
-    @required TResult configFetched(_ConfigFetched value),
-    @required TResult placeholdersCached(_PlaceholdersCached value),
-    @required TResult placeholdersLoaded(_PlaceholdersLoaded value),
     @required TResult processing(_Processing value),
     @required TResult sessionFetched(_SessionFetched value),
+    @required TResult settingsFetched(_ConfigFetched value),
     @required TResult userLoaded(_UserLoaded value),
   }) {
     assert(authenticated != null);
+    assert(defaultCoverURLsCached != null);
+    assert(defaultCoverURLsLoaded != null);
     assert(initial != null);
-    assert(configFetched != null);
-    assert(placeholdersCached != null);
-    assert(placeholdersLoaded != null);
     assert(processing != null);
     assert(sessionFetched != null);
+    assert(settingsFetched != null);
     assert(userLoaded != null);
     return userLoaded(this);
   }
@@ -2490,12 +2516,12 @@ class _$_UserLoaded implements _UserLoaded {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult authenticated(_Authenticated value),
+    TResult defaultCoverURLsCached(_DefaultCoverURLsCached value),
+    TResult defaultCoverURLsLoaded(_DefaultCoverURLsLoaded value),
     TResult initial(_Initial value),
-    TResult configFetched(_ConfigFetched value),
-    TResult placeholdersCached(_PlaceholdersCached value),
-    TResult placeholdersLoaded(_PlaceholdersLoaded value),
     TResult processing(_Processing value),
     TResult sessionFetched(_SessionFetched value),
+    TResult settingsFetched(_ConfigFetched value),
     TResult userLoaded(_UserLoaded value),
     @required TResult orElse(),
   }) {

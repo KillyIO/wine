@@ -21,6 +21,7 @@ import 'package:wine/domain/database/successes/placeholder_database_success.dart
 import 'package:wine/domain/database/successes/session_database_success.dart';
 import 'package:wine/domain/database/successes/user_database_success.dart';
 import 'package:wine/domain/models/hive/session.dart';
+import 'package:wine/domain/models/user.dart';
 
 part 'splash_database_bloc.freezed.dart';
 part 'splash_database_event.dart';
