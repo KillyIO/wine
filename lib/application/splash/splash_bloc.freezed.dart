@@ -19,11 +19,6 @@ class _$SplashEventTearOff {
   }
 
 // ignore: unused_element
-  ConfigFetched configFetched() {
-    return const ConfigFetched();
-  }
-
-// ignore: unused_element
   PlaceholdersCached placeholdersCached() {
     return const PlaceholdersCached();
   }
@@ -40,6 +35,11 @@ class _$SplashEventTearOff {
     return SessionFetched(
       session,
     );
+  }
+
+// ignore: unused_element
+  SettingsInitialized settingsInitialized() {
+    return const SettingsInitialized();
   }
 
 // ignore: unused_element
@@ -64,20 +64,20 @@ mixin _$SplashEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult authenticated(),
-    @required TResult configFetched(),
     @required TResult placeholdersCached(),
     @required TResult placeholdersLoaded(Map<String, String> placeholders),
     @required TResult sessionFetched(User session),
+    @required TResult settingsInitialized(),
     @required TResult splashPageLaunched(),
     @required TResult userLoaded(User user),
   });
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult authenticated(),
-    TResult configFetched(),
     TResult placeholdersCached(),
     TResult placeholdersLoaded(Map<String, String> placeholders),
     TResult sessionFetched(User session),
+    TResult settingsInitialized(),
     TResult splashPageLaunched(),
     TResult userLoaded(User user),
     @required TResult orElse(),
@@ -85,20 +85,20 @@ mixin _$SplashEvent {
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult authenticated(Authenticated value),
-    @required TResult configFetched(ConfigFetched value),
     @required TResult placeholdersCached(PlaceholdersCached value),
     @required TResult placeholdersLoaded(PlaceholdersLoaded value),
     @required TResult sessionFetched(SessionFetched value),
+    @required TResult settingsInitialized(SettingsInitialized value),
     @required TResult splashPageLaunched(SplashPageLaunched value),
     @required TResult userLoaded(UserLoaded value),
   });
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult authenticated(Authenticated value),
-    TResult configFetched(ConfigFetched value),
     TResult placeholdersCached(PlaceholdersCached value),
     TResult placeholdersLoaded(PlaceholdersLoaded value),
     TResult sessionFetched(SessionFetched value),
+    TResult settingsInitialized(SettingsInitialized value),
     TResult splashPageLaunched(SplashPageLaunched value),
     TResult userLoaded(UserLoaded value),
     @required TResult orElse(),
@@ -160,18 +160,18 @@ class _$Authenticated implements Authenticated {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult authenticated(),
-    @required TResult configFetched(),
     @required TResult placeholdersCached(),
     @required TResult placeholdersLoaded(Map<String, String> placeholders),
     @required TResult sessionFetched(User session),
+    @required TResult settingsInitialized(),
     @required TResult splashPageLaunched(),
     @required TResult userLoaded(User user),
   }) {
     assert(authenticated != null);
-    assert(configFetched != null);
     assert(placeholdersCached != null);
     assert(placeholdersLoaded != null);
     assert(sessionFetched != null);
+    assert(settingsInitialized != null);
     assert(splashPageLaunched != null);
     assert(userLoaded != null);
     return authenticated();
@@ -181,10 +181,10 @@ class _$Authenticated implements Authenticated {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult authenticated(),
-    TResult configFetched(),
     TResult placeholdersCached(),
     TResult placeholdersLoaded(Map<String, String> placeholders),
     TResult sessionFetched(User session),
+    TResult settingsInitialized(),
     TResult splashPageLaunched(),
     TResult userLoaded(User user),
     @required TResult orElse(),
@@ -200,18 +200,18 @@ class _$Authenticated implements Authenticated {
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult authenticated(Authenticated value),
-    @required TResult configFetched(ConfigFetched value),
     @required TResult placeholdersCached(PlaceholdersCached value),
     @required TResult placeholdersLoaded(PlaceholdersLoaded value),
     @required TResult sessionFetched(SessionFetched value),
+    @required TResult settingsInitialized(SettingsInitialized value),
     @required TResult splashPageLaunched(SplashPageLaunched value),
     @required TResult userLoaded(UserLoaded value),
   }) {
     assert(authenticated != null);
-    assert(configFetched != null);
     assert(placeholdersCached != null);
     assert(placeholdersLoaded != null);
     assert(sessionFetched != null);
+    assert(settingsInitialized != null);
     assert(splashPageLaunched != null);
     assert(userLoaded != null);
     return authenticated(this);
@@ -221,10 +221,10 @@ class _$Authenticated implements Authenticated {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult authenticated(Authenticated value),
-    TResult configFetched(ConfigFetched value),
     TResult placeholdersCached(PlaceholdersCached value),
     TResult placeholdersLoaded(PlaceholdersLoaded value),
     TResult sessionFetched(SessionFetched value),
+    TResult settingsInitialized(SettingsInitialized value),
     TResult splashPageLaunched(SplashPageLaunched value),
     TResult userLoaded(UserLoaded value),
     @required TResult orElse(),
@@ -239,126 +239,6 @@ class _$Authenticated implements Authenticated {
 
 abstract class Authenticated implements SplashEvent {
   const factory Authenticated() = _$Authenticated;
-}
-
-/// @nodoc
-abstract class $ConfigFetchedCopyWith<$Res> {
-  factory $ConfigFetchedCopyWith(
-          ConfigFetched value, $Res Function(ConfigFetched) then) =
-      _$ConfigFetchedCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class _$ConfigFetchedCopyWithImpl<$Res> extends _$SplashEventCopyWithImpl<$Res>
-    implements $ConfigFetchedCopyWith<$Res> {
-  _$ConfigFetchedCopyWithImpl(
-      ConfigFetched _value, $Res Function(ConfigFetched) _then)
-      : super(_value, (v) => _then(v as ConfigFetched));
-
-  @override
-  ConfigFetched get _value => super._value as ConfigFetched;
-}
-
-/// @nodoc
-class _$ConfigFetched implements ConfigFetched {
-  const _$ConfigFetched();
-
-  @override
-  String toString() {
-    return 'SplashEvent.configFetched()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) || (other is ConfigFetched);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult authenticated(),
-    @required TResult configFetched(),
-    @required TResult placeholdersCached(),
-    @required TResult placeholdersLoaded(Map<String, String> placeholders),
-    @required TResult sessionFetched(User session),
-    @required TResult splashPageLaunched(),
-    @required TResult userLoaded(User user),
-  }) {
-    assert(authenticated != null);
-    assert(configFetched != null);
-    assert(placeholdersCached != null);
-    assert(placeholdersLoaded != null);
-    assert(sessionFetched != null);
-    assert(splashPageLaunched != null);
-    assert(userLoaded != null);
-    return configFetched();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult authenticated(),
-    TResult configFetched(),
-    TResult placeholdersCached(),
-    TResult placeholdersLoaded(Map<String, String> placeholders),
-    TResult sessionFetched(User session),
-    TResult splashPageLaunched(),
-    TResult userLoaded(User user),
-    @required TResult orElse(),
-  }) {
-    assert(orElse != null);
-    if (configFetched != null) {
-      return configFetched();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult authenticated(Authenticated value),
-    @required TResult configFetched(ConfigFetched value),
-    @required TResult placeholdersCached(PlaceholdersCached value),
-    @required TResult placeholdersLoaded(PlaceholdersLoaded value),
-    @required TResult sessionFetched(SessionFetched value),
-    @required TResult splashPageLaunched(SplashPageLaunched value),
-    @required TResult userLoaded(UserLoaded value),
-  }) {
-    assert(authenticated != null);
-    assert(configFetched != null);
-    assert(placeholdersCached != null);
-    assert(placeholdersLoaded != null);
-    assert(sessionFetched != null);
-    assert(splashPageLaunched != null);
-    assert(userLoaded != null);
-    return configFetched(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult authenticated(Authenticated value),
-    TResult configFetched(ConfigFetched value),
-    TResult placeholdersCached(PlaceholdersCached value),
-    TResult placeholdersLoaded(PlaceholdersLoaded value),
-    TResult sessionFetched(SessionFetched value),
-    TResult splashPageLaunched(SplashPageLaunched value),
-    TResult userLoaded(UserLoaded value),
-    @required TResult orElse(),
-  }) {
-    assert(orElse != null);
-    if (configFetched != null) {
-      return configFetched(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class ConfigFetched implements SplashEvent {
-  const factory ConfigFetched() = _$ConfigFetched;
 }
 
 /// @nodoc
@@ -401,18 +281,18 @@ class _$PlaceholdersCached implements PlaceholdersCached {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult authenticated(),
-    @required TResult configFetched(),
     @required TResult placeholdersCached(),
     @required TResult placeholdersLoaded(Map<String, String> placeholders),
     @required TResult sessionFetched(User session),
+    @required TResult settingsInitialized(),
     @required TResult splashPageLaunched(),
     @required TResult userLoaded(User user),
   }) {
     assert(authenticated != null);
-    assert(configFetched != null);
     assert(placeholdersCached != null);
     assert(placeholdersLoaded != null);
     assert(sessionFetched != null);
+    assert(settingsInitialized != null);
     assert(splashPageLaunched != null);
     assert(userLoaded != null);
     return placeholdersCached();
@@ -422,10 +302,10 @@ class _$PlaceholdersCached implements PlaceholdersCached {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult authenticated(),
-    TResult configFetched(),
     TResult placeholdersCached(),
     TResult placeholdersLoaded(Map<String, String> placeholders),
     TResult sessionFetched(User session),
+    TResult settingsInitialized(),
     TResult splashPageLaunched(),
     TResult userLoaded(User user),
     @required TResult orElse(),
@@ -441,18 +321,18 @@ class _$PlaceholdersCached implements PlaceholdersCached {
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult authenticated(Authenticated value),
-    @required TResult configFetched(ConfigFetched value),
     @required TResult placeholdersCached(PlaceholdersCached value),
     @required TResult placeholdersLoaded(PlaceholdersLoaded value),
     @required TResult sessionFetched(SessionFetched value),
+    @required TResult settingsInitialized(SettingsInitialized value),
     @required TResult splashPageLaunched(SplashPageLaunched value),
     @required TResult userLoaded(UserLoaded value),
   }) {
     assert(authenticated != null);
-    assert(configFetched != null);
     assert(placeholdersCached != null);
     assert(placeholdersLoaded != null);
     assert(sessionFetched != null);
+    assert(settingsInitialized != null);
     assert(splashPageLaunched != null);
     assert(userLoaded != null);
     return placeholdersCached(this);
@@ -462,10 +342,10 @@ class _$PlaceholdersCached implements PlaceholdersCached {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult authenticated(Authenticated value),
-    TResult configFetched(ConfigFetched value),
     TResult placeholdersCached(PlaceholdersCached value),
     TResult placeholdersLoaded(PlaceholdersLoaded value),
     TResult sessionFetched(SessionFetched value),
+    TResult settingsInitialized(SettingsInitialized value),
     TResult splashPageLaunched(SplashPageLaunched value),
     TResult userLoaded(UserLoaded value),
     @required TResult orElse(),
@@ -547,18 +427,18 @@ class _$PlaceholdersLoaded implements PlaceholdersLoaded {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult authenticated(),
-    @required TResult configFetched(),
     @required TResult placeholdersCached(),
     @required TResult placeholdersLoaded(Map<String, String> placeholders),
     @required TResult sessionFetched(User session),
+    @required TResult settingsInitialized(),
     @required TResult splashPageLaunched(),
     @required TResult userLoaded(User user),
   }) {
     assert(authenticated != null);
-    assert(configFetched != null);
     assert(placeholdersCached != null);
     assert(placeholdersLoaded != null);
     assert(sessionFetched != null);
+    assert(settingsInitialized != null);
     assert(splashPageLaunched != null);
     assert(userLoaded != null);
     return placeholdersLoaded(placeholders);
@@ -568,10 +448,10 @@ class _$PlaceholdersLoaded implements PlaceholdersLoaded {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult authenticated(),
-    TResult configFetched(),
     TResult placeholdersCached(),
     TResult placeholdersLoaded(Map<String, String> placeholders),
     TResult sessionFetched(User session),
+    TResult settingsInitialized(),
     TResult splashPageLaunched(),
     TResult userLoaded(User user),
     @required TResult orElse(),
@@ -587,18 +467,18 @@ class _$PlaceholdersLoaded implements PlaceholdersLoaded {
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult authenticated(Authenticated value),
-    @required TResult configFetched(ConfigFetched value),
     @required TResult placeholdersCached(PlaceholdersCached value),
     @required TResult placeholdersLoaded(PlaceholdersLoaded value),
     @required TResult sessionFetched(SessionFetched value),
+    @required TResult settingsInitialized(SettingsInitialized value),
     @required TResult splashPageLaunched(SplashPageLaunched value),
     @required TResult userLoaded(UserLoaded value),
   }) {
     assert(authenticated != null);
-    assert(configFetched != null);
     assert(placeholdersCached != null);
     assert(placeholdersLoaded != null);
     assert(sessionFetched != null);
+    assert(settingsInitialized != null);
     assert(splashPageLaunched != null);
     assert(userLoaded != null);
     return placeholdersLoaded(this);
@@ -608,10 +488,10 @@ class _$PlaceholdersLoaded implements PlaceholdersLoaded {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult authenticated(Authenticated value),
-    TResult configFetched(ConfigFetched value),
     TResult placeholdersCached(PlaceholdersCached value),
     TResult placeholdersLoaded(PlaceholdersLoaded value),
     TResult sessionFetched(SessionFetched value),
+    TResult settingsInitialized(SettingsInitialized value),
     TResult splashPageLaunched(SplashPageLaunched value),
     TResult userLoaded(UserLoaded value),
     @required TResult orElse(),
@@ -694,18 +574,18 @@ class _$SessionFetched implements SessionFetched {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult authenticated(),
-    @required TResult configFetched(),
     @required TResult placeholdersCached(),
     @required TResult placeholdersLoaded(Map<String, String> placeholders),
     @required TResult sessionFetched(User session),
+    @required TResult settingsInitialized(),
     @required TResult splashPageLaunched(),
     @required TResult userLoaded(User user),
   }) {
     assert(authenticated != null);
-    assert(configFetched != null);
     assert(placeholdersCached != null);
     assert(placeholdersLoaded != null);
     assert(sessionFetched != null);
+    assert(settingsInitialized != null);
     assert(splashPageLaunched != null);
     assert(userLoaded != null);
     return sessionFetched(session);
@@ -715,10 +595,10 @@ class _$SessionFetched implements SessionFetched {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult authenticated(),
-    TResult configFetched(),
     TResult placeholdersCached(),
     TResult placeholdersLoaded(Map<String, String> placeholders),
     TResult sessionFetched(User session),
+    TResult settingsInitialized(),
     TResult splashPageLaunched(),
     TResult userLoaded(User user),
     @required TResult orElse(),
@@ -734,18 +614,18 @@ class _$SessionFetched implements SessionFetched {
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult authenticated(Authenticated value),
-    @required TResult configFetched(ConfigFetched value),
     @required TResult placeholdersCached(PlaceholdersCached value),
     @required TResult placeholdersLoaded(PlaceholdersLoaded value),
     @required TResult sessionFetched(SessionFetched value),
+    @required TResult settingsInitialized(SettingsInitialized value),
     @required TResult splashPageLaunched(SplashPageLaunched value),
     @required TResult userLoaded(UserLoaded value),
   }) {
     assert(authenticated != null);
-    assert(configFetched != null);
     assert(placeholdersCached != null);
     assert(placeholdersLoaded != null);
     assert(sessionFetched != null);
+    assert(settingsInitialized != null);
     assert(splashPageLaunched != null);
     assert(userLoaded != null);
     return sessionFetched(this);
@@ -755,10 +635,10 @@ class _$SessionFetched implements SessionFetched {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult authenticated(Authenticated value),
-    TResult configFetched(ConfigFetched value),
     TResult placeholdersCached(PlaceholdersCached value),
     TResult placeholdersLoaded(PlaceholdersLoaded value),
     TResult sessionFetched(SessionFetched value),
+    TResult settingsInitialized(SettingsInitialized value),
     TResult splashPageLaunched(SplashPageLaunched value),
     TResult userLoaded(UserLoaded value),
     @required TResult orElse(),
@@ -777,6 +657,127 @@ abstract class SessionFetched implements SplashEvent {
   User get session;
   @JsonKey(ignore: true)
   $SessionFetchedCopyWith<SessionFetched> get copyWith;
+}
+
+/// @nodoc
+abstract class $SettingsInitializedCopyWith<$Res> {
+  factory $SettingsInitializedCopyWith(
+          SettingsInitialized value, $Res Function(SettingsInitialized) then) =
+      _$SettingsInitializedCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$SettingsInitializedCopyWithImpl<$Res>
+    extends _$SplashEventCopyWithImpl<$Res>
+    implements $SettingsInitializedCopyWith<$Res> {
+  _$SettingsInitializedCopyWithImpl(
+      SettingsInitialized _value, $Res Function(SettingsInitialized) _then)
+      : super(_value, (v) => _then(v as SettingsInitialized));
+
+  @override
+  SettingsInitialized get _value => super._value as SettingsInitialized;
+}
+
+/// @nodoc
+class _$SettingsInitialized implements SettingsInitialized {
+  const _$SettingsInitialized();
+
+  @override
+  String toString() {
+    return 'SplashEvent.settingsInitialized()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is SettingsInitialized);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object>({
+    @required TResult authenticated(),
+    @required TResult placeholdersCached(),
+    @required TResult placeholdersLoaded(Map<String, String> placeholders),
+    @required TResult sessionFetched(User session),
+    @required TResult settingsInitialized(),
+    @required TResult splashPageLaunched(),
+    @required TResult userLoaded(User user),
+  }) {
+    assert(authenticated != null);
+    assert(placeholdersCached != null);
+    assert(placeholdersLoaded != null);
+    assert(sessionFetched != null);
+    assert(settingsInitialized != null);
+    assert(splashPageLaunched != null);
+    assert(userLoaded != null);
+    return settingsInitialized();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object>({
+    TResult authenticated(),
+    TResult placeholdersCached(),
+    TResult placeholdersLoaded(Map<String, String> placeholders),
+    TResult sessionFetched(User session),
+    TResult settingsInitialized(),
+    TResult splashPageLaunched(),
+    TResult userLoaded(User user),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (settingsInitialized != null) {
+      return settingsInitialized();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object>({
+    @required TResult authenticated(Authenticated value),
+    @required TResult placeholdersCached(PlaceholdersCached value),
+    @required TResult placeholdersLoaded(PlaceholdersLoaded value),
+    @required TResult sessionFetched(SessionFetched value),
+    @required TResult settingsInitialized(SettingsInitialized value),
+    @required TResult splashPageLaunched(SplashPageLaunched value),
+    @required TResult userLoaded(UserLoaded value),
+  }) {
+    assert(authenticated != null);
+    assert(placeholdersCached != null);
+    assert(placeholdersLoaded != null);
+    assert(sessionFetched != null);
+    assert(settingsInitialized != null);
+    assert(splashPageLaunched != null);
+    assert(userLoaded != null);
+    return settingsInitialized(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object>({
+    TResult authenticated(Authenticated value),
+    TResult placeholdersCached(PlaceholdersCached value),
+    TResult placeholdersLoaded(PlaceholdersLoaded value),
+    TResult sessionFetched(SessionFetched value),
+    TResult settingsInitialized(SettingsInitialized value),
+    TResult splashPageLaunched(SplashPageLaunched value),
+    TResult userLoaded(UserLoaded value),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (settingsInitialized != null) {
+      return settingsInitialized(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SettingsInitialized implements SplashEvent {
+  const factory SettingsInitialized() = _$SettingsInitialized;
 }
 
 /// @nodoc
@@ -819,18 +820,18 @@ class _$SplashPageLaunched implements SplashPageLaunched {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult authenticated(),
-    @required TResult configFetched(),
     @required TResult placeholdersCached(),
     @required TResult placeholdersLoaded(Map<String, String> placeholders),
     @required TResult sessionFetched(User session),
+    @required TResult settingsInitialized(),
     @required TResult splashPageLaunched(),
     @required TResult userLoaded(User user),
   }) {
     assert(authenticated != null);
-    assert(configFetched != null);
     assert(placeholdersCached != null);
     assert(placeholdersLoaded != null);
     assert(sessionFetched != null);
+    assert(settingsInitialized != null);
     assert(splashPageLaunched != null);
     assert(userLoaded != null);
     return splashPageLaunched();
@@ -840,10 +841,10 @@ class _$SplashPageLaunched implements SplashPageLaunched {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult authenticated(),
-    TResult configFetched(),
     TResult placeholdersCached(),
     TResult placeholdersLoaded(Map<String, String> placeholders),
     TResult sessionFetched(User session),
+    TResult settingsInitialized(),
     TResult splashPageLaunched(),
     TResult userLoaded(User user),
     @required TResult orElse(),
@@ -859,18 +860,18 @@ class _$SplashPageLaunched implements SplashPageLaunched {
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult authenticated(Authenticated value),
-    @required TResult configFetched(ConfigFetched value),
     @required TResult placeholdersCached(PlaceholdersCached value),
     @required TResult placeholdersLoaded(PlaceholdersLoaded value),
     @required TResult sessionFetched(SessionFetched value),
+    @required TResult settingsInitialized(SettingsInitialized value),
     @required TResult splashPageLaunched(SplashPageLaunched value),
     @required TResult userLoaded(UserLoaded value),
   }) {
     assert(authenticated != null);
-    assert(configFetched != null);
     assert(placeholdersCached != null);
     assert(placeholdersLoaded != null);
     assert(sessionFetched != null);
+    assert(settingsInitialized != null);
     assert(splashPageLaunched != null);
     assert(userLoaded != null);
     return splashPageLaunched(this);
@@ -880,10 +881,10 @@ class _$SplashPageLaunched implements SplashPageLaunched {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult authenticated(Authenticated value),
-    TResult configFetched(ConfigFetched value),
     TResult placeholdersCached(PlaceholdersCached value),
     TResult placeholdersLoaded(PlaceholdersLoaded value),
     TResult sessionFetched(SessionFetched value),
+    TResult settingsInitialized(SettingsInitialized value),
     TResult splashPageLaunched(SplashPageLaunched value),
     TResult userLoaded(UserLoaded value),
     @required TResult orElse(),
@@ -960,18 +961,18 @@ class _$UserLoaded implements UserLoaded {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult authenticated(),
-    @required TResult configFetched(),
     @required TResult placeholdersCached(),
     @required TResult placeholdersLoaded(Map<String, String> placeholders),
     @required TResult sessionFetched(User session),
+    @required TResult settingsInitialized(),
     @required TResult splashPageLaunched(),
     @required TResult userLoaded(User user),
   }) {
     assert(authenticated != null);
-    assert(configFetched != null);
     assert(placeholdersCached != null);
     assert(placeholdersLoaded != null);
     assert(sessionFetched != null);
+    assert(settingsInitialized != null);
     assert(splashPageLaunched != null);
     assert(userLoaded != null);
     return userLoaded(user);
@@ -981,10 +982,10 @@ class _$UserLoaded implements UserLoaded {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult authenticated(),
-    TResult configFetched(),
     TResult placeholdersCached(),
     TResult placeholdersLoaded(Map<String, String> placeholders),
     TResult sessionFetched(User session),
+    TResult settingsInitialized(),
     TResult splashPageLaunched(),
     TResult userLoaded(User user),
     @required TResult orElse(),
@@ -1000,18 +1001,18 @@ class _$UserLoaded implements UserLoaded {
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult authenticated(Authenticated value),
-    @required TResult configFetched(ConfigFetched value),
     @required TResult placeholdersCached(PlaceholdersCached value),
     @required TResult placeholdersLoaded(PlaceholdersLoaded value),
     @required TResult sessionFetched(SessionFetched value),
+    @required TResult settingsInitialized(SettingsInitialized value),
     @required TResult splashPageLaunched(SplashPageLaunched value),
     @required TResult userLoaded(UserLoaded value),
   }) {
     assert(authenticated != null);
-    assert(configFetched != null);
     assert(placeholdersCached != null);
     assert(placeholdersLoaded != null);
     assert(sessionFetched != null);
+    assert(settingsInitialized != null);
     assert(splashPageLaunched != null);
     assert(userLoaded != null);
     return userLoaded(this);
@@ -1021,10 +1022,10 @@ class _$UserLoaded implements UserLoaded {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult authenticated(Authenticated value),
-    TResult configFetched(ConfigFetched value),
     TResult placeholdersCached(PlaceholdersCached value),
     TResult placeholdersLoaded(PlaceholdersLoaded value),
     TResult sessionFetched(SessionFetched value),
+    TResult settingsInitialized(SettingsInitialized value),
     TResult splashPageLaunched(SplashPageLaunched value),
     TResult userLoaded(UserLoaded value),
     @required TResult orElse(),

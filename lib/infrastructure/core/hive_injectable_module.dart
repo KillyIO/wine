@@ -3,9 +3,9 @@ import 'dart:io';
 import 'package:hive/hive.dart';
 import 'package:injectable/injectable.dart';
 import 'package:path_provider/path_provider.dart';
-import 'package:wine/domain/models/config.dart';
+import 'package:wine/domain/models/settings.dart';
 import 'package:wine/domain/models/user.dart';
-import 'package:wine/utils/constants.dart';
+import 'package:wine/utils/constants/boxes.dart';
 
 /// @nodoc
 @module
@@ -13,17 +13,17 @@ abstract class HiveInjectableModule {
   /// @nodoc
   @preResolve
   @lazySingleton
-  Future<Box<Config>> get openConfigsBox async {
+  Future<Box<Settings>> get openSettingsBox async {
     final extDir = await getApplicationDocumentsDirectory();
     final dirPath = '${extDir.path}/db';
     await Directory(dirPath).create(recursive: true);
 
-    Hive.registerAdapter(ConfigAdapter());
+    Hive.registerAdapter(SettingsAdapter());
 
     // ignore: cascade_invocations
     Hive.init(dirPath);
 
-    return Hive.openBox<Config>(Constants.configsBox);
+    return Hive.openBox<Settings>(settingsBox);
   }
 
   /// @nodoc
@@ -36,7 +36,7 @@ abstract class HiveInjectableModule {
 
     Hive.init(dirPath);
 
-    return Hive.openBox<String>(Constants.placeholdersBox);
+    return Hive.openBox<String>(placeholdersBox);
   }
 
   /// @nodoc
@@ -52,6 +52,6 @@ abstract class HiveInjectableModule {
     // ignore: cascade_invocations
     Hive.init(dirPath);
 
-    return Hive.openBox<User>(Constants.sessionsBox);
+    return Hive.openBox<User>(sessionsBox);
   }
 }

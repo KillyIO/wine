@@ -3,15 +3,15 @@ import 'package:hive/hive.dart';
 import 'package:injectable/injectable.dart';
 
 import 'package:wine/domain/models/user.dart';
-import 'package:wine/domain/session/i_session_facade.dart';
+import 'package:wine/domain/session/i_session_repository.dart';
 import 'package:wine/domain/session/session_failure.dart';
 import 'package:wine/utils/constants.dart';
 
 /// @nodoc
-@LazySingleton(as: ISessionFacade)
-class HiveSessionFacade implements ISessionFacade {
+@LazySingleton(as: ISessionRepository)
+class HiveSessionRepository implements ISessionRepository {
   /// @nodoc
-  HiveSessionFacade(this._sessionsBox);
+  HiveSessionRepository(this._sessionsBox);
 
   final Box<User> _sessionsBox;
 

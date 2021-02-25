@@ -4,7 +4,7 @@ import 'package:wine/domain/models/user.dart';
 import 'package:wine/domain/user/user_failure.dart';
 
 /// @nodoc
-abstract class IUserFacade {
+abstract class IUserRepository {
   /// @nodoc
   Future<Either<UserFailure, User>> loadUser(String userUID);
 

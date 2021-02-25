@@ -4,15 +4,15 @@ import 'package:injectable/injectable.dart';
 import 'package:wine/domain/authentication/username.dart';
 
 import 'package:wine/domain/models/user.dart';
-import 'package:wine/domain/user/i_user_facade.dart';
+import 'package:wine/domain/user/i_user_repository.dart';
 import 'package:wine/domain/user/user_failure.dart';
 import 'package:wine/utils/paths/users.dart';
 
 /// @nodoc
-@LazySingleton(as: IUserFacade)
-class FirebaseUserFacade extends IUserFacade {
+@LazySingleton(as: IUserRepository)
+class FirebaseUserRepository extends IUserRepository {
   /// @nodoc
-  FirebaseUserFacade(this._firestore);
+  FirebaseUserRepository(this._firestore);
 
   final FirebaseFirestore _firestore;
 

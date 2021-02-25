@@ -3,7 +3,7 @@ import 'package:wine/domain/models/user.dart';
 import 'package:wine/domain/session/session_failure.dart';
 
 /// @nodoc
-abstract class ISessionFacade {
+abstract class ISessionRepository {
   /// @nodoc
   Future<Either<SessionFailure, Unit>> createSession(User user);
 

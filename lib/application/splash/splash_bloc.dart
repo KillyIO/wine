@@ -8,11 +8,13 @@ import 'package:meta/meta.dart';
 import 'package:wine/domain/authentication/authentication_failure.dart';
 
 import 'package:wine/domain/authentication/i_authentication_facade.dart';
-import 'package:wine/domain/models/config.dart';
+import 'package:wine/domain/models/settings.dart';
 import 'package:wine/domain/models/user.dart';
 import 'package:wine/domain/session/i_session_facade.dart';
+import 'package:wine/domain/session/i_session_repository.dart';
 import 'package:wine/domain/session/session_failure.dart';
 import 'package:wine/domain/user/i_user_facade.dart';
+import 'package:wine/domain/user/i_user_repository.dart';
 import 'package:wine/domain/user/user_failure.dart';
 
 part 'splash_bloc.freezed.dart';
@@ -34,8 +36,8 @@ class SplashBloc extends Bloc<SplashEvent, SplashState> {
   final IAuthenticationFacade _authenticationFacade;
   final IConfigFacade _configFacade;
   final IPlaceholderFacade _palceholderFacade;
-  final ISessionFacade _sessionFacade;
-  final IUserFacade _userFacade;
+  final ISessionRepository _sessionRepository;
+  final IUserRepository _userRepository;
 
   @override
   Stream<SplashState> mapEventToState(SplashEvent event) async* {
