@@ -25,12 +25,6 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
 
-def keystoreProperties = new Properties()
-   def keystorePropertiesFile = rootProject.file('key.properties')
-   if (keystorePropertiesFile.exists()) {
-       keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
-}
-
 android {
     compileSdkVersion 29
 
@@ -45,55 +39,17 @@ android {
     defaultConfig {
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
         applicationId "io.killy.wine"
-        minSdkVersion 21
+        minSdkVersion 16
         targetSdkVersion 29
-        multiDexEnabled true
         versionCode flutterVersionCode.toInteger()
         versionName flutterVersionName
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
-    }
-
-    signingConfigs {
-        release {
-            keyAlias keystoreProperties['keyAlias']
-            keyPassword keystoreProperties['keyPassword']
-            storeFile keystoreProperties['storeFile'] ? file(keystoreProperties['storeFile']) : null
-            storePassword keystoreProperties['storePassword']
-        }
     }
 
     buildTypes {
-        debug {
-            signingConfig signingConfigs.debug
-        }
-
         release {
-            signingConfig signingConfigs.release
-
-            minifyEnabled true
-            useProguard true
-
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-        }
-    }
-
-    flavorDimensions "app"
-
-    productFlavors {
-        beta {
-            dimension "app"
-            applicationId "io.killy.wine.beta"
-            resValue "string", "app_name", "WINE Beta"
-        }
-        development {
-            dimension "app"
-            applicationId "io.killy.wine.dev"
-            resValue "string", "app_name", "WINE Dev"
-        }
-        production {
-            dimension "app"
-            applicationId "io.killy.wine"
-            resValue "string", "app_name", "WINE"
+            // TODO: Add your own signing config for the release build.
+            // Signing with the debug keys for now, so `flutter run --release` works.
+            signingConfig signingConfigs.debug
         }
     }
 }
@@ -103,16 +59,5 @@ flutter {
 }
 
 dependencies {
-    def multidex_version = "2.0.1"
-    implementation "androidx.multidex:multidex:$multidex_version"
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation 'com.google.firebase:firebase-analytics:17.4.3'
-    implementation 'com.google.firebase:firebase-crashlytics:17.0.1'
-    implementation 'com.google.firebase:firebase-perf:19.0.7'
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'androidx.test:runner:1.1.1'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
 }
-
-apply plugin: 'com.google.gms.google-services'
-apply plugin: 'com.google.firebase.crashlytics'

@@ -1,6 +1,0 @@
-#include "Generated.xcconfig"
-
-FLUTTER_TARGET=lib/beta.dart
-
-ASSET_PREFIX=beta
-BUNDLE_NAME=WINE Beta
