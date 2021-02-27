@@ -26,6 +26,28 @@ apply plugin: 'kotlin-android'
 apply from: "$flutterRoot/packages/flutter_tools/gradle/flutter.gradle"
 
 android {
+
+    flavorDimensions "app"
+
+    productFlavors {
+        beta {
+            dimension "app"
+            applicationId "io.killy.wine.beta"
+            resValue "string", "app_name", "WINE Beta"
+        }
+        development {
+            dimension "app"
+            applicationId "io.killy.wine.dev"
+            resValue "string", "app_name", "WINE Dev"
+        }
+        production {
+            dimension "app"
+            applicationId "io.killy.wine"
+            resValue "string", "app_name", "WINE"
+        }
+    }
+
+
     compileSdkVersion 29
 
     sourceSets {
@@ -61,3 +83,4 @@ flutter {
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
 }
+
