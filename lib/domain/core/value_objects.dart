@@ -1,5 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:equatable/equatable.dart';
+import 'package:wine/domain/core/errors.dart';
 import 'package:wine/domain/core/failures.dart';
 
 /// @nodoc
@@ -9,6 +10,16 @@ abstract class ValueObject<T> extends Equatable {
 
   /// @nodoc
   Either<ValueFailure<T>, T> get value;
+
+  /// Throws [UnexpectedValueError] containing the [ValueFailure]
+  T getOrCrash() {
+    // id = identity - same as writing (right) => right
+    // ignore: only_throw_errors
+    return value.fold((f) => throw UnexpectedValueError(f), id);
+  }
+
+  /// @nodoc
+  bool isValid() => value.isRight();
 
   @override
   List<Object> get props => [value];

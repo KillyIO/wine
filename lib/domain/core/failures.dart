@@ -19,4 +19,9 @@ abstract class ValueFailure<T> with _$ValueFailure<T> {
   const factory ValueFailure.invalidConfirmPassword({
     @required String failedValue,
   }) = InvalidConfirmPassword<T>;
+
+  /// @nodoc
+  const factory ValueFailure.invalidUsername({
+    @required String failedValue,
+  }) = InvalidUsername<T>;
 }

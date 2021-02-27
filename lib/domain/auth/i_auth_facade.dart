@@ -2,11 +2,13 @@ import 'package:dartz/dartz.dart';
 import 'package:wine/domain/auth/auth_failure.dart';
 import 'package:wine/domain/auth/email_address.dart';
 import 'package:wine/domain/auth/password.dart';
+import 'package:wine/domain/auth/username.dart';
+import 'package:wine/domain/models/user.dart';
 
 /// @nodoc
 abstract class IAuthFacade {
   /// @nodoc
-  Future<String> getCurrentUserUID();
+  String getCurrentUserUID();
 
   /// @nodoc
   Future<Either<AuthFailure, User>> convertWithEmailAndPassword(
@@ -27,17 +29,17 @@ abstract class IAuthFacade {
   Future<Either<AuthFailure, Unit>> resendVerificationEmail();
 
   /// @nodoc
-  Future<Either<AuthFailure, Unit>> signInAnonymously();
+  Future<Either<AuthFailure, Unit>> logInAnonymously();
 
   /// @nodoc
-  Future<Either<AuthFailure, User>> signInWithEmailAndPassword(
+  Future<Either<AuthFailure, User>> logInWithEmailAndPassword(
     EmailAddress emailAddress,
     Password password,
   );
 
   /// @nodoc
-  Future<Either<AuthFailure, User>> signInWithGoogle();
+  Future<Either<AuthFailure, User>> logInWithGoogle();
 
   /// @nodoc
-  Future<Either<AuthFailure, Unit>> signOut();
+  Future<Either<AuthFailure, Unit>> logOut();
 }

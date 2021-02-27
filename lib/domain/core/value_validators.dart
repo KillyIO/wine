@@ -22,7 +22,7 @@ Either<ValueFailure<String>, String> validatePassword(
     if (RegExp(passwordRegex).hasMatch(input) && input == input2) {
       return right(input);
     } else {
-      return left(ValueFailure.invalidConfirmPassword(failedValue: input));
+      return left(ValueFailure.invalidConfirmPassword(failedValue: input2));
     }
   } else {
     if (RegExp(passwordRegex).hasMatch(input)) {
@@ -30,5 +30,14 @@ Either<ValueFailure<String>, String> validatePassword(
     } else {
       return left(ValueFailure.invalidPassword(failedValue: input));
     }
+  }
+}
+
+/// @nodoc
+Either<ValueFailure<String>, String> validateUsername(String input) {
+  if (input != null && input.isNotEmpty) {
+    return right(input);
+  } else {
+    return left(ValueFailure.invalidUsername(failedValue: input));
   }
 }
