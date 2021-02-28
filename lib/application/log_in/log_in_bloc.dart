@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:injectable/injectable.dart';
 import 'package:wine/domain/auth/auth_failure.dart';
 import 'package:wine/domain/auth/email_address.dart';
 import 'package:wine/domain/auth/i_auth_facade.dart';
@@ -14,6 +15,7 @@ part 'log_in_state.dart';
 part 'log_in_bloc.freezed.dart';
 
 /// @nodoc
+@injectable
 class LogInBloc extends Bloc<LogInEvent, LogInState> {
   /// @nodoc
   LogInBloc(
@@ -49,7 +51,7 @@ class LogInBloc extends Bloc<LogInEvent, LogInState> {
             userOption: none(),
           );
 
-          final failureOrSuccess = await _authFacade.signInWithEmailAndPassword(
+          final failureOrSuccess = await _authFacade.logInWithEmailAndPassword(
             state.emailAddress,
             state.password,
           );

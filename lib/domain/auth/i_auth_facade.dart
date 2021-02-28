@@ -8,25 +8,22 @@ import 'package:wine/domain/models/user.dart';
 /// @nodoc
 abstract class IAuthFacade {
   /// @nodoc
-  String getCurrentUserUID();
-
-  /// @nodoc
   Future<Either<AuthFailure, User>> convertWithEmailAndPassword(
     EmailAddress emailAddress,
     Password password,
   );
 
   /// @nodoc
-  bool isAnonymous();
+  String getCurrentUserUID();
 
   /// @nodoc
-  Future<Either<AuthFailure, bool>> isUsernameAvailable(Username username);
+  bool isAnonymous();
 
   /// @nodoc
   bool isSignedIn();
 
   /// @nodoc
-  Future<Either<AuthFailure, Unit>> resendVerificationEmail();
+  // Future<Either<AuthFailure, bool>> isUsernameAvailable(Username username);
 
   /// @nodoc
   Future<Either<AuthFailure, Unit>> logInAnonymously();
@@ -42,4 +39,7 @@ abstract class IAuthFacade {
 
   /// @nodoc
   Future<Either<AuthFailure, Unit>> logOut();
+
+  /// @nodoc
+  Future<Either<AuthFailure, Unit>> resendVerificationEmail();
 }
