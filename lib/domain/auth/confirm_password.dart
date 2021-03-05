@@ -4,17 +4,18 @@ import 'package:wine/domain/core/value_object.dart';
 import 'package:wine/domain/core/value_validators.dart';
 
 /// @nodoc
-class Password extends ValueObject<String> {
+class ConfirmPassword extends ValueObject<String> {
   /// @nodoc
-  factory Password(String input) {
+  factory ConfirmPassword(String input, String input2) {
     assert(input != null);
-    return Password._(
-      validatePassword(input),
+    return ConfirmPassword._(
+      validatePassword(input)
+          .flatMap((String value) => validateConfirmPassword(value, input2)),
     );
   }
 
   /// @nodoc
-  const Password._(this.value);
+  const ConfirmPassword._(this.value);
 
   @override
   final Either<ValueFailure<String>, String> value;

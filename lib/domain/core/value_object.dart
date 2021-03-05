@@ -19,6 +19,14 @@ abstract class ValueObject<T> extends Equatable {
   }
 
   /// @nodoc
+  Either<ValueFailure<dynamic>, Unit> get failureOrUnit {
+    return value.fold(
+      left,
+      (r) => right(unit),
+    );
+  }
+
+  /// @nodoc
   bool isValid() => value.isRight();
 
   @override

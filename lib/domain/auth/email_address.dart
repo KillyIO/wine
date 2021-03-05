@@ -1,6 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:wine/domain/core/failures.dart';
-import 'package:wine/domain/core/value_objects.dart';
+import 'package:wine/domain/core/value_object.dart';
 import 'package:wine/domain/core/value_validators.dart';
 
 /// @nodoc
