@@ -10,7 +10,7 @@ Either<ValueFailure<String>, String> validateConfirmPassword(
   if (input == input2) {
     return right(input);
   } else {
-    return left(ValueFailure.invalidConfirmPassword(failedValue: input2));
+    return left(ValueFailure.invalidConfirmPassword(failedValue: input));
   }
 }
 

@@ -6,7 +6,7 @@ import 'package:wine/domain/core/failures.dart';
 void main() {
   group('Username -', () {
     test(
-      'When input is null Then throw AssertionError',
+      'When input null Then throw AssertionError',
       () {
         expect(
           () => Username(null),
@@ -16,7 +16,7 @@ void main() {
     );
 
     test(
-      'When input is valid Then return input',
+      'When input valid Then return input',
       () {
         final username = Username('holly.molly');
 
@@ -28,7 +28,7 @@ void main() {
     );
 
     test(
-      'When input is invalid The return ValueFailure invalidUsername',
+      'When input invalid The return ValueFailure invalidUsername',
       () {
         final username = Username('');
 

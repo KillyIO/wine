@@ -19,8 +19,8 @@ class _$UserFailureTearOff {
   }
 
 // ignore: unused_element
-  UnexpectedError unexpectedError() {
-    return const UnexpectedError();
+  Unexpected unexpected() {
+    return const Unexpected();
   }
 
 // ignore: unused_element
@@ -38,26 +38,26 @@ mixin _$UserFailure {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult serverError(),
-    @required TResult unexpectedError(),
+    @required TResult unexpected(),
     @required TResult userNotFound(),
   });
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult serverError(),
-    TResult unexpectedError(),
+    TResult unexpected(),
     TResult userNotFound(),
     @required TResult orElse(),
   });
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult serverError(ServerError value),
-    @required TResult unexpectedError(UnexpectedError value),
+    @required TResult unexpected(Unexpected value),
     @required TResult userNotFound(UserNotFound value),
   });
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult serverError(ServerError value),
-    TResult unexpectedError(UnexpectedError value),
+    TResult unexpected(Unexpected value),
     TResult userNotFound(UserNotFound value),
     @required TResult orElse(),
   });
@@ -118,11 +118,11 @@ class _$ServerError implements ServerError {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult serverError(),
-    @required TResult unexpectedError(),
+    @required TResult unexpected(),
     @required TResult userNotFound(),
   }) {
     assert(serverError != null);
-    assert(unexpectedError != null);
+    assert(unexpected != null);
     assert(userNotFound != null);
     return serverError();
   }
@@ -131,7 +131,7 @@ class _$ServerError implements ServerError {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult serverError(),
-    TResult unexpectedError(),
+    TResult unexpected(),
     TResult userNotFound(),
     @required TResult orElse(),
   }) {
@@ -146,11 +146,11 @@ class _$ServerError implements ServerError {
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult serverError(ServerError value),
-    @required TResult unexpectedError(UnexpectedError value),
+    @required TResult unexpected(Unexpected value),
     @required TResult userNotFound(UserNotFound value),
   }) {
     assert(serverError != null);
-    assert(unexpectedError != null);
+    assert(unexpected != null);
     assert(userNotFound != null);
     return serverError(this);
   }
@@ -159,7 +159,7 @@ class _$ServerError implements ServerError {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult serverError(ServerError value),
-    TResult unexpectedError(UnexpectedError value),
+    TResult unexpected(Unexpected value),
     TResult userNotFound(UserNotFound value),
     @required TResult orElse(),
   }) {
@@ -176,36 +176,34 @@ abstract class ServerError implements UserFailure {
 }
 
 /// @nodoc
-abstract class $UnexpectedErrorCopyWith<$Res> {
-  factory $UnexpectedErrorCopyWith(
-          UnexpectedError value, $Res Function(UnexpectedError) then) =
-      _$UnexpectedErrorCopyWithImpl<$Res>;
+abstract class $UnexpectedCopyWith<$Res> {
+  factory $UnexpectedCopyWith(
+          Unexpected value, $Res Function(Unexpected) then) =
+      _$UnexpectedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$UnexpectedErrorCopyWithImpl<$Res>
-    extends _$UserFailureCopyWithImpl<$Res>
-    implements $UnexpectedErrorCopyWith<$Res> {
-  _$UnexpectedErrorCopyWithImpl(
-      UnexpectedError _value, $Res Function(UnexpectedError) _then)
-      : super(_value, (v) => _then(v as UnexpectedError));
+class _$UnexpectedCopyWithImpl<$Res> extends _$UserFailureCopyWithImpl<$Res>
+    implements $UnexpectedCopyWith<$Res> {
+  _$UnexpectedCopyWithImpl(Unexpected _value, $Res Function(Unexpected) _then)
+      : super(_value, (v) => _then(v as Unexpected));
 
   @override
-  UnexpectedError get _value => super._value as UnexpectedError;
+  Unexpected get _value => super._value as Unexpected;
 }
 
 /// @nodoc
-class _$UnexpectedError implements UnexpectedError {
-  const _$UnexpectedError();
+class _$Unexpected implements Unexpected {
+  const _$Unexpected();
 
   @override
   String toString() {
-    return 'UserFailure.unexpectedError()';
+    return 'UserFailure.unexpected()';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is UnexpectedError);
+    return identical(this, other) || (other is Unexpected);
   }
 
   @override
@@ -215,26 +213,26 @@ class _$UnexpectedError implements UnexpectedError {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult serverError(),
-    @required TResult unexpectedError(),
+    @required TResult unexpected(),
     @required TResult userNotFound(),
   }) {
     assert(serverError != null);
-    assert(unexpectedError != null);
+    assert(unexpected != null);
     assert(userNotFound != null);
-    return unexpectedError();
+    return unexpected();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult serverError(),
-    TResult unexpectedError(),
+    TResult unexpected(),
     TResult userNotFound(),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (unexpectedError != null) {
-      return unexpectedError();
+    if (unexpected != null) {
+      return unexpected();
     }
     return orElse();
   }
@@ -243,33 +241,33 @@ class _$UnexpectedError implements UnexpectedError {
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult serverError(ServerError value),
-    @required TResult unexpectedError(UnexpectedError value),
+    @required TResult unexpected(Unexpected value),
     @required TResult userNotFound(UserNotFound value),
   }) {
     assert(serverError != null);
-    assert(unexpectedError != null);
+    assert(unexpected != null);
     assert(userNotFound != null);
-    return unexpectedError(this);
+    return unexpected(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult serverError(ServerError value),
-    TResult unexpectedError(UnexpectedError value),
+    TResult unexpected(Unexpected value),
     TResult userNotFound(UserNotFound value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (unexpectedError != null) {
-      return unexpectedError(this);
+    if (unexpected != null) {
+      return unexpected(this);
     }
     return orElse();
   }
 }
 
-abstract class UnexpectedError implements UserFailure {
-  const factory UnexpectedError() = _$UnexpectedError;
+abstract class Unexpected implements UserFailure {
+  const factory Unexpected() = _$Unexpected;
 }
 
 /// @nodoc
@@ -311,11 +309,11 @@ class _$UserNotFound implements UserNotFound {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult serverError(),
-    @required TResult unexpectedError(),
+    @required TResult unexpected(),
     @required TResult userNotFound(),
   }) {
     assert(serverError != null);
-    assert(unexpectedError != null);
+    assert(unexpected != null);
     assert(userNotFound != null);
     return userNotFound();
   }
@@ -324,7 +322,7 @@ class _$UserNotFound implements UserNotFound {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult serverError(),
-    TResult unexpectedError(),
+    TResult unexpected(),
     TResult userNotFound(),
     @required TResult orElse(),
   }) {
@@ -339,11 +337,11 @@ class _$UserNotFound implements UserNotFound {
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult serverError(ServerError value),
-    @required TResult unexpectedError(UnexpectedError value),
+    @required TResult unexpected(Unexpected value),
     @required TResult userNotFound(UserNotFound value),
   }) {
     assert(serverError != null);
-    assert(unexpectedError != null);
+    assert(unexpected != null);
     assert(userNotFound != null);
     return userNotFound(this);
   }
@@ -352,7 +350,7 @@ class _$UserNotFound implements UserNotFound {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult serverError(ServerError value),
-    TResult unexpectedError(UnexpectedError value),
+    TResult unexpected(Unexpected value),
     TResult userNotFound(UserNotFound value),
     @required TResult orElse(),
   }) {

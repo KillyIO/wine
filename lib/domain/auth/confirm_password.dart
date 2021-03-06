@@ -8,6 +8,7 @@ class ConfirmPassword extends ValueObject<String> {
   /// @nodoc
   factory ConfirmPassword(String input, String input2) {
     assert(input != null);
+    assert(input2 != null);
     return ConfirmPassword._(
       validatePassword(input)
           .flatMap((String value) => validateConfirmPassword(value, input2)),

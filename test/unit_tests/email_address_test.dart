@@ -6,7 +6,7 @@ import 'package:wine/domain/core/failures.dart';
 void main() {
   group('EmailAddress -', () {
     test(
-      'When input is null Then throw AssertionError',
+      'When input null Then throw AssertionError',
       () {
         expect(
           () => EmailAddress(null),
@@ -16,7 +16,7 @@ void main() {
     );
 
     test(
-      'When input is valid Then return input',
+      'When input valid Then return input',
       () {
         final emailAddress = EmailAddress('email@email.com');
 
@@ -28,7 +28,7 @@ void main() {
     );
 
     test(
-      'When input is invalid The return ValueFailure invalidEmailAddress',
+      'When input invalid The return ValueFailure invalidEmailAddress',
       () {
         final emailAddress = EmailAddress('email.email.com');
 

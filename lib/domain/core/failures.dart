@@ -7,21 +7,21 @@ part 'failures.freezed.dart';
 abstract class ValueFailure<T> with _$ValueFailure<T> {
   /// @nodoc
   const factory ValueFailure.invalidEmailAddress({
-    @required String failedValue,
+    @required T failedValue,
   }) = InvalidEmail<T>;
 
   /// @nodoc
   const factory ValueFailure.invalidPassword({
-    @required String failedValue,
+    @required T failedValue,
   }) = InvalidPassword<T>;
 
   /// @nodoc
   const factory ValueFailure.invalidConfirmPassword({
-    @required String failedValue,
+    @required T failedValue,
   }) = InvalidConfirmPassword<T>;
 
   /// @nodoc
   const factory ValueFailure.invalidUsername({
-    @required String failedValue,
+    @required T failedValue,
   }) = InvalidUsername<T>;
 }

@@ -12,5 +12,8 @@ abstract class UserFailure with _$UserFailure {
   const factory UserFailure.serverError() = ServerError;
 
   /// @nodoc
+  const factory UserFailure.unexpected() = Unexpected;
+
+  /// @nodoc
   const factory UserFailure.userNotFound() = UserNotFound;
 }
