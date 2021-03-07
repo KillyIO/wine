@@ -1,5 +1,7 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:wine/flavors.dart';
+import 'package:wine/presentation/routes/router.gr.dart';
 
 /// @nodoc
 class AppBeta extends StatelessWidget {
@@ -11,8 +13,8 @@ class AppBeta extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: F.title,
-      builder: ExtendedNavigator.builder<WINERouter>(
-        router: WINERouter(),
+      builder: ExtendedNavigator.builder<AppRouter>(
+        router: AppRouter(),
         // observers: <NavigatorObserver>[
         //   FirebaseAnalyticsObserver(analytics: analytics),
         // ],
