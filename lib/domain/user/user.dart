@@ -10,14 +10,14 @@ part 'user.freezed.dart';
 abstract class User with _$User {
   /// @nodoc
   factory User({
-    @required EmailAddress email,
+    @required EmailAddress emailAddress,
     @required UniqueID uid,
     @required Username username,
   }) = _User;
 
   /// @nodoc
   factory User.empty() => User(
-        email: EmailAddress(''),
+        emailAddress: EmailAddress(''),
         uid: UniqueID(),
         username: Username(''),
       );

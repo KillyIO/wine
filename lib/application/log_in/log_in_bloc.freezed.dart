@@ -266,6 +266,8 @@ abstract class $LoggedInCopyWith<$Res> {
   factory $LoggedInCopyWith(LoggedIn value, $Res Function(LoggedIn) then) =
       _$LoggedInCopyWithImpl<$Res>;
   $Res call({User user});
+
+  $UserCopyWith<$Res> get user;
 }
 
 /// @nodoc
@@ -284,6 +286,16 @@ class _$LoggedInCopyWithImpl<$Res> extends _$LogInEventCopyWithImpl<$Res>
     return _then(LoggedIn(
       user == freezed ? _value.user : user as User,
     ));
+  }
+
+  @override
+  $UserCopyWith<$Res> get user {
+    if (_value.user == null) {
+      return null;
+    }
+    return $UserCopyWith<$Res>(_value.user, (value) {
+      return _then(_value.copyWith(user: value));
+    });
   }
 }
 
@@ -794,6 +806,8 @@ abstract class $UserDetailsSavedCopyWith<$Res> {
           UserDetailsSaved value, $Res Function(UserDetailsSaved) then) =
       _$UserDetailsSavedCopyWithImpl<$Res>;
   $Res call({User user});
+
+  $UserCopyWith<$Res> get user;
 }
 
 /// @nodoc
@@ -814,6 +828,16 @@ class _$UserDetailsSavedCopyWithImpl<$Res>
     return _then(UserDetailsSaved(
       user == freezed ? _value.user : user as User,
     ));
+  }
+
+  @override
+  $UserCopyWith<$Res> get user {
+    if (_value.user == null) {
+      return null;
+    }
+    return $UserCopyWith<$Res>(_value.user, (value) {
+      return _then(_value.copyWith(user: value));
+    });
   }
 }
 
@@ -938,21 +962,17 @@ class _$LogInStateTearOff {
 
 // ignore: unused_element
   _LogInState call(
-      {@required bool isProcessing,
-      @required bool showErrorMessages,
-      @required EmailAddress emailAddress,
-      @required Option<Either<AuthFailure, User>> authOption,
-      @required Option<Either<SessionFailure, dynamic>> sessionOption,
-      @required Option<Either<UserFailure, dynamic>> userOption,
-      @required Password password}) {
+      {@required EmailAddress emailAddress,
+      @required Option<Either<CoreFailure, dynamic>> failureOrSuccessOption,
+      @required bool isProcessing,
+      @required Password password,
+      @required bool showErrorMessages}) {
     return _LogInState(
-      isProcessing: isProcessing,
-      showErrorMessages: showErrorMessages,
       emailAddress: emailAddress,
-      authOption: authOption,
-      sessionOption: sessionOption,
-      userOption: userOption,
+      failureOrSuccessOption: failureOrSuccessOption,
+      isProcessing: isProcessing,
       password: password,
+      showErrorMessages: showErrorMessages,
     );
   }
 }
@@ -963,13 +983,11 @@ const $LogInState = _$LogInStateTearOff();
 
 /// @nodoc
 mixin _$LogInState {
-  bool get isProcessing;
-  bool get showErrorMessages;
   EmailAddress get emailAddress;
-  Option<Either<AuthFailure, User>> get authOption;
-  Option<Either<SessionFailure, dynamic>> get sessionOption;
-  Option<Either<UserFailure, dynamic>> get userOption;
+  Option<Either<CoreFailure, dynamic>> get failureOrSuccessOption;
+  bool get isProcessing;
   Password get password;
+  bool get showErrorMessages;
 
   @JsonKey(ignore: true)
   $LogInStateCopyWith<LogInState> get copyWith;
@@ -981,13 +999,11 @@ abstract class $LogInStateCopyWith<$Res> {
           LogInState value, $Res Function(LogInState) then) =
       _$LogInStateCopyWithImpl<$Res>;
   $Res call(
-      {bool isProcessing,
-      bool showErrorMessages,
-      EmailAddress emailAddress,
-      Option<Either<AuthFailure, User>> authOption,
-      Option<Either<SessionFailure, dynamic>> sessionOption,
-      Option<Either<UserFailure, dynamic>> userOption,
-      Password password});
+      {EmailAddress emailAddress,
+      Option<Either<CoreFailure, dynamic>> failureOrSuccessOption,
+      bool isProcessing,
+      Password password,
+      bool showErrorMessages});
 }
 
 /// @nodoc
@@ -1000,33 +1016,25 @@ class _$LogInStateCopyWithImpl<$Res> implements $LogInStateCopyWith<$Res> {
 
   @override
   $Res call({
-    Object isProcessing = freezed,
-    Object showErrorMessages = freezed,
     Object emailAddress = freezed,
-    Object authOption = freezed,
-    Object sessionOption = freezed,
-    Object userOption = freezed,
+    Object failureOrSuccessOption = freezed,
+    Object isProcessing = freezed,
     Object password = freezed,
+    Object showErrorMessages = freezed,
   }) {
     return _then(_value.copyWith(
-      isProcessing:
-          isProcessing == freezed ? _value.isProcessing : isProcessing as bool,
-      showErrorMessages: showErrorMessages == freezed
-          ? _value.showErrorMessages
-          : showErrorMessages as bool,
       emailAddress: emailAddress == freezed
           ? _value.emailAddress
           : emailAddress as EmailAddress,
-      authOption: authOption == freezed
-          ? _value.authOption
-          : authOption as Option<Either<AuthFailure, User>>,
-      sessionOption: sessionOption == freezed
-          ? _value.sessionOption
-          : sessionOption as Option<Either<SessionFailure, dynamic>>,
-      userOption: userOption == freezed
-          ? _value.userOption
-          : userOption as Option<Either<UserFailure, dynamic>>,
+      failureOrSuccessOption: failureOrSuccessOption == freezed
+          ? _value.failureOrSuccessOption
+          : failureOrSuccessOption as Option<Either<CoreFailure, dynamic>>,
+      isProcessing:
+          isProcessing == freezed ? _value.isProcessing : isProcessing as bool,
       password: password == freezed ? _value.password : password as Password,
+      showErrorMessages: showErrorMessages == freezed
+          ? _value.showErrorMessages
+          : showErrorMessages as bool,
     ));
   }
 }
@@ -1038,13 +1046,11 @@ abstract class _$LogInStateCopyWith<$Res> implements $LogInStateCopyWith<$Res> {
       __$LogInStateCopyWithImpl<$Res>;
   @override
   $Res call(
-      {bool isProcessing,
-      bool showErrorMessages,
-      EmailAddress emailAddress,
-      Option<Either<AuthFailure, User>> authOption,
-      Option<Either<SessionFailure, dynamic>> sessionOption,
-      Option<Either<UserFailure, dynamic>> userOption,
-      Password password});
+      {EmailAddress emailAddress,
+      Option<Either<CoreFailure, dynamic>> failureOrSuccessOption,
+      bool isProcessing,
+      Password password,
+      bool showErrorMessages});
 }
 
 /// @nodoc
@@ -1059,33 +1065,25 @@ class __$LogInStateCopyWithImpl<$Res> extends _$LogInStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object isProcessing = freezed,
-    Object showErrorMessages = freezed,
     Object emailAddress = freezed,
-    Object authOption = freezed,
-    Object sessionOption = freezed,
-    Object userOption = freezed,
+    Object failureOrSuccessOption = freezed,
+    Object isProcessing = freezed,
     Object password = freezed,
+    Object showErrorMessages = freezed,
   }) {
     return _then(_LogInState(
-      isProcessing:
-          isProcessing == freezed ? _value.isProcessing : isProcessing as bool,
-      showErrorMessages: showErrorMessages == freezed
-          ? _value.showErrorMessages
-          : showErrorMessages as bool,
       emailAddress: emailAddress == freezed
           ? _value.emailAddress
           : emailAddress as EmailAddress,
-      authOption: authOption == freezed
-          ? _value.authOption
-          : authOption as Option<Either<AuthFailure, User>>,
-      sessionOption: sessionOption == freezed
-          ? _value.sessionOption
-          : sessionOption as Option<Either<SessionFailure, dynamic>>,
-      userOption: userOption == freezed
-          ? _value.userOption
-          : userOption as Option<Either<UserFailure, dynamic>>,
+      failureOrSuccessOption: failureOrSuccessOption == freezed
+          ? _value.failureOrSuccessOption
+          : failureOrSuccessOption as Option<Either<CoreFailure, dynamic>>,
+      isProcessing:
+          isProcessing == freezed ? _value.isProcessing : isProcessing as bool,
       password: password == freezed ? _value.password : password as Password,
+      showErrorMessages: showErrorMessages == freezed
+          ? _value.showErrorMessages
+          : showErrorMessages as bool,
     ));
   }
 }
@@ -1093,78 +1091,62 @@ class __$LogInStateCopyWithImpl<$Res> extends _$LogInStateCopyWithImpl<$Res>
 /// @nodoc
 class _$_LogInState implements _LogInState {
   const _$_LogInState(
-      {@required this.isProcessing,
-      @required this.showErrorMessages,
-      @required this.emailAddress,
-      @required this.authOption,
-      @required this.sessionOption,
-      @required this.userOption,
-      @required this.password})
-      : assert(isProcessing != null),
-        assert(showErrorMessages != null),
-        assert(emailAddress != null),
-        assert(authOption != null),
-        assert(sessionOption != null),
-        assert(userOption != null),
-        assert(password != null);
+      {@required this.emailAddress,
+      @required this.failureOrSuccessOption,
+      @required this.isProcessing,
+      @required this.password,
+      @required this.showErrorMessages})
+      : assert(emailAddress != null),
+        assert(failureOrSuccessOption != null),
+        assert(isProcessing != null),
+        assert(password != null),
+        assert(showErrorMessages != null);
 
-  @override
-  final bool isProcessing;
-  @override
-  final bool showErrorMessages;
   @override
   final EmailAddress emailAddress;
   @override
-  final Option<Either<AuthFailure, User>> authOption;
+  final Option<Either<CoreFailure, dynamic>> failureOrSuccessOption;
   @override
-  final Option<Either<SessionFailure, dynamic>> sessionOption;
-  @override
-  final Option<Either<UserFailure, dynamic>> userOption;
+  final bool isProcessing;
   @override
   final Password password;
+  @override
+  final bool showErrorMessages;
 
   @override
   String toString() {
-    return 'LogInState(isProcessing: $isProcessing, showErrorMessages: $showErrorMessages, emailAddress: $emailAddress, authOption: $authOption, sessionOption: $sessionOption, userOption: $userOption, password: $password)';
+    return 'LogInState(emailAddress: $emailAddress, failureOrSuccessOption: $failureOrSuccessOption, isProcessing: $isProcessing, password: $password, showErrorMessages: $showErrorMessages)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _LogInState &&
-            (identical(other.isProcessing, isProcessing) ||
-                const DeepCollectionEquality()
-                    .equals(other.isProcessing, isProcessing)) &&
-            (identical(other.showErrorMessages, showErrorMessages) ||
-                const DeepCollectionEquality()
-                    .equals(other.showErrorMessages, showErrorMessages)) &&
             (identical(other.emailAddress, emailAddress) ||
                 const DeepCollectionEquality()
                     .equals(other.emailAddress, emailAddress)) &&
-            (identical(other.authOption, authOption) ||
+            (identical(other.failureOrSuccessOption, failureOrSuccessOption) ||
+                const DeepCollectionEquality().equals(
+                    other.failureOrSuccessOption, failureOrSuccessOption)) &&
+            (identical(other.isProcessing, isProcessing) ||
                 const DeepCollectionEquality()
-                    .equals(other.authOption, authOption)) &&
-            (identical(other.sessionOption, sessionOption) ||
-                const DeepCollectionEquality()
-                    .equals(other.sessionOption, sessionOption)) &&
-            (identical(other.userOption, userOption) ||
-                const DeepCollectionEquality()
-                    .equals(other.userOption, userOption)) &&
+                    .equals(other.isProcessing, isProcessing)) &&
             (identical(other.password, password) ||
                 const DeepCollectionEquality()
-                    .equals(other.password, password)));
+                    .equals(other.password, password)) &&
+            (identical(other.showErrorMessages, showErrorMessages) ||
+                const DeepCollectionEquality()
+                    .equals(other.showErrorMessages, showErrorMessages)));
   }
 
   @override
   int get hashCode =>
       runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(isProcessing) ^
-      const DeepCollectionEquality().hash(showErrorMessages) ^
       const DeepCollectionEquality().hash(emailAddress) ^
-      const DeepCollectionEquality().hash(authOption) ^
-      const DeepCollectionEquality().hash(sessionOption) ^
-      const DeepCollectionEquality().hash(userOption) ^
-      const DeepCollectionEquality().hash(password);
+      const DeepCollectionEquality().hash(failureOrSuccessOption) ^
+      const DeepCollectionEquality().hash(isProcessing) ^
+      const DeepCollectionEquality().hash(password) ^
+      const DeepCollectionEquality().hash(showErrorMessages);
 
   @JsonKey(ignore: true)
   @override
@@ -1174,28 +1156,22 @@ class _$_LogInState implements _LogInState {
 
 abstract class _LogInState implements LogInState {
   const factory _LogInState(
-      {@required bool isProcessing,
-      @required bool showErrorMessages,
-      @required EmailAddress emailAddress,
-      @required Option<Either<AuthFailure, User>> authOption,
-      @required Option<Either<SessionFailure, dynamic>> sessionOption,
-      @required Option<Either<UserFailure, dynamic>> userOption,
-      @required Password password}) = _$_LogInState;
+      {@required EmailAddress emailAddress,
+      @required Option<Either<CoreFailure, dynamic>> failureOrSuccessOption,
+      @required bool isProcessing,
+      @required Password password,
+      @required bool showErrorMessages}) = _$_LogInState;
 
-  @override
-  bool get isProcessing;
-  @override
-  bool get showErrorMessages;
   @override
   EmailAddress get emailAddress;
   @override
-  Option<Either<AuthFailure, User>> get authOption;
+  Option<Either<CoreFailure, dynamic>> get failureOrSuccessOption;
   @override
-  Option<Either<SessionFailure, dynamic>> get sessionOption;
-  @override
-  Option<Either<UserFailure, dynamic>> get userOption;
+  bool get isProcessing;
   @override
   Password get password;
+  @override
+  bool get showErrorMessages;
   @override
   @JsonKey(ignore: true)
   _$LogInStateCopyWith<_LogInState> get copyWith;

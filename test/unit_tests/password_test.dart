@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:wine/domain/auth/password.dart';
-import 'package:wine/domain/core/failures.dart';
+import 'package:wine/domain/core/value_failure.dart';
 
 void main() {
   group('Password -', () {
@@ -34,9 +34,7 @@ void main() {
 
         expect(
           password.value,
-          left(const ValueFailure<String>.invalidPassword(
-            failedValue: 'myname123',
-          )),
+          left(const ValueFailure<String>.invalidPassword('myname123')),
         );
       },
     );

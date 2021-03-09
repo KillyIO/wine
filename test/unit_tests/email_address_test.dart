@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:wine/domain/auth/email_address.dart';
-import 'package:wine/domain/core/failures.dart';
+import 'package:wine/domain/core/value_failure.dart';
 
 void main() {
   group('EmailAddress -', () {
@@ -35,7 +35,7 @@ void main() {
         expect(
           emailAddress.value,
           left(const ValueFailure<String>.invalidEmailAddress(
-            failedValue: 'email.email.com',
+            'email.email.com',
           )),
         );
       },

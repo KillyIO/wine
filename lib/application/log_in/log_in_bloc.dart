@@ -8,7 +8,9 @@ import 'package:wine/domain/auth/auth_failure.dart';
 import 'package:wine/domain/auth/email_address.dart';
 import 'package:wine/domain/auth/i_auth_facade.dart';
 import 'package:wine/domain/auth/password.dart';
-import 'package:wine/domain/models/user.dart';
+import 'package:wine/domain/core/core_failure.dart';
+import 'package:wine/domain/user/i_user_repository.dart';
+import 'package:wine/domain/user/user.dart';
 import 'package:wine/domain/user/user_failure.dart';
 
 part 'log_in_event.dart';
@@ -21,10 +23,12 @@ class LogInBloc extends Bloc<LogInEvent, LogInState> {
   /// @nodoc
   LogInBloc(
     this._authFacade,
+    this._userRepository,
   ) : super(LogInState.initial());
 
   /// @nodoc
   IAuthFacade _authFacade;
+  IUserRepository _userRepository;
 
   @override
   Stream<LogInState> mapEventToState(
@@ -33,47 +37,45 @@ class LogInBloc extends Bloc<LogInEvent, LogInState> {
     yield* event.map(
       emailChanged: (value) async* {
         yield state.copyWith(
-          authOption: none(),
           emailAddress: EmailAddress(value.emailStr),
-          sessionOption: none(),
-          userOption: none(),
+          failureOrSuccessOption: none(),
         );
       },
       loggedIn: (value) async* {},
       logInWithEmailAndPasswordPressed: (value) async* {
+        Either<CoreFailure, dynamic> failureOrSuccess;
+
         final isEmailValid = state.emailAddress.isValid();
         final isPasswordValid = state.password.isValid();
 
         if (isEmailValid && isPasswordValid) {
           yield state.copyWith(
-            authOption: none(),
+            failureOrSuccessOption: none(),
             isProcessing: true,
-            sessionOption: none(),
-            userOption: none(),
           );
 
-          final failureOrSuccess = await _authFacade.logInWithEmailAndPassword(
+          failureOrSuccess = (await _authFacade.logInWithEmailAndPassword(
             state.emailAddress,
             state.password,
-          );
+          ));
         }
+
+        yield state.copyWith(
+          failureOrSuccessOption: optionOf(failureOrSuccess),
+          isProcessing: false,
+          showErrorMessages: true,
+        );
       },
       logInWithGooglePressed: (value) async* {
         yield state.copyWith(
-          authOption: none(),
+          failureOrSuccessOption: none(),
           isProcessing: true,
-          sessionOption: none(),
-          userOption: none(),
         );
-
-        yield* _loggedIn();
       },
       passwordChanged: (value) async* {
         yield state.copyWith(
-          authOption: none(),
+          failureOrSuccessOption: none(),
           password: Password(value.passwordStr),
-          sessionOption: none(),
-          userOption: none(),
         );
       },
       userDetailsSaved: (value) async* {},
@@ -86,11 +88,9 @@ class LogInBloc extends Bloc<LogInEvent, LogInState> {
     Either<AuthFailure, User> failureOrSuccess,
   ) async* {
     yield state.copyWith(
-      authOption: optionOf(failureOrSuccess),
+      failureOrSuccessOption: optionOf(failureOrSuccess),
       isProcessing: isSuccess,
-      sessionOption: none(),
       showErrorMessages: true,
-      userOption: none(),
     );
 
     if (isSuccess) {

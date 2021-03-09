@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
 
-part of 'failures.dart';
+part of 'value_failure.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -14,31 +14,30 @@ class _$ValueFailureTearOff {
   const _$ValueFailureTearOff();
 
 // ignore: unused_element
-  InvalidEmail<T> invalidEmailAddress<T>({@required T failedValue}) {
+  InvalidEmail<T> invalidEmailAddress<T>(T failedValue) {
     return InvalidEmail<T>(
-      failedValue: failedValue,
+      failedValue,
     );
   }
 
 // ignore: unused_element
-  InvalidPassword<T> invalidPassword<T>({@required T failedValue}) {
+  InvalidPassword<T> invalidPassword<T>(T failedValue) {
     return InvalidPassword<T>(
-      failedValue: failedValue,
+      failedValue,
     );
   }
 
 // ignore: unused_element
-  InvalidConfirmPassword<T> invalidConfirmPassword<T>(
-      {@required T failedValue}) {
+  InvalidConfirmPassword<T> invalidConfirmPassword<T>(T failedValue) {
     return InvalidConfirmPassword<T>(
-      failedValue: failedValue,
+      failedValue,
     );
   }
 
 // ignore: unused_element
-  InvalidUsername<T> invalidUsername<T>({@required T failedValue}) {
+  InvalidUsername<T> invalidUsername<T>(T failedValue) {
     return InvalidUsername<T>(
-      failedValue: failedValue,
+      failedValue,
     );
   }
 }
@@ -140,16 +139,14 @@ class _$InvalidEmailCopyWithImpl<T, $Res>
     Object failedValue = freezed,
   }) {
     return _then(InvalidEmail<T>(
-      failedValue:
-          failedValue == freezed ? _value.failedValue : failedValue as T,
+      failedValue == freezed ? _value.failedValue : failedValue as T,
     ));
   }
 }
 
 /// @nodoc
 class _$InvalidEmail<T> implements InvalidEmail<T> {
-  const _$InvalidEmail({@required this.failedValue})
-      : assert(failedValue != null);
+  const _$InvalidEmail(this.failedValue) : assert(failedValue != null);
 
   @override
   final T failedValue;
@@ -241,7 +238,7 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
 }
 
 abstract class InvalidEmail<T> implements ValueFailure<T> {
-  const factory InvalidEmail({@required T failedValue}) = _$InvalidEmail<T>;
+  const factory InvalidEmail(T failedValue) = _$InvalidEmail<T>;
 
   @override
   T get failedValue;
@@ -276,16 +273,14 @@ class _$InvalidPasswordCopyWithImpl<T, $Res>
     Object failedValue = freezed,
   }) {
     return _then(InvalidPassword<T>(
-      failedValue:
-          failedValue == freezed ? _value.failedValue : failedValue as T,
+      failedValue == freezed ? _value.failedValue : failedValue as T,
     ));
   }
 }
 
 /// @nodoc
 class _$InvalidPassword<T> implements InvalidPassword<T> {
-  const _$InvalidPassword({@required this.failedValue})
-      : assert(failedValue != null);
+  const _$InvalidPassword(this.failedValue) : assert(failedValue != null);
 
   @override
   final T failedValue;
@@ -377,8 +372,7 @@ class _$InvalidPassword<T> implements InvalidPassword<T> {
 }
 
 abstract class InvalidPassword<T> implements ValueFailure<T> {
-  const factory InvalidPassword({@required T failedValue}) =
-      _$InvalidPassword<T>;
+  const factory InvalidPassword(T failedValue) = _$InvalidPassword<T>;
 
   @override
   T get failedValue;
@@ -414,15 +408,14 @@ class _$InvalidConfirmPasswordCopyWithImpl<T, $Res>
     Object failedValue = freezed,
   }) {
     return _then(InvalidConfirmPassword<T>(
-      failedValue:
-          failedValue == freezed ? _value.failedValue : failedValue as T,
+      failedValue == freezed ? _value.failedValue : failedValue as T,
     ));
   }
 }
 
 /// @nodoc
 class _$InvalidConfirmPassword<T> implements InvalidConfirmPassword<T> {
-  const _$InvalidConfirmPassword({@required this.failedValue})
+  const _$InvalidConfirmPassword(this.failedValue)
       : assert(failedValue != null);
 
   @override
@@ -516,7 +509,7 @@ class _$InvalidConfirmPassword<T> implements InvalidConfirmPassword<T> {
 }
 
 abstract class InvalidConfirmPassword<T> implements ValueFailure<T> {
-  const factory InvalidConfirmPassword({@required T failedValue}) =
+  const factory InvalidConfirmPassword(T failedValue) =
       _$InvalidConfirmPassword<T>;
 
   @override
@@ -552,16 +545,14 @@ class _$InvalidUsernameCopyWithImpl<T, $Res>
     Object failedValue = freezed,
   }) {
     return _then(InvalidUsername<T>(
-      failedValue:
-          failedValue == freezed ? _value.failedValue : failedValue as T,
+      failedValue == freezed ? _value.failedValue : failedValue as T,
     ));
   }
 }
 
 /// @nodoc
 class _$InvalidUsername<T> implements InvalidUsername<T> {
-  const _$InvalidUsername({@required this.failedValue})
-      : assert(failedValue != null);
+  const _$InvalidUsername(this.failedValue) : assert(failedValue != null);
 
   @override
   final T failedValue;
@@ -653,8 +644,7 @@ class _$InvalidUsername<T> implements InvalidUsername<T> {
 }
 
 abstract class InvalidUsername<T> implements ValueFailure<T> {
-  const factory InvalidUsername({@required T failedValue}) =
-      _$InvalidUsername<T>;
+  const factory InvalidUsername(T failedValue) = _$InvalidUsername<T>;
 
   @override
   T get failedValue;

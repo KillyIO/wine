@@ -5,23 +5,19 @@ part of 'log_in_bloc.dart';
 abstract class LogInState with _$LogInState {
   /// @nodoc
   const factory LogInState({
-    @required bool isProcessing,
-    @required bool showErrorMessages,
     @required EmailAddress emailAddress,
-    @required Option<Either<AuthFailure, User>> authOption,
-    @required Option<Either<SessionFailure, dynamic>> sessionOption,
-    @required Option<Either<UserFailure, dynamic>> userOption,
+    @required Option<Either<CoreFailure, dynamic>> failureOrSuccessOption,
+    @required bool isProcessing,
     @required Password password,
+    @required bool showErrorMessages,
   }) = _LogInState;
 
   /// @nodoc
   factory LogInState.initial() => LogInState(
-        authOption: none(),
         emailAddress: EmailAddress(''),
+        failureOrSuccessOption: none(),
         isProcessing: false,
         password: Password(''),
-        sessionOption: none(),
         showErrorMessages: false,
-        userOption: none(),
       );
 }

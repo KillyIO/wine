@@ -1,0 +1,2 @@
+/// @nodoc
+abstract class IUserRepository {}
