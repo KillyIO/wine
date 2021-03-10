@@ -8,7 +8,6 @@ import 'package:wine/domain/auth/auth_failure.dart';
 import 'package:wine/domain/auth/email_address.dart';
 import 'package:wine/domain/auth/i_auth_facade.dart';
 import 'package:wine/domain/auth/password.dart';
-import 'package:wine/domain/core/core_failure.dart';
 import 'package:wine/domain/user/user.dart';
 import 'package:wine/infrastructure/auth/firebase_user_mapper.dart';
 
@@ -27,7 +26,7 @@ class FirebaseAuthFacade implements IAuthFacade {
   final GoogleSignIn _googleSignIn;
 
   @override
-  Future<Either<CoreFailure, Unit>> convertWithEmailAndPassword(
+  Future<Either<AuthFailure, Unit>> convertWithEmailAndPassword(
     EmailAddress emailAddress,
     Password password,
   ) async {
@@ -50,9 +49,9 @@ class FirebaseAuthFacade implements IAuthFacade {
       return right(unit);
     } on FirebaseException catch (e) {
       if (e.code == 'email-already-in-use') {
-        return left(const CoreFailure.auth(AuthFailure.emailAlreadyInUse()));
+        return left(const AuthFailure.emailAlreadyInUse());
       }
-      return left(const CoreFailure.auth(AuthFailure.serverError()));
+      return left(const AuthFailure.serverError());
     }
   }
 
@@ -73,17 +72,17 @@ class FirebaseAuthFacade implements IAuthFacade {
   }
 
   @override
-  Future<Either<CoreFailure, Unit>> logInAnonymously() async {
+  Future<Either<AuthFailure, Unit>> logInAnonymously() async {
     try {
       await _firebaseAuth.signInAnonymously();
       return right(unit);
     } on FirebaseException catch (_) {
-      return left(const CoreFailure.auth(AuthFailure.serverError()));
+      return left(const AuthFailure.serverError());
     }
   }
 
   @override
-  Future<Either<CoreFailure, Unit>> logInWithEmailAndPassword(
+  Future<Either<AuthFailure, User>> logInWithEmailAndPassword(
     EmailAddress emailAddress,
     Password password,
   ) async {
@@ -99,29 +98,27 @@ class FirebaseAuthFacade implements IAuthFacade {
         password: passwordStr,
       );
 
-      return right(unit);
+      return right(_firebaseUserMapper.toDomain(_firebaseAuth.currentUser));
     } on FirebaseException catch (e) {
       await _firebaseAuth.signInAnonymously();
 
       if (e.code == 'wrong-password' || e.code == 'user-not-found') {
         return left(
-          const CoreFailure.auth(
-            AuthFailure.invalidEmailAndPasswordCombination(),
-          ),
+          const AuthFailure.invalidEmailAndPasswordCombination(),
         );
       }
-      return left(const CoreFailure.auth(AuthFailure.serverError()));
+      return left(const AuthFailure.serverError());
     }
   }
 
   @override
-  Future<Either<CoreFailure, Unit>> logInWithGoogle() async {
+  Future<Either<AuthFailure, Unit>> logInWithGoogle() async {
     try {
       final anonymousUser = _firebaseAuth.currentUser;
 
       final googleAccount = await _googleSignIn.signIn();
       if (googleAccount == null) {
-        return left(const CoreFailure.auth(AuthFailure.cancelledByUser()));
+        return left(const AuthFailure.cancelledByUser());
       }
 
       final googleAuthentication = await googleAccount.authentication;
@@ -140,15 +137,15 @@ class FirebaseAuthFacade implements IAuthFacade {
             authCredential,
           ));
         }
-        return left(const CoreFailure.auth(AuthFailure.serverError()));
+        return left(const AuthFailure.serverError());
       }
     } on FirebaseException catch (_) {
-      return left(const CoreFailure.auth(AuthFailure.serverError()));
+      return left(const AuthFailure.serverError());
     }
   }
 
   @override
-  Future<Either<CoreFailure, Unit>> logOut() async {
+  Future<Either<AuthFailure, Unit>> logOut() async {
     try {
       await Future.wait([
         _firebaseAuth.signOut(),
@@ -157,18 +154,18 @@ class FirebaseAuthFacade implements IAuthFacade {
 
       final currentUser = _firebaseAuth.currentUser;
       if (currentUser != null) {
-        return left(const CoreFailure.auth(AuthFailure.unableToSignOut()));
+        return left(const AuthFailure.unableToSignOut());
       }
 
       await _firebaseAuth.signInAnonymously();
       return right(unit);
     } on FirebaseException catch (_) {
-      return left(const CoreFailure.auth(AuthFailure.serverError()));
+      return left(const AuthFailure.serverError());
     }
   }
 
   @override
-  Future<Either<CoreFailure, Unit>> resendVerificationEmail() async {
+  Future<Either<AuthFailure, Unit>> resendVerificationEmail() async {
     try {
       final currentUser = _firebaseAuth.currentUser;
 
@@ -176,9 +173,9 @@ class FirebaseAuthFacade implements IAuthFacade {
         await currentUser.sendEmailVerification();
         return right(unit);
       }
-      return left(const CoreFailure.auth(AuthFailure.serverError()));
+      return left(const AuthFailure.serverError());
     } on FirebaseException catch (_) {
-      return left(const CoreFailure.auth(AuthFailure.serverError()));
+      return left(const AuthFailure.serverError());
     }
   }
 

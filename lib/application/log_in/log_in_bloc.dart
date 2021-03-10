@@ -12,6 +12,7 @@ import 'package:wine/domain/core/core_failure.dart';
 import 'package:wine/domain/user/i_user_repository.dart';
 import 'package:wine/domain/user/user.dart';
 import 'package:wine/domain/user/user_failure.dart';
+import 'package:wine/infrastructure/core/dartz_helpers.dart';
 
 part 'log_in_event.dart';
 part 'log_in_state.dart';
@@ -37,64 +38,66 @@ class LogInBloc extends Bloc<LogInEvent, LogInState> {
     yield* event.map(
       emailChanged: (value) async* {
         yield state.copyWith(
+          authOption: none(),
           emailAddress: EmailAddress(value.emailStr),
-          failureOrSuccessOption: none(),
+          userOption: none(),
         );
       },
       loggedIn: (value) async* {},
       logInWithEmailAndPasswordPressed: (value) async* {
-        Either<CoreFailure, dynamic> failureOrSuccess;
+        Either<AuthFailure, Unit> failureOrSuccess;
 
         final isEmailValid = state.emailAddress.isValid();
         final isPasswordValid = state.password.isValid();
 
         if (isEmailValid && isPasswordValid) {
           yield state.copyWith(
-            failureOrSuccessOption: none(),
+            authOption: none(),
             isProcessing: true,
+            userOption: none(),
           );
 
-          failureOrSuccess = (await _authFacade.logInWithEmailAndPassword(
+          failureOrSuccess = await _authFacade.logInWithEmailAndPassword(
             state.emailAddress,
             state.password,
-          ));
+          );
         }
 
+        final isSuccess = failureOrSuccess.isRight();
+
         yield state.copyWith(
-          failureOrSuccessOption: optionOf(failureOrSuccess),
-          isProcessing: false,
+          authOption: optionOf(failureOrSuccess),
+          isProcessing: isSuccess,
           showErrorMessages: true,
         );
+
+        if (isSuccess) {
+          add(const LogInEvent.loggedIn());
+        }
       },
       logInWithGooglePressed: (value) async* {
         yield state.copyWith(
-          failureOrSuccessOption: none(),
+          authOption: none(),
           isProcessing: true,
+          userOption: none(),
+        );
+
+        final failureOrSuccess = await _authFacade.logInWithGoogle();
+
+        yield state.copyWith(
+          authOption: optionOf(failureOrSuccess),
+          isProcessing: true,
+          userOption: none(),
         );
       },
       passwordChanged: (value) async* {
         yield state.copyWith(
-          failureOrSuccessOption: none(),
+          authOption: none(),
           password: Password(value.passwordStr),
+          userOption: none(),
         );
       },
       userDetailsSaved: (value) async* {},
     );
-  }
-
-  Stream<LogInState> _loggedIn(
-    bool isSuccess,
-    User user,
-    Either<AuthFailure, User> failureOrSuccess,
-  ) async* {
-    yield state.copyWith(
-      failureOrSuccessOption: optionOf(failureOrSuccess),
-      isProcessing: isSuccess,
-      showErrorMessages: true,
-    );
-
-    if (isSuccess) {
-      add(LogInEvent.loggedIn(user));
-    }
   }
 }

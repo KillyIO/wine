@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:wine/domain/auth/email_address.dart';
-import 'package:wine/domain/core/value_failure.dart';
+import 'package:wine/domain/core/failures.dart';
 
 void main() {
   group('EmailAddress -', () {

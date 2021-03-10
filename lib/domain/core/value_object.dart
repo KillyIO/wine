@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:equatable/equatable.dart';
 import 'package:wine/domain/core/errors.dart';
-import 'package:wine/domain/core/value_failure.dart';
+import 'package:wine/domain/core/failures.dart';
 
 /// @nodoc
 abstract class ValueObject<T> extends Equatable {

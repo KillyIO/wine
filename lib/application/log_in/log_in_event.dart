@@ -6,7 +6,7 @@ abstract class LogInEvent with _$LogInEvent {
   /// @nodoc
   const factory LogInEvent.emailChanged(String emailStr) = EmailChanged;
 
-  const factory LogInEvent.loggedIn(User user) = LoggedIn;
+  const factory LogInEvent.loggedIn() = LoggedIn;
 
   /// @nodoc
   const factory LogInEvent.logInWithEmailAndPasswordPressed() =
@@ -22,5 +22,5 @@ abstract class LogInEvent with _$LogInEvent {
   /// @nodoc
 
   /// @nodoc
-  const factory LogInEvent.userDetailsSaved(User user) = UserDetailsSaved;
+  const factory LogInEvent.userDetailsSaved() = UserDetailsSaved;
 }

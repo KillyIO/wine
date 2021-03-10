@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:uuid/uuid.dart';
 
-import 'package:wine/domain/core/value_failure.dart';
+import 'package:wine/domain/core/failures.dart';
 import 'package:wine/domain/core/value_object.dart';
 
 /// @nodoc

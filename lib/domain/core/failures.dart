@@ -1,6 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 
-part 'value_failure.freezed.dart';
+part 'failures.freezed.dart';
 
 /// @nodoc
 @freezed
