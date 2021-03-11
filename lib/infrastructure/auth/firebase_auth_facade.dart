@@ -9,7 +9,7 @@ import 'package:wine/domain/auth/email_address.dart';
 import 'package:wine/domain/auth/i_auth_facade.dart';
 import 'package:wine/domain/auth/password.dart';
 import 'package:wine/domain/user/user.dart';
-import 'package:wine/infrastructure/auth/firebase_user_mapper.dart';
+import 'package:wine/infrastructure/auth/user_dto.dart';
 
 /// Implementation of [IAuthFacade] using Firebase.
 @LazySingleton(as: IAuthFacade)
@@ -17,12 +17,10 @@ class FirebaseAuthFacade implements IAuthFacade {
   /// @nodoc
   FirebaseAuthFacade(
     this._firebaseAuth,
-    this._firebaseUserMapper,
     this._googleSignIn,
   );
 
   final auth.FirebaseAuth _firebaseAuth;
-  final FirebaseUserMapper _firebaseUserMapper;
   final GoogleSignIn _googleSignIn;
 
   @override
@@ -57,7 +55,7 @@ class FirebaseAuthFacade implements IAuthFacade {
 
   @override
   Future<Option<User>> getLoggedInUser() async =>
-      optionOf(_firebaseUserMapper.toDomain(_firebaseAuth.currentUser));
+      optionOf(_firebaseAuth.currentUser.toDomain());
 
   @override
   bool isAnonymous() {
@@ -82,7 +80,7 @@ class FirebaseAuthFacade implements IAuthFacade {
   }
 
   @override
-  Future<Either<AuthFailure, User>> logInWithEmailAndPassword(
+  Future<Either<AuthFailure, Unit>> logInWithEmailAndPassword(
     EmailAddress emailAddress,
     Password password,
   ) async {
@@ -98,7 +96,7 @@ class FirebaseAuthFacade implements IAuthFacade {
         password: passwordStr,
       );
 
-      return right(_firebaseUserMapper.toDomain(_firebaseAuth.currentUser));
+      return right(unit);
     } on FirebaseException catch (e) {
       await _firebaseAuth.signInAnonymously();
 

@@ -882,7 +882,7 @@ class _$LogInStateTearOff {
 
 // ignore: unused_element
   _LogInState call(
-      {@required Option<Either<AuthFailure, dynamic>> authOption,
+      {@required Option<Either<AuthFailure, Unit>> authOption,
       @required EmailAddress emailAddress,
       @required bool isProcessing,
       @required Password password,
@@ -905,7 +905,7 @@ const $LogInState = _$LogInStateTearOff();
 
 /// @nodoc
 mixin _$LogInState {
-  Option<Either<AuthFailure, dynamic>> get authOption;
+  Option<Either<AuthFailure, Unit>> get authOption;
   EmailAddress get emailAddress;
   bool get isProcessing;
   Password get password;
@@ -922,7 +922,7 @@ abstract class $LogInStateCopyWith<$Res> {
           LogInState value, $Res Function(LogInState) then) =
       _$LogInStateCopyWithImpl<$Res>;
   $Res call(
-      {Option<Either<AuthFailure, dynamic>> authOption,
+      {Option<Either<AuthFailure, Unit>> authOption,
       EmailAddress emailAddress,
       bool isProcessing,
       Password password,
@@ -950,7 +950,7 @@ class _$LogInStateCopyWithImpl<$Res> implements $LogInStateCopyWith<$Res> {
     return _then(_value.copyWith(
       authOption: authOption == freezed
           ? _value.authOption
-          : authOption as Option<Either<AuthFailure, dynamic>>,
+          : authOption as Option<Either<AuthFailure, Unit>>,
       emailAddress: emailAddress == freezed
           ? _value.emailAddress
           : emailAddress as EmailAddress,
@@ -974,7 +974,7 @@ abstract class _$LogInStateCopyWith<$Res> implements $LogInStateCopyWith<$Res> {
       __$LogInStateCopyWithImpl<$Res>;
   @override
   $Res call(
-      {Option<Either<AuthFailure, dynamic>> authOption,
+      {Option<Either<AuthFailure, Unit>> authOption,
       EmailAddress emailAddress,
       bool isProcessing,
       Password password,
@@ -1004,7 +1004,7 @@ class __$LogInStateCopyWithImpl<$Res> extends _$LogInStateCopyWithImpl<$Res>
     return _then(_LogInState(
       authOption: authOption == freezed
           ? _value.authOption
-          : authOption as Option<Either<AuthFailure, dynamic>>,
+          : authOption as Option<Either<AuthFailure, Unit>>,
       emailAddress: emailAddress == freezed
           ? _value.emailAddress
           : emailAddress as EmailAddress,
@@ -1038,7 +1038,7 @@ class _$_LogInState implements _LogInState {
         assert(userOption != null);
 
   @override
-  final Option<Either<AuthFailure, dynamic>> authOption;
+  final Option<Either<AuthFailure, Unit>> authOption;
   @override
   final EmailAddress emailAddress;
   @override
@@ -1097,7 +1097,7 @@ class _$_LogInState implements _LogInState {
 
 abstract class _LogInState implements LogInState {
   const factory _LogInState(
-          {@required Option<Either<AuthFailure, dynamic>> authOption,
+          {@required Option<Either<AuthFailure, Unit>> authOption,
           @required EmailAddress emailAddress,
           @required bool isProcessing,
           @required Password password,
@@ -1106,7 +1106,7 @@ abstract class _LogInState implements LogInState {
       _$_LogInState;
 
   @override
-  Option<Either<AuthFailure, dynamic>> get authOption;
+  Option<Either<AuthFailure, Unit>> get authOption;
   @override
   EmailAddress get emailAddress;
   @override
