@@ -6,6 +6,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:wine/domain/auth/auth_failure.dart';
 import 'package:wine/domain/session/session_failure.dart';
+import 'package:wine/domain/settings/settings.dart';
 import 'package:wine/domain/settings/settings_failure.dart';
 import 'package:wine/domain/user/user.dart';
 import 'package:wine/domain/user/user_failure.dart';

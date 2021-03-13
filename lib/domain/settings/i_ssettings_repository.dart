@@ -1,4 +1,5 @@
 import 'package:dartz/dartz.dart';
+import 'package:wine/domain/settings/settings.dart';
 import 'package:wine/domain/settings/settings_failure.dart';
 
 /// @nodoc
