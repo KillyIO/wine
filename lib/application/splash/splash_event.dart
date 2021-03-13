@@ -1,6 +1,28 @@
 part of 'splash_bloc.dart';
 
+/// @nodoc
 @freezed
 abstract class SplashEvent with _$SplashEvent {
-  const factory SplashEvent.started() = _Started;
+  /// @nodoc
+  const factory SplashEvent.authenticated() = Authenticated;
+
+  /// @nodoc
+  const factory SplashEvent.defaultCoverURLsCached() = DefaultCoverURLsCached;
+
+  /// @nodoc
+  const factory SplashEvent.defaultCoverURLsLoaded(
+    Map<String, String> defaultCoverURLs,
+  ) = DefaultCoverURLsLoaded;
+
+  /// @nodoc
+  const factory SplashEvent.sessionFetched(User session) = SessionFetched;
+
+  /// @nodoc
+  const factory SplashEvent.splashPageLaunched() = SplashPageLaunched;
+
+  /// @nodoc
+  const factory SplashEvent.settingsInitialized() = SettingsInitialized;
+
+  /// @nodoc
+  const factory SplashEvent.userLoaded(User user) = UserLoaded;
 }
