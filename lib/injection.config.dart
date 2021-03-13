@@ -34,7 +34,7 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
       _i7.FirebaseAuthFacade(get<_i3.FirebaseAuth>(), get<_i5.GoogleSignIn>()));
   gh.factory<_i8.LogInBloc>(
       () => _i8.LogInBloc(get<_i6.IAuthFacade>(), get<_i9.IUserRepository>()));
-  gh.factory<_i10.SplashBloc>(() => _i10.SplashBloc());
+  gh.factory<_i10.SplashBloc>(() => _i10.SplashBloc(get<_i6.IAuthFacade>()));
   return get;
 }
 
