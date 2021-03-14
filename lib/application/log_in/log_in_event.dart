@@ -6,6 +6,7 @@ abstract class LogInEvent with _$LogInEvent {
   /// @nodoc
   const factory LogInEvent.emailChanged(String emailStr) = EmailChanged;
 
+  /// @nodoc
   const factory LogInEvent.loggedIn() = LoggedIn;
 
   /// @nodoc

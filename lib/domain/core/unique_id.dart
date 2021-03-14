@@ -9,7 +9,7 @@ class UniqueID extends ValueObject<String> {
   /// @nodoc
   factory UniqueID() {
     return UniqueID._(
-      right(const Uuid().v1()),
+      right(Uuid().v1()),
     );
   }
 

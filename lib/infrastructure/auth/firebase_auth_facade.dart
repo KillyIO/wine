@@ -9,7 +9,7 @@ import 'package:wine/domain/auth/email_address.dart';
 import 'package:wine/domain/auth/i_auth_facade.dart';
 import 'package:wine/domain/auth/password.dart';
 import 'package:wine/domain/user/user.dart';
-import 'package:wine/infrastructure/auth/user_dto.dart';
+import 'package:wine/infrastructure/user/user_dto.dart';
 
 /// Implementation of [IAuthFacade] using Firebase.
 @LazySingleton(as: IAuthFacade)
@@ -39,10 +39,10 @@ class FirebaseAuthFacade implements IAuthFacade {
         password: passwordStr,
       );
 
-      await currentUser.linkWithCredential(credential);
+      await currentUser?.linkWithCredential(credential);
 
       currentUser = _firebaseAuth.currentUser;
-      await currentUser.sendEmailVerification();
+      await currentUser?.sendEmailVerification();
 
       return right(unit);
     } on FirebaseException catch (e) {

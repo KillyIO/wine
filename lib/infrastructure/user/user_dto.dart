@@ -7,6 +7,7 @@ import 'package:wine/domain/core/unique_id.dart';
 import 'package:wine/domain/user/user.dart';
 
 part 'user_dto.freezed.dart';
+part 'user_dto.g.dart';
 
 /// @nodoc
 @freezed

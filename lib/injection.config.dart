@@ -10,18 +10,19 @@ import 'package:get_it/get_it.dart' as _i1;
 import 'package:google_sign_in/google_sign_in.dart' as _i5;
 import 'package:injectable/injectable.dart' as _i2;
 
-import 'application/log_in/log_in_bloc.dart' as _i8;
-import 'application/splash/splash_bloc.dart' as _i10;
+import 'application/log_in/log_in_bloc.dart' as _i10;
+import 'application/splash/splash_bloc.dart' as _i11;
 import 'domain/auth/i_auth_facade.dart' as _i6;
-import 'domain/user/i_user_repository.dart' as _i9;
+import 'domain/user/i_user_repository.dart' as _i8;
 import 'infrastructure/auth/firebase_auth_facade.dart' as _i7;
-import 'infrastructure/core/firebase_injectable_module.dart'
-    as _i11; // ignore_for_file: unnecessary_lambdas
+import 'infrastructure/core/firebase_injectable_module.dart' as _i12;
+import 'infrastructure/user/user_repository.dart'
+    as _i9; // ignore_for_file: unnecessary_lambdas
 
 // ignore_for_file: lines_longer_than_80_chars
 /// initializes the registration of provided dependencies inside of [GetIt]
 _i1.GetIt $initGetIt(_i1.GetIt get,
-    {String? environment, _i2.EnvironmentFilter? environmentFilter}) {
+    {String environment, _i2.EnvironmentFilter environmentFilter}) {
   final gh = _i2.GetItHelper(get, environment, environmentFilter);
   final firebaseInjectableModule = _$FirebaseInjectableModule();
   gh.lazySingleton<_i3.FirebaseAuth>(
@@ -32,10 +33,12 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
       () => firebaseInjectableModule.googleSignIn);
   gh.lazySingleton<_i6.IAuthFacade>(() =>
       _i7.FirebaseAuthFacade(get<_i3.FirebaseAuth>(), get<_i5.GoogleSignIn>()));
-  gh.factory<_i8.LogInBloc>(
-      () => _i8.LogInBloc(get<_i6.IAuthFacade>(), get<_i9.IUserRepository>()));
-  gh.factory<_i10.SplashBloc>(() => _i10.SplashBloc(get<_i6.IAuthFacade>()));
+  gh.lazySingleton<_i8.IUserRepository>(
+      () => _i9.UserRepository(get<_i4.FirebaseFirestore>()));
+  gh.factory<_i10.LogInBloc>(
+      () => _i10.LogInBloc(get<_i6.IAuthFacade>(), get<_i8.IUserRepository>()));
+  gh.factory<_i11.SplashBloc>(() => _i11.SplashBloc(get<_i6.IAuthFacade>()));
   return get;
 }
 
-class _$FirebaseInjectableModule extends _i11.FirebaseInjectableModule {}
+class _$FirebaseInjectableModule extends _i12.FirebaseInjectableModule {}
