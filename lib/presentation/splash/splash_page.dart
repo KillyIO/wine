@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:wine/application/splash/splash_bloc.dart';
 import 'package:wine/injection.dart';
 import 'package:wine/presentation/splash/splash_layout.dart';
+import 'package:wine/utils/themes.dart';
 
 /// @nodoc
 class SplashPage extends StatelessWidget {
@@ -13,9 +14,15 @@ class SplashPage extends StatelessWidget {
       DeviceOrientation.portraitUp,
       DeviceOrientation.portraitDown,
     ]);
-    return BlocProvider(
-      create: (context) => getIt<SplashBloc>(),
-      child: SplashLayout(),
+    return AnnotatedRegion<SystemUiOverlayStyle>(
+      child: Scaffold(
+        backgroundColor: Colors.white,
+        body: BlocProvider(
+          create: (context) => getIt<SplashBloc>(),
+          child: SplashLayout(),
+        ),
+      ),
+      value: lightTheme,
     );
   }
 }

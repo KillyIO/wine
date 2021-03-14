@@ -1,13 +1,18 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:injectable/injectable.dart';
 import 'package:wine/flavors.dart';
 import 'package:wine/injection.dart';
 import 'package:wine/presentation/core/app_production.dart';
 
-void main() {
+Future<void> main() async {
   F.appFlavor = Flavor.production;
 
+  WidgetsFlutterBinding.ensureInitialized();
+
   configureInjection(Environment.prod);
+
+  await Firebase.initializeApp();
 
   runApp(AppProduction());
 }
