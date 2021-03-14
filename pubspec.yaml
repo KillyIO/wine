@@ -28,6 +28,7 @@ dependencies:
   injectable: "1.1.0"
   json_annotation: "3.1.1"
   logger: "0.9.4"
+  path_provider: "1.6.27"
   uuid: "2.2.2"
   validators: ^2.0.1
 

@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
 
-part of 'default_cover_failure.dart';
+part of 'default_covers_failure.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -10,8 +10,8 @@ part of 'default_cover_failure.dart';
 T _$identity<T>(T value) => value;
 
 /// @nodoc
-class _$DefaultCoverFailureTearOff {
-  const _$DefaultCoverFailureTearOff();
+class _$DefaultCoversFailureTearOff {
+  const _$DefaultCoversFailureTearOff();
 
 // ignore: unused_element
   DefaultCoverURLsNotCached defaultCoverURLsNotCached() {
@@ -31,10 +31,10 @@ class _$DefaultCoverFailureTearOff {
 
 /// @nodoc
 // ignore: unused_element
-const $DefaultCoverFailure = _$DefaultCoverFailureTearOff();
+const $DefaultCoversFailure = _$DefaultCoversFailureTearOff();
 
 /// @nodoc
-mixin _$DefaultCoverFailure {
+mixin _$DefaultCoversFailure {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult defaultCoverURLsNotCached(),
@@ -67,20 +67,20 @@ mixin _$DefaultCoverFailure {
 }
 
 /// @nodoc
-abstract class $DefaultCoverFailureCopyWith<$Res> {
-  factory $DefaultCoverFailureCopyWith(
-          DefaultCoverFailure value, $Res Function(DefaultCoverFailure) then) =
-      _$DefaultCoverFailureCopyWithImpl<$Res>;
+abstract class $DefaultCoversFailureCopyWith<$Res> {
+  factory $DefaultCoversFailureCopyWith(DefaultCoversFailure value,
+          $Res Function(DefaultCoversFailure) then) =
+      _$DefaultCoversFailureCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$DefaultCoverFailureCopyWithImpl<$Res>
-    implements $DefaultCoverFailureCopyWith<$Res> {
-  _$DefaultCoverFailureCopyWithImpl(this._value, this._then);
+class _$DefaultCoversFailureCopyWithImpl<$Res>
+    implements $DefaultCoversFailureCopyWith<$Res> {
+  _$DefaultCoversFailureCopyWithImpl(this._value, this._then);
 
-  final DefaultCoverFailure _value;
+  final DefaultCoversFailure _value;
   // ignore: unused_field
-  final $Res Function(DefaultCoverFailure) _then;
+  final $Res Function(DefaultCoversFailure) _then;
 }
 
 /// @nodoc
@@ -92,7 +92,7 @@ abstract class $DefaultCoverURLsNotCachedCopyWith<$Res> {
 
 /// @nodoc
 class _$DefaultCoverURLsNotCachedCopyWithImpl<$Res>
-    extends _$DefaultCoverFailureCopyWithImpl<$Res>
+    extends _$DefaultCoversFailureCopyWithImpl<$Res>
     implements $DefaultCoverURLsNotCachedCopyWith<$Res> {
   _$DefaultCoverURLsNotCachedCopyWithImpl(DefaultCoverURLsNotCached _value,
       $Res Function(DefaultCoverURLsNotCached) _then)
@@ -109,7 +109,7 @@ class _$DefaultCoverURLsNotCached implements DefaultCoverURLsNotCached {
 
   @override
   String toString() {
-    return 'DefaultCoverFailure.defaultCoverURLsNotCached()';
+    return 'DefaultCoversFailure.defaultCoverURLsNotCached()';
   }
 
   @override
@@ -180,7 +180,7 @@ class _$DefaultCoverURLsNotCached implements DefaultCoverURLsNotCached {
   }
 }
 
-abstract class DefaultCoverURLsNotCached implements DefaultCoverFailure {
+abstract class DefaultCoverURLsNotCached implements DefaultCoversFailure {
   const factory DefaultCoverURLsNotCached() = _$DefaultCoverURLsNotCached;
 }
 
@@ -193,7 +193,7 @@ abstract class $DefaultCoverURLsNotFetchedCopyWith<$Res> {
 
 /// @nodoc
 class _$DefaultCoverURLsNotFetchedCopyWithImpl<$Res>
-    extends _$DefaultCoverFailureCopyWithImpl<$Res>
+    extends _$DefaultCoversFailureCopyWithImpl<$Res>
     implements $DefaultCoverURLsNotFetchedCopyWith<$Res> {
   _$DefaultCoverURLsNotFetchedCopyWithImpl(DefaultCoverURLsNotFetched _value,
       $Res Function(DefaultCoverURLsNotFetched) _then)
@@ -210,7 +210,7 @@ class _$DefaultCoverURLsNotFetched implements DefaultCoverURLsNotFetched {
 
   @override
   String toString() {
-    return 'DefaultCoverFailure.defaultCoverURLsNotFetched()';
+    return 'DefaultCoversFailure.defaultCoverURLsNotFetched()';
   }
 
   @override
@@ -281,7 +281,7 @@ class _$DefaultCoverURLsNotFetched implements DefaultCoverURLsNotFetched {
   }
 }
 
-abstract class DefaultCoverURLsNotFetched implements DefaultCoverFailure {
+abstract class DefaultCoverURLsNotFetched implements DefaultCoversFailure {
   const factory DefaultCoverURLsNotFetched() = _$DefaultCoverURLsNotFetched;
 }
 
@@ -294,7 +294,7 @@ abstract class $DefaultCoverURLsNotLoadedCopyWith<$Res> {
 
 /// @nodoc
 class _$DefaultCoverURLsNotLoadedCopyWithImpl<$Res>
-    extends _$DefaultCoverFailureCopyWithImpl<$Res>
+    extends _$DefaultCoversFailureCopyWithImpl<$Res>
     implements $DefaultCoverURLsNotLoadedCopyWith<$Res> {
   _$DefaultCoverURLsNotLoadedCopyWithImpl(DefaultCoverURLsNotLoaded _value,
       $Res Function(DefaultCoverURLsNotLoaded) _then)
@@ -311,7 +311,7 @@ class _$DefaultCoverURLsNotLoaded implements DefaultCoverURLsNotLoaded {
 
   @override
   String toString() {
-    return 'DefaultCoverFailure.defaultCoverURLsNotLoaded()';
+    return 'DefaultCoversFailure.defaultCoverURLsNotLoaded()';
   }
 
   @override
@@ -382,6 +382,6 @@ class _$DefaultCoverURLsNotLoaded implements DefaultCoverURLsNotLoaded {
   }
 }
 
-abstract class DefaultCoverURLsNotLoaded implements DefaultCoverFailure {
+abstract class DefaultCoverURLsNotLoaded implements DefaultCoversFailure {
   const factory DefaultCoverURLsNotLoaded() = _$DefaultCoverURLsNotLoaded;
 }

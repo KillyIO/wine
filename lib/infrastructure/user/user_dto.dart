@@ -55,6 +55,16 @@ class ServerTimestampConverter implements JsonConverter<FieldValue, Object> {
 }
 
 /// @nodoc
+extension UserMapX on Map {
+  /// @nodoc
+  User toDomain() => User(
+        emailAddress: EmailAddress(this['emailAddress']),
+        uid: UniqueID.fromUniqueString(this['uid']),
+        username: Username(this['username']),
+      );
+}
+
+/// @nodoc
 extension UserX on auth.User {
   /// @nodoc
   User toDomain() => User(

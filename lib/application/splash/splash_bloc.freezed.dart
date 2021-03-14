@@ -1095,7 +1095,7 @@ class _$SplashStateTearOff {
 
 // ignore: unused_element
   _DefaultCoverURLsCached defaultCoverURLsCached(
-      Option<Either<DefaultCoverFailure, Unit>> defaultCoverOption) {
+      Option<Either<DefaultCoversFailure, Unit>> defaultCoverOption) {
     return _DefaultCoverURLsCached(
       defaultCoverOption,
     );
@@ -1103,7 +1103,7 @@ class _$SplashStateTearOff {
 
 // ignore: unused_element
   _DefaultCoverURLsLoaded defaultCoverURLsLoaded(
-      Option<Either<DefaultCoverFailure, Map<String, String>>>
+      Option<Either<DefaultCoversFailure, Map<String, String>>>
           defaultCoverOption) {
     return _DefaultCoverURLsLoaded(
       defaultCoverOption,
@@ -1156,10 +1156,10 @@ mixin _$SplashState {
         TResult authenticated(Option<Either<AuthFailure, Unit>> authOption),
     @required
         TResult defaultCoverURLsCached(
-            Option<Either<DefaultCoverFailure, Unit>> defaultCoverOption),
+            Option<Either<DefaultCoversFailure, Unit>> defaultCoverOption),
     @required
         TResult defaultCoverURLsLoaded(
-            Option<Either<DefaultCoverFailure, Map<String, String>>>
+            Option<Either<DefaultCoversFailure, Map<String, String>>>
                 defaultCoverOption),
     @required TResult initial(),
     @required TResult processing(),
@@ -1175,9 +1175,9 @@ mixin _$SplashState {
   TResult maybeWhen<TResult extends Object>({
     TResult authenticated(Option<Either<AuthFailure, Unit>> authOption),
     TResult defaultCoverURLsCached(
-        Option<Either<DefaultCoverFailure, Unit>> defaultCoverOption),
+        Option<Either<DefaultCoversFailure, Unit>> defaultCoverOption),
     TResult defaultCoverURLsLoaded(
-        Option<Either<DefaultCoverFailure, Map<String, String>>>
+        Option<Either<DefaultCoversFailure, Map<String, String>>>
             defaultCoverOption),
     TResult initial(),
     TResult processing(),
@@ -1295,10 +1295,10 @@ class _$_Authenticated implements _Authenticated {
         TResult authenticated(Option<Either<AuthFailure, Unit>> authOption),
     @required
         TResult defaultCoverURLsCached(
-            Option<Either<DefaultCoverFailure, Unit>> defaultCoverOption),
+            Option<Either<DefaultCoversFailure, Unit>> defaultCoverOption),
     @required
         TResult defaultCoverURLsLoaded(
-            Option<Either<DefaultCoverFailure, Map<String, String>>>
+            Option<Either<DefaultCoversFailure, Map<String, String>>>
                 defaultCoverOption),
     @required TResult initial(),
     @required TResult processing(),
@@ -1326,9 +1326,9 @@ class _$_Authenticated implements _Authenticated {
   TResult maybeWhen<TResult extends Object>({
     TResult authenticated(Option<Either<AuthFailure, Unit>> authOption),
     TResult defaultCoverURLsCached(
-        Option<Either<DefaultCoverFailure, Unit>> defaultCoverOption),
+        Option<Either<DefaultCoversFailure, Unit>> defaultCoverOption),
     TResult defaultCoverURLsLoaded(
-        Option<Either<DefaultCoverFailure, Map<String, String>>>
+        Option<Either<DefaultCoversFailure, Map<String, String>>>
             defaultCoverOption),
     TResult initial(),
     TResult processing(),
@@ -1403,7 +1403,7 @@ abstract class _$DefaultCoverURLsCachedCopyWith<$Res> {
   factory _$DefaultCoverURLsCachedCopyWith(_DefaultCoverURLsCached value,
           $Res Function(_DefaultCoverURLsCached) then) =
       __$DefaultCoverURLsCachedCopyWithImpl<$Res>;
-  $Res call({Option<Either<DefaultCoverFailure, Unit>> defaultCoverOption});
+  $Res call({Option<Either<DefaultCoversFailure, Unit>> defaultCoverOption});
 }
 
 /// @nodoc
@@ -1424,7 +1424,7 @@ class __$DefaultCoverURLsCachedCopyWithImpl<$Res>
     return _then(_DefaultCoverURLsCached(
       defaultCoverOption == freezed
           ? _value.defaultCoverOption
-          : defaultCoverOption as Option<Either<DefaultCoverFailure, Unit>>,
+          : defaultCoverOption as Option<Either<DefaultCoversFailure, Unit>>,
     ));
   }
 }
@@ -1435,7 +1435,7 @@ class _$_DefaultCoverURLsCached implements _DefaultCoverURLsCached {
       : assert(defaultCoverOption != null);
 
   @override
-  final Option<Either<DefaultCoverFailure, Unit>> defaultCoverOption;
+  final Option<Either<DefaultCoversFailure, Unit>> defaultCoverOption;
 
   @override
   String toString() {
@@ -1469,10 +1469,10 @@ class _$_DefaultCoverURLsCached implements _DefaultCoverURLsCached {
         TResult authenticated(Option<Either<AuthFailure, Unit>> authOption),
     @required
         TResult defaultCoverURLsCached(
-            Option<Either<DefaultCoverFailure, Unit>> defaultCoverOption),
+            Option<Either<DefaultCoversFailure, Unit>> defaultCoverOption),
     @required
         TResult defaultCoverURLsLoaded(
-            Option<Either<DefaultCoverFailure, Map<String, String>>>
+            Option<Either<DefaultCoversFailure, Map<String, String>>>
                 defaultCoverOption),
     @required TResult initial(),
     @required TResult processing(),
@@ -1500,9 +1500,9 @@ class _$_DefaultCoverURLsCached implements _DefaultCoverURLsCached {
   TResult maybeWhen<TResult extends Object>({
     TResult authenticated(Option<Either<AuthFailure, Unit>> authOption),
     TResult defaultCoverURLsCached(
-        Option<Either<DefaultCoverFailure, Unit>> defaultCoverOption),
+        Option<Either<DefaultCoversFailure, Unit>> defaultCoverOption),
     TResult defaultCoverURLsLoaded(
-        Option<Either<DefaultCoverFailure, Map<String, String>>>
+        Option<Either<DefaultCoversFailure, Map<String, String>>>
             defaultCoverOption),
     TResult initial(),
     TResult processing(),
@@ -1565,10 +1565,10 @@ class _$_DefaultCoverURLsCached implements _DefaultCoverURLsCached {
 
 abstract class _DefaultCoverURLsCached implements SplashState {
   const factory _DefaultCoverURLsCached(
-          Option<Either<DefaultCoverFailure, Unit>> defaultCoverOption) =
+          Option<Either<DefaultCoversFailure, Unit>> defaultCoverOption) =
       _$_DefaultCoverURLsCached;
 
-  Option<Either<DefaultCoverFailure, Unit>> get defaultCoverOption;
+  Option<Either<DefaultCoversFailure, Unit>> get defaultCoverOption;
   @JsonKey(ignore: true)
   _$DefaultCoverURLsCachedCopyWith<_DefaultCoverURLsCached> get copyWith;
 }
@@ -1579,7 +1579,7 @@ abstract class _$DefaultCoverURLsLoadedCopyWith<$Res> {
           $Res Function(_DefaultCoverURLsLoaded) then) =
       __$DefaultCoverURLsLoadedCopyWithImpl<$Res>;
   $Res call(
-      {Option<Either<DefaultCoverFailure, Map<String, String>>>
+      {Option<Either<DefaultCoversFailure, Map<String, String>>>
           defaultCoverOption});
 }
 
@@ -1602,7 +1602,7 @@ class __$DefaultCoverURLsLoadedCopyWithImpl<$Res>
       defaultCoverOption == freezed
           ? _value.defaultCoverOption
           : defaultCoverOption
-              as Option<Either<DefaultCoverFailure, Map<String, String>>>,
+              as Option<Either<DefaultCoversFailure, Map<String, String>>>,
     ));
   }
 }
@@ -1613,7 +1613,7 @@ class _$_DefaultCoverURLsLoaded implements _DefaultCoverURLsLoaded {
       : assert(defaultCoverOption != null);
 
   @override
-  final Option<Either<DefaultCoverFailure, Map<String, String>>>
+  final Option<Either<DefaultCoversFailure, Map<String, String>>>
       defaultCoverOption;
 
   @override
@@ -1648,10 +1648,10 @@ class _$_DefaultCoverURLsLoaded implements _DefaultCoverURLsLoaded {
         TResult authenticated(Option<Either<AuthFailure, Unit>> authOption),
     @required
         TResult defaultCoverURLsCached(
-            Option<Either<DefaultCoverFailure, Unit>> defaultCoverOption),
+            Option<Either<DefaultCoversFailure, Unit>> defaultCoverOption),
     @required
         TResult defaultCoverURLsLoaded(
-            Option<Either<DefaultCoverFailure, Map<String, String>>>
+            Option<Either<DefaultCoversFailure, Map<String, String>>>
                 defaultCoverOption),
     @required TResult initial(),
     @required TResult processing(),
@@ -1679,9 +1679,9 @@ class _$_DefaultCoverURLsLoaded implements _DefaultCoverURLsLoaded {
   TResult maybeWhen<TResult extends Object>({
     TResult authenticated(Option<Either<AuthFailure, Unit>> authOption),
     TResult defaultCoverURLsCached(
-        Option<Either<DefaultCoverFailure, Unit>> defaultCoverOption),
+        Option<Either<DefaultCoversFailure, Unit>> defaultCoverOption),
     TResult defaultCoverURLsLoaded(
-        Option<Either<DefaultCoverFailure, Map<String, String>>>
+        Option<Either<DefaultCoversFailure, Map<String, String>>>
             defaultCoverOption),
     TResult initial(),
     TResult processing(),
@@ -1744,10 +1744,10 @@ class _$_DefaultCoverURLsLoaded implements _DefaultCoverURLsLoaded {
 
 abstract class _DefaultCoverURLsLoaded implements SplashState {
   const factory _DefaultCoverURLsLoaded(
-      Option<Either<DefaultCoverFailure, Map<String, String>>>
+      Option<Either<DefaultCoversFailure, Map<String, String>>>
           defaultCoverOption) = _$_DefaultCoverURLsLoaded;
 
-  Option<Either<DefaultCoverFailure, Map<String, String>>>
+  Option<Either<DefaultCoversFailure, Map<String, String>>>
       get defaultCoverOption;
   @JsonKey(ignore: true)
   _$DefaultCoverURLsLoadedCopyWith<_DefaultCoverURLsLoaded> get copyWith;
@@ -1793,10 +1793,10 @@ class _$_Initial implements _Initial {
         TResult authenticated(Option<Either<AuthFailure, Unit>> authOption),
     @required
         TResult defaultCoverURLsCached(
-            Option<Either<DefaultCoverFailure, Unit>> defaultCoverOption),
+            Option<Either<DefaultCoversFailure, Unit>> defaultCoverOption),
     @required
         TResult defaultCoverURLsLoaded(
-            Option<Either<DefaultCoverFailure, Map<String, String>>>
+            Option<Either<DefaultCoversFailure, Map<String, String>>>
                 defaultCoverOption),
     @required TResult initial(),
     @required TResult processing(),
@@ -1824,9 +1824,9 @@ class _$_Initial implements _Initial {
   TResult maybeWhen<TResult extends Object>({
     TResult authenticated(Option<Either<AuthFailure, Unit>> authOption),
     TResult defaultCoverURLsCached(
-        Option<Either<DefaultCoverFailure, Unit>> defaultCoverOption),
+        Option<Either<DefaultCoversFailure, Unit>> defaultCoverOption),
     TResult defaultCoverURLsLoaded(
-        Option<Either<DefaultCoverFailure, Map<String, String>>>
+        Option<Either<DefaultCoversFailure, Map<String, String>>>
             defaultCoverOption),
     TResult initial(),
     TResult processing(),
@@ -1933,10 +1933,10 @@ class _$_Processing implements _Processing {
         TResult authenticated(Option<Either<AuthFailure, Unit>> authOption),
     @required
         TResult defaultCoverURLsCached(
-            Option<Either<DefaultCoverFailure, Unit>> defaultCoverOption),
+            Option<Either<DefaultCoversFailure, Unit>> defaultCoverOption),
     @required
         TResult defaultCoverURLsLoaded(
-            Option<Either<DefaultCoverFailure, Map<String, String>>>
+            Option<Either<DefaultCoversFailure, Map<String, String>>>
                 defaultCoverOption),
     @required TResult initial(),
     @required TResult processing(),
@@ -1964,9 +1964,9 @@ class _$_Processing implements _Processing {
   TResult maybeWhen<TResult extends Object>({
     TResult authenticated(Option<Either<AuthFailure, Unit>> authOption),
     TResult defaultCoverURLsCached(
-        Option<Either<DefaultCoverFailure, Unit>> defaultCoverOption),
+        Option<Either<DefaultCoversFailure, Unit>> defaultCoverOption),
     TResult defaultCoverURLsLoaded(
-        Option<Either<DefaultCoverFailure, Map<String, String>>>
+        Option<Either<DefaultCoversFailure, Map<String, String>>>
             defaultCoverOption),
     TResult initial(),
     TResult processing(),
@@ -2099,10 +2099,10 @@ class _$_SessionFetched implements _SessionFetched {
         TResult authenticated(Option<Either<AuthFailure, Unit>> authOption),
     @required
         TResult defaultCoverURLsCached(
-            Option<Either<DefaultCoverFailure, Unit>> defaultCoverOption),
+            Option<Either<DefaultCoversFailure, Unit>> defaultCoverOption),
     @required
         TResult defaultCoverURLsLoaded(
-            Option<Either<DefaultCoverFailure, Map<String, String>>>
+            Option<Either<DefaultCoversFailure, Map<String, String>>>
                 defaultCoverOption),
     @required TResult initial(),
     @required TResult processing(),
@@ -2130,9 +2130,9 @@ class _$_SessionFetched implements _SessionFetched {
   TResult maybeWhen<TResult extends Object>({
     TResult authenticated(Option<Either<AuthFailure, Unit>> authOption),
     TResult defaultCoverURLsCached(
-        Option<Either<DefaultCoverFailure, Unit>> defaultCoverOption),
+        Option<Either<DefaultCoversFailure, Unit>> defaultCoverOption),
     TResult defaultCoverURLsLoaded(
-        Option<Either<DefaultCoverFailure, Map<String, String>>>
+        Option<Either<DefaultCoversFailure, Map<String, String>>>
             defaultCoverOption),
     TResult initial(),
     TResult processing(),
@@ -2270,10 +2270,10 @@ class _$_ConfigFetched implements _ConfigFetched {
         TResult authenticated(Option<Either<AuthFailure, Unit>> authOption),
     @required
         TResult defaultCoverURLsCached(
-            Option<Either<DefaultCoverFailure, Unit>> defaultCoverOption),
+            Option<Either<DefaultCoversFailure, Unit>> defaultCoverOption),
     @required
         TResult defaultCoverURLsLoaded(
-            Option<Either<DefaultCoverFailure, Map<String, String>>>
+            Option<Either<DefaultCoversFailure, Map<String, String>>>
                 defaultCoverOption),
     @required TResult initial(),
     @required TResult processing(),
@@ -2301,9 +2301,9 @@ class _$_ConfigFetched implements _ConfigFetched {
   TResult maybeWhen<TResult extends Object>({
     TResult authenticated(Option<Either<AuthFailure, Unit>> authOption),
     TResult defaultCoverURLsCached(
-        Option<Either<DefaultCoverFailure, Unit>> defaultCoverOption),
+        Option<Either<DefaultCoversFailure, Unit>> defaultCoverOption),
     TResult defaultCoverURLsLoaded(
-        Option<Either<DefaultCoverFailure, Map<String, String>>>
+        Option<Either<DefaultCoversFailure, Map<String, String>>>
             defaultCoverOption),
     TResult initial(),
     TResult processing(),
@@ -2441,10 +2441,10 @@ class _$_UserLoaded implements _UserLoaded {
         TResult authenticated(Option<Either<AuthFailure, Unit>> authOption),
     @required
         TResult defaultCoverURLsCached(
-            Option<Either<DefaultCoverFailure, Unit>> defaultCoverOption),
+            Option<Either<DefaultCoversFailure, Unit>> defaultCoverOption),
     @required
         TResult defaultCoverURLsLoaded(
-            Option<Either<DefaultCoverFailure, Map<String, String>>>
+            Option<Either<DefaultCoversFailure, Map<String, String>>>
                 defaultCoverOption),
     @required TResult initial(),
     @required TResult processing(),
@@ -2472,9 +2472,9 @@ class _$_UserLoaded implements _UserLoaded {
   TResult maybeWhen<TResult extends Object>({
     TResult authenticated(Option<Either<AuthFailure, Unit>> authOption),
     TResult defaultCoverURLsCached(
-        Option<Either<DefaultCoverFailure, Unit>> defaultCoverOption),
+        Option<Either<DefaultCoversFailure, Unit>> defaultCoverOption),
     TResult defaultCoverURLsLoaded(
-        Option<Either<DefaultCoverFailure, Map<String, String>>>
+        Option<Either<DefaultCoversFailure, Map<String, String>>>
             defaultCoverOption),
     TResult initial(),
     TResult processing(),

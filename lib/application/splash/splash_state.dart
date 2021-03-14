@@ -10,12 +10,12 @@ abstract class SplashState with _$SplashState {
 
   /// @nodoc
   const factory SplashState.defaultCoverURLsCached(
-    Option<Either<DefaultCoverFailure, Unit>> defaultCoverOption,
+    Option<Either<DefaultCoversFailure, Unit>> defaultCoverOption,
   ) = _DefaultCoverURLsCached;
 
   /// @nodoc
   const factory SplashState.defaultCoverURLsLoaded(
-    Option<Either<DefaultCoverFailure, Map<String, String>>> defaultCoverOption,
+    Option<Either<DefaultCoversFailure, Map<String, String>>> defaultCoverOption,
   ) = _DefaultCoverURLsLoaded;
 
   /// @nodoc
