@@ -11,16 +11,17 @@ import 'package:google_sign_in/google_sign_in.dart' as _i6;
 import 'package:hive/hive.dart' as _i3;
 import 'package:injectable/injectable.dart' as _i2;
 
-import 'application/log_in/log_in_bloc.dart' as _i11;
-import 'application/splash/splash_bloc.dart' as _i12;
-import 'domain/auth/i_auth_facade.dart' as _i7;
-import 'domain/settings/i_ssettings_repository.dart' as _i13;
-import 'domain/user/i_user_repository.dart' as _i9;
-import 'infrastructure/auth/firebase_auth_facade.dart' as _i8;
-import 'infrastructure/core/firebase_injectable_module.dart' as _i15;
-import 'infrastructure/core/hive_injectable_module.dart' as _i14;
+import 'application/home/home_navigation/home_navigation_bloc.dart' as _i7;
+import 'application/log_in/log_in_bloc.dart' as _i12;
+import 'application/splash/splash_bloc.dart' as _i13;
+import 'domain/auth/i_auth_facade.dart' as _i8;
+import 'domain/settings/i_ssettings_repository.dart' as _i14;
+import 'domain/user/i_user_repository.dart' as _i10;
+import 'infrastructure/auth/firebase_auth_facade.dart' as _i9;
+import 'infrastructure/core/firebase_injectable_module.dart' as _i16;
+import 'infrastructure/core/hive_injectable_module.dart' as _i15;
 import 'infrastructure/user/user_repository.dart'
-    as _i10; // ignore_for_file: unnecessary_lambdas
+    as _i11; // ignore_for_file: unnecessary_lambdas
 
 // ignore_for_file: lines_longer_than_80_chars
 /// initializes the registration of provided dependencies inside of [GetIt]
@@ -38,17 +39,18 @@ Future<_i1.GetIt> $initGetIt(_i1.GetIt get,
       () => firebaseInjectableModule.firestore);
   gh.lazySingleton<_i6.GoogleSignIn>(
       () => firebaseInjectableModule.googleSignIn);
-  gh.lazySingleton<_i7.IAuthFacade>(() =>
-      _i8.FirebaseAuthFacade(get<_i4.FirebaseAuth>(), get<_i6.GoogleSignIn>()));
-  gh.lazySingleton<_i9.IUserRepository>(
-      () => _i10.UserRepository(get<_i5.FirebaseFirestore>()));
-  gh.factory<_i11.LogInBloc>(
-      () => _i11.LogInBloc(get<_i7.IAuthFacade>(), get<_i9.IUserRepository>()));
-  gh.factory<_i12.SplashBloc>(() =>
-      _i12.SplashBloc(get<_i7.IAuthFacade>(), get<_i13.ISettingsRepository>()));
+  gh.factory<_i7.HomeNavigationBloc>(() => _i7.HomeNavigationBloc());
+  gh.lazySingleton<_i8.IAuthFacade>(() =>
+      _i9.FirebaseAuthFacade(get<_i4.FirebaseAuth>(), get<_i6.GoogleSignIn>()));
+  gh.lazySingleton<_i10.IUserRepository>(
+      () => _i11.UserRepository(get<_i5.FirebaseFirestore>()));
+  gh.factory<_i12.LogInBloc>(() =>
+      _i12.LogInBloc(get<_i8.IAuthFacade>(), get<_i10.IUserRepository>()));
+  gh.factory<_i13.SplashBloc>(() =>
+      _i13.SplashBloc(get<_i8.IAuthFacade>(), get<_i14.ISettingsRepository>()));
   return get;
 }
 
-class _$HiveInjectableModule extends _i14.HiveInjectableModule {}
+class _$HiveInjectableModule extends _i15.HiveInjectableModule {}
 
-class _$FirebaseInjectableModule extends _i15.FirebaseInjectableModule {}
+class _$FirebaseInjectableModule extends _i16.FirebaseInjectableModule {}

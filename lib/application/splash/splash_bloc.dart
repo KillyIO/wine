@@ -36,7 +36,7 @@ class SplashBloc extends Bloc<SplashEvent, SplashState> {
     SplashEvent event,
   ) async* {
     yield* event.map(
-      authenticated: (value) async* {
+      authenticated: (_) async* {
         yield const SplashState.processing();
 
         final failureOrSuccess = await _settingsRepository.initializeSettings();
@@ -54,10 +54,10 @@ class SplashBloc extends Bloc<SplashEvent, SplashState> {
           add(const SplashEvent.settingsInitialized());
         }
       },
-      defaultCoverURLsCached: (value) async* {},
+      defaultCoverURLsCached: (_) async* {},
       defaultCoverURLsLoaded: (value) async* {},
       sessionFetched: (value) async* {},
-      splashPageLaunched: (value) async* {
+      splashPageLaunched: (_) async* {
         yield const SplashState.processing();
 
         Either<AuthFailure, Unit> failureOrSuccess;
@@ -72,7 +72,7 @@ class SplashBloc extends Bloc<SplashEvent, SplashState> {
           yield const SplashState.failure();
         }
       },
-      settingsInitialized: (value) async* {},
+      settingsInitialized: (_) async* {},
       userLoaded: (value) async* {},
     );
   }
