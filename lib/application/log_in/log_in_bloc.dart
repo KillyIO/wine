@@ -9,7 +9,6 @@ import 'package:wine/domain/auth/email_address.dart';
 import 'package:wine/domain/auth/i_auth_facade.dart';
 import 'package:wine/domain/auth/password.dart';
 import 'package:wine/domain/user/i_user_repository.dart';
-import 'package:wine/domain/user/user.dart';
 import 'package:wine/domain/user/user_failure.dart';
 
 part 'log_in_event.dart';

@@ -66,10 +66,10 @@ class SplashBloc extends Bloc<SplashEvent, SplashState> {
           failureOrSuccess = await _authFacade.logInAnonymously();
         }
 
-        yield SplashState.authenticated(optionOf(failureOrSuccess));
-
         if (failureOrSuccess.isRight()) {
           add(const SplashEvent.authenticated());
+        } else {
+          yield const SplashState.failure();
         }
       },
       settingsInitialized: (value) async* {},

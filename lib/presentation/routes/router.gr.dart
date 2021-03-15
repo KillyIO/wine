@@ -44,3 +44,13 @@ class AppRouter extends RouterBase {
     },
   };
 }
+
+/// ************************************************************************
+/// Navigation helper methods extension
+/// *************************************************************************
+
+extension AppRouterExtendedNavigatorStateX on ExtendedNavigatorState {
+  Future<dynamic> pushLogInPage() => push<dynamic>(Routes.logInPage);
+
+  Future<dynamic> pushSplashPage() => push<dynamic>(Routes.splashPage);
+}
