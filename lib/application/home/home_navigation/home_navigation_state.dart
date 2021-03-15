@@ -4,20 +4,16 @@ part of 'home_navigation_bloc.dart';
 @freezed
 abstract class HomeNavigationState with _$HomeNavigationState {
   /// @nodoc
-  const factory HomeNavigationState.initial() = _Initial;
+  const factory HomeNavigationState({
+    @required int currentPageViewIdx,
+    @required bool isLeftDrawerOpen,
+    @required bool isRightDrawerOpen,
+  }) = _HomeNavigationState;
 
   /// @nodoc
-  const factory HomeNavigationState.leftDrawerToggled(bool isOpen) =
-      _LeftDrawerToggled;
-
-  /// @nodoc
-  const factory HomeNavigationState.pageViewChanged(int index) =
-      _PageViewChanged;
-
-  /// @nodoc
-  const factory HomeNavigationState.processing() = _Processing;
-
-  /// @nodoc
-  const factory HomeNavigationState.rightDrawerToggled(bool isOpen) =
-      _RightDrawerToggled;
+  factory HomeNavigationState.initial() => const HomeNavigationState(
+        currentPageViewIdx: 0,
+        isLeftDrawerOpen: false,
+        isRightDrawerOpen: false,
+      );
 }

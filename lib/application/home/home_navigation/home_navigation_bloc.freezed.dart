@@ -405,33 +405,14 @@ class _$HomeNavigationStateTearOff {
   const _$HomeNavigationStateTearOff();
 
 // ignore: unused_element
-  _Initial initial() {
-    return const _Initial();
-  }
-
-// ignore: unused_element
-  _LeftDrawerToggled leftDrawerToggled(bool isOpen) {
-    return _LeftDrawerToggled(
-      isOpen,
-    );
-  }
-
-// ignore: unused_element
-  _PageViewChanged pageViewChanged(int index) {
-    return _PageViewChanged(
-      index,
-    );
-  }
-
-// ignore: unused_element
-  _Processing processing() {
-    return const _Processing();
-  }
-
-// ignore: unused_element
-  _RightDrawerToggled rightDrawerToggled(bool isOpen) {
-    return _RightDrawerToggled(
-      isOpen,
+  _HomeNavigationState call(
+      {@required int currentPageViewIdx,
+      @required bool isLeftDrawerOpen,
+      @required bool isRightDrawerOpen}) {
+    return _HomeNavigationState(
+      currentPageViewIdx: currentPageViewIdx,
+      isLeftDrawerOpen: isLeftDrawerOpen,
+      isRightDrawerOpen: isRightDrawerOpen,
     );
   }
 }
@@ -442,40 +423,12 @@ const $HomeNavigationState = _$HomeNavigationStateTearOff();
 
 /// @nodoc
 mixin _$HomeNavigationState {
-  @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initial(),
-    @required TResult leftDrawerToggled(bool isOpen),
-    @required TResult pageViewChanged(int index),
-    @required TResult processing(),
-    @required TResult rightDrawerToggled(bool isOpen),
-  });
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initial(),
-    TResult leftDrawerToggled(bool isOpen),
-    TResult pageViewChanged(int index),
-    TResult processing(),
-    TResult rightDrawerToggled(bool isOpen),
-    @required TResult orElse(),
-  });
-  @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initial(_Initial value),
-    @required TResult leftDrawerToggled(_LeftDrawerToggled value),
-    @required TResult pageViewChanged(_PageViewChanged value),
-    @required TResult processing(_Processing value),
-    @required TResult rightDrawerToggled(_RightDrawerToggled value),
-  });
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initial(_Initial value),
-    TResult leftDrawerToggled(_LeftDrawerToggled value),
-    TResult pageViewChanged(_PageViewChanged value),
-    TResult processing(_Processing value),
-    TResult rightDrawerToggled(_RightDrawerToggled value),
-    @required TResult orElse(),
-  });
+  int get currentPageViewIdx;
+  bool get isLeftDrawerOpen;
+  bool get isRightDrawerOpen;
+
+  @JsonKey(ignore: true)
+  $HomeNavigationStateCopyWith<HomeNavigationState> get copyWith;
 }
 
 /// @nodoc
@@ -483,6 +436,8 @@ abstract class $HomeNavigationStateCopyWith<$Res> {
   factory $HomeNavigationStateCopyWith(
           HomeNavigationState value, $Res Function(HomeNavigationState) then) =
       _$HomeNavigationStateCopyWithImpl<$Res>;
+  $Res call(
+      {int currentPageViewIdx, bool isLeftDrawerOpen, bool isRightDrawerOpen});
 }
 
 /// @nodoc
@@ -493,625 +448,133 @@ class _$HomeNavigationStateCopyWithImpl<$Res>
   final HomeNavigationState _value;
   // ignore: unused_field
   final $Res Function(HomeNavigationState) _then;
-}
-
-/// @nodoc
-abstract class _$InitialCopyWith<$Res> {
-  factory _$InitialCopyWith(_Initial value, $Res Function(_Initial) then) =
-      __$InitialCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$InitialCopyWithImpl<$Res>
-    extends _$HomeNavigationStateCopyWithImpl<$Res>
-    implements _$InitialCopyWith<$Res> {
-  __$InitialCopyWithImpl(_Initial _value, $Res Function(_Initial) _then)
-      : super(_value, (v) => _then(v as _Initial));
-
-  @override
-  _Initial get _value => super._value as _Initial;
-}
-
-/// @nodoc
-class _$_Initial implements _Initial {
-  const _$_Initial();
-
-  @override
-  String toString() {
-    return 'HomeNavigationState.initial()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Initial);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initial(),
-    @required TResult leftDrawerToggled(bool isOpen),
-    @required TResult pageViewChanged(int index),
-    @required TResult processing(),
-    @required TResult rightDrawerToggled(bool isOpen),
-  }) {
-    assert(initial != null);
-    assert(leftDrawerToggled != null);
-    assert(pageViewChanged != null);
-    assert(processing != null);
-    assert(rightDrawerToggled != null);
-    return initial();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initial(),
-    TResult leftDrawerToggled(bool isOpen),
-    TResult pageViewChanged(int index),
-    TResult processing(),
-    TResult rightDrawerToggled(bool isOpen),
-    @required TResult orElse(),
-  }) {
-    assert(orElse != null);
-    if (initial != null) {
-      return initial();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initial(_Initial value),
-    @required TResult leftDrawerToggled(_LeftDrawerToggled value),
-    @required TResult pageViewChanged(_PageViewChanged value),
-    @required TResult processing(_Processing value),
-    @required TResult rightDrawerToggled(_RightDrawerToggled value),
-  }) {
-    assert(initial != null);
-    assert(leftDrawerToggled != null);
-    assert(pageViewChanged != null);
-    assert(processing != null);
-    assert(rightDrawerToggled != null);
-    return initial(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initial(_Initial value),
-    TResult leftDrawerToggled(_LeftDrawerToggled value),
-    TResult pageViewChanged(_PageViewChanged value),
-    TResult processing(_Processing value),
-    TResult rightDrawerToggled(_RightDrawerToggled value),
-    @required TResult orElse(),
-  }) {
-    assert(orElse != null);
-    if (initial != null) {
-      return initial(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _Initial implements HomeNavigationState {
-  const factory _Initial() = _$_Initial;
-}
-
-/// @nodoc
-abstract class _$LeftDrawerToggledCopyWith<$Res> {
-  factory _$LeftDrawerToggledCopyWith(
-          _LeftDrawerToggled value, $Res Function(_LeftDrawerToggled) then) =
-      __$LeftDrawerToggledCopyWithImpl<$Res>;
-  $Res call({bool isOpen});
-}
-
-/// @nodoc
-class __$LeftDrawerToggledCopyWithImpl<$Res>
-    extends _$HomeNavigationStateCopyWithImpl<$Res>
-    implements _$LeftDrawerToggledCopyWith<$Res> {
-  __$LeftDrawerToggledCopyWithImpl(
-      _LeftDrawerToggled _value, $Res Function(_LeftDrawerToggled) _then)
-      : super(_value, (v) => _then(v as _LeftDrawerToggled));
-
-  @override
-  _LeftDrawerToggled get _value => super._value as _LeftDrawerToggled;
 
   @override
   $Res call({
-    Object isOpen = freezed,
+    Object currentPageViewIdx = freezed,
+    Object isLeftDrawerOpen = freezed,
+    Object isRightDrawerOpen = freezed,
   }) {
-    return _then(_LeftDrawerToggled(
-      isOpen == freezed ? _value.isOpen : isOpen as bool,
+    return _then(_value.copyWith(
+      currentPageViewIdx: currentPageViewIdx == freezed
+          ? _value.currentPageViewIdx
+          : currentPageViewIdx as int,
+      isLeftDrawerOpen: isLeftDrawerOpen == freezed
+          ? _value.isLeftDrawerOpen
+          : isLeftDrawerOpen as bool,
+      isRightDrawerOpen: isRightDrawerOpen == freezed
+          ? _value.isRightDrawerOpen
+          : isRightDrawerOpen as bool,
     ));
   }
 }
 
 /// @nodoc
-class _$_LeftDrawerToggled implements _LeftDrawerToggled {
-  const _$_LeftDrawerToggled(this.isOpen) : assert(isOpen != null);
-
+abstract class _$HomeNavigationStateCopyWith<$Res>
+    implements $HomeNavigationStateCopyWith<$Res> {
+  factory _$HomeNavigationStateCopyWith(_HomeNavigationState value,
+          $Res Function(_HomeNavigationState) then) =
+      __$HomeNavigationStateCopyWithImpl<$Res>;
   @override
-  final bool isOpen;
-
-  @override
-  String toString() {
-    return 'HomeNavigationState.leftDrawerToggled(isOpen: $isOpen)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is _LeftDrawerToggled &&
-            (identical(other.isOpen, isOpen) ||
-                const DeepCollectionEquality().equals(other.isOpen, isOpen)));
-  }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(isOpen);
-
-  @JsonKey(ignore: true)
-  @override
-  _$LeftDrawerToggledCopyWith<_LeftDrawerToggled> get copyWith =>
-      __$LeftDrawerToggledCopyWithImpl<_LeftDrawerToggled>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initial(),
-    @required TResult leftDrawerToggled(bool isOpen),
-    @required TResult pageViewChanged(int index),
-    @required TResult processing(),
-    @required TResult rightDrawerToggled(bool isOpen),
-  }) {
-    assert(initial != null);
-    assert(leftDrawerToggled != null);
-    assert(pageViewChanged != null);
-    assert(processing != null);
-    assert(rightDrawerToggled != null);
-    return leftDrawerToggled(isOpen);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initial(),
-    TResult leftDrawerToggled(bool isOpen),
-    TResult pageViewChanged(int index),
-    TResult processing(),
-    TResult rightDrawerToggled(bool isOpen),
-    @required TResult orElse(),
-  }) {
-    assert(orElse != null);
-    if (leftDrawerToggled != null) {
-      return leftDrawerToggled(isOpen);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initial(_Initial value),
-    @required TResult leftDrawerToggled(_LeftDrawerToggled value),
-    @required TResult pageViewChanged(_PageViewChanged value),
-    @required TResult processing(_Processing value),
-    @required TResult rightDrawerToggled(_RightDrawerToggled value),
-  }) {
-    assert(initial != null);
-    assert(leftDrawerToggled != null);
-    assert(pageViewChanged != null);
-    assert(processing != null);
-    assert(rightDrawerToggled != null);
-    return leftDrawerToggled(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initial(_Initial value),
-    TResult leftDrawerToggled(_LeftDrawerToggled value),
-    TResult pageViewChanged(_PageViewChanged value),
-    TResult processing(_Processing value),
-    TResult rightDrawerToggled(_RightDrawerToggled value),
-    @required TResult orElse(),
-  }) {
-    assert(orElse != null);
-    if (leftDrawerToggled != null) {
-      return leftDrawerToggled(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _LeftDrawerToggled implements HomeNavigationState {
-  const factory _LeftDrawerToggled(bool isOpen) = _$_LeftDrawerToggled;
-
-  bool get isOpen;
-  @JsonKey(ignore: true)
-  _$LeftDrawerToggledCopyWith<_LeftDrawerToggled> get copyWith;
+  $Res call(
+      {int currentPageViewIdx, bool isLeftDrawerOpen, bool isRightDrawerOpen});
 }
 
 /// @nodoc
-abstract class _$PageViewChangedCopyWith<$Res> {
-  factory _$PageViewChangedCopyWith(
-          _PageViewChanged value, $Res Function(_PageViewChanged) then) =
-      __$PageViewChangedCopyWithImpl<$Res>;
-  $Res call({int index});
-}
-
-/// @nodoc
-class __$PageViewChangedCopyWithImpl<$Res>
+class __$HomeNavigationStateCopyWithImpl<$Res>
     extends _$HomeNavigationStateCopyWithImpl<$Res>
-    implements _$PageViewChangedCopyWith<$Res> {
-  __$PageViewChangedCopyWithImpl(
-      _PageViewChanged _value, $Res Function(_PageViewChanged) _then)
-      : super(_value, (v) => _then(v as _PageViewChanged));
+    implements _$HomeNavigationStateCopyWith<$Res> {
+  __$HomeNavigationStateCopyWithImpl(
+      _HomeNavigationState _value, $Res Function(_HomeNavigationState) _then)
+      : super(_value, (v) => _then(v as _HomeNavigationState));
 
   @override
-  _PageViewChanged get _value => super._value as _PageViewChanged;
+  _HomeNavigationState get _value => super._value as _HomeNavigationState;
 
   @override
   $Res call({
-    Object index = freezed,
+    Object currentPageViewIdx = freezed,
+    Object isLeftDrawerOpen = freezed,
+    Object isRightDrawerOpen = freezed,
   }) {
-    return _then(_PageViewChanged(
-      index == freezed ? _value.index : index as int,
+    return _then(_HomeNavigationState(
+      currentPageViewIdx: currentPageViewIdx == freezed
+          ? _value.currentPageViewIdx
+          : currentPageViewIdx as int,
+      isLeftDrawerOpen: isLeftDrawerOpen == freezed
+          ? _value.isLeftDrawerOpen
+          : isLeftDrawerOpen as bool,
+      isRightDrawerOpen: isRightDrawerOpen == freezed
+          ? _value.isRightDrawerOpen
+          : isRightDrawerOpen as bool,
     ));
   }
 }
 
 /// @nodoc
-class _$_PageViewChanged implements _PageViewChanged {
-  const _$_PageViewChanged(this.index) : assert(index != null);
+class _$_HomeNavigationState implements _HomeNavigationState {
+  const _$_HomeNavigationState(
+      {@required this.currentPageViewIdx,
+      @required this.isLeftDrawerOpen,
+      @required this.isRightDrawerOpen})
+      : assert(currentPageViewIdx != null),
+        assert(isLeftDrawerOpen != null),
+        assert(isRightDrawerOpen != null);
 
   @override
-  final int index;
+  final int currentPageViewIdx;
+  @override
+  final bool isLeftDrawerOpen;
+  @override
+  final bool isRightDrawerOpen;
 
   @override
   String toString() {
-    return 'HomeNavigationState.pageViewChanged(index: $index)';
+    return 'HomeNavigationState(currentPageViewIdx: $currentPageViewIdx, isLeftDrawerOpen: $isLeftDrawerOpen, isRightDrawerOpen: $isRightDrawerOpen)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _PageViewChanged &&
-            (identical(other.index, index) ||
-                const DeepCollectionEquality().equals(other.index, index)));
+        (other is _HomeNavigationState &&
+            (identical(other.currentPageViewIdx, currentPageViewIdx) ||
+                const DeepCollectionEquality()
+                    .equals(other.currentPageViewIdx, currentPageViewIdx)) &&
+            (identical(other.isLeftDrawerOpen, isLeftDrawerOpen) ||
+                const DeepCollectionEquality()
+                    .equals(other.isLeftDrawerOpen, isLeftDrawerOpen)) &&
+            (identical(other.isRightDrawerOpen, isRightDrawerOpen) ||
+                const DeepCollectionEquality()
+                    .equals(other.isRightDrawerOpen, isRightDrawerOpen)));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(index);
+      runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(currentPageViewIdx) ^
+      const DeepCollectionEquality().hash(isLeftDrawerOpen) ^
+      const DeepCollectionEquality().hash(isRightDrawerOpen);
 
   @JsonKey(ignore: true)
   @override
-  _$PageViewChangedCopyWith<_PageViewChanged> get copyWith =>
-      __$PageViewChangedCopyWithImpl<_PageViewChanged>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initial(),
-    @required TResult leftDrawerToggled(bool isOpen),
-    @required TResult pageViewChanged(int index),
-    @required TResult processing(),
-    @required TResult rightDrawerToggled(bool isOpen),
-  }) {
-    assert(initial != null);
-    assert(leftDrawerToggled != null);
-    assert(pageViewChanged != null);
-    assert(processing != null);
-    assert(rightDrawerToggled != null);
-    return pageViewChanged(index);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initial(),
-    TResult leftDrawerToggled(bool isOpen),
-    TResult pageViewChanged(int index),
-    TResult processing(),
-    TResult rightDrawerToggled(bool isOpen),
-    @required TResult orElse(),
-  }) {
-    assert(orElse != null);
-    if (pageViewChanged != null) {
-      return pageViewChanged(index);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initial(_Initial value),
-    @required TResult leftDrawerToggled(_LeftDrawerToggled value),
-    @required TResult pageViewChanged(_PageViewChanged value),
-    @required TResult processing(_Processing value),
-    @required TResult rightDrawerToggled(_RightDrawerToggled value),
-  }) {
-    assert(initial != null);
-    assert(leftDrawerToggled != null);
-    assert(pageViewChanged != null);
-    assert(processing != null);
-    assert(rightDrawerToggled != null);
-    return pageViewChanged(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initial(_Initial value),
-    TResult leftDrawerToggled(_LeftDrawerToggled value),
-    TResult pageViewChanged(_PageViewChanged value),
-    TResult processing(_Processing value),
-    TResult rightDrawerToggled(_RightDrawerToggled value),
-    @required TResult orElse(),
-  }) {
-    assert(orElse != null);
-    if (pageViewChanged != null) {
-      return pageViewChanged(this);
-    }
-    return orElse();
-  }
+  _$HomeNavigationStateCopyWith<_HomeNavigationState> get copyWith =>
+      __$HomeNavigationStateCopyWithImpl<_HomeNavigationState>(
+          this, _$identity);
 }
 
-abstract class _PageViewChanged implements HomeNavigationState {
-  const factory _PageViewChanged(int index) = _$_PageViewChanged;
+abstract class _HomeNavigationState implements HomeNavigationState {
+  const factory _HomeNavigationState(
+      {@required int currentPageViewIdx,
+      @required bool isLeftDrawerOpen,
+      @required bool isRightDrawerOpen}) = _$_HomeNavigationState;
 
-  int get index;
+  @override
+  int get currentPageViewIdx;
+  @override
+  bool get isLeftDrawerOpen;
+  @override
+  bool get isRightDrawerOpen;
+  @override
   @JsonKey(ignore: true)
-  _$PageViewChangedCopyWith<_PageViewChanged> get copyWith;
-}
-
-/// @nodoc
-abstract class _$ProcessingCopyWith<$Res> {
-  factory _$ProcessingCopyWith(
-          _Processing value, $Res Function(_Processing) then) =
-      __$ProcessingCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$ProcessingCopyWithImpl<$Res>
-    extends _$HomeNavigationStateCopyWithImpl<$Res>
-    implements _$ProcessingCopyWith<$Res> {
-  __$ProcessingCopyWithImpl(
-      _Processing _value, $Res Function(_Processing) _then)
-      : super(_value, (v) => _then(v as _Processing));
-
-  @override
-  _Processing get _value => super._value as _Processing;
-}
-
-/// @nodoc
-class _$_Processing implements _Processing {
-  const _$_Processing();
-
-  @override
-  String toString() {
-    return 'HomeNavigationState.processing()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Processing);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initial(),
-    @required TResult leftDrawerToggled(bool isOpen),
-    @required TResult pageViewChanged(int index),
-    @required TResult processing(),
-    @required TResult rightDrawerToggled(bool isOpen),
-  }) {
-    assert(initial != null);
-    assert(leftDrawerToggled != null);
-    assert(pageViewChanged != null);
-    assert(processing != null);
-    assert(rightDrawerToggled != null);
-    return processing();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initial(),
-    TResult leftDrawerToggled(bool isOpen),
-    TResult pageViewChanged(int index),
-    TResult processing(),
-    TResult rightDrawerToggled(bool isOpen),
-    @required TResult orElse(),
-  }) {
-    assert(orElse != null);
-    if (processing != null) {
-      return processing();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initial(_Initial value),
-    @required TResult leftDrawerToggled(_LeftDrawerToggled value),
-    @required TResult pageViewChanged(_PageViewChanged value),
-    @required TResult processing(_Processing value),
-    @required TResult rightDrawerToggled(_RightDrawerToggled value),
-  }) {
-    assert(initial != null);
-    assert(leftDrawerToggled != null);
-    assert(pageViewChanged != null);
-    assert(processing != null);
-    assert(rightDrawerToggled != null);
-    return processing(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initial(_Initial value),
-    TResult leftDrawerToggled(_LeftDrawerToggled value),
-    TResult pageViewChanged(_PageViewChanged value),
-    TResult processing(_Processing value),
-    TResult rightDrawerToggled(_RightDrawerToggled value),
-    @required TResult orElse(),
-  }) {
-    assert(orElse != null);
-    if (processing != null) {
-      return processing(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _Processing implements HomeNavigationState {
-  const factory _Processing() = _$_Processing;
-}
-
-/// @nodoc
-abstract class _$RightDrawerToggledCopyWith<$Res> {
-  factory _$RightDrawerToggledCopyWith(
-          _RightDrawerToggled value, $Res Function(_RightDrawerToggled) then) =
-      __$RightDrawerToggledCopyWithImpl<$Res>;
-  $Res call({bool isOpen});
-}
-
-/// @nodoc
-class __$RightDrawerToggledCopyWithImpl<$Res>
-    extends _$HomeNavigationStateCopyWithImpl<$Res>
-    implements _$RightDrawerToggledCopyWith<$Res> {
-  __$RightDrawerToggledCopyWithImpl(
-      _RightDrawerToggled _value, $Res Function(_RightDrawerToggled) _then)
-      : super(_value, (v) => _then(v as _RightDrawerToggled));
-
-  @override
-  _RightDrawerToggled get _value => super._value as _RightDrawerToggled;
-
-  @override
-  $Res call({
-    Object isOpen = freezed,
-  }) {
-    return _then(_RightDrawerToggled(
-      isOpen == freezed ? _value.isOpen : isOpen as bool,
-    ));
-  }
-}
-
-/// @nodoc
-class _$_RightDrawerToggled implements _RightDrawerToggled {
-  const _$_RightDrawerToggled(this.isOpen) : assert(isOpen != null);
-
-  @override
-  final bool isOpen;
-
-  @override
-  String toString() {
-    return 'HomeNavigationState.rightDrawerToggled(isOpen: $isOpen)';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is _RightDrawerToggled &&
-            (identical(other.isOpen, isOpen) ||
-                const DeepCollectionEquality().equals(other.isOpen, isOpen)));
-  }
-
-  @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(isOpen);
-
-  @JsonKey(ignore: true)
-  @override
-  _$RightDrawerToggledCopyWith<_RightDrawerToggled> get copyWith =>
-      __$RightDrawerToggledCopyWithImpl<_RightDrawerToggled>(this, _$identity);
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult initial(),
-    @required TResult leftDrawerToggled(bool isOpen),
-    @required TResult pageViewChanged(int index),
-    @required TResult processing(),
-    @required TResult rightDrawerToggled(bool isOpen),
-  }) {
-    assert(initial != null);
-    assert(leftDrawerToggled != null);
-    assert(pageViewChanged != null);
-    assert(processing != null);
-    assert(rightDrawerToggled != null);
-    return rightDrawerToggled(isOpen);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult initial(),
-    TResult leftDrawerToggled(bool isOpen),
-    TResult pageViewChanged(int index),
-    TResult processing(),
-    TResult rightDrawerToggled(bool isOpen),
-    @required TResult orElse(),
-  }) {
-    assert(orElse != null);
-    if (rightDrawerToggled != null) {
-      return rightDrawerToggled(isOpen);
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult initial(_Initial value),
-    @required TResult leftDrawerToggled(_LeftDrawerToggled value),
-    @required TResult pageViewChanged(_PageViewChanged value),
-    @required TResult processing(_Processing value),
-    @required TResult rightDrawerToggled(_RightDrawerToggled value),
-  }) {
-    assert(initial != null);
-    assert(leftDrawerToggled != null);
-    assert(pageViewChanged != null);
-    assert(processing != null);
-    assert(rightDrawerToggled != null);
-    return rightDrawerToggled(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult initial(_Initial value),
-    TResult leftDrawerToggled(_LeftDrawerToggled value),
-    TResult pageViewChanged(_PageViewChanged value),
-    TResult processing(_Processing value),
-    TResult rightDrawerToggled(_RightDrawerToggled value),
-    @required TResult orElse(),
-  }) {
-    assert(orElse != null);
-    if (rightDrawerToggled != null) {
-      return rightDrawerToggled(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _RightDrawerToggled implements HomeNavigationState {
-  const factory _RightDrawerToggled(bool isOpen) = _$_RightDrawerToggled;
-
-  bool get isOpen;
-  @JsonKey(ignore: true)
-  _$RightDrawerToggledCopyWith<_RightDrawerToggled> get copyWith;
+  _$HomeNavigationStateCopyWith<_HomeNavigationState> get copyWith;
 }
