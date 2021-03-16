@@ -1,4 +1,3 @@
-import 'package:auto_route/auto_route.dart';
 import 'package:flare_loading/flare_loading.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -46,9 +45,6 @@ class SplashLayout extends StatelessWidget {
                 null,
                 (some) => some.fold(
                   (failure) => failure.maybeMap(
-                    sessionNotFetched: (_) {
-                      // TODO Navigate to onboarding page
-                    },
                     sessionNotUpdated: (_) async =>
                         restartApp(context, 'Session was not updated!'),
                     orElse: null,
@@ -84,6 +80,9 @@ class SplashLayout extends StatelessWidget {
           },
           goToHome: (value) {
             // TODO Add navigate to home
+          },
+          goToOnboarding: (value) {
+            // TODO Navigate to onboarding page
           },
           orElse: null,
         );

@@ -18,6 +18,9 @@ abstract class SplashEvent with _$SplashEvent {
   const factory SplashEvent.sessionFetched(User session) = SessionFetched;
 
   /// @nodoc
+  const factory SplashEvent.sessionNotFetched() = SessionNotFetched;
+
+  /// @nodoc
   const factory SplashEvent.splashPageLaunched() = SplashPageLaunched;
 
   /// @nodoc

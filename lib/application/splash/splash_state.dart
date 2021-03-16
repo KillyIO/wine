@@ -16,6 +16,9 @@ abstract class SplashState with _$SplashState {
   const factory SplashState.goToHome() = _GoToHome;
 
   /// @nodoc
+  const factory SplashState.goToOnboarding() = _GoToOnboarding;
+
+  /// @nodoc
   const factory SplashState.initial() = _Initial;
 
   /// @nodoc

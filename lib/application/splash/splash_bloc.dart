@@ -57,6 +57,7 @@ class SplashBloc extends Bloc<SplashEvent, SplashState> {
       defaultCoverURLsCached: (_) async* {},
       defaultCoverURLsLoaded: (value) async* {},
       sessionFetched: (value) async* {},
+      sessionNotFetched: (_) async* {},
       splashPageLaunched: (_) async* {
         yield const SplashState.processing();
 

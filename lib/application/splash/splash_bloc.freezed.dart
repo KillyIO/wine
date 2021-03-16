@@ -39,6 +39,11 @@ class _$SplashEventTearOff {
   }
 
 // ignore: unused_element
+  SessionNotFetched sessionNotFetched() {
+    return const SessionNotFetched();
+  }
+
+// ignore: unused_element
   SplashPageLaunched splashPageLaunched() {
     return const SplashPageLaunched();
   }
@@ -69,6 +74,7 @@ mixin _$SplashEvent {
     @required
         TResult defaultCoverURLsLoaded(Map<String, String> defaultCoverURLs),
     @required TResult sessionFetched(User session),
+    @required TResult sessionNotFetched(),
     @required TResult splashPageLaunched(),
     @required TResult settingsInitialized(),
     @required TResult userLoaded(User user),
@@ -79,6 +85,7 @@ mixin _$SplashEvent {
     TResult defaultCoverURLsCached(),
     TResult defaultCoverURLsLoaded(Map<String, String> defaultCoverURLs),
     TResult sessionFetched(User session),
+    TResult sessionNotFetched(),
     TResult splashPageLaunched(),
     TResult settingsInitialized(),
     TResult userLoaded(User user),
@@ -90,6 +97,7 @@ mixin _$SplashEvent {
     @required TResult defaultCoverURLsCached(DefaultCoverURLsCached value),
     @required TResult defaultCoverURLsLoaded(DefaultCoverURLsLoaded value),
     @required TResult sessionFetched(SessionFetched value),
+    @required TResult sessionNotFetched(SessionNotFetched value),
     @required TResult splashPageLaunched(SplashPageLaunched value),
     @required TResult settingsInitialized(SettingsInitialized value),
     @required TResult userLoaded(UserLoaded value),
@@ -100,6 +108,7 @@ mixin _$SplashEvent {
     TResult defaultCoverURLsCached(DefaultCoverURLsCached value),
     TResult defaultCoverURLsLoaded(DefaultCoverURLsLoaded value),
     TResult sessionFetched(SessionFetched value),
+    TResult sessionNotFetched(SessionNotFetched value),
     TResult splashPageLaunched(SplashPageLaunched value),
     TResult settingsInitialized(SettingsInitialized value),
     TResult userLoaded(UserLoaded value),
@@ -166,6 +175,7 @@ class _$Authenticated implements Authenticated {
     @required
         TResult defaultCoverURLsLoaded(Map<String, String> defaultCoverURLs),
     @required TResult sessionFetched(User session),
+    @required TResult sessionNotFetched(),
     @required TResult splashPageLaunched(),
     @required TResult settingsInitialized(),
     @required TResult userLoaded(User user),
@@ -174,6 +184,7 @@ class _$Authenticated implements Authenticated {
     assert(defaultCoverURLsCached != null);
     assert(defaultCoverURLsLoaded != null);
     assert(sessionFetched != null);
+    assert(sessionNotFetched != null);
     assert(splashPageLaunched != null);
     assert(settingsInitialized != null);
     assert(userLoaded != null);
@@ -187,6 +198,7 @@ class _$Authenticated implements Authenticated {
     TResult defaultCoverURLsCached(),
     TResult defaultCoverURLsLoaded(Map<String, String> defaultCoverURLs),
     TResult sessionFetched(User session),
+    TResult sessionNotFetched(),
     TResult splashPageLaunched(),
     TResult settingsInitialized(),
     TResult userLoaded(User user),
@@ -206,6 +218,7 @@ class _$Authenticated implements Authenticated {
     @required TResult defaultCoverURLsCached(DefaultCoverURLsCached value),
     @required TResult defaultCoverURLsLoaded(DefaultCoverURLsLoaded value),
     @required TResult sessionFetched(SessionFetched value),
+    @required TResult sessionNotFetched(SessionNotFetched value),
     @required TResult splashPageLaunched(SplashPageLaunched value),
     @required TResult settingsInitialized(SettingsInitialized value),
     @required TResult userLoaded(UserLoaded value),
@@ -214,6 +227,7 @@ class _$Authenticated implements Authenticated {
     assert(defaultCoverURLsCached != null);
     assert(defaultCoverURLsLoaded != null);
     assert(sessionFetched != null);
+    assert(sessionNotFetched != null);
     assert(splashPageLaunched != null);
     assert(settingsInitialized != null);
     assert(userLoaded != null);
@@ -227,6 +241,7 @@ class _$Authenticated implements Authenticated {
     TResult defaultCoverURLsCached(DefaultCoverURLsCached value),
     TResult defaultCoverURLsLoaded(DefaultCoverURLsLoaded value),
     TResult sessionFetched(SessionFetched value),
+    TResult sessionNotFetched(SessionNotFetched value),
     TResult splashPageLaunched(SplashPageLaunched value),
     TResult settingsInitialized(SettingsInitialized value),
     TResult userLoaded(UserLoaded value),
@@ -288,6 +303,7 @@ class _$DefaultCoverURLsCached implements DefaultCoverURLsCached {
     @required
         TResult defaultCoverURLsLoaded(Map<String, String> defaultCoverURLs),
     @required TResult sessionFetched(User session),
+    @required TResult sessionNotFetched(),
     @required TResult splashPageLaunched(),
     @required TResult settingsInitialized(),
     @required TResult userLoaded(User user),
@@ -296,6 +312,7 @@ class _$DefaultCoverURLsCached implements DefaultCoverURLsCached {
     assert(defaultCoverURLsCached != null);
     assert(defaultCoverURLsLoaded != null);
     assert(sessionFetched != null);
+    assert(sessionNotFetched != null);
     assert(splashPageLaunched != null);
     assert(settingsInitialized != null);
     assert(userLoaded != null);
@@ -309,6 +326,7 @@ class _$DefaultCoverURLsCached implements DefaultCoverURLsCached {
     TResult defaultCoverURLsCached(),
     TResult defaultCoverURLsLoaded(Map<String, String> defaultCoverURLs),
     TResult sessionFetched(User session),
+    TResult sessionNotFetched(),
     TResult splashPageLaunched(),
     TResult settingsInitialized(),
     TResult userLoaded(User user),
@@ -328,6 +346,7 @@ class _$DefaultCoverURLsCached implements DefaultCoverURLsCached {
     @required TResult defaultCoverURLsCached(DefaultCoverURLsCached value),
     @required TResult defaultCoverURLsLoaded(DefaultCoverURLsLoaded value),
     @required TResult sessionFetched(SessionFetched value),
+    @required TResult sessionNotFetched(SessionNotFetched value),
     @required TResult splashPageLaunched(SplashPageLaunched value),
     @required TResult settingsInitialized(SettingsInitialized value),
     @required TResult userLoaded(UserLoaded value),
@@ -336,6 +355,7 @@ class _$DefaultCoverURLsCached implements DefaultCoverURLsCached {
     assert(defaultCoverURLsCached != null);
     assert(defaultCoverURLsLoaded != null);
     assert(sessionFetched != null);
+    assert(sessionNotFetched != null);
     assert(splashPageLaunched != null);
     assert(settingsInitialized != null);
     assert(userLoaded != null);
@@ -349,6 +369,7 @@ class _$DefaultCoverURLsCached implements DefaultCoverURLsCached {
     TResult defaultCoverURLsCached(DefaultCoverURLsCached value),
     TResult defaultCoverURLsLoaded(DefaultCoverURLsLoaded value),
     TResult sessionFetched(SessionFetched value),
+    TResult sessionNotFetched(SessionNotFetched value),
     TResult splashPageLaunched(SplashPageLaunched value),
     TResult settingsInitialized(SettingsInitialized value),
     TResult userLoaded(UserLoaded value),
@@ -438,6 +459,7 @@ class _$DefaultCoverURLsLoaded implements DefaultCoverURLsLoaded {
     @required
         TResult defaultCoverURLsLoaded(Map<String, String> defaultCoverURLs),
     @required TResult sessionFetched(User session),
+    @required TResult sessionNotFetched(),
     @required TResult splashPageLaunched(),
     @required TResult settingsInitialized(),
     @required TResult userLoaded(User user),
@@ -446,6 +468,7 @@ class _$DefaultCoverURLsLoaded implements DefaultCoverURLsLoaded {
     assert(defaultCoverURLsCached != null);
     assert(defaultCoverURLsLoaded != null);
     assert(sessionFetched != null);
+    assert(sessionNotFetched != null);
     assert(splashPageLaunched != null);
     assert(settingsInitialized != null);
     assert(userLoaded != null);
@@ -459,6 +482,7 @@ class _$DefaultCoverURLsLoaded implements DefaultCoverURLsLoaded {
     TResult defaultCoverURLsCached(),
     TResult defaultCoverURLsLoaded(Map<String, String> defaultCoverURLs),
     TResult sessionFetched(User session),
+    TResult sessionNotFetched(),
     TResult splashPageLaunched(),
     TResult settingsInitialized(),
     TResult userLoaded(User user),
@@ -478,6 +502,7 @@ class _$DefaultCoverURLsLoaded implements DefaultCoverURLsLoaded {
     @required TResult defaultCoverURLsCached(DefaultCoverURLsCached value),
     @required TResult defaultCoverURLsLoaded(DefaultCoverURLsLoaded value),
     @required TResult sessionFetched(SessionFetched value),
+    @required TResult sessionNotFetched(SessionNotFetched value),
     @required TResult splashPageLaunched(SplashPageLaunched value),
     @required TResult settingsInitialized(SettingsInitialized value),
     @required TResult userLoaded(UserLoaded value),
@@ -486,6 +511,7 @@ class _$DefaultCoverURLsLoaded implements DefaultCoverURLsLoaded {
     assert(defaultCoverURLsCached != null);
     assert(defaultCoverURLsLoaded != null);
     assert(sessionFetched != null);
+    assert(sessionNotFetched != null);
     assert(splashPageLaunched != null);
     assert(settingsInitialized != null);
     assert(userLoaded != null);
@@ -499,6 +525,7 @@ class _$DefaultCoverURLsLoaded implements DefaultCoverURLsLoaded {
     TResult defaultCoverURLsCached(DefaultCoverURLsCached value),
     TResult defaultCoverURLsLoaded(DefaultCoverURLsLoaded value),
     TResult sessionFetched(SessionFetched value),
+    TResult sessionNotFetched(SessionNotFetched value),
     TResult splashPageLaunched(SplashPageLaunched value),
     TResult settingsInitialized(SettingsInitialized value),
     TResult userLoaded(UserLoaded value),
@@ -598,6 +625,7 @@ class _$SessionFetched implements SessionFetched {
     @required
         TResult defaultCoverURLsLoaded(Map<String, String> defaultCoverURLs),
     @required TResult sessionFetched(User session),
+    @required TResult sessionNotFetched(),
     @required TResult splashPageLaunched(),
     @required TResult settingsInitialized(),
     @required TResult userLoaded(User user),
@@ -606,6 +634,7 @@ class _$SessionFetched implements SessionFetched {
     assert(defaultCoverURLsCached != null);
     assert(defaultCoverURLsLoaded != null);
     assert(sessionFetched != null);
+    assert(sessionNotFetched != null);
     assert(splashPageLaunched != null);
     assert(settingsInitialized != null);
     assert(userLoaded != null);
@@ -619,6 +648,7 @@ class _$SessionFetched implements SessionFetched {
     TResult defaultCoverURLsCached(),
     TResult defaultCoverURLsLoaded(Map<String, String> defaultCoverURLs),
     TResult sessionFetched(User session),
+    TResult sessionNotFetched(),
     TResult splashPageLaunched(),
     TResult settingsInitialized(),
     TResult userLoaded(User user),
@@ -638,6 +668,7 @@ class _$SessionFetched implements SessionFetched {
     @required TResult defaultCoverURLsCached(DefaultCoverURLsCached value),
     @required TResult defaultCoverURLsLoaded(DefaultCoverURLsLoaded value),
     @required TResult sessionFetched(SessionFetched value),
+    @required TResult sessionNotFetched(SessionNotFetched value),
     @required TResult splashPageLaunched(SplashPageLaunched value),
     @required TResult settingsInitialized(SettingsInitialized value),
     @required TResult userLoaded(UserLoaded value),
@@ -646,6 +677,7 @@ class _$SessionFetched implements SessionFetched {
     assert(defaultCoverURLsCached != null);
     assert(defaultCoverURLsLoaded != null);
     assert(sessionFetched != null);
+    assert(sessionNotFetched != null);
     assert(splashPageLaunched != null);
     assert(settingsInitialized != null);
     assert(userLoaded != null);
@@ -659,6 +691,7 @@ class _$SessionFetched implements SessionFetched {
     TResult defaultCoverURLsCached(DefaultCoverURLsCached value),
     TResult defaultCoverURLsLoaded(DefaultCoverURLsLoaded value),
     TResult sessionFetched(SessionFetched value),
+    TResult sessionNotFetched(SessionNotFetched value),
     TResult splashPageLaunched(SplashPageLaunched value),
     TResult settingsInitialized(SettingsInitialized value),
     TResult userLoaded(UserLoaded value),
@@ -678,6 +711,134 @@ abstract class SessionFetched implements SplashEvent {
   User get session;
   @JsonKey(ignore: true)
   $SessionFetchedCopyWith<SessionFetched> get copyWith;
+}
+
+/// @nodoc
+abstract class $SessionNotFetchedCopyWith<$Res> {
+  factory $SessionNotFetchedCopyWith(
+          SessionNotFetched value, $Res Function(SessionNotFetched) then) =
+      _$SessionNotFetchedCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$SessionNotFetchedCopyWithImpl<$Res>
+    extends _$SplashEventCopyWithImpl<$Res>
+    implements $SessionNotFetchedCopyWith<$Res> {
+  _$SessionNotFetchedCopyWithImpl(
+      SessionNotFetched _value, $Res Function(SessionNotFetched) _then)
+      : super(_value, (v) => _then(v as SessionNotFetched));
+
+  @override
+  SessionNotFetched get _value => super._value as SessionNotFetched;
+}
+
+/// @nodoc
+class _$SessionNotFetched implements SessionNotFetched {
+  const _$SessionNotFetched();
+
+  @override
+  String toString() {
+    return 'SplashEvent.sessionNotFetched()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is SessionNotFetched);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object>({
+    @required TResult authenticated(),
+    @required TResult defaultCoverURLsCached(),
+    @required
+        TResult defaultCoverURLsLoaded(Map<String, String> defaultCoverURLs),
+    @required TResult sessionFetched(User session),
+    @required TResult sessionNotFetched(),
+    @required TResult splashPageLaunched(),
+    @required TResult settingsInitialized(),
+    @required TResult userLoaded(User user),
+  }) {
+    assert(authenticated != null);
+    assert(defaultCoverURLsCached != null);
+    assert(defaultCoverURLsLoaded != null);
+    assert(sessionFetched != null);
+    assert(sessionNotFetched != null);
+    assert(splashPageLaunched != null);
+    assert(settingsInitialized != null);
+    assert(userLoaded != null);
+    return sessionNotFetched();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object>({
+    TResult authenticated(),
+    TResult defaultCoverURLsCached(),
+    TResult defaultCoverURLsLoaded(Map<String, String> defaultCoverURLs),
+    TResult sessionFetched(User session),
+    TResult sessionNotFetched(),
+    TResult splashPageLaunched(),
+    TResult settingsInitialized(),
+    TResult userLoaded(User user),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (sessionNotFetched != null) {
+      return sessionNotFetched();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object>({
+    @required TResult authenticated(Authenticated value),
+    @required TResult defaultCoverURLsCached(DefaultCoverURLsCached value),
+    @required TResult defaultCoverURLsLoaded(DefaultCoverURLsLoaded value),
+    @required TResult sessionFetched(SessionFetched value),
+    @required TResult sessionNotFetched(SessionNotFetched value),
+    @required TResult splashPageLaunched(SplashPageLaunched value),
+    @required TResult settingsInitialized(SettingsInitialized value),
+    @required TResult userLoaded(UserLoaded value),
+  }) {
+    assert(authenticated != null);
+    assert(defaultCoverURLsCached != null);
+    assert(defaultCoverURLsLoaded != null);
+    assert(sessionFetched != null);
+    assert(sessionNotFetched != null);
+    assert(splashPageLaunched != null);
+    assert(settingsInitialized != null);
+    assert(userLoaded != null);
+    return sessionNotFetched(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object>({
+    TResult authenticated(Authenticated value),
+    TResult defaultCoverURLsCached(DefaultCoverURLsCached value),
+    TResult defaultCoverURLsLoaded(DefaultCoverURLsLoaded value),
+    TResult sessionFetched(SessionFetched value),
+    TResult sessionNotFetched(SessionNotFetched value),
+    TResult splashPageLaunched(SplashPageLaunched value),
+    TResult settingsInitialized(SettingsInitialized value),
+    TResult userLoaded(UserLoaded value),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (sessionNotFetched != null) {
+      return sessionNotFetched(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SessionNotFetched implements SplashEvent {
+  const factory SessionNotFetched() = _$SessionNotFetched;
 }
 
 /// @nodoc
@@ -724,6 +885,7 @@ class _$SplashPageLaunched implements SplashPageLaunched {
     @required
         TResult defaultCoverURLsLoaded(Map<String, String> defaultCoverURLs),
     @required TResult sessionFetched(User session),
+    @required TResult sessionNotFetched(),
     @required TResult splashPageLaunched(),
     @required TResult settingsInitialized(),
     @required TResult userLoaded(User user),
@@ -732,6 +894,7 @@ class _$SplashPageLaunched implements SplashPageLaunched {
     assert(defaultCoverURLsCached != null);
     assert(defaultCoverURLsLoaded != null);
     assert(sessionFetched != null);
+    assert(sessionNotFetched != null);
     assert(splashPageLaunched != null);
     assert(settingsInitialized != null);
     assert(userLoaded != null);
@@ -745,6 +908,7 @@ class _$SplashPageLaunched implements SplashPageLaunched {
     TResult defaultCoverURLsCached(),
     TResult defaultCoverURLsLoaded(Map<String, String> defaultCoverURLs),
     TResult sessionFetched(User session),
+    TResult sessionNotFetched(),
     TResult splashPageLaunched(),
     TResult settingsInitialized(),
     TResult userLoaded(User user),
@@ -764,6 +928,7 @@ class _$SplashPageLaunched implements SplashPageLaunched {
     @required TResult defaultCoverURLsCached(DefaultCoverURLsCached value),
     @required TResult defaultCoverURLsLoaded(DefaultCoverURLsLoaded value),
     @required TResult sessionFetched(SessionFetched value),
+    @required TResult sessionNotFetched(SessionNotFetched value),
     @required TResult splashPageLaunched(SplashPageLaunched value),
     @required TResult settingsInitialized(SettingsInitialized value),
     @required TResult userLoaded(UserLoaded value),
@@ -772,6 +937,7 @@ class _$SplashPageLaunched implements SplashPageLaunched {
     assert(defaultCoverURLsCached != null);
     assert(defaultCoverURLsLoaded != null);
     assert(sessionFetched != null);
+    assert(sessionNotFetched != null);
     assert(splashPageLaunched != null);
     assert(settingsInitialized != null);
     assert(userLoaded != null);
@@ -785,6 +951,7 @@ class _$SplashPageLaunched implements SplashPageLaunched {
     TResult defaultCoverURLsCached(DefaultCoverURLsCached value),
     TResult defaultCoverURLsLoaded(DefaultCoverURLsLoaded value),
     TResult sessionFetched(SessionFetched value),
+    TResult sessionNotFetched(SessionNotFetched value),
     TResult splashPageLaunched(SplashPageLaunched value),
     TResult settingsInitialized(SettingsInitialized value),
     TResult userLoaded(UserLoaded value),
@@ -846,6 +1013,7 @@ class _$SettingsInitialized implements SettingsInitialized {
     @required
         TResult defaultCoverURLsLoaded(Map<String, String> defaultCoverURLs),
     @required TResult sessionFetched(User session),
+    @required TResult sessionNotFetched(),
     @required TResult splashPageLaunched(),
     @required TResult settingsInitialized(),
     @required TResult userLoaded(User user),
@@ -854,6 +1022,7 @@ class _$SettingsInitialized implements SettingsInitialized {
     assert(defaultCoverURLsCached != null);
     assert(defaultCoverURLsLoaded != null);
     assert(sessionFetched != null);
+    assert(sessionNotFetched != null);
     assert(splashPageLaunched != null);
     assert(settingsInitialized != null);
     assert(userLoaded != null);
@@ -867,6 +1036,7 @@ class _$SettingsInitialized implements SettingsInitialized {
     TResult defaultCoverURLsCached(),
     TResult defaultCoverURLsLoaded(Map<String, String> defaultCoverURLs),
     TResult sessionFetched(User session),
+    TResult sessionNotFetched(),
     TResult splashPageLaunched(),
     TResult settingsInitialized(),
     TResult userLoaded(User user),
@@ -886,6 +1056,7 @@ class _$SettingsInitialized implements SettingsInitialized {
     @required TResult defaultCoverURLsCached(DefaultCoverURLsCached value),
     @required TResult defaultCoverURLsLoaded(DefaultCoverURLsLoaded value),
     @required TResult sessionFetched(SessionFetched value),
+    @required TResult sessionNotFetched(SessionNotFetched value),
     @required TResult splashPageLaunched(SplashPageLaunched value),
     @required TResult settingsInitialized(SettingsInitialized value),
     @required TResult userLoaded(UserLoaded value),
@@ -894,6 +1065,7 @@ class _$SettingsInitialized implements SettingsInitialized {
     assert(defaultCoverURLsCached != null);
     assert(defaultCoverURLsLoaded != null);
     assert(sessionFetched != null);
+    assert(sessionNotFetched != null);
     assert(splashPageLaunched != null);
     assert(settingsInitialized != null);
     assert(userLoaded != null);
@@ -907,6 +1079,7 @@ class _$SettingsInitialized implements SettingsInitialized {
     TResult defaultCoverURLsCached(DefaultCoverURLsCached value),
     TResult defaultCoverURLsLoaded(DefaultCoverURLsLoaded value),
     TResult sessionFetched(SessionFetched value),
+    TResult sessionNotFetched(SessionNotFetched value),
     TResult splashPageLaunched(SplashPageLaunched value),
     TResult settingsInitialized(SettingsInitialized value),
     TResult userLoaded(UserLoaded value),
@@ -1000,6 +1173,7 @@ class _$UserLoaded implements UserLoaded {
     @required
         TResult defaultCoverURLsLoaded(Map<String, String> defaultCoverURLs),
     @required TResult sessionFetched(User session),
+    @required TResult sessionNotFetched(),
     @required TResult splashPageLaunched(),
     @required TResult settingsInitialized(),
     @required TResult userLoaded(User user),
@@ -1008,6 +1182,7 @@ class _$UserLoaded implements UserLoaded {
     assert(defaultCoverURLsCached != null);
     assert(defaultCoverURLsLoaded != null);
     assert(sessionFetched != null);
+    assert(sessionNotFetched != null);
     assert(splashPageLaunched != null);
     assert(settingsInitialized != null);
     assert(userLoaded != null);
@@ -1021,6 +1196,7 @@ class _$UserLoaded implements UserLoaded {
     TResult defaultCoverURLsCached(),
     TResult defaultCoverURLsLoaded(Map<String, String> defaultCoverURLs),
     TResult sessionFetched(User session),
+    TResult sessionNotFetched(),
     TResult splashPageLaunched(),
     TResult settingsInitialized(),
     TResult userLoaded(User user),
@@ -1040,6 +1216,7 @@ class _$UserLoaded implements UserLoaded {
     @required TResult defaultCoverURLsCached(DefaultCoverURLsCached value),
     @required TResult defaultCoverURLsLoaded(DefaultCoverURLsLoaded value),
     @required TResult sessionFetched(SessionFetched value),
+    @required TResult sessionNotFetched(SessionNotFetched value),
     @required TResult splashPageLaunched(SplashPageLaunched value),
     @required TResult settingsInitialized(SettingsInitialized value),
     @required TResult userLoaded(UserLoaded value),
@@ -1048,6 +1225,7 @@ class _$UserLoaded implements UserLoaded {
     assert(defaultCoverURLsCached != null);
     assert(defaultCoverURLsLoaded != null);
     assert(sessionFetched != null);
+    assert(sessionNotFetched != null);
     assert(splashPageLaunched != null);
     assert(settingsInitialized != null);
     assert(userLoaded != null);
@@ -1061,6 +1239,7 @@ class _$UserLoaded implements UserLoaded {
     TResult defaultCoverURLsCached(DefaultCoverURLsCached value),
     TResult defaultCoverURLsLoaded(DefaultCoverURLsLoaded value),
     TResult sessionFetched(SessionFetched value),
+    TResult sessionNotFetched(SessionNotFetched value),
     TResult splashPageLaunched(SplashPageLaunched value),
     TResult settingsInitialized(SettingsInitialized value),
     TResult userLoaded(UserLoaded value),
@@ -1108,6 +1287,11 @@ class _$SplashStateTearOff {
   }
 
 // ignore: unused_element
+  _GoToOnboarding goToOnboarding() {
+    return const _GoToOnboarding();
+  }
+
+// ignore: unused_element
   _Initial initial() {
     return const _Initial();
   }
@@ -1134,6 +1318,7 @@ mixin _$SplashState {
             Option<Either<SettingsFailure, dynamic>> settingsOption,
             Option<Either<UserFailure, dynamic>> userOption),
     @required TResult goToHome(),
+    @required TResult goToOnboarding(),
     @required TResult initial(),
     @required TResult processing(),
   });
@@ -1146,6 +1331,7 @@ mixin _$SplashState {
         Option<Either<SettingsFailure, dynamic>> settingsOption,
         Option<Either<UserFailure, dynamic>> userOption),
     TResult goToHome(),
+    TResult goToOnboarding(),
     TResult initial(),
     TResult processing(),
     @required TResult orElse(),
@@ -1154,6 +1340,7 @@ mixin _$SplashState {
   TResult map<TResult extends Object>({
     @required TResult failure(_Failure value),
     @required TResult goToHome(_GoToHome value),
+    @required TResult goToOnboarding(_GoToOnboarding value),
     @required TResult initial(_Initial value),
     @required TResult processing(_Processing value),
   });
@@ -1161,6 +1348,7 @@ mixin _$SplashState {
   TResult maybeMap<TResult extends Object>({
     TResult failure(_Failure value),
     TResult goToHome(_GoToHome value),
+    TResult goToOnboarding(_GoToOnboarding value),
     TResult initial(_Initial value),
     TResult processing(_Processing value),
     @required TResult orElse(),
@@ -1303,11 +1491,13 @@ class _$_Failure implements _Failure {
             Option<Either<SettingsFailure, dynamic>> settingsOption,
             Option<Either<UserFailure, dynamic>> userOption),
     @required TResult goToHome(),
+    @required TResult goToOnboarding(),
     @required TResult initial(),
     @required TResult processing(),
   }) {
     assert(failure != null);
     assert(goToHome != null);
+    assert(goToOnboarding != null);
     assert(initial != null);
     assert(processing != null);
     return failure(authOption, defaultCoverOption, sessionOption,
@@ -1324,6 +1514,7 @@ class _$_Failure implements _Failure {
         Option<Either<SettingsFailure, dynamic>> settingsOption,
         Option<Either<UserFailure, dynamic>> userOption),
     TResult goToHome(),
+    TResult goToOnboarding(),
     TResult initial(),
     TResult processing(),
     @required TResult orElse(),
@@ -1341,11 +1532,13 @@ class _$_Failure implements _Failure {
   TResult map<TResult extends Object>({
     @required TResult failure(_Failure value),
     @required TResult goToHome(_GoToHome value),
+    @required TResult goToOnboarding(_GoToOnboarding value),
     @required TResult initial(_Initial value),
     @required TResult processing(_Processing value),
   }) {
     assert(failure != null);
     assert(goToHome != null);
+    assert(goToOnboarding != null);
     assert(initial != null);
     assert(processing != null);
     return failure(this);
@@ -1356,6 +1549,7 @@ class _$_Failure implements _Failure {
   TResult maybeMap<TResult extends Object>({
     TResult failure(_Failure value),
     TResult goToHome(_GoToHome value),
+    TResult goToOnboarding(_GoToOnboarding value),
     TResult initial(_Initial value),
     TResult processing(_Processing value),
     @required TResult orElse(),
@@ -1429,11 +1623,13 @@ class _$_GoToHome implements _GoToHome {
             Option<Either<SettingsFailure, dynamic>> settingsOption,
             Option<Either<UserFailure, dynamic>> userOption),
     @required TResult goToHome(),
+    @required TResult goToOnboarding(),
     @required TResult initial(),
     @required TResult processing(),
   }) {
     assert(failure != null);
     assert(goToHome != null);
+    assert(goToOnboarding != null);
     assert(initial != null);
     assert(processing != null);
     return goToHome();
@@ -1449,6 +1645,7 @@ class _$_GoToHome implements _GoToHome {
         Option<Either<SettingsFailure, dynamic>> settingsOption,
         Option<Either<UserFailure, dynamic>> userOption),
     TResult goToHome(),
+    TResult goToOnboarding(),
     TResult initial(),
     TResult processing(),
     @required TResult orElse(),
@@ -1465,11 +1662,13 @@ class _$_GoToHome implements _GoToHome {
   TResult map<TResult extends Object>({
     @required TResult failure(_Failure value),
     @required TResult goToHome(_GoToHome value),
+    @required TResult goToOnboarding(_GoToOnboarding value),
     @required TResult initial(_Initial value),
     @required TResult processing(_Processing value),
   }) {
     assert(failure != null);
     assert(goToHome != null);
+    assert(goToOnboarding != null);
     assert(initial != null);
     assert(processing != null);
     return goToHome(this);
@@ -1480,6 +1679,7 @@ class _$_GoToHome implements _GoToHome {
   TResult maybeMap<TResult extends Object>({
     TResult failure(_Failure value),
     TResult goToHome(_GoToHome value),
+    TResult goToOnboarding(_GoToOnboarding value),
     TResult initial(_Initial value),
     TResult processing(_Processing value),
     @required TResult orElse(),
@@ -1494,6 +1694,126 @@ class _$_GoToHome implements _GoToHome {
 
 abstract class _GoToHome implements SplashState {
   const factory _GoToHome() = _$_GoToHome;
+}
+
+/// @nodoc
+abstract class _$GoToOnboardingCopyWith<$Res> {
+  factory _$GoToOnboardingCopyWith(
+          _GoToOnboarding value, $Res Function(_GoToOnboarding) then) =
+      __$GoToOnboardingCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$GoToOnboardingCopyWithImpl<$Res>
+    extends _$SplashStateCopyWithImpl<$Res>
+    implements _$GoToOnboardingCopyWith<$Res> {
+  __$GoToOnboardingCopyWithImpl(
+      _GoToOnboarding _value, $Res Function(_GoToOnboarding) _then)
+      : super(_value, (v) => _then(v as _GoToOnboarding));
+
+  @override
+  _GoToOnboarding get _value => super._value as _GoToOnboarding;
+}
+
+/// @nodoc
+class _$_GoToOnboarding implements _GoToOnboarding {
+  const _$_GoToOnboarding();
+
+  @override
+  String toString() {
+    return 'SplashState.goToOnboarding()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is _GoToOnboarding);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object>({
+    @required
+        TResult failure(
+            Option<Either<AuthFailure, dynamic>> authOption,
+            Option<Either<DefaultCoversFailure, dynamic>> defaultCoverOption,
+            Option<Either<SessionFailure, dynamic>> sessionOption,
+            Option<Either<SettingsFailure, dynamic>> settingsOption,
+            Option<Either<UserFailure, dynamic>> userOption),
+    @required TResult goToHome(),
+    @required TResult goToOnboarding(),
+    @required TResult initial(),
+    @required TResult processing(),
+  }) {
+    assert(failure != null);
+    assert(goToHome != null);
+    assert(goToOnboarding != null);
+    assert(initial != null);
+    assert(processing != null);
+    return goToOnboarding();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object>({
+    TResult failure(
+        Option<Either<AuthFailure, dynamic>> authOption,
+        Option<Either<DefaultCoversFailure, dynamic>> defaultCoverOption,
+        Option<Either<SessionFailure, dynamic>> sessionOption,
+        Option<Either<SettingsFailure, dynamic>> settingsOption,
+        Option<Either<UserFailure, dynamic>> userOption),
+    TResult goToHome(),
+    TResult goToOnboarding(),
+    TResult initial(),
+    TResult processing(),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (goToOnboarding != null) {
+      return goToOnboarding();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object>({
+    @required TResult failure(_Failure value),
+    @required TResult goToHome(_GoToHome value),
+    @required TResult goToOnboarding(_GoToOnboarding value),
+    @required TResult initial(_Initial value),
+    @required TResult processing(_Processing value),
+  }) {
+    assert(failure != null);
+    assert(goToHome != null);
+    assert(goToOnboarding != null);
+    assert(initial != null);
+    assert(processing != null);
+    return goToOnboarding(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object>({
+    TResult failure(_Failure value),
+    TResult goToHome(_GoToHome value),
+    TResult goToOnboarding(_GoToOnboarding value),
+    TResult initial(_Initial value),
+    TResult processing(_Processing value),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (goToOnboarding != null) {
+      return goToOnboarding(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _GoToOnboarding implements SplashState {
+  const factory _GoToOnboarding() = _$_GoToOnboarding;
 }
 
 /// @nodoc
@@ -1540,11 +1860,13 @@ class _$_Initial implements _Initial {
             Option<Either<SettingsFailure, dynamic>> settingsOption,
             Option<Either<UserFailure, dynamic>> userOption),
     @required TResult goToHome(),
+    @required TResult goToOnboarding(),
     @required TResult initial(),
     @required TResult processing(),
   }) {
     assert(failure != null);
     assert(goToHome != null);
+    assert(goToOnboarding != null);
     assert(initial != null);
     assert(processing != null);
     return initial();
@@ -1560,6 +1882,7 @@ class _$_Initial implements _Initial {
         Option<Either<SettingsFailure, dynamic>> settingsOption,
         Option<Either<UserFailure, dynamic>> userOption),
     TResult goToHome(),
+    TResult goToOnboarding(),
     TResult initial(),
     TResult processing(),
     @required TResult orElse(),
@@ -1576,11 +1899,13 @@ class _$_Initial implements _Initial {
   TResult map<TResult extends Object>({
     @required TResult failure(_Failure value),
     @required TResult goToHome(_GoToHome value),
+    @required TResult goToOnboarding(_GoToOnboarding value),
     @required TResult initial(_Initial value),
     @required TResult processing(_Processing value),
   }) {
     assert(failure != null);
     assert(goToHome != null);
+    assert(goToOnboarding != null);
     assert(initial != null);
     assert(processing != null);
     return initial(this);
@@ -1591,6 +1916,7 @@ class _$_Initial implements _Initial {
   TResult maybeMap<TResult extends Object>({
     TResult failure(_Failure value),
     TResult goToHome(_GoToHome value),
+    TResult goToOnboarding(_GoToOnboarding value),
     TResult initial(_Initial value),
     TResult processing(_Processing value),
     @required TResult orElse(),
@@ -1653,11 +1979,13 @@ class _$_Processing implements _Processing {
             Option<Either<SettingsFailure, dynamic>> settingsOption,
             Option<Either<UserFailure, dynamic>> userOption),
     @required TResult goToHome(),
+    @required TResult goToOnboarding(),
     @required TResult initial(),
     @required TResult processing(),
   }) {
     assert(failure != null);
     assert(goToHome != null);
+    assert(goToOnboarding != null);
     assert(initial != null);
     assert(processing != null);
     return processing();
@@ -1673,6 +2001,7 @@ class _$_Processing implements _Processing {
         Option<Either<SettingsFailure, dynamic>> settingsOption,
         Option<Either<UserFailure, dynamic>> userOption),
     TResult goToHome(),
+    TResult goToOnboarding(),
     TResult initial(),
     TResult processing(),
     @required TResult orElse(),
@@ -1689,11 +2018,13 @@ class _$_Processing implements _Processing {
   TResult map<TResult extends Object>({
     @required TResult failure(_Failure value),
     @required TResult goToHome(_GoToHome value),
+    @required TResult goToOnboarding(_GoToOnboarding value),
     @required TResult initial(_Initial value),
     @required TResult processing(_Processing value),
   }) {
     assert(failure != null);
     assert(goToHome != null);
+    assert(goToOnboarding != null);
     assert(initial != null);
     assert(processing != null);
     return processing(this);
@@ -1704,6 +2035,7 @@ class _$_Processing implements _Processing {
   TResult maybeMap<TResult extends Object>({
     TResult failure(_Failure value),
     TResult goToHome(_GoToHome value),
+    TResult goToOnboarding(_GoToOnboarding value),
     TResult initial(_Initial value),
     TResult processing(_Processing value),
     @required TResult orElse(),
