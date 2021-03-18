@@ -45,7 +45,16 @@ class SplashBloc extends Bloc<SplashEvent, SplashState> {
           },
         );
       },
-      defaultCoverURLsCached: (_) async* {},
+      defaultCoverURLsCached: (_) async* {
+        yield* (await _settingsRepository.fetchSettings()).fold(
+          (failure) async* {
+            add(const SplashEvent.settingsNotFound());
+          },
+          (_) async* {
+            add(const SplashEvent.settingsFetched());
+          },
+        );
+      },
       defaultCoverURLsLoaded: (value) async* {
         yield* (await _defaultCoversRepository
                 .cacheDefaultCoverURLs(value.defaultCoverURLs))
