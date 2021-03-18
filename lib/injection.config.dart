@@ -15,11 +15,12 @@ import 'application/home/home_navigation/home_navigation_bloc.dart' as _i7;
 import 'application/log_in/log_in_bloc.dart' as _i12;
 import 'application/splash/splash_bloc.dart' as _i13;
 import 'domain/auth/i_auth_facade.dart' as _i8;
-import 'domain/settings/i_ssettings_repository.dart' as _i14;
+import 'domain/default_covers/i_default_covers_repository.dart' as _i14;
+import 'domain/settings/i_ssettings_repository.dart' as _i15;
 import 'domain/user/i_user_repository.dart' as _i10;
 import 'infrastructure/auth/firebase_auth_facade.dart' as _i9;
-import 'infrastructure/core/firebase_injectable_module.dart' as _i16;
-import 'infrastructure/core/hive_injectable_module.dart' as _i15;
+import 'infrastructure/core/firebase_injectable_module.dart' as _i17;
+import 'infrastructure/core/hive_injectable_module.dart' as _i16;
 import 'infrastructure/user/user_repository.dart'
     as _i11; // ignore_for_file: unnecessary_lambdas
 
@@ -46,11 +47,11 @@ Future<_i1.GetIt> $initGetIt(_i1.GetIt get,
       () => _i11.UserRepository(get<_i5.FirebaseFirestore>()));
   gh.factory<_i12.LogInBloc>(() =>
       _i12.LogInBloc(get<_i8.IAuthFacade>(), get<_i10.IUserRepository>()));
-  gh.factory<_i13.SplashBloc>(() =>
-      _i13.SplashBloc(get<_i8.IAuthFacade>(), get<_i14.ISettingsRepository>()));
+  gh.factory<_i13.SplashBloc>(() => _i13.SplashBloc(get<_i8.IAuthFacade>(),
+      get<_i14.IDefaultCoversRepository>(), get<_i15.ISettingsRepository>()));
   return get;
 }
 
-class _$HiveInjectableModule extends _i15.HiveInjectableModule {}
+class _$HiveInjectableModule extends _i16.HiveInjectableModule {}
 
-class _$FirebaseInjectableModule extends _i16.FirebaseInjectableModule {}
+class _$FirebaseInjectableModule extends _i17.FirebaseInjectableModule {}

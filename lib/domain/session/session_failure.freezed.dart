@@ -24,8 +24,8 @@ class _$SessionFailureTearOff {
   }
 
 // ignore: unused_element
-  SessionNotFetched sessionNotFetched() {
-    return const SessionNotFetched();
+  SessionNotFound sessionNotFound() {
+    return const SessionNotFound();
   }
 
 // ignore: unused_element
@@ -44,14 +44,14 @@ mixin _$SessionFailure {
   TResult when<TResult extends Object>({
     @required TResult sessionNotCreated(),
     @required TResult sessionNotDeleted(),
-    @required TResult sessionNotFetched(),
+    @required TResult sessionNotFound(),
     @required TResult sessionNotUpdated(),
   });
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult sessionNotCreated(),
     TResult sessionNotDeleted(),
-    TResult sessionNotFetched(),
+    TResult sessionNotFound(),
     TResult sessionNotUpdated(),
     @required TResult orElse(),
   });
@@ -59,14 +59,14 @@ mixin _$SessionFailure {
   TResult map<TResult extends Object>({
     @required TResult sessionNotCreated(SessionNotCreated value),
     @required TResult sessionNotDeleted(SessionNotDeleted value),
-    @required TResult sessionNotFetched(SessionNotFetched value),
+    @required TResult sessionNotFound(SessionNotFound value),
     @required TResult sessionNotUpdated(SessionNotUpdated value),
   });
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult sessionNotCreated(SessionNotCreated value),
     TResult sessionNotDeleted(SessionNotDeleted value),
-    TResult sessionNotFetched(SessionNotFetched value),
+    TResult sessionNotFound(SessionNotFound value),
     TResult sessionNotUpdated(SessionNotUpdated value),
     @required TResult orElse(),
   });
@@ -130,12 +130,12 @@ class _$SessionNotCreated implements SessionNotCreated {
   TResult when<TResult extends Object>({
     @required TResult sessionNotCreated(),
     @required TResult sessionNotDeleted(),
-    @required TResult sessionNotFetched(),
+    @required TResult sessionNotFound(),
     @required TResult sessionNotUpdated(),
   }) {
     assert(sessionNotCreated != null);
     assert(sessionNotDeleted != null);
-    assert(sessionNotFetched != null);
+    assert(sessionNotFound != null);
     assert(sessionNotUpdated != null);
     return sessionNotCreated();
   }
@@ -145,7 +145,7 @@ class _$SessionNotCreated implements SessionNotCreated {
   TResult maybeWhen<TResult extends Object>({
     TResult sessionNotCreated(),
     TResult sessionNotDeleted(),
-    TResult sessionNotFetched(),
+    TResult sessionNotFound(),
     TResult sessionNotUpdated(),
     @required TResult orElse(),
   }) {
@@ -161,12 +161,12 @@ class _$SessionNotCreated implements SessionNotCreated {
   TResult map<TResult extends Object>({
     @required TResult sessionNotCreated(SessionNotCreated value),
     @required TResult sessionNotDeleted(SessionNotDeleted value),
-    @required TResult sessionNotFetched(SessionNotFetched value),
+    @required TResult sessionNotFound(SessionNotFound value),
     @required TResult sessionNotUpdated(SessionNotUpdated value),
   }) {
     assert(sessionNotCreated != null);
     assert(sessionNotDeleted != null);
-    assert(sessionNotFetched != null);
+    assert(sessionNotFound != null);
     assert(sessionNotUpdated != null);
     return sessionNotCreated(this);
   }
@@ -176,7 +176,7 @@ class _$SessionNotCreated implements SessionNotCreated {
   TResult maybeMap<TResult extends Object>({
     TResult sessionNotCreated(SessionNotCreated value),
     TResult sessionNotDeleted(SessionNotDeleted value),
-    TResult sessionNotFetched(SessionNotFetched value),
+    TResult sessionNotFound(SessionNotFound value),
     TResult sessionNotUpdated(SessionNotUpdated value),
     @required TResult orElse(),
   }) {
@@ -233,12 +233,12 @@ class _$SessionNotDeleted implements SessionNotDeleted {
   TResult when<TResult extends Object>({
     @required TResult sessionNotCreated(),
     @required TResult sessionNotDeleted(),
-    @required TResult sessionNotFetched(),
+    @required TResult sessionNotFound(),
     @required TResult sessionNotUpdated(),
   }) {
     assert(sessionNotCreated != null);
     assert(sessionNotDeleted != null);
-    assert(sessionNotFetched != null);
+    assert(sessionNotFound != null);
     assert(sessionNotUpdated != null);
     return sessionNotDeleted();
   }
@@ -248,7 +248,7 @@ class _$SessionNotDeleted implements SessionNotDeleted {
   TResult maybeWhen<TResult extends Object>({
     TResult sessionNotCreated(),
     TResult sessionNotDeleted(),
-    TResult sessionNotFetched(),
+    TResult sessionNotFound(),
     TResult sessionNotUpdated(),
     @required TResult orElse(),
   }) {
@@ -264,12 +264,12 @@ class _$SessionNotDeleted implements SessionNotDeleted {
   TResult map<TResult extends Object>({
     @required TResult sessionNotCreated(SessionNotCreated value),
     @required TResult sessionNotDeleted(SessionNotDeleted value),
-    @required TResult sessionNotFetched(SessionNotFetched value),
+    @required TResult sessionNotFound(SessionNotFound value),
     @required TResult sessionNotUpdated(SessionNotUpdated value),
   }) {
     assert(sessionNotCreated != null);
     assert(sessionNotDeleted != null);
-    assert(sessionNotFetched != null);
+    assert(sessionNotFound != null);
     assert(sessionNotUpdated != null);
     return sessionNotDeleted(this);
   }
@@ -279,7 +279,7 @@ class _$SessionNotDeleted implements SessionNotDeleted {
   TResult maybeMap<TResult extends Object>({
     TResult sessionNotCreated(SessionNotCreated value),
     TResult sessionNotDeleted(SessionNotDeleted value),
-    TResult sessionNotFetched(SessionNotFetched value),
+    TResult sessionNotFound(SessionNotFound value),
     TResult sessionNotUpdated(SessionNotUpdated value),
     @required TResult orElse(),
   }) {
@@ -296,36 +296,36 @@ abstract class SessionNotDeleted implements SessionFailure {
 }
 
 /// @nodoc
-abstract class $SessionNotFetchedCopyWith<$Res> {
-  factory $SessionNotFetchedCopyWith(
-          SessionNotFetched value, $Res Function(SessionNotFetched) then) =
-      _$SessionNotFetchedCopyWithImpl<$Res>;
+abstract class $SessionNotFoundCopyWith<$Res> {
+  factory $SessionNotFoundCopyWith(
+          SessionNotFound value, $Res Function(SessionNotFound) then) =
+      _$SessionNotFoundCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$SessionNotFetchedCopyWithImpl<$Res>
+class _$SessionNotFoundCopyWithImpl<$Res>
     extends _$SessionFailureCopyWithImpl<$Res>
-    implements $SessionNotFetchedCopyWith<$Res> {
-  _$SessionNotFetchedCopyWithImpl(
-      SessionNotFetched _value, $Res Function(SessionNotFetched) _then)
-      : super(_value, (v) => _then(v as SessionNotFetched));
+    implements $SessionNotFoundCopyWith<$Res> {
+  _$SessionNotFoundCopyWithImpl(
+      SessionNotFound _value, $Res Function(SessionNotFound) _then)
+      : super(_value, (v) => _then(v as SessionNotFound));
 
   @override
-  SessionNotFetched get _value => super._value as SessionNotFetched;
+  SessionNotFound get _value => super._value as SessionNotFound;
 }
 
 /// @nodoc
-class _$SessionNotFetched implements SessionNotFetched {
-  const _$SessionNotFetched();
+class _$SessionNotFound implements SessionNotFound {
+  const _$SessionNotFound();
 
   @override
   String toString() {
-    return 'SessionFailure.sessionNotFetched()';
+    return 'SessionFailure.sessionNotFound()';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is SessionNotFetched);
+    return identical(this, other) || (other is SessionNotFound);
   }
 
   @override
@@ -336,14 +336,14 @@ class _$SessionNotFetched implements SessionNotFetched {
   TResult when<TResult extends Object>({
     @required TResult sessionNotCreated(),
     @required TResult sessionNotDeleted(),
-    @required TResult sessionNotFetched(),
+    @required TResult sessionNotFound(),
     @required TResult sessionNotUpdated(),
   }) {
     assert(sessionNotCreated != null);
     assert(sessionNotDeleted != null);
-    assert(sessionNotFetched != null);
+    assert(sessionNotFound != null);
     assert(sessionNotUpdated != null);
-    return sessionNotFetched();
+    return sessionNotFound();
   }
 
   @override
@@ -351,13 +351,13 @@ class _$SessionNotFetched implements SessionNotFetched {
   TResult maybeWhen<TResult extends Object>({
     TResult sessionNotCreated(),
     TResult sessionNotDeleted(),
-    TResult sessionNotFetched(),
+    TResult sessionNotFound(),
     TResult sessionNotUpdated(),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (sessionNotFetched != null) {
-      return sessionNotFetched();
+    if (sessionNotFound != null) {
+      return sessionNotFound();
     }
     return orElse();
   }
@@ -367,14 +367,14 @@ class _$SessionNotFetched implements SessionNotFetched {
   TResult map<TResult extends Object>({
     @required TResult sessionNotCreated(SessionNotCreated value),
     @required TResult sessionNotDeleted(SessionNotDeleted value),
-    @required TResult sessionNotFetched(SessionNotFetched value),
+    @required TResult sessionNotFound(SessionNotFound value),
     @required TResult sessionNotUpdated(SessionNotUpdated value),
   }) {
     assert(sessionNotCreated != null);
     assert(sessionNotDeleted != null);
-    assert(sessionNotFetched != null);
+    assert(sessionNotFound != null);
     assert(sessionNotUpdated != null);
-    return sessionNotFetched(this);
+    return sessionNotFound(this);
   }
 
   @override
@@ -382,20 +382,20 @@ class _$SessionNotFetched implements SessionNotFetched {
   TResult maybeMap<TResult extends Object>({
     TResult sessionNotCreated(SessionNotCreated value),
     TResult sessionNotDeleted(SessionNotDeleted value),
-    TResult sessionNotFetched(SessionNotFetched value),
+    TResult sessionNotFound(SessionNotFound value),
     TResult sessionNotUpdated(SessionNotUpdated value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (sessionNotFetched != null) {
-      return sessionNotFetched(this);
+    if (sessionNotFound != null) {
+      return sessionNotFound(this);
     }
     return orElse();
   }
 }
 
-abstract class SessionNotFetched implements SessionFailure {
-  const factory SessionNotFetched() = _$SessionNotFetched;
+abstract class SessionNotFound implements SessionFailure {
+  const factory SessionNotFound() = _$SessionNotFound;
 }
 
 /// @nodoc
@@ -439,12 +439,12 @@ class _$SessionNotUpdated implements SessionNotUpdated {
   TResult when<TResult extends Object>({
     @required TResult sessionNotCreated(),
     @required TResult sessionNotDeleted(),
-    @required TResult sessionNotFetched(),
+    @required TResult sessionNotFound(),
     @required TResult sessionNotUpdated(),
   }) {
     assert(sessionNotCreated != null);
     assert(sessionNotDeleted != null);
-    assert(sessionNotFetched != null);
+    assert(sessionNotFound != null);
     assert(sessionNotUpdated != null);
     return sessionNotUpdated();
   }
@@ -454,7 +454,7 @@ class _$SessionNotUpdated implements SessionNotUpdated {
   TResult maybeWhen<TResult extends Object>({
     TResult sessionNotCreated(),
     TResult sessionNotDeleted(),
-    TResult sessionNotFetched(),
+    TResult sessionNotFound(),
     TResult sessionNotUpdated(),
     @required TResult orElse(),
   }) {
@@ -470,12 +470,12 @@ class _$SessionNotUpdated implements SessionNotUpdated {
   TResult map<TResult extends Object>({
     @required TResult sessionNotCreated(SessionNotCreated value),
     @required TResult sessionNotDeleted(SessionNotDeleted value),
-    @required TResult sessionNotFetched(SessionNotFetched value),
+    @required TResult sessionNotFound(SessionNotFound value),
     @required TResult sessionNotUpdated(SessionNotUpdated value),
   }) {
     assert(sessionNotCreated != null);
     assert(sessionNotDeleted != null);
-    assert(sessionNotFetched != null);
+    assert(sessionNotFound != null);
     assert(sessionNotUpdated != null);
     return sessionNotUpdated(this);
   }
@@ -485,7 +485,7 @@ class _$SessionNotUpdated implements SessionNotUpdated {
   TResult maybeMap<TResult extends Object>({
     TResult sessionNotCreated(SessionNotCreated value),
     TResult sessionNotDeleted(SessionNotDeleted value),
-    TResult sessionNotFetched(SessionNotFetched value),
+    TResult sessionNotFound(SessionNotFound value),
     TResult sessionNotUpdated(SessionNotUpdated value),
     @required TResult orElse(),
   }) {

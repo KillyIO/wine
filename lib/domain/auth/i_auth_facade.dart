@@ -19,7 +19,7 @@ abstract class IAuthFacade {
   bool isAnonymous();
 
   /// @nodoc
-  bool isSignedIn();
+  bool isLoggedIn();
 
   /// @nodoc
   Future<Either<AuthFailure, Unit>> logInAnonymously();

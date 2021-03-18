@@ -24,6 +24,11 @@ class _$UserFailureTearOff {
   }
 
 // ignore: unused_element
+  UsernameAlreadyInUse usernameAlreadyInUse() {
+    return const UsernameAlreadyInUse();
+  }
+
+// ignore: unused_element
   UserNotFound userNotFound() {
     return const UserNotFound();
   }
@@ -39,12 +44,14 @@ mixin _$UserFailure {
   TResult when<TResult extends Object>({
     @required TResult serverError(),
     @required TResult unexpected(),
+    @required TResult usernameAlreadyInUse(),
     @required TResult userNotFound(),
   });
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult serverError(),
     TResult unexpected(),
+    TResult usernameAlreadyInUse(),
     TResult userNotFound(),
     @required TResult orElse(),
   });
@@ -52,12 +59,14 @@ mixin _$UserFailure {
   TResult map<TResult extends Object>({
     @required TResult serverError(ServerError value),
     @required TResult unexpected(Unexpected value),
+    @required TResult usernameAlreadyInUse(UsernameAlreadyInUse value),
     @required TResult userNotFound(UserNotFound value),
   });
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult serverError(ServerError value),
     TResult unexpected(Unexpected value),
+    TResult usernameAlreadyInUse(UsernameAlreadyInUse value),
     TResult userNotFound(UserNotFound value),
     @required TResult orElse(),
   });
@@ -119,10 +128,12 @@ class _$ServerError implements ServerError {
   TResult when<TResult extends Object>({
     @required TResult serverError(),
     @required TResult unexpected(),
+    @required TResult usernameAlreadyInUse(),
     @required TResult userNotFound(),
   }) {
     assert(serverError != null);
     assert(unexpected != null);
+    assert(usernameAlreadyInUse != null);
     assert(userNotFound != null);
     return serverError();
   }
@@ -132,6 +143,7 @@ class _$ServerError implements ServerError {
   TResult maybeWhen<TResult extends Object>({
     TResult serverError(),
     TResult unexpected(),
+    TResult usernameAlreadyInUse(),
     TResult userNotFound(),
     @required TResult orElse(),
   }) {
@@ -147,10 +159,12 @@ class _$ServerError implements ServerError {
   TResult map<TResult extends Object>({
     @required TResult serverError(ServerError value),
     @required TResult unexpected(Unexpected value),
+    @required TResult usernameAlreadyInUse(UsernameAlreadyInUse value),
     @required TResult userNotFound(UserNotFound value),
   }) {
     assert(serverError != null);
     assert(unexpected != null);
+    assert(usernameAlreadyInUse != null);
     assert(userNotFound != null);
     return serverError(this);
   }
@@ -160,6 +174,7 @@ class _$ServerError implements ServerError {
   TResult maybeMap<TResult extends Object>({
     TResult serverError(ServerError value),
     TResult unexpected(Unexpected value),
+    TResult usernameAlreadyInUse(UsernameAlreadyInUse value),
     TResult userNotFound(UserNotFound value),
     @required TResult orElse(),
   }) {
@@ -214,10 +229,12 @@ class _$Unexpected implements Unexpected {
   TResult when<TResult extends Object>({
     @required TResult serverError(),
     @required TResult unexpected(),
+    @required TResult usernameAlreadyInUse(),
     @required TResult userNotFound(),
   }) {
     assert(serverError != null);
     assert(unexpected != null);
+    assert(usernameAlreadyInUse != null);
     assert(userNotFound != null);
     return unexpected();
   }
@@ -227,6 +244,7 @@ class _$Unexpected implements Unexpected {
   TResult maybeWhen<TResult extends Object>({
     TResult serverError(),
     TResult unexpected(),
+    TResult usernameAlreadyInUse(),
     TResult userNotFound(),
     @required TResult orElse(),
   }) {
@@ -242,10 +260,12 @@ class _$Unexpected implements Unexpected {
   TResult map<TResult extends Object>({
     @required TResult serverError(ServerError value),
     @required TResult unexpected(Unexpected value),
+    @required TResult usernameAlreadyInUse(UsernameAlreadyInUse value),
     @required TResult userNotFound(UserNotFound value),
   }) {
     assert(serverError != null);
     assert(unexpected != null);
+    assert(usernameAlreadyInUse != null);
     assert(userNotFound != null);
     return unexpected(this);
   }
@@ -255,6 +275,7 @@ class _$Unexpected implements Unexpected {
   TResult maybeMap<TResult extends Object>({
     TResult serverError(ServerError value),
     TResult unexpected(Unexpected value),
+    TResult usernameAlreadyInUse(UsernameAlreadyInUse value),
     TResult userNotFound(UserNotFound value),
     @required TResult orElse(),
   }) {
@@ -268,6 +289,109 @@ class _$Unexpected implements Unexpected {
 
 abstract class Unexpected implements UserFailure {
   const factory Unexpected() = _$Unexpected;
+}
+
+/// @nodoc
+abstract class $UsernameAlreadyInUseCopyWith<$Res> {
+  factory $UsernameAlreadyInUseCopyWith(UsernameAlreadyInUse value,
+          $Res Function(UsernameAlreadyInUse) then) =
+      _$UsernameAlreadyInUseCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$UsernameAlreadyInUseCopyWithImpl<$Res>
+    extends _$UserFailureCopyWithImpl<$Res>
+    implements $UsernameAlreadyInUseCopyWith<$Res> {
+  _$UsernameAlreadyInUseCopyWithImpl(
+      UsernameAlreadyInUse _value, $Res Function(UsernameAlreadyInUse) _then)
+      : super(_value, (v) => _then(v as UsernameAlreadyInUse));
+
+  @override
+  UsernameAlreadyInUse get _value => super._value as UsernameAlreadyInUse;
+}
+
+/// @nodoc
+class _$UsernameAlreadyInUse implements UsernameAlreadyInUse {
+  const _$UsernameAlreadyInUse();
+
+  @override
+  String toString() {
+    return 'UserFailure.usernameAlreadyInUse()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is UsernameAlreadyInUse);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object>({
+    @required TResult serverError(),
+    @required TResult unexpected(),
+    @required TResult usernameAlreadyInUse(),
+    @required TResult userNotFound(),
+  }) {
+    assert(serverError != null);
+    assert(unexpected != null);
+    assert(usernameAlreadyInUse != null);
+    assert(userNotFound != null);
+    return usernameAlreadyInUse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object>({
+    TResult serverError(),
+    TResult unexpected(),
+    TResult usernameAlreadyInUse(),
+    TResult userNotFound(),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (usernameAlreadyInUse != null) {
+      return usernameAlreadyInUse();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object>({
+    @required TResult serverError(ServerError value),
+    @required TResult unexpected(Unexpected value),
+    @required TResult usernameAlreadyInUse(UsernameAlreadyInUse value),
+    @required TResult userNotFound(UserNotFound value),
+  }) {
+    assert(serverError != null);
+    assert(unexpected != null);
+    assert(usernameAlreadyInUse != null);
+    assert(userNotFound != null);
+    return usernameAlreadyInUse(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object>({
+    TResult serverError(ServerError value),
+    TResult unexpected(Unexpected value),
+    TResult usernameAlreadyInUse(UsernameAlreadyInUse value),
+    TResult userNotFound(UserNotFound value),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (usernameAlreadyInUse != null) {
+      return usernameAlreadyInUse(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UsernameAlreadyInUse implements UserFailure {
+  const factory UsernameAlreadyInUse() = _$UsernameAlreadyInUse;
 }
 
 /// @nodoc
@@ -310,10 +434,12 @@ class _$UserNotFound implements UserNotFound {
   TResult when<TResult extends Object>({
     @required TResult serverError(),
     @required TResult unexpected(),
+    @required TResult usernameAlreadyInUse(),
     @required TResult userNotFound(),
   }) {
     assert(serverError != null);
     assert(unexpected != null);
+    assert(usernameAlreadyInUse != null);
     assert(userNotFound != null);
     return userNotFound();
   }
@@ -323,6 +449,7 @@ class _$UserNotFound implements UserNotFound {
   TResult maybeWhen<TResult extends Object>({
     TResult serverError(),
     TResult unexpected(),
+    TResult usernameAlreadyInUse(),
     TResult userNotFound(),
     @required TResult orElse(),
   }) {
@@ -338,10 +465,12 @@ class _$UserNotFound implements UserNotFound {
   TResult map<TResult extends Object>({
     @required TResult serverError(ServerError value),
     @required TResult unexpected(Unexpected value),
+    @required TResult usernameAlreadyInUse(UsernameAlreadyInUse value),
     @required TResult userNotFound(UserNotFound value),
   }) {
     assert(serverError != null);
     assert(unexpected != null);
+    assert(usernameAlreadyInUse != null);
     assert(userNotFound != null);
     return userNotFound(this);
   }
@@ -351,6 +480,7 @@ class _$UserNotFound implements UserNotFound {
   TResult maybeMap<TResult extends Object>({
     TResult serverError(ServerError value),
     TResult unexpected(Unexpected value),
+    TResult usernameAlreadyInUse(UsernameAlreadyInUse value),
     TResult userNotFound(UserNotFound value),
     @required TResult orElse(),
   }) {

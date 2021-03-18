@@ -1,6 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:validators/validators.dart';
-import 'package:wine/domain/core/failures.dart';
+import 'package:wine/domain/core/value_failure.dart';
 
 /// @nodoc
 Either<ValueFailure<String>, String> validateConfirmPassword(

@@ -14,69 +14,36 @@ class SplashLayout extends StatelessWidget {
       listener: (context, state) {
         state.maybeMap(
           failure: (value) {
-            if (value.authOption != null) {
-              value.authOption.fold(
-                null,
-                (some) => some.fold(
-                  (failure) => failure.maybeMap(
-                    orElse: null,
-                    serverError: (_) async =>
-                        restartApp(context, 'An unexpected error occured!'),
-                  ),
-                  null,
-                ),
-              );
-            } else if (value.defaultCoverOption != null) {
-              value.defaultCoverOption.fold(
-                null,
-                (some) => some.fold(
-                  (failure) => failure.maybeMap(
-                    defaultCoverURLsNotCached: (_) async =>
-                        restartApp(context, 'Default covers were not cached!'),
-                    defaultCoverURLsNotLoaded: (_) async =>
-                        restartApp(context, 'Default covers were not loaded!'),
-                    orElse: null,
-                  ),
-                  null,
-                ),
-              );
-            } else if (value.sessionOption != null) {
-              value.sessionOption.fold(
-                null,
-                (some) => some.fold(
-                  (failure) => failure.maybeMap(
-                    sessionNotUpdated: (_) async =>
-                        restartApp(context, 'Session was not updated!'),
-                    orElse: null,
-                  ),
-                  null,
-                ),
-              );
-            } else if (value.settingsOption != null) {
-              value.settingsOption.fold(
-                null,
-                (some) => some.fold(
-                  (failure) => failure.maybeMap(
-                    settingsNotInitialized: (_) async =>
-                        restartApp(context, 'Settings were not initialized!'),
-                    orElse: null,
-                  ),
-                  null,
-                ),
-              );
-            } else if (value.userOption != null) {
-              value.userOption.fold(
-                null,
-                (some) => some.fold(
-                  (failure) => failure.maybeMap(
-                    userNotFound: (_) async =>
-                        restartApp(context, 'User account not found!'),
-                    orElse: null,
-                  ),
-                  null,
-                ),
-              );
-            }
+            value.failure.maybeMap(
+              auth: (f) => f.f.maybeMap(
+                orElse: null,
+                serverError: (_) async =>
+                    restartApp(context, 'An unexpected error occured!'),
+              ),
+              defaultCovers: (f) => f.f.maybeMap(
+                defaultCoverURLsNotCached: (_) async =>
+                    restartApp(context, 'Default covers were not cached!'),
+                defaultCoverURLsNotLoaded: (_) async =>
+                    restartApp(context, 'Default covers were not loaded!'),
+                orElse: null,
+              ),
+              session: (f) => f.f.maybeMap(
+                sessionNotUpdated: (_) async =>
+                    restartApp(context, 'Session was not updated!'),
+                orElse: null,
+              ),
+              settings: (f) => f.f.maybeMap(
+                settingsNotInitialized: (_) async =>
+                    restartApp(context, 'Settings were not initialized!'),
+                orElse: null,
+              ),
+              user: (f) => f.f.maybeMap(
+                userNotFound: (_) async =>
+                    restartApp(context, 'User account not found!'),
+                orElse: null,
+              ),
+              orElse: null,
+            );
           },
           goToHome: (value) {
             // TODO Add navigate to home

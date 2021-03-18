@@ -15,5 +15,8 @@ abstract class UserFailure with _$UserFailure {
   const factory UserFailure.unexpected() = Unexpected;
 
   /// @nodoc
+  const factory UserFailure.usernameAlreadyInUse() = UsernameAlreadyInUse;
+
+  /// @nodoc
   const factory UserFailure.userNotFound() = UserNotFound;
 }

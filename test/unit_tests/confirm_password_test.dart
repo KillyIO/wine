@@ -1,7 +1,7 @@
 import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:wine/domain/auth/confirm_password.dart';
-import 'package:wine/domain/core/failures.dart';
+import 'package:wine/domain/core/value_failure.dart';
 
 void main() {
   group('ConfirmPassword -', () {

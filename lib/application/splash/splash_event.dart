@@ -18,13 +18,19 @@ abstract class SplashEvent with _$SplashEvent {
   const factory SplashEvent.sessionFetched(User session) = SessionFetched;
 
   /// @nodoc
-  const factory SplashEvent.sessionNotFetched() = SessionNotFetched;
-
-  /// @nodoc
-  const factory SplashEvent.splashPageLaunched() = SplashPageLaunched;
+  const factory SplashEvent.sessionNotFound() = SessionNotFound;
 
   /// @nodoc
   const factory SplashEvent.settingsInitialized() = SettingsInitialized;
+
+  /// @nodoc
+  const factory SplashEvent.settingsFetched() = SettingsFetched;
+
+  /// @nodoc
+  const factory SplashEvent.settingsNotFound() = SettingsNotFound;
+
+  /// @nodoc
+  const factory SplashEvent.splashPageLaunched() = SplashPageLaunched;
 
   /// @nodoc
   const factory SplashEvent.userLoaded(User user) = UserLoaded;

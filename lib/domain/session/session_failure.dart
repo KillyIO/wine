@@ -15,7 +15,7 @@ abstract class SessionFailure with _$SessionFailure {
   const factory SessionFailure.sessionNotDeleted() = SessionNotDeleted;
 
   /// @nodoc
-  const factory SessionFailure.sessionNotFetched() = SessionNotFetched;
+  const factory SessionFailure.sessionNotFound() = SessionNotFound;
 
   /// @nodoc
   const factory SessionFailure.sessionNotUpdated() = SessionNotUpdated;

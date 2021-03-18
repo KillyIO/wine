@@ -50,6 +50,8 @@ class FirebaseAuthFacade implements IAuthFacade {
         return left(const AuthFailure.emailAlreadyInUse());
       }
       return left(const AuthFailure.serverError());
+    } catch (_) {
+      return left(const AuthFailure.unexpected());
     }
   }
 
@@ -64,7 +66,7 @@ class FirebaseAuthFacade implements IAuthFacade {
   }
 
   @override
-  bool isSignedIn() {
+  bool isLoggedIn() {
     final currentUser = _firebaseAuth.currentUser;
     return currentUser != null;
   }
@@ -76,6 +78,8 @@ class FirebaseAuthFacade implements IAuthFacade {
       return right(unit);
     } on FirebaseException catch (_) {
       return left(const AuthFailure.serverError());
+    } catch (_) {
+      return left(const AuthFailure.unexpected());
     }
   }
 
@@ -106,6 +110,8 @@ class FirebaseAuthFacade implements IAuthFacade {
         );
       }
       return left(const AuthFailure.serverError());
+    } catch (_) {
+      return left(const AuthFailure.unexpected());
     }
   }
 
@@ -136,9 +142,13 @@ class FirebaseAuthFacade implements IAuthFacade {
           ));
         }
         return left(const AuthFailure.serverError());
+      } catch (_) {
+        return left(const AuthFailure.unexpected());
       }
     } on FirebaseException catch (_) {
       return left(const AuthFailure.serverError());
+    } catch (_) {
+      return left(const AuthFailure.unexpected());
     }
   }
 
@@ -159,6 +169,8 @@ class FirebaseAuthFacade implements IAuthFacade {
       return right(unit);
     } on FirebaseException catch (_) {
       return left(const AuthFailure.serverError());
+    } catch (_) {
+      return left(const AuthFailure.unexpected());
     }
   }
 
@@ -174,6 +186,8 @@ class FirebaseAuthFacade implements IAuthFacade {
       return left(const AuthFailure.serverError());
     } on FirebaseException catch (_) {
       return left(const AuthFailure.serverError());
+    } catch (_) {
+      return left(const AuthFailure.unexpected());
     }
   }
 
