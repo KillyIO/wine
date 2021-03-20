@@ -91,7 +91,7 @@ class SplashBloc extends Bloc<SplashEvent, SplashState> {
       },
       sessionNotFound: (_) async* {
         debugPrint('=== sessionNotFound ===');
-        yield* (await _sessionRepository.fetchSession()).fold(
+        yield* (await _sessionRepository.createSession()).fold(
           (failure) async* {
             yield SplashState.failure(CoreFailure.session(failure));
           },

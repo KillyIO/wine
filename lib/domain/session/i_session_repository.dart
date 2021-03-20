@@ -5,7 +5,7 @@ import 'package:wine/domain/user/user.dart';
 /// @nodoc
 abstract class ISessionRepository {
   /// @nodoc
-  Future<Either<SessionFailure, Unit>> createSession(User user);
+  Future<Either<SessionFailure, Unit>> createSession();
 
   /// @nodoc
   Future<Either<SessionFailure, Unit>> deleteSession();
