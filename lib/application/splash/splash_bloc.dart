@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:bloc/bloc.dart';
 import 'package:dartz/dartz.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 
@@ -42,6 +43,7 @@ class SplashBloc extends Bloc<SplashEvent, SplashState> {
   ) async* {
     yield* event.map(
       authenticated: (_) async* {
+        debugPrint('=== authenticated ===');
         yield* (await _defaultCoversRepository.loadDefaultCoverURLs()).fold(
           (failure) async* {
             yield SplashState.failure(CoreFailure.defaultCovers(failure));
@@ -52,6 +54,7 @@ class SplashBloc extends Bloc<SplashEvent, SplashState> {
         );
       },
       defaultCoverURLsCached: (_) async* {
+        debugPrint('=== defaultCoverURLsCached ===');
         (await _settingsRepository.fetchSettings()).fold(
           (_) {
             add(const SplashEvent.settingsNotFound());
@@ -62,6 +65,7 @@ class SplashBloc extends Bloc<SplashEvent, SplashState> {
         );
       },
       defaultCoverURLsLoaded: (value) async* {
+        debugPrint('=== defaultCoverURLsLoaded ===');
         yield* (await _defaultCoversRepository
                 .cacheDefaultCoverURLs(value.defaultCoverURLs))
             .fold(
@@ -74,6 +78,7 @@ class SplashBloc extends Bloc<SplashEvent, SplashState> {
         );
       },
       sessionFetched: (value) async* {
+        debugPrint('=== sessionFetched ===');
         yield* (await _userRepository.loadUser(value.session.uid.getOrCrash()))
             .fold(
           (failure) async* {
@@ -85,6 +90,7 @@ class SplashBloc extends Bloc<SplashEvent, SplashState> {
         );
       },
       sessionNotFound: (_) async* {
+        debugPrint('=== sessionNotFound ===');
         yield* (await _sessionRepository.fetchSession()).fold(
           (failure) async* {
             yield SplashState.failure(CoreFailure.session(failure));
@@ -95,6 +101,7 @@ class SplashBloc extends Bloc<SplashEvent, SplashState> {
         );
       },
       splashPageLaunched: (_) async* {
+        debugPrint('=== splashPageLaunched ===');
         Either<AuthFailure, Unit> failureOrSuccess;
 
         if (!_authFacade.isLoggedIn()) {
@@ -111,12 +118,15 @@ class SplashBloc extends Bloc<SplashEvent, SplashState> {
         );
       },
       settingsFetched: (_) async* {
+        debugPrint('=== settingsFetched ===');
         await _fetchSession();
       },
       settingsInitialized: (_) async* {
+        debugPrint('=== settingsInitialized ===');
         await _fetchSession();
       },
       settingsNotFound: (_) async* {
+        debugPrint('=== settingsNotFound ===');
         yield* (await _settingsRepository.initializeSettings()).fold(
           (failure) async* {
             yield SplashState.failure(CoreFailure.settings(failure));
@@ -127,6 +137,7 @@ class SplashBloc extends Bloc<SplashEvent, SplashState> {
         );
       },
       userLoaded: (value) async* {
+        debugPrint('=== userLoaded ===');
         yield* (await _sessionRepository.updateSession(value.user)).fold(
             (failure) async* {
           yield SplashState.failure(CoreFailure.session(failure));

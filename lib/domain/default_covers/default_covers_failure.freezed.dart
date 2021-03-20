@@ -27,6 +27,16 @@ class _$DefaultCoversFailureTearOff {
   DefaultCoverURLsNotLoaded defaultCoverURLsNotLoaded() {
     return const DefaultCoverURLsNotLoaded();
   }
+
+// ignore: unused_element
+  ServerError serverError() {
+    return const ServerError();
+  }
+
+// ignore: unused_element
+  Unexpected unexpected() {
+    return const Unexpected();
+  }
 }
 
 /// @nodoc
@@ -40,12 +50,16 @@ mixin _$DefaultCoversFailure {
     @required TResult defaultCoverURLsNotCached(),
     @required TResult defaultCoverURLsNotFetched(),
     @required TResult defaultCoverURLsNotLoaded(),
+    @required TResult serverError(),
+    @required TResult unexpected(),
   });
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult defaultCoverURLsNotCached(),
     TResult defaultCoverURLsNotFetched(),
     TResult defaultCoverURLsNotLoaded(),
+    TResult serverError(),
+    TResult unexpected(),
     @required TResult orElse(),
   });
   @optionalTypeArgs
@@ -56,12 +70,16 @@ mixin _$DefaultCoversFailure {
         TResult defaultCoverURLsNotFetched(DefaultCoverURLsNotFetched value),
     @required
         TResult defaultCoverURLsNotLoaded(DefaultCoverURLsNotLoaded value),
+    @required TResult serverError(ServerError value),
+    @required TResult unexpected(Unexpected value),
   });
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult defaultCoverURLsNotCached(DefaultCoverURLsNotCached value),
     TResult defaultCoverURLsNotFetched(DefaultCoverURLsNotFetched value),
     TResult defaultCoverURLsNotLoaded(DefaultCoverURLsNotLoaded value),
+    TResult serverError(ServerError value),
+    TResult unexpected(Unexpected value),
     @required TResult orElse(),
   });
 }
@@ -126,10 +144,14 @@ class _$DefaultCoverURLsNotCached implements DefaultCoverURLsNotCached {
     @required TResult defaultCoverURLsNotCached(),
     @required TResult defaultCoverURLsNotFetched(),
     @required TResult defaultCoverURLsNotLoaded(),
+    @required TResult serverError(),
+    @required TResult unexpected(),
   }) {
     assert(defaultCoverURLsNotCached != null);
     assert(defaultCoverURLsNotFetched != null);
     assert(defaultCoverURLsNotLoaded != null);
+    assert(serverError != null);
+    assert(unexpected != null);
     return defaultCoverURLsNotCached();
   }
 
@@ -139,6 +161,8 @@ class _$DefaultCoverURLsNotCached implements DefaultCoverURLsNotCached {
     TResult defaultCoverURLsNotCached(),
     TResult defaultCoverURLsNotFetched(),
     TResult defaultCoverURLsNotLoaded(),
+    TResult serverError(),
+    TResult unexpected(),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -157,10 +181,14 @@ class _$DefaultCoverURLsNotCached implements DefaultCoverURLsNotCached {
         TResult defaultCoverURLsNotFetched(DefaultCoverURLsNotFetched value),
     @required
         TResult defaultCoverURLsNotLoaded(DefaultCoverURLsNotLoaded value),
+    @required TResult serverError(ServerError value),
+    @required TResult unexpected(Unexpected value),
   }) {
     assert(defaultCoverURLsNotCached != null);
     assert(defaultCoverURLsNotFetched != null);
     assert(defaultCoverURLsNotLoaded != null);
+    assert(serverError != null);
+    assert(unexpected != null);
     return defaultCoverURLsNotCached(this);
   }
 
@@ -170,6 +198,8 @@ class _$DefaultCoverURLsNotCached implements DefaultCoverURLsNotCached {
     TResult defaultCoverURLsNotCached(DefaultCoverURLsNotCached value),
     TResult defaultCoverURLsNotFetched(DefaultCoverURLsNotFetched value),
     TResult defaultCoverURLsNotLoaded(DefaultCoverURLsNotLoaded value),
+    TResult serverError(ServerError value),
+    TResult unexpected(Unexpected value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -227,10 +257,14 @@ class _$DefaultCoverURLsNotFetched implements DefaultCoverURLsNotFetched {
     @required TResult defaultCoverURLsNotCached(),
     @required TResult defaultCoverURLsNotFetched(),
     @required TResult defaultCoverURLsNotLoaded(),
+    @required TResult serverError(),
+    @required TResult unexpected(),
   }) {
     assert(defaultCoverURLsNotCached != null);
     assert(defaultCoverURLsNotFetched != null);
     assert(defaultCoverURLsNotLoaded != null);
+    assert(serverError != null);
+    assert(unexpected != null);
     return defaultCoverURLsNotFetched();
   }
 
@@ -240,6 +274,8 @@ class _$DefaultCoverURLsNotFetched implements DefaultCoverURLsNotFetched {
     TResult defaultCoverURLsNotCached(),
     TResult defaultCoverURLsNotFetched(),
     TResult defaultCoverURLsNotLoaded(),
+    TResult serverError(),
+    TResult unexpected(),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -258,10 +294,14 @@ class _$DefaultCoverURLsNotFetched implements DefaultCoverURLsNotFetched {
         TResult defaultCoverURLsNotFetched(DefaultCoverURLsNotFetched value),
     @required
         TResult defaultCoverURLsNotLoaded(DefaultCoverURLsNotLoaded value),
+    @required TResult serverError(ServerError value),
+    @required TResult unexpected(Unexpected value),
   }) {
     assert(defaultCoverURLsNotCached != null);
     assert(defaultCoverURLsNotFetched != null);
     assert(defaultCoverURLsNotLoaded != null);
+    assert(serverError != null);
+    assert(unexpected != null);
     return defaultCoverURLsNotFetched(this);
   }
 
@@ -271,6 +311,8 @@ class _$DefaultCoverURLsNotFetched implements DefaultCoverURLsNotFetched {
     TResult defaultCoverURLsNotCached(DefaultCoverURLsNotCached value),
     TResult defaultCoverURLsNotFetched(DefaultCoverURLsNotFetched value),
     TResult defaultCoverURLsNotLoaded(DefaultCoverURLsNotLoaded value),
+    TResult serverError(ServerError value),
+    TResult unexpected(Unexpected value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -328,10 +370,14 @@ class _$DefaultCoverURLsNotLoaded implements DefaultCoverURLsNotLoaded {
     @required TResult defaultCoverURLsNotCached(),
     @required TResult defaultCoverURLsNotFetched(),
     @required TResult defaultCoverURLsNotLoaded(),
+    @required TResult serverError(),
+    @required TResult unexpected(),
   }) {
     assert(defaultCoverURLsNotCached != null);
     assert(defaultCoverURLsNotFetched != null);
     assert(defaultCoverURLsNotLoaded != null);
+    assert(serverError != null);
+    assert(unexpected != null);
     return defaultCoverURLsNotLoaded();
   }
 
@@ -341,6 +387,8 @@ class _$DefaultCoverURLsNotLoaded implements DefaultCoverURLsNotLoaded {
     TResult defaultCoverURLsNotCached(),
     TResult defaultCoverURLsNotFetched(),
     TResult defaultCoverURLsNotLoaded(),
+    TResult serverError(),
+    TResult unexpected(),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -359,10 +407,14 @@ class _$DefaultCoverURLsNotLoaded implements DefaultCoverURLsNotLoaded {
         TResult defaultCoverURLsNotFetched(DefaultCoverURLsNotFetched value),
     @required
         TResult defaultCoverURLsNotLoaded(DefaultCoverURLsNotLoaded value),
+    @required TResult serverError(ServerError value),
+    @required TResult unexpected(Unexpected value),
   }) {
     assert(defaultCoverURLsNotCached != null);
     assert(defaultCoverURLsNotFetched != null);
     assert(defaultCoverURLsNotLoaded != null);
+    assert(serverError != null);
+    assert(unexpected != null);
     return defaultCoverURLsNotLoaded(this);
   }
 
@@ -372,6 +424,8 @@ class _$DefaultCoverURLsNotLoaded implements DefaultCoverURLsNotLoaded {
     TResult defaultCoverURLsNotCached(DefaultCoverURLsNotCached value),
     TResult defaultCoverURLsNotFetched(DefaultCoverURLsNotFetched value),
     TResult defaultCoverURLsNotLoaded(DefaultCoverURLsNotLoaded value),
+    TResult serverError(ServerError value),
+    TResult unexpected(Unexpected value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -384,4 +438,227 @@ class _$DefaultCoverURLsNotLoaded implements DefaultCoverURLsNotLoaded {
 
 abstract class DefaultCoverURLsNotLoaded implements DefaultCoversFailure {
   const factory DefaultCoverURLsNotLoaded() = _$DefaultCoverURLsNotLoaded;
+}
+
+/// @nodoc
+abstract class $ServerErrorCopyWith<$Res> {
+  factory $ServerErrorCopyWith(
+          ServerError value, $Res Function(ServerError) then) =
+      _$ServerErrorCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$ServerErrorCopyWithImpl<$Res>
+    extends _$DefaultCoversFailureCopyWithImpl<$Res>
+    implements $ServerErrorCopyWith<$Res> {
+  _$ServerErrorCopyWithImpl(
+      ServerError _value, $Res Function(ServerError) _then)
+      : super(_value, (v) => _then(v as ServerError));
+
+  @override
+  ServerError get _value => super._value as ServerError;
+}
+
+/// @nodoc
+class _$ServerError implements ServerError {
+  const _$ServerError();
+
+  @override
+  String toString() {
+    return 'DefaultCoversFailure.serverError()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is ServerError);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object>({
+    @required TResult defaultCoverURLsNotCached(),
+    @required TResult defaultCoverURLsNotFetched(),
+    @required TResult defaultCoverURLsNotLoaded(),
+    @required TResult serverError(),
+    @required TResult unexpected(),
+  }) {
+    assert(defaultCoverURLsNotCached != null);
+    assert(defaultCoverURLsNotFetched != null);
+    assert(defaultCoverURLsNotLoaded != null);
+    assert(serverError != null);
+    assert(unexpected != null);
+    return serverError();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object>({
+    TResult defaultCoverURLsNotCached(),
+    TResult defaultCoverURLsNotFetched(),
+    TResult defaultCoverURLsNotLoaded(),
+    TResult serverError(),
+    TResult unexpected(),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (serverError != null) {
+      return serverError();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object>({
+    @required
+        TResult defaultCoverURLsNotCached(DefaultCoverURLsNotCached value),
+    @required
+        TResult defaultCoverURLsNotFetched(DefaultCoverURLsNotFetched value),
+    @required
+        TResult defaultCoverURLsNotLoaded(DefaultCoverURLsNotLoaded value),
+    @required TResult serverError(ServerError value),
+    @required TResult unexpected(Unexpected value),
+  }) {
+    assert(defaultCoverURLsNotCached != null);
+    assert(defaultCoverURLsNotFetched != null);
+    assert(defaultCoverURLsNotLoaded != null);
+    assert(serverError != null);
+    assert(unexpected != null);
+    return serverError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object>({
+    TResult defaultCoverURLsNotCached(DefaultCoverURLsNotCached value),
+    TResult defaultCoverURLsNotFetched(DefaultCoverURLsNotFetched value),
+    TResult defaultCoverURLsNotLoaded(DefaultCoverURLsNotLoaded value),
+    TResult serverError(ServerError value),
+    TResult unexpected(Unexpected value),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (serverError != null) {
+      return serverError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ServerError implements DefaultCoversFailure {
+  const factory ServerError() = _$ServerError;
+}
+
+/// @nodoc
+abstract class $UnexpectedCopyWith<$Res> {
+  factory $UnexpectedCopyWith(
+          Unexpected value, $Res Function(Unexpected) then) =
+      _$UnexpectedCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$UnexpectedCopyWithImpl<$Res>
+    extends _$DefaultCoversFailureCopyWithImpl<$Res>
+    implements $UnexpectedCopyWith<$Res> {
+  _$UnexpectedCopyWithImpl(Unexpected _value, $Res Function(Unexpected) _then)
+      : super(_value, (v) => _then(v as Unexpected));
+
+  @override
+  Unexpected get _value => super._value as Unexpected;
+}
+
+/// @nodoc
+class _$Unexpected implements Unexpected {
+  const _$Unexpected();
+
+  @override
+  String toString() {
+    return 'DefaultCoversFailure.unexpected()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is Unexpected);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object>({
+    @required TResult defaultCoverURLsNotCached(),
+    @required TResult defaultCoverURLsNotFetched(),
+    @required TResult defaultCoverURLsNotLoaded(),
+    @required TResult serverError(),
+    @required TResult unexpected(),
+  }) {
+    assert(defaultCoverURLsNotCached != null);
+    assert(defaultCoverURLsNotFetched != null);
+    assert(defaultCoverURLsNotLoaded != null);
+    assert(serverError != null);
+    assert(unexpected != null);
+    return unexpected();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object>({
+    TResult defaultCoverURLsNotCached(),
+    TResult defaultCoverURLsNotFetched(),
+    TResult defaultCoverURLsNotLoaded(),
+    TResult serverError(),
+    TResult unexpected(),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (unexpected != null) {
+      return unexpected();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object>({
+    @required
+        TResult defaultCoverURLsNotCached(DefaultCoverURLsNotCached value),
+    @required
+        TResult defaultCoverURLsNotFetched(DefaultCoverURLsNotFetched value),
+    @required
+        TResult defaultCoverURLsNotLoaded(DefaultCoverURLsNotLoaded value),
+    @required TResult serverError(ServerError value),
+    @required TResult unexpected(Unexpected value),
+  }) {
+    assert(defaultCoverURLsNotCached != null);
+    assert(defaultCoverURLsNotFetched != null);
+    assert(defaultCoverURLsNotLoaded != null);
+    assert(serverError != null);
+    assert(unexpected != null);
+    return unexpected(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object>({
+    TResult defaultCoverURLsNotCached(DefaultCoverURLsNotCached value),
+    TResult defaultCoverURLsNotFetched(DefaultCoverURLsNotFetched value),
+    TResult defaultCoverURLsNotLoaded(DefaultCoverURLsNotLoaded value),
+    TResult serverError(ServerError value),
+    TResult unexpected(Unexpected value),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (unexpected != null) {
+      return unexpected(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class Unexpected implements DefaultCoversFailure {
+  const factory Unexpected() = _$Unexpected;
 }

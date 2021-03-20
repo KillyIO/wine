@@ -16,4 +16,10 @@ abstract class DefaultCoversFailure with _$DefaultCoversFailure {
   /// @nodoc
   const factory DefaultCoversFailure.defaultCoverURLsNotLoaded() =
       DefaultCoverURLsNotLoaded;
+
+  /// @nodoc
+  const factory DefaultCoversFailure.serverError() = ServerError;
+
+  /// @nodoc
+  const factory DefaultCoversFailure.unexpected() = Unexpected;
 }

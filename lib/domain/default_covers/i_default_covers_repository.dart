@@ -9,9 +9,7 @@ abstract class IDefaultCoversRepository {
   );
 
   /// @nodoc
-  Future<Either<DefaultCoversFailure, String>> fetchDefaultCoverURLByKey(
-    String key,
-  );
+  Either<DefaultCoversFailure, String> fetchDefaultCoverURLByKey(String key);
 
   /// @nodoc
   Future<Either<DefaultCoversFailure, Map<String, String>>>

@@ -14,9 +14,10 @@ Future<void> main() async {
 
   Bloc.observer = SimpleBlocObserver();
 
-  configureInjection(Environment.dev);
-
-  await Firebase.initializeApp();
+  await Future.wait([
+    configureInjection(Environment.dev),
+    Firebase.initializeApp(),
+  ]);
 
   runApp(AppDevelopment());
 }
