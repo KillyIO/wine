@@ -28,8 +28,7 @@ class SessionRepository implements ISessionRepository {
 
     await _sessionsBox.put(firebaseUser.uid, {});
 
-    final sessionTest = _sessionsBox.get(firebaseUser.uid);
-    if (sessionTest != null) return right(unit);
+    if (_sessionsBox.get(firebaseUser.uid) != null) return right(unit);
 
     return left(const SessionFailure.sessionNotCreated());
   }

@@ -9,7 +9,7 @@ abstract class SettingsFailure with _$SettingsFailure {
   const factory SettingsFailure.settingsNotDeleted() = SettingsNotDeleted;
 
   /// @nodoc
-  const factory SettingsFailure.settingsNotFetched() = SettingsNotFetched;
+  const factory SettingsFailure.settingsNotFound() = SettingsNotFound;
 
   /// @nodoc
   const factory SettingsFailure.settingsNotInitialized() =

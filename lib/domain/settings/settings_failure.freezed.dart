@@ -19,8 +19,8 @@ class _$SettingsFailureTearOff {
   }
 
 // ignore: unused_element
-  SettingsNotFetched settingsNotFetched() {
-    return const SettingsNotFetched();
+  SettingsNotFound settingsNotFound() {
+    return const SettingsNotFound();
   }
 
 // ignore: unused_element
@@ -43,14 +43,14 @@ mixin _$SettingsFailure {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult settingsNotDeleted(),
-    @required TResult settingsNotFetched(),
+    @required TResult settingsNotFound(),
     @required TResult settingsNotInitialized(),
     @required TResult settingsNotUpdated(),
   });
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult settingsNotDeleted(),
-    TResult settingsNotFetched(),
+    TResult settingsNotFound(),
     TResult settingsNotInitialized(),
     TResult settingsNotUpdated(),
     @required TResult orElse(),
@@ -58,14 +58,14 @@ mixin _$SettingsFailure {
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult settingsNotDeleted(SettingsNotDeleted value),
-    @required TResult settingsNotFetched(SettingsNotFetched value),
+    @required TResult settingsNotFound(SettingsNotFound value),
     @required TResult settingsNotInitialized(SettingsNotInitialized value),
     @required TResult settingsNotUpdated(SettingsNotUpdated value),
   });
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult settingsNotDeleted(SettingsNotDeleted value),
-    TResult settingsNotFetched(SettingsNotFetched value),
+    TResult settingsNotFound(SettingsNotFound value),
     TResult settingsNotInitialized(SettingsNotInitialized value),
     TResult settingsNotUpdated(SettingsNotUpdated value),
     @required TResult orElse(),
@@ -129,12 +129,12 @@ class _$SettingsNotDeleted implements SettingsNotDeleted {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult settingsNotDeleted(),
-    @required TResult settingsNotFetched(),
+    @required TResult settingsNotFound(),
     @required TResult settingsNotInitialized(),
     @required TResult settingsNotUpdated(),
   }) {
     assert(settingsNotDeleted != null);
-    assert(settingsNotFetched != null);
+    assert(settingsNotFound != null);
     assert(settingsNotInitialized != null);
     assert(settingsNotUpdated != null);
     return settingsNotDeleted();
@@ -144,7 +144,7 @@ class _$SettingsNotDeleted implements SettingsNotDeleted {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult settingsNotDeleted(),
-    TResult settingsNotFetched(),
+    TResult settingsNotFound(),
     TResult settingsNotInitialized(),
     TResult settingsNotUpdated(),
     @required TResult orElse(),
@@ -160,12 +160,12 @@ class _$SettingsNotDeleted implements SettingsNotDeleted {
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult settingsNotDeleted(SettingsNotDeleted value),
-    @required TResult settingsNotFetched(SettingsNotFetched value),
+    @required TResult settingsNotFound(SettingsNotFound value),
     @required TResult settingsNotInitialized(SettingsNotInitialized value),
     @required TResult settingsNotUpdated(SettingsNotUpdated value),
   }) {
     assert(settingsNotDeleted != null);
-    assert(settingsNotFetched != null);
+    assert(settingsNotFound != null);
     assert(settingsNotInitialized != null);
     assert(settingsNotUpdated != null);
     return settingsNotDeleted(this);
@@ -175,7 +175,7 @@ class _$SettingsNotDeleted implements SettingsNotDeleted {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult settingsNotDeleted(SettingsNotDeleted value),
-    TResult settingsNotFetched(SettingsNotFetched value),
+    TResult settingsNotFound(SettingsNotFound value),
     TResult settingsNotInitialized(SettingsNotInitialized value),
     TResult settingsNotUpdated(SettingsNotUpdated value),
     @required TResult orElse(),
@@ -193,36 +193,36 @@ abstract class SettingsNotDeleted implements SettingsFailure {
 }
 
 /// @nodoc
-abstract class $SettingsNotFetchedCopyWith<$Res> {
-  factory $SettingsNotFetchedCopyWith(
-          SettingsNotFetched value, $Res Function(SettingsNotFetched) then) =
-      _$SettingsNotFetchedCopyWithImpl<$Res>;
+abstract class $SettingsNotFoundCopyWith<$Res> {
+  factory $SettingsNotFoundCopyWith(
+          SettingsNotFound value, $Res Function(SettingsNotFound) then) =
+      _$SettingsNotFoundCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$SettingsNotFetchedCopyWithImpl<$Res>
+class _$SettingsNotFoundCopyWithImpl<$Res>
     extends _$SettingsFailureCopyWithImpl<$Res>
-    implements $SettingsNotFetchedCopyWith<$Res> {
-  _$SettingsNotFetchedCopyWithImpl(
-      SettingsNotFetched _value, $Res Function(SettingsNotFetched) _then)
-      : super(_value, (v) => _then(v as SettingsNotFetched));
+    implements $SettingsNotFoundCopyWith<$Res> {
+  _$SettingsNotFoundCopyWithImpl(
+      SettingsNotFound _value, $Res Function(SettingsNotFound) _then)
+      : super(_value, (v) => _then(v as SettingsNotFound));
 
   @override
-  SettingsNotFetched get _value => super._value as SettingsNotFetched;
+  SettingsNotFound get _value => super._value as SettingsNotFound;
 }
 
 /// @nodoc
-class _$SettingsNotFetched implements SettingsNotFetched {
-  const _$SettingsNotFetched();
+class _$SettingsNotFound implements SettingsNotFound {
+  const _$SettingsNotFound();
 
   @override
   String toString() {
-    return 'SettingsFailure.settingsNotFetched()';
+    return 'SettingsFailure.settingsNotFound()';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is SettingsNotFetched);
+    return identical(this, other) || (other is SettingsNotFound);
   }
 
   @override
@@ -232,29 +232,29 @@ class _$SettingsNotFetched implements SettingsNotFetched {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult settingsNotDeleted(),
-    @required TResult settingsNotFetched(),
+    @required TResult settingsNotFound(),
     @required TResult settingsNotInitialized(),
     @required TResult settingsNotUpdated(),
   }) {
     assert(settingsNotDeleted != null);
-    assert(settingsNotFetched != null);
+    assert(settingsNotFound != null);
     assert(settingsNotInitialized != null);
     assert(settingsNotUpdated != null);
-    return settingsNotFetched();
+    return settingsNotFound();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult settingsNotDeleted(),
-    TResult settingsNotFetched(),
+    TResult settingsNotFound(),
     TResult settingsNotInitialized(),
     TResult settingsNotUpdated(),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (settingsNotFetched != null) {
-      return settingsNotFetched();
+    if (settingsNotFound != null) {
+      return settingsNotFound();
     }
     return orElse();
   }
@@ -263,36 +263,36 @@ class _$SettingsNotFetched implements SettingsNotFetched {
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult settingsNotDeleted(SettingsNotDeleted value),
-    @required TResult settingsNotFetched(SettingsNotFetched value),
+    @required TResult settingsNotFound(SettingsNotFound value),
     @required TResult settingsNotInitialized(SettingsNotInitialized value),
     @required TResult settingsNotUpdated(SettingsNotUpdated value),
   }) {
     assert(settingsNotDeleted != null);
-    assert(settingsNotFetched != null);
+    assert(settingsNotFound != null);
     assert(settingsNotInitialized != null);
     assert(settingsNotUpdated != null);
-    return settingsNotFetched(this);
+    return settingsNotFound(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult settingsNotDeleted(SettingsNotDeleted value),
-    TResult settingsNotFetched(SettingsNotFetched value),
+    TResult settingsNotFound(SettingsNotFound value),
     TResult settingsNotInitialized(SettingsNotInitialized value),
     TResult settingsNotUpdated(SettingsNotUpdated value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (settingsNotFetched != null) {
-      return settingsNotFetched(this);
+    if (settingsNotFound != null) {
+      return settingsNotFound(this);
     }
     return orElse();
   }
 }
 
-abstract class SettingsNotFetched implements SettingsFailure {
-  const factory SettingsNotFetched() = _$SettingsNotFetched;
+abstract class SettingsNotFound implements SettingsFailure {
+  const factory SettingsNotFound() = _$SettingsNotFound;
 }
 
 /// @nodoc
@@ -335,12 +335,12 @@ class _$SettingsNotInitialized implements SettingsNotInitialized {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult settingsNotDeleted(),
-    @required TResult settingsNotFetched(),
+    @required TResult settingsNotFound(),
     @required TResult settingsNotInitialized(),
     @required TResult settingsNotUpdated(),
   }) {
     assert(settingsNotDeleted != null);
-    assert(settingsNotFetched != null);
+    assert(settingsNotFound != null);
     assert(settingsNotInitialized != null);
     assert(settingsNotUpdated != null);
     return settingsNotInitialized();
@@ -350,7 +350,7 @@ class _$SettingsNotInitialized implements SettingsNotInitialized {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult settingsNotDeleted(),
-    TResult settingsNotFetched(),
+    TResult settingsNotFound(),
     TResult settingsNotInitialized(),
     TResult settingsNotUpdated(),
     @required TResult orElse(),
@@ -366,12 +366,12 @@ class _$SettingsNotInitialized implements SettingsNotInitialized {
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult settingsNotDeleted(SettingsNotDeleted value),
-    @required TResult settingsNotFetched(SettingsNotFetched value),
+    @required TResult settingsNotFound(SettingsNotFound value),
     @required TResult settingsNotInitialized(SettingsNotInitialized value),
     @required TResult settingsNotUpdated(SettingsNotUpdated value),
   }) {
     assert(settingsNotDeleted != null);
-    assert(settingsNotFetched != null);
+    assert(settingsNotFound != null);
     assert(settingsNotInitialized != null);
     assert(settingsNotUpdated != null);
     return settingsNotInitialized(this);
@@ -381,7 +381,7 @@ class _$SettingsNotInitialized implements SettingsNotInitialized {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult settingsNotDeleted(SettingsNotDeleted value),
-    TResult settingsNotFetched(SettingsNotFetched value),
+    TResult settingsNotFound(SettingsNotFound value),
     TResult settingsNotInitialized(SettingsNotInitialized value),
     TResult settingsNotUpdated(SettingsNotUpdated value),
     @required TResult orElse(),
@@ -438,12 +438,12 @@ class _$SettingsNotUpdated implements SettingsNotUpdated {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult settingsNotDeleted(),
-    @required TResult settingsNotFetched(),
+    @required TResult settingsNotFound(),
     @required TResult settingsNotInitialized(),
     @required TResult settingsNotUpdated(),
   }) {
     assert(settingsNotDeleted != null);
-    assert(settingsNotFetched != null);
+    assert(settingsNotFound != null);
     assert(settingsNotInitialized != null);
     assert(settingsNotUpdated != null);
     return settingsNotUpdated();
@@ -453,7 +453,7 @@ class _$SettingsNotUpdated implements SettingsNotUpdated {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult settingsNotDeleted(),
-    TResult settingsNotFetched(),
+    TResult settingsNotFound(),
     TResult settingsNotInitialized(),
     TResult settingsNotUpdated(),
     @required TResult orElse(),
@@ -469,12 +469,12 @@ class _$SettingsNotUpdated implements SettingsNotUpdated {
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult settingsNotDeleted(SettingsNotDeleted value),
-    @required TResult settingsNotFetched(SettingsNotFetched value),
+    @required TResult settingsNotFound(SettingsNotFound value),
     @required TResult settingsNotInitialized(SettingsNotInitialized value),
     @required TResult settingsNotUpdated(SettingsNotUpdated value),
   }) {
     assert(settingsNotDeleted != null);
-    assert(settingsNotFetched != null);
+    assert(settingsNotFound != null);
     assert(settingsNotInitialized != null);
     assert(settingsNotUpdated != null);
     return settingsNotUpdated(this);
@@ -484,7 +484,7 @@ class _$SettingsNotUpdated implements SettingsNotUpdated {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult settingsNotDeleted(SettingsNotDeleted value),
-    TResult settingsNotFetched(SettingsNotFetched value),
+    TResult settingsNotFound(SettingsNotFound value),
     TResult settingsNotInitialized(SettingsNotInitialized value),
     TResult settingsNotUpdated(SettingsNotUpdated value),
     @required TResult orElse(),

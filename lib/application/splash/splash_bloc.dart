@@ -149,7 +149,7 @@ class SplashBloc extends Bloc<SplashEvent, SplashState> {
   }
 
   Future<void> _fetchSession() async {
-    (await _sessionRepository.fetchSession()).fold(
+    _sessionRepository.fetchSession().fold(
       (_) {
         add(const SplashEvent.sessionNotFound());
       },
