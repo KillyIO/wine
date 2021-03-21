@@ -28,8 +28,7 @@ class SettingsRepository implements ISettingsRepository {
 
     await _settingsBox.delete(firebaseUser.uid);
 
-    final config = _settingsBox.get(firebaseUser.uid);
-    if (config != null) {
+    if (_settingsBox.get(firebaseUser.uid) != null) {
       return left(const SettingsFailure.settingsNotDeleted());
     }
     return right(unit);
@@ -80,10 +79,8 @@ class SettingsRepository implements ISettingsRepository {
     final settingsAsMap = SettingsDTO.fromDomain(settings).toJson();
     await _settingsBox.put(firebaseUser.uid, settingsAsMap);
 
-    final updatedSettings = _settingsBox.get(firebaseUser.uid);
-    if (updatedSettings == settingsAsMap) {
-      return right(unit);
-    }
+    if (_settingsBox.get(firebaseUser.uid) == settingsAsMap) return right(unit);
+
     return left(const SettingsFailure.settingsNotUpdated());
   }
 }

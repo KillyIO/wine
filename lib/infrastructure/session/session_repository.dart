@@ -39,8 +39,7 @@ class SessionRepository implements ISessionRepository {
 
     await _sessionsBox.delete(firebaseUser.uid);
 
-    final session = _sessionsBox.get(firebaseUser.uid);
-    if (session != null) {
+    if (_sessionsBox.get(firebaseUser.uid) != null) {
       return left(const SessionFailure.sessionNotDeleted());
     }
     return right(unit);
@@ -65,8 +64,7 @@ class SessionRepository implements ISessionRepository {
     final userAsMap = UserDTO.fromDomain(user).toJson();
     await _sessionsBox.put(firebaseUser.uid, userAsMap);
 
-    final currentSession = _sessionsBox.get(firebaseUser.uid);
-    if (currentSession == userAsMap) return right(unit);
+    if (_sessionsBox.get(firebaseUser.uid) == userAsMap) return right(unit);
 
     return left(const SessionFailure.sessionNotUpdated());
   }
