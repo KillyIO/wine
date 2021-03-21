@@ -8,13 +8,16 @@
 
 import 'package:auto_route/auto_route.dart';
 
+import '../home/home_page.dart';
 import '../log_in/log_in_page.dart';
 import '../splash/splash_page.dart';
 
 class Routes {
+  static const String homePage = '/home-page';
   static const String logInPage = '/log-in-page';
   static const String splashPage = '/';
   static const all = <String>{
+    homePage,
     logInPage,
     splashPage,
   };
@@ -24,12 +27,19 @@ class AppRouter extends RouterBase {
   @override
   List<RouteDef> get routes => _routes;
   final _routes = <RouteDef>[
+    RouteDef(Routes.homePage, page: HomePage),
     RouteDef(Routes.logInPage, page: LogInPage),
     RouteDef(Routes.splashPage, page: SplashPage),
   ];
   @override
   Map<Type, AutoRouteFactory> get pagesMap => _pagesMap;
   final _pagesMap = <Type, AutoRouteFactory>{
+    HomePage: (data) {
+      return buildAdaptivePageRoute<dynamic>(
+        builder: (context) => HomePage(),
+        settings: data,
+      );
+    },
     LogInPage: (data) {
       return buildAdaptivePageRoute<dynamic>(
         builder: (context) => LogInPage(),
@@ -50,6 +60,8 @@ class AppRouter extends RouterBase {
 /// *************************************************************************
 
 extension AppRouterExtendedNavigatorStateX on ExtendedNavigatorState {
+  Future<dynamic> pushHomePage() => push<dynamic>(Routes.homePage);
+
   Future<dynamic> pushLogInPage() => push<dynamic>(Routes.logInPage);
 
   Future<dynamic> pushSplashPage() => push<dynamic>(Routes.splashPage);
