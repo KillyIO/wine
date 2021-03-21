@@ -7,6 +7,7 @@ import 'package:wine/domain/settings/i_ssettings_repository.dart';
 import 'package:wine/domain/settings/settings.dart';
 import 'package:wine/domain/settings/settings_failure.dart';
 import 'package:wine/infrastructure/settings/settings_dto.dart';
+import 'package:wine/utils/constants/boxes.dart';
 
 /// @nodoc
 @LazySingleton(as: ISettingsRepository)
@@ -14,7 +15,7 @@ class SettingsRepository implements ISettingsRepository {
   /// @nodoc
   SettingsRepository(
     this._firebaseAuth,
-    this._settingsBox,
+    @Named(settingsBox) this._settingsBox,
   );
 
   final auth.FirebaseAuth _firebaseAuth;

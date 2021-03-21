@@ -4,6 +4,7 @@ import 'package:hive/hive.dart';
 import 'package:injectable/injectable.dart';
 import 'package:wine/domain/default_covers/default_covers_failure.dart';
 import 'package:wine/domain/default_covers/i_default_covers_repository.dart';
+import 'package:wine/utils/constants/boxes.dart';
 import 'package:wine/utils/paths/default_covers.dart';
 
 /// @nodoc
@@ -11,7 +12,7 @@ import 'package:wine/utils/paths/default_covers.dart';
 class DefaultCoversRepository implements IDefaultCoversRepository {
   /// @nodoc
   DefaultCoversRepository(
-    this._defaultCoversBox,
+    @Named(defaultCoversBox) this._defaultCoversBox,
     this._firestore,
   );
 

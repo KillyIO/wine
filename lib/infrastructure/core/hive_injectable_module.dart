@@ -11,6 +11,21 @@ abstract class HiveInjectableModule {
   /// @nodoc
   @preResolve
   @lazySingleton
+  @Named(defaultCoversBox)
+  Future<Box<String>> get openDefaultCoversBox async {
+    final extDir = await getApplicationDocumentsDirectory();
+    final dirPath = '${extDir.path}/db';
+    await Directory(dirPath).create(recursive: true);
+
+    Hive.init(dirPath);
+
+    return Hive.openBox<String>(defaultCoversBox);
+  }
+
+  /// @nodoc
+  @preResolve
+  @lazySingleton
+  @Named(settingsBox)
   Future<Box<Map<String, dynamic>>> get openSettingsBox async {
     final extDir = await getApplicationDocumentsDirectory();
     final dirPath = '${extDir.path}/db';

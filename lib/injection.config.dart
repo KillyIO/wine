@@ -35,8 +35,13 @@ Future<_i1.GetIt> $initGetIt(_i1.GetIt get,
   final gh = _i2.GetItHelper(get, environment, environmentFilter);
   final hiveInjectableModule = _$HiveInjectableModule();
   final firebaseInjectableModule = _$FirebaseInjectableModule();
+  await gh.lazySingletonAsync<_i3.Box<String>>(
+      () => hiveInjectableModule.openDefaultCoversBox,
+      instanceName: 'defaultCoversBox',
+      preResolve: true);
   await gh.lazySingletonAsync<_i3.Box<Map<String, dynamic>>>(
       () => hiveInjectableModule.openSettingsBox,
+      instanceName: 'settingsBox',
       preResolve: true);
   gh.lazySingleton<_i4.FirebaseAuth>(
       () => firebaseInjectableModule.firebaseAuth);
@@ -49,11 +54,13 @@ Future<_i1.GetIt> $initGetIt(_i1.GetIt get,
       _i9.FirebaseAuthFacade(get<_i4.FirebaseAuth>(), get<_i6.GoogleSignIn>()));
   gh.lazySingleton<_i10.IDefaultCoversRepository>(() =>
       _i11.DefaultCoversRepository(
-          get<_i3.Box<String>>(), get<_i5.FirebaseFirestore>()));
+          get<_i3.Box<String>>(instanceName: 'defaultCoversBox'),
+          get<_i5.FirebaseFirestore>()));
   gh.lazySingleton<_i12.ISessionRepository>(() => _i13.SessionRepository(
       get<_i4.FirebaseAuth>(), get<_i3.Box<Map<String, dynamic>>>()));
   gh.lazySingleton<_i14.ISettingsRepository>(() => _i15.SettingsRepository(
-      get<_i4.FirebaseAuth>(), get<_i3.Box<Map<String, dynamic>>>()));
+      get<_i4.FirebaseAuth>(),
+      get<_i3.Box<Map<String, dynamic>>>(instanceName: 'settingsBox')));
   gh.lazySingleton<_i16.IUserRepository>(
       () => _i17.UserRepository(get<_i5.FirebaseFirestore>()));
   gh.factory<_i18.LogInBloc>(() =>

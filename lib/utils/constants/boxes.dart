@@ -1,5 +1,5 @@
 /// @nodoc
-const String placeholdersBox = 'placeholdersBox';
+const String defaultCoversBox = 'defaultCoversBox';
 
 /// @nodoc
 const String sessionsBox = 'sessionsBox';
