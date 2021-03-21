@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
 
-part of 'session_failure.dart';
+part of 'sessions_failure.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -10,8 +10,8 @@ part of 'session_failure.dart';
 T _$identity<T>(T value) => value;
 
 /// @nodoc
-class _$SessionFailureTearOff {
-  const _$SessionFailureTearOff();
+class _$SessionsFailureTearOff {
+  const _$SessionsFailureTearOff();
 
 // ignore: unused_element
   SessionNotCreated sessionNotCreated() {
@@ -36,10 +36,10 @@ class _$SessionFailureTearOff {
 
 /// @nodoc
 // ignore: unused_element
-const $SessionFailure = _$SessionFailureTearOff();
+const $SessionsFailure = _$SessionsFailureTearOff();
 
 /// @nodoc
-mixin _$SessionFailure {
+mixin _$SessionsFailure {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult sessionNotCreated(),
@@ -73,20 +73,20 @@ mixin _$SessionFailure {
 }
 
 /// @nodoc
-abstract class $SessionFailureCopyWith<$Res> {
-  factory $SessionFailureCopyWith(
-          SessionFailure value, $Res Function(SessionFailure) then) =
-      _$SessionFailureCopyWithImpl<$Res>;
+abstract class $SessionsFailureCopyWith<$Res> {
+  factory $SessionsFailureCopyWith(
+          SessionsFailure value, $Res Function(SessionsFailure) then) =
+      _$SessionsFailureCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$SessionFailureCopyWithImpl<$Res>
-    implements $SessionFailureCopyWith<$Res> {
-  _$SessionFailureCopyWithImpl(this._value, this._then);
+class _$SessionsFailureCopyWithImpl<$Res>
+    implements $SessionsFailureCopyWith<$Res> {
+  _$SessionsFailureCopyWithImpl(this._value, this._then);
 
-  final SessionFailure _value;
+  final SessionsFailure _value;
   // ignore: unused_field
-  final $Res Function(SessionFailure) _then;
+  final $Res Function(SessionsFailure) _then;
 }
 
 /// @nodoc
@@ -98,7 +98,7 @@ abstract class $SessionNotCreatedCopyWith<$Res> {
 
 /// @nodoc
 class _$SessionNotCreatedCopyWithImpl<$Res>
-    extends _$SessionFailureCopyWithImpl<$Res>
+    extends _$SessionsFailureCopyWithImpl<$Res>
     implements $SessionNotCreatedCopyWith<$Res> {
   _$SessionNotCreatedCopyWithImpl(
       SessionNotCreated _value, $Res Function(SessionNotCreated) _then)
@@ -114,7 +114,7 @@ class _$SessionNotCreated implements SessionNotCreated {
 
   @override
   String toString() {
-    return 'SessionFailure.sessionNotCreated()';
+    return 'SessionsFailure.sessionNotCreated()';
   }
 
   @override
@@ -188,7 +188,7 @@ class _$SessionNotCreated implements SessionNotCreated {
   }
 }
 
-abstract class SessionNotCreated implements SessionFailure {
+abstract class SessionNotCreated implements SessionsFailure {
   const factory SessionNotCreated() = _$SessionNotCreated;
 }
 
@@ -201,7 +201,7 @@ abstract class $SessionNotDeletedCopyWith<$Res> {
 
 /// @nodoc
 class _$SessionNotDeletedCopyWithImpl<$Res>
-    extends _$SessionFailureCopyWithImpl<$Res>
+    extends _$SessionsFailureCopyWithImpl<$Res>
     implements $SessionNotDeletedCopyWith<$Res> {
   _$SessionNotDeletedCopyWithImpl(
       SessionNotDeleted _value, $Res Function(SessionNotDeleted) _then)
@@ -217,7 +217,7 @@ class _$SessionNotDeleted implements SessionNotDeleted {
 
   @override
   String toString() {
-    return 'SessionFailure.sessionNotDeleted()';
+    return 'SessionsFailure.sessionNotDeleted()';
   }
 
   @override
@@ -291,7 +291,7 @@ class _$SessionNotDeleted implements SessionNotDeleted {
   }
 }
 
-abstract class SessionNotDeleted implements SessionFailure {
+abstract class SessionNotDeleted implements SessionsFailure {
   const factory SessionNotDeleted() = _$SessionNotDeleted;
 }
 
@@ -304,7 +304,7 @@ abstract class $SessionNotFoundCopyWith<$Res> {
 
 /// @nodoc
 class _$SessionNotFoundCopyWithImpl<$Res>
-    extends _$SessionFailureCopyWithImpl<$Res>
+    extends _$SessionsFailureCopyWithImpl<$Res>
     implements $SessionNotFoundCopyWith<$Res> {
   _$SessionNotFoundCopyWithImpl(
       SessionNotFound _value, $Res Function(SessionNotFound) _then)
@@ -320,7 +320,7 @@ class _$SessionNotFound implements SessionNotFound {
 
   @override
   String toString() {
-    return 'SessionFailure.sessionNotFound()';
+    return 'SessionsFailure.sessionNotFound()';
   }
 
   @override
@@ -394,7 +394,7 @@ class _$SessionNotFound implements SessionNotFound {
   }
 }
 
-abstract class SessionNotFound implements SessionFailure {
+abstract class SessionNotFound implements SessionsFailure {
   const factory SessionNotFound() = _$SessionNotFound;
 }
 
@@ -407,7 +407,7 @@ abstract class $SessionNotUpdatedCopyWith<$Res> {
 
 /// @nodoc
 class _$SessionNotUpdatedCopyWithImpl<$Res>
-    extends _$SessionFailureCopyWithImpl<$Res>
+    extends _$SessionsFailureCopyWithImpl<$Res>
     implements $SessionNotUpdatedCopyWith<$Res> {
   _$SessionNotUpdatedCopyWithImpl(
       SessionNotUpdated _value, $Res Function(SessionNotUpdated) _then)
@@ -423,7 +423,7 @@ class _$SessionNotUpdated implements SessionNotUpdated {
 
   @override
   String toString() {
-    return 'SessionFailure.sessionNotUpdated()';
+    return 'SessionsFailure.sessionNotUpdated()';
   }
 
   @override
@@ -497,6 +497,6 @@ class _$SessionNotUpdated implements SessionNotUpdated {
   }
 }
 
-abstract class SessionNotUpdated implements SessionFailure {
+abstract class SessionNotUpdated implements SessionsFailure {
   const factory SessionNotUpdated() = _$SessionNotUpdated;
 }

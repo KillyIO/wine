@@ -10,7 +10,7 @@ import 'package:wine/domain/auth/auth_failure.dart';
 import 'package:wine/domain/auth/i_auth_facade.dart';
 import 'package:wine/domain/core/core_failure.dart';
 import 'package:wine/domain/default_covers/i_default_covers_repository.dart';
-import 'package:wine/domain/session/i_session_repository.dart';
+import 'package:wine/domain/sessions/i_sessions_repository.dart';
 import 'package:wine/domain/settings/i_ssettings_repository.dart';
 import 'package:wine/domain/user/i_user_repository.dart';
 import 'package:wine/domain/user/user.dart';
@@ -26,14 +26,14 @@ class SplashBloc extends Bloc<SplashEvent, SplashState> {
   SplashBloc(
     this._authFacade,
     this._defaultCoversRepository,
-    this._sessionRepository,
+    this._sessionsRepository,
     this._settingsRepository,
     this._userRepository,
   ) : super(const SplashState.initial());
 
   final IAuthFacade _authFacade;
   final IDefaultCoversRepository _defaultCoversRepository;
-  final ISessionRepository _sessionRepository;
+  final ISessionsRepository _sessionsRepository;
   final ISettingsRepository _settingsRepository;
   final IUserRepository _userRepository;
 
@@ -55,7 +55,7 @@ class SplashBloc extends Bloc<SplashEvent, SplashState> {
       },
       defaultCoverURLsCached: (_) async* {
         debugPrint('=== defaultCoverURLsCached ===');
-        (await _settingsRepository.fetchSettings()).fold(
+        _settingsRepository.fetchSettings().fold(
           (_) {
             add(const SplashEvent.settingsNotFound());
           },
@@ -91,9 +91,9 @@ class SplashBloc extends Bloc<SplashEvent, SplashState> {
       },
       sessionNotFound: (_) async* {
         debugPrint('=== sessionNotFound ===');
-        yield* (await _sessionRepository.createSession()).fold(
+        yield* (await _sessionsRepository.createSession()).fold(
           (failure) async* {
-            yield SplashState.failure(CoreFailure.session(failure));
+            yield SplashState.failure(CoreFailure.sessions(failure));
           },
           (session) async* {
             yield const SplashState.goToOnboarding();
@@ -138,9 +138,9 @@ class SplashBloc extends Bloc<SplashEvent, SplashState> {
       },
       userLoaded: (value) async* {
         debugPrint('=== userLoaded ===');
-        yield* (await _sessionRepository.updateSession(value.user)).fold(
+        yield* (await _sessionsRepository.updateSession(value.user)).fold(
             (failure) async* {
-          yield SplashState.failure(CoreFailure.session(failure));
+          yield SplashState.failure(CoreFailure.sessions(failure));
         }, (_) async* {
           yield const SplashState.goToHome();
         });
@@ -149,7 +149,7 @@ class SplashBloc extends Bloc<SplashEvent, SplashState> {
   }
 
   Future<void> _fetchSession() async {
-    _sessionRepository.fetchSession().fold(
+    _sessionsRepository.fetchSession().fold(
       (_) {
         add(const SplashEvent.sessionNotFound());
       },

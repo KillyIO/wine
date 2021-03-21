@@ -27,7 +27,7 @@ class SplashLayout extends StatelessWidget {
                     restartApp(context, 'Default covers were not loaded!'),
                 orElse: null,
               ),
-              session: (f) => f.f.maybeMap(
+              sessions: (f) => f.f.maybeMap(
                 sessionNotUpdated: (_) async =>
                     restartApp(context, 'Session was not updated!'),
                 orElse: null,

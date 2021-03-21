@@ -16,7 +16,7 @@ import 'application/log_in/log_in_bloc.dart' as _i18;
 import 'application/splash/splash_bloc.dart' as _i19;
 import 'domain/auth/i_auth_facade.dart' as _i8;
 import 'domain/default_covers/i_default_covers_repository.dart' as _i10;
-import 'domain/session/i_session_repository.dart' as _i12;
+import 'domain/sessions/i_sessions_repository.dart' as _i12;
 import 'domain/settings/i_ssettings_repository.dart' as _i14;
 import 'domain/user/i_user_repository.dart' as _i16;
 import 'infrastructure/auth/firebase_auth_facade.dart' as _i9;
@@ -40,6 +40,10 @@ Future<_i1.GetIt> $initGetIt(_i1.GetIt get,
       instanceName: 'defaultCoversBox',
       preResolve: true);
   await gh.lazySingletonAsync<_i3.Box<Map<String, dynamic>>>(
+      () => hiveInjectableModule.openSessionsBox,
+      instanceName: 'sessionsBox',
+      preResolve: true);
+  await gh.lazySingletonAsync<_i3.Box<Map<String, dynamic>>>(
       () => hiveInjectableModule.openSettingsBox,
       instanceName: 'settingsBox',
       preResolve: true);
@@ -56,7 +60,7 @@ Future<_i1.GetIt> $initGetIt(_i1.GetIt get,
       _i11.DefaultCoversRepository(
           get<_i3.Box<String>>(instanceName: 'defaultCoversBox'),
           get<_i5.FirebaseFirestore>()));
-  gh.lazySingleton<_i12.ISessionRepository>(() => _i13.SessionRepository(
+  gh.lazySingleton<_i12.ISessionsRepository>(() => _i13.SessionsRepository(
       get<_i4.FirebaseAuth>(), get<_i3.Box<Map<String, dynamic>>>()));
   gh.lazySingleton<_i14.ISettingsRepository>(() => _i15.SettingsRepository(
       get<_i4.FirebaseAuth>(),
@@ -68,7 +72,7 @@ Future<_i1.GetIt> $initGetIt(_i1.GetIt get,
   gh.factory<_i19.SplashBloc>(() => _i19.SplashBloc(
       get<_i8.IAuthFacade>(),
       get<_i10.IDefaultCoversRepository>(),
-      get<_i12.ISessionRepository>(),
+      get<_i12.ISessionsRepository>(),
       get<_i14.ISettingsRepository>(),
       get<_i16.IUserRepository>()));
   return get;

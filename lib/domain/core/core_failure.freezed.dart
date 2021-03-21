@@ -28,8 +28,8 @@ class _$CoreFailureTearOff {
   }
 
 // ignore: unused_element
-  _Session session(SessionFailure f) {
-    return _Session(
+  _Sessions sessions(SessionsFailure f) {
+    return _Sessions(
       f,
     );
   }
@@ -59,7 +59,7 @@ mixin _$CoreFailure {
   TResult when<TResult extends Object>({
     @required TResult auth(AuthFailure f),
     @required TResult defaultCovers(DefaultCoversFailure f),
-    @required TResult session(SessionFailure f),
+    @required TResult sessions(SessionsFailure f),
     @required TResult settings(SettingsFailure f),
     @required TResult user(UserFailure f),
   });
@@ -67,7 +67,7 @@ mixin _$CoreFailure {
   TResult maybeWhen<TResult extends Object>({
     TResult auth(AuthFailure f),
     TResult defaultCovers(DefaultCoversFailure f),
-    TResult session(SessionFailure f),
+    TResult sessions(SessionsFailure f),
     TResult settings(SettingsFailure f),
     TResult user(UserFailure f),
     @required TResult orElse(),
@@ -76,7 +76,7 @@ mixin _$CoreFailure {
   TResult map<TResult extends Object>({
     @required TResult auth(_Auth value),
     @required TResult defaultCovers(_DefaultCovers value),
-    @required TResult session(_Session value),
+    @required TResult sessions(_Sessions value),
     @required TResult settings(_Settings value),
     @required TResult user(_User value),
   });
@@ -84,7 +84,7 @@ mixin _$CoreFailure {
   TResult maybeMap<TResult extends Object>({
     TResult auth(_Auth value),
     TResult defaultCovers(_DefaultCovers value),
-    TResult session(_Session value),
+    TResult sessions(_Sessions value),
     TResult settings(_Settings value),
     TResult user(_User value),
     @required TResult orElse(),
@@ -179,13 +179,13 @@ class _$_Auth implements _Auth {
   TResult when<TResult extends Object>({
     @required TResult auth(AuthFailure f),
     @required TResult defaultCovers(DefaultCoversFailure f),
-    @required TResult session(SessionFailure f),
+    @required TResult sessions(SessionsFailure f),
     @required TResult settings(SettingsFailure f),
     @required TResult user(UserFailure f),
   }) {
     assert(auth != null);
     assert(defaultCovers != null);
-    assert(session != null);
+    assert(sessions != null);
     assert(settings != null);
     assert(user != null);
     return auth(f);
@@ -196,7 +196,7 @@ class _$_Auth implements _Auth {
   TResult maybeWhen<TResult extends Object>({
     TResult auth(AuthFailure f),
     TResult defaultCovers(DefaultCoversFailure f),
-    TResult session(SessionFailure f),
+    TResult sessions(SessionsFailure f),
     TResult settings(SettingsFailure f),
     TResult user(UserFailure f),
     @required TResult orElse(),
@@ -213,13 +213,13 @@ class _$_Auth implements _Auth {
   TResult map<TResult extends Object>({
     @required TResult auth(_Auth value),
     @required TResult defaultCovers(_DefaultCovers value),
-    @required TResult session(_Session value),
+    @required TResult sessions(_Sessions value),
     @required TResult settings(_Settings value),
     @required TResult user(_User value),
   }) {
     assert(auth != null);
     assert(defaultCovers != null);
-    assert(session != null);
+    assert(sessions != null);
     assert(settings != null);
     assert(user != null);
     return auth(this);
@@ -230,7 +230,7 @@ class _$_Auth implements _Auth {
   TResult maybeMap<TResult extends Object>({
     TResult auth(_Auth value),
     TResult defaultCovers(_DefaultCovers value),
-    TResult session(_Session value),
+    TResult sessions(_Sessions value),
     TResult settings(_Settings value),
     TResult user(_User value),
     @required TResult orElse(),
@@ -325,13 +325,13 @@ class _$_DefaultCovers implements _DefaultCovers {
   TResult when<TResult extends Object>({
     @required TResult auth(AuthFailure f),
     @required TResult defaultCovers(DefaultCoversFailure f),
-    @required TResult session(SessionFailure f),
+    @required TResult sessions(SessionsFailure f),
     @required TResult settings(SettingsFailure f),
     @required TResult user(UserFailure f),
   }) {
     assert(auth != null);
     assert(defaultCovers != null);
-    assert(session != null);
+    assert(sessions != null);
     assert(settings != null);
     assert(user != null);
     return defaultCovers(f);
@@ -342,7 +342,7 @@ class _$_DefaultCovers implements _DefaultCovers {
   TResult maybeWhen<TResult extends Object>({
     TResult auth(AuthFailure f),
     TResult defaultCovers(DefaultCoversFailure f),
-    TResult session(SessionFailure f),
+    TResult sessions(SessionsFailure f),
     TResult settings(SettingsFailure f),
     TResult user(UserFailure f),
     @required TResult orElse(),
@@ -359,13 +359,13 @@ class _$_DefaultCovers implements _DefaultCovers {
   TResult map<TResult extends Object>({
     @required TResult auth(_Auth value),
     @required TResult defaultCovers(_DefaultCovers value),
-    @required TResult session(_Session value),
+    @required TResult sessions(_Sessions value),
     @required TResult settings(_Settings value),
     @required TResult user(_User value),
   }) {
     assert(auth != null);
     assert(defaultCovers != null);
-    assert(session != null);
+    assert(sessions != null);
     assert(settings != null);
     assert(user != null);
     return defaultCovers(this);
@@ -376,7 +376,7 @@ class _$_DefaultCovers implements _DefaultCovers {
   TResult maybeMap<TResult extends Object>({
     TResult auth(_Auth value),
     TResult defaultCovers(_DefaultCovers value),
-    TResult session(_Session value),
+    TResult sessions(_Sessions value),
     TResult settings(_Settings value),
     TResult user(_User value),
     @required TResult orElse(),
@@ -398,59 +398,59 @@ abstract class _DefaultCovers implements CoreFailure {
 }
 
 /// @nodoc
-abstract class _$SessionCopyWith<$Res> {
-  factory _$SessionCopyWith(_Session value, $Res Function(_Session) then) =
-      __$SessionCopyWithImpl<$Res>;
-  $Res call({SessionFailure f});
+abstract class _$SessionsCopyWith<$Res> {
+  factory _$SessionsCopyWith(_Sessions value, $Res Function(_Sessions) then) =
+      __$SessionsCopyWithImpl<$Res>;
+  $Res call({SessionsFailure f});
 
-  $SessionFailureCopyWith<$Res> get f;
+  $SessionsFailureCopyWith<$Res> get f;
 }
 
 /// @nodoc
-class __$SessionCopyWithImpl<$Res> extends _$CoreFailureCopyWithImpl<$Res>
-    implements _$SessionCopyWith<$Res> {
-  __$SessionCopyWithImpl(_Session _value, $Res Function(_Session) _then)
-      : super(_value, (v) => _then(v as _Session));
+class __$SessionsCopyWithImpl<$Res> extends _$CoreFailureCopyWithImpl<$Res>
+    implements _$SessionsCopyWith<$Res> {
+  __$SessionsCopyWithImpl(_Sessions _value, $Res Function(_Sessions) _then)
+      : super(_value, (v) => _then(v as _Sessions));
 
   @override
-  _Session get _value => super._value as _Session;
+  _Sessions get _value => super._value as _Sessions;
 
   @override
   $Res call({
     Object f = freezed,
   }) {
-    return _then(_Session(
-      f == freezed ? _value.f : f as SessionFailure,
+    return _then(_Sessions(
+      f == freezed ? _value.f : f as SessionsFailure,
     ));
   }
 
   @override
-  $SessionFailureCopyWith<$Res> get f {
+  $SessionsFailureCopyWith<$Res> get f {
     if (_value.f == null) {
       return null;
     }
-    return $SessionFailureCopyWith<$Res>(_value.f, (value) {
+    return $SessionsFailureCopyWith<$Res>(_value.f, (value) {
       return _then(_value.copyWith(f: value));
     });
   }
 }
 
 /// @nodoc
-class _$_Session implements _Session {
-  const _$_Session(this.f) : assert(f != null);
+class _$_Sessions implements _Sessions {
+  const _$_Sessions(this.f) : assert(f != null);
 
   @override
-  final SessionFailure f;
+  final SessionsFailure f;
 
   @override
   String toString() {
-    return 'CoreFailure.session(f: $f)';
+    return 'CoreFailure.sessions(f: $f)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Session &&
+        (other is _Sessions &&
             (identical(other.f, f) ||
                 const DeepCollectionEquality().equals(other.f, f)));
   }
@@ -461,24 +461,24 @@ class _$_Session implements _Session {
 
   @JsonKey(ignore: true)
   @override
-  _$SessionCopyWith<_Session> get copyWith =>
-      __$SessionCopyWithImpl<_Session>(this, _$identity);
+  _$SessionsCopyWith<_Sessions> get copyWith =>
+      __$SessionsCopyWithImpl<_Sessions>(this, _$identity);
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult auth(AuthFailure f),
     @required TResult defaultCovers(DefaultCoversFailure f),
-    @required TResult session(SessionFailure f),
+    @required TResult sessions(SessionsFailure f),
     @required TResult settings(SettingsFailure f),
     @required TResult user(UserFailure f),
   }) {
     assert(auth != null);
     assert(defaultCovers != null);
-    assert(session != null);
+    assert(sessions != null);
     assert(settings != null);
     assert(user != null);
-    return session(f);
+    return sessions(f);
   }
 
   @override
@@ -486,14 +486,14 @@ class _$_Session implements _Session {
   TResult maybeWhen<TResult extends Object>({
     TResult auth(AuthFailure f),
     TResult defaultCovers(DefaultCoversFailure f),
-    TResult session(SessionFailure f),
+    TResult sessions(SessionsFailure f),
     TResult settings(SettingsFailure f),
     TResult user(UserFailure f),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (session != null) {
-      return session(f);
+    if (sessions != null) {
+      return sessions(f);
     }
     return orElse();
   }
@@ -503,16 +503,16 @@ class _$_Session implements _Session {
   TResult map<TResult extends Object>({
     @required TResult auth(_Auth value),
     @required TResult defaultCovers(_DefaultCovers value),
-    @required TResult session(_Session value),
+    @required TResult sessions(_Sessions value),
     @required TResult settings(_Settings value),
     @required TResult user(_User value),
   }) {
     assert(auth != null);
     assert(defaultCovers != null);
-    assert(session != null);
+    assert(sessions != null);
     assert(settings != null);
     assert(user != null);
-    return session(this);
+    return sessions(this);
   }
 
   @override
@@ -520,25 +520,25 @@ class _$_Session implements _Session {
   TResult maybeMap<TResult extends Object>({
     TResult auth(_Auth value),
     TResult defaultCovers(_DefaultCovers value),
-    TResult session(_Session value),
+    TResult sessions(_Sessions value),
     TResult settings(_Settings value),
     TResult user(_User value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if (session != null) {
-      return session(this);
+    if (sessions != null) {
+      return sessions(this);
     }
     return orElse();
   }
 }
 
-abstract class _Session implements CoreFailure {
-  const factory _Session(SessionFailure f) = _$_Session;
+abstract class _Sessions implements CoreFailure {
+  const factory _Sessions(SessionsFailure f) = _$_Sessions;
 
-  SessionFailure get f;
+  SessionsFailure get f;
   @JsonKey(ignore: true)
-  _$SessionCopyWith<_Session> get copyWith;
+  _$SessionsCopyWith<_Sessions> get copyWith;
 }
 
 /// @nodoc
@@ -613,13 +613,13 @@ class _$_Settings implements _Settings {
   TResult when<TResult extends Object>({
     @required TResult auth(AuthFailure f),
     @required TResult defaultCovers(DefaultCoversFailure f),
-    @required TResult session(SessionFailure f),
+    @required TResult sessions(SessionsFailure f),
     @required TResult settings(SettingsFailure f),
     @required TResult user(UserFailure f),
   }) {
     assert(auth != null);
     assert(defaultCovers != null);
-    assert(session != null);
+    assert(sessions != null);
     assert(settings != null);
     assert(user != null);
     return settings(f);
@@ -630,7 +630,7 @@ class _$_Settings implements _Settings {
   TResult maybeWhen<TResult extends Object>({
     TResult auth(AuthFailure f),
     TResult defaultCovers(DefaultCoversFailure f),
-    TResult session(SessionFailure f),
+    TResult sessions(SessionsFailure f),
     TResult settings(SettingsFailure f),
     TResult user(UserFailure f),
     @required TResult orElse(),
@@ -647,13 +647,13 @@ class _$_Settings implements _Settings {
   TResult map<TResult extends Object>({
     @required TResult auth(_Auth value),
     @required TResult defaultCovers(_DefaultCovers value),
-    @required TResult session(_Session value),
+    @required TResult sessions(_Sessions value),
     @required TResult settings(_Settings value),
     @required TResult user(_User value),
   }) {
     assert(auth != null);
     assert(defaultCovers != null);
-    assert(session != null);
+    assert(sessions != null);
     assert(settings != null);
     assert(user != null);
     return settings(this);
@@ -664,7 +664,7 @@ class _$_Settings implements _Settings {
   TResult maybeMap<TResult extends Object>({
     TResult auth(_Auth value),
     TResult defaultCovers(_DefaultCovers value),
-    TResult session(_Session value),
+    TResult sessions(_Sessions value),
     TResult settings(_Settings value),
     TResult user(_User value),
     @required TResult orElse(),
@@ -757,13 +757,13 @@ class _$_User implements _User {
   TResult when<TResult extends Object>({
     @required TResult auth(AuthFailure f),
     @required TResult defaultCovers(DefaultCoversFailure f),
-    @required TResult session(SessionFailure f),
+    @required TResult sessions(SessionsFailure f),
     @required TResult settings(SettingsFailure f),
     @required TResult user(UserFailure f),
   }) {
     assert(auth != null);
     assert(defaultCovers != null);
-    assert(session != null);
+    assert(sessions != null);
     assert(settings != null);
     assert(user != null);
     return user(f);
@@ -774,7 +774,7 @@ class _$_User implements _User {
   TResult maybeWhen<TResult extends Object>({
     TResult auth(AuthFailure f),
     TResult defaultCovers(DefaultCoversFailure f),
-    TResult session(SessionFailure f),
+    TResult sessions(SessionsFailure f),
     TResult settings(SettingsFailure f),
     TResult user(UserFailure f),
     @required TResult orElse(),
@@ -791,13 +791,13 @@ class _$_User implements _User {
   TResult map<TResult extends Object>({
     @required TResult auth(_Auth value),
     @required TResult defaultCovers(_DefaultCovers value),
-    @required TResult session(_Session value),
+    @required TResult sessions(_Sessions value),
     @required TResult settings(_Settings value),
     @required TResult user(_User value),
   }) {
     assert(auth != null);
     assert(defaultCovers != null);
-    assert(session != null);
+    assert(sessions != null);
     assert(settings != null);
     assert(user != null);
     return user(this);
@@ -808,7 +808,7 @@ class _$_User implements _User {
   TResult maybeMap<TResult extends Object>({
     TResult auth(_Auth value),
     TResult defaultCovers(_DefaultCovers value),
-    TResult session(_Session value),
+    TResult sessions(_Sessions value),
     TResult settings(_Settings value),
     TResult user(_User value),
     @required TResult orElse(),

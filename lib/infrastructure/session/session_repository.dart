@@ -3,16 +3,16 @@ import 'package:firebase_auth/firebase_auth.dart' as auth;
 import 'package:hive/hive.dart';
 import 'package:injectable/injectable.dart';
 
-import 'package:wine/domain/session/i_session_repository.dart';
-import 'package:wine/domain/session/session_failure.dart';
+import 'package:wine/domain/sessions/i_sessions_repository.dart';
+import 'package:wine/domain/sessions/sessions_failure.dart';
 import 'package:wine/domain/user/user.dart';
 import 'package:wine/infrastructure/user/user_dto.dart';
 
 /// @nodoc
-@LazySingleton(as: ISessionRepository)
-class SessionRepository implements ISessionRepository {
+@LazySingleton(as: ISessionsRepository)
+class SessionsRepository implements ISessionsRepository {
   /// @nodoc
-  SessionRepository(
+  SessionsRepository(
     this._firebaseAuth,
     this._sessionsBox,
   );
@@ -23,30 +23,30 @@ class SessionRepository implements ISessionRepository {
   final Box<Map<String, dynamic>> _sessionsBox;
 
   @override
-  Future<Either<SessionFailure, Unit>> createSession() async {
+  Future<Either<SessionsFailure, Unit>> createSession() async {
     final firebaseUser = _firebaseAuth.currentUser;
 
     await _sessionsBox.put(firebaseUser.uid, {});
 
     if (_sessionsBox.get(firebaseUser.uid) != null) return right(unit);
 
-    return left(const SessionFailure.sessionNotCreated());
+    return left(const SessionsFailure.sessionNotCreated());
   }
 
   @override
-  Future<Either<SessionFailure, Unit>> deleteSession() async {
+  Future<Either<SessionsFailure, Unit>> deleteSession() async {
     final firebaseUser = _firebaseAuth.currentUser;
 
     await _sessionsBox.delete(firebaseUser.uid);
 
     if (_sessionsBox.get(firebaseUser.uid) != null) {
-      return left(const SessionFailure.sessionNotDeleted());
+      return left(const SessionsFailure.sessionNotDeleted());
     }
     return right(unit);
   }
 
   @override
-  Either<SessionFailure, User> fetchSession() {
+  Either<SessionsFailure, User> fetchSession() {
     final firebaseUser = _firebaseAuth.currentUser;
 
     final session = _sessionsBox.get(firebaseUser.uid);
@@ -54,11 +54,11 @@ class SessionRepository implements ISessionRepository {
     if (session != null) {
       return right(session.toDomain());
     }
-    return left(const SessionFailure.sessionNotFound());
+    return left(const SessionsFailure.sessionNotFound());
   }
 
   @override
-  Future<Either<SessionFailure, Unit>> updateSession(User user) async {
+  Future<Either<SessionsFailure, Unit>> updateSession(User user) async {
     final firebaseUser = _firebaseAuth.currentUser;
 
     final userAsMap = UserDTO.fromDomain(user).toJson();
@@ -66,6 +66,6 @@ class SessionRepository implements ISessionRepository {
 
     if (_sessionsBox.get(firebaseUser.uid) == userAsMap) return right(unit);
 
-    return left(const SessionFailure.sessionNotUpdated());
+    return left(const SessionsFailure.sessionNotUpdated());
   }
 }
