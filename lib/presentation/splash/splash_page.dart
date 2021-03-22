@@ -18,7 +18,8 @@ class SplashPage extends StatelessWidget {
       child: Scaffold(
         backgroundColor: Colors.white,
         body: BlocProvider(
-          create: (context) => getIt<SplashBloc>(),
+          create: (context) =>
+              getIt<SplashBloc>()..add(const SplashEvent.splashPageLaunched()),
           child: SplashLayout(),
         ),
       ),

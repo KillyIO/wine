@@ -61,7 +61,8 @@ Future<_i1.GetIt> $initGetIt(_i1.GetIt get,
           get<_i3.Box<String>>(instanceName: 'defaultCoversBox'),
           get<_i5.FirebaseFirestore>()));
   gh.lazySingleton<_i12.ISessionsRepository>(() => _i13.SessionsRepository(
-      get<_i4.FirebaseAuth>(), get<_i3.Box<Map<String, dynamic>>>()));
+      get<_i4.FirebaseAuth>(),
+      get<_i3.Box<Map<String, dynamic>>>(instanceName: 'sessionsBox')));
   gh.lazySingleton<_i14.ISettingsRepository>(() => _i15.SettingsRepository(
       get<_i4.FirebaseAuth>(),
       get<_i3.Box<Map<String, dynamic>>>(instanceName: 'settingsBox')));

@@ -25,8 +25,8 @@ class LogInBloc extends Bloc<LogInEvent, LogInState> {
   ) : super(LogInState.initial());
 
   /// @nodoc
-  IAuthFacade _authFacade;
-  IUserRepository _userRepository;
+  final IAuthFacade _authFacade;
+  final IUserRepository _userRepository;
 
   @override
   Stream<LogInState> mapEventToState(

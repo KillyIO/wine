@@ -10,9 +10,10 @@ Future<void> main() async {
 
   WidgetsFlutterBinding.ensureInitialized();
 
-  configureInjection(Environment.prod);
-
-  await Firebase.initializeApp();
+  await Future.wait([
+    configureInjection(Environment.prod),
+    Firebase.initializeApp(),
+  ]);
 
   runApp(AppProduction());
 }

@@ -3,7 +3,7 @@ import 'package:injectable/injectable.dart';
 import 'package:wine/injection.config.dart';
 
 /// @nodoc
-GetIt getIt = GetIt.instance;
+final getIt = GetIt.instance;
 
 /// @nodoc
 @InjectableInit()

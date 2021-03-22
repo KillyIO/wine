@@ -1,5 +1,5 @@
 import 'package:dartz/dartz.dart';
-import 'package:validators/validators.dart';
+import 'package:string_validator/string_validator.dart';
 import 'package:wine/domain/core/value_failure.dart';
 
 /// @nodoc

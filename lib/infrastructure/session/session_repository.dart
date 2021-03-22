@@ -7,6 +7,7 @@ import 'package:wine/domain/sessions/i_sessions_repository.dart';
 import 'package:wine/domain/sessions/sessions_failure.dart';
 import 'package:wine/domain/user/user.dart';
 import 'package:wine/infrastructure/user/user_dto.dart';
+import 'package:wine/utils/constants/boxes.dart';
 
 /// @nodoc
 @LazySingleton(as: ISessionsRepository)
@@ -14,7 +15,7 @@ class SessionsRepository implements ISessionsRepository {
   /// @nodoc
   SessionsRepository(
     this._firebaseAuth,
-    this._sessionsBox,
+    @Named(sessionsBox) this._sessionsBox,
   );
 
   final auth.FirebaseAuth _firebaseAuth;
