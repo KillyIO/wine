@@ -43,29 +43,23 @@ class SplashBloc extends Bloc<SplashEvent, SplashState> {
   ) async* {
     yield* event.map(
       authenticated: (_) async* {
-        debugPrint('=== authenticated ===');
-        yield* (await _defaultCoversRepository.loadDefaultCoverURLs()).fold(
-          (failure) async* {
-            yield SplashState.failure(CoreFailure.defaultCovers(failure));
-          },
-          (defaultCoverURLs) async* {
-            add(SplashEvent.defaultCoverURLsLoaded(defaultCoverURLs));
-          },
-        );
+        if (_authFacade.isAnonymous) {
+          _fetchSettings();
+        } else {
+          yield* (await _defaultCoversRepository.loadDefaultCoverURLs()).fold(
+            (failure) async* {
+              yield SplashState.failure(CoreFailure.defaultCovers(failure));
+            },
+            (defaultCoverURLs) async* {
+              add(SplashEvent.defaultCoverURLsLoaded(defaultCoverURLs));
+            },
+          );
+        }
       },
       defaultCoverURLsCached: (_) async* {
-        debugPrint('=== defaultCoverURLsCached ===');
-        _settingsRepository.fetchSettings().fold(
-          (_) {
-            add(const SplashEvent.settingsNotFound());
-          },
-          (_) {
-            add(const SplashEvent.settingsFetched());
-          },
-        );
+        _fetchSettings();
       },
       defaultCoverURLsLoaded: (value) async* {
-        debugPrint('=== defaultCoverURLsLoaded ===');
         yield* (await _defaultCoversRepository
                 .cacheDefaultCoverURLs(value.defaultCoverURLs))
             .fold(
@@ -78,19 +72,22 @@ class SplashBloc extends Bloc<SplashEvent, SplashState> {
         );
       },
       sessionFetched: (value) async* {
-        debugPrint('=== sessionFetched ===');
-        yield* (await _userRepository.loadUser(value.session.uid.getOrCrash()))
-            .fold(
-          (failure) async* {
-            yield SplashState.failure(CoreFailure.user(failure));
-          },
-          (user) async* {
-            add(SplashEvent.userLoaded(user));
-          },
-        );
+        if (_authFacade.isAnonymous) {
+          yield const SplashState.goToHome();
+        } else {
+          yield* (await _userRepository
+                  .loadUser(value.session.uid.getOrCrash()))
+              .fold(
+            (failure) async* {
+              yield SplashState.failure(CoreFailure.user(failure));
+            },
+            (user) async* {
+              add(SplashEvent.userLoaded(user));
+            },
+          );
+        }
       },
       sessionNotFound: (_) async* {
-        debugPrint('=== sessionNotFound ===');
         yield* (await _sessionsRepository.createSession()).fold(
           (failure) async* {
             yield SplashState.failure(CoreFailure.sessions(failure));
@@ -101,10 +98,9 @@ class SplashBloc extends Bloc<SplashEvent, SplashState> {
         );
       },
       splashPageLaunched: (_) async* {
-        debugPrint('=== splashPageLaunched ===');
         Either<AuthFailure, Unit> failureOrSuccess;
 
-        if (!_authFacade.isLoggedIn()) {
+        if (!_authFacade.isLoggedIn) {
           failureOrSuccess = await _authFacade.logInAnonymously();
         }
 
@@ -118,15 +114,12 @@ class SplashBloc extends Bloc<SplashEvent, SplashState> {
         );
       },
       settingsFetched: (_) async* {
-        debugPrint('=== settingsFetched ===');
         await _fetchSession();
       },
       settingsInitialized: (_) async* {
-        debugPrint('=== settingsInitialized ===');
         await _fetchSession();
       },
       settingsNotFound: (_) async* {
-        debugPrint('=== settingsNotFound ===');
         yield* (await _settingsRepository.initializeSettings()).fold(
           (failure) async* {
             yield SplashState.failure(CoreFailure.settings(failure));
@@ -137,7 +130,6 @@ class SplashBloc extends Bloc<SplashEvent, SplashState> {
         );
       },
       userLoaded: (value) async* {
-        debugPrint('=== userLoaded ===');
         yield* (await _sessionsRepository.updateSession(value.user)).fold(
             (failure) async* {
           yield SplashState.failure(CoreFailure.sessions(failure));
@@ -155,6 +147,17 @@ class SplashBloc extends Bloc<SplashEvent, SplashState> {
       },
       (session) {
         add(SplashEvent.sessionFetched(session));
+      },
+    );
+  }
+
+  void _fetchSettings() {
+    _settingsRepository.fetchSettings().fold(
+      (_) {
+        add(const SplashEvent.settingsNotFound());
+      },
+      (_) {
+        add(const SplashEvent.settingsFetched());
       },
     );
   }

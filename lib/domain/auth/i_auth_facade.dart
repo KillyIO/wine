@@ -16,10 +16,10 @@ abstract class IAuthFacade {
   Future<Option<User>> getLoggedInUser();
 
   /// @nodoc
-  bool isAnonymous();
+  bool get isAnonymous;
 
   /// @nodoc
-  bool isLoggedIn();
+  bool get isLoggedIn;
 
   /// @nodoc
   Future<Either<AuthFailure, Unit>> logInAnonymously();

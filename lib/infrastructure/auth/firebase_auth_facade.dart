@@ -60,13 +60,13 @@ class FirebaseAuthFacade implements IAuthFacade {
       optionOf(_firebaseAuth.currentUser.toDomain());
 
   @override
-  bool isAnonymous() {
+  bool get isAnonymous {
     final currentUser = _firebaseAuth.currentUser;
     return currentUser != null && currentUser.isAnonymous;
   }
 
   @override
-  bool isLoggedIn() {
+  bool get isLoggedIn {
     final currentUser = _firebaseAuth.currentUser;
     return currentUser != null;
   }
