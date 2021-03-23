@@ -43,6 +43,7 @@ dev_dependencies:
   hive_generator: "0.8.2"
   injectable_generator: "1.1.2"
   json_serializable: "3.5.1"
+  mockito: "4.1.4"
   very_good_analysis: ^2.0.0
 
 flavorizr:
