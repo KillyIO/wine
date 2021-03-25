@@ -1,0 +1,13 @@
+image: cirrusci/flutter:stable
+
+before_script:
+  - flutter pub get
+
+stages:
+  - analyze-and-test
+
+analyze-and-test:
+  stage: analyze-and-test
+  script:
+    - flutter analyze
+    - flutter test
