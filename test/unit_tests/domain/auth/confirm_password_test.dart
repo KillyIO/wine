@@ -3,43 +3,50 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:wine/domain/auth/confirm_password.dart';
 import 'package:wine/domain/core/value_failure.dart';
 
+import '../../utils/constants.dart';
+
 void main() {
   group('ConfirmPassword -', () {
-    test('should return AssertionError if inputs null', () {
-      expect(
-        () => ConfirmPassword(null, null),
-        throwsAssertionError,
-      );
-    });
-
-    test('should return input if inputs valid and equal', () {
-      final password = ConfirmPassword(':TA..2Qjp{+kRp#R', ':TA..2Qjp{+kRp#R');
-
-      expect(
-        password.value,
-        right(':TA..2Qjp{+kRp#R'),
-      );
-    });
-
-    test('should return ValueFailure.invalidPassword if one input invalid', () {
-      final password = ConfirmPassword('myname123', ':TA..2Qjp{+kRp#R');
-
-      expect(
-        password.value,
-        left(const ValueFailure<String>.invalidPassword('myname123')),
-      );
-    });
+    test(
+      'When inputs null Then throw AssertionError',
+      () {
+        expect(
+          () => ConfirmPassword(null, null),
+          throwsAssertionError,
+        );
+      },
+    );
 
     test(
-      'should return ValueFailure.invalidConfirmPassword if inputs not equal',
+      'When inputs valid And inputs equal Then return input',
       () {
-        final password =
-            ConfirmPassword(':TA..2Qjp{+kRp#R', ':TB..2Qjp{+kRp#R');
+        final password = ConfirmPassword(testPassword, testPassword);
+
+        expect(password.value, right(testPassword));
+      },
+    );
+
+    test(
+      'When input invalid Then return ValueFailure.invalidPassword',
+      () {
+        final password = ConfirmPassword(testInvalidPassword, testPassword);
 
         expect(
           password.value,
-          left(const ValueFailure<String>.invalidConfirmPassword(
-              ':TA..2Qjp{+kRp#R')),
+          left(const ValueFailure<String>.invalidPassword(testInvalidPassword)),
+        );
+      },
+    );
+
+    test(
+      '''When inputs valid BUT not equal Then return ValueFailure.invalidConfirmPassword''',
+      () {
+        final password =
+            ConfirmPassword(testPassword, testInvalidConfirmPasssword);
+
+        expect(
+          password.value,
+          left(const ValueFailure<String>.invalidConfirmPassword(testPassword)),
         );
       },
     );

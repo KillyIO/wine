@@ -3,6 +3,8 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:wine/domain/auth/password.dart';
 import 'package:wine/domain/core/value_failure.dart';
 
+import '../../utils/constants.dart';
+
 void main() {
   group('Password -', () {
     test(
@@ -18,23 +20,20 @@ void main() {
     test(
       'When input valid Then return input',
       () {
-        final password = Password(':TA..2Qjp{+kRp#R');
+        final password = Password(testPassword);
 
-        expect(
-          password.value,
-          right(':TA..2Qjp{+kRp#R'),
-        );
+        expect(password.value, right(testPassword));
       },
     );
 
     test(
       'When input invalid The return ValueFailure invalidPassword',
       () {
-        final password = Password('myname123');
+        final password = Password(testInvalidPassword);
 
         expect(
           password.value,
-          left(const ValueFailure<String>.invalidPassword('myname123')),
+          left(const ValueFailure<String>.invalidPassword(testInvalidPassword)),
         );
       },
     );

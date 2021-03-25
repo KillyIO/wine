@@ -28,7 +28,7 @@ void main() {
     );
 
     test(
-      'When input invalid The return ValueFailure invalidEmailAddress',
+      'When input invalid Then return ValueFailure invalidEmailAddress',
       () {
         final emailAddress = EmailAddress('email.email.com');
 

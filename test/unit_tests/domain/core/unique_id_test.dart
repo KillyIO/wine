@@ -1,7 +1,7 @@
 import 'package:flutter_test/flutter_test.dart';
 import 'package:wine/domain/core/unique_id.dart';
 
-final testUid = 'bfvpiusvba98pbvpa98wepb';
+import '../../utils/constants.dart';
 
 void main() {
   group('UniqueID -', () {

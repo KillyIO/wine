@@ -3,6 +3,8 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:wine/domain/auth/username.dart';
 import 'package:wine/domain/core/value_failure.dart';
 
+import '../../utils/constants.dart';
+
 void main() {
   group('Username -', () {
     test(
@@ -18,12 +20,9 @@ void main() {
     test(
       'When input valid Then return input',
       () {
-        final username = Username('holly.molly');
+        final username = Username(testUsername);
 
-        expect(
-          username.value,
-          right('holly.molly'),
-        );
+        expect(username.value, right(testUsername));
       },
     );
 
