@@ -30,20 +30,20 @@ dependencies:
   json_annotation: "3.1.1"
   logger: "0.9.4"
   path_provider: "1.6.28"
-  uuid: "2.2.2"
   string_validator: "0.1.4"
+  uuid: "2.2.2"
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  auto_route_generator: "0.6.10"
-  build_runner: "1.11.1"
+  auto_route_generator: 0.6.10
+  build_runner: 1.11.1
   flutter_flavorizr: ^1.0.10
-  freezed: "0.12.7"
-  hive_generator: "0.8.2"
-  injectable_generator: "1.1.2"
-  json_serializable: "3.5.1"
-  mockito: "4.1.4"
+  freezed: 0.12.7
+  hive_generator: 0.8.2
+  injectable_generator: 1.1.2
+  json_serializable: 3.5.1
+  mocktail: ^0.1.1
   very_good_analysis: ^2.0.0
 
 flavorizr:
