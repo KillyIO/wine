@@ -12,7 +12,7 @@ import 'package:wine/domain/user/user.dart';
 import 'package:wine/infrastructure/user/user_dto.dart';
 
 /// Implementation of [IAuthFacade] using Firebase.
-@LazySingleton(as: IAuthFacade)
+@LazySingleton(as: IAuthFacade, env: ['dev', 'prod'])
 class FirebaseAuthFacade implements IAuthFacade {
   /// @nodoc
   FirebaseAuthFacade(

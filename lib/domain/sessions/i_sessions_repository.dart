@@ -11,7 +11,7 @@ abstract class ISessionsRepository {
   Future<Either<SessionsFailure, Unit>> deleteSession();
 
   /// @nodoc
-  Either<SessionsFailure, User> fetchSession();
+  Future<Either<SessionsFailure, User>> fetchSession();
 
   /// @nodoc
   Future<Either<SessionsFailure, Unit>> updateSession(User user);

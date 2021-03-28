@@ -44,7 +44,7 @@ class SplashBloc extends Bloc<SplashEvent, SplashState> {
     yield* event.map(
       authenticated: (_) async* {
         if (_authFacade.isAnonymous) {
-          _fetchSettings();
+          await _fetchSettings();
         } else {
           yield* (await _defaultCoversRepository.loadDefaultCoverURLs()).fold(
             (failure) async* {
@@ -57,7 +57,7 @@ class SplashBloc extends Bloc<SplashEvent, SplashState> {
         }
       },
       defaultCoverURLsCached: (_) async* {
-        _fetchSettings();
+        await _fetchSettings();
       },
       defaultCoverURLsLoaded: (value) async* {
         yield* (await _defaultCoversRepository
@@ -141,7 +141,7 @@ class SplashBloc extends Bloc<SplashEvent, SplashState> {
   }
 
   Future<void> _fetchSession() async {
-    _sessionsRepository.fetchSession().fold(
+    (await _sessionsRepository.fetchSession()).fold(
       (_) {
         add(const SplashEvent.sessionNotFound());
       },
@@ -151,8 +151,8 @@ class SplashBloc extends Bloc<SplashEvent, SplashState> {
     );
   }
 
-  void _fetchSettings() {
-    _settingsRepository.fetchSettings().fold(
+  Future<void> _fetchSettings() async {
+    (await _settingsRepository.fetchSettings()).fold(
       (_) {
         add(const SplashEvent.settingsNotFound());
       },

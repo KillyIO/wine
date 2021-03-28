@@ -13,7 +13,9 @@ class OnboardingPage extends StatelessWidget {
     return AnnotatedRegion<SystemUiOverlayStyle>(
       child: Scaffold(
         backgroundColor: Colors.white,
-        body: Container(),
+        body: Container(
+          child: Text('Onboarding'),
+        ),
       ),
       value: lightTheme,
     );

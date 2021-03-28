@@ -10,36 +10,40 @@ import 'package:wine/infrastructure/settings/settings_dto.dart';
 import 'package:wine/utils/constants/boxes.dart';
 
 /// @nodoc
-@LazySingleton(as: ISettingsRepository)
+@LazySingleton(as: ISettingsRepository, env: ['dev', 'prod'])
 class SettingsRepository implements ISettingsRepository {
   /// @nodoc
   SettingsRepository(
     this._firebaseAuth,
-    @Named(settingsBox) this._settingsBox,
+    this._hive,
   );
 
   final auth.FirebaseAuth _firebaseAuth;
 
   /// @nodoc
-  final Box<Map<String, dynamic>> _settingsBox;
+  final HiveInterface _hive;
 
   @override
   Future<Either<SettingsFailure, Unit>> deleteSettings() async {
+    final box = await _hive.openBox<Map<String, dynamic>>(settingsBox);
+
     final firebaseUser = _firebaseAuth.currentUser;
 
-    await _settingsBox.delete(firebaseUser.uid);
+    await box.delete(firebaseUser.uid);
 
-    if (_settingsBox.get(firebaseUser.uid) != null) {
+    if (box.get(firebaseUser.uid) != null) {
       return left(const SettingsFailure.settingsNotDeleted());
     }
     return right(unit);
   }
 
   @override
-  Either<SettingsFailure, Settings> fetchSettings() {
+  Future<Either<SettingsFailure, Settings>> fetchSettings() async {
+    final box = await _hive.openBox<Map<String, dynamic>>(settingsBox);
+
     final firebaseUser = _firebaseAuth.currentUser;
 
-    final settings = _settingsBox.get(firebaseUser.uid);
+    final settings = box.get(firebaseUser.uid);
 
     if (settings != null) {
       return right(settings.toDomain());
@@ -49,6 +53,8 @@ class SettingsRepository implements ISettingsRepository {
 
   @override
   Future<Either<SettingsFailure, Unit>> initializeSettings() async {
+    final box = await _hive.openBox<Map<String, dynamic>>(settingsBox);
+
     final firebaseUser = _firebaseAuth.currentUser;
 
     const settings = Settings(
@@ -60,12 +66,12 @@ class SettingsRepository implements ISettingsRepository {
       enableChaptersBookmarksCount: false,
     );
 
-    await _settingsBox.put(
+    await box.put(
       firebaseUser.uid,
       SettingsDTO.fromDomain(settings).toJson(),
     );
 
-    if (_settingsBox.get(firebaseUser.uid) != null) {
+    if (box.get(firebaseUser.uid) != null) {
       return right(unit);
     }
     return left(const SettingsFailure.settingsNotInitialized());
@@ -75,12 +81,14 @@ class SettingsRepository implements ISettingsRepository {
   Future<Either<SettingsFailure, Unit>> updateSettings(
     Settings settings,
   ) async {
+    final box = await _hive.openBox<Map<String, dynamic>>(settingsBox);
+
     final firebaseUser = _firebaseAuth.currentUser;
 
     final settingsAsMap = SettingsDTO.fromDomain(settings).toJson();
-    await _settingsBox.put(firebaseUser.uid, settingsAsMap);
+    await box.put(firebaseUser.uid, settingsAsMap);
 
-    if (_settingsBox.get(firebaseUser.uid) == settingsAsMap) return right(unit);
+    if (box.get(firebaseUser.uid) == settingsAsMap) return right(unit);
 
     return left(const SettingsFailure.settingsNotUpdated());
   }

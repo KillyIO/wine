@@ -1,7 +1,10 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flare_loading/flare_loading.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
 import 'package:wine/application/splash/splash_bloc.dart';
+import 'package:wine/presentation/routes/router.gr.dart';
 import 'package:wine/presentation/splash/widgets/splash_copyright.dart';
 import 'package:wine/utils/assets/animations.dart';
 import 'package:wine/utils/functions.dart';
@@ -16,8 +19,10 @@ class SplashLayout extends StatelessWidget {
           failure: (value) {
             value.failure.maybeMap(
               auth: (f) => f.f.maybeMap(
-                orElse: null,
+                orElse: () {},
                 serverError: (_) async =>
+                    restartApp(context, 'A problem occurred on our end!'),
+                unexpected: (_) async =>
                     restartApp(context, 'An unexpected error occured!'),
               ),
               defaultCovers: (f) => f.f.maybeMap(
@@ -25,33 +30,45 @@ class SplashLayout extends StatelessWidget {
                     restartApp(context, 'Default covers were not cached!'),
                 defaultCoverURLsNotLoaded: (_) async =>
                     restartApp(context, 'Default covers were not loaded!'),
-                orElse: null,
+                orElse: () {},
+                serverError: (_) async =>
+                    restartApp(context, 'A problem occurred on our end!'),
+                unexpected: (_) async =>
+                    restartApp(context, 'An unexpected error occured!'),
               ),
               sessions: (f) => f.f.maybeMap(
+                sessionNotCreated: (_) async =>
+                    restartApp(context, 'Session was not created!'),
                 sessionNotUpdated: (_) async =>
                     restartApp(context, 'Session was not updated!'),
-                orElse: null,
+                orElse: () {},
               ),
               settings: (f) => f.f.maybeMap(
                 settingsNotInitialized: (_) async =>
                     restartApp(context, 'Settings were not initialized!'),
-                orElse: null,
+                orElse: () {},
               ),
               user: (f) => f.f.maybeMap(
                 userNotFound: (_) async =>
                     restartApp(context, 'User account not found!'),
-                orElse: null,
+                orElse: () {},
               ),
-              orElse: null,
+              orElse: () {},
             );
           },
           goToHome: (value) {
-            // TODO Add navigate to home
+            ExtendedNavigator.root.pushAndRemoveUntil(
+              Routes.homePage,
+              (route) => false,
+            );
           },
           goToOnboarding: (value) {
-            // TODO Navigate to onboarding page
+            ExtendedNavigator.root.pushAndRemoveUntil(
+              Routes.onboardingPage,
+              (route) => false,
+            );
           },
-          orElse: null,
+          orElse: () {},
         );
       },
       child: Stack(

@@ -8,7 +8,7 @@ abstract class ISettingsRepository {
   Future<Either<SettingsFailure, Unit>> deleteSettings();
 
   /// @nodoc
-  Either<SettingsFailure, Settings> fetchSettings();
+  Future<Either<SettingsFailure, Settings>> fetchSettings();
 
   /// @nodoc
   Future<Either<SettingsFailure, Unit>> initializeSettings();

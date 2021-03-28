@@ -8,25 +8,27 @@ import 'package:wine/utils/constants/boxes.dart';
 import 'package:wine/utils/paths/default_covers.dart';
 
 /// @nodoc
-@LazySingleton(as: IDefaultCoversRepository)
+@LazySingleton(as: IDefaultCoversRepository, env: ['dev', 'prod'])
 class DefaultCoversRepository implements IDefaultCoversRepository {
   /// @nodoc
   DefaultCoversRepository(
-    @Named(defaultCoversBox) this._defaultCoversBox,
     this._firestore,
+    this._hive,
   );
 
-  final Box<String> _defaultCoversBox;
   final FirebaseFirestore _firestore;
+  final HiveInterface _hive;
 
   @override
   Future<Either<DefaultCoversFailure, Unit>> cacheDefaultCoverURLs(
     Map<String, String> urls,
   ) async {
     for (final key in urls.keys) {
-      await _defaultCoversBox.put(key, urls[key]);
+      final box = await _hive.openBox<String>(defaultCoversBox);
 
-      final url = _defaultCoversBox.get(key);
+      await box.put(key, urls[key]);
+
+      final url = box.get(key);
       if (url == null) {
         return left(const DefaultCoversFailure.defaultCoverURLsNotCached());
       }
@@ -35,8 +37,12 @@ class DefaultCoversRepository implements IDefaultCoversRepository {
   }
 
   @override
-  Either<DefaultCoversFailure, String> fetchDefaultCoverURLByKey(String key) {
-    final url = _defaultCoversBox.get(key);
+  Future<Either<DefaultCoversFailure, String>> fetchDefaultCoverURLByKey(
+    String key,
+  ) async {
+    final box = await _hive.openBox<String>(defaultCoversBox);
+
+    final url = box.get(key);
 
     if (url != null) {
       return right(url);

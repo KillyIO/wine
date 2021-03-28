@@ -6,6 +6,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:wine/application/splash/splash_bloc.dart';
 import 'package:wine/presentation/core/dialogs/error_dialog.dart';
 
+/// Tries to restart the app by add initial [SplashBloc] event
 Future<void> restartApp(BuildContext context, String errorMessage) async {
   final result = await showDialog(
     context: context,

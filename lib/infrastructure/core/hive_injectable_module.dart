@@ -1,52 +1,16 @@
-import 'dart:io';
-
 import 'package:hive/hive.dart';
+import 'package:hive_flutter/hive_flutter.dart';
 import 'package:injectable/injectable.dart';
-import 'package:path_provider/path_provider.dart';
-import 'package:wine/utils/constants/boxes.dart';
 
 /// @nodoc
 @module
 abstract class HiveInjectableModule {
-  /// @nodoc
+  /// Initialize and return an instance of Hive.
   @preResolve
   @lazySingleton
-  @Named(defaultCoversBox)
-  Future<Box<String>> get openDefaultCoversBox async {
-    final extDir = await getApplicationDocumentsDirectory();
-    final dirPath = '${extDir.path}/db';
-    await Directory(dirPath).create(recursive: true);
+  Future<HiveInterface> get hive async {
+    await Hive.initFlutter();
 
-    Hive.init(dirPath);
-
-    return Hive.openBox<String>(defaultCoversBox);
-  }
-
-  /// @nodoc
-  @preResolve
-  @lazySingleton
-  @Named(sessionsBox)
-  Future<Box<Map<String, dynamic>>> get openSessionsBox async {
-    final extDir = await getApplicationDocumentsDirectory();
-    final dirPath = '${extDir.path}/db';
-    await Directory(dirPath).create(recursive: true);
-
-    Hive.init(dirPath);
-
-    return Hive.openBox<Map<String, dynamic>>(sessionsBox);
-  }
-
-  /// @nodoc
-  @preResolve
-  @lazySingleton
-  @Named(settingsBox)
-  Future<Box<Map<String, dynamic>>> get openSettingsBox async {
-    final extDir = await getApplicationDocumentsDirectory();
-    final dirPath = '${extDir.path}/db';
-    await Directory(dirPath).create(recursive: true);
-
-    Hive.init(dirPath);
-
-    return Hive.openBox<Map<String, dynamic>>(settingsBox);
+    return Hive;
   }
 }
