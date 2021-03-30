@@ -37,6 +37,7 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   auto_route_generator: 0.6.10
+  bloc_test: 7.1.0
   build_runner: 1.11.1
   flutter_flavorizr: ^1.0.10
   freezed: 0.12.7
