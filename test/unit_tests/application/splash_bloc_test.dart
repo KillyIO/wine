@@ -6,11 +6,11 @@ import 'package:wine/domain/sessions/i_sessions_repository.dart';
 import 'package:wine/domain/settings/i_ssettings_repository.dart';
 import 'package:wine/domain/user/i_user_repository.dart';
 
-import '../../mocks/auth_facade_mocks.dart';
-import '../../mocks/default_covers_repository_mock.dart';
-import '../../mocks/sessions_repository_mocks.dart';
-import '../../mocks/settings_repository_mocks.dart';
-import '../../mocks/user_repository_mocks.dart';
+import '../../mocks/auth_mocks.dart';
+import '../../mocks/default_covers_mock.dart';
+import '../../mocks/sessions_mocks.dart';
+import '../../mocks/settings_mocks.dart';
+import '../../mocks/user_mocks.dart';
 
 void main() {
   IAuthFacade _authFacade;
