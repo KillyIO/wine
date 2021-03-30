@@ -50,13 +50,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.6.10"
-  bdd_widget_test:
-    dependency: "direct dev"
-    description:
-      name: bdd_widget_test
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.7.1"
   bloc:
     dependency: transitive
     description:
