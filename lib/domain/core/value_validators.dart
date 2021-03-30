@@ -35,6 +35,14 @@ Either<ValueFailure<String>, String> validatePassword(String input) {
 }
 
 /// @nodoc
+Either<ValueFailure<String>, String> validateUniqueID(String input) {
+  if (input != null && input.isNotEmpty) {
+    return right(input);
+  }
+  return left(ValueFailure.invalidUniqueID(input));
+}
+
+/// @nodoc
 Either<ValueFailure<String>, String> validateUsername(String input) {
   if (input.isNotEmpty) {
     return right(input);

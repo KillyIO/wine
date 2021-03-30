@@ -3,6 +3,7 @@ import 'package:uuid/uuid.dart';
 
 import 'package:wine/domain/core/value_failure.dart';
 import 'package:wine/domain/core/value_object.dart';
+import 'package:wine/domain/core/value_validators.dart';
 
 /// @nodoc
 class UniqueID extends ValueObject<String> {
@@ -17,7 +18,7 @@ class UniqueID extends ValueObject<String> {
   factory UniqueID.fromUniqueString(String uidStr) {
     assert(uidStr != null);
     return UniqueID._(
-      right(uidStr),
+      validateUniqueID(uidStr),
     );
   }
 

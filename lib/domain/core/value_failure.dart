@@ -18,6 +18,10 @@ abstract class ValueFailure<T> with _$ValueFailure<T> {
       InvalidConfirmPassword<T>;
 
   /// @nodoc
+  const factory ValueFailure.invalidUniqueID(T failedValue) =
+      InvalidUniqueID<T>;
+
+  /// @nodoc
   const factory ValueFailure.invalidUsername(T failedValue) =
       InvalidUsername<T>;
 }

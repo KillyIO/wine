@@ -35,6 +35,13 @@ class _$ValueFailureTearOff {
   }
 
 // ignore: unused_element
+  InvalidUniqueID<T> invalidUniqueID<T>(T failedValue) {
+    return InvalidUniqueID<T>(
+      failedValue,
+    );
+  }
+
+// ignore: unused_element
   InvalidUsername<T> invalidUsername<T>(T failedValue) {
     return InvalidUsername<T>(
       failedValue,
@@ -55,6 +62,7 @@ mixin _$ValueFailure<T> {
     @required TResult invalidEmailAddress(T failedValue),
     @required TResult invalidPassword(T failedValue),
     @required TResult invalidConfirmPassword(T failedValue),
+    @required TResult invalidUniqueID(T failedValue),
     @required TResult invalidUsername(T failedValue),
   });
   @optionalTypeArgs
@@ -62,6 +70,7 @@ mixin _$ValueFailure<T> {
     TResult invalidEmailAddress(T failedValue),
     TResult invalidPassword(T failedValue),
     TResult invalidConfirmPassword(T failedValue),
+    TResult invalidUniqueID(T failedValue),
     TResult invalidUsername(T failedValue),
     @required TResult orElse(),
   });
@@ -70,6 +79,7 @@ mixin _$ValueFailure<T> {
     @required TResult invalidEmailAddress(InvalidEmail<T> value),
     @required TResult invalidPassword(InvalidPassword<T> value),
     @required TResult invalidConfirmPassword(InvalidConfirmPassword<T> value),
+    @required TResult invalidUniqueID(InvalidUniqueID<T> value),
     @required TResult invalidUsername(InvalidUsername<T> value),
   });
   @optionalTypeArgs
@@ -77,6 +87,7 @@ mixin _$ValueFailure<T> {
     TResult invalidEmailAddress(InvalidEmail<T> value),
     TResult invalidPassword(InvalidPassword<T> value),
     TResult invalidConfirmPassword(InvalidConfirmPassword<T> value),
+    TResult invalidUniqueID(InvalidUniqueID<T> value),
     TResult invalidUsername(InvalidUsername<T> value),
     @required TResult orElse(),
   });
@@ -180,11 +191,13 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     @required TResult invalidEmailAddress(T failedValue),
     @required TResult invalidPassword(T failedValue),
     @required TResult invalidConfirmPassword(T failedValue),
+    @required TResult invalidUniqueID(T failedValue),
     @required TResult invalidUsername(T failedValue),
   }) {
     assert(invalidEmailAddress != null);
     assert(invalidPassword != null);
     assert(invalidConfirmPassword != null);
+    assert(invalidUniqueID != null);
     assert(invalidUsername != null);
     return invalidEmailAddress(failedValue);
   }
@@ -195,6 +208,7 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     TResult invalidEmailAddress(T failedValue),
     TResult invalidPassword(T failedValue),
     TResult invalidConfirmPassword(T failedValue),
+    TResult invalidUniqueID(T failedValue),
     TResult invalidUsername(T failedValue),
     @required TResult orElse(),
   }) {
@@ -211,11 +225,13 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     @required TResult invalidEmailAddress(InvalidEmail<T> value),
     @required TResult invalidPassword(InvalidPassword<T> value),
     @required TResult invalidConfirmPassword(InvalidConfirmPassword<T> value),
+    @required TResult invalidUniqueID(InvalidUniqueID<T> value),
     @required TResult invalidUsername(InvalidUsername<T> value),
   }) {
     assert(invalidEmailAddress != null);
     assert(invalidPassword != null);
     assert(invalidConfirmPassword != null);
+    assert(invalidUniqueID != null);
     assert(invalidUsername != null);
     return invalidEmailAddress(this);
   }
@@ -226,6 +242,7 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     TResult invalidEmailAddress(InvalidEmail<T> value),
     TResult invalidPassword(InvalidPassword<T> value),
     TResult invalidConfirmPassword(InvalidConfirmPassword<T> value),
+    TResult invalidUniqueID(InvalidUniqueID<T> value),
     TResult invalidUsername(InvalidUsername<T> value),
     @required TResult orElse(),
   }) {
@@ -314,11 +331,13 @@ class _$InvalidPassword<T> implements InvalidPassword<T> {
     @required TResult invalidEmailAddress(T failedValue),
     @required TResult invalidPassword(T failedValue),
     @required TResult invalidConfirmPassword(T failedValue),
+    @required TResult invalidUniqueID(T failedValue),
     @required TResult invalidUsername(T failedValue),
   }) {
     assert(invalidEmailAddress != null);
     assert(invalidPassword != null);
     assert(invalidConfirmPassword != null);
+    assert(invalidUniqueID != null);
     assert(invalidUsername != null);
     return invalidPassword(failedValue);
   }
@@ -329,6 +348,7 @@ class _$InvalidPassword<T> implements InvalidPassword<T> {
     TResult invalidEmailAddress(T failedValue),
     TResult invalidPassword(T failedValue),
     TResult invalidConfirmPassword(T failedValue),
+    TResult invalidUniqueID(T failedValue),
     TResult invalidUsername(T failedValue),
     @required TResult orElse(),
   }) {
@@ -345,11 +365,13 @@ class _$InvalidPassword<T> implements InvalidPassword<T> {
     @required TResult invalidEmailAddress(InvalidEmail<T> value),
     @required TResult invalidPassword(InvalidPassword<T> value),
     @required TResult invalidConfirmPassword(InvalidConfirmPassword<T> value),
+    @required TResult invalidUniqueID(InvalidUniqueID<T> value),
     @required TResult invalidUsername(InvalidUsername<T> value),
   }) {
     assert(invalidEmailAddress != null);
     assert(invalidPassword != null);
     assert(invalidConfirmPassword != null);
+    assert(invalidUniqueID != null);
     assert(invalidUsername != null);
     return invalidPassword(this);
   }
@@ -360,6 +382,7 @@ class _$InvalidPassword<T> implements InvalidPassword<T> {
     TResult invalidEmailAddress(InvalidEmail<T> value),
     TResult invalidPassword(InvalidPassword<T> value),
     TResult invalidConfirmPassword(InvalidConfirmPassword<T> value),
+    TResult invalidUniqueID(InvalidUniqueID<T> value),
     TResult invalidUsername(InvalidUsername<T> value),
     @required TResult orElse(),
   }) {
@@ -451,11 +474,13 @@ class _$InvalidConfirmPassword<T> implements InvalidConfirmPassword<T> {
     @required TResult invalidEmailAddress(T failedValue),
     @required TResult invalidPassword(T failedValue),
     @required TResult invalidConfirmPassword(T failedValue),
+    @required TResult invalidUniqueID(T failedValue),
     @required TResult invalidUsername(T failedValue),
   }) {
     assert(invalidEmailAddress != null);
     assert(invalidPassword != null);
     assert(invalidConfirmPassword != null);
+    assert(invalidUniqueID != null);
     assert(invalidUsername != null);
     return invalidConfirmPassword(failedValue);
   }
@@ -466,6 +491,7 @@ class _$InvalidConfirmPassword<T> implements InvalidConfirmPassword<T> {
     TResult invalidEmailAddress(T failedValue),
     TResult invalidPassword(T failedValue),
     TResult invalidConfirmPassword(T failedValue),
+    TResult invalidUniqueID(T failedValue),
     TResult invalidUsername(T failedValue),
     @required TResult orElse(),
   }) {
@@ -482,11 +508,13 @@ class _$InvalidConfirmPassword<T> implements InvalidConfirmPassword<T> {
     @required TResult invalidEmailAddress(InvalidEmail<T> value),
     @required TResult invalidPassword(InvalidPassword<T> value),
     @required TResult invalidConfirmPassword(InvalidConfirmPassword<T> value),
+    @required TResult invalidUniqueID(InvalidUniqueID<T> value),
     @required TResult invalidUsername(InvalidUsername<T> value),
   }) {
     assert(invalidEmailAddress != null);
     assert(invalidPassword != null);
     assert(invalidConfirmPassword != null);
+    assert(invalidUniqueID != null);
     assert(invalidUsername != null);
     return invalidConfirmPassword(this);
   }
@@ -497,6 +525,7 @@ class _$InvalidConfirmPassword<T> implements InvalidConfirmPassword<T> {
     TResult invalidEmailAddress(InvalidEmail<T> value),
     TResult invalidPassword(InvalidPassword<T> value),
     TResult invalidConfirmPassword(InvalidConfirmPassword<T> value),
+    TResult invalidUniqueID(InvalidUniqueID<T> value),
     TResult invalidUsername(InvalidUsername<T> value),
     @required TResult orElse(),
   }) {
@@ -517,6 +546,146 @@ abstract class InvalidConfirmPassword<T> implements ValueFailure<T> {
   @override
   @JsonKey(ignore: true)
   $InvalidConfirmPasswordCopyWith<T, InvalidConfirmPassword<T>> get copyWith;
+}
+
+/// @nodoc
+abstract class $InvalidUniqueIDCopyWith<T, $Res>
+    implements $ValueFailureCopyWith<T, $Res> {
+  factory $InvalidUniqueIDCopyWith(
+          InvalidUniqueID<T> value, $Res Function(InvalidUniqueID<T>) then) =
+      _$InvalidUniqueIDCopyWithImpl<T, $Res>;
+  @override
+  $Res call({T failedValue});
+}
+
+/// @nodoc
+class _$InvalidUniqueIDCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res>
+    implements $InvalidUniqueIDCopyWith<T, $Res> {
+  _$InvalidUniqueIDCopyWithImpl(
+      InvalidUniqueID<T> _value, $Res Function(InvalidUniqueID<T>) _then)
+      : super(_value, (v) => _then(v as InvalidUniqueID<T>));
+
+  @override
+  InvalidUniqueID<T> get _value => super._value as InvalidUniqueID<T>;
+
+  @override
+  $Res call({
+    Object failedValue = freezed,
+  }) {
+    return _then(InvalidUniqueID<T>(
+      failedValue == freezed ? _value.failedValue : failedValue as T,
+    ));
+  }
+}
+
+/// @nodoc
+class _$InvalidUniqueID<T> implements InvalidUniqueID<T> {
+  const _$InvalidUniqueID(this.failedValue) : assert(failedValue != null);
+
+  @override
+  final T failedValue;
+
+  @override
+  String toString() {
+    return 'ValueFailure<$T>.invalidUniqueID(failedValue: $failedValue)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is InvalidUniqueID<T> &&
+            (identical(other.failedValue, failedValue) ||
+                const DeepCollectionEquality()
+                    .equals(other.failedValue, failedValue)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
+
+  @JsonKey(ignore: true)
+  @override
+  $InvalidUniqueIDCopyWith<T, InvalidUniqueID<T>> get copyWith =>
+      _$InvalidUniqueIDCopyWithImpl<T, InvalidUniqueID<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object>({
+    @required TResult invalidEmailAddress(T failedValue),
+    @required TResult invalidPassword(T failedValue),
+    @required TResult invalidConfirmPassword(T failedValue),
+    @required TResult invalidUniqueID(T failedValue),
+    @required TResult invalidUsername(T failedValue),
+  }) {
+    assert(invalidEmailAddress != null);
+    assert(invalidPassword != null);
+    assert(invalidConfirmPassword != null);
+    assert(invalidUniqueID != null);
+    assert(invalidUsername != null);
+    return invalidUniqueID(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object>({
+    TResult invalidEmailAddress(T failedValue),
+    TResult invalidPassword(T failedValue),
+    TResult invalidConfirmPassword(T failedValue),
+    TResult invalidUniqueID(T failedValue),
+    TResult invalidUsername(T failedValue),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (invalidUniqueID != null) {
+      return invalidUniqueID(failedValue);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object>({
+    @required TResult invalidEmailAddress(InvalidEmail<T> value),
+    @required TResult invalidPassword(InvalidPassword<T> value),
+    @required TResult invalidConfirmPassword(InvalidConfirmPassword<T> value),
+    @required TResult invalidUniqueID(InvalidUniqueID<T> value),
+    @required TResult invalidUsername(InvalidUsername<T> value),
+  }) {
+    assert(invalidEmailAddress != null);
+    assert(invalidPassword != null);
+    assert(invalidConfirmPassword != null);
+    assert(invalidUniqueID != null);
+    assert(invalidUsername != null);
+    return invalidUniqueID(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object>({
+    TResult invalidEmailAddress(InvalidEmail<T> value),
+    TResult invalidPassword(InvalidPassword<T> value),
+    TResult invalidConfirmPassword(InvalidConfirmPassword<T> value),
+    TResult invalidUniqueID(InvalidUniqueID<T> value),
+    TResult invalidUsername(InvalidUsername<T> value),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (invalidUniqueID != null) {
+      return invalidUniqueID(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class InvalidUniqueID<T> implements ValueFailure<T> {
+  const factory InvalidUniqueID(T failedValue) = _$InvalidUniqueID<T>;
+
+  @override
+  T get failedValue;
+  @override
+  @JsonKey(ignore: true)
+  $InvalidUniqueIDCopyWith<T, InvalidUniqueID<T>> get copyWith;
 }
 
 /// @nodoc
@@ -586,11 +755,13 @@ class _$InvalidUsername<T> implements InvalidUsername<T> {
     @required TResult invalidEmailAddress(T failedValue),
     @required TResult invalidPassword(T failedValue),
     @required TResult invalidConfirmPassword(T failedValue),
+    @required TResult invalidUniqueID(T failedValue),
     @required TResult invalidUsername(T failedValue),
   }) {
     assert(invalidEmailAddress != null);
     assert(invalidPassword != null);
     assert(invalidConfirmPassword != null);
+    assert(invalidUniqueID != null);
     assert(invalidUsername != null);
     return invalidUsername(failedValue);
   }
@@ -601,6 +772,7 @@ class _$InvalidUsername<T> implements InvalidUsername<T> {
     TResult invalidEmailAddress(T failedValue),
     TResult invalidPassword(T failedValue),
     TResult invalidConfirmPassword(T failedValue),
+    TResult invalidUniqueID(T failedValue),
     TResult invalidUsername(T failedValue),
     @required TResult orElse(),
   }) {
@@ -617,11 +789,13 @@ class _$InvalidUsername<T> implements InvalidUsername<T> {
     @required TResult invalidEmailAddress(InvalidEmail<T> value),
     @required TResult invalidPassword(InvalidPassword<T> value),
     @required TResult invalidConfirmPassword(InvalidConfirmPassword<T> value),
+    @required TResult invalidUniqueID(InvalidUniqueID<T> value),
     @required TResult invalidUsername(InvalidUsername<T> value),
   }) {
     assert(invalidEmailAddress != null);
     assert(invalidPassword != null);
     assert(invalidConfirmPassword != null);
+    assert(invalidUniqueID != null);
     assert(invalidUsername != null);
     return invalidUsername(this);
   }
@@ -632,6 +806,7 @@ class _$InvalidUsername<T> implements InvalidUsername<T> {
     TResult invalidEmailAddress(InvalidEmail<T> value),
     TResult invalidPassword(InvalidPassword<T> value),
     TResult invalidConfirmPassword(InvalidConfirmPassword<T> value),
+    TResult invalidUniqueID(InvalidUniqueID<T> value),
     TResult invalidUsername(InvalidUsername<T> value),
     @required TResult orElse(),
   }) {
