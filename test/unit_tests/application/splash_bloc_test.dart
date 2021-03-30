@@ -1,6 +1,9 @@
+import 'package:bloc_test/bloc_test.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:wine/application/splash/splash_bloc.dart';
+import 'package:wine/domain/auth/auth_failure.dart';
 import 'package:wine/domain/auth/i_auth_facade.dart';
+import 'package:wine/domain/core/core_failure.dart';
 import 'package:wine/domain/default_covers/i_default_covers_repository.dart';
 import 'package:wine/domain/sessions/i_sessions_repository.dart';
 import 'package:wine/domain/settings/i_ssettings_repository.dart';
@@ -39,5 +42,31 @@ void main() {
 
   tearDown(() {
     _splashBloc?.close();
+  });
+
+  group('SplashBloc -', () {
+    blocTest(
+      'When instantiating return nothing',
+      build: () => _splashBloc,
+      expect: <SplashState>[],
+    );
+
+    group('_Failure', () {
+      blocTest(
+        'When error occur during signInAnonymously then yield Failure',
+        build: () => _splashBloc,
+        act: (SplashBloc bloc) =>
+            bloc.add(const SplashEvent.splashPageLaunched()),
+        expect: <SplashState>[
+          const SplashState.failure(
+            CoreFailure.auth(AuthFailure.serverError()),
+          ),
+        ],
+      );
+    });
+
+    group('_GoToHome', () {});
+
+    group('_GoToOnboarding', () {});
   });
 }
