@@ -56,17 +56,11 @@ class SplashLayout extends StatelessWidget {
               orElse: () {},
             );
           },
-          goToHome: (value) {
-            ExtendedNavigator.root.pushAndRemoveUntil(
-              Routes.homePage,
-              (route) => false,
-            );
+          goToHome: (_) {
+            ExtendedNavigator.root.replace(Routes.homePage);
           },
-          goToOnboarding: (value) {
-            ExtendedNavigator.root.pushAndRemoveUntil(
-              Routes.onboardingPage,
-              (route) => false,
-            );
+          goToOnboarding: (_) {
+            ExtendedNavigator.root.replace(Routes.onboardingPage);
           },
           orElse: () {},
         );

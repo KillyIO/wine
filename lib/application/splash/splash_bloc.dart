@@ -1,12 +1,10 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
-import 'package:dartz/dartz.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 
-import 'package:wine/domain/auth/auth_failure.dart';
 import 'package:wine/domain/auth/i_auth_facade.dart';
 import 'package:wine/domain/core/core_failure.dart';
 import 'package:wine/domain/default_covers/i_default_covers_repository.dart';
@@ -98,20 +96,18 @@ class SplashBloc extends Bloc<SplashEvent, SplashState> {
         );
       },
       splashPageLaunched: (_) async* {
-        Either<AuthFailure, Unit> failureOrSuccess;
-
-        if (!_authFacade.isLoggedIn) {
-          failureOrSuccess = await _authFacade.logInAnonymously();
+        if (_authFacade.isLoggedIn) {
+          add(const SplashEvent.authenticated());
+        } else {
+          yield* (await _authFacade.logInAnonymously()).fold(
+            (failure) async* {
+              yield SplashState.failure(CoreFailure.auth(failure));
+            },
+            (_) async* {
+              add(const SplashEvent.authenticated());
+            },
+          );
         }
-
-        yield* failureOrSuccess.fold(
-          (failure) async* {
-            yield SplashState.failure(CoreFailure.auth(failure));
-          },
-          (_) async* {
-            add(const SplashEvent.authenticated());
-          },
-        );
       },
       settingsFetched: (_) async* {
         await _fetchSession();
