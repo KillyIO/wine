@@ -5,7 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:wine/application/splash/splash_bloc.dart';
 import 'package:wine/presentation/routes/router.gr.dart';
-import 'package:wine/presentation/splash/widgets/splash_copyright.dart';
+import 'package:wine/presentation/splash/widgets/splash_designer.dart';
 import 'package:wine/utils/assets/animations.dart';
 import 'package:wine/utils/functions.dart';
 
@@ -68,6 +68,7 @@ class SplashLayout extends StatelessWidget {
       child: Stack(
         children: <Widget>[
           FlareLoading(
+            key: const Key('wine_animation_logo'),
             name: logoAnimation,
             startAnimation: 'logo',
             loopAnimation: 'logo',
@@ -78,7 +79,7 @@ class SplashLayout extends StatelessWidget {
             padding: const EdgeInsets.only(bottom: 25.0),
             child: Align(
               alignment: Alignment.bottomCenter,
-              child: SplashCopyright(),
+              child: SplashDesigner(),
             ),
           ),
         ],

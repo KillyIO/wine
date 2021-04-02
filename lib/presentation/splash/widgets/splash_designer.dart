@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 /// @nodoc
-class SplashCopyright extends StatelessWidget {
+class SplashDesigner extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(

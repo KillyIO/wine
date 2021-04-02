@@ -58,7 +58,7 @@ void main() {
       expect: <SplashState>[],
     );
 
-    group('errors -', () {
+    group('Errors -', () {
       blocTest(
         'When error occur during signInAnonymously then yield Failure',
         build: () => _splashBloc,
@@ -208,7 +208,7 @@ void main() {
       );
     });
 
-    group('completed -', () {
+    group('Completed -', () {
       blocTest(
         'When session not found And session created Then yield goToOnboarding',
         build: () => _splashBloc,
