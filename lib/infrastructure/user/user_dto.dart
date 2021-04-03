@@ -80,6 +80,6 @@ extension UserX on auth.User {
   User toDomain() => User(
         emailAddress: EmailAddress(email),
         uid: UniqueID.fromUniqueString(uid),
-        username: Username(displayName ?? email.split('@').first),
+        username: Username(email.split('@').first),
       );
 }

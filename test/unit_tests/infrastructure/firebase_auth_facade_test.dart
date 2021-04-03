@@ -35,7 +35,7 @@ void main() {
     registerFallbackValue<AuthCredential>(MockAuthCredential());
   });
 
-  group('IAuthFacade -', () {
+  group('FirebaseAuthFacade -', () {
     group('convertWithEmailAndPassword -', () {
       setUp(() {
         when(() => _firebaseAuth.currentUser).thenReturn(_firebaseUser);
@@ -105,6 +105,63 @@ void main() {
           );
         },
       );
+    });
+
+    group('getLoggedInUser -', () {
+      test('When user not logged in Then return None', () async {
+        when(() => _firebaseAuth.currentUser).thenReturn(null);
+
+        final result = await _authFacade.getLoggedInUser();
+
+        expect(result.isNone(), true);
+      });
+
+      test('When user logged in Then return Some User', () async {
+        when(() => _firebaseAuth.currentUser).thenReturn(_firebaseUser);
+
+        final result = await _authFacade.getLoggedInUser();
+
+        result.fold(
+          () {},
+          (some) => expect(some, testUser),
+        );
+      });
+    });
+
+    group('isAnonymous -', () {
+      test('When user not logged in Then return false', () {
+        when(() => _firebaseAuth.currentUser).thenReturn(null);
+
+        expect(_authFacade.isAnonymous, false);
+      });
+
+      test('When user logged anonymously Then return true', () {
+        when(() => _firebaseAuth.currentUser).thenReturn(_firebaseUser);
+
+        expect(_authFacade.isAnonymous, true);
+      });
+
+      test('When user authenticated Then return false', () {
+        final authUser = MockUser(isAnonymous: false);
+
+        when(() => _firebaseAuth.currentUser).thenReturn(authUser);
+
+        expect(_authFacade.isAnonymous, false);
+      });
+    });
+
+    group('isLoggedIn -', () {
+      test('When user logged in Then return true', () {
+        when(() => _firebaseAuth.currentUser).thenReturn(_firebaseUser);
+
+        expect(_authFacade.isLoggedIn, true);
+      });
+
+      test('When user not logged in Then return false', () {
+        when(() => _firebaseAuth.currentUser).thenReturn(null);
+
+        expect(_authFacade.isLoggedIn, false);
+      });
     });
   });
 }

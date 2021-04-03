@@ -10,8 +10,8 @@ const testConfirmPasssword = '''wT-t"_fCznEH+tPMt7Y\$JB''';
 const testEmailAddress = 'lphong.tieu.75@pickuplanet.com';
 const testPassword = '''wT-t"_fCznEH+tPMt7Y\$JB''';
 const testUid = '73488ab6-8db0-11eb-8dcd-0242ac130003';
-const testUsername = 'findingnemo';
-const testName = 'Finding Nemo';
+const testUsername = 'lphong.tieu.75';
+const testName = 'Lphong Tieu 75';
 
 const testSettings = Settings(
   enableChaptersBookmarksCount: false,
@@ -26,7 +26,7 @@ const testSessionAnonymous = {};
 final testUser = User(
   emailAddress: EmailAddress(testEmailAddress),
   uid: UniqueID.fromUniqueString(testUid),
-  username: Username(testUsername),
+  username: Username(testEmailAddress.split('@').first),
 );
 
 // SECTION invalid inputs
