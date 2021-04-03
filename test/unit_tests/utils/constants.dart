@@ -1,4 +1,5 @@
 // SECTION valid inputs
+import 'package:firebase_core/firebase_core.dart';
 import 'package:wine/domain/auth/email_address.dart';
 import 'package:wine/domain/auth/username.dart';
 import 'package:wine/domain/core/unique_id.dart';
@@ -34,3 +35,18 @@ const testInvalidPassword = '123456';
 const testInvalidConfirmPasssword = '456789';
 const testInvalidUid = '';
 const testInvalidUsername = '';
+
+// SECTION: Exceptions
+final testUnexpectedError = Exception();
+
+// SECTION: FirebaseException
+final testEmailAlreadyinUserException = FirebaseException(
+  plugin: 'auth',
+  message: 'Email already in use.',
+  code: 'email-already-in-use',
+);
+
+final testRandomServerException = FirebaseException(
+  plugin: 'server',
+  message: 'Not handled Firebase exception',
+);
