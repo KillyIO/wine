@@ -37,13 +37,19 @@ const testInvalidUid = '';
 const testInvalidUsername = '';
 
 // SECTION: Exceptions
-final testUnexpectedError = Exception();
+final testUnexpected = Exception();
 
 // SECTION: FirebaseException
 final testEmailAlreadyinUserException = FirebaseException(
   plugin: 'auth',
   message: 'Email already in use.',
   code: 'email-already-in-use',
+);
+
+final testInvalidEmailPasswordCombination = FirebaseException(
+  plugin: 'auth',
+  message: 'Invalid email/password combination',
+  code: 'user-not-found',
 );
 
 final testRandomServerException = FirebaseException(

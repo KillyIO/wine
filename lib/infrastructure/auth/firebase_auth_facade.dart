@@ -183,7 +183,7 @@ class FirebaseAuthFacade implements IAuthFacade {
         await currentUser.sendEmailVerification();
         return right(unit);
       }
-      return left(const AuthFailure.serverError());
+      return left(const AuthFailure.unexpected());
     } on FirebaseException catch (_) {
       return left(const AuthFailure.serverError());
     } catch (_) {

@@ -24,9 +24,9 @@ class MockUser extends Mock implements auth.User {
   bool get isAnonymous => _isAnonymous;
 
   @override
-  Future<String> getIdToken([bool forceRefresh = false]) async {
-    return Future.value('fake_token');
-  }
+  Future<String> getIdToken([bool forceRefresh = false]) async => 'fake_token';
 }
 
 class MockAuthCredential extends Mock implements AuthCredential {}
+
+class MockUserCredential extends Mock implements auth.UserCredential {}

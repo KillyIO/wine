@@ -14,7 +14,7 @@ class OnboardingPage extends StatelessWidget {
       child: Scaffold(
         backgroundColor: Colors.white,
         body: Container(
-          child: Text('Onboarding'),
+          child: const Text('Onboarding'),
         ),
       ),
       value: lightTheme,

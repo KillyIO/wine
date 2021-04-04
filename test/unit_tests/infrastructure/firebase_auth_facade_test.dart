@@ -1,7 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:firebase_auth/firebase_auth.dart' as auth;
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:mocktail/mocktail.dart';
@@ -47,12 +46,12 @@ void main() {
           Password(testPassword),
         );
 
-        debugPrint(result.toString());
-
         result.fold(
           (_) {},
           (success) => expect(success, unit),
         );
+
+        verify(_firebaseUser.sendEmailVerification).called(1);
       });
 
       test(
@@ -92,7 +91,7 @@ void main() {
         'When unexpected error occurs Then return Unexpected',
         () async {
           when(() => _firebaseUser.linkWithCredential(any()))
-              .thenThrow(testUnexpectedError);
+              .thenThrow(testUnexpected);
 
           final result = await _authFacade.convertWithEmailAndPassword(
             EmailAddress(testEmailAddress),
@@ -162,6 +161,201 @@ void main() {
 
         expect(_authFacade.isLoggedIn, false);
       });
+    });
+
+    group('logInAnonymously -', () {
+      test('When user logged in Then return Unit', () async {
+        when(_firebaseAuth.signInAnonymously)
+            .thenAnswer((_) async => MockUserCredential());
+
+        final result = await _authFacade.logInAnonymously();
+
+        result.fold(
+          (_) {},
+          (success) => expect(success, isA<Unit>()),
+        );
+      });
+
+      test('When server error occurs Then return ServerError', () async {
+        when(_firebaseAuth.signInAnonymously)
+            .thenThrow(testRandomServerException);
+
+        final result = await _authFacade.logInAnonymously();
+
+        result.fold(
+          (failure) => expect(failure, isA<ServerError>()),
+          (_) {},
+        );
+      });
+
+      test('When unexpected error occurs Then return Unexpected', () async {
+        when(_firebaseAuth.signInAnonymously).thenThrow(testUnexpected);
+
+        final result = await _authFacade.logInAnonymously();
+
+        result.fold(
+          (failure) => expect(failure, isA<Unexpected>()),
+          (_) {},
+        );
+      });
+    });
+
+    group('logInWithEmailAndPassword -', () {
+      setUp(() {
+        when(() => _firebaseAuth.currentUser).thenReturn(_firebaseUser);
+      });
+
+      test(
+        'When credentials valid and user registered Then return Unit',
+        () async {
+          when(
+            () => _firebaseAuth.signInWithEmailAndPassword(
+              email: any(named: 'email'),
+              password: any(named: 'password'),
+            ),
+          ).thenAnswer((_) async => MockUserCredential());
+
+          final result = await _authFacade.logInWithEmailAndPassword(
+            EmailAddress(testEmailAddress),
+            Password(testPassword),
+          );
+
+          result.fold(
+            (_) {},
+            (success) => expect(success, unit),
+          );
+        },
+      );
+
+      test(
+        '''When wrong email/password combination Then return InvalidEmailAndPasswordCombination''',
+        () async {
+          when(
+            () => _firebaseAuth.signInWithEmailAndPassword(
+              email: any(named: 'email'),
+              password: any(named: 'password'),
+            ),
+          ).thenThrow(testInvalidEmailPasswordCombination);
+
+          final result = await _authFacade.logInWithEmailAndPassword(
+            EmailAddress(testEmailAddress),
+            Password(testPassword),
+          );
+
+          result.fold(
+            (failure) => expect(
+              failure,
+              isA<InvalidEmailAndPasswordCombination>(),
+            ),
+            (_) {},
+          );
+        },
+      );
+
+      test('When server error occurs Then return ServerError', () async {
+        when(
+          () => _firebaseAuth.signInWithEmailAndPassword(
+            email: any(named: 'email'),
+            password: any(named: 'password'),
+          ),
+        ).thenThrow(testRandomServerException);
+
+        final result = await _authFacade.logInWithEmailAndPassword(
+          EmailAddress(testEmailAddress),
+          Password(testPassword),
+        );
+
+        result.fold(
+          (failure) => expect(failure, isA<ServerError>()),
+          (_) {},
+        );
+      });
+    });
+
+    group('logInWithGoogle -', () {});
+
+    group('logOut -', () {
+      setUp(() {
+        when(_firebaseAuth.signOut).thenAnswer((_) async => null);
+      });
+
+      test('When user logged out Then return Unit', () async {
+        when(_googleSignIn.signOut)
+            .thenAnswer((_) async => MockGoogleSignInAccount());
+        when(() => _firebaseAuth.currentUser).thenReturn(null);
+        when(_firebaseAuth.signInAnonymously)
+            .thenAnswer((_) async => MockUserCredential());
+
+        final result = await _authFacade.logOut();
+
+        result.fold(
+          (_) {},
+          (success) => expect(success, isA<Unit>()),
+        );
+      });
+
+      test('When user not logged out Then return UnableToSignOut', () async {
+        when(_googleSignIn.signOut)
+            .thenAnswer((_) async => MockGoogleSignInAccount());
+        when(() => _firebaseAuth.currentUser).thenReturn(_firebaseUser);
+
+        final result = await _authFacade.logOut();
+
+        result.fold(
+          (failure) => expect(failure, isA<UnableToSignOut>()),
+          (_) {},
+        );
+      });
+
+      test('When unexpected error occurs Then return Unexpected', () async {
+        when(_googleSignIn.signOut).thenThrow(testUnexpected);
+
+        final result = await _authFacade.logOut();
+
+        result.fold(
+          (failure) => expect(failure, isA<Unexpected>()),
+          (_) {},
+        );
+      });
+    });
+
+    group('resendVerificationEmail -', () {
+      test('When verification email sent Then return Unit', () async {
+        when(() => _firebaseAuth.currentUser).thenReturn(_firebaseUser);
+
+        final result = await _authFacade.resendVerificationEmail();
+
+        result.fold(
+          (_) {},
+          (success) => expect(success, isA<Unit>()),
+        );
+      });
+
+      test('When user null Then return Unexpected', () async {
+        when(() => _firebaseAuth.currentUser).thenReturn(null);
+
+        final result = await _authFacade.resendVerificationEmail();
+
+        result.fold(
+          (failure) => expect(failure, isA<Unexpected>()),
+          (_) {},
+        );
+      });
+
+      test(
+        'When unexpected error occurs Then return Unexpected',
+        () async {
+          when(() => _firebaseAuth.currentUser).thenReturn(_firebaseUser);
+          when(_firebaseUser.sendEmailVerification).thenThrow(testUnexpected);
+
+          final result = await _authFacade.resendVerificationEmail();
+
+          result.fold(
+            (failure) => expect(failure, isA<Unexpected>()),
+            (_) {},
+          );
+        },
+      );
     });
   });
 }
