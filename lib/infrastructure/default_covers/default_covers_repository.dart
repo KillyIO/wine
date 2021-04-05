@@ -23,9 +23,9 @@ class DefaultCoversRepository implements IDefaultCoversRepository {
   Future<Either<DefaultCoversFailure, Unit>> cacheDefaultCoverURLs(
     Map<String, String> urls,
   ) async {
-    for (final key in urls.keys) {
-      final box = await _hive.openBox<String>(defaultCoversBox);
+    final box = await _hive.openBox<String>(defaultCoversBox);
 
+     for (final key in urls.keys) {
       await box.put(key, urls[key]);
 
       final url = box.get(key);
