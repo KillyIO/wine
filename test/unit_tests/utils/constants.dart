@@ -52,6 +52,12 @@ final testInvalidEmailPasswordCombination = FirebaseException(
   code: 'user-not-found',
 );
 
+final testCredentialInUse = FirebaseException(
+  plugin: 'auth',
+  message: 'Credential already in use!',
+  code: 'credential-already-in-use',
+);
+
 final testRandomServerException = FirebaseException(
   plugin: 'server',
   message: 'Not handled Firebase exception',

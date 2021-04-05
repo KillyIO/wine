@@ -270,9 +270,99 @@ void main() {
           (_) {},
         );
       });
+
+      test('When unexpected error occurs Then return Unexpected', () async {
+        when(
+          () => _firebaseAuth.signInWithEmailAndPassword(
+            email: any(named: 'email'),
+            password: any(named: 'password'),
+          ),
+        ).thenThrow(testUnexpected);
+
+        final result = await _authFacade.logInWithEmailAndPassword(
+          EmailAddress(testEmailAddress),
+          Password(testPassword),
+        );
+
+        result.fold(
+          (failure) => expect(failure, isA<Unexpected>()),
+          (_) {},
+        );
+      });
     });
 
-    group('logInWithGoogle -', () {});
+    group('logInWithGoogle -', () {
+      setUp(() {
+        when(() => _firebaseAuth.currentUser).thenReturn(_firebaseUser);
+      });
+
+      test('When user logged in Then return Unit', () async {
+        when(_googleSignIn.signIn)
+            .thenAnswer((_) async => MockGoogleSignInAccount());
+        when(() => _firebaseUser.linkWithCredential(any()))
+            .thenAnswer((_) async => MockUserCredential());
+        when(() => _googleSignIn.currentUser)
+            .thenReturn(MockGoogleSignInAccount());
+
+        final result = await _authFacade.logInWithGoogle();
+
+        result.fold(
+          (_) {},
+          (success) => expect(success, unit),
+        );
+      });
+
+      test('When cancelled by user Then return CancelledByUser', () async {
+        when(_googleSignIn.signIn).thenAnswer((_) async => null);
+
+        final result = await _authFacade.logInWithGoogle();
+
+        result.fold(
+          (failure) => expect(failure, isA<CancelledByUser>()),
+          (_) {},
+        );
+      });
+
+      test('When credential already in use Then return Unit', () async {
+        when(_googleSignIn.signIn)
+            .thenAnswer((_) async => MockGoogleSignInAccount());
+        when(() => _firebaseUser.linkWithCredential(any()))
+            .thenThrow(testCredentialInUse);
+        when(() => _firebaseAuth.signInWithCredential(any()))
+            .thenAnswer((_) async => MockUserCredential());
+        when(() => _googleSignIn.currentUser)
+            .thenReturn(MockGoogleSignInAccount());
+
+        final result = await _authFacade.logInWithGoogle();
+
+        result.fold(
+          (_) {},
+          (success) => expect(success, unit),
+        );
+      });
+
+      test('When server error occurs Then return ServerError', () async {
+        when(_googleSignIn.signIn).thenThrow(testRandomServerException);
+
+        final result = await _authFacade.logInWithGoogle();
+
+        result.fold(
+          (failure) => expect(failure, isA<ServerError>()),
+          (_) {},
+        );
+      });
+
+      test('When unexpected error occurs Then return Unexpected', () async {
+        when(_googleSignIn.signIn).thenThrow(testUnexpected);
+
+        final result = await _authFacade.logInWithGoogle();
+
+        result.fold(
+          (failure) => expect(failure, isA<Unexpected>()),
+          (_) {},
+        );
+      });
+    });
 
     group('logOut -', () {
       setUp(() {
