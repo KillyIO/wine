@@ -210,7 +210,7 @@ packages:
       name: coverage
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.15.2"
+    version: "0.14.2"
   crypto:
     dependency: transitive
     description:
@@ -888,7 +888,7 @@ packages:
       name: vm_service
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "6.1.0+1"
+    version: "5.5.0"
   watcher:
     dependency: transitive
     description:

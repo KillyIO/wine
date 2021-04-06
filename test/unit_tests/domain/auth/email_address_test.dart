@@ -20,11 +20,11 @@ void main() {
     test(
       'When input valid Then return input',
       () {
-        final emailAddress = EmailAddress(testInvalidEmailAddress);
+        final emailAddress = EmailAddress(testEmailAddress);
 
         expect(
           emailAddress.value,
-          right(testInvalidEmailAddress),
+          right(testEmailAddress),
         );
       },
     );
