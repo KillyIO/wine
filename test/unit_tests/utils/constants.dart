@@ -43,6 +43,11 @@ final testUser = User(
   uid: UniqueID.fromUniqueString(testUid),
   username: Username(testEmailAddress.split('@').first),
 );
+final testUserAsMap = {
+  'emailAddress': testEmailAddress,
+  'uid': testUid,
+  'username': testEmailAddress.split('@').first,
+};
 
 // SECTION invalid inputs
 const testInvalidEmailAddress = 'lphong.tieu.75pickuplanet.com';

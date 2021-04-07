@@ -4,6 +4,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:hive/hive.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:wine/domain/default_covers/default_covers_failure.dart';
+import 'package:wine/domain/default_covers/i_default_covers_repository.dart';
 import 'package:wine/infrastructure/default_covers/default_covers_repository.dart';
 
 import '../../mocks/cloud_firestore_mocks.dart';
@@ -11,12 +12,12 @@ import '../../mocks/hive_mocks.dart';
 import '../utils/constants.dart';
 
 void main() {
-  DefaultCoversRepository _defaultCoversRepository;
+  IDefaultCoversRepository _defaultCoversRepository;
 
   FirebaseFirestore _firestore;
 
   HiveInterface _hive;
-  Box<String> _boxString = MockBox<String>();
+  Box<String> _box = MockBox<String>();
 
   setUp(() {
     _firestore = MockFirebaseFirestore();
@@ -24,12 +25,12 @@ void main() {
 
     _defaultCoversRepository = DefaultCoversRepository(_firestore, _hive);
 
-    when(() => _hive.openBox(any())).thenAnswer((_) async => _boxString);
+    when(() => _hive.openBox(any())).thenAnswer((_) async => _box);
   });
 
   group('cacheDefaultCoverURLs -', () {
     test('When covers cached Then return Unit', () async {
-      when(() => _boxString.get(any())).thenReturn('coverURL');
+      when(() => _box.get(any())).thenReturn('coverURL');
 
       final result = await _defaultCoversRepository
           .cacheDefaultCoverURLs(testDefaultCovers);
@@ -39,15 +40,15 @@ void main() {
         (success) => expect(success, unit),
       );
 
-      verify(() => _boxString.put(any(), any())).called(2);
+      verify(() => _box.put(any(), any())).called(2);
 
-      verify(() => _boxString.get(any())).called(2);
+      verify(() => _box.get(any())).called(2);
     });
 
     test(
       'When at least one cover not cached The return DefaultCoverURLsNotCached',
       () async {
-        when(() => _boxString.get(any())).thenReturn(null);
+        when(() => _box.get(any())).thenReturn(null);
 
         final result = await _defaultCoversRepository
             .cacheDefaultCoverURLs(testDefaultCovers);
@@ -65,7 +66,7 @@ void main() {
 
   group('fetchDefaultCoverURLByKey -', () {
     test('When cover fetched Then return cover URL', () async {
-      when(() => _boxString.get(any())).thenReturn('coverURL');
+      when(() => _box.get(any())).thenReturn('coverURL');
 
       final result =
           await _defaultCoversRepository.fetchDefaultCoverURLByKey('string');
@@ -79,7 +80,7 @@ void main() {
     test(
       'When cover not found Then return DefaultCoverURLsNotFetched',
       () async {
-        when(() => _boxString.get(any())).thenReturn(null);
+        when(() => _box.get(any())).thenReturn(null);
 
         final result =
             await _defaultCoversRepository.fetchDefaultCoverURLByKey('string');
