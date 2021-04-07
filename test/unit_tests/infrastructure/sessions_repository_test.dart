@@ -32,10 +32,6 @@ void main() {
   });
 
   group('createSession -', () {
-    setUp(() {
-      when(() => _firebaseAuth.currentUser).thenReturn(MockUser());
-    });
-
     test('When session created Then return Unit', () async {
       when(() => _box.get(any())).thenReturn(testUserAsMap);
 

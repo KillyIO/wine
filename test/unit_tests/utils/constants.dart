@@ -28,7 +28,7 @@ const testSettings = Settings(
   enableSeriesLikesCount: false,
   enableSeriesViewsCount: false,
 );
-const testSettingsAsMap = {
+final testSettingsAsMap = {
   'enableChaptersBookmarksCount': false,
   'enableChaptersLikesCount': false,
   'enableChaptersViewsCount': false,
