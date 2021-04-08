@@ -15,8 +15,8 @@ const testName = 'Lphong Tieu 75';
 
 // SECTION Default Covers
 const testDefaultCovers = {
-  'dc1': 'name',
-  'dc2': 'name',
+  'key': 'key',
+  'coverURL': 'coverURL',
 };
 
 // SECTION Settings

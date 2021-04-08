@@ -20,9 +20,9 @@ class UserRepository extends IUserRepository {
   Future<Either<UserFailure, Unit>> checkUsernameAvailability(
     Username username,
   ) async {
-    try {
-      final usernameStr = username.getOrCrash();
+    final usernameStr = username.getOrCrash();
 
+    try {
       final documentSnapshot = await _firestore
           .collection(usernameUIDMapPath)
           .doc(usernameStr)

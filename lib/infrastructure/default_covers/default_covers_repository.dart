@@ -25,7 +25,7 @@ class DefaultCoversRepository implements IDefaultCoversRepository {
   ) async {
     final box = await _hive.openBox<String>(defaultCoversBox);
 
-     for (final key in urls.keys) {
+    for (final key in urls.keys) {
       await box.put(key, urls[key]);
 
       final url = box.get(key);
@@ -57,7 +57,7 @@ class DefaultCoversRepository implements IDefaultCoversRepository {
       final querySnapshot =
           await _firestore.collection(defaultCoversPath).get();
 
-      if (querySnapshot.docs.isEmpty) {
+      if (querySnapshot.docs == null || querySnapshot.docs.isEmpty) {
         return left(const DefaultCoversFailure.defaultCoverURLsNotLoaded());
       }
 

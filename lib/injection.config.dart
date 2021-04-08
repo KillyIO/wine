@@ -23,7 +23,7 @@ import 'infrastructure/auth/firebase_auth_facade.dart' as _i9;
 import 'infrastructure/core/firebase_injectable_module.dart' as _i20;
 import 'infrastructure/core/hive_injectable_module.dart' as _i21;
 import 'infrastructure/default_covers/default_covers_repository.dart' as _i11;
-import 'infrastructure/session/session_repository.dart' as _i13;
+import 'infrastructure/sessions/sessions_repository.dart' as _i13;
 import 'infrastructure/settings/settings_repository.dart' as _i15;
 import 'infrastructure/user/user_repository.dart' as _i17;
 
