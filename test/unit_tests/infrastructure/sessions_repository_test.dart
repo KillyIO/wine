@@ -37,6 +37,7 @@ void main() {
 
       final result = await _sessionsRepository.createSession();
 
+      expect(result.isRight(), true);
       result.fold(
         (_) {},
         (success) => expect(success, unit),
@@ -48,6 +49,7 @@ void main() {
 
       final result = await _sessionsRepository.createSession();
 
+      expect(result.isLeft(), true);
       result.fold(
         (failure) => expect(failure, isA<SessionNotCreated>()),
         (_) {},
@@ -61,6 +63,7 @@ void main() {
 
       final result = await _sessionsRepository.deleteSession();
 
+      expect(result.isRight(), true);
       result.fold(
         (_) {},
         (success) => expect(success, unit),
@@ -72,6 +75,7 @@ void main() {
 
       final result = await _sessionsRepository.deleteSession();
 
+      expect(result.isLeft(), true);
       result.fold(
         (failure) => expect(failure, isA<SessionNotDeleted>()),
         (_) {},
@@ -85,6 +89,7 @@ void main() {
 
       final result = await _sessionsRepository.fetchSession();
 
+      expect(result.isRight(), true);
       result.fold(
         (_) {},
         (success) => expect(success, testUserAsMap.toDomain()),
@@ -94,8 +99,9 @@ void main() {
     test('When session not fetched Then return SessionNotFound', () async {
       when(() => _box.get(any())).thenReturn(null);
 
-      final result = await _sessionsRepository.deleteSession();
+      final result = await _sessionsRepository.fetchSession();
 
+      expect(result.isLeft(), true);
       result.fold(
         (failure) => expect(failure, isA<SessionNotFound>()),
         (_) {},
@@ -110,6 +116,7 @@ void main() {
       final result =
           await _sessionsRepository.updateSession(testUserAsMap.toDomain());
 
+      expect(result.isRight(), true);
       result.fold(
         (_) {},
         (success) => expect(success, unit),
@@ -117,7 +124,7 @@ void main() {
     });
 
     test('When session not updated Then return SessionNotUpdated', () async {
-      final updatedTestUserAsMap = testUserAsMap
+      final updatedTestUserAsMap = Map<String, dynamic>.from(testUserAsMap)
         ..['emailAddress'] = 'yhaouas.hebbazth5@gmailvn.net';
 
       when(() => _box.get(any())).thenReturn(updatedTestUserAsMap);
@@ -125,6 +132,7 @@ void main() {
       final result =
           await _sessionsRepository.updateSession(testUserAsMap.toDomain());
 
+      expect(result.isLeft(), true);
       result.fold(
         (failure) => expect(failure, isA<SessionNotUpdated>()),
         (_) {},

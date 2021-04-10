@@ -62,6 +62,13 @@ extension UserDTOX on UserDTO {
         uid: UniqueID.fromUniqueString(uid),
         username: Username(username),
       );
+
+  /// @nodoc
+  Map<String, dynamic> toMap() => <String, dynamic>{
+        'emailAddress': emailAddress,
+        'uid': uid,
+        'username': username,
+      };
 }
 
 /// @nodoc

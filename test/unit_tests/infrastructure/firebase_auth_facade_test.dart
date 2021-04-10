@@ -46,6 +46,7 @@ void main() {
           Password(testPassword),
         );
 
+        expect(result.isRight(), true);
         result.fold(
           (_) {},
           (success) => expect(success, unit),
@@ -65,6 +66,7 @@ void main() {
             Password(testPassword),
           );
 
+          expect(result.isLeft(), true);
           result.fold(
             (failure) => expect(failure, isA<EmailAlreadyInUse>()),
             (_) {},
@@ -81,6 +83,7 @@ void main() {
           Password(testPassword),
         );
 
+        expect(result.isLeft(), true);
         result.fold(
           (failure) => expect(failure, isA<ServerError>()),
           (_) {},
@@ -98,6 +101,7 @@ void main() {
             Password(testPassword),
           );
 
+          expect(result.isLeft(), true);
           result.fold(
             (failure) => expect(failure, isA<Unexpected>()),
             (_) {},
@@ -120,6 +124,7 @@ void main() {
 
         final result = await _authFacade.getLoggedInUser();
 
+        expect(result.isSome(), true);
         result.fold(
           () {},
           (some) => expect(some, testUser),
@@ -170,6 +175,7 @@ void main() {
 
         final result = await _authFacade.logInAnonymously();
 
+        expect(result.isRight(), true);
         result.fold(
           (_) {},
           (success) => expect(success, isA<Unit>()),
@@ -182,6 +188,7 @@ void main() {
 
         final result = await _authFacade.logInAnonymously();
 
+        expect(result.isLeft(), true);
         result.fold(
           (failure) => expect(failure, isA<ServerError>()),
           (_) {},
@@ -193,6 +200,7 @@ void main() {
 
         final result = await _authFacade.logInAnonymously();
 
+        expect(result.isLeft(), true);
         result.fold(
           (failure) => expect(failure, isA<Unexpected>()),
           (_) {},
@@ -220,6 +228,7 @@ void main() {
             Password(testPassword),
           );
 
+          expect(result.isRight(), true);
           result.fold(
             (_) {},
             (success) => expect(success, unit),
@@ -242,6 +251,7 @@ void main() {
             Password(testPassword),
           );
 
+          expect(result.isLeft(), true);
           result.fold(
             (failure) => expect(
               failure,
@@ -265,6 +275,7 @@ void main() {
           Password(testPassword),
         );
 
+        expect(result.isLeft(), true);
         result.fold(
           (failure) => expect(failure, isA<ServerError>()),
           (_) {},
@@ -284,6 +295,7 @@ void main() {
           Password(testPassword),
         );
 
+        expect(result.isLeft(), true);
         result.fold(
           (failure) => expect(failure, isA<Unexpected>()),
           (_) {},
@@ -306,20 +318,10 @@ void main() {
 
         final result = await _authFacade.logInWithGoogle();
 
+        expect(result.isRight(), true);
         result.fold(
           (_) {},
           (success) => expect(success, unit),
-        );
-      });
-
-      test('When cancelled by user Then return CancelledByUser', () async {
-        when(_googleSignIn.signIn).thenAnswer((_) async => null);
-
-        final result = await _authFacade.logInWithGoogle();
-
-        result.fold(
-          (failure) => expect(failure, isA<CancelledByUser>()),
-          (_) {},
         );
       });
 
@@ -335,9 +337,22 @@ void main() {
 
         final result = await _authFacade.logInWithGoogle();
 
+        expect(result.isRight(), true);
         result.fold(
           (_) {},
           (success) => expect(success, unit),
+        );
+      });
+
+      test('When cancelled by user Then return CancelledByUser', () async {
+        when(_googleSignIn.signIn).thenAnswer((_) async => null);
+
+        final result = await _authFacade.logInWithGoogle();
+
+        expect(result.isLeft(), true);
+        result.fold(
+          (failure) => expect(failure, isA<CancelledByUser>()),
+          (_) {},
         );
       });
 
@@ -346,6 +361,7 @@ void main() {
 
         final result = await _authFacade.logInWithGoogle();
 
+        expect(result.isLeft(), true);
         result.fold(
           (failure) => expect(failure, isA<ServerError>()),
           (_) {},
@@ -357,6 +373,7 @@ void main() {
 
         final result = await _authFacade.logInWithGoogle();
 
+        expect(result.isLeft(), true);
         result.fold(
           (failure) => expect(failure, isA<Unexpected>()),
           (_) {},
@@ -378,6 +395,7 @@ void main() {
 
         final result = await _authFacade.logOut();
 
+        expect(result.isRight(), true);
         result.fold(
           (_) {},
           (success) => expect(success, isA<Unit>()),
@@ -391,6 +409,7 @@ void main() {
 
         final result = await _authFacade.logOut();
 
+        expect(result.isLeft(), true);
         result.fold(
           (failure) => expect(failure, isA<UnableToSignOut>()),
           (_) {},
@@ -402,6 +421,7 @@ void main() {
 
         final result = await _authFacade.logOut();
 
+        expect(result.isLeft(), true);
         result.fold(
           (failure) => expect(failure, isA<Unexpected>()),
           (_) {},
@@ -415,6 +435,7 @@ void main() {
 
         final result = await _authFacade.resendVerificationEmail();
 
+        expect(result.isRight(), true);
         result.fold(
           (_) {},
           (success) => expect(success, isA<Unit>()),
@@ -426,6 +447,7 @@ void main() {
 
         final result = await _authFacade.resendVerificationEmail();
 
+        expect(result.isLeft(), true);
         result.fold(
           (failure) => expect(failure, isA<Unexpected>()),
           (_) {},
@@ -440,6 +462,7 @@ void main() {
 
           final result = await _authFacade.resendVerificationEmail();
 
+          expect(result.isLeft(), true);
           result.fold(
             (failure) => expect(failure, isA<Unexpected>()),
             (_) {},

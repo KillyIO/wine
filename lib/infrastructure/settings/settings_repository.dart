@@ -1,5 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:firebase_auth/firebase_auth.dart' as auth;
+import 'package:flutter/foundation.dart';
 import 'package:hive/hive.dart';
 import 'package:injectable/injectable.dart';
 
@@ -88,7 +89,7 @@ class SettingsRepository implements ISettingsRepository {
     final settingsAsMap = SettingsDTO.fromDomain(settings).toJson();
     await box.put(firebaseUser.uid, settingsAsMap);
 
-    if (box.get(firebaseUser.uid) == settingsAsMap) return right(unit);
+    if (mapEquals(box.get(firebaseUser.uid), settingsAsMap)) return right(unit);
 
     return left(const SettingsFailure.settingsNotUpdated());
   }

@@ -1,5 +1,6 @@
 import 'package:dartz/dartz.dart';
 import 'package:firebase_auth/firebase_auth.dart' as auth;
+import 'package:flutter/foundation.dart';
 import 'package:hive/hive.dart';
 import 'package:injectable/injectable.dart';
 
@@ -70,10 +71,10 @@ class SessionsRepository implements ISessionsRepository {
 
     final firebaseUser = _firebaseAuth.currentUser;
 
-    final userAsMap = UserDTO.fromDomain(user).toJson();
+    final userAsMap = UserDTO.fromDomain(user).toMap();
     await box.put(firebaseUser.uid, userAsMap);
 
-    if (box.get(firebaseUser.uid) == userAsMap) return right(unit);
+    if (mapEquals(box.get(firebaseUser.uid), userAsMap)) return right(unit);
 
     return left(const SessionsFailure.sessionNotUpdated());
   }

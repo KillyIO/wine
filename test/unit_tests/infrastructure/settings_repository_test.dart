@@ -37,6 +37,7 @@ void main() {
 
       final result = await _settingsRepository.deleteSettings();
 
+      expect(result.isRight(), true);
       result.fold(
         (_) {},
         (success) => expect(success, unit),
@@ -48,6 +49,7 @@ void main() {
 
       final result = await _settingsRepository.deleteSettings();
 
+      expect(result.isLeft(), true);
       result.fold(
         (failure) => expect(failure, isA<SettingsNotDeleted>()),
         (_) {},
@@ -61,6 +63,7 @@ void main() {
 
       final result = await _settingsRepository.fetchSettings();
 
+      expect(result.isRight(), true);
       result.fold(
         (_) {},
         (success) => expect(success, testSettingsAsMap.toDomain()),
@@ -70,8 +73,9 @@ void main() {
     test('When settings not fetched Then return SettingsNotFound', () async {
       when(() => _box.get(any())).thenReturn(null);
 
-      final result = await _settingsRepository.deleteSettings();
+      final result = await _settingsRepository.fetchSettings();
 
+      expect(result.isLeft(), true);
       result.fold(
         (failure) => expect(failure, isA<SettingsNotFound>()),
         (_) {},
@@ -85,6 +89,7 @@ void main() {
 
       final result = await _settingsRepository.initializeSettings();
 
+      expect(result.isRight(), true);
       result.fold(
         (_) {},
         (success) => expect(success, unit),
@@ -98,6 +103,7 @@ void main() {
 
         final result = await _settingsRepository.initializeSettings();
 
+        expect(result.isLeft(), true);
         result.fold(
           (failure) => expect(failure, isA<SettingsNotInitialized>()),
           (_) {},
@@ -113,6 +119,7 @@ void main() {
       final result = await _settingsRepository
           .updateSettings(testSettingsAsMap.toDomain());
 
+      expect(result.isRight(), true);
       result.fold(
         (_) {},
         (success) => expect(success, unit),
@@ -120,14 +127,16 @@ void main() {
     });
 
     test('When settings not updated Then return SettingsNotUpdated', () async {
-      final updatedTestSettingsAsMap = testSettingsAsMap
-        ..['enableChaptersBookmarksCount'] = true;
+      final updatedTestSettingsAsMap =
+          Map<String, dynamic>.from(testSettingsAsMap)
+            ..['enableChaptersBookmarksCount'] = true;
 
       when(() => _box.get(any())).thenReturn(updatedTestSettingsAsMap);
 
       final result = await _settingsRepository
           .updateSettings(testSettingsAsMap.toDomain());
 
+      expect(result.isLeft(), true);
       result.fold(
         (failure) => expect(failure, isA<SettingsNotUpdated>()),
         (_) {},
