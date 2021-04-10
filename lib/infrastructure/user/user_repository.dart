@@ -79,9 +79,9 @@ class UserRepository extends IUserRepository {
     String userUID,
     Username username,
   ) async {
-    try {
-      final usernameStr = username.getOrCrash();
+    final usernameStr = username.getOrCrash();
 
+    try {
       final mapReference =
           _firestore.collection(usernameUIDMapPath).doc(usernameStr);
 

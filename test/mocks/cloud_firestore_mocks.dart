@@ -12,3 +12,5 @@ class MockDocumentSnapshot extends Mock implements DocumentSnapshot {}
 class MockQueryDocumentSnapshot extends Mock implements QueryDocumentSnapshot {}
 
 class MockQuerySnapshot extends Mock implements QuerySnapshot {}
+
+class MockSetOptions extends Mock implements SetOptions {}

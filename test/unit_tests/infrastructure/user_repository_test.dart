@@ -20,6 +20,10 @@ void main() {
   DocumentReference _documentReference;
   DocumentSnapshot _documentSnapshot;
 
+  setUpAll(() {
+    registerFallbackValue<SetOptions>(MockSetOptions());
+  });
+
   setUp(() {
     _firestore = MockFirebaseFirestore();
 
@@ -28,15 +32,12 @@ void main() {
     _documentSnapshot = MockDocumentSnapshot();
 
     _userRepository = UserRepository(_firestore);
+
+    when(() => _firestore.collection(any())).thenReturn(_collectionReference);
+    when(() => _collectionReference.doc(any())).thenReturn(_documentReference);
   });
 
   group('checkUsernameAvailability -', () {
-    setUp(() {
-      when(() => _firestore.collection(any())).thenReturn(_collectionReference);
-      when(() => _collectionReference.doc(any()))
-          .thenReturn(_documentReference);
-    });
-
     test('When username available Then return Unit', () async {
       when(_documentReference.get).thenAnswer((_) async => _documentSnapshot);
       when(() => _documentSnapshot.exists).thenReturn(false);
@@ -93,12 +94,6 @@ void main() {
   });
 
   group('loadUser -', () {
-    setUp(() {
-      when(() => _firestore.collection(any())).thenReturn(_collectionReference);
-      when(() => _collectionReference.doc(any()))
-          .thenReturn(_documentReference);
-    });
-
     test('When user loaded Then return User', () async {
       when(_documentReference.get).thenAnswer((_) async => _documentSnapshot);
       when(() => _documentSnapshot.exists).thenReturn(true);
@@ -152,7 +147,82 @@ void main() {
     });
   });
 
-  group('saveDetailsFromUser -', () {});
+  group('saveDetailsFromUser -', () {
+    test('When user details saved Then return Unit', () async {
+      final result = await _userRepository.saveDetailsFromUser(testUser);
 
-  group('saveUsername -', () {});
+      expect(result.isRight(), true);
+      result.fold(
+        (_) {},
+        (success) => expect(success, unit),
+      );
+    });
+
+    test('When server error occurs Then return ServerError', () async {
+      when(() => _documentReference.set(any(), any()))
+          .thenThrow(testRandomServerException);
+
+      final result = await _userRepository.saveDetailsFromUser(testUser);
+
+      expect(result.isLeft(), true);
+      result.fold(
+        (failure) => expect(failure, isA<ServerError>()),
+        (_) {},
+      );
+    });
+
+    test('When unexpected error occurs Then return Unexpected', () async {
+      when(() => _documentReference.set(any(), any()))
+          .thenThrow(testUnexpected);
+
+      final result = await _userRepository.saveDetailsFromUser(testUser);
+
+      expect(result.isLeft(), true);
+      result.fold(
+        (failure) => expect(failure, isA<Unexpected>()),
+        (_) {},
+      );
+    });
+  });
+
+  group('saveUsername -', () {
+    test('When username saved Then return Unit', () async {
+      final result =
+          await _userRepository.saveUsername(testUid, Username(testUsername));
+
+      expect(result.isRight(), true);
+      result.fold(
+        (_) {},
+        (success) => expect(success, unit),
+      );
+    });
+
+    test('When server error occurs Then return ServerError', () async {
+      when(() => _documentReference.set(any(), any()))
+          .thenThrow(testRandomServerException);
+
+      final result =
+          await _userRepository.saveUsername(testUid, Username(testUsername));
+
+      expect(result.isLeft(), true);
+      result.fold(
+        (failure) => expect(failure, isA<ServerError>()),
+        (_) {},
+      );
+    });
+
+    test('When unexpected error occurs Then return Unexpected', () async {
+      when(() => _documentReference.set(any(), any()))
+          .thenThrow(testUnexpected);
+
+      final result =
+          await _userRepository.saveUsername(testUid, Username(testUsername));
+
+      expect(result.isLeft(), true);
+      result.fold(
+        (failure) => expect(failure, isA<Unexpected>()),
+        (_) {},
+      );
+    });
+  });
 }
