@@ -27,6 +27,7 @@ dependencies:
   hive: "1.5.0-pre"
   hive_flutter: "0.3.1"
   injectable: "1.1.2"
+  introduction_screen: "1.0.9"
   json_annotation: "3.1.1"
   logger: "0.9.4"
   path_provider: "1.6.28"

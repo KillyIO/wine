@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
+import 'package:wine/application/home/home_bloc.dart';
 import 'package:wine/utils/constants/lists.dart';
 
 part 'home_navigation_event.dart';
