@@ -5,6 +5,7 @@ import 'package:wine/domain/auth/email_address.dart';
 import 'package:wine/domain/auth/username.dart';
 import 'package:wine/domain/core/unique_id.dart';
 import 'package:wine/domain/user/user.dart';
+import 'package:wine/infrastructure/core/converter.dart';
 
 part 'user_dto.freezed.dart';
 part 'user_dto.g.dart';
@@ -38,20 +39,6 @@ abstract class UserDTO with _$UserDTO {
   factory UserDTO.fromFirestore(DocumentSnapshot doc) {
     return UserDTO.fromJson(doc.data()).copyWith(uid: doc.id);
   }
-}
-
-/// @nodoc
-class ServerTimestampConverter implements JsonConverter<FieldValue, Object> {
-  /// @nodoc
-  const ServerTimestampConverter();
-
-  @override
-  FieldValue fromJson(Object json) {
-    return FieldValue.serverTimestamp();
-  }
-
-  @override
-  Object toJson(FieldValue fieldValue) => fieldValue;
 }
 
 /// @nodoc
