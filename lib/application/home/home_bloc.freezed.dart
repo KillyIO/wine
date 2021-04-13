@@ -19,6 +19,11 @@ class _$HomeEventTearOff {
   }
 
 // ignore: unused_element
+  LoadNewSeries loadNewSeries() {
+    return const LoadNewSeries();
+  }
+
+// ignore: unused_element
   LoadSeriesByGenre loadSeriesByGenre(String key) {
     return LoadSeriesByGenre(
       key,
@@ -38,6 +43,11 @@ class _$HomeEventTearOff {
       key,
     );
   }
+
+// ignore: unused_element
+  LoadTopSeries loadTopSeries() {
+    return const LoadTopSeries();
+  }
 }
 
 /// @nodoc
@@ -49,31 +59,39 @@ mixin _$HomeEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult homePageLaunched(),
+    @required TResult loadNewSeries(),
     @required TResult loadSeriesByGenre(String key),
     @required TResult loadSeriesByLanguage(String key),
     @required TResult loadSeriesByTime(String key),
+    @required TResult loadTopSeries(),
   });
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult homePageLaunched(),
+    TResult loadNewSeries(),
     TResult loadSeriesByGenre(String key),
     TResult loadSeriesByLanguage(String key),
     TResult loadSeriesByTime(String key),
+    TResult loadTopSeries(),
     @required TResult orElse(),
   });
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult homePageLaunched(HomePageLaunched value),
+    @required TResult loadNewSeries(LoadNewSeries value),
     @required TResult loadSeriesByGenre(LoadSeriesByGenre value),
     @required TResult loadSeriesByLanguage(LoadSeriesByLanguage value),
     @required TResult loadSeriesByTime(LoadSeriesByTime value),
+    @required TResult loadTopSeries(LoadTopSeries value),
   });
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult homePageLaunched(HomePageLaunched value),
+    TResult loadNewSeries(LoadNewSeries value),
     TResult loadSeriesByGenre(LoadSeriesByGenre value),
     TResult loadSeriesByLanguage(LoadSeriesByLanguage value),
     TResult loadSeriesByTime(LoadSeriesByTime value),
+    TResult loadTopSeries(LoadTopSeries value),
     @required TResult orElse(),
   });
 }
@@ -132,14 +150,18 @@ class _$HomePageLaunched implements HomePageLaunched {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult homePageLaunched(),
+    @required TResult loadNewSeries(),
     @required TResult loadSeriesByGenre(String key),
     @required TResult loadSeriesByLanguage(String key),
     @required TResult loadSeriesByTime(String key),
+    @required TResult loadTopSeries(),
   }) {
     assert(homePageLaunched != null);
+    assert(loadNewSeries != null);
     assert(loadSeriesByGenre != null);
     assert(loadSeriesByLanguage != null);
     assert(loadSeriesByTime != null);
+    assert(loadTopSeries != null);
     return homePageLaunched();
   }
 
@@ -147,9 +169,11 @@ class _$HomePageLaunched implements HomePageLaunched {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult homePageLaunched(),
+    TResult loadNewSeries(),
     TResult loadSeriesByGenre(String key),
     TResult loadSeriesByLanguage(String key),
     TResult loadSeriesByTime(String key),
+    TResult loadTopSeries(),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -163,14 +187,18 @@ class _$HomePageLaunched implements HomePageLaunched {
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult homePageLaunched(HomePageLaunched value),
+    @required TResult loadNewSeries(LoadNewSeries value),
     @required TResult loadSeriesByGenre(LoadSeriesByGenre value),
     @required TResult loadSeriesByLanguage(LoadSeriesByLanguage value),
     @required TResult loadSeriesByTime(LoadSeriesByTime value),
+    @required TResult loadTopSeries(LoadTopSeries value),
   }) {
     assert(homePageLaunched != null);
+    assert(loadNewSeries != null);
     assert(loadSeriesByGenre != null);
     assert(loadSeriesByLanguage != null);
     assert(loadSeriesByTime != null);
+    assert(loadTopSeries != null);
     return homePageLaunched(this);
   }
 
@@ -178,9 +206,11 @@ class _$HomePageLaunched implements HomePageLaunched {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult homePageLaunched(HomePageLaunched value),
+    TResult loadNewSeries(LoadNewSeries value),
     TResult loadSeriesByGenre(LoadSeriesByGenre value),
     TResult loadSeriesByLanguage(LoadSeriesByLanguage value),
     TResult loadSeriesByTime(LoadSeriesByTime value),
+    TResult loadTopSeries(LoadTopSeries value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -193,6 +223,120 @@ class _$HomePageLaunched implements HomePageLaunched {
 
 abstract class HomePageLaunched implements HomeEvent {
   const factory HomePageLaunched() = _$HomePageLaunched;
+}
+
+/// @nodoc
+abstract class $LoadNewSeriesCopyWith<$Res> {
+  factory $LoadNewSeriesCopyWith(
+          LoadNewSeries value, $Res Function(LoadNewSeries) then) =
+      _$LoadNewSeriesCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$LoadNewSeriesCopyWithImpl<$Res> extends _$HomeEventCopyWithImpl<$Res>
+    implements $LoadNewSeriesCopyWith<$Res> {
+  _$LoadNewSeriesCopyWithImpl(
+      LoadNewSeries _value, $Res Function(LoadNewSeries) _then)
+      : super(_value, (v) => _then(v as LoadNewSeries));
+
+  @override
+  LoadNewSeries get _value => super._value as LoadNewSeries;
+}
+
+/// @nodoc
+class _$LoadNewSeries implements LoadNewSeries {
+  const _$LoadNewSeries();
+
+  @override
+  String toString() {
+    return 'HomeEvent.loadNewSeries()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is LoadNewSeries);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object>({
+    @required TResult homePageLaunched(),
+    @required TResult loadNewSeries(),
+    @required TResult loadSeriesByGenre(String key),
+    @required TResult loadSeriesByLanguage(String key),
+    @required TResult loadSeriesByTime(String key),
+    @required TResult loadTopSeries(),
+  }) {
+    assert(homePageLaunched != null);
+    assert(loadNewSeries != null);
+    assert(loadSeriesByGenre != null);
+    assert(loadSeriesByLanguage != null);
+    assert(loadSeriesByTime != null);
+    assert(loadTopSeries != null);
+    return loadNewSeries();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object>({
+    TResult homePageLaunched(),
+    TResult loadNewSeries(),
+    TResult loadSeriesByGenre(String key),
+    TResult loadSeriesByLanguage(String key),
+    TResult loadSeriesByTime(String key),
+    TResult loadTopSeries(),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (loadNewSeries != null) {
+      return loadNewSeries();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object>({
+    @required TResult homePageLaunched(HomePageLaunched value),
+    @required TResult loadNewSeries(LoadNewSeries value),
+    @required TResult loadSeriesByGenre(LoadSeriesByGenre value),
+    @required TResult loadSeriesByLanguage(LoadSeriesByLanguage value),
+    @required TResult loadSeriesByTime(LoadSeriesByTime value),
+    @required TResult loadTopSeries(LoadTopSeries value),
+  }) {
+    assert(homePageLaunched != null);
+    assert(loadNewSeries != null);
+    assert(loadSeriesByGenre != null);
+    assert(loadSeriesByLanguage != null);
+    assert(loadSeriesByTime != null);
+    assert(loadTopSeries != null);
+    return loadNewSeries(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object>({
+    TResult homePageLaunched(HomePageLaunched value),
+    TResult loadNewSeries(LoadNewSeries value),
+    TResult loadSeriesByGenre(LoadSeriesByGenre value),
+    TResult loadSeriesByLanguage(LoadSeriesByLanguage value),
+    TResult loadSeriesByTime(LoadSeriesByTime value),
+    TResult loadTopSeries(LoadTopSeries value),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (loadNewSeries != null) {
+      return loadNewSeries(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class LoadNewSeries implements HomeEvent {
+  const factory LoadNewSeries() = _$LoadNewSeries;
 }
 
 /// @nodoc
@@ -257,14 +401,18 @@ class _$LoadSeriesByGenre implements LoadSeriesByGenre {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult homePageLaunched(),
+    @required TResult loadNewSeries(),
     @required TResult loadSeriesByGenre(String key),
     @required TResult loadSeriesByLanguage(String key),
     @required TResult loadSeriesByTime(String key),
+    @required TResult loadTopSeries(),
   }) {
     assert(homePageLaunched != null);
+    assert(loadNewSeries != null);
     assert(loadSeriesByGenre != null);
     assert(loadSeriesByLanguage != null);
     assert(loadSeriesByTime != null);
+    assert(loadTopSeries != null);
     return loadSeriesByGenre(key);
   }
 
@@ -272,9 +420,11 @@ class _$LoadSeriesByGenre implements LoadSeriesByGenre {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult homePageLaunched(),
+    TResult loadNewSeries(),
     TResult loadSeriesByGenre(String key),
     TResult loadSeriesByLanguage(String key),
     TResult loadSeriesByTime(String key),
+    TResult loadTopSeries(),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -288,14 +438,18 @@ class _$LoadSeriesByGenre implements LoadSeriesByGenre {
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult homePageLaunched(HomePageLaunched value),
+    @required TResult loadNewSeries(LoadNewSeries value),
     @required TResult loadSeriesByGenre(LoadSeriesByGenre value),
     @required TResult loadSeriesByLanguage(LoadSeriesByLanguage value),
     @required TResult loadSeriesByTime(LoadSeriesByTime value),
+    @required TResult loadTopSeries(LoadTopSeries value),
   }) {
     assert(homePageLaunched != null);
+    assert(loadNewSeries != null);
     assert(loadSeriesByGenre != null);
     assert(loadSeriesByLanguage != null);
     assert(loadSeriesByTime != null);
+    assert(loadTopSeries != null);
     return loadSeriesByGenre(this);
   }
 
@@ -303,9 +457,11 @@ class _$LoadSeriesByGenre implements LoadSeriesByGenre {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult homePageLaunched(HomePageLaunched value),
+    TResult loadNewSeries(LoadNewSeries value),
     TResult loadSeriesByGenre(LoadSeriesByGenre value),
     TResult loadSeriesByLanguage(LoadSeriesByLanguage value),
     TResult loadSeriesByTime(LoadSeriesByTime value),
+    TResult loadTopSeries(LoadTopSeries value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -387,14 +543,18 @@ class _$LoadSeriesByLanguage implements LoadSeriesByLanguage {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult homePageLaunched(),
+    @required TResult loadNewSeries(),
     @required TResult loadSeriesByGenre(String key),
     @required TResult loadSeriesByLanguage(String key),
     @required TResult loadSeriesByTime(String key),
+    @required TResult loadTopSeries(),
   }) {
     assert(homePageLaunched != null);
+    assert(loadNewSeries != null);
     assert(loadSeriesByGenre != null);
     assert(loadSeriesByLanguage != null);
     assert(loadSeriesByTime != null);
+    assert(loadTopSeries != null);
     return loadSeriesByLanguage(key);
   }
 
@@ -402,9 +562,11 @@ class _$LoadSeriesByLanguage implements LoadSeriesByLanguage {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult homePageLaunched(),
+    TResult loadNewSeries(),
     TResult loadSeriesByGenre(String key),
     TResult loadSeriesByLanguage(String key),
     TResult loadSeriesByTime(String key),
+    TResult loadTopSeries(),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -418,14 +580,18 @@ class _$LoadSeriesByLanguage implements LoadSeriesByLanguage {
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult homePageLaunched(HomePageLaunched value),
+    @required TResult loadNewSeries(LoadNewSeries value),
     @required TResult loadSeriesByGenre(LoadSeriesByGenre value),
     @required TResult loadSeriesByLanguage(LoadSeriesByLanguage value),
     @required TResult loadSeriesByTime(LoadSeriesByTime value),
+    @required TResult loadTopSeries(LoadTopSeries value),
   }) {
     assert(homePageLaunched != null);
+    assert(loadNewSeries != null);
     assert(loadSeriesByGenre != null);
     assert(loadSeriesByLanguage != null);
     assert(loadSeriesByTime != null);
+    assert(loadTopSeries != null);
     return loadSeriesByLanguage(this);
   }
 
@@ -433,9 +599,11 @@ class _$LoadSeriesByLanguage implements LoadSeriesByLanguage {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult homePageLaunched(HomePageLaunched value),
+    TResult loadNewSeries(LoadNewSeries value),
     TResult loadSeriesByGenre(LoadSeriesByGenre value),
     TResult loadSeriesByLanguage(LoadSeriesByLanguage value),
     TResult loadSeriesByTime(LoadSeriesByTime value),
+    TResult loadTopSeries(LoadTopSeries value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -515,14 +683,18 @@ class _$LoadSeriesByTime implements LoadSeriesByTime {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult homePageLaunched(),
+    @required TResult loadNewSeries(),
     @required TResult loadSeriesByGenre(String key),
     @required TResult loadSeriesByLanguage(String key),
     @required TResult loadSeriesByTime(String key),
+    @required TResult loadTopSeries(),
   }) {
     assert(homePageLaunched != null);
+    assert(loadNewSeries != null);
     assert(loadSeriesByGenre != null);
     assert(loadSeriesByLanguage != null);
     assert(loadSeriesByTime != null);
+    assert(loadTopSeries != null);
     return loadSeriesByTime(key);
   }
 
@@ -530,9 +702,11 @@ class _$LoadSeriesByTime implements LoadSeriesByTime {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult homePageLaunched(),
+    TResult loadNewSeries(),
     TResult loadSeriesByGenre(String key),
     TResult loadSeriesByLanguage(String key),
     TResult loadSeriesByTime(String key),
+    TResult loadTopSeries(),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -546,14 +720,18 @@ class _$LoadSeriesByTime implements LoadSeriesByTime {
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult homePageLaunched(HomePageLaunched value),
+    @required TResult loadNewSeries(LoadNewSeries value),
     @required TResult loadSeriesByGenre(LoadSeriesByGenre value),
     @required TResult loadSeriesByLanguage(LoadSeriesByLanguage value),
     @required TResult loadSeriesByTime(LoadSeriesByTime value),
+    @required TResult loadTopSeries(LoadTopSeries value),
   }) {
     assert(homePageLaunched != null);
+    assert(loadNewSeries != null);
     assert(loadSeriesByGenre != null);
     assert(loadSeriesByLanguage != null);
     assert(loadSeriesByTime != null);
+    assert(loadTopSeries != null);
     return loadSeriesByTime(this);
   }
 
@@ -561,9 +739,11 @@ class _$LoadSeriesByTime implements LoadSeriesByTime {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult homePageLaunched(HomePageLaunched value),
+    TResult loadNewSeries(LoadNewSeries value),
     TResult loadSeriesByGenre(LoadSeriesByGenre value),
     TResult loadSeriesByLanguage(LoadSeriesByLanguage value),
     TResult loadSeriesByTime(LoadSeriesByTime value),
+    TResult loadTopSeries(LoadTopSeries value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -583,6 +763,120 @@ abstract class LoadSeriesByTime implements HomeEvent {
 }
 
 /// @nodoc
+abstract class $LoadTopSeriesCopyWith<$Res> {
+  factory $LoadTopSeriesCopyWith(
+          LoadTopSeries value, $Res Function(LoadTopSeries) then) =
+      _$LoadTopSeriesCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$LoadTopSeriesCopyWithImpl<$Res> extends _$HomeEventCopyWithImpl<$Res>
+    implements $LoadTopSeriesCopyWith<$Res> {
+  _$LoadTopSeriesCopyWithImpl(
+      LoadTopSeries _value, $Res Function(LoadTopSeries) _then)
+      : super(_value, (v) => _then(v as LoadTopSeries));
+
+  @override
+  LoadTopSeries get _value => super._value as LoadTopSeries;
+}
+
+/// @nodoc
+class _$LoadTopSeries implements LoadTopSeries {
+  const _$LoadTopSeries();
+
+  @override
+  String toString() {
+    return 'HomeEvent.loadTopSeries()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is LoadTopSeries);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object>({
+    @required TResult homePageLaunched(),
+    @required TResult loadNewSeries(),
+    @required TResult loadSeriesByGenre(String key),
+    @required TResult loadSeriesByLanguage(String key),
+    @required TResult loadSeriesByTime(String key),
+    @required TResult loadTopSeries(),
+  }) {
+    assert(homePageLaunched != null);
+    assert(loadNewSeries != null);
+    assert(loadSeriesByGenre != null);
+    assert(loadSeriesByLanguage != null);
+    assert(loadSeriesByTime != null);
+    assert(loadTopSeries != null);
+    return loadTopSeries();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object>({
+    TResult homePageLaunched(),
+    TResult loadNewSeries(),
+    TResult loadSeriesByGenre(String key),
+    TResult loadSeriesByLanguage(String key),
+    TResult loadSeriesByTime(String key),
+    TResult loadTopSeries(),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (loadTopSeries != null) {
+      return loadTopSeries();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object>({
+    @required TResult homePageLaunched(HomePageLaunched value),
+    @required TResult loadNewSeries(LoadNewSeries value),
+    @required TResult loadSeriesByGenre(LoadSeriesByGenre value),
+    @required TResult loadSeriesByLanguage(LoadSeriesByLanguage value),
+    @required TResult loadSeriesByTime(LoadSeriesByTime value),
+    @required TResult loadTopSeries(LoadTopSeries value),
+  }) {
+    assert(homePageLaunched != null);
+    assert(loadNewSeries != null);
+    assert(loadSeriesByGenre != null);
+    assert(loadSeriesByLanguage != null);
+    assert(loadSeriesByTime != null);
+    assert(loadTopSeries != null);
+    return loadTopSeries(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object>({
+    TResult homePageLaunched(HomePageLaunched value),
+    TResult loadNewSeries(LoadNewSeries value),
+    TResult loadSeriesByGenre(LoadSeriesByGenre value),
+    TResult loadSeriesByLanguage(LoadSeriesByLanguage value),
+    TResult loadSeriesByTime(LoadSeriesByTime value),
+    TResult loadTopSeries(LoadTopSeries value),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (loadTopSeries != null) {
+      return loadTopSeries(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class LoadTopSeries implements HomeEvent {
+  const factory LoadTopSeries() = _$LoadTopSeries;
+}
+
+/// @nodoc
 class _$HomeStateTearOff {
   const _$HomeStateTearOff();
 
@@ -590,11 +884,15 @@ class _$HomeStateTearOff {
   _HomeState call(
       {@required String genreFilterKey,
       @required String languageFilterKey,
-      @required String timeFilterKey}) {
+      @required List<Series> newSeriesList,
+      @required String timeFilterKey,
+      @required List<Series> topSeriesList}) {
     return _HomeState(
       genreFilterKey: genreFilterKey,
       languageFilterKey: languageFilterKey,
+      newSeriesList: newSeriesList,
       timeFilterKey: timeFilterKey,
+      topSeriesList: topSeriesList,
     );
   }
 }
@@ -607,7 +905,9 @@ const $HomeState = _$HomeStateTearOff();
 mixin _$HomeState {
   String get genreFilterKey;
   String get languageFilterKey;
+  List<Series> get newSeriesList;
   String get timeFilterKey;
+  List<Series> get topSeriesList;
 
   @JsonKey(ignore: true)
   $HomeStateCopyWith<HomeState> get copyWith;
@@ -618,7 +918,11 @@ abstract class $HomeStateCopyWith<$Res> {
   factory $HomeStateCopyWith(HomeState value, $Res Function(HomeState) then) =
       _$HomeStateCopyWithImpl<$Res>;
   $Res call(
-      {String genreFilterKey, String languageFilterKey, String timeFilterKey});
+      {String genreFilterKey,
+      String languageFilterKey,
+      List<Series> newSeriesList,
+      String timeFilterKey,
+      List<Series> topSeriesList});
 }
 
 /// @nodoc
@@ -633,7 +937,9 @@ class _$HomeStateCopyWithImpl<$Res> implements $HomeStateCopyWith<$Res> {
   $Res call({
     Object genreFilterKey = freezed,
     Object languageFilterKey = freezed,
+    Object newSeriesList = freezed,
     Object timeFilterKey = freezed,
+    Object topSeriesList = freezed,
   }) {
     return _then(_value.copyWith(
       genreFilterKey: genreFilterKey == freezed
@@ -642,9 +948,15 @@ class _$HomeStateCopyWithImpl<$Res> implements $HomeStateCopyWith<$Res> {
       languageFilterKey: languageFilterKey == freezed
           ? _value.languageFilterKey
           : languageFilterKey as String,
+      newSeriesList: newSeriesList == freezed
+          ? _value.newSeriesList
+          : newSeriesList as List<Series>,
       timeFilterKey: timeFilterKey == freezed
           ? _value.timeFilterKey
           : timeFilterKey as String,
+      topSeriesList: topSeriesList == freezed
+          ? _value.topSeriesList
+          : topSeriesList as List<Series>,
     ));
   }
 }
@@ -656,7 +968,11 @@ abstract class _$HomeStateCopyWith<$Res> implements $HomeStateCopyWith<$Res> {
       __$HomeStateCopyWithImpl<$Res>;
   @override
   $Res call(
-      {String genreFilterKey, String languageFilterKey, String timeFilterKey});
+      {String genreFilterKey,
+      String languageFilterKey,
+      List<Series> newSeriesList,
+      String timeFilterKey,
+      List<Series> topSeriesList});
 }
 
 /// @nodoc
@@ -672,7 +988,9 @@ class __$HomeStateCopyWithImpl<$Res> extends _$HomeStateCopyWithImpl<$Res>
   $Res call({
     Object genreFilterKey = freezed,
     Object languageFilterKey = freezed,
+    Object newSeriesList = freezed,
     Object timeFilterKey = freezed,
+    Object topSeriesList = freezed,
   }) {
     return _then(_HomeState(
       genreFilterKey: genreFilterKey == freezed
@@ -681,9 +999,15 @@ class __$HomeStateCopyWithImpl<$Res> extends _$HomeStateCopyWithImpl<$Res>
       languageFilterKey: languageFilterKey == freezed
           ? _value.languageFilterKey
           : languageFilterKey as String,
+      newSeriesList: newSeriesList == freezed
+          ? _value.newSeriesList
+          : newSeriesList as List<Series>,
       timeFilterKey: timeFilterKey == freezed
           ? _value.timeFilterKey
           : timeFilterKey as String,
+      topSeriesList: topSeriesList == freezed
+          ? _value.topSeriesList
+          : topSeriesList as List<Series>,
     ));
   }
 }
@@ -693,21 +1017,29 @@ class _$_HomeState implements _HomeState {
   const _$_HomeState(
       {@required this.genreFilterKey,
       @required this.languageFilterKey,
-      @required this.timeFilterKey})
+      @required this.newSeriesList,
+      @required this.timeFilterKey,
+      @required this.topSeriesList})
       : assert(genreFilterKey != null),
         assert(languageFilterKey != null),
-        assert(timeFilterKey != null);
+        assert(newSeriesList != null),
+        assert(timeFilterKey != null),
+        assert(topSeriesList != null);
 
   @override
   final String genreFilterKey;
   @override
   final String languageFilterKey;
   @override
+  final List<Series> newSeriesList;
+  @override
   final String timeFilterKey;
+  @override
+  final List<Series> topSeriesList;
 
   @override
   String toString() {
-    return 'HomeState(genreFilterKey: $genreFilterKey, languageFilterKey: $languageFilterKey, timeFilterKey: $timeFilterKey)';
+    return 'HomeState(genreFilterKey: $genreFilterKey, languageFilterKey: $languageFilterKey, newSeriesList: $newSeriesList, timeFilterKey: $timeFilterKey, topSeriesList: $topSeriesList)';
   }
 
   @override
@@ -720,9 +1052,15 @@ class _$_HomeState implements _HomeState {
             (identical(other.languageFilterKey, languageFilterKey) ||
                 const DeepCollectionEquality()
                     .equals(other.languageFilterKey, languageFilterKey)) &&
+            (identical(other.newSeriesList, newSeriesList) ||
+                const DeepCollectionEquality()
+                    .equals(other.newSeriesList, newSeriesList)) &&
             (identical(other.timeFilterKey, timeFilterKey) ||
                 const DeepCollectionEquality()
-                    .equals(other.timeFilterKey, timeFilterKey)));
+                    .equals(other.timeFilterKey, timeFilterKey)) &&
+            (identical(other.topSeriesList, topSeriesList) ||
+                const DeepCollectionEquality()
+                    .equals(other.topSeriesList, topSeriesList)));
   }
 
   @override
@@ -730,7 +1068,9 @@ class _$_HomeState implements _HomeState {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(genreFilterKey) ^
       const DeepCollectionEquality().hash(languageFilterKey) ^
-      const DeepCollectionEquality().hash(timeFilterKey);
+      const DeepCollectionEquality().hash(newSeriesList) ^
+      const DeepCollectionEquality().hash(timeFilterKey) ^
+      const DeepCollectionEquality().hash(topSeriesList);
 
   @JsonKey(ignore: true)
   @override
@@ -742,14 +1082,20 @@ abstract class _HomeState implements HomeState {
   const factory _HomeState(
       {@required String genreFilterKey,
       @required String languageFilterKey,
-      @required String timeFilterKey}) = _$_HomeState;
+      @required List<Series> newSeriesList,
+      @required String timeFilterKey,
+      @required List<Series> topSeriesList}) = _$_HomeState;
 
   @override
   String get genreFilterKey;
   @override
   String get languageFilterKey;
   @override
+  List<Series> get newSeriesList;
+  @override
   String get timeFilterKey;
+  @override
+  List<Series> get topSeriesList;
   @override
   @JsonKey(ignore: true)
   _$HomeStateCopyWith<_HomeState> get copyWith;

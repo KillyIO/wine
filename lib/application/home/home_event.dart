@@ -7,6 +7,9 @@ abstract class HomeEvent with _$HomeEvent {
   const factory HomeEvent.homePageLaunched() = HomePageLaunched;
 
   /// @nodoc
+  const factory HomeEvent.loadNewSeries() = LoadNewSeries;
+
+  /// @nodoc
   const factory HomeEvent.loadSeriesByGenre(String key) = LoadSeriesByGenre;
 
   /// @nodoc
@@ -15,4 +18,7 @@ abstract class HomeEvent with _$HomeEvent {
 
   /// @nodoc
   const factory HomeEvent.loadSeriesByTime(String key) = LoadSeriesByTime;
+
+  /// @nodoc
+  const factory HomeEvent.loadTopSeries() = LoadTopSeries;
 }
