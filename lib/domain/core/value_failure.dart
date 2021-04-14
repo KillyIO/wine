@@ -9,6 +9,10 @@ abstract class ValueFailure<T> with _$ValueFailure<T> {
   const factory ValueFailure.emptySelection(T failedValue) = EmptySelection<T>;
 
   /// @nodoc
+  const factory ValueFailure.invalidCoverURL(T failedValue) =
+      InvalidCoverURL<T>;
+
+  /// @nodoc
   const factory ValueFailure.invalidEmailAddress(T failedValue) =
       InvalidEmail<T>;
 

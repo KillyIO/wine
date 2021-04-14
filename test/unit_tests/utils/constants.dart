@@ -17,6 +17,11 @@ const testGenre = 'horror';
 const testGenreEmpty = '';
 const testGenreOptional = 'action';
 
+const testCoverURL = 'https://storage.com/example-bucket/cover.jpeg';
+const testCoverPath = '/path/cover.jpeg';
+const testInvalidCoverURL = 'http:storage.invalid.com/example-bucket/cover.jpeg';
+const testInvalidCoverPath = '///invalid/path//cover.jpeg';
+
 // SECTION Default Covers
 const testDefaultCovers = {
   'key': 'key',

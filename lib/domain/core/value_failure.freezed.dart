@@ -21,6 +21,13 @@ class _$ValueFailureTearOff {
   }
 
 // ignore: unused_element
+  InvalidCoverURL<T> invalidCoverURL<T>(T failedValue) {
+    return InvalidCoverURL<T>(
+      failedValue,
+    );
+  }
+
+// ignore: unused_element
   InvalidEmail<T> invalidEmailAddress<T>(T failedValue) {
     return InvalidEmail<T>(
       failedValue,
@@ -67,6 +74,7 @@ mixin _$ValueFailure<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult emptySelection(T failedValue),
+    @required TResult invalidCoverURL(T failedValue),
     @required TResult invalidEmailAddress(T failedValue),
     @required TResult invalidPassword(T failedValue),
     @required TResult invalidConfirmPassword(T failedValue),
@@ -76,6 +84,7 @@ mixin _$ValueFailure<T> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult emptySelection(T failedValue),
+    TResult invalidCoverURL(T failedValue),
     TResult invalidEmailAddress(T failedValue),
     TResult invalidPassword(T failedValue),
     TResult invalidConfirmPassword(T failedValue),
@@ -86,6 +95,7 @@ mixin _$ValueFailure<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult emptySelection(EmptySelection<T> value),
+    @required TResult invalidCoverURL(InvalidCoverURL<T> value),
     @required TResult invalidEmailAddress(InvalidEmail<T> value),
     @required TResult invalidPassword(InvalidPassword<T> value),
     @required TResult invalidConfirmPassword(InvalidConfirmPassword<T> value),
@@ -95,6 +105,7 @@ mixin _$ValueFailure<T> {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult emptySelection(EmptySelection<T> value),
+    TResult invalidCoverURL(InvalidCoverURL<T> value),
     TResult invalidEmailAddress(InvalidEmail<T> value),
     TResult invalidPassword(InvalidPassword<T> value),
     TResult invalidConfirmPassword(InvalidConfirmPassword<T> value),
@@ -200,6 +211,7 @@ class _$EmptySelection<T> implements EmptySelection<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult emptySelection(T failedValue),
+    @required TResult invalidCoverURL(T failedValue),
     @required TResult invalidEmailAddress(T failedValue),
     @required TResult invalidPassword(T failedValue),
     @required TResult invalidConfirmPassword(T failedValue),
@@ -207,6 +219,7 @@ class _$EmptySelection<T> implements EmptySelection<T> {
     @required TResult invalidUsername(T failedValue),
   }) {
     assert(emptySelection != null);
+    assert(invalidCoverURL != null);
     assert(invalidEmailAddress != null);
     assert(invalidPassword != null);
     assert(invalidConfirmPassword != null);
@@ -219,6 +232,7 @@ class _$EmptySelection<T> implements EmptySelection<T> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult emptySelection(T failedValue),
+    TResult invalidCoverURL(T failedValue),
     TResult invalidEmailAddress(T failedValue),
     TResult invalidPassword(T failedValue),
     TResult invalidConfirmPassword(T failedValue),
@@ -237,6 +251,7 @@ class _$EmptySelection<T> implements EmptySelection<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult emptySelection(EmptySelection<T> value),
+    @required TResult invalidCoverURL(InvalidCoverURL<T> value),
     @required TResult invalidEmailAddress(InvalidEmail<T> value),
     @required TResult invalidPassword(InvalidPassword<T> value),
     @required TResult invalidConfirmPassword(InvalidConfirmPassword<T> value),
@@ -244,6 +259,7 @@ class _$EmptySelection<T> implements EmptySelection<T> {
     @required TResult invalidUsername(InvalidUsername<T> value),
   }) {
     assert(emptySelection != null);
+    assert(invalidCoverURL != null);
     assert(invalidEmailAddress != null);
     assert(invalidPassword != null);
     assert(invalidConfirmPassword != null);
@@ -256,6 +272,7 @@ class _$EmptySelection<T> implements EmptySelection<T> {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult emptySelection(EmptySelection<T> value),
+    TResult invalidCoverURL(InvalidCoverURL<T> value),
     TResult invalidEmailAddress(InvalidEmail<T> value),
     TResult invalidPassword(InvalidPassword<T> value),
     TResult invalidConfirmPassword(InvalidConfirmPassword<T> value),
@@ -279,6 +296,158 @@ abstract class EmptySelection<T> implements ValueFailure<T> {
   @override
   @JsonKey(ignore: true)
   $EmptySelectionCopyWith<T, EmptySelection<T>> get copyWith;
+}
+
+/// @nodoc
+abstract class $InvalidCoverURLCopyWith<T, $Res>
+    implements $ValueFailureCopyWith<T, $Res> {
+  factory $InvalidCoverURLCopyWith(
+          InvalidCoverURL<T> value, $Res Function(InvalidCoverURL<T>) then) =
+      _$InvalidCoverURLCopyWithImpl<T, $Res>;
+  @override
+  $Res call({T failedValue});
+}
+
+/// @nodoc
+class _$InvalidCoverURLCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res>
+    implements $InvalidCoverURLCopyWith<T, $Res> {
+  _$InvalidCoverURLCopyWithImpl(
+      InvalidCoverURL<T> _value, $Res Function(InvalidCoverURL<T>) _then)
+      : super(_value, (v) => _then(v as InvalidCoverURL<T>));
+
+  @override
+  InvalidCoverURL<T> get _value => super._value as InvalidCoverURL<T>;
+
+  @override
+  $Res call({
+    Object failedValue = freezed,
+  }) {
+    return _then(InvalidCoverURL<T>(
+      failedValue == freezed ? _value.failedValue : failedValue as T,
+    ));
+  }
+}
+
+/// @nodoc
+class _$InvalidCoverURL<T> implements InvalidCoverURL<T> {
+  const _$InvalidCoverURL(this.failedValue) : assert(failedValue != null);
+
+  @override
+  final T failedValue;
+
+  @override
+  String toString() {
+    return 'ValueFailure<$T>.invalidCoverURL(failedValue: $failedValue)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is InvalidCoverURL<T> &&
+            (identical(other.failedValue, failedValue) ||
+                const DeepCollectionEquality()
+                    .equals(other.failedValue, failedValue)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
+
+  @JsonKey(ignore: true)
+  @override
+  $InvalidCoverURLCopyWith<T, InvalidCoverURL<T>> get copyWith =>
+      _$InvalidCoverURLCopyWithImpl<T, InvalidCoverURL<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object>({
+    @required TResult emptySelection(T failedValue),
+    @required TResult invalidCoverURL(T failedValue),
+    @required TResult invalidEmailAddress(T failedValue),
+    @required TResult invalidPassword(T failedValue),
+    @required TResult invalidConfirmPassword(T failedValue),
+    @required TResult invalidUniqueID(T failedValue),
+    @required TResult invalidUsername(T failedValue),
+  }) {
+    assert(emptySelection != null);
+    assert(invalidCoverURL != null);
+    assert(invalidEmailAddress != null);
+    assert(invalidPassword != null);
+    assert(invalidConfirmPassword != null);
+    assert(invalidUniqueID != null);
+    assert(invalidUsername != null);
+    return invalidCoverURL(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object>({
+    TResult emptySelection(T failedValue),
+    TResult invalidCoverURL(T failedValue),
+    TResult invalidEmailAddress(T failedValue),
+    TResult invalidPassword(T failedValue),
+    TResult invalidConfirmPassword(T failedValue),
+    TResult invalidUniqueID(T failedValue),
+    TResult invalidUsername(T failedValue),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (invalidCoverURL != null) {
+      return invalidCoverURL(failedValue);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object>({
+    @required TResult emptySelection(EmptySelection<T> value),
+    @required TResult invalidCoverURL(InvalidCoverURL<T> value),
+    @required TResult invalidEmailAddress(InvalidEmail<T> value),
+    @required TResult invalidPassword(InvalidPassword<T> value),
+    @required TResult invalidConfirmPassword(InvalidConfirmPassword<T> value),
+    @required TResult invalidUniqueID(InvalidUniqueID<T> value),
+    @required TResult invalidUsername(InvalidUsername<T> value),
+  }) {
+    assert(emptySelection != null);
+    assert(invalidCoverURL != null);
+    assert(invalidEmailAddress != null);
+    assert(invalidPassword != null);
+    assert(invalidConfirmPassword != null);
+    assert(invalidUniqueID != null);
+    assert(invalidUsername != null);
+    return invalidCoverURL(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object>({
+    TResult emptySelection(EmptySelection<T> value),
+    TResult invalidCoverURL(InvalidCoverURL<T> value),
+    TResult invalidEmailAddress(InvalidEmail<T> value),
+    TResult invalidPassword(InvalidPassword<T> value),
+    TResult invalidConfirmPassword(InvalidConfirmPassword<T> value),
+    TResult invalidUniqueID(InvalidUniqueID<T> value),
+    TResult invalidUsername(InvalidUsername<T> value),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (invalidCoverURL != null) {
+      return invalidCoverURL(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class InvalidCoverURL<T> implements ValueFailure<T> {
+  const factory InvalidCoverURL(T failedValue) = _$InvalidCoverURL<T>;
+
+  @override
+  T get failedValue;
+  @override
+  @JsonKey(ignore: true)
+  $InvalidCoverURLCopyWith<T, InvalidCoverURL<T>> get copyWith;
 }
 
 /// @nodoc
@@ -346,6 +515,7 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult emptySelection(T failedValue),
+    @required TResult invalidCoverURL(T failedValue),
     @required TResult invalidEmailAddress(T failedValue),
     @required TResult invalidPassword(T failedValue),
     @required TResult invalidConfirmPassword(T failedValue),
@@ -353,6 +523,7 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     @required TResult invalidUsername(T failedValue),
   }) {
     assert(emptySelection != null);
+    assert(invalidCoverURL != null);
     assert(invalidEmailAddress != null);
     assert(invalidPassword != null);
     assert(invalidConfirmPassword != null);
@@ -365,6 +536,7 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult emptySelection(T failedValue),
+    TResult invalidCoverURL(T failedValue),
     TResult invalidEmailAddress(T failedValue),
     TResult invalidPassword(T failedValue),
     TResult invalidConfirmPassword(T failedValue),
@@ -383,6 +555,7 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult emptySelection(EmptySelection<T> value),
+    @required TResult invalidCoverURL(InvalidCoverURL<T> value),
     @required TResult invalidEmailAddress(InvalidEmail<T> value),
     @required TResult invalidPassword(InvalidPassword<T> value),
     @required TResult invalidConfirmPassword(InvalidConfirmPassword<T> value),
@@ -390,6 +563,7 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     @required TResult invalidUsername(InvalidUsername<T> value),
   }) {
     assert(emptySelection != null);
+    assert(invalidCoverURL != null);
     assert(invalidEmailAddress != null);
     assert(invalidPassword != null);
     assert(invalidConfirmPassword != null);
@@ -402,6 +576,7 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult emptySelection(EmptySelection<T> value),
+    TResult invalidCoverURL(InvalidCoverURL<T> value),
     TResult invalidEmailAddress(InvalidEmail<T> value),
     TResult invalidPassword(InvalidPassword<T> value),
     TResult invalidConfirmPassword(InvalidConfirmPassword<T> value),
@@ -492,6 +667,7 @@ class _$InvalidPassword<T> implements InvalidPassword<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult emptySelection(T failedValue),
+    @required TResult invalidCoverURL(T failedValue),
     @required TResult invalidEmailAddress(T failedValue),
     @required TResult invalidPassword(T failedValue),
     @required TResult invalidConfirmPassword(T failedValue),
@@ -499,6 +675,7 @@ class _$InvalidPassword<T> implements InvalidPassword<T> {
     @required TResult invalidUsername(T failedValue),
   }) {
     assert(emptySelection != null);
+    assert(invalidCoverURL != null);
     assert(invalidEmailAddress != null);
     assert(invalidPassword != null);
     assert(invalidConfirmPassword != null);
@@ -511,6 +688,7 @@ class _$InvalidPassword<T> implements InvalidPassword<T> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult emptySelection(T failedValue),
+    TResult invalidCoverURL(T failedValue),
     TResult invalidEmailAddress(T failedValue),
     TResult invalidPassword(T failedValue),
     TResult invalidConfirmPassword(T failedValue),
@@ -529,6 +707,7 @@ class _$InvalidPassword<T> implements InvalidPassword<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult emptySelection(EmptySelection<T> value),
+    @required TResult invalidCoverURL(InvalidCoverURL<T> value),
     @required TResult invalidEmailAddress(InvalidEmail<T> value),
     @required TResult invalidPassword(InvalidPassword<T> value),
     @required TResult invalidConfirmPassword(InvalidConfirmPassword<T> value),
@@ -536,6 +715,7 @@ class _$InvalidPassword<T> implements InvalidPassword<T> {
     @required TResult invalidUsername(InvalidUsername<T> value),
   }) {
     assert(emptySelection != null);
+    assert(invalidCoverURL != null);
     assert(invalidEmailAddress != null);
     assert(invalidPassword != null);
     assert(invalidConfirmPassword != null);
@@ -548,6 +728,7 @@ class _$InvalidPassword<T> implements InvalidPassword<T> {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult emptySelection(EmptySelection<T> value),
+    TResult invalidCoverURL(InvalidCoverURL<T> value),
     TResult invalidEmailAddress(InvalidEmail<T> value),
     TResult invalidPassword(InvalidPassword<T> value),
     TResult invalidConfirmPassword(InvalidConfirmPassword<T> value),
@@ -641,6 +822,7 @@ class _$InvalidConfirmPassword<T> implements InvalidConfirmPassword<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult emptySelection(T failedValue),
+    @required TResult invalidCoverURL(T failedValue),
     @required TResult invalidEmailAddress(T failedValue),
     @required TResult invalidPassword(T failedValue),
     @required TResult invalidConfirmPassword(T failedValue),
@@ -648,6 +830,7 @@ class _$InvalidConfirmPassword<T> implements InvalidConfirmPassword<T> {
     @required TResult invalidUsername(T failedValue),
   }) {
     assert(emptySelection != null);
+    assert(invalidCoverURL != null);
     assert(invalidEmailAddress != null);
     assert(invalidPassword != null);
     assert(invalidConfirmPassword != null);
@@ -660,6 +843,7 @@ class _$InvalidConfirmPassword<T> implements InvalidConfirmPassword<T> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult emptySelection(T failedValue),
+    TResult invalidCoverURL(T failedValue),
     TResult invalidEmailAddress(T failedValue),
     TResult invalidPassword(T failedValue),
     TResult invalidConfirmPassword(T failedValue),
@@ -678,6 +862,7 @@ class _$InvalidConfirmPassword<T> implements InvalidConfirmPassword<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult emptySelection(EmptySelection<T> value),
+    @required TResult invalidCoverURL(InvalidCoverURL<T> value),
     @required TResult invalidEmailAddress(InvalidEmail<T> value),
     @required TResult invalidPassword(InvalidPassword<T> value),
     @required TResult invalidConfirmPassword(InvalidConfirmPassword<T> value),
@@ -685,6 +870,7 @@ class _$InvalidConfirmPassword<T> implements InvalidConfirmPassword<T> {
     @required TResult invalidUsername(InvalidUsername<T> value),
   }) {
     assert(emptySelection != null);
+    assert(invalidCoverURL != null);
     assert(invalidEmailAddress != null);
     assert(invalidPassword != null);
     assert(invalidConfirmPassword != null);
@@ -697,6 +883,7 @@ class _$InvalidConfirmPassword<T> implements InvalidConfirmPassword<T> {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult emptySelection(EmptySelection<T> value),
+    TResult invalidCoverURL(InvalidCoverURL<T> value),
     TResult invalidEmailAddress(InvalidEmail<T> value),
     TResult invalidPassword(InvalidPassword<T> value),
     TResult invalidConfirmPassword(InvalidConfirmPassword<T> value),
@@ -788,6 +975,7 @@ class _$InvalidUniqueID<T> implements InvalidUniqueID<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult emptySelection(T failedValue),
+    @required TResult invalidCoverURL(T failedValue),
     @required TResult invalidEmailAddress(T failedValue),
     @required TResult invalidPassword(T failedValue),
     @required TResult invalidConfirmPassword(T failedValue),
@@ -795,6 +983,7 @@ class _$InvalidUniqueID<T> implements InvalidUniqueID<T> {
     @required TResult invalidUsername(T failedValue),
   }) {
     assert(emptySelection != null);
+    assert(invalidCoverURL != null);
     assert(invalidEmailAddress != null);
     assert(invalidPassword != null);
     assert(invalidConfirmPassword != null);
@@ -807,6 +996,7 @@ class _$InvalidUniqueID<T> implements InvalidUniqueID<T> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult emptySelection(T failedValue),
+    TResult invalidCoverURL(T failedValue),
     TResult invalidEmailAddress(T failedValue),
     TResult invalidPassword(T failedValue),
     TResult invalidConfirmPassword(T failedValue),
@@ -825,6 +1015,7 @@ class _$InvalidUniqueID<T> implements InvalidUniqueID<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult emptySelection(EmptySelection<T> value),
+    @required TResult invalidCoverURL(InvalidCoverURL<T> value),
     @required TResult invalidEmailAddress(InvalidEmail<T> value),
     @required TResult invalidPassword(InvalidPassword<T> value),
     @required TResult invalidConfirmPassword(InvalidConfirmPassword<T> value),
@@ -832,6 +1023,7 @@ class _$InvalidUniqueID<T> implements InvalidUniqueID<T> {
     @required TResult invalidUsername(InvalidUsername<T> value),
   }) {
     assert(emptySelection != null);
+    assert(invalidCoverURL != null);
     assert(invalidEmailAddress != null);
     assert(invalidPassword != null);
     assert(invalidConfirmPassword != null);
@@ -844,6 +1036,7 @@ class _$InvalidUniqueID<T> implements InvalidUniqueID<T> {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult emptySelection(EmptySelection<T> value),
+    TResult invalidCoverURL(InvalidCoverURL<T> value),
     TResult invalidEmailAddress(InvalidEmail<T> value),
     TResult invalidPassword(InvalidPassword<T> value),
     TResult invalidConfirmPassword(InvalidConfirmPassword<T> value),
@@ -934,6 +1127,7 @@ class _$InvalidUsername<T> implements InvalidUsername<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
     @required TResult emptySelection(T failedValue),
+    @required TResult invalidCoverURL(T failedValue),
     @required TResult invalidEmailAddress(T failedValue),
     @required TResult invalidPassword(T failedValue),
     @required TResult invalidConfirmPassword(T failedValue),
@@ -941,6 +1135,7 @@ class _$InvalidUsername<T> implements InvalidUsername<T> {
     @required TResult invalidUsername(T failedValue),
   }) {
     assert(emptySelection != null);
+    assert(invalidCoverURL != null);
     assert(invalidEmailAddress != null);
     assert(invalidPassword != null);
     assert(invalidConfirmPassword != null);
@@ -953,6 +1148,7 @@ class _$InvalidUsername<T> implements InvalidUsername<T> {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
     TResult emptySelection(T failedValue),
+    TResult invalidCoverURL(T failedValue),
     TResult invalidEmailAddress(T failedValue),
     TResult invalidPassword(T failedValue),
     TResult invalidConfirmPassword(T failedValue),
@@ -971,6 +1167,7 @@ class _$InvalidUsername<T> implements InvalidUsername<T> {
   @optionalTypeArgs
   TResult map<TResult extends Object>({
     @required TResult emptySelection(EmptySelection<T> value),
+    @required TResult invalidCoverURL(InvalidCoverURL<T> value),
     @required TResult invalidEmailAddress(InvalidEmail<T> value),
     @required TResult invalidPassword(InvalidPassword<T> value),
     @required TResult invalidConfirmPassword(InvalidConfirmPassword<T> value),
@@ -978,6 +1175,7 @@ class _$InvalidUsername<T> implements InvalidUsername<T> {
     @required TResult invalidUsername(InvalidUsername<T> value),
   }) {
     assert(emptySelection != null);
+    assert(invalidCoverURL != null);
     assert(invalidEmailAddress != null);
     assert(invalidPassword != null);
     assert(invalidConfirmPassword != null);
@@ -990,6 +1188,7 @@ class _$InvalidUsername<T> implements InvalidUsername<T> {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
     TResult emptySelection(EmptySelection<T> value),
+    TResult invalidCoverURL(InvalidCoverURL<T> value),
     TResult invalidEmailAddress(InvalidEmail<T> value),
     TResult invalidPassword(InvalidPassword<T> value),
     TResult invalidConfirmPassword(InvalidConfirmPassword<T> value),
