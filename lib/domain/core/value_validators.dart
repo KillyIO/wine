@@ -1,3 +1,5 @@
+import 'dart:io';
+
 import 'package:dartz/dartz.dart';
 import 'package:string_validator/string_validator.dart';
 import 'package:wine/domain/core/value_failure.dart';
@@ -12,6 +14,14 @@ Either<ValueFailure<String>, String> validateConfirmPassword(
     return right(input);
   }
   return left(ValueFailure.invalidConfirmPassword(input));
+}
+
+/// @nodoc
+Either<ValueFailure<File>, File> validateCoverFile(File file) {
+  if (file.path.isImage && file.existsSync()) {
+    return right(file);
+  }
+  return left(ValueFailure.invalidCoverFile(file));
 }
 
 /// @nodoc

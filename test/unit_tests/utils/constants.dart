@@ -19,7 +19,10 @@ const testGenreOptional = 'action';
 
 const testCoverURL = 'https://storage.com/example-bucket/cover.jpeg';
 const testCoverPath = '/path/cover.jpeg';
-const testInvalidCoverURL = 'http:storage.invalid.com/example-bucket/cover.jpeg';
+const testInvalidCoverURL =
+    'http:storage.invalid.com/example-bucket/cover.jpeg';
+const testInvalidCoverURLExtension =
+    'https://storage.com/example-bucket/cover.pdf';
 const testInvalidCoverPath = '///invalid/path//cover.jpeg';
 
 // SECTION Default Covers
