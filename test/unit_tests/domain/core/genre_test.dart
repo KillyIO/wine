@@ -7,15 +7,12 @@ import '../../utils/constants.dart';
 
 void main() {
   group('Genre -', () {
-    test(
-      'When input null Then throw AssertionError',
-      () {
-        expect(
-          () => Genre(null),
-          throwsAssertionError,
-        );
-      },
-    );
+    test('When input null Then throw AssertionError', () {
+      expect(
+        () => Genre(null),
+        throwsAssertionError,
+      );
+    });
 
     test('When input valid Then return input', () {
       final genre = Genre(testGenre);
@@ -24,9 +21,9 @@ void main() {
     });
 
     test('When input empty And is optional Then return input', () {
-      final genre = Genre(testGenreEmpty, isOptional: true);
+      final genre = Genre(testEmpty, isOptional: true);
 
-      expect(genre.value, right(testGenreEmpty));
+      expect(genre.value, right(testEmpty));
     });
 
     test('When input valid And is optional Then return input', () {
@@ -38,11 +35,11 @@ void main() {
     test(
       'When input empty And is not optional Then return emptySelection',
       () {
-        final genre = Genre(testGenreEmpty);
+        final genre = Genre(testEmpty);
 
         expect(
           genre.value,
-          left(const ValueFailure<String>.emptySelection(testGenreEmpty)),
+          left(const ValueFailure<String>.emptySelection(testEmpty)),
         );
       },
     );

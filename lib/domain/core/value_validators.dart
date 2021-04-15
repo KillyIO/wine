@@ -52,6 +52,14 @@ Either<ValueFailure<String>, String> validateGenre(
 }
 
 /// @nodoc
+Either<ValueFailure<String>, String> validateLanguage(String input) {
+  if (input != null && input.isNotEmpty) {
+    return right(input);
+  }
+  return left(ValueFailure.emptySelection(input));
+}
+
+/// @nodoc
 Either<ValueFailure<String>, String> validatePassword(String input) {
   const passwordRegex =
       r'^(?=.*\d)(?=.*[~!@#$%^&*()_\-+=|\\{}[\]:;<>?/])(?=.*[A-Z])(?=.*[a-z])\S{6,256}$';

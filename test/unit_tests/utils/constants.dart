@@ -13,9 +13,12 @@ const testUid = '73488ab6-8db0-11eb-8dcd-0242ac130003';
 const testUsername = 'lphong.tieu.75';
 const testName = 'Lphong Tieu 75';
 
+const testEmpty = '';
+
 const testGenre = 'horror';
-const testGenreEmpty = '';
 const testGenreOptional = 'action';
+
+const testLanguage = 'fr';
 
 const testCoverURL = 'https://storage.com/example-bucket/cover.jpeg';
 const testCoverPath = '/path/cover.jpeg';
