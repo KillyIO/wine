@@ -17,10 +17,8 @@ class _$SeriesTearOff {
   _Series call(
       {@required UniqueID authorUID,
       @required CoverURL coverURL,
-      @required String deletionReason,
       @required Genre genre,
       @required Genre genreOptional,
-      @required bool isDeleted,
       @required bool isNSFW,
       @required Language language,
       @required Subtitle subtitle,
@@ -30,10 +28,8 @@ class _$SeriesTearOff {
     return _Series(
       authorUID: authorUID,
       coverURL: coverURL,
-      deletionReason: deletionReason,
       genre: genre,
       genreOptional: genreOptional,
-      isDeleted: isDeleted,
       isNSFW: isNSFW,
       language: language,
       subtitle: subtitle,
@@ -52,10 +48,8 @@ const $Series = _$SeriesTearOff();
 mixin _$Series {
   UniqueID get authorUID;
   CoverURL get coverURL;
-  String get deletionReason;
   Genre get genre;
   Genre get genreOptional;
-  bool get isDeleted;
   bool get isNSFW;
   Language get language;
   Subtitle get subtitle;
@@ -74,10 +68,8 @@ abstract class $SeriesCopyWith<$Res> {
   $Res call(
       {UniqueID authorUID,
       CoverURL coverURL,
-      String deletionReason,
       Genre genre,
       Genre genreOptional,
-      bool isDeleted,
       bool isNSFW,
       Language language,
       Subtitle subtitle,
@@ -98,10 +90,8 @@ class _$SeriesCopyWithImpl<$Res> implements $SeriesCopyWith<$Res> {
   $Res call({
     Object authorUID = freezed,
     Object coverURL = freezed,
-    Object deletionReason = freezed,
     Object genre = freezed,
     Object genreOptional = freezed,
-    Object isDeleted = freezed,
     Object isNSFW = freezed,
     Object language = freezed,
     Object subtitle = freezed,
@@ -113,14 +103,10 @@ class _$SeriesCopyWithImpl<$Res> implements $SeriesCopyWith<$Res> {
       authorUID:
           authorUID == freezed ? _value.authorUID : authorUID as UniqueID,
       coverURL: coverURL == freezed ? _value.coverURL : coverURL as CoverURL,
-      deletionReason: deletionReason == freezed
-          ? _value.deletionReason
-          : deletionReason as String,
       genre: genre == freezed ? _value.genre : genre as Genre,
       genreOptional: genreOptional == freezed
           ? _value.genreOptional
           : genreOptional as Genre,
-      isDeleted: isDeleted == freezed ? _value.isDeleted : isDeleted as bool,
       isNSFW: isNSFW == freezed ? _value.isNSFW : isNSFW as bool,
       language: language == freezed ? _value.language : language as Language,
       subtitle: subtitle == freezed ? _value.subtitle : subtitle as Subtitle,
@@ -139,10 +125,8 @@ abstract class _$SeriesCopyWith<$Res> implements $SeriesCopyWith<$Res> {
   $Res call(
       {UniqueID authorUID,
       CoverURL coverURL,
-      String deletionReason,
       Genre genre,
       Genre genreOptional,
-      bool isDeleted,
       bool isNSFW,
       Language language,
       Subtitle subtitle,
@@ -164,10 +148,8 @@ class __$SeriesCopyWithImpl<$Res> extends _$SeriesCopyWithImpl<$Res>
   $Res call({
     Object authorUID = freezed,
     Object coverURL = freezed,
-    Object deletionReason = freezed,
     Object genre = freezed,
     Object genreOptional = freezed,
-    Object isDeleted = freezed,
     Object isNSFW = freezed,
     Object language = freezed,
     Object subtitle = freezed,
@@ -179,14 +161,10 @@ class __$SeriesCopyWithImpl<$Res> extends _$SeriesCopyWithImpl<$Res>
       authorUID:
           authorUID == freezed ? _value.authorUID : authorUID as UniqueID,
       coverURL: coverURL == freezed ? _value.coverURL : coverURL as CoverURL,
-      deletionReason: deletionReason == freezed
-          ? _value.deletionReason
-          : deletionReason as String,
       genre: genre == freezed ? _value.genre : genre as Genre,
       genreOptional: genreOptional == freezed
           ? _value.genreOptional
           : genreOptional as Genre,
-      isDeleted: isDeleted == freezed ? _value.isDeleted : isDeleted as bool,
       isNSFW: isNSFW == freezed ? _value.isNSFW : isNSFW as bool,
       language: language == freezed ? _value.language : language as Language,
       subtitle: subtitle == freezed ? _value.subtitle : subtitle as Subtitle,
@@ -202,10 +180,8 @@ class _$_Series implements _Series {
   _$_Series(
       {@required this.authorUID,
       @required this.coverURL,
-      @required this.deletionReason,
       @required this.genre,
       @required this.genreOptional,
-      @required this.isDeleted,
       @required this.isNSFW,
       @required this.language,
       @required this.subtitle,
@@ -214,10 +190,8 @@ class _$_Series implements _Series {
       @required this.uid})
       : assert(authorUID != null),
         assert(coverURL != null),
-        assert(deletionReason != null),
         assert(genre != null),
         assert(genreOptional != null),
-        assert(isDeleted != null),
         assert(isNSFW != null),
         assert(language != null),
         assert(subtitle != null),
@@ -230,13 +204,9 @@ class _$_Series implements _Series {
   @override
   final CoverURL coverURL;
   @override
-  final String deletionReason;
-  @override
   final Genre genre;
   @override
   final Genre genreOptional;
-  @override
-  final bool isDeleted;
   @override
   final bool isNSFW;
   @override
@@ -252,7 +222,7 @@ class _$_Series implements _Series {
 
   @override
   String toString() {
-    return 'Series(authorUID: $authorUID, coverURL: $coverURL, deletionReason: $deletionReason, genre: $genre, genreOptional: $genreOptional, isDeleted: $isDeleted, isNSFW: $isNSFW, language: $language, subtitle: $subtitle, summary: $summary, title: $title, uid: $uid)';
+    return 'Series(authorUID: $authorUID, coverURL: $coverURL, genre: $genre, genreOptional: $genreOptional, isNSFW: $isNSFW, language: $language, subtitle: $subtitle, summary: $summary, title: $title, uid: $uid)';
   }
 
   @override
@@ -265,17 +235,11 @@ class _$_Series implements _Series {
             (identical(other.coverURL, coverURL) ||
                 const DeepCollectionEquality()
                     .equals(other.coverURL, coverURL)) &&
-            (identical(other.deletionReason, deletionReason) ||
-                const DeepCollectionEquality()
-                    .equals(other.deletionReason, deletionReason)) &&
             (identical(other.genre, genre) ||
                 const DeepCollectionEquality().equals(other.genre, genre)) &&
             (identical(other.genreOptional, genreOptional) ||
                 const DeepCollectionEquality()
                     .equals(other.genreOptional, genreOptional)) &&
-            (identical(other.isDeleted, isDeleted) ||
-                const DeepCollectionEquality()
-                    .equals(other.isDeleted, isDeleted)) &&
             (identical(other.isNSFW, isNSFW) ||
                 const DeepCollectionEquality().equals(other.isNSFW, isNSFW)) &&
             (identical(other.language, language) ||
@@ -298,10 +262,8 @@ class _$_Series implements _Series {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(authorUID) ^
       const DeepCollectionEquality().hash(coverURL) ^
-      const DeepCollectionEquality().hash(deletionReason) ^
       const DeepCollectionEquality().hash(genre) ^
       const DeepCollectionEquality().hash(genreOptional) ^
-      const DeepCollectionEquality().hash(isDeleted) ^
       const DeepCollectionEquality().hash(isNSFW) ^
       const DeepCollectionEquality().hash(language) ^
       const DeepCollectionEquality().hash(subtitle) ^
@@ -319,10 +281,8 @@ abstract class _Series implements Series {
   factory _Series(
       {@required UniqueID authorUID,
       @required CoverURL coverURL,
-      @required String deletionReason,
       @required Genre genre,
       @required Genre genreOptional,
-      @required bool isDeleted,
       @required bool isNSFW,
       @required Language language,
       @required Subtitle subtitle,
@@ -335,13 +295,9 @@ abstract class _Series implements Series {
   @override
   CoverURL get coverURL;
   @override
-  String get deletionReason;
-  @override
   Genre get genre;
   @override
   Genre get genreOptional;
-  @override
-  bool get isDeleted;
   @override
   bool get isNSFW;
   @override
