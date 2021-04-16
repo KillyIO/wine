@@ -14,6 +14,13 @@ class _$ValueFailureTearOff {
   const _$ValueFailureTearOff();
 
 // ignore: unused_element
+  EmptyInput<T> emptyInput<T>(T failedValue) {
+    return EmptyInput<T>(
+      failedValue,
+    );
+  }
+
+// ignore: unused_element
   EmptySelection<T> emptySelection<T>(T failedValue) {
     return EmptySelection<T>(
       failedValue,
@@ -85,6 +92,7 @@ const $ValueFailure = _$ValueFailureTearOff();
 mixin _$ValueFailure<T> {
   @optionalTypeArgs
   TResult when<TResult extends Object>({
+    @required TResult emptyInput(T failedValue),
     @required TResult emptySelection(T failedValue),
     @required TResult invalidCoverFile(T failureValue),
     @required TResult invalidCoverURL(T failedValue),
@@ -97,6 +105,7 @@ mixin _$ValueFailure<T> {
   });
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
+    TResult emptyInput(T failedValue),
     TResult emptySelection(T failedValue),
     TResult invalidCoverFile(T failureValue),
     TResult invalidCoverURL(T failedValue),
@@ -110,6 +119,7 @@ mixin _$ValueFailure<T> {
   });
   @optionalTypeArgs
   TResult map<TResult extends Object>({
+    @required TResult emptyInput(EmptyInput<T> value),
     @required TResult emptySelection(EmptySelection<T> value),
     @required TResult invalidCoverFile(InvalidCoverFile<T> value),
     @required TResult invalidCoverURL(InvalidCoverURL<T> value),
@@ -122,6 +132,7 @@ mixin _$ValueFailure<T> {
   });
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
+    TResult emptyInput(EmptyInput<T> value),
     TResult emptySelection(EmptySelection<T> value),
     TResult invalidCoverFile(InvalidCoverFile<T> value),
     TResult invalidCoverURL(InvalidCoverURL<T> value),
@@ -150,6 +161,172 @@ class _$ValueFailureCopyWithImpl<T, $Res>
   final ValueFailure<T> _value;
   // ignore: unused_field
   final $Res Function(ValueFailure<T>) _then;
+}
+
+/// @nodoc
+abstract class $EmptyInputCopyWith<T, $Res> {
+  factory $EmptyInputCopyWith(
+          EmptyInput<T> value, $Res Function(EmptyInput<T>) then) =
+      _$EmptyInputCopyWithImpl<T, $Res>;
+  $Res call({T failedValue});
+}
+
+/// @nodoc
+class _$EmptyInputCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res>
+    implements $EmptyInputCopyWith<T, $Res> {
+  _$EmptyInputCopyWithImpl(
+      EmptyInput<T> _value, $Res Function(EmptyInput<T>) _then)
+      : super(_value, (v) => _then(v as EmptyInput<T>));
+
+  @override
+  EmptyInput<T> get _value => super._value as EmptyInput<T>;
+
+  @override
+  $Res call({
+    Object failedValue = freezed,
+  }) {
+    return _then(EmptyInput<T>(
+      failedValue == freezed ? _value.failedValue : failedValue as T,
+    ));
+  }
+}
+
+/// @nodoc
+class _$EmptyInput<T> implements EmptyInput<T> {
+  const _$EmptyInput(this.failedValue) : assert(failedValue != null);
+
+  @override
+  final T failedValue;
+
+  @override
+  String toString() {
+    return 'ValueFailure<$T>.emptyInput(failedValue: $failedValue)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is EmptyInput<T> &&
+            (identical(other.failedValue, failedValue) ||
+                const DeepCollectionEquality()
+                    .equals(other.failedValue, failedValue)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
+
+  @JsonKey(ignore: true)
+  @override
+  $EmptyInputCopyWith<T, EmptyInput<T>> get copyWith =>
+      _$EmptyInputCopyWithImpl<T, EmptyInput<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object>({
+    @required TResult emptyInput(T failedValue),
+    @required TResult emptySelection(T failedValue),
+    @required TResult invalidCoverFile(T failureValue),
+    @required TResult invalidCoverURL(T failedValue),
+    @required TResult invalidEmailAddress(T failedValue),
+    @required TResult invalidPassword(T failedValue),
+    @required TResult invalidConfirmPassword(T failedValue),
+    @required TResult invalidUniqueID(T failedValue),
+    @required TResult invalidUsername(T failedValue),
+    @required TResult tooLongInput(T failedValue),
+  }) {
+    assert(emptyInput != null);
+    assert(emptySelection != null);
+    assert(invalidCoverFile != null);
+    assert(invalidCoverURL != null);
+    assert(invalidEmailAddress != null);
+    assert(invalidPassword != null);
+    assert(invalidConfirmPassword != null);
+    assert(invalidUniqueID != null);
+    assert(invalidUsername != null);
+    assert(tooLongInput != null);
+    return emptyInput(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object>({
+    TResult emptyInput(T failedValue),
+    TResult emptySelection(T failedValue),
+    TResult invalidCoverFile(T failureValue),
+    TResult invalidCoverURL(T failedValue),
+    TResult invalidEmailAddress(T failedValue),
+    TResult invalidPassword(T failedValue),
+    TResult invalidConfirmPassword(T failedValue),
+    TResult invalidUniqueID(T failedValue),
+    TResult invalidUsername(T failedValue),
+    TResult tooLongInput(T failedValue),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (emptyInput != null) {
+      return emptyInput(failedValue);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object>({
+    @required TResult emptyInput(EmptyInput<T> value),
+    @required TResult emptySelection(EmptySelection<T> value),
+    @required TResult invalidCoverFile(InvalidCoverFile<T> value),
+    @required TResult invalidCoverURL(InvalidCoverURL<T> value),
+    @required TResult invalidEmailAddress(InvalidEmail<T> value),
+    @required TResult invalidPassword(InvalidPassword<T> value),
+    @required TResult invalidConfirmPassword(InvalidConfirmPassword<T> value),
+    @required TResult invalidUniqueID(InvalidUniqueID<T> value),
+    @required TResult invalidUsername(InvalidUsername<T> value),
+    @required TResult tooLongInput(TooLongInput<T> value),
+  }) {
+    assert(emptyInput != null);
+    assert(emptySelection != null);
+    assert(invalidCoverFile != null);
+    assert(invalidCoverURL != null);
+    assert(invalidEmailAddress != null);
+    assert(invalidPassword != null);
+    assert(invalidConfirmPassword != null);
+    assert(invalidUniqueID != null);
+    assert(invalidUsername != null);
+    assert(tooLongInput != null);
+    return emptyInput(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object>({
+    TResult emptyInput(EmptyInput<T> value),
+    TResult emptySelection(EmptySelection<T> value),
+    TResult invalidCoverFile(InvalidCoverFile<T> value),
+    TResult invalidCoverURL(InvalidCoverURL<T> value),
+    TResult invalidEmailAddress(InvalidEmail<T> value),
+    TResult invalidPassword(InvalidPassword<T> value),
+    TResult invalidConfirmPassword(InvalidConfirmPassword<T> value),
+    TResult invalidUniqueID(InvalidUniqueID<T> value),
+    TResult invalidUsername(InvalidUsername<T> value),
+    TResult tooLongInput(TooLongInput<T> value),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (emptyInput != null) {
+      return emptyInput(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class EmptyInput<T> implements ValueFailure<T> {
+  const factory EmptyInput(T failedValue) = _$EmptyInput<T>;
+
+  T get failedValue;
+  @JsonKey(ignore: true)
+  $EmptyInputCopyWith<T, EmptyInput<T>> get copyWith;
 }
 
 /// @nodoc
@@ -214,6 +391,7 @@ class _$EmptySelection<T> implements EmptySelection<T> {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
+    @required TResult emptyInput(T failedValue),
     @required TResult emptySelection(T failedValue),
     @required TResult invalidCoverFile(T failureValue),
     @required TResult invalidCoverURL(T failedValue),
@@ -224,6 +402,7 @@ class _$EmptySelection<T> implements EmptySelection<T> {
     @required TResult invalidUsername(T failedValue),
     @required TResult tooLongInput(T failedValue),
   }) {
+    assert(emptyInput != null);
     assert(emptySelection != null);
     assert(invalidCoverFile != null);
     assert(invalidCoverURL != null);
@@ -239,6 +418,7 @@ class _$EmptySelection<T> implements EmptySelection<T> {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
+    TResult emptyInput(T failedValue),
     TResult emptySelection(T failedValue),
     TResult invalidCoverFile(T failureValue),
     TResult invalidCoverURL(T failedValue),
@@ -260,6 +440,7 @@ class _$EmptySelection<T> implements EmptySelection<T> {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object>({
+    @required TResult emptyInput(EmptyInput<T> value),
     @required TResult emptySelection(EmptySelection<T> value),
     @required TResult invalidCoverFile(InvalidCoverFile<T> value),
     @required TResult invalidCoverURL(InvalidCoverURL<T> value),
@@ -270,6 +451,7 @@ class _$EmptySelection<T> implements EmptySelection<T> {
     @required TResult invalidUsername(InvalidUsername<T> value),
     @required TResult tooLongInput(TooLongInput<T> value),
   }) {
+    assert(emptyInput != null);
     assert(emptySelection != null);
     assert(invalidCoverFile != null);
     assert(invalidCoverURL != null);
@@ -285,6 +467,7 @@ class _$EmptySelection<T> implements EmptySelection<T> {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
+    TResult emptyInput(EmptyInput<T> value),
     TResult emptySelection(EmptySelection<T> value),
     TResult invalidCoverFile(InvalidCoverFile<T> value),
     TResult invalidCoverURL(InvalidCoverURL<T> value),
@@ -374,6 +557,7 @@ class _$InvalidCoverFile<T> implements InvalidCoverFile<T> {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
+    @required TResult emptyInput(T failedValue),
     @required TResult emptySelection(T failedValue),
     @required TResult invalidCoverFile(T failureValue),
     @required TResult invalidCoverURL(T failedValue),
@@ -384,6 +568,7 @@ class _$InvalidCoverFile<T> implements InvalidCoverFile<T> {
     @required TResult invalidUsername(T failedValue),
     @required TResult tooLongInput(T failedValue),
   }) {
+    assert(emptyInput != null);
     assert(emptySelection != null);
     assert(invalidCoverFile != null);
     assert(invalidCoverURL != null);
@@ -399,6 +584,7 @@ class _$InvalidCoverFile<T> implements InvalidCoverFile<T> {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
+    TResult emptyInput(T failedValue),
     TResult emptySelection(T failedValue),
     TResult invalidCoverFile(T failureValue),
     TResult invalidCoverURL(T failedValue),
@@ -420,6 +606,7 @@ class _$InvalidCoverFile<T> implements InvalidCoverFile<T> {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object>({
+    @required TResult emptyInput(EmptyInput<T> value),
     @required TResult emptySelection(EmptySelection<T> value),
     @required TResult invalidCoverFile(InvalidCoverFile<T> value),
     @required TResult invalidCoverURL(InvalidCoverURL<T> value),
@@ -430,6 +617,7 @@ class _$InvalidCoverFile<T> implements InvalidCoverFile<T> {
     @required TResult invalidUsername(InvalidUsername<T> value),
     @required TResult tooLongInput(TooLongInput<T> value),
   }) {
+    assert(emptyInput != null);
     assert(emptySelection != null);
     assert(invalidCoverFile != null);
     assert(invalidCoverURL != null);
@@ -445,6 +633,7 @@ class _$InvalidCoverFile<T> implements InvalidCoverFile<T> {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
+    TResult emptyInput(EmptyInput<T> value),
     TResult emptySelection(EmptySelection<T> value),
     TResult invalidCoverFile(InvalidCoverFile<T> value),
     TResult invalidCoverURL(InvalidCoverURL<T> value),
@@ -534,6 +723,7 @@ class _$InvalidCoverURL<T> implements InvalidCoverURL<T> {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
+    @required TResult emptyInput(T failedValue),
     @required TResult emptySelection(T failedValue),
     @required TResult invalidCoverFile(T failureValue),
     @required TResult invalidCoverURL(T failedValue),
@@ -544,6 +734,7 @@ class _$InvalidCoverURL<T> implements InvalidCoverURL<T> {
     @required TResult invalidUsername(T failedValue),
     @required TResult tooLongInput(T failedValue),
   }) {
+    assert(emptyInput != null);
     assert(emptySelection != null);
     assert(invalidCoverFile != null);
     assert(invalidCoverURL != null);
@@ -559,6 +750,7 @@ class _$InvalidCoverURL<T> implements InvalidCoverURL<T> {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
+    TResult emptyInput(T failedValue),
     TResult emptySelection(T failedValue),
     TResult invalidCoverFile(T failureValue),
     TResult invalidCoverURL(T failedValue),
@@ -580,6 +772,7 @@ class _$InvalidCoverURL<T> implements InvalidCoverURL<T> {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object>({
+    @required TResult emptyInput(EmptyInput<T> value),
     @required TResult emptySelection(EmptySelection<T> value),
     @required TResult invalidCoverFile(InvalidCoverFile<T> value),
     @required TResult invalidCoverURL(InvalidCoverURL<T> value),
@@ -590,6 +783,7 @@ class _$InvalidCoverURL<T> implements InvalidCoverURL<T> {
     @required TResult invalidUsername(InvalidUsername<T> value),
     @required TResult tooLongInput(TooLongInput<T> value),
   }) {
+    assert(emptyInput != null);
     assert(emptySelection != null);
     assert(invalidCoverFile != null);
     assert(invalidCoverURL != null);
@@ -605,6 +799,7 @@ class _$InvalidCoverURL<T> implements InvalidCoverURL<T> {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
+    TResult emptyInput(EmptyInput<T> value),
     TResult emptySelection(EmptySelection<T> value),
     TResult invalidCoverFile(InvalidCoverFile<T> value),
     TResult invalidCoverURL(InvalidCoverURL<T> value),
@@ -694,6 +889,7 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
+    @required TResult emptyInput(T failedValue),
     @required TResult emptySelection(T failedValue),
     @required TResult invalidCoverFile(T failureValue),
     @required TResult invalidCoverURL(T failedValue),
@@ -704,6 +900,7 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     @required TResult invalidUsername(T failedValue),
     @required TResult tooLongInput(T failedValue),
   }) {
+    assert(emptyInput != null);
     assert(emptySelection != null);
     assert(invalidCoverFile != null);
     assert(invalidCoverURL != null);
@@ -719,6 +916,7 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
+    TResult emptyInput(T failedValue),
     TResult emptySelection(T failedValue),
     TResult invalidCoverFile(T failureValue),
     TResult invalidCoverURL(T failedValue),
@@ -740,6 +938,7 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object>({
+    @required TResult emptyInput(EmptyInput<T> value),
     @required TResult emptySelection(EmptySelection<T> value),
     @required TResult invalidCoverFile(InvalidCoverFile<T> value),
     @required TResult invalidCoverURL(InvalidCoverURL<T> value),
@@ -750,6 +949,7 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     @required TResult invalidUsername(InvalidUsername<T> value),
     @required TResult tooLongInput(TooLongInput<T> value),
   }) {
+    assert(emptyInput != null);
     assert(emptySelection != null);
     assert(invalidCoverFile != null);
     assert(invalidCoverURL != null);
@@ -765,6 +965,7 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
+    TResult emptyInput(EmptyInput<T> value),
     TResult emptySelection(EmptySelection<T> value),
     TResult invalidCoverFile(InvalidCoverFile<T> value),
     TResult invalidCoverURL(InvalidCoverURL<T> value),
@@ -854,6 +1055,7 @@ class _$InvalidPassword<T> implements InvalidPassword<T> {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
+    @required TResult emptyInput(T failedValue),
     @required TResult emptySelection(T failedValue),
     @required TResult invalidCoverFile(T failureValue),
     @required TResult invalidCoverURL(T failedValue),
@@ -864,6 +1066,7 @@ class _$InvalidPassword<T> implements InvalidPassword<T> {
     @required TResult invalidUsername(T failedValue),
     @required TResult tooLongInput(T failedValue),
   }) {
+    assert(emptyInput != null);
     assert(emptySelection != null);
     assert(invalidCoverFile != null);
     assert(invalidCoverURL != null);
@@ -879,6 +1082,7 @@ class _$InvalidPassword<T> implements InvalidPassword<T> {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
+    TResult emptyInput(T failedValue),
     TResult emptySelection(T failedValue),
     TResult invalidCoverFile(T failureValue),
     TResult invalidCoverURL(T failedValue),
@@ -900,6 +1104,7 @@ class _$InvalidPassword<T> implements InvalidPassword<T> {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object>({
+    @required TResult emptyInput(EmptyInput<T> value),
     @required TResult emptySelection(EmptySelection<T> value),
     @required TResult invalidCoverFile(InvalidCoverFile<T> value),
     @required TResult invalidCoverURL(InvalidCoverURL<T> value),
@@ -910,6 +1115,7 @@ class _$InvalidPassword<T> implements InvalidPassword<T> {
     @required TResult invalidUsername(InvalidUsername<T> value),
     @required TResult tooLongInput(TooLongInput<T> value),
   }) {
+    assert(emptyInput != null);
     assert(emptySelection != null);
     assert(invalidCoverFile != null);
     assert(invalidCoverURL != null);
@@ -925,6 +1131,7 @@ class _$InvalidPassword<T> implements InvalidPassword<T> {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
+    TResult emptyInput(EmptyInput<T> value),
     TResult emptySelection(EmptySelection<T> value),
     TResult invalidCoverFile(InvalidCoverFile<T> value),
     TResult invalidCoverURL(InvalidCoverURL<T> value),
@@ -1017,6 +1224,7 @@ class _$InvalidConfirmPassword<T> implements InvalidConfirmPassword<T> {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
+    @required TResult emptyInput(T failedValue),
     @required TResult emptySelection(T failedValue),
     @required TResult invalidCoverFile(T failureValue),
     @required TResult invalidCoverURL(T failedValue),
@@ -1027,6 +1235,7 @@ class _$InvalidConfirmPassword<T> implements InvalidConfirmPassword<T> {
     @required TResult invalidUsername(T failedValue),
     @required TResult tooLongInput(T failedValue),
   }) {
+    assert(emptyInput != null);
     assert(emptySelection != null);
     assert(invalidCoverFile != null);
     assert(invalidCoverURL != null);
@@ -1042,6 +1251,7 @@ class _$InvalidConfirmPassword<T> implements InvalidConfirmPassword<T> {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
+    TResult emptyInput(T failedValue),
     TResult emptySelection(T failedValue),
     TResult invalidCoverFile(T failureValue),
     TResult invalidCoverURL(T failedValue),
@@ -1063,6 +1273,7 @@ class _$InvalidConfirmPassword<T> implements InvalidConfirmPassword<T> {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object>({
+    @required TResult emptyInput(EmptyInput<T> value),
     @required TResult emptySelection(EmptySelection<T> value),
     @required TResult invalidCoverFile(InvalidCoverFile<T> value),
     @required TResult invalidCoverURL(InvalidCoverURL<T> value),
@@ -1073,6 +1284,7 @@ class _$InvalidConfirmPassword<T> implements InvalidConfirmPassword<T> {
     @required TResult invalidUsername(InvalidUsername<T> value),
     @required TResult tooLongInput(TooLongInput<T> value),
   }) {
+    assert(emptyInput != null);
     assert(emptySelection != null);
     assert(invalidCoverFile != null);
     assert(invalidCoverURL != null);
@@ -1088,6 +1300,7 @@ class _$InvalidConfirmPassword<T> implements InvalidConfirmPassword<T> {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
+    TResult emptyInput(EmptyInput<T> value),
     TResult emptySelection(EmptySelection<T> value),
     TResult invalidCoverFile(InvalidCoverFile<T> value),
     TResult invalidCoverURL(InvalidCoverURL<T> value),
@@ -1178,6 +1391,7 @@ class _$InvalidUniqueID<T> implements InvalidUniqueID<T> {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
+    @required TResult emptyInput(T failedValue),
     @required TResult emptySelection(T failedValue),
     @required TResult invalidCoverFile(T failureValue),
     @required TResult invalidCoverURL(T failedValue),
@@ -1188,6 +1402,7 @@ class _$InvalidUniqueID<T> implements InvalidUniqueID<T> {
     @required TResult invalidUsername(T failedValue),
     @required TResult tooLongInput(T failedValue),
   }) {
+    assert(emptyInput != null);
     assert(emptySelection != null);
     assert(invalidCoverFile != null);
     assert(invalidCoverURL != null);
@@ -1203,6 +1418,7 @@ class _$InvalidUniqueID<T> implements InvalidUniqueID<T> {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
+    TResult emptyInput(T failedValue),
     TResult emptySelection(T failedValue),
     TResult invalidCoverFile(T failureValue),
     TResult invalidCoverURL(T failedValue),
@@ -1224,6 +1440,7 @@ class _$InvalidUniqueID<T> implements InvalidUniqueID<T> {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object>({
+    @required TResult emptyInput(EmptyInput<T> value),
     @required TResult emptySelection(EmptySelection<T> value),
     @required TResult invalidCoverFile(InvalidCoverFile<T> value),
     @required TResult invalidCoverURL(InvalidCoverURL<T> value),
@@ -1234,6 +1451,7 @@ class _$InvalidUniqueID<T> implements InvalidUniqueID<T> {
     @required TResult invalidUsername(InvalidUsername<T> value),
     @required TResult tooLongInput(TooLongInput<T> value),
   }) {
+    assert(emptyInput != null);
     assert(emptySelection != null);
     assert(invalidCoverFile != null);
     assert(invalidCoverURL != null);
@@ -1249,6 +1467,7 @@ class _$InvalidUniqueID<T> implements InvalidUniqueID<T> {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
+    TResult emptyInput(EmptyInput<T> value),
     TResult emptySelection(EmptySelection<T> value),
     TResult invalidCoverFile(InvalidCoverFile<T> value),
     TResult invalidCoverURL(InvalidCoverURL<T> value),
@@ -1338,6 +1557,7 @@ class _$InvalidUsername<T> implements InvalidUsername<T> {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
+    @required TResult emptyInput(T failedValue),
     @required TResult emptySelection(T failedValue),
     @required TResult invalidCoverFile(T failureValue),
     @required TResult invalidCoverURL(T failedValue),
@@ -1348,6 +1568,7 @@ class _$InvalidUsername<T> implements InvalidUsername<T> {
     @required TResult invalidUsername(T failedValue),
     @required TResult tooLongInput(T failedValue),
   }) {
+    assert(emptyInput != null);
     assert(emptySelection != null);
     assert(invalidCoverFile != null);
     assert(invalidCoverURL != null);
@@ -1363,6 +1584,7 @@ class _$InvalidUsername<T> implements InvalidUsername<T> {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
+    TResult emptyInput(T failedValue),
     TResult emptySelection(T failedValue),
     TResult invalidCoverFile(T failureValue),
     TResult invalidCoverURL(T failedValue),
@@ -1384,6 +1606,7 @@ class _$InvalidUsername<T> implements InvalidUsername<T> {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object>({
+    @required TResult emptyInput(EmptyInput<T> value),
     @required TResult emptySelection(EmptySelection<T> value),
     @required TResult invalidCoverFile(InvalidCoverFile<T> value),
     @required TResult invalidCoverURL(InvalidCoverURL<T> value),
@@ -1394,6 +1617,7 @@ class _$InvalidUsername<T> implements InvalidUsername<T> {
     @required TResult invalidUsername(InvalidUsername<T> value),
     @required TResult tooLongInput(TooLongInput<T> value),
   }) {
+    assert(emptyInput != null);
     assert(emptySelection != null);
     assert(invalidCoverFile != null);
     assert(invalidCoverURL != null);
@@ -1409,6 +1633,7 @@ class _$InvalidUsername<T> implements InvalidUsername<T> {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
+    TResult emptyInput(EmptyInput<T> value),
     TResult emptySelection(EmptySelection<T> value),
     TResult invalidCoverFile(InvalidCoverFile<T> value),
     TResult invalidCoverURL(InvalidCoverURL<T> value),
@@ -1498,6 +1723,7 @@ class _$TooLongInput<T> implements TooLongInput<T> {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object>({
+    @required TResult emptyInput(T failedValue),
     @required TResult emptySelection(T failedValue),
     @required TResult invalidCoverFile(T failureValue),
     @required TResult invalidCoverURL(T failedValue),
@@ -1508,6 +1734,7 @@ class _$TooLongInput<T> implements TooLongInput<T> {
     @required TResult invalidUsername(T failedValue),
     @required TResult tooLongInput(T failedValue),
   }) {
+    assert(emptyInput != null);
     assert(emptySelection != null);
     assert(invalidCoverFile != null);
     assert(invalidCoverURL != null);
@@ -1523,6 +1750,7 @@ class _$TooLongInput<T> implements TooLongInput<T> {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
+    TResult emptyInput(T failedValue),
     TResult emptySelection(T failedValue),
     TResult invalidCoverFile(T failureValue),
     TResult invalidCoverURL(T failedValue),
@@ -1544,6 +1772,7 @@ class _$TooLongInput<T> implements TooLongInput<T> {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object>({
+    @required TResult emptyInput(EmptyInput<T> value),
     @required TResult emptySelection(EmptySelection<T> value),
     @required TResult invalidCoverFile(InvalidCoverFile<T> value),
     @required TResult invalidCoverURL(InvalidCoverURL<T> value),
@@ -1554,6 +1783,7 @@ class _$TooLongInput<T> implements TooLongInput<T> {
     @required TResult invalidUsername(InvalidUsername<T> value),
     @required TResult tooLongInput(TooLongInput<T> value),
   }) {
+    assert(emptyInput != null);
     assert(emptySelection != null);
     assert(invalidCoverFile != null);
     assert(invalidCoverURL != null);
@@ -1569,6 +1799,7 @@ class _$TooLongInput<T> implements TooLongInput<T> {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
+    TResult emptyInput(EmptyInput<T> value),
     TResult emptySelection(EmptySelection<T> value),
     TResult invalidCoverFile(InvalidCoverFile<T> value),
     TResult invalidCoverURL(InvalidCoverURL<T> value),

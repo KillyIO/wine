@@ -6,6 +6,9 @@ part 'value_failure.freezed.dart';
 @freezed
 abstract class ValueFailure<T> with _$ValueFailure<T> {
   /// @nodoc
+  const factory ValueFailure.emptyInput(T failedValue) = EmptyInput<T>;
+
+  /// @nodoc
   const factory ValueFailure.emptySelection(T failedValue) = EmptySelection<T>;
 
   /// @nodoc

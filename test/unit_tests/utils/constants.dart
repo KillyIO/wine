@@ -24,6 +24,42 @@ const testSubtitle = 'this is a subtitle';
 const testInvalidSubtitleTooLong =
     'this is a subtitle too long and should cause an error in the app';
 
+const testSummary = '''
+congue nisi vitae suscipit tellus mauris a diam maecenas sed enim ut sem
+viverra aliquet eget sit amet tellus cras adipiscing enim eu turpis egestas
+pretium aenean pharetra magna ac placerat vestibulum lectus mauris ultrices
+eros in cursus turpis massa tincidunt dui ut ornare lectus sit amet est
+placerat in egestas erat imperdiet sed euismod nisi porta lorem mollis
+aliquam ut porttitor leo a diam sollicitudin tempor id eu nisl nunc mi
+ipsum faucibus vitae aliquet nec ullamcorper sit amet risus nullam eget
+felis eget nunc lobortis mattis aliquam faucibus purus in massa tempor nec
+feugiat nisl pretium fusce id velit ut tortor pretium viverra suspendisse
+potenti nullam ac tortor vitae purus faucibus ornare suspendisse sed nisi
+lacus sed viverra tellus in hac habitasse platea dictumst vestibulum rhoncus
+est pellentesque elit ullamcorper dignissim cras tincidunt lobortis feugiat
+vivamus at augue eget arcu dictum varius duis at consectetur lorem donec massa
+''';
+const testInvalidSummaryTooLong = '''
+malesuada fames ac turpis egestas sed tempus urna et pharetra pharetra massa
+massa ultricies mi quis hendrerit dolor magna eget est lorem ipsum dolor sit
+amet consectetur adipiscing elit pellentesque habitant morbi tristique
+senectus et netus et malesuada fames ac turpis egestas integer eget aliquet
+nibh praesent tristique magna sit amet purus gravida quis blandit turpis
+cursus in hac habitasse platea dictumst quisque sagittis purus sit amet
+volutpat consequat mauris nunc congue nisi vitae suscipit tellus mauris a
+diam maecenas sed enim ut sem viverra aliquet eget sit amet tellus cras
+adipiscing enim eu turpis egestas pretium aenean pharetra magna ac placerat
+vestibulum lectus mauris ultrices eros in cursus turpis massa tincidunt dui
+ut ornare lectus sit amet est placerat in egestas erat imperdiet sed euismod
+nisi porta lorem mollis aliquam ut porttitor leo a diam sollicitudin tempor
+id eu nisl nunc mi ipsum faucibus vitae aliquet nec ullamcorper sit amet
+risus nullam eget felis eget nunc lobortis mattis aliquam faucibus purus in
+massa tempor nec feugiat nisl pretium fusce id velit ut tortor pretium
+viverra suspendisse potenti nullam ac tortor vitae purus faucibus ornare
+suspendisse sed nisi lacus sed viverra tellus in hac habitasse platea
+dictumst vestibulum rhoncus est pellentesque
+''';
+
 const testCoverURL = 'https://storage.com/example-bucket/cover.jpeg';
 const testCoverPath = '/path/cover.jpeg';
 const testInvalidCoverURL =

@@ -1,8 +1,10 @@
 import 'dart:io';
 
 import 'package:dartz/dartz.dart';
-import 'package:flutter_stringprocess/flutter_stringprocess.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:string_validator/string_validator.dart';
+import 'package:stringr/stringr.dart';
+
 import 'package:wine/domain/core/value_failure.dart';
 import 'package:wine/helpers/string_extension.dart';
 import 'package:wine/utils/constants/series.dart';
@@ -73,7 +75,18 @@ Either<ValueFailure<String>, String> validatePassword(String input) {
 
 /// @nodoc
 Either<ValueFailure<String>, String> validateSubtitle(String input) {
-  if (StringProcessor().getWordCount(input) > subtitleMaxWords) {
+  if (input.countWords() > subtitleMaxWords) {
+    return left(ValueFailure.tooLongInput(input));
+  } else {
+    return right(input);
+  }
+}
+
+/// @nodoc
+Either<ValueFailure<String>, String> validateSummary(String input) {
+  if (input.isEmpty) {
+    return left(ValueFailure.emptyInput(input));
+  } else if (input.countWords() > summaryMaxWords) {
     return left(ValueFailure.tooLongInput(input));
   } else {
     return right(input);

@@ -4,6 +4,7 @@ import 'package:wine/domain/core/genre.dart';
 import 'package:wine/domain/core/language.dart';
 import 'package:wine/domain/core/unique_id.dart';
 import 'package:wine/domain/series/subtitle.dart';
+import 'package:wine/domain/series/summary.dart';
 
 part 'series.freezed.dart';
 
@@ -33,6 +34,8 @@ abstract class Series with _$Series {
         isNSFW: false,
         language: Language(''),
         subtitle: Subtitle(''),
+        summary: Summary(''),
+        title: Title(''),
         uid: UniqueID(),
       );
 }
