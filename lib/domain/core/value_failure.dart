@@ -35,4 +35,7 @@ abstract class ValueFailure<T> with _$ValueFailure<T> {
   /// @nodoc
   const factory ValueFailure.invalidUsername(T failedValue) =
       InvalidUsername<T>;
+
+  /// @nodoc
+  const factory ValueFailure.tooLongInput(T failedValue) = TooLongInput<T>;
 }

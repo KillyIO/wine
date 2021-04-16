@@ -20,6 +20,10 @@ const testGenreOptional = 'action';
 
 const testLanguage = 'fr';
 
+const testSubtitle = 'this is a subtitle';
+const testInvalidSubtitleTooLong =
+    'this is a subtitle too long and should cause an error in the app';
+
 const testCoverURL = 'https://storage.com/example-bucket/cover.jpeg';
 const testCoverPath = '/path/cover.jpeg';
 const testInvalidCoverURL =

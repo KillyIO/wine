@@ -1,9 +1,11 @@
 import 'dart:io';
 
 import 'package:dartz/dartz.dart';
+import 'package:flutter_stringprocess/flutter_stringprocess.dart';
 import 'package:string_validator/string_validator.dart';
 import 'package:wine/domain/core/value_failure.dart';
 import 'package:wine/helpers/string_extension.dart';
+import 'package:wine/utils/constants/series.dart';
 
 /// @nodoc
 Either<ValueFailure<String>, String> validateConfirmPassword(
@@ -45,7 +47,7 @@ Either<ValueFailure<String>, String> validateGenre(
   String input, {
   bool isOptional = false,
 }) {
-  if ((input != null && input.isNotEmpty) || isOptional) {
+  if (input.isNotEmpty || isOptional) {
     return right(input);
   }
   return left(ValueFailure.emptySelection(input));
@@ -53,7 +55,7 @@ Either<ValueFailure<String>, String> validateGenre(
 
 /// @nodoc
 Either<ValueFailure<String>, String> validateLanguage(String input) {
-  if (input != null && input.isNotEmpty) {
+  if (input.isNotEmpty) {
     return right(input);
   }
   return left(ValueFailure.emptySelection(input));
@@ -67,6 +69,15 @@ Either<ValueFailure<String>, String> validatePassword(String input) {
     return right(input);
   }
   return left(ValueFailure.invalidPassword(input));
+}
+
+/// @nodoc
+Either<ValueFailure<String>, String> validateSubtitle(String input) {
+  if (StringProcessor().getWordCount(input) > subtitleMaxWords) {
+    return left(ValueFailure.tooLongInput(input));
+  } else {
+    return right(input);
+  }
 }
 
 /// @nodoc

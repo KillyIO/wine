@@ -68,6 +68,13 @@ class _$ValueFailureTearOff {
       failedValue,
     );
   }
+
+// ignore: unused_element
+  TooLongInput<T> tooLongInput<T>(T failedValue) {
+    return TooLongInput<T>(
+      failedValue,
+    );
+  }
 }
 
 /// @nodoc
@@ -86,6 +93,7 @@ mixin _$ValueFailure<T> {
     @required TResult invalidConfirmPassword(T failedValue),
     @required TResult invalidUniqueID(T failedValue),
     @required TResult invalidUsername(T failedValue),
+    @required TResult tooLongInput(T failedValue),
   });
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>({
@@ -97,6 +105,7 @@ mixin _$ValueFailure<T> {
     TResult invalidConfirmPassword(T failedValue),
     TResult invalidUniqueID(T failedValue),
     TResult invalidUsername(T failedValue),
+    TResult tooLongInput(T failedValue),
     @required TResult orElse(),
   });
   @optionalTypeArgs
@@ -109,6 +118,7 @@ mixin _$ValueFailure<T> {
     @required TResult invalidConfirmPassword(InvalidConfirmPassword<T> value),
     @required TResult invalidUniqueID(InvalidUniqueID<T> value),
     @required TResult invalidUsername(InvalidUsername<T> value),
+    @required TResult tooLongInput(TooLongInput<T> value),
   });
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>({
@@ -120,6 +130,7 @@ mixin _$ValueFailure<T> {
     TResult invalidConfirmPassword(InvalidConfirmPassword<T> value),
     TResult invalidUniqueID(InvalidUniqueID<T> value),
     TResult invalidUsername(InvalidUsername<T> value),
+    TResult tooLongInput(TooLongInput<T> value),
     @required TResult orElse(),
   });
 }
@@ -211,6 +222,7 @@ class _$EmptySelection<T> implements EmptySelection<T> {
     @required TResult invalidConfirmPassword(T failedValue),
     @required TResult invalidUniqueID(T failedValue),
     @required TResult invalidUsername(T failedValue),
+    @required TResult tooLongInput(T failedValue),
   }) {
     assert(emptySelection != null);
     assert(invalidCoverFile != null);
@@ -220,6 +232,7 @@ class _$EmptySelection<T> implements EmptySelection<T> {
     assert(invalidConfirmPassword != null);
     assert(invalidUniqueID != null);
     assert(invalidUsername != null);
+    assert(tooLongInput != null);
     return emptySelection(failedValue);
   }
 
@@ -234,6 +247,7 @@ class _$EmptySelection<T> implements EmptySelection<T> {
     TResult invalidConfirmPassword(T failedValue),
     TResult invalidUniqueID(T failedValue),
     TResult invalidUsername(T failedValue),
+    TResult tooLongInput(T failedValue),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -254,6 +268,7 @@ class _$EmptySelection<T> implements EmptySelection<T> {
     @required TResult invalidConfirmPassword(InvalidConfirmPassword<T> value),
     @required TResult invalidUniqueID(InvalidUniqueID<T> value),
     @required TResult invalidUsername(InvalidUsername<T> value),
+    @required TResult tooLongInput(TooLongInput<T> value),
   }) {
     assert(emptySelection != null);
     assert(invalidCoverFile != null);
@@ -263,6 +278,7 @@ class _$EmptySelection<T> implements EmptySelection<T> {
     assert(invalidConfirmPassword != null);
     assert(invalidUniqueID != null);
     assert(invalidUsername != null);
+    assert(tooLongInput != null);
     return emptySelection(this);
   }
 
@@ -277,6 +293,7 @@ class _$EmptySelection<T> implements EmptySelection<T> {
     TResult invalidConfirmPassword(InvalidConfirmPassword<T> value),
     TResult invalidUniqueID(InvalidUniqueID<T> value),
     TResult invalidUsername(InvalidUsername<T> value),
+    TResult tooLongInput(TooLongInput<T> value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -365,6 +382,7 @@ class _$InvalidCoverFile<T> implements InvalidCoverFile<T> {
     @required TResult invalidConfirmPassword(T failedValue),
     @required TResult invalidUniqueID(T failedValue),
     @required TResult invalidUsername(T failedValue),
+    @required TResult tooLongInput(T failedValue),
   }) {
     assert(emptySelection != null);
     assert(invalidCoverFile != null);
@@ -374,6 +392,7 @@ class _$InvalidCoverFile<T> implements InvalidCoverFile<T> {
     assert(invalidConfirmPassword != null);
     assert(invalidUniqueID != null);
     assert(invalidUsername != null);
+    assert(tooLongInput != null);
     return invalidCoverFile(failureValue);
   }
 
@@ -388,6 +407,7 @@ class _$InvalidCoverFile<T> implements InvalidCoverFile<T> {
     TResult invalidConfirmPassword(T failedValue),
     TResult invalidUniqueID(T failedValue),
     TResult invalidUsername(T failedValue),
+    TResult tooLongInput(T failedValue),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -408,6 +428,7 @@ class _$InvalidCoverFile<T> implements InvalidCoverFile<T> {
     @required TResult invalidConfirmPassword(InvalidConfirmPassword<T> value),
     @required TResult invalidUniqueID(InvalidUniqueID<T> value),
     @required TResult invalidUsername(InvalidUsername<T> value),
+    @required TResult tooLongInput(TooLongInput<T> value),
   }) {
     assert(emptySelection != null);
     assert(invalidCoverFile != null);
@@ -417,6 +438,7 @@ class _$InvalidCoverFile<T> implements InvalidCoverFile<T> {
     assert(invalidConfirmPassword != null);
     assert(invalidUniqueID != null);
     assert(invalidUsername != null);
+    assert(tooLongInput != null);
     return invalidCoverFile(this);
   }
 
@@ -431,6 +453,7 @@ class _$InvalidCoverFile<T> implements InvalidCoverFile<T> {
     TResult invalidConfirmPassword(InvalidConfirmPassword<T> value),
     TResult invalidUniqueID(InvalidUniqueID<T> value),
     TResult invalidUsername(InvalidUsername<T> value),
+    TResult tooLongInput(TooLongInput<T> value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -519,6 +542,7 @@ class _$InvalidCoverURL<T> implements InvalidCoverURL<T> {
     @required TResult invalidConfirmPassword(T failedValue),
     @required TResult invalidUniqueID(T failedValue),
     @required TResult invalidUsername(T failedValue),
+    @required TResult tooLongInput(T failedValue),
   }) {
     assert(emptySelection != null);
     assert(invalidCoverFile != null);
@@ -528,6 +552,7 @@ class _$InvalidCoverURL<T> implements InvalidCoverURL<T> {
     assert(invalidConfirmPassword != null);
     assert(invalidUniqueID != null);
     assert(invalidUsername != null);
+    assert(tooLongInput != null);
     return invalidCoverURL(failedValue);
   }
 
@@ -542,6 +567,7 @@ class _$InvalidCoverURL<T> implements InvalidCoverURL<T> {
     TResult invalidConfirmPassword(T failedValue),
     TResult invalidUniqueID(T failedValue),
     TResult invalidUsername(T failedValue),
+    TResult tooLongInput(T failedValue),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -562,6 +588,7 @@ class _$InvalidCoverURL<T> implements InvalidCoverURL<T> {
     @required TResult invalidConfirmPassword(InvalidConfirmPassword<T> value),
     @required TResult invalidUniqueID(InvalidUniqueID<T> value),
     @required TResult invalidUsername(InvalidUsername<T> value),
+    @required TResult tooLongInput(TooLongInput<T> value),
   }) {
     assert(emptySelection != null);
     assert(invalidCoverFile != null);
@@ -571,6 +598,7 @@ class _$InvalidCoverURL<T> implements InvalidCoverURL<T> {
     assert(invalidConfirmPassword != null);
     assert(invalidUniqueID != null);
     assert(invalidUsername != null);
+    assert(tooLongInput != null);
     return invalidCoverURL(this);
   }
 
@@ -585,6 +613,7 @@ class _$InvalidCoverURL<T> implements InvalidCoverURL<T> {
     TResult invalidConfirmPassword(InvalidConfirmPassword<T> value),
     TResult invalidUniqueID(InvalidUniqueID<T> value),
     TResult invalidUsername(InvalidUsername<T> value),
+    TResult tooLongInput(TooLongInput<T> value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -673,6 +702,7 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     @required TResult invalidConfirmPassword(T failedValue),
     @required TResult invalidUniqueID(T failedValue),
     @required TResult invalidUsername(T failedValue),
+    @required TResult tooLongInput(T failedValue),
   }) {
     assert(emptySelection != null);
     assert(invalidCoverFile != null);
@@ -682,6 +712,7 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     assert(invalidConfirmPassword != null);
     assert(invalidUniqueID != null);
     assert(invalidUsername != null);
+    assert(tooLongInput != null);
     return invalidEmailAddress(failedValue);
   }
 
@@ -696,6 +727,7 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     TResult invalidConfirmPassword(T failedValue),
     TResult invalidUniqueID(T failedValue),
     TResult invalidUsername(T failedValue),
+    TResult tooLongInput(T failedValue),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -716,6 +748,7 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     @required TResult invalidConfirmPassword(InvalidConfirmPassword<T> value),
     @required TResult invalidUniqueID(InvalidUniqueID<T> value),
     @required TResult invalidUsername(InvalidUsername<T> value),
+    @required TResult tooLongInput(TooLongInput<T> value),
   }) {
     assert(emptySelection != null);
     assert(invalidCoverFile != null);
@@ -725,6 +758,7 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     assert(invalidConfirmPassword != null);
     assert(invalidUniqueID != null);
     assert(invalidUsername != null);
+    assert(tooLongInput != null);
     return invalidEmailAddress(this);
   }
 
@@ -739,6 +773,7 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     TResult invalidConfirmPassword(InvalidConfirmPassword<T> value),
     TResult invalidUniqueID(InvalidUniqueID<T> value),
     TResult invalidUsername(InvalidUsername<T> value),
+    TResult tooLongInput(TooLongInput<T> value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -827,6 +862,7 @@ class _$InvalidPassword<T> implements InvalidPassword<T> {
     @required TResult invalidConfirmPassword(T failedValue),
     @required TResult invalidUniqueID(T failedValue),
     @required TResult invalidUsername(T failedValue),
+    @required TResult tooLongInput(T failedValue),
   }) {
     assert(emptySelection != null);
     assert(invalidCoverFile != null);
@@ -836,6 +872,7 @@ class _$InvalidPassword<T> implements InvalidPassword<T> {
     assert(invalidConfirmPassword != null);
     assert(invalidUniqueID != null);
     assert(invalidUsername != null);
+    assert(tooLongInput != null);
     return invalidPassword(failedValue);
   }
 
@@ -850,6 +887,7 @@ class _$InvalidPassword<T> implements InvalidPassword<T> {
     TResult invalidConfirmPassword(T failedValue),
     TResult invalidUniqueID(T failedValue),
     TResult invalidUsername(T failedValue),
+    TResult tooLongInput(T failedValue),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -870,6 +908,7 @@ class _$InvalidPassword<T> implements InvalidPassword<T> {
     @required TResult invalidConfirmPassword(InvalidConfirmPassword<T> value),
     @required TResult invalidUniqueID(InvalidUniqueID<T> value),
     @required TResult invalidUsername(InvalidUsername<T> value),
+    @required TResult tooLongInput(TooLongInput<T> value),
   }) {
     assert(emptySelection != null);
     assert(invalidCoverFile != null);
@@ -879,6 +918,7 @@ class _$InvalidPassword<T> implements InvalidPassword<T> {
     assert(invalidConfirmPassword != null);
     assert(invalidUniqueID != null);
     assert(invalidUsername != null);
+    assert(tooLongInput != null);
     return invalidPassword(this);
   }
 
@@ -893,6 +933,7 @@ class _$InvalidPassword<T> implements InvalidPassword<T> {
     TResult invalidConfirmPassword(InvalidConfirmPassword<T> value),
     TResult invalidUniqueID(InvalidUniqueID<T> value),
     TResult invalidUsername(InvalidUsername<T> value),
+    TResult tooLongInput(TooLongInput<T> value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -984,6 +1025,7 @@ class _$InvalidConfirmPassword<T> implements InvalidConfirmPassword<T> {
     @required TResult invalidConfirmPassword(T failedValue),
     @required TResult invalidUniqueID(T failedValue),
     @required TResult invalidUsername(T failedValue),
+    @required TResult tooLongInput(T failedValue),
   }) {
     assert(emptySelection != null);
     assert(invalidCoverFile != null);
@@ -993,6 +1035,7 @@ class _$InvalidConfirmPassword<T> implements InvalidConfirmPassword<T> {
     assert(invalidConfirmPassword != null);
     assert(invalidUniqueID != null);
     assert(invalidUsername != null);
+    assert(tooLongInput != null);
     return invalidConfirmPassword(failedValue);
   }
 
@@ -1007,6 +1050,7 @@ class _$InvalidConfirmPassword<T> implements InvalidConfirmPassword<T> {
     TResult invalidConfirmPassword(T failedValue),
     TResult invalidUniqueID(T failedValue),
     TResult invalidUsername(T failedValue),
+    TResult tooLongInput(T failedValue),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -1027,6 +1071,7 @@ class _$InvalidConfirmPassword<T> implements InvalidConfirmPassword<T> {
     @required TResult invalidConfirmPassword(InvalidConfirmPassword<T> value),
     @required TResult invalidUniqueID(InvalidUniqueID<T> value),
     @required TResult invalidUsername(InvalidUsername<T> value),
+    @required TResult tooLongInput(TooLongInput<T> value),
   }) {
     assert(emptySelection != null);
     assert(invalidCoverFile != null);
@@ -1036,6 +1081,7 @@ class _$InvalidConfirmPassword<T> implements InvalidConfirmPassword<T> {
     assert(invalidConfirmPassword != null);
     assert(invalidUniqueID != null);
     assert(invalidUsername != null);
+    assert(tooLongInput != null);
     return invalidConfirmPassword(this);
   }
 
@@ -1050,6 +1096,7 @@ class _$InvalidConfirmPassword<T> implements InvalidConfirmPassword<T> {
     TResult invalidConfirmPassword(InvalidConfirmPassword<T> value),
     TResult invalidUniqueID(InvalidUniqueID<T> value),
     TResult invalidUsername(InvalidUsername<T> value),
+    TResult tooLongInput(TooLongInput<T> value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -1139,6 +1186,7 @@ class _$InvalidUniqueID<T> implements InvalidUniqueID<T> {
     @required TResult invalidConfirmPassword(T failedValue),
     @required TResult invalidUniqueID(T failedValue),
     @required TResult invalidUsername(T failedValue),
+    @required TResult tooLongInput(T failedValue),
   }) {
     assert(emptySelection != null);
     assert(invalidCoverFile != null);
@@ -1148,6 +1196,7 @@ class _$InvalidUniqueID<T> implements InvalidUniqueID<T> {
     assert(invalidConfirmPassword != null);
     assert(invalidUniqueID != null);
     assert(invalidUsername != null);
+    assert(tooLongInput != null);
     return invalidUniqueID(failedValue);
   }
 
@@ -1162,6 +1211,7 @@ class _$InvalidUniqueID<T> implements InvalidUniqueID<T> {
     TResult invalidConfirmPassword(T failedValue),
     TResult invalidUniqueID(T failedValue),
     TResult invalidUsername(T failedValue),
+    TResult tooLongInput(T failedValue),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -1182,6 +1232,7 @@ class _$InvalidUniqueID<T> implements InvalidUniqueID<T> {
     @required TResult invalidConfirmPassword(InvalidConfirmPassword<T> value),
     @required TResult invalidUniqueID(InvalidUniqueID<T> value),
     @required TResult invalidUsername(InvalidUsername<T> value),
+    @required TResult tooLongInput(TooLongInput<T> value),
   }) {
     assert(emptySelection != null);
     assert(invalidCoverFile != null);
@@ -1191,6 +1242,7 @@ class _$InvalidUniqueID<T> implements InvalidUniqueID<T> {
     assert(invalidConfirmPassword != null);
     assert(invalidUniqueID != null);
     assert(invalidUsername != null);
+    assert(tooLongInput != null);
     return invalidUniqueID(this);
   }
 
@@ -1205,6 +1257,7 @@ class _$InvalidUniqueID<T> implements InvalidUniqueID<T> {
     TResult invalidConfirmPassword(InvalidConfirmPassword<T> value),
     TResult invalidUniqueID(InvalidUniqueID<T> value),
     TResult invalidUsername(InvalidUsername<T> value),
+    TResult tooLongInput(TooLongInput<T> value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -1293,6 +1346,7 @@ class _$InvalidUsername<T> implements InvalidUsername<T> {
     @required TResult invalidConfirmPassword(T failedValue),
     @required TResult invalidUniqueID(T failedValue),
     @required TResult invalidUsername(T failedValue),
+    @required TResult tooLongInput(T failedValue),
   }) {
     assert(emptySelection != null);
     assert(invalidCoverFile != null);
@@ -1302,6 +1356,7 @@ class _$InvalidUsername<T> implements InvalidUsername<T> {
     assert(invalidConfirmPassword != null);
     assert(invalidUniqueID != null);
     assert(invalidUsername != null);
+    assert(tooLongInput != null);
     return invalidUsername(failedValue);
   }
 
@@ -1316,6 +1371,7 @@ class _$InvalidUsername<T> implements InvalidUsername<T> {
     TResult invalidConfirmPassword(T failedValue),
     TResult invalidUniqueID(T failedValue),
     TResult invalidUsername(T failedValue),
+    TResult tooLongInput(T failedValue),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -1336,6 +1392,7 @@ class _$InvalidUsername<T> implements InvalidUsername<T> {
     @required TResult invalidConfirmPassword(InvalidConfirmPassword<T> value),
     @required TResult invalidUniqueID(InvalidUniqueID<T> value),
     @required TResult invalidUsername(InvalidUsername<T> value),
+    @required TResult tooLongInput(TooLongInput<T> value),
   }) {
     assert(emptySelection != null);
     assert(invalidCoverFile != null);
@@ -1345,6 +1402,7 @@ class _$InvalidUsername<T> implements InvalidUsername<T> {
     assert(invalidConfirmPassword != null);
     assert(invalidUniqueID != null);
     assert(invalidUsername != null);
+    assert(tooLongInput != null);
     return invalidUsername(this);
   }
 
@@ -1359,6 +1417,7 @@ class _$InvalidUsername<T> implements InvalidUsername<T> {
     TResult invalidConfirmPassword(InvalidConfirmPassword<T> value),
     TResult invalidUniqueID(InvalidUniqueID<T> value),
     TResult invalidUsername(InvalidUsername<T> value),
+    TResult tooLongInput(TooLongInput<T> value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
@@ -1375,4 +1434,164 @@ abstract class InvalidUsername<T> implements ValueFailure<T> {
   T get failedValue;
   @JsonKey(ignore: true)
   $InvalidUsernameCopyWith<T, InvalidUsername<T>> get copyWith;
+}
+
+/// @nodoc
+abstract class $TooLongInputCopyWith<T, $Res> {
+  factory $TooLongInputCopyWith(
+          TooLongInput<T> value, $Res Function(TooLongInput<T>) then) =
+      _$TooLongInputCopyWithImpl<T, $Res>;
+  $Res call({T failedValue});
+}
+
+/// @nodoc
+class _$TooLongInputCopyWithImpl<T, $Res>
+    extends _$ValueFailureCopyWithImpl<T, $Res>
+    implements $TooLongInputCopyWith<T, $Res> {
+  _$TooLongInputCopyWithImpl(
+      TooLongInput<T> _value, $Res Function(TooLongInput<T>) _then)
+      : super(_value, (v) => _then(v as TooLongInput<T>));
+
+  @override
+  TooLongInput<T> get _value => super._value as TooLongInput<T>;
+
+  @override
+  $Res call({
+    Object failedValue = freezed,
+  }) {
+    return _then(TooLongInput<T>(
+      failedValue == freezed ? _value.failedValue : failedValue as T,
+    ));
+  }
+}
+
+/// @nodoc
+class _$TooLongInput<T> implements TooLongInput<T> {
+  const _$TooLongInput(this.failedValue) : assert(failedValue != null);
+
+  @override
+  final T failedValue;
+
+  @override
+  String toString() {
+    return 'ValueFailure<$T>.tooLongInput(failedValue: $failedValue)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is TooLongInput<T> &&
+            (identical(other.failedValue, failedValue) ||
+                const DeepCollectionEquality()
+                    .equals(other.failedValue, failedValue)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
+
+  @JsonKey(ignore: true)
+  @override
+  $TooLongInputCopyWith<T, TooLongInput<T>> get copyWith =>
+      _$TooLongInputCopyWithImpl<T, TooLongInput<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object>({
+    @required TResult emptySelection(T failedValue),
+    @required TResult invalidCoverFile(T failureValue),
+    @required TResult invalidCoverURL(T failedValue),
+    @required TResult invalidEmailAddress(T failedValue),
+    @required TResult invalidPassword(T failedValue),
+    @required TResult invalidConfirmPassword(T failedValue),
+    @required TResult invalidUniqueID(T failedValue),
+    @required TResult invalidUsername(T failedValue),
+    @required TResult tooLongInput(T failedValue),
+  }) {
+    assert(emptySelection != null);
+    assert(invalidCoverFile != null);
+    assert(invalidCoverURL != null);
+    assert(invalidEmailAddress != null);
+    assert(invalidPassword != null);
+    assert(invalidConfirmPassword != null);
+    assert(invalidUniqueID != null);
+    assert(invalidUsername != null);
+    assert(tooLongInput != null);
+    return tooLongInput(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object>({
+    TResult emptySelection(T failedValue),
+    TResult invalidCoverFile(T failureValue),
+    TResult invalidCoverURL(T failedValue),
+    TResult invalidEmailAddress(T failedValue),
+    TResult invalidPassword(T failedValue),
+    TResult invalidConfirmPassword(T failedValue),
+    TResult invalidUniqueID(T failedValue),
+    TResult invalidUsername(T failedValue),
+    TResult tooLongInput(T failedValue),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (tooLongInput != null) {
+      return tooLongInput(failedValue);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object>({
+    @required TResult emptySelection(EmptySelection<T> value),
+    @required TResult invalidCoverFile(InvalidCoverFile<T> value),
+    @required TResult invalidCoverURL(InvalidCoverURL<T> value),
+    @required TResult invalidEmailAddress(InvalidEmail<T> value),
+    @required TResult invalidPassword(InvalidPassword<T> value),
+    @required TResult invalidConfirmPassword(InvalidConfirmPassword<T> value),
+    @required TResult invalidUniqueID(InvalidUniqueID<T> value),
+    @required TResult invalidUsername(InvalidUsername<T> value),
+    @required TResult tooLongInput(TooLongInput<T> value),
+  }) {
+    assert(emptySelection != null);
+    assert(invalidCoverFile != null);
+    assert(invalidCoverURL != null);
+    assert(invalidEmailAddress != null);
+    assert(invalidPassword != null);
+    assert(invalidConfirmPassword != null);
+    assert(invalidUniqueID != null);
+    assert(invalidUsername != null);
+    assert(tooLongInput != null);
+    return tooLongInput(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object>({
+    TResult emptySelection(EmptySelection<T> value),
+    TResult invalidCoverFile(InvalidCoverFile<T> value),
+    TResult invalidCoverURL(InvalidCoverURL<T> value),
+    TResult invalidEmailAddress(InvalidEmail<T> value),
+    TResult invalidPassword(InvalidPassword<T> value),
+    TResult invalidConfirmPassword(InvalidConfirmPassword<T> value),
+    TResult invalidUniqueID(InvalidUniqueID<T> value),
+    TResult invalidUsername(InvalidUsername<T> value),
+    TResult tooLongInput(TooLongInput<T> value),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (tooLongInput != null) {
+      return tooLongInput(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class TooLongInput<T> implements ValueFailure<T> {
+  const factory TooLongInput(T failedValue) = _$TooLongInput<T>;
+
+  T get failedValue;
+  @JsonKey(ignore: true)
+  $TooLongInputCopyWith<T, TooLongInput<T>> get copyWith;
 }
