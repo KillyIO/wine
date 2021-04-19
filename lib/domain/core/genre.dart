@@ -13,8 +13,6 @@ class Genre extends ValueObject<String> {
     );
   }
 
-  // NOTE private contructor
-  /// @nodoc
   const Genre._(this.value);
 
   @override

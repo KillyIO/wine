@@ -13,8 +13,6 @@ class Language extends ValueObject<String> {
     );
   }
 
-  // NOTE private contructor
-  /// @nodoc
   const Language._(this.value);
 
   @override

@@ -13,8 +13,6 @@ class Summary extends ValueObject<String> {
     );
   }
 
-  // NOTE private contructor
-  /// @nodoc
   const Summary._(this.value);
 
   @override

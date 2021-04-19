@@ -13,8 +13,6 @@ class Subtitle extends ValueObject<String> {
     );
   }
 
-  // NOTE private contructor
-  /// @nodoc
   const Subtitle._(this.value);
 
   @override
