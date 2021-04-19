@@ -7,6 +7,7 @@
 // ignore_for_file: public_member_api_docs
 
 import 'package:auto_route/auto_route.dart';
+import 'package:flutter/material.dart';
 
 import '../home/home_page.dart';
 import '../log_in/log_in_page.dart';
@@ -39,26 +40,38 @@ class AppRouter extends RouterBase {
   Map<Type, AutoRouteFactory> get pagesMap => _pagesMap;
   final _pagesMap = <Type, AutoRouteFactory>{
     HomePage: (data) {
+      final args = data.getArgs<HomePageArguments>(
+        orElse: () => HomePageArguments(),
+      );
       return buildAdaptivePageRoute<dynamic>(
-        builder: (context) => HomePage(),
+        builder: (context) => HomePage(key: args.key),
         settings: data,
       );
     },
     LogInPage: (data) {
+      final args = data.getArgs<LogInPageArguments>(
+        orElse: () => LogInPageArguments(),
+      );
       return buildAdaptivePageRoute<dynamic>(
-        builder: (context) => LogInPage(),
+        builder: (context) => LogInPage(key: args.key),
         settings: data,
       );
     },
     OnboardingPage: (data) {
+      final args = data.getArgs<OnboardingPageArguments>(
+        orElse: () => OnboardingPageArguments(),
+      );
       return buildAdaptivePageRoute<dynamic>(
-        builder: (context) => OnboardingPage(),
+        builder: (context) => OnboardingPage(key: args.key),
         settings: data,
       );
     },
     SplashPage: (data) {
+      final args = data.getArgs<SplashPageArguments>(
+        orElse: () => SplashPageArguments(),
+      );
       return buildAdaptivePageRoute<dynamic>(
-        builder: (context) => SplashPage(),
+        builder: (context) => SplashPage(key: args.key),
         settings: data,
       );
     },
@@ -70,11 +83,63 @@ class AppRouter extends RouterBase {
 /// *************************************************************************
 
 extension AppRouterExtendedNavigatorStateX on ExtendedNavigatorState {
-  Future<dynamic> pushHomePage() => push<dynamic>(Routes.homePage);
+  Future<dynamic> pushHomePage({
+    Key key,
+  }) =>
+      push<dynamic>(
+        Routes.homePage,
+        arguments: HomePageArguments(key: key),
+      );
 
-  Future<dynamic> pushLogInPage() => push<dynamic>(Routes.logInPage);
+  Future<dynamic> pushLogInPage({
+    Key key,
+  }) =>
+      push<dynamic>(
+        Routes.logInPage,
+        arguments: LogInPageArguments(key: key),
+      );
 
-  Future<dynamic> pushOnboardingPage() => push<dynamic>(Routes.onboardingPage);
+  Future<dynamic> pushOnboardingPage({
+    Key key,
+  }) =>
+      push<dynamic>(
+        Routes.onboardingPage,
+        arguments: OnboardingPageArguments(key: key),
+      );
 
-  Future<dynamic> pushSplashPage() => push<dynamic>(Routes.splashPage);
+  Future<dynamic> pushSplashPage({
+    Key key,
+  }) =>
+      push<dynamic>(
+        Routes.splashPage,
+        arguments: SplashPageArguments(key: key),
+      );
+}
+
+/// ************************************************************************
+/// Arguments holder classes
+/// *************************************************************************
+
+/// HomePage arguments holder class
+class HomePageArguments {
+  final Key key;
+  HomePageArguments({this.key});
+}
+
+/// LogInPage arguments holder class
+class LogInPageArguments {
+  final Key key;
+  LogInPageArguments({this.key});
+}
+
+/// OnboardingPage arguments holder class
+class OnboardingPageArguments {
+  final Key key;
+  OnboardingPageArguments({this.key});
+}
+
+/// SplashPage arguments holder class
+class SplashPageArguments {
+  final Key key;
+  SplashPageArguments({this.key});
 }
