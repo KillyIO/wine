@@ -26,7 +26,7 @@ void main() {
       expect(subtitle.value, right(testEmpty));
     });
 
-    test('When input empty Then return tooLong', () {
+    test('When input too long Then return tooLong', () {
       final subtitle = Subtitle(testInvalidSubtitleTooLong);
 
       expect(
