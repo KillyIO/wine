@@ -60,6 +60,11 @@ suspendisse sed nisi lacus sed viverra tellus in hac habitasse platea
 dictumst vestibulum rhoncus est pellentesque
 ''';
 
+const testTitle = 'elementum eu facilisis sed odio';
+const testInvalidTitleTooLong = '''
+malesuada pellentesque elit eget gravida cum sociis natoque penatibus et magnis
+''';
+
 const testCoverURL = 'https://storage.com/example-bucket/cover.jpeg';
 const testCoverPath = '/path/cover.jpeg';
 const testInvalidCoverURL =

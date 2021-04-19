@@ -2,6 +2,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:wine/domain/core/cover_url.dart';
 import 'package:wine/domain/core/genre.dart';
 import 'package:wine/domain/core/language.dart';
+import 'package:wine/domain/core/title.dart';
 import 'package:wine/domain/core/unique_id.dart';
 import 'package:wine/domain/series/subtitle.dart';
 import 'package:wine/domain/series/summary.dart';
