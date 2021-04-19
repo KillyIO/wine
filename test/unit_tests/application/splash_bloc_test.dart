@@ -62,7 +62,7 @@ void main() {
       blocTest(
         'When error occur during signInAnonymously then yield Failure',
         build: () => _splashBloc,
-        act: (bloc) {
+        act: (SplashBloc bloc) {
           when(() => _authFacade.isLoggedIn).thenReturn(false);
           when(() => _authFacade.logInAnonymously())
               .thenAnswer((_) async => left(const AuthFailure.serverError()));
@@ -84,7 +84,7 @@ void main() {
       blocTest(
         'When error occur during loadDefaultCoverURLs then yield Failure',
         build: () => _splashBloc,
-        act: (bloc) {
+        act: (SplashBloc bloc) {
           when(() => _authFacade.isAnonymous).thenReturn(false);
           when(() => _defaultCoversRepository.loadDefaultCoverURLs())
               .thenAnswer((_) async =>
@@ -109,7 +109,7 @@ void main() {
       blocTest(
         'When error occur during cacheDefaultCoverURLs then yield Failure',
         build: () => _splashBloc,
-        act: (bloc) {
+        act: (SplashBloc bloc) {
           when(() => _defaultCoversRepository.cacheDefaultCoverURLs({}))
               .thenAnswer((_) async =>
                   left(const DefaultCoversFailure.defaultCoverURLsNotCached()));
@@ -131,7 +131,7 @@ void main() {
       blocTest(
         'When error occur during initializeSettings then yield Failure',
         build: () => _splashBloc,
-        act: (bloc) {
+        act: (SplashBloc bloc) {
           when(() => _settingsRepository.initializeSettings()).thenAnswer(
             (_) async => left(const SettingsFailure.settingsNotInitialized()),
           );
@@ -150,7 +150,7 @@ void main() {
       blocTest(
         'When error occur during createSession then yield Failure',
         build: () => _splashBloc,
-        act: (bloc) {
+        act: (SplashBloc bloc) {
           when(() => _sessionsRepository.createSession()).thenAnswer(
             (_) async => left(const SessionsFailure.sessionNotCreated()),
           );
@@ -169,7 +169,7 @@ void main() {
       blocTest(
         'When error occur during loadUser then yield Failure',
         build: () => _splashBloc,
-        act: (bloc) {
+        act: (SplashBloc bloc) {
           when(() => _authFacade.isAnonymous).thenReturn(false);
           when(() => _userRepository.loadUser(testUid))
               .thenAnswer((_) async => left(const UserFailure.userNotFound()));
@@ -191,7 +191,7 @@ void main() {
       blocTest(
         'When error occur during updateSession then yield Failure',
         build: () => _splashBloc,
-        act: (bloc) {
+        act: (SplashBloc bloc) {
           when(() => _sessionsRepository.updateSession(testUser)).thenAnswer(
             (_) async => left(const SessionsFailure.sessionNotUpdated()),
           );
@@ -212,7 +212,7 @@ void main() {
       blocTest(
         'When session not found And session created Then yield goToOnboarding',
         build: () => _splashBloc,
-        act: (bloc) {
+        act: (SplashBloc bloc) {
           when(() => _authFacade.isLoggedIn).thenReturn(true);
           when(() => _authFacade.isAnonymous).thenReturn(true);
           when(_settingsRepository.fetchSettings)
@@ -240,7 +240,7 @@ void main() {
       blocTest(
         'When session fetched but user anonymous Then yield gotToHome',
         build: () => _splashBloc,
-        act: (bloc) {
+        act: (SplashBloc bloc) {
           when(() => _authFacade.isLoggedIn).thenReturn(true);
           when(() => _authFacade.isAnonymous).thenReturn(true);
           when(_settingsRepository.fetchSettings)
@@ -265,7 +265,7 @@ void main() {
       blocTest(
         'When session fetched but user authenticated Then yield goToHome',
         build: () => _splashBloc,
-        act: (bloc) {
+        act: (SplashBloc bloc) {
           when(() => _authFacade.isLoggedIn).thenReturn(false);
           when(_authFacade.logInAnonymously)
               .thenAnswer((_) async => right(unit));

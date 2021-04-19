@@ -2,6 +2,9 @@ import 'package:flutter/material.dart';
 
 /// @nodoc
 class SplashDesigner extends StatelessWidget {
+  /// @nodoc
+  SplashDesigner({Key key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Column(

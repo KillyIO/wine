@@ -8,6 +8,9 @@ import 'package:wine/utils/themes.dart';
 
 /// @nodoc
 class SplashPage extends StatelessWidget {
+  /// @nodoc
+  SplashPage({Key key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     SystemChrome.setPreferredOrientations([
@@ -15,6 +18,7 @@ class SplashPage extends StatelessWidget {
       DeviceOrientation.portraitDown,
     ]);
     return AnnotatedRegion<SystemUiOverlayStyle>(
+      value: lightTheme,
       child: Scaffold(
         backgroundColor: Colors.white,
         body: BlocProvider(
@@ -23,7 +27,6 @@ class SplashPage extends StatelessWidget {
           child: SplashLayout(),
         ),
       ),
-      value: lightTheme,
     );
   }
 }

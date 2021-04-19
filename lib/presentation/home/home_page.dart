@@ -9,6 +9,9 @@ import 'package:wine/utils/themes.dart';
 
 /// @nodoc
 class HomePage extends StatelessWidget {
+  /// @nodoc
+  HomePage({Key key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     SystemChrome.setPreferredOrientations([
@@ -16,10 +19,12 @@ class HomePage extends StatelessWidget {
       DeviceOrientation.portraitDown,
     ]);
     return AnnotatedRegion<SystemUiOverlayStyle>(
+      value: lightTheme,
       child: MultiBlocProvider(
         providers: <BlocProvider>[
           BlocProvider(
-            create: (_) => getIt<HomeBloc>()..add(HomeEvent.homePageLaunched()),
+            create: (_) =>
+                getIt<HomeBloc>()..add(const HomeEvent.homePageLaunched()),
           ),
           BlocProvider(
             create: (context) => getIt<HomeNavigationBloc>(),
@@ -27,7 +32,6 @@ class HomePage extends StatelessWidget {
         ],
         child: HomeLayout(),
       ),
-      value: lightTheme,
     );
   }
 }

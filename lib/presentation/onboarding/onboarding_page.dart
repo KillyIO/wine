@@ -8,6 +8,9 @@ import 'package:wine/utils/themes.dart';
 
 /// @nodoc
 class OnboardingPage extends StatelessWidget {
+  /// @nodoc
+  OnboardingPage({Key key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     SystemChrome.setPreferredOrientations([
@@ -15,6 +18,7 @@ class OnboardingPage extends StatelessWidget {
       DeviceOrientation.portraitDown,
     ]);
     return AnnotatedRegion<SystemUiOverlayStyle>(
+      value: lightTheme,
       child: Scaffold(
         backgroundColor: Colors.white,
         body: SafeArea(
@@ -33,7 +37,6 @@ class OnboardingPage extends StatelessWidget {
           ),
         ),
       ),
-      value: lightTheme,
     );
   }
 }

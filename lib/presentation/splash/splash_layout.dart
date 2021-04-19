@@ -11,6 +11,9 @@ import 'package:wine/utils/functions.dart';
 
 /// @nodoc
 class SplashLayout extends StatelessWidget {
+  /// @nodoc
+  SplashLayout({Key key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return BlocListener<SplashBloc, SplashState>(

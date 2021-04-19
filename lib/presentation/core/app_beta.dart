@@ -6,6 +6,9 @@ import 'package:wine/presentation/splash/splash_page.dart';
 
 /// @nodoc
 class AppBeta extends StatelessWidget {
+  /// @nodoc
+  AppBeta({Key key}) : super(key: key);
+
   // /// @nodoc
   // final FirebaseAnalytics analytics = FirebaseAnalytics();
 

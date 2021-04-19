@@ -6,6 +6,9 @@ import 'package:wine/presentation/splash/splash_page.dart';
 
 /// @nodoc
 class AppDevelopment extends StatelessWidget {
+  /// @nodoc
+  AppDevelopment({Key key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
