@@ -11,7 +11,8 @@ import 'package:google_sign_in/google_sign_in.dart' as _i5;
 import 'package:hive/hive.dart' as _i6;
 import 'package:injectable/injectable.dart' as _i2;
 
-import 'application/home/home_bloc.dart' as _i22;
+import 'application/auth/auth_bloc.dart' as _i22;
+import 'application/home/home_bloc.dart' as _i23;
 import 'application/home/home_navigation/home_navigation_bloc.dart' as _i7;
 import 'application/log_in/log_in_bloc.dart' as _i20;
 import 'application/splash/splash_bloc.dart' as _i21;
@@ -22,8 +23,8 @@ import 'domain/sessions/i_sessions_repository.dart' as _i14;
 import 'domain/settings/i_ssettings_repository.dart' as _i16;
 import 'domain/user/i_user_repository.dart' as _i18;
 import 'infrastructure/auth/firebase_auth_facade.dart' as _i9;
-import 'infrastructure/core/firebase_injectable_module.dart' as _i23;
-import 'infrastructure/core/hive_injectable_module.dart' as _i24;
+import 'infrastructure/core/firebase_injectable_module.dart' as _i24;
+import 'infrastructure/core/hive_injectable_module.dart' as _i25;
 import 'infrastructure/default_covers/default_covers_repository.dart' as _i11;
 import 'infrastructure/series/series_repository.dart' as _i13;
 import 'infrastructure/sessions/sessions_repository.dart' as _i15;
@@ -79,10 +80,11 @@ Future<_i1.GetIt> $initGetIt(_i1.GetIt get,
       get<_i14.ISessionsRepository>(),
       get<_i16.ISettingsRepository>(),
       get<_i18.IUserRepository>()));
-  gh.factory<_i22.HomeBloc>(() => _i22.HomeBloc(get<_i7.HomeNavigationBloc>()));
+  gh.factory<_i22.AuthBloc>(() => _i22.AuthBloc(get<_i8.IAuthFacade>()));
+  gh.factory<_i23.HomeBloc>(() => _i23.HomeBloc(get<_i7.HomeNavigationBloc>()));
   return get;
 }
 
-class _$FirebaseInjectableModule extends _i23.FirebaseInjectableModule {}
+class _$FirebaseInjectableModule extends _i24.FirebaseInjectableModule {}
 
-class _$HiveInjectableModule extends _i24.HiveInjectableModule {}
+class _$HiveInjectableModule extends _i25.HiveInjectableModule {}

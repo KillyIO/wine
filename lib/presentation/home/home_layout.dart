@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:wine/application/home/home_navigation/home_navigation_bloc.dart';
+import 'package:wine/presentation/home/widgets/home_app_bar.dart';
 
 /// @nodoc
 class HomeLayout extends StatelessWidget {
@@ -7,6 +10,20 @@ class HomeLayout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return MultiBlocListener(
+      listeners: [],
+      child: BlocBuilder<HomeNavigationBloc, HomeNavigationState>(
+        builder: (context, state) {
+          return Stack(
+            children: <Widget>[
+              Scaffold(
+                backgroundColor: Colors.white,
+                appBar: HomeAppBar(),
+              ),
+            ],
+          );
+        },
+      ),
+    );
   }
 }
