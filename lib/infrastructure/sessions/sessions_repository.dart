@@ -7,6 +7,7 @@ import 'package:injectable/injectable.dart';
 import 'package:wine/domain/sessions/i_sessions_repository.dart';
 import 'package:wine/domain/sessions/sessions_failure.dart';
 import 'package:wine/domain/user/user.dart';
+import 'package:wine/infrastructure/user/hive_user.dart';
 import 'package:wine/infrastructure/user/user_dto.dart';
 import 'package:wine/utils/constants/boxes.dart';
 
@@ -26,11 +27,11 @@ class SessionsRepository implements ISessionsRepository {
 
   @override
   Future<Either<SessionsFailure, Unit>> createSession() async {
-    final box = await _hive.openBox<Map<String, dynamic>>(sessionsBox);
+    final box = await _hive.openBox<HiveUser>(sessionsBox);
 
     final firebaseUser = _firebaseAuth.currentUser;
 
-    await box.put(firebaseUser.uid, {});
+    await box.put(firebaseUser.uid, const HiveUser());
 
     if (box.get(firebaseUser.uid) != null) return right(unit);
 
@@ -39,7 +40,7 @@ class SessionsRepository implements ISessionsRepository {
 
   @override
   Future<Either<SessionsFailure, Unit>> deleteSession() async {
-    final box = await _hive.openBox<Map<String, dynamic>>(sessionsBox);
+    final box = await _hive.openBox<HiveUser>(sessionsBox);
 
     final firebaseUser = _firebaseAuth.currentUser;
 
@@ -53,7 +54,7 @@ class SessionsRepository implements ISessionsRepository {
 
   @override
   Future<Either<SessionsFailure, User>> fetchSession() async {
-    final box = await _hive.openBox<Map<String, dynamic>>(sessionsBox);
+    final box = await _hive.openBox<HiveUser>(sessionsBox);
 
     final firebaseUser = _firebaseAuth.currentUser;
 
@@ -67,14 +68,14 @@ class SessionsRepository implements ISessionsRepository {
 
   @override
   Future<Either<SessionsFailure, Unit>> updateSession(User user) async {
-    final box = await _hive.openBox<Map<String, dynamic>>(sessionsBox);
+    final box = await _hive.openBox<HiveUser>(sessionsBox);
 
     final firebaseUser = _firebaseAuth.currentUser;
 
-    final userAsMap = UserDTO.fromDomain(user).toMap();
-    await box.put(firebaseUser.uid, userAsMap);
+    final userAdapter = UserDTO.fromDomain(user).toAdapter();
+    await box.put(firebaseUser.uid, userAdapter);
 
-    if (mapEquals(box.get(firebaseUser.uid), userAsMap)) return right(unit);
+    if (box.get(firebaseUser.uid) == userAdapter) return right(unit);
 
     return left(const SessionsFailure.sessionNotUpdated());
   }

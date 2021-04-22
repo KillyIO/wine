@@ -6,7 +6,7 @@ import 'package:mocktail/mocktail.dart';
 import 'package:wine/domain/sessions/i_sessions_repository.dart';
 import 'package:wine/domain/sessions/sessions_failure.dart';
 import 'package:wine/infrastructure/sessions/sessions_repository.dart';
-import 'package:wine/infrastructure/user/user_dto.dart';
+import 'package:wine/infrastructure/user/hive_user.dart';
 
 import '../../mocks/firebase_auth_mocks.dart';
 import '../../mocks/hive_mocks.dart';
@@ -18,7 +18,7 @@ void main() {
   auth.FirebaseAuth _firebaseAuth;
 
   HiveInterface _hive;
-  Box<Map<String, dynamic>> _box = MockBox<Map<String, dynamic>>();
+  Box<HiveUser> _box = MockBox<HiveUser>();
 
   setUp(() {
     _firebaseAuth = MockFirebaseAuth();
@@ -33,7 +33,7 @@ void main() {
 
   group('createSession -', () {
     test('When session created Then return Unit', () async {
-      when(() => _box.get(any())).thenReturn(testUserAsMap);
+      when(() => _box.get(any())).thenReturn(testHiveUser);
 
       final result = await _sessionsRepository.createSession();
 
@@ -71,7 +71,7 @@ void main() {
     });
 
     test('When session not deleted Then return SessionNotDeleted', () async {
-      when(() => _box.get(any())).thenReturn(testUserAsMap);
+      when(() => _box.get(any())).thenReturn(testHiveUser);
 
       final result = await _sessionsRepository.deleteSession();
 
@@ -85,14 +85,14 @@ void main() {
 
   group('fetchSession -', () {
     test('When session fetched Then return User', () async {
-      when(() => _box.get(any())).thenReturn(testUserAsMap);
+      when(() => _box.get(any())).thenReturn(testHiveUser);
 
       final result = await _sessionsRepository.fetchSession();
 
       expect(result.isRight(), true);
       result.fold(
         (_) {},
-        (success) => expect(success, testUserAsMap.toDomain()),
+        (success) => expect(success, testHiveUser.toDomain()),
       );
     });
 
@@ -111,10 +111,10 @@ void main() {
 
   group('updateSession -', () {
     test('When session updated Then return Unit', () async {
-      when(() => _box.get(any())).thenReturn(testUserAsMap);
+      when(() => _box.get(any())).thenReturn(testHiveUser);
 
       final result =
-          await _sessionsRepository.updateSession(testUserAsMap.toDomain());
+          await _sessionsRepository.updateSession(testHiveUser.toDomain());
 
       expect(result.isRight(), true);
       result.fold(
@@ -124,13 +124,14 @@ void main() {
     });
 
     test('When session not updated Then return SessionNotUpdated', () async {
-      final updatedTestUserAsMap = Map<String, dynamic>.from(testUserAsMap)
-        ..['emailAddress'] = 'yhaouas.hebbazth5@gmailvn.net';
+      final updatedTestHiveUser = testHiveUser.copyWith(
+        emailAddress: 'yhaouas.hebbazth5@gmailvn.net',
+      );
 
-      when(() => _box.get(any())).thenReturn(updatedTestUserAsMap);
+      when(() => _box.get(any())).thenReturn(updatedTestHiveUser);
 
       final result =
-          await _sessionsRepository.updateSession(testUserAsMap.toDomain());
+          await _sessionsRepository.updateSession(testHiveUser.toDomain());
 
       expect(result.isLeft(), true);
       result.fold(

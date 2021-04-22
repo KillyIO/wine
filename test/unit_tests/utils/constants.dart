@@ -6,6 +6,7 @@ import 'package:wine/domain/core/unique_id.dart';
 import 'package:wine/domain/settings/settings.dart';
 import 'package:wine/domain/user/user.dart';
 import 'package:wine/infrastructure/settings/hive_settings.dart';
+import 'package:wine/infrastructure/user/hive_user.dart';
 
 const testConfirmPasssword = '''wT-t"_fCznEH+tPMt7Y\$JB''';
 const testEmailAddress = 'lphong.tieu.75@pickuplanet.com';
@@ -89,7 +90,7 @@ const testSettings = Settings(
   enableSeriesLikesCount: false,
   enableSeriesViewsCount: false,
 );
-final testHiveSettings = HiveSettings(
+final testHiveSettings = const HiveSettings(
   enableChaptersBookmarksCount: false,
   enableChaptersLikesCount: false,
   enableChaptersViewsCount: false,
@@ -103,6 +104,11 @@ final testUser = User(
   emailAddress: EmailAddress(testEmailAddress),
   uid: UniqueID.fromUniqueString(testUid),
   username: Username(testEmailAddress.split('@').first),
+);
+final testHiveUser = HiveUser(
+  emailAddress: testEmailAddress,
+  uid: testUid,
+  username: testEmailAddress.split('@').first,
 );
 final testUserAsMap = {
   'emailAddress': testEmailAddress,

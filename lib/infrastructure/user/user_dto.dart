@@ -6,6 +6,7 @@ import 'package:wine/domain/auth/username.dart';
 import 'package:wine/domain/core/unique_id.dart';
 import 'package:wine/domain/user/user.dart';
 import 'package:wine/infrastructure/core/converter.dart';
+import 'package:wine/infrastructure/user/hive_user.dart';
 
 part 'user_dto.freezed.dart';
 part 'user_dto.g.dart';
@@ -32,6 +33,16 @@ abstract class UserDTO with _$UserDTO {
   }
 
   /// @nodoc
+  factory UserDTO.fromAdapter(HiveUser user) {
+    return UserDTO(
+      emailAddress: user.emailAddress,
+      serverTimeStamp: FieldValue.serverTimestamp(),
+      uid: user.uid,
+      username: user.username,
+    );
+  }
+
+  /// @nodoc
   factory UserDTO.fromJson(Map<String, dynamic> json) =>
       _$UserDTOFromJson(json);
 
@@ -48,6 +59,13 @@ extension UserDTOX on UserDTO {
         emailAddress: EmailAddress(emailAddress),
         uid: UniqueID.fromUniqueString(uid),
         username: Username(username),
+      );
+
+  /// @nodoc
+  HiveUser toAdapter() => HiveUser(
+        emailAddress: emailAddress,
+        uid: uid,
+        username: username,
       );
 
   /// @nodoc
