@@ -1,5 +1,6 @@
 part of 'auth_bloc.dart';
 
+/// @nodoc
 @freezed
 abstract class AuthState with _$AuthState {
   /// @nodoc
