@@ -1,6 +1,7 @@
 import 'package:hive/hive.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import 'package:injectable/injectable.dart';
+import 'package:wine/infrastructure/settings/hive_settings.dart';
 
 /// @nodoc
 @module
@@ -9,6 +10,8 @@ abstract class HiveInjectableModule {
   @preResolve
   @lazySingleton
   Future<HiveInterface> get hive async {
+    Hive.registerAdapter<HiveSettings>(HiveSettingsAdapter());
+
     await Hive.initFlutter();
 
     return Hive;
