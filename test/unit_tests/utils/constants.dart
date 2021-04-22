@@ -5,6 +5,7 @@ import 'package:wine/domain/auth/username.dart';
 import 'package:wine/domain/core/unique_id.dart';
 import 'package:wine/domain/settings/settings.dart';
 import 'package:wine/domain/user/user.dart';
+import 'package:wine/infrastructure/settings/hive_settings.dart';
 
 const testConfirmPasssword = '''wT-t"_fCznEH+tPMt7Y\$JB''';
 const testEmailAddress = 'lphong.tieu.75@pickuplanet.com';
@@ -88,14 +89,14 @@ const testSettings = Settings(
   enableSeriesLikesCount: false,
   enableSeriesViewsCount: false,
 );
-final testSettingsAsMap = {
-  'enableChaptersBookmarksCount': false,
-  'enableChaptersLikesCount': false,
-  'enableChaptersViewsCount': false,
-  'enableSeriesBookmarksCount': false,
-  'enableSeriesLikesCount': false,
-  'enableSeriesViewsCount': false,
-};
+final testHiveSettings = HiveSettings(
+  enableChaptersBookmarksCount: false,
+  enableChaptersLikesCount: false,
+  enableChaptersViewsCount: false,
+  enableSeriesBookmarksCount: false,
+  enableSeriesLikesCount: false,
+  enableSeriesViewsCount: false,
+);
 
 const testSessionAnonymous = {};
 final testUser = User(

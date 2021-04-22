@@ -5,8 +5,8 @@ import 'package:hive/hive.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:wine/domain/settings/i_ssettings_repository.dart';
 import 'package:wine/domain/settings/settings_failure.dart';
+import 'package:wine/infrastructure/settings/hive_settings.dart';
 import 'package:wine/infrastructure/settings/settings_repository.dart';
-import 'package:wine/infrastructure/settings/settings_dto.dart';
 
 import '../../mocks/firebase_auth_mocks.dart';
 import '../../mocks/hive_mocks.dart';
@@ -18,7 +18,7 @@ void main() {
   auth.FirebaseAuth _firebaseAuth;
 
   HiveInterface _hive;
-  Box<Map<String, dynamic>> _box = MockBox<Map<String, dynamic>>();
+  Box<HiveSettings> _box = MockBox<HiveSettings>();
 
   setUp(() {
     _firebaseAuth = MockFirebaseAuth();
@@ -45,7 +45,7 @@ void main() {
     });
 
     test('When settings not deleted Then return SettingsNotDeleted', () async {
-      when(() => _box.get(any())).thenReturn(testSettingsAsMap);
+      when(() => _box.get(any())).thenReturn(testHiveSettings);
 
       final result = await _settingsRepository.deleteSettings();
 
@@ -59,14 +59,14 @@ void main() {
 
   group('fetchSettings -', () {
     test('When settings fetched Then return Settings', () async {
-      when(() => _box.get(any())).thenReturn(testSettingsAsMap);
+      when(() => _box.get(any())).thenReturn(testHiveSettings);
 
       final result = await _settingsRepository.fetchSettings();
 
       expect(result.isRight(), true);
       result.fold(
         (_) {},
-        (success) => expect(success, testSettingsAsMap.toDomain()),
+        (success) => expect(success, testHiveSettings.toDomain()),
       );
     });
 
@@ -85,7 +85,7 @@ void main() {
 
   group('initializeSettings -', () {
     test('When settings initialized Then return Unit', () async {
-      when(() => _box.get(any())).thenReturn(testUserAsMap);
+      when(() => _box.get(any())).thenReturn(testHiveSettings);
 
       final result = await _settingsRepository.initializeSettings();
 
@@ -114,10 +114,10 @@ void main() {
 
   group('updateSettings -', () {
     test('When settings updated Then return Unit', () async {
-      when(() => _box.get(any())).thenReturn(testSettingsAsMap);
+      when(() => _box.get(any())).thenReturn(testHiveSettings);
 
-      final result = await _settingsRepository
-          .updateSettings(testSettingsAsMap.toDomain());
+      final result =
+          await _settingsRepository.updateSettings(testHiveSettings.toDomain());
 
       expect(result.isRight(), true);
       result.fold(
@@ -127,14 +127,13 @@ void main() {
     });
 
     test('When settings not updated Then return SettingsNotUpdated', () async {
-      final updatedTestSettingsAsMap =
-          Map<String, dynamic>.from(testSettingsAsMap)
-            ..['enableChaptersBookmarksCount'] = true;
+      final updatedTestHiveSettings =
+          testHiveSettings.copyWith(enableChaptersBookmarksCount: true);
 
-      when(() => _box.get(any())).thenReturn(updatedTestSettingsAsMap);
+      when(() => _box.get(any())).thenReturn(updatedTestHiveSettings);
 
-      final result = await _settingsRepository
-          .updateSettings(testSettingsAsMap.toDomain());
+      final result =
+          await _settingsRepository.updateSettings(testHiveSettings.toDomain());
 
       expect(result.isLeft(), true);
       result.fold(
