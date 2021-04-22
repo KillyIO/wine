@@ -7,6 +7,7 @@ import 'package:injectable/injectable.dart';
 import 'package:wine/domain/settings/i_ssettings_repository.dart';
 import 'package:wine/domain/settings/settings.dart';
 import 'package:wine/domain/settings/settings_failure.dart';
+import 'package:wine/infrastructure/settings/hive_settings.dart';
 import 'package:wine/infrastructure/settings/settings_dto.dart';
 import 'package:wine/utils/constants/boxes.dart';
 
@@ -26,7 +27,7 @@ class SettingsRepository implements ISettingsRepository {
 
   @override
   Future<Either<SettingsFailure, Unit>> deleteSettings() async {
-    final box = await _hive.openBox<Map<String, dynamic>>(settingsBox);
+    final box = await _hive.openBox<HiveSettings>(settingsBox);
 
     final firebaseUser = _firebaseAuth.currentUser;
 
@@ -40,7 +41,7 @@ class SettingsRepository implements ISettingsRepository {
 
   @override
   Future<Either<SettingsFailure, Settings>> fetchSettings() async {
-    final box = await _hive.openBox<Map<String, dynamic>>(settingsBox);
+    final box = await _hive.openBox<HiveSettings>(settingsBox);
 
     final firebaseUser = _firebaseAuth.currentUser;
 
@@ -54,7 +55,7 @@ class SettingsRepository implements ISettingsRepository {
 
   @override
   Future<Either<SettingsFailure, Unit>> initializeSettings() async {
-    final box = await _hive.openBox<Map<String, dynamic>>(settingsBox);
+    final box = await _hive.openBox<HiveSettings>(settingsBox);
 
     final firebaseUser = _firebaseAuth.currentUser;
 
@@ -69,7 +70,7 @@ class SettingsRepository implements ISettingsRepository {
 
     await box.put(
       firebaseUser.uid,
-      SettingsDTO.fromDomain(settings).toJson(),
+      SettingsDTO.fromDomain(settings).toAdapter(),
     );
 
     if (box.get(firebaseUser.uid) != null) {
@@ -82,14 +83,14 @@ class SettingsRepository implements ISettingsRepository {
   Future<Either<SettingsFailure, Unit>> updateSettings(
     Settings settings,
   ) async {
-    final box = await _hive.openBox<Map<String, dynamic>>(settingsBox);
+    final box = await _hive.openBox<HiveSettings>(settingsBox);
 
     final firebaseUser = _firebaseAuth.currentUser;
 
-    final settingsAsMap = SettingsDTO.fromDomain(settings).toJson();
-    await box.put(firebaseUser.uid, settingsAsMap);
+    final settingsAdapter = SettingsDTO.fromDomain(settings).toAdapter();
+    await box.put(firebaseUser.uid, settingsAdapter);
 
-    if (mapEquals(box.get(firebaseUser.uid), settingsAsMap)) return right(unit);
+    if (box.get(firebaseUser.uid) == settingsAdapter) return right(unit);
 
     return left(const SettingsFailure.settingsNotUpdated());
   }
