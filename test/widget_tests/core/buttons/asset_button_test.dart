@@ -9,7 +9,7 @@ import '../../utils/main_widget.dart';
 
 void main() {
   group('AssetButton -', () {
-    testWidgets('', (WidgetTester tester) async {
+    testWidgets('Should be true', (WidgetTester tester) async {
       final completer = Completer<void>();
 
       await tester.pumpWidget(MainWidget(

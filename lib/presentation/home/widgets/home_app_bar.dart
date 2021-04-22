@@ -3,7 +3,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:wine/application/auth/auth_bloc.dart';
 
 import 'package:wine/application/home/home_navigation/home_navigation_bloc.dart';
+import 'package:wine/presentation/core/buttons/animation_button.dart';
 import 'package:wine/presentation/core/buttons/asset_button.dart';
+import 'package:wine/utils/assets/animations.dart';
 import 'package:wine/utils/assets/icons.dart';
 
 /// @nodoc
@@ -26,6 +28,7 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
       leading: Padding(
         padding: const EdgeInsets.only(left: 20.0, right: 15.0),
         child: AssetButton(
+          key: const Key('filter_button'),
           imagePath: filtersIcon,
           onPressed: () => context
               .read<HomeNavigationBloc>()
@@ -39,6 +42,7 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
               authenticated: (_) => Padding(
                 padding: const EdgeInsets.only(right: 20.0),
                 child: AssetButton(
+                  key: const Key('new_series_button'),
                   imagePath: plusIcon,
                   onPressed: () {},
                 ),
@@ -46,7 +50,18 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
               orElse: () => Container(),
             );
           },
-        )
+        ),
+        Padding(
+          padding: const EdgeInsets.only(right: 15.0),
+          child: AnimationButton(
+            key: const Key('menu_button'),
+            animation: Scaffold.of(context).isEndDrawerOpen
+                ? 'menu_to_x'
+                : 'x_to_menu',
+            filename: menuAnimation,
+            onPressed: () {},
+          ),
+        ),
       ],
     );
   }
