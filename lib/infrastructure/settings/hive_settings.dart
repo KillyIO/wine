@@ -9,7 +9,7 @@ part 'hive_settings.g.dart';
 @HiveType(typeId: 1)
 class HiveSettings extends Equatable {
   /// @nodoc
-  HiveSettings({
+  const HiveSettings({
     this.enableChaptersBookmarksCount,
     this.enableChaptersLikesCount,
     this.enableChaptersViewsCount,
