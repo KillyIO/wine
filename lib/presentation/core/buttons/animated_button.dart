@@ -2,9 +2,9 @@ import 'package:flare_flutter/flare_actor.dart';
 import 'package:flutter/material.dart';
 
 /// @nodoc
-class AnimationButton extends StatelessWidget {
+class AnimatedButton extends StatelessWidget {
   /// @nodoc
-  AnimationButton({
+  AnimatedButton({
     Key key,
     @required this.animation,
     this.callback,
