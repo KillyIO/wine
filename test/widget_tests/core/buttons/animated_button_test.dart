@@ -24,8 +24,13 @@ void main() {
       final animationButton = find.byKey(const Key('animation_button'));
 
       await tester.tap(animationButton);
+      await tester.pump();
+
       expect(completer.isCompleted, isTrue);
-      expect((animationButton as AnimatedButton).animation, 'menu_to_x');
+      expect(
+        (animationButton.evaluate().single.widget as AnimatedButton).animation,
+        'x_to_menu',
+      );
     });
   });
 }
