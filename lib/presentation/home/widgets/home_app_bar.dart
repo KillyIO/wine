@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:wine/application/auth/auth_bloc.dart';
 
 import 'package:wine/application/home/home_navigation/home_navigation_bloc.dart';
-import 'package:wine/presentation/core/buttons/animation_button.dart';
+import 'package:wine/presentation/core/buttons/animated_button.dart';
 import 'package:wine/presentation/core/buttons/asset_button.dart';
 import 'package:wine/utils/assets/animations.dart';
 import 'package:wine/utils/assets/icons.dart';
@@ -44,6 +44,7 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
                 child: AssetButton(
                   key: const Key('new_series_button'),
                   imagePath: plusIcon,
+                  // TODO add redirection to series editor
                   onPressed: () {},
                 ),
               ),
@@ -53,12 +54,13 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
         ),
         Padding(
           padding: const EdgeInsets.only(right: 15.0),
-          child: AnimationButton(
+          child: AnimatedButton(
             key: const Key('menu_button'),
             animation: Scaffold.of(context).isEndDrawerOpen
                 ? 'menu_to_x'
                 : 'x_to_menu',
             filename: menuAnimation,
+            // TODO add method to open menu drawer
             onPressed: () {},
           ),
         ),

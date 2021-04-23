@@ -29,6 +29,7 @@ void main() {
             child: HomeAppBar(),
           ),
         ));
+        await tester.pump();
 
         final filterButton = find.byKey(const Key('filter_button'));
         final newSeriesButton = find.byKey(const Key('new_series_button'));
@@ -43,9 +44,17 @@ void main() {
     testWidgets(
       'Should find new Series button',
       (WidgetTester tester) async {
+        when(() => _authFacade.isLoggedIn).thenReturn(true);
+        when(() => _authFacade.isAnonymous).thenReturn(false);
+
         await tester.pumpWidget(MainWidget(
-          child: HomeAppBar(),
+          child: BlocProvider(
+            create: (context) =>
+                AuthBloc(_authFacade)..add(const AuthEvent.authChanged()),
+            child: HomeAppBar(),
+          ),
         ));
+        await tester.pump();
 
         final filterButton = find.byKey(const Key('filter_button'));
         final newSeriesButton = find.byKey(const Key('new_series_button'));
