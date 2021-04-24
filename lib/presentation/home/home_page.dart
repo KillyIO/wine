@@ -8,9 +8,21 @@ import 'package:wine/presentation/home/home_layout.dart';
 import 'package:wine/utils/themes.dart';
 
 /// @nodoc
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   /// @nodoc
   HomePage({Key key}) : super(key: key);
+
+  @override
+  _HomePageState createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  @override
+  void initState() {
+    super.initState();
+
+    context.read<HomeBloc>()..add(const HomeEvent.homePageLaunched());
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -20,16 +32,8 @@ class HomePage extends StatelessWidget {
     ]);
     return AnnotatedRegion<SystemUiOverlayStyle>(
       value: lightTheme,
-      child: MultiBlocProvider(
-        providers: <BlocProvider>[
-          BlocProvider(
-            create: (_) =>
-                getIt<HomeBloc>()..add(const HomeEvent.homePageLaunched()),
-          ),
-          BlocProvider(
-            create: (context) => getIt<HomeNavigationBloc>(),
-          ),
-        ],
+      child: BlocProvider<HomeNavigationBloc>(
+        create: (_) => getIt<HomeNavigationBloc>(),
         child: HomeLayout(),
       ),
     );
