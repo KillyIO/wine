@@ -1,6 +1,5 @@
 import 'package:dartz/dartz.dart';
 import 'package:firebase_auth/firebase_auth.dart' as auth;
-import 'package:flutter/foundation.dart';
 import 'package:hive/hive.dart';
 import 'package:injectable/injectable.dart';
 
@@ -10,6 +9,7 @@ import 'package:wine/domain/user/user.dart';
 import 'package:wine/infrastructure/user/hive_user.dart';
 import 'package:wine/infrastructure/user/user_dto.dart';
 import 'package:wine/utils/constants/boxes.dart';
+import 'package:wine/utils/constants/users.dart';
 
 /// @nodoc
 @LazySingleton(as: ISessionsRepository, env: ['dev', 'prod'])
@@ -31,7 +31,14 @@ class SessionsRepository implements ISessionsRepository {
 
     final firebaseUser = _firebaseAuth.currentUser;
 
-    await box.put(firebaseUser.uid, const HiveUser());
+    await box.put(
+      firebaseUser.uid,
+      HiveUser(
+        emailAddress: defaultEmailAddress,
+        uid: firebaseUser.uid ?? defaultUID,
+        username: defaultUsername,
+      ),
+    );
 
     if (box.get(firebaseUser.uid) != null) return right(unit);
 

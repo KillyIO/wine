@@ -4,6 +4,7 @@ import 'package:wine/domain/auth/email_address.dart';
 import 'package:wine/domain/auth/username.dart';
 import 'package:wine/domain/core/unique_id.dart';
 import 'package:wine/domain/user/user.dart';
+import 'package:wine/utils/constants/users.dart';
 
 part 'hive_user.g.dart';
 
@@ -65,9 +66,9 @@ class HiveUser extends Equatable {
   /// @nodoc
   User toDomain() {
     return User(
-      emailAddress: EmailAddress(emailAddress),
-      uid: UniqueID.fromUniqueString(uid),
-      username: Username(username),
+      emailAddress: EmailAddress(emailAddress ?? defaultEmailAddress),
+      uid: UniqueID.fromUniqueString(uid ?? defaultUID),
+      username: Username(username ?? defaultUsername),
     );
   }
 
