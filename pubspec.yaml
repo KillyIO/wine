@@ -37,6 +37,7 @@ dependencies:
   simple_gesture_detector: 0.1.6
   string_validator: 0.1.4
   stringr: ^0.0.2-prerelease
+  time: 1.4.1
   uuid: 2.2.2
 
 dev_dependencies:

@@ -876,7 +876,7 @@ packages:
     source: hosted
     version: "0.3.15"
   time:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: time
       url: "https://pub.dartlang.org"
