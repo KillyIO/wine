@@ -15,12 +15,12 @@ void main() {
       await tester.pumpWidget(MainWidget(
         child: AssetButton(
           imagePath: plusIcon,
-          key: const Key('asset_button'),
+          key: const Key('test_asset_button'),
           onPressed: completer.complete,
         ),
       ));
 
-      final assetButton = find.byKey(const Key('asset_button'));
+      final assetButton = find.byKey(const Key('test_asset_button'));
 
       await tester.tap(assetButton);
       expect(completer.isCompleted, isTrue);

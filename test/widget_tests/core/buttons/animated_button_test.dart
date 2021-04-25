@@ -16,12 +16,12 @@ void main() {
         child: AnimatedButton(
           animation: completer.isCompleted ? 'menu_to_x' : 'x_to_menu',
           filename: menuAnimation,
-          key: const Key('animation_button'),
+          key: const Key('test_animation_button'),
           onPressed: completer.complete,
         ),
       ));
 
-      final animationButton = find.byKey(const Key('animation_button'));
+      final animationButton = find.byKey(const Key('test_animation_button'));
 
       await tester.tap(animationButton);
       await tester.pump();
