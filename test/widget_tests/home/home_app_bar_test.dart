@@ -33,7 +33,7 @@ void main() {
 
         final filterButton = find.byKey(const Key('filter_button'));
         final newSeriesButton = find.byKey(const Key('new_series_button'));
-        final menuButton = find.byKey(const Key('menu_button'));
+        final menuButton = find.byKey(const Key('menu_button_closed'));
 
         expect(filterButton, findsOneWidget);
         expect(newSeriesButton, findsNothing);
@@ -58,7 +58,7 @@ void main() {
 
         final filterButton = find.byKey(const Key('filter_button'));
         final newSeriesButton = find.byKey(const Key('new_series_button'));
-        final menuButton = find.byKey(const Key('menu_button'));
+        final menuButton = find.byKey(const Key('menu_button_closed'));
 
         expect(filterButton, findsOneWidget);
         expect(newSeriesButton, findsOneWidget);

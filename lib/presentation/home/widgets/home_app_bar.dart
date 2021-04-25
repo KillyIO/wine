@@ -52,17 +52,21 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
             );
           },
         ),
-        Padding(
-          padding: const EdgeInsets.only(right: 15.0),
-          child: AnimatedButton(
-            key: const Key('menu_button'),
-            animation: Scaffold.of(context).isEndDrawerOpen
-                ? 'menu_to_x'
-                : 'x_to_menu',
-            filename: menuAnimation,
-            // TODO add method to open menu drawer
-            onPressed: () {},
-          ),
+        BlocBuilder<HomeNavigationBloc, HomeNavigationState>(
+          builder: (context, state) {
+            return Padding(
+              padding: const EdgeInsets.only(right: 15.0),
+              child: AnimatedButton(
+                key: const Key('menu_button_closed'),
+                animation: state.isRightDrawerOpen ? 'menu_to_x' : 'x_to_menu',
+                filename: menuAnimation,
+                // TODO add method to open menu drawer
+                onPressed: () => context
+                    .read<HomeNavigationBloc>()
+                    .add(const HomeNavigationEvent.rightDrawerIconPressed()),
+              ),
+            );
+          },
         ),
       ],
     );
