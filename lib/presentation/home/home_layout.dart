@@ -10,20 +10,17 @@ class HomeLayout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MultiBlocListener(
-      listeners: [],
-      child: BlocBuilder<HomeNavigationBloc, HomeNavigationState>(
-        builder: (context, state) {
-          return Stack(
-            children: <Widget>[
-              Scaffold(
-                backgroundColor: Colors.white,
-                appBar: HomeAppBar(),
-              ),
-            ],
-          );
-        },
-      ),
+    return BlocBuilder<HomeNavigationBloc, HomeNavigationState>(
+      builder: (context, state) {
+        return Stack(
+          children: <Widget>[
+            Scaffold(
+              backgroundColor: Colors.white,
+              appBar: HomeAppBar(),
+            ),
+          ],
+        );
+      },
     );
   }
 }
