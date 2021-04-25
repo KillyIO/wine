@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:wine/application/auth/auth_bloc.dart';
+import 'package:wine/application/home/home_navigation/home_navigation_bloc.dart';
 import 'package:wine/domain/auth/i_auth_facade.dart';
 import 'package:wine/presentation/home/widgets/home_app_bar.dart';
 
@@ -24,8 +25,15 @@ void main() {
         when(() => _authFacade.isAnonymous).thenReturn(true);
 
         await tester.pumpWidget(MainWidget(
-          child: BlocProvider(
-            create: (context) => AuthBloc(_authFacade),
+          child: MultiBlocProvider(
+            providers: <BlocProvider>[
+              BlocProvider<AuthBloc>(
+                create: (context) => AuthBloc(_authFacade),
+              ),
+              BlocProvider<HomeNavigationBloc>(
+                create: (context) => HomeNavigationBloc(),
+              ),
+            ],
             child: HomeAppBar(),
           ),
         ));
@@ -48,9 +56,16 @@ void main() {
         when(() => _authFacade.isAnonymous).thenReturn(false);
 
         await tester.pumpWidget(MainWidget(
-          child: BlocProvider(
-            create: (context) =>
-                AuthBloc(_authFacade)..add(const AuthEvent.authChanged()),
+          child: MultiBlocProvider(
+            providers: <BlocProvider>[
+              BlocProvider<AuthBloc>(
+                create: (context) =>
+                    AuthBloc(_authFacade)..add(const AuthEvent.authChanged()),
+              ),
+              BlocProvider<HomeNavigationBloc>(
+                create: (context) => HomeNavigationBloc(),
+              ),
+            ],
             child: HomeAppBar(),
           ),
         ));
