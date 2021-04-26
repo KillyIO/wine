@@ -12,17 +12,20 @@ import 'package:flutter/material.dart';
 import '../home/home_page.dart';
 import '../log_in/log_in_page.dart';
 import '../onboarding/onboarding_page.dart';
+import '../plus/plus_page.dart';
 import '../splash/splash_page.dart';
 
 class Routes {
   static const String homePage = '/home-page';
   static const String logInPage = '/log-in-page';
   static const String onboardingPage = '/onboarding-page';
+  static const String plusPage = '/plus-page';
   static const String splashPage = '/';
   static const all = <String>{
     homePage,
     logInPage,
     onboardingPage,
+    plusPage,
     splashPage,
   };
 }
@@ -34,6 +37,7 @@ class AppRouter extends RouterBase {
     RouteDef(Routes.homePage, page: HomePage),
     RouteDef(Routes.logInPage, page: LogInPage),
     RouteDef(Routes.onboardingPage, page: OnboardingPage),
+    RouteDef(Routes.plusPage, page: PlusPage),
     RouteDef(Routes.splashPage, page: SplashPage),
   ];
   @override
@@ -63,6 +67,12 @@ class AppRouter extends RouterBase {
       );
       return buildAdaptivePageRoute<dynamic>(
         builder: (context) => OnboardingPage(key: args.key),
+        settings: data,
+      );
+    },
+    PlusPage: (data) {
+      return buildAdaptivePageRoute<dynamic>(
+        builder: (context) => const PlusPage(),
         settings: data,
       );
     },
@@ -106,6 +116,8 @@ extension AppRouterExtendedNavigatorStateX on ExtendedNavigatorState {
         Routes.onboardingPage,
         arguments: OnboardingPageArguments(key: key),
       );
+
+  Future<dynamic> pushPlusPage() => push<dynamic>(Routes.plusPage);
 
   Future<dynamic> pushSplashPage({
     Key key,
