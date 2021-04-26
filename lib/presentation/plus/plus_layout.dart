@@ -36,7 +36,7 @@ class PlusLayout extends StatelessWidget {
             child: AssetButton(
               key: const Key('plus_layout_back_button'),
               imagePath: backIcon,
-              onPressed: ExtendedNavigator.root.pop,
+              onPressed: () async => ExtendedNavigator.root.pop(),
             ),
           ),
           title: const Text(
