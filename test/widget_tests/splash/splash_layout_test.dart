@@ -1,3 +1,4 @@
+import 'package:flare_loading/flare_loading.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -35,6 +36,7 @@ void main() {
         final flareFinder = find.byKey(const Key('wine_animation_logo'));
         final designerFinder = find.byType(SplashDesigner);
 
+        expect(find.byType(FlareLoading), findsOneWidget);
         expect(flareFinder, findsOneWidget);
         expect(designerFinder, findsOneWidget);
       },
