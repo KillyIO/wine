@@ -11,7 +11,7 @@ import '../../mocks/auth_mocks.dart';
 import '../utils/main_widget.dart';
 
 void main() {
-  group('PlusLayout', () {
+  group('PlusLayout -', () {
     IAuthFacade _authFacade;
 
     setUp(() {
@@ -19,7 +19,7 @@ void main() {
     });
 
     testWidgets(
-      'Should find 3 buttons + text PLUS',
+      '''plus_library_button should navigate to LogInPage''',
       (WidgetTester tester) async {
         when(() => _authFacade.isLoggedIn).thenReturn(true);
         when(() => _authFacade.isAnonymous).thenReturn(true);
@@ -39,6 +39,34 @@ void main() {
         expect(find.byKey(const Key('plus_library_button')), findsOneWidget);
         expect(find.byKey(const Key('plus_settings_button')), findsOneWidget);
         expect(find.byKey(const Key('plus_about_button')), findsOneWidget);
+
+        // TODO add test navigate to LogInPage
+      },
+    );
+
+    testWidgets(
+      'plus_library_button should navigate to LibraryPage',
+      (WidgetTester tester) async {
+        when(() => _authFacade.isLoggedIn).thenReturn(true);
+        when(() => _authFacade.isAnonymous).thenReturn(false);
+
+        await tester.pumpWidget(MainWidget(
+          child: BlocProvider(
+            create: (_) =>
+                AuthBloc(_authFacade)..add(const AuthEvent.authChanged()),
+            child: const PlusLayout(),
+          ),
+        ));
+        await tester.pump();
+
+        expect(find.byType(AssetButton), findsOneWidget);
+        expect(find.text('PLUS'), findsOneWidget);
+
+        expect(find.byKey(const Key('plus_library_button')), findsOneWidget);
+        expect(find.byKey(const Key('plus_settings_button')), findsOneWidget);
+        expect(find.byKey(const Key('plus_about_button')), findsOneWidget);
+
+        // TODO add test navigate to LibraryPage
       },
     );
   });
