@@ -47,7 +47,11 @@ class HomeMenuLayout extends StatelessWidget {
           children: <Widget>[
             SimpleGestureDetector(
               onHorizontalSwipe: (direction) {
-                if (direction == SwipeDirection.right) {}
+                if (direction == SwipeDirection.right) {
+                  context
+                      .read<HomeNavigationBloc>()
+                      .add(const HomeNavigationEvent.rightDrawerIconPressed());
+                }
               },
               child: Container(
                 color: Colors.transparent,
