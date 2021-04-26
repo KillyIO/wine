@@ -3,18 +3,18 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:wine/presentation/plus/widgets/plus_button.dart';
+import 'package:wine/presentation/core/buttons/tile_button.dart';
 
-import '../utils/main_widget.dart';
+import '../../utils/main_widget.dart';
 
 void main() {
-  group('PlusButton -', () {
+  group('TileButton -', () {
     testWidgets('completer should be true', (WidgetTester tester) async {
       final completer = Completer<void>();
 
       await tester.pumpWidget(MainWidget(
-        child: PlusButton(
-          key: const Key('test_plus_button'),
+        child: TileButton(
+          key: const Key('test_tile_button'),
           leadingIconData: Feather.settings,
           onPressed: completer.complete,
           title: 'TEST',
@@ -23,9 +23,9 @@ void main() {
       ));
       await tester.pump();
 
-      final plusButton = find.byKey(const Key('test_plus_button'));
+      final tileButton = find.byKey(const Key('test_tile_button'));
 
-      await tester.tap(plusButton);
+      await tester.tap(tileButton);
       await tester.pump();
 
       expect(completer.isCompleted, true);
