@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
 /// @nodoc
-class PlusButton extends StatelessWidget {
+class TileButton extends StatelessWidget {
   /// @nodoc
-  PlusButton({
+  const TileButton({
     Key key,
     this.isFirst = false,
     @required this.leadingIconData,
