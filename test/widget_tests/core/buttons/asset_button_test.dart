@@ -11,7 +11,7 @@ void main() {
   group('AssetButton -', () {
     testWidgets(
       'When pressed Then completer is true',
-      (WidgetTester tester) async {
+      (tester) async {
         final completer = Completer<void>();
 
         await tester.pumpWidget(MainWidget(
