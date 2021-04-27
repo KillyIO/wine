@@ -39,7 +39,7 @@ class ErrorDialog extends StatelessWidget {
               ),
             ),
             const Text(
-              'SOMETHING\'S WRONG!',
+              "SOMETHING'S WRONG!",
               textAlign: TextAlign.center,
               style: TextStyle(
                 color: Colors.black,
