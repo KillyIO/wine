@@ -9,33 +9,30 @@ import '../../utils/main_widget.dart';
 
 void main() {
   group('TileButton -', () {
-    testWidgets(
-      'When pressed Then completer is true',
-      (WidgetTester tester) async {
-        final completer = Completer<void>();
+    testWidgets('completer should be true', (WidgetTester tester) async {
+      final completer = Completer<void>();
 
-        await tester.pumpWidget(MainWidget(
-          child: TileButton(
-            key: const Key('test_tile_button'),
-            leadingIconData: Feather.settings,
-            onPressed: completer.complete,
-            title: 'TEST',
-            trailingIconData: Icons.keyboard_arrow_right,
-          ),
-        ));
-        await tester.pump();
+      await tester.pumpWidget(MainWidget(
+        child: TileButton(
+          key: const Key('test_tile_button'),
+          leadingIconData: Feather.settings,
+          onPressed: completer.complete,
+          title: 'TEST',
+          trailingIconData: Icons.keyboard_arrow_right,
+        ),
+      ));
+      await tester.pump();
 
-        final tileButton = find.byKey(const Key('test_tile_button'));
+      final tileButton = find.byKey(const Key('test_tile_button'));
 
-        await tester.tap(tileButton);
-        await tester.pump();
+      await tester.tap(tileButton);
+      await tester.pump();
 
-        expect(completer.isCompleted, isTrue);
+      expect(completer.isCompleted, isTrue);
 
-        expect(find.text('TEST'), findsOneWidget);
-        expect(find.byIcon(Feather.settings), findsOneWidget);
-        expect(find.byIcon(Icons.keyboard_arrow_right), findsOneWidget);
-      },
-    );
+      expect(find.text('TEST'), findsOneWidget);
+      expect(find.byIcon(Feather.settings), findsOneWidget);
+      expect(find.byIcon(Icons.keyboard_arrow_right), findsOneWidget);
+    });
   });
 }

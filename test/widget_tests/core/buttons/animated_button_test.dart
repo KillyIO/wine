@@ -9,27 +9,24 @@ import '../../utils/main_widget.dart';
 
 void main() {
   group('AnimatedButton -', () {
-    testWidgets(
-      'When pressed Then completer is true',
-      (tester) async {
-        final completer = Completer<void>();
+    testWidgets('completer should be true', (tester) async {
+      final completer = Completer<void>();
 
-        await tester.pumpWidget(MainWidget(
-          child: AnimatedButton(
-            animation: completer.isCompleted ? 'menu_to_x' : 'x_to_menu',
-            filename: menuAnimation,
-            key: const Key('test_animation_button'),
-            onPressed: completer.complete,
-          ),
-        ));
+      await tester.pumpWidget(MainWidget(
+        child: AnimatedButton(
+          animation: completer.isCompleted ? 'menu_to_x' : 'x_to_menu',
+          filename: menuAnimation,
+          key: const Key('test_animation_button'),
+          onPressed: completer.complete,
+        ),
+      ));
 
-        final animationButton = find.byKey(const Key('test_animation_button'));
+      final animationButton = find.byKey(const Key('test_animation_button'));
 
-        await tester.tap(animationButton);
-        await tester.pump();
+      await tester.tap(animationButton);
+      await tester.pump();
 
-        expect(completer.isCompleted, isTrue);
-      },
-    );
+      expect(completer.isCompleted, isTrue);
+    });
   });
 }
