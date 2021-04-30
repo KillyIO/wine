@@ -1,4 +1,4 @@
-import 'package:dartz/dartz.dart';
+import 'package:rustic/result.dart';
 import 'package:uuid/uuid.dart';
 
 import 'package:wine/domain/core/value_failure.dart';
@@ -10,13 +10,12 @@ class UniqueID extends ValueObject<String> {
   /// @nodoc
   factory UniqueID() {
     return UniqueID._(
-      right(Uuid().v1()),
+      Ok(const Uuid().v1()),
     );
   }
 
   /// @nodoc
   factory UniqueID.fromUniqueString(String uidStr) {
-    assert(uidStr != null);
     return UniqueID._(
       validateUniqueID(uidStr),
     );
@@ -25,5 +24,5 @@ class UniqueID extends ValueObject<String> {
   const UniqueID._(this.value);
 
   @override
-  final Either<ValueFailure<String>, String> value;
+  final Result<String, ValueFailure<String>> value;
 }

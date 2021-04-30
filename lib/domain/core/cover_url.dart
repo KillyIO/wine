@@ -1,6 +1,6 @@
 import 'dart:io';
 
-import 'package:dartz/dartz.dart';
+import 'package:rustic/result.dart';
 import 'package:wine/domain/core/value_failure.dart';
 import 'package:wine/domain/core/value_object.dart';
 import 'package:wine/domain/core/value_validators.dart';
@@ -9,7 +9,6 @@ import 'package:wine/domain/core/value_validators.dart';
 class CoverURL extends ValueObject<dynamic> {
   /// @nodoc
   factory CoverURL(String input) {
-    assert(input != null);
     return CoverURL._(
       validateCoverURL(input),
     );
@@ -17,7 +16,6 @@ class CoverURL extends ValueObject<dynamic> {
 
   /// @nodoc
   factory CoverURL.fromFile(File file) {
-    assert(file != null);
     return CoverURL._(
       validateCoverFile(file),
     );
@@ -27,5 +25,5 @@ class CoverURL extends ValueObject<dynamic> {
   const CoverURL._(this.value);
 
   @override
-  final Either<ValueFailure<dynamic>, dynamic> value;
+  final Result<dynamic, ValueFailure<dynamic>> value;
 }

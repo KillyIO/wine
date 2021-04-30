@@ -9,7 +9,7 @@ part 'core_failure.freezed.dart';
 
 /// @nodoc
 @freezed
-abstract class CoreFailure with _$CoreFailure {
+class CoreFailure with _$CoreFailure {
   /// @nodoc
   const factory CoreFailure.auth(AuthFailure f) = _Auth;
 

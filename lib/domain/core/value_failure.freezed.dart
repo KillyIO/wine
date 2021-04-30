@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'value_failure.dart';
 
@@ -9,74 +9,67 @@ part of 'value_failure.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 /// @nodoc
 class _$ValueFailureTearOff {
   const _$ValueFailureTearOff();
 
-// ignore: unused_element
   EmptyInput<T> emptyInput<T>(T failedValue) {
     return EmptyInput<T>(
       failedValue,
     );
   }
 
-// ignore: unused_element
   EmptySelection<T> emptySelection<T>(T failedValue) {
     return EmptySelection<T>(
       failedValue,
     );
   }
 
-// ignore: unused_element
   InvalidCoverFile<T> invalidCoverFile<T>(T failureValue) {
     return InvalidCoverFile<T>(
       failureValue,
     );
   }
 
-// ignore: unused_element
   InvalidCoverURL<T> invalidCoverURL<T>(T failedValue) {
     return InvalidCoverURL<T>(
       failedValue,
     );
   }
 
-// ignore: unused_element
   InvalidEmail<T> invalidEmailAddress<T>(T failedValue) {
     return InvalidEmail<T>(
       failedValue,
     );
   }
 
-// ignore: unused_element
   InvalidPassword<T> invalidPassword<T>(T failedValue) {
     return InvalidPassword<T>(
       failedValue,
     );
   }
 
-// ignore: unused_element
   InvalidConfirmPassword<T> invalidConfirmPassword<T>(T failedValue) {
     return InvalidConfirmPassword<T>(
       failedValue,
     );
   }
 
-// ignore: unused_element
   InvalidUniqueID<T> invalidUniqueID<T>(T failedValue) {
     return InvalidUniqueID<T>(
       failedValue,
     );
   }
 
-// ignore: unused_element
   InvalidUsername<T> invalidUsername<T>(T failedValue) {
     return InvalidUsername<T>(
       failedValue,
     );
   }
 
-// ignore: unused_element
   TooLongInput<T> tooLongInput<T>(T failedValue) {
     return TooLongInput<T>(
       failedValue,
@@ -85,65 +78,69 @@ class _$ValueFailureTearOff {
 }
 
 /// @nodoc
-// ignore: unused_element
 const $ValueFailure = _$ValueFailureTearOff();
 
 /// @nodoc
 mixin _$ValueFailure<T> {
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult emptyInput(T failedValue),
-    @required TResult emptySelection(T failedValue),
-    @required TResult invalidCoverFile(T failureValue),
-    @required TResult invalidCoverURL(T failedValue),
-    @required TResult invalidEmailAddress(T failedValue),
-    @required TResult invalidPassword(T failedValue),
-    @required TResult invalidConfirmPassword(T failedValue),
-    @required TResult invalidUniqueID(T failedValue),
-    @required TResult invalidUsername(T failedValue),
-    @required TResult tooLongInput(T failedValue),
-  });
+  TResult when<TResult extends Object?>({
+    required TResult Function(T failedValue) emptyInput,
+    required TResult Function(T failedValue) emptySelection,
+    required TResult Function(T failureValue) invalidCoverFile,
+    required TResult Function(T failedValue) invalidCoverURL,
+    required TResult Function(T failedValue) invalidEmailAddress,
+    required TResult Function(T failedValue) invalidPassword,
+    required TResult Function(T failedValue) invalidConfirmPassword,
+    required TResult Function(T failedValue) invalidUniqueID,
+    required TResult Function(T failedValue) invalidUsername,
+    required TResult Function(T failedValue) tooLongInput,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult emptyInput(T failedValue),
-    TResult emptySelection(T failedValue),
-    TResult invalidCoverFile(T failureValue),
-    TResult invalidCoverURL(T failedValue),
-    TResult invalidEmailAddress(T failedValue),
-    TResult invalidPassword(T failedValue),
-    TResult invalidConfirmPassword(T failedValue),
-    TResult invalidUniqueID(T failedValue),
-    TResult invalidUsername(T failedValue),
-    TResult tooLongInput(T failedValue),
-    @required TResult orElse(),
-  });
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(T failedValue)? emptyInput,
+    TResult Function(T failedValue)? emptySelection,
+    TResult Function(T failureValue)? invalidCoverFile,
+    TResult Function(T failedValue)? invalidCoverURL,
+    TResult Function(T failedValue)? invalidEmailAddress,
+    TResult Function(T failedValue)? invalidPassword,
+    TResult Function(T failedValue)? invalidConfirmPassword,
+    TResult Function(T failedValue)? invalidUniqueID,
+    TResult Function(T failedValue)? invalidUsername,
+    TResult Function(T failedValue)? tooLongInput,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult emptyInput(EmptyInput<T> value),
-    @required TResult emptySelection(EmptySelection<T> value),
-    @required TResult invalidCoverFile(InvalidCoverFile<T> value),
-    @required TResult invalidCoverURL(InvalidCoverURL<T> value),
-    @required TResult invalidEmailAddress(InvalidEmail<T> value),
-    @required TResult invalidPassword(InvalidPassword<T> value),
-    @required TResult invalidConfirmPassword(InvalidConfirmPassword<T> value),
-    @required TResult invalidUniqueID(InvalidUniqueID<T> value),
-    @required TResult invalidUsername(InvalidUsername<T> value),
-    @required TResult tooLongInput(TooLongInput<T> value),
-  });
+  TResult map<TResult extends Object?>({
+    required TResult Function(EmptyInput<T> value) emptyInput,
+    required TResult Function(EmptySelection<T> value) emptySelection,
+    required TResult Function(InvalidCoverFile<T> value) invalidCoverFile,
+    required TResult Function(InvalidCoverURL<T> value) invalidCoverURL,
+    required TResult Function(InvalidEmail<T> value) invalidEmailAddress,
+    required TResult Function(InvalidPassword<T> value) invalidPassword,
+    required TResult Function(InvalidConfirmPassword<T> value)
+        invalidConfirmPassword,
+    required TResult Function(InvalidUniqueID<T> value) invalidUniqueID,
+    required TResult Function(InvalidUsername<T> value) invalidUsername,
+    required TResult Function(TooLongInput<T> value) tooLongInput,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult emptyInput(EmptyInput<T> value),
-    TResult emptySelection(EmptySelection<T> value),
-    TResult invalidCoverFile(InvalidCoverFile<T> value),
-    TResult invalidCoverURL(InvalidCoverURL<T> value),
-    TResult invalidEmailAddress(InvalidEmail<T> value),
-    TResult invalidPassword(InvalidPassword<T> value),
-    TResult invalidConfirmPassword(InvalidConfirmPassword<T> value),
-    TResult invalidUniqueID(InvalidUniqueID<T> value),
-    TResult invalidUsername(InvalidUsername<T> value),
-    TResult tooLongInput(TooLongInput<T> value),
-    @required TResult orElse(),
-  });
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(EmptyInput<T> value)? emptyInput,
+    TResult Function(EmptySelection<T> value)? emptySelection,
+    TResult Function(InvalidCoverFile<T> value)? invalidCoverFile,
+    TResult Function(InvalidCoverURL<T> value)? invalidCoverURL,
+    TResult Function(InvalidEmail<T> value)? invalidEmailAddress,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
+    TResult Function(InvalidConfirmPassword<T> value)? invalidConfirmPassword,
+    TResult Function(InvalidUniqueID<T> value)? invalidUniqueID,
+    TResult Function(InvalidUsername<T> value)? invalidUsername,
+    TResult Function(TooLongInput<T> value)? tooLongInput,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -184,17 +181,21 @@ class _$EmptyInputCopyWithImpl<T, $Res>
 
   @override
   $Res call({
-    Object failedValue = freezed,
+    Object? failedValue = freezed,
   }) {
     return _then(EmptyInput<T>(
-      failedValue == freezed ? _value.failedValue : failedValue as T,
+      failedValue == freezed
+          ? _value.failedValue
+          : failedValue // ignore: cast_nullable_to_non_nullable
+              as T,
     ));
   }
 }
 
 /// @nodoc
+
 class _$EmptyInput<T> implements EmptyInput<T> {
-  const _$EmptyInput(this.failedValue) : assert(failedValue != null);
+  const _$EmptyInput(this.failedValue);
 
   @override
   final T failedValue;
@@ -224,47 +225,36 @@ class _$EmptyInput<T> implements EmptyInput<T> {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult emptyInput(T failedValue),
-    @required TResult emptySelection(T failedValue),
-    @required TResult invalidCoverFile(T failureValue),
-    @required TResult invalidCoverURL(T failedValue),
-    @required TResult invalidEmailAddress(T failedValue),
-    @required TResult invalidPassword(T failedValue),
-    @required TResult invalidConfirmPassword(T failedValue),
-    @required TResult invalidUniqueID(T failedValue),
-    @required TResult invalidUsername(T failedValue),
-    @required TResult tooLongInput(T failedValue),
+  TResult when<TResult extends Object?>({
+    required TResult Function(T failedValue) emptyInput,
+    required TResult Function(T failedValue) emptySelection,
+    required TResult Function(T failureValue) invalidCoverFile,
+    required TResult Function(T failedValue) invalidCoverURL,
+    required TResult Function(T failedValue) invalidEmailAddress,
+    required TResult Function(T failedValue) invalidPassword,
+    required TResult Function(T failedValue) invalidConfirmPassword,
+    required TResult Function(T failedValue) invalidUniqueID,
+    required TResult Function(T failedValue) invalidUsername,
+    required TResult Function(T failedValue) tooLongInput,
   }) {
-    assert(emptyInput != null);
-    assert(emptySelection != null);
-    assert(invalidCoverFile != null);
-    assert(invalidCoverURL != null);
-    assert(invalidEmailAddress != null);
-    assert(invalidPassword != null);
-    assert(invalidConfirmPassword != null);
-    assert(invalidUniqueID != null);
-    assert(invalidUsername != null);
-    assert(tooLongInput != null);
     return emptyInput(failedValue);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult emptyInput(T failedValue),
-    TResult emptySelection(T failedValue),
-    TResult invalidCoverFile(T failureValue),
-    TResult invalidCoverURL(T failedValue),
-    TResult invalidEmailAddress(T failedValue),
-    TResult invalidPassword(T failedValue),
-    TResult invalidConfirmPassword(T failedValue),
-    TResult invalidUniqueID(T failedValue),
-    TResult invalidUsername(T failedValue),
-    TResult tooLongInput(T failedValue),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(T failedValue)? emptyInput,
+    TResult Function(T failedValue)? emptySelection,
+    TResult Function(T failureValue)? invalidCoverFile,
+    TResult Function(T failedValue)? invalidCoverURL,
+    TResult Function(T failedValue)? invalidEmailAddress,
+    TResult Function(T failedValue)? invalidPassword,
+    TResult Function(T failedValue)? invalidConfirmPassword,
+    TResult Function(T failedValue)? invalidUniqueID,
+    TResult Function(T failedValue)? invalidUsername,
+    TResult Function(T failedValue)? tooLongInput,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (emptyInput != null) {
       return emptyInput(failedValue);
     }
@@ -273,47 +263,37 @@ class _$EmptyInput<T> implements EmptyInput<T> {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult emptyInput(EmptyInput<T> value),
-    @required TResult emptySelection(EmptySelection<T> value),
-    @required TResult invalidCoverFile(InvalidCoverFile<T> value),
-    @required TResult invalidCoverURL(InvalidCoverURL<T> value),
-    @required TResult invalidEmailAddress(InvalidEmail<T> value),
-    @required TResult invalidPassword(InvalidPassword<T> value),
-    @required TResult invalidConfirmPassword(InvalidConfirmPassword<T> value),
-    @required TResult invalidUniqueID(InvalidUniqueID<T> value),
-    @required TResult invalidUsername(InvalidUsername<T> value),
-    @required TResult tooLongInput(TooLongInput<T> value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(EmptyInput<T> value) emptyInput,
+    required TResult Function(EmptySelection<T> value) emptySelection,
+    required TResult Function(InvalidCoverFile<T> value) invalidCoverFile,
+    required TResult Function(InvalidCoverURL<T> value) invalidCoverURL,
+    required TResult Function(InvalidEmail<T> value) invalidEmailAddress,
+    required TResult Function(InvalidPassword<T> value) invalidPassword,
+    required TResult Function(InvalidConfirmPassword<T> value)
+        invalidConfirmPassword,
+    required TResult Function(InvalidUniqueID<T> value) invalidUniqueID,
+    required TResult Function(InvalidUsername<T> value) invalidUsername,
+    required TResult Function(TooLongInput<T> value) tooLongInput,
   }) {
-    assert(emptyInput != null);
-    assert(emptySelection != null);
-    assert(invalidCoverFile != null);
-    assert(invalidCoverURL != null);
-    assert(invalidEmailAddress != null);
-    assert(invalidPassword != null);
-    assert(invalidConfirmPassword != null);
-    assert(invalidUniqueID != null);
-    assert(invalidUsername != null);
-    assert(tooLongInput != null);
     return emptyInput(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult emptyInput(EmptyInput<T> value),
-    TResult emptySelection(EmptySelection<T> value),
-    TResult invalidCoverFile(InvalidCoverFile<T> value),
-    TResult invalidCoverURL(InvalidCoverURL<T> value),
-    TResult invalidEmailAddress(InvalidEmail<T> value),
-    TResult invalidPassword(InvalidPassword<T> value),
-    TResult invalidConfirmPassword(InvalidConfirmPassword<T> value),
-    TResult invalidUniqueID(InvalidUniqueID<T> value),
-    TResult invalidUsername(InvalidUsername<T> value),
-    TResult tooLongInput(TooLongInput<T> value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(EmptyInput<T> value)? emptyInput,
+    TResult Function(EmptySelection<T> value)? emptySelection,
+    TResult Function(InvalidCoverFile<T> value)? invalidCoverFile,
+    TResult Function(InvalidCoverURL<T> value)? invalidCoverURL,
+    TResult Function(InvalidEmail<T> value)? invalidEmailAddress,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
+    TResult Function(InvalidConfirmPassword<T> value)? invalidConfirmPassword,
+    TResult Function(InvalidUniqueID<T> value)? invalidUniqueID,
+    TResult Function(InvalidUsername<T> value)? invalidUsername,
+    TResult Function(TooLongInput<T> value)? tooLongInput,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (emptyInput != null) {
       return emptyInput(this);
     }
@@ -324,9 +304,10 @@ class _$EmptyInput<T> implements EmptyInput<T> {
 abstract class EmptyInput<T> implements ValueFailure<T> {
   const factory EmptyInput(T failedValue) = _$EmptyInput<T>;
 
-  T get failedValue;
+  T get failedValue => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $EmptyInputCopyWith<T, EmptyInput<T>> get copyWith;
+  $EmptyInputCopyWith<T, EmptyInput<T>> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -350,17 +331,21 @@ class _$EmptySelectionCopyWithImpl<T, $Res>
 
   @override
   $Res call({
-    Object failedValue = freezed,
+    Object? failedValue = freezed,
   }) {
     return _then(EmptySelection<T>(
-      failedValue == freezed ? _value.failedValue : failedValue as T,
+      failedValue == freezed
+          ? _value.failedValue
+          : failedValue // ignore: cast_nullable_to_non_nullable
+              as T,
     ));
   }
 }
 
 /// @nodoc
+
 class _$EmptySelection<T> implements EmptySelection<T> {
-  const _$EmptySelection(this.failedValue) : assert(failedValue != null);
+  const _$EmptySelection(this.failedValue);
 
   @override
   final T failedValue;
@@ -390,47 +375,36 @@ class _$EmptySelection<T> implements EmptySelection<T> {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult emptyInput(T failedValue),
-    @required TResult emptySelection(T failedValue),
-    @required TResult invalidCoverFile(T failureValue),
-    @required TResult invalidCoverURL(T failedValue),
-    @required TResult invalidEmailAddress(T failedValue),
-    @required TResult invalidPassword(T failedValue),
-    @required TResult invalidConfirmPassword(T failedValue),
-    @required TResult invalidUniqueID(T failedValue),
-    @required TResult invalidUsername(T failedValue),
-    @required TResult tooLongInput(T failedValue),
+  TResult when<TResult extends Object?>({
+    required TResult Function(T failedValue) emptyInput,
+    required TResult Function(T failedValue) emptySelection,
+    required TResult Function(T failureValue) invalidCoverFile,
+    required TResult Function(T failedValue) invalidCoverURL,
+    required TResult Function(T failedValue) invalidEmailAddress,
+    required TResult Function(T failedValue) invalidPassword,
+    required TResult Function(T failedValue) invalidConfirmPassword,
+    required TResult Function(T failedValue) invalidUniqueID,
+    required TResult Function(T failedValue) invalidUsername,
+    required TResult Function(T failedValue) tooLongInput,
   }) {
-    assert(emptyInput != null);
-    assert(emptySelection != null);
-    assert(invalidCoverFile != null);
-    assert(invalidCoverURL != null);
-    assert(invalidEmailAddress != null);
-    assert(invalidPassword != null);
-    assert(invalidConfirmPassword != null);
-    assert(invalidUniqueID != null);
-    assert(invalidUsername != null);
-    assert(tooLongInput != null);
     return emptySelection(failedValue);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult emptyInput(T failedValue),
-    TResult emptySelection(T failedValue),
-    TResult invalidCoverFile(T failureValue),
-    TResult invalidCoverURL(T failedValue),
-    TResult invalidEmailAddress(T failedValue),
-    TResult invalidPassword(T failedValue),
-    TResult invalidConfirmPassword(T failedValue),
-    TResult invalidUniqueID(T failedValue),
-    TResult invalidUsername(T failedValue),
-    TResult tooLongInput(T failedValue),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(T failedValue)? emptyInput,
+    TResult Function(T failedValue)? emptySelection,
+    TResult Function(T failureValue)? invalidCoverFile,
+    TResult Function(T failedValue)? invalidCoverURL,
+    TResult Function(T failedValue)? invalidEmailAddress,
+    TResult Function(T failedValue)? invalidPassword,
+    TResult Function(T failedValue)? invalidConfirmPassword,
+    TResult Function(T failedValue)? invalidUniqueID,
+    TResult Function(T failedValue)? invalidUsername,
+    TResult Function(T failedValue)? tooLongInput,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (emptySelection != null) {
       return emptySelection(failedValue);
     }
@@ -439,47 +413,37 @@ class _$EmptySelection<T> implements EmptySelection<T> {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult emptyInput(EmptyInput<T> value),
-    @required TResult emptySelection(EmptySelection<T> value),
-    @required TResult invalidCoverFile(InvalidCoverFile<T> value),
-    @required TResult invalidCoverURL(InvalidCoverURL<T> value),
-    @required TResult invalidEmailAddress(InvalidEmail<T> value),
-    @required TResult invalidPassword(InvalidPassword<T> value),
-    @required TResult invalidConfirmPassword(InvalidConfirmPassword<T> value),
-    @required TResult invalidUniqueID(InvalidUniqueID<T> value),
-    @required TResult invalidUsername(InvalidUsername<T> value),
-    @required TResult tooLongInput(TooLongInput<T> value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(EmptyInput<T> value) emptyInput,
+    required TResult Function(EmptySelection<T> value) emptySelection,
+    required TResult Function(InvalidCoverFile<T> value) invalidCoverFile,
+    required TResult Function(InvalidCoverURL<T> value) invalidCoverURL,
+    required TResult Function(InvalidEmail<T> value) invalidEmailAddress,
+    required TResult Function(InvalidPassword<T> value) invalidPassword,
+    required TResult Function(InvalidConfirmPassword<T> value)
+        invalidConfirmPassword,
+    required TResult Function(InvalidUniqueID<T> value) invalidUniqueID,
+    required TResult Function(InvalidUsername<T> value) invalidUsername,
+    required TResult Function(TooLongInput<T> value) tooLongInput,
   }) {
-    assert(emptyInput != null);
-    assert(emptySelection != null);
-    assert(invalidCoverFile != null);
-    assert(invalidCoverURL != null);
-    assert(invalidEmailAddress != null);
-    assert(invalidPassword != null);
-    assert(invalidConfirmPassword != null);
-    assert(invalidUniqueID != null);
-    assert(invalidUsername != null);
-    assert(tooLongInput != null);
     return emptySelection(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult emptyInput(EmptyInput<T> value),
-    TResult emptySelection(EmptySelection<T> value),
-    TResult invalidCoverFile(InvalidCoverFile<T> value),
-    TResult invalidCoverURL(InvalidCoverURL<T> value),
-    TResult invalidEmailAddress(InvalidEmail<T> value),
-    TResult invalidPassword(InvalidPassword<T> value),
-    TResult invalidConfirmPassword(InvalidConfirmPassword<T> value),
-    TResult invalidUniqueID(InvalidUniqueID<T> value),
-    TResult invalidUsername(InvalidUsername<T> value),
-    TResult tooLongInput(TooLongInput<T> value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(EmptyInput<T> value)? emptyInput,
+    TResult Function(EmptySelection<T> value)? emptySelection,
+    TResult Function(InvalidCoverFile<T> value)? invalidCoverFile,
+    TResult Function(InvalidCoverURL<T> value)? invalidCoverURL,
+    TResult Function(InvalidEmail<T> value)? invalidEmailAddress,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
+    TResult Function(InvalidConfirmPassword<T> value)? invalidConfirmPassword,
+    TResult Function(InvalidUniqueID<T> value)? invalidUniqueID,
+    TResult Function(InvalidUsername<T> value)? invalidUsername,
+    TResult Function(TooLongInput<T> value)? tooLongInput,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (emptySelection != null) {
       return emptySelection(this);
     }
@@ -490,9 +454,10 @@ class _$EmptySelection<T> implements EmptySelection<T> {
 abstract class EmptySelection<T> implements ValueFailure<T> {
   const factory EmptySelection(T failedValue) = _$EmptySelection<T>;
 
-  T get failedValue;
+  T get failedValue => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $EmptySelectionCopyWith<T, EmptySelection<T>> get copyWith;
+  $EmptySelectionCopyWith<T, EmptySelection<T>> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -516,17 +481,21 @@ class _$InvalidCoverFileCopyWithImpl<T, $Res>
 
   @override
   $Res call({
-    Object failureValue = freezed,
+    Object? failureValue = freezed,
   }) {
     return _then(InvalidCoverFile<T>(
-      failureValue == freezed ? _value.failureValue : failureValue as T,
+      failureValue == freezed
+          ? _value.failureValue
+          : failureValue // ignore: cast_nullable_to_non_nullable
+              as T,
     ));
   }
 }
 
 /// @nodoc
+
 class _$InvalidCoverFile<T> implements InvalidCoverFile<T> {
-  const _$InvalidCoverFile(this.failureValue) : assert(failureValue != null);
+  const _$InvalidCoverFile(this.failureValue);
 
   @override
   final T failureValue;
@@ -556,47 +525,36 @@ class _$InvalidCoverFile<T> implements InvalidCoverFile<T> {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult emptyInput(T failedValue),
-    @required TResult emptySelection(T failedValue),
-    @required TResult invalidCoverFile(T failureValue),
-    @required TResult invalidCoverURL(T failedValue),
-    @required TResult invalidEmailAddress(T failedValue),
-    @required TResult invalidPassword(T failedValue),
-    @required TResult invalidConfirmPassword(T failedValue),
-    @required TResult invalidUniqueID(T failedValue),
-    @required TResult invalidUsername(T failedValue),
-    @required TResult tooLongInput(T failedValue),
+  TResult when<TResult extends Object?>({
+    required TResult Function(T failedValue) emptyInput,
+    required TResult Function(T failedValue) emptySelection,
+    required TResult Function(T failureValue) invalidCoverFile,
+    required TResult Function(T failedValue) invalidCoverURL,
+    required TResult Function(T failedValue) invalidEmailAddress,
+    required TResult Function(T failedValue) invalidPassword,
+    required TResult Function(T failedValue) invalidConfirmPassword,
+    required TResult Function(T failedValue) invalidUniqueID,
+    required TResult Function(T failedValue) invalidUsername,
+    required TResult Function(T failedValue) tooLongInput,
   }) {
-    assert(emptyInput != null);
-    assert(emptySelection != null);
-    assert(invalidCoverFile != null);
-    assert(invalidCoverURL != null);
-    assert(invalidEmailAddress != null);
-    assert(invalidPassword != null);
-    assert(invalidConfirmPassword != null);
-    assert(invalidUniqueID != null);
-    assert(invalidUsername != null);
-    assert(tooLongInput != null);
     return invalidCoverFile(failureValue);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult emptyInput(T failedValue),
-    TResult emptySelection(T failedValue),
-    TResult invalidCoverFile(T failureValue),
-    TResult invalidCoverURL(T failedValue),
-    TResult invalidEmailAddress(T failedValue),
-    TResult invalidPassword(T failedValue),
-    TResult invalidConfirmPassword(T failedValue),
-    TResult invalidUniqueID(T failedValue),
-    TResult invalidUsername(T failedValue),
-    TResult tooLongInput(T failedValue),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(T failedValue)? emptyInput,
+    TResult Function(T failedValue)? emptySelection,
+    TResult Function(T failureValue)? invalidCoverFile,
+    TResult Function(T failedValue)? invalidCoverURL,
+    TResult Function(T failedValue)? invalidEmailAddress,
+    TResult Function(T failedValue)? invalidPassword,
+    TResult Function(T failedValue)? invalidConfirmPassword,
+    TResult Function(T failedValue)? invalidUniqueID,
+    TResult Function(T failedValue)? invalidUsername,
+    TResult Function(T failedValue)? tooLongInput,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (invalidCoverFile != null) {
       return invalidCoverFile(failureValue);
     }
@@ -605,47 +563,37 @@ class _$InvalidCoverFile<T> implements InvalidCoverFile<T> {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult emptyInput(EmptyInput<T> value),
-    @required TResult emptySelection(EmptySelection<T> value),
-    @required TResult invalidCoverFile(InvalidCoverFile<T> value),
-    @required TResult invalidCoverURL(InvalidCoverURL<T> value),
-    @required TResult invalidEmailAddress(InvalidEmail<T> value),
-    @required TResult invalidPassword(InvalidPassword<T> value),
-    @required TResult invalidConfirmPassword(InvalidConfirmPassword<T> value),
-    @required TResult invalidUniqueID(InvalidUniqueID<T> value),
-    @required TResult invalidUsername(InvalidUsername<T> value),
-    @required TResult tooLongInput(TooLongInput<T> value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(EmptyInput<T> value) emptyInput,
+    required TResult Function(EmptySelection<T> value) emptySelection,
+    required TResult Function(InvalidCoverFile<T> value) invalidCoverFile,
+    required TResult Function(InvalidCoverURL<T> value) invalidCoverURL,
+    required TResult Function(InvalidEmail<T> value) invalidEmailAddress,
+    required TResult Function(InvalidPassword<T> value) invalidPassword,
+    required TResult Function(InvalidConfirmPassword<T> value)
+        invalidConfirmPassword,
+    required TResult Function(InvalidUniqueID<T> value) invalidUniqueID,
+    required TResult Function(InvalidUsername<T> value) invalidUsername,
+    required TResult Function(TooLongInput<T> value) tooLongInput,
   }) {
-    assert(emptyInput != null);
-    assert(emptySelection != null);
-    assert(invalidCoverFile != null);
-    assert(invalidCoverURL != null);
-    assert(invalidEmailAddress != null);
-    assert(invalidPassword != null);
-    assert(invalidConfirmPassword != null);
-    assert(invalidUniqueID != null);
-    assert(invalidUsername != null);
-    assert(tooLongInput != null);
     return invalidCoverFile(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult emptyInput(EmptyInput<T> value),
-    TResult emptySelection(EmptySelection<T> value),
-    TResult invalidCoverFile(InvalidCoverFile<T> value),
-    TResult invalidCoverURL(InvalidCoverURL<T> value),
-    TResult invalidEmailAddress(InvalidEmail<T> value),
-    TResult invalidPassword(InvalidPassword<T> value),
-    TResult invalidConfirmPassword(InvalidConfirmPassword<T> value),
-    TResult invalidUniqueID(InvalidUniqueID<T> value),
-    TResult invalidUsername(InvalidUsername<T> value),
-    TResult tooLongInput(TooLongInput<T> value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(EmptyInput<T> value)? emptyInput,
+    TResult Function(EmptySelection<T> value)? emptySelection,
+    TResult Function(InvalidCoverFile<T> value)? invalidCoverFile,
+    TResult Function(InvalidCoverURL<T> value)? invalidCoverURL,
+    TResult Function(InvalidEmail<T> value)? invalidEmailAddress,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
+    TResult Function(InvalidConfirmPassword<T> value)? invalidConfirmPassword,
+    TResult Function(InvalidUniqueID<T> value)? invalidUniqueID,
+    TResult Function(InvalidUsername<T> value)? invalidUsername,
+    TResult Function(TooLongInput<T> value)? tooLongInput,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (invalidCoverFile != null) {
       return invalidCoverFile(this);
     }
@@ -656,9 +604,10 @@ class _$InvalidCoverFile<T> implements InvalidCoverFile<T> {
 abstract class InvalidCoverFile<T> implements ValueFailure<T> {
   const factory InvalidCoverFile(T failureValue) = _$InvalidCoverFile<T>;
 
-  T get failureValue;
+  T get failureValue => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $InvalidCoverFileCopyWith<T, InvalidCoverFile<T>> get copyWith;
+  $InvalidCoverFileCopyWith<T, InvalidCoverFile<T>> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -682,17 +631,21 @@ class _$InvalidCoverURLCopyWithImpl<T, $Res>
 
   @override
   $Res call({
-    Object failedValue = freezed,
+    Object? failedValue = freezed,
   }) {
     return _then(InvalidCoverURL<T>(
-      failedValue == freezed ? _value.failedValue : failedValue as T,
+      failedValue == freezed
+          ? _value.failedValue
+          : failedValue // ignore: cast_nullable_to_non_nullable
+              as T,
     ));
   }
 }
 
 /// @nodoc
+
 class _$InvalidCoverURL<T> implements InvalidCoverURL<T> {
-  const _$InvalidCoverURL(this.failedValue) : assert(failedValue != null);
+  const _$InvalidCoverURL(this.failedValue);
 
   @override
   final T failedValue;
@@ -722,47 +675,36 @@ class _$InvalidCoverURL<T> implements InvalidCoverURL<T> {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult emptyInput(T failedValue),
-    @required TResult emptySelection(T failedValue),
-    @required TResult invalidCoverFile(T failureValue),
-    @required TResult invalidCoverURL(T failedValue),
-    @required TResult invalidEmailAddress(T failedValue),
-    @required TResult invalidPassword(T failedValue),
-    @required TResult invalidConfirmPassword(T failedValue),
-    @required TResult invalidUniqueID(T failedValue),
-    @required TResult invalidUsername(T failedValue),
-    @required TResult tooLongInput(T failedValue),
+  TResult when<TResult extends Object?>({
+    required TResult Function(T failedValue) emptyInput,
+    required TResult Function(T failedValue) emptySelection,
+    required TResult Function(T failureValue) invalidCoverFile,
+    required TResult Function(T failedValue) invalidCoverURL,
+    required TResult Function(T failedValue) invalidEmailAddress,
+    required TResult Function(T failedValue) invalidPassword,
+    required TResult Function(T failedValue) invalidConfirmPassword,
+    required TResult Function(T failedValue) invalidUniqueID,
+    required TResult Function(T failedValue) invalidUsername,
+    required TResult Function(T failedValue) tooLongInput,
   }) {
-    assert(emptyInput != null);
-    assert(emptySelection != null);
-    assert(invalidCoverFile != null);
-    assert(invalidCoverURL != null);
-    assert(invalidEmailAddress != null);
-    assert(invalidPassword != null);
-    assert(invalidConfirmPassword != null);
-    assert(invalidUniqueID != null);
-    assert(invalidUsername != null);
-    assert(tooLongInput != null);
     return invalidCoverURL(failedValue);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult emptyInput(T failedValue),
-    TResult emptySelection(T failedValue),
-    TResult invalidCoverFile(T failureValue),
-    TResult invalidCoverURL(T failedValue),
-    TResult invalidEmailAddress(T failedValue),
-    TResult invalidPassword(T failedValue),
-    TResult invalidConfirmPassword(T failedValue),
-    TResult invalidUniqueID(T failedValue),
-    TResult invalidUsername(T failedValue),
-    TResult tooLongInput(T failedValue),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(T failedValue)? emptyInput,
+    TResult Function(T failedValue)? emptySelection,
+    TResult Function(T failureValue)? invalidCoverFile,
+    TResult Function(T failedValue)? invalidCoverURL,
+    TResult Function(T failedValue)? invalidEmailAddress,
+    TResult Function(T failedValue)? invalidPassword,
+    TResult Function(T failedValue)? invalidConfirmPassword,
+    TResult Function(T failedValue)? invalidUniqueID,
+    TResult Function(T failedValue)? invalidUsername,
+    TResult Function(T failedValue)? tooLongInput,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (invalidCoverURL != null) {
       return invalidCoverURL(failedValue);
     }
@@ -771,47 +713,37 @@ class _$InvalidCoverURL<T> implements InvalidCoverURL<T> {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult emptyInput(EmptyInput<T> value),
-    @required TResult emptySelection(EmptySelection<T> value),
-    @required TResult invalidCoverFile(InvalidCoverFile<T> value),
-    @required TResult invalidCoverURL(InvalidCoverURL<T> value),
-    @required TResult invalidEmailAddress(InvalidEmail<T> value),
-    @required TResult invalidPassword(InvalidPassword<T> value),
-    @required TResult invalidConfirmPassword(InvalidConfirmPassword<T> value),
-    @required TResult invalidUniqueID(InvalidUniqueID<T> value),
-    @required TResult invalidUsername(InvalidUsername<T> value),
-    @required TResult tooLongInput(TooLongInput<T> value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(EmptyInput<T> value) emptyInput,
+    required TResult Function(EmptySelection<T> value) emptySelection,
+    required TResult Function(InvalidCoverFile<T> value) invalidCoverFile,
+    required TResult Function(InvalidCoverURL<T> value) invalidCoverURL,
+    required TResult Function(InvalidEmail<T> value) invalidEmailAddress,
+    required TResult Function(InvalidPassword<T> value) invalidPassword,
+    required TResult Function(InvalidConfirmPassword<T> value)
+        invalidConfirmPassword,
+    required TResult Function(InvalidUniqueID<T> value) invalidUniqueID,
+    required TResult Function(InvalidUsername<T> value) invalidUsername,
+    required TResult Function(TooLongInput<T> value) tooLongInput,
   }) {
-    assert(emptyInput != null);
-    assert(emptySelection != null);
-    assert(invalidCoverFile != null);
-    assert(invalidCoverURL != null);
-    assert(invalidEmailAddress != null);
-    assert(invalidPassword != null);
-    assert(invalidConfirmPassword != null);
-    assert(invalidUniqueID != null);
-    assert(invalidUsername != null);
-    assert(tooLongInput != null);
     return invalidCoverURL(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult emptyInput(EmptyInput<T> value),
-    TResult emptySelection(EmptySelection<T> value),
-    TResult invalidCoverFile(InvalidCoverFile<T> value),
-    TResult invalidCoverURL(InvalidCoverURL<T> value),
-    TResult invalidEmailAddress(InvalidEmail<T> value),
-    TResult invalidPassword(InvalidPassword<T> value),
-    TResult invalidConfirmPassword(InvalidConfirmPassword<T> value),
-    TResult invalidUniqueID(InvalidUniqueID<T> value),
-    TResult invalidUsername(InvalidUsername<T> value),
-    TResult tooLongInput(TooLongInput<T> value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(EmptyInput<T> value)? emptyInput,
+    TResult Function(EmptySelection<T> value)? emptySelection,
+    TResult Function(InvalidCoverFile<T> value)? invalidCoverFile,
+    TResult Function(InvalidCoverURL<T> value)? invalidCoverURL,
+    TResult Function(InvalidEmail<T> value)? invalidEmailAddress,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
+    TResult Function(InvalidConfirmPassword<T> value)? invalidConfirmPassword,
+    TResult Function(InvalidUniqueID<T> value)? invalidUniqueID,
+    TResult Function(InvalidUsername<T> value)? invalidUsername,
+    TResult Function(TooLongInput<T> value)? tooLongInput,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (invalidCoverURL != null) {
       return invalidCoverURL(this);
     }
@@ -822,9 +754,10 @@ class _$InvalidCoverURL<T> implements InvalidCoverURL<T> {
 abstract class InvalidCoverURL<T> implements ValueFailure<T> {
   const factory InvalidCoverURL(T failedValue) = _$InvalidCoverURL<T>;
 
-  T get failedValue;
+  T get failedValue => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $InvalidCoverURLCopyWith<T, InvalidCoverURL<T>> get copyWith;
+  $InvalidCoverURLCopyWith<T, InvalidCoverURL<T>> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -848,17 +781,21 @@ class _$InvalidEmailCopyWithImpl<T, $Res>
 
   @override
   $Res call({
-    Object failedValue = freezed,
+    Object? failedValue = freezed,
   }) {
     return _then(InvalidEmail<T>(
-      failedValue == freezed ? _value.failedValue : failedValue as T,
+      failedValue == freezed
+          ? _value.failedValue
+          : failedValue // ignore: cast_nullable_to_non_nullable
+              as T,
     ));
   }
 }
 
 /// @nodoc
+
 class _$InvalidEmail<T> implements InvalidEmail<T> {
-  const _$InvalidEmail(this.failedValue) : assert(failedValue != null);
+  const _$InvalidEmail(this.failedValue);
 
   @override
   final T failedValue;
@@ -888,47 +825,36 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult emptyInput(T failedValue),
-    @required TResult emptySelection(T failedValue),
-    @required TResult invalidCoverFile(T failureValue),
-    @required TResult invalidCoverURL(T failedValue),
-    @required TResult invalidEmailAddress(T failedValue),
-    @required TResult invalidPassword(T failedValue),
-    @required TResult invalidConfirmPassword(T failedValue),
-    @required TResult invalidUniqueID(T failedValue),
-    @required TResult invalidUsername(T failedValue),
-    @required TResult tooLongInput(T failedValue),
+  TResult when<TResult extends Object?>({
+    required TResult Function(T failedValue) emptyInput,
+    required TResult Function(T failedValue) emptySelection,
+    required TResult Function(T failureValue) invalidCoverFile,
+    required TResult Function(T failedValue) invalidCoverURL,
+    required TResult Function(T failedValue) invalidEmailAddress,
+    required TResult Function(T failedValue) invalidPassword,
+    required TResult Function(T failedValue) invalidConfirmPassword,
+    required TResult Function(T failedValue) invalidUniqueID,
+    required TResult Function(T failedValue) invalidUsername,
+    required TResult Function(T failedValue) tooLongInput,
   }) {
-    assert(emptyInput != null);
-    assert(emptySelection != null);
-    assert(invalidCoverFile != null);
-    assert(invalidCoverURL != null);
-    assert(invalidEmailAddress != null);
-    assert(invalidPassword != null);
-    assert(invalidConfirmPassword != null);
-    assert(invalidUniqueID != null);
-    assert(invalidUsername != null);
-    assert(tooLongInput != null);
     return invalidEmailAddress(failedValue);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult emptyInput(T failedValue),
-    TResult emptySelection(T failedValue),
-    TResult invalidCoverFile(T failureValue),
-    TResult invalidCoverURL(T failedValue),
-    TResult invalidEmailAddress(T failedValue),
-    TResult invalidPassword(T failedValue),
-    TResult invalidConfirmPassword(T failedValue),
-    TResult invalidUniqueID(T failedValue),
-    TResult invalidUsername(T failedValue),
-    TResult tooLongInput(T failedValue),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(T failedValue)? emptyInput,
+    TResult Function(T failedValue)? emptySelection,
+    TResult Function(T failureValue)? invalidCoverFile,
+    TResult Function(T failedValue)? invalidCoverURL,
+    TResult Function(T failedValue)? invalidEmailAddress,
+    TResult Function(T failedValue)? invalidPassword,
+    TResult Function(T failedValue)? invalidConfirmPassword,
+    TResult Function(T failedValue)? invalidUniqueID,
+    TResult Function(T failedValue)? invalidUsername,
+    TResult Function(T failedValue)? tooLongInput,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (invalidEmailAddress != null) {
       return invalidEmailAddress(failedValue);
     }
@@ -937,47 +863,37 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult emptyInput(EmptyInput<T> value),
-    @required TResult emptySelection(EmptySelection<T> value),
-    @required TResult invalidCoverFile(InvalidCoverFile<T> value),
-    @required TResult invalidCoverURL(InvalidCoverURL<T> value),
-    @required TResult invalidEmailAddress(InvalidEmail<T> value),
-    @required TResult invalidPassword(InvalidPassword<T> value),
-    @required TResult invalidConfirmPassword(InvalidConfirmPassword<T> value),
-    @required TResult invalidUniqueID(InvalidUniqueID<T> value),
-    @required TResult invalidUsername(InvalidUsername<T> value),
-    @required TResult tooLongInput(TooLongInput<T> value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(EmptyInput<T> value) emptyInput,
+    required TResult Function(EmptySelection<T> value) emptySelection,
+    required TResult Function(InvalidCoverFile<T> value) invalidCoverFile,
+    required TResult Function(InvalidCoverURL<T> value) invalidCoverURL,
+    required TResult Function(InvalidEmail<T> value) invalidEmailAddress,
+    required TResult Function(InvalidPassword<T> value) invalidPassword,
+    required TResult Function(InvalidConfirmPassword<T> value)
+        invalidConfirmPassword,
+    required TResult Function(InvalidUniqueID<T> value) invalidUniqueID,
+    required TResult Function(InvalidUsername<T> value) invalidUsername,
+    required TResult Function(TooLongInput<T> value) tooLongInput,
   }) {
-    assert(emptyInput != null);
-    assert(emptySelection != null);
-    assert(invalidCoverFile != null);
-    assert(invalidCoverURL != null);
-    assert(invalidEmailAddress != null);
-    assert(invalidPassword != null);
-    assert(invalidConfirmPassword != null);
-    assert(invalidUniqueID != null);
-    assert(invalidUsername != null);
-    assert(tooLongInput != null);
     return invalidEmailAddress(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult emptyInput(EmptyInput<T> value),
-    TResult emptySelection(EmptySelection<T> value),
-    TResult invalidCoverFile(InvalidCoverFile<T> value),
-    TResult invalidCoverURL(InvalidCoverURL<T> value),
-    TResult invalidEmailAddress(InvalidEmail<T> value),
-    TResult invalidPassword(InvalidPassword<T> value),
-    TResult invalidConfirmPassword(InvalidConfirmPassword<T> value),
-    TResult invalidUniqueID(InvalidUniqueID<T> value),
-    TResult invalidUsername(InvalidUsername<T> value),
-    TResult tooLongInput(TooLongInput<T> value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(EmptyInput<T> value)? emptyInput,
+    TResult Function(EmptySelection<T> value)? emptySelection,
+    TResult Function(InvalidCoverFile<T> value)? invalidCoverFile,
+    TResult Function(InvalidCoverURL<T> value)? invalidCoverURL,
+    TResult Function(InvalidEmail<T> value)? invalidEmailAddress,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
+    TResult Function(InvalidConfirmPassword<T> value)? invalidConfirmPassword,
+    TResult Function(InvalidUniqueID<T> value)? invalidUniqueID,
+    TResult Function(InvalidUsername<T> value)? invalidUsername,
+    TResult Function(TooLongInput<T> value)? tooLongInput,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (invalidEmailAddress != null) {
       return invalidEmailAddress(this);
     }
@@ -988,9 +904,10 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
 abstract class InvalidEmail<T> implements ValueFailure<T> {
   const factory InvalidEmail(T failedValue) = _$InvalidEmail<T>;
 
-  T get failedValue;
+  T get failedValue => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $InvalidEmailCopyWith<T, InvalidEmail<T>> get copyWith;
+  $InvalidEmailCopyWith<T, InvalidEmail<T>> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -1014,17 +931,21 @@ class _$InvalidPasswordCopyWithImpl<T, $Res>
 
   @override
   $Res call({
-    Object failedValue = freezed,
+    Object? failedValue = freezed,
   }) {
     return _then(InvalidPassword<T>(
-      failedValue == freezed ? _value.failedValue : failedValue as T,
+      failedValue == freezed
+          ? _value.failedValue
+          : failedValue // ignore: cast_nullable_to_non_nullable
+              as T,
     ));
   }
 }
 
 /// @nodoc
+
 class _$InvalidPassword<T> implements InvalidPassword<T> {
-  const _$InvalidPassword(this.failedValue) : assert(failedValue != null);
+  const _$InvalidPassword(this.failedValue);
 
   @override
   final T failedValue;
@@ -1054,47 +975,36 @@ class _$InvalidPassword<T> implements InvalidPassword<T> {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult emptyInput(T failedValue),
-    @required TResult emptySelection(T failedValue),
-    @required TResult invalidCoverFile(T failureValue),
-    @required TResult invalidCoverURL(T failedValue),
-    @required TResult invalidEmailAddress(T failedValue),
-    @required TResult invalidPassword(T failedValue),
-    @required TResult invalidConfirmPassword(T failedValue),
-    @required TResult invalidUniqueID(T failedValue),
-    @required TResult invalidUsername(T failedValue),
-    @required TResult tooLongInput(T failedValue),
+  TResult when<TResult extends Object?>({
+    required TResult Function(T failedValue) emptyInput,
+    required TResult Function(T failedValue) emptySelection,
+    required TResult Function(T failureValue) invalidCoverFile,
+    required TResult Function(T failedValue) invalidCoverURL,
+    required TResult Function(T failedValue) invalidEmailAddress,
+    required TResult Function(T failedValue) invalidPassword,
+    required TResult Function(T failedValue) invalidConfirmPassword,
+    required TResult Function(T failedValue) invalidUniqueID,
+    required TResult Function(T failedValue) invalidUsername,
+    required TResult Function(T failedValue) tooLongInput,
   }) {
-    assert(emptyInput != null);
-    assert(emptySelection != null);
-    assert(invalidCoverFile != null);
-    assert(invalidCoverURL != null);
-    assert(invalidEmailAddress != null);
-    assert(invalidPassword != null);
-    assert(invalidConfirmPassword != null);
-    assert(invalidUniqueID != null);
-    assert(invalidUsername != null);
-    assert(tooLongInput != null);
     return invalidPassword(failedValue);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult emptyInput(T failedValue),
-    TResult emptySelection(T failedValue),
-    TResult invalidCoverFile(T failureValue),
-    TResult invalidCoverURL(T failedValue),
-    TResult invalidEmailAddress(T failedValue),
-    TResult invalidPassword(T failedValue),
-    TResult invalidConfirmPassword(T failedValue),
-    TResult invalidUniqueID(T failedValue),
-    TResult invalidUsername(T failedValue),
-    TResult tooLongInput(T failedValue),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(T failedValue)? emptyInput,
+    TResult Function(T failedValue)? emptySelection,
+    TResult Function(T failureValue)? invalidCoverFile,
+    TResult Function(T failedValue)? invalidCoverURL,
+    TResult Function(T failedValue)? invalidEmailAddress,
+    TResult Function(T failedValue)? invalidPassword,
+    TResult Function(T failedValue)? invalidConfirmPassword,
+    TResult Function(T failedValue)? invalidUniqueID,
+    TResult Function(T failedValue)? invalidUsername,
+    TResult Function(T failedValue)? tooLongInput,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (invalidPassword != null) {
       return invalidPassword(failedValue);
     }
@@ -1103,47 +1013,37 @@ class _$InvalidPassword<T> implements InvalidPassword<T> {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult emptyInput(EmptyInput<T> value),
-    @required TResult emptySelection(EmptySelection<T> value),
-    @required TResult invalidCoverFile(InvalidCoverFile<T> value),
-    @required TResult invalidCoverURL(InvalidCoverURL<T> value),
-    @required TResult invalidEmailAddress(InvalidEmail<T> value),
-    @required TResult invalidPassword(InvalidPassword<T> value),
-    @required TResult invalidConfirmPassword(InvalidConfirmPassword<T> value),
-    @required TResult invalidUniqueID(InvalidUniqueID<T> value),
-    @required TResult invalidUsername(InvalidUsername<T> value),
-    @required TResult tooLongInput(TooLongInput<T> value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(EmptyInput<T> value) emptyInput,
+    required TResult Function(EmptySelection<T> value) emptySelection,
+    required TResult Function(InvalidCoverFile<T> value) invalidCoverFile,
+    required TResult Function(InvalidCoverURL<T> value) invalidCoverURL,
+    required TResult Function(InvalidEmail<T> value) invalidEmailAddress,
+    required TResult Function(InvalidPassword<T> value) invalidPassword,
+    required TResult Function(InvalidConfirmPassword<T> value)
+        invalidConfirmPassword,
+    required TResult Function(InvalidUniqueID<T> value) invalidUniqueID,
+    required TResult Function(InvalidUsername<T> value) invalidUsername,
+    required TResult Function(TooLongInput<T> value) tooLongInput,
   }) {
-    assert(emptyInput != null);
-    assert(emptySelection != null);
-    assert(invalidCoverFile != null);
-    assert(invalidCoverURL != null);
-    assert(invalidEmailAddress != null);
-    assert(invalidPassword != null);
-    assert(invalidConfirmPassword != null);
-    assert(invalidUniqueID != null);
-    assert(invalidUsername != null);
-    assert(tooLongInput != null);
     return invalidPassword(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult emptyInput(EmptyInput<T> value),
-    TResult emptySelection(EmptySelection<T> value),
-    TResult invalidCoverFile(InvalidCoverFile<T> value),
-    TResult invalidCoverURL(InvalidCoverURL<T> value),
-    TResult invalidEmailAddress(InvalidEmail<T> value),
-    TResult invalidPassword(InvalidPassword<T> value),
-    TResult invalidConfirmPassword(InvalidConfirmPassword<T> value),
-    TResult invalidUniqueID(InvalidUniqueID<T> value),
-    TResult invalidUsername(InvalidUsername<T> value),
-    TResult tooLongInput(TooLongInput<T> value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(EmptyInput<T> value)? emptyInput,
+    TResult Function(EmptySelection<T> value)? emptySelection,
+    TResult Function(InvalidCoverFile<T> value)? invalidCoverFile,
+    TResult Function(InvalidCoverURL<T> value)? invalidCoverURL,
+    TResult Function(InvalidEmail<T> value)? invalidEmailAddress,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
+    TResult Function(InvalidConfirmPassword<T> value)? invalidConfirmPassword,
+    TResult Function(InvalidUniqueID<T> value)? invalidUniqueID,
+    TResult Function(InvalidUsername<T> value)? invalidUsername,
+    TResult Function(TooLongInput<T> value)? tooLongInput,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (invalidPassword != null) {
       return invalidPassword(this);
     }
@@ -1154,9 +1054,10 @@ class _$InvalidPassword<T> implements InvalidPassword<T> {
 abstract class InvalidPassword<T> implements ValueFailure<T> {
   const factory InvalidPassword(T failedValue) = _$InvalidPassword<T>;
 
-  T get failedValue;
+  T get failedValue => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $InvalidPasswordCopyWith<T, InvalidPassword<T>> get copyWith;
+  $InvalidPasswordCopyWith<T, InvalidPassword<T>> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -1181,18 +1082,21 @@ class _$InvalidConfirmPasswordCopyWithImpl<T, $Res>
 
   @override
   $Res call({
-    Object failedValue = freezed,
+    Object? failedValue = freezed,
   }) {
     return _then(InvalidConfirmPassword<T>(
-      failedValue == freezed ? _value.failedValue : failedValue as T,
+      failedValue == freezed
+          ? _value.failedValue
+          : failedValue // ignore: cast_nullable_to_non_nullable
+              as T,
     ));
   }
 }
 
 /// @nodoc
+
 class _$InvalidConfirmPassword<T> implements InvalidConfirmPassword<T> {
-  const _$InvalidConfirmPassword(this.failedValue)
-      : assert(failedValue != null);
+  const _$InvalidConfirmPassword(this.failedValue);
 
   @override
   final T failedValue;
@@ -1223,47 +1127,36 @@ class _$InvalidConfirmPassword<T> implements InvalidConfirmPassword<T> {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult emptyInput(T failedValue),
-    @required TResult emptySelection(T failedValue),
-    @required TResult invalidCoverFile(T failureValue),
-    @required TResult invalidCoverURL(T failedValue),
-    @required TResult invalidEmailAddress(T failedValue),
-    @required TResult invalidPassword(T failedValue),
-    @required TResult invalidConfirmPassword(T failedValue),
-    @required TResult invalidUniqueID(T failedValue),
-    @required TResult invalidUsername(T failedValue),
-    @required TResult tooLongInput(T failedValue),
+  TResult when<TResult extends Object?>({
+    required TResult Function(T failedValue) emptyInput,
+    required TResult Function(T failedValue) emptySelection,
+    required TResult Function(T failureValue) invalidCoverFile,
+    required TResult Function(T failedValue) invalidCoverURL,
+    required TResult Function(T failedValue) invalidEmailAddress,
+    required TResult Function(T failedValue) invalidPassword,
+    required TResult Function(T failedValue) invalidConfirmPassword,
+    required TResult Function(T failedValue) invalidUniqueID,
+    required TResult Function(T failedValue) invalidUsername,
+    required TResult Function(T failedValue) tooLongInput,
   }) {
-    assert(emptyInput != null);
-    assert(emptySelection != null);
-    assert(invalidCoverFile != null);
-    assert(invalidCoverURL != null);
-    assert(invalidEmailAddress != null);
-    assert(invalidPassword != null);
-    assert(invalidConfirmPassword != null);
-    assert(invalidUniqueID != null);
-    assert(invalidUsername != null);
-    assert(tooLongInput != null);
     return invalidConfirmPassword(failedValue);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult emptyInput(T failedValue),
-    TResult emptySelection(T failedValue),
-    TResult invalidCoverFile(T failureValue),
-    TResult invalidCoverURL(T failedValue),
-    TResult invalidEmailAddress(T failedValue),
-    TResult invalidPassword(T failedValue),
-    TResult invalidConfirmPassword(T failedValue),
-    TResult invalidUniqueID(T failedValue),
-    TResult invalidUsername(T failedValue),
-    TResult tooLongInput(T failedValue),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(T failedValue)? emptyInput,
+    TResult Function(T failedValue)? emptySelection,
+    TResult Function(T failureValue)? invalidCoverFile,
+    TResult Function(T failedValue)? invalidCoverURL,
+    TResult Function(T failedValue)? invalidEmailAddress,
+    TResult Function(T failedValue)? invalidPassword,
+    TResult Function(T failedValue)? invalidConfirmPassword,
+    TResult Function(T failedValue)? invalidUniqueID,
+    TResult Function(T failedValue)? invalidUsername,
+    TResult Function(T failedValue)? tooLongInput,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (invalidConfirmPassword != null) {
       return invalidConfirmPassword(failedValue);
     }
@@ -1272,47 +1165,37 @@ class _$InvalidConfirmPassword<T> implements InvalidConfirmPassword<T> {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult emptyInput(EmptyInput<T> value),
-    @required TResult emptySelection(EmptySelection<T> value),
-    @required TResult invalidCoverFile(InvalidCoverFile<T> value),
-    @required TResult invalidCoverURL(InvalidCoverURL<T> value),
-    @required TResult invalidEmailAddress(InvalidEmail<T> value),
-    @required TResult invalidPassword(InvalidPassword<T> value),
-    @required TResult invalidConfirmPassword(InvalidConfirmPassword<T> value),
-    @required TResult invalidUniqueID(InvalidUniqueID<T> value),
-    @required TResult invalidUsername(InvalidUsername<T> value),
-    @required TResult tooLongInput(TooLongInput<T> value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(EmptyInput<T> value) emptyInput,
+    required TResult Function(EmptySelection<T> value) emptySelection,
+    required TResult Function(InvalidCoverFile<T> value) invalidCoverFile,
+    required TResult Function(InvalidCoverURL<T> value) invalidCoverURL,
+    required TResult Function(InvalidEmail<T> value) invalidEmailAddress,
+    required TResult Function(InvalidPassword<T> value) invalidPassword,
+    required TResult Function(InvalidConfirmPassword<T> value)
+        invalidConfirmPassword,
+    required TResult Function(InvalidUniqueID<T> value) invalidUniqueID,
+    required TResult Function(InvalidUsername<T> value) invalidUsername,
+    required TResult Function(TooLongInput<T> value) tooLongInput,
   }) {
-    assert(emptyInput != null);
-    assert(emptySelection != null);
-    assert(invalidCoverFile != null);
-    assert(invalidCoverURL != null);
-    assert(invalidEmailAddress != null);
-    assert(invalidPassword != null);
-    assert(invalidConfirmPassword != null);
-    assert(invalidUniqueID != null);
-    assert(invalidUsername != null);
-    assert(tooLongInput != null);
     return invalidConfirmPassword(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult emptyInput(EmptyInput<T> value),
-    TResult emptySelection(EmptySelection<T> value),
-    TResult invalidCoverFile(InvalidCoverFile<T> value),
-    TResult invalidCoverURL(InvalidCoverURL<T> value),
-    TResult invalidEmailAddress(InvalidEmail<T> value),
-    TResult invalidPassword(InvalidPassword<T> value),
-    TResult invalidConfirmPassword(InvalidConfirmPassword<T> value),
-    TResult invalidUniqueID(InvalidUniqueID<T> value),
-    TResult invalidUsername(InvalidUsername<T> value),
-    TResult tooLongInput(TooLongInput<T> value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(EmptyInput<T> value)? emptyInput,
+    TResult Function(EmptySelection<T> value)? emptySelection,
+    TResult Function(InvalidCoverFile<T> value)? invalidCoverFile,
+    TResult Function(InvalidCoverURL<T> value)? invalidCoverURL,
+    TResult Function(InvalidEmail<T> value)? invalidEmailAddress,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
+    TResult Function(InvalidConfirmPassword<T> value)? invalidConfirmPassword,
+    TResult Function(InvalidUniqueID<T> value)? invalidUniqueID,
+    TResult Function(InvalidUsername<T> value)? invalidUsername,
+    TResult Function(TooLongInput<T> value)? tooLongInput,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (invalidConfirmPassword != null) {
       return invalidConfirmPassword(this);
     }
@@ -1324,9 +1207,10 @@ abstract class InvalidConfirmPassword<T> implements ValueFailure<T> {
   const factory InvalidConfirmPassword(T failedValue) =
       _$InvalidConfirmPassword<T>;
 
-  T get failedValue;
+  T get failedValue => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $InvalidConfirmPasswordCopyWith<T, InvalidConfirmPassword<T>> get copyWith;
+  $InvalidConfirmPasswordCopyWith<T, InvalidConfirmPassword<T>> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -1350,17 +1234,21 @@ class _$InvalidUniqueIDCopyWithImpl<T, $Res>
 
   @override
   $Res call({
-    Object failedValue = freezed,
+    Object? failedValue = freezed,
   }) {
     return _then(InvalidUniqueID<T>(
-      failedValue == freezed ? _value.failedValue : failedValue as T,
+      failedValue == freezed
+          ? _value.failedValue
+          : failedValue // ignore: cast_nullable_to_non_nullable
+              as T,
     ));
   }
 }
 
 /// @nodoc
+
 class _$InvalidUniqueID<T> implements InvalidUniqueID<T> {
-  const _$InvalidUniqueID(this.failedValue) : assert(failedValue != null);
+  const _$InvalidUniqueID(this.failedValue);
 
   @override
   final T failedValue;
@@ -1390,47 +1278,36 @@ class _$InvalidUniqueID<T> implements InvalidUniqueID<T> {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult emptyInput(T failedValue),
-    @required TResult emptySelection(T failedValue),
-    @required TResult invalidCoverFile(T failureValue),
-    @required TResult invalidCoverURL(T failedValue),
-    @required TResult invalidEmailAddress(T failedValue),
-    @required TResult invalidPassword(T failedValue),
-    @required TResult invalidConfirmPassword(T failedValue),
-    @required TResult invalidUniqueID(T failedValue),
-    @required TResult invalidUsername(T failedValue),
-    @required TResult tooLongInput(T failedValue),
+  TResult when<TResult extends Object?>({
+    required TResult Function(T failedValue) emptyInput,
+    required TResult Function(T failedValue) emptySelection,
+    required TResult Function(T failureValue) invalidCoverFile,
+    required TResult Function(T failedValue) invalidCoverURL,
+    required TResult Function(T failedValue) invalidEmailAddress,
+    required TResult Function(T failedValue) invalidPassword,
+    required TResult Function(T failedValue) invalidConfirmPassword,
+    required TResult Function(T failedValue) invalidUniqueID,
+    required TResult Function(T failedValue) invalidUsername,
+    required TResult Function(T failedValue) tooLongInput,
   }) {
-    assert(emptyInput != null);
-    assert(emptySelection != null);
-    assert(invalidCoverFile != null);
-    assert(invalidCoverURL != null);
-    assert(invalidEmailAddress != null);
-    assert(invalidPassword != null);
-    assert(invalidConfirmPassword != null);
-    assert(invalidUniqueID != null);
-    assert(invalidUsername != null);
-    assert(tooLongInput != null);
     return invalidUniqueID(failedValue);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult emptyInput(T failedValue),
-    TResult emptySelection(T failedValue),
-    TResult invalidCoverFile(T failureValue),
-    TResult invalidCoverURL(T failedValue),
-    TResult invalidEmailAddress(T failedValue),
-    TResult invalidPassword(T failedValue),
-    TResult invalidConfirmPassword(T failedValue),
-    TResult invalidUniqueID(T failedValue),
-    TResult invalidUsername(T failedValue),
-    TResult tooLongInput(T failedValue),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(T failedValue)? emptyInput,
+    TResult Function(T failedValue)? emptySelection,
+    TResult Function(T failureValue)? invalidCoverFile,
+    TResult Function(T failedValue)? invalidCoverURL,
+    TResult Function(T failedValue)? invalidEmailAddress,
+    TResult Function(T failedValue)? invalidPassword,
+    TResult Function(T failedValue)? invalidConfirmPassword,
+    TResult Function(T failedValue)? invalidUniqueID,
+    TResult Function(T failedValue)? invalidUsername,
+    TResult Function(T failedValue)? tooLongInput,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (invalidUniqueID != null) {
       return invalidUniqueID(failedValue);
     }
@@ -1439,47 +1316,37 @@ class _$InvalidUniqueID<T> implements InvalidUniqueID<T> {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult emptyInput(EmptyInput<T> value),
-    @required TResult emptySelection(EmptySelection<T> value),
-    @required TResult invalidCoverFile(InvalidCoverFile<T> value),
-    @required TResult invalidCoverURL(InvalidCoverURL<T> value),
-    @required TResult invalidEmailAddress(InvalidEmail<T> value),
-    @required TResult invalidPassword(InvalidPassword<T> value),
-    @required TResult invalidConfirmPassword(InvalidConfirmPassword<T> value),
-    @required TResult invalidUniqueID(InvalidUniqueID<T> value),
-    @required TResult invalidUsername(InvalidUsername<T> value),
-    @required TResult tooLongInput(TooLongInput<T> value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(EmptyInput<T> value) emptyInput,
+    required TResult Function(EmptySelection<T> value) emptySelection,
+    required TResult Function(InvalidCoverFile<T> value) invalidCoverFile,
+    required TResult Function(InvalidCoverURL<T> value) invalidCoverURL,
+    required TResult Function(InvalidEmail<T> value) invalidEmailAddress,
+    required TResult Function(InvalidPassword<T> value) invalidPassword,
+    required TResult Function(InvalidConfirmPassword<T> value)
+        invalidConfirmPassword,
+    required TResult Function(InvalidUniqueID<T> value) invalidUniqueID,
+    required TResult Function(InvalidUsername<T> value) invalidUsername,
+    required TResult Function(TooLongInput<T> value) tooLongInput,
   }) {
-    assert(emptyInput != null);
-    assert(emptySelection != null);
-    assert(invalidCoverFile != null);
-    assert(invalidCoverURL != null);
-    assert(invalidEmailAddress != null);
-    assert(invalidPassword != null);
-    assert(invalidConfirmPassword != null);
-    assert(invalidUniqueID != null);
-    assert(invalidUsername != null);
-    assert(tooLongInput != null);
     return invalidUniqueID(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult emptyInput(EmptyInput<T> value),
-    TResult emptySelection(EmptySelection<T> value),
-    TResult invalidCoverFile(InvalidCoverFile<T> value),
-    TResult invalidCoverURL(InvalidCoverURL<T> value),
-    TResult invalidEmailAddress(InvalidEmail<T> value),
-    TResult invalidPassword(InvalidPassword<T> value),
-    TResult invalidConfirmPassword(InvalidConfirmPassword<T> value),
-    TResult invalidUniqueID(InvalidUniqueID<T> value),
-    TResult invalidUsername(InvalidUsername<T> value),
-    TResult tooLongInput(TooLongInput<T> value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(EmptyInput<T> value)? emptyInput,
+    TResult Function(EmptySelection<T> value)? emptySelection,
+    TResult Function(InvalidCoverFile<T> value)? invalidCoverFile,
+    TResult Function(InvalidCoverURL<T> value)? invalidCoverURL,
+    TResult Function(InvalidEmail<T> value)? invalidEmailAddress,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
+    TResult Function(InvalidConfirmPassword<T> value)? invalidConfirmPassword,
+    TResult Function(InvalidUniqueID<T> value)? invalidUniqueID,
+    TResult Function(InvalidUsername<T> value)? invalidUsername,
+    TResult Function(TooLongInput<T> value)? tooLongInput,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (invalidUniqueID != null) {
       return invalidUniqueID(this);
     }
@@ -1490,9 +1357,10 @@ class _$InvalidUniqueID<T> implements InvalidUniqueID<T> {
 abstract class InvalidUniqueID<T> implements ValueFailure<T> {
   const factory InvalidUniqueID(T failedValue) = _$InvalidUniqueID<T>;
 
-  T get failedValue;
+  T get failedValue => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $InvalidUniqueIDCopyWith<T, InvalidUniqueID<T>> get copyWith;
+  $InvalidUniqueIDCopyWith<T, InvalidUniqueID<T>> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -1516,17 +1384,21 @@ class _$InvalidUsernameCopyWithImpl<T, $Res>
 
   @override
   $Res call({
-    Object failedValue = freezed,
+    Object? failedValue = freezed,
   }) {
     return _then(InvalidUsername<T>(
-      failedValue == freezed ? _value.failedValue : failedValue as T,
+      failedValue == freezed
+          ? _value.failedValue
+          : failedValue // ignore: cast_nullable_to_non_nullable
+              as T,
     ));
   }
 }
 
 /// @nodoc
+
 class _$InvalidUsername<T> implements InvalidUsername<T> {
-  const _$InvalidUsername(this.failedValue) : assert(failedValue != null);
+  const _$InvalidUsername(this.failedValue);
 
   @override
   final T failedValue;
@@ -1556,47 +1428,36 @@ class _$InvalidUsername<T> implements InvalidUsername<T> {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult emptyInput(T failedValue),
-    @required TResult emptySelection(T failedValue),
-    @required TResult invalidCoverFile(T failureValue),
-    @required TResult invalidCoverURL(T failedValue),
-    @required TResult invalidEmailAddress(T failedValue),
-    @required TResult invalidPassword(T failedValue),
-    @required TResult invalidConfirmPassword(T failedValue),
-    @required TResult invalidUniqueID(T failedValue),
-    @required TResult invalidUsername(T failedValue),
-    @required TResult tooLongInput(T failedValue),
+  TResult when<TResult extends Object?>({
+    required TResult Function(T failedValue) emptyInput,
+    required TResult Function(T failedValue) emptySelection,
+    required TResult Function(T failureValue) invalidCoverFile,
+    required TResult Function(T failedValue) invalidCoverURL,
+    required TResult Function(T failedValue) invalidEmailAddress,
+    required TResult Function(T failedValue) invalidPassword,
+    required TResult Function(T failedValue) invalidConfirmPassword,
+    required TResult Function(T failedValue) invalidUniqueID,
+    required TResult Function(T failedValue) invalidUsername,
+    required TResult Function(T failedValue) tooLongInput,
   }) {
-    assert(emptyInput != null);
-    assert(emptySelection != null);
-    assert(invalidCoverFile != null);
-    assert(invalidCoverURL != null);
-    assert(invalidEmailAddress != null);
-    assert(invalidPassword != null);
-    assert(invalidConfirmPassword != null);
-    assert(invalidUniqueID != null);
-    assert(invalidUsername != null);
-    assert(tooLongInput != null);
     return invalidUsername(failedValue);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult emptyInput(T failedValue),
-    TResult emptySelection(T failedValue),
-    TResult invalidCoverFile(T failureValue),
-    TResult invalidCoverURL(T failedValue),
-    TResult invalidEmailAddress(T failedValue),
-    TResult invalidPassword(T failedValue),
-    TResult invalidConfirmPassword(T failedValue),
-    TResult invalidUniqueID(T failedValue),
-    TResult invalidUsername(T failedValue),
-    TResult tooLongInput(T failedValue),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(T failedValue)? emptyInput,
+    TResult Function(T failedValue)? emptySelection,
+    TResult Function(T failureValue)? invalidCoverFile,
+    TResult Function(T failedValue)? invalidCoverURL,
+    TResult Function(T failedValue)? invalidEmailAddress,
+    TResult Function(T failedValue)? invalidPassword,
+    TResult Function(T failedValue)? invalidConfirmPassword,
+    TResult Function(T failedValue)? invalidUniqueID,
+    TResult Function(T failedValue)? invalidUsername,
+    TResult Function(T failedValue)? tooLongInput,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (invalidUsername != null) {
       return invalidUsername(failedValue);
     }
@@ -1605,47 +1466,37 @@ class _$InvalidUsername<T> implements InvalidUsername<T> {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult emptyInput(EmptyInput<T> value),
-    @required TResult emptySelection(EmptySelection<T> value),
-    @required TResult invalidCoverFile(InvalidCoverFile<T> value),
-    @required TResult invalidCoverURL(InvalidCoverURL<T> value),
-    @required TResult invalidEmailAddress(InvalidEmail<T> value),
-    @required TResult invalidPassword(InvalidPassword<T> value),
-    @required TResult invalidConfirmPassword(InvalidConfirmPassword<T> value),
-    @required TResult invalidUniqueID(InvalidUniqueID<T> value),
-    @required TResult invalidUsername(InvalidUsername<T> value),
-    @required TResult tooLongInput(TooLongInput<T> value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(EmptyInput<T> value) emptyInput,
+    required TResult Function(EmptySelection<T> value) emptySelection,
+    required TResult Function(InvalidCoverFile<T> value) invalidCoverFile,
+    required TResult Function(InvalidCoverURL<T> value) invalidCoverURL,
+    required TResult Function(InvalidEmail<T> value) invalidEmailAddress,
+    required TResult Function(InvalidPassword<T> value) invalidPassword,
+    required TResult Function(InvalidConfirmPassword<T> value)
+        invalidConfirmPassword,
+    required TResult Function(InvalidUniqueID<T> value) invalidUniqueID,
+    required TResult Function(InvalidUsername<T> value) invalidUsername,
+    required TResult Function(TooLongInput<T> value) tooLongInput,
   }) {
-    assert(emptyInput != null);
-    assert(emptySelection != null);
-    assert(invalidCoverFile != null);
-    assert(invalidCoverURL != null);
-    assert(invalidEmailAddress != null);
-    assert(invalidPassword != null);
-    assert(invalidConfirmPassword != null);
-    assert(invalidUniqueID != null);
-    assert(invalidUsername != null);
-    assert(tooLongInput != null);
     return invalidUsername(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult emptyInput(EmptyInput<T> value),
-    TResult emptySelection(EmptySelection<T> value),
-    TResult invalidCoverFile(InvalidCoverFile<T> value),
-    TResult invalidCoverURL(InvalidCoverURL<T> value),
-    TResult invalidEmailAddress(InvalidEmail<T> value),
-    TResult invalidPassword(InvalidPassword<T> value),
-    TResult invalidConfirmPassword(InvalidConfirmPassword<T> value),
-    TResult invalidUniqueID(InvalidUniqueID<T> value),
-    TResult invalidUsername(InvalidUsername<T> value),
-    TResult tooLongInput(TooLongInput<T> value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(EmptyInput<T> value)? emptyInput,
+    TResult Function(EmptySelection<T> value)? emptySelection,
+    TResult Function(InvalidCoverFile<T> value)? invalidCoverFile,
+    TResult Function(InvalidCoverURL<T> value)? invalidCoverURL,
+    TResult Function(InvalidEmail<T> value)? invalidEmailAddress,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
+    TResult Function(InvalidConfirmPassword<T> value)? invalidConfirmPassword,
+    TResult Function(InvalidUniqueID<T> value)? invalidUniqueID,
+    TResult Function(InvalidUsername<T> value)? invalidUsername,
+    TResult Function(TooLongInput<T> value)? tooLongInput,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (invalidUsername != null) {
       return invalidUsername(this);
     }
@@ -1656,9 +1507,10 @@ class _$InvalidUsername<T> implements InvalidUsername<T> {
 abstract class InvalidUsername<T> implements ValueFailure<T> {
   const factory InvalidUsername(T failedValue) = _$InvalidUsername<T>;
 
-  T get failedValue;
+  T get failedValue => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $InvalidUsernameCopyWith<T, InvalidUsername<T>> get copyWith;
+  $InvalidUsernameCopyWith<T, InvalidUsername<T>> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -1682,17 +1534,21 @@ class _$TooLongInputCopyWithImpl<T, $Res>
 
   @override
   $Res call({
-    Object failedValue = freezed,
+    Object? failedValue = freezed,
   }) {
     return _then(TooLongInput<T>(
-      failedValue == freezed ? _value.failedValue : failedValue as T,
+      failedValue == freezed
+          ? _value.failedValue
+          : failedValue // ignore: cast_nullable_to_non_nullable
+              as T,
     ));
   }
 }
 
 /// @nodoc
+
 class _$TooLongInput<T> implements TooLongInput<T> {
-  const _$TooLongInput(this.failedValue) : assert(failedValue != null);
+  const _$TooLongInput(this.failedValue);
 
   @override
   final T failedValue;
@@ -1722,47 +1578,36 @@ class _$TooLongInput<T> implements TooLongInput<T> {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult emptyInput(T failedValue),
-    @required TResult emptySelection(T failedValue),
-    @required TResult invalidCoverFile(T failureValue),
-    @required TResult invalidCoverURL(T failedValue),
-    @required TResult invalidEmailAddress(T failedValue),
-    @required TResult invalidPassword(T failedValue),
-    @required TResult invalidConfirmPassword(T failedValue),
-    @required TResult invalidUniqueID(T failedValue),
-    @required TResult invalidUsername(T failedValue),
-    @required TResult tooLongInput(T failedValue),
+  TResult when<TResult extends Object?>({
+    required TResult Function(T failedValue) emptyInput,
+    required TResult Function(T failedValue) emptySelection,
+    required TResult Function(T failureValue) invalidCoverFile,
+    required TResult Function(T failedValue) invalidCoverURL,
+    required TResult Function(T failedValue) invalidEmailAddress,
+    required TResult Function(T failedValue) invalidPassword,
+    required TResult Function(T failedValue) invalidConfirmPassword,
+    required TResult Function(T failedValue) invalidUniqueID,
+    required TResult Function(T failedValue) invalidUsername,
+    required TResult Function(T failedValue) tooLongInput,
   }) {
-    assert(emptyInput != null);
-    assert(emptySelection != null);
-    assert(invalidCoverFile != null);
-    assert(invalidCoverURL != null);
-    assert(invalidEmailAddress != null);
-    assert(invalidPassword != null);
-    assert(invalidConfirmPassword != null);
-    assert(invalidUniqueID != null);
-    assert(invalidUsername != null);
-    assert(tooLongInput != null);
     return tooLongInput(failedValue);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult emptyInput(T failedValue),
-    TResult emptySelection(T failedValue),
-    TResult invalidCoverFile(T failureValue),
-    TResult invalidCoverURL(T failedValue),
-    TResult invalidEmailAddress(T failedValue),
-    TResult invalidPassword(T failedValue),
-    TResult invalidConfirmPassword(T failedValue),
-    TResult invalidUniqueID(T failedValue),
-    TResult invalidUsername(T failedValue),
-    TResult tooLongInput(T failedValue),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(T failedValue)? emptyInput,
+    TResult Function(T failedValue)? emptySelection,
+    TResult Function(T failureValue)? invalidCoverFile,
+    TResult Function(T failedValue)? invalidCoverURL,
+    TResult Function(T failedValue)? invalidEmailAddress,
+    TResult Function(T failedValue)? invalidPassword,
+    TResult Function(T failedValue)? invalidConfirmPassword,
+    TResult Function(T failedValue)? invalidUniqueID,
+    TResult Function(T failedValue)? invalidUsername,
+    TResult Function(T failedValue)? tooLongInput,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (tooLongInput != null) {
       return tooLongInput(failedValue);
     }
@@ -1771,47 +1616,37 @@ class _$TooLongInput<T> implements TooLongInput<T> {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult emptyInput(EmptyInput<T> value),
-    @required TResult emptySelection(EmptySelection<T> value),
-    @required TResult invalidCoverFile(InvalidCoverFile<T> value),
-    @required TResult invalidCoverURL(InvalidCoverURL<T> value),
-    @required TResult invalidEmailAddress(InvalidEmail<T> value),
-    @required TResult invalidPassword(InvalidPassword<T> value),
-    @required TResult invalidConfirmPassword(InvalidConfirmPassword<T> value),
-    @required TResult invalidUniqueID(InvalidUniqueID<T> value),
-    @required TResult invalidUsername(InvalidUsername<T> value),
-    @required TResult tooLongInput(TooLongInput<T> value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(EmptyInput<T> value) emptyInput,
+    required TResult Function(EmptySelection<T> value) emptySelection,
+    required TResult Function(InvalidCoverFile<T> value) invalidCoverFile,
+    required TResult Function(InvalidCoverURL<T> value) invalidCoverURL,
+    required TResult Function(InvalidEmail<T> value) invalidEmailAddress,
+    required TResult Function(InvalidPassword<T> value) invalidPassword,
+    required TResult Function(InvalidConfirmPassword<T> value)
+        invalidConfirmPassword,
+    required TResult Function(InvalidUniqueID<T> value) invalidUniqueID,
+    required TResult Function(InvalidUsername<T> value) invalidUsername,
+    required TResult Function(TooLongInput<T> value) tooLongInput,
   }) {
-    assert(emptyInput != null);
-    assert(emptySelection != null);
-    assert(invalidCoverFile != null);
-    assert(invalidCoverURL != null);
-    assert(invalidEmailAddress != null);
-    assert(invalidPassword != null);
-    assert(invalidConfirmPassword != null);
-    assert(invalidUniqueID != null);
-    assert(invalidUsername != null);
-    assert(tooLongInput != null);
     return tooLongInput(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult emptyInput(EmptyInput<T> value),
-    TResult emptySelection(EmptySelection<T> value),
-    TResult invalidCoverFile(InvalidCoverFile<T> value),
-    TResult invalidCoverURL(InvalidCoverURL<T> value),
-    TResult invalidEmailAddress(InvalidEmail<T> value),
-    TResult invalidPassword(InvalidPassword<T> value),
-    TResult invalidConfirmPassword(InvalidConfirmPassword<T> value),
-    TResult invalidUniqueID(InvalidUniqueID<T> value),
-    TResult invalidUsername(InvalidUsername<T> value),
-    TResult tooLongInput(TooLongInput<T> value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(EmptyInput<T> value)? emptyInput,
+    TResult Function(EmptySelection<T> value)? emptySelection,
+    TResult Function(InvalidCoverFile<T> value)? invalidCoverFile,
+    TResult Function(InvalidCoverURL<T> value)? invalidCoverURL,
+    TResult Function(InvalidEmail<T> value)? invalidEmailAddress,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
+    TResult Function(InvalidConfirmPassword<T> value)? invalidConfirmPassword,
+    TResult Function(InvalidUniqueID<T> value)? invalidUniqueID,
+    TResult Function(InvalidUsername<T> value)? invalidUsername,
+    TResult Function(TooLongInput<T> value)? tooLongInput,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (tooLongInput != null) {
       return tooLongInput(this);
     }
@@ -1822,7 +1657,8 @@ class _$TooLongInput<T> implements TooLongInput<T> {
 abstract class TooLongInput<T> implements ValueFailure<T> {
   const factory TooLongInput(T failedValue) = _$TooLongInput<T>;
 
-  T get failedValue;
+  T get failedValue => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $TooLongInputCopyWith<T, TooLongInput<T>> get copyWith;
+  $TooLongInputCopyWith<T, TooLongInput<T>> get copyWith =>
+      throw _privateConstructorUsedError;
 }
