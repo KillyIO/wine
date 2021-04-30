@@ -4,154 +4,115 @@
 // AutoRouteGenerator
 // **************************************************************************
 
-// ignore_for_file: public_member_api_docs
+import 'package:auto_route/auto_route.dart' as _i1;
+import 'package:flutter/material.dart' as _i2;
+import 'package:wine/presentation/home/home_page.dart' as _i3;
+import 'package:wine/presentation/log_in/log_in_page.dart' as _i4;
+import 'package:wine/presentation/onboarding/onboarding_page.dart' as _i5;
+import 'package:wine/presentation/plus/plus_page.dart' as _i6;
+import 'package:wine/presentation/splash/splash_page.dart' as _i7;
 
-import 'package:auto_route/auto_route.dart';
-import 'package:flutter/material.dart';
+class AppRouter extends _i1.RootStackRouter {
+  AppRouter([_i2.GlobalKey<_i2.NavigatorState>? navigatorKey])
+      : super(navigatorKey);
 
-import '../home/home_page.dart';
-import '../log_in/log_in_page.dart';
-import '../onboarding/onboarding_page.dart';
-import '../plus/plus_page.dart';
-import '../splash/splash_page.dart';
-
-class Routes {
-  static const String homePage = '/home-page';
-  static const String logInPage = '/log-in-page';
-  static const String onboardingPage = '/onboarding-page';
-  static const String plusPage = '/plus-page';
-  static const String splashPage = '/';
-  static const all = <String>{
-    homePage,
-    logInPage,
-    onboardingPage,
-    plusPage,
-    splashPage,
-  };
-}
-
-class AppRouter extends RouterBase {
   @override
-  List<RouteDef> get routes => _routes;
-  final _routes = <RouteDef>[
-    RouteDef(Routes.homePage, page: HomePage),
-    RouteDef(Routes.logInPage, page: LogInPage),
-    RouteDef(Routes.onboardingPage, page: OnboardingPage),
-    RouteDef(Routes.plusPage, page: PlusPage),
-    RouteDef(Routes.splashPage, page: SplashPage),
-  ];
-  @override
-  Map<Type, AutoRouteFactory> get pagesMap => _pagesMap;
-  final _pagesMap = <Type, AutoRouteFactory>{
-    HomePage: (data) {
-      final args = data.getArgs<HomePageArguments>(
-        orElse: () => HomePageArguments(),
-      );
-      return buildAdaptivePageRoute<dynamic>(
-        builder: (context) => HomePage(key: args.key),
-        settings: data,
-      );
+  final Map<String, _i1.PageFactory> pagesMap = {
+    HomeRoute.name: (routeData) {
+      final args =
+          routeData.argsAs<HomeRouteArgs>(orElse: () => const HomeRouteArgs());
+      return _i1.AdaptivePage<dynamic>(
+          routeData: routeData, child: _i3.HomePage(key: args.key));
     },
-    LogInPage: (data) {
-      final args = data.getArgs<LogInPageArguments>(
-        orElse: () => LogInPageArguments(),
-      );
-      return buildAdaptivePageRoute<dynamic>(
-        builder: (context) => LogInPage(key: args.key),
-        settings: data,
-      );
+    LogInRoute.name: (routeData) {
+      final args = routeData.argsAs<LogInRouteArgs>(
+          orElse: () => const LogInRouteArgs());
+      return _i1.AdaptivePage<dynamic>(
+          routeData: routeData, child: _i4.LogInPage(key: args.key));
     },
-    OnboardingPage: (data) {
-      final args = data.getArgs<OnboardingPageArguments>(
-        orElse: () => OnboardingPageArguments(),
-      );
-      return buildAdaptivePageRoute<dynamic>(
-        builder: (context) => OnboardingPage(key: args.key),
-        settings: data,
-      );
+    OnboardingRoute.name: (routeData) {
+      final args = routeData.argsAs<OnboardingRouteArgs>(
+          orElse: () => const OnboardingRouteArgs());
+      return _i1.AdaptivePage<dynamic>(
+          routeData: routeData, child: _i5.OnboardingPage(key: args.key));
     },
-    PlusPage: (data) {
-      return buildAdaptivePageRoute<dynamic>(
-        builder: (context) => const PlusPage(),
-        settings: data,
-      );
+    PlusRoute.name: (routeData) {
+      return _i1.AdaptivePage<dynamic>(
+          routeData: routeData, child: const _i6.PlusPage());
     },
-    SplashPage: (data) {
-      final args = data.getArgs<SplashPageArguments>(
-        orElse: () => SplashPageArguments(),
-      );
-      return buildAdaptivePageRoute<dynamic>(
-        builder: (context) => SplashPage(key: args.key),
-        settings: data,
-      );
-    },
+    SplashRoute.name: (routeData) {
+      final args = routeData.argsAs<SplashRouteArgs>(
+          orElse: () => const SplashRouteArgs());
+      return _i1.AdaptivePage<dynamic>(
+          routeData: routeData, child: _i7.SplashPage(key: args.key));
+    }
   };
+
+  @override
+  List<_i1.RouteConfig> get routes => [
+        _i1.RouteConfig(HomeRoute.name, path: '/home-page'),
+        _i1.RouteConfig(LogInRoute.name, path: '/log-in-page'),
+        _i1.RouteConfig(OnboardingRoute.name, path: '/onboarding-page'),
+        _i1.RouteConfig(PlusRoute.name, path: '/plus-page'),
+        _i1.RouteConfig(SplashRoute.name, path: '/')
+      ];
 }
 
-/// ************************************************************************
-/// Navigation helper methods extension
-/// *************************************************************************
+class HomeRoute extends _i1.PageRouteInfo<HomeRouteArgs> {
+  HomeRoute({_i2.Key key})
+      : super(name, path: '/home-page', args: HomeRouteArgs(key: key));
 
-extension AppRouterExtendedNavigatorStateX on ExtendedNavigatorState {
-  Future<dynamic> pushHomePage({
-    Key key,
-  }) =>
-      push<dynamic>(
-        Routes.homePage,
-        arguments: HomePageArguments(key: key),
-      );
-
-  Future<dynamic> pushLogInPage({
-    Key key,
-  }) =>
-      push<dynamic>(
-        Routes.logInPage,
-        arguments: LogInPageArguments(key: key),
-      );
-
-  Future<dynamic> pushOnboardingPage({
-    Key key,
-  }) =>
-      push<dynamic>(
-        Routes.onboardingPage,
-        arguments: OnboardingPageArguments(key: key),
-      );
-
-  Future<dynamic> pushPlusPage() => push<dynamic>(Routes.plusPage);
-
-  Future<dynamic> pushSplashPage({
-    Key key,
-  }) =>
-      push<dynamic>(
-        Routes.splashPage,
-        arguments: SplashPageArguments(key: key),
-      );
+  static const String name = 'HomeRoute';
 }
 
-/// ************************************************************************
-/// Arguments holder classes
-/// *************************************************************************
+class HomeRouteArgs {
+  const HomeRouteArgs({this.key});
 
-/// HomePage arguments holder class
-class HomePageArguments {
-  final Key key;
-  HomePageArguments({this.key});
+  final _i2.Key key;
 }
 
-/// LogInPage arguments holder class
-class LogInPageArguments {
-  final Key key;
-  LogInPageArguments({this.key});
+class LogInRoute extends _i1.PageRouteInfo<LogInRouteArgs> {
+  LogInRoute({_i2.Key key})
+      : super(name, path: '/log-in-page', args: LogInRouteArgs(key: key));
+
+  static const String name = 'LogInRoute';
 }
 
-/// OnboardingPage arguments holder class
-class OnboardingPageArguments {
-  final Key key;
-  OnboardingPageArguments({this.key});
+class LogInRouteArgs {
+  const LogInRouteArgs({this.key});
+
+  final _i2.Key key;
 }
 
-/// SplashPage arguments holder class
-class SplashPageArguments {
-  final Key key;
-  SplashPageArguments({this.key});
+class OnboardingRoute extends _i1.PageRouteInfo<OnboardingRouteArgs> {
+  OnboardingRoute({_i2.Key key})
+      : super(name,
+            path: '/onboarding-page', args: OnboardingRouteArgs(key: key));
+
+  static const String name = 'OnboardingRoute';
+}
+
+class OnboardingRouteArgs {
+  const OnboardingRouteArgs({this.key});
+
+  final _i2.Key key;
+}
+
+class PlusRoute extends _i1.PageRouteInfo {
+  const PlusRoute() : super(name, path: '/plus-page');
+
+  static const String name = 'PlusRoute';
+}
+
+class SplashRoute extends _i1.PageRouteInfo<SplashRouteArgs> {
+  SplashRoute({_i2.Key key})
+      : super(name, path: '/', args: SplashRouteArgs(key: key));
+
+  static const String name = 'SplashRoute';
+}
+
+class SplashRouteArgs {
+  const SplashRouteArgs({this.key});
+
+  final _i2.Key key;
 }
