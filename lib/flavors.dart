@@ -1,19 +1,19 @@
-/// Build flavors.
+/// @nodoc
 enum Flavor {
-  /// Build for beta testers.
+  /// @nodoc
   beta,
 
-  /// Build for developers and internal testing.
+  /// @nodoc
   development,
 
-  /// Build for final users.
+  /// @nodoc
   production,
 }
 
-/// [F] is class containing values dependant on the build type.
+/// @nodoc
 class F {
   /// @nodoc
-  static Flavor appFlavor;
+  static Flavor? appFlavor;
 
   /// @nodoc
   static String get title {
