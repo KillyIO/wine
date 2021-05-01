@@ -6,14 +6,14 @@ import 'package:wine/domain/settings/settings_failure.dart';
 /// @nodoc
 abstract class ISettingsRepository {
   /// @nodoc
-  Future<Result<SettingsFailure, Unit>> deleteSettings();
+  Future<Result<Unit, SettingsFailure>> deleteSettings();
 
   /// @nodoc
-  Future<Result<SettingsFailure, Settings>> fetchSettings();
+  Future<Result<Settings, SettingsFailure>> fetchSettings();
 
   /// @nodoc
-  Future<Result<SettingsFailure, Unit>> initializeSettings();
+  Future<Result<Unit, SettingsFailure>> initializeSettings();
 
   /// @nodoc
-  Future<Result<SettingsFailure, Unit>> updateSettings(Settings settings);
+  Future<Result<Unit, SettingsFailure>> updateSettings(Settings settings);
 }

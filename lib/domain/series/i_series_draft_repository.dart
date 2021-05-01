@@ -6,5 +6,5 @@ import 'package:wine/domain/series/series_failure.dart';
 /// @nodoc
 abstract class ISeriesDraftRepository {
   /// @nodoc
-  Future<Result<SeriesFailure, Unit>> deleteSeriesDraft(UniqueID uid);
+  Future<Result<Unit, SeriesFailure>> deleteSeriesDraft(UniqueID uid);
 }

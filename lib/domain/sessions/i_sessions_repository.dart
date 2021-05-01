@@ -6,14 +6,14 @@ import 'package:wine/domain/user/user.dart';
 /// @nodoc
 abstract class ISessionsRepository {
   /// @nodoc
-  Future<Result<SessionsFailure, Unit>> createSession();
+  Future<Result<Unit, SessionsFailure>> createSession();
 
   /// @nodoc
-  Future<Result<SessionsFailure, Unit>> deleteSession();
+  Future<Result<Unit, SessionsFailure>> deleteSession();
 
   /// @nodoc
-  Future<Result<SessionsFailure, User>> fetchSession();
+  Future<Result<User, SessionsFailure>> fetchSession();
 
   /// @nodoc
-  Future<Result<SessionsFailure, Unit>> updateSession(User user);
+  Future<Result<Unit, SessionsFailure>> updateSession(User user);
 }

@@ -5,16 +5,16 @@ import 'package:wine/domain/default_covers/default_covers_failure.dart';
 /// @nodoc
 abstract class IDefaultCoversRepository {
   /// @nodoc
-  Future<Result<DefaultCoversFailure, Unit>> cacheDefaultCoverURLs(
+  Future<Result<Unit, DefaultCoversFailure>> cacheDefaultCoverURLs(
     Map<String, String> urls,
   );
 
   /// @nodoc
-  Future<Result<DefaultCoversFailure, String>> fetchDefaultCoverURLByKey(
+  Future<Result<String, DefaultCoversFailure>> fetchDefaultCoverURLByKey(
     String key,
   );
 
   /// @nodoc
-  Future<Result<DefaultCoversFailure, Map<String, String>>>
+  Future<Result<Map<String, String>, DefaultCoversFailure>>
       loadDefaultCoverURLs();
 }

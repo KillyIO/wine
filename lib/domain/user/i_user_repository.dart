@@ -7,18 +7,18 @@ import 'package:wine/domain/user/user_failure.dart';
 /// @nodoc
 abstract class IUserRepository {
   /// @nodoc
-  Future<Result<UserFailure, Unit>> checkUsernameAvailability(
+  Future<Result<Unit, UserFailure>> checkUsernameAvailability(
     Username username,
   );
 
   /// @nodoc
-  Future<Result<UserFailure, User>> loadUser(String userUID);
+  Future<Result<User, UserFailure>> loadUser(String userUID);
 
   /// @nodoc
-  Future<Result<UserFailure, Unit>> saveDetailsFromUser(User user);
+  Future<Result<Unit, UserFailure>> saveDetailsFromUser(User user);
 
   /// @nodoc
-  Future<Result<UserFailure, Unit>> saveUsername(
+  Future<Result<Unit, UserFailure>> saveUsername(
     String userUID,
     Username username,
   );
