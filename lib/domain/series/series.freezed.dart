@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'series.dart';
 
@@ -9,22 +9,24 @@ part of 'series.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 /// @nodoc
 class _$SeriesTearOff {
   const _$SeriesTearOff();
 
-// ignore: unused_element
   _Series call(
-      {@required UniqueID authorUID,
-      @required CoverURL coverURL,
-      @required Genre genre,
-      @required Genre genreOptional,
-      @required bool isNSFW,
-      @required Language language,
-      @required Subtitle subtitle,
-      @required Summary summary,
-      @required Title title,
-      @required UniqueID uid}) {
+      {required UniqueID authorUID,
+      required CoverURL coverURL,
+      required Genre genre,
+      required Genre genreOptional,
+      required bool isNSFW,
+      required Language language,
+      required Subtitle subtitle,
+      required Summary summary,
+      required Title title,
+      required UniqueID uid}) {
     return _Series(
       authorUID: authorUID,
       coverURL: coverURL,
@@ -41,24 +43,23 @@ class _$SeriesTearOff {
 }
 
 /// @nodoc
-// ignore: unused_element
 const $Series = _$SeriesTearOff();
 
 /// @nodoc
 mixin _$Series {
-  UniqueID get authorUID;
-  CoverURL get coverURL;
-  Genre get genre;
-  Genre get genreOptional;
-  bool get isNSFW;
-  Language get language;
-  Subtitle get subtitle;
-  Summary get summary;
-  Title get title;
-  UniqueID get uid;
+  UniqueID get authorUID => throw _privateConstructorUsedError;
+  CoverURL get coverURL => throw _privateConstructorUsedError;
+  Genre get genre => throw _privateConstructorUsedError;
+  Genre get genreOptional => throw _privateConstructorUsedError;
+  bool get isNSFW => throw _privateConstructorUsedError;
+  Language get language => throw _privateConstructorUsedError;
+  Subtitle get subtitle => throw _privateConstructorUsedError;
+  Summary get summary => throw _privateConstructorUsedError;
+  Title get title => throw _privateConstructorUsedError;
+  UniqueID get uid => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $SeriesCopyWith<Series> get copyWith;
+  $SeriesCopyWith<Series> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -88,31 +89,58 @@ class _$SeriesCopyWithImpl<$Res> implements $SeriesCopyWith<$Res> {
 
   @override
   $Res call({
-    Object authorUID = freezed,
-    Object coverURL = freezed,
-    Object genre = freezed,
-    Object genreOptional = freezed,
-    Object isNSFW = freezed,
-    Object language = freezed,
-    Object subtitle = freezed,
-    Object summary = freezed,
-    Object title = freezed,
-    Object uid = freezed,
+    Object? authorUID = freezed,
+    Object? coverURL = freezed,
+    Object? genre = freezed,
+    Object? genreOptional = freezed,
+    Object? isNSFW = freezed,
+    Object? language = freezed,
+    Object? subtitle = freezed,
+    Object? summary = freezed,
+    Object? title = freezed,
+    Object? uid = freezed,
   }) {
     return _then(_value.copyWith(
-      authorUID:
-          authorUID == freezed ? _value.authorUID : authorUID as UniqueID,
-      coverURL: coverURL == freezed ? _value.coverURL : coverURL as CoverURL,
-      genre: genre == freezed ? _value.genre : genre as Genre,
+      authorUID: authorUID == freezed
+          ? _value.authorUID
+          : authorUID // ignore: cast_nullable_to_non_nullable
+              as UniqueID,
+      coverURL: coverURL == freezed
+          ? _value.coverURL
+          : coverURL // ignore: cast_nullable_to_non_nullable
+              as CoverURL,
+      genre: genre == freezed
+          ? _value.genre
+          : genre // ignore: cast_nullable_to_non_nullable
+              as Genre,
       genreOptional: genreOptional == freezed
           ? _value.genreOptional
-          : genreOptional as Genre,
-      isNSFW: isNSFW == freezed ? _value.isNSFW : isNSFW as bool,
-      language: language == freezed ? _value.language : language as Language,
-      subtitle: subtitle == freezed ? _value.subtitle : subtitle as Subtitle,
-      summary: summary == freezed ? _value.summary : summary as Summary,
-      title: title == freezed ? _value.title : title as Title,
-      uid: uid == freezed ? _value.uid : uid as UniqueID,
+          : genreOptional // ignore: cast_nullable_to_non_nullable
+              as Genre,
+      isNSFW: isNSFW == freezed
+          ? _value.isNSFW
+          : isNSFW // ignore: cast_nullable_to_non_nullable
+              as bool,
+      language: language == freezed
+          ? _value.language
+          : language // ignore: cast_nullable_to_non_nullable
+              as Language,
+      subtitle: subtitle == freezed
+          ? _value.subtitle
+          : subtitle // ignore: cast_nullable_to_non_nullable
+              as Subtitle,
+      summary: summary == freezed
+          ? _value.summary
+          : summary // ignore: cast_nullable_to_non_nullable
+              as Summary,
+      title: title == freezed
+          ? _value.title
+          : title // ignore: cast_nullable_to_non_nullable
+              as Title,
+      uid: uid == freezed
+          ? _value.uid
+          : uid // ignore: cast_nullable_to_non_nullable
+              as UniqueID,
     ));
   }
 }
@@ -146,58 +174,76 @@ class __$SeriesCopyWithImpl<$Res> extends _$SeriesCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object authorUID = freezed,
-    Object coverURL = freezed,
-    Object genre = freezed,
-    Object genreOptional = freezed,
-    Object isNSFW = freezed,
-    Object language = freezed,
-    Object subtitle = freezed,
-    Object summary = freezed,
-    Object title = freezed,
-    Object uid = freezed,
+    Object? authorUID = freezed,
+    Object? coverURL = freezed,
+    Object? genre = freezed,
+    Object? genreOptional = freezed,
+    Object? isNSFW = freezed,
+    Object? language = freezed,
+    Object? subtitle = freezed,
+    Object? summary = freezed,
+    Object? title = freezed,
+    Object? uid = freezed,
   }) {
     return _then(_Series(
-      authorUID:
-          authorUID == freezed ? _value.authorUID : authorUID as UniqueID,
-      coverURL: coverURL == freezed ? _value.coverURL : coverURL as CoverURL,
-      genre: genre == freezed ? _value.genre : genre as Genre,
+      authorUID: authorUID == freezed
+          ? _value.authorUID
+          : authorUID // ignore: cast_nullable_to_non_nullable
+              as UniqueID,
+      coverURL: coverURL == freezed
+          ? _value.coverURL
+          : coverURL // ignore: cast_nullable_to_non_nullable
+              as CoverURL,
+      genre: genre == freezed
+          ? _value.genre
+          : genre // ignore: cast_nullable_to_non_nullable
+              as Genre,
       genreOptional: genreOptional == freezed
           ? _value.genreOptional
-          : genreOptional as Genre,
-      isNSFW: isNSFW == freezed ? _value.isNSFW : isNSFW as bool,
-      language: language == freezed ? _value.language : language as Language,
-      subtitle: subtitle == freezed ? _value.subtitle : subtitle as Subtitle,
-      summary: summary == freezed ? _value.summary : summary as Summary,
-      title: title == freezed ? _value.title : title as Title,
-      uid: uid == freezed ? _value.uid : uid as UniqueID,
+          : genreOptional // ignore: cast_nullable_to_non_nullable
+              as Genre,
+      isNSFW: isNSFW == freezed
+          ? _value.isNSFW
+          : isNSFW // ignore: cast_nullable_to_non_nullable
+              as bool,
+      language: language == freezed
+          ? _value.language
+          : language // ignore: cast_nullable_to_non_nullable
+              as Language,
+      subtitle: subtitle == freezed
+          ? _value.subtitle
+          : subtitle // ignore: cast_nullable_to_non_nullable
+              as Subtitle,
+      summary: summary == freezed
+          ? _value.summary
+          : summary // ignore: cast_nullable_to_non_nullable
+              as Summary,
+      title: title == freezed
+          ? _value.title
+          : title // ignore: cast_nullable_to_non_nullable
+              as Title,
+      uid: uid == freezed
+          ? _value.uid
+          : uid // ignore: cast_nullable_to_non_nullable
+              as UniqueID,
     ));
   }
 }
 
 /// @nodoc
+
 class _$_Series implements _Series {
   _$_Series(
-      {@required this.authorUID,
-      @required this.coverURL,
-      @required this.genre,
-      @required this.genreOptional,
-      @required this.isNSFW,
-      @required this.language,
-      @required this.subtitle,
-      @required this.summary,
-      @required this.title,
-      @required this.uid})
-      : assert(authorUID != null),
-        assert(coverURL != null),
-        assert(genre != null),
-        assert(genreOptional != null),
-        assert(isNSFW != null),
-        assert(language != null),
-        assert(subtitle != null),
-        assert(summary != null),
-        assert(title != null),
-        assert(uid != null);
+      {required this.authorUID,
+      required this.coverURL,
+      required this.genre,
+      required this.genreOptional,
+      required this.isNSFW,
+      required this.language,
+      required this.subtitle,
+      required this.summary,
+      required this.title,
+      required this.uid});
 
   @override
   final UniqueID authorUID;
@@ -279,38 +325,38 @@ class _$_Series implements _Series {
 
 abstract class _Series implements Series {
   factory _Series(
-      {@required UniqueID authorUID,
-      @required CoverURL coverURL,
-      @required Genre genre,
-      @required Genre genreOptional,
-      @required bool isNSFW,
-      @required Language language,
-      @required Subtitle subtitle,
-      @required Summary summary,
-      @required Title title,
-      @required UniqueID uid}) = _$_Series;
+      {required UniqueID authorUID,
+      required CoverURL coverURL,
+      required Genre genre,
+      required Genre genreOptional,
+      required bool isNSFW,
+      required Language language,
+      required Subtitle subtitle,
+      required Summary summary,
+      required Title title,
+      required UniqueID uid}) = _$_Series;
 
   @override
-  UniqueID get authorUID;
+  UniqueID get authorUID => throw _privateConstructorUsedError;
   @override
-  CoverURL get coverURL;
+  CoverURL get coverURL => throw _privateConstructorUsedError;
   @override
-  Genre get genre;
+  Genre get genre => throw _privateConstructorUsedError;
   @override
-  Genre get genreOptional;
+  Genre get genreOptional => throw _privateConstructorUsedError;
   @override
-  bool get isNSFW;
+  bool get isNSFW => throw _privateConstructorUsedError;
   @override
-  Language get language;
+  Language get language => throw _privateConstructorUsedError;
   @override
-  Subtitle get subtitle;
+  Subtitle get subtitle => throw _privateConstructorUsedError;
   @override
-  Summary get summary;
+  Summary get summary => throw _privateConstructorUsedError;
   @override
-  Title get title;
+  Title get title => throw _privateConstructorUsedError;
   @override
-  UniqueID get uid;
+  UniqueID get uid => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$SeriesCopyWith<_Series> get copyWith;
+  _$SeriesCopyWith<_Series> get copyWith => throw _privateConstructorUsedError;
 }

@@ -1,4 +1,4 @@
-import 'package:dartz/dartz.dart';
+import 'package:rustic/result.dart';
 import 'package:wine/domain/core/value_failure.dart';
 import 'package:wine/domain/core/value_object.dart';
 import 'package:wine/domain/core/value_validators.dart';
@@ -7,7 +7,6 @@ import 'package:wine/domain/core/value_validators.dart';
 class Summary extends ValueObject<String> {
   /// @nodoc
   factory Summary(String input) {
-    assert(input != null);
     return Summary._(
       validateSummary(input),
     );
@@ -16,5 +15,5 @@ class Summary extends ValueObject<String> {
   const Summary._(this.value);
 
   @override
-  final Either<ValueFailure<String>, String> value;
+  final Result<String, ValueFailure<String>> value;
 }

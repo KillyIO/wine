@@ -1,4 +1,4 @@
-import 'package:dartz/dartz.dart';
+import 'package:rustic/result.dart';
 import 'package:wine/domain/core/value_failure.dart';
 import 'package:wine/domain/core/value_object.dart';
 import 'package:wine/domain/core/value_validators.dart';
@@ -7,7 +7,6 @@ import 'package:wine/domain/core/value_validators.dart';
 class Subtitle extends ValueObject<String> {
   /// @nodoc
   factory Subtitle(String input) {
-    assert(input != null);
     return Subtitle._(
       validateSubtitle(input),
     );
@@ -16,5 +15,5 @@ class Subtitle extends ValueObject<String> {
   const Subtitle._(this.value);
 
   @override
-  final Either<ValueFailure<String>, String> value;
+  final Result<String, ValueFailure<String>> value;
 }

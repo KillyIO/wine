@@ -11,19 +11,19 @@ part 'series.freezed.dart';
 
 /// @nodoc
 @freezed
-abstract class Series with _$Series {
+class Series with _$Series {
   /// @nodoc
   factory Series({
-    @required UniqueID authorUID,
-    @required CoverURL coverURL,
-    @required Genre genre,
-    @required Genre genreOptional,
-    @required bool isNSFW,
-    @required Language language,
-    @required Subtitle subtitle,
-    @required Summary summary,
-    @required Title title,
-    @required UniqueID uid,
+    required UniqueID authorUID,
+    required CoverURL coverURL,
+    required Genre genre,
+    required Genre genreOptional,
+    required bool isNSFW,
+    required Language language,
+    required Subtitle subtitle,
+    required Summary summary,
+    required Title title,
+    required UniqueID uid,
   }) = _Series;
 
   /// @nodoc
