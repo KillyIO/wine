@@ -1,18 +1,19 @@
-import 'package:dartz/dartz.dart';
+import 'package:rustic/result.dart';
+import 'package:rustic/tuple.dart';
 import 'package:wine/domain/sessions/sessions_failure.dart';
 import 'package:wine/domain/user/user.dart';
 
 /// @nodoc
 abstract class ISessionsRepository {
   /// @nodoc
-  Future<Either<SessionsFailure, Unit>> createSession();
+  Future<Result<SessionsFailure, Unit>> createSession();
 
   /// @nodoc
-  Future<Either<SessionsFailure, Unit>> deleteSession();
+  Future<Result<SessionsFailure, Unit>> deleteSession();
 
   /// @nodoc
-  Future<Either<SessionsFailure, User>> fetchSession();
+  Future<Result<SessionsFailure, User>> fetchSession();
 
   /// @nodoc
-  Future<Either<SessionsFailure, Unit>> updateSession(User user);
+  Future<Result<SessionsFailure, Unit>> updateSession(User user);
 }

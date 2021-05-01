@@ -7,7 +7,7 @@ part 'sessions_failure.freezed.dart';
 /// [SessionsFailure] is a collection of failures related to the User's model
 /// and calls to User in database.
 @freezed
-abstract class SessionsFailure with _$SessionsFailure {
+class SessionsFailure with _$SessionsFailure {
   /// @nodoc
   const factory SessionsFailure.sessionNotCreated() = SessionNotCreated;
 
