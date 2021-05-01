@@ -7,7 +7,7 @@ part 'user_failure.freezed.dart';
 /// [UserFailure] is a collection of failures related to the User's model and
 /// calls to User in database.
 @freezed
-abstract class UserFailure with _$UserFailure {
+class UserFailure with _$UserFailure {
   /// @nodoc
   const factory UserFailure.serverError() = ServerError;
 

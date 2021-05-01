@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'user.dart';
 
@@ -9,15 +9,17 @@ part of 'user.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 /// @nodoc
 class _$UserTearOff {
   const _$UserTearOff();
 
-// ignore: unused_element
   _User call(
-      {@required EmailAddress emailAddress,
-      @required UniqueID uid,
-      @required Username username}) {
+      {required EmailAddress emailAddress,
+      required UniqueID uid,
+      required Username username}) {
     return _User(
       emailAddress: emailAddress,
       uid: uid,
@@ -27,17 +29,16 @@ class _$UserTearOff {
 }
 
 /// @nodoc
-// ignore: unused_element
 const $User = _$UserTearOff();
 
 /// @nodoc
 mixin _$User {
-  EmailAddress get emailAddress;
-  UniqueID get uid;
-  Username get username;
+  EmailAddress get emailAddress => throw _privateConstructorUsedError;
+  UniqueID get uid => throw _privateConstructorUsedError;
+  Username get username => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $UserCopyWith<User> get copyWith;
+  $UserCopyWith<User> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -57,16 +58,23 @@ class _$UserCopyWithImpl<$Res> implements $UserCopyWith<$Res> {
 
   @override
   $Res call({
-    Object emailAddress = freezed,
-    Object uid = freezed,
-    Object username = freezed,
+    Object? emailAddress = freezed,
+    Object? uid = freezed,
+    Object? username = freezed,
   }) {
     return _then(_value.copyWith(
       emailAddress: emailAddress == freezed
           ? _value.emailAddress
-          : emailAddress as EmailAddress,
-      uid: uid == freezed ? _value.uid : uid as UniqueID,
-      username: username == freezed ? _value.username : username as Username,
+          : emailAddress // ignore: cast_nullable_to_non_nullable
+              as EmailAddress,
+      uid: uid == freezed
+          ? _value.uid
+          : uid // ignore: cast_nullable_to_non_nullable
+              as UniqueID,
+      username: username == freezed
+          ? _value.username
+          : username // ignore: cast_nullable_to_non_nullable
+              as Username,
     ));
   }
 }
@@ -90,29 +98,32 @@ class __$UserCopyWithImpl<$Res> extends _$UserCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object emailAddress = freezed,
-    Object uid = freezed,
-    Object username = freezed,
+    Object? emailAddress = freezed,
+    Object? uid = freezed,
+    Object? username = freezed,
   }) {
     return _then(_User(
       emailAddress: emailAddress == freezed
           ? _value.emailAddress
-          : emailAddress as EmailAddress,
-      uid: uid == freezed ? _value.uid : uid as UniqueID,
-      username: username == freezed ? _value.username : username as Username,
+          : emailAddress // ignore: cast_nullable_to_non_nullable
+              as EmailAddress,
+      uid: uid == freezed
+          ? _value.uid
+          : uid // ignore: cast_nullable_to_non_nullable
+              as UniqueID,
+      username: username == freezed
+          ? _value.username
+          : username // ignore: cast_nullable_to_non_nullable
+              as Username,
     ));
   }
 }
 
 /// @nodoc
+
 class _$_User implements _User {
   _$_User(
-      {@required this.emailAddress,
-      @required this.uid,
-      @required this.username})
-      : assert(emailAddress != null),
-        assert(uid != null),
-        assert(username != null);
+      {required this.emailAddress, required this.uid, required this.username});
 
   @override
   final EmailAddress emailAddress;
@@ -155,17 +166,17 @@ class _$_User implements _User {
 
 abstract class _User implements User {
   factory _User(
-      {@required EmailAddress emailAddress,
-      @required UniqueID uid,
-      @required Username username}) = _$_User;
+      {required EmailAddress emailAddress,
+      required UniqueID uid,
+      required Username username}) = _$_User;
 
   @override
-  EmailAddress get emailAddress;
+  EmailAddress get emailAddress => throw _privateConstructorUsedError;
   @override
-  UniqueID get uid;
+  UniqueID get uid => throw _privateConstructorUsedError;
   @override
-  Username get username;
+  Username get username => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$UserCopyWith<_User> get copyWith;
+  _$UserCopyWith<_User> get copyWith => throw _privateConstructorUsedError;
 }

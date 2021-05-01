@@ -7,12 +7,12 @@ part 'user.freezed.dart';
 
 /// @nodoc
 @freezed
-abstract class User with _$User {
+class User with _$User {
   /// @nodoc
   factory User({
-    @required EmailAddress emailAddress,
-    @required UniqueID uid,
-    @required Username username,
+    required EmailAddress emailAddress,
+    required UniqueID uid,
+    required Username username,
   }) = _User;
 
   /// @nodoc
