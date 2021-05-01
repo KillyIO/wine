@@ -4,7 +4,7 @@ part 'default_covers_failure.freezed.dart';
 
 /// @nodoc
 @freezed
-abstract class DefaultCoversFailure with _$DefaultCoversFailure {
+class DefaultCoversFailure with _$DefaultCoversFailure {
   /// @nodoc
   const factory DefaultCoversFailure.defaultCoverURLsNotCached() =
       DefaultCoverURLsNotCached;
