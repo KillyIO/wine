@@ -1,4 +1,6 @@
-import 'package:dartz/dartz.dart';
+import 'package:rustic/option.dart';
+import 'package:rustic/result.dart';
+import 'package:rustic/tuple.dart';
 import 'package:wine/domain/auth/auth_failure.dart';
 import 'package:wine/domain/auth/email_address.dart';
 import 'package:wine/domain/auth/password.dart';
@@ -7,7 +9,7 @@ import 'package:wine/domain/user/user.dart';
 /// @nodoc
 abstract class IAuthFacade {
   /// @nodoc
-  Future<Either<AuthFailure, Unit>> convertWithEmailAndPassword(
+  Future<Result<AuthFailure, Unit>> convertWithEmailAndPassword(
     EmailAddress emailAddress,
     Password password,
   );
@@ -22,20 +24,20 @@ abstract class IAuthFacade {
   bool get isLoggedIn;
 
   /// @nodoc
-  Future<Either<AuthFailure, Unit>> logInAnonymously();
+  Future<Result<AuthFailure, Unit>> logInAnonymously();
 
   /// @nodoc
-  Future<Either<AuthFailure, Unit>> logInWithEmailAndPassword(
+  Future<Result<AuthFailure, Unit>> logInWithEmailAndPassword(
     EmailAddress emailAddress,
     Password password,
   );
 
   /// @nodoc
-  Future<Either<AuthFailure, Unit>> logInWithGoogle();
+  Future<Result<AuthFailure, Unit>> logInWithGoogle();
 
   /// @nodoc
-  Future<Either<AuthFailure, Unit>> logOut();
+  Future<Result<AuthFailure, Unit>> logOut();
 
   /// @nodoc
-  Future<Either<AuthFailure, Unit>> resendVerificationEmail();
+  Future<Result<AuthFailure, Unit>> resendVerificationEmail();
 }
