@@ -4,7 +4,7 @@ part 'settings_failure.freezed.dart';
 
 /// @nodoc
 @freezed
-abstract class SettingsFailure with _$SettingsFailure {
+class SettingsFailure with _$SettingsFailure {
   /// @nodoc
   const factory SettingsFailure.settingsNotDeleted() = SettingsNotDeleted;
 
