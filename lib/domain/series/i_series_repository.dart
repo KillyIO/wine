@@ -1,9 +1,10 @@
-import 'package:dartz/dartz.dart';
+import 'package:rustic/result.dart';
+import 'package:rustic/tuple.dart';
 import 'package:wine/domain/core/unique_id.dart';
 import 'package:wine/domain/series/series_failure.dart';
 
 /// @nodoc
 abstract class ISeriesRepository {
   /// @nodoc
-  Future<Either<SeriesFailure, Unit>> deleteSeries(UniqueID uid);
+  Future<Result<SeriesFailure, Unit>> deleteSeries(UniqueID uid);
 }

@@ -4,7 +4,7 @@ part 'series_failure.freezed.dart';
 
 /// @nodoc#
 @freezed
-abstract class SeriesFailure with _$SeriesFailure {
+class SeriesFailure with _$SeriesFailure {
   /// @nodoc
   const factory SeriesFailure.serverError() = ServerError;
 
