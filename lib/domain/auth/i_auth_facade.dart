@@ -9,7 +9,7 @@ import 'package:wine/domain/user/user.dart';
 /// @nodoc
 abstract class IAuthFacade {
   /// @nodoc
-  Future<Result<AuthFailure, Unit>> convertWithEmailAndPassword(
+  Future<Result<Unit, AuthFailure>> convertWithEmailAndPassword(
     EmailAddress emailAddress,
     Password password,
   );
@@ -24,20 +24,20 @@ abstract class IAuthFacade {
   bool get isLoggedIn;
 
   /// @nodoc
-  Future<Result<AuthFailure, Unit>> logInAnonymously();
+  Future<Result<Unit, AuthFailure>> logInAnonymously();
 
   /// @nodoc
-  Future<Result<AuthFailure, Unit>> logInWithEmailAndPassword(
+  Future<Result<Unit, AuthFailure>> logInWithEmailAndPassword(
     EmailAddress emailAddress,
     Password password,
   );
 
   /// @nodoc
-  Future<Result<AuthFailure, Unit>> logInWithGoogle();
+  Future<Result<Unit, AuthFailure>> logInWithGoogle();
 
   /// @nodoc
-  Future<Result<AuthFailure, Unit>> logOut();
+  Future<Result<Unit, AuthFailure>> logOut();
 
   /// @nodoc
-  Future<Result<AuthFailure, Unit>> resendVerificationEmail();
+  Future<Result<Unit, AuthFailure>> resendVerificationEmail();
 }
