@@ -15,7 +15,7 @@ abstract class IAuthFacade {
   );
 
   /// @nodoc
-  Future<Option<User>> getLoggedInUser();
+  Future<Option<User>?> getLoggedInUser();
 
   /// @nodoc
   bool get isAnonymous;
@@ -33,7 +33,7 @@ abstract class IAuthFacade {
   );
 
   /// @nodoc
-  Future<Result<Unit, AuthFailure>> logInWithGoogle();
+  Future<Result<Unit?, AuthFailure>> logInWithGoogle();
 
   /// @nodoc
   Future<Result<Unit, AuthFailure>> logOut();
