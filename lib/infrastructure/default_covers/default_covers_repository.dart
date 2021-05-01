@@ -1,7 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:dartz/dartz.dart';
 import 'package:hive/hive.dart';
 import 'package:injectable/injectable.dart';
+import 'package:rustic/result.dart';
+import 'package:rustic/tuple.dart';
 import 'package:wine/domain/default_covers/default_covers_failure.dart';
 import 'package:wine/domain/default_covers/i_default_covers_repository.dart';
 import 'package:wine/utils/constants/boxes.dart';
@@ -20,24 +21,24 @@ class DefaultCoversRepository implements IDefaultCoversRepository {
   final HiveInterface _hive;
 
   @override
-  Future<Either<DefaultCoversFailure, Unit>> cacheDefaultCoverURLs(
+  Future<Result<Unit, DefaultCoversFailure>> cacheDefaultCoverURLs(
     Map<String, String> urls,
   ) async {
     final box = await _hive.openBox<String>(defaultCoversBox);
 
     for (final key in urls.keys) {
-      await box.put(key, urls[key]);
+      await box.put(key, urls[key]!);
 
       final url = box.get(key);
       if (url == null) {
-        return left(const DefaultCoversFailure.defaultCoverURLsNotCached());
+        return const Err(DefaultCoversFailure.defaultCoverURLsNotCached());
       }
     }
-    return right(unit);
+    return const Ok(Unit());
   }
 
   @override
-  Future<Either<DefaultCoversFailure, String>> fetchDefaultCoverURLByKey(
+  Future<Result<String, DefaultCoversFailure>> fetchDefaultCoverURLByKey(
     String key,
   ) async {
     final box = await _hive.openBox<String>(defaultCoversBox);
@@ -45,20 +46,20 @@ class DefaultCoversRepository implements IDefaultCoversRepository {
     final url = box.get(key);
 
     if (url != null) {
-      return right(url);
+      return Ok(url);
     }
-    return left(const DefaultCoversFailure.defaultCoverURLsNotFetched());
+    return const Err(DefaultCoversFailure.defaultCoverURLsNotFetched());
   }
 
   @override
-  Future<Either<DefaultCoversFailure, Map<String, String>>>
+  Future<Result<Map<String, String>, DefaultCoversFailure>>
       loadDefaultCoverURLs() async {
     try {
       final querySnapshot =
           await _firestore.collection(defaultCoversPath).get();
 
-      if (querySnapshot.docs == null || querySnapshot.docs.isEmpty) {
-        return left(const DefaultCoversFailure.defaultCoverURLsNotLoaded());
+      if (querySnapshot.docs.isEmpty) {
+        return const Err(DefaultCoversFailure.defaultCoverURLsNotLoaded());
       }
 
       final data = <String, String>{};
@@ -67,11 +68,11 @@ class DefaultCoversRepository implements IDefaultCoversRepository {
 
         data[map['key'] as String] = map['coverURL'] as String;
       }
-      return right(data);
+      return Ok(data);
     } on FirebaseException catch (_) {
-      return left(const DefaultCoversFailure.serverError());
+      return const Err(DefaultCoversFailure.serverError());
     } catch (_) {
-      return left(const DefaultCoversFailure.unexpected());
+      return const Err(DefaultCoversFailure.unexpected());
     }
   }
 }
