@@ -22,7 +22,9 @@ Result<String, ValueFailure<String>> validateConfirmPassword(
 
 /// @nodoc
 Result<File, ValueFailure<File>> validateCoverFile(File file) {
-  if (file.path.isImage && file.existsSync()) {
+  final isImage = file.path.isImage;
+
+  if (isImage != null && isImage && file.existsSync()) {
     return Ok(file);
   }
   return Err(ValueFailure.invalidCoverFile(file));
@@ -30,7 +32,9 @@ Result<File, ValueFailure<File>> validateCoverFile(File file) {
 
 /// @nodoc
 Result<String, ValueFailure<String>> validateCoverURL(String input) {
-  if (input.isImage && isURL(input)) {
+  final isImage = input.isImage;
+
+  if (isImage != null && isImage && isURL(input)) {
     return Ok(input);
   }
   return Err(ValueFailure.invalidCoverURL(input));
