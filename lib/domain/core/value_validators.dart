@@ -1,6 +1,6 @@
 import 'dart:io';
 
-import 'package:dartz/dartz.dart';
+import 'package:rustic/result.dart';
 import 'package:string_validator/string_validator.dart';
 import 'package:stringr/stringr.dart';
 
@@ -10,109 +10,109 @@ import 'package:wine/utils/constants/core.dart';
 import 'package:wine/utils/constants/series.dart';
 
 /// @nodoc
-Either<ValueFailure<String>, String> validateConfirmPassword(
+Result<String, ValueFailure<String>> validateConfirmPassword(
   String input,
   String input2,
 ) {
   if (input == input2) {
-    return right(input);
+    return Ok(input);
   }
-  return left(ValueFailure.invalidConfirmPassword(input));
+  return Err(ValueFailure.invalidConfirmPassword(input));
 }
 
 /// @nodoc
-Either<ValueFailure<File>, File> validateCoverFile(File file) {
+Result<File, ValueFailure<File>> validateCoverFile(File file) {
   if (file.path.isImage && file.existsSync()) {
-    return right(file);
+    return Ok(file);
   }
-  return left(ValueFailure.invalidCoverFile(file));
+  return Err(ValueFailure.invalidCoverFile(file));
 }
 
 /// @nodoc
-Either<ValueFailure<String>, String> validateCoverURL(String input) {
+Result<String, ValueFailure<String>> validateCoverURL(String input) {
   if (input.isImage && isURL(input)) {
-    return right(input);
+    return Ok(input);
   }
-  return left(ValueFailure.invalidCoverURL(input));
+  return Err(ValueFailure.invalidCoverURL(input));
 }
 
 /// @nodoc
-Either<ValueFailure<String>, String> validateEmailAddress(String input) {
+Result<String, ValueFailure<String>> validateEmailAddress(String input) {
   if (isEmail(input)) {
-    return right(input);
+    return Ok(input);
   }
-  return left(ValueFailure.invalidEmailAddress(input));
+  return Err(ValueFailure.invalidEmailAddress(input));
 }
 
 /// @nodoc
-Either<ValueFailure<String>, String> validateGenre(
+Result<String, ValueFailure<String>> validateGenre(
   String input, {
   bool isOptional = false,
 }) {
   if (input.isNotEmpty || isOptional) {
-    return right(input);
+    return Ok(input);
   }
-  return left(ValueFailure.emptySelection(input));
+  return Err(ValueFailure.emptySelection(input));
 }
 
 /// @nodoc
-Either<ValueFailure<String>, String> validateLanguage(String input) {
+Result<String, ValueFailure<String>> validateLanguage(String input) {
   if (input.isNotEmpty) {
-    return right(input);
+    return Ok(input);
   }
-  return left(ValueFailure.emptySelection(input));
+  return Err(ValueFailure.emptySelection(input));
 }
 
 /// @nodoc
-Either<ValueFailure<String>, String> validatePassword(String input) {
+Result<String, ValueFailure<String>> validatePassword(String input) {
   const passwordRegex =
       r'^(?=.*\d)(?=.*[~!@#$%^&*()_\-+=|\\{}[\]:;<>?/])(?=.*[A-Z])(?=.*[a-z])\S{6,256}$';
   if (RegExp(passwordRegex).hasMatch(input)) {
-    return right(input);
+    return Ok(input);
   }
-  return left(ValueFailure.invalidPassword(input));
+  return Err(ValueFailure.invalidPassword(input));
 }
 
 /// @nodoc
-Either<ValueFailure<String>, String> validateSubtitle(String input) {
+Result<String, ValueFailure<String>> validateSubtitle(String input) {
   if (input.countWords() > subtitleMaxWords) {
-    return left(ValueFailure.tooLongInput(input));
+    return Err(ValueFailure.tooLongInput(input));
   }
-  return right(input);
+  return Ok(input);
 }
 
 /// @nodoc
-Either<ValueFailure<String>, String> validateSummary(String input) {
+Result<String, ValueFailure<String>> validateSummary(String input) {
   if (input.isEmpty) {
-    return left(ValueFailure.emptyInput(input));
+    return Err(ValueFailure.emptyInput(input));
   } else if (input.countWords() > summaryMaxWords) {
-    return left(ValueFailure.tooLongInput(input));
+    return Err(ValueFailure.tooLongInput(input));
   }
-  return right(input);
+  return Ok(input);
 }
 
 /// @nodoc
-Either<ValueFailure<String>, String> validateTitle(String input) {
+Result<String, ValueFailure<String>> validateTitle(String input) {
   if (input.isEmpty) {
-    return left(ValueFailure.emptyInput(input));
+    return Err(ValueFailure.emptyInput(input));
   } else if (input.countWords() > titleMaxWords) {
-    return left(ValueFailure.tooLongInput(input));
+    return Err(ValueFailure.tooLongInput(input));
   }
-  return right(input);
+  return Ok(input);
 }
 
 /// @nodoc
-Either<ValueFailure<String>, String> validateUniqueID(String input) {
-  if (input != null && input.isNotEmpty) {
-    return right(input);
-  }
-  return left(ValueFailure.invalidUniqueID(input));
-}
-
-/// @nodoc
-Either<ValueFailure<String>, String> validateUsername(String input) {
+Result<String, ValueFailure<String>> validateUniqueID(String input) {
   if (input.isNotEmpty) {
-    return right(input);
+    return Ok(input);
   }
-  return left(ValueFailure.invalidUsername(input));
+  return Err(ValueFailure.invalidUniqueID(input));
+}
+
+/// @nodoc
+Result<String, ValueFailure<String>> validateUsername(String input) {
+  if (input.isNotEmpty) {
+    return Ok(input);
+  }
+  return Err(ValueFailure.invalidUsername(input));
 }
