@@ -1,4 +1,4 @@
-import 'package:dartz/dartz.dart';
+import 'package:rustic/result.dart';
 import 'package:wine/domain/core/value_failure.dart';
 import 'package:wine/domain/core/value_object.dart';
 import 'package:wine/domain/core/value_validators.dart';
@@ -7,11 +7,9 @@ import 'package:wine/domain/core/value_validators.dart';
 class ConfirmPassword extends ValueObject<String> {
   /// @nodoc
   factory ConfirmPassword(String input, String input2) {
-    assert(input != null);
-    assert(input2 != null);
     return ConfirmPassword._(
       validatePassword(input)
-          .flatMap((String value) => validateConfirmPassword(value, input2)),
+          .and((String value) => validateConfirmPassword(value, input2)),
     );
   }
 
@@ -19,5 +17,5 @@ class ConfirmPassword extends ValueObject<String> {
   const ConfirmPassword._(this.value);
 
   @override
-  final Either<ValueFailure<String>, String> value;
+  final Result<String, ValueFailure<String>> value;
 }

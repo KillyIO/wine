@@ -1,4 +1,4 @@
-import 'package:dartz/dartz.dart';
+import 'package:rustic/result.dart';
 import 'package:wine/domain/core/value_failure.dart';
 import 'package:wine/domain/core/value_object.dart';
 import 'package:wine/domain/core/value_validators.dart';
@@ -7,7 +7,6 @@ import 'package:wine/domain/core/value_validators.dart';
 class Password extends ValueObject<String> {
   /// @nodoc
   factory Password(String input) {
-    assert(input != null);
     return Password._(
       validatePassword(input),
     );
@@ -17,5 +16,5 @@ class Password extends ValueObject<String> {
   const Password._(this.value);
 
   @override
-  final Either<ValueFailure<String>, String> value;
+  final Result<String, ValueFailure<String>> value;
 }
