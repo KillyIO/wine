@@ -4,7 +4,7 @@ part 'auth_failure.freezed.dart';
 
 /// @nodoc
 @freezed
-abstract class AuthFailure with _$AuthFailure {
+class AuthFailure with _$AuthFailure {
   /// @nodoc
   const factory AuthFailure.cancelledByUser() = CancelledByUser;
 
