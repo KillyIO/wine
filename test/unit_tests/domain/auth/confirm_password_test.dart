@@ -1,5 +1,5 @@
-import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:rustic/result.dart';
 import 'package:wine/domain/auth/confirm_password.dart';
 import 'package:wine/domain/core/value_failure.dart';
 
@@ -8,21 +8,14 @@ import '../../utils/constants.dart';
 void main() {
   group('ConfirmPassword -', () {
     test(
-      'When inputs null Then throw AssertionError',
-      () {
-        expect(
-          () => ConfirmPassword(null, null),
-          throwsAssertionError,
-        );
-      },
-    );
-
-    test(
       'When inputs valid And inputs equal Then return input',
       () {
         final password = ConfirmPassword(testPassword, testPassword);
 
-        expect(password.value, right(testPassword));
+        expect(
+          password.value,
+          const Ok<String, ValueFailure<String>>(testPassword),
+        );
       },
     );
 
@@ -33,7 +26,9 @@ void main() {
 
         expect(
           password.value,
-          left(const ValueFailure<String>.invalidPassword(testInvalidPassword)),
+          const Err<String, ValueFailure<String>>(
+            ValueFailure<String>.invalidPassword(testInvalidPassword),
+          ),
         );
       },
     );
@@ -46,7 +41,9 @@ void main() {
 
         expect(
           password.value,
-          left(const ValueFailure<String>.invalidConfirmPassword(testPassword)),
+          const Err<String, ValueFailure<String>>(
+            ValueFailure<String>.invalidConfirmPassword(testPassword),
+          ),
         );
       },
     );
