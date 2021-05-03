@@ -1,5 +1,5 @@
-import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:rustic/result.dart';
 import 'package:wine/domain/core/title.dart';
 import 'package:wine/domain/core/value_failure.dart';
 
@@ -7,17 +7,10 @@ import '../../utils/constants.dart';
 
 void main() {
   group('Title -', () {
-    test('When input null Then throw AssertionError', () {
-      expect(
-        () => Title(null),
-        throwsAssertionError,
-      );
-    });
-
     test('When input valid Then return input', () {
       final title = Title(testTitle);
 
-      expect(title.value, right(testTitle));
+      expect(title.value, const Ok<String, ValueFailure<String>>(testTitle));
     });
 
     test('When input empty Then return emptyInput', () {
@@ -25,7 +18,9 @@ void main() {
 
       expect(
         title.value,
-        left(const ValueFailure<String>.emptyInput(testEmpty)),
+        const Err<String, ValueFailure<String>>(
+          ValueFailure<String>.emptyInput(testEmpty),
+        ),
       );
     });
 
@@ -36,8 +31,8 @@ void main() {
 
         expect(
           title.value,
-          left(
-            const ValueFailure<String>.tooLongInput(testInvalidTitleTooLong),
+          const Err<String, ValueFailure<String>>(
+            ValueFailure<String>.tooLongInput(testInvalidTitleTooLong),
           ),
         );
       },

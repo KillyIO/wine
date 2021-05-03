@@ -1,5 +1,5 @@
-import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:rustic/result.dart';
 import 'package:wine/domain/core/unique_id.dart';
 import 'package:wine/domain/core/value_failure.dart';
 
@@ -19,16 +19,6 @@ void main() {
 
     group('fromUniqueString -', () {
       test(
-        'When input null Then throw AssertionError',
-        () {
-          expect(
-            () => UniqueID.fromUniqueString(null),
-            throwsAssertionError,
-          );
-        },
-      );
-
-      test(
         'When input valid Then return input',
         () {
           final uid = UniqueID.fromUniqueString(testUid);
@@ -44,7 +34,9 @@ void main() {
 
           expect(
             uid.value,
-            left(const ValueFailure<String>.invalidUniqueID(testInvalidUid)),
+            const Err<String, ValueFailure<String>>(
+              ValueFailure<String>.invalidUniqueID(testInvalidUid),
+            ),
           );
         },
       );
