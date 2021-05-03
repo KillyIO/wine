@@ -29,10 +29,10 @@ void main() {
       expect(series.authorUID.getOrCrash(), testUid);
       expect(series.coverURL.getOrCrash(), testCoverURL);
       expect(series.genre.getOrCrash(), testGenre);
-      expect(series.genreOptional.getOrCrash(), testGenreOptional);
+      expect(series.genreOptional?.getOrCrash(), testGenreOptional);
       expect(series.isNSFW, false);
       expect(series.language.getOrCrash(), testLanguage);
-      expect(series.subtitle.getOrCrash(), testSubtitle);
+      expect(series.subtitle?.getOrCrash(), testSubtitle);
       expect(series.summary.getOrCrash(), testSummary);
       expect(series.title.getOrCrash(), testTitle);
       expect(series.uid.getOrCrash(), testUid);

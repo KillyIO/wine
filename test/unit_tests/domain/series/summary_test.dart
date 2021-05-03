@@ -1,5 +1,5 @@
-import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
+import 'package:rustic/result.dart';
 import 'package:wine/domain/core/value_failure.dart';
 import 'package:wine/domain/series/summary.dart';
 
@@ -7,17 +7,13 @@ import '../../utils/constants.dart';
 
 void main() {
   group('Summary -', () {
-    test('When input null Then throw AssertionError', () {
-      expect(
-        () => Summary(null),
-        throwsAssertionError,
-      );
-    });
-
     test('When input valid Then return input', () {
       final summary = Summary(testSummary);
 
-      expect(summary.value, right(testSummary));
+      expect(
+        summary.value,
+        const Ok<String, ValueFailure<String>>(testSummary),
+      );
     });
 
     test('When input empty Then return input', () {
@@ -25,7 +21,9 @@ void main() {
 
       expect(
         summary.value,
-        left(const ValueFailure<String>.emptyInput(testEmpty)),
+        const Err<String, ValueFailure<String>>(
+          ValueFailure<String>.emptyInput(testEmpty),
+        ),
       );
     });
 
@@ -34,8 +32,8 @@ void main() {
 
       expect(
         summary.value,
-        left(
-          const ValueFailure<String>.tooLongInput(testInvalidSummaryTooLong),
+        const Err<String, ValueFailure<String>>(
+          ValueFailure<String>.tooLongInput(testInvalidSummaryTooLong),
         ),
       );
     });
