@@ -1,8 +1,8 @@
 import 'dart:io';
 
-import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
+import 'package:rustic/result.dart';
 import 'package:wine/domain/core/cover_url.dart';
 import 'package:wine/domain/core/value_failure.dart';
 
@@ -15,17 +15,13 @@ class MockFile extends Mock implements File {
 
 void main() {
   group('CoverURL -', () {
-    test('When input null Then throw AssertionError', () {
-      expect(
-        () => CoverURL(null),
-        throwsAssertionError,
-      );
-    });
-
     test('When input URL Then return input', () {
       final coverURL = CoverURL(testCoverURL);
 
-      expect(coverURL.value, right(testCoverURL));
+      expect(
+        coverURL.value,
+        const Ok<String, ValueFailure<String>>(testCoverURL),
+      );
     });
 
     test('When input not image Then return invalidCoverURL', () {
@@ -33,7 +29,9 @@ void main() {
 
       expect(
         coverURL.value,
-        left(const ValueFailure.invalidCoverURL(testInvalidCoverURLExtension)),
+        const Err<String, ValueFailure<String>>(
+          ValueFailure.invalidCoverURL(testInvalidCoverURLExtension),
+        ),
       );
     });
 
@@ -42,22 +40,17 @@ void main() {
 
       expect(
         coverURL.value,
-        left(const ValueFailure.invalidCoverURL(testInvalidCoverURL)),
+        const Err<String, ValueFailure<String>>(
+          ValueFailure.invalidCoverURL(testInvalidCoverURL),
+        ),
       );
     });
 
     group('fromFile -', () {
-      File file;
+      late File file;
 
       setUp(() {
         file = MockFile();
-      });
-
-      test('When file null Then return AssertionError', () {
-        expect(
-          () => CoverURL.fromFile(null),
-          throwsAssertionError,
-        );
       });
 
       test('When file exists Then return file', () {
@@ -65,7 +58,7 @@ void main() {
 
         final coverURL = CoverURL.fromFile(file);
 
-        expect(coverURL.value, right(file));
+        expect(coverURL.value, Ok<File, ValueFailure<File>>(file));
       });
 
       test('When file not exists Then return invalidCoverFile', () {
@@ -73,7 +66,12 @@ void main() {
 
         final coverURL = CoverURL.fromFile(file);
 
-        expect(coverURL.value, left(ValueFailure.invalidCoverFile(file)));
+        expect(
+          coverURL.value,
+          Err<File, ValueFailure<File>>(
+            ValueFailure.invalidCoverFile(file),
+          ),
+        );
       });
     });
   });
