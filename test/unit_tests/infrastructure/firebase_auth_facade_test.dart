@@ -1,9 +1,9 @@
-import 'package:dartz/dartz.dart';
 import 'package:firebase_auth/firebase_auth.dart' as auth;
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:mocktail/mocktail.dart';
+import 'package:rustic/tuple.dart';
 import 'package:wine/domain/auth/auth_failure.dart';
 import 'package:wine/domain/auth/email_address.dart';
 
@@ -16,12 +16,12 @@ import '../../mocks/google_sign_in_mocks.dart';
 import '../utils/constants.dart';
 
 void main() {
-  FirebaseAuth _firebaseAuth;
-  GoogleSignIn _googleSignIn;
+  late FirebaseAuth _firebaseAuth;
+  late GoogleSignIn _googleSignIn;
 
-  auth.User _firebaseUser;
+  late auth.User _firebaseUser;
 
-  IAuthFacade _authFacade;
+  late IAuthFacade _authFacade;
 
   setUp(() {
     _firebaseAuth = MockFirebaseAuth();
@@ -38,18 +38,22 @@ void main() {
     group('convertWithEmailAndPassword -', () {
       setUp(() {
         when(() => _firebaseAuth.currentUser).thenReturn(_firebaseUser);
+        when(_firebaseUser.sendEmailVerification).thenAnswer((_) async => null);
       });
 
       test('When credentials valid Then return Unit', () async {
+        when(() => _firebaseUser.linkWithCredential(any()))
+            .thenAnswer((_) async => MockUserCredential());
+
         final result = await _authFacade.convertWithEmailAndPassword(
           EmailAddress(testEmailAddress),
           Password(testPassword),
         );
 
-        expect(result.isRight(), true);
-        result.fold(
+        expect(result.isOk, true);
+        result.match(
+          (ok) => expect(ok, const Unit()),
           (_) {},
-          (success) => expect(success, unit),
         );
 
         verify(_firebaseUser.sendEmailVerification).called(1);
@@ -66,10 +70,10 @@ void main() {
             Password(testPassword),
           );
 
-          expect(result.isLeft(), true);
-          result.fold(
-            (failure) => expect(failure, isA<EmailAlreadyInUse>()),
+          expect(result.isErr, true);
+          result.match(
             (_) {},
+            (err) => expect(err, isA<EmailAlreadyInUse>()),
           );
         },
       );
@@ -83,10 +87,10 @@ void main() {
           Password(testPassword),
         );
 
-        expect(result.isLeft(), true);
-        result.fold(
-          (failure) => expect(failure, isA<ServerError>()),
+        expect(result.isErr, true);
+        result.match(
           (_) {},
+          (err) => expect(err, isA<ServerError>()),
         );
       });
 
@@ -101,10 +105,10 @@ void main() {
             Password(testPassword),
           );
 
-          expect(result.isLeft(), true);
-          result.fold(
-            (failure) => expect(failure, isA<Unexpected>()),
+          expect(result.isErr, true);
+          result.match(
             (_) {},
+            (errr) => expect(errr, isA<Unexpected>()),
           );
         },
       );
@@ -116,7 +120,7 @@ void main() {
 
         final result = await _authFacade.getLoggedInUser();
 
-        expect(result.isNone(), true);
+        expect(result?.isNone, true);
       });
 
       test('When user logged in Then return Some User', () async {
@@ -124,10 +128,10 @@ void main() {
 
         final result = await _authFacade.getLoggedInUser();
 
-        expect(result.isSome(), true);
-        result.fold(
-          () {},
+        expect(result?.isSome, true);
+        result?.match(
           (some) => expect(some, testUser),
+          () {},
         );
       });
     });
@@ -175,10 +179,10 @@ void main() {
 
         final result = await _authFacade.logInAnonymously();
 
-        expect(result.isRight(), true);
-        result.fold(
+        expect(result.isOk, true);
+        result.match(
+          (ok) => expect(ok, isA<Unit>()),
           (_) {},
-          (success) => expect(success, isA<Unit>()),
         );
       });
 
@@ -188,10 +192,10 @@ void main() {
 
         final result = await _authFacade.logInAnonymously();
 
-        expect(result.isLeft(), true);
-        result.fold(
-          (failure) => expect(failure, isA<ServerError>()),
+        expect(result.isErr, true);
+        result.match(
           (_) {},
+          (err) => expect(err, isA<ServerError>()),
         );
       });
 
@@ -200,10 +204,10 @@ void main() {
 
         final result = await _authFacade.logInAnonymously();
 
-        expect(result.isLeft(), true);
-        result.fold(
-          (failure) => expect(failure, isA<Unexpected>()),
+        expect(result.isErr, true);
+        result.match(
           (_) {},
+          (err) => expect(err, isA<Unexpected>()),
         );
       });
     });
@@ -211,6 +215,7 @@ void main() {
     group('logInWithEmailAndPassword -', () {
       setUp(() {
         when(() => _firebaseAuth.currentUser).thenReturn(_firebaseUser);
+        when(_firebaseUser.delete).thenAnswer((_) async => null);
       });
 
       test(
@@ -228,10 +233,10 @@ void main() {
             Password(testPassword),
           );
 
-          expect(result.isRight(), true);
-          result.fold(
+          expect(result.isOk, true);
+          result.match(
+            (ok) => expect(ok, const Unit()),
             (_) {},
-            (success) => expect(success, unit),
           );
         },
       );
@@ -239,6 +244,8 @@ void main() {
       test(
         '''When wrong email/password combination Then return InvalidEmailAndPasswordCombination''',
         () async {
+          when(_firebaseAuth.signInAnonymously)
+              .thenAnswer((_) async => MockUserCredential());
           when(
             () => _firebaseAuth.signInWithEmailAndPassword(
               email: any(named: 'email'),
@@ -251,18 +258,20 @@ void main() {
             Password(testPassword),
           );
 
-          expect(result.isLeft(), true);
-          result.fold(
-            (failure) => expect(
-              failure,
+          expect(result.isErr, true);
+          result.match(
+            (_) {},
+            (err) => expect(
+              err,
               isA<InvalidEmailAndPasswordCombination>(),
             ),
-            (_) {},
           );
         },
       );
 
       test('When server error occurs Then return ServerError', () async {
+        when(_firebaseAuth.signInAnonymously)
+            .thenAnswer((_) async => MockUserCredential());
         when(
           () => _firebaseAuth.signInWithEmailAndPassword(
             email: any(named: 'email'),
@@ -275,10 +284,10 @@ void main() {
           Password(testPassword),
         );
 
-        expect(result.isLeft(), true);
-        result.fold(
-          (failure) => expect(failure, isA<ServerError>()),
+        expect(result.isErr, true);
+        result.match(
           (_) {},
+          (err) => expect(err, isA<ServerError>()),
         );
       });
 
@@ -295,10 +304,10 @@ void main() {
           Password(testPassword),
         );
 
-        expect(result.isLeft(), true);
-        result.fold(
-          (failure) => expect(failure, isA<Unexpected>()),
+        expect(result.isErr, true);
+        result.match(
           (_) {},
+          (err) => expect(err, isA<Unexpected>()),
         );
       });
     });
@@ -306,6 +315,14 @@ void main() {
     group('logInWithGoogle -', () {
       setUp(() {
         when(() => _firebaseAuth.currentUser).thenReturn(_firebaseUser);
+        when(
+          () => _firebaseUser.updateProfile(
+            displayName: any(named: 'displayName'),
+            photoURL: any(named: 'photoURL'),
+          ),
+        ).thenAnswer((_) async => null);
+        when(_firebaseUser.delete).thenAnswer((_) async => null);
+        when(_firebaseUser.reload).thenAnswer((_) async => null);
       });
 
       test('When user logged in Then return Unit', () async {
@@ -318,10 +335,10 @@ void main() {
 
         final result = await _authFacade.logInWithGoogle();
 
-        expect(result.isRight(), true);
-        result.fold(
+        expect(result.isOk, true);
+        result.match(
+          (ok) => expect(ok, const Unit()),
           (_) {},
-          (success) => expect(success, unit),
         );
       });
 
@@ -337,10 +354,10 @@ void main() {
 
         final result = await _authFacade.logInWithGoogle();
 
-        expect(result.isRight(), true);
-        result.fold(
+        expect(result.isOk, true);
+        result.match(
+          (ok) => expect(ok, const Unit()),
           (_) {},
-          (success) => expect(success, unit),
         );
       });
 
@@ -349,10 +366,10 @@ void main() {
 
         final result = await _authFacade.logInWithGoogle();
 
-        expect(result.isLeft(), true);
-        result.fold(
-          (failure) => expect(failure, isA<CancelledByUser>()),
+        expect(result.isErr, true);
+        result.match(
           (_) {},
+          (err) => expect(err, isA<CancelledByUser>()),
         );
       });
 
@@ -361,10 +378,10 @@ void main() {
 
         final result = await _authFacade.logInWithGoogle();
 
-        expect(result.isLeft(), true);
-        result.fold(
-          (failure) => expect(failure, isA<ServerError>()),
+        expect(result.isErr, true);
+        result.match(
           (_) {},
+          (err) => expect(err, isA<ServerError>()),
         );
       });
 
@@ -373,10 +390,10 @@ void main() {
 
         final result = await _authFacade.logInWithGoogle();
 
-        expect(result.isLeft(), true);
-        result.fold(
-          (failure) => expect(failure, isA<Unexpected>()),
+        expect(result.isErr, true);
+        result.match(
           (_) {},
+          (err) => expect(err, isA<Unexpected>()),
         );
       });
     });
@@ -395,10 +412,10 @@ void main() {
 
         final result = await _authFacade.logOut();
 
-        expect(result.isRight(), true);
-        result.fold(
+        expect(result.isOk, true);
+        result.match(
+          (ok) => expect(ok, isA<Unit>()),
           (_) {},
-          (success) => expect(success, isA<Unit>()),
         );
       });
 
@@ -409,10 +426,10 @@ void main() {
 
         final result = await _authFacade.logOut();
 
-        expect(result.isLeft(), true);
-        result.fold(
-          (failure) => expect(failure, isA<UnableToSignOut>()),
+        expect(result.isErr, true);
+        result.match(
           (_) {},
+          (err) => expect(err, isA<UnableToSignOut>()),
         );
       });
 
@@ -421,10 +438,10 @@ void main() {
 
         final result = await _authFacade.logOut();
 
-        expect(result.isLeft(), true);
-        result.fold(
-          (failure) => expect(failure, isA<Unexpected>()),
+        expect(result.isErr, true);
+        result.match(
           (_) {},
+          (err) => expect(err, isA<Unexpected>()),
         );
       });
     });
@@ -432,13 +449,14 @@ void main() {
     group('resendVerificationEmail -', () {
       test('When verification email sent Then return Unit', () async {
         when(() => _firebaseAuth.currentUser).thenReturn(_firebaseUser);
+        when(_firebaseUser.sendEmailVerification).thenAnswer((_) async => null);
 
         final result = await _authFacade.resendVerificationEmail();
 
-        expect(result.isRight(), true);
-        result.fold(
+        expect(result.isOk, true);
+        result.match(
+          (ok) => expect(ok, isA<Unit>()),
           (_) {},
-          (success) => expect(success, isA<Unit>()),
         );
       });
 
@@ -447,10 +465,10 @@ void main() {
 
         final result = await _authFacade.resendVerificationEmail();
 
-        expect(result.isLeft(), true);
-        result.fold(
-          (failure) => expect(failure, isA<Unexpected>()),
+        expect(result.isErr, true);
+        result.match(
           (_) {},
+          (err) => expect(err, isA<Unexpected>()),
         );
       });
 
@@ -462,10 +480,10 @@ void main() {
 
           final result = await _authFacade.resendVerificationEmail();
 
-          expect(result.isLeft(), true);
-          result.fold(
-            (failure) => expect(failure, isA<Unexpected>()),
+          expect(result.isErr, true);
+          result.match(
             (_) {},
+            (err) => expect(err, isA<Unexpected>()),
           );
         },
       );
