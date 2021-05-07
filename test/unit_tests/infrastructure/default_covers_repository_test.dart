@@ -1,8 +1,8 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:hive/hive.dart';
 import 'package:mocktail/mocktail.dart';
+import 'package:rustic/tuple.dart';
 import 'package:wine/domain/default_covers/default_covers_failure.dart';
 import 'package:wine/domain/default_covers/i_default_covers_repository.dart';
 import 'package:wine/infrastructure/default_covers/default_covers_repository.dart';
@@ -12,12 +12,12 @@ import '../../mocks/hive_mocks.dart';
 import '../utils/constants.dart';
 
 void main() {
-  IDefaultCoversRepository _defaultCoversRepository;
+  late IDefaultCoversRepository _defaultCoversRepository;
 
-  FirebaseFirestore _firestore;
+  late FirebaseFirestore _firestore;
 
-  HiveInterface _hive;
-  Box<String> _box = MockBox<String>();
+  late HiveInterface _hive;
+  late Box<String> _box = MockBox<String>();
 
   setUp(() {
     _firestore = MockFirebaseFirestore();
@@ -29,16 +29,20 @@ void main() {
   });
 
   group('cacheDefaultCoverURLs -', () {
+    setUp(() {
+      when(() => _box.put(any(), any())).thenAnswer((_) async => null);
+    });
+
     test('When covers cached Then return Unit', () async {
       when(() => _box.get(any())).thenReturn('coverURL');
 
       final result = await _defaultCoversRepository
           .cacheDefaultCoverURLs(testDefaultCovers);
 
-      expect(result.isRight(), true);
-      result.fold(
+      expect(result.isOk, true);
+      result.match(
+        (ok) => expect(ok, const Unit()),
         (_) {},
-        (success) => expect(success, unit),
       );
 
       verify(() => _box.put(any(), any())).called(2);
@@ -54,13 +58,13 @@ void main() {
         final result = await _defaultCoversRepository
             .cacheDefaultCoverURLs(testDefaultCovers);
 
-        expect(result.isLeft(), true);
-        result.fold(
-          (failure) => expect(
-            failure,
+        expect(result.isErr, true);
+        result.match(
+          (_) {},
+          (err) => expect(
+            err,
             const DefaultCoversFailure.defaultCoverURLsNotCached(),
           ),
-          (_) {},
         );
       },
     );
@@ -73,10 +77,10 @@ void main() {
       final result =
           await _defaultCoversRepository.fetchDefaultCoverURLByKey('string');
 
-      expect(result.isRight(), true);
-      result.fold(
+      expect(result.isOk, true);
+      result.match(
+        (ok) => expect(ok, 'coverURL'),
         (_) {},
-        (success) => expect(success, 'coverURL'),
       );
     });
 
@@ -88,22 +92,22 @@ void main() {
         final result =
             await _defaultCoversRepository.fetchDefaultCoverURLByKey('string');
 
-        expect(result.isLeft(), true);
-        result.fold(
-          (failure) => expect(
-            failure,
+        expect(result.isErr, true);
+        result.match(
+          (_) {},
+          (err) => expect(
+            err,
             const DefaultCoversFailure.defaultCoverURLsNotFetched(),
           ),
-          (_) {},
         );
       },
     );
   });
 
   group('loadDefaultCoverURLs -', () {
-    MockCollectionReference _collectionReference;
-    MockQuerySnapshot _querySnapshot;
-    MockQueryDocumentSnapshot _queryDocumentSnapshot;
+    late MockCollectionReference _collectionReference;
+    late MockQuerySnapshot _querySnapshot;
+    late MockQueryDocumentSnapshot _queryDocumentSnapshot;
 
     setUp(() {
       _collectionReference = MockCollectionReference();
@@ -125,10 +129,10 @@ void main() {
       final result = await _defaultCoversRepository.loadDefaultCoverURLs();
       final expectedMap = {'key': 'coverURL'};
 
-      expect(result.isRight(), true);
-      result.fold(
+      expect(result.isOk, true);
+      result.match(
+        (ok) => expect(ok, expectedMap),
         (_) {},
-        (success) => expect(success, expectedMap),
       );
     });
 
@@ -139,13 +143,13 @@ void main() {
 
       final result = await _defaultCoversRepository.loadDefaultCoverURLs();
 
-      expect(result.isLeft(), true);
-      result.fold(
+      expect(result.isErr, true);
+      result.match(
+        (_) {},
         (failure) => expect(
           failure,
           const DefaultCoversFailure.defaultCoverURLsNotLoaded(),
         ),
-        (_) {},
       );
     });
 
@@ -155,28 +159,28 @@ void main() {
 
       final result = await _defaultCoversRepository.loadDefaultCoverURLs();
 
-      expect(result.isLeft(), true);
-      result.fold(
+      expect(result.isErr, true);
+      result.match(
+        (_) {},
         (failure) => expect(
           failure,
           const DefaultCoversFailure.serverError(),
         ),
-        (_) {},
       );
     });
 
     test('When unexpected error occurs Then return Unexpected', () async {
-      when(() => _firestore.collection(any())).thenReturn(null);
+      when(() => _firestore.collection(any())).thenThrow(testUnexpected);
 
       final result = await _defaultCoversRepository.loadDefaultCoverURLs();
 
-      expect(result.isLeft(), true);
-      result.fold(
+      expect(result.isErr, true);
+      result.match(
+        (_) {},
         (failure) => expect(
           failure,
           const DefaultCoversFailure.unexpected(),
         ),
-        (_) {},
       );
     });
   });
