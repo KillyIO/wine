@@ -1,9 +1,9 @@
-import 'package:dartz/dartz.dart';
 import 'package:firebase_auth/firebase_auth.dart' as auth;
 import 'package:flutter_test/flutter_test.dart';
 import 'package:hive/hive.dart';
 import 'package:mocktail/mocktail.dart';
-import 'package:wine/domain/settings/i_ssettings_repository.dart';
+import 'package:rustic/tuple.dart';
+import 'package:wine/domain/settings/i_settings_repository.dart';
 import 'package:wine/domain/settings/settings_failure.dart';
 import 'package:wine/infrastructure/settings/hive_settings.dart';
 import 'package:wine/infrastructure/settings/settings_repository.dart';
@@ -13,12 +13,12 @@ import '../../mocks/hive_mocks.dart';
 import '../utils/constants.dart';
 
 void main() {
-  ISettingsRepository _settingsRepository;
+  late ISettingsRepository _settingsRepository;
 
-  auth.FirebaseAuth _firebaseAuth;
+  late auth.FirebaseAuth _firebaseAuth;
 
-  HiveInterface _hive;
-  Box<HiveSettings> _box = MockBox<HiveSettings>();
+  late HiveInterface _hive;
+  late Box<HiveSettings> _box = MockBox<HiveSettings>();
 
   setUp(() {
     _firebaseAuth = MockFirebaseAuth();
@@ -26,21 +26,29 @@ void main() {
 
     _settingsRepository = SettingsRepository(_firebaseAuth, _hive);
 
+    registerFallbackValue<HiveSettings>(MockHiveSettings());
+
     when(() => _hive.openBox(any())).thenAnswer((_) async => _box);
 
     when(() => _firebaseAuth.currentUser).thenReturn(MockUser());
+
+    when(() => _box.put(any(), any())).thenAnswer((_) async => null);
   });
 
   group('deleteSettings -', () {
+    setUp(() {
+      when(() => _box.delete(any())).thenAnswer((_) async => null);
+    });
+
     test('When settings deleted Then return Unit', () async {
       when(() => _box.get(any())).thenReturn(null);
 
       final result = await _settingsRepository.deleteSettings();
 
-      expect(result.isRight(), true);
-      result.fold(
+      expect(result.isOk, true);
+      result.match(
+        (ok) => expect(ok, const Unit()),
         (_) {},
-        (success) => expect(success, unit),
       );
     });
 
@@ -49,10 +57,10 @@ void main() {
 
       final result = await _settingsRepository.deleteSettings();
 
-      expect(result.isLeft(), true);
-      result.fold(
-        (failure) => expect(failure, isA<SettingsNotDeleted>()),
+      expect(result.isErr, true);
+      result.match(
         (_) {},
+        (err) => expect(err, isA<SettingsNotDeleted>()),
       );
     });
   });
@@ -63,10 +71,10 @@ void main() {
 
       final result = await _settingsRepository.fetchSettings();
 
-      expect(result.isRight(), true);
-      result.fold(
+      expect(result.isOk, true);
+      result.match(
+        (ok) => expect(ok, testHiveSettings.toDomain()),
         (_) {},
-        (success) => expect(success, testHiveSettings.toDomain()),
       );
     });
 
@@ -75,10 +83,10 @@ void main() {
 
       final result = await _settingsRepository.fetchSettings();
 
-      expect(result.isLeft(), true);
-      result.fold(
-        (failure) => expect(failure, isA<SettingsNotFound>()),
+      expect(result.isErr, true);
+      result.match(
         (_) {},
+        (err) => expect(err, isA<SettingsNotFound>()),
       );
     });
   });
@@ -89,10 +97,10 @@ void main() {
 
       final result = await _settingsRepository.initializeSettings();
 
-      expect(result.isRight(), true);
-      result.fold(
+      expect(result.isOk, true);
+      result.match(
+        (ok) => expect(ok, const Unit()),
         (_) {},
-        (success) => expect(success, unit),
       );
     });
 
@@ -103,10 +111,10 @@ void main() {
 
         final result = await _settingsRepository.initializeSettings();
 
-        expect(result.isLeft(), true);
-        result.fold(
-          (failure) => expect(failure, isA<SettingsNotInitialized>()),
+        expect(result.isErr, true);
+        result.match(
           (_) {},
+          (err) => expect(err, isA<SettingsNotInitialized>()),
         );
       },
     );
@@ -119,10 +127,10 @@ void main() {
       final result =
           await _settingsRepository.updateSettings(testHiveSettings.toDomain());
 
-      expect(result.isRight(), true);
-      result.fold(
+      expect(result.isOk, true);
+      result.match(
+        (ok) => expect(ok, const Unit()),
         (_) {},
-        (success) => expect(success, unit),
       );
     });
 
@@ -135,10 +143,10 @@ void main() {
       final result =
           await _settingsRepository.updateSettings(testHiveSettings.toDomain());
 
-      expect(result.isLeft(), true);
-      result.fold(
-        (failure) => expect(failure, isA<SettingsNotUpdated>()),
+      expect(result.isErr, true);
+      result.match(
         (_) {},
+        (err) => expect(err, isA<SettingsNotUpdated>()),
       );
     });
   });
