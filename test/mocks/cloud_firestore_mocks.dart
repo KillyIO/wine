@@ -3,14 +3,16 @@ import 'package:mocktail/mocktail.dart';
 
 class MockFirebaseFirestore extends Mock implements FirebaseFirestore {}
 
-class MockCollectionReference extends Mock implements CollectionReference {}
+class MockCollectionReference<T> extends Mock
+    implements CollectionReference<T> {}
 
 class MockDocumentReference extends Mock implements DocumentReference {}
 
 class MockDocumentSnapshot extends Mock implements DocumentSnapshot {}
 
-class MockQueryDocumentSnapshot extends Mock implements QueryDocumentSnapshot {}
+class MockQueryDocumentSnapshot<T> extends Mock
+    implements QueryDocumentSnapshot<T> {}
 
-class MockQuerySnapshot extends Mock implements QuerySnapshot {}
+class MockQuerySnapshot<T> extends Mock implements QuerySnapshot<T> {}
 
 class MockSetOptions extends Mock implements SetOptions {}

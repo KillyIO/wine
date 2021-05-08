@@ -105,9 +105,9 @@ void main() {
   });
 
   group('loadDefaultCoverURLs -', () {
-    late MockCollectionReference _collectionReference;
-    late MockQuerySnapshot _querySnapshot;
-    late MockQueryDocumentSnapshot _queryDocumentSnapshot;
+    late CollectionReference<Map<String, dynamic>> _collectionReference;
+    late QuerySnapshot<Map<String, dynamic>> _querySnapshot;
+    late QueryDocumentSnapshot<Map<String, dynamic>> _queryDocumentSnapshot;
 
     setUp(() {
       _collectionReference = MockCollectionReference();
@@ -119,7 +119,7 @@ void main() {
       when(() => _firestore.collection(any())).thenReturn(_collectionReference);
       when(_collectionReference.get).thenAnswer((_) async => _querySnapshot);
       when(() => _querySnapshot.docs).thenReturn(
-        List<MockQueryDocumentSnapshot>.generate(
+        List<QueryDocumentSnapshot<Map<String, dynamic>>>.generate(
           1,
           (int idx) => _queryDocumentSnapshot,
         ),
@@ -139,7 +139,8 @@ void main() {
     test('When docs empty Then return DefaultCoverURLsNotLoaded', () async {
       when(() => _firestore.collection(any())).thenReturn(_collectionReference);
       when(_collectionReference.get).thenAnswer((_) async => _querySnapshot);
-      when(() => _querySnapshot.docs).thenReturn(<MockQueryDocumentSnapshot>[]);
+      when(() => _querySnapshot.docs)
+          .thenReturn(<MockQueryDocumentSnapshot<Map<String, dynamic>>>[]);
 
       final result = await _defaultCoversRepository.loadDefaultCoverURLs();
 
