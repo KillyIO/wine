@@ -1,4 +1,5 @@
 // SECTION valid inputs
+import 'package:cloud_firestore/cloud_firestore.dart' hide Settings;
 import 'package:firebase_core/firebase_core.dart';
 import 'package:wine/domain/auth/email_address.dart';
 import 'package:wine/domain/auth/username.dart';
@@ -110,9 +111,10 @@ final testHiveUser = HiveUser(
   uid: testUid,
   username: testEmailAddress.split('@').first,
 );
-final testUserAsMap = {
+final testUserFirestore = {
   'emailAddress': testEmailAddress,
   'uid': testUid,
+  'updatedAt': FieldValue.serverTimestamp(),
   'username': testEmailAddress.split('@').first,
 };
 
