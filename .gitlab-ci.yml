@@ -12,7 +12,7 @@ test_coverage:
   stage: test_coverage
 
   script:
-    - flutter test --coverage ./lib 
+    - flutter test --coverage ./lib
     - lcov -r coverage/lcov.info '*/__test*__/*' -o coverage/lcov_cleaned.info
     - genhtml coverage/lcov_cleaned.info --output=coverage
   artifacts:
