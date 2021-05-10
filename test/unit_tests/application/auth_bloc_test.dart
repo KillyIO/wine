@@ -4,12 +4,12 @@ import 'package:mocktail/mocktail.dart';
 import 'package:wine/application/auth/auth_bloc.dart';
 import 'package:wine/domain/auth/i_auth_facade.dart';
 
-import '../../mocks/auth_mocks.dart';
+import '../../mocks/auth_facade_mocks.dart';
 
 void main() {
-  IAuthFacade _authFacade;
+  late IAuthFacade _authFacade;
 
-  AuthBloc _authBloc;
+  late AuthBloc _authBloc;
 
   setUp(() {
     _authFacade = MockAuthFacade();
@@ -18,14 +18,14 @@ void main() {
   });
 
   tearDown(() {
-    _authBloc?.close();
+    _authBloc.close();
   });
 
   group('AuthBloc -', () {
     blocTest(
       'When instantiating return nothing',
       build: () => _authBloc,
-      expect: <AuthState>[],
+      expect: () => <AuthState>[],
     );
 
     blocTest(
@@ -36,7 +36,7 @@ void main() {
         when(() => _authFacade.isAnonymous).thenReturn(true);
         return bloc.add(const AuthEvent.authChanged());
       },
-      expect: <AuthState>[const AuthState.anonymous()],
+      expect: () => <AuthState>[const AuthState.anonymous()],
       verify: (_) {
         verify(() => _authFacade.isLoggedIn).called(1);
         verify(() => _authFacade.isAnonymous).called(1);
@@ -51,7 +51,7 @@ void main() {
         when(() => _authFacade.isAnonymous).thenReturn(false);
         return bloc.add(const AuthEvent.authChanged());
       },
-      expect: <AuthState>[const AuthState.anonymous()],
+      expect: () => <AuthState>[const AuthState.anonymous()],
       verify: (_) {
         verify(() => _authFacade.isLoggedIn).called(1);
         verifyNever(() => _authFacade.isAnonymous);
@@ -66,7 +66,7 @@ void main() {
         when(() => _authFacade.isAnonymous).thenReturn(false);
         return bloc.add(const AuthEvent.authChanged());
       },
-      expect: <AuthState>[const AuthState.authenticated()],
+      expect: () => <AuthState>[const AuthState.authenticated()],
       verify: (_) {
         verify(() => _authFacade.isLoggedIn).called(1);
         verify(() => _authFacade.isAnonymous).called(1);
