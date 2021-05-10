@@ -1,7 +1,8 @@
 import 'package:bloc_test/bloc_test.dart';
-import 'package:dartz/dartz.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
+import 'package:rustic/result.dart';
+import 'package:rustic/tuple.dart';
 import 'package:wine/application/splash/splash_bloc.dart';
 import 'package:wine/domain/auth/auth_failure.dart';
 import 'package:wine/domain/auth/i_auth_facade.dart';
@@ -10,12 +11,12 @@ import 'package:wine/domain/default_covers/default_covers_failure.dart';
 import 'package:wine/domain/default_covers/i_default_covers_repository.dart';
 import 'package:wine/domain/sessions/i_sessions_repository.dart';
 import 'package:wine/domain/sessions/sessions_failure.dart';
-import 'package:wine/domain/settings/i_ssettings_repository.dart';
+import 'package:wine/domain/settings/i_settings_repository.dart';
 import 'package:wine/domain/settings/settings_failure.dart';
 import 'package:wine/domain/user/i_user_repository.dart';
 import 'package:wine/domain/user/user_failure.dart';
 
-import '../../mocks/auth_mocks.dart';
+import '../../mocks/auth_facade_mocks.dart';
 import '../../mocks/default_covers_mock.dart';
 import '../../mocks/sessions_mocks.dart';
 import '../../mocks/settings_mocks.dart';
@@ -23,13 +24,13 @@ import '../../mocks/user_mocks.dart';
 import '../utils/constants.dart';
 
 void main() {
-  IAuthFacade _authFacade;
-  IDefaultCoversRepository _defaultCoversRepository;
-  ISessionsRepository _sessionsRepository;
-  ISettingsRepository _settingsRepository;
-  IUserRepository _userRepository;
+  late IAuthFacade _authFacade;
+  late IDefaultCoversRepository _defaultCoversRepository;
+  late ISessionsRepository _sessionsRepository;
+  late ISettingsRepository _settingsRepository;
+  late IUserRepository _userRepository;
 
-  SplashBloc _splashBloc;
+  late SplashBloc _splashBloc;
 
   setUp(() {
     _authFacade = MockAuthFacade();
@@ -48,14 +49,14 @@ void main() {
   });
 
   tearDown(() {
-    _splashBloc?.close();
+    _splashBloc.close();
   });
 
   group('SplashBloc -', () {
     blocTest(
       'When instantiating return nothing',
       build: () => _splashBloc,
-      expect: <SplashState>[],
+      expect: () => <SplashState>[],
     );
 
     group('Errors -', () {
@@ -65,10 +66,11 @@ void main() {
         act: (SplashBloc bloc) {
           when(() => _authFacade.isLoggedIn).thenReturn(false);
           when(() => _authFacade.logInAnonymously())
-              .thenAnswer((_) async => left(const AuthFailure.serverError()));
+              .thenAnswer((_) async => const Err(AuthFailure.serverError()));
           return bloc.add(const SplashEvent.splashPageLaunched());
         },
-        expect: <SplashState>[
+        expect: () => <SplashState>[
+          const SplashState.initial(),
           const SplashState.failure(
             CoreFailure.auth(AuthFailure.serverError()),
           ),
@@ -88,10 +90,10 @@ void main() {
           when(() => _authFacade.isAnonymous).thenReturn(false);
           when(() => _defaultCoversRepository.loadDefaultCoverURLs())
               .thenAnswer((_) async =>
-                  left(const DefaultCoversFailure.defaultCoverURLsNotLoaded()));
+                  const Err(DefaultCoversFailure.defaultCoverURLsNotLoaded()));
           return bloc.add(const SplashEvent.authenticated());
         },
-        expect: <SplashState>[
+        expect: () => <SplashState>[
           const SplashState.failure(
             CoreFailure.defaultCovers(
               DefaultCoversFailure.defaultCoverURLsNotLoaded(),
@@ -112,10 +114,10 @@ void main() {
         act: (SplashBloc bloc) {
           when(() => _defaultCoversRepository.cacheDefaultCoverURLs({}))
               .thenAnswer((_) async =>
-                  left(const DefaultCoversFailure.defaultCoverURLsNotCached()));
+                  const Err(DefaultCoversFailure.defaultCoverURLsNotCached()));
           return bloc.add(const SplashEvent.defaultCoverURLsLoaded({}));
         },
-        expect: <SplashState>[
+        expect: () => <SplashState>[
           const SplashState.failure(
             CoreFailure.defaultCovers(
               DefaultCoversFailure.defaultCoverURLsNotCached(),
@@ -133,11 +135,11 @@ void main() {
         build: () => _splashBloc,
         act: (SplashBloc bloc) {
           when(() => _settingsRepository.initializeSettings()).thenAnswer(
-            (_) async => left(const SettingsFailure.settingsNotInitialized()),
+            (_) async => const Err(SettingsFailure.settingsNotInitialized()),
           );
           return bloc.add(const SplashEvent.settingsNotFound());
         },
-        expect: <SplashState>[
+        expect: () => <SplashState>[
           const SplashState.failure(
             CoreFailure.settings(SettingsFailure.settingsNotInitialized()),
           ),
@@ -152,11 +154,11 @@ void main() {
         build: () => _splashBloc,
         act: (SplashBloc bloc) {
           when(() => _sessionsRepository.createSession()).thenAnswer(
-            (_) async => left(const SessionsFailure.sessionNotCreated()),
+            (_) async => const Err(SessionsFailure.sessionNotCreated()),
           );
           return bloc.add(const SplashEvent.sessionNotFound());
         },
-        expect: <SplashState>[
+        expect: () => <SplashState>[
           const SplashState.failure(
             CoreFailure.sessions(SessionsFailure.sessionNotCreated()),
           ),
@@ -172,10 +174,10 @@ void main() {
         act: (SplashBloc bloc) {
           when(() => _authFacade.isAnonymous).thenReturn(false);
           when(() => _userRepository.loadUser(testUid))
-              .thenAnswer((_) async => left(const UserFailure.userNotFound()));
+              .thenAnswer((_) async => const Err(UserFailure.userNotFound()));
           return bloc.add(SplashEvent.sessionFetched(testUser));
         },
-        expect: <SplashState>[
+        expect: () => <SplashState>[
           const SplashState.failure(
             CoreFailure.user(UserFailure.userNotFound()),
           ),
@@ -193,11 +195,11 @@ void main() {
         build: () => _splashBloc,
         act: (SplashBloc bloc) {
           when(() => _sessionsRepository.updateSession(testUser)).thenAnswer(
-            (_) async => left(const SessionsFailure.sessionNotUpdated()),
+            (_) async => const Err(SessionsFailure.sessionNotUpdated()),
           );
           return bloc.add(SplashEvent.userLoaded(testUser));
         },
-        expect: <SplashState>[
+        expect: () => <SplashState>[
           const SplashState.failure(
             CoreFailure.sessions(SessionsFailure.sessionNotUpdated()),
           ),
@@ -216,16 +218,19 @@ void main() {
           when(() => _authFacade.isLoggedIn).thenReturn(true);
           when(() => _authFacade.isAnonymous).thenReturn(true);
           when(_settingsRepository.fetchSettings)
-              .thenAnswer((_) async => right(testSettings));
+              .thenAnswer((_) async => const Ok(testSettings));
           when(_sessionsRepository.fetchSession).thenAnswer(
-            (_) async => left(const SessionsFailure.sessionNotFound()),
+            (_) async => const Err(SessionsFailure.sessionNotFound()),
           );
           when(_sessionsRepository.createSession)
-              .thenAnswer((_) async => right(unit));
+              .thenAnswer((_) async => const Ok(Unit()));
 
           return bloc.add(const SplashEvent.splashPageLaunched());
         },
-        expect: <SplashState>[const SplashState.goToOnboarding()],
+        expect: () => <SplashState>[
+          const SplashState.initial(),
+          const SplashState.goToOnboarding(),
+        ],
         verify: (_) {
           verifyInOrder([
             () => _authFacade.isLoggedIn,
@@ -244,13 +249,16 @@ void main() {
           when(() => _authFacade.isLoggedIn).thenReturn(true);
           when(() => _authFacade.isAnonymous).thenReturn(true);
           when(_settingsRepository.fetchSettings)
-              .thenAnswer((_) async => right(testSettings));
+              .thenAnswer((_) async => const Ok(testSettings));
           when(_sessionsRepository.fetchSession)
-              .thenAnswer((_) async => right(testUser));
+              .thenAnswer((_) async => Ok(testUser));
 
           return bloc.add(const SplashEvent.splashPageLaunched());
         },
-        expect: <SplashState>[const SplashState.goToHome()],
+        expect: () => <SplashState>[
+          const SplashState.initial(),
+          const SplashState.goToHome(),
+        ],
         verify: (_) {
           verifyInOrder([
             () => _authFacade.isLoggedIn,
@@ -268,33 +276,39 @@ void main() {
         act: (SplashBloc bloc) {
           when(() => _authFacade.isLoggedIn).thenReturn(false);
           when(_authFacade.logInAnonymously)
-              .thenAnswer((_) async => right(unit));
+              .thenAnswer((_) async => const Ok(Unit()));
           when(() => _authFacade.isAnonymous).thenReturn(false);
           when(_defaultCoversRepository.loadDefaultCoverURLs)
-              .thenAnswer((_) async => right({}));
-          when(() => _defaultCoversRepository.cacheDefaultCoverURLs({}))
-              .thenAnswer((_) async => right(unit));
+              .thenAnswer((_) async => const Ok(testDefaultCovers));
+          when(
+            () => _defaultCoversRepository
+                .cacheDefaultCoverURLs(testDefaultCovers),
+          ).thenAnswer((_) async => const Ok(Unit()));
           when(_settingsRepository.fetchSettings).thenAnswer(
-              (_) async => left(const SettingsFailure.settingsNotFound()));
+              (_) async => const Err(SettingsFailure.settingsNotFound()));
           when(_settingsRepository.initializeSettings)
-              .thenAnswer((_) async => right(unit));
+              .thenAnswer((_) async => const Ok(Unit()));
           when(_sessionsRepository.fetchSession)
-              .thenAnswer((_) async => right(testUser));
+              .thenAnswer((_) async => Ok(testUser));
           when(() => _userRepository.loadUser(testUser.uid.getOrCrash()))
-              .thenAnswer((_) async => right(testUser));
+              .thenAnswer((_) async => Ok(testUser));
           when(() => _sessionsRepository.updateSession(testUser))
-              .thenAnswer((_) async => right(unit));
+              .thenAnswer((_) async => const Ok(Unit()));
 
           return bloc.add(const SplashEvent.splashPageLaunched());
         },
-        expect: <SplashState>[const SplashState.goToHome()],
+        expect: () => <SplashState>[
+          const SplashState.initial(),
+          const SplashState.goToHome(),
+        ],
         verify: (_) {
           verifyInOrder([
             () => _authFacade.isLoggedIn,
             _authFacade.logInAnonymously,
             () => _authFacade.isAnonymous,
             _defaultCoversRepository.loadDefaultCoverURLs,
-            () => _defaultCoversRepository.cacheDefaultCoverURLs({}),
+            () => _defaultCoversRepository
+                .cacheDefaultCoverURLs(testDefaultCovers),
             _settingsRepository.fetchSettings,
             _settingsRepository.initializeSettings,
             _sessionsRepository.fetchSession,
