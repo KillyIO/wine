@@ -3,6 +3,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:hive/hive.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:rustic/tuple.dart';
+
 import 'package:wine/domain/default_covers/default_covers_failure.dart';
 import 'package:wine/domain/default_covers/i_default_covers_repository.dart';
 import 'package:wine/infrastructure/default_covers/default_covers_repository.dart';
@@ -105,9 +106,9 @@ void main() {
   });
 
   group('loadDefaultCoverURLs -', () {
-    late CollectionReference<Map<String, dynamic>> _collectionReference;
-    late QuerySnapshot<Map<String, dynamic>> _querySnapshot;
-    late QueryDocumentSnapshot<Map<String, dynamic>> _queryDocumentSnapshot;
+    late CollectionReference _collectionReference;
+    late QuerySnapshot _querySnapshot;
+    late QueryDocumentSnapshot _queryDocumentSnapshot;
 
     setUp(() {
       _collectionReference = MockCollectionReference();
@@ -119,7 +120,7 @@ void main() {
       when(() => _firestore.collection(any())).thenReturn(_collectionReference);
       when(_collectionReference.get).thenAnswer((_) async => _querySnapshot);
       when(() => _querySnapshot.docs).thenReturn(
-        List<QueryDocumentSnapshot<Map<String, dynamic>>>.generate(
+        List<QueryDocumentSnapshot>.generate(
           1,
           (int idx) => _queryDocumentSnapshot,
         ),
@@ -139,8 +140,7 @@ void main() {
     test('When docs empty Then return DefaultCoverURLsNotLoaded', () async {
       when(() => _firestore.collection(any())).thenReturn(_collectionReference);
       when(_collectionReference.get).thenAnswer((_) async => _querySnapshot);
-      when(() => _querySnapshot.docs)
-          .thenReturn(<MockQueryDocumentSnapshot<Map<String, dynamic>>>[]);
+      when(() => _querySnapshot.docs).thenReturn(<MockQueryDocumentSnapshot>[]);
 
       final result = await _defaultCoversRepository.loadDefaultCoverURLs();
 
