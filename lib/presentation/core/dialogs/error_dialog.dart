@@ -1,19 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_icons/flutter_icons.dart';
 import 'package:wine/utils/constants/palette.dart';
 
 /// @nodoc
 class ErrorDialog extends StatelessWidget {
   /// @nodoc
   const ErrorDialog({
-    Key key,
+    Key? key,
     this.buttonText,
-    @required this.message,
-    @required this.onPressed,
+    required this.message,
+    required this.onPressed,
   }) : super(key: key);
 
   /// @nodoc
-  final String buttonText;
+  final String? buttonText;
 
   /// @nodoc
   final String message;
@@ -33,7 +32,7 @@ class ErrorDialog extends StatelessWidget {
             const Padding(
               padding: EdgeInsets.symmetric(vertical: 20.0),
               child: Icon(
-                Feather.alert_circle,
+                Icons.error_outline_rounded,
                 color: error,
                 size: 60.0,
               ),
