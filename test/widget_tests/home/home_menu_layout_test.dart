@@ -8,7 +8,7 @@ import 'package:wine/domain/auth/i_auth_facade.dart';
 import 'package:wine/presentation/home/home_menu_layout.dart';
 
 import '../../mocks/auth_facade_mocks.dart';
-import '../utils/main_widget.dart';
+import '../utils/test_widget.dart';
 
 void main() {
   group('HomeMenuLayout -', () {
@@ -22,7 +22,7 @@ void main() {
       when(() => _authFacade.isLoggedIn).thenReturn(true);
       when(() => _authFacade.isAnonymous).thenReturn(true);
 
-      await tester.pumpWidget(MainWidget(
+      await tester.pumpWidget(TestWidget(
         child: MultiBlocProvider(
           providers: <BlocProvider>[
             BlocProvider<AuthBloc>(
@@ -48,7 +48,7 @@ void main() {
       when(() => _authFacade.isLoggedIn).thenReturn(true);
       when(() => _authFacade.isAnonymous).thenReturn(true);
 
-      await tester.pumpWidget(MainWidget(
+      await tester.pumpWidget(TestWidget(
         child: MultiBlocProvider(
           providers: <BlocProvider>[
             BlocProvider<AuthBloc>(

@@ -11,7 +11,7 @@ import '../../mocks/default_covers_mock.dart';
 import '../../mocks/sessions_mocks.dart';
 import '../../mocks/settings_mocks.dart';
 import '../../mocks/user_mocks.dart';
-import '../utils/main_widget.dart';
+import '../utils/test_widget.dart';
 
 void main() {
   group('SplashLayout -', () {
@@ -19,7 +19,7 @@ void main() {
       'Should find one FlareLoading widget and one SplashDesigner widget',
       (tester) async {
         await tester.pumpWidget(
-          MainWidget(
+          TestWidget(
             child: BlocProvider(
               create: (context) => SplashBloc(
                 MockAuthFacade(),

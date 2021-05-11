@@ -3,14 +3,14 @@ import 'dart:async';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:wine/presentation/core/dialogs/error_dialog.dart';
 
-import '../../utils/main_widget.dart';
+import '../../utils/test_widget.dart';
 
 void main() {
   group('ErrorDialog -', () {
     testWidgets(
       "Should find texts SOMETHING'S WRONG!, Hello World!, DISMISS",
       (tester) async {
-        await tester.pumpWidget(MainWidget(
+        await tester.pumpWidget(TestWidget(
           child: ErrorDialog(
             message: 'Hello World!',
             onPressed: () {},
@@ -25,7 +25,7 @@ void main() {
     );
 
     testWidgets('Should find text Button Text', (tester) async {
-      await tester.pumpWidget(MainWidget(
+      await tester.pumpWidget(TestWidget(
         child: ErrorDialog(
           buttonText: 'Button Text',
           message: 'Hello World!',
@@ -40,7 +40,7 @@ void main() {
     testWidgets('completer should be true', (tester) async {
       final completer = Completer<void>();
 
-      await tester.pumpWidget(MainWidget(
+      await tester.pumpWidget(TestWidget(
         child: ErrorDialog(
           message: 'Hello World!',
           onPressed: completer.complete,

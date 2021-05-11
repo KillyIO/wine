@@ -8,7 +8,7 @@ import 'package:wine/presentation/core/buttons/asset_button.dart';
 import 'package:wine/presentation/plus/plus_layout.dart';
 
 import '../../mocks/auth_facade_mocks.dart';
-import '../utils/main_widget.dart';
+import '../utils/test_widget.dart';
 
 void main() {
   group('PlusLayout -', () {
@@ -23,7 +23,7 @@ void main() {
       when(() => _authFacade.isLoggedIn).thenReturn(true);
       when(() => _authFacade.isAnonymous).thenReturn(true);
 
-      await tester.pumpWidget(MainWidget(
+      await tester.pumpWidget(TestWidget(
         child: BlocProvider(
           create: (_) =>
               AuthBloc(_authFacade)..add(const AuthEvent.authChanged()),
@@ -45,7 +45,7 @@ void main() {
       when(() => _authFacade.isLoggedIn).thenReturn(true);
       when(() => _authFacade.isAnonymous).thenReturn(false);
 
-      await tester.pumpWidget(MainWidget(
+      await tester.pumpWidget(TestWidget(
         child: BlocProvider(
           create: (_) =>
               AuthBloc(_authFacade)..add(const AuthEvent.authChanged()),

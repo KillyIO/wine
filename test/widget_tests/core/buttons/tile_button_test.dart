@@ -4,14 +4,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:wine/presentation/core/buttons/tile_button.dart';
 
-import '../../utils/main_widget.dart';
+import '../../utils/test_widget.dart';
 
 void main() {
   group('TileButton -', () {
     testWidgets('completer should be true', (tester) async {
       final completer = Completer<void>();
 
-      await tester.pumpWidget(MainWidget(
+      await tester.pumpWidget(TestWidget(
         child: TileButton(
           key: const Key('test_tile_button'),
           leadingIconData: Icons.settings_outlined,
