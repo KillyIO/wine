@@ -6,7 +6,7 @@ import 'package:wine/application/splash/splash_bloc.dart';
 import 'package:wine/presentation/splash/splash_layout.dart';
 import 'package:wine/presentation/splash/widgets/splash_designer.dart';
 
-import '../../mocks/auth_mocks.dart';
+import '../../mocks/auth_facade_mocks.dart';
 import '../../mocks/default_covers_mock.dart';
 import '../../mocks/sessions_mocks.dart';
 import '../../mocks/settings_mocks.dart';
