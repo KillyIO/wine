@@ -7,78 +7,72 @@ import 'package:wine/application/home/home_navigation/home_navigation_bloc.dart'
 import 'package:wine/domain/auth/i_auth_facade.dart';
 import 'package:wine/presentation/home/widgets/home_app_bar.dart';
 
-import '../../mocks/auth_mocks.dart';
+import '../../mocks/auth_facade_mocks.dart';
 import '../utils/main_widget.dart';
 
 void main() {
   group('HomeAppBar -', () {
-    IAuthFacade _authFacade;
+    late IAuthFacade _authFacade;
 
     setUp(() {
       _authFacade = MockAuthFacade();
     });
 
-    testWidgets(
-      'Should not find new Series button',
-      (WidgetTester tester) async {
-        when(() => _authFacade.isLoggedIn).thenReturn(true);
-        when(() => _authFacade.isAnonymous).thenReturn(true);
+    testWidgets('Should not find new Series button', (tester) async {
+      when(() => _authFacade.isLoggedIn).thenReturn(true);
+      when(() => _authFacade.isAnonymous).thenReturn(true);
 
-        await tester.pumpWidget(MainWidget(
-          child: MultiBlocProvider(
-            providers: <BlocProvider>[
-              BlocProvider<AuthBloc>(
-                create: (context) => AuthBloc(_authFacade),
-              ),
-              BlocProvider<HomeNavigationBloc>(
-                create: (context) => HomeNavigationBloc(),
-              ),
-            ],
-            child: HomeAppBar(),
-          ),
-        ));
-        await tester.pump();
+      await tester.pumpWidget(MainWidget(
+        child: MultiBlocProvider(
+          providers: <BlocProvider>[
+            BlocProvider<AuthBloc>(
+              create: (context) => AuthBloc(_authFacade),
+            ),
+            BlocProvider<HomeNavigationBloc>(
+              create: (context) => HomeNavigationBloc(),
+            ),
+          ],
+          child: HomeAppBar(),
+        ),
+      ));
+      await tester.pump();
 
-        final filterButton = find.byKey(const Key('filter_button'));
-        final newSeriesButton = find.byKey(const Key('new_series_button'));
-        final menuButton = find.byKey(const Key('menu_button_closed'));
+      final filterButton = find.byKey(const Key('filter_button'));
+      final newSeriesButton = find.byKey(const Key('new_series_button'));
+      final menuButton = find.byKey(const Key('menu_button_closed'));
 
-        expect(filterButton, findsOneWidget);
-        expect(newSeriesButton, findsNothing);
-        expect(menuButton, findsOneWidget);
-      },
-    );
+      expect(filterButton, findsOneWidget);
+      expect(newSeriesButton, findsNothing);
+      expect(menuButton, findsOneWidget);
+    });
 
-    testWidgets(
-      'Should find new Series button',
-      (WidgetTester tester) async {
-        when(() => _authFacade.isLoggedIn).thenReturn(true);
-        when(() => _authFacade.isAnonymous).thenReturn(false);
+    testWidgets('Should find new Series button', (tester) async {
+      when(() => _authFacade.isLoggedIn).thenReturn(true);
+      when(() => _authFacade.isAnonymous).thenReturn(false);
 
-        await tester.pumpWidget(MainWidget(
-          child: MultiBlocProvider(
-            providers: <BlocProvider>[
-              BlocProvider<AuthBloc>(
-                create: (context) =>
-                    AuthBloc(_authFacade)..add(const AuthEvent.authChanged()),
-              ),
-              BlocProvider<HomeNavigationBloc>(
-                create: (context) => HomeNavigationBloc(),
-              ),
-            ],
-            child: HomeAppBar(),
-          ),
-        ));
-        await tester.pump();
+      await tester.pumpWidget(MainWidget(
+        child: MultiBlocProvider(
+          providers: <BlocProvider>[
+            BlocProvider<AuthBloc>(
+              create: (context) =>
+                  AuthBloc(_authFacade)..add(const AuthEvent.authChanged()),
+            ),
+            BlocProvider<HomeNavigationBloc>(
+              create: (context) => HomeNavigationBloc(),
+            ),
+          ],
+          child: HomeAppBar(),
+        ),
+      ));
+      await tester.pump();
 
-        final filterButton = find.byKey(const Key('filter_button'));
-        final newSeriesButton = find.byKey(const Key('new_series_button'));
-        final menuButton = find.byKey(const Key('menu_button_closed'));
+      final filterButton = find.byKey(const Key('filter_button'));
+      final newSeriesButton = find.byKey(const Key('new_series_button'));
+      final menuButton = find.byKey(const Key('menu_button_closed'));
 
-        expect(filterButton, findsOneWidget);
-        expect(newSeriesButton, findsOneWidget);
-        expect(menuButton, findsOneWidget);
-      },
-    );
+      expect(filterButton, findsOneWidget);
+      expect(newSeriesButton, findsOneWidget);
+      expect(menuButton, findsOneWidget);
+    });
   });
 }
