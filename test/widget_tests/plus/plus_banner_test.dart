@@ -6,16 +6,13 @@ import '../utils/main_widget.dart';
 
 void main() {
   group('PlusBanner -', () {
-    testWidgets(
-      'Should find an image and text PLUS',
-      (WidgetTester tester) async {
-        await tester.pumpWidget(const MainWidget(
-          child: PlusBanner(),
-        ));
-        await tester.pump();
+    testWidgets('Should find an image and text PLUS', (tester) async {
+      await tester.pumpWidget(const MainWidget(
+        child: PlusBanner(),
+      ));
+      await tester.pump();
 
-        expect(find.byType(Image), findsOneWidget);
-      },
-    );
+      expect(find.byType(Image), findsOneWidget);
+    });
   });
 }
