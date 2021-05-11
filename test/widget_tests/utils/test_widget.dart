@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-class MainWidget extends StatelessWidget {
-  const MainWidget({
-    Key key,
-    @required this.child,
+class TestWidget extends StatelessWidget {
+  const TestWidget({
+    Key? key,
+    required this.child,
   }) : super(key: key);
 
   final Widget child;
@@ -11,7 +11,7 @@ class MainWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'MainWWidget',
+      title: 'TestWidget',
       home: Scaffold(
         body: Center(
           child: child,
