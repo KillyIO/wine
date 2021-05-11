@@ -1,7 +1,6 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_icons/flutter_icons.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:wine/presentation/core/buttons/tile_button.dart';
 
@@ -9,13 +8,13 @@ import '../../utils/main_widget.dart';
 
 void main() {
   group('TileButton -', () {
-    testWidgets('completer should be true', (WidgetTester tester) async {
+    testWidgets('completer should be true', (tester) async {
       final completer = Completer<void>();
 
       await tester.pumpWidget(MainWidget(
         child: TileButton(
           key: const Key('test_tile_button'),
-          leadingIconData: Feather.settings,
+          leadingIconData: Icons.settings_outlined,
           onPressed: completer.complete,
           title: 'TEST',
           trailingIconData: Icons.keyboard_arrow_right,
@@ -31,7 +30,7 @@ void main() {
       expect(completer.isCompleted, isTrue);
 
       expect(find.text('TEST'), findsOneWidget);
-      expect(find.byIcon(Feather.settings), findsOneWidget);
+      expect(find.byIcon(Icons.settings_outlined), findsOneWidget);
       expect(find.byIcon(Icons.keyboard_arrow_right), findsOneWidget);
     });
   });
