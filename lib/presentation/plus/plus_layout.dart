@@ -1,7 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_icons/flutter_icons.dart';
 import 'package:wine/application/auth/auth_bloc.dart';
 import 'package:wine/presentation/core/buttons/asset_button.dart';
 import 'package:wine/presentation/plus/widgets/plus_banner.dart';
@@ -11,7 +10,7 @@ import 'package:wine/utils/assets/icons.dart';
 /// @nodoc
 class PlusLayout extends StatelessWidget {
   /// @nodoc
-  const PlusLayout({Key key}) : super(key: key);
+  const PlusLayout({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +35,7 @@ class PlusLayout extends StatelessWidget {
             child: AssetButton(
               key: const Key('plus_layout_back_button'),
               imagePath: backIcon,
-              onPressed: () async => ExtendedNavigator.root.pop(),
+              onPressed: () async => context.router.pop(),
             ),
           ),
           title: const Text(
@@ -69,14 +68,14 @@ class PlusLayout extends StatelessWidget {
           ),
           TileButton(
             key: const Key('plus_settings_button'),
-            leadingIconData: Feather.settings,
+            leadingIconData: Icons.settings_outlined,
             onPressed: () {},
             title: 'SETTINGS',
             trailingIconData: Icons.keyboard_arrow_right,
           ),
           TileButton(
             key: const Key('plus_about_button'),
-            leadingIconData: Feather.info,
+            leadingIconData: Icons.info_outline_rounded,
             onPressed: () {},
             title: 'ABOUT',
             trailingIconData: Icons.keyboard_arrow_right,
