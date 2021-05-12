@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:line_icons/line_icons.dart';
 import 'package:wine/utils/constants/palette.dart';
 
 /// @nodoc
@@ -32,7 +33,7 @@ class ErrorDialog extends StatelessWidget {
             const Padding(
               padding: EdgeInsets.symmetric(vertical: 20.0),
               child: Icon(
-                Icons.error_outline_rounded,
+                LineIcons.exclamationCircle,
                 color: error,
                 size: 60.0,
               ),
