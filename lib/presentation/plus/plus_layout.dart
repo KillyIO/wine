@@ -1,6 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:line_icons/line_icons.dart';
 import 'package:wine/application/auth/auth_bloc.dart';
 import 'package:wine/presentation/core/buttons/asset_button.dart';
 import 'package:wine/presentation/plus/widgets/plus_banner.dart';
@@ -68,7 +69,7 @@ class PlusLayout extends StatelessWidget {
           ),
           TileButton(
             key: const Key('plus_settings_button'),
-            leadingIconData: Icons.settings_outlined,
+            leadingIconData: LineIcons.cog,
             onPressed: () {},
             title: 'SETTINGS',
             trailingIconData: Icons.keyboard_arrow_right,
