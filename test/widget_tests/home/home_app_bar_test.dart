@@ -35,7 +35,6 @@ void main() {
           child: HomeAppBar(),
         ),
       ));
-      await tester.pump();
 
       final filterButton = find.byKey(const Key('filter_button'));
       final newSeriesButton = find.byKey(const Key('new_series_button'));
@@ -64,7 +63,7 @@ void main() {
           child: HomeAppBar(),
         ),
       ));
-      await tester.pump();
+      await tester.pumpAndSettle();
 
       final filterButton = find.byKey(const Key('filter_button'));
       final newSeriesButton = find.byKey(const Key('new_series_button'));

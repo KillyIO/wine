@@ -35,7 +35,6 @@ void main() {
           child: const HomeMenuLayout(),
         ),
       ));
-      await tester.pump();
 
       final libraryMenuTile = find.byKey(const Key('home_menu_library_tile'));
       final plusMenuTile = find.byKey(const Key('home_menu_plus_tile'));
@@ -62,7 +61,6 @@ void main() {
           child: const HomeMenuLayout(),
         ),
       ));
-      await tester.pump();
 
       final libraryMenuTile = find.byKey(const Key('home_menu_library_tile'));
       final plusMenuTile = find.byKey(const Key('home_menu_plus_tile'));

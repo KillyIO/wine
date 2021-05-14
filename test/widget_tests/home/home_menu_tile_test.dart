@@ -18,7 +18,6 @@ void main() {
           text: 'Hello World!',
         ),
       ));
-      await tester.pump();
 
       expect(find.text('Hello World!'), findsOneWidget);
     });
@@ -33,12 +32,11 @@ void main() {
           text: 'Hello World!',
         ),
       ));
-      await tester.pump();
 
       final homeMenuTile = find.byKey(const Key('test_home_menu_tile'));
 
       await tester.tap(homeMenuTile);
-      await tester.pump();
+      await tester.pumpAndSettle();
 
       expect(completer.isCompleted, true);
     });
