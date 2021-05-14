@@ -24,7 +24,7 @@ void main() {
       final animationButton = find.byKey(const Key('test_animation_button'));
 
       await tester.tap(animationButton);
-      await tester.pump();
+      await tester.pumpAndSettle();
 
       expect(completer.isCompleted, isTrue);
     });

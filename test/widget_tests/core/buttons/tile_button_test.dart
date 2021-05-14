@@ -21,12 +21,11 @@ void main() {
           trailingIconData: Icons.keyboard_arrow_right,
         ),
       ));
-      await tester.pump();
 
       final tileButton = find.byKey(const Key('test_tile_button'));
 
       await tester.tap(tileButton);
-      await tester.pump();
+      await tester.pumpAndSettle();
 
       expect(completer.isCompleted, isTrue);
 

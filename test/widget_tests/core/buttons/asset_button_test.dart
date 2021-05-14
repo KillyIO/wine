@@ -23,7 +23,7 @@ void main() {
       final assetButton = find.byKey(const Key('test_asset_button'));
 
       await tester.tap(assetButton);
-      await tester.pump();
+      await tester.pumpAndSettle();
 
       expect(completer.isCompleted, isTrue);
     });
