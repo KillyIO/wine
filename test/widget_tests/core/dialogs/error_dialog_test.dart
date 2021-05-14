@@ -16,7 +16,6 @@ void main() {
             onPressed: () {},
           ),
         ));
-        await tester.pump();
 
         expect(find.text("SOMETHING'S WRONG!"), findsOneWidget);
         expect(find.text('Hello World!'), findsOneWidget);
@@ -32,7 +31,6 @@ void main() {
           onPressed: () {},
         ),
       ));
-      await tester.pump();
 
       expect(find.text('Button Text'), findsOneWidget);
     });
@@ -46,12 +44,11 @@ void main() {
           onPressed: completer.complete,
         ),
       ));
-      await tester.pump();
 
       final buttonText = find.text('DISMISS');
 
       await tester.tap(buttonText);
-      await tester.pump();
+      await tester.pumpAndSettle();
 
       expect(completer.isCompleted, isTrue);
     });
