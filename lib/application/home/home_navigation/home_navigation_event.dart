@@ -2,7 +2,7 @@ part of 'home_navigation_bloc.dart';
 
 /// @nodoc
 @freezed
-abstract class HomeNavigationEvent with _$HomeNavigationEvent {
+class HomeNavigationEvent with _$HomeNavigationEvent {
   /// @nodoc
   const factory HomeNavigationEvent.leftDrawerIconPressed() =
       LeftDrawerIconPressed;

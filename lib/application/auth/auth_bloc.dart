@@ -10,6 +10,8 @@ part 'auth_state.dart';
 part 'auth_bloc.freezed.dart';
 
 /// @nodoc
+@Environment('dev')
+@Environment('prod')
 @injectable
 class AuthBloc extends Bloc<AuthEvent, AuthState> {
   /// @nodoc

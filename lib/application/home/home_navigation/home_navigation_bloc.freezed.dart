@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'home_navigation_bloc.dart';
 
@@ -9,60 +9,65 @@ part of 'home_navigation_bloc.dart';
 
 T _$identity<T>(T value) => value;
 
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 /// @nodoc
 class _$HomeNavigationEventTearOff {
   const _$HomeNavigationEventTearOff();
 
-// ignore: unused_element
   LeftDrawerIconPressed leftDrawerIconPressed() {
     return const LeftDrawerIconPressed();
   }
 
-// ignore: unused_element
   PageViewIndexChanged pageViewIndexChanged(int index) {
     return PageViewIndexChanged(
       index,
     );
   }
 
-// ignore: unused_element
   RightDrawerIconPressed rightDrawerIconPressed() {
     return const RightDrawerIconPressed();
   }
 }
 
 /// @nodoc
-// ignore: unused_element
 const $HomeNavigationEvent = _$HomeNavigationEventTearOff();
 
 /// @nodoc
 mixin _$HomeNavigationEvent {
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult leftDrawerIconPressed(),
-    @required TResult pageViewIndexChanged(int index),
-    @required TResult rightDrawerIconPressed(),
-  });
+  TResult when<TResult extends Object?>({
+    required TResult Function() leftDrawerIconPressed,
+    required TResult Function(int index) pageViewIndexChanged,
+    required TResult Function() rightDrawerIconPressed,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult leftDrawerIconPressed(),
-    TResult pageViewIndexChanged(int index),
-    TResult rightDrawerIconPressed(),
-    @required TResult orElse(),
-  });
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? leftDrawerIconPressed,
+    TResult Function(int index)? pageViewIndexChanged,
+    TResult Function()? rightDrawerIconPressed,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult leftDrawerIconPressed(LeftDrawerIconPressed value),
-    @required TResult pageViewIndexChanged(PageViewIndexChanged value),
-    @required TResult rightDrawerIconPressed(RightDrawerIconPressed value),
-  });
+  TResult map<TResult extends Object?>({
+    required TResult Function(LeftDrawerIconPressed value)
+        leftDrawerIconPressed,
+    required TResult Function(PageViewIndexChanged value) pageViewIndexChanged,
+    required TResult Function(RightDrawerIconPressed value)
+        rightDrawerIconPressed,
+  }) =>
+      throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult leftDrawerIconPressed(LeftDrawerIconPressed value),
-    TResult pageViewIndexChanged(PageViewIndexChanged value),
-    TResult rightDrawerIconPressed(RightDrawerIconPressed value),
-    @required TResult orElse(),
-  });
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(LeftDrawerIconPressed value)? leftDrawerIconPressed,
+    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
+    TResult Function(RightDrawerIconPressed value)? rightDrawerIconPressed,
+    required TResult orElse(),
+  }) =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -102,6 +107,7 @@ class _$LeftDrawerIconPressedCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$LeftDrawerIconPressed implements LeftDrawerIconPressed {
   const _$LeftDrawerIconPressed();
 
@@ -120,26 +126,22 @@ class _$LeftDrawerIconPressed implements LeftDrawerIconPressed {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult leftDrawerIconPressed(),
-    @required TResult pageViewIndexChanged(int index),
-    @required TResult rightDrawerIconPressed(),
+  TResult when<TResult extends Object?>({
+    required TResult Function() leftDrawerIconPressed,
+    required TResult Function(int index) pageViewIndexChanged,
+    required TResult Function() rightDrawerIconPressed,
   }) {
-    assert(leftDrawerIconPressed != null);
-    assert(pageViewIndexChanged != null);
-    assert(rightDrawerIconPressed != null);
     return leftDrawerIconPressed();
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult leftDrawerIconPressed(),
-    TResult pageViewIndexChanged(int index),
-    TResult rightDrawerIconPressed(),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? leftDrawerIconPressed,
+    TResult Function(int index)? pageViewIndexChanged,
+    TResult Function()? rightDrawerIconPressed,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (leftDrawerIconPressed != null) {
       return leftDrawerIconPressed();
     }
@@ -148,26 +150,24 @@ class _$LeftDrawerIconPressed implements LeftDrawerIconPressed {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult leftDrawerIconPressed(LeftDrawerIconPressed value),
-    @required TResult pageViewIndexChanged(PageViewIndexChanged value),
-    @required TResult rightDrawerIconPressed(RightDrawerIconPressed value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(LeftDrawerIconPressed value)
+        leftDrawerIconPressed,
+    required TResult Function(PageViewIndexChanged value) pageViewIndexChanged,
+    required TResult Function(RightDrawerIconPressed value)
+        rightDrawerIconPressed,
   }) {
-    assert(leftDrawerIconPressed != null);
-    assert(pageViewIndexChanged != null);
-    assert(rightDrawerIconPressed != null);
     return leftDrawerIconPressed(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult leftDrawerIconPressed(LeftDrawerIconPressed value),
-    TResult pageViewIndexChanged(PageViewIndexChanged value),
-    TResult rightDrawerIconPressed(RightDrawerIconPressed value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(LeftDrawerIconPressed value)? leftDrawerIconPressed,
+    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
+    TResult Function(RightDrawerIconPressed value)? rightDrawerIconPressed,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (leftDrawerIconPressed != null) {
       return leftDrawerIconPressed(this);
     }
@@ -200,17 +200,21 @@ class _$PageViewIndexChangedCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object index = freezed,
+    Object? index = freezed,
   }) {
     return _then(PageViewIndexChanged(
-      index == freezed ? _value.index : index as int,
+      index == freezed
+          ? _value.index
+          : index // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
 
 /// @nodoc
+
 class _$PageViewIndexChanged implements PageViewIndexChanged {
-  const _$PageViewIndexChanged(this.index) : assert(index != null);
+  const _$PageViewIndexChanged(this.index);
 
   @override
   final int index;
@@ -240,26 +244,22 @@ class _$PageViewIndexChanged implements PageViewIndexChanged {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult leftDrawerIconPressed(),
-    @required TResult pageViewIndexChanged(int index),
-    @required TResult rightDrawerIconPressed(),
+  TResult when<TResult extends Object?>({
+    required TResult Function() leftDrawerIconPressed,
+    required TResult Function(int index) pageViewIndexChanged,
+    required TResult Function() rightDrawerIconPressed,
   }) {
-    assert(leftDrawerIconPressed != null);
-    assert(pageViewIndexChanged != null);
-    assert(rightDrawerIconPressed != null);
     return pageViewIndexChanged(index);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult leftDrawerIconPressed(),
-    TResult pageViewIndexChanged(int index),
-    TResult rightDrawerIconPressed(),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? leftDrawerIconPressed,
+    TResult Function(int index)? pageViewIndexChanged,
+    TResult Function()? rightDrawerIconPressed,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (pageViewIndexChanged != null) {
       return pageViewIndexChanged(index);
     }
@@ -268,26 +268,24 @@ class _$PageViewIndexChanged implements PageViewIndexChanged {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult leftDrawerIconPressed(LeftDrawerIconPressed value),
-    @required TResult pageViewIndexChanged(PageViewIndexChanged value),
-    @required TResult rightDrawerIconPressed(RightDrawerIconPressed value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(LeftDrawerIconPressed value)
+        leftDrawerIconPressed,
+    required TResult Function(PageViewIndexChanged value) pageViewIndexChanged,
+    required TResult Function(RightDrawerIconPressed value)
+        rightDrawerIconPressed,
   }) {
-    assert(leftDrawerIconPressed != null);
-    assert(pageViewIndexChanged != null);
-    assert(rightDrawerIconPressed != null);
     return pageViewIndexChanged(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult leftDrawerIconPressed(LeftDrawerIconPressed value),
-    TResult pageViewIndexChanged(PageViewIndexChanged value),
-    TResult rightDrawerIconPressed(RightDrawerIconPressed value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(LeftDrawerIconPressed value)? leftDrawerIconPressed,
+    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
+    TResult Function(RightDrawerIconPressed value)? rightDrawerIconPressed,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (pageViewIndexChanged != null) {
       return pageViewIndexChanged(this);
     }
@@ -298,9 +296,10 @@ class _$PageViewIndexChanged implements PageViewIndexChanged {
 abstract class PageViewIndexChanged implements HomeNavigationEvent {
   const factory PageViewIndexChanged(int index) = _$PageViewIndexChanged;
 
-  int get index;
+  int get index => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $PageViewIndexChangedCopyWith<PageViewIndexChanged> get copyWith;
+  $PageViewIndexChangedCopyWith<PageViewIndexChanged> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -323,6 +322,7 @@ class _$RightDrawerIconPressedCopyWithImpl<$Res>
 }
 
 /// @nodoc
+
 class _$RightDrawerIconPressed implements RightDrawerIconPressed {
   const _$RightDrawerIconPressed();
 
@@ -341,26 +341,22 @@ class _$RightDrawerIconPressed implements RightDrawerIconPressed {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult leftDrawerIconPressed(),
-    @required TResult pageViewIndexChanged(int index),
-    @required TResult rightDrawerIconPressed(),
+  TResult when<TResult extends Object?>({
+    required TResult Function() leftDrawerIconPressed,
+    required TResult Function(int index) pageViewIndexChanged,
+    required TResult Function() rightDrawerIconPressed,
   }) {
-    assert(leftDrawerIconPressed != null);
-    assert(pageViewIndexChanged != null);
-    assert(rightDrawerIconPressed != null);
     return rightDrawerIconPressed();
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult leftDrawerIconPressed(),
-    TResult pageViewIndexChanged(int index),
-    TResult rightDrawerIconPressed(),
-    @required TResult orElse(),
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? leftDrawerIconPressed,
+    TResult Function(int index)? pageViewIndexChanged,
+    TResult Function()? rightDrawerIconPressed,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (rightDrawerIconPressed != null) {
       return rightDrawerIconPressed();
     }
@@ -369,26 +365,24 @@ class _$RightDrawerIconPressed implements RightDrawerIconPressed {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult leftDrawerIconPressed(LeftDrawerIconPressed value),
-    @required TResult pageViewIndexChanged(PageViewIndexChanged value),
-    @required TResult rightDrawerIconPressed(RightDrawerIconPressed value),
+  TResult map<TResult extends Object?>({
+    required TResult Function(LeftDrawerIconPressed value)
+        leftDrawerIconPressed,
+    required TResult Function(PageViewIndexChanged value) pageViewIndexChanged,
+    required TResult Function(RightDrawerIconPressed value)
+        rightDrawerIconPressed,
   }) {
-    assert(leftDrawerIconPressed != null);
-    assert(pageViewIndexChanged != null);
-    assert(rightDrawerIconPressed != null);
     return rightDrawerIconPressed(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult leftDrawerIconPressed(LeftDrawerIconPressed value),
-    TResult pageViewIndexChanged(PageViewIndexChanged value),
-    TResult rightDrawerIconPressed(RightDrawerIconPressed value),
-    @required TResult orElse(),
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(LeftDrawerIconPressed value)? leftDrawerIconPressed,
+    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
+    TResult Function(RightDrawerIconPressed value)? rightDrawerIconPressed,
+    required TResult orElse(),
   }) {
-    assert(orElse != null);
     if (rightDrawerIconPressed != null) {
       return rightDrawerIconPressed(this);
     }
@@ -404,11 +398,10 @@ abstract class RightDrawerIconPressed implements HomeNavigationEvent {
 class _$HomeNavigationStateTearOff {
   const _$HomeNavigationStateTearOff();
 
-// ignore: unused_element
   _HomeNavigationState call(
-      {@required int currentPageViewIdx,
-      @required bool isLeftDrawerOpen,
-      @required bool isRightDrawerOpen}) {
+      {required int currentPageViewIdx,
+      required bool isLeftDrawerOpen,
+      required bool isRightDrawerOpen}) {
     return _HomeNavigationState(
       currentPageViewIdx: currentPageViewIdx,
       isLeftDrawerOpen: isLeftDrawerOpen,
@@ -418,17 +411,17 @@ class _$HomeNavigationStateTearOff {
 }
 
 /// @nodoc
-// ignore: unused_element
 const $HomeNavigationState = _$HomeNavigationStateTearOff();
 
 /// @nodoc
 mixin _$HomeNavigationState {
-  int get currentPageViewIdx;
-  bool get isLeftDrawerOpen;
-  bool get isRightDrawerOpen;
+  int get currentPageViewIdx => throw _privateConstructorUsedError;
+  bool get isLeftDrawerOpen => throw _privateConstructorUsedError;
+  bool get isRightDrawerOpen => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
-  $HomeNavigationStateCopyWith<HomeNavigationState> get copyWith;
+  $HomeNavigationStateCopyWith<HomeNavigationState> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -451,20 +444,23 @@ class _$HomeNavigationStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object currentPageViewIdx = freezed,
-    Object isLeftDrawerOpen = freezed,
-    Object isRightDrawerOpen = freezed,
+    Object? currentPageViewIdx = freezed,
+    Object? isLeftDrawerOpen = freezed,
+    Object? isRightDrawerOpen = freezed,
   }) {
     return _then(_value.copyWith(
       currentPageViewIdx: currentPageViewIdx == freezed
           ? _value.currentPageViewIdx
-          : currentPageViewIdx as int,
+          : currentPageViewIdx // ignore: cast_nullable_to_non_nullable
+              as int,
       isLeftDrawerOpen: isLeftDrawerOpen == freezed
           ? _value.isLeftDrawerOpen
-          : isLeftDrawerOpen as bool,
+          : isLeftDrawerOpen // ignore: cast_nullable_to_non_nullable
+              as bool,
       isRightDrawerOpen: isRightDrawerOpen == freezed
           ? _value.isRightDrawerOpen
-          : isRightDrawerOpen as bool,
+          : isRightDrawerOpen // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
@@ -493,33 +489,34 @@ class __$HomeNavigationStateCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object currentPageViewIdx = freezed,
-    Object isLeftDrawerOpen = freezed,
-    Object isRightDrawerOpen = freezed,
+    Object? currentPageViewIdx = freezed,
+    Object? isLeftDrawerOpen = freezed,
+    Object? isRightDrawerOpen = freezed,
   }) {
     return _then(_HomeNavigationState(
       currentPageViewIdx: currentPageViewIdx == freezed
           ? _value.currentPageViewIdx
-          : currentPageViewIdx as int,
+          : currentPageViewIdx // ignore: cast_nullable_to_non_nullable
+              as int,
       isLeftDrawerOpen: isLeftDrawerOpen == freezed
           ? _value.isLeftDrawerOpen
-          : isLeftDrawerOpen as bool,
+          : isLeftDrawerOpen // ignore: cast_nullable_to_non_nullable
+              as bool,
       isRightDrawerOpen: isRightDrawerOpen == freezed
           ? _value.isRightDrawerOpen
-          : isRightDrawerOpen as bool,
+          : isRightDrawerOpen // ignore: cast_nullable_to_non_nullable
+              as bool,
     ));
   }
 }
 
 /// @nodoc
+
 class _$_HomeNavigationState implements _HomeNavigationState {
   const _$_HomeNavigationState(
-      {@required this.currentPageViewIdx,
-      @required this.isLeftDrawerOpen,
-      @required this.isRightDrawerOpen})
-      : assert(currentPageViewIdx != null),
-        assert(isLeftDrawerOpen != null),
-        assert(isRightDrawerOpen != null);
+      {required this.currentPageViewIdx,
+      required this.isLeftDrawerOpen,
+      required this.isRightDrawerOpen});
 
   @override
   final int currentPageViewIdx;
@@ -564,17 +561,18 @@ class _$_HomeNavigationState implements _HomeNavigationState {
 
 abstract class _HomeNavigationState implements HomeNavigationState {
   const factory _HomeNavigationState(
-      {@required int currentPageViewIdx,
-      @required bool isLeftDrawerOpen,
-      @required bool isRightDrawerOpen}) = _$_HomeNavigationState;
+      {required int currentPageViewIdx,
+      required bool isLeftDrawerOpen,
+      required bool isRightDrawerOpen}) = _$_HomeNavigationState;
 
   @override
-  int get currentPageViewIdx;
+  int get currentPageViewIdx => throw _privateConstructorUsedError;
   @override
-  bool get isLeftDrawerOpen;
+  bool get isLeftDrawerOpen => throw _privateConstructorUsedError;
   @override
-  bool get isRightDrawerOpen;
+  bool get isRightDrawerOpen => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$HomeNavigationStateCopyWith<_HomeNavigationState> get copyWith;
+  _$HomeNavigationStateCopyWith<_HomeNavigationState> get copyWith =>
+      throw _privateConstructorUsedError;
 }

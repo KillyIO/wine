@@ -2,12 +2,12 @@ part of 'home_navigation_bloc.dart';
 
 /// @nodoc
 @freezed
-abstract class HomeNavigationState with _$HomeNavigationState {
+class HomeNavigationState with _$HomeNavigationState {
   /// @nodoc
   const factory HomeNavigationState({
-    @required int currentPageViewIdx,
-    @required bool isLeftDrawerOpen,
-    @required bool isRightDrawerOpen,
+    required int currentPageViewIdx,
+    required bool isLeftDrawerOpen,
+    required bool isRightDrawerOpen,
   }) = _HomeNavigationState;
 
   /// @nodoc
