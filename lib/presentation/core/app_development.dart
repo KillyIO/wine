@@ -1,17 +1,17 @@
-import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:wine/application/auth/auth_bloc.dart';
 import 'package:wine/application/home/home_bloc.dart';
 import 'package:wine/flavors.dart';
 import 'package:wine/injection.dart';
-import 'package:wine/presentation/routes/router.gr.dart';
-import 'package:wine/presentation/splash/splash_page.dart';
+import 'package:wine/presentation/routes/router.dart';
 
 /// @nodoc
 class AppDevelopment extends StatelessWidget {
   /// @nodoc
-  AppDevelopment({Key key}) : super(key: key);
+  AppDevelopment({Key? key}) : super(key: key);
+
+  final _appRouter = AppRouter();
 
   @override
   Widget build(BuildContext context) {
@@ -20,9 +20,13 @@ class AppDevelopment extends StatelessWidget {
         BlocProvider(create: (_) => getIt<AuthBloc>()),
         BlocProvider(create: (_) => getIt<HomeBloc>()),
       ],
-      child: MaterialApp(
-        builder: ExtendedNavigator.builder<AppRouter>(router: AppRouter()),
-        home: SplashPage(),
+      child: MaterialApp.router(
+        builder: (_, router) {
+          return router!;
+        },
+        debugShowCheckedModeBanner: false,
+        routerDelegate: _appRouter.delegate(),
+        routeInformationParser: _appRouter.defaultRouteParser(),
         title: F.title,
       ),
     );

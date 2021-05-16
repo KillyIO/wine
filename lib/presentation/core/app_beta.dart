@@ -1,4 +1,3 @@
-import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:wine/application/auth/auth_bloc.dart';
@@ -6,15 +5,15 @@ import 'package:wine/application/home/home_bloc.dart';
 import 'package:wine/flavors.dart';
 import 'package:wine/injection.dart';
 import 'package:wine/presentation/routes/router.gr.dart';
-import 'package:wine/presentation/splash/splash_page.dart';
 
 /// @nodoc
 class AppBeta extends StatelessWidget {
   /// @nodoc
-  AppBeta({Key key}) : super(key: key);
+  AppBeta({Key? key}) : super(key: key);
 
   // /// @nodoc
   // final FirebaseAnalytics analytics = FirebaseAnalytics();
+  final _appRouter = AppRouter();
 
   @override
   Widget build(BuildContext context) {
@@ -23,15 +22,13 @@ class AppBeta extends StatelessWidget {
         BlocProvider(create: (_) => getIt<AuthBloc>()),
         BlocProvider(create: (_) => getIt<HomeBloc>()),
       ],
-      child: MaterialApp(
-        builder: ExtendedNavigator.builder<AppRouter>(
-          router: AppRouter(),
-          // observers: <NavigatorObserver>[
-          //   FirebaseAnalyticsObserver(analytics: analytics),
-          // ],
-        ),
+      child: MaterialApp.router(
+        builder: (_, router) {
+          return router!;
+        },
         debugShowCheckedModeBanner: false,
-        home: SplashPage(),
+        routerDelegate: _appRouter.delegate(),
+        routeInformationParser: _appRouter.defaultRouteParser(),
         title: F.title,
       ),
     );
