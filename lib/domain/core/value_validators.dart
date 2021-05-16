@@ -5,7 +5,7 @@ import 'package:string_validator/string_validator.dart';
 import 'package:stringr/stringr.dart';
 
 import 'package:wine/domain/core/value_failure.dart';
-import 'package:wine/helpers/string_extension.dart';
+import 'package:wine/infrastructure/core/string_helpers.dart';
 import 'package:wine/utils/constants/core.dart';
 import 'package:wine/utils/constants/series.dart';
 
