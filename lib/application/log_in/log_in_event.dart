@@ -2,7 +2,7 @@ part of 'log_in_bloc.dart';
 
 /// @nodoc
 @freezed
-abstract class LogInEvent with _$LogInEvent {
+class LogInEvent with _$LogInEvent {
   /// @nodoc
   const factory LogInEvent.emailChanged(String emailStr) = EmailChanged;
 

@@ -3,7 +3,11 @@ import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
+import 'package:rustic/option.dart';
+import 'package:rustic/result.dart';
+import 'package:rustic/tuple.dart';
 import 'package:wine/application/home/home_navigation/home_navigation_bloc.dart';
+import 'package:wine/domain/core/core_failure.dart';
 import 'package:wine/domain/series/series.dart';
 
 part 'home_event.dart';
@@ -11,6 +15,8 @@ part 'home_state.dart';
 part 'home_bloc.freezed.dart';
 
 /// @nodoc
+@Environment('dev')
+@Environment('prod')
 @injectable
 class HomeBloc extends Bloc<HomeEvent, HomeState> {
   /// @nodoc
@@ -21,16 +27,16 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
   /// @nodoc
   final HomeNavigationBloc _homeNavigationBloc;
 
-  StreamSubscription _homeNavigationBlocSubscription;
+  late StreamSubscription _homeNavigationBlocSubscription;
 
   @override
   Stream<HomeState> mapEventToState(
     HomeEvent event,
   ) async* {
     yield* event.map(
-      homePageLaunched: (value) async* {
+      initBloc: (value) async* {
         _homeNavigationBlocSubscription =
-            _homeNavigationBloc.listen((homeNavigationState) {
+            _homeNavigationBloc.stream.listen((homeNavigationState) {
           switch (homeNavigationState.currentPageViewIdx) {
             case 0:
               if (state.topSeriesList.isEmpty) {
@@ -56,7 +62,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
 
   @override
   Future<void> close() {
-    _homeNavigationBlocSubscription?.cancel();
+    _homeNavigationBlocSubscription.cancel();
     return super.close();
   }
 }

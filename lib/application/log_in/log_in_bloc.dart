@@ -1,9 +1,11 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
-import 'package:dartz/dartz.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
+import 'package:rustic/option.dart';
+import 'package:rustic/result.dart';
+import 'package:rustic/tuple.dart';
 import 'package:wine/domain/auth/auth_failure.dart';
 import 'package:wine/domain/auth/email_address.dart';
 import 'package:wine/domain/auth/i_auth_facade.dart';
@@ -16,6 +18,8 @@ part 'log_in_state.dart';
 part 'log_in_bloc.freezed.dart';
 
 /// @nodoc
+@Environment('dev')
+@Environment('prod')
 @injectable
 class LogInBloc extends Bloc<LogInEvent, LogInState> {
   /// @nodoc
@@ -35,23 +39,23 @@ class LogInBloc extends Bloc<LogInEvent, LogInState> {
     yield* event.map(
       emailChanged: (value) async* {
         yield state.copyWith(
-          authOption: none(),
+          authOption: const None(),
           emailAddress: EmailAddress(value.emailStr),
-          userOption: none(),
+          userOption: const None(),
         );
       },
       loggedIn: (value) async* {},
       logInWithEmailAndPasswordPressed: (value) async* {
-        Either<AuthFailure, Unit> failureOrSuccess;
+        Result<Unit, AuthFailure>? failureOrSuccess;
 
         final isEmailValid = state.emailAddress.isValid();
         final isPasswordValid = state.password.isValid();
 
         if (isEmailValid && isPasswordValid) {
           yield state.copyWith(
-            authOption: none(),
+            authOption: const None(),
             isProcessing: true,
-            userOption: none(),
+            userOption: const None(),
           );
 
           failureOrSuccess = await _authFacade.logInWithEmailAndPassword(
@@ -60,10 +64,10 @@ class LogInBloc extends Bloc<LogInEvent, LogInState> {
           );
         }
 
-        final isSuccess = failureOrSuccess.isRight();
+        final isSuccess = failureOrSuccess?.isOk ?? false;
 
         yield state.copyWith(
-          authOption: optionOf(failureOrSuccess),
+          authOption: Option(failureOrSuccess),
           isProcessing: isSuccess,
           showErrorMessages: true,
         );
@@ -74,24 +78,24 @@ class LogInBloc extends Bloc<LogInEvent, LogInState> {
       },
       logInWithGooglePressed: (value) async* {
         yield state.copyWith(
-          authOption: none(),
+          authOption: const None(),
           isProcessing: true,
-          userOption: none(),
+          userOption: const None(),
         );
 
         final failureOrSuccess = await _authFacade.logInWithGoogle();
 
         yield state.copyWith(
-          authOption: optionOf(failureOrSuccess),
+          authOption: Option(failureOrSuccess),
           isProcessing: true,
-          userOption: none(),
+          userOption: const None(),
         );
       },
       passwordChanged: (value) async* {
         yield state.copyWith(
-          authOption: none(),
+          authOption: const None(),
           password: Password(value.passwordStr),
-          userOption: none(),
+          userOption: const None(),
         );
       },
       userDetailsSaved: (value) async* {},

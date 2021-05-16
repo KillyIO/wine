@@ -2,24 +2,24 @@ part of 'log_in_bloc.dart';
 
 /// @nodoc
 @freezed
-abstract class LogInState with _$LogInState {
+class LogInState with _$LogInState {
   /// @nodoc
   const factory LogInState({
-    @required Option<Either<AuthFailure, Unit>> authOption,
-    @required EmailAddress emailAddress,
-    @required bool isProcessing,
-    @required Password password,
-    @required bool showErrorMessages,
-    @required Option<Either<UserFailure, dynamic>> userOption,
+    required Option<Result<Unit?, AuthFailure>> authOption,
+    required EmailAddress emailAddress,
+    required bool isProcessing,
+    required Password password,
+    required bool showErrorMessages,
+    required Option<Result<dynamic, UserFailure>> userOption,
   }) = _LogInState;
 
   /// @nodoc
   factory LogInState.initial() => LogInState(
-        authOption: none(),
+        authOption: const None(),
         emailAddress: EmailAddress(''),
         isProcessing: false,
         password: Password(''),
         showErrorMessages: false,
-        userOption: none(),
+        userOption: const None(),
       );
 }
