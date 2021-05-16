@@ -3,7 +3,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:rustic/result.dart';
 import 'package:rustic/tuple.dart';
-import 'package:wine/application/splash/splash_bloc.dart';
+import 'package:wine/application/setup/setup_bloc.dart';
 import 'package:wine/domain/auth/auth_failure.dart';
 import 'package:wine/domain/auth/i_auth_facade.dart';
 import 'package:wine/domain/core/core_failure.dart';
@@ -30,7 +30,7 @@ void main() {
   late ISettingsRepository _settingsRepository;
   late IUserRepository _userRepository;
 
-  late SplashBloc _splashBloc;
+  late SetupBloc _setupBloc;
 
   setUp(() {
     _authFacade = MockAuthFacade();
@@ -39,7 +39,7 @@ void main() {
     _settingsRepository = MockSettingsRepository();
     _userRepository = MockUserRepository();
 
-    _splashBloc = SplashBloc(
+    _setupBloc = SetupBloc(
       _authFacade,
       _defaultCoversRepository,
       _sessionsRepository,
@@ -49,29 +49,29 @@ void main() {
   });
 
   tearDown(() {
-    _splashBloc.close();
+    _setupBloc.close();
   });
 
   group('SplashBloc -', () {
     blocTest(
       'When instantiating return nothing',
-      build: () => _splashBloc,
-      expect: () => <SplashState>[],
+      build: () => _setupBloc,
+      expect: () => <SetupState>[],
     );
 
     group('Errors -', () {
       blocTest(
         'When error occur during signInAnonymously then yield Failure',
-        build: () => _splashBloc,
-        act: (SplashBloc bloc) {
+        build: () => _setupBloc,
+        act: (SetupBloc bloc) {
           when(() => _authFacade.isLoggedIn).thenReturn(false);
           when(() => _authFacade.logInAnonymously())
               .thenAnswer((_) async => const Err(AuthFailure.serverError()));
-          return bloc.add(const SplashEvent.splashPageLaunched());
+          return bloc.add(const SetupEvent.appLaunched());
         },
-        expect: () => <SplashState>[
-          const SplashState.initial(),
-          const SplashState.failure(
+        expect: () => <SetupState>[
+          const SetupState.initial(),
+          const SetupState.failure(
             CoreFailure.auth(AuthFailure.serverError()),
           ),
         ],
@@ -85,16 +85,16 @@ void main() {
 
       blocTest(
         'When error occur during loadDefaultCoverURLs then yield Failure',
-        build: () => _splashBloc,
-        act: (SplashBloc bloc) {
+        build: () => _setupBloc,
+        act: (SetupBloc bloc) {
           when(() => _authFacade.isAnonymous).thenReturn(false);
           when(() => _defaultCoversRepository.loadDefaultCoverURLs())
               .thenAnswer((_) async =>
                   const Err(DefaultCoversFailure.defaultCoverURLsNotLoaded()));
-          return bloc.add(const SplashEvent.authenticated());
+          return bloc.add(const SetupEvent.authenticated());
         },
-        expect: () => <SplashState>[
-          const SplashState.failure(
+        expect: () => <SetupState>[
+          const SetupState.failure(
             CoreFailure.defaultCovers(
               DefaultCoversFailure.defaultCoverURLsNotLoaded(),
             ),
@@ -110,37 +110,39 @@ void main() {
 
       blocTest(
         'When error occur during cacheDefaultCoverURLs then yield Failure',
-        build: () => _splashBloc,
-        act: (SplashBloc bloc) {
-          when(() => _defaultCoversRepository.cacheDefaultCoverURLs({}))
+        build: () => _setupBloc,
+        act: (SetupBloc bloc) {
+          when(() => _defaultCoversRepository
+                  .cacheDefaultCoverURLs(testDefaultCovers))
               .thenAnswer((_) async =>
                   const Err(DefaultCoversFailure.defaultCoverURLsNotCached()));
-          return bloc.add(const SplashEvent.defaultCoverURLsLoaded({}));
+          return bloc
+              .add(const SetupEvent.defaultCoverURLsLoaded(testDefaultCovers));
         },
-        expect: () => <SplashState>[
-          const SplashState.failure(
+        expect: () => <SetupState>[
+          const SetupState.failure(
             CoreFailure.defaultCovers(
               DefaultCoversFailure.defaultCoverURLsNotCached(),
             ),
           ),
         ],
         verify: (_) {
-          verify(() => _defaultCoversRepository.cacheDefaultCoverURLs({}))
-              .called(1);
+          verify(() => _defaultCoversRepository
+              .cacheDefaultCoverURLs(testDefaultCovers)).called(1);
         },
       );
 
       blocTest(
         'When error occur during initializeSettings then yield Failure',
-        build: () => _splashBloc,
-        act: (SplashBloc bloc) {
+        build: () => _setupBloc,
+        act: (SetupBloc bloc) {
           when(() => _settingsRepository.initializeSettings()).thenAnswer(
             (_) async => const Err(SettingsFailure.settingsNotInitialized()),
           );
-          return bloc.add(const SplashEvent.settingsNotFound());
+          return bloc.add(const SetupEvent.settingsNotFound());
         },
-        expect: () => <SplashState>[
-          const SplashState.failure(
+        expect: () => <SetupState>[
+          const SetupState.failure(
             CoreFailure.settings(SettingsFailure.settingsNotInitialized()),
           ),
         ],
@@ -151,15 +153,15 @@ void main() {
 
       blocTest(
         'When error occur during createSession then yield Failure',
-        build: () => _splashBloc,
-        act: (SplashBloc bloc) {
+        build: () => _setupBloc,
+        act: (SetupBloc bloc) {
           when(() => _sessionsRepository.createSession()).thenAnswer(
             (_) async => const Err(SessionsFailure.sessionNotCreated()),
           );
-          return bloc.add(const SplashEvent.sessionNotFound());
+          return bloc.add(const SetupEvent.sessionNotFound());
         },
-        expect: () => <SplashState>[
-          const SplashState.failure(
+        expect: () => <SetupState>[
+          const SetupState.failure(
             CoreFailure.sessions(SessionsFailure.sessionNotCreated()),
           ),
         ],
@@ -170,15 +172,15 @@ void main() {
 
       blocTest(
         'When error occur during loadUser then yield Failure',
-        build: () => _splashBloc,
-        act: (SplashBloc bloc) {
+        build: () => _setupBloc,
+        act: (SetupBloc bloc) {
           when(() => _authFacade.isAnonymous).thenReturn(false);
           when(() => _userRepository.loadUser(testUid))
               .thenAnswer((_) async => const Err(UserFailure.userNotFound()));
-          return bloc.add(SplashEvent.sessionFetched(testUser));
+          return bloc.add(SetupEvent.sessionFetched(testUser));
         },
-        expect: () => <SplashState>[
-          const SplashState.failure(
+        expect: () => <SetupState>[
+          const SetupState.failure(
             CoreFailure.user(UserFailure.userNotFound()),
           ),
         ],
@@ -192,15 +194,15 @@ void main() {
 
       blocTest(
         'When error occur during updateSession then yield Failure',
-        build: () => _splashBloc,
-        act: (SplashBloc bloc) {
+        build: () => _setupBloc,
+        act: (SetupBloc bloc) {
           when(() => _sessionsRepository.updateSession(testUser)).thenAnswer(
             (_) async => const Err(SessionsFailure.sessionNotUpdated()),
           );
-          return bloc.add(SplashEvent.userLoaded(testUser));
+          return bloc.add(SetupEvent.userLoaded(testUser));
         },
-        expect: () => <SplashState>[
-          const SplashState.failure(
+        expect: () => <SetupState>[
+          const SetupState.failure(
             CoreFailure.sessions(SessionsFailure.sessionNotUpdated()),
           ),
         ],
@@ -213,8 +215,8 @@ void main() {
     group('Completed -', () {
       blocTest(
         'When session not found And session created Then yield goToOnboarding',
-        build: () => _splashBloc,
-        act: (SplashBloc bloc) {
+        build: () => _setupBloc,
+        act: (SetupBloc bloc) {
           when(() => _authFacade.isLoggedIn).thenReturn(true);
           when(() => _authFacade.isAnonymous).thenReturn(true);
           when(_settingsRepository.fetchSettings)
@@ -225,11 +227,11 @@ void main() {
           when(_sessionsRepository.createSession)
               .thenAnswer((_) async => const Ok(Unit()));
 
-          return bloc.add(const SplashEvent.splashPageLaunched());
+          return bloc.add(const SetupEvent.appLaunched());
         },
-        expect: () => <SplashState>[
-          const SplashState.initial(),
-          const SplashState.goToOnboarding(),
+        expect: () => <SetupState>[
+          const SetupState.initial(),
+          const SetupState.navigateToOnboarding(),
         ],
         verify: (_) {
           verifyInOrder([
@@ -244,8 +246,8 @@ void main() {
 
       blocTest(
         'When session fetched but user anonymous Then yield gotToHome',
-        build: () => _splashBloc,
-        act: (SplashBloc bloc) {
+        build: () => _setupBloc,
+        act: (SetupBloc bloc) {
           when(() => _authFacade.isLoggedIn).thenReturn(true);
           when(() => _authFacade.isAnonymous).thenReturn(true);
           when(_settingsRepository.fetchSettings)
@@ -253,11 +255,11 @@ void main() {
           when(_sessionsRepository.fetchSession)
               .thenAnswer((_) async => Ok(testUser));
 
-          return bloc.add(const SplashEvent.splashPageLaunched());
+          return bloc.add(const SetupEvent.appLaunched());
         },
-        expect: () => <SplashState>[
-          const SplashState.initial(),
-          const SplashState.goToHome(),
+        expect: () => <SetupState>[
+          const SetupState.initial(),
+          const SetupState.initHomeBloc(),
         ],
         verify: (_) {
           verifyInOrder([
@@ -272,8 +274,8 @@ void main() {
 
       blocTest(
         'When session fetched but user authenticated Then yield goToHome',
-        build: () => _splashBloc,
-        act: (SplashBloc bloc) {
+        build: () => _setupBloc,
+        act: (SetupBloc bloc) {
           when(() => _authFacade.isLoggedIn).thenReturn(false);
           when(_authFacade.logInAnonymously)
               .thenAnswer((_) async => const Ok(Unit()));
@@ -295,11 +297,11 @@ void main() {
           when(() => _sessionsRepository.updateSession(testUser))
               .thenAnswer((_) async => const Ok(Unit()));
 
-          return bloc.add(const SplashEvent.splashPageLaunched());
+          return bloc.add(const SetupEvent.appLaunched());
         },
-        expect: () => <SplashState>[
-          const SplashState.initial(),
-          const SplashState.goToHome(),
+        expect: () => <SetupState>[
+          const SetupState.initial(),
+          const SetupState.initHomeBloc(),
         ],
         verify: (_) {
           verifyInOrder([
