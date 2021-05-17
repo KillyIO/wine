@@ -52,7 +52,7 @@ void main() {
     _setupBloc.close();
   });
 
-  group('SplashBloc -', () {
+  group('SetupBloc -', () {
     blocTest(
       'When instantiating return nothing',
       build: () => _setupBloc,
