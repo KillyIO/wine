@@ -36,6 +36,7 @@ dependencies:
   mime: ^1.0.0
   path_provider: ^2.0.1
   rustic: ^0.3.0
+  shimmer: ^2.0.0
   simple_gesture_detector: ^0.2.0
   string_validator: ^0.3.0
   stringr: ^0.0.2-prerelease
