@@ -18,8 +18,8 @@ part 'log_in_state.dart';
 part 'log_in_bloc.freezed.dart';
 
 /// @nodoc
-@Environment('dev')
-@Environment('prod')
+@Environment(Environment.dev)
+@Environment(Environment.prod)
 @injectable
 class LogInBloc extends Bloc<LogInEvent, LogInState> {
   /// @nodoc

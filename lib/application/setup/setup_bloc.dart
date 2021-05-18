@@ -18,8 +18,8 @@ part 'setup_event.dart';
 part 'setup_state.dart';
 
 /// @nodoc
-@Environment('dev')
-@Environment('prod')
+@Environment(Environment.dev)
+@Environment(Environment.prod)
 @injectable
 class SetupBloc extends Bloc<SetupEvent, SetupState> {
   /// @nodoc

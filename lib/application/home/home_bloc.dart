@@ -15,8 +15,8 @@ part 'home_state.dart';
 part 'home_bloc.freezed.dart';
 
 /// @nodoc
-@Environment('dev')
-@Environment('prod')
+@Environment(Environment.dev)
+@Environment(Environment.prod)
 @injectable
 class HomeBloc extends Bloc<HomeEvent, HomeState> {
   /// @nodoc

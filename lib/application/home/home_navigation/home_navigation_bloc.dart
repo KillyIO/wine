@@ -10,8 +10,8 @@ part 'home_navigation_state.dart';
 part 'home_navigation_bloc.freezed.dart';
 
 /// @nodoc
-@Environment('dev')
-@Environment('prod')
+@Environment(Environment.dev)
+@Environment(Environment.prod)
 @injectable
 class HomeNavigationBloc
     extends Bloc<HomeNavigationEvent, HomeNavigationState> {
