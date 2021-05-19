@@ -15,28 +15,36 @@ class Series with _$Series {
   /// @nodoc
   factory Series({
     required UniqueID authorUID,
+    required int bookmarksCount,
     required CoverURL coverURL,
     required Genre genre,
-    required Genre genreOptional,
+    Genre? genreOptional,
     required bool isNSFW,
+    required bool isPublished,
     required Language language,
-    required Subtitle subtitle,
+    required int likesCount,
+    Subtitle? subtitle,
     required Summary summary,
     required Title title,
     required UniqueID uid,
+    required int viewsCount,
   }) = _Series;
 
   /// @nodoc
   factory Series.empty() => Series(
         authorUID: UniqueID(),
+        bookmarksCount: 0,
         coverURL: CoverURL(''),
         genre: Genre(''),
         genreOptional: Genre('', isOptional: true),
         isNSFW: false,
+        isPublished: false,
         language: Language(''),
+        likesCount: 0,
         subtitle: Subtitle(''),
         summary: Summary(''),
         title: Title(''),
         uid: UniqueID(),
+        viewsCount: 0,
       );
 }

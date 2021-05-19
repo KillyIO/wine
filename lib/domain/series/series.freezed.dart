@@ -18,26 +18,34 @@ class _$SeriesTearOff {
 
   _Series call(
       {required UniqueID authorUID,
+      required int bookmarksCount,
       required CoverURL coverURL,
       required Genre genre,
-      required Genre genreOptional,
+      Genre? genreOptional,
       required bool isNSFW,
+      required bool isPublished,
       required Language language,
-      required Subtitle subtitle,
+      required int likesCount,
+      Subtitle? subtitle,
       required Summary summary,
       required Title title,
-      required UniqueID uid}) {
+      required UniqueID uid,
+      required int viewsCount}) {
     return _Series(
       authorUID: authorUID,
+      bookmarksCount: bookmarksCount,
       coverURL: coverURL,
       genre: genre,
       genreOptional: genreOptional,
       isNSFW: isNSFW,
+      isPublished: isPublished,
       language: language,
+      likesCount: likesCount,
       subtitle: subtitle,
       summary: summary,
       title: title,
       uid: uid,
+      viewsCount: viewsCount,
     );
   }
 }
@@ -48,15 +56,19 @@ const $Series = _$SeriesTearOff();
 /// @nodoc
 mixin _$Series {
   UniqueID get authorUID => throw _privateConstructorUsedError;
+  int get bookmarksCount => throw _privateConstructorUsedError;
   CoverURL get coverURL => throw _privateConstructorUsedError;
   Genre get genre => throw _privateConstructorUsedError;
-  Genre get genreOptional => throw _privateConstructorUsedError;
+  Genre? get genreOptional => throw _privateConstructorUsedError;
   bool get isNSFW => throw _privateConstructorUsedError;
+  bool get isPublished => throw _privateConstructorUsedError;
   Language get language => throw _privateConstructorUsedError;
-  Subtitle get subtitle => throw _privateConstructorUsedError;
+  int get likesCount => throw _privateConstructorUsedError;
+  Subtitle? get subtitle => throw _privateConstructorUsedError;
   Summary get summary => throw _privateConstructorUsedError;
   Title get title => throw _privateConstructorUsedError;
   UniqueID get uid => throw _privateConstructorUsedError;
+  int get viewsCount => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $SeriesCopyWith<Series> get copyWith => throw _privateConstructorUsedError;
@@ -68,15 +80,19 @@ abstract class $SeriesCopyWith<$Res> {
       _$SeriesCopyWithImpl<$Res>;
   $Res call(
       {UniqueID authorUID,
+      int bookmarksCount,
       CoverURL coverURL,
       Genre genre,
-      Genre genreOptional,
+      Genre? genreOptional,
       bool isNSFW,
+      bool isPublished,
       Language language,
-      Subtitle subtitle,
+      int likesCount,
+      Subtitle? subtitle,
       Summary summary,
       Title title,
-      UniqueID uid});
+      UniqueID uid,
+      int viewsCount});
 }
 
 /// @nodoc
@@ -90,21 +106,29 @@ class _$SeriesCopyWithImpl<$Res> implements $SeriesCopyWith<$Res> {
   @override
   $Res call({
     Object? authorUID = freezed,
+    Object? bookmarksCount = freezed,
     Object? coverURL = freezed,
     Object? genre = freezed,
     Object? genreOptional = freezed,
     Object? isNSFW = freezed,
+    Object? isPublished = freezed,
     Object? language = freezed,
+    Object? likesCount = freezed,
     Object? subtitle = freezed,
     Object? summary = freezed,
     Object? title = freezed,
     Object? uid = freezed,
+    Object? viewsCount = freezed,
   }) {
     return _then(_value.copyWith(
       authorUID: authorUID == freezed
           ? _value.authorUID
           : authorUID // ignore: cast_nullable_to_non_nullable
               as UniqueID,
+      bookmarksCount: bookmarksCount == freezed
+          ? _value.bookmarksCount
+          : bookmarksCount // ignore: cast_nullable_to_non_nullable
+              as int,
       coverURL: coverURL == freezed
           ? _value.coverURL
           : coverURL // ignore: cast_nullable_to_non_nullable
@@ -116,19 +140,27 @@ class _$SeriesCopyWithImpl<$Res> implements $SeriesCopyWith<$Res> {
       genreOptional: genreOptional == freezed
           ? _value.genreOptional
           : genreOptional // ignore: cast_nullable_to_non_nullable
-              as Genre,
+              as Genre?,
       isNSFW: isNSFW == freezed
           ? _value.isNSFW
           : isNSFW // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isPublished: isPublished == freezed
+          ? _value.isPublished
+          : isPublished // ignore: cast_nullable_to_non_nullable
               as bool,
       language: language == freezed
           ? _value.language
           : language // ignore: cast_nullable_to_non_nullable
               as Language,
+      likesCount: likesCount == freezed
+          ? _value.likesCount
+          : likesCount // ignore: cast_nullable_to_non_nullable
+              as int,
       subtitle: subtitle == freezed
           ? _value.subtitle
           : subtitle // ignore: cast_nullable_to_non_nullable
-              as Subtitle,
+              as Subtitle?,
       summary: summary == freezed
           ? _value.summary
           : summary // ignore: cast_nullable_to_non_nullable
@@ -141,6 +173,10 @@ class _$SeriesCopyWithImpl<$Res> implements $SeriesCopyWith<$Res> {
           ? _value.uid
           : uid // ignore: cast_nullable_to_non_nullable
               as UniqueID,
+      viewsCount: viewsCount == freezed
+          ? _value.viewsCount
+          : viewsCount // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -152,15 +188,19 @@ abstract class _$SeriesCopyWith<$Res> implements $SeriesCopyWith<$Res> {
   @override
   $Res call(
       {UniqueID authorUID,
+      int bookmarksCount,
       CoverURL coverURL,
       Genre genre,
-      Genre genreOptional,
+      Genre? genreOptional,
       bool isNSFW,
+      bool isPublished,
       Language language,
-      Subtitle subtitle,
+      int likesCount,
+      Subtitle? subtitle,
       Summary summary,
       Title title,
-      UniqueID uid});
+      UniqueID uid,
+      int viewsCount});
 }
 
 /// @nodoc
@@ -175,21 +215,29 @@ class __$SeriesCopyWithImpl<$Res> extends _$SeriesCopyWithImpl<$Res>
   @override
   $Res call({
     Object? authorUID = freezed,
+    Object? bookmarksCount = freezed,
     Object? coverURL = freezed,
     Object? genre = freezed,
     Object? genreOptional = freezed,
     Object? isNSFW = freezed,
+    Object? isPublished = freezed,
     Object? language = freezed,
+    Object? likesCount = freezed,
     Object? subtitle = freezed,
     Object? summary = freezed,
     Object? title = freezed,
     Object? uid = freezed,
+    Object? viewsCount = freezed,
   }) {
     return _then(_Series(
       authorUID: authorUID == freezed
           ? _value.authorUID
           : authorUID // ignore: cast_nullable_to_non_nullable
               as UniqueID,
+      bookmarksCount: bookmarksCount == freezed
+          ? _value.bookmarksCount
+          : bookmarksCount // ignore: cast_nullable_to_non_nullable
+              as int,
       coverURL: coverURL == freezed
           ? _value.coverURL
           : coverURL // ignore: cast_nullable_to_non_nullable
@@ -201,19 +249,27 @@ class __$SeriesCopyWithImpl<$Res> extends _$SeriesCopyWithImpl<$Res>
       genreOptional: genreOptional == freezed
           ? _value.genreOptional
           : genreOptional // ignore: cast_nullable_to_non_nullable
-              as Genre,
+              as Genre?,
       isNSFW: isNSFW == freezed
           ? _value.isNSFW
           : isNSFW // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isPublished: isPublished == freezed
+          ? _value.isPublished
+          : isPublished // ignore: cast_nullable_to_non_nullable
               as bool,
       language: language == freezed
           ? _value.language
           : language // ignore: cast_nullable_to_non_nullable
               as Language,
+      likesCount: likesCount == freezed
+          ? _value.likesCount
+          : likesCount // ignore: cast_nullable_to_non_nullable
+              as int,
       subtitle: subtitle == freezed
           ? _value.subtitle
           : subtitle // ignore: cast_nullable_to_non_nullable
-              as Subtitle,
+              as Subtitle?,
       summary: summary == freezed
           ? _value.summary
           : summary // ignore: cast_nullable_to_non_nullable
@@ -226,6 +282,10 @@ class __$SeriesCopyWithImpl<$Res> extends _$SeriesCopyWithImpl<$Res>
           ? _value.uid
           : uid // ignore: cast_nullable_to_non_nullable
               as UniqueID,
+      viewsCount: viewsCount == freezed
+          ? _value.viewsCount
+          : viewsCount // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -235,40 +295,52 @@ class __$SeriesCopyWithImpl<$Res> extends _$SeriesCopyWithImpl<$Res>
 class _$_Series implements _Series {
   _$_Series(
       {required this.authorUID,
+      required this.bookmarksCount,
       required this.coverURL,
       required this.genre,
-      required this.genreOptional,
+      this.genreOptional,
       required this.isNSFW,
+      required this.isPublished,
       required this.language,
-      required this.subtitle,
+      required this.likesCount,
+      this.subtitle,
       required this.summary,
       required this.title,
-      required this.uid});
+      required this.uid,
+      required this.viewsCount});
 
   @override
   final UniqueID authorUID;
+  @override
+  final int bookmarksCount;
   @override
   final CoverURL coverURL;
   @override
   final Genre genre;
   @override
-  final Genre genreOptional;
+  final Genre? genreOptional;
   @override
   final bool isNSFW;
   @override
+  final bool isPublished;
+  @override
   final Language language;
   @override
-  final Subtitle subtitle;
+  final int likesCount;
+  @override
+  final Subtitle? subtitle;
   @override
   final Summary summary;
   @override
   final Title title;
   @override
   final UniqueID uid;
+  @override
+  final int viewsCount;
 
   @override
   String toString() {
-    return 'Series(authorUID: $authorUID, coverURL: $coverURL, genre: $genre, genreOptional: $genreOptional, isNSFW: $isNSFW, language: $language, subtitle: $subtitle, summary: $summary, title: $title, uid: $uid)';
+    return 'Series(authorUID: $authorUID, bookmarksCount: $bookmarksCount, coverURL: $coverURL, genre: $genre, genreOptional: $genreOptional, isNSFW: $isNSFW, isPublished: $isPublished, language: $language, likesCount: $likesCount, subtitle: $subtitle, summary: $summary, title: $title, uid: $uid, viewsCount: $viewsCount)';
   }
 
   @override
@@ -278,6 +350,9 @@ class _$_Series implements _Series {
             (identical(other.authorUID, authorUID) ||
                 const DeepCollectionEquality()
                     .equals(other.authorUID, authorUID)) &&
+            (identical(other.bookmarksCount, bookmarksCount) ||
+                const DeepCollectionEquality()
+                    .equals(other.bookmarksCount, bookmarksCount)) &&
             (identical(other.coverURL, coverURL) ||
                 const DeepCollectionEquality()
                     .equals(other.coverURL, coverURL)) &&
@@ -288,9 +363,15 @@ class _$_Series implements _Series {
                     .equals(other.genreOptional, genreOptional)) &&
             (identical(other.isNSFW, isNSFW) ||
                 const DeepCollectionEquality().equals(other.isNSFW, isNSFW)) &&
+            (identical(other.isPublished, isPublished) ||
+                const DeepCollectionEquality()
+                    .equals(other.isPublished, isPublished)) &&
             (identical(other.language, language) ||
                 const DeepCollectionEquality()
                     .equals(other.language, language)) &&
+            (identical(other.likesCount, likesCount) ||
+                const DeepCollectionEquality()
+                    .equals(other.likesCount, likesCount)) &&
             (identical(other.subtitle, subtitle) ||
                 const DeepCollectionEquality()
                     .equals(other.subtitle, subtitle)) &&
@@ -300,22 +381,29 @@ class _$_Series implements _Series {
             (identical(other.title, title) ||
                 const DeepCollectionEquality().equals(other.title, title)) &&
             (identical(other.uid, uid) ||
-                const DeepCollectionEquality().equals(other.uid, uid)));
+                const DeepCollectionEquality().equals(other.uid, uid)) &&
+            (identical(other.viewsCount, viewsCount) ||
+                const DeepCollectionEquality()
+                    .equals(other.viewsCount, viewsCount)));
   }
 
   @override
   int get hashCode =>
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(authorUID) ^
+      const DeepCollectionEquality().hash(bookmarksCount) ^
       const DeepCollectionEquality().hash(coverURL) ^
       const DeepCollectionEquality().hash(genre) ^
       const DeepCollectionEquality().hash(genreOptional) ^
       const DeepCollectionEquality().hash(isNSFW) ^
+      const DeepCollectionEquality().hash(isPublished) ^
       const DeepCollectionEquality().hash(language) ^
+      const DeepCollectionEquality().hash(likesCount) ^
       const DeepCollectionEquality().hash(subtitle) ^
       const DeepCollectionEquality().hash(summary) ^
       const DeepCollectionEquality().hash(title) ^
-      const DeepCollectionEquality().hash(uid);
+      const DeepCollectionEquality().hash(uid) ^
+      const DeepCollectionEquality().hash(viewsCount);
 
   @JsonKey(ignore: true)
   @override
@@ -326,36 +414,48 @@ class _$_Series implements _Series {
 abstract class _Series implements Series {
   factory _Series(
       {required UniqueID authorUID,
+      required int bookmarksCount,
       required CoverURL coverURL,
       required Genre genre,
-      required Genre genreOptional,
+      Genre? genreOptional,
       required bool isNSFW,
+      required bool isPublished,
       required Language language,
-      required Subtitle subtitle,
+      required int likesCount,
+      Subtitle? subtitle,
       required Summary summary,
       required Title title,
-      required UniqueID uid}) = _$_Series;
+      required UniqueID uid,
+      required int viewsCount}) = _$_Series;
 
   @override
   UniqueID get authorUID => throw _privateConstructorUsedError;
+  @override
+  int get bookmarksCount => throw _privateConstructorUsedError;
   @override
   CoverURL get coverURL => throw _privateConstructorUsedError;
   @override
   Genre get genre => throw _privateConstructorUsedError;
   @override
-  Genre get genreOptional => throw _privateConstructorUsedError;
+  Genre? get genreOptional => throw _privateConstructorUsedError;
   @override
   bool get isNSFW => throw _privateConstructorUsedError;
   @override
+  bool get isPublished => throw _privateConstructorUsedError;
+  @override
   Language get language => throw _privateConstructorUsedError;
   @override
-  Subtitle get subtitle => throw _privateConstructorUsedError;
+  int get likesCount => throw _privateConstructorUsedError;
+  @override
+  Subtitle? get subtitle => throw _privateConstructorUsedError;
   @override
   Summary get summary => throw _privateConstructorUsedError;
   @override
   Title get title => throw _privateConstructorUsedError;
   @override
   UniqueID get uid => throw _privateConstructorUsedError;
+  @override
+  int get viewsCount => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$SeriesCopyWith<_Series> get copyWith => throw _privateConstructorUsedError;
