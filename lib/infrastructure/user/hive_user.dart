@@ -4,7 +4,6 @@ import 'package:wine/domain/auth/email_address.dart';
 import 'package:wine/domain/auth/username.dart';
 import 'package:wine/domain/core/unique_id.dart';
 import 'package:wine/domain/user/user.dart';
-import 'package:wine/utils/constants/users.dart';
 
 part 'hive_user.g.dart';
 
@@ -13,19 +12,17 @@ part 'hive_user.g.dart';
 class HiveUser extends Equatable {
   /// @nodoc
   const HiveUser({
-    this.emailAddress,
-    this.uid,
-    this.username,
+    required this.emailAddress,
+    required this.uid,
+    required this.username,
   });
 
   /// @nodoc
   factory HiveUser.fromMap(Map<String, dynamic> map) {
-    if (map == null) return null;
-
     return HiveUser(
-      emailAddress: ['emailAddress'] as String,
-      uid: ['uid'] as String,
-      username: ['username'] as String,
+      emailAddress: map['emailAddress'] as String,
+      uid: map['uid'] as String,
+      username: map['username'] as String,
     );
   }
 
@@ -43,9 +40,9 @@ class HiveUser extends Equatable {
 
   /// @nodoc
   HiveUser copyWith({
-    String emailAddress,
-    String uid,
-    String username,
+    String? emailAddress,
+    String? uid,
+    String? username,
   }) {
     return HiveUser(
       emailAddress: emailAddress ?? this.emailAddress,
@@ -66,18 +63,14 @@ class HiveUser extends Equatable {
   /// @nodoc
   User toDomain() {
     return User(
-      emailAddress: EmailAddress(emailAddress ?? defaultEmailAddress),
-      uid: UniqueID.fromUniqueString(uid ?? defaultUID),
-      username: Username(username ?? defaultUsername),
+      emailAddress: EmailAddress(emailAddress),
+      uid: UniqueID.fromUniqueString(uid),
+      username: Username(username),
     );
   }
 
   @override
-  List<Object> get props => [
-        emailAddress,
-        uid,
-        username,
-      ];
+  List<Object> get props => [emailAddress, uid, username];
 
   @override
   bool get stringify => true;

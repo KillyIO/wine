@@ -13,21 +13,21 @@ part 'user_dto.g.dart';
 
 /// @nodoc
 @freezed
-abstract class UserDTO with _$UserDTO {
+class UserDTO with _$UserDTO {
   /// @nodoc
   factory UserDTO({
-    @required String emailAddress,
-    @required @ServerTimestampConverter() FieldValue serverTimeStamp,
-    @JsonKey(ignore: true) String uid,
-    @required String username,
+    required String emailAddress,
+    required String uid,
+    @ServerTimestampConverter() required FieldValue updatedAt,
+    required String username,
   }) = _UserDTO;
 
   /// @nodoc
   factory UserDTO.fromDomain(User user) {
     return UserDTO(
       emailAddress: user.emailAddress.getOrCrash(),
-      serverTimeStamp: FieldValue.serverTimestamp(),
       uid: user.uid.getOrCrash(),
+      updatedAt: FieldValue.serverTimestamp(),
       username: user.username.getOrCrash(),
     );
   }
@@ -36,8 +36,8 @@ abstract class UserDTO with _$UserDTO {
   factory UserDTO.fromAdapter(HiveUser user) {
     return UserDTO(
       emailAddress: user.emailAddress,
-      serverTimeStamp: FieldValue.serverTimestamp(),
       uid: user.uid,
+      updatedAt: FieldValue.serverTimestamp(),
       username: user.username,
     );
   }
@@ -45,11 +45,6 @@ abstract class UserDTO with _$UserDTO {
   /// @nodoc
   factory UserDTO.fromJson(Map<String, dynamic> json) =>
       _$UserDTOFromJson(json);
-
-  /// @nodoc
-  factory UserDTO.fromFirestore(DocumentSnapshot doc) {
-    return UserDTO.fromJson(doc.data()).copyWith(uid: doc.id);
-  }
 }
 
 /// @nodoc
@@ -90,8 +85,8 @@ extension UserMapX on Map {
 extension UserX on auth.User {
   /// @nodoc
   User toDomain() => User(
-        emailAddress: EmailAddress(email),
+        emailAddress: EmailAddress(email!),
         uid: UniqueID.fromUniqueString(uid),
-        username: Username(email.split('@').first),
+        username: Username(email!.split('@').first),
       );
 }

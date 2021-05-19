@@ -1,11 +1,13 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:dartz/dartz.dart';
 import 'package:injectable/injectable.dart';
+import 'package:rustic/result.dart';
+import 'package:rustic/tuple.dart';
 import 'package:wine/domain/auth/username.dart';
 import 'package:wine/domain/user/i_user_repository.dart';
 import 'package:wine/domain/user/user.dart';
 import 'package:wine/domain/user/user_failure.dart';
 import 'package:wine/infrastructure/user/user_dto.dart';
+import 'package:wine/infrastructure/core/firestore_helpers.dart';
 import 'package:wine/utils/paths/users.dart';
 
 /// @nodoc
@@ -17,7 +19,7 @@ class UserRepository extends IUserRepository {
   final FirebaseFirestore _firestore;
 
   @override
-  Future<Either<UserFailure, Unit>> checkUsernameAvailability(
+  Future<Result<Unit, UserFailure>> checkUsernameAvailability(
     Username username,
   ) async {
     final usernameStr = username.getOrCrash();
@@ -29,53 +31,56 @@ class UserRepository extends IUserRepository {
           .get();
 
       if (documentSnapshot.exists) {
-        return left(const UserFailure.usernameAlreadyInUse());
+        return const Err(UserFailure.usernameAlreadyInUse());
       }
-      return right(unit);
+      return const Ok(Unit());
     } on FirebaseException catch (_) {
-      return left(const UserFailure.serverError());
+      return const Err(UserFailure.serverError());
     } catch (_) {
-      return left(const UserFailure.unexpected());
+      return const Err(UserFailure.unexpected());
     }
   }
 
   @override
-  Future<Either<UserFailure, User>> loadUser(String userUID) async {
+  Future<Result<User, UserFailure>> loadUser(String userUID) async {
     try {
-      final documentSnapshot =
-          await _firestore.collection(usersPath).doc(userUID).get();
+      final user = await _firestore.usersCollectionReference
+          .doc(userUID)
+          .get()
+          .then((s) {
+        if (!s.exists) return null;
+        return s.data() as User;
+      });
 
-      if (documentSnapshot != null && documentSnapshot.exists) {
-        final user = UserDTO.fromFirestore(documentSnapshot).toDomain();
-        return right(user);
+      if (user != null) {
+        return Ok(user);
       }
-      return left(const UserFailure.userNotFound());
+      return const Err(UserFailure.userNotFound());
     } on FirebaseException catch (_) {
-      return left(const UserFailure.serverError());
+      return const Err(UserFailure.serverError());
     } catch (_) {
-      return left(const UserFailure.unexpected());
+      return const Err(UserFailure.unexpected());
     }
   }
 
   @override
-  Future<Either<UserFailure, Unit>> saveDetailsFromUser(User user) async {
+  Future<Result<Unit, UserFailure>> saveDetailsFromUser(User user) async {
     try {
       final usersRef =
-          _firestore.collection(usersPath).doc(user.uid.getOrCrash());
+          _firestore.usersCollectionReference.doc(user.uid.getOrCrash());
 
-      final userDTO = UserDTO.fromDomain(user);
-      await usersRef.set(userDTO.toJson(), SetOptions(merge: true));
+      await usersRef.set(user, SetOptions(merge: true));
 
-      return right(unit);
+      return const Ok(Unit());
     } on FirebaseException catch (_) {
-      return left(const UserFailure.serverError());
+      return const Err(UserFailure.serverError());
     } catch (_) {
-      return left(const UserFailure.unexpected());
+      return const Err(UserFailure.unexpected());
     }
   }
 
   @override
-  Future<Either<UserFailure, Unit>> saveUsername(
+  Future<Result<Unit, UserFailure>> saveUsername(
     String userUID,
     Username username,
   ) async {
@@ -87,11 +92,11 @@ class UserRepository extends IUserRepository {
 
       await mapReference.set({'uid': userUID}, SetOptions(merge: true));
 
-      return right(unit);
+      return const Ok(Unit());
     } on FirebaseException catch (_) {
-      return left(const UserFailure.serverError());
+      return const Err(UserFailure.serverError());
     } catch (_) {
-      return left(const UserFailure.unexpected());
+      return const Err(UserFailure.unexpected());
     }
   }
 }
