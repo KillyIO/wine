@@ -15,7 +15,7 @@ dependencies:
   cloud_firestore: ^2.2.0
   cupertino_icons: ^1.0.3
   devicelocale: ^0.4.1
-  equatable: ^2.0.1
+  equatable: ^2.0.2
   firebase_auth: ^1.2.0
   firebase_core: ^1.2.0
   flare_flutter: ^3.0.0
@@ -48,7 +48,7 @@ dev_dependencies:
   auto_route_generator: ^2.1.0
   bloc_test: ^8.0.0
   build_runner: ^2.0.3
-  fake_cloud_firestore: ^1.0.1
+  fake_cloud_firestore: ^1.1.0
   flutter_flavorizr: ^2.0.0
   fluttericon: ^2.0.0
   freezed: ^0.14.2
