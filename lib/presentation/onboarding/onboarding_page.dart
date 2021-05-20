@@ -9,7 +9,7 @@ import 'package:wine/utils/themes.dart';
 /// @nodoc
 class OnboardingPage extends StatelessWidget {
   /// @nodoc
-  OnboardingPage({Key key}) : super(key: key);
+  OnboardingPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +26,7 @@ class OnboardingPage extends StatelessWidget {
             done: const Text(
               'Start',
             ),
-            onDone: () => ExtendedNavigator.root.replace(Routes.homePage),
+            onDone: () async => context.router.replace(HomeRoute()),
             pages: [
               // TODO add pages
               PageViewModel(
@@ -34,6 +34,7 @@ class OnboardingPage extends StatelessWidget {
                 body: 'Placeholder body',
               ),
             ],
+            showNextButton: false,
           ),
         ),
       ),

@@ -4,7 +4,7 @@ import 'package:wine/utils/assets/images.dart';
 /// @nodoc
 class PlusBanner extends StatelessWidget {
   /// @nodoc
-  const PlusBanner({Key key}) : super(key: key);
+  const PlusBanner({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

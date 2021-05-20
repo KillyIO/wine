@@ -6,7 +6,7 @@ import 'package:wine/utils/themes.dart';
 /// @nodoc
 class PlusPage extends StatelessWidget {
   /// @nodoc
-  const PlusPage({Key key}) : super(key: key);
+  const PlusPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
