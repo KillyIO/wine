@@ -15,7 +15,7 @@ class MockUser extends Mock implements auth.User {
   String get displayName => testName;
 
   @override
-  String get uid => testUid;
+  String get uid => testUserUid;
 
   @override
   String get email => testEmailAddress;

@@ -7,6 +7,16 @@ class MockGoogleSignInAccount extends Mock implements GoogleSignInAccount {
   @override
   Future<GoogleSignInAuthentication> get authentication async =>
       MockGoogleSignInAuthentication();
+
+  @override
+  bool operator ==(other) {
+    return (other is Mock)
+        ? hashCode == other.hashCode
+        : identical(this, other);
+  }
+
+  @override
+  int get hashCode => super.hashCode;
 }
 
 class MockGoogleSignInAuthentication extends Mock
