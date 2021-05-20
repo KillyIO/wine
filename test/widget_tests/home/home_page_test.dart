@@ -373,37 +373,29 @@ void main() {
       });
     });
 
-    group('Completed -', () {
-      group('goToHome -', () {
-        testWidgets('anonymous goToHome', (tester) async {});
+    testWidgets('Should navigate to Onboarding page', (tester) async {
+      when(() => _authFacade.isLoggedIn).thenReturn(false);
+      when(_authFacade.logInAnonymously)
+          .thenAnswer((_) async => const Ok(Unit()));
+      when(() => _authFacade.isAnonymous).thenReturn(true);
+      when(_settingsRepository.fetchSettings)
+          .thenAnswer((_) async => const Ok(testSettings));
+      when(_sessionsRepository.fetchSession).thenAnswer(
+        (_) async => const Err(SessionsFailure.sessionNotFound()),
+      );
+      when(_sessionsRepository.createSession)
+          .thenAnswer((_) async => const Ok(Unit()));
 
-        testWidgets('authenticated goToHome', (tester) async {});
-      });
+      await tester.pumpWidget(TestRouterWidget(
+        appRouter: HomeTestRouter(),
+        providers: [
+          BlocProvider<AuthBloc>(create: (_) => getIt<AuthBloc>()),
+          BlocProvider<HomeBloc>(create: (_) => getIt<HomeBloc>()),
+        ],
+      ));
+      await tester.pumpAndSettle();
 
-      testWidgets('Should navigate to Onboarding page', (tester) async {
-        when(() => _authFacade.isLoggedIn).thenReturn(false);
-        when(_authFacade.logInAnonymously)
-            .thenAnswer((_) async => const Ok(Unit()));
-        when(() => _authFacade.isAnonymous).thenReturn(true);
-        when(_settingsRepository.fetchSettings)
-            .thenAnswer((_) async => const Ok(testSettings));
-        when(_sessionsRepository.fetchSession).thenAnswer(
-          (_) async => const Err(SessionsFailure.sessionNotFound()),
-        );
-        when(_sessionsRepository.createSession)
-            .thenAnswer((_) async => const Ok(Unit()));
-
-        await tester.pumpWidget(TestRouterWidget(
-          appRouter: HomeTestRouter(),
-          providers: [
-            BlocProvider<AuthBloc>(create: (_) => getIt<AuthBloc>()),
-            BlocProvider<HomeBloc>(create: (_) => getIt<HomeBloc>()),
-          ],
-        ));
-        await tester.pumpAndSettle();
-
-        expect(find.byType(OnboardingPage), findsOneWidget);
-      });
+      expect(find.byType(OnboardingPage), findsOneWidget);
     });
   });
 }
