@@ -5,10 +5,10 @@ import 'package:flutter/material.dart';
 class AnimatedButton extends StatelessWidget {
   /// @nodoc
   AnimatedButton({
-    Key key,
-    @required this.animation,
+    Key? key,
+    required this.animation,
     this.callback,
-    @required this.filename,
+    required this.filename,
     this.height = 20.0,
     this.onPressed,
     this.width = 20.0,
@@ -18,7 +18,7 @@ class AnimatedButton extends StatelessWidget {
   final String animation;
 
   /// @nodoc
-  final void Function(String) callback;
+  final void Function(String)? callback;
 
   /// @nodoc
   final String filename;
@@ -27,7 +27,7 @@ class AnimatedButton extends StatelessWidget {
   final double height;
 
   /// @nodoc
-  final VoidCallback onPressed;
+  final VoidCallback? onPressed;
 
   /// @nodoc
   final double width;

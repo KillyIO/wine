@@ -4,12 +4,12 @@ import 'package:flutter/material.dart';
 class AssetButton extends StatelessWidget {
   /// @nodoc
   AssetButton({
-    Key key,
+    Key? key,
     this.color = Colors.black,
     this.height = 20.0,
     this.width = 20.0,
-    @required this.imagePath,
-    @required this.onPressed,
+    required this.imagePath,
+    required this.onPressed,
   }) : super(key: key);
 
   /// @nodoc

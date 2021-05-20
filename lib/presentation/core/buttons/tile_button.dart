@@ -4,12 +4,12 @@ import 'package:flutter/material.dart';
 class TileButton extends StatelessWidget {
   /// @nodoc
   const TileButton({
-    Key key,
+    Key? key,
     this.isFirst = false,
-    @required this.leadingIconData,
-    @required this.onPressed,
-    @required this.title,
-    @required this.trailingIconData,
+    required this.leadingIconData,
+    required this.onPressed,
+    required this.title,
+    required this.trailingIconData,
   }) : super(key: key);
 
   /// @nodoc
