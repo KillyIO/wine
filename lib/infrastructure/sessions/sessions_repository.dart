@@ -1,7 +1,8 @@
-import 'package:dartz/dartz.dart';
 import 'package:firebase_auth/firebase_auth.dart' as auth;
 import 'package:hive/hive.dart';
 import 'package:injectable/injectable.dart';
+import 'package:rustic/result.dart';
+import 'package:rustic/tuple.dart';
 
 import 'package:wine/domain/sessions/i_sessions_repository.dart';
 import 'package:wine/domain/sessions/sessions_failure.dart';
@@ -12,7 +13,10 @@ import 'package:wine/utils/constants/boxes.dart';
 import 'package:wine/utils/constants/users.dart';
 
 /// @nodoc
-@LazySingleton(as: ISessionsRepository, env: ['dev', 'prod'])
+@LazySingleton(
+  as: ISessionsRepository,
+  env: [Environment.dev, Environment.prod],
+)
 class SessionsRepository implements ISessionsRepository {
   /// @nodoc
   SessionsRepository(
@@ -26,64 +30,71 @@ class SessionsRepository implements ISessionsRepository {
   final HiveInterface _hive;
 
   @override
-  Future<Either<SessionsFailure, Unit>> createSession() async {
+  Future<Result<Unit, SessionsFailure>> createSession() async {
     final box = await _hive.openBox<HiveUser>(sessionsBox);
 
     final firebaseUser = _firebaseAuth.currentUser;
 
-    await box.put(
-      firebaseUser.uid,
-      HiveUser(
-        emailAddress: defaultEmailAddress,
-        uid: firebaseUser.uid ?? defaultUID,
-        username: defaultUsername,
-      ),
-    );
-
-    if (box.get(firebaseUser.uid) != null) return right(unit);
-
-    return left(const SessionsFailure.sessionNotCreated());
-  }
-
-  @override
-  Future<Either<SessionsFailure, Unit>> deleteSession() async {
-    final box = await _hive.openBox<HiveUser>(sessionsBox);
-
-    final firebaseUser = _firebaseAuth.currentUser;
-
-    await box.delete(firebaseUser.uid);
-
-    if (box.get(firebaseUser.uid) != null) {
-      return left(const SessionsFailure.sessionNotDeleted());
+    if (firebaseUser != null) {
+      await box.put(
+        firebaseUser.uid,
+        HiveUser(
+          emailAddress: defaultEmailAddress,
+          uid: firebaseUser.uid,
+          username: defaultUsername,
+        ),
+      );
     }
-    return right(unit);
+
+    if (box.get(firebaseUser?.uid) != null) return const Ok(Unit());
+
+    return const Err(SessionsFailure.sessionNotCreated());
   }
 
   @override
-  Future<Either<SessionsFailure, User>> fetchSession() async {
+  Future<Result<Unit, SessionsFailure>> deleteSession() async {
     final box = await _hive.openBox<HiveUser>(sessionsBox);
 
     final firebaseUser = _firebaseAuth.currentUser;
 
-    final session = box.get(firebaseUser.uid);
+    if (firebaseUser != null) {
+      await box.delete(firebaseUser.uid);
+    }
+
+    if (box.get(firebaseUser?.uid) != null) {
+      return const Err(SessionsFailure.sessionNotDeleted());
+    }
+    return const Ok(Unit());
+  }
+
+  @override
+  Future<Result<User, SessionsFailure>> fetchSession() async {
+    final box = await _hive.openBox<HiveUser>(sessionsBox);
+
+    final firebaseUser = _firebaseAuth.currentUser;
+
+    final session = box.get(firebaseUser?.uid);
 
     if (session != null) {
-      return right(session.toDomain());
+      return Ok(session.toDomain());
     }
-    return left(const SessionsFailure.sessionNotFound());
+    return const Err(SessionsFailure.sessionNotFound());
   }
 
   @override
-  Future<Either<SessionsFailure, Unit>> updateSession(User user) async {
+  Future<Result<Unit, SessionsFailure>> updateSession(User user) async {
     final box = await _hive.openBox<HiveUser>(sessionsBox);
 
     final firebaseUser = _firebaseAuth.currentUser;
 
     final userAdapter = UserDTO.fromDomain(user).toAdapter();
-    await box.put(firebaseUser.uid, userAdapter);
 
-    if (box.get(firebaseUser.uid) == userAdapter) return right(unit);
+    if (firebaseUser != null) {
+      await box.put(firebaseUser.uid, userAdapter);
+    }
 
-    return left(const SessionsFailure.sessionNotUpdated());
+    if (box.get(firebaseUser?.uid) == userAdapter) return const Ok(Unit());
+
+    return const Err(SessionsFailure.sessionNotUpdated());
   }
 }
