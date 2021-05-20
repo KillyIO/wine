@@ -17,12 +17,12 @@ class _$SettingsTearOff {
   const _$SettingsTearOff();
 
   _Settings call(
-      {required bool enableChaptersBookmarksCount,
-      required bool enableChaptersLikesCount,
-      required bool enableChaptersViewsCount,
-      required bool enableSeriesBookmarksCount,
-      required bool enableSeriesLikesCount,
-      required bool enableSeriesViewsCount}) {
+      {required bool? enableChaptersBookmarksCount,
+      required bool? enableChaptersLikesCount,
+      required bool? enableChaptersViewsCount,
+      required bool? enableSeriesBookmarksCount,
+      required bool? enableSeriesLikesCount,
+      required bool? enableSeriesViewsCount}) {
     return _Settings(
       enableChaptersBookmarksCount: enableChaptersBookmarksCount,
       enableChaptersLikesCount: enableChaptersLikesCount,
@@ -39,12 +39,12 @@ const $Settings = _$SettingsTearOff();
 
 /// @nodoc
 mixin _$Settings {
-  bool get enableChaptersBookmarksCount => throw _privateConstructorUsedError;
-  bool get enableChaptersLikesCount => throw _privateConstructorUsedError;
-  bool get enableChaptersViewsCount => throw _privateConstructorUsedError;
-  bool get enableSeriesBookmarksCount => throw _privateConstructorUsedError;
-  bool get enableSeriesLikesCount => throw _privateConstructorUsedError;
-  bool get enableSeriesViewsCount => throw _privateConstructorUsedError;
+  bool? get enableChaptersBookmarksCount => throw _privateConstructorUsedError;
+  bool? get enableChaptersLikesCount => throw _privateConstructorUsedError;
+  bool? get enableChaptersViewsCount => throw _privateConstructorUsedError;
+  bool? get enableSeriesBookmarksCount => throw _privateConstructorUsedError;
+  bool? get enableSeriesLikesCount => throw _privateConstructorUsedError;
+  bool? get enableSeriesViewsCount => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $SettingsCopyWith<Settings> get copyWith =>
@@ -56,12 +56,12 @@ abstract class $SettingsCopyWith<$Res> {
   factory $SettingsCopyWith(Settings value, $Res Function(Settings) then) =
       _$SettingsCopyWithImpl<$Res>;
   $Res call(
-      {bool enableChaptersBookmarksCount,
-      bool enableChaptersLikesCount,
-      bool enableChaptersViewsCount,
-      bool enableSeriesBookmarksCount,
-      bool enableSeriesLikesCount,
-      bool enableSeriesViewsCount});
+      {bool? enableChaptersBookmarksCount,
+      bool? enableChaptersLikesCount,
+      bool? enableChaptersViewsCount,
+      bool? enableSeriesBookmarksCount,
+      bool? enableSeriesLikesCount,
+      bool? enableSeriesViewsCount});
 }
 
 /// @nodoc
@@ -85,27 +85,27 @@ class _$SettingsCopyWithImpl<$Res> implements $SettingsCopyWith<$Res> {
       enableChaptersBookmarksCount: enableChaptersBookmarksCount == freezed
           ? _value.enableChaptersBookmarksCount
           : enableChaptersBookmarksCount // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as bool?,
       enableChaptersLikesCount: enableChaptersLikesCount == freezed
           ? _value.enableChaptersLikesCount
           : enableChaptersLikesCount // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as bool?,
       enableChaptersViewsCount: enableChaptersViewsCount == freezed
           ? _value.enableChaptersViewsCount
           : enableChaptersViewsCount // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as bool?,
       enableSeriesBookmarksCount: enableSeriesBookmarksCount == freezed
           ? _value.enableSeriesBookmarksCount
           : enableSeriesBookmarksCount // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as bool?,
       enableSeriesLikesCount: enableSeriesLikesCount == freezed
           ? _value.enableSeriesLikesCount
           : enableSeriesLikesCount // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as bool?,
       enableSeriesViewsCount: enableSeriesViewsCount == freezed
           ? _value.enableSeriesViewsCount
           : enableSeriesViewsCount // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as bool?,
     ));
   }
 }
@@ -116,12 +116,12 @@ abstract class _$SettingsCopyWith<$Res> implements $SettingsCopyWith<$Res> {
       __$SettingsCopyWithImpl<$Res>;
   @override
   $Res call(
-      {bool enableChaptersBookmarksCount,
-      bool enableChaptersLikesCount,
-      bool enableChaptersViewsCount,
-      bool enableSeriesBookmarksCount,
-      bool enableSeriesLikesCount,
-      bool enableSeriesViewsCount});
+      {bool? enableChaptersBookmarksCount,
+      bool? enableChaptersLikesCount,
+      bool? enableChaptersViewsCount,
+      bool? enableSeriesBookmarksCount,
+      bool? enableSeriesLikesCount,
+      bool? enableSeriesViewsCount});
 }
 
 /// @nodoc
@@ -146,27 +146,27 @@ class __$SettingsCopyWithImpl<$Res> extends _$SettingsCopyWithImpl<$Res>
       enableChaptersBookmarksCount: enableChaptersBookmarksCount == freezed
           ? _value.enableChaptersBookmarksCount
           : enableChaptersBookmarksCount // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as bool?,
       enableChaptersLikesCount: enableChaptersLikesCount == freezed
           ? _value.enableChaptersLikesCount
           : enableChaptersLikesCount // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as bool?,
       enableChaptersViewsCount: enableChaptersViewsCount == freezed
           ? _value.enableChaptersViewsCount
           : enableChaptersViewsCount // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as bool?,
       enableSeriesBookmarksCount: enableSeriesBookmarksCount == freezed
           ? _value.enableSeriesBookmarksCount
           : enableSeriesBookmarksCount // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as bool?,
       enableSeriesLikesCount: enableSeriesLikesCount == freezed
           ? _value.enableSeriesLikesCount
           : enableSeriesLikesCount // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as bool?,
       enableSeriesViewsCount: enableSeriesViewsCount == freezed
           ? _value.enableSeriesViewsCount
           : enableSeriesViewsCount // ignore: cast_nullable_to_non_nullable
-              as bool,
+              as bool?,
     ));
   }
 }
@@ -183,17 +183,17 @@ class _$_Settings implements _Settings {
       required this.enableSeriesViewsCount});
 
   @override
-  final bool enableChaptersBookmarksCount;
+  final bool? enableChaptersBookmarksCount;
   @override
-  final bool enableChaptersLikesCount;
+  final bool? enableChaptersLikesCount;
   @override
-  final bool enableChaptersViewsCount;
+  final bool? enableChaptersViewsCount;
   @override
-  final bool enableSeriesBookmarksCount;
+  final bool? enableSeriesBookmarksCount;
   @override
-  final bool enableSeriesLikesCount;
+  final bool? enableSeriesLikesCount;
   @override
-  final bool enableSeriesViewsCount;
+  final bool? enableSeriesViewsCount;
 
   @override
   String toString() {
@@ -250,25 +250,25 @@ class _$_Settings implements _Settings {
 
 abstract class _Settings implements Settings {
   const factory _Settings(
-      {required bool enableChaptersBookmarksCount,
-      required bool enableChaptersLikesCount,
-      required bool enableChaptersViewsCount,
-      required bool enableSeriesBookmarksCount,
-      required bool enableSeriesLikesCount,
-      required bool enableSeriesViewsCount}) = _$_Settings;
+      {required bool? enableChaptersBookmarksCount,
+      required bool? enableChaptersLikesCount,
+      required bool? enableChaptersViewsCount,
+      required bool? enableSeriesBookmarksCount,
+      required bool? enableSeriesLikesCount,
+      required bool? enableSeriesViewsCount}) = _$_Settings;
 
   @override
-  bool get enableChaptersBookmarksCount => throw _privateConstructorUsedError;
+  bool? get enableChaptersBookmarksCount => throw _privateConstructorUsedError;
   @override
-  bool get enableChaptersLikesCount => throw _privateConstructorUsedError;
+  bool? get enableChaptersLikesCount => throw _privateConstructorUsedError;
   @override
-  bool get enableChaptersViewsCount => throw _privateConstructorUsedError;
+  bool? get enableChaptersViewsCount => throw _privateConstructorUsedError;
   @override
-  bool get enableSeriesBookmarksCount => throw _privateConstructorUsedError;
+  bool? get enableSeriesBookmarksCount => throw _privateConstructorUsedError;
   @override
-  bool get enableSeriesLikesCount => throw _privateConstructorUsedError;
+  bool? get enableSeriesLikesCount => throw _privateConstructorUsedError;
   @override
-  bool get enableSeriesViewsCount => throw _privateConstructorUsedError;
+  bool? get enableSeriesViewsCount => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$SettingsCopyWith<_Settings> get copyWith =>
