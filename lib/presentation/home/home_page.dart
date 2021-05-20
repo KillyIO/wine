@@ -1,28 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:wine/application/home/home_bloc.dart';
 import 'package:wine/application/home/home_navigation/home_navigation_bloc.dart';
+import 'package:wine/application/setup/setup_bloc.dart';
 import 'package:wine/injection.dart';
 import 'package:wine/presentation/home/home_layout.dart';
 import 'package:wine/utils/themes.dart';
 
 /// @nodoc
-class HomePage extends StatefulWidget {
+class HomePage extends StatelessWidget {
   /// @nodoc
-  HomePage({Key key}) : super(key: key);
-
-  @override
-  _HomePageState createState() => _HomePageState();
-}
-
-class _HomePageState extends State<HomePage> {
-  @override
-  void initState() {
-    super.initState();
-
-    context.read<HomeBloc>()..add(const HomeEvent.homePageLaunched());
-  }
+  HomePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -32,8 +20,16 @@ class _HomePageState extends State<HomePage> {
     ]);
     return AnnotatedRegion<SystemUiOverlayStyle>(
       value: lightTheme,
-      child: BlocProvider<HomeNavigationBloc>(
-        create: (_) => getIt<HomeNavigationBloc>(),
+      child: MultiBlocProvider(
+        providers: [
+          BlocProvider(
+            create: (_) => getIt<HomeNavigationBloc>(),
+          ),
+          BlocProvider(
+            create: (_) =>
+                getIt<SetupBloc>()..add(const SetupEvent.appLaunched()),
+          ),
+        ],
         child: HomeLayout(),
       ),
     );

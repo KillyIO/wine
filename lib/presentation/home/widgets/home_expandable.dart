@@ -5,8 +5,8 @@ import 'package:time/time.dart';
 class HomeExpandable extends StatefulWidget {
   /// @nodoc
   const HomeExpandable({
-    Key key,
-    @required this.child,
+    Key? key,
+    required this.child,
     this.expanded = false,
   }) : super(key: key);
 
@@ -22,8 +22,8 @@ class HomeExpandable extends StatefulWidget {
 
 class _HomeExpandableState extends State<HomeExpandable>
     with SingleTickerProviderStateMixin {
-  AnimationController expandController;
-  Animation<double> animation;
+  late AnimationController expandController;
+  late Animation<double> animation;
 
   @override
   void initState() {
@@ -44,15 +44,15 @@ class _HomeExpandableState extends State<HomeExpandable>
 
   @override
   void dispose() {
-    expandController?.dispose();
+    expandController.dispose();
     super.dispose();
   }
 
   void _runExpand() {
     if (widget.expanded) {
-      expandController?.forward();
+      expandController.forward();
     } else {
-      expandController?.reverse();
+      expandController.reverse();
     }
   }
 

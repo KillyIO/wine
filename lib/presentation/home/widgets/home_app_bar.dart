@@ -12,7 +12,7 @@ import 'package:wine/utils/assets/icons.dart';
 class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
   /// @nodoc
   HomeAppBar({
-    Key key,
+    Key? key,
     this.preferredSize = const Size.fromHeight(kToolbarHeight),
   }) : super(key: key);
 

@@ -10,7 +10,7 @@ import 'package:wine/utils/assets/animations.dart';
 /// @nodoc
 class HomeMenuLayout extends StatelessWidget {
   /// @nodoc
-  const HomeMenuLayout({Key key}) : super(key: key);
+  const HomeMenuLayout({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
