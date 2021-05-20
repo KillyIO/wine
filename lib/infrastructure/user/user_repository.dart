@@ -44,7 +44,13 @@ class UserRepository extends IUserRepository {
   @override
   Future<Result<User, UserFailure>> loadUser(String userUID) async {
     try {
-      final user = await _firestore.usersCollectionReference
+      final user = await _firestore
+          .collection(usersPath)
+          .withConverter<User>(
+            fromFirestore: (snapshot, _) =>
+                UserDTO.fromJson(snapshot.data()!).toDomain(),
+            toFirestore: (value, _) => UserDTO.fromDomain(value).toJson(),
+          )
           .doc(userUID)
           .get()
           .then((s) {
@@ -66,8 +72,14 @@ class UserRepository extends IUserRepository {
   @override
   Future<Result<Unit, UserFailure>> saveDetailsFromUser(User user) async {
     try {
-      final usersRef =
-          _firestore.usersCollectionReference.doc(user.uid.getOrCrash());
+      final usersRef = _firestore
+          .collection(usersPath)
+          .withConverter<User>(
+            fromFirestore: (snapshot, _) =>
+                UserDTO.fromJson(snapshot.data()!).toDomain(),
+            toFirestore: (value, _) => UserDTO.fromDomain(value).toJson(),
+          )
+          .doc(user.uid.getOrCrash());
 
       await usersRef.set(user, SetOptions(merge: true));
 
