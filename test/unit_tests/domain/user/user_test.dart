@@ -11,12 +11,12 @@ void main() {
     test('When args valid Then return User', () {
       final user = User(
         emailAddress: EmailAddress(testEmailAddress),
-        uid: UniqueID.fromUniqueString(testUid),
+        uid: UniqueID.fromUniqueString(testUserUid),
         username: Username(testUsername),
       );
 
       expect(user.emailAddress.getOrCrash(), testEmailAddress);
-      expect(user.uid.getOrCrash(), testUid);
+      expect(user.uid.getOrCrash(), testUserUid);
       expect(user.username.getOrCrash(), testUsername);
     });
   });

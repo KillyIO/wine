@@ -21,9 +21,9 @@ void main() {
       test(
         'When input valid Then return input',
         () {
-          final uid = UniqueID.fromUniqueString(testUid);
+          final uid = UniqueID.fromUniqueString(testUserUid);
 
-          expect(uid.getOrCrash(), testUid);
+          expect(uid.getOrCrash(), testUserUid);
         },
       );
 
