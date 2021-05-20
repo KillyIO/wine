@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'settings_dto.dart';
 
@@ -8,6 +8,10 @@ part of 'settings_dto.dart';
 // **************************************************************************
 
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 SettingsDTO _$SettingsDTOFromJson(Map<String, dynamic> json) {
   return _SettingsDTO.fromJson(json);
 }
@@ -16,14 +20,13 @@ SettingsDTO _$SettingsDTOFromJson(Map<String, dynamic> json) {
 class _$SettingsDTOTearOff {
   const _$SettingsDTOTearOff();
 
-// ignore: unused_element
   _SettingsDTO call(
-      {@required bool enableChaptersBookmarksCount,
-      @required bool enableChaptersLikesCount,
-      @required bool enableChaptersViewsCount,
-      @required bool enableSeriesBookmarksCount,
-      @required bool enableSeriesLikesCount,
-      @required bool enableSeriesViewsCount}) {
+      {required bool? enableChaptersBookmarksCount,
+      required bool? enableChaptersLikesCount,
+      required bool? enableChaptersViewsCount,
+      required bool? enableSeriesBookmarksCount,
+      required bool? enableSeriesLikesCount,
+      required bool? enableSeriesViewsCount}) {
     return _SettingsDTO(
       enableChaptersBookmarksCount: enableChaptersBookmarksCount,
       enableChaptersLikesCount: enableChaptersLikesCount,
@@ -34,28 +37,27 @@ class _$SettingsDTOTearOff {
     );
   }
 
-// ignore: unused_element
   SettingsDTO fromJson(Map<String, Object> json) {
     return SettingsDTO.fromJson(json);
   }
 }
 
 /// @nodoc
-// ignore: unused_element
 const $SettingsDTO = _$SettingsDTOTearOff();
 
 /// @nodoc
 mixin _$SettingsDTO {
-  bool get enableChaptersBookmarksCount;
-  bool get enableChaptersLikesCount;
-  bool get enableChaptersViewsCount;
-  bool get enableSeriesBookmarksCount;
-  bool get enableSeriesLikesCount;
-  bool get enableSeriesViewsCount;
+  bool? get enableChaptersBookmarksCount => throw _privateConstructorUsedError;
+  bool? get enableChaptersLikesCount => throw _privateConstructorUsedError;
+  bool? get enableChaptersViewsCount => throw _privateConstructorUsedError;
+  bool? get enableSeriesBookmarksCount => throw _privateConstructorUsedError;
+  bool? get enableSeriesLikesCount => throw _privateConstructorUsedError;
+  bool? get enableSeriesViewsCount => throw _privateConstructorUsedError;
 
-  Map<String, dynamic> toJson();
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $SettingsDTOCopyWith<SettingsDTO> get copyWith;
+  $SettingsDTOCopyWith<SettingsDTO> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -64,12 +66,12 @@ abstract class $SettingsDTOCopyWith<$Res> {
           SettingsDTO value, $Res Function(SettingsDTO) then) =
       _$SettingsDTOCopyWithImpl<$Res>;
   $Res call(
-      {bool enableChaptersBookmarksCount,
-      bool enableChaptersLikesCount,
-      bool enableChaptersViewsCount,
-      bool enableSeriesBookmarksCount,
-      bool enableSeriesLikesCount,
-      bool enableSeriesViewsCount});
+      {bool? enableChaptersBookmarksCount,
+      bool? enableChaptersLikesCount,
+      bool? enableChaptersViewsCount,
+      bool? enableSeriesBookmarksCount,
+      bool? enableSeriesLikesCount,
+      bool? enableSeriesViewsCount});
 }
 
 /// @nodoc
@@ -82,32 +84,38 @@ class _$SettingsDTOCopyWithImpl<$Res> implements $SettingsDTOCopyWith<$Res> {
 
   @override
   $Res call({
-    Object enableChaptersBookmarksCount = freezed,
-    Object enableChaptersLikesCount = freezed,
-    Object enableChaptersViewsCount = freezed,
-    Object enableSeriesBookmarksCount = freezed,
-    Object enableSeriesLikesCount = freezed,
-    Object enableSeriesViewsCount = freezed,
+    Object? enableChaptersBookmarksCount = freezed,
+    Object? enableChaptersLikesCount = freezed,
+    Object? enableChaptersViewsCount = freezed,
+    Object? enableSeriesBookmarksCount = freezed,
+    Object? enableSeriesLikesCount = freezed,
+    Object? enableSeriesViewsCount = freezed,
   }) {
     return _then(_value.copyWith(
       enableChaptersBookmarksCount: enableChaptersBookmarksCount == freezed
           ? _value.enableChaptersBookmarksCount
-          : enableChaptersBookmarksCount as bool,
+          : enableChaptersBookmarksCount // ignore: cast_nullable_to_non_nullable
+              as bool?,
       enableChaptersLikesCount: enableChaptersLikesCount == freezed
           ? _value.enableChaptersLikesCount
-          : enableChaptersLikesCount as bool,
+          : enableChaptersLikesCount // ignore: cast_nullable_to_non_nullable
+              as bool?,
       enableChaptersViewsCount: enableChaptersViewsCount == freezed
           ? _value.enableChaptersViewsCount
-          : enableChaptersViewsCount as bool,
+          : enableChaptersViewsCount // ignore: cast_nullable_to_non_nullable
+              as bool?,
       enableSeriesBookmarksCount: enableSeriesBookmarksCount == freezed
           ? _value.enableSeriesBookmarksCount
-          : enableSeriesBookmarksCount as bool,
+          : enableSeriesBookmarksCount // ignore: cast_nullable_to_non_nullable
+              as bool?,
       enableSeriesLikesCount: enableSeriesLikesCount == freezed
           ? _value.enableSeriesLikesCount
-          : enableSeriesLikesCount as bool,
+          : enableSeriesLikesCount // ignore: cast_nullable_to_non_nullable
+              as bool?,
       enableSeriesViewsCount: enableSeriesViewsCount == freezed
           ? _value.enableSeriesViewsCount
-          : enableSeriesViewsCount as bool,
+          : enableSeriesViewsCount // ignore: cast_nullable_to_non_nullable
+              as bool?,
     ));
   }
 }
@@ -120,12 +128,12 @@ abstract class _$SettingsDTOCopyWith<$Res>
       __$SettingsDTOCopyWithImpl<$Res>;
   @override
   $Res call(
-      {bool enableChaptersBookmarksCount,
-      bool enableChaptersLikesCount,
-      bool enableChaptersViewsCount,
-      bool enableSeriesBookmarksCount,
-      bool enableSeriesLikesCount,
-      bool enableSeriesViewsCount});
+      {bool? enableChaptersBookmarksCount,
+      bool? enableChaptersLikesCount,
+      bool? enableChaptersViewsCount,
+      bool? enableSeriesBookmarksCount,
+      bool? enableSeriesLikesCount,
+      bool? enableSeriesViewsCount});
 }
 
 /// @nodoc
@@ -140,69 +148,68 @@ class __$SettingsDTOCopyWithImpl<$Res> extends _$SettingsDTOCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object enableChaptersBookmarksCount = freezed,
-    Object enableChaptersLikesCount = freezed,
-    Object enableChaptersViewsCount = freezed,
-    Object enableSeriesBookmarksCount = freezed,
-    Object enableSeriesLikesCount = freezed,
-    Object enableSeriesViewsCount = freezed,
+    Object? enableChaptersBookmarksCount = freezed,
+    Object? enableChaptersLikesCount = freezed,
+    Object? enableChaptersViewsCount = freezed,
+    Object? enableSeriesBookmarksCount = freezed,
+    Object? enableSeriesLikesCount = freezed,
+    Object? enableSeriesViewsCount = freezed,
   }) {
     return _then(_SettingsDTO(
       enableChaptersBookmarksCount: enableChaptersBookmarksCount == freezed
           ? _value.enableChaptersBookmarksCount
-          : enableChaptersBookmarksCount as bool,
+          : enableChaptersBookmarksCount // ignore: cast_nullable_to_non_nullable
+              as bool?,
       enableChaptersLikesCount: enableChaptersLikesCount == freezed
           ? _value.enableChaptersLikesCount
-          : enableChaptersLikesCount as bool,
+          : enableChaptersLikesCount // ignore: cast_nullable_to_non_nullable
+              as bool?,
       enableChaptersViewsCount: enableChaptersViewsCount == freezed
           ? _value.enableChaptersViewsCount
-          : enableChaptersViewsCount as bool,
+          : enableChaptersViewsCount // ignore: cast_nullable_to_non_nullable
+              as bool?,
       enableSeriesBookmarksCount: enableSeriesBookmarksCount == freezed
           ? _value.enableSeriesBookmarksCount
-          : enableSeriesBookmarksCount as bool,
+          : enableSeriesBookmarksCount // ignore: cast_nullable_to_non_nullable
+              as bool?,
       enableSeriesLikesCount: enableSeriesLikesCount == freezed
           ? _value.enableSeriesLikesCount
-          : enableSeriesLikesCount as bool,
+          : enableSeriesLikesCount // ignore: cast_nullable_to_non_nullable
+              as bool?,
       enableSeriesViewsCount: enableSeriesViewsCount == freezed
           ? _value.enableSeriesViewsCount
-          : enableSeriesViewsCount as bool,
+          : enableSeriesViewsCount // ignore: cast_nullable_to_non_nullable
+              as bool?,
     ));
   }
 }
 
-@JsonSerializable()
-
 /// @nodoc
+@JsonSerializable()
 class _$_SettingsDTO implements _SettingsDTO {
   _$_SettingsDTO(
-      {@required this.enableChaptersBookmarksCount,
-      @required this.enableChaptersLikesCount,
-      @required this.enableChaptersViewsCount,
-      @required this.enableSeriesBookmarksCount,
-      @required this.enableSeriesLikesCount,
-      @required this.enableSeriesViewsCount})
-      : assert(enableChaptersBookmarksCount != null),
-        assert(enableChaptersLikesCount != null),
-        assert(enableChaptersViewsCount != null),
-        assert(enableSeriesBookmarksCount != null),
-        assert(enableSeriesLikesCount != null),
-        assert(enableSeriesViewsCount != null);
+      {required this.enableChaptersBookmarksCount,
+      required this.enableChaptersLikesCount,
+      required this.enableChaptersViewsCount,
+      required this.enableSeriesBookmarksCount,
+      required this.enableSeriesLikesCount,
+      required this.enableSeriesViewsCount});
 
   factory _$_SettingsDTO.fromJson(Map<String, dynamic> json) =>
       _$_$_SettingsDTOFromJson(json);
 
   @override
-  final bool enableChaptersBookmarksCount;
+  final bool? enableChaptersBookmarksCount;
   @override
-  final bool enableChaptersLikesCount;
+  final bool? enableChaptersLikesCount;
   @override
-  final bool enableChaptersViewsCount;
+  final bool? enableChaptersViewsCount;
   @override
-  final bool enableSeriesBookmarksCount;
+  final bool? enableSeriesBookmarksCount;
   @override
-  final bool enableSeriesLikesCount;
+  final bool? enableSeriesLikesCount;
   @override
-  final bool enableSeriesViewsCount;
+  final bool? enableSeriesViewsCount;
 
   @override
   String toString() {
@@ -264,29 +271,30 @@ class _$_SettingsDTO implements _SettingsDTO {
 
 abstract class _SettingsDTO implements SettingsDTO {
   factory _SettingsDTO(
-      {@required bool enableChaptersBookmarksCount,
-      @required bool enableChaptersLikesCount,
-      @required bool enableChaptersViewsCount,
-      @required bool enableSeriesBookmarksCount,
-      @required bool enableSeriesLikesCount,
-      @required bool enableSeriesViewsCount}) = _$_SettingsDTO;
+      {required bool? enableChaptersBookmarksCount,
+      required bool? enableChaptersLikesCount,
+      required bool? enableChaptersViewsCount,
+      required bool? enableSeriesBookmarksCount,
+      required bool? enableSeriesLikesCount,
+      required bool? enableSeriesViewsCount}) = _$_SettingsDTO;
 
   factory _SettingsDTO.fromJson(Map<String, dynamic> json) =
       _$_SettingsDTO.fromJson;
 
   @override
-  bool get enableChaptersBookmarksCount;
+  bool? get enableChaptersBookmarksCount => throw _privateConstructorUsedError;
   @override
-  bool get enableChaptersLikesCount;
+  bool? get enableChaptersLikesCount => throw _privateConstructorUsedError;
   @override
-  bool get enableChaptersViewsCount;
+  bool? get enableChaptersViewsCount => throw _privateConstructorUsedError;
   @override
-  bool get enableSeriesBookmarksCount;
+  bool? get enableSeriesBookmarksCount => throw _privateConstructorUsedError;
   @override
-  bool get enableSeriesLikesCount;
+  bool? get enableSeriesLikesCount => throw _privateConstructorUsedError;
   @override
-  bool get enableSeriesViewsCount;
+  bool? get enableSeriesViewsCount => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  _$SettingsDTOCopyWith<_SettingsDTO> get copyWith;
+  _$SettingsDTOCopyWith<_SettingsDTO> get copyWith =>
+      throw _privateConstructorUsedError;
 }

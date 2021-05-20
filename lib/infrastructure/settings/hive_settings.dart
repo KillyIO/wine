@@ -20,8 +20,6 @@ class HiveSettings extends Equatable {
 
   /// @nodoc
   factory HiveSettings.fromMap(Map<String, dynamic> map) {
-    if (map == null) return null;
-
     return HiveSettings(
       enableChaptersBookmarksCount: map['enableChaptersBookmarksCount'] as bool,
       enableChaptersLikesCount: map['enableChaptersLikesCount'] as bool,
@@ -34,36 +32,36 @@ class HiveSettings extends Equatable {
 
   /// @nodoc
   @HiveField(0)
-  final bool enableChaptersBookmarksCount;
+  final bool? enableChaptersBookmarksCount;
 
   /// @nodoc
   @HiveField(1)
-  final bool enableChaptersLikesCount;
+  final bool? enableChaptersLikesCount;
 
   /// @nodoc
   @HiveField(2)
-  final bool enableChaptersViewsCount;
+  final bool? enableChaptersViewsCount;
 
   /// @nodoc
   @HiveField(3)
-  final bool enableSeriesBookmarksCount;
+  final bool? enableSeriesBookmarksCount;
 
   /// @nodoc
   @HiveField(4)
-  final bool enableSeriesLikesCount;
+  final bool? enableSeriesLikesCount;
 
   /// @nodoc
   @HiveField(5)
-  final bool enableSeriesViewsCount;
+  final bool? enableSeriesViewsCount;
 
   /// @nodoc
   HiveSettings copyWith({
-    bool enableChaptersBookmarksCount,
-    bool enableChaptersLikesCount,
-    bool enableChaptersViewsCount,
-    bool enableSeriesBookmarksCount,
-    bool enableSeriesLikesCount,
-    bool enableSeriesViewsCount,
+    bool? enableChaptersBookmarksCount,
+    bool? enableChaptersLikesCount,
+    bool? enableChaptersViewsCount,
+    bool? enableSeriesBookmarksCount,
+    bool? enableSeriesLikesCount,
+    bool? enableSeriesViewsCount,
   }) {
     return HiveSettings(
       enableChaptersBookmarksCount:
@@ -107,12 +105,12 @@ class HiveSettings extends Equatable {
 
   @override
   List<Object> get props => [
-        enableChaptersBookmarksCount,
-        enableChaptersLikesCount,
-        enableChaptersViewsCount,
-        enableSeriesBookmarksCount,
-        enableSeriesLikesCount,
-        enableSeriesViewsCount,
+        enableChaptersBookmarksCount!,
+        enableChaptersLikesCount!,
+        enableChaptersViewsCount!,
+        enableSeriesBookmarksCount!,
+        enableSeriesLikesCount!,
+        enableSeriesViewsCount!,
       ];
 
   @override

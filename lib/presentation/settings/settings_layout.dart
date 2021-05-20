@@ -1,7 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_icons/flutter_icons.dart';
+import 'package:line_icons/line_icons.dart';
 import 'package:wine/application/auth/auth_bloc.dart';
 import 'package:wine/presentation/core/buttons/asset_button.dart';
 import 'package:wine/presentation/core/buttons/tile_button.dart';
@@ -10,7 +10,7 @@ import 'package:wine/utils/assets/icons.dart';
 /// @nodoc
 class SettingsLayout extends StatelessWidget {
   /// @nodoc
-  const SettingsLayout({Key key}) : super(key: key);
+  const SettingsLayout({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +37,7 @@ class SettingsLayout extends StatelessWidget {
             ),
             child: AssetButton(
               imagePath: backIcon,
-              onPressed: () async => ExtendedNavigator.root.pop(),
+              onPressed: () async => context.router.pop(),
             ),
           ),
           title: const Text(
@@ -68,14 +68,14 @@ class SettingsLayout extends StatelessWidget {
               },
             ),
             TileButton(
-              leadingIconData: Feather.book,
+              leadingIconData: LineIcons.book,
               title: 'SERIES',
               trailingIconData: Icons.keyboard_arrow_right,
               // TODO add push series settings page
               onPressed: () {},
             ),
             TileButton(
-              leadingIconData: Feather.book_open,
+              leadingIconData: LineIcons.bookOpen,
               title: 'CHAPTER',
               trailingIconData: Icons.keyboard_arrow_right,
               // TODO add push chapter settings page

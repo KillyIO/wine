@@ -8,12 +8,12 @@ part of 'settings_dto.dart';
 
 _$_SettingsDTO _$_$_SettingsDTOFromJson(Map<String, dynamic> json) {
   return _$_SettingsDTO(
-    enableChaptersBookmarksCount: json['enableChaptersBookmarksCount'] as bool,
-    enableChaptersLikesCount: json['enableChaptersLikesCount'] as bool,
-    enableChaptersViewsCount: json['enableChaptersViewsCount'] as bool,
-    enableSeriesBookmarksCount: json['enableSeriesBookmarksCount'] as bool,
-    enableSeriesLikesCount: json['enableSeriesLikesCount'] as bool,
-    enableSeriesViewsCount: json['enableSeriesViewsCount'] as bool,
+    enableChaptersBookmarksCount: json['enableChaptersBookmarksCount'] as bool?,
+    enableChaptersLikesCount: json['enableChaptersLikesCount'] as bool?,
+    enableChaptersViewsCount: json['enableChaptersViewsCount'] as bool?,
+    enableSeriesBookmarksCount: json['enableSeriesBookmarksCount'] as bool?,
+    enableSeriesLikesCount: json['enableSeriesLikesCount'] as bool?,
+    enableSeriesViewsCount: json['enableSeriesViewsCount'] as bool?,
   );
 }
 

@@ -17,12 +17,12 @@ class HiveSettingsAdapter extends TypeAdapter<HiveSettings> {
       for (int i = 0; i < numOfFields; i++) reader.readByte(): reader.read(),
     };
     return HiveSettings(
-      enableChaptersBookmarksCount: fields[0] as bool,
-      enableChaptersLikesCount: fields[1] as bool,
-      enableChaptersViewsCount: fields[2] as bool,
-      enableSeriesBookmarksCount: fields[3] as bool,
-      enableSeriesLikesCount: fields[4] as bool,
-      enableSeriesViewsCount: fields[5] as bool,
+      enableChaptersBookmarksCount: fields[0] as bool?,
+      enableChaptersLikesCount: fields[1] as bool?,
+      enableChaptersViewsCount: fields[2] as bool?,
+      enableSeriesBookmarksCount: fields[3] as bool?,
+      enableSeriesLikesCount: fields[4] as bool?,
+      enableSeriesViewsCount: fields[5] as bool?,
     );
   }
 

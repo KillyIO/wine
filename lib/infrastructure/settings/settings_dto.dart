@@ -7,15 +7,15 @@ part 'settings_dto.g.dart';
 
 /// @nodoc
 @freezed
-abstract class SettingsDTO with _$SettingsDTO {
+class SettingsDTO with _$SettingsDTO {
   /// @nodoc
   factory SettingsDTO({
-    @required bool enableChaptersBookmarksCount,
-    @required bool enableChaptersLikesCount,
-    @required bool enableChaptersViewsCount,
-    @required bool enableSeriesBookmarksCount,
-    @required bool enableSeriesLikesCount,
-    @required bool enableSeriesViewsCount,
+    required bool? enableChaptersBookmarksCount,
+    required bool? enableChaptersLikesCount,
+    required bool? enableChaptersViewsCount,
+    required bool? enableSeriesBookmarksCount,
+    required bool? enableSeriesLikesCount,
+    required bool? enableSeriesViewsCount,
   }) = _SettingsDTO;
 
   /// @nodoc
@@ -43,8 +43,8 @@ abstract class SettingsDTO with _$SettingsDTO {
   }
 
   /// @nodoc
-  factory SettingsDTO.fromJson(Map<String, dynamic> json) =>
-      _$SettingsDTOFromJson(json);
+  factory SettingsDTO.fromJson(Map<String, dynamic>? json) =>
+      _$SettingsDTOFromJson(json ?? {});
 }
 
 /// @nodoc

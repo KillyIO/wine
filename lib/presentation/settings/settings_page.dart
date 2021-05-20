@@ -6,7 +6,7 @@ import 'package:wine/utils/themes.dart';
 /// @nodoc
 class SettingsPage extends StatelessWidget {
   /// @nodoc
-  const SettingsPage({Key key}) : super(key: key);
+  const SettingsPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
