@@ -175,7 +175,7 @@ void main() {
         build: () => _setupBloc,
         act: (SetupBloc bloc) {
           when(() => _authFacade.isAnonymous).thenReturn(false);
-          when(() => _userRepository.loadUser(testUid))
+          when(() => _userRepository.loadUser(testUserUid))
               .thenAnswer((_) async => const Err(UserFailure.userNotFound()));
           return bloc.add(SetupEvent.sessionFetched(testUser));
         },
@@ -187,7 +187,7 @@ void main() {
         verify: (_) {
           verifyInOrder([
             () => _authFacade.isAnonymous,
-            () => _userRepository.loadUser(testUid),
+            () => _userRepository.loadUser(testUserUid),
           ]);
         },
       );

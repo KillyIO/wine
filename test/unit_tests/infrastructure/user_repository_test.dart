@@ -1,7 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:fake_cloud_firestore/fake_cloud_firestore.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:mocktail/mocktail.dart';
 import 'package:rustic/tuple.dart';
 import 'package:wine/domain/auth/username.dart';
 import 'package:wine/domain/user/i_user_repository.dart';
@@ -9,7 +8,6 @@ import 'package:wine/domain/user/user_failure.dart';
 import 'package:wine/infrastructure/user/user_repository.dart';
 import 'package:wine/utils/paths/users.dart';
 
-import '../../mocks/cloud_firestore_mocks.dart';
 import '../utils/constants.dart';
 
 // TODO uncomment these tests once fake_cloud_firestore allows throwing exceptions
@@ -18,10 +16,6 @@ void main() {
   late IUserRepository _userRepository;
 
   late FirebaseFirestore _firestore;
-
-  setUpAll(() {
-    registerFallbackValue<SetOptions>(MockSetOptions());
-  });
 
   setUp(() {
     _firestore = FakeFirebaseFirestore();
