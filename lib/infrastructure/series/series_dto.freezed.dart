@@ -1,5 +1,5 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
 
 part of 'series_dto.dart';
 
@@ -8,6 +8,10 @@ part of 'series_dto.dart';
 // **************************************************************************
 
 T _$identity<T>(T value) => value;
+
+final _privateConstructorUsedError = UnsupportedError(
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more informations: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+
 SeriesDTO _$SeriesDTOFromJson(Map<String, dynamic> json) {
   return _SeriesDTO.fromJson(json);
 }
@@ -16,63 +20,72 @@ SeriesDTO _$SeriesDTOFromJson(Map<String, dynamic> json) {
 class _$SeriesDTOTearOff {
   const _$SeriesDTOTearOff();
 
-// ignore: unused_element
   _SeriesDTO call(
-      {@required String authorUID,
-      @required String coverURL,
-      @required String genre,
-      String genreOptional,
-      @required bool isNSFW,
-      @required String language,
-      @required @ServerTimestampConverter() FieldValue serverTimeStamp,
-      String subtitle,
-      @required String summary,
-      @required String title,
-      @JsonKey(ignore: true) String uid}) {
+      {required String authorUID,
+      required int bookmarksCount,
+      required String coverURL,
+      required String genre,
+      String? genreOptional,
+      required bool isNSFW,
+      required bool isPublished,
+      required String language,
+      required int likesCount,
+      @ServerTimestampConverter() required FieldValue serverTimeStamp,
+      String? subtitle,
+      required String summary,
+      required String title,
+      required String uid,
+      required int viewsCount}) {
     return _SeriesDTO(
       authorUID: authorUID,
+      bookmarksCount: bookmarksCount,
       coverURL: coverURL,
       genre: genre,
       genreOptional: genreOptional,
       isNSFW: isNSFW,
+      isPublished: isPublished,
       language: language,
+      likesCount: likesCount,
       serverTimeStamp: serverTimeStamp,
       subtitle: subtitle,
       summary: summary,
       title: title,
       uid: uid,
+      viewsCount: viewsCount,
     );
   }
 
-// ignore: unused_element
   SeriesDTO fromJson(Map<String, Object> json) {
     return SeriesDTO.fromJson(json);
   }
 }
 
 /// @nodoc
-// ignore: unused_element
 const $SeriesDTO = _$SeriesDTOTearOff();
 
 /// @nodoc
 mixin _$SeriesDTO {
-  String get authorUID;
-  String get coverURL;
-  String get genre;
-  String get genreOptional;
-  bool get isNSFW;
-  String get language;
+  String get authorUID => throw _privateConstructorUsedError;
+  int get bookmarksCount => throw _privateConstructorUsedError;
+  String get coverURL => throw _privateConstructorUsedError;
+  String get genre => throw _privateConstructorUsedError;
+  String? get genreOptional => throw _privateConstructorUsedError;
+  bool get isNSFW => throw _privateConstructorUsedError;
+  bool get isPublished => throw _privateConstructorUsedError;
+  String get language => throw _privateConstructorUsedError;
+  int get likesCount => throw _privateConstructorUsedError;
   @ServerTimestampConverter()
-  FieldValue get serverTimeStamp;
-  String get subtitle;
-  String get summary;
-  String get title;
-  @JsonKey(ignore: true)
-  String get uid;
+  FieldValue get serverTimeStamp => throw _privateConstructorUsedError;
+  String? get subtitle => throw _privateConstructorUsedError;
+  String get summary => throw _privateConstructorUsedError;
+  String get title => throw _privateConstructorUsedError;
+  String get uid => throw _privateConstructorUsedError;
+  int get viewsCount => throw _privateConstructorUsedError;
 
-  Map<String, dynamic> toJson();
+  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
-  $SeriesDTOCopyWith<SeriesDTO> get copyWith;
+  $SeriesDTOCopyWith<SeriesDTO> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -81,16 +94,20 @@ abstract class $SeriesDTOCopyWith<$Res> {
       _$SeriesDTOCopyWithImpl<$Res>;
   $Res call(
       {String authorUID,
+      int bookmarksCount,
       String coverURL,
       String genre,
-      String genreOptional,
+      String? genreOptional,
       bool isNSFW,
+      bool isPublished,
       String language,
+      int likesCount,
       @ServerTimestampConverter() FieldValue serverTimeStamp,
-      String subtitle,
+      String? subtitle,
       String summary,
       String title,
-      @JsonKey(ignore: true) String uid});
+      String uid,
+      int viewsCount});
 }
 
 /// @nodoc
@@ -103,34 +120,83 @@ class _$SeriesDTOCopyWithImpl<$Res> implements $SeriesDTOCopyWith<$Res> {
 
   @override
   $Res call({
-    Object authorUID = freezed,
-    Object coverURL = freezed,
-    Object genre = freezed,
-    Object genreOptional = freezed,
-    Object isNSFW = freezed,
-    Object language = freezed,
-    Object serverTimeStamp = freezed,
-    Object subtitle = freezed,
-    Object summary = freezed,
-    Object title = freezed,
-    Object uid = freezed,
+    Object? authorUID = freezed,
+    Object? bookmarksCount = freezed,
+    Object? coverURL = freezed,
+    Object? genre = freezed,
+    Object? genreOptional = freezed,
+    Object? isNSFW = freezed,
+    Object? isPublished = freezed,
+    Object? language = freezed,
+    Object? likesCount = freezed,
+    Object? serverTimeStamp = freezed,
+    Object? subtitle = freezed,
+    Object? summary = freezed,
+    Object? title = freezed,
+    Object? uid = freezed,
+    Object? viewsCount = freezed,
   }) {
     return _then(_value.copyWith(
-      authorUID: authorUID == freezed ? _value.authorUID : authorUID as String,
-      coverURL: coverURL == freezed ? _value.coverURL : coverURL as String,
-      genre: genre == freezed ? _value.genre : genre as String,
+      authorUID: authorUID == freezed
+          ? _value.authorUID
+          : authorUID // ignore: cast_nullable_to_non_nullable
+              as String,
+      bookmarksCount: bookmarksCount == freezed
+          ? _value.bookmarksCount
+          : bookmarksCount // ignore: cast_nullable_to_non_nullable
+              as int,
+      coverURL: coverURL == freezed
+          ? _value.coverURL
+          : coverURL // ignore: cast_nullable_to_non_nullable
+              as String,
+      genre: genre == freezed
+          ? _value.genre
+          : genre // ignore: cast_nullable_to_non_nullable
+              as String,
       genreOptional: genreOptional == freezed
           ? _value.genreOptional
-          : genreOptional as String,
-      isNSFW: isNSFW == freezed ? _value.isNSFW : isNSFW as bool,
-      language: language == freezed ? _value.language : language as String,
+          : genreOptional // ignore: cast_nullable_to_non_nullable
+              as String?,
+      isNSFW: isNSFW == freezed
+          ? _value.isNSFW
+          : isNSFW // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isPublished: isPublished == freezed
+          ? _value.isPublished
+          : isPublished // ignore: cast_nullable_to_non_nullable
+              as bool,
+      language: language == freezed
+          ? _value.language
+          : language // ignore: cast_nullable_to_non_nullable
+              as String,
+      likesCount: likesCount == freezed
+          ? _value.likesCount
+          : likesCount // ignore: cast_nullable_to_non_nullable
+              as int,
       serverTimeStamp: serverTimeStamp == freezed
           ? _value.serverTimeStamp
-          : serverTimeStamp as FieldValue,
-      subtitle: subtitle == freezed ? _value.subtitle : subtitle as String,
-      summary: summary == freezed ? _value.summary : summary as String,
-      title: title == freezed ? _value.title : title as String,
-      uid: uid == freezed ? _value.uid : uid as String,
+          : serverTimeStamp // ignore: cast_nullable_to_non_nullable
+              as FieldValue,
+      subtitle: subtitle == freezed
+          ? _value.subtitle
+          : subtitle // ignore: cast_nullable_to_non_nullable
+              as String?,
+      summary: summary == freezed
+          ? _value.summary
+          : summary // ignore: cast_nullable_to_non_nullable
+              as String,
+      title: title == freezed
+          ? _value.title
+          : title // ignore: cast_nullable_to_non_nullable
+              as String,
+      uid: uid == freezed
+          ? _value.uid
+          : uid // ignore: cast_nullable_to_non_nullable
+              as String,
+      viewsCount: viewsCount == freezed
+          ? _value.viewsCount
+          : viewsCount // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -143,16 +209,20 @@ abstract class _$SeriesDTOCopyWith<$Res> implements $SeriesDTOCopyWith<$Res> {
   @override
   $Res call(
       {String authorUID,
+      int bookmarksCount,
       String coverURL,
       String genre,
-      String genreOptional,
+      String? genreOptional,
       bool isNSFW,
+      bool isPublished,
       String language,
+      int likesCount,
       @ServerTimestampConverter() FieldValue serverTimeStamp,
-      String subtitle,
+      String? subtitle,
       String summary,
       String title,
-      @JsonKey(ignore: true) String uid});
+      String uid,
+      int viewsCount});
 }
 
 /// @nodoc
@@ -166,62 +236,106 @@ class __$SeriesDTOCopyWithImpl<$Res> extends _$SeriesDTOCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object authorUID = freezed,
-    Object coverURL = freezed,
-    Object genre = freezed,
-    Object genreOptional = freezed,
-    Object isNSFW = freezed,
-    Object language = freezed,
-    Object serverTimeStamp = freezed,
-    Object subtitle = freezed,
-    Object summary = freezed,
-    Object title = freezed,
-    Object uid = freezed,
+    Object? authorUID = freezed,
+    Object? bookmarksCount = freezed,
+    Object? coverURL = freezed,
+    Object? genre = freezed,
+    Object? genreOptional = freezed,
+    Object? isNSFW = freezed,
+    Object? isPublished = freezed,
+    Object? language = freezed,
+    Object? likesCount = freezed,
+    Object? serverTimeStamp = freezed,
+    Object? subtitle = freezed,
+    Object? summary = freezed,
+    Object? title = freezed,
+    Object? uid = freezed,
+    Object? viewsCount = freezed,
   }) {
     return _then(_SeriesDTO(
-      authorUID: authorUID == freezed ? _value.authorUID : authorUID as String,
-      coverURL: coverURL == freezed ? _value.coverURL : coverURL as String,
-      genre: genre == freezed ? _value.genre : genre as String,
+      authorUID: authorUID == freezed
+          ? _value.authorUID
+          : authorUID // ignore: cast_nullable_to_non_nullable
+              as String,
+      bookmarksCount: bookmarksCount == freezed
+          ? _value.bookmarksCount
+          : bookmarksCount // ignore: cast_nullable_to_non_nullable
+              as int,
+      coverURL: coverURL == freezed
+          ? _value.coverURL
+          : coverURL // ignore: cast_nullable_to_non_nullable
+              as String,
+      genre: genre == freezed
+          ? _value.genre
+          : genre // ignore: cast_nullable_to_non_nullable
+              as String,
       genreOptional: genreOptional == freezed
           ? _value.genreOptional
-          : genreOptional as String,
-      isNSFW: isNSFW == freezed ? _value.isNSFW : isNSFW as bool,
-      language: language == freezed ? _value.language : language as String,
+          : genreOptional // ignore: cast_nullable_to_non_nullable
+              as String?,
+      isNSFW: isNSFW == freezed
+          ? _value.isNSFW
+          : isNSFW // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isPublished: isPublished == freezed
+          ? _value.isPublished
+          : isPublished // ignore: cast_nullable_to_non_nullable
+              as bool,
+      language: language == freezed
+          ? _value.language
+          : language // ignore: cast_nullable_to_non_nullable
+              as String,
+      likesCount: likesCount == freezed
+          ? _value.likesCount
+          : likesCount // ignore: cast_nullable_to_non_nullable
+              as int,
       serverTimeStamp: serverTimeStamp == freezed
           ? _value.serverTimeStamp
-          : serverTimeStamp as FieldValue,
-      subtitle: subtitle == freezed ? _value.subtitle : subtitle as String,
-      summary: summary == freezed ? _value.summary : summary as String,
-      title: title == freezed ? _value.title : title as String,
-      uid: uid == freezed ? _value.uid : uid as String,
+          : serverTimeStamp // ignore: cast_nullable_to_non_nullable
+              as FieldValue,
+      subtitle: subtitle == freezed
+          ? _value.subtitle
+          : subtitle // ignore: cast_nullable_to_non_nullable
+              as String?,
+      summary: summary == freezed
+          ? _value.summary
+          : summary // ignore: cast_nullable_to_non_nullable
+              as String,
+      title: title == freezed
+          ? _value.title
+          : title // ignore: cast_nullable_to_non_nullable
+              as String,
+      uid: uid == freezed
+          ? _value.uid
+          : uid // ignore: cast_nullable_to_non_nullable
+              as String,
+      viewsCount: viewsCount == freezed
+          ? _value.viewsCount
+          : viewsCount // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
 
-@JsonSerializable()
-
 /// @nodoc
+@JsonSerializable()
 class _$_SeriesDTO implements _SeriesDTO {
   _$_SeriesDTO(
-      {@required this.authorUID,
-      @required this.coverURL,
-      @required this.genre,
+      {required this.authorUID,
+      required this.bookmarksCount,
+      required this.coverURL,
+      required this.genre,
       this.genreOptional,
-      @required this.isNSFW,
-      @required this.language,
-      @required @ServerTimestampConverter() this.serverTimeStamp,
+      required this.isNSFW,
+      required this.isPublished,
+      required this.language,
+      required this.likesCount,
+      @ServerTimestampConverter() required this.serverTimeStamp,
       this.subtitle,
-      @required this.summary,
-      @required this.title,
-      @JsonKey(ignore: true) this.uid})
-      : assert(authorUID != null),
-        assert(coverURL != null),
-        assert(genre != null),
-        assert(isNSFW != null),
-        assert(language != null),
-        assert(serverTimeStamp != null),
-        assert(summary != null),
-        assert(title != null);
+      required this.summary,
+      required this.title,
+      required this.uid,
+      required this.viewsCount});
 
   factory _$_SeriesDTO.fromJson(Map<String, dynamic> json) =>
       _$_$_SeriesDTOFromJson(json);
@@ -229,31 +343,38 @@ class _$_SeriesDTO implements _SeriesDTO {
   @override
   final String authorUID;
   @override
+  final int bookmarksCount;
+  @override
   final String coverURL;
   @override
   final String genre;
   @override
-  final String genreOptional;
+  final String? genreOptional;
   @override
   final bool isNSFW;
   @override
+  final bool isPublished;
+  @override
   final String language;
+  @override
+  final int likesCount;
   @override
   @ServerTimestampConverter()
   final FieldValue serverTimeStamp;
   @override
-  final String subtitle;
+  final String? subtitle;
   @override
   final String summary;
   @override
   final String title;
   @override
-  @JsonKey(ignore: true)
   final String uid;
+  @override
+  final int viewsCount;
 
   @override
   String toString() {
-    return 'SeriesDTO(authorUID: $authorUID, coverURL: $coverURL, genre: $genre, genreOptional: $genreOptional, isNSFW: $isNSFW, language: $language, serverTimeStamp: $serverTimeStamp, subtitle: $subtitle, summary: $summary, title: $title, uid: $uid)';
+    return 'SeriesDTO(authorUID: $authorUID, bookmarksCount: $bookmarksCount, coverURL: $coverURL, genre: $genre, genreOptional: $genreOptional, isNSFW: $isNSFW, isPublished: $isPublished, language: $language, likesCount: $likesCount, serverTimeStamp: $serverTimeStamp, subtitle: $subtitle, summary: $summary, title: $title, uid: $uid, viewsCount: $viewsCount)';
   }
 
   @override
@@ -263,6 +384,9 @@ class _$_SeriesDTO implements _SeriesDTO {
             (identical(other.authorUID, authorUID) ||
                 const DeepCollectionEquality()
                     .equals(other.authorUID, authorUID)) &&
+            (identical(other.bookmarksCount, bookmarksCount) ||
+                const DeepCollectionEquality()
+                    .equals(other.bookmarksCount, bookmarksCount)) &&
             (identical(other.coverURL, coverURL) ||
                 const DeepCollectionEquality()
                     .equals(other.coverURL, coverURL)) &&
@@ -273,9 +397,15 @@ class _$_SeriesDTO implements _SeriesDTO {
                     .equals(other.genreOptional, genreOptional)) &&
             (identical(other.isNSFW, isNSFW) ||
                 const DeepCollectionEquality().equals(other.isNSFW, isNSFW)) &&
+            (identical(other.isPublished, isPublished) ||
+                const DeepCollectionEquality()
+                    .equals(other.isPublished, isPublished)) &&
             (identical(other.language, language) ||
                 const DeepCollectionEquality()
                     .equals(other.language, language)) &&
+            (identical(other.likesCount, likesCount) ||
+                const DeepCollectionEquality()
+                    .equals(other.likesCount, likesCount)) &&
             (identical(other.serverTimeStamp, serverTimeStamp) ||
                 const DeepCollectionEquality()
                     .equals(other.serverTimeStamp, serverTimeStamp)) &&
@@ -288,23 +418,30 @@ class _$_SeriesDTO implements _SeriesDTO {
             (identical(other.title, title) ||
                 const DeepCollectionEquality().equals(other.title, title)) &&
             (identical(other.uid, uid) ||
-                const DeepCollectionEquality().equals(other.uid, uid)));
+                const DeepCollectionEquality().equals(other.uid, uid)) &&
+            (identical(other.viewsCount, viewsCount) ||
+                const DeepCollectionEquality()
+                    .equals(other.viewsCount, viewsCount)));
   }
 
   @override
   int get hashCode =>
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(authorUID) ^
+      const DeepCollectionEquality().hash(bookmarksCount) ^
       const DeepCollectionEquality().hash(coverURL) ^
       const DeepCollectionEquality().hash(genre) ^
       const DeepCollectionEquality().hash(genreOptional) ^
       const DeepCollectionEquality().hash(isNSFW) ^
+      const DeepCollectionEquality().hash(isPublished) ^
       const DeepCollectionEquality().hash(language) ^
+      const DeepCollectionEquality().hash(likesCount) ^
       const DeepCollectionEquality().hash(serverTimeStamp) ^
       const DeepCollectionEquality().hash(subtitle) ^
       const DeepCollectionEquality().hash(summary) ^
       const DeepCollectionEquality().hash(title) ^
-      const DeepCollectionEquality().hash(uid);
+      const DeepCollectionEquality().hash(uid) ^
+      const DeepCollectionEquality().hash(viewsCount);
 
   @JsonKey(ignore: true)
   @override
@@ -319,46 +456,58 @@ class _$_SeriesDTO implements _SeriesDTO {
 
 abstract class _SeriesDTO implements SeriesDTO {
   factory _SeriesDTO(
-      {@required String authorUID,
-      @required String coverURL,
-      @required String genre,
-      String genreOptional,
-      @required bool isNSFW,
-      @required String language,
-      @required @ServerTimestampConverter() FieldValue serverTimeStamp,
-      String subtitle,
-      @required String summary,
-      @required String title,
-      @JsonKey(ignore: true) String uid}) = _$_SeriesDTO;
+      {required String authorUID,
+      required int bookmarksCount,
+      required String coverURL,
+      required String genre,
+      String? genreOptional,
+      required bool isNSFW,
+      required bool isPublished,
+      required String language,
+      required int likesCount,
+      @ServerTimestampConverter() required FieldValue serverTimeStamp,
+      String? subtitle,
+      required String summary,
+      required String title,
+      required String uid,
+      required int viewsCount}) = _$_SeriesDTO;
 
   factory _SeriesDTO.fromJson(Map<String, dynamic> json) =
       _$_SeriesDTO.fromJson;
 
   @override
-  String get authorUID;
+  String get authorUID => throw _privateConstructorUsedError;
   @override
-  String get coverURL;
+  int get bookmarksCount => throw _privateConstructorUsedError;
   @override
-  String get genre;
+  String get coverURL => throw _privateConstructorUsedError;
   @override
-  String get genreOptional;
+  String get genre => throw _privateConstructorUsedError;
   @override
-  bool get isNSFW;
+  String? get genreOptional => throw _privateConstructorUsedError;
   @override
-  String get language;
+  bool get isNSFW => throw _privateConstructorUsedError;
+  @override
+  bool get isPublished => throw _privateConstructorUsedError;
+  @override
+  String get language => throw _privateConstructorUsedError;
+  @override
+  int get likesCount => throw _privateConstructorUsedError;
   @override
   @ServerTimestampConverter()
-  FieldValue get serverTimeStamp;
+  FieldValue get serverTimeStamp => throw _privateConstructorUsedError;
   @override
-  String get subtitle;
+  String? get subtitle => throw _privateConstructorUsedError;
   @override
-  String get summary;
+  String get summary => throw _privateConstructorUsedError;
   @override
-  String get title;
+  String get title => throw _privateConstructorUsedError;
+  @override
+  String get uid => throw _privateConstructorUsedError;
+  @override
+  int get viewsCount => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
-  String get uid;
-  @override
-  @JsonKey(ignore: true)
-  _$SeriesDTOCopyWith<_SeriesDTO> get copyWith;
+  _$SeriesDTOCopyWith<_SeriesDTO> get copyWith =>
+      throw _privateConstructorUsedError;
 }

@@ -14,28 +14,36 @@ void main() {
   group('Series -', () {
     test('When args valid Then return Series', () {
       final series = Series(
-        authorUID: UniqueID.fromUniqueString(testUid),
+        authorUID: UniqueID.fromUniqueString(testUserUid),
+        bookmarksCount: 10,
         coverURL: CoverURL(testCoverURL),
         genre: Genre(testGenre),
         genreOptional: Genre(testGenreOptional),
         isNSFW: false,
+        isPublished: false,
         language: Language(testLanguage),
+        likesCount: 10,
         subtitle: Subtitle(testSubtitle),
         summary: Summary(testSummary),
         title: Title(testTitle),
-        uid: UniqueID.fromUniqueString(testUid),
+        uid: UniqueID.fromUniqueString(testSeriesUid),
+        viewsCount: 10,
       );
 
-      expect(series.authorUID.getOrCrash(), testUid);
+      expect(series.authorUID.getOrCrash(), testUserUid);
+      expect(series.bookmarksCount, 10);
       expect(series.coverURL.getOrCrash(), testCoverURL);
       expect(series.genre.getOrCrash(), testGenre);
       expect(series.genreOptional?.getOrCrash(), testGenreOptional);
       expect(series.isNSFW, false);
+      expect(series.isPublished, false);
       expect(series.language.getOrCrash(), testLanguage);
+      expect(series.likesCount, 10);
       expect(series.subtitle?.getOrCrash(), testSubtitle);
       expect(series.summary.getOrCrash(), testSummary);
       expect(series.title.getOrCrash(), testTitle);
-      expect(series.uid.getOrCrash(), testUid);
+      expect(series.uid.getOrCrash(), testSeriesUid);
+      expect(series.viewsCount, 10);
     });
   });
 }

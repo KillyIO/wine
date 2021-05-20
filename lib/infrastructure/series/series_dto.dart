@@ -15,20 +15,24 @@ part 'series_dto.g.dart';
 
 /// @nodoc
 @freezed
-abstract class SeriesDTO with _$SeriesDTO {
+class SeriesDTO with _$SeriesDTO {
   /// @nodoc
   factory SeriesDTO({
-    @required String authorUID,
-    @required String coverURL,
-    @required String genre,
-    String genreOptional,
-    @required bool isNSFW,
-    @required String language,
-    @required @ServerTimestampConverter() FieldValue serverTimeStamp,
-    String subtitle,
-    @required String summary,
-    @required String title,
-    @JsonKey(ignore: true) String uid,
+    required String authorUID,
+    required int bookmarksCount,
+    required String coverURL,
+    required String genre,
+    String? genreOptional,
+    required bool isNSFW,
+    required bool isPublished,
+    required String language,
+    required int likesCount,
+    @ServerTimestampConverter() required FieldValue serverTimeStamp,
+    String? subtitle,
+    required String summary,
+    required String title,
+    required String uid,
+    required int viewsCount,
   }) = _SeriesDTO;
 
   /// @nodoc
@@ -37,7 +41,7 @@ abstract class SeriesDTO with _$SeriesDTO {
 
   /// @nodoc
   factory SeriesDTO.fromFirestore(DocumentSnapshot doc) {
-    return SeriesDTO.fromJson(doc.data()).copyWith(uid: doc.id);
+    return SeriesDTO.fromJson(doc.data()! as Map<String, dynamic>);
   }
 }
 
@@ -46,29 +50,37 @@ extension SeriesDTOX on SeriesDTO {
   /// @nodoc
   Series toDomain() => Series(
         authorUID: UniqueID.fromUniqueString(authorUID),
+        bookmarksCount: bookmarksCount,
         coverURL: CoverURL(coverURL),
         genre: Genre(genre),
-        genreOptional: Genre(genreOptional, isOptional: true),
+        genreOptional: Genre(genreOptional ?? '', isOptional: true),
         isNSFW: isNSFW,
+        isPublished: isPublished,
         language: Language(language),
-        subtitle: Subtitle(subtitle),
+        likesCount: likesCount,
+        subtitle: Subtitle(subtitle ?? ''),
         summary: Summary(summary),
         title: Title(title),
         uid: UniqueID.fromUniqueString(uid),
+        viewsCount: viewsCount,
       );
 
   /// @nodoc
   Map<String, dynamic> toMap() => <String, dynamic>{
         'authorUID': authorUID,
+        'bookmarksCount': bookmarksCount,
         'coverURL': coverURL,
         'genre': genre,
         'genreOptional': genreOptional,
         'isNSFW': isNSFW,
+        'isPublished': isPublished,
         'language': language,
+        'likesCount': likesCount,
         'subtitle': subtitle,
         'summary': summary,
         'title': title,
         'uid': uid,
+        'viewsCount': viewsCount,
       };
 }
 
@@ -77,14 +89,18 @@ extension SeriesMapX on Map {
   /// @nodoc
   Series toDomain() => Series(
         authorUID: UniqueID.fromUniqueString(this['authorUID']),
+        bookmarksCount: this['bookmarksCount'],
         coverURL: CoverURL(this['coverURL']),
         genre: Genre(this['genre']),
         genreOptional: Genre(this['genreOptional'], isOptional: true),
         isNSFW: this['isNSFW'],
+        isPublished: this['isPublished'],
         language: Language(this['language']),
+        likesCount: this['likesCount'],
         subtitle: Subtitle(this['subtitle']),
         summary: Summary(this['summary']),
         title: Title(this['title']),
         uid: UniqueID.fromUniqueString(this['uid']),
+        viewsCount: this['viewsCount'],
       );
 }
