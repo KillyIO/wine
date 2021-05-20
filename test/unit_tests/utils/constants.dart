@@ -12,7 +12,7 @@ import 'package:wine/infrastructure/user/hive_user.dart';
 const testConfirmPasssword = '''wT-t"_fCznEH+tPMt7Y\$JB''';
 const testEmailAddress = 'lphong.tieu.75@pickuplanet.com';
 const testPassword = '''wT-t"_fCznEH+tPMt7Y\$JB''';
-const testUid = '73488ab6-8db0-11eb-8dcd-0242ac130003';
+const testUserUid = '73488ab6-8db0-11eb-8dcd-0242ac130003';
 const testUsername = 'lphong.tieu.75';
 const testName = 'Lphong Tieu 75';
 
@@ -27,6 +27,7 @@ const testSubtitle = 'this is a subtitle';
 const testInvalidSubtitleTooLong =
     'this is a subtitle too long and should cause an error in the app';
 
+const testSeriesUid = '6ebf3f3e-b8e0-11eb-8529-0242ac130003';
 const testSummary = '''
 congue nisi vitae suscipit tellus mauris a diam maecenas sed enim ut sem
 viverra aliquet eget sit amet tellus cras adipiscing enim eu turpis egestas
@@ -103,17 +104,17 @@ final testHiveSettings = const HiveSettings(
 const testSessionAnonymous = {};
 final testUser = User(
   emailAddress: EmailAddress(testEmailAddress),
-  uid: UniqueID.fromUniqueString(testUid),
+  uid: UniqueID.fromUniqueString(testUserUid),
   username: Username(testEmailAddress.split('@').first),
 );
 final testHiveUser = HiveUser(
   emailAddress: testEmailAddress,
-  uid: testUid,
+  uid: testUserUid,
   username: testEmailAddress.split('@').first,
 );
 final testUserFirestore = {
   'emailAddress': testEmailAddress,
-  'uid': testUid,
+  'uid': testUserUid,
   'updatedAt': FieldValue.serverTimestamp(),
   'username': testEmailAddress.split('@').first,
 };
