@@ -1,5 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart' as auth;
+import 'package:flutter/cupertino.dart';
+import 'package:flutter/rendering.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:injectable/injectable.dart';
 import 'package:rustic/option.dart';
@@ -14,7 +16,7 @@ import 'package:wine/domain/user/user.dart';
 import 'package:wine/infrastructure/user/user_dto.dart';
 
 /// Implementation of [IAuthFacade] using Firebase.
-@LazySingleton(as: IAuthFacade, env: ['dev', 'prod'])
+@LazySingleton(as: IAuthFacade, env: [Environment.dev, Environment.prod])
 class FirebaseAuthFacade implements IAuthFacade {
   /// @nodoc
   FirebaseAuthFacade(
@@ -36,30 +38,33 @@ class FirebaseAuthFacade implements IAuthFacade {
     try {
       var currentUser = _firebaseAuth.currentUser;
 
-      final credential = auth.EmailAuthProvider.credential(
-        email: emailAddressStr,
-        password: passwordStr,
-      );
+      if (currentUser != null) {
+        final credential = auth.EmailAuthProvider.credential(
+          email: emailAddressStr,
+          password: passwordStr,
+        );
 
-      await currentUser?.linkWithCredential(credential);
+        await currentUser.linkWithCredential(credential);
 
-      currentUser = _firebaseAuth.currentUser;
-      await currentUser?.sendEmailVerification();
+        currentUser = _firebaseAuth.currentUser;
+        await currentUser?.sendEmailVerification();
 
-      return const Ok(Unit());
+        return const Ok(Unit());
+      }
+      return const Err(AuthFailure.unexpected());
     } on FirebaseException catch (e) {
       if (e.code == 'email-already-in-use') {
         return const Err(AuthFailure.emailAlreadyInUse());
       }
       return const Err(AuthFailure.serverError());
-    } catch (_) {
+    } catch (err) {
       return const Err(AuthFailure.unexpected());
     }
   }
 
   @override
   Future<Option<User>?> getLoggedInUser() async =>
-      _firebaseAuth.currentUser?.toDomain().asOption();
+      (_firebaseAuth.currentUser?.toDomain()).asOption();
 
   @override
   bool get isAnonymous {
@@ -95,14 +100,18 @@ class FirebaseAuthFacade implements IAuthFacade {
 
     try {
       final anonymousUser = _firebaseAuth.currentUser;
-      await anonymousUser?.delete();
 
-      await _firebaseAuth.signInWithEmailAndPassword(
-        email: emailAddressStr,
-        password: passwordStr,
-      );
+      if (anonymousUser != null) {
+        await anonymousUser.delete();
 
-      return const Ok(Unit());
+        await _firebaseAuth.signInWithEmailAndPassword(
+          email: emailAddressStr,
+          password: passwordStr,
+        );
+
+        return const Ok(Unit());
+      }
+      return const Err(AuthFailure.unexpected());
     } on FirebaseException catch (e) {
       await _firebaseAuth.signInAnonymously();
 
@@ -120,31 +129,34 @@ class FirebaseAuthFacade implements IAuthFacade {
     try {
       final anonymousUser = _firebaseAuth.currentUser;
 
-      final googleAccount = await _googleSignIn.signIn();
-      if (googleAccount == null) {
-        return const Err(AuthFailure.cancelledByUser());
-      }
-
-      final googleAuthentication = await googleAccount.authentication;
-      final auth.AuthCredential authCredential =
-          auth.GoogleAuthProvider.credential(
-        idToken: googleAuthentication.idToken,
-        accessToken: googleAuthentication.accessToken,
-      );
-
-      try {
-        return await _trySignInWithGoogle(anonymousUser, authCredential);
-      } on FirebaseException catch (e) {
-        if (e.code == 'credential-already-in-use') {
-          return await _signInWithGoogleCredentialAlreadyInUse(
-            anonymousUser,
-            authCredential,
-          );
+      if (anonymousUser != null) {
+        final googleAccount = await _googleSignIn.signIn();
+        if (googleAccount == null) {
+          return const Err(AuthFailure.cancelledByUser());
         }
-        return const Err(AuthFailure.serverError());
-      } catch (_) {
-        return const Err(AuthFailure.unexpected());
+
+        final googleAuthentication = await googleAccount.authentication;
+        final auth.AuthCredential authCredential =
+            auth.GoogleAuthProvider.credential(
+          idToken: googleAuthentication.idToken,
+          accessToken: googleAuthentication.accessToken,
+        );
+
+        try {
+          return await _trySignInWithGoogle(anonymousUser, authCredential);
+        } on FirebaseException catch (e) {
+          if (e.code == 'credential-already-in-use') {
+            return await _signInWithGoogleCredentialAlreadyInUse(
+              anonymousUser,
+              authCredential,
+            );
+          }
+          return const Err(AuthFailure.serverError());
+        } catch (_) {
+          return const Err(AuthFailure.unexpected());
+        }
       }
+      return const Err(AuthFailure.unexpected());
     } on FirebaseException catch (_) {
       return const Err(AuthFailure.serverError());
     } catch (_) {
