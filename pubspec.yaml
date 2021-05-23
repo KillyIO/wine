@@ -27,7 +27,7 @@ dependencies:
   google_sign_in: ^5.0.3
   hive: ^2.0.4
   hive_flutter: ^1.0.0
-  injectable: ^1.4.0
+  injectable: ^1.4.1
   introduction_screen: ^2.1.0
   json_annotation: ^4.0.1
   line_icons: ^2.0.1
@@ -53,7 +53,7 @@ dev_dependencies:
   fluttericon: ^2.0.0
   freezed: ^0.14.2
   hive_generator: ^1.1.0
-  injectable_generator: ^1.4.0
+  injectable_generator: ^1.4.1
   json_serializable: ^4.1.2
   mocktail: ^0.1.2
   very_good_analysis: ^2.0.3
