@@ -9,7 +9,10 @@ import 'package:wine/utils/constants/boxes.dart';
 import 'package:wine/utils/paths/default_covers.dart';
 
 /// @nodoc
-@LazySingleton(as: IDefaultCoversRepository, env: ['dev', 'prod'])
+@LazySingleton(as: IDefaultCoversRepository, env: [
+  Environment.dev,
+  Environment.prod,
+])
 class DefaultCoversRepository implements IDefaultCoversRepository {
   /// @nodoc
   DefaultCoversRepository(

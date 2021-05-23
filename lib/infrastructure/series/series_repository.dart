@@ -6,7 +6,7 @@ import 'package:wine/domain/series/i_series_repository.dart';
 import 'package:wine/domain/series/series_failure.dart';
 
 /// @nodoc
-@LazySingleton(as: ISeriesRepository, env: ['dev', 'prod'])
+@LazySingleton(as: ISeriesRepository, env: [Environment.dev, Environment.prod])
 class SeriesRepository implements ISeriesRepository {
   @override
   Future<Result<Unit, SeriesFailure>> deleteSeries(UniqueID uid) {
