@@ -13,10 +13,10 @@ abstract class HiveInjectableModule {
   @preResolve
   @lazySingleton
   Future<HiveInterface> get hive async {
-    if (Hive.isAdapterRegistered(0)) {
+    if (!Hive.isAdapterRegistered(0)) {
       Hive.registerAdapter<HiveUser>(HiveUserAdapter());
     }
-    if (Hive.isAdapterRegistered(1)) {
+    if (!Hive.isAdapterRegistered(1)) {
       Hive.registerAdapter<HiveSettings>(HiveSettingsAdapter());
     }
 
