@@ -3,7 +3,7 @@ import 'dart:async';
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
-import 'package:wine/utils/constants/lists.dart';
+import 'package:wine/utils/constants/home.dart';
 
 part 'home_navigation_event.dart';
 part 'home_navigation_state.dart';
@@ -23,9 +23,6 @@ class HomeNavigationBloc
     HomeNavigationEvent event,
   ) async* {
     yield* event.map(
-      leftDrawerIconPressed: (_) async* {
-        yield state.copyWith(isLeftDrawerOpen: !state.isLeftDrawerOpen);
-      },
       pageViewIndexChanged: (value) async* {
         if (state.currentPageViewIdx != value.index) {
           var newIdx = value.index;
@@ -37,9 +34,6 @@ class HomeNavigationBloc
           }
           yield state.copyWith(currentPageViewIdx: newIdx);
         }
-      },
-      rightDrawerIconPressed: (_) async* {
-        yield state.copyWith(isRightDrawerOpen: !state.isRightDrawerOpen);
       },
     );
   }
