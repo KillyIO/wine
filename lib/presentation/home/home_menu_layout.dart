@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:line_icons/line_icons.dart';
 import 'package:wine/application/auth/auth_bloc.dart';
 import 'package:wine/presentation/home/widgets/home_menu_tile.dart';
+import 'package:wine/utils/paths/router.dart';
 
 /// @nodoc
 class HomeMenuLayout extends StatelessWidget {
@@ -17,6 +18,7 @@ class HomeMenuLayout extends StatelessWidget {
     return SizedBox(
       width: mediaQuery.width,
       child: Drawer(
+        key: const Key('home_menu_drawer'),
         child: SafeArea(
           child: Stack(
             children: <Widget>[
@@ -54,6 +56,7 @@ class HomeMenuLayout extends StatelessWidget {
                           return state.maybeMap(
                             authenticated: (_) => HomeMenuTile(
                               key: const Key('home_menu_library_tile'),
+                              // TODO add route push LibraryPage
                               onPressed: () {},
                               text: 'LIBRARY',
                             ),
@@ -64,7 +67,8 @@ class HomeMenuLayout extends StatelessWidget {
                       const SizedBox(height: 25),
                       HomeMenuTile(
                         key: const Key('home_menu_plus_tile'),
-                        onPressed: () {},
+                        onPressed: () =>
+                            context.router.root.pushNamed(plusPath),
                         text: 'PLUS',
                       ),
                     ],
