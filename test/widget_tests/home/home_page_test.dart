@@ -397,5 +397,19 @@ void main() {
 
       expect(find.byType(OnboardingPage), findsOneWidget);
     });
+
+    // TODO test top left icon open/close drawer
+
+    // TODO test top right icon open/close endDrawer
+
+    // TODO test "PLUS" button navigate to PlusPage
+
+    // TODO test "LIBRARY" button navigate to LibraryPage
+
+    // TODO test series is displayed
+
+    // TODO test if more than 5 series shoud find top five series
+
+    // TODO test plus icon navigate to NewSeries
   });
 }
