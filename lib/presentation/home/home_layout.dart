@@ -76,7 +76,7 @@ class HomeLayout extends StatelessWidget {
               context.read<HomeBloc>()..add(const HomeEvent.initBloc());
             },
             navigateToOnboarding: (_) {
-              context.router.pushNamed(onboardingPath);
+              context.router.root.pushNamed(onboardingPath);
             },
             orElse: () {},
           );
