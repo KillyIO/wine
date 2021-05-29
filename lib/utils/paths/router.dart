@@ -12,3 +12,15 @@ const String onboardingPath = '/onboarding';
 
 /// @nodoc
 const String plusPath = '/plus';
+
+/// @nodoc
+const String settingsPath = '/settings';
+
+/// @nodoc
+const String accountSettingsPath = '/account';
+
+/// @nodoc
+const String chapterSettingsPath = '/chapter';
+
+/// @nodoc
+const String seriesSettingsPath = '/series';
