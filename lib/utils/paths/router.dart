@@ -5,6 +5,9 @@ const String homePath = '/';
 const String libraryPath = '/library';
 
 /// @nodoc
+const String logInPath = '/log-in';
+
+/// @nodoc
 const String onboardingPath = '/onboarding';
 
 /// @nodoc
