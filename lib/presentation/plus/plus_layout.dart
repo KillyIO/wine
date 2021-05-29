@@ -7,6 +7,7 @@ import 'package:wine/presentation/core/buttons/asset_button.dart';
 import 'package:wine/presentation/plus/widgets/plus_banner.dart';
 import 'package:wine/presentation/core/buttons/tile_button.dart';
 import 'package:wine/utils/assets/icons.dart';
+import 'package:wine/utils/paths/router.dart';
 
 /// @nodoc
 class PlusLayout extends StatelessWidget {
@@ -61,7 +62,8 @@ class PlusLayout extends StatelessWidget {
                 title: 'LIBRARY',
                 trailingIconData: Icons.keyboard_arrow_right,
                 onPressed: () => state.maybeMap(
-                  authenticated: (_) async {},
+                  authenticated: (_) =>
+                      context.router.root.pushNamed(libraryPath),
                   orElse: () async {},
                 ),
               );
