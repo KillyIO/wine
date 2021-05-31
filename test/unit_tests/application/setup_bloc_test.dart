@@ -54,14 +54,14 @@ void main() {
 
   group('SetupBloc -', () {
     blocTest(
-      'When instantiating return nothing',
+      'emits [] when instanciated.',
       build: () => _setupBloc,
       expect: () => <SetupState>[],
     );
 
     group('Errors -', () {
       blocTest(
-        'When error occur during signInAnonymously then yield Failure',
+        'emits [AuthFailure.serverError] when appLaunched is added.',
         build: () => _setupBloc,
         act: (SetupBloc bloc) {
           when(() => _authFacade.isLoggedIn).thenReturn(false);
@@ -84,7 +84,7 @@ void main() {
       );
 
       blocTest(
-        'When error occur during loadDefaultCoverURLs then yield Failure',
+        '''emits [DefaultCoversFailure.defaultCoverURLsNotLoaded] when authenticated is added.''',
         build: () => _setupBloc,
         act: (SetupBloc bloc) {
           when(() => _authFacade.isAnonymous).thenReturn(false);
@@ -109,7 +109,7 @@ void main() {
       );
 
       blocTest(
-        'When error occur during cacheDefaultCoverURLs then yield Failure',
+        '''emits [DefaultCoversFailure.defaultCoverURLsNotCached] when defaultCoverURLsLoaded is added.''',
         build: () => _setupBloc,
         act: (SetupBloc bloc) {
           when(() => _defaultCoversRepository
@@ -133,7 +133,7 @@ void main() {
       );
 
       blocTest(
-        'When error occur during initializeSettings then yield Failure',
+        '''emits [SettingsFailure.settingsNotInitialized] when settingsNotFound is added.''',
         build: () => _setupBloc,
         act: (SetupBloc bloc) {
           when(() => _settingsRepository.initializeSettings()).thenAnswer(
@@ -152,7 +152,7 @@ void main() {
       );
 
       blocTest(
-        'When error occur during createSession then yield Failure',
+        '''emits [SessionsFailure.sessionNotCreated] when sessionNotFound is added.''',
         build: () => _setupBloc,
         act: (SetupBloc bloc) {
           when(() => _sessionsRepository.createSession()).thenAnswer(
@@ -171,7 +171,7 @@ void main() {
       );
 
       blocTest(
-        'When error occur during loadUser then yield Failure',
+        'emits [UserFailure.userNotFound] when sessionFetched is added.',
         build: () => _setupBloc,
         act: (SetupBloc bloc) {
           when(() => _authFacade.isAnonymous).thenReturn(false);
@@ -193,7 +193,7 @@ void main() {
       );
 
       blocTest(
-        'When error occur during updateSession then yield Failure',
+        'emits [SessionsFailure.sessionNotUpdated] when userLoaded is added.',
         build: () => _setupBloc,
         act: (SetupBloc bloc) {
           when(() => _sessionsRepository.updateSession(testUser)).thenAnswer(
@@ -214,7 +214,7 @@ void main() {
 
     group('Completed -', () {
       blocTest(
-        'When session not found And session created Then yield goToOnboarding',
+        'emits [navigateToOnboarding] when appLaunched is added.',
         build: () => _setupBloc,
         act: (SetupBloc bloc) {
           when(() => _authFacade.isLoggedIn).thenReturn(true);
@@ -245,7 +245,7 @@ void main() {
       );
 
       blocTest(
-        'When session fetched but user anonymous Then yield gotToHome',
+        'emits [initHomeBloc] when appLaunched is added.',
         build: () => _setupBloc,
         act: (SetupBloc bloc) {
           when(() => _authFacade.isLoggedIn).thenReturn(true);
@@ -273,7 +273,7 @@ void main() {
       );
 
       blocTest(
-        'When session fetched but user authenticated Then yield goToHome',
+        'emits [initHomeBloc] when appLaunched is added.',
         build: () => _setupBloc,
         act: (SetupBloc bloc) {
           when(() => _authFacade.isLoggedIn).thenReturn(false);
