@@ -23,13 +23,13 @@ void main() {
 
   group('AuthBloc -', () {
     blocTest(
-      'When instantiating return nothing',
+      'emits [] when instanciated.',
       build: () => _authBloc,
       expect: () => <AuthState>[],
     );
 
     blocTest(
-      'When anonymous then yield Anonymous',
+      'emits [AuthState.anonymous] when authChanged is added.',
       build: () => _authBloc,
       act: (AuthBloc bloc) {
         when(() => _authFacade.isLoggedIn).thenReturn(true);
@@ -44,7 +44,7 @@ void main() {
     );
 
     blocTest(
-      'When not logged in then yield Anonymous',
+      'emits [AuthState.anonymous] when authChanged is added.',
       build: () => _authBloc,
       act: (AuthBloc bloc) {
         when(() => _authFacade.isLoggedIn).thenReturn(false);
@@ -59,7 +59,7 @@ void main() {
     );
 
     blocTest(
-      'When logged in And not anonymous then yield Authenticated',
+      'emits [AuthState.authenticated] when authChanged is added.',
       build: () => _authBloc,
       act: (AuthBloc bloc) {
         when(() => _authFacade.isLoggedIn).thenReturn(true);

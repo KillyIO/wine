@@ -214,7 +214,7 @@ void main() {
 
     group('Completed -', () {
       blocTest(
-        'emits [navigateToOnboarding] when appLaunched is added.',
+        'emits [SetupState.navigateToOnboarding] when appLaunched is added.',
         build: () => _setupBloc,
         act: (SetupBloc bloc) {
           when(() => _authFacade.isLoggedIn).thenReturn(true);
@@ -245,7 +245,7 @@ void main() {
       );
 
       blocTest(
-        'emits [initHomeBloc] when appLaunched is added.',
+        'emits [SetupState.initHomeBloc] when appLaunched is added.',
         build: () => _setupBloc,
         act: (SetupBloc bloc) {
           when(() => _authFacade.isLoggedIn).thenReturn(true);
@@ -273,7 +273,7 @@ void main() {
       );
 
       blocTest(
-        'emits [initHomeBloc] when appLaunched is added.',
+        'emits [SetupState.initHomeBloc] when appLaunched is added.',
         build: () => _setupBloc,
         act: (SetupBloc bloc) {
           when(() => _authFacade.isLoggedIn).thenReturn(false);
