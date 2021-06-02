@@ -14,17 +14,18 @@ dependencies:
   auto_route: ^2.2.0
   cloud_firestore: ^2.2.0
   cupertino_icons: ^1.0.3
+  device_preview: ^0.7.3
   devicelocale: ^0.4.1
   equatable: ^2.0.2
   firebase_auth: ^1.2.0
   firebase_core: ^1.2.0
   flare_flutter: ^3.0.0
   flare_loading: ^3.0.0
-  flutter_bloc: ^7.0.0
+  flutter_bloc: ^7.0.1
   flutter_native_splash: ^1.1.8+4
   freezed_annotation: ^0.14.2
   get_it: ^7.1.3
-  google_sign_in: ^5.0.3
+  google_sign_in: ^5.0.4
   hive: ^2.0.4
   hive_flutter: ^1.0.0
   injectable: ^1.4.1
@@ -33,7 +34,7 @@ dependencies:
   line_icons: ^2.0.1
   logger: ^1.0.0
   mime: ^1.0.0
-  path_provider: ^2.0.1
+  path_provider: ^2.0.2
   rustic: ^0.3.0
   shimmer: ^2.0.0
   simple_gesture_detector: ^0.2.0
@@ -46,17 +47,17 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   auto_route_generator: ^2.1.0
-  bloc_test: ^8.0.0
-  build_runner: ^2.0.3
+  bloc_test: ^8.0.1
+  build_runner: ^2.0.4
   fake_cloud_firestore: ^1.1.0
   flutter_flavorizr: ^2.0.0
   fluttericon: ^2.0.0
   freezed: ^0.14.2
   hive_generator: ^1.1.0
   injectable_generator: ^1.4.1
-  json_serializable: ^4.1.2
-  mocktail: ^0.1.2
-  very_good_analysis: ^2.0.3
+  json_serializable: ^4.1.3
+  mocktail: ^0.1.4
+  very_good_analysis: ^2.1.1
 
 flavorizr:
   app:
