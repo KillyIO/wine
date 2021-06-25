@@ -33,7 +33,7 @@ abstract class IAuthFacade {
   );
 
   /// @nodoc
-  Future<Result<Unit?, AuthFailure>> logInWithGoogle();
+  Future<Result<Unit, AuthFailure>> logInWithGoogle();
 
   /// @nodoc
   Future<Result<Unit, AuthFailure>> logOut();
