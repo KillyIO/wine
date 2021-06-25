@@ -6,7 +6,7 @@ import 'package:wine/application/auth/auth_bloc.dart';
 /// @nodoc
 class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
   /// @nodoc
-  HomeAppBar({
+  const HomeAppBar({
     Key? key,
     this.preferredSize = const Size.fromHeight(kToolbarHeight),
   }) : super(key: key);

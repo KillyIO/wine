@@ -10,7 +10,7 @@ import 'package:wine/utils/themes.dart';
 /// @nodoc
 class HomePage extends StatelessWidget {
   /// @nodoc
-  HomePage({Key? key}) : super(key: key);
+  const HomePage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

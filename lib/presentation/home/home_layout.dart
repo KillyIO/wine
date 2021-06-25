@@ -2,7 +2,6 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:line_icons/line_icons.dart';
-import 'package:wine/application/auth/auth_bloc.dart';
 import 'package:wine/application/home/home_bloc.dart';
 import 'package:wine/application/home/home_navigation/home_navigation_bloc.dart';
 import 'package:wine/application/setup/setup_bloc.dart';
@@ -28,7 +27,7 @@ class HomeLayout extends StatelessWidget {
 
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: HomeAppBar(),
+      appBar: const HomeAppBar(),
       body: BlocListener<SetupBloc, SetupState>(
         listener: (context, state) {
           state.maybeMap(
@@ -73,7 +72,7 @@ class HomeLayout extends StatelessWidget {
               );
             },
             initHomeBloc: (_) {
-              context.read<HomeBloc>()..add(const HomeEvent.initBloc());
+              context.read<HomeBloc>().add(const HomeEvent.initBloc());
             },
             navigateToOnboarding: (_) {
               context.router.root.pushNamed(onboardingPath);
@@ -127,7 +126,7 @@ class HomeLayout extends StatelessWidget {
           ),
         ),
       ),
-      endDrawer: HomeMenuLayout(),
+      endDrawer: const HomeMenuLayout(),
     );
   }
 }
