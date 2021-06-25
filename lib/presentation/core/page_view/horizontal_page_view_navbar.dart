@@ -5,7 +5,7 @@ import 'package:wine/presentation/core/page_view/horizontal_page_view_navbar_but
 /// @nodoc
 class HorizontalPageViewNavbar extends StatelessWidget {
   /// @nodoc
-  HorizontalPageViewNavbar({
+  const HorizontalPageViewNavbar({
     Key? key,
     required this.colors,
     required this.controller,
