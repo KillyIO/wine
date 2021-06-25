@@ -8,10 +8,8 @@ import 'package:wine/infrastructure/user/hive_user.dart';
 @module
 abstract class HiveInjectableModule {
   /// Initialize and return an instance of Hive.
-  @Environment(Environment.dev)
-  @Environment(Environment.prod)
   @preResolve
-  @lazySingleton
+  @LazySingleton(env: [Environment.dev, Environment.prod])
   Future<HiveInterface> get hive async {
     if (!Hive.isAdapterRegistered(0)) {
       Hive.registerAdapter<HiveUser>(HiveUserAdapter());
