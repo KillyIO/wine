@@ -17,17 +17,13 @@ class HomeTestRouter extends _i1.RootStackRouter {
   final Map<String, _i1.PageFactory> pagesMap = {
     HomeRoute.name: (routeData) => _i1.AdaptivePage<dynamic>(
         routeData: routeData,
-        builder: (data) {
-          final args =
-              data.argsAs<HomeRouteArgs>(orElse: () => const HomeRouteArgs());
-          return _i3.HomePage(key: args.key);
+        builder: (_) {
+          return const _i3.HomePage();
         }),
     OnboardingRoute.name: (routeData) => _i1.AdaptivePage<dynamic>(
         routeData: routeData,
-        builder: (data) {
-          final args = data.argsAs<OnboardingRouteArgs>(
-              orElse: () => const OnboardingRouteArgs());
-          return _i4.OnboardingPage(key: args.key);
+        builder: (_) {
+          return const _i4.OnboardingPage();
         })
   };
 
@@ -38,28 +34,14 @@ class HomeTestRouter extends _i1.RootStackRouter {
       ];
 }
 
-class HomeRoute extends _i1.PageRouteInfo<HomeRouteArgs> {
-  HomeRoute({_i2.Key? key})
-      : super(name, path: '/', args: HomeRouteArgs(key: key));
+class HomeRoute extends _i1.PageRouteInfo {
+  const HomeRoute() : super(name, path: '/');
 
   static const String name = 'HomeRoute';
 }
 
-class HomeRouteArgs {
-  const HomeRouteArgs({this.key});
-
-  final _i2.Key? key;
-}
-
-class OnboardingRoute extends _i1.PageRouteInfo<OnboardingRouteArgs> {
-  OnboardingRoute({_i2.Key? key})
-      : super(name, path: '/onboarding', args: OnboardingRouteArgs(key: key));
+class OnboardingRoute extends _i1.PageRouteInfo {
+  const OnboardingRoute() : super(name, path: '/onboarding');
 
   static const String name = 'OnboardingRoute';
-}
-
-class OnboardingRouteArgs {
-  const OnboardingRouteArgs({this.key});
-
-  final _i2.Key? key;
 }
