@@ -32,12 +32,16 @@ void main() {
 
     when(() => _firebaseAuth.currentUser).thenReturn(MockUser());
 
-    when(() => _box.put(any(), any())).thenAnswer((_) async => null);
+    when(() => _box.put(any(), any())).thenAnswer((_) async {
+      return;
+    });
   });
 
   group('deleteSettings -', () {
     setUp(() {
-      when(() => _box.delete(any())).thenAnswer((_) async => null);
+      when(() => _box.delete(any())).thenAnswer((_) async {
+        return;
+      });
     });
 
     test('When settings deleted Then return Unit', () async {

@@ -36,7 +36,9 @@ void main() {
   group('createSession -', () {
     test('When session created Then return Unit', () async {
       when(() => _box.get(any())).thenReturn(testHiveUser);
-      when(() => _box.put(any(), any())).thenAnswer((_) async => null);
+      when(() => _box.put(any(), any())).thenAnswer((_) async {
+        return;
+      });
 
       final result = await _sessionsRepository.createSession();
 
@@ -62,7 +64,9 @@ void main() {
 
   group('deleteSession -', () {
     setUp(() {
-      when(() => _box.delete(any())).thenAnswer((_) async => null);
+      when(() => _box.delete(any())).thenAnswer((_) async {
+        return;
+      });
     });
 
     test('When session deleted Then return Unit', () async {

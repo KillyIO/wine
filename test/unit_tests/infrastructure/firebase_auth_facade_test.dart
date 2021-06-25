@@ -38,7 +38,9 @@ void main() {
     group('convertWithEmailAndPassword -', () {
       setUp(() {
         when(() => _firebaseAuth.currentUser).thenReturn(_firebaseUser);
-        when(_firebaseUser.sendEmailVerification).thenAnswer((_) async => null);
+        when(_firebaseUser.sendEmailVerification).thenAnswer((_) async {
+          return;
+        });
       });
 
       test('When credentials valid Then return Unit', () async {
@@ -215,7 +217,9 @@ void main() {
     group('logInWithEmailAndPassword -', () {
       setUp(() {
         when(() => _firebaseAuth.currentUser).thenReturn(_firebaseUser);
-        when(_firebaseUser.delete).thenAnswer((_) async => null);
+        when(_firebaseUser.delete).thenAnswer((_) async {
+          return;
+        });
       });
 
       test(
@@ -316,13 +320,21 @@ void main() {
       setUp(() {
         when(() => _firebaseAuth.currentUser).thenReturn(_firebaseUser);
         when(
-          () => _firebaseUser.updateProfile(
-            displayName: any(named: 'displayName'),
-            photoURL: any(named: 'photoURL'),
-          ),
-        ).thenAnswer((_) async => null);
-        when(_firebaseUser.delete).thenAnswer((_) async => null);
-        when(_firebaseUser.reload).thenAnswer((_) async => null);
+          () => _firebaseUser.updateDisplayName(any()),
+        ).thenAnswer((_) async {
+          return;
+        });
+        when(
+          () => _firebaseUser.updatePhotoURL(any()),
+        ).thenAnswer((_) async {
+          return;
+        });
+        when(_firebaseUser.delete).thenAnswer((_) async {
+          return;
+        });
+        when(_firebaseUser.reload).thenAnswer((_) async {
+          return;
+        });
       });
 
       test('When user logged in Then return Unit', () async {
@@ -362,7 +374,9 @@ void main() {
       });
 
       test('When cancelled by user Then return CancelledByUser', () async {
-        when(_googleSignIn.signIn).thenAnswer((_) async => null);
+        when(_googleSignIn.signIn).thenAnswer((_) async {
+          return;
+        });
 
         final result = await _authFacade.logInWithGoogle();
 
@@ -400,7 +414,9 @@ void main() {
 
     group('logOut -', () {
       setUp(() {
-        when(_firebaseAuth.signOut).thenAnswer((_) async => null);
+        when(_firebaseAuth.signOut).thenAnswer((_) async {
+          return;
+        });
       });
 
       test('When user logged out Then return Unit', () async {
@@ -449,7 +465,9 @@ void main() {
     group('resendVerificationEmail -', () {
       test('When verification email sent Then return Unit', () async {
         when(() => _firebaseAuth.currentUser).thenReturn(_firebaseUser);
-        when(_firebaseUser.sendEmailVerification).thenAnswer((_) async => null);
+        when(_firebaseUser.sendEmailVerification).thenAnswer((_) async {
+          return;
+        });
 
         final result = await _authFacade.resendVerificationEmail();
 

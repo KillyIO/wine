@@ -33,7 +33,9 @@ void main() {
 
   group('cacheDefaultCoverURLs -', () {
     setUp(() {
-      when(() => _box.put(any(), any())).thenAnswer((_) async => null);
+      when(() => _box.put(any(), any())).thenAnswer((_) async {
+        return;
+      });
     });
 
     test('When covers cached Then return Unit', () async {
