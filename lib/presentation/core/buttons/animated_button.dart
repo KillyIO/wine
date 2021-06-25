@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 /// @nodoc
 class AnimatedButton extends StatelessWidget {
   /// @nodoc
-  AnimatedButton({
+  const AnimatedButton({
     Key? key,
     required this.animation,
     this.callback,

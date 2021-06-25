@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 /// @nodoc
 class AssetButton extends StatelessWidget {
   /// @nodoc
-  AssetButton({
+  const AssetButton({
     Key? key,
     this.color = Colors.black,
     this.height = 20.0,
