@@ -28,7 +28,7 @@ abstract class ValueObject<T> extends Equatable {
   }
 
   /// @nodoc
-  bool isValid() => value.isOk;
+  bool get isValid => value.isOk;
 
   @override
   List<Object> get props => [value];
