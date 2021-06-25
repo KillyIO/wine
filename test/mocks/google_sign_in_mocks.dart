@@ -16,6 +16,7 @@ class MockGoogleSignInAccount extends Mock implements GoogleSignInAccount {
   }
 
   @override
+  // ignore: unnecessary_overrides
   int get hashCode => super.hashCode;
 }
 
