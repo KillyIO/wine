@@ -17,10 +17,10 @@ const String plusPath = '/plus';
 const String settingsPath = '/settings';
 
 /// @nodoc
-const String accountSettingsPath = '/account';
+const String accountSettingsPath = 'account';
 
 /// @nodoc
-const String chapterSettingsPath = '/chapter';
+const String chapterSettingsPath = 'chapter';
 
 /// @nodoc
-const String seriesSettingsPath = '/series';
+const String seriesSettingsPath = 'series';
