@@ -92,7 +92,7 @@ const testSettings = Settings(
   enableSeriesLikesCount: false,
   enableSeriesViewsCount: false,
 );
-final testHiveSettings = const HiveSettings(
+const testHiveSettings = HiveSettings(
   enableChaptersBookmarksCount: false,
   enableChaptersLikesCount: false,
   enableChaptersViewsCount: false,
