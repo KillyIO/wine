@@ -4,7 +4,8 @@ part of 'log_in_bloc.dart';
 @freezed
 class LogInEvent with _$LogInEvent {
   /// @nodoc
-  const factory LogInEvent.emailChanged(String emailStr) = EmailChanged;
+  const factory LogInEvent.emailAddressChanged(String emailAddressStr) =
+      EmailAddressChanged;
 
   /// @nodoc
   const factory LogInEvent.loggedIn() = LoggedIn;
@@ -21,7 +22,5 @@ class LogInEvent with _$LogInEvent {
       PasswordChanged;
 
   /// @nodoc
-
-  /// @nodoc
-  const factory LogInEvent.userDetailsSaved() = UserDetailsSaved;
+  const factory LogInEvent.userDetailsSaved(User user) = UserDetailsSaved;
 }
