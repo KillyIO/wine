@@ -53,17 +53,17 @@ void main() {
   });
 
   group('SetupBloc -', () {
-    blocTest(
+    blocTest<SetupBloc, SetupState>(
       'emits [] when instanciated.',
       build: () => _setupBloc,
       expect: () => <SetupState>[],
     );
 
     group('Errors -', () {
-      blocTest(
+      blocTest<SetupBloc, SetupState>(
         'emits [AuthFailure.serverError] when appLaunched is added.',
         build: () => _setupBloc,
-        act: (SetupBloc bloc) {
+        act: (bloc) {
           when(() => _authFacade.isLoggedIn).thenReturn(false);
           when(() => _authFacade.logInAnonymously())
               .thenAnswer((_) async => const Err(AuthFailure.serverError()));
@@ -83,10 +83,10 @@ void main() {
         },
       );
 
-      blocTest(
+      blocTest<SetupBloc, SetupState>(
         '''emits [DefaultCoversFailure.defaultCoverURLsNotLoaded] when authenticated is added.''',
         build: () => _setupBloc,
-        act: (SetupBloc bloc) {
+        act: (bloc) {
           when(() => _authFacade.isAnonymous).thenReturn(false);
           when(() => _defaultCoversRepository.loadDefaultCoverURLs())
               .thenAnswer((_) async =>
@@ -108,10 +108,10 @@ void main() {
         },
       );
 
-      blocTest(
+      blocTest<SetupBloc, SetupState>(
         '''emits [DefaultCoversFailure.defaultCoverURLsNotCached] when defaultCoverURLsLoaded is added.''',
         build: () => _setupBloc,
-        act: (SetupBloc bloc) {
+        act: (bloc) {
           when(() => _defaultCoversRepository
                   .cacheDefaultCoverURLs(testDefaultCovers))
               .thenAnswer((_) async =>
@@ -132,10 +132,10 @@ void main() {
         },
       );
 
-      blocTest(
+      blocTest<SetupBloc, SetupState>(
         '''emits [SettingsFailure.settingsNotInitialized] when settingsNotFound is added.''',
         build: () => _setupBloc,
-        act: (SetupBloc bloc) {
+        act: (bloc) {
           when(() => _settingsRepository.initializeSettings()).thenAnswer(
             (_) async => const Err(SettingsFailure.settingsNotInitialized()),
           );
@@ -147,14 +147,14 @@ void main() {
           ),
         ],
         verify: (_) {
-          verify(() => _settingsRepository.initializeSettings()).called(1);
+          verify(_settingsRepository.initializeSettings).called(1);
         },
       );
 
-      blocTest(
+      blocTest<SetupBloc, SetupState>(
         '''emits [SessionsFailure.sessionNotCreated] when sessionNotFound is added.''',
         build: () => _setupBloc,
-        act: (SetupBloc bloc) {
+        act: (bloc) {
           when(() => _sessionsRepository.createSession()).thenAnswer(
             (_) async => const Err(SessionsFailure.sessionNotCreated()),
           );
@@ -166,14 +166,14 @@ void main() {
           ),
         ],
         verify: (_) {
-          verify(() => _sessionsRepository.createSession()).called(1);
+          verify(_sessionsRepository.createSession).called(1);
         },
       );
 
-      blocTest(
+      blocTest<SetupBloc, SetupState>(
         'emits [UserFailure.userNotFound] when sessionFetched is added.',
         build: () => _setupBloc,
-        act: (SetupBloc bloc) {
+        act: (bloc) {
           when(() => _authFacade.isAnonymous).thenReturn(false);
           when(() => _userRepository.loadUser(testUserUid))
               .thenAnswer((_) async => const Err(UserFailure.userNotFound()));
@@ -192,10 +192,10 @@ void main() {
         },
       );
 
-      blocTest(
+      blocTest<SetupBloc, SetupState>(
         'emits [SessionsFailure.sessionNotUpdated] when userLoaded is added.',
         build: () => _setupBloc,
-        act: (SetupBloc bloc) {
+        act: (bloc) {
           when(() => _sessionsRepository.updateSession(testUser)).thenAnswer(
             (_) async => const Err(SessionsFailure.sessionNotUpdated()),
           );
@@ -213,10 +213,10 @@ void main() {
     });
 
     group('Completed -', () {
-      blocTest(
+      blocTest<SetupBloc, SetupState>(
         'emits [SetupState.navigateToOnboarding] when appLaunched is added.',
         build: () => _setupBloc,
-        act: (SetupBloc bloc) {
+        act: (bloc) {
           when(() => _authFacade.isLoggedIn).thenReturn(true);
           when(() => _authFacade.isAnonymous).thenReturn(true);
           when(_settingsRepository.fetchSettings)
@@ -244,10 +244,10 @@ void main() {
         },
       );
 
-      blocTest(
+      blocTest<SetupBloc, SetupState>(
         'emits [SetupState.initHomeBloc] when appLaunched is added.',
         build: () => _setupBloc,
-        act: (SetupBloc bloc) {
+        act: (bloc) {
           when(() => _authFacade.isLoggedIn).thenReturn(true);
           when(() => _authFacade.isAnonymous).thenReturn(true);
           when(_settingsRepository.fetchSettings)
@@ -272,10 +272,10 @@ void main() {
         },
       );
 
-      blocTest(
+      blocTest<SetupBloc, SetupState>(
         'emits [SetupState.initHomeBloc] when appLaunched is added.',
         build: () => _setupBloc,
-        act: (SetupBloc bloc) {
+        act: (bloc) {
           when(() => _authFacade.isLoggedIn).thenReturn(false);
           when(_authFacade.logInAnonymously)
               .thenAnswer((_) async => const Ok(Unit()));

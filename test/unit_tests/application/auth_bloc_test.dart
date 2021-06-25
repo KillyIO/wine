@@ -22,16 +22,16 @@ void main() {
   });
 
   group('AuthBloc -', () {
-    blocTest(
+    blocTest<AuthBloc, AuthState>(
       'emits [] when instanciated.',
       build: () => _authBloc,
       expect: () => <AuthState>[],
     );
 
-    blocTest(
-      'emits [AuthState.anonymous] when authChanged is added.',
+    blocTest<AuthBloc, AuthState>(
+      'emits [AuthState.anonymous] when authChanged is added 1.',
       build: () => _authBloc,
-      act: (AuthBloc bloc) {
+      act: (bloc) {
         when(() => _authFacade.isLoggedIn).thenReturn(true);
         when(() => _authFacade.isAnonymous).thenReturn(true);
         return bloc.add(const AuthEvent.authChanged());
@@ -43,10 +43,10 @@ void main() {
       },
     );
 
-    blocTest(
-      'emits [AuthState.anonymous] when authChanged is added.',
+    blocTest<AuthBloc, AuthState>(
+      'emits [AuthState.anonymous] when authChanged is added 2.',
       build: () => _authBloc,
-      act: (AuthBloc bloc) {
+      act: (bloc) {
         when(() => _authFacade.isLoggedIn).thenReturn(false);
         when(() => _authFacade.isAnonymous).thenReturn(false);
         return bloc.add(const AuthEvent.authChanged());
@@ -58,10 +58,10 @@ void main() {
       },
     );
 
-    blocTest(
+    blocTest<AuthBloc, AuthState>(
       'emits [AuthState.authenticated] when authChanged is added.',
       build: () => _authBloc,
-      act: (AuthBloc bloc) {
+      act: (bloc) {
         when(() => _authFacade.isLoggedIn).thenReturn(true);
         when(() => _authFacade.isAnonymous).thenReturn(false);
         return bloc.add(const AuthEvent.authChanged());

@@ -14,17 +14,17 @@ void main() {
   });
 
   group('HomeNavigationBloc -', () {
-    blocTest(
+    blocTest<HomeNavigationBloc, HomeNavigationState>(
       'emits [] when instanciated.',
       build: () => _homeNavigationBloc,
       expect: () => <HomeNavigationState>[],
     );
 
     group('PageViewIndexChanged -', () {
-      blocTest(
+      blocTest<HomeNavigationBloc, HomeNavigationState>(
         '''emits [HomeNavigationState(currentPageViewIdx: 1)] when pageViewIndexChanged(1) is added.''',
         build: () => _homeNavigationBloc,
-        act: (HomeNavigationBloc bloc) {
+        act: (bloc) {
           return bloc.add(const HomeNavigationEvent.pageViewIndexChanged(1));
         },
         expect: () => <HomeNavigationState>[
