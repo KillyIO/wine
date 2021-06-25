@@ -233,12 +233,12 @@ class FirebaseAuthFacade implements IAuthFacade {
     GoogleSignInAccount? currentAccount,
     auth.User? currentUser,
   ) async {
-    if (currentAccount != null || currentUser != null) {
-      await currentUser?.updateProfile(
-        displayName: currentAccount?.displayName,
-        photoURL: currentAccount?.photoUrl,
-      );
-      await currentUser?.reload();
+    if (currentAccount != null && currentUser != null) {
+      await Future.wait([
+        currentUser.updateDisplayName(currentAccount.displayName),
+        currentUser.updatePhotoURL(currentAccount.photoUrl),
+      ]);
+      await currentUser.reload();
 
       return const Ok(Unit());
     }
