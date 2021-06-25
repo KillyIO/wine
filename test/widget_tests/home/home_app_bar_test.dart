@@ -32,7 +32,7 @@ void main() {
               create: (context) => HomeNavigationBloc(),
             ),
           ],
-          child: HomeAppBar(),
+          child: const HomeAppBar(),
         ),
       ));
 
@@ -60,7 +60,7 @@ void main() {
               create: (context) => HomeNavigationBloc(),
             ),
           ],
-          child: HomeAppBar(),
+          child: const HomeAppBar(),
         ),
       ));
       await tester.pumpAndSettle();
