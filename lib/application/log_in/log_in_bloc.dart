@@ -5,6 +5,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:rustic/option.dart';
 import 'package:rustic/result.dart';
+import 'package:wine/application/auth/auth_bloc.dart';
 import 'package:wine/domain/auth/email_address.dart';
 import 'package:wine/domain/auth/i_auth_facade.dart';
 import 'package:wine/domain/auth/password.dart';
@@ -24,12 +25,14 @@ part 'log_in_bloc.freezed.dart';
 class LogInBloc extends Bloc<LogInEvent, LogInState> {
   /// @nodoc
   LogInBloc(
+    this._authBloc,
     this._authFacade,
     this._sessionsRepository,
     this._userRepository,
   ) : super(LogInState.initial());
 
   /// @nodoc
+  final AuthBloc _authBloc;
   final IAuthFacade _authFacade;
   final ISessionsRepository _sessionsRepository;
   final IUserRepository _userRepository;
@@ -126,6 +129,8 @@ class LogInBloc extends Bloc<LogInEvent, LogInState> {
               failureOption: const None(),
               isProcessing: false,
             );
+
+            _authBloc.add(const AuthEvent.authChanged());
           },
           (failure) async* {
             yield state.copyWith(

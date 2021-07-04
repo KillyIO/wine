@@ -12,11 +12,11 @@ import 'package:hive/hive.dart' as _i12;
 import 'package:hive_flutter/hive_flutter.dart' as _i6;
 import 'package:injectable/injectable.dart' as _i2;
 
-import 'application/auth/auth_bloc.dart' as _i23;
-import 'application/home/home_bloc.dart' as _i24;
+import 'application/auth/auth_bloc.dart' as _i22;
+import 'application/home/home_bloc.dart' as _i23;
 import 'application/home/home_navigation/home_navigation_bloc.dart' as _i7;
-import 'application/log_in/log_in_bloc.dart' as _i21;
-import 'application/setup/setup_bloc.dart' as _i22;
+import 'application/log_in/log_in_bloc.dart' as _i24;
+import 'application/setup/setup_bloc.dart' as _i21;
 import 'domain/auth/i_auth_facade.dart' as _i8;
 import 'domain/default_covers/i_default_covers_repository.dart' as _i10;
 import 'domain/series/i_series_repository.dart' as _i13;
@@ -75,21 +75,21 @@ Future<_i1.GetIt> $initGetIt(_i1.GetIt get,
   gh.lazySingleton<_i19.IUserRepository>(
       () => _i20.UserRepository(get<_i4.FirebaseFirestore>()),
       registerFor: {_dev, _prod});
-  gh.factory<_i21.LogInBloc>(
-      () => _i21.LogInBloc(get<_i8.IAuthFacade>(),
-          get<_i15.ISessionsRepository>(), get<_i19.IUserRepository>()),
-      registerFor: {_dev, _prod});
-  gh.factory<_i22.SetupBloc>(
-      () => _i22.SetupBloc(
+  gh.factory<_i21.SetupBloc>(
+      () => _i21.SetupBloc(
           get<_i8.IAuthFacade>(),
           get<_i10.IDefaultCoversRepository>(),
           get<_i15.ISessionsRepository>(),
           get<_i17.ISettingsRepository>(),
           get<_i19.IUserRepository>()),
       registerFor: {_dev, _prod});
-  gh.factory<_i23.AuthBloc>(() => _i23.AuthBloc(get<_i8.IAuthFacade>()),
+  gh.factory<_i22.AuthBloc>(() => _i22.AuthBloc(get<_i8.IAuthFacade>()),
       registerFor: {_dev, _prod});
-  gh.factory<_i24.HomeBloc>(() => _i24.HomeBloc(get<_i7.HomeNavigationBloc>()),
+  gh.factory<_i23.HomeBloc>(() => _i23.HomeBloc(get<_i7.HomeNavigationBloc>()),
+      registerFor: {_dev, _prod});
+  gh.factory<_i24.LogInBloc>(
+      () => _i24.LogInBloc(get<_i22.AuthBloc>(), get<_i8.IAuthFacade>(),
+          get<_i15.ISessionsRepository>(), get<_i19.IUserRepository>()),
       registerFor: {_dev, _prod});
   return get;
 }

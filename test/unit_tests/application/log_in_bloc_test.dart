@@ -3,6 +3,8 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:rustic/option.dart';
 import 'package:rustic/result.dart';
+import 'package:rustic/tuple.dart';
+import 'package:wine/application/auth/auth_bloc.dart';
 import 'package:wine/application/log_in/log_in_bloc.dart';
 import 'package:wine/domain/auth/auth_failure.dart';
 import 'package:wine/domain/auth/email_address.dart';
@@ -22,6 +24,7 @@ import '../../mocks/user_mocks.dart';
 import '../utils/constants.dart';
 
 void main() {
+  late AuthBloc _authBloc;
   late IAuthFacade _authFacade;
   late ISessionsRepository _sessionsRepository;
   late IUserRepository _userRepository;
@@ -33,7 +36,10 @@ void main() {
     _sessionsRepository = MockSessionsRepository();
     _userRepository = MockUserRepository();
 
+    _authBloc = AuthBloc(_authFacade);
+
     _logInBloc = LogInBloc(
+      _authBloc,
       _authFacade,
       _sessionsRepository,
       _userRepository,
@@ -229,8 +235,96 @@ void main() {
     });
 
     group('Completed -', () {
-      //TODO check logInWithEmailAndPasswordPressed ges throgh
-      //TODO check logInWithGooglePressed ges throgh
+      blocTest<LogInBloc, LogInState>(
+        '''emits [failureOption: const None()] when logInWithEmailAndPasswordPressed is added.''',
+        build: () => _logInBloc,
+        act: (bloc) {
+          when(() => _authFacade.logInWithEmailAndPassword(any(), any()))
+              .thenAnswer((_) async => const Ok(Unit()));
+          when(() => _authFacade.isLoggedIn).thenReturn(true);
+          when(_authFacade.getLoggedInUser)
+              .thenAnswer((_) async => Option(testUser));
+          when(() => _userRepository.saveDetailsFromUser(any()))
+              .thenAnswer((_) async => const Ok(Unit()));
+          when(() => _sessionsRepository.updateSession(any()))
+              .thenAnswer((_) async => const Ok(Unit()));
+          when(() => _authFacade.isAnonymous).thenReturn(false);
+          return bloc
+            ..add(const LogInEvent.emailAddressChanged(testEmailAddress))
+            ..add(const LogInEvent.passwordChanged(testPassword))
+            ..add(const LogInEvent.logInWithEmailAndPasswordPressed());
+        },
+        skip: 2,
+        expect: () => <LogInState>[
+          LogInState(
+            emailAddress: EmailAddress(testEmailAddress),
+            failureOption: const None(),
+            isProcessing: true,
+            password: Password(testPassword),
+            showErrorMessages: false,
+          ),
+          LogInState(
+            emailAddress: EmailAddress(testEmailAddress),
+            failureOption: const None(),
+            isProcessing: false,
+            password: Password(testPassword),
+            showErrorMessages: false,
+          )
+        ],
+        verify: (_) {
+          verify(() => _authFacade.logInWithEmailAndPassword(any(), any()))
+              .called(1);
+          verifyInOrder([
+            () => _authFacade.isLoggedIn,
+            _authFacade.getLoggedInUser,
+            () => _userRepository.saveDetailsFromUser(any())
+          ]);
+          verify(() => _sessionsRepository.updateSession(any())).called(1);
+        },
+      );
+
+      blocTest<LogInBloc, LogInState>(
+        '''emits [failureOption: const None()] when logInWithGooglePressed is added.''',
+        build: () => _logInBloc,
+        act: (bloc) {
+          when(() => _authFacade.logInWithGoogle())
+              .thenAnswer((_) async => const Ok(Unit()));
+          when(() => _authFacade.isLoggedIn).thenReturn(true);
+          when(_authFacade.getLoggedInUser)
+              .thenAnswer((_) async => Option(testUser));
+          when(() => _userRepository.saveDetailsFromUser(any()))
+              .thenAnswer((_) async => const Ok(Unit()));
+          when(() => _sessionsRepository.updateSession(any()))
+              .thenAnswer((_) async => const Ok(Unit()));
+          when(() => _authFacade.isAnonymous).thenReturn(false);
+          return bloc.add(const LogInEvent.logInWithGooglePressed());
+        },
+        expect: () => <LogInState>[
+          LogInState(
+            emailAddress: EmailAddress(''),
+            failureOption: const None(),
+            isProcessing: true,
+            password: Password(''),
+            showErrorMessages: false,
+          ),
+          LogInState(
+            emailAddress: EmailAddress(''),
+            failureOption: const None(),
+            isProcessing: false,
+            password: Password(''),
+            showErrorMessages: false,
+          )
+        ],
+        verify: (_) {
+          verify(() => _authFacade.logInWithGoogle()).called(1);
+          verifyInOrder([
+            () => _authFacade.isLoggedIn,
+            _authFacade.getLoggedInUser,
+            () => _userRepository.saveDetailsFromUser(any())
+          ]);
+          verify(() => _sessionsRepository.updateSession(any())).called(1);
+        },
+      );
     });
   });
 }
