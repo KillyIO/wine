@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:auto_route/auto_route.dart';
 import 'package:line_icons/line_icons.dart';
 import 'package:sizer/sizer.dart';
+import 'package:wine/application/auth/auth_bloc.dart';
 
 import 'package:wine/application/log_in/log_in_bloc.dart';
 import 'package:wine/presentation/core/buttons/default_button.dart';
@@ -9,7 +11,9 @@ import 'package:wine/presentation/core/text_fields/authentication_text_field.dar
 import 'package:wine/presentation/log_in/widgets/log_in_create_account_button.dart';
 import 'package:wine/presentation/log_in/widgets/log_in_separator.dart';
 import 'package:wine/presentation/log_in/widgets/log_in_social_media_button.dart';
+import 'package:wine/presentation/routes/router.dart';
 import 'package:wine/utils/constants/palette.dart';
+import 'package:wine/utils/functions.dart';
 
 /// @nodoc
 class LogInLayout extends StatelessWidget {
@@ -18,10 +22,61 @@ class LogInLayout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocListener<LogInBloc, LogInState>(
-      listener: (context, state) {
-        // TODO: implement listener
-      },
+    return MultiBlocListener(
+      listeners: <BlocListener>[
+        BlocListener<LogInBloc, LogInState>(listener: (context, state) {
+          state.failureOption.whenSome(
+            (some) => some.whenErr(
+              (err) => err.maybeMap(
+                auth: (f) => f.f.maybeMap(
+                  invalidEmailAndPasswordCombination: (_) async =>
+                      dismissErrorMessage(
+                    context,
+                    'Incorrect email or password.',
+                  ),
+                  serverError: (_) async => dismissErrorMessage(
+                    context,
+                    'A problem occurred on our end!',
+                  ),
+                  unexpected: (_) async => dismissErrorMessage(
+                    context,
+                    'An unexpected error occured!',
+                  ),
+                  orElse: () {},
+                ),
+                sessions: (f) => f.f.maybeMap(
+                  sessionNotUpdated: (_) async => dismissErrorMessage(
+                    context,
+                    'Session could not be updated!',
+                  ),
+                  orElse: () {},
+                ),
+                user: (f) => f.f.maybeMap(
+                  serverError: (_) async => dismissErrorMessage(
+                    context,
+                    'A problem occurred on our end!',
+                  ),
+                  unexpected: (_) async => dismissErrorMessage(
+                    context,
+                    'An unexpected error occured!',
+                  ),
+                  orElse: () {},
+                ),
+                orElse: () {},
+              ),
+            ),
+          );
+        }),
+        BlocListener<AuthBloc, AuthState>(
+          listener: (context, state) {
+            state.maybeMap(
+              authenticated: (_) =>
+                  context.router.root.navigate(const HomeRoute()),
+              orElse: () {},
+            );
+          },
+        )
+      ],
       child: BlocBuilder<LogInBloc, LogInState>(
         builder: (context, state) {
           return SafeArea(
