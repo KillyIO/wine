@@ -64,8 +64,12 @@ class HomeLayout extends StatelessWidget {
                   orElse: () {},
                 ),
                 user: (f) => f.f.maybeMap(
+                  serverError: (_) async =>
+                      restartApp(context, 'A problem occurred on our end!'),
                   userNotFound: (_) async =>
                       restartApp(context, 'User account not found!'),
+                  unexpected: (_) async =>
+                      restartApp(context, 'An unexpected error occured!'),
                   orElse: () {},
                 ),
                 orElse: () {},
