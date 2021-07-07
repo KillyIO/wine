@@ -45,11 +45,11 @@ class HomeLayout extends StatelessWidget {
                       context, 'Default covers could not be cached!'),
                   defaultCoverURLsNotLoaded: (_) async => restartApp(
                       context, 'Default covers could not be loaded!'),
-                  orElse: () {},
                   serverError: (_) async =>
                       restartApp(context, 'A problem occurred on our end!'),
                   unexpected: (_) async =>
                       restartApp(context, 'An unexpected error occured!'),
+                  orElse: () {},
                 ),
                 sessions: (f) => f.f.maybeMap(
                   sessionNotCreated: (_) async =>
