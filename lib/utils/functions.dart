@@ -6,6 +6,24 @@ import 'package:wine/application/setup/setup_bloc.dart';
 
 import 'package:wine/presentation/core/dialogs/error_dialog.dart';
 
+/// @nodoc
+Future<void> dismissErrorMessage(
+  BuildContext context,
+  String errorMessage,
+) async {
+  await showDialog<bool>(
+    context: context,
+    builder: (_) => ErrorDialog(
+      message: 'A problem occurred on our end!',
+      onPressed: () async {
+        if (context.router.canPopSelfOrChildren) {
+          await context.router.pop<bool>(true);
+        }
+      },
+    ),
+  );
+}
+
 /// Tries to restart the app by add initial [SetupBloc] event
 Future<void> restartApp(BuildContext context, String errorMessage) async {
   final result = await showDialog<bool>(
