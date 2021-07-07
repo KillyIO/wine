@@ -4,7 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:line_icons/line_icons.dart';
 import 'package:wine/application/auth/auth_bloc.dart';
 import 'package:wine/presentation/core/buttons/tile_button.dart';
-import 'package:wine/utils/paths/router.dart';
+import 'package:wine/presentation/routes/router.dart';
 
 /// @nodoc
 class SettingsLayout extends StatelessWidget {
@@ -25,7 +25,7 @@ class SettingsLayout extends StatelessWidget {
                 onPressed: () => state.maybeMap(
                   authenticated: (_) async {},
                   // TODO add push to account settings page
-                  orElse: () => context.router.root.pushNamed(logInPath),
+                  orElse: () => context.router.root.push(const LogInRoute()),
                 ),
               );
             },

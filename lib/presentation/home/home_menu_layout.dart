@@ -4,7 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:line_icons/line_icons.dart';
 import 'package:wine/application/auth/auth_bloc.dart';
 import 'package:wine/presentation/home/widgets/home_menu_tile.dart';
-import 'package:wine/utils/paths/router.dart';
+import 'package:wine/presentation/routes/router.dart';
 
 /// @nodoc
 class HomeMenuLayout extends StatelessWidget {
@@ -68,7 +68,7 @@ class HomeMenuLayout extends StatelessWidget {
                       HomeMenuTile(
                         key: const Key('home_menu_plus_tile'),
                         onPressed: () =>
-                            context.router.root.pushNamed(plusPath),
+                            context.router.root.push(const PlusRoute()),
                         text: 'PLUS',
                       ),
                     ],

@@ -5,7 +5,7 @@ import 'package:line_icons/line_icons.dart';
 import 'package:wine/application/auth/auth_bloc.dart';
 import 'package:wine/presentation/plus/widgets/plus_banner.dart';
 import 'package:wine/presentation/core/buttons/tile_button.dart';
-import 'package:wine/utils/paths/router.dart';
+import 'package:wine/presentation/routes/router.dart';
 
 /// @nodoc
 class PlusLayout extends StatelessWidget {
@@ -27,8 +27,8 @@ class PlusLayout extends StatelessWidget {
               trailingIconData: Icons.keyboard_arrow_right,
               onPressed: () => state.maybeMap(
                 authenticated: (_) =>
-                    context.router.root.pushNamed(libraryPath),
-                orElse: () => context.router.root.pushNamed(logInPath),
+                    context.router.root.push(const LibraryRoute()),
+                orElse: () => context.router.root.push(const LogInRoute()),
               ),
             );
           },

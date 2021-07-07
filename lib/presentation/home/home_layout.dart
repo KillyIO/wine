@@ -9,10 +9,10 @@ import 'package:wine/presentation/core/page_view/horizontal_page_view_navbar.dar
 import 'package:wine/presentation/home/home_menu_layout.dart';
 import 'package:wine/presentation/home/widgets/home_app_bar.dart';
 import 'package:wine/presentation/home/widgets/home_page_view_builder.dart';
+import 'package:wine/presentation/routes/router.dart';
 import 'package:wine/utils/constants/home.dart';
 import 'package:wine/utils/constants/palette.dart';
 import 'package:wine/utils/functions.dart';
-import 'package:wine/utils/paths/router.dart';
 
 /// @nodoc
 class HomeLayout extends StatelessWidget {
@@ -75,7 +75,7 @@ class HomeLayout extends StatelessWidget {
               context.read<HomeBloc>().add(const HomeEvent.initBloc());
             },
             navigateToOnboarding: (_) {
-              context.router.root.pushNamed(onboardingPath);
+              context.router.root.push(const OnboardingRoute());
             },
             orElse: () {},
           );
