@@ -7,16 +7,17 @@
 import 'package:auto_route/auto_route.dart' as _i1;
 import 'package:flutter/material.dart' as _i2;
 import 'package:wine/presentation/home/home_page.dart' as _i3;
-import 'package:wine/presentation/log_in/log_in_page.dart' as _i4;
-import 'package:wine/presentation/onboarding/onboarding_page.dart' as _i5;
-import 'package:wine/presentation/plus/plus_page.dart' as _i6;
+import 'package:wine/presentation/library/library_page.dart' as _i4;
+import 'package:wine/presentation/log_in/log_in_page.dart' as _i5;
+import 'package:wine/presentation/onboarding/onboarding_page.dart' as _i6;
+import 'package:wine/presentation/plus/plus_page.dart' as _i7;
 import 'package:wine/presentation/settings/account_settings/account_settings_page.dart'
-    as _i8;
-import 'package:wine/presentation/settings/chapter_settings/chapter_settings_page.dart'
     as _i9;
-import 'package:wine/presentation/settings/series_settings/series_settings_page.dart'
+import 'package:wine/presentation/settings/chapter_settings/chapter_settings_page.dart'
     as _i10;
-import 'package:wine/presentation/settings/settings_page.dart' as _i7;
+import 'package:wine/presentation/settings/series_settings/series_settings_page.dart'
+    as _i11;
+import 'package:wine/presentation/settings/settings_page.dart' as _i8;
 
 class AppRouter extends _i1.RootStackRouter {
   AppRouter([_i2.GlobalKey<_i2.NavigatorState>? navigatorKey])
@@ -29,46 +30,52 @@ class AppRouter extends _i1.RootStackRouter {
         builder: (_) {
           return const _i3.HomePage();
         }),
+    LibraryRoute.name: (routeData) => _i1.AdaptivePage<dynamic>(
+        routeData: routeData,
+        builder: (_) {
+          return const _i4.LibraryPage();
+        }),
     LogInRoute.name: (routeData) => _i1.AdaptivePage<dynamic>(
         routeData: routeData,
         builder: (_) {
-          return const _i4.LogInPage();
+          return const _i5.LogInPage();
         }),
     OnboardingRoute.name: (routeData) => _i1.AdaptivePage<dynamic>(
         routeData: routeData,
         builder: (_) {
-          return const _i5.OnboardingPage();
+          return const _i6.OnboardingPage();
         }),
     PlusRoute.name: (routeData) => _i1.AdaptivePage<dynamic>(
         routeData: routeData,
         builder: (_) {
-          return const _i6.PlusPage();
+          return const _i7.PlusPage();
         }),
     SettingsRoute.name: (routeData) => _i1.AdaptivePage<dynamic>(
         routeData: routeData,
         builder: (_) {
-          return const _i7.SettingsPage();
+          return const _i8.SettingsPage();
         }),
     AccountSettingsRoute.name: (routeData) => _i1.AdaptivePage<dynamic>(
         routeData: routeData,
         builder: (_) {
-          return const _i8.AccountSettingsPage();
+          return const _i9.AccountSettingsPage();
         }),
     ChapterSettingsRoute.name: (routeData) => _i1.AdaptivePage<dynamic>(
         routeData: routeData,
         builder: (_) {
-          return const _i9.ChapterSettingsPage();
+          return const _i10.ChapterSettingsPage();
         }),
     SeriesSettingsRoute.name: (routeData) => _i1.AdaptivePage<dynamic>(
         routeData: routeData,
         builder: (_) {
-          return const _i10.SeriesSettingsPage();
+          return const _i11.SeriesSettingsPage();
         })
   };
 
   @override
   List<_i1.RouteConfig> get routes => [
         _i1.RouteConfig(HomeRoute.name, path: '/'),
+        _i1.RouteConfig(LibraryRoute.name, path: '/library'),
         _i1.RouteConfig(LogInRoute.name, path: '/log-in'),
         _i1.RouteConfig(OnboardingRoute.name, path: '/onboarding'),
         _i1.RouteConfig(PlusRoute.name, path: '/plus'),
@@ -84,6 +91,12 @@ class HomeRoute extends _i1.PageRouteInfo {
   const HomeRoute() : super(name, path: '/');
 
   static const String name = 'HomeRoute';
+}
+
+class LibraryRoute extends _i1.PageRouteInfo {
+  const LibraryRoute() : super(name, path: '/library');
+
+  static const String name = 'LibraryRoute';
 }
 
 class LogInRoute extends _i1.PageRouteInfo {

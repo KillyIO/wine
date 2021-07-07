@@ -1,5 +1,6 @@
 import 'package:auto_route/annotations.dart';
 import 'package:wine/presentation/home/home_page.dart';
+import 'package:wine/presentation/library/library_page.dart';
 import 'package:wine/presentation/log_in/log_in_page.dart';
 import 'package:wine/presentation/onboarding/onboarding_page.dart';
 import 'package:wine/presentation/plus/plus_page.dart';
@@ -18,6 +19,10 @@ export 'router.gr.dart';
       page: HomePage,
       path: homePath,
       initial: true,
+    ),
+    AdaptiveRoute(
+      page: LibraryPage,
+      path: libraryPath,
     ),
     AdaptiveRoute(
       page: LogInPage,
