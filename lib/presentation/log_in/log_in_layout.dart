@@ -78,7 +78,7 @@ class LogInLayout extends StatelessWidget {
                       child: SizedBox(
                         width: MediaQuery.of(context).size.width,
                         child: Text(
-                          'Sign in to access more features.',
+                          'Log in to access more features.',
                           textAlign: TextAlign.start,
                           style: TextStyle(
                             color: Colors.black,
