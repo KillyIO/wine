@@ -30,36 +30,23 @@ class LogInLayout extends StatelessWidget {
               (err) => err.maybeMap(
                 auth: (f) => f.f.maybeMap(
                   invalidEmailAndPasswordCombination: (_) async =>
-                      dismissErrorMessage(
-                    context,
-                    'Incorrect email or password.',
-                  ),
-                  serverError: (_) async => dismissErrorMessage(
-                    context,
-                    'A problem occurred on our end!',
-                  ),
-                  unexpected: (_) async => dismissErrorMessage(
-                    context,
-                    'An unexpected error occured!',
-                  ),
+                      baseError(context, 'Incorrect email or password.'),
+                  serverError: (_) async =>
+                      baseError(context, 'A problem occurred on our end!'),
+                  unexpected: (_) async =>
+                      baseError(context, 'An unexpected error occured!'),
                   orElse: () {},
                 ),
                 sessions: (f) => f.f.maybeMap(
-                  sessionNotUpdated: (_) async => dismissErrorMessage(
-                    context,
-                    'Session could not be updated!',
-                  ),
+                  sessionNotUpdated: (_) async =>
+                      baseError(context, 'Session could not be updated!'),
                   orElse: () {},
                 ),
                 user: (f) => f.f.maybeMap(
-                  serverError: (_) async => dismissErrorMessage(
-                    context,
-                    'A problem occurred on our end!',
-                  ),
-                  unexpected: (_) async => dismissErrorMessage(
-                    context,
-                    'An unexpected error occured!',
-                  ),
+                  serverError: (_) async =>
+                      baseError(context, 'A problem occurred on our end!'),
+                  unexpected: (_) async =>
+                      baseError(context, 'An unexpected error occured!'),
                   orElse: () {},
                 ),
                 orElse: () {},

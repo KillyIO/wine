@@ -7,14 +7,12 @@ import 'package:wine/application/setup/setup_bloc.dart';
 import 'package:wine/presentation/core/dialogs/error_dialog.dart';
 
 /// @nodoc
-Future<void> dismissErrorMessage(
-  BuildContext context,
-  String errorMessage,
-) async {
+Future<void> baseError(BuildContext context, String errorMessage) async {
   await showDialog<bool>(
     context: context,
     builder: (_) => ErrorDialog(
-      message: 'A problem occurred on our end!',
+      key: const Key('dismiss_error_dialog'),
+      message: errorMessage,
       onPressed: () async {
         if (context.router.canPopSelfOrChildren) {
           await context.router.pop<bool>(true);
