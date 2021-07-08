@@ -31,7 +31,6 @@ class LogInBloc extends Bloc<LogInEvent, LogInState> {
     this._userRepository,
   ) : super(LogInState.initial());
 
-  /// @nodoc
   final AuthBloc _authBloc;
   final IAuthFacade _authFacade;
   final ISessionsRepository _sessionsRepository;
