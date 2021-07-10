@@ -12,12 +12,13 @@ import 'package:wine/presentation/log_in/log_in_page.dart' as _i5;
 import 'package:wine/presentation/onboarding/onboarding_page.dart' as _i6;
 import 'package:wine/presentation/plus/plus_page.dart' as _i7;
 import 'package:wine/presentation/settings/account_settings/account_settings_page.dart'
-    as _i9;
-import 'package:wine/presentation/settings/chapter_settings/chapter_settings_page.dart'
     as _i10;
-import 'package:wine/presentation/settings/series_settings/series_settings_page.dart'
+import 'package:wine/presentation/settings/chapter_settings/chapter_settings_page.dart'
     as _i11;
-import 'package:wine/presentation/settings/settings_page.dart' as _i8;
+import 'package:wine/presentation/settings/series_settings/series_settings_page.dart'
+    as _i12;
+import 'package:wine/presentation/settings/settings_page.dart' as _i9;
+import 'package:wine/presentation/sign_up/sign_up_page.dart' as _i8;
 
 class AppRouter extends _i1.RootStackRouter {
   AppRouter([_i2.GlobalKey<_i2.NavigatorState>? navigatorKey])
@@ -50,25 +51,30 @@ class AppRouter extends _i1.RootStackRouter {
         builder: (_) {
           return const _i7.PlusPage();
         }),
+    SignUpRoute.name: (routeData) => _i1.AdaptivePage<dynamic>(
+        routeData: routeData,
+        builder: (_) {
+          return const _i8.SignUpPage();
+        }),
     SettingsRoute.name: (routeData) => _i1.AdaptivePage<dynamic>(
         routeData: routeData,
         builder: (_) {
-          return const _i8.SettingsPage();
+          return const _i9.SettingsPage();
         }),
     AccountSettingsRoute.name: (routeData) => _i1.AdaptivePage<dynamic>(
         routeData: routeData,
         builder: (_) {
-          return const _i9.AccountSettingsPage();
+          return const _i10.AccountSettingsPage();
         }),
     ChapterSettingsRoute.name: (routeData) => _i1.AdaptivePage<dynamic>(
         routeData: routeData,
         builder: (_) {
-          return const _i10.ChapterSettingsPage();
+          return const _i11.ChapterSettingsPage();
         }),
     SeriesSettingsRoute.name: (routeData) => _i1.AdaptivePage<dynamic>(
         routeData: routeData,
         builder: (_) {
-          return const _i11.SeriesSettingsPage();
+          return const _i12.SeriesSettingsPage();
         })
   };
 
@@ -79,6 +85,7 @@ class AppRouter extends _i1.RootStackRouter {
         _i1.RouteConfig(LogInRoute.name, path: '/log-in'),
         _i1.RouteConfig(OnboardingRoute.name, path: '/onboarding'),
         _i1.RouteConfig(PlusRoute.name, path: '/plus'),
+        _i1.RouteConfig(SignUpRoute.name, path: '/sign-up'),
         _i1.RouteConfig(SettingsRoute.name, path: '/settings', children: [
           _i1.RouteConfig(AccountSettingsRoute.name, path: 'account'),
           _i1.RouteConfig(ChapterSettingsRoute.name, path: 'chapter'),
@@ -115,6 +122,12 @@ class PlusRoute extends _i1.PageRouteInfo {
   const PlusRoute() : super(name, path: '/plus');
 
   static const String name = 'PlusRoute';
+}
+
+class SignUpRoute extends _i1.PageRouteInfo {
+  const SignUpRoute() : super(name, path: '/sign-up');
+
+  static const String name = 'SignUpRoute';
 }
 
 class SettingsRoute extends _i1.PageRouteInfo {

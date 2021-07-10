@@ -17,6 +17,9 @@ const String plusPath = '/plus';
 const String settingsPath = '/settings';
 
 /// @nodoc
+const String signUpPath = '/sign-up';
+
+/// @nodoc
 const String accountSettingsPath = 'account';
 
 /// @nodoc

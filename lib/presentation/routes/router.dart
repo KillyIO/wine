@@ -8,6 +8,7 @@ import 'package:wine/presentation/settings/account_settings/account_settings_pag
 import 'package:wine/presentation/settings/chapter_settings/chapter_settings_page.dart';
 import 'package:wine/presentation/settings/series_settings/series_settings_page.dart';
 import 'package:wine/presentation/settings/settings_page.dart';
+import 'package:wine/presentation/sign_up/sign_up_page.dart';
 import 'package:wine/utils/paths/router.dart';
 
 export 'router.gr.dart';
@@ -35,6 +36,10 @@ export 'router.gr.dart';
     AdaptiveRoute(
       page: PlusPage,
       path: plusPath,
+    ),
+    AdaptiveRoute(
+      page: SignUpPage,
+      path: signUpPath,
     ),
     AdaptiveRoute(
       page: SettingsPage,
