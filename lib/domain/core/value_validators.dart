@@ -113,9 +113,37 @@ Result<String, ValueFailure<String>> validateUniqueID(String input) {
   return Err(ValueFailure.invalidUniqueID(input));
 }
 
+/// List of potentially malicious usernames.
+/// Blacklisted usernames.
+final maliciousUsernames = <String>[
+  'root',
+  'admin',
+  'user',
+  'test',
+  'ubuntu',
+  'ubnt',
+  'support',
+  'oracle',
+  'pi',
+  'guest',
+  'postgres',
+  'ftpuser',
+  'usuario',
+  'nagios',
+  '1234',
+  'ftp',
+  'operator',
+  'git',
+  'hadoop',
+  'ts3',
+];
+
 /// @nodoc
 Result<String, ValueFailure<String>> validateUsername(String input) {
-  if (input.isNotEmpty) {
+  if (input.isNotEmpty &&
+      RegExp(r'^(?=[a-zA-Z0-9._]{4,32}$)(?!.*[_.]{2})[^_.].*[^_.]$')
+          .hasMatch(input) &&
+      !maliciousUsernames.contains(input)) {
     return Ok(input);
   }
   return Err(ValueFailure.invalidUsername(input));

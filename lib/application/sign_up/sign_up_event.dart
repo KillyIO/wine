@@ -4,7 +4,7 @@ part of 'sign_up_bloc.dart';
 @freezed
 class SignUpEvent with _$SignUpEvent {
   /// @nodoc
-  const factory SignUpEvent.accountCreated(User user) = AccountCreated;
+  const factory SignUpEvent.accountCreated() = AccountCreated;
 
   /// @nodoc
   const factory SignUpEvent.confirmPasswordChanged(

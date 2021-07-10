@@ -5,12 +5,14 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:rustic/option.dart';
 import 'package:rustic/result.dart';
+import 'package:wine/application/auth/auth_bloc.dart';
 import 'package:wine/domain/auth/confirm_password.dart';
 import 'package:wine/domain/auth/email_address.dart';
 import 'package:wine/domain/auth/i_auth_facade.dart';
 import 'package:wine/domain/auth/password.dart';
 import 'package:wine/domain/auth/username.dart';
 import 'package:wine/domain/core/core_failure.dart';
+import 'package:wine/domain/sessions/i_sessions_repository.dart';
 import 'package:wine/domain/user/i_user_repository.dart';
 import 'package:wine/domain/user/user.dart';
 
@@ -25,11 +27,15 @@ part 'sign_up_bloc.freezed.dart';
 class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
   /// @nodoc
   SignUpBloc(
+    this._authBloc,
     this._authFacade,
+    this._sessionsRepository,
     this._userRepository,
   ) : super(SignUpState.initial());
 
+  final AuthBloc _authBloc;
   final IAuthFacade _authFacade;
+  final ISessionsRepository _sessionsRepository;
   final IUserRepository _userRepository;
 
   @override
@@ -37,7 +43,25 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
     SignUpEvent event,
   ) async* {
     yield* event.map(
-      accountCreated: (value) async* {},
+      accountCreated: (value) async* {
+        final userOption = await _authFacade.getLoggedInUser();
+        final user = userOption?.asPlain();
+
+        if (user != null) {
+          yield* (await _userRepository.saveDetailsFromUser(user)).match(
+            (_) async* {
+              add(SignUpEvent.userDetailsSaved(user));
+            },
+            (failure) async* {
+              yield state.copyWith(
+                failureOption: Option(Err(CoreFailure.user(failure))),
+                isProcessing: false,
+                showErrorMessages: true,
+              );
+            },
+          );
+        }
+      },
       confirmPasswordChanged: (value) async* {
         yield state.copyWith(
           confirmPassword:
@@ -66,8 +90,9 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
             isProcessing: true,
           );
 
-          yield* (await _userRepository
-                  .checkUsernameAvailability(state.username))
+          yield* (await _userRepository.checkUsernameAvailability(
+            state.username,
+          ))
               .match(
             (_) async* {
               add(const SignUpEvent.usernameAvailabilityConfirmed());
@@ -82,8 +107,49 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
           );
         }
       },
-      userDetailsSaved: (value) async* {},
-      usernameAvailabilityConfirmed: (value) async* {},
+      userDetailsSaved: (value) async* {
+        yield* (await _sessionsRepository.updateSession(value.user)).match(
+          (_) async* {
+            yield state.copyWith(
+              failureOption: const None(),
+              isProcessing: false,
+            );
+
+            _authBloc.add(const AuthEvent.authChanged());
+          },
+          (failure) async* {
+            yield state.copyWith(
+              failureOption: Option(Err(CoreFailure.sessions(failure))),
+              isProcessing: false,
+              showErrorMessages: true,
+            );
+          },
+        );
+      },
+      usernameAvailabilityConfirmed: (value) async* {
+        final isEmailValid = state.emailAddress.isValid;
+        final isPasswordValid = state.password.isValid;
+        final isConfirmPasswordValid = state.confirmPassword.isValid;
+
+        if (isEmailValid && isPasswordValid && isConfirmPasswordValid) {
+          yield* (await _authFacade.convertWithEmailAndPassword(
+            state.emailAddress,
+            state.password,
+          ))
+              .match(
+            (_) async* {
+              add(const SignUpEvent.accountCreated());
+            },
+            (failure) async* {
+              yield state.copyWith(
+                failureOption: Option(Err(CoreFailure.auth(failure))),
+                isProcessing: false,
+                showErrorMessages: true,
+              );
+            },
+          );
+        }
+      },
       usernameChanged: (value) async* {
         yield state.copyWith(
           failureOption: const None(),
