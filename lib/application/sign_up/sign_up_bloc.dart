@@ -63,13 +63,16 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
         }
       },
       confirmPasswordChanged: (value) async* {
-        yield state.copyWith(
-          confirmPassword:
-              ConfirmPassword(value.confirmPasswordStr, value.passwordStr),
-          failureOption: const None(),
-        );
+        final password = state.password.value.ok.asPlain();
+
+        if (password != null) {
+          yield state.copyWith(
+            confirmPassword: ConfirmPassword(value.confirmPasswordStr, ''),
+            failureOption: const None(),
+          );
+        }
       },
-      emailChanged: (value) async* {
+      emailAddressChanged: (value) async* {
         yield state.copyWith(
           emailAddress: EmailAddress(value.emailAddressStr),
           failureOption: const None(),

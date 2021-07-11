@@ -7,13 +7,12 @@ class SignUpEvent with _$SignUpEvent {
   const factory SignUpEvent.accountCreated() = AccountCreated;
 
   /// @nodoc
-  const factory SignUpEvent.confirmPasswordChanged(
-    String confirmPasswordStr,
-    String passwordStr,
-  ) = ConfirmPasswordChanged;
+  const factory SignUpEvent.confirmPasswordChanged(String confirmPasswordStr) =
+      ConfirmPasswordChanged;
 
   /// @nodoc
-  const factory SignUpEvent.emailChanged(String emailAddressStr) = EmailChanged;
+  const factory SignUpEvent.emailAddressChanged(String emailAddressStr) =
+      EmailAddressChanged;
 
   /// @nodoc
   const factory SignUpEvent.passwordChanged(String passwordStr) =
