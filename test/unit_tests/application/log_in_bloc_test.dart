@@ -4,7 +4,6 @@ import 'package:mocktail/mocktail.dart';
 import 'package:rustic/option.dart';
 import 'package:rustic/result.dart';
 import 'package:rustic/tuple.dart';
-import 'package:wine/application/auth/auth_bloc.dart';
 import 'package:wine/application/log_in/log_in_bloc.dart';
 import 'package:wine/domain/auth/auth_failure.dart';
 import 'package:wine/domain/auth/email_address.dart';
@@ -24,7 +23,6 @@ import '../../mocks/user_mocks.dart';
 import '../utils/constants.dart';
 
 void main() {
-  late AuthBloc _authBloc;
   late IAuthFacade _authFacade;
   late ISessionsRepository _sessionsRepository;
   late IUserRepository _userRepository;
@@ -36,10 +34,7 @@ void main() {
     _sessionsRepository = MockSessionsRepository();
     _userRepository = MockUserRepository();
 
-    _authBloc = AuthBloc(_authFacade);
-
     _logInBloc = LogInBloc(
-      _authBloc,
       _authFacade,
       _sessionsRepository,
       _userRepository,
