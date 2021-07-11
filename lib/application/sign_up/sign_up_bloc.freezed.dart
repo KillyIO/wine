@@ -1217,6 +1217,7 @@ class _$SignUpStateTearOff {
       {required ConfirmPassword confirmPassword,
       required EmailAddress emailAddress,
       required Option<Result<dynamic, CoreFailure>> failureOption,
+      required bool isAuthenticated,
       required bool isProcessing,
       required Password password,
       required bool showErrorMessages,
@@ -1225,6 +1226,7 @@ class _$SignUpStateTearOff {
       confirmPassword: confirmPassword,
       emailAddress: emailAddress,
       failureOption: failureOption,
+      isAuthenticated: isAuthenticated,
       isProcessing: isProcessing,
       password: password,
       showErrorMessages: showErrorMessages,
@@ -1242,6 +1244,7 @@ mixin _$SignUpState {
   EmailAddress get emailAddress => throw _privateConstructorUsedError;
   Option<Result<dynamic, CoreFailure>> get failureOption =>
       throw _privateConstructorUsedError;
+  bool get isAuthenticated => throw _privateConstructorUsedError;
   bool get isProcessing => throw _privateConstructorUsedError;
   Password get password => throw _privateConstructorUsedError;
   bool get showErrorMessages => throw _privateConstructorUsedError;
@@ -1261,6 +1264,7 @@ abstract class $SignUpStateCopyWith<$Res> {
       {ConfirmPassword confirmPassword,
       EmailAddress emailAddress,
       Option<Result<dynamic, CoreFailure>> failureOption,
+      bool isAuthenticated,
       bool isProcessing,
       Password password,
       bool showErrorMessages,
@@ -1280,6 +1284,7 @@ class _$SignUpStateCopyWithImpl<$Res> implements $SignUpStateCopyWith<$Res> {
     Object? confirmPassword = freezed,
     Object? emailAddress = freezed,
     Object? failureOption = freezed,
+    Object? isAuthenticated = freezed,
     Object? isProcessing = freezed,
     Object? password = freezed,
     Object? showErrorMessages = freezed,
@@ -1298,6 +1303,10 @@ class _$SignUpStateCopyWithImpl<$Res> implements $SignUpStateCopyWith<$Res> {
           ? _value.failureOption
           : failureOption // ignore: cast_nullable_to_non_nullable
               as Option<Result<dynamic, CoreFailure>>,
+      isAuthenticated: isAuthenticated == freezed
+          ? _value.isAuthenticated
+          : isAuthenticated // ignore: cast_nullable_to_non_nullable
+              as bool,
       isProcessing: isProcessing == freezed
           ? _value.isProcessing
           : isProcessing // ignore: cast_nullable_to_non_nullable
@@ -1329,6 +1338,7 @@ abstract class _$SignUpStateCopyWith<$Res>
       {ConfirmPassword confirmPassword,
       EmailAddress emailAddress,
       Option<Result<dynamic, CoreFailure>> failureOption,
+      bool isAuthenticated,
       bool isProcessing,
       Password password,
       bool showErrorMessages,
@@ -1350,6 +1360,7 @@ class __$SignUpStateCopyWithImpl<$Res> extends _$SignUpStateCopyWithImpl<$Res>
     Object? confirmPassword = freezed,
     Object? emailAddress = freezed,
     Object? failureOption = freezed,
+    Object? isAuthenticated = freezed,
     Object? isProcessing = freezed,
     Object? password = freezed,
     Object? showErrorMessages = freezed,
@@ -1368,6 +1379,10 @@ class __$SignUpStateCopyWithImpl<$Res> extends _$SignUpStateCopyWithImpl<$Res>
           ? _value.failureOption
           : failureOption // ignore: cast_nullable_to_non_nullable
               as Option<Result<dynamic, CoreFailure>>,
+      isAuthenticated: isAuthenticated == freezed
+          ? _value.isAuthenticated
+          : isAuthenticated // ignore: cast_nullable_to_non_nullable
+              as bool,
       isProcessing: isProcessing == freezed
           ? _value.isProcessing
           : isProcessing // ignore: cast_nullable_to_non_nullable
@@ -1395,6 +1410,7 @@ class _$_SignUpState implements _SignUpState {
       {required this.confirmPassword,
       required this.emailAddress,
       required this.failureOption,
+      required this.isAuthenticated,
       required this.isProcessing,
       required this.password,
       required this.showErrorMessages,
@@ -1407,6 +1423,8 @@ class _$_SignUpState implements _SignUpState {
   @override
   final Option<Result<dynamic, CoreFailure>> failureOption;
   @override
+  final bool isAuthenticated;
+  @override
   final bool isProcessing;
   @override
   final Password password;
@@ -1417,7 +1435,7 @@ class _$_SignUpState implements _SignUpState {
 
   @override
   String toString() {
-    return 'SignUpState(confirmPassword: $confirmPassword, emailAddress: $emailAddress, failureOption: $failureOption, isProcessing: $isProcessing, password: $password, showErrorMessages: $showErrorMessages, username: $username)';
+    return 'SignUpState(confirmPassword: $confirmPassword, emailAddress: $emailAddress, failureOption: $failureOption, isAuthenticated: $isAuthenticated, isProcessing: $isProcessing, password: $password, showErrorMessages: $showErrorMessages, username: $username)';
   }
 
   @override
@@ -1433,6 +1451,9 @@ class _$_SignUpState implements _SignUpState {
             (identical(other.failureOption, failureOption) ||
                 const DeepCollectionEquality()
                     .equals(other.failureOption, failureOption)) &&
+            (identical(other.isAuthenticated, isAuthenticated) ||
+                const DeepCollectionEquality()
+                    .equals(other.isAuthenticated, isAuthenticated)) &&
             (identical(other.isProcessing, isProcessing) ||
                 const DeepCollectionEquality()
                     .equals(other.isProcessing, isProcessing)) &&
@@ -1453,6 +1474,7 @@ class _$_SignUpState implements _SignUpState {
       const DeepCollectionEquality().hash(confirmPassword) ^
       const DeepCollectionEquality().hash(emailAddress) ^
       const DeepCollectionEquality().hash(failureOption) ^
+      const DeepCollectionEquality().hash(isAuthenticated) ^
       const DeepCollectionEquality().hash(isProcessing) ^
       const DeepCollectionEquality().hash(password) ^
       const DeepCollectionEquality().hash(showErrorMessages) ^
@@ -1469,6 +1491,7 @@ abstract class _SignUpState implements SignUpState {
       {required ConfirmPassword confirmPassword,
       required EmailAddress emailAddress,
       required Option<Result<dynamic, CoreFailure>> failureOption,
+      required bool isAuthenticated,
       required bool isProcessing,
       required Password password,
       required bool showErrorMessages,
@@ -1481,6 +1504,8 @@ abstract class _SignUpState implements SignUpState {
   @override
   Option<Result<dynamic, CoreFailure>> get failureOption =>
       throw _privateConstructorUsedError;
+  @override
+  bool get isAuthenticated => throw _privateConstructorUsedError;
   @override
   bool get isProcessing => throw _privateConstructorUsedError;
   @override

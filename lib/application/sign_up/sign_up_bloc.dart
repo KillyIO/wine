@@ -5,7 +5,6 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:rustic/option.dart';
 import 'package:rustic/result.dart';
-import 'package:wine/application/auth/auth_bloc.dart';
 import 'package:wine/domain/auth/confirm_password.dart';
 import 'package:wine/domain/auth/email_address.dart';
 import 'package:wine/domain/auth/i_auth_facade.dart';
@@ -27,13 +26,11 @@ part 'sign_up_bloc.freezed.dart';
 class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
   /// @nodoc
   SignUpBloc(
-    this._authBloc,
     this._authFacade,
     this._sessionsRepository,
     this._userRepository,
   ) : super(SignUpState.initial());
 
-  final AuthBloc _authBloc;
   final IAuthFacade _authFacade;
   final ISessionsRepository _sessionsRepository;
   final IUserRepository _userRepository;
@@ -45,12 +42,14 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
     yield* event.map(
       accountCreated: (value) async* {
         final userOption = await _authFacade.getLoggedInUser();
-        final user = userOption?.asPlain();
+        var user = userOption?.asPlain();
 
         if (user != null) {
+          user = user.copyWith(username: state.username);
+
           yield* (await _userRepository.saveDetailsFromUser(user)).match(
             (_) async* {
-              add(SignUpEvent.userDetailsSaved(user));
+              add(SignUpEvent.userDetailsSaved(user!));
             },
             (failure) async* {
               yield state.copyWith(
@@ -67,7 +66,8 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
 
         if (password != null) {
           yield state.copyWith(
-            confirmPassword: ConfirmPassword(value.confirmPasswordStr, ''),
+            confirmPassword:
+                ConfirmPassword(password, value.confirmPasswordStr),
             failureOption: const None(),
           );
         }
@@ -115,10 +115,9 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
           (_) async* {
             yield state.copyWith(
               failureOption: const None(),
+              isAuthenticated: true,
               isProcessing: false,
             );
-
-            _authBloc.add(const AuthEvent.authChanged());
           },
           (failure) async* {
             yield state.copyWith(
