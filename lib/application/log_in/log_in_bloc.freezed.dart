@@ -857,12 +857,14 @@ class _$LogInStateTearOff {
   _LogInState call(
       {required EmailAddress emailAddress,
       required Option<Result<dynamic, CoreFailure>> failureOption,
+      required bool isAuthenticated,
       required bool isProcessing,
       required Password password,
       required bool showErrorMessages}) {
     return _LogInState(
       emailAddress: emailAddress,
       failureOption: failureOption,
+      isAuthenticated: isAuthenticated,
       isProcessing: isProcessing,
       password: password,
       showErrorMessages: showErrorMessages,
@@ -878,6 +880,7 @@ mixin _$LogInState {
   EmailAddress get emailAddress => throw _privateConstructorUsedError;
   Option<Result<dynamic, CoreFailure>> get failureOption =>
       throw _privateConstructorUsedError;
+  bool get isAuthenticated => throw _privateConstructorUsedError;
   bool get isProcessing => throw _privateConstructorUsedError;
   Password get password => throw _privateConstructorUsedError;
   bool get showErrorMessages => throw _privateConstructorUsedError;
@@ -895,6 +898,7 @@ abstract class $LogInStateCopyWith<$Res> {
   $Res call(
       {EmailAddress emailAddress,
       Option<Result<dynamic, CoreFailure>> failureOption,
+      bool isAuthenticated,
       bool isProcessing,
       Password password,
       bool showErrorMessages});
@@ -912,6 +916,7 @@ class _$LogInStateCopyWithImpl<$Res> implements $LogInStateCopyWith<$Res> {
   $Res call({
     Object? emailAddress = freezed,
     Object? failureOption = freezed,
+    Object? isAuthenticated = freezed,
     Object? isProcessing = freezed,
     Object? password = freezed,
     Object? showErrorMessages = freezed,
@@ -925,6 +930,10 @@ class _$LogInStateCopyWithImpl<$Res> implements $LogInStateCopyWith<$Res> {
           ? _value.failureOption
           : failureOption // ignore: cast_nullable_to_non_nullable
               as Option<Result<dynamic, CoreFailure>>,
+      isAuthenticated: isAuthenticated == freezed
+          ? _value.isAuthenticated
+          : isAuthenticated // ignore: cast_nullable_to_non_nullable
+              as bool,
       isProcessing: isProcessing == freezed
           ? _value.isProcessing
           : isProcessing // ignore: cast_nullable_to_non_nullable
@@ -950,6 +959,7 @@ abstract class _$LogInStateCopyWith<$Res> implements $LogInStateCopyWith<$Res> {
   $Res call(
       {EmailAddress emailAddress,
       Option<Result<dynamic, CoreFailure>> failureOption,
+      bool isAuthenticated,
       bool isProcessing,
       Password password,
       bool showErrorMessages});
@@ -969,6 +979,7 @@ class __$LogInStateCopyWithImpl<$Res> extends _$LogInStateCopyWithImpl<$Res>
   $Res call({
     Object? emailAddress = freezed,
     Object? failureOption = freezed,
+    Object? isAuthenticated = freezed,
     Object? isProcessing = freezed,
     Object? password = freezed,
     Object? showErrorMessages = freezed,
@@ -982,6 +993,10 @@ class __$LogInStateCopyWithImpl<$Res> extends _$LogInStateCopyWithImpl<$Res>
           ? _value.failureOption
           : failureOption // ignore: cast_nullable_to_non_nullable
               as Option<Result<dynamic, CoreFailure>>,
+      isAuthenticated: isAuthenticated == freezed
+          ? _value.isAuthenticated
+          : isAuthenticated // ignore: cast_nullable_to_non_nullable
+              as bool,
       isProcessing: isProcessing == freezed
           ? _value.isProcessing
           : isProcessing // ignore: cast_nullable_to_non_nullable
@@ -1004,6 +1019,7 @@ class _$_LogInState implements _LogInState {
   const _$_LogInState(
       {required this.emailAddress,
       required this.failureOption,
+      required this.isAuthenticated,
       required this.isProcessing,
       required this.password,
       required this.showErrorMessages});
@@ -1013,6 +1029,8 @@ class _$_LogInState implements _LogInState {
   @override
   final Option<Result<dynamic, CoreFailure>> failureOption;
   @override
+  final bool isAuthenticated;
+  @override
   final bool isProcessing;
   @override
   final Password password;
@@ -1021,7 +1039,7 @@ class _$_LogInState implements _LogInState {
 
   @override
   String toString() {
-    return 'LogInState(emailAddress: $emailAddress, failureOption: $failureOption, isProcessing: $isProcessing, password: $password, showErrorMessages: $showErrorMessages)';
+    return 'LogInState(emailAddress: $emailAddress, failureOption: $failureOption, isAuthenticated: $isAuthenticated, isProcessing: $isProcessing, password: $password, showErrorMessages: $showErrorMessages)';
   }
 
   @override
@@ -1034,6 +1052,9 @@ class _$_LogInState implements _LogInState {
             (identical(other.failureOption, failureOption) ||
                 const DeepCollectionEquality()
                     .equals(other.failureOption, failureOption)) &&
+            (identical(other.isAuthenticated, isAuthenticated) ||
+                const DeepCollectionEquality()
+                    .equals(other.isAuthenticated, isAuthenticated)) &&
             (identical(other.isProcessing, isProcessing) ||
                 const DeepCollectionEquality()
                     .equals(other.isProcessing, isProcessing)) &&
@@ -1050,6 +1071,7 @@ class _$_LogInState implements _LogInState {
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(emailAddress) ^
       const DeepCollectionEquality().hash(failureOption) ^
+      const DeepCollectionEquality().hash(isAuthenticated) ^
       const DeepCollectionEquality().hash(isProcessing) ^
       const DeepCollectionEquality().hash(password) ^
       const DeepCollectionEquality().hash(showErrorMessages);
@@ -1064,6 +1086,7 @@ abstract class _LogInState implements LogInState {
   const factory _LogInState(
       {required EmailAddress emailAddress,
       required Option<Result<dynamic, CoreFailure>> failureOption,
+      required bool isAuthenticated,
       required bool isProcessing,
       required Password password,
       required bool showErrorMessages}) = _$_LogInState;
@@ -1073,6 +1096,8 @@ abstract class _LogInState implements LogInState {
   @override
   Option<Result<dynamic, CoreFailure>> get failureOption =>
       throw _privateConstructorUsedError;
+  @override
+  bool get isAuthenticated => throw _privateConstructorUsedError;
   @override
   bool get isProcessing => throw _privateConstructorUsedError;
   @override

@@ -66,6 +66,7 @@ void main() {
           LogInState(
             emailAddress: EmailAddress(testEmailAddress),
             failureOption: const None(),
+            isAuthenticated: false,
             isProcessing: false,
             password: Password(''),
             showErrorMessages: false,
@@ -81,6 +82,7 @@ void main() {
           LogInState(
             emailAddress: EmailAddress(''),
             failureOption: const None(),
+            isAuthenticated: false,
             isProcessing: false,
             password: Password(testPassword),
             showErrorMessages: false,
@@ -124,6 +126,7 @@ void main() {
           LogInState(
             emailAddress: EmailAddress(testEmailAddress),
             failureOption: const None(),
+            isAuthenticated: false,
             isProcessing: true,
             password: Password(testPassword),
             showErrorMessages: false,
@@ -132,6 +135,7 @@ void main() {
             emailAddress: EmailAddress(testEmailAddress),
             failureOption:
                 const Some(Err(CoreFailure.auth(AuthFailure.serverError()))),
+            isAuthenticated: false,
             isProcessing: false,
             password: Password(testPassword),
             showErrorMessages: true,
@@ -155,6 +159,7 @@ void main() {
           LogInState(
             emailAddress: EmailAddress(''),
             failureOption: const None(),
+            isAuthenticated: false,
             isProcessing: true,
             password: Password(''),
             showErrorMessages: false,
@@ -163,6 +168,7 @@ void main() {
             emailAddress: EmailAddress(''),
             failureOption:
                 const Some(Err(CoreFailure.auth(AuthFailure.serverError()))),
+            isAuthenticated: false,
             isProcessing: false,
             password: Password(''),
             showErrorMessages: true,
@@ -189,6 +195,7 @@ void main() {
             emailAddress: EmailAddress(''),
             failureOption:
                 const Some(Err(CoreFailure.user(UserFailure.serverError()))),
+            isAuthenticated: false,
             isProcessing: false,
             password: Password(''),
             showErrorMessages: true,
@@ -218,6 +225,7 @@ void main() {
             failureOption: const Some(
               Err(CoreFailure.sessions(SessionsFailure.sessionNotUpdated())),
             ),
+            isAuthenticated: false,
             isProcessing: false,
             password: Password(''),
             showErrorMessages: true,
@@ -254,6 +262,7 @@ void main() {
           LogInState(
             emailAddress: EmailAddress(testEmailAddress),
             failureOption: const None(),
+            isAuthenticated: false,
             isProcessing: true,
             password: Password(testPassword),
             showErrorMessages: false,
@@ -261,6 +270,7 @@ void main() {
           LogInState(
             emailAddress: EmailAddress(testEmailAddress),
             failureOption: const None(),
+            isAuthenticated: true,
             isProcessing: false,
             password: Password(testPassword),
             showErrorMessages: false,
@@ -298,6 +308,7 @@ void main() {
           LogInState(
             emailAddress: EmailAddress(''),
             failureOption: const None(),
+            isAuthenticated: false,
             isProcessing: true,
             password: Password(''),
             showErrorMessages: false,
@@ -305,6 +316,7 @@ void main() {
           LogInState(
             emailAddress: EmailAddress(''),
             failureOption: const None(),
+            isAuthenticated: true,
             isProcessing: false,
             password: Password(''),
             showErrorMessages: false,

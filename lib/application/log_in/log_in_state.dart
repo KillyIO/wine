@@ -7,6 +7,7 @@ class LogInState with _$LogInState {
   const factory LogInState({
     required EmailAddress emailAddress,
     required Option<Result<dynamic, CoreFailure>> failureOption,
+    required bool isAuthenticated,
     required bool isProcessing,
     required Password password,
     required bool showErrorMessages,
@@ -16,6 +17,7 @@ class LogInState with _$LogInState {
   factory LogInState.initial() => LogInState(
         emailAddress: EmailAddress(''),
         failureOption: const None(),
+        isAuthenticated: false,
         isProcessing: false,
         password: Password(''),
         showErrorMessages: false,
