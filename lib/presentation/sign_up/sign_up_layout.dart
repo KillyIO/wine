@@ -1,8 +1,17 @@
-import 'package:flutter/material.dart';
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter/material.dart';
+import 'package:sizer/sizer.dart';
+
 import 'package:wine/application/auth/auth_bloc.dart';
 import 'package:wine/application/sign_up/sign_up_bloc.dart';
+import 'package:wine/presentation/core/buttons/default_button.dart';
 import 'package:wine/presentation/core/labels/text_field_label.dart';
+import 'package:wine/presentation/core/text_fields/authentication_text_field.dart';
+import 'package:wine/presentation/routes/router.dart';
+import 'package:wine/presentation/sign_up/widgets/sign_up_tos_and_pp_button.dart';
+import 'package:wine/utils/constants/palette.dart';
+import 'package:wine/utils/functions.dart';
 
 /// @nodoc
 class SignUpLayout extends StatelessWidget {
@@ -11,19 +20,45 @@ class SignUpLayout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MultiBlocListener(
-      listeners: <BlocListener>[
-        BlocListener<SignUpBloc, SignUpState>(
-          listener: (context, state) {
-            // TODO: implement listener
-          },
-        ),
-        BlocListener<AuthBloc, AuthState>(
-          listener: (context, state) {
-            // TODO: implement listener
-          },
-        ),
-      ],
+    return BlocListener<SignUpBloc, SignUpState>(
+      listener: (context, state) {
+        state.failureOption.whenSome(
+          (some) => some.whenErr(
+            (err) => err.maybeMap(
+              auth: (f) => f.f.maybeMap(
+                emailAlreadyInUse: (_) async =>
+                    baseError(context, 'Email address already in use.'),
+                serverError: (_) async =>
+                    baseError(context, 'A problem occurred on our end!'),
+                unexpected: (_) async =>
+                    baseError(context, 'An unexpected error occured!'),
+                orElse: () {},
+              ),
+              sessions: (f) => f.f.maybeMap(
+                sessionNotUpdated: (_) async =>
+                    baseError(context, 'Session could not be updated!'),
+                orElse: () {},
+              ),
+              user: (f) => f.f.maybeMap(
+                serverError: (_) async =>
+                    baseError(context, 'A problem occurred on our end!'),
+                unexpected: (_) async =>
+                    baseError(context, 'An unexpected error occured!'),
+                usernameAlreadyInUse: (_) async =>
+                    baseError(context, 'Username already in use.'),
+                orElse: () {},
+              ),
+              orElse: () {},
+            ),
+          ),
+        );
+
+        if (state.isAuthenticated) {
+          context
+            ..read<AuthBloc>().add(const AuthEvent.authChanged())
+            ..router.root.navigate(const HomeRoute());
+        }
+      },
       child: BlocBuilder<SignUpBloc, SignUpState>(
         builder: (context, state) {
           return SafeArea(
@@ -34,6 +69,103 @@ class SignUpLayout extends StatelessWidget {
                   children: <Widget>[
                     // SECTION e-mail address
                     const TextFieldLabel(title: 'EMAIL ADDRESS*'),
+                    AuthenticationTextField(
+                      hintText: 'Email address',
+                      onChanged: (value) => context
+                          .read<SignUpBloc>()
+                          .add(SignUpEvent.emailAddressChanged(value)),
+                      validator: (_) => context
+                          .read<SignUpBloc>()
+                          .state
+                          .emailAddress
+                          .value
+                          .match(
+                            (_) => null,
+                            (err) => err.maybeMap(
+                              invalidEmailAddress: (_) =>
+                                  'The email address is invalid.',
+                              orElse: () => null,
+                            ),
+                          ),
+                      keyboardType: TextInputType.emailAddress,
+                    ),
+                    SizedBox(height: 0.85.h),
+                    // SECTION password
+                    const TextFieldLabel(title: 'PASSWORD*'),
+                    AuthenticationTextField(
+                      hintText: 'Password (6+ characters)',
+                      obscureText: true,
+                      onChanged: (value) => context
+                          .read<SignUpBloc>()
+                          .add(SignUpEvent.passwordChanged(value)),
+                      validator: (_) =>
+                          context.read<SignUpBloc>().state.password.value.match(
+                                (_) => null,
+                                (err) => err.maybeMap(
+                                  invalidPassword: (_) =>
+                                      'The password is invalid.',
+                                  orElse: () => null,
+                                ),
+                              ),
+                    ),
+                    SizedBox(height: 0.85.h),
+                    // SECTION confirm password
+                    const TextFieldLabel(title: 'CONFIRM YOUR PASSWORD*'),
+                    AuthenticationTextField(
+                      hintText: 'Confirm your password (6+ characters)',
+                      obscureText: true,
+                      onChanged: (value) => context
+                          .read<SignUpBloc>()
+                          .add(SignUpEvent.confirmPasswordChanged(value)),
+                      validator: (_) => context
+                          .read<SignUpBloc>()
+                          .state
+                          .confirmPassword
+                          .value
+                          .match(
+                            (_) => null,
+                            (err) => err.maybeMap(
+                              invalidConfirmPassword: (_) =>
+                                  'The confirm password is invalid.',
+                              orElse: () => null,
+                            ),
+                          ),
+                    ),
+                    SizedBox(height: 0.85.h),
+                    // SECTION Username
+                    const TextFieldLabel(title: 'USERNAME*'),
+                    AuthenticationTextField(
+                      hintText: 'Username (4+ characters)',
+                      onChanged: (value) => context
+                          .read<SignUpBloc>()
+                          .add(SignUpEvent.usernameChanged(value)),
+                      validator: (_) =>
+                          context.read<SignUpBloc>().state.username.value.match(
+                                (_) => null,
+                                (err) => err.maybeMap(
+                                  invalidUsername: (_) =>
+                                      'The username is invalid.',
+                                  orElse: () => null,
+                                ),
+                              ),
+                    ),
+                    SizedBox(height: 2.5.h),
+                    Padding(
+                      padding: EdgeInsets.symmetric(horizontal: 1.25.w),
+                      child: const SignUpTOSAndPPButton(),
+                    ),
+                    SizedBox(height: 2.8.h),
+                    DefaultButton(
+                      color: pastelPink,
+                      height: 4.25.h,
+                      title: 'SIGN UP',
+                      onPressed: state.isProcessing
+                          ? null
+                          : () => context
+                              .read<SignUpBloc>()
+                              .add(const SignUpEvent.signUpPressed()),
+                    ),
+                    SizedBox(height: 2.h),
                   ],
                 ),
               ),
