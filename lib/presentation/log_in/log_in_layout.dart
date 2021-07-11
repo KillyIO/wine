@@ -3,8 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:line_icons/line_icons.dart';
 import 'package:sizer/sizer.dart';
-import 'package:wine/application/auth/auth_bloc.dart';
 
+import 'package:wine/application/auth/auth_bloc.dart';
 import 'package:wine/application/log_in/log_in_bloc.dart';
 import 'package:wine/presentation/core/buttons/default_button.dart';
 import 'package:wine/presentation/core/text_fields/authentication_text_field.dart';
@@ -22,48 +22,43 @@ class LogInLayout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MultiBlocListener(
-      listeners: <BlocListener>[
-        BlocListener<LogInBloc, LogInState>(listener: (context, state) {
-          state.failureOption.whenSome(
-            (some) => some.whenErr(
-              (err) => err.maybeMap(
-                auth: (f) => f.f.maybeMap(
-                  invalidEmailAndPasswordCombination: (_) async =>
-                      baseError(context, 'Incorrect email or password.'),
-                  serverError: (_) async =>
-                      baseError(context, 'A problem occurred on our end!'),
-                  unexpected: (_) async =>
-                      baseError(context, 'An unexpected error occured!'),
-                  orElse: () {},
-                ),
-                sessions: (f) => f.f.maybeMap(
-                  sessionNotUpdated: (_) async =>
-                      baseError(context, 'Session could not be updated!'),
-                  orElse: () {},
-                ),
-                user: (f) => f.f.maybeMap(
-                  serverError: (_) async =>
-                      baseError(context, 'A problem occurred on our end!'),
-                  unexpected: (_) async =>
-                      baseError(context, 'An unexpected error occured!'),
-                  orElse: () {},
-                ),
+    return BlocListener<LogInBloc, LogInState>(
+      listener: (context, state) {
+        state.failureOption.whenSome(
+          (some) => some.whenErr(
+            (err) => err.maybeMap(
+              auth: (f) => f.f.maybeMap(
+                invalidEmailAndPasswordCombination: (_) async =>
+                    baseError(context, 'Incorrect email or password.'),
+                serverError: (_) async =>
+                    baseError(context, 'A problem occurred on our end!'),
+                unexpected: (_) async =>
+                    baseError(context, 'An unexpected error occured!'),
                 orElse: () {},
               ),
-            ),
-          );
-        }),
-        BlocListener<AuthBloc, AuthState>(
-          listener: (context, state) {
-            state.maybeMap(
-              authenticated: (_) =>
-                  context.router.root.navigate(const HomeRoute()),
+              sessions: (f) => f.f.maybeMap(
+                sessionNotUpdated: (_) async =>
+                    baseError(context, 'Session could not be updated!'),
+                orElse: () {},
+              ),
+              user: (f) => f.f.maybeMap(
+                serverError: (_) async =>
+                    baseError(context, 'A problem occurred on our end!'),
+                unexpected: (_) async =>
+                    baseError(context, 'An unexpected error occured!'),
+                orElse: () {},
+              ),
               orElse: () {},
-            );
-          },
-        )
-      ],
+            ),
+          ),
+        );
+
+        if (state.isAuthenticated) {
+          context
+            ..read<AuthBloc>().add(const AuthEvent.authChanged())
+            ..router.root.navigate(const HomeRoute());
+        }
+      },
       child: BlocBuilder<LogInBloc, LogInState>(
         builder: (context, state) {
           return SafeArea(
