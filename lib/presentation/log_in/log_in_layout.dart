@@ -187,7 +187,10 @@ class LogInLayout extends StatelessWidget {
                     SizedBox(height: 2.5.h),
                     Align(
                       child: LogInCreateAccountButton(
-                        onPressed: state.isProcessing ? null : () {},
+                        onPressed: state.isProcessing
+                            ? null
+                            : () =>
+                                context.router.root.push(const SignUpRoute()),
                       ),
                     ),
                     SizedBox(height: 2.5.h),
