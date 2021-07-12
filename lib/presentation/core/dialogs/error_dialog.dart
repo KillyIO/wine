@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:line_icons/line_icons.dart';
+import 'package:sizer/sizer.dart';
 import 'package:wine/utils/constants/palette.dart';
 
 /// @nodoc
@@ -27,39 +28,40 @@ class ErrorDialog extends StatelessWidget {
       elevation: 10.0,
       child: Container(
         color: Colors.white,
+        width: 50.w,
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
-            const Padding(
-              padding: EdgeInsets.symmetric(vertical: 20.0),
+            Padding(
+              padding: EdgeInsets.symmetric(vertical: 1.25.h),
               child: Icon(
                 LineIcons.exclamationCircle,
                 color: error,
-                size: 60.0,
+                size: 25.sp,
               ),
             ),
-            const Text(
+            Text(
               "SOMETHING'S WRONG!",
               textAlign: TextAlign.center,
               style: TextStyle(
                 color: Colors.black,
-                fontSize: 20.0,
+                fontSize: 7.5.sp,
                 fontWeight: FontWeight.w600,
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(
-                bottom: 25.0,
-                left: 20.0,
-                right: 20.0,
-                top: 10.0,
+              padding: EdgeInsets.only(
+                bottom: 2.h,
+                left: 2.w,
+                right: 2.w,
+                top: 1.h,
               ),
               child: Text(
                 message,
                 textAlign: TextAlign.center,
-                style: const TextStyle(
+                style: TextStyle(
                   color: Colors.black,
-                  fontSize: 17.0,
+                  fontSize: 7.sp,
                   fontWeight: FontWeight.w300,
                 ),
               ),
@@ -72,9 +74,9 @@ class ErrorDialog extends StatelessWidget {
                 child: Text(
                   buttonText ?? 'DISMISS',
                   textAlign: TextAlign.center,
-                  style: const TextStyle(
+                  style: TextStyle(
                     color: Colors.white,
-                    fontSize: 16.0,
+                    fontSize: 8.5.sp,
                     fontWeight: FontWeight.w500,
                   ),
                 ),
