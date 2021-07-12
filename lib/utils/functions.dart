@@ -6,6 +6,35 @@ import 'package:wine/application/setup/setup_bloc.dart';
 
 import 'package:wine/presentation/core/dialogs/error_dialog.dart';
 
+/// Used when an action requiring a redirection occurs,
+/// e.g. LogIn, SignUp, LogOut.
+Future<void> redirectDialog(
+  BuildContext context,
+  String message,
+  void Function() onNavigate,
+) async {
+  final result = await showDialog<bool>(
+    context: context,
+    barrierDismissible: false,
+    builder: (_) => WillPopScope(
+      onWillPop: () async => context.router.canPopSelfOrChildren,
+      child: ErrorDialog(
+        key: const Key('redirect_dialog'),
+        message: message,
+        onPressed: () async {
+          if (context.router.canPopSelfOrChildren) {
+            await context.router.pop<bool>(true);
+          }
+        },
+      ),
+    ),
+  );
+
+  if (result != null && result) {
+    onNavigate();
+  }
+}
+
 /// @nodoc
 Future<void> baseError(BuildContext context, String errorMessage) async {
   await showDialog<bool>(
