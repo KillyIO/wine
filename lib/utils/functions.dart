@@ -11,7 +11,7 @@ import 'package:wine/presentation/core/dialogs/success_dialog.dart';
 /// e.g. LogIn, SignUp, LogOut.
 Future<void> redirectDialog(
   BuildContext context,
-  String message,
+  List<String> messages,
   void Function() onNavigate,
 ) async {
   final result = await showDialog<bool>(
@@ -21,7 +21,7 @@ Future<void> redirectDialog(
       onWillPop: () async => context.router.canPopSelfOrChildren,
       child: SuccessDialog(
         key: const Key('redirect_success_dialog'),
-        message: message,
+        messages: messages,
         onPressed: () async {
           if (context.router.canPopSelfOrChildren) {
             await context.router.pop<bool>(true);
@@ -37,12 +37,15 @@ Future<void> redirectDialog(
 }
 
 /// @nodoc
-Future<void> baseErrorDialog(BuildContext context, String errorMessage) async {
+Future<void> baseErrorDialog(
+  BuildContext context,
+  List<String> errorMessages,
+) async {
   await showDialog<bool>(
     context: context,
     builder: (_) => ErrorDialog(
       key: const Key('dismiss_error_dialog'),
-      message: errorMessage,
+      messages: errorMessages,
       onPressed: () async {
         if (context.router.canPopSelfOrChildren) {
           await context.router.pop<bool>(true);
@@ -53,12 +56,15 @@ Future<void> baseErrorDialog(BuildContext context, String errorMessage) async {
 }
 
 /// Tries to restart the app by add initial [SetupBloc] event
-Future<void> restartAppDialog(BuildContext context, String errorMessage) async {
+Future<void> restartAppDialog(
+  BuildContext context,
+  List<String> errorMessages,
+) async {
   final result = await showDialog<bool>(
     context: context,
     builder: (_) => ErrorDialog(
       key: const Key('setup_error_dialog'),
-      message: errorMessage,
+      messages: errorMessages,
       buttonText: 'RESTART',
       onPressed: () async {
         if (context.router.canPopSelfOrChildren) {
