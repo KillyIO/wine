@@ -12,7 +12,7 @@ void main() {
       (tester) async {
         await tester.pumpWidget(TestWidget(
           child: ErrorDialog(
-            message: 'Hello World!',
+            messages: const <String>['Hello World!'],
             onPressed: () {},
           ),
         ));
@@ -27,7 +27,7 @@ void main() {
       await tester.pumpWidget(TestWidget(
         child: ErrorDialog(
           buttonText: 'Button Text',
-          message: 'Hello World!',
+          messages: const <String>['Hello World!'],
           onPressed: () {},
         ),
       ));
@@ -40,7 +40,7 @@ void main() {
 
       await tester.pumpWidget(TestWidget(
         child: ErrorDialog(
-          message: 'Hello World!',
+          messages: const <String>['Hello World!'],
           onPressed: completer.complete,
         ),
       ));

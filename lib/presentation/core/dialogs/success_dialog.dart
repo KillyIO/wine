@@ -9,7 +9,7 @@ class SuccessDialog extends StatelessWidget {
   const SuccessDialog({
     Key? key,
     this.buttonText,
-    required this.message,
+    required this.messages,
     required this.onPressed,
   }) : super(key: key);
 
@@ -17,7 +17,7 @@ class SuccessDialog extends StatelessWidget {
   final String? buttonText;
 
   /// @nodoc
-  final String message;
+  final List<String> messages;
 
   /// @nodoc
   final VoidCallback onPressed;
@@ -56,14 +56,24 @@ class SuccessDialog extends StatelessWidget {
                 right: 2.w,
                 top: 1.h,
               ),
-              child: Text(
-                message,
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  color: Colors.black,
-                  fontSize: 7.sp,
-                  fontWeight: FontWeight.w300,
-                ),
+              child: Column(
+                children: <Widget>[
+                  for (var i = 0; i < messages.length; i++)
+                    Padding(
+                      padding: EdgeInsets.only(
+                        bottom: i == messages.length - 1 ? 0 : .75.h,
+                      ),
+                      child: Text(
+                        messages[i],
+                        textAlign: TextAlign.center,
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 7.sp,
+                          fontWeight: FontWeight.w300,
+                        ),
+                      ),
+                    ),
+                ],
               ),
             ),
             Container(
