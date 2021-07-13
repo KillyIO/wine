@@ -5,6 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:wine/application/setup/setup_bloc.dart';
 
 import 'package:wine/presentation/core/dialogs/error_dialog.dart';
+import 'package:wine/presentation/core/dialogs/success_dialog.dart';
 
 /// Used when an action requiring a redirection occurs,
 /// e.g. LogIn, SignUp, LogOut.
@@ -18,8 +19,8 @@ Future<void> redirectDialog(
     barrierDismissible: false,
     builder: (_) => WillPopScope(
       onWillPop: () async => context.router.canPopSelfOrChildren,
-      child: ErrorDialog(
-        key: const Key('redirect_dialog'),
+      child: SuccessDialog(
+        key: const Key('redirect_success_dialog'),
         message: message,
         onPressed: () async {
           if (context.router.canPopSelfOrChildren) {
@@ -36,7 +37,7 @@ Future<void> redirectDialog(
 }
 
 /// @nodoc
-Future<void> baseError(BuildContext context, String errorMessage) async {
+Future<void> baseErrorDialog(BuildContext context, String errorMessage) async {
   await showDialog<bool>(
     context: context,
     builder: (_) => ErrorDialog(
@@ -52,7 +53,7 @@ Future<void> baseError(BuildContext context, String errorMessage) async {
 }
 
 /// Tries to restart the app by add initial [SetupBloc] event
-Future<void> restartApp(BuildContext context, String errorMessage) async {
+Future<void> restartAppDialog(BuildContext context, String errorMessage) async {
   final result = await showDialog<bool>(
     context: context,
     builder: (_) => ErrorDialog(

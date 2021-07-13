@@ -29,23 +29,23 @@ class LogInLayout extends StatelessWidget {
             (err) => err.maybeMap(
               auth: (f) => f.f.maybeMap(
                 invalidEmailAndPasswordCombination: (_) async =>
-                    baseError(context, 'Incorrect email or password.'),
+                    baseErrorDialog(context, 'Incorrect email or password.'),
                 serverError: (_) async =>
-                    baseError(context, 'A problem occurred on our end!'),
+                    baseErrorDialog(context, 'A problem occurred on our end!'),
                 unexpected: (_) async =>
-                    baseError(context, 'An unexpected error occured!'),
+                    baseErrorDialog(context, 'An unexpected error occured!'),
                 orElse: () {},
               ),
               sessions: (f) => f.f.maybeMap(
                 sessionNotUpdated: (_) async =>
-                    baseError(context, 'Session could not be updated!'),
+                    baseErrorDialog(context, 'Session could not be updated!'),
                 orElse: () {},
               ),
               user: (f) => f.f.maybeMap(
                 serverError: (_) async =>
-                    baseError(context, 'A problem occurred on our end!'),
+                    baseErrorDialog(context, 'A problem occurred on our end!'),
                 unexpected: (_) async =>
-                    baseError(context, 'An unexpected error occured!'),
+                    baseErrorDialog(context, 'An unexpected error occured!'),
                 orElse: () {},
               ),
               orElse: () {},

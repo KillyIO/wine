@@ -35,41 +35,47 @@ class HomeLayout extends StatelessWidget {
               value.failure.maybeMap(
                 auth: (f) => f.f.maybeMap(
                   orElse: () {},
-                  serverError: (_) async =>
-                      restartApp(context, 'A problem occurred on our end!'),
+                  serverError: (_) async => restartAppDialog(
+                    context,
+                    'A problem occurred on our end!',
+                  ),
                   unexpected: (_) async =>
-                      restartApp(context, 'An unexpected error occured!'),
+                      restartAppDialog(context, 'An unexpected error occured!'),
                 ),
                 defaultCovers: (f) => f.f.maybeMap(
-                  defaultCoverURLsNotCached: (_) async => restartApp(
-                      context, 'Default covers could not be cached!'),
-                  defaultCoverURLsNotLoaded: (_) async => restartApp(
-                      context, 'Default covers could not be loaded!'),
-                  serverError: (_) async =>
-                      restartApp(context, 'A problem occurred on our end!'),
+                  defaultCoverURLsNotCached: (_) async => restartAppDialog(
+                    context,
+                    'Default covers could not be cached!',
+                  ),
+                  defaultCoverURLsNotLoaded: (_) async => restartAppDialog(
+                    context,
+                    'Default covers could not be loaded!',
+                  ),
+                  serverError: (_) async => restartAppDialog(
+                      context, 'A problem occurred on our end!'),
                   unexpected: (_) async =>
-                      restartApp(context, 'An unexpected error occured!'),
+                      restartAppDialog(context, 'An unexpected error occured!'),
                   orElse: () {},
                 ),
                 sessions: (f) => f.f.maybeMap(
-                  sessionNotCreated: (_) async =>
-                      restartApp(context, 'Session could not be created!'),
-                  sessionNotUpdated: (_) async =>
-                      restartApp(context, 'Session could not be updated!'),
+                  sessionNotCreated: (_) async => restartAppDialog(
+                      context, 'Session could not be created!'),
+                  sessionNotUpdated: (_) async => restartAppDialog(
+                      context, 'Session could not be updated!'),
                   orElse: () {},
                 ),
                 settings: (f) => f.f.maybeMap(
-                  settingsNotInitialized: (_) async =>
-                      restartApp(context, 'Settings could not be initialized!'),
+                  settingsNotInitialized: (_) async => restartAppDialog(
+                      context, 'Settings could not be initialized!'),
                   orElse: () {},
                 ),
                 user: (f) => f.f.maybeMap(
-                  serverError: (_) async =>
-                      restartApp(context, 'A problem occurred on our end!'),
+                  serverError: (_) async => restartAppDialog(
+                      context, 'A problem occurred on our end!'),
                   userNotFound: (_) async =>
-                      restartApp(context, 'User account not found!'),
+                      restartAppDialog(context, 'User account not found!'),
                   unexpected: (_) async =>
-                      restartApp(context, 'An unexpected error occured!'),
+                      restartAppDialog(context, 'An unexpected error occured!'),
                   orElse: () {},
                 ),
                 orElse: () {},
