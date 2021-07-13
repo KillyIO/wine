@@ -26,26 +26,40 @@ class SignUpLayout extends StatelessWidget {
           (some) => some.whenErr(
             (err) => err.maybeMap(
               auth: (f) => f.f.maybeMap(
-                emailAlreadyInUse: (_) async =>
-                    baseError(context, 'Email address already in use.'),
-                serverError: (_) async =>
-                    baseError(context, 'A problem occurred on our end!'),
-                unexpected: (_) async =>
-                    baseError(context, 'An unexpected error occured!'),
+                emailAlreadyInUse: (_) async => baseErrorDialog(
+                  context,
+                  <String>['Email address already in use.'],
+                ),
+                serverError: (_) async => baseErrorDialog(
+                  context,
+                  <String>['A problem occurred on our end!'],
+                ),
+                unexpected: (_) async => baseErrorDialog(
+                  context,
+                  <String>['An unexpected error occured!'],
+                ),
                 orElse: () {},
               ),
               sessions: (f) => f.f.maybeMap(
-                sessionNotUpdated: (_) async =>
-                    baseError(context, 'Session could not be updated!'),
+                sessionNotUpdated: (_) async => baseErrorDialog(
+                  context,
+                  <String>['Session could not be updated!'],
+                ),
                 orElse: () {},
               ),
               user: (f) => f.f.maybeMap(
-                serverError: (_) async =>
-                    baseError(context, 'A problem occurred on our end!'),
-                unexpected: (_) async =>
-                    baseError(context, 'An unexpected error occured!'),
-                usernameAlreadyInUse: (_) async =>
-                    baseError(context, 'Username already in use.'),
+                serverError: (_) async => baseErrorDialog(
+                  context,
+                  <String>['A problem occurred on our end!'],
+                ),
+                unexpected: (_) async => baseErrorDialog(
+                  context,
+                  <String>['An unexpected error occured!'],
+                ),
+                usernameAlreadyInUse: (_) async => baseErrorDialog(
+                  context,
+                  <String>['Username already in use.'],
+                ),
                 orElse: () {},
               ),
               orElse: () {},
@@ -54,9 +68,17 @@ class SignUpLayout extends StatelessWidget {
         );
 
         if (state.isAuthenticated) {
-          context
-            ..read<AuthBloc>().add(const AuthEvent.authChanged())
-            ..router.root.navigate(const HomeRoute());
+          redirectDialog(
+            context,
+            <String>[
+              'You have been successfully authenticated.',
+              'You will now be redirected.'
+            ],
+            () => context
+              ..read<AuthBloc>().add(const AuthEvent.authChanged())
+              ..router.root.navigate(const PlusRoute())
+              ..router.root.push(const LibraryRoute()),
+          );
         }
       },
       child: BlocBuilder<SignUpBloc, SignUpState>(

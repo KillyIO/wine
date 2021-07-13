@@ -37,45 +37,63 @@ class HomeLayout extends StatelessWidget {
                   orElse: () {},
                   serverError: (_) async => restartAppDialog(
                     context,
-                    'A problem occurred on our end!',
+                    <String>['A problem occurred on our end!'],
                   ),
-                  unexpected: (_) async =>
-                      restartAppDialog(context, 'An unexpected error occured!'),
+                  unexpected: (_) async => restartAppDialog(
+                    context,
+                    <String>['An unexpected error occured!'],
+                  ),
                 ),
                 defaultCovers: (f) => f.f.maybeMap(
                   defaultCoverURLsNotCached: (_) async => restartAppDialog(
                     context,
-                    'Default covers could not be cached!',
+                    <String>['Default covers could not be cached!'],
                   ),
                   defaultCoverURLsNotLoaded: (_) async => restartAppDialog(
                     context,
-                    'Default covers could not be loaded!',
+                    <String>['Default covers could not be loaded!'],
                   ),
                   serverError: (_) async => restartAppDialog(
-                      context, 'A problem occurred on our end!'),
-                  unexpected: (_) async =>
-                      restartAppDialog(context, 'An unexpected error occured!'),
+                    context,
+                    <String>['A problem occurred on our end!'],
+                  ),
+                  unexpected: (_) async => restartAppDialog(
+                    context,
+                    <String>['An unexpected error occured!'],
+                  ),
                   orElse: () {},
                 ),
                 sessions: (f) => f.f.maybeMap(
                   sessionNotCreated: (_) async => restartAppDialog(
-                      context, 'Session could not be created!'),
+                    context,
+                    <String>['Session could not be created!'],
+                  ),
                   sessionNotUpdated: (_) async => restartAppDialog(
-                      context, 'Session could not be updated!'),
+                    context,
+                    <String>['Session could not be updated!'],
+                  ),
                   orElse: () {},
                 ),
                 settings: (f) => f.f.maybeMap(
                   settingsNotInitialized: (_) async => restartAppDialog(
-                      context, 'Settings could not be initialized!'),
+                    context,
+                    <String>['Settings could not be initialized!'],
+                  ),
                   orElse: () {},
                 ),
                 user: (f) => f.f.maybeMap(
                   serverError: (_) async => restartAppDialog(
-                      context, 'A problem occurred on our end!'),
-                  userNotFound: (_) async =>
-                      restartAppDialog(context, 'User account not found!'),
-                  unexpected: (_) async =>
-                      restartAppDialog(context, 'An unexpected error occured!'),
+                    context,
+                    <String>['A problem occurred on our end!'],
+                  ),
+                  userNotFound: (_) async => restartAppDialog(
+                    context,
+                    <String>['User account not found!'],
+                  ),
+                  unexpected: (_) async => restartAppDialog(
+                    context,
+                    <String>['An unexpected error occured!'],
+                  ),
                   orElse: () {},
                 ),
                 orElse: () {},

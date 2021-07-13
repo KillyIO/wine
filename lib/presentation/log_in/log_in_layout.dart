@@ -29,23 +29,36 @@ class LogInLayout extends StatelessWidget {
             (err) => err.maybeMap(
               auth: (f) => f.f.maybeMap(
                 invalidEmailAndPasswordCombination: (_) async =>
-                    baseErrorDialog(context, 'Incorrect email or password.'),
-                serverError: (_) async =>
-                    baseErrorDialog(context, 'A problem occurred on our end!'),
-                unexpected: (_) async =>
-                    baseErrorDialog(context, 'An unexpected error occured!'),
+                    baseErrorDialog(
+                  context,
+                  <String>['Incorrect email or password.'],
+                ),
+                serverError: (_) async => baseErrorDialog(
+                  context,
+                  <String>['A problem occurred on our end!'],
+                ),
+                unexpected: (_) async => baseErrorDialog(
+                  context,
+                  <String>['An unexpected error occured!'],
+                ),
                 orElse: () {},
               ),
               sessions: (f) => f.f.maybeMap(
-                sessionNotUpdated: (_) async =>
-                    baseErrorDialog(context, 'Session could not be updated!'),
+                sessionNotUpdated: (_) async => baseErrorDialog(
+                  context,
+                  <String>['Session could not be updated!'],
+                ),
                 orElse: () {},
               ),
               user: (f) => f.f.maybeMap(
-                serverError: (_) async =>
-                    baseErrorDialog(context, 'A problem occurred on our end!'),
-                unexpected: (_) async =>
-                    baseErrorDialog(context, 'An unexpected error occured!'),
+                serverError: (_) async => baseErrorDialog(
+                  context,
+                  <String>['A problem occurred on our end!'],
+                ),
+                unexpected: (_) async => baseErrorDialog(
+                  context,
+                  <String>['An unexpected error occured!'],
+                ),
                 orElse: () {},
               ),
               orElse: () {},
