@@ -122,7 +122,7 @@ class HomeLayout extends StatelessWidget {
             ),
             HomePageViewBuilder(
               controller: _pageController,
-            )
+            ),
           ],
         ),
       ),
