@@ -57,7 +57,8 @@ class HomeMenuLayout extends StatelessWidget {
                             authenticated: (_) => HomeMenuTile(
                               key: const Key('home_menu_library_tile'),
                               // TODO add route push LibraryPage
-                              onPressed: () {},
+                              onPressed: () => context.router.root
+                                  .push(const LibraryRoute()),
                               text: 'LIBRARY',
                             ),
                             orElse: () => Container(),
