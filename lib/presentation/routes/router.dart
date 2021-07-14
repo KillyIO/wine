@@ -17,6 +17,14 @@ export 'router.gr.dart';
   replaceInRouteName: 'Page,Route',
   routes: <AutoRoute>[
     AdaptiveRoute(
+      page: AccountSettingsPage,
+      path: accountSettingsPath,
+    ),
+    AdaptiveRoute(
+      page: ChapterSettingsPage,
+      path: chapterSettingsPath,
+    ),
+    AdaptiveRoute(
       page: HomePage,
       path: homePath,
       initial: true,
@@ -38,17 +46,16 @@ export 'router.gr.dart';
       path: plusPath,
     ),
     AdaptiveRoute(
-      page: SignUpPage,
-      path: signUpPath,
+      page: SeriesSettingsPage,
+      path: seriesSettingsPath,
     ),
     AdaptiveRoute(
       page: SettingsPage,
       path: settingsPath,
-      children: <AutoRoute<dynamic>>[
-        AdaptiveRoute(page: AccountSettingsPage, path: accountSettingsPath),
-        AdaptiveRoute(page: ChapterSettingsPage, path: chapterSettingsPath),
-        AdaptiveRoute(page: SeriesSettingsPage, path: seriesSettingsPath),
-      ],
+    ),
+    AdaptiveRoute(
+      page: SignUpPage,
+      path: signUpPath,
     ),
   ],
 )
