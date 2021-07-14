@@ -84,111 +84,123 @@ class SignUpLayout extends StatelessWidget {
       child: BlocBuilder<SignUpBloc, SignUpState>(
         builder: (context, state) {
           return SafeArea(
-            child: Form(
-              autovalidateMode: AutovalidateMode.always,
-              child: SingleChildScrollView(
-                child: Column(
-                  children: <Widget>[
-                    // SECTION e-mail address
-                    const TextFieldLabel(title: 'EMAIL ADDRESS*'),
-                    AuthenticationTextField(
-                      hintText: 'Email address',
-                      onChanged: (value) => context
-                          .read<SignUpBloc>()
-                          .add(SignUpEvent.emailAddressChanged(value)),
-                      validator: (_) => context
-                          .read<SignUpBloc>()
-                          .state
-                          .emailAddress
-                          .value
-                          .match(
-                            (_) => null,
-                            (err) => err.maybeMap(
-                              invalidEmailAddress: (_) =>
-                                  'The email address is invalid.',
-                              orElse: () => null,
-                            ),
-                          ),
-                      keyboardType: TextInputType.emailAddress,
-                    ),
-                    SizedBox(height: 0.85.h),
-                    // SECTION password
-                    const TextFieldLabel(title: 'PASSWORD*'),
-                    AuthenticationTextField(
-                      hintText: 'Password (6+ characters)',
-                      obscureText: true,
-                      onChanged: (value) => context
-                          .read<SignUpBloc>()
-                          .add(SignUpEvent.passwordChanged(value)),
-                      validator: (_) =>
-                          context.read<SignUpBloc>().state.password.value.match(
-                                (_) => null,
-                                (err) => err.maybeMap(
-                                  invalidPassword: (_) =>
-                                      'The password is invalid.',
-                                  orElse: () => null,
-                                ),
+            child: AbsorbPointer(
+              absorbing: state.isProcessing,
+              child: Form(
+                autovalidateMode: AutovalidateMode.always,
+                child: SingleChildScrollView(
+                  child: Column(
+                    children: <Widget>[
+                      // SECTION e-mail address
+                      const TextFieldLabel(title: 'EMAIL ADDRESS*'),
+                      AuthenticationTextField(
+                        hintText: 'Email address',
+                        onChanged: (value) => context
+                            .read<SignUpBloc>()
+                            .add(SignUpEvent.emailAddressChanged(value)),
+                        validator: (_) => context
+                            .read<SignUpBloc>()
+                            .state
+                            .emailAddress
+                            .value
+                            .match(
+                              (_) => null,
+                              (err) => err.maybeMap(
+                                invalidEmailAddress: (_) =>
+                                    'The email address is invalid.',
+                                orElse: () => null,
                               ),
-                    ),
-                    SizedBox(height: 0.85.h),
-                    // SECTION confirm password
-                    const TextFieldLabel(title: 'CONFIRM YOUR PASSWORD*'),
-                    AuthenticationTextField(
-                      hintText: 'Confirm your password (6+ characters)',
-                      obscureText: true,
-                      onChanged: (value) => context
-                          .read<SignUpBloc>()
-                          .add(SignUpEvent.confirmPasswordChanged(value)),
-                      validator: (_) => context
-                          .read<SignUpBloc>()
-                          .state
-                          .confirmPassword
-                          .value
-                          .match(
-                            (_) => null,
-                            (err) => err.maybeMap(
-                              invalidConfirmPassword: (_) =>
-                                  'The confirm password is invalid.',
-                              orElse: () => null,
                             ),
-                          ),
-                    ),
-                    SizedBox(height: 0.85.h),
-                    // SECTION Username
-                    const TextFieldLabel(title: 'USERNAME*'),
-                    AuthenticationTextField(
-                      hintText: 'Username (4+ characters)',
-                      onChanged: (value) => context
-                          .read<SignUpBloc>()
-                          .add(SignUpEvent.usernameChanged(value)),
-                      validator: (_) =>
-                          context.read<SignUpBloc>().state.username.value.match(
-                                (_) => null,
-                                (err) => err.maybeMap(
-                                  invalidUsername: (_) =>
-                                      'The username is invalid.',
-                                  orElse: () => null,
-                                ),
+                        keyboardType: TextInputType.emailAddress,
+                      ),
+                      SizedBox(height: 0.85.h),
+                      // SECTION password
+                      const TextFieldLabel(title: 'PASSWORD*'),
+                      AuthenticationTextField(
+                        hintText: 'Password (6+ characters)',
+                        obscureText: true,
+                        onChanged: (value) => context
+                            .read<SignUpBloc>()
+                            .add(SignUpEvent.passwordChanged(value)),
+                        validator: (_) => context
+                            .read<SignUpBloc>()
+                            .state
+                            .password
+                            .value
+                            .match(
+                              (_) => null,
+                              (err) => err.maybeMap(
+                                invalidPassword: (_) =>
+                                    'The password is invalid.',
+                                orElse: () => null,
                               ),
-                    ),
-                    SizedBox(height: 2.5.h),
-                    Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 1.25.w),
-                      child: const SignUpTOSAndPPButton(),
-                    ),
-                    SizedBox(height: 2.8.h),
-                    DefaultButton(
-                      color: pastelPink,
-                      height: 4.25.h,
-                      title: 'SIGN UP',
-                      onPressed: state.isProcessing
-                          ? null
-                          : () => context
-                              .read<SignUpBloc>()
-                              .add(const SignUpEvent.signUpPressed()),
-                    ),
-                    SizedBox(height: 2.h),
-                  ],
+                            ),
+                      ),
+                      SizedBox(height: 0.85.h),
+                      // SECTION confirm password
+                      const TextFieldLabel(title: 'CONFIRM YOUR PASSWORD*'),
+                      AuthenticationTextField(
+                        hintText: 'Confirm your password (6+ characters)',
+                        obscureText: true,
+                        onChanged: (value) => context
+                            .read<SignUpBloc>()
+                            .add(SignUpEvent.confirmPasswordChanged(value)),
+                        validator: (_) => context
+                            .read<SignUpBloc>()
+                            .state
+                            .confirmPassword
+                            .value
+                            .match(
+                              (_) => null,
+                              (err) => err.maybeMap(
+                                invalidConfirmPassword: (_) =>
+                                    'The confirm password is invalid.',
+                                orElse: () => null,
+                              ),
+                            ),
+                      ),
+                      SizedBox(height: 0.85.h),
+                      // SECTION Username
+                      const TextFieldLabel(title: 'USERNAME*'),
+                      AuthenticationTextField(
+                        hintText: 'Username (4+ characters)',
+                        onChanged: (value) => context
+                            .read<SignUpBloc>()
+                            .add(SignUpEvent.usernameChanged(value)),
+                        validator: (_) => context
+                            .read<SignUpBloc>()
+                            .state
+                            .username
+                            .value
+                            .match(
+                              (_) => null,
+                              (err) => err.maybeMap(
+                                invalidUsername: (_) =>
+                                    'The username is invalid.',
+                                orElse: () => null,
+                              ),
+                            ),
+                      ),
+                      SizedBox(height: 2.5.h),
+                      Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 1.25.w),
+                        child: const SignUpTOSAndPPButton(),
+                      ),
+                      SizedBox(height: 2.8.h),
+                      DefaultButton(
+                        color: pastelPink,
+                        height: 4.25.h,
+                        title: 'SIGN UP',
+                        isProcessing: state.isProcessing,
+                        onPressed: state.isProcessing
+                            ? null
+                            : () => context
+                                .read<SignUpBloc>()
+                                .add(const SignUpEvent.signUpPressed()),
+                      ),
+                      SizedBox(height: 2.h),
+                    ],
+                  ),
                 ),
               ),
             ),
