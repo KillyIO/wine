@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:wine/application/auth/auth_bloc.dart';
 import 'package:wine/application/home/home_bloc.dart';
+import 'package:wine/application/settings/settings_bloc.dart';
 import 'package:wine/flavors.dart';
 import 'package:wine/injection.dart';
 import 'package:sizer/sizer.dart';
@@ -24,6 +25,7 @@ class AppDevelopment extends StatelessWidget {
           create: (_) => getIt<AuthBloc>()..add(const AuthEvent.authChanged()),
         ),
         BlocProvider(create: (_) => getIt<HomeBloc>()),
+        BlocProvider(create: (_) => getIt<SettingsBloc>()),
       ],
       child: Sizer(
         builder: (_, __, ___) {
