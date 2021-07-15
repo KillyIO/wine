@@ -23,8 +23,8 @@ class SettingsLayout extends StatelessWidget {
                 title: 'ACCOUNT',
                 trailingIconData: Icons.keyboard_arrow_right,
                 onPressed: () => state.maybeMap(
-                  authenticated: (_) async {},
-                  // TODO add push to account settings page
+                  authenticated: (_) =>
+                      context.router.push(const AccountSettingsRoute()),
                   orElse: () => context.router.root.push(const LogInRoute()),
                 ),
               );
