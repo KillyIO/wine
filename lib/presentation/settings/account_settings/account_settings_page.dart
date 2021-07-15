@@ -1,4 +1,10 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:wine/presentation/core/buttons/asset_button.dart';
+import 'package:wine/presentation/settings/account_settings/account_settings_layout.dart';
+import 'package:wine/utils/assets/icons.dart';
+import 'package:wine/utils/themes.dart';
 
 /// @nodoc
 class AccountSettingsPage extends StatelessWidget {
@@ -7,6 +13,50 @@ class AccountSettingsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitUp,
+      DeviceOrientation.portraitDown,
+    ]);
+    return AnnotatedRegion<SystemUiOverlayStyle>(
+      value: lightTheme,
+      child: Scaffold(
+        backgroundColor: Colors.white,
+        appBar: PreferredSize(
+          preferredSize: const Size.fromHeight(41.5),
+          child: AppBar(
+            backgroundColor: Colors.transparent,
+            bottom: PreferredSize(
+              preferredSize: const Size.fromHeight(0.0),
+              child: Container(
+                color: Colors.black,
+                height: 2.0,
+              ),
+            ),
+            brightness: Brightness.light,
+            centerTitle: true,
+            elevation: 0.0,
+            leading: Padding(
+              padding: const EdgeInsets.symmetric(
+                horizontal: 10.0,
+                vertical: 5.0,
+              ),
+              child: AssetButton(
+                imagePath: backIcon,
+                onPressed: context.router.root.pop,
+              ),
+            ),
+            title: const Text(
+              'ACCOUNT',
+              style: TextStyle(
+                color: Colors.black,
+                fontSize: 18.0,
+                fontWeight: FontWeight.w300,
+              ),
+            ),
+          ),
+        ),
+        body: const AccountSettingsLayout(),
+      ),
+    );
   }
 }
