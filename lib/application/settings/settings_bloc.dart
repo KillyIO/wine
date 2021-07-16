@@ -60,6 +60,19 @@ class SettingsBloc extends Bloc<SettingsEvent, SettingsState> {
           },
         );
       },
+      loggedOut: (_) async* {
+        yield* (await _sessionsRepository.createSession()).match(
+          (_) async* {
+            add(const SettingsEvent.sessionCreated());
+          },
+          (failure) async* {
+            yield state.copyWith(
+              failureOption: Option(Err(CoreFailure.sessions(failure))),
+              isProcessing: false,
+            );
+          },
+        );
+      },
       logOutPressed: (_) async* {
         yield state.copyWith(
           failureOption: const None(),
@@ -78,13 +91,26 @@ class SettingsBloc extends Bloc<SettingsEvent, SettingsState> {
           },
         );
       },
-      sessionDeleted: (_) async* {
-        yield* (await _authFacade.logOut()).match(
+      sessionCreated: (_) async* {
+        yield* (await _settingsRepository.initializeSettings()).match(
           (_) async* {
             yield state.copyWith(
               isLoggedOut: true,
               isProcessing: false,
             );
+          },
+          (failure) async* {
+            yield state.copyWith(
+              failureOption: Option(Err(CoreFailure.settings(failure))),
+              isProcessing: false,
+            );
+          },
+        );
+      },
+      sessionDeleted: (_) async* {
+        yield* (await _authFacade.logOut()).match(
+          (_) async* {
+            add(const SettingsEvent.loggedOut());
           },
           (failure) async* {
             yield state.copyWith(

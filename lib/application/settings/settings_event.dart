@@ -7,7 +7,13 @@ class SettingsEvent with _$SettingsEvent {
   const factory SettingsEvent.initBloc() = InitBloc;
 
   /// @nodoc
+  const factory SettingsEvent.loggedOut() = LoggedOut;
+
+  /// @nodoc
   const factory SettingsEvent.logOutPressed() = LogOutPressed;
+
+  /// @nodoc
+  const factory SettingsEvent.sessionCreated() = SessionCreated;
 
   /// @nodoc
   const factory SettingsEvent.sessionDeleted() = SessionDeleted;
