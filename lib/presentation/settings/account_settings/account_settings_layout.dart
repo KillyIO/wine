@@ -15,87 +15,96 @@ class AccountSettingsLayout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<AuthBloc, AuthState>(
-      builder: (context, authState) {
-        return BlocBuilder<SettingsBloc, SettingsState>(
-          builder: (context, settingsState) {
-            return Column(
-              children: <Widget>[
-                const SectionTile(title: 'ACCOUNT'),
-                authState.maybeMap(
-                  authenticated: (_) => ListTile(
-                    title: const Text(
-                      'USERNAME',
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 15.0,
-                        fontWeight: FontWeight.w300,
-                      ),
-                    ),
-                    trailing: Text(
-                      '@${settingsState.username}',
-                      overflow: TextOverflow.ellipsis,
-                      style: const TextStyle(
-                        color: Colors.black,
-                        fontSize: 15.0,
-                        fontWeight: FontWeight.w400,
-                      ),
-                    ),
-                  ),
-                  orElse: () => Container(),
-                ),
-                authState.maybeMap(
-                  authenticated: (_) => Container(
-                    color: error,
-                    child: ListTile(
-                      onTap: () => context
-                          .read<SettingsBloc>()
-                          .add(const SettingsEvent.logOutPressed()),
-                      leading: const Icon(
-                        Icons.exit_to_app,
-                        color: Colors.white,
-                      ),
+    return BlocListener<SettingsBloc, SettingsState>(
+      listener: (context, state) {
+        if (state.isLoggedOut) {
+          context
+            ..read<AuthBloc>().add(const AuthEvent.authChanged())
+            ..router.root.navigate(const HomeRoute());
+        }
+      },
+      child: BlocBuilder<AuthBloc, AuthState>(
+        builder: (context, authState) {
+          return BlocBuilder<SettingsBloc, SettingsState>(
+            builder: (context, settingsState) {
+              return Column(
+                children: <Widget>[
+                  const SectionTile(title: 'ACCOUNT'),
+                  authState.maybeMap(
+                    authenticated: (_) => ListTile(
                       title: const Text(
-                        'LOG OUT',
+                        'USERNAME',
                         style: TextStyle(
-                          color: Colors.white,
+                          color: Colors.black,
                           fontSize: 15.0,
-                          fontWeight: FontWeight.w500,
-                          letterSpacing: 0.5,
+                          fontWeight: FontWeight.w300,
                         ),
                       ),
-                      trailing: const Icon(
-                        Icons.keyboard_arrow_right,
-                        color: Colors.white,
+                      trailing: Text(
+                        '@${settingsState.username}',
+                        overflow: TextOverflow.ellipsis,
+                        style: const TextStyle(
+                          color: Colors.black,
+                          fontSize: 15.0,
+                          fontWeight: FontWeight.w400,
+                        ),
+                      ),
+                    ),
+                    orElse: () => Container(),
+                  ),
+                  authState.maybeMap(
+                    authenticated: (_) => Container(
+                      color: error,
+                      child: ListTile(
+                        onTap: () => context
+                            .read<SettingsBloc>()
+                            .add(const SettingsEvent.logOutPressed()),
+                        leading: const Icon(
+                          Icons.exit_to_app,
+                          color: Colors.white,
+                        ),
+                        title: const Text(
+                          'LOG OUT',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 15.0,
+                            fontWeight: FontWeight.w500,
+                            letterSpacing: 0.5,
+                          ),
+                        ),
+                        trailing: const Icon(
+                          Icons.keyboard_arrow_right,
+                          color: Colors.white,
+                        ),
+                      ),
+                    ),
+                    orElse: () => ListTile(
+                      onTap: () => context.router.root.push(const LogInRoute()),
+                      title: const Text(
+                        'MY ACCOUNT',
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 15.0,
+                          fontWeight: FontWeight.w300,
+                        ),
+                      ),
+                      trailing: const Text(
+                        'PLEASE LOG IN',
+                        overflow: TextOverflow.ellipsis,
+                        style: TextStyle(
+                          color: Colors.black,
+                          fontSize: 15.0,
+                          fontWeight: FontWeight.w200,
+                        ),
                       ),
                     ),
                   ),
-                  orElse: () => ListTile(
-                    onTap: () => context.router.root.push(const LogInRoute()),
-                    title: const Text(
-                      'MY ACCOUNT',
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 15.0,
-                        fontWeight: FontWeight.w300,
-                      ),
-                    ),
-                    trailing: const Text(
-                      'PLEASE LOG IN',
-                      overflow: TextOverflow.ellipsis,
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontSize: 15.0,
-                        fontWeight: FontWeight.w200,
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            );
-          },
-        );
-      },
+                ],
+              );
+            },
+          );
+        },
+      ),
     );
   }
 }
