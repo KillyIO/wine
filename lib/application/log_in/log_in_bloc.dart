@@ -44,21 +44,49 @@ class LogInBloc extends Bloc<LogInEvent, LogInState> {
           failureOption: const None(),
         );
       },
-      loggedIn: (value) async* {
+      loggedInWithEmailAndPassword: (_) async* {
         if (_authFacade.isLoggedIn) {
           final userOption = await _authFacade.getLoggedInUser();
           final user = userOption?.asPlain();
 
           if (user != null) {
-            yield* (await _userRepository.saveDetailsFromUser(user)).match(
-              (_) async* {
-                add(LogInEvent.userDetailsSaved(user));
+            (await _userRepository.loadUser(user.uid.getOrCrash())).match(
+              (user) async* {
+                add(LogInEvent.userLoaded(user));
               },
               (failure) async* {
                 yield state.copyWith(
                   failureOption: Option(Err(CoreFailure.user(failure))),
                   isProcessing: false,
                   showErrorMessages: true,
+                );
+              },
+            );
+          }
+        }
+      },
+      loggedInWithGoogle: (_) async* {
+        if (_authFacade.isLoggedIn) {
+          final userOption = await _authFacade.getLoggedInUser();
+          final user = userOption?.asPlain();
+
+          if (user != null) {
+            (await _userRepository.loadUser(user.uid.getOrCrash())).match(
+              (userData) async* {
+                add(LogInEvent.userLoaded(userData));
+              },
+              (failure) async* {
+                failure.maybeMap(
+                  userNotFound: (_) async* {
+                    add(LogInEvent.userLoaded(user));
+                  },
+                  orElse: () async* {
+                    yield state.copyWith(
+                      failureOption: Option(Err(CoreFailure.user(failure))),
+                      isProcessing: false,
+                      showErrorMessages: true,
+                    );
+                  },
                 );
               },
             );
@@ -81,7 +109,7 @@ class LogInBloc extends Bloc<LogInEvent, LogInState> {
           ))
               .match(
             (_) async* {
-              add(const LogInEvent.loggedIn());
+              add(const LogInEvent.loggedInWithEmailAndPassword());
             },
             (failure) async* {
               yield state.copyWith(
@@ -101,7 +129,7 @@ class LogInBloc extends Bloc<LogInEvent, LogInState> {
 
         yield* (await _authFacade.logInWithGoogle()).match(
           (_) async* {
-            add(const LogInEvent.loggedIn());
+            add(const LogInEvent.loggedInWithGoogle());
           },
           (failure) async* {
             yield state.copyWith(
@@ -130,6 +158,20 @@ class LogInBloc extends Bloc<LogInEvent, LogInState> {
           (failure) async* {
             yield state.copyWith(
               failureOption: Option(Err(CoreFailure.sessions(failure))),
+              isProcessing: false,
+              showErrorMessages: true,
+            );
+          },
+        );
+      },
+      userLoaded: (value) async* {
+        yield* (await _userRepository.saveDetailsFromUser(value.user)).match(
+          (_) async* {
+            add(LogInEvent.userDetailsSaved(value.user));
+          },
+          (failure) async* {
+            yield state.copyWith(
+              failureOption: Option(Err(CoreFailure.user(failure))),
               isProcessing: false,
               showErrorMessages: true,
             );

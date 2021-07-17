@@ -59,6 +59,10 @@ class LogInLayout extends StatelessWidget {
                   context,
                   <String>['An unexpected error occured!'],
                 ),
+                userNotFound: (_) async => baseErrorDialog(
+                  context,
+                  <String>['User was not found!'],
+                ),
                 orElse: () {},
               ),
               orElse: () {},

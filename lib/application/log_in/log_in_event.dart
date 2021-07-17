@@ -8,7 +8,11 @@ class LogInEvent with _$LogInEvent {
       EmailAddressChanged;
 
   /// @nodoc
-  const factory LogInEvent.loggedIn() = LoggedIn;
+  const factory LogInEvent.loggedInWithEmailAndPassword() =
+      LoggedInWithEmailAndPassword;
+
+  /// @nodoc
+  const factory LogInEvent.loggedInWithGoogle() = LoggedInWithGoogle;
 
   /// @nodoc
   const factory LogInEvent.logInWithEmailAndPasswordPressed() =
@@ -23,4 +27,7 @@ class LogInEvent with _$LogInEvent {
 
   /// @nodoc
   const factory LogInEvent.userDetailsSaved(User user) = UserDetailsSaved;
+
+  /// @nodoc
+  const factory LogInEvent.userLoaded(User user) = UserLoaded;
 }
