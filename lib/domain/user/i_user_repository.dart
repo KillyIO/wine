@@ -1,6 +1,7 @@
 import 'package:rustic/result.dart';
 import 'package:rustic/tuple.dart';
 import 'package:wine/domain/auth/username.dart';
+import 'package:wine/domain/core/unique_id.dart';
 import 'package:wine/domain/user/user.dart';
 import 'package:wine/domain/user/user_failure.dart';
 
@@ -19,7 +20,7 @@ abstract class IUserRepository {
 
   /// @nodoc
   Future<Result<Unit, UserFailure>> saveUsername(
-    String userUID,
+    UniqueID userUID,
     Username username,
   );
 }

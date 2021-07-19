@@ -29,6 +29,9 @@ class SignUpEvent with _$SignUpEvent {
       UsernameAvailabilityConfirmed;
 
   /// @nodoc
+  const factory SignUpEvent.usernameSaved(User user) = UsernameSaved;
+
+  /// @nodoc
   const factory SignUpEvent.usernameChanged(String usernameStr) =
       UsernameChanged;
 }

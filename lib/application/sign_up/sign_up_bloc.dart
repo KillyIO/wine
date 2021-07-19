@@ -47,9 +47,13 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
         if (user != null) {
           user = user.copyWith(username: state.username);
 
-          yield* (await _userRepository.saveDetailsFromUser(user)).match(
+          yield* (await _userRepository.saveUsername(
+            user.uid,
+            user.username,
+          ))
+              .match(
             (_) async* {
-              add(SignUpEvent.userDetailsSaved(user!));
+              add(SignUpEvent.usernameSaved(user!));
             },
             (failure) async* {
               yield state.copyWith(
@@ -151,6 +155,20 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
             },
           );
         }
+      },
+      usernameSaved: (value) async* {
+        yield* (await _userRepository.saveDetailsFromUser(value.user)).match(
+          (_) async* {
+            add(SignUpEvent.userDetailsSaved(value.user));
+          },
+          (failure) async* {
+            yield state.copyWith(
+              failureOption: Option(Err(CoreFailure.user(failure))),
+              isProcessing: false,
+              showErrorMessages: true,
+            );
+          },
+        );
       },
       usernameChanged: (value) async* {
         yield state.copyWith(

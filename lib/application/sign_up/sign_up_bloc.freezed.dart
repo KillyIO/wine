@@ -52,6 +52,12 @@ class _$SignUpEventTearOff {
     return const UsernameAvailabilityConfirmed();
   }
 
+  UsernameSaved usernameSaved(User user) {
+    return UsernameSaved(
+      user,
+    );
+  }
+
   UsernameChanged usernameChanged(String usernameStr) {
     return UsernameChanged(
       usernameStr,
@@ -73,6 +79,7 @@ mixin _$SignUpEvent {
     required TResult Function() signUpPressed,
     required TResult Function(User user) userDetailsSaved,
     required TResult Function() usernameAvailabilityConfirmed,
+    required TResult Function(User user) usernameSaved,
     required TResult Function(String usernameStr) usernameChanged,
   }) =>
       throw _privateConstructorUsedError;
@@ -85,6 +92,7 @@ mixin _$SignUpEvent {
     TResult Function()? signUpPressed,
     TResult Function(User user)? userDetailsSaved,
     TResult Function()? usernameAvailabilityConfirmed,
+    TResult Function(User user)? usernameSaved,
     TResult Function(String usernameStr)? usernameChanged,
     required TResult orElse(),
   }) =>
@@ -100,6 +108,7 @@ mixin _$SignUpEvent {
     required TResult Function(UserDetailsSaved value) userDetailsSaved,
     required TResult Function(UsernameAvailabilityConfirmed value)
         usernameAvailabilityConfirmed,
+    required TResult Function(UsernameSaved value) usernameSaved,
     required TResult Function(UsernameChanged value) usernameChanged,
   }) =>
       throw _privateConstructorUsedError;
@@ -113,6 +122,7 @@ mixin _$SignUpEvent {
     TResult Function(UserDetailsSaved value)? userDetailsSaved,
     TResult Function(UsernameAvailabilityConfirmed value)?
         usernameAvailabilityConfirmed,
+    TResult Function(UsernameSaved value)? usernameSaved,
     TResult Function(UsernameChanged value)? usernameChanged,
     required TResult orElse(),
   }) =>
@@ -181,6 +191,7 @@ class _$AccountCreated implements AccountCreated {
     required TResult Function() signUpPressed,
     required TResult Function(User user) userDetailsSaved,
     required TResult Function() usernameAvailabilityConfirmed,
+    required TResult Function(User user) usernameSaved,
     required TResult Function(String usernameStr) usernameChanged,
   }) {
     return accountCreated();
@@ -196,6 +207,7 @@ class _$AccountCreated implements AccountCreated {
     TResult Function()? signUpPressed,
     TResult Function(User user)? userDetailsSaved,
     TResult Function()? usernameAvailabilityConfirmed,
+    TResult Function(User user)? usernameSaved,
     TResult Function(String usernameStr)? usernameChanged,
     required TResult orElse(),
   }) {
@@ -217,6 +229,7 @@ class _$AccountCreated implements AccountCreated {
     required TResult Function(UserDetailsSaved value) userDetailsSaved,
     required TResult Function(UsernameAvailabilityConfirmed value)
         usernameAvailabilityConfirmed,
+    required TResult Function(UsernameSaved value) usernameSaved,
     required TResult Function(UsernameChanged value) usernameChanged,
   }) {
     return accountCreated(this);
@@ -233,6 +246,7 @@ class _$AccountCreated implements AccountCreated {
     TResult Function(UserDetailsSaved value)? userDetailsSaved,
     TResult Function(UsernameAvailabilityConfirmed value)?
         usernameAvailabilityConfirmed,
+    TResult Function(UsernameSaved value)? usernameSaved,
     TResult Function(UsernameChanged value)? usernameChanged,
     required TResult orElse(),
   }) {
@@ -322,6 +336,7 @@ class _$ConfirmPasswordChanged implements ConfirmPasswordChanged {
     required TResult Function() signUpPressed,
     required TResult Function(User user) userDetailsSaved,
     required TResult Function() usernameAvailabilityConfirmed,
+    required TResult Function(User user) usernameSaved,
     required TResult Function(String usernameStr) usernameChanged,
   }) {
     return confirmPasswordChanged(confirmPasswordStr);
@@ -337,6 +352,7 @@ class _$ConfirmPasswordChanged implements ConfirmPasswordChanged {
     TResult Function()? signUpPressed,
     TResult Function(User user)? userDetailsSaved,
     TResult Function()? usernameAvailabilityConfirmed,
+    TResult Function(User user)? usernameSaved,
     TResult Function(String usernameStr)? usernameChanged,
     required TResult orElse(),
   }) {
@@ -358,6 +374,7 @@ class _$ConfirmPasswordChanged implements ConfirmPasswordChanged {
     required TResult Function(UserDetailsSaved value) userDetailsSaved,
     required TResult Function(UsernameAvailabilityConfirmed value)
         usernameAvailabilityConfirmed,
+    required TResult Function(UsernameSaved value) usernameSaved,
     required TResult Function(UsernameChanged value) usernameChanged,
   }) {
     return confirmPasswordChanged(this);
@@ -374,6 +391,7 @@ class _$ConfirmPasswordChanged implements ConfirmPasswordChanged {
     TResult Function(UserDetailsSaved value)? userDetailsSaved,
     TResult Function(UsernameAvailabilityConfirmed value)?
         usernameAvailabilityConfirmed,
+    TResult Function(UsernameSaved value)? usernameSaved,
     TResult Function(UsernameChanged value)? usernameChanged,
     required TResult orElse(),
   }) {
@@ -468,6 +486,7 @@ class _$EmailAddressChanged implements EmailAddressChanged {
     required TResult Function() signUpPressed,
     required TResult Function(User user) userDetailsSaved,
     required TResult Function() usernameAvailabilityConfirmed,
+    required TResult Function(User user) usernameSaved,
     required TResult Function(String usernameStr) usernameChanged,
   }) {
     return emailAddressChanged(emailAddressStr);
@@ -483,6 +502,7 @@ class _$EmailAddressChanged implements EmailAddressChanged {
     TResult Function()? signUpPressed,
     TResult Function(User user)? userDetailsSaved,
     TResult Function()? usernameAvailabilityConfirmed,
+    TResult Function(User user)? usernameSaved,
     TResult Function(String usernameStr)? usernameChanged,
     required TResult orElse(),
   }) {
@@ -504,6 +524,7 @@ class _$EmailAddressChanged implements EmailAddressChanged {
     required TResult Function(UserDetailsSaved value) userDetailsSaved,
     required TResult Function(UsernameAvailabilityConfirmed value)
         usernameAvailabilityConfirmed,
+    required TResult Function(UsernameSaved value) usernameSaved,
     required TResult Function(UsernameChanged value) usernameChanged,
   }) {
     return emailAddressChanged(this);
@@ -520,6 +541,7 @@ class _$EmailAddressChanged implements EmailAddressChanged {
     TResult Function(UserDetailsSaved value)? userDetailsSaved,
     TResult Function(UsernameAvailabilityConfirmed value)?
         usernameAvailabilityConfirmed,
+    TResult Function(UsernameSaved value)? usernameSaved,
     TResult Function(UsernameChanged value)? usernameChanged,
     required TResult orElse(),
   }) {
@@ -613,6 +635,7 @@ class _$PasswordChanged implements PasswordChanged {
     required TResult Function() signUpPressed,
     required TResult Function(User user) userDetailsSaved,
     required TResult Function() usernameAvailabilityConfirmed,
+    required TResult Function(User user) usernameSaved,
     required TResult Function(String usernameStr) usernameChanged,
   }) {
     return passwordChanged(passwordStr);
@@ -628,6 +651,7 @@ class _$PasswordChanged implements PasswordChanged {
     TResult Function()? signUpPressed,
     TResult Function(User user)? userDetailsSaved,
     TResult Function()? usernameAvailabilityConfirmed,
+    TResult Function(User user)? usernameSaved,
     TResult Function(String usernameStr)? usernameChanged,
     required TResult orElse(),
   }) {
@@ -649,6 +673,7 @@ class _$PasswordChanged implements PasswordChanged {
     required TResult Function(UserDetailsSaved value) userDetailsSaved,
     required TResult Function(UsernameAvailabilityConfirmed value)
         usernameAvailabilityConfirmed,
+    required TResult Function(UsernameSaved value) usernameSaved,
     required TResult Function(UsernameChanged value) usernameChanged,
   }) {
     return passwordChanged(this);
@@ -665,6 +690,7 @@ class _$PasswordChanged implements PasswordChanged {
     TResult Function(UserDetailsSaved value)? userDetailsSaved,
     TResult Function(UsernameAvailabilityConfirmed value)?
         usernameAvailabilityConfirmed,
+    TResult Function(UsernameSaved value)? usernameSaved,
     TResult Function(UsernameChanged value)? usernameChanged,
     required TResult orElse(),
   }) {
@@ -730,6 +756,7 @@ class _$SignUpPressed implements SignUpPressed {
     required TResult Function() signUpPressed,
     required TResult Function(User user) userDetailsSaved,
     required TResult Function() usernameAvailabilityConfirmed,
+    required TResult Function(User user) usernameSaved,
     required TResult Function(String usernameStr) usernameChanged,
   }) {
     return signUpPressed();
@@ -745,6 +772,7 @@ class _$SignUpPressed implements SignUpPressed {
     TResult Function()? signUpPressed,
     TResult Function(User user)? userDetailsSaved,
     TResult Function()? usernameAvailabilityConfirmed,
+    TResult Function(User user)? usernameSaved,
     TResult Function(String usernameStr)? usernameChanged,
     required TResult orElse(),
   }) {
@@ -766,6 +794,7 @@ class _$SignUpPressed implements SignUpPressed {
     required TResult Function(UserDetailsSaved value) userDetailsSaved,
     required TResult Function(UsernameAvailabilityConfirmed value)
         usernameAvailabilityConfirmed,
+    required TResult Function(UsernameSaved value) usernameSaved,
     required TResult Function(UsernameChanged value) usernameChanged,
   }) {
     return signUpPressed(this);
@@ -782,6 +811,7 @@ class _$SignUpPressed implements SignUpPressed {
     TResult Function(UserDetailsSaved value)? userDetailsSaved,
     TResult Function(UsernameAvailabilityConfirmed value)?
         usernameAvailabilityConfirmed,
+    TResult Function(UsernameSaved value)? usernameSaved,
     TResult Function(UsernameChanged value)? usernameChanged,
     required TResult orElse(),
   }) {
@@ -877,6 +907,7 @@ class _$UserDetailsSaved implements UserDetailsSaved {
     required TResult Function() signUpPressed,
     required TResult Function(User user) userDetailsSaved,
     required TResult Function() usernameAvailabilityConfirmed,
+    required TResult Function(User user) usernameSaved,
     required TResult Function(String usernameStr) usernameChanged,
   }) {
     return userDetailsSaved(user);
@@ -892,6 +923,7 @@ class _$UserDetailsSaved implements UserDetailsSaved {
     TResult Function()? signUpPressed,
     TResult Function(User user)? userDetailsSaved,
     TResult Function()? usernameAvailabilityConfirmed,
+    TResult Function(User user)? usernameSaved,
     TResult Function(String usernameStr)? usernameChanged,
     required TResult orElse(),
   }) {
@@ -913,6 +945,7 @@ class _$UserDetailsSaved implements UserDetailsSaved {
     required TResult Function(UserDetailsSaved value) userDetailsSaved,
     required TResult Function(UsernameAvailabilityConfirmed value)
         usernameAvailabilityConfirmed,
+    required TResult Function(UsernameSaved value) usernameSaved,
     required TResult Function(UsernameChanged value) usernameChanged,
   }) {
     return userDetailsSaved(this);
@@ -929,6 +962,7 @@ class _$UserDetailsSaved implements UserDetailsSaved {
     TResult Function(UserDetailsSaved value)? userDetailsSaved,
     TResult Function(UsernameAvailabilityConfirmed value)?
         usernameAvailabilityConfirmed,
+    TResult Function(UsernameSaved value)? usernameSaved,
     TResult Function(UsernameChanged value)? usernameChanged,
     required TResult orElse(),
   }) {
@@ -998,6 +1032,7 @@ class _$UsernameAvailabilityConfirmed implements UsernameAvailabilityConfirmed {
     required TResult Function() signUpPressed,
     required TResult Function(User user) userDetailsSaved,
     required TResult Function() usernameAvailabilityConfirmed,
+    required TResult Function(User user) usernameSaved,
     required TResult Function(String usernameStr) usernameChanged,
   }) {
     return usernameAvailabilityConfirmed();
@@ -1013,6 +1048,7 @@ class _$UsernameAvailabilityConfirmed implements UsernameAvailabilityConfirmed {
     TResult Function()? signUpPressed,
     TResult Function(User user)? userDetailsSaved,
     TResult Function()? usernameAvailabilityConfirmed,
+    TResult Function(User user)? usernameSaved,
     TResult Function(String usernameStr)? usernameChanged,
     required TResult orElse(),
   }) {
@@ -1034,6 +1070,7 @@ class _$UsernameAvailabilityConfirmed implements UsernameAvailabilityConfirmed {
     required TResult Function(UserDetailsSaved value) userDetailsSaved,
     required TResult Function(UsernameAvailabilityConfirmed value)
         usernameAvailabilityConfirmed,
+    required TResult Function(UsernameSaved value) usernameSaved,
     required TResult Function(UsernameChanged value) usernameChanged,
   }) {
     return usernameAvailabilityConfirmed(this);
@@ -1050,6 +1087,7 @@ class _$UsernameAvailabilityConfirmed implements UsernameAvailabilityConfirmed {
     TResult Function(UserDetailsSaved value)? userDetailsSaved,
     TResult Function(UsernameAvailabilityConfirmed value)?
         usernameAvailabilityConfirmed,
+    TResult Function(UsernameSaved value)? usernameSaved,
     TResult Function(UsernameChanged value)? usernameChanged,
     required TResult orElse(),
   }) {
@@ -1063,6 +1101,161 @@ class _$UsernameAvailabilityConfirmed implements UsernameAvailabilityConfirmed {
 abstract class UsernameAvailabilityConfirmed implements SignUpEvent {
   const factory UsernameAvailabilityConfirmed() =
       _$UsernameAvailabilityConfirmed;
+}
+
+/// @nodoc
+abstract class $UsernameSavedCopyWith<$Res> {
+  factory $UsernameSavedCopyWith(
+          UsernameSaved value, $Res Function(UsernameSaved) then) =
+      _$UsernameSavedCopyWithImpl<$Res>;
+  $Res call({User user});
+
+  $UserCopyWith<$Res> get user;
+}
+
+/// @nodoc
+class _$UsernameSavedCopyWithImpl<$Res> extends _$SignUpEventCopyWithImpl<$Res>
+    implements $UsernameSavedCopyWith<$Res> {
+  _$UsernameSavedCopyWithImpl(
+      UsernameSaved _value, $Res Function(UsernameSaved) _then)
+      : super(_value, (v) => _then(v as UsernameSaved));
+
+  @override
+  UsernameSaved get _value => super._value as UsernameSaved;
+
+  @override
+  $Res call({
+    Object? user = freezed,
+  }) {
+    return _then(UsernameSaved(
+      user == freezed
+          ? _value.user
+          : user // ignore: cast_nullable_to_non_nullable
+              as User,
+    ));
+  }
+
+  @override
+  $UserCopyWith<$Res> get user {
+    return $UserCopyWith<$Res>(_value.user, (value) {
+      return _then(_value.copyWith(user: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$UsernameSaved implements UsernameSaved {
+  const _$UsernameSaved(this.user);
+
+  @override
+  final User user;
+
+  @override
+  String toString() {
+    return 'SignUpEvent.usernameSaved(user: $user)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is UsernameSaved &&
+            (identical(other.user, user) ||
+                const DeepCollectionEquality().equals(other.user, user)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(user);
+
+  @JsonKey(ignore: true)
+  @override
+  $UsernameSavedCopyWith<UsernameSaved> get copyWith =>
+      _$UsernameSavedCopyWithImpl<UsernameSaved>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() accountCreated,
+    required TResult Function(String confirmPasswordStr) confirmPasswordChanged,
+    required TResult Function(String emailAddressStr) emailAddressChanged,
+    required TResult Function(String passwordStr) passwordChanged,
+    required TResult Function() signUpPressed,
+    required TResult Function(User user) userDetailsSaved,
+    required TResult Function() usernameAvailabilityConfirmed,
+    required TResult Function(User user) usernameSaved,
+    required TResult Function(String usernameStr) usernameChanged,
+  }) {
+    return usernameSaved(user);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? accountCreated,
+    TResult Function(String confirmPasswordStr)? confirmPasswordChanged,
+    TResult Function(String emailAddressStr)? emailAddressChanged,
+    TResult Function(String passwordStr)? passwordChanged,
+    TResult Function()? signUpPressed,
+    TResult Function(User user)? userDetailsSaved,
+    TResult Function()? usernameAvailabilityConfirmed,
+    TResult Function(User user)? usernameSaved,
+    TResult Function(String usernameStr)? usernameChanged,
+    required TResult orElse(),
+  }) {
+    if (usernameSaved != null) {
+      return usernameSaved(user);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(AccountCreated value) accountCreated,
+    required TResult Function(ConfirmPasswordChanged value)
+        confirmPasswordChanged,
+    required TResult Function(EmailAddressChanged value) emailAddressChanged,
+    required TResult Function(PasswordChanged value) passwordChanged,
+    required TResult Function(SignUpPressed value) signUpPressed,
+    required TResult Function(UserDetailsSaved value) userDetailsSaved,
+    required TResult Function(UsernameAvailabilityConfirmed value)
+        usernameAvailabilityConfirmed,
+    required TResult Function(UsernameSaved value) usernameSaved,
+    required TResult Function(UsernameChanged value) usernameChanged,
+  }) {
+    return usernameSaved(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(AccountCreated value)? accountCreated,
+    TResult Function(ConfirmPasswordChanged value)? confirmPasswordChanged,
+    TResult Function(EmailAddressChanged value)? emailAddressChanged,
+    TResult Function(PasswordChanged value)? passwordChanged,
+    TResult Function(SignUpPressed value)? signUpPressed,
+    TResult Function(UserDetailsSaved value)? userDetailsSaved,
+    TResult Function(UsernameAvailabilityConfirmed value)?
+        usernameAvailabilityConfirmed,
+    TResult Function(UsernameSaved value)? usernameSaved,
+    TResult Function(UsernameChanged value)? usernameChanged,
+    required TResult orElse(),
+  }) {
+    if (usernameSaved != null) {
+      return usernameSaved(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UsernameSaved implements SignUpEvent {
+  const factory UsernameSaved(User user) = _$UsernameSaved;
+
+  User get user => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $UsernameSavedCopyWith<UsernameSaved> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -1138,6 +1331,7 @@ class _$UsernameChanged implements UsernameChanged {
     required TResult Function() signUpPressed,
     required TResult Function(User user) userDetailsSaved,
     required TResult Function() usernameAvailabilityConfirmed,
+    required TResult Function(User user) usernameSaved,
     required TResult Function(String usernameStr) usernameChanged,
   }) {
     return usernameChanged(usernameStr);
@@ -1153,6 +1347,7 @@ class _$UsernameChanged implements UsernameChanged {
     TResult Function()? signUpPressed,
     TResult Function(User user)? userDetailsSaved,
     TResult Function()? usernameAvailabilityConfirmed,
+    TResult Function(User user)? usernameSaved,
     TResult Function(String usernameStr)? usernameChanged,
     required TResult orElse(),
   }) {
@@ -1174,6 +1369,7 @@ class _$UsernameChanged implements UsernameChanged {
     required TResult Function(UserDetailsSaved value) userDetailsSaved,
     required TResult Function(UsernameAvailabilityConfirmed value)
         usernameAvailabilityConfirmed,
+    required TResult Function(UsernameSaved value) usernameSaved,
     required TResult Function(UsernameChanged value) usernameChanged,
   }) {
     return usernameChanged(this);
@@ -1190,6 +1386,7 @@ class _$UsernameChanged implements UsernameChanged {
     TResult Function(UserDetailsSaved value)? userDetailsSaved,
     TResult Function(UsernameAvailabilityConfirmed value)?
         usernameAvailabilityConfirmed,
+    TResult Function(UsernameSaved value)? usernameSaved,
     TResult Function(UsernameChanged value)? usernameChanged,
     required TResult orElse(),
   }) {

@@ -100,16 +100,17 @@ class UserRepository extends IUserRepository {
 
   @override
   Future<Result<Unit, UserFailure>> saveUsername(
-    String userUID,
+    UniqueID userUID,
     Username username,
   ) async {
+    final uid = userUID.getOrCrash();
     final usernameStr = username.getOrCrash();
 
     try {
       final mapReference =
           _firestore.collection(usernameUIDMapPath).doc(usernameStr);
 
-      await mapReference.set({'uid': userUID}, SetOptions(merge: true));
+      await mapReference.set({'uid': uid}, SetOptions(merge: true));
 
       return const Ok(Unit());
     } on FirebaseException catch (_) {
