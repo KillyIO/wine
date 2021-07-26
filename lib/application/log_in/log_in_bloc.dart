@@ -1,13 +1,16 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
+import 'package:flutter/widgets.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:rustic/option.dart';
 import 'package:rustic/result.dart';
+import 'package:uuid/uuid.dart';
 import 'package:wine/domain/auth/email_address.dart';
 import 'package:wine/domain/auth/i_auth_facade.dart';
 import 'package:wine/domain/auth/password.dart';
+import 'package:wine/domain/auth/username.dart';
 import 'package:wine/domain/core/core_failure.dart';
 import 'package:wine/domain/sessions/i_sessions_repository.dart';
 import 'package:wine/domain/user/i_user_repository.dart';
@@ -38,6 +41,9 @@ class LogInBloc extends Bloc<LogInEvent, LogInState> {
     LogInEvent event,
   ) async* {
     yield* event.map(
+      customUsernameGenerated: (value) async* {
+        yield* _saveUsername(value.user);
+      },
       emailAddressChanged: (value) async* {
         yield state.copyWith(
           emailAddress: EmailAddress(value.emailAddressStr),
@@ -47,10 +53,11 @@ class LogInBloc extends Bloc<LogInEvent, LogInState> {
       loggedInWithEmailAndPassword: (_) async* {
         if (_authFacade.isLoggedIn) {
           final userOption = await _authFacade.getLoggedInUser();
-          final user = userOption?.asPlain();
+          final userAsplain = userOption?.asPlain();
 
-          if (user != null) {
-            (await _userRepository.loadUser(user.uid.getOrCrash())).match(
+          if (userAsplain != null) {
+            (await _userRepository.loadUser(userAsplain.uid.getOrCrash()))
+                .match(
               (user) async* {
                 add(LogInEvent.userLoaded(user));
               },
@@ -68,17 +75,18 @@ class LogInBloc extends Bloc<LogInEvent, LogInState> {
       loggedInWithGoogle: (_) async* {
         if (_authFacade.isLoggedIn) {
           final userOption = await _authFacade.getLoggedInUser();
-          final user = userOption?.asPlain();
+          final userAsplain = userOption?.asPlain();
 
-          if (user != null) {
-            (await _userRepository.loadUser(user.uid.getOrCrash())).match(
-              (userData) async* {
-                add(LogInEvent.userLoaded(userData));
+          if (userAsplain != null) {
+            (await _userRepository.loadUser(userAsplain.uid.getOrCrash()))
+                .match(
+              (user) async* {
+                add(LogInEvent.userLoaded(user));
               },
               (failure) async* {
                 failure.maybeMap(
                   userNotFound: (_) async* {
-                    add(LogInEvent.userLoaded(user));
+                    add(LogInEvent.userNotFound(userAsplain));
                   },
                   orElse: () async* {
                     yield state.copyWith(
@@ -165,17 +173,65 @@ class LogInBloc extends Bloc<LogInEvent, LogInState> {
         );
       },
       userLoaded: (value) async* {
-        yield* (await _userRepository.saveDetailsFromUser(value.user)).match(
+        yield* _saveDetailsFromUser(value.user);
+      },
+      usernameAvailabilityConfirmed: (value) async* {
+        yield* _saveUsername(value.user);
+      },
+      usernameSaved: (value) async* {
+        yield* _saveDetailsFromUser(value.user);
+      },
+      userNotFound: (value) async* {
+        yield* (await _userRepository.checkUsernameAvailability(
+          value.user.username,
+        ))
+            .match(
           (_) async* {
-            add(LogInEvent.userDetailsSaved(value.user));
+            add(LogInEvent.usernameAvailabilityConfirmed(value.user));
           },
           (failure) async* {
-            yield state.copyWith(
-              failureOption: Option(Err(CoreFailure.user(failure))),
-              isProcessing: false,
-              showErrorMessages: true,
-            );
+            var usernameStr = value.user.username.getOrCrash();
+
+            final randomStrList =
+                const Uuid().v1().replaceAll(r'-', '').split('')..shuffle();
+            final randomStr = randomStrList.join();
+
+            usernameStr = '$usernameStr$randomStr';
+
+            final user = value.user.copyWith(username: Username(usernameStr));
+
+            add(LogInEvent.customUsernameGenerated(user));
           },
+        );
+      },
+    );
+  }
+
+  Stream<LogInState> _saveDetailsFromUser(User user) async* {
+    yield* (await _userRepository.saveDetailsFromUser(user)).match(
+      (_) async* {
+        add(LogInEvent.userDetailsSaved(user));
+      },
+      (failure) async* {
+        yield state.copyWith(
+          failureOption: Option(Err(CoreFailure.user(failure))),
+          isProcessing: false,
+          showErrorMessages: true,
+        );
+      },
+    );
+  }
+
+  Stream<LogInState> _saveUsername(User user) async* {
+    yield* (await _userRepository.saveUsername(user.uid, user.username)).match(
+      (_) async* {
+        add(LogInEvent.usernameSaved(user));
+      },
+      (failure) async* {
+        yield state.copyWith(
+          failureOption: Option(Err(CoreFailure.user(failure))),
+          isProcessing: false,
+          showErrorMessages: true,
         );
       },
     );

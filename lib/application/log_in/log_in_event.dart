@@ -4,6 +4,10 @@ part of 'log_in_bloc.dart';
 @freezed
 class LogInEvent with _$LogInEvent {
   /// @nodoc
+  const factory LogInEvent.customUsernameGenerated(User user) =
+      CustomUsernameGenerated;
+
+  /// @nodoc
   const factory LogInEvent.emailAddressChanged(String emailAddressStr) =
       EmailAddressChanged;
 
@@ -30,4 +34,14 @@ class LogInEvent with _$LogInEvent {
 
   /// @nodoc
   const factory LogInEvent.userLoaded(User user) = UserLoaded;
+
+  /// @nodoc
+  const factory LogInEvent.usernameAvailabilityConfirmed(User user) =
+      UsernameAvailabilityConfirmed;
+
+  /// @nodoc
+  const factory LogInEvent.usernameSaved(User user) = UsernameSaved;
+
+  /// @nodoc
+  const factory LogInEvent.userNotFound(User user) = UserNotFound;
 }

@@ -16,6 +16,12 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$LogInEventTearOff {
   const _$LogInEventTearOff();
 
+  CustomUsernameGenerated customUsernameGenerated(User user) {
+    return CustomUsernameGenerated(
+      user,
+    );
+  }
+
   EmailAddressChanged emailAddressChanged(String emailAddressStr) {
     return EmailAddressChanged(
       emailAddressStr,
@@ -55,6 +61,24 @@ class _$LogInEventTearOff {
       user,
     );
   }
+
+  UsernameAvailabilityConfirmed usernameAvailabilityConfirmed(User user) {
+    return UsernameAvailabilityConfirmed(
+      user,
+    );
+  }
+
+  UsernameSaved usernameSaved(User user) {
+    return UsernameSaved(
+      user,
+    );
+  }
+
+  UserNotFound userNotFound(User user) {
+    return UserNotFound(
+      user,
+    );
+  }
 }
 
 /// @nodoc
@@ -64,6 +88,7 @@ const $LogInEvent = _$LogInEventTearOff();
 mixin _$LogInEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function(User user) customUsernameGenerated,
     required TResult Function(String emailAddressStr) emailAddressChanged,
     required TResult Function() loggedInWithEmailAndPassword,
     required TResult Function() loggedInWithGoogle,
@@ -72,10 +97,14 @@ mixin _$LogInEvent {
     required TResult Function(String passwordStr) passwordChanged,
     required TResult Function(User user) userDetailsSaved,
     required TResult Function(User user) userLoaded,
+    required TResult Function(User user) usernameAvailabilityConfirmed,
+    required TResult Function(User user) usernameSaved,
+    required TResult Function(User user) userNotFound,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function(User user)? customUsernameGenerated,
     TResult Function(String emailAddressStr)? emailAddressChanged,
     TResult Function()? loggedInWithEmailAndPassword,
     TResult Function()? loggedInWithGoogle,
@@ -84,11 +113,16 @@ mixin _$LogInEvent {
     TResult Function(String passwordStr)? passwordChanged,
     TResult Function(User user)? userDetailsSaved,
     TResult Function(User user)? userLoaded,
+    TResult Function(User user)? usernameAvailabilityConfirmed,
+    TResult Function(User user)? usernameSaved,
+    TResult Function(User user)? userNotFound,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(CustomUsernameGenerated value)
+        customUsernameGenerated,
     required TResult Function(EmailAddressChanged value) emailAddressChanged,
     required TResult Function(LoggedInWithEmailAndPassword value)
         loggedInWithEmailAndPassword,
@@ -100,10 +134,15 @@ mixin _$LogInEvent {
     required TResult Function(PasswordChanged value) passwordChanged,
     required TResult Function(UserDetailsSaved value) userDetailsSaved,
     required TResult Function(UserLoaded value) userLoaded,
+    required TResult Function(UsernameAvailabilityConfirmed value)
+        usernameAvailabilityConfirmed,
+    required TResult Function(UsernameSaved value) usernameSaved,
+    required TResult Function(UserNotFound value) userNotFound,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(CustomUsernameGenerated value)? customUsernameGenerated,
     TResult Function(EmailAddressChanged value)? emailAddressChanged,
     TResult Function(LoggedInWithEmailAndPassword value)?
         loggedInWithEmailAndPassword,
@@ -114,6 +153,10 @@ mixin _$LogInEvent {
     TResult Function(PasswordChanged value)? passwordChanged,
     TResult Function(UserDetailsSaved value)? userDetailsSaved,
     TResult Function(UserLoaded value)? userLoaded,
+    TResult Function(UsernameAvailabilityConfirmed value)?
+        usernameAvailabilityConfirmed,
+    TResult Function(UsernameSaved value)? usernameSaved,
+    TResult Function(UserNotFound value)? userNotFound,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -133,6 +176,180 @@ class _$LogInEventCopyWithImpl<$Res> implements $LogInEventCopyWith<$Res> {
   final LogInEvent _value;
   // ignore: unused_field
   final $Res Function(LogInEvent) _then;
+}
+
+/// @nodoc
+abstract class $CustomUsernameGeneratedCopyWith<$Res> {
+  factory $CustomUsernameGeneratedCopyWith(CustomUsernameGenerated value,
+          $Res Function(CustomUsernameGenerated) then) =
+      _$CustomUsernameGeneratedCopyWithImpl<$Res>;
+  $Res call({User user});
+
+  $UserCopyWith<$Res> get user;
+}
+
+/// @nodoc
+class _$CustomUsernameGeneratedCopyWithImpl<$Res>
+    extends _$LogInEventCopyWithImpl<$Res>
+    implements $CustomUsernameGeneratedCopyWith<$Res> {
+  _$CustomUsernameGeneratedCopyWithImpl(CustomUsernameGenerated _value,
+      $Res Function(CustomUsernameGenerated) _then)
+      : super(_value, (v) => _then(v as CustomUsernameGenerated));
+
+  @override
+  CustomUsernameGenerated get _value => super._value as CustomUsernameGenerated;
+
+  @override
+  $Res call({
+    Object? user = freezed,
+  }) {
+    return _then(CustomUsernameGenerated(
+      user == freezed
+          ? _value.user
+          : user // ignore: cast_nullable_to_non_nullable
+              as User,
+    ));
+  }
+
+  @override
+  $UserCopyWith<$Res> get user {
+    return $UserCopyWith<$Res>(_value.user, (value) {
+      return _then(_value.copyWith(user: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$CustomUsernameGenerated implements CustomUsernameGenerated {
+  const _$CustomUsernameGenerated(this.user);
+
+  @override
+  final User user;
+
+  @override
+  String toString() {
+    return 'LogInEvent.customUsernameGenerated(user: $user)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is CustomUsernameGenerated &&
+            (identical(other.user, user) ||
+                const DeepCollectionEquality().equals(other.user, user)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(user);
+
+  @JsonKey(ignore: true)
+  @override
+  $CustomUsernameGeneratedCopyWith<CustomUsernameGenerated> get copyWith =>
+      _$CustomUsernameGeneratedCopyWithImpl<CustomUsernameGenerated>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(User user) customUsernameGenerated,
+    required TResult Function(String emailAddressStr) emailAddressChanged,
+    required TResult Function() loggedInWithEmailAndPassword,
+    required TResult Function() loggedInWithGoogle,
+    required TResult Function() logInWithEmailAndPasswordPressed,
+    required TResult Function() logInWithGooglePressed,
+    required TResult Function(String passwordStr) passwordChanged,
+    required TResult Function(User user) userDetailsSaved,
+    required TResult Function(User user) userLoaded,
+    required TResult Function(User user) usernameAvailabilityConfirmed,
+    required TResult Function(User user) usernameSaved,
+    required TResult Function(User user) userNotFound,
+  }) {
+    return customUsernameGenerated(user);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(User user)? customUsernameGenerated,
+    TResult Function(String emailAddressStr)? emailAddressChanged,
+    TResult Function()? loggedInWithEmailAndPassword,
+    TResult Function()? loggedInWithGoogle,
+    TResult Function()? logInWithEmailAndPasswordPressed,
+    TResult Function()? logInWithGooglePressed,
+    TResult Function(String passwordStr)? passwordChanged,
+    TResult Function(User user)? userDetailsSaved,
+    TResult Function(User user)? userLoaded,
+    TResult Function(User user)? usernameAvailabilityConfirmed,
+    TResult Function(User user)? usernameSaved,
+    TResult Function(User user)? userNotFound,
+    required TResult orElse(),
+  }) {
+    if (customUsernameGenerated != null) {
+      return customUsernameGenerated(user);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(CustomUsernameGenerated value)
+        customUsernameGenerated,
+    required TResult Function(EmailAddressChanged value) emailAddressChanged,
+    required TResult Function(LoggedInWithEmailAndPassword value)
+        loggedInWithEmailAndPassword,
+    required TResult Function(LoggedInWithGoogle value) loggedInWithGoogle,
+    required TResult Function(LogInWithEmailAndPasswordPressed value)
+        logInWithEmailAndPasswordPressed,
+    required TResult Function(LogInWithGooglePressed value)
+        logInWithGooglePressed,
+    required TResult Function(PasswordChanged value) passwordChanged,
+    required TResult Function(UserDetailsSaved value) userDetailsSaved,
+    required TResult Function(UserLoaded value) userLoaded,
+    required TResult Function(UsernameAvailabilityConfirmed value)
+        usernameAvailabilityConfirmed,
+    required TResult Function(UsernameSaved value) usernameSaved,
+    required TResult Function(UserNotFound value) userNotFound,
+  }) {
+    return customUsernameGenerated(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(CustomUsernameGenerated value)? customUsernameGenerated,
+    TResult Function(EmailAddressChanged value)? emailAddressChanged,
+    TResult Function(LoggedInWithEmailAndPassword value)?
+        loggedInWithEmailAndPassword,
+    TResult Function(LoggedInWithGoogle value)? loggedInWithGoogle,
+    TResult Function(LogInWithEmailAndPasswordPressed value)?
+        logInWithEmailAndPasswordPressed,
+    TResult Function(LogInWithGooglePressed value)? logInWithGooglePressed,
+    TResult Function(PasswordChanged value)? passwordChanged,
+    TResult Function(UserDetailsSaved value)? userDetailsSaved,
+    TResult Function(UserLoaded value)? userLoaded,
+    TResult Function(UsernameAvailabilityConfirmed value)?
+        usernameAvailabilityConfirmed,
+    TResult Function(UsernameSaved value)? usernameSaved,
+    TResult Function(UserNotFound value)? userNotFound,
+    required TResult orElse(),
+  }) {
+    if (customUsernameGenerated != null) {
+      return customUsernameGenerated(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class CustomUsernameGenerated implements LogInEvent {
+  const factory CustomUsernameGenerated(User user) = _$CustomUsernameGenerated;
+
+  User get user => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $CustomUsernameGeneratedCopyWith<CustomUsernameGenerated> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -202,6 +419,7 @@ class _$EmailAddressChanged implements EmailAddressChanged {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function(User user) customUsernameGenerated,
     required TResult Function(String emailAddressStr) emailAddressChanged,
     required TResult Function() loggedInWithEmailAndPassword,
     required TResult Function() loggedInWithGoogle,
@@ -210,6 +428,9 @@ class _$EmailAddressChanged implements EmailAddressChanged {
     required TResult Function(String passwordStr) passwordChanged,
     required TResult Function(User user) userDetailsSaved,
     required TResult Function(User user) userLoaded,
+    required TResult Function(User user) usernameAvailabilityConfirmed,
+    required TResult Function(User user) usernameSaved,
+    required TResult Function(User user) userNotFound,
   }) {
     return emailAddressChanged(emailAddressStr);
   }
@@ -217,6 +438,7 @@ class _$EmailAddressChanged implements EmailAddressChanged {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function(User user)? customUsernameGenerated,
     TResult Function(String emailAddressStr)? emailAddressChanged,
     TResult Function()? loggedInWithEmailAndPassword,
     TResult Function()? loggedInWithGoogle,
@@ -225,6 +447,9 @@ class _$EmailAddressChanged implements EmailAddressChanged {
     TResult Function(String passwordStr)? passwordChanged,
     TResult Function(User user)? userDetailsSaved,
     TResult Function(User user)? userLoaded,
+    TResult Function(User user)? usernameAvailabilityConfirmed,
+    TResult Function(User user)? usernameSaved,
+    TResult Function(User user)? userNotFound,
     required TResult orElse(),
   }) {
     if (emailAddressChanged != null) {
@@ -236,6 +461,8 @@ class _$EmailAddressChanged implements EmailAddressChanged {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(CustomUsernameGenerated value)
+        customUsernameGenerated,
     required TResult Function(EmailAddressChanged value) emailAddressChanged,
     required TResult Function(LoggedInWithEmailAndPassword value)
         loggedInWithEmailAndPassword,
@@ -247,6 +474,10 @@ class _$EmailAddressChanged implements EmailAddressChanged {
     required TResult Function(PasswordChanged value) passwordChanged,
     required TResult Function(UserDetailsSaved value) userDetailsSaved,
     required TResult Function(UserLoaded value) userLoaded,
+    required TResult Function(UsernameAvailabilityConfirmed value)
+        usernameAvailabilityConfirmed,
+    required TResult Function(UsernameSaved value) usernameSaved,
+    required TResult Function(UserNotFound value) userNotFound,
   }) {
     return emailAddressChanged(this);
   }
@@ -254,6 +485,7 @@ class _$EmailAddressChanged implements EmailAddressChanged {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(CustomUsernameGenerated value)? customUsernameGenerated,
     TResult Function(EmailAddressChanged value)? emailAddressChanged,
     TResult Function(LoggedInWithEmailAndPassword value)?
         loggedInWithEmailAndPassword,
@@ -264,6 +496,10 @@ class _$EmailAddressChanged implements EmailAddressChanged {
     TResult Function(PasswordChanged value)? passwordChanged,
     TResult Function(UserDetailsSaved value)? userDetailsSaved,
     TResult Function(UserLoaded value)? userLoaded,
+    TResult Function(UsernameAvailabilityConfirmed value)?
+        usernameAvailabilityConfirmed,
+    TResult Function(UsernameSaved value)? usernameSaved,
+    TResult Function(UserNotFound value)? userNotFound,
     required TResult orElse(),
   }) {
     if (emailAddressChanged != null) {
@@ -326,6 +562,7 @@ class _$LoggedInWithEmailAndPassword implements LoggedInWithEmailAndPassword {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function(User user) customUsernameGenerated,
     required TResult Function(String emailAddressStr) emailAddressChanged,
     required TResult Function() loggedInWithEmailAndPassword,
     required TResult Function() loggedInWithGoogle,
@@ -334,6 +571,9 @@ class _$LoggedInWithEmailAndPassword implements LoggedInWithEmailAndPassword {
     required TResult Function(String passwordStr) passwordChanged,
     required TResult Function(User user) userDetailsSaved,
     required TResult Function(User user) userLoaded,
+    required TResult Function(User user) usernameAvailabilityConfirmed,
+    required TResult Function(User user) usernameSaved,
+    required TResult Function(User user) userNotFound,
   }) {
     return loggedInWithEmailAndPassword();
   }
@@ -341,6 +581,7 @@ class _$LoggedInWithEmailAndPassword implements LoggedInWithEmailAndPassword {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function(User user)? customUsernameGenerated,
     TResult Function(String emailAddressStr)? emailAddressChanged,
     TResult Function()? loggedInWithEmailAndPassword,
     TResult Function()? loggedInWithGoogle,
@@ -349,6 +590,9 @@ class _$LoggedInWithEmailAndPassword implements LoggedInWithEmailAndPassword {
     TResult Function(String passwordStr)? passwordChanged,
     TResult Function(User user)? userDetailsSaved,
     TResult Function(User user)? userLoaded,
+    TResult Function(User user)? usernameAvailabilityConfirmed,
+    TResult Function(User user)? usernameSaved,
+    TResult Function(User user)? userNotFound,
     required TResult orElse(),
   }) {
     if (loggedInWithEmailAndPassword != null) {
@@ -360,6 +604,8 @@ class _$LoggedInWithEmailAndPassword implements LoggedInWithEmailAndPassword {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(CustomUsernameGenerated value)
+        customUsernameGenerated,
     required TResult Function(EmailAddressChanged value) emailAddressChanged,
     required TResult Function(LoggedInWithEmailAndPassword value)
         loggedInWithEmailAndPassword,
@@ -371,6 +617,10 @@ class _$LoggedInWithEmailAndPassword implements LoggedInWithEmailAndPassword {
     required TResult Function(PasswordChanged value) passwordChanged,
     required TResult Function(UserDetailsSaved value) userDetailsSaved,
     required TResult Function(UserLoaded value) userLoaded,
+    required TResult Function(UsernameAvailabilityConfirmed value)
+        usernameAvailabilityConfirmed,
+    required TResult Function(UsernameSaved value) usernameSaved,
+    required TResult Function(UserNotFound value) userNotFound,
   }) {
     return loggedInWithEmailAndPassword(this);
   }
@@ -378,6 +628,7 @@ class _$LoggedInWithEmailAndPassword implements LoggedInWithEmailAndPassword {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(CustomUsernameGenerated value)? customUsernameGenerated,
     TResult Function(EmailAddressChanged value)? emailAddressChanged,
     TResult Function(LoggedInWithEmailAndPassword value)?
         loggedInWithEmailAndPassword,
@@ -388,6 +639,10 @@ class _$LoggedInWithEmailAndPassword implements LoggedInWithEmailAndPassword {
     TResult Function(PasswordChanged value)? passwordChanged,
     TResult Function(UserDetailsSaved value)? userDetailsSaved,
     TResult Function(UserLoaded value)? userLoaded,
+    TResult Function(UsernameAvailabilityConfirmed value)?
+        usernameAvailabilityConfirmed,
+    TResult Function(UsernameSaved value)? usernameSaved,
+    TResult Function(UserNotFound value)? userNotFound,
     required TResult orElse(),
   }) {
     if (loggedInWithEmailAndPassword != null) {
@@ -441,6 +696,7 @@ class _$LoggedInWithGoogle implements LoggedInWithGoogle {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function(User user) customUsernameGenerated,
     required TResult Function(String emailAddressStr) emailAddressChanged,
     required TResult Function() loggedInWithEmailAndPassword,
     required TResult Function() loggedInWithGoogle,
@@ -449,6 +705,9 @@ class _$LoggedInWithGoogle implements LoggedInWithGoogle {
     required TResult Function(String passwordStr) passwordChanged,
     required TResult Function(User user) userDetailsSaved,
     required TResult Function(User user) userLoaded,
+    required TResult Function(User user) usernameAvailabilityConfirmed,
+    required TResult Function(User user) usernameSaved,
+    required TResult Function(User user) userNotFound,
   }) {
     return loggedInWithGoogle();
   }
@@ -456,6 +715,7 @@ class _$LoggedInWithGoogle implements LoggedInWithGoogle {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function(User user)? customUsernameGenerated,
     TResult Function(String emailAddressStr)? emailAddressChanged,
     TResult Function()? loggedInWithEmailAndPassword,
     TResult Function()? loggedInWithGoogle,
@@ -464,6 +724,9 @@ class _$LoggedInWithGoogle implements LoggedInWithGoogle {
     TResult Function(String passwordStr)? passwordChanged,
     TResult Function(User user)? userDetailsSaved,
     TResult Function(User user)? userLoaded,
+    TResult Function(User user)? usernameAvailabilityConfirmed,
+    TResult Function(User user)? usernameSaved,
+    TResult Function(User user)? userNotFound,
     required TResult orElse(),
   }) {
     if (loggedInWithGoogle != null) {
@@ -475,6 +738,8 @@ class _$LoggedInWithGoogle implements LoggedInWithGoogle {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(CustomUsernameGenerated value)
+        customUsernameGenerated,
     required TResult Function(EmailAddressChanged value) emailAddressChanged,
     required TResult Function(LoggedInWithEmailAndPassword value)
         loggedInWithEmailAndPassword,
@@ -486,6 +751,10 @@ class _$LoggedInWithGoogle implements LoggedInWithGoogle {
     required TResult Function(PasswordChanged value) passwordChanged,
     required TResult Function(UserDetailsSaved value) userDetailsSaved,
     required TResult Function(UserLoaded value) userLoaded,
+    required TResult Function(UsernameAvailabilityConfirmed value)
+        usernameAvailabilityConfirmed,
+    required TResult Function(UsernameSaved value) usernameSaved,
+    required TResult Function(UserNotFound value) userNotFound,
   }) {
     return loggedInWithGoogle(this);
   }
@@ -493,6 +762,7 @@ class _$LoggedInWithGoogle implements LoggedInWithGoogle {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(CustomUsernameGenerated value)? customUsernameGenerated,
     TResult Function(EmailAddressChanged value)? emailAddressChanged,
     TResult Function(LoggedInWithEmailAndPassword value)?
         loggedInWithEmailAndPassword,
@@ -503,6 +773,10 @@ class _$LoggedInWithGoogle implements LoggedInWithGoogle {
     TResult Function(PasswordChanged value)? passwordChanged,
     TResult Function(UserDetailsSaved value)? userDetailsSaved,
     TResult Function(UserLoaded value)? userLoaded,
+    TResult Function(UsernameAvailabilityConfirmed value)?
+        usernameAvailabilityConfirmed,
+    TResult Function(UsernameSaved value)? usernameSaved,
+    TResult Function(UserNotFound value)? userNotFound,
     required TResult orElse(),
   }) {
     if (loggedInWithGoogle != null) {
@@ -561,6 +835,7 @@ class _$LogInWithEmailAndPasswordPressed
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function(User user) customUsernameGenerated,
     required TResult Function(String emailAddressStr) emailAddressChanged,
     required TResult Function() loggedInWithEmailAndPassword,
     required TResult Function() loggedInWithGoogle,
@@ -569,6 +844,9 @@ class _$LogInWithEmailAndPasswordPressed
     required TResult Function(String passwordStr) passwordChanged,
     required TResult Function(User user) userDetailsSaved,
     required TResult Function(User user) userLoaded,
+    required TResult Function(User user) usernameAvailabilityConfirmed,
+    required TResult Function(User user) usernameSaved,
+    required TResult Function(User user) userNotFound,
   }) {
     return logInWithEmailAndPasswordPressed();
   }
@@ -576,6 +854,7 @@ class _$LogInWithEmailAndPasswordPressed
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function(User user)? customUsernameGenerated,
     TResult Function(String emailAddressStr)? emailAddressChanged,
     TResult Function()? loggedInWithEmailAndPassword,
     TResult Function()? loggedInWithGoogle,
@@ -584,6 +863,9 @@ class _$LogInWithEmailAndPasswordPressed
     TResult Function(String passwordStr)? passwordChanged,
     TResult Function(User user)? userDetailsSaved,
     TResult Function(User user)? userLoaded,
+    TResult Function(User user)? usernameAvailabilityConfirmed,
+    TResult Function(User user)? usernameSaved,
+    TResult Function(User user)? userNotFound,
     required TResult orElse(),
   }) {
     if (logInWithEmailAndPasswordPressed != null) {
@@ -595,6 +877,8 @@ class _$LogInWithEmailAndPasswordPressed
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(CustomUsernameGenerated value)
+        customUsernameGenerated,
     required TResult Function(EmailAddressChanged value) emailAddressChanged,
     required TResult Function(LoggedInWithEmailAndPassword value)
         loggedInWithEmailAndPassword,
@@ -606,6 +890,10 @@ class _$LogInWithEmailAndPasswordPressed
     required TResult Function(PasswordChanged value) passwordChanged,
     required TResult Function(UserDetailsSaved value) userDetailsSaved,
     required TResult Function(UserLoaded value) userLoaded,
+    required TResult Function(UsernameAvailabilityConfirmed value)
+        usernameAvailabilityConfirmed,
+    required TResult Function(UsernameSaved value) usernameSaved,
+    required TResult Function(UserNotFound value) userNotFound,
   }) {
     return logInWithEmailAndPasswordPressed(this);
   }
@@ -613,6 +901,7 @@ class _$LogInWithEmailAndPasswordPressed
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(CustomUsernameGenerated value)? customUsernameGenerated,
     TResult Function(EmailAddressChanged value)? emailAddressChanged,
     TResult Function(LoggedInWithEmailAndPassword value)?
         loggedInWithEmailAndPassword,
@@ -623,6 +912,10 @@ class _$LogInWithEmailAndPasswordPressed
     TResult Function(PasswordChanged value)? passwordChanged,
     TResult Function(UserDetailsSaved value)? userDetailsSaved,
     TResult Function(UserLoaded value)? userLoaded,
+    TResult Function(UsernameAvailabilityConfirmed value)?
+        usernameAvailabilityConfirmed,
+    TResult Function(UsernameSaved value)? usernameSaved,
+    TResult Function(UserNotFound value)? userNotFound,
     required TResult orElse(),
   }) {
     if (logInWithEmailAndPasswordPressed != null) {
@@ -677,6 +970,7 @@ class _$LogInWithGooglePressed implements LogInWithGooglePressed {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function(User user) customUsernameGenerated,
     required TResult Function(String emailAddressStr) emailAddressChanged,
     required TResult Function() loggedInWithEmailAndPassword,
     required TResult Function() loggedInWithGoogle,
@@ -685,6 +979,9 @@ class _$LogInWithGooglePressed implements LogInWithGooglePressed {
     required TResult Function(String passwordStr) passwordChanged,
     required TResult Function(User user) userDetailsSaved,
     required TResult Function(User user) userLoaded,
+    required TResult Function(User user) usernameAvailabilityConfirmed,
+    required TResult Function(User user) usernameSaved,
+    required TResult Function(User user) userNotFound,
   }) {
     return logInWithGooglePressed();
   }
@@ -692,6 +989,7 @@ class _$LogInWithGooglePressed implements LogInWithGooglePressed {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function(User user)? customUsernameGenerated,
     TResult Function(String emailAddressStr)? emailAddressChanged,
     TResult Function()? loggedInWithEmailAndPassword,
     TResult Function()? loggedInWithGoogle,
@@ -700,6 +998,9 @@ class _$LogInWithGooglePressed implements LogInWithGooglePressed {
     TResult Function(String passwordStr)? passwordChanged,
     TResult Function(User user)? userDetailsSaved,
     TResult Function(User user)? userLoaded,
+    TResult Function(User user)? usernameAvailabilityConfirmed,
+    TResult Function(User user)? usernameSaved,
+    TResult Function(User user)? userNotFound,
     required TResult orElse(),
   }) {
     if (logInWithGooglePressed != null) {
@@ -711,6 +1012,8 @@ class _$LogInWithGooglePressed implements LogInWithGooglePressed {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(CustomUsernameGenerated value)
+        customUsernameGenerated,
     required TResult Function(EmailAddressChanged value) emailAddressChanged,
     required TResult Function(LoggedInWithEmailAndPassword value)
         loggedInWithEmailAndPassword,
@@ -722,6 +1025,10 @@ class _$LogInWithGooglePressed implements LogInWithGooglePressed {
     required TResult Function(PasswordChanged value) passwordChanged,
     required TResult Function(UserDetailsSaved value) userDetailsSaved,
     required TResult Function(UserLoaded value) userLoaded,
+    required TResult Function(UsernameAvailabilityConfirmed value)
+        usernameAvailabilityConfirmed,
+    required TResult Function(UsernameSaved value) usernameSaved,
+    required TResult Function(UserNotFound value) userNotFound,
   }) {
     return logInWithGooglePressed(this);
   }
@@ -729,6 +1036,7 @@ class _$LogInWithGooglePressed implements LogInWithGooglePressed {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(CustomUsernameGenerated value)? customUsernameGenerated,
     TResult Function(EmailAddressChanged value)? emailAddressChanged,
     TResult Function(LoggedInWithEmailAndPassword value)?
         loggedInWithEmailAndPassword,
@@ -739,6 +1047,10 @@ class _$LogInWithGooglePressed implements LogInWithGooglePressed {
     TResult Function(PasswordChanged value)? passwordChanged,
     TResult Function(UserDetailsSaved value)? userDetailsSaved,
     TResult Function(UserLoaded value)? userLoaded,
+    TResult Function(UsernameAvailabilityConfirmed value)?
+        usernameAvailabilityConfirmed,
+    TResult Function(UsernameSaved value)? usernameSaved,
+    TResult Function(UserNotFound value)? userNotFound,
     required TResult orElse(),
   }) {
     if (logInWithGooglePressed != null) {
@@ -817,6 +1129,7 @@ class _$PasswordChanged implements PasswordChanged {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function(User user) customUsernameGenerated,
     required TResult Function(String emailAddressStr) emailAddressChanged,
     required TResult Function() loggedInWithEmailAndPassword,
     required TResult Function() loggedInWithGoogle,
@@ -825,6 +1138,9 @@ class _$PasswordChanged implements PasswordChanged {
     required TResult Function(String passwordStr) passwordChanged,
     required TResult Function(User user) userDetailsSaved,
     required TResult Function(User user) userLoaded,
+    required TResult Function(User user) usernameAvailabilityConfirmed,
+    required TResult Function(User user) usernameSaved,
+    required TResult Function(User user) userNotFound,
   }) {
     return passwordChanged(passwordStr);
   }
@@ -832,6 +1148,7 @@ class _$PasswordChanged implements PasswordChanged {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function(User user)? customUsernameGenerated,
     TResult Function(String emailAddressStr)? emailAddressChanged,
     TResult Function()? loggedInWithEmailAndPassword,
     TResult Function()? loggedInWithGoogle,
@@ -840,6 +1157,9 @@ class _$PasswordChanged implements PasswordChanged {
     TResult Function(String passwordStr)? passwordChanged,
     TResult Function(User user)? userDetailsSaved,
     TResult Function(User user)? userLoaded,
+    TResult Function(User user)? usernameAvailabilityConfirmed,
+    TResult Function(User user)? usernameSaved,
+    TResult Function(User user)? userNotFound,
     required TResult orElse(),
   }) {
     if (passwordChanged != null) {
@@ -851,6 +1171,8 @@ class _$PasswordChanged implements PasswordChanged {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(CustomUsernameGenerated value)
+        customUsernameGenerated,
     required TResult Function(EmailAddressChanged value) emailAddressChanged,
     required TResult Function(LoggedInWithEmailAndPassword value)
         loggedInWithEmailAndPassword,
@@ -862,6 +1184,10 @@ class _$PasswordChanged implements PasswordChanged {
     required TResult Function(PasswordChanged value) passwordChanged,
     required TResult Function(UserDetailsSaved value) userDetailsSaved,
     required TResult Function(UserLoaded value) userLoaded,
+    required TResult Function(UsernameAvailabilityConfirmed value)
+        usernameAvailabilityConfirmed,
+    required TResult Function(UsernameSaved value) usernameSaved,
+    required TResult Function(UserNotFound value) userNotFound,
   }) {
     return passwordChanged(this);
   }
@@ -869,6 +1195,7 @@ class _$PasswordChanged implements PasswordChanged {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(CustomUsernameGenerated value)? customUsernameGenerated,
     TResult Function(EmailAddressChanged value)? emailAddressChanged,
     TResult Function(LoggedInWithEmailAndPassword value)?
         loggedInWithEmailAndPassword,
@@ -879,6 +1206,10 @@ class _$PasswordChanged implements PasswordChanged {
     TResult Function(PasswordChanged value)? passwordChanged,
     TResult Function(UserDetailsSaved value)? userDetailsSaved,
     TResult Function(UserLoaded value)? userLoaded,
+    TResult Function(UsernameAvailabilityConfirmed value)?
+        usernameAvailabilityConfirmed,
+    TResult Function(UsernameSaved value)? usernameSaved,
+    TResult Function(UserNotFound value)? userNotFound,
     required TResult orElse(),
   }) {
     if (passwordChanged != null) {
@@ -971,6 +1302,7 @@ class _$UserDetailsSaved implements UserDetailsSaved {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function(User user) customUsernameGenerated,
     required TResult Function(String emailAddressStr) emailAddressChanged,
     required TResult Function() loggedInWithEmailAndPassword,
     required TResult Function() loggedInWithGoogle,
@@ -979,6 +1311,9 @@ class _$UserDetailsSaved implements UserDetailsSaved {
     required TResult Function(String passwordStr) passwordChanged,
     required TResult Function(User user) userDetailsSaved,
     required TResult Function(User user) userLoaded,
+    required TResult Function(User user) usernameAvailabilityConfirmed,
+    required TResult Function(User user) usernameSaved,
+    required TResult Function(User user) userNotFound,
   }) {
     return userDetailsSaved(user);
   }
@@ -986,6 +1321,7 @@ class _$UserDetailsSaved implements UserDetailsSaved {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function(User user)? customUsernameGenerated,
     TResult Function(String emailAddressStr)? emailAddressChanged,
     TResult Function()? loggedInWithEmailAndPassword,
     TResult Function()? loggedInWithGoogle,
@@ -994,6 +1330,9 @@ class _$UserDetailsSaved implements UserDetailsSaved {
     TResult Function(String passwordStr)? passwordChanged,
     TResult Function(User user)? userDetailsSaved,
     TResult Function(User user)? userLoaded,
+    TResult Function(User user)? usernameAvailabilityConfirmed,
+    TResult Function(User user)? usernameSaved,
+    TResult Function(User user)? userNotFound,
     required TResult orElse(),
   }) {
     if (userDetailsSaved != null) {
@@ -1005,6 +1344,8 @@ class _$UserDetailsSaved implements UserDetailsSaved {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(CustomUsernameGenerated value)
+        customUsernameGenerated,
     required TResult Function(EmailAddressChanged value) emailAddressChanged,
     required TResult Function(LoggedInWithEmailAndPassword value)
         loggedInWithEmailAndPassword,
@@ -1016,6 +1357,10 @@ class _$UserDetailsSaved implements UserDetailsSaved {
     required TResult Function(PasswordChanged value) passwordChanged,
     required TResult Function(UserDetailsSaved value) userDetailsSaved,
     required TResult Function(UserLoaded value) userLoaded,
+    required TResult Function(UsernameAvailabilityConfirmed value)
+        usernameAvailabilityConfirmed,
+    required TResult Function(UsernameSaved value) usernameSaved,
+    required TResult Function(UserNotFound value) userNotFound,
   }) {
     return userDetailsSaved(this);
   }
@@ -1023,6 +1368,7 @@ class _$UserDetailsSaved implements UserDetailsSaved {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(CustomUsernameGenerated value)? customUsernameGenerated,
     TResult Function(EmailAddressChanged value)? emailAddressChanged,
     TResult Function(LoggedInWithEmailAndPassword value)?
         loggedInWithEmailAndPassword,
@@ -1033,6 +1379,10 @@ class _$UserDetailsSaved implements UserDetailsSaved {
     TResult Function(PasswordChanged value)? passwordChanged,
     TResult Function(UserDetailsSaved value)? userDetailsSaved,
     TResult Function(UserLoaded value)? userLoaded,
+    TResult Function(UsernameAvailabilityConfirmed value)?
+        usernameAvailabilityConfirmed,
+    TResult Function(UsernameSaved value)? usernameSaved,
+    TResult Function(UserNotFound value)? userNotFound,
     required TResult orElse(),
   }) {
     if (userDetailsSaved != null) {
@@ -1123,6 +1473,7 @@ class _$UserLoaded implements UserLoaded {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function(User user) customUsernameGenerated,
     required TResult Function(String emailAddressStr) emailAddressChanged,
     required TResult Function() loggedInWithEmailAndPassword,
     required TResult Function() loggedInWithGoogle,
@@ -1131,6 +1482,9 @@ class _$UserLoaded implements UserLoaded {
     required TResult Function(String passwordStr) passwordChanged,
     required TResult Function(User user) userDetailsSaved,
     required TResult Function(User user) userLoaded,
+    required TResult Function(User user) usernameAvailabilityConfirmed,
+    required TResult Function(User user) usernameSaved,
+    required TResult Function(User user) userNotFound,
   }) {
     return userLoaded(user);
   }
@@ -1138,6 +1492,7 @@ class _$UserLoaded implements UserLoaded {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function(User user)? customUsernameGenerated,
     TResult Function(String emailAddressStr)? emailAddressChanged,
     TResult Function()? loggedInWithEmailAndPassword,
     TResult Function()? loggedInWithGoogle,
@@ -1146,6 +1501,9 @@ class _$UserLoaded implements UserLoaded {
     TResult Function(String passwordStr)? passwordChanged,
     TResult Function(User user)? userDetailsSaved,
     TResult Function(User user)? userLoaded,
+    TResult Function(User user)? usernameAvailabilityConfirmed,
+    TResult Function(User user)? usernameSaved,
+    TResult Function(User user)? userNotFound,
     required TResult orElse(),
   }) {
     if (userLoaded != null) {
@@ -1157,6 +1515,8 @@ class _$UserLoaded implements UserLoaded {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(CustomUsernameGenerated value)
+        customUsernameGenerated,
     required TResult Function(EmailAddressChanged value) emailAddressChanged,
     required TResult Function(LoggedInWithEmailAndPassword value)
         loggedInWithEmailAndPassword,
@@ -1168,6 +1528,10 @@ class _$UserLoaded implements UserLoaded {
     required TResult Function(PasswordChanged value) passwordChanged,
     required TResult Function(UserDetailsSaved value) userDetailsSaved,
     required TResult Function(UserLoaded value) userLoaded,
+    required TResult Function(UsernameAvailabilityConfirmed value)
+        usernameAvailabilityConfirmed,
+    required TResult Function(UsernameSaved value) usernameSaved,
+    required TResult Function(UserNotFound value) userNotFound,
   }) {
     return userLoaded(this);
   }
@@ -1175,6 +1539,7 @@ class _$UserLoaded implements UserLoaded {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(CustomUsernameGenerated value)? customUsernameGenerated,
     TResult Function(EmailAddressChanged value)? emailAddressChanged,
     TResult Function(LoggedInWithEmailAndPassword value)?
         loggedInWithEmailAndPassword,
@@ -1185,6 +1550,10 @@ class _$UserLoaded implements UserLoaded {
     TResult Function(PasswordChanged value)? passwordChanged,
     TResult Function(UserDetailsSaved value)? userDetailsSaved,
     TResult Function(UserLoaded value)? userLoaded,
+    TResult Function(UsernameAvailabilityConfirmed value)?
+        usernameAvailabilityConfirmed,
+    TResult Function(UsernameSaved value)? usernameSaved,
+    TResult Function(UserNotFound value)? userNotFound,
     required TResult orElse(),
   }) {
     if (userLoaded != null) {
@@ -1200,6 +1569,528 @@ abstract class UserLoaded implements LogInEvent {
   User get user => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $UserLoadedCopyWith<UserLoaded> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $UsernameAvailabilityConfirmedCopyWith<$Res> {
+  factory $UsernameAvailabilityConfirmedCopyWith(
+          UsernameAvailabilityConfirmed value,
+          $Res Function(UsernameAvailabilityConfirmed) then) =
+      _$UsernameAvailabilityConfirmedCopyWithImpl<$Res>;
+  $Res call({User user});
+
+  $UserCopyWith<$Res> get user;
+}
+
+/// @nodoc
+class _$UsernameAvailabilityConfirmedCopyWithImpl<$Res>
+    extends _$LogInEventCopyWithImpl<$Res>
+    implements $UsernameAvailabilityConfirmedCopyWith<$Res> {
+  _$UsernameAvailabilityConfirmedCopyWithImpl(
+      UsernameAvailabilityConfirmed _value,
+      $Res Function(UsernameAvailabilityConfirmed) _then)
+      : super(_value, (v) => _then(v as UsernameAvailabilityConfirmed));
+
+  @override
+  UsernameAvailabilityConfirmed get _value =>
+      super._value as UsernameAvailabilityConfirmed;
+
+  @override
+  $Res call({
+    Object? user = freezed,
+  }) {
+    return _then(UsernameAvailabilityConfirmed(
+      user == freezed
+          ? _value.user
+          : user // ignore: cast_nullable_to_non_nullable
+              as User,
+    ));
+  }
+
+  @override
+  $UserCopyWith<$Res> get user {
+    return $UserCopyWith<$Res>(_value.user, (value) {
+      return _then(_value.copyWith(user: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$UsernameAvailabilityConfirmed implements UsernameAvailabilityConfirmed {
+  const _$UsernameAvailabilityConfirmed(this.user);
+
+  @override
+  final User user;
+
+  @override
+  String toString() {
+    return 'LogInEvent.usernameAvailabilityConfirmed(user: $user)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is UsernameAvailabilityConfirmed &&
+            (identical(other.user, user) ||
+                const DeepCollectionEquality().equals(other.user, user)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(user);
+
+  @JsonKey(ignore: true)
+  @override
+  $UsernameAvailabilityConfirmedCopyWith<UsernameAvailabilityConfirmed>
+      get copyWith => _$UsernameAvailabilityConfirmedCopyWithImpl<
+          UsernameAvailabilityConfirmed>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(User user) customUsernameGenerated,
+    required TResult Function(String emailAddressStr) emailAddressChanged,
+    required TResult Function() loggedInWithEmailAndPassword,
+    required TResult Function() loggedInWithGoogle,
+    required TResult Function() logInWithEmailAndPasswordPressed,
+    required TResult Function() logInWithGooglePressed,
+    required TResult Function(String passwordStr) passwordChanged,
+    required TResult Function(User user) userDetailsSaved,
+    required TResult Function(User user) userLoaded,
+    required TResult Function(User user) usernameAvailabilityConfirmed,
+    required TResult Function(User user) usernameSaved,
+    required TResult Function(User user) userNotFound,
+  }) {
+    return usernameAvailabilityConfirmed(user);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(User user)? customUsernameGenerated,
+    TResult Function(String emailAddressStr)? emailAddressChanged,
+    TResult Function()? loggedInWithEmailAndPassword,
+    TResult Function()? loggedInWithGoogle,
+    TResult Function()? logInWithEmailAndPasswordPressed,
+    TResult Function()? logInWithGooglePressed,
+    TResult Function(String passwordStr)? passwordChanged,
+    TResult Function(User user)? userDetailsSaved,
+    TResult Function(User user)? userLoaded,
+    TResult Function(User user)? usernameAvailabilityConfirmed,
+    TResult Function(User user)? usernameSaved,
+    TResult Function(User user)? userNotFound,
+    required TResult orElse(),
+  }) {
+    if (usernameAvailabilityConfirmed != null) {
+      return usernameAvailabilityConfirmed(user);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(CustomUsernameGenerated value)
+        customUsernameGenerated,
+    required TResult Function(EmailAddressChanged value) emailAddressChanged,
+    required TResult Function(LoggedInWithEmailAndPassword value)
+        loggedInWithEmailAndPassword,
+    required TResult Function(LoggedInWithGoogle value) loggedInWithGoogle,
+    required TResult Function(LogInWithEmailAndPasswordPressed value)
+        logInWithEmailAndPasswordPressed,
+    required TResult Function(LogInWithGooglePressed value)
+        logInWithGooglePressed,
+    required TResult Function(PasswordChanged value) passwordChanged,
+    required TResult Function(UserDetailsSaved value) userDetailsSaved,
+    required TResult Function(UserLoaded value) userLoaded,
+    required TResult Function(UsernameAvailabilityConfirmed value)
+        usernameAvailabilityConfirmed,
+    required TResult Function(UsernameSaved value) usernameSaved,
+    required TResult Function(UserNotFound value) userNotFound,
+  }) {
+    return usernameAvailabilityConfirmed(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(CustomUsernameGenerated value)? customUsernameGenerated,
+    TResult Function(EmailAddressChanged value)? emailAddressChanged,
+    TResult Function(LoggedInWithEmailAndPassword value)?
+        loggedInWithEmailAndPassword,
+    TResult Function(LoggedInWithGoogle value)? loggedInWithGoogle,
+    TResult Function(LogInWithEmailAndPasswordPressed value)?
+        logInWithEmailAndPasswordPressed,
+    TResult Function(LogInWithGooglePressed value)? logInWithGooglePressed,
+    TResult Function(PasswordChanged value)? passwordChanged,
+    TResult Function(UserDetailsSaved value)? userDetailsSaved,
+    TResult Function(UserLoaded value)? userLoaded,
+    TResult Function(UsernameAvailabilityConfirmed value)?
+        usernameAvailabilityConfirmed,
+    TResult Function(UsernameSaved value)? usernameSaved,
+    TResult Function(UserNotFound value)? userNotFound,
+    required TResult orElse(),
+  }) {
+    if (usernameAvailabilityConfirmed != null) {
+      return usernameAvailabilityConfirmed(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UsernameAvailabilityConfirmed implements LogInEvent {
+  const factory UsernameAvailabilityConfirmed(User user) =
+      _$UsernameAvailabilityConfirmed;
+
+  User get user => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $UsernameAvailabilityConfirmedCopyWith<UsernameAvailabilityConfirmed>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $UsernameSavedCopyWith<$Res> {
+  factory $UsernameSavedCopyWith(
+          UsernameSaved value, $Res Function(UsernameSaved) then) =
+      _$UsernameSavedCopyWithImpl<$Res>;
+  $Res call({User user});
+
+  $UserCopyWith<$Res> get user;
+}
+
+/// @nodoc
+class _$UsernameSavedCopyWithImpl<$Res> extends _$LogInEventCopyWithImpl<$Res>
+    implements $UsernameSavedCopyWith<$Res> {
+  _$UsernameSavedCopyWithImpl(
+      UsernameSaved _value, $Res Function(UsernameSaved) _then)
+      : super(_value, (v) => _then(v as UsernameSaved));
+
+  @override
+  UsernameSaved get _value => super._value as UsernameSaved;
+
+  @override
+  $Res call({
+    Object? user = freezed,
+  }) {
+    return _then(UsernameSaved(
+      user == freezed
+          ? _value.user
+          : user // ignore: cast_nullable_to_non_nullable
+              as User,
+    ));
+  }
+
+  @override
+  $UserCopyWith<$Res> get user {
+    return $UserCopyWith<$Res>(_value.user, (value) {
+      return _then(_value.copyWith(user: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$UsernameSaved implements UsernameSaved {
+  const _$UsernameSaved(this.user);
+
+  @override
+  final User user;
+
+  @override
+  String toString() {
+    return 'LogInEvent.usernameSaved(user: $user)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is UsernameSaved &&
+            (identical(other.user, user) ||
+                const DeepCollectionEquality().equals(other.user, user)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(user);
+
+  @JsonKey(ignore: true)
+  @override
+  $UsernameSavedCopyWith<UsernameSaved> get copyWith =>
+      _$UsernameSavedCopyWithImpl<UsernameSaved>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(User user) customUsernameGenerated,
+    required TResult Function(String emailAddressStr) emailAddressChanged,
+    required TResult Function() loggedInWithEmailAndPassword,
+    required TResult Function() loggedInWithGoogle,
+    required TResult Function() logInWithEmailAndPasswordPressed,
+    required TResult Function() logInWithGooglePressed,
+    required TResult Function(String passwordStr) passwordChanged,
+    required TResult Function(User user) userDetailsSaved,
+    required TResult Function(User user) userLoaded,
+    required TResult Function(User user) usernameAvailabilityConfirmed,
+    required TResult Function(User user) usernameSaved,
+    required TResult Function(User user) userNotFound,
+  }) {
+    return usernameSaved(user);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(User user)? customUsernameGenerated,
+    TResult Function(String emailAddressStr)? emailAddressChanged,
+    TResult Function()? loggedInWithEmailAndPassword,
+    TResult Function()? loggedInWithGoogle,
+    TResult Function()? logInWithEmailAndPasswordPressed,
+    TResult Function()? logInWithGooglePressed,
+    TResult Function(String passwordStr)? passwordChanged,
+    TResult Function(User user)? userDetailsSaved,
+    TResult Function(User user)? userLoaded,
+    TResult Function(User user)? usernameAvailabilityConfirmed,
+    TResult Function(User user)? usernameSaved,
+    TResult Function(User user)? userNotFound,
+    required TResult orElse(),
+  }) {
+    if (usernameSaved != null) {
+      return usernameSaved(user);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(CustomUsernameGenerated value)
+        customUsernameGenerated,
+    required TResult Function(EmailAddressChanged value) emailAddressChanged,
+    required TResult Function(LoggedInWithEmailAndPassword value)
+        loggedInWithEmailAndPassword,
+    required TResult Function(LoggedInWithGoogle value) loggedInWithGoogle,
+    required TResult Function(LogInWithEmailAndPasswordPressed value)
+        logInWithEmailAndPasswordPressed,
+    required TResult Function(LogInWithGooglePressed value)
+        logInWithGooglePressed,
+    required TResult Function(PasswordChanged value) passwordChanged,
+    required TResult Function(UserDetailsSaved value) userDetailsSaved,
+    required TResult Function(UserLoaded value) userLoaded,
+    required TResult Function(UsernameAvailabilityConfirmed value)
+        usernameAvailabilityConfirmed,
+    required TResult Function(UsernameSaved value) usernameSaved,
+    required TResult Function(UserNotFound value) userNotFound,
+  }) {
+    return usernameSaved(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(CustomUsernameGenerated value)? customUsernameGenerated,
+    TResult Function(EmailAddressChanged value)? emailAddressChanged,
+    TResult Function(LoggedInWithEmailAndPassword value)?
+        loggedInWithEmailAndPassword,
+    TResult Function(LoggedInWithGoogle value)? loggedInWithGoogle,
+    TResult Function(LogInWithEmailAndPasswordPressed value)?
+        logInWithEmailAndPasswordPressed,
+    TResult Function(LogInWithGooglePressed value)? logInWithGooglePressed,
+    TResult Function(PasswordChanged value)? passwordChanged,
+    TResult Function(UserDetailsSaved value)? userDetailsSaved,
+    TResult Function(UserLoaded value)? userLoaded,
+    TResult Function(UsernameAvailabilityConfirmed value)?
+        usernameAvailabilityConfirmed,
+    TResult Function(UsernameSaved value)? usernameSaved,
+    TResult Function(UserNotFound value)? userNotFound,
+    required TResult orElse(),
+  }) {
+    if (usernameSaved != null) {
+      return usernameSaved(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UsernameSaved implements LogInEvent {
+  const factory UsernameSaved(User user) = _$UsernameSaved;
+
+  User get user => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $UsernameSavedCopyWith<UsernameSaved> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $UserNotFoundCopyWith<$Res> {
+  factory $UserNotFoundCopyWith(
+          UserNotFound value, $Res Function(UserNotFound) then) =
+      _$UserNotFoundCopyWithImpl<$Res>;
+  $Res call({User user});
+
+  $UserCopyWith<$Res> get user;
+}
+
+/// @nodoc
+class _$UserNotFoundCopyWithImpl<$Res> extends _$LogInEventCopyWithImpl<$Res>
+    implements $UserNotFoundCopyWith<$Res> {
+  _$UserNotFoundCopyWithImpl(
+      UserNotFound _value, $Res Function(UserNotFound) _then)
+      : super(_value, (v) => _then(v as UserNotFound));
+
+  @override
+  UserNotFound get _value => super._value as UserNotFound;
+
+  @override
+  $Res call({
+    Object? user = freezed,
+  }) {
+    return _then(UserNotFound(
+      user == freezed
+          ? _value.user
+          : user // ignore: cast_nullable_to_non_nullable
+              as User,
+    ));
+  }
+
+  @override
+  $UserCopyWith<$Res> get user {
+    return $UserCopyWith<$Res>(_value.user, (value) {
+      return _then(_value.copyWith(user: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$UserNotFound implements UserNotFound {
+  const _$UserNotFound(this.user);
+
+  @override
+  final User user;
+
+  @override
+  String toString() {
+    return 'LogInEvent.userNotFound(user: $user)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is UserNotFound &&
+            (identical(other.user, user) ||
+                const DeepCollectionEquality().equals(other.user, user)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(user);
+
+  @JsonKey(ignore: true)
+  @override
+  $UserNotFoundCopyWith<UserNotFound> get copyWith =>
+      _$UserNotFoundCopyWithImpl<UserNotFound>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(User user) customUsernameGenerated,
+    required TResult Function(String emailAddressStr) emailAddressChanged,
+    required TResult Function() loggedInWithEmailAndPassword,
+    required TResult Function() loggedInWithGoogle,
+    required TResult Function() logInWithEmailAndPasswordPressed,
+    required TResult Function() logInWithGooglePressed,
+    required TResult Function(String passwordStr) passwordChanged,
+    required TResult Function(User user) userDetailsSaved,
+    required TResult Function(User user) userLoaded,
+    required TResult Function(User user) usernameAvailabilityConfirmed,
+    required TResult Function(User user) usernameSaved,
+    required TResult Function(User user) userNotFound,
+  }) {
+    return userNotFound(user);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(User user)? customUsernameGenerated,
+    TResult Function(String emailAddressStr)? emailAddressChanged,
+    TResult Function()? loggedInWithEmailAndPassword,
+    TResult Function()? loggedInWithGoogle,
+    TResult Function()? logInWithEmailAndPasswordPressed,
+    TResult Function()? logInWithGooglePressed,
+    TResult Function(String passwordStr)? passwordChanged,
+    TResult Function(User user)? userDetailsSaved,
+    TResult Function(User user)? userLoaded,
+    TResult Function(User user)? usernameAvailabilityConfirmed,
+    TResult Function(User user)? usernameSaved,
+    TResult Function(User user)? userNotFound,
+    required TResult orElse(),
+  }) {
+    if (userNotFound != null) {
+      return userNotFound(user);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(CustomUsernameGenerated value)
+        customUsernameGenerated,
+    required TResult Function(EmailAddressChanged value) emailAddressChanged,
+    required TResult Function(LoggedInWithEmailAndPassword value)
+        loggedInWithEmailAndPassword,
+    required TResult Function(LoggedInWithGoogle value) loggedInWithGoogle,
+    required TResult Function(LogInWithEmailAndPasswordPressed value)
+        logInWithEmailAndPasswordPressed,
+    required TResult Function(LogInWithGooglePressed value)
+        logInWithGooglePressed,
+    required TResult Function(PasswordChanged value) passwordChanged,
+    required TResult Function(UserDetailsSaved value) userDetailsSaved,
+    required TResult Function(UserLoaded value) userLoaded,
+    required TResult Function(UsernameAvailabilityConfirmed value)
+        usernameAvailabilityConfirmed,
+    required TResult Function(UsernameSaved value) usernameSaved,
+    required TResult Function(UserNotFound value) userNotFound,
+  }) {
+    return userNotFound(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(CustomUsernameGenerated value)? customUsernameGenerated,
+    TResult Function(EmailAddressChanged value)? emailAddressChanged,
+    TResult Function(LoggedInWithEmailAndPassword value)?
+        loggedInWithEmailAndPassword,
+    TResult Function(LoggedInWithGoogle value)? loggedInWithGoogle,
+    TResult Function(LogInWithEmailAndPasswordPressed value)?
+        logInWithEmailAndPasswordPressed,
+    TResult Function(LogInWithGooglePressed value)? logInWithGooglePressed,
+    TResult Function(PasswordChanged value)? passwordChanged,
+    TResult Function(UserDetailsSaved value)? userDetailsSaved,
+    TResult Function(UserLoaded value)? userLoaded,
+    TResult Function(UsernameAvailabilityConfirmed value)?
+        usernameAvailabilityConfirmed,
+    TResult Function(UsernameSaved value)? usernameSaved,
+    TResult Function(UserNotFound value)? userNotFound,
+    required TResult orElse(),
+  }) {
+    if (userNotFound != null) {
+      return userNotFound(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class UserNotFound implements LogInEvent {
+  const factory UserNotFound(User user) = _$UserNotFound;
+
+  User get user => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $UserNotFoundCopyWith<UserNotFound> get copyWith =>
       throw _privateConstructorUsedError;
 }
 
