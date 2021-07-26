@@ -42,18 +42,18 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
     yield* event.map(
       accountCreated: (value) async* {
         final userOption = await _authFacade.getLoggedInUser();
-        var user = userOption?.asPlain();
+        var userAsPlain = userOption?.asPlain();
 
-        if (user != null) {
-          user = user.copyWith(username: state.username);
+        if (userAsPlain != null) {
+          userAsPlain = userAsPlain.copyWith(username: state.username);
 
           yield* (await _userRepository.saveUsername(
-            user.uid,
-            user.username,
+            userAsPlain.uid,
+            userAsPlain.username,
           ))
               .match(
             (_) async* {
-              add(SignUpEvent.usernameSaved(user!));
+              add(SignUpEvent.usernameSaved(userAsPlain!));
             },
             (failure) async* {
               yield state.copyWith(
