@@ -3,6 +3,7 @@ import 'package:fake_cloud_firestore/fake_cloud_firestore.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:rustic/tuple.dart';
 import 'package:wine/domain/auth/username.dart';
+import 'package:wine/domain/core/unique_id.dart';
 import 'package:wine/domain/user/i_user_repository.dart';
 import 'package:wine/domain/user/user_failure.dart';
 import 'package:wine/infrastructure/user/user_repository.dart';
@@ -170,7 +171,7 @@ void main() {
   group('saveUsername -', () {
     test('When username saved Then return Unit', () async {
       final result = await _userRepository.saveUsername(
-        testUserUid,
+        UniqueID.fromUniqueString(testUserUid),
         Username(testUsername),
       );
 
