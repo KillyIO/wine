@@ -15,6 +15,7 @@ import 'package:wine/domain/core/core_failure.dart';
 import 'package:wine/domain/sessions/i_sessions_repository.dart';
 import 'package:wine/domain/user/i_user_repository.dart';
 import 'package:wine/domain/user/user.dart';
+import 'package:wine/domain/user/user_failure.dart';
 
 part 'log_in_event.dart';
 part 'log_in_state.dart';
@@ -56,7 +57,9 @@ class LogInBloc extends Bloc<LogInEvent, LogInState> {
           final userAsplain = userOption?.asPlain();
 
           if (userAsplain != null) {
-            (await _userRepository.loadUser(userAsplain.uid.getOrCrash()))
+            yield* (await _userRepository.loadUser(
+              userAsplain.uid.getOrCrash(),
+            ))
                 .match(
               (user) async* {
                 add(LogInEvent.userLoaded(user));
@@ -78,13 +81,15 @@ class LogInBloc extends Bloc<LogInEvent, LogInState> {
           final userAsplain = userOption?.asPlain();
 
           if (userAsplain != null) {
-            (await _userRepository.loadUser(userAsplain.uid.getOrCrash()))
+            yield* (await _userRepository.loadUser(
+              userAsplain.uid.getOrCrash(),
+            ))
                 .match(
               (user) async* {
                 add(LogInEvent.userLoaded(user));
               },
               (failure) async* {
-                failure.maybeMap(
+                yield* failure.maybeMap(
                   userNotFound: (_) async* {
                     add(LogInEvent.userNotFound(userAsplain));
                   },
@@ -190,17 +195,25 @@ class LogInBloc extends Bloc<LogInEvent, LogInState> {
             add(LogInEvent.usernameAvailabilityConfirmed(value.user));
           },
           (failure) async* {
-            var usernameStr = value.user.username.getOrCrash();
+            if (failure is UsernameAlreadyInUse) {
+              var usernameStr = value.user.username.getOrCrash();
 
-            final randomStrList =
-                const Uuid().v1().replaceAll(r'-', '').split('')..shuffle();
-            final randomStr = randomStrList.join();
+              final randomStrList =
+                  const Uuid().v1().replaceAll(r'-', '').split('')..shuffle();
+              final randomStr = randomStrList.join();
 
-            usernameStr = '$usernameStr$randomStr';
+              usernameStr = '$usernameStr$randomStr';
 
-            final user = value.user.copyWith(username: Username(usernameStr));
+              final user = value.user.copyWith(username: Username(usernameStr));
 
-            add(LogInEvent.customUsernameGenerated(user));
+              add(LogInEvent.customUsernameGenerated(user));
+            } else {
+              yield state.copyWith(
+                failureOption: Option(Err(CoreFailure.user(failure))),
+                isProcessing: false,
+                showErrorMessages: true,
+              );
+            }
           },
         );
       },
