@@ -8,12 +8,12 @@ export 'router.gr.dart';
 @AdaptiveAutoRouter(
   replaceInRouteName: 'Page,Route',
   routes: <AutoRoute>[
-    AdaptiveRoute(
+    AdaptiveRoute<HomePage>(
       page: HomePage,
       path: homePath,
       initial: true,
     ),
-    AdaptiveRoute(
+    AdaptiveRoute<OnboardingPage>(
       page: OnboardingPage,
       path: onboardingPath,
     ),
