@@ -20,12 +20,12 @@ void setupInjection() {
   getIt.reset();
   configureInjection(Environment.test);
 
-  IAuthFacade _authFacade = MockAuthFacade();
-  IDefaultCoversRepository _defaultCoversRepository =
+  final IAuthFacade _authFacade = MockAuthFacade();
+  final IDefaultCoversRepository _defaultCoversRepository =
       MockDefaultCoversRepository();
-  ISessionsRepository _sessionsRepository = MockSessionsRepository();
-  ISettingsRepository _settingsRepository = MockSettingsRepository();
-  IUserRepository _userRepository = MockUserRepository();
+  final ISessionsRepository _sessionsRepository = MockSessionsRepository();
+  final ISettingsRepository _settingsRepository = MockSettingsRepository();
+  final IUserRepository _userRepository = MockUserRepository();
 
   final _homeNavigationBloc = HomeNavigationBloc();
 
