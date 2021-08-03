@@ -44,7 +44,7 @@ class SettingsDTO with _$SettingsDTO {
 
   /// @nodoc
   factory SettingsDTO.fromJson(Map<String, dynamic>? json) =>
-      _$SettingsDTOFromJson(json ?? {});
+      _$SettingsDTOFromJson(json ?? <String, dynamic>{});
 }
 
 /// @nodoc
@@ -74,11 +74,12 @@ extension SettingsDTOX on SettingsDTO {
 extension SettingsMapX on Map {
   /// @nodoc
   Settings toDomain() => Settings(
-        enableChaptersBookmarksCount: this['enableChaptersBookmarksCount'],
-        enableChaptersLikesCount: this['enableChaptersLikesCount'],
-        enableChaptersViewsCount: this['enableChaptersViewsCount'],
-        enableSeriesBookmarksCount: this['enableSeriesBookmarksCount'],
-        enableSeriesLikesCount: this['enableSeriesLikesCount'],
-        enableSeriesViewsCount: this['enableSeriesViewsCount'],
+        enableChaptersBookmarksCount:
+            this['enableChaptersBookmarksCount'] as bool,
+        enableChaptersLikesCount: this['enableChaptersLikesCount'] as bool,
+        enableChaptersViewsCount: this['enableChaptersViewsCount'] as bool,
+        enableSeriesBookmarksCount: this['enableSeriesBookmarksCount'] as bool,
+        enableSeriesLikesCount: this['enableSeriesLikesCount'] as bool,
+        enableSeriesViewsCount: this['enableSeriesViewsCount'] as bool,
       );
 }

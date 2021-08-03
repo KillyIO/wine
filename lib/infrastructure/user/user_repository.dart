@@ -110,7 +110,8 @@ class UserRepository extends IUserRepository {
       final mapReference =
           _firestore.collection(usernameUIDMapPath).doc(usernameStr);
 
-      await mapReference.set({'uid': uid}, SetOptions(merge: true));
+      await mapReference
+          .set(<String, dynamic>{'uid': uid}, SetOptions(merge: true));
 
       return const Ok(Unit());
     } on FirebaseException catch (_) {

@@ -75,9 +75,9 @@ extension UserDTOX on UserDTO {
 extension UserMapX on Map {
   /// @nodoc
   User toDomain() => User(
-        emailAddress: EmailAddress(this['emailAddress']),
-        uid: UniqueID.fromUniqueString(this['uid']),
-        username: Username(this['username']),
+        emailAddress: EmailAddress(this['emailAddress'] as String),
+        uid: UniqueID.fromUniqueString(this['uid'] as String),
+        username: Username(this['username'] as String),
       );
 }
 

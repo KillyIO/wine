@@ -88,19 +88,19 @@ extension SeriesDTOX on SeriesDTO {
 extension SeriesMapX on Map {
   /// @nodoc
   Series toDomain() => Series(
-        authorUID: UniqueID.fromUniqueString(this['authorUID']),
-        bookmarksCount: this['bookmarksCount'],
-        coverURL: CoverURL(this['coverURL']),
-        genre: Genre(this['genre']),
-        genreOptional: Genre(this['genreOptional'], isOptional: true),
-        isNSFW: this['isNSFW'],
-        isPublished: this['isPublished'],
-        language: Language(this['language']),
-        likesCount: this['likesCount'],
-        subtitle: Subtitle(this['subtitle']),
-        summary: Summary(this['summary']),
-        title: Title(this['title']),
-        uid: UniqueID.fromUniqueString(this['uid']),
-        viewsCount: this['viewsCount'],
+        authorUID: UniqueID.fromUniqueString(this['authorUID'] as String),
+        bookmarksCount: this['bookmarksCount'] as int,
+        coverURL: CoverURL(this['coverURL'] as String),
+        genre: Genre(this['genre'] as String),
+        genreOptional: Genre(this['genreOptional'] as String, isOptional: true),
+        isNSFW: this['isNSFW'] as bool,
+        isPublished: this['isPublished'] as bool,
+        language: Language(this['language'] as String),
+        likesCount: this['likesCount'] as int,
+        subtitle: Subtitle(this['subtitle'] as String),
+        summary: Summary(this['summary'] as String),
+        title: Title(this['title'] as String),
+        uid: UniqueID.fromUniqueString(this['uid'] as String),
+        viewsCount: this['viewsCount'] as int,
       );
 }
