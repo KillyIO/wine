@@ -16,44 +16,44 @@ export 'router.gr.dart';
 @AdaptiveAutoRouter(
   replaceInRouteName: 'Page,Route',
   routes: <AutoRoute>[
-    AdaptiveRoute(
+    AdaptiveRoute<AccountSettingsPage>(
       page: AccountSettingsPage,
       path: accountSettingsPath,
     ),
-    AdaptiveRoute(
+    AdaptiveRoute<ChapterSettingsPage>(
       page: ChapterSettingsPage,
       path: chapterSettingsPath,
     ),
-    AdaptiveRoute(
+    AdaptiveRoute<HomePage>(
       page: HomePage,
       path: homePath,
       initial: true,
     ),
-    AdaptiveRoute(
+    AdaptiveRoute<LibraryPage>(
       page: LibraryPage,
       path: libraryPath,
     ),
-    AdaptiveRoute(
+    AdaptiveRoute<LogInPage>(
       page: LogInPage,
       path: logInPath,
     ),
-    AdaptiveRoute(
+    AdaptiveRoute<OnboardingPage>(
       page: OnboardingPage,
       path: onboardingPath,
     ),
-    AdaptiveRoute(
+    AdaptiveRoute<PlusPage>(
       page: PlusPage,
       path: plusPath,
     ),
-    AdaptiveRoute(
+    AdaptiveRoute<SeriesSettingsPage>(
       page: SeriesSettingsPage,
       path: seriesSettingsPath,
     ),
-    AdaptiveRoute(
+    AdaptiveRoute<SettingsPage>(
       page: SettingsPage,
       path: settingsPath,
     ),
-    AdaptiveRoute(
+    AdaptiveRoute<SignUpPage>(
       page: SignUpPage,
       path: signUpPath,
     ),
