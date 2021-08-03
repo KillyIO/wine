@@ -6,7 +6,7 @@ class LogInState with _$LogInState {
   /// @nodoc
   const factory LogInState({
     required EmailAddress emailAddress,
-    required Option<Result<dynamic, CoreFailure>> failureOption,
+    required Option<Result<None, CoreFailure>> failureOption,
     required bool isAuthenticated,
     required bool isProcessing,
     required Password password,

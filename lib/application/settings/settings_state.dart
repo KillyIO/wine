@@ -5,7 +5,7 @@ part of 'settings_bloc.dart';
 class SettingsState with _$SettingsState {
   /// @nodoc
   const factory SettingsState({
-    required Option<Result<dynamic, CoreFailure>> failureOption,
+    required Option<Result<None, CoreFailure>> failureOption,
     required bool isLoggedOut,
     required bool isProcessing,
     required Settings settings,

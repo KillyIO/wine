@@ -1,12 +1,12 @@
 import 'dart:async';
 
-import 'package:bloc/bloc.dart';
-import 'package:flutter/widgets.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:rustic/option.dart';
 import 'package:rustic/result.dart';
 import 'package:uuid/uuid.dart';
+
 import 'package:wine/domain/auth/email_address.dart';
 import 'package:wine/domain/auth/i_auth_facade.dart';
 import 'package:wine/domain/auth/password.dart';
@@ -17,9 +17,9 @@ import 'package:wine/domain/user/i_user_repository.dart';
 import 'package:wine/domain/user/user.dart';
 import 'package:wine/domain/user/user_failure.dart';
 
+part 'log_in_bloc.freezed.dart';
 part 'log_in_event.dart';
 part 'log_in_state.dart';
-part 'log_in_bloc.freezed.dart';
 
 /// @nodoc
 @Environment(Environment.dev)
@@ -199,7 +199,7 @@ class LogInBloc extends Bloc<LogInEvent, LogInState> {
               var usernameStr = value.user.username.getOrCrash();
 
               final randomStrList =
-                  const Uuid().v1().replaceAll(r'-', '').split('')..shuffle();
+                  const Uuid().v1().replaceAll('-', '').split('')..shuffle();
               final randomStr = randomStrList.join();
 
               usernameStr = '$usernameStr$randomStr';

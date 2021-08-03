@@ -1413,7 +1413,7 @@ class _$SignUpStateTearOff {
   _SignUpState call(
       {required ConfirmPassword confirmPassword,
       required EmailAddress emailAddress,
-      required Option<Result<dynamic, CoreFailure>> failureOption,
+      required Option<Result<None, CoreFailure>> failureOption,
       required bool isAuthenticated,
       required bool isProcessing,
       required Password password,
@@ -1439,7 +1439,7 @@ const $SignUpState = _$SignUpStateTearOff();
 mixin _$SignUpState {
   ConfirmPassword get confirmPassword => throw _privateConstructorUsedError;
   EmailAddress get emailAddress => throw _privateConstructorUsedError;
-  Option<Result<dynamic, CoreFailure>> get failureOption =>
+  Option<Result<None, CoreFailure>> get failureOption =>
       throw _privateConstructorUsedError;
   bool get isAuthenticated => throw _privateConstructorUsedError;
   bool get isProcessing => throw _privateConstructorUsedError;
@@ -1460,7 +1460,7 @@ abstract class $SignUpStateCopyWith<$Res> {
   $Res call(
       {ConfirmPassword confirmPassword,
       EmailAddress emailAddress,
-      Option<Result<dynamic, CoreFailure>> failureOption,
+      Option<Result<None, CoreFailure>> failureOption,
       bool isAuthenticated,
       bool isProcessing,
       Password password,
@@ -1499,7 +1499,7 @@ class _$SignUpStateCopyWithImpl<$Res> implements $SignUpStateCopyWith<$Res> {
       failureOption: failureOption == freezed
           ? _value.failureOption
           : failureOption // ignore: cast_nullable_to_non_nullable
-              as Option<Result<dynamic, CoreFailure>>,
+              as Option<Result<None, CoreFailure>>,
       isAuthenticated: isAuthenticated == freezed
           ? _value.isAuthenticated
           : isAuthenticated // ignore: cast_nullable_to_non_nullable
@@ -1534,7 +1534,7 @@ abstract class _$SignUpStateCopyWith<$Res>
   $Res call(
       {ConfirmPassword confirmPassword,
       EmailAddress emailAddress,
-      Option<Result<dynamic, CoreFailure>> failureOption,
+      Option<Result<None, CoreFailure>> failureOption,
       bool isAuthenticated,
       bool isProcessing,
       Password password,
@@ -1575,7 +1575,7 @@ class __$SignUpStateCopyWithImpl<$Res> extends _$SignUpStateCopyWithImpl<$Res>
       failureOption: failureOption == freezed
           ? _value.failureOption
           : failureOption // ignore: cast_nullable_to_non_nullable
-              as Option<Result<dynamic, CoreFailure>>,
+              as Option<Result<None, CoreFailure>>,
       isAuthenticated: isAuthenticated == freezed
           ? _value.isAuthenticated
           : isAuthenticated // ignore: cast_nullable_to_non_nullable
@@ -1618,7 +1618,7 @@ class _$_SignUpState implements _SignUpState {
   @override
   final EmailAddress emailAddress;
   @override
-  final Option<Result<dynamic, CoreFailure>> failureOption;
+  final Option<Result<None, CoreFailure>> failureOption;
   @override
   final bool isAuthenticated;
   @override
@@ -1687,7 +1687,7 @@ abstract class _SignUpState implements SignUpState {
   const factory _SignUpState(
       {required ConfirmPassword confirmPassword,
       required EmailAddress emailAddress,
-      required Option<Result<dynamic, CoreFailure>> failureOption,
+      required Option<Result<None, CoreFailure>> failureOption,
       required bool isAuthenticated,
       required bool isProcessing,
       required Password password,
@@ -1699,7 +1699,7 @@ abstract class _SignUpState implements SignUpState {
   @override
   EmailAddress get emailAddress => throw _privateConstructorUsedError;
   @override
-  Option<Result<dynamic, CoreFailure>> get failureOption =>
+  Option<Result<None, CoreFailure>> get failureOption =>
       throw _privateConstructorUsedError;
   @override
   bool get isAuthenticated => throw _privateConstructorUsedError;
