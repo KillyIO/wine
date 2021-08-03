@@ -12,6 +12,6 @@ class LibraryPage extends StatelessWidget {
       DeviceOrientation.portraitUp,
       DeviceOrientation.portraitDown,
     ]);
-    return Scaffold();
+    return const Scaffold();
   }
 }
