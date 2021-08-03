@@ -32,7 +32,6 @@ class AppDevelopment extends StatelessWidget {
           return MaterialApp.router(
             builder: (_, router) {
               return DevicePreview(
-                enabled: true,
                 plugins: const [
                   ScreenshotPlugin(),
                 ],
