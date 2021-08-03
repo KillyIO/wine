@@ -19,10 +19,10 @@ dependencies:
   equatable: ^2.0.3
   firebase_auth: ^3.0.1
   firebase_core: ^1.4.0
-  flare_flutter: ^3.0.1
+  flare_flutter: ^3.0.2
   flare_loading: ^3.0.0
   flutter_bloc: ^7.1.0
-  flutter_native_splash: ^1.2.0
+  flutter_native_splash: ^1.2.1
   freezed_annotation: ^0.14.2
   get_it: ^7.2.0
   google_sign_in: ^5.0.5
@@ -52,7 +52,7 @@ dev_dependencies:
     sdk: flutter
   auto_route_generator: ^2.1.0
   bloc_test: ^8.1.0
-  build_runner: ^2.0.6
+  build_runner: ^2.1.0
   fake_cloud_firestore: ^1.1.2
   flutter_flavorizr: ^2.0.0
   fluttericon: ^2.0.0
@@ -61,7 +61,7 @@ dev_dependencies:
   injectable_generator: ^1.4.1
   json_serializable: ^4.1.4
   mocktail: ^0.1.4
-  very_good_analysis: ^2.2.0
+  very_good_analysis: ^2.3.0
 
 flavorizr:
   app:
