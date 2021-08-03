@@ -56,11 +56,8 @@ Future<void> baseErrorDialog(
 }
 
 /// Tries to restart the app by add initial [SetupBloc] event
-Future<void> restartAppDialog(
-  BuildContext context,
-  List<String> errorMessages,
-) async {
-  final result = await showDialog<bool>(
+void restartAppDialog(BuildContext context, List<String> errorMessages) {
+  showDialog<bool>(
     context: context,
     builder: (_) => ErrorDialog(
       key: const Key('setup_error_dialog'),
@@ -72,9 +69,9 @@ Future<void> restartAppDialog(
         }
       },
     ),
-  );
-
-  if (result != null && result) {
-    context.read<SetupBloc>().add(const SetupEvent.appLaunched());
-  }
+  ).then((result) {
+    if (result != null && result) {
+      context.read<SetupBloc>().add(const SetupEvent.appLaunched());
+    }
+  });
 }
