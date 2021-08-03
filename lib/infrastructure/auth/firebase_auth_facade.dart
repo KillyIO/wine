@@ -208,7 +208,7 @@ class FirebaseAuthFacade implements IAuthFacade {
     if (anonymousUser != null) {
       await anonymousUser.linkWithCredential(authCredential);
 
-      return await _updateUserInfo(_googleSignIn.currentUser, anonymousUser);
+      return _updateUserInfo(_googleSignIn.currentUser, anonymousUser);
     }
     return const Err(AuthFailure.unexpected());
   }
@@ -222,9 +222,9 @@ class FirebaseAuthFacade implements IAuthFacade {
 
       await _firebaseAuth.signInWithCredential(authCredential);
 
-      var currentUser = _firebaseAuth.currentUser;
+      final currentUser = _firebaseAuth.currentUser;
 
-      return await _updateUserInfo(_googleSignIn.currentUser, currentUser);
+      return _updateUserInfo(_googleSignIn.currentUser, currentUser);
     }
     return const Err(AuthFailure.unexpected());
   }
