@@ -35,62 +35,62 @@ class HomeLayout extends StatelessWidget {
               value.failure.maybeMap(
                 auth: (f) => f.f.maybeMap(
                   orElse: () {},
-                  serverError: (_) async => restartAppDialog(
+                  serverError: (_) => restartAppDialog(
                     context,
                     <String>['A problem occurred on our end!'],
                   ),
-                  unexpected: (_) async => restartAppDialog(
+                  unexpected: (_) => restartAppDialog(
                     context,
                     <String>['An unexpected error occured!'],
                   ),
                 ),
                 defaultCovers: (f) => f.f.maybeMap(
-                  defaultCoverURLsNotCached: (_) async => restartAppDialog(
+                  defaultCoverURLsNotCached: (_) => restartAppDialog(
                     context,
                     <String>['Default covers could not be cached!'],
                   ),
-                  defaultCoverURLsNotLoaded: (_) async => restartAppDialog(
+                  defaultCoverURLsNotLoaded: (_) => restartAppDialog(
                     context,
                     <String>['Default covers could not be loaded!'],
                   ),
-                  serverError: (_) async => restartAppDialog(
+                  serverError: (_) => restartAppDialog(
                     context,
                     <String>['A problem occurred on our end!'],
                   ),
-                  unexpected: (_) async => restartAppDialog(
+                  unexpected: (_) => restartAppDialog(
                     context,
                     <String>['An unexpected error occured!'],
                   ),
                   orElse: () {},
                 ),
                 sessions: (f) => f.f.maybeMap(
-                  sessionNotCreated: (_) async => restartAppDialog(
+                  sessionNotCreated: (_) => restartAppDialog(
                     context,
                     <String>['Session could not be created!'],
                   ),
-                  sessionNotUpdated: (_) async => restartAppDialog(
+                  sessionNotUpdated: (_) => restartAppDialog(
                     context,
                     <String>['Session could not be updated!'],
                   ),
                   orElse: () {},
                 ),
                 settings: (f) => f.f.maybeMap(
-                  settingsNotInitialized: (_) async => restartAppDialog(
+                  settingsNotInitialized: (_) => restartAppDialog(
                     context,
                     <String>['Settings could not be initialized!'],
                   ),
                   orElse: () {},
                 ),
                 user: (f) => f.f.maybeMap(
-                  serverError: (_) async => restartAppDialog(
+                  serverError: (_) => restartAppDialog(
                     context,
                     <String>['A problem occurred on our end!'],
                   ),
-                  userNotFound: (_) async => restartAppDialog(
+                  userNotFound: (_) => restartAppDialog(
                     context,
                     <String>['User account not found!'],
                   ),
-                  unexpected: (_) async => restartAppDialog(
+                  unexpected: (_) => restartAppDialog(
                     context,
                     <String>['An unexpected error occured!'],
                   ),
@@ -135,14 +135,14 @@ class HomeLayout extends StatelessWidget {
                 AppBar(
                   backgroundColor: Colors.transparent,
                   brightness: Brightness.light,
-                  elevation: 0.0,
+                  elevation: 0,
                   leading: Builder(
                     builder: (context) {
                       return IconButton(
                         icon: const Icon(
                           LineIcons.times,
                           color: Colors.black,
-                          size: 30.0,
+                          size: 30,
                         ),
                         onPressed: context.router.pop,
                       );
