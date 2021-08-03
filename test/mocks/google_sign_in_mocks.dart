@@ -1,15 +1,17 @@
+import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:mocktail/mocktail.dart';
 
 class MockGoogleSignIn extends Mock implements GoogleSignIn {}
 
+@immutable
 class MockGoogleSignInAccount extends Mock implements GoogleSignInAccount {
   @override
   Future<GoogleSignInAuthentication> get authentication async =>
       MockGoogleSignInAuthentication();
 
   @override
-  bool operator ==(other) {
+  bool operator ==(dynamic other) {
     return (other is Mock)
         ? hashCode == other.hashCode
         : identical(this, other);
