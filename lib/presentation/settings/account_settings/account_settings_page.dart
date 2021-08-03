@@ -26,19 +26,19 @@ class AccountSettingsPage extends StatelessWidget {
           child: AppBar(
             backgroundColor: Colors.transparent,
             bottom: PreferredSize(
-              preferredSize: const Size.fromHeight(0.0),
+              preferredSize: const Size.fromHeight(0),
               child: Container(
                 color: Colors.black,
-                height: 2.0,
+                height: 2,
               ),
             ),
             brightness: Brightness.light,
             centerTitle: true,
-            elevation: 0.0,
+            elevation: 0,
             leading: Padding(
               padding: const EdgeInsets.symmetric(
-                horizontal: 10.0,
-                vertical: 5.0,
+                horizontal: 10,
+                vertical: 5,
               ),
               child: AssetButton(
                 imagePath: backIcon,
@@ -49,7 +49,7 @@ class AccountSettingsPage extends StatelessWidget {
               'ACCOUNT',
               style: TextStyle(
                 color: Colors.black,
-                fontSize: 18.0,
+                fontSize: 18,
                 fontWeight: FontWeight.w300,
               ),
             ),

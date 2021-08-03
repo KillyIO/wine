@@ -36,7 +36,7 @@ class AccountSettingsLayout extends StatelessWidget {
                         'USERNAME',
                         style: TextStyle(
                           color: Colors.black,
-                          fontSize: 15.0,
+                          fontSize: 15,
                           fontWeight: FontWeight.w300,
                         ),
                       ),
@@ -45,7 +45,7 @@ class AccountSettingsLayout extends StatelessWidget {
                         overflow: TextOverflow.ellipsis,
                         style: const TextStyle(
                           color: Colors.black,
-                          fontSize: 15.0,
+                          fontSize: 15,
                           fontWeight: FontWeight.w400,
                         ),
                       ),
@@ -67,7 +67,7 @@ class AccountSettingsLayout extends StatelessWidget {
                           'LOG OUT',
                           style: TextStyle(
                             color: Colors.white,
-                            fontSize: 15.0,
+                            fontSize: 15,
                             fontWeight: FontWeight.w500,
                             letterSpacing: 0.5,
                           ),
@@ -84,7 +84,7 @@ class AccountSettingsLayout extends StatelessWidget {
                         'MY ACCOUNT',
                         style: TextStyle(
                           color: Colors.black,
-                          fontSize: 15.0,
+                          fontSize: 15,
                           fontWeight: FontWeight.w300,
                         ),
                       ),
@@ -93,7 +93,7 @@ class AccountSettingsLayout extends StatelessWidget {
                         overflow: TextOverflow.ellipsis,
                         style: TextStyle(
                           color: Colors.black,
-                          fontSize: 15.0,
+                          fontSize: 15,
                           fontWeight: FontWeight.w200,
                         ),
                       ),

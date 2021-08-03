@@ -25,7 +25,7 @@ class SuccessDialog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Dialog(
-      elevation: 10.0,
+      elevation: 10,
       child: Container(
         color: Colors.white,
         width: 50.w,

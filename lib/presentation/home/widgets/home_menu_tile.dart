@@ -20,17 +20,17 @@ class HomeMenuTile extends StatelessWidget {
     return Container(
       decoration: const BoxDecoration(
         border: Border(
-          bottom: BorderSide(width: 3.0),
+          bottom: BorderSide(width: 3),
         ),
       ),
-      height: 30.0,
+      height: 30,
       child: GestureDetector(
         onTap: onPressed,
         child: Text(
           text,
           style: const TextStyle(
             color: Colors.black,
-            fontSize: 20.0,
+            fontSize: 20,
             fontWeight: FontWeight.w300,
           ),
         ),

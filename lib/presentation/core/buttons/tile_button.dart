@@ -48,7 +48,7 @@ class TileButton extends StatelessWidget {
           title,
           style: const TextStyle(
             color: Colors.black,
-            fontSize: 15.0,
+            fontSize: 15,
             fontWeight: FontWeight.w300,
           ),
         ),

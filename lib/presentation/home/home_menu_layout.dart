@@ -27,7 +27,7 @@ class HomeMenuLayout extends StatelessWidget {
                 child: AppBar(
                   backgroundColor: Colors.transparent,
                   brightness: Brightness.light,
-                  elevation: 0.0,
+                  elevation: 0,
                   actions: [
                     Builder(
                       builder: (context) {
@@ -35,7 +35,7 @@ class HomeMenuLayout extends StatelessWidget {
                           icon: const Icon(
                             LineIcons.times,
                             color: Colors.black,
-                            size: 30.0,
+                            size: 30,
                           ),
                           onPressed: context.router.pop,
                         );
@@ -47,7 +47,7 @@ class HomeMenuLayout extends StatelessWidget {
               Align(
                 alignment: Alignment.bottomCenter,
                 child: Padding(
-                  padding: const EdgeInsets.only(bottom: 50.0),
+                  padding: const EdgeInsets.only(bottom: 50),
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     children: <Widget>[

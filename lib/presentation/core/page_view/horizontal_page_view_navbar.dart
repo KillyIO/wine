@@ -29,7 +29,7 @@ class HorizontalPageViewNavbar extends StatelessWidget {
   Widget build(BuildContext context) {
     return AnimatedContainer(
       duration: 100.milliseconds,
-      height: 30.0,
+      height: 30,
       width: MediaQuery.of(context).size.width,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,

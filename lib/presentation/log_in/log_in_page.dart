@@ -27,7 +27,7 @@ class LogInPage extends StatelessWidget {
           child: AppBar(
             backgroundColor: Colors.transparent,
             bottom: PreferredSize(
-              preferredSize: const Size.fromHeight(0.0),
+              preferredSize: const Size.fromHeight(0),
               child: Container(
                 color: Colors.black,
                 height: 0.15.h,
@@ -35,7 +35,7 @@ class LogInPage extends StatelessWidget {
             ),
             brightness: Brightness.light,
             centerTitle: true,
-            elevation: 0.0,
+            elevation: 0,
             leading: Padding(
               padding: EdgeInsets.symmetric(
                 horizontal: 1.w,

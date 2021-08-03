@@ -19,7 +19,7 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
     return AppBar(
       backgroundColor: Colors.transparent,
       brightness: Brightness.light,
-      elevation: 0.0,
+      elevation: 0,
       leading: Builder(
         builder: (context) {
           return IconButton(
@@ -27,7 +27,7 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
             icon: const Icon(
               LineIcons.horizontalSliders,
               color: Colors.black,
-              size: 30.0,
+              size: 30,
             ),
             onPressed: Scaffold.of(context).openDrawer,
           );
@@ -38,13 +38,13 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
           builder: (context, state) {
             return state.maybeMap(
               authenticated: (_) => Padding(
-                padding: const EdgeInsets.only(right: 20.0),
+                padding: const EdgeInsets.only(right: 20),
                 child: IconButton(
                   key: const Key('new_series_button'),
                   icon: const Icon(
                     LineIcons.plus,
                     color: Colors.black,
-                    size: 30.0,
+                    size: 30,
                   ),
                   onPressed: () {},
                 ),
@@ -60,7 +60,7 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
               icon: const Icon(
                 LineIcons.bars,
                 color: Colors.black,
-                size: 30.0,
+                size: 30,
               ),
               onPressed: Scaffold.of(context).openEndDrawer,
             );
