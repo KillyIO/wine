@@ -18,7 +18,7 @@ void main() {
   late auth.FirebaseAuth _firebaseAuth;
 
   late HiveInterface _hive;
-  late Box<HiveUser> _box = MockBox<HiveUser>();
+  final Box<HiveUser> _box = MockBox<HiveUser>();
 
   setUp(() {
     _firebaseAuth = MockFirebaseAuth();
@@ -28,15 +28,15 @@ void main() {
 
     registerFallbackValue<HiveUser>(MockHiveUser());
 
-    when(() => _hive.openBox(any())).thenAnswer((_) async => _box);
+    when(() => _hive.openBox<dynamic>(any())).thenAnswer((_) async => _box);
 
     when(() => _firebaseAuth.currentUser).thenReturn(MockUser());
   });
 
   group('createSession -', () {
     test('When session created Then return Unit', () async {
-      when(() => _box.get(any())).thenReturn(testHiveUser);
-      when(() => _box.put(any(), any())).thenAnswer((_) async {
+      when(() => _box.get(any<dynamic>())).thenReturn(testHiveUser);
+      when(() => _box.put(any<dynamic>(), any())).thenAnswer((_) async {
         return;
       });
 
@@ -50,7 +50,7 @@ void main() {
     });
 
     test('When session not created Then return SessionNotCreated', () async {
-      when(() => _box.get(any())).thenReturn(null);
+      when(() => _box.get(any<dynamic>())).thenReturn(null);
 
       final result = await _sessionsRepository.createSession();
 
@@ -64,13 +64,13 @@ void main() {
 
   group('deleteSession -', () {
     setUp(() {
-      when(() => _box.delete(any())).thenAnswer((_) async {
+      when(() => _box.delete(any<dynamic>())).thenAnswer((_) async {
         return;
       });
     });
 
     test('When session deleted Then return Unit', () async {
-      when(() => _box.get(any())).thenReturn(null);
+      when(() => _box.get(any<dynamic>())).thenReturn(null);
 
       final result = await _sessionsRepository.deleteSession();
 
@@ -82,7 +82,7 @@ void main() {
     });
 
     test('When session not deleted Then return SessionNotDeleted', () async {
-      when(() => _box.get(any())).thenReturn(testHiveUser);
+      when(() => _box.get(any<dynamic>())).thenReturn(testHiveUser);
 
       final result = await _sessionsRepository.deleteSession();
 
@@ -96,7 +96,7 @@ void main() {
 
   group('fetchSession -', () {
     test('When session fetched Then return User', () async {
-      when(() => _box.get(any())).thenReturn(testHiveUser);
+      when(() => _box.get(any<dynamic>())).thenReturn(testHiveUser);
 
       final result = await _sessionsRepository.fetchSession();
 
@@ -108,7 +108,7 @@ void main() {
     });
 
     test('When session not fetched Then return SessionNotFound', () async {
-      when(() => _box.get(any())).thenReturn(null);
+      when(() => _box.get(any<dynamic>())).thenReturn(null);
 
       final result = await _sessionsRepository.fetchSession();
 
@@ -122,7 +122,7 @@ void main() {
 
   group('updateSession -', () {
     test('When session updated Then return Unit', () async {
-      when(() => _box.get(any())).thenReturn(testHiveUser);
+      when(() => _box.get(any<dynamic>())).thenReturn(testHiveUser);
 
       final result =
           await _sessionsRepository.updateSession(testHiveUser.toDomain());
@@ -139,7 +139,7 @@ void main() {
         emailAddress: 'yhaouas.hebbazth5@gmailvn.net',
       );
 
-      when(() => _box.get(any())).thenReturn(updatedTestHiveUser);
+      when(() => _box.get(any<dynamic>())).thenReturn(updatedTestHiveUser);
 
       final result =
           await _sessionsRepository.updateSession(testHiveUser.toDomain());

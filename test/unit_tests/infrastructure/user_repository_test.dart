@@ -40,7 +40,7 @@ void main() {
       await _firestore
           .collection(usernameUIDMapPath)
           .doc(testUsername)
-          .set({'uid': testUserUid}, SetOptions(merge: true));
+          .set(<String, dynamic>{'uid': testUserUid}, SetOptions(merge: true));
 
       final result = await _userRepository
           .checkUsernameAvailability(Username(testUsername));

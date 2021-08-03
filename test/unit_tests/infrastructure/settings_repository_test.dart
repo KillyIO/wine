@@ -18,7 +18,7 @@ void main() {
   late auth.FirebaseAuth _firebaseAuth;
 
   late HiveInterface _hive;
-  late Box<HiveSettings> _box = MockBox<HiveSettings>();
+  final Box<HiveSettings> _box = MockBox<HiveSettings>();
 
   setUp(() {
     _firebaseAuth = MockFirebaseAuth();
@@ -28,24 +28,24 @@ void main() {
 
     registerFallbackValue<HiveSettings>(MockHiveSettings());
 
-    when(() => _hive.openBox(any())).thenAnswer((_) async => _box);
+    when(() => _hive.openBox<dynamic>(any())).thenAnswer((_) async => _box);
 
     when(() => _firebaseAuth.currentUser).thenReturn(MockUser());
 
-    when(() => _box.put(any(), any())).thenAnswer((_) async {
+    when(() => _box.put(any<dynamic>(), any())).thenAnswer((_) async {
       return;
     });
   });
 
   group('deleteSettings -', () {
     setUp(() {
-      when(() => _box.delete(any())).thenAnswer((_) async {
+      when(() => _box.delete(any<dynamic>())).thenAnswer((_) async {
         return;
       });
     });
 
     test('When settings deleted Then return Unit', () async {
-      when(() => _box.get(any())).thenReturn(null);
+      when(() => _box.get(any<dynamic>())).thenReturn(null);
 
       final result = await _settingsRepository.deleteSettings();
 
@@ -57,7 +57,7 @@ void main() {
     });
 
     test('When settings not deleted Then return SettingsNotDeleted', () async {
-      when(() => _box.get(any())).thenReturn(testHiveSettings);
+      when(() => _box.get(any<dynamic>())).thenReturn(testHiveSettings);
 
       final result = await _settingsRepository.deleteSettings();
 
@@ -71,7 +71,7 @@ void main() {
 
   group('fetchSettings -', () {
     test('When settings fetched Then return Settings', () async {
-      when(() => _box.get(any())).thenReturn(testHiveSettings);
+      when(() => _box.get(any<dynamic>())).thenReturn(testHiveSettings);
 
       final result = await _settingsRepository.fetchSettings();
 
@@ -83,7 +83,7 @@ void main() {
     });
 
     test('When settings not fetched Then return SettingsNotFound', () async {
-      when(() => _box.get(any())).thenReturn(null);
+      when(() => _box.get(any<dynamic>())).thenReturn(null);
 
       final result = await _settingsRepository.fetchSettings();
 
@@ -97,7 +97,7 @@ void main() {
 
   group('initializeSettings -', () {
     test('When settings initialized Then return Unit', () async {
-      when(() => _box.get(any())).thenReturn(testHiveSettings);
+      when(() => _box.get(any<dynamic>())).thenReturn(testHiveSettings);
 
       final result = await _settingsRepository.initializeSettings();
 
@@ -111,7 +111,7 @@ void main() {
     test(
       'When settings not initialized Then return SettingsNotCreated',
       () async {
-        when(() => _box.get(any())).thenReturn(null);
+        when(() => _box.get(any<dynamic>())).thenReturn(null);
 
         final result = await _settingsRepository.initializeSettings();
 
@@ -126,7 +126,7 @@ void main() {
 
   group('updateSettings -', () {
     test('When settings updated Then return Unit', () async {
-      when(() => _box.get(any())).thenReturn(testHiveSettings);
+      when(() => _box.get(any<dynamic>())).thenReturn(testHiveSettings);
 
       final result =
           await _settingsRepository.updateSettings(testHiveSettings.toDomain());
@@ -142,7 +142,7 @@ void main() {
       final updatedTestHiveSettings =
           testHiveSettings.copyWith(enableChaptersBookmarksCount: true);
 
-      when(() => _box.get(any())).thenReturn(updatedTestHiveSettings);
+      when(() => _box.get(any<dynamic>())).thenReturn(updatedTestHiveSettings);
 
       final result =
           await _settingsRepository.updateSettings(testHiveSettings.toDomain());

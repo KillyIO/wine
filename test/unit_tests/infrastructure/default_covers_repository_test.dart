@@ -19,7 +19,7 @@ void main() {
   late FirebaseFirestore _firestore;
 
   late HiveInterface _hive;
-  late Box<String> _box = MockBox<String>();
+  final Box<String> _box = MockBox<String>();
 
   setUp(() {
     _firestore = FakeFirebaseFirestore();
@@ -28,18 +28,18 @@ void main() {
 
     _defaultCoversRepository = DefaultCoversRepository(_firestore, _hive);
 
-    when(() => _hive.openBox(any())).thenAnswer((_) async => _box);
+    when(() => _hive.openBox<dynamic>(any())).thenAnswer((_) async => _box);
   });
 
   group('cacheDefaultCoverURLs -', () {
     setUp(() {
-      when(() => _box.put(any(), any())).thenAnswer((_) async {
+      when(() => _box.put(any<dynamic>(), any())).thenAnswer((_) async {
         return;
       });
     });
 
     test('When covers cached Then return Unit', () async {
-      when(() => _box.get(any())).thenReturn('coverURL');
+      when(() => _box.get(any<dynamic>())).thenReturn('coverURL');
 
       final result = await _defaultCoversRepository
           .cacheDefaultCoverURLs(testDefaultCovers);
@@ -50,15 +50,15 @@ void main() {
         (_) {},
       );
 
-      verify(() => _box.put(any(), any())).called(2);
+      verify(() => _box.put(any<dynamic>(), any())).called(2);
 
-      verify(() => _box.get(any())).called(2);
+      verify(() => _box.get(any<dynamic>())).called(2);
     });
 
     test(
       'When at least one cover not cached The return DefaultCoverURLsNotCached',
       () async {
-        when(() => _box.get(any())).thenReturn(null);
+        when(() => _box.get(any<dynamic>())).thenReturn(null);
 
         final result = await _defaultCoversRepository
             .cacheDefaultCoverURLs(testDefaultCovers);
@@ -77,7 +77,7 @@ void main() {
 
   group('fetchDefaultCoverURLByKey -', () {
     test('When cover fetched Then return cover URL', () async {
-      when(() => _box.get(any())).thenReturn('coverURL');
+      when(() => _box.get(any<dynamic>())).thenReturn('coverURL');
 
       final result =
           await _defaultCoversRepository.fetchDefaultCoverURLByKey('string');
@@ -92,7 +92,7 @@ void main() {
     test(
       'When cover not found Then return DefaultCoverURLsNotFetched',
       () async {
-        when(() => _box.get(any())).thenReturn(null);
+        when(() => _box.get(any<dynamic>())).thenReturn(null);
 
         final result =
             await _defaultCoversRepository.fetchDefaultCoverURLByKey('string');

@@ -54,7 +54,7 @@ void main() {
   });
 
   group('LogInBloc -', () {
-    blocTest(
+    blocTest<LogInBloc, LogInState>(
       'emits [] when instanciated.',
       build: () => _logInBloc,
       expect: () => <LogInState>[],
@@ -79,7 +79,7 @@ void main() {
       );
 
       blocTest<LogInBloc, LogInState>(
-        '''emits [Password("wT-t"_fCznEH+tPMt7Y\$JB")] when passwordChanged is added.''',
+        r'''emits [Password("wT-t"_fCznEH+tPMt7Y$JB")] when passwordChanged is added.''',
         build: () => _logInBloc,
         act: (bloc) => bloc.add(const LogInEvent.passwordChanged(testPassword)),
         expect: () => <LogInState>[
