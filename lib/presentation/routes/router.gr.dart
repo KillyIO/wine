@@ -26,52 +26,55 @@ class AppRouter extends _i1.RootStackRouter {
 
   @override
   final Map<String, _i1.PageFactory> pagesMap = {
-    AccountSettingsRoute.name: (routeData) => _i1.AdaptivePage<dynamic>(
-        routeData: routeData,
-        builder: (_) {
-          return const _i3.AccountSettingsPage();
-        }),
-    ChapterSettingsRoute.name: (routeData) => _i1.AdaptivePage<dynamic>(
-        routeData: routeData,
-        builder: (_) {
-          return const _i4.ChapterSettingsPage();
-        }),
-    HomeRoute.name: (routeData) => _i1.AdaptivePage<dynamic>(
+    AccountSettingsRoute.name: (routeData) =>
+        _i1.AdaptivePage<_i3.AccountSettingsPage>(
+            routeData: routeData,
+            builder: (_) {
+              return const _i3.AccountSettingsPage();
+            }),
+    ChapterSettingsRoute.name: (routeData) =>
+        _i1.AdaptivePage<_i4.ChapterSettingsPage>(
+            routeData: routeData,
+            builder: (_) {
+              return const _i4.ChapterSettingsPage();
+            }),
+    HomeRoute.name: (routeData) => _i1.AdaptivePage<_i5.HomePage>(
         routeData: routeData,
         builder: (_) {
           return const _i5.HomePage();
         }),
-    LibraryRoute.name: (routeData) => _i1.AdaptivePage<dynamic>(
+    LibraryRoute.name: (routeData) => _i1.AdaptivePage<_i6.LibraryPage>(
         routeData: routeData,
         builder: (_) {
           return const _i6.LibraryPage();
         }),
-    LogInRoute.name: (routeData) => _i1.AdaptivePage<dynamic>(
+    LogInRoute.name: (routeData) => _i1.AdaptivePage<_i7.LogInPage>(
         routeData: routeData,
         builder: (_) {
           return const _i7.LogInPage();
         }),
-    OnboardingRoute.name: (routeData) => _i1.AdaptivePage<dynamic>(
+    OnboardingRoute.name: (routeData) => _i1.AdaptivePage<_i8.OnboardingPage>(
         routeData: routeData,
         builder: (_) {
           return const _i8.OnboardingPage();
         }),
-    PlusRoute.name: (routeData) => _i1.AdaptivePage<dynamic>(
+    PlusRoute.name: (routeData) => _i1.AdaptivePage<_i9.PlusPage>(
         routeData: routeData,
         builder: (_) {
           return const _i9.PlusPage();
         }),
-    SeriesSettingsRoute.name: (routeData) => _i1.AdaptivePage<dynamic>(
-        routeData: routeData,
-        builder: (_) {
-          return const _i10.SeriesSettingsPage();
-        }),
-    SettingsRoute.name: (routeData) => _i1.AdaptivePage<dynamic>(
+    SeriesSettingsRoute.name: (routeData) =>
+        _i1.AdaptivePage<_i10.SeriesSettingsPage>(
+            routeData: routeData,
+            builder: (_) {
+              return const _i10.SeriesSettingsPage();
+            }),
+    SettingsRoute.name: (routeData) => _i1.AdaptivePage<_i11.SettingsPage>(
         routeData: routeData,
         builder: (_) {
           return const _i11.SettingsPage();
         }),
-    SignUpRoute.name: (routeData) => _i1.AdaptivePage<dynamic>(
+    SignUpRoute.name: (routeData) => _i1.AdaptivePage<_i12.SignUpPage>(
         routeData: routeData,
         builder: (_) {
           return const _i12.SignUpPage();

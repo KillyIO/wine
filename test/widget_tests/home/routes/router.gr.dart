@@ -15,12 +15,12 @@ class HomeTestRouter extends _i1.RootStackRouter {
 
   @override
   final Map<String, _i1.PageFactory> pagesMap = {
-    HomeRoute.name: (routeData) => _i1.AdaptivePage<dynamic>(
+    HomeRoute.name: (routeData) => _i1.AdaptivePage<_i3.HomePage>(
         routeData: routeData,
         builder: (_) {
           return const _i3.HomePage();
         }),
-    OnboardingRoute.name: (routeData) => _i1.AdaptivePage<dynamic>(
+    OnboardingRoute.name: (routeData) => _i1.AdaptivePage<_i4.OnboardingPage>(
         routeData: routeData,
         builder: (_) {
           return const _i4.OnboardingPage();
