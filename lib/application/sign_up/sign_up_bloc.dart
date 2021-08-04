@@ -40,7 +40,7 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
     SignUpEvent event,
   ) async* {
     yield* event.map(
-      accountCreated: (value) async* {
+      accountCreated: (_) async* {
         final userOption = await _authFacade.getLoggedInUser();
         var userAsPlain = userOption?.asPlain();
 
@@ -88,7 +88,7 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
           password: Password(value.passwordStr),
         );
       },
-      signUpPressed: (value) async* {
+      signUpPressed: (_) async* {
         final isUsernameValid = state.username.isValid;
 
         if (isUsernameValid) {
@@ -132,7 +132,7 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
           },
         );
       },
-      usernameAvailabilityConfirmed: (value) async* {
+      usernameAvailabilityConfirmed: (_) async* {
         final isEmailValid = state.emailAddress.isValid;
         final isPasswordValid = state.password.isValid;
         final isConfirmPasswordValid = state.confirmPassword.isValid;
