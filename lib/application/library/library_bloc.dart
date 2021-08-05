@@ -47,16 +47,22 @@ class LibraryBloc extends Bloc<LibraryEvent, LibraryState> {
             _libraryNavigationBloc.stream.listen((libraryNavigationState) {
           switch (libraryNavigationState.currentPageViewIdx) {
             case 0:
+              switch (libraryNavigationState.currentVerticalNavbarIdx) {
+                case 0:
+                  break;
+                case 1:
+                  break;
+                default:
+              }
               break;
             case 1:
-              break;
-            default:
-          }
-
-          switch (libraryNavigationState.currentVerticalNavbarIdx) {
-            case 0:
-              break;
-            case 1:
+              switch (libraryNavigationState.currentVerticalNavbarIdx) {
+                case 0:
+                  break;
+                case 1:
+                  break;
+                default:
+              }
               break;
             default:
           }
