@@ -38,28 +38,29 @@ dependencies:
   rustic: ^0.3.0
   shimmer: ^2.0.0
   simple_gesture_detector: ^0.2.0
-  sizer: ^2.0.13
   string_validator: ^0.3.0
   stringr: ^0.0.2-prerelease
   time: ^2.0.0
   uuid: ^3.0.4
 
 dependency_overrides:
+  analyzer: ^2.0.0
   async: ^2.7.0
+  meta: ^1.7.0
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
   auto_route_generator: ^2.1.0
   bloc_test: ^8.1.0
-  build_runner: ^2.1.0
+  build_runner: ^2.1.1
   fake_cloud_firestore: ^1.1.2
   flutter_flavorizr: ^2.0.0
   fluttericon: ^2.0.0
   freezed: ^0.14.2
   hive_generator: ^1.1.0
   injectable_generator: ^1.4.1
-  json_serializable: ^4.1.4
+  json_serializable: ^5.0.0
   mocktail: ^0.1.4
   very_good_analysis: ^2.3.0
 
