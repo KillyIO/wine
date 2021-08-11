@@ -23,9 +23,7 @@ class AppProduction extends StatelessWidget {
         BlocProvider(create: (_) => getIt<HomeBloc>()),
       ],
       child: MaterialApp.router(
-        builder: (_, router) {
-          return router!;
-        },
+        builder: (_, router) => router!,
         debugShowCheckedModeBanner: false,
         routerDelegate: _appRouter.delegate(),
         routeInformationParser: _appRouter.defaultRouteParser(),
