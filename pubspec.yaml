@@ -35,7 +35,6 @@ dependencies:
   logger: ^1.0.0
   mime: ^1.0.0
   path_provider: ^2.0.2
-  responsive_framework: ^0.1.4
   rustic: ^0.3.0
   shimmer: ^2.0.0
   simple_gesture_detector: ^0.2.0
