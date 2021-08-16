@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:sizer/sizer.dart';
 
 /// @nodoc
 class LogInSeparator extends StatelessWidget {
@@ -13,8 +12,8 @@ class LogInSeparator extends StatelessWidget {
       children: <Widget>[
         Container(
           color: Colors.black26,
-          height: .075.h,
-          width: 12.w,
+          height: 1,
+          width: 100,
         ),
         const Text(
           'OR SIGN IN WITH',
@@ -25,8 +24,8 @@ class LogInSeparator extends StatelessWidget {
         ),
         Container(
           color: Colors.black26,
-          height: .075.h,
-          width: 12.w,
+          height: 1,
+          width: 100,
         ),
       ],
     );

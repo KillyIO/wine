@@ -5,7 +5,6 @@ import 'package:wine/application/home/home_bloc.dart';
 import 'package:wine/application/settings/settings_bloc.dart';
 import 'package:wine/flavors.dart';
 import 'package:wine/injection.dart';
-import 'package:sizer/sizer.dart';
 import 'package:wine/presentation/routes/router.dart';
 
 /// @nodoc
@@ -25,16 +24,12 @@ class AppDevelopment extends StatelessWidget {
         BlocProvider(create: (_) => getIt<HomeBloc>()),
         BlocProvider(create: (_) => getIt<SettingsBloc>()),
       ],
-      child: Sizer(
-        builder: (_, __, ___) {
-          return MaterialApp.router(
-            builder: (_, router) => router!,
-            debugShowCheckedModeBanner: false,
-            routerDelegate: _appRouter.delegate(),
-            routeInformationParser: _appRouter.defaultRouteParser(),
-            title: F.title,
-          );
-        },
+      child: MaterialApp.router(
+        builder: (_, router) => router!,
+        debugShowCheckedModeBanner: false,
+        routerDelegate: _appRouter.delegate(),
+        routeInformationParser: _appRouter.defaultRouteParser(),
+        title: F.title,
       ),
     );
   }

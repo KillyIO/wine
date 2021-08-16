@@ -2,6 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:line_icons/line_icons.dart';
+
 import 'package:wine/application/auth/auth_bloc.dart';
 import 'package:wine/presentation/home/widgets/home_menu_tile.dart';
 import 'package:wine/presentation/routes/router.dart';
@@ -29,17 +30,20 @@ class HomeMenuLayout extends StatelessWidget {
                   brightness: Brightness.light,
                   elevation: 0,
                   actions: [
-                    Builder(
-                      builder: (context) {
-                        return IconButton(
-                          icon: const Icon(
-                            LineIcons.times,
-                            color: Colors.black,
-                            size: 30,
-                          ),
-                          onPressed: context.router.pop,
-                        );
-                      },
+                    SizedBox(
+                      width: 56,
+                      child: Builder(
+                        builder: (context) {
+                          return IconButton(
+                            icon: const Icon(
+                              LineIcons.times,
+                              color: Colors.black,
+                              size: 30,
+                            ),
+                            onPressed: context.router.pop,
+                          );
+                        },
+                      ),
                     ),
                   ],
                 ),

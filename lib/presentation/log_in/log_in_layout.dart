@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:auto_route/auto_route.dart';
 import 'package:line_icons/line_icons.dart';
-import 'package:sizer/sizer.dart';
 
 import 'package:wine/application/auth/auth_bloc.dart';
 import 'package:wine/application/log_in/log_in_bloc.dart';
@@ -96,23 +95,23 @@ class LogInLayout extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
                       Padding(
-                        padding: EdgeInsets.only(left: 5.w, top: 5.h),
+                        padding: const EdgeInsets.only(left: 50, top: 100),
                         child: SizedBox(
                           width: MediaQuery.of(context).size.width,
-                          child: Text(
+                          child: const Text(
                             'Log in to access more features.',
                             textAlign: TextAlign.start,
                             style: TextStyle(
                               color: Colors.black,
-                              fontSize: 6.5.sp,
+                              fontSize: 20,
                               fontWeight: FontWeight.w500,
                             ),
                           ),
                         ),
                       ),
-                      SizedBox(height: 3.5.h),
+                      const SizedBox(height: 75),
                       Padding(
-                        padding: EdgeInsets.only(left: 5.w),
+                        padding: const EdgeInsets.only(left: 50),
                         child: AuthenticationTextField(
                           hintText: 'Email address',
                           onChanged: (value) => context
@@ -134,9 +133,9 @@ class LogInLayout extends StatelessWidget {
                           keyboardType: TextInputType.emailAddress,
                         ),
                       ),
-                      SizedBox(height: 2.h),
+                      const SizedBox(height: 40),
                       Padding(
-                        padding: EdgeInsets.only(left: 5.w),
+                        padding: const EdgeInsets.only(left: 50),
                         child: AuthenticationTextField(
                           hintText: 'Password',
                           onChanged: (value) => context
@@ -157,43 +156,42 @@ class LogInLayout extends StatelessWidget {
                           obscureText: true,
                         ),
                       ),
-                      SizedBox(height: 2.5.h),
+                      const SizedBox(height: 50),
                       Padding(
-                        padding: EdgeInsets.only(left: 5.w),
+                        padding: const EdgeInsets.only(left: 50),
                         child: DefaultButton(
                           color: pastelPink,
-                          fontSize: 6.5.sp,
                           hasRoundedCorners: true,
-                          height: 3.5.h,
+                          isProcessing: state.isProcessing,
                           onPressed: state.isProcessing
                               ? null
                               : () => context.read<LogInBloc>().add(
                                   const LogInEvent
                                       .logInWithEmailAndPasswordPressed()),
                           title: 'Log in'.toUpperCase(),
-                          width: 20.w,
+                          width: 150,
                         ),
                       ),
-                      SizedBox(height: 1.75.h),
+                      const SizedBox(height: 25),
                       Padding(
-                        padding: EdgeInsets.only(left: 5.w),
+                        padding: const EdgeInsets.only(left: 50),
                         child: GestureDetector(
                           onTap: state.isProcessing ? null : () {},
-                          child: Text(
+                          child: const Text(
                             'Forgot password?',
                             style: TextStyle(
                               color: Colors.black,
-                              fontSize: 4.5.sp,
+                              fontSize: 15,
                               fontWeight: FontWeight.w400,
-                              letterSpacing: 0.05.w,
+                              letterSpacing: 0.5,
                               decoration: TextDecoration.underline,
                             ),
                           ),
                         ),
                       ),
-                      SizedBox(height: 2.25.h),
+                      const SizedBox(height: 40),
                       const LogInSeparator(),
-                      SizedBox(height: 2.25.h),
+                      const SizedBox(height: 40),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: <Widget>[
@@ -206,7 +204,7 @@ class LogInLayout extends StatelessWidget {
                           )
                         ],
                       ),
-                      SizedBox(height: 2.5.h),
+                      const SizedBox(height: 50),
                       Align(
                         child: LogInCreateAccountButton(
                           onPressed: state.isProcessing
@@ -215,7 +213,7 @@ class LogInLayout extends StatelessWidget {
                                   context.router.root.push(const SignUpRoute()),
                         ),
                       ),
-                      SizedBox(height: 2.5.h),
+                      const SizedBox(height: 50),
                     ],
                   ),
                 ),

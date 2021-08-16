@@ -1,5 +1,4 @@
 import 'package:flutter/gestures.dart';
-import 'package:sizer/sizer.dart';
 import 'package:flutter/material.dart';
 
 /// @nodoc
@@ -12,9 +11,9 @@ class SignUpTOSAndPPButton extends StatelessWidget {
     return RichText(
       textAlign: TextAlign.center,
       text: TextSpan(
-        style: TextStyle(
+        style: const TextStyle(
           color: Colors.black,
-          fontSize: 5.5.sp,
+          fontSize: 15,
           fontWeight: FontWeight.w300,
         ),
         children: <TextSpan>[

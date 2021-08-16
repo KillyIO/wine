@@ -2,7 +2,6 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:sizer/sizer.dart';
 import 'package:wine/application/sign_up/sign_up_bloc.dart';
 import 'package:wine/injection.dart';
 
@@ -30,16 +29,16 @@ class SignUpPage extends StatelessWidget {
               preferredSize: const Size.fromHeight(0),
               child: Container(
                 color: Colors.black,
-                height: 0.15.h,
+                height: 2,
               ),
             ),
             brightness: Brightness.light,
             centerTitle: true,
             elevation: 0,
             leading: Padding(
-              padding: EdgeInsets.symmetric(
-                horizontal: 1.w,
-                vertical: .5.h,
+              padding: const EdgeInsets.symmetric(
+                horizontal: 10,
+                vertical: 5,
               ),
               child: AssetButton(
                 key: const Key('plus_layout_back_button'),

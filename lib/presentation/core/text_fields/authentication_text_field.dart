@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:sizer/sizer.dart';
 
 /// @nodoc
 class AuthenticationTextField extends StatelessWidget {
@@ -48,31 +47,28 @@ class AuthenticationTextField extends StatelessWidget {
       decoration: InputDecoration(
         hintText: hintText,
         contentPadding:
-            EdgeInsets.symmetric(horizontal: isLogInPage ? 0.0 : 1.5.h),
-        enabledBorder: UnderlineInputBorder(
+            EdgeInsets.symmetric(horizontal: isLogInPage ? 0.0 : 20),
+        enabledBorder: const UnderlineInputBorder(
           borderSide: BorderSide(
             color: Colors.black26,
-            width: 0.15.h,
+            width: 2,
           ),
         ),
-        errorBorder: UnderlineInputBorder(
+        errorBorder: const UnderlineInputBorder(
           borderSide: BorderSide(
             color: Colors.red,
-            width: 0.1.h,
+            width: 1.5,
           ),
         ),
-        focusedBorder: UnderlineInputBorder(
+        focusedBorder: const UnderlineInputBorder(
           borderSide: BorderSide(
-            width: 0.15.h,
+            width: 2,
           ),
         ),
       ),
       keyboardType: keyboardType,
       obscureText: obscureText,
       onChanged: onChanged,
-      style: TextStyle(
-        fontSize: 5.sp,
-      ),
       validator: validator,
     );
   }

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:sizer/sizer.dart';
 
 /// @nodoc
 class TextFieldLabel extends StatelessWidget {
@@ -17,16 +16,16 @@ class TextFieldLabel extends StatelessWidget {
     return Container(
       color: Colors.white,
       width: MediaQuery.of(context).size.width,
-      height: 4.5.h,
+      height: 50,
       child: Align(
         alignment: Alignment.bottomLeft,
         child: Padding(
-          padding: EdgeInsets.only(left: 2.3.w, bottom: 1.h),
+          padding: const EdgeInsets.only(left: 20, bottom: 10),
           child: Text(
             title,
-            style: TextStyle(
+            style: const TextStyle(
               color: Colors.black,
-              fontSize: 5.2.sp,
+              fontSize: 13,
               fontWeight: FontWeight.w500,
             ),
           ),

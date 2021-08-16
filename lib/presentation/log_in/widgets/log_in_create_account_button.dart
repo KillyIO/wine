@@ -1,6 +1,5 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:sizer/sizer.dart';
 
 import 'package:wine/utils/constants/palette.dart';
 
@@ -20,9 +19,9 @@ class LogInCreateAccountButton extends StatelessWidget {
     return RichText(
       text: TextSpan(
         text: 'Not a member? ',
-        style: TextStyle(
+        style: const TextStyle(
           color: Colors.black,
-          fontSize: 5.sp,
+          fontSize: 16,
         ),
         children: <TextSpan>[
           TextSpan(

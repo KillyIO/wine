@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:sizer/sizer.dart';
 
 /// @nodoc
 class LogInSocialMediaButton extends StatelessWidget {
@@ -21,17 +20,17 @@ class LogInSocialMediaButton extends StatelessWidget {
     return TextButton(
       onPressed: onPressed,
       style: TextButton.styleFrom(
-        padding: EdgeInsets.all(2.5.sp),
-        shape: CircleBorder(
+        padding: const EdgeInsets.all(10),
+        shape: const CircleBorder(
           side: BorderSide(
-            width: .75.sp,
+            width: 2,
           ),
         ),
       ),
       child: Icon(
         icon,
         color: Colors.black,
-        size: 10.sp,
+        size: 30,
       ),
     );
   }

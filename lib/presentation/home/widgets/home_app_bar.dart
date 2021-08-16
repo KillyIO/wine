@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:line_icons/line_icons.dart';
+
 import 'package:wine/application/auth/auth_bloc.dart';
 
 /// @nodoc
@@ -53,18 +54,21 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
             );
           },
         ),
-        Builder(
-          builder: (context) {
-            return IconButton(
-              key: const Key('menu_button_closed'),
-              icon: const Icon(
-                LineIcons.bars,
-                color: Colors.black,
-                size: 30,
-              ),
-              onPressed: Scaffold.of(context).openEndDrawer,
-            );
-          },
+        SizedBox(
+          width: 56, // `leadingWidth` default size to match leading icon size.
+          child: Builder(
+            builder: (context) {
+              return IconButton(
+                key: const Key('menu_button_closed'),
+                icon: const Icon(
+                  LineIcons.bars,
+                  color: Colors.black,
+                  size: 30,
+                ),
+                onPressed: Scaffold.of(context).openEndDrawer,
+              );
+            },
+          ),
         ),
       ],
     );

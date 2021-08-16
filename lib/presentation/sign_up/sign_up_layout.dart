@@ -1,7 +1,6 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter/material.dart';
-import 'package:sizer/sizer.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:wine/application/auth/auth_bloc.dart';
 import 'package:wine/application/sign_up/sign_up_bloc.dart';
@@ -113,7 +112,7 @@ class SignUpLayout extends StatelessWidget {
                             ),
                         keyboardType: TextInputType.emailAddress,
                       ),
-                      SizedBox(height: 0.85.h),
+                      const SizedBox(height: 10),
                       // SECTION password
                       const TextFieldLabel(title: 'PASSWORD*'),
                       AuthenticationTextField(
@@ -136,7 +135,7 @@ class SignUpLayout extends StatelessWidget {
                               ),
                             ),
                       ),
-                      SizedBox(height: 0.85.h),
+                      const SizedBox(height: 10),
                       // SECTION confirm password
                       const TextFieldLabel(title: 'CONFIRM YOUR PASSWORD*'),
                       AuthenticationTextField(
@@ -159,7 +158,7 @@ class SignUpLayout extends StatelessWidget {
                               ),
                             ),
                       ),
-                      SizedBox(height: 0.85.h),
+                      const SizedBox(height: 10),
                       // SECTION Username
                       const TextFieldLabel(title: 'USERNAME*'),
                       AuthenticationTextField(
@@ -181,15 +180,14 @@ class SignUpLayout extends StatelessWidget {
                               ),
                             ),
                       ),
-                      SizedBox(height: 2.5.h),
-                      Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 1.25.w),
-                        child: const SignUpTOSAndPPButton(),
+                      const SizedBox(height: 25),
+                      const Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 20),
+                        child: SignUpTOSAndPPButton(),
                       ),
-                      SizedBox(height: 2.8.h),
+                      const SizedBox(height: 30),
                       DefaultButton(
                         color: pastelPink,
-                        height: 4.25.h,
                         title: 'SIGN UP',
                         isProcessing: state.isProcessing,
                         onPressed: state.isProcessing
@@ -198,7 +196,7 @@ class SignUpLayout extends StatelessWidget {
                                 .read<SignUpBloc>()
                                 .add(const SignUpEvent.signUpPressed()),
                       ),
-                      SizedBox(height: 2.h),
+                      const SizedBox(height: 20),
                     ],
                   ),
                 ),

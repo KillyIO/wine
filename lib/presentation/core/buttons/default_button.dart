@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:sizer/sizer.dart';
 
 /// @nodoc
 class DefaultButton extends StatelessWidget {
@@ -7,13 +6,13 @@ class DefaultButton extends StatelessWidget {
   const DefaultButton({
     Key? key,
     required this.color,
-    this.fontSize,
+    this.fontSize = 20,
     this.isProcessing = false,
     this.hasRoundedCorners = false,
-    this.height,
+    this.height = 50,
     required this.title,
     this.onPressed,
-    this.width,
+    this.width = 100,
   }) : super(key: key);
 
   /// @nodoc
@@ -43,8 +42,8 @@ class DefaultButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: height ?? 2.5.h,
-      width: width ?? 100.w,
+      height: height,
+      width: width,
       child: TextButton(
         onPressed: onPressed,
         style: TextButton.styleFrom(
@@ -56,10 +55,10 @@ class DefaultButton extends StatelessWidget {
           ),
         ),
         child: isProcessing
-            ? SizedBox(
-                height: 2.h,
-                width: 2.h,
-                child: const CircularProgressIndicator(
+            ? const SizedBox(
+                height: 25,
+                width: 25,
+                child: CircularProgressIndicator(
                   valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
                 ),
               )
@@ -67,7 +66,7 @@ class DefaultButton extends StatelessWidget {
                 title,
                 style: TextStyle(
                   color: Colors.white,
-                  fontSize: fontSize ?? 7.5.sp,
+                  fontSize: fontSize,
                   fontWeight: FontWeight.w500,
                 ),
               ),

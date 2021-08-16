@@ -5,7 +5,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:wine/application/log_in/log_in_bloc.dart';
 import 'package:wine/injection.dart';
 import 'package:wine/presentation/core/buttons/asset_button.dart';
-import 'package:sizer/sizer.dart';
 
 import 'package:wine/presentation/log_in/log_in_layout.dart';
 import 'package:wine/utils/assets/icons.dart';
@@ -30,17 +29,14 @@ class LogInPage extends StatelessWidget {
               preferredSize: const Size.fromHeight(0),
               child: Container(
                 color: Colors.black,
-                height: 0.15.h,
+                height: 2,
               ),
             ),
             brightness: Brightness.light,
             centerTitle: true,
             elevation: 0,
             leading: Padding(
-              padding: EdgeInsets.symmetric(
-                horizontal: 1.w,
-                vertical: .5.h,
-              ),
+              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
               child: AssetButton(
                 key: const Key('plus_layout_back_button'),
                 imagePath: backIcon,
