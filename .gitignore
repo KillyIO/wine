@@ -83,6 +83,7 @@
 
 # Web related
 lib/generated_plugin_registrant.dart
+web/index.html
 
 # Symbolication related
 app.*.symbols
