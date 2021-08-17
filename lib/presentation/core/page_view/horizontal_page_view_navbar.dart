@@ -31,6 +31,7 @@ class HorizontalPageViewNavbar extends StatelessWidget {
       duration: 100.milliseconds,
       height: 30,
       width: MediaQuery.of(context).size.width,
+      color: colors[pageIndex],
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: titles.asMap().entries.map((entry) {
