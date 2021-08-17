@@ -3,13 +3,14 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:line_icons/line_icons.dart';
 
 import 'package:wine/application/auth/auth_bloc.dart';
+import 'package:wine/utils/constants/core.dart';
 
 /// @nodoc
 class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
   /// @nodoc
   const HomeAppBar({
     Key? key,
-    this.preferredSize = const Size.fromHeight(kToolbarHeight),
+    this.preferredSize = const Size.fromHeight(defaultAppBarHeight),
   }) : super(key: key);
 
   @override
@@ -19,21 +20,31 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
   Widget build(BuildContext context) {
     return AppBar(
       backgroundColor: Colors.transparent,
+      bottom: PreferredSize(
+        preferredSize: const Size.fromHeight(0),
+        child: Container(color: Colors.black, height: 2),
+      ),
       brightness: Brightness.light,
       elevation: 0,
-      leading: Builder(
-        builder: (context) {
-          return IconButton(
-            key: const Key('filter_button'),
-            icon: const Icon(
-              LineIcons.horizontalSliders,
-              color: Colors.black,
-              size: 30,
-            ),
-            onPressed: Scaffold.of(context).openDrawer,
-          );
-        },
+      leading: Padding(
+        padding: const EdgeInsets.only(left: 10),
+        child: Builder(
+          builder: (context) {
+            return IconButton(
+              key: const Key('filter_button'),
+              highlightColor: Colors.transparent,
+              hoverColor: Colors.transparent,
+              icon: const Icon(
+                LineIcons.horizontalSliders,
+                color: Colors.black,
+              ),
+              onPressed: Scaffold.of(context).openDrawer,
+              splashColor: Colors.transparent,
+            );
+          },
+        ),
       ),
+      leadingWidth: defaultToolbarItemWidth,
       actions: [
         BlocBuilder<AuthBloc, AuthState>(
           builder: (context, state) {
@@ -42,10 +53,10 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
                 padding: const EdgeInsets.only(right: 20),
                 child: IconButton(
                   key: const Key('new_series_button'),
+                  focusColor: Colors.transparent,
                   icon: const Icon(
                     LineIcons.plus,
                     color: Colors.black,
-                    size: 30,
                   ),
                   onPressed: () {},
                 ),
@@ -54,18 +65,20 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
             );
           },
         ),
-        SizedBox(
-          width: 56, // `leadingWidth` default size to match leading icon size.
+        Padding(
+          padding: const EdgeInsets.only(right: 10),
           child: Builder(
             builder: (context) {
               return IconButton(
                 key: const Key('menu_button_closed'),
+                highlightColor: Colors.transparent,
+                hoverColor: Colors.transparent,
                 icon: const Icon(
                   LineIcons.bars,
                   color: Colors.black,
-                  size: 30,
                 ),
                 onPressed: Scaffold.of(context).openEndDrawer,
+                splashColor: Colors.transparent,
               );
             },
           ),
