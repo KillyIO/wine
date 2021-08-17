@@ -13,6 +13,7 @@ import 'package:wine/presentation/home/home_menu_layout.dart';
 import 'package:wine/presentation/home/widgets/home_app_bar.dart';
 import 'package:wine/presentation/home/widgets/home_page_view_builder.dart';
 import 'package:wine/presentation/routes/router.dart';
+import 'package:wine/utils/constants/core.dart';
 import 'package:wine/utils/constants/home.dart';
 import 'package:wine/utils/constants/palette.dart';
 import 'package:wine/utils/functions.dart';
@@ -111,23 +112,30 @@ class HomeLayout extends StatelessWidget {
             orElse: () {},
           );
         },
-        child: Column(
-          children: <Widget>[
-            BlocBuilder<HomeNavigationBloc, HomeNavigationState>(
-              builder: (context, state) {
-                return HorizontalPageViewNavbar(
-                  colors: const <Color>[pastelYellow, pastelPink],
+        child: Center(
+          child: Container(
+            constraints: const BoxConstraints(
+              maxWidth: maxContentLayoutWidth,
+            ),
+            child: Column(
+              children: <Widget>[
+                BlocBuilder<HomeNavigationBloc, HomeNavigationState>(
+                  builder: (context, state) {
+                    return HorizontalPageViewNavbar(
+                      colors: const <Color>[pastelYellow, pastelPink],
+                      controller: _pageController,
+                      pageIndex: state.currentPageViewIdx,
+                      titles: homePageViewKeys,
+                    );
+                  },
+                ),
+                HomePageViewBuilder(
                   controller: _pageController,
-                  pageIndex: state.currentPageViewIdx,
-                  titles: homePageViewKeys,
-                );
-              },
+                ),
+                if (kIsWeb) const Footer(),
+              ],
             ),
-            HomePageViewBuilder(
-              controller: _pageController,
-            ),
-            const Footer(),
-          ],
+          ),
         ),
       ),
       drawer: SizedBox(
