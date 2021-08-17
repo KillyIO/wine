@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:bloc/bloc.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 
@@ -106,7 +107,11 @@ class SetupBloc extends Bloc<SetupEvent, SetupState> {
       sessionNotFound: (_) async* {
         yield* (await _sessionsRepository.createSession()).match(
           (session) async* {
-            yield const SetupState.navigateToOnboarding();
+            if (kIsWeb) {
+              yield const SetupState.initHomeBloc();
+            } else {
+              yield const SetupState.navigateToOnboarding();
+            }
           },
           (failure) async* {
             yield SetupState.failure(CoreFailure.sessions(failure));
