@@ -58,28 +58,33 @@ class Responsive extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    if (isMobileSmall(context) && mobileSmall != null) {
-      return mobileSmall!;
-    } else if (isMobileLarge(context) && mobileLarge != null) {
-      return mobileLarge!;
-    } else if (isMobileExtraLarge(context) && mobileExtraLarge != null) {
-      return mobileExtraLarge!;
-    } else if (isTabletSmall(context) && tabletSmall != null) {
-      return tabletSmall!;
-    } else if (isTabletNormal(context) && tabletNormal != null) {
-      return tabletNormal!;
-    } else if (isTabletLarge(context) && tabletLarge != null) {
-      return tabletLarge!;
-    } else if (isTabletExtraLarge(context) && tabletExtraLarge != null) {
-      return tabletExtraLarge!;
-    } else if (isDesktopSmall(context) && desktopSmall != null) {
-      return desktopSmall!;
-    } else if (isDesktopNormal(context)) {
+    if (isMobile(context)) {
+      if (isMobileSmall(context) && mobileSmall != null) {
+        return mobileSmall!;
+      } else if (isMobileLarge(context) && mobileLarge != null) {
+        return mobileLarge!;
+      } else if (isMobileExtraLarge(context) && mobileExtraLarge != null) {
+        return mobileExtraLarge!;
+      }
+    } else if (isTablet(context)) {
+      if (isTabletSmall(context) && tabletSmall != null) {
+        return tabletSmall!;
+      } else if (isTabletNormal(context) && tabletNormal != null) {
+        return tabletNormal!;
+      } else if (isTabletLarge(context) && tabletLarge != null) {
+        return tabletLarge!;
+      } else if (isTabletExtraLarge(context) && tabletExtraLarge != null) {
+        return tabletExtraLarge!;
+      }
+    } else {
+      if (isDesktopSmall(context) && desktopSmall != null) {
+        return desktopSmall!;
+      } else if (isDesktopLarge(context) && desktopLarge != null) {
+        return desktopLarge!;
+      } else if (isDesktopExtraLarge(context) && desktopExtraLarge != null) {
+        return desktopExtraLarge!;
+      }
       return desktopNormal;
-    } else if (isDesktopLarge(context) && desktopLarge != null) {
-      return desktopLarge!;
-    } else if (isDesktopExtraLarge(context) && desktopExtraLarge != null) {
-      return desktopExtraLarge!;
     }
     return mobileNormal;
   }

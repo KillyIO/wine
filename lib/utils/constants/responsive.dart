@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+// SECTION mobile breakpoints
 /// @nodoc
 const double mobileSmall = 320;
 
@@ -12,6 +13,7 @@ const double mobileLarge = 414;
 /// @nodoc
 const double mobileExtraLarge = 480;
 
+// SECTION tablet breakpoints
 /// @nodoc
 const double tabletSmall = 600;
 
@@ -24,6 +26,7 @@ const double tabletLarge = 850;
 /// @nodoc
 const double tabletExtraLarge = 900;
 
+// SECTION desktop breakpoints
 /// @nodoc
 const double desktopSmall = 950;
 
@@ -36,6 +39,7 @@ const double desktopLarge = 3840;
 /// @nodoc
 const double desktopExtraLarge = 4096;
 
+// SECTION mobile breakpoint checkers
 /// @nodoc
 bool isMobileSmall(BuildContext context) =>
     MediaQuery.of(context).size.width <= mobileSmall;
@@ -55,6 +59,11 @@ bool isMobileExtraLarge(BuildContext context) =>
     MediaQuery.of(context).size.width > mobileLarge &&
     MediaQuery.of(context).size.width <= mobileExtraLarge;
 
+/// @nodoc
+bool isMobile(BuildContext context) =>
+    MediaQuery.of(context).size.width <= mobileExtraLarge;
+
+// SECTION tablet breakpoint checkers
 /// @nodoc
 bool isTabletSmall(BuildContext context) =>
     MediaQuery.of(context).size.width > mobileExtraLarge &&
@@ -76,6 +85,12 @@ bool isTabletExtraLarge(BuildContext context) =>
     MediaQuery.of(context).size.width <= tabletExtraLarge;
 
 /// @nodoc
+bool isTablet(BuildContext context) =>
+    MediaQuery.of(context).size.width > mobileExtraLarge &&
+    MediaQuery.of(context).size.width <= tabletExtraLarge;
+
+// SECTION desktop breakpoint checkers
+/// @nodoc
 bool isDesktopSmall(BuildContext context) =>
     MediaQuery.of(context).size.width > tabletExtraLarge &&
     MediaQuery.of(context).size.width <= desktopSmall;
@@ -93,4 +108,9 @@ bool isDesktopLarge(BuildContext context) =>
 /// @nodoc
 bool isDesktopExtraLarge(BuildContext context) =>
     MediaQuery.of(context).size.width > desktopLarge &&
+    MediaQuery.of(context).size.width <= desktopExtraLarge;
+
+/// @nodoc
+bool isDesktop(BuildContext context) =>
+    MediaQuery.of(context).size.width > tabletExtraLarge &&
     MediaQuery.of(context).size.width <= desktopExtraLarge;
