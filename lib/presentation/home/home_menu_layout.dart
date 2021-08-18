@@ -1,12 +1,17 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:line_icons/line_icons.dart';
 import 'package:responsive_builder/responsive_builder.dart';
+import 'package:wine/application/auth/auth_dialog/auth_dialog_cubit.dart';
+import 'package:wine/application/log_in/log_in_bloc.dart';
+import 'package:wine/application/sign_up/sign_up_bloc.dart';
+import 'package:wine/injection.dart';
 
-import 'package:wine/application/auth/auth_bloc.dart';
 import 'package:wine/presentation/home/widgets/home_menu_tile.dart';
 import 'package:wine/presentation/routes/router.dart';
+import 'package:wine/presentation/web/auth_dialog.dart';
 import 'package:wine/utils/constants/core.dart';
 
 /// @nodoc
@@ -31,6 +36,42 @@ class HomeMenuLayout extends StatelessWidget {
           return size.width * .75;
         }
         return size.width;
+    }
+  }
+
+  Future<void> _handleLibraryButtonPressed(BuildContext context) async {
+    if (kIsWeb) {
+      await context.router.pop().then(
+            (_) => showDialog<bool>(
+              context: context,
+              builder: (_) => MultiBlocProvider(
+                providers: [
+                  BlocProvider(
+                    create: (_) => getIt<AuthDialogCubit>(),
+                  ),
+                  BlocProvider(
+                    create: (context) => getIt<LogInBloc>(),
+                  ),
+                  BlocProvider(
+                    create: (context) => getIt<SignUpBloc>(),
+                  ),
+                ],
+                child: const AuthDialog(
+                  key: Key('auth_dialog'),
+                ),
+              ),
+            ),
+          );
+
+      // await showDialog<bool>(
+      //   context: context,
+      //   builder: (_) => const AuthDialog(
+      //     key: Key('auth_dialog'),
+      //   ),
+      // );
+
+    } else {
+      await context.router.root.push(const LibraryRoute());
     }
   }
 
@@ -76,20 +117,25 @@ class HomeMenuLayout extends StatelessWidget {
               child: Column(
                 children: <Widget>[
                   Expanded(child: Container()),
-                  BlocBuilder<AuthBloc, AuthState>(
-                    builder: (context, state) {
-                      return state.maybeMap(
-                        authenticated: (_) => HomeMenuTile(
-                          key: const Key('home_menu_library_tile'),
-                          // TODO add route push LibraryPage
-                          onPressed: () =>
-                              context.router.root.push(const LibraryRoute()),
-                          text: 'LIBRARY',
-                        ),
-                        orElse: () => Container(),
-                      );
-                    },
+                  HomeMenuTile(
+                    key: const Key('home_menu_library_tile'),
+                    onPressed: () => _handleLibraryButtonPressed(context),
+                    text: 'LIBRARY',
                   ),
+                  // BlocBuilder<AuthBloc, AuthState>(
+                  //   builder: (context, state) {
+                  //     return state.maybeMap(
+                  //       authenticated: (_) => HomeMenuTile(
+                  //         key: const Key('home_menu_library_tile'),
+                  //         // TODO add route push LibraryPage
+                  //         onPressed: () =>
+                  //             context.router.root.push(const LibraryRoute()),
+                  //         text: 'LIBRARY',
+                  //       ),
+                  //       orElse: () => Container(),
+                  //     );
+                  //   },
+                  // ),
                   const SizedBox(height: 25),
                   HomeMenuTile(
                     key: const Key('home_menu_plus_tile'),
