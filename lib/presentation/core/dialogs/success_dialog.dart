@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:line_icons/line_icons.dart';
+import 'package:responsive_builder/responsive_builder.dart';
+import 'package:wine/utils/constants/core.dart';
 import 'package:wine/utils/constants/palette.dart';
 
 /// @nodoc
@@ -21,6 +23,23 @@ class SuccessDialog extends StatelessWidget {
   /// @nodoc
   final VoidCallback onPressed;
 
+  double _getDialogWidth(Size size) {
+    final deviceType = getDeviceType(size);
+    final refinedSize = getRefinedSize(size);
+
+    switch (deviceType) {
+      case DeviceScreenType.desktop:
+        if (refinedSize == RefinedSize.small) {
+          return size.width * .35;
+        }
+        return size.width * .2;
+      case DeviceScreenType.tablet:
+        return size.width * .5;
+      default:
+        return size.width * .5;
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     final mediaQuery = MediaQuery.of(context).size;
@@ -29,7 +48,7 @@ class SuccessDialog extends StatelessWidget {
       elevation: 10,
       child: Container(
         color: Colors.white,
-        width: mediaQuery.width * .5,
+        width: _getDialogWidth(mediaQuery),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
@@ -79,6 +98,7 @@ class SuccessDialog extends StatelessWidget {
             ),
             Container(
               color: success,
+              height: dialogButtonDefaultHeight,
               width: double.infinity,
               child: TextButton(
                 onPressed: onPressed,
