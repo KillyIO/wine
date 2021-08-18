@@ -1,8 +1,8 @@
 /// @nodoc
-const String accountSettingsPath = '/settings/account';
+const String accountSettingsPath = 'account';
 
 /// @nodoc
-const String chapterSettingsPath = '/settings/chapter';
+const String chapterSettingsPath = 'chapter';
 
 /// @nodoc
 const String homePath = '/';
@@ -20,7 +20,7 @@ const String onboardingPath = '/onboarding';
 const String plusPath = '/plus';
 
 /// @nodoc
-const String seriesSettingsPath = '/settings/series';
+const String seriesSettingsPath = 'series';
 
 /// @nodoc
 const String settingsPath = '/settings';
