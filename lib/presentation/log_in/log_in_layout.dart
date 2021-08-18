@@ -17,7 +17,13 @@ import 'package:wine/utils/functions.dart';
 /// @nodoc
 class LogInLayout extends StatelessWidget {
   /// @nodoc
-  const LogInLayout({Key? key}) : super(key: key);
+  const LogInLayout({
+    Key? key,
+    this.onSignUpButtonPressed,
+  }) : super(key: key);
+
+  /// @nodoc
+  final VoidCallback? onSignUpButtonPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -209,8 +215,9 @@ class LogInLayout extends StatelessWidget {
                         child: LogInCreateAccountButton(
                           onPressed: state.isProcessing
                               ? null
-                              : () =>
-                                  context.router.root.push(const SignUpRoute()),
+                              : onSignUpButtonPressed ??
+                                  () => context.router.root
+                                      .push(const SignUpRoute()),
                         ),
                       ),
                       const SizedBox(height: 50),
