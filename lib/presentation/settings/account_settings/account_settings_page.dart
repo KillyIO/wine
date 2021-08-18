@@ -42,7 +42,7 @@ class AccountSettingsPage extends StatelessWidget {
               ),
               child: AssetButton(
                 imagePath: backIcon,
-                onPressed: context.router.root.pop,
+                onPressed: context.router.pop,
               ),
             ),
             title: const Text(
