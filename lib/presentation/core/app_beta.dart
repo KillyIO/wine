@@ -4,6 +4,7 @@ import 'package:wine/application/auth/auth_bloc.dart';
 import 'package:wine/application/home/home_bloc.dart';
 import 'package:wine/flavors.dart';
 import 'package:wine/injection.dart';
+import 'package:wine/presentation/routes/guards/auth_guard.dart';
 import 'package:wine/presentation/routes/router.gr.dart';
 
 /// @nodoc
@@ -13,7 +14,7 @@ class AppBeta extends StatelessWidget {
 
   // /// @nodoc
   // final FirebaseAnalytics analytics = FirebaseAnalytics();
-  final _appRouter = AppRouter();
+  final _appRouter = AppRouter(authGuard: AuthGuard());
 
   @override
   Widget build(BuildContext context) {

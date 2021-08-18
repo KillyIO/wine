@@ -17,26 +17,34 @@ class PlusLayout extends StatelessWidget {
     return Column(
       children: <Widget>[
         const PlusBanner(),
-        BlocBuilder<AuthBloc, AuthState>(
-          builder: (context, state) {
-            return TileButton(
-              key: const Key('plus_library_button'),
-              isFirst: true,
-              leadingIconData: Icons.collections_bookmark_outlined,
-              title: 'LIBRARY',
-              trailingIconData: Icons.keyboard_arrow_right,
-              onPressed: () => state.maybeMap(
-                authenticated: (_) =>
-                    context.router.root.push(const LibraryRoute()),
-                orElse: () => context.router.root.push(const LogInRoute()),
-              ),
-            );
-          },
+        TileButton(
+          key: const Key('plus_library_button'),
+          isFirst: true,
+          leadingIconData: Icons.collections_bookmark_outlined,
+          title: 'LIBRARY',
+          trailingIconData: Icons.keyboard_arrow_right,
+          onPressed: () => context.router.root.push(const LibraryRoute()),
         ),
+        // BlocBuilder<AuthBloc, AuthState>(
+        //   builder: (context, state) {
+        //     return TileButton(
+        //       key: const Key('plus_library_button'),
+        //       isFirst: true,
+        //       leadingIconData: Icons.collections_bookmark_outlined,
+        //       title: 'LIBRARY',
+        //       trailingIconData: Icons.keyboard_arrow_right,
+        //       onPressed: () => state.maybeMap(
+        //         authenticated: (_) =>
+        //             context.router.root.push(const LibraryRoute()),
+        //         orElse: () => context.router.root.push(const LogInRoute()),
+        //       ),
+        //     );
+        //   },
+        // ),
         TileButton(
           key: const Key('plus_settings_button'),
           leadingIconData: LineIcons.cog,
-          onPressed: () => context.router.root.push(const SettingsRoute()),
+          onPressed: () => context.router.root.push(const SettingsWrapper()),
           title: 'SETTINGS',
           trailingIconData: Icons.keyboard_arrow_right,
         ),

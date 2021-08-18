@@ -7,6 +7,7 @@ import 'package:wine/application/home/home_bloc.dart';
 import 'package:wine/application/settings/settings_bloc.dart';
 import 'package:wine/flavors.dart';
 import 'package:wine/injection.dart';
+import 'package:wine/presentation/routes/guards/auth_guard.dart';
 import 'package:wine/presentation/routes/router.dart';
 
 /// @nodoc
@@ -14,7 +15,7 @@ class AppDevelopmentDevicePreview extends StatelessWidget {
   /// @nodoc
   AppDevelopmentDevicePreview({Key? key}) : super(key: key);
 
-  final _appRouter = AppRouter();
+  final _appRouter = AppRouter(authGuard: AuthGuard());
 
   @override
   Widget build(BuildContext context) {

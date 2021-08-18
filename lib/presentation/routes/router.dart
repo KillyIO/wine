@@ -4,11 +4,13 @@ import 'package:wine/presentation/library/library_page.dart';
 import 'package:wine/presentation/log_in/log_in_page.dart';
 import 'package:wine/presentation/onboarding/onboarding_page.dart';
 import 'package:wine/presentation/plus/plus_page.dart';
+import 'package:wine/presentation/routes/guards/auth_guard.dart';
 import 'package:wine/presentation/settings/account_settings/account_settings_page.dart';
 import 'package:wine/presentation/settings/chapter_settings/chapter_settings_page.dart';
 import 'package:wine/presentation/settings/series_settings/series_settings_page.dart';
 import 'package:wine/presentation/settings/settings_page.dart';
 import 'package:wine/presentation/sign_up/sign_up_page.dart';
+import 'package:wine/presentation/wrappers/settings_wrapper.dart';
 import 'package:wine/utils/paths/router.dart';
 
 export 'router.gr.dart';
@@ -16,44 +18,51 @@ export 'router.gr.dart';
 @AdaptiveAutoRouter(
   replaceInRouteName: 'Page,Route',
   routes: <AutoRoute>[
-    AdaptiveRoute<AccountSettingsPage>(
-      page: AccountSettingsPage,
-      path: accountSettingsPath,
-    ),
-    AdaptiveRoute<ChapterSettingsPage>(
-      page: ChapterSettingsPage,
-      path: chapterSettingsPath,
-    ),
-    AdaptiveRoute<HomePage>(
+    AutoRoute<HomePage>(
       page: HomePage,
       path: homePath,
       initial: true,
     ),
-    AdaptiveRoute<LibraryPage>(
+    AutoRoute<LibraryPage>(
+      guards: <Type>[AuthGuard],
       page: LibraryPage,
       path: libraryPath,
     ),
-    AdaptiveRoute<LogInPage>(
+    AutoRoute<LogInPage>(
       page: LogInPage,
       path: logInPath,
     ),
-    AdaptiveRoute<OnboardingPage>(
+    AutoRoute<OnboardingPage>(
       page: OnboardingPage,
       path: onboardingPath,
     ),
-    AdaptiveRoute<PlusPage>(
+    AutoRoute<PlusPage>(
       page: PlusPage,
       path: plusPath,
     ),
-    AdaptiveRoute<SeriesSettingsPage>(
-      page: SeriesSettingsPage,
-      path: seriesSettingsPath,
-    ),
-    AdaptiveRoute<SettingsPage>(
-      page: SettingsPage,
+    AutoRoute<SettingsWrapper>(
+      page: SettingsWrapper,
       path: settingsPath,
+      children: <AutoRoute>[
+        AutoRoute<AccountSettingsPage>(
+          page: AccountSettingsPage,
+          path: accountSettingsPath,
+        ),
+        AutoRoute<ChapterSettingsPage>(
+          page: ChapterSettingsPage,
+          path: chapterSettingsPath,
+        ),
+        AutoRoute<SeriesSettingsPage>(
+          page: SeriesSettingsPage,
+          path: seriesSettingsPath,
+        ),
+        AutoRoute<SettingsPage>(
+          page: SettingsPage,
+          path: '',
+        ),
+      ],
     ),
-    AdaptiveRoute<SignUpPage>(
+    AutoRoute<SignUpPage>(
       page: SignUpPage,
       path: signUpPath,
     ),
