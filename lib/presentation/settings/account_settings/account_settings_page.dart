@@ -4,6 +4,7 @@ import 'package:flutter/services.dart';
 import 'package:wine/presentation/core/buttons/asset_button.dart';
 import 'package:wine/presentation/settings/account_settings/account_settings_layout.dart';
 import 'package:wine/utils/assets/icons.dart';
+import 'package:wine/utils/constants/core.dart';
 import 'package:wine/utils/themes.dart';
 
 /// @nodoc
@@ -22,7 +23,7 @@ class AccountSettingsPage extends StatelessWidget {
       child: Scaffold(
         backgroundColor: Colors.white,
         appBar: PreferredSize(
-          preferredSize: const Size.fromHeight(41.5),
+          preferredSize: const Size.fromHeight(defaultAppBarHeight),
           child: AppBar(
             backgroundColor: Colors.transparent,
             bottom: PreferredSize(

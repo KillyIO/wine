@@ -169,12 +169,18 @@ class _$AppLaunchedCopyWithImpl<$Res> extends _$SetupEventCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$AppLaunched implements AppLaunched {
+class _$AppLaunched with DiagnosticableTreeMixin implements AppLaunched {
   const _$AppLaunched();
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'SetupEvent.appLaunched()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties..add(DiagnosticsProperty('type', 'SetupEvent.appLaunched'));
   }
 
   @override
@@ -290,12 +296,18 @@ class _$AuthenticatedCopyWithImpl<$Res> extends _$SetupEventCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$Authenticated implements Authenticated {
+class _$Authenticated with DiagnosticableTreeMixin implements Authenticated {
   const _$Authenticated();
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'SetupEvent.authenticated()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties..add(DiagnosticsProperty('type', 'SetupEvent.authenticated'));
   }
 
   @override
@@ -412,12 +424,21 @@ class _$DefaultCoverURLsCachedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$DefaultCoverURLsCached implements DefaultCoverURLsCached {
+class _$DefaultCoverURLsCached
+    with DiagnosticableTreeMixin
+    implements DefaultCoverURLsCached {
   const _$DefaultCoverURLsCached();
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'SetupEvent.defaultCoverURLsCached()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'SetupEvent.defaultCoverURLsCached'));
   }
 
   @override
@@ -547,15 +568,25 @@ class _$DefaultCoverURLsLoadedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$DefaultCoverURLsLoaded implements DefaultCoverURLsLoaded {
+class _$DefaultCoverURLsLoaded
+    with DiagnosticableTreeMixin
+    implements DefaultCoverURLsLoaded {
   const _$DefaultCoverURLsLoaded(this.defaultCoverURLs);
 
   @override
   final Map<String, String> defaultCoverURLs;
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'SetupEvent.defaultCoverURLsLoaded(defaultCoverURLs: $defaultCoverURLs)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'SetupEvent.defaultCoverURLsLoaded'))
+      ..add(DiagnosticsProperty('defaultCoverURLs', defaultCoverURLs));
   }
 
   @override
@@ -712,15 +743,23 @@ class _$SessionFetchedCopyWithImpl<$Res> extends _$SetupEventCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$SessionFetched implements SessionFetched {
+class _$SessionFetched with DiagnosticableTreeMixin implements SessionFetched {
   const _$SessionFetched(this.session);
 
   @override
   final User session;
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'SetupEvent.sessionFetched(session: $session)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'SetupEvent.sessionFetched'))
+      ..add(DiagnosticsProperty('session', session));
   }
 
   @override
@@ -850,12 +889,20 @@ class _$SessionNotFoundCopyWithImpl<$Res> extends _$SetupEventCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$SessionNotFound implements SessionNotFound {
+class _$SessionNotFound
+    with DiagnosticableTreeMixin
+    implements SessionNotFound {
   const _$SessionNotFound();
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'SetupEvent.sessionNotFound()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties..add(DiagnosticsProperty('type', 'SetupEvent.sessionNotFound'));
   }
 
   @override
@@ -972,12 +1019,21 @@ class _$SettingsInitializedCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$SettingsInitialized implements SettingsInitialized {
+class _$SettingsInitialized
+    with DiagnosticableTreeMixin
+    implements SettingsInitialized {
   const _$SettingsInitialized();
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'SetupEvent.settingsInitialized()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'SetupEvent.settingsInitialized'));
   }
 
   @override
@@ -1093,12 +1149,20 @@ class _$SettingsFetchedCopyWithImpl<$Res> extends _$SetupEventCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$SettingsFetched implements SettingsFetched {
+class _$SettingsFetched
+    with DiagnosticableTreeMixin
+    implements SettingsFetched {
   const _$SettingsFetched();
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'SetupEvent.settingsFetched()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties..add(DiagnosticsProperty('type', 'SetupEvent.settingsFetched'));
   }
 
   @override
@@ -1215,12 +1279,20 @@ class _$SettingsNotFoundCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$SettingsNotFound implements SettingsNotFound {
+class _$SettingsNotFound
+    with DiagnosticableTreeMixin
+    implements SettingsNotFound {
   const _$SettingsNotFound();
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'SetupEvent.settingsNotFound()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties..add(DiagnosticsProperty('type', 'SetupEvent.settingsNotFound'));
   }
 
   @override
@@ -1357,15 +1429,23 @@ class _$UserLoadedCopyWithImpl<$Res> extends _$SetupEventCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$UserLoaded implements UserLoaded {
+class _$UserLoaded with DiagnosticableTreeMixin implements UserLoaded {
   const _$UserLoaded(this.user);
 
   @override
   final User user;
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'SetupEvent.userLoaded(user: $user)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'SetupEvent.userLoaded'))
+      ..add(DiagnosticsProperty('user', user));
   }
 
   @override
@@ -1595,15 +1675,23 @@ class __$FailureCopyWithImpl<$Res> extends _$SetupStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_Failure implements _Failure {
+class _$_Failure with DiagnosticableTreeMixin implements _Failure {
   const _$_Failure(this.failure);
 
   @override
   final CoreFailure failure;
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'SetupState.failure(failure: $failure)';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'SetupState.failure'))
+      ..add(DiagnosticsProperty('failure', failure));
   }
 
   @override
@@ -1705,12 +1793,18 @@ class __$InitHomeBlocCopyWithImpl<$Res> extends _$SetupStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_InitHomeBloc implements _InitHomeBloc {
+class _$_InitHomeBloc with DiagnosticableTreeMixin implements _InitHomeBloc {
   const _$_InitHomeBloc();
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'SetupState.initHomeBloc()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties..add(DiagnosticsProperty('type', 'SetupState.initHomeBloc'));
   }
 
   @override
@@ -1796,12 +1890,18 @@ class __$InitialCopyWithImpl<$Res> extends _$SetupStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_Initial implements _Initial {
+class _$_Initial with DiagnosticableTreeMixin implements _Initial {
   const _$_Initial();
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'SetupState.initial()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties..add(DiagnosticsProperty('type', 'SetupState.initial'));
   }
 
   @override
@@ -1890,12 +1990,21 @@ class __$NavigateToOnboardingCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_NavigateToOnboarding implements _NavigateToOnboarding {
+class _$_NavigateToOnboarding
+    with DiagnosticableTreeMixin
+    implements _NavigateToOnboarding {
   const _$_NavigateToOnboarding();
 
   @override
-  String toString() {
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
     return 'SetupState.navigateToOnboarding()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'SetupState.navigateToOnboarding'));
   }
 
   @override
