@@ -46,25 +46,39 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
       ),
       leadingWidth: defaultToolbarItemWidth,
       actions: [
-        BlocBuilder<AuthBloc, AuthState>(
-          builder: (context, state) {
-            return state.maybeMap(
-              authenticated: (_) => Padding(
-                padding: const EdgeInsets.only(right: 20),
-                child: IconButton(
-                  key: const Key('new_series_button'),
-                  focusColor: Colors.transparent,
-                  icon: const Icon(
-                    LineIcons.plus,
-                    color: Colors.black,
-                  ),
-                  onPressed: () {},
-                ),
-              ),
-              orElse: () => Container(),
-            );
-          },
+        Padding(
+          padding: const EdgeInsets.only(right: 10),
+          child: IconButton(
+            key: const Key('new_series_button'),
+            highlightColor: Colors.transparent,
+            hoverColor: Colors.transparent,
+            icon: const Icon(
+              LineIcons.plus,
+              color: Colors.black,
+            ),
+            onPressed: () {},
+            splashColor: Colors.transparent,
+          ),
         ),
+        // BlocBuilder<AuthBloc, AuthState>(
+        //   builder: (context, state) {
+        //     return state.maybeMap(
+        //       authenticated: (_) => Padding(
+        //         padding: const EdgeInsets.only(right: 20),
+        //         child: IconButton(
+        //           key: const Key('new_series_button'),
+        //           focusColor: Colors.transparent,
+        //           icon: const Icon(
+        //             LineIcons.plus,
+        //             color: Colors.black,
+        //           ),
+        //           onPressed: () {},
+        //         ),
+        //       ),
+        //       orElse: () => Container(),
+        //     );
+        //   },
+        // ),
         Padding(
           padding: const EdgeInsets.only(right: 10),
           child: Builder(
