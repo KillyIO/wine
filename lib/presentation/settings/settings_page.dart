@@ -1,30 +1,17 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:wine/application/settings/settings_bloc.dart';
 
 import 'package:wine/presentation/core/buttons/asset_button.dart';
 import 'package:wine/presentation/settings/settings_layout.dart';
 import 'package:wine/utils/assets/icons.dart';
+import 'package:wine/utils/constants/core.dart';
 import 'package:wine/utils/themes.dart';
 
 /// @nodoc
-class SettingsPage extends StatefulWidget {
+class SettingsPage extends StatelessWidget {
   /// @nodoc
   const SettingsPage({Key? key}) : super(key: key);
-
-  @override
-  _SettingsPageState createState() => _SettingsPageState();
-}
-
-class _SettingsPageState extends State<SettingsPage> {
-  @override
-  void initState() {
-    super.initState();
-
-    context.read<SettingsBloc>().add(const SettingsEvent.initBloc());
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -37,7 +24,7 @@ class _SettingsPageState extends State<SettingsPage> {
       child: Scaffold(
         backgroundColor: Colors.white,
         appBar: PreferredSize(
-          preferredSize: const Size.fromHeight(41.5),
+          preferredSize: const Size.fromHeight(defaultAppBarHeight),
           child: AppBar(
             backgroundColor: Colors.transparent,
             bottom: PreferredSize(
