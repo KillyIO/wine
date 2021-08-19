@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:line_icons/line_icons.dart';
 import 'package:responsive_builder/responsive_builder.dart';
+import 'package:wine/application/auth/auth_bloc.dart';
 import 'package:wine/application/auth/auth_dialog/auth_dialog_cubit.dart';
 import 'package:wine/application/log_in/log_in_bloc.dart';
 import 'package:wine/application/sign_up/sign_up_bloc.dart';
@@ -13,63 +14,42 @@ import 'package:wine/presentation/home/widgets/home_menu_tile.dart';
 import 'package:wine/presentation/routes/router.dart';
 import 'package:wine/presentation/web/auth_dialog.dart';
 import 'package:wine/utils/constants/core.dart';
+import 'package:wine/utils/responsive/drawer_responsive.dart';
 
 /// @nodoc
 class HomeMenuLayout extends StatelessWidget {
   /// @nodoc
   const HomeMenuLayout({Key? key}) : super(key: key);
 
-  double _getBoxWidth(Size size) {
-    final deviceType = getDeviceType(size);
-    final refinedSize = getRefinedSize(size);
-
-    switch (deviceType) {
-      case DeviceScreenType.desktop:
-        if (refinedSize == RefinedSize.small) {
-          return size.width * .5;
-        }
-        return size.width * .25;
-      case DeviceScreenType.tablet:
-        return size.width * .75;
-      default:
-        if (refinedSize == RefinedSize.extraLarge) {
-          return size.width * .75;
-        }
-        return size.width;
-    }
-  }
-
   Future<void> _handleLibraryButtonPressed(BuildContext context) async {
-    if (kIsWeb) {
-      await context.router.pop().then(
-            (_) => showDialog<bool>(
-              context: context,
-              builder: (_) => MultiBlocProvider(
-                providers: [
-                  BlocProvider(
-                    create: (_) => getIt<AuthDialogCubit>(),
-                  ),
-                  BlocProvider(
-                    create: (context) => getIt<LogInBloc>(),
-                  ),
-                  BlocProvider(
-                    create: (context) => getIt<SignUpBloc>(),
-                  ),
-                ],
-                child: const AuthDialog(
-                  key: Key('auth_dialog'),
-                ),
+    final mediaQuery = MediaQuery.of(context).size;
+    final deviceType = getDeviceType(mediaQuery);
+
+    if (kIsWeb && !(deviceType == DeviceScreenType.mobile)) {
+      final state = context.read<AuthBloc>().state;
+
+      await state.maybeMap(
+        authenticated: (_) => context.router.root.push(const LibraryRoute()),
+        orElse: () => showDialog<bool>(
+          context: context,
+          builder: (_) => MultiBlocProvider(
+            providers: [
+              BlocProvider(
+                create: (_) => getIt<AuthDialogCubit>(),
               ),
+              BlocProvider(
+                create: (context) => getIt<LogInBloc>(),
+              ),
+              BlocProvider(
+                create: (context) => getIt<SignUpBloc>(),
+              ),
+            ],
+            child: const AuthDialog(
+              key: Key('auth_dialog'),
             ),
-          );
-
-      // await showDialog<bool>(
-      //   context: context,
-      //   builder: (_) => const AuthDialog(
-      //     key: Key('auth_dialog'),
-      //   ),
-      // );
-
+          ),
+        ),
+      );
     } else {
       await context.router.root.push(const LibraryRoute());
     }
@@ -80,7 +60,7 @@ class HomeMenuLayout extends StatelessWidget {
     final mediaQuery = MediaQuery.of(context).size;
 
     return SizedBox(
-      width: _getBoxWidth(mediaQuery),
+      width: getDrawerWidth(mediaQuery),
       child: Drawer(
         key: const Key('home_menu_drawer'),
         child: Scaffold(
