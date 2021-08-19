@@ -35,7 +35,7 @@ class ErrorDialog extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
             Padding(
-              padding: const EdgeInsets.symmetric(vertical: 15),
+              padding: getDialogIconPadding(mediaQuery),
               child: Icon(
                 LineIcons.exclamationCircle,
                 color: error,
@@ -52,12 +52,7 @@ class ErrorDialog extends StatelessWidget {
               ),
             ),
             Padding(
-              padding: const EdgeInsets.only(
-                bottom: 23,
-                left: 22.5,
-                right: 22.5,
-                top: 12,
-              ),
+              padding: getDialogMessagePadding(mediaQuery),
               child: Column(
                 children: <Widget>[
                   for (var i = 0; i < messages.length; i++)
