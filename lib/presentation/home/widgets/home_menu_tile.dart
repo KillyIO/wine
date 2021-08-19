@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 /// @nodoc
@@ -24,14 +25,17 @@ class HomeMenuTile extends StatelessWidget {
         ),
       ),
       height: 30,
-      child: GestureDetector(
-        onTap: onPressed,
-        child: Text(
-          text,
-          style: const TextStyle(
-            color: Colors.black,
-            fontSize: 20,
-            fontWeight: FontWeight.w300,
+      child: MouseRegion(
+        cursor: kIsWeb ? SystemMouseCursors.click : SystemMouseCursors.basic,
+        child: GestureDetector(
+          onTap: onPressed,
+          child: Text(
+            text,
+            style: const TextStyle(
+              color: Colors.black,
+              fontSize: 20,
+              fontWeight: FontWeight.w300,
+            ),
           ),
         ),
       ),
