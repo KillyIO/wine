@@ -8,9 +8,6 @@ const double defaultAppBarHeight = 41.5;
 const double defaultToolbarItemWidth = 41.5;
 
 /// @nodoc
-const double dialogButtonDefaultHeight = 50;
-
-/// @nodoc
 const double maxContentLayoutWidth = 1440;
 
 /// @nodoc
