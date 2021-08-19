@@ -3,10 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:line_icons/line_icons.dart';
 import 'package:wine/application/auth/auth_bloc.dart';
-import 'package:wine/application/settings/settings_bloc.dart';
 import 'package:wine/presentation/core/buttons/tile_button.dart';
 import 'package:wine/presentation/routes/router.dart';
-import 'package:wine/utils/functions.dart';
 
 /// @nodoc
 class SettingsLayout extends StatelessWidget {
