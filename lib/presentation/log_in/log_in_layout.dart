@@ -12,7 +12,7 @@ import 'package:wine/presentation/log_in/widgets/log_in_separator.dart';
 import 'package:wine/presentation/log_in/widgets/log_in_social_media_button.dart';
 import 'package:wine/presentation/routes/router.dart';
 import 'package:wine/utils/constants/palette.dart';
-import 'package:wine/utils/functions.dart';
+import 'package:wine/utils/functions/dialog_functions.dart';
 
 /// @nodoc
 class LogInLayout extends StatelessWidget {

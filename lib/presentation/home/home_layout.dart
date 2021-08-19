@@ -16,7 +16,7 @@ import 'package:wine/presentation/routes/router.dart';
 import 'package:wine/utils/constants/core.dart';
 import 'package:wine/utils/constants/home.dart';
 import 'package:wine/utils/constants/palette.dart';
-import 'package:wine/utils/functions.dart';
+import 'package:wine/utils/functions/dialog_functions.dart';
 
 /// @nodoc
 class HomeLayout extends StatelessWidget {

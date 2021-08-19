@@ -10,7 +10,7 @@ import 'package:wine/presentation/core/text_fields/authentication_text_field.dar
 import 'package:wine/presentation/routes/router.dart';
 import 'package:wine/presentation/sign_up/widgets/sign_up_tos_and_pp_button.dart';
 import 'package:wine/utils/constants/palette.dart';
-import 'package:wine/utils/functions.dart';
+import 'package:wine/utils/functions/dialog_functions.dart';
 
 /// @nodoc
 class SignUpLayout extends StatelessWidget {
