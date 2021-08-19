@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:line_icons/line_icons.dart';
-import 'package:responsive_builder/responsive_builder.dart';
-import 'package:wine/utils/constants/core.dart';
 import 'package:wine/utils/constants/palette.dart';
+import 'package:wine/utils/responsive/dialog_responsive.dart';
 
 /// @nodoc
 class ErrorDialog extends StatelessWidget {
@@ -23,23 +22,6 @@ class ErrorDialog extends StatelessWidget {
   /// @nodoc
   final VoidCallback onPressed;
 
-  double _getDialogWidth(Size size) {
-    final deviceType = getDeviceType(size);
-    final refinedSize = getRefinedSize(size);
-
-    switch (deviceType) {
-      case DeviceScreenType.desktop:
-        if (refinedSize == RefinedSize.small) {
-          return size.width * .35;
-        }
-        return size.width * .2;
-      case DeviceScreenType.tablet:
-        return size.width * .5;
-      default:
-        return size.width * .5;
-    }
-  }
-
   @override
   Widget build(BuildContext context) {
     final mediaQuery = MediaQuery.of(context).size;
@@ -48,24 +30,24 @@ class ErrorDialog extends StatelessWidget {
       elevation: 10,
       child: Container(
         color: Colors.white,
-        width: _getDialogWidth(mediaQuery),
+        width: getDialogWidth(mediaQuery),
         child: Column(
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[
-            const Padding(
-              padding: EdgeInsets.symmetric(vertical: 15),
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 15),
               child: Icon(
                 LineIcons.exclamationCircle,
                 color: error,
-                size: 75,
+                size: getDialogIconSize(mediaQuery),
               ),
             ),
-            const Text(
+            Text(
               "SOMETHING'S WRONG!",
               textAlign: TextAlign.center,
               style: TextStyle(
                 color: Colors.black,
-                fontSize: 20,
+                fontSize: getDialogTitleFontSize(mediaQuery),
                 fontWeight: FontWeight.w600,
               ),
             ),
@@ -86,9 +68,9 @@ class ErrorDialog extends StatelessWidget {
                       child: Text(
                         messages[i],
                         textAlign: TextAlign.center,
-                        style: const TextStyle(
+                        style: TextStyle(
                           color: Colors.black,
-                          fontSize: 18.5,
+                          fontSize: getDialogMessageFontSize(mediaQuery),
                           fontWeight: FontWeight.w300,
                         ),
                       ),
@@ -98,16 +80,16 @@ class ErrorDialog extends StatelessWidget {
             ),
             Container(
               color: error,
-              height: dialogButtonDefaultHeight,
+              height: getDialogButtonHeight(mediaQuery),
               width: double.infinity,
               child: TextButton(
                 onPressed: onPressed,
                 child: Text(
                   buttonText ?? 'DISMISS',
                   textAlign: TextAlign.center,
-                  style: const TextStyle(
+                  style: TextStyle(
                     color: Colors.white,
-                    fontSize: 22.5,
+                    fontSize: getDialogButtonFontSize(mediaQuery),
                     fontWeight: FontWeight.w500,
                   ),
                 ),
