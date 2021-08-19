@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:line_icons/line_icons.dart';
 
-import 'package:wine/application/auth/auth_bloc.dart';
 import 'package:wine/utils/constants/core.dart';
 
 /// @nodoc
