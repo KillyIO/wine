@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:line_icons/line_icons.dart';
 
 import 'package:wine/utils/constants/core.dart';
+import 'package:wine/utils/responsive/home_responsive.dart';
 
 /// @nodoc
 class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
@@ -16,6 +17,8 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
+    final mediaQuery = MediaQuery.of(context).size;
+
     return AppBar(
       backgroundColor: Colors.transparent,
       bottom: PreferredSize(
@@ -25,7 +28,7 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
       brightness: Brightness.light,
       elevation: 0,
       leading: Padding(
-        padding: const EdgeInsets.only(left: 10),
+        padding: getDefaultAppBarButtonPadding(mediaQuery),
         child: Builder(
           builder: (context) {
             return IconButton(
@@ -45,7 +48,7 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
       leadingWidth: defaultToolbarItemWidth,
       actions: [
         Padding(
-          padding: const EdgeInsets.only(right: 10),
+          padding: getDefaultAppBarButtonPadding(mediaQuery, isRight: true),
           child: IconButton(
             key: const Key('new_series_button'),
             highlightColor: Colors.transparent,
@@ -78,7 +81,7 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
         //   },
         // ),
         Padding(
-          padding: const EdgeInsets.only(right: 10),
+          padding: getDefaultAppBarButtonPadding(mediaQuery, isRight: true),
           child: Builder(
             builder: (context) {
               return IconButton(

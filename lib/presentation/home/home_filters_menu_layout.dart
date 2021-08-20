@@ -4,6 +4,7 @@ import 'package:line_icons/line_icons.dart';
 
 import 'package:wine/utils/constants/core.dart';
 import 'package:wine/utils/responsive/drawer_responsive.dart';
+import 'package:wine/utils/responsive/home_responsive.dart';
 
 /// @nodoc
 class HomeFiltersMenuLayout extends StatelessWidget {
@@ -26,7 +27,7 @@ class HomeFiltersMenuLayout extends StatelessWidget {
               brightness: Brightness.light,
               elevation: 0,
               leading: Padding(
-                padding: const EdgeInsets.only(left: 10),
+                padding: getDefaultAppBarButtonPadding(mediaQuery),
                 child: Builder(
                   builder: (context) {
                     return IconButton(
