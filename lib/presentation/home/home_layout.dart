@@ -2,13 +2,13 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:line_icons/line_icons.dart';
 
 import 'package:wine/application/home/home_bloc.dart';
 import 'package:wine/application/home/home_navigation/home_navigation_bloc.dart';
 import 'package:wine/application/setup/setup_bloc.dart';
 import 'package:wine/presentation/core/footer/footer.dart';
 import 'package:wine/presentation/core/page_view/horizontal_page_view_navbar.dart';
+import 'package:wine/presentation/home/home_filters_menu_layout.dart';
 import 'package:wine/presentation/home/home_menu_layout.dart';
 import 'package:wine/presentation/home/widgets/home_app_bar.dart';
 import 'package:wine/presentation/home/widgets/home_page_view_builder.dart';
@@ -27,8 +27,6 @@ class HomeLayout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final mediaQuery = MediaQuery.of(context).size;
-
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: const HomeAppBar(),
@@ -138,34 +136,7 @@ class HomeLayout extends StatelessWidget {
           ),
         ),
       ),
-      drawer: SizedBox(
-        width: mediaQuery.width,
-        child: Drawer(
-          child: SafeArea(
-            child: Column(
-              children: <Widget>[
-                AppBar(
-                  backgroundColor: Colors.transparent,
-                  brightness: Brightness.light,
-                  elevation: 0,
-                  leading: Builder(
-                    builder: (context) {
-                      return IconButton(
-                        icon: const Icon(
-                          LineIcons.times,
-                          color: Colors.black,
-                          size: 30,
-                        ),
-                        onPressed: context.router.pop,
-                      );
-                    },
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ),
-      ),
+      drawer: const HomeFiltersMenuLayout(),
       endDrawer: const HomeMenuLayout(),
     );
   }
