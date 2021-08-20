@@ -6,8 +6,8 @@ class AssetButton extends StatelessWidget {
   const AssetButton({
     Key? key,
     this.color = Colors.black,
-    this.height = 20.0,
-    this.width = 20.0,
+    this.height = 24.0,
+    this.width = 24.0,
     required this.imagePath,
     required this.onPressed,
   }) : super(key: key);
@@ -31,12 +31,15 @@ class AssetButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: onPressed,
-      child: Image.asset(
-        imagePath,
-        color: color,
-        fit: BoxFit.contain,
-        height: height,
-        width: width,
+      child: Padding(
+        padding: const EdgeInsets.all(8),
+        child: Image.asset(
+          imagePath,
+          color: color,
+          fit: BoxFit.contain,
+          height: height,
+          width: width,
+        ),
       ),
     );
   }
