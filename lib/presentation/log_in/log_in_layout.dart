@@ -100,6 +100,17 @@ class LogInLayout extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
+                      if (onSignUpButtonPressed != null)
+                        Padding(
+                          padding: const EdgeInsets.only(left: 10, top: 10),
+                          child: IconButton(
+                            icon: const Icon(
+                              LineIcons.times,
+                              color: Colors.black,
+                            ),
+                            onPressed: context.router.root.pop,
+                          ),
+                        ),
                       Padding(
                         padding: const EdgeInsets.only(left: 50, top: 100),
                         child: SizedBox(
