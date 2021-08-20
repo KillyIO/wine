@@ -13,6 +13,7 @@ import 'package:wine/presentation/log_in/widgets/log_in_social_media_button.dart
 import 'package:wine/presentation/routes/router.dart';
 import 'package:wine/utils/constants/palette.dart';
 import 'package:wine/utils/functions/dialog_functions.dart';
+import 'package:wine/utils/responsive/log_in_responsive.dart';
 
 /// @nodoc
 class LogInLayout extends StatelessWidget {
@@ -27,6 +28,8 @@ class LogInLayout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final mediaQuery = MediaQuery.of(context).size;
+
     return BlocListener<LogInBloc, LogInState>(
       listener: (context, state) {
         state.failureOption.whenSome(
@@ -112,9 +115,9 @@ class LogInLayout extends StatelessWidget {
                           ),
                         ),
                       Padding(
-                        padding: const EdgeInsets.only(left: 50, top: 100),
+                        padding: getWelcomeMessagePadding(mediaQuery),
                         child: SizedBox(
-                          width: MediaQuery.of(context).size.width,
+                          width: mediaQuery.width,
                           child: const Text(
                             'Log in to access more features.',
                             textAlign: TextAlign.start,
@@ -126,9 +129,8 @@ class LogInLayout extends StatelessWidget {
                           ),
                         ),
                       ),
-                      const SizedBox(height: 75),
                       Padding(
-                        padding: const EdgeInsets.only(left: 50),
+                        padding: getEmailAddressPadding(mediaQuery),
                         child: AuthenticationTextField(
                           hintText: 'Email address',
                           onChanged: (value) => context
@@ -150,9 +152,8 @@ class LogInLayout extends StatelessWidget {
                           keyboardType: TextInputType.emailAddress,
                         ),
                       ),
-                      const SizedBox(height: 40),
                       Padding(
-                        padding: const EdgeInsets.only(left: 50),
+                        padding: const EdgeInsets.only(left: 50, top: 40),
                         child: AuthenticationTextField(
                           hintText: 'Password',
                           onChanged: (value) => context
@@ -173,9 +174,8 @@ class LogInLayout extends StatelessWidget {
                           obscureText: true,
                         ),
                       ),
-                      const SizedBox(height: 50),
                       Padding(
-                        padding: const EdgeInsets.only(left: 50),
+                        padding: const EdgeInsets.only(left: 50, top: 50),
                         child: DefaultButton(
                           color: pastelPink,
                           hasRoundedCorners: true,
@@ -189,9 +189,8 @@ class LogInLayout extends StatelessWidget {
                           width: 150,
                         ),
                       ),
-                      const SizedBox(height: 25),
                       Padding(
-                        padding: const EdgeInsets.only(left: 50),
+                        padding: const EdgeInsets.only(left: 50, top: 25),
                         child: GestureDetector(
                           onTap: state.isProcessing ? null : () {},
                           child: const Text(
@@ -206,32 +205,40 @@ class LogInLayout extends StatelessWidget {
                           ),
                         ),
                       ),
-                      const SizedBox(height: 40),
-                      const LogInSeparator(),
-                      const SizedBox(height: 40),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceAround,
-                        children: <Widget>[
-                          LogInSocialMediaButton(
-                            onPressed: state.isProcessing
-                                ? null
-                                : () => context.read<LogInBloc>().add(
-                                    const LogInEvent.logInWithGooglePressed()),
-                            icon: LineIcons.googlePlus,
-                          )
-                        ],
+                      const Padding(
+                        padding: EdgeInsets.symmetric(vertical: 40),
+                        child: LogInSeparator(),
                       ),
-                      const SizedBox(height: 50),
-                      Align(
-                        child: LogInCreateAccountButton(
-                          onPressed: state.isProcessing
-                              ? null
-                              : onSignUpButtonPressed ??
-                                  () => context.router.root
-                                      .push(const SignUpRoute()),
+                      Padding(
+                        padding: const EdgeInsets.only(bottom: 50),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: <Widget>[
+                            LogInSocialMediaButton(
+                              onPressed: state.isProcessing
+                                  ? null
+                                  : () => context.read<LogInBloc>().add(
+                                      const LogInEvent
+                                          .logInWithGooglePressed()),
+                              icon: LineIcons.googlePlus,
+                            )
+                          ],
                         ),
                       ),
-                      const SizedBox(height: 50),
+                      Padding(
+                        padding: EdgeInsets.only(
+                          bottom: onSignUpButtonPressed != null ? 0 : 50,
+                        ),
+                        child: Align(
+                          child: LogInCreateAccountButton(
+                            onPressed: state.isProcessing
+                                ? null
+                                : onSignUpButtonPressed ??
+                                    () => context.router.root
+                                        .push(const SignUpRoute()),
+                          ),
+                        ),
+                      ),
                     ],
                   ),
                 ),
