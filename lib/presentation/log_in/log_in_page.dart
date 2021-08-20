@@ -9,6 +9,7 @@ import 'package:wine/presentation/core/buttons/asset_button.dart';
 import 'package:wine/presentation/log_in/log_in_layout.dart';
 import 'package:wine/utils/assets/icons.dart';
 import 'package:wine/utils/constants/core.dart';
+import 'package:wine/utils/responsive/core_responsive.dart';
 import 'package:wine/utils/themes.dart';
 
 /// @nodoc
@@ -18,6 +19,8 @@ class LogInPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final mediaQuery = MediaQuery.of(context).size;
+
     return AnnotatedRegion<SystemUiOverlayStyle>(
       value: lightTheme,
       child: Scaffold(
@@ -37,7 +40,7 @@ class LogInPage extends StatelessWidget {
             centerTitle: true,
             elevation: 0,
             leading: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 5),
+              padding: getAssetBackButtonPadding(mediaQuery),
               child: AssetButton(
                 key: const Key('plus_layout_back_button'),
                 imagePath: backIcon,
@@ -47,6 +50,7 @@ class LogInPage extends StatelessWidget {
                 },
               ),
             ),
+            leadingWidth: defaultToolbarItemWidth,
           ),
         ),
         body: BlocProvider(
