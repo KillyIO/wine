@@ -4,18 +4,26 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:wine/application/auth/auth_bloc.dart';
 import 'package:wine/application/sign_up/sign_up_bloc.dart';
+import 'package:wine/presentation/core/buttons/asset_button.dart';
 import 'package:wine/presentation/core/buttons/default_button.dart';
 import 'package:wine/presentation/core/labels/text_field_label.dart';
 import 'package:wine/presentation/core/text_fields/authentication_text_field.dart';
 import 'package:wine/presentation/routes/router.dart';
 import 'package:wine/presentation/sign_up/widgets/sign_up_tos_and_pp_button.dart';
+import 'package:wine/utils/assets/icons.dart';
 import 'package:wine/utils/constants/palette.dart';
 import 'package:wine/utils/functions/dialog_functions.dart';
 
 /// @nodoc
 class SignUpLayout extends StatelessWidget {
   /// @nodoc
-  const SignUpLayout({Key? key}) : super(key: key);
+  const SignUpLayout({
+    Key? key,
+    this.onWebBackButtonPressed,
+  }) : super(key: key);
+
+  /// @nodoc
+  final VoidCallback? onWebBackButtonPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -89,7 +97,17 @@ class SignUpLayout extends StatelessWidget {
                 autovalidateMode: AutovalidateMode.always,
                 child: SingleChildScrollView(
                   child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
+                      if (onWebBackButtonPressed != null)
+                        Padding(
+                          padding: const EdgeInsets.only(left: 10, top: 10),
+                          child: AssetButton(
+                            key: const Key('web_sign_up_back_button'),
+                            imagePath: backIcon,
+                            onPressed: onWebBackButtonPressed,
+                          ),
+                        ),
                       // SECTION e-mail address
                       const TextFieldLabel(title: 'EMAIL ADDRESS*'),
                       AuthenticationTextField(
