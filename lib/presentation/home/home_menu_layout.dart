@@ -32,6 +32,7 @@ class HomeMenuLayout extends StatelessWidget {
         authenticated: (_) => context.router.root.push(const LibraryRoute()),
         orElse: () => showDialog<bool>(
           context: context,
+          barrierDismissible: false,
           builder: (_) => MultiBlocProvider(
             providers: [
               BlocProvider(
