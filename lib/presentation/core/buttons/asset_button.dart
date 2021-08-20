@@ -25,7 +25,7 @@ class AssetButton extends StatelessWidget {
   final String imagePath;
 
   /// @nodoc
-  final VoidCallback onPressed;
+  final VoidCallback? onPressed;
 
   @override
   Widget build(BuildContext context) {
