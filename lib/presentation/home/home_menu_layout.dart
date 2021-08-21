@@ -52,41 +52,46 @@ class HomeMenuLayout extends StatelessWidget {
             ),
           ),
           body: SafeArea(
-            child: Padding(
-              padding: const EdgeInsets.only(bottom: 50),
-              child: Column(
-                children: <Widget>[
-                  Expanded(child: Container()),
-                  HomeMenuTile(
-                    key: const Key('home_menu_library_tile'),
-                    onPressed: () => handleAuthGuardedNavigation(
-                      context,
-                      const LibraryRoute(),
+            child: Align(
+              child: Padding(
+                padding: const EdgeInsets.only(bottom: 50),
+                child: Column(
+                  children: <Widget>[
+                    if (isMenuContentBottom(mediaQuery))
+                      Expanded(child: Container())
+                    else
+                      const SizedBox(height: 100),
+                    HomeMenuTile(
+                      key: const Key('home_menu_library_tile'),
+                      onPressed: () => handleAuthGuardedNavigation(
+                        context,
+                        const LibraryRoute(),
+                      ),
+                      text: 'LIBRARY',
                     ),
-                    text: 'LIBRARY',
-                  ),
-                  // BlocBuilder<AuthBloc, AuthState>(
-                  //   builder: (context, state) {
-                  //     return state.maybeMap(
-                  //       authenticated: (_) => HomeMenuTile(
-                  //         key: const Key('home_menu_library_tile'),
-                  //         // TODO add route push LibraryPage
-                  //         onPressed: () =>
-                  //             context.router.root.push(const LibraryRoute()),
-                  //         text: 'LIBRARY',
-                  //       ),
-                  //       orElse: () => Container(),
-                  //     );
-                  //   },
-                  // ),
-                  const SizedBox(height: 25),
-                  HomeMenuTile(
-                    key: const Key('home_menu_plus_tile'),
-                    onPressed: () =>
-                        context.router.root.push(const PlusRoute()),
-                    text: 'PLUS',
-                  ),
-                ],
+                    // BlocBuilder<AuthBloc, AuthState>(
+                    //   builder: (context, state) {
+                    //     return state.maybeMap(
+                    //       authenticated: (_) => HomeMenuTile(
+                    //         key: const Key('home_menu_library_tile'),
+                    //         // TODO add route push LibraryPage
+                    //         onPressed: () =>
+                    //             context.router.root.push(const LibraryRoute()),
+                    //         text: 'LIBRARY',
+                    //       ),
+                    //       orElse: () => Container(),
+                    //     );
+                    //   },
+                    // ),
+                    const SizedBox(height: 25),
+                    HomeMenuTile(
+                      key: const Key('home_menu_plus_tile'),
+                      onPressed: () =>
+                          context.router.root.push(const PlusRoute()),
+                      text: 'PLUS',
+                    ),
+                  ],
+                ),
               ),
             ),
           ),

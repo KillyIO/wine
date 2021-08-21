@@ -21,3 +21,10 @@ EdgeInsets getDefaultAppBarButtonPadding(
       return EdgeInsets.zero;
   }
 }
+
+/// @nodoc
+bool isMenuContentBottom(Size size) {
+  final deviceType = getDeviceType(size);
+
+  return !(deviceType == DeviceScreenType.desktop);
+}
