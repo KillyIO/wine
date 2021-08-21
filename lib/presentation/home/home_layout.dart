@@ -110,28 +110,30 @@ class HomeLayout extends StatelessWidget {
             orElse: () {},
           );
         },
-        child: Center(
-          child: Container(
-            constraints: const BoxConstraints(
-              maxWidth: maxContentLayoutWidth,
-            ),
-            child: Column(
-              children: <Widget>[
-                BlocBuilder<HomeNavigationBloc, HomeNavigationState>(
-                  builder: (context, state) {
-                    return HorizontalPageViewNavbar(
-                      colors: const <Color>[pastelYellow, pastelPink],
-                      controller: _pageController,
-                      pageIndex: state.currentPageViewIdx,
-                      titles: homePageViewKeys,
-                    );
-                  },
-                ),
-                HomePageViewBuilder(
-                  controller: _pageController,
-                ),
-                if (kIsWeb) const Footer(),
-              ],
+        child: SafeArea(
+          child: Center(
+            child: Container(
+              constraints: const BoxConstraints(
+                maxWidth: maxContentLayoutWidth,
+              ),
+              child: Column(
+                children: <Widget>[
+                  BlocBuilder<HomeNavigationBloc, HomeNavigationState>(
+                    builder: (context, state) {
+                      return HorizontalPageViewNavbar(
+                        colors: const <Color>[pastelYellow, pastelPink],
+                        controller: _pageController,
+                        pageIndex: state.currentPageViewIdx,
+                        titles: homePageViewKeys,
+                      );
+                    },
+                  ),
+                  HomePageViewBuilder(
+                    controller: _pageController,
+                  ),
+                  if (kIsWeb) const Footer(),
+                ],
+              ),
             ),
           ),
         ),
