@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:time/time.dart';
 import 'package:wine/presentation/core/page_view/horizontal_page_view_navbar_button.dart';
+import 'package:wine/utils/responsive/core_responsive.dart';
 
 /// @nodoc
 class HorizontalPageViewNavbar extends StatelessWidget {
@@ -27,9 +28,11 @@ class HorizontalPageViewNavbar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final mediaQuery = MediaQuery.of(context).size;
+
     return AnimatedContainer(
       duration: 100.milliseconds,
-      height: 30,
+      height: getHorizontalPageViewNavbarHeight(mediaQuery),
       width: MediaQuery.of(context).size.width,
       color: colors[pageIndex],
       child: Row(
