@@ -4,13 +4,11 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:wine/application/auth/auth_bloc.dart';
 import 'package:wine/application/sign_up/sign_up_bloc.dart';
-import 'package:wine/presentation/core/buttons/asset_button.dart';
 import 'package:wine/presentation/core/buttons/default_button.dart';
 import 'package:wine/presentation/core/labels/text_field_label.dart';
 import 'package:wine/presentation/core/text_fields/authentication_text_field.dart';
 import 'package:wine/presentation/routes/router.dart';
 import 'package:wine/presentation/sign_up/widgets/sign_up_tos_and_pp_button.dart';
-import 'package:wine/utils/assets/icons.dart';
 import 'package:wine/utils/constants/palette.dart';
 import 'package:wine/utils/functions/dialog_functions.dart';
 
@@ -19,14 +17,16 @@ class SignUpLayout extends StatelessWidget {
   /// @nodoc
   const SignUpLayout({
     Key? key,
-    this.onWebBackButtonPressed,
+    this.onDialogBackButtonPressed,
   }) : super(key: key);
 
   /// @nodoc
-  final VoidCallback? onWebBackButtonPressed;
+  final VoidCallback? onDialogBackButtonPressed;
 
   @override
   Widget build(BuildContext context) {
+    final mediaQuery = MediaQuery.of(context).size;
+
     return BlocListener<SignUpBloc, SignUpState>(
       listener: (context, state) {
         state.failureOption.whenSome(
@@ -99,17 +99,28 @@ class SignUpLayout extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
-                      if (onWebBackButtonPressed != null)
+                      if (onDialogBackButtonPressed != null)
                         Padding(
                           padding: const EdgeInsets.only(left: 10, top: 10),
-                          child: AssetButton(
-                            key: const Key('web_sign_up_back_button'),
-                            imagePath: backIcon,
-                            onPressed: onWebBackButtonPressed,
+                          child: IconButton(
+                            key: const Key('sign_up_dialog_back_button'),
+                            highlightColor: Colors.transparent,
+                            hoverColor: Colors.transparent,
+                            icon: const Icon(
+                              Icons.keyboard_backspace_outlined,
+                              color: Colors.black,
+                            ),
+                            onPressed: onDialogBackButtonPressed,
+                            splashColor: Colors.transparent,
                           ),
                         ),
                       // SECTION e-mail address
-                      const TextFieldLabel(title: 'EMAIL ADDRESS*'),
+                      Padding(
+                        padding: EdgeInsets.only(
+                          top: onDialogBackButtonPressed != null ? 25 : 0,
+                        ),
+                        child: const TextFieldLabel(title: 'EMAIL ADDRESS*'),
+                      ),
                       AuthenticationTextField(
                         hintText: 'Email address',
                         onChanged: (value) => context
@@ -130,9 +141,11 @@ class SignUpLayout extends StatelessWidget {
                             ),
                         keyboardType: TextInputType.emailAddress,
                       ),
-                      const SizedBox(height: 10),
                       // SECTION password
-                      const TextFieldLabel(title: 'PASSWORD*'),
+                      const Padding(
+                        padding: EdgeInsets.only(top: 10),
+                        child: TextFieldLabel(title: 'PASSWORD*'),
+                      ),
                       AuthenticationTextField(
                         hintText: 'Password (6+ characters)',
                         obscureText: true,
@@ -153,9 +166,11 @@ class SignUpLayout extends StatelessWidget {
                               ),
                             ),
                       ),
-                      const SizedBox(height: 10),
                       // SECTION confirm password
-                      const TextFieldLabel(title: 'CONFIRM YOUR PASSWORD*'),
+                      const Padding(
+                        padding: EdgeInsets.only(top: 10),
+                        child: TextFieldLabel(title: 'CONFIRM YOUR PASSWORD*'),
+                      ),
                       AuthenticationTextField(
                         hintText: 'Confirm your password (6+ characters)',
                         obscureText: true,
@@ -176,9 +191,11 @@ class SignUpLayout extends StatelessWidget {
                               ),
                             ),
                       ),
-                      const SizedBox(height: 10),
                       // SECTION Username
-                      const TextFieldLabel(title: 'USERNAME*'),
+                      const Padding(
+                        padding: EdgeInsets.only(top: 10),
+                        child: TextFieldLabel(title: 'USERNAME*'),
+                      ),
                       AuthenticationTextField(
                         hintText: 'Username (4+ characters)',
                         onChanged: (value) => context
@@ -198,23 +215,24 @@ class SignUpLayout extends StatelessWidget {
                               ),
                             ),
                       ),
-                      const SizedBox(height: 25),
                       const Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 20),
+                        padding: EdgeInsets.only(left: 20, right: 20, top: 25),
                         child: SignUpTOSAndPPButton(),
                       ),
-                      const SizedBox(height: 30),
-                      DefaultButton(
-                        color: pastelPink,
-                        title: 'SIGN UP',
-                        isProcessing: state.isProcessing,
-                        onPressed: state.isProcessing
-                            ? null
-                            : () => context
-                                .read<SignUpBloc>()
-                                .add(const SignUpEvent.signUpPressed()),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 25),
+                        child: DefaultButton(
+                          color: pastelPink,
+                          title: 'SIGN UP',
+                          isProcessing: state.isProcessing,
+                          onPressed: state.isProcessing
+                              ? null
+                              : () => context
+                                  .read<SignUpBloc>()
+                                  .add(const SignUpEvent.signUpPressed()),
+                          width: mediaQuery.width,
+                        ),
                       ),
-                      const SizedBox(height: 20),
                     ],
                   ),
                 ),
