@@ -1,6 +1,5 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
-import 'package:line_icons/line_icons.dart';
 
 import 'package:wine/utils/constants/core.dart';
 import 'package:wine/utils/responsive/drawer_responsive.dart';
@@ -28,19 +27,16 @@ class HomeFiltersMenuLayout extends StatelessWidget {
               elevation: 0,
               leading: Padding(
                 padding: getDefaultAppBarButtonPadding(mediaQuery),
-                child: Builder(
-                  builder: (context) {
-                    return IconButton(
-                      highlightColor: Colors.transparent,
-                      hoverColor: Colors.transparent,
-                      icon: const Icon(
-                        LineIcons.times,
-                        color: Colors.black,
-                      ),
-                      onPressed: context.router.pop,
-                      splashColor: Colors.transparent,
-                    );
-                  },
+                child: IconButton(
+                  key: const Key('filter_menu_back_button'),
+                  highlightColor: Colors.transparent,
+                  hoverColor: Colors.transparent,
+                  icon: const Icon(
+                    Icons.close_outlined,
+                    color: Colors.black,
+                  ),
+                  onPressed: context.router.pop,
+                  splashColor: Colors.transparent,
                 ),
               ),
               leadingWidth: defaultToolbarItemWidth,

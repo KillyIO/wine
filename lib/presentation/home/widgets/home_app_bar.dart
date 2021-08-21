@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:line_icons/line_icons.dart';
 
 import 'package:wine/utils/constants/core.dart';
 import 'package:wine/utils/responsive/home_responsive.dart';
@@ -29,20 +28,16 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
       elevation: 0,
       leading: Padding(
         padding: getDefaultAppBarButtonPadding(mediaQuery),
-        child: Builder(
-          builder: (context) {
-            return IconButton(
-              key: const Key('filter_button'),
-              highlightColor: Colors.transparent,
-              hoverColor: Colors.transparent,
-              icon: const Icon(
-                LineIcons.horizontalSliders,
-                color: Colors.black,
-              ),
-              onPressed: Scaffold.of(context).openDrawer,
-              splashColor: Colors.transparent,
-            );
-          },
+        child: IconButton(
+          key: const Key('filter_button'),
+          highlightColor: Colors.transparent,
+          hoverColor: Colors.transparent,
+          icon: const Icon(
+            Icons.filter_list_outlined,
+            color: Colors.black,
+          ),
+          onPressed: Scaffold.of(context).openDrawer,
+          splashColor: Colors.transparent,
         ),
       ),
       leadingWidth: defaultToolbarItemWidth,
@@ -54,7 +49,7 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
             highlightColor: Colors.transparent,
             hoverColor: Colors.transparent,
             icon: const Icon(
-              LineIcons.plus,
+              Icons.add_outlined,
               color: Colors.black,
             ),
             onPressed: () {},
@@ -82,20 +77,16 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
         // ),
         Padding(
           padding: getDefaultAppBarButtonPadding(mediaQuery, isRight: true),
-          child: Builder(
-            builder: (context) {
-              return IconButton(
-                key: const Key('menu_button_closed'),
-                highlightColor: Colors.transparent,
-                hoverColor: Colors.transparent,
-                icon: const Icon(
-                  LineIcons.bars,
-                  color: Colors.black,
-                ),
-                onPressed: Scaffold.of(context).openEndDrawer,
-                splashColor: Colors.transparent,
-              );
-            },
+          child: IconButton(
+            key: const Key('menu_button_closed'),
+            highlightColor: Colors.transparent,
+            hoverColor: Colors.transparent,
+            icon: const Icon(
+              Icons.menu_outlined,
+              color: Colors.black,
+            ),
+            onPressed: Scaffold.of(context).openEndDrawer,
+            splashColor: Colors.transparent,
           ),
         ),
       ],
