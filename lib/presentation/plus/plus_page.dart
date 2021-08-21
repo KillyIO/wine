@@ -2,10 +2,9 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-import 'package:wine/presentation/core/buttons/asset_button.dart';
 import 'package:wine/presentation/plus/plus_layout.dart';
-import 'package:wine/utils/assets/icons.dart';
 import 'package:wine/utils/constants/core.dart';
+import 'package:wine/utils/responsive/core_responsive.dart';
 import 'package:wine/utils/themes.dart';
 
 /// @nodoc
@@ -15,6 +14,8 @@ class PlusPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final mediaQuery = MediaQuery.of(context).size;
+
     SystemChrome.setPreferredOrientations([
       DeviceOrientation.portraitUp,
       DeviceOrientation.portraitDown,
@@ -35,16 +36,23 @@ class PlusPage extends StatelessWidget {
             centerTitle: true,
             elevation: 0,
             leading: Padding(
-              padding: const EdgeInsets.symmetric(
-                horizontal: 10,
-                vertical: 5,
-              ),
-              child: AssetButton(
-                key: const Key('plus_layout_back_button'),
-                imagePath: backIcon,
-                onPressed: () => context.router.pop(),
+              padding: getAssetBackButtonPadding(mediaQuery),
+              child: IconButton(
+                key: const Key('plus_back'),
+                highlightColor: Colors.transparent,
+                hoverColor: Colors.transparent,
+                icon: const Icon(
+                  Icons.keyboard_backspace_outlined,
+                  color: Colors.black,
+                ),
+                onPressed: () {
+                  FocusScope.of(context).requestFocus(FocusNode());
+                  context.router.root.pop();
+                },
+                splashColor: Colors.transparent,
               ),
             ),
+            leadingWidth: defaultToolbarItemWidth,
             title: const Text(
               'PLUS',
               style: TextStyle(
