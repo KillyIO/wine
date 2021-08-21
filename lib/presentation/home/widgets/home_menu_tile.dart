@@ -36,6 +36,7 @@ class HomeMenuTile extends StatelessWidget {
               fontSize: 20,
               fontWeight: FontWeight.w300,
             ),
+            textAlign: TextAlign.center,
           ),
         ),
       ),
