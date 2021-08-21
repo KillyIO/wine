@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:wine/utils/assets/images.dart';
+import 'package:wine/utils/responsive/plus_responsive.dart';
 
 /// @nodoc
 class PlusBanner extends StatelessWidget {
@@ -17,7 +18,7 @@ class PlusBanner extends StatelessWidget {
       child: Center(
         child: Image.asset(
           logoImage,
-          width: mediaQuery.width / 4,
+          width: getBannerSize(mediaQuery),
         ),
       ),
     );
