@@ -4,10 +4,8 @@ import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:wine/application/log_in/log_in_bloc.dart';
 import 'package:wine/injection.dart';
-import 'package:wine/presentation/core/buttons/asset_button.dart';
 
 import 'package:wine/presentation/log_in/log_in_layout.dart';
-import 'package:wine/utils/assets/icons.dart';
 import 'package:wine/utils/constants/core.dart';
 import 'package:wine/utils/responsive/core_responsive.dart';
 import 'package:wine/utils/themes.dart';
@@ -41,13 +39,19 @@ class LogInPage extends StatelessWidget {
             elevation: 0,
             leading: Padding(
               padding: getAssetBackButtonPadding(mediaQuery),
-              child: AssetButton(
-                key: const Key('plus_layout_back_button'),
-                imagePath: backIcon,
+              child: IconButton(
+                key: const Key('log_in_back'),
+                highlightColor: Colors.transparent,
+                hoverColor: Colors.transparent,
+                icon: const Icon(
+                  Icons.keyboard_backspace_outlined,
+                  color: Colors.black,
+                ),
                 onPressed: () {
                   FocusScope.of(context).requestFocus(FocusNode());
                   context.router.root.pop();
                 },
+                splashColor: Colors.transparent,
               ),
             ),
             leadingWidth: defaultToolbarItemWidth,
