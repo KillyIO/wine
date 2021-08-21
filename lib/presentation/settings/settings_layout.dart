@@ -5,6 +5,7 @@ import 'package:line_icons/line_icons.dart';
 import 'package:wine/presentation/core/buttons/tile_button.dart';
 import 'package:wine/presentation/routes/router.dart';
 import 'package:wine/utils/constants/core.dart';
+import 'package:wine/utils/functions/navigation_functions.dart';
 
 /// @nodoc
 class SettingsLayout extends StatelessWidget {
@@ -25,8 +26,10 @@ class SettingsLayout extends StatelessWidget {
                 leadingIconData: Icons.account_circle_outlined,
                 title: 'ACCOUNT',
                 trailingIconData: Icons.keyboard_arrow_right,
-                onPressed: () =>
-                    context.router.push(const AccountSettingsRoute()),
+                onPressed: () => handleAuthGuardedNavigation(
+                  context,
+                  const AccountSettingsRoute(),
+                ),
               ),
               TileButton(
                 leadingIconData: LineIcons.book,
