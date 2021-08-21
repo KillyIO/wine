@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:wine/utils/responsive/core_responsive.dart';
 
 /// @nodoc
 class TileButton extends StatelessWidget {
@@ -29,16 +30,11 @@ class TileButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final mediaQuery = MediaQuery.of(context).size;
+
     return Container(
       decoration: BoxDecoration(
-        border: isFirst
-            ? const Border(
-                bottom: BorderSide(),
-                top: BorderSide(),
-              )
-            : const Border(
-                bottom: BorderSide(),
-              ),
+        border: getTileButtonBorder(mediaQuery, isFirst: isFirst),
       ),
       child: ListTile(
         leading: Icon(
