@@ -27,10 +27,13 @@ class LogInSocialMediaButton extends StatelessWidget {
           ),
         ),
       ),
-      child: Icon(
-        icon,
-        color: Colors.black,
-        size: 30,
+      child: Padding(
+        padding: const EdgeInsets.all(2.5),
+        child: Icon(
+          icon,
+          color: Colors.black,
+          size: 30,
+        ),
       ),
     );
   }
