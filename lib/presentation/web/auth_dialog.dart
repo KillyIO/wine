@@ -24,13 +24,12 @@ class AuthDialog extends StatelessWidget {
           color: Colors.white,
           borderRadius: BorderRadius.all(Radius.circular(10)),
         ),
-        height: 750,
         width: getAuthDialogWidth(mediaQuery),
         child: BlocBuilder<AuthDialogCubit, AuthDialogState>(
           builder: (context, state) {
             return state.maybeMap(
               signUp: (_) => SignUpLayout(
-                onWebBackButtonPressed:
+                onDialogBackButtonPressed:
                     context.read<AuthDialogCubit>().updateLayout,
               ),
               orElse: () => LogInLayout(
