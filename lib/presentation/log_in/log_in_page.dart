@@ -19,6 +19,10 @@ class LogInPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final mediaQuery = MediaQuery.of(context).size;
 
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitUp,
+      DeviceOrientation.portraitDown,
+    ]);
     return AnnotatedRegion<SystemUiOverlayStyle>(
       value: lightTheme,
       child: Scaffold(
