@@ -107,11 +107,15 @@ class LogInLayout extends StatelessWidget {
                         Padding(
                           padding: const EdgeInsets.only(left: 10, top: 10),
                           child: IconButton(
+                            key: const Key('log_in_dialog_back'),
+                            highlightColor: Colors.transparent,
+                            hoverColor: Colors.transparent,
                             icon: const Icon(
-                              LineIcons.times,
+                              Icons.close_outlined,
                               color: Colors.black,
                             ),
                             onPressed: context.router.root.pop,
+                            splashColor: Colors.transparent,
                           ),
                         ),
                       Padding(
@@ -153,7 +157,7 @@ class LogInLayout extends StatelessWidget {
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsets.only(left: 50, top: 40),
+                        padding: const EdgeInsets.only(left: 50, top: 25),
                         child: AuthenticationTextField(
                           hintText: 'Password',
                           onChanged: (value) => context
@@ -210,7 +214,7 @@ class LogInLayout extends StatelessWidget {
                         child: LogInSeparator(),
                       ),
                       Padding(
-                        padding: const EdgeInsets.only(bottom: 50),
+                        padding: const EdgeInsets.only(bottom: 40),
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: <Widget>[
@@ -226,9 +230,7 @@ class LogInLayout extends StatelessWidget {
                         ),
                       ),
                       Padding(
-                        padding: EdgeInsets.only(
-                          bottom: onSignUpButtonPressed != null ? 0 : 50,
-                        ),
+                        padding: const EdgeInsets.only(bottom: 50),
                         child: Align(
                           child: LogInCreateAccountButton(
                             onPressed: state.isProcessing
