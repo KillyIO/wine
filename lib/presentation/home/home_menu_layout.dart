@@ -2,19 +2,19 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:line_icons/line_icons.dart';
 import 'package:responsive_builder/responsive_builder.dart';
+
 import 'package:wine/application/auth/auth_bloc.dart';
 import 'package:wine/application/auth/auth_dialog/auth_dialog_cubit.dart';
 import 'package:wine/application/log_in/log_in_bloc.dart';
 import 'package:wine/application/sign_up/sign_up_bloc.dart';
 import 'package:wine/injection.dart';
-
 import 'package:wine/presentation/home/widgets/home_menu_tile.dart';
 import 'package:wine/presentation/routes/router.dart';
 import 'package:wine/presentation/web/auth_dialog.dart';
 import 'package:wine/utils/constants/core.dart';
 import 'package:wine/utils/responsive/drawer_responsive.dart';
+import 'package:wine/utils/responsive/home_responsive.dart';
 
 /// @nodoc
 class HomeMenuLayout extends StatelessWidget {
@@ -25,7 +25,7 @@ class HomeMenuLayout extends StatelessWidget {
     final mediaQuery = MediaQuery.of(context).size;
     final deviceType = getDeviceType(mediaQuery);
 
-    if (kIsWeb && !(deviceType == DeviceScreenType.mobile)) {
+    if (deviceType != DeviceScreenType.mobile) {
       final state = context.read<AuthBloc>().state;
 
       await state.maybeMap(
@@ -73,14 +73,15 @@ class HomeMenuLayout extends StatelessWidget {
               elevation: 0,
               actions: [
                 Padding(
-                  padding: const EdgeInsets.only(right: 10),
+                  padding:
+                      getDefaultAppBarButtonPadding(mediaQuery, isRight: true),
                   child: Builder(
                     builder: (context) {
                       return IconButton(
                         highlightColor: Colors.transparent,
                         hoverColor: Colors.transparent,
                         icon: const Icon(
-                          LineIcons.times,
+                          Icons.close_outlined,
                           color: Colors.black,
                         ),
                         onPressed: context.router.pop,
