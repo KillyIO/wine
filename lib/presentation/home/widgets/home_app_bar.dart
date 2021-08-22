@@ -52,29 +52,11 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
               Icons.add_outlined,
               color: Colors.black,
             ),
+            // TODO add handleAuthGuardedNavigation to SeriesEditorPage
             onPressed: () {},
             splashColor: Colors.transparent,
           ),
         ),
-        // BlocBuilder<AuthBloc, AuthState>(
-        //   builder: (context, state) {
-        //     return state.maybeMap(
-        //       authenticated: (_) => Padding(
-        //         padding: const EdgeInsets.only(right: 20),
-        //         child: IconButton(
-        //           key: const Key('new_series_button'),
-        //           focusColor: Colors.transparent,
-        //           icon: const Icon(
-        //             LineIcons.plus,
-        //             color: Colors.black,
-        //           ),
-        //           onPressed: () {},
-        //         ),
-        //       ),
-        //       orElse: () => Container(),
-        //     );
-        //   },
-        // ),
         Padding(
           padding: getDefaultAppBarButtonPadding(mediaQuery, isRight: true),
           child: IconButton(
