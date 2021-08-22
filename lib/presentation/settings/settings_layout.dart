@@ -35,7 +35,6 @@ class SettingsLayout extends StatelessWidget {
                 leadingIconData: LineIcons.book,
                 title: 'SERIES',
                 trailingIconData: Icons.keyboard_arrow_right,
-                // TODO add push series settings page
                 onPressed: () =>
                     context.router.push(const SeriesSettingsRoute()),
               ),
@@ -43,7 +42,6 @@ class SettingsLayout extends StatelessWidget {
                 leadingIconData: LineIcons.bookOpen,
                 title: 'CHAPTER',
                 trailingIconData: Icons.keyboard_arrow_right,
-                // TODO add push chapter settings page
                 onPressed: () =>
                     context.router.push(const ChapterSettingsRoute()),
               )
