@@ -16,9 +16,9 @@ double getDialogButtonHeight(Size size) {
   final deviceType = getDeviceType(size);
 
   if (deviceType == DeviceScreenType.mobile) {
-    return 50;
+    return 40;
   }
-  return 40;
+  return 50;
 }
 
 /// @nodoc#
