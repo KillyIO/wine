@@ -1,5 +1,6 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+
 import 'package:wine/application/auth/auth_bloc.dart';
 import 'package:wine/presentation/routes/router.dart';
 
@@ -15,7 +16,7 @@ class AuthGuard extends AutoRouteGuard {
         resolver.next();
       },
       orElse: () {
-        router.root.push(const LogInRoute());
+        router.root.push(LogInRoute(navigateTo: resolver.route.toRoute()));
       },
     );
   }
