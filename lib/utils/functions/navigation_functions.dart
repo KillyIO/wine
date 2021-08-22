@@ -21,12 +21,11 @@ void handleAuthRedirect(
   if (deviceType == DeviceScreenType.mobile) {
     context
       ..read<AuthBloc>().add(const AuthEvent.authChanged())
-      ..router.root.navigate(navigateTo);
+      ..router.root.push(navigateTo);
   } else {
     context
       ..read<AuthBloc>().add(const AuthEvent.authChanged())
-      ..router.root.pop()
-      ..router.root.navigate(navigateTo);
+      ..router.root.pop<bool>(true);
   }
 }
 
@@ -40,33 +39,38 @@ Future<void> handleAuthGuardedNavigation(
   final state = context.read<AuthBloc>().state;
 
   await state.maybeMap(
-    authenticated: (_) => context.router.root.push(navigateTo),
+    authenticated: (_) => deviceType != DeviceScreenType.desktop
+        ? context.router.root.navigate(navigateTo)
+        : context.router.root.push(navigateTo),
     orElse: () async {
       if (deviceType != DeviceScreenType.mobile) {
-        await showDialog<bool>(
+        final result = await showDialog<bool>(
           context: context,
           barrierDismissible: false,
-          builder: (_) => WillPopScope(
-            onWillPop: () async => true,
-            child: MultiBlocProvider(
-              providers: [
-                BlocProvider(
-                  create: (_) => getIt<AuthDialogCubit>(),
-                ),
-                BlocProvider(
-                  create: (context) => getIt<LogInBloc>(),
-                ),
-                BlocProvider(
-                  create: (context) => getIt<SignUpBloc>(),
-                ),
-              ],
-              child: AuthDialog(
-                key: const Key('auth_dialog'),
-                navigateTo: navigateTo,
+          builder: (_) => MultiBlocProvider(
+            providers: [
+              BlocProvider(
+                create: (_) => getIt<AuthDialogCubit>(),
               ),
+              BlocProvider(
+                create: (context) => getIt<LogInBloc>(),
+              ),
+              BlocProvider(
+                create: (context) => getIt<SignUpBloc>(),
+              ),
+            ],
+            child: AuthDialog(
+              key: const Key('auth_dialog'),
+              navigateTo: navigateTo,
             ),
           ),
         );
+
+        if (result != null && result) {
+          deviceType != DeviceScreenType.desktop
+              ? await context.router.root.navigate(navigateTo)
+              : await context.router.root.push(navigateTo);
+        }
       } else {
         await context.router.root.push(LogInRoute(navigateTo: navigateTo));
       }
