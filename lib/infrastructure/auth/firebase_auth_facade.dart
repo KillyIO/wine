@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart' as auth;
+import 'package:flutter/services.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:injectable/injectable.dart';
 import 'package:rustic/option.dart';
@@ -157,7 +158,10 @@ class FirebaseAuthFacade implements IAuthFacade {
       return const Err(AuthFailure.unexpected());
     } on FirebaseException catch (_) {
       return const Err(AuthFailure.serverError());
-    } catch (_) {
+    } on PlatformException catch (e) {
+      if (e.code == 'popup_closed_by_user') {
+        return const Err(AuthFailure.cancelledByUser());
+      }
       return const Err(AuthFailure.unexpected());
     }
   }
