@@ -32,7 +32,7 @@ class PlusLayout extends StatelessWidget {
                 trailingIconData: Icons.keyboard_arrow_right,
                 onPressed: () => handleAuthGuardedNavigation(
                   context,
-                  const LibraryRoute(),
+                  navigateTo: const LibraryRoute(),
                 ),
               ),
               TileButton(
