@@ -13,6 +13,7 @@ import 'package:wine/presentation/log_in/widgets/log_in_social_media_button.dart
 import 'package:wine/presentation/routes/router.dart';
 import 'package:wine/utils/constants/palette.dart';
 import 'package:wine/utils/functions/dialog_functions.dart';
+import 'package:wine/utils/functions/navigation_functions.dart';
 import 'package:wine/utils/responsive/log_in_responsive.dart';
 
 /// @nodoc
@@ -20,8 +21,12 @@ class LogInLayout extends StatelessWidget {
   /// @nodoc
   const LogInLayout({
     Key? key,
+    required this.navigateTo,
     this.onSignUpButtonPressed,
   }) : super(key: key);
+
+  /// @nodoc
+  final PageRouteInfo<dynamic> navigateTo;
 
   /// @nodoc
   final VoidCallback? onSignUpButtonPressed;
@@ -29,6 +34,7 @@ class LogInLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final mediaQuery = MediaQuery.of(context).size;
+    final logInState = context.select((LogInBloc bloc) => bloc.state);
 
     return BlocListener<LogInBloc, LogInState>(
       listener: (context, state) {
@@ -85,10 +91,7 @@ class LogInLayout extends StatelessWidget {
               'You have been successfully authenticated.',
               'You will now be redirected.'
             ],
-            () => context
-              ..read<AuthBloc>().add(const AuthEvent.authChanged())
-              ..router.root.navigate(const PlusRoute())
-              ..router.root.push(const LibraryRoute()),
+            () => handleAuthRedirect(context, navigateTo: navigateTo),
           );
         }
       },
@@ -140,19 +143,14 @@ class LogInLayout extends StatelessWidget {
                           onChanged: (value) => context
                               .read<LogInBloc>()
                               .add(LogInEvent.emailAddressChanged(value)),
-                          validator: (_) => context
-                              .read<LogInBloc>()
-                              .state
-                              .emailAddress
-                              .value
-                              .match(
-                                (_) => null,
-                                (err) => err.maybeMap(
-                                  invalidEmailAddress: (_) =>
-                                      'The email address is invalid.',
-                                  orElse: () => null,
-                                ),
-                              ),
+                          validator: (_) => logInState.emailAddress.value.match(
+                            (_) => null,
+                            (err) => err.maybeMap(
+                              invalidEmailAddress: (_) =>
+                                  'The email address is invalid.',
+                              orElse: () => null,
+                            ),
+                          ),
                           keyboardType: TextInputType.emailAddress,
                         ),
                       ),
@@ -163,18 +161,13 @@ class LogInLayout extends StatelessWidget {
                           onChanged: (value) => context
                               .read<LogInBloc>()
                               .add(LogInEvent.passwordChanged(value)),
-                          validator: (_) => context
-                              .read<LogInBloc>()
-                              .state
-                              .password
-                              .value
-                              .match(
-                                (_) => null,
-                                (err) => err.maybeMap(
-                                    invalidPassword: (_) =>
-                                        'The password is invalid.',
-                                    orElse: () => null),
-                              ),
+                          validator: (_) => logInState.password.value.match(
+                            (_) => null,
+                            (err) => err.maybeMap(
+                                invalidPassword: (_) =>
+                                    'The password is invalid.',
+                                orElse: () => null),
+                          ),
                           obscureText: true,
                         ),
                       ),
