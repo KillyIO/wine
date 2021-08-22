@@ -4,7 +4,6 @@ import 'package:wine/presentation/library/library_page.dart';
 import 'package:wine/presentation/log_in/log_in_page.dart';
 import 'package:wine/presentation/onboarding/onboarding_page.dart';
 import 'package:wine/presentation/plus/plus_page.dart';
-import 'package:wine/presentation/routes/guards/auth_guard.dart';
 import 'package:wine/presentation/settings/account_settings/account_settings_page.dart';
 import 'package:wine/presentation/settings/chapter_settings/chapter_settings_page.dart';
 import 'package:wine/presentation/settings/series_settings/series_settings_page.dart';
@@ -24,7 +23,6 @@ export 'router.gr.dart';
       initial: true,
     ),
     AutoRoute<LibraryPage>(
-      guards: <Type>[AuthGuard],
       page: LibraryPage,
       path: libraryPath,
     ),

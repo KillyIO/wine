@@ -6,97 +6,92 @@
 
 import 'package:auto_route/auto_route.dart' as _i1;
 import 'package:flutter/material.dart' as _i2;
-import 'package:wine/presentation/home/home_page.dart' as _i4;
-import 'package:wine/presentation/library/library_page.dart' as _i5;
-import 'package:wine/presentation/log_in/log_in_page.dart' as _i6;
-import 'package:wine/presentation/onboarding/onboarding_page.dart' as _i7;
-import 'package:wine/presentation/plus/plus_page.dart' as _i8;
-import 'package:wine/presentation/routes/guards/auth_guard.dart' as _i3;
+import 'package:wine/presentation/home/home_page.dart' as _i3;
+import 'package:wine/presentation/library/library_page.dart' as _i4;
+import 'package:wine/presentation/log_in/log_in_page.dart' as _i5;
+import 'package:wine/presentation/onboarding/onboarding_page.dart' as _i6;
+import 'package:wine/presentation/plus/plus_page.dart' as _i7;
 import 'package:wine/presentation/settings/account_settings/account_settings_page.dart'
-    as _i11;
+    as _i10;
 import 'package:wine/presentation/settings/chapter_settings/chapter_settings_page.dart'
-    as _i12;
+    as _i11;
 import 'package:wine/presentation/settings/series_settings/series_settings_page.dart'
-    as _i13;
-import 'package:wine/presentation/settings/settings_page.dart' as _i14;
-import 'package:wine/presentation/sign_up/sign_up_page.dart' as _i10;
-import 'package:wine/presentation/wrappers/settings_wrapper.dart' as _i9;
+    as _i12;
+import 'package:wine/presentation/settings/settings_page.dart' as _i13;
+import 'package:wine/presentation/sign_up/sign_up_page.dart' as _i9;
+import 'package:wine/presentation/wrappers/settings_wrapper.dart' as _i8;
 
 class AppRouter extends _i1.RootStackRouter {
-  AppRouter(
-      {_i2.GlobalKey<_i2.NavigatorState>? navigatorKey,
-      required this.authGuard})
+  AppRouter([_i2.GlobalKey<_i2.NavigatorState>? navigatorKey])
       : super(navigatorKey);
-
-  final _i3.AuthGuard authGuard;
 
   @override
   final Map<String, _i1.PageFactory> pagesMap = {
-    HomeRoute.name: (routeData) => _i1.AdaptivePage<_i4.HomePage>(
+    HomeRoute.name: (routeData) => _i1.AdaptivePage<_i3.HomePage>(
         routeData: routeData,
         builder: (_) {
-          return const _i4.HomePage();
+          return const _i3.HomePage();
         }),
-    LibraryRoute.name: (routeData) => _i1.AdaptivePage<_i5.LibraryPage>(
+    LibraryRoute.name: (routeData) => _i1.AdaptivePage<_i4.LibraryPage>(
         routeData: routeData,
         builder: (_) {
-          return const _i5.LibraryPage();
+          return const _i4.LibraryPage();
         }),
-    LogInRoute.name: (routeData) => _i1.AdaptivePage<_i6.LogInPage>(
+    LogInRoute.name: (routeData) => _i1.AdaptivePage<_i5.LogInPage>(
         routeData: routeData,
-        builder: (_) {
-          return const _i6.LogInPage();
+        builder: (data) {
+          final args = data.argsAs<LogInRouteArgs>();
+          return _i5.LogInPage(key: args.key, navigateTo: args.navigateTo);
         }),
-    OnboardingRoute.name: (routeData) => _i1.AdaptivePage<_i7.OnboardingPage>(
+    OnboardingRoute.name: (routeData) => _i1.AdaptivePage<_i6.OnboardingPage>(
         routeData: routeData,
         builder: (_) {
-          return const _i7.OnboardingPage();
+          return const _i6.OnboardingPage();
         }),
-    PlusRoute.name: (routeData) => _i1.AdaptivePage<_i8.PlusPage>(
+    PlusRoute.name: (routeData) => _i1.AdaptivePage<_i7.PlusPage>(
         routeData: routeData,
         builder: (_) {
-          return const _i8.PlusPage();
+          return const _i7.PlusPage();
         }),
-    SettingsWrapper.name: (routeData) => _i1.AdaptivePage<_i9.SettingsWrapper>(
+    SettingsWrapper.name: (routeData) => _i1.AdaptivePage<_i8.SettingsWrapper>(
         routeData: routeData,
         builder: (_) {
-          return const _i9.SettingsWrapper();
+          return const _i8.SettingsWrapper();
         }),
-    SignUpRoute.name: (routeData) => _i1.AdaptivePage<_i10.SignUpPage>(
+    SignUpRoute.name: (routeData) => _i1.AdaptivePage<_i9.SignUpPage>(
         routeData: routeData,
         builder: (_) {
-          return const _i10.SignUpPage();
+          return const _i9.SignUpPage();
         }),
     AccountSettingsRoute.name: (routeData) =>
-        _i1.AdaptivePage<_i11.AccountSettingsPage>(
+        _i1.AdaptivePage<_i10.AccountSettingsPage>(
             routeData: routeData,
             builder: (_) {
-              return const _i11.AccountSettingsPage();
+              return const _i10.AccountSettingsPage();
             }),
     ChapterSettingsRoute.name: (routeData) =>
-        _i1.AdaptivePage<_i12.ChapterSettingsPage>(
+        _i1.AdaptivePage<_i11.ChapterSettingsPage>(
             routeData: routeData,
             builder: (_) {
-              return const _i12.ChapterSettingsPage();
+              return const _i11.ChapterSettingsPage();
             }),
     SeriesSettingsRoute.name: (routeData) =>
-        _i1.AdaptivePage<_i13.SeriesSettingsPage>(
+        _i1.AdaptivePage<_i12.SeriesSettingsPage>(
             routeData: routeData,
             builder: (_) {
-              return const _i13.SeriesSettingsPage();
+              return const _i12.SeriesSettingsPage();
             }),
-    SettingsRoute.name: (routeData) => _i1.AdaptivePage<_i14.SettingsPage>(
+    SettingsRoute.name: (routeData) => _i1.AdaptivePage<_i13.SettingsPage>(
         routeData: routeData,
         builder: (_) {
-          return const _i14.SettingsPage();
+          return const _i13.SettingsPage();
         })
   };
 
   @override
   List<_i1.RouteConfig> get routes => [
         _i1.RouteConfig(HomeRoute.name, path: '/'),
-        _i1.RouteConfig(LibraryRoute.name,
-            path: '/library', guards: [authGuard]),
+        _i1.RouteConfig(LibraryRoute.name, path: '/library'),
         _i1.RouteConfig(LogInRoute.name, path: '/log-in'),
         _i1.RouteConfig(OnboardingRoute.name, path: '/onboarding'),
         _i1.RouteConfig(PlusRoute.name, path: '/plus'),
@@ -122,10 +117,21 @@ class LibraryRoute extends _i1.PageRouteInfo {
   static const String name = 'LibraryRoute';
 }
 
-class LogInRoute extends _i1.PageRouteInfo {
-  const LogInRoute() : super(name, path: '/log-in');
+class LogInRoute extends _i1.PageRouteInfo<LogInRouteArgs> {
+  LogInRoute({_i2.Key? key, required _i1.PageRouteInfo<dynamic> navigateTo})
+      : super(name,
+            path: '/log-in',
+            args: LogInRouteArgs(key: key, navigateTo: navigateTo));
 
   static const String name = 'LogInRoute';
+}
+
+class LogInRouteArgs {
+  const LogInRouteArgs({this.key, required this.navigateTo});
+
+  final _i2.Key? key;
+
+  final _i1.PageRouteInfo<dynamic> navigateTo;
 }
 
 class OnboardingRoute extends _i1.PageRouteInfo {
