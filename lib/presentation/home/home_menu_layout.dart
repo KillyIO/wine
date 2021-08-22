@@ -69,12 +69,14 @@ class HomeMenuLayout extends StatelessWidget {
                       ),
                       text: 'LIBRARY',
                     ),
-                    const SizedBox(height: 25),
-                    HomeMenuTile(
-                      key: const Key('home_menu_plus_tile'),
-                      onPressed: () =>
-                          context.router.root.push(const PlusRoute()),
-                      text: 'PLUS',
+                    Padding(
+                      padding: const EdgeInsets.only(top: 25),
+                      child: HomeMenuTile(
+                        key: const Key('home_menu_plus_tile'),
+                        onPressed: () =>
+                            context.router.root.push(const PlusRoute()),
+                        text: 'PLUS',
+                      ),
                     ),
                   ],
                 ),
