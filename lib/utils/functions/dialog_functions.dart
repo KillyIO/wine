@@ -17,15 +17,12 @@ Future<void> redirectDialog(
   final result = await showDialog<bool>(
     context: context,
     barrierDismissible: false,
-    builder: (_) => WillPopScope(
-      onWillPop: () async => true,
-      child: SuccessDialog(
-        key: const Key('redirect_success_dialog'),
-        messages: messages,
-        onPressed: () async {
-          await context.router.pop<bool>(true);
-        },
-      ),
+    builder: (_) => SuccessDialog(
+      key: const Key('redirect_success_dialog'),
+      messages: messages,
+      onPressed: () async {
+        await context.router.pop<bool>(true);
+      },
     ),
   );
 
