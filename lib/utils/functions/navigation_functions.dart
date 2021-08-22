@@ -7,43 +7,69 @@ import 'package:wine/application/auth/auth_dialog/auth_dialog_cubit.dart';
 import 'package:wine/application/log_in/log_in_bloc.dart';
 import 'package:wine/application/sign_up/sign_up_bloc.dart';
 import 'package:wine/injection.dart';
+import 'package:wine/presentation/routes/router.dart';
 import 'package:wine/presentation/web/auth_dialog.dart';
 
 /// @nodoc
-Future<void> handleAuthGuardedNavigation(
-  BuildContext context,
-  PageRouteInfo<dynamic> route,
-) async {
+void handleAuthRedirect(
+  BuildContext context, {
+  required PageRouteInfo<dynamic> navigateTo,
+}) {
   final mediaQuery = MediaQuery.of(context).size;
   final deviceType = getDeviceType(mediaQuery);
 
-  if (deviceType != DeviceScreenType.mobile) {
-    final state = context.read<AuthBloc>().state;
-
-    await state.maybeMap(
-      authenticated: (_) => context.router.root.push(route),
-      orElse: () => showDialog<bool>(
-        context: context,
-        barrierDismissible: false,
-        builder: (_) => MultiBlocProvider(
-          providers: [
-            BlocProvider(
-              create: (_) => getIt<AuthDialogCubit>(),
-            ),
-            BlocProvider(
-              create: (context) => getIt<LogInBloc>(),
-            ),
-            BlocProvider(
-              create: (context) => getIt<SignUpBloc>(),
-            ),
-          ],
-          child: const AuthDialog(
-            key: Key('auth_dialog'),
-          ),
-        ),
-      ),
-    );
+  if (deviceType == DeviceScreenType.mobile) {
+    context
+      ..read<AuthBloc>().add(const AuthEvent.authChanged())
+      ..router.root.navigate(navigateTo);
   } else {
-    await context.router.root.push(route);
+    context
+      ..read<AuthBloc>().add(const AuthEvent.authChanged())
+      ..router.root.pop()
+      ..router.root.navigate(navigateTo);
   }
+}
+
+/// @nodoc
+Future<void> handleAuthGuardedNavigation(
+  BuildContext context, {
+  required PageRouteInfo<dynamic> navigateTo,
+}) async {
+  final mediaQuery = MediaQuery.of(context).size;
+  final deviceType = getDeviceType(mediaQuery);
+  final state = context.read<AuthBloc>().state;
+
+  await state.maybeMap(
+    authenticated: (_) => context.router.root.push(navigateTo),
+    orElse: () async {
+      if (deviceType != DeviceScreenType.mobile) {
+        await showDialog<bool>(
+          context: context,
+          barrierDismissible: false,
+          builder: (_) => WillPopScope(
+            onWillPop: () async => true,
+            child: MultiBlocProvider(
+              providers: [
+                BlocProvider(
+                  create: (_) => getIt<AuthDialogCubit>(),
+                ),
+                BlocProvider(
+                  create: (context) => getIt<LogInBloc>(),
+                ),
+                BlocProvider(
+                  create: (context) => getIt<SignUpBloc>(),
+                ),
+              ],
+              child: AuthDialog(
+                key: const Key('auth_dialog'),
+                navigateTo: navigateTo,
+              ),
+            ),
+          ),
+        );
+      } else {
+        await context.router.root.push(LogInRoute(navigateTo: navigateTo));
+      }
+    },
+  );
 }
