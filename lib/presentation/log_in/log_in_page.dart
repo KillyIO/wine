@@ -13,7 +13,13 @@ import 'package:wine/utils/themes.dart';
 /// @nodoc
 class LogInPage extends StatelessWidget {
   /// @nodoc
-  const LogInPage({Key? key}) : super(key: key);
+  const LogInPage({
+    Key? key,
+    required this.navigateTo,
+  }) : super(key: key);
+
+  /// @nodoc
+  final PageRouteInfo<dynamic> navigateTo;
 
   @override
   Widget build(BuildContext context) {
@@ -63,7 +69,7 @@ class LogInPage extends StatelessWidget {
         ),
         body: BlocProvider(
           create: (_) => getIt<LogInBloc>(),
-          child: const LogInLayout(),
+          child: LogInLayout(navigateTo: navigateTo),
         ),
       ),
     );
