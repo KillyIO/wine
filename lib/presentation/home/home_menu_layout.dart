@@ -69,20 +69,6 @@ class HomeMenuLayout extends StatelessWidget {
                       ),
                       text: 'LIBRARY',
                     ),
-                    // BlocBuilder<AuthBloc, AuthState>(
-                    //   builder: (context, state) {
-                    //     return state.maybeMap(
-                    //       authenticated: (_) => HomeMenuTile(
-                    //         key: const Key('home_menu_library_tile'),
-                    //         // TODO add route push LibraryPage
-                    //         onPressed: () =>
-                    //             context.router.root.push(const LibraryRoute()),
-                    //         text: 'LIBRARY',
-                    //       ),
-                    //       orElse: () => Container(),
-                    //     );
-                    //   },
-                    // ),
                     const SizedBox(height: 25),
                     HomeMenuTile(
                       key: const Key('home_menu_plus_tile'),
