@@ -33,19 +33,15 @@ class HomeMenuLayout extends StatelessWidget {
                 Padding(
                   padding:
                       getDefaultAppBarButtonPadding(mediaQuery, isRight: true),
-                  child: Builder(
-                    builder: (context) {
-                      return IconButton(
-                        highlightColor: Colors.transparent,
-                        hoverColor: Colors.transparent,
-                        icon: const Icon(
-                          Icons.close_outlined,
-                          color: Colors.black,
-                        ),
-                        onPressed: context.router.pop,
-                        splashColor: Colors.transparent,
-                      );
-                    },
+                  child: IconButton(
+                    highlightColor: Colors.transparent,
+                    hoverColor: Colors.transparent,
+                    icon: const Icon(
+                      Icons.close_outlined,
+                      color: Colors.black,
+                    ),
+                    onPressed: context.router.pop,
+                    splashColor: Colors.transparent,
                   ),
                 ),
               ],
@@ -65,7 +61,7 @@ class HomeMenuLayout extends StatelessWidget {
                       key: const Key('home_menu_library_tile'),
                       onPressed: () => handleAuthGuardedNavigation(
                         context,
-                        const LibraryRoute(),
+                        navigateTo: const LibraryRoute(),
                       ),
                       text: 'LIBRARY',
                     ),
