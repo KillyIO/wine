@@ -28,7 +28,7 @@ class SettingsLayout extends StatelessWidget {
                 trailingIconData: Icons.keyboard_arrow_right,
                 onPressed: () => handleAuthGuardedNavigation(
                   context,
-                  const AccountSettingsRoute(),
+                  navigateTo: const AccountSettingsRoute(),
                 ),
               ),
               TileButton(
