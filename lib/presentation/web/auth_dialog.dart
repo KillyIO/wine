@@ -1,3 +1,4 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:wine/application/auth/auth_dialog/auth_dialog_cubit.dart';
@@ -8,7 +9,13 @@ import 'package:wine/utils/responsive/auth_dialog_responsive.dart';
 /// @nodoc
 class AuthDialog extends StatelessWidget {
   /// @nodoc
-  const AuthDialog({Key? key}) : super(key: key);
+  const AuthDialog({
+    Key? key,
+    required this.navigateTo,
+  }) : super(key: key);
+
+  /// @nodoc
+  final PageRouteInfo<dynamic> navigateTo;
 
   @override
   Widget build(BuildContext context) {
@@ -33,6 +40,7 @@ class AuthDialog extends StatelessWidget {
                     context.read<AuthDialogCubit>().updateLayout,
               ),
               orElse: () => LogInLayout(
+                navigateTo: navigateTo,
                 onSignUpButtonPressed:
                     context.read<AuthDialogCubit>().updateLayout,
               ),
