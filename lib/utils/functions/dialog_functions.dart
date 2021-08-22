@@ -18,14 +18,12 @@ Future<void> redirectDialog(
     context: context,
     barrierDismissible: false,
     builder: (_) => WillPopScope(
-      onWillPop: () async => context.router.canPopSelfOrChildren,
+      onWillPop: () async => true,
       child: SuccessDialog(
         key: const Key('redirect_success_dialog'),
         messages: messages,
         onPressed: () async {
-          if (context.router.canPopSelfOrChildren) {
-            await context.router.pop<bool>(true);
-          }
+          await context.router.pop<bool>(true);
         },
       ),
     ),
@@ -47,9 +45,7 @@ Future<void> baseErrorDialog(
       key: const Key('dismiss_error_dialog'),
       messages: errorMessages,
       onPressed: () async {
-        if (context.router.canPopSelfOrChildren) {
-          await context.router.pop<bool>(true);
-        }
+        await context.router.pop<bool>(true);
       },
     ),
   );
@@ -59,14 +55,13 @@ Future<void> baseErrorDialog(
 void restartAppDialog(BuildContext context, List<String> errorMessages) {
   showDialog<bool>(
     context: context,
+    barrierDismissible: false,
     builder: (_) => ErrorDialog(
       key: const Key('setup_error_dialog'),
       messages: errorMessages,
       buttonText: 'RESTART',
       onPressed: () async {
-        if (context.router.canPopSelfOrChildren) {
-          await context.router.pop<bool>(true);
-        }
+        await context.router.pop<bool>(true);
       },
     ),
   ).then((result) {
