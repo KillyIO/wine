@@ -22,13 +22,13 @@ import 'package:wine/domain/user/user_failure.dart';
 import 'package:wine/injection.dart';
 import 'package:wine/presentation/home/widgets/home_app_bar.dart';
 import 'package:wine/presentation/onboarding/onboarding_page.dart';
+import 'package:wine/presentation/routes/router.dart';
 
 import '../../mocks/domain_mocks.dart';
 import '../../unit_tests/utils/constants.dart';
 import '../utils/injection_helper.dart';
 import '../utils/test_router_widget.dart';
 import '../utils/test_widget.dart';
-import 'routes/router.dart';
 
 void main() {
   late IAuthFacade _authFacade;
@@ -60,7 +60,7 @@ void main() {
                 .thenAnswer((_) async => const Err(AuthFailure.serverError()));
 
             await tester.pumpWidget(TestRouterWidget(
-              appRouter: HomeTestRouter(),
+              appRouter: AppRouter(),
               providers: [
                 BlocProvider<AuthBloc>(create: (_) => getIt<AuthBloc>()),
                 BlocProvider<HomeBloc>(create: (_) => getIt<HomeBloc>()),
@@ -84,7 +84,7 @@ void main() {
                 .thenAnswer((_) async => const Err(AuthFailure.unexpected()));
 
             await tester.pumpWidget(TestRouterWidget(
-              appRouter: HomeTestRouter(),
+              appRouter: AppRouter(),
               providers: [
                 BlocProvider<AuthBloc>(create: (_) => getIt<AuthBloc>()),
                 BlocProvider<HomeBloc>(create: (_) => getIt<HomeBloc>()),
@@ -116,7 +116,7 @@ void main() {
                     DefaultCoversFailure.defaultCoverURLsNotCached()));
 
             await tester.pumpWidget(TestRouterWidget(
-              appRouter: HomeTestRouter(),
+              appRouter: AppRouter(),
               providers: [
                 BlocProvider<AuthBloc>(create: (_) => getIt<AuthBloc>()),
                 BlocProvider<HomeBloc>(create: (_) => getIt<HomeBloc>()),
@@ -146,7 +146,7 @@ void main() {
             );
 
             await tester.pumpWidget(TestRouterWidget(
-              appRouter: HomeTestRouter(),
+              appRouter: AppRouter(),
               providers: [
                 BlocProvider<AuthBloc>(create: (_) => getIt<AuthBloc>()),
                 BlocProvider<HomeBloc>(create: (_) => getIt<HomeBloc>()),
@@ -175,7 +175,7 @@ void main() {
             );
 
             await tester.pumpWidget(TestRouterWidget(
-              appRouter: HomeTestRouter(),
+              appRouter: AppRouter(),
               providers: [
                 BlocProvider<AuthBloc>(create: (_) => getIt<AuthBloc>()),
                 BlocProvider<HomeBloc>(create: (_) => getIt<HomeBloc>()),
@@ -201,7 +201,7 @@ void main() {
             );
 
             await tester.pumpWidget(TestRouterWidget(
-              appRouter: HomeTestRouter(),
+              appRouter: AppRouter(),
               providers: [
                 BlocProvider<AuthBloc>(create: (_) => getIt<AuthBloc>()),
                 BlocProvider<HomeBloc>(create: (_) => getIt<HomeBloc>()),
@@ -240,7 +240,7 @@ void main() {
             );
 
             await tester.pumpWidget(TestRouterWidget(
-              appRouter: HomeTestRouter(),
+              appRouter: AppRouter(),
               providers: [
                 BlocProvider<AuthBloc>(create: (_) => getIt<AuthBloc>()),
                 BlocProvider<HomeBloc>(create: (_) => getIt<HomeBloc>()),
@@ -279,7 +279,7 @@ void main() {
             );
 
             await tester.pumpWidget(TestRouterWidget(
-              appRouter: HomeTestRouter(),
+              appRouter: AppRouter(),
               providers: [
                 BlocProvider<AuthBloc>(create: (_) => getIt<AuthBloc>()),
                 BlocProvider<HomeBloc>(create: (_) => getIt<HomeBloc>()),
@@ -317,7 +317,7 @@ void main() {
             );
 
             await tester.pumpWidget(TestRouterWidget(
-              appRouter: HomeTestRouter(),
+              appRouter: AppRouter(),
               providers: [
                 BlocProvider<AuthBloc>(create: (_) => getIt<AuthBloc>()),
                 BlocProvider<HomeBloc>(create: (_) => getIt<HomeBloc>()),
@@ -358,7 +358,7 @@ void main() {
                 .thenAnswer((_) async => const Err(UserFailure.userNotFound()));
 
             await tester.pumpWidget(TestRouterWidget(
-              appRouter: HomeTestRouter(),
+              appRouter: AppRouter(),
               providers: [
                 BlocProvider<AuthBloc>(create: (_) => getIt<AuthBloc>()),
                 BlocProvider<HomeBloc>(create: (_) => getIt<HomeBloc>()),
@@ -391,7 +391,7 @@ void main() {
           .thenAnswer((_) async => const Ok(Unit()));
 
       await tester.pumpWidget(TestRouterWidget(
-        appRouter: HomeTestRouter(),
+        appRouter: AppRouter(),
         providers: [
           BlocProvider<AuthBloc>(create: (_) => getIt<AuthBloc>()),
           BlocProvider<HomeBloc>(create: (_) => getIt<HomeBloc>()),
@@ -408,10 +408,10 @@ void main() {
           child: MultiBlocProvider(
             providers: <BlocProvider>[
               BlocProvider<AuthBloc>(
-                create: (context) => getIt<AuthBloc>(),
+                create: (_) => getIt<AuthBloc>(),
               ),
               BlocProvider<HomeNavigationBloc>(
-                create: (context) => getIt<HomeNavigationBloc>(),
+                create: (_) => getIt<HomeNavigationBloc>(),
               ),
             ],
             child: const HomeAppBar(),
@@ -443,17 +443,16 @@ void main() {
 
       testWidgets('Should find 3 buttons', (tester) async {
         await tester.pumpWidget(TestRouterWidget(
-          appRouter: HomeTestRouter(),
+          appRouter: AppRouter(),
           providers: <BlocProvider>[
             BlocProvider<AuthBloc>(
-              create: (context) =>
-                  getIt<AuthBloc>()..add(const AuthEvent.authChanged()),
+              create: (_) => getIt<AuthBloc>(),
             ),
             BlocProvider<HomeBloc>(
-              create: (context) => getIt<HomeBloc>(),
+              create: (_) => getIt<HomeBloc>(),
             ),
             BlocProvider<HomeNavigationBloc>(
-              create: (context) => getIt<HomeNavigationBloc>(),
+              create: (_) => getIt<HomeNavigationBloc>(),
             ),
           ],
         ));
