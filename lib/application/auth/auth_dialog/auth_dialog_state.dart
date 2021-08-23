@@ -2,7 +2,7 @@ part of 'auth_dialog_cubit.dart';
 
 /// @nodoc
 @freezed
-abstract class AuthDialogState with _$AuthDialogState {
+class AuthDialogState with _$AuthDialogState {
   /// @nodoc
   const factory AuthDialogState.initial() = _Initial;
 
