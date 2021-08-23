@@ -6,6 +6,7 @@ import 'package:rustic/result.dart';
 import 'package:rustic/tuple.dart';
 import 'package:wine/application/auth/auth_bloc.dart';
 import 'package:wine/application/home/home_bloc.dart';
+import 'package:wine/application/home/home_navigation/home_navigation_bloc.dart';
 import 'package:wine/domain/auth/auth_failure.dart';
 import 'package:wine/domain/auth/i_auth_facade.dart';
 import 'package:wine/domain/default_covers/default_covers_failure.dart';
@@ -18,12 +19,14 @@ import 'package:wine/domain/user/i_user_repository.dart';
 import 'package:wine/domain/user/user.dart';
 import 'package:wine/domain/user/user_failure.dart';
 import 'package:wine/injection.dart';
+import 'package:wine/presentation/home/widgets/home_app_bar.dart';
 import 'package:wine/presentation/onboarding/onboarding_page.dart';
 
 import '../../mocks/domain_mocks.dart';
 import '../../unit_tests/utils/constants.dart';
 import '../utils/injection_helper.dart';
 import '../utils/test_router_widget.dart';
+import '../utils/test_widget.dart';
 import 'routes/router.dart';
 
 void main() {
@@ -398,9 +401,79 @@ void main() {
       expect(find.byType(OnboardingPage), findsOneWidget);
     });
 
-    // TODO test top left icon open/close drawer
+    group('AppBar -', () {
+      testWidgets('Should find 3 buttons', (tester) async {
+        await tester.pumpWidget(TestWidget(
+          child: MultiBlocProvider(
+            providers: <BlocProvider>[
+              BlocProvider<AuthBloc>(
+                create: (context) => getIt<AuthBloc>(),
+              ),
+              BlocProvider<HomeNavigationBloc>(
+                create: (context) => getIt<HomeNavigationBloc>(),
+              ),
+            ],
+            child: const HomeAppBar(),
+          ),
+        ));
 
-    // TODO test top right icon open/close endDrawer
+        final homeFilterButton = find.byKey(const Key('home_filter_button'));
+        final homeNewSeriesButton =
+            find.byKey(const Key('home_new_series_button'));
+        final homeMenuButton = find.byKey(const Key('home_menu_button'));
+
+        expect(homeFilterButton, findsOneWidget);
+        expect(homeNewSeriesButton, findsOneWidget);
+        expect(homeMenuButton, findsOneWidget);
+      });
+    });
+
+    group('Drawer -', () {
+      setUp(() {
+        when(() => _authFacade.isLoggedIn).thenReturn(true);
+        when(() => _authFacade.isAnonymous).thenReturn(true);
+        when(_settingsRepository.fetchSettings)
+            .thenAnswer((_) async => const Ok(testSettings));
+        when(_sessionsRepository.fetchSession)
+            .thenAnswer((_) async => Ok(testUser));
+      });
+
+      // TODO test top left icon open/close drawer
+
+      testWidgets('Should display 3 buttons', (tester) async {
+        await tester.pumpWidget(TestRouterWidget(
+          appRouter: HomeTestRouter(),
+          providers: <BlocProvider>[
+            BlocProvider<AuthBloc>(
+              create: (context) =>
+                  getIt<AuthBloc>()..add(const AuthEvent.authChanged()),
+            ),
+            BlocProvider<HomeBloc>(
+              create: (context) => getIt<HomeBloc>(),
+            ),
+            BlocProvider<HomeNavigationBloc>(
+              create: (context) => getIt<HomeNavigationBloc>(),
+            ),
+          ],
+        ));
+        await tester.pumpAndSettle();
+
+        final homeMenuButton = find.byKey(const Key('home_menu_button'));
+
+        await tester.tap(homeMenuButton);
+        await tester.pump();
+
+        final homeMenuCloseButton =
+            find.byKey(const Key('home_menu_close_button'));
+        final homeMenuLibraryTile =
+            find.byKey(const Key('home_menu_library_tile'));
+        final homeMenuPlusTile = find.byKey(const Key('home_menu_plus_tile'));
+
+        expect(homeMenuCloseButton, findsOneWidget);
+        expect(homeMenuLibraryTile, findsOneWidget);
+        expect(homeMenuPlusTile, findsOneWidget);
+      });
+    });
 
     // TODO test "PLUS" button navigate to PlusPage
 
