@@ -2,6 +2,7 @@ import 'package:injectable/injectable.dart';
 import 'package:wine/application/auth/auth_bloc.dart';
 import 'package:wine/application/home/home_bloc.dart';
 import 'package:wine/application/home/home_navigation/home_navigation_bloc.dart';
+import 'package:wine/application/log_in/log_in_bloc.dart';
 import 'package:wine/application/setup/setup_bloc.dart';
 import 'package:wine/domain/auth/i_auth_facade.dart';
 import 'package:wine/domain/default_covers/i_default_covers_repository.dart';
@@ -39,6 +40,11 @@ void setupInjection() {
     ..registerLazySingleton<AuthBloc>(() => AuthBloc(_authFacade))
     ..registerLazySingleton<HomeBloc>(() => HomeBloc(_homeNavigationBloc))
     ..registerLazySingleton<HomeNavigationBloc>(() => HomeNavigationBloc())
+    ..registerLazySingleton<LogInBloc>(() => LogInBloc(
+          _authFacade,
+          _sessionsRepository,
+          _userRepository,
+        ))
     ..registerLazySingleton<SetupBloc>(() => SetupBloc(
           _authFacade,
           _defaultCoversRepository,
