@@ -18,10 +18,7 @@ void main() {
       _authFacade = MockAuthFacade();
     });
 
-    testWidgets('Should not find new Series button', (tester) async {
-      when(() => _authFacade.isLoggedIn).thenReturn(true);
-      when(() => _authFacade.isAnonymous).thenReturn(true);
-
+    testWidgets('Should find 3 buttons', (tester) async {
       await tester.pumpWidget(TestWidget(
         child: MultiBlocProvider(
           providers: <BlocProvider>[
@@ -36,38 +33,9 @@ void main() {
         ),
       ));
 
-      final filterButton = find.byKey(const Key('filter_button'));
-      final newSeriesButton = find.byKey(const Key('new_series_button'));
-      final menuButton = find.byKey(const Key('menu_button_closed'));
-
-      expect(filterButton, findsOneWidget);
-      expect(newSeriesButton, findsNothing);
-      expect(menuButton, findsOneWidget);
-    });
-
-    testWidgets('Should find new Series button', (tester) async {
-      when(() => _authFacade.isLoggedIn).thenReturn(true);
-      when(() => _authFacade.isAnonymous).thenReturn(false);
-
-      await tester.pumpWidget(TestWidget(
-        child: MultiBlocProvider(
-          providers: <BlocProvider>[
-            BlocProvider<AuthBloc>(
-              create: (context) =>
-                  AuthBloc(_authFacade)..add(const AuthEvent.authChanged()),
-            ),
-            BlocProvider<HomeNavigationBloc>(
-              create: (context) => HomeNavigationBloc(),
-            ),
-          ],
-          child: const HomeAppBar(),
-        ),
-      ));
-      await tester.pumpAndSettle();
-
-      final filterButton = find.byKey(const Key('filter_button'));
-      final newSeriesButton = find.byKey(const Key('new_series_button'));
-      final menuButton = find.byKey(const Key('menu_button_closed'));
+      final filterButton = find.byKey(const Key('home_filter_button'));
+      final newSeriesButton = find.byKey(const Key('home_new_series_button'));
+      final menuButton = find.byKey(const Key('home_menu_button'));
 
       expect(filterButton, findsOneWidget);
       expect(newSeriesButton, findsOneWidget);
