@@ -29,14 +29,35 @@ samples, guidance on mobile development, and a full API reference.
       "request": "launch",
       "type": "dart",
       "program": "lib/main_development.dart",
-      "args": ["--flavor", "development", "--no-sound-null-safety"]
+      "args": ["--flavor", "development"]
+    },
+    {
+      "name": "Flutter Dev Device Preview",
+      "request": "launch",
+      "type": "dart",
+      "program": "lib/main_development_device_preview.dart",
+      "args": ["--flavor", "development"]
+    },
+    {
+      "name": "Flutter Dev Web",
+      "request": "launch",
+      "type": "dart",
+      "program": "lib/main_development.dart",
+      "args": [
+        "--flavor",
+        "development",
+        "--web-hostname",
+        "localhost",
+        "--web-port",
+        "7357"
+      ]
     },
     {
       "name": "Flutter Pro",
       "request": "launch",
       "type": "dart",
       "program": "lib/main_production.dart",
-      "args": ["--flavor", "production", "--no-sound-null-safety"]
+      "args": ["--flavor", "production"]
     }
   ]
 }
