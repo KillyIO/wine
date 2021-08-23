@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:mocktail/mocktail.dart';
 import 'package:wine/application/auth/auth_bloc.dart';
 import 'package:wine/application/home/home_navigation/home_navigation_bloc.dart';
 import 'package:wine/domain/auth/i_auth_facade.dart';
@@ -33,13 +32,14 @@ void main() {
         ),
       ));
 
-      final filterButton = find.byKey(const Key('home_filter_button'));
-      final newSeriesButton = find.byKey(const Key('home_new_series_button'));
-      final menuButton = find.byKey(const Key('home_menu_button'));
+      final homeFilterButton = find.byKey(const Key('home_filter_button'));
+      final homeNewSeriesButton =
+          find.byKey(const Key('home_new_series_button'));
+      final homeMenuButton = find.byKey(const Key('home_menu_button'));
 
-      expect(filterButton, findsOneWidget);
-      expect(newSeriesButton, findsOneWidget);
-      expect(menuButton, findsOneWidget);
+      expect(homeFilterButton, findsOneWidget);
+      expect(homeNewSeriesButton, findsOneWidget);
+      expect(homeMenuButton, findsOneWidget);
     });
   });
 }
