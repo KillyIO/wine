@@ -4,6 +4,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:rustic/result.dart';
 import 'package:rustic/tuple.dart';
+
 import 'package:wine/application/auth/auth_bloc.dart';
 import 'package:wine/application/home/home_bloc.dart';
 import 'package:wine/application/home/home_navigation/home_navigation_bloc.dart';
@@ -440,7 +441,7 @@ void main() {
 
       // TODO test top left icon open/close drawer
 
-      testWidgets('Should display 3 buttons', (tester) async {
+      testWidgets('Should find 3 buttons', (tester) async {
         await tester.pumpWidget(TestRouterWidget(
           appRouter: HomeTestRouter(),
           providers: <BlocProvider>[
