@@ -158,9 +158,11 @@ class FirebaseAuthFacade implements IAuthFacade {
       return const Err(AuthFailure.unexpected());
     } on FirebaseException catch (_) {
       return const Err(AuthFailure.serverError());
-    } on PlatformException catch (e) {
-      if (e.code == 'popup_closed_by_user') {
-        return const Err(AuthFailure.cancelledByUser());
+    } on Exception catch (e) {
+      if (e is PlatformException) {
+        if (e.code == 'popup_closed_by_user') {
+          return const Err(AuthFailure.cancelledByUser());
+        }
       }
       return const Err(AuthFailure.unexpected());
     }
