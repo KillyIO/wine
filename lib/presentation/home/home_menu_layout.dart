@@ -34,6 +34,7 @@ class HomeMenuLayout extends StatelessWidget {
                   padding:
                       getDefaultAppBarButtonPadding(mediaQuery, isRight: true),
                   child: IconButton(
+                    key: const Key('home_menu_close_button'),
                     highlightColor: Colors.transparent,
                     hoverColor: Colors.transparent,
                     icon: const Icon(

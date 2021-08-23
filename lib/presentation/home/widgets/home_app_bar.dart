@@ -29,7 +29,7 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
       leading: Padding(
         padding: getDefaultAppBarButtonPadding(mediaQuery),
         child: IconButton(
-          key: const Key('filter_button'),
+          key: const Key('home_filter_button'),
           highlightColor: Colors.transparent,
           hoverColor: Colors.transparent,
           icon: const Icon(
@@ -45,7 +45,7 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
         Padding(
           padding: getDefaultAppBarButtonPadding(mediaQuery, isRight: true),
           child: IconButton(
-            key: const Key('new_series_button'),
+            key: const Key('home_new_series_button'),
             highlightColor: Colors.transparent,
             hoverColor: Colors.transparent,
             icon: const Icon(
@@ -60,7 +60,7 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
         Padding(
           padding: getDefaultAppBarButtonPadding(mediaQuery, isRight: true),
           child: IconButton(
-            key: const Key('menu_button_closed'),
+            key: const Key('home_menu_button'),
             highlightColor: Colors.transparent,
             hoverColor: Colors.transparent,
             icon: const Icon(
