@@ -59,10 +59,13 @@ void main() {
             when(_authFacade.logInAnonymously)
                 .thenAnswer((_) async => const Err(AuthFailure.serverError()));
 
+            final authBloc = getIt<AuthBloc>()
+              ..add(const AuthEvent.authChanged());
+
             await tester.pumpWidget(TestRouterWidget(
               appRouter: AppRouter(),
               providers: [
-                BlocProvider<AuthBloc>(create: (_) => getIt<AuthBloc>()),
+                BlocProvider<AuthBloc>(create: (_) => authBloc),
                 BlocProvider<HomeBloc>(create: (_) => getIt<HomeBloc>()),
               ],
             ));
@@ -83,10 +86,13 @@ void main() {
             when(_authFacade.logInAnonymously)
                 .thenAnswer((_) async => const Err(AuthFailure.unexpected()));
 
+            final authBloc = getIt<AuthBloc>()
+              ..add(const AuthEvent.authChanged());
+
             await tester.pumpWidget(TestRouterWidget(
               appRouter: AppRouter(),
               providers: [
-                BlocProvider<AuthBloc>(create: (_) => getIt<AuthBloc>()),
+                BlocProvider<AuthBloc>(create: (_) => authBloc),
                 BlocProvider<HomeBloc>(create: (_) => getIt<HomeBloc>()),
               ],
             ));
@@ -115,10 +121,13 @@ void main() {
                 .thenAnswer((_) async => const Err(
                     DefaultCoversFailure.defaultCoverURLsNotCached()));
 
+            final authBloc = getIt<AuthBloc>()
+              ..add(const AuthEvent.authChanged());
+
             await tester.pumpWidget(TestRouterWidget(
               appRouter: AppRouter(),
               providers: [
-                BlocProvider<AuthBloc>(create: (_) => getIt<AuthBloc>()),
+                BlocProvider<AuthBloc>(create: (_) => authBloc),
                 BlocProvider<HomeBloc>(create: (_) => getIt<HomeBloc>()),
               ],
             ));
@@ -145,10 +154,13 @@ void main() {
                   const Err(DefaultCoversFailure.defaultCoverURLsNotLoaded()),
             );
 
+            final authBloc = getIt<AuthBloc>()
+              ..add(const AuthEvent.authChanged());
+
             await tester.pumpWidget(TestRouterWidget(
               appRouter: AppRouter(),
               providers: [
-                BlocProvider<AuthBloc>(create: (_) => getIt<AuthBloc>()),
+                BlocProvider<AuthBloc>(create: (_) => authBloc),
                 BlocProvider<HomeBloc>(create: (_) => getIt<HomeBloc>()),
               ],
             ));
@@ -174,10 +186,13 @@ void main() {
               (_) async => const Err(DefaultCoversFailure.serverError()),
             );
 
+            final authBloc = getIt<AuthBloc>()
+              ..add(const AuthEvent.authChanged());
+
             await tester.pumpWidget(TestRouterWidget(
               appRouter: AppRouter(),
               providers: [
-                BlocProvider<AuthBloc>(create: (_) => getIt<AuthBloc>()),
+                BlocProvider<AuthBloc>(create: (_) => authBloc),
                 BlocProvider<HomeBloc>(create: (_) => getIt<HomeBloc>()),
               ],
             ));
@@ -200,10 +215,13 @@ void main() {
               (_) async => const Err(DefaultCoversFailure.unexpected()),
             );
 
+            final authBloc = getIt<AuthBloc>()
+              ..add(const AuthEvent.authChanged());
+
             await tester.pumpWidget(TestRouterWidget(
               appRouter: AppRouter(),
               providers: [
-                BlocProvider<AuthBloc>(create: (_) => getIt<AuthBloc>()),
+                BlocProvider<AuthBloc>(create: (_) => authBloc),
                 BlocProvider<HomeBloc>(create: (_) => getIt<HomeBloc>()),
               ],
             ));
@@ -239,10 +257,13 @@ void main() {
               (_) async => const Err(SessionsFailure.sessionNotCreated()),
             );
 
+            final authBloc = getIt<AuthBloc>()
+              ..add(const AuthEvent.authChanged());
+
             await tester.pumpWidget(TestRouterWidget(
               appRouter: AppRouter(),
               providers: [
-                BlocProvider<AuthBloc>(create: (_) => getIt<AuthBloc>()),
+                BlocProvider<AuthBloc>(create: (_) => authBloc),
                 BlocProvider<HomeBloc>(create: (_) => getIt<HomeBloc>()),
               ],
             ));
@@ -278,10 +299,13 @@ void main() {
               (_) async => const Err(SessionsFailure.sessionNotUpdated()),
             );
 
+            final authBloc = getIt<AuthBloc>()
+              ..add(const AuthEvent.authChanged());
+
             await tester.pumpWidget(TestRouterWidget(
               appRouter: AppRouter(),
               providers: [
-                BlocProvider<AuthBloc>(create: (_) => getIt<AuthBloc>()),
+                BlocProvider<AuthBloc>(create: (_) => authBloc),
                 BlocProvider<HomeBloc>(create: (_) => getIt<HomeBloc>()),
               ],
             ));
@@ -316,10 +340,13 @@ void main() {
               (_) async => const Err(SettingsFailure.settingsNotInitialized()),
             );
 
+            final authBloc = getIt<AuthBloc>()
+              ..add(const AuthEvent.authChanged());
+
             await tester.pumpWidget(TestRouterWidget(
               appRouter: AppRouter(),
               providers: [
-                BlocProvider<AuthBloc>(create: (_) => getIt<AuthBloc>()),
+                BlocProvider<AuthBloc>(create: (_) => authBloc),
                 BlocProvider<HomeBloc>(create: (_) => getIt<HomeBloc>()),
               ],
             ));
@@ -357,10 +384,13 @@ void main() {
             when(() => _userRepository.loadUser(any()))
                 .thenAnswer((_) async => const Err(UserFailure.userNotFound()));
 
+            final authBloc = getIt<AuthBloc>()
+              ..add(const AuthEvent.authChanged());
+
             await tester.pumpWidget(TestRouterWidget(
               appRouter: AppRouter(),
               providers: [
-                BlocProvider<AuthBloc>(create: (_) => getIt<AuthBloc>()),
+                BlocProvider<AuthBloc>(create: (_) => authBloc),
                 BlocProvider<HomeBloc>(create: (_) => getIt<HomeBloc>()),
               ],
             ));
@@ -390,10 +420,12 @@ void main() {
       when(_sessionsRepository.createSession)
           .thenAnswer((_) async => const Ok(Unit()));
 
+      final authBloc = getIt<AuthBloc>()..add(const AuthEvent.authChanged());
+
       await tester.pumpWidget(TestRouterWidget(
         appRouter: AppRouter(),
         providers: [
-          BlocProvider<AuthBloc>(create: (_) => getIt<AuthBloc>()),
+          BlocProvider<AuthBloc>(create: (_) => authBloc),
           BlocProvider<HomeBloc>(create: (_) => getIt<HomeBloc>()),
         ],
       ));
@@ -404,12 +436,19 @@ void main() {
 
     group('AppBar -', () {
       testWidgets('Should find 3 buttons', (tester) async {
+        when(() => _authFacade.isLoggedIn).thenReturn(true);
+        when(() => _authFacade.isAnonymous).thenReturn(true);
+        when(_settingsRepository.fetchSettings)
+            .thenAnswer((_) async => const Ok(testSettings));
+        when(_sessionsRepository.fetchSession)
+            .thenAnswer((_) async => Ok(testUser));
+
+        final authBloc = getIt<AuthBloc>()..add(const AuthEvent.authChanged());
+
         await tester.pumpWidget(TestWidget(
           child: MultiBlocProvider(
             providers: <BlocProvider>[
-              BlocProvider<AuthBloc>(
-                create: (_) => getIt<AuthBloc>(),
-              ),
+              BlocProvider<AuthBloc>(create: (_) => authBloc),
               BlocProvider<HomeNavigationBloc>(
                 create: (_) => getIt<HomeNavigationBloc>(),
               ),
@@ -442,12 +481,12 @@ void main() {
       // TODO test top left icon open/close drawer
 
       testWidgets('Should find 3 buttons', (tester) async {
+        final authBloc = getIt<AuthBloc>()..add(const AuthEvent.authChanged());
+
         await tester.pumpWidget(TestRouterWidget(
           appRouter: AppRouter(),
           providers: <BlocProvider>[
-            BlocProvider<AuthBloc>(
-              create: (_) => getIt<AuthBloc>(),
-            ),
+            BlocProvider<AuthBloc>(create: (_) => authBloc),
             BlocProvider<HomeBloc>(
               create: (_) => getIt<HomeBloc>(),
             ),
