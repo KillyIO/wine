@@ -39,9 +39,7 @@ Future<void> handleAuthGuardedNavigation(
   final state = context.read<AuthBloc>().state;
 
   await state.maybeMap(
-    authenticated: (_) => deviceType != DeviceScreenType.desktop
-        ? context.router.root.navigate(navigateTo)
-        : context.router.root.push(navigateTo),
+    authenticated: (_) => context.router.root.push(navigateTo),
     orElse: () async {
       if (deviceType != DeviceScreenType.mobile) {
         final result = await showDialog<bool>(
