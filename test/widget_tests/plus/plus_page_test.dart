@@ -3,14 +3,19 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:rustic/result.dart';
+import 'package:rustic/tuple.dart';
 
 import 'package:wine/application/auth/auth_bloc.dart';
 import 'package:wine/application/home/home_bloc.dart';
+import 'package:wine/application/home/home_navigation/home_navigation_bloc.dart';
 import 'package:wine/application/log_in/log_in_bloc.dart';
 import 'package:wine/domain/auth/i_auth_facade.dart';
+import 'package:wine/domain/default_covers/i_default_covers_repository.dart';
 import 'package:wine/domain/sessions/i_sessions_repository.dart';
 import 'package:wine/domain/settings/i_settings_repository.dart';
+import 'package:wine/domain/user/i_user_repository.dart';
 import 'package:wine/injection.dart';
+import 'package:wine/presentation/library/library_page.dart';
 import 'package:wine/presentation/log_in/log_in_page.dart';
 import 'package:wine/presentation/routes/router.dart';
 
@@ -23,15 +28,27 @@ void main() {
   const mobileHeight = 740;
 
   late IAuthFacade _authFacade;
+  late IDefaultCoversRepository _defaultCoversRepository;
   late ISessionsRepository _sessionsRepository;
   late ISettingsRepository _settingsRepository;
+  late IUserRepository _userRepository;
+
+  late AppRouter _router;
 
   setUp(() {
     setupInjection();
 
     _authFacade = getIt<IAuthFacade>();
+    _defaultCoversRepository = getIt<IDefaultCoversRepository>();
     _sessionsRepository = getIt<ISessionsRepository>();
     _settingsRepository = getIt<ISettingsRepository>();
+    _userRepository = getIt<IUserRepository>();
+
+    _router = AppRouter()
+      ..replaceAll([
+        const HomeRoute(),
+        const PlusRoute(),
+      ]);
   });
 
   group('PlusPage', () {
@@ -43,18 +60,12 @@ void main() {
       when(_sessionsRepository.fetchSession)
           .thenAnswer((_) async => Ok(testUser));
 
+      final authBloc = getIt<AuthBloc>()..add(const AuthEvent.authChanged());
+
       await tester.pumpWidget(TestRouterWidget(
-        appRouter: AppRouter()
-          // ignore: unawaited_futures
-          ..pushAll([
-            const HomeRoute(),
-            const PlusRoute(),
-          ]),
+        appRouter: _router,
         providers: [
-          BlocProvider(
-            create: (_) =>
-                AuthBloc(_authFacade)..add(const AuthEvent.authChanged()),
-          ),
+          BlocProvider(create: (_) => authBloc),
           BlocProvider<HomeBloc>(create: (_) => getIt<HomeBloc>()),
         ],
       ));
@@ -74,18 +85,12 @@ void main() {
         when(_sessionsRepository.fetchSession)
             .thenAnswer((_) async => Ok(testUser));
 
+        final authBloc = getIt<AuthBloc>()..add(const AuthEvent.authChanged());
+
         await tester.pumpWidget(TestRouterWidget(
-          appRouter: AppRouter()
-            // ignore: unawaited_futures
-            ..pushAll([
-              const HomeRoute(),
-              const PlusRoute(),
-            ]),
+          appRouter: _router,
           providers: [
-            BlocProvider<AuthBloc>(
-              create: (context) =>
-                  getIt<AuthBloc>()..add(const AuthEvent.authChanged()),
-            ),
+            BlocProvider<AuthBloc>(create: (context) => authBloc),
             BlocProvider<HomeBloc>(create: (_) => getIt<HomeBloc>()),
           ],
         ));
@@ -118,15 +123,13 @@ void main() {
           when(_sessionsRepository.fetchSession)
               .thenAnswer((_) async => Ok(testUser));
 
+          final authBloc = getIt<AuthBloc>()
+            ..add(const AuthEvent.authChanged());
+
           await tester.pumpWidget(TestRouterWidget(
-            appRouter: AppRouter()
-              // ignore: unawaited_futures
-              ..pushAll([
-                const HomeRoute(),
-                const PlusRoute(),
-              ]),
+            appRouter: _router,
             providers: [
-              BlocProvider<AuthBloc>(create: (_) => getIt<AuthBloc>()),
+              BlocProvider<AuthBloc>(create: (_) => authBloc),
               BlocProvider<HomeBloc>(create: (_) => getIt<HomeBloc>()),
               BlocProvider<LogInBloc>(create: (_) => getIt<LogInBloc>()),
             ],
@@ -142,31 +145,59 @@ void main() {
           expect(find.byType(LogInPage), findsOneWidget);
         },
       );
+
+      testWidgets(
+        'plus_library_button should navigate to LibraryPage',
+        (tester) async {
+          tester.binding.window.devicePixelRatioTestValue = 2.625;
+          tester.binding.window.textScaleFactorTestValue = .5;
+
+          final dpi = tester.binding.window.devicePixelRatio;
+
+          tester.binding.window.physicalSizeTestValue =
+              Size(mobileWidth * dpi, mobileHeight * dpi);
+
+          when(() => _authFacade.isLoggedIn).thenReturn(true);
+          when(() => _authFacade.isAnonymous).thenReturn(false);
+          when(_defaultCoversRepository.loadDefaultCoverURLs)
+              .thenAnswer((_) async => const Ok(testDefaultCovers));
+          when(() => _defaultCoversRepository.cacheDefaultCoverURLs(any()))
+              .thenAnswer((_) async => const Ok(Unit()));
+          when(_settingsRepository.fetchSettings)
+              .thenAnswer((_) async => const Ok(testSettings));
+          when(_sessionsRepository.fetchSession)
+              .thenAnswer((_) async => Ok(testUser));
+          when(() => _userRepository.loadUser(any()))
+              .thenAnswer((_) async => Ok(testUser));
+          when(() => _sessionsRepository.updateSession(testUser))
+              .thenAnswer((_) async => const Ok(Unit()));
+
+          final authBloc = getIt<AuthBloc>()
+            ..add(const AuthEvent.authChanged());
+
+          await tester.pumpWidget(TestRouterWidget(
+            appRouter: _router,
+            providers: [
+              BlocProvider<AuthBloc>(create: (_) => authBloc),
+              BlocProvider<HomeBloc>(create: (_) => getIt<HomeBloc>()),
+              BlocProvider<HomeNavigationBloc>(
+                create: (_) => getIt<HomeNavigationBloc>(),
+              ),
+              BlocProvider<LogInBloc>(create: (_) => getIt<LogInBloc>()),
+            ],
+          ));
+          await tester.pumpAndSettle();
+
+          final plusLibraryButton =
+              find.byKey(const Key('plus_library_button'));
+
+          await tester.tap(plusLibraryButton);
+          await tester.pumpAndSettle();
+
+          expect(find.byType(LibraryPage), findsOneWidget);
+        },
+      );
     });
-
-    // testWidgets(
-    //   'plus_library_button should navigate to LibraryPage',
-    //   (tester) async {
-    //     when(() => _authFacade.isLoggedIn).thenReturn(true);
-    //     when(() => _authFacade.isAnonymous).thenReturn(false);
-
-    //     await tester.pumpWidget(TestWidget(
-    //       child: BlocProvider(
-    //         create: (_) =>
-    //             AuthBloc(_authFacade)..add(const AuthEvent.authChanged()),
-    //         child: const PlusLayout(),
-    //       ),
-    //     ));
-    //     await tester.pump();
-
-    //     expect(find.byType(AssetButton), findsOneWidget);
-    //     expect(find.text('PLUS'), findsOneWidget);
-
-    //     expect(find.byKey(const Key('plus_library_button')), findsOneWidget);
-    //     expect(find.byKey(const Key('plus_settings_button')), findsOneWidget);
-    //     expect(find.byKey(const Key('plus_about_button')), findsOneWidget);
-    //   },
-    // );
   });
 
   // TODO test LIBRARY button navigate to LibraryPage when authenticated
