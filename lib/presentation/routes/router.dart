@@ -1,42 +1,71 @@
-import 'package:auto_route/auto_route_annotations.dart';
+import 'package:auto_route/annotations.dart';
+import 'package:wine/presentation/home/home_page.dart';
+import 'package:wine/presentation/library/library_page.dart';
+import 'package:wine/presentation/log_in/log_in_page.dart';
+import 'package:wine/presentation/onboarding/onboarding_page.dart';
+import 'package:wine/presentation/plus/plus_page.dart';
+import 'package:wine/presentation/settings/account_settings/account_settings_page.dart';
+import 'package:wine/presentation/settings/chapter_settings/chapter_settings_page.dart';
+import 'package:wine/presentation/settings/series_settings/series_settings_page.dart';
+import 'package:wine/presentation/settings/settings_page.dart';
+import 'package:wine/presentation/sign_up/sign_up_page.dart';
+import 'package:wine/presentation/wrappers/settings_wrapper.dart';
+import 'package:wine/utils/paths/router.dart';
 
-import 'package:wine/presentation/pages/chapter_editor_page.dart';
-import 'package:wine/presentation/pages/chapter_page.dart';
-import 'package:wine/presentation/pages/chapter_settings_page.dart';
-import 'package:wine/presentation/pages/copyrights_page.dart';
-import 'package:wine/presentation/pages/create_account_page.dart';
-import 'package:wine/presentation/pages/genres_page.dart';
-import 'package:wine/presentation/pages/home_page.dart';
-import 'package:wine/presentation/pages/library_page.dart';
-import 'package:wine/presentation/pages/onboarding_page.dart';
-import 'package:wine/presentation/pages/plus_page.dart';
-import 'package:wine/presentation/pages/series_editor_page.dart';
-import 'package:wine/presentation/pages/series_page.dart';
-import 'package:wine/presentation/pages/series_settings_page.dart';
-import 'package:wine/presentation/pages/settings_page.dart';
-import 'package:wine/presentation/pages/sign_in_page.dart';
-import 'package:wine/presentation/pages/splash_page.dart';
-import 'package:wine/presentation/pages/verify_email_page.dart';
+export 'router.gr.dart';
 
-@MaterialAutoRouter(routes: <AutoRoute>[
-  AdaptiveRoute(page: ChapterEditorPage),
-  AdaptiveRoute(page: ChapterPage),
-  AdaptiveRoute(page: ChapterSettingsPage),
-  AdaptiveRoute(page: CopyrightsPage),
-  AdaptiveRoute(page: CreateAccountPage),
-  AdaptiveRoute(page: GenresPage),
-  AdaptiveRoute(page: HomePage),
-  AdaptiveRoute(page: LibraryPage),
-  AdaptiveRoute(page: SeriesEditorPage),
-  AdaptiveRoute(page: OnboardingPage),
-  AdaptiveRoute(page: PlusPage),
-  AdaptiveRoute(page: SeriesPage),
-  AdaptiveRoute(page: SeriesSettingsPage),
-  AdaptiveRoute(page: SettingsPage),
-  AdaptiveRoute(page: SignInPage),
-  AdaptiveRoute(page: SplashPage, initial: true),
-  AdaptiveRoute(page: VerifyEmailPage),
-])
+@AdaptiveAutoRouter(
+  replaceInRouteName: 'Page,Route',
+  routes: <AutoRoute>[
+    AutoRoute<HomePage>(
+      page: HomePage,
+      path: homePath,
+      initial: true,
+    ),
+    AutoRoute<LibraryPage>(
+      page: LibraryPage,
+      path: libraryPath,
+    ),
+    AutoRoute<LogInPage>(
+      page: LogInPage,
+      path: logInPath,
+    ),
+    AutoRoute<OnboardingPage>(
+      page: OnboardingPage,
+      path: onboardingPath,
+    ),
+    AutoRoute<PlusPage>(
+      page: PlusPage,
+      path: plusPath,
+    ),
+    AutoRoute<SettingsWrapper>(
+      page: SettingsWrapper,
+      path: settingsPath,
+      children: <AutoRoute>[
+        AutoRoute<AccountSettingsPage>(
+          page: AccountSettingsPage,
+          path: accountSettingsPath,
+        ),
+        AutoRoute<ChapterSettingsPage>(
+          page: ChapterSettingsPage,
+          path: chapterSettingsPath,
+        ),
+        AutoRoute<SeriesSettingsPage>(
+          page: SeriesSettingsPage,
+          path: seriesSettingsPath,
+        ),
+        AutoRoute<SettingsPage>(
+          page: SettingsPage,
+          path: '',
+        ),
+      ],
+    ),
+    AutoRoute<SignUpPage>(
+      page: SignUpPage,
+      path: signUpPath,
+    ),
+  ],
+)
 
 /// @nodoc
-class $WINERouter {}
+class $AppRouter {}
