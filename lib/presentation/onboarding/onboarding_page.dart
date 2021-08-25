@@ -28,6 +28,7 @@ class OnboardingPage extends StatelessWidget {
             ),
             onDone: () async => context.router.replace(const HomeRoute()),
             pages: [
+              // ignore: todo
               // TODO add pages
               PageViewModel(
                 title: 'Placeholder title',

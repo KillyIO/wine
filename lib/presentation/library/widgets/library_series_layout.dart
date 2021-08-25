@@ -26,7 +26,7 @@ class LibrarySeriesLayout extends StatelessWidget {
             Expanded(
               child: BlocBuilder<LibraryBloc, LibraryState>(
                 builder: (context, libraryState) {
-                  return LibrarySeriesLayout();
+                  return const LibrarySeriesLayout();
                 },
               ),
             ),

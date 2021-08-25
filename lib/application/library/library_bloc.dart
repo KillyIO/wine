@@ -31,7 +31,9 @@ class LibraryBloc extends Bloc<LibraryEvent, LibraryState> {
     this._userRepository,
   ) : super(LibraryState.initial());
 
+  // ignore: unused_field
   final ISessionsRepository _sessionsRepository;
+  // ignore: unused_field
   final IUserRepository _userRepository;
   final LibraryNavigationBloc _libraryNavigationBloc;
 

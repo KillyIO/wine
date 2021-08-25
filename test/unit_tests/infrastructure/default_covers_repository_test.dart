@@ -123,11 +123,16 @@ void main() {
       );
     });
 
-    // TODO uncomment these tests once fake_cloud_firestore allows throwing exceptions
+    // ignore: todo
+    // TODO uncomment these tests
+    // ignore: todo
+    // TODO once fake_cloud_firestore allows throwing exceptions
     // test('When docs empty Then return DefaultCoverURLsNotLoaded', () async {
-    //   when(() => _firestore.collection(any())).thenReturn(_collectionReference);
+    // when(() => _firestore.collection(any()))
+    // .thenReturn(_collectionReference);
     //   when(_collectionReference.get).thenAnswer((_) async => _querySnapshot);
-    //   when(() => _querySnapshot.docs).thenReturn(<MockQueryDocumentSnapshot>[]);
+    //   when(() => _querySnapshot.docs)
+    // .thenReturn(<MockQueryDocumentSnapshot>[]);
 
     //   final result = await _defaultCoversRepository.loadDefaultCoverURLs();
 
@@ -142,7 +147,8 @@ void main() {
     // });
 
     // test('When server error occurs Then return ServerError', () async {
-    //   when(() => _firestore.collection(any())).thenReturn(_collectionReference);
+    //   when(() => _firestore.collection(any()))
+    // .thenReturn(_collectionReference);
     //   when(_collectionReference.get).thenThrow(testRandomServerException);
 
     //   final result = await _defaultCoversRepository.loadDefaultCoverURLs();

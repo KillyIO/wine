@@ -11,7 +11,10 @@ import 'package:wine/utils/paths/users.dart';
 
 import '../utils/constants.dart';
 
-// TODO uncomment these tests once fake_cloud_firestore allows throwing exceptions
+// ignore: todo
+// TODO uncomment these tests
+// ignore: todo
+// TODO once fake_cloud_firestore allows throwing exceptions
 
 void main() {
   late IUserRepository _userRepository;
@@ -187,7 +190,8 @@ void main() {
     //       .thenThrow(testRandomServerException);
 
     //   final result =
-    //       await _userRepository.saveUsername(testUid, Username(testUsername));
+    //       await _userRepository
+    //.saveUsername(testUid, Username(testUsername));
 
     //   expect(result.isErr, true);
     //   result.match(
@@ -201,7 +205,8 @@ void main() {
     //       .thenThrow(testUnexpected);
 
     //   final result =
-    //       await _userRepository.saveUsername(testUid, Username(testUsername));
+    //       await _userRepository
+    //.saveUsername(testUid, Username(testUsername));
 
     //   expect(result.isErr, true);
     //   result.match(

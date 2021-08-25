@@ -44,6 +44,7 @@ class LibraryBaseSeriesLayout extends StatelessWidget {
     return ScrollConfiguration(
       behavior: const ScrollBehavior(),
       child: ListView(
+        // ignore: prefer_const_literals_to_create_immutables
         children: <Widget>[],
       ),
     );

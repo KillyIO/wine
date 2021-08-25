@@ -52,6 +52,7 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
               Icons.add_outlined,
               color: Colors.black,
             ),
+            // ignore: todo
             // TODO add handleAuthGuardedNavigation to SeriesEditorPage
             onPressed: () {},
             splashColor: Colors.transparent,

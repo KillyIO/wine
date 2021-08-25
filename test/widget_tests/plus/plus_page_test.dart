@@ -248,11 +248,15 @@ void main() {
     });
   });
 
+  // ignore: todo
   // TODO test LIBRARY button navigate to LibraryPage when authenticated
 
+  // ignore: todo
   // TODO test LIBRARY button navigate to LogInPage when  anonymous
 
+  // ignore: todo
   // TODO test SETTINGS button navigate to SettingsPage
 
+  // ignore: todo
   // TODO test ABOUT button navigate to AboutPage
 }

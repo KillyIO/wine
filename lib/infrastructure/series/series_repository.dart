@@ -10,6 +10,7 @@ import 'package:wine/domain/series/series_failure.dart';
 class SeriesRepository implements ISeriesRepository {
   @override
   Future<Result<Unit, SeriesFailure>> deleteSeries(UniqueID uid) {
+    // ignore: todo
     // TODO: implement deleteSeries
     throw UnimplementedError();
   }
