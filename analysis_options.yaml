@@ -11,3 +11,4 @@ analyzer:
     - "**/*.freezed.dart"
     - "**/*.g.dart"
     - "**/*.gr.dart"
+    - "**/packages/**"

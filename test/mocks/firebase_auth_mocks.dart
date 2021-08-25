@@ -1,37 +1,32 @@
 import 'package:firebase_auth/firebase_auth.dart' as auth;
 import 'package:firebase_auth/firebase_auth.dart';
-import 'package:mockito/mockito.dart';
+import 'package:mocktail/mocktail.dart';
 
-class MockFirebaseAuth extends Mock implements auth.FirebaseAuth {}
+import '../unit_tests/utils/constants.dart';
 
-class MockFirebaseUser extends Mock implements auth.User {
-  MockFirebaseUser({bool isAnonymous}) : _isAnonymous = isAnonymous;
+class MockFirebaseAuth extends Mock implements FirebaseAuth {}
+
+class MockUser extends Mock implements auth.User {
+  MockUser({bool isAnonymous = true}) : _isAnonymous = isAnonymous;
 
   final bool _isAnonymous;
 
   @override
-  String get displayName => 'hdima.riyal.99';
+  String get displayName => testName;
 
   @override
-  String get uid => 'IhyAvFOnGegIFDBJYmL30nAbWu92';
+  String get uid => testUserUid;
 
   @override
-  String get email => 'hdima.riyal.99@tapiitudulu.com';
+  String get email => testEmailAddress;
 
   @override
   bool get isAnonymous => _isAnonymous;
 
   @override
-  Future<String> getIdToken([bool forceRefresh = false]) async {
-    return Future.value('fake_token');
-  }
+  Future<String> getIdToken([bool forceRefresh = false]) async => 'fake_token';
 }
 
-class MockUserCredential extends Mock implements UserCredential {
-  MockUserCredential({bool isAnonymous}) : _isAnonymous = isAnonymous;
+class MockAuthCredential extends Mock implements AuthCredential {}
 
-  final bool _isAnonymous;
-
-  @override
-  User get user => MockFirebaseUser(isAnonymous: _isAnonymous);
-}
+class MockUserCredential extends Mock implements auth.UserCredential {}

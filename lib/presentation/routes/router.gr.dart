@@ -4,259 +4,181 @@
 // AutoRouteGenerator
 // **************************************************************************
 
-// ignore_for_file: public_member_api_docs
+import 'package:auto_route/auto_route.dart' as _i1;
+import 'package:flutter/material.dart' as _i2;
+import 'package:wine/presentation/home/home_page.dart' as _i3;
+import 'package:wine/presentation/library/library_page.dart' as _i4;
+import 'package:wine/presentation/log_in/log_in_page.dart' as _i5;
+import 'package:wine/presentation/onboarding/onboarding_page.dart' as _i6;
+import 'package:wine/presentation/plus/plus_page.dart' as _i7;
+import 'package:wine/presentation/settings/account_settings/account_settings_page.dart'
+    as _i10;
+import 'package:wine/presentation/settings/chapter_settings/chapter_settings_page.dart'
+    as _i11;
+import 'package:wine/presentation/settings/series_settings/series_settings_page.dart'
+    as _i12;
+import 'package:wine/presentation/settings/settings_page.dart' as _i13;
+import 'package:wine/presentation/sign_up/sign_up_page.dart' as _i9;
+import 'package:wine/presentation/wrappers/settings_wrapper.dart' as _i8;
 
-import 'package:auto_route/auto_route.dart';
-import 'package:flutter/material.dart';
+class AppRouter extends _i1.RootStackRouter {
+  AppRouter([_i2.GlobalKey<_i2.NavigatorState>? navigatorKey])
+      : super(navigatorKey);
 
-import '../../domain/enums/editor_content_origin.dart';
-import '../../domain/models/chapter.dart';
-import '../../domain/models/series.dart';
-import '../pages/chapter_editor_page.dart';
-import '../pages/chapter_page.dart';
-import '../pages/chapter_settings_page.dart';
-import '../pages/copyrights_page.dart';
-import '../pages/create_account_page.dart';
-import '../pages/genres_page.dart';
-import '../pages/home_page.dart';
-import '../pages/library_page.dart';
-import '../pages/onboarding_page.dart';
-import '../pages/plus_page.dart';
-import '../pages/series_editor_page.dart';
-import '../pages/series_page.dart';
-import '../pages/series_settings_page.dart';
-import '../pages/settings_page.dart';
-import '../pages/sign_in_page.dart';
-import '../pages/splash_page.dart';
-import '../pages/verify_email_page.dart';
-
-class Routes {
-  static const String chapterEditorPage = '/chapter-editor-page';
-  static const String chapterPage = '/chapter-page';
-  static const String chapterSettingsPage = '/chapter-settings-page';
-  static const String copyrightsPage = '/copyrights-page';
-  static const String createAccountPage = '/create-account-page';
-  static const String genresPage = '/genres-page';
-  static const String homePage = '/home-page';
-  static const String libraryPage = '/library-page';
-  static const String seriesEditorPage = '/series-editor-page';
-  static const String onboardingPage = '/onboarding-page';
-  static const String plusPage = '/plus-page';
-  static const String seriesPage = '/series-page';
-  static const String seriesSettingsPage = '/series-settings-page';
-  static const String settingsPage = '/settings-page';
-  static const String signInPage = '/sign-in-page';
-  static const String splashPage = '/';
-  static const String verifyEmailPage = '/verify-email-page';
-  static const all = <String>{
-    chapterEditorPage,
-    chapterPage,
-    chapterSettingsPage,
-    copyrightsPage,
-    createAccountPage,
-    genresPage,
-    homePage,
-    libraryPage,
-    seriesEditorPage,
-    onboardingPage,
-    plusPage,
-    seriesPage,
-    seriesSettingsPage,
-    settingsPage,
-    signInPage,
-    splashPage,
-    verifyEmailPage,
-  };
-}
-
-class WINERouter extends RouterBase {
   @override
-  List<RouteDef> get routes => _routes;
-  final _routes = <RouteDef>[
-    RouteDef(Routes.chapterEditorPage, page: ChapterEditorPage),
-    RouteDef(Routes.chapterPage, page: ChapterPage),
-    RouteDef(Routes.chapterSettingsPage, page: ChapterSettingsPage),
-    RouteDef(Routes.copyrightsPage, page: CopyrightsPage),
-    RouteDef(Routes.createAccountPage, page: CreateAccountPage),
-    RouteDef(Routes.genresPage, page: GenresPage),
-    RouteDef(Routes.homePage, page: HomePage),
-    RouteDef(Routes.libraryPage, page: LibraryPage),
-    RouteDef(Routes.seriesEditorPage, page: SeriesEditorPage),
-    RouteDef(Routes.onboardingPage, page: OnboardingPage),
-    RouteDef(Routes.plusPage, page: PlusPage),
-    RouteDef(Routes.seriesPage, page: SeriesPage),
-    RouteDef(Routes.seriesSettingsPage, page: SeriesSettingsPage),
-    RouteDef(Routes.settingsPage, page: SettingsPage),
-    RouteDef(Routes.signInPage, page: SignInPage),
-    RouteDef(Routes.splashPage, page: SplashPage),
-    RouteDef(Routes.verifyEmailPage, page: VerifyEmailPage),
-  ];
-  @override
-  Map<Type, AutoRouteFactory> get pagesMap => _pagesMap;
-  final _pagesMap = <Type, AutoRouteFactory>{
-    ChapterEditorPage: (data) {
-      final args = data.getArgs<ChapterEditorPageArguments>(nullOk: false);
-      return buildAdaptivePageRoute<dynamic>(
-        builder: (context) => ChapterEditorPage(
-          key: args.key,
-          chapterDraft: args.chapterDraft,
-          editorContentOrigin: args.editorContentOrigin,
-          previousChapter: args.previousChapter,
-          seriesDraft: args.seriesDraft,
-        ),
-        settings: data,
-      );
-    },
-    ChapterPage: (data) {
-      final args = data.getArgs<ChapterPageArguments>(nullOk: false);
-      return buildAdaptivePageRoute<dynamic>(
-        builder: (context) => ChapterPage(
-          key: args.key,
-          chapter: args.chapter,
-        ),
-        settings: data,
-      );
-    },
-    ChapterSettingsPage: (data) {
-      return buildAdaptivePageRoute<dynamic>(
-        builder: (context) => ChapterSettingsPage(),
-        settings: data,
-      );
-    },
-    CopyrightsPage: (data) {
-      return buildAdaptivePageRoute<dynamic>(
-        builder: (context) => CopyrightsPage(),
-        settings: data,
-      );
-    },
-    CreateAccountPage: (data) {
-      return buildAdaptivePageRoute<dynamic>(
-        builder: (context) => CreateAccountPage(),
-        settings: data,
-      );
-    },
-    GenresPage: (data) {
-      return buildAdaptivePageRoute<dynamic>(
-        builder: (context) => GenresPage(),
-        settings: data,
-      );
-    },
-    HomePage: (data) {
-      return buildAdaptivePageRoute<dynamic>(
-        builder: (context) => HomePage(),
-        settings: data,
-      );
-    },
-    LibraryPage: (data) {
-      return buildAdaptivePageRoute<dynamic>(
-        builder: (context) => LibraryPage(),
-        settings: data,
-      );
-    },
-    SeriesEditorPage: (data) {
-      final args = data.getArgs<SeriesEditorPageArguments>(nullOk: false);
-      return buildAdaptivePageRoute<dynamic>(
-        builder: (context) => SeriesEditorPage(
-          key: args.key,
-          editorContentOrigin: args.editorContentOrigin,
-          seriesDraft: args.seriesDraft,
-        ),
-        settings: data,
-      );
-    },
-    OnboardingPage: (data) {
-      return buildAdaptivePageRoute<dynamic>(
-        builder: (context) => OnboardingPage(),
-        settings: data,
-      );
-    },
-    PlusPage: (data) {
-      return buildAdaptivePageRoute<dynamic>(
-        builder: (context) => PlusPage(),
-        settings: data,
-      );
-    },
-    SeriesPage: (data) {
-      final args = data.getArgs<SeriesPageArguments>(nullOk: false);
-      return buildAdaptivePageRoute<dynamic>(
-        builder: (context) => SeriesPage(
-          key: args.key,
-          series: args.series,
-        ),
-        settings: data,
-      );
-    },
-    SeriesSettingsPage: (data) {
-      return buildAdaptivePageRoute<dynamic>(
-        builder: (context) => SeriesSettingsPage(),
-        settings: data,
-      );
-    },
-    SettingsPage: (data) {
-      return buildAdaptivePageRoute<dynamic>(
-        builder: (context) => SettingsPage(),
-        settings: data,
-      );
-    },
-    SignInPage: (data) {
-      return buildAdaptivePageRoute<dynamic>(
-        builder: (context) => SignInPage(),
-        settings: data,
-      );
-    },
-    SplashPage: (data) {
-      return buildAdaptivePageRoute<dynamic>(
-        builder: (context) => SplashPage(),
-        settings: data,
-      );
-    },
-    VerifyEmailPage: (data) {
-      return buildAdaptivePageRoute<dynamic>(
-        builder: (context) => VerifyEmailPage(),
-        settings: data,
-      );
-    },
+  final Map<String, _i1.PageFactory> pagesMap = {
+    HomeRoute.name: (routeData) => _i1.AdaptivePage<_i3.HomePage>(
+        routeData: routeData,
+        builder: (_) {
+          return const _i3.HomePage();
+        }),
+    LibraryRoute.name: (routeData) => _i1.AdaptivePage<_i4.LibraryPage>(
+        routeData: routeData,
+        builder: (_) {
+          return const _i4.LibraryPage();
+        }),
+    LogInRoute.name: (routeData) => _i1.AdaptivePage<_i5.LogInPage>(
+        routeData: routeData,
+        builder: (data) {
+          final args = data.argsAs<LogInRouteArgs>();
+          return _i5.LogInPage(key: args.key, navigateTo: args.navigateTo);
+        }),
+    OnboardingRoute.name: (routeData) => _i1.AdaptivePage<_i6.OnboardingPage>(
+        routeData: routeData,
+        builder: (_) {
+          return const _i6.OnboardingPage();
+        }),
+    PlusRoute.name: (routeData) => _i1.AdaptivePage<_i7.PlusPage>(
+        routeData: routeData,
+        builder: (_) {
+          return const _i7.PlusPage();
+        }),
+    SettingsWrapper.name: (routeData) => _i1.AdaptivePage<_i8.SettingsWrapper>(
+        routeData: routeData,
+        builder: (_) {
+          return const _i8.SettingsWrapper();
+        }),
+    SignUpRoute.name: (routeData) => _i1.AdaptivePage<_i9.SignUpPage>(
+        routeData: routeData,
+        builder: (_) {
+          return const _i9.SignUpPage();
+        }),
+    AccountSettingsRoute.name: (routeData) =>
+        _i1.AdaptivePage<_i10.AccountSettingsPage>(
+            routeData: routeData,
+            builder: (_) {
+              return const _i10.AccountSettingsPage();
+            }),
+    ChapterSettingsRoute.name: (routeData) =>
+        _i1.AdaptivePage<_i11.ChapterSettingsPage>(
+            routeData: routeData,
+            builder: (_) {
+              return const _i11.ChapterSettingsPage();
+            }),
+    SeriesSettingsRoute.name: (routeData) =>
+        _i1.AdaptivePage<_i12.SeriesSettingsPage>(
+            routeData: routeData,
+            builder: (_) {
+              return const _i12.SeriesSettingsPage();
+            }),
+    SettingsRoute.name: (routeData) => _i1.AdaptivePage<_i13.SettingsPage>(
+        routeData: routeData,
+        builder: (_) {
+          return const _i13.SettingsPage();
+        })
   };
+
+  @override
+  List<_i1.RouteConfig> get routes => [
+        _i1.RouteConfig(HomeRoute.name, path: '/'),
+        _i1.RouteConfig(LibraryRoute.name, path: '/library'),
+        _i1.RouteConfig(LogInRoute.name, path: '/log-in'),
+        _i1.RouteConfig(OnboardingRoute.name, path: '/onboarding'),
+        _i1.RouteConfig(PlusRoute.name, path: '/plus'),
+        _i1.RouteConfig(SettingsWrapper.name, path: '/settings', children: [
+          _i1.RouteConfig(AccountSettingsRoute.name, path: 'account'),
+          _i1.RouteConfig(ChapterSettingsRoute.name, path: 'chapter'),
+          _i1.RouteConfig(SeriesSettingsRoute.name, path: 'series'),
+          _i1.RouteConfig(SettingsRoute.name, path: '')
+        ]),
+        _i1.RouteConfig(SignUpRoute.name, path: '/sign-up')
+      ];
 }
 
-/// ************************************************************************
-/// Arguments holder classes
-/// *************************************************************************
+class HomeRoute extends _i1.PageRouteInfo {
+  const HomeRoute() : super(name, path: '/');
 
-/// ChapterEditorPage arguments holder class
-class ChapterEditorPageArguments {
-  final Key key;
-  final Chapter chapterDraft;
-  final EditorContentOrigin editorContentOrigin;
-  final Chapter previousChapter;
-  final Series seriesDraft;
-  ChapterEditorPageArguments(
-      {this.key,
-      this.chapterDraft,
-      @required this.editorContentOrigin,
-      this.previousChapter,
-      this.seriesDraft});
+  static const String name = 'HomeRoute';
 }
 
-/// ChapterPage arguments holder class
-class ChapterPageArguments {
-  final Key key;
-  final Chapter chapter;
-  ChapterPageArguments({this.key, @required this.chapter});
+class LibraryRoute extends _i1.PageRouteInfo {
+  const LibraryRoute() : super(name, path: '/library');
+
+  static const String name = 'LibraryRoute';
 }
 
-/// SeriesEditorPage arguments holder class
-class SeriesEditorPageArguments {
-  final Key key;
-  final EditorContentOrigin editorContentOrigin;
-  final Series seriesDraft;
-  SeriesEditorPageArguments(
-      {this.key, @required this.editorContentOrigin, this.seriesDraft});
+class LogInRoute extends _i1.PageRouteInfo<LogInRouteArgs> {
+  LogInRoute({_i2.Key? key, required _i1.PageRouteInfo<dynamic> navigateTo})
+      : super(name,
+            path: '/log-in',
+            args: LogInRouteArgs(key: key, navigateTo: navigateTo));
+
+  static const String name = 'LogInRoute';
 }
 
-/// SeriesPage arguments holder class
-class SeriesPageArguments {
-  final Key key;
-  final Series series;
-  SeriesPageArguments({this.key, @required this.series});
+class LogInRouteArgs {
+  const LogInRouteArgs({this.key, required this.navigateTo});
+
+  final _i2.Key? key;
+
+  final _i1.PageRouteInfo<dynamic> navigateTo;
+}
+
+class OnboardingRoute extends _i1.PageRouteInfo {
+  const OnboardingRoute() : super(name, path: '/onboarding');
+
+  static const String name = 'OnboardingRoute';
+}
+
+class PlusRoute extends _i1.PageRouteInfo {
+  const PlusRoute() : super(name, path: '/plus');
+
+  static const String name = 'PlusRoute';
+}
+
+class SettingsWrapper extends _i1.PageRouteInfo {
+  const SettingsWrapper({List<_i1.PageRouteInfo>? children})
+      : super(name, path: '/settings', initialChildren: children);
+
+  static const String name = 'SettingsWrapper';
+}
+
+class SignUpRoute extends _i1.PageRouteInfo {
+  const SignUpRoute() : super(name, path: '/sign-up');
+
+  static const String name = 'SignUpRoute';
+}
+
+class AccountSettingsRoute extends _i1.PageRouteInfo {
+  const AccountSettingsRoute() : super(name, path: 'account');
+
+  static const String name = 'AccountSettingsRoute';
+}
+
+class ChapterSettingsRoute extends _i1.PageRouteInfo {
+  const ChapterSettingsRoute() : super(name, path: 'chapter');
+
+  static const String name = 'ChapterSettingsRoute';
+}
+
+class SeriesSettingsRoute extends _i1.PageRouteInfo {
+  const SeriesSettingsRoute() : super(name, path: 'series');
+
+  static const String name = 'SeriesSettingsRoute';
+}
+
+class SettingsRoute extends _i1.PageRouteInfo {
+  const SettingsRoute() : super(name, path: '');
+
+  static const String name = 'SettingsRoute';
 }
