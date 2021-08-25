@@ -6,6 +6,7 @@ import 'package:rustic/result.dart';
 import 'package:rustic/tuple.dart';
 
 import 'package:wine/application/auth/auth_bloc.dart';
+import 'package:wine/application/auth/auth_dialog/auth_dialog_cubit.dart';
 import 'package:wine/application/home/home_bloc.dart';
 import 'package:wine/application/home/home_navigation/home_navigation_bloc.dart';
 import 'package:wine/application/log_in/log_in_bloc.dart';
@@ -18,12 +19,15 @@ import 'package:wine/injection.dart';
 import 'package:wine/presentation/library/library_page.dart';
 import 'package:wine/presentation/log_in/log_in_page.dart';
 import 'package:wine/presentation/routes/router.dart';
+import 'package:wine/presentation/web/auth_dialog.dart';
 
 import '../../unit_tests/utils/constants.dart';
 import '../utils/injection_helper.dart';
 import '../utils/test_router_widget.dart';
 
 void main() {
+  const desktopWidth = 1280;
+  const desktopHeight = 800;
   const mobileWidth = 360;
   const mobileHeight = 740;
 
@@ -102,7 +106,51 @@ void main() {
   });
 
   group('LibraryButton', () {
-    group('Web', () {});
+    group('Web', () {
+      testWidgets(
+        'plus_library_button should display AuthDialog',
+        (tester) async {
+          tester.binding.window.devicePixelRatioTestValue = 2.625;
+          tester.binding.window.textScaleFactorTestValue = .5;
+
+          final dpi = tester.binding.window.devicePixelRatio;
+
+          tester.binding.window.physicalSizeTestValue =
+              Size(desktopWidth * dpi, desktopHeight * dpi);
+
+          when(() => _authFacade.isLoggedIn).thenReturn(true);
+          when(() => _authFacade.isAnonymous).thenReturn(true);
+          when(_settingsRepository.fetchSettings)
+              .thenAnswer((_) async => const Ok(testSettings));
+          when(_sessionsRepository.fetchSession)
+              .thenAnswer((_) async => Ok(testUser));
+
+          final authBloc = getIt<AuthBloc>()
+            ..add(const AuthEvent.authChanged());
+
+          await tester.pumpWidget(TestRouterWidget(
+            appRouter: _router,
+            providers: [
+              BlocProvider<AuthBloc>(create: (_) => authBloc),
+              BlocProvider<AuthDialogCubit>(
+                create: (_) => getIt<AuthDialogCubit>(),
+              ),
+              BlocProvider<HomeBloc>(create: (_) => getIt<HomeBloc>()),
+              BlocProvider<LogInBloc>(create: (_) => getIt<LogInBloc>()),
+            ],
+          ));
+          await tester.pumpAndSettle();
+
+          final plusLibraryButton =
+              find.byKey(const Key('plus_library_button'));
+
+          await tester.tap(plusLibraryButton);
+          await tester.pumpAndSettle();
+
+          expect(find.byType(AuthDialog), findsOneWidget);
+        },
+      );
+    });
 
     group('Mobile', () {
       testWidgets(
