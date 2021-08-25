@@ -1,5 +1,6 @@
 import 'package:injectable/injectable.dart';
 import 'package:wine/application/auth/auth_bloc.dart';
+import 'package:wine/application/auth/auth_dialog/auth_dialog_cubit.dart';
 import 'package:wine/application/home/home_bloc.dart';
 import 'package:wine/application/home/home_navigation/home_navigation_bloc.dart';
 import 'package:wine/application/library/library_bloc.dart';
@@ -41,6 +42,7 @@ void setupInjection() {
     ..registerLazySingleton<ISettingsRepository>(() => _settingsRepository)
     ..registerLazySingleton<IUserRepository>(() => _userRepository)
     ..registerLazySingleton<AuthBloc>(() => AuthBloc(_authFacade))
+    ..registerLazySingleton<AuthDialogCubit>(() => AuthDialogCubit())
     ..registerLazySingleton<HomeBloc>(() => HomeBloc(_homeNavigationBloc))
     ..registerLazySingleton<HomeNavigationBloc>(() => _homeNavigationBloc)
     ..registerLazySingleton<LibraryBloc>(() => LibraryBloc(
