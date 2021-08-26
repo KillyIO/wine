@@ -1,0 +1,26 @@
+image: cirrusci/flutter:stable
+
+stages:
+  - test_coverage
+
+before_script:
+  - flutter pub get
+  - flutter clean
+  - flutter --version
+
+test_coverage:
+  stage: test_coverage
+
+  script:
+    - flutter test --coverage ./lib
+    - lcov -r coverage/lcov.info '*/__test*__/*' -o coverage/lcov_cleaned.info
+    - genhtml coverage/lcov_cleaned.info --output=coverage
+  artifacts:
+    paths:
+      - coverage
+  tags:
+    - shared
+
+  only:
+    - merge_requests
+    - develop
