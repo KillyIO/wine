@@ -2,7 +2,6 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:introduction_screen/introduction_screen.dart';
-
 import 'package:wine/presentation/routes/router.gr.dart';
 import 'package:wine/utils/themes.dart';
 
