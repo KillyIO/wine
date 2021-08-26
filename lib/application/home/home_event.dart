@@ -10,9 +10,6 @@ class HomeEvent with _$HomeEvent {
   const factory HomeEvent.loadNewSeries() = LoadNewSeries;
 
   /// @nodoc
-  const factory HomeEvent.loadNewSeries() = LoadNewSeries;
-
-  /// @nodoc
   const factory HomeEvent.loadSeriesByGenre(String key) = LoadSeriesByGenre;
 
   /// @nodoc

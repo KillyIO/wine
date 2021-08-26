@@ -35,17 +35,6 @@ void main() {
       );
     });
 
-    test('When input not image Then return invalidCoverURL', () {
-      final coverURL = CoverURL(testInvalidCoverURLExtension);
-
-      expect(
-        coverURL.value,
-        const Err<String, ValueFailure<String>>(
-          ValueFailure.invalidCoverURL(testInvalidCoverURLExtension),
-        ),
-      );
-    });
-
     test('When input not URL Then return invalidCoverURL', () {
       final coverURL = CoverURL(testInvalidCoverURL);
 

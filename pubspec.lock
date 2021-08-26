@@ -500,14 +500,14 @@ packages:
   hive_generator:
     dependency: "direct dev"
     description:
-      name: hive_flutter
+      name: hive_generator
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.1.0"
   http:
     dependency: transitive
     description:
-      name: hive_generator
+      name: http
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.13.3"
@@ -566,7 +566,7 @@ packages:
       name: io
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.0.3"
+    version: "1.0.0"
   js:
     dependency: transitive
     description:

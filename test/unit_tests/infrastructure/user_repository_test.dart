@@ -182,7 +182,6 @@ void main() {
       result.match(
         (ok) => expect(ok, const Unit()),
         (_) {},
-        (err) => expect(err, isA<ServerError>()),
       );
     });
 
