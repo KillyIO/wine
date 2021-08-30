@@ -13,7 +13,13 @@ import 'package:wine/utils/themes.dart';
 /// @nodoc
 class SignUpPage extends StatelessWidget {
   /// @nodoc
-  const SignUpPage({Key? key}) : super(key: key);
+  const SignUpPage({
+    Key? key,
+    required this.navigateTo,
+  }) : super(key: key);
+
+  /// @nodoc
+  final PageRouteInfo<dynamic> navigateTo;
 
   @override
   Widget build(BuildContext context) {
@@ -63,7 +69,7 @@ class SignUpPage extends StatelessWidget {
         ),
         body: BlocProvider(
           create: (_) => getIt<SignUpBloc>(),
-          child: const SignUpLayout(),
+          child: SignUpLayout(navigateTo: navigateTo),
         ),
       ),
     );

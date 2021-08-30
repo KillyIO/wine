@@ -228,8 +228,9 @@ class LogInLayout extends StatelessWidget {
                             onPressed: state.isProcessing
                                 ? null
                                 : onSignUpButtonPressed ??
-                                    () => context.router.root
-                                        .push(const SignUpRoute()),
+                                    () => context.router.root.push(SignUpRoute(
+                                          navigateTo: navigateTo,
+                                        )),
                           ),
                         ),
                       ),

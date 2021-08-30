@@ -36,6 +36,7 @@ class AuthDialog extends StatelessWidget {
           builder: (context, state) {
             return state.maybeMap(
               signUp: (_) => SignUpLayout(
+                navigateTo: navigateTo,
                 onDialogBackButtonPressed:
                     context.read<AuthDialogCubit>().updateLayout,
               ),

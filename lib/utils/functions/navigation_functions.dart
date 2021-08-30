@@ -18,14 +18,15 @@ void handleAuthRedirect(
   final mediaQuery = MediaQuery.of(context).size;
   final deviceType = getDeviceType(mediaQuery);
 
+  // We do something for monile just in case...
   if (deviceType == DeviceScreenType.mobile) {
     context
       ..read<AuthBloc>().add(const AuthEvent.authChanged())
-      ..router.root.push(navigateTo);
+      ..router.replace(navigateTo);
   } else {
     context
       ..read<AuthBloc>().add(const AuthEvent.authChanged())
-      ..router.root.pop<bool>(true);
+      ..router.pop<bool>(true);
   }
 }
 
@@ -45,6 +46,7 @@ Future<void> handleAuthGuardedNavigation(
         final result = await showDialog<bool>(
           context: context,
           barrierDismissible: false,
+          useRootNavigator: false,
           builder: (_) => MultiBlocProvider(
             providers: [
               BlocProvider(

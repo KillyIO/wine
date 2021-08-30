@@ -60,8 +60,9 @@ class AppRouter extends _i1.RootStackRouter {
         }),
     SignUpRoute.name: (routeData) => _i1.AdaptivePage<_i9.SignUpPage>(
         routeData: routeData,
-        builder: (_) {
-          return const _i9.SignUpPage();
+        builder: (data) {
+          final args = data.argsAs<SignUpRouteArgs>();
+          return _i9.SignUpPage(key: args.key, navigateTo: args.navigateTo);
         }),
     AccountSettingsRoute.name: (routeData) =>
         _i1.AdaptivePage<_i10.AccountSettingsPage>(
@@ -153,10 +154,21 @@ class SettingsWrapper extends _i1.PageRouteInfo {
   static const String name = 'SettingsWrapper';
 }
 
-class SignUpRoute extends _i1.PageRouteInfo {
-  const SignUpRoute() : super(name, path: '/sign-up');
+class SignUpRoute extends _i1.PageRouteInfo<SignUpRouteArgs> {
+  SignUpRoute({_i2.Key? key, required _i1.PageRouteInfo<dynamic> navigateTo})
+      : super(name,
+            path: '/sign-up',
+            args: SignUpRouteArgs(key: key, navigateTo: navigateTo));
 
   static const String name = 'SignUpRoute';
+}
+
+class SignUpRouteArgs {
+  const SignUpRouteArgs({this.key, required this.navigateTo});
+
+  final _i2.Key? key;
+
+  final _i1.PageRouteInfo<dynamic> navigateTo;
 }
 
 class AccountSettingsRoute extends _i1.PageRouteInfo {
