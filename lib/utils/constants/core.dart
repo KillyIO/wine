@@ -8,7 +8,7 @@ const double defaultAppBarHeight = 41.5;
 const double defaultToolbarItemWidth = 41.5;
 
 /// @nodoc
-const double maxContentLayoutWidth = 1440;
+const double maxContentLayoutWidth = 1080;
 
 /// @nodoc
 const double maxContentLayoutWidth2 = 800;
