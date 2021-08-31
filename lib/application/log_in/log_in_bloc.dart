@@ -6,6 +6,7 @@ import 'package:injectable/injectable.dart';
 import 'package:rustic/option.dart';
 import 'package:rustic/result.dart';
 import 'package:uuid/uuid.dart';
+import 'package:wine/domain/auth/auth_failure.dart' as auth_failure;
 
 import 'package:wine/domain/auth/email_address.dart';
 import 'package:wine/domain/auth/i_auth_facade.dart';
@@ -42,6 +43,20 @@ class LogInBloc extends Bloc<LogInEvent, LogInState> {
     LogInEvent event,
   ) async* {
     yield* event.map(
+      credentialAlreadyInUse: (_) async* {
+        yield* (await _authFacade.logInWithCredentialAlreadyInUse()).match(
+          (_) async* {
+            add(const LogInEvent.loggedInWithGoogle());
+          },
+          (failure) async* {
+            yield state.copyWith(
+              failureOption: Option(Err(CoreFailure.auth(failure))),
+              isProcessing: false,
+              showErrorMessages: true,
+            );
+          },
+        );
+      },
       customUsernameGenerated: (value) async* {
         yield* _saveUsername(value.user);
       },
@@ -145,11 +160,15 @@ class LogInBloc extends Bloc<LogInEvent, LogInState> {
             add(const LogInEvent.loggedInWithGoogle());
           },
           (failure) async* {
-            yield state.copyWith(
-              failureOption: Option(Err(CoreFailure.auth(failure))),
-              isProcessing: false,
-              showErrorMessages: true,
-            );
+            if (failure is auth_failure.CredentialAlreadyInUse) {
+              add(const LogInEvent.credentialAlreadyInUse());
+            } else {
+              yield state.copyWith(
+                failureOption: Option(Err(CoreFailure.auth(failure))),
+                isProcessing: false,
+                showErrorMessages: true,
+              );
+            }
           },
         );
       },

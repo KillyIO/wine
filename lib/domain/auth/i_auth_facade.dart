@@ -27,6 +27,9 @@ abstract class IAuthFacade {
   Future<Result<Unit, AuthFailure>> logInAnonymously();
 
   /// @nodoc
+  Future<Result<Unit, AuthFailure>> logInWithCredentialAlreadyInUse();
+
+  /// @nodoc
   Future<Result<Unit, AuthFailure>> logInWithEmailAndPassword(
     EmailAddress emailAddress,
     Password password,
