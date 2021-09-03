@@ -127,7 +127,7 @@ class SignUpLayout extends StatelessWidget {
                             .read<SignUpBloc>()
                             .add(SignUpEvent.emailAddressChanged(value)),
                         validator: (_) => context
-                            .read<SignUpBloc>()
+                            .watch<SignUpBloc>()
                             .state
                             .emailAddress
                             .value
@@ -153,7 +153,7 @@ class SignUpLayout extends StatelessWidget {
                             .read<SignUpBloc>()
                             .add(SignUpEvent.passwordChanged(value)),
                         validator: (_) => context
-                            .read<SignUpBloc>()
+                            .watch<SignUpBloc>()
                             .state
                             .password
                             .value
@@ -178,7 +178,7 @@ class SignUpLayout extends StatelessWidget {
                             .read<SignUpBloc>()
                             .add(SignUpEvent.confirmPasswordChanged(value)),
                         validator: (_) => context
-                            .read<SignUpBloc>()
+                            .watch<SignUpBloc>()
                             .state
                             .confirmPassword
                             .value
@@ -202,7 +202,7 @@ class SignUpLayout extends StatelessWidget {
                             .read<SignUpBloc>()
                             .add(SignUpEvent.usernameChanged(value)),
                         validator: (_) => context
-                            .read<SignUpBloc>()
+                            .watch<SignUpBloc>()
                             .state
                             .username
                             .value
