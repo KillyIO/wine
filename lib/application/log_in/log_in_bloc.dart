@@ -215,15 +215,11 @@ class LogInBloc extends Bloc<LogInEvent, LogInState> {
           },
           (failure) async* {
             if (failure is UsernameAlreadyInUse) {
-              var usernameStr = value.user.username.getOrCrash();
-
               final randomStrList =
                   const Uuid().v1().replaceAll('-', '').split('')..shuffle();
               final randomStr = randomStrList.join();
 
-              usernameStr = '$usernameStr$randomStr';
-
-              final user = value.user.copyWith(username: Username(usernameStr));
+              final user = value.user.copyWith(username: Username(randomStr));
 
               add(LogInEvent.customUsernameGenerated(user));
             } else {
