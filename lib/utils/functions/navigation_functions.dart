@@ -14,19 +14,32 @@ import 'package:wine/presentation/web/auth_dialog.dart';
 void handleAuthRedirect(
   BuildContext context, {
   required PageRouteInfo<dynamic> navigateTo,
+  bool useRoot = true,
 }) {
   final mediaQuery = MediaQuery.of(context).size;
   final deviceType = getDeviceType(mediaQuery);
 
   // We do something for monile just in case...
   if (deviceType == DeviceScreenType.mobile) {
-    context
-      ..read<AuthBloc>().add(const AuthEvent.authChanged())
-      ..router.replace(navigateTo);
+    if (useRoot) {
+      context
+        ..read<AuthBloc>().add(const AuthEvent.authChanged())
+        ..router.root.replace(navigateTo);
+    } else {
+      context
+        ..read<AuthBloc>().add(const AuthEvent.authChanged())
+        ..router.replace(navigateTo);
+    }
   } else {
-    context
-      ..read<AuthBloc>().add(const AuthEvent.authChanged())
-      ..router.pop<bool>(true);
+    if (useRoot) {
+      context
+        ..read<AuthBloc>().add(const AuthEvent.authChanged())
+        ..router.root.pop<bool>(true);
+    } else {
+      context
+        ..read<AuthBloc>().add(const AuthEvent.authChanged())
+        ..router.pop<bool>(true);
+    }
   }
 }
 
@@ -34,13 +47,16 @@ void handleAuthRedirect(
 Future<void> handleAuthGuardedNavigation(
   BuildContext context, {
   required PageRouteInfo<dynamic> navigateTo,
+  bool useRoot = true,
 }) async {
   final mediaQuery = MediaQuery.of(context).size;
   final deviceType = getDeviceType(mediaQuery);
   final state = context.read<AuthBloc>().state;
 
   await state.maybeMap(
-    authenticated: (_) => context.router.root.push(navigateTo),
+    authenticated: (_) => useRoot
+        ? context.router.root.push(navigateTo)
+        : context.router.push(navigateTo),
     orElse: () async {
       if (deviceType != DeviceScreenType.mobile) {
         final result = await showDialog<bool>(
@@ -62,17 +78,32 @@ Future<void> handleAuthGuardedNavigation(
             child: AuthDialog(
               key: const Key('auth_dialog'),
               navigateTo: navigateTo,
+              useRoot: useRoot,
             ),
           ),
         );
 
         if (result != null && result) {
-          deviceType != DeviceScreenType.desktop
-              ? await context.router.root.navigate(navigateTo)
-              : await context.router.root.push(navigateTo);
+          if (deviceType != DeviceScreenType.desktop) {
+            if (useRoot) {
+              await context.router.root.navigate(navigateTo);
+            } else {
+              await context.router.navigate(navigateTo);
+            }
+          } else {
+            if (useRoot) {
+              await context.router.root.push(navigateTo);
+            } else {
+              await context.router.push(navigateTo);
+            }
+          }
         }
       } else {
-        await context.router.root.push(LogInRoute(navigateTo: navigateTo));
+        if (useRoot) {
+          await context.router.root.push(LogInRoute(navigateTo: navigateTo));
+        } else {
+          await context.router.push(LogInRoute(navigateTo: navigateTo));
+        }
       }
     },
   );

@@ -18,6 +18,7 @@ class SignUpLayout extends StatelessWidget {
     Key? key,
     required this.navigateTo,
     this.onDialogBackButtonPressed,
+    this.useRoot = true,
   }) : super(key: key);
 
   /// @nodoc
@@ -25,6 +26,9 @@ class SignUpLayout extends StatelessWidget {
 
   /// @nodoc
   final VoidCallback? onDialogBackButtonPressed;
+
+  /// @nodoc
+  final bool useRoot;
 
   @override
   Widget build(BuildContext context) {
@@ -84,7 +88,11 @@ class SignUpLayout extends StatelessWidget {
               'You have been successfully authenticated.',
               'You will now be redirected.'
             ],
-            () => handleAuthRedirect(context, navigateTo: navigateTo),
+            () => handleAuthRedirect(
+              context,
+              navigateTo: navigateTo,
+              useRoot: useRoot,
+            ),
           );
         }
       },

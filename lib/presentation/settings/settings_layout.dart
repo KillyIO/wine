@@ -29,6 +29,7 @@ class SettingsLayout extends StatelessWidget {
                 onPressed: () => handleAuthGuardedNavigation(
                   context,
                   navigateTo: const AccountSettingsRoute(),
+                  useRoot: false,
                 ),
               ),
               TileButton(

@@ -22,6 +22,7 @@ class LogInLayout extends StatelessWidget {
     Key? key,
     required this.navigateTo,
     this.onSignUpButtonPressed,
+    this.useRoot = true,
   }) : super(key: key);
 
   /// @nodoc
@@ -30,10 +31,12 @@ class LogInLayout extends StatelessWidget {
   /// @nodoc
   final VoidCallback? onSignUpButtonPressed;
 
+  /// @nodoc
+  final bool useRoot;
+
   @override
   Widget build(BuildContext context) {
     final mediaQuery = MediaQuery.of(context).size;
-    final logInState = context.select((LogInBloc bloc) => bloc.state);
 
     return BlocListener<LogInBloc, LogInState>(
       listener: (context, state) {
@@ -90,7 +93,11 @@ class LogInLayout extends StatelessWidget {
               'You have been successfully authenticated.',
               'You will now be redirected.'
             ],
-            () => handleAuthRedirect(context, navigateTo: navigateTo),
+            () => handleAuthRedirect(
+              context,
+              navigateTo: navigateTo,
+              useRoot: useRoot,
+            ),
           );
         }
       },
