@@ -26,6 +26,17 @@ class FirebaseAuthFacade implements IAuthFacade {
   final auth.FirebaseAuth _firebaseAuth;
   final GoogleSignIn _googleSignIn;
 
+  /// @nodoc
+  @override
+  Stream<Option<User>> get authStateChanges =>
+      _firebaseAuth.authStateChanges().map((user) {
+        if (user != null) {
+          if (user.isAnonymous) return const None();
+          return Some(user.toDomain());
+        }
+        return const None();
+      });
+
   @override
   Future<Result<Unit, AuthFailure>> convertWithEmailAndPassword(
     EmailAddress emailAddress,
@@ -62,7 +73,7 @@ class FirebaseAuthFacade implements IAuthFacade {
   }
 
   @override
-  Future<Option<User>?> getLoggedInUser() async =>
+  Future<Option<User>> getLoggedInUser() async =>
       (_firebaseAuth.currentUser?.toDomain()).asOption();
 
   @override
