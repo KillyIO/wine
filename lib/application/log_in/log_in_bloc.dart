@@ -69,7 +69,7 @@ class LogInBloc extends Bloc<LogInEvent, LogInState> {
       loggedInWithEmailAndPassword: (_) async* {
         if (_authFacade.isLoggedIn) {
           final userOption = await _authFacade.getLoggedInUser();
-          final userAsplain = userOption?.asPlain();
+          final userAsplain = userOption.asPlain();
 
           if (userAsplain != null) {
             yield* (await _userRepository.loadUser(
@@ -93,7 +93,7 @@ class LogInBloc extends Bloc<LogInEvent, LogInState> {
       loggedInWithGoogle: (_) async* {
         if (_authFacade.isLoggedIn) {
           final userOption = await _authFacade.getLoggedInUser();
-          final userAsplain = userOption?.asPlain();
+          final userAsplain = userOption.asPlain();
 
           if (userAsplain != null) {
             yield* (await _userRepository.loadUser(
