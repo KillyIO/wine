@@ -23,21 +23,21 @@ void handleAuthRedirect(
   if (deviceType == DeviceScreenType.mobile) {
     if (useRoot) {
       context
-        ..read<AuthBloc>().add(const AuthEvent.authChanged())
+        // ..read<AuthBloc>().add(const AuthEvent.authChanged())
         ..router.root.replace(navigateTo);
     } else {
       context
-        ..read<AuthBloc>().add(const AuthEvent.authChanged())
+        // ..read<AuthBloc>().add(const AuthEvent.authChanged())
         ..router.replace(navigateTo);
     }
   } else {
     if (useRoot) {
       context
-        ..read<AuthBloc>().add(const AuthEvent.authChanged())
+        // ..read<AuthBloc>().add(const AuthEvent.authChanged())
         ..router.root.pop<bool>(true);
     } else {
       context
-        ..read<AuthBloc>().add(const AuthEvent.authChanged())
+        // ..read<AuthBloc>().add(const AuthEvent.authChanged())
         ..router.pop<bool>(true);
     }
   }
