@@ -19,16 +19,39 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
 
   final IAuthFacade _authFacade;
 
+  late StreamSubscription _authSubscription;
+
   @override
   Stream<AuthState> mapEventToState(
     AuthEvent event,
   ) async* {
-    yield* event.map(authChanged: (_) async* {
-      if (_authFacade.isLoggedIn && !_authFacade.isAnonymous) {
-        yield const AuthState.authenticated();
-      } else {
+    yield* event.map(
+      anonymous: (_) async* {
         yield const AuthState.anonymous();
-      }
-    });
+      },
+      authChanged: (_) async* {
+        _authSubscription = _authFacade.authStateChanges.listen(
+          (user) => user.match(
+            (some) => add(const AuthEvent.authenticated()),
+            () => add(const AuthEvent.anonymous()),
+          ),
+        );
+        // if (_authFacade.isLoggedIn && !_authFacade.isAnonymous) {
+        //   yield const AuthState.authenticated();
+        // } else {
+        //   yield const AuthState.anonymous();
+        // }
+      },
+      authenticated: (_) async* {
+        yield const AuthState.authenticated();
+      },
+    );
+  }
+
+  @override
+  Future<void> close() {
+    _authSubscription.cancel();
+
+    return super.close();
   }
 }
