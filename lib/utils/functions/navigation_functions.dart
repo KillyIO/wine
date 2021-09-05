@@ -62,7 +62,6 @@ Future<void> handleAuthGuardedNavigation(
         final result = await showDialog<bool>(
           context: context,
           barrierDismissible: false,
-          useRootNavigator: false,
           builder: (_) => MultiBlocProvider(
             providers: [
               BlocProvider(
