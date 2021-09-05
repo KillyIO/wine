@@ -25,7 +25,7 @@ void main() {
 
   group('AuthBloc -', () {
     blocTest<AuthBloc, AuthState>(
-      'emits [AuthState.anonymous] when authChanged is added 1.',
+      'emits [AuthState.anonymous] when authChanged is added.',
       build: () => _authBloc,
       act: (bloc) {
         when(() => _authFacade.authStateChanges)
