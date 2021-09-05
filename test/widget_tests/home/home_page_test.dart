@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
+import 'package:rustic/option.dart';
 import 'package:rustic/result.dart';
 import 'package:rustic/tuple.dart';
 
@@ -52,6 +53,11 @@ void main() {
   group('HomePage -', () {
     group('Errors -', () {
       group('auth -', () {
+        setUp(() {
+          when(() => _authFacade.authStateChanges)
+              .thenAnswer((_) => Stream.fromIterable([Option(null)]));
+        });
+
         testWidgets(
           'Should display ErrorDialog with AuthFailure.serverError message',
           (tester) async {
@@ -108,6 +114,11 @@ void main() {
       });
 
       group('defaultCovers -', () {
+        setUp(() {
+          when(() => _authFacade.authStateChanges)
+              .thenAnswer((_) => Stream.fromIterable([Option(null)]));
+        });
+
         testWidgets(
           '''Should display ErrorDialog with DefaultCoversFailure.defaultCoverURLsNotCached message''',
           (tester) async {
@@ -237,6 +248,11 @@ void main() {
       });
 
       group('sessions -', () {
+        setUp(() {
+          when(() => _authFacade.authStateChanges)
+              .thenAnswer((_) => Stream.fromIterable([Option(null)]));
+        });
+
         testWidgets(
           '''Should display ErrorDialog with SessionsFailure.sessionNotCreated message''',
           (tester) async {
@@ -322,6 +338,11 @@ void main() {
       });
 
       group('settings -', () {
+        setUp(() {
+          when(() => _authFacade.authStateChanges)
+              .thenAnswer((_) => Stream.fromIterable([Option(null)]));
+        });
+
         testWidgets(
           '''Should display ErrorDialog with SettingsFailure.settingsNotInitialized message''',
           (tester) async {
@@ -366,6 +387,11 @@ void main() {
       });
 
       group('user -', () {
+        setUp(() {
+          when(() => _authFacade.authStateChanges)
+              .thenAnswer((_) => Stream.fromIterable([Option(null)]));
+        });
+
         testWidgets(
           '''Should display ErrorDialog with UserFailure.userNotFound message''',
           (tester) async {
@@ -408,6 +434,8 @@ void main() {
     });
 
     testWidgets('Should navigate to Onboarding page', (tester) async {
+      when(() => _authFacade.authStateChanges)
+          .thenAnswer((_) => Stream.fromIterable([Option(null)]));
       when(() => _authFacade.isLoggedIn).thenReturn(false);
       when(_authFacade.logInAnonymously)
           .thenAnswer((_) async => const Ok(Unit()));
@@ -436,6 +464,8 @@ void main() {
 
     group('AppBar -', () {
       testWidgets('Should find 3 buttons', (tester) async {
+        when(() => _authFacade.authStateChanges)
+            .thenAnswer((_) => Stream.fromIterable([Option(null)]));
         when(() => _authFacade.isLoggedIn).thenReturn(true);
         when(() => _authFacade.isAnonymous).thenReturn(true);
         when(_settingsRepository.fetchSettings)
@@ -482,6 +512,9 @@ void main() {
       // TODO test top left icon open/close drawer
 
       testWidgets('Should find 3 buttons', (tester) async {
+        when(() => _authFacade.authStateChanges)
+            .thenAnswer((_) => Stream.fromIterable([Option(null)]));
+
         final authBloc = getIt<AuthBloc>()..add(const AuthEvent.authChanged());
 
         await tester.pumpWidget(TestRouterWidget(
