@@ -4,7 +4,8 @@ part of 'log_in_bloc.dart';
 @freezed
 class LogInEvent with _$LogInEvent {
   /// @nodoc
-  const factory LogInEvent.credentialAlreadyInUse() = CredentialAlreadyInUse;
+  const factory LogInEvent.credentialOrEmailAlreadyInUse() =
+      CredentialOrEmailAlreadyInUse;
 
   /// @nodoc
   const factory LogInEvent.customUsernameGenerated(User user) =
