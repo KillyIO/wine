@@ -9,7 +9,8 @@ class AuthFailure with _$AuthFailure {
   const factory AuthFailure.cancelledByUser() = CancelledByUser;
 
   /// @nodoc
-  const factory AuthFailure.credentialAlreadyInUse() = CredentialAlreadyInUse;
+  const factory AuthFailure.credentialOrEmailAlreadyInUse() =
+      CredentialOrEmailAlreadyInUse;
 
   /// @nodoc
   const factory AuthFailure.emailAlreadyInUse() = EmailAlreadyInUse;
