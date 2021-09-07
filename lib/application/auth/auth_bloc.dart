@@ -19,7 +19,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
 
   final IAuthFacade _authFacade;
 
-  late StreamSubscription _authSubscription;
+  StreamSubscription? _authSubscription;
 
   @override
   Stream<AuthState> mapEventToState(
@@ -30,6 +30,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
         yield const AuthState.anonymous();
       },
       authChanged: (_) async* {
+        await _authSubscription?.cancel();
         _authSubscription = _authFacade.authStateChanges.listen(
           (user) => user.match(
             (some) => add(const AuthEvent.authenticated()),
@@ -50,7 +51,7 @@ class AuthBloc extends Bloc<AuthEvent, AuthState> {
 
   @override
   Future<void> close() {
-    _authSubscription.cancel();
+    _authSubscription?.cancel();
 
     return super.close();
   }
