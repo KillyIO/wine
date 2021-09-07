@@ -22,6 +22,7 @@ class LogInLayout extends StatelessWidget {
     Key? key,
     required this.navigateTo,
     this.onSignUpButtonPressed,
+    this.useRoot = true,
   }) : super(key: key);
 
   /// @nodoc
@@ -30,10 +31,12 @@ class LogInLayout extends StatelessWidget {
   /// @nodoc
   final VoidCallback? onSignUpButtonPressed;
 
+  /// @nodoc
+  final bool useRoot;
+
   @override
   Widget build(BuildContext context) {
     final mediaQuery = MediaQuery.of(context).size;
-    final logInState = context.select((LogInBloc bloc) => bloc.state);
 
     return BlocListener<LogInBloc, LogInState>(
       listener: (context, state) {
@@ -90,7 +93,11 @@ class LogInLayout extends StatelessWidget {
               'You have been successfully authenticated.',
               'You will now be redirected.'
             ],
-            () => handleAuthRedirect(context, navigateTo: navigateTo),
+            () => handleAuthRedirect(
+              context,
+              navigateTo: navigateTo,
+              useRoot: useRoot,
+            ),
           );
         }
       },
@@ -139,35 +146,45 @@ class LogInLayout extends StatelessWidget {
                         padding: getEmailAddressPadding(mediaQuery),
                         child: AuthenticationTextField(
                           hintText: 'Email address',
+                          keyboardType: TextInputType.emailAddress,
                           onChanged: (value) => context
                               .read<LogInBloc>()
                               .add(LogInEvent.emailAddressChanged(value)),
-                          validator: (_) => logInState.emailAddress.value.match(
-                            (_) => null,
-                            (err) => err.maybeMap(
-                              invalidEmailAddress: (_) =>
-                                  'The email address is invalid.',
-                              orElse: () => null,
-                            ),
-                          ),
-                          keyboardType: TextInputType.emailAddress,
+                          validator: (_) => context
+                              .watch<LogInBloc>()
+                              .state
+                              .emailAddress
+                              .value
+                              .match(
+                                (_) => null,
+                                (err) => err.maybeMap(
+                                  invalidEmailAddress: (_) =>
+                                      'The email address is invalid.',
+                                  orElse: () => null,
+                                ),
+                              ),
                         ),
                       ),
                       Padding(
                         padding: const EdgeInsets.only(left: 50, top: 25),
                         child: AuthenticationTextField(
                           hintText: 'Password',
+                          obscureText: true,
                           onChanged: (value) => context
                               .read<LogInBloc>()
                               .add(LogInEvent.passwordChanged(value)),
-                          validator: (_) => logInState.password.value.match(
-                            (_) => null,
-                            (err) => err.maybeMap(
-                                invalidPassword: (_) =>
-                                    'The password is invalid.',
-                                orElse: () => null),
-                          ),
-                          obscureText: true,
+                          validator: (_) => context
+                              .watch<LogInBloc>()
+                              .state
+                              .password
+                              .value
+                              .match(
+                                (_) => null,
+                                (err) => err.maybeMap(
+                                    invalidPassword: (_) =>
+                                        'The password is invalid.',
+                                    orElse: () => null),
+                              ),
                         ),
                       ),
                       Padding(
@@ -228,8 +245,9 @@ class LogInLayout extends StatelessWidget {
                             onPressed: state.isProcessing
                                 ? null
                                 : onSignUpButtonPressed ??
-                                    () => context.router.root
-                                        .push(const SignUpRoute()),
+                                    () => context.router.root.push(SignUpRoute(
+                                          navigateTo: navigateTo,
+                                        )),
                           ),
                         ),
                       ),

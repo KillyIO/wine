@@ -6,6 +6,7 @@ import 'package:injectable/injectable.dart';
 import 'package:rustic/option.dart';
 import 'package:rustic/result.dart';
 import 'package:uuid/uuid.dart';
+import 'package:wine/domain/auth/auth_failure.dart' as auth_failure;
 
 import 'package:wine/domain/auth/email_address.dart';
 import 'package:wine/domain/auth/i_auth_facade.dart';
@@ -42,6 +43,20 @@ class LogInBloc extends Bloc<LogInEvent, LogInState> {
     LogInEvent event,
   ) async* {
     yield* event.map(
+      credentialOrEmailAlreadyInUse: (_) async* {
+        yield* (await _authFacade.logInWithCredentialAlreadyInUse()).match(
+          (_) async* {
+            add(const LogInEvent.loggedInWithGoogle());
+          },
+          (failure) async* {
+            yield state.copyWith(
+              failureOption: Option(Err(CoreFailure.auth(failure))),
+              isProcessing: false,
+              showErrorMessages: true,
+            );
+          },
+        );
+      },
       customUsernameGenerated: (value) async* {
         yield* _saveUsername(value.user);
       },
@@ -54,7 +69,7 @@ class LogInBloc extends Bloc<LogInEvent, LogInState> {
       loggedInWithEmailAndPassword: (_) async* {
         if (_authFacade.isLoggedIn) {
           final userOption = await _authFacade.getLoggedInUser();
-          final userAsplain = userOption?.asPlain();
+          final userAsplain = userOption.asPlain();
 
           if (userAsplain != null) {
             yield* (await _userRepository.loadUser(
@@ -78,7 +93,7 @@ class LogInBloc extends Bloc<LogInEvent, LogInState> {
       loggedInWithGoogle: (_) async* {
         if (_authFacade.isLoggedIn) {
           final userOption = await _authFacade.getLoggedInUser();
-          final userAsplain = userOption?.asPlain();
+          final userAsplain = userOption.asPlain();
 
           if (userAsplain != null) {
             yield* (await _userRepository.loadUser(
@@ -145,11 +160,15 @@ class LogInBloc extends Bloc<LogInEvent, LogInState> {
             add(const LogInEvent.loggedInWithGoogle());
           },
           (failure) async* {
-            yield state.copyWith(
-              failureOption: Option(Err(CoreFailure.auth(failure))),
-              isProcessing: false,
-              showErrorMessages: true,
-            );
+            if (failure is auth_failure.CredentialOrEmailAlreadyInUse) {
+              add(const LogInEvent.credentialOrEmailAlreadyInUse());
+            } else {
+              yield state.copyWith(
+                failureOption: Option(Err(CoreFailure.auth(failure))),
+                isProcessing: false,
+                showErrorMessages: true,
+              );
+            }
           },
         );
       },
@@ -196,15 +215,11 @@ class LogInBloc extends Bloc<LogInEvent, LogInState> {
           },
           (failure) async* {
             if (failure is UsernameAlreadyInUse) {
-              var usernameStr = value.user.username.getOrCrash();
-
               final randomStrList =
                   const Uuid().v1().replaceAll('-', '').split('')..shuffle();
               final randomStr = randomStrList.join();
 
-              usernameStr = '$usernameStr$randomStr';
-
-              final user = value.user.copyWith(username: Username(usernameStr));
+              final user = value.user.copyWith(username: Username(randomStr));
 
               add(LogInEvent.customUsernameGenerated(user));
             } else {

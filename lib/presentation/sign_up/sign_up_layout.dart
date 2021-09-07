@@ -2,26 +2,33 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import 'package:wine/application/auth/auth_bloc.dart';
 import 'package:wine/application/sign_up/sign_up_bloc.dart';
 import 'package:wine/presentation/core/buttons/default_button.dart';
 import 'package:wine/presentation/core/labels/text_field_label.dart';
 import 'package:wine/presentation/core/text_fields/authentication_text_field.dart';
-import 'package:wine/presentation/routes/router.dart';
 import 'package:wine/presentation/sign_up/widgets/sign_up_tos_and_pp_button.dart';
 import 'package:wine/utils/constants/palette.dart';
 import 'package:wine/utils/functions/dialog_functions.dart';
+import 'package:wine/utils/functions/navigation_functions.dart';
 
 /// @nodoc
 class SignUpLayout extends StatelessWidget {
   /// @nodoc
   const SignUpLayout({
     Key? key,
+    required this.navigateTo,
     this.onDialogBackButtonPressed,
+    this.useRoot = true,
   }) : super(key: key);
 
   /// @nodoc
+  final PageRouteInfo<dynamic> navigateTo;
+
+  /// @nodoc
   final VoidCallback? onDialogBackButtonPressed;
+
+  /// @nodoc
+  final bool useRoot;
 
   @override
   Widget build(BuildContext context) {
@@ -81,10 +88,11 @@ class SignUpLayout extends StatelessWidget {
               'You have been successfully authenticated.',
               'You will now be redirected.'
             ],
-            () => context
-              ..read<AuthBloc>().add(const AuthEvent.authChanged())
-              ..router.root.navigate(const PlusRoute())
-              ..router.root.push(const LibraryRoute()),
+            () => handleAuthRedirect(
+              context,
+              navigateTo: navigateTo,
+              useRoot: useRoot,
+            ),
           );
         }
       },
@@ -127,7 +135,7 @@ class SignUpLayout extends StatelessWidget {
                             .read<SignUpBloc>()
                             .add(SignUpEvent.emailAddressChanged(value)),
                         validator: (_) => context
-                            .read<SignUpBloc>()
+                            .watch<SignUpBloc>()
                             .state
                             .emailAddress
                             .value
@@ -153,7 +161,7 @@ class SignUpLayout extends StatelessWidget {
                             .read<SignUpBloc>()
                             .add(SignUpEvent.passwordChanged(value)),
                         validator: (_) => context
-                            .read<SignUpBloc>()
+                            .watch<SignUpBloc>()
                             .state
                             .password
                             .value
@@ -178,7 +186,7 @@ class SignUpLayout extends StatelessWidget {
                             .read<SignUpBloc>()
                             .add(SignUpEvent.confirmPasswordChanged(value)),
                         validator: (_) => context
-                            .read<SignUpBloc>()
+                            .watch<SignUpBloc>()
                             .state
                             .confirmPassword
                             .value
@@ -202,7 +210,7 @@ class SignUpLayout extends StatelessWidget {
                             .read<SignUpBloc>()
                             .add(SignUpEvent.usernameChanged(value)),
                         validator: (_) => context
-                            .read<SignUpBloc>()
+                            .watch<SignUpBloc>()
                             .state
                             .username
                             .value

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:wine/presentation/routes/router.dart';
 
 import 'package:wine/utils/constants/core.dart';
+import 'package:wine/utils/functions/navigation_functions.dart';
 import 'package:wine/utils/responsive/home_responsive.dart';
 
 /// @nodoc
@@ -54,7 +56,12 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
             ),
             // ignore: todo
             // TODO add handleAuthGuardedNavigation to SeriesEditorPage
-            onPressed: () {},
+            onPressed: () => handleAuthGuardedNavigation(
+              context,
+              // ignore: todo
+              // TODO change this to TypewriterPage
+              navigateTo: const LibraryRoute(),
+            ),
             splashColor: Colors.transparent,
           ),
         ),

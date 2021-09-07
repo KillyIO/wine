@@ -26,6 +26,17 @@ class FirebaseAuthFacade implements IAuthFacade {
   final auth.FirebaseAuth _firebaseAuth;
   final GoogleSignIn _googleSignIn;
 
+  /// @nodoc
+  @override
+  Stream<Option<User>> get authStateChanges =>
+      _firebaseAuth.authStateChanges().map((user) {
+        if (user != null) {
+          if (user.isAnonymous) return const None();
+          return Some(user.toDomain());
+        }
+        return const None();
+      });
+
   @override
   Future<Result<Unit, AuthFailure>> convertWithEmailAndPassword(
     EmailAddress emailAddress,
@@ -62,7 +73,7 @@ class FirebaseAuthFacade implements IAuthFacade {
   }
 
   @override
-  Future<Option<User>?> getLoggedInUser() async =>
+  Future<Option<User>> getLoggedInUser() async =>
       (_firebaseAuth.currentUser?.toDomain()).asOption();
 
   @override
@@ -85,6 +96,45 @@ class FirebaseAuthFacade implements IAuthFacade {
     } on FirebaseException catch (_) {
       return const Err(AuthFailure.serverError());
     } catch (_) {
+      return const Err(AuthFailure.unexpected());
+    }
+  }
+
+  @override
+  Future<Result<Unit, AuthFailure>> logInWithCredentialAlreadyInUse() async {
+    try {
+      final anonymousUser = _firebaseAuth.currentUser;
+
+      if (anonymousUser != null) {
+        final googleAccount = await _googleSignIn.signIn();
+        if (googleAccount == null) {
+          return const Err(AuthFailure.cancelledByUser());
+        }
+
+        final googleAuthentication = await googleAccount.authentication;
+        final auth.AuthCredential authCredential =
+            auth.GoogleAuthProvider.credential(
+          idToken: googleAuthentication.idToken,
+          accessToken: googleAuthentication.accessToken,
+        );
+
+        await anonymousUser.delete();
+
+        await _firebaseAuth.signInWithCredential(authCredential);
+
+        final currentUser = _firebaseAuth.currentUser;
+
+        return _updateUserInfo(_googleSignIn.currentUser, currentUser);
+      }
+      return const Err(AuthFailure.unexpected());
+    } on FirebaseException catch (_) {
+      return const Err(AuthFailure.serverError());
+    } on Exception catch (e) {
+      if (e is PlatformException) {
+        if (e.code == 'popup_closed_by_user') {
+          return const Err(AuthFailure.cancelledByUser());
+        }
+      }
       return const Err(AuthFailure.unexpected());
     }
   }
@@ -141,22 +191,16 @@ class FirebaseAuthFacade implements IAuthFacade {
           accessToken: googleAuthentication.accessToken,
         );
 
-        try {
-          return await _trySignInWithGoogle(anonymousUser, authCredential);
-        } on FirebaseException catch (e) {
-          if (e.code == 'credential-already-in-use') {
-            return await _signInWithGoogleCredentialAlreadyInUse(
-              anonymousUser,
-              authCredential,
-            );
-          }
-          return const Err(AuthFailure.serverError());
-        } catch (_) {
-          return const Err(AuthFailure.unexpected());
-        }
+        await anonymousUser.linkWithCredential(authCredential);
+
+        return _updateUserInfo(_googleSignIn.currentUser, anonymousUser);
       }
       return const Err(AuthFailure.unexpected());
-    } on FirebaseException catch (_) {
+    } on FirebaseException catch (e) {
+      if (e.code == 'credential-already-in-use' ||
+          e.code == 'email-already-in-use') {
+        return const Err(AuthFailure.credentialOrEmailAlreadyInUse());
+      }
       return const Err(AuthFailure.serverError());
     } on Exception catch (e) {
       if (e is PlatformException) {
@@ -205,34 +249,6 @@ class FirebaseAuthFacade implements IAuthFacade {
     } catch (_) {
       return const Err(AuthFailure.unexpected());
     }
-  }
-
-  Future<Result<Unit, AuthFailure>> _trySignInWithGoogle(
-    auth.User? anonymousUser,
-    auth.AuthCredential authCredential,
-  ) async {
-    if (anonymousUser != null) {
-      await anonymousUser.linkWithCredential(authCredential);
-
-      return _updateUserInfo(_googleSignIn.currentUser, anonymousUser);
-    }
-    return const Err(AuthFailure.unexpected());
-  }
-
-  Future<Result<Unit, AuthFailure>> _signInWithGoogleCredentialAlreadyInUse(
-    auth.User? anonymousUser,
-    auth.AuthCredential authCredential,
-  ) async {
-    if (anonymousUser != null) {
-      await anonymousUser.delete();
-
-      await _firebaseAuth.signInWithCredential(authCredential);
-
-      final currentUser = _firebaseAuth.currentUser;
-
-      return _updateUserInfo(_googleSignIn.currentUser, currentUser);
-    }
-    return const Err(AuthFailure.unexpected());
   }
 
   Future<Result<Unit, AuthFailure>> _updateUserInfo(

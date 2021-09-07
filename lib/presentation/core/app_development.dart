@@ -19,6 +19,7 @@ class AppDevelopment extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(
+          lazy: false,
           create: (_) => getIt<AuthBloc>()..add(const AuthEvent.authChanged()),
         ),
         BlocProvider(create: (_) => getIt<HomeBloc>()),

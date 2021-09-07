@@ -2,6 +2,7 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
+import 'package:rustic/option.dart';
 import 'package:rustic/result.dart';
 import 'package:rustic/tuple.dart';
 
@@ -56,14 +57,18 @@ void main() {
   });
 
   group('PlusPage', () {
-    testWidgets('Should find 3 buttons', (tester) async {
+    setUp(() {
+      when(() => _authFacade.authStateChanges)
+          .thenAnswer((_) => Stream.fromIterable([Option(null)]));
       when(() => _authFacade.isLoggedIn).thenReturn(true);
       when(() => _authFacade.isAnonymous).thenReturn(true);
       when(_settingsRepository.fetchSettings)
           .thenAnswer((_) async => const Ok(testSettings));
       when(_sessionsRepository.fetchSession)
           .thenAnswer((_) async => Ok(testUser));
+    });
 
+    testWidgets('Should find 3 buttons', (tester) async {
       final authBloc = getIt<AuthBloc>()..add(const AuthEvent.authChanged());
 
       await tester.pumpWidget(TestRouterWidget(
@@ -82,13 +87,6 @@ void main() {
 
     group('PlusBanner -', () {
       testWidgets('Should find an image and text PLUS', (tester) async {
-        when(() => _authFacade.isLoggedIn).thenReturn(true);
-        when(() => _authFacade.isAnonymous).thenReturn(true);
-        when(_settingsRepository.fetchSettings)
-            .thenAnswer((_) async => const Ok(testSettings));
-        when(_sessionsRepository.fetchSession)
-            .thenAnswer((_) async => Ok(testUser));
-
         final authBloc = getIt<AuthBloc>()..add(const AuthEvent.authChanged());
 
         await tester.pumpWidget(TestRouterWidget(
@@ -106,6 +104,11 @@ void main() {
   });
 
   group('LibraryButton', () {
+    setUp(() {
+      when(() => _authFacade.authStateChanges)
+          .thenAnswer((_) => Stream.fromIterable([Option(null)]));
+    });
+
     group('Web', () {
       testWidgets(
         'plus_library_button should display AuthDialog',
@@ -205,6 +208,8 @@ void main() {
           tester.binding.window.physicalSizeTestValue =
               Size(mobileWidth * dpi, mobileHeight * dpi);
 
+          when(() => _authFacade.authStateChanges)
+              .thenAnswer((_) => Stream.fromIterable([Option(testUser)]));
           when(() => _authFacade.isLoggedIn).thenReturn(true);
           when(() => _authFacade.isAnonymous).thenReturn(false);
           when(_defaultCoversRepository.loadDefaultCoverURLs)

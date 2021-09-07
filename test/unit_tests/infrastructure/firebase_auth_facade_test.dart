@@ -1,5 +1,4 @@
 import 'package:firebase_auth/firebase_auth.dart' as auth;
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:mocktail/mocktail.dart';
@@ -16,7 +15,7 @@ import '../../mocks/google_sign_in_mocks.dart';
 import '../utils/constants.dart';
 
 void main() {
-  late FirebaseAuth _firebaseAuth;
+  late auth.FirebaseAuth _firebaseAuth;
   late GoogleSignIn _googleSignIn;
 
   late auth.User _firebaseUser;
@@ -31,10 +30,52 @@ void main() {
 
     _authFacade = FirebaseAuthFacade(_firebaseAuth, _googleSignIn);
 
-    registerFallbackValue<AuthCredential>(MockAuthCredential());
+    registerFallbackValue<auth.AuthCredential>(MockAuthCredential());
   });
 
   group('FirebaseAuthFacade -', () {
+    group('authStateChanges -', () {
+      test(
+        'When user null Then return None',
+        () async {
+          when(_firebaseAuth.authStateChanges)
+              .thenAnswer((_) => Stream.fromIterable([null]));
+
+          _authFacade.authStateChanges.listen((option) {
+            expect(option.isNone, true);
+            expect(option.asPlain(), null);
+          });
+        },
+      );
+
+      test(
+        'When user anonymous Then return None',
+        () async {
+          when(_firebaseAuth.authStateChanges)
+              .thenAnswer((_) => Stream.fromIterable([_firebaseUser]));
+
+          _authFacade.authStateChanges.listen((option) {
+            expect(option.isNone, true);
+            expect(option.asPlain(), null);
+          });
+        },
+      );
+
+      test(
+        'When user authenticated Then return Some',
+        () async {
+          _firebaseUser = MockUser(isAnonymous: false);
+
+          when(_firebaseAuth.authStateChanges)
+              .thenAnswer((_) => Stream.fromIterable([_firebaseUser]));
+
+          _authFacade.authStateChanges.listen((option) {
+            expect(option.isSome, true);
+          });
+        },
+      );
+    });
+
     group('convertWithEmailAndPassword -', () {
       setUp(() {
         when(() => _firebaseAuth.currentUser).thenReturn(_firebaseUser);
@@ -122,7 +163,7 @@ void main() {
 
         final result = await _authFacade.getLoggedInUser();
 
-        expect(result?.isNone, true);
+        expect(result.isNone, true);
       });
 
       test('When user logged in Then return Some User', () async {
@@ -130,8 +171,8 @@ void main() {
 
         final result = await _authFacade.getLoggedInUser();
 
-        expect(result?.isSome, true);
-        result?.match(
+        expect(result.isSome, true);
+        result.match(
           (some) => expect(some, testUser),
           () {},
         );
@@ -173,6 +214,8 @@ void main() {
         expect(_authFacade.isLoggedIn, false);
       });
     });
+
+    group('logInWithCredentialAlreadyInUse', () {});
 
     group('logInAnonymously -', () {
       test('When user logged in Then return Unit', () async {
@@ -354,24 +397,27 @@ void main() {
         );
       });
 
-      test('When credential already in use Then return Unit', () async {
-        when(_googleSignIn.signIn)
-            .thenAnswer((_) async => MockGoogleSignInAccount());
-        when(() => _firebaseUser.linkWithCredential(any()))
-            .thenThrow(testCredentialInUse);
-        when(() => _firebaseAuth.signInWithCredential(any()))
-            .thenAnswer((_) async => MockUserCredential());
-        when(() => _googleSignIn.currentUser)
-            .thenReturn(MockGoogleSignInAccount());
+      test(
+        'When credential already in use Then return CredentialAlreadyInUse',
+        () async {
+          when(_googleSignIn.signIn)
+              .thenAnswer((_) async => MockGoogleSignInAccount());
+          when(() => _firebaseUser.linkWithCredential(any()))
+              .thenThrow(testCredentialInUse);
+          when(() => _firebaseAuth.signInWithCredential(any()))
+              .thenAnswer((_) async => MockUserCredential());
+          when(() => _googleSignIn.currentUser)
+              .thenReturn(MockGoogleSignInAccount());
 
-        final result = await _authFacade.logInWithGoogle();
+          final result = await _authFacade.logInWithGoogle();
 
-        expect(result.isOk, true);
-        result.match(
-          (ok) => expect(ok, const Unit()),
-          (_) {},
-        );
-      });
+          expect(result.isErr, true);
+          result.match(
+            (_) {},
+            (err) => expect(err, isA<CredentialOrEmailAlreadyInUse>()),
+          );
+        },
+      );
 
       test('When cancelled by user Then return CancelledByUser', () async {
         when(_googleSignIn.signIn).thenAnswer((_) async {

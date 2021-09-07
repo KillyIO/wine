@@ -12,10 +12,14 @@ class AuthDialog extends StatelessWidget {
   const AuthDialog({
     Key? key,
     required this.navigateTo,
+    this.useRoot = true,
   }) : super(key: key);
 
   /// @nodoc
   final PageRouteInfo<dynamic> navigateTo;
+
+  /// @nodoc
+  final bool useRoot;
 
   @override
   Widget build(BuildContext context) {
@@ -36,13 +40,16 @@ class AuthDialog extends StatelessWidget {
           builder: (context, state) {
             return state.maybeMap(
               signUp: (_) => SignUpLayout(
+                navigateTo: navigateTo,
                 onDialogBackButtonPressed:
                     context.read<AuthDialogCubit>().updateLayout,
+                useRoot: useRoot,
               ),
               orElse: () => LogInLayout(
                 navigateTo: navigateTo,
                 onSignUpButtonPressed:
                     context.read<AuthDialogCubit>().updateLayout,
+                useRoot: useRoot,
               ),
             );
           },

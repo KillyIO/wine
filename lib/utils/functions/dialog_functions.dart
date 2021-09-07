@@ -17,6 +17,7 @@ Future<void> redirectDialog(
   final result = await showDialog<bool>(
     context: context,
     barrierDismissible: false,
+    useRootNavigator: false,
     builder: (_) => SuccessDialog(
       key: const Key('redirect_success_dialog'),
       messages: messages,
@@ -38,6 +39,7 @@ Future<void> baseErrorDialog(
 ) async {
   await showDialog<bool>(
     context: context,
+    useRootNavigator: false,
     builder: (_) => ErrorDialog(
       key: const Key('dismiss_error_dialog'),
       messages: errorMessages,
@@ -49,10 +51,14 @@ Future<void> baseErrorDialog(
 }
 
 /// Tries to restart the app by add initial [SetupBloc] event
-void restartAppDialog(BuildContext context, List<String> errorMessages) {
-  showDialog<bool>(
+Future<void> restartAppDialog(
+  BuildContext context,
+  List<String> errorMessages,
+) async {
+  final result = await showDialog<bool>(
     context: context,
     barrierDismissible: false,
+    useRootNavigator: false,
     builder: (_) => ErrorDialog(
       key: const Key('setup_error_dialog'),
       messages: errorMessages,
@@ -61,9 +67,10 @@ void restartAppDialog(BuildContext context, List<String> errorMessages) {
         await context.router.pop<bool>(true);
       },
     ),
-  ).then((result) {
-    if (result != null && result) {
-      context.read<SetupBloc>().add(const SetupEvent.appLaunched());
-    }
-  });
+  );
+
+  if (result != null && result) {
+    // ignore: use_build_context_synchronously
+    context.read<SetupBloc>().add(const SetupEvent.appLaunched());
+  }
 }
