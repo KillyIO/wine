@@ -58,6 +58,7 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
             // TODO add handleAuthGuardedNavigation to SeriesEditorPage
             onPressed: () => handleAuthGuardedNavigation(
               context,
+              // ignore: todo
               // TODO change this to TypewriterPage
               navigateTo: const LibraryRoute(),
             ),
