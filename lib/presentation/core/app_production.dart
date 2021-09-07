@@ -20,7 +20,10 @@ class AppProduction extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-        BlocProvider(create: (_) => getIt<AuthBloc>()),
+        BlocProvider(
+          lazy: false,
+          create: (_) => getIt<AuthBloc>()..add(const AuthEvent.authChanged()),
+        ),
         BlocProvider(create: (_) => getIt<HomeBloc>()),
       ],
       child: MaterialApp.router(
