@@ -91,6 +91,6 @@ double getDialogWidth(Size size) {
     case DeviceScreenType.tablet:
       return 350;
     default:
-      return 250;
+      return 300;
   }
 }
