@@ -1,6 +1,6 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:auto_route/auto_route.dart';
 import 'package:line_icons/line_icons.dart';
 
 import 'package:wine/application/log_in/log_in_bloc.dart';
@@ -44,6 +44,10 @@ class LogInLayout extends StatelessWidget {
           (some) => some.whenErr(
             (err) => err.maybeMap(
               auth: (f) => f.f.maybeMap(
+                emailAlreadyInUse: (_) async => baseErrorDialog(
+                  context,
+                  <String>['Email address already in use.'],
+                ),
                 invalidEmailAndPasswordCombination: (_) async =>
                     baseErrorDialog(
                   context,

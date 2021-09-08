@@ -43,7 +43,7 @@ class LogInBloc extends Bloc<LogInEvent, LogInState> {
     LogInEvent event,
   ) async* {
     yield* event.map(
-      credentialOrEmailAlreadyInUse: (_) async* {
+      credentialAlreadyInUse: (_) async* {
         yield* (await _authFacade.logInWithCredentialAlreadyInUse()).match(
           (_) async* {
             add(const LogInEvent.loggedInWithGoogle());
@@ -160,8 +160,8 @@ class LogInBloc extends Bloc<LogInEvent, LogInState> {
             add(const LogInEvent.loggedInWithGoogle());
           },
           (failure) async* {
-            if (failure is auth_failure.CredentialOrEmailAlreadyInUse) {
-              add(const LogInEvent.credentialOrEmailAlreadyInUse());
+            if (failure is auth_failure.CredentialAlreadyInUse) {
+              add(const LogInEvent.credentialAlreadyInUse());
             } else {
               yield state.copyWith(
                 failureOption: Option(Err(CoreFailure.auth(failure))),

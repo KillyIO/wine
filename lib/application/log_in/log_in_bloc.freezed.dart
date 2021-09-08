@@ -16,8 +16,8 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$LogInEventTearOff {
   const _$LogInEventTearOff();
 
-  CredentialOrEmailAlreadyInUse credentialOrEmailAlreadyInUse() {
-    return const CredentialOrEmailAlreadyInUse();
+  CredentialAlreadyInUse credentialAlreadyInUse() {
+    return const CredentialAlreadyInUse();
   }
 
   CustomUsernameGenerated customUsernameGenerated(User user) {
@@ -92,7 +92,7 @@ const $LogInEvent = _$LogInEventTearOff();
 mixin _$LogInEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() credentialOrEmailAlreadyInUse,
+    required TResult Function() credentialAlreadyInUse,
     required TResult Function(User user) customUsernameGenerated,
     required TResult Function(String emailAddressStr) emailAddressChanged,
     required TResult Function() loggedInWithEmailAndPassword,
@@ -109,7 +109,7 @@ mixin _$LogInEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? credentialOrEmailAlreadyInUse,
+    TResult Function()? credentialAlreadyInUse,
     TResult Function(User user)? customUsernameGenerated,
     TResult Function(String emailAddressStr)? emailAddressChanged,
     TResult Function()? loggedInWithEmailAndPassword,
@@ -127,8 +127,8 @@ mixin _$LogInEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(CredentialOrEmailAlreadyInUse value)
-        credentialOrEmailAlreadyInUse,
+    required TResult Function(CredentialAlreadyInUse value)
+        credentialAlreadyInUse,
     required TResult Function(CustomUsernameGenerated value)
         customUsernameGenerated,
     required TResult Function(EmailAddressChanged value) emailAddressChanged,
@@ -150,8 +150,7 @@ mixin _$LogInEvent {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(CredentialOrEmailAlreadyInUse value)?
-        credentialOrEmailAlreadyInUse,
+    TResult Function(CredentialAlreadyInUse value)? credentialAlreadyInUse,
     TResult Function(CustomUsernameGenerated value)? customUsernameGenerated,
     TResult Function(EmailAddressChanged value)? emailAddressChanged,
     TResult Function(LoggedInWithEmailAndPassword value)?
@@ -189,40 +188,37 @@ class _$LogInEventCopyWithImpl<$Res> implements $LogInEventCopyWith<$Res> {
 }
 
 /// @nodoc
-abstract class $CredentialOrEmailAlreadyInUseCopyWith<$Res> {
-  factory $CredentialOrEmailAlreadyInUseCopyWith(
-          CredentialOrEmailAlreadyInUse value,
-          $Res Function(CredentialOrEmailAlreadyInUse) then) =
-      _$CredentialOrEmailAlreadyInUseCopyWithImpl<$Res>;
+abstract class $CredentialAlreadyInUseCopyWith<$Res> {
+  factory $CredentialAlreadyInUseCopyWith(CredentialAlreadyInUse value,
+          $Res Function(CredentialAlreadyInUse) then) =
+      _$CredentialAlreadyInUseCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$CredentialOrEmailAlreadyInUseCopyWithImpl<$Res>
+class _$CredentialAlreadyInUseCopyWithImpl<$Res>
     extends _$LogInEventCopyWithImpl<$Res>
-    implements $CredentialOrEmailAlreadyInUseCopyWith<$Res> {
-  _$CredentialOrEmailAlreadyInUseCopyWithImpl(
-      CredentialOrEmailAlreadyInUse _value,
-      $Res Function(CredentialOrEmailAlreadyInUse) _then)
-      : super(_value, (v) => _then(v as CredentialOrEmailAlreadyInUse));
+    implements $CredentialAlreadyInUseCopyWith<$Res> {
+  _$CredentialAlreadyInUseCopyWithImpl(CredentialAlreadyInUse _value,
+      $Res Function(CredentialAlreadyInUse) _then)
+      : super(_value, (v) => _then(v as CredentialAlreadyInUse));
 
   @override
-  CredentialOrEmailAlreadyInUse get _value =>
-      super._value as CredentialOrEmailAlreadyInUse;
+  CredentialAlreadyInUse get _value => super._value as CredentialAlreadyInUse;
 }
 
 /// @nodoc
 
-class _$CredentialOrEmailAlreadyInUse implements CredentialOrEmailAlreadyInUse {
-  const _$CredentialOrEmailAlreadyInUse();
+class _$CredentialAlreadyInUse implements CredentialAlreadyInUse {
+  const _$CredentialAlreadyInUse();
 
   @override
   String toString() {
-    return 'LogInEvent.credentialOrEmailAlreadyInUse()';
+    return 'LogInEvent.credentialAlreadyInUse()';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is CredentialOrEmailAlreadyInUse);
+    return identical(this, other) || (other is CredentialAlreadyInUse);
   }
 
   @override
@@ -231,7 +227,7 @@ class _$CredentialOrEmailAlreadyInUse implements CredentialOrEmailAlreadyInUse {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() credentialOrEmailAlreadyInUse,
+    required TResult Function() credentialAlreadyInUse,
     required TResult Function(User user) customUsernameGenerated,
     required TResult Function(String emailAddressStr) emailAddressChanged,
     required TResult Function() loggedInWithEmailAndPassword,
@@ -245,13 +241,13 @@ class _$CredentialOrEmailAlreadyInUse implements CredentialOrEmailAlreadyInUse {
     required TResult Function(User user) usernameSaved,
     required TResult Function(User user) userNotFound,
   }) {
-    return credentialOrEmailAlreadyInUse();
+    return credentialAlreadyInUse();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? credentialOrEmailAlreadyInUse,
+    TResult Function()? credentialAlreadyInUse,
     TResult Function(User user)? customUsernameGenerated,
     TResult Function(String emailAddressStr)? emailAddressChanged,
     TResult Function()? loggedInWithEmailAndPassword,
@@ -266,8 +262,8 @@ class _$CredentialOrEmailAlreadyInUse implements CredentialOrEmailAlreadyInUse {
     TResult Function(User user)? userNotFound,
     required TResult orElse(),
   }) {
-    if (credentialOrEmailAlreadyInUse != null) {
-      return credentialOrEmailAlreadyInUse();
+    if (credentialAlreadyInUse != null) {
+      return credentialAlreadyInUse();
     }
     return orElse();
   }
@@ -275,8 +271,8 @@ class _$CredentialOrEmailAlreadyInUse implements CredentialOrEmailAlreadyInUse {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(CredentialOrEmailAlreadyInUse value)
-        credentialOrEmailAlreadyInUse,
+    required TResult Function(CredentialAlreadyInUse value)
+        credentialAlreadyInUse,
     required TResult Function(CustomUsernameGenerated value)
         customUsernameGenerated,
     required TResult Function(EmailAddressChanged value) emailAddressChanged,
@@ -295,14 +291,13 @@ class _$CredentialOrEmailAlreadyInUse implements CredentialOrEmailAlreadyInUse {
     required TResult Function(UsernameSaved value) usernameSaved,
     required TResult Function(UserNotFound value) userNotFound,
   }) {
-    return credentialOrEmailAlreadyInUse(this);
+    return credentialAlreadyInUse(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(CredentialOrEmailAlreadyInUse value)?
-        credentialOrEmailAlreadyInUse,
+    TResult Function(CredentialAlreadyInUse value)? credentialAlreadyInUse,
     TResult Function(CustomUsernameGenerated value)? customUsernameGenerated,
     TResult Function(EmailAddressChanged value)? emailAddressChanged,
     TResult Function(LoggedInWithEmailAndPassword value)?
@@ -320,16 +315,15 @@ class _$CredentialOrEmailAlreadyInUse implements CredentialOrEmailAlreadyInUse {
     TResult Function(UserNotFound value)? userNotFound,
     required TResult orElse(),
   }) {
-    if (credentialOrEmailAlreadyInUse != null) {
-      return credentialOrEmailAlreadyInUse(this);
+    if (credentialAlreadyInUse != null) {
+      return credentialAlreadyInUse(this);
     }
     return orElse();
   }
 }
 
-abstract class CredentialOrEmailAlreadyInUse implements LogInEvent {
-  const factory CredentialOrEmailAlreadyInUse() =
-      _$CredentialOrEmailAlreadyInUse;
+abstract class CredentialAlreadyInUse implements LogInEvent {
+  const factory CredentialAlreadyInUse() = _$CredentialAlreadyInUse;
 }
 
 /// @nodoc
@@ -407,7 +401,7 @@ class _$CustomUsernameGenerated implements CustomUsernameGenerated {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() credentialOrEmailAlreadyInUse,
+    required TResult Function() credentialAlreadyInUse,
     required TResult Function(User user) customUsernameGenerated,
     required TResult Function(String emailAddressStr) emailAddressChanged,
     required TResult Function() loggedInWithEmailAndPassword,
@@ -427,7 +421,7 @@ class _$CustomUsernameGenerated implements CustomUsernameGenerated {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? credentialOrEmailAlreadyInUse,
+    TResult Function()? credentialAlreadyInUse,
     TResult Function(User user)? customUsernameGenerated,
     TResult Function(String emailAddressStr)? emailAddressChanged,
     TResult Function()? loggedInWithEmailAndPassword,
@@ -451,8 +445,8 @@ class _$CustomUsernameGenerated implements CustomUsernameGenerated {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(CredentialOrEmailAlreadyInUse value)
-        credentialOrEmailAlreadyInUse,
+    required TResult Function(CredentialAlreadyInUse value)
+        credentialAlreadyInUse,
     required TResult Function(CustomUsernameGenerated value)
         customUsernameGenerated,
     required TResult Function(EmailAddressChanged value) emailAddressChanged,
@@ -477,8 +471,7 @@ class _$CustomUsernameGenerated implements CustomUsernameGenerated {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(CredentialOrEmailAlreadyInUse value)?
-        credentialOrEmailAlreadyInUse,
+    TResult Function(CredentialAlreadyInUse value)? credentialAlreadyInUse,
     TResult Function(CustomUsernameGenerated value)? customUsernameGenerated,
     TResult Function(EmailAddressChanged value)? emailAddressChanged,
     TResult Function(LoggedInWithEmailAndPassword value)?
@@ -579,7 +572,7 @@ class _$EmailAddressChanged implements EmailAddressChanged {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() credentialOrEmailAlreadyInUse,
+    required TResult Function() credentialAlreadyInUse,
     required TResult Function(User user) customUsernameGenerated,
     required TResult Function(String emailAddressStr) emailAddressChanged,
     required TResult Function() loggedInWithEmailAndPassword,
@@ -599,7 +592,7 @@ class _$EmailAddressChanged implements EmailAddressChanged {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? credentialOrEmailAlreadyInUse,
+    TResult Function()? credentialAlreadyInUse,
     TResult Function(User user)? customUsernameGenerated,
     TResult Function(String emailAddressStr)? emailAddressChanged,
     TResult Function()? loggedInWithEmailAndPassword,
@@ -623,8 +616,8 @@ class _$EmailAddressChanged implements EmailAddressChanged {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(CredentialOrEmailAlreadyInUse value)
-        credentialOrEmailAlreadyInUse,
+    required TResult Function(CredentialAlreadyInUse value)
+        credentialAlreadyInUse,
     required TResult Function(CustomUsernameGenerated value)
         customUsernameGenerated,
     required TResult Function(EmailAddressChanged value) emailAddressChanged,
@@ -649,8 +642,7 @@ class _$EmailAddressChanged implements EmailAddressChanged {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(CredentialOrEmailAlreadyInUse value)?
-        credentialOrEmailAlreadyInUse,
+    TResult Function(CredentialAlreadyInUse value)? credentialAlreadyInUse,
     TResult Function(CustomUsernameGenerated value)? customUsernameGenerated,
     TResult Function(EmailAddressChanged value)? emailAddressChanged,
     TResult Function(LoggedInWithEmailAndPassword value)?
@@ -728,7 +720,7 @@ class _$LoggedInWithEmailAndPassword implements LoggedInWithEmailAndPassword {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() credentialOrEmailAlreadyInUse,
+    required TResult Function() credentialAlreadyInUse,
     required TResult Function(User user) customUsernameGenerated,
     required TResult Function(String emailAddressStr) emailAddressChanged,
     required TResult Function() loggedInWithEmailAndPassword,
@@ -748,7 +740,7 @@ class _$LoggedInWithEmailAndPassword implements LoggedInWithEmailAndPassword {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? credentialOrEmailAlreadyInUse,
+    TResult Function()? credentialAlreadyInUse,
     TResult Function(User user)? customUsernameGenerated,
     TResult Function(String emailAddressStr)? emailAddressChanged,
     TResult Function()? loggedInWithEmailAndPassword,
@@ -772,8 +764,8 @@ class _$LoggedInWithEmailAndPassword implements LoggedInWithEmailAndPassword {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(CredentialOrEmailAlreadyInUse value)
-        credentialOrEmailAlreadyInUse,
+    required TResult Function(CredentialAlreadyInUse value)
+        credentialAlreadyInUse,
     required TResult Function(CustomUsernameGenerated value)
         customUsernameGenerated,
     required TResult Function(EmailAddressChanged value) emailAddressChanged,
@@ -798,8 +790,7 @@ class _$LoggedInWithEmailAndPassword implements LoggedInWithEmailAndPassword {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(CredentialOrEmailAlreadyInUse value)?
-        credentialOrEmailAlreadyInUse,
+    TResult Function(CredentialAlreadyInUse value)? credentialAlreadyInUse,
     TResult Function(CustomUsernameGenerated value)? customUsernameGenerated,
     TResult Function(EmailAddressChanged value)? emailAddressChanged,
     TResult Function(LoggedInWithEmailAndPassword value)?
@@ -868,7 +859,7 @@ class _$LoggedInWithGoogle implements LoggedInWithGoogle {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() credentialOrEmailAlreadyInUse,
+    required TResult Function() credentialAlreadyInUse,
     required TResult Function(User user) customUsernameGenerated,
     required TResult Function(String emailAddressStr) emailAddressChanged,
     required TResult Function() loggedInWithEmailAndPassword,
@@ -888,7 +879,7 @@ class _$LoggedInWithGoogle implements LoggedInWithGoogle {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? credentialOrEmailAlreadyInUse,
+    TResult Function()? credentialAlreadyInUse,
     TResult Function(User user)? customUsernameGenerated,
     TResult Function(String emailAddressStr)? emailAddressChanged,
     TResult Function()? loggedInWithEmailAndPassword,
@@ -912,8 +903,8 @@ class _$LoggedInWithGoogle implements LoggedInWithGoogle {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(CredentialOrEmailAlreadyInUse value)
-        credentialOrEmailAlreadyInUse,
+    required TResult Function(CredentialAlreadyInUse value)
+        credentialAlreadyInUse,
     required TResult Function(CustomUsernameGenerated value)
         customUsernameGenerated,
     required TResult Function(EmailAddressChanged value) emailAddressChanged,
@@ -938,8 +929,7 @@ class _$LoggedInWithGoogle implements LoggedInWithGoogle {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(CredentialOrEmailAlreadyInUse value)?
-        credentialOrEmailAlreadyInUse,
+    TResult Function(CredentialAlreadyInUse value)? credentialAlreadyInUse,
     TResult Function(CustomUsernameGenerated value)? customUsernameGenerated,
     TResult Function(EmailAddressChanged value)? emailAddressChanged,
     TResult Function(LoggedInWithEmailAndPassword value)?
@@ -1013,7 +1003,7 @@ class _$LogInWithEmailAndPasswordPressed
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() credentialOrEmailAlreadyInUse,
+    required TResult Function() credentialAlreadyInUse,
     required TResult Function(User user) customUsernameGenerated,
     required TResult Function(String emailAddressStr) emailAddressChanged,
     required TResult Function() loggedInWithEmailAndPassword,
@@ -1033,7 +1023,7 @@ class _$LogInWithEmailAndPasswordPressed
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? credentialOrEmailAlreadyInUse,
+    TResult Function()? credentialAlreadyInUse,
     TResult Function(User user)? customUsernameGenerated,
     TResult Function(String emailAddressStr)? emailAddressChanged,
     TResult Function()? loggedInWithEmailAndPassword,
@@ -1057,8 +1047,8 @@ class _$LogInWithEmailAndPasswordPressed
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(CredentialOrEmailAlreadyInUse value)
-        credentialOrEmailAlreadyInUse,
+    required TResult Function(CredentialAlreadyInUse value)
+        credentialAlreadyInUse,
     required TResult Function(CustomUsernameGenerated value)
         customUsernameGenerated,
     required TResult Function(EmailAddressChanged value) emailAddressChanged,
@@ -1083,8 +1073,7 @@ class _$LogInWithEmailAndPasswordPressed
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(CredentialOrEmailAlreadyInUse value)?
-        credentialOrEmailAlreadyInUse,
+    TResult Function(CredentialAlreadyInUse value)? credentialAlreadyInUse,
     TResult Function(CustomUsernameGenerated value)? customUsernameGenerated,
     TResult Function(EmailAddressChanged value)? emailAddressChanged,
     TResult Function(LoggedInWithEmailAndPassword value)?
@@ -1154,7 +1143,7 @@ class _$LogInWithGooglePressed implements LogInWithGooglePressed {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() credentialOrEmailAlreadyInUse,
+    required TResult Function() credentialAlreadyInUse,
     required TResult Function(User user) customUsernameGenerated,
     required TResult Function(String emailAddressStr) emailAddressChanged,
     required TResult Function() loggedInWithEmailAndPassword,
@@ -1174,7 +1163,7 @@ class _$LogInWithGooglePressed implements LogInWithGooglePressed {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? credentialOrEmailAlreadyInUse,
+    TResult Function()? credentialAlreadyInUse,
     TResult Function(User user)? customUsernameGenerated,
     TResult Function(String emailAddressStr)? emailAddressChanged,
     TResult Function()? loggedInWithEmailAndPassword,
@@ -1198,8 +1187,8 @@ class _$LogInWithGooglePressed implements LogInWithGooglePressed {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(CredentialOrEmailAlreadyInUse value)
-        credentialOrEmailAlreadyInUse,
+    required TResult Function(CredentialAlreadyInUse value)
+        credentialAlreadyInUse,
     required TResult Function(CustomUsernameGenerated value)
         customUsernameGenerated,
     required TResult Function(EmailAddressChanged value) emailAddressChanged,
@@ -1224,8 +1213,7 @@ class _$LogInWithGooglePressed implements LogInWithGooglePressed {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(CredentialOrEmailAlreadyInUse value)?
-        credentialOrEmailAlreadyInUse,
+    TResult Function(CredentialAlreadyInUse value)? credentialAlreadyInUse,
     TResult Function(CustomUsernameGenerated value)? customUsernameGenerated,
     TResult Function(EmailAddressChanged value)? emailAddressChanged,
     TResult Function(LoggedInWithEmailAndPassword value)?
@@ -1319,7 +1307,7 @@ class _$PasswordChanged implements PasswordChanged {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() credentialOrEmailAlreadyInUse,
+    required TResult Function() credentialAlreadyInUse,
     required TResult Function(User user) customUsernameGenerated,
     required TResult Function(String emailAddressStr) emailAddressChanged,
     required TResult Function() loggedInWithEmailAndPassword,
@@ -1339,7 +1327,7 @@ class _$PasswordChanged implements PasswordChanged {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? credentialOrEmailAlreadyInUse,
+    TResult Function()? credentialAlreadyInUse,
     TResult Function(User user)? customUsernameGenerated,
     TResult Function(String emailAddressStr)? emailAddressChanged,
     TResult Function()? loggedInWithEmailAndPassword,
@@ -1363,8 +1351,8 @@ class _$PasswordChanged implements PasswordChanged {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(CredentialOrEmailAlreadyInUse value)
-        credentialOrEmailAlreadyInUse,
+    required TResult Function(CredentialAlreadyInUse value)
+        credentialAlreadyInUse,
     required TResult Function(CustomUsernameGenerated value)
         customUsernameGenerated,
     required TResult Function(EmailAddressChanged value) emailAddressChanged,
@@ -1389,8 +1377,7 @@ class _$PasswordChanged implements PasswordChanged {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(CredentialOrEmailAlreadyInUse value)?
-        credentialOrEmailAlreadyInUse,
+    TResult Function(CredentialAlreadyInUse value)? credentialAlreadyInUse,
     TResult Function(CustomUsernameGenerated value)? customUsernameGenerated,
     TResult Function(EmailAddressChanged value)? emailAddressChanged,
     TResult Function(LoggedInWithEmailAndPassword value)?
@@ -1498,7 +1485,7 @@ class _$UserDetailsSaved implements UserDetailsSaved {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() credentialOrEmailAlreadyInUse,
+    required TResult Function() credentialAlreadyInUse,
     required TResult Function(User user) customUsernameGenerated,
     required TResult Function(String emailAddressStr) emailAddressChanged,
     required TResult Function() loggedInWithEmailAndPassword,
@@ -1518,7 +1505,7 @@ class _$UserDetailsSaved implements UserDetailsSaved {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? credentialOrEmailAlreadyInUse,
+    TResult Function()? credentialAlreadyInUse,
     TResult Function(User user)? customUsernameGenerated,
     TResult Function(String emailAddressStr)? emailAddressChanged,
     TResult Function()? loggedInWithEmailAndPassword,
@@ -1542,8 +1529,8 @@ class _$UserDetailsSaved implements UserDetailsSaved {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(CredentialOrEmailAlreadyInUse value)
-        credentialOrEmailAlreadyInUse,
+    required TResult Function(CredentialAlreadyInUse value)
+        credentialAlreadyInUse,
     required TResult Function(CustomUsernameGenerated value)
         customUsernameGenerated,
     required TResult Function(EmailAddressChanged value) emailAddressChanged,
@@ -1568,8 +1555,7 @@ class _$UserDetailsSaved implements UserDetailsSaved {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(CredentialOrEmailAlreadyInUse value)?
-        credentialOrEmailAlreadyInUse,
+    TResult Function(CredentialAlreadyInUse value)? credentialAlreadyInUse,
     TResult Function(CustomUsernameGenerated value)? customUsernameGenerated,
     TResult Function(EmailAddressChanged value)? emailAddressChanged,
     TResult Function(LoggedInWithEmailAndPassword value)?
@@ -1675,7 +1661,7 @@ class _$UserLoaded implements UserLoaded {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() credentialOrEmailAlreadyInUse,
+    required TResult Function() credentialAlreadyInUse,
     required TResult Function(User user) customUsernameGenerated,
     required TResult Function(String emailAddressStr) emailAddressChanged,
     required TResult Function() loggedInWithEmailAndPassword,
@@ -1695,7 +1681,7 @@ class _$UserLoaded implements UserLoaded {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? credentialOrEmailAlreadyInUse,
+    TResult Function()? credentialAlreadyInUse,
     TResult Function(User user)? customUsernameGenerated,
     TResult Function(String emailAddressStr)? emailAddressChanged,
     TResult Function()? loggedInWithEmailAndPassword,
@@ -1719,8 +1705,8 @@ class _$UserLoaded implements UserLoaded {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(CredentialOrEmailAlreadyInUse value)
-        credentialOrEmailAlreadyInUse,
+    required TResult Function(CredentialAlreadyInUse value)
+        credentialAlreadyInUse,
     required TResult Function(CustomUsernameGenerated value)
         customUsernameGenerated,
     required TResult Function(EmailAddressChanged value) emailAddressChanged,
@@ -1745,8 +1731,7 @@ class _$UserLoaded implements UserLoaded {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(CredentialOrEmailAlreadyInUse value)?
-        credentialOrEmailAlreadyInUse,
+    TResult Function(CredentialAlreadyInUse value)? credentialAlreadyInUse,
     TResult Function(CustomUsernameGenerated value)? customUsernameGenerated,
     TResult Function(EmailAddressChanged value)? emailAddressChanged,
     TResult Function(LoggedInWithEmailAndPassword value)?
@@ -1858,7 +1843,7 @@ class _$UsernameAvailabilityConfirmed implements UsernameAvailabilityConfirmed {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() credentialOrEmailAlreadyInUse,
+    required TResult Function() credentialAlreadyInUse,
     required TResult Function(User user) customUsernameGenerated,
     required TResult Function(String emailAddressStr) emailAddressChanged,
     required TResult Function() loggedInWithEmailAndPassword,
@@ -1878,7 +1863,7 @@ class _$UsernameAvailabilityConfirmed implements UsernameAvailabilityConfirmed {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? credentialOrEmailAlreadyInUse,
+    TResult Function()? credentialAlreadyInUse,
     TResult Function(User user)? customUsernameGenerated,
     TResult Function(String emailAddressStr)? emailAddressChanged,
     TResult Function()? loggedInWithEmailAndPassword,
@@ -1902,8 +1887,8 @@ class _$UsernameAvailabilityConfirmed implements UsernameAvailabilityConfirmed {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(CredentialOrEmailAlreadyInUse value)
-        credentialOrEmailAlreadyInUse,
+    required TResult Function(CredentialAlreadyInUse value)
+        credentialAlreadyInUse,
     required TResult Function(CustomUsernameGenerated value)
         customUsernameGenerated,
     required TResult Function(EmailAddressChanged value) emailAddressChanged,
@@ -1928,8 +1913,7 @@ class _$UsernameAvailabilityConfirmed implements UsernameAvailabilityConfirmed {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(CredentialOrEmailAlreadyInUse value)?
-        credentialOrEmailAlreadyInUse,
+    TResult Function(CredentialAlreadyInUse value)? credentialAlreadyInUse,
     TResult Function(CustomUsernameGenerated value)? customUsernameGenerated,
     TResult Function(EmailAddressChanged value)? emailAddressChanged,
     TResult Function(LoggedInWithEmailAndPassword value)?
@@ -2037,7 +2021,7 @@ class _$UsernameSaved implements UsernameSaved {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() credentialOrEmailAlreadyInUse,
+    required TResult Function() credentialAlreadyInUse,
     required TResult Function(User user) customUsernameGenerated,
     required TResult Function(String emailAddressStr) emailAddressChanged,
     required TResult Function() loggedInWithEmailAndPassword,
@@ -2057,7 +2041,7 @@ class _$UsernameSaved implements UsernameSaved {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? credentialOrEmailAlreadyInUse,
+    TResult Function()? credentialAlreadyInUse,
     TResult Function(User user)? customUsernameGenerated,
     TResult Function(String emailAddressStr)? emailAddressChanged,
     TResult Function()? loggedInWithEmailAndPassword,
@@ -2081,8 +2065,8 @@ class _$UsernameSaved implements UsernameSaved {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(CredentialOrEmailAlreadyInUse value)
-        credentialOrEmailAlreadyInUse,
+    required TResult Function(CredentialAlreadyInUse value)
+        credentialAlreadyInUse,
     required TResult Function(CustomUsernameGenerated value)
         customUsernameGenerated,
     required TResult Function(EmailAddressChanged value) emailAddressChanged,
@@ -2107,8 +2091,7 @@ class _$UsernameSaved implements UsernameSaved {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(CredentialOrEmailAlreadyInUse value)?
-        credentialOrEmailAlreadyInUse,
+    TResult Function(CredentialAlreadyInUse value)? credentialAlreadyInUse,
     TResult Function(CustomUsernameGenerated value)? customUsernameGenerated,
     TResult Function(EmailAddressChanged value)? emailAddressChanged,
     TResult Function(LoggedInWithEmailAndPassword value)?
@@ -2215,7 +2198,7 @@ class _$UserNotFound implements UserNotFound {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() credentialOrEmailAlreadyInUse,
+    required TResult Function() credentialAlreadyInUse,
     required TResult Function(User user) customUsernameGenerated,
     required TResult Function(String emailAddressStr) emailAddressChanged,
     required TResult Function() loggedInWithEmailAndPassword,
@@ -2235,7 +2218,7 @@ class _$UserNotFound implements UserNotFound {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? credentialOrEmailAlreadyInUse,
+    TResult Function()? credentialAlreadyInUse,
     TResult Function(User user)? customUsernameGenerated,
     TResult Function(String emailAddressStr)? emailAddressChanged,
     TResult Function()? loggedInWithEmailAndPassword,
@@ -2259,8 +2242,8 @@ class _$UserNotFound implements UserNotFound {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(CredentialOrEmailAlreadyInUse value)
-        credentialOrEmailAlreadyInUse,
+    required TResult Function(CredentialAlreadyInUse value)
+        credentialAlreadyInUse,
     required TResult Function(CustomUsernameGenerated value)
         customUsernameGenerated,
     required TResult Function(EmailAddressChanged value) emailAddressChanged,
@@ -2285,8 +2268,7 @@ class _$UserNotFound implements UserNotFound {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
-    TResult Function(CredentialOrEmailAlreadyInUse value)?
-        credentialOrEmailAlreadyInUse,
+    TResult Function(CredentialAlreadyInUse value)? credentialAlreadyInUse,
     TResult Function(CustomUsernameGenerated value)? customUsernameGenerated,
     TResult Function(EmailAddressChanged value)? emailAddressChanged,
     TResult Function(LoggedInWithEmailAndPassword value)?

@@ -414,7 +414,7 @@ void main() {
           expect(result.isErr, true);
           result.match(
             (_) {},
-            (err) => expect(err, isA<CredentialOrEmailAlreadyInUse>()),
+            (err) => expect(err, isA<CredentialAlreadyInUse>()),
           );
         },
       );

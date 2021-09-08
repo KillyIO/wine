@@ -20,8 +20,8 @@ class _$AuthFailureTearOff {
     return const CancelledByUser();
   }
 
-  CredentialOrEmailAlreadyInUse credentialOrEmailAlreadyInUse() {
-    return const CredentialOrEmailAlreadyInUse();
+  CredentialAlreadyInUse credentialAlreadyInUse() {
+    return const CredentialAlreadyInUse();
   }
 
   EmailAlreadyInUse emailAlreadyInUse() {
@@ -53,7 +53,7 @@ mixin _$AuthFailure {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() cancelledByUser,
-    required TResult Function() credentialOrEmailAlreadyInUse,
+    required TResult Function() credentialAlreadyInUse,
     required TResult Function() emailAlreadyInUse,
     required TResult Function() invalidEmailAndPasswordCombination,
     required TResult Function() serverError,
@@ -64,7 +64,7 @@ mixin _$AuthFailure {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? cancelledByUser,
-    TResult Function()? credentialOrEmailAlreadyInUse,
+    TResult Function()? credentialAlreadyInUse,
     TResult Function()? emailAlreadyInUse,
     TResult Function()? invalidEmailAndPasswordCombination,
     TResult Function()? serverError,
@@ -76,8 +76,8 @@ mixin _$AuthFailure {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(CancelledByUser value) cancelledByUser,
-    required TResult Function(CredentialOrEmailAlreadyInUse value)
-        credentialOrEmailAlreadyInUse,
+    required TResult Function(CredentialAlreadyInUse value)
+        credentialAlreadyInUse,
     required TResult Function(EmailAlreadyInUse value) emailAlreadyInUse,
     required TResult Function(InvalidEmailAndPasswordCombination value)
         invalidEmailAndPasswordCombination,
@@ -89,8 +89,7 @@ mixin _$AuthFailure {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(CancelledByUser value)? cancelledByUser,
-    TResult Function(CredentialOrEmailAlreadyInUse value)?
-        credentialOrEmailAlreadyInUse,
+    TResult Function(CredentialAlreadyInUse value)? credentialAlreadyInUse,
     TResult Function(EmailAlreadyInUse value)? emailAlreadyInUse,
     TResult Function(InvalidEmailAndPasswordCombination value)?
         invalidEmailAndPasswordCombination,
@@ -159,7 +158,7 @@ class _$CancelledByUser implements CancelledByUser {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() cancelledByUser,
-    required TResult Function() credentialOrEmailAlreadyInUse,
+    required TResult Function() credentialAlreadyInUse,
     required TResult Function() emailAlreadyInUse,
     required TResult Function() invalidEmailAndPasswordCombination,
     required TResult Function() serverError,
@@ -173,7 +172,7 @@ class _$CancelledByUser implements CancelledByUser {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? cancelledByUser,
-    TResult Function()? credentialOrEmailAlreadyInUse,
+    TResult Function()? credentialAlreadyInUse,
     TResult Function()? emailAlreadyInUse,
     TResult Function()? invalidEmailAndPasswordCombination,
     TResult Function()? serverError,
@@ -191,8 +190,8 @@ class _$CancelledByUser implements CancelledByUser {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(CancelledByUser value) cancelledByUser,
-    required TResult Function(CredentialOrEmailAlreadyInUse value)
-        credentialOrEmailAlreadyInUse,
+    required TResult Function(CredentialAlreadyInUse value)
+        credentialAlreadyInUse,
     required TResult Function(EmailAlreadyInUse value) emailAlreadyInUse,
     required TResult Function(InvalidEmailAndPasswordCombination value)
         invalidEmailAndPasswordCombination,
@@ -207,8 +206,7 @@ class _$CancelledByUser implements CancelledByUser {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(CancelledByUser value)? cancelledByUser,
-    TResult Function(CredentialOrEmailAlreadyInUse value)?
-        credentialOrEmailAlreadyInUse,
+    TResult Function(CredentialAlreadyInUse value)? credentialAlreadyInUse,
     TResult Function(EmailAlreadyInUse value)? emailAlreadyInUse,
     TResult Function(InvalidEmailAndPasswordCombination value)?
         invalidEmailAndPasswordCombination,
@@ -229,40 +227,37 @@ abstract class CancelledByUser implements AuthFailure {
 }
 
 /// @nodoc
-abstract class $CredentialOrEmailAlreadyInUseCopyWith<$Res> {
-  factory $CredentialOrEmailAlreadyInUseCopyWith(
-          CredentialOrEmailAlreadyInUse value,
-          $Res Function(CredentialOrEmailAlreadyInUse) then) =
-      _$CredentialOrEmailAlreadyInUseCopyWithImpl<$Res>;
+abstract class $CredentialAlreadyInUseCopyWith<$Res> {
+  factory $CredentialAlreadyInUseCopyWith(CredentialAlreadyInUse value,
+          $Res Function(CredentialAlreadyInUse) then) =
+      _$CredentialAlreadyInUseCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$CredentialOrEmailAlreadyInUseCopyWithImpl<$Res>
+class _$CredentialAlreadyInUseCopyWithImpl<$Res>
     extends _$AuthFailureCopyWithImpl<$Res>
-    implements $CredentialOrEmailAlreadyInUseCopyWith<$Res> {
-  _$CredentialOrEmailAlreadyInUseCopyWithImpl(
-      CredentialOrEmailAlreadyInUse _value,
-      $Res Function(CredentialOrEmailAlreadyInUse) _then)
-      : super(_value, (v) => _then(v as CredentialOrEmailAlreadyInUse));
+    implements $CredentialAlreadyInUseCopyWith<$Res> {
+  _$CredentialAlreadyInUseCopyWithImpl(CredentialAlreadyInUse _value,
+      $Res Function(CredentialAlreadyInUse) _then)
+      : super(_value, (v) => _then(v as CredentialAlreadyInUse));
 
   @override
-  CredentialOrEmailAlreadyInUse get _value =>
-      super._value as CredentialOrEmailAlreadyInUse;
+  CredentialAlreadyInUse get _value => super._value as CredentialAlreadyInUse;
 }
 
 /// @nodoc
 
-class _$CredentialOrEmailAlreadyInUse implements CredentialOrEmailAlreadyInUse {
-  const _$CredentialOrEmailAlreadyInUse();
+class _$CredentialAlreadyInUse implements CredentialAlreadyInUse {
+  const _$CredentialAlreadyInUse();
 
   @override
   String toString() {
-    return 'AuthFailure.credentialOrEmailAlreadyInUse()';
+    return 'AuthFailure.credentialAlreadyInUse()';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is CredentialOrEmailAlreadyInUse);
+    return identical(this, other) || (other is CredentialAlreadyInUse);
   }
 
   @override
@@ -272,21 +267,21 @@ class _$CredentialOrEmailAlreadyInUse implements CredentialOrEmailAlreadyInUse {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() cancelledByUser,
-    required TResult Function() credentialOrEmailAlreadyInUse,
+    required TResult Function() credentialAlreadyInUse,
     required TResult Function() emailAlreadyInUse,
     required TResult Function() invalidEmailAndPasswordCombination,
     required TResult Function() serverError,
     required TResult Function() unableToSignOut,
     required TResult Function() unexpected,
   }) {
-    return credentialOrEmailAlreadyInUse();
+    return credentialAlreadyInUse();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? cancelledByUser,
-    TResult Function()? credentialOrEmailAlreadyInUse,
+    TResult Function()? credentialAlreadyInUse,
     TResult Function()? emailAlreadyInUse,
     TResult Function()? invalidEmailAndPasswordCombination,
     TResult Function()? serverError,
@@ -294,8 +289,8 @@ class _$CredentialOrEmailAlreadyInUse implements CredentialOrEmailAlreadyInUse {
     TResult Function()? unexpected,
     required TResult orElse(),
   }) {
-    if (credentialOrEmailAlreadyInUse != null) {
-      return credentialOrEmailAlreadyInUse();
+    if (credentialAlreadyInUse != null) {
+      return credentialAlreadyInUse();
     }
     return orElse();
   }
@@ -304,8 +299,8 @@ class _$CredentialOrEmailAlreadyInUse implements CredentialOrEmailAlreadyInUse {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(CancelledByUser value) cancelledByUser,
-    required TResult Function(CredentialOrEmailAlreadyInUse value)
-        credentialOrEmailAlreadyInUse,
+    required TResult Function(CredentialAlreadyInUse value)
+        credentialAlreadyInUse,
     required TResult Function(EmailAlreadyInUse value) emailAlreadyInUse,
     required TResult Function(InvalidEmailAndPasswordCombination value)
         invalidEmailAndPasswordCombination,
@@ -313,15 +308,14 @@ class _$CredentialOrEmailAlreadyInUse implements CredentialOrEmailAlreadyInUse {
     required TResult Function(UnableToSignOut value) unableToSignOut,
     required TResult Function(Unexpected value) unexpected,
   }) {
-    return credentialOrEmailAlreadyInUse(this);
+    return credentialAlreadyInUse(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(CancelledByUser value)? cancelledByUser,
-    TResult Function(CredentialOrEmailAlreadyInUse value)?
-        credentialOrEmailAlreadyInUse,
+    TResult Function(CredentialAlreadyInUse value)? credentialAlreadyInUse,
     TResult Function(EmailAlreadyInUse value)? emailAlreadyInUse,
     TResult Function(InvalidEmailAndPasswordCombination value)?
         invalidEmailAndPasswordCombination,
@@ -330,16 +324,15 @@ class _$CredentialOrEmailAlreadyInUse implements CredentialOrEmailAlreadyInUse {
     TResult Function(Unexpected value)? unexpected,
     required TResult orElse(),
   }) {
-    if (credentialOrEmailAlreadyInUse != null) {
-      return credentialOrEmailAlreadyInUse(this);
+    if (credentialAlreadyInUse != null) {
+      return credentialAlreadyInUse(this);
     }
     return orElse();
   }
 }
 
-abstract class CredentialOrEmailAlreadyInUse implements AuthFailure {
-  const factory CredentialOrEmailAlreadyInUse() =
-      _$CredentialOrEmailAlreadyInUse;
+abstract class CredentialAlreadyInUse implements AuthFailure {
+  const factory CredentialAlreadyInUse() = _$CredentialAlreadyInUse;
 }
 
 /// @nodoc
@@ -383,7 +376,7 @@ class _$EmailAlreadyInUse implements EmailAlreadyInUse {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() cancelledByUser,
-    required TResult Function() credentialOrEmailAlreadyInUse,
+    required TResult Function() credentialAlreadyInUse,
     required TResult Function() emailAlreadyInUse,
     required TResult Function() invalidEmailAndPasswordCombination,
     required TResult Function() serverError,
@@ -397,7 +390,7 @@ class _$EmailAlreadyInUse implements EmailAlreadyInUse {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? cancelledByUser,
-    TResult Function()? credentialOrEmailAlreadyInUse,
+    TResult Function()? credentialAlreadyInUse,
     TResult Function()? emailAlreadyInUse,
     TResult Function()? invalidEmailAndPasswordCombination,
     TResult Function()? serverError,
@@ -415,8 +408,8 @@ class _$EmailAlreadyInUse implements EmailAlreadyInUse {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(CancelledByUser value) cancelledByUser,
-    required TResult Function(CredentialOrEmailAlreadyInUse value)
-        credentialOrEmailAlreadyInUse,
+    required TResult Function(CredentialAlreadyInUse value)
+        credentialAlreadyInUse,
     required TResult Function(EmailAlreadyInUse value) emailAlreadyInUse,
     required TResult Function(InvalidEmailAndPasswordCombination value)
         invalidEmailAndPasswordCombination,
@@ -431,8 +424,7 @@ class _$EmailAlreadyInUse implements EmailAlreadyInUse {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(CancelledByUser value)? cancelledByUser,
-    TResult Function(CredentialOrEmailAlreadyInUse value)?
-        credentialOrEmailAlreadyInUse,
+    TResult Function(CredentialAlreadyInUse value)? credentialAlreadyInUse,
     TResult Function(EmailAlreadyInUse value)? emailAlreadyInUse,
     TResult Function(InvalidEmailAndPasswordCombination value)?
         invalidEmailAndPasswordCombination,
@@ -498,7 +490,7 @@ class _$InvalidEmailAndPasswordCombination
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() cancelledByUser,
-    required TResult Function() credentialOrEmailAlreadyInUse,
+    required TResult Function() credentialAlreadyInUse,
     required TResult Function() emailAlreadyInUse,
     required TResult Function() invalidEmailAndPasswordCombination,
     required TResult Function() serverError,
@@ -512,7 +504,7 @@ class _$InvalidEmailAndPasswordCombination
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? cancelledByUser,
-    TResult Function()? credentialOrEmailAlreadyInUse,
+    TResult Function()? credentialAlreadyInUse,
     TResult Function()? emailAlreadyInUse,
     TResult Function()? invalidEmailAndPasswordCombination,
     TResult Function()? serverError,
@@ -530,8 +522,8 @@ class _$InvalidEmailAndPasswordCombination
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(CancelledByUser value) cancelledByUser,
-    required TResult Function(CredentialOrEmailAlreadyInUse value)
-        credentialOrEmailAlreadyInUse,
+    required TResult Function(CredentialAlreadyInUse value)
+        credentialAlreadyInUse,
     required TResult Function(EmailAlreadyInUse value) emailAlreadyInUse,
     required TResult Function(InvalidEmailAndPasswordCombination value)
         invalidEmailAndPasswordCombination,
@@ -546,8 +538,7 @@ class _$InvalidEmailAndPasswordCombination
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(CancelledByUser value)? cancelledByUser,
-    TResult Function(CredentialOrEmailAlreadyInUse value)?
-        credentialOrEmailAlreadyInUse,
+    TResult Function(CredentialAlreadyInUse value)? credentialAlreadyInUse,
     TResult Function(EmailAlreadyInUse value)? emailAlreadyInUse,
     TResult Function(InvalidEmailAndPasswordCombination value)?
         invalidEmailAndPasswordCombination,
@@ -608,7 +599,7 @@ class _$ServerError implements ServerError {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() cancelledByUser,
-    required TResult Function() credentialOrEmailAlreadyInUse,
+    required TResult Function() credentialAlreadyInUse,
     required TResult Function() emailAlreadyInUse,
     required TResult Function() invalidEmailAndPasswordCombination,
     required TResult Function() serverError,
@@ -622,7 +613,7 @@ class _$ServerError implements ServerError {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? cancelledByUser,
-    TResult Function()? credentialOrEmailAlreadyInUse,
+    TResult Function()? credentialAlreadyInUse,
     TResult Function()? emailAlreadyInUse,
     TResult Function()? invalidEmailAndPasswordCombination,
     TResult Function()? serverError,
@@ -640,8 +631,8 @@ class _$ServerError implements ServerError {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(CancelledByUser value) cancelledByUser,
-    required TResult Function(CredentialOrEmailAlreadyInUse value)
-        credentialOrEmailAlreadyInUse,
+    required TResult Function(CredentialAlreadyInUse value)
+        credentialAlreadyInUse,
     required TResult Function(EmailAlreadyInUse value) emailAlreadyInUse,
     required TResult Function(InvalidEmailAndPasswordCombination value)
         invalidEmailAndPasswordCombination,
@@ -656,8 +647,7 @@ class _$ServerError implements ServerError {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(CancelledByUser value)? cancelledByUser,
-    TResult Function(CredentialOrEmailAlreadyInUse value)?
-        credentialOrEmailAlreadyInUse,
+    TResult Function(CredentialAlreadyInUse value)? credentialAlreadyInUse,
     TResult Function(EmailAlreadyInUse value)? emailAlreadyInUse,
     TResult Function(InvalidEmailAndPasswordCombination value)?
         invalidEmailAndPasswordCombination,
@@ -718,7 +708,7 @@ class _$UnableToSignOut implements UnableToSignOut {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() cancelledByUser,
-    required TResult Function() credentialOrEmailAlreadyInUse,
+    required TResult Function() credentialAlreadyInUse,
     required TResult Function() emailAlreadyInUse,
     required TResult Function() invalidEmailAndPasswordCombination,
     required TResult Function() serverError,
@@ -732,7 +722,7 @@ class _$UnableToSignOut implements UnableToSignOut {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? cancelledByUser,
-    TResult Function()? credentialOrEmailAlreadyInUse,
+    TResult Function()? credentialAlreadyInUse,
     TResult Function()? emailAlreadyInUse,
     TResult Function()? invalidEmailAndPasswordCombination,
     TResult Function()? serverError,
@@ -750,8 +740,8 @@ class _$UnableToSignOut implements UnableToSignOut {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(CancelledByUser value) cancelledByUser,
-    required TResult Function(CredentialOrEmailAlreadyInUse value)
-        credentialOrEmailAlreadyInUse,
+    required TResult Function(CredentialAlreadyInUse value)
+        credentialAlreadyInUse,
     required TResult Function(EmailAlreadyInUse value) emailAlreadyInUse,
     required TResult Function(InvalidEmailAndPasswordCombination value)
         invalidEmailAndPasswordCombination,
@@ -766,8 +756,7 @@ class _$UnableToSignOut implements UnableToSignOut {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(CancelledByUser value)? cancelledByUser,
-    TResult Function(CredentialOrEmailAlreadyInUse value)?
-        credentialOrEmailAlreadyInUse,
+    TResult Function(CredentialAlreadyInUse value)? credentialAlreadyInUse,
     TResult Function(EmailAlreadyInUse value)? emailAlreadyInUse,
     TResult Function(InvalidEmailAndPasswordCombination value)?
         invalidEmailAndPasswordCombination,
@@ -826,7 +815,7 @@ class _$Unexpected implements Unexpected {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() cancelledByUser,
-    required TResult Function() credentialOrEmailAlreadyInUse,
+    required TResult Function() credentialAlreadyInUse,
     required TResult Function() emailAlreadyInUse,
     required TResult Function() invalidEmailAndPasswordCombination,
     required TResult Function() serverError,
@@ -840,7 +829,7 @@ class _$Unexpected implements Unexpected {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? cancelledByUser,
-    TResult Function()? credentialOrEmailAlreadyInUse,
+    TResult Function()? credentialAlreadyInUse,
     TResult Function()? emailAlreadyInUse,
     TResult Function()? invalidEmailAndPasswordCombination,
     TResult Function()? serverError,
@@ -858,8 +847,8 @@ class _$Unexpected implements Unexpected {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(CancelledByUser value) cancelledByUser,
-    required TResult Function(CredentialOrEmailAlreadyInUse value)
-        credentialOrEmailAlreadyInUse,
+    required TResult Function(CredentialAlreadyInUse value)
+        credentialAlreadyInUse,
     required TResult Function(EmailAlreadyInUse value) emailAlreadyInUse,
     required TResult Function(InvalidEmailAndPasswordCombination value)
         invalidEmailAndPasswordCombination,
@@ -874,8 +863,7 @@ class _$Unexpected implements Unexpected {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(CancelledByUser value)? cancelledByUser,
-    TResult Function(CredentialOrEmailAlreadyInUse value)?
-        credentialOrEmailAlreadyInUse,
+    TResult Function(CredentialAlreadyInUse value)? credentialAlreadyInUse,
     TResult Function(EmailAlreadyInUse value)? emailAlreadyInUse,
     TResult Function(InvalidEmailAndPasswordCombination value)?
         invalidEmailAndPasswordCombination,

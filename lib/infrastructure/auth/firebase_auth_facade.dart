@@ -197,9 +197,11 @@ class FirebaseAuthFacade implements IAuthFacade {
       }
       return const Err(AuthFailure.unexpected());
     } on FirebaseException catch (e) {
-      if (e.code == 'credential-already-in-use' ||
-          e.code == 'email-already-in-use') {
-        return const Err(AuthFailure.credentialOrEmailAlreadyInUse());
+      if (e.code == 'credential-already-in-use') {
+        return const Err(AuthFailure.credentialAlreadyInUse());
+      }
+      if (e.code == 'email-already-in-use') {
+        return const Err(AuthFailure.emailAlreadyInUse());
       }
       return const Err(AuthFailure.serverError());
     } on Exception catch (e) {
