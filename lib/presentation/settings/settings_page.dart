@@ -1,4 +1,5 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -38,23 +39,25 @@ class SettingsPage extends StatelessWidget {
             brightness: Brightness.light,
             centerTitle: true,
             elevation: 0,
-            leading: Padding(
-              padding: getAssetBackButtonPadding(mediaQuery),
-              child: IconButton(
-                key: const Key('settings_back'),
-                highlightColor: Colors.transparent,
-                hoverColor: Colors.transparent,
-                icon: const Icon(
-                  Icons.keyboard_backspace_outlined,
-                  color: Colors.black,
-                ),
-                onPressed: () {
-                  FocusScope.of(context).requestFocus(FocusNode());
-                  context.router.root.pop();
-                },
-                splashColor: Colors.transparent,
-              ),
-            ),
+            leading: !kIsWeb
+                ? Padding(
+                    padding: getAssetBackButtonPadding(mediaQuery),
+                    child: IconButton(
+                      key: const Key('settings_back'),
+                      highlightColor: Colors.transparent,
+                      hoverColor: Colors.transparent,
+                      icon: const Icon(
+                        Icons.keyboard_backspace_outlined,
+                        color: Colors.black,
+                      ),
+                      onPressed: () {
+                        FocusScope.of(context).requestFocus(FocusNode());
+                        context.router.root.pop();
+                      },
+                      splashColor: Colors.transparent,
+                    ),
+                  )
+                : Container(),
             leadingWidth: defaultToolbarItemWidth,
             title: const Text(
               'SETTINGS',

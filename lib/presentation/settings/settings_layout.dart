@@ -28,7 +28,7 @@ class SettingsLayout extends StatelessWidget {
                 trailingIconData: Icons.keyboard_arrow_right,
                 onPressed: () => handleAuthGuardedNavigation(
                   context,
-                  navigateTo: const AccountSettingsRoute(),
+                  navigateTo: const SettingsAccountRoute(),
                   useRoot: false,
                 ),
               ),
@@ -37,14 +37,14 @@ class SettingsLayout extends StatelessWidget {
                 title: 'SERIES',
                 trailingIconData: Icons.keyboard_arrow_right,
                 onPressed: () =>
-                    context.router.push(const SeriesSettingsRoute()),
+                    context.router.push(const SettingsSeriesRoute()),
               ),
               TileButton(
                 leadingIconData: LineIcons.bookOpen,
                 title: 'CHAPTER',
                 trailingIconData: Icons.keyboard_arrow_right,
                 onPressed: () =>
-                    context.router.push(const ChapterSettingsRoute()),
+                    context.router.push(const SettingsChapterRoute()),
               )
             ],
           ),

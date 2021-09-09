@@ -9,9 +9,9 @@ import 'package:wine/presentation/routes/router.dart';
 import 'package:wine/utils/constants/palette.dart';
 
 /// @nodoc
-class AccountSettingsLayout extends StatelessWidget {
+class SettingsAccountLayout extends StatelessWidget {
   /// @nodoc
-  const AccountSettingsLayout({Key? key}) : super(key: key);
+  const SettingsAccountLayout({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

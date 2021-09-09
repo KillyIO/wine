@@ -8,9 +8,9 @@ import 'package:wine/utils/constants/core.dart';
 import 'package:wine/utils/themes.dart';
 
 /// @nodoc
-class SeriesSettingsPage extends StatelessWidget {
+class SettingsSeriesPage extends StatelessWidget {
   /// @nodoc
-  const SeriesSettingsPage({Key? key}) : super(key: key);
+  const SettingsSeriesPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

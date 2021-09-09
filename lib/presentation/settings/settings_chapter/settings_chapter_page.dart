@@ -1,16 +1,16 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+
 import 'package:wine/presentation/core/buttons/asset_button.dart';
-import 'package:wine/presentation/settings/account_settings/account_settings_layout.dart';
 import 'package:wine/utils/assets/icons.dart';
 import 'package:wine/utils/constants/core.dart';
 import 'package:wine/utils/themes.dart';
 
 /// @nodoc
-class AccountSettingsPage extends StatelessWidget {
+class SettingsChapterPage extends StatelessWidget {
   /// @nodoc
-  const AccountSettingsPage({Key? key}) : super(key: key);
+  const SettingsChapterPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -47,7 +47,7 @@ class AccountSettingsPage extends StatelessWidget {
               ),
             ),
             title: const Text(
-              'ACCOUNT',
+              'CHAPTER',
               style: TextStyle(
                 color: Colors.black,
                 fontSize: 18,
@@ -56,7 +56,7 @@ class AccountSettingsPage extends StatelessWidget {
             ),
           ),
         ),
-        body: const AccountSettingsLayout(),
+        body: Container(),
       ),
     );
   }
