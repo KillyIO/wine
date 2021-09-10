@@ -18,6 +18,7 @@ class CoreFailure with _$CoreFailure {
   const factory CoreFailure.defaultCovers(DefaultCoversFailure f) =
       _DefaultCovers;
 
+  /// @nodoc
   const factory CoreFailure.series(SeriesFailure f) = _Series;
 
   /// @nodoc
