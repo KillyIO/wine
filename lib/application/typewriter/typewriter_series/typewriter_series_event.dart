@@ -7,6 +7,12 @@ class TypewriterSeriesEvent with _$TypewriterSeriesEvent {
   const factory TypewriterSeriesEvent.addCoverPressed() = AddCoverPressed;
 
   /// @nodoc
+  const factory TypewriterSeriesEvent.genreAdded(String genre) = GenreAdded;
+
+  /// @nodoc
+  const factory TypewriterSeriesEvent.genreRemoved(String genre) = GenreRemoved;
+
+  /// @nodoc
   const factory TypewriterSeriesEvent.isNSFWChanged({required bool isNSFW}) =
       IsNSFWChanged;
 
@@ -22,4 +28,15 @@ class TypewriterSeriesEvent with _$TypewriterSeriesEvent {
     UniqueID id, {
     Series? series,
   }) = LaunchWithID;
+
+  /// @nodoc
+  const factory TypewriterSeriesEvent.subtitleChanged(String subtitle) =
+      SubtitleChanged;
+
+  /// @nodoc
+  const factory TypewriterSeriesEvent.summaryChanged(String summary) =
+      SummaryChanged;
+
+  /// @nodoc
+  const factory TypewriterSeriesEvent.titleChanged(String title) = TitleChanged;
 }

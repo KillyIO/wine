@@ -20,6 +20,18 @@ class _$TypewriterSeriesEventTearOff {
     return const AddCoverPressed();
   }
 
+  GenreAdded genreAdded(String genre) {
+    return GenreAdded(
+      genre,
+    );
+  }
+
+  GenreRemoved genreRemoved(String genre) {
+    return GenreRemoved(
+      genre,
+    );
+  }
+
   IsNSFWChanged isNSFWChanged({required bool isNSFW}) {
     return IsNSFWChanged(
       isNSFW: isNSFW,
@@ -42,6 +54,24 @@ class _$TypewriterSeriesEventTearOff {
       series: series,
     );
   }
+
+  SubtitleChanged subtitleChanged(String subtitle) {
+    return SubtitleChanged(
+      subtitle,
+    );
+  }
+
+  SummaryChanged summaryChanged(String summary) {
+    return SummaryChanged(
+      summary,
+    );
+  }
+
+  TitleChanged titleChanged(String title) {
+    return TitleChanged(
+      title,
+    );
+  }
 }
 
 /// @nodoc
@@ -52,38 +82,58 @@ mixin _$TypewriterSeriesEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() addCoverPressed,
+    required TResult Function(String genre) genreAdded,
+    required TResult Function(String genre) genreRemoved,
     required TResult Function(bool isNSFW) isNSFWChanged,
     required TResult Function(String language) languageSelected,
     required TResult Function() launchAsNewSeries,
     required TResult Function(UniqueID id, Series? series) launchWithID,
+    required TResult Function(String subtitle) subtitleChanged,
+    required TResult Function(String summary) summaryChanged,
+    required TResult Function(String title) titleChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? addCoverPressed,
+    TResult Function(String genre)? genreAdded,
+    TResult Function(String genre)? genreRemoved,
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
     TResult Function()? launchAsNewSeries,
     TResult Function(UniqueID id, Series? series)? launchWithID,
+    TResult Function(String subtitle)? subtitleChanged,
+    TResult Function(String summary)? summaryChanged,
+    TResult Function(String title)? titleChanged,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(AddCoverPressed value) addCoverPressed,
+    required TResult Function(GenreAdded value) genreAdded,
+    required TResult Function(GenreRemoved value) genreRemoved,
     required TResult Function(IsNSFWChanged value) isNSFWChanged,
     required TResult Function(LanguageSelected value) languageSelected,
     required TResult Function(LaunchAsNewSeries value) launchAsNewSeries,
     required TResult Function(LaunchWithID value) launchWithID,
+    required TResult Function(SubtitleChanged value) subtitleChanged,
+    required TResult Function(SummaryChanged value) summaryChanged,
+    required TResult Function(TitleChanged value) titleChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AddCoverPressed value)? addCoverPressed,
+    TResult Function(GenreAdded value)? genreAdded,
+    TResult Function(GenreRemoved value)? genreRemoved,
     TResult Function(IsNSFWChanged value)? isNSFWChanged,
     TResult Function(LanguageSelected value)? languageSelected,
     TResult Function(LaunchAsNewSeries value)? launchAsNewSeries,
     TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(SubtitleChanged value)? subtitleChanged,
+    TResult Function(SummaryChanged value)? summaryChanged,
+    TResult Function(TitleChanged value)? titleChanged,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -147,10 +197,15 @@ class _$AddCoverPressed implements AddCoverPressed {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() addCoverPressed,
+    required TResult Function(String genre) genreAdded,
+    required TResult Function(String genre) genreRemoved,
     required TResult Function(bool isNSFW) isNSFWChanged,
     required TResult Function(String language) languageSelected,
     required TResult Function() launchAsNewSeries,
     required TResult Function(UniqueID id, Series? series) launchWithID,
+    required TResult Function(String subtitle) subtitleChanged,
+    required TResult Function(String summary) summaryChanged,
+    required TResult Function(String title) titleChanged,
   }) {
     return addCoverPressed();
   }
@@ -159,10 +214,15 @@ class _$AddCoverPressed implements AddCoverPressed {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? addCoverPressed,
+    TResult Function(String genre)? genreAdded,
+    TResult Function(String genre)? genreRemoved,
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
     TResult Function()? launchAsNewSeries,
     TResult Function(UniqueID id, Series? series)? launchWithID,
+    TResult Function(String subtitle)? subtitleChanged,
+    TResult Function(String summary)? summaryChanged,
+    TResult Function(String title)? titleChanged,
     required TResult orElse(),
   }) {
     if (addCoverPressed != null) {
@@ -175,10 +235,15 @@ class _$AddCoverPressed implements AddCoverPressed {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(AddCoverPressed value) addCoverPressed,
+    required TResult Function(GenreAdded value) genreAdded,
+    required TResult Function(GenreRemoved value) genreRemoved,
     required TResult Function(IsNSFWChanged value) isNSFWChanged,
     required TResult Function(LanguageSelected value) languageSelected,
     required TResult Function(LaunchAsNewSeries value) launchAsNewSeries,
     required TResult Function(LaunchWithID value) launchWithID,
+    required TResult Function(SubtitleChanged value) subtitleChanged,
+    required TResult Function(SummaryChanged value) summaryChanged,
+    required TResult Function(TitleChanged value) titleChanged,
   }) {
     return addCoverPressed(this);
   }
@@ -187,10 +252,15 @@ class _$AddCoverPressed implements AddCoverPressed {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AddCoverPressed value)? addCoverPressed,
+    TResult Function(GenreAdded value)? genreAdded,
+    TResult Function(GenreRemoved value)? genreRemoved,
     TResult Function(IsNSFWChanged value)? isNSFWChanged,
     TResult Function(LanguageSelected value)? languageSelected,
     TResult Function(LaunchAsNewSeries value)? launchAsNewSeries,
     TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(SubtitleChanged value)? subtitleChanged,
+    TResult Function(SummaryChanged value)? summaryChanged,
+    TResult Function(TitleChanged value)? titleChanged,
     required TResult orElse(),
   }) {
     if (addCoverPressed != null) {
@@ -202,6 +272,301 @@ class _$AddCoverPressed implements AddCoverPressed {
 
 abstract class AddCoverPressed implements TypewriterSeriesEvent {
   const factory AddCoverPressed() = _$AddCoverPressed;
+}
+
+/// @nodoc
+abstract class $GenreAddedCopyWith<$Res> {
+  factory $GenreAddedCopyWith(
+          GenreAdded value, $Res Function(GenreAdded) then) =
+      _$GenreAddedCopyWithImpl<$Res>;
+  $Res call({String genre});
+}
+
+/// @nodoc
+class _$GenreAddedCopyWithImpl<$Res>
+    extends _$TypewriterSeriesEventCopyWithImpl<$Res>
+    implements $GenreAddedCopyWith<$Res> {
+  _$GenreAddedCopyWithImpl(GenreAdded _value, $Res Function(GenreAdded) _then)
+      : super(_value, (v) => _then(v as GenreAdded));
+
+  @override
+  GenreAdded get _value => super._value as GenreAdded;
+
+  @override
+  $Res call({
+    Object? genre = freezed,
+  }) {
+    return _then(GenreAdded(
+      genre == freezed
+          ? _value.genre
+          : genre // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GenreAdded implements GenreAdded {
+  const _$GenreAdded(this.genre);
+
+  @override
+  final String genre;
+
+  @override
+  String toString() {
+    return 'TypewriterSeriesEvent.genreAdded(genre: $genre)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is GenreAdded &&
+            (identical(other.genre, genre) ||
+                const DeepCollectionEquality().equals(other.genre, genre)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(genre);
+
+  @JsonKey(ignore: true)
+  @override
+  $GenreAddedCopyWith<GenreAdded> get copyWith =>
+      _$GenreAddedCopyWithImpl<GenreAdded>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() addCoverPressed,
+    required TResult Function(String genre) genreAdded,
+    required TResult Function(String genre) genreRemoved,
+    required TResult Function(bool isNSFW) isNSFWChanged,
+    required TResult Function(String language) languageSelected,
+    required TResult Function() launchAsNewSeries,
+    required TResult Function(UniqueID id, Series? series) launchWithID,
+    required TResult Function(String subtitle) subtitleChanged,
+    required TResult Function(String summary) summaryChanged,
+    required TResult Function(String title) titleChanged,
+  }) {
+    return genreAdded(genre);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? addCoverPressed,
+    TResult Function(String genre)? genreAdded,
+    TResult Function(String genre)? genreRemoved,
+    TResult Function(bool isNSFW)? isNSFWChanged,
+    TResult Function(String language)? languageSelected,
+    TResult Function()? launchAsNewSeries,
+    TResult Function(UniqueID id, Series? series)? launchWithID,
+    TResult Function(String subtitle)? subtitleChanged,
+    TResult Function(String summary)? summaryChanged,
+    TResult Function(String title)? titleChanged,
+    required TResult orElse(),
+  }) {
+    if (genreAdded != null) {
+      return genreAdded(genre);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(AddCoverPressed value) addCoverPressed,
+    required TResult Function(GenreAdded value) genreAdded,
+    required TResult Function(GenreRemoved value) genreRemoved,
+    required TResult Function(IsNSFWChanged value) isNSFWChanged,
+    required TResult Function(LanguageSelected value) languageSelected,
+    required TResult Function(LaunchAsNewSeries value) launchAsNewSeries,
+    required TResult Function(LaunchWithID value) launchWithID,
+    required TResult Function(SubtitleChanged value) subtitleChanged,
+    required TResult Function(SummaryChanged value) summaryChanged,
+    required TResult Function(TitleChanged value) titleChanged,
+  }) {
+    return genreAdded(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(AddCoverPressed value)? addCoverPressed,
+    TResult Function(GenreAdded value)? genreAdded,
+    TResult Function(GenreRemoved value)? genreRemoved,
+    TResult Function(IsNSFWChanged value)? isNSFWChanged,
+    TResult Function(LanguageSelected value)? languageSelected,
+    TResult Function(LaunchAsNewSeries value)? launchAsNewSeries,
+    TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(SubtitleChanged value)? subtitleChanged,
+    TResult Function(SummaryChanged value)? summaryChanged,
+    TResult Function(TitleChanged value)? titleChanged,
+    required TResult orElse(),
+  }) {
+    if (genreAdded != null) {
+      return genreAdded(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GenreAdded implements TypewriterSeriesEvent {
+  const factory GenreAdded(String genre) = _$GenreAdded;
+
+  String get genre => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $GenreAddedCopyWith<GenreAdded> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $GenreRemovedCopyWith<$Res> {
+  factory $GenreRemovedCopyWith(
+          GenreRemoved value, $Res Function(GenreRemoved) then) =
+      _$GenreRemovedCopyWithImpl<$Res>;
+  $Res call({String genre});
+}
+
+/// @nodoc
+class _$GenreRemovedCopyWithImpl<$Res>
+    extends _$TypewriterSeriesEventCopyWithImpl<$Res>
+    implements $GenreRemovedCopyWith<$Res> {
+  _$GenreRemovedCopyWithImpl(
+      GenreRemoved _value, $Res Function(GenreRemoved) _then)
+      : super(_value, (v) => _then(v as GenreRemoved));
+
+  @override
+  GenreRemoved get _value => super._value as GenreRemoved;
+
+  @override
+  $Res call({
+    Object? genre = freezed,
+  }) {
+    return _then(GenreRemoved(
+      genre == freezed
+          ? _value.genre
+          : genre // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$GenreRemoved implements GenreRemoved {
+  const _$GenreRemoved(this.genre);
+
+  @override
+  final String genre;
+
+  @override
+  String toString() {
+    return 'TypewriterSeriesEvent.genreRemoved(genre: $genre)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is GenreRemoved &&
+            (identical(other.genre, genre) ||
+                const DeepCollectionEquality().equals(other.genre, genre)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(genre);
+
+  @JsonKey(ignore: true)
+  @override
+  $GenreRemovedCopyWith<GenreRemoved> get copyWith =>
+      _$GenreRemovedCopyWithImpl<GenreRemoved>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() addCoverPressed,
+    required TResult Function(String genre) genreAdded,
+    required TResult Function(String genre) genreRemoved,
+    required TResult Function(bool isNSFW) isNSFWChanged,
+    required TResult Function(String language) languageSelected,
+    required TResult Function() launchAsNewSeries,
+    required TResult Function(UniqueID id, Series? series) launchWithID,
+    required TResult Function(String subtitle) subtitleChanged,
+    required TResult Function(String summary) summaryChanged,
+    required TResult Function(String title) titleChanged,
+  }) {
+    return genreRemoved(genre);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? addCoverPressed,
+    TResult Function(String genre)? genreAdded,
+    TResult Function(String genre)? genreRemoved,
+    TResult Function(bool isNSFW)? isNSFWChanged,
+    TResult Function(String language)? languageSelected,
+    TResult Function()? launchAsNewSeries,
+    TResult Function(UniqueID id, Series? series)? launchWithID,
+    TResult Function(String subtitle)? subtitleChanged,
+    TResult Function(String summary)? summaryChanged,
+    TResult Function(String title)? titleChanged,
+    required TResult orElse(),
+  }) {
+    if (genreRemoved != null) {
+      return genreRemoved(genre);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(AddCoverPressed value) addCoverPressed,
+    required TResult Function(GenreAdded value) genreAdded,
+    required TResult Function(GenreRemoved value) genreRemoved,
+    required TResult Function(IsNSFWChanged value) isNSFWChanged,
+    required TResult Function(LanguageSelected value) languageSelected,
+    required TResult Function(LaunchAsNewSeries value) launchAsNewSeries,
+    required TResult Function(LaunchWithID value) launchWithID,
+    required TResult Function(SubtitleChanged value) subtitleChanged,
+    required TResult Function(SummaryChanged value) summaryChanged,
+    required TResult Function(TitleChanged value) titleChanged,
+  }) {
+    return genreRemoved(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(AddCoverPressed value)? addCoverPressed,
+    TResult Function(GenreAdded value)? genreAdded,
+    TResult Function(GenreRemoved value)? genreRemoved,
+    TResult Function(IsNSFWChanged value)? isNSFWChanged,
+    TResult Function(LanguageSelected value)? languageSelected,
+    TResult Function(LaunchAsNewSeries value)? launchAsNewSeries,
+    TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(SubtitleChanged value)? subtitleChanged,
+    TResult Function(SummaryChanged value)? summaryChanged,
+    TResult Function(TitleChanged value)? titleChanged,
+    required TResult orElse(),
+  }) {
+    if (genreRemoved != null) {
+      return genreRemoved(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class GenreRemoved implements TypewriterSeriesEvent {
+  const factory GenreRemoved(String genre) = _$GenreRemoved;
+
+  String get genre => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $GenreRemovedCopyWith<GenreRemoved> get copyWith =>
+      throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -270,10 +635,15 @@ class _$IsNSFWChanged implements IsNSFWChanged {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() addCoverPressed,
+    required TResult Function(String genre) genreAdded,
+    required TResult Function(String genre) genreRemoved,
     required TResult Function(bool isNSFW) isNSFWChanged,
     required TResult Function(String language) languageSelected,
     required TResult Function() launchAsNewSeries,
     required TResult Function(UniqueID id, Series? series) launchWithID,
+    required TResult Function(String subtitle) subtitleChanged,
+    required TResult Function(String summary) summaryChanged,
+    required TResult Function(String title) titleChanged,
   }) {
     return isNSFWChanged(isNSFW);
   }
@@ -282,10 +652,15 @@ class _$IsNSFWChanged implements IsNSFWChanged {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? addCoverPressed,
+    TResult Function(String genre)? genreAdded,
+    TResult Function(String genre)? genreRemoved,
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
     TResult Function()? launchAsNewSeries,
     TResult Function(UniqueID id, Series? series)? launchWithID,
+    TResult Function(String subtitle)? subtitleChanged,
+    TResult Function(String summary)? summaryChanged,
+    TResult Function(String title)? titleChanged,
     required TResult orElse(),
   }) {
     if (isNSFWChanged != null) {
@@ -298,10 +673,15 @@ class _$IsNSFWChanged implements IsNSFWChanged {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(AddCoverPressed value) addCoverPressed,
+    required TResult Function(GenreAdded value) genreAdded,
+    required TResult Function(GenreRemoved value) genreRemoved,
     required TResult Function(IsNSFWChanged value) isNSFWChanged,
     required TResult Function(LanguageSelected value) languageSelected,
     required TResult Function(LaunchAsNewSeries value) launchAsNewSeries,
     required TResult Function(LaunchWithID value) launchWithID,
+    required TResult Function(SubtitleChanged value) subtitleChanged,
+    required TResult Function(SummaryChanged value) summaryChanged,
+    required TResult Function(TitleChanged value) titleChanged,
   }) {
     return isNSFWChanged(this);
   }
@@ -310,10 +690,15 @@ class _$IsNSFWChanged implements IsNSFWChanged {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AddCoverPressed value)? addCoverPressed,
+    TResult Function(GenreAdded value)? genreAdded,
+    TResult Function(GenreRemoved value)? genreRemoved,
     TResult Function(IsNSFWChanged value)? isNSFWChanged,
     TResult Function(LanguageSelected value)? languageSelected,
     TResult Function(LaunchAsNewSeries value)? launchAsNewSeries,
     TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(SubtitleChanged value)? subtitleChanged,
+    TResult Function(SummaryChanged value)? summaryChanged,
+    TResult Function(TitleChanged value)? titleChanged,
     required TResult orElse(),
   }) {
     if (isNSFWChanged != null) {
@@ -399,10 +784,15 @@ class _$LanguageSelected implements LanguageSelected {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() addCoverPressed,
+    required TResult Function(String genre) genreAdded,
+    required TResult Function(String genre) genreRemoved,
     required TResult Function(bool isNSFW) isNSFWChanged,
     required TResult Function(String language) languageSelected,
     required TResult Function() launchAsNewSeries,
     required TResult Function(UniqueID id, Series? series) launchWithID,
+    required TResult Function(String subtitle) subtitleChanged,
+    required TResult Function(String summary) summaryChanged,
+    required TResult Function(String title) titleChanged,
   }) {
     return languageSelected(language);
   }
@@ -411,10 +801,15 @@ class _$LanguageSelected implements LanguageSelected {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? addCoverPressed,
+    TResult Function(String genre)? genreAdded,
+    TResult Function(String genre)? genreRemoved,
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
     TResult Function()? launchAsNewSeries,
     TResult Function(UniqueID id, Series? series)? launchWithID,
+    TResult Function(String subtitle)? subtitleChanged,
+    TResult Function(String summary)? summaryChanged,
+    TResult Function(String title)? titleChanged,
     required TResult orElse(),
   }) {
     if (languageSelected != null) {
@@ -427,10 +822,15 @@ class _$LanguageSelected implements LanguageSelected {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(AddCoverPressed value) addCoverPressed,
+    required TResult Function(GenreAdded value) genreAdded,
+    required TResult Function(GenreRemoved value) genreRemoved,
     required TResult Function(IsNSFWChanged value) isNSFWChanged,
     required TResult Function(LanguageSelected value) languageSelected,
     required TResult Function(LaunchAsNewSeries value) launchAsNewSeries,
     required TResult Function(LaunchWithID value) launchWithID,
+    required TResult Function(SubtitleChanged value) subtitleChanged,
+    required TResult Function(SummaryChanged value) summaryChanged,
+    required TResult Function(TitleChanged value) titleChanged,
   }) {
     return languageSelected(this);
   }
@@ -439,10 +839,15 @@ class _$LanguageSelected implements LanguageSelected {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AddCoverPressed value)? addCoverPressed,
+    TResult Function(GenreAdded value)? genreAdded,
+    TResult Function(GenreRemoved value)? genreRemoved,
     TResult Function(IsNSFWChanged value)? isNSFWChanged,
     TResult Function(LanguageSelected value)? languageSelected,
     TResult Function(LaunchAsNewSeries value)? launchAsNewSeries,
     TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(SubtitleChanged value)? subtitleChanged,
+    TResult Function(SummaryChanged value)? summaryChanged,
+    TResult Function(TitleChanged value)? titleChanged,
     required TResult orElse(),
   }) {
     if (languageSelected != null) {
@@ -502,10 +907,15 @@ class _$LaunchAsNewSeries implements LaunchAsNewSeries {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() addCoverPressed,
+    required TResult Function(String genre) genreAdded,
+    required TResult Function(String genre) genreRemoved,
     required TResult Function(bool isNSFW) isNSFWChanged,
     required TResult Function(String language) languageSelected,
     required TResult Function() launchAsNewSeries,
     required TResult Function(UniqueID id, Series? series) launchWithID,
+    required TResult Function(String subtitle) subtitleChanged,
+    required TResult Function(String summary) summaryChanged,
+    required TResult Function(String title) titleChanged,
   }) {
     return launchAsNewSeries();
   }
@@ -514,10 +924,15 @@ class _$LaunchAsNewSeries implements LaunchAsNewSeries {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? addCoverPressed,
+    TResult Function(String genre)? genreAdded,
+    TResult Function(String genre)? genreRemoved,
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
     TResult Function()? launchAsNewSeries,
     TResult Function(UniqueID id, Series? series)? launchWithID,
+    TResult Function(String subtitle)? subtitleChanged,
+    TResult Function(String summary)? summaryChanged,
+    TResult Function(String title)? titleChanged,
     required TResult orElse(),
   }) {
     if (launchAsNewSeries != null) {
@@ -530,10 +945,15 @@ class _$LaunchAsNewSeries implements LaunchAsNewSeries {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(AddCoverPressed value) addCoverPressed,
+    required TResult Function(GenreAdded value) genreAdded,
+    required TResult Function(GenreRemoved value) genreRemoved,
     required TResult Function(IsNSFWChanged value) isNSFWChanged,
     required TResult Function(LanguageSelected value) languageSelected,
     required TResult Function(LaunchAsNewSeries value) launchAsNewSeries,
     required TResult Function(LaunchWithID value) launchWithID,
+    required TResult Function(SubtitleChanged value) subtitleChanged,
+    required TResult Function(SummaryChanged value) summaryChanged,
+    required TResult Function(TitleChanged value) titleChanged,
   }) {
     return launchAsNewSeries(this);
   }
@@ -542,10 +962,15 @@ class _$LaunchAsNewSeries implements LaunchAsNewSeries {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AddCoverPressed value)? addCoverPressed,
+    TResult Function(GenreAdded value)? genreAdded,
+    TResult Function(GenreRemoved value)? genreRemoved,
     TResult Function(IsNSFWChanged value)? isNSFWChanged,
     TResult Function(LanguageSelected value)? languageSelected,
     TResult Function(LaunchAsNewSeries value)? launchAsNewSeries,
     TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(SubtitleChanged value)? subtitleChanged,
+    TResult Function(SummaryChanged value)? summaryChanged,
+    TResult Function(TitleChanged value)? titleChanged,
     required TResult orElse(),
   }) {
     if (launchAsNewSeries != null) {
@@ -649,10 +1074,15 @@ class _$LaunchWithID implements LaunchWithID {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() addCoverPressed,
+    required TResult Function(String genre) genreAdded,
+    required TResult Function(String genre) genreRemoved,
     required TResult Function(bool isNSFW) isNSFWChanged,
     required TResult Function(String language) languageSelected,
     required TResult Function() launchAsNewSeries,
     required TResult Function(UniqueID id, Series? series) launchWithID,
+    required TResult Function(String subtitle) subtitleChanged,
+    required TResult Function(String summary) summaryChanged,
+    required TResult Function(String title) titleChanged,
   }) {
     return launchWithID(id, series);
   }
@@ -661,10 +1091,15 @@ class _$LaunchWithID implements LaunchWithID {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? addCoverPressed,
+    TResult Function(String genre)? genreAdded,
+    TResult Function(String genre)? genreRemoved,
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
     TResult Function()? launchAsNewSeries,
     TResult Function(UniqueID id, Series? series)? launchWithID,
+    TResult Function(String subtitle)? subtitleChanged,
+    TResult Function(String summary)? summaryChanged,
+    TResult Function(String title)? titleChanged,
     required TResult orElse(),
   }) {
     if (launchWithID != null) {
@@ -677,10 +1112,15 @@ class _$LaunchWithID implements LaunchWithID {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(AddCoverPressed value) addCoverPressed,
+    required TResult Function(GenreAdded value) genreAdded,
+    required TResult Function(GenreRemoved value) genreRemoved,
     required TResult Function(IsNSFWChanged value) isNSFWChanged,
     required TResult Function(LanguageSelected value) languageSelected,
     required TResult Function(LaunchAsNewSeries value) launchAsNewSeries,
     required TResult Function(LaunchWithID value) launchWithID,
+    required TResult Function(SubtitleChanged value) subtitleChanged,
+    required TResult Function(SummaryChanged value) summaryChanged,
+    required TResult Function(TitleChanged value) titleChanged,
   }) {
     return launchWithID(this);
   }
@@ -689,10 +1129,15 @@ class _$LaunchWithID implements LaunchWithID {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AddCoverPressed value)? addCoverPressed,
+    TResult Function(GenreAdded value)? genreAdded,
+    TResult Function(GenreRemoved value)? genreRemoved,
     TResult Function(IsNSFWChanged value)? isNSFWChanged,
     TResult Function(LanguageSelected value)? languageSelected,
     TResult Function(LaunchAsNewSeries value)? launchAsNewSeries,
     TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(SubtitleChanged value)? subtitleChanged,
+    TResult Function(SummaryChanged value)? summaryChanged,
+    TResult Function(TitleChanged value)? titleChanged,
     required TResult orElse(),
   }) {
     if (launchWithID != null) {
@@ -713,15 +1158,486 @@ abstract class LaunchWithID implements TypewriterSeriesEvent {
 }
 
 /// @nodoc
+abstract class $SubtitleChangedCopyWith<$Res> {
+  factory $SubtitleChangedCopyWith(
+          SubtitleChanged value, $Res Function(SubtitleChanged) then) =
+      _$SubtitleChangedCopyWithImpl<$Res>;
+  $Res call({String subtitle});
+}
+
+/// @nodoc
+class _$SubtitleChangedCopyWithImpl<$Res>
+    extends _$TypewriterSeriesEventCopyWithImpl<$Res>
+    implements $SubtitleChangedCopyWith<$Res> {
+  _$SubtitleChangedCopyWithImpl(
+      SubtitleChanged _value, $Res Function(SubtitleChanged) _then)
+      : super(_value, (v) => _then(v as SubtitleChanged));
+
+  @override
+  SubtitleChanged get _value => super._value as SubtitleChanged;
+
+  @override
+  $Res call({
+    Object? subtitle = freezed,
+  }) {
+    return _then(SubtitleChanged(
+      subtitle == freezed
+          ? _value.subtitle
+          : subtitle // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$SubtitleChanged implements SubtitleChanged {
+  const _$SubtitleChanged(this.subtitle);
+
+  @override
+  final String subtitle;
+
+  @override
+  String toString() {
+    return 'TypewriterSeriesEvent.subtitleChanged(subtitle: $subtitle)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is SubtitleChanged &&
+            (identical(other.subtitle, subtitle) ||
+                const DeepCollectionEquality()
+                    .equals(other.subtitle, subtitle)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(subtitle);
+
+  @JsonKey(ignore: true)
+  @override
+  $SubtitleChangedCopyWith<SubtitleChanged> get copyWith =>
+      _$SubtitleChangedCopyWithImpl<SubtitleChanged>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() addCoverPressed,
+    required TResult Function(String genre) genreAdded,
+    required TResult Function(String genre) genreRemoved,
+    required TResult Function(bool isNSFW) isNSFWChanged,
+    required TResult Function(String language) languageSelected,
+    required TResult Function() launchAsNewSeries,
+    required TResult Function(UniqueID id, Series? series) launchWithID,
+    required TResult Function(String subtitle) subtitleChanged,
+    required TResult Function(String summary) summaryChanged,
+    required TResult Function(String title) titleChanged,
+  }) {
+    return subtitleChanged(subtitle);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? addCoverPressed,
+    TResult Function(String genre)? genreAdded,
+    TResult Function(String genre)? genreRemoved,
+    TResult Function(bool isNSFW)? isNSFWChanged,
+    TResult Function(String language)? languageSelected,
+    TResult Function()? launchAsNewSeries,
+    TResult Function(UniqueID id, Series? series)? launchWithID,
+    TResult Function(String subtitle)? subtitleChanged,
+    TResult Function(String summary)? summaryChanged,
+    TResult Function(String title)? titleChanged,
+    required TResult orElse(),
+  }) {
+    if (subtitleChanged != null) {
+      return subtitleChanged(subtitle);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(AddCoverPressed value) addCoverPressed,
+    required TResult Function(GenreAdded value) genreAdded,
+    required TResult Function(GenreRemoved value) genreRemoved,
+    required TResult Function(IsNSFWChanged value) isNSFWChanged,
+    required TResult Function(LanguageSelected value) languageSelected,
+    required TResult Function(LaunchAsNewSeries value) launchAsNewSeries,
+    required TResult Function(LaunchWithID value) launchWithID,
+    required TResult Function(SubtitleChanged value) subtitleChanged,
+    required TResult Function(SummaryChanged value) summaryChanged,
+    required TResult Function(TitleChanged value) titleChanged,
+  }) {
+    return subtitleChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(AddCoverPressed value)? addCoverPressed,
+    TResult Function(GenreAdded value)? genreAdded,
+    TResult Function(GenreRemoved value)? genreRemoved,
+    TResult Function(IsNSFWChanged value)? isNSFWChanged,
+    TResult Function(LanguageSelected value)? languageSelected,
+    TResult Function(LaunchAsNewSeries value)? launchAsNewSeries,
+    TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(SubtitleChanged value)? subtitleChanged,
+    TResult Function(SummaryChanged value)? summaryChanged,
+    TResult Function(TitleChanged value)? titleChanged,
+    required TResult orElse(),
+  }) {
+    if (subtitleChanged != null) {
+      return subtitleChanged(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SubtitleChanged implements TypewriterSeriesEvent {
+  const factory SubtitleChanged(String subtitle) = _$SubtitleChanged;
+
+  String get subtitle => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $SubtitleChangedCopyWith<SubtitleChanged> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $SummaryChangedCopyWith<$Res> {
+  factory $SummaryChangedCopyWith(
+          SummaryChanged value, $Res Function(SummaryChanged) then) =
+      _$SummaryChangedCopyWithImpl<$Res>;
+  $Res call({String summary});
+}
+
+/// @nodoc
+class _$SummaryChangedCopyWithImpl<$Res>
+    extends _$TypewriterSeriesEventCopyWithImpl<$Res>
+    implements $SummaryChangedCopyWith<$Res> {
+  _$SummaryChangedCopyWithImpl(
+      SummaryChanged _value, $Res Function(SummaryChanged) _then)
+      : super(_value, (v) => _then(v as SummaryChanged));
+
+  @override
+  SummaryChanged get _value => super._value as SummaryChanged;
+
+  @override
+  $Res call({
+    Object? summary = freezed,
+  }) {
+    return _then(SummaryChanged(
+      summary == freezed
+          ? _value.summary
+          : summary // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$SummaryChanged implements SummaryChanged {
+  const _$SummaryChanged(this.summary);
+
+  @override
+  final String summary;
+
+  @override
+  String toString() {
+    return 'TypewriterSeriesEvent.summaryChanged(summary: $summary)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is SummaryChanged &&
+            (identical(other.summary, summary) ||
+                const DeepCollectionEquality().equals(other.summary, summary)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(summary);
+
+  @JsonKey(ignore: true)
+  @override
+  $SummaryChangedCopyWith<SummaryChanged> get copyWith =>
+      _$SummaryChangedCopyWithImpl<SummaryChanged>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() addCoverPressed,
+    required TResult Function(String genre) genreAdded,
+    required TResult Function(String genre) genreRemoved,
+    required TResult Function(bool isNSFW) isNSFWChanged,
+    required TResult Function(String language) languageSelected,
+    required TResult Function() launchAsNewSeries,
+    required TResult Function(UniqueID id, Series? series) launchWithID,
+    required TResult Function(String subtitle) subtitleChanged,
+    required TResult Function(String summary) summaryChanged,
+    required TResult Function(String title) titleChanged,
+  }) {
+    return summaryChanged(summary);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? addCoverPressed,
+    TResult Function(String genre)? genreAdded,
+    TResult Function(String genre)? genreRemoved,
+    TResult Function(bool isNSFW)? isNSFWChanged,
+    TResult Function(String language)? languageSelected,
+    TResult Function()? launchAsNewSeries,
+    TResult Function(UniqueID id, Series? series)? launchWithID,
+    TResult Function(String subtitle)? subtitleChanged,
+    TResult Function(String summary)? summaryChanged,
+    TResult Function(String title)? titleChanged,
+    required TResult orElse(),
+  }) {
+    if (summaryChanged != null) {
+      return summaryChanged(summary);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(AddCoverPressed value) addCoverPressed,
+    required TResult Function(GenreAdded value) genreAdded,
+    required TResult Function(GenreRemoved value) genreRemoved,
+    required TResult Function(IsNSFWChanged value) isNSFWChanged,
+    required TResult Function(LanguageSelected value) languageSelected,
+    required TResult Function(LaunchAsNewSeries value) launchAsNewSeries,
+    required TResult Function(LaunchWithID value) launchWithID,
+    required TResult Function(SubtitleChanged value) subtitleChanged,
+    required TResult Function(SummaryChanged value) summaryChanged,
+    required TResult Function(TitleChanged value) titleChanged,
+  }) {
+    return summaryChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(AddCoverPressed value)? addCoverPressed,
+    TResult Function(GenreAdded value)? genreAdded,
+    TResult Function(GenreRemoved value)? genreRemoved,
+    TResult Function(IsNSFWChanged value)? isNSFWChanged,
+    TResult Function(LanguageSelected value)? languageSelected,
+    TResult Function(LaunchAsNewSeries value)? launchAsNewSeries,
+    TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(SubtitleChanged value)? subtitleChanged,
+    TResult Function(SummaryChanged value)? summaryChanged,
+    TResult Function(TitleChanged value)? titleChanged,
+    required TResult orElse(),
+  }) {
+    if (summaryChanged != null) {
+      return summaryChanged(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SummaryChanged implements TypewriterSeriesEvent {
+  const factory SummaryChanged(String summary) = _$SummaryChanged;
+
+  String get summary => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $SummaryChangedCopyWith<SummaryChanged> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $TitleChangedCopyWith<$Res> {
+  factory $TitleChangedCopyWith(
+          TitleChanged value, $Res Function(TitleChanged) then) =
+      _$TitleChangedCopyWithImpl<$Res>;
+  $Res call({String title});
+}
+
+/// @nodoc
+class _$TitleChangedCopyWithImpl<$Res>
+    extends _$TypewriterSeriesEventCopyWithImpl<$Res>
+    implements $TitleChangedCopyWith<$Res> {
+  _$TitleChangedCopyWithImpl(
+      TitleChanged _value, $Res Function(TitleChanged) _then)
+      : super(_value, (v) => _then(v as TitleChanged));
+
+  @override
+  TitleChanged get _value => super._value as TitleChanged;
+
+  @override
+  $Res call({
+    Object? title = freezed,
+  }) {
+    return _then(TitleChanged(
+      title == freezed
+          ? _value.title
+          : title // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$TitleChanged implements TitleChanged {
+  const _$TitleChanged(this.title);
+
+  @override
+  final String title;
+
+  @override
+  String toString() {
+    return 'TypewriterSeriesEvent.titleChanged(title: $title)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is TitleChanged &&
+            (identical(other.title, title) ||
+                const DeepCollectionEquality().equals(other.title, title)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(title);
+
+  @JsonKey(ignore: true)
+  @override
+  $TitleChangedCopyWith<TitleChanged> get copyWith =>
+      _$TitleChangedCopyWithImpl<TitleChanged>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() addCoverPressed,
+    required TResult Function(String genre) genreAdded,
+    required TResult Function(String genre) genreRemoved,
+    required TResult Function(bool isNSFW) isNSFWChanged,
+    required TResult Function(String language) languageSelected,
+    required TResult Function() launchAsNewSeries,
+    required TResult Function(UniqueID id, Series? series) launchWithID,
+    required TResult Function(String subtitle) subtitleChanged,
+    required TResult Function(String summary) summaryChanged,
+    required TResult Function(String title) titleChanged,
+  }) {
+    return titleChanged(title);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? addCoverPressed,
+    TResult Function(String genre)? genreAdded,
+    TResult Function(String genre)? genreRemoved,
+    TResult Function(bool isNSFW)? isNSFWChanged,
+    TResult Function(String language)? languageSelected,
+    TResult Function()? launchAsNewSeries,
+    TResult Function(UniqueID id, Series? series)? launchWithID,
+    TResult Function(String subtitle)? subtitleChanged,
+    TResult Function(String summary)? summaryChanged,
+    TResult Function(String title)? titleChanged,
+    required TResult orElse(),
+  }) {
+    if (titleChanged != null) {
+      return titleChanged(title);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(AddCoverPressed value) addCoverPressed,
+    required TResult Function(GenreAdded value) genreAdded,
+    required TResult Function(GenreRemoved value) genreRemoved,
+    required TResult Function(IsNSFWChanged value) isNSFWChanged,
+    required TResult Function(LanguageSelected value) languageSelected,
+    required TResult Function(LaunchAsNewSeries value) launchAsNewSeries,
+    required TResult Function(LaunchWithID value) launchWithID,
+    required TResult Function(SubtitleChanged value) subtitleChanged,
+    required TResult Function(SummaryChanged value) summaryChanged,
+    required TResult Function(TitleChanged value) titleChanged,
+  }) {
+    return titleChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(AddCoverPressed value)? addCoverPressed,
+    TResult Function(GenreAdded value)? genreAdded,
+    TResult Function(GenreRemoved value)? genreRemoved,
+    TResult Function(IsNSFWChanged value)? isNSFWChanged,
+    TResult Function(LanguageSelected value)? languageSelected,
+    TResult Function(LaunchAsNewSeries value)? launchAsNewSeries,
+    TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(SubtitleChanged value)? subtitleChanged,
+    TResult Function(SummaryChanged value)? summaryChanged,
+    TResult Function(TitleChanged value)? titleChanged,
+    required TResult orElse(),
+  }) {
+    if (titleChanged != null) {
+      return titleChanged(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class TitleChanged implements TypewriterSeriesEvent {
+  const factory TitleChanged(String title) = _$TitleChanged;
+
+  String get title => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $TitleChangedCopyWith<TitleChanged> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 class _$TypewriterSeriesStateTearOff {
   const _$TypewriterSeriesStateTearOff();
 
   _TypewriterSeriesState call(
-      {required Option<Result<None, CoreFailure>> failureOption,
-      required bool isProcessing}) {
+      {required String coverURL,
+      required Option<Result<None, CoreFailure>> failureOption,
+      required List<Genre> genres,
+      required bool isProcessing,
+      required bool isNSFW,
+      required Language language,
+      required Subtitle subtitle,
+      required TextEditingController subtitleController,
+      required int subtitleWordCount,
+      required Summary summary,
+      required TextEditingController summaryController,
+      required int summaryWordCount,
+      required Title title,
+      required TextEditingController titleController,
+      required int titleWordCount}) {
     return _TypewriterSeriesState(
+      coverURL: coverURL,
       failureOption: failureOption,
+      genres: genres,
       isProcessing: isProcessing,
+      isNSFW: isNSFW,
+      language: language,
+      subtitle: subtitle,
+      subtitleController: subtitleController,
+      subtitleWordCount: subtitleWordCount,
+      summary: summary,
+      summaryController: summaryController,
+      summaryWordCount: summaryWordCount,
+      title: title,
+      titleController: titleController,
+      titleWordCount: titleWordCount,
     );
   }
 }
@@ -731,9 +1647,25 @@ const $TypewriterSeriesState = _$TypewriterSeriesStateTearOff();
 
 /// @nodoc
 mixin _$TypewriterSeriesState {
+  String get coverURL => throw _privateConstructorUsedError;
   Option<Result<None, CoreFailure>> get failureOption =>
       throw _privateConstructorUsedError;
+  List<Genre> get genres => throw _privateConstructorUsedError;
   bool get isProcessing => throw _privateConstructorUsedError;
+  bool get isNSFW => throw _privateConstructorUsedError;
+  Language get language => throw _privateConstructorUsedError;
+  Subtitle get subtitle => throw _privateConstructorUsedError;
+  TextEditingController get subtitleController =>
+      throw _privateConstructorUsedError;
+  int get subtitleWordCount => throw _privateConstructorUsedError;
+  Summary get summary => throw _privateConstructorUsedError;
+  TextEditingController get summaryController =>
+      throw _privateConstructorUsedError;
+  int get summaryWordCount => throw _privateConstructorUsedError;
+  Title get title => throw _privateConstructorUsedError;
+  TextEditingController get titleController =>
+      throw _privateConstructorUsedError;
+  int get titleWordCount => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $TypewriterSeriesStateCopyWith<TypewriterSeriesState> get copyWith =>
@@ -746,7 +1678,21 @@ abstract class $TypewriterSeriesStateCopyWith<$Res> {
           $Res Function(TypewriterSeriesState) then) =
       _$TypewriterSeriesStateCopyWithImpl<$Res>;
   $Res call(
-      {Option<Result<None, CoreFailure>> failureOption, bool isProcessing});
+      {String coverURL,
+      Option<Result<None, CoreFailure>> failureOption,
+      List<Genre> genres,
+      bool isProcessing,
+      bool isNSFW,
+      Language language,
+      Subtitle subtitle,
+      TextEditingController subtitleController,
+      int subtitleWordCount,
+      Summary summary,
+      TextEditingController summaryController,
+      int summaryWordCount,
+      Title title,
+      TextEditingController titleController,
+      int titleWordCount});
 }
 
 /// @nodoc
@@ -760,18 +1706,83 @@ class _$TypewriterSeriesStateCopyWithImpl<$Res>
 
   @override
   $Res call({
+    Object? coverURL = freezed,
     Object? failureOption = freezed,
+    Object? genres = freezed,
     Object? isProcessing = freezed,
+    Object? isNSFW = freezed,
+    Object? language = freezed,
+    Object? subtitle = freezed,
+    Object? subtitleController = freezed,
+    Object? subtitleWordCount = freezed,
+    Object? summary = freezed,
+    Object? summaryController = freezed,
+    Object? summaryWordCount = freezed,
+    Object? title = freezed,
+    Object? titleController = freezed,
+    Object? titleWordCount = freezed,
   }) {
     return _then(_value.copyWith(
+      coverURL: coverURL == freezed
+          ? _value.coverURL
+          : coverURL // ignore: cast_nullable_to_non_nullable
+              as String,
       failureOption: failureOption == freezed
           ? _value.failureOption
           : failureOption // ignore: cast_nullable_to_non_nullable
               as Option<Result<None, CoreFailure>>,
+      genres: genres == freezed
+          ? _value.genres
+          : genres // ignore: cast_nullable_to_non_nullable
+              as List<Genre>,
       isProcessing: isProcessing == freezed
           ? _value.isProcessing
           : isProcessing // ignore: cast_nullable_to_non_nullable
               as bool,
+      isNSFW: isNSFW == freezed
+          ? _value.isNSFW
+          : isNSFW // ignore: cast_nullable_to_non_nullable
+              as bool,
+      language: language == freezed
+          ? _value.language
+          : language // ignore: cast_nullable_to_non_nullable
+              as Language,
+      subtitle: subtitle == freezed
+          ? _value.subtitle
+          : subtitle // ignore: cast_nullable_to_non_nullable
+              as Subtitle,
+      subtitleController: subtitleController == freezed
+          ? _value.subtitleController
+          : subtitleController // ignore: cast_nullable_to_non_nullable
+              as TextEditingController,
+      subtitleWordCount: subtitleWordCount == freezed
+          ? _value.subtitleWordCount
+          : subtitleWordCount // ignore: cast_nullable_to_non_nullable
+              as int,
+      summary: summary == freezed
+          ? _value.summary
+          : summary // ignore: cast_nullable_to_non_nullable
+              as Summary,
+      summaryController: summaryController == freezed
+          ? _value.summaryController
+          : summaryController // ignore: cast_nullable_to_non_nullable
+              as TextEditingController,
+      summaryWordCount: summaryWordCount == freezed
+          ? _value.summaryWordCount
+          : summaryWordCount // ignore: cast_nullable_to_non_nullable
+              as int,
+      title: title == freezed
+          ? _value.title
+          : title // ignore: cast_nullable_to_non_nullable
+              as Title,
+      titleController: titleController == freezed
+          ? _value.titleController
+          : titleController // ignore: cast_nullable_to_non_nullable
+              as TextEditingController,
+      titleWordCount: titleWordCount == freezed
+          ? _value.titleWordCount
+          : titleWordCount // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -784,7 +1795,21 @@ abstract class _$TypewriterSeriesStateCopyWith<$Res>
       __$TypewriterSeriesStateCopyWithImpl<$Res>;
   @override
   $Res call(
-      {Option<Result<None, CoreFailure>> failureOption, bool isProcessing});
+      {String coverURL,
+      Option<Result<None, CoreFailure>> failureOption,
+      List<Genre> genres,
+      bool isProcessing,
+      bool isNSFW,
+      Language language,
+      Subtitle subtitle,
+      TextEditingController subtitleController,
+      int subtitleWordCount,
+      Summary summary,
+      TextEditingController summaryController,
+      int summaryWordCount,
+      Title title,
+      TextEditingController titleController,
+      int titleWordCount});
 }
 
 /// @nodoc
@@ -800,18 +1825,83 @@ class __$TypewriterSeriesStateCopyWithImpl<$Res>
 
   @override
   $Res call({
+    Object? coverURL = freezed,
     Object? failureOption = freezed,
+    Object? genres = freezed,
     Object? isProcessing = freezed,
+    Object? isNSFW = freezed,
+    Object? language = freezed,
+    Object? subtitle = freezed,
+    Object? subtitleController = freezed,
+    Object? subtitleWordCount = freezed,
+    Object? summary = freezed,
+    Object? summaryController = freezed,
+    Object? summaryWordCount = freezed,
+    Object? title = freezed,
+    Object? titleController = freezed,
+    Object? titleWordCount = freezed,
   }) {
     return _then(_TypewriterSeriesState(
+      coverURL: coverURL == freezed
+          ? _value.coverURL
+          : coverURL // ignore: cast_nullable_to_non_nullable
+              as String,
       failureOption: failureOption == freezed
           ? _value.failureOption
           : failureOption // ignore: cast_nullable_to_non_nullable
               as Option<Result<None, CoreFailure>>,
+      genres: genres == freezed
+          ? _value.genres
+          : genres // ignore: cast_nullable_to_non_nullable
+              as List<Genre>,
       isProcessing: isProcessing == freezed
           ? _value.isProcessing
           : isProcessing // ignore: cast_nullable_to_non_nullable
               as bool,
+      isNSFW: isNSFW == freezed
+          ? _value.isNSFW
+          : isNSFW // ignore: cast_nullable_to_non_nullable
+              as bool,
+      language: language == freezed
+          ? _value.language
+          : language // ignore: cast_nullable_to_non_nullable
+              as Language,
+      subtitle: subtitle == freezed
+          ? _value.subtitle
+          : subtitle // ignore: cast_nullable_to_non_nullable
+              as Subtitle,
+      subtitleController: subtitleController == freezed
+          ? _value.subtitleController
+          : subtitleController // ignore: cast_nullable_to_non_nullable
+              as TextEditingController,
+      subtitleWordCount: subtitleWordCount == freezed
+          ? _value.subtitleWordCount
+          : subtitleWordCount // ignore: cast_nullable_to_non_nullable
+              as int,
+      summary: summary == freezed
+          ? _value.summary
+          : summary // ignore: cast_nullable_to_non_nullable
+              as Summary,
+      summaryController: summaryController == freezed
+          ? _value.summaryController
+          : summaryController // ignore: cast_nullable_to_non_nullable
+              as TextEditingController,
+      summaryWordCount: summaryWordCount == freezed
+          ? _value.summaryWordCount
+          : summaryWordCount // ignore: cast_nullable_to_non_nullable
+              as int,
+      title: title == freezed
+          ? _value.title
+          : title // ignore: cast_nullable_to_non_nullable
+              as Title,
+      titleController: titleController == freezed
+          ? _value.titleController
+          : titleController // ignore: cast_nullable_to_non_nullable
+              as TextEditingController,
+      titleWordCount: titleWordCount == freezed
+          ? _value.titleWordCount
+          : titleWordCount // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -820,35 +1910,124 @@ class __$TypewriterSeriesStateCopyWithImpl<$Res>
 
 class _$_TypewriterSeriesState implements _TypewriterSeriesState {
   const _$_TypewriterSeriesState(
-      {required this.failureOption, required this.isProcessing});
+      {required this.coverURL,
+      required this.failureOption,
+      required this.genres,
+      required this.isProcessing,
+      required this.isNSFW,
+      required this.language,
+      required this.subtitle,
+      required this.subtitleController,
+      required this.subtitleWordCount,
+      required this.summary,
+      required this.summaryController,
+      required this.summaryWordCount,
+      required this.title,
+      required this.titleController,
+      required this.titleWordCount});
 
+  @override
+  final String coverURL;
   @override
   final Option<Result<None, CoreFailure>> failureOption;
   @override
+  final List<Genre> genres;
+  @override
   final bool isProcessing;
+  @override
+  final bool isNSFW;
+  @override
+  final Language language;
+  @override
+  final Subtitle subtitle;
+  @override
+  final TextEditingController subtitleController;
+  @override
+  final int subtitleWordCount;
+  @override
+  final Summary summary;
+  @override
+  final TextEditingController summaryController;
+  @override
+  final int summaryWordCount;
+  @override
+  final Title title;
+  @override
+  final TextEditingController titleController;
+  @override
+  final int titleWordCount;
 
   @override
   String toString() {
-    return 'TypewriterSeriesState(failureOption: $failureOption, isProcessing: $isProcessing)';
+    return 'TypewriterSeriesState(coverURL: $coverURL, failureOption: $failureOption, genres: $genres, isProcessing: $isProcessing, isNSFW: $isNSFW, language: $language, subtitle: $subtitle, subtitleController: $subtitleController, subtitleWordCount: $subtitleWordCount, summary: $summary, summaryController: $summaryController, summaryWordCount: $summaryWordCount, title: $title, titleController: $titleController, titleWordCount: $titleWordCount)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _TypewriterSeriesState &&
+            (identical(other.coverURL, coverURL) ||
+                const DeepCollectionEquality()
+                    .equals(other.coverURL, coverURL)) &&
             (identical(other.failureOption, failureOption) ||
                 const DeepCollectionEquality()
                     .equals(other.failureOption, failureOption)) &&
+            (identical(other.genres, genres) ||
+                const DeepCollectionEquality().equals(other.genres, genres)) &&
             (identical(other.isProcessing, isProcessing) ||
                 const DeepCollectionEquality()
-                    .equals(other.isProcessing, isProcessing)));
+                    .equals(other.isProcessing, isProcessing)) &&
+            (identical(other.isNSFW, isNSFW) ||
+                const DeepCollectionEquality().equals(other.isNSFW, isNSFW)) &&
+            (identical(other.language, language) ||
+                const DeepCollectionEquality()
+                    .equals(other.language, language)) &&
+            (identical(other.subtitle, subtitle) ||
+                const DeepCollectionEquality()
+                    .equals(other.subtitle, subtitle)) &&
+            (identical(other.subtitleController, subtitleController) ||
+                const DeepCollectionEquality()
+                    .equals(other.subtitleController, subtitleController)) &&
+            (identical(other.subtitleWordCount, subtitleWordCount) ||
+                const DeepCollectionEquality()
+                    .equals(other.subtitleWordCount, subtitleWordCount)) &&
+            (identical(other.summary, summary) ||
+                const DeepCollectionEquality()
+                    .equals(other.summary, summary)) &&
+            (identical(other.summaryController, summaryController) ||
+                const DeepCollectionEquality()
+                    .equals(other.summaryController, summaryController)) &&
+            (identical(other.summaryWordCount, summaryWordCount) ||
+                const DeepCollectionEquality()
+                    .equals(other.summaryWordCount, summaryWordCount)) &&
+            (identical(other.title, title) ||
+                const DeepCollectionEquality().equals(other.title, title)) &&
+            (identical(other.titleController, titleController) ||
+                const DeepCollectionEquality()
+                    .equals(other.titleController, titleController)) &&
+            (identical(other.titleWordCount, titleWordCount) ||
+                const DeepCollectionEquality()
+                    .equals(other.titleWordCount, titleWordCount)));
   }
 
   @override
   int get hashCode =>
       runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(coverURL) ^
       const DeepCollectionEquality().hash(failureOption) ^
-      const DeepCollectionEquality().hash(isProcessing);
+      const DeepCollectionEquality().hash(genres) ^
+      const DeepCollectionEquality().hash(isProcessing) ^
+      const DeepCollectionEquality().hash(isNSFW) ^
+      const DeepCollectionEquality().hash(language) ^
+      const DeepCollectionEquality().hash(subtitle) ^
+      const DeepCollectionEquality().hash(subtitleController) ^
+      const DeepCollectionEquality().hash(subtitleWordCount) ^
+      const DeepCollectionEquality().hash(summary) ^
+      const DeepCollectionEquality().hash(summaryController) ^
+      const DeepCollectionEquality().hash(summaryWordCount) ^
+      const DeepCollectionEquality().hash(title) ^
+      const DeepCollectionEquality().hash(titleController) ^
+      const DeepCollectionEquality().hash(titleWordCount);
 
   @JsonKey(ignore: true)
   @override
@@ -859,14 +2038,56 @@ class _$_TypewriterSeriesState implements _TypewriterSeriesState {
 
 abstract class _TypewriterSeriesState implements TypewriterSeriesState {
   const factory _TypewriterSeriesState(
-      {required Option<Result<None, CoreFailure>> failureOption,
-      required bool isProcessing}) = _$_TypewriterSeriesState;
+      {required String coverURL,
+      required Option<Result<None, CoreFailure>> failureOption,
+      required List<Genre> genres,
+      required bool isProcessing,
+      required bool isNSFW,
+      required Language language,
+      required Subtitle subtitle,
+      required TextEditingController subtitleController,
+      required int subtitleWordCount,
+      required Summary summary,
+      required TextEditingController summaryController,
+      required int summaryWordCount,
+      required Title title,
+      required TextEditingController titleController,
+      required int titleWordCount}) = _$_TypewriterSeriesState;
 
+  @override
+  String get coverURL => throw _privateConstructorUsedError;
   @override
   Option<Result<None, CoreFailure>> get failureOption =>
       throw _privateConstructorUsedError;
   @override
+  List<Genre> get genres => throw _privateConstructorUsedError;
+  @override
   bool get isProcessing => throw _privateConstructorUsedError;
+  @override
+  bool get isNSFW => throw _privateConstructorUsedError;
+  @override
+  Language get language => throw _privateConstructorUsedError;
+  @override
+  Subtitle get subtitle => throw _privateConstructorUsedError;
+  @override
+  TextEditingController get subtitleController =>
+      throw _privateConstructorUsedError;
+  @override
+  int get subtitleWordCount => throw _privateConstructorUsedError;
+  @override
+  Summary get summary => throw _privateConstructorUsedError;
+  @override
+  TextEditingController get summaryController =>
+      throw _privateConstructorUsedError;
+  @override
+  int get summaryWordCount => throw _privateConstructorUsedError;
+  @override
+  Title get title => throw _privateConstructorUsedError;
+  @override
+  TextEditingController get titleController =>
+      throw _privateConstructorUsedError;
+  @override
+  int get titleWordCount => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$TypewriterSeriesStateCopyWith<_TypewriterSeriesState> get copyWith =>
