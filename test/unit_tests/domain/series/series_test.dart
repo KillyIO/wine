@@ -17,7 +17,7 @@ void main() {
         authorUID: UniqueID.fromUniqueString(testUserUid),
         bookmarksCount: 10,
         coverURL: CoverURL(testCoverURL),
-        genre: testListGenre.map((g) => Genre(g)).toList(),
+        genres: testGenres.map((g) => Genre(g)).toList(),
         isNSFW: false,
         isPublished: false,
         language: Language(testLanguage),
@@ -32,7 +32,7 @@ void main() {
       expect(series.authorUID.getOrCrash(), testUserUid);
       expect(series.bookmarksCount, 10);
       expect(series.coverURL.getOrCrash(), testCoverURL);
-      expect(series.genre.map((g) => g.getOrCrash()).toList(), testListGenre);
+      expect(series.genres.map((g) => g.getOrCrash()).toList(), testGenres);
       expect(series.isNSFW, false);
       expect(series.isPublished, false);
       expect(series.language.getOrCrash(), testLanguage);

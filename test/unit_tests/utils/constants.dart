@@ -19,7 +19,7 @@ const testName = 'Lphong Tieu 75';
 const testEmpty = '';
 
 const testGenre = 'horror';
-const testListGenre = <String>['horror'];
+const testGenres = <String>['horror'];
 
 const testLanguage = 'fr';
 
