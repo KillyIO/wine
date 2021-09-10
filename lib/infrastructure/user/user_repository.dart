@@ -13,7 +13,10 @@ import 'package:wine/utils/constants/users.dart';
 import 'package:wine/utils/paths/users.dart';
 
 /// @nodoc
-@LazySingleton(as: IUserRepository, env: [Environment.dev, Environment.prod])
+@LazySingleton(
+  as: IUserRepository,
+  env: [Environment.dev, Environment.prod],
+)
 class UserRepository extends IUserRepository {
   /// @nodoc
   UserRepository(this._firestore);
