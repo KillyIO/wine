@@ -49,11 +49,8 @@ Result<String, ValueFailure<String>> validateEmailAddress(String input) {
 }
 
 /// @nodoc
-Result<String, ValueFailure<String>> validateGenre(
-  String input, {
-  bool isOptional = false,
-}) {
-  if (input.isNotEmpty || isOptional) {
+Result<String, ValueFailure<String>> validateGenre(String input) {
+  if (input.isNotEmpty) {
     return Ok(input);
   }
   return Err(ValueFailure.emptySelection(input));

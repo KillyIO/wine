@@ -24,8 +24,7 @@ class _$SeriesDTOTearOff {
       {required String authorUID,
       required int bookmarksCount,
       required String coverURL,
-      required String genre,
-      String? genreOptional,
+      required List<String> genre,
       required bool isNSFW,
       required bool isPublished,
       required String language,
@@ -41,7 +40,6 @@ class _$SeriesDTOTearOff {
       bookmarksCount: bookmarksCount,
       coverURL: coverURL,
       genre: genre,
-      genreOptional: genreOptional,
       isNSFW: isNSFW,
       isPublished: isPublished,
       language: language,
@@ -68,8 +66,7 @@ mixin _$SeriesDTO {
   String get authorUID => throw _privateConstructorUsedError;
   int get bookmarksCount => throw _privateConstructorUsedError;
   String get coverURL => throw _privateConstructorUsedError;
-  String get genre => throw _privateConstructorUsedError;
-  String? get genreOptional => throw _privateConstructorUsedError;
+  List<String> get genre => throw _privateConstructorUsedError;
   bool get isNSFW => throw _privateConstructorUsedError;
   bool get isPublished => throw _privateConstructorUsedError;
   String get language => throw _privateConstructorUsedError;
@@ -96,8 +93,7 @@ abstract class $SeriesDTOCopyWith<$Res> {
       {String authorUID,
       int bookmarksCount,
       String coverURL,
-      String genre,
-      String? genreOptional,
+      List<String> genre,
       bool isNSFW,
       bool isPublished,
       String language,
@@ -124,7 +120,6 @@ class _$SeriesDTOCopyWithImpl<$Res> implements $SeriesDTOCopyWith<$Res> {
     Object? bookmarksCount = freezed,
     Object? coverURL = freezed,
     Object? genre = freezed,
-    Object? genreOptional = freezed,
     Object? isNSFW = freezed,
     Object? isPublished = freezed,
     Object? language = freezed,
@@ -152,11 +147,7 @@ class _$SeriesDTOCopyWithImpl<$Res> implements $SeriesDTOCopyWith<$Res> {
       genre: genre == freezed
           ? _value.genre
           : genre // ignore: cast_nullable_to_non_nullable
-              as String,
-      genreOptional: genreOptional == freezed
-          ? _value.genreOptional
-          : genreOptional // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as List<String>,
       isNSFW: isNSFW == freezed
           ? _value.isNSFW
           : isNSFW // ignore: cast_nullable_to_non_nullable
@@ -211,8 +202,7 @@ abstract class _$SeriesDTOCopyWith<$Res> implements $SeriesDTOCopyWith<$Res> {
       {String authorUID,
       int bookmarksCount,
       String coverURL,
-      String genre,
-      String? genreOptional,
+      List<String> genre,
       bool isNSFW,
       bool isPublished,
       String language,
@@ -240,7 +230,6 @@ class __$SeriesDTOCopyWithImpl<$Res> extends _$SeriesDTOCopyWithImpl<$Res>
     Object? bookmarksCount = freezed,
     Object? coverURL = freezed,
     Object? genre = freezed,
-    Object? genreOptional = freezed,
     Object? isNSFW = freezed,
     Object? isPublished = freezed,
     Object? language = freezed,
@@ -268,11 +257,7 @@ class __$SeriesDTOCopyWithImpl<$Res> extends _$SeriesDTOCopyWithImpl<$Res>
       genre: genre == freezed
           ? _value.genre
           : genre // ignore: cast_nullable_to_non_nullable
-              as String,
-      genreOptional: genreOptional == freezed
-          ? _value.genreOptional
-          : genreOptional // ignore: cast_nullable_to_non_nullable
-              as String?,
+              as List<String>,
       isNSFW: isNSFW == freezed
           ? _value.isNSFW
           : isNSFW // ignore: cast_nullable_to_non_nullable
@@ -325,7 +310,6 @@ class _$_SeriesDTO implements _SeriesDTO {
       required this.bookmarksCount,
       required this.coverURL,
       required this.genre,
-      this.genreOptional,
       required this.isNSFW,
       required this.isPublished,
       required this.language,
@@ -347,9 +331,7 @@ class _$_SeriesDTO implements _SeriesDTO {
   @override
   final String coverURL;
   @override
-  final String genre;
-  @override
-  final String? genreOptional;
+  final List<String> genre;
   @override
   final bool isNSFW;
   @override
@@ -374,7 +356,7 @@ class _$_SeriesDTO implements _SeriesDTO {
 
   @override
   String toString() {
-    return 'SeriesDTO(authorUID: $authorUID, bookmarksCount: $bookmarksCount, coverURL: $coverURL, genre: $genre, genreOptional: $genreOptional, isNSFW: $isNSFW, isPublished: $isPublished, language: $language, likesCount: $likesCount, serverTimeStamp: $serverTimeStamp, subtitle: $subtitle, summary: $summary, title: $title, uid: $uid, viewsCount: $viewsCount)';
+    return 'SeriesDTO(authorUID: $authorUID, bookmarksCount: $bookmarksCount, coverURL: $coverURL, genre: $genre, isNSFW: $isNSFW, isPublished: $isPublished, language: $language, likesCount: $likesCount, serverTimeStamp: $serverTimeStamp, subtitle: $subtitle, summary: $summary, title: $title, uid: $uid, viewsCount: $viewsCount)';
   }
 
   @override
@@ -392,9 +374,6 @@ class _$_SeriesDTO implements _SeriesDTO {
                     .equals(other.coverURL, coverURL)) &&
             (identical(other.genre, genre) ||
                 const DeepCollectionEquality().equals(other.genre, genre)) &&
-            (identical(other.genreOptional, genreOptional) ||
-                const DeepCollectionEquality()
-                    .equals(other.genreOptional, genreOptional)) &&
             (identical(other.isNSFW, isNSFW) ||
                 const DeepCollectionEquality().equals(other.isNSFW, isNSFW)) &&
             (identical(other.isPublished, isPublished) ||
@@ -431,7 +410,6 @@ class _$_SeriesDTO implements _SeriesDTO {
       const DeepCollectionEquality().hash(bookmarksCount) ^
       const DeepCollectionEquality().hash(coverURL) ^
       const DeepCollectionEquality().hash(genre) ^
-      const DeepCollectionEquality().hash(genreOptional) ^
       const DeepCollectionEquality().hash(isNSFW) ^
       const DeepCollectionEquality().hash(isPublished) ^
       const DeepCollectionEquality().hash(language) ^
@@ -459,8 +437,7 @@ abstract class _SeriesDTO implements SeriesDTO {
       {required String authorUID,
       required int bookmarksCount,
       required String coverURL,
-      required String genre,
-      String? genreOptional,
+      required List<String> genre,
       required bool isNSFW,
       required bool isPublished,
       required String language,
@@ -482,9 +459,7 @@ abstract class _SeriesDTO implements SeriesDTO {
   @override
   String get coverURL => throw _privateConstructorUsedError;
   @override
-  String get genre => throw _privateConstructorUsedError;
-  @override
-  String? get genreOptional => throw _privateConstructorUsedError;
+  List<String> get genre => throw _privateConstructorUsedError;
   @override
   bool get isNSFW => throw _privateConstructorUsedError;
   @override

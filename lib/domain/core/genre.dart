@@ -6,9 +6,9 @@ import 'package:wine/domain/core/value_validators.dart';
 /// @nodoc
 class Genre extends ValueObject<String> {
   /// @nodoc
-  factory Genre(String input, {bool isOptional = false}) {
+  factory Genre(String input) {
     return Genre._(
-      validateGenre(input, isOptional: isOptional),
+      validateGenre(input),
     );
   }
 

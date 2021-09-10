@@ -20,8 +20,7 @@ class _$SeriesTearOff {
       {required UniqueID authorUID,
       required int bookmarksCount,
       required CoverURL coverURL,
-      required Genre genre,
-      Genre? genreOptional,
+      required List<Genre> genre,
       required bool isNSFW,
       required bool isPublished,
       required Language language,
@@ -36,7 +35,6 @@ class _$SeriesTearOff {
       bookmarksCount: bookmarksCount,
       coverURL: coverURL,
       genre: genre,
-      genreOptional: genreOptional,
       isNSFW: isNSFW,
       isPublished: isPublished,
       language: language,
@@ -58,8 +56,7 @@ mixin _$Series {
   UniqueID get authorUID => throw _privateConstructorUsedError;
   int get bookmarksCount => throw _privateConstructorUsedError;
   CoverURL get coverURL => throw _privateConstructorUsedError;
-  Genre get genre => throw _privateConstructorUsedError;
-  Genre? get genreOptional => throw _privateConstructorUsedError;
+  List<Genre> get genre => throw _privateConstructorUsedError;
   bool get isNSFW => throw _privateConstructorUsedError;
   bool get isPublished => throw _privateConstructorUsedError;
   Language get language => throw _privateConstructorUsedError;
@@ -82,8 +79,7 @@ abstract class $SeriesCopyWith<$Res> {
       {UniqueID authorUID,
       int bookmarksCount,
       CoverURL coverURL,
-      Genre genre,
-      Genre? genreOptional,
+      List<Genre> genre,
       bool isNSFW,
       bool isPublished,
       Language language,
@@ -109,7 +105,6 @@ class _$SeriesCopyWithImpl<$Res> implements $SeriesCopyWith<$Res> {
     Object? bookmarksCount = freezed,
     Object? coverURL = freezed,
     Object? genre = freezed,
-    Object? genreOptional = freezed,
     Object? isNSFW = freezed,
     Object? isPublished = freezed,
     Object? language = freezed,
@@ -136,11 +131,7 @@ class _$SeriesCopyWithImpl<$Res> implements $SeriesCopyWith<$Res> {
       genre: genre == freezed
           ? _value.genre
           : genre // ignore: cast_nullable_to_non_nullable
-              as Genre,
-      genreOptional: genreOptional == freezed
-          ? _value.genreOptional
-          : genreOptional // ignore: cast_nullable_to_non_nullable
-              as Genre?,
+              as List<Genre>,
       isNSFW: isNSFW == freezed
           ? _value.isNSFW
           : isNSFW // ignore: cast_nullable_to_non_nullable
@@ -190,8 +181,7 @@ abstract class _$SeriesCopyWith<$Res> implements $SeriesCopyWith<$Res> {
       {UniqueID authorUID,
       int bookmarksCount,
       CoverURL coverURL,
-      Genre genre,
-      Genre? genreOptional,
+      List<Genre> genre,
       bool isNSFW,
       bool isPublished,
       Language language,
@@ -218,7 +208,6 @@ class __$SeriesCopyWithImpl<$Res> extends _$SeriesCopyWithImpl<$Res>
     Object? bookmarksCount = freezed,
     Object? coverURL = freezed,
     Object? genre = freezed,
-    Object? genreOptional = freezed,
     Object? isNSFW = freezed,
     Object? isPublished = freezed,
     Object? language = freezed,
@@ -245,11 +234,7 @@ class __$SeriesCopyWithImpl<$Res> extends _$SeriesCopyWithImpl<$Res>
       genre: genre == freezed
           ? _value.genre
           : genre // ignore: cast_nullable_to_non_nullable
-              as Genre,
-      genreOptional: genreOptional == freezed
-          ? _value.genreOptional
-          : genreOptional // ignore: cast_nullable_to_non_nullable
-              as Genre?,
+              as List<Genre>,
       isNSFW: isNSFW == freezed
           ? _value.isNSFW
           : isNSFW // ignore: cast_nullable_to_non_nullable
@@ -298,7 +283,6 @@ class _$_Series implements _Series {
       required this.bookmarksCount,
       required this.coverURL,
       required this.genre,
-      this.genreOptional,
       required this.isNSFW,
       required this.isPublished,
       required this.language,
@@ -316,9 +300,7 @@ class _$_Series implements _Series {
   @override
   final CoverURL coverURL;
   @override
-  final Genre genre;
-  @override
-  final Genre? genreOptional;
+  final List<Genre> genre;
   @override
   final bool isNSFW;
   @override
@@ -340,7 +322,7 @@ class _$_Series implements _Series {
 
   @override
   String toString() {
-    return 'Series(authorUID: $authorUID, bookmarksCount: $bookmarksCount, coverURL: $coverURL, genre: $genre, genreOptional: $genreOptional, isNSFW: $isNSFW, isPublished: $isPublished, language: $language, likesCount: $likesCount, subtitle: $subtitle, summary: $summary, title: $title, uid: $uid, viewsCount: $viewsCount)';
+    return 'Series(authorUID: $authorUID, bookmarksCount: $bookmarksCount, coverURL: $coverURL, genre: $genre, isNSFW: $isNSFW, isPublished: $isPublished, language: $language, likesCount: $likesCount, subtitle: $subtitle, summary: $summary, title: $title, uid: $uid, viewsCount: $viewsCount)';
   }
 
   @override
@@ -358,9 +340,6 @@ class _$_Series implements _Series {
                     .equals(other.coverURL, coverURL)) &&
             (identical(other.genre, genre) ||
                 const DeepCollectionEquality().equals(other.genre, genre)) &&
-            (identical(other.genreOptional, genreOptional) ||
-                const DeepCollectionEquality()
-                    .equals(other.genreOptional, genreOptional)) &&
             (identical(other.isNSFW, isNSFW) ||
                 const DeepCollectionEquality().equals(other.isNSFW, isNSFW)) &&
             (identical(other.isPublished, isPublished) ||
@@ -394,7 +373,6 @@ class _$_Series implements _Series {
       const DeepCollectionEquality().hash(bookmarksCount) ^
       const DeepCollectionEquality().hash(coverURL) ^
       const DeepCollectionEquality().hash(genre) ^
-      const DeepCollectionEquality().hash(genreOptional) ^
       const DeepCollectionEquality().hash(isNSFW) ^
       const DeepCollectionEquality().hash(isPublished) ^
       const DeepCollectionEquality().hash(language) ^
@@ -416,8 +394,7 @@ abstract class _Series implements Series {
       {required UniqueID authorUID,
       required int bookmarksCount,
       required CoverURL coverURL,
-      required Genre genre,
-      Genre? genreOptional,
+      required List<Genre> genre,
       required bool isNSFW,
       required bool isPublished,
       required Language language,
@@ -435,9 +412,7 @@ abstract class _Series implements Series {
   @override
   CoverURL get coverURL => throw _privateConstructorUsedError;
   @override
-  Genre get genre => throw _privateConstructorUsedError;
-  @override
-  Genre? get genreOptional => throw _privateConstructorUsedError;
+  List<Genre> get genre => throw _privateConstructorUsedError;
   @override
   bool get isNSFW => throw _privateConstructorUsedError;
   @override
