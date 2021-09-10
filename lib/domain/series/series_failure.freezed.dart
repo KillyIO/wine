@@ -16,6 +16,10 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$SeriesFailureTearOff {
   const _$SeriesFailureTearOff();
 
+  CoverNotUploaded coverNotUploaded() {
+    return const CoverNotUploaded();
+  }
+
   ServerError serverError() {
     return const ServerError();
   }
@@ -32,12 +36,14 @@ const $SeriesFailure = _$SeriesFailureTearOff();
 mixin _$SeriesFailure {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() coverNotUploaded,
     required TResult Function() serverError,
     required TResult Function() unexpected,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? coverNotUploaded,
     TResult Function()? serverError,
     TResult Function()? unexpected,
     required TResult orElse(),
@@ -45,12 +51,14 @@ mixin _$SeriesFailure {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(CoverNotUploaded value) coverNotUploaded,
     required TResult Function(ServerError value) serverError,
     required TResult Function(Unexpected value) unexpected,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(CoverNotUploaded value)? coverNotUploaded,
     TResult Function(ServerError value)? serverError,
     TResult Function(Unexpected value)? unexpected,
     required TResult orElse(),
@@ -73,6 +81,96 @@ class _$SeriesFailureCopyWithImpl<$Res>
   final SeriesFailure _value;
   // ignore: unused_field
   final $Res Function(SeriesFailure) _then;
+}
+
+/// @nodoc
+abstract class $CoverNotUploadedCopyWith<$Res> {
+  factory $CoverNotUploadedCopyWith(
+          CoverNotUploaded value, $Res Function(CoverNotUploaded) then) =
+      _$CoverNotUploadedCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$CoverNotUploadedCopyWithImpl<$Res>
+    extends _$SeriesFailureCopyWithImpl<$Res>
+    implements $CoverNotUploadedCopyWith<$Res> {
+  _$CoverNotUploadedCopyWithImpl(
+      CoverNotUploaded _value, $Res Function(CoverNotUploaded) _then)
+      : super(_value, (v) => _then(v as CoverNotUploaded));
+
+  @override
+  CoverNotUploaded get _value => super._value as CoverNotUploaded;
+}
+
+/// @nodoc
+
+class _$CoverNotUploaded implements CoverNotUploaded {
+  const _$CoverNotUploaded();
+
+  @override
+  String toString() {
+    return 'SeriesFailure.coverNotUploaded()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is CoverNotUploaded);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() coverNotUploaded,
+    required TResult Function() serverError,
+    required TResult Function() unexpected,
+  }) {
+    return coverNotUploaded();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? coverNotUploaded,
+    TResult Function()? serverError,
+    TResult Function()? unexpected,
+    required TResult orElse(),
+  }) {
+    if (coverNotUploaded != null) {
+      return coverNotUploaded();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(CoverNotUploaded value) coverNotUploaded,
+    required TResult Function(ServerError value) serverError,
+    required TResult Function(Unexpected value) unexpected,
+  }) {
+    return coverNotUploaded(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(CoverNotUploaded value)? coverNotUploaded,
+    TResult Function(ServerError value)? serverError,
+    TResult Function(Unexpected value)? unexpected,
+    required TResult orElse(),
+  }) {
+    if (coverNotUploaded != null) {
+      return coverNotUploaded(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class CoverNotUploaded implements SeriesFailure {
+  const factory CoverNotUploaded() = _$CoverNotUploaded;
 }
 
 /// @nodoc
@@ -114,6 +212,7 @@ class _$ServerError implements ServerError {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() coverNotUploaded,
     required TResult Function() serverError,
     required TResult Function() unexpected,
   }) {
@@ -123,6 +222,7 @@ class _$ServerError implements ServerError {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? coverNotUploaded,
     TResult Function()? serverError,
     TResult Function()? unexpected,
     required TResult orElse(),
@@ -136,6 +236,7 @@ class _$ServerError implements ServerError {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(CoverNotUploaded value) coverNotUploaded,
     required TResult Function(ServerError value) serverError,
     required TResult Function(Unexpected value) unexpected,
   }) {
@@ -145,6 +246,7 @@ class _$ServerError implements ServerError {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(CoverNotUploaded value)? coverNotUploaded,
     TResult Function(ServerError value)? serverError,
     TResult Function(Unexpected value)? unexpected,
     required TResult orElse(),
@@ -198,6 +300,7 @@ class _$Unexpected implements Unexpected {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() coverNotUploaded,
     required TResult Function() serverError,
     required TResult Function() unexpected,
   }) {
@@ -207,6 +310,7 @@ class _$Unexpected implements Unexpected {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? coverNotUploaded,
     TResult Function()? serverError,
     TResult Function()? unexpected,
     required TResult orElse(),
@@ -220,6 +324,7 @@ class _$Unexpected implements Unexpected {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(CoverNotUploaded value) coverNotUploaded,
     required TResult Function(ServerError value) serverError,
     required TResult Function(Unexpected value) unexpected,
   }) {
@@ -229,6 +334,7 @@ class _$Unexpected implements Unexpected {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(CoverNotUploaded value)? coverNotUploaded,
     TResult Function(ServerError value)? serverError,
     TResult Function(Unexpected value)? unexpected,
     required TResult orElse(),
