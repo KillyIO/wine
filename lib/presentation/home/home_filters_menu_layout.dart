@@ -23,7 +23,6 @@ class HomeFiltersMenuLayout extends StatelessWidget {
             preferredSize: const Size.fromHeight(defaultAppBarHeight),
             child: AppBar(
               backgroundColor: Colors.transparent,
-              brightness: Brightness.light,
               elevation: 0,
               leading: Padding(
                 padding: getDefaultAppBarButtonPadding(mediaQuery),

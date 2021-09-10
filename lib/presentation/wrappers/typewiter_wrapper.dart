@@ -34,7 +34,6 @@ class TypewriterWrapper extends AutoRouter implements AutoRouteWrapper {
                 height: 2,
               ),
             ),
-            brightness: Brightness.light,
             centerTitle: true,
             elevation: 0,
             leading: !kIsWeb

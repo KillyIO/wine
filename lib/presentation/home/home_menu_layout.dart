@@ -26,7 +26,6 @@ class HomeMenuLayout extends StatelessWidget {
             preferredSize: const Size.fromHeight(defaultAppBarHeight),
             child: AppBar(
               backgroundColor: Colors.transparent,
-              brightness: Brightness.light,
               elevation: 0,
               actions: [
                 Padding(

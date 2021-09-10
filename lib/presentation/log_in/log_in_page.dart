@@ -44,7 +44,6 @@ class LogInPage extends StatelessWidget {
                 height: 2,
               ),
             ),
-            brightness: Brightness.light,
             centerTitle: true,
             elevation: 0,
             leading: Padding(

@@ -26,7 +26,6 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
         preferredSize: const Size.fromHeight(0),
         child: Container(color: Colors.black, height: 2),
       ),
-      brightness: Brightness.light,
       elevation: 0,
       leading: Padding(
         padding: getDefaultAppBarButtonPadding(mediaQuery),

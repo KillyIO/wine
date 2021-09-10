@@ -33,7 +33,6 @@ class PlusPage extends StatelessWidget {
               preferredSize: const Size.fromHeight(0),
               child: Container(color: Colors.black, height: 2),
             ),
-            brightness: Brightness.light,
             centerTitle: true,
             elevation: 0,
             leading: !kIsWeb
