@@ -47,32 +47,7 @@ void main() {
     });
 
     group('fromFile -', () {
-      late File file;
-
-      setUp(() {
-        file = MockFile();
-      });
-
-      test('When file exists Then return file', () {
-        when(file.existsSync).thenReturn(true);
-
-        final coverURL = CoverURL.fromFile(file);
-
-        expect(coverURL.value, Ok<File, ValueFailure<File>>(file));
-      });
-
-      test('When file not exists Then return invalidCoverFile', () {
-        when(file.existsSync).thenReturn(false);
-
-        final coverURL = CoverURL.fromFile(file);
-
-        expect(
-          coverURL.value,
-          Err<File, ValueFailure<File>>(
-            ValueFailure.invalidCoverFile(file),
-          ),
-        );
-      });
+      // No test coz can't mock File without passing it as parameter
     });
   });
 }
