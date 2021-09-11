@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'home_bloc.dart';
 
@@ -63,6 +64,16 @@ mixin _$HomeEvent {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initBloc,
+    TResult Function()? loadNewSeries,
+    TResult Function(String key)? loadSeriesByGenre,
+    TResult Function(String key)? loadSeriesByLanguage,
+    TResult Function(String key)? loadSeriesByTime,
+    TResult Function()? loadTopSeries,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initBloc,
     TResult Function()? loadNewSeries,
@@ -81,6 +92,16 @@ mixin _$HomeEvent {
     required TResult Function(LoadSeriesByLanguage value) loadSeriesByLanguage,
     required TResult Function(LoadSeriesByTime value) loadSeriesByTime,
     required TResult Function(LoadTopSeries value) loadTopSeries,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InitBloc value)? initBloc,
+    TResult Function(LoadNewSeries value)? loadNewSeries,
+    TResult Function(LoadSeriesByGenre value)? loadSeriesByGenre,
+    TResult Function(LoadSeriesByLanguage value)? loadSeriesByLanguage,
+    TResult Function(LoadSeriesByTime value)? loadSeriesByTime,
+    TResult Function(LoadTopSeries value)? loadTopSeries,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -160,6 +181,19 @@ class _$InitBloc implements InitBloc {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initBloc,
+    TResult Function()? loadNewSeries,
+    TResult Function(String key)? loadSeriesByGenre,
+    TResult Function(String key)? loadSeriesByLanguage,
+    TResult Function(String key)? loadSeriesByTime,
+    TResult Function()? loadTopSeries,
+  }) {
+    return initBloc?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initBloc,
     TResult Function()? loadNewSeries,
@@ -186,6 +220,19 @@ class _$InitBloc implements InitBloc {
     required TResult Function(LoadTopSeries value) loadTopSeries,
   }) {
     return initBloc(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InitBloc value)? initBloc,
+    TResult Function(LoadNewSeries value)? loadNewSeries,
+    TResult Function(LoadSeriesByGenre value)? loadSeriesByGenre,
+    TResult Function(LoadSeriesByLanguage value)? loadSeriesByLanguage,
+    TResult Function(LoadSeriesByTime value)? loadSeriesByTime,
+    TResult Function(LoadTopSeries value)? loadTopSeries,
+  }) {
+    return initBloc?.call(this);
   }
 
   @override
@@ -261,6 +308,19 @@ class _$LoadNewSeries implements LoadNewSeries {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initBloc,
+    TResult Function()? loadNewSeries,
+    TResult Function(String key)? loadSeriesByGenre,
+    TResult Function(String key)? loadSeriesByLanguage,
+    TResult Function(String key)? loadSeriesByTime,
+    TResult Function()? loadTopSeries,
+  }) {
+    return loadNewSeries?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initBloc,
     TResult Function()? loadNewSeries,
@@ -287,6 +347,19 @@ class _$LoadNewSeries implements LoadNewSeries {
     required TResult Function(LoadTopSeries value) loadTopSeries,
   }) {
     return loadNewSeries(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InitBloc value)? initBloc,
+    TResult Function(LoadNewSeries value)? loadNewSeries,
+    TResult Function(LoadSeriesByGenre value)? loadSeriesByGenre,
+    TResult Function(LoadSeriesByLanguage value)? loadSeriesByLanguage,
+    TResult Function(LoadSeriesByTime value)? loadSeriesByTime,
+    TResult Function(LoadTopSeries value)? loadTopSeries,
+  }) {
+    return loadNewSeries?.call(this);
   }
 
   @override
@@ -388,6 +461,19 @@ class _$LoadSeriesByGenre implements LoadSeriesByGenre {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initBloc,
+    TResult Function()? loadNewSeries,
+    TResult Function(String key)? loadSeriesByGenre,
+    TResult Function(String key)? loadSeriesByLanguage,
+    TResult Function(String key)? loadSeriesByTime,
+    TResult Function()? loadTopSeries,
+  }) {
+    return loadSeriesByGenre?.call(key);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initBloc,
     TResult Function()? loadNewSeries,
@@ -414,6 +500,19 @@ class _$LoadSeriesByGenre implements LoadSeriesByGenre {
     required TResult Function(LoadTopSeries value) loadTopSeries,
   }) {
     return loadSeriesByGenre(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InitBloc value)? initBloc,
+    TResult Function(LoadNewSeries value)? loadNewSeries,
+    TResult Function(LoadSeriesByGenre value)? loadSeriesByGenre,
+    TResult Function(LoadSeriesByLanguage value)? loadSeriesByLanguage,
+    TResult Function(LoadSeriesByTime value)? loadSeriesByTime,
+    TResult Function(LoadTopSeries value)? loadTopSeries,
+  }) {
+    return loadSeriesByGenre?.call(this);
   }
 
   @override
@@ -521,6 +620,19 @@ class _$LoadSeriesByLanguage implements LoadSeriesByLanguage {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initBloc,
+    TResult Function()? loadNewSeries,
+    TResult Function(String key)? loadSeriesByGenre,
+    TResult Function(String key)? loadSeriesByLanguage,
+    TResult Function(String key)? loadSeriesByTime,
+    TResult Function()? loadTopSeries,
+  }) {
+    return loadSeriesByLanguage?.call(key);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initBloc,
     TResult Function()? loadNewSeries,
@@ -547,6 +659,19 @@ class _$LoadSeriesByLanguage implements LoadSeriesByLanguage {
     required TResult Function(LoadTopSeries value) loadTopSeries,
   }) {
     return loadSeriesByLanguage(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InitBloc value)? initBloc,
+    TResult Function(LoadNewSeries value)? loadNewSeries,
+    TResult Function(LoadSeriesByGenre value)? loadSeriesByGenre,
+    TResult Function(LoadSeriesByLanguage value)? loadSeriesByLanguage,
+    TResult Function(LoadSeriesByTime value)? loadSeriesByTime,
+    TResult Function(LoadTopSeries value)? loadTopSeries,
+  }) {
+    return loadSeriesByLanguage?.call(this);
   }
 
   @override
@@ -652,6 +777,19 @@ class _$LoadSeriesByTime implements LoadSeriesByTime {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initBloc,
+    TResult Function()? loadNewSeries,
+    TResult Function(String key)? loadSeriesByGenre,
+    TResult Function(String key)? loadSeriesByLanguage,
+    TResult Function(String key)? loadSeriesByTime,
+    TResult Function()? loadTopSeries,
+  }) {
+    return loadSeriesByTime?.call(key);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initBloc,
     TResult Function()? loadNewSeries,
@@ -678,6 +816,19 @@ class _$LoadSeriesByTime implements LoadSeriesByTime {
     required TResult Function(LoadTopSeries value) loadTopSeries,
   }) {
     return loadSeriesByTime(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InitBloc value)? initBloc,
+    TResult Function(LoadNewSeries value)? loadNewSeries,
+    TResult Function(LoadSeriesByGenre value)? loadSeriesByGenre,
+    TResult Function(LoadSeriesByLanguage value)? loadSeriesByLanguage,
+    TResult Function(LoadSeriesByTime value)? loadSeriesByTime,
+    TResult Function(LoadTopSeries value)? loadTopSeries,
+  }) {
+    return loadSeriesByTime?.call(this);
   }
 
   @override
@@ -758,6 +909,19 @@ class _$LoadTopSeries implements LoadTopSeries {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initBloc,
+    TResult Function()? loadNewSeries,
+    TResult Function(String key)? loadSeriesByGenre,
+    TResult Function(String key)? loadSeriesByLanguage,
+    TResult Function(String key)? loadSeriesByTime,
+    TResult Function()? loadTopSeries,
+  }) {
+    return loadTopSeries?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initBloc,
     TResult Function()? loadNewSeries,
@@ -784,6 +948,19 @@ class _$LoadTopSeries implements LoadTopSeries {
     required TResult Function(LoadTopSeries value) loadTopSeries,
   }) {
     return loadTopSeries(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InitBloc value)? initBloc,
+    TResult Function(LoadNewSeries value)? loadNewSeries,
+    TResult Function(LoadSeriesByGenre value)? loadSeriesByGenre,
+    TResult Function(LoadSeriesByLanguage value)? loadSeriesByLanguage,
+    TResult Function(LoadSeriesByTime value)? loadSeriesByTime,
+    TResult Function(LoadTopSeries value)? loadTopSeries,
+  }) {
+    return loadTopSeries?.call(this);
   }
 
   @override

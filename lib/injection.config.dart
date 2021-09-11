@@ -74,7 +74,8 @@ Future<_i1.GetIt> $initGetIt(_i1.GetIt get,
           get<_i5.FirebaseFirestore>(), get<_i13.HiveInterface>()),
       registerFor: {_dev, _prod});
   gh.lazySingleton<_i14.ISeriesRepository>(
-      () => _i15.SeriesRepository(get<_i16.FirebaseStorage>()),
+      () => _i15.SeriesRepository(
+          get<_i5.FirebaseFirestore>(), get<_i16.FirebaseStorage>()),
       registerFor: {_dev, _prod});
   gh.lazySingleton<_i17.ISessionsRepository>(
       () => _i18.SessionsRepository(

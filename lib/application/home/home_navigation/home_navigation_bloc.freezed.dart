@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'home_navigation_bloc.dart';
 
@@ -36,6 +37,11 @@ mixin _$HomeNavigationEvent {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(int index)? pageViewIndexChanged,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(int index)? pageViewIndexChanged,
     required TResult orElse(),
@@ -44,6 +50,11 @@ mixin _$HomeNavigationEvent {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(PageViewIndexChanged value) pageViewIndexChanged,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -163,6 +174,14 @@ class _$PageViewIndexChanged implements PageViewIndexChanged {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(int index)? pageViewIndexChanged,
+  }) {
+    return pageViewIndexChanged?.call(index);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(int index)? pageViewIndexChanged,
     required TResult orElse(),
@@ -179,6 +198,14 @@ class _$PageViewIndexChanged implements PageViewIndexChanged {
     required TResult Function(PageViewIndexChanged value) pageViewIndexChanged,
   }) {
     return pageViewIndexChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
+  }) {
+    return pageViewIndexChanged?.call(this);
   }
 
   @override

@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'settings_bloc.dart';
 
@@ -57,6 +58,16 @@ mixin _$SettingsEvent {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initBloc,
+    TResult Function()? loggedOut,
+    TResult Function()? logOutPressed,
+    TResult Function()? sessionCreated,
+    TResult Function()? sessionDeleted,
+    TResult Function()? sessionFetched,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initBloc,
     TResult Function()? loggedOut,
@@ -75,6 +86,16 @@ mixin _$SettingsEvent {
     required TResult Function(SessionCreated value) sessionCreated,
     required TResult Function(SessionDeleted value) sessionDeleted,
     required TResult Function(SessionFetched value) sessionFetched,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InitBloc value)? initBloc,
+    TResult Function(LoggedOut value)? loggedOut,
+    TResult Function(LogOutPressed value)? logOutPressed,
+    TResult Function(SessionCreated value)? sessionCreated,
+    TResult Function(SessionDeleted value)? sessionDeleted,
+    TResult Function(SessionFetched value)? sessionFetched,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -156,6 +177,19 @@ class _$InitBloc implements InitBloc {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initBloc,
+    TResult Function()? loggedOut,
+    TResult Function()? logOutPressed,
+    TResult Function()? sessionCreated,
+    TResult Function()? sessionDeleted,
+    TResult Function()? sessionFetched,
+  }) {
+    return initBloc?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initBloc,
     TResult Function()? loggedOut,
@@ -182,6 +216,19 @@ class _$InitBloc implements InitBloc {
     required TResult Function(SessionFetched value) sessionFetched,
   }) {
     return initBloc(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InitBloc value)? initBloc,
+    TResult Function(LoggedOut value)? loggedOut,
+    TResult Function(LogOutPressed value)? logOutPressed,
+    TResult Function(SessionCreated value)? sessionCreated,
+    TResult Function(SessionDeleted value)? sessionDeleted,
+    TResult Function(SessionFetched value)? sessionFetched,
+  }) {
+    return initBloc?.call(this);
   }
 
   @override
@@ -255,6 +302,19 @@ class _$LoggedOut implements LoggedOut {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initBloc,
+    TResult Function()? loggedOut,
+    TResult Function()? logOutPressed,
+    TResult Function()? sessionCreated,
+    TResult Function()? sessionDeleted,
+    TResult Function()? sessionFetched,
+  }) {
+    return loggedOut?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initBloc,
     TResult Function()? loggedOut,
@@ -281,6 +341,19 @@ class _$LoggedOut implements LoggedOut {
     required TResult Function(SessionFetched value) sessionFetched,
   }) {
     return loggedOut(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InitBloc value)? initBloc,
+    TResult Function(LoggedOut value)? loggedOut,
+    TResult Function(LogOutPressed value)? logOutPressed,
+    TResult Function(SessionCreated value)? sessionCreated,
+    TResult Function(SessionDeleted value)? sessionDeleted,
+    TResult Function(SessionFetched value)? sessionFetched,
+  }) {
+    return loggedOut?.call(this);
   }
 
   @override
@@ -357,6 +430,19 @@ class _$LogOutPressed implements LogOutPressed {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initBloc,
+    TResult Function()? loggedOut,
+    TResult Function()? logOutPressed,
+    TResult Function()? sessionCreated,
+    TResult Function()? sessionDeleted,
+    TResult Function()? sessionFetched,
+  }) {
+    return logOutPressed?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initBloc,
     TResult Function()? loggedOut,
@@ -383,6 +469,19 @@ class _$LogOutPressed implements LogOutPressed {
     required TResult Function(SessionFetched value) sessionFetched,
   }) {
     return logOutPressed(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InitBloc value)? initBloc,
+    TResult Function(LoggedOut value)? loggedOut,
+    TResult Function(LogOutPressed value)? logOutPressed,
+    TResult Function(SessionCreated value)? sessionCreated,
+    TResult Function(SessionDeleted value)? sessionDeleted,
+    TResult Function(SessionFetched value)? sessionFetched,
+  }) {
+    return logOutPressed?.call(this);
   }
 
   @override
@@ -459,6 +558,19 @@ class _$SessionCreated implements SessionCreated {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initBloc,
+    TResult Function()? loggedOut,
+    TResult Function()? logOutPressed,
+    TResult Function()? sessionCreated,
+    TResult Function()? sessionDeleted,
+    TResult Function()? sessionFetched,
+  }) {
+    return sessionCreated?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initBloc,
     TResult Function()? loggedOut,
@@ -485,6 +597,19 @@ class _$SessionCreated implements SessionCreated {
     required TResult Function(SessionFetched value) sessionFetched,
   }) {
     return sessionCreated(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InitBloc value)? initBloc,
+    TResult Function(LoggedOut value)? loggedOut,
+    TResult Function(LogOutPressed value)? logOutPressed,
+    TResult Function(SessionCreated value)? sessionCreated,
+    TResult Function(SessionDeleted value)? sessionDeleted,
+    TResult Function(SessionFetched value)? sessionFetched,
+  }) {
+    return sessionCreated?.call(this);
   }
 
   @override
@@ -561,6 +686,19 @@ class _$SessionDeleted implements SessionDeleted {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initBloc,
+    TResult Function()? loggedOut,
+    TResult Function()? logOutPressed,
+    TResult Function()? sessionCreated,
+    TResult Function()? sessionDeleted,
+    TResult Function()? sessionFetched,
+  }) {
+    return sessionDeleted?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initBloc,
     TResult Function()? loggedOut,
@@ -587,6 +725,19 @@ class _$SessionDeleted implements SessionDeleted {
     required TResult Function(SessionFetched value) sessionFetched,
   }) {
     return sessionDeleted(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InitBloc value)? initBloc,
+    TResult Function(LoggedOut value)? loggedOut,
+    TResult Function(LogOutPressed value)? logOutPressed,
+    TResult Function(SessionCreated value)? sessionCreated,
+    TResult Function(SessionDeleted value)? sessionDeleted,
+    TResult Function(SessionFetched value)? sessionFetched,
+  }) {
+    return sessionDeleted?.call(this);
   }
 
   @override
@@ -663,6 +814,19 @@ class _$SessionFetched implements SessionFetched {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initBloc,
+    TResult Function()? loggedOut,
+    TResult Function()? logOutPressed,
+    TResult Function()? sessionCreated,
+    TResult Function()? sessionDeleted,
+    TResult Function()? sessionFetched,
+  }) {
+    return sessionFetched?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initBloc,
     TResult Function()? loggedOut,
@@ -689,6 +853,19 @@ class _$SessionFetched implements SessionFetched {
     required TResult Function(SessionFetched value) sessionFetched,
   }) {
     return sessionFetched(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InitBloc value)? initBloc,
+    TResult Function(LoggedOut value)? loggedOut,
+    TResult Function(LogOutPressed value)? logOutPressed,
+    TResult Function(SessionCreated value)? sessionCreated,
+    TResult Function(SessionDeleted value)? sessionDeleted,
+    TResult Function(SessionFetched value)? sessionFetched,
+  }) {
+    return sessionFetched?.call(this);
   }
 
   @override

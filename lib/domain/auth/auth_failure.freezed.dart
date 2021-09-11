@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'auth_failure.dart';
 
@@ -62,6 +63,17 @@ mixin _$AuthFailure {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? cancelledByUser,
+    TResult Function()? credentialAlreadyInUse,
+    TResult Function()? emailAlreadyInUse,
+    TResult Function()? invalidEmailAndPasswordCombination,
+    TResult Function()? serverError,
+    TResult Function()? unableToSignOut,
+    TResult Function()? unexpected,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? cancelledByUser,
     TResult Function()? credentialAlreadyInUse,
@@ -84,6 +96,18 @@ mixin _$AuthFailure {
     required TResult Function(ServerError value) serverError,
     required TResult Function(UnableToSignOut value) unableToSignOut,
     required TResult Function(Unexpected value) unexpected,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(CancelledByUser value)? cancelledByUser,
+    TResult Function(CredentialAlreadyInUse value)? credentialAlreadyInUse,
+    TResult Function(EmailAlreadyInUse value)? emailAlreadyInUse,
+    TResult Function(InvalidEmailAndPasswordCombination value)?
+        invalidEmailAndPasswordCombination,
+    TResult Function(ServerError value)? serverError,
+    TResult Function(UnableToSignOut value)? unableToSignOut,
+    TResult Function(Unexpected value)? unexpected,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -170,6 +194,20 @@ class _$CancelledByUser implements CancelledByUser {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? cancelledByUser,
+    TResult Function()? credentialAlreadyInUse,
+    TResult Function()? emailAlreadyInUse,
+    TResult Function()? invalidEmailAndPasswordCombination,
+    TResult Function()? serverError,
+    TResult Function()? unableToSignOut,
+    TResult Function()? unexpected,
+  }) {
+    return cancelledByUser?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? cancelledByUser,
     TResult Function()? credentialAlreadyInUse,
@@ -200,6 +238,21 @@ class _$CancelledByUser implements CancelledByUser {
     required TResult Function(Unexpected value) unexpected,
   }) {
     return cancelledByUser(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(CancelledByUser value)? cancelledByUser,
+    TResult Function(CredentialAlreadyInUse value)? credentialAlreadyInUse,
+    TResult Function(EmailAlreadyInUse value)? emailAlreadyInUse,
+    TResult Function(InvalidEmailAndPasswordCombination value)?
+        invalidEmailAndPasswordCombination,
+    TResult Function(ServerError value)? serverError,
+    TResult Function(UnableToSignOut value)? unableToSignOut,
+    TResult Function(Unexpected value)? unexpected,
+  }) {
+    return cancelledByUser?.call(this);
   }
 
   @override
@@ -279,6 +332,20 @@ class _$CredentialAlreadyInUse implements CredentialAlreadyInUse {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? cancelledByUser,
+    TResult Function()? credentialAlreadyInUse,
+    TResult Function()? emailAlreadyInUse,
+    TResult Function()? invalidEmailAndPasswordCombination,
+    TResult Function()? serverError,
+    TResult Function()? unableToSignOut,
+    TResult Function()? unexpected,
+  }) {
+    return credentialAlreadyInUse?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? cancelledByUser,
     TResult Function()? credentialAlreadyInUse,
@@ -309,6 +376,21 @@ class _$CredentialAlreadyInUse implements CredentialAlreadyInUse {
     required TResult Function(Unexpected value) unexpected,
   }) {
     return credentialAlreadyInUse(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(CancelledByUser value)? cancelledByUser,
+    TResult Function(CredentialAlreadyInUse value)? credentialAlreadyInUse,
+    TResult Function(EmailAlreadyInUse value)? emailAlreadyInUse,
+    TResult Function(InvalidEmailAndPasswordCombination value)?
+        invalidEmailAndPasswordCombination,
+    TResult Function(ServerError value)? serverError,
+    TResult Function(UnableToSignOut value)? unableToSignOut,
+    TResult Function(Unexpected value)? unexpected,
+  }) {
+    return credentialAlreadyInUse?.call(this);
   }
 
   @override
@@ -388,6 +470,20 @@ class _$EmailAlreadyInUse implements EmailAlreadyInUse {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? cancelledByUser,
+    TResult Function()? credentialAlreadyInUse,
+    TResult Function()? emailAlreadyInUse,
+    TResult Function()? invalidEmailAndPasswordCombination,
+    TResult Function()? serverError,
+    TResult Function()? unableToSignOut,
+    TResult Function()? unexpected,
+  }) {
+    return emailAlreadyInUse?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? cancelledByUser,
     TResult Function()? credentialAlreadyInUse,
@@ -418,6 +514,21 @@ class _$EmailAlreadyInUse implements EmailAlreadyInUse {
     required TResult Function(Unexpected value) unexpected,
   }) {
     return emailAlreadyInUse(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(CancelledByUser value)? cancelledByUser,
+    TResult Function(CredentialAlreadyInUse value)? credentialAlreadyInUse,
+    TResult Function(EmailAlreadyInUse value)? emailAlreadyInUse,
+    TResult Function(InvalidEmailAndPasswordCombination value)?
+        invalidEmailAndPasswordCombination,
+    TResult Function(ServerError value)? serverError,
+    TResult Function(UnableToSignOut value)? unableToSignOut,
+    TResult Function(Unexpected value)? unexpected,
+  }) {
+    return emailAlreadyInUse?.call(this);
   }
 
   @override
@@ -502,6 +613,20 @@ class _$InvalidEmailAndPasswordCombination
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? cancelledByUser,
+    TResult Function()? credentialAlreadyInUse,
+    TResult Function()? emailAlreadyInUse,
+    TResult Function()? invalidEmailAndPasswordCombination,
+    TResult Function()? serverError,
+    TResult Function()? unableToSignOut,
+    TResult Function()? unexpected,
+  }) {
+    return invalidEmailAndPasswordCombination?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? cancelledByUser,
     TResult Function()? credentialAlreadyInUse,
@@ -532,6 +657,21 @@ class _$InvalidEmailAndPasswordCombination
     required TResult Function(Unexpected value) unexpected,
   }) {
     return invalidEmailAndPasswordCombination(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(CancelledByUser value)? cancelledByUser,
+    TResult Function(CredentialAlreadyInUse value)? credentialAlreadyInUse,
+    TResult Function(EmailAlreadyInUse value)? emailAlreadyInUse,
+    TResult Function(InvalidEmailAndPasswordCombination value)?
+        invalidEmailAndPasswordCombination,
+    TResult Function(ServerError value)? serverError,
+    TResult Function(UnableToSignOut value)? unableToSignOut,
+    TResult Function(Unexpected value)? unexpected,
+  }) {
+    return invalidEmailAndPasswordCombination?.call(this);
   }
 
   @override
@@ -611,6 +751,20 @@ class _$ServerError implements ServerError {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? cancelledByUser,
+    TResult Function()? credentialAlreadyInUse,
+    TResult Function()? emailAlreadyInUse,
+    TResult Function()? invalidEmailAndPasswordCombination,
+    TResult Function()? serverError,
+    TResult Function()? unableToSignOut,
+    TResult Function()? unexpected,
+  }) {
+    return serverError?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? cancelledByUser,
     TResult Function()? credentialAlreadyInUse,
@@ -641,6 +795,21 @@ class _$ServerError implements ServerError {
     required TResult Function(Unexpected value) unexpected,
   }) {
     return serverError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(CancelledByUser value)? cancelledByUser,
+    TResult Function(CredentialAlreadyInUse value)? credentialAlreadyInUse,
+    TResult Function(EmailAlreadyInUse value)? emailAlreadyInUse,
+    TResult Function(InvalidEmailAndPasswordCombination value)?
+        invalidEmailAndPasswordCombination,
+    TResult Function(ServerError value)? serverError,
+    TResult Function(UnableToSignOut value)? unableToSignOut,
+    TResult Function(Unexpected value)? unexpected,
+  }) {
+    return serverError?.call(this);
   }
 
   @override
@@ -720,6 +889,20 @@ class _$UnableToSignOut implements UnableToSignOut {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? cancelledByUser,
+    TResult Function()? credentialAlreadyInUse,
+    TResult Function()? emailAlreadyInUse,
+    TResult Function()? invalidEmailAndPasswordCombination,
+    TResult Function()? serverError,
+    TResult Function()? unableToSignOut,
+    TResult Function()? unexpected,
+  }) {
+    return unableToSignOut?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? cancelledByUser,
     TResult Function()? credentialAlreadyInUse,
@@ -750,6 +933,21 @@ class _$UnableToSignOut implements UnableToSignOut {
     required TResult Function(Unexpected value) unexpected,
   }) {
     return unableToSignOut(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(CancelledByUser value)? cancelledByUser,
+    TResult Function(CredentialAlreadyInUse value)? credentialAlreadyInUse,
+    TResult Function(EmailAlreadyInUse value)? emailAlreadyInUse,
+    TResult Function(InvalidEmailAndPasswordCombination value)?
+        invalidEmailAndPasswordCombination,
+    TResult Function(ServerError value)? serverError,
+    TResult Function(UnableToSignOut value)? unableToSignOut,
+    TResult Function(Unexpected value)? unexpected,
+  }) {
+    return unableToSignOut?.call(this);
   }
 
   @override
@@ -827,6 +1025,20 @@ class _$Unexpected implements Unexpected {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? cancelledByUser,
+    TResult Function()? credentialAlreadyInUse,
+    TResult Function()? emailAlreadyInUse,
+    TResult Function()? invalidEmailAndPasswordCombination,
+    TResult Function()? serverError,
+    TResult Function()? unableToSignOut,
+    TResult Function()? unexpected,
+  }) {
+    return unexpected?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? cancelledByUser,
     TResult Function()? credentialAlreadyInUse,
@@ -857,6 +1069,21 @@ class _$Unexpected implements Unexpected {
     required TResult Function(Unexpected value) unexpected,
   }) {
     return unexpected(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(CancelledByUser value)? cancelledByUser,
+    TResult Function(CredentialAlreadyInUse value)? credentialAlreadyInUse,
+    TResult Function(EmailAlreadyInUse value)? emailAlreadyInUse,
+    TResult Function(InvalidEmailAndPasswordCombination value)?
+        invalidEmailAndPasswordCombination,
+    TResult Function(ServerError value)? serverError,
+    TResult Function(UnableToSignOut value)? unableToSignOut,
+    TResult Function(Unexpected value)? unexpected,
+  }) {
+    return unexpected?.call(this);
   }
 
   @override

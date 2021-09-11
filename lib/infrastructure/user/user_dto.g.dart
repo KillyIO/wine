@@ -6,17 +6,15 @@ part of 'user_dto.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$_UserDTO _$_$_UserDTOFromJson(Map<String, dynamic> json) {
-  return _$_UserDTO(
-    emailAddress: json['emailAddress'] as String,
-    uid: json['uid'] as String,
-    updatedAt:
-        const ServerTimestampConverter().fromJson(json['updatedAt'] as Object),
-    username: json['username'] as String,
-  );
-}
+_$_UserDTO _$$_UserDTOFromJson(Map<String, dynamic> json) => _$_UserDTO(
+      emailAddress: json['emailAddress'] as String,
+      uid: json['uid'] as String,
+      updatedAt: const ServerTimestampConverter()
+          .fromJson(json['updatedAt'] as Object),
+      username: json['username'] as String,
+    );
 
-Map<String, dynamic> _$_$_UserDTOToJson(_$_UserDTO instance) =>
+Map<String, dynamic> _$$_UserDTOToJson(_$_UserDTO instance) =>
     <String, dynamic>{
       'emailAddress': instance.emailAddress,
       'uid': instance.uid,

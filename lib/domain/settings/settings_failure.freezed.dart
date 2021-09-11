@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'settings_failure.dart';
 
@@ -47,6 +48,14 @@ mixin _$SettingsFailure {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? settingsNotDeleted,
+    TResult Function()? settingsNotFound,
+    TResult Function()? settingsNotInitialized,
+    TResult Function()? settingsNotUpdated,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? settingsNotDeleted,
     TResult Function()? settingsNotFound,
@@ -62,6 +71,14 @@ mixin _$SettingsFailure {
     required TResult Function(SettingsNotInitialized value)
         settingsNotInitialized,
     required TResult Function(SettingsNotUpdated value) settingsNotUpdated,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(SettingsNotDeleted value)? settingsNotDeleted,
+    TResult Function(SettingsNotFound value)? settingsNotFound,
+    TResult Function(SettingsNotInitialized value)? settingsNotInitialized,
+    TResult Function(SettingsNotUpdated value)? settingsNotUpdated,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -142,6 +159,17 @@ class _$SettingsNotDeleted implements SettingsNotDeleted {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? settingsNotDeleted,
+    TResult Function()? settingsNotFound,
+    TResult Function()? settingsNotInitialized,
+    TResult Function()? settingsNotUpdated,
+  }) {
+    return settingsNotDeleted?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? settingsNotDeleted,
     TResult Function()? settingsNotFound,
@@ -165,6 +193,17 @@ class _$SettingsNotDeleted implements SettingsNotDeleted {
     required TResult Function(SettingsNotUpdated value) settingsNotUpdated,
   }) {
     return settingsNotDeleted(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(SettingsNotDeleted value)? settingsNotDeleted,
+    TResult Function(SettingsNotFound value)? settingsNotFound,
+    TResult Function(SettingsNotInitialized value)? settingsNotInitialized,
+    TResult Function(SettingsNotUpdated value)? settingsNotUpdated,
+  }) {
+    return settingsNotDeleted?.call(this);
   }
 
   @override
@@ -237,6 +276,17 @@ class _$SettingsNotFound implements SettingsNotFound {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? settingsNotDeleted,
+    TResult Function()? settingsNotFound,
+    TResult Function()? settingsNotInitialized,
+    TResult Function()? settingsNotUpdated,
+  }) {
+    return settingsNotFound?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? settingsNotDeleted,
     TResult Function()? settingsNotFound,
@@ -260,6 +310,17 @@ class _$SettingsNotFound implements SettingsNotFound {
     required TResult Function(SettingsNotUpdated value) settingsNotUpdated,
   }) {
     return settingsNotFound(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(SettingsNotDeleted value)? settingsNotDeleted,
+    TResult Function(SettingsNotFound value)? settingsNotFound,
+    TResult Function(SettingsNotInitialized value)? settingsNotInitialized,
+    TResult Function(SettingsNotUpdated value)? settingsNotUpdated,
+  }) {
+    return settingsNotFound?.call(this);
   }
 
   @override
@@ -332,6 +393,17 @@ class _$SettingsNotInitialized implements SettingsNotInitialized {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? settingsNotDeleted,
+    TResult Function()? settingsNotFound,
+    TResult Function()? settingsNotInitialized,
+    TResult Function()? settingsNotUpdated,
+  }) {
+    return settingsNotInitialized?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? settingsNotDeleted,
     TResult Function()? settingsNotFound,
@@ -355,6 +427,17 @@ class _$SettingsNotInitialized implements SettingsNotInitialized {
     required TResult Function(SettingsNotUpdated value) settingsNotUpdated,
   }) {
     return settingsNotInitialized(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(SettingsNotDeleted value)? settingsNotDeleted,
+    TResult Function(SettingsNotFound value)? settingsNotFound,
+    TResult Function(SettingsNotInitialized value)? settingsNotInitialized,
+    TResult Function(SettingsNotUpdated value)? settingsNotUpdated,
+  }) {
+    return settingsNotInitialized?.call(this);
   }
 
   @override
@@ -427,6 +510,17 @@ class _$SettingsNotUpdated implements SettingsNotUpdated {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? settingsNotDeleted,
+    TResult Function()? settingsNotFound,
+    TResult Function()? settingsNotInitialized,
+    TResult Function()? settingsNotUpdated,
+  }) {
+    return settingsNotUpdated?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? settingsNotDeleted,
     TResult Function()? settingsNotFound,
@@ -450,6 +544,17 @@ class _$SettingsNotUpdated implements SettingsNotUpdated {
     required TResult Function(SettingsNotUpdated value) settingsNotUpdated,
   }) {
     return settingsNotUpdated(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(SettingsNotDeleted value)? settingsNotDeleted,
+    TResult Function(SettingsNotFound value)? settingsNotFound,
+    TResult Function(SettingsNotInitialized value)? settingsNotInitialized,
+    TResult Function(SettingsNotUpdated value)? settingsNotUpdated,
+  }) {
+    return settingsNotUpdated?.call(this);
   }
 
   @override

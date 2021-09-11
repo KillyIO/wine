@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'typewriter_series_bloc.dart';
 
@@ -94,6 +95,20 @@ mixin _$TypewriterSeriesEvent {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? addCoverPressed,
+    TResult Function(String genre)? genreAdded,
+    TResult Function(String genre)? genreRemoved,
+    TResult Function(bool isNSFW)? isNSFWChanged,
+    TResult Function(String language)? languageSelected,
+    TResult Function()? launchAsNewSeries,
+    TResult Function(UniqueID id, Series? series)? launchWithID,
+    TResult Function(String subtitle)? subtitleChanged,
+    TResult Function(String summary)? summaryChanged,
+    TResult Function(String title)? titleChanged,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? addCoverPressed,
     TResult Function(String genre)? genreAdded,
@@ -120,6 +135,20 @@ mixin _$TypewriterSeriesEvent {
     required TResult Function(SubtitleChanged value) subtitleChanged,
     required TResult Function(SummaryChanged value) summaryChanged,
     required TResult Function(TitleChanged value) titleChanged,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(AddCoverPressed value)? addCoverPressed,
+    TResult Function(GenreAdded value)? genreAdded,
+    TResult Function(GenreRemoved value)? genreRemoved,
+    TResult Function(IsNSFWChanged value)? isNSFWChanged,
+    TResult Function(LanguageSelected value)? languageSelected,
+    TResult Function(LaunchAsNewSeries value)? launchAsNewSeries,
+    TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(SubtitleChanged value)? subtitleChanged,
+    TResult Function(SummaryChanged value)? summaryChanged,
+    TResult Function(TitleChanged value)? titleChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -212,6 +241,23 @@ class _$AddCoverPressed implements AddCoverPressed {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? addCoverPressed,
+    TResult Function(String genre)? genreAdded,
+    TResult Function(String genre)? genreRemoved,
+    TResult Function(bool isNSFW)? isNSFWChanged,
+    TResult Function(String language)? languageSelected,
+    TResult Function()? launchAsNewSeries,
+    TResult Function(UniqueID id, Series? series)? launchWithID,
+    TResult Function(String subtitle)? subtitleChanged,
+    TResult Function(String summary)? summaryChanged,
+    TResult Function(String title)? titleChanged,
+  }) {
+    return addCoverPressed?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? addCoverPressed,
     TResult Function(String genre)? genreAdded,
@@ -246,6 +292,23 @@ class _$AddCoverPressed implements AddCoverPressed {
     required TResult Function(TitleChanged value) titleChanged,
   }) {
     return addCoverPressed(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(AddCoverPressed value)? addCoverPressed,
+    TResult Function(GenreAdded value)? genreAdded,
+    TResult Function(GenreRemoved value)? genreRemoved,
+    TResult Function(IsNSFWChanged value)? isNSFWChanged,
+    TResult Function(LanguageSelected value)? languageSelected,
+    TResult Function(LaunchAsNewSeries value)? launchAsNewSeries,
+    TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(SubtitleChanged value)? subtitleChanged,
+    TResult Function(SummaryChanged value)? summaryChanged,
+    TResult Function(TitleChanged value)? titleChanged,
+  }) {
+    return addCoverPressed?.call(this);
   }
 
   @override
@@ -354,6 +417,23 @@ class _$GenreAdded implements GenreAdded {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? addCoverPressed,
+    TResult Function(String genre)? genreAdded,
+    TResult Function(String genre)? genreRemoved,
+    TResult Function(bool isNSFW)? isNSFWChanged,
+    TResult Function(String language)? languageSelected,
+    TResult Function()? launchAsNewSeries,
+    TResult Function(UniqueID id, Series? series)? launchWithID,
+    TResult Function(String subtitle)? subtitleChanged,
+    TResult Function(String summary)? summaryChanged,
+    TResult Function(String title)? titleChanged,
+  }) {
+    return genreAdded?.call(genre);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? addCoverPressed,
     TResult Function(String genre)? genreAdded,
@@ -388,6 +468,23 @@ class _$GenreAdded implements GenreAdded {
     required TResult Function(TitleChanged value) titleChanged,
   }) {
     return genreAdded(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(AddCoverPressed value)? addCoverPressed,
+    TResult Function(GenreAdded value)? genreAdded,
+    TResult Function(GenreRemoved value)? genreRemoved,
+    TResult Function(IsNSFWChanged value)? isNSFWChanged,
+    TResult Function(LanguageSelected value)? languageSelected,
+    TResult Function(LaunchAsNewSeries value)? launchAsNewSeries,
+    TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(SubtitleChanged value)? subtitleChanged,
+    TResult Function(SummaryChanged value)? summaryChanged,
+    TResult Function(TitleChanged value)? titleChanged,
+  }) {
+    return genreAdded?.call(this);
   }
 
   @override
@@ -502,6 +599,23 @@ class _$GenreRemoved implements GenreRemoved {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? addCoverPressed,
+    TResult Function(String genre)? genreAdded,
+    TResult Function(String genre)? genreRemoved,
+    TResult Function(bool isNSFW)? isNSFWChanged,
+    TResult Function(String language)? languageSelected,
+    TResult Function()? launchAsNewSeries,
+    TResult Function(UniqueID id, Series? series)? launchWithID,
+    TResult Function(String subtitle)? subtitleChanged,
+    TResult Function(String summary)? summaryChanged,
+    TResult Function(String title)? titleChanged,
+  }) {
+    return genreRemoved?.call(genre);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? addCoverPressed,
     TResult Function(String genre)? genreAdded,
@@ -536,6 +650,23 @@ class _$GenreRemoved implements GenreRemoved {
     required TResult Function(TitleChanged value) titleChanged,
   }) {
     return genreRemoved(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(AddCoverPressed value)? addCoverPressed,
+    TResult Function(GenreAdded value)? genreAdded,
+    TResult Function(GenreRemoved value)? genreRemoved,
+    TResult Function(IsNSFWChanged value)? isNSFWChanged,
+    TResult Function(LanguageSelected value)? languageSelected,
+    TResult Function(LaunchAsNewSeries value)? launchAsNewSeries,
+    TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(SubtitleChanged value)? subtitleChanged,
+    TResult Function(SummaryChanged value)? summaryChanged,
+    TResult Function(TitleChanged value)? titleChanged,
+  }) {
+    return genreRemoved?.call(this);
   }
 
   @override
@@ -650,6 +781,23 @@ class _$IsNSFWChanged implements IsNSFWChanged {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? addCoverPressed,
+    TResult Function(String genre)? genreAdded,
+    TResult Function(String genre)? genreRemoved,
+    TResult Function(bool isNSFW)? isNSFWChanged,
+    TResult Function(String language)? languageSelected,
+    TResult Function()? launchAsNewSeries,
+    TResult Function(UniqueID id, Series? series)? launchWithID,
+    TResult Function(String subtitle)? subtitleChanged,
+    TResult Function(String summary)? summaryChanged,
+    TResult Function(String title)? titleChanged,
+  }) {
+    return isNSFWChanged?.call(isNSFW);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? addCoverPressed,
     TResult Function(String genre)? genreAdded,
@@ -684,6 +832,23 @@ class _$IsNSFWChanged implements IsNSFWChanged {
     required TResult Function(TitleChanged value) titleChanged,
   }) {
     return isNSFWChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(AddCoverPressed value)? addCoverPressed,
+    TResult Function(GenreAdded value)? genreAdded,
+    TResult Function(GenreRemoved value)? genreRemoved,
+    TResult Function(IsNSFWChanged value)? isNSFWChanged,
+    TResult Function(LanguageSelected value)? languageSelected,
+    TResult Function(LaunchAsNewSeries value)? launchAsNewSeries,
+    TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(SubtitleChanged value)? subtitleChanged,
+    TResult Function(SummaryChanged value)? summaryChanged,
+    TResult Function(TitleChanged value)? titleChanged,
+  }) {
+    return isNSFWChanged?.call(this);
   }
 
   @override
@@ -799,6 +964,23 @@ class _$LanguageSelected implements LanguageSelected {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? addCoverPressed,
+    TResult Function(String genre)? genreAdded,
+    TResult Function(String genre)? genreRemoved,
+    TResult Function(bool isNSFW)? isNSFWChanged,
+    TResult Function(String language)? languageSelected,
+    TResult Function()? launchAsNewSeries,
+    TResult Function(UniqueID id, Series? series)? launchWithID,
+    TResult Function(String subtitle)? subtitleChanged,
+    TResult Function(String summary)? summaryChanged,
+    TResult Function(String title)? titleChanged,
+  }) {
+    return languageSelected?.call(language);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? addCoverPressed,
     TResult Function(String genre)? genreAdded,
@@ -833,6 +1015,23 @@ class _$LanguageSelected implements LanguageSelected {
     required TResult Function(TitleChanged value) titleChanged,
   }) {
     return languageSelected(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(AddCoverPressed value)? addCoverPressed,
+    TResult Function(GenreAdded value)? genreAdded,
+    TResult Function(GenreRemoved value)? genreRemoved,
+    TResult Function(IsNSFWChanged value)? isNSFWChanged,
+    TResult Function(LanguageSelected value)? languageSelected,
+    TResult Function(LaunchAsNewSeries value)? launchAsNewSeries,
+    TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(SubtitleChanged value)? subtitleChanged,
+    TResult Function(SummaryChanged value)? summaryChanged,
+    TResult Function(TitleChanged value)? titleChanged,
+  }) {
+    return languageSelected?.call(this);
   }
 
   @override
@@ -922,6 +1121,23 @@ class _$LaunchAsNewSeries implements LaunchAsNewSeries {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? addCoverPressed,
+    TResult Function(String genre)? genreAdded,
+    TResult Function(String genre)? genreRemoved,
+    TResult Function(bool isNSFW)? isNSFWChanged,
+    TResult Function(String language)? languageSelected,
+    TResult Function()? launchAsNewSeries,
+    TResult Function(UniqueID id, Series? series)? launchWithID,
+    TResult Function(String subtitle)? subtitleChanged,
+    TResult Function(String summary)? summaryChanged,
+    TResult Function(String title)? titleChanged,
+  }) {
+    return launchAsNewSeries?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? addCoverPressed,
     TResult Function(String genre)? genreAdded,
@@ -956,6 +1172,23 @@ class _$LaunchAsNewSeries implements LaunchAsNewSeries {
     required TResult Function(TitleChanged value) titleChanged,
   }) {
     return launchAsNewSeries(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(AddCoverPressed value)? addCoverPressed,
+    TResult Function(GenreAdded value)? genreAdded,
+    TResult Function(GenreRemoved value)? genreRemoved,
+    TResult Function(IsNSFWChanged value)? isNSFWChanged,
+    TResult Function(LanguageSelected value)? languageSelected,
+    TResult Function(LaunchAsNewSeries value)? launchAsNewSeries,
+    TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(SubtitleChanged value)? subtitleChanged,
+    TResult Function(SummaryChanged value)? summaryChanged,
+    TResult Function(TitleChanged value)? titleChanged,
+  }) {
+    return launchAsNewSeries?.call(this);
   }
 
   @override
@@ -1089,6 +1322,23 @@ class _$LaunchWithID implements LaunchWithID {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? addCoverPressed,
+    TResult Function(String genre)? genreAdded,
+    TResult Function(String genre)? genreRemoved,
+    TResult Function(bool isNSFW)? isNSFWChanged,
+    TResult Function(String language)? languageSelected,
+    TResult Function()? launchAsNewSeries,
+    TResult Function(UniqueID id, Series? series)? launchWithID,
+    TResult Function(String subtitle)? subtitleChanged,
+    TResult Function(String summary)? summaryChanged,
+    TResult Function(String title)? titleChanged,
+  }) {
+    return launchWithID?.call(id, series);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? addCoverPressed,
     TResult Function(String genre)? genreAdded,
@@ -1123,6 +1373,23 @@ class _$LaunchWithID implements LaunchWithID {
     required TResult Function(TitleChanged value) titleChanged,
   }) {
     return launchWithID(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(AddCoverPressed value)? addCoverPressed,
+    TResult Function(GenreAdded value)? genreAdded,
+    TResult Function(GenreRemoved value)? genreRemoved,
+    TResult Function(IsNSFWChanged value)? isNSFWChanged,
+    TResult Function(LanguageSelected value)? languageSelected,
+    TResult Function(LaunchAsNewSeries value)? launchAsNewSeries,
+    TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(SubtitleChanged value)? subtitleChanged,
+    TResult Function(SummaryChanged value)? summaryChanged,
+    TResult Function(TitleChanged value)? titleChanged,
+  }) {
+    return launchWithID?.call(this);
   }
 
   @override
@@ -1239,6 +1506,23 @@ class _$SubtitleChanged implements SubtitleChanged {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? addCoverPressed,
+    TResult Function(String genre)? genreAdded,
+    TResult Function(String genre)? genreRemoved,
+    TResult Function(bool isNSFW)? isNSFWChanged,
+    TResult Function(String language)? languageSelected,
+    TResult Function()? launchAsNewSeries,
+    TResult Function(UniqueID id, Series? series)? launchWithID,
+    TResult Function(String subtitle)? subtitleChanged,
+    TResult Function(String summary)? summaryChanged,
+    TResult Function(String title)? titleChanged,
+  }) {
+    return subtitleChanged?.call(subtitle);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? addCoverPressed,
     TResult Function(String genre)? genreAdded,
@@ -1273,6 +1557,23 @@ class _$SubtitleChanged implements SubtitleChanged {
     required TResult Function(TitleChanged value) titleChanged,
   }) {
     return subtitleChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(AddCoverPressed value)? addCoverPressed,
+    TResult Function(GenreAdded value)? genreAdded,
+    TResult Function(GenreRemoved value)? genreRemoved,
+    TResult Function(IsNSFWChanged value)? isNSFWChanged,
+    TResult Function(LanguageSelected value)? languageSelected,
+    TResult Function(LaunchAsNewSeries value)? launchAsNewSeries,
+    TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(SubtitleChanged value)? subtitleChanged,
+    TResult Function(SummaryChanged value)? summaryChanged,
+    TResult Function(TitleChanged value)? titleChanged,
+  }) {
+    return subtitleChanged?.call(this);
   }
 
   @override
@@ -1387,6 +1688,23 @@ class _$SummaryChanged implements SummaryChanged {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? addCoverPressed,
+    TResult Function(String genre)? genreAdded,
+    TResult Function(String genre)? genreRemoved,
+    TResult Function(bool isNSFW)? isNSFWChanged,
+    TResult Function(String language)? languageSelected,
+    TResult Function()? launchAsNewSeries,
+    TResult Function(UniqueID id, Series? series)? launchWithID,
+    TResult Function(String subtitle)? subtitleChanged,
+    TResult Function(String summary)? summaryChanged,
+    TResult Function(String title)? titleChanged,
+  }) {
+    return summaryChanged?.call(summary);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? addCoverPressed,
     TResult Function(String genre)? genreAdded,
@@ -1421,6 +1739,23 @@ class _$SummaryChanged implements SummaryChanged {
     required TResult Function(TitleChanged value) titleChanged,
   }) {
     return summaryChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(AddCoverPressed value)? addCoverPressed,
+    TResult Function(GenreAdded value)? genreAdded,
+    TResult Function(GenreRemoved value)? genreRemoved,
+    TResult Function(IsNSFWChanged value)? isNSFWChanged,
+    TResult Function(LanguageSelected value)? languageSelected,
+    TResult Function(LaunchAsNewSeries value)? launchAsNewSeries,
+    TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(SubtitleChanged value)? subtitleChanged,
+    TResult Function(SummaryChanged value)? summaryChanged,
+    TResult Function(TitleChanged value)? titleChanged,
+  }) {
+    return summaryChanged?.call(this);
   }
 
   @override
@@ -1535,6 +1870,23 @@ class _$TitleChanged implements TitleChanged {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? addCoverPressed,
+    TResult Function(String genre)? genreAdded,
+    TResult Function(String genre)? genreRemoved,
+    TResult Function(bool isNSFW)? isNSFWChanged,
+    TResult Function(String language)? languageSelected,
+    TResult Function()? launchAsNewSeries,
+    TResult Function(UniqueID id, Series? series)? launchWithID,
+    TResult Function(String subtitle)? subtitleChanged,
+    TResult Function(String summary)? summaryChanged,
+    TResult Function(String title)? titleChanged,
+  }) {
+    return titleChanged?.call(title);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? addCoverPressed,
     TResult Function(String genre)? genreAdded,
@@ -1569,6 +1921,23 @@ class _$TitleChanged implements TitleChanged {
     required TResult Function(TitleChanged value) titleChanged,
   }) {
     return titleChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(AddCoverPressed value)? addCoverPressed,
+    TResult Function(GenreAdded value)? genreAdded,
+    TResult Function(GenreRemoved value)? genreRemoved,
+    TResult Function(IsNSFWChanged value)? isNSFWChanged,
+    TResult Function(LanguageSelected value)? languageSelected,
+    TResult Function(LaunchAsNewSeries value)? launchAsNewSeries,
+    TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(SubtitleChanged value)? subtitleChanged,
+    TResult Function(SummaryChanged value)? summaryChanged,
+    TResult Function(TitleChanged value)? titleChanged,
+  }) {
+    return titleChanged?.call(this);
   }
 
   @override

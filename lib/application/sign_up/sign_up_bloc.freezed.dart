@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'sign_up_bloc.dart';
 
@@ -84,6 +85,19 @@ mixin _$SignUpEvent {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? accountCreated,
+    TResult Function(String confirmPasswordStr)? confirmPasswordChanged,
+    TResult Function(String emailAddressStr)? emailAddressChanged,
+    TResult Function(String passwordStr)? passwordChanged,
+    TResult Function()? signUpPressed,
+    TResult Function(User user)? userDetailsSaved,
+    TResult Function()? usernameAvailabilityConfirmed,
+    TResult Function(User user)? usernameSaved,
+    TResult Function(String usernameStr)? usernameChanged,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? accountCreated,
     TResult Function(String confirmPasswordStr)? confirmPasswordChanged,
@@ -110,6 +124,20 @@ mixin _$SignUpEvent {
         usernameAvailabilityConfirmed,
     required TResult Function(UsernameSaved value) usernameSaved,
     required TResult Function(UsernameChanged value) usernameChanged,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(AccountCreated value)? accountCreated,
+    TResult Function(ConfirmPasswordChanged value)? confirmPasswordChanged,
+    TResult Function(EmailAddressChanged value)? emailAddressChanged,
+    TResult Function(PasswordChanged value)? passwordChanged,
+    TResult Function(SignUpPressed value)? signUpPressed,
+    TResult Function(UserDetailsSaved value)? userDetailsSaved,
+    TResult Function(UsernameAvailabilityConfirmed value)?
+        usernameAvailabilityConfirmed,
+    TResult Function(UsernameSaved value)? usernameSaved,
+    TResult Function(UsernameChanged value)? usernameChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -199,6 +227,22 @@ class _$AccountCreated implements AccountCreated {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? accountCreated,
+    TResult Function(String confirmPasswordStr)? confirmPasswordChanged,
+    TResult Function(String emailAddressStr)? emailAddressChanged,
+    TResult Function(String passwordStr)? passwordChanged,
+    TResult Function()? signUpPressed,
+    TResult Function(User user)? userDetailsSaved,
+    TResult Function()? usernameAvailabilityConfirmed,
+    TResult Function(User user)? usernameSaved,
+    TResult Function(String usernameStr)? usernameChanged,
+  }) {
+    return accountCreated?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? accountCreated,
     TResult Function(String confirmPasswordStr)? confirmPasswordChanged,
@@ -233,6 +277,23 @@ class _$AccountCreated implements AccountCreated {
     required TResult Function(UsernameChanged value) usernameChanged,
   }) {
     return accountCreated(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(AccountCreated value)? accountCreated,
+    TResult Function(ConfirmPasswordChanged value)? confirmPasswordChanged,
+    TResult Function(EmailAddressChanged value)? emailAddressChanged,
+    TResult Function(PasswordChanged value)? passwordChanged,
+    TResult Function(SignUpPressed value)? signUpPressed,
+    TResult Function(UserDetailsSaved value)? userDetailsSaved,
+    TResult Function(UsernameAvailabilityConfirmed value)?
+        usernameAvailabilityConfirmed,
+    TResult Function(UsernameSaved value)? usernameSaved,
+    TResult Function(UsernameChanged value)? usernameChanged,
+  }) {
+    return accountCreated?.call(this);
   }
 
   @override
@@ -344,6 +405,22 @@ class _$ConfirmPasswordChanged implements ConfirmPasswordChanged {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? accountCreated,
+    TResult Function(String confirmPasswordStr)? confirmPasswordChanged,
+    TResult Function(String emailAddressStr)? emailAddressChanged,
+    TResult Function(String passwordStr)? passwordChanged,
+    TResult Function()? signUpPressed,
+    TResult Function(User user)? userDetailsSaved,
+    TResult Function()? usernameAvailabilityConfirmed,
+    TResult Function(User user)? usernameSaved,
+    TResult Function(String usernameStr)? usernameChanged,
+  }) {
+    return confirmPasswordChanged?.call(confirmPasswordStr);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? accountCreated,
     TResult Function(String confirmPasswordStr)? confirmPasswordChanged,
@@ -378,6 +455,23 @@ class _$ConfirmPasswordChanged implements ConfirmPasswordChanged {
     required TResult Function(UsernameChanged value) usernameChanged,
   }) {
     return confirmPasswordChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(AccountCreated value)? accountCreated,
+    TResult Function(ConfirmPasswordChanged value)? confirmPasswordChanged,
+    TResult Function(EmailAddressChanged value)? emailAddressChanged,
+    TResult Function(PasswordChanged value)? passwordChanged,
+    TResult Function(SignUpPressed value)? signUpPressed,
+    TResult Function(UserDetailsSaved value)? userDetailsSaved,
+    TResult Function(UsernameAvailabilityConfirmed value)?
+        usernameAvailabilityConfirmed,
+    TResult Function(UsernameSaved value)? usernameSaved,
+    TResult Function(UsernameChanged value)? usernameChanged,
+  }) {
+    return confirmPasswordChanged?.call(this);
   }
 
   @override
@@ -494,6 +588,22 @@ class _$EmailAddressChanged implements EmailAddressChanged {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? accountCreated,
+    TResult Function(String confirmPasswordStr)? confirmPasswordChanged,
+    TResult Function(String emailAddressStr)? emailAddressChanged,
+    TResult Function(String passwordStr)? passwordChanged,
+    TResult Function()? signUpPressed,
+    TResult Function(User user)? userDetailsSaved,
+    TResult Function()? usernameAvailabilityConfirmed,
+    TResult Function(User user)? usernameSaved,
+    TResult Function(String usernameStr)? usernameChanged,
+  }) {
+    return emailAddressChanged?.call(emailAddressStr);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? accountCreated,
     TResult Function(String confirmPasswordStr)? confirmPasswordChanged,
@@ -528,6 +638,23 @@ class _$EmailAddressChanged implements EmailAddressChanged {
     required TResult Function(UsernameChanged value) usernameChanged,
   }) {
     return emailAddressChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(AccountCreated value)? accountCreated,
+    TResult Function(ConfirmPasswordChanged value)? confirmPasswordChanged,
+    TResult Function(EmailAddressChanged value)? emailAddressChanged,
+    TResult Function(PasswordChanged value)? passwordChanged,
+    TResult Function(SignUpPressed value)? signUpPressed,
+    TResult Function(UserDetailsSaved value)? userDetailsSaved,
+    TResult Function(UsernameAvailabilityConfirmed value)?
+        usernameAvailabilityConfirmed,
+    TResult Function(UsernameSaved value)? usernameSaved,
+    TResult Function(UsernameChanged value)? usernameChanged,
+  }) {
+    return emailAddressChanged?.call(this);
   }
 
   @override
@@ -643,6 +770,22 @@ class _$PasswordChanged implements PasswordChanged {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? accountCreated,
+    TResult Function(String confirmPasswordStr)? confirmPasswordChanged,
+    TResult Function(String emailAddressStr)? emailAddressChanged,
+    TResult Function(String passwordStr)? passwordChanged,
+    TResult Function()? signUpPressed,
+    TResult Function(User user)? userDetailsSaved,
+    TResult Function()? usernameAvailabilityConfirmed,
+    TResult Function(User user)? usernameSaved,
+    TResult Function(String usernameStr)? usernameChanged,
+  }) {
+    return passwordChanged?.call(passwordStr);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? accountCreated,
     TResult Function(String confirmPasswordStr)? confirmPasswordChanged,
@@ -677,6 +820,23 @@ class _$PasswordChanged implements PasswordChanged {
     required TResult Function(UsernameChanged value) usernameChanged,
   }) {
     return passwordChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(AccountCreated value)? accountCreated,
+    TResult Function(ConfirmPasswordChanged value)? confirmPasswordChanged,
+    TResult Function(EmailAddressChanged value)? emailAddressChanged,
+    TResult Function(PasswordChanged value)? passwordChanged,
+    TResult Function(SignUpPressed value)? signUpPressed,
+    TResult Function(UserDetailsSaved value)? userDetailsSaved,
+    TResult Function(UsernameAvailabilityConfirmed value)?
+        usernameAvailabilityConfirmed,
+    TResult Function(UsernameSaved value)? usernameSaved,
+    TResult Function(UsernameChanged value)? usernameChanged,
+  }) {
+    return passwordChanged?.call(this);
   }
 
   @override
@@ -764,6 +924,22 @@ class _$SignUpPressed implements SignUpPressed {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? accountCreated,
+    TResult Function(String confirmPasswordStr)? confirmPasswordChanged,
+    TResult Function(String emailAddressStr)? emailAddressChanged,
+    TResult Function(String passwordStr)? passwordChanged,
+    TResult Function()? signUpPressed,
+    TResult Function(User user)? userDetailsSaved,
+    TResult Function()? usernameAvailabilityConfirmed,
+    TResult Function(User user)? usernameSaved,
+    TResult Function(String usernameStr)? usernameChanged,
+  }) {
+    return signUpPressed?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? accountCreated,
     TResult Function(String confirmPasswordStr)? confirmPasswordChanged,
@@ -798,6 +974,23 @@ class _$SignUpPressed implements SignUpPressed {
     required TResult Function(UsernameChanged value) usernameChanged,
   }) {
     return signUpPressed(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(AccountCreated value)? accountCreated,
+    TResult Function(ConfirmPasswordChanged value)? confirmPasswordChanged,
+    TResult Function(EmailAddressChanged value)? emailAddressChanged,
+    TResult Function(PasswordChanged value)? passwordChanged,
+    TResult Function(SignUpPressed value)? signUpPressed,
+    TResult Function(UserDetailsSaved value)? userDetailsSaved,
+    TResult Function(UsernameAvailabilityConfirmed value)?
+        usernameAvailabilityConfirmed,
+    TResult Function(UsernameSaved value)? usernameSaved,
+    TResult Function(UsernameChanged value)? usernameChanged,
+  }) {
+    return signUpPressed?.call(this);
   }
 
   @override
@@ -915,6 +1108,22 @@ class _$UserDetailsSaved implements UserDetailsSaved {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? accountCreated,
+    TResult Function(String confirmPasswordStr)? confirmPasswordChanged,
+    TResult Function(String emailAddressStr)? emailAddressChanged,
+    TResult Function(String passwordStr)? passwordChanged,
+    TResult Function()? signUpPressed,
+    TResult Function(User user)? userDetailsSaved,
+    TResult Function()? usernameAvailabilityConfirmed,
+    TResult Function(User user)? usernameSaved,
+    TResult Function(String usernameStr)? usernameChanged,
+  }) {
+    return userDetailsSaved?.call(user);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? accountCreated,
     TResult Function(String confirmPasswordStr)? confirmPasswordChanged,
@@ -949,6 +1158,23 @@ class _$UserDetailsSaved implements UserDetailsSaved {
     required TResult Function(UsernameChanged value) usernameChanged,
   }) {
     return userDetailsSaved(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(AccountCreated value)? accountCreated,
+    TResult Function(ConfirmPasswordChanged value)? confirmPasswordChanged,
+    TResult Function(EmailAddressChanged value)? emailAddressChanged,
+    TResult Function(PasswordChanged value)? passwordChanged,
+    TResult Function(SignUpPressed value)? signUpPressed,
+    TResult Function(UserDetailsSaved value)? userDetailsSaved,
+    TResult Function(UsernameAvailabilityConfirmed value)?
+        usernameAvailabilityConfirmed,
+    TResult Function(UsernameSaved value)? usernameSaved,
+    TResult Function(UsernameChanged value)? usernameChanged,
+  }) {
+    return userDetailsSaved?.call(this);
   }
 
   @override
@@ -1040,6 +1266,22 @@ class _$UsernameAvailabilityConfirmed implements UsernameAvailabilityConfirmed {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? accountCreated,
+    TResult Function(String confirmPasswordStr)? confirmPasswordChanged,
+    TResult Function(String emailAddressStr)? emailAddressChanged,
+    TResult Function(String passwordStr)? passwordChanged,
+    TResult Function()? signUpPressed,
+    TResult Function(User user)? userDetailsSaved,
+    TResult Function()? usernameAvailabilityConfirmed,
+    TResult Function(User user)? usernameSaved,
+    TResult Function(String usernameStr)? usernameChanged,
+  }) {
+    return usernameAvailabilityConfirmed?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? accountCreated,
     TResult Function(String confirmPasswordStr)? confirmPasswordChanged,
@@ -1074,6 +1316,23 @@ class _$UsernameAvailabilityConfirmed implements UsernameAvailabilityConfirmed {
     required TResult Function(UsernameChanged value) usernameChanged,
   }) {
     return usernameAvailabilityConfirmed(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(AccountCreated value)? accountCreated,
+    TResult Function(ConfirmPasswordChanged value)? confirmPasswordChanged,
+    TResult Function(EmailAddressChanged value)? emailAddressChanged,
+    TResult Function(PasswordChanged value)? passwordChanged,
+    TResult Function(SignUpPressed value)? signUpPressed,
+    TResult Function(UserDetailsSaved value)? userDetailsSaved,
+    TResult Function(UsernameAvailabilityConfirmed value)?
+        usernameAvailabilityConfirmed,
+    TResult Function(UsernameSaved value)? usernameSaved,
+    TResult Function(UsernameChanged value)? usernameChanged,
+  }) {
+    return usernameAvailabilityConfirmed?.call(this);
   }
 
   @override
@@ -1191,6 +1450,22 @@ class _$UsernameSaved implements UsernameSaved {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? accountCreated,
+    TResult Function(String confirmPasswordStr)? confirmPasswordChanged,
+    TResult Function(String emailAddressStr)? emailAddressChanged,
+    TResult Function(String passwordStr)? passwordChanged,
+    TResult Function()? signUpPressed,
+    TResult Function(User user)? userDetailsSaved,
+    TResult Function()? usernameAvailabilityConfirmed,
+    TResult Function(User user)? usernameSaved,
+    TResult Function(String usernameStr)? usernameChanged,
+  }) {
+    return usernameSaved?.call(user);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? accountCreated,
     TResult Function(String confirmPasswordStr)? confirmPasswordChanged,
@@ -1225,6 +1500,23 @@ class _$UsernameSaved implements UsernameSaved {
     required TResult Function(UsernameChanged value) usernameChanged,
   }) {
     return usernameSaved(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(AccountCreated value)? accountCreated,
+    TResult Function(ConfirmPasswordChanged value)? confirmPasswordChanged,
+    TResult Function(EmailAddressChanged value)? emailAddressChanged,
+    TResult Function(PasswordChanged value)? passwordChanged,
+    TResult Function(SignUpPressed value)? signUpPressed,
+    TResult Function(UserDetailsSaved value)? userDetailsSaved,
+    TResult Function(UsernameAvailabilityConfirmed value)?
+        usernameAvailabilityConfirmed,
+    TResult Function(UsernameSaved value)? usernameSaved,
+    TResult Function(UsernameChanged value)? usernameChanged,
+  }) {
+    return usernameSaved?.call(this);
   }
 
   @override
@@ -1339,6 +1631,22 @@ class _$UsernameChanged implements UsernameChanged {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? accountCreated,
+    TResult Function(String confirmPasswordStr)? confirmPasswordChanged,
+    TResult Function(String emailAddressStr)? emailAddressChanged,
+    TResult Function(String passwordStr)? passwordChanged,
+    TResult Function()? signUpPressed,
+    TResult Function(User user)? userDetailsSaved,
+    TResult Function()? usernameAvailabilityConfirmed,
+    TResult Function(User user)? usernameSaved,
+    TResult Function(String usernameStr)? usernameChanged,
+  }) {
+    return usernameChanged?.call(usernameStr);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? accountCreated,
     TResult Function(String confirmPasswordStr)? confirmPasswordChanged,
@@ -1373,6 +1681,23 @@ class _$UsernameChanged implements UsernameChanged {
     required TResult Function(UsernameChanged value) usernameChanged,
   }) {
     return usernameChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(AccountCreated value)? accountCreated,
+    TResult Function(ConfirmPasswordChanged value)? confirmPasswordChanged,
+    TResult Function(EmailAddressChanged value)? emailAddressChanged,
+    TResult Function(PasswordChanged value)? passwordChanged,
+    TResult Function(SignUpPressed value)? signUpPressed,
+    TResult Function(UserDetailsSaved value)? userDetailsSaved,
+    TResult Function(UsernameAvailabilityConfirmed value)?
+        usernameAvailabilityConfirmed,
+    TResult Function(UsernameSaved value)? usernameSaved,
+    TResult Function(UsernameChanged value)? usernameChanged,
+  }) {
+    return usernameChanged?.call(this);
   }
 
   @override

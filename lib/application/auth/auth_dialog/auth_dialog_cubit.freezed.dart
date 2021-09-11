@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'auth_dialog_cubit.dart';
 
@@ -42,6 +43,13 @@ mixin _$AuthDialogState {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? logIn,
+    TResult Function()? signUp,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? logIn,
@@ -54,6 +62,13 @@ mixin _$AuthDialogState {
     required TResult Function(_Initial value) initial,
     required TResult Function(_LogIn value) logIn,
     required TResult Function(_SignUp value) signUp,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_LogIn value)? logIn,
+    TResult Function(_SignUp value)? signUp,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -129,6 +144,16 @@ class _$_Initial implements _Initial {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? logIn,
+    TResult Function()? signUp,
+  }) {
+    return initial?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? logIn,
@@ -149,6 +174,16 @@ class _$_Initial implements _Initial {
     required TResult Function(_SignUp value) signUp,
   }) {
     return initial(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_LogIn value)? logIn,
+    TResult Function(_SignUp value)? signUp,
+  }) {
+    return initial?.call(this);
   }
 
   @override
@@ -216,6 +251,16 @@ class _$_LogIn implements _LogIn {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? logIn,
+    TResult Function()? signUp,
+  }) {
+    return logIn?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? logIn,
@@ -236,6 +281,16 @@ class _$_LogIn implements _LogIn {
     required TResult Function(_SignUp value) signUp,
   }) {
     return logIn(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_LogIn value)? logIn,
+    TResult Function(_SignUp value)? signUp,
+  }) {
+    return logIn?.call(this);
   }
 
   @override
@@ -303,6 +358,16 @@ class _$_SignUp implements _SignUp {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? logIn,
+    TResult Function()? signUp,
+  }) {
+    return signUp?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
     TResult Function()? logIn,
@@ -323,6 +388,16 @@ class _$_SignUp implements _SignUp {
     required TResult Function(_SignUp value) signUp,
   }) {
     return signUp(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Initial value)? initial,
+    TResult Function(_LogIn value)? logIn,
+    TResult Function(_SignUp value)? signUp,
+  }) {
+    return signUp?.call(this);
   }
 
   @override

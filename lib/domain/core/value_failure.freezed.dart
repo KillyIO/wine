@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'value_failure.dart';
 
@@ -97,6 +98,20 @@ mixin _$ValueFailure<T> {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(T failedValue)? emptyInput,
+    TResult Function(T failedValue)? emptySelection,
+    TResult Function(T failureValue)? invalidCoverFile,
+    TResult Function(T failedValue)? invalidCoverURL,
+    TResult Function(T failedValue)? invalidEmailAddress,
+    TResult Function(T failedValue)? invalidPassword,
+    TResult Function(T failedValue)? invalidConfirmPassword,
+    TResult Function(T failedValue)? invalidUniqueID,
+    TResult Function(T failedValue)? invalidUsername,
+    TResult Function(T failedValue)? tooLongInput,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(T failedValue)? emptyInput,
     TResult Function(T failedValue)? emptySelection,
@@ -124,6 +139,20 @@ mixin _$ValueFailure<T> {
     required TResult Function(InvalidUniqueID<T> value) invalidUniqueID,
     required TResult Function(InvalidUsername<T> value) invalidUsername,
     required TResult Function(TooLongInput<T> value) tooLongInput,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(EmptyInput<T> value)? emptyInput,
+    TResult Function(EmptySelection<T> value)? emptySelection,
+    TResult Function(InvalidCoverFile<T> value)? invalidCoverFile,
+    TResult Function(InvalidCoverURL<T> value)? invalidCoverURL,
+    TResult Function(InvalidEmail<T> value)? invalidEmailAddress,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
+    TResult Function(InvalidConfirmPassword<T> value)? invalidConfirmPassword,
+    TResult Function(InvalidUniqueID<T> value)? invalidUniqueID,
+    TResult Function(InvalidUsername<T> value)? invalidUsername,
+    TResult Function(TooLongInput<T> value)? tooLongInput,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -242,6 +271,23 @@ class _$EmptyInput<T> implements EmptyInput<T> {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(T failedValue)? emptyInput,
+    TResult Function(T failedValue)? emptySelection,
+    TResult Function(T failureValue)? invalidCoverFile,
+    TResult Function(T failedValue)? invalidCoverURL,
+    TResult Function(T failedValue)? invalidEmailAddress,
+    TResult Function(T failedValue)? invalidPassword,
+    TResult Function(T failedValue)? invalidConfirmPassword,
+    TResult Function(T failedValue)? invalidUniqueID,
+    TResult Function(T failedValue)? invalidUsername,
+    TResult Function(T failedValue)? tooLongInput,
+  }) {
+    return emptyInput?.call(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(T failedValue)? emptyInput,
     TResult Function(T failedValue)? emptySelection,
@@ -277,6 +323,23 @@ class _$EmptyInput<T> implements EmptyInput<T> {
     required TResult Function(TooLongInput<T> value) tooLongInput,
   }) {
     return emptyInput(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(EmptyInput<T> value)? emptyInput,
+    TResult Function(EmptySelection<T> value)? emptySelection,
+    TResult Function(InvalidCoverFile<T> value)? invalidCoverFile,
+    TResult Function(InvalidCoverURL<T> value)? invalidCoverURL,
+    TResult Function(InvalidEmail<T> value)? invalidEmailAddress,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
+    TResult Function(InvalidConfirmPassword<T> value)? invalidConfirmPassword,
+    TResult Function(InvalidUniqueID<T> value)? invalidUniqueID,
+    TResult Function(InvalidUsername<T> value)? invalidUsername,
+    TResult Function(TooLongInput<T> value)? tooLongInput,
+  }) {
+    return emptyInput?.call(this);
   }
 
   @override
@@ -392,6 +455,23 @@ class _$EmptySelection<T> implements EmptySelection<T> {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(T failedValue)? emptyInput,
+    TResult Function(T failedValue)? emptySelection,
+    TResult Function(T failureValue)? invalidCoverFile,
+    TResult Function(T failedValue)? invalidCoverURL,
+    TResult Function(T failedValue)? invalidEmailAddress,
+    TResult Function(T failedValue)? invalidPassword,
+    TResult Function(T failedValue)? invalidConfirmPassword,
+    TResult Function(T failedValue)? invalidUniqueID,
+    TResult Function(T failedValue)? invalidUsername,
+    TResult Function(T failedValue)? tooLongInput,
+  }) {
+    return emptySelection?.call(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(T failedValue)? emptyInput,
     TResult Function(T failedValue)? emptySelection,
@@ -427,6 +507,23 @@ class _$EmptySelection<T> implements EmptySelection<T> {
     required TResult Function(TooLongInput<T> value) tooLongInput,
   }) {
     return emptySelection(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(EmptyInput<T> value)? emptyInput,
+    TResult Function(EmptySelection<T> value)? emptySelection,
+    TResult Function(InvalidCoverFile<T> value)? invalidCoverFile,
+    TResult Function(InvalidCoverURL<T> value)? invalidCoverURL,
+    TResult Function(InvalidEmail<T> value)? invalidEmailAddress,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
+    TResult Function(InvalidConfirmPassword<T> value)? invalidConfirmPassword,
+    TResult Function(InvalidUniqueID<T> value)? invalidUniqueID,
+    TResult Function(InvalidUsername<T> value)? invalidUsername,
+    TResult Function(TooLongInput<T> value)? tooLongInput,
+  }) {
+    return emptySelection?.call(this);
   }
 
   @override
@@ -542,6 +639,23 @@ class _$InvalidCoverFile<T> implements InvalidCoverFile<T> {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(T failedValue)? emptyInput,
+    TResult Function(T failedValue)? emptySelection,
+    TResult Function(T failureValue)? invalidCoverFile,
+    TResult Function(T failedValue)? invalidCoverURL,
+    TResult Function(T failedValue)? invalidEmailAddress,
+    TResult Function(T failedValue)? invalidPassword,
+    TResult Function(T failedValue)? invalidConfirmPassword,
+    TResult Function(T failedValue)? invalidUniqueID,
+    TResult Function(T failedValue)? invalidUsername,
+    TResult Function(T failedValue)? tooLongInput,
+  }) {
+    return invalidCoverFile?.call(failureValue);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(T failedValue)? emptyInput,
     TResult Function(T failedValue)? emptySelection,
@@ -577,6 +691,23 @@ class _$InvalidCoverFile<T> implements InvalidCoverFile<T> {
     required TResult Function(TooLongInput<T> value) tooLongInput,
   }) {
     return invalidCoverFile(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(EmptyInput<T> value)? emptyInput,
+    TResult Function(EmptySelection<T> value)? emptySelection,
+    TResult Function(InvalidCoverFile<T> value)? invalidCoverFile,
+    TResult Function(InvalidCoverURL<T> value)? invalidCoverURL,
+    TResult Function(InvalidEmail<T> value)? invalidEmailAddress,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
+    TResult Function(InvalidConfirmPassword<T> value)? invalidConfirmPassword,
+    TResult Function(InvalidUniqueID<T> value)? invalidUniqueID,
+    TResult Function(InvalidUsername<T> value)? invalidUsername,
+    TResult Function(TooLongInput<T> value)? tooLongInput,
+  }) {
+    return invalidCoverFile?.call(this);
   }
 
   @override
@@ -692,6 +823,23 @@ class _$InvalidCoverURL<T> implements InvalidCoverURL<T> {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(T failedValue)? emptyInput,
+    TResult Function(T failedValue)? emptySelection,
+    TResult Function(T failureValue)? invalidCoverFile,
+    TResult Function(T failedValue)? invalidCoverURL,
+    TResult Function(T failedValue)? invalidEmailAddress,
+    TResult Function(T failedValue)? invalidPassword,
+    TResult Function(T failedValue)? invalidConfirmPassword,
+    TResult Function(T failedValue)? invalidUniqueID,
+    TResult Function(T failedValue)? invalidUsername,
+    TResult Function(T failedValue)? tooLongInput,
+  }) {
+    return invalidCoverURL?.call(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(T failedValue)? emptyInput,
     TResult Function(T failedValue)? emptySelection,
@@ -727,6 +875,23 @@ class _$InvalidCoverURL<T> implements InvalidCoverURL<T> {
     required TResult Function(TooLongInput<T> value) tooLongInput,
   }) {
     return invalidCoverURL(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(EmptyInput<T> value)? emptyInput,
+    TResult Function(EmptySelection<T> value)? emptySelection,
+    TResult Function(InvalidCoverFile<T> value)? invalidCoverFile,
+    TResult Function(InvalidCoverURL<T> value)? invalidCoverURL,
+    TResult Function(InvalidEmail<T> value)? invalidEmailAddress,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
+    TResult Function(InvalidConfirmPassword<T> value)? invalidConfirmPassword,
+    TResult Function(InvalidUniqueID<T> value)? invalidUniqueID,
+    TResult Function(InvalidUsername<T> value)? invalidUsername,
+    TResult Function(TooLongInput<T> value)? tooLongInput,
+  }) {
+    return invalidCoverURL?.call(this);
   }
 
   @override
@@ -842,6 +1007,23 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(T failedValue)? emptyInput,
+    TResult Function(T failedValue)? emptySelection,
+    TResult Function(T failureValue)? invalidCoverFile,
+    TResult Function(T failedValue)? invalidCoverURL,
+    TResult Function(T failedValue)? invalidEmailAddress,
+    TResult Function(T failedValue)? invalidPassword,
+    TResult Function(T failedValue)? invalidConfirmPassword,
+    TResult Function(T failedValue)? invalidUniqueID,
+    TResult Function(T failedValue)? invalidUsername,
+    TResult Function(T failedValue)? tooLongInput,
+  }) {
+    return invalidEmailAddress?.call(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(T failedValue)? emptyInput,
     TResult Function(T failedValue)? emptySelection,
@@ -877,6 +1059,23 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     required TResult Function(TooLongInput<T> value) tooLongInput,
   }) {
     return invalidEmailAddress(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(EmptyInput<T> value)? emptyInput,
+    TResult Function(EmptySelection<T> value)? emptySelection,
+    TResult Function(InvalidCoverFile<T> value)? invalidCoverFile,
+    TResult Function(InvalidCoverURL<T> value)? invalidCoverURL,
+    TResult Function(InvalidEmail<T> value)? invalidEmailAddress,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
+    TResult Function(InvalidConfirmPassword<T> value)? invalidConfirmPassword,
+    TResult Function(InvalidUniqueID<T> value)? invalidUniqueID,
+    TResult Function(InvalidUsername<T> value)? invalidUsername,
+    TResult Function(TooLongInput<T> value)? tooLongInput,
+  }) {
+    return invalidEmailAddress?.call(this);
   }
 
   @override
@@ -992,6 +1191,23 @@ class _$InvalidPassword<T> implements InvalidPassword<T> {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(T failedValue)? emptyInput,
+    TResult Function(T failedValue)? emptySelection,
+    TResult Function(T failureValue)? invalidCoverFile,
+    TResult Function(T failedValue)? invalidCoverURL,
+    TResult Function(T failedValue)? invalidEmailAddress,
+    TResult Function(T failedValue)? invalidPassword,
+    TResult Function(T failedValue)? invalidConfirmPassword,
+    TResult Function(T failedValue)? invalidUniqueID,
+    TResult Function(T failedValue)? invalidUsername,
+    TResult Function(T failedValue)? tooLongInput,
+  }) {
+    return invalidPassword?.call(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(T failedValue)? emptyInput,
     TResult Function(T failedValue)? emptySelection,
@@ -1027,6 +1243,23 @@ class _$InvalidPassword<T> implements InvalidPassword<T> {
     required TResult Function(TooLongInput<T> value) tooLongInput,
   }) {
     return invalidPassword(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(EmptyInput<T> value)? emptyInput,
+    TResult Function(EmptySelection<T> value)? emptySelection,
+    TResult Function(InvalidCoverFile<T> value)? invalidCoverFile,
+    TResult Function(InvalidCoverURL<T> value)? invalidCoverURL,
+    TResult Function(InvalidEmail<T> value)? invalidEmailAddress,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
+    TResult Function(InvalidConfirmPassword<T> value)? invalidConfirmPassword,
+    TResult Function(InvalidUniqueID<T> value)? invalidUniqueID,
+    TResult Function(InvalidUsername<T> value)? invalidUsername,
+    TResult Function(TooLongInput<T> value)? tooLongInput,
+  }) {
+    return invalidPassword?.call(this);
   }
 
   @override
@@ -1144,6 +1377,23 @@ class _$InvalidConfirmPassword<T> implements InvalidConfirmPassword<T> {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(T failedValue)? emptyInput,
+    TResult Function(T failedValue)? emptySelection,
+    TResult Function(T failureValue)? invalidCoverFile,
+    TResult Function(T failedValue)? invalidCoverURL,
+    TResult Function(T failedValue)? invalidEmailAddress,
+    TResult Function(T failedValue)? invalidPassword,
+    TResult Function(T failedValue)? invalidConfirmPassword,
+    TResult Function(T failedValue)? invalidUniqueID,
+    TResult Function(T failedValue)? invalidUsername,
+    TResult Function(T failedValue)? tooLongInput,
+  }) {
+    return invalidConfirmPassword?.call(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(T failedValue)? emptyInput,
     TResult Function(T failedValue)? emptySelection,
@@ -1179,6 +1429,23 @@ class _$InvalidConfirmPassword<T> implements InvalidConfirmPassword<T> {
     required TResult Function(TooLongInput<T> value) tooLongInput,
   }) {
     return invalidConfirmPassword(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(EmptyInput<T> value)? emptyInput,
+    TResult Function(EmptySelection<T> value)? emptySelection,
+    TResult Function(InvalidCoverFile<T> value)? invalidCoverFile,
+    TResult Function(InvalidCoverURL<T> value)? invalidCoverURL,
+    TResult Function(InvalidEmail<T> value)? invalidEmailAddress,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
+    TResult Function(InvalidConfirmPassword<T> value)? invalidConfirmPassword,
+    TResult Function(InvalidUniqueID<T> value)? invalidUniqueID,
+    TResult Function(InvalidUsername<T> value)? invalidUsername,
+    TResult Function(TooLongInput<T> value)? tooLongInput,
+  }) {
+    return invalidConfirmPassword?.call(this);
   }
 
   @override
@@ -1295,6 +1562,23 @@ class _$InvalidUniqueID<T> implements InvalidUniqueID<T> {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(T failedValue)? emptyInput,
+    TResult Function(T failedValue)? emptySelection,
+    TResult Function(T failureValue)? invalidCoverFile,
+    TResult Function(T failedValue)? invalidCoverURL,
+    TResult Function(T failedValue)? invalidEmailAddress,
+    TResult Function(T failedValue)? invalidPassword,
+    TResult Function(T failedValue)? invalidConfirmPassword,
+    TResult Function(T failedValue)? invalidUniqueID,
+    TResult Function(T failedValue)? invalidUsername,
+    TResult Function(T failedValue)? tooLongInput,
+  }) {
+    return invalidUniqueID?.call(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(T failedValue)? emptyInput,
     TResult Function(T failedValue)? emptySelection,
@@ -1330,6 +1614,23 @@ class _$InvalidUniqueID<T> implements InvalidUniqueID<T> {
     required TResult Function(TooLongInput<T> value) tooLongInput,
   }) {
     return invalidUniqueID(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(EmptyInput<T> value)? emptyInput,
+    TResult Function(EmptySelection<T> value)? emptySelection,
+    TResult Function(InvalidCoverFile<T> value)? invalidCoverFile,
+    TResult Function(InvalidCoverURL<T> value)? invalidCoverURL,
+    TResult Function(InvalidEmail<T> value)? invalidEmailAddress,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
+    TResult Function(InvalidConfirmPassword<T> value)? invalidConfirmPassword,
+    TResult Function(InvalidUniqueID<T> value)? invalidUniqueID,
+    TResult Function(InvalidUsername<T> value)? invalidUsername,
+    TResult Function(TooLongInput<T> value)? tooLongInput,
+  }) {
+    return invalidUniqueID?.call(this);
   }
 
   @override
@@ -1445,6 +1746,23 @@ class _$InvalidUsername<T> implements InvalidUsername<T> {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(T failedValue)? emptyInput,
+    TResult Function(T failedValue)? emptySelection,
+    TResult Function(T failureValue)? invalidCoverFile,
+    TResult Function(T failedValue)? invalidCoverURL,
+    TResult Function(T failedValue)? invalidEmailAddress,
+    TResult Function(T failedValue)? invalidPassword,
+    TResult Function(T failedValue)? invalidConfirmPassword,
+    TResult Function(T failedValue)? invalidUniqueID,
+    TResult Function(T failedValue)? invalidUsername,
+    TResult Function(T failedValue)? tooLongInput,
+  }) {
+    return invalidUsername?.call(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(T failedValue)? emptyInput,
     TResult Function(T failedValue)? emptySelection,
@@ -1480,6 +1798,23 @@ class _$InvalidUsername<T> implements InvalidUsername<T> {
     required TResult Function(TooLongInput<T> value) tooLongInput,
   }) {
     return invalidUsername(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(EmptyInput<T> value)? emptyInput,
+    TResult Function(EmptySelection<T> value)? emptySelection,
+    TResult Function(InvalidCoverFile<T> value)? invalidCoverFile,
+    TResult Function(InvalidCoverURL<T> value)? invalidCoverURL,
+    TResult Function(InvalidEmail<T> value)? invalidEmailAddress,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
+    TResult Function(InvalidConfirmPassword<T> value)? invalidConfirmPassword,
+    TResult Function(InvalidUniqueID<T> value)? invalidUniqueID,
+    TResult Function(InvalidUsername<T> value)? invalidUsername,
+    TResult Function(TooLongInput<T> value)? tooLongInput,
+  }) {
+    return invalidUsername?.call(this);
   }
 
   @override
@@ -1595,6 +1930,23 @@ class _$TooLongInput<T> implements TooLongInput<T> {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(T failedValue)? emptyInput,
+    TResult Function(T failedValue)? emptySelection,
+    TResult Function(T failureValue)? invalidCoverFile,
+    TResult Function(T failedValue)? invalidCoverURL,
+    TResult Function(T failedValue)? invalidEmailAddress,
+    TResult Function(T failedValue)? invalidPassword,
+    TResult Function(T failedValue)? invalidConfirmPassword,
+    TResult Function(T failedValue)? invalidUniqueID,
+    TResult Function(T failedValue)? invalidUsername,
+    TResult Function(T failedValue)? tooLongInput,
+  }) {
+    return tooLongInput?.call(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(T failedValue)? emptyInput,
     TResult Function(T failedValue)? emptySelection,
@@ -1630,6 +1982,23 @@ class _$TooLongInput<T> implements TooLongInput<T> {
     required TResult Function(TooLongInput<T> value) tooLongInput,
   }) {
     return tooLongInput(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(EmptyInput<T> value)? emptyInput,
+    TResult Function(EmptySelection<T> value)? emptySelection,
+    TResult Function(InvalidCoverFile<T> value)? invalidCoverFile,
+    TResult Function(InvalidCoverURL<T> value)? invalidCoverURL,
+    TResult Function(InvalidEmail<T> value)? invalidEmailAddress,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
+    TResult Function(InvalidConfirmPassword<T> value)? invalidConfirmPassword,
+    TResult Function(InvalidUniqueID<T> value)? invalidUniqueID,
+    TResult Function(InvalidUsername<T> value)? invalidUsername,
+    TResult Function(TooLongInput<T> value)? tooLongInput,
+  }) {
+    return tooLongInput?.call(this);
   }
 
   @override

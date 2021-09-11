@@ -141,13 +141,13 @@ class AppRouter extends _i1.RootStackRouter {
       ];
 }
 
-class HomeRoute extends _i1.PageRouteInfo {
+class HomeRoute extends _i1.PageRouteInfo<void> {
   const HomeRoute() : super(name, path: '/');
 
   static const String name = 'HomeRoute';
 }
 
-class LibraryRoute extends _i1.PageRouteInfo {
+class LibraryRoute extends _i1.PageRouteInfo<void> {
   const LibraryRoute() : super(name, path: '/library');
 
   static const String name = 'LibraryRoute';
@@ -170,19 +170,19 @@ class LogInRouteArgs {
   final _i1.PageRouteInfo<dynamic> navigateTo;
 }
 
-class OnboardingRoute extends _i1.PageRouteInfo {
+class OnboardingRoute extends _i1.PageRouteInfo<void> {
   const OnboardingRoute() : super(name, path: '/onboarding');
 
   static const String name = 'OnboardingRoute';
 }
 
-class PlusRoute extends _i1.PageRouteInfo {
+class PlusRoute extends _i1.PageRouteInfo<void> {
   const PlusRoute() : super(name, path: '/plus');
 
   static const String name = 'PlusRoute';
 }
 
-class SettingsWrapper extends _i1.PageRouteInfo {
+class SettingsWrapper extends _i1.PageRouteInfo<void> {
   const SettingsWrapper({List<_i1.PageRouteInfo>? children})
       : super(name, path: '/settings', initialChildren: children);
 
@@ -206,32 +206,32 @@ class SignUpRouteArgs {
   final _i1.PageRouteInfo<dynamic> navigateTo;
 }
 
-class TypewriterWrapper extends _i1.PageRouteInfo {
+class TypewriterWrapper extends _i1.PageRouteInfo<void> {
   const TypewriterWrapper({List<_i1.PageRouteInfo>? children})
       : super(name, path: '/typewriter', initialChildren: children);
 
   static const String name = 'TypewriterWrapper';
 }
 
-class SettingsAccountRoute extends _i1.PageRouteInfo {
+class SettingsAccountRoute extends _i1.PageRouteInfo<void> {
   const SettingsAccountRoute() : super(name, path: 'account');
 
   static const String name = 'SettingsAccountRoute';
 }
 
-class SettingsChapterRoute extends _i1.PageRouteInfo {
+class SettingsChapterRoute extends _i1.PageRouteInfo<void> {
   const SettingsChapterRoute() : super(name, path: 'chapter');
 
   static const String name = 'SettingsChapterRoute';
 }
 
-class SettingsSeriesRoute extends _i1.PageRouteInfo {
+class SettingsSeriesRoute extends _i1.PageRouteInfo<void> {
   const SettingsSeriesRoute() : super(name, path: 'series');
 
   static const String name = 'SettingsSeriesRoute';
 }
 
-class SettingsRoute extends _i1.PageRouteInfo {
+class SettingsRoute extends _i1.PageRouteInfo<void> {
   const SettingsRoute() : super(name, path: '');
 
   static const String name = 'SettingsRoute';
@@ -261,7 +261,7 @@ class TypewriterSeriesIDRouteArgs {
   final _i17.Series? series;
 }
 
-class TypewriterSeriesNewRoute extends _i1.PageRouteInfo {
+class TypewriterSeriesNewRoute extends _i1.PageRouteInfo<void> {
   const TypewriterSeriesNewRoute() : super(name, path: 'series/new');
 
   static const String name = 'TypewriterSeriesNewRoute';
