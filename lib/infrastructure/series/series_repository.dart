@@ -1,12 +1,15 @@
 import 'dart:io';
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:injectable/injectable.dart';
 import 'package:path/path.dart' as p;
 import 'package:rustic/result.dart';
 import 'package:rustic/tuple.dart';
+import 'package:string_validator/string_validator.dart';
 import 'package:wine/domain/core/unique_id.dart';
 import 'package:wine/domain/series/i_series_repository.dart';
+import 'package:wine/domain/series/series.dart';
 import 'package:wine/domain/series/series_failure.dart';
 import 'package:wine/utils/paths/storage.dart';
 
@@ -17,9 +20,17 @@ import 'package:wine/utils/paths/storage.dart';
 )
 class SeriesRepository implements ISeriesRepository {
   /// @nodoc
-  SeriesRepository(this._firebaseStorage);
+  SeriesRepository(this._firestore, this._firebaseStorage);
+
+  final FirebaseFirestore _firestore;
 
   final FirebaseStorage _firebaseStorage;
+
+  @override
+  Future<Result<Unit, SeriesFailure>> publishSeries(Series series) async {
+    // TODO: implement unpublishSeries
+    throw UnimplementedError();
+  }
 
   @override
   Future<Result<Unit, SeriesFailure>> unpublishSeries(UniqueID uid) {
