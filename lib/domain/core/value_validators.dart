@@ -21,13 +21,13 @@ Result<String, ValueFailure<String>> validateConfirmPassword(
 }
 
 /// @nodoc
-Result<File, ValueFailure<File>> validateCoverFile(File file) {
-  final isImage = file.path.isImage;
+Result<String, ValueFailure<String>> validateCoverFile(String path) {
+  final isImage = path.isImage;
 
-  if (isImage != null && isImage && file.existsSync()) {
-    return Ok(file);
+  if (isImage != null && isImage && File(path).existsSync()) {
+    return Ok(path);
   }
-  return Err(ValueFailure.invalidCoverFile(file));
+  return Err(ValueFailure.invalidCoverFile(path));
 }
 
 /// @nodoc
