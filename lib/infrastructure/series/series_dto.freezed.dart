@@ -30,11 +30,11 @@ class _$SeriesDTOTearOff {
       required bool isPublished,
       required String language,
       required int likesCount,
-      @ServerTimestampConverter() required FieldValue serverTimeStamp,
       String? subtitle,
       required String summary,
       required String title,
       required String uid,
+      @ServerTimestampConverter() required FieldValue updatedAt,
       required int viewsCount}) {
     return _SeriesDTO(
       authorUID: authorUID,
@@ -45,11 +45,11 @@ class _$SeriesDTOTearOff {
       isPublished: isPublished,
       language: language,
       likesCount: likesCount,
-      serverTimeStamp: serverTimeStamp,
       subtitle: subtitle,
       summary: summary,
       title: title,
       uid: uid,
+      updatedAt: updatedAt,
       viewsCount: viewsCount,
     );
   }
@@ -72,12 +72,12 @@ mixin _$SeriesDTO {
   bool get isPublished => throw _privateConstructorUsedError;
   String get language => throw _privateConstructorUsedError;
   int get likesCount => throw _privateConstructorUsedError;
-  @ServerTimestampConverter()
-  FieldValue get serverTimeStamp => throw _privateConstructorUsedError;
   String? get subtitle => throw _privateConstructorUsedError;
   String get summary => throw _privateConstructorUsedError;
   String get title => throw _privateConstructorUsedError;
   String get uid => throw _privateConstructorUsedError;
+  @ServerTimestampConverter()
+  FieldValue get updatedAt => throw _privateConstructorUsedError;
   int get viewsCount => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
@@ -99,11 +99,11 @@ abstract class $SeriesDTOCopyWith<$Res> {
       bool isPublished,
       String language,
       int likesCount,
-      @ServerTimestampConverter() FieldValue serverTimeStamp,
       String? subtitle,
       String summary,
       String title,
       String uid,
+      @ServerTimestampConverter() FieldValue updatedAt,
       int viewsCount});
 }
 
@@ -125,11 +125,11 @@ class _$SeriesDTOCopyWithImpl<$Res> implements $SeriesDTOCopyWith<$Res> {
     Object? isPublished = freezed,
     Object? language = freezed,
     Object? likesCount = freezed,
-    Object? serverTimeStamp = freezed,
     Object? subtitle = freezed,
     Object? summary = freezed,
     Object? title = freezed,
     Object? uid = freezed,
+    Object? updatedAt = freezed,
     Object? viewsCount = freezed,
   }) {
     return _then(_value.copyWith(
@@ -165,10 +165,6 @@ class _$SeriesDTOCopyWithImpl<$Res> implements $SeriesDTOCopyWith<$Res> {
           ? _value.likesCount
           : likesCount // ignore: cast_nullable_to_non_nullable
               as int,
-      serverTimeStamp: serverTimeStamp == freezed
-          ? _value.serverTimeStamp
-          : serverTimeStamp // ignore: cast_nullable_to_non_nullable
-              as FieldValue,
       subtitle: subtitle == freezed
           ? _value.subtitle
           : subtitle // ignore: cast_nullable_to_non_nullable
@@ -185,6 +181,10 @@ class _$SeriesDTOCopyWithImpl<$Res> implements $SeriesDTOCopyWith<$Res> {
           ? _value.uid
           : uid // ignore: cast_nullable_to_non_nullable
               as String,
+      updatedAt: updatedAt == freezed
+          ? _value.updatedAt
+          : updatedAt // ignore: cast_nullable_to_non_nullable
+              as FieldValue,
       viewsCount: viewsCount == freezed
           ? _value.viewsCount
           : viewsCount // ignore: cast_nullable_to_non_nullable
@@ -208,11 +208,11 @@ abstract class _$SeriesDTOCopyWith<$Res> implements $SeriesDTOCopyWith<$Res> {
       bool isPublished,
       String language,
       int likesCount,
-      @ServerTimestampConverter() FieldValue serverTimeStamp,
       String? subtitle,
       String summary,
       String title,
       String uid,
+      @ServerTimestampConverter() FieldValue updatedAt,
       int viewsCount});
 }
 
@@ -235,11 +235,11 @@ class __$SeriesDTOCopyWithImpl<$Res> extends _$SeriesDTOCopyWithImpl<$Res>
     Object? isPublished = freezed,
     Object? language = freezed,
     Object? likesCount = freezed,
-    Object? serverTimeStamp = freezed,
     Object? subtitle = freezed,
     Object? summary = freezed,
     Object? title = freezed,
     Object? uid = freezed,
+    Object? updatedAt = freezed,
     Object? viewsCount = freezed,
   }) {
     return _then(_SeriesDTO(
@@ -275,10 +275,6 @@ class __$SeriesDTOCopyWithImpl<$Res> extends _$SeriesDTOCopyWithImpl<$Res>
           ? _value.likesCount
           : likesCount // ignore: cast_nullable_to_non_nullable
               as int,
-      serverTimeStamp: serverTimeStamp == freezed
-          ? _value.serverTimeStamp
-          : serverTimeStamp // ignore: cast_nullable_to_non_nullable
-              as FieldValue,
       subtitle: subtitle == freezed
           ? _value.subtitle
           : subtitle // ignore: cast_nullable_to_non_nullable
@@ -295,6 +291,10 @@ class __$SeriesDTOCopyWithImpl<$Res> extends _$SeriesDTOCopyWithImpl<$Res>
           ? _value.uid
           : uid // ignore: cast_nullable_to_non_nullable
               as String,
+      updatedAt: updatedAt == freezed
+          ? _value.updatedAt
+          : updatedAt // ignore: cast_nullable_to_non_nullable
+              as FieldValue,
       viewsCount: viewsCount == freezed
           ? _value.viewsCount
           : viewsCount // ignore: cast_nullable_to_non_nullable
@@ -315,11 +315,11 @@ class _$_SeriesDTO implements _SeriesDTO {
       required this.isPublished,
       required this.language,
       required this.likesCount,
-      @ServerTimestampConverter() required this.serverTimeStamp,
       this.subtitle,
       required this.summary,
       required this.title,
       required this.uid,
+      @ServerTimestampConverter() required this.updatedAt,
       required this.viewsCount});
 
   factory _$_SeriesDTO.fromJson(Map<String, dynamic> json) =>
@@ -342,9 +342,6 @@ class _$_SeriesDTO implements _SeriesDTO {
   @override
   final int likesCount;
   @override
-  @ServerTimestampConverter()
-  final FieldValue serverTimeStamp;
-  @override
   final String? subtitle;
   @override
   final String summary;
@@ -353,11 +350,14 @@ class _$_SeriesDTO implements _SeriesDTO {
   @override
   final String uid;
   @override
+  @ServerTimestampConverter()
+  final FieldValue updatedAt;
+  @override
   final int viewsCount;
 
   @override
   String toString() {
-    return 'SeriesDTO(authorUID: $authorUID, bookmarksCount: $bookmarksCount, coverURL: $coverURL, genres: $genres, isNSFW: $isNSFW, isPublished: $isPublished, language: $language, likesCount: $likesCount, serverTimeStamp: $serverTimeStamp, subtitle: $subtitle, summary: $summary, title: $title, uid: $uid, viewsCount: $viewsCount)';
+    return 'SeriesDTO(authorUID: $authorUID, bookmarksCount: $bookmarksCount, coverURL: $coverURL, genres: $genres, isNSFW: $isNSFW, isPublished: $isPublished, language: $language, likesCount: $likesCount, subtitle: $subtitle, summary: $summary, title: $title, uid: $uid, updatedAt: $updatedAt, viewsCount: $viewsCount)';
   }
 
   @override
@@ -386,9 +386,6 @@ class _$_SeriesDTO implements _SeriesDTO {
             (identical(other.likesCount, likesCount) ||
                 const DeepCollectionEquality()
                     .equals(other.likesCount, likesCount)) &&
-            (identical(other.serverTimeStamp, serverTimeStamp) ||
-                const DeepCollectionEquality()
-                    .equals(other.serverTimeStamp, serverTimeStamp)) &&
             (identical(other.subtitle, subtitle) ||
                 const DeepCollectionEquality()
                     .equals(other.subtitle, subtitle)) &&
@@ -399,6 +396,9 @@ class _$_SeriesDTO implements _SeriesDTO {
                 const DeepCollectionEquality().equals(other.title, title)) &&
             (identical(other.uid, uid) ||
                 const DeepCollectionEquality().equals(other.uid, uid)) &&
+            (identical(other.updatedAt, updatedAt) ||
+                const DeepCollectionEquality()
+                    .equals(other.updatedAt, updatedAt)) &&
             (identical(other.viewsCount, viewsCount) ||
                 const DeepCollectionEquality()
                     .equals(other.viewsCount, viewsCount)));
@@ -415,11 +415,11 @@ class _$_SeriesDTO implements _SeriesDTO {
       const DeepCollectionEquality().hash(isPublished) ^
       const DeepCollectionEquality().hash(language) ^
       const DeepCollectionEquality().hash(likesCount) ^
-      const DeepCollectionEquality().hash(serverTimeStamp) ^
       const DeepCollectionEquality().hash(subtitle) ^
       const DeepCollectionEquality().hash(summary) ^
       const DeepCollectionEquality().hash(title) ^
       const DeepCollectionEquality().hash(uid) ^
+      const DeepCollectionEquality().hash(updatedAt) ^
       const DeepCollectionEquality().hash(viewsCount);
 
   @JsonKey(ignore: true)
@@ -443,11 +443,11 @@ abstract class _SeriesDTO implements SeriesDTO {
       required bool isPublished,
       required String language,
       required int likesCount,
-      @ServerTimestampConverter() required FieldValue serverTimeStamp,
       String? subtitle,
       required String summary,
       required String title,
       required String uid,
+      @ServerTimestampConverter() required FieldValue updatedAt,
       required int viewsCount}) = _$_SeriesDTO;
 
   factory _SeriesDTO.fromJson(Map<String, dynamic> json) =
@@ -470,9 +470,6 @@ abstract class _SeriesDTO implements SeriesDTO {
   @override
   int get likesCount => throw _privateConstructorUsedError;
   @override
-  @ServerTimestampConverter()
-  FieldValue get serverTimeStamp => throw _privateConstructorUsedError;
-  @override
   String? get subtitle => throw _privateConstructorUsedError;
   @override
   String get summary => throw _privateConstructorUsedError;
@@ -480,6 +477,9 @@ abstract class _SeriesDTO implements SeriesDTO {
   String get title => throw _privateConstructorUsedError;
   @override
   String get uid => throw _privateConstructorUsedError;
+  @override
+  @ServerTimestampConverter()
+  FieldValue get updatedAt => throw _privateConstructorUsedError;
   @override
   int get viewsCount => throw _privateConstructorUsedError;
   @override

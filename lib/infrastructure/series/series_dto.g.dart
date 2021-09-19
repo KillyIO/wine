@@ -16,12 +16,12 @@ _$_SeriesDTO _$$_SeriesDTOFromJson(Map<String, dynamic> json) => _$_SeriesDTO(
       isPublished: json['isPublished'] as bool,
       language: json['language'] as String,
       likesCount: json['likesCount'] as int,
-      serverTimeStamp: const ServerTimestampConverter()
-          .fromJson(json['serverTimeStamp'] as Object),
       subtitle: json['subtitle'] as String?,
       summary: json['summary'] as String,
       title: json['title'] as String,
       uid: json['uid'] as String,
+      updatedAt: const ServerTimestampConverter()
+          .fromJson(json['updatedAt'] as Object),
       viewsCount: json['viewsCount'] as int,
     );
 
@@ -35,11 +35,10 @@ Map<String, dynamic> _$$_SeriesDTOToJson(_$_SeriesDTO instance) =>
       'isPublished': instance.isPublished,
       'language': instance.language,
       'likesCount': instance.likesCount,
-      'serverTimeStamp':
-          const ServerTimestampConverter().toJson(instance.serverTimeStamp),
       'subtitle': instance.subtitle,
       'summary': instance.summary,
       'title': instance.title,
       'uid': instance.uid,
+      'updatedAt': const ServerTimestampConverter().toJson(instance.updatedAt),
       'viewsCount': instance.viewsCount,
     };

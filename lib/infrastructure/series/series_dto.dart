@@ -26,13 +26,33 @@ class SeriesDTO with _$SeriesDTO {
     required bool isPublished,
     required String language,
     required int likesCount,
-    @ServerTimestampConverter() required FieldValue serverTimeStamp,
     String? subtitle,
     required String summary,
     required String title,
     required String uid,
+    @ServerTimestampConverter() required FieldValue updatedAt,
     required int viewsCount,
   }) = _SeriesDTO;
+
+  /// @nodoc
+  factory SeriesDTO.fromDomain(Series series) {
+    return SeriesDTO(
+      authorUID: series.authorUID.getOrCrash(),
+      bookmarksCount: series.bookmarksCount,
+      coverURL: series.coverURL.getOrCrash(),
+      genres: series.genres.map((g) => g.getOrCrash()).toList(),
+      isNSFW: series.isNSFW,
+      isPublished: series.isPublished,
+      language: series.language.getOrCrash(),
+      likesCount: series.likesCount,
+      subtitle: series.subtitle?.getOrCrash(),
+      summary: series.summary.getOrCrash(),
+      title: series.title.getOrCrash(),
+      uid: series.uid.getOrCrash(),
+      updatedAt: FieldValue.serverTimestamp(),
+      viewsCount: series.viewsCount,
+    );
+  }
 
   /// @nodoc
   factory SeriesDTO.fromJson(Map<String, dynamic> json) =>
