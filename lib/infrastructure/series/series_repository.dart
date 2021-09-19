@@ -7,10 +7,13 @@ import 'package:path/path.dart' as p;
 import 'package:rustic/result.dart';
 import 'package:rustic/tuple.dart';
 import 'package:string_validator/string_validator.dart';
+import 'package:wine/domain/core/cover_url.dart';
 import 'package:wine/domain/core/unique_id.dart';
 import 'package:wine/domain/series/i_series_repository.dart';
 import 'package:wine/domain/series/series.dart';
 import 'package:wine/domain/series/series_failure.dart';
+import 'package:wine/infrastructure/series/series_dto.dart';
+import 'package:wine/utils/paths/series.dart';
 import 'package:wine/utils/paths/storage.dart';
 
 /// @nodoc
@@ -28,14 +31,43 @@ class SeriesRepository implements ISeriesRepository {
 
   @override
   Future<Result<Unit, SeriesFailure>> publishSeries(Series series) async {
-    // TODO: implement unpublishSeries
-    throw UnimplementedError();
+    try {
+      final coverURL = series.coverURL.getOrCrash();
+
+      if (!isURL(coverURL)) {
+        (await uploadCover(File(coverURL))).match(
+          (success) {
+            series = series.copyWith(coverURL: CoverURL(success));
+          },
+          (_) {},
+        );
+      }
+
+      await _firestore
+          .collection(seriesPath)
+          .doc(series.uid.getOrCrash())
+          .set(SeriesDTO.fromDomain(series).toJson());
+
+      return const Ok(Unit());
+    } catch (_) {
+      return const Err(SeriesFailure.unexpected());
+    }
   }
 
   @override
-  Future<Result<Unit, SeriesFailure>> unpublishSeries(UniqueID uid) {
-    // TODO: implement unpublishSeries
-    throw UnimplementedError();
+  Future<Result<Unit, SeriesFailure>> unpublishSeries(UniqueID uid) async {
+    try {
+      final uidStr = uid.getOrCrash();
+
+      await _firestore
+          .collection(seriesPath)
+          .doc(uidStr)
+          .update({'published': false});
+
+      return const Ok(Unit());
+    } catch (_) {
+      return const Err(SeriesFailure.unexpected());
+    }
   }
 
   @override
