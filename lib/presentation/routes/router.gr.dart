@@ -33,89 +33,72 @@ class AppRouter extends _i1.RootStackRouter {
 
   @override
   final Map<String, _i1.PageFactory> pagesMap = {
-    HomeRoute.name: (routeData) => _i1.AdaptivePage<_i3.HomePage>(
-        routeData: routeData,
-        builder: (_) {
-          return const _i3.HomePage();
-        }),
-    LibraryRoute.name: (routeData) => _i1.AdaptivePage<_i4.LibraryPage>(
-        routeData: routeData,
-        builder: (_) {
-          return const _i4.LibraryPage();
-        }),
-    LogInRoute.name: (routeData) => _i1.AdaptivePage<_i5.LogInPage>(
-        routeData: routeData,
-        builder: (data) {
-          final args = data.argsAs<LogInRouteArgs>();
-          return _i5.LogInPage(key: args.key, navigateTo: args.navigateTo);
-        }),
-    OnboardingRoute.name: (routeData) => _i1.AdaptivePage<_i6.OnboardingPage>(
-        routeData: routeData,
-        builder: (_) {
-          return const _i6.OnboardingPage();
-        }),
-    PlusRoute.name: (routeData) => _i1.AdaptivePage<_i7.PlusPage>(
-        routeData: routeData,
-        builder: (_) {
-          return const _i7.PlusPage();
-        }),
-    SettingsWrapper.name: (routeData) => _i1.AdaptivePage<_i8.SettingsWrapper>(
-        routeData: routeData,
-        builder: (_) {
-          return const _i8.SettingsWrapper();
-        }),
-    SignUpRoute.name: (routeData) => _i1.AdaptivePage<_i9.SignUpPage>(
-        routeData: routeData,
-        builder: (data) {
-          final args = data.argsAs<SignUpRouteArgs>();
-          return _i9.SignUpPage(key: args.key, navigateTo: args.navigateTo);
-        }),
-    TypewriterWrapper.name: (routeData) =>
-        _i1.AdaptivePage<_i10.TypewriterWrapper>(
-            routeData: routeData,
-            builder: (_) {
-              return const _i10.TypewriterWrapper();
-            }),
-    SettingsAccountRoute.name: (routeData) =>
-        _i1.AdaptivePage<_i11.SettingsAccountPage>(
-            routeData: routeData,
-            builder: (_) {
-              return const _i11.SettingsAccountPage();
-            }),
-    SettingsChapterRoute.name: (routeData) =>
-        _i1.AdaptivePage<_i12.SettingsChapterPage>(
-            routeData: routeData,
-            builder: (_) {
-              return const _i12.SettingsChapterPage();
-            }),
-    SettingsSeriesRoute.name: (routeData) =>
-        _i1.AdaptivePage<_i13.SettingsSeriesPage>(
-            routeData: routeData,
-            builder: (_) {
-              return const _i13.SettingsSeriesPage();
-            }),
-    SettingsRoute.name: (routeData) => _i1.AdaptivePage<_i14.SettingsPage>(
-        routeData: routeData,
-        builder: (_) {
-          return const _i14.SettingsPage();
-        }),
-    TypewriterSeriesIDRoute.name: (routeData) =>
-        _i1.AdaptivePage<_i15.TypewriterSeriesIDPage>(
-            routeData: routeData,
-            builder: (data) {
-              final pathParams = data.pathParams;
-              final args = data.argsAs<TypewriterSeriesIDRouteArgs>(
-                  orElse: () => TypewriterSeriesIDRouteArgs(
-                      seriesId: pathParams.getString('id')));
-              return _i15.TypewriterSeriesIDPage(
-                  key: args.key, seriesId: args.seriesId, series: args.series);
-            }),
-    TypewriterSeriesNewRoute.name: (routeData) =>
-        _i1.AdaptivePage<_i16.TypewriterSeriesNewPage>(
-            routeData: routeData,
-            builder: (_) {
-              return const _i16.TypewriterSeriesNewPage();
-            })
+    HomeRoute.name: (routeData) {
+      return _i1.AdaptivePage<_i3.HomePage>(
+          routeData: routeData, child: const _i3.HomePage());
+    },
+    LibraryRoute.name: (routeData) {
+      return _i1.AdaptivePage<_i4.LibraryPage>(
+          routeData: routeData, child: const _i4.LibraryPage());
+    },
+    LogInRoute.name: (routeData) {
+      final args = routeData.argsAs<LogInRouteArgs>();
+      return _i1.AdaptivePage<_i5.LogInPage>(
+          routeData: routeData,
+          child: _i5.LogInPage(key: args.key, navigateTo: args.navigateTo));
+    },
+    OnboardingRoute.name: (routeData) {
+      return _i1.AdaptivePage<_i6.OnboardingPage>(
+          routeData: routeData, child: const _i6.OnboardingPage());
+    },
+    PlusRoute.name: (routeData) {
+      return _i1.AdaptivePage<_i7.PlusPage>(
+          routeData: routeData, child: const _i7.PlusPage());
+    },
+    SettingsWrapper.name: (routeData) {
+      return _i1.AdaptivePage<_i8.SettingsWrapper>(
+          routeData: routeData, child: const _i8.SettingsWrapper());
+    },
+    SignUpRoute.name: (routeData) {
+      final args = routeData.argsAs<SignUpRouteArgs>();
+      return _i1.AdaptivePage<_i9.SignUpPage>(
+          routeData: routeData,
+          child: _i9.SignUpPage(key: args.key, navigateTo: args.navigateTo));
+    },
+    TypewriterWrapper.name: (routeData) {
+      return _i1.AdaptivePage<_i10.TypewriterWrapper>(
+          routeData: routeData, child: const _i10.TypewriterWrapper());
+    },
+    SettingsAccountRoute.name: (routeData) {
+      return _i1.AdaptivePage<_i11.SettingsAccountPage>(
+          routeData: routeData, child: const _i11.SettingsAccountPage());
+    },
+    SettingsChapterRoute.name: (routeData) {
+      return _i1.AdaptivePage<_i12.SettingsChapterPage>(
+          routeData: routeData, child: const _i12.SettingsChapterPage());
+    },
+    SettingsSeriesRoute.name: (routeData) {
+      return _i1.AdaptivePage<_i13.SettingsSeriesPage>(
+          routeData: routeData, child: const _i13.SettingsSeriesPage());
+    },
+    SettingsRoute.name: (routeData) {
+      return _i1.AdaptivePage<_i14.SettingsPage>(
+          routeData: routeData, child: const _i14.SettingsPage());
+    },
+    TypewriterSeriesIDRoute.name: (routeData) {
+      final pathParams = routeData.pathParams;
+      final args = routeData.argsAs<TypewriterSeriesIDRouteArgs>(
+          orElse: () => TypewriterSeriesIDRouteArgs(
+              seriesId: pathParams.getString('id')));
+      return _i1.AdaptivePage<_i15.TypewriterSeriesIDPage>(
+          routeData: routeData,
+          child: _i15.TypewriterSeriesIDPage(
+              key: args.key, seriesId: args.seriesId, series: args.series));
+    },
+    TypewriterSeriesNewRoute.name: (routeData) {
+      return _i1.AdaptivePage<_i16.TypewriterSeriesNewPage>(
+          routeData: routeData, child: const _i16.TypewriterSeriesNewPage());
+    }
   };
 
   @override
