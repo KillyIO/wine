@@ -20,6 +20,7 @@ class TypewriterSeriesState with _$TypewriterSeriesState {
     required Title title,
     required TextEditingController titleController,
     required int titleWordCount,
+    required User user,
   }) = _TypewriterSeriesState;
 
   /// @nodoc
@@ -39,5 +40,10 @@ class TypewriterSeriesState with _$TypewriterSeriesState {
         title: Title(''),
         titleController: TextEditingController(),
         titleWordCount: 0,
+        user: User(
+          emailAddress: EmailAddress(defaultEmailAddress),
+          uid: UniqueID.fromUniqueString(defaultUID),
+          username: Username(defaultUsername),
+        ),
       );
 }

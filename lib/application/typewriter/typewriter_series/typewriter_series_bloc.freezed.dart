@@ -1990,7 +1990,8 @@ class _$TypewriterSeriesStateTearOff {
       required int summaryWordCount,
       required Title title,
       required TextEditingController titleController,
-      required int titleWordCount}) {
+      required int titleWordCount,
+      required User user}) {
     return _TypewriterSeriesState(
       coverURL: coverURL,
       failureOption: failureOption,
@@ -2007,6 +2008,7 @@ class _$TypewriterSeriesStateTearOff {
       title: title,
       titleController: titleController,
       titleWordCount: titleWordCount,
+      user: user,
     );
   }
 }
@@ -2035,6 +2037,7 @@ mixin _$TypewriterSeriesState {
   TextEditingController get titleController =>
       throw _privateConstructorUsedError;
   int get titleWordCount => throw _privateConstructorUsedError;
+  User get user => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $TypewriterSeriesStateCopyWith<TypewriterSeriesState> get copyWith =>
@@ -2061,7 +2064,10 @@ abstract class $TypewriterSeriesStateCopyWith<$Res> {
       int summaryWordCount,
       Title title,
       TextEditingController titleController,
-      int titleWordCount});
+      int titleWordCount,
+      User user});
+
+  $UserCopyWith<$Res> get user;
 }
 
 /// @nodoc
@@ -2090,6 +2096,7 @@ class _$TypewriterSeriesStateCopyWithImpl<$Res>
     Object? title = freezed,
     Object? titleController = freezed,
     Object? titleWordCount = freezed,
+    Object? user = freezed,
   }) {
     return _then(_value.copyWith(
       coverURL: coverURL == freezed
@@ -2152,7 +2159,18 @@ class _$TypewriterSeriesStateCopyWithImpl<$Res>
           ? _value.titleWordCount
           : titleWordCount // ignore: cast_nullable_to_non_nullable
               as int,
+      user: user == freezed
+          ? _value.user
+          : user // ignore: cast_nullable_to_non_nullable
+              as User,
     ));
+  }
+
+  @override
+  $UserCopyWith<$Res> get user {
+    return $UserCopyWith<$Res>(_value.user, (value) {
+      return _then(_value.copyWith(user: value));
+    });
   }
 }
 
@@ -2178,7 +2196,11 @@ abstract class _$TypewriterSeriesStateCopyWith<$Res>
       int summaryWordCount,
       Title title,
       TextEditingController titleController,
-      int titleWordCount});
+      int titleWordCount,
+      User user});
+
+  @override
+  $UserCopyWith<$Res> get user;
 }
 
 /// @nodoc
@@ -2209,6 +2231,7 @@ class __$TypewriterSeriesStateCopyWithImpl<$Res>
     Object? title = freezed,
     Object? titleController = freezed,
     Object? titleWordCount = freezed,
+    Object? user = freezed,
   }) {
     return _then(_TypewriterSeriesState(
       coverURL: coverURL == freezed
@@ -2271,6 +2294,10 @@ class __$TypewriterSeriesStateCopyWithImpl<$Res>
           ? _value.titleWordCount
           : titleWordCount // ignore: cast_nullable_to_non_nullable
               as int,
+      user: user == freezed
+          ? _value.user
+          : user // ignore: cast_nullable_to_non_nullable
+              as User,
     ));
   }
 }
@@ -2293,7 +2320,8 @@ class _$_TypewriterSeriesState implements _TypewriterSeriesState {
       required this.summaryWordCount,
       required this.title,
       required this.titleController,
-      required this.titleWordCount});
+      required this.titleWordCount,
+      required this.user});
 
   @override
   final String coverURL;
@@ -2325,10 +2353,12 @@ class _$_TypewriterSeriesState implements _TypewriterSeriesState {
   final TextEditingController titleController;
   @override
   final int titleWordCount;
+  @override
+  final User user;
 
   @override
   String toString() {
-    return 'TypewriterSeriesState(coverURL: $coverURL, failureOption: $failureOption, genres: $genres, isProcessing: $isProcessing, isNSFW: $isNSFW, language: $language, subtitle: $subtitle, subtitleController: $subtitleController, subtitleWordCount: $subtitleWordCount, summary: $summary, summaryController: $summaryController, summaryWordCount: $summaryWordCount, title: $title, titleController: $titleController, titleWordCount: $titleWordCount)';
+    return 'TypewriterSeriesState(coverURL: $coverURL, failureOption: $failureOption, genres: $genres, isProcessing: $isProcessing, isNSFW: $isNSFW, language: $language, subtitle: $subtitle, subtitleController: $subtitleController, subtitleWordCount: $subtitleWordCount, summary: $summary, summaryController: $summaryController, summaryWordCount: $summaryWordCount, title: $title, titleController: $titleController, titleWordCount: $titleWordCount, user: $user)';
   }
 
   @override
@@ -2376,7 +2406,9 @@ class _$_TypewriterSeriesState implements _TypewriterSeriesState {
                     .equals(other.titleController, titleController)) &&
             (identical(other.titleWordCount, titleWordCount) ||
                 const DeepCollectionEquality()
-                    .equals(other.titleWordCount, titleWordCount)));
+                    .equals(other.titleWordCount, titleWordCount)) &&
+            (identical(other.user, user) ||
+                const DeepCollectionEquality().equals(other.user, user)));
   }
 
   @override
@@ -2396,7 +2428,8 @@ class _$_TypewriterSeriesState implements _TypewriterSeriesState {
       const DeepCollectionEquality().hash(summaryWordCount) ^
       const DeepCollectionEquality().hash(title) ^
       const DeepCollectionEquality().hash(titleController) ^
-      const DeepCollectionEquality().hash(titleWordCount);
+      const DeepCollectionEquality().hash(titleWordCount) ^
+      const DeepCollectionEquality().hash(user);
 
   @JsonKey(ignore: true)
   @override
@@ -2421,7 +2454,8 @@ abstract class _TypewriterSeriesState implements TypewriterSeriesState {
       required int summaryWordCount,
       required Title title,
       required TextEditingController titleController,
-      required int titleWordCount}) = _$_TypewriterSeriesState;
+      required int titleWordCount,
+      required User user}) = _$_TypewriterSeriesState;
 
   @override
   String get coverURL => throw _privateConstructorUsedError;
@@ -2457,6 +2491,8 @@ abstract class _TypewriterSeriesState implements TypewriterSeriesState {
       throw _privateConstructorUsedError;
   @override
   int get titleWordCount => throw _privateConstructorUsedError;
+  @override
+  User get user => throw _privateConstructorUsedError;
   @override
   @JsonKey(ignore: true)
   _$TypewriterSeriesStateCopyWith<_TypewriterSeriesState> get copyWith =>

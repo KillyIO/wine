@@ -9,6 +9,7 @@ import 'package:wine/presentation/settings/settings_chapter/settings_chapter_pag
 import 'package:wine/presentation/settings/settings_page.dart';
 import 'package:wine/presentation/settings/settings_series/settings_series_page.dart';
 import 'package:wine/presentation/sign_up/sign_up_page.dart';
+import 'package:wine/presentation/typewriter/typewriter_page.dart';
 import 'package:wine/presentation/typewriter/typewriter_series/typewriter_series_id_page.dart';
 import 'package:wine/presentation/typewriter/typewriter_series/typewriter_series_new_page.dart';
 import 'package:wine/presentation/wrappers/settings_wrapper.dart';
@@ -67,23 +68,15 @@ export 'router.gr.dart';
       page: SignUpPage,
       path: signUpPath,
     ),
-    AutoRoute<TypewriterWrapper>(
-      page: TypewriterWrapper,
-      path: typewriterPath,
-      children: <AutoRoute>[
-        AutoRoute<TypewriterSeriesIDPage>(
-          page: TypewriterSeriesIDPage,
-          path: typewriterSeriesIDPath,
-        ),
-        AutoRoute<TypewriterSeriesNewPage>(
-          page: TypewriterSeriesNewPage,
-          path: typewriterSeriesNewPath,
-        ),
-        RedirectRoute(
-          path: '',
-          redirectTo: typewriterSeriesNewPath,
-        ),
-      ],
+    AutoRoute<TypewriterPage>(
+      name: 'TypewriterSeriesId',
+      page: TypewriterPage,
+      path: '$typewriterPath$typewriterSeriesIDPath',
+    ),
+    AutoRoute<TypewriterPage>(
+      name: 'TypewriterSeriesNew',
+      page: TypewriterPage,
+      path: '$typewriterPath$typewriterSeriesNewPath',
     ),
   ],
 )

@@ -5,6 +5,8 @@ import 'package:injectable/injectable.dart';
 import 'package:rustic/option.dart';
 import 'package:rustic/result.dart';
 import 'package:stringr/stringr.dart';
+import 'package:wine/domain/auth/email_address.dart';
+import 'package:wine/domain/auth/username.dart';
 
 import 'package:wine/domain/core/core_failure.dart';
 import 'package:wine/domain/core/genre.dart';
@@ -15,6 +17,8 @@ import 'package:wine/domain/series/series.dart';
 import 'package:wine/domain/series/subtitle.dart';
 import 'package:wine/domain/series/summary.dart';
 import 'package:wine/domain/sessions/i_sessions_repository.dart';
+import 'package:wine/domain/user/user.dart';
+import 'package:wine/utils/constants/users.dart';
 
 part 'typewriter_series_bloc.freezed.dart';
 part 'typewriter_series_event.dart';
@@ -61,7 +65,21 @@ class TypewriterSeriesBloc
         language: Language(value.language),
       )),
     );
-    on<LaunchAsNewSeries>((_, emit) {});
+    on<LaunchAsNewSeries>((_, emit) async {
+      (await _sessionsRepository.fetchSession()).match(
+        (user) {
+          emit(state.copyWith(
+            failureOption: const None(),
+            user: user,
+          ));
+        },
+        (failure) {
+          emit(state.copyWith(
+            failureOption: Option(Err(CoreFailure.sessions(failure))),
+          ));
+        },
+      );
+    });
     on<LaunchWithID>((_, emit) {});
     on<SubtitleChanged>((value, emit) {
       final subtitleTrim = value.subtitle.trim();

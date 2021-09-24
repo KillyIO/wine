@@ -32,7 +32,7 @@ const String signUpPath = '/sign-up';
 const String typewriterPath = '/typewriter';
 
 /// @nodoc
-const String typewriterSeriesIDPath = 'series/:id';
+const String typewriterSeriesIDPath = '/series/:id';
 
 /// @nodoc
-const String typewriterSeriesNewPath = 'series/new';
+const String typewriterSeriesNewPath = '/series/new';

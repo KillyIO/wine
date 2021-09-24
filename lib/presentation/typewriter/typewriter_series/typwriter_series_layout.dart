@@ -38,7 +38,7 @@ class TypewriterSeriesLayout extends StatelessWidget {
                     TypewriterTextField(
                       controller: state.titleController,
                       label: 'TITLE*',
-                      hintText: 'Less than ${titleMaxWords} words',
+                      hintText: 'Less than $titleMaxWords words',
                       onChanged: (value) => context
                           .read<TypewriterSeriesBloc>()
                           .add(TypewriterSeriesEvent.titleChanged(value)),
@@ -52,7 +52,7 @@ class TypewriterSeriesLayout extends StatelessWidget {
                             (err) => err.maybeMap(
                               emptyInput: (_) => 'The title must not be empty.',
                               tooLongInput: (_) =>
-                                  'The title must be lass than ${titleMaxWords} words long.',
+                                  'The title must be lass than $titleMaxWords words long.',
                               orElse: () => null,
                             ),
                           ),
