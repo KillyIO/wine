@@ -22,43 +22,36 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
   /// @nodoc
   HomeBloc(
     this._homeNavigationBloc,
-  ) : super(HomeState.initial());
+  ) : super(HomeState.initial()) {
+    on<InitBloc>((value, emit) {
+      _homeNavigationBlocSubscription =
+          _homeNavigationBloc.stream.listen((homeNavigationState) {
+        switch (homeNavigationState.currentPageViewIdx) {
+          case 0:
+            if (state.topSeriesList.isEmpty) {
+              add(const HomeEvent.loadTopSeries());
+            }
+            break;
+          case 1:
+            if (state.newSeriesList.isEmpty) {
+              add(const HomeEvent.loadNewSeries());
+            }
+            break;
+          default:
+        }
+      });
+    });
+    on<LoadNewSeries>((_, emit) {});
+    on<LoadSeriesByGenre>((value, emit) {});
+    on<LoadSeriesByLanguage>((value, emit) {});
+    on<LoadSeriesByTime>((value, emit) {});
+    on<LoadTopSeries>((_, emit) {});
+  }
 
   /// @nodoc
   final HomeNavigationBloc _homeNavigationBloc;
 
   late StreamSubscription _homeNavigationBlocSubscription;
-
-  @override
-  Stream<HomeState> mapEventToState(
-    HomeEvent event,
-  ) async* {
-    yield* event.map(
-      initBloc: (value) async* {
-        _homeNavigationBlocSubscription =
-            _homeNavigationBloc.stream.listen((homeNavigationState) {
-          switch (homeNavigationState.currentPageViewIdx) {
-            case 0:
-              if (state.topSeriesList.isEmpty) {
-                add(const HomeEvent.loadTopSeries());
-              }
-              break;
-            case 1:
-              if (state.newSeriesList.isEmpty) {
-                add(const HomeEvent.loadNewSeries());
-              }
-              break;
-            default:
-          }
-        });
-      },
-      loadNewSeries: (_) async* {},
-      loadSeriesByGenre: (value) async* {},
-      loadSeriesByLanguage: (value) async* {},
-      loadSeriesByTime: (value) async* {},
-      loadTopSeries: (_) async* {},
-    );
-  }
 
   @override
   Future<void> close() {

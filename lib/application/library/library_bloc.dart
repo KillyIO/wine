@@ -29,7 +29,35 @@ class LibraryBloc extends Bloc<LibraryEvent, LibraryState> {
     this._libraryNavigationBloc,
     this._sessionsRepository,
     this._userRepository,
-  ) : super(LibraryState.initial());
+  ) : super(LibraryState.initial()) {
+    on<InitBloc>((value, emit) {
+      _libraryNavigationBlocSubscription =
+          _libraryNavigationBloc.stream.listen((libraryNavigationState) {
+        switch (libraryNavigationState.currentPageViewIdx) {
+          case 0:
+            switch (libraryNavigationState.currentVerticalNavbarIdx) {
+              case 0:
+                break;
+              case 1:
+                break;
+              default:
+            }
+            break;
+          case 1:
+            switch (libraryNavigationState.currentVerticalNavbarIdx) {
+              case 0:
+                break;
+              case 1:
+                break;
+              default:
+            }
+            break;
+          default:
+        }
+      });
+    });
+    on<SessionFetched>((value, emit) {});
+  }
 
   // ignore: unused_field
   final ISessionsRepository _sessionsRepository;
@@ -38,41 +66,6 @@ class LibraryBloc extends Bloc<LibraryEvent, LibraryState> {
   final LibraryNavigationBloc _libraryNavigationBloc;
 
   late StreamSubscription _libraryNavigationBlocSubscription;
-
-  @override
-  Stream<LibraryState> mapEventToState(
-    LibraryEvent event,
-  ) async* {
-    yield* event.map(
-      initBloc: (value) async* {
-        _libraryNavigationBlocSubscription =
-            _libraryNavigationBloc.stream.listen((libraryNavigationState) {
-          switch (libraryNavigationState.currentPageViewIdx) {
-            case 0:
-              switch (libraryNavigationState.currentVerticalNavbarIdx) {
-                case 0:
-                  break;
-                case 1:
-                  break;
-                default:
-              }
-              break;
-            case 1:
-              switch (libraryNavigationState.currentVerticalNavbarIdx) {
-                case 0:
-                  break;
-                case 1:
-                  break;
-                default:
-              }
-              break;
-            default:
-          }
-        });
-      },
-      sessionFetched: (value) async* {},
-    );
-  }
 
   @override
   Future<void> close() {

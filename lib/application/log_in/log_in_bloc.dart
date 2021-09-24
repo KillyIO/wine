@@ -32,235 +32,233 @@ class LogInBloc extends Bloc<LogInEvent, LogInState> {
     this._authFacade,
     this._sessionsRepository,
     this._userRepository,
-  ) : super(LogInState.initial());
+  ) : super(LogInState.initial()) {
+    on<CredentialAlreadyInUse>(
+      (_, emit) async =>
+          (await _authFacade.logInWithCredentialAlreadyInUse()).match(
+        (_) {
+          add(const LogInEvent.loggedInWithGoogle());
+        },
+        (failure) {
+          emit(state.copyWith(
+            failureOption: Option(Err(CoreFailure.auth(failure))),
+            isProcessing: false,
+            showErrorMessages: true,
+          ));
+        },
+      ),
+    );
+    on<CustomUsernameGenerated>(
+      (value, emit) async => await _saveUsername(value.user, emit),
+    );
+    on<EmailAddressChanged>(
+      (value, emit) => emit(state.copyWith(
+        emailAddress: EmailAddress(value.emailAddressStr),
+        failureOption: const None(),
+      )),
+    );
+    on<LoggedInWithEmailAndPassword>((_, emit) async {
+      if (_authFacade.isLoggedIn) {
+        final userOption = await _authFacade.getLoggedInUser();
+        final userAsplain = userOption.asPlain();
+
+        if (userAsplain != null) {
+          (await _userRepository.loadUser(
+            userAsplain.uid.getOrCrash(),
+          ))
+              .match(
+            (user) {
+              add(LogInEvent.userLoaded(user));
+            },
+            (failure) {
+              emit(state.copyWith(
+                failureOption: Option(Err(CoreFailure.user(failure))),
+                isProcessing: false,
+                showErrorMessages: true,
+              ));
+            },
+          );
+        }
+      }
+    });
+    on<LoggedInWithGoogle>((_, emit) async {
+      if (_authFacade.isLoggedIn) {
+        final userOption = await _authFacade.getLoggedInUser();
+        final userAsplain = userOption.asPlain();
+
+        if (userAsplain != null) {
+          (await _userRepository.loadUser(
+            userAsplain.uid.getOrCrash(),
+          ))
+              .match(
+            (user) {
+              add(LogInEvent.userLoaded(user));
+            },
+            (failure) {
+              failure.maybeMap(
+                userNotFound: (_) {
+                  add(LogInEvent.userNotFound(userAsplain));
+                },
+                orElse: () {
+                  emit(state.copyWith(
+                    failureOption: Option(Err(CoreFailure.user(failure))),
+                    isProcessing: false,
+                    showErrorMessages: true,
+                  ));
+                },
+              );
+            },
+          );
+        }
+      }
+    });
+    on<LogInWithEmailAndPasswordPressed>((_, emit) async {
+      final isEmailValid = state.emailAddress.isValid;
+      final isPasswordValid = state.password.isValid;
+
+      if (isEmailValid && isPasswordValid) {
+        emit(state.copyWith(
+          failureOption: const None(),
+          isProcessing: true,
+        ));
+
+        (await _authFacade.logInWithEmailAndPassword(
+          state.emailAddress,
+          state.password,
+        ))
+            .match(
+          (_) {
+            add(const LogInEvent.loggedInWithEmailAndPassword());
+          },
+          (failure) {
+            emit(state.copyWith(
+              failureOption: Option(Err(CoreFailure.auth(failure))),
+              isProcessing: false,
+              showErrorMessages: true,
+            ));
+          },
+        );
+      }
+    });
+    on<LogInWithGooglePressed>((_, emit) async {
+      emit(state.copyWith(
+        failureOption: const None(),
+        isProcessing: true,
+      ));
+
+      (await _authFacade.logInWithGoogle()).match(
+        (_) {
+          add(const LogInEvent.loggedInWithGoogle());
+        },
+        (failure) {
+          if (failure is auth_failure.CredentialAlreadyInUse) {
+            add(const LogInEvent.credentialAlreadyInUse());
+          } else {
+            emit(state.copyWith(
+              failureOption: Option(Err(CoreFailure.auth(failure))),
+              isProcessing: false,
+              showErrorMessages: true,
+            ));
+          }
+        },
+      );
+    });
+    on<PasswordChanged>(
+      (value, emit) => emit(state.copyWith(
+        failureOption: const None(),
+        password: Password(value.passwordStr),
+      )),
+    );
+    on<UserDetailsSaved>(
+      (value, emit) async =>
+          (await _sessionsRepository.updateSession(value.user)).match(
+        (_) {
+          emit(state.copyWith(
+            failureOption: const None(),
+            isAuthenticated: true,
+            isProcessing: false,
+          ));
+        },
+        (failure) {
+          emit(state.copyWith(
+            failureOption: Option(Err(CoreFailure.sessions(failure))),
+            isProcessing: false,
+            showErrorMessages: true,
+          ));
+        },
+      ),
+    );
+    on<UserLoaded>(
+      (value, emit) async => await _saveDetailsFromUser(value.user, emit),
+    );
+    on<UsernameAvailabilityConfirmed>(
+      (value, emit) async => await _saveUsername(value.user, emit),
+    );
+    on<UsernameSaved>(
+      (value, emit) async => await _saveDetailsFromUser(value.user, emit),
+    );
+    on<UserNotFound>((value, emit) async {
+      (await _userRepository.checkUsernameAvailability(
+        value.user.username,
+      ))
+          .match(
+        (_) {
+          add(LogInEvent.usernameAvailabilityConfirmed(value.user));
+        },
+        (failure) {
+          if (failure is UsernameAlreadyInUse) {
+            final randomStrList =
+                const Uuid().v1().replaceAll('-', '').split('')..shuffle();
+            final randomStr = randomStrList.join();
+
+            final user = value.user.copyWith(username: Username(randomStr));
+
+            add(LogInEvent.customUsernameGenerated(user));
+          } else {
+            emit(state.copyWith(
+              failureOption: Option(Err(CoreFailure.user(failure))),
+              isProcessing: false,
+              showErrorMessages: true,
+            ));
+          }
+        },
+      );
+    });
+  }
 
   final IAuthFacade _authFacade;
   final ISessionsRepository _sessionsRepository;
   final IUserRepository _userRepository;
 
-  @override
-  Stream<LogInState> mapEventToState(
-    LogInEvent event,
-  ) async* {
-    yield* event.map(
-      credentialAlreadyInUse: (_) async* {
-        yield* (await _authFacade.logInWithCredentialAlreadyInUse()).match(
-          (_) async* {
-            add(const LogInEvent.loggedInWithGoogle());
-          },
-          (failure) async* {
-            yield state.copyWith(
-              failureOption: Option(Err(CoreFailure.auth(failure))),
-              isProcessing: false,
-              showErrorMessages: true,
-            );
-          },
-        );
-      },
-      customUsernameGenerated: (value) async* {
-        yield* _saveUsername(value.user);
-      },
-      emailAddressChanged: (value) async* {
-        yield state.copyWith(
-          emailAddress: EmailAddress(value.emailAddressStr),
-          failureOption: const None(),
-        );
-      },
-      loggedInWithEmailAndPassword: (_) async* {
-        if (_authFacade.isLoggedIn) {
-          final userOption = await _authFacade.getLoggedInUser();
-          final userAsplain = userOption.asPlain();
-
-          if (userAsplain != null) {
-            yield* (await _userRepository.loadUser(
-              userAsplain.uid.getOrCrash(),
-            ))
-                .match(
-              (user) async* {
-                add(LogInEvent.userLoaded(user));
-              },
-              (failure) async* {
-                yield state.copyWith(
-                  failureOption: Option(Err(CoreFailure.user(failure))),
-                  isProcessing: false,
-                  showErrorMessages: true,
-                );
-              },
-            );
-          }
-        }
-      },
-      loggedInWithGoogle: (_) async* {
-        if (_authFacade.isLoggedIn) {
-          final userOption = await _authFacade.getLoggedInUser();
-          final userAsplain = userOption.asPlain();
-
-          if (userAsplain != null) {
-            yield* (await _userRepository.loadUser(
-              userAsplain.uid.getOrCrash(),
-            ))
-                .match(
-              (user) async* {
-                add(LogInEvent.userLoaded(user));
-              },
-              (failure) async* {
-                yield* failure.maybeMap(
-                  userNotFound: (_) async* {
-                    add(LogInEvent.userNotFound(userAsplain));
-                  },
-                  orElse: () async* {
-                    yield state.copyWith(
-                      failureOption: Option(Err(CoreFailure.user(failure))),
-                      isProcessing: false,
-                      showErrorMessages: true,
-                    );
-                  },
-                );
-              },
-            );
-          }
-        }
-      },
-      logInWithEmailAndPasswordPressed: (value) async* {
-        final isEmailValid = state.emailAddress.isValid;
-        final isPasswordValid = state.password.isValid;
-
-        if (isEmailValid && isPasswordValid) {
-          yield state.copyWith(
-            failureOption: const None(),
-            isProcessing: true,
-          );
-
-          yield* (await _authFacade.logInWithEmailAndPassword(
-            state.emailAddress,
-            state.password,
-          ))
-              .match(
-            (_) async* {
-              add(const LogInEvent.loggedInWithEmailAndPassword());
-            },
-            (failure) async* {
-              yield state.copyWith(
-                failureOption: Option(Err(CoreFailure.auth(failure))),
-                isProcessing: false,
-                showErrorMessages: true,
-              );
-            },
-          );
-        }
-      },
-      logInWithGooglePressed: (value) async* {
-        yield state.copyWith(
-          failureOption: const None(),
-          isProcessing: true,
-        );
-
-        yield* (await _authFacade.logInWithGoogle()).match(
-          (_) async* {
-            add(const LogInEvent.loggedInWithGoogle());
-          },
-          (failure) async* {
-            if (failure is auth_failure.CredentialAlreadyInUse) {
-              add(const LogInEvent.credentialAlreadyInUse());
-            } else {
-              yield state.copyWith(
-                failureOption: Option(Err(CoreFailure.auth(failure))),
-                isProcessing: false,
-                showErrorMessages: true,
-              );
-            }
-          },
-        );
-      },
-      passwordChanged: (value) async* {
-        yield state.copyWith(
-          failureOption: const None(),
-          password: Password(value.passwordStr),
-        );
-      },
-      userDetailsSaved: (value) async* {
-        yield* (await _sessionsRepository.updateSession(value.user)).match(
-          (_) async* {
-            yield state.copyWith(
-              failureOption: const None(),
-              isAuthenticated: true,
-              isProcessing: false,
-            );
-          },
-          (failure) async* {
-            yield state.copyWith(
-              failureOption: Option(Err(CoreFailure.sessions(failure))),
-              isProcessing: false,
-              showErrorMessages: true,
-            );
-          },
-        );
-      },
-      userLoaded: (value) async* {
-        yield* _saveDetailsFromUser(value.user);
-      },
-      usernameAvailabilityConfirmed: (value) async* {
-        yield* _saveUsername(value.user);
-      },
-      usernameSaved: (value) async* {
-        yield* _saveDetailsFromUser(value.user);
-      },
-      userNotFound: (value) async* {
-        yield* (await _userRepository.checkUsernameAvailability(
-          value.user.username,
-        ))
-            .match(
-          (_) async* {
-            add(LogInEvent.usernameAvailabilityConfirmed(value.user));
-          },
-          (failure) async* {
-            if (failure is UsernameAlreadyInUse) {
-              final randomStrList =
-                  const Uuid().v1().replaceAll('-', '').split('')..shuffle();
-              final randomStr = randomStrList.join();
-
-              final user = value.user.copyWith(username: Username(randomStr));
-
-              add(LogInEvent.customUsernameGenerated(user));
-            } else {
-              yield state.copyWith(
-                failureOption: Option(Err(CoreFailure.user(failure))),
-                isProcessing: false,
-                showErrorMessages: true,
-              );
-            }
-          },
-        );
-      },
-    );
-  }
-
-  Stream<LogInState> _saveDetailsFromUser(User user) async* {
-    yield* (await _userRepository.saveDetailsFromUser(user)).match(
-      (_) async* {
+  FutureOr<void> _saveDetailsFromUser(
+    User user,
+    Emitter<LogInState> emit,
+  ) async {
+    (await _userRepository.saveDetailsFromUser(user)).match(
+      (_) {
         add(LogInEvent.userDetailsSaved(user));
       },
-      (failure) async* {
-        yield state.copyWith(
+      (failure) {
+        emit(state.copyWith(
           failureOption: Option(Err(CoreFailure.user(failure))),
           isProcessing: false,
           showErrorMessages: true,
-        );
+        ));
       },
     );
   }
 
-  Stream<LogInState> _saveUsername(User user) async* {
-    yield* (await _userRepository.saveUsername(user.uid, user.username)).match(
-      (_) async* {
+  FutureOr<void> _saveUsername(User user, Emitter<LogInState> emit) async {
+    (await _userRepository.saveUsername(user.uid, user.username)).match(
+      (_) {
         add(LogInEvent.usernameSaved(user));
       },
-      (failure) async* {
-        yield state.copyWith(
+      (failure) {
+        emit(state.copyWith(
           failureOption: Option(Err(CoreFailure.user(failure))),
           isProcessing: false,
           showErrorMessages: true,
-        );
+        ));
       },
     );
   }

@@ -1,5 +1,3 @@
-import 'dart:async';
-
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart' hide Title;
 import 'package:freezed_annotation/freezed_annotation.dart';
@@ -29,79 +27,73 @@ part 'typewriter_series_state.dart';
 class TypewriterSeriesBloc
     extends Bloc<TypewriterSeriesEvent, TypewriterSeriesState> {
   /// @nodoc
-  TypewriterSeriesBloc(this._sessionsRepository)
-      : super(TypewriterSeriesState.initial());
+  TypewriterSeriesBloc(
+    this._sessionsRepository,
+  ) : super(TypewriterSeriesState.initial()) {
+    on<AddCoverPressed>((_, emit) {});
+    on<GenreAdded>((value, emit) {
+      final genre = Genre(value.genre);
+      final genres = List<Genre>.from(state.genres)..add(genre);
+
+      emit(state.copyWith(
+        failureOption: const None(),
+        genres: genres,
+      ));
+    });
+    on<GenreRemoved>((value, emit) {
+      final genres = state.genres
+        ..removeWhere((g) => g.getOrCrash() == value.genre);
+
+      emit(state.copyWith(
+        failureOption: const None(),
+        genres: genres,
+      ));
+    });
+    on<IsNSFWChanged>(
+      (value, emit) => emit(state.copyWith(
+        failureOption: const None(),
+        isNSFW: value.isNSFW,
+      )),
+    );
+    on<LanguageSelected>(
+      (value, emit) => emit(state.copyWith(
+        failureOption: const None(),
+        language: Language(value.language),
+      )),
+    );
+    on<LaunchAsNewSeries>((_, emit) {});
+    on<LaunchWithID>((_, emit) {});
+    on<SubtitleChanged>((value, emit) {
+      final subtitleTrim = value.subtitle.trim();
+      final wordCount = subtitleTrim.countWords();
+
+      emit(state.copyWith(
+        failureOption: const None(),
+        subtitle: Subtitle(subtitleTrim),
+        subtitleWordCount: wordCount,
+      ));
+    });
+    on<SummaryChanged>((value, emit) {
+      final summaryTrim = value.summary.trim();
+      final wordCount = summaryTrim.countWords();
+
+      emit(state.copyWith(
+        failureOption: const None(),
+        summary: Summary(summaryTrim),
+        summaryWordCount: wordCount,
+      ));
+    });
+    on<TitleChanged>((value, emit) {
+      final titleTrim = value.title.trim();
+      final wordCount = titleTrim.countWords();
+
+      emit(state.copyWith(
+        failureOption: const None(),
+        title: Title(titleTrim),
+        titleWordCount: wordCount,
+      ));
+    });
+  }
 
   final ISessionsRepository _sessionsRepository;
-
-  @override
-  Stream<TypewriterSeriesState> mapEventToState(
-    TypewriterSeriesEvent event,
-  ) async* {
-    yield* event.map(
-      addCoverPressed: (_) async* {},
-      genreAdded: (value) async* {
-        final genre = Genre(value.genre);
-        final genres = List<Genre>.from(state.genres)..add(genre);
-
-        yield state.copyWith(
-          failureOption: const None(),
-          genres: genres,
-        );
-      },
-      genreRemoved: (value) async* {
-        final genres = state.genres
-          ..removeWhere((g) => g.getOrCrash() == value.genre);
-
-        yield state.copyWith(
-          failureOption: const None(),
-          genres: genres,
-        );
-      },
-      isNSFWChanged: (value) async* {
-        yield state.copyWith(
-          failureOption: const None(),
-          isNSFW: value.isNSFW,
-        );
-      },
-      languageSelected: (value) async* {
-        yield state.copyWith(
-          failureOption: const None(),
-          language: Language(value.language),
-        );
-      },
-      launchAsNewSeries: (_) async* {},
-      launchWithID: (value) async* {},
-      subtitleChanged: (value) async* {
-        final subtitleTrim = value.subtitle.trim();
-        final wordCount = subtitleTrim.countWords();
-
-        yield state.copyWith(
-          failureOption: const None(),
-          subtitle: Subtitle(subtitleTrim),
-          subtitleWordCount: wordCount,
-        );
-      },
-      summaryChanged: (value) async* {
-        final summaryTrim = value.summary.trim();
-        final wordCount = summaryTrim.countWords();
-
-        yield state.copyWith(
-          failureOption: const None(),
-          summary: Summary(summaryTrim),
-          summaryWordCount: wordCount,
-        );
-      },
-      titleChanged: (value) async* {
-        final titleTrim = value.title.trim();
-        final wordCount = titleTrim.countWords();
-
-        yield state.copyWith(
-          failureOption: const None(),
-          title: Title(titleTrim),
-          titleWordCount: wordCount,
-        );
-      },
-    );
-  }
 }

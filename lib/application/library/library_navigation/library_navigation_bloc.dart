@@ -1,5 +1,3 @@
-import 'dart:async';
-
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
@@ -15,15 +13,8 @@ part 'library_navigation_bloc.freezed.dart';
 class LibraryNavigationBloc
     extends Bloc<LibraryNavigationEvent, LibraryNavigationState> {
   /// @nodoc
-  LibraryNavigationBloc() : super(LibraryNavigationState.initial());
-
-  @override
-  Stream<LibraryNavigationState> mapEventToState(
-    LibraryNavigationEvent event,
-  ) async* {
-    yield* event.map(
-      pageViewIndexChanged: (value) async* {},
-      verticalNavbarIndexChanged: (value) async* {},
-    );
+  LibraryNavigationBloc() : super(LibraryNavigationState.initial()) {
+    on<PageViewIndexChanged>((value, emit) {});
+    on<VerticalNavbarIndexChanged>((value, emit) {});
   }
 }

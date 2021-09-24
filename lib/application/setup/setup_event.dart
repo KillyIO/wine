@@ -24,10 +24,10 @@ class SetupEvent with _$SetupEvent {
   const factory SetupEvent.sessionNotFound() = SessionNotFound;
 
   /// @nodoc
-  const factory SetupEvent.settingsInitialized() = SettingsInitialized;
+  const factory SetupEvent.settingsFetched() = SettingsFetched;
 
   /// @nodoc
-  const factory SetupEvent.settingsFetched() = SettingsFetched;
+  const factory SetupEvent.settingsInitialized() = SettingsInitialized;
 
   /// @nodoc
   const factory SetupEvent.settingsNotFound() = SettingsNotFound;

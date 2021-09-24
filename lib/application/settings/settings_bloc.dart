@@ -1,5 +1,3 @@
-import 'dart:async';
-
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
@@ -26,116 +24,109 @@ class SettingsBloc extends Bloc<SettingsEvent, SettingsState> {
     this._authFacade,
     this._sessionsRepository,
     this._settingsRepository,
-  ) : super(SettingsState.initial());
+  ) : super(SettingsState.initial()) {
+    on<InitBloc>((_, emit) async {
+      emit(state.copyWith(
+        failureOption: const None(),
+        isProcessing: true,
+      ));
+
+      (await _sessionsRepository.fetchSession()).match(
+        (user) {
+          emit(state.copyWith(
+            isProcessing: false,
+            username: user.username.getOrCrash(),
+          ));
+
+          add(const SettingsEvent.sessionFetched());
+        },
+        (failure) {
+          emit(state.copyWith(
+            failureOption: Option(Err(CoreFailure.sessions(failure))),
+            isProcessing: false,
+          ));
+        },
+      );
+    });
+    on<LoggedOut>(
+      (_, emit) async => (await _sessionsRepository.createSession()).match(
+        (_) {
+          add(const SettingsEvent.sessionCreated());
+        },
+        (failure) {
+          emit(state.copyWith(
+            failureOption: Option(Err(CoreFailure.sessions(failure))),
+            isProcessing: false,
+          ));
+        },
+      ),
+    );
+    on<LogOutPressed>((_, emit) async {
+      emit(state.copyWith(
+        failureOption: const None(),
+        isProcessing: true,
+      ));
+
+      (await _sessionsRepository.deleteSession()).match(
+        (_) {
+          add(const SettingsEvent.sessionDeleted());
+        },
+        (failure) {
+          emit(state.copyWith(
+            failureOption: Option(Err(CoreFailure.sessions(failure))),
+            isProcessing: false,
+          ));
+        },
+      );
+    });
+    on<SessionCreated>(
+      (_, emit) async => (await _settingsRepository.initializeSettings()).match(
+        (_) {
+          emit(state.copyWith(
+            isLoggedOut: true,
+            isProcessing: false,
+          ));
+        },
+        (failure) {
+          emit(state.copyWith(
+            failureOption: Option(Err(CoreFailure.settings(failure))),
+            isProcessing: false,
+          ));
+        },
+      ),
+    );
+    on<SessionDeleted>(
+      (_, emit) async => (await _authFacade.logOut()).match(
+        (_) {
+          add(const SettingsEvent.loggedOut());
+        },
+        (failure) {
+          emit(state.copyWith(
+            failureOption: Option(Err(CoreFailure.auth(failure))),
+            isProcessing: false,
+          ));
+        },
+      ),
+    );
+    on<SessionFetched>(
+      (_, emit) async => (await _settingsRepository.fetchSettings()).match(
+        (settings) {
+          emit(state.copyWith(
+            isProcessing: false,
+            settings: settings,
+          ));
+        },
+        (failure) {
+          emit(state.copyWith(
+            failureOption: Option(Err(CoreFailure.settings(failure))),
+            isProcessing: false,
+          ));
+        },
+      ),
+    );
+  }
 
   final IAuthFacade _authFacade;
   final ISessionsRepository _sessionsRepository;
   final ISettingsRepository _settingsRepository;
-
-  @override
-  Stream<SettingsState> mapEventToState(
-    SettingsEvent event,
-  ) async* {
-    yield* event.map(
-      initBloc: (_) async* {
-        yield state.copyWith(
-          failureOption: const None(),
-          isProcessing: true,
-        );
-
-        yield* (await _sessionsRepository.fetchSession()).match(
-          (user) async* {
-            yield state.copyWith(
-              isProcessing: false,
-              username: user.username.getOrCrash(),
-            );
-
-            add(const SettingsEvent.sessionFetched());
-          },
-          (failure) async* {
-            yield state.copyWith(
-              failureOption: Option(Err(CoreFailure.sessions(failure))),
-              isProcessing: false,
-            );
-          },
-        );
-      },
-      loggedOut: (_) async* {
-        yield* (await _sessionsRepository.createSession()).match(
-          (_) async* {
-            add(const SettingsEvent.sessionCreated());
-          },
-          (failure) async* {
-            yield state.copyWith(
-              failureOption: Option(Err(CoreFailure.sessions(failure))),
-              isProcessing: false,
-            );
-          },
-        );
-      },
-      logOutPressed: (_) async* {
-        yield state.copyWith(
-          failureOption: const None(),
-          isProcessing: true,
-        );
-
-        yield* (await _sessionsRepository.deleteSession()).match(
-          (_) async* {
-            add(const SettingsEvent.sessionDeleted());
-          },
-          (failure) async* {
-            yield state.copyWith(
-              failureOption: Option(Err(CoreFailure.sessions(failure))),
-              isProcessing: false,
-            );
-          },
-        );
-      },
-      sessionCreated: (_) async* {
-        yield* (await _settingsRepository.initializeSettings()).match(
-          (_) async* {
-            yield state.copyWith(
-              isLoggedOut: true,
-              isProcessing: false,
-            );
-          },
-          (failure) async* {
-            yield state.copyWith(
-              failureOption: Option(Err(CoreFailure.settings(failure))),
-              isProcessing: false,
-            );
-          },
-        );
-      },
-      sessionDeleted: (_) async* {
-        yield* (await _authFacade.logOut()).match(
-          (_) async* {
-            add(const SettingsEvent.loggedOut());
-          },
-          (failure) async* {
-            yield state.copyWith(
-              failureOption: Option(Err(CoreFailure.auth(failure))),
-              isProcessing: false,
-            );
-          },
-        );
-      },
-      sessionFetched: (_) async* {
-        yield* (await _settingsRepository.fetchSettings()).match(
-          (settings) async* {
-            yield state.copyWith(
-              isProcessing: false,
-              settings: settings,
-            );
-          },
-          (failure) async* {
-            yield state.copyWith(
-              failureOption: Option(Err(CoreFailure.settings(failure))),
-              isProcessing: false,
-            );
-          },
-        );
-      },
-    );
-  }
 }
