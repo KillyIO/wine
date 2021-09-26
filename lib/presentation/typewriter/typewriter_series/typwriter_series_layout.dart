@@ -14,59 +14,113 @@ class TypewriterSeriesLayout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<TypewriterSeriesBloc, TypewriterSeriesState>(
-      builder: (context, state) {
-        return SafeArea(
-          child: Container(
-            constraints: const BoxConstraints(
-              maxWidth: maxContentLayoutWidth,
-            ),
-            child: AbsorbPointer(
-              absorbing: state.isProcessing,
-              child: Form(
-                autovalidateMode: AutovalidateMode.always,
-                child: ListView(
-                  children: <Widget>[
-                    const TypewriterTopTitle(title: 'SERIES DETAILS'),
-                    const TextFieldLabel(title: 'COVER'),
-                    TypewriterCover(
-                      coverURL: state.coverURL,
-                      onPressed: () => context
-                          .read<TypewriterSeriesBloc>()
-                          .add(const TypewriterSeriesEvent.addCoverPressed()),
-                    ),
-                    TypewriterTextField(
-                      controller: state.titleController,
-                      label: 'TITLE*',
-                      hintText: 'Less than $titleMaxWords words',
-                      onChanged: (value) => context
-                          .read<TypewriterSeriesBloc>()
-                          .add(TypewriterSeriesEvent.titleChanged(value)),
-                      validator: (_) => context
-                          .watch<TypewriterSeriesBloc>()
-                          .state
-                          .title
-                          .value
-                          .match(
-                            (_) => null,
-                            (err) => err.maybeMap(
-                              emptyInput: (_) => 'The title must not be empty.',
-                              tooLongInput: (_) =>
-                                  'The title must be lass than $titleMaxWords words long.',
-                              orElse: () => null,
-                            ),
-                          ),
-                      wordCount: '${state.titleWordCount}/$titleMaxWords',
-                      wordCountError: state.titleWordCount == 0 ||
-                          state.titleWordCount > titleMaxWords,
-                    ),
-                  ],
-                ),
-              ),
-            ),
+    return SafeArea(
+      child: Center(
+        child: Container(
+          constraints: const BoxConstraints(
+            maxWidth: maxContentLayoutWidth,
           ),
-        );
-      },
+          child: BlocBuilder<TypewriterSeriesBloc, TypewriterSeriesState>(
+            builder: (context, state) {
+              return AbsorbPointer(
+                absorbing: state.isProcessing,
+                child: Form(
+                  autovalidateMode: AutovalidateMode.always,
+                  child: ListView(
+                    children: <Widget>[
+                      const TypewriterTopTitle(title: 'SERIES DETAILS'),
+                      const TextFieldLabel(title: 'COVER'),
+                      TypewriterCover(
+                        coverURL: state.coverURL,
+                        onPressed: () => context
+                            .read<TypewriterSeriesBloc>()
+                            .add(const TypewriterSeriesEvent.addCoverPressed()),
+                      ),
+                      TypewriterTextField(
+                        controller: state.titleController,
+                        label: 'TITLE*',
+                        hintText: 'Less than $titleMaxWords words',
+                        onChanged: (value) => context
+                            .read<TypewriterSeriesBloc>()
+                            .add(TypewriterSeriesEvent.titleChanged(value)),
+                        validator: (_) => context
+                            .watch<TypewriterSeriesBloc>()
+                            .state
+                            .title
+                            .value
+                            .match(
+                              (_) => null,
+                              (err) => err.maybeMap(
+                                emptyInput: (_) =>
+                                    'The title must not be empty.',
+                                tooLongInput: (_) =>
+                                    'The title must be lass than  words long.',
+                                orElse: () => null,
+                              ),
+                            ),
+                        wordCount: '${state.titleWordCount}/$titleMaxWords',
+                        wordCountError: state.titleWordCount == 0 ||
+                            state.titleWordCount > titleMaxWords,
+                      ),
+                      TypewriterTextField(
+                        controller: state.subtitleController,
+                        label: 'SUBTITLE (OPTIONAL)',
+                        hintText: 'Less than $subtitleMaxWords words',
+                        onChanged: (value) => context
+                            .read<TypewriterSeriesBloc>()
+                            .add(TypewriterSeriesEvent.subtitleChanged(value)),
+                        validator: (_) => context
+                            .watch<TypewriterSeriesBloc>()
+                            .state
+                            .subtitle
+                            .value
+                            .match(
+                              (_) => null,
+                              (err) => err.maybeMap(
+                                tooLongInput: (_) =>
+                                    'The subtitle must be lass than  words long.',
+                                orElse: () => null,
+                              ),
+                            ),
+                        wordCount:
+                            '${state.subtitleWordCount}/$subtitleMaxWords',
+                        wordCountError:
+                            state.subtitleWordCount > subtitleMaxWords,
+                      ),
+                      TypewriterTextField(
+                        controller: state.summaryController,
+                        label: 'SUMMARY*',
+                        hintText: 'Less than $summaryMaxWords words',
+                        onChanged: (value) => context
+                            .read<TypewriterSeriesBloc>()
+                            .add(TypewriterSeriesEvent.summaryChanged(value)),
+                        validator: (_) => context
+                            .watch<TypewriterSeriesBloc>()
+                            .state
+                            .summary
+                            .value
+                            .match(
+                              (_) => null,
+                              (err) => err.maybeMap(
+                                emptyInput: (_) =>
+                                    'The summary must not be empty.',
+                                tooLongInput: (_) =>
+                                    'The summary must be lass than  words long.',
+                                orElse: () => null,
+                              ),
+                            ),
+                        wordCount: '${state.summaryWordCount}/$summaryMaxWords',
+                        wordCountError: state.summaryWordCount == 0 ||
+                            state.summaryWordCount > summaryMaxWords,
+                      )
+                    ],
+                  ),
+                ),
+              );
+            },
+          ),
+        ),
+      ),
     );
   }
 }
