@@ -6,6 +6,7 @@
 
 import 'package:auto_route/auto_route.dart' as _i1;
 import 'package:flutter/material.dart' as _i2;
+import 'package:wine/domain/core/typewriter_type.dart' as _i15;
 import 'package:wine/presentation/home/home_page.dart' as _i3;
 import 'package:wine/presentation/library/library_page.dart' as _i4;
 import 'package:wine/presentation/log_in/log_in_page.dart' as _i5;
@@ -66,8 +67,8 @@ class AppRouter extends _i1.RootStackRouter {
           orElse: () => TypewriterSeriesIdArgs(id: pathParams.optString('id')));
       return _i1.AdaptivePage<_i10.TypewriterPage>(
           routeData: routeData,
-          child: _i10.TypewriterPage(
-              key: args.key, id: args.id, isSeries: args.isSeries));
+          child:
+              _i10.TypewriterPage(key: args.key, id: args.id, type: args.type));
     },
     TypewriterSeriesNew.name: (routeData) {
       final pathParams = routeData.pathParams;
@@ -76,8 +77,8 @@ class AppRouter extends _i1.RootStackRouter {
               TypewriterSeriesNewArgs(id: pathParams.optString('id')));
       return _i1.AdaptivePage<_i10.TypewriterPage>(
           routeData: routeData,
-          child: _i10.TypewriterPage(
-              key: args.key, id: args.id, isSeries: args.isSeries));
+          child:
+              _i10.TypewriterPage(key: args.key, id: args.id, type: args.type));
     },
     SettingsAccountRoute.name: (routeData) {
       return _i1.AdaptivePage<_i11.SettingsAccountPage>(
@@ -184,43 +185,50 @@ class SignUpRouteArgs {
 }
 
 class TypewriterSeriesId extends _i1.PageRouteInfo<TypewriterSeriesIdArgs> {
-  TypewriterSeriesId({_i2.Key? key, String? id, bool isSeries = true})
+  TypewriterSeriesId(
+      {_i2.Key? key,
+      String? id,
+      _i15.TypewriterType type = _i15.TypewriterType.unknown})
       : super(name,
             path: '/typewriter/series/:id',
-            args: TypewriterSeriesIdArgs(key: key, id: id, isSeries: isSeries),
+            args: TypewriterSeriesIdArgs(key: key, id: id, type: type),
             rawPathParams: {'id': id});
 
   static const String name = 'TypewriterSeriesId';
 }
 
 class TypewriterSeriesIdArgs {
-  const TypewriterSeriesIdArgs({this.key, this.id, this.isSeries = true});
+  const TypewriterSeriesIdArgs(
+      {this.key, this.id, this.type = _i15.TypewriterType.unknown});
 
   final _i2.Key? key;
 
   final String? id;
 
-  final bool isSeries;
+  final _i15.TypewriterType type;
 }
 
 class TypewriterSeriesNew extends _i1.PageRouteInfo<TypewriterSeriesNewArgs> {
-  TypewriterSeriesNew({_i2.Key? key, String? id, bool isSeries = true})
+  TypewriterSeriesNew(
+      {_i2.Key? key,
+      String? id,
+      _i15.TypewriterType type = _i15.TypewriterType.unknown})
       : super(name,
             path: '/typewriter/series/new',
-            args:
-                TypewriterSeriesNewArgs(key: key, id: id, isSeries: isSeries));
+            args: TypewriterSeriesNewArgs(key: key, id: id, type: type));
 
   static const String name = 'TypewriterSeriesNew';
 }
 
 class TypewriterSeriesNewArgs {
-  const TypewriterSeriesNewArgs({this.key, this.id, this.isSeries = true});
+  const TypewriterSeriesNewArgs(
+      {this.key, this.id, this.type = _i15.TypewriterType.unknown});
 
   final _i2.Key? key;
 
   final String? id;
 
-  final bool isSeries;
+  final _i15.TypewriterType type;
 }
 
 class SettingsAccountRoute extends _i1.PageRouteInfo<void> {

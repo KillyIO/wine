@@ -10,10 +10,7 @@ import 'package:wine/presentation/settings/settings_page.dart';
 import 'package:wine/presentation/settings/settings_series/settings_series_page.dart';
 import 'package:wine/presentation/sign_up/sign_up_page.dart';
 import 'package:wine/presentation/typewriter/typewriter_page.dart';
-import 'package:wine/presentation/typewriter/typewriter_series/typewriter_series_id_page.dart';
-import 'package:wine/presentation/typewriter/typewriter_series/typewriter_series_new_page.dart';
 import 'package:wine/presentation/wrappers/settings_wrapper.dart';
-import 'package:wine/presentation/wrappers/typewiter_wrapper.dart';
 import 'package:wine/utils/paths/router.dart';
 
 export 'router.gr.dart';
