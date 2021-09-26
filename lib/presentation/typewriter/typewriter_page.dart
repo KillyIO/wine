@@ -2,6 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:wine/domain/core/typewriter_type.dart';
 import 'package:wine/presentation/typewriter/typewriter_series/typewriter_series_id_page.dart';
 import 'package:wine/presentation/typewriter/typewriter_series/typewriter_series_new_page.dart';
 import 'package:wine/utils/constants/core.dart';
@@ -14,23 +15,41 @@ class TypewriterPage extends StatelessWidget {
   const TypewriterPage({
     Key? key,
     @PathParam('id') this.id,
-    this.isSeries = true,
+    this.type = TypewriterType.unknown,
   }) : super(key: key);
 
   /// Series or Chapter id.
   final String? id;
 
-  /// If not series then it's chapter.
-  final bool isSeries;
+  /// @nodoc
+  final TypewriterType type;
+
+  /// @nodoc
+  String get typewriterTitle {
+    switch (type) {
+      case TypewriterType.chapter:
+        return 'CHAPTER';
+      case TypewriterType.series:
+        return 'SERIES';
+      default:
+        return 'UNKNOWN';
+    }
+  }
 
   Widget get _typewriter {
-    if (isSeries) {
-      if (id != null) {
-        return TypewriterSeriesIDPage(seriesId: id!);
-      }
-      return const TypewriterSeriesNewPage();
-    } else {
-      return Container();
+    switch (type) {
+      case TypewriterType.chapter:
+      // if (id != null) {
+      //   return TypewriterChapterIDPage(seriesId: id!);
+      // }
+      // return const TypewriterChapterNewPage();
+      case TypewriterType.series:
+        if (id != null) {
+          return TypewriterSeriesIDPage(seriesId: id!);
+        }
+        return const TypewriterSeriesNewPage();
+      default:
+        return Container();
     }
   }
 
@@ -80,7 +99,7 @@ class TypewriterPage extends StatelessWidget {
                 : Container(),
             leadingWidth: defaultToolbarItemWidth,
             title: Text(
-              'TYPEWRITER: ${isSeries ? 'SERIES' : 'CHAPTER'}',
+              'TYPEWRITER: $typewriterTitle',
               style: const TextStyle(
                 color: Colors.black,
                 fontSize: 18,
