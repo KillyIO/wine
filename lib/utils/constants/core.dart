@@ -2,12 +2,6 @@
 const int titleMaxWords = 10;
 
 /// @nodoc
-const int subtitleMaxWords = 10;
-
-/// @nodoc
-const int summaryMaxWords = 200;
-
-/// @nodoc
 const double defaultAppBarHeight = 41.5;
 
 /// @nodoc
