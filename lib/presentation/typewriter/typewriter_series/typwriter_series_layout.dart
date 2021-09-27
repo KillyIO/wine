@@ -6,6 +6,7 @@ import 'package:wine/presentation/typewriter/widgets/typewriter_cover.dart';
 import 'package:wine/presentation/typewriter/widgets/typewriter_text_field.dart';
 import 'package:wine/presentation/typewriter/widgets/typewriter_top_title.dart';
 import 'package:wine/utils/constants/core.dart';
+import 'package:wine/utils/constants/series.dart';
 
 /// @nodoc
 class TypewriterSeriesLayout extends StatelessWidget {
@@ -112,7 +113,10 @@ class TypewriterSeriesLayout extends StatelessWidget {
                         wordCount: '${state.summaryWordCount}/$summaryMaxWords',
                         wordCountError: state.summaryWordCount == 0 ||
                             state.summaryWordCount > summaryMaxWords,
-                      )
+                      ),
+                      ListTile(
+
+                      ),
                     ],
                   ),
                 ),
