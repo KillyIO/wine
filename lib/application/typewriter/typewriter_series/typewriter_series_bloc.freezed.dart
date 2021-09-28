@@ -1982,6 +1982,7 @@ class _$TypewriterSeriesStateTearOff {
       required bool isProcessing,
       required bool isNSFW,
       required Language language,
+      required bool showErrorMessages,
       required Subtitle subtitle,
       required TextEditingController subtitleController,
       required int subtitleWordCount,
@@ -1999,6 +2000,7 @@ class _$TypewriterSeriesStateTearOff {
       isProcessing: isProcessing,
       isNSFW: isNSFW,
       language: language,
+      showErrorMessages: showErrorMessages,
       subtitle: subtitle,
       subtitleController: subtitleController,
       subtitleWordCount: subtitleWordCount,
@@ -2025,6 +2027,7 @@ mixin _$TypewriterSeriesState {
   bool get isProcessing => throw _privateConstructorUsedError;
   bool get isNSFW => throw _privateConstructorUsedError;
   Language get language => throw _privateConstructorUsedError;
+  bool get showErrorMessages => throw _privateConstructorUsedError;
   Subtitle get subtitle => throw _privateConstructorUsedError;
   TextEditingController get subtitleController =>
       throw _privateConstructorUsedError;
@@ -2056,6 +2059,7 @@ abstract class $TypewriterSeriesStateCopyWith<$Res> {
       bool isProcessing,
       bool isNSFW,
       Language language,
+      bool showErrorMessages,
       Subtitle subtitle,
       TextEditingController subtitleController,
       int subtitleWordCount,
@@ -2087,6 +2091,7 @@ class _$TypewriterSeriesStateCopyWithImpl<$Res>
     Object? isProcessing = freezed,
     Object? isNSFW = freezed,
     Object? language = freezed,
+    Object? showErrorMessages = freezed,
     Object? subtitle = freezed,
     Object? subtitleController = freezed,
     Object? subtitleWordCount = freezed,
@@ -2123,6 +2128,10 @@ class _$TypewriterSeriesStateCopyWithImpl<$Res>
           ? _value.language
           : language // ignore: cast_nullable_to_non_nullable
               as Language,
+      showErrorMessages: showErrorMessages == freezed
+          ? _value.showErrorMessages
+          : showErrorMessages // ignore: cast_nullable_to_non_nullable
+              as bool,
       subtitle: subtitle == freezed
           ? _value.subtitle
           : subtitle // ignore: cast_nullable_to_non_nullable
@@ -2188,6 +2197,7 @@ abstract class _$TypewriterSeriesStateCopyWith<$Res>
       bool isProcessing,
       bool isNSFW,
       Language language,
+      bool showErrorMessages,
       Subtitle subtitle,
       TextEditingController subtitleController,
       int subtitleWordCount,
@@ -2222,6 +2232,7 @@ class __$TypewriterSeriesStateCopyWithImpl<$Res>
     Object? isProcessing = freezed,
     Object? isNSFW = freezed,
     Object? language = freezed,
+    Object? showErrorMessages = freezed,
     Object? subtitle = freezed,
     Object? subtitleController = freezed,
     Object? subtitleWordCount = freezed,
@@ -2258,6 +2269,10 @@ class __$TypewriterSeriesStateCopyWithImpl<$Res>
           ? _value.language
           : language // ignore: cast_nullable_to_non_nullable
               as Language,
+      showErrorMessages: showErrorMessages == freezed
+          ? _value.showErrorMessages
+          : showErrorMessages // ignore: cast_nullable_to_non_nullable
+              as bool,
       subtitle: subtitle == freezed
           ? _value.subtitle
           : subtitle // ignore: cast_nullable_to_non_nullable
@@ -2312,6 +2327,7 @@ class _$_TypewriterSeriesState implements _TypewriterSeriesState {
       required this.isProcessing,
       required this.isNSFW,
       required this.language,
+      required this.showErrorMessages,
       required this.subtitle,
       required this.subtitleController,
       required this.subtitleWordCount,
@@ -2336,6 +2352,8 @@ class _$_TypewriterSeriesState implements _TypewriterSeriesState {
   @override
   final Language language;
   @override
+  final bool showErrorMessages;
+  @override
   final Subtitle subtitle;
   @override
   final TextEditingController subtitleController;
@@ -2358,7 +2376,7 @@ class _$_TypewriterSeriesState implements _TypewriterSeriesState {
 
   @override
   String toString() {
-    return 'TypewriterSeriesState(coverURL: $coverURL, failureOption: $failureOption, genres: $genres, isProcessing: $isProcessing, isNSFW: $isNSFW, language: $language, subtitle: $subtitle, subtitleController: $subtitleController, subtitleWordCount: $subtitleWordCount, summary: $summary, summaryController: $summaryController, summaryWordCount: $summaryWordCount, title: $title, titleController: $titleController, titleWordCount: $titleWordCount, user: $user)';
+    return 'TypewriterSeriesState(coverURL: $coverURL, failureOption: $failureOption, genres: $genres, isProcessing: $isProcessing, isNSFW: $isNSFW, language: $language, showErrorMessages: $showErrorMessages, subtitle: $subtitle, subtitleController: $subtitleController, subtitleWordCount: $subtitleWordCount, summary: $summary, summaryController: $summaryController, summaryWordCount: $summaryWordCount, title: $title, titleController: $titleController, titleWordCount: $titleWordCount, user: $user)';
   }
 
   @override
@@ -2381,6 +2399,9 @@ class _$_TypewriterSeriesState implements _TypewriterSeriesState {
             (identical(other.language, language) ||
                 const DeepCollectionEquality()
                     .equals(other.language, language)) &&
+            (identical(other.showErrorMessages, showErrorMessages) ||
+                const DeepCollectionEquality()
+                    .equals(other.showErrorMessages, showErrorMessages)) &&
             (identical(other.subtitle, subtitle) ||
                 const DeepCollectionEquality()
                     .equals(other.subtitle, subtitle)) &&
@@ -2420,6 +2441,7 @@ class _$_TypewriterSeriesState implements _TypewriterSeriesState {
       const DeepCollectionEquality().hash(isProcessing) ^
       const DeepCollectionEquality().hash(isNSFW) ^
       const DeepCollectionEquality().hash(language) ^
+      const DeepCollectionEquality().hash(showErrorMessages) ^
       const DeepCollectionEquality().hash(subtitle) ^
       const DeepCollectionEquality().hash(subtitleController) ^
       const DeepCollectionEquality().hash(subtitleWordCount) ^
@@ -2446,6 +2468,7 @@ abstract class _TypewriterSeriesState implements TypewriterSeriesState {
       required bool isProcessing,
       required bool isNSFW,
       required Language language,
+      required bool showErrorMessages,
       required Subtitle subtitle,
       required TextEditingController subtitleController,
       required int subtitleWordCount,
@@ -2470,6 +2493,8 @@ abstract class _TypewriterSeriesState implements TypewriterSeriesState {
   bool get isNSFW => throw _privateConstructorUsedError;
   @override
   Language get language => throw _privateConstructorUsedError;
+  @override
+  bool get showErrorMessages => throw _privateConstructorUsedError;
   @override
   Subtitle get subtitle => throw _privateConstructorUsedError;
   @override
