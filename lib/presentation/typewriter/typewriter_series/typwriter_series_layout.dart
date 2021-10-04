@@ -3,6 +3,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:wine/application/typewriter/typewriter_series/typewriter_series_bloc.dart';
 import 'package:wine/presentation/core/labels/text_field_label.dart';
 import 'package:wine/presentation/typewriter/widgets/typewriter_cover.dart';
+import 'package:wine/presentation/typewriter/widgets/typewriter_genre_selector_dialog.dart';
+import 'package:wine/presentation/typewriter/widgets/typewriter_selector_dialog.dart';
+import 'package:wine/presentation/typewriter/widgets/typewriter_switch_list_tile.dart';
 import 'package:wine/presentation/typewriter/widgets/typewriter_text_field.dart';
 import 'package:wine/presentation/typewriter/widgets/typewriter_top_title.dart';
 import 'package:wine/utils/constants/core.dart';
@@ -114,9 +117,28 @@ class TypewriterSeriesLayout extends StatelessWidget {
                         wordCountError: state.summaryWordCount == 0 ||
                             state.summaryWordCount > summaryMaxWords,
                       ),
-                      ListTile(
-
+                      // TypewriterGenreSelectorDialog(
+                      //   dialogTitle: 'GENRE',
+                      //   errorMessage: '',
+                      //   hasSelected: null,
+                      //   onInfoPressed: () {},
+                      //   onPressed: (String) {},
+                      //   options: [],
+                      //   showErrorMessage: state.showErrorMessages,
+                      //   title: 'GENRE*',
+                      //   trailingText: '',
+                      // ),
+                      TypewriterSwitchListTile(
+                        title: 'NSFW/ADULT CONTENT',
+                        onInfoPressed: () {},
+                        value: state.isNSFW,
+                        onChanged: (bool value) => context
+                            .read<TypewriterSeriesBloc>()
+                            .add(TypewriterSeriesEvent.isNSFWChanged(
+                              isNSFW: value,
+                            )),
                       ),
+                      TypewriterSelectorDialog(),
                     ],
                   ),
                 ),
