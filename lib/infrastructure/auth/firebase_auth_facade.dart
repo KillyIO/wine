@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart' as auth;
+import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:injectable/injectable.dart';
@@ -179,21 +180,29 @@ class FirebaseAuthFacade implements IAuthFacade {
       final anonymousUser = _firebaseAuth.currentUser;
 
       if (anonymousUser != null) {
-        final googleAccount = await _googleSignIn.signIn();
-        if (googleAccount == null) {
-          return const Err(AuthFailure.cancelledByUser());
+        if (kIsWeb) {
+          final provider = auth.GoogleAuthProvider();
+
+          final credential = await anonymousUser.linkWithPopup(provider);
+
+          return _updateUserInfoWithUser(credential.user, anonymousUser);
+        } else {
+          final googleAccount = await _googleSignIn.signIn();
+          if (googleAccount == null) {
+            return const Err(AuthFailure.cancelledByUser());
+          }
+
+          final googleAuthentication = await googleAccount.authentication;
+          final auth.AuthCredential authCredential =
+              auth.GoogleAuthProvider.credential(
+            idToken: googleAuthentication.idToken,
+            accessToken: googleAuthentication.accessToken,
+          );
+
+          await anonymousUser.linkWithCredential(authCredential);
+
+          return _updateUserInfo(_googleSignIn.currentUser, anonymousUser);
         }
-
-        final googleAuthentication = await googleAccount.authentication;
-        final auth.AuthCredential authCredential =
-            auth.GoogleAuthProvider.credential(
-          idToken: googleAuthentication.idToken,
-          accessToken: googleAuthentication.accessToken,
-        );
-
-        await anonymousUser.linkWithCredential(authCredential);
-
-        return _updateUserInfo(_googleSignIn.currentUser, anonymousUser);
       }
       return const Err(AuthFailure.unexpected());
     } on FirebaseException catch (e) {
@@ -261,6 +270,22 @@ class FirebaseAuthFacade implements IAuthFacade {
       await Future.wait([
         currentUser.updateDisplayName(currentAccount.displayName),
         currentUser.updatePhotoURL(currentAccount.photoUrl),
+      ]);
+      await currentUser.reload();
+
+      return const Ok(Unit());
+    }
+    return const Err(AuthFailure.unexpected());
+  }
+
+  Future<Result<Unit, AuthFailure>> _updateUserInfoWithUser(
+    auth.User? newUser,
+    auth.User? currentUser,
+  ) async {
+    if (newUser != null && currentUser != null) {
+      await Future.wait([
+        currentUser.updateDisplayName(newUser.displayName),
+        currentUser.updatePhotoURL(newUser.photoURL),
       ]);
       await currentUser.reload();
 
