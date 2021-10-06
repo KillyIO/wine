@@ -25,34 +25,37 @@ class TypewriterSwitchListTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.black,
-      child: ListTile(
-        title: Row(
-          mainAxisSize: MainAxisSize.min,
-          children: <Widget>[
-            Text(
-              title,
-              style: const TextStyle(
-                color: Colors.white,
-                fontWeight: FontWeight.w300,
+    return Padding(
+      padding: const EdgeInsets.only(bottom: 20),
+      child: Container(
+        color: Colors.black,
+        child: ListTile(
+          title: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: <Widget>[
+              Text(
+                title,
+                style: const TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.w300,
+                ),
               ),
-            ),
-            IconButton(
-              icon: const Icon(
-                Icons.info_outline,
-                color: Colors.white,
-                size: 20,
+              IconButton(
+                icon: const Icon(
+                  Icons.info_outline,
+                  color: Colors.white,
+                  size: 20,
+                ),
+                onPressed: onInfoPressed,
               ),
-              onPressed: onInfoPressed,
-            ),
-          ],
-        ),
-        trailing: Switch(
-          value: value,
-          onChanged: onChanged,
-          inactiveTrackColor: Colors.grey[700],
-          inactiveThumbColor: Colors.grey,
+            ],
+          ),
+          trailing: Switch(
+            value: value,
+            onChanged: onChanged,
+            inactiveTrackColor: Colors.grey[700],
+            inactiveThumbColor: Colors.grey,
+          ),
         ),
       ),
     );

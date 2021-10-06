@@ -3,8 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:wine/application/typewriter/typewriter_series/typewriter_series_bloc.dart';
 import 'package:wine/presentation/core/labels/text_field_label.dart';
 import 'package:wine/presentation/typewriter/widgets/typewriter_cover.dart';
-import 'package:wine/presentation/typewriter/widgets/typewriter_genre_selector_dialog.dart';
-import 'package:wine/presentation/typewriter/widgets/typewriter_selector_dialog.dart';
+import 'package:wine/presentation/typewriter/widgets/typewriter_genres.dart';
+import 'package:wine/presentation/typewriter/widgets/typewriter_selection_list_tile.dart';
 import 'package:wine/presentation/typewriter/widgets/typewriter_switch_list_tile.dart';
 import 'package:wine/presentation/typewriter/widgets/typewriter_text_field.dart';
 import 'package:wine/presentation/typewriter/widgets/typewriter_top_title.dart';
@@ -117,17 +117,16 @@ class TypewriterSeriesLayout extends StatelessWidget {
                         wordCountError: state.summaryWordCount == 0 ||
                             state.summaryWordCount > summaryMaxWords,
                       ),
-                      // TypewriterGenreSelectorDialog(
-                      //   dialogTitle: 'GENRE',
-                      //   errorMessage: '',
-                      //   hasSelected: null,
-                      //   onInfoPressed: () {},
-                      //   onPressed: (String) {},
-                      //   options: [],
-                      //   showErrorMessage: state.showErrorMessages,
-                      //   title: 'GENRE*',
-                      //   trailingText: '',
-                      // ),
+                      TypewriterSelectionListTile(
+                        title: 'GENRES*',
+                        items: [],
+                        onPressed: (String item) => context
+                            .read<TypewriterSeriesBloc>()
+                            .add(TypewriterSeriesEvent.genreAdded(
+                              item,
+                            )),
+                      ),
+                      const TypewriterGenres(),
                       TypewriterSwitchListTile(
                         title: 'NSFW/ADULT CONTENT',
                         onInfoPressed: () {},
@@ -138,7 +137,6 @@ class TypewriterSeriesLayout extends StatelessWidget {
                               isNSFW: value,
                             )),
                       ),
-                      TypewriterSelectorDialog(),
                     ],
                   ),
                 ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:wine/domain/core/typewriter_type.dart';
 import 'package:wine/presentation/routes/router.dart';
 import 'package:wine/presentation/typewriter/typewriter_page.dart';
 
@@ -56,7 +57,7 @@ class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
             ),
             onPressed: () => handleAuthGuardedNavigation(
               context,
-              navigateTo: TypewriterSeriesNew(),
+              navigateTo: TypewriterSeriesNew(type: TypewriterType.series),
             ),
             splashColor: Colors.transparent,
           ),
