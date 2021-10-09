@@ -231,7 +231,7 @@ void main() {
         },
         expect: () => <SetupState>[
           const SetupState.initial(),
-          const SetupState.navigateToOnboarding(),
+          const SetupState.onboarding(),
         ],
         verify: (_) {
           verifyInOrder([
@@ -259,7 +259,7 @@ void main() {
         },
         expect: () => <SetupState>[
           const SetupState.initial(),
-          const SetupState.initHomeBloc(),
+          const SetupState.content(),
         ],
         verify: (_) {
           verifyInOrder([
@@ -301,7 +301,7 @@ void main() {
         },
         expect: () => <SetupState>[
           const SetupState.initial(),
-          const SetupState.initHomeBloc(),
+          const SetupState.content(),
         ],
         verify: (_) {
           verifyInOrder([

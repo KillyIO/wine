@@ -12,14 +12,12 @@ dependencies:
   auto_route: ^2.4.0
   cloud_firestore: ^2.5.3
   cupertino_icons: ^1.0.3
-  # device_preview: ^0.7.4
   devicelocale: ^0.4.3
   equatable: ^2.0.3
   firebase_auth: ^3.1.1
   firebase_core: ^1.6.0
   firebase_storage: ^10.0.3
   flare_flutter: ^3.0.2
-  flare_loading: ^3.0.0
   flutter:
     sdk: flutter
   flutter_bloc: ^7.3.0

@@ -6,22 +6,21 @@
 
 import 'package:auto_route/auto_route.dart' as _i1;
 import 'package:flutter/material.dart' as _i2;
-import 'package:wine/domain/core/typewriter_type.dart' as _i15;
+import 'package:wine/domain/core/typewriter_type.dart' as _i14;
 import 'package:wine/presentation/home/home_page.dart' as _i3;
 import 'package:wine/presentation/library/library_page.dart' as _i4;
 import 'package:wine/presentation/log_in/log_in_page.dart' as _i5;
-import 'package:wine/presentation/onboarding/onboarding_page.dart' as _i6;
-import 'package:wine/presentation/plus/plus_page.dart' as _i7;
+import 'package:wine/presentation/plus/plus_page.dart' as _i6;
 import 'package:wine/presentation/settings/settings_account/settings_account_page.dart'
-    as _i11;
+    as _i10;
 import 'package:wine/presentation/settings/settings_chapter/settings_chapter_page.dart'
-    as _i12;
-import 'package:wine/presentation/settings/settings_page.dart' as _i14;
+    as _i11;
+import 'package:wine/presentation/settings/settings_page.dart' as _i13;
 import 'package:wine/presentation/settings/settings_series/settings_series_page.dart'
-    as _i13;
-import 'package:wine/presentation/sign_up/sign_up_page.dart' as _i9;
-import 'package:wine/presentation/typewriter/typewriter_page.dart' as _i10;
-import 'package:wine/presentation/wrappers/settings_wrapper.dart' as _i8;
+    as _i12;
+import 'package:wine/presentation/sign_up/sign_up_page.dart' as _i8;
+import 'package:wine/presentation/typewriter/typewriter_page.dart' as _i9;
+import 'package:wine/presentation/wrappers/settings_wrapper.dart' as _i7;
 
 class AppRouter extends _i1.RootStackRouter {
   AppRouter([_i2.GlobalKey<_i2.NavigatorState>? navigatorKey])
@@ -43,58 +42,54 @@ class AppRouter extends _i1.RootStackRouter {
           routeData: routeData,
           child: _i5.LogInPage(key: args.key, navigateTo: args.navigateTo));
     },
-    OnboardingRoute.name: (routeData) {
-      return _i1.AdaptivePage<_i6.OnboardingPage>(
-          routeData: routeData, child: const _i6.OnboardingPage());
-    },
     PlusRoute.name: (routeData) {
-      return _i1.AdaptivePage<_i7.PlusPage>(
-          routeData: routeData, child: const _i7.PlusPage());
+      return _i1.AdaptivePage<_i6.PlusPage>(
+          routeData: routeData, child: const _i6.PlusPage());
     },
     SettingsWrapper.name: (routeData) {
-      return _i1.AdaptivePage<_i8.SettingsWrapper>(
-          routeData: routeData, child: const _i8.SettingsWrapper());
+      return _i1.AdaptivePage<_i7.SettingsWrapper>(
+          routeData: routeData, child: const _i7.SettingsWrapper());
     },
     SignUpRoute.name: (routeData) {
       final args = routeData.argsAs<SignUpRouteArgs>();
-      return _i1.AdaptivePage<_i9.SignUpPage>(
+      return _i1.AdaptivePage<_i8.SignUpPage>(
           routeData: routeData,
-          child: _i9.SignUpPage(key: args.key, navigateTo: args.navigateTo));
+          child: _i8.SignUpPage(key: args.key, navigateTo: args.navigateTo));
     },
     TypewriterSeriesId.name: (routeData) {
       final pathParams = routeData.pathParams;
       final args = routeData.argsAs<TypewriterSeriesIdArgs>(
           orElse: () => TypewriterSeriesIdArgs(id: pathParams.optString('id')));
-      return _i1.AdaptivePage<_i10.TypewriterPage>(
+      return _i1.AdaptivePage<_i9.TypewriterPage>(
           routeData: routeData,
           child:
-              _i10.TypewriterPage(key: args.key, id: args.id, type: args.type));
+              _i9.TypewriterPage(key: args.key, id: args.id, type: args.type));
     },
     TypewriterSeriesNew.name: (routeData) {
       final pathParams = routeData.pathParams;
       final args = routeData.argsAs<TypewriterSeriesNewArgs>(
           orElse: () =>
               TypewriterSeriesNewArgs(id: pathParams.optString('id')));
-      return _i1.AdaptivePage<_i10.TypewriterPage>(
+      return _i1.AdaptivePage<_i9.TypewriterPage>(
           routeData: routeData,
           child:
-              _i10.TypewriterPage(key: args.key, id: args.id, type: args.type));
+              _i9.TypewriterPage(key: args.key, id: args.id, type: args.type));
     },
     SettingsAccountRoute.name: (routeData) {
-      return _i1.AdaptivePage<_i11.SettingsAccountPage>(
-          routeData: routeData, child: const _i11.SettingsAccountPage());
+      return _i1.AdaptivePage<_i10.SettingsAccountPage>(
+          routeData: routeData, child: const _i10.SettingsAccountPage());
     },
     SettingsChapterRoute.name: (routeData) {
-      return _i1.AdaptivePage<_i12.SettingsChapterPage>(
-          routeData: routeData, child: const _i12.SettingsChapterPage());
+      return _i1.AdaptivePage<_i11.SettingsChapterPage>(
+          routeData: routeData, child: const _i11.SettingsChapterPage());
     },
     SettingsSeriesRoute.name: (routeData) {
-      return _i1.AdaptivePage<_i13.SettingsSeriesPage>(
-          routeData: routeData, child: const _i13.SettingsSeriesPage());
+      return _i1.AdaptivePage<_i12.SettingsSeriesPage>(
+          routeData: routeData, child: const _i12.SettingsSeriesPage());
     },
     SettingsRoute.name: (routeData) {
-      return _i1.AdaptivePage<_i14.SettingsPage>(
-          routeData: routeData, child: const _i14.SettingsPage());
+      return _i1.AdaptivePage<_i13.SettingsPage>(
+          routeData: routeData, child: const _i13.SettingsPage());
     }
   };
 
@@ -103,7 +98,6 @@ class AppRouter extends _i1.RootStackRouter {
         _i1.RouteConfig(HomeRoute.name, path: '/'),
         _i1.RouteConfig(LibraryRoute.name, path: '/library'),
         _i1.RouteConfig(LogInRoute.name, path: '/log-in'),
-        _i1.RouteConfig(OnboardingRoute.name, path: '/onboarding'),
         _i1.RouteConfig(PlusRoute.name, path: '/plus'),
         _i1.RouteConfig(SettingsWrapper.name, path: '/settings', children: [
           _i1.RouteConfig(SettingsAccountRoute.name, path: 'account'),
@@ -148,12 +142,6 @@ class LogInRouteArgs {
   final _i1.PageRouteInfo<dynamic> navigateTo;
 }
 
-class OnboardingRoute extends _i1.PageRouteInfo<void> {
-  const OnboardingRoute() : super(name, path: '/onboarding');
-
-  static const String name = 'OnboardingRoute';
-}
-
 class PlusRoute extends _i1.PageRouteInfo<void> {
   const PlusRoute() : super(name, path: '/plus');
 
@@ -188,7 +176,7 @@ class TypewriterSeriesId extends _i1.PageRouteInfo<TypewriterSeriesIdArgs> {
   TypewriterSeriesId(
       {_i2.Key? key,
       String? id,
-      _i15.TypewriterType type = _i15.TypewriterType.unknown})
+      _i14.TypewriterType type = _i14.TypewriterType.unknown})
       : super(name,
             path: '/typewriter/series/:id',
             args: TypewriterSeriesIdArgs(key: key, id: id, type: type),
@@ -199,20 +187,20 @@ class TypewriterSeriesId extends _i1.PageRouteInfo<TypewriterSeriesIdArgs> {
 
 class TypewriterSeriesIdArgs {
   const TypewriterSeriesIdArgs(
-      {this.key, this.id, this.type = _i15.TypewriterType.unknown});
+      {this.key, this.id, this.type = _i14.TypewriterType.unknown});
 
   final _i2.Key? key;
 
   final String? id;
 
-  final _i15.TypewriterType type;
+  final _i14.TypewriterType type;
 }
 
 class TypewriterSeriesNew extends _i1.PageRouteInfo<TypewriterSeriesNewArgs> {
   TypewriterSeriesNew(
       {_i2.Key? key,
       String? id,
-      _i15.TypewriterType type = _i15.TypewriterType.unknown})
+      _i14.TypewriterType type = _i14.TypewriterType.unknown})
       : super(name,
             path: '/typewriter/series/new',
             args: TypewriterSeriesNewArgs(key: key, id: id, type: type));
@@ -222,13 +210,13 @@ class TypewriterSeriesNew extends _i1.PageRouteInfo<TypewriterSeriesNewArgs> {
 
 class TypewriterSeriesNewArgs {
   const TypewriterSeriesNewArgs(
-      {this.key, this.id, this.type = _i15.TypewriterType.unknown});
+      {this.key, this.id, this.type = _i14.TypewriterType.unknown});
 
   final _i2.Key? key;
 
   final String? id;
 
-  final _i15.TypewriterType type;
+  final _i14.TypewriterType type;
 }
 
 class SettingsAccountRoute extends _i1.PageRouteInfo<void> {

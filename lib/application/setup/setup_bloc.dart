@@ -74,9 +74,10 @@ class SetupBloc extends Bloc<SetupEvent, SetupState> {
         },
       ),
     );
+    on<OnboardingDonePressed>((_, emit) => emit(const SetupState.content()));
     on<SessionFetched>((value, emit) async {
       if (_authFacade.isAnonymous) {
-        emit(const SetupState.initHomeBloc());
+        emit(const SetupState.content());
       } else {
         (await _userRepository.loadUser(value.session.uid.getOrCrash())).match(
           (user) {
@@ -92,9 +93,9 @@ class SetupBloc extends Bloc<SetupEvent, SetupState> {
       (_, emit) async => (await _sessionsRepository.createSession()).match(
         (session) {
           if (kIsWeb) {
-            emit(const SetupState.initHomeBloc());
+            emit(const SetupState.content());
           } else {
-            emit(const SetupState.navigateToOnboarding());
+            emit(const SetupState.onboarding());
           }
         },
         (failure) {
@@ -118,7 +119,7 @@ class SetupBloc extends Bloc<SetupEvent, SetupState> {
       (value, emit) async =>
           (await _sessionsRepository.updateSession(value.user)).match(
         (_) {
-          emit(const SetupState.initHomeBloc());
+          emit(const SetupState.content());
         },
         (failure) {
           emit(SetupState.failure(CoreFailure.sessions(failure)));

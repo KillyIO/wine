@@ -18,6 +18,9 @@ class SetupEvent with _$SetupEvent {
   ) = DefaultCoverURLsLoaded;
 
   /// @nodoc
+  const factory SetupEvent.onboardingDonePressed() = OnboardingDonePressed;
+
+  /// @nodoc
   const factory SetupEvent.sessionFetched(User session) = SessionFetched;
 
   /// @nodoc

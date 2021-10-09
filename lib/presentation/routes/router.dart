@@ -31,10 +31,6 @@ export 'router.gr.dart';
       page: LogInPage,
       path: logInPath,
     ),
-    AutoRoute<OnboardingPage>(
-      page: OnboardingPage,
-      path: onboardingPath,
-    ),
     AutoRoute<PlusPage>(
       page: PlusPage,
       path: plusPath,
