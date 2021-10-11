@@ -9,6 +9,7 @@ import 'package:wine/presentation/typewriter/widgets/typewriter_switch_list_tile
 import 'package:wine/presentation/typewriter/widgets/typewriter_text_field.dart';
 import 'package:wine/presentation/typewriter/widgets/typewriter_top_title.dart';
 import 'package:wine/utils/constants/core.dart';
+import 'package:wine/utils/constants/genres.dart';
 import 'package:wine/utils/constants/series.dart';
 
 /// @nodoc
@@ -118,15 +119,26 @@ class TypewriterSeriesLayout extends StatelessWidget {
                             state.summaryWordCount > summaryMaxWords,
                       ),
                       TypewriterSelectionListTile(
-                        title: 'GENRES*',
-                        items: [],
-                        onPressed: (String item) => context
+                        items: genresKeys,
+                        onPressed: (item) => context
                             .read<TypewriterSeriesBloc>()
-                            .add(TypewriterSeriesEvent.genreAdded(
-                              item,
-                            )),
+                            .add(TypewriterSeriesEvent.genreAdded(item)),
+                        selectedItems: context
+                            .watch<TypewriterSeriesBloc>()
+                            .state
+                            .genres
+                            .map((genre) => genre.getOrCrash())
+                            .toList(),
+                        title: 'GENRES*',
                       ),
-                      const TypewriterGenres(),
+                      TypewriterGenres(
+                        genres: state.genres
+                            .map((genre) => genre.getOrCrash())
+                            .toList(),
+                        onPressed: (item) => context
+                            .read<TypewriterSeriesBloc>()
+                            .add(TypewriterSeriesEvent.genreRemoved(item)),
+                      ),
                       TypewriterSwitchListTile(
                         title: 'NSFW/ADULT CONTENT',
                         onInfoPressed: () {},

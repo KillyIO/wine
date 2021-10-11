@@ -8,6 +8,7 @@ class TypewriterSelectionListTile extends StatelessWidget {
     Key? key,
     required this.items,
     required this.onPressed,
+    required this.selectedItems,
     required this.title,
   }) : super(key: key);
 
@@ -16,6 +17,9 @@ class TypewriterSelectionListTile extends StatelessWidget {
 
   /// @nodoc
   final void Function(String) onPressed;
+
+  /// @nodoc
+  final List<String> selectedItems;
 
   /// @nodoc
   final String title;
@@ -30,6 +34,7 @@ class TypewriterSelectionListTile extends StatelessWidget {
           builder: (_) => TypewriterSelectionDialog(
             items: items,
             onPressed: onPressed,
+            selectedItems: selectedItems,
             title: title,
           ),
         ),

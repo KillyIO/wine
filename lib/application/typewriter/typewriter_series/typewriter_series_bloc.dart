@@ -45,8 +45,8 @@ class TypewriterSeriesBloc
       ));
     });
     on<GenreRemoved>((value, emit) {
-      final genres = state.genres
-        ..removeWhere((g) => g.getOrCrash() == value.genre);
+      final genres =
+          state.genres.where((g) => g.getOrCrash() != value.genre).toList();
 
       emit(state.copyWith(
         failureOption: const None(),
