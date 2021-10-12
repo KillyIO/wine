@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:wine/application/typewriter/typewriter_series/typewriter_series_bloc.dart';
 import 'package:wine/presentation/core/labels/text_field_label.dart';
+import 'package:wine/presentation/typewriter/widgets/series/typewriter_series_selection_list_tile.dart';
 import 'package:wine/presentation/typewriter/widgets/typewriter_cover.dart';
 import 'package:wine/presentation/typewriter/widgets/typewriter_genres.dart';
-import 'package:wine/presentation/typewriter/widgets/typewriter_selection_list_tile.dart';
 import 'package:wine/presentation/typewriter/widgets/typewriter_switch_list_tile.dart';
 import 'package:wine/presentation/typewriter/widgets/typewriter_text_field.dart';
 import 'package:wine/presentation/typewriter/widgets/typewriter_top_title.dart';
@@ -26,6 +26,8 @@ class TypewriterSeriesLayout extends StatelessWidget {
             maxWidth: maxContentLayoutWidth,
           ),
           child: BlocBuilder<TypewriterSeriesBloc, TypewriterSeriesState>(
+            buildWhen: (previous, current) =>
+                current.isProcessing != previous.isProcessing,
             builder: (context, state) {
               return AbsorbPointer(
                 absorbing: state.isProcessing,
@@ -118,36 +120,42 @@ class TypewriterSeriesLayout extends StatelessWidget {
                         wordCountError: state.summaryWordCount == 0 ||
                             state.summaryWordCount > summaryMaxWords,
                       ),
-                      TypewriterSelectionListTile(
+                      TypewriterSeriesSelectionListTile(
                         items: genresKeys,
                         onPressed: (item) => context
                             .read<TypewriterSeriesBloc>()
                             .add(TypewriterSeriesEvent.genreAdded(item)),
-                        selectedItems: context
-                            .watch<TypewriterSeriesBloc>()
-                            .state
-                            .genres
-                            .map((genre) => genre.getOrCrash())
-                            .toList(),
                         title: 'GENRES*',
                       ),
-                      TypewriterGenres(
-                        genres: state.genres
-                            .map((genre) => genre.getOrCrash())
-                            .toList(),
-                        onPressed: (item) => context
-                            .read<TypewriterSeriesBloc>()
-                            .add(TypewriterSeriesEvent.genreRemoved(item)),
+                      BlocBuilder<TypewriterSeriesBloc, TypewriterSeriesState>(
+                        buildWhen: (previous, current) =>
+                            current.genres.length != previous.genres.length,
+                        builder: (context, state) {
+                          return TypewriterGenres(
+                            genres: state.genres
+                                .map((genre) => genre.getOrCrash())
+                                .toList(),
+                            onPressed: (item) => context
+                                .read<TypewriterSeriesBloc>()
+                                .add(TypewriterSeriesEvent.genreRemoved(item)),
+                          );
+                        },
                       ),
-                      TypewriterSwitchListTile(
-                        title: 'NSFW/ADULT CONTENT',
-                        onInfoPressed: () {},
-                        value: state.isNSFW,
-                        onChanged: (bool value) => context
-                            .read<TypewriterSeriesBloc>()
-                            .add(TypewriterSeriesEvent.isNSFWChanged(
-                              isNSFW: value,
-                            )),
+                      BlocBuilder<TypewriterSeriesBloc, TypewriterSeriesState>(
+                        buildWhen: (previous, current) =>
+                            current.isNSFW != previous.isNSFW,
+                        builder: (context, state) {
+                          return TypewriterSwitchListTile(
+                            title: 'NSFW/ADULT CONTENT',
+                            onInfoPressed: () {},
+                            value: state.isNSFW,
+                            onChanged: (bool value) => context
+                                .read<TypewriterSeriesBloc>()
+                                .add(TypewriterSeriesEvent.isNSFWChanged(
+                                  isNSFW: value,
+                                )),
+                          );
+                        },
                       ),
                     ],
                   ),

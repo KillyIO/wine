@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:wine/presentation/typewriter/widgets/typewriter_selection_dialog.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:wine/application/typewriter/typewriter_series/typewriter_series_bloc.dart';
+import 'package:wine/presentation/typewriter/widgets/series/typewriter_series_selection_dialog.dart';
 
 /// @nodoc
-class TypewriterSelectionListTile extends StatelessWidget {
+class TypewriterSeriesSelectionListTile extends StatelessWidget {
   /// @nodoc
-  const TypewriterSelectionListTile({
+  const TypewriterSeriesSelectionListTile({
     Key? key,
     required this.items,
     required this.onPressed,
-    required this.selectedItems,
     required this.title,
   }) : super(key: key);
 
@@ -17,9 +18,6 @@ class TypewriterSelectionListTile extends StatelessWidget {
 
   /// @nodoc
   final void Function(String) onPressed;
-
-  /// @nodoc
-  final List<String> selectedItems;
 
   /// @nodoc
   final String title;
@@ -31,11 +29,13 @@ class TypewriterSelectionListTile extends StatelessWidget {
       child: ListTile(
         onTap: () => showDialog<void>(
           context: context,
-          builder: (_) => TypewriterSelectionDialog(
-            items: items,
-            onPressed: onPressed,
-            selectedItems: selectedItems,
-            title: title,
+          builder: (_) => BlocProvider<TypewriterSeriesBloc>.value(
+            value: context.read<TypewriterSeriesBloc>(),
+            child: TypewriterSeriesSelectionDialog(
+              items: items,
+              onPressed: onPressed,
+              title: title,
+            ),
           ),
         ),
         title: Text(
