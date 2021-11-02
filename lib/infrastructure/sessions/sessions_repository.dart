@@ -1,8 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart' as auth;
 import 'package:hive/hive.dart';
 import 'package:injectable/injectable.dart';
-import 'package:rustic/result.dart';
-import 'package:rustic/tuple.dart';
+import 'package:oxidized/oxidized.dart';
 
 import 'package:wine/domain/sessions/i_sessions_repository.dart';
 import 'package:wine/domain/sessions/sessions_failure.dart';
@@ -46,9 +45,9 @@ class SessionsRepository implements ISessionsRepository {
       );
     }
 
-    if (box.get(firebaseUser?.uid) != null) return const Ok(Unit());
+    if (box.get(firebaseUser?.uid) != null) return Ok(unit);
 
-    return const Err(SessionsFailure.sessionNotCreated());
+    return Err(const SessionsFailure.sessionNotCreated());
   }
 
   @override
@@ -62,9 +61,9 @@ class SessionsRepository implements ISessionsRepository {
     }
 
     if (box.get(firebaseUser?.uid) != null) {
-      return const Err(SessionsFailure.sessionNotDeleted());
+      return Err(const SessionsFailure.sessionNotDeleted());
     }
-    return const Ok(Unit());
+    return Ok(unit);
   }
 
   @override
@@ -78,7 +77,7 @@ class SessionsRepository implements ISessionsRepository {
     if (session != null) {
       return Ok(session.toDomain());
     }
-    return const Err(SessionsFailure.sessionNotFound());
+    return Err(const SessionsFailure.sessionNotFound());
   }
 
   @override
@@ -93,8 +92,8 @@ class SessionsRepository implements ISessionsRepository {
       await box.put(firebaseUser.uid, userAdapter);
     }
 
-    if (box.get(firebaseUser?.uid) == userAdapter) return const Ok(Unit());
+    if (box.get(firebaseUser?.uid) == userAdapter) return Ok(unit);
 
-    return const Err(SessionsFailure.sessionNotUpdated());
+    return Err(const SessionsFailure.sessionNotUpdated());
   }
 }

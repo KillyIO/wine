@@ -1,7 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:injectable/injectable.dart';
-import 'package:rustic/result.dart';
-import 'package:rustic/tuple.dart';
+import 'package:oxidized/oxidized.dart';
 import 'package:wine/domain/auth/email_address.dart';
 import 'package:wine/domain/auth/username.dart';
 import 'package:wine/domain/core/unique_id.dart';
@@ -36,13 +35,13 @@ class UserRepository extends IUserRepository {
           .get();
 
       if (documentSnapshot.exists) {
-        return const Err(UserFailure.usernameAlreadyInUse());
+        return Err(const UserFailure.usernameAlreadyInUse());
       }
-      return const Ok(Unit());
+      return Ok(unit);
     } on FirebaseException catch (_) {
-      return const Err(UserFailure.serverError());
+      return Err(const UserFailure.serverError());
     } catch (_) {
-      return const Err(UserFailure.unexpected());
+      return Err(const UserFailure.unexpected());
     }
   }
 
@@ -71,11 +70,11 @@ class UserRepository extends IUserRepository {
       if (user != null) {
         return Ok(user);
       }
-      return const Err(UserFailure.userNotFound());
+      return Err(const UserFailure.userNotFound());
     } on FirebaseException catch (_) {
-      return const Err(UserFailure.serverError());
+      return Err(const UserFailure.serverError());
     } catch (_) {
-      return const Err(UserFailure.unexpected());
+      return Err(const UserFailure.unexpected());
     }
   }
 
@@ -93,11 +92,11 @@ class UserRepository extends IUserRepository {
 
       await usersRef.set(user, SetOptions(merge: true));
 
-      return const Ok(Unit());
+      return Ok(unit);
     } on FirebaseException catch (_) {
-      return const Err(UserFailure.serverError());
+      return Err(const UserFailure.serverError());
     } catch (_) {
-      return const Err(UserFailure.unexpected());
+      return Err(const UserFailure.unexpected());
     }
   }
 
@@ -116,11 +115,11 @@ class UserRepository extends IUserRepository {
       await mapReference
           .set(<String, dynamic>{'uid': uid}, SetOptions(merge: true));
 
-      return const Ok(Unit());
+      return Ok(unit);
     } on FirebaseException catch (_) {
-      return const Err(UserFailure.serverError());
+      return Err(const UserFailure.serverError());
     } catch (_) {
-      return const Err(UserFailure.unexpected());
+      return Err(const UserFailure.unexpected());
     }
   }
 }

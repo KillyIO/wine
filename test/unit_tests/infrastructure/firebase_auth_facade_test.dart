@@ -2,7 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart' as auth;
 import 'package:flutter_test/flutter_test.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:mocktail/mocktail.dart';
-import 'package:rustic/tuple.dart';
+import 'package:oxidized/oxidized.dart';
 import 'package:wine/domain/auth/auth_failure.dart';
 import 'package:wine/domain/auth/email_address.dart';
 
@@ -42,8 +42,8 @@ void main() {
               .thenAnswer((_) => Stream.fromIterable([null]));
 
           _authFacade.authStateChanges.listen((option) {
-            expect(option.isNone, true);
-            expect(option.asPlain(), null);
+            expect(option.isNone(), true);
+            expect(option.toNullable(), null);
           });
         },
       );
@@ -55,8 +55,8 @@ void main() {
               .thenAnswer((_) => Stream.fromIterable([_firebaseUser]));
 
           _authFacade.authStateChanges.listen((option) {
-            expect(option.isNone, true);
-            expect(option.asPlain(), null);
+            expect(option.isNone(), true);
+            expect(option.toNullable(), null);
           });
         },
       );
@@ -70,7 +70,7 @@ void main() {
               .thenAnswer((_) => Stream.fromIterable([_firebaseUser]));
 
           _authFacade.authStateChanges.listen((option) {
-            expect(option.isSome, true);
+            expect(option.isSome(), true);
           });
         },
       );
@@ -93,9 +93,9 @@ void main() {
           Password(testPassword),
         );
 
-        expect(result.isOk, true);
+        expect(result.isOk(), true);
         result.match(
-          (ok) => expect(ok, const Unit()),
+          (ok) => expect(ok, unit),
           (_) {},
         );
 
@@ -113,7 +113,7 @@ void main() {
             Password(testPassword),
           );
 
-          expect(result.isErr, true);
+          expect(result.isErr(), true);
           result.match(
             (_) {},
             (err) => expect(err, isA<EmailAlreadyInUse>()),
@@ -130,7 +130,7 @@ void main() {
           Password(testPassword),
         );
 
-        expect(result.isErr, true);
+        expect(result.isErr(), true);
         result.match(
           (_) {},
           (err) => expect(err, isA<ServerError>()),
@@ -148,7 +148,7 @@ void main() {
             Password(testPassword),
           );
 
-          expect(result.isErr, true);
+          expect(result.isErr(), true);
           result.match(
             (_) {},
             (errr) => expect(errr, isA<Unexpected>()),
@@ -163,7 +163,7 @@ void main() {
 
         final result = await _authFacade.getLoggedInUser();
 
-        expect(result.isNone, true);
+        expect(result.isNone(), true);
       });
 
       test('When user logged in Then return Some User', () async {
@@ -171,7 +171,7 @@ void main() {
 
         final result = await _authFacade.getLoggedInUser();
 
-        expect(result.isSome, true);
+        expect(result.isSome(), true);
         result.match(
           (some) => expect(some, testUser),
           () {},
@@ -224,7 +224,7 @@ void main() {
 
         final result = await _authFacade.logInAnonymously();
 
-        expect(result.isOk, true);
+        expect(result.isOk(), true);
         result.match(
           (ok) => expect(ok, isA<Unit>()),
           (_) {},
@@ -237,7 +237,7 @@ void main() {
 
         final result = await _authFacade.logInAnonymously();
 
-        expect(result.isErr, true);
+        expect(result.isErr(), true);
         result.match(
           (_) {},
           (err) => expect(err, isA<ServerError>()),
@@ -249,7 +249,7 @@ void main() {
 
         final result = await _authFacade.logInAnonymously();
 
-        expect(result.isErr, true);
+        expect(result.isErr(), true);
         result.match(
           (_) {},
           (err) => expect(err, isA<Unexpected>()),
@@ -280,9 +280,9 @@ void main() {
             Password(testPassword),
           );
 
-          expect(result.isOk, true);
+          expect(result.isOk(), true);
           result.match(
-            (ok) => expect(ok, const Unit()),
+            (ok) => expect(ok, unit),
             (_) {},
           );
         },
@@ -305,7 +305,7 @@ void main() {
             Password(testPassword),
           );
 
-          expect(result.isErr, true);
+          expect(result.isErr(), true);
           result.match(
             (_) {},
             (err) => expect(
@@ -331,7 +331,7 @@ void main() {
           Password(testPassword),
         );
 
-        expect(result.isErr, true);
+        expect(result.isErr(), true);
         result.match(
           (_) {},
           (err) => expect(err, isA<ServerError>()),
@@ -351,7 +351,7 @@ void main() {
           Password(testPassword),
         );
 
-        expect(result.isErr, true);
+        expect(result.isErr(), true);
         result.match(
           (_) {},
           (err) => expect(err, isA<Unexpected>()),
@@ -390,9 +390,9 @@ void main() {
 
         final result = await _authFacade.logInWithGoogle();
 
-        expect(result.isOk, true);
+        expect(result.isOk(), true);
         result.match(
-          (ok) => expect(ok, const Unit()),
+          (ok) => expect(ok, unit),
           (_) {},
         );
       });
@@ -411,7 +411,7 @@ void main() {
 
           final result = await _authFacade.logInWithGoogle();
 
-          expect(result.isErr, true);
+          expect(result.isErr(), true);
           result.match(
             (_) {},
             (err) => expect(err, isA<CredentialAlreadyInUse>()),
@@ -426,7 +426,7 @@ void main() {
 
         final result = await _authFacade.logInWithGoogle();
 
-        expect(result.isErr, true);
+        expect(result.isErr(), true);
         result.match(
           (_) {},
           (err) => expect(err, isA<CancelledByUser>()),
@@ -438,7 +438,7 @@ void main() {
 
         final result = await _authFacade.logInWithGoogle();
 
-        expect(result.isErr, true);
+        expect(result.isErr(), true);
         result.match(
           (_) {},
           (err) => expect(err, isA<ServerError>()),
@@ -450,7 +450,7 @@ void main() {
 
         final result = await _authFacade.logInWithGoogle();
 
-        expect(result.isErr, true);
+        expect(result.isErr(), true);
         result.match(
           (_) {},
           (err) => expect(err, isA<Unexpected>()),
@@ -474,7 +474,7 @@ void main() {
 
         final result = await _authFacade.logOut();
 
-        expect(result.isOk, true);
+        expect(result.isOk(), true);
         result.match(
           (ok) => expect(ok, isA<Unit>()),
           (_) {},
@@ -488,7 +488,7 @@ void main() {
 
         final result = await _authFacade.logOut();
 
-        expect(result.isErr, true);
+        expect(result.isErr(), true);
         result.match(
           (_) {},
           (err) => expect(err, isA<UnableToSignOut>()),
@@ -500,7 +500,7 @@ void main() {
 
         final result = await _authFacade.logOut();
 
-        expect(result.isErr, true);
+        expect(result.isErr(), true);
         result.match(
           (_) {},
           (err) => expect(err, isA<Unexpected>()),
@@ -517,7 +517,7 @@ void main() {
 
         final result = await _authFacade.resendVerificationEmail();
 
-        expect(result.isOk, true);
+        expect(result.isOk(), true);
         result.match(
           (ok) => expect(ok, isA<Unit>()),
           (_) {},
@@ -529,7 +529,7 @@ void main() {
 
         final result = await _authFacade.resendVerificationEmail();
 
-        expect(result.isErr, true);
+        expect(result.isErr(), true);
         result.match(
           (_) {},
           (err) => expect(err, isA<Unexpected>()),
@@ -544,7 +544,7 @@ void main() {
 
           final result = await _authFacade.resendVerificationEmail();
 
-          expect(result.isErr, true);
+          expect(result.isErr(), true);
           result.match(
             (_) {},
             (err) => expect(err, isA<Unexpected>()),

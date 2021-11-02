@@ -632,6 +632,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.0.1"
+  oxidized:
+    dependency: "direct main"
+    description:
+      name: oxidized
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "5.1.0"
   package_config:
     dependency: transitive
     description:
@@ -758,13 +765,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.4.1"
-  rustic:
-    dependency: "direct main"
-    description:
-      name: rustic
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.3.0"
   rxdart:
     dependency: transitive
     description:

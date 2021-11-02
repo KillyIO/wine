@@ -40,9 +40,10 @@ class LogInLayout extends StatelessWidget {
 
     return BlocListener<LogInBloc, LogInState>(
       listener: (context, state) {
-        state.failureOption.whenSome(
-          (some) => some.whenErr(
-            (err) => err.maybeMap(
+        state.failureOption.when(
+          some: (value) => value.when(
+            ok: (_) {},
+            err: (err) => err.maybeMap(
               auth: (f) => f.f.maybeMap(
                 emailAlreadyInUse: (_) async => baseErrorDialog(
                   context,
@@ -88,6 +89,7 @@ class LogInLayout extends StatelessWidget {
               orElse: () {},
             ),
           ),
+          none: () {},
         );
 
         if (state.isAuthenticated) {

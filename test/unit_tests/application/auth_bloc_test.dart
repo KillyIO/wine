@@ -1,7 +1,7 @@
 import 'package:bloc_test/bloc_test.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
-import 'package:rustic/option.dart';
+import 'package:oxidized/oxidized.dart';
 import 'package:wine/application/auth/auth_bloc.dart';
 import 'package:wine/domain/auth/i_auth_facade.dart';
 
@@ -29,7 +29,7 @@ void main() {
       build: () => _authBloc,
       act: (bloc) {
         when(() => _authFacade.authStateChanges)
-            .thenAnswer((_) => Stream.fromIterable([Option(null)]));
+            .thenAnswer((_) => Stream.fromIterable([Option.none()]));
         return bloc.add(const AuthEvent.authChanged());
       },
       expect: () => <AuthState>[const AuthState.anonymous()],
@@ -43,7 +43,7 @@ void main() {
       build: () => _authBloc,
       act: (bloc) {
         when(() => _authFacade.authStateChanges)
-            .thenAnswer((_) => Stream.fromIterable([Option(testUser)]));
+            .thenAnswer((_) => Stream.fromIterable([Option.some(testUser)]));
         return bloc.add(const AuthEvent.authChanged());
       },
       expect: () => <AuthState>[const AuthState.authenticated()],

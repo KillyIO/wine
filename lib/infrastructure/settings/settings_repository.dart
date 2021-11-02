@@ -1,8 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart' as auth;
 import 'package:hive/hive.dart';
 import 'package:injectable/injectable.dart';
-import 'package:rustic/result.dart';
-import 'package:rustic/tuple.dart';
+import 'package:oxidized/oxidized.dart';
 
 import 'package:wine/domain/settings/i_settings_repository.dart';
 import 'package:wine/domain/settings/settings.dart';
@@ -39,9 +38,9 @@ class SettingsRepository implements ISettingsRepository {
     }
 
     if (box.get(firebaseUser?.uid) != null) {
-      return const Err(SettingsFailure.settingsNotDeleted());
+      return Err(const SettingsFailure.settingsNotDeleted());
     }
-    return const Ok(Unit());
+    return Ok(unit);
   }
 
   @override
@@ -55,7 +54,7 @@ class SettingsRepository implements ISettingsRepository {
     if (settings != null) {
       return Ok(settings.toDomain());
     }
-    return const Err(SettingsFailure.settingsNotFound());
+    return Err(const SettingsFailure.settingsNotFound());
   }
 
   @override
@@ -81,9 +80,9 @@ class SettingsRepository implements ISettingsRepository {
     }
 
     if (box.get(firebaseUser?.uid) != null) {
-      return const Ok(Unit());
+      return Ok(unit);
     }
-    return const Err(SettingsFailure.settingsNotInitialized());
+    return Err(const SettingsFailure.settingsNotInitialized());
   }
 
   @override
@@ -100,8 +99,8 @@ class SettingsRepository implements ISettingsRepository {
       await box.put(firebaseUser.uid, settingsAdapter);
     }
 
-    if (box.get(firebaseUser?.uid) == settingsAdapter) return const Ok(Unit());
+    if (box.get(firebaseUser?.uid) == settingsAdapter) return Ok(unit);
 
-    return const Err(SettingsFailure.settingsNotUpdated());
+    return Err(const SettingsFailure.settingsNotUpdated());
   }
 }

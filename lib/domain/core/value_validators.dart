@@ -1,6 +1,6 @@
 import 'dart:io';
 
-import 'package:rustic/result.dart';
+import 'package:oxidized/oxidized.dart';
 import 'package:string_validator/string_validator.dart';
 import 'package:stringr/stringr.dart';
 

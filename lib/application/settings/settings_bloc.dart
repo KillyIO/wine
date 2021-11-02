@@ -1,8 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
-import 'package:rustic/option.dart';
-import 'package:rustic/result.dart';
+import 'package:oxidized/oxidized.dart';
 
 import 'package:wine/domain/auth/i_auth_facade.dart';
 import 'package:wine/domain/core/core_failure.dart';
@@ -42,7 +41,7 @@ class SettingsBloc extends Bloc<SettingsEvent, SettingsState> {
         },
         (failure) {
           emit(state.copyWith(
-            failureOption: Option(Err(CoreFailure.sessions(failure))),
+            failureOption: Option.some(Err(CoreFailure.sessions(failure))),
             isProcessing: false,
           ));
         },
@@ -55,7 +54,7 @@ class SettingsBloc extends Bloc<SettingsEvent, SettingsState> {
         },
         (failure) {
           emit(state.copyWith(
-            failureOption: Option(Err(CoreFailure.sessions(failure))),
+            failureOption: Option.some(Err(CoreFailure.sessions(failure))),
             isProcessing: false,
           ));
         },
@@ -73,7 +72,7 @@ class SettingsBloc extends Bloc<SettingsEvent, SettingsState> {
         },
         (failure) {
           emit(state.copyWith(
-            failureOption: Option(Err(CoreFailure.sessions(failure))),
+            failureOption: Option.some(Err(CoreFailure.sessions(failure))),
             isProcessing: false,
           ));
         },
@@ -89,7 +88,7 @@ class SettingsBloc extends Bloc<SettingsEvent, SettingsState> {
         },
         (failure) {
           emit(state.copyWith(
-            failureOption: Option(Err(CoreFailure.settings(failure))),
+            failureOption: Option.some(Err(CoreFailure.settings(failure))),
             isProcessing: false,
           ));
         },
@@ -102,7 +101,7 @@ class SettingsBloc extends Bloc<SettingsEvent, SettingsState> {
         },
         (failure) {
           emit(state.copyWith(
-            failureOption: Option(Err(CoreFailure.auth(failure))),
+            failureOption: Option.some(Err(CoreFailure.auth(failure))),
             isProcessing: false,
           ));
         },
@@ -118,7 +117,7 @@ class SettingsBloc extends Bloc<SettingsEvent, SettingsState> {
         },
         (failure) {
           emit(state.copyWith(
-            failureOption: Option(Err(CoreFailure.settings(failure))),
+            failureOption: Option.some(Err(CoreFailure.settings(failure))),
             isProcessing: false,
           ));
         },

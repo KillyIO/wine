@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:rustic/result.dart';
+import 'package:oxidized/oxidized.dart';
 import 'package:wine/domain/core/value_failure.dart';
 import 'package:wine/domain/series/subtitle.dart';
 
@@ -12,14 +12,14 @@ void main() {
 
       expect(
         subtitle.value,
-        const Ok<String, ValueFailure<String>>(testSubtitle),
+        Ok<String, ValueFailure<String>>(testSubtitle),
       );
     });
 
     test('When input empty Then return input', () {
       final subtitle = Subtitle(testEmpty);
 
-      expect(subtitle.value, const Ok<String, ValueFailure<String>>(testEmpty));
+      expect(subtitle.value, Ok<String, ValueFailure<String>>(testEmpty));
     });
 
     test('When input too long Then return tooLong', () {
@@ -27,8 +27,8 @@ void main() {
 
       expect(
         subtitle.value,
-        const Err<String, ValueFailure<String>>(
-          ValueFailure<String>.tooLongInput(testInvalidSubtitleTooLong),
+        Err<String, ValueFailure<String>>(
+          const ValueFailure<String>.tooLongInput(testInvalidSubtitleTooLong),
         ),
       );
     });

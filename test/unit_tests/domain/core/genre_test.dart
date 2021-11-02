@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:rustic/result.dart';
+import 'package:oxidized/oxidized.dart';
 import 'package:wine/domain/core/genre.dart';
 import 'package:wine/domain/core/value_failure.dart';
 
@@ -10,7 +10,7 @@ void main() {
     test('When input valid Then return input', () {
       final genre = Genre(testGenre);
 
-      expect(genre.value, const Ok<String, ValueFailure<String>>(testGenre));
+      expect(genre.value, Ok<String, ValueFailure<String>>(testGenre));
     });
 
     test(
@@ -20,8 +20,8 @@ void main() {
 
         expect(
           genre.value,
-          const Err<String, ValueFailure<String>>(
-            ValueFailure<String>.emptySelection(testEmpty),
+          Err<String, ValueFailure<String>>(
+            const ValueFailure<String>.emptySelection(testEmpty),
           ),
         );
       },

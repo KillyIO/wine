@@ -2,8 +2,7 @@ import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart' hide Title;
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
-import 'package:rustic/option.dart';
-import 'package:rustic/result.dart';
+import 'package:oxidized/oxidized.dart';
 import 'package:stringr/stringr.dart';
 import 'package:wine/domain/auth/email_address.dart';
 import 'package:wine/domain/auth/username.dart';
@@ -75,7 +74,7 @@ class TypewriterSeriesBloc
         },
         (failure) {
           emit(state.copyWith(
-            failureOption: Option(Err(CoreFailure.sessions(failure))),
+            failureOption: Option.some(Err(CoreFailure.sessions(failure))),
           ));
         },
       );

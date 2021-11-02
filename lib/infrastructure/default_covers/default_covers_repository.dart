@@ -1,8 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:hive/hive.dart';
 import 'package:injectable/injectable.dart';
-import 'package:rustic/result.dart';
-import 'package:rustic/tuple.dart';
+import 'package:oxidized/oxidized.dart';
 import 'package:wine/domain/default_covers/default_covers_failure.dart';
 import 'package:wine/domain/default_covers/i_default_covers_repository.dart';
 import 'package:wine/utils/constants/boxes.dart';
@@ -34,10 +33,10 @@ class DefaultCoversRepository implements IDefaultCoversRepository {
 
       final url = box.get(key);
       if (url == null) {
-        return const Err(DefaultCoversFailure.defaultCoverURLsNotCached());
+        return Err(const DefaultCoversFailure.defaultCoverURLsNotCached());
       }
     }
-    return const Ok(Unit());
+    return Ok(unit);
   }
 
   @override
@@ -51,7 +50,7 @@ class DefaultCoversRepository implements IDefaultCoversRepository {
     if (url != null) {
       return Ok(url);
     }
-    return const Err(DefaultCoversFailure.defaultCoverURLsNotFetched());
+    return Err(const DefaultCoversFailure.defaultCoverURLsNotFetched());
   }
 
   @override
@@ -62,7 +61,7 @@ class DefaultCoversRepository implements IDefaultCoversRepository {
           await _firestore.collection(defaultCoversPath).get();
 
       if (querySnapshot.docs.isEmpty) {
-        return const Err(DefaultCoversFailure.defaultCoverURLsNotLoaded());
+        return Err(const DefaultCoversFailure.defaultCoverURLsNotLoaded());
       }
 
       final data = <String, String>{};
@@ -73,9 +72,9 @@ class DefaultCoversRepository implements IDefaultCoversRepository {
       }
       return Ok(data);
     } on FirebaseException catch (_) {
-      return const Err(DefaultCoversFailure.serverError());
+      return Err(const DefaultCoversFailure.serverError());
     } catch (_) {
-      return const Err(DefaultCoversFailure.unexpected());
+      return Err(const DefaultCoversFailure.unexpected());
     }
   }
 }

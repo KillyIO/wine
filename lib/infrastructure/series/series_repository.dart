@@ -3,9 +3,8 @@ import 'dart:io';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 import 'package:injectable/injectable.dart';
+import 'package:oxidized/oxidized.dart';
 import 'package:path/path.dart' as p;
-import 'package:rustic/result.dart';
-import 'package:rustic/tuple.dart';
 import 'package:string_validator/string_validator.dart';
 import 'package:wine/domain/core/cover_url.dart';
 import 'package:wine/domain/core/unique_id.dart';
@@ -48,9 +47,9 @@ class SeriesRepository implements ISeriesRepository {
           .doc(series.uid.getOrCrash())
           .set(SeriesDTO.fromDomain(series).toJson());
 
-      return const Ok(Unit());
+      return Ok(unit);
     } catch (_) {
-      return const Err(SeriesFailure.unexpected());
+      return Err(const SeriesFailure.unexpected());
     }
   }
 
@@ -64,9 +63,9 @@ class SeriesRepository implements ISeriesRepository {
           .doc(uidStr)
           .update({'published': false});
 
-      return const Ok(Unit());
+      return Ok(unit);
     } catch (_) {
-      return const Err(SeriesFailure.unexpected());
+      return Err(const SeriesFailure.unexpected());
     }
   }
 
@@ -82,6 +81,6 @@ class SeriesRepository implements ISeriesRepository {
       final url = await ref.getDownloadURL();
       return Ok(url);
     }
-    return const Err(SeriesFailure.coverNotUploaded());
+    return Err(const SeriesFailure.coverNotUploaded());
   }
 }

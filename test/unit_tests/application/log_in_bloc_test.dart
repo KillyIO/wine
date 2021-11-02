@@ -1,9 +1,7 @@
 import 'package:bloc_test/bloc_test.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
-import 'package:rustic/option.dart';
-import 'package:rustic/result.dart';
-import 'package:rustic/tuple.dart';
+import 'package:oxidized/oxidized.dart';
 import 'package:wine/application/log_in/log_in_bloc.dart';
 import 'package:wine/domain/auth/auth_failure.dart';
 import 'package:wine/domain/auth/email_address.dart';
@@ -119,7 +117,7 @@ void main() {
         build: () => _logInBloc,
         act: (bloc) {
           when(() => _authFacade.logInWithEmailAndPassword(any(), any()))
-              .thenAnswer((_) async => const Err(AuthFailure.serverError()));
+              .thenAnswer((_) async => Err(const AuthFailure.serverError()));
           return bloc
             ..add(const LogInEvent.emailAddressChanged(testEmailAddress))
             ..add(const LogInEvent.passwordChanged(testPassword))
@@ -138,7 +136,7 @@ void main() {
           LogInState(
             emailAddress: EmailAddress(testEmailAddress),
             failureOption:
-                const Some(Err(CoreFailure.auth(AuthFailure.serverError()))),
+                Some(Err(const CoreFailure.auth(AuthFailure.serverError()))),
             isAuthenticated: false,
             isProcessing: false,
             password: Password(testPassword),
@@ -156,7 +154,7 @@ void main() {
         build: () => _logInBloc,
         act: (bloc) {
           when(_authFacade.logInWithGoogle)
-              .thenAnswer((_) async => const Err(AuthFailure.serverError()));
+              .thenAnswer((_) async => Err(const AuthFailure.serverError()));
           return bloc.add(const LogInEvent.logInWithGooglePressed());
         },
         expect: () => <LogInState>[
@@ -171,7 +169,7 @@ void main() {
           LogInState(
             emailAddress: EmailAddress(''),
             failureOption:
-                const Some(Err(CoreFailure.auth(AuthFailure.serverError()))),
+                Some(Err(const CoreFailure.auth(AuthFailure.serverError()))),
             isAuthenticated: false,
             isProcessing: false,
             password: Password(''),
@@ -189,9 +187,9 @@ void main() {
         act: (bloc) {
           when(() => _authFacade.isLoggedIn).thenReturn(true);
           when(_authFacade.getLoggedInUser)
-              .thenAnswer((_) async => Option(testUser));
+              .thenAnswer((_) async => Option.some(testUser));
           when(() => _userRepository.loadUser(any()))
-              .thenAnswer((_) async => const Err(UserFailure.serverError()));
+              .thenAnswer((_) async => Err(const UserFailure.serverError()));
           return bloc
             ..add(const LogInEvent.emailAddressChanged(testEmailAddress))
             ..add(const LogInEvent.passwordChanged(testPassword))
@@ -202,7 +200,7 @@ void main() {
           LogInState(
             emailAddress: EmailAddress(testEmailAddress),
             failureOption:
-                const Some(Err(CoreFailure.user(UserFailure.serverError()))),
+                Some(Err(const CoreFailure.user(UserFailure.serverError()))),
             isAuthenticated: false,
             isProcessing: false,
             password: Password(testPassword),
@@ -224,16 +222,16 @@ void main() {
         act: (bloc) {
           when(() => _authFacade.isLoggedIn).thenReturn(true);
           when(_authFacade.getLoggedInUser)
-              .thenAnswer((_) async => Option(testUser));
+              .thenAnswer((_) async => Option.some(testUser));
           when(() => _userRepository.loadUser(any()))
-              .thenAnswer((_) async => const Err(UserFailure.serverError()));
+              .thenAnswer((_) async => Err(const UserFailure.serverError()));
           return bloc.add(const LogInEvent.loggedInWithGoogle());
         },
         expect: () => <LogInState>[
           LogInState(
             emailAddress: EmailAddress(''),
             failureOption:
-                const Some(Err(CoreFailure.user(UserFailure.serverError()))),
+                Some(Err(const CoreFailure.user(UserFailure.serverError()))),
             isAuthenticated: false,
             isProcessing: false,
             password: Password(''),
@@ -254,16 +252,16 @@ void main() {
         build: () => _logInBloc,
         act: (bloc) {
           when(() => _sessionsRepository.updateSession(any())).thenAnswer(
-            (_) async => const Err(SessionsFailure.sessionNotUpdated()),
+            (_) async => Err(const SessionsFailure.sessionNotUpdated()),
           );
           return bloc.add(LogInEvent.userDetailsSaved(testUser));
         },
         expect: () => <LogInState>[
           LogInState(
             emailAddress: EmailAddress(''),
-            failureOption: const Some(
-              Err(CoreFailure.sessions(SessionsFailure.sessionNotUpdated())),
-            ),
+            failureOption: Some(Err(
+              const CoreFailure.sessions(SessionsFailure.sessionNotUpdated()),
+            )),
             isAuthenticated: false,
             isProcessing: false,
             password: Password(''),
@@ -282,16 +280,16 @@ void main() {
         build: () => _logInBloc,
         act: (bloc) {
           when(() => _authFacade.logInWithEmailAndPassword(any(), any()))
-              .thenAnswer((_) async => const Ok(Unit()));
+              .thenAnswer((_) async => Ok(unit));
           when(() => _authFacade.isLoggedIn).thenReturn(true);
           when(_authFacade.getLoggedInUser)
-              .thenAnswer((_) async => Option(testUser));
+              .thenAnswer((_) async => Option.some(testUser));
           when(() => _userRepository.loadUser(any()))
               .thenAnswer((_) async => Ok(testUser));
           when(() => _userRepository.saveDetailsFromUser(any()))
-              .thenAnswer((_) async => const Ok(Unit()));
+              .thenAnswer((_) async => Ok(unit));
           when(() => _sessionsRepository.updateSession(any()))
-              .thenAnswer((_) async => const Ok(Unit()));
+              .thenAnswer((_) async => Ok(unit));
           when(() => _authFacade.isAnonymous).thenReturn(false);
           return bloc
             ..add(const LogInEvent.emailAddressChanged(testEmailAddress))
@@ -335,16 +333,16 @@ void main() {
         build: () => _logInBloc,
         act: (bloc) {
           when(() => _authFacade.logInWithGoogle())
-              .thenAnswer((_) async => const Ok(Unit()));
+              .thenAnswer((_) async => Ok(unit));
           when(() => _authFacade.isLoggedIn).thenReturn(true);
           when(_authFacade.getLoggedInUser)
-              .thenAnswer((_) async => Option(testUser));
+              .thenAnswer((_) async => Option.some(testUser));
           when(() => _userRepository.loadUser(any()))
               .thenAnswer((_) async => Ok(testUser));
           when(() => _userRepository.saveDetailsFromUser(any()))
-              .thenAnswer((_) async => const Ok(Unit()));
+              .thenAnswer((_) async => Ok(unit));
           when(() => _sessionsRepository.updateSession(any()))
-              .thenAnswer((_) async => const Ok(Unit()));
+              .thenAnswer((_) async => Ok(unit));
           return bloc.add(const LogInEvent.logInWithGooglePressed());
         },
         expect: () => <LogInState>[
@@ -384,20 +382,20 @@ void main() {
         build: () => _logInBloc,
         act: (bloc) {
           when(() => _authFacade.logInWithGoogle())
-              .thenAnswer((_) async => const Ok(Unit()));
+              .thenAnswer((_) async => Ok(unit));
           when(() => _authFacade.isLoggedIn).thenReturn(true);
           when(_authFacade.getLoggedInUser)
-              .thenAnswer((_) async => Option(testUser));
+              .thenAnswer((_) async => Option.some(testUser));
           when(() => _userRepository.loadUser(any()))
-              .thenAnswer((_) async => const Err(UserFailure.userNotFound()));
+              .thenAnswer((_) async => Err(const UserFailure.userNotFound()));
           when(() => _userRepository.checkUsernameAvailability(any()))
-              .thenAnswer((_) async => const Ok(Unit()));
+              .thenAnswer((_) async => Ok(unit));
           when(() => _userRepository.saveUsername(any(), any()))
-              .thenAnswer((_) async => const Ok(Unit()));
+              .thenAnswer((_) async => Ok(unit));
           when(() => _userRepository.saveDetailsFromUser(any()))
-              .thenAnswer((_) async => const Ok(Unit()));
+              .thenAnswer((_) async => Ok(unit));
           when(() => _sessionsRepository.updateSession(any()))
-              .thenAnswer((_) async => const Ok(Unit()));
+              .thenAnswer((_) async => Ok(unit));
           return bloc.add(const LogInEvent.logInWithGooglePressed());
         },
         expect: () => <LogInState>[
@@ -440,21 +438,21 @@ void main() {
         build: () => _logInBloc,
         act: (bloc) {
           when(() => _authFacade.logInWithGoogle())
-              .thenAnswer((_) async => const Ok(Unit()));
+              .thenAnswer((_) async => Ok(unit));
           when(() => _authFacade.isLoggedIn).thenReturn(true);
           when(_authFacade.getLoggedInUser)
-              .thenAnswer((_) async => Option(testUser));
+              .thenAnswer((_) async => Option.some(testUser));
           when(() => _userRepository.loadUser(any()))
-              .thenAnswer((_) async => const Err(UserFailure.userNotFound()));
+              .thenAnswer((_) async => Err(const UserFailure.userNotFound()));
           when(() => _userRepository.checkUsernameAvailability(any()))
               .thenAnswer(
-                  (_) async => const Err(UserFailure.usernameAlreadyInUse()));
+                  (_) async => Err(const UserFailure.usernameAlreadyInUse()));
           when(() => _userRepository.saveUsername(any(), any()))
-              .thenAnswer((_) async => const Ok(Unit()));
+              .thenAnswer((_) async => Ok(unit));
           when(() => _userRepository.saveDetailsFromUser(any()))
-              .thenAnswer((_) async => const Ok(Unit()));
+              .thenAnswer((_) async => Ok(unit));
           when(() => _sessionsRepository.updateSession(any()))
-              .thenAnswer((_) async => const Ok(Unit()));
+              .thenAnswer((_) async => Ok(unit));
           return bloc.add(const LogInEvent.logInWithGooglePressed());
         },
         expect: () => <LogInState>[

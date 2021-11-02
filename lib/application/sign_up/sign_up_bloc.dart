@@ -1,8 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
-import 'package:rustic/option.dart';
-import 'package:rustic/result.dart';
+import 'package:oxidized/oxidized.dart';
 import 'package:wine/domain/auth/confirm_password.dart';
 import 'package:wine/domain/auth/email_address.dart';
 import 'package:wine/domain/auth/i_auth_facade.dart';
@@ -30,7 +29,7 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
   ) : super(SignUpState.initial()) {
     on<AccountCreated>((_, emit) async {
       final userOption = await _authFacade.getLoggedInUser();
-      var userAsPlain = userOption.asPlain();
+      var userAsPlain = userOption.toNullable();
 
       if (userAsPlain != null) {
         userAsPlain = userAsPlain.copyWith(username: state.username);
@@ -45,7 +44,7 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
           },
           (failure) {
             emit(state.copyWith(
-              failureOption: Option(Err(CoreFailure.user(failure))),
+              failureOption: Option.some(Err(CoreFailure.user(failure))),
               isProcessing: false,
               showErrorMessages: true,
             ));
@@ -54,7 +53,7 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
       }
     });
     on<ConfirmPasswordChanged>((value, emit) {
-      final password = state.password.value.ok.asPlain();
+      final password = state.password.value.ok().toNullable();
 
       if (password != null) {
         emit(state.copyWith(
@@ -93,7 +92,7 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
           },
           (failure) {
             emit(state.copyWith(
-              failureOption: Option(Err(CoreFailure.user(failure))),
+              failureOption: Option.some(Err(CoreFailure.user(failure))),
               isProcessing: false,
               showErrorMessages: true,
             ));
@@ -113,7 +112,7 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
         },
         (failure) {
           emit(state.copyWith(
-            failureOption: Option(Err(CoreFailure.sessions(failure))),
+            failureOption: Option.some(Err(CoreFailure.sessions(failure))),
             isProcessing: false,
             showErrorMessages: true,
           ));
@@ -136,7 +135,7 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
           },
           (failure) {
             emit(state.copyWith(
-              failureOption: Option(Err(CoreFailure.auth(failure))),
+              failureOption: Option.some(Err(CoreFailure.auth(failure))),
               isProcessing: false,
               showErrorMessages: true,
             ));
@@ -152,7 +151,7 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
         },
         (failure) {
           emit(state.copyWith(
-            failureOption: Option(Err(CoreFailure.user(failure))),
+            failureOption: Option.some(Err(CoreFailure.user(failure))),
             isProcessing: false,
             showErrorMessages: true,
           ));

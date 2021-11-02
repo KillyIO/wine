@@ -3,8 +3,7 @@ import 'dart:async';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
-import 'package:rustic/option.dart';
-import 'package:rustic/result.dart';
+import 'package:oxidized/oxidized.dart';
 import 'package:uuid/uuid.dart';
 import 'package:wine/domain/auth/auth_failure.dart' as auth_failure;
 
@@ -41,7 +40,7 @@ class LogInBloc extends Bloc<LogInEvent, LogInState> {
         },
         (failure) {
           emit(state.copyWith(
-            failureOption: Option(Err(CoreFailure.auth(failure))),
+            failureOption: Option.some(Err(CoreFailure.auth(failure))),
             isProcessing: false,
             showErrorMessages: true,
           ));
@@ -60,7 +59,7 @@ class LogInBloc extends Bloc<LogInEvent, LogInState> {
     on<LoggedInWithEmailAndPassword>((_, emit) async {
       if (_authFacade.isLoggedIn) {
         final userOption = await _authFacade.getLoggedInUser();
-        final userAsplain = userOption.asPlain();
+        final userAsplain = userOption.toNullable();
 
         if (userAsplain != null) {
           (await _userRepository.loadUser(
@@ -72,7 +71,7 @@ class LogInBloc extends Bloc<LogInEvent, LogInState> {
             },
             (failure) {
               emit(state.copyWith(
-                failureOption: Option(Err(CoreFailure.user(failure))),
+                failureOption: Option.some(Err(CoreFailure.user(failure))),
                 isProcessing: false,
                 showErrorMessages: true,
               ));
@@ -84,7 +83,7 @@ class LogInBloc extends Bloc<LogInEvent, LogInState> {
     on<LoggedInWithGoogle>((_, emit) async {
       if (_authFacade.isLoggedIn) {
         final userOption = await _authFacade.getLoggedInUser();
-        final userAsplain = userOption.asPlain();
+        final userAsplain = userOption.toNullable();
 
         if (userAsplain != null) {
           (await _userRepository.loadUser(
@@ -101,7 +100,7 @@ class LogInBloc extends Bloc<LogInEvent, LogInState> {
                 },
                 orElse: () {
                   emit(state.copyWith(
-                    failureOption: Option(Err(CoreFailure.user(failure))),
+                    failureOption: Option.some(Err(CoreFailure.user(failure))),
                     isProcessing: false,
                     showErrorMessages: true,
                   ));
@@ -132,7 +131,7 @@ class LogInBloc extends Bloc<LogInEvent, LogInState> {
           },
           (failure) {
             emit(state.copyWith(
-              failureOption: Option(Err(CoreFailure.auth(failure))),
+              failureOption: Option.some(Err(CoreFailure.auth(failure))),
               isProcessing: false,
               showErrorMessages: true,
             ));
@@ -155,7 +154,7 @@ class LogInBloc extends Bloc<LogInEvent, LogInState> {
             add(const LogInEvent.credentialAlreadyInUse());
           } else {
             emit(state.copyWith(
-              failureOption: Option(Err(CoreFailure.auth(failure))),
+              failureOption: Option.some(Err(CoreFailure.auth(failure))),
               isProcessing: false,
               showErrorMessages: true,
             ));
@@ -181,7 +180,7 @@ class LogInBloc extends Bloc<LogInEvent, LogInState> {
         },
         (failure) {
           emit(state.copyWith(
-            failureOption: Option(Err(CoreFailure.sessions(failure))),
+            failureOption: Option.some(Err(CoreFailure.sessions(failure))),
             isProcessing: false,
             showErrorMessages: true,
           ));
@@ -216,7 +215,7 @@ class LogInBloc extends Bloc<LogInEvent, LogInState> {
             add(LogInEvent.customUsernameGenerated(user));
           } else {
             emit(state.copyWith(
-              failureOption: Option(Err(CoreFailure.user(failure))),
+              failureOption: Option.some(Err(CoreFailure.user(failure))),
               isProcessing: false,
               showErrorMessages: true,
             ));
@@ -240,7 +239,7 @@ class LogInBloc extends Bloc<LogInEvent, LogInState> {
       },
       (failure) {
         emit(state.copyWith(
-          failureOption: Option(Err(CoreFailure.user(failure))),
+          failureOption: Option.some(Err(CoreFailure.user(failure))),
           isProcessing: false,
           showErrorMessages: true,
         ));
@@ -255,7 +254,7 @@ class LogInBloc extends Bloc<LogInEvent, LogInState> {
       },
       (failure) {
         emit(state.copyWith(
-          failureOption: Option(Err(CoreFailure.user(failure))),
+          failureOption: Option.some(Err(CoreFailure.user(failure))),
           isProcessing: false,
           showErrorMessages: true,
         ));

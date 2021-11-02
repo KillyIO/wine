@@ -2,9 +2,7 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
-import 'package:rustic/option.dart';
-import 'package:rustic/result.dart';
-import 'package:rustic/tuple.dart';
+import 'package:oxidized/oxidized.dart';
 
 import 'package:wine/application/auth/auth_bloc.dart';
 import 'package:wine/application/auth/auth_dialog/auth_dialog_cubit.dart';
@@ -59,11 +57,11 @@ void main() {
   group('PlusPage', () {
     setUp(() {
       when(() => _authFacade.authStateChanges)
-          .thenAnswer((_) => Stream.fromIterable([Option(null)]));
+          .thenAnswer((_) => Stream.fromIterable([Option.none()]));
       when(() => _authFacade.isLoggedIn).thenReturn(true);
       when(() => _authFacade.isAnonymous).thenReturn(true);
       when(_settingsRepository.fetchSettings)
-          .thenAnswer((_) async => const Ok(testSettings));
+          .thenAnswer((_) async => Ok(testSettings));
       when(_sessionsRepository.fetchSession)
           .thenAnswer((_) async => Ok(testUser));
     });
@@ -106,7 +104,7 @@ void main() {
   group('LibraryButton', () {
     setUp(() {
       when(() => _authFacade.authStateChanges)
-          .thenAnswer((_) => Stream.fromIterable([Option(null)]));
+          .thenAnswer((_) => Stream.fromIterable([Option.none()]));
     });
 
     group('Web', () {
@@ -124,7 +122,7 @@ void main() {
           when(() => _authFacade.isLoggedIn).thenReturn(true);
           when(() => _authFacade.isAnonymous).thenReturn(true);
           when(_settingsRepository.fetchSettings)
-              .thenAnswer((_) async => const Ok(testSettings));
+              .thenAnswer((_) async => Ok(testSettings));
           when(_sessionsRepository.fetchSession)
               .thenAnswer((_) async => Ok(testUser));
 
@@ -170,7 +168,7 @@ void main() {
           when(() => _authFacade.isLoggedIn).thenReturn(true);
           when(() => _authFacade.isAnonymous).thenReturn(true);
           when(_settingsRepository.fetchSettings)
-              .thenAnswer((_) async => const Ok(testSettings));
+              .thenAnswer((_) async => Ok(testSettings));
           when(_sessionsRepository.fetchSession)
               .thenAnswer((_) async => Ok(testUser));
 
@@ -209,21 +207,21 @@ void main() {
               Size(mobileWidth * dpi, mobileHeight * dpi);
 
           when(() => _authFacade.authStateChanges)
-              .thenAnswer((_) => Stream.fromIterable([Option(testUser)]));
+              .thenAnswer((_) => Stream.fromIterable([Option.some(testUser)]));
           when(() => _authFacade.isLoggedIn).thenReturn(true);
           when(() => _authFacade.isAnonymous).thenReturn(false);
           when(_defaultCoversRepository.loadDefaultCoverURLs)
-              .thenAnswer((_) async => const Ok(testDefaultCovers));
+              .thenAnswer((_) async => Ok(testDefaultCovers));
           when(() => _defaultCoversRepository.cacheDefaultCoverURLs(any()))
-              .thenAnswer((_) async => const Ok(Unit()));
+              .thenAnswer((_) async => Ok(unit));
           when(_settingsRepository.fetchSettings)
-              .thenAnswer((_) async => const Ok(testSettings));
+              .thenAnswer((_) async => Ok(testSettings));
           when(_sessionsRepository.fetchSession)
               .thenAnswer((_) async => Ok(testUser));
           when(() => _userRepository.loadUser(any()))
               .thenAnswer((_) async => Ok(testUser));
           when(() => _sessionsRepository.updateSession(testUser))
-              .thenAnswer((_) async => const Ok(Unit()));
+              .thenAnswer((_) async => Ok(unit));
 
           final authBloc = getIt<AuthBloc>()
             ..add(const AuthEvent.authChanged());

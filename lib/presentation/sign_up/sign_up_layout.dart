@@ -36,9 +36,10 @@ class SignUpLayout extends StatelessWidget {
 
     return BlocListener<SignUpBloc, SignUpState>(
       listener: (context, state) {
-        state.failureOption.whenSome(
-          (some) => some.whenErr(
-            (err) => err.maybeMap(
+        state.failureOption.when(
+          some: (value) => value.when(
+            ok: (_) {},
+            err: (err) => err.maybeMap(
               auth: (f) => f.f.maybeMap(
                 emailAlreadyInUse: (_) async => baseErrorDialog(
                   context,
@@ -79,6 +80,7 @@ class SignUpLayout extends StatelessWidget {
               orElse: () {},
             ),
           ),
+          none: () {},
         );
 
         if (state.isAuthenticated) {

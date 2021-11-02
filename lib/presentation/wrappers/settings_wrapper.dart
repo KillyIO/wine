@@ -16,9 +16,10 @@ class SettingsWrapper extends AutoRouter implements AutoRouteWrapper {
       create: (_) => getIt<SettingsBloc>()..add(const SettingsEvent.initBloc()),
       child: BlocListener<SettingsBloc, SettingsState>(
         listener: (context, state) {
-          state.failureOption.whenSome(
-            (some) => some.whenErr(
-              (err) => err.maybeMap(
+          state.failureOption.when(
+            some: (value) => value.when(
+              ok: (_) {},
+              err: (err) => err.maybeMap(
                 auth: (f) => f.f.maybeMap(
                   unableToSignOut: (_) async => baseErrorDialog(
                     context,
@@ -63,6 +64,7 @@ class SettingsWrapper extends AutoRouter implements AutoRouteWrapper {
                 orElse: () {},
               ),
             ),
+            none: () {},
           );
         },
         child: this,
