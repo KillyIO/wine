@@ -330,7 +330,7 @@ class _$LibraryStateTearOff {
 
   _LibraryState call(
       {required List<Series> bookmarkedSeriesList,
-      required Option<Result<None, CoreFailure>> failureOption,
+      required Option<Result<None<Object>, CoreFailure>> failureOption,
       required bool isProcessing,
       required List<Series> seriesList,
       required User session}) {
@@ -352,7 +352,7 @@ mixin _$LibraryState {
 // required List<Chapter> bookmarkedSeriesList,
   List<Series> get bookmarkedSeriesList =>
       throw _privateConstructorUsedError; // required List<Chapter> chapterList,
-  Option<Result<None, CoreFailure>> get failureOption =>
+  Option<Result<None<Object>, CoreFailure>> get failureOption =>
       throw _privateConstructorUsedError;
   bool get isProcessing => throw _privateConstructorUsedError;
   List<Series> get seriesList => throw _privateConstructorUsedError;
@@ -370,7 +370,7 @@ abstract class $LibraryStateCopyWith<$Res> {
       _$LibraryStateCopyWithImpl<$Res>;
   $Res call(
       {List<Series> bookmarkedSeriesList,
-      Option<Result<None, CoreFailure>> failureOption,
+      Option<Result<None<Object>, CoreFailure>> failureOption,
       bool isProcessing,
       List<Series> seriesList,
       User session});
@@ -402,7 +402,7 @@ class _$LibraryStateCopyWithImpl<$Res> implements $LibraryStateCopyWith<$Res> {
       failureOption: failureOption == freezed
           ? _value.failureOption
           : failureOption // ignore: cast_nullable_to_non_nullable
-              as Option<Result<None, CoreFailure>>,
+              as Option<Result<None<Object>, CoreFailure>>,
       isProcessing: isProcessing == freezed
           ? _value.isProcessing
           : isProcessing // ignore: cast_nullable_to_non_nullable
@@ -435,7 +435,7 @@ abstract class _$LibraryStateCopyWith<$Res>
   @override
   $Res call(
       {List<Series> bookmarkedSeriesList,
-      Option<Result<None, CoreFailure>> failureOption,
+      Option<Result<None<Object>, CoreFailure>> failureOption,
       bool isProcessing,
       List<Series> seriesList,
       User session});
@@ -470,7 +470,7 @@ class __$LibraryStateCopyWithImpl<$Res> extends _$LibraryStateCopyWithImpl<$Res>
       failureOption: failureOption == freezed
           ? _value.failureOption
           : failureOption // ignore: cast_nullable_to_non_nullable
-              as Option<Result<None, CoreFailure>>,
+              as Option<Result<None<Object>, CoreFailure>>,
       isProcessing: isProcessing == freezed
           ? _value.isProcessing
           : isProcessing // ignore: cast_nullable_to_non_nullable
@@ -500,7 +500,7 @@ class _$_LibraryState implements _LibraryState {
   @override // required List<Chapter> bookmarkedSeriesList,
   final List<Series> bookmarkedSeriesList;
   @override // required List<Chapter> chapterList,
-  final Option<Result<None, CoreFailure>> failureOption;
+  final Option<Result<None<Object>, CoreFailure>> failureOption;
   @override
   final bool isProcessing;
   @override
@@ -551,7 +551,7 @@ class _$_LibraryState implements _LibraryState {
 abstract class _LibraryState implements LibraryState {
   const factory _LibraryState(
       {required List<Series> bookmarkedSeriesList,
-      required Option<Result<None, CoreFailure>> failureOption,
+      required Option<Result<None<Object>, CoreFailure>> failureOption,
       required bool isProcessing,
       required List<Series> seriesList,
       required User session}) = _$_LibraryState;
@@ -559,7 +559,7 @@ abstract class _LibraryState implements LibraryState {
   @override // required List<Chapter> bookmarkedSeriesList,
   List<Series> get bookmarkedSeriesList => throw _privateConstructorUsedError;
   @override // required List<Chapter> chapterList,
-  Option<Result<None, CoreFailure>> get failureOption =>
+  Option<Result<None<Object>, CoreFailure>> get failureOption =>
       throw _privateConstructorUsedError;
   @override
   bool get isProcessing => throw _privateConstructorUsedError;

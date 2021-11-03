@@ -2905,7 +2905,7 @@ class _$LogInStateTearOff {
 
   _LogInState call(
       {required EmailAddress emailAddress,
-      required Option<Result<None, CoreFailure>> failureOption,
+      required Option<Result<None<Object>, CoreFailure>> failureOption,
       required bool isAuthenticated,
       required bool isProcessing,
       required Password password,
@@ -2927,7 +2927,7 @@ const $LogInState = _$LogInStateTearOff();
 /// @nodoc
 mixin _$LogInState {
   EmailAddress get emailAddress => throw _privateConstructorUsedError;
-  Option<Result<None, CoreFailure>> get failureOption =>
+  Option<Result<None<Object>, CoreFailure>> get failureOption =>
       throw _privateConstructorUsedError;
   bool get isAuthenticated => throw _privateConstructorUsedError;
   bool get isProcessing => throw _privateConstructorUsedError;
@@ -2946,7 +2946,7 @@ abstract class $LogInStateCopyWith<$Res> {
       _$LogInStateCopyWithImpl<$Res>;
   $Res call(
       {EmailAddress emailAddress,
-      Option<Result<None, CoreFailure>> failureOption,
+      Option<Result<None<Object>, CoreFailure>> failureOption,
       bool isAuthenticated,
       bool isProcessing,
       Password password,
@@ -2978,7 +2978,7 @@ class _$LogInStateCopyWithImpl<$Res> implements $LogInStateCopyWith<$Res> {
       failureOption: failureOption == freezed
           ? _value.failureOption
           : failureOption // ignore: cast_nullable_to_non_nullable
-              as Option<Result<None, CoreFailure>>,
+              as Option<Result<None<Object>, CoreFailure>>,
       isAuthenticated: isAuthenticated == freezed
           ? _value.isAuthenticated
           : isAuthenticated // ignore: cast_nullable_to_non_nullable
@@ -3007,7 +3007,7 @@ abstract class _$LogInStateCopyWith<$Res> implements $LogInStateCopyWith<$Res> {
   @override
   $Res call(
       {EmailAddress emailAddress,
-      Option<Result<None, CoreFailure>> failureOption,
+      Option<Result<None<Object>, CoreFailure>> failureOption,
       bool isAuthenticated,
       bool isProcessing,
       Password password,
@@ -3041,7 +3041,7 @@ class __$LogInStateCopyWithImpl<$Res> extends _$LogInStateCopyWithImpl<$Res>
       failureOption: failureOption == freezed
           ? _value.failureOption
           : failureOption // ignore: cast_nullable_to_non_nullable
-              as Option<Result<None, CoreFailure>>,
+              as Option<Result<None<Object>, CoreFailure>>,
       isAuthenticated: isAuthenticated == freezed
           ? _value.isAuthenticated
           : isAuthenticated // ignore: cast_nullable_to_non_nullable
@@ -3076,7 +3076,7 @@ class _$_LogInState implements _LogInState {
   @override
   final EmailAddress emailAddress;
   @override
-  final Option<Result<None, CoreFailure>> failureOption;
+  final Option<Result<None<Object>, CoreFailure>> failureOption;
   @override
   final bool isAuthenticated;
   @override
@@ -3134,7 +3134,7 @@ class _$_LogInState implements _LogInState {
 abstract class _LogInState implements LogInState {
   const factory _LogInState(
       {required EmailAddress emailAddress,
-      required Option<Result<None, CoreFailure>> failureOption,
+      required Option<Result<None<Object>, CoreFailure>> failureOption,
       required bool isAuthenticated,
       required bool isProcessing,
       required Password password,
@@ -3143,7 +3143,7 @@ abstract class _LogInState implements LogInState {
   @override
   EmailAddress get emailAddress => throw _privateConstructorUsedError;
   @override
-  Option<Result<None, CoreFailure>> get failureOption =>
+  Option<Result<None<Object>, CoreFailure>> get failureOption =>
       throw _privateConstructorUsedError;
   @override
   bool get isAuthenticated => throw _privateConstructorUsedError;

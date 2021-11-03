@@ -2,7 +2,6 @@ import 'package:injectable/injectable.dart';
 import 'package:wine/application/auth/auth_bloc.dart';
 import 'package:wine/application/auth/auth_dialog/auth_dialog_cubit.dart';
 import 'package:wine/application/home/home_bloc.dart';
-import 'package:wine/application/home/home_navigation/home_navigation_bloc.dart';
 import 'package:wine/application/library/library_bloc.dart';
 import 'package:wine/application/library/library_navigation/library_navigation_bloc.dart';
 import 'package:wine/application/log_in/log_in_bloc.dart';
@@ -31,7 +30,6 @@ void setupInjection() {
   final ISettingsRepository _settingsRepository = MockSettingsRepository();
   final IUserRepository _userRepository = MockUserRepository();
 
-  final _homeNavigationBloc = HomeNavigationBloc();
   final _libraryNavigationBloc = LibraryNavigationBloc();
 
   getIt
@@ -43,8 +41,7 @@ void setupInjection() {
     ..registerLazySingleton<IUserRepository>(() => _userRepository)
     ..registerLazySingleton<AuthBloc>(() => AuthBloc(_authFacade))
     ..registerLazySingleton<AuthDialogCubit>(() => AuthDialogCubit())
-    ..registerLazySingleton<HomeBloc>(() => HomeBloc(_homeNavigationBloc))
-    ..registerLazySingleton<HomeNavigationBloc>(() => _homeNavigationBloc)
+    ..registerLazySingleton<HomeBloc>(() => HomeBloc())
     ..registerLazySingleton<LibraryBloc>(() => LibraryBloc(
           _libraryNavigationBloc,
           _sessionsRepository,

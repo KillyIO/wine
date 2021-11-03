@@ -61,7 +61,7 @@ class TypewriterSeriesLayout extends StatelessWidget {
                                 emptyInput: (_) =>
                                     'The title must not be empty.',
                                 tooLongInput: (_) =>
-                                    'The title must be lass than  words long.',
+                                    'The title must be less than  words long.',
                                 orElse: () => null,
                               ),
                             ),
@@ -85,7 +85,7 @@ class TypewriterSeriesLayout extends StatelessWidget {
                               (_) => null,
                               (err) => err.maybeMap(
                                 tooLongInput: (_) =>
-                                    'The subtitle must be lass than  words long.',
+                                    'The subtitle must be less than  words long.',
                                 orElse: () => null,
                               ),
                             ),
@@ -112,7 +112,7 @@ class TypewriterSeriesLayout extends StatelessWidget {
                                 emptyInput: (_) =>
                                     'The summary must not be empty.',
                                 tooLongInput: (_) =>
-                                    'The summary must be lass than  words long.',
+                                    'The summary must be less than  words long.',
                                 orElse: () => null,
                               ),
                             ),

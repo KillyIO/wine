@@ -1,5 +1,4 @@
 import 'package:oxidized/oxidized.dart';
-import 'package:oxidized/oxidized.dart';
 import 'package:wine/domain/default_covers/default_covers_failure.dart';
 
 /// @nodoc

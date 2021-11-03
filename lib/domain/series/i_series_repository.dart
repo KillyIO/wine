@@ -1,7 +1,6 @@
 import 'dart:io';
 
 import 'package:oxidized/oxidized.dart';
-import 'package:oxidized/oxidized.dart';
 import 'package:wine/domain/core/unique_id.dart';
 import 'package:wine/domain/series/series.dart';
 import 'package:wine/domain/series/series_failure.dart';

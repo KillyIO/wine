@@ -46,6 +46,12 @@ class _$HomeEventTearOff {
   LoadTopSeries loadTopSeries() {
     return const LoadTopSeries();
   }
+
+  PageViewIndexChanged pageViewIndexChanged(int index) {
+    return PageViewIndexChanged(
+      index,
+    );
+  }
 }
 
 /// @nodoc
@@ -61,6 +67,7 @@ mixin _$HomeEvent {
     required TResult Function(String key) loadSeriesByLanguage,
     required TResult Function(String key) loadSeriesByTime,
     required TResult Function() loadTopSeries,
+    required TResult Function(int index) pageViewIndexChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -71,6 +78,7 @@ mixin _$HomeEvent {
     TResult Function(String key)? loadSeriesByLanguage,
     TResult Function(String key)? loadSeriesByTime,
     TResult Function()? loadTopSeries,
+    TResult Function(int index)? pageViewIndexChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -81,6 +89,7 @@ mixin _$HomeEvent {
     TResult Function(String key)? loadSeriesByLanguage,
     TResult Function(String key)? loadSeriesByTime,
     TResult Function()? loadTopSeries,
+    TResult Function(int index)? pageViewIndexChanged,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -92,6 +101,7 @@ mixin _$HomeEvent {
     required TResult Function(LoadSeriesByLanguage value) loadSeriesByLanguage,
     required TResult Function(LoadSeriesByTime value) loadSeriesByTime,
     required TResult Function(LoadTopSeries value) loadTopSeries,
+    required TResult Function(PageViewIndexChanged value) pageViewIndexChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -102,6 +112,7 @@ mixin _$HomeEvent {
     TResult Function(LoadSeriesByLanguage value)? loadSeriesByLanguage,
     TResult Function(LoadSeriesByTime value)? loadSeriesByTime,
     TResult Function(LoadTopSeries value)? loadTopSeries,
+    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -112,6 +123,7 @@ mixin _$HomeEvent {
     TResult Function(LoadSeriesByLanguage value)? loadSeriesByLanguage,
     TResult Function(LoadSeriesByTime value)? loadSeriesByTime,
     TResult Function(LoadTopSeries value)? loadTopSeries,
+    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -175,6 +187,7 @@ class _$InitBloc implements InitBloc {
     required TResult Function(String key) loadSeriesByLanguage,
     required TResult Function(String key) loadSeriesByTime,
     required TResult Function() loadTopSeries,
+    required TResult Function(int index) pageViewIndexChanged,
   }) {
     return initBloc();
   }
@@ -188,6 +201,7 @@ class _$InitBloc implements InitBloc {
     TResult Function(String key)? loadSeriesByLanguage,
     TResult Function(String key)? loadSeriesByTime,
     TResult Function()? loadTopSeries,
+    TResult Function(int index)? pageViewIndexChanged,
   }) {
     return initBloc?.call();
   }
@@ -201,6 +215,7 @@ class _$InitBloc implements InitBloc {
     TResult Function(String key)? loadSeriesByLanguage,
     TResult Function(String key)? loadSeriesByTime,
     TResult Function()? loadTopSeries,
+    TResult Function(int index)? pageViewIndexChanged,
     required TResult orElse(),
   }) {
     if (initBloc != null) {
@@ -218,6 +233,7 @@ class _$InitBloc implements InitBloc {
     required TResult Function(LoadSeriesByLanguage value) loadSeriesByLanguage,
     required TResult Function(LoadSeriesByTime value) loadSeriesByTime,
     required TResult Function(LoadTopSeries value) loadTopSeries,
+    required TResult Function(PageViewIndexChanged value) pageViewIndexChanged,
   }) {
     return initBloc(this);
   }
@@ -231,6 +247,7 @@ class _$InitBloc implements InitBloc {
     TResult Function(LoadSeriesByLanguage value)? loadSeriesByLanguage,
     TResult Function(LoadSeriesByTime value)? loadSeriesByTime,
     TResult Function(LoadTopSeries value)? loadTopSeries,
+    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
   }) {
     return initBloc?.call(this);
   }
@@ -244,6 +261,7 @@ class _$InitBloc implements InitBloc {
     TResult Function(LoadSeriesByLanguage value)? loadSeriesByLanguage,
     TResult Function(LoadSeriesByTime value)? loadSeriesByTime,
     TResult Function(LoadTopSeries value)? loadTopSeries,
+    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
     required TResult orElse(),
   }) {
     if (initBloc != null) {
@@ -302,6 +320,7 @@ class _$LoadNewSeries implements LoadNewSeries {
     required TResult Function(String key) loadSeriesByLanguage,
     required TResult Function(String key) loadSeriesByTime,
     required TResult Function() loadTopSeries,
+    required TResult Function(int index) pageViewIndexChanged,
   }) {
     return loadNewSeries();
   }
@@ -315,6 +334,7 @@ class _$LoadNewSeries implements LoadNewSeries {
     TResult Function(String key)? loadSeriesByLanguage,
     TResult Function(String key)? loadSeriesByTime,
     TResult Function()? loadTopSeries,
+    TResult Function(int index)? pageViewIndexChanged,
   }) {
     return loadNewSeries?.call();
   }
@@ -328,6 +348,7 @@ class _$LoadNewSeries implements LoadNewSeries {
     TResult Function(String key)? loadSeriesByLanguage,
     TResult Function(String key)? loadSeriesByTime,
     TResult Function()? loadTopSeries,
+    TResult Function(int index)? pageViewIndexChanged,
     required TResult orElse(),
   }) {
     if (loadNewSeries != null) {
@@ -345,6 +366,7 @@ class _$LoadNewSeries implements LoadNewSeries {
     required TResult Function(LoadSeriesByLanguage value) loadSeriesByLanguage,
     required TResult Function(LoadSeriesByTime value) loadSeriesByTime,
     required TResult Function(LoadTopSeries value) loadTopSeries,
+    required TResult Function(PageViewIndexChanged value) pageViewIndexChanged,
   }) {
     return loadNewSeries(this);
   }
@@ -358,6 +380,7 @@ class _$LoadNewSeries implements LoadNewSeries {
     TResult Function(LoadSeriesByLanguage value)? loadSeriesByLanguage,
     TResult Function(LoadSeriesByTime value)? loadSeriesByTime,
     TResult Function(LoadTopSeries value)? loadTopSeries,
+    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
   }) {
     return loadNewSeries?.call(this);
   }
@@ -371,6 +394,7 @@ class _$LoadNewSeries implements LoadNewSeries {
     TResult Function(LoadSeriesByLanguage value)? loadSeriesByLanguage,
     TResult Function(LoadSeriesByTime value)? loadSeriesByTime,
     TResult Function(LoadTopSeries value)? loadTopSeries,
+    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
     required TResult orElse(),
   }) {
     if (loadNewSeries != null) {
@@ -455,6 +479,7 @@ class _$LoadSeriesByGenre implements LoadSeriesByGenre {
     required TResult Function(String key) loadSeriesByLanguage,
     required TResult Function(String key) loadSeriesByTime,
     required TResult Function() loadTopSeries,
+    required TResult Function(int index) pageViewIndexChanged,
   }) {
     return loadSeriesByGenre(key);
   }
@@ -468,6 +493,7 @@ class _$LoadSeriesByGenre implements LoadSeriesByGenre {
     TResult Function(String key)? loadSeriesByLanguage,
     TResult Function(String key)? loadSeriesByTime,
     TResult Function()? loadTopSeries,
+    TResult Function(int index)? pageViewIndexChanged,
   }) {
     return loadSeriesByGenre?.call(key);
   }
@@ -481,6 +507,7 @@ class _$LoadSeriesByGenre implements LoadSeriesByGenre {
     TResult Function(String key)? loadSeriesByLanguage,
     TResult Function(String key)? loadSeriesByTime,
     TResult Function()? loadTopSeries,
+    TResult Function(int index)? pageViewIndexChanged,
     required TResult orElse(),
   }) {
     if (loadSeriesByGenre != null) {
@@ -498,6 +525,7 @@ class _$LoadSeriesByGenre implements LoadSeriesByGenre {
     required TResult Function(LoadSeriesByLanguage value) loadSeriesByLanguage,
     required TResult Function(LoadSeriesByTime value) loadSeriesByTime,
     required TResult Function(LoadTopSeries value) loadTopSeries,
+    required TResult Function(PageViewIndexChanged value) pageViewIndexChanged,
   }) {
     return loadSeriesByGenre(this);
   }
@@ -511,6 +539,7 @@ class _$LoadSeriesByGenre implements LoadSeriesByGenre {
     TResult Function(LoadSeriesByLanguage value)? loadSeriesByLanguage,
     TResult Function(LoadSeriesByTime value)? loadSeriesByTime,
     TResult Function(LoadTopSeries value)? loadTopSeries,
+    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
   }) {
     return loadSeriesByGenre?.call(this);
   }
@@ -524,6 +553,7 @@ class _$LoadSeriesByGenre implements LoadSeriesByGenre {
     TResult Function(LoadSeriesByLanguage value)? loadSeriesByLanguage,
     TResult Function(LoadSeriesByTime value)? loadSeriesByTime,
     TResult Function(LoadTopSeries value)? loadTopSeries,
+    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
     required TResult orElse(),
   }) {
     if (loadSeriesByGenre != null) {
@@ -614,6 +644,7 @@ class _$LoadSeriesByLanguage implements LoadSeriesByLanguage {
     required TResult Function(String key) loadSeriesByLanguage,
     required TResult Function(String key) loadSeriesByTime,
     required TResult Function() loadTopSeries,
+    required TResult Function(int index) pageViewIndexChanged,
   }) {
     return loadSeriesByLanguage(key);
   }
@@ -627,6 +658,7 @@ class _$LoadSeriesByLanguage implements LoadSeriesByLanguage {
     TResult Function(String key)? loadSeriesByLanguage,
     TResult Function(String key)? loadSeriesByTime,
     TResult Function()? loadTopSeries,
+    TResult Function(int index)? pageViewIndexChanged,
   }) {
     return loadSeriesByLanguage?.call(key);
   }
@@ -640,6 +672,7 @@ class _$LoadSeriesByLanguage implements LoadSeriesByLanguage {
     TResult Function(String key)? loadSeriesByLanguage,
     TResult Function(String key)? loadSeriesByTime,
     TResult Function()? loadTopSeries,
+    TResult Function(int index)? pageViewIndexChanged,
     required TResult orElse(),
   }) {
     if (loadSeriesByLanguage != null) {
@@ -657,6 +690,7 @@ class _$LoadSeriesByLanguage implements LoadSeriesByLanguage {
     required TResult Function(LoadSeriesByLanguage value) loadSeriesByLanguage,
     required TResult Function(LoadSeriesByTime value) loadSeriesByTime,
     required TResult Function(LoadTopSeries value) loadTopSeries,
+    required TResult Function(PageViewIndexChanged value) pageViewIndexChanged,
   }) {
     return loadSeriesByLanguage(this);
   }
@@ -670,6 +704,7 @@ class _$LoadSeriesByLanguage implements LoadSeriesByLanguage {
     TResult Function(LoadSeriesByLanguage value)? loadSeriesByLanguage,
     TResult Function(LoadSeriesByTime value)? loadSeriesByTime,
     TResult Function(LoadTopSeries value)? loadTopSeries,
+    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
   }) {
     return loadSeriesByLanguage?.call(this);
   }
@@ -683,6 +718,7 @@ class _$LoadSeriesByLanguage implements LoadSeriesByLanguage {
     TResult Function(LoadSeriesByLanguage value)? loadSeriesByLanguage,
     TResult Function(LoadSeriesByTime value)? loadSeriesByTime,
     TResult Function(LoadTopSeries value)? loadTopSeries,
+    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
     required TResult orElse(),
   }) {
     if (loadSeriesByLanguage != null) {
@@ -771,6 +807,7 @@ class _$LoadSeriesByTime implements LoadSeriesByTime {
     required TResult Function(String key) loadSeriesByLanguage,
     required TResult Function(String key) loadSeriesByTime,
     required TResult Function() loadTopSeries,
+    required TResult Function(int index) pageViewIndexChanged,
   }) {
     return loadSeriesByTime(key);
   }
@@ -784,6 +821,7 @@ class _$LoadSeriesByTime implements LoadSeriesByTime {
     TResult Function(String key)? loadSeriesByLanguage,
     TResult Function(String key)? loadSeriesByTime,
     TResult Function()? loadTopSeries,
+    TResult Function(int index)? pageViewIndexChanged,
   }) {
     return loadSeriesByTime?.call(key);
   }
@@ -797,6 +835,7 @@ class _$LoadSeriesByTime implements LoadSeriesByTime {
     TResult Function(String key)? loadSeriesByLanguage,
     TResult Function(String key)? loadSeriesByTime,
     TResult Function()? loadTopSeries,
+    TResult Function(int index)? pageViewIndexChanged,
     required TResult orElse(),
   }) {
     if (loadSeriesByTime != null) {
@@ -814,6 +853,7 @@ class _$LoadSeriesByTime implements LoadSeriesByTime {
     required TResult Function(LoadSeriesByLanguage value) loadSeriesByLanguage,
     required TResult Function(LoadSeriesByTime value) loadSeriesByTime,
     required TResult Function(LoadTopSeries value) loadTopSeries,
+    required TResult Function(PageViewIndexChanged value) pageViewIndexChanged,
   }) {
     return loadSeriesByTime(this);
   }
@@ -827,6 +867,7 @@ class _$LoadSeriesByTime implements LoadSeriesByTime {
     TResult Function(LoadSeriesByLanguage value)? loadSeriesByLanguage,
     TResult Function(LoadSeriesByTime value)? loadSeriesByTime,
     TResult Function(LoadTopSeries value)? loadTopSeries,
+    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
   }) {
     return loadSeriesByTime?.call(this);
   }
@@ -840,6 +881,7 @@ class _$LoadSeriesByTime implements LoadSeriesByTime {
     TResult Function(LoadSeriesByLanguage value)? loadSeriesByLanguage,
     TResult Function(LoadSeriesByTime value)? loadSeriesByTime,
     TResult Function(LoadTopSeries value)? loadTopSeries,
+    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
     required TResult orElse(),
   }) {
     if (loadSeriesByTime != null) {
@@ -903,6 +945,7 @@ class _$LoadTopSeries implements LoadTopSeries {
     required TResult Function(String key) loadSeriesByLanguage,
     required TResult Function(String key) loadSeriesByTime,
     required TResult Function() loadTopSeries,
+    required TResult Function(int index) pageViewIndexChanged,
   }) {
     return loadTopSeries();
   }
@@ -916,6 +959,7 @@ class _$LoadTopSeries implements LoadTopSeries {
     TResult Function(String key)? loadSeriesByLanguage,
     TResult Function(String key)? loadSeriesByTime,
     TResult Function()? loadTopSeries,
+    TResult Function(int index)? pageViewIndexChanged,
   }) {
     return loadTopSeries?.call();
   }
@@ -929,6 +973,7 @@ class _$LoadTopSeries implements LoadTopSeries {
     TResult Function(String key)? loadSeriesByLanguage,
     TResult Function(String key)? loadSeriesByTime,
     TResult Function()? loadTopSeries,
+    TResult Function(int index)? pageViewIndexChanged,
     required TResult orElse(),
   }) {
     if (loadTopSeries != null) {
@@ -946,6 +991,7 @@ class _$LoadTopSeries implements LoadTopSeries {
     required TResult Function(LoadSeriesByLanguage value) loadSeriesByLanguage,
     required TResult Function(LoadSeriesByTime value) loadSeriesByTime,
     required TResult Function(LoadTopSeries value) loadTopSeries,
+    required TResult Function(PageViewIndexChanged value) pageViewIndexChanged,
   }) {
     return loadTopSeries(this);
   }
@@ -959,6 +1005,7 @@ class _$LoadTopSeries implements LoadTopSeries {
     TResult Function(LoadSeriesByLanguage value)? loadSeriesByLanguage,
     TResult Function(LoadSeriesByTime value)? loadSeriesByTime,
     TResult Function(LoadTopSeries value)? loadTopSeries,
+    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
   }) {
     return loadTopSeries?.call(this);
   }
@@ -972,6 +1019,7 @@ class _$LoadTopSeries implements LoadTopSeries {
     TResult Function(LoadSeriesByLanguage value)? loadSeriesByLanguage,
     TResult Function(LoadSeriesByTime value)? loadSeriesByTime,
     TResult Function(LoadTopSeries value)? loadTopSeries,
+    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
     required TResult orElse(),
   }) {
     if (loadTopSeries != null) {
@@ -986,17 +1034,184 @@ abstract class LoadTopSeries implements HomeEvent {
 }
 
 /// @nodoc
+abstract class $PageViewIndexChangedCopyWith<$Res> {
+  factory $PageViewIndexChangedCopyWith(PageViewIndexChanged value,
+          $Res Function(PageViewIndexChanged) then) =
+      _$PageViewIndexChangedCopyWithImpl<$Res>;
+  $Res call({int index});
+}
+
+/// @nodoc
+class _$PageViewIndexChangedCopyWithImpl<$Res>
+    extends _$HomeEventCopyWithImpl<$Res>
+    implements $PageViewIndexChangedCopyWith<$Res> {
+  _$PageViewIndexChangedCopyWithImpl(
+      PageViewIndexChanged _value, $Res Function(PageViewIndexChanged) _then)
+      : super(_value, (v) => _then(v as PageViewIndexChanged));
+
+  @override
+  PageViewIndexChanged get _value => super._value as PageViewIndexChanged;
+
+  @override
+  $Res call({
+    Object? index = freezed,
+  }) {
+    return _then(PageViewIndexChanged(
+      index == freezed
+          ? _value.index
+          : index // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$PageViewIndexChanged implements PageViewIndexChanged {
+  const _$PageViewIndexChanged(this.index);
+
+  @override
+  final int index;
+
+  @override
+  String toString() {
+    return 'HomeEvent.pageViewIndexChanged(index: $index)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is PageViewIndexChanged &&
+            (identical(other.index, index) ||
+                const DeepCollectionEquality().equals(other.index, index)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(index);
+
+  @JsonKey(ignore: true)
+  @override
+  $PageViewIndexChangedCopyWith<PageViewIndexChanged> get copyWith =>
+      _$PageViewIndexChangedCopyWithImpl<PageViewIndexChanged>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initBloc,
+    required TResult Function() loadNewSeries,
+    required TResult Function(String key) loadSeriesByGenre,
+    required TResult Function(String key) loadSeriesByLanguage,
+    required TResult Function(String key) loadSeriesByTime,
+    required TResult Function() loadTopSeries,
+    required TResult Function(int index) pageViewIndexChanged,
+  }) {
+    return pageViewIndexChanged(index);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initBloc,
+    TResult Function()? loadNewSeries,
+    TResult Function(String key)? loadSeriesByGenre,
+    TResult Function(String key)? loadSeriesByLanguage,
+    TResult Function(String key)? loadSeriesByTime,
+    TResult Function()? loadTopSeries,
+    TResult Function(int index)? pageViewIndexChanged,
+  }) {
+    return pageViewIndexChanged?.call(index);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initBloc,
+    TResult Function()? loadNewSeries,
+    TResult Function(String key)? loadSeriesByGenre,
+    TResult Function(String key)? loadSeriesByLanguage,
+    TResult Function(String key)? loadSeriesByTime,
+    TResult Function()? loadTopSeries,
+    TResult Function(int index)? pageViewIndexChanged,
+    required TResult orElse(),
+  }) {
+    if (pageViewIndexChanged != null) {
+      return pageViewIndexChanged(index);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(InitBloc value) initBloc,
+    required TResult Function(LoadNewSeries value) loadNewSeries,
+    required TResult Function(LoadSeriesByGenre value) loadSeriesByGenre,
+    required TResult Function(LoadSeriesByLanguage value) loadSeriesByLanguage,
+    required TResult Function(LoadSeriesByTime value) loadSeriesByTime,
+    required TResult Function(LoadTopSeries value) loadTopSeries,
+    required TResult Function(PageViewIndexChanged value) pageViewIndexChanged,
+  }) {
+    return pageViewIndexChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InitBloc value)? initBloc,
+    TResult Function(LoadNewSeries value)? loadNewSeries,
+    TResult Function(LoadSeriesByGenre value)? loadSeriesByGenre,
+    TResult Function(LoadSeriesByLanguage value)? loadSeriesByLanguage,
+    TResult Function(LoadSeriesByTime value)? loadSeriesByTime,
+    TResult Function(LoadTopSeries value)? loadTopSeries,
+    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
+  }) {
+    return pageViewIndexChanged?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InitBloc value)? initBloc,
+    TResult Function(LoadNewSeries value)? loadNewSeries,
+    TResult Function(LoadSeriesByGenre value)? loadSeriesByGenre,
+    TResult Function(LoadSeriesByLanguage value)? loadSeriesByLanguage,
+    TResult Function(LoadSeriesByTime value)? loadSeriesByTime,
+    TResult Function(LoadTopSeries value)? loadTopSeries,
+    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
+    required TResult orElse(),
+  }) {
+    if (pageViewIndexChanged != null) {
+      return pageViewIndexChanged(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class PageViewIndexChanged implements HomeEvent {
+  const factory PageViewIndexChanged(int index) = _$PageViewIndexChanged;
+
+  int get index => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $PageViewIndexChangedCopyWith<PageViewIndexChanged> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 class _$HomeStateTearOff {
   const _$HomeStateTearOff();
 
   _HomeState call(
-      {required Option<Result<Unit, CoreFailure>> failure,
+      {required int currentPageViewIdx,
+      required Option<Result<Unit, CoreFailure>> failure,
       required String genreFilterKey,
       required String languageFilterKey,
       required List<Series> newSeriesList,
       required String timeFilterKey,
       required List<Series> topSeriesList}) {
     return _HomeState(
+      currentPageViewIdx: currentPageViewIdx,
       failure: failure,
       genreFilterKey: genreFilterKey,
       languageFilterKey: languageFilterKey,
@@ -1012,6 +1227,7 @@ const $HomeState = _$HomeStateTearOff();
 
 /// @nodoc
 mixin _$HomeState {
+  int get currentPageViewIdx => throw _privateConstructorUsedError;
   Option<Result<Unit, CoreFailure>> get failure =>
       throw _privateConstructorUsedError;
   String get genreFilterKey => throw _privateConstructorUsedError;
@@ -1030,7 +1246,8 @@ abstract class $HomeStateCopyWith<$Res> {
   factory $HomeStateCopyWith(HomeState value, $Res Function(HomeState) then) =
       _$HomeStateCopyWithImpl<$Res>;
   $Res call(
-      {Option<Result<Unit, CoreFailure>> failure,
+      {int currentPageViewIdx,
+      Option<Result<Unit, CoreFailure>> failure,
       String genreFilterKey,
       String languageFilterKey,
       List<Series> newSeriesList,
@@ -1048,6 +1265,7 @@ class _$HomeStateCopyWithImpl<$Res> implements $HomeStateCopyWith<$Res> {
 
   @override
   $Res call({
+    Object? currentPageViewIdx = freezed,
     Object? failure = freezed,
     Object? genreFilterKey = freezed,
     Object? languageFilterKey = freezed,
@@ -1056,6 +1274,10 @@ class _$HomeStateCopyWithImpl<$Res> implements $HomeStateCopyWith<$Res> {
     Object? topSeriesList = freezed,
   }) {
     return _then(_value.copyWith(
+      currentPageViewIdx: currentPageViewIdx == freezed
+          ? _value.currentPageViewIdx
+          : currentPageViewIdx // ignore: cast_nullable_to_non_nullable
+              as int,
       failure: failure == freezed
           ? _value.failure
           : failure // ignore: cast_nullable_to_non_nullable
@@ -1091,7 +1313,8 @@ abstract class _$HomeStateCopyWith<$Res> implements $HomeStateCopyWith<$Res> {
       __$HomeStateCopyWithImpl<$Res>;
   @override
   $Res call(
-      {Option<Result<Unit, CoreFailure>> failure,
+      {int currentPageViewIdx,
+      Option<Result<Unit, CoreFailure>> failure,
       String genreFilterKey,
       String languageFilterKey,
       List<Series> newSeriesList,
@@ -1110,6 +1333,7 @@ class __$HomeStateCopyWithImpl<$Res> extends _$HomeStateCopyWithImpl<$Res>
 
   @override
   $Res call({
+    Object? currentPageViewIdx = freezed,
     Object? failure = freezed,
     Object? genreFilterKey = freezed,
     Object? languageFilterKey = freezed,
@@ -1118,6 +1342,10 @@ class __$HomeStateCopyWithImpl<$Res> extends _$HomeStateCopyWithImpl<$Res>
     Object? topSeriesList = freezed,
   }) {
     return _then(_HomeState(
+      currentPageViewIdx: currentPageViewIdx == freezed
+          ? _value.currentPageViewIdx
+          : currentPageViewIdx // ignore: cast_nullable_to_non_nullable
+              as int,
       failure: failure == freezed
           ? _value.failure
           : failure // ignore: cast_nullable_to_non_nullable
@@ -1150,13 +1378,16 @@ class __$HomeStateCopyWithImpl<$Res> extends _$HomeStateCopyWithImpl<$Res>
 
 class _$_HomeState implements _HomeState {
   const _$_HomeState(
-      {required this.failure,
+      {required this.currentPageViewIdx,
+      required this.failure,
       required this.genreFilterKey,
       required this.languageFilterKey,
       required this.newSeriesList,
       required this.timeFilterKey,
       required this.topSeriesList});
 
+  @override
+  final int currentPageViewIdx;
   @override
   final Option<Result<Unit, CoreFailure>> failure;
   @override
@@ -1172,13 +1403,16 @@ class _$_HomeState implements _HomeState {
 
   @override
   String toString() {
-    return 'HomeState(failure: $failure, genreFilterKey: $genreFilterKey, languageFilterKey: $languageFilterKey, newSeriesList: $newSeriesList, timeFilterKey: $timeFilterKey, topSeriesList: $topSeriesList)';
+    return 'HomeState(currentPageViewIdx: $currentPageViewIdx, failure: $failure, genreFilterKey: $genreFilterKey, languageFilterKey: $languageFilterKey, newSeriesList: $newSeriesList, timeFilterKey: $timeFilterKey, topSeriesList: $topSeriesList)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other is _HomeState &&
+            (identical(other.currentPageViewIdx, currentPageViewIdx) ||
+                const DeepCollectionEquality()
+                    .equals(other.currentPageViewIdx, currentPageViewIdx)) &&
             (identical(other.failure, failure) ||
                 const DeepCollectionEquality()
                     .equals(other.failure, failure)) &&
@@ -1202,6 +1436,7 @@ class _$_HomeState implements _HomeState {
   @override
   int get hashCode =>
       runtimeType.hashCode ^
+      const DeepCollectionEquality().hash(currentPageViewIdx) ^
       const DeepCollectionEquality().hash(failure) ^
       const DeepCollectionEquality().hash(genreFilterKey) ^
       const DeepCollectionEquality().hash(languageFilterKey) ^
@@ -1217,13 +1452,16 @@ class _$_HomeState implements _HomeState {
 
 abstract class _HomeState implements HomeState {
   const factory _HomeState(
-      {required Option<Result<Unit, CoreFailure>> failure,
+      {required int currentPageViewIdx,
+      required Option<Result<Unit, CoreFailure>> failure,
       required String genreFilterKey,
       required String languageFilterKey,
       required List<Series> newSeriesList,
       required String timeFilterKey,
       required List<Series> topSeriesList}) = _$_HomeState;
 
+  @override
+  int get currentPageViewIdx => throw _privateConstructorUsedError;
   @override
   Option<Result<Unit, CoreFailure>> get failure =>
       throw _privateConstructorUsedError;

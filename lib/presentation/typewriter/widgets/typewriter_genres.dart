@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-
-import 'package:wine/application/typewriter/typewriter_series/typewriter_series_bloc.dart';
 
 /// @nodoc
 class TypewriterGenres extends StatelessWidget {

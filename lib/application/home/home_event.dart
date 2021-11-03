@@ -21,4 +21,8 @@ class HomeEvent with _$HomeEvent {
 
   /// @nodoc
   const factory HomeEvent.loadTopSeries() = LoadTopSeries;
+
+  /// @nodoc
+  const factory HomeEvent.pageViewIndexChanged(int index) =
+      PageViewIndexChanged;
 }

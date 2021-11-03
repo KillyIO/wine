@@ -15,9 +15,8 @@ import 'package:injectable/injectable.dart' as _i2;
 
 import 'application/auth/auth_bloc.dart' as _i29;
 import 'application/auth/auth_dialog/auth_dialog_cubit.dart' as _i3;
-import 'application/home/home_bloc.dart' as _i30;
-import 'application/home/home_navigation/home_navigation_bloc.dart' as _i8;
-import 'application/library/library_bloc.dart' as _i31;
+import 'application/home/home_bloc.dart' as _i8;
+import 'application/library/library_bloc.dart' as _i30;
 import 'application/library/library_navigation/library_navigation_bloc.dart'
     as _i23;
 import 'application/log_in/log_in_bloc.dart' as _i24;
@@ -33,8 +32,8 @@ import 'domain/sessions/i_sessions_repository.dart' as _i17;
 import 'domain/settings/i_settings_repository.dart' as _i19;
 import 'domain/user/i_user_repository.dart' as _i21;
 import 'infrastructure/auth/firebase_auth_facade.dart' as _i10;
-import 'infrastructure/core/firebase_injectable_module.dart' as _i32;
-import 'infrastructure/core/hive_injectable_module.dart' as _i33;
+import 'infrastructure/core/firebase_injectable_module.dart' as _i31;
+import 'infrastructure/core/hive_injectable_module.dart' as _i32;
 import 'infrastructure/default_covers/default_covers_repository.dart' as _i12;
 import 'infrastructure/series/series_repository.dart' as _i15;
 import 'infrastructure/sessions/sessions_repository.dart' as _i18;
@@ -63,8 +62,7 @@ Future<_i1.GetIt> $initGetIt(_i1.GetIt get,
       () => hiveInjectableModule.hive,
       registerFor: {_dev, _prod},
       preResolve: true);
-  gh.factory<_i8.HomeNavigationBloc>(() => _i8.HomeNavigationBloc(),
-      registerFor: {_dev, _prod});
+  gh.factory<_i8.HomeBloc>(() => _i8.HomeBloc(), registerFor: {_dev, _prod});
   gh.lazySingleton<_i9.IAuthFacade>(
       () => _i10.FirebaseAuthFacade(
           get<_i4.FirebaseAuth>(), get<_i6.GoogleSignIn>()),
@@ -115,15 +113,13 @@ Future<_i1.GetIt> $initGetIt(_i1.GetIt get,
       registerFor: {_dev, _prod});
   gh.factory<_i29.AuthBloc>(() => _i29.AuthBloc(get<_i9.IAuthFacade>()),
       registerFor: {_dev, _prod});
-  gh.factory<_i30.HomeBloc>(() => _i30.HomeBloc(get<_i8.HomeNavigationBloc>()),
-      registerFor: {_dev, _prod});
-  gh.factory<_i31.LibraryBloc>(
-      () => _i31.LibraryBloc(get<_i23.LibraryNavigationBloc>(),
+  gh.factory<_i30.LibraryBloc>(
+      () => _i30.LibraryBloc(get<_i23.LibraryNavigationBloc>(),
           get<_i17.ISessionsRepository>(), get<_i21.IUserRepository>()),
       registerFor: {_dev, _prod});
   return get;
 }
 
-class _$FirebaseInjectableModule extends _i32.FirebaseInjectableModule {}
+class _$FirebaseInjectableModule extends _i31.FirebaseInjectableModule {}
 
-class _$HiveInjectableModule extends _i33.HiveInjectableModule {}
+class _$HiveInjectableModule extends _i32.HiveInjectableModule {}

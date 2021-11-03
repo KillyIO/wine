@@ -6,7 +6,6 @@ import 'package:oxidized/oxidized.dart';
 
 import 'package:wine/application/auth/auth_bloc.dart';
 import 'package:wine/application/home/home_bloc.dart';
-import 'package:wine/application/home/home_navigation/home_navigation_bloc.dart';
 import 'package:wine/domain/auth/auth_failure.dart';
 import 'package:wine/domain/auth/i_auth_facade.dart';
 import 'package:wine/domain/default_covers/default_covers_failure.dart';
@@ -61,7 +60,7 @@ void main() {
           (tester) async {
             when(() => _authFacade.isLoggedIn).thenReturn(false);
             when(_authFacade.logInAnonymously)
-                .thenAnswer((_) async => Err(AuthFailure.serverError()));
+                .thenAnswer((_) async => Err(const AuthFailure.serverError()));
 
             final authBloc = getIt<AuthBloc>()
               ..add(const AuthEvent.authChanged());
@@ -475,9 +474,6 @@ void main() {
           child: MultiBlocProvider(
             providers: <BlocProvider>[
               BlocProvider<AuthBloc>(create: (_) => authBloc),
-              BlocProvider<HomeNavigationBloc>(
-                create: (_) => getIt<HomeNavigationBloc>(),
-              ),
             ],
             child: const HomeAppBar(),
           ),
@@ -519,9 +515,6 @@ void main() {
             BlocProvider<AuthBloc>(create: (_) => authBloc),
             BlocProvider<HomeBloc>(
               create: (_) => getIt<HomeBloc>(),
-            ),
-            BlocProvider<HomeNavigationBloc>(
-              create: (_) => getIt<HomeNavigationBloc>(),
             ),
           ],
         ));

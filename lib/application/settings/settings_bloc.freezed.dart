@@ -895,7 +895,7 @@ class _$SettingsStateTearOff {
   const _$SettingsStateTearOff();
 
   _SettingsState call(
-      {required Option<Result<None, CoreFailure>> failureOption,
+      {required Option<Result<None<Object>, CoreFailure>> failureOption,
       required bool isLoggedOut,
       required bool isProcessing,
       required Settings settings,
@@ -915,7 +915,7 @@ const $SettingsState = _$SettingsStateTearOff();
 
 /// @nodoc
 mixin _$SettingsState {
-  Option<Result<None, CoreFailure>> get failureOption =>
+  Option<Result<None<Object>, CoreFailure>> get failureOption =>
       throw _privateConstructorUsedError;
   bool get isLoggedOut => throw _privateConstructorUsedError;
   bool get isProcessing => throw _privateConstructorUsedError;
@@ -933,7 +933,7 @@ abstract class $SettingsStateCopyWith<$Res> {
           SettingsState value, $Res Function(SettingsState) then) =
       _$SettingsStateCopyWithImpl<$Res>;
   $Res call(
-      {Option<Result<None, CoreFailure>> failureOption,
+      {Option<Result<None<Object>, CoreFailure>> failureOption,
       bool isLoggedOut,
       bool isProcessing,
       Settings settings,
@@ -963,7 +963,7 @@ class _$SettingsStateCopyWithImpl<$Res>
       failureOption: failureOption == freezed
           ? _value.failureOption
           : failureOption // ignore: cast_nullable_to_non_nullable
-              as Option<Result<None, CoreFailure>>,
+              as Option<Result<None<Object>, CoreFailure>>,
       isLoggedOut: isLoggedOut == freezed
           ? _value.isLoggedOut
           : isLoggedOut // ignore: cast_nullable_to_non_nullable
@@ -999,7 +999,7 @@ abstract class _$SettingsStateCopyWith<$Res>
       __$SettingsStateCopyWithImpl<$Res>;
   @override
   $Res call(
-      {Option<Result<None, CoreFailure>> failureOption,
+      {Option<Result<None<Object>, CoreFailure>> failureOption,
       bool isLoggedOut,
       bool isProcessing,
       Settings settings,
@@ -1032,7 +1032,7 @@ class __$SettingsStateCopyWithImpl<$Res>
       failureOption: failureOption == freezed
           ? _value.failureOption
           : failureOption // ignore: cast_nullable_to_non_nullable
-              as Option<Result<None, CoreFailure>>,
+              as Option<Result<None<Object>, CoreFailure>>,
       isLoggedOut: isLoggedOut == freezed
           ? _value.isLoggedOut
           : isLoggedOut // ignore: cast_nullable_to_non_nullable
@@ -1064,7 +1064,7 @@ class _$_SettingsState implements _SettingsState {
       required this.username});
 
   @override
-  final Option<Result<None, CoreFailure>> failureOption;
+  final Option<Result<None<Object>, CoreFailure>> failureOption;
   @override
   final bool isLoggedOut;
   @override
@@ -1117,14 +1117,14 @@ class _$_SettingsState implements _SettingsState {
 
 abstract class _SettingsState implements SettingsState {
   const factory _SettingsState(
-      {required Option<Result<None, CoreFailure>> failureOption,
+      {required Option<Result<None<Object>, CoreFailure>> failureOption,
       required bool isLoggedOut,
       required bool isProcessing,
       required Settings settings,
       required String username}) = _$_SettingsState;
 
   @override
-  Option<Result<None, CoreFailure>> get failureOption =>
+  Option<Result<None<Object>, CoreFailure>> get failureOption =>
       throw _privateConstructorUsedError;
   @override
   bool get isLoggedOut => throw _privateConstructorUsedError;

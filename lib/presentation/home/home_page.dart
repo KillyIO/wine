@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:wine/application/home/home_navigation/home_navigation_bloc.dart';
 import 'package:wine/application/setup/setup_bloc.dart';
 import 'package:wine/injection.dart';
 import 'package:wine/presentation/home/home_layout.dart';
@@ -23,14 +22,11 @@ class HomePage extends StatelessWidget {
       child: MultiBlocProvider(
         providers: [
           BlocProvider(
-            create: (_) => getIt<HomeNavigationBloc>(),
-          ),
-          BlocProvider(
             create: (_) =>
                 getIt<SetupBloc>()..add(const SetupEvent.appLaunched()),
           ),
         ],
-        child: HomeLayout(),
+        child: const HomeLayout(),
       ),
     );
   }

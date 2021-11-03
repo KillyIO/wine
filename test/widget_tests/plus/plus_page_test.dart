@@ -7,7 +7,6 @@ import 'package:oxidized/oxidized.dart';
 import 'package:wine/application/auth/auth_bloc.dart';
 import 'package:wine/application/auth/auth_dialog/auth_dialog_cubit.dart';
 import 'package:wine/application/home/home_bloc.dart';
-import 'package:wine/application/home/home_navigation/home_navigation_bloc.dart';
 import 'package:wine/application/log_in/log_in_bloc.dart';
 import 'package:wine/domain/auth/i_auth_facade.dart';
 import 'package:wine/domain/default_covers/i_default_covers_repository.dart';
@@ -231,9 +230,6 @@ void main() {
             providers: [
               BlocProvider<AuthBloc>(create: (_) => authBloc),
               BlocProvider<HomeBloc>(create: (_) => getIt<HomeBloc>()),
-              BlocProvider<HomeNavigationBloc>(
-                create: (_) => getIt<HomeNavigationBloc>(),
-              ),
               BlocProvider<LogInBloc>(create: (_) => getIt<LogInBloc>()),
             ],
           ));

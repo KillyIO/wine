@@ -1977,7 +1977,7 @@ class _$TypewriterSeriesStateTearOff {
 
   _TypewriterSeriesState call(
       {required String coverURL,
-      required Option<Result<None, CoreFailure>> failureOption,
+      required Option<Result<None<Object>, CoreFailure>> failureOption,
       required List<Genre> genres,
       required bool isProcessing,
       required bool isNSFW,
@@ -2021,7 +2021,7 @@ const $TypewriterSeriesState = _$TypewriterSeriesStateTearOff();
 /// @nodoc
 mixin _$TypewriterSeriesState {
   String get coverURL => throw _privateConstructorUsedError;
-  Option<Result<None, CoreFailure>> get failureOption =>
+  Option<Result<None<Object>, CoreFailure>> get failureOption =>
       throw _privateConstructorUsedError;
   List<Genre> get genres => throw _privateConstructorUsedError;
   bool get isProcessing => throw _privateConstructorUsedError;
@@ -2054,7 +2054,7 @@ abstract class $TypewriterSeriesStateCopyWith<$Res> {
       _$TypewriterSeriesStateCopyWithImpl<$Res>;
   $Res call(
       {String coverURL,
-      Option<Result<None, CoreFailure>> failureOption,
+      Option<Result<None<Object>, CoreFailure>> failureOption,
       List<Genre> genres,
       bool isProcessing,
       bool isNSFW,
@@ -2111,7 +2111,7 @@ class _$TypewriterSeriesStateCopyWithImpl<$Res>
       failureOption: failureOption == freezed
           ? _value.failureOption
           : failureOption // ignore: cast_nullable_to_non_nullable
-              as Option<Result<None, CoreFailure>>,
+              as Option<Result<None<Object>, CoreFailure>>,
       genres: genres == freezed
           ? _value.genres
           : genres // ignore: cast_nullable_to_non_nullable
@@ -2192,7 +2192,7 @@ abstract class _$TypewriterSeriesStateCopyWith<$Res>
   @override
   $Res call(
       {String coverURL,
-      Option<Result<None, CoreFailure>> failureOption,
+      Option<Result<None<Object>, CoreFailure>> failureOption,
       List<Genre> genres,
       bool isProcessing,
       bool isNSFW,
@@ -2252,7 +2252,7 @@ class __$TypewriterSeriesStateCopyWithImpl<$Res>
       failureOption: failureOption == freezed
           ? _value.failureOption
           : failureOption // ignore: cast_nullable_to_non_nullable
-              as Option<Result<None, CoreFailure>>,
+              as Option<Result<None<Object>, CoreFailure>>,
       genres: genres == freezed
           ? _value.genres
           : genres // ignore: cast_nullable_to_non_nullable
@@ -2342,7 +2342,7 @@ class _$_TypewriterSeriesState implements _TypewriterSeriesState {
   @override
   final String coverURL;
   @override
-  final Option<Result<None, CoreFailure>> failureOption;
+  final Option<Result<None<Object>, CoreFailure>> failureOption;
   @override
   final List<Genre> genres;
   @override
@@ -2463,7 +2463,7 @@ class _$_TypewriterSeriesState implements _TypewriterSeriesState {
 abstract class _TypewriterSeriesState implements TypewriterSeriesState {
   const factory _TypewriterSeriesState(
       {required String coverURL,
-      required Option<Result<None, CoreFailure>> failureOption,
+      required Option<Result<None<Object>, CoreFailure>> failureOption,
       required List<Genre> genres,
       required bool isProcessing,
       required bool isNSFW,
@@ -2483,7 +2483,7 @@ abstract class _TypewriterSeriesState implements TypewriterSeriesState {
   @override
   String get coverURL => throw _privateConstructorUsedError;
   @override
-  Option<Result<None, CoreFailure>> get failureOption =>
+  Option<Result<None<Object>, CoreFailure>> get failureOption =>
       throw _privateConstructorUsedError;
   @override
   List<Genre> get genres => throw _privateConstructorUsedError;
