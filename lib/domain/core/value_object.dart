@@ -13,9 +13,13 @@ abstract class ValueObject<T extends Object> extends Equatable {
 
   /// Throws [UnexpectedValueError] containing the [ValueFailure]
   T getOrCrash() {
-    // id = identity - same as writing (right) => right
     // ignore: only_throw_errors
     return value.match((ok) => ok, (err) => throw UnexpectedValueError(err));
+  }
+
+  /// Return [Null] on error
+  T? getOrNull() {
+    return value.match((ok) => ok, (err) => null);
   }
 
   /// @nodoc
