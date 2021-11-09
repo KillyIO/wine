@@ -24,18 +24,6 @@ class TypewriterPage extends StatelessWidget {
   /// @nodoc
   final TypewriterType type;
 
-  /// @nodoc
-  String get typewriterTitle {
-    switch (type) {
-      case TypewriterType.chapter:
-        return 'CHAPTER';
-      case TypewriterType.series:
-        return 'SERIES';
-      default:
-        return 'UNKNOWN';
-    }
-  }
-
   Widget get _typewriter {
     switch (type) {
       case TypewriterType.chapter:
@@ -98,14 +86,6 @@ class TypewriterPage extends StatelessWidget {
                   )
                 : Container(),
             leadingWidth: defaultToolbarItemWidth,
-            title: Text(
-              'TYPEWRITER: $typewriterTitle',
-              style: const TextStyle(
-                color: Colors.black,
-                fontSize: 18,
-                fontWeight: FontWeight.w300,
-              ),
-            ),
           ),
         ),
         body: _typewriter,
