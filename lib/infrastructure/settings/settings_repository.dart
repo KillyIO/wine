@@ -11,10 +11,13 @@ import 'package:wine/infrastructure/settings/settings_dto.dart';
 import 'package:wine/utils/constants/boxes.dart';
 
 /// @nodoc
-@LazySingleton(as: ISettingsRepository, env: [
-  Environment.dev,
-  Environment.prod,
-])
+@LazySingleton(
+  as: ISettingsRepository,
+  env: [
+    Environment.dev,
+    Environment.prod,
+  ],
+)
 class SettingsRepository implements ISettingsRepository {
   /// @nodoc
   SettingsRepository(

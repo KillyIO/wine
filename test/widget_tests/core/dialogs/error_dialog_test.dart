@@ -10,12 +10,14 @@ void main() {
     testWidgets(
       "Should find texts SOMETHING'S WRONG!, Hello World!, DISMISS",
       (tester) async {
-        await tester.pumpWidget(TestWidget(
-          child: ErrorDialog(
-            messages: const <String>['Hello World!'],
-            onPressed: () {},
+        await tester.pumpWidget(
+          TestWidget(
+            child: ErrorDialog(
+              messages: const <String>['Hello World!'],
+              onPressed: () {},
+            ),
           ),
-        ));
+        );
 
         expect(find.text("SOMETHING'S WRONG!"), findsOneWidget);
         expect(find.text('Hello World!'), findsOneWidget);
@@ -24,13 +26,15 @@ void main() {
     );
 
     testWidgets('Should find text Button Text', (tester) async {
-      await tester.pumpWidget(TestWidget(
-        child: ErrorDialog(
-          buttonText: 'Button Text',
-          messages: const <String>['Hello World!'],
-          onPressed: () {},
+      await tester.pumpWidget(
+        TestWidget(
+          child: ErrorDialog(
+            buttonText: 'Button Text',
+            messages: const <String>['Hello World!'],
+            onPressed: () {},
+          ),
         ),
-      ));
+      );
 
       expect(find.text('Button Text'), findsOneWidget);
     });
@@ -38,12 +42,14 @@ void main() {
     testWidgets('completer should be true', (tester) async {
       final completer = Completer<void>();
 
-      await tester.pumpWidget(TestWidget(
-        child: ErrorDialog(
-          messages: const <String>['Hello World!'],
-          onPressed: completer.complete,
+      await tester.pumpWidget(
+        TestWidget(
+          child: ErrorDialog(
+            messages: const <String>['Hello World!'],
+            onPressed: completer.complete,
+          ),
         ),
-      ));
+      );
 
       final buttonText = find.text('DISMISS');
 

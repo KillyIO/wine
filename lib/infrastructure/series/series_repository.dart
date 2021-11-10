@@ -30,13 +30,15 @@ class SeriesRepository implements ISeriesRepository {
 
   @override
   Future<Result<Unit, SeriesFailure>> publishSeries(Series series) async {
+    var tmpSeries = series;
+
     try {
-      final coverURL = series.coverURL.getOrCrash();
+      final coverURL = tmpSeries.coverURL.getOrCrash();
 
       if (!isURL(coverURL)) {
         (await uploadCover(File(coverURL))).match(
           (success) {
-            series = series.copyWith(coverURL: CoverURL(success));
+            tmpSeries = tmpSeries.copyWith(coverURL: CoverURL(success));
           },
           (_) {},
         );
@@ -44,8 +46,8 @@ class SeriesRepository implements ISeriesRepository {
 
       await _firestore
           .collection(seriesPath)
-          .doc(series.uid.getOrCrash())
-          .set(SeriesDTO.fromDomain(series).toJson());
+          .doc(tmpSeries.uid.getOrCrash())
+          .set(SeriesDTO.fromDomain(tmpSeries).toJson());
 
       return Ok(unit);
     } catch (_) {
@@ -73,7 +75,8 @@ class SeriesRepository implements ISeriesRepository {
   Future<Result<String, SeriesFailure>> uploadCover(File cover) async {
     final fileName = p.basename(cover.path);
     final ref = _firebaseStorage.ref().child(
-        '$seriesCoversPath/${DateTime.now().millisecondsSinceEpoch}-$fileName');
+          '$seriesCoversPath/${DateTime.now().millisecondsSinceEpoch}-$fileName',
+        );
     final uploadTask = await ref.putFile(cover);
     final state = uploadTask.state;
 

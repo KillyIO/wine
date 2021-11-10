@@ -88,8 +88,10 @@ void main() {
         act: (bloc) {
           when(() => _authFacade.isAnonymous).thenReturn(false);
           when(() => _defaultCoversRepository.loadDefaultCoverURLs())
-              .thenAnswer((_) async =>
-                  Err(const DefaultCoversFailure.defaultCoverURLsNotLoaded()));
+              .thenAnswer(
+            (_) async =>
+                Err(const DefaultCoversFailure.defaultCoverURLsNotLoaded()),
+          );
           return bloc.add(const SetupEvent.authenticated());
         },
         expect: () => <SetupState>[
@@ -111,10 +113,13 @@ void main() {
         '''emits [DefaultCoversFailure.defaultCoverURLsNotCached] when defaultCoverURLsLoaded is added.''',
         build: () => _setupBloc,
         act: (bloc) {
-          when(() => _defaultCoversRepository
-                  .cacheDefaultCoverURLs(testDefaultCovers))
-              .thenAnswer((_) async =>
-                  Err(const DefaultCoversFailure.defaultCoverURLsNotCached()));
+          when(
+            () => _defaultCoversRepository
+                .cacheDefaultCoverURLs(testDefaultCovers),
+          ).thenAnswer(
+            (_) async =>
+                Err(const DefaultCoversFailure.defaultCoverURLsNotCached()),
+          );
           return bloc
               .add(const SetupEvent.defaultCoverURLsLoaded(testDefaultCovers));
         },
@@ -126,8 +131,10 @@ void main() {
           ),
         ],
         verify: (_) {
-          verify(() => _defaultCoversRepository
-              .cacheDefaultCoverURLs(testDefaultCovers)).called(1);
+          verify(
+            () => _defaultCoversRepository
+                .cacheDefaultCoverURLs(testDefaultCovers),
+          ).called(1);
         },
       );
 
@@ -285,7 +292,8 @@ void main() {
                 .cacheDefaultCoverURLs(testDefaultCovers),
           ).thenAnswer((_) async => Ok(unit));
           when(_settingsRepository.fetchSettings).thenAnswer(
-              (_) async => Err(const SettingsFailure.settingsNotFound()));
+            (_) async => Err(const SettingsFailure.settingsNotFound()),
+          );
           when(_settingsRepository.initializeSettings)
               .thenAnswer((_) async => Ok(unit));
           when(_sessionsRepository.fetchSession)

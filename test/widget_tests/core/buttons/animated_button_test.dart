@@ -12,14 +12,16 @@ void main() {
     testWidgets('completer should be true', (tester) async {
       final completer = Completer<void>();
 
-      await tester.pumpWidget(TestWidget(
-        child: AnimatedButton(
-          animation: completer.isCompleted ? 'menu_to_x' : 'x_to_menu',
-          filename: menuAnimation,
-          key: const Key('test_animation_button'),
-          onPressed: completer.complete,
+      await tester.pumpWidget(
+        TestWidget(
+          child: AnimatedButton(
+            animation: completer.isCompleted ? 'menu_to_x' : 'x_to_menu',
+            filename: menuAnimation,
+            key: const Key('test_animation_button'),
+            onPressed: completer.complete,
+          ),
         ),
-      ));
+      );
 
       final animationButton = find.byKey(const Key('test_animation_button'));
 

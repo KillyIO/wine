@@ -35,29 +35,36 @@ void setupInjection() {
   getIt
     ..registerLazySingleton<IAuthFacade>(() => _authFacade)
     ..registerLazySingleton<IDefaultCoversRepository>(
-        () => _defaultCoversRepository)
+      () => _defaultCoversRepository,
+    )
     ..registerLazySingleton<ISessionsRepository>(() => _sessionsRepository)
     ..registerLazySingleton<ISettingsRepository>(() => _settingsRepository)
     ..registerLazySingleton<IUserRepository>(() => _userRepository)
     ..registerLazySingleton<AuthBloc>(() => AuthBloc(_authFacade))
     ..registerLazySingleton<AuthDialogCubit>(() => AuthDialogCubit())
     ..registerLazySingleton<HomeBloc>(() => HomeBloc())
-    ..registerLazySingleton<LibraryBloc>(() => LibraryBloc(
-          _libraryNavigationBloc,
-          _sessionsRepository,
-          _userRepository,
-        ))
+    ..registerLazySingleton<LibraryBloc>(
+      () => LibraryBloc(
+        _libraryNavigationBloc,
+        _sessionsRepository,
+        _userRepository,
+      ),
+    )
     ..registerLazySingleton<LibraryNavigationBloc>(() => _libraryNavigationBloc)
-    ..registerLazySingleton<LogInBloc>(() => LogInBloc(
-          _authFacade,
-          _sessionsRepository,
-          _userRepository,
-        ))
-    ..registerLazySingleton<SetupBloc>(() => SetupBloc(
-          _authFacade,
-          _defaultCoversRepository,
-          _sessionsRepository,
-          _settingsRepository,
-          _userRepository,
-        ));
+    ..registerLazySingleton<LogInBloc>(
+      () => LogInBloc(
+        _authFacade,
+        _sessionsRepository,
+        _userRepository,
+      ),
+    )
+    ..registerLazySingleton<SetupBloc>(
+      () => SetupBloc(
+        _authFacade,
+        _defaultCoversRepository,
+        _sessionsRepository,
+        _settingsRepository,
+        _userRepository,
+      ),
+    );
 }

@@ -65,13 +65,15 @@ void main() {
             final authBloc = getIt<AuthBloc>()
               ..add(const AuthEvent.authChanged());
 
-            await tester.pumpWidget(TestRouterWidget(
-              appRouter: AppRouter(),
-              providers: [
-                BlocProvider<AuthBloc>(create: (_) => authBloc),
-                BlocProvider<HomeBloc>(create: (_) => getIt<HomeBloc>()),
-              ],
-            ));
+            await tester.pumpWidget(
+              TestRouterWidget(
+                appRouter: AppRouter(),
+                providers: [
+                  BlocProvider<AuthBloc>(create: (_) => authBloc),
+                  BlocProvider<HomeBloc>(create: (_) => getIt<HomeBloc>()),
+                ],
+              ),
+            );
             await tester.pumpAndSettle();
 
             final restartButton = find.text('RESTART');
@@ -92,13 +94,15 @@ void main() {
             final authBloc = getIt<AuthBloc>()
               ..add(const AuthEvent.authChanged());
 
-            await tester.pumpWidget(TestRouterWidget(
-              appRouter: AppRouter(),
-              providers: [
-                BlocProvider<AuthBloc>(create: (_) => authBloc),
-                BlocProvider<HomeBloc>(create: (_) => getIt<HomeBloc>()),
-              ],
-            ));
+            await tester.pumpWidget(
+              TestRouterWidget(
+                appRouter: AppRouter(),
+                providers: [
+                  BlocProvider<AuthBloc>(create: (_) => authBloc),
+                  BlocProvider<HomeBloc>(create: (_) => getIt<HomeBloc>()),
+                ],
+              ),
+            );
             await tester.pumpAndSettle();
 
             final restartButton = find.text('RESTART');
@@ -126,19 +130,24 @@ void main() {
             when(_defaultCoversRepository.loadDefaultCoverURLs)
                 .thenAnswer((_) async => Ok(testDefaultCovers));
             when(() => _defaultCoversRepository.cacheDefaultCoverURLs(any()))
-                .thenAnswer((_) async => Err(
-                    const DefaultCoversFailure.defaultCoverURLsNotCached()));
+                .thenAnswer(
+              (_) async => Err(
+                const DefaultCoversFailure.defaultCoverURLsNotCached(),
+              ),
+            );
 
             final authBloc = getIt<AuthBloc>()
               ..add(const AuthEvent.authChanged());
 
-            await tester.pumpWidget(TestRouterWidget(
-              appRouter: AppRouter(),
-              providers: [
-                BlocProvider<AuthBloc>(create: (_) => authBloc),
-                BlocProvider<HomeBloc>(create: (_) => getIt<HomeBloc>()),
-              ],
-            ));
+            await tester.pumpWidget(
+              TestRouterWidget(
+                appRouter: AppRouter(),
+                providers: [
+                  BlocProvider<AuthBloc>(create: (_) => authBloc),
+                  BlocProvider<HomeBloc>(create: (_) => getIt<HomeBloc>()),
+                ],
+              ),
+            );
             await tester.pumpAndSettle();
 
             final restartButton = find.text('RESTART');
@@ -165,13 +174,15 @@ void main() {
             final authBloc = getIt<AuthBloc>()
               ..add(const AuthEvent.authChanged());
 
-            await tester.pumpWidget(TestRouterWidget(
-              appRouter: AppRouter(),
-              providers: [
-                BlocProvider<AuthBloc>(create: (_) => authBloc),
-                BlocProvider<HomeBloc>(create: (_) => getIt<HomeBloc>()),
-              ],
-            ));
+            await tester.pumpWidget(
+              TestRouterWidget(
+                appRouter: AppRouter(),
+                providers: [
+                  BlocProvider<AuthBloc>(create: (_) => authBloc),
+                  BlocProvider<HomeBloc>(create: (_) => getIt<HomeBloc>()),
+                ],
+              ),
+            );
             await tester.pumpAndSettle();
 
             final restartButton = find.text('RESTART');
@@ -197,13 +208,15 @@ void main() {
             final authBloc = getIt<AuthBloc>()
               ..add(const AuthEvent.authChanged());
 
-            await tester.pumpWidget(TestRouterWidget(
-              appRouter: AppRouter(),
-              providers: [
-                BlocProvider<AuthBloc>(create: (_) => authBloc),
-                BlocProvider<HomeBloc>(create: (_) => getIt<HomeBloc>()),
-              ],
-            ));
+            await tester.pumpWidget(
+              TestRouterWidget(
+                appRouter: AppRouter(),
+                providers: [
+                  BlocProvider<AuthBloc>(create: (_) => authBloc),
+                  BlocProvider<HomeBloc>(create: (_) => getIt<HomeBloc>()),
+                ],
+              ),
+            );
             await tester.pumpAndSettle();
 
             final restartButton = find.text('RESTART');
@@ -226,13 +239,15 @@ void main() {
             final authBloc = getIt<AuthBloc>()
               ..add(const AuthEvent.authChanged());
 
-            await tester.pumpWidget(TestRouterWidget(
-              appRouter: AppRouter(),
-              providers: [
-                BlocProvider<AuthBloc>(create: (_) => authBloc),
-                BlocProvider<HomeBloc>(create: (_) => getIt<HomeBloc>()),
-              ],
-            ));
+            await tester.pumpWidget(
+              TestRouterWidget(
+                appRouter: AppRouter(),
+                providers: [
+                  BlocProvider<AuthBloc>(create: (_) => authBloc),
+                  BlocProvider<HomeBloc>(create: (_) => getIt<HomeBloc>()),
+                ],
+              ),
+            );
             await tester.pumpAndSettle();
 
             final restartButton = find.text('RESTART');
@@ -273,13 +288,15 @@ void main() {
             final authBloc = getIt<AuthBloc>()
               ..add(const AuthEvent.authChanged());
 
-            await tester.pumpWidget(TestRouterWidget(
-              appRouter: AppRouter(),
-              providers: [
-                BlocProvider<AuthBloc>(create: (_) => authBloc),
-                BlocProvider<HomeBloc>(create: (_) => getIt<HomeBloc>()),
-              ],
-            ));
+            await tester.pumpWidget(
+              TestRouterWidget(
+                appRouter: AppRouter(),
+                providers: [
+                  BlocProvider<AuthBloc>(create: (_) => authBloc),
+                  BlocProvider<HomeBloc>(create: (_) => getIt<HomeBloc>()),
+                ],
+              ),
+            );
             await tester.pump();
             await tester.pump();
 
@@ -315,13 +332,15 @@ void main() {
             final authBloc = getIt<AuthBloc>()
               ..add(const AuthEvent.authChanged());
 
-            await tester.pumpWidget(TestRouterWidget(
-              appRouter: AppRouter(),
-              providers: [
-                BlocProvider<AuthBloc>(create: (_) => authBloc),
-                BlocProvider<HomeBloc>(create: (_) => getIt<HomeBloc>()),
-              ],
-            ));
+            await tester.pumpWidget(
+              TestRouterWidget(
+                appRouter: AppRouter(),
+                providers: [
+                  BlocProvider<AuthBloc>(create: (_) => authBloc),
+                  BlocProvider<HomeBloc>(create: (_) => getIt<HomeBloc>()),
+                ],
+              ),
+            );
             await tester.pump();
             await tester.pump();
 
@@ -361,13 +380,15 @@ void main() {
             final authBloc = getIt<AuthBloc>()
               ..add(const AuthEvent.authChanged());
 
-            await tester.pumpWidget(TestRouterWidget(
-              appRouter: AppRouter(),
-              providers: [
-                BlocProvider<AuthBloc>(create: (_) => authBloc),
-                BlocProvider<HomeBloc>(create: (_) => getIt<HomeBloc>()),
-              ],
-            ));
+            await tester.pumpWidget(
+              TestRouterWidget(
+                appRouter: AppRouter(),
+                providers: [
+                  BlocProvider<AuthBloc>(create: (_) => authBloc),
+                  BlocProvider<HomeBloc>(create: (_) => getIt<HomeBloc>()),
+                ],
+              ),
+            );
             await tester.pump();
             await tester.pump();
 
@@ -410,13 +431,15 @@ void main() {
             final authBloc = getIt<AuthBloc>()
               ..add(const AuthEvent.authChanged());
 
-            await tester.pumpWidget(TestRouterWidget(
-              appRouter: AppRouter(),
-              providers: [
-                BlocProvider<AuthBloc>(create: (_) => authBloc),
-                BlocProvider<HomeBloc>(create: (_) => getIt<HomeBloc>()),
-              ],
-            ));
+            await tester.pumpWidget(
+              TestRouterWidget(
+                appRouter: AppRouter(),
+                providers: [
+                  BlocProvider<AuthBloc>(create: (_) => authBloc),
+                  BlocProvider<HomeBloc>(create: (_) => getIt<HomeBloc>()),
+                ],
+              ),
+            );
             await tester.pump();
             await tester.pump();
 
@@ -445,13 +468,15 @@ void main() {
 
       final authBloc = getIt<AuthBloc>()..add(const AuthEvent.authChanged());
 
-      await tester.pumpWidget(TestRouterWidget(
-        appRouter: AppRouter(),
-        providers: [
-          BlocProvider<AuthBloc>(create: (_) => authBloc),
-          BlocProvider<HomeBloc>(create: (_) => getIt<HomeBloc>()),
-        ],
-      ));
+      await tester.pumpWidget(
+        TestRouterWidget(
+          appRouter: AppRouter(),
+          providers: [
+            BlocProvider<AuthBloc>(create: (_) => authBloc),
+            BlocProvider<HomeBloc>(create: (_) => getIt<HomeBloc>()),
+          ],
+        ),
+      );
       await tester.pumpAndSettle();
 
       expect(find.byType(OnboardingPage), findsOneWidget);
@@ -470,14 +495,16 @@ void main() {
 
         final authBloc = getIt<AuthBloc>()..add(const AuthEvent.authChanged());
 
-        await tester.pumpWidget(TestWidget(
-          child: MultiBlocProvider(
-            providers: <BlocProvider>[
-              BlocProvider<AuthBloc>(create: (_) => authBloc),
-            ],
-            child: const HomeAppBar(),
+        await tester.pumpWidget(
+          TestWidget(
+            child: MultiBlocProvider(
+              providers: <BlocProvider>[
+                BlocProvider<AuthBloc>(create: (_) => authBloc),
+              ],
+              child: const HomeAppBar(),
+            ),
           ),
-        ));
+        );
 
         final homeFilterButton = find.byKey(const Key('home_filter_button'));
         final homeNewSeriesButton =
@@ -509,15 +536,17 @@ void main() {
 
         final authBloc = getIt<AuthBloc>()..add(const AuthEvent.authChanged());
 
-        await tester.pumpWidget(TestRouterWidget(
-          appRouter: AppRouter(),
-          providers: <BlocProvider>[
-            BlocProvider<AuthBloc>(create: (_) => authBloc),
-            BlocProvider<HomeBloc>(
-              create: (_) => getIt<HomeBloc>(),
-            ),
-          ],
-        ));
+        await tester.pumpWidget(
+          TestRouterWidget(
+            appRouter: AppRouter(),
+            providers: <BlocProvider>[
+              BlocProvider<AuthBloc>(create: (_) => authBloc),
+              BlocProvider<HomeBloc>(
+                create: (_) => getIt<HomeBloc>(),
+              ),
+            ],
+          ),
+        );
         await tester.pumpAndSettle();
 
         final homeMenuButton = find.byKey(const Key('home_menu_button'));

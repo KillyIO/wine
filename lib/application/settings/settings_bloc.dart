@@ -25,25 +25,31 @@ class SettingsBloc extends Bloc<SettingsEvent, SettingsState> {
     this._settingsRepository,
   ) : super(SettingsState.initial()) {
     on<InitBloc>((_, emit) async {
-      emit(state.copyWith(
-        failureOption: const None(),
-        isProcessing: true,
-      ));
+      emit(
+        state.copyWith(
+          failureOption: const None(),
+          isProcessing: true,
+        ),
+      );
 
       (await _sessionsRepository.fetchSession()).match(
         (user) {
-          emit(state.copyWith(
-            isProcessing: false,
-            username: user.username.getOrCrash(),
-          ));
+          emit(
+            state.copyWith(
+              isProcessing: false,
+              username: user.username.getOrCrash(),
+            ),
+          );
 
           add(const SettingsEvent.sessionFetched());
         },
         (failure) {
-          emit(state.copyWith(
-            failureOption: Option.some(Err(CoreFailure.sessions(failure))),
-            isProcessing: false,
-          ));
+          emit(
+            state.copyWith(
+              failureOption: Option.some(Err(CoreFailure.sessions(failure))),
+              isProcessing: false,
+            ),
+          );
         },
       );
     });
@@ -53,44 +59,54 @@ class SettingsBloc extends Bloc<SettingsEvent, SettingsState> {
           add(const SettingsEvent.sessionCreated());
         },
         (failure) {
-          emit(state.copyWith(
-            failureOption: Option.some(Err(CoreFailure.sessions(failure))),
-            isProcessing: false,
-          ));
+          emit(
+            state.copyWith(
+              failureOption: Option.some(Err(CoreFailure.sessions(failure))),
+              isProcessing: false,
+            ),
+          );
         },
       ),
     );
     on<LogOutPressed>((_, emit) async {
-      emit(state.copyWith(
-        failureOption: const None(),
-        isProcessing: true,
-      ));
+      emit(
+        state.copyWith(
+          failureOption: const None(),
+          isProcessing: true,
+        ),
+      );
 
       (await _sessionsRepository.deleteSession()).match(
         (_) {
           add(const SettingsEvent.sessionDeleted());
         },
         (failure) {
-          emit(state.copyWith(
-            failureOption: Option.some(Err(CoreFailure.sessions(failure))),
-            isProcessing: false,
-          ));
+          emit(
+            state.copyWith(
+              failureOption: Option.some(Err(CoreFailure.sessions(failure))),
+              isProcessing: false,
+            ),
+          );
         },
       );
     });
     on<SessionCreated>(
       (_, emit) async => (await _settingsRepository.initializeSettings()).match(
         (_) {
-          emit(state.copyWith(
-            isLoggedOut: true,
-            isProcessing: false,
-          ));
+          emit(
+            state.copyWith(
+              isLoggedOut: true,
+              isProcessing: false,
+            ),
+          );
         },
         (failure) {
-          emit(state.copyWith(
-            failureOption: Option.some(Err(CoreFailure.settings(failure))),
-            isProcessing: false,
-          ));
+          emit(
+            state.copyWith(
+              failureOption: Option.some(Err(CoreFailure.settings(failure))),
+              isProcessing: false,
+            ),
+          );
         },
       ),
     );
@@ -100,26 +116,32 @@ class SettingsBloc extends Bloc<SettingsEvent, SettingsState> {
           add(const SettingsEvent.loggedOut());
         },
         (failure) {
-          emit(state.copyWith(
-            failureOption: Option.some(Err(CoreFailure.auth(failure))),
-            isProcessing: false,
-          ));
+          emit(
+            state.copyWith(
+              failureOption: Option.some(Err(CoreFailure.auth(failure))),
+              isProcessing: false,
+            ),
+          );
         },
       ),
     );
     on<SessionFetched>(
       (_, emit) async => (await _settingsRepository.fetchSettings()).match(
         (settings) {
-          emit(state.copyWith(
-            isProcessing: false,
-            settings: settings,
-          ));
+          emit(
+            state.copyWith(
+              isProcessing: false,
+              settings: settings,
+            ),
+          );
         },
         (failure) {
-          emit(state.copyWith(
-            failureOption: Option.some(Err(CoreFailure.settings(failure))),
-            isProcessing: false,
-          ));
+          emit(
+            state.copyWith(
+              failureOption: Option.some(Err(CoreFailure.settings(failure))),
+              isProcessing: false,
+            ),
+          );
         },
       ),
     );

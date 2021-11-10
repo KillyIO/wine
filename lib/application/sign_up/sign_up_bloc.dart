@@ -43,11 +43,13 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
             add(SignUpEvent.usernameSaved(userAsPlain!));
           },
           (failure) {
-            emit(state.copyWith(
-              failureOption: Option.some(Err(CoreFailure.user(failure))),
-              isProcessing: false,
-              showErrorMessages: true,
-            ));
+            emit(
+              state.copyWith(
+                failureOption: Option.some(Err(CoreFailure.user(failure))),
+                isProcessing: false,
+                showErrorMessages: true,
+              ),
+            );
           },
         );
       }
@@ -56,32 +58,41 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
       final password = state.password.value.ok().toNullable();
 
       if (password != null) {
-        emit(state.copyWith(
-          confirmPassword: ConfirmPassword(password, value.confirmPasswordStr),
-          failureOption: const None(),
-        ));
+        emit(
+          state.copyWith(
+            confirmPassword:
+                ConfirmPassword(password, value.confirmPasswordStr),
+            failureOption: const None(),
+          ),
+        );
       }
     });
     on<EmailAddressChanged>(
-      (value, emit) => emit(state.copyWith(
-        emailAddress: EmailAddress(value.emailAddressStr),
-        failureOption: const None(),
-      )),
+      (value, emit) => emit(
+        state.copyWith(
+          emailAddress: EmailAddress(value.emailAddressStr),
+          failureOption: const None(),
+        ),
+      ),
     );
     on<PasswordChanged>(
-      (value, emit) => emit(state.copyWith(
-        failureOption: const None(),
-        password: Password(value.passwordStr),
-      )),
+      (value, emit) => emit(
+        state.copyWith(
+          failureOption: const None(),
+          password: Password(value.passwordStr),
+        ),
+      ),
     );
     on<SignUpPressed>((_, emit) async {
       final isUsernameValid = state.username.isValid;
 
       if (isUsernameValid) {
-        emit(state.copyWith(
-          failureOption: const None(),
-          isProcessing: true,
-        ));
+        emit(
+          state.copyWith(
+            failureOption: const None(),
+            isProcessing: true,
+          ),
+        );
 
         (await _userRepository.checkUsernameAvailability(
           state.username,
@@ -91,11 +102,13 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
             add(const SignUpEvent.usernameAvailabilityConfirmed());
           },
           (failure) {
-            emit(state.copyWith(
-              failureOption: Option.some(Err(CoreFailure.user(failure))),
-              isProcessing: false,
-              showErrorMessages: true,
-            ));
+            emit(
+              state.copyWith(
+                failureOption: Option.some(Err(CoreFailure.user(failure))),
+                isProcessing: false,
+                showErrorMessages: true,
+              ),
+            );
           },
         );
       }
@@ -104,18 +117,22 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
       (value, emit) async =>
           (await _sessionsRepository.updateSession(value.user)).match(
         (_) {
-          emit(state.copyWith(
-            failureOption: const None(),
-            isAuthenticated: true,
-            isProcessing: false,
-          ));
+          emit(
+            state.copyWith(
+              failureOption: const None(),
+              isAuthenticated: true,
+              isProcessing: false,
+            ),
+          );
         },
         (failure) {
-          emit(state.copyWith(
-            failureOption: Option.some(Err(CoreFailure.sessions(failure))),
-            isProcessing: false,
-            showErrorMessages: true,
-          ));
+          emit(
+            state.copyWith(
+              failureOption: Option.some(Err(CoreFailure.sessions(failure))),
+              isProcessing: false,
+              showErrorMessages: true,
+            ),
+          );
         },
       ),
     );
@@ -134,11 +151,13 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
             add(const SignUpEvent.accountCreated());
           },
           (failure) {
-            emit(state.copyWith(
-              failureOption: Option.some(Err(CoreFailure.auth(failure))),
-              isProcessing: false,
-              showErrorMessages: true,
-            ));
+            emit(
+              state.copyWith(
+                failureOption: Option.some(Err(CoreFailure.auth(failure))),
+                isProcessing: false,
+                showErrorMessages: true,
+              ),
+            );
           },
         );
       }
@@ -150,19 +169,23 @@ class SignUpBloc extends Bloc<SignUpEvent, SignUpState> {
           add(SignUpEvent.userDetailsSaved(value.user));
         },
         (failure) {
-          emit(state.copyWith(
-            failureOption: Option.some(Err(CoreFailure.user(failure))),
-            isProcessing: false,
-            showErrorMessages: true,
-          ));
+          emit(
+            state.copyWith(
+              failureOption: Option.some(Err(CoreFailure.user(failure))),
+              isProcessing: false,
+              showErrorMessages: true,
+            ),
+          );
         },
       ),
     );
     on<UsernameChanged>(
-      (value, emit) => emit(state.copyWith(
-        failureOption: const None(),
-        username: Username(value.usernameStr),
-      )),
+      (value, emit) => emit(
+        state.copyWith(
+          failureOption: const None(),
+          username: Username(value.usernameStr),
+        ),
+      ),
     );
   }
 

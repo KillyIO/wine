@@ -45,11 +45,11 @@ class LibraryVerticalNavbar extends StatelessWidget {
                   return VerticalNavbarButton(
                     color:
                         currentIndex == index ? Colors.black : Colors.black12,
-                    onPressed: () => context
-                        .read<LibraryNavigationBloc>()
-                        .add(LibraryNavigationEvent.verticalNavbarIndexChanged(
-                          index,
-                        )),
+                    onPressed: () => context.read<LibraryNavigationBloc>().add(
+                          LibraryNavigationEvent.verticalNavbarIndexChanged(
+                            index,
+                          ),
+                        ),
                     title: value,
                     width: width,
                   );

@@ -14,7 +14,6 @@ double getBannerSize(Size size) {
       return 300;
     case DeviceScreenType.tablet:
       return 225;
-    default:
-      return 150;
   }
+  return 150;
 }

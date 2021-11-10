@@ -31,10 +31,12 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
         if (value.index < 0) {
           newIdx = homePageViewKeys.length - 1;
         }
-        emit(state.copyWith(
-          currentPageViewIdx: newIdx,
-          failure: Option.none(),
-        ));
+        emit(
+          state.copyWith(
+            currentPageViewIdx: newIdx,
+            failure: Option.none(),
+          ),
+        );
 
         switch (state.currentPageViewIdx) {
           case 0:

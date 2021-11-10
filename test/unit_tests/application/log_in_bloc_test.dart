@@ -259,9 +259,11 @@ void main() {
         expect: () => <LogInState>[
           LogInState(
             emailAddress: EmailAddress(''),
-            failureOption: Some(Err(
-              const CoreFailure.sessions(SessionsFailure.sessionNotUpdated()),
-            )),
+            failureOption: Some(
+              Err(
+                const CoreFailure.sessions(SessionsFailure.sessionNotUpdated()),
+              ),
+            ),
             isAuthenticated: false,
             isProcessing: false,
             password: Password(''),
@@ -446,7 +448,8 @@ void main() {
               .thenAnswer((_) async => Err(const UserFailure.userNotFound()));
           when(() => _userRepository.checkUsernameAvailability(any()))
               .thenAnswer(
-                  (_) async => Err(const UserFailure.usernameAlreadyInUse()));
+            (_) async => Err(const UserFailure.usernameAlreadyInUse()),
+          );
           when(() => _userRepository.saveUsername(any(), any()))
               .thenAnswer((_) async => Ok(unit));
           when(() => _userRepository.saveDetailsFromUser(any()))

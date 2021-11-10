@@ -39,11 +39,13 @@ class LogInBloc extends Bloc<LogInEvent, LogInState> {
           add(const LogInEvent.loggedInWithGoogle());
         },
         (failure) {
-          emit(state.copyWith(
-            failureOption: Option.some(Err(CoreFailure.auth(failure))),
-            isProcessing: false,
-            showErrorMessages: true,
-          ));
+          emit(
+            state.copyWith(
+              failureOption: Option.some(Err(CoreFailure.auth(failure))),
+              isProcessing: false,
+              showErrorMessages: true,
+            ),
+          );
         },
       ),
     );
@@ -51,10 +53,12 @@ class LogInBloc extends Bloc<LogInEvent, LogInState> {
       (value, emit) async => await _saveUsername(value.user, emit),
     );
     on<EmailAddressChanged>(
-      (value, emit) => emit(state.copyWith(
-        emailAddress: EmailAddress(value.emailAddressStr),
-        failureOption: const None(),
-      )),
+      (value, emit) => emit(
+        state.copyWith(
+          emailAddress: EmailAddress(value.emailAddressStr),
+          failureOption: const None(),
+        ),
+      ),
     );
     on<LoggedInWithEmailAndPassword>((_, emit) async {
       if (_authFacade.isLoggedIn) {
@@ -70,11 +74,13 @@ class LogInBloc extends Bloc<LogInEvent, LogInState> {
               add(LogInEvent.userLoaded(user));
             },
             (failure) {
-              emit(state.copyWith(
-                failureOption: Option.some(Err(CoreFailure.user(failure))),
-                isProcessing: false,
-                showErrorMessages: true,
-              ));
+              emit(
+                state.copyWith(
+                  failureOption: Option.some(Err(CoreFailure.user(failure))),
+                  isProcessing: false,
+                  showErrorMessages: true,
+                ),
+              );
             },
           );
         }
@@ -99,11 +105,14 @@ class LogInBloc extends Bloc<LogInEvent, LogInState> {
                   add(LogInEvent.userNotFound(userAsplain));
                 },
                 orElse: () {
-                  emit(state.copyWith(
-                    failureOption: Option.some(Err(CoreFailure.user(failure))),
-                    isProcessing: false,
-                    showErrorMessages: true,
-                  ));
+                  emit(
+                    state.copyWith(
+                      failureOption:
+                          Option.some(Err(CoreFailure.user(failure))),
+                      isProcessing: false,
+                      showErrorMessages: true,
+                    ),
+                  );
                 },
               );
             },
@@ -116,10 +125,12 @@ class LogInBloc extends Bloc<LogInEvent, LogInState> {
       final isPasswordValid = state.password.isValid;
 
       if (isEmailValid && isPasswordValid) {
-        emit(state.copyWith(
-          failureOption: const None(),
-          isProcessing: true,
-        ));
+        emit(
+          state.copyWith(
+            failureOption: const None(),
+            isProcessing: true,
+          ),
+        );
 
         (await _authFacade.logInWithEmailAndPassword(
           state.emailAddress,
@@ -130,20 +141,24 @@ class LogInBloc extends Bloc<LogInEvent, LogInState> {
             add(const LogInEvent.loggedInWithEmailAndPassword());
           },
           (failure) {
-            emit(state.copyWith(
-              failureOption: Option.some(Err(CoreFailure.auth(failure))),
-              isProcessing: false,
-              showErrorMessages: true,
-            ));
+            emit(
+              state.copyWith(
+                failureOption: Option.some(Err(CoreFailure.auth(failure))),
+                isProcessing: false,
+                showErrorMessages: true,
+              ),
+            );
           },
         );
       }
     });
     on<LogInWithGooglePressed>((_, emit) async {
-      emit(state.copyWith(
-        failureOption: const None(),
-        isProcessing: true,
-      ));
+      emit(
+        state.copyWith(
+          failureOption: const None(),
+          isProcessing: true,
+        ),
+      );
 
       (await _authFacade.logInWithGoogle()).match(
         (_) {
@@ -153,37 +168,45 @@ class LogInBloc extends Bloc<LogInEvent, LogInState> {
           if (failure is auth_failure.CredentialAlreadyInUse) {
             add(const LogInEvent.credentialAlreadyInUse());
           } else {
-            emit(state.copyWith(
-              failureOption: Option.some(Err(CoreFailure.auth(failure))),
-              isProcessing: false,
-              showErrorMessages: true,
-            ));
+            emit(
+              state.copyWith(
+                failureOption: Option.some(Err(CoreFailure.auth(failure))),
+                isProcessing: false,
+                showErrorMessages: true,
+              ),
+            );
           }
         },
       );
     });
     on<PasswordChanged>(
-      (value, emit) => emit(state.copyWith(
-        failureOption: const None(),
-        password: Password(value.passwordStr),
-      )),
+      (value, emit) => emit(
+        state.copyWith(
+          failureOption: const None(),
+          password: Password(value.passwordStr),
+        ),
+      ),
     );
     on<UserDetailsSaved>(
       (value, emit) async =>
           (await _sessionsRepository.updateSession(value.user)).match(
         (_) {
-          emit(state.copyWith(
-            failureOption: const None(),
-            isAuthenticated: true,
-            isProcessing: false,
-          ));
+          emit(
+            state.copyWith(
+              failureOption: const None(),
+              isAuthenticated: true,
+              isProcessing: false,
+            ),
+          );
         },
         (failure) {
-          emit(state.copyWith(
-            failureOption: Option.some(Err(CoreFailure.sessions(failure))),
-            isProcessing: false,
-            showErrorMessages: true,
-          ));
+          emit(
+            state.copyWith(
+              failureOption: Option.some(Err(CoreFailure.sessions(failure))),
+              isProcessing: false,
+              showErrorMessages: true,
+            ),
+          );
         },
       ),
     );
@@ -214,11 +237,13 @@ class LogInBloc extends Bloc<LogInEvent, LogInState> {
 
             add(LogInEvent.customUsernameGenerated(user));
           } else {
-            emit(state.copyWith(
-              failureOption: Option.some(Err(CoreFailure.user(failure))),
-              isProcessing: false,
-              showErrorMessages: true,
-            ));
+            emit(
+              state.copyWith(
+                failureOption: Option.some(Err(CoreFailure.user(failure))),
+                isProcessing: false,
+                showErrorMessages: true,
+              ),
+            );
           }
         },
       );
@@ -238,11 +263,13 @@ class LogInBloc extends Bloc<LogInEvent, LogInState> {
         add(LogInEvent.userDetailsSaved(user));
       },
       (failure) {
-        emit(state.copyWith(
-          failureOption: Option.some(Err(CoreFailure.user(failure))),
-          isProcessing: false,
-          showErrorMessages: true,
-        ));
+        emit(
+          state.copyWith(
+            failureOption: Option.some(Err(CoreFailure.user(failure))),
+            isProcessing: false,
+            showErrorMessages: true,
+          ),
+        );
       },
     );
   }
@@ -253,11 +280,13 @@ class LogInBloc extends Bloc<LogInEvent, LogInState> {
         add(LogInEvent.usernameSaved(user));
       },
       (failure) {
-        emit(state.copyWith(
-          failureOption: Option.some(Err(CoreFailure.user(failure))),
-          isProcessing: false,
-          showErrorMessages: true,
-        ));
+        emit(
+          state.copyWith(
+            failureOption: Option.some(Err(CoreFailure.user(failure))),
+            isProcessing: false,
+            showErrorMessages: true,
+          ),
+        );
       },
     );
   }

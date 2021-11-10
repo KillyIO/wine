@@ -17,9 +17,8 @@ EdgeInsets getDefaultAppBarButtonPadding(
       return isRight
           ? const EdgeInsets.only(right: 5)
           : const EdgeInsets.only(left: 5);
-    default:
-      return EdgeInsets.zero;
   }
+  return EdgeInsets.zero;
 }
 
 /// @nodoc

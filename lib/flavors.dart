@@ -24,8 +24,7 @@ class F {
         return 'WINE Dev';
       case Flavor.production:
         return 'WINE';
-      default:
-        return 'title';
     }
+    return 'title';
   }
 }

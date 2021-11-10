@@ -48,8 +48,9 @@ class TypewriterSeriesLayout extends StatelessWidget {
                             coverURL: state.coverURL,
                             onPressed: () => context
                                 .read<TypewriterSeriesBloc>()
-                                .add(const TypewriterSeriesEvent
-                                    .addCoverPressed()),
+                                .add(
+                                  const TypewriterSeriesEvent.addCoverPressed(),
+                                ),
                           );
                         },
                       ),
@@ -73,7 +74,7 @@ class TypewriterSeriesLayout extends StatelessWidget {
                                     emptyInput: (_) =>
                                         'The title must not be empty.',
                                     tooLongInput: (_) =>
-                                        'The title must be less than  words long.',
+                                        'The title must be less than words long.',
                                     orElse: () => null,
                                   ),
                                 ),
@@ -89,10 +90,12 @@ class TypewriterSeriesLayout extends StatelessWidget {
                             controller: state.subtitleController,
                             label: 'SUBTITLE (OPTIONAL)',
                             hintText: 'Less than $subtitleMaxWords words',
-                            onChanged: (value) => context
-                                .read<TypewriterSeriesBloc>()
-                                .add(TypewriterSeriesEvent.subtitleChanged(
-                                    value)),
+                            onChanged: (value) =>
+                                context.read<TypewriterSeriesBloc>().add(
+                                      TypewriterSeriesEvent.subtitleChanged(
+                                        value,
+                                      ),
+                                    ),
                             validator: (_) => context
                                 .watch<TypewriterSeriesBloc>()
                                 .state
@@ -102,7 +105,7 @@ class TypewriterSeriesLayout extends StatelessWidget {
                                   (_) => null,
                                   (err) => err.maybeMap(
                                     tooLongInput: (_) =>
-                                        'The subtitle must be less than  words long.',
+                                        'The subtitle must be less than words long.',
                                     orElse: () => null,
                                   ),
                                 ),
@@ -119,10 +122,12 @@ class TypewriterSeriesLayout extends StatelessWidget {
                             controller: state.summaryController,
                             label: 'SUMMARY*',
                             hintText: 'Less than $summaryMaxWords words',
-                            onChanged: (value) => context
-                                .read<TypewriterSeriesBloc>()
-                                .add(TypewriterSeriesEvent.summaryChanged(
-                                    value)),
+                            onChanged: (value) =>
+                                context.read<TypewriterSeriesBloc>().add(
+                                      TypewriterSeriesEvent.summaryChanged(
+                                        value,
+                                      ),
+                                    ),
                             validator: (_) => context
                                 .watch<TypewriterSeriesBloc>()
                                 .state
@@ -134,7 +139,7 @@ class TypewriterSeriesLayout extends StatelessWidget {
                                     emptyInput: (_) =>
                                         'The summary must not be empty.',
                                     tooLongInput: (_) =>
-                                        'The summary must be less than  words long.',
+                                        'The summary must be less than words long.',
                                     orElse: () => null,
                                   ),
                                 ),
@@ -174,11 +179,12 @@ class TypewriterSeriesLayout extends StatelessWidget {
                             title: 'NSFW/ADULT CONTENT',
                             onInfoPressed: () {},
                             value: state.isNSFW,
-                            onChanged: (bool value) => context
-                                .read<TypewriterSeriesBloc>()
-                                .add(TypewriterSeriesEvent.isNSFWChanged(
-                                  isNSFW: value,
-                                )),
+                            onChanged: (bool value) =>
+                                context.read<TypewriterSeriesBloc>().add(
+                                      TypewriterSeriesEvent.isNSFWChanged(
+                                        isNSFW: value,
+                                      ),
+                                    ),
                           );
                         },
                       ),
@@ -188,11 +194,12 @@ class TypewriterSeriesLayout extends StatelessWidget {
                             padding: const EdgeInsets.only(bottom: 20),
                             child: TypewriterSeriesSelectionListTile(
                               items: isoCountryCodes,
-                              onPressed: (String value) => context
-                                  .read<TypewriterSeriesBloc>()
-                                  .add(TypewriterSeriesEvent.languageSelected(
-                                    value,
-                                  )),
+                              onPressed: (String value) =>
+                                  context.read<TypewriterSeriesBloc>().add(
+                                        TypewriterSeriesEvent.languageSelected(
+                                          value,
+                                        ),
+                                      ),
                               title: 'LANGUAGE*',
                               selectedItem: state.language.getOrNull(),
                             ),

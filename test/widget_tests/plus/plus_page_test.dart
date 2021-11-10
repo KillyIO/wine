@@ -68,13 +68,15 @@ void main() {
     testWidgets('Should find 3 buttons', (tester) async {
       final authBloc = getIt<AuthBloc>()..add(const AuthEvent.authChanged());
 
-      await tester.pumpWidget(TestRouterWidget(
-        appRouter: _router,
-        providers: [
-          BlocProvider(create: (_) => authBloc),
-          BlocProvider<HomeBloc>(create: (_) => getIt<HomeBloc>()),
-        ],
-      ));
+      await tester.pumpWidget(
+        TestRouterWidget(
+          appRouter: _router,
+          providers: [
+            BlocProvider(create: (_) => authBloc),
+            BlocProvider<HomeBloc>(create: (_) => getIt<HomeBloc>()),
+          ],
+        ),
+      );
       await tester.pumpAndSettle();
 
       expect(find.byKey(const Key('plus_library_button')), findsOneWidget);
@@ -86,13 +88,15 @@ void main() {
       testWidgets('Should find an image and text PLUS', (tester) async {
         final authBloc = getIt<AuthBloc>()..add(const AuthEvent.authChanged());
 
-        await tester.pumpWidget(TestRouterWidget(
-          appRouter: _router,
-          providers: [
-            BlocProvider<AuthBloc>(create: (context) => authBloc),
-            BlocProvider<HomeBloc>(create: (_) => getIt<HomeBloc>()),
-          ],
-        ));
+        await tester.pumpWidget(
+          TestRouterWidget(
+            appRouter: _router,
+            providers: [
+              BlocProvider<AuthBloc>(create: (context) => authBloc),
+              BlocProvider<HomeBloc>(create: (_) => getIt<HomeBloc>()),
+            ],
+          ),
+        );
         await tester.pumpAndSettle();
 
         expect(find.byType(Image), findsOneWidget);
@@ -128,17 +132,19 @@ void main() {
           final authBloc = getIt<AuthBloc>()
             ..add(const AuthEvent.authChanged());
 
-          await tester.pumpWidget(TestRouterWidget(
-            appRouter: _router,
-            providers: [
-              BlocProvider<AuthBloc>(create: (_) => authBloc),
-              BlocProvider<AuthDialogCubit>(
-                create: (_) => getIt<AuthDialogCubit>(),
-              ),
-              BlocProvider<HomeBloc>(create: (_) => getIt<HomeBloc>()),
-              BlocProvider<LogInBloc>(create: (_) => getIt<LogInBloc>()),
-            ],
-          ));
+          await tester.pumpWidget(
+            TestRouterWidget(
+              appRouter: _router,
+              providers: [
+                BlocProvider<AuthBloc>(create: (_) => authBloc),
+                BlocProvider<AuthDialogCubit>(
+                  create: (_) => getIt<AuthDialogCubit>(),
+                ),
+                BlocProvider<HomeBloc>(create: (_) => getIt<HomeBloc>()),
+                BlocProvider<LogInBloc>(create: (_) => getIt<LogInBloc>()),
+              ],
+            ),
+          );
           await tester.pumpAndSettle();
 
           final plusLibraryButton =
@@ -174,14 +180,16 @@ void main() {
           final authBloc = getIt<AuthBloc>()
             ..add(const AuthEvent.authChanged());
 
-          await tester.pumpWidget(TestRouterWidget(
-            appRouter: _router,
-            providers: [
-              BlocProvider<AuthBloc>(create: (_) => authBloc),
-              BlocProvider<HomeBloc>(create: (_) => getIt<HomeBloc>()),
-              BlocProvider<LogInBloc>(create: (_) => getIt<LogInBloc>()),
-            ],
-          ));
+          await tester.pumpWidget(
+            TestRouterWidget(
+              appRouter: _router,
+              providers: [
+                BlocProvider<AuthBloc>(create: (_) => authBloc),
+                BlocProvider<HomeBloc>(create: (_) => getIt<HomeBloc>()),
+                BlocProvider<LogInBloc>(create: (_) => getIt<LogInBloc>()),
+              ],
+            ),
+          );
           await tester.pumpAndSettle();
 
           final plusLibraryButton =
@@ -225,14 +233,16 @@ void main() {
           final authBloc = getIt<AuthBloc>()
             ..add(const AuthEvent.authChanged());
 
-          await tester.pumpWidget(TestRouterWidget(
-            appRouter: _router,
-            providers: [
-              BlocProvider<AuthBloc>(create: (_) => authBloc),
-              BlocProvider<HomeBloc>(create: (_) => getIt<HomeBloc>()),
-              BlocProvider<LogInBloc>(create: (_) => getIt<LogInBloc>()),
-            ],
-          ));
+          await tester.pumpWidget(
+            TestRouterWidget(
+              appRouter: _router,
+              providers: [
+                BlocProvider<AuthBloc>(create: (_) => authBloc),
+                BlocProvider<HomeBloc>(create: (_) => getIt<HomeBloc>()),
+                BlocProvider<LogInBloc>(create: (_) => getIt<LogInBloc>()),
+              ],
+            ),
+          );
           await tester.pumpAndSettle();
 
           final plusLibraryButton =

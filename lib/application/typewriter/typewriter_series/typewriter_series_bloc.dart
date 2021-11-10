@@ -71,10 +71,12 @@ class TypewriterSeriesBloc
               appDocDir.uri.resolve(p.basename(croppedFile.path)).path;
           final coverFile = await croppedFile.copy(coverPath);
 
-          emit(state.copyWith(
-            coverURL: coverFile.path,
-            failureOption: const None(),
-          ));
+          emit(
+            state.copyWith(
+              coverURL: coverFile.path,
+              failureOption: const None(),
+            ),
+          );
         }
       }
     });
@@ -82,46 +84,58 @@ class TypewriterSeriesBloc
       final genre = Genre(value.genre);
       final genres = List<Genre>.from(state.genres)..add(genre);
 
-      emit(state.copyWith(
-        failureOption: const None(),
-        genres: genres,
-      ));
+      emit(
+        state.copyWith(
+          failureOption: const None(),
+          genres: genres,
+        ),
+      );
     });
     on<GenreRemoved>((value, emit) {
       final genres =
           state.genres.where((g) => g.getOrCrash() != value.genre).toList();
 
-      emit(state.copyWith(
-        failureOption: const None(),
-        genres: genres,
-      ));
+      emit(
+        state.copyWith(
+          failureOption: const None(),
+          genres: genres,
+        ),
+      );
     });
     on<IsNSFWChanged>(
-      (value, emit) => emit(state.copyWith(
-        failureOption: const None(),
-        isNSFW: value.isNSFW,
-      )),
+      (value, emit) => emit(
+        state.copyWith(
+          failureOption: const None(),
+          isNSFW: value.isNSFW,
+        ),
+      ),
     );
     on<LanguageSelected>(
-      (value, emit) => emit(state.copyWith(
-        failureOption: const None(),
-        language: Language(value.language),
-      )),
+      (value, emit) => emit(
+        state.copyWith(
+          failureOption: const None(),
+          language: Language(value.language),
+        ),
+      ),
     );
     on<LaunchAsNewSeries>((_, emit) async {
       (await _sessionsRepository.fetchSession()).match(
         (user) {
-          emit(state.copyWith(
-            failureOption: const None(),
-            user: user,
-          ));
+          emit(
+            state.copyWith(
+              failureOption: const None(),
+              user: user,
+            ),
+          );
 
           add(const TypewriterSeriesEvent.sessionFetched());
         },
         (failure) {
-          emit(state.copyWith(
-            failureOption: Option.some(Err(CoreFailure.sessions(failure))),
-          ));
+          emit(
+            state.copyWith(
+              failureOption: Option.some(Err(CoreFailure.sessions(failure))),
+            ),
+          );
         },
       );
     });
@@ -133,15 +147,20 @@ class TypewriterSeriesBloc
       (await _defaultCoversRepository.fetchDefaultCoverURLByKey(randomKey))
           .match(
         (coverURL) {
-          emit(state.copyWith(
-            coverURL: coverURL,
-            failureOption: const None(),
-          ));
+          emit(
+            state.copyWith(
+              coverURL: coverURL,
+              failureOption: const None(),
+            ),
+          );
         },
         (failure) {
-          emit(state.copyWith(
-            failureOption: Option.some(Err(CoreFailure.defaultCovers(failure))),
-          ));
+          emit(
+            state.copyWith(
+              failureOption:
+                  Option.some(Err(CoreFailure.defaultCovers(failure))),
+            ),
+          );
         },
       );
     });
@@ -149,31 +168,37 @@ class TypewriterSeriesBloc
       final subtitleTrim = value.subtitle.trim();
       final wordCount = subtitleTrim.countWords();
 
-      emit(state.copyWith(
-        failureOption: const None(),
-        subtitle: Subtitle(subtitleTrim),
-        subtitleWordCount: wordCount,
-      ));
+      emit(
+        state.copyWith(
+          failureOption: const None(),
+          subtitle: Subtitle(subtitleTrim),
+          subtitleWordCount: wordCount,
+        ),
+      );
     });
     on<SummaryChanged>((value, emit) {
       final summaryTrim = value.summary.trim();
       final wordCount = summaryTrim.countWords();
 
-      emit(state.copyWith(
-        failureOption: const None(),
-        summary: Summary(summaryTrim),
-        summaryWordCount: wordCount,
-      ));
+      emit(
+        state.copyWith(
+          failureOption: const None(),
+          summary: Summary(summaryTrim),
+          summaryWordCount: wordCount,
+        ),
+      );
     });
     on<TitleChanged>((value, emit) {
       final titleTrim = value.title.trim();
       final wordCount = titleTrim.countWords();
 
-      emit(state.copyWith(
-        failureOption: const None(),
-        title: Title(titleTrim),
-        titleWordCount: wordCount,
-      ));
+      emit(
+        state.copyWith(
+          failureOption: const None(),
+          title: Title(titleTrim),
+          titleWordCount: wordCount,
+        ),
+      );
     });
   }
 

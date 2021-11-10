@@ -187,9 +187,10 @@ class LogInLayout extends StatelessWidget {
                               .match(
                                 (_) => null,
                                 (err) => err.maybeMap(
-                                    invalidPassword: (_) =>
-                                        'The password is invalid.',
-                                    orElse: () => null),
+                                  invalidPassword: (_) =>
+                                      'The password is invalid.',
+                                  orElse: () => null,
+                                ),
                               ),
                         ),
                       ),
@@ -202,8 +203,9 @@ class LogInLayout extends StatelessWidget {
                           onPressed: state.isProcessing
                               ? null
                               : () => context.read<LogInBloc>().add(
-                                  const LogInEvent
-                                      .logInWithEmailAndPasswordPressed()),
+                                    const LogInEvent
+                                        .logInWithEmailAndPasswordPressed(),
+                                  ),
                           title: 'Log in'.toUpperCase(),
                           width: 150,
                         ),
@@ -237,8 +239,9 @@ class LogInLayout extends StatelessWidget {
                               onPressed: state.isProcessing
                                   ? null
                                   : () => context.read<LogInBloc>().add(
-                                      const LogInEvent
-                                          .logInWithGooglePressed()),
+                                        const LogInEvent
+                                            .logInWithGooglePressed(),
+                                      ),
                               icon: LineIcons.googlePlus,
                             )
                           ],
@@ -251,9 +254,11 @@ class LogInLayout extends StatelessWidget {
                             onPressed: state.isProcessing
                                 ? null
                                 : onSignUpButtonPressed ??
-                                    () => context.router.root.push(SignUpRoute(
-                                          navigateTo: navigateTo,
-                                        )),
+                                    () => context.router.root.push(
+                                          SignUpRoute(
+                                            navigateTo: navigateTo,
+                                          ),
+                                        ),
                           ),
                         ),
                       ),

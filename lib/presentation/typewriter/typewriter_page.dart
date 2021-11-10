@@ -36,9 +36,8 @@ class TypewriterPage extends StatelessWidget {
           return TypewriterSeriesIDPage(seriesId: id!);
         }
         return const TypewriterSeriesNewPage();
-      default:
-        return Container();
     }
+    return Container();
   }
 
   @override

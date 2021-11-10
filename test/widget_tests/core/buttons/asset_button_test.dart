@@ -12,13 +12,15 @@ void main() {
     testWidgets('completer should be true', (tester) async {
       final completer = Completer<void>();
 
-      await tester.pumpWidget(TestWidget(
-        child: AssetButton(
-          imagePath: plusIcon,
-          key: const Key('test_asset_button'),
-          onPressed: completer.complete,
+      await tester.pumpWidget(
+        TestWidget(
+          child: AssetButton(
+            imagePath: plusIcon,
+            key: const Key('test_asset_button'),
+            onPressed: completer.complete,
+          ),
         ),
-      ));
+      );
 
       final assetButton = find.byKey(const Key('test_asset_button'));
 
