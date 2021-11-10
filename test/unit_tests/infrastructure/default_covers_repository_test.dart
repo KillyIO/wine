@@ -123,10 +123,8 @@ void main() {
       );
     });
 
-    // ignore: todo
-    // TODO uncomment these tests
-    // ignore: todo
-    // TODO once fake_cloud_firestore allows throwing exceptions
+    // TODO(SSebigo): uncomment these tests
+    // TODO(SSebigo): once fake_cloud_firestore allows throwing exceptions
     // test('When docs empty Then return DefaultCoverURLsNotLoaded', () async {
     // when(() => _firestore.collection(any()))
     // .thenReturn(_collectionReference);

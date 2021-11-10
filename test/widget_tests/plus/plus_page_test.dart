@@ -257,15 +257,11 @@ void main() {
     });
   });
 
-  // ignore: todo
-  // TODO test LIBRARY button navigate to LibraryPage when authenticated
+  // TODO(SSebigo): test LIBRARY button navigate to LibraryPage when authenticated
 
-  // ignore: todo
-  // TODO test LIBRARY button navigate to LogInPage when  anonymous
+  // TODO(SSebigo): test LIBRARY button navigate to LogInPage when  anonymous
 
-  // ignore: todo
-  // TODO test SETTINGS button navigate to SettingsPage
+  // TODO(SSebigo): test SETTINGS button navigate to SettingsPage
 
-  // ignore: todo
-  // TODO test ABOUT button navigate to AboutPage
+  // TODO(SSebigo): test ABOUT button navigate to AboutPage
 }

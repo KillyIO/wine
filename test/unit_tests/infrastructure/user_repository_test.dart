@@ -11,11 +11,8 @@ import 'package:wine/utils/paths/users.dart';
 
 import '../utils/constants.dart';
 
-// ignore: todo
-// TODO uncomment these tests
-// ignore: todo
-// TODO once fake_cloud_firestore allows throwing exceptions
-
+// TODO(SSebigo): uncomment these tests
+// TODO(SSebigo): once fake_cloud_firestore allows throwing exceptions
 void main() {
   late IUserRepository _userRepository;
 

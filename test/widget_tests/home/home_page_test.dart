@@ -527,8 +527,7 @@ void main() {
             .thenAnswer((_) async => Ok(testUser));
       });
 
-      // ignore: todo
-      // TODO test top left icon open/close drawer
+      // TODO(SSebigo): test top left icon open/close drawer
 
       testWidgets('Should find 3 buttons', (tester) async {
         when(() => _authFacade.authStateChanges)
@@ -566,19 +565,14 @@ void main() {
       });
     });
 
-    // ignore: todo
-    // TODO test "PLUS" button navigate to PlusPage
+    // TODO(SSebigo): test "PLUS" button navigate to PlusPage
 
-    // ignore: todo
-    // TODO test "LIBRARY" button navigate to LibraryPage
+    // TODO(SSebigo): test "LIBRARY" button navigate to LibraryPage
 
-    // ignore: todo
-    // TODO test series is displayed
+    // TODO(SSebigo): test series is displayed
 
-    // ignore: todo
-    // TODO test if more than 5 series shoud find top five series
+    // TODO(SSebigo): test if more than 5 series shoud find top five series
 
-    // ignore: todo
-    // TODO test plus icon navigate to NewSeries
+    // TODO(SSebigo): test plus icon navigate to NewSeries
   });
 }

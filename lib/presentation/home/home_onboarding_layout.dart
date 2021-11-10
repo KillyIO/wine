@@ -19,8 +19,7 @@ class HomeOnboardingLayout extends StatelessWidget {
             .read<SetupBloc>()
             .add(const SetupEvent.onboardingDonePressed()),
         pages: [
-          // ignore: todo
-          // TODO add pages
+          // TODO(SSebigo): add pages
           PageViewModel(
             title: 'Placeholder title',
             body: 'Placeholder body',

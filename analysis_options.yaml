@@ -1,15 +1,13 @@
 include: package:very_good_analysis/analysis_options.yaml
 
-linter:
-  rules:
-    missing_enum_constant_in_switch: false
 
 analyzer:
   errors:
-    missing_enum_constant_in_switch: ignore
     missing_required_param: error
     missing_return: error
     must_be_immutable: error
+    missing_enum_constant_in_switch: ignore
+    todo: ignore
 
   exclude:
     - "**/*.config.dart"

@@ -13,8 +13,7 @@ class HomePageViewBuilder extends StatelessWidget {
   /// @nodoc
   final PageController controller;
 
-  // ignore: todo
-  // TODO add real layouts
+  // TODO(SSebigo): add real layouts
   final List<Widget> _pageViewLayouts = <Widget>[Container(), Container()];
 
   @override

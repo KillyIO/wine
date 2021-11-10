@@ -26,8 +26,7 @@ class SignUpTOSAndPPButton extends StatelessWidget {
               decoration: TextDecoration.underline,
               fontWeight: FontWeight.bold,
             ),
-            // ignore: todo
-            // TODO add navigation to terms of service
+            // TODO(SSebigo): add navigation to terms of service
             recognizer: TapGestureRecognizer()..onTap = () {},
           ),
           const TextSpan(text: ' and '),
@@ -37,8 +36,7 @@ class SignUpTOSAndPPButton extends StatelessWidget {
               decoration: TextDecoration.underline,
               fontWeight: FontWeight.bold,
             ),
-            // ignore: todo
-            // TODO add navigation to privacy policy
+            // TODO(SSebigo): add navigation to privacy policy
             recognizer: TapGestureRecognizer()..onTap = () {},
           ),
         ],
