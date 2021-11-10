@@ -204,7 +204,7 @@ class TypewriterSeriesLayout extends StatelessWidget {
                           return Padding(
                             padding: const EdgeInsets.only(bottom: 20),
                             child: DefaultButton(
-                              color: Colors.black54,
+                              color: pastelBlue,
                               isProcessing: state.isProcessing,
                               title: 'SAVE',
                               width: mediaQuery.width,
