@@ -27,6 +27,8 @@ dependencies:
   google_sign_in: ^5.1.1
   hive: ^2.0.4
   hive_flutter: ^1.1.0
+  image_cropper: ^1.4.1
+  image_picker: ^0.8.4+4
   injectable: ^1.5.0
   introduction_screen: ^2.1.0
   json_annotation: ^4.1.0
