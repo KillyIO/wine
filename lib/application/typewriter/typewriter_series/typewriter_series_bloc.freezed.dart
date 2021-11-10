@@ -56,6 +56,10 @@ class _$TypewriterSeriesEventTearOff {
     );
   }
 
+  SessionFetched sessionFetched() {
+    return const SessionFetched();
+  }
+
   SubtitleChanged subtitleChanged(String subtitle) {
     return SubtitleChanged(
       subtitle,
@@ -89,6 +93,7 @@ mixin _$TypewriterSeriesEvent {
     required TResult Function(String language) languageSelected,
     required TResult Function() launchAsNewSeries,
     required TResult Function(UniqueID id, Series? series) launchWithID,
+    required TResult Function() sessionFetched,
     required TResult Function(String subtitle) subtitleChanged,
     required TResult Function(String summary) summaryChanged,
     required TResult Function(String title) titleChanged,
@@ -103,6 +108,7 @@ mixin _$TypewriterSeriesEvent {
     TResult Function(String language)? languageSelected,
     TResult Function()? launchAsNewSeries,
     TResult Function(UniqueID id, Series? series)? launchWithID,
+    TResult Function()? sessionFetched,
     TResult Function(String subtitle)? subtitleChanged,
     TResult Function(String summary)? summaryChanged,
     TResult Function(String title)? titleChanged,
@@ -117,6 +123,7 @@ mixin _$TypewriterSeriesEvent {
     TResult Function(String language)? languageSelected,
     TResult Function()? launchAsNewSeries,
     TResult Function(UniqueID id, Series? series)? launchWithID,
+    TResult Function()? sessionFetched,
     TResult Function(String subtitle)? subtitleChanged,
     TResult Function(String summary)? summaryChanged,
     TResult Function(String title)? titleChanged,
@@ -132,6 +139,7 @@ mixin _$TypewriterSeriesEvent {
     required TResult Function(LanguageSelected value) languageSelected,
     required TResult Function(LaunchAsNewSeries value) launchAsNewSeries,
     required TResult Function(LaunchWithID value) launchWithID,
+    required TResult Function(SessionFetched value) sessionFetched,
     required TResult Function(SubtitleChanged value) subtitleChanged,
     required TResult Function(SummaryChanged value) summaryChanged,
     required TResult Function(TitleChanged value) titleChanged,
@@ -146,6 +154,7 @@ mixin _$TypewriterSeriesEvent {
     TResult Function(LanguageSelected value)? languageSelected,
     TResult Function(LaunchAsNewSeries value)? launchAsNewSeries,
     TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SubtitleChanged value)? subtitleChanged,
     TResult Function(SummaryChanged value)? summaryChanged,
     TResult Function(TitleChanged value)? titleChanged,
@@ -160,6 +169,7 @@ mixin _$TypewriterSeriesEvent {
     TResult Function(LanguageSelected value)? languageSelected,
     TResult Function(LaunchAsNewSeries value)? launchAsNewSeries,
     TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SubtitleChanged value)? subtitleChanged,
     TResult Function(SummaryChanged value)? summaryChanged,
     TResult Function(TitleChanged value)? titleChanged,
@@ -232,6 +242,7 @@ class _$AddCoverPressed implements AddCoverPressed {
     required TResult Function(String language) languageSelected,
     required TResult Function() launchAsNewSeries,
     required TResult Function(UniqueID id, Series? series) launchWithID,
+    required TResult Function() sessionFetched,
     required TResult Function(String subtitle) subtitleChanged,
     required TResult Function(String summary) summaryChanged,
     required TResult Function(String title) titleChanged,
@@ -249,6 +260,7 @@ class _$AddCoverPressed implements AddCoverPressed {
     TResult Function(String language)? languageSelected,
     TResult Function()? launchAsNewSeries,
     TResult Function(UniqueID id, Series? series)? launchWithID,
+    TResult Function()? sessionFetched,
     TResult Function(String subtitle)? subtitleChanged,
     TResult Function(String summary)? summaryChanged,
     TResult Function(String title)? titleChanged,
@@ -266,6 +278,7 @@ class _$AddCoverPressed implements AddCoverPressed {
     TResult Function(String language)? languageSelected,
     TResult Function()? launchAsNewSeries,
     TResult Function(UniqueID id, Series? series)? launchWithID,
+    TResult Function()? sessionFetched,
     TResult Function(String subtitle)? subtitleChanged,
     TResult Function(String summary)? summaryChanged,
     TResult Function(String title)? titleChanged,
@@ -287,6 +300,7 @@ class _$AddCoverPressed implements AddCoverPressed {
     required TResult Function(LanguageSelected value) languageSelected,
     required TResult Function(LaunchAsNewSeries value) launchAsNewSeries,
     required TResult Function(LaunchWithID value) launchWithID,
+    required TResult Function(SessionFetched value) sessionFetched,
     required TResult Function(SubtitleChanged value) subtitleChanged,
     required TResult Function(SummaryChanged value) summaryChanged,
     required TResult Function(TitleChanged value) titleChanged,
@@ -304,6 +318,7 @@ class _$AddCoverPressed implements AddCoverPressed {
     TResult Function(LanguageSelected value)? languageSelected,
     TResult Function(LaunchAsNewSeries value)? launchAsNewSeries,
     TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SubtitleChanged value)? subtitleChanged,
     TResult Function(SummaryChanged value)? summaryChanged,
     TResult Function(TitleChanged value)? titleChanged,
@@ -321,6 +336,7 @@ class _$AddCoverPressed implements AddCoverPressed {
     TResult Function(LanguageSelected value)? languageSelected,
     TResult Function(LaunchAsNewSeries value)? launchAsNewSeries,
     TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SubtitleChanged value)? subtitleChanged,
     TResult Function(SummaryChanged value)? summaryChanged,
     TResult Function(TitleChanged value)? titleChanged,
@@ -408,6 +424,7 @@ class _$GenreAdded implements GenreAdded {
     required TResult Function(String language) languageSelected,
     required TResult Function() launchAsNewSeries,
     required TResult Function(UniqueID id, Series? series) launchWithID,
+    required TResult Function() sessionFetched,
     required TResult Function(String subtitle) subtitleChanged,
     required TResult Function(String summary) summaryChanged,
     required TResult Function(String title) titleChanged,
@@ -425,6 +442,7 @@ class _$GenreAdded implements GenreAdded {
     TResult Function(String language)? languageSelected,
     TResult Function()? launchAsNewSeries,
     TResult Function(UniqueID id, Series? series)? launchWithID,
+    TResult Function()? sessionFetched,
     TResult Function(String subtitle)? subtitleChanged,
     TResult Function(String summary)? summaryChanged,
     TResult Function(String title)? titleChanged,
@@ -442,6 +460,7 @@ class _$GenreAdded implements GenreAdded {
     TResult Function(String language)? languageSelected,
     TResult Function()? launchAsNewSeries,
     TResult Function(UniqueID id, Series? series)? launchWithID,
+    TResult Function()? sessionFetched,
     TResult Function(String subtitle)? subtitleChanged,
     TResult Function(String summary)? summaryChanged,
     TResult Function(String title)? titleChanged,
@@ -463,6 +482,7 @@ class _$GenreAdded implements GenreAdded {
     required TResult Function(LanguageSelected value) languageSelected,
     required TResult Function(LaunchAsNewSeries value) launchAsNewSeries,
     required TResult Function(LaunchWithID value) launchWithID,
+    required TResult Function(SessionFetched value) sessionFetched,
     required TResult Function(SubtitleChanged value) subtitleChanged,
     required TResult Function(SummaryChanged value) summaryChanged,
     required TResult Function(TitleChanged value) titleChanged,
@@ -480,6 +500,7 @@ class _$GenreAdded implements GenreAdded {
     TResult Function(LanguageSelected value)? languageSelected,
     TResult Function(LaunchAsNewSeries value)? launchAsNewSeries,
     TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SubtitleChanged value)? subtitleChanged,
     TResult Function(SummaryChanged value)? summaryChanged,
     TResult Function(TitleChanged value)? titleChanged,
@@ -497,6 +518,7 @@ class _$GenreAdded implements GenreAdded {
     TResult Function(LanguageSelected value)? languageSelected,
     TResult Function(LaunchAsNewSeries value)? launchAsNewSeries,
     TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SubtitleChanged value)? subtitleChanged,
     TResult Function(SummaryChanged value)? summaryChanged,
     TResult Function(TitleChanged value)? titleChanged,
@@ -590,6 +612,7 @@ class _$GenreRemoved implements GenreRemoved {
     required TResult Function(String language) languageSelected,
     required TResult Function() launchAsNewSeries,
     required TResult Function(UniqueID id, Series? series) launchWithID,
+    required TResult Function() sessionFetched,
     required TResult Function(String subtitle) subtitleChanged,
     required TResult Function(String summary) summaryChanged,
     required TResult Function(String title) titleChanged,
@@ -607,6 +630,7 @@ class _$GenreRemoved implements GenreRemoved {
     TResult Function(String language)? languageSelected,
     TResult Function()? launchAsNewSeries,
     TResult Function(UniqueID id, Series? series)? launchWithID,
+    TResult Function()? sessionFetched,
     TResult Function(String subtitle)? subtitleChanged,
     TResult Function(String summary)? summaryChanged,
     TResult Function(String title)? titleChanged,
@@ -624,6 +648,7 @@ class _$GenreRemoved implements GenreRemoved {
     TResult Function(String language)? languageSelected,
     TResult Function()? launchAsNewSeries,
     TResult Function(UniqueID id, Series? series)? launchWithID,
+    TResult Function()? sessionFetched,
     TResult Function(String subtitle)? subtitleChanged,
     TResult Function(String summary)? summaryChanged,
     TResult Function(String title)? titleChanged,
@@ -645,6 +670,7 @@ class _$GenreRemoved implements GenreRemoved {
     required TResult Function(LanguageSelected value) languageSelected,
     required TResult Function(LaunchAsNewSeries value) launchAsNewSeries,
     required TResult Function(LaunchWithID value) launchWithID,
+    required TResult Function(SessionFetched value) sessionFetched,
     required TResult Function(SubtitleChanged value) subtitleChanged,
     required TResult Function(SummaryChanged value) summaryChanged,
     required TResult Function(TitleChanged value) titleChanged,
@@ -662,6 +688,7 @@ class _$GenreRemoved implements GenreRemoved {
     TResult Function(LanguageSelected value)? languageSelected,
     TResult Function(LaunchAsNewSeries value)? launchAsNewSeries,
     TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SubtitleChanged value)? subtitleChanged,
     TResult Function(SummaryChanged value)? summaryChanged,
     TResult Function(TitleChanged value)? titleChanged,
@@ -679,6 +706,7 @@ class _$GenreRemoved implements GenreRemoved {
     TResult Function(LanguageSelected value)? languageSelected,
     TResult Function(LaunchAsNewSeries value)? launchAsNewSeries,
     TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SubtitleChanged value)? subtitleChanged,
     TResult Function(SummaryChanged value)? summaryChanged,
     TResult Function(TitleChanged value)? titleChanged,
@@ -772,6 +800,7 @@ class _$IsNSFWChanged implements IsNSFWChanged {
     required TResult Function(String language) languageSelected,
     required TResult Function() launchAsNewSeries,
     required TResult Function(UniqueID id, Series? series) launchWithID,
+    required TResult Function() sessionFetched,
     required TResult Function(String subtitle) subtitleChanged,
     required TResult Function(String summary) summaryChanged,
     required TResult Function(String title) titleChanged,
@@ -789,6 +818,7 @@ class _$IsNSFWChanged implements IsNSFWChanged {
     TResult Function(String language)? languageSelected,
     TResult Function()? launchAsNewSeries,
     TResult Function(UniqueID id, Series? series)? launchWithID,
+    TResult Function()? sessionFetched,
     TResult Function(String subtitle)? subtitleChanged,
     TResult Function(String summary)? summaryChanged,
     TResult Function(String title)? titleChanged,
@@ -806,6 +836,7 @@ class _$IsNSFWChanged implements IsNSFWChanged {
     TResult Function(String language)? languageSelected,
     TResult Function()? launchAsNewSeries,
     TResult Function(UniqueID id, Series? series)? launchWithID,
+    TResult Function()? sessionFetched,
     TResult Function(String subtitle)? subtitleChanged,
     TResult Function(String summary)? summaryChanged,
     TResult Function(String title)? titleChanged,
@@ -827,6 +858,7 @@ class _$IsNSFWChanged implements IsNSFWChanged {
     required TResult Function(LanguageSelected value) languageSelected,
     required TResult Function(LaunchAsNewSeries value) launchAsNewSeries,
     required TResult Function(LaunchWithID value) launchWithID,
+    required TResult Function(SessionFetched value) sessionFetched,
     required TResult Function(SubtitleChanged value) subtitleChanged,
     required TResult Function(SummaryChanged value) summaryChanged,
     required TResult Function(TitleChanged value) titleChanged,
@@ -844,6 +876,7 @@ class _$IsNSFWChanged implements IsNSFWChanged {
     TResult Function(LanguageSelected value)? languageSelected,
     TResult Function(LaunchAsNewSeries value)? launchAsNewSeries,
     TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SubtitleChanged value)? subtitleChanged,
     TResult Function(SummaryChanged value)? summaryChanged,
     TResult Function(TitleChanged value)? titleChanged,
@@ -861,6 +894,7 @@ class _$IsNSFWChanged implements IsNSFWChanged {
     TResult Function(LanguageSelected value)? languageSelected,
     TResult Function(LaunchAsNewSeries value)? launchAsNewSeries,
     TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SubtitleChanged value)? subtitleChanged,
     TResult Function(SummaryChanged value)? summaryChanged,
     TResult Function(TitleChanged value)? titleChanged,
@@ -955,6 +989,7 @@ class _$LanguageSelected implements LanguageSelected {
     required TResult Function(String language) languageSelected,
     required TResult Function() launchAsNewSeries,
     required TResult Function(UniqueID id, Series? series) launchWithID,
+    required TResult Function() sessionFetched,
     required TResult Function(String subtitle) subtitleChanged,
     required TResult Function(String summary) summaryChanged,
     required TResult Function(String title) titleChanged,
@@ -972,6 +1007,7 @@ class _$LanguageSelected implements LanguageSelected {
     TResult Function(String language)? languageSelected,
     TResult Function()? launchAsNewSeries,
     TResult Function(UniqueID id, Series? series)? launchWithID,
+    TResult Function()? sessionFetched,
     TResult Function(String subtitle)? subtitleChanged,
     TResult Function(String summary)? summaryChanged,
     TResult Function(String title)? titleChanged,
@@ -989,6 +1025,7 @@ class _$LanguageSelected implements LanguageSelected {
     TResult Function(String language)? languageSelected,
     TResult Function()? launchAsNewSeries,
     TResult Function(UniqueID id, Series? series)? launchWithID,
+    TResult Function()? sessionFetched,
     TResult Function(String subtitle)? subtitleChanged,
     TResult Function(String summary)? summaryChanged,
     TResult Function(String title)? titleChanged,
@@ -1010,6 +1047,7 @@ class _$LanguageSelected implements LanguageSelected {
     required TResult Function(LanguageSelected value) languageSelected,
     required TResult Function(LaunchAsNewSeries value) launchAsNewSeries,
     required TResult Function(LaunchWithID value) launchWithID,
+    required TResult Function(SessionFetched value) sessionFetched,
     required TResult Function(SubtitleChanged value) subtitleChanged,
     required TResult Function(SummaryChanged value) summaryChanged,
     required TResult Function(TitleChanged value) titleChanged,
@@ -1027,6 +1065,7 @@ class _$LanguageSelected implements LanguageSelected {
     TResult Function(LanguageSelected value)? languageSelected,
     TResult Function(LaunchAsNewSeries value)? launchAsNewSeries,
     TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SubtitleChanged value)? subtitleChanged,
     TResult Function(SummaryChanged value)? summaryChanged,
     TResult Function(TitleChanged value)? titleChanged,
@@ -1044,6 +1083,7 @@ class _$LanguageSelected implements LanguageSelected {
     TResult Function(LanguageSelected value)? languageSelected,
     TResult Function(LaunchAsNewSeries value)? launchAsNewSeries,
     TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SubtitleChanged value)? subtitleChanged,
     TResult Function(SummaryChanged value)? summaryChanged,
     TResult Function(TitleChanged value)? titleChanged,
@@ -1112,6 +1152,7 @@ class _$LaunchAsNewSeries implements LaunchAsNewSeries {
     required TResult Function(String language) languageSelected,
     required TResult Function() launchAsNewSeries,
     required TResult Function(UniqueID id, Series? series) launchWithID,
+    required TResult Function() sessionFetched,
     required TResult Function(String subtitle) subtitleChanged,
     required TResult Function(String summary) summaryChanged,
     required TResult Function(String title) titleChanged,
@@ -1129,6 +1170,7 @@ class _$LaunchAsNewSeries implements LaunchAsNewSeries {
     TResult Function(String language)? languageSelected,
     TResult Function()? launchAsNewSeries,
     TResult Function(UniqueID id, Series? series)? launchWithID,
+    TResult Function()? sessionFetched,
     TResult Function(String subtitle)? subtitleChanged,
     TResult Function(String summary)? summaryChanged,
     TResult Function(String title)? titleChanged,
@@ -1146,6 +1188,7 @@ class _$LaunchAsNewSeries implements LaunchAsNewSeries {
     TResult Function(String language)? languageSelected,
     TResult Function()? launchAsNewSeries,
     TResult Function(UniqueID id, Series? series)? launchWithID,
+    TResult Function()? sessionFetched,
     TResult Function(String subtitle)? subtitleChanged,
     TResult Function(String summary)? summaryChanged,
     TResult Function(String title)? titleChanged,
@@ -1167,6 +1210,7 @@ class _$LaunchAsNewSeries implements LaunchAsNewSeries {
     required TResult Function(LanguageSelected value) languageSelected,
     required TResult Function(LaunchAsNewSeries value) launchAsNewSeries,
     required TResult Function(LaunchWithID value) launchWithID,
+    required TResult Function(SessionFetched value) sessionFetched,
     required TResult Function(SubtitleChanged value) subtitleChanged,
     required TResult Function(SummaryChanged value) summaryChanged,
     required TResult Function(TitleChanged value) titleChanged,
@@ -1184,6 +1228,7 @@ class _$LaunchAsNewSeries implements LaunchAsNewSeries {
     TResult Function(LanguageSelected value)? languageSelected,
     TResult Function(LaunchAsNewSeries value)? launchAsNewSeries,
     TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SubtitleChanged value)? subtitleChanged,
     TResult Function(SummaryChanged value)? summaryChanged,
     TResult Function(TitleChanged value)? titleChanged,
@@ -1201,6 +1246,7 @@ class _$LaunchAsNewSeries implements LaunchAsNewSeries {
     TResult Function(LanguageSelected value)? languageSelected,
     TResult Function(LaunchAsNewSeries value)? launchAsNewSeries,
     TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SubtitleChanged value)? subtitleChanged,
     TResult Function(SummaryChanged value)? summaryChanged,
     TResult Function(TitleChanged value)? titleChanged,
@@ -1313,6 +1359,7 @@ class _$LaunchWithID implements LaunchWithID {
     required TResult Function(String language) languageSelected,
     required TResult Function() launchAsNewSeries,
     required TResult Function(UniqueID id, Series? series) launchWithID,
+    required TResult Function() sessionFetched,
     required TResult Function(String subtitle) subtitleChanged,
     required TResult Function(String summary) summaryChanged,
     required TResult Function(String title) titleChanged,
@@ -1330,6 +1377,7 @@ class _$LaunchWithID implements LaunchWithID {
     TResult Function(String language)? languageSelected,
     TResult Function()? launchAsNewSeries,
     TResult Function(UniqueID id, Series? series)? launchWithID,
+    TResult Function()? sessionFetched,
     TResult Function(String subtitle)? subtitleChanged,
     TResult Function(String summary)? summaryChanged,
     TResult Function(String title)? titleChanged,
@@ -1347,6 +1395,7 @@ class _$LaunchWithID implements LaunchWithID {
     TResult Function(String language)? languageSelected,
     TResult Function()? launchAsNewSeries,
     TResult Function(UniqueID id, Series? series)? launchWithID,
+    TResult Function()? sessionFetched,
     TResult Function(String subtitle)? subtitleChanged,
     TResult Function(String summary)? summaryChanged,
     TResult Function(String title)? titleChanged,
@@ -1368,6 +1417,7 @@ class _$LaunchWithID implements LaunchWithID {
     required TResult Function(LanguageSelected value) languageSelected,
     required TResult Function(LaunchAsNewSeries value) launchAsNewSeries,
     required TResult Function(LaunchWithID value) launchWithID,
+    required TResult Function(SessionFetched value) sessionFetched,
     required TResult Function(SubtitleChanged value) subtitleChanged,
     required TResult Function(SummaryChanged value) summaryChanged,
     required TResult Function(TitleChanged value) titleChanged,
@@ -1385,6 +1435,7 @@ class _$LaunchWithID implements LaunchWithID {
     TResult Function(LanguageSelected value)? languageSelected,
     TResult Function(LaunchAsNewSeries value)? launchAsNewSeries,
     TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SubtitleChanged value)? subtitleChanged,
     TResult Function(SummaryChanged value)? summaryChanged,
     TResult Function(TitleChanged value)? titleChanged,
@@ -1402,6 +1453,7 @@ class _$LaunchWithID implements LaunchWithID {
     TResult Function(LanguageSelected value)? languageSelected,
     TResult Function(LaunchAsNewSeries value)? launchAsNewSeries,
     TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SubtitleChanged value)? subtitleChanged,
     TResult Function(SummaryChanged value)? summaryChanged,
     TResult Function(TitleChanged value)? titleChanged,
@@ -1422,6 +1474,164 @@ abstract class LaunchWithID implements TypewriterSeriesEvent {
   @JsonKey(ignore: true)
   $LaunchWithIDCopyWith<LaunchWithID> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $SessionFetchedCopyWith<$Res> {
+  factory $SessionFetchedCopyWith(
+          SessionFetched value, $Res Function(SessionFetched) then) =
+      _$SessionFetchedCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$SessionFetchedCopyWithImpl<$Res>
+    extends _$TypewriterSeriesEventCopyWithImpl<$Res>
+    implements $SessionFetchedCopyWith<$Res> {
+  _$SessionFetchedCopyWithImpl(
+      SessionFetched _value, $Res Function(SessionFetched) _then)
+      : super(_value, (v) => _then(v as SessionFetched));
+
+  @override
+  SessionFetched get _value => super._value as SessionFetched;
+}
+
+/// @nodoc
+
+class _$SessionFetched implements SessionFetched {
+  const _$SessionFetched();
+
+  @override
+  String toString() {
+    return 'TypewriterSeriesEvent.sessionFetched()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is SessionFetched);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() addCoverPressed,
+    required TResult Function(String genre) genreAdded,
+    required TResult Function(String genre) genreRemoved,
+    required TResult Function(bool isNSFW) isNSFWChanged,
+    required TResult Function(String language) languageSelected,
+    required TResult Function() launchAsNewSeries,
+    required TResult Function(UniqueID id, Series? series) launchWithID,
+    required TResult Function() sessionFetched,
+    required TResult Function(String subtitle) subtitleChanged,
+    required TResult Function(String summary) summaryChanged,
+    required TResult Function(String title) titleChanged,
+  }) {
+    return sessionFetched();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? addCoverPressed,
+    TResult Function(String genre)? genreAdded,
+    TResult Function(String genre)? genreRemoved,
+    TResult Function(bool isNSFW)? isNSFWChanged,
+    TResult Function(String language)? languageSelected,
+    TResult Function()? launchAsNewSeries,
+    TResult Function(UniqueID id, Series? series)? launchWithID,
+    TResult Function()? sessionFetched,
+    TResult Function(String subtitle)? subtitleChanged,
+    TResult Function(String summary)? summaryChanged,
+    TResult Function(String title)? titleChanged,
+  }) {
+    return sessionFetched?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? addCoverPressed,
+    TResult Function(String genre)? genreAdded,
+    TResult Function(String genre)? genreRemoved,
+    TResult Function(bool isNSFW)? isNSFWChanged,
+    TResult Function(String language)? languageSelected,
+    TResult Function()? launchAsNewSeries,
+    TResult Function(UniqueID id, Series? series)? launchWithID,
+    TResult Function()? sessionFetched,
+    TResult Function(String subtitle)? subtitleChanged,
+    TResult Function(String summary)? summaryChanged,
+    TResult Function(String title)? titleChanged,
+    required TResult orElse(),
+  }) {
+    if (sessionFetched != null) {
+      return sessionFetched();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(AddCoverPressed value) addCoverPressed,
+    required TResult Function(GenreAdded value) genreAdded,
+    required TResult Function(GenreRemoved value) genreRemoved,
+    required TResult Function(IsNSFWChanged value) isNSFWChanged,
+    required TResult Function(LanguageSelected value) languageSelected,
+    required TResult Function(LaunchAsNewSeries value) launchAsNewSeries,
+    required TResult Function(LaunchWithID value) launchWithID,
+    required TResult Function(SessionFetched value) sessionFetched,
+    required TResult Function(SubtitleChanged value) subtitleChanged,
+    required TResult Function(SummaryChanged value) summaryChanged,
+    required TResult Function(TitleChanged value) titleChanged,
+  }) {
+    return sessionFetched(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(AddCoverPressed value)? addCoverPressed,
+    TResult Function(GenreAdded value)? genreAdded,
+    TResult Function(GenreRemoved value)? genreRemoved,
+    TResult Function(IsNSFWChanged value)? isNSFWChanged,
+    TResult Function(LanguageSelected value)? languageSelected,
+    TResult Function(LaunchAsNewSeries value)? launchAsNewSeries,
+    TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(SubtitleChanged value)? subtitleChanged,
+    TResult Function(SummaryChanged value)? summaryChanged,
+    TResult Function(TitleChanged value)? titleChanged,
+  }) {
+    return sessionFetched?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(AddCoverPressed value)? addCoverPressed,
+    TResult Function(GenreAdded value)? genreAdded,
+    TResult Function(GenreRemoved value)? genreRemoved,
+    TResult Function(IsNSFWChanged value)? isNSFWChanged,
+    TResult Function(LanguageSelected value)? languageSelected,
+    TResult Function(LaunchAsNewSeries value)? launchAsNewSeries,
+    TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(SubtitleChanged value)? subtitleChanged,
+    TResult Function(SummaryChanged value)? summaryChanged,
+    TResult Function(TitleChanged value)? titleChanged,
+    required TResult orElse(),
+  }) {
+    if (sessionFetched != null) {
+      return sessionFetched(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SessionFetched implements TypewriterSeriesEvent {
+  const factory SessionFetched() = _$SessionFetched;
 }
 
 /// @nodoc
@@ -1497,6 +1707,7 @@ class _$SubtitleChanged implements SubtitleChanged {
     required TResult Function(String language) languageSelected,
     required TResult Function() launchAsNewSeries,
     required TResult Function(UniqueID id, Series? series) launchWithID,
+    required TResult Function() sessionFetched,
     required TResult Function(String subtitle) subtitleChanged,
     required TResult Function(String summary) summaryChanged,
     required TResult Function(String title) titleChanged,
@@ -1514,6 +1725,7 @@ class _$SubtitleChanged implements SubtitleChanged {
     TResult Function(String language)? languageSelected,
     TResult Function()? launchAsNewSeries,
     TResult Function(UniqueID id, Series? series)? launchWithID,
+    TResult Function()? sessionFetched,
     TResult Function(String subtitle)? subtitleChanged,
     TResult Function(String summary)? summaryChanged,
     TResult Function(String title)? titleChanged,
@@ -1531,6 +1743,7 @@ class _$SubtitleChanged implements SubtitleChanged {
     TResult Function(String language)? languageSelected,
     TResult Function()? launchAsNewSeries,
     TResult Function(UniqueID id, Series? series)? launchWithID,
+    TResult Function()? sessionFetched,
     TResult Function(String subtitle)? subtitleChanged,
     TResult Function(String summary)? summaryChanged,
     TResult Function(String title)? titleChanged,
@@ -1552,6 +1765,7 @@ class _$SubtitleChanged implements SubtitleChanged {
     required TResult Function(LanguageSelected value) languageSelected,
     required TResult Function(LaunchAsNewSeries value) launchAsNewSeries,
     required TResult Function(LaunchWithID value) launchWithID,
+    required TResult Function(SessionFetched value) sessionFetched,
     required TResult Function(SubtitleChanged value) subtitleChanged,
     required TResult Function(SummaryChanged value) summaryChanged,
     required TResult Function(TitleChanged value) titleChanged,
@@ -1569,6 +1783,7 @@ class _$SubtitleChanged implements SubtitleChanged {
     TResult Function(LanguageSelected value)? languageSelected,
     TResult Function(LaunchAsNewSeries value)? launchAsNewSeries,
     TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SubtitleChanged value)? subtitleChanged,
     TResult Function(SummaryChanged value)? summaryChanged,
     TResult Function(TitleChanged value)? titleChanged,
@@ -1586,6 +1801,7 @@ class _$SubtitleChanged implements SubtitleChanged {
     TResult Function(LanguageSelected value)? languageSelected,
     TResult Function(LaunchAsNewSeries value)? launchAsNewSeries,
     TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SubtitleChanged value)? subtitleChanged,
     TResult Function(SummaryChanged value)? summaryChanged,
     TResult Function(TitleChanged value)? titleChanged,
@@ -1679,6 +1895,7 @@ class _$SummaryChanged implements SummaryChanged {
     required TResult Function(String language) languageSelected,
     required TResult Function() launchAsNewSeries,
     required TResult Function(UniqueID id, Series? series) launchWithID,
+    required TResult Function() sessionFetched,
     required TResult Function(String subtitle) subtitleChanged,
     required TResult Function(String summary) summaryChanged,
     required TResult Function(String title) titleChanged,
@@ -1696,6 +1913,7 @@ class _$SummaryChanged implements SummaryChanged {
     TResult Function(String language)? languageSelected,
     TResult Function()? launchAsNewSeries,
     TResult Function(UniqueID id, Series? series)? launchWithID,
+    TResult Function()? sessionFetched,
     TResult Function(String subtitle)? subtitleChanged,
     TResult Function(String summary)? summaryChanged,
     TResult Function(String title)? titleChanged,
@@ -1713,6 +1931,7 @@ class _$SummaryChanged implements SummaryChanged {
     TResult Function(String language)? languageSelected,
     TResult Function()? launchAsNewSeries,
     TResult Function(UniqueID id, Series? series)? launchWithID,
+    TResult Function()? sessionFetched,
     TResult Function(String subtitle)? subtitleChanged,
     TResult Function(String summary)? summaryChanged,
     TResult Function(String title)? titleChanged,
@@ -1734,6 +1953,7 @@ class _$SummaryChanged implements SummaryChanged {
     required TResult Function(LanguageSelected value) languageSelected,
     required TResult Function(LaunchAsNewSeries value) launchAsNewSeries,
     required TResult Function(LaunchWithID value) launchWithID,
+    required TResult Function(SessionFetched value) sessionFetched,
     required TResult Function(SubtitleChanged value) subtitleChanged,
     required TResult Function(SummaryChanged value) summaryChanged,
     required TResult Function(TitleChanged value) titleChanged,
@@ -1751,6 +1971,7 @@ class _$SummaryChanged implements SummaryChanged {
     TResult Function(LanguageSelected value)? languageSelected,
     TResult Function(LaunchAsNewSeries value)? launchAsNewSeries,
     TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SubtitleChanged value)? subtitleChanged,
     TResult Function(SummaryChanged value)? summaryChanged,
     TResult Function(TitleChanged value)? titleChanged,
@@ -1768,6 +1989,7 @@ class _$SummaryChanged implements SummaryChanged {
     TResult Function(LanguageSelected value)? languageSelected,
     TResult Function(LaunchAsNewSeries value)? launchAsNewSeries,
     TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SubtitleChanged value)? subtitleChanged,
     TResult Function(SummaryChanged value)? summaryChanged,
     TResult Function(TitleChanged value)? titleChanged,
@@ -1861,6 +2083,7 @@ class _$TitleChanged implements TitleChanged {
     required TResult Function(String language) languageSelected,
     required TResult Function() launchAsNewSeries,
     required TResult Function(UniqueID id, Series? series) launchWithID,
+    required TResult Function() sessionFetched,
     required TResult Function(String subtitle) subtitleChanged,
     required TResult Function(String summary) summaryChanged,
     required TResult Function(String title) titleChanged,
@@ -1878,6 +2101,7 @@ class _$TitleChanged implements TitleChanged {
     TResult Function(String language)? languageSelected,
     TResult Function()? launchAsNewSeries,
     TResult Function(UniqueID id, Series? series)? launchWithID,
+    TResult Function()? sessionFetched,
     TResult Function(String subtitle)? subtitleChanged,
     TResult Function(String summary)? summaryChanged,
     TResult Function(String title)? titleChanged,
@@ -1895,6 +2119,7 @@ class _$TitleChanged implements TitleChanged {
     TResult Function(String language)? languageSelected,
     TResult Function()? launchAsNewSeries,
     TResult Function(UniqueID id, Series? series)? launchWithID,
+    TResult Function()? sessionFetched,
     TResult Function(String subtitle)? subtitleChanged,
     TResult Function(String summary)? summaryChanged,
     TResult Function(String title)? titleChanged,
@@ -1916,6 +2141,7 @@ class _$TitleChanged implements TitleChanged {
     required TResult Function(LanguageSelected value) languageSelected,
     required TResult Function(LaunchAsNewSeries value) launchAsNewSeries,
     required TResult Function(LaunchWithID value) launchWithID,
+    required TResult Function(SessionFetched value) sessionFetched,
     required TResult Function(SubtitleChanged value) subtitleChanged,
     required TResult Function(SummaryChanged value) summaryChanged,
     required TResult Function(TitleChanged value) titleChanged,
@@ -1933,6 +2159,7 @@ class _$TitleChanged implements TitleChanged {
     TResult Function(LanguageSelected value)? languageSelected,
     TResult Function(LaunchAsNewSeries value)? launchAsNewSeries,
     TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SubtitleChanged value)? subtitleChanged,
     TResult Function(SummaryChanged value)? summaryChanged,
     TResult Function(TitleChanged value)? titleChanged,
@@ -1950,6 +2177,7 @@ class _$TitleChanged implements TitleChanged {
     TResult Function(LanguageSelected value)? languageSelected,
     TResult Function(LaunchAsNewSeries value)? launchAsNewSeries,
     TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SubtitleChanged value)? subtitleChanged,
     TResult Function(SummaryChanged value)? summaryChanged,
     TResult Function(TitleChanged value)? titleChanged,

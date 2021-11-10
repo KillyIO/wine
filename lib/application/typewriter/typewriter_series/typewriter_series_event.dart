@@ -30,6 +30,9 @@ class TypewriterSeriesEvent with _$TypewriterSeriesEvent {
   }) = LaunchWithID;
 
   /// @nodoc
+  const factory TypewriterSeriesEvent.sessionFetched() = SessionFetched;
+
+  /// @nodoc
   const factory TypewriterSeriesEvent.subtitleChanged(String subtitle) =
       SubtitleChanged;
 

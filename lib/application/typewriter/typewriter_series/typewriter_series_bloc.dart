@@ -1,22 +1,31 @@
+import 'dart:io';
+import 'dart:math';
+
 import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart' hide Title;
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:image_cropper/image_cropper.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:injectable/injectable.dart';
 import 'package:oxidized/oxidized.dart';
+import 'package:path/path.dart' as p;
+import 'package:path_provider/path_provider.dart';
 import 'package:stringr/stringr.dart';
+
 import 'package:wine/domain/auth/email_address.dart';
 import 'package:wine/domain/auth/username.dart';
-
 import 'package:wine/domain/core/core_failure.dart';
 import 'package:wine/domain/core/genre.dart';
 import 'package:wine/domain/core/language.dart';
 import 'package:wine/domain/core/title.dart';
 import 'package:wine/domain/core/unique_id.dart';
+import 'package:wine/domain/default_covers/i_default_covers_repository.dart';
 import 'package:wine/domain/series/series.dart';
 import 'package:wine/domain/series/subtitle.dart';
 import 'package:wine/domain/series/summary.dart';
 import 'package:wine/domain/sessions/i_sessions_repository.dart';
 import 'package:wine/domain/user/user.dart';
+import 'package:wine/utils/constants/cover.dart';
 import 'package:wine/utils/constants/users.dart';
 
 part 'typewriter_series_bloc.freezed.dart';
@@ -31,9 +40,44 @@ class TypewriterSeriesBloc
     extends Bloc<TypewriterSeriesEvent, TypewriterSeriesState> {
   /// @nodoc
   TypewriterSeriesBloc(
+    this._defaultCoversRepository,
     this._sessionsRepository,
   ) : super(TypewriterSeriesState.initial()) {
-    on<AddCoverPressed>((_, emit) {});
+    on<AddCoverPressed>((_, emit) async {
+      final imagePicker = ImagePicker();
+
+      final pickedFile = await imagePicker.pickImage(
+        source: ImageSource.gallery,
+        maxWidth: maxWidthAsDouble,
+        maxHeight: maxHeightAsDouble,
+      );
+
+      if (pickedFile != null) {
+        final image = File(pickedFile.path);
+
+        final croppedFile = await ImageCropper.cropImage(
+          sourcePath: image.path,
+          maxWidth: maxWidth,
+          maxHeight: maxHeight,
+          aspectRatio: const CropAspectRatio(
+            ratioX: ratioX,
+            ratioY: ratioY,
+          ),
+        );
+
+        if (croppedFile != null) {
+          final appDocDir = await getApplicationDocumentsDirectory();
+          final coverPath =
+              appDocDir.uri.resolve(p.basename(croppedFile.path)).path;
+          final coverFile = await croppedFile.copy(coverPath);
+
+          emit(state.copyWith(
+            coverURL: coverFile.path,
+            failureOption: const None(),
+          ));
+        }
+      }
+    });
     on<GenreAdded>((value, emit) {
       final genre = Genre(value.genre);
       final genres = List<Genre>.from(state.genres)..add(genre);
@@ -71,6 +115,8 @@ class TypewriterSeriesBloc
             failureOption: const None(),
             user: user,
           ));
+
+          add(const TypewriterSeriesEvent.sessionFetched());
         },
         (failure) {
           emit(state.copyWith(
@@ -80,6 +126,25 @@ class TypewriterSeriesBloc
       );
     });
     on<LaunchWithID>((_, emit) {});
+    on<SessionFetched>((value, emit) async {
+      final randomKey =
+          placeholdersKeys[Random().nextInt(placeholdersKeys.length)];
+
+      (await _defaultCoversRepository.fetchDefaultCoverURLByKey(randomKey))
+          .match(
+        (coverURL) {
+          emit(state.copyWith(
+            coverURL: coverURL,
+            failureOption: const None(),
+          ));
+        },
+        (failure) {
+          emit(state.copyWith(
+            failureOption: Option.some(Err(CoreFailure.defaultCovers(failure))),
+          ));
+        },
+      );
+    });
     on<SubtitleChanged>((value, emit) {
       final subtitleTrim = value.subtitle.trim();
       final wordCount = subtitleTrim.countWords();
@@ -112,5 +177,6 @@ class TypewriterSeriesBloc
     });
   }
 
+  final IDefaultCoversRepository _defaultCoversRepository;
   final ISessionsRepository _sessionsRepository;
 }

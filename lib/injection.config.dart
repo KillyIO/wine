@@ -109,7 +109,8 @@ Future<_i1.GetIt> $initGetIt(_i1.GetIt get,
           get<_i17.ISessionsRepository>(), get<_i21.IUserRepository>()),
       registerFor: {_dev, _prod});
   gh.factory<_i28.TypewriterSeriesBloc>(
-      () => _i28.TypewriterSeriesBloc(get<_i17.ISessionsRepository>()),
+      () => _i28.TypewriterSeriesBloc(get<_i11.IDefaultCoversRepository>(),
+          get<_i17.ISessionsRepository>()),
       registerFor: {_dev, _prod});
   gh.factory<_i29.AuthBloc>(() => _i29.AuthBloc(get<_i9.IAuthFacade>()),
       registerFor: {_dev, _prod});
