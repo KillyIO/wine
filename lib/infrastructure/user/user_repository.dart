@@ -16,7 +16,7 @@ import 'package:wine/utils/paths/users.dart';
   as: IUserRepository,
   env: [Environment.dev, Environment.prod],
 )
-class UserRepository extends IUserRepository {
+class UserRepository implements IUserRepository {
   /// @nodoc
   UserRepository(this._firestore);
 
