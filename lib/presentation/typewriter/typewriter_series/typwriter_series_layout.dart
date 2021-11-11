@@ -206,19 +206,15 @@ class TypewriterSeriesLayout extends StatelessWidget {
                           );
                         },
                       ),
-                      BlocBuilder<TypewriterSeriesBloc, TypewriterSeriesState>(
-                        builder: (context, state) {
-                          return Padding(
-                            padding: const EdgeInsets.only(bottom: 20),
-                            child: DefaultButton(
-                              color: pastelBlue,
-                              isProcessing: state.isProcessing,
-                              title: 'SAVE',
-                              width: mediaQuery.width,
-                              onPressed: () {},
-                            ),
-                          );
-                        },
+                      Padding(
+                        padding: const EdgeInsets.only(bottom: 20),
+                        child: DefaultButton(
+                          color: pastelBlue,
+                          isProcessing: state.isProcessing,
+                          title: 'SAVE',
+                          width: mediaQuery.width,
+                          onPressed: () {},
+                        ),
                       ),
                       Padding(
                         padding: const EdgeInsets.only(bottom: 20),
@@ -229,6 +225,16 @@ class TypewriterSeriesLayout extends StatelessWidget {
                           onPressed: () {},
                         ),
                       ),
+                      if (state.isEdit && !state.isPublished)
+                        Padding(
+                          padding: const EdgeInsets.only(bottom: 20),
+                          child: DefaultButton(
+                            color: error,
+                            title: 'DELETE',
+                            width: mediaQuery.width,
+                            onPressed: () {},
+                          ),
+                        ),
                     ],
                   ),
                 ),

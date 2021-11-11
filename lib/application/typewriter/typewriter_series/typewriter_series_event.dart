@@ -7,6 +7,10 @@ class TypewriterSeriesEvent with _$TypewriterSeriesEvent {
   const factory TypewriterSeriesEvent.addCoverPressed() = AddCoverPressed;
 
   /// @nodoc
+  const factory TypewriterSeriesEvent.deleteButtonPressed() =
+      DeleteButtonPressed;
+
+  /// @nodoc
   const factory TypewriterSeriesEvent.genreAdded(String genre) = GenreAdded;
 
   /// @nodoc
@@ -28,6 +32,13 @@ class TypewriterSeriesEvent with _$TypewriterSeriesEvent {
     UniqueID id, {
     Series? series,
   }) = LaunchWithID;
+
+  /// @nodoc
+  const factory TypewriterSeriesEvent.publishButtonPressed() =
+      PublishButtonPressed;
+
+  /// @nodoc
+  const factory TypewriterSeriesEvent.saveButtonPressed() = SaveButtonPressed;
 
   /// @nodoc
   const factory TypewriterSeriesEvent.sessionFetched() = SessionFetched;

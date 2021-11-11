@@ -80,6 +80,7 @@ class TypewriterSeriesBloc
         }
       }
     });
+    on<DeleteButtonPressed>((value, emit) {});
     on<GenreAdded>((value, emit) {
       final genre = Genre(value.genre);
       final genres = List<Genre>.from(state.genres)..add(genre);
@@ -140,7 +141,9 @@ class TypewriterSeriesBloc
       );
     });
     on<LaunchWithID>((_, emit) {});
-    on<SessionFetched>((value, emit) async {
+    on<PublishButtonPressed>((value, emit) {});
+    on<SaveButtonPressed>((value, emit) {});
+    on<SessionFetched>((_, emit) async {
       final randomKey =
           placeholdersKeys[Random().nextInt(placeholdersKeys.length)];
 

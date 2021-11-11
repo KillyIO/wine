@@ -21,6 +21,10 @@ class _$TypewriterSeriesEventTearOff {
     return const AddCoverPressed();
   }
 
+  DeleteButtonPressed deleteButtonPressed() {
+    return const DeleteButtonPressed();
+  }
+
   GenreAdded genreAdded(String genre) {
     return GenreAdded(
       genre,
@@ -56,6 +60,14 @@ class _$TypewriterSeriesEventTearOff {
     );
   }
 
+  PublishButtonPressed publishButtonPressed() {
+    return const PublishButtonPressed();
+  }
+
+  SaveButtonPressed saveButtonPressed() {
+    return const SaveButtonPressed();
+  }
+
   SessionFetched sessionFetched() {
     return const SessionFetched();
   }
@@ -87,12 +99,15 @@ mixin _$TypewriterSeriesEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() addCoverPressed,
+    required TResult Function() deleteButtonPressed,
     required TResult Function(String genre) genreAdded,
     required TResult Function(String genre) genreRemoved,
     required TResult Function(bool isNSFW) isNSFWChanged,
     required TResult Function(String language) languageSelected,
     required TResult Function() launchAsNewSeries,
     required TResult Function(UniqueID id, Series? series) launchWithID,
+    required TResult Function() publishButtonPressed,
+    required TResult Function() saveButtonPressed,
     required TResult Function() sessionFetched,
     required TResult Function(String subtitle) subtitleChanged,
     required TResult Function(String summary) summaryChanged,
@@ -102,12 +117,15 @@ mixin _$TypewriterSeriesEvent {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? addCoverPressed,
+    TResult Function()? deleteButtonPressed,
     TResult Function(String genre)? genreAdded,
     TResult Function(String genre)? genreRemoved,
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
     TResult Function()? launchAsNewSeries,
     TResult Function(UniqueID id, Series? series)? launchWithID,
+    TResult Function()? publishButtonPressed,
+    TResult Function()? saveButtonPressed,
     TResult Function()? sessionFetched,
     TResult Function(String subtitle)? subtitleChanged,
     TResult Function(String summary)? summaryChanged,
@@ -117,12 +135,15 @@ mixin _$TypewriterSeriesEvent {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? addCoverPressed,
+    TResult Function()? deleteButtonPressed,
     TResult Function(String genre)? genreAdded,
     TResult Function(String genre)? genreRemoved,
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
     TResult Function()? launchAsNewSeries,
     TResult Function(UniqueID id, Series? series)? launchWithID,
+    TResult Function()? publishButtonPressed,
+    TResult Function()? saveButtonPressed,
     TResult Function()? sessionFetched,
     TResult Function(String subtitle)? subtitleChanged,
     TResult Function(String summary)? summaryChanged,
@@ -133,12 +154,15 @@ mixin _$TypewriterSeriesEvent {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(AddCoverPressed value) addCoverPressed,
+    required TResult Function(DeleteButtonPressed value) deleteButtonPressed,
     required TResult Function(GenreAdded value) genreAdded,
     required TResult Function(GenreRemoved value) genreRemoved,
     required TResult Function(IsNSFWChanged value) isNSFWChanged,
     required TResult Function(LanguageSelected value) languageSelected,
     required TResult Function(LaunchAsNewSeries value) launchAsNewSeries,
     required TResult Function(LaunchWithID value) launchWithID,
+    required TResult Function(PublishButtonPressed value) publishButtonPressed,
+    required TResult Function(SaveButtonPressed value) saveButtonPressed,
     required TResult Function(SessionFetched value) sessionFetched,
     required TResult Function(SubtitleChanged value) subtitleChanged,
     required TResult Function(SummaryChanged value) summaryChanged,
@@ -148,12 +172,15 @@ mixin _$TypewriterSeriesEvent {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(AddCoverPressed value)? addCoverPressed,
+    TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
     TResult Function(GenreAdded value)? genreAdded,
     TResult Function(GenreRemoved value)? genreRemoved,
     TResult Function(IsNSFWChanged value)? isNSFWChanged,
     TResult Function(LanguageSelected value)? languageSelected,
     TResult Function(LaunchAsNewSeries value)? launchAsNewSeries,
     TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(PublishButtonPressed value)? publishButtonPressed,
+    TResult Function(SaveButtonPressed value)? saveButtonPressed,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SubtitleChanged value)? subtitleChanged,
     TResult Function(SummaryChanged value)? summaryChanged,
@@ -163,12 +190,15 @@ mixin _$TypewriterSeriesEvent {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AddCoverPressed value)? addCoverPressed,
+    TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
     TResult Function(GenreAdded value)? genreAdded,
     TResult Function(GenreRemoved value)? genreRemoved,
     TResult Function(IsNSFWChanged value)? isNSFWChanged,
     TResult Function(LanguageSelected value)? languageSelected,
     TResult Function(LaunchAsNewSeries value)? launchAsNewSeries,
     TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(PublishButtonPressed value)? publishButtonPressed,
+    TResult Function(SaveButtonPressed value)? saveButtonPressed,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SubtitleChanged value)? subtitleChanged,
     TResult Function(SummaryChanged value)? summaryChanged,
@@ -236,12 +266,15 @@ class _$AddCoverPressed implements AddCoverPressed {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() addCoverPressed,
+    required TResult Function() deleteButtonPressed,
     required TResult Function(String genre) genreAdded,
     required TResult Function(String genre) genreRemoved,
     required TResult Function(bool isNSFW) isNSFWChanged,
     required TResult Function(String language) languageSelected,
     required TResult Function() launchAsNewSeries,
     required TResult Function(UniqueID id, Series? series) launchWithID,
+    required TResult Function() publishButtonPressed,
+    required TResult Function() saveButtonPressed,
     required TResult Function() sessionFetched,
     required TResult Function(String subtitle) subtitleChanged,
     required TResult Function(String summary) summaryChanged,
@@ -254,12 +287,15 @@ class _$AddCoverPressed implements AddCoverPressed {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? addCoverPressed,
+    TResult Function()? deleteButtonPressed,
     TResult Function(String genre)? genreAdded,
     TResult Function(String genre)? genreRemoved,
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
     TResult Function()? launchAsNewSeries,
     TResult Function(UniqueID id, Series? series)? launchWithID,
+    TResult Function()? publishButtonPressed,
+    TResult Function()? saveButtonPressed,
     TResult Function()? sessionFetched,
     TResult Function(String subtitle)? subtitleChanged,
     TResult Function(String summary)? summaryChanged,
@@ -272,12 +308,15 @@ class _$AddCoverPressed implements AddCoverPressed {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? addCoverPressed,
+    TResult Function()? deleteButtonPressed,
     TResult Function(String genre)? genreAdded,
     TResult Function(String genre)? genreRemoved,
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
     TResult Function()? launchAsNewSeries,
     TResult Function(UniqueID id, Series? series)? launchWithID,
+    TResult Function()? publishButtonPressed,
+    TResult Function()? saveButtonPressed,
     TResult Function()? sessionFetched,
     TResult Function(String subtitle)? subtitleChanged,
     TResult Function(String summary)? summaryChanged,
@@ -294,12 +333,15 @@ class _$AddCoverPressed implements AddCoverPressed {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(AddCoverPressed value) addCoverPressed,
+    required TResult Function(DeleteButtonPressed value) deleteButtonPressed,
     required TResult Function(GenreAdded value) genreAdded,
     required TResult Function(GenreRemoved value) genreRemoved,
     required TResult Function(IsNSFWChanged value) isNSFWChanged,
     required TResult Function(LanguageSelected value) languageSelected,
     required TResult Function(LaunchAsNewSeries value) launchAsNewSeries,
     required TResult Function(LaunchWithID value) launchWithID,
+    required TResult Function(PublishButtonPressed value) publishButtonPressed,
+    required TResult Function(SaveButtonPressed value) saveButtonPressed,
     required TResult Function(SessionFetched value) sessionFetched,
     required TResult Function(SubtitleChanged value) subtitleChanged,
     required TResult Function(SummaryChanged value) summaryChanged,
@@ -312,12 +354,15 @@ class _$AddCoverPressed implements AddCoverPressed {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(AddCoverPressed value)? addCoverPressed,
+    TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
     TResult Function(GenreAdded value)? genreAdded,
     TResult Function(GenreRemoved value)? genreRemoved,
     TResult Function(IsNSFWChanged value)? isNSFWChanged,
     TResult Function(LanguageSelected value)? languageSelected,
     TResult Function(LaunchAsNewSeries value)? launchAsNewSeries,
     TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(PublishButtonPressed value)? publishButtonPressed,
+    TResult Function(SaveButtonPressed value)? saveButtonPressed,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SubtitleChanged value)? subtitleChanged,
     TResult Function(SummaryChanged value)? summaryChanged,
@@ -330,12 +375,15 @@ class _$AddCoverPressed implements AddCoverPressed {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AddCoverPressed value)? addCoverPressed,
+    TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
     TResult Function(GenreAdded value)? genreAdded,
     TResult Function(GenreRemoved value)? genreRemoved,
     TResult Function(IsNSFWChanged value)? isNSFWChanged,
     TResult Function(LanguageSelected value)? languageSelected,
     TResult Function(LaunchAsNewSeries value)? launchAsNewSeries,
     TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(PublishButtonPressed value)? publishButtonPressed,
+    TResult Function(SaveButtonPressed value)? saveButtonPressed,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SubtitleChanged value)? subtitleChanged,
     TResult Function(SummaryChanged value)? summaryChanged,
@@ -351,6 +399,182 @@ class _$AddCoverPressed implements AddCoverPressed {
 
 abstract class AddCoverPressed implements TypewriterSeriesEvent {
   const factory AddCoverPressed() = _$AddCoverPressed;
+}
+
+/// @nodoc
+abstract class $DeleteButtonPressedCopyWith<$Res> {
+  factory $DeleteButtonPressedCopyWith(
+          DeleteButtonPressed value, $Res Function(DeleteButtonPressed) then) =
+      _$DeleteButtonPressedCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$DeleteButtonPressedCopyWithImpl<$Res>
+    extends _$TypewriterSeriesEventCopyWithImpl<$Res>
+    implements $DeleteButtonPressedCopyWith<$Res> {
+  _$DeleteButtonPressedCopyWithImpl(
+      DeleteButtonPressed _value, $Res Function(DeleteButtonPressed) _then)
+      : super(_value, (v) => _then(v as DeleteButtonPressed));
+
+  @override
+  DeleteButtonPressed get _value => super._value as DeleteButtonPressed;
+}
+
+/// @nodoc
+
+class _$DeleteButtonPressed implements DeleteButtonPressed {
+  const _$DeleteButtonPressed();
+
+  @override
+  String toString() {
+    return 'TypewriterSeriesEvent.deleteButtonPressed()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is DeleteButtonPressed);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() addCoverPressed,
+    required TResult Function() deleteButtonPressed,
+    required TResult Function(String genre) genreAdded,
+    required TResult Function(String genre) genreRemoved,
+    required TResult Function(bool isNSFW) isNSFWChanged,
+    required TResult Function(String language) languageSelected,
+    required TResult Function() launchAsNewSeries,
+    required TResult Function(UniqueID id, Series? series) launchWithID,
+    required TResult Function() publishButtonPressed,
+    required TResult Function() saveButtonPressed,
+    required TResult Function() sessionFetched,
+    required TResult Function(String subtitle) subtitleChanged,
+    required TResult Function(String summary) summaryChanged,
+    required TResult Function(String title) titleChanged,
+  }) {
+    return deleteButtonPressed();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? addCoverPressed,
+    TResult Function()? deleteButtonPressed,
+    TResult Function(String genre)? genreAdded,
+    TResult Function(String genre)? genreRemoved,
+    TResult Function(bool isNSFW)? isNSFWChanged,
+    TResult Function(String language)? languageSelected,
+    TResult Function()? launchAsNewSeries,
+    TResult Function(UniqueID id, Series? series)? launchWithID,
+    TResult Function()? publishButtonPressed,
+    TResult Function()? saveButtonPressed,
+    TResult Function()? sessionFetched,
+    TResult Function(String subtitle)? subtitleChanged,
+    TResult Function(String summary)? summaryChanged,
+    TResult Function(String title)? titleChanged,
+  }) {
+    return deleteButtonPressed?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? addCoverPressed,
+    TResult Function()? deleteButtonPressed,
+    TResult Function(String genre)? genreAdded,
+    TResult Function(String genre)? genreRemoved,
+    TResult Function(bool isNSFW)? isNSFWChanged,
+    TResult Function(String language)? languageSelected,
+    TResult Function()? launchAsNewSeries,
+    TResult Function(UniqueID id, Series? series)? launchWithID,
+    TResult Function()? publishButtonPressed,
+    TResult Function()? saveButtonPressed,
+    TResult Function()? sessionFetched,
+    TResult Function(String subtitle)? subtitleChanged,
+    TResult Function(String summary)? summaryChanged,
+    TResult Function(String title)? titleChanged,
+    required TResult orElse(),
+  }) {
+    if (deleteButtonPressed != null) {
+      return deleteButtonPressed();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(AddCoverPressed value) addCoverPressed,
+    required TResult Function(DeleteButtonPressed value) deleteButtonPressed,
+    required TResult Function(GenreAdded value) genreAdded,
+    required TResult Function(GenreRemoved value) genreRemoved,
+    required TResult Function(IsNSFWChanged value) isNSFWChanged,
+    required TResult Function(LanguageSelected value) languageSelected,
+    required TResult Function(LaunchAsNewSeries value) launchAsNewSeries,
+    required TResult Function(LaunchWithID value) launchWithID,
+    required TResult Function(PublishButtonPressed value) publishButtonPressed,
+    required TResult Function(SaveButtonPressed value) saveButtonPressed,
+    required TResult Function(SessionFetched value) sessionFetched,
+    required TResult Function(SubtitleChanged value) subtitleChanged,
+    required TResult Function(SummaryChanged value) summaryChanged,
+    required TResult Function(TitleChanged value) titleChanged,
+  }) {
+    return deleteButtonPressed(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(AddCoverPressed value)? addCoverPressed,
+    TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
+    TResult Function(GenreAdded value)? genreAdded,
+    TResult Function(GenreRemoved value)? genreRemoved,
+    TResult Function(IsNSFWChanged value)? isNSFWChanged,
+    TResult Function(LanguageSelected value)? languageSelected,
+    TResult Function(LaunchAsNewSeries value)? launchAsNewSeries,
+    TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(PublishButtonPressed value)? publishButtonPressed,
+    TResult Function(SaveButtonPressed value)? saveButtonPressed,
+    TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(SubtitleChanged value)? subtitleChanged,
+    TResult Function(SummaryChanged value)? summaryChanged,
+    TResult Function(TitleChanged value)? titleChanged,
+  }) {
+    return deleteButtonPressed?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(AddCoverPressed value)? addCoverPressed,
+    TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
+    TResult Function(GenreAdded value)? genreAdded,
+    TResult Function(GenreRemoved value)? genreRemoved,
+    TResult Function(IsNSFWChanged value)? isNSFWChanged,
+    TResult Function(LanguageSelected value)? languageSelected,
+    TResult Function(LaunchAsNewSeries value)? launchAsNewSeries,
+    TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(PublishButtonPressed value)? publishButtonPressed,
+    TResult Function(SaveButtonPressed value)? saveButtonPressed,
+    TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(SubtitleChanged value)? subtitleChanged,
+    TResult Function(SummaryChanged value)? summaryChanged,
+    TResult Function(TitleChanged value)? titleChanged,
+    required TResult orElse(),
+  }) {
+    if (deleteButtonPressed != null) {
+      return deleteButtonPressed(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class DeleteButtonPressed implements TypewriterSeriesEvent {
+  const factory DeleteButtonPressed() = _$DeleteButtonPressed;
 }
 
 /// @nodoc
@@ -418,12 +642,15 @@ class _$GenreAdded implements GenreAdded {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() addCoverPressed,
+    required TResult Function() deleteButtonPressed,
     required TResult Function(String genre) genreAdded,
     required TResult Function(String genre) genreRemoved,
     required TResult Function(bool isNSFW) isNSFWChanged,
     required TResult Function(String language) languageSelected,
     required TResult Function() launchAsNewSeries,
     required TResult Function(UniqueID id, Series? series) launchWithID,
+    required TResult Function() publishButtonPressed,
+    required TResult Function() saveButtonPressed,
     required TResult Function() sessionFetched,
     required TResult Function(String subtitle) subtitleChanged,
     required TResult Function(String summary) summaryChanged,
@@ -436,12 +663,15 @@ class _$GenreAdded implements GenreAdded {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? addCoverPressed,
+    TResult Function()? deleteButtonPressed,
     TResult Function(String genre)? genreAdded,
     TResult Function(String genre)? genreRemoved,
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
     TResult Function()? launchAsNewSeries,
     TResult Function(UniqueID id, Series? series)? launchWithID,
+    TResult Function()? publishButtonPressed,
+    TResult Function()? saveButtonPressed,
     TResult Function()? sessionFetched,
     TResult Function(String subtitle)? subtitleChanged,
     TResult Function(String summary)? summaryChanged,
@@ -454,12 +684,15 @@ class _$GenreAdded implements GenreAdded {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? addCoverPressed,
+    TResult Function()? deleteButtonPressed,
     TResult Function(String genre)? genreAdded,
     TResult Function(String genre)? genreRemoved,
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
     TResult Function()? launchAsNewSeries,
     TResult Function(UniqueID id, Series? series)? launchWithID,
+    TResult Function()? publishButtonPressed,
+    TResult Function()? saveButtonPressed,
     TResult Function()? sessionFetched,
     TResult Function(String subtitle)? subtitleChanged,
     TResult Function(String summary)? summaryChanged,
@@ -476,12 +709,15 @@ class _$GenreAdded implements GenreAdded {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(AddCoverPressed value) addCoverPressed,
+    required TResult Function(DeleteButtonPressed value) deleteButtonPressed,
     required TResult Function(GenreAdded value) genreAdded,
     required TResult Function(GenreRemoved value) genreRemoved,
     required TResult Function(IsNSFWChanged value) isNSFWChanged,
     required TResult Function(LanguageSelected value) languageSelected,
     required TResult Function(LaunchAsNewSeries value) launchAsNewSeries,
     required TResult Function(LaunchWithID value) launchWithID,
+    required TResult Function(PublishButtonPressed value) publishButtonPressed,
+    required TResult Function(SaveButtonPressed value) saveButtonPressed,
     required TResult Function(SessionFetched value) sessionFetched,
     required TResult Function(SubtitleChanged value) subtitleChanged,
     required TResult Function(SummaryChanged value) summaryChanged,
@@ -494,12 +730,15 @@ class _$GenreAdded implements GenreAdded {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(AddCoverPressed value)? addCoverPressed,
+    TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
     TResult Function(GenreAdded value)? genreAdded,
     TResult Function(GenreRemoved value)? genreRemoved,
     TResult Function(IsNSFWChanged value)? isNSFWChanged,
     TResult Function(LanguageSelected value)? languageSelected,
     TResult Function(LaunchAsNewSeries value)? launchAsNewSeries,
     TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(PublishButtonPressed value)? publishButtonPressed,
+    TResult Function(SaveButtonPressed value)? saveButtonPressed,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SubtitleChanged value)? subtitleChanged,
     TResult Function(SummaryChanged value)? summaryChanged,
@@ -512,12 +751,15 @@ class _$GenreAdded implements GenreAdded {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AddCoverPressed value)? addCoverPressed,
+    TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
     TResult Function(GenreAdded value)? genreAdded,
     TResult Function(GenreRemoved value)? genreRemoved,
     TResult Function(IsNSFWChanged value)? isNSFWChanged,
     TResult Function(LanguageSelected value)? languageSelected,
     TResult Function(LaunchAsNewSeries value)? launchAsNewSeries,
     TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(PublishButtonPressed value)? publishButtonPressed,
+    TResult Function(SaveButtonPressed value)? saveButtonPressed,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SubtitleChanged value)? subtitleChanged,
     TResult Function(SummaryChanged value)? summaryChanged,
@@ -606,12 +848,15 @@ class _$GenreRemoved implements GenreRemoved {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() addCoverPressed,
+    required TResult Function() deleteButtonPressed,
     required TResult Function(String genre) genreAdded,
     required TResult Function(String genre) genreRemoved,
     required TResult Function(bool isNSFW) isNSFWChanged,
     required TResult Function(String language) languageSelected,
     required TResult Function() launchAsNewSeries,
     required TResult Function(UniqueID id, Series? series) launchWithID,
+    required TResult Function() publishButtonPressed,
+    required TResult Function() saveButtonPressed,
     required TResult Function() sessionFetched,
     required TResult Function(String subtitle) subtitleChanged,
     required TResult Function(String summary) summaryChanged,
@@ -624,12 +869,15 @@ class _$GenreRemoved implements GenreRemoved {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? addCoverPressed,
+    TResult Function()? deleteButtonPressed,
     TResult Function(String genre)? genreAdded,
     TResult Function(String genre)? genreRemoved,
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
     TResult Function()? launchAsNewSeries,
     TResult Function(UniqueID id, Series? series)? launchWithID,
+    TResult Function()? publishButtonPressed,
+    TResult Function()? saveButtonPressed,
     TResult Function()? sessionFetched,
     TResult Function(String subtitle)? subtitleChanged,
     TResult Function(String summary)? summaryChanged,
@@ -642,12 +890,15 @@ class _$GenreRemoved implements GenreRemoved {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? addCoverPressed,
+    TResult Function()? deleteButtonPressed,
     TResult Function(String genre)? genreAdded,
     TResult Function(String genre)? genreRemoved,
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
     TResult Function()? launchAsNewSeries,
     TResult Function(UniqueID id, Series? series)? launchWithID,
+    TResult Function()? publishButtonPressed,
+    TResult Function()? saveButtonPressed,
     TResult Function()? sessionFetched,
     TResult Function(String subtitle)? subtitleChanged,
     TResult Function(String summary)? summaryChanged,
@@ -664,12 +915,15 @@ class _$GenreRemoved implements GenreRemoved {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(AddCoverPressed value) addCoverPressed,
+    required TResult Function(DeleteButtonPressed value) deleteButtonPressed,
     required TResult Function(GenreAdded value) genreAdded,
     required TResult Function(GenreRemoved value) genreRemoved,
     required TResult Function(IsNSFWChanged value) isNSFWChanged,
     required TResult Function(LanguageSelected value) languageSelected,
     required TResult Function(LaunchAsNewSeries value) launchAsNewSeries,
     required TResult Function(LaunchWithID value) launchWithID,
+    required TResult Function(PublishButtonPressed value) publishButtonPressed,
+    required TResult Function(SaveButtonPressed value) saveButtonPressed,
     required TResult Function(SessionFetched value) sessionFetched,
     required TResult Function(SubtitleChanged value) subtitleChanged,
     required TResult Function(SummaryChanged value) summaryChanged,
@@ -682,12 +936,15 @@ class _$GenreRemoved implements GenreRemoved {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(AddCoverPressed value)? addCoverPressed,
+    TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
     TResult Function(GenreAdded value)? genreAdded,
     TResult Function(GenreRemoved value)? genreRemoved,
     TResult Function(IsNSFWChanged value)? isNSFWChanged,
     TResult Function(LanguageSelected value)? languageSelected,
     TResult Function(LaunchAsNewSeries value)? launchAsNewSeries,
     TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(PublishButtonPressed value)? publishButtonPressed,
+    TResult Function(SaveButtonPressed value)? saveButtonPressed,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SubtitleChanged value)? subtitleChanged,
     TResult Function(SummaryChanged value)? summaryChanged,
@@ -700,12 +957,15 @@ class _$GenreRemoved implements GenreRemoved {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AddCoverPressed value)? addCoverPressed,
+    TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
     TResult Function(GenreAdded value)? genreAdded,
     TResult Function(GenreRemoved value)? genreRemoved,
     TResult Function(IsNSFWChanged value)? isNSFWChanged,
     TResult Function(LanguageSelected value)? languageSelected,
     TResult Function(LaunchAsNewSeries value)? launchAsNewSeries,
     TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(PublishButtonPressed value)? publishButtonPressed,
+    TResult Function(SaveButtonPressed value)? saveButtonPressed,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SubtitleChanged value)? subtitleChanged,
     TResult Function(SummaryChanged value)? summaryChanged,
@@ -794,12 +1054,15 @@ class _$IsNSFWChanged implements IsNSFWChanged {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() addCoverPressed,
+    required TResult Function() deleteButtonPressed,
     required TResult Function(String genre) genreAdded,
     required TResult Function(String genre) genreRemoved,
     required TResult Function(bool isNSFW) isNSFWChanged,
     required TResult Function(String language) languageSelected,
     required TResult Function() launchAsNewSeries,
     required TResult Function(UniqueID id, Series? series) launchWithID,
+    required TResult Function() publishButtonPressed,
+    required TResult Function() saveButtonPressed,
     required TResult Function() sessionFetched,
     required TResult Function(String subtitle) subtitleChanged,
     required TResult Function(String summary) summaryChanged,
@@ -812,12 +1075,15 @@ class _$IsNSFWChanged implements IsNSFWChanged {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? addCoverPressed,
+    TResult Function()? deleteButtonPressed,
     TResult Function(String genre)? genreAdded,
     TResult Function(String genre)? genreRemoved,
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
     TResult Function()? launchAsNewSeries,
     TResult Function(UniqueID id, Series? series)? launchWithID,
+    TResult Function()? publishButtonPressed,
+    TResult Function()? saveButtonPressed,
     TResult Function()? sessionFetched,
     TResult Function(String subtitle)? subtitleChanged,
     TResult Function(String summary)? summaryChanged,
@@ -830,12 +1096,15 @@ class _$IsNSFWChanged implements IsNSFWChanged {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? addCoverPressed,
+    TResult Function()? deleteButtonPressed,
     TResult Function(String genre)? genreAdded,
     TResult Function(String genre)? genreRemoved,
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
     TResult Function()? launchAsNewSeries,
     TResult Function(UniqueID id, Series? series)? launchWithID,
+    TResult Function()? publishButtonPressed,
+    TResult Function()? saveButtonPressed,
     TResult Function()? sessionFetched,
     TResult Function(String subtitle)? subtitleChanged,
     TResult Function(String summary)? summaryChanged,
@@ -852,12 +1121,15 @@ class _$IsNSFWChanged implements IsNSFWChanged {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(AddCoverPressed value) addCoverPressed,
+    required TResult Function(DeleteButtonPressed value) deleteButtonPressed,
     required TResult Function(GenreAdded value) genreAdded,
     required TResult Function(GenreRemoved value) genreRemoved,
     required TResult Function(IsNSFWChanged value) isNSFWChanged,
     required TResult Function(LanguageSelected value) languageSelected,
     required TResult Function(LaunchAsNewSeries value) launchAsNewSeries,
     required TResult Function(LaunchWithID value) launchWithID,
+    required TResult Function(PublishButtonPressed value) publishButtonPressed,
+    required TResult Function(SaveButtonPressed value) saveButtonPressed,
     required TResult Function(SessionFetched value) sessionFetched,
     required TResult Function(SubtitleChanged value) subtitleChanged,
     required TResult Function(SummaryChanged value) summaryChanged,
@@ -870,12 +1142,15 @@ class _$IsNSFWChanged implements IsNSFWChanged {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(AddCoverPressed value)? addCoverPressed,
+    TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
     TResult Function(GenreAdded value)? genreAdded,
     TResult Function(GenreRemoved value)? genreRemoved,
     TResult Function(IsNSFWChanged value)? isNSFWChanged,
     TResult Function(LanguageSelected value)? languageSelected,
     TResult Function(LaunchAsNewSeries value)? launchAsNewSeries,
     TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(PublishButtonPressed value)? publishButtonPressed,
+    TResult Function(SaveButtonPressed value)? saveButtonPressed,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SubtitleChanged value)? subtitleChanged,
     TResult Function(SummaryChanged value)? summaryChanged,
@@ -888,12 +1163,15 @@ class _$IsNSFWChanged implements IsNSFWChanged {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AddCoverPressed value)? addCoverPressed,
+    TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
     TResult Function(GenreAdded value)? genreAdded,
     TResult Function(GenreRemoved value)? genreRemoved,
     TResult Function(IsNSFWChanged value)? isNSFWChanged,
     TResult Function(LanguageSelected value)? languageSelected,
     TResult Function(LaunchAsNewSeries value)? launchAsNewSeries,
     TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(PublishButtonPressed value)? publishButtonPressed,
+    TResult Function(SaveButtonPressed value)? saveButtonPressed,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SubtitleChanged value)? subtitleChanged,
     TResult Function(SummaryChanged value)? summaryChanged,
@@ -983,12 +1261,15 @@ class _$LanguageSelected implements LanguageSelected {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() addCoverPressed,
+    required TResult Function() deleteButtonPressed,
     required TResult Function(String genre) genreAdded,
     required TResult Function(String genre) genreRemoved,
     required TResult Function(bool isNSFW) isNSFWChanged,
     required TResult Function(String language) languageSelected,
     required TResult Function() launchAsNewSeries,
     required TResult Function(UniqueID id, Series? series) launchWithID,
+    required TResult Function() publishButtonPressed,
+    required TResult Function() saveButtonPressed,
     required TResult Function() sessionFetched,
     required TResult Function(String subtitle) subtitleChanged,
     required TResult Function(String summary) summaryChanged,
@@ -1001,12 +1282,15 @@ class _$LanguageSelected implements LanguageSelected {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? addCoverPressed,
+    TResult Function()? deleteButtonPressed,
     TResult Function(String genre)? genreAdded,
     TResult Function(String genre)? genreRemoved,
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
     TResult Function()? launchAsNewSeries,
     TResult Function(UniqueID id, Series? series)? launchWithID,
+    TResult Function()? publishButtonPressed,
+    TResult Function()? saveButtonPressed,
     TResult Function()? sessionFetched,
     TResult Function(String subtitle)? subtitleChanged,
     TResult Function(String summary)? summaryChanged,
@@ -1019,12 +1303,15 @@ class _$LanguageSelected implements LanguageSelected {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? addCoverPressed,
+    TResult Function()? deleteButtonPressed,
     TResult Function(String genre)? genreAdded,
     TResult Function(String genre)? genreRemoved,
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
     TResult Function()? launchAsNewSeries,
     TResult Function(UniqueID id, Series? series)? launchWithID,
+    TResult Function()? publishButtonPressed,
+    TResult Function()? saveButtonPressed,
     TResult Function()? sessionFetched,
     TResult Function(String subtitle)? subtitleChanged,
     TResult Function(String summary)? summaryChanged,
@@ -1041,12 +1328,15 @@ class _$LanguageSelected implements LanguageSelected {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(AddCoverPressed value) addCoverPressed,
+    required TResult Function(DeleteButtonPressed value) deleteButtonPressed,
     required TResult Function(GenreAdded value) genreAdded,
     required TResult Function(GenreRemoved value) genreRemoved,
     required TResult Function(IsNSFWChanged value) isNSFWChanged,
     required TResult Function(LanguageSelected value) languageSelected,
     required TResult Function(LaunchAsNewSeries value) launchAsNewSeries,
     required TResult Function(LaunchWithID value) launchWithID,
+    required TResult Function(PublishButtonPressed value) publishButtonPressed,
+    required TResult Function(SaveButtonPressed value) saveButtonPressed,
     required TResult Function(SessionFetched value) sessionFetched,
     required TResult Function(SubtitleChanged value) subtitleChanged,
     required TResult Function(SummaryChanged value) summaryChanged,
@@ -1059,12 +1349,15 @@ class _$LanguageSelected implements LanguageSelected {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(AddCoverPressed value)? addCoverPressed,
+    TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
     TResult Function(GenreAdded value)? genreAdded,
     TResult Function(GenreRemoved value)? genreRemoved,
     TResult Function(IsNSFWChanged value)? isNSFWChanged,
     TResult Function(LanguageSelected value)? languageSelected,
     TResult Function(LaunchAsNewSeries value)? launchAsNewSeries,
     TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(PublishButtonPressed value)? publishButtonPressed,
+    TResult Function(SaveButtonPressed value)? saveButtonPressed,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SubtitleChanged value)? subtitleChanged,
     TResult Function(SummaryChanged value)? summaryChanged,
@@ -1077,12 +1370,15 @@ class _$LanguageSelected implements LanguageSelected {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AddCoverPressed value)? addCoverPressed,
+    TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
     TResult Function(GenreAdded value)? genreAdded,
     TResult Function(GenreRemoved value)? genreRemoved,
     TResult Function(IsNSFWChanged value)? isNSFWChanged,
     TResult Function(LanguageSelected value)? languageSelected,
     TResult Function(LaunchAsNewSeries value)? launchAsNewSeries,
     TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(PublishButtonPressed value)? publishButtonPressed,
+    TResult Function(SaveButtonPressed value)? saveButtonPressed,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SubtitleChanged value)? subtitleChanged,
     TResult Function(SummaryChanged value)? summaryChanged,
@@ -1146,12 +1442,15 @@ class _$LaunchAsNewSeries implements LaunchAsNewSeries {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() addCoverPressed,
+    required TResult Function() deleteButtonPressed,
     required TResult Function(String genre) genreAdded,
     required TResult Function(String genre) genreRemoved,
     required TResult Function(bool isNSFW) isNSFWChanged,
     required TResult Function(String language) languageSelected,
     required TResult Function() launchAsNewSeries,
     required TResult Function(UniqueID id, Series? series) launchWithID,
+    required TResult Function() publishButtonPressed,
+    required TResult Function() saveButtonPressed,
     required TResult Function() sessionFetched,
     required TResult Function(String subtitle) subtitleChanged,
     required TResult Function(String summary) summaryChanged,
@@ -1164,12 +1463,15 @@ class _$LaunchAsNewSeries implements LaunchAsNewSeries {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? addCoverPressed,
+    TResult Function()? deleteButtonPressed,
     TResult Function(String genre)? genreAdded,
     TResult Function(String genre)? genreRemoved,
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
     TResult Function()? launchAsNewSeries,
     TResult Function(UniqueID id, Series? series)? launchWithID,
+    TResult Function()? publishButtonPressed,
+    TResult Function()? saveButtonPressed,
     TResult Function()? sessionFetched,
     TResult Function(String subtitle)? subtitleChanged,
     TResult Function(String summary)? summaryChanged,
@@ -1182,12 +1484,15 @@ class _$LaunchAsNewSeries implements LaunchAsNewSeries {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? addCoverPressed,
+    TResult Function()? deleteButtonPressed,
     TResult Function(String genre)? genreAdded,
     TResult Function(String genre)? genreRemoved,
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
     TResult Function()? launchAsNewSeries,
     TResult Function(UniqueID id, Series? series)? launchWithID,
+    TResult Function()? publishButtonPressed,
+    TResult Function()? saveButtonPressed,
     TResult Function()? sessionFetched,
     TResult Function(String subtitle)? subtitleChanged,
     TResult Function(String summary)? summaryChanged,
@@ -1204,12 +1509,15 @@ class _$LaunchAsNewSeries implements LaunchAsNewSeries {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(AddCoverPressed value) addCoverPressed,
+    required TResult Function(DeleteButtonPressed value) deleteButtonPressed,
     required TResult Function(GenreAdded value) genreAdded,
     required TResult Function(GenreRemoved value) genreRemoved,
     required TResult Function(IsNSFWChanged value) isNSFWChanged,
     required TResult Function(LanguageSelected value) languageSelected,
     required TResult Function(LaunchAsNewSeries value) launchAsNewSeries,
     required TResult Function(LaunchWithID value) launchWithID,
+    required TResult Function(PublishButtonPressed value) publishButtonPressed,
+    required TResult Function(SaveButtonPressed value) saveButtonPressed,
     required TResult Function(SessionFetched value) sessionFetched,
     required TResult Function(SubtitleChanged value) subtitleChanged,
     required TResult Function(SummaryChanged value) summaryChanged,
@@ -1222,12 +1530,15 @@ class _$LaunchAsNewSeries implements LaunchAsNewSeries {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(AddCoverPressed value)? addCoverPressed,
+    TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
     TResult Function(GenreAdded value)? genreAdded,
     TResult Function(GenreRemoved value)? genreRemoved,
     TResult Function(IsNSFWChanged value)? isNSFWChanged,
     TResult Function(LanguageSelected value)? languageSelected,
     TResult Function(LaunchAsNewSeries value)? launchAsNewSeries,
     TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(PublishButtonPressed value)? publishButtonPressed,
+    TResult Function(SaveButtonPressed value)? saveButtonPressed,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SubtitleChanged value)? subtitleChanged,
     TResult Function(SummaryChanged value)? summaryChanged,
@@ -1240,12 +1551,15 @@ class _$LaunchAsNewSeries implements LaunchAsNewSeries {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AddCoverPressed value)? addCoverPressed,
+    TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
     TResult Function(GenreAdded value)? genreAdded,
     TResult Function(GenreRemoved value)? genreRemoved,
     TResult Function(IsNSFWChanged value)? isNSFWChanged,
     TResult Function(LanguageSelected value)? languageSelected,
     TResult Function(LaunchAsNewSeries value)? launchAsNewSeries,
     TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(PublishButtonPressed value)? publishButtonPressed,
+    TResult Function(SaveButtonPressed value)? saveButtonPressed,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SubtitleChanged value)? subtitleChanged,
     TResult Function(SummaryChanged value)? summaryChanged,
@@ -1353,12 +1667,15 @@ class _$LaunchWithID implements LaunchWithID {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() addCoverPressed,
+    required TResult Function() deleteButtonPressed,
     required TResult Function(String genre) genreAdded,
     required TResult Function(String genre) genreRemoved,
     required TResult Function(bool isNSFW) isNSFWChanged,
     required TResult Function(String language) languageSelected,
     required TResult Function() launchAsNewSeries,
     required TResult Function(UniqueID id, Series? series) launchWithID,
+    required TResult Function() publishButtonPressed,
+    required TResult Function() saveButtonPressed,
     required TResult Function() sessionFetched,
     required TResult Function(String subtitle) subtitleChanged,
     required TResult Function(String summary) summaryChanged,
@@ -1371,12 +1688,15 @@ class _$LaunchWithID implements LaunchWithID {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? addCoverPressed,
+    TResult Function()? deleteButtonPressed,
     TResult Function(String genre)? genreAdded,
     TResult Function(String genre)? genreRemoved,
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
     TResult Function()? launchAsNewSeries,
     TResult Function(UniqueID id, Series? series)? launchWithID,
+    TResult Function()? publishButtonPressed,
+    TResult Function()? saveButtonPressed,
     TResult Function()? sessionFetched,
     TResult Function(String subtitle)? subtitleChanged,
     TResult Function(String summary)? summaryChanged,
@@ -1389,12 +1709,15 @@ class _$LaunchWithID implements LaunchWithID {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? addCoverPressed,
+    TResult Function()? deleteButtonPressed,
     TResult Function(String genre)? genreAdded,
     TResult Function(String genre)? genreRemoved,
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
     TResult Function()? launchAsNewSeries,
     TResult Function(UniqueID id, Series? series)? launchWithID,
+    TResult Function()? publishButtonPressed,
+    TResult Function()? saveButtonPressed,
     TResult Function()? sessionFetched,
     TResult Function(String subtitle)? subtitleChanged,
     TResult Function(String summary)? summaryChanged,
@@ -1411,12 +1734,15 @@ class _$LaunchWithID implements LaunchWithID {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(AddCoverPressed value) addCoverPressed,
+    required TResult Function(DeleteButtonPressed value) deleteButtonPressed,
     required TResult Function(GenreAdded value) genreAdded,
     required TResult Function(GenreRemoved value) genreRemoved,
     required TResult Function(IsNSFWChanged value) isNSFWChanged,
     required TResult Function(LanguageSelected value) languageSelected,
     required TResult Function(LaunchAsNewSeries value) launchAsNewSeries,
     required TResult Function(LaunchWithID value) launchWithID,
+    required TResult Function(PublishButtonPressed value) publishButtonPressed,
+    required TResult Function(SaveButtonPressed value) saveButtonPressed,
     required TResult Function(SessionFetched value) sessionFetched,
     required TResult Function(SubtitleChanged value) subtitleChanged,
     required TResult Function(SummaryChanged value) summaryChanged,
@@ -1429,12 +1755,15 @@ class _$LaunchWithID implements LaunchWithID {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(AddCoverPressed value)? addCoverPressed,
+    TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
     TResult Function(GenreAdded value)? genreAdded,
     TResult Function(GenreRemoved value)? genreRemoved,
     TResult Function(IsNSFWChanged value)? isNSFWChanged,
     TResult Function(LanguageSelected value)? languageSelected,
     TResult Function(LaunchAsNewSeries value)? launchAsNewSeries,
     TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(PublishButtonPressed value)? publishButtonPressed,
+    TResult Function(SaveButtonPressed value)? saveButtonPressed,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SubtitleChanged value)? subtitleChanged,
     TResult Function(SummaryChanged value)? summaryChanged,
@@ -1447,12 +1776,15 @@ class _$LaunchWithID implements LaunchWithID {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AddCoverPressed value)? addCoverPressed,
+    TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
     TResult Function(GenreAdded value)? genreAdded,
     TResult Function(GenreRemoved value)? genreRemoved,
     TResult Function(IsNSFWChanged value)? isNSFWChanged,
     TResult Function(LanguageSelected value)? languageSelected,
     TResult Function(LaunchAsNewSeries value)? launchAsNewSeries,
     TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(PublishButtonPressed value)? publishButtonPressed,
+    TResult Function(SaveButtonPressed value)? saveButtonPressed,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SubtitleChanged value)? subtitleChanged,
     TResult Function(SummaryChanged value)? summaryChanged,
@@ -1474,6 +1806,358 @@ abstract class LaunchWithID implements TypewriterSeriesEvent {
   @JsonKey(ignore: true)
   $LaunchWithIDCopyWith<LaunchWithID> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $PublishButtonPressedCopyWith<$Res> {
+  factory $PublishButtonPressedCopyWith(PublishButtonPressed value,
+          $Res Function(PublishButtonPressed) then) =
+      _$PublishButtonPressedCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$PublishButtonPressedCopyWithImpl<$Res>
+    extends _$TypewriterSeriesEventCopyWithImpl<$Res>
+    implements $PublishButtonPressedCopyWith<$Res> {
+  _$PublishButtonPressedCopyWithImpl(
+      PublishButtonPressed _value, $Res Function(PublishButtonPressed) _then)
+      : super(_value, (v) => _then(v as PublishButtonPressed));
+
+  @override
+  PublishButtonPressed get _value => super._value as PublishButtonPressed;
+}
+
+/// @nodoc
+
+class _$PublishButtonPressed implements PublishButtonPressed {
+  const _$PublishButtonPressed();
+
+  @override
+  String toString() {
+    return 'TypewriterSeriesEvent.publishButtonPressed()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is PublishButtonPressed);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() addCoverPressed,
+    required TResult Function() deleteButtonPressed,
+    required TResult Function(String genre) genreAdded,
+    required TResult Function(String genre) genreRemoved,
+    required TResult Function(bool isNSFW) isNSFWChanged,
+    required TResult Function(String language) languageSelected,
+    required TResult Function() launchAsNewSeries,
+    required TResult Function(UniqueID id, Series? series) launchWithID,
+    required TResult Function() publishButtonPressed,
+    required TResult Function() saveButtonPressed,
+    required TResult Function() sessionFetched,
+    required TResult Function(String subtitle) subtitleChanged,
+    required TResult Function(String summary) summaryChanged,
+    required TResult Function(String title) titleChanged,
+  }) {
+    return publishButtonPressed();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? addCoverPressed,
+    TResult Function()? deleteButtonPressed,
+    TResult Function(String genre)? genreAdded,
+    TResult Function(String genre)? genreRemoved,
+    TResult Function(bool isNSFW)? isNSFWChanged,
+    TResult Function(String language)? languageSelected,
+    TResult Function()? launchAsNewSeries,
+    TResult Function(UniqueID id, Series? series)? launchWithID,
+    TResult Function()? publishButtonPressed,
+    TResult Function()? saveButtonPressed,
+    TResult Function()? sessionFetched,
+    TResult Function(String subtitle)? subtitleChanged,
+    TResult Function(String summary)? summaryChanged,
+    TResult Function(String title)? titleChanged,
+  }) {
+    return publishButtonPressed?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? addCoverPressed,
+    TResult Function()? deleteButtonPressed,
+    TResult Function(String genre)? genreAdded,
+    TResult Function(String genre)? genreRemoved,
+    TResult Function(bool isNSFW)? isNSFWChanged,
+    TResult Function(String language)? languageSelected,
+    TResult Function()? launchAsNewSeries,
+    TResult Function(UniqueID id, Series? series)? launchWithID,
+    TResult Function()? publishButtonPressed,
+    TResult Function()? saveButtonPressed,
+    TResult Function()? sessionFetched,
+    TResult Function(String subtitle)? subtitleChanged,
+    TResult Function(String summary)? summaryChanged,
+    TResult Function(String title)? titleChanged,
+    required TResult orElse(),
+  }) {
+    if (publishButtonPressed != null) {
+      return publishButtonPressed();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(AddCoverPressed value) addCoverPressed,
+    required TResult Function(DeleteButtonPressed value) deleteButtonPressed,
+    required TResult Function(GenreAdded value) genreAdded,
+    required TResult Function(GenreRemoved value) genreRemoved,
+    required TResult Function(IsNSFWChanged value) isNSFWChanged,
+    required TResult Function(LanguageSelected value) languageSelected,
+    required TResult Function(LaunchAsNewSeries value) launchAsNewSeries,
+    required TResult Function(LaunchWithID value) launchWithID,
+    required TResult Function(PublishButtonPressed value) publishButtonPressed,
+    required TResult Function(SaveButtonPressed value) saveButtonPressed,
+    required TResult Function(SessionFetched value) sessionFetched,
+    required TResult Function(SubtitleChanged value) subtitleChanged,
+    required TResult Function(SummaryChanged value) summaryChanged,
+    required TResult Function(TitleChanged value) titleChanged,
+  }) {
+    return publishButtonPressed(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(AddCoverPressed value)? addCoverPressed,
+    TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
+    TResult Function(GenreAdded value)? genreAdded,
+    TResult Function(GenreRemoved value)? genreRemoved,
+    TResult Function(IsNSFWChanged value)? isNSFWChanged,
+    TResult Function(LanguageSelected value)? languageSelected,
+    TResult Function(LaunchAsNewSeries value)? launchAsNewSeries,
+    TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(PublishButtonPressed value)? publishButtonPressed,
+    TResult Function(SaveButtonPressed value)? saveButtonPressed,
+    TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(SubtitleChanged value)? subtitleChanged,
+    TResult Function(SummaryChanged value)? summaryChanged,
+    TResult Function(TitleChanged value)? titleChanged,
+  }) {
+    return publishButtonPressed?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(AddCoverPressed value)? addCoverPressed,
+    TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
+    TResult Function(GenreAdded value)? genreAdded,
+    TResult Function(GenreRemoved value)? genreRemoved,
+    TResult Function(IsNSFWChanged value)? isNSFWChanged,
+    TResult Function(LanguageSelected value)? languageSelected,
+    TResult Function(LaunchAsNewSeries value)? launchAsNewSeries,
+    TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(PublishButtonPressed value)? publishButtonPressed,
+    TResult Function(SaveButtonPressed value)? saveButtonPressed,
+    TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(SubtitleChanged value)? subtitleChanged,
+    TResult Function(SummaryChanged value)? summaryChanged,
+    TResult Function(TitleChanged value)? titleChanged,
+    required TResult orElse(),
+  }) {
+    if (publishButtonPressed != null) {
+      return publishButtonPressed(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class PublishButtonPressed implements TypewriterSeriesEvent {
+  const factory PublishButtonPressed() = _$PublishButtonPressed;
+}
+
+/// @nodoc
+abstract class $SaveButtonPressedCopyWith<$Res> {
+  factory $SaveButtonPressedCopyWith(
+          SaveButtonPressed value, $Res Function(SaveButtonPressed) then) =
+      _$SaveButtonPressedCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$SaveButtonPressedCopyWithImpl<$Res>
+    extends _$TypewriterSeriesEventCopyWithImpl<$Res>
+    implements $SaveButtonPressedCopyWith<$Res> {
+  _$SaveButtonPressedCopyWithImpl(
+      SaveButtonPressed _value, $Res Function(SaveButtonPressed) _then)
+      : super(_value, (v) => _then(v as SaveButtonPressed));
+
+  @override
+  SaveButtonPressed get _value => super._value as SaveButtonPressed;
+}
+
+/// @nodoc
+
+class _$SaveButtonPressed implements SaveButtonPressed {
+  const _$SaveButtonPressed();
+
+  @override
+  String toString() {
+    return 'TypewriterSeriesEvent.saveButtonPressed()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is SaveButtonPressed);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() addCoverPressed,
+    required TResult Function() deleteButtonPressed,
+    required TResult Function(String genre) genreAdded,
+    required TResult Function(String genre) genreRemoved,
+    required TResult Function(bool isNSFW) isNSFWChanged,
+    required TResult Function(String language) languageSelected,
+    required TResult Function() launchAsNewSeries,
+    required TResult Function(UniqueID id, Series? series) launchWithID,
+    required TResult Function() publishButtonPressed,
+    required TResult Function() saveButtonPressed,
+    required TResult Function() sessionFetched,
+    required TResult Function(String subtitle) subtitleChanged,
+    required TResult Function(String summary) summaryChanged,
+    required TResult Function(String title) titleChanged,
+  }) {
+    return saveButtonPressed();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? addCoverPressed,
+    TResult Function()? deleteButtonPressed,
+    TResult Function(String genre)? genreAdded,
+    TResult Function(String genre)? genreRemoved,
+    TResult Function(bool isNSFW)? isNSFWChanged,
+    TResult Function(String language)? languageSelected,
+    TResult Function()? launchAsNewSeries,
+    TResult Function(UniqueID id, Series? series)? launchWithID,
+    TResult Function()? publishButtonPressed,
+    TResult Function()? saveButtonPressed,
+    TResult Function()? sessionFetched,
+    TResult Function(String subtitle)? subtitleChanged,
+    TResult Function(String summary)? summaryChanged,
+    TResult Function(String title)? titleChanged,
+  }) {
+    return saveButtonPressed?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? addCoverPressed,
+    TResult Function()? deleteButtonPressed,
+    TResult Function(String genre)? genreAdded,
+    TResult Function(String genre)? genreRemoved,
+    TResult Function(bool isNSFW)? isNSFWChanged,
+    TResult Function(String language)? languageSelected,
+    TResult Function()? launchAsNewSeries,
+    TResult Function(UniqueID id, Series? series)? launchWithID,
+    TResult Function()? publishButtonPressed,
+    TResult Function()? saveButtonPressed,
+    TResult Function()? sessionFetched,
+    TResult Function(String subtitle)? subtitleChanged,
+    TResult Function(String summary)? summaryChanged,
+    TResult Function(String title)? titleChanged,
+    required TResult orElse(),
+  }) {
+    if (saveButtonPressed != null) {
+      return saveButtonPressed();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(AddCoverPressed value) addCoverPressed,
+    required TResult Function(DeleteButtonPressed value) deleteButtonPressed,
+    required TResult Function(GenreAdded value) genreAdded,
+    required TResult Function(GenreRemoved value) genreRemoved,
+    required TResult Function(IsNSFWChanged value) isNSFWChanged,
+    required TResult Function(LanguageSelected value) languageSelected,
+    required TResult Function(LaunchAsNewSeries value) launchAsNewSeries,
+    required TResult Function(LaunchWithID value) launchWithID,
+    required TResult Function(PublishButtonPressed value) publishButtonPressed,
+    required TResult Function(SaveButtonPressed value) saveButtonPressed,
+    required TResult Function(SessionFetched value) sessionFetched,
+    required TResult Function(SubtitleChanged value) subtitleChanged,
+    required TResult Function(SummaryChanged value) summaryChanged,
+    required TResult Function(TitleChanged value) titleChanged,
+  }) {
+    return saveButtonPressed(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(AddCoverPressed value)? addCoverPressed,
+    TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
+    TResult Function(GenreAdded value)? genreAdded,
+    TResult Function(GenreRemoved value)? genreRemoved,
+    TResult Function(IsNSFWChanged value)? isNSFWChanged,
+    TResult Function(LanguageSelected value)? languageSelected,
+    TResult Function(LaunchAsNewSeries value)? launchAsNewSeries,
+    TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(PublishButtonPressed value)? publishButtonPressed,
+    TResult Function(SaveButtonPressed value)? saveButtonPressed,
+    TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(SubtitleChanged value)? subtitleChanged,
+    TResult Function(SummaryChanged value)? summaryChanged,
+    TResult Function(TitleChanged value)? titleChanged,
+  }) {
+    return saveButtonPressed?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(AddCoverPressed value)? addCoverPressed,
+    TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
+    TResult Function(GenreAdded value)? genreAdded,
+    TResult Function(GenreRemoved value)? genreRemoved,
+    TResult Function(IsNSFWChanged value)? isNSFWChanged,
+    TResult Function(LanguageSelected value)? languageSelected,
+    TResult Function(LaunchAsNewSeries value)? launchAsNewSeries,
+    TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(PublishButtonPressed value)? publishButtonPressed,
+    TResult Function(SaveButtonPressed value)? saveButtonPressed,
+    TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(SubtitleChanged value)? subtitleChanged,
+    TResult Function(SummaryChanged value)? summaryChanged,
+    TResult Function(TitleChanged value)? titleChanged,
+    required TResult orElse(),
+  }) {
+    if (saveButtonPressed != null) {
+      return saveButtonPressed(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SaveButtonPressed implements TypewriterSeriesEvent {
+  const factory SaveButtonPressed() = _$SaveButtonPressed;
 }
 
 /// @nodoc
@@ -1517,12 +2201,15 @@ class _$SessionFetched implements SessionFetched {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() addCoverPressed,
+    required TResult Function() deleteButtonPressed,
     required TResult Function(String genre) genreAdded,
     required TResult Function(String genre) genreRemoved,
     required TResult Function(bool isNSFW) isNSFWChanged,
     required TResult Function(String language) languageSelected,
     required TResult Function() launchAsNewSeries,
     required TResult Function(UniqueID id, Series? series) launchWithID,
+    required TResult Function() publishButtonPressed,
+    required TResult Function() saveButtonPressed,
     required TResult Function() sessionFetched,
     required TResult Function(String subtitle) subtitleChanged,
     required TResult Function(String summary) summaryChanged,
@@ -1535,12 +2222,15 @@ class _$SessionFetched implements SessionFetched {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? addCoverPressed,
+    TResult Function()? deleteButtonPressed,
     TResult Function(String genre)? genreAdded,
     TResult Function(String genre)? genreRemoved,
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
     TResult Function()? launchAsNewSeries,
     TResult Function(UniqueID id, Series? series)? launchWithID,
+    TResult Function()? publishButtonPressed,
+    TResult Function()? saveButtonPressed,
     TResult Function()? sessionFetched,
     TResult Function(String subtitle)? subtitleChanged,
     TResult Function(String summary)? summaryChanged,
@@ -1553,12 +2243,15 @@ class _$SessionFetched implements SessionFetched {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? addCoverPressed,
+    TResult Function()? deleteButtonPressed,
     TResult Function(String genre)? genreAdded,
     TResult Function(String genre)? genreRemoved,
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
     TResult Function()? launchAsNewSeries,
     TResult Function(UniqueID id, Series? series)? launchWithID,
+    TResult Function()? publishButtonPressed,
+    TResult Function()? saveButtonPressed,
     TResult Function()? sessionFetched,
     TResult Function(String subtitle)? subtitleChanged,
     TResult Function(String summary)? summaryChanged,
@@ -1575,12 +2268,15 @@ class _$SessionFetched implements SessionFetched {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(AddCoverPressed value) addCoverPressed,
+    required TResult Function(DeleteButtonPressed value) deleteButtonPressed,
     required TResult Function(GenreAdded value) genreAdded,
     required TResult Function(GenreRemoved value) genreRemoved,
     required TResult Function(IsNSFWChanged value) isNSFWChanged,
     required TResult Function(LanguageSelected value) languageSelected,
     required TResult Function(LaunchAsNewSeries value) launchAsNewSeries,
     required TResult Function(LaunchWithID value) launchWithID,
+    required TResult Function(PublishButtonPressed value) publishButtonPressed,
+    required TResult Function(SaveButtonPressed value) saveButtonPressed,
     required TResult Function(SessionFetched value) sessionFetched,
     required TResult Function(SubtitleChanged value) subtitleChanged,
     required TResult Function(SummaryChanged value) summaryChanged,
@@ -1593,12 +2289,15 @@ class _$SessionFetched implements SessionFetched {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(AddCoverPressed value)? addCoverPressed,
+    TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
     TResult Function(GenreAdded value)? genreAdded,
     TResult Function(GenreRemoved value)? genreRemoved,
     TResult Function(IsNSFWChanged value)? isNSFWChanged,
     TResult Function(LanguageSelected value)? languageSelected,
     TResult Function(LaunchAsNewSeries value)? launchAsNewSeries,
     TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(PublishButtonPressed value)? publishButtonPressed,
+    TResult Function(SaveButtonPressed value)? saveButtonPressed,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SubtitleChanged value)? subtitleChanged,
     TResult Function(SummaryChanged value)? summaryChanged,
@@ -1611,12 +2310,15 @@ class _$SessionFetched implements SessionFetched {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AddCoverPressed value)? addCoverPressed,
+    TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
     TResult Function(GenreAdded value)? genreAdded,
     TResult Function(GenreRemoved value)? genreRemoved,
     TResult Function(IsNSFWChanged value)? isNSFWChanged,
     TResult Function(LanguageSelected value)? languageSelected,
     TResult Function(LaunchAsNewSeries value)? launchAsNewSeries,
     TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(PublishButtonPressed value)? publishButtonPressed,
+    TResult Function(SaveButtonPressed value)? saveButtonPressed,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SubtitleChanged value)? subtitleChanged,
     TResult Function(SummaryChanged value)? summaryChanged,
@@ -1701,12 +2403,15 @@ class _$SubtitleChanged implements SubtitleChanged {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() addCoverPressed,
+    required TResult Function() deleteButtonPressed,
     required TResult Function(String genre) genreAdded,
     required TResult Function(String genre) genreRemoved,
     required TResult Function(bool isNSFW) isNSFWChanged,
     required TResult Function(String language) languageSelected,
     required TResult Function() launchAsNewSeries,
     required TResult Function(UniqueID id, Series? series) launchWithID,
+    required TResult Function() publishButtonPressed,
+    required TResult Function() saveButtonPressed,
     required TResult Function() sessionFetched,
     required TResult Function(String subtitle) subtitleChanged,
     required TResult Function(String summary) summaryChanged,
@@ -1719,12 +2424,15 @@ class _$SubtitleChanged implements SubtitleChanged {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? addCoverPressed,
+    TResult Function()? deleteButtonPressed,
     TResult Function(String genre)? genreAdded,
     TResult Function(String genre)? genreRemoved,
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
     TResult Function()? launchAsNewSeries,
     TResult Function(UniqueID id, Series? series)? launchWithID,
+    TResult Function()? publishButtonPressed,
+    TResult Function()? saveButtonPressed,
     TResult Function()? sessionFetched,
     TResult Function(String subtitle)? subtitleChanged,
     TResult Function(String summary)? summaryChanged,
@@ -1737,12 +2445,15 @@ class _$SubtitleChanged implements SubtitleChanged {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? addCoverPressed,
+    TResult Function()? deleteButtonPressed,
     TResult Function(String genre)? genreAdded,
     TResult Function(String genre)? genreRemoved,
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
     TResult Function()? launchAsNewSeries,
     TResult Function(UniqueID id, Series? series)? launchWithID,
+    TResult Function()? publishButtonPressed,
+    TResult Function()? saveButtonPressed,
     TResult Function()? sessionFetched,
     TResult Function(String subtitle)? subtitleChanged,
     TResult Function(String summary)? summaryChanged,
@@ -1759,12 +2470,15 @@ class _$SubtitleChanged implements SubtitleChanged {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(AddCoverPressed value) addCoverPressed,
+    required TResult Function(DeleteButtonPressed value) deleteButtonPressed,
     required TResult Function(GenreAdded value) genreAdded,
     required TResult Function(GenreRemoved value) genreRemoved,
     required TResult Function(IsNSFWChanged value) isNSFWChanged,
     required TResult Function(LanguageSelected value) languageSelected,
     required TResult Function(LaunchAsNewSeries value) launchAsNewSeries,
     required TResult Function(LaunchWithID value) launchWithID,
+    required TResult Function(PublishButtonPressed value) publishButtonPressed,
+    required TResult Function(SaveButtonPressed value) saveButtonPressed,
     required TResult Function(SessionFetched value) sessionFetched,
     required TResult Function(SubtitleChanged value) subtitleChanged,
     required TResult Function(SummaryChanged value) summaryChanged,
@@ -1777,12 +2491,15 @@ class _$SubtitleChanged implements SubtitleChanged {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(AddCoverPressed value)? addCoverPressed,
+    TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
     TResult Function(GenreAdded value)? genreAdded,
     TResult Function(GenreRemoved value)? genreRemoved,
     TResult Function(IsNSFWChanged value)? isNSFWChanged,
     TResult Function(LanguageSelected value)? languageSelected,
     TResult Function(LaunchAsNewSeries value)? launchAsNewSeries,
     TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(PublishButtonPressed value)? publishButtonPressed,
+    TResult Function(SaveButtonPressed value)? saveButtonPressed,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SubtitleChanged value)? subtitleChanged,
     TResult Function(SummaryChanged value)? summaryChanged,
@@ -1795,12 +2512,15 @@ class _$SubtitleChanged implements SubtitleChanged {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AddCoverPressed value)? addCoverPressed,
+    TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
     TResult Function(GenreAdded value)? genreAdded,
     TResult Function(GenreRemoved value)? genreRemoved,
     TResult Function(IsNSFWChanged value)? isNSFWChanged,
     TResult Function(LanguageSelected value)? languageSelected,
     TResult Function(LaunchAsNewSeries value)? launchAsNewSeries,
     TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(PublishButtonPressed value)? publishButtonPressed,
+    TResult Function(SaveButtonPressed value)? saveButtonPressed,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SubtitleChanged value)? subtitleChanged,
     TResult Function(SummaryChanged value)? summaryChanged,
@@ -1889,12 +2609,15 @@ class _$SummaryChanged implements SummaryChanged {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() addCoverPressed,
+    required TResult Function() deleteButtonPressed,
     required TResult Function(String genre) genreAdded,
     required TResult Function(String genre) genreRemoved,
     required TResult Function(bool isNSFW) isNSFWChanged,
     required TResult Function(String language) languageSelected,
     required TResult Function() launchAsNewSeries,
     required TResult Function(UniqueID id, Series? series) launchWithID,
+    required TResult Function() publishButtonPressed,
+    required TResult Function() saveButtonPressed,
     required TResult Function() sessionFetched,
     required TResult Function(String subtitle) subtitleChanged,
     required TResult Function(String summary) summaryChanged,
@@ -1907,12 +2630,15 @@ class _$SummaryChanged implements SummaryChanged {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? addCoverPressed,
+    TResult Function()? deleteButtonPressed,
     TResult Function(String genre)? genreAdded,
     TResult Function(String genre)? genreRemoved,
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
     TResult Function()? launchAsNewSeries,
     TResult Function(UniqueID id, Series? series)? launchWithID,
+    TResult Function()? publishButtonPressed,
+    TResult Function()? saveButtonPressed,
     TResult Function()? sessionFetched,
     TResult Function(String subtitle)? subtitleChanged,
     TResult Function(String summary)? summaryChanged,
@@ -1925,12 +2651,15 @@ class _$SummaryChanged implements SummaryChanged {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? addCoverPressed,
+    TResult Function()? deleteButtonPressed,
     TResult Function(String genre)? genreAdded,
     TResult Function(String genre)? genreRemoved,
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
     TResult Function()? launchAsNewSeries,
     TResult Function(UniqueID id, Series? series)? launchWithID,
+    TResult Function()? publishButtonPressed,
+    TResult Function()? saveButtonPressed,
     TResult Function()? sessionFetched,
     TResult Function(String subtitle)? subtitleChanged,
     TResult Function(String summary)? summaryChanged,
@@ -1947,12 +2676,15 @@ class _$SummaryChanged implements SummaryChanged {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(AddCoverPressed value) addCoverPressed,
+    required TResult Function(DeleteButtonPressed value) deleteButtonPressed,
     required TResult Function(GenreAdded value) genreAdded,
     required TResult Function(GenreRemoved value) genreRemoved,
     required TResult Function(IsNSFWChanged value) isNSFWChanged,
     required TResult Function(LanguageSelected value) languageSelected,
     required TResult Function(LaunchAsNewSeries value) launchAsNewSeries,
     required TResult Function(LaunchWithID value) launchWithID,
+    required TResult Function(PublishButtonPressed value) publishButtonPressed,
+    required TResult Function(SaveButtonPressed value) saveButtonPressed,
     required TResult Function(SessionFetched value) sessionFetched,
     required TResult Function(SubtitleChanged value) subtitleChanged,
     required TResult Function(SummaryChanged value) summaryChanged,
@@ -1965,12 +2697,15 @@ class _$SummaryChanged implements SummaryChanged {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(AddCoverPressed value)? addCoverPressed,
+    TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
     TResult Function(GenreAdded value)? genreAdded,
     TResult Function(GenreRemoved value)? genreRemoved,
     TResult Function(IsNSFWChanged value)? isNSFWChanged,
     TResult Function(LanguageSelected value)? languageSelected,
     TResult Function(LaunchAsNewSeries value)? launchAsNewSeries,
     TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(PublishButtonPressed value)? publishButtonPressed,
+    TResult Function(SaveButtonPressed value)? saveButtonPressed,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SubtitleChanged value)? subtitleChanged,
     TResult Function(SummaryChanged value)? summaryChanged,
@@ -1983,12 +2718,15 @@ class _$SummaryChanged implements SummaryChanged {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AddCoverPressed value)? addCoverPressed,
+    TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
     TResult Function(GenreAdded value)? genreAdded,
     TResult Function(GenreRemoved value)? genreRemoved,
     TResult Function(IsNSFWChanged value)? isNSFWChanged,
     TResult Function(LanguageSelected value)? languageSelected,
     TResult Function(LaunchAsNewSeries value)? launchAsNewSeries,
     TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(PublishButtonPressed value)? publishButtonPressed,
+    TResult Function(SaveButtonPressed value)? saveButtonPressed,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SubtitleChanged value)? subtitleChanged,
     TResult Function(SummaryChanged value)? summaryChanged,
@@ -2077,12 +2815,15 @@ class _$TitleChanged implements TitleChanged {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() addCoverPressed,
+    required TResult Function() deleteButtonPressed,
     required TResult Function(String genre) genreAdded,
     required TResult Function(String genre) genreRemoved,
     required TResult Function(bool isNSFW) isNSFWChanged,
     required TResult Function(String language) languageSelected,
     required TResult Function() launchAsNewSeries,
     required TResult Function(UniqueID id, Series? series) launchWithID,
+    required TResult Function() publishButtonPressed,
+    required TResult Function() saveButtonPressed,
     required TResult Function() sessionFetched,
     required TResult Function(String subtitle) subtitleChanged,
     required TResult Function(String summary) summaryChanged,
@@ -2095,12 +2836,15 @@ class _$TitleChanged implements TitleChanged {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? addCoverPressed,
+    TResult Function()? deleteButtonPressed,
     TResult Function(String genre)? genreAdded,
     TResult Function(String genre)? genreRemoved,
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
     TResult Function()? launchAsNewSeries,
     TResult Function(UniqueID id, Series? series)? launchWithID,
+    TResult Function()? publishButtonPressed,
+    TResult Function()? saveButtonPressed,
     TResult Function()? sessionFetched,
     TResult Function(String subtitle)? subtitleChanged,
     TResult Function(String summary)? summaryChanged,
@@ -2113,12 +2857,15 @@ class _$TitleChanged implements TitleChanged {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? addCoverPressed,
+    TResult Function()? deleteButtonPressed,
     TResult Function(String genre)? genreAdded,
     TResult Function(String genre)? genreRemoved,
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
     TResult Function()? launchAsNewSeries,
     TResult Function(UniqueID id, Series? series)? launchWithID,
+    TResult Function()? publishButtonPressed,
+    TResult Function()? saveButtonPressed,
     TResult Function()? sessionFetched,
     TResult Function(String subtitle)? subtitleChanged,
     TResult Function(String summary)? summaryChanged,
@@ -2135,12 +2882,15 @@ class _$TitleChanged implements TitleChanged {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(AddCoverPressed value) addCoverPressed,
+    required TResult Function(DeleteButtonPressed value) deleteButtonPressed,
     required TResult Function(GenreAdded value) genreAdded,
     required TResult Function(GenreRemoved value) genreRemoved,
     required TResult Function(IsNSFWChanged value) isNSFWChanged,
     required TResult Function(LanguageSelected value) languageSelected,
     required TResult Function(LaunchAsNewSeries value) launchAsNewSeries,
     required TResult Function(LaunchWithID value) launchWithID,
+    required TResult Function(PublishButtonPressed value) publishButtonPressed,
+    required TResult Function(SaveButtonPressed value) saveButtonPressed,
     required TResult Function(SessionFetched value) sessionFetched,
     required TResult Function(SubtitleChanged value) subtitleChanged,
     required TResult Function(SummaryChanged value) summaryChanged,
@@ -2153,12 +2903,15 @@ class _$TitleChanged implements TitleChanged {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(AddCoverPressed value)? addCoverPressed,
+    TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
     TResult Function(GenreAdded value)? genreAdded,
     TResult Function(GenreRemoved value)? genreRemoved,
     TResult Function(IsNSFWChanged value)? isNSFWChanged,
     TResult Function(LanguageSelected value)? languageSelected,
     TResult Function(LaunchAsNewSeries value)? launchAsNewSeries,
     TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(PublishButtonPressed value)? publishButtonPressed,
+    TResult Function(SaveButtonPressed value)? saveButtonPressed,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SubtitleChanged value)? subtitleChanged,
     TResult Function(SummaryChanged value)? summaryChanged,
@@ -2171,12 +2924,15 @@ class _$TitleChanged implements TitleChanged {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AddCoverPressed value)? addCoverPressed,
+    TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
     TResult Function(GenreAdded value)? genreAdded,
     TResult Function(GenreRemoved value)? genreRemoved,
     TResult Function(IsNSFWChanged value)? isNSFWChanged,
     TResult Function(LanguageSelected value)? languageSelected,
     TResult Function(LaunchAsNewSeries value)? launchAsNewSeries,
     TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(PublishButtonPressed value)? publishButtonPressed,
+    TResult Function(SaveButtonPressed value)? saveButtonPressed,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SubtitleChanged value)? subtitleChanged,
     TResult Function(SummaryChanged value)? summaryChanged,
@@ -2207,8 +2963,10 @@ class _$TypewriterSeriesStateTearOff {
       {required String coverURL,
       required Option<Result<None<Object>, CoreFailure>> failureOption,
       required List<Genre> genres,
-      required bool isProcessing,
+      required bool isEdit,
       required bool isNSFW,
+      required bool isProcessing,
+      required bool isPublished,
       required Language language,
       required bool showErrorMessages,
       required Subtitle subtitle,
@@ -2225,8 +2983,10 @@ class _$TypewriterSeriesStateTearOff {
       coverURL: coverURL,
       failureOption: failureOption,
       genres: genres,
-      isProcessing: isProcessing,
+      isEdit: isEdit,
       isNSFW: isNSFW,
+      isProcessing: isProcessing,
+      isPublished: isPublished,
       language: language,
       showErrorMessages: showErrorMessages,
       subtitle: subtitle,
@@ -2252,8 +3012,10 @@ mixin _$TypewriterSeriesState {
   Option<Result<None<Object>, CoreFailure>> get failureOption =>
       throw _privateConstructorUsedError;
   List<Genre> get genres => throw _privateConstructorUsedError;
-  bool get isProcessing => throw _privateConstructorUsedError;
+  bool get isEdit => throw _privateConstructorUsedError;
   bool get isNSFW => throw _privateConstructorUsedError;
+  bool get isProcessing => throw _privateConstructorUsedError;
+  bool get isPublished => throw _privateConstructorUsedError;
   Language get language => throw _privateConstructorUsedError;
   bool get showErrorMessages => throw _privateConstructorUsedError;
   Subtitle get subtitle => throw _privateConstructorUsedError;
@@ -2284,8 +3046,10 @@ abstract class $TypewriterSeriesStateCopyWith<$Res> {
       {String coverURL,
       Option<Result<None<Object>, CoreFailure>> failureOption,
       List<Genre> genres,
-      bool isProcessing,
+      bool isEdit,
       bool isNSFW,
+      bool isProcessing,
+      bool isPublished,
       Language language,
       bool showErrorMessages,
       Subtitle subtitle,
@@ -2316,8 +3080,10 @@ class _$TypewriterSeriesStateCopyWithImpl<$Res>
     Object? coverURL = freezed,
     Object? failureOption = freezed,
     Object? genres = freezed,
-    Object? isProcessing = freezed,
+    Object? isEdit = freezed,
     Object? isNSFW = freezed,
+    Object? isProcessing = freezed,
+    Object? isPublished = freezed,
     Object? language = freezed,
     Object? showErrorMessages = freezed,
     Object? subtitle = freezed,
@@ -2344,13 +3110,21 @@ class _$TypewriterSeriesStateCopyWithImpl<$Res>
           ? _value.genres
           : genres // ignore: cast_nullable_to_non_nullable
               as List<Genre>,
-      isProcessing: isProcessing == freezed
-          ? _value.isProcessing
-          : isProcessing // ignore: cast_nullable_to_non_nullable
+      isEdit: isEdit == freezed
+          ? _value.isEdit
+          : isEdit // ignore: cast_nullable_to_non_nullable
               as bool,
       isNSFW: isNSFW == freezed
           ? _value.isNSFW
           : isNSFW // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isProcessing: isProcessing == freezed
+          ? _value.isProcessing
+          : isProcessing // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isPublished: isPublished == freezed
+          ? _value.isPublished
+          : isPublished // ignore: cast_nullable_to_non_nullable
               as bool,
       language: language == freezed
           ? _value.language
@@ -2422,8 +3196,10 @@ abstract class _$TypewriterSeriesStateCopyWith<$Res>
       {String coverURL,
       Option<Result<None<Object>, CoreFailure>> failureOption,
       List<Genre> genres,
-      bool isProcessing,
+      bool isEdit,
       bool isNSFW,
+      bool isProcessing,
+      bool isPublished,
       Language language,
       bool showErrorMessages,
       Subtitle subtitle,
@@ -2457,8 +3233,10 @@ class __$TypewriterSeriesStateCopyWithImpl<$Res>
     Object? coverURL = freezed,
     Object? failureOption = freezed,
     Object? genres = freezed,
-    Object? isProcessing = freezed,
+    Object? isEdit = freezed,
     Object? isNSFW = freezed,
+    Object? isProcessing = freezed,
+    Object? isPublished = freezed,
     Object? language = freezed,
     Object? showErrorMessages = freezed,
     Object? subtitle = freezed,
@@ -2485,13 +3263,21 @@ class __$TypewriterSeriesStateCopyWithImpl<$Res>
           ? _value.genres
           : genres // ignore: cast_nullable_to_non_nullable
               as List<Genre>,
-      isProcessing: isProcessing == freezed
-          ? _value.isProcessing
-          : isProcessing // ignore: cast_nullable_to_non_nullable
+      isEdit: isEdit == freezed
+          ? _value.isEdit
+          : isEdit // ignore: cast_nullable_to_non_nullable
               as bool,
       isNSFW: isNSFW == freezed
           ? _value.isNSFW
           : isNSFW // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isProcessing: isProcessing == freezed
+          ? _value.isProcessing
+          : isProcessing // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isPublished: isPublished == freezed
+          ? _value.isPublished
+          : isPublished // ignore: cast_nullable_to_non_nullable
               as bool,
       language: language == freezed
           ? _value.language
@@ -2552,8 +3338,10 @@ class _$_TypewriterSeriesState implements _TypewriterSeriesState {
       {required this.coverURL,
       required this.failureOption,
       required this.genres,
-      required this.isProcessing,
+      required this.isEdit,
       required this.isNSFW,
+      required this.isProcessing,
+      required this.isPublished,
       required this.language,
       required this.showErrorMessages,
       required this.subtitle,
@@ -2574,9 +3362,13 @@ class _$_TypewriterSeriesState implements _TypewriterSeriesState {
   @override
   final List<Genre> genres;
   @override
-  final bool isProcessing;
+  final bool isEdit;
   @override
   final bool isNSFW;
+  @override
+  final bool isProcessing;
+  @override
+  final bool isPublished;
   @override
   final Language language;
   @override
@@ -2604,7 +3396,7 @@ class _$_TypewriterSeriesState implements _TypewriterSeriesState {
 
   @override
   String toString() {
-    return 'TypewriterSeriesState(coverURL: $coverURL, failureOption: $failureOption, genres: $genres, isProcessing: $isProcessing, isNSFW: $isNSFW, language: $language, showErrorMessages: $showErrorMessages, subtitle: $subtitle, subtitleController: $subtitleController, subtitleWordCount: $subtitleWordCount, summary: $summary, summaryController: $summaryController, summaryWordCount: $summaryWordCount, title: $title, titleController: $titleController, titleWordCount: $titleWordCount, user: $user)';
+    return 'TypewriterSeriesState(coverURL: $coverURL, failureOption: $failureOption, genres: $genres, isEdit: $isEdit, isNSFW: $isNSFW, isProcessing: $isProcessing, isPublished: $isPublished, language: $language, showErrorMessages: $showErrorMessages, subtitle: $subtitle, subtitleController: $subtitleController, subtitleWordCount: $subtitleWordCount, summary: $summary, summaryController: $summaryController, summaryWordCount: $summaryWordCount, title: $title, titleController: $titleController, titleWordCount: $titleWordCount, user: $user)';
   }
 
   @override
@@ -2619,11 +3411,16 @@ class _$_TypewriterSeriesState implements _TypewriterSeriesState {
                     .equals(other.failureOption, failureOption)) &&
             (identical(other.genres, genres) ||
                 const DeepCollectionEquality().equals(other.genres, genres)) &&
+            (identical(other.isEdit, isEdit) ||
+                const DeepCollectionEquality().equals(other.isEdit, isEdit)) &&
+            (identical(other.isNSFW, isNSFW) ||
+                const DeepCollectionEquality().equals(other.isNSFW, isNSFW)) &&
             (identical(other.isProcessing, isProcessing) ||
                 const DeepCollectionEquality()
                     .equals(other.isProcessing, isProcessing)) &&
-            (identical(other.isNSFW, isNSFW) ||
-                const DeepCollectionEquality().equals(other.isNSFW, isNSFW)) &&
+            (identical(other.isPublished, isPublished) ||
+                const DeepCollectionEquality()
+                    .equals(other.isPublished, isPublished)) &&
             (identical(other.language, language) ||
                 const DeepCollectionEquality()
                     .equals(other.language, language)) &&
@@ -2666,8 +3463,10 @@ class _$_TypewriterSeriesState implements _TypewriterSeriesState {
       const DeepCollectionEquality().hash(coverURL) ^
       const DeepCollectionEquality().hash(failureOption) ^
       const DeepCollectionEquality().hash(genres) ^
-      const DeepCollectionEquality().hash(isProcessing) ^
+      const DeepCollectionEquality().hash(isEdit) ^
       const DeepCollectionEquality().hash(isNSFW) ^
+      const DeepCollectionEquality().hash(isProcessing) ^
+      const DeepCollectionEquality().hash(isPublished) ^
       const DeepCollectionEquality().hash(language) ^
       const DeepCollectionEquality().hash(showErrorMessages) ^
       const DeepCollectionEquality().hash(subtitle) ^
@@ -2693,8 +3492,10 @@ abstract class _TypewriterSeriesState implements TypewriterSeriesState {
       {required String coverURL,
       required Option<Result<None<Object>, CoreFailure>> failureOption,
       required List<Genre> genres,
-      required bool isProcessing,
+      required bool isEdit,
       required bool isNSFW,
+      required bool isProcessing,
+      required bool isPublished,
       required Language language,
       required bool showErrorMessages,
       required Subtitle subtitle,
@@ -2716,9 +3517,13 @@ abstract class _TypewriterSeriesState implements TypewriterSeriesState {
   @override
   List<Genre> get genres => throw _privateConstructorUsedError;
   @override
-  bool get isProcessing => throw _privateConstructorUsedError;
+  bool get isEdit => throw _privateConstructorUsedError;
   @override
   bool get isNSFW => throw _privateConstructorUsedError;
+  @override
+  bool get isProcessing => throw _privateConstructorUsedError;
+  @override
+  bool get isPublished => throw _privateConstructorUsedError;
   @override
   Language get language => throw _privateConstructorUsedError;
   @override
