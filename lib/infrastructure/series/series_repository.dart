@@ -7,7 +7,6 @@ import 'package:oxidized/oxidized.dart';
 import 'package:path/path.dart' as p;
 import 'package:string_validator/string_validator.dart';
 import 'package:wine/domain/core/cover_url.dart';
-import 'package:wine/domain/core/unique_id.dart';
 import 'package:wine/domain/series/i_series_repository.dart';
 import 'package:wine/domain/series/series.dart';
 import 'package:wine/domain/series/series_failure.dart';
@@ -29,7 +28,7 @@ class SeriesRepository implements ISeriesRepository {
   final FirebaseStorage _firebaseStorage;
 
   @override
-  Future<Result<Unit, SeriesFailure>> publishSeries(Series series) async {
+  Future<Result<Unit, SeriesFailure>> createSeries(Series series) async {
     var tmpSeries = series;
 
     try {
@@ -56,14 +55,25 @@ class SeriesRepository implements ISeriesRepository {
   }
 
   @override
-  Future<Result<Unit, SeriesFailure>> unpublishSeries(UniqueID uid) async {
+  Future<Result<Unit, SeriesFailure>> updateSeries(Series series) async {
+    var tmpSeries = series;
+
     try {
-      final uidStr = uid.getOrCrash();
+      final coverURL = tmpSeries.coverURL.getOrCrash();
+
+      if (!isURL(coverURL)) {
+        (await uploadCover(File(coverURL))).match(
+          (success) {
+            tmpSeries = tmpSeries.copyWith(coverURL: CoverURL(success));
+          },
+          (_) {},
+        );
+      }
 
       await _firestore
           .collection(seriesPath)
-          .doc(uidStr)
-          .update({'published': false});
+          .doc(tmpSeries.uid.getOrCrash())
+          .update(SeriesDTO.fromDomain(tmpSeries).toJson());
 
       return Ok(unit);
     } catch (_) {
