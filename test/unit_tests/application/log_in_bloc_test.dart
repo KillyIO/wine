@@ -7,13 +7,10 @@ import 'package:wine/domain/auth/auth_failure.dart';
 import 'package:wine/domain/auth/email_address.dart';
 import 'package:wine/domain/auth/i_auth_facade.dart';
 import 'package:wine/domain/auth/password.dart';
-import 'package:wine/domain/auth/username.dart';
 import 'package:wine/domain/core/core_failure.dart';
-import 'package:wine/domain/core/unique_id.dart';
 import 'package:wine/domain/sessions/i_sessions_repository.dart';
 import 'package:wine/domain/sessions/sessions_failure.dart';
 import 'package:wine/domain/user/i_user_repository.dart';
-import 'package:wine/domain/user/user.dart';
 import 'package:wine/domain/user/user_failure.dart';
 
 import '../../mocks/auth_facade_mocks.dart';
@@ -40,11 +37,11 @@ void main() {
       _userRepository,
     );
 
-    registerFallbackValue<EmailAddress>(MockEmailAddress());
-    registerFallbackValue<Password>(MockPassword());
-    registerFallbackValue<UniqueID>(MockUniqueID());
-    registerFallbackValue<User>(MockUser());
-    registerFallbackValue<Username>(MockUsername());
+    registerFallbackValue(MockEmailAddress());
+    registerFallbackValue(MockPassword());
+    registerFallbackValue(MockUniqueID());
+    registerFallbackValue(MockUser());
+    registerFallbackValue(MockUsername());
   });
 
   tearDown(() {

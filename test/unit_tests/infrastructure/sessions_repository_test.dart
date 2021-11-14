@@ -26,7 +26,7 @@ void main() {
 
     _sessionsRepository = SessionsRepository(_firebaseAuth, _hive);
 
-    registerFallbackValue<HiveUser>(MockHiveUser());
+    registerFallbackValue(MockHiveUser());
 
     when(() => _hive.openBox<dynamic>(any())).thenAnswer((_) async => _box);
 

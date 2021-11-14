@@ -12,6 +12,13 @@ class Summary extends ValueObject<String> {
     );
   }
 
+  /// @nodoc
+  factory Summary.forSaving(Result<String, ValueFailure<String>> input) {
+    return Summary._(
+      Ok(input.unwrapOr('')),
+    );
+  }
+
   const Summary._(this.value);
 
   @override

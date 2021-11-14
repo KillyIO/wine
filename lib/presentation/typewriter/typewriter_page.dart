@@ -14,7 +14,7 @@ class TypewriterPage extends StatelessWidget {
   /// @nodoc
   const TypewriterPage({
     Key? key,
-    @PathParam('id') this.id,
+    @pathParam this.id,
     this.type = TypewriterType.unknown,
   }) : super(key: key);
 

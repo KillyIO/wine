@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:wine/application/typewriter/typewriter_series/typewriter_series_bloc.dart';
+import 'package:wine/domain/core/typewriter_end_state.dart';
 import 'package:wine/presentation/core/buttons/default_button.dart';
 import 'package:wine/presentation/core/labels/text_field_label.dart';
+import 'package:wine/presentation/routes/router.dart';
 import 'package:wine/presentation/typewriter/widgets/series/typewriter_series_selection_list_tile.dart';
 import 'package:wine/presentation/typewriter/widgets/typewriter_cover.dart';
 import 'package:wine/presentation/typewriter/widgets/typewriter_genres.dart';
@@ -14,6 +16,8 @@ import 'package:wine/utils/constants/genres.dart';
 import 'package:wine/utils/constants/languages.dart';
 import 'package:wine/utils/constants/palette.dart';
 import 'package:wine/utils/constants/series.dart';
+import 'package:wine/utils/functions/dialog_functions.dart';
+import 'package:wine/utils/functions/navigation_functions.dart';
 
 /// @nodoc
 class TypewriterSeriesLayout extends StatelessWidget {
@@ -30,9 +34,56 @@ class TypewriterSeriesLayout extends StatelessWidget {
           constraints: const BoxConstraints(
             maxWidth: maxContentLayoutWidth,
           ),
-          child: BlocBuilder<TypewriterSeriesBloc, TypewriterSeriesState>(
+          child: BlocConsumer<TypewriterSeriesBloc, TypewriterSeriesState>(
             buildWhen: (previous, current) =>
                 current.isProcessing != previous.isProcessing,
+            listener: (context, state) {
+              state.failureOption.when(
+                some: (value) => value.when(
+                  ok: (_) {},
+                  err: (err) => err.maybeMap(
+                    defaultCovers: (f) => f.f.maybeMap(
+                      defaultCoverURLsNotFetched: (_) async => baseErrorDialog(
+                        context,
+                        <String>['Cover not found!'],
+                      ),
+                      orElse: () {},
+                    ),
+                    sessions: (f) => f.f.maybeMap(
+                      sessionNotFound: (_) async => baseErrorDialog(
+                        context,
+                        <String>['Session not found!'],
+                      ),
+                      orElse: () {},
+                    ),
+                    orElse: () {},
+                  ),
+                ),
+                none: () {},
+              );
+
+              switch (state.endState) {
+                case TypewriterEndState.deleted:
+                  // TODO(SSebigo): nav back
+                  break;
+                case TypewriterEndState.published:
+                  // TODO(SSebigo): nav to series info page
+                  break;
+                case TypewriterEndState.saved:
+                  redirectDialog(
+                    context,
+                    <String>[
+                      'Your series has been successfully saved.',
+                      'You will now be redirected.'
+                    ],
+                    () => handleAuthRedirect(
+                      context,
+                      navigateTo: const LibraryRoute(),
+                    ),
+                  );
+                  break;
+              }
+            },
             builder: (context, state) {
               return AbsorbPointer(
                 absorbing: state.isProcessing,
@@ -89,7 +140,7 @@ class TypewriterSeriesLayout extends StatelessWidget {
                           return TypewriterTextField(
                             controller: state.subtitleController,
                             label: 'SUBTITLE (OPTIONAL)',
-                            hintText: 'Less than $subtitleMaxWords words',
+                            hintText: 'Less than  words',
                             onChanged: (value) =>
                                 context.read<TypewriterSeriesBloc>().add(
                                       TypewriterSeriesEvent.subtitleChanged(
@@ -121,7 +172,7 @@ class TypewriterSeriesLayout extends StatelessWidget {
                           return TypewriterTextField(
                             controller: state.summaryController,
                             label: 'SUMMARY*',
-                            hintText: 'Less than $summaryMaxWords words',
+                            hintText: 'Less than  words',
                             onChanged: (value) =>
                                 context.read<TypewriterSeriesBloc>().add(
                                       TypewriterSeriesEvent.summaryChanged(
@@ -213,7 +264,11 @@ class TypewriterSeriesLayout extends StatelessWidget {
                           isProcessing: state.isProcessing,
                           title: 'SAVE',
                           width: mediaQuery.width,
-                          onPressed: () {},
+                          onPressed: () => context
+                              .read<TypewriterSeriesBloc>()
+                              .add(
+                                const TypewriterSeriesEvent.saveButtonPressed(),
+                              ),
                         ),
                       ),
                       Padding(
@@ -222,17 +277,25 @@ class TypewriterSeriesLayout extends StatelessWidget {
                           color: pastelPink,
                           title: 'PUBLISH',
                           width: mediaQuery.width,
-                          onPressed: () {},
+                          onPressed: () =>
+                              context.read<TypewriterSeriesBloc>().add(
+                                    const TypewriterSeriesEvent
+                                        .publishButtonPressed(),
+                                  ),
                         ),
                       ),
-                      if (state.isEdit && !state.isPublished)
+                      if (state.isEdit && !state.series.isPublished)
                         Padding(
                           padding: const EdgeInsets.only(bottom: 20),
                           child: DefaultButton(
                             color: error,
                             title: 'DELETE',
                             width: mediaQuery.width,
-                            onPressed: () {},
+                            onPressed: () =>
+                                context.read<TypewriterSeriesBloc>().add(
+                                      const TypewriterSeriesEvent
+                                          .deleteButtonPressed(),
+                                    ),
                           ),
                         ),
                     ],

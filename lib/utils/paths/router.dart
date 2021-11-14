@@ -14,6 +14,9 @@ const String onboardingPath = '/onboarding';
 const String plusPath = '/plus';
 
 /// @nodoc
+const String seriesPath = '/series/:id';
+
+/// @nodoc
 const String settingsPath = '/settings';
 
 /// @nodoc

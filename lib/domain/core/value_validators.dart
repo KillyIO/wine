@@ -32,9 +32,7 @@ Result<String, ValueFailure<String>> validateCoverFile(String path) {
 
 /// @nodoc
 Result<String, ValueFailure<String>> validateCoverURL(String input) {
-  final isImage = input.isImage;
-
-  if (isImage != null && isImage && isURL(input)) {
+  if (isURL(input)) {
     return Ok(input);
   }
   return Err(ValueFailure.invalidCoverURL(input));

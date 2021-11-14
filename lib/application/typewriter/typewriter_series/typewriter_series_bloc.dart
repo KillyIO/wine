@@ -12,21 +12,20 @@ import 'package:path/path.dart' as p;
 import 'package:path_provider/path_provider.dart';
 import 'package:stringr/stringr.dart';
 
-import 'package:wine/domain/auth/email_address.dart';
-import 'package:wine/domain/auth/username.dart';
 import 'package:wine/domain/core/core_failure.dart';
+import 'package:wine/domain/core/cover_url.dart';
 import 'package:wine/domain/core/genre.dart';
 import 'package:wine/domain/core/language.dart';
 import 'package:wine/domain/core/title.dart';
+import 'package:wine/domain/core/typewriter_end_state.dart';
 import 'package:wine/domain/core/unique_id.dart';
 import 'package:wine/domain/default_covers/i_default_covers_repository.dart';
+import 'package:wine/domain/series/i_series_repository.dart';
 import 'package:wine/domain/series/series.dart';
 import 'package:wine/domain/series/subtitle.dart';
 import 'package:wine/domain/series/summary.dart';
 import 'package:wine/domain/sessions/i_sessions_repository.dart';
-import 'package:wine/domain/user/user.dart';
 import 'package:wine/utils/constants/cover.dart';
-import 'package:wine/utils/constants/users.dart';
 
 part 'typewriter_series_bloc.freezed.dart';
 part 'typewriter_series_event.dart';
@@ -41,6 +40,7 @@ class TypewriterSeriesBloc
   /// @nodoc
   TypewriterSeriesBloc(
     this._defaultCoversRepository,
+    this._seriesRepository,
     this._sessionsRepository,
   ) : super(TypewriterSeriesState.initial()) {
     on<AddCoverPressed>((_, emit) async {
@@ -80,7 +80,25 @@ class TypewriterSeriesBloc
         }
       }
     });
-    on<DeleteButtonPressed>((value, emit) {});
+    on<DeleteButtonPressed>((_, emit) async {
+      (await _seriesRepository.deleteSeries(state.series.uid)).match(
+        (_) {
+          emit(
+            state.copyWith(
+              failureOption: const None(),
+              endState: TypewriterEndState.deleted,
+            ),
+          );
+        },
+        (failure) {
+          emit(
+            state.copyWith(
+              failureOption: Option.some(Err(CoreFailure.series(failure))),
+            ),
+          );
+        },
+      );
+    });
     on<GenreAdded>((value, emit) {
       final genre = Genre(value.genre);
       final genres = List<Genre>.from(state.genres)..add(genre);
@@ -124,8 +142,8 @@ class TypewriterSeriesBloc
         (user) {
           emit(
             state.copyWith(
+              series: state.series.copyWith(authorUID: user.uid),
               failureOption: const None(),
-              user: user,
             ),
           );
 
@@ -142,7 +160,35 @@ class TypewriterSeriesBloc
     });
     on<LaunchWithID>((_, emit) {});
     on<PublishButtonPressed>((value, emit) {});
-    on<SaveButtonPressed>((value, emit) {});
+    on<SaveButtonPressed>((value, emit) async {
+      final series = state.series.copyWith(
+        coverURL: CoverURL(state.coverURL),
+        genres: state.genres,
+        isNSFW: state.isNSFW,
+        language: Language.forSaving(state.language.value),
+        subtitle: state.subtitle,
+        summary: Summary.forSaving(state.summary.value),
+        title: Title.forSaving(state.title.value),
+      );
+
+      (await _seriesRepository.createSeries(series)).match(
+        (_) {
+          emit(
+            state.copyWith(
+              failureOption: const None(),
+              endState: TypewriterEndState.saved,
+            ),
+          );
+        },
+        (failure) {
+          emit(
+            state.copyWith(
+              failureOption: Option.some(Err(CoreFailure.series(failure))),
+            ),
+          );
+        },
+      );
+    });
     on<SessionFetched>((_, emit) async {
       final randomKey =
           placeholdersKeys[Random().nextInt(placeholdersKeys.length)];
@@ -206,5 +252,6 @@ class TypewriterSeriesBloc
   }
 
   final IDefaultCoversRepository _defaultCoversRepository;
+  final ISeriesRepository _seriesRepository;
   final ISessionsRepository _sessionsRepository;
 }

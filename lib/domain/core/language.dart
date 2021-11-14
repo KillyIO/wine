@@ -12,6 +12,13 @@ class Language extends ValueObject<String> {
     );
   }
 
+  /// @nodoc
+  factory Language.forSaving(Result<String, ValueFailure<String>> input) {
+    return Language._(
+      Ok(input.unwrapOr('')),
+    );
+  }
+
   const Language._(this.value);
 
   @override

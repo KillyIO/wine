@@ -11,9 +11,10 @@ class TypewriterSeriesState with _$TypewriterSeriesState {
     required bool isEdit,
     required bool isNSFW,
     required bool isProcessing,
-    required bool isPublished,
     required Language language,
+    required Series series,
     required bool showErrorMessages,
+    required TypewriterEndState endState,
     required Subtitle subtitle,
     required TextEditingController subtitleController,
     required int subtitleWordCount,
@@ -23,7 +24,6 @@ class TypewriterSeriesState with _$TypewriterSeriesState {
     required Title title,
     required TextEditingController titleController,
     required int titleWordCount,
-    required User user,
   }) = _TypewriterSeriesState;
 
   /// @nodoc
@@ -34,9 +34,10 @@ class TypewriterSeriesState with _$TypewriterSeriesState {
         isEdit: false,
         isNSFW: false,
         isProcessing: false,
-        isPublished: false,
         language: Language(''),
+        series: Series.empty(),
         showErrorMessages: false,
+        endState: TypewriterEndState.unknown,
         subtitle: Subtitle(''),
         subtitleController: TextEditingController(),
         subtitleWordCount: 0,
@@ -46,10 +47,5 @@ class TypewriterSeriesState with _$TypewriterSeriesState {
         title: Title(''),
         titleController: TextEditingController(),
         titleWordCount: 0,
-        user: User(
-          emailAddress: EmailAddress(defaultEmailAddress),
-          uid: UniqueID.fromUniqueString(defaultUID),
-          username: Username(defaultUsername),
-        ),
       );
 }

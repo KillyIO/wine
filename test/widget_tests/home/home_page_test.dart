@@ -15,7 +15,6 @@ import 'package:wine/domain/sessions/sessions_failure.dart';
 import 'package:wine/domain/settings/i_settings_repository.dart';
 import 'package:wine/domain/settings/settings_failure.dart';
 import 'package:wine/domain/user/i_user_repository.dart';
-import 'package:wine/domain/user/user.dart';
 import 'package:wine/domain/user/user_failure.dart';
 import 'package:wine/injection.dart';
 import 'package:wine/presentation/home/widgets/home_app_bar.dart';
@@ -36,7 +35,7 @@ void main() {
   late IUserRepository _userRepository;
 
   setUp(() {
-    registerFallbackValue<User>(MockUser());
+    registerFallbackValue(MockUser());
 
     setupInjection();
 

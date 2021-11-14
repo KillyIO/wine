@@ -3,6 +3,7 @@ import 'package:wine/presentation/home/home_page.dart';
 import 'package:wine/presentation/library/library_page.dart';
 import 'package:wine/presentation/log_in/log_in_page.dart';
 import 'package:wine/presentation/plus/plus_page.dart';
+import 'package:wine/presentation/series/series_page.dart';
 import 'package:wine/presentation/settings/settings_account/settings_account_page.dart';
 import 'package:wine/presentation/settings/settings_chapter/settings_chapter_page.dart';
 import 'package:wine/presentation/settings/settings_page.dart';
@@ -33,6 +34,10 @@ export 'router.gr.dart';
     AutoRoute<PlusPage>(
       page: PlusPage,
       path: plusPath,
+    ),
+    AutoRoute<SeriesPage>(
+      page: SeriesPage,
+      path: seriesPath,
     ),
     AutoRoute<SettingsWrapper>(
       page: SettingsWrapper,

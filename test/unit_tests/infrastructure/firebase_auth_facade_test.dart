@@ -30,7 +30,7 @@ void main() {
 
     _authFacade = FirebaseAuthFacade(_firebaseAuth, _googleSignIn);
 
-    registerFallbackValue<auth.AuthCredential>(MockAuthCredential());
+    registerFallbackValue(MockAuthCredential());
   });
 
   group('FirebaseAuthFacade -', () {

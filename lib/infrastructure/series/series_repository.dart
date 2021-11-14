@@ -7,6 +7,7 @@ import 'package:oxidized/oxidized.dart';
 import 'package:path/path.dart' as p;
 import 'package:string_validator/string_validator.dart';
 import 'package:wine/domain/core/cover_url.dart';
+import 'package:wine/domain/core/unique_id.dart';
 import 'package:wine/domain/series/i_series_repository.dart';
 import 'package:wine/domain/series/series.dart';
 import 'package:wine/domain/series/series_failure.dart';
@@ -47,6 +48,17 @@ class SeriesRepository implements ISeriesRepository {
           .collection(seriesPath)
           .doc(tmpSeries.uid.getOrCrash())
           .set(SeriesDTO.fromDomain(tmpSeries).toJson());
+
+      return Ok(unit);
+    } catch (_) {
+      return Err(const SeriesFailure.unexpected());
+    }
+  }
+
+  @override
+  Future<Result<Unit, SeriesFailure>> deleteSeries(UniqueID uid) async {
+    try {
+      await _firestore.collection(seriesPath).doc(uid.getOrCrash()).delete();
 
       return Ok(unit);
     } catch (_) {

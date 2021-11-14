@@ -12,6 +12,13 @@ class Title extends ValueObject<String> {
     );
   }
 
+  /// @nodoc
+  factory Title.forSaving(Result<String, ValueFailure<String>> input) {
+    return Title._(
+      Ok(input.unwrapOr('')),
+    );
+  }
+
   const Title._(this.value);
 
   @override

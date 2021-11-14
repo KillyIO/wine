@@ -20,10 +20,6 @@ class LibraryState with _$LibraryState {
         failureOption: const None(),
         isProcessing: false,
         seriesList: <Series>[],
-        session: User(
-          emailAddress: EmailAddress(''),
-          uid: UniqueID(),
-          username: Username(''),
-        ),
+        session: User.empty(),
       );
 }

@@ -111,7 +111,7 @@ Future<_i1.GetIt> $initGetIt(_i1.GetIt get,
       registerFor: {_dev, _prod});
   gh.factory<_i27.TypewriterSeriesBloc>(
       () => _i27.TypewriterSeriesBloc(get<_i12.IDefaultCoversRepository>(),
-          get<_i16.ISessionsRepository>()),
+          get<_i14.ISeriesRepository>(), get<_i16.ISessionsRepository>()),
       registerFor: {_dev, _prod});
   gh.factory<_i28.AuthBloc>(() => _i28.AuthBloc(get<_i10.IAuthFacade>()),
       registerFor: {_dev, _prod});
