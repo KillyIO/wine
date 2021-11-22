@@ -67,6 +67,51 @@ class SeriesRepository implements ISeriesRepository {
   }
 
   @override
+  Future<Result<List<Series>, SeriesFailure>> loadSeriesbyUserID(
+    UniqueID uid, {
+    UniqueID? lastSeriesID,
+  }) async {
+    try {
+      final seriesCollection = _firestore.collection(seriesPath);
+
+      Query? query;
+      if (lastSeriesID != null) {
+        final lastDocument =
+            await seriesCollection.doc(lastSeriesID.getOrCrash()).get();
+
+        query = seriesCollection
+            .startAfterDocument(lastDocument)
+            .where('authorUID', isEqualTo: uid.getOrCrash());
+      } else {
+        query =
+            seriesCollection.where('authorUID', isEqualTo: uid.getOrCrash());
+      }
+
+      final querySnapshot = await query
+          .orderBy('createdAt', descending: true)
+          .limit(20)
+          .withConverter<Series>(
+            fromFirestore: (snapshot, _) {
+              if (snapshot.exists) {
+                return SeriesDTO.fromJson(snapshot.data()!).toDomain();
+              }
+              return Series.empty();
+            },
+            toFirestore: (value, _) => SeriesDTO.fromDomain(value).toJson(),
+          )
+          .get();
+
+      final series = <Series>[];
+      for (final doc in querySnapshot.docs) {
+        series.add(doc.data());
+      }
+      return Ok(series);
+    } catch (_) {
+      return Err(const SeriesFailure.unexpected());
+    }
+  }
+
+  @override
   Future<Result<Unit, SeriesFailure>> updateSeries(Series series) async {
     var tmpSeries = series;
 

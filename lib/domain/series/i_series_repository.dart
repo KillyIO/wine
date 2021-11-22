@@ -14,6 +14,12 @@ abstract class ISeriesRepository {
   Future<Result<Unit, SeriesFailure>> deleteSeries(UniqueID uid);
 
   /// @nodoc
+  Future<Result<List<Series>, SeriesFailure>> loadSeriesbyUserID(
+    UniqueID uid, {
+    UniqueID? lastSeriesID,
+  });
+
+  /// @nodoc
   Future<Result<Unit, SeriesFailure>> updateSeries(Series series);
 
   /// @nodoc

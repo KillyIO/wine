@@ -21,9 +21,19 @@ class _$LibraryEventTearOff {
     return const InitBloc();
   }
 
-  SessionFetched sessionFetched(UniqueID uid) {
-    return SessionFetched(
-      uid,
+  PageViewIndexChanged pageViewIndexChanged(int index) {
+    return PageViewIndexChanged(
+      index,
+    );
+  }
+
+  SessionFetched sessionFetched() {
+    return const SessionFetched();
+  }
+
+  VerticalNavbarIndexChanged verticalNavbarIndexChanged(int index) {
+    return VerticalNavbarIndexChanged(
+      index,
     );
   }
 }
@@ -36,38 +46,53 @@ mixin _$LibraryEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initBloc,
-    required TResult Function(UniqueID uid) sessionFetched,
+    required TResult Function(int index) pageViewIndexChanged,
+    required TResult Function() sessionFetched,
+    required TResult Function(int index) verticalNavbarIndexChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initBloc,
-    TResult Function(UniqueID uid)? sessionFetched,
+    TResult Function(int index)? pageViewIndexChanged,
+    TResult Function()? sessionFetched,
+    TResult Function(int index)? verticalNavbarIndexChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initBloc,
-    TResult Function(UniqueID uid)? sessionFetched,
+    TResult Function(int index)? pageViewIndexChanged,
+    TResult Function()? sessionFetched,
+    TResult Function(int index)? verticalNavbarIndexChanged,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(InitBloc value) initBloc,
+    required TResult Function(PageViewIndexChanged value) pageViewIndexChanged,
     required TResult Function(SessionFetched value) sessionFetched,
+    required TResult Function(VerticalNavbarIndexChanged value)
+        verticalNavbarIndexChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(InitBloc value)? initBloc,
+    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
     TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(VerticalNavbarIndexChanged value)?
+        verticalNavbarIndexChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(InitBloc value)? initBloc,
+    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
     TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(VerticalNavbarIndexChanged value)?
+        verticalNavbarIndexChanged,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -127,7 +152,9 @@ class _$InitBloc implements InitBloc {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initBloc,
-    required TResult Function(UniqueID uid) sessionFetched,
+    required TResult Function(int index) pageViewIndexChanged,
+    required TResult Function() sessionFetched,
+    required TResult Function(int index) verticalNavbarIndexChanged,
   }) {
     return initBloc();
   }
@@ -136,7 +163,9 @@ class _$InitBloc implements InitBloc {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initBloc,
-    TResult Function(UniqueID uid)? sessionFetched,
+    TResult Function(int index)? pageViewIndexChanged,
+    TResult Function()? sessionFetched,
+    TResult Function(int index)? verticalNavbarIndexChanged,
   }) {
     return initBloc?.call();
   }
@@ -145,7 +174,9 @@ class _$InitBloc implements InitBloc {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initBloc,
-    TResult Function(UniqueID uid)? sessionFetched,
+    TResult Function(int index)? pageViewIndexChanged,
+    TResult Function()? sessionFetched,
+    TResult Function(int index)? verticalNavbarIndexChanged,
     required TResult orElse(),
   }) {
     if (initBloc != null) {
@@ -158,7 +189,10 @@ class _$InitBloc implements InitBloc {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(InitBloc value) initBloc,
+    required TResult Function(PageViewIndexChanged value) pageViewIndexChanged,
     required TResult Function(SessionFetched value) sessionFetched,
+    required TResult Function(VerticalNavbarIndexChanged value)
+        verticalNavbarIndexChanged,
   }) {
     return initBloc(this);
   }
@@ -167,7 +201,10 @@ class _$InitBloc implements InitBloc {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(InitBloc value)? initBloc,
+    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
     TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(VerticalNavbarIndexChanged value)?
+        verticalNavbarIndexChanged,
   }) {
     return initBloc?.call(this);
   }
@@ -176,7 +213,10 @@ class _$InitBloc implements InitBloc {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(InitBloc value)? initBloc,
+    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
     TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(VerticalNavbarIndexChanged value)?
+        verticalNavbarIndexChanged,
     required TResult orElse(),
   }) {
     if (initBloc != null) {
@@ -191,11 +231,160 @@ abstract class InitBloc implements LibraryEvent {
 }
 
 /// @nodoc
+abstract class $PageViewIndexChangedCopyWith<$Res> {
+  factory $PageViewIndexChangedCopyWith(PageViewIndexChanged value,
+          $Res Function(PageViewIndexChanged) then) =
+      _$PageViewIndexChangedCopyWithImpl<$Res>;
+  $Res call({int index});
+}
+
+/// @nodoc
+class _$PageViewIndexChangedCopyWithImpl<$Res>
+    extends _$LibraryEventCopyWithImpl<$Res>
+    implements $PageViewIndexChangedCopyWith<$Res> {
+  _$PageViewIndexChangedCopyWithImpl(
+      PageViewIndexChanged _value, $Res Function(PageViewIndexChanged) _then)
+      : super(_value, (v) => _then(v as PageViewIndexChanged));
+
+  @override
+  PageViewIndexChanged get _value => super._value as PageViewIndexChanged;
+
+  @override
+  $Res call({
+    Object? index = freezed,
+  }) {
+    return _then(PageViewIndexChanged(
+      index == freezed
+          ? _value.index
+          : index // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$PageViewIndexChanged implements PageViewIndexChanged {
+  const _$PageViewIndexChanged(this.index);
+
+  @override
+  final int index;
+
+  @override
+  String toString() {
+    return 'LibraryEvent.pageViewIndexChanged(index: $index)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is PageViewIndexChanged &&
+            (identical(other.index, index) ||
+                const DeepCollectionEquality().equals(other.index, index)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(index);
+
+  @JsonKey(ignore: true)
+  @override
+  $PageViewIndexChangedCopyWith<PageViewIndexChanged> get copyWith =>
+      _$PageViewIndexChangedCopyWithImpl<PageViewIndexChanged>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initBloc,
+    required TResult Function(int index) pageViewIndexChanged,
+    required TResult Function() sessionFetched,
+    required TResult Function(int index) verticalNavbarIndexChanged,
+  }) {
+    return pageViewIndexChanged(index);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initBloc,
+    TResult Function(int index)? pageViewIndexChanged,
+    TResult Function()? sessionFetched,
+    TResult Function(int index)? verticalNavbarIndexChanged,
+  }) {
+    return pageViewIndexChanged?.call(index);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initBloc,
+    TResult Function(int index)? pageViewIndexChanged,
+    TResult Function()? sessionFetched,
+    TResult Function(int index)? verticalNavbarIndexChanged,
+    required TResult orElse(),
+  }) {
+    if (pageViewIndexChanged != null) {
+      return pageViewIndexChanged(index);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(InitBloc value) initBloc,
+    required TResult Function(PageViewIndexChanged value) pageViewIndexChanged,
+    required TResult Function(SessionFetched value) sessionFetched,
+    required TResult Function(VerticalNavbarIndexChanged value)
+        verticalNavbarIndexChanged,
+  }) {
+    return pageViewIndexChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InitBloc value)? initBloc,
+    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
+    TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(VerticalNavbarIndexChanged value)?
+        verticalNavbarIndexChanged,
+  }) {
+    return pageViewIndexChanged?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InitBloc value)? initBloc,
+    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
+    TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(VerticalNavbarIndexChanged value)?
+        verticalNavbarIndexChanged,
+    required TResult orElse(),
+  }) {
+    if (pageViewIndexChanged != null) {
+      return pageViewIndexChanged(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class PageViewIndexChanged implements LibraryEvent {
+  const factory PageViewIndexChanged(int index) = _$PageViewIndexChanged;
+
+  int get index => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $PageViewIndexChangedCopyWith<PageViewIndexChanged> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 abstract class $SessionFetchedCopyWith<$Res> {
   factory $SessionFetchedCopyWith(
           SessionFetched value, $Res Function(SessionFetched) then) =
       _$SessionFetchedCopyWithImpl<$Res>;
-  $Res call({UniqueID uid});
 }
 
 /// @nodoc
@@ -208,77 +397,59 @@ class _$SessionFetchedCopyWithImpl<$Res>
 
   @override
   SessionFetched get _value => super._value as SessionFetched;
-
-  @override
-  $Res call({
-    Object? uid = freezed,
-  }) {
-    return _then(SessionFetched(
-      uid == freezed
-          ? _value.uid
-          : uid // ignore: cast_nullable_to_non_nullable
-              as UniqueID,
-    ));
-  }
 }
 
 /// @nodoc
 
 class _$SessionFetched implements SessionFetched {
-  const _$SessionFetched(this.uid);
-
-  @override
-  final UniqueID uid;
+  const _$SessionFetched();
 
   @override
   String toString() {
-    return 'LibraryEvent.sessionFetched(uid: $uid)';
+    return 'LibraryEvent.sessionFetched()';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other is SessionFetched &&
-            (identical(other.uid, uid) ||
-                const DeepCollectionEquality().equals(other.uid, uid)));
+    return identical(this, other) || (other is SessionFetched);
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(uid);
-
-  @JsonKey(ignore: true)
-  @override
-  $SessionFetchedCopyWith<SessionFetched> get copyWith =>
-      _$SessionFetchedCopyWithImpl<SessionFetched>(this, _$identity);
+  int get hashCode => runtimeType.hashCode;
 
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initBloc,
-    required TResult Function(UniqueID uid) sessionFetched,
+    required TResult Function(int index) pageViewIndexChanged,
+    required TResult Function() sessionFetched,
+    required TResult Function(int index) verticalNavbarIndexChanged,
   }) {
-    return sessionFetched(uid);
+    return sessionFetched();
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? initBloc,
-    TResult Function(UniqueID uid)? sessionFetched,
+    TResult Function(int index)? pageViewIndexChanged,
+    TResult Function()? sessionFetched,
+    TResult Function(int index)? verticalNavbarIndexChanged,
   }) {
-    return sessionFetched?.call(uid);
+    return sessionFetched?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initBloc,
-    TResult Function(UniqueID uid)? sessionFetched,
+    TResult Function(int index)? pageViewIndexChanged,
+    TResult Function()? sessionFetched,
+    TResult Function(int index)? verticalNavbarIndexChanged,
     required TResult orElse(),
   }) {
     if (sessionFetched != null) {
-      return sessionFetched(uid);
+      return sessionFetched();
     }
     return orElse();
   }
@@ -287,7 +458,10 @@ class _$SessionFetched implements SessionFetched {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(InitBloc value) initBloc,
+    required TResult Function(PageViewIndexChanged value) pageViewIndexChanged,
     required TResult Function(SessionFetched value) sessionFetched,
+    required TResult Function(VerticalNavbarIndexChanged value)
+        verticalNavbarIndexChanged,
   }) {
     return sessionFetched(this);
   }
@@ -296,7 +470,10 @@ class _$SessionFetched implements SessionFetched {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(InitBloc value)? initBloc,
+    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
     TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(VerticalNavbarIndexChanged value)?
+        verticalNavbarIndexChanged,
   }) {
     return sessionFetched?.call(this);
   }
@@ -305,7 +482,10 @@ class _$SessionFetched implements SessionFetched {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(InitBloc value)? initBloc,
+    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
     TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(VerticalNavbarIndexChanged value)?
+        verticalNavbarIndexChanged,
     required TResult orElse(),
   }) {
     if (sessionFetched != null) {
@@ -316,12 +496,160 @@ class _$SessionFetched implements SessionFetched {
 }
 
 abstract class SessionFetched implements LibraryEvent {
-  const factory SessionFetched(UniqueID uid) = _$SessionFetched;
+  const factory SessionFetched() = _$SessionFetched;
+}
 
-  UniqueID get uid => throw _privateConstructorUsedError;
+/// @nodoc
+abstract class $VerticalNavbarIndexChangedCopyWith<$Res> {
+  factory $VerticalNavbarIndexChangedCopyWith(VerticalNavbarIndexChanged value,
+          $Res Function(VerticalNavbarIndexChanged) then) =
+      _$VerticalNavbarIndexChangedCopyWithImpl<$Res>;
+  $Res call({int index});
+}
+
+/// @nodoc
+class _$VerticalNavbarIndexChangedCopyWithImpl<$Res>
+    extends _$LibraryEventCopyWithImpl<$Res>
+    implements $VerticalNavbarIndexChangedCopyWith<$Res> {
+  _$VerticalNavbarIndexChangedCopyWithImpl(VerticalNavbarIndexChanged _value,
+      $Res Function(VerticalNavbarIndexChanged) _then)
+      : super(_value, (v) => _then(v as VerticalNavbarIndexChanged));
+
+  @override
+  VerticalNavbarIndexChanged get _value =>
+      super._value as VerticalNavbarIndexChanged;
+
+  @override
+  $Res call({
+    Object? index = freezed,
+  }) {
+    return _then(VerticalNavbarIndexChanged(
+      index == freezed
+          ? _value.index
+          : index // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$VerticalNavbarIndexChanged implements VerticalNavbarIndexChanged {
+  const _$VerticalNavbarIndexChanged(this.index);
+
+  @override
+  final int index;
+
+  @override
+  String toString() {
+    return 'LibraryEvent.verticalNavbarIndexChanged(index: $index)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other is VerticalNavbarIndexChanged &&
+            (identical(other.index, index) ||
+                const DeepCollectionEquality().equals(other.index, index)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(index);
+
   @JsonKey(ignore: true)
-  $SessionFetchedCopyWith<SessionFetched> get copyWith =>
-      throw _privateConstructorUsedError;
+  @override
+  $VerticalNavbarIndexChangedCopyWith<VerticalNavbarIndexChanged>
+      get copyWith =>
+          _$VerticalNavbarIndexChangedCopyWithImpl<VerticalNavbarIndexChanged>(
+              this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initBloc,
+    required TResult Function(int index) pageViewIndexChanged,
+    required TResult Function() sessionFetched,
+    required TResult Function(int index) verticalNavbarIndexChanged,
+  }) {
+    return verticalNavbarIndexChanged(index);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initBloc,
+    TResult Function(int index)? pageViewIndexChanged,
+    TResult Function()? sessionFetched,
+    TResult Function(int index)? verticalNavbarIndexChanged,
+  }) {
+    return verticalNavbarIndexChanged?.call(index);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initBloc,
+    TResult Function(int index)? pageViewIndexChanged,
+    TResult Function()? sessionFetched,
+    TResult Function(int index)? verticalNavbarIndexChanged,
+    required TResult orElse(),
+  }) {
+    if (verticalNavbarIndexChanged != null) {
+      return verticalNavbarIndexChanged(index);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(InitBloc value) initBloc,
+    required TResult Function(PageViewIndexChanged value) pageViewIndexChanged,
+    required TResult Function(SessionFetched value) sessionFetched,
+    required TResult Function(VerticalNavbarIndexChanged value)
+        verticalNavbarIndexChanged,
+  }) {
+    return verticalNavbarIndexChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InitBloc value)? initBloc,
+    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
+    TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(VerticalNavbarIndexChanged value)?
+        verticalNavbarIndexChanged,
+  }) {
+    return verticalNavbarIndexChanged?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(InitBloc value)? initBloc,
+    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
+    TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(VerticalNavbarIndexChanged value)?
+        verticalNavbarIndexChanged,
+    required TResult orElse(),
+  }) {
+    if (verticalNavbarIndexChanged != null) {
+      return verticalNavbarIndexChanged(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class VerticalNavbarIndexChanged implements LibraryEvent {
+  const factory VerticalNavbarIndexChanged(int index) =
+      _$VerticalNavbarIndexChanged;
+
+  int get index => throw _privateConstructorUsedError;
+  @JsonKey(ignore: true)
+  $VerticalNavbarIndexChangedCopyWith<VerticalNavbarIndexChanged>
+      get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -330,12 +658,16 @@ class _$LibraryStateTearOff {
 
   _LibraryState call(
       {required List<Series> bookmarkedSeriesList,
+      required int currentPageViewIdx,
+      required int currentVerticalNavbarIdx,
       required Option<Result<None<Object>, CoreFailure>> failureOption,
       required bool isProcessing,
       required List<Series> seriesList,
       required User session}) {
     return _LibraryState(
       bookmarkedSeriesList: bookmarkedSeriesList,
+      currentPageViewIdx: currentPageViewIdx,
+      currentVerticalNavbarIdx: currentVerticalNavbarIdx,
       failureOption: failureOption,
       isProcessing: isProcessing,
       seriesList: seriesList,
@@ -350,7 +682,9 @@ const $LibraryState = _$LibraryStateTearOff();
 /// @nodoc
 mixin _$LibraryState {
 // required List<Chapter> bookmarkedSeriesList,
-  List<Series> get bookmarkedSeriesList =>
+  List<Series> get bookmarkedSeriesList => throw _privateConstructorUsedError;
+  int get currentPageViewIdx => throw _privateConstructorUsedError;
+  int get currentVerticalNavbarIdx =>
       throw _privateConstructorUsedError; // required List<Chapter> chapterList,
   Option<Result<None<Object>, CoreFailure>> get failureOption =>
       throw _privateConstructorUsedError;
@@ -370,6 +704,8 @@ abstract class $LibraryStateCopyWith<$Res> {
       _$LibraryStateCopyWithImpl<$Res>;
   $Res call(
       {List<Series> bookmarkedSeriesList,
+      int currentPageViewIdx,
+      int currentVerticalNavbarIdx,
       Option<Result<None<Object>, CoreFailure>> failureOption,
       bool isProcessing,
       List<Series> seriesList,
@@ -389,6 +725,8 @@ class _$LibraryStateCopyWithImpl<$Res> implements $LibraryStateCopyWith<$Res> {
   @override
   $Res call({
     Object? bookmarkedSeriesList = freezed,
+    Object? currentPageViewIdx = freezed,
+    Object? currentVerticalNavbarIdx = freezed,
     Object? failureOption = freezed,
     Object? isProcessing = freezed,
     Object? seriesList = freezed,
@@ -399,6 +737,14 @@ class _$LibraryStateCopyWithImpl<$Res> implements $LibraryStateCopyWith<$Res> {
           ? _value.bookmarkedSeriesList
           : bookmarkedSeriesList // ignore: cast_nullable_to_non_nullable
               as List<Series>,
+      currentPageViewIdx: currentPageViewIdx == freezed
+          ? _value.currentPageViewIdx
+          : currentPageViewIdx // ignore: cast_nullable_to_non_nullable
+              as int,
+      currentVerticalNavbarIdx: currentVerticalNavbarIdx == freezed
+          ? _value.currentVerticalNavbarIdx
+          : currentVerticalNavbarIdx // ignore: cast_nullable_to_non_nullable
+              as int,
       failureOption: failureOption == freezed
           ? _value.failureOption
           : failureOption // ignore: cast_nullable_to_non_nullable
@@ -435,6 +781,8 @@ abstract class _$LibraryStateCopyWith<$Res>
   @override
   $Res call(
       {List<Series> bookmarkedSeriesList,
+      int currentPageViewIdx,
+      int currentVerticalNavbarIdx,
       Option<Result<None<Object>, CoreFailure>> failureOption,
       bool isProcessing,
       List<Series> seriesList,
@@ -457,6 +805,8 @@ class __$LibraryStateCopyWithImpl<$Res> extends _$LibraryStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? bookmarkedSeriesList = freezed,
+    Object? currentPageViewIdx = freezed,
+    Object? currentVerticalNavbarIdx = freezed,
     Object? failureOption = freezed,
     Object? isProcessing = freezed,
     Object? seriesList = freezed,
@@ -467,6 +817,14 @@ class __$LibraryStateCopyWithImpl<$Res> extends _$LibraryStateCopyWithImpl<$Res>
           ? _value.bookmarkedSeriesList
           : bookmarkedSeriesList // ignore: cast_nullable_to_non_nullable
               as List<Series>,
+      currentPageViewIdx: currentPageViewIdx == freezed
+          ? _value.currentPageViewIdx
+          : currentPageViewIdx // ignore: cast_nullable_to_non_nullable
+              as int,
+      currentVerticalNavbarIdx: currentVerticalNavbarIdx == freezed
+          ? _value.currentVerticalNavbarIdx
+          : currentVerticalNavbarIdx // ignore: cast_nullable_to_non_nullable
+              as int,
       failureOption: failureOption == freezed
           ? _value.failureOption
           : failureOption // ignore: cast_nullable_to_non_nullable
@@ -492,6 +850,8 @@ class __$LibraryStateCopyWithImpl<$Res> extends _$LibraryStateCopyWithImpl<$Res>
 class _$_LibraryState implements _LibraryState {
   const _$_LibraryState(
       {required this.bookmarkedSeriesList,
+      required this.currentPageViewIdx,
+      required this.currentVerticalNavbarIdx,
       required this.failureOption,
       required this.isProcessing,
       required this.seriesList,
@@ -499,6 +859,10 @@ class _$_LibraryState implements _LibraryState {
 
   @override // required List<Chapter> bookmarkedSeriesList,
   final List<Series> bookmarkedSeriesList;
+  @override
+  final int currentPageViewIdx;
+  @override
+  final int currentVerticalNavbarIdx;
   @override // required List<Chapter> chapterList,
   final Option<Result<None<Object>, CoreFailure>> failureOption;
   @override
@@ -510,7 +874,7 @@ class _$_LibraryState implements _LibraryState {
 
   @override
   String toString() {
-    return 'LibraryState(bookmarkedSeriesList: $bookmarkedSeriesList, failureOption: $failureOption, isProcessing: $isProcessing, seriesList: $seriesList, session: $session)';
+    return 'LibraryState(bookmarkedSeriesList: $bookmarkedSeriesList, currentPageViewIdx: $currentPageViewIdx, currentVerticalNavbarIdx: $currentVerticalNavbarIdx, failureOption: $failureOption, isProcessing: $isProcessing, seriesList: $seriesList, session: $session)';
   }
 
   @override
@@ -520,6 +884,14 @@ class _$_LibraryState implements _LibraryState {
             (identical(other.bookmarkedSeriesList, bookmarkedSeriesList) ||
                 const DeepCollectionEquality().equals(
                     other.bookmarkedSeriesList, bookmarkedSeriesList)) &&
+            (identical(other.currentPageViewIdx, currentPageViewIdx) ||
+                const DeepCollectionEquality()
+                    .equals(other.currentPageViewIdx, currentPageViewIdx)) &&
+            (identical(
+                    other.currentVerticalNavbarIdx, currentVerticalNavbarIdx) ||
+                const DeepCollectionEquality().equals(
+                    other.currentVerticalNavbarIdx,
+                    currentVerticalNavbarIdx)) &&
             (identical(other.failureOption, failureOption) ||
                 const DeepCollectionEquality()
                     .equals(other.failureOption, failureOption)) &&
@@ -537,6 +909,8 @@ class _$_LibraryState implements _LibraryState {
   int get hashCode =>
       runtimeType.hashCode ^
       const DeepCollectionEquality().hash(bookmarkedSeriesList) ^
+      const DeepCollectionEquality().hash(currentPageViewIdx) ^
+      const DeepCollectionEquality().hash(currentVerticalNavbarIdx) ^
       const DeepCollectionEquality().hash(failureOption) ^
       const DeepCollectionEquality().hash(isProcessing) ^
       const DeepCollectionEquality().hash(seriesList) ^
@@ -551,6 +925,8 @@ class _$_LibraryState implements _LibraryState {
 abstract class _LibraryState implements LibraryState {
   const factory _LibraryState(
       {required List<Series> bookmarkedSeriesList,
+      required int currentPageViewIdx,
+      required int currentVerticalNavbarIdx,
       required Option<Result<None<Object>, CoreFailure>> failureOption,
       required bool isProcessing,
       required List<Series> seriesList,
@@ -558,6 +934,10 @@ abstract class _LibraryState implements LibraryState {
 
   @override // required List<Chapter> bookmarkedSeriesList,
   List<Series> get bookmarkedSeriesList => throw _privateConstructorUsedError;
+  @override
+  int get currentPageViewIdx => throw _privateConstructorUsedError;
+  @override
+  int get currentVerticalNavbarIdx => throw _privateConstructorUsedError;
   @override // required List<Chapter> chapterList,
   Option<Result<None<Object>, CoreFailure>> get failureOption =>
       throw _privateConstructorUsedError;

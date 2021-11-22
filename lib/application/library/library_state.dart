@@ -7,6 +7,8 @@ class LibraryState with _$LibraryState {
   const factory LibraryState({
     // required List<Chapter> bookmarkedSeriesList,
     required List<Series> bookmarkedSeriesList,
+    required int currentPageViewIdx,
+    required int currentVerticalNavbarIdx,
     // required List<Chapter> chapterList,
     required Option<Result<None, CoreFailure>> failureOption,
     required bool isProcessing,
@@ -17,6 +19,8 @@ class LibraryState with _$LibraryState {
   /// @nodoc
   factory LibraryState.initial() => LibraryState(
         bookmarkedSeriesList: <Series>[],
+        currentPageViewIdx: 0,
+        currentVerticalNavbarIdx: 0,
         failureOption: const None(),
         isProcessing: false,
         seriesList: <Series>[],
