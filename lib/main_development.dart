@@ -12,12 +12,13 @@ Future<void> main() async {
 
   WidgetsFlutterBinding.ensureInitialized();
 
-  Bloc.observer = SimpleBlocObserver();
-
   await Future.wait([
     configureInjection(Environment.dev),
     Firebase.initializeApp(),
   ]);
 
-  runApp(AppDevelopment());
+  BlocOverrides.runZoned(
+    () => runApp(AppDevelopment()),
+    blocObserver: SimpleBlocObserver(),
+  );
 }
