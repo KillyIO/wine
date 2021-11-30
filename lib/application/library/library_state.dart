@@ -3,7 +3,7 @@ part of 'library_bloc.dart';
 /// @nodoc
 @freezed
 class LibraryState with _$LibraryState {
-  /// @nodoc
+  /// [seriesList]: Used to display "published" and "drafts" page views.
   const factory LibraryState({
     // required List<Chapter> bookmarkedSeriesList,
     required List<Series> bookmarkedSeriesList,

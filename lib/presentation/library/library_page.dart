@@ -3,7 +3,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:wine/application/library/library_navigation/library_navigation_bloc.dart';
+import 'package:wine/application/library/library_bloc.dart';
 import 'package:wine/injection.dart';
 
 import 'package:wine/presentation/library/library_layout.dart';
@@ -68,7 +68,8 @@ class LibraryPage extends StatelessWidget {
           ),
         ),
         body: BlocProvider(
-          create: (context) => getIt<LibraryNavigationBloc>(),
+          create: (context) =>
+              getIt<LibraryBloc>()..add(const LibraryEvent.initBloc()),
           child: LibraryLayout(),
         ),
       ),

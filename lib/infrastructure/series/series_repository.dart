@@ -88,7 +88,7 @@ class SeriesRepository implements ISeriesRepository {
       }
 
       final querySnapshot = await query
-          .orderBy('createdAt', descending: true)
+          .orderBy('updatedAt', descending: true)
           .limit(20)
           .withConverter<Series>(
             fromFirestore: (snapshot, _) {

@@ -107,6 +107,12 @@ class LibraryBloc extends Bloc<LibraryEvent, LibraryState> {
         if (value.index < 0) {
           newIdx = libraryVerticalNavbarKeys.length - 1;
         }
+        emit(
+          state.copyWith(
+            currentVerticalNavbarIdx: newIdx,
+            failureOption: Option.none(),
+          ),
+        );
       }
     });
   }

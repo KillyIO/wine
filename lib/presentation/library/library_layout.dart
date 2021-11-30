@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:wine/application/library/library_navigation/library_navigation_bloc.dart';
+import 'package:wine/application/library/library_bloc.dart';
 import 'package:wine/presentation/core/page_view/horizontal_page_view_navbar.dart';
 import 'package:wine/presentation/library/widgets/library_page_view_builder.dart';
 import 'package:wine/utils/constants/library.dart';
@@ -18,7 +18,7 @@ class LibraryLayout extends StatelessWidget {
     return SafeArea(
       child: Column(
         children: <Widget>[
-          BlocBuilder<LibraryNavigationBloc, LibraryNavigationState>(
+          BlocBuilder<LibraryBloc, LibraryState>(
             builder: (context, state) {
               return HorizontalPageViewNavbar(
                 colors: const <Color>[pastelYellow, pastelPink],

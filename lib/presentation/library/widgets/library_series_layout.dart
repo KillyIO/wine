@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:wine/application/library/library_bloc.dart';
-import 'package:wine/application/library/library_navigation/library_navigation_bloc.dart';
+import 'package:wine/presentation/library/widgets/library_base_series_layout.dart';
 import 'package:wine/presentation/library/widgets/library_vertical_navbar.dart';
 import 'package:wine/utils/constants/library.dart';
 
@@ -14,21 +14,17 @@ class LibrarySeriesLayout extends StatelessWidget {
   Widget build(BuildContext context) {
     final mediaQuery = MediaQuery.of(context).size;
 
-    return BlocBuilder<LibraryNavigationBloc, LibraryNavigationState>(
-      builder: (context, libraryNavigationState) {
+    return BlocBuilder<LibraryBloc, LibraryState>(
+      builder: (context, state) {
         return Row(
           children: <Widget>[
             LibraryVerticalNavbar(
-              currentIndex: libraryNavigationState.currentVerticalNavbarIdx,
+              currentIndex: state.currentVerticalNavbarIdx,
               items: libraryVerticalNavbarKeys,
-              width: mediaQuery.width * .25,
+              width: mediaQuery.width * .2,
             ),
-            Expanded(
-              child: BlocBuilder<LibraryBloc, LibraryState>(
-                builder: (context, libraryState) {
-                  return const LibrarySeriesLayout();
-                },
-              ),
+            const Expanded(
+              child: LibraryBaseSeriesLayout(),
             ),
           ],
         );
