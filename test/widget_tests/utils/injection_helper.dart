@@ -3,11 +3,11 @@ import 'package:wine/application/auth/auth_bloc.dart';
 import 'package:wine/application/auth/auth_dialog/auth_dialog_cubit.dart';
 import 'package:wine/application/home/home_bloc.dart';
 import 'package:wine/application/library/library_bloc.dart';
-import 'package:wine/application/library/library_navigation/library_navigation_bloc.dart';
 import 'package:wine/application/log_in/log_in_bloc.dart';
 import 'package:wine/application/setup/setup_bloc.dart';
 import 'package:wine/domain/auth/i_auth_facade.dart';
 import 'package:wine/domain/default_covers/i_default_covers_repository.dart';
+import 'package:wine/domain/series/i_series_repository.dart';
 import 'package:wine/domain/sessions/i_sessions_repository.dart';
 import 'package:wine/domain/settings/i_settings_repository.dart';
 import 'package:wine/domain/user/i_user_repository.dart';
@@ -15,6 +15,7 @@ import 'package:wine/injection.dart';
 
 import '../../mocks/auth_facade_mocks.dart';
 import '../../mocks/default_covers_mock.dart';
+import '../../mocks/series_mocks.dart';
 import '../../mocks/sessions_mocks.dart';
 import '../../mocks/settings_mocks.dart';
 import '../../mocks/user_mocks.dart';
@@ -26,11 +27,10 @@ void setupInjection() {
   final IAuthFacade _authFacade = MockAuthFacade();
   final IDefaultCoversRepository _defaultCoversRepository =
       MockDefaultCoversRepository();
+  final ISeriesRepository _seriesRepository = MockSeriesRepository();
   final ISessionsRepository _sessionsRepository = MockSessionsRepository();
   final ISettingsRepository _settingsRepository = MockSettingsRepository();
   final IUserRepository _userRepository = MockUserRepository();
-
-  final _libraryNavigationBloc = LibraryNavigationBloc();
 
   getIt
     ..registerLazySingleton<IAuthFacade>(() => _authFacade)
@@ -45,12 +45,10 @@ void setupInjection() {
     ..registerLazySingleton<HomeBloc>(() => HomeBloc())
     ..registerLazySingleton<LibraryBloc>(
       () => LibraryBloc(
-        _libraryNavigationBloc,
+        _seriesRepository,
         _sessionsRepository,
-        _userRepository,
       ),
     )
-    ..registerLazySingleton<LibraryNavigationBloc>(() => _libraryNavigationBloc)
     ..registerLazySingleton<LogInBloc>(
       () => LogInBloc(
         _authFacade,
