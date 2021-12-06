@@ -140,7 +140,8 @@ class _$SettingsNotDeleted implements SettingsNotDeleted {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is SettingsNotDeleted);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is SettingsNotDeleted);
   }
 
   @override
@@ -257,7 +258,8 @@ class _$SettingsNotFound implements SettingsNotFound {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is SettingsNotFound);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is SettingsNotFound);
   }
 
   @override
@@ -374,7 +376,8 @@ class _$SettingsNotInitialized implements SettingsNotInitialized {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is SettingsNotInitialized);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is SettingsNotInitialized);
   }
 
   @override
@@ -491,7 +494,8 @@ class _$SettingsNotUpdated implements SettingsNotUpdated {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is SettingsNotUpdated);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is SettingsNotUpdated);
   }
 
   @override

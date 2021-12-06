@@ -159,7 +159,9 @@ class _$DefaultCoverURLsNotCached implements DefaultCoverURLsNotCached {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is DefaultCoverURLsNotCached);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is DefaultCoverURLsNotCached);
   }
 
   @override
@@ -291,7 +293,9 @@ class _$DefaultCoverURLsNotFetched implements DefaultCoverURLsNotFetched {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is DefaultCoverURLsNotFetched);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is DefaultCoverURLsNotFetched);
   }
 
   @override
@@ -423,7 +427,9 @@ class _$DefaultCoverURLsNotLoaded implements DefaultCoverURLsNotLoaded {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is DefaultCoverURLsNotLoaded);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is DefaultCoverURLsNotLoaded);
   }
 
   @override
@@ -554,7 +560,8 @@ class _$ServerError implements ServerError {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is ServerError);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is ServerError);
   }
 
   @override
@@ -684,7 +691,8 @@ class _$Unexpected implements Unexpected {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is Unexpected);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is Unexpected);
   }
 
   @override

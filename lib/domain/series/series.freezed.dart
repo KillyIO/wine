@@ -329,60 +329,43 @@ class _$_Series implements _Series {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Series &&
-            (identical(other.authorUID, authorUID) ||
-                const DeepCollectionEquality()
-                    .equals(other.authorUID, authorUID)) &&
-            (identical(other.bookmarksCount, bookmarksCount) ||
-                const DeepCollectionEquality()
-                    .equals(other.bookmarksCount, bookmarksCount)) &&
-            (identical(other.coverURL, coverURL) ||
-                const DeepCollectionEquality()
-                    .equals(other.coverURL, coverURL)) &&
-            (identical(other.genres, genres) ||
-                const DeepCollectionEquality().equals(other.genres, genres)) &&
-            (identical(other.isNSFW, isNSFW) ||
-                const DeepCollectionEquality().equals(other.isNSFW, isNSFW)) &&
-            (identical(other.isPublished, isPublished) ||
-                const DeepCollectionEquality()
-                    .equals(other.isPublished, isPublished)) &&
-            (identical(other.language, language) ||
-                const DeepCollectionEquality()
-                    .equals(other.language, language)) &&
-            (identical(other.likesCount, likesCount) ||
-                const DeepCollectionEquality()
-                    .equals(other.likesCount, likesCount)) &&
-            (identical(other.subtitle, subtitle) ||
-                const DeepCollectionEquality()
-                    .equals(other.subtitle, subtitle)) &&
-            (identical(other.summary, summary) ||
-                const DeepCollectionEquality()
-                    .equals(other.summary, summary)) &&
-            (identical(other.title, title) ||
-                const DeepCollectionEquality().equals(other.title, title)) &&
-            (identical(other.uid, uid) ||
-                const DeepCollectionEquality().equals(other.uid, uid)) &&
-            (identical(other.viewsCount, viewsCount) ||
-                const DeepCollectionEquality()
-                    .equals(other.viewsCount, viewsCount)));
+        (other.runtimeType == runtimeType &&
+            other is _Series &&
+            const DeepCollectionEquality().equals(other.authorUID, authorUID) &&
+            const DeepCollectionEquality()
+                .equals(other.bookmarksCount, bookmarksCount) &&
+            const DeepCollectionEquality().equals(other.coverURL, coverURL) &&
+            const DeepCollectionEquality().equals(other.genres, genres) &&
+            const DeepCollectionEquality().equals(other.isNSFW, isNSFW) &&
+            const DeepCollectionEquality()
+                .equals(other.isPublished, isPublished) &&
+            const DeepCollectionEquality().equals(other.language, language) &&
+            const DeepCollectionEquality()
+                .equals(other.likesCount, likesCount) &&
+            const DeepCollectionEquality().equals(other.subtitle, subtitle) &&
+            const DeepCollectionEquality().equals(other.summary, summary) &&
+            const DeepCollectionEquality().equals(other.title, title) &&
+            const DeepCollectionEquality().equals(other.uid, uid) &&
+            const DeepCollectionEquality()
+                .equals(other.viewsCount, viewsCount));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(authorUID) ^
-      const DeepCollectionEquality().hash(bookmarksCount) ^
-      const DeepCollectionEquality().hash(coverURL) ^
-      const DeepCollectionEquality().hash(genres) ^
-      const DeepCollectionEquality().hash(isNSFW) ^
-      const DeepCollectionEquality().hash(isPublished) ^
-      const DeepCollectionEquality().hash(language) ^
-      const DeepCollectionEquality().hash(likesCount) ^
-      const DeepCollectionEquality().hash(subtitle) ^
-      const DeepCollectionEquality().hash(summary) ^
-      const DeepCollectionEquality().hash(title) ^
-      const DeepCollectionEquality().hash(uid) ^
-      const DeepCollectionEquality().hash(viewsCount);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(authorUID),
+      const DeepCollectionEquality().hash(bookmarksCount),
+      const DeepCollectionEquality().hash(coverURL),
+      const DeepCollectionEquality().hash(genres),
+      const DeepCollectionEquality().hash(isNSFW),
+      const DeepCollectionEquality().hash(isPublished),
+      const DeepCollectionEquality().hash(language),
+      const DeepCollectionEquality().hash(likesCount),
+      const DeepCollectionEquality().hash(subtitle),
+      const DeepCollectionEquality().hash(summary),
+      const DeepCollectionEquality().hash(title),
+      const DeepCollectionEquality().hash(uid),
+      const DeepCollectionEquality().hash(viewsCount));
 
   @JsonKey(ignore: true)
   @override
@@ -407,31 +390,31 @@ abstract class _Series implements Series {
       required int viewsCount}) = _$_Series;
 
   @override
-  UniqueID get authorUID => throw _privateConstructorUsedError;
+  UniqueID get authorUID;
   @override
-  int get bookmarksCount => throw _privateConstructorUsedError;
+  int get bookmarksCount;
   @override
-  CoverURL get coverURL => throw _privateConstructorUsedError;
+  CoverURL get coverURL;
   @override
-  List<Genre> get genres => throw _privateConstructorUsedError;
+  List<Genre> get genres;
   @override
-  bool get isNSFW => throw _privateConstructorUsedError;
+  bool get isNSFW;
   @override
-  bool get isPublished => throw _privateConstructorUsedError;
+  bool get isPublished;
   @override
-  Language get language => throw _privateConstructorUsedError;
+  Language get language;
   @override
-  int get likesCount => throw _privateConstructorUsedError;
+  int get likesCount;
   @override
-  Subtitle? get subtitle => throw _privateConstructorUsedError;
+  Subtitle? get subtitle;
   @override
-  Summary get summary => throw _privateConstructorUsedError;
+  Summary get summary;
   @override
-  Title get title => throw _privateConstructorUsedError;
+  Title get title;
   @override
-  UniqueID get uid => throw _privateConstructorUsedError;
+  UniqueID get uid;
   @override
-  int get viewsCount => throw _privateConstructorUsedError;
+  int get viewsCount;
   @override
   @JsonKey(ignore: true)
   _$SeriesCopyWith<_Series> get copyWith => throw _privateConstructorUsedError;

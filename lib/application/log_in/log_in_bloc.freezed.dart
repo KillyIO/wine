@@ -256,7 +256,8 @@ class _$CredentialAlreadyInUse implements CredentialAlreadyInUse {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is CredentialAlreadyInUse);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is CredentialAlreadyInUse);
   }
 
   @override
@@ -464,14 +465,14 @@ class _$CustomUsernameGenerated implements CustomUsernameGenerated {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is CustomUsernameGenerated &&
-            (identical(other.user, user) ||
-                const DeepCollectionEquality().equals(other.user, user)));
+        (other.runtimeType == runtimeType &&
+            other is CustomUsernameGenerated &&
+            const DeepCollectionEquality().equals(other.user, user));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(user);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(user));
 
   @JsonKey(ignore: true)
   @override
@@ -623,7 +624,7 @@ class _$CustomUsernameGenerated implements CustomUsernameGenerated {
 abstract class CustomUsernameGenerated implements LogInEvent {
   const factory CustomUsernameGenerated(User user) = _$CustomUsernameGenerated;
 
-  User get user => throw _privateConstructorUsedError;
+  User get user;
   @JsonKey(ignore: true)
   $CustomUsernameGeneratedCopyWith<CustomUsernameGenerated> get copyWith =>
       throw _privateConstructorUsedError;
@@ -677,16 +678,15 @@ class _$EmailAddressChanged implements EmailAddressChanged {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is EmailAddressChanged &&
-            (identical(other.emailAddressStr, emailAddressStr) ||
-                const DeepCollectionEquality()
-                    .equals(other.emailAddressStr, emailAddressStr)));
+        (other.runtimeType == runtimeType &&
+            other is EmailAddressChanged &&
+            const DeepCollectionEquality()
+                .equals(other.emailAddressStr, emailAddressStr));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(emailAddressStr);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(emailAddressStr));
 
   @JsonKey(ignore: true)
   @override
@@ -838,7 +838,7 @@ abstract class EmailAddressChanged implements LogInEvent {
   const factory EmailAddressChanged(String emailAddressStr) =
       _$EmailAddressChanged;
 
-  String get emailAddressStr => throw _privateConstructorUsedError;
+  String get emailAddressStr;
   @JsonKey(ignore: true)
   $EmailAddressChangedCopyWith<EmailAddressChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -878,7 +878,9 @@ class _$LoggedInWithEmailAndPassword implements LoggedInWithEmailAndPassword {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is LoggedInWithEmailAndPassword);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is LoggedInWithEmailAndPassword);
   }
 
   @override
@@ -1060,7 +1062,8 @@ class _$LoggedInWithGoogle implements LoggedInWithGoogle {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is LoggedInWithGoogle);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is LoggedInWithGoogle);
   }
 
   @override
@@ -1247,7 +1250,8 @@ class _$LogInWithEmailAndPasswordPressed
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is LogInWithEmailAndPasswordPressed);
+        (other.runtimeType == runtimeType &&
+            other is LogInWithEmailAndPasswordPressed);
   }
 
   @override
@@ -1430,7 +1434,8 @@ class _$LogInWithGooglePressed implements LogInWithGooglePressed {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is LogInWithGooglePressed);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is LogInWithGooglePressed);
   }
 
   @override
@@ -1628,15 +1633,15 @@ class _$PasswordChanged implements PasswordChanged {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is PasswordChanged &&
-            (identical(other.passwordStr, passwordStr) ||
-                const DeepCollectionEquality()
-                    .equals(other.passwordStr, passwordStr)));
+        (other.runtimeType == runtimeType &&
+            other is PasswordChanged &&
+            const DeepCollectionEquality()
+                .equals(other.passwordStr, passwordStr));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(passwordStr);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(passwordStr));
 
   @JsonKey(ignore: true)
   @override
@@ -1787,7 +1792,7 @@ class _$PasswordChanged implements PasswordChanged {
 abstract class PasswordChanged implements LogInEvent {
   const factory PasswordChanged(String passwordStr) = _$PasswordChanged;
 
-  String get passwordStr => throw _privateConstructorUsedError;
+  String get passwordStr;
   @JsonKey(ignore: true)
   $PasswordChangedCopyWith<PasswordChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1850,14 +1855,14 @@ class _$UserDetailsSaved implements UserDetailsSaved {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is UserDetailsSaved &&
-            (identical(other.user, user) ||
-                const DeepCollectionEquality().equals(other.user, user)));
+        (other.runtimeType == runtimeType &&
+            other is UserDetailsSaved &&
+            const DeepCollectionEquality().equals(other.user, user));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(user);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(user));
 
   @JsonKey(ignore: true)
   @override
@@ -2008,7 +2013,7 @@ class _$UserDetailsSaved implements UserDetailsSaved {
 abstract class UserDetailsSaved implements LogInEvent {
   const factory UserDetailsSaved(User user) = _$UserDetailsSaved;
 
-  User get user => throw _privateConstructorUsedError;
+  User get user;
   @JsonKey(ignore: true)
   $UserDetailsSavedCopyWith<UserDetailsSaved> get copyWith =>
       throw _privateConstructorUsedError;
@@ -2069,14 +2074,14 @@ class _$UserLoaded implements UserLoaded {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is UserLoaded &&
-            (identical(other.user, user) ||
-                const DeepCollectionEquality().equals(other.user, user)));
+        (other.runtimeType == runtimeType &&
+            other is UserLoaded &&
+            const DeepCollectionEquality().equals(other.user, user));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(user);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(user));
 
   @JsonKey(ignore: true)
   @override
@@ -2227,7 +2232,7 @@ class _$UserLoaded implements UserLoaded {
 abstract class UserLoaded implements LogInEvent {
   const factory UserLoaded(User user) = _$UserLoaded;
 
-  User get user => throw _privateConstructorUsedError;
+  User get user;
   @JsonKey(ignore: true)
   $UserLoadedCopyWith<UserLoaded> get copyWith =>
       throw _privateConstructorUsedError;
@@ -2293,14 +2298,14 @@ class _$UsernameAvailabilityConfirmed implements UsernameAvailabilityConfirmed {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is UsernameAvailabilityConfirmed &&
-            (identical(other.user, user) ||
-                const DeepCollectionEquality().equals(other.user, user)));
+        (other.runtimeType == runtimeType &&
+            other is UsernameAvailabilityConfirmed &&
+            const DeepCollectionEquality().equals(other.user, user));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(user);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(user));
 
   @JsonKey(ignore: true)
   @override
@@ -2453,7 +2458,7 @@ abstract class UsernameAvailabilityConfirmed implements LogInEvent {
   const factory UsernameAvailabilityConfirmed(User user) =
       _$UsernameAvailabilityConfirmed;
 
-  User get user => throw _privateConstructorUsedError;
+  User get user;
   @JsonKey(ignore: true)
   $UsernameAvailabilityConfirmedCopyWith<UsernameAvailabilityConfirmed>
       get copyWith => throw _privateConstructorUsedError;
@@ -2515,14 +2520,14 @@ class _$UsernameSaved implements UsernameSaved {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is UsernameSaved &&
-            (identical(other.user, user) ||
-                const DeepCollectionEquality().equals(other.user, user)));
+        (other.runtimeType == runtimeType &&
+            other is UsernameSaved &&
+            const DeepCollectionEquality().equals(other.user, user));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(user);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(user));
 
   @JsonKey(ignore: true)
   @override
@@ -2673,7 +2678,7 @@ class _$UsernameSaved implements UsernameSaved {
 abstract class UsernameSaved implements LogInEvent {
   const factory UsernameSaved(User user) = _$UsernameSaved;
 
-  User get user => throw _privateConstructorUsedError;
+  User get user;
   @JsonKey(ignore: true)
   $UsernameSavedCopyWith<UsernameSaved> get copyWith =>
       throw _privateConstructorUsedError;
@@ -2735,14 +2740,14 @@ class _$UserNotFound implements UserNotFound {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is UserNotFound &&
-            (identical(other.user, user) ||
-                const DeepCollectionEquality().equals(other.user, user)));
+        (other.runtimeType == runtimeType &&
+            other is UserNotFound &&
+            const DeepCollectionEquality().equals(other.user, user));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(user);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(user));
 
   @JsonKey(ignore: true)
   @override
@@ -2893,7 +2898,7 @@ class _$UserNotFound implements UserNotFound {
 abstract class UserNotFound implements LogInEvent {
   const factory UserNotFound(User user) = _$UserNotFound;
 
-  User get user => throw _privateConstructorUsedError;
+  User get user;
   @JsonKey(ignore: true)
   $UserNotFoundCopyWith<UserNotFound> get copyWith =>
       throw _privateConstructorUsedError;
@@ -3094,36 +3099,30 @@ class _$_LogInState implements _LogInState {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _LogInState &&
-            (identical(other.emailAddress, emailAddress) ||
-                const DeepCollectionEquality()
-                    .equals(other.emailAddress, emailAddress)) &&
-            (identical(other.failureOption, failureOption) ||
-                const DeepCollectionEquality()
-                    .equals(other.failureOption, failureOption)) &&
-            (identical(other.isAuthenticated, isAuthenticated) ||
-                const DeepCollectionEquality()
-                    .equals(other.isAuthenticated, isAuthenticated)) &&
-            (identical(other.isProcessing, isProcessing) ||
-                const DeepCollectionEquality()
-                    .equals(other.isProcessing, isProcessing)) &&
-            (identical(other.password, password) ||
-                const DeepCollectionEquality()
-                    .equals(other.password, password)) &&
-            (identical(other.showErrorMessages, showErrorMessages) ||
-                const DeepCollectionEquality()
-                    .equals(other.showErrorMessages, showErrorMessages)));
+        (other.runtimeType == runtimeType &&
+            other is _LogInState &&
+            const DeepCollectionEquality()
+                .equals(other.emailAddress, emailAddress) &&
+            const DeepCollectionEquality()
+                .equals(other.failureOption, failureOption) &&
+            const DeepCollectionEquality()
+                .equals(other.isAuthenticated, isAuthenticated) &&
+            const DeepCollectionEquality()
+                .equals(other.isProcessing, isProcessing) &&
+            const DeepCollectionEquality().equals(other.password, password) &&
+            const DeepCollectionEquality()
+                .equals(other.showErrorMessages, showErrorMessages));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(emailAddress) ^
-      const DeepCollectionEquality().hash(failureOption) ^
-      const DeepCollectionEquality().hash(isAuthenticated) ^
-      const DeepCollectionEquality().hash(isProcessing) ^
-      const DeepCollectionEquality().hash(password) ^
-      const DeepCollectionEquality().hash(showErrorMessages);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(emailAddress),
+      const DeepCollectionEquality().hash(failureOption),
+      const DeepCollectionEquality().hash(isAuthenticated),
+      const DeepCollectionEquality().hash(isProcessing),
+      const DeepCollectionEquality().hash(password),
+      const DeepCollectionEquality().hash(showErrorMessages));
 
   @JsonKey(ignore: true)
   @override
@@ -3141,18 +3140,17 @@ abstract class _LogInState implements LogInState {
       required bool showErrorMessages}) = _$_LogInState;
 
   @override
-  EmailAddress get emailAddress => throw _privateConstructorUsedError;
+  EmailAddress get emailAddress;
   @override
-  Option<Result<None<Object>, CoreFailure>> get failureOption =>
-      throw _privateConstructorUsedError;
+  Option<Result<None<Object>, CoreFailure>> get failureOption;
   @override
-  bool get isAuthenticated => throw _privateConstructorUsedError;
+  bool get isAuthenticated;
   @override
-  bool get isProcessing => throw _privateConstructorUsedError;
+  bool get isProcessing;
   @override
-  Password get password => throw _privateConstructorUsedError;
+  Password get password;
   @override
-  bool get showErrorMessages => throw _privateConstructorUsedError;
+  bool get showErrorMessages;
   @override
   @JsonKey(ignore: true)
   _$LogInStateCopyWith<_LogInState> get copyWith =>

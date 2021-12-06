@@ -124,7 +124,8 @@ class _$Anonymous implements Anonymous {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is Anonymous);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is Anonymous);
   }
 
   @override
@@ -233,7 +234,8 @@ class _$AuthChanged implements AuthChanged {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is AuthChanged);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is AuthChanged);
   }
 
   @override
@@ -342,7 +344,8 @@ class _$Authenticated implements Authenticated {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is Authenticated);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is Authenticated);
   }
 
   @override
@@ -533,7 +536,8 @@ class _$_Anonymous implements _Anonymous {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Anonymous);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _Anonymous);
   }
 
   @override
@@ -642,7 +646,8 @@ class _$_Authenticated implements _Authenticated {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Authenticated);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _Authenticated);
   }
 
   @override
@@ -749,7 +754,8 @@ class _$_Initial implements _Initial {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Initial);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _Initial);
   }
 
   @override

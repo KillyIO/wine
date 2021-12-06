@@ -156,7 +156,8 @@ class _$InitBloc implements InitBloc {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is InitBloc);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is InitBloc);
   }
 
   @override
@@ -281,7 +282,8 @@ class _$LoggedOut implements LoggedOut {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is LoggedOut);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is LoggedOut);
   }
 
   @override
@@ -409,7 +411,8 @@ class _$LogOutPressed implements LogOutPressed {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is LogOutPressed);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is LogOutPressed);
   }
 
   @override
@@ -537,7 +540,8 @@ class _$SessionCreated implements SessionCreated {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is SessionCreated);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is SessionCreated);
   }
 
   @override
@@ -665,7 +669,8 @@ class _$SessionDeleted implements SessionDeleted {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is SessionDeleted);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is SessionDeleted);
   }
 
   @override
@@ -793,7 +798,8 @@ class _$SessionFetched implements SessionFetched {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is SessionFetched);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is SessionFetched);
   }
 
   @override
@@ -1082,32 +1088,26 @@ class _$_SettingsState implements _SettingsState {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _SettingsState &&
-            (identical(other.failureOption, failureOption) ||
-                const DeepCollectionEquality()
-                    .equals(other.failureOption, failureOption)) &&
-            (identical(other.isLoggedOut, isLoggedOut) ||
-                const DeepCollectionEquality()
-                    .equals(other.isLoggedOut, isLoggedOut)) &&
-            (identical(other.isProcessing, isProcessing) ||
-                const DeepCollectionEquality()
-                    .equals(other.isProcessing, isProcessing)) &&
-            (identical(other.settings, settings) ||
-                const DeepCollectionEquality()
-                    .equals(other.settings, settings)) &&
-            (identical(other.username, username) ||
-                const DeepCollectionEquality()
-                    .equals(other.username, username)));
+        (other.runtimeType == runtimeType &&
+            other is _SettingsState &&
+            const DeepCollectionEquality()
+                .equals(other.failureOption, failureOption) &&
+            const DeepCollectionEquality()
+                .equals(other.isLoggedOut, isLoggedOut) &&
+            const DeepCollectionEquality()
+                .equals(other.isProcessing, isProcessing) &&
+            const DeepCollectionEquality().equals(other.settings, settings) &&
+            const DeepCollectionEquality().equals(other.username, username));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(failureOption) ^
-      const DeepCollectionEquality().hash(isLoggedOut) ^
-      const DeepCollectionEquality().hash(isProcessing) ^
-      const DeepCollectionEquality().hash(settings) ^
-      const DeepCollectionEquality().hash(username);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(failureOption),
+      const DeepCollectionEquality().hash(isLoggedOut),
+      const DeepCollectionEquality().hash(isProcessing),
+      const DeepCollectionEquality().hash(settings),
+      const DeepCollectionEquality().hash(username));
 
   @JsonKey(ignore: true)
   @override
@@ -1124,16 +1124,15 @@ abstract class _SettingsState implements SettingsState {
       required String username}) = _$_SettingsState;
 
   @override
-  Option<Result<None<Object>, CoreFailure>> get failureOption =>
-      throw _privateConstructorUsedError;
+  Option<Result<None<Object>, CoreFailure>> get failureOption;
   @override
-  bool get isLoggedOut => throw _privateConstructorUsedError;
+  bool get isLoggedOut;
   @override
-  bool get isProcessing => throw _privateConstructorUsedError;
+  bool get isProcessing;
   @override
-  Settings get settings => throw _privateConstructorUsedError;
+  Settings get settings;
   @override
-  String get username => throw _privateConstructorUsedError;
+  String get username;
   @override
   @JsonKey(ignore: true)
   _$SettingsStateCopyWith<_SettingsState> get copyWith =>

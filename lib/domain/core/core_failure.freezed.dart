@@ -193,14 +193,14 @@ class _$_Auth implements _Auth {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Auth &&
-            (identical(other.f, f) ||
-                const DeepCollectionEquality().equals(other.f, f)));
+        (other.runtimeType == runtimeType &&
+            other is _Auth &&
+            const DeepCollectionEquality().equals(other.f, f));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(f);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(f));
 
   @JsonKey(ignore: true)
   @override
@@ -297,7 +297,7 @@ class _$_Auth implements _Auth {
 abstract class _Auth implements CoreFailure {
   const factory _Auth(AuthFailure f) = _$_Auth;
 
-  AuthFailure get f => throw _privateConstructorUsedError;
+  AuthFailure get f;
   @JsonKey(ignore: true)
   _$AuthCopyWith<_Auth> get copyWith => throw _privateConstructorUsedError;
 }
@@ -358,14 +358,14 @@ class _$_DefaultCovers implements _DefaultCovers {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _DefaultCovers &&
-            (identical(other.f, f) ||
-                const DeepCollectionEquality().equals(other.f, f)));
+        (other.runtimeType == runtimeType &&
+            other is _DefaultCovers &&
+            const DeepCollectionEquality().equals(other.f, f));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(f);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(f));
 
   @JsonKey(ignore: true)
   @override
@@ -462,7 +462,7 @@ class _$_DefaultCovers implements _DefaultCovers {
 abstract class _DefaultCovers implements CoreFailure {
   const factory _DefaultCovers(DefaultCoversFailure f) = _$_DefaultCovers;
 
-  DefaultCoversFailure get f => throw _privateConstructorUsedError;
+  DefaultCoversFailure get f;
   @JsonKey(ignore: true)
   _$DefaultCoversCopyWith<_DefaultCovers> get copyWith =>
       throw _privateConstructorUsedError;
@@ -522,14 +522,14 @@ class _$_Series implements _Series {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Series &&
-            (identical(other.f, f) ||
-                const DeepCollectionEquality().equals(other.f, f)));
+        (other.runtimeType == runtimeType &&
+            other is _Series &&
+            const DeepCollectionEquality().equals(other.f, f));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(f);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(f));
 
   @JsonKey(ignore: true)
   @override
@@ -626,7 +626,7 @@ class _$_Series implements _Series {
 abstract class _Series implements CoreFailure {
   const factory _Series(SeriesFailure f) = _$_Series;
 
-  SeriesFailure get f => throw _privateConstructorUsedError;
+  SeriesFailure get f;
   @JsonKey(ignore: true)
   _$SeriesCopyWith<_Series> get copyWith => throw _privateConstructorUsedError;
 }
@@ -685,14 +685,14 @@ class _$_Sessions implements _Sessions {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Sessions &&
-            (identical(other.f, f) ||
-                const DeepCollectionEquality().equals(other.f, f)));
+        (other.runtimeType == runtimeType &&
+            other is _Sessions &&
+            const DeepCollectionEquality().equals(other.f, f));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(f);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(f));
 
   @JsonKey(ignore: true)
   @override
@@ -789,7 +789,7 @@ class _$_Sessions implements _Sessions {
 abstract class _Sessions implements CoreFailure {
   const factory _Sessions(SessionsFailure f) = _$_Sessions;
 
-  SessionsFailure get f => throw _privateConstructorUsedError;
+  SessionsFailure get f;
   @JsonKey(ignore: true)
   _$SessionsCopyWith<_Sessions> get copyWith =>
       throw _privateConstructorUsedError;
@@ -849,14 +849,14 @@ class _$_Settings implements _Settings {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Settings &&
-            (identical(other.f, f) ||
-                const DeepCollectionEquality().equals(other.f, f)));
+        (other.runtimeType == runtimeType &&
+            other is _Settings &&
+            const DeepCollectionEquality().equals(other.f, f));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(f);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(f));
 
   @JsonKey(ignore: true)
   @override
@@ -953,7 +953,7 @@ class _$_Settings implements _Settings {
 abstract class _Settings implements CoreFailure {
   const factory _Settings(SettingsFailure f) = _$_Settings;
 
-  SettingsFailure get f => throw _privateConstructorUsedError;
+  SettingsFailure get f;
   @JsonKey(ignore: true)
   _$SettingsCopyWith<_Settings> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1013,14 +1013,14 @@ class _$_User implements _User {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _User &&
-            (identical(other.f, f) ||
-                const DeepCollectionEquality().equals(other.f, f)));
+        (other.runtimeType == runtimeType &&
+            other is _User &&
+            const DeepCollectionEquality().equals(other.f, f));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(f);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(f));
 
   @JsonKey(ignore: true)
   @override
@@ -1117,7 +1117,7 @@ class _$_User implements _User {
 abstract class _User implements CoreFailure {
   const factory _User(UserFailure f) = _$_User;
 
-  UserFailure get f => throw _privateConstructorUsedError;
+  UserFailure get f;
   @JsonKey(ignore: true)
   _$UserCopyWith<_User> get copyWith => throw _privateConstructorUsedError;
 }

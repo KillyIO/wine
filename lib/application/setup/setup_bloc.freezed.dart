@@ -226,7 +226,8 @@ class _$AppLaunched with DiagnosticableTreeMixin implements AppLaunched {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is AppLaunched);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is AppLaunched);
   }
 
   @override
@@ -395,7 +396,8 @@ class _$Authenticated with DiagnosticableTreeMixin implements Authenticated {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is Authenticated);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is Authenticated);
   }
 
   @override
@@ -568,7 +570,8 @@ class _$DefaultCoverURLsCached
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is DefaultCoverURLsCached);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is DefaultCoverURLsCached);
   }
 
   @override
@@ -759,16 +762,15 @@ class _$DefaultCoverURLsLoaded
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is DefaultCoverURLsLoaded &&
-            (identical(other.defaultCoverURLs, defaultCoverURLs) ||
-                const DeepCollectionEquality()
-                    .equals(other.defaultCoverURLs, defaultCoverURLs)));
+        (other.runtimeType == runtimeType &&
+            other is DefaultCoverURLsLoaded &&
+            const DeepCollectionEquality()
+                .equals(other.defaultCoverURLs, defaultCoverURLs));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(defaultCoverURLs);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(defaultCoverURLs));
 
   @JsonKey(ignore: true)
   @override
@@ -903,8 +905,7 @@ abstract class DefaultCoverURLsLoaded implements SetupEvent {
   const factory DefaultCoverURLsLoaded(Map<String, String> defaultCoverURLs) =
       _$DefaultCoverURLsLoaded;
 
-  Map<String, String> get defaultCoverURLs =>
-      throw _privateConstructorUsedError;
+  Map<String, String> get defaultCoverURLs;
   @JsonKey(ignore: true)
   $DefaultCoverURLsLoadedCopyWith<DefaultCoverURLsLoaded> get copyWith =>
       throw _privateConstructorUsedError;
@@ -950,7 +951,8 @@ class _$OnboardingDonePressed
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is OnboardingDonePressed);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is OnboardingDonePressed);
   }
 
   @override
@@ -1147,14 +1149,14 @@ class _$SessionFetched with DiagnosticableTreeMixin implements SessionFetched {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is SessionFetched &&
-            (identical(other.session, session) ||
-                const DeepCollectionEquality().equals(other.session, session)));
+        (other.runtimeType == runtimeType &&
+            other is SessionFetched &&
+            const DeepCollectionEquality().equals(other.session, session));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(session);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(session));
 
   @JsonKey(ignore: true)
   @override
@@ -1287,7 +1289,7 @@ class _$SessionFetched with DiagnosticableTreeMixin implements SessionFetched {
 abstract class SessionFetched implements SetupEvent {
   const factory SessionFetched(User session) = _$SessionFetched;
 
-  User get session => throw _privateConstructorUsedError;
+  User get session;
   @JsonKey(ignore: true)
   $SessionFetchedCopyWith<SessionFetched> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1331,7 +1333,8 @@ class _$SessionNotFound
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is SessionNotFound);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is SessionNotFound);
   }
 
   @override
@@ -1502,7 +1505,8 @@ class _$SettingsFetched
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is SettingsFetched);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is SettingsFetched);
   }
 
   @override
@@ -1675,7 +1679,8 @@ class _$SettingsInitialized
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is SettingsInitialized);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is SettingsInitialized);
   }
 
   @override
@@ -1847,7 +1852,8 @@ class _$SettingsNotFound
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is SettingsNotFound);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is SettingsNotFound);
   }
 
   @override
@@ -2043,14 +2049,14 @@ class _$UserLoaded with DiagnosticableTreeMixin implements UserLoaded {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is UserLoaded &&
-            (identical(other.user, user) ||
-                const DeepCollectionEquality().equals(other.user, user)));
+        (other.runtimeType == runtimeType &&
+            other is UserLoaded &&
+            const DeepCollectionEquality().equals(other.user, user));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(user);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(user));
 
   @JsonKey(ignore: true)
   @override
@@ -2183,7 +2189,7 @@ class _$UserLoaded with DiagnosticableTreeMixin implements UserLoaded {
 abstract class UserLoaded implements SetupEvent {
   const factory UserLoaded(User user) = _$UserLoaded;
 
-  User get user => throw _privateConstructorUsedError;
+  User get user;
   @JsonKey(ignore: true)
   $UserLoadedCopyWith<UserLoaded> get copyWith =>
       throw _privateConstructorUsedError;
@@ -2319,7 +2325,8 @@ class _$_Content with DiagnosticableTreeMixin implements _Content {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Content);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _Content);
   }
 
   @override
@@ -2466,14 +2473,14 @@ class _$_Failure with DiagnosticableTreeMixin implements _Failure {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Failure &&
-            (identical(other.failure, failure) ||
-                const DeepCollectionEquality().equals(other.failure, failure)));
+        (other.runtimeType == runtimeType &&
+            other is _Failure &&
+            const DeepCollectionEquality().equals(other.failure, failure));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(failure));
 
   @JsonKey(ignore: true)
   @override
@@ -2558,7 +2565,7 @@ class _$_Failure with DiagnosticableTreeMixin implements _Failure {
 abstract class _Failure implements SetupState {
   const factory _Failure(CoreFailure failure) = _$_Failure;
 
-  CoreFailure get failure => throw _privateConstructorUsedError;
+  CoreFailure get failure;
   @JsonKey(ignore: true)
   _$FailureCopyWith<_Failure> get copyWith =>
       throw _privateConstructorUsedError;
@@ -2598,7 +2605,8 @@ class _$_Initial with DiagnosticableTreeMixin implements _Initial {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Initial);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _Initial);
   }
 
   @override
@@ -2719,7 +2727,8 @@ class _$_Onboarding with DiagnosticableTreeMixin implements _Onboarding {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Onboarding);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _Onboarding);
   }
 
   @override

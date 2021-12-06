@@ -126,7 +126,8 @@ class _$_Initial implements _Initial {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Initial);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _Initial);
   }
 
   @override
@@ -233,7 +234,8 @@ class _$_LogIn implements _LogIn {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _LogIn);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _LogIn);
   }
 
   @override
@@ -340,7 +342,8 @@ class _$_SignUp implements _SignUp {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _SignUp);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _SignUp);
   }
 
   @override

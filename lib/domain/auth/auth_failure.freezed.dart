@@ -172,7 +172,8 @@ class _$CancelledByUser implements CancelledByUser {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is CancelledByUser);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is CancelledByUser);
   }
 
   @override
@@ -310,7 +311,8 @@ class _$CredentialAlreadyInUse implements CredentialAlreadyInUse {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is CredentialAlreadyInUse);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is CredentialAlreadyInUse);
   }
 
   @override
@@ -448,7 +450,8 @@ class _$EmailAlreadyInUse implements EmailAlreadyInUse {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is EmailAlreadyInUse);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is EmailAlreadyInUse);
   }
 
   @override
@@ -591,7 +594,8 @@ class _$InvalidEmailAndPasswordCombination
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is InvalidEmailAndPasswordCombination);
+        (other.runtimeType == runtimeType &&
+            other is InvalidEmailAndPasswordCombination);
   }
 
   @override
@@ -729,7 +733,8 @@ class _$ServerError implements ServerError {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is ServerError);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is ServerError);
   }
 
   @override
@@ -867,7 +872,8 @@ class _$UnableToSignOut implements UnableToSignOut {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is UnableToSignOut);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is UnableToSignOut);
   }
 
   @override
@@ -1003,7 +1009,8 @@ class _$Unexpected implements Unexpected {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is Unexpected);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is Unexpected);
   }
 
   @override

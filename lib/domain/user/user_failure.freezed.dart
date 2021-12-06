@@ -137,7 +137,8 @@ class _$ServerError implements ServerError {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is ServerError);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is ServerError);
   }
 
   @override
@@ -251,7 +252,8 @@ class _$Unexpected implements Unexpected {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is Unexpected);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is Unexpected);
   }
 
   @override
@@ -367,7 +369,8 @@ class _$UsernameAlreadyInUse implements UsernameAlreadyInUse {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is UsernameAlreadyInUse);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is UsernameAlreadyInUse);
   }
 
   @override
@@ -482,7 +485,8 @@ class _$UserNotFound implements UserNotFound {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is UserNotFound);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is UserNotFound);
   }
 
   @override

@@ -34,7 +34,7 @@ class _$UserDTOTearOff {
     );
   }
 
-  UserDTO fromJson(Map<String, Object> json) {
+  UserDTO fromJson(Map<String, Object?> json) {
     return UserDTO.fromJson(json);
   }
 }
@@ -181,27 +181,22 @@ class _$_UserDTO implements _UserDTO {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _UserDTO &&
-            (identical(other.emailAddress, emailAddress) ||
-                const DeepCollectionEquality()
-                    .equals(other.emailAddress, emailAddress)) &&
-            (identical(other.uid, uid) ||
-                const DeepCollectionEquality().equals(other.uid, uid)) &&
-            (identical(other.updatedAt, updatedAt) ||
-                const DeepCollectionEquality()
-                    .equals(other.updatedAt, updatedAt)) &&
-            (identical(other.username, username) ||
-                const DeepCollectionEquality()
-                    .equals(other.username, username)));
+        (other.runtimeType == runtimeType &&
+            other is _UserDTO &&
+            const DeepCollectionEquality()
+                .equals(other.emailAddress, emailAddress) &&
+            const DeepCollectionEquality().equals(other.uid, uid) &&
+            const DeepCollectionEquality().equals(other.updatedAt, updatedAt) &&
+            const DeepCollectionEquality().equals(other.username, username));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(emailAddress) ^
-      const DeepCollectionEquality().hash(uid) ^
-      const DeepCollectionEquality().hash(updatedAt) ^
-      const DeepCollectionEquality().hash(username);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(emailAddress),
+      const DeepCollectionEquality().hash(uid),
+      const DeepCollectionEquality().hash(updatedAt),
+      const DeepCollectionEquality().hash(username));
 
   @JsonKey(ignore: true)
   @override
@@ -224,14 +219,14 @@ abstract class _UserDTO implements UserDTO {
   factory _UserDTO.fromJson(Map<String, dynamic> json) = _$_UserDTO.fromJson;
 
   @override
-  String get emailAddress => throw _privateConstructorUsedError;
+  String get emailAddress;
   @override
-  String get uid => throw _privateConstructorUsedError;
+  String get uid;
   @override
   @ServerTimestampConverter()
-  FieldValue get updatedAt => throw _privateConstructorUsedError;
+  FieldValue get updatedAt;
   @override
-  String get username => throw _privateConstructorUsedError;
+  String get username;
   @override
   @JsonKey(ignore: true)
   _$UserDTOCopyWith<_UserDTO> get copyWith =>

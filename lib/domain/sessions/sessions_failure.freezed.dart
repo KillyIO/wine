@@ -139,7 +139,8 @@ class _$SessionNotCreated implements SessionNotCreated {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is SessionNotCreated);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is SessionNotCreated);
   }
 
   @override
@@ -255,7 +256,8 @@ class _$SessionNotDeleted implements SessionNotDeleted {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is SessionNotDeleted);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is SessionNotDeleted);
   }
 
   @override
@@ -371,7 +373,8 @@ class _$SessionNotFound implements SessionNotFound {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is SessionNotFound);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is SessionNotFound);
   }
 
   @override
@@ -487,7 +490,8 @@ class _$SessionNotUpdated implements SessionNotUpdated {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is SessionNotUpdated);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is SessionNotUpdated);
   }
 
   @override
