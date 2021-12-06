@@ -7,7 +7,6 @@ import 'package:wine/presentation/typewriter/typewriter_series/typewriter_series
 import 'package:wine/presentation/typewriter/typewriter_series/typewriter_series_new_page.dart';
 import 'package:wine/utils/constants/core.dart';
 import 'package:wine/utils/responsive/core_responsive.dart';
-import 'package:wine/utils/themes.dart';
 
 /// @nodoc
 class TypewriterPage extends StatelessWidget {
@@ -48,47 +47,44 @@ class TypewriterPage extends StatelessWidget {
       DeviceOrientation.portraitUp,
       DeviceOrientation.portraitDown,
     ]);
-    return AnnotatedRegion<SystemUiOverlayStyle>(
-      value: lightTheme,
-      child: Scaffold(
-        backgroundColor: Colors.white,
-        appBar: PreferredSize(
-          preferredSize: const Size.fromHeight(defaultAppBarHeight),
-          child: AppBar(
-            backgroundColor: Colors.transparent,
-            bottom: PreferredSize(
-              preferredSize: const Size.fromHeight(0),
-              child: Container(
-                color: Colors.black,
-                height: 2,
-              ),
+    return Scaffold(
+      backgroundColor: Colors.white,
+      appBar: PreferredSize(
+        preferredSize: const Size.fromHeight(defaultAppBarHeight),
+        child: AppBar(
+          backgroundColor: Colors.transparent,
+          bottom: PreferredSize(
+            preferredSize: const Size.fromHeight(0),
+            child: Container(
+              color: Colors.black,
+              height: 2,
             ),
-            centerTitle: true,
-            elevation: 0,
-            leading: !kIsWeb
-                ? Padding(
-                    padding: getAssetBackButtonPadding(mediaQuery),
-                    child: IconButton(
-                      key: const Key('typewriter_back'),
-                      highlightColor: Colors.transparent,
-                      hoverColor: Colors.transparent,
-                      icon: const Icon(
-                        Icons.keyboard_backspace_outlined,
-                        color: Colors.black,
-                      ),
-                      onPressed: () {
-                        FocusScope.of(context).requestFocus(FocusNode());
-                        context.router.root.pop();
-                      },
-                      splashColor: Colors.transparent,
-                    ),
-                  )
-                : Container(),
-            leadingWidth: defaultToolbarItemWidth,
           ),
+          centerTitle: true,
+          elevation: 0,
+          leading: !kIsWeb
+              ? Padding(
+                  padding: getAssetBackButtonPadding(mediaQuery),
+                  child: IconButton(
+                    key: const Key('typewriter_back'),
+                    highlightColor: Colors.transparent,
+                    hoverColor: Colors.transparent,
+                    icon: const Icon(
+                      Icons.keyboard_backspace_outlined,
+                      color: Colors.black,
+                    ),
+                    onPressed: () {
+                      FocusScope.of(context).requestFocus(FocusNode());
+                      context.router.root.pop();
+                    },
+                    splashColor: Colors.transparent,
+                  ),
+                )
+              : Container(),
+          leadingWidth: defaultToolbarItemWidth,
         ),
-        body: _typewriter,
       ),
+      body: _typewriter,
     );
   }
 }

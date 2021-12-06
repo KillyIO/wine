@@ -5,7 +5,6 @@ import 'package:wine/presentation/core/buttons/asset_button.dart';
 import 'package:wine/presentation/settings/settings_account/settings_account_layout.dart';
 import 'package:wine/utils/assets/icons.dart';
 import 'package:wine/utils/constants/core.dart';
-import 'package:wine/utils/themes.dart';
 
 /// @nodoc
 class SettingsAccountPage extends StatelessWidget {
@@ -18,45 +17,42 @@ class SettingsAccountPage extends StatelessWidget {
       DeviceOrientation.portraitUp,
       DeviceOrientation.portraitDown,
     ]);
-    return AnnotatedRegion<SystemUiOverlayStyle>(
-      value: lightTheme,
-      child: Scaffold(
-        backgroundColor: Colors.white,
-        appBar: PreferredSize(
-          preferredSize: const Size.fromHeight(defaultAppBarHeight),
-          child: AppBar(
-            backgroundColor: Colors.transparent,
-            bottom: PreferredSize(
-              preferredSize: const Size.fromHeight(0),
-              child: Container(
-                color: Colors.black,
-                height: 2,
-              ),
+    return Scaffold(
+      backgroundColor: Colors.white,
+      appBar: PreferredSize(
+        preferredSize: const Size.fromHeight(defaultAppBarHeight),
+        child: AppBar(
+          backgroundColor: Colors.transparent,
+          bottom: PreferredSize(
+            preferredSize: const Size.fromHeight(0),
+            child: Container(
+              color: Colors.black,
+              height: 2,
             ),
-            centerTitle: true,
-            elevation: 0,
-            leading: Padding(
-              padding: const EdgeInsets.symmetric(
-                horizontal: 10,
-                vertical: 5,
-              ),
-              child: AssetButton(
-                imagePath: backIcon,
-                onPressed: context.router.pop,
-              ),
+          ),
+          centerTitle: true,
+          elevation: 0,
+          leading: Padding(
+            padding: const EdgeInsets.symmetric(
+              horizontal: 10,
+              vertical: 5,
             ),
-            title: const Text(
-              'ACCOUNT',
-              style: TextStyle(
-                color: Colors.black,
-                fontSize: 18,
-                fontWeight: FontWeight.w300,
-              ),
+            child: AssetButton(
+              imagePath: backIcon,
+              onPressed: context.router.pop,
+            ),
+          ),
+          title: const Text(
+            'ACCOUNT',
+            style: TextStyle(
+              color: Colors.black,
+              fontSize: 18,
+              fontWeight: FontWeight.w300,
             ),
           ),
         ),
-        body: const SettingsAccountLayout(),
       ),
+      body: const SettingsAccountLayout(),
     );
   }
 }

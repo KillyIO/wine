@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:introduction_screen/introduction_screen.dart';
 import 'package:wine/presentation/routes/router.gr.dart';
-import 'package:wine/utils/themes.dart';
 
 /// @nodoc
 class OnboardingPage extends StatelessWidget {
@@ -16,25 +15,22 @@ class OnboardingPage extends StatelessWidget {
       DeviceOrientation.portraitUp,
       DeviceOrientation.portraitDown,
     ]);
-    return AnnotatedRegion<SystemUiOverlayStyle>(
-      value: lightTheme,
-      child: Scaffold(
-        backgroundColor: Colors.white,
-        body: SafeArea(
-          child: IntroductionScreen(
-            done: const Text(
-              'Start',
-            ),
-            onDone: () async => context.router.replace(const HomeRoute()),
-            pages: [
-              // TODO(SSebigo): add pages
-              PageViewModel(
-                title: 'Placeholder title',
-                body: 'Placeholder body',
-              ),
-            ],
-            showNextButton: false,
+    return Scaffold(
+      backgroundColor: Colors.white,
+      body: SafeArea(
+        child: IntroductionScreen(
+          done: const Text(
+            'Start',
           ),
+          onDone: () async => context.router.replace(const HomeRoute()),
+          pages: [
+            // TODO(SSebigo): add pages
+            PageViewModel(
+              title: 'Placeholder title',
+              body: 'Placeholder body',
+            ),
+          ],
+          showNextButton: false,
         ),
       ),
     );

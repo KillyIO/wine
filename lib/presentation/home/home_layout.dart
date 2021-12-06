@@ -10,7 +10,6 @@ import 'package:wine/presentation/home/home_onboarding_layout.dart';
 import 'package:wine/presentation/home/home_splash_layout.dart';
 import 'package:wine/presentation/home/widgets/home_app_bar.dart';
 import 'package:wine/utils/functions/dialog_functions.dart';
-import 'package:wine/utils/themes.dart';
 
 /// @nodoc
 class HomeLayout extends StatelessWidget {
@@ -23,112 +22,109 @@ class HomeLayout extends StatelessWidget {
       DeviceOrientation.portraitUp,
       DeviceOrientation.portraitDown,
     ]);
-    return AnnotatedRegion<SystemUiOverlayStyle>(
-      value: lightTheme,
-      child: Scaffold(
-        backgroundColor: Colors.white,
-        appBar: const HomeAppBar(),
-        body: BlocListener<SetupBloc, SetupState>(
-          listener: (context, state) {
-            state.maybeMap(
-              failure: (value) {
-                value.failure.maybeMap(
-                  auth: (f) => f.f.maybeMap(
-                    orElse: () {},
-                    serverError: (_) => restartAppDialog(
-                      context,
-                      <String>['A problem occurred on our end!'],
-                    ),
-                    unexpected: (_) => restartAppDialog(
-                      context,
-                      <String>['An unexpected error occured!'],
-                    ),
+    return Scaffold(
+      backgroundColor: Colors.white,
+      appBar: const HomeAppBar(),
+      body: BlocListener<SetupBloc, SetupState>(
+        listener: (context, state) {
+          state.maybeMap(
+            failure: (value) {
+              value.failure.maybeMap(
+                auth: (f) => f.f.maybeMap(
+                  orElse: () {},
+                  serverError: (_) => restartAppDialog(
+                    context,
+                    <String>['A problem occurred on our end!'],
                   ),
-                  defaultCovers: (f) => f.f.maybeMap(
-                    defaultCoverURLsNotCached: (_) => restartAppDialog(
-                      context,
-                      <String>['Default covers could not be cached!'],
-                    ),
-                    defaultCoverURLsNotLoaded: (_) => restartAppDialog(
-                      context,
-                      <String>['Default covers could not be loaded!'],
-                    ),
-                    serverError: (_) => restartAppDialog(
-                      context,
-                      <String>['A problem occurred on our end!'],
-                    ),
-                    unexpected: (_) => restartAppDialog(
-                      context,
-                      <String>['An unexpected error occured!'],
-                    ),
-                    orElse: () {},
+                  unexpected: (_) => restartAppDialog(
+                    context,
+                    <String>['An unexpected error occured!'],
                   ),
-                  sessions: (f) => f.f.maybeMap(
-                    sessionNotCreated: (_) => restartAppDialog(
-                      context,
-                      <String>['Session could not be created!'],
-                    ),
-                    sessionNotUpdated: (_) => restartAppDialog(
-                      context,
-                      <String>['Session could not be updated!'],
-                    ),
-                    orElse: () {},
+                ),
+                defaultCovers: (f) => f.f.maybeMap(
+                  defaultCoverURLsNotCached: (_) => restartAppDialog(
+                    context,
+                    <String>['Default covers could not be cached!'],
                   ),
-                  settings: (f) => f.f.maybeMap(
-                    settingsNotInitialized: (_) => restartAppDialog(
-                      context,
-                      <String>['Settings could not be initialized!'],
-                    ),
-                    orElse: () {},
+                  defaultCoverURLsNotLoaded: (_) => restartAppDialog(
+                    context,
+                    <String>['Default covers could not be loaded!'],
                   ),
-                  user: (f) => f.f.maybeMap(
-                    serverError: (_) => restartAppDialog(
-                      context,
-                      <String>['A problem occurred on our end!'],
-                    ),
-                    userNotFound: (_) => restartAppDialog(
-                      context,
-                      <String>['User account not found!'],
-                    ),
-                    unexpected: (_) => restartAppDialog(
-                      context,
-                      <String>['An unexpected error occured!'],
-                    ),
-                    orElse: () {},
+                  serverError: (_) => restartAppDialog(
+                    context,
+                    <String>['A problem occurred on our end!'],
+                  ),
+                  unexpected: (_) => restartAppDialog(
+                    context,
+                    <String>['An unexpected error occured!'],
                   ),
                   orElse: () {},
-                );
-              },
-              orElse: () {},
-            );
-          },
-          child: BlocBuilder<SetupBloc, SetupState>(
-            builder: (context, state) {
-              return state.map(
-                content: (_) => const HomeContentLayout(),
-                failure: (_) => Container(),
-                initial: (_) => const HomeSplashLayout(),
-                onboarding: (_) => const HomeOnboardingLayout(),
+                ),
+                sessions: (f) => f.f.maybeMap(
+                  sessionNotCreated: (_) => restartAppDialog(
+                    context,
+                    <String>['Session could not be created!'],
+                  ),
+                  sessionNotUpdated: (_) => restartAppDialog(
+                    context,
+                    <String>['Session could not be updated!'],
+                  ),
+                  orElse: () {},
+                ),
+                settings: (f) => f.f.maybeMap(
+                  settingsNotInitialized: (_) => restartAppDialog(
+                    context,
+                    <String>['Settings could not be initialized!'],
+                  ),
+                  orElse: () {},
+                ),
+                user: (f) => f.f.maybeMap(
+                  serverError: (_) => restartAppDialog(
+                    context,
+                    <String>['A problem occurred on our end!'],
+                  ),
+                  userNotFound: (_) => restartAppDialog(
+                    context,
+                    <String>['User account not found!'],
+                  ),
+                  unexpected: (_) => restartAppDialog(
+                    context,
+                    <String>['An unexpected error occured!'],
+                  ),
+                  orElse: () {},
+                ),
+                orElse: () {},
               );
             },
-          ),
-        ),
-        drawer: BlocBuilder<SetupBloc, SetupState>(
+            orElse: () {},
+          );
+        },
+        child: BlocBuilder<SetupBloc, SetupState>(
           builder: (context, state) {
-            return state.maybeMap(
-              content: (_) => const HomeFiltersMenuLayout(),
-              orElse: () => Container(),
+            return state.map(
+              content: (_) => const HomeContentLayout(),
+              failure: (_) => Container(),
+              initial: (_) => const HomeSplashLayout(),
+              onboarding: (_) => const HomeOnboardingLayout(),
             );
           },
         ),
-        endDrawer: BlocBuilder<SetupBloc, SetupState>(
-          builder: (context, state) {
-            return state.maybeMap(
-              content: (_) => const HomeMenuLayout(),
-              orElse: () => Container(),
-            );
-          },
-        ),
+      ),
+      drawer: BlocBuilder<SetupBloc, SetupState>(
+        builder: (context, state) {
+          return state.maybeMap(
+            content: (_) => const HomeFiltersMenuLayout(),
+            orElse: () => Container(),
+          );
+        },
+      ),
+      endDrawer: BlocBuilder<SetupBloc, SetupState>(
+        builder: (context, state) {
+          return state.maybeMap(
+            content: (_) => const HomeMenuLayout(),
+            orElse: () => Container(),
+          );
+        },
       ),
     );
   }

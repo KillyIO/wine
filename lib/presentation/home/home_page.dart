@@ -4,7 +4,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:wine/application/setup/setup_bloc.dart';
 import 'package:wine/injection.dart';
 import 'package:wine/presentation/home/home_layout.dart';
-import 'package:wine/utils/themes.dart';
 
 /// @nodoc
 class HomePage extends StatelessWidget {
@@ -17,17 +16,14 @@ class HomePage extends StatelessWidget {
       DeviceOrientation.portraitUp,
       DeviceOrientation.portraitDown,
     ]);
-    return AnnotatedRegion<SystemUiOverlayStyle>(
-      value: lightTheme,
-      child: MultiBlocProvider(
-        providers: [
-          BlocProvider(
-            create: (_) =>
-                getIt<SetupBloc>()..add(const SetupEvent.appLaunched()),
-          ),
-        ],
-        child: const HomeLayout(),
-      ),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (_) =>
+              getIt<SetupBloc>()..add(const SetupEvent.appLaunched()),
+        ),
+      ],
+      child: const HomeLayout(),
     );
   }
 }

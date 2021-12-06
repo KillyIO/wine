@@ -6,7 +6,6 @@ import 'package:flutter/services.dart';
 import 'package:wine/presentation/plus/plus_layout.dart';
 import 'package:wine/utils/constants/core.dart';
 import 'package:wine/utils/responsive/core_responsive.dart';
-import 'package:wine/utils/themes.dart';
 
 /// @nodoc
 class PlusPage extends StatelessWidget {
@@ -21,49 +20,46 @@ class PlusPage extends StatelessWidget {
       DeviceOrientation.portraitUp,
       DeviceOrientation.portraitDown,
     ]);
-    return AnnotatedRegion<SystemUiOverlayStyle>(
-      value: lightTheme,
-      child: Scaffold(
-        backgroundColor: Colors.white,
-        appBar: PreferredSize(
-          preferredSize: const Size.fromHeight(defaultAppBarHeight),
-          child: AppBar(
-            backgroundColor: Colors.transparent,
-            bottom: PreferredSize(
-              preferredSize: const Size.fromHeight(0),
-              child: Container(color: Colors.black, height: 2),
-            ),
-            centerTitle: true,
-            elevation: 0,
-            leading: !kIsWeb
-                ? Padding(
-                    padding: getAssetBackButtonPadding(mediaQuery),
-                    child: IconButton(
-                      key: const Key('plus_back'),
-                      highlightColor: Colors.transparent,
-                      hoverColor: Colors.transparent,
-                      icon: const Icon(
-                        Icons.keyboard_backspace_outlined,
-                        color: Colors.black,
-                      ),
-                      onPressed: context.router.root.pop,
-                      splashColor: Colors.transparent,
+    return Scaffold(
+      backgroundColor: Colors.white,
+      appBar: PreferredSize(
+        preferredSize: const Size.fromHeight(defaultAppBarHeight),
+        child: AppBar(
+          backgroundColor: Colors.transparent,
+          bottom: PreferredSize(
+            preferredSize: const Size.fromHeight(0),
+            child: Container(color: Colors.black, height: 2),
+          ),
+          centerTitle: true,
+          elevation: 0,
+          leading: !kIsWeb
+              ? Padding(
+                  padding: getAssetBackButtonPadding(mediaQuery),
+                  child: IconButton(
+                    key: const Key('plus_back'),
+                    highlightColor: Colors.transparent,
+                    hoverColor: Colors.transparent,
+                    icon: const Icon(
+                      Icons.keyboard_backspace_outlined,
+                      color: Colors.black,
                     ),
-                  )
-                : Container(),
-            leadingWidth: defaultToolbarItemWidth,
-            title: const Text(
-              'PLUS',
-              style: TextStyle(
-                color: Colors.black,
-                fontSize: 18,
-                fontWeight: FontWeight.w300,
-              ),
+                    onPressed: context.router.root.pop,
+                    splashColor: Colors.transparent,
+                  ),
+                )
+              : Container(),
+          leadingWidth: defaultToolbarItemWidth,
+          title: const Text(
+            'PLUS',
+            style: TextStyle(
+              color: Colors.black,
+              fontSize: 18,
+              fontWeight: FontWeight.w300,
             ),
           ),
         ),
-        body: const PlusLayout(),
       ),
+      body: const PlusLayout(),
     );
   }
 }
