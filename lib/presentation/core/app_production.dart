@@ -6,6 +6,7 @@ import 'package:wine/application/home/home_bloc.dart';
 import 'package:wine/flavors.dart';
 import 'package:wine/injection.dart';
 import 'package:wine/presentation/routes/router.gr.dart';
+import 'package:wine/utils/themes.dart';
 
 /// @nodoc
 class AppProduction extends StatelessWidget {
@@ -31,6 +32,7 @@ class AppProduction extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         routerDelegate: _appRouter.delegate(),
         routeInformationParser: _appRouter.defaultRouteParser(),
+        theme: lightTheme,
         title: F.title,
       ),
     );
