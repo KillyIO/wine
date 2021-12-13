@@ -256,7 +256,8 @@ class _$AddCoverPressed implements AddCoverPressed {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is AddCoverPressed);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is AddCoverPressed);
   }
 
   @override
@@ -432,7 +433,8 @@ class _$DeleteButtonPressed implements DeleteButtonPressed {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is DeleteButtonPressed);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is DeleteButtonPressed);
   }
 
   @override
@@ -624,14 +626,14 @@ class _$GenreAdded implements GenreAdded {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is GenreAdded &&
-            (identical(other.genre, genre) ||
-                const DeepCollectionEquality().equals(other.genre, genre)));
+        (other.runtimeType == runtimeType &&
+            other is GenreAdded &&
+            const DeepCollectionEquality().equals(other.genre, genre));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(genre);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(genre));
 
   @JsonKey(ignore: true)
   @override
@@ -776,7 +778,7 @@ class _$GenreAdded implements GenreAdded {
 abstract class GenreAdded implements TypewriterSeriesEvent {
   const factory GenreAdded(String genre) = _$GenreAdded;
 
-  String get genre => throw _privateConstructorUsedError;
+  String get genre;
   @JsonKey(ignore: true)
   $GenreAddedCopyWith<GenreAdded> get copyWith =>
       throw _privateConstructorUsedError;
@@ -830,14 +832,14 @@ class _$GenreRemoved implements GenreRemoved {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is GenreRemoved &&
-            (identical(other.genre, genre) ||
-                const DeepCollectionEquality().equals(other.genre, genre)));
+        (other.runtimeType == runtimeType &&
+            other is GenreRemoved &&
+            const DeepCollectionEquality().equals(other.genre, genre));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(genre);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(genre));
 
   @JsonKey(ignore: true)
   @override
@@ -982,7 +984,7 @@ class _$GenreRemoved implements GenreRemoved {
 abstract class GenreRemoved implements TypewriterSeriesEvent {
   const factory GenreRemoved(String genre) = _$GenreRemoved;
 
-  String get genre => throw _privateConstructorUsedError;
+  String get genre;
   @JsonKey(ignore: true)
   $GenreRemovedCopyWith<GenreRemoved> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1036,14 +1038,14 @@ class _$IsNSFWChanged implements IsNSFWChanged {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is IsNSFWChanged &&
-            (identical(other.isNSFW, isNSFW) ||
-                const DeepCollectionEquality().equals(other.isNSFW, isNSFW)));
+        (other.runtimeType == runtimeType &&
+            other is IsNSFWChanged &&
+            const DeepCollectionEquality().equals(other.isNSFW, isNSFW));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(isNSFW);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(isNSFW));
 
   @JsonKey(ignore: true)
   @override
@@ -1188,7 +1190,7 @@ class _$IsNSFWChanged implements IsNSFWChanged {
 abstract class IsNSFWChanged implements TypewriterSeriesEvent {
   const factory IsNSFWChanged({required bool isNSFW}) = _$IsNSFWChanged;
 
-  bool get isNSFW => throw _privateConstructorUsedError;
+  bool get isNSFW;
   @JsonKey(ignore: true)
   $IsNSFWChangedCopyWith<IsNSFWChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1242,15 +1244,14 @@ class _$LanguageSelected implements LanguageSelected {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is LanguageSelected &&
-            (identical(other.language, language) ||
-                const DeepCollectionEquality()
-                    .equals(other.language, language)));
+        (other.runtimeType == runtimeType &&
+            other is LanguageSelected &&
+            const DeepCollectionEquality().equals(other.language, language));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(language);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(language));
 
   @JsonKey(ignore: true)
   @override
@@ -1395,7 +1396,7 @@ class _$LanguageSelected implements LanguageSelected {
 abstract class LanguageSelected implements TypewriterSeriesEvent {
   const factory LanguageSelected(String language) = _$LanguageSelected;
 
-  String get language => throw _privateConstructorUsedError;
+  String get language;
   @JsonKey(ignore: true)
   $LanguageSelectedCopyWith<LanguageSelected> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1432,7 +1433,8 @@ class _$LaunchAsNewSeries implements LaunchAsNewSeries {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is LaunchAsNewSeries);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is LaunchAsNewSeries);
   }
 
   @override
@@ -1645,18 +1647,17 @@ class _$LaunchWithID implements LaunchWithID {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is LaunchWithID &&
-            (identical(other.id, id) ||
-                const DeepCollectionEquality().equals(other.id, id)) &&
-            (identical(other.series, series) ||
-                const DeepCollectionEquality().equals(other.series, series)));
+        (other.runtimeType == runtimeType &&
+            other is LaunchWithID &&
+            const DeepCollectionEquality().equals(other.id, id) &&
+            const DeepCollectionEquality().equals(other.series, series));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(id) ^
-      const DeepCollectionEquality().hash(series);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(id),
+      const DeepCollectionEquality().hash(series));
 
   @JsonKey(ignore: true)
   @override
@@ -1801,8 +1802,8 @@ class _$LaunchWithID implements LaunchWithID {
 abstract class LaunchWithID implements TypewriterSeriesEvent {
   const factory LaunchWithID(UniqueID id, {Series? series}) = _$LaunchWithID;
 
-  UniqueID get id => throw _privateConstructorUsedError;
-  Series? get series => throw _privateConstructorUsedError;
+  UniqueID get id;
+  Series? get series;
   @JsonKey(ignore: true)
   $LaunchWithIDCopyWith<LaunchWithID> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1839,7 +1840,8 @@ class _$PublishButtonPressed implements PublishButtonPressed {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is PublishButtonPressed);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is PublishButtonPressed);
   }
 
   @override
@@ -2015,7 +2017,8 @@ class _$SaveButtonPressed implements SaveButtonPressed {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is SaveButtonPressed);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is SaveButtonPressed);
   }
 
   @override
@@ -2191,7 +2194,8 @@ class _$SessionFetched implements SessionFetched {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is SessionFetched);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is SessionFetched);
   }
 
   @override
@@ -2384,15 +2388,14 @@ class _$SubtitleChanged implements SubtitleChanged {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is SubtitleChanged &&
-            (identical(other.subtitle, subtitle) ||
-                const DeepCollectionEquality()
-                    .equals(other.subtitle, subtitle)));
+        (other.runtimeType == runtimeType &&
+            other is SubtitleChanged &&
+            const DeepCollectionEquality().equals(other.subtitle, subtitle));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(subtitle);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(subtitle));
 
   @JsonKey(ignore: true)
   @override
@@ -2537,7 +2540,7 @@ class _$SubtitleChanged implements SubtitleChanged {
 abstract class SubtitleChanged implements TypewriterSeriesEvent {
   const factory SubtitleChanged(String subtitle) = _$SubtitleChanged;
 
-  String get subtitle => throw _privateConstructorUsedError;
+  String get subtitle;
   @JsonKey(ignore: true)
   $SubtitleChangedCopyWith<SubtitleChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -2591,14 +2594,14 @@ class _$SummaryChanged implements SummaryChanged {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is SummaryChanged &&
-            (identical(other.summary, summary) ||
-                const DeepCollectionEquality().equals(other.summary, summary)));
+        (other.runtimeType == runtimeType &&
+            other is SummaryChanged &&
+            const DeepCollectionEquality().equals(other.summary, summary));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(summary);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(summary));
 
   @JsonKey(ignore: true)
   @override
@@ -2743,7 +2746,7 @@ class _$SummaryChanged implements SummaryChanged {
 abstract class SummaryChanged implements TypewriterSeriesEvent {
   const factory SummaryChanged(String summary) = _$SummaryChanged;
 
-  String get summary => throw _privateConstructorUsedError;
+  String get summary;
   @JsonKey(ignore: true)
   $SummaryChangedCopyWith<SummaryChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -2797,14 +2800,14 @@ class _$TitleChanged implements TitleChanged {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is TitleChanged &&
-            (identical(other.title, title) ||
-                const DeepCollectionEquality().equals(other.title, title)));
+        (other.runtimeType == runtimeType &&
+            other is TitleChanged &&
+            const DeepCollectionEquality().equals(other.title, title));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(title);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(title));
 
   @JsonKey(ignore: true)
   @override
@@ -2949,7 +2952,7 @@ class _$TitleChanged implements TitleChanged {
 abstract class TitleChanged implements TypewriterSeriesEvent {
   const factory TitleChanged(String title) = _$TitleChanged;
 
-  String get title => throw _privateConstructorUsedError;
+  String get title;
   @JsonKey(ignore: true)
   $TitleChangedCopyWith<TitleChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -3402,83 +3405,61 @@ class _$_TypewriterSeriesState implements _TypewriterSeriesState {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _TypewriterSeriesState &&
-            (identical(other.coverURL, coverURL) ||
-                const DeepCollectionEquality()
-                    .equals(other.coverURL, coverURL)) &&
-            (identical(other.failureOption, failureOption) ||
-                const DeepCollectionEquality()
-                    .equals(other.failureOption, failureOption)) &&
-            (identical(other.genres, genres) ||
-                const DeepCollectionEquality().equals(other.genres, genres)) &&
-            (identical(other.isEdit, isEdit) ||
-                const DeepCollectionEquality().equals(other.isEdit, isEdit)) &&
-            (identical(other.isNSFW, isNSFW) ||
-                const DeepCollectionEquality().equals(other.isNSFW, isNSFW)) &&
-            (identical(other.isProcessing, isProcessing) ||
-                const DeepCollectionEquality()
-                    .equals(other.isProcessing, isProcessing)) &&
-            (identical(other.language, language) ||
-                const DeepCollectionEquality()
-                    .equals(other.language, language)) &&
-            (identical(other.series, series) ||
-                const DeepCollectionEquality().equals(other.series, series)) &&
-            (identical(other.showErrorMessages, showErrorMessages) ||
-                const DeepCollectionEquality()
-                    .equals(other.showErrorMessages, showErrorMessages)) &&
-            (identical(other.endState, endState) ||
-                const DeepCollectionEquality()
-                    .equals(other.endState, endState)) &&
-            (identical(other.subtitle, subtitle) ||
-                const DeepCollectionEquality()
-                    .equals(other.subtitle, subtitle)) &&
-            (identical(other.subtitleController, subtitleController) ||
-                const DeepCollectionEquality()
-                    .equals(other.subtitleController, subtitleController)) &&
-            (identical(other.subtitleWordCount, subtitleWordCount) ||
-                const DeepCollectionEquality()
-                    .equals(other.subtitleWordCount, subtitleWordCount)) &&
-            (identical(other.summary, summary) ||
-                const DeepCollectionEquality()
-                    .equals(other.summary, summary)) &&
-            (identical(other.summaryController, summaryController) ||
-                const DeepCollectionEquality()
-                    .equals(other.summaryController, summaryController)) &&
-            (identical(other.summaryWordCount, summaryWordCount) ||
-                const DeepCollectionEquality()
-                    .equals(other.summaryWordCount, summaryWordCount)) &&
-            (identical(other.title, title) ||
-                const DeepCollectionEquality().equals(other.title, title)) &&
-            (identical(other.titleController, titleController) ||
-                const DeepCollectionEquality()
-                    .equals(other.titleController, titleController)) &&
-            (identical(other.titleWordCount, titleWordCount) ||
-                const DeepCollectionEquality()
-                    .equals(other.titleWordCount, titleWordCount)));
+        (other.runtimeType == runtimeType &&
+            other is _TypewriterSeriesState &&
+            const DeepCollectionEquality().equals(other.coverURL, coverURL) &&
+            const DeepCollectionEquality()
+                .equals(other.failureOption, failureOption) &&
+            const DeepCollectionEquality().equals(other.genres, genres) &&
+            const DeepCollectionEquality().equals(other.isEdit, isEdit) &&
+            const DeepCollectionEquality().equals(other.isNSFW, isNSFW) &&
+            const DeepCollectionEquality()
+                .equals(other.isProcessing, isProcessing) &&
+            const DeepCollectionEquality().equals(other.language, language) &&
+            const DeepCollectionEquality().equals(other.series, series) &&
+            const DeepCollectionEquality()
+                .equals(other.showErrorMessages, showErrorMessages) &&
+            const DeepCollectionEquality().equals(other.endState, endState) &&
+            const DeepCollectionEquality().equals(other.subtitle, subtitle) &&
+            const DeepCollectionEquality()
+                .equals(other.subtitleController, subtitleController) &&
+            const DeepCollectionEquality()
+                .equals(other.subtitleWordCount, subtitleWordCount) &&
+            const DeepCollectionEquality().equals(other.summary, summary) &&
+            const DeepCollectionEquality()
+                .equals(other.summaryController, summaryController) &&
+            const DeepCollectionEquality()
+                .equals(other.summaryWordCount, summaryWordCount) &&
+            const DeepCollectionEquality().equals(other.title, title) &&
+            const DeepCollectionEquality()
+                .equals(other.titleController, titleController) &&
+            const DeepCollectionEquality()
+                .equals(other.titleWordCount, titleWordCount));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(coverURL) ^
-      const DeepCollectionEquality().hash(failureOption) ^
-      const DeepCollectionEquality().hash(genres) ^
-      const DeepCollectionEquality().hash(isEdit) ^
-      const DeepCollectionEquality().hash(isNSFW) ^
-      const DeepCollectionEquality().hash(isProcessing) ^
-      const DeepCollectionEquality().hash(language) ^
-      const DeepCollectionEquality().hash(series) ^
-      const DeepCollectionEquality().hash(showErrorMessages) ^
-      const DeepCollectionEquality().hash(endState) ^
-      const DeepCollectionEquality().hash(subtitle) ^
-      const DeepCollectionEquality().hash(subtitleController) ^
-      const DeepCollectionEquality().hash(subtitleWordCount) ^
-      const DeepCollectionEquality().hash(summary) ^
-      const DeepCollectionEquality().hash(summaryController) ^
-      const DeepCollectionEquality().hash(summaryWordCount) ^
-      const DeepCollectionEquality().hash(title) ^
-      const DeepCollectionEquality().hash(titleController) ^
-      const DeepCollectionEquality().hash(titleWordCount);
+  int get hashCode => Object.hashAll([
+        runtimeType,
+        const DeepCollectionEquality().hash(coverURL),
+        const DeepCollectionEquality().hash(failureOption),
+        const DeepCollectionEquality().hash(genres),
+        const DeepCollectionEquality().hash(isEdit),
+        const DeepCollectionEquality().hash(isNSFW),
+        const DeepCollectionEquality().hash(isProcessing),
+        const DeepCollectionEquality().hash(language),
+        const DeepCollectionEquality().hash(series),
+        const DeepCollectionEquality().hash(showErrorMessages),
+        const DeepCollectionEquality().hash(endState),
+        const DeepCollectionEquality().hash(subtitle),
+        const DeepCollectionEquality().hash(subtitleController),
+        const DeepCollectionEquality().hash(subtitleWordCount),
+        const DeepCollectionEquality().hash(summary),
+        const DeepCollectionEquality().hash(summaryController),
+        const DeepCollectionEquality().hash(summaryWordCount),
+        const DeepCollectionEquality().hash(title),
+        const DeepCollectionEquality().hash(titleController),
+        const DeepCollectionEquality().hash(titleWordCount)
+      ]);
 
   @JsonKey(ignore: true)
   @override
@@ -3510,47 +3491,43 @@ abstract class _TypewriterSeriesState implements TypewriterSeriesState {
       required int titleWordCount}) = _$_TypewriterSeriesState;
 
   @override
-  String get coverURL => throw _privateConstructorUsedError;
+  String get coverURL;
   @override
-  Option<Result<None<Object>, CoreFailure>> get failureOption =>
-      throw _privateConstructorUsedError;
+  Option<Result<None<Object>, CoreFailure>> get failureOption;
   @override
-  List<Genre> get genres => throw _privateConstructorUsedError;
+  List<Genre> get genres;
   @override
-  bool get isEdit => throw _privateConstructorUsedError;
+  bool get isEdit;
   @override
-  bool get isNSFW => throw _privateConstructorUsedError;
+  bool get isNSFW;
   @override
-  bool get isProcessing => throw _privateConstructorUsedError;
+  bool get isProcessing;
   @override
-  Language get language => throw _privateConstructorUsedError;
+  Language get language;
   @override
-  Series get series => throw _privateConstructorUsedError;
+  Series get series;
   @override
-  bool get showErrorMessages => throw _privateConstructorUsedError;
+  bool get showErrorMessages;
   @override
-  TypewriterEndState get endState => throw _privateConstructorUsedError;
+  TypewriterEndState get endState;
   @override
-  Subtitle get subtitle => throw _privateConstructorUsedError;
+  Subtitle get subtitle;
   @override
-  TextEditingController get subtitleController =>
-      throw _privateConstructorUsedError;
+  TextEditingController get subtitleController;
   @override
-  int get subtitleWordCount => throw _privateConstructorUsedError;
+  int get subtitleWordCount;
   @override
-  Summary get summary => throw _privateConstructorUsedError;
+  Summary get summary;
   @override
-  TextEditingController get summaryController =>
-      throw _privateConstructorUsedError;
+  TextEditingController get summaryController;
   @override
-  int get summaryWordCount => throw _privateConstructorUsedError;
+  int get summaryWordCount;
   @override
-  Title get title => throw _privateConstructorUsedError;
+  Title get title;
   @override
-  TextEditingController get titleController =>
-      throw _privateConstructorUsedError;
+  TextEditingController get titleController;
   @override
-  int get titleWordCount => throw _privateConstructorUsedError;
+  int get titleWordCount;
   @override
   @JsonKey(ignore: true)
   _$TypewriterSeriesStateCopyWith<_TypewriterSeriesState> get copyWith =>

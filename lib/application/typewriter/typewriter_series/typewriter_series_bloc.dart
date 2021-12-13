@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:io';
 import 'dart:math';
 
@@ -138,6 +139,13 @@ class TypewriterSeriesBloc
       ),
     );
     on<LaunchAsNewSeries>((_, emit) async {
+      emit(
+        state.copyWith(
+          failureOption: Option.none(),
+          isProcessing: true,
+        ),
+      );
+
       (await _sessionsRepository.fetchSession()).match(
         (user) {
           emit(
@@ -153,14 +161,107 @@ class TypewriterSeriesBloc
           emit(
             state.copyWith(
               failureOption: Option.some(Err(CoreFailure.sessions(failure))),
+              isProcessing: false,
             ),
           );
         },
       );
     });
-    on<LaunchWithID>((_, emit) {});
-    on<PublishButtonPressed>((value, emit) {});
-    on<SaveButtonPressed>((value, emit) async {
+    on<LaunchWithID>((value, emit) async {
+      emit(
+        state.copyWith(
+          failureOption: Option.none(),
+          isProcessing: true,
+        ),
+      );
+
+      if (value.series != null) {
+        final series = value.series;
+
+        emit(
+          state.copyWith(
+            coverURL: series!.coverURL.getOrCrash(),
+            genres: series.genres,
+            isEdit: true,
+            isNSFW: series.isNSFW,
+            isProcessing: false,
+            language: series.language,
+            series: series,
+            subtitle: series.subtitle ?? Subtitle(''),
+            subtitleWordCount: series.subtitle?.getOrNull()?.countWords() ?? 0,
+            summary: series.summary,
+            summaryWordCount: series.summary.getOrNull()?.countWords() ?? 0,
+            title: series.title,
+            titleWordCount: series.title.getOrNull()?.countWords() ?? 0,
+          ),
+        );
+      } else {
+        (await _seriesRepository.loadSeriesByID(value.id)).match(
+          (series) {
+            emit(
+              state.copyWith(
+                coverURL: series.coverURL.getOrCrash(),
+                genres: series.genres,
+                isEdit: true,
+                isNSFW: series.isNSFW,
+                isProcessing: false,
+                language: series.language,
+                series: series,
+                subtitle: series.subtitle ?? Subtitle(''),
+                subtitleWordCount:
+                    series.subtitle?.getOrNull()?.countWords() ?? 0,
+                summary: series.summary,
+                summaryWordCount: series.summary.getOrNull()?.countWords() ?? 0,
+                title: series.title,
+                titleWordCount: series.title.getOrNull()?.countWords() ?? 0,
+              ),
+            );
+          },
+          (failure) {
+            emit(
+              state.copyWith(
+                failureOption: Option.some(Err(CoreFailure.series(failure))),
+                isProcessing: false,
+              ),
+            );
+          },
+        );
+      }
+    });
+    on<PublishButtonPressed>((_, emit) async {
+      final isValid = state.genres.isNotEmpty &&
+          state.language.isValid &&
+          state.summary.isValid &&
+          state.title.isValid;
+
+      if (isValid) {
+        final series = state.series.copyWith(
+          coverURL: CoverURL(state.coverURL),
+          genres: state.genres,
+          isNSFW: state.isNSFW,
+          language: state.language,
+          isPublished: true,
+          subtitle: state.subtitle,
+          summary: state.summary,
+          title: state.title,
+        );
+
+        emit(
+          state.copyWith(
+            failureOption: Option.none(),
+            isProcessing: true,
+          ),
+        );
+
+        await _publishOrSave(
+          state.isEdit,
+          TypewriterEndState.published,
+          series,
+          emit,
+        );
+      }
+    });
+    on<SaveButtonPressed>((_, emit) async {
       final series = state.series.copyWith(
         coverURL: CoverURL(state.coverURL),
         genres: state.genres,
@@ -171,22 +272,18 @@ class TypewriterSeriesBloc
         title: Title.forSaving(state.title.value),
       );
 
-      (await _seriesRepository.createSeries(series)).match(
-        (_) {
-          emit(
-            state.copyWith(
-              failureOption: const None(),
-              endState: TypewriterEndState.saved,
-            ),
-          );
-        },
-        (failure) {
-          emit(
-            state.copyWith(
-              failureOption: Option.some(Err(CoreFailure.series(failure))),
-            ),
-          );
-        },
+      emit(
+        state.copyWith(
+          failureOption: Option.none(),
+          isProcessing: true,
+        ),
+      );
+
+      await _publishOrSave(
+        state.isEdit,
+        TypewriterEndState.saved,
+        series,
+        emit,
       );
     });
     on<SessionFetched>((_, emit) async {
@@ -200,6 +297,7 @@ class TypewriterSeriesBloc
             state.copyWith(
               coverURL: coverURL,
               failureOption: const None(),
+              isProcessing: false,
             ),
           );
         },
@@ -208,6 +306,7 @@ class TypewriterSeriesBloc
             state.copyWith(
               failureOption:
                   Option.some(Err(CoreFailure.defaultCovers(failure))),
+              isProcessing: false,
             ),
           );
         },
@@ -254,4 +353,53 @@ class TypewriterSeriesBloc
   final IDefaultCoversRepository _defaultCoversRepository;
   final ISeriesRepository _seriesRepository;
   final ISessionsRepository _sessionsRepository;
+
+  FutureOr<void> _publishOrSave(
+    bool isEdit,
+    TypewriterEndState endState,
+    Series series,
+    Emitter<TypewriterSeriesState> emit,
+  ) async {
+    if (state.isEdit) {
+      (await _seriesRepository.updateSeries(series)).match(
+        (_) {
+          emit(
+            state.copyWith(
+              endState: TypewriterEndState.saved,
+              failureOption: const None(),
+              isProcessing: false,
+            ),
+          );
+        },
+        (failure) {
+          emit(
+            state.copyWith(
+              failureOption: Option.some(Err(CoreFailure.series(failure))),
+              isProcessing: false,
+            ),
+          );
+        },
+      );
+    } else {
+      (await _seriesRepository.createSeries(series)).match(
+        (_) {
+          emit(
+            state.copyWith(
+              endState: TypewriterEndState.saved,
+              failureOption: const None(),
+              isProcessing: false,
+            ),
+          );
+        },
+        (failure) {
+          emit(
+            state.copyWith(
+              failureOption: Option.some(Err(CoreFailure.series(failure))),
+              isProcessing: false,
+            ),
+          );
+        },
+      );
+    }
+  }
 }
