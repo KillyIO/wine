@@ -3,6 +3,7 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 import 'package:oxidized/oxidized.dart';
 import 'package:wine/domain/core/core_failure.dart';
+import 'package:wine/domain/core/unique_id.dart';
 import 'package:wine/domain/series/i_series_repository.dart';
 import 'package:wine/domain/series/series.dart';
 import 'package:wine/domain/sessions/i_sessions_repository.dart';
@@ -23,6 +24,7 @@ class LibraryBloc extends Bloc<LibraryEvent, LibraryState> {
     this._seriesRepository,
     this._sessionsRepository,
   ) : super(LibraryState.initial()) {
+    on<ChapterDeleted>((value, emit) async {});
     on<InitBloc>((_, emit) async {
       emit(
         state.copyWith(
@@ -77,8 +79,28 @@ class LibraryBloc extends Bloc<LibraryEvent, LibraryState> {
         }
       }
     });
-    on<SessionFetched>((value, emit) async {
-      (await _seriesRepository.loadSeriesbyUserID(state.session.uid)).match(
+    on<SeriesDeleted>((value, emit) async {
+      emit(
+        state.copyWith(
+          failureOption: const None(),
+          isProcessing: true,
+        ),
+      );
+
+      final seriesList = state.seriesList
+          .where((s) => s.uid.getOrCrash() != value.uid.getOrCrash())
+          .toList();
+
+      emit(
+        state.copyWith(
+          failureOption: const None(),
+          isProcessing: false,
+          seriesList: seriesList,
+        ),
+      );
+    });
+    on<SessionFetched>((_, emit) async {
+      (await _seriesRepository.loadSeriesByUserID(state.session.uid)).match(
         (series) {
           emit(
             state.copyWith(
