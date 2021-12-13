@@ -16,7 +16,7 @@ class LibraryPageViewBuilder extends StatelessWidget {
 
   // TODO(SSebigo): add real layouts
   final List<Widget> _pageViewLayouts = <Widget>[
-    LibrarySeriesLayout(),
+    const LibrarySeriesLayout(),
     Container()
   ];
 
