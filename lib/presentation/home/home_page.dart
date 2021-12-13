@@ -16,6 +16,7 @@ class HomePage extends StatelessWidget {
       DeviceOrientation.portraitUp,
       DeviceOrientation.portraitDown,
     ]);
+    // TODO(SSebigo): replace this for BlocProvider
     return MultiBlocProvider(
       providers: [
         BlocProvider(
