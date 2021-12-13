@@ -35,30 +35,6 @@ class LibraryBaseSeriesLayout extends StatelessWidget {
     return staggeredTiles;
   }
 
-  List<Widget> get _generateTiles {
-    final tiles = <Widget>[];
-
-    for (final s in seriesList) {
-      tiles.add(
-        SeriesCard(
-          coverURL: s.coverURL.getOrNull() ?? '',
-          onPressed: () {
-            switch (type) {
-              case 'published':
-              case 'drafts':
-              case 'bookmarks':
-              default:
-            }
-          },
-          title: s.title.getOrNull() ?? '',
-          uid: s.uid.getOrCrash(),
-        ),
-      );
-    }
-
-    return tiles;
-  }
-
   @override
   Widget build(BuildContext context) {
     final mediaQuery = MediaQuery.of(context).size;

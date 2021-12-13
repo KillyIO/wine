@@ -43,6 +43,7 @@ class LibrarySeriesLayout extends StatelessWidget {
                   state,
                   libraryVerticalNavbarKeys[state.currentVerticalNavbarIdx],
                 ),
+                type: libraryVerticalNavbarKeys[state.currentVerticalNavbarIdx],
               ),
             ),
           ],
