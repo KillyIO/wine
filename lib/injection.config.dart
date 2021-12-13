@@ -15,9 +15,7 @@ import 'package:injectable/injectable.dart' as _i2;
 import 'application/auth/auth_bloc.dart' as _i28;
 import 'application/auth/auth_dialog/auth_dialog_cubit.dart' as _i3;
 import 'application/home/home_bloc.dart' as _i9;
-import 'application/library/library_bloc.dart' as _i29;
-import 'application/library/library_navigation/library_navigation_bloc.dart'
-    as _i22;
+import 'application/library/library_bloc.dart' as _i22;
 import 'application/log_in/log_in_bloc.dart' as _i23;
 import 'application/settings/settings_bloc.dart' as _i24;
 import 'application/setup/setup_bloc.dart' as _i25;
@@ -31,8 +29,8 @@ import 'domain/sessions/i_sessions_repository.dart' as _i16;
 import 'domain/settings/i_settings_repository.dart' as _i18;
 import 'domain/user/i_user_repository.dart' as _i20;
 import 'infrastructure/auth/firebase_auth_facade.dart' as _i11;
-import 'infrastructure/core/firebase_injectable_module.dart' as _i30;
-import 'infrastructure/core/hive_injectable_module.dart' as _i31;
+import 'infrastructure/core/firebase_injectable_module.dart' as _i29;
+import 'infrastructure/core/hive_injectable_module.dart' as _i30;
 import 'infrastructure/default_covers/default_covers_repository.dart' as _i13;
 import 'infrastructure/series/series_repository.dart' as _i15;
 import 'infrastructure/sessions/sessions_repository.dart' as _i17;
@@ -87,7 +85,9 @@ Future<_i1.GetIt> $initGetIt(_i1.GetIt get,
   gh.lazySingleton<_i20.IUserRepository>(
       () => _i21.UserRepository(get<_i5.FirebaseFirestore>()),
       registerFor: {_dev, _prod});
-  gh.factory<_i22.LibraryNavigationBloc>(() => _i22.LibraryNavigationBloc(),
+  gh.factory<_i22.LibraryBloc>(
+      () => _i22.LibraryBloc(
+          get<_i14.ISeriesRepository>(), get<_i16.ISessionsRepository>()),
       registerFor: {_dev, _prod});
   gh.factory<_i23.LogInBloc>(
       () => _i23.LogInBloc(get<_i10.IAuthFacade>(),
@@ -115,13 +115,9 @@ Future<_i1.GetIt> $initGetIt(_i1.GetIt get,
       registerFor: {_dev, _prod});
   gh.factory<_i28.AuthBloc>(() => _i28.AuthBloc(get<_i10.IAuthFacade>()),
       registerFor: {_dev, _prod});
-  gh.factory<_i29.LibraryBloc>(
-      () => _i29.LibraryBloc(get<_i22.LibraryNavigationBloc>(),
-          get<_i16.ISessionsRepository>(), get<_i20.IUserRepository>()),
-      registerFor: {_dev, _prod});
   return get;
 }
 
-class _$FirebaseInjectableModule extends _i30.FirebaseInjectableModule {}
+class _$FirebaseInjectableModule extends _i29.FirebaseInjectableModule {}
 
-class _$HiveInjectableModule extends _i31.HiveInjectableModule {}
+class _$HiveInjectableModule extends _i30.HiveInjectableModule {}
