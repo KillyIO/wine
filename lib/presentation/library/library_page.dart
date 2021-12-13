@@ -11,9 +11,21 @@ import 'package:wine/utils/constants/core.dart';
 import 'package:wine/utils/responsive/core_responsive.dart';
 
 /// @nodoc
-class LibraryPage extends StatelessWidget {
+class LibraryPage extends StatefulWidget {
   /// @nodoc
   const LibraryPage({Key? key}) : super(key: key);
+
+  @override
+  State<LibraryPage> createState() => _LibraryPageState();
+}
+
+class _LibraryPageState extends State<LibraryPage> {
+  @override
+  void initState() {
+    super.initState();
+
+    context.read<LibraryBloc>().add(const LibraryEvent.initBloc());
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -64,11 +76,7 @@ class LibraryPage extends StatelessWidget {
           ),
         ),
       ),
-      body: BlocProvider(
-        create: (context) =>
-            getIt<LibraryBloc>()..add(const LibraryEvent.initBloc()),
-        child: LibraryLayout(),
-      ),
+      body: LibraryLayout(),
     );
   }
 }
