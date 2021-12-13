@@ -67,7 +67,19 @@ class SeriesRepository implements ISeriesRepository {
   }
 
   @override
-  Future<Result<List<Series>, SeriesFailure>> loadSeriesbyUserID(
+  Future<Result<Series, SeriesFailure>> loadSeriesByID(UniqueID uid) async {
+    final snapshot =
+        await _firestore.collection(seriesPath).doc(uid.getOrCrash()).get();
+
+    if (snapshot.exists) {
+      final series = SeriesDTO.fromJson(snapshot.data()!).toDomain();
+      return Ok(series);
+    }
+    return Err(const SeriesFailure.seriesNotFound());
+  }
+
+  @override
+  Future<Result<List<Series>, SeriesFailure>> loadSeriesByUserID(
     UniqueID uid, {
     UniqueID? lastSeriesID,
   }) async {

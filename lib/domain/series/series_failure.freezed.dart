@@ -21,6 +21,10 @@ class _$SeriesFailureTearOff {
     return const CoverNotUploaded();
   }
 
+  SeriesNotFound seriesNotFound() {
+    return const SeriesNotFound();
+  }
+
   ServerError serverError() {
     return const ServerError();
   }
@@ -38,6 +42,7 @@ mixin _$SeriesFailure {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() coverNotUploaded,
+    required TResult Function() seriesNotFound,
     required TResult Function() serverError,
     required TResult Function() unexpected,
   }) =>
@@ -45,6 +50,7 @@ mixin _$SeriesFailure {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? coverNotUploaded,
+    TResult Function()? seriesNotFound,
     TResult Function()? serverError,
     TResult Function()? unexpected,
   }) =>
@@ -52,6 +58,7 @@ mixin _$SeriesFailure {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? coverNotUploaded,
+    TResult Function()? seriesNotFound,
     TResult Function()? serverError,
     TResult Function()? unexpected,
     required TResult orElse(),
@@ -60,6 +67,7 @@ mixin _$SeriesFailure {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(CoverNotUploaded value) coverNotUploaded,
+    required TResult Function(SeriesNotFound value) seriesNotFound,
     required TResult Function(ServerError value) serverError,
     required TResult Function(Unexpected value) unexpected,
   }) =>
@@ -67,6 +75,7 @@ mixin _$SeriesFailure {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(CoverNotUploaded value)? coverNotUploaded,
+    TResult Function(SeriesNotFound value)? seriesNotFound,
     TResult Function(ServerError value)? serverError,
     TResult Function(Unexpected value)? unexpected,
   }) =>
@@ -74,6 +83,7 @@ mixin _$SeriesFailure {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(CoverNotUploaded value)? coverNotUploaded,
+    TResult Function(SeriesNotFound value)? seriesNotFound,
     TResult Function(ServerError value)? serverError,
     TResult Function(Unexpected value)? unexpected,
     required TResult orElse(),
@@ -129,7 +139,8 @@ class _$CoverNotUploaded implements CoverNotUploaded {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is CoverNotUploaded);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is CoverNotUploaded);
   }
 
   @override
@@ -139,6 +150,7 @@ class _$CoverNotUploaded implements CoverNotUploaded {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() coverNotUploaded,
+    required TResult Function() seriesNotFound,
     required TResult Function() serverError,
     required TResult Function() unexpected,
   }) {
@@ -149,6 +161,7 @@ class _$CoverNotUploaded implements CoverNotUploaded {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? coverNotUploaded,
+    TResult Function()? seriesNotFound,
     TResult Function()? serverError,
     TResult Function()? unexpected,
   }) {
@@ -159,6 +172,7 @@ class _$CoverNotUploaded implements CoverNotUploaded {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? coverNotUploaded,
+    TResult Function()? seriesNotFound,
     TResult Function()? serverError,
     TResult Function()? unexpected,
     required TResult orElse(),
@@ -173,6 +187,7 @@ class _$CoverNotUploaded implements CoverNotUploaded {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(CoverNotUploaded value) coverNotUploaded,
+    required TResult Function(SeriesNotFound value) seriesNotFound,
     required TResult Function(ServerError value) serverError,
     required TResult Function(Unexpected value) unexpected,
   }) {
@@ -183,6 +198,7 @@ class _$CoverNotUploaded implements CoverNotUploaded {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(CoverNotUploaded value)? coverNotUploaded,
+    TResult Function(SeriesNotFound value)? seriesNotFound,
     TResult Function(ServerError value)? serverError,
     TResult Function(Unexpected value)? unexpected,
   }) {
@@ -193,6 +209,7 @@ class _$CoverNotUploaded implements CoverNotUploaded {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(CoverNotUploaded value)? coverNotUploaded,
+    TResult Function(SeriesNotFound value)? seriesNotFound,
     TResult Function(ServerError value)? serverError,
     TResult Function(Unexpected value)? unexpected,
     required TResult orElse(),
@@ -206,6 +223,123 @@ class _$CoverNotUploaded implements CoverNotUploaded {
 
 abstract class CoverNotUploaded implements SeriesFailure {
   const factory CoverNotUploaded() = _$CoverNotUploaded;
+}
+
+/// @nodoc
+abstract class $SeriesNotFoundCopyWith<$Res> {
+  factory $SeriesNotFoundCopyWith(
+          SeriesNotFound value, $Res Function(SeriesNotFound) then) =
+      _$SeriesNotFoundCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$SeriesNotFoundCopyWithImpl<$Res>
+    extends _$SeriesFailureCopyWithImpl<$Res>
+    implements $SeriesNotFoundCopyWith<$Res> {
+  _$SeriesNotFoundCopyWithImpl(
+      SeriesNotFound _value, $Res Function(SeriesNotFound) _then)
+      : super(_value, (v) => _then(v as SeriesNotFound));
+
+  @override
+  SeriesNotFound get _value => super._value as SeriesNotFound;
+}
+
+/// @nodoc
+
+class _$SeriesNotFound implements SeriesNotFound {
+  const _$SeriesNotFound();
+
+  @override
+  String toString() {
+    return 'SeriesFailure.seriesNotFound()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is SeriesNotFound);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() coverNotUploaded,
+    required TResult Function() seriesNotFound,
+    required TResult Function() serverError,
+    required TResult Function() unexpected,
+  }) {
+    return seriesNotFound();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? coverNotUploaded,
+    TResult Function()? seriesNotFound,
+    TResult Function()? serverError,
+    TResult Function()? unexpected,
+  }) {
+    return seriesNotFound?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? coverNotUploaded,
+    TResult Function()? seriesNotFound,
+    TResult Function()? serverError,
+    TResult Function()? unexpected,
+    required TResult orElse(),
+  }) {
+    if (seriesNotFound != null) {
+      return seriesNotFound();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(CoverNotUploaded value) coverNotUploaded,
+    required TResult Function(SeriesNotFound value) seriesNotFound,
+    required TResult Function(ServerError value) serverError,
+    required TResult Function(Unexpected value) unexpected,
+  }) {
+    return seriesNotFound(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(CoverNotUploaded value)? coverNotUploaded,
+    TResult Function(SeriesNotFound value)? seriesNotFound,
+    TResult Function(ServerError value)? serverError,
+    TResult Function(Unexpected value)? unexpected,
+  }) {
+    return seriesNotFound?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(CoverNotUploaded value)? coverNotUploaded,
+    TResult Function(SeriesNotFound value)? seriesNotFound,
+    TResult Function(ServerError value)? serverError,
+    TResult Function(Unexpected value)? unexpected,
+    required TResult orElse(),
+  }) {
+    if (seriesNotFound != null) {
+      return seriesNotFound(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SeriesNotFound implements SeriesFailure {
+  const factory SeriesNotFound() = _$SeriesNotFound;
 }
 
 /// @nodoc
@@ -238,7 +372,8 @@ class _$ServerError implements ServerError {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is ServerError);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is ServerError);
   }
 
   @override
@@ -248,6 +383,7 @@ class _$ServerError implements ServerError {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() coverNotUploaded,
+    required TResult Function() seriesNotFound,
     required TResult Function() serverError,
     required TResult Function() unexpected,
   }) {
@@ -258,6 +394,7 @@ class _$ServerError implements ServerError {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? coverNotUploaded,
+    TResult Function()? seriesNotFound,
     TResult Function()? serverError,
     TResult Function()? unexpected,
   }) {
@@ -268,6 +405,7 @@ class _$ServerError implements ServerError {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? coverNotUploaded,
+    TResult Function()? seriesNotFound,
     TResult Function()? serverError,
     TResult Function()? unexpected,
     required TResult orElse(),
@@ -282,6 +420,7 @@ class _$ServerError implements ServerError {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(CoverNotUploaded value) coverNotUploaded,
+    required TResult Function(SeriesNotFound value) seriesNotFound,
     required TResult Function(ServerError value) serverError,
     required TResult Function(Unexpected value) unexpected,
   }) {
@@ -292,6 +431,7 @@ class _$ServerError implements ServerError {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(CoverNotUploaded value)? coverNotUploaded,
+    TResult Function(SeriesNotFound value)? seriesNotFound,
     TResult Function(ServerError value)? serverError,
     TResult Function(Unexpected value)? unexpected,
   }) {
@@ -302,6 +442,7 @@ class _$ServerError implements ServerError {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(CoverNotUploaded value)? coverNotUploaded,
+    TResult Function(SeriesNotFound value)? seriesNotFound,
     TResult Function(ServerError value)? serverError,
     TResult Function(Unexpected value)? unexpected,
     required TResult orElse(),
@@ -346,7 +487,8 @@ class _$Unexpected implements Unexpected {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is Unexpected);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is Unexpected);
   }
 
   @override
@@ -356,6 +498,7 @@ class _$Unexpected implements Unexpected {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() coverNotUploaded,
+    required TResult Function() seriesNotFound,
     required TResult Function() serverError,
     required TResult Function() unexpected,
   }) {
@@ -366,6 +509,7 @@ class _$Unexpected implements Unexpected {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? coverNotUploaded,
+    TResult Function()? seriesNotFound,
     TResult Function()? serverError,
     TResult Function()? unexpected,
   }) {
@@ -376,6 +520,7 @@ class _$Unexpected implements Unexpected {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? coverNotUploaded,
+    TResult Function()? seriesNotFound,
     TResult Function()? serverError,
     TResult Function()? unexpected,
     required TResult orElse(),
@@ -390,6 +535,7 @@ class _$Unexpected implements Unexpected {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(CoverNotUploaded value) coverNotUploaded,
+    required TResult Function(SeriesNotFound value) seriesNotFound,
     required TResult Function(ServerError value) serverError,
     required TResult Function(Unexpected value) unexpected,
   }) {
@@ -400,6 +546,7 @@ class _$Unexpected implements Unexpected {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(CoverNotUploaded value)? coverNotUploaded,
+    TResult Function(SeriesNotFound value)? seriesNotFound,
     TResult Function(ServerError value)? serverError,
     TResult Function(Unexpected value)? unexpected,
   }) {
@@ -410,6 +557,7 @@ class _$Unexpected implements Unexpected {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(CoverNotUploaded value)? coverNotUploaded,
+    TResult Function(SeriesNotFound value)? seriesNotFound,
     TResult Function(ServerError value)? serverError,
     TResult Function(Unexpected value)? unexpected,
     required TResult orElse(),

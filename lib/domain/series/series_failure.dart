@@ -9,6 +9,9 @@ class SeriesFailure with _$SeriesFailure {
   const factory SeriesFailure.coverNotUploaded() = CoverNotUploaded;
 
   /// @nodoc
+  const factory SeriesFailure.seriesNotFound() = SeriesNotFound;
+
+  /// @nodoc
   const factory SeriesFailure.serverError() = ServerError;
 
   /// @nodoc
