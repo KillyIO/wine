@@ -1,8 +1,12 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:wine/application/library/library_bloc.dart';
 import 'package:wine/application/typewriter/typewriter_series/typewriter_series_bloc.dart';
 import 'package:wine/domain/core/typewriter_end_state.dart';
+import 'package:wine/injection.dart';
 import 'package:wine/presentation/core/buttons/default_button.dart';
+import 'package:wine/presentation/core/dialogs/warning_dialog.dart';
 import 'package:wine/presentation/core/labels/text_field_label.dart';
 import 'package:wine/presentation/routes/router.dart';
 import 'package:wine/presentation/typewriter/widgets/series/typewriter_series_selection_list_tile.dart';
@@ -64,7 +68,14 @@ class TypewriterSeriesLayout extends StatelessWidget {
 
               switch (state.endState) {
                 case TypewriterEndState.deleted:
-                  // TODO(SSebigo): nav back
+                  // TODO(SSebigo) add delete from home (just in case)
+                  context
+                      .read<LibraryBloc>()
+                      .add(LibraryEvent.seriesDeleted(state.series.uid));
+
+                  if (context.router.root.canPopSelfOrChildren) {
+                    context.router.root.pop();
+                  }
                   break;
                 case TypewriterEndState.published:
                   // TODO(SSebigo): nav to series info page
@@ -291,11 +302,23 @@ class TypewriterSeriesLayout extends StatelessWidget {
                             color: error,
                             title: 'DELETE',
                             width: mediaQuery.width,
-                            onPressed: () =>
-                                context.read<TypewriterSeriesBloc>().add(
+                            onPressed: () => showDialog<void>(
+                              context: context,
+                              builder: (_) => WarningDialog(
+                                buttonText: 'CONTINUE',
+                                messages: const [
+                                  'Do you really want to delete this series?',
+                                ],
+                                onPressed: () {
+                                  context
+                                    ..read<TypewriterSeriesBloc>().add(
                                       const TypewriterSeriesEvent
                                           .deleteButtonPressed(),
-                                    ),
+                                    )
+                                    ..router.root.pop(true);
+                                },
+                              ),
+                            ),
                           ),
                         ),
                     ],
