@@ -3,6 +3,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:wine/domain/core/typewriter_type.dart';
+import 'package:wine/domain/series/series.dart';
 import 'package:wine/presentation/typewriter/typewriter_series/typewriter_series_id_page.dart';
 import 'package:wine/presentation/typewriter/typewriter_series/typewriter_series_new_page.dart';
 import 'package:wine/utils/constants/core.dart';
@@ -13,9 +14,13 @@ class TypewriterPage extends StatelessWidget {
   /// @nodoc
   const TypewriterPage({
     Key? key,
-    @pathParam this.id,
+    this.series,
+    @PathParam('id') this.id,
     this.type = TypewriterType.unknown,
   }) : super(key: key);
+
+  /// @nodoc
+  final Series? series;
 
   /// Series or Chapter id.
   final String? id;
@@ -32,7 +37,7 @@ class TypewriterPage extends StatelessWidget {
       // return const TypewriterChapterNewPage();
       case TypewriterType.series:
         if (id != null) {
-          return TypewriterSeriesIDPage(seriesId: id!);
+          return TypewriterSeriesIDPage(seriesId: id!, series: series);
         }
         return const TypewriterSeriesNewPage();
     }
