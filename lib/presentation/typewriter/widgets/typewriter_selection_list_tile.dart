@@ -1,30 +1,23 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:wine/application/typewriter/typewriter_series/typewriter_series_bloc.dart';
-import 'package:wine/presentation/typewriter/widgets/series/typewriter_series_selection_dialog.dart';
 
 /// @nodoc
-class TypewriterSeriesSelectionListTile extends StatelessWidget {
+class TypewriterSelectionListTile extends StatelessWidget {
   /// @nodoc
-  const TypewriterSeriesSelectionListTile({
+  const TypewriterSelectionListTile({
     Key? key,
-    required this.items,
     required this.onPressed,
     this.selectedItem,
     required this.title,
   }) : super(key: key);
 
   /// @nodoc
-  final List<String> items;
-
-  /// @nodoc
-  final void Function(String) onPressed;
-
-  /// @nodoc
   final String? selectedItem;
 
   /// @nodoc
   final String title;
+
+  /// @nodoc
+  final VoidCallback onPressed;
 
   @override
   Widget build(BuildContext context) {
@@ -33,17 +26,7 @@ class TypewriterSeriesSelectionListTile extends StatelessWidget {
     return Container(
       color: Colors.black,
       child: ListTile(
-        onTap: () => showDialog<void>(
-          context: context,
-          builder: (_) => BlocProvider<TypewriterSeriesBloc>.value(
-            value: context.read<TypewriterSeriesBloc>(),
-            child: TypewriterSeriesSelectionDialog(
-              items: items,
-              onPressed: onPressed,
-              title: title,
-            ),
-          ),
-        ),
+        onTap: onPressed,
         title: Text(
           title,
           style: const TextStyle(
@@ -57,7 +40,7 @@ class TypewriterSeriesSelectionListTile extends StatelessWidget {
                 child: Align(
                   alignment: Alignment.centerRight,
                   child: Text(
-                    selectedItem!,
+                    selectedItem ?? '',
                     overflow: TextOverflow.ellipsis,
                     style: const TextStyle(
                       color: Colors.white,
