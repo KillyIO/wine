@@ -4,7 +4,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:wine/application/library/library_bloc.dart';
-import 'package:wine/injection.dart';
 
 import 'package:wine/presentation/library/library_layout.dart';
 import 'package:wine/utils/constants/core.dart';
@@ -66,14 +65,6 @@ class _LibraryPageState extends State<LibraryPage> {
                   ),
                 )
               : Container(),
-          title: const Text(
-            'LIBRARY',
-            style: TextStyle(
-              color: Colors.black,
-              fontSize: 18,
-              fontWeight: FontWeight.w300,
-            ),
-          ),
         ),
       ),
       body: LibraryLayout(),

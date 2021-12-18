@@ -1,6 +1,5 @@
 // SECTION valid inputs
 import 'package:cloud_firestore/cloud_firestore.dart' hide Settings;
-import 'package:firebase_core/firebase_core.dart';
 import 'package:wine/domain/auth/email_address.dart';
 import 'package:wine/domain/auth/username.dart';
 import 'package:wine/domain/core/unique_id.dart';
