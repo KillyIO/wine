@@ -145,12 +145,11 @@ class TypewriterSeriesLayout extends StatelessWidget {
                           controller: state.subtitleController,
                           label: 'SUBTITLE (OPTIONAL)',
                           hintText: 'Less than  words',
-                          onChanged: (value) =>
-                              context.read<TypewriterSeriesBloc>().add(
-                                    TypewriterSeriesEvent.subtitleChanged(
-                                      value,
-                                    ),
-                                  ),
+                          onChanged: (value) => context
+                              .read<TypewriterSeriesBloc>()
+                              .add(
+                                TypewriterSeriesEvent.subtitleChanged(value),
+                              ),
                           validator: (_) => state.subtitle.value.match(
                             (_) => null,
                             (err) => err.maybeMap(
@@ -172,27 +171,19 @@ class TypewriterSeriesLayout extends StatelessWidget {
                           controller: state.summaryController,
                           label: 'SUMMARY*',
                           hintText: 'Less than  words',
-                          onChanged: (value) =>
-                              context.read<TypewriterSeriesBloc>().add(
-                                    TypewriterSeriesEvent.summaryChanged(
-                                      value,
-                                    ),
-                                  ),
-                          validator: (_) => context
-                              .watch<TypewriterSeriesBloc>()
-                              .state
-                              .summary
-                              .value
-                              .match(
-                                (_) => null,
-                                (err) => err.maybeMap(
-                                  emptyInput: (_) =>
-                                      'The summary must not be empty.',
-                                  tooLongInput: (_) =>
-                                      'The summary must be less than words long.',
-                                  orElse: () => null,
-                                ),
-                              ),
+                          onChanged: (value) => context
+                              .read<TypewriterSeriesBloc>()
+                              .add(TypewriterSeriesEvent.summaryChanged(value)),
+                          validator: (_) => state.summary.value.match(
+                            (_) => null,
+                            (err) => err.maybeMap(
+                              emptyInput: (_) =>
+                                  'The summary must not be empty.',
+                              tooLongInput: (_) =>
+                                  'The summary must be less than words long.',
+                              orElse: () => null,
+                            ),
+                          ),
                           wordCount:
                               '${state.summaryWordCount}/$summaryMaxWords',
                           wordCountError: state.summaryWordCount == 0 ||
