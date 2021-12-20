@@ -365,7 +365,7 @@ class TypewriterSeriesBloc
         (_) {
           emit(
             state.copyWith(
-              endState: TypewriterEndState.saved,
+              endState: endState,
               failureOption: const None(),
               isProcessing: false,
             ),
@@ -385,7 +385,7 @@ class TypewriterSeriesBloc
         (_) {
           emit(
             state.copyWith(
-              endState: TypewriterEndState.saved,
+              endState: endState,
               failureOption: const None(),
               isProcessing: false,
             ),

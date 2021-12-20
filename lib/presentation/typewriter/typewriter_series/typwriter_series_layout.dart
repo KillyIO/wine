@@ -77,7 +77,20 @@ class TypewriterSeriesLayout extends StatelessWidget {
                 }
                 break;
               case TypewriterEndState.published:
-                // TODO(SSebigo): nav to series info page
+                redirectDialog(
+                  context,
+                  <String>[
+                    'Your series has been successfully published.',
+                    'You will now be redirected.'
+                  ],
+                  () => handleAuthRedirect(
+                    context,
+                    navigateTo: SeriesRoute(
+                      id: state.series.uid.getOrCrash(),
+                      series: state.series,
+                    ),
+                  ),
+                );
                 break;
               case TypewriterEndState.saved:
                 redirectDialog(
