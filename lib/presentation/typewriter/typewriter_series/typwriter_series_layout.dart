@@ -137,15 +137,21 @@ class TypewriterSeriesLayout extends StatelessWidget {
                           onChanged: (value) => context
                               .read<TypewriterSeriesBloc>()
                               .add(TypewriterSeriesEvent.titleChanged(value)),
-                          validator: (_) => state.title.value.match(
-                            (_) => null,
-                            (err) => err.maybeMap(
-                              emptyInput: (_) => 'The title must not be empty.',
-                              tooLongInput: (_) =>
-                                  'The title must be less than words long.',
-                              orElse: () => null,
-                            ),
-                          ),
+                          validator: (_) => context
+                              .watch<TypewriterSeriesBloc>()
+                              .state
+                              .title
+                              .value
+                              .match(
+                                (_) => null,
+                                (err) => err.maybeMap(
+                                  emptyInput: (_) =>
+                                      'The title must not be empty.',
+                                  tooLongInput: (_) =>
+                                      'The title must be less than words long.',
+                                  orElse: () => null,
+                                ),
+                              ),
                           wordCount: '${state.titleWordCount}/$titleMaxWords',
                           wordCountError: state.titleWordCount == 0 ||
                               state.titleWordCount > titleMaxWords,
@@ -163,14 +169,19 @@ class TypewriterSeriesLayout extends StatelessWidget {
                               .add(
                                 TypewriterSeriesEvent.subtitleChanged(value),
                               ),
-                          validator: (_) => state.subtitle.value.match(
-                            (_) => null,
-                            (err) => err.maybeMap(
-                              tooLongInput: (_) =>
-                                  'The subtitle must be less than words long.',
-                              orElse: () => null,
-                            ),
-                          ),
+                          validator: (_) => context
+                              .watch<TypewriterSeriesBloc>()
+                              .state
+                              .subtitle
+                              .value
+                              .match(
+                                (_) => null,
+                                (err) => err.maybeMap(
+                                  tooLongInput: (_) =>
+                                      'The subtitle must be less than words long.',
+                                  orElse: () => null,
+                                ),
+                              ),
                           wordCount:
                               '${state.subtitleWordCount}/$subtitleMaxWords',
                           wordCountError:
@@ -187,16 +198,21 @@ class TypewriterSeriesLayout extends StatelessWidget {
                           onChanged: (value) => context
                               .read<TypewriterSeriesBloc>()
                               .add(TypewriterSeriesEvent.summaryChanged(value)),
-                          validator: (_) => state.summary.value.match(
-                            (_) => null,
-                            (err) => err.maybeMap(
-                              emptyInput: (_) =>
-                                  'The summary must not be empty.',
-                              tooLongInput: (_) =>
-                                  'The summary must be less than words long.',
-                              orElse: () => null,
-                            ),
-                          ),
+                          validator: (_) => context
+                              .watch<TypewriterSeriesBloc>()
+                              .state
+                              .summary
+                              .value
+                              .match(
+                                (_) => null,
+                                (err) => err.maybeMap(
+                                  emptyInput: (_) =>
+                                      'The summary must not be empty.',
+                                  tooLongInput: (_) =>
+                                      'The summary must be less than words long.',
+                                  orElse: () => null,
+                                ),
+                              ),
                           wordCount:
                               '${state.summaryWordCount}/$summaryMaxWords',
                           wordCountError: state.summaryWordCount == 0 ||
@@ -313,6 +329,7 @@ class TypewriterSeriesLayout extends StatelessWidget {
                       padding: const EdgeInsets.only(bottom: 20),
                       child: DefaultButton(
                         color: pastelPink,
+                        isProcessing: state.isProcessing,
                         title: 'PUBLISH',
                         width: mediaQuery.width,
                         onPressed: () =>
@@ -327,6 +344,7 @@ class TypewriterSeriesLayout extends StatelessWidget {
                         padding: const EdgeInsets.only(bottom: 20),
                         child: DefaultButton(
                           color: error,
+                          isProcessing: state.isProcessing,
                           title: 'DELETE',
                           width: mediaQuery.width,
                           onPressed: () => showDialog<void>(

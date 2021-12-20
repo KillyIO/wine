@@ -11,6 +11,7 @@ import 'package:injectable/injectable.dart';
 import 'package:oxidized/oxidized.dart';
 import 'package:path/path.dart' as p;
 import 'package:path_provider/path_provider.dart';
+import 'package:string_validator/string_validator.dart';
 import 'package:stringr/stringr.dart';
 
 import 'package:wine/domain/core/core_failure.dart';
@@ -236,7 +237,9 @@ class TypewriterSeriesBloc
 
       if (isValid) {
         final series = state.series.copyWith(
-          coverURL: CoverURL(state.coverURL),
+          coverURL: isURL(state.coverURL)
+              ? CoverURL(state.coverURL)
+              : CoverURL.fromFile(state.coverURL),
           genres: state.genres,
           isNSFW: state.isNSFW,
           language: state.language,
