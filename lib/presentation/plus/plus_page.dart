@@ -59,7 +59,7 @@ class PlusPage extends StatelessWidget {
           ),
         ),
       ),
-      body: const PlusLayout(),
+      body: const SafeArea(child: PlusLayout()),
     );
   }
 }

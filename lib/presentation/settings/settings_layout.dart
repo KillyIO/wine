@@ -14,40 +14,37 @@ class SettingsLayout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Center(
-        child: Container(
-          constraints: const BoxConstraints(
-            maxWidth: maxContentLayoutWidth2,
-          ),
-          child: ListView(
-            children: <Widget>[
-              TileButton(
-                leadingIconData: Icons.account_circle_outlined,
-                title: 'ACCOUNT',
-                trailingIconData: Icons.keyboard_arrow_right,
-                onPressed: () => handleAuthGuardedNavigation(
-                  context,
-                  navigateTo: const SettingsAccountRoute(),
-                  useRoot: false,
-                ),
+    return Center(
+      child: Container(
+        constraints: const BoxConstraints(
+          maxWidth: maxContentLayoutWidth2,
+        ),
+        child: ListView(
+          children: <Widget>[
+            TileButton(
+              leadingIconData: Icons.account_circle_outlined,
+              title: 'ACCOUNT',
+              trailingIconData: Icons.keyboard_arrow_right,
+              onPressed: () => handleAuthGuardedNavigation(
+                context,
+                navigateTo: const SettingsAccountRoute(),
+                useRoot: false,
               ),
-              TileButton(
-                leadingIconData: LineIcons.book,
-                title: 'SERIES',
-                trailingIconData: Icons.keyboard_arrow_right,
-                onPressed: () =>
-                    context.router.push(const SettingsSeriesRoute()),
-              ),
-              TileButton(
-                leadingIconData: LineIcons.bookOpen,
-                title: 'CHAPTER',
-                trailingIconData: Icons.keyboard_arrow_right,
-                onPressed: () =>
-                    context.router.push(const SettingsChapterRoute()),
-              )
-            ],
-          ),
+            ),
+            TileButton(
+              leadingIconData: LineIcons.book,
+              title: 'SERIES',
+              trailingIconData: Icons.keyboard_arrow_right,
+              onPressed: () => context.router.push(const SettingsSeriesRoute()),
+            ),
+            TileButton(
+              leadingIconData: LineIcons.bookOpen,
+              title: 'CHAPTER',
+              trailingIconData: Icons.keyboard_arrow_right,
+              onPressed: () =>
+                  context.router.push(const SettingsChapterRoute()),
+            )
+          ],
         ),
       ),
     );

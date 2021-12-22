@@ -24,7 +24,7 @@ class HomePage extends StatelessWidget {
               getIt<SetupBloc>()..add(const SetupEvent.appLaunched()),
         ),
       ],
-      child: const HomeLayout(),
+      child: const SafeArea(child: HomeLayout()),
     );
   }
 }

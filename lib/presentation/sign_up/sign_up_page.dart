@@ -65,7 +65,7 @@ class SignUpPage extends StatelessWidget {
       ),
       body: BlocProvider(
         create: (_) => getIt<SignUpBloc>(),
-        child: SignUpLayout(navigateTo: navigateTo),
+        child: SafeArea(child: SignUpLayout(navigateTo: navigateTo)),
       ),
     );
   }

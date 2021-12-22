@@ -67,7 +67,7 @@ class _LibraryPageState extends State<LibraryPage> {
               : Container(),
         ),
       ),
-      body: LibraryLayout(),
+      body: SafeArea(child: LibraryLayout()),
     );
   }
 }

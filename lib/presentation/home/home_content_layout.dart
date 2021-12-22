@@ -23,30 +23,28 @@ class _HomeContentLayoutState extends State<HomeContentLayout> {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Center(
-        child: Container(
-          constraints: const BoxConstraints(
-            maxWidth: maxContentLayoutWidth,
-          ),
-          child: Column(
-            children: <Widget>[
-              BlocBuilder<HomeBloc, HomeState>(
-                builder: (context, state) {
-                  return HorizontalPageViewNavbar(
-                    colors: const <Color>[pastelYellow, pastelPink],
-                    controller: _pageController,
-                    pageIndex: state.currentPageViewIdx,
-                    titles: homePageViewKeys,
-                  );
-                },
-              ),
-              HomePageViewBuilder(
-                controller: _pageController,
-              ),
-              if (kIsWeb) const Footer(),
-            ],
-          ),
+    return Center(
+      child: Container(
+        constraints: const BoxConstraints(
+          maxWidth: maxContentLayoutWidth,
+        ),
+        child: Column(
+          children: <Widget>[
+            BlocBuilder<HomeBloc, HomeState>(
+              builder: (context, state) {
+                return HorizontalPageViewNavbar(
+                  colors: const <Color>[pastelYellow, pastelPink],
+                  controller: _pageController,
+                  pageIndex: state.currentPageViewIdx,
+                  titles: homePageViewKeys,
+                );
+              },
+            ),
+            HomePageViewBuilder(
+              controller: _pageController,
+            ),
+            if (kIsWeb) const Footer(),
+          ],
         ),
       ),
     );

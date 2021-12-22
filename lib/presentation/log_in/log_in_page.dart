@@ -65,7 +65,7 @@ class LogInPage extends StatelessWidget {
       ),
       body: BlocProvider(
         create: (_) => getIt<LogInBloc>(),
-        child: LogInLayout(navigateTo: navigateTo),
+        child: SafeArea(child: LogInLayout(navigateTo: navigateTo)),
       ),
     );
   }

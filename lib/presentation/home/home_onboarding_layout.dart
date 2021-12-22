@@ -10,23 +10,21 @@ class HomeOnboardingLayout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: IntroductionScreen(
-        done: const Text(
-          'Start',
-        ),
-        onDone: () async => context
-            .read<SetupBloc>()
-            .add(const SetupEvent.onboardingDonePressed()),
-        pages: [
-          // TODO(SSebigo): add pages
-          PageViewModel(
-            title: 'Placeholder title',
-            body: 'Placeholder body',
-          ),
-        ],
-        showNextButton: false,
+    return IntroductionScreen(
+      done: const Text(
+        'Start',
       ),
+      onDone: () async => context
+          .read<SetupBloc>()
+          .add(const SetupEvent.onboardingDonePressed()),
+      pages: [
+        // TODO(SSebigo): add pages
+        PageViewModel(
+          title: 'Placeholder title',
+          body: 'Placeholder body',
+        ),
+      ],
+      showNextButton: false,
     );
   }
 }

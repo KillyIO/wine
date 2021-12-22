@@ -89,7 +89,7 @@ class TypewriterPage extends StatelessWidget {
           leadingWidth: defaultToolbarItemWidth,
         ),
       ),
-      body: _typewriter,
+      body: SafeArea(child: _typewriter),
     );
   }
 }

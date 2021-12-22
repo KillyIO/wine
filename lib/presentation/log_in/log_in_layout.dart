@@ -109,161 +109,158 @@ class LogInLayout extends StatelessWidget {
       },
       child: BlocBuilder<LogInBloc, LogInState>(
         builder: (context, state) {
-          return SafeArea(
-            child: AbsorbPointer(
-              absorbing: state.isProcessing,
-              child: Form(
-                autovalidateMode: AutovalidateMode.always,
-                child: SingleChildScrollView(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      if (onSignUpButtonPressed != null)
-                        Padding(
-                          padding: const EdgeInsets.only(left: 10, top: 10),
-                          child: IconButton(
-                            key: const Key('log_in_dialog_back'),
-                            highlightColor: Colors.transparent,
-                            hoverColor: Colors.transparent,
-                            icon: const Icon(
-                              Icons.close_outlined,
-                              color: Colors.black,
-                            ),
-                            onPressed: context.router.root.pop,
-                            splashColor: Colors.transparent,
-                          ),
-                        ),
+          return AbsorbPointer(
+            absorbing: state.isProcessing,
+            child: Form(
+              autovalidateMode: AutovalidateMode.always,
+              child: SingleChildScrollView(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    if (onSignUpButtonPressed != null)
                       Padding(
-                        padding: getWelcomeMessagePadding(mediaQuery),
-                        child: SizedBox(
-                          width: mediaQuery.width,
-                          child: const Text(
-                            'Log in to access more features.',
-                            textAlign: TextAlign.start,
-                            style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 20,
-                              fontWeight: FontWeight.w500,
-                            ),
+                        padding: const EdgeInsets.only(left: 10, top: 10),
+                        child: IconButton(
+                          key: const Key('log_in_dialog_back'),
+                          highlightColor: Colors.transparent,
+                          hoverColor: Colors.transparent,
+                          icon: const Icon(
+                            Icons.close_outlined,
+                            color: Colors.black,
+                          ),
+                          onPressed: context.router.root.pop,
+                          splashColor: Colors.transparent,
+                        ),
+                      ),
+                    Padding(
+                      padding: getWelcomeMessagePadding(mediaQuery),
+                      child: SizedBox(
+                        width: mediaQuery.width,
+                        child: const Text(
+                          'Log in to access more features.',
+                          textAlign: TextAlign.start,
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 20,
+                            fontWeight: FontWeight.w500,
                           ),
                         ),
                       ),
-                      Padding(
-                        padding: getEmailAddressPadding(mediaQuery),
-                        child: AuthenticationTextField(
-                          hintText: 'Email address',
-                          keyboardType: TextInputType.emailAddress,
-                          onChanged: (value) => context
-                              .read<LogInBloc>()
-                              .add(LogInEvent.emailAddressChanged(value)),
-                          validator: (_) => context
-                              .watch<LogInBloc>()
-                              .state
-                              .emailAddress
-                              .value
-                              .match(
-                                (_) => null,
-                                (err) => err.maybeMap(
-                                  invalidEmailAddress: (_) =>
-                                      'The email address is invalid.',
-                                  orElse: () => null,
-                                ),
+                    ),
+                    Padding(
+                      padding: getEmailAddressPadding(mediaQuery),
+                      child: AuthenticationTextField(
+                        hintText: 'Email address',
+                        keyboardType: TextInputType.emailAddress,
+                        onChanged: (value) => context
+                            .read<LogInBloc>()
+                            .add(LogInEvent.emailAddressChanged(value)),
+                        validator: (_) => context
+                            .watch<LogInBloc>()
+                            .state
+                            .emailAddress
+                            .value
+                            .match(
+                              (_) => null,
+                              (err) => err.maybeMap(
+                                invalidEmailAddress: (_) =>
+                                    'The email address is invalid.',
+                                orElse: () => null,
                               ),
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(left: 50, top: 25),
-                        child: AuthenticationTextField(
-                          hintText: 'Password',
-                          obscureText: true,
-                          onChanged: (value) => context
-                              .read<LogInBloc>()
-                              .add(LogInEvent.passwordChanged(value)),
-                          validator: (_) => context
-                              .watch<LogInBloc>()
-                              .state
-                              .password
-                              .value
-                              .match(
-                                (_) => null,
-                                (err) => err.maybeMap(
-                                  invalidPassword: (_) =>
-                                      'The password is invalid.',
-                                  orElse: () => null,
-                                ),
-                              ),
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(left: 50, top: 50),
-                        child: DefaultButton(
-                          color: pastelPink,
-                          hasRoundedCorners: true,
-                          isProcessing: state.isProcessing,
-                          onPressed: state.isProcessing
-                              ? null
-                              : () => context.read<LogInBloc>().add(
-                                    const LogInEvent
-                                        .logInWithEmailAndPasswordPressed(),
-                                  ),
-                          title: 'Log in'.toUpperCase(),
-                          width: 150,
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(left: 50, top: 25),
-                        child: GestureDetector(
-                          onTap: state.isProcessing ? null : () {},
-                          child: const Text(
-                            'Forgot password?',
-                            style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 15,
-                              fontWeight: FontWeight.w400,
-                              letterSpacing: 0.5,
-                              decoration: TextDecoration.underline,
                             ),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 50, top: 25),
+                      child: AuthenticationTextField(
+                        hintText: 'Password',
+                        obscureText: true,
+                        onChanged: (value) => context
+                            .read<LogInBloc>()
+                            .add(LogInEvent.passwordChanged(value)),
+                        validator: (_) => context
+                            .watch<LogInBloc>()
+                            .state
+                            .password
+                            .value
+                            .match(
+                              (_) => null,
+                              (err) => err.maybeMap(
+                                invalidPassword: (_) =>
+                                    'The password is invalid.',
+                                orElse: () => null,
+                              ),
+                            ),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 50, top: 50),
+                      child: DefaultButton(
+                        color: pastelPink,
+                        hasRoundedCorners: true,
+                        isProcessing: state.isProcessing,
+                        onPressed: state.isProcessing
+                            ? null
+                            : () => context.read<LogInBloc>().add(
+                                  const LogInEvent
+                                      .logInWithEmailAndPasswordPressed(),
+                                ),
+                        title: 'Log in'.toUpperCase(),
+                        width: 150,
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 50, top: 25),
+                      child: GestureDetector(
+                        onTap: state.isProcessing ? null : () {},
+                        child: const Text(
+                          'Forgot password?',
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 15,
+                            fontWeight: FontWeight.w400,
+                            letterSpacing: 0.5,
+                            decoration: TextDecoration.underline,
                           ),
                         ),
                       ),
-                      const Padding(
-                        padding: EdgeInsets.symmetric(vertical: 40),
-                        child: LogInSeparator(),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(bottom: 40),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
-                          children: <Widget>[
-                            LogInSocialMediaButton(
-                              onPressed: state.isProcessing
-                                  ? null
-                                  : () => context.read<LogInBloc>().add(
-                                        const LogInEvent
-                                            .logInWithGooglePressed(),
-                                      ),
-                              icon: LineIcons.googlePlus,
-                            )
-                          ],
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(bottom: 50),
-                        child: Align(
-                          child: LogInCreateAccountButton(
+                    ),
+                    const Padding(
+                      padding: EdgeInsets.symmetric(vertical: 40),
+                      child: LogInSeparator(),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(bottom: 40),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: <Widget>[
+                          LogInSocialMediaButton(
                             onPressed: state.isProcessing
                                 ? null
-                                : onSignUpButtonPressed ??
-                                    () => context.router.root.push(
-                                          SignUpRoute(
-                                            navigateTo: navigateTo,
-                                          ),
+                                : () => context.read<LogInBloc>().add(
+                                      const LogInEvent.logInWithGooglePressed(),
+                                    ),
+                            icon: LineIcons.googlePlus,
+                          )
+                        ],
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(bottom: 50),
+                      child: Align(
+                        child: LogInCreateAccountButton(
+                          onPressed: state.isProcessing
+                              ? null
+                              : onSignUpButtonPressed ??
+                                  () => context.router.root.push(
+                                        SignUpRoute(
+                                          navigateTo: navigateTo,
                                         ),
-                          ),
+                                      ),
                         ),
                       ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
               ),
             ),

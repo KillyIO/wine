@@ -65,7 +65,7 @@ class SettingsPage extends StatelessWidget {
           ),
         ),
       ),
-      body: const SettingsLayout(),
+      body: const SafeArea(child: SettingsLayout()),
     );
   }
 }

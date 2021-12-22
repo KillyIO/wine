@@ -10,22 +10,20 @@ class HomeSplashLayout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Stack(
-        children: const <Widget>[
-          FlareActor(
-            logoAnimation,
-            animation: 'logo',
+    return Stack(
+      children: const <Widget>[
+        FlareActor(
+          logoAnimation,
+          animation: 'logo',
+        ),
+        Padding(
+          padding: EdgeInsets.only(bottom: 25),
+          child: Align(
+            alignment: Alignment.bottomCenter,
+            child: HomeSplashCopyright(),
           ),
-          Padding(
-            padding: EdgeInsets.only(bottom: 25),
-            child: Align(
-              alignment: Alignment.bottomCenter,
-              child: HomeSplashCopyright(),
-            ),
-          ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }
