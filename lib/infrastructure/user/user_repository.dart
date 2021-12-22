@@ -46,7 +46,7 @@ class UserRepository implements IUserRepository {
   }
 
   @override
-  Future<Result<User, UserFailure>> loadUser(String userUID) async {
+  Future<Result<User, UserFailure>> loadUser(UniqueID userUID) async {
     try {
       final user = await _firestore
           .collection(usersPath)
@@ -63,7 +63,7 @@ class UserRepository implements IUserRepository {
             },
             toFirestore: (value, _) => UserDTO.fromDomain(value).toJson(),
           )
-          .doc(userUID)
+          .doc(userUID.getOrCrash())
           .get()
           .then((s) => s.data());
 

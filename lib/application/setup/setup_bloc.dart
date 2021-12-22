@@ -78,7 +78,7 @@ class SetupBloc extends Bloc<SetupEvent, SetupState> {
       if (_authFacade.isAnonymous) {
         emit(const SetupState.content());
       } else {
-        (await _userRepository.loadUser(value.session.uid.getOrCrash())).match(
+        (await _userRepository.loadUser(value.session.uid)).match(
           (user) {
             add(SetupEvent.userLoaded(user));
           },

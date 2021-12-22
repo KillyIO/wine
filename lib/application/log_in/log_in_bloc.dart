@@ -66,10 +66,7 @@ class LogInBloc extends Bloc<LogInEvent, LogInState> {
         final userAsplain = userOption.toNullable();
 
         if (userAsplain != null) {
-          (await _userRepository.loadUser(
-            userAsplain.uid.getOrCrash(),
-          ))
-              .match(
+          (await _userRepository.loadUser(userAsplain.uid)).match(
             (user) {
               add(LogInEvent.userLoaded(user));
             },
@@ -92,10 +89,7 @@ class LogInBloc extends Bloc<LogInEvent, LogInState> {
         final userAsplain = userOption.toNullable();
 
         if (userAsplain != null) {
-          (await _userRepository.loadUser(
-            userAsplain.uid.getOrCrash(),
-          ))
-              .match(
+          (await _userRepository.loadUser(userAsplain.uid)).match(
             (user) {
               add(LogInEvent.userLoaded(user));
             },

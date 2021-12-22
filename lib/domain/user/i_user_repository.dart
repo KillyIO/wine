@@ -12,7 +12,7 @@ abstract class IUserRepository {
   );
 
   /// @nodoc
-  Future<Result<User, UserFailure>> loadUser(String userUID);
+  Future<Result<User, UserFailure>> loadUser(UniqueID userUID);
 
   /// @nodoc
   Future<Result<Unit, UserFailure>> saveDetailsFromUser(User user);

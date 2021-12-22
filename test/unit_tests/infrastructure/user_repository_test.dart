@@ -86,7 +86,8 @@ void main() {
           .doc(testUserUid)
           .set(testUserFirestore, SetOptions(merge: true));
 
-      final result = await _userRepository.loadUser(testUserUid);
+      final result = await _userRepository
+          .loadUser(UniqueID.fromUniqueString(testUserUid));
 
       expect(result.isOk(), true);
       result.match(
@@ -96,7 +97,8 @@ void main() {
     });
 
     test('When user not loaded Then return UserNotFound', () async {
-      final result = await _userRepository.loadUser(testHiveUser.uid);
+      final result = await _userRepository
+          .loadUser(UniqueID.fromUniqueString(testHiveUser.uid));
 
       expect(result.isErr(), true);
       result.match(

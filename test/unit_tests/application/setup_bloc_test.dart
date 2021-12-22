@@ -6,6 +6,7 @@ import 'package:wine/application/setup/setup_bloc.dart';
 import 'package:wine/domain/auth/auth_failure.dart';
 import 'package:wine/domain/auth/i_auth_facade.dart';
 import 'package:wine/domain/core/core_failure.dart';
+import 'package:wine/domain/core/unique_id.dart';
 import 'package:wine/domain/default_covers/default_covers_failure.dart';
 import 'package:wine/domain/default_covers/i_default_covers_repository.dart';
 import 'package:wine/domain/sessions/i_sessions_repository.dart';
@@ -181,8 +182,10 @@ void main() {
         build: () => _setupBloc,
         act: (bloc) {
           when(() => _authFacade.isAnonymous).thenReturn(false);
-          when(() => _userRepository.loadUser(testUserUid))
-              .thenAnswer((_) async => Err(const UserFailure.userNotFound()));
+          when(
+            () => _userRepository
+                .loadUser(UniqueID.fromUniqueString(testUserUid)),
+          ).thenAnswer((_) async => Err(const UserFailure.userNotFound()));
           return bloc.add(SetupEvent.sessionFetched(testUser));
         },
         expect: () => <SetupState>[
@@ -193,7 +196,8 @@ void main() {
         verify: (_) {
           verifyInOrder([
             () => _authFacade.isAnonymous,
-            () => _userRepository.loadUser(testUserUid),
+            () => _userRepository
+                .loadUser(UniqueID.fromUniqueString(testUserUid)),
           ]);
         },
       );
@@ -298,7 +302,7 @@ void main() {
               .thenAnswer((_) async => Ok(unit));
           when(_sessionsRepository.fetchSession)
               .thenAnswer((_) async => Ok(testUser));
-          when(() => _userRepository.loadUser(testUser.uid.getOrCrash()))
+          when(() => _userRepository.loadUser(testUser.uid))
               .thenAnswer((_) async => Ok(testUser));
           when(() => _sessionsRepository.updateSession(testUser))
               .thenAnswer((_) async => Ok(unit));
@@ -320,7 +324,7 @@ void main() {
             _settingsRepository.fetchSettings,
             _settingsRepository.initializeSettings,
             _sessionsRepository.fetchSession,
-            () => _userRepository.loadUser(testUser.uid.getOrCrash()),
+            () => _userRepository.loadUser(testUser.uid),
             () => _sessionsRepository.updateSession(testUser)
           ]);
         },
