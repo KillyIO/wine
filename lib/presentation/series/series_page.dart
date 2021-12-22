@@ -42,10 +42,7 @@ class SeriesPage extends StatelessWidget {
           backgroundColor: Colors.transparent,
           bottom: PreferredSize(
             preferredSize: const Size.fromHeight(0),
-            child: Container(
-              color: Colors.black,
-              height: 2,
-            ),
+            child: Container(color: Colors.black, height: 2),
           ),
           centerTitle: true,
           elevation: 0,
@@ -53,22 +50,18 @@ class SeriesPage extends StatelessWidget {
               ? Padding(
                   padding: getAssetBackButtonPadding(mediaQuery),
                   child: IconButton(
-                    key: const Key('typewriter_back'),
+                    key: const Key('series_page_back_button'),
                     highlightColor: Colors.transparent,
                     hoverColor: Colors.transparent,
                     icon: const Icon(
                       Icons.keyboard_backspace_outlined,
                       color: Colors.black,
                     ),
-                    onPressed: () {
-                      FocusScope.of(context).requestFocus(FocusNode());
-                      context.router.root.pop();
-                    },
+                    onPressed: context.router.root.pop,
                     splashColor: Colors.transparent,
                   ),
                 )
               : Container(),
-          leadingWidth: defaultToolbarItemWidth,
         ),
       ),
       body: BlocProvider(
@@ -79,7 +72,7 @@ class SeriesPage extends StatelessWidget {
               series: series,
             ),
           ),
-        child: const SeriesLayout(),
+        child: const SafeArea(child: SeriesLayout()),
       ),
     );
   }

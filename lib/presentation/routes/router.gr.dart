@@ -9,10 +9,9 @@
 // **************************************************************************
 
 import 'package:auto_route/auto_route.dart' as _i13;
-import 'package:flutter/foundation.dart' as _i15;
 import 'package:flutter/material.dart' as _i14;
-import 'package:wine/domain/core/typewriter_type.dart' as _i17;
-import 'package:wine/domain/series/series.dart' as _i16;
+import 'package:wine/domain/core/typewriter_type.dart' as _i16;
+import 'package:wine/domain/series/series.dart' as _i15;
 import 'package:wine/presentation/home/home_page.dart' as _i1;
 import 'package:wine/presentation/library/library_page.dart' as _i2;
 import 'package:wine/presentation/log_in/log_in_page.dart' as _i3;
@@ -140,24 +139,27 @@ class AppRouter extends _i13.RootStackRouter {
       ];
 }
 
-/// generated route for [_i1.HomePage]
+/// generated route for
+/// [_i1.HomePage]
 class HomeRoute extends _i13.PageRouteInfo<void> {
-  const HomeRoute() : super(name, path: '/');
+  const HomeRoute() : super(HomeRoute.name, path: '/');
 
   static const String name = 'HomeRoute';
 }
 
-/// generated route for [_i2.LibraryPage]
+/// generated route for
+/// [_i2.LibraryPage]
 class LibraryRoute extends _i13.PageRouteInfo<void> {
-  const LibraryRoute() : super(name, path: '/library');
+  const LibraryRoute() : super(LibraryRoute.name, path: '/library');
 
   static const String name = 'LibraryRoute';
 }
 
-/// generated route for [_i3.LogInPage]
+/// generated route for
+/// [_i3.LogInPage]
 class LogInRoute extends _i13.PageRouteInfo<LogInRouteArgs> {
-  LogInRoute({_i15.Key? key, required _i13.PageRouteInfo<dynamic> navigateTo})
-      : super(name,
+  LogInRoute({_i14.Key? key, required _i13.PageRouteInfo<dynamic> navigateTo})
+      : super(LogInRoute.name,
             path: '/log-in',
             args: LogInRouteArgs(key: key, navigateTo: navigateTo));
 
@@ -167,7 +169,7 @@ class LogInRoute extends _i13.PageRouteInfo<LogInRouteArgs> {
 class LogInRouteArgs {
   const LogInRouteArgs({this.key, required this.navigateTo});
 
-  final _i15.Key? key;
+  final _i14.Key? key;
 
   final _i13.PageRouteInfo<dynamic> navigateTo;
 
@@ -177,17 +179,19 @@ class LogInRouteArgs {
   }
 }
 
-/// generated route for [_i4.PlusPage]
+/// generated route for
+/// [_i4.PlusPage]
 class PlusRoute extends _i13.PageRouteInfo<void> {
-  const PlusRoute() : super(name, path: '/plus');
+  const PlusRoute() : super(PlusRoute.name, path: '/plus');
 
   static const String name = 'PlusRoute';
 }
 
-/// generated route for [_i5.SeriesPage]
+/// generated route for
+/// [_i5.SeriesPage]
 class SeriesRoute extends _i13.PageRouteInfo<SeriesRouteArgs> {
-  SeriesRoute({_i15.Key? key, required String id, _i16.Series? series})
-      : super(name,
+  SeriesRoute({_i14.Key? key, required String id, _i15.Series? series})
+      : super(SeriesRoute.name,
             path: '/series/:id',
             args: SeriesRouteArgs(key: key, id: id, series: series),
             rawPathParams: {'id': id});
@@ -198,11 +202,11 @@ class SeriesRoute extends _i13.PageRouteInfo<SeriesRouteArgs> {
 class SeriesRouteArgs {
   const SeriesRouteArgs({this.key, required this.id, this.series});
 
-  final _i15.Key? key;
+  final _i14.Key? key;
 
   final String id;
 
-  final _i16.Series? series;
+  final _i15.Series? series;
 
   @override
   String toString() {
@@ -210,18 +214,21 @@ class SeriesRouteArgs {
   }
 }
 
-/// generated route for [_i6.SettingsWrapper]
+/// generated route for
+/// [_i6.SettingsWrapper]
 class SettingsWrapper extends _i13.PageRouteInfo<void> {
   const SettingsWrapper({List<_i13.PageRouteInfo>? children})
-      : super(name, path: '/settings', initialChildren: children);
+      : super(SettingsWrapper.name,
+            path: '/settings', initialChildren: children);
 
   static const String name = 'SettingsWrapper';
 }
 
-/// generated route for [_i7.SignUpPage]
+/// generated route for
+/// [_i7.SignUpPage]
 class SignUpRoute extends _i13.PageRouteInfo<SignUpRouteArgs> {
-  SignUpRoute({_i15.Key? key, required _i13.PageRouteInfo<dynamic> navigateTo})
-      : super(name,
+  SignUpRoute({_i14.Key? key, required _i13.PageRouteInfo<dynamic> navigateTo})
+      : super(SignUpRoute.name,
             path: '/sign-up',
             args: SignUpRouteArgs(key: key, navigateTo: navigateTo));
 
@@ -231,7 +238,7 @@ class SignUpRoute extends _i13.PageRouteInfo<SignUpRouteArgs> {
 class SignUpRouteArgs {
   const SignUpRouteArgs({this.key, required this.navigateTo});
 
-  final _i15.Key? key;
+  final _i14.Key? key;
 
   final _i13.PageRouteInfo<dynamic> navigateTo;
 
@@ -241,14 +248,15 @@ class SignUpRouteArgs {
   }
 }
 
-/// generated route for [_i8.TypewriterPage]
+/// generated route for
+/// [_i8.TypewriterPage]
 class TypewriterSeriesId extends _i13.PageRouteInfo<TypewriterSeriesIdArgs> {
   TypewriterSeriesId(
-      {_i15.Key? key,
-      _i16.Series? series,
+      {_i14.Key? key,
+      _i15.Series? series,
       String? id,
-      _i17.TypewriterType type = _i17.TypewriterType.unknown})
-      : super(name,
+      _i16.TypewriterType type = _i16.TypewriterType.unknown})
+      : super(TypewriterSeriesId.name,
             path: '/typewriter/series/:id',
             args: TypewriterSeriesIdArgs(
                 key: key, series: series, id: id, type: type),
@@ -262,15 +270,15 @@ class TypewriterSeriesIdArgs {
       {this.key,
       this.series,
       this.id,
-      this.type = _i17.TypewriterType.unknown});
+      this.type = _i16.TypewriterType.unknown});
 
-  final _i15.Key? key;
+  final _i14.Key? key;
 
-  final _i16.Series? series;
+  final _i15.Series? series;
 
   final String? id;
 
-  final _i17.TypewriterType type;
+  final _i16.TypewriterType type;
 
   @override
   String toString() {
@@ -278,14 +286,15 @@ class TypewriterSeriesIdArgs {
   }
 }
 
-/// generated route for [_i8.TypewriterPage]
+/// generated route for
+/// [_i8.TypewriterPage]
 class TypewriterSeriesNew extends _i13.PageRouteInfo<TypewriterSeriesNewArgs> {
   TypewriterSeriesNew(
-      {_i15.Key? key,
-      _i16.Series? series,
+      {_i14.Key? key,
+      _i15.Series? series,
       String? id,
-      _i17.TypewriterType type = _i17.TypewriterType.unknown})
-      : super(name,
+      _i16.TypewriterType type = _i16.TypewriterType.unknown})
+      : super(TypewriterSeriesNew.name,
             path: '/typewriter/series/new',
             args: TypewriterSeriesNewArgs(
                 key: key, series: series, id: id, type: type),
@@ -299,15 +308,15 @@ class TypewriterSeriesNewArgs {
       {this.key,
       this.series,
       this.id,
-      this.type = _i17.TypewriterType.unknown});
+      this.type = _i16.TypewriterType.unknown});
 
-  final _i15.Key? key;
+  final _i14.Key? key;
 
-  final _i16.Series? series;
+  final _i15.Series? series;
 
   final String? id;
 
-  final _i17.TypewriterType type;
+  final _i16.TypewriterType type;
 
   @override
   String toString() {
@@ -315,30 +324,36 @@ class TypewriterSeriesNewArgs {
   }
 }
 
-/// generated route for [_i9.SettingsAccountPage]
+/// generated route for
+/// [_i9.SettingsAccountPage]
 class SettingsAccountRoute extends _i13.PageRouteInfo<void> {
-  const SettingsAccountRoute() : super(name, path: 'account');
+  const SettingsAccountRoute()
+      : super(SettingsAccountRoute.name, path: 'account');
 
   static const String name = 'SettingsAccountRoute';
 }
 
-/// generated route for [_i10.SettingsChapterPage]
+/// generated route for
+/// [_i10.SettingsChapterPage]
 class SettingsChapterRoute extends _i13.PageRouteInfo<void> {
-  const SettingsChapterRoute() : super(name, path: 'chapter');
+  const SettingsChapterRoute()
+      : super(SettingsChapterRoute.name, path: 'chapter');
 
   static const String name = 'SettingsChapterRoute';
 }
 
-/// generated route for [_i11.SettingsSeriesPage]
+/// generated route for
+/// [_i11.SettingsSeriesPage]
 class SettingsSeriesRoute extends _i13.PageRouteInfo<void> {
-  const SettingsSeriesRoute() : super(name, path: 'series');
+  const SettingsSeriesRoute() : super(SettingsSeriesRoute.name, path: 'series');
 
   static const String name = 'SettingsSeriesRoute';
 }
 
-/// generated route for [_i12.SettingsPage]
+/// generated route for
+/// [_i12.SettingsPage]
 class SettingsRoute extends _i13.PageRouteInfo<void> {
-  const SettingsRoute() : super(name, path: '');
+  const SettingsRoute() : super(SettingsRoute.name, path: '');
 
   static const String name = 'SettingsRoute';
 }

@@ -50,17 +50,14 @@ class _LibraryPageState extends State<LibraryPage> {
               ? Padding(
                   padding: getAssetBackButtonPadding(mediaQuery),
                   child: IconButton(
-                    key: const Key('library_layout_back_button'),
+                    key: const Key('library_page_back_button'),
                     highlightColor: Colors.transparent,
                     hoverColor: Colors.transparent,
                     icon: const Icon(
                       Icons.keyboard_backspace_outlined,
                       color: Colors.black,
                     ),
-                    onPressed: () {
-                      FocusScope.of(context).requestFocus(FocusNode());
-                      context.router.root.pop();
-                    },
+                    onPressed: context.router.root.pop,
                     splashColor: Colors.transparent,
                   ),
                 )

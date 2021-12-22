@@ -34,12 +34,7 @@ class SettingsBloc extends Bloc<SettingsEvent, SettingsState> {
 
       (await _sessionsRepository.fetchSession()).match(
         (user) {
-          emit(
-            state.copyWith(
-              isProcessing: false,
-              username: user.username.getOrCrash(),
-            ),
-          );
+          emit(state.copyWith(username: user.username.getOrCrash()));
 
           add(const SettingsEvent.sessionFetched());
         },

@@ -4,8 +4,14 @@ part of 'series_bloc.dart';
 @freezed
 class SeriesEvent with _$SeriesEvent {
   /// @nodoc
+  const factory SeriesEvent.fetchSession() = FetchSession;
+
+  /// @nodoc
   const factory SeriesEvent.launchWithID(
     UniqueID id, {
     Series? series,
-  }) = InitBloc;
+  }) = LaunchWithID;
+
+  /// @nodoc
+  const factory SeriesEvent.loadAuthor() = LoadAuthor;
 }
