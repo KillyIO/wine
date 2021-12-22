@@ -56,6 +56,7 @@ class SeriesCard extends StatelessWidget {
         height: height,
         width: width,
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: <Widget>[
             Padding(
               padding: const EdgeInsets.only(bottom: 10),
@@ -98,11 +99,11 @@ class SeriesCard extends StatelessWidget {
             // Padding(
             //   padding: const EdgeInsets.symmetric(horizontal: 1),
             //   child: TextOneLine(
-            //     authorUsername,
+            //     'Some text',
             //     style: TextStyle(
             //       color: Colors.black38,
             //       fontWeight: FontWeight.w400,
-            //       fontSize: authorUsernameFontSize,
+            //       fontSize: 10,
             //     ),
             //   ),
             // ),
