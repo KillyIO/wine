@@ -72,6 +72,7 @@ class LibraryBaseSeriesLayout extends StatelessWidget {
                   crossAxisCount: 2,
                   staggeredTiles: _generateStaggeredTiles,
                   crossAxisSpacing: 20,
+                  physics: const NeverScrollableScrollPhysics(),
                   shrinkWrap: true,
                   children: [
                     for (final s in seriesList)
@@ -80,7 +81,13 @@ class LibraryBaseSeriesLayout extends StatelessWidget {
                         onPressed: () {
                           switch (type) {
                             case 'published':
-                              // context.router.root.push(const SeriesRoute());
+                              handleAuthGuardedNavigation(
+                                context,
+                                navigateTo: SeriesRoute(
+                                  id: s.uid.getOrCrash(),
+                                  series: s,
+                                ),
+                              );
                               break;
                             case 'drafts':
                               handleAuthGuardedNavigation(

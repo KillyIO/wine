@@ -38,12 +38,16 @@ class LibrarySeriesLayout extends StatelessWidget {
               width: mediaQuery.width * .2,
             ),
             Expanded(
-              child: LibraryBaseSeriesLayout(
-                seriesList: _getSeriesList(
-                  state,
-                  libraryVerticalNavbarKeys[state.currentVerticalNavbarIdx],
+              child: Padding(
+                padding: const EdgeInsets.only(right: 20),
+                child: LibraryBaseSeriesLayout(
+                  seriesList: _getSeriesList(
+                    state,
+                    libraryVerticalNavbarKeys[state.currentVerticalNavbarIdx],
+                  ),
+                  type:
+                      libraryVerticalNavbarKeys[state.currentVerticalNavbarIdx],
                 ),
-                type: libraryVerticalNavbarKeys[state.currentVerticalNavbarIdx],
               ),
             ),
           ],
