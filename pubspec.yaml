@@ -40,6 +40,7 @@ dependencies:
   mime: ^1.0.1
   oxidized: ^5.1.0
   path_provider: ^2.0.8
+  readmore: ^2.1.0
   responsive_builder: ^0.4.1
   shimmer: ^2.0.0
   simple_gesture_detector: ^0.2.0
