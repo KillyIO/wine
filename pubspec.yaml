@@ -72,18 +72,6 @@ flavorizr:
     ios: null
 
   flavors:
-    beta:
-      app:
-        name: "WINE Beta"
-
-      android:
-        applicationId: "io.killy.wine.beta"
-        generateDummyAssets: false
-
-      ios:
-        bundleId: "io.killy.wine.beta"
-        generateDummyAssets: false
-
     development:
       app:
         name: "WINE Dev"
