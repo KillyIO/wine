@@ -12,7 +12,7 @@ class SeriesLayout extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocConsumer<SeriesBloc, SeriesState>(
       listener: (context, state) {
-        // TODO: implement listener
+        // TODO(SSebigo): implement listener
       },
       builder: (context, state) {
         return Padding(
