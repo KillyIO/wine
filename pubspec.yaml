@@ -9,8 +9,8 @@ environment:
   sdk: ">=2.12.0 <3.0.0"
 
 dependencies:
-  assorted_layout_widgets: ^5.2.1
-  auto_route: ^3.2.0
+  assorted_layout_widgets: ^5.4.1
+  auto_route: ^3.2.1
   cached_network_image: ^3.2.0
   cloud_firestore: ^3.1.5
   cupertino_icons: ^1.0.4
@@ -22,9 +22,9 @@ dependencies:
   flare_flutter: ^3.0.2
   flutter:
     sdk: flutter
-  flutter_bloc: ^8.0.0
-  flutter_native_splash: ^1.3.2
-  flutter_staggered_grid_view: ^0.4.1
+  flutter_bloc: ^8.0.1
+  flutter_native_splash: ^1.3.3
+  flutter_staggered_grid_view: ^0.6.0
   freezed_annotation: ^1.1.0
   get_it: ^7.2.0
   google_sign_in: ^5.2.1
@@ -50,11 +50,11 @@ dependencies:
   uuid: ^3.0.5
 
 dev_dependencies:
-  auto_route_generator: ^3.2.0
-  bloc_test: ^9.0.1
+  auto_route_generator: ^3.2.1
+  bloc_test: ^9.0.2
   build_runner: ^2.1.7
   fake_cloud_firestore: ^1.2.0
-  flutter_flavorizr: ^2.1.0
+  flutter_flavorizr: ^2.1.1
   flutter_test:
     sdk: flutter
   fluttericon: ^2.0.0
