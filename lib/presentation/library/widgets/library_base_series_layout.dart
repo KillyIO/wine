@@ -24,16 +24,6 @@ class LibraryBaseSeriesLayout extends StatelessWidget {
   /// @nodoc
   final String type;
 
-  List<StaggeredTile> get _generateStaggeredTiles {
-    final staggeredTiles = <StaggeredTile>[];
-
-    for (final _ in seriesList) {
-      staggeredTiles.add(const StaggeredTile.count(1, 1.7));
-    }
-
-    return staggeredTiles;
-  }
-
   @override
   Widget build(BuildContext context) {
     final mediaQuery = MediaQuery.of(context).size;
@@ -68,45 +58,42 @@ class LibraryBaseSeriesLayout extends StatelessWidget {
             children: [
               Padding(
                 padding: const EdgeInsets.symmetric(vertical: 20),
-                child: StaggeredGridView.count(
+                child: AlignedGridView.count(
                   crossAxisCount: 2,
-                  staggeredTiles: _generateStaggeredTiles,
                   crossAxisSpacing: 20,
                   physics: const NeverScrollableScrollPhysics(),
                   shrinkWrap: true,
-                  children: [
-                    for (final s in seriesList)
-                      SeriesCard(
-                        coverURL: s.coverURL.getOrNull() ?? '',
-                        onPressed: () {
-                          switch (type) {
-                            case 'published':
-                              handleAuthGuardedNavigation(
-                                context,
-                                navigateTo: SeriesRoute(
-                                  id: s.uid.getOrCrash(),
-                                  series: s,
-                                ),
-                              );
-                              break;
-                            case 'drafts':
-                              handleAuthGuardedNavigation(
-                                context,
-                                navigateTo: TypewriterSeriesId(
-                                  id: s.uid.getOrCrash(),
-                                  series: s,
-                                  type: TypewriterType.series,
-                                ),
-                              );
-                              break;
-                            case 'bookmarks':
-                            default:
-                          }
-                        },
-                        title: s.title.getOrNull() ?? '',
-                        uid: s.uid.getOrCrash(),
-                      )
-                  ],
+                  itemCount: seriesList.length,
+                  itemBuilder: (_, i) => SeriesCard(
+                    coverURL: seriesList[i].coverURL.getOrNull() ?? '',
+                    onPressed: () {
+                      switch (type) {
+                        case 'published':
+                          handleAuthGuardedNavigation(
+                            context,
+                            navigateTo: SeriesRoute(
+                              id: seriesList[i].uid.getOrCrash(),
+                              series: seriesList[i],
+                            ),
+                          );
+                          break;
+                        case 'drafts':
+                          handleAuthGuardedNavigation(
+                            context,
+                            navigateTo: TypewriterSeriesId(
+                              id: seriesList[i].uid.getOrCrash(),
+                              series: seriesList[i],
+                              type: TypewriterType.series,
+                            ),
+                          );
+                          break;
+                        case 'bookmarks':
+                        default:
+                      }
+                    },
+                    title: seriesList[i].title.getOrNull() ?? '',
+                    uid: seriesList[i].uid.getOrCrash(),
+                  ),
                 ),
               ),
             ],
