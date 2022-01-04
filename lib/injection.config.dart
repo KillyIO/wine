@@ -96,8 +96,12 @@ Future<_i1.GetIt> $initGetIt(_i1.GetIt get,
           get<_i17.ISessionsRepository>(), get<_i21.IUserRepository>()),
       registerFor: {_dev, _prod});
   gh.factory<_i25.SeriesBloc>(
-      () => _i25.SeriesBloc(get<_i15.ISeriesRepository>(),
-          get<_i17.ISessionsRepository>(), get<_i21.IUserRepository>()),
+      () => _i25.SeriesBloc(
+          get<_i10.IAuthFacade>(),
+          get<_i15.ISeriesRepository>(),
+          get<_i17.ISessionsRepository>(),
+          get<_i19.ISettingsRepository>(),
+          get<_i21.IUserRepository>()),
       registerFor: {_dev, _prod});
   gh.factory<_i26.SettingsBloc>(
       () => _i26.SettingsBloc(get<_i10.IAuthFacade>(),
