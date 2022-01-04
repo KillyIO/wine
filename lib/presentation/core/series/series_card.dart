@@ -78,6 +78,8 @@ class SeriesCard extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 1),
             child: Text(
               title,
+              maxLines: 3,
+              overflow: TextOverflow.ellipsis,
               style: TextStyle(
                 fontWeight: FontWeight.w600,
                 fontSize: titleFontSize,
