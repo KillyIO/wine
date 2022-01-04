@@ -1,6 +1,5 @@
 import 'dart:io';
 
-import 'package:assorted_layout_widgets/assorted_layout_widgets.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:string_validator/string_validator.dart';
@@ -77,7 +76,7 @@ class SeriesCard extends StatelessWidget {
           ),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 1),
-            child: TextOneLine(
+            child: Text(
               title,
               style: TextStyle(
                 fontWeight: FontWeight.w600,
