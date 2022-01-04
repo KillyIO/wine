@@ -21,6 +21,10 @@ class _$SeriesFailureTearOff {
     return const CoverNotUploaded();
   }
 
+  PermissionDenied permissionDenied() {
+    return const PermissionDenied();
+  }
+
   SeriesNotFound seriesNotFound() {
     return const SeriesNotFound();
   }
@@ -42,6 +46,7 @@ mixin _$SeriesFailure {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() coverNotUploaded,
+    required TResult Function() permissionDenied,
     required TResult Function() seriesNotFound,
     required TResult Function() serverError,
     required TResult Function() unexpected,
@@ -50,6 +55,7 @@ mixin _$SeriesFailure {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? coverNotUploaded,
+    TResult Function()? permissionDenied,
     TResult Function()? seriesNotFound,
     TResult Function()? serverError,
     TResult Function()? unexpected,
@@ -58,6 +64,7 @@ mixin _$SeriesFailure {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? coverNotUploaded,
+    TResult Function()? permissionDenied,
     TResult Function()? seriesNotFound,
     TResult Function()? serverError,
     TResult Function()? unexpected,
@@ -67,6 +74,7 @@ mixin _$SeriesFailure {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(CoverNotUploaded value) coverNotUploaded,
+    required TResult Function(PermissionDenied value) permissionDenied,
     required TResult Function(SeriesNotFound value) seriesNotFound,
     required TResult Function(ServerError value) serverError,
     required TResult Function(Unexpected value) unexpected,
@@ -75,6 +83,7 @@ mixin _$SeriesFailure {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(CoverNotUploaded value)? coverNotUploaded,
+    TResult Function(PermissionDenied value)? permissionDenied,
     TResult Function(SeriesNotFound value)? seriesNotFound,
     TResult Function(ServerError value)? serverError,
     TResult Function(Unexpected value)? unexpected,
@@ -83,6 +92,7 @@ mixin _$SeriesFailure {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(CoverNotUploaded value)? coverNotUploaded,
+    TResult Function(PermissionDenied value)? permissionDenied,
     TResult Function(SeriesNotFound value)? seriesNotFound,
     TResult Function(ServerError value)? serverError,
     TResult Function(Unexpected value)? unexpected,
@@ -150,6 +160,7 @@ class _$CoverNotUploaded implements CoverNotUploaded {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() coverNotUploaded,
+    required TResult Function() permissionDenied,
     required TResult Function() seriesNotFound,
     required TResult Function() serverError,
     required TResult Function() unexpected,
@@ -161,6 +172,7 @@ class _$CoverNotUploaded implements CoverNotUploaded {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? coverNotUploaded,
+    TResult Function()? permissionDenied,
     TResult Function()? seriesNotFound,
     TResult Function()? serverError,
     TResult Function()? unexpected,
@@ -172,6 +184,7 @@ class _$CoverNotUploaded implements CoverNotUploaded {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? coverNotUploaded,
+    TResult Function()? permissionDenied,
     TResult Function()? seriesNotFound,
     TResult Function()? serverError,
     TResult Function()? unexpected,
@@ -187,6 +200,7 @@ class _$CoverNotUploaded implements CoverNotUploaded {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(CoverNotUploaded value) coverNotUploaded,
+    required TResult Function(PermissionDenied value) permissionDenied,
     required TResult Function(SeriesNotFound value) seriesNotFound,
     required TResult Function(ServerError value) serverError,
     required TResult Function(Unexpected value) unexpected,
@@ -198,6 +212,7 @@ class _$CoverNotUploaded implements CoverNotUploaded {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(CoverNotUploaded value)? coverNotUploaded,
+    TResult Function(PermissionDenied value)? permissionDenied,
     TResult Function(SeriesNotFound value)? seriesNotFound,
     TResult Function(ServerError value)? serverError,
     TResult Function(Unexpected value)? unexpected,
@@ -209,6 +224,7 @@ class _$CoverNotUploaded implements CoverNotUploaded {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(CoverNotUploaded value)? coverNotUploaded,
+    TResult Function(PermissionDenied value)? permissionDenied,
     TResult Function(SeriesNotFound value)? seriesNotFound,
     TResult Function(ServerError value)? serverError,
     TResult Function(Unexpected value)? unexpected,
@@ -223,6 +239,129 @@ class _$CoverNotUploaded implements CoverNotUploaded {
 
 abstract class CoverNotUploaded implements SeriesFailure {
   const factory CoverNotUploaded() = _$CoverNotUploaded;
+}
+
+/// @nodoc
+abstract class $PermissionDeniedCopyWith<$Res> {
+  factory $PermissionDeniedCopyWith(
+          PermissionDenied value, $Res Function(PermissionDenied) then) =
+      _$PermissionDeniedCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$PermissionDeniedCopyWithImpl<$Res>
+    extends _$SeriesFailureCopyWithImpl<$Res>
+    implements $PermissionDeniedCopyWith<$Res> {
+  _$PermissionDeniedCopyWithImpl(
+      PermissionDenied _value, $Res Function(PermissionDenied) _then)
+      : super(_value, (v) => _then(v as PermissionDenied));
+
+  @override
+  PermissionDenied get _value => super._value as PermissionDenied;
+}
+
+/// @nodoc
+
+class _$PermissionDenied implements PermissionDenied {
+  const _$PermissionDenied();
+
+  @override
+  String toString() {
+    return 'SeriesFailure.permissionDenied()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is PermissionDenied);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() coverNotUploaded,
+    required TResult Function() permissionDenied,
+    required TResult Function() seriesNotFound,
+    required TResult Function() serverError,
+    required TResult Function() unexpected,
+  }) {
+    return permissionDenied();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? coverNotUploaded,
+    TResult Function()? permissionDenied,
+    TResult Function()? seriesNotFound,
+    TResult Function()? serverError,
+    TResult Function()? unexpected,
+  }) {
+    return permissionDenied?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? coverNotUploaded,
+    TResult Function()? permissionDenied,
+    TResult Function()? seriesNotFound,
+    TResult Function()? serverError,
+    TResult Function()? unexpected,
+    required TResult orElse(),
+  }) {
+    if (permissionDenied != null) {
+      return permissionDenied();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(CoverNotUploaded value) coverNotUploaded,
+    required TResult Function(PermissionDenied value) permissionDenied,
+    required TResult Function(SeriesNotFound value) seriesNotFound,
+    required TResult Function(ServerError value) serverError,
+    required TResult Function(Unexpected value) unexpected,
+  }) {
+    return permissionDenied(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(CoverNotUploaded value)? coverNotUploaded,
+    TResult Function(PermissionDenied value)? permissionDenied,
+    TResult Function(SeriesNotFound value)? seriesNotFound,
+    TResult Function(ServerError value)? serverError,
+    TResult Function(Unexpected value)? unexpected,
+  }) {
+    return permissionDenied?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(CoverNotUploaded value)? coverNotUploaded,
+    TResult Function(PermissionDenied value)? permissionDenied,
+    TResult Function(SeriesNotFound value)? seriesNotFound,
+    TResult Function(ServerError value)? serverError,
+    TResult Function(Unexpected value)? unexpected,
+    required TResult orElse(),
+  }) {
+    if (permissionDenied != null) {
+      return permissionDenied(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class PermissionDenied implements SeriesFailure {
+  const factory PermissionDenied() = _$PermissionDenied;
 }
 
 /// @nodoc
@@ -267,6 +406,7 @@ class _$SeriesNotFound implements SeriesNotFound {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() coverNotUploaded,
+    required TResult Function() permissionDenied,
     required TResult Function() seriesNotFound,
     required TResult Function() serverError,
     required TResult Function() unexpected,
@@ -278,6 +418,7 @@ class _$SeriesNotFound implements SeriesNotFound {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? coverNotUploaded,
+    TResult Function()? permissionDenied,
     TResult Function()? seriesNotFound,
     TResult Function()? serverError,
     TResult Function()? unexpected,
@@ -289,6 +430,7 @@ class _$SeriesNotFound implements SeriesNotFound {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? coverNotUploaded,
+    TResult Function()? permissionDenied,
     TResult Function()? seriesNotFound,
     TResult Function()? serverError,
     TResult Function()? unexpected,
@@ -304,6 +446,7 @@ class _$SeriesNotFound implements SeriesNotFound {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(CoverNotUploaded value) coverNotUploaded,
+    required TResult Function(PermissionDenied value) permissionDenied,
     required TResult Function(SeriesNotFound value) seriesNotFound,
     required TResult Function(ServerError value) serverError,
     required TResult Function(Unexpected value) unexpected,
@@ -315,6 +458,7 @@ class _$SeriesNotFound implements SeriesNotFound {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(CoverNotUploaded value)? coverNotUploaded,
+    TResult Function(PermissionDenied value)? permissionDenied,
     TResult Function(SeriesNotFound value)? seriesNotFound,
     TResult Function(ServerError value)? serverError,
     TResult Function(Unexpected value)? unexpected,
@@ -326,6 +470,7 @@ class _$SeriesNotFound implements SeriesNotFound {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(CoverNotUploaded value)? coverNotUploaded,
+    TResult Function(PermissionDenied value)? permissionDenied,
     TResult Function(SeriesNotFound value)? seriesNotFound,
     TResult Function(ServerError value)? serverError,
     TResult Function(Unexpected value)? unexpected,
@@ -383,6 +528,7 @@ class _$ServerError implements ServerError {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() coverNotUploaded,
+    required TResult Function() permissionDenied,
     required TResult Function() seriesNotFound,
     required TResult Function() serverError,
     required TResult Function() unexpected,
@@ -394,6 +540,7 @@ class _$ServerError implements ServerError {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? coverNotUploaded,
+    TResult Function()? permissionDenied,
     TResult Function()? seriesNotFound,
     TResult Function()? serverError,
     TResult Function()? unexpected,
@@ -405,6 +552,7 @@ class _$ServerError implements ServerError {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? coverNotUploaded,
+    TResult Function()? permissionDenied,
     TResult Function()? seriesNotFound,
     TResult Function()? serverError,
     TResult Function()? unexpected,
@@ -420,6 +568,7 @@ class _$ServerError implements ServerError {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(CoverNotUploaded value) coverNotUploaded,
+    required TResult Function(PermissionDenied value) permissionDenied,
     required TResult Function(SeriesNotFound value) seriesNotFound,
     required TResult Function(ServerError value) serverError,
     required TResult Function(Unexpected value) unexpected,
@@ -431,6 +580,7 @@ class _$ServerError implements ServerError {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(CoverNotUploaded value)? coverNotUploaded,
+    TResult Function(PermissionDenied value)? permissionDenied,
     TResult Function(SeriesNotFound value)? seriesNotFound,
     TResult Function(ServerError value)? serverError,
     TResult Function(Unexpected value)? unexpected,
@@ -442,6 +592,7 @@ class _$ServerError implements ServerError {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(CoverNotUploaded value)? coverNotUploaded,
+    TResult Function(PermissionDenied value)? permissionDenied,
     TResult Function(SeriesNotFound value)? seriesNotFound,
     TResult Function(ServerError value)? serverError,
     TResult Function(Unexpected value)? unexpected,
@@ -498,6 +649,7 @@ class _$Unexpected implements Unexpected {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() coverNotUploaded,
+    required TResult Function() permissionDenied,
     required TResult Function() seriesNotFound,
     required TResult Function() serverError,
     required TResult Function() unexpected,
@@ -509,6 +661,7 @@ class _$Unexpected implements Unexpected {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? coverNotUploaded,
+    TResult Function()? permissionDenied,
     TResult Function()? seriesNotFound,
     TResult Function()? serverError,
     TResult Function()? unexpected,
@@ -520,6 +673,7 @@ class _$Unexpected implements Unexpected {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? coverNotUploaded,
+    TResult Function()? permissionDenied,
     TResult Function()? seriesNotFound,
     TResult Function()? serverError,
     TResult Function()? unexpected,
@@ -535,6 +689,7 @@ class _$Unexpected implements Unexpected {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(CoverNotUploaded value) coverNotUploaded,
+    required TResult Function(PermissionDenied value) permissionDenied,
     required TResult Function(SeriesNotFound value) seriesNotFound,
     required TResult Function(ServerError value) serverError,
     required TResult Function(Unexpected value) unexpected,
@@ -546,6 +701,7 @@ class _$Unexpected implements Unexpected {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(CoverNotUploaded value)? coverNotUploaded,
+    TResult Function(PermissionDenied value)? permissionDenied,
     TResult Function(SeriesNotFound value)? seriesNotFound,
     TResult Function(ServerError value)? serverError,
     TResult Function(Unexpected value)? unexpected,
@@ -557,6 +713,7 @@ class _$Unexpected implements Unexpected {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(CoverNotUploaded value)? coverNotUploaded,
+    TResult Function(PermissionDenied value)? permissionDenied,
     TResult Function(SeriesNotFound value)? seriesNotFound,
     TResult Function(ServerError value)? serverError,
     TResult Function(Unexpected value)? unexpected,

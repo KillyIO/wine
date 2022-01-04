@@ -26,5 +26,18 @@ abstract class ISeriesRepository {
   Future<Result<Unit, SeriesFailure>> updateSeries(Series series);
 
   /// @nodoc
+  Future<Result<Unit, SeriesFailure>> updateSeriesLikes(
+    UniqueID userID,
+    UniqueID seriesID, {
+    required bool liked,
+  });
+
+  /// @nodoc
+  Future<Result<bool, SeriesFailure>> updateSeriesViews(
+    UniqueID userID,
+    UniqueID seriesID,
+  );
+
+  /// @nodoc
   Future<Result<String, SeriesFailure>> uploadCover(File cover);
 }

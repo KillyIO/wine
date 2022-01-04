@@ -151,6 +151,105 @@ class SeriesRepository implements ISeriesRepository {
   }
 
   @override
+  Future<Result<Unit, SeriesFailure>> updateSeriesLikes(
+    UniqueID userID,
+    UniqueID seriesID, {
+    required bool liked,
+  }) async {
+    try {
+      await _firestore.runTransaction((transaction) async {
+        // Check userID register inside series_likes collection
+        final seriesLikesReference =
+            _firestore.collection(seriesLikesPath).doc(seriesID.getOrCrash());
+
+        final slrSnapshot = await transaction.get(seriesLikesReference);
+        final dbLiked =
+            slrSnapshot.data()?[userID.getOrCrash()] as bool? ?? false;
+
+        if (liked != dbLiked) {
+          // Update series likes count
+          // TODO(SSebigo): make sure firebase rules match to prevent fraudulent updates
+          final seriesReference =
+              _firestore.collection(seriesPath).doc(seriesID.getOrCrash());
+
+          final srSnapshot = await transaction.get(seriesReference);
+          final likesCount = srSnapshot.data()?['likesCount'] as int;
+
+          transaction
+            ..set(
+              seriesLikesReference,
+              <String, dynamic>{
+                userID.getOrCrash(): liked,
+              },
+              SetOptions(merge: true),
+            )
+            ..update(seriesReference, <String, dynamic>{
+              'likesCount': liked ? likesCount + 1 : likesCount - 1,
+            });
+        }
+      });
+
+      return Ok(unit);
+    } on FirebaseException catch (e) {
+      if (e.code == 'permission-denied') {
+        return Err(const SeriesFailure.permissionDenied());
+      }
+      return Err(const SeriesFailure.serverError());
+    } catch (_) {
+      return Err(const SeriesFailure.unexpected());
+    }
+  }
+
+  @override
+  Future<Result<bool, SeriesFailure>> updateSeriesViews(
+    UniqueID userID,
+    UniqueID seriesID,
+  ) async {
+    try {
+      await _firestore.runTransaction((transaction) async {
+        // Check userID register inside series_views collection
+        final seriesViewsReference =
+            _firestore.collection(seriesViewsPath).doc(seriesID.getOrCrash());
+
+        final svrSnapshot = await transaction.get(seriesViewsReference);
+        final viewed =
+            svrSnapshot.data()?[userID.getOrCrash()] as bool? ?? false;
+
+        if (!viewed) {
+          // Update series views count
+          // TODO(SSebigo): make sure firebase rules match to prevent fraudulent updates
+          final seriesReference =
+              _firestore.collection(seriesPath).doc(seriesID.getOrCrash());
+
+          final srSnapshot = await transaction.get(seriesReference);
+          final viewsCount = srSnapshot.data()?['viewsCount'] as int;
+
+          transaction
+            ..set(
+              seriesViewsReference,
+              <String, dynamic>{userID.getOrCrash(): true},
+              SetOptions(merge: true),
+            )
+            ..update(seriesReference, <String, dynamic>{
+              'viewsCount': viewsCount + 1,
+            });
+
+          return Ok(true);
+        }
+      });
+
+      return Ok(false);
+    } on FirebaseException catch (e) {
+      if (e.code == 'permission-denied') {
+        return Err(const SeriesFailure.permissionDenied());
+      }
+      return Err(const SeriesFailure.serverError());
+    } catch (_) {
+      return Err(const SeriesFailure.unexpected());
+    }
+  }
+
+  @override
   Future<Result<String, SeriesFailure>> uploadCover(File cover) async {
     final fileName = p.basename(cover.path);
     final ref = _firebaseStorage.ref().child(
