@@ -11,9 +11,10 @@
 // ignore_for_file: type=lint
 
 import 'package:auto_route/auto_route.dart' as _i13;
+import 'package:flutter/foundation.dart' as _i15;
 import 'package:flutter/material.dart' as _i14;
-import 'package:wine/domain/core/typewriter_type.dart' as _i16;
-import 'package:wine/domain/series/series.dart' as _i15;
+import 'package:wine/domain/core/typewriter_type.dart' as _i17;
+import 'package:wine/domain/series/series.dart' as _i16;
 import 'package:wine/presentation/home/home_page.dart' as _i1;
 import 'package:wine/presentation/library/library_page.dart' as _i2;
 import 'package:wine/presentation/log_in/log_in_page.dart' as _i3;
@@ -160,7 +161,7 @@ class LibraryRoute extends _i13.PageRouteInfo<void> {
 /// generated route for
 /// [_i3.LogInPage]
 class LogInRoute extends _i13.PageRouteInfo<LogInRouteArgs> {
-  LogInRoute({_i14.Key? key, required _i13.PageRouteInfo<dynamic> navigateTo})
+  LogInRoute({_i15.Key? key, required _i13.PageRouteInfo<dynamic> navigateTo})
       : super(LogInRoute.name,
             path: '/log-in',
             args: LogInRouteArgs(key: key, navigateTo: navigateTo));
@@ -171,7 +172,7 @@ class LogInRoute extends _i13.PageRouteInfo<LogInRouteArgs> {
 class LogInRouteArgs {
   const LogInRouteArgs({this.key, required this.navigateTo});
 
-  final _i14.Key? key;
+  final _i15.Key? key;
 
   final _i13.PageRouteInfo<dynamic> navigateTo;
 
@@ -192,7 +193,7 @@ class PlusRoute extends _i13.PageRouteInfo<void> {
 /// generated route for
 /// [_i5.SeriesPage]
 class SeriesRoute extends _i13.PageRouteInfo<SeriesRouteArgs> {
-  SeriesRoute({_i14.Key? key, required String id, _i15.Series? series})
+  SeriesRoute({_i15.Key? key, required String id, _i16.Series? series})
       : super(SeriesRoute.name,
             path: '/series/:id',
             args: SeriesRouteArgs(key: key, id: id, series: series),
@@ -204,11 +205,11 @@ class SeriesRoute extends _i13.PageRouteInfo<SeriesRouteArgs> {
 class SeriesRouteArgs {
   const SeriesRouteArgs({this.key, required this.id, this.series});
 
-  final _i14.Key? key;
+  final _i15.Key? key;
 
   final String id;
 
-  final _i15.Series? series;
+  final _i16.Series? series;
 
   @override
   String toString() {
@@ -229,7 +230,7 @@ class SettingsWrapper extends _i13.PageRouteInfo<void> {
 /// generated route for
 /// [_i7.SignUpPage]
 class SignUpRoute extends _i13.PageRouteInfo<SignUpRouteArgs> {
-  SignUpRoute({_i14.Key? key, required _i13.PageRouteInfo<dynamic> navigateTo})
+  SignUpRoute({_i15.Key? key, required _i13.PageRouteInfo<dynamic> navigateTo})
       : super(SignUpRoute.name,
             path: '/sign-up',
             args: SignUpRouteArgs(key: key, navigateTo: navigateTo));
@@ -240,7 +241,7 @@ class SignUpRoute extends _i13.PageRouteInfo<SignUpRouteArgs> {
 class SignUpRouteArgs {
   const SignUpRouteArgs({this.key, required this.navigateTo});
 
-  final _i14.Key? key;
+  final _i15.Key? key;
 
   final _i13.PageRouteInfo<dynamic> navigateTo;
 
@@ -254,10 +255,10 @@ class SignUpRouteArgs {
 /// [_i8.TypewriterPage]
 class TypewriterSeriesId extends _i13.PageRouteInfo<TypewriterSeriesIdArgs> {
   TypewriterSeriesId(
-      {_i14.Key? key,
-      _i15.Series? series,
+      {_i15.Key? key,
+      _i16.Series? series,
       String? id,
-      _i16.TypewriterType type = _i16.TypewriterType.unknown})
+      _i17.TypewriterType type = _i17.TypewriterType.unknown})
       : super(TypewriterSeriesId.name,
             path: '/typewriter/series/:id',
             args: TypewriterSeriesIdArgs(
@@ -272,15 +273,15 @@ class TypewriterSeriesIdArgs {
       {this.key,
       this.series,
       this.id,
-      this.type = _i16.TypewriterType.unknown});
+      this.type = _i17.TypewriterType.unknown});
 
-  final _i14.Key? key;
+  final _i15.Key? key;
 
-  final _i15.Series? series;
+  final _i16.Series? series;
 
   final String? id;
 
-  final _i16.TypewriterType type;
+  final _i17.TypewriterType type;
 
   @override
   String toString() {
@@ -292,10 +293,10 @@ class TypewriterSeriesIdArgs {
 /// [_i8.TypewriterPage]
 class TypewriterSeriesNew extends _i13.PageRouteInfo<TypewriterSeriesNewArgs> {
   TypewriterSeriesNew(
-      {_i14.Key? key,
-      _i15.Series? series,
+      {_i15.Key? key,
+      _i16.Series? series,
       String? id,
-      _i16.TypewriterType type = _i16.TypewriterType.unknown})
+      _i17.TypewriterType type = _i17.TypewriterType.unknown})
       : super(TypewriterSeriesNew.name,
             path: '/typewriter/series/new',
             args: TypewriterSeriesNewArgs(
@@ -310,15 +311,15 @@ class TypewriterSeriesNewArgs {
       {this.key,
       this.series,
       this.id,
-      this.type = _i16.TypewriterType.unknown});
+      this.type = _i17.TypewriterType.unknown});
 
-  final _i14.Key? key;
+  final _i15.Key? key;
 
-  final _i15.Series? series;
+  final _i16.Series? series;
 
   final String? id;
 
-  final _i16.TypewriterType type;
+  final _i17.TypewriterType type;
 
   @override
   String toString() {

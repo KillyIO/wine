@@ -33,6 +33,7 @@ dependencies:
   image_cropper: ^1.4.1
   image_picker: ^0.8.4+4
   injectable: ^1.5.0
+  intl: ^0.17.0
   introduction_screen: ^2.1.0
   json_annotation: ^4.4.0
   like_button: ^2.0.4

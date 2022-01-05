@@ -78,14 +78,19 @@ class SeriesBloc extends Bloc<SeriesEvent, SeriesState> {
       (await _seriesRepository.updateSeriesLikes(
         state.session.uid,
         state.series.uid,
-        liked: value.liked,
+        liked: !value.isLiked,
       ))
           .match(
         (_) {
+          final likesCount = state.series.likesCount;
+
           emit(
             state.copyWith(
-              isLiked: value.liked,
+              isLiked: !value.isLiked,
               failureOption: const None(),
+              series: state.series.copyWith(
+                likesCount: !value.isLiked ? likesCount + 1 : likesCount - 1,
+              ),
             ),
           );
         },

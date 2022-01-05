@@ -8,7 +8,7 @@ class SeriesEvent with _$SeriesEvent {
 
   /// @nodoc
   const factory SeriesEvent.bookmarkButtonPressed({
-    required bool bookmarked,
+    required bool isBookmarked,
   }) = BookmarkButtonPressed;
 
   /// @nodoc
@@ -22,7 +22,7 @@ class SeriesEvent with _$SeriesEvent {
 
   /// @nodoc
   const factory SeriesEvent.likeButtonPressed({
-    required bool liked,
+    required bool isLiked,
   }) = LikeButtonPressed;
 
   /// @nodoc

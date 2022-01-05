@@ -51,6 +51,25 @@ class TypewriterSeriesLayout extends StatelessWidget {
                   ),
                   orElse: () {},
                 ),
+                series: (f) => f.f.maybeMap(
+                  permissionDenied: (_) async => baseErrorDialog(
+                    context,
+                    <String>['Forbidden action. Permission denied!'],
+                  ),
+                  seriesNotFound: (_) async => baseErrorDialog(
+                    context,
+                    <String>['Series not found!'],
+                  ),
+                  serverError: (_) async => baseErrorDialog(
+                    context,
+                    <String>['A problem occurred on our end!'],
+                  ),
+                  unexpected: (_) async => baseErrorDialog(
+                    context,
+                    <String>['An unexpected error occured!'],
+                  ),
+                  orElse: () {},
+                ),
                 sessions: (f) => f.f.maybeMap(
                   sessionNotFound: (_) async => baseErrorDialog(
                     context,

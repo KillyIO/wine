@@ -21,9 +21,9 @@ class _$SeriesEventTearOff {
     return const AuthorLoaded();
   }
 
-  BookmarkButtonPressed bookmarkButtonPressed({required bool bookmarked}) {
+  BookmarkButtonPressed bookmarkButtonPressed({required bool isBookmarked}) {
     return BookmarkButtonPressed(
-      bookmarked: bookmarked,
+      isBookmarked: isBookmarked,
     );
   }
 
@@ -38,9 +38,9 @@ class _$SeriesEventTearOff {
     );
   }
 
-  LikeButtonPressed likeButtonPressed({required bool liked}) {
+  LikeButtonPressed likeButtonPressed({required bool isLiked}) {
     return LikeButtonPressed(
-      liked: liked,
+      isLiked: isLiked,
     );
   }
 
@@ -65,10 +65,10 @@ mixin _$SeriesEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() authorLoaded,
-    required TResult Function(bool bookmarked) bookmarkButtonPressed,
+    required TResult Function(bool isBookmarked) bookmarkButtonPressed,
     required TResult Function() dataSet,
     required TResult Function(UniqueID id, Series? series) launchWithID,
-    required TResult Function(bool liked) likeButtonPressed,
+    required TResult Function(bool isLiked) likeButtonPressed,
     required TResult Function() seriesViewsUpdated,
     required TResult Function() sessionFetched,
     required TResult Function() settingsFetched,
@@ -77,10 +77,10 @@ mixin _$SeriesEvent {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? authorLoaded,
-    TResult Function(bool bookmarked)? bookmarkButtonPressed,
+    TResult Function(bool isBookmarked)? bookmarkButtonPressed,
     TResult Function()? dataSet,
     TResult Function(UniqueID id, Series? series)? launchWithID,
-    TResult Function(bool liked)? likeButtonPressed,
+    TResult Function(bool isLiked)? likeButtonPressed,
     TResult Function()? seriesViewsUpdated,
     TResult Function()? sessionFetched,
     TResult Function()? settingsFetched,
@@ -89,10 +89,10 @@ mixin _$SeriesEvent {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? authorLoaded,
-    TResult Function(bool bookmarked)? bookmarkButtonPressed,
+    TResult Function(bool isBookmarked)? bookmarkButtonPressed,
     TResult Function()? dataSet,
     TResult Function(UniqueID id, Series? series)? launchWithID,
-    TResult Function(bool liked)? likeButtonPressed,
+    TResult Function(bool isLiked)? likeButtonPressed,
     TResult Function()? seriesViewsUpdated,
     TResult Function()? sessionFetched,
     TResult Function()? settingsFetched,
@@ -196,10 +196,10 @@ class _$AuthorLoaded implements AuthorLoaded {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() authorLoaded,
-    required TResult Function(bool bookmarked) bookmarkButtonPressed,
+    required TResult Function(bool isBookmarked) bookmarkButtonPressed,
     required TResult Function() dataSet,
     required TResult Function(UniqueID id, Series? series) launchWithID,
-    required TResult Function(bool liked) likeButtonPressed,
+    required TResult Function(bool isLiked) likeButtonPressed,
     required TResult Function() seriesViewsUpdated,
     required TResult Function() sessionFetched,
     required TResult Function() settingsFetched,
@@ -211,10 +211,10 @@ class _$AuthorLoaded implements AuthorLoaded {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? authorLoaded,
-    TResult Function(bool bookmarked)? bookmarkButtonPressed,
+    TResult Function(bool isBookmarked)? bookmarkButtonPressed,
     TResult Function()? dataSet,
     TResult Function(UniqueID id, Series? series)? launchWithID,
-    TResult Function(bool liked)? likeButtonPressed,
+    TResult Function(bool isLiked)? likeButtonPressed,
     TResult Function()? seriesViewsUpdated,
     TResult Function()? sessionFetched,
     TResult Function()? settingsFetched,
@@ -226,10 +226,10 @@ class _$AuthorLoaded implements AuthorLoaded {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? authorLoaded,
-    TResult Function(bool bookmarked)? bookmarkButtonPressed,
+    TResult Function(bool isBookmarked)? bookmarkButtonPressed,
     TResult Function()? dataSet,
     TResult Function(UniqueID id, Series? series)? launchWithID,
-    TResult Function(bool liked)? likeButtonPressed,
+    TResult Function(bool isLiked)? likeButtonPressed,
     TResult Function()? seriesViewsUpdated,
     TResult Function()? sessionFetched,
     TResult Function()? settingsFetched,
@@ -301,7 +301,7 @@ abstract class $BookmarkButtonPressedCopyWith<$Res> {
   factory $BookmarkButtonPressedCopyWith(BookmarkButtonPressed value,
           $Res Function(BookmarkButtonPressed) then) =
       _$BookmarkButtonPressedCopyWithImpl<$Res>;
-  $Res call({bool bookmarked});
+  $Res call({bool isBookmarked});
 }
 
 /// @nodoc
@@ -317,12 +317,12 @@ class _$BookmarkButtonPressedCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? bookmarked = freezed,
+    Object? isBookmarked = freezed,
   }) {
     return _then(BookmarkButtonPressed(
-      bookmarked: bookmarked == freezed
-          ? _value.bookmarked
-          : bookmarked // ignore: cast_nullable_to_non_nullable
+      isBookmarked: isBookmarked == freezed
+          ? _value.isBookmarked
+          : isBookmarked // ignore: cast_nullable_to_non_nullable
               as bool,
     ));
   }
@@ -331,14 +331,14 @@ class _$BookmarkButtonPressedCopyWithImpl<$Res>
 /// @nodoc
 
 class _$BookmarkButtonPressed implements BookmarkButtonPressed {
-  const _$BookmarkButtonPressed({required this.bookmarked});
+  const _$BookmarkButtonPressed({required this.isBookmarked});
 
   @override
-  final bool bookmarked;
+  final bool isBookmarked;
 
   @override
   String toString() {
-    return 'SeriesEvent.bookmarkButtonPressed(bookmarked: $bookmarked)';
+    return 'SeriesEvent.bookmarkButtonPressed(isBookmarked: $isBookmarked)';
   }
 
   @override
@@ -347,12 +347,12 @@ class _$BookmarkButtonPressed implements BookmarkButtonPressed {
         (other.runtimeType == runtimeType &&
             other is BookmarkButtonPressed &&
             const DeepCollectionEquality()
-                .equals(other.bookmarked, bookmarked));
+                .equals(other.isBookmarked, isBookmarked));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(bookmarked));
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(isBookmarked));
 
   @JsonKey(ignore: true)
   @override
@@ -364,47 +364,47 @@ class _$BookmarkButtonPressed implements BookmarkButtonPressed {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() authorLoaded,
-    required TResult Function(bool bookmarked) bookmarkButtonPressed,
+    required TResult Function(bool isBookmarked) bookmarkButtonPressed,
     required TResult Function() dataSet,
     required TResult Function(UniqueID id, Series? series) launchWithID,
-    required TResult Function(bool liked) likeButtonPressed,
+    required TResult Function(bool isLiked) likeButtonPressed,
     required TResult Function() seriesViewsUpdated,
     required TResult Function() sessionFetched,
     required TResult Function() settingsFetched,
   }) {
-    return bookmarkButtonPressed(bookmarked);
+    return bookmarkButtonPressed(isBookmarked);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? authorLoaded,
-    TResult Function(bool bookmarked)? bookmarkButtonPressed,
+    TResult Function(bool isBookmarked)? bookmarkButtonPressed,
     TResult Function()? dataSet,
     TResult Function(UniqueID id, Series? series)? launchWithID,
-    TResult Function(bool liked)? likeButtonPressed,
+    TResult Function(bool isLiked)? likeButtonPressed,
     TResult Function()? seriesViewsUpdated,
     TResult Function()? sessionFetched,
     TResult Function()? settingsFetched,
   }) {
-    return bookmarkButtonPressed?.call(bookmarked);
+    return bookmarkButtonPressed?.call(isBookmarked);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? authorLoaded,
-    TResult Function(bool bookmarked)? bookmarkButtonPressed,
+    TResult Function(bool isBookmarked)? bookmarkButtonPressed,
     TResult Function()? dataSet,
     TResult Function(UniqueID id, Series? series)? launchWithID,
-    TResult Function(bool liked)? likeButtonPressed,
+    TResult Function(bool isLiked)? likeButtonPressed,
     TResult Function()? seriesViewsUpdated,
     TResult Function()? sessionFetched,
     TResult Function()? settingsFetched,
     required TResult orElse(),
   }) {
     if (bookmarkButtonPressed != null) {
-      return bookmarkButtonPressed(bookmarked);
+      return bookmarkButtonPressed(isBookmarked);
     }
     return orElse();
   }
@@ -461,10 +461,10 @@ class _$BookmarkButtonPressed implements BookmarkButtonPressed {
 }
 
 abstract class BookmarkButtonPressed implements SeriesEvent {
-  const factory BookmarkButtonPressed({required bool bookmarked}) =
+  const factory BookmarkButtonPressed({required bool isBookmarked}) =
       _$BookmarkButtonPressed;
 
-  bool get bookmarked;
+  bool get isBookmarked;
   @JsonKey(ignore: true)
   $BookmarkButtonPressedCopyWith<BookmarkButtonPressed> get copyWith =>
       throw _privateConstructorUsedError;
@@ -509,10 +509,10 @@ class _$DataSet implements DataSet {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() authorLoaded,
-    required TResult Function(bool bookmarked) bookmarkButtonPressed,
+    required TResult Function(bool isBookmarked) bookmarkButtonPressed,
     required TResult Function() dataSet,
     required TResult Function(UniqueID id, Series? series) launchWithID,
-    required TResult Function(bool liked) likeButtonPressed,
+    required TResult Function(bool isLiked) likeButtonPressed,
     required TResult Function() seriesViewsUpdated,
     required TResult Function() sessionFetched,
     required TResult Function() settingsFetched,
@@ -524,10 +524,10 @@ class _$DataSet implements DataSet {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? authorLoaded,
-    TResult Function(bool bookmarked)? bookmarkButtonPressed,
+    TResult Function(bool isBookmarked)? bookmarkButtonPressed,
     TResult Function()? dataSet,
     TResult Function(UniqueID id, Series? series)? launchWithID,
-    TResult Function(bool liked)? likeButtonPressed,
+    TResult Function(bool isLiked)? likeButtonPressed,
     TResult Function()? seriesViewsUpdated,
     TResult Function()? sessionFetched,
     TResult Function()? settingsFetched,
@@ -539,10 +539,10 @@ class _$DataSet implements DataSet {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? authorLoaded,
-    TResult Function(bool bookmarked)? bookmarkButtonPressed,
+    TResult Function(bool isBookmarked)? bookmarkButtonPressed,
     TResult Function()? dataSet,
     TResult Function(UniqueID id, Series? series)? launchWithID,
-    TResult Function(bool liked)? likeButtonPressed,
+    TResult Function(bool isLiked)? likeButtonPressed,
     TResult Function()? seriesViewsUpdated,
     TResult Function()? sessionFetched,
     TResult Function()? settingsFetched,
@@ -697,10 +697,10 @@ class _$LaunchWithID implements LaunchWithID {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() authorLoaded,
-    required TResult Function(bool bookmarked) bookmarkButtonPressed,
+    required TResult Function(bool isBookmarked) bookmarkButtonPressed,
     required TResult Function() dataSet,
     required TResult Function(UniqueID id, Series? series) launchWithID,
-    required TResult Function(bool liked) likeButtonPressed,
+    required TResult Function(bool isLiked) likeButtonPressed,
     required TResult Function() seriesViewsUpdated,
     required TResult Function() sessionFetched,
     required TResult Function() settingsFetched,
@@ -712,10 +712,10 @@ class _$LaunchWithID implements LaunchWithID {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? authorLoaded,
-    TResult Function(bool bookmarked)? bookmarkButtonPressed,
+    TResult Function(bool isBookmarked)? bookmarkButtonPressed,
     TResult Function()? dataSet,
     TResult Function(UniqueID id, Series? series)? launchWithID,
-    TResult Function(bool liked)? likeButtonPressed,
+    TResult Function(bool isLiked)? likeButtonPressed,
     TResult Function()? seriesViewsUpdated,
     TResult Function()? sessionFetched,
     TResult Function()? settingsFetched,
@@ -727,10 +727,10 @@ class _$LaunchWithID implements LaunchWithID {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? authorLoaded,
-    TResult Function(bool bookmarked)? bookmarkButtonPressed,
+    TResult Function(bool isBookmarked)? bookmarkButtonPressed,
     TResult Function()? dataSet,
     TResult Function(UniqueID id, Series? series)? launchWithID,
-    TResult Function(bool liked)? likeButtonPressed,
+    TResult Function(bool isLiked)? likeButtonPressed,
     TResult Function()? seriesViewsUpdated,
     TResult Function()? sessionFetched,
     TResult Function()? settingsFetched,
@@ -808,7 +808,7 @@ abstract class $LikeButtonPressedCopyWith<$Res> {
   factory $LikeButtonPressedCopyWith(
           LikeButtonPressed value, $Res Function(LikeButtonPressed) then) =
       _$LikeButtonPressedCopyWithImpl<$Res>;
-  $Res call({bool liked});
+  $Res call({bool isLiked});
 }
 
 /// @nodoc
@@ -824,12 +824,12 @@ class _$LikeButtonPressedCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? liked = freezed,
+    Object? isLiked = freezed,
   }) {
     return _then(LikeButtonPressed(
-      liked: liked == freezed
-          ? _value.liked
-          : liked // ignore: cast_nullable_to_non_nullable
+      isLiked: isLiked == freezed
+          ? _value.isLiked
+          : isLiked // ignore: cast_nullable_to_non_nullable
               as bool,
     ));
   }
@@ -838,14 +838,14 @@ class _$LikeButtonPressedCopyWithImpl<$Res>
 /// @nodoc
 
 class _$LikeButtonPressed implements LikeButtonPressed {
-  const _$LikeButtonPressed({required this.liked});
+  const _$LikeButtonPressed({required this.isLiked});
 
   @override
-  final bool liked;
+  final bool isLiked;
 
   @override
   String toString() {
-    return 'SeriesEvent.likeButtonPressed(liked: $liked)';
+    return 'SeriesEvent.likeButtonPressed(isLiked: $isLiked)';
   }
 
   @override
@@ -853,12 +853,12 @@ class _$LikeButtonPressed implements LikeButtonPressed {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is LikeButtonPressed &&
-            const DeepCollectionEquality().equals(other.liked, liked));
+            const DeepCollectionEquality().equals(other.isLiked, isLiked));
   }
 
   @override
   int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(liked));
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(isLiked));
 
   @JsonKey(ignore: true)
   @override
@@ -869,47 +869,47 @@ class _$LikeButtonPressed implements LikeButtonPressed {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() authorLoaded,
-    required TResult Function(bool bookmarked) bookmarkButtonPressed,
+    required TResult Function(bool isBookmarked) bookmarkButtonPressed,
     required TResult Function() dataSet,
     required TResult Function(UniqueID id, Series? series) launchWithID,
-    required TResult Function(bool liked) likeButtonPressed,
+    required TResult Function(bool isLiked) likeButtonPressed,
     required TResult Function() seriesViewsUpdated,
     required TResult Function() sessionFetched,
     required TResult Function() settingsFetched,
   }) {
-    return likeButtonPressed(liked);
+    return likeButtonPressed(isLiked);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? authorLoaded,
-    TResult Function(bool bookmarked)? bookmarkButtonPressed,
+    TResult Function(bool isBookmarked)? bookmarkButtonPressed,
     TResult Function()? dataSet,
     TResult Function(UniqueID id, Series? series)? launchWithID,
-    TResult Function(bool liked)? likeButtonPressed,
+    TResult Function(bool isLiked)? likeButtonPressed,
     TResult Function()? seriesViewsUpdated,
     TResult Function()? sessionFetched,
     TResult Function()? settingsFetched,
   }) {
-    return likeButtonPressed?.call(liked);
+    return likeButtonPressed?.call(isLiked);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? authorLoaded,
-    TResult Function(bool bookmarked)? bookmarkButtonPressed,
+    TResult Function(bool isBookmarked)? bookmarkButtonPressed,
     TResult Function()? dataSet,
     TResult Function(UniqueID id, Series? series)? launchWithID,
-    TResult Function(bool liked)? likeButtonPressed,
+    TResult Function(bool isLiked)? likeButtonPressed,
     TResult Function()? seriesViewsUpdated,
     TResult Function()? sessionFetched,
     TResult Function()? settingsFetched,
     required TResult orElse(),
   }) {
     if (likeButtonPressed != null) {
-      return likeButtonPressed(liked);
+      return likeButtonPressed(isLiked);
     }
     return orElse();
   }
@@ -966,9 +966,10 @@ class _$LikeButtonPressed implements LikeButtonPressed {
 }
 
 abstract class LikeButtonPressed implements SeriesEvent {
-  const factory LikeButtonPressed({required bool liked}) = _$LikeButtonPressed;
+  const factory LikeButtonPressed({required bool isLiked}) =
+      _$LikeButtonPressed;
 
-  bool get liked;
+  bool get isLiked;
   @JsonKey(ignore: true)
   $LikeButtonPressedCopyWith<LikeButtonPressed> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1016,10 +1017,10 @@ class _$SeriesViewsUpdated implements SeriesViewsUpdated {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() authorLoaded,
-    required TResult Function(bool bookmarked) bookmarkButtonPressed,
+    required TResult Function(bool isBookmarked) bookmarkButtonPressed,
     required TResult Function() dataSet,
     required TResult Function(UniqueID id, Series? series) launchWithID,
-    required TResult Function(bool liked) likeButtonPressed,
+    required TResult Function(bool isLiked) likeButtonPressed,
     required TResult Function() seriesViewsUpdated,
     required TResult Function() sessionFetched,
     required TResult Function() settingsFetched,
@@ -1031,10 +1032,10 @@ class _$SeriesViewsUpdated implements SeriesViewsUpdated {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? authorLoaded,
-    TResult Function(bool bookmarked)? bookmarkButtonPressed,
+    TResult Function(bool isBookmarked)? bookmarkButtonPressed,
     TResult Function()? dataSet,
     TResult Function(UniqueID id, Series? series)? launchWithID,
-    TResult Function(bool liked)? likeButtonPressed,
+    TResult Function(bool isLiked)? likeButtonPressed,
     TResult Function()? seriesViewsUpdated,
     TResult Function()? sessionFetched,
     TResult Function()? settingsFetched,
@@ -1046,10 +1047,10 @@ class _$SeriesViewsUpdated implements SeriesViewsUpdated {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? authorLoaded,
-    TResult Function(bool bookmarked)? bookmarkButtonPressed,
+    TResult Function(bool isBookmarked)? bookmarkButtonPressed,
     TResult Function()? dataSet,
     TResult Function(UniqueID id, Series? series)? launchWithID,
-    TResult Function(bool liked)? likeButtonPressed,
+    TResult Function(bool isLiked)? likeButtonPressed,
     TResult Function()? seriesViewsUpdated,
     TResult Function()? sessionFetched,
     TResult Function()? settingsFetched,
@@ -1157,10 +1158,10 @@ class _$SessionFetched implements SessionFetched {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() authorLoaded,
-    required TResult Function(bool bookmarked) bookmarkButtonPressed,
+    required TResult Function(bool isBookmarked) bookmarkButtonPressed,
     required TResult Function() dataSet,
     required TResult Function(UniqueID id, Series? series) launchWithID,
-    required TResult Function(bool liked) likeButtonPressed,
+    required TResult Function(bool isLiked) likeButtonPressed,
     required TResult Function() seriesViewsUpdated,
     required TResult Function() sessionFetched,
     required TResult Function() settingsFetched,
@@ -1172,10 +1173,10 @@ class _$SessionFetched implements SessionFetched {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? authorLoaded,
-    TResult Function(bool bookmarked)? bookmarkButtonPressed,
+    TResult Function(bool isBookmarked)? bookmarkButtonPressed,
     TResult Function()? dataSet,
     TResult Function(UniqueID id, Series? series)? launchWithID,
-    TResult Function(bool liked)? likeButtonPressed,
+    TResult Function(bool isLiked)? likeButtonPressed,
     TResult Function()? seriesViewsUpdated,
     TResult Function()? sessionFetched,
     TResult Function()? settingsFetched,
@@ -1187,10 +1188,10 @@ class _$SessionFetched implements SessionFetched {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? authorLoaded,
-    TResult Function(bool bookmarked)? bookmarkButtonPressed,
+    TResult Function(bool isBookmarked)? bookmarkButtonPressed,
     TResult Function()? dataSet,
     TResult Function(UniqueID id, Series? series)? launchWithID,
-    TResult Function(bool liked)? likeButtonPressed,
+    TResult Function(bool isLiked)? likeButtonPressed,
     TResult Function()? seriesViewsUpdated,
     TResult Function()? sessionFetched,
     TResult Function()? settingsFetched,
@@ -1299,10 +1300,10 @@ class _$SettingsFetched implements SettingsFetched {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() authorLoaded,
-    required TResult Function(bool bookmarked) bookmarkButtonPressed,
+    required TResult Function(bool isBookmarked) bookmarkButtonPressed,
     required TResult Function() dataSet,
     required TResult Function(UniqueID id, Series? series) launchWithID,
-    required TResult Function(bool liked) likeButtonPressed,
+    required TResult Function(bool isLiked) likeButtonPressed,
     required TResult Function() seriesViewsUpdated,
     required TResult Function() sessionFetched,
     required TResult Function() settingsFetched,
@@ -1314,10 +1315,10 @@ class _$SettingsFetched implements SettingsFetched {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? authorLoaded,
-    TResult Function(bool bookmarked)? bookmarkButtonPressed,
+    TResult Function(bool isBookmarked)? bookmarkButtonPressed,
     TResult Function()? dataSet,
     TResult Function(UniqueID id, Series? series)? launchWithID,
-    TResult Function(bool liked)? likeButtonPressed,
+    TResult Function(bool isLiked)? likeButtonPressed,
     TResult Function()? seriesViewsUpdated,
     TResult Function()? sessionFetched,
     TResult Function()? settingsFetched,
@@ -1329,10 +1330,10 @@ class _$SettingsFetched implements SettingsFetched {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? authorLoaded,
-    TResult Function(bool bookmarked)? bookmarkButtonPressed,
+    TResult Function(bool isBookmarked)? bookmarkButtonPressed,
     TResult Function()? dataSet,
     TResult Function(UniqueID id, Series? series)? launchWithID,
-    TResult Function(bool liked)? likeButtonPressed,
+    TResult Function(bool isLiked)? likeButtonPressed,
     TResult Function()? seriesViewsUpdated,
     TResult Function()? sessionFetched,
     TResult Function()? settingsFetched,
