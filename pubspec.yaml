@@ -12,13 +12,13 @@ dependencies:
   assorted_layout_widgets: ^5.4.1
   auto_route: ^3.2.1
   cached_network_image: ^3.2.0
-  cloud_firestore: ^3.1.5
+  cloud_firestore: ^3.1.6
   cupertino_icons: ^1.0.4
   devicelocale: ^0.5.0
   equatable: ^2.0.3
-  firebase_auth: ^3.3.4
-  firebase_core: ^1.10.6
-  firebase_storage: ^10.2.4
+  firebase_auth: ^3.3.5
+  firebase_core: ^1.11.0
+  firebase_storage: ^10.2.5
   flare_flutter: ^3.0.2
   flutter:
     sdk: flutter
@@ -56,7 +56,7 @@ dev_dependencies:
   bloc_test: ^9.0.2
   build_runner: ^2.1.7
   fake_cloud_firestore: ^1.2.0
-  flutter_flavorizr: ^2.1.1
+  flutter_flavorizr: ^2.1.2
   flutter_test:
     sdk: flutter
   fluttericon: ^2.0.0
