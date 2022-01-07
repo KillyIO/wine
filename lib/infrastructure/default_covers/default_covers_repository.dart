@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/services.dart';
 import 'package:hive/hive.dart';
 import 'package:injectable/injectable.dart';
 import 'package:oxidized/oxidized.dart';
@@ -29,31 +30,39 @@ class DefaultCoversRepository implements IDefaultCoversRepository {
   Future<Result<Unit, DefaultCoversFailure>> cacheDefaultCoverURLs(
     Map<String, String> urls,
   ) async {
-    final box = await _hive.openBox<String>(defaultCoversBox);
+    try {
+      final box = await _hive.openBox<String>(defaultCoversBox);
 
-    for (final key in urls.keys) {
-      await box.put(key, urls[key]!);
+      for (final key in urls.keys) {
+        await box.put(key, urls[key]!);
 
-      final url = box.get(key);
-      if (url == null) {
-        return Err(const DefaultCoversFailure.defaultCoverURLsNotCached());
+        final url = box.get(key);
+        if (url == null) {
+          return Err(const DefaultCoversFailure.defaultCoverURLsNotCached());
+        }
       }
+      return Ok(unit);
+    } catch (_) {
+      return Err(const DefaultCoversFailure.unexpected());
     }
-    return Ok(unit);
   }
 
   @override
   Future<Result<String, DefaultCoversFailure>> fetchDefaultCoverURLByKey(
     String key,
   ) async {
-    final box = await _hive.openBox<String>(defaultCoversBox);
+    try {
+      final box = await _hive.openBox<String>(defaultCoversBox);
 
-    final url = box.get(key);
+      final url = box.get(key);
 
-    if (url != null) {
-      return Ok(url);
+      if (url != null) {
+        return Ok(url);
+      }
+      return Err(const DefaultCoversFailure.defaultCoverURLsNotFetched());
+    } catch (_) {
+      return Err(const DefaultCoversFailure.unexpected());
     }
-    return Err(const DefaultCoversFailure.defaultCoverURLsNotFetched());
   }
 
   @override
@@ -74,7 +83,12 @@ class DefaultCoversRepository implements IDefaultCoversRepository {
         data[map['key'] as String] = map['coverURL'] as String;
       }
       return Ok(data);
-    } on FirebaseException catch (_) {
+    } on PlatformException catch (e) {
+      if (e.code == 'firebase_firestore') {
+        if ((e.details as Map)['code'] == 'permission-denied') {
+          return Err(const DefaultCoversFailure.permissionDenied());
+        }
+      }
       return Err(const DefaultCoversFailure.serverError());
     } catch (_) {
       return Err(const DefaultCoversFailure.unexpected());

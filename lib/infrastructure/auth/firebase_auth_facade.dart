@@ -65,6 +65,9 @@ class FirebaseAuthFacade implements IAuthFacade {
       if (e.code == 'email-already-in-use') {
         return Err(const AuthFailure.emailAlreadyInUse());
       }
+      if (e.code == 'permission-denied') {
+        return Err(const AuthFailure.permissionDenied());
+      }
       return Err(const AuthFailure.serverError());
     } catch (err) {
       return Err(const AuthFailure.unexpected());
@@ -126,7 +129,10 @@ class FirebaseAuthFacade implements IAuthFacade {
         return _updateUserInfo(_googleSignIn.currentUser, currentUser);
       }
       return Err(const AuthFailure.unexpected());
-    } on FirebaseException catch (_) {
+    } on FirebaseException catch (e) {
+      if (e.code == 'permission-denied') {
+        return Err(const AuthFailure.permissionDenied());
+      }
       return Err(const AuthFailure.serverError());
     } on Exception catch (e) {
       if (e is PlatformException) {
@@ -161,11 +167,15 @@ class FirebaseAuthFacade implements IAuthFacade {
       }
       return Err(const AuthFailure.unexpected());
     } on FirebaseException catch (e) {
-      await _firebaseAuth.signInAnonymously();
-
+      if (e.code == 'permission-denied') {
+        return Err(const AuthFailure.permissionDenied());
+      }
       if (e.code == 'wrong-password' || e.code == 'user-not-found') {
         return Err(const AuthFailure.invalidEmailAndPasswordCombination());
       }
+
+      await _firebaseAuth.signInAnonymously();
+
       return Err(const AuthFailure.serverError());
     } catch (_) {
       return Err(const AuthFailure.unexpected());
@@ -210,6 +220,9 @@ class FirebaseAuthFacade implements IAuthFacade {
       if (e.code == 'email-already-in-use') {
         return Err(const AuthFailure.emailAlreadyInUse());
       }
+      if (e.code == 'permission-denied') {
+        return Err(const AuthFailure.permissionDenied());
+      }
       return Err(const AuthFailure.serverError());
     } on Exception catch (e) {
       if (e is PlatformException) {
@@ -236,7 +249,10 @@ class FirebaseAuthFacade implements IAuthFacade {
 
       await _firebaseAuth.signInAnonymously();
       return Ok(unit);
-    } on FirebaseException catch (_) {
+    } on FirebaseException catch (e) {
+      if (e.code == 'permission-denied') {
+        return Err(const AuthFailure.permissionDenied());
+      }
       return Err(const AuthFailure.serverError());
     } catch (_) {
       return Err(const AuthFailure.unexpected());
@@ -253,7 +269,10 @@ class FirebaseAuthFacade implements IAuthFacade {
         return Ok(unit);
       }
       return Err(const AuthFailure.unexpected());
-    } on FirebaseException catch (_) {
+    } on FirebaseException catch (e) {
+      if (e.code == 'permission-denied') {
+        return Err(const AuthFailure.permissionDenied());
+      }
       return Err(const AuthFailure.serverError());
     } catch (_) {
       return Err(const AuthFailure.unexpected());
