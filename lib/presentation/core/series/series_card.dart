@@ -9,20 +9,12 @@ class SeriesCard extends StatelessWidget {
   /// @nodoc
   const SeriesCard({
     Key? key,
-    // required this.authorUsername,
-    // this.authorUsernameFontSize = 10,
     required this.coverURL,
     required this.onPressed,
     required this.title,
     this.titleFontSize = 12,
     required this.uid,
   }) : super(key: key);
-
-  // /// @nodoc
-  // final String authorUsername;
-
-  // /// @nodoc
-  // final double authorUsernameFontSize;
 
   /// @nodoc
   final String coverURL;
@@ -43,61 +35,49 @@ class SeriesCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: onPressed,
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          Padding(
-            padding: const EdgeInsets.only(bottom: 10),
-            child: Container(
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10),
-                boxShadow: const <BoxShadow>[
-                  BoxShadow(
-                    color: Colors.black12,
-                    spreadRadius: 1,
-                    blurRadius: 5,
-                    offset: Offset(0, 3),
-                  ),
-                ],
+      child: Card(
+        elevation: 4,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            ClipRRect(
+              borderRadius: const BorderRadius.only(
+                topLeft: Radius.circular(6),
+                topRight: Radius.circular(6),
               ),
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(6),
-                child: Hero(
-                  tag: uid,
-                  child: isURL(coverURL)
-                      ? CachedNetworkImage(
-                          fit: BoxFit.contain,
-                          imageUrl: coverURL,
-                        )
-                      : Image.file(File(coverURL)),
+              child: Hero(
+                tag: uid,
+                child: isURL(coverURL)
+                    ? CachedNetworkImage(
+                        fit: BoxFit.contain,
+                        imageUrl: coverURL,
+                      )
+                    : Image.file(File(coverURL)),
+              ),
+            ),
+            Container(
+              decoration: const BoxDecoration(
+                borderRadius: BorderRadius.only(
+                  bottomLeft: Radius.circular(6),
+                  bottomRight: Radius.circular(6),
+                ),
+                color: Colors.black87,
+              ),
+              child: Padding(
+                padding: const EdgeInsets.all(10),
+                child: Text(
+                  title,
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.w600,
+                    fontSize: titleFontSize,
+                    letterSpacing: .25,
+                  ),
                 ),
               ),
             ),
-          ),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 1),
-            child: Text(
-              title,
-              maxLines: 3,
-              overflow: TextOverflow.ellipsis,
-              style: TextStyle(
-                fontWeight: FontWeight.w600,
-                fontSize: titleFontSize,
-              ),
-            ),
-          ),
-          // Padding(
-          //   padding: const EdgeInsets.symmetric(horizontal: 1),
-          //   child: TextOneLine(
-          //     'Some text',
-          //     style: TextStyle(
-          //       color: Colors.black38,
-          //       fontWeight: FontWeight.w400,
-          //       fontSize: 10,
-          //     ),
-          //   ),
-          // ),
-        ],
+          ],
+        ),
       ),
     );
   }
