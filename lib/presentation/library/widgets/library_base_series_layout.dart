@@ -58,9 +58,9 @@ class LibraryBaseSeriesLayout extends StatelessWidget {
             children: [
               Padding(
                 padding: const EdgeInsets.symmetric(vertical: 20),
-                child: AlignedGridView.count(
+                child: MasonryGridView.count(
                   crossAxisCount: 2,
-                  crossAxisSpacing: 20,
+                  crossAxisSpacing: 10,
                   physics: const NeverScrollableScrollPhysics(),
                   shrinkWrap: true,
                   itemCount: seriesList.length,
