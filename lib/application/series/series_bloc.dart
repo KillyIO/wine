@@ -35,7 +35,37 @@ class SeriesBloc extends Bloc<SeriesEvent, SeriesState> {
     on<AuthorLoaded>((_, emit) async {
       await _fetchSettings(emit);
     });
-    on<BookmarkButtonPressed>((_, emit) async {});
+    on<BookmarkButtonPressed>((value, emit) async {
+      (await _seriesRepository.updateSeriesBookmarks(
+        state.session.uid,
+        state.series.uid,
+        isBookmarked: !value.isBookmarked,
+      ))
+          .match(
+        (_) {
+          final bookmarksCount = state.series.bookmarksCount;
+
+          emit(
+            state.copyWith(
+              isLiked: !value.isBookmarked,
+              failureOption: const None(),
+              series: state.series.copyWith(
+                bookmarksCount: !value.isBookmarked
+                    ? bookmarksCount + 1
+                    : bookmarksCount - 1,
+              ),
+            ),
+          );
+        },
+        (failure) {
+          emit(
+            state.copyWith(
+              failureOption: Option.some(Err(CoreFailure.series(failure))),
+            ),
+          );
+        },
+      );
+    });
     on<DataSet>((_, emit) async {
       (await _sessionsRepository.fetchSession()).match(
         (session) {
@@ -78,7 +108,7 @@ class SeriesBloc extends Bloc<SeriesEvent, SeriesState> {
       (await _seriesRepository.updateSeriesLikes(
         state.session.uid,
         state.series.uid,
-        liked: !value.isLiked,
+        isLiked: !value.isLiked,
       ))
           .match(
         (_) {
@@ -98,7 +128,6 @@ class SeriesBloc extends Bloc<SeriesEvent, SeriesState> {
           emit(
             state.copyWith(
               failureOption: Option.some(Err(CoreFailure.series(failure))),
-              isProcessing: false,
             ),
           );
         },

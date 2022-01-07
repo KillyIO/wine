@@ -191,10 +191,65 @@ class SeriesRepository implements ISeriesRepository {
   }
 
   @override
+  Future<Result<Unit, SeriesFailure>> updateSeriesBookmarks(
+    UniqueID userID,
+    UniqueID seriesID, {
+    required bool isBookmarked,
+  }) async {
+    try {
+      await _firestore.runTransaction((transaction) async {
+        // Check userID register inside series_bookmarks collection
+        final seriesBookmarksReference = _firestore
+            .collection(seriesBookmarksPath)
+            .doc(seriesID.getOrCrash());
+
+        final sbrSnapshot = await transaction.get(seriesBookmarksReference);
+        final dbIsBookmarked =
+            sbrSnapshot.data()?[userID.getOrCrash()] as bool? ?? false;
+
+        if (isBookmarked != dbIsBookmarked) {
+          // Update series bokmarks count
+          // TODO(SSebigo): make sure firebase rules
+          // match to prevent fraudulent updates
+          final seriesReference =
+              _firestore.collection(seriesPath).doc(seriesID.getOrCrash());
+
+          final srSnapshot = await transaction.get(seriesReference);
+          final bookmarksCount = srSnapshot.data()?['bookmarksCount'] as int;
+
+          transaction
+            ..set(
+              seriesBookmarksReference,
+              <String, dynamic>{
+                userID.getOrCrash(): isBookmarked,
+              },
+              SetOptions(merge: true),
+            )
+            ..update(seriesReference, <String, dynamic>{
+              'bookmarksCount':
+                  isBookmarked ? bookmarksCount + 1 : bookmarksCount - 1,
+            });
+        }
+      });
+
+      return Ok(unit);
+    } on PlatformException catch (e) {
+      if (e.code == 'firebase_firestore') {
+        if ((e.details as Map)['code'] == 'permission-denied') {
+          return Err(const SeriesFailure.permissionDenied());
+        }
+      }
+      return Err(const SeriesFailure.serverError());
+    } catch (e) {
+      return Err(const SeriesFailure.unexpected());
+    }
+  }
+
+  @override
   Future<Result<Unit, SeriesFailure>> updateSeriesLikes(
     UniqueID userID,
     UniqueID seriesID, {
-    required bool liked,
+    required bool isLiked,
   }) async {
     try {
       await _firestore.runTransaction((transaction) async {
@@ -203,12 +258,13 @@ class SeriesRepository implements ISeriesRepository {
             _firestore.collection(seriesLikesPath).doc(seriesID.getOrCrash());
 
         final slrSnapshot = await transaction.get(seriesLikesReference);
-        final dbLiked =
+        final dbIsLiked =
             slrSnapshot.data()?[userID.getOrCrash()] as bool? ?? false;
 
-        if (liked != dbLiked) {
+        if (isLiked != dbIsLiked) {
           // Update series likes count
-          // TODO(SSebigo): make sure firebase rules match to prevent fraudulent updates
+          // TODO(SSebigo): make sure firebase rules
+          // match to prevent fraudulent updates
           final seriesReference =
               _firestore.collection(seriesPath).doc(seriesID.getOrCrash());
 
@@ -219,12 +275,12 @@ class SeriesRepository implements ISeriesRepository {
             ..set(
               seriesLikesReference,
               <String, dynamic>{
-                userID.getOrCrash(): liked,
+                userID.getOrCrash(): isLiked,
               },
               SetOptions(merge: true),
             )
             ..update(seriesReference, <String, dynamic>{
-              'likesCount': liked ? likesCount + 1 : likesCount - 1,
+              'likesCount': isLiked ? likesCount + 1 : likesCount - 1,
             });
         }
       });
@@ -259,7 +315,8 @@ class SeriesRepository implements ISeriesRepository {
 
         if (!viewed) {
           // Update series views count
-          // TODO(SSebigo): make sure firebase rules match to prevent fraudulent updates
+          // TODO(SSebigo): make sure firebase rules
+          // match to prevent fraudulent updates
           final seriesReference =
               _firestore.collection(seriesPath).doc(seriesID.getOrCrash());
 

@@ -26,10 +26,17 @@ abstract class ISeriesRepository {
   Future<Result<Unit, SeriesFailure>> updateSeries(Series series);
 
   /// @nodoc
+  Future<Result<Unit, SeriesFailure>> updateSeriesBookmarks(
+    UniqueID userID,
+    UniqueID seriesID, {
+    required bool isBookmarked,
+  });
+
+  /// @nodoc
   Future<Result<Unit, SeriesFailure>> updateSeriesLikes(
     UniqueID userID,
     UniqueID seriesID, {
-    required bool liked,
+    required bool isLiked,
   });
 
   /// @nodoc
