@@ -109,6 +109,15 @@ class SeriesStats extends StatelessWidget {
               },
               likeCount: state.series.bookmarksCount,
               likeCountPadding: const EdgeInsets.only(left: 5),
+              onTap: (isBookmarked) async {
+                context.read<SeriesBloc>().add(
+                      SeriesEvent.bookmarkButtonPressed(
+                        isBookmarked: isBookmarked,
+                      ),
+                    );
+
+                return state.isBookmarked;
+              },
             );
           },
         ),

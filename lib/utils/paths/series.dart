@@ -1,4 +1,7 @@
 /// @nodoc
+const String seriesBookmarksPath = 'series_bookmarks';
+
+/// @nodoc
 const String seriesLikesPath = 'series_likes';
 
 /// @nodoc
