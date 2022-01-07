@@ -29,6 +29,10 @@ class _$DefaultCoversFailureTearOff {
     return const DefaultCoverURLsNotLoaded();
   }
 
+  PermissionDenied permissionDenied() {
+    return const PermissionDenied();
+  }
+
   ServerError serverError() {
     return const ServerError();
   }
@@ -48,6 +52,7 @@ mixin _$DefaultCoversFailure {
     required TResult Function() defaultCoverURLsNotCached,
     required TResult Function() defaultCoverURLsNotFetched,
     required TResult Function() defaultCoverURLsNotLoaded,
+    required TResult Function() permissionDenied,
     required TResult Function() serverError,
     required TResult Function() unexpected,
   }) =>
@@ -57,6 +62,7 @@ mixin _$DefaultCoversFailure {
     TResult Function()? defaultCoverURLsNotCached,
     TResult Function()? defaultCoverURLsNotFetched,
     TResult Function()? defaultCoverURLsNotLoaded,
+    TResult Function()? permissionDenied,
     TResult Function()? serverError,
     TResult Function()? unexpected,
   }) =>
@@ -66,6 +72,7 @@ mixin _$DefaultCoversFailure {
     TResult Function()? defaultCoverURLsNotCached,
     TResult Function()? defaultCoverURLsNotFetched,
     TResult Function()? defaultCoverURLsNotLoaded,
+    TResult Function()? permissionDenied,
     TResult Function()? serverError,
     TResult Function()? unexpected,
     required TResult orElse(),
@@ -79,6 +86,7 @@ mixin _$DefaultCoversFailure {
         defaultCoverURLsNotFetched,
     required TResult Function(DefaultCoverURLsNotLoaded value)
         defaultCoverURLsNotLoaded,
+    required TResult Function(PermissionDenied value) permissionDenied,
     required TResult Function(ServerError value) serverError,
     required TResult Function(Unexpected value) unexpected,
   }) =>
@@ -91,6 +99,7 @@ mixin _$DefaultCoversFailure {
         defaultCoverURLsNotFetched,
     TResult Function(DefaultCoverURLsNotLoaded value)?
         defaultCoverURLsNotLoaded,
+    TResult Function(PermissionDenied value)? permissionDenied,
     TResult Function(ServerError value)? serverError,
     TResult Function(Unexpected value)? unexpected,
   }) =>
@@ -103,6 +112,7 @@ mixin _$DefaultCoversFailure {
         defaultCoverURLsNotFetched,
     TResult Function(DefaultCoverURLsNotLoaded value)?
         defaultCoverURLsNotLoaded,
+    TResult Function(PermissionDenied value)? permissionDenied,
     TResult Function(ServerError value)? serverError,
     TResult Function(Unexpected value)? unexpected,
     required TResult orElse(),
@@ -173,6 +183,7 @@ class _$DefaultCoverURLsNotCached implements DefaultCoverURLsNotCached {
     required TResult Function() defaultCoverURLsNotCached,
     required TResult Function() defaultCoverURLsNotFetched,
     required TResult Function() defaultCoverURLsNotLoaded,
+    required TResult Function() permissionDenied,
     required TResult Function() serverError,
     required TResult Function() unexpected,
   }) {
@@ -185,6 +196,7 @@ class _$DefaultCoverURLsNotCached implements DefaultCoverURLsNotCached {
     TResult Function()? defaultCoverURLsNotCached,
     TResult Function()? defaultCoverURLsNotFetched,
     TResult Function()? defaultCoverURLsNotLoaded,
+    TResult Function()? permissionDenied,
     TResult Function()? serverError,
     TResult Function()? unexpected,
   }) {
@@ -197,6 +209,7 @@ class _$DefaultCoverURLsNotCached implements DefaultCoverURLsNotCached {
     TResult Function()? defaultCoverURLsNotCached,
     TResult Function()? defaultCoverURLsNotFetched,
     TResult Function()? defaultCoverURLsNotLoaded,
+    TResult Function()? permissionDenied,
     TResult Function()? serverError,
     TResult Function()? unexpected,
     required TResult orElse(),
@@ -216,6 +229,7 @@ class _$DefaultCoverURLsNotCached implements DefaultCoverURLsNotCached {
         defaultCoverURLsNotFetched,
     required TResult Function(DefaultCoverURLsNotLoaded value)
         defaultCoverURLsNotLoaded,
+    required TResult Function(PermissionDenied value) permissionDenied,
     required TResult Function(ServerError value) serverError,
     required TResult Function(Unexpected value) unexpected,
   }) {
@@ -231,6 +245,7 @@ class _$DefaultCoverURLsNotCached implements DefaultCoverURLsNotCached {
         defaultCoverURLsNotFetched,
     TResult Function(DefaultCoverURLsNotLoaded value)?
         defaultCoverURLsNotLoaded,
+    TResult Function(PermissionDenied value)? permissionDenied,
     TResult Function(ServerError value)? serverError,
     TResult Function(Unexpected value)? unexpected,
   }) {
@@ -246,6 +261,7 @@ class _$DefaultCoverURLsNotCached implements DefaultCoverURLsNotCached {
         defaultCoverURLsNotFetched,
     TResult Function(DefaultCoverURLsNotLoaded value)?
         defaultCoverURLsNotLoaded,
+    TResult Function(PermissionDenied value)? permissionDenied,
     TResult Function(ServerError value)? serverError,
     TResult Function(Unexpected value)? unexpected,
     required TResult orElse(),
@@ -307,6 +323,7 @@ class _$DefaultCoverURLsNotFetched implements DefaultCoverURLsNotFetched {
     required TResult Function() defaultCoverURLsNotCached,
     required TResult Function() defaultCoverURLsNotFetched,
     required TResult Function() defaultCoverURLsNotLoaded,
+    required TResult Function() permissionDenied,
     required TResult Function() serverError,
     required TResult Function() unexpected,
   }) {
@@ -319,6 +336,7 @@ class _$DefaultCoverURLsNotFetched implements DefaultCoverURLsNotFetched {
     TResult Function()? defaultCoverURLsNotCached,
     TResult Function()? defaultCoverURLsNotFetched,
     TResult Function()? defaultCoverURLsNotLoaded,
+    TResult Function()? permissionDenied,
     TResult Function()? serverError,
     TResult Function()? unexpected,
   }) {
@@ -331,6 +349,7 @@ class _$DefaultCoverURLsNotFetched implements DefaultCoverURLsNotFetched {
     TResult Function()? defaultCoverURLsNotCached,
     TResult Function()? defaultCoverURLsNotFetched,
     TResult Function()? defaultCoverURLsNotLoaded,
+    TResult Function()? permissionDenied,
     TResult Function()? serverError,
     TResult Function()? unexpected,
     required TResult orElse(),
@@ -350,6 +369,7 @@ class _$DefaultCoverURLsNotFetched implements DefaultCoverURLsNotFetched {
         defaultCoverURLsNotFetched,
     required TResult Function(DefaultCoverURLsNotLoaded value)
         defaultCoverURLsNotLoaded,
+    required TResult Function(PermissionDenied value) permissionDenied,
     required TResult Function(ServerError value) serverError,
     required TResult Function(Unexpected value) unexpected,
   }) {
@@ -365,6 +385,7 @@ class _$DefaultCoverURLsNotFetched implements DefaultCoverURLsNotFetched {
         defaultCoverURLsNotFetched,
     TResult Function(DefaultCoverURLsNotLoaded value)?
         defaultCoverURLsNotLoaded,
+    TResult Function(PermissionDenied value)? permissionDenied,
     TResult Function(ServerError value)? serverError,
     TResult Function(Unexpected value)? unexpected,
   }) {
@@ -380,6 +401,7 @@ class _$DefaultCoverURLsNotFetched implements DefaultCoverURLsNotFetched {
         defaultCoverURLsNotFetched,
     TResult Function(DefaultCoverURLsNotLoaded value)?
         defaultCoverURLsNotLoaded,
+    TResult Function(PermissionDenied value)? permissionDenied,
     TResult Function(ServerError value)? serverError,
     TResult Function(Unexpected value)? unexpected,
     required TResult orElse(),
@@ -441,6 +463,7 @@ class _$DefaultCoverURLsNotLoaded implements DefaultCoverURLsNotLoaded {
     required TResult Function() defaultCoverURLsNotCached,
     required TResult Function() defaultCoverURLsNotFetched,
     required TResult Function() defaultCoverURLsNotLoaded,
+    required TResult Function() permissionDenied,
     required TResult Function() serverError,
     required TResult Function() unexpected,
   }) {
@@ -453,6 +476,7 @@ class _$DefaultCoverURLsNotLoaded implements DefaultCoverURLsNotLoaded {
     TResult Function()? defaultCoverURLsNotCached,
     TResult Function()? defaultCoverURLsNotFetched,
     TResult Function()? defaultCoverURLsNotLoaded,
+    TResult Function()? permissionDenied,
     TResult Function()? serverError,
     TResult Function()? unexpected,
   }) {
@@ -465,6 +489,7 @@ class _$DefaultCoverURLsNotLoaded implements DefaultCoverURLsNotLoaded {
     TResult Function()? defaultCoverURLsNotCached,
     TResult Function()? defaultCoverURLsNotFetched,
     TResult Function()? defaultCoverURLsNotLoaded,
+    TResult Function()? permissionDenied,
     TResult Function()? serverError,
     TResult Function()? unexpected,
     required TResult orElse(),
@@ -484,6 +509,7 @@ class _$DefaultCoverURLsNotLoaded implements DefaultCoverURLsNotLoaded {
         defaultCoverURLsNotFetched,
     required TResult Function(DefaultCoverURLsNotLoaded value)
         defaultCoverURLsNotLoaded,
+    required TResult Function(PermissionDenied value) permissionDenied,
     required TResult Function(ServerError value) serverError,
     required TResult Function(Unexpected value) unexpected,
   }) {
@@ -499,6 +525,7 @@ class _$DefaultCoverURLsNotLoaded implements DefaultCoverURLsNotLoaded {
         defaultCoverURLsNotFetched,
     TResult Function(DefaultCoverURLsNotLoaded value)?
         defaultCoverURLsNotLoaded,
+    TResult Function(PermissionDenied value)? permissionDenied,
     TResult Function(ServerError value)? serverError,
     TResult Function(Unexpected value)? unexpected,
   }) {
@@ -514,6 +541,7 @@ class _$DefaultCoverURLsNotLoaded implements DefaultCoverURLsNotLoaded {
         defaultCoverURLsNotFetched,
     TResult Function(DefaultCoverURLsNotLoaded value)?
         defaultCoverURLsNotLoaded,
+    TResult Function(PermissionDenied value)? permissionDenied,
     TResult Function(ServerError value)? serverError,
     TResult Function(Unexpected value)? unexpected,
     required TResult orElse(),
@@ -527,6 +555,144 @@ class _$DefaultCoverURLsNotLoaded implements DefaultCoverURLsNotLoaded {
 
 abstract class DefaultCoverURLsNotLoaded implements DefaultCoversFailure {
   const factory DefaultCoverURLsNotLoaded() = _$DefaultCoverURLsNotLoaded;
+}
+
+/// @nodoc
+abstract class $PermissionDeniedCopyWith<$Res> {
+  factory $PermissionDeniedCopyWith(
+          PermissionDenied value, $Res Function(PermissionDenied) then) =
+      _$PermissionDeniedCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$PermissionDeniedCopyWithImpl<$Res>
+    extends _$DefaultCoversFailureCopyWithImpl<$Res>
+    implements $PermissionDeniedCopyWith<$Res> {
+  _$PermissionDeniedCopyWithImpl(
+      PermissionDenied _value, $Res Function(PermissionDenied) _then)
+      : super(_value, (v) => _then(v as PermissionDenied));
+
+  @override
+  PermissionDenied get _value => super._value as PermissionDenied;
+}
+
+/// @nodoc
+
+class _$PermissionDenied implements PermissionDenied {
+  const _$PermissionDenied();
+
+  @override
+  String toString() {
+    return 'DefaultCoversFailure.permissionDenied()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is PermissionDenied);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() defaultCoverURLsNotCached,
+    required TResult Function() defaultCoverURLsNotFetched,
+    required TResult Function() defaultCoverURLsNotLoaded,
+    required TResult Function() permissionDenied,
+    required TResult Function() serverError,
+    required TResult Function() unexpected,
+  }) {
+    return permissionDenied();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? defaultCoverURLsNotCached,
+    TResult Function()? defaultCoverURLsNotFetched,
+    TResult Function()? defaultCoverURLsNotLoaded,
+    TResult Function()? permissionDenied,
+    TResult Function()? serverError,
+    TResult Function()? unexpected,
+  }) {
+    return permissionDenied?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? defaultCoverURLsNotCached,
+    TResult Function()? defaultCoverURLsNotFetched,
+    TResult Function()? defaultCoverURLsNotLoaded,
+    TResult Function()? permissionDenied,
+    TResult Function()? serverError,
+    TResult Function()? unexpected,
+    required TResult orElse(),
+  }) {
+    if (permissionDenied != null) {
+      return permissionDenied();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(DefaultCoverURLsNotCached value)
+        defaultCoverURLsNotCached,
+    required TResult Function(DefaultCoverURLsNotFetched value)
+        defaultCoverURLsNotFetched,
+    required TResult Function(DefaultCoverURLsNotLoaded value)
+        defaultCoverURLsNotLoaded,
+    required TResult Function(PermissionDenied value) permissionDenied,
+    required TResult Function(ServerError value) serverError,
+    required TResult Function(Unexpected value) unexpected,
+  }) {
+    return permissionDenied(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(DefaultCoverURLsNotCached value)?
+        defaultCoverURLsNotCached,
+    TResult Function(DefaultCoverURLsNotFetched value)?
+        defaultCoverURLsNotFetched,
+    TResult Function(DefaultCoverURLsNotLoaded value)?
+        defaultCoverURLsNotLoaded,
+    TResult Function(PermissionDenied value)? permissionDenied,
+    TResult Function(ServerError value)? serverError,
+    TResult Function(Unexpected value)? unexpected,
+  }) {
+    return permissionDenied?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(DefaultCoverURLsNotCached value)?
+        defaultCoverURLsNotCached,
+    TResult Function(DefaultCoverURLsNotFetched value)?
+        defaultCoverURLsNotFetched,
+    TResult Function(DefaultCoverURLsNotLoaded value)?
+        defaultCoverURLsNotLoaded,
+    TResult Function(PermissionDenied value)? permissionDenied,
+    TResult Function(ServerError value)? serverError,
+    TResult Function(Unexpected value)? unexpected,
+    required TResult orElse(),
+  }) {
+    if (permissionDenied != null) {
+      return permissionDenied(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class PermissionDenied implements DefaultCoversFailure {
+  const factory PermissionDenied() = _$PermissionDenied;
 }
 
 /// @nodoc
@@ -573,6 +739,7 @@ class _$ServerError implements ServerError {
     required TResult Function() defaultCoverURLsNotCached,
     required TResult Function() defaultCoverURLsNotFetched,
     required TResult Function() defaultCoverURLsNotLoaded,
+    required TResult Function() permissionDenied,
     required TResult Function() serverError,
     required TResult Function() unexpected,
   }) {
@@ -585,6 +752,7 @@ class _$ServerError implements ServerError {
     TResult Function()? defaultCoverURLsNotCached,
     TResult Function()? defaultCoverURLsNotFetched,
     TResult Function()? defaultCoverURLsNotLoaded,
+    TResult Function()? permissionDenied,
     TResult Function()? serverError,
     TResult Function()? unexpected,
   }) {
@@ -597,6 +765,7 @@ class _$ServerError implements ServerError {
     TResult Function()? defaultCoverURLsNotCached,
     TResult Function()? defaultCoverURLsNotFetched,
     TResult Function()? defaultCoverURLsNotLoaded,
+    TResult Function()? permissionDenied,
     TResult Function()? serverError,
     TResult Function()? unexpected,
     required TResult orElse(),
@@ -616,6 +785,7 @@ class _$ServerError implements ServerError {
         defaultCoverURLsNotFetched,
     required TResult Function(DefaultCoverURLsNotLoaded value)
         defaultCoverURLsNotLoaded,
+    required TResult Function(PermissionDenied value) permissionDenied,
     required TResult Function(ServerError value) serverError,
     required TResult Function(Unexpected value) unexpected,
   }) {
@@ -631,6 +801,7 @@ class _$ServerError implements ServerError {
         defaultCoverURLsNotFetched,
     TResult Function(DefaultCoverURLsNotLoaded value)?
         defaultCoverURLsNotLoaded,
+    TResult Function(PermissionDenied value)? permissionDenied,
     TResult Function(ServerError value)? serverError,
     TResult Function(Unexpected value)? unexpected,
   }) {
@@ -646,6 +817,7 @@ class _$ServerError implements ServerError {
         defaultCoverURLsNotFetched,
     TResult Function(DefaultCoverURLsNotLoaded value)?
         defaultCoverURLsNotLoaded,
+    TResult Function(PermissionDenied value)? permissionDenied,
     TResult Function(ServerError value)? serverError,
     TResult Function(Unexpected value)? unexpected,
     required TResult orElse(),
@@ -704,6 +876,7 @@ class _$Unexpected implements Unexpected {
     required TResult Function() defaultCoverURLsNotCached,
     required TResult Function() defaultCoverURLsNotFetched,
     required TResult Function() defaultCoverURLsNotLoaded,
+    required TResult Function() permissionDenied,
     required TResult Function() serverError,
     required TResult Function() unexpected,
   }) {
@@ -716,6 +889,7 @@ class _$Unexpected implements Unexpected {
     TResult Function()? defaultCoverURLsNotCached,
     TResult Function()? defaultCoverURLsNotFetched,
     TResult Function()? defaultCoverURLsNotLoaded,
+    TResult Function()? permissionDenied,
     TResult Function()? serverError,
     TResult Function()? unexpected,
   }) {
@@ -728,6 +902,7 @@ class _$Unexpected implements Unexpected {
     TResult Function()? defaultCoverURLsNotCached,
     TResult Function()? defaultCoverURLsNotFetched,
     TResult Function()? defaultCoverURLsNotLoaded,
+    TResult Function()? permissionDenied,
     TResult Function()? serverError,
     TResult Function()? unexpected,
     required TResult orElse(),
@@ -747,6 +922,7 @@ class _$Unexpected implements Unexpected {
         defaultCoverURLsNotFetched,
     required TResult Function(DefaultCoverURLsNotLoaded value)
         defaultCoverURLsNotLoaded,
+    required TResult Function(PermissionDenied value) permissionDenied,
     required TResult Function(ServerError value) serverError,
     required TResult Function(Unexpected value) unexpected,
   }) {
@@ -762,6 +938,7 @@ class _$Unexpected implements Unexpected {
         defaultCoverURLsNotFetched,
     TResult Function(DefaultCoverURLsNotLoaded value)?
         defaultCoverURLsNotLoaded,
+    TResult Function(PermissionDenied value)? permissionDenied,
     TResult Function(ServerError value)? serverError,
     TResult Function(Unexpected value)? unexpected,
   }) {
@@ -777,6 +954,7 @@ class _$Unexpected implements Unexpected {
         defaultCoverURLsNotFetched,
     TResult Function(DefaultCoverURLsNotLoaded value)?
         defaultCoverURLsNotLoaded,
+    TResult Function(PermissionDenied value)? permissionDenied,
     TResult Function(ServerError value)? serverError,
     TResult Function(Unexpected value)? unexpected,
     required TResult orElse(),

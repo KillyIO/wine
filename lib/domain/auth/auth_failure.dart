@@ -18,6 +18,9 @@ class AuthFailure with _$AuthFailure {
   const factory AuthFailure.invalidEmailAndPasswordCombination() =
       InvalidEmailAndPasswordCombination;
 
+  /// @nodoc
+  const factory AuthFailure.permissionDenied() = PermissionDenied;
+
   /// Serves as a "catch all" failure if we don't know what went wrong.
   ///
   /// Previously ServerFailure.
