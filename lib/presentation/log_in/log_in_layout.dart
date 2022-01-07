@@ -54,6 +54,10 @@ class LogInLayout extends StatelessWidget {
                   context,
                   <String>['Incorrect email or password.'],
                 ),
+                permissionDenied: (_) async => baseErrorDialog(
+                  context,
+                  <String>['Forbidden action. Permission denied!'],
+                ),
                 serverError: (_) async => baseErrorDialog(
                   context,
                   <String>['A problem occurred on our end!'],
@@ -72,6 +76,10 @@ class LogInLayout extends StatelessWidget {
                 orElse: () {},
               ),
               user: (f) => f.f.maybeMap(
+                permissionDenied: (_) async => baseErrorDialog(
+                  context,
+                  <String>['Forbidden action. Permission denied!'],
+                ),
                 serverError: (_) async => baseErrorDialog(
                   context,
                   <String>['A problem occurred on our end!'],

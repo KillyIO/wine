@@ -45,6 +45,10 @@ class SignUpLayout extends StatelessWidget {
                   context,
                   <String>['Email address already in use.'],
                 ),
+                permissionDenied: (_) async => baseErrorDialog(
+                  context,
+                  <String>['Forbidden action. Permission denied!'],
+                ),
                 serverError: (_) async => baseErrorDialog(
                   context,
                   <String>['A problem occurred on our end!'],
@@ -63,6 +67,10 @@ class SignUpLayout extends StatelessWidget {
                 orElse: () {},
               ),
               user: (f) => f.f.maybeMap(
+                permissionDenied: (_) async => baseErrorDialog(
+                  context,
+                  <String>['Forbidden action. Permission denied!'],
+                ),
                 serverError: (_) async => baseErrorDialog(
                   context,
                   <String>['A problem occurred on our end!'],

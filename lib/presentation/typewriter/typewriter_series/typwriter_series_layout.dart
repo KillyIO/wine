@@ -49,6 +49,10 @@ class TypewriterSeriesLayout extends StatelessWidget {
                     context,
                     <String>['Cover not found!'],
                   ),
+                  permissionDenied: (_) async => baseErrorDialog(
+                    context,
+                    <String>['Forbidden action. Permission denied!'],
+                  ),
                   orElse: () {},
                 ),
                 series: (f) => f.f.maybeMap(
