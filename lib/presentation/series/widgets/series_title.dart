@@ -18,11 +18,11 @@ class SeriesTitle extends StatelessWidget {
       return ReadMoreText(
         title!,
         lessStyle: const TextStyle(
-          color: Colors.black12,
+          color: Colors.black38,
           fontWeight: FontWeight.bold,
         ),
         moreStyle: const TextStyle(
-          color: Colors.black12,
+          color: Colors.black38,
           fontWeight: FontWeight.bold,
         ),
         trimMode: TrimMode.Line,
