@@ -1,11 +1,10 @@
 import 'package:equatable/equatable.dart';
-import 'package:rustic/result.dart';
-import 'package:rustic/tuple.dart';
+import 'package:oxidized/oxidized.dart';
 import 'package:wine/domain/core/errors.dart';
 import 'package:wine/domain/core/value_failure.dart';
 
 /// @nodoc
-abstract class ValueObject<T> extends Equatable {
+abstract class ValueObject<T extends Object> extends Equatable {
   /// @nodoc
   const ValueObject();
 
@@ -14,21 +13,25 @@ abstract class ValueObject<T> extends Equatable {
 
   /// Throws [UnexpectedValueError] containing the [ValueFailure]
   T getOrCrash() {
-    // id = identity - same as writing (right) => right
     // ignore: only_throw_errors
     return value.match((ok) => ok, (err) => throw UnexpectedValueError(err));
+  }
+
+  /// Return [Null] on error
+  T? getOrNull() {
+    return value.match((ok) => ok, (err) => null);
   }
 
   /// @nodoc
   Result<Unit, ValueFailure<dynamic>> get failureOrUnit {
     return value.match(
-      (_) => const Ok(Unit()),
+      (_) => Ok(unit),
       (err) => Err(err),
     );
   }
 
   /// @nodoc
-  bool get isValid => value.isOk;
+  bool get isValid => value.isOk();
 
   @override
   List<Object> get props => [value];

@@ -9,6 +9,9 @@ part 'user_failure.freezed.dart';
 @freezed
 class UserFailure with _$UserFailure {
   /// @nodoc
+  const factory UserFailure.permissionDenied() = PermissionDenied;
+
+  /// @nodoc
   const factory UserFailure.serverError() = ServerError;
 
   /// @nodoc

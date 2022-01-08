@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'sessions_failure.dart';
 
@@ -47,6 +48,14 @@ mixin _$SessionsFailure {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? sessionNotCreated,
+    TResult Function()? sessionNotDeleted,
+    TResult Function()? sessionNotFound,
+    TResult Function()? sessionNotUpdated,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? sessionNotCreated,
     TResult Function()? sessionNotDeleted,
@@ -61,6 +70,14 @@ mixin _$SessionsFailure {
     required TResult Function(SessionNotDeleted value) sessionNotDeleted,
     required TResult Function(SessionNotFound value) sessionNotFound,
     required TResult Function(SessionNotUpdated value) sessionNotUpdated,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(SessionNotCreated value)? sessionNotCreated,
+    TResult Function(SessionNotDeleted value)? sessionNotDeleted,
+    TResult Function(SessionNotFound value)? sessionNotFound,
+    TResult Function(SessionNotUpdated value)? sessionNotUpdated,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -122,7 +139,8 @@ class _$SessionNotCreated implements SessionNotCreated {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is SessionNotCreated);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is SessionNotCreated);
   }
 
   @override
@@ -137,6 +155,17 @@ class _$SessionNotCreated implements SessionNotCreated {
     required TResult Function() sessionNotUpdated,
   }) {
     return sessionNotCreated();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? sessionNotCreated,
+    TResult Function()? sessionNotDeleted,
+    TResult Function()? sessionNotFound,
+    TResult Function()? sessionNotUpdated,
+  }) {
+    return sessionNotCreated?.call();
   }
 
   @override
@@ -163,6 +192,17 @@ class _$SessionNotCreated implements SessionNotCreated {
     required TResult Function(SessionNotUpdated value) sessionNotUpdated,
   }) {
     return sessionNotCreated(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(SessionNotCreated value)? sessionNotCreated,
+    TResult Function(SessionNotDeleted value)? sessionNotDeleted,
+    TResult Function(SessionNotFound value)? sessionNotFound,
+    TResult Function(SessionNotUpdated value)? sessionNotUpdated,
+  }) {
+    return sessionNotCreated?.call(this);
   }
 
   @override
@@ -216,7 +256,8 @@ class _$SessionNotDeleted implements SessionNotDeleted {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is SessionNotDeleted);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is SessionNotDeleted);
   }
 
   @override
@@ -231,6 +272,17 @@ class _$SessionNotDeleted implements SessionNotDeleted {
     required TResult Function() sessionNotUpdated,
   }) {
     return sessionNotDeleted();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? sessionNotCreated,
+    TResult Function()? sessionNotDeleted,
+    TResult Function()? sessionNotFound,
+    TResult Function()? sessionNotUpdated,
+  }) {
+    return sessionNotDeleted?.call();
   }
 
   @override
@@ -257,6 +309,17 @@ class _$SessionNotDeleted implements SessionNotDeleted {
     required TResult Function(SessionNotUpdated value) sessionNotUpdated,
   }) {
     return sessionNotDeleted(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(SessionNotCreated value)? sessionNotCreated,
+    TResult Function(SessionNotDeleted value)? sessionNotDeleted,
+    TResult Function(SessionNotFound value)? sessionNotFound,
+    TResult Function(SessionNotUpdated value)? sessionNotUpdated,
+  }) {
+    return sessionNotDeleted?.call(this);
   }
 
   @override
@@ -310,7 +373,8 @@ class _$SessionNotFound implements SessionNotFound {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is SessionNotFound);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is SessionNotFound);
   }
 
   @override
@@ -325,6 +389,17 @@ class _$SessionNotFound implements SessionNotFound {
     required TResult Function() sessionNotUpdated,
   }) {
     return sessionNotFound();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? sessionNotCreated,
+    TResult Function()? sessionNotDeleted,
+    TResult Function()? sessionNotFound,
+    TResult Function()? sessionNotUpdated,
+  }) {
+    return sessionNotFound?.call();
   }
 
   @override
@@ -351,6 +426,17 @@ class _$SessionNotFound implements SessionNotFound {
     required TResult Function(SessionNotUpdated value) sessionNotUpdated,
   }) {
     return sessionNotFound(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(SessionNotCreated value)? sessionNotCreated,
+    TResult Function(SessionNotDeleted value)? sessionNotDeleted,
+    TResult Function(SessionNotFound value)? sessionNotFound,
+    TResult Function(SessionNotUpdated value)? sessionNotUpdated,
+  }) {
+    return sessionNotFound?.call(this);
   }
 
   @override
@@ -404,7 +490,8 @@ class _$SessionNotUpdated implements SessionNotUpdated {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is SessionNotUpdated);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is SessionNotUpdated);
   }
 
   @override
@@ -419,6 +506,17 @@ class _$SessionNotUpdated implements SessionNotUpdated {
     required TResult Function() sessionNotUpdated,
   }) {
     return sessionNotUpdated();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? sessionNotCreated,
+    TResult Function()? sessionNotDeleted,
+    TResult Function()? sessionNotFound,
+    TResult Function()? sessionNotUpdated,
+  }) {
+    return sessionNotUpdated?.call();
   }
 
   @override
@@ -445,6 +543,17 @@ class _$SessionNotUpdated implements SessionNotUpdated {
     required TResult Function(SessionNotUpdated value) sessionNotUpdated,
   }) {
     return sessionNotUpdated(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(SessionNotCreated value)? sessionNotCreated,
+    TResult Function(SessionNotDeleted value)? sessionNotDeleted,
+    TResult Function(SessionNotFound value)? sessionNotFound,
+    TResult Function(SessionNotUpdated value)? sessionNotUpdated,
+  }) {
+    return sessionNotUpdated?.call(this);
   }
 
   @override

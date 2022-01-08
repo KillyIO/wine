@@ -2,7 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart' as auth;
 import 'package:flutter_test/flutter_test.dart';
 import 'package:hive/hive.dart';
 import 'package:mocktail/mocktail.dart';
-import 'package:rustic/tuple.dart';
+import 'package:oxidized/oxidized.dart';
 import 'package:wine/domain/settings/i_settings_repository.dart';
 import 'package:wine/domain/settings/settings_failure.dart';
 import 'package:wine/infrastructure/settings/hive_settings.dart';
@@ -26,7 +26,7 @@ void main() {
 
     _settingsRepository = SettingsRepository(_firebaseAuth, _hive);
 
-    registerFallbackValue<HiveSettings>(MockHiveSettings());
+    registerFallbackValue(MockHiveSettings());
 
     when(() => _hive.openBox<dynamic>(any())).thenAnswer((_) async => _box);
 
@@ -49,9 +49,9 @@ void main() {
 
       final result = await _settingsRepository.deleteSettings();
 
-      expect(result.isOk, true);
+      expect(result.isOk(), true);
       result.match(
-        (ok) => expect(ok, const Unit()),
+        (ok) => expect(ok, unit),
         (_) {},
       );
     });
@@ -61,7 +61,7 @@ void main() {
 
       final result = await _settingsRepository.deleteSettings();
 
-      expect(result.isErr, true);
+      expect(result.isErr(), true);
       result.match(
         (_) {},
         (err) => expect(err, isA<SettingsNotDeleted>()),
@@ -75,7 +75,7 @@ void main() {
 
       final result = await _settingsRepository.fetchSettings();
 
-      expect(result.isOk, true);
+      expect(result.isOk(), true);
       result.match(
         (ok) => expect(ok, testHiveSettings.toDomain()),
         (_) {},
@@ -87,7 +87,7 @@ void main() {
 
       final result = await _settingsRepository.fetchSettings();
 
-      expect(result.isErr, true);
+      expect(result.isErr(), true);
       result.match(
         (_) {},
         (err) => expect(err, isA<SettingsNotFound>()),
@@ -101,9 +101,9 @@ void main() {
 
       final result = await _settingsRepository.initializeSettings();
 
-      expect(result.isOk, true);
+      expect(result.isOk(), true);
       result.match(
-        (ok) => expect(ok, const Unit()),
+        (ok) => expect(ok, unit),
         (_) {},
       );
     });
@@ -115,7 +115,7 @@ void main() {
 
         final result = await _settingsRepository.initializeSettings();
 
-        expect(result.isErr, true);
+        expect(result.isErr(), true);
         result.match(
           (_) {},
           (err) => expect(err, isA<SettingsNotInitialized>()),
@@ -131,9 +131,9 @@ void main() {
       final result =
           await _settingsRepository.updateSettings(testHiveSettings.toDomain());
 
-      expect(result.isOk, true);
+      expect(result.isOk(), true);
       result.match(
-        (ok) => expect(ok, const Unit()),
+        (ok) => expect(ok, unit),
         (_) {},
       );
     });
@@ -147,7 +147,7 @@ void main() {
       final result =
           await _settingsRepository.updateSettings(testHiveSettings.toDomain());
 
-      expect(result.isErr, true);
+      expect(result.isErr(), true);
       result.match(
         (_) {},
         (err) => expect(err, isA<SettingsNotUpdated>()),

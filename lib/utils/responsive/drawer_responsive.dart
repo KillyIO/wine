@@ -10,7 +10,6 @@ double getDrawerWidth(Size size) {
       return 500;
     case DeviceScreenType.tablet:
       return 350;
-    default:
-      return size.width;
   }
+  return size.width;
 }

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:wine/application/home/home_navigation/home_navigation_bloc.dart';
+import 'package:wine/application/home/home_bloc.dart';
 
 /// @nodoc
 class HomePageViewBuilder extends StatelessWidget {
@@ -13,8 +13,7 @@ class HomePageViewBuilder extends StatelessWidget {
   /// @nodoc
   final PageController controller;
 
-  // ignore: todo
-  // TODO add real layouts
+  // TODO(SSebigo): add real layouts
   final List<Widget> _pageViewLayouts = <Widget>[Container(), Container()];
 
   @override
@@ -25,11 +24,11 @@ class HomePageViewBuilder extends StatelessWidget {
         itemBuilder: (context, index) =>
             _pageViewLayouts[index % _pageViewLayouts.length],
         onPageChanged: (index) {
-          context
-              .read<HomeNavigationBloc>()
-              .add(HomeNavigationEvent.pageViewIndexChanged(
-                index % _pageViewLayouts.length,
-              ));
+          context.read<HomeBloc>().add(
+                HomeEvent.pageViewIndexChanged(
+                  index % _pageViewLayouts.length,
+                ),
+              );
         },
       ),
     );

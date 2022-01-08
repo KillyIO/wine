@@ -1,6 +1,6 @@
+import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:auto_route/auto_route.dart';
 import 'package:line_icons/line_icons.dart';
 
 import 'package:wine/application/log_in/log_in_bloc.dart';
@@ -40,14 +40,23 @@ class LogInLayout extends StatelessWidget {
 
     return BlocListener<LogInBloc, LogInState>(
       listener: (context, state) {
-        state.failureOption.whenSome(
-          (some) => some.whenErr(
-            (err) => err.maybeMap(
+        state.failureOption.when(
+          some: (value) => value.when(
+            ok: (_) {},
+            err: (err) => err.maybeMap(
               auth: (f) => f.f.maybeMap(
+                emailAlreadyInUse: (_) async => baseErrorDialog(
+                  context,
+                  <String>['Email address already in use.'],
+                ),
                 invalidEmailAndPasswordCombination: (_) async =>
                     baseErrorDialog(
                   context,
                   <String>['Incorrect email or password.'],
+                ),
+                permissionDenied: (_) async => baseErrorDialog(
+                  context,
+                  <String>['Forbidden action. Permission denied!'],
                 ),
                 serverError: (_) async => baseErrorDialog(
                   context,
@@ -67,6 +76,10 @@ class LogInLayout extends StatelessWidget {
                 orElse: () {},
               ),
               user: (f) => f.f.maybeMap(
+                permissionDenied: (_) async => baseErrorDialog(
+                  context,
+                  <String>['Forbidden action. Permission denied!'],
+                ),
                 serverError: (_) async => baseErrorDialog(
                   context,
                   <String>['A problem occurred on our end!'],
@@ -84,6 +97,7 @@ class LogInLayout extends StatelessWidget {
               orElse: () {},
             ),
           ),
+          none: () {},
         );
 
         if (state.isAuthenticated) {
@@ -103,156 +117,158 @@ class LogInLayout extends StatelessWidget {
       },
       child: BlocBuilder<LogInBloc, LogInState>(
         builder: (context, state) {
-          return SafeArea(
-            child: AbsorbPointer(
-              absorbing: state.isProcessing,
-              child: Form(
-                autovalidateMode: AutovalidateMode.always,
-                child: SingleChildScrollView(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      if (onSignUpButtonPressed != null)
-                        Padding(
-                          padding: const EdgeInsets.only(left: 10, top: 10),
-                          child: IconButton(
-                            key: const Key('log_in_dialog_back'),
-                            highlightColor: Colors.transparent,
-                            hoverColor: Colors.transparent,
-                            icon: const Icon(
-                              Icons.close_outlined,
-                              color: Colors.black,
-                            ),
-                            onPressed: context.router.root.pop,
-                            splashColor: Colors.transparent,
+          return AbsorbPointer(
+            absorbing: state.isProcessing,
+            child: Form(
+              autovalidateMode: AutovalidateMode.always,
+              child: SingleChildScrollView(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    if (onSignUpButtonPressed != null)
+                      Padding(
+                        padding: const EdgeInsets.only(left: 10, top: 10),
+                        child: IconButton(
+                          key: const Key('log_in_dialog_back'),
+                          highlightColor: Colors.transparent,
+                          hoverColor: Colors.transparent,
+                          icon: const Icon(
+                            Icons.close_outlined,
+                            color: Colors.black,
+                          ),
+                          onPressed: context.router.root.pop,
+                          splashColor: Colors.transparent,
+                        ),
+                      ),
+                    Padding(
+                      padding: getWelcomeMessagePadding(mediaQuery),
+                      child: SizedBox(
+                        width: mediaQuery.width,
+                        child: const Text(
+                          'Log in to access more features.',
+                          textAlign: TextAlign.start,
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 20,
+                            fontWeight: FontWeight.w500,
                           ),
                         ),
-                      Padding(
-                        padding: getWelcomeMessagePadding(mediaQuery),
-                        child: SizedBox(
-                          width: mediaQuery.width,
-                          child: const Text(
-                            'Log in to access more features.',
-                            textAlign: TextAlign.start,
-                            style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 20,
-                              fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                    Padding(
+                      padding: getEmailAddressPadding(mediaQuery),
+                      child: AuthenticationTextField(
+                        hintText: 'Email address',
+                        keyboardType: TextInputType.emailAddress,
+                        onChanged: (value) => context
+                            .read<LogInBloc>()
+                            .add(LogInEvent.emailAddressChanged(value)),
+                        validator: (_) => context
+                            .watch<LogInBloc>()
+                            .state
+                            .emailAddress
+                            .value
+                            .match(
+                              (_) => null,
+                              (err) => err.maybeMap(
+                                invalidEmailAddress: (_) =>
+                                    'The email address is invalid.',
+                                orElse: () => null,
+                              ),
                             ),
-                          ),
-                        ),
                       ),
-                      Padding(
-                        padding: getEmailAddressPadding(mediaQuery),
-                        child: AuthenticationTextField(
-                          hintText: 'Email address',
-                          keyboardType: TextInputType.emailAddress,
-                          onChanged: (value) => context
-                              .read<LogInBloc>()
-                              .add(LogInEvent.emailAddressChanged(value)),
-                          validator: (_) => context
-                              .watch<LogInBloc>()
-                              .state
-                              .emailAddress
-                              .value
-                              .match(
-                                (_) => null,
-                                (err) => err.maybeMap(
-                                  invalidEmailAddress: (_) =>
-                                      'The email address is invalid.',
-                                  orElse: () => null,
-                                ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 50, top: 25),
+                      child: AuthenticationTextField(
+                        hintText: 'Password',
+                        obscureText: true,
+                        onChanged: (value) => context
+                            .read<LogInBloc>()
+                            .add(LogInEvent.passwordChanged(value)),
+                        validator: (_) => context
+                            .watch<LogInBloc>()
+                            .state
+                            .password
+                            .value
+                            .match(
+                              (_) => null,
+                              (err) => err.maybeMap(
+                                invalidPassword: (_) =>
+                                    'The password is invalid.',
+                                orElse: () => null,
                               ),
-                        ),
+                            ),
                       ),
-                      Padding(
-                        padding: const EdgeInsets.only(left: 50, top: 25),
-                        child: AuthenticationTextField(
-                          hintText: 'Password',
-                          obscureText: true,
-                          onChanged: (value) => context
-                              .read<LogInBloc>()
-                              .add(LogInEvent.passwordChanged(value)),
-                          validator: (_) => context
-                              .watch<LogInBloc>()
-                              .state
-                              .password
-                              .value
-                              .match(
-                                (_) => null,
-                                (err) => err.maybeMap(
-                                    invalidPassword: (_) =>
-                                        'The password is invalid.',
-                                    orElse: () => null),
-                              ),
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(left: 50, top: 50),
-                        child: DefaultButton(
-                          color: pastelPink,
-                          hasRoundedCorners: true,
-                          isProcessing: state.isProcessing,
-                          onPressed: state.isProcessing
-                              ? null
-                              : () => context.read<LogInBloc>().add(
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 50, top: 50),
+                      child: DefaultButton(
+                        color: pastelPink,
+                        hasRoundedCorners: true,
+                        isProcessing: state.isProcessing,
+                        onPressed: state.isProcessing
+                            ? null
+                            : () => context.read<LogInBloc>().add(
                                   const LogInEvent
-                                      .logInWithEmailAndPasswordPressed()),
-                          title: 'Log in'.toUpperCase(),
-                          width: 150,
-                        ),
+                                      .logInWithEmailAndPasswordPressed(),
+                                ),
+                        title: 'Log in'.toUpperCase(),
+                        width: 150,
                       ),
-                      Padding(
-                        padding: const EdgeInsets.only(left: 50, top: 25),
-                        child: GestureDetector(
-                          onTap: state.isProcessing ? null : () {},
-                          child: const Text(
-                            'Forgot password?',
-                            style: TextStyle(
-                              color: Colors.black,
-                              fontSize: 15,
-                              fontWeight: FontWeight.w400,
-                              letterSpacing: 0.5,
-                              decoration: TextDecoration.underline,
-                            ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(left: 50, top: 25),
+                      child: GestureDetector(
+                        onTap: state.isProcessing ? null : () {},
+                        child: const Text(
+                          'Forgot password?',
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontSize: 15,
+                            fontWeight: FontWeight.w400,
+                            letterSpacing: 0.5,
+                            decoration: TextDecoration.underline,
                           ),
                         ),
                       ),
-                      const Padding(
-                        padding: EdgeInsets.symmetric(vertical: 40),
-                        child: LogInSeparator(),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(bottom: 40),
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
-                          children: <Widget>[
-                            LogInSocialMediaButton(
-                              onPressed: state.isProcessing
-                                  ? null
-                                  : () => context.read<LogInBloc>().add(
-                                      const LogInEvent
-                                          .logInWithGooglePressed()),
-                              icon: LineIcons.googlePlus,
-                            )
-                          ],
-                        ),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(bottom: 50),
-                        child: Align(
-                          child: LogInCreateAccountButton(
+                    ),
+                    const Padding(
+                      padding: EdgeInsets.symmetric(vertical: 40),
+                      child: LogInSeparator(),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(bottom: 40),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: <Widget>[
+                          LogInSocialMediaButton(
                             onPressed: state.isProcessing
                                 ? null
-                                : onSignUpButtonPressed ??
-                                    () => context.router.root.push(SignUpRoute(
+                                : () => context.read<LogInBloc>().add(
+                                      const LogInEvent.logInWithGooglePressed(),
+                                    ),
+                            icon: LineIcons.googlePlus,
+                          )
+                        ],
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(bottom: 50),
+                      child: Align(
+                        child: LogInCreateAccountButton(
+                          onPressed: state.isProcessing
+                              ? null
+                              : onSignUpButtonPressed ??
+                                  () => context.router.root.push(
+                                        SignUpRoute(
                                           navigateTo: navigateTo,
-                                        )),
-                          ),
+                                        ),
+                                      ),
                         ),
                       ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
               ),
             ),

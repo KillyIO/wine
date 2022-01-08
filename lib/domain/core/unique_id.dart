@@ -1,4 +1,4 @@
-import 'package:rustic/result.dart';
+import 'package:oxidized/oxidized.dart';
 import 'package:uuid/uuid.dart';
 
 import 'package:wine/domain/core/value_failure.dart';

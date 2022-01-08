@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'value_failure.dart';
 
@@ -97,6 +98,20 @@ mixin _$ValueFailure<T> {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(T failedValue)? emptyInput,
+    TResult Function(T failedValue)? emptySelection,
+    TResult Function(T failureValue)? invalidCoverFile,
+    TResult Function(T failedValue)? invalidCoverURL,
+    TResult Function(T failedValue)? invalidEmailAddress,
+    TResult Function(T failedValue)? invalidPassword,
+    TResult Function(T failedValue)? invalidConfirmPassword,
+    TResult Function(T failedValue)? invalidUniqueID,
+    TResult Function(T failedValue)? invalidUsername,
+    TResult Function(T failedValue)? tooLongInput,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(T failedValue)? emptyInput,
     TResult Function(T failedValue)? emptySelection,
@@ -124,6 +139,20 @@ mixin _$ValueFailure<T> {
     required TResult Function(InvalidUniqueID<T> value) invalidUniqueID,
     required TResult Function(InvalidUsername<T> value) invalidUsername,
     required TResult Function(TooLongInput<T> value) tooLongInput,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(EmptyInput<T> value)? emptyInput,
+    TResult Function(EmptySelection<T> value)? emptySelection,
+    TResult Function(InvalidCoverFile<T> value)? invalidCoverFile,
+    TResult Function(InvalidCoverURL<T> value)? invalidCoverURL,
+    TResult Function(InvalidEmail<T> value)? invalidEmailAddress,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
+    TResult Function(InvalidConfirmPassword<T> value)? invalidConfirmPassword,
+    TResult Function(InvalidUniqueID<T> value)? invalidUniqueID,
+    TResult Function(InvalidUsername<T> value)? invalidUsername,
+    TResult Function(TooLongInput<T> value)? tooLongInput,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -208,15 +237,15 @@ class _$EmptyInput<T> implements EmptyInput<T> {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is EmptyInput<T> &&
-            (identical(other.failedValue, failedValue) ||
-                const DeepCollectionEquality()
-                    .equals(other.failedValue, failedValue)));
+        (other.runtimeType == runtimeType &&
+            other is EmptyInput<T> &&
+            const DeepCollectionEquality()
+                .equals(other.failedValue, failedValue));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(failedValue));
 
   @JsonKey(ignore: true)
   @override
@@ -238,6 +267,23 @@ class _$EmptyInput<T> implements EmptyInput<T> {
     required TResult Function(T failedValue) tooLongInput,
   }) {
     return emptyInput(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(T failedValue)? emptyInput,
+    TResult Function(T failedValue)? emptySelection,
+    TResult Function(T failureValue)? invalidCoverFile,
+    TResult Function(T failedValue)? invalidCoverURL,
+    TResult Function(T failedValue)? invalidEmailAddress,
+    TResult Function(T failedValue)? invalidPassword,
+    TResult Function(T failedValue)? invalidConfirmPassword,
+    TResult Function(T failedValue)? invalidUniqueID,
+    TResult Function(T failedValue)? invalidUsername,
+    TResult Function(T failedValue)? tooLongInput,
+  }) {
+    return emptyInput?.call(failedValue);
   }
 
   @override
@@ -281,6 +327,23 @@ class _$EmptyInput<T> implements EmptyInput<T> {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(EmptyInput<T> value)? emptyInput,
+    TResult Function(EmptySelection<T> value)? emptySelection,
+    TResult Function(InvalidCoverFile<T> value)? invalidCoverFile,
+    TResult Function(InvalidCoverURL<T> value)? invalidCoverURL,
+    TResult Function(InvalidEmail<T> value)? invalidEmailAddress,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
+    TResult Function(InvalidConfirmPassword<T> value)? invalidConfirmPassword,
+    TResult Function(InvalidUniqueID<T> value)? invalidUniqueID,
+    TResult Function(InvalidUsername<T> value)? invalidUsername,
+    TResult Function(TooLongInput<T> value)? tooLongInput,
+  }) {
+    return emptyInput?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(EmptyInput<T> value)? emptyInput,
     TResult Function(EmptySelection<T> value)? emptySelection,
@@ -304,7 +367,7 @@ class _$EmptyInput<T> implements EmptyInput<T> {
 abstract class EmptyInput<T> implements ValueFailure<T> {
   const factory EmptyInput(T failedValue) = _$EmptyInput<T>;
 
-  T get failedValue => throw _privateConstructorUsedError;
+  T get failedValue;
   @JsonKey(ignore: true)
   $EmptyInputCopyWith<T, EmptyInput<T>> get copyWith =>
       throw _privateConstructorUsedError;
@@ -358,15 +421,15 @@ class _$EmptySelection<T> implements EmptySelection<T> {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is EmptySelection<T> &&
-            (identical(other.failedValue, failedValue) ||
-                const DeepCollectionEquality()
-                    .equals(other.failedValue, failedValue)));
+        (other.runtimeType == runtimeType &&
+            other is EmptySelection<T> &&
+            const DeepCollectionEquality()
+                .equals(other.failedValue, failedValue));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(failedValue));
 
   @JsonKey(ignore: true)
   @override
@@ -388,6 +451,23 @@ class _$EmptySelection<T> implements EmptySelection<T> {
     required TResult Function(T failedValue) tooLongInput,
   }) {
     return emptySelection(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(T failedValue)? emptyInput,
+    TResult Function(T failedValue)? emptySelection,
+    TResult Function(T failureValue)? invalidCoverFile,
+    TResult Function(T failedValue)? invalidCoverURL,
+    TResult Function(T failedValue)? invalidEmailAddress,
+    TResult Function(T failedValue)? invalidPassword,
+    TResult Function(T failedValue)? invalidConfirmPassword,
+    TResult Function(T failedValue)? invalidUniqueID,
+    TResult Function(T failedValue)? invalidUsername,
+    TResult Function(T failedValue)? tooLongInput,
+  }) {
+    return emptySelection?.call(failedValue);
   }
 
   @override
@@ -431,6 +511,23 @@ class _$EmptySelection<T> implements EmptySelection<T> {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(EmptyInput<T> value)? emptyInput,
+    TResult Function(EmptySelection<T> value)? emptySelection,
+    TResult Function(InvalidCoverFile<T> value)? invalidCoverFile,
+    TResult Function(InvalidCoverURL<T> value)? invalidCoverURL,
+    TResult Function(InvalidEmail<T> value)? invalidEmailAddress,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
+    TResult Function(InvalidConfirmPassword<T> value)? invalidConfirmPassword,
+    TResult Function(InvalidUniqueID<T> value)? invalidUniqueID,
+    TResult Function(InvalidUsername<T> value)? invalidUsername,
+    TResult Function(TooLongInput<T> value)? tooLongInput,
+  }) {
+    return emptySelection?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(EmptyInput<T> value)? emptyInput,
     TResult Function(EmptySelection<T> value)? emptySelection,
@@ -454,7 +551,7 @@ class _$EmptySelection<T> implements EmptySelection<T> {
 abstract class EmptySelection<T> implements ValueFailure<T> {
   const factory EmptySelection(T failedValue) = _$EmptySelection<T>;
 
-  T get failedValue => throw _privateConstructorUsedError;
+  T get failedValue;
   @JsonKey(ignore: true)
   $EmptySelectionCopyWith<T, EmptySelection<T>> get copyWith =>
       throw _privateConstructorUsedError;
@@ -508,15 +605,15 @@ class _$InvalidCoverFile<T> implements InvalidCoverFile<T> {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is InvalidCoverFile<T> &&
-            (identical(other.failureValue, failureValue) ||
-                const DeepCollectionEquality()
-                    .equals(other.failureValue, failureValue)));
+        (other.runtimeType == runtimeType &&
+            other is InvalidCoverFile<T> &&
+            const DeepCollectionEquality()
+                .equals(other.failureValue, failureValue));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failureValue);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(failureValue));
 
   @JsonKey(ignore: true)
   @override
@@ -538,6 +635,23 @@ class _$InvalidCoverFile<T> implements InvalidCoverFile<T> {
     required TResult Function(T failedValue) tooLongInput,
   }) {
     return invalidCoverFile(failureValue);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(T failedValue)? emptyInput,
+    TResult Function(T failedValue)? emptySelection,
+    TResult Function(T failureValue)? invalidCoverFile,
+    TResult Function(T failedValue)? invalidCoverURL,
+    TResult Function(T failedValue)? invalidEmailAddress,
+    TResult Function(T failedValue)? invalidPassword,
+    TResult Function(T failedValue)? invalidConfirmPassword,
+    TResult Function(T failedValue)? invalidUniqueID,
+    TResult Function(T failedValue)? invalidUsername,
+    TResult Function(T failedValue)? tooLongInput,
+  }) {
+    return invalidCoverFile?.call(failureValue);
   }
 
   @override
@@ -581,6 +695,23 @@ class _$InvalidCoverFile<T> implements InvalidCoverFile<T> {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(EmptyInput<T> value)? emptyInput,
+    TResult Function(EmptySelection<T> value)? emptySelection,
+    TResult Function(InvalidCoverFile<T> value)? invalidCoverFile,
+    TResult Function(InvalidCoverURL<T> value)? invalidCoverURL,
+    TResult Function(InvalidEmail<T> value)? invalidEmailAddress,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
+    TResult Function(InvalidConfirmPassword<T> value)? invalidConfirmPassword,
+    TResult Function(InvalidUniqueID<T> value)? invalidUniqueID,
+    TResult Function(InvalidUsername<T> value)? invalidUsername,
+    TResult Function(TooLongInput<T> value)? tooLongInput,
+  }) {
+    return invalidCoverFile?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(EmptyInput<T> value)? emptyInput,
     TResult Function(EmptySelection<T> value)? emptySelection,
@@ -604,7 +735,7 @@ class _$InvalidCoverFile<T> implements InvalidCoverFile<T> {
 abstract class InvalidCoverFile<T> implements ValueFailure<T> {
   const factory InvalidCoverFile(T failureValue) = _$InvalidCoverFile<T>;
 
-  T get failureValue => throw _privateConstructorUsedError;
+  T get failureValue;
   @JsonKey(ignore: true)
   $InvalidCoverFileCopyWith<T, InvalidCoverFile<T>> get copyWith =>
       throw _privateConstructorUsedError;
@@ -658,15 +789,15 @@ class _$InvalidCoverURL<T> implements InvalidCoverURL<T> {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is InvalidCoverURL<T> &&
-            (identical(other.failedValue, failedValue) ||
-                const DeepCollectionEquality()
-                    .equals(other.failedValue, failedValue)));
+        (other.runtimeType == runtimeType &&
+            other is InvalidCoverURL<T> &&
+            const DeepCollectionEquality()
+                .equals(other.failedValue, failedValue));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(failedValue));
 
   @JsonKey(ignore: true)
   @override
@@ -688,6 +819,23 @@ class _$InvalidCoverURL<T> implements InvalidCoverURL<T> {
     required TResult Function(T failedValue) tooLongInput,
   }) {
     return invalidCoverURL(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(T failedValue)? emptyInput,
+    TResult Function(T failedValue)? emptySelection,
+    TResult Function(T failureValue)? invalidCoverFile,
+    TResult Function(T failedValue)? invalidCoverURL,
+    TResult Function(T failedValue)? invalidEmailAddress,
+    TResult Function(T failedValue)? invalidPassword,
+    TResult Function(T failedValue)? invalidConfirmPassword,
+    TResult Function(T failedValue)? invalidUniqueID,
+    TResult Function(T failedValue)? invalidUsername,
+    TResult Function(T failedValue)? tooLongInput,
+  }) {
+    return invalidCoverURL?.call(failedValue);
   }
 
   @override
@@ -731,6 +879,23 @@ class _$InvalidCoverURL<T> implements InvalidCoverURL<T> {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(EmptyInput<T> value)? emptyInput,
+    TResult Function(EmptySelection<T> value)? emptySelection,
+    TResult Function(InvalidCoverFile<T> value)? invalidCoverFile,
+    TResult Function(InvalidCoverURL<T> value)? invalidCoverURL,
+    TResult Function(InvalidEmail<T> value)? invalidEmailAddress,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
+    TResult Function(InvalidConfirmPassword<T> value)? invalidConfirmPassword,
+    TResult Function(InvalidUniqueID<T> value)? invalidUniqueID,
+    TResult Function(InvalidUsername<T> value)? invalidUsername,
+    TResult Function(TooLongInput<T> value)? tooLongInput,
+  }) {
+    return invalidCoverURL?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(EmptyInput<T> value)? emptyInput,
     TResult Function(EmptySelection<T> value)? emptySelection,
@@ -754,7 +919,7 @@ class _$InvalidCoverURL<T> implements InvalidCoverURL<T> {
 abstract class InvalidCoverURL<T> implements ValueFailure<T> {
   const factory InvalidCoverURL(T failedValue) = _$InvalidCoverURL<T>;
 
-  T get failedValue => throw _privateConstructorUsedError;
+  T get failedValue;
   @JsonKey(ignore: true)
   $InvalidCoverURLCopyWith<T, InvalidCoverURL<T>> get copyWith =>
       throw _privateConstructorUsedError;
@@ -808,15 +973,15 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is InvalidEmail<T> &&
-            (identical(other.failedValue, failedValue) ||
-                const DeepCollectionEquality()
-                    .equals(other.failedValue, failedValue)));
+        (other.runtimeType == runtimeType &&
+            other is InvalidEmail<T> &&
+            const DeepCollectionEquality()
+                .equals(other.failedValue, failedValue));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(failedValue));
 
   @JsonKey(ignore: true)
   @override
@@ -838,6 +1003,23 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
     required TResult Function(T failedValue) tooLongInput,
   }) {
     return invalidEmailAddress(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(T failedValue)? emptyInput,
+    TResult Function(T failedValue)? emptySelection,
+    TResult Function(T failureValue)? invalidCoverFile,
+    TResult Function(T failedValue)? invalidCoverURL,
+    TResult Function(T failedValue)? invalidEmailAddress,
+    TResult Function(T failedValue)? invalidPassword,
+    TResult Function(T failedValue)? invalidConfirmPassword,
+    TResult Function(T failedValue)? invalidUniqueID,
+    TResult Function(T failedValue)? invalidUsername,
+    TResult Function(T failedValue)? tooLongInput,
+  }) {
+    return invalidEmailAddress?.call(failedValue);
   }
 
   @override
@@ -881,6 +1063,23 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(EmptyInput<T> value)? emptyInput,
+    TResult Function(EmptySelection<T> value)? emptySelection,
+    TResult Function(InvalidCoverFile<T> value)? invalidCoverFile,
+    TResult Function(InvalidCoverURL<T> value)? invalidCoverURL,
+    TResult Function(InvalidEmail<T> value)? invalidEmailAddress,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
+    TResult Function(InvalidConfirmPassword<T> value)? invalidConfirmPassword,
+    TResult Function(InvalidUniqueID<T> value)? invalidUniqueID,
+    TResult Function(InvalidUsername<T> value)? invalidUsername,
+    TResult Function(TooLongInput<T> value)? tooLongInput,
+  }) {
+    return invalidEmailAddress?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(EmptyInput<T> value)? emptyInput,
     TResult Function(EmptySelection<T> value)? emptySelection,
@@ -904,7 +1103,7 @@ class _$InvalidEmail<T> implements InvalidEmail<T> {
 abstract class InvalidEmail<T> implements ValueFailure<T> {
   const factory InvalidEmail(T failedValue) = _$InvalidEmail<T>;
 
-  T get failedValue => throw _privateConstructorUsedError;
+  T get failedValue;
   @JsonKey(ignore: true)
   $InvalidEmailCopyWith<T, InvalidEmail<T>> get copyWith =>
       throw _privateConstructorUsedError;
@@ -958,15 +1157,15 @@ class _$InvalidPassword<T> implements InvalidPassword<T> {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is InvalidPassword<T> &&
-            (identical(other.failedValue, failedValue) ||
-                const DeepCollectionEquality()
-                    .equals(other.failedValue, failedValue)));
+        (other.runtimeType == runtimeType &&
+            other is InvalidPassword<T> &&
+            const DeepCollectionEquality()
+                .equals(other.failedValue, failedValue));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(failedValue));
 
   @JsonKey(ignore: true)
   @override
@@ -988,6 +1187,23 @@ class _$InvalidPassword<T> implements InvalidPassword<T> {
     required TResult Function(T failedValue) tooLongInput,
   }) {
     return invalidPassword(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(T failedValue)? emptyInput,
+    TResult Function(T failedValue)? emptySelection,
+    TResult Function(T failureValue)? invalidCoverFile,
+    TResult Function(T failedValue)? invalidCoverURL,
+    TResult Function(T failedValue)? invalidEmailAddress,
+    TResult Function(T failedValue)? invalidPassword,
+    TResult Function(T failedValue)? invalidConfirmPassword,
+    TResult Function(T failedValue)? invalidUniqueID,
+    TResult Function(T failedValue)? invalidUsername,
+    TResult Function(T failedValue)? tooLongInput,
+  }) {
+    return invalidPassword?.call(failedValue);
   }
 
   @override
@@ -1031,6 +1247,23 @@ class _$InvalidPassword<T> implements InvalidPassword<T> {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(EmptyInput<T> value)? emptyInput,
+    TResult Function(EmptySelection<T> value)? emptySelection,
+    TResult Function(InvalidCoverFile<T> value)? invalidCoverFile,
+    TResult Function(InvalidCoverURL<T> value)? invalidCoverURL,
+    TResult Function(InvalidEmail<T> value)? invalidEmailAddress,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
+    TResult Function(InvalidConfirmPassword<T> value)? invalidConfirmPassword,
+    TResult Function(InvalidUniqueID<T> value)? invalidUniqueID,
+    TResult Function(InvalidUsername<T> value)? invalidUsername,
+    TResult Function(TooLongInput<T> value)? tooLongInput,
+  }) {
+    return invalidPassword?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(EmptyInput<T> value)? emptyInput,
     TResult Function(EmptySelection<T> value)? emptySelection,
@@ -1054,7 +1287,7 @@ class _$InvalidPassword<T> implements InvalidPassword<T> {
 abstract class InvalidPassword<T> implements ValueFailure<T> {
   const factory InvalidPassword(T failedValue) = _$InvalidPassword<T>;
 
-  T get failedValue => throw _privateConstructorUsedError;
+  T get failedValue;
   @JsonKey(ignore: true)
   $InvalidPasswordCopyWith<T, InvalidPassword<T>> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1109,15 +1342,15 @@ class _$InvalidConfirmPassword<T> implements InvalidConfirmPassword<T> {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is InvalidConfirmPassword<T> &&
-            (identical(other.failedValue, failedValue) ||
-                const DeepCollectionEquality()
-                    .equals(other.failedValue, failedValue)));
+        (other.runtimeType == runtimeType &&
+            other is InvalidConfirmPassword<T> &&
+            const DeepCollectionEquality()
+                .equals(other.failedValue, failedValue));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(failedValue));
 
   @JsonKey(ignore: true)
   @override
@@ -1140,6 +1373,23 @@ class _$InvalidConfirmPassword<T> implements InvalidConfirmPassword<T> {
     required TResult Function(T failedValue) tooLongInput,
   }) {
     return invalidConfirmPassword(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(T failedValue)? emptyInput,
+    TResult Function(T failedValue)? emptySelection,
+    TResult Function(T failureValue)? invalidCoverFile,
+    TResult Function(T failedValue)? invalidCoverURL,
+    TResult Function(T failedValue)? invalidEmailAddress,
+    TResult Function(T failedValue)? invalidPassword,
+    TResult Function(T failedValue)? invalidConfirmPassword,
+    TResult Function(T failedValue)? invalidUniqueID,
+    TResult Function(T failedValue)? invalidUsername,
+    TResult Function(T failedValue)? tooLongInput,
+  }) {
+    return invalidConfirmPassword?.call(failedValue);
   }
 
   @override
@@ -1183,6 +1433,23 @@ class _$InvalidConfirmPassword<T> implements InvalidConfirmPassword<T> {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(EmptyInput<T> value)? emptyInput,
+    TResult Function(EmptySelection<T> value)? emptySelection,
+    TResult Function(InvalidCoverFile<T> value)? invalidCoverFile,
+    TResult Function(InvalidCoverURL<T> value)? invalidCoverURL,
+    TResult Function(InvalidEmail<T> value)? invalidEmailAddress,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
+    TResult Function(InvalidConfirmPassword<T> value)? invalidConfirmPassword,
+    TResult Function(InvalidUniqueID<T> value)? invalidUniqueID,
+    TResult Function(InvalidUsername<T> value)? invalidUsername,
+    TResult Function(TooLongInput<T> value)? tooLongInput,
+  }) {
+    return invalidConfirmPassword?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(EmptyInput<T> value)? emptyInput,
     TResult Function(EmptySelection<T> value)? emptySelection,
@@ -1207,7 +1474,7 @@ abstract class InvalidConfirmPassword<T> implements ValueFailure<T> {
   const factory InvalidConfirmPassword(T failedValue) =
       _$InvalidConfirmPassword<T>;
 
-  T get failedValue => throw _privateConstructorUsedError;
+  T get failedValue;
   @JsonKey(ignore: true)
   $InvalidConfirmPasswordCopyWith<T, InvalidConfirmPassword<T>> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1261,15 +1528,15 @@ class _$InvalidUniqueID<T> implements InvalidUniqueID<T> {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is InvalidUniqueID<T> &&
-            (identical(other.failedValue, failedValue) ||
-                const DeepCollectionEquality()
-                    .equals(other.failedValue, failedValue)));
+        (other.runtimeType == runtimeType &&
+            other is InvalidUniqueID<T> &&
+            const DeepCollectionEquality()
+                .equals(other.failedValue, failedValue));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(failedValue));
 
   @JsonKey(ignore: true)
   @override
@@ -1291,6 +1558,23 @@ class _$InvalidUniqueID<T> implements InvalidUniqueID<T> {
     required TResult Function(T failedValue) tooLongInput,
   }) {
     return invalidUniqueID(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(T failedValue)? emptyInput,
+    TResult Function(T failedValue)? emptySelection,
+    TResult Function(T failureValue)? invalidCoverFile,
+    TResult Function(T failedValue)? invalidCoverURL,
+    TResult Function(T failedValue)? invalidEmailAddress,
+    TResult Function(T failedValue)? invalidPassword,
+    TResult Function(T failedValue)? invalidConfirmPassword,
+    TResult Function(T failedValue)? invalidUniqueID,
+    TResult Function(T failedValue)? invalidUsername,
+    TResult Function(T failedValue)? tooLongInput,
+  }) {
+    return invalidUniqueID?.call(failedValue);
   }
 
   @override
@@ -1334,6 +1618,23 @@ class _$InvalidUniqueID<T> implements InvalidUniqueID<T> {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(EmptyInput<T> value)? emptyInput,
+    TResult Function(EmptySelection<T> value)? emptySelection,
+    TResult Function(InvalidCoverFile<T> value)? invalidCoverFile,
+    TResult Function(InvalidCoverURL<T> value)? invalidCoverURL,
+    TResult Function(InvalidEmail<T> value)? invalidEmailAddress,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
+    TResult Function(InvalidConfirmPassword<T> value)? invalidConfirmPassword,
+    TResult Function(InvalidUniqueID<T> value)? invalidUniqueID,
+    TResult Function(InvalidUsername<T> value)? invalidUsername,
+    TResult Function(TooLongInput<T> value)? tooLongInput,
+  }) {
+    return invalidUniqueID?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(EmptyInput<T> value)? emptyInput,
     TResult Function(EmptySelection<T> value)? emptySelection,
@@ -1357,7 +1658,7 @@ class _$InvalidUniqueID<T> implements InvalidUniqueID<T> {
 abstract class InvalidUniqueID<T> implements ValueFailure<T> {
   const factory InvalidUniqueID(T failedValue) = _$InvalidUniqueID<T>;
 
-  T get failedValue => throw _privateConstructorUsedError;
+  T get failedValue;
   @JsonKey(ignore: true)
   $InvalidUniqueIDCopyWith<T, InvalidUniqueID<T>> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1411,15 +1712,15 @@ class _$InvalidUsername<T> implements InvalidUsername<T> {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is InvalidUsername<T> &&
-            (identical(other.failedValue, failedValue) ||
-                const DeepCollectionEquality()
-                    .equals(other.failedValue, failedValue)));
+        (other.runtimeType == runtimeType &&
+            other is InvalidUsername<T> &&
+            const DeepCollectionEquality()
+                .equals(other.failedValue, failedValue));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(failedValue));
 
   @JsonKey(ignore: true)
   @override
@@ -1441,6 +1742,23 @@ class _$InvalidUsername<T> implements InvalidUsername<T> {
     required TResult Function(T failedValue) tooLongInput,
   }) {
     return invalidUsername(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(T failedValue)? emptyInput,
+    TResult Function(T failedValue)? emptySelection,
+    TResult Function(T failureValue)? invalidCoverFile,
+    TResult Function(T failedValue)? invalidCoverURL,
+    TResult Function(T failedValue)? invalidEmailAddress,
+    TResult Function(T failedValue)? invalidPassword,
+    TResult Function(T failedValue)? invalidConfirmPassword,
+    TResult Function(T failedValue)? invalidUniqueID,
+    TResult Function(T failedValue)? invalidUsername,
+    TResult Function(T failedValue)? tooLongInput,
+  }) {
+    return invalidUsername?.call(failedValue);
   }
 
   @override
@@ -1484,6 +1802,23 @@ class _$InvalidUsername<T> implements InvalidUsername<T> {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(EmptyInput<T> value)? emptyInput,
+    TResult Function(EmptySelection<T> value)? emptySelection,
+    TResult Function(InvalidCoverFile<T> value)? invalidCoverFile,
+    TResult Function(InvalidCoverURL<T> value)? invalidCoverURL,
+    TResult Function(InvalidEmail<T> value)? invalidEmailAddress,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
+    TResult Function(InvalidConfirmPassword<T> value)? invalidConfirmPassword,
+    TResult Function(InvalidUniqueID<T> value)? invalidUniqueID,
+    TResult Function(InvalidUsername<T> value)? invalidUsername,
+    TResult Function(TooLongInput<T> value)? tooLongInput,
+  }) {
+    return invalidUsername?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(EmptyInput<T> value)? emptyInput,
     TResult Function(EmptySelection<T> value)? emptySelection,
@@ -1507,7 +1842,7 @@ class _$InvalidUsername<T> implements InvalidUsername<T> {
 abstract class InvalidUsername<T> implements ValueFailure<T> {
   const factory InvalidUsername(T failedValue) = _$InvalidUsername<T>;
 
-  T get failedValue => throw _privateConstructorUsedError;
+  T get failedValue;
   @JsonKey(ignore: true)
   $InvalidUsernameCopyWith<T, InvalidUsername<T>> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1561,15 +1896,15 @@ class _$TooLongInput<T> implements TooLongInput<T> {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is TooLongInput<T> &&
-            (identical(other.failedValue, failedValue) ||
-                const DeepCollectionEquality()
-                    .equals(other.failedValue, failedValue)));
+        (other.runtimeType == runtimeType &&
+            other is TooLongInput<T> &&
+            const DeepCollectionEquality()
+                .equals(other.failedValue, failedValue));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failedValue);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(failedValue));
 
   @JsonKey(ignore: true)
   @override
@@ -1591,6 +1926,23 @@ class _$TooLongInput<T> implements TooLongInput<T> {
     required TResult Function(T failedValue) tooLongInput,
   }) {
     return tooLongInput(failedValue);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(T failedValue)? emptyInput,
+    TResult Function(T failedValue)? emptySelection,
+    TResult Function(T failureValue)? invalidCoverFile,
+    TResult Function(T failedValue)? invalidCoverURL,
+    TResult Function(T failedValue)? invalidEmailAddress,
+    TResult Function(T failedValue)? invalidPassword,
+    TResult Function(T failedValue)? invalidConfirmPassword,
+    TResult Function(T failedValue)? invalidUniqueID,
+    TResult Function(T failedValue)? invalidUsername,
+    TResult Function(T failedValue)? tooLongInput,
+  }) {
+    return tooLongInput?.call(failedValue);
   }
 
   @override
@@ -1634,6 +1986,23 @@ class _$TooLongInput<T> implements TooLongInput<T> {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(EmptyInput<T> value)? emptyInput,
+    TResult Function(EmptySelection<T> value)? emptySelection,
+    TResult Function(InvalidCoverFile<T> value)? invalidCoverFile,
+    TResult Function(InvalidCoverURL<T> value)? invalidCoverURL,
+    TResult Function(InvalidEmail<T> value)? invalidEmailAddress,
+    TResult Function(InvalidPassword<T> value)? invalidPassword,
+    TResult Function(InvalidConfirmPassword<T> value)? invalidConfirmPassword,
+    TResult Function(InvalidUniqueID<T> value)? invalidUniqueID,
+    TResult Function(InvalidUsername<T> value)? invalidUsername,
+    TResult Function(TooLongInput<T> value)? tooLongInput,
+  }) {
+    return tooLongInput?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(EmptyInput<T> value)? emptyInput,
     TResult Function(EmptySelection<T> value)? emptySelection,
@@ -1657,7 +2026,7 @@ class _$TooLongInput<T> implements TooLongInput<T> {
 abstract class TooLongInput<T> implements ValueFailure<T> {
   const factory TooLongInput(T failedValue) = _$TooLongInput<T>;
 
-  T get failedValue => throw _privateConstructorUsedError;
+  T get failedValue;
   @JsonKey(ignore: true)
   $TooLongInputCopyWith<T, TooLongInput<T>> get copyWith =>
       throw _privateConstructorUsedError;

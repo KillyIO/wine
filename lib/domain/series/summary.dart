@@ -1,4 +1,4 @@
-import 'package:rustic/result.dart';
+import 'package:oxidized/oxidized.dart';
 import 'package:wine/domain/core/value_failure.dart';
 import 'package:wine/domain/core/value_object.dart';
 import 'package:wine/domain/core/value_validators.dart';
@@ -9,6 +9,13 @@ class Summary extends ValueObject<String> {
   factory Summary(String input) {
     return Summary._(
       validateSummary(input),
+    );
+  }
+
+  /// @nodoc
+  factory Summary.forSaving(Result<String, ValueFailure<String>> input) {
+    return Summary._(
+      Ok(input.unwrapOr('')),
     );
   }
 

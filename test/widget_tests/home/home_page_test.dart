@@ -2,13 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:mocktail/mocktail.dart';
-import 'package:rustic/option.dart';
-import 'package:rustic/result.dart';
-import 'package:rustic/tuple.dart';
+import 'package:oxidized/oxidized.dart';
 
 import 'package:wine/application/auth/auth_bloc.dart';
 import 'package:wine/application/home/home_bloc.dart';
-import 'package:wine/application/home/home_navigation/home_navigation_bloc.dart';
 import 'package:wine/domain/auth/auth_failure.dart';
 import 'package:wine/domain/auth/i_auth_facade.dart';
 import 'package:wine/domain/default_covers/default_covers_failure.dart';
@@ -18,7 +15,6 @@ import 'package:wine/domain/sessions/sessions_failure.dart';
 import 'package:wine/domain/settings/i_settings_repository.dart';
 import 'package:wine/domain/settings/settings_failure.dart';
 import 'package:wine/domain/user/i_user_repository.dart';
-import 'package:wine/domain/user/user.dart';
 import 'package:wine/domain/user/user_failure.dart';
 import 'package:wine/injection.dart';
 import 'package:wine/presentation/home/widgets/home_app_bar.dart';
@@ -39,7 +35,7 @@ void main() {
   late IUserRepository _userRepository;
 
   setUp(() {
-    registerFallbackValue<User>(MockUser());
+    registerFallbackValue(MockUser());
 
     setupInjection();
 
@@ -55,7 +51,7 @@ void main() {
       group('auth -', () {
         setUp(() {
           when(() => _authFacade.authStateChanges)
-              .thenAnswer((_) => Stream.fromIterable([Option(null)]));
+              .thenAnswer((_) => Stream.fromIterable([Option.none()]));
         });
 
         testWidgets(
@@ -63,18 +59,20 @@ void main() {
           (tester) async {
             when(() => _authFacade.isLoggedIn).thenReturn(false);
             when(_authFacade.logInAnonymously)
-                .thenAnswer((_) async => const Err(AuthFailure.serverError()));
+                .thenAnswer((_) async => Err(const AuthFailure.serverError()));
 
             final authBloc = getIt<AuthBloc>()
               ..add(const AuthEvent.authChanged());
 
-            await tester.pumpWidget(TestRouterWidget(
-              appRouter: AppRouter(),
-              providers: [
-                BlocProvider<AuthBloc>(create: (_) => authBloc),
-                BlocProvider<HomeBloc>(create: (_) => getIt<HomeBloc>()),
-              ],
-            ));
+            await tester.pumpWidget(
+              TestRouterWidget(
+                appRouter: AppRouter(),
+                providers: [
+                  BlocProvider<AuthBloc>(create: (_) => authBloc),
+                  BlocProvider<HomeBloc>(create: (_) => getIt<HomeBloc>()),
+                ],
+              ),
+            );
             await tester.pumpAndSettle();
 
             final restartButton = find.text('RESTART');
@@ -90,18 +88,20 @@ void main() {
           (tester) async {
             when(() => _authFacade.isLoggedIn).thenReturn(false);
             when(_authFacade.logInAnonymously)
-                .thenAnswer((_) async => const Err(AuthFailure.unexpected()));
+                .thenAnswer((_) async => Err(const AuthFailure.unexpected()));
 
             final authBloc = getIt<AuthBloc>()
               ..add(const AuthEvent.authChanged());
 
-            await tester.pumpWidget(TestRouterWidget(
-              appRouter: AppRouter(),
-              providers: [
-                BlocProvider<AuthBloc>(create: (_) => authBloc),
-                BlocProvider<HomeBloc>(create: (_) => getIt<HomeBloc>()),
-              ],
-            ));
+            await tester.pumpWidget(
+              TestRouterWidget(
+                appRouter: AppRouter(),
+                providers: [
+                  BlocProvider<AuthBloc>(create: (_) => authBloc),
+                  BlocProvider<HomeBloc>(create: (_) => getIt<HomeBloc>()),
+                ],
+              ),
+            );
             await tester.pumpAndSettle();
 
             final restartButton = find.text('RESTART');
@@ -116,7 +116,7 @@ void main() {
       group('defaultCovers -', () {
         setUp(() {
           when(() => _authFacade.authStateChanges)
-              .thenAnswer((_) => Stream.fromIterable([Option(null)]));
+              .thenAnswer((_) => Stream.fromIterable([Option.none()]));
         });
 
         testWidgets(
@@ -124,24 +124,29 @@ void main() {
           (tester) async {
             when(() => _authFacade.isLoggedIn).thenReturn(false);
             when(_authFacade.logInAnonymously)
-                .thenAnswer((_) async => const Ok(Unit()));
+                .thenAnswer((_) async => Ok(unit));
             when(() => _authFacade.isAnonymous).thenReturn(false);
             when(_defaultCoversRepository.loadDefaultCoverURLs)
-                .thenAnswer((_) async => const Ok(testDefaultCovers));
+                .thenAnswer((_) async => Ok(testDefaultCovers));
             when(() => _defaultCoversRepository.cacheDefaultCoverURLs(any()))
-                .thenAnswer((_) async => const Err(
-                    DefaultCoversFailure.defaultCoverURLsNotCached()));
+                .thenAnswer(
+              (_) async => Err(
+                const DefaultCoversFailure.defaultCoverURLsNotCached(),
+              ),
+            );
 
             final authBloc = getIt<AuthBloc>()
               ..add(const AuthEvent.authChanged());
 
-            await tester.pumpWidget(TestRouterWidget(
-              appRouter: AppRouter(),
-              providers: [
-                BlocProvider<AuthBloc>(create: (_) => authBloc),
-                BlocProvider<HomeBloc>(create: (_) => getIt<HomeBloc>()),
-              ],
-            ));
+            await tester.pumpWidget(
+              TestRouterWidget(
+                appRouter: AppRouter(),
+                providers: [
+                  BlocProvider<AuthBloc>(create: (_) => authBloc),
+                  BlocProvider<HomeBloc>(create: (_) => getIt<HomeBloc>()),
+                ],
+              ),
+            );
             await tester.pumpAndSettle();
 
             final restartButton = find.text('RESTART');
@@ -162,19 +167,21 @@ void main() {
             when(() => _authFacade.isAnonymous).thenReturn(false);
             when(_defaultCoversRepository.loadDefaultCoverURLs).thenAnswer(
               (_) async =>
-                  const Err(DefaultCoversFailure.defaultCoverURLsNotLoaded()),
+                  Err(const DefaultCoversFailure.defaultCoverURLsNotLoaded()),
             );
 
             final authBloc = getIt<AuthBloc>()
               ..add(const AuthEvent.authChanged());
 
-            await tester.pumpWidget(TestRouterWidget(
-              appRouter: AppRouter(),
-              providers: [
-                BlocProvider<AuthBloc>(create: (_) => authBloc),
-                BlocProvider<HomeBloc>(create: (_) => getIt<HomeBloc>()),
-              ],
-            ));
+            await tester.pumpWidget(
+              TestRouterWidget(
+                appRouter: AppRouter(),
+                providers: [
+                  BlocProvider<AuthBloc>(create: (_) => authBloc),
+                  BlocProvider<HomeBloc>(create: (_) => getIt<HomeBloc>()),
+                ],
+              ),
+            );
             await tester.pumpAndSettle();
 
             final restartButton = find.text('RESTART');
@@ -194,19 +201,21 @@ void main() {
             when(() => _authFacade.isLoggedIn).thenReturn(true);
             when(() => _authFacade.isAnonymous).thenReturn(false);
             when(_defaultCoversRepository.loadDefaultCoverURLs).thenAnswer(
-              (_) async => const Err(DefaultCoversFailure.serverError()),
+              (_) async => Err(const DefaultCoversFailure.serverError()),
             );
 
             final authBloc = getIt<AuthBloc>()
               ..add(const AuthEvent.authChanged());
 
-            await tester.pumpWidget(TestRouterWidget(
-              appRouter: AppRouter(),
-              providers: [
-                BlocProvider<AuthBloc>(create: (_) => authBloc),
-                BlocProvider<HomeBloc>(create: (_) => getIt<HomeBloc>()),
-              ],
-            ));
+            await tester.pumpWidget(
+              TestRouterWidget(
+                appRouter: AppRouter(),
+                providers: [
+                  BlocProvider<AuthBloc>(create: (_) => authBloc),
+                  BlocProvider<HomeBloc>(create: (_) => getIt<HomeBloc>()),
+                ],
+              ),
+            );
             await tester.pumpAndSettle();
 
             final restartButton = find.text('RESTART');
@@ -223,19 +232,21 @@ void main() {
             when(() => _authFacade.isLoggedIn).thenReturn(true);
             when(() => _authFacade.isAnonymous).thenReturn(false);
             when(_defaultCoversRepository.loadDefaultCoverURLs).thenAnswer(
-              (_) async => const Err(DefaultCoversFailure.unexpected()),
+              (_) async => Err(const DefaultCoversFailure.unexpected()),
             );
 
             final authBloc = getIt<AuthBloc>()
               ..add(const AuthEvent.authChanged());
 
-            await tester.pumpWidget(TestRouterWidget(
-              appRouter: AppRouter(),
-              providers: [
-                BlocProvider<AuthBloc>(create: (_) => authBloc),
-                BlocProvider<HomeBloc>(create: (_) => getIt<HomeBloc>()),
-              ],
-            ));
+            await tester.pumpWidget(
+              TestRouterWidget(
+                appRouter: AppRouter(),
+                providers: [
+                  BlocProvider<AuthBloc>(create: (_) => authBloc),
+                  BlocProvider<HomeBloc>(create: (_) => getIt<HomeBloc>()),
+                ],
+              ),
+            );
             await tester.pumpAndSettle();
 
             final restartButton = find.text('RESTART');
@@ -250,7 +261,7 @@ void main() {
       group('sessions -', () {
         setUp(() {
           when(() => _authFacade.authStateChanges)
-              .thenAnswer((_) => Stream.fromIterable([Option(null)]));
+              .thenAnswer((_) => Stream.fromIterable([Option.none()]));
         });
 
         testWidgets(
@@ -258,31 +269,33 @@ void main() {
           (tester) async {
             when(() => _authFacade.isLoggedIn).thenReturn(false);
             when(_authFacade.logInAnonymously)
-                .thenAnswer((_) async => const Ok(Unit()));
+                .thenAnswer((_) async => Ok(unit));
             when(() => _authFacade.isAnonymous).thenReturn(false);
             when(_defaultCoversRepository.loadDefaultCoverURLs)
-                .thenAnswer((_) async => const Ok(testDefaultCovers));
+                .thenAnswer((_) async => Ok(testDefaultCovers));
             when(() => _defaultCoversRepository.cacheDefaultCoverURLs(any()))
-                .thenAnswer((_) async => const Ok(Unit()));
+                .thenAnswer((_) async => Ok(unit));
             when(_settingsRepository.fetchSettings)
-                .thenAnswer((_) async => const Ok(testSettings));
+                .thenAnswer((_) async => Ok(testSettings));
             when(_sessionsRepository.fetchSession).thenAnswer(
-              (_) async => const Err(SessionsFailure.sessionNotFound()),
+              (_) async => Err(const SessionsFailure.sessionNotFound()),
             );
             when(_sessionsRepository.createSession).thenAnswer(
-              (_) async => const Err(SessionsFailure.sessionNotCreated()),
+              (_) async => Err(const SessionsFailure.sessionNotCreated()),
             );
 
             final authBloc = getIt<AuthBloc>()
               ..add(const AuthEvent.authChanged());
 
-            await tester.pumpWidget(TestRouterWidget(
-              appRouter: AppRouter(),
-              providers: [
-                BlocProvider<AuthBloc>(create: (_) => authBloc),
-                BlocProvider<HomeBloc>(create: (_) => getIt<HomeBloc>()),
-              ],
-            ));
+            await tester.pumpWidget(
+              TestRouterWidget(
+                appRouter: AppRouter(),
+                providers: [
+                  BlocProvider<AuthBloc>(create: (_) => authBloc),
+                  BlocProvider<HomeBloc>(create: (_) => getIt<HomeBloc>()),
+                ],
+              ),
+            );
             await tester.pump();
             await tester.pump();
 
@@ -299,32 +312,34 @@ void main() {
           (tester) async {
             when(() => _authFacade.isLoggedIn).thenReturn(false);
             when(_authFacade.logInAnonymously)
-                .thenAnswer((_) async => const Ok(Unit()));
+                .thenAnswer((_) async => Ok(unit));
             when(() => _authFacade.isAnonymous).thenReturn(false);
             when(_defaultCoversRepository.loadDefaultCoverURLs)
-                .thenAnswer((_) async => const Ok(testDefaultCovers));
+                .thenAnswer((_) async => Ok(testDefaultCovers));
             when(() => _defaultCoversRepository.cacheDefaultCoverURLs(any()))
-                .thenAnswer((_) async => const Ok(Unit()));
+                .thenAnswer((_) async => Ok(unit));
             when(_settingsRepository.fetchSettings)
-                .thenAnswer((_) async => const Ok(testSettings));
+                .thenAnswer((_) async => Ok(testSettings));
             when(_sessionsRepository.fetchSession)
                 .thenAnswer((_) async => Ok(testUser));
             when(() => _userRepository.loadUser(any()))
                 .thenAnswer((_) async => Ok(testUser));
             when(() => _sessionsRepository.updateSession(any())).thenAnswer(
-              (_) async => const Err(SessionsFailure.sessionNotUpdated()),
+              (_) async => Err(const SessionsFailure.sessionNotUpdated()),
             );
 
             final authBloc = getIt<AuthBloc>()
               ..add(const AuthEvent.authChanged());
 
-            await tester.pumpWidget(TestRouterWidget(
-              appRouter: AppRouter(),
-              providers: [
-                BlocProvider<AuthBloc>(create: (_) => authBloc),
-                BlocProvider<HomeBloc>(create: (_) => getIt<HomeBloc>()),
-              ],
-            ));
+            await tester.pumpWidget(
+              TestRouterWidget(
+                appRouter: AppRouter(),
+                providers: [
+                  BlocProvider<AuthBloc>(create: (_) => authBloc),
+                  BlocProvider<HomeBloc>(create: (_) => getIt<HomeBloc>()),
+                ],
+              ),
+            );
             await tester.pump();
             await tester.pump();
 
@@ -340,7 +355,7 @@ void main() {
       group('settings -', () {
         setUp(() {
           when(() => _authFacade.authStateChanges)
-              .thenAnswer((_) => Stream.fromIterable([Option(null)]));
+              .thenAnswer((_) => Stream.fromIterable([Option.none()]));
         });
 
         testWidgets(
@@ -348,29 +363,31 @@ void main() {
           (tester) async {
             when(() => _authFacade.isLoggedIn).thenReturn(false);
             when(_authFacade.logInAnonymously)
-                .thenAnswer((_) async => const Ok(Unit()));
+                .thenAnswer((_) async => Ok(unit));
             when(() => _authFacade.isAnonymous).thenReturn(false);
             when(_defaultCoversRepository.loadDefaultCoverURLs)
-                .thenAnswer((_) async => const Ok(testDefaultCovers));
+                .thenAnswer((_) async => Ok(testDefaultCovers));
             when(() => _defaultCoversRepository.cacheDefaultCoverURLs(any()))
-                .thenAnswer((_) async => const Ok(Unit()));
+                .thenAnswer((_) async => Ok(unit));
             when(_settingsRepository.fetchSettings).thenAnswer(
-              (_) async => const Err(SettingsFailure.settingsNotFound()),
+              (_) async => Err(const SettingsFailure.settingsNotFound()),
             );
             when(_settingsRepository.initializeSettings).thenAnswer(
-              (_) async => const Err(SettingsFailure.settingsNotInitialized()),
+              (_) async => Err(const SettingsFailure.settingsNotInitialized()),
             );
 
             final authBloc = getIt<AuthBloc>()
               ..add(const AuthEvent.authChanged());
 
-            await tester.pumpWidget(TestRouterWidget(
-              appRouter: AppRouter(),
-              providers: [
-                BlocProvider<AuthBloc>(create: (_) => authBloc),
-                BlocProvider<HomeBloc>(create: (_) => getIt<HomeBloc>()),
-              ],
-            ));
+            await tester.pumpWidget(
+              TestRouterWidget(
+                appRouter: AppRouter(),
+                providers: [
+                  BlocProvider<AuthBloc>(create: (_) => authBloc),
+                  BlocProvider<HomeBloc>(create: (_) => getIt<HomeBloc>()),
+                ],
+              ),
+            );
             await tester.pump();
             await tester.pump();
 
@@ -389,7 +406,7 @@ void main() {
       group('user -', () {
         setUp(() {
           when(() => _authFacade.authStateChanges)
-              .thenAnswer((_) => Stream.fromIterable([Option(null)]));
+              .thenAnswer((_) => Stream.fromIterable([Option.none()]));
         });
 
         testWidgets(
@@ -397,29 +414,31 @@ void main() {
           (tester) async {
             when(() => _authFacade.isLoggedIn).thenReturn(false);
             when(_authFacade.logInAnonymously)
-                .thenAnswer((_) async => const Ok(Unit()));
+                .thenAnswer((_) async => Ok(unit));
             when(() => _authFacade.isAnonymous).thenReturn(false);
             when(_defaultCoversRepository.loadDefaultCoverURLs)
-                .thenAnswer((_) async => const Ok(testDefaultCovers));
+                .thenAnswer((_) async => Ok(testDefaultCovers));
             when(() => _defaultCoversRepository.cacheDefaultCoverURLs(any()))
-                .thenAnswer((_) async => const Ok(Unit()));
+                .thenAnswer((_) async => Ok(unit));
             when(_settingsRepository.fetchSettings)
-                .thenAnswer((_) async => const Ok(testSettings));
+                .thenAnswer((_) async => Ok(testSettings));
             when(_sessionsRepository.fetchSession)
                 .thenAnswer((_) async => Ok(testUser));
             when(() => _userRepository.loadUser(any()))
-                .thenAnswer((_) async => const Err(UserFailure.userNotFound()));
+                .thenAnswer((_) async => Err(const UserFailure.userNotFound()));
 
             final authBloc = getIt<AuthBloc>()
               ..add(const AuthEvent.authChanged());
 
-            await tester.pumpWidget(TestRouterWidget(
-              appRouter: AppRouter(),
-              providers: [
-                BlocProvider<AuthBloc>(create: (_) => authBloc),
-                BlocProvider<HomeBloc>(create: (_) => getIt<HomeBloc>()),
-              ],
-            ));
+            await tester.pumpWidget(
+              TestRouterWidget(
+                appRouter: AppRouter(),
+                providers: [
+                  BlocProvider<AuthBloc>(create: (_) => authBloc),
+                  BlocProvider<HomeBloc>(create: (_) => getIt<HomeBloc>()),
+                ],
+              ),
+            );
             await tester.pump();
             await tester.pump();
 
@@ -435,28 +454,28 @@ void main() {
 
     testWidgets('Should navigate to Onboarding page', (tester) async {
       when(() => _authFacade.authStateChanges)
-          .thenAnswer((_) => Stream.fromIterable([Option(null)]));
+          .thenAnswer((_) => Stream.fromIterable([Option.none()]));
       when(() => _authFacade.isLoggedIn).thenReturn(false);
-      when(_authFacade.logInAnonymously)
-          .thenAnswer((_) async => const Ok(Unit()));
+      when(_authFacade.logInAnonymously).thenAnswer((_) async => Ok(unit));
       when(() => _authFacade.isAnonymous).thenReturn(true);
       when(_settingsRepository.fetchSettings)
-          .thenAnswer((_) async => const Ok(testSettings));
+          .thenAnswer((_) async => Ok(testSettings));
       when(_sessionsRepository.fetchSession).thenAnswer(
-        (_) async => const Err(SessionsFailure.sessionNotFound()),
+        (_) async => Err(const SessionsFailure.sessionNotFound()),
       );
-      when(_sessionsRepository.createSession)
-          .thenAnswer((_) async => const Ok(Unit()));
+      when(_sessionsRepository.createSession).thenAnswer((_) async => Ok(unit));
 
       final authBloc = getIt<AuthBloc>()..add(const AuthEvent.authChanged());
 
-      await tester.pumpWidget(TestRouterWidget(
-        appRouter: AppRouter(),
-        providers: [
-          BlocProvider<AuthBloc>(create: (_) => authBloc),
-          BlocProvider<HomeBloc>(create: (_) => getIt<HomeBloc>()),
-        ],
-      ));
+      await tester.pumpWidget(
+        TestRouterWidget(
+          appRouter: AppRouter(),
+          providers: [
+            BlocProvider<AuthBloc>(create: (_) => authBloc),
+            BlocProvider<HomeBloc>(create: (_) => getIt<HomeBloc>()),
+          ],
+        ),
+      );
       await tester.pumpAndSettle();
 
       expect(find.byType(OnboardingPage), findsOneWidget);
@@ -465,27 +484,26 @@ void main() {
     group('AppBar -', () {
       testWidgets('Should find 3 buttons', (tester) async {
         when(() => _authFacade.authStateChanges)
-            .thenAnswer((_) => Stream.fromIterable([Option(null)]));
+            .thenAnswer((_) => Stream.fromIterable([Option.none()]));
         when(() => _authFacade.isLoggedIn).thenReturn(true);
         when(() => _authFacade.isAnonymous).thenReturn(true);
         when(_settingsRepository.fetchSettings)
-            .thenAnswer((_) async => const Ok(testSettings));
+            .thenAnswer((_) async => Ok(testSettings));
         when(_sessionsRepository.fetchSession)
             .thenAnswer((_) async => Ok(testUser));
 
         final authBloc = getIt<AuthBloc>()..add(const AuthEvent.authChanged());
 
-        await tester.pumpWidget(TestWidget(
-          child: MultiBlocProvider(
-            providers: <BlocProvider>[
-              BlocProvider<AuthBloc>(create: (_) => authBloc),
-              BlocProvider<HomeNavigationBloc>(
-                create: (_) => getIt<HomeNavigationBloc>(),
-              ),
-            ],
-            child: const HomeAppBar(),
+        await tester.pumpWidget(
+          TestWidget(
+            child: MultiBlocProvider(
+              providers: <BlocProvider>[
+                BlocProvider<AuthBloc>(create: (_) => authBloc),
+              ],
+              child: const HomeAppBar(),
+            ),
           ),
-        ));
+        );
 
         final homeFilterButton = find.byKey(const Key('home_filter_button'));
         final homeNewSeriesButton =
@@ -503,32 +521,30 @@ void main() {
         when(() => _authFacade.isLoggedIn).thenReturn(true);
         when(() => _authFacade.isAnonymous).thenReturn(true);
         when(_settingsRepository.fetchSettings)
-            .thenAnswer((_) async => const Ok(testSettings));
+            .thenAnswer((_) async => Ok(testSettings));
         when(_sessionsRepository.fetchSession)
             .thenAnswer((_) async => Ok(testUser));
       });
 
-      // ignore: todo
-      // TODO test top left icon open/close drawer
+      // TODO(SSebigo): test top left icon open/close drawer
 
       testWidgets('Should find 3 buttons', (tester) async {
         when(() => _authFacade.authStateChanges)
-            .thenAnswer((_) => Stream.fromIterable([Option(null)]));
+            .thenAnswer((_) => Stream.fromIterable([Option.none()]));
 
         final authBloc = getIt<AuthBloc>()..add(const AuthEvent.authChanged());
 
-        await tester.pumpWidget(TestRouterWidget(
-          appRouter: AppRouter(),
-          providers: <BlocProvider>[
-            BlocProvider<AuthBloc>(create: (_) => authBloc),
-            BlocProvider<HomeBloc>(
-              create: (_) => getIt<HomeBloc>(),
-            ),
-            BlocProvider<HomeNavigationBloc>(
-              create: (_) => getIt<HomeNavigationBloc>(),
-            ),
-          ],
-        ));
+        await tester.pumpWidget(
+          TestRouterWidget(
+            appRouter: AppRouter(),
+            providers: <BlocProvider>[
+              BlocProvider<AuthBloc>(create: (_) => authBloc),
+              BlocProvider<HomeBloc>(
+                create: (_) => getIt<HomeBloc>(),
+              ),
+            ],
+          ),
+        );
         await tester.pumpAndSettle();
 
         final homeMenuButton = find.byKey(const Key('home_menu_button'));
@@ -548,19 +564,14 @@ void main() {
       });
     });
 
-    // ignore: todo
-    // TODO test "PLUS" button navigate to PlusPage
+    // TODO(SSebigo): test "PLUS" button navigate to PlusPage
 
-    // ignore: todo
-    // TODO test "LIBRARY" button navigate to LibraryPage
+    // TODO(SSebigo): test "LIBRARY" button navigate to LibraryPage
 
-    // ignore: todo
-    // TODO test series is displayed
+    // TODO(SSebigo): test series is displayed
 
-    // ignore: todo
-    // TODO test if more than 5 series shoud find top five series
+    // TODO(SSebigo): test if more than 5 series shoud find top five series
 
-    // ignore: todo
-    // TODO test plus icon navigate to NewSeries
+    // TODO(SSebigo): test plus icon navigate to NewSeries
   });
 }

@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:rustic/result.dart';
+import 'package:oxidized/oxidized.dart';
 import 'package:wine/domain/auth/username.dart';
 import 'package:wine/domain/core/value_failure.dart';
 
@@ -14,7 +14,7 @@ void main() {
 
         expect(
           username.value,
-          const Ok<String, ValueFailure<String>>(testUsername),
+          Ok<String, ValueFailure<String>>(testUsername),
         );
       },
     );
@@ -26,8 +26,8 @@ void main() {
 
         expect(
           username.value,
-          const Err<String, ValueFailure<String>>(
-            ValueFailure<String>.invalidUsername(testInvalidUsername),
+          Err<String, ValueFailure<String>>(
+            const ValueFailure<String>.invalidUsername(testInvalidUsername),
           ),
         );
       },

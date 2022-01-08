@@ -5,6 +5,7 @@ part of 'home_bloc.dart';
 class HomeState with _$HomeState {
   /// @nodoc
   const factory HomeState({
+    required int currentPageViewIdx,
     required Option<Result<Unit, CoreFailure>> failure,
     required String genreFilterKey,
     required String languageFilterKey,
@@ -15,6 +16,7 @@ class HomeState with _$HomeState {
 
   /// @nodoc
   factory HomeState.initial() => const HomeState(
+        currentPageViewIdx: 0,
         failure: None(),
         genreFilterKey: '',
         languageFilterKey: '',

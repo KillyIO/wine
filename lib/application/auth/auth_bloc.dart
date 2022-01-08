@@ -15,39 +15,23 @@ part 'auth_bloc.freezed.dart';
 @injectable
 class AuthBloc extends Bloc<AuthEvent, AuthState> {
   /// @nodoc
-  AuthBloc(this._authFacade) : super(const AuthState.initial());
+  AuthBloc(this._authFacade) : super(const AuthState.initial()) {
+    on<Anonymous>((_, emit) => emit(const AuthState.anonymous()));
+    on<AuthChanged>((_, emit) async {
+      await _authSubscription?.cancel();
+      _authSubscription = _authFacade.authStateChanges.listen(
+        (user) => user.match(
+          (some) => add(const AuthEvent.authenticated()),
+          () => add(const AuthEvent.anonymous()),
+        ),
+      );
+    });
+    on<Authenticated>((_, emit) => emit(const AuthState.authenticated()));
+  }
 
   final IAuthFacade _authFacade;
 
   StreamSubscription? _authSubscription;
-
-  @override
-  Stream<AuthState> mapEventToState(
-    AuthEvent event,
-  ) async* {
-    yield* event.map(
-      anonymous: (_) async* {
-        yield const AuthState.anonymous();
-      },
-      authChanged: (_) async* {
-        await _authSubscription?.cancel();
-        _authSubscription = _authFacade.authStateChanges.listen(
-          (user) => user.match(
-            (some) => add(const AuthEvent.authenticated()),
-            () => add(const AuthEvent.anonymous()),
-          ),
-        );
-        // if (_authFacade.isLoggedIn && !_authFacade.isAnonymous) {
-        //   yield const AuthState.authenticated();
-        // } else {
-        //   yield const AuthState.anonymous();
-        // }
-      },
-      authenticated: (_) async* {
-        yield const AuthState.authenticated();
-      },
-    );
-  }
 
   @override
   Future<void> close() {

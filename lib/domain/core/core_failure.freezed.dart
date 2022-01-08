@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'core_failure.dart';
 
@@ -24,6 +25,12 @@ class _$CoreFailureTearOff {
 
   _DefaultCovers defaultCovers(DefaultCoversFailure f) {
     return _DefaultCovers(
+      f,
+    );
+  }
+
+  _Series series(SeriesFailure f) {
+    return _Series(
       f,
     );
   }
@@ -56,15 +63,27 @@ mixin _$CoreFailure {
   TResult when<TResult extends Object?>({
     required TResult Function(AuthFailure f) auth,
     required TResult Function(DefaultCoversFailure f) defaultCovers,
+    required TResult Function(SeriesFailure f) series,
     required TResult Function(SessionsFailure f) sessions,
     required TResult Function(SettingsFailure f) settings,
     required TResult Function(UserFailure f) user,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(AuthFailure f)? auth,
+    TResult Function(DefaultCoversFailure f)? defaultCovers,
+    TResult Function(SeriesFailure f)? series,
+    TResult Function(SessionsFailure f)? sessions,
+    TResult Function(SettingsFailure f)? settings,
+    TResult Function(UserFailure f)? user,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(AuthFailure f)? auth,
     TResult Function(DefaultCoversFailure f)? defaultCovers,
+    TResult Function(SeriesFailure f)? series,
     TResult Function(SessionsFailure f)? sessions,
     TResult Function(SettingsFailure f)? settings,
     TResult Function(UserFailure f)? user,
@@ -75,15 +94,27 @@ mixin _$CoreFailure {
   TResult map<TResult extends Object?>({
     required TResult Function(_Auth value) auth,
     required TResult Function(_DefaultCovers value) defaultCovers,
+    required TResult Function(_Series value) series,
     required TResult Function(_Sessions value) sessions,
     required TResult Function(_Settings value) settings,
     required TResult Function(_User value) user,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Auth value)? auth,
+    TResult Function(_DefaultCovers value)? defaultCovers,
+    TResult Function(_Series value)? series,
+    TResult Function(_Sessions value)? sessions,
+    TResult Function(_Settings value)? settings,
+    TResult Function(_User value)? user,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Auth value)? auth,
     TResult Function(_DefaultCovers value)? defaultCovers,
+    TResult Function(_Series value)? series,
     TResult Function(_Sessions value)? sessions,
     TResult Function(_Settings value)? settings,
     TResult Function(_User value)? user,
@@ -162,14 +193,14 @@ class _$_Auth implements _Auth {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Auth &&
-            (identical(other.f, f) ||
-                const DeepCollectionEquality().equals(other.f, f)));
+        (other.runtimeType == runtimeType &&
+            other is _Auth &&
+            const DeepCollectionEquality().equals(other.f, f));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(f);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(f));
 
   @JsonKey(ignore: true)
   @override
@@ -181,6 +212,7 @@ class _$_Auth implements _Auth {
   TResult when<TResult extends Object?>({
     required TResult Function(AuthFailure f) auth,
     required TResult Function(DefaultCoversFailure f) defaultCovers,
+    required TResult Function(SeriesFailure f) series,
     required TResult Function(SessionsFailure f) sessions,
     required TResult Function(SettingsFailure f) settings,
     required TResult Function(UserFailure f) user,
@@ -190,9 +222,23 @@ class _$_Auth implements _Auth {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(AuthFailure f)? auth,
+    TResult Function(DefaultCoversFailure f)? defaultCovers,
+    TResult Function(SeriesFailure f)? series,
+    TResult Function(SessionsFailure f)? sessions,
+    TResult Function(SettingsFailure f)? settings,
+    TResult Function(UserFailure f)? user,
+  }) {
+    return auth?.call(f);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(AuthFailure f)? auth,
     TResult Function(DefaultCoversFailure f)? defaultCovers,
+    TResult Function(SeriesFailure f)? series,
     TResult Function(SessionsFailure f)? sessions,
     TResult Function(SettingsFailure f)? settings,
     TResult Function(UserFailure f)? user,
@@ -209,6 +255,7 @@ class _$_Auth implements _Auth {
   TResult map<TResult extends Object?>({
     required TResult Function(_Auth value) auth,
     required TResult Function(_DefaultCovers value) defaultCovers,
+    required TResult Function(_Series value) series,
     required TResult Function(_Sessions value) sessions,
     required TResult Function(_Settings value) settings,
     required TResult Function(_User value) user,
@@ -218,9 +265,23 @@ class _$_Auth implements _Auth {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Auth value)? auth,
+    TResult Function(_DefaultCovers value)? defaultCovers,
+    TResult Function(_Series value)? series,
+    TResult Function(_Sessions value)? sessions,
+    TResult Function(_Settings value)? settings,
+    TResult Function(_User value)? user,
+  }) {
+    return auth?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Auth value)? auth,
     TResult Function(_DefaultCovers value)? defaultCovers,
+    TResult Function(_Series value)? series,
     TResult Function(_Sessions value)? sessions,
     TResult Function(_Settings value)? settings,
     TResult Function(_User value)? user,
@@ -236,7 +297,7 @@ class _$_Auth implements _Auth {
 abstract class _Auth implements CoreFailure {
   const factory _Auth(AuthFailure f) = _$_Auth;
 
-  AuthFailure get f => throw _privateConstructorUsedError;
+  AuthFailure get f;
   @JsonKey(ignore: true)
   _$AuthCopyWith<_Auth> get copyWith => throw _privateConstructorUsedError;
 }
@@ -297,14 +358,14 @@ class _$_DefaultCovers implements _DefaultCovers {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _DefaultCovers &&
-            (identical(other.f, f) ||
-                const DeepCollectionEquality().equals(other.f, f)));
+        (other.runtimeType == runtimeType &&
+            other is _DefaultCovers &&
+            const DeepCollectionEquality().equals(other.f, f));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(f);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(f));
 
   @JsonKey(ignore: true)
   @override
@@ -316,6 +377,7 @@ class _$_DefaultCovers implements _DefaultCovers {
   TResult when<TResult extends Object?>({
     required TResult Function(AuthFailure f) auth,
     required TResult Function(DefaultCoversFailure f) defaultCovers,
+    required TResult Function(SeriesFailure f) series,
     required TResult Function(SessionsFailure f) sessions,
     required TResult Function(SettingsFailure f) settings,
     required TResult Function(UserFailure f) user,
@@ -325,9 +387,23 @@ class _$_DefaultCovers implements _DefaultCovers {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(AuthFailure f)? auth,
+    TResult Function(DefaultCoversFailure f)? defaultCovers,
+    TResult Function(SeriesFailure f)? series,
+    TResult Function(SessionsFailure f)? sessions,
+    TResult Function(SettingsFailure f)? settings,
+    TResult Function(UserFailure f)? user,
+  }) {
+    return defaultCovers?.call(f);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(AuthFailure f)? auth,
     TResult Function(DefaultCoversFailure f)? defaultCovers,
+    TResult Function(SeriesFailure f)? series,
     TResult Function(SessionsFailure f)? sessions,
     TResult Function(SettingsFailure f)? settings,
     TResult Function(UserFailure f)? user,
@@ -344,6 +420,7 @@ class _$_DefaultCovers implements _DefaultCovers {
   TResult map<TResult extends Object?>({
     required TResult Function(_Auth value) auth,
     required TResult Function(_DefaultCovers value) defaultCovers,
+    required TResult Function(_Series value) series,
     required TResult Function(_Sessions value) sessions,
     required TResult Function(_Settings value) settings,
     required TResult Function(_User value) user,
@@ -353,9 +430,23 @@ class _$_DefaultCovers implements _DefaultCovers {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Auth value)? auth,
+    TResult Function(_DefaultCovers value)? defaultCovers,
+    TResult Function(_Series value)? series,
+    TResult Function(_Sessions value)? sessions,
+    TResult Function(_Settings value)? settings,
+    TResult Function(_User value)? user,
+  }) {
+    return defaultCovers?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Auth value)? auth,
     TResult Function(_DefaultCovers value)? defaultCovers,
+    TResult Function(_Series value)? series,
     TResult Function(_Sessions value)? sessions,
     TResult Function(_Settings value)? settings,
     TResult Function(_User value)? user,
@@ -371,10 +462,173 @@ class _$_DefaultCovers implements _DefaultCovers {
 abstract class _DefaultCovers implements CoreFailure {
   const factory _DefaultCovers(DefaultCoversFailure f) = _$_DefaultCovers;
 
-  DefaultCoversFailure get f => throw _privateConstructorUsedError;
+  DefaultCoversFailure get f;
   @JsonKey(ignore: true)
   _$DefaultCoversCopyWith<_DefaultCovers> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$SeriesCopyWith<$Res> {
+  factory _$SeriesCopyWith(_Series value, $Res Function(_Series) then) =
+      __$SeriesCopyWithImpl<$Res>;
+  $Res call({SeriesFailure f});
+
+  $SeriesFailureCopyWith<$Res> get f;
+}
+
+/// @nodoc
+class __$SeriesCopyWithImpl<$Res> extends _$CoreFailureCopyWithImpl<$Res>
+    implements _$SeriesCopyWith<$Res> {
+  __$SeriesCopyWithImpl(_Series _value, $Res Function(_Series) _then)
+      : super(_value, (v) => _then(v as _Series));
+
+  @override
+  _Series get _value => super._value as _Series;
+
+  @override
+  $Res call({
+    Object? f = freezed,
+  }) {
+    return _then(_Series(
+      f == freezed
+          ? _value.f
+          : f // ignore: cast_nullable_to_non_nullable
+              as SeriesFailure,
+    ));
+  }
+
+  @override
+  $SeriesFailureCopyWith<$Res> get f {
+    return $SeriesFailureCopyWith<$Res>(_value.f, (value) {
+      return _then(_value.copyWith(f: value));
+    });
+  }
+}
+
+/// @nodoc
+
+class _$_Series implements _Series {
+  const _$_Series(this.f);
+
+  @override
+  final SeriesFailure f;
+
+  @override
+  String toString() {
+    return 'CoreFailure.series(f: $f)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _Series &&
+            const DeepCollectionEquality().equals(other.f, f));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(f));
+
+  @JsonKey(ignore: true)
+  @override
+  _$SeriesCopyWith<_Series> get copyWith =>
+      __$SeriesCopyWithImpl<_Series>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function(AuthFailure f) auth,
+    required TResult Function(DefaultCoversFailure f) defaultCovers,
+    required TResult Function(SeriesFailure f) series,
+    required TResult Function(SessionsFailure f) sessions,
+    required TResult Function(SettingsFailure f) settings,
+    required TResult Function(UserFailure f) user,
+  }) {
+    return series(f);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(AuthFailure f)? auth,
+    TResult Function(DefaultCoversFailure f)? defaultCovers,
+    TResult Function(SeriesFailure f)? series,
+    TResult Function(SessionsFailure f)? sessions,
+    TResult Function(SettingsFailure f)? settings,
+    TResult Function(UserFailure f)? user,
+  }) {
+    return series?.call(f);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function(AuthFailure f)? auth,
+    TResult Function(DefaultCoversFailure f)? defaultCovers,
+    TResult Function(SeriesFailure f)? series,
+    TResult Function(SessionsFailure f)? sessions,
+    TResult Function(SettingsFailure f)? settings,
+    TResult Function(UserFailure f)? user,
+    required TResult orElse(),
+  }) {
+    if (series != null) {
+      return series(f);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Auth value) auth,
+    required TResult Function(_DefaultCovers value) defaultCovers,
+    required TResult Function(_Series value) series,
+    required TResult Function(_Sessions value) sessions,
+    required TResult Function(_Settings value) settings,
+    required TResult Function(_User value) user,
+  }) {
+    return series(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Auth value)? auth,
+    TResult Function(_DefaultCovers value)? defaultCovers,
+    TResult Function(_Series value)? series,
+    TResult Function(_Sessions value)? sessions,
+    TResult Function(_Settings value)? settings,
+    TResult Function(_User value)? user,
+  }) {
+    return series?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Auth value)? auth,
+    TResult Function(_DefaultCovers value)? defaultCovers,
+    TResult Function(_Series value)? series,
+    TResult Function(_Sessions value)? sessions,
+    TResult Function(_Settings value)? settings,
+    TResult Function(_User value)? user,
+    required TResult orElse(),
+  }) {
+    if (series != null) {
+      return series(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _Series implements CoreFailure {
+  const factory _Series(SeriesFailure f) = _$_Series;
+
+  SeriesFailure get f;
+  @JsonKey(ignore: true)
+  _$SeriesCopyWith<_Series> get copyWith => throw _privateConstructorUsedError;
 }
 
 /// @nodoc
@@ -431,14 +685,14 @@ class _$_Sessions implements _Sessions {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Sessions &&
-            (identical(other.f, f) ||
-                const DeepCollectionEquality().equals(other.f, f)));
+        (other.runtimeType == runtimeType &&
+            other is _Sessions &&
+            const DeepCollectionEquality().equals(other.f, f));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(f);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(f));
 
   @JsonKey(ignore: true)
   @override
@@ -450,6 +704,7 @@ class _$_Sessions implements _Sessions {
   TResult when<TResult extends Object?>({
     required TResult Function(AuthFailure f) auth,
     required TResult Function(DefaultCoversFailure f) defaultCovers,
+    required TResult Function(SeriesFailure f) series,
     required TResult Function(SessionsFailure f) sessions,
     required TResult Function(SettingsFailure f) settings,
     required TResult Function(UserFailure f) user,
@@ -459,9 +714,23 @@ class _$_Sessions implements _Sessions {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(AuthFailure f)? auth,
+    TResult Function(DefaultCoversFailure f)? defaultCovers,
+    TResult Function(SeriesFailure f)? series,
+    TResult Function(SessionsFailure f)? sessions,
+    TResult Function(SettingsFailure f)? settings,
+    TResult Function(UserFailure f)? user,
+  }) {
+    return sessions?.call(f);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(AuthFailure f)? auth,
     TResult Function(DefaultCoversFailure f)? defaultCovers,
+    TResult Function(SeriesFailure f)? series,
     TResult Function(SessionsFailure f)? sessions,
     TResult Function(SettingsFailure f)? settings,
     TResult Function(UserFailure f)? user,
@@ -478,6 +747,7 @@ class _$_Sessions implements _Sessions {
   TResult map<TResult extends Object?>({
     required TResult Function(_Auth value) auth,
     required TResult Function(_DefaultCovers value) defaultCovers,
+    required TResult Function(_Series value) series,
     required TResult Function(_Sessions value) sessions,
     required TResult Function(_Settings value) settings,
     required TResult Function(_User value) user,
@@ -487,9 +757,23 @@ class _$_Sessions implements _Sessions {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Auth value)? auth,
+    TResult Function(_DefaultCovers value)? defaultCovers,
+    TResult Function(_Series value)? series,
+    TResult Function(_Sessions value)? sessions,
+    TResult Function(_Settings value)? settings,
+    TResult Function(_User value)? user,
+  }) {
+    return sessions?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Auth value)? auth,
     TResult Function(_DefaultCovers value)? defaultCovers,
+    TResult Function(_Series value)? series,
     TResult Function(_Sessions value)? sessions,
     TResult Function(_Settings value)? settings,
     TResult Function(_User value)? user,
@@ -505,7 +789,7 @@ class _$_Sessions implements _Sessions {
 abstract class _Sessions implements CoreFailure {
   const factory _Sessions(SessionsFailure f) = _$_Sessions;
 
-  SessionsFailure get f => throw _privateConstructorUsedError;
+  SessionsFailure get f;
   @JsonKey(ignore: true)
   _$SessionsCopyWith<_Sessions> get copyWith =>
       throw _privateConstructorUsedError;
@@ -565,14 +849,14 @@ class _$_Settings implements _Settings {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Settings &&
-            (identical(other.f, f) ||
-                const DeepCollectionEquality().equals(other.f, f)));
+        (other.runtimeType == runtimeType &&
+            other is _Settings &&
+            const DeepCollectionEquality().equals(other.f, f));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(f);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(f));
 
   @JsonKey(ignore: true)
   @override
@@ -584,6 +868,7 @@ class _$_Settings implements _Settings {
   TResult when<TResult extends Object?>({
     required TResult Function(AuthFailure f) auth,
     required TResult Function(DefaultCoversFailure f) defaultCovers,
+    required TResult Function(SeriesFailure f) series,
     required TResult Function(SessionsFailure f) sessions,
     required TResult Function(SettingsFailure f) settings,
     required TResult Function(UserFailure f) user,
@@ -593,9 +878,23 @@ class _$_Settings implements _Settings {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(AuthFailure f)? auth,
+    TResult Function(DefaultCoversFailure f)? defaultCovers,
+    TResult Function(SeriesFailure f)? series,
+    TResult Function(SessionsFailure f)? sessions,
+    TResult Function(SettingsFailure f)? settings,
+    TResult Function(UserFailure f)? user,
+  }) {
+    return settings?.call(f);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(AuthFailure f)? auth,
     TResult Function(DefaultCoversFailure f)? defaultCovers,
+    TResult Function(SeriesFailure f)? series,
     TResult Function(SessionsFailure f)? sessions,
     TResult Function(SettingsFailure f)? settings,
     TResult Function(UserFailure f)? user,
@@ -612,6 +911,7 @@ class _$_Settings implements _Settings {
   TResult map<TResult extends Object?>({
     required TResult Function(_Auth value) auth,
     required TResult Function(_DefaultCovers value) defaultCovers,
+    required TResult Function(_Series value) series,
     required TResult Function(_Sessions value) sessions,
     required TResult Function(_Settings value) settings,
     required TResult Function(_User value) user,
@@ -621,9 +921,23 @@ class _$_Settings implements _Settings {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Auth value)? auth,
+    TResult Function(_DefaultCovers value)? defaultCovers,
+    TResult Function(_Series value)? series,
+    TResult Function(_Sessions value)? sessions,
+    TResult Function(_Settings value)? settings,
+    TResult Function(_User value)? user,
+  }) {
+    return settings?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Auth value)? auth,
     TResult Function(_DefaultCovers value)? defaultCovers,
+    TResult Function(_Series value)? series,
     TResult Function(_Sessions value)? sessions,
     TResult Function(_Settings value)? settings,
     TResult Function(_User value)? user,
@@ -639,7 +953,7 @@ class _$_Settings implements _Settings {
 abstract class _Settings implements CoreFailure {
   const factory _Settings(SettingsFailure f) = _$_Settings;
 
-  SettingsFailure get f => throw _privateConstructorUsedError;
+  SettingsFailure get f;
   @JsonKey(ignore: true)
   _$SettingsCopyWith<_Settings> get copyWith =>
       throw _privateConstructorUsedError;
@@ -699,14 +1013,14 @@ class _$_User implements _User {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _User &&
-            (identical(other.f, f) ||
-                const DeepCollectionEquality().equals(other.f, f)));
+        (other.runtimeType == runtimeType &&
+            other is _User &&
+            const DeepCollectionEquality().equals(other.f, f));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(f);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(f));
 
   @JsonKey(ignore: true)
   @override
@@ -718,6 +1032,7 @@ class _$_User implements _User {
   TResult when<TResult extends Object?>({
     required TResult Function(AuthFailure f) auth,
     required TResult Function(DefaultCoversFailure f) defaultCovers,
+    required TResult Function(SeriesFailure f) series,
     required TResult Function(SessionsFailure f) sessions,
     required TResult Function(SettingsFailure f) settings,
     required TResult Function(UserFailure f) user,
@@ -727,9 +1042,23 @@ class _$_User implements _User {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function(AuthFailure f)? auth,
+    TResult Function(DefaultCoversFailure f)? defaultCovers,
+    TResult Function(SeriesFailure f)? series,
+    TResult Function(SessionsFailure f)? sessions,
+    TResult Function(SettingsFailure f)? settings,
+    TResult Function(UserFailure f)? user,
+  }) {
+    return user?.call(f);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function(AuthFailure f)? auth,
     TResult Function(DefaultCoversFailure f)? defaultCovers,
+    TResult Function(SeriesFailure f)? series,
     TResult Function(SessionsFailure f)? sessions,
     TResult Function(SettingsFailure f)? settings,
     TResult Function(UserFailure f)? user,
@@ -746,6 +1075,7 @@ class _$_User implements _User {
   TResult map<TResult extends Object?>({
     required TResult Function(_Auth value) auth,
     required TResult Function(_DefaultCovers value) defaultCovers,
+    required TResult Function(_Series value) series,
     required TResult Function(_Sessions value) sessions,
     required TResult Function(_Settings value) settings,
     required TResult Function(_User value) user,
@@ -755,9 +1085,23 @@ class _$_User implements _User {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Auth value)? auth,
+    TResult Function(_DefaultCovers value)? defaultCovers,
+    TResult Function(_Series value)? series,
+    TResult Function(_Sessions value)? sessions,
+    TResult Function(_Settings value)? settings,
+    TResult Function(_User value)? user,
+  }) {
+    return user?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_Auth value)? auth,
     TResult Function(_DefaultCovers value)? defaultCovers,
+    TResult Function(_Series value)? series,
     TResult Function(_Sessions value)? sessions,
     TResult Function(_Settings value)? settings,
     TResult Function(_User value)? user,
@@ -773,7 +1117,7 @@ class _$_User implements _User {
 abstract class _User implements CoreFailure {
   const factory _User(UserFailure f) = _$_User;
 
-  UserFailure get f => throw _privateConstructorUsedError;
+  UserFailure get f;
   @JsonKey(ignore: true)
   _$UserCopyWith<_User> get copyWith => throw _privateConstructorUsedError;
 }

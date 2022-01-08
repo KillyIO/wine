@@ -1,5 +1,4 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:wine/presentation/home/widgets/home_menu_tile.dart';
 import 'package:wine/presentation/routes/router.dart';
@@ -26,7 +25,6 @@ class HomeMenuLayout extends StatelessWidget {
             preferredSize: const Size.fromHeight(defaultAppBarHeight),
             child: AppBar(
               backgroundColor: Colors.transparent,
-              brightness: Brightness.light,
               elevation: 0,
               actions: [
                 Padding(

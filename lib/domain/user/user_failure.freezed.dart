@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'user_failure.dart';
 
@@ -15,6 +16,10 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 class _$UserFailureTearOff {
   const _$UserFailureTearOff();
+
+  PermissionDenied permissionDenied() {
+    return const PermissionDenied();
+  }
 
   ServerError serverError() {
     return const ServerError();
@@ -40,6 +45,7 @@ const $UserFailure = _$UserFailureTearOff();
 mixin _$UserFailure {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() permissionDenied,
     required TResult Function() serverError,
     required TResult Function() unexpected,
     required TResult Function() usernameAlreadyInUse,
@@ -47,7 +53,17 @@ mixin _$UserFailure {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? permissionDenied,
+    TResult Function()? serverError,
+    TResult Function()? unexpected,
+    TResult Function()? usernameAlreadyInUse,
+    TResult Function()? userNotFound,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? permissionDenied,
     TResult Function()? serverError,
     TResult Function()? unexpected,
     TResult Function()? usernameAlreadyInUse,
@@ -57,6 +73,7 @@ mixin _$UserFailure {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(PermissionDenied value) permissionDenied,
     required TResult Function(ServerError value) serverError,
     required TResult Function(Unexpected value) unexpected,
     required TResult Function(UsernameAlreadyInUse value) usernameAlreadyInUse,
@@ -64,7 +81,17 @@ mixin _$UserFailure {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(PermissionDenied value)? permissionDenied,
+    TResult Function(ServerError value)? serverError,
+    TResult Function(Unexpected value)? unexpected,
+    TResult Function(UsernameAlreadyInUse value)? usernameAlreadyInUse,
+    TResult Function(UserNotFound value)? userNotFound,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(PermissionDenied value)? permissionDenied,
     TResult Function(ServerError value)? serverError,
     TResult Function(Unexpected value)? unexpected,
     TResult Function(UsernameAlreadyInUse value)? usernameAlreadyInUse,
@@ -88,6 +115,129 @@ class _$UserFailureCopyWithImpl<$Res> implements $UserFailureCopyWith<$Res> {
   final UserFailure _value;
   // ignore: unused_field
   final $Res Function(UserFailure) _then;
+}
+
+/// @nodoc
+abstract class $PermissionDeniedCopyWith<$Res> {
+  factory $PermissionDeniedCopyWith(
+          PermissionDenied value, $Res Function(PermissionDenied) then) =
+      _$PermissionDeniedCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$PermissionDeniedCopyWithImpl<$Res>
+    extends _$UserFailureCopyWithImpl<$Res>
+    implements $PermissionDeniedCopyWith<$Res> {
+  _$PermissionDeniedCopyWithImpl(
+      PermissionDenied _value, $Res Function(PermissionDenied) _then)
+      : super(_value, (v) => _then(v as PermissionDenied));
+
+  @override
+  PermissionDenied get _value => super._value as PermissionDenied;
+}
+
+/// @nodoc
+
+class _$PermissionDenied implements PermissionDenied {
+  const _$PermissionDenied();
+
+  @override
+  String toString() {
+    return 'UserFailure.permissionDenied()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is PermissionDenied);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() permissionDenied,
+    required TResult Function() serverError,
+    required TResult Function() unexpected,
+    required TResult Function() usernameAlreadyInUse,
+    required TResult Function() userNotFound,
+  }) {
+    return permissionDenied();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? permissionDenied,
+    TResult Function()? serverError,
+    TResult Function()? unexpected,
+    TResult Function()? usernameAlreadyInUse,
+    TResult Function()? userNotFound,
+  }) {
+    return permissionDenied?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? permissionDenied,
+    TResult Function()? serverError,
+    TResult Function()? unexpected,
+    TResult Function()? usernameAlreadyInUse,
+    TResult Function()? userNotFound,
+    required TResult orElse(),
+  }) {
+    if (permissionDenied != null) {
+      return permissionDenied();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(PermissionDenied value) permissionDenied,
+    required TResult Function(ServerError value) serverError,
+    required TResult Function(Unexpected value) unexpected,
+    required TResult Function(UsernameAlreadyInUse value) usernameAlreadyInUse,
+    required TResult Function(UserNotFound value) userNotFound,
+  }) {
+    return permissionDenied(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(PermissionDenied value)? permissionDenied,
+    TResult Function(ServerError value)? serverError,
+    TResult Function(Unexpected value)? unexpected,
+    TResult Function(UsernameAlreadyInUse value)? usernameAlreadyInUse,
+    TResult Function(UserNotFound value)? userNotFound,
+  }) {
+    return permissionDenied?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(PermissionDenied value)? permissionDenied,
+    TResult Function(ServerError value)? serverError,
+    TResult Function(Unexpected value)? unexpected,
+    TResult Function(UsernameAlreadyInUse value)? usernameAlreadyInUse,
+    TResult Function(UserNotFound value)? userNotFound,
+    required TResult orElse(),
+  }) {
+    if (permissionDenied != null) {
+      return permissionDenied(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class PermissionDenied implements UserFailure {
+  const factory PermissionDenied() = _$PermissionDenied;
 }
 
 /// @nodoc
@@ -120,7 +270,8 @@ class _$ServerError implements ServerError {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is ServerError);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is ServerError);
   }
 
   @override
@@ -129,6 +280,7 @@ class _$ServerError implements ServerError {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() permissionDenied,
     required TResult Function() serverError,
     required TResult Function() unexpected,
     required TResult Function() usernameAlreadyInUse,
@@ -139,7 +291,20 @@ class _$ServerError implements ServerError {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? permissionDenied,
+    TResult Function()? serverError,
+    TResult Function()? unexpected,
+    TResult Function()? usernameAlreadyInUse,
+    TResult Function()? userNotFound,
+  }) {
+    return serverError?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? permissionDenied,
     TResult Function()? serverError,
     TResult Function()? unexpected,
     TResult Function()? usernameAlreadyInUse,
@@ -155,6 +320,7 @@ class _$ServerError implements ServerError {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(PermissionDenied value) permissionDenied,
     required TResult Function(ServerError value) serverError,
     required TResult Function(Unexpected value) unexpected,
     required TResult Function(UsernameAlreadyInUse value) usernameAlreadyInUse,
@@ -165,7 +331,20 @@ class _$ServerError implements ServerError {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(PermissionDenied value)? permissionDenied,
+    TResult Function(ServerError value)? serverError,
+    TResult Function(Unexpected value)? unexpected,
+    TResult Function(UsernameAlreadyInUse value)? usernameAlreadyInUse,
+    TResult Function(UserNotFound value)? userNotFound,
+  }) {
+    return serverError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(PermissionDenied value)? permissionDenied,
     TResult Function(ServerError value)? serverError,
     TResult Function(Unexpected value)? unexpected,
     TResult Function(UsernameAlreadyInUse value)? usernameAlreadyInUse,
@@ -212,7 +391,8 @@ class _$Unexpected implements Unexpected {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is Unexpected);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is Unexpected);
   }
 
   @override
@@ -221,6 +401,7 @@ class _$Unexpected implements Unexpected {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() permissionDenied,
     required TResult Function() serverError,
     required TResult Function() unexpected,
     required TResult Function() usernameAlreadyInUse,
@@ -231,7 +412,20 @@ class _$Unexpected implements Unexpected {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? permissionDenied,
+    TResult Function()? serverError,
+    TResult Function()? unexpected,
+    TResult Function()? usernameAlreadyInUse,
+    TResult Function()? userNotFound,
+  }) {
+    return unexpected?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? permissionDenied,
     TResult Function()? serverError,
     TResult Function()? unexpected,
     TResult Function()? usernameAlreadyInUse,
@@ -247,6 +441,7 @@ class _$Unexpected implements Unexpected {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(PermissionDenied value) permissionDenied,
     required TResult Function(ServerError value) serverError,
     required TResult Function(Unexpected value) unexpected,
     required TResult Function(UsernameAlreadyInUse value) usernameAlreadyInUse,
@@ -257,7 +452,20 @@ class _$Unexpected implements Unexpected {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(PermissionDenied value)? permissionDenied,
+    TResult Function(ServerError value)? serverError,
+    TResult Function(Unexpected value)? unexpected,
+    TResult Function(UsernameAlreadyInUse value)? usernameAlreadyInUse,
+    TResult Function(UserNotFound value)? userNotFound,
+  }) {
+    return unexpected?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(PermissionDenied value)? permissionDenied,
     TResult Function(ServerError value)? serverError,
     TResult Function(Unexpected value)? unexpected,
     TResult Function(UsernameAlreadyInUse value)? usernameAlreadyInUse,
@@ -306,7 +514,8 @@ class _$UsernameAlreadyInUse implements UsernameAlreadyInUse {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is UsernameAlreadyInUse);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is UsernameAlreadyInUse);
   }
 
   @override
@@ -315,6 +524,7 @@ class _$UsernameAlreadyInUse implements UsernameAlreadyInUse {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() permissionDenied,
     required TResult Function() serverError,
     required TResult Function() unexpected,
     required TResult Function() usernameAlreadyInUse,
@@ -325,7 +535,20 @@ class _$UsernameAlreadyInUse implements UsernameAlreadyInUse {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? permissionDenied,
+    TResult Function()? serverError,
+    TResult Function()? unexpected,
+    TResult Function()? usernameAlreadyInUse,
+    TResult Function()? userNotFound,
+  }) {
+    return usernameAlreadyInUse?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? permissionDenied,
     TResult Function()? serverError,
     TResult Function()? unexpected,
     TResult Function()? usernameAlreadyInUse,
@@ -341,6 +564,7 @@ class _$UsernameAlreadyInUse implements UsernameAlreadyInUse {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(PermissionDenied value) permissionDenied,
     required TResult Function(ServerError value) serverError,
     required TResult Function(Unexpected value) unexpected,
     required TResult Function(UsernameAlreadyInUse value) usernameAlreadyInUse,
@@ -351,7 +575,20 @@ class _$UsernameAlreadyInUse implements UsernameAlreadyInUse {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(PermissionDenied value)? permissionDenied,
+    TResult Function(ServerError value)? serverError,
+    TResult Function(Unexpected value)? unexpected,
+    TResult Function(UsernameAlreadyInUse value)? usernameAlreadyInUse,
+    TResult Function(UserNotFound value)? userNotFound,
+  }) {
+    return usernameAlreadyInUse?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(PermissionDenied value)? permissionDenied,
     TResult Function(ServerError value)? serverError,
     TResult Function(Unexpected value)? unexpected,
     TResult Function(UsernameAlreadyInUse value)? usernameAlreadyInUse,
@@ -399,7 +636,8 @@ class _$UserNotFound implements UserNotFound {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is UserNotFound);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is UserNotFound);
   }
 
   @override
@@ -408,6 +646,7 @@ class _$UserNotFound implements UserNotFound {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() permissionDenied,
     required TResult Function() serverError,
     required TResult Function() unexpected,
     required TResult Function() usernameAlreadyInUse,
@@ -418,7 +657,20 @@ class _$UserNotFound implements UserNotFound {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? permissionDenied,
+    TResult Function()? serverError,
+    TResult Function()? unexpected,
+    TResult Function()? usernameAlreadyInUse,
+    TResult Function()? userNotFound,
+  }) {
+    return userNotFound?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? permissionDenied,
     TResult Function()? serverError,
     TResult Function()? unexpected,
     TResult Function()? usernameAlreadyInUse,
@@ -434,6 +686,7 @@ class _$UserNotFound implements UserNotFound {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(PermissionDenied value) permissionDenied,
     required TResult Function(ServerError value) serverError,
     required TResult Function(Unexpected value) unexpected,
     required TResult Function(UsernameAlreadyInUse value) usernameAlreadyInUse,
@@ -444,7 +697,20 @@ class _$UserNotFound implements UserNotFound {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(PermissionDenied value)? permissionDenied,
+    TResult Function(ServerError value)? serverError,
+    TResult Function(Unexpected value)? unexpected,
+    TResult Function(UsernameAlreadyInUse value)? usernameAlreadyInUse,
+    TResult Function(UserNotFound value)? userNotFound,
+  }) {
+    return userNotFound?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(PermissionDenied value)? permissionDenied,
     TResult Function(ServerError value)? serverError,
     TResult Function(Unexpected value)? unexpected,
     TResult Function(UsernameAlreadyInUse value)? usernameAlreadyInUse,

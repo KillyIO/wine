@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'settings_bloc.dart';
 
@@ -57,6 +58,16 @@ mixin _$SettingsEvent {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initBloc,
+    TResult Function()? loggedOut,
+    TResult Function()? logOutPressed,
+    TResult Function()? sessionCreated,
+    TResult Function()? sessionDeleted,
+    TResult Function()? sessionFetched,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initBloc,
     TResult Function()? loggedOut,
@@ -75,6 +86,16 @@ mixin _$SettingsEvent {
     required TResult Function(SessionCreated value) sessionCreated,
     required TResult Function(SessionDeleted value) sessionDeleted,
     required TResult Function(SessionFetched value) sessionFetched,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InitBloc value)? initBloc,
+    TResult Function(LoggedOut value)? loggedOut,
+    TResult Function(LogOutPressed value)? logOutPressed,
+    TResult Function(SessionCreated value)? sessionCreated,
+    TResult Function(SessionDeleted value)? sessionDeleted,
+    TResult Function(SessionFetched value)? sessionFetched,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -135,7 +156,8 @@ class _$InitBloc implements InitBloc {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is InitBloc);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is InitBloc);
   }
 
   @override
@@ -152,6 +174,19 @@ class _$InitBloc implements InitBloc {
     required TResult Function() sessionFetched,
   }) {
     return initBloc();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initBloc,
+    TResult Function()? loggedOut,
+    TResult Function()? logOutPressed,
+    TResult Function()? sessionCreated,
+    TResult Function()? sessionDeleted,
+    TResult Function()? sessionFetched,
+  }) {
+    return initBloc?.call();
   }
 
   @override
@@ -182,6 +217,19 @@ class _$InitBloc implements InitBloc {
     required TResult Function(SessionFetched value) sessionFetched,
   }) {
     return initBloc(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InitBloc value)? initBloc,
+    TResult Function(LoggedOut value)? loggedOut,
+    TResult Function(LogOutPressed value)? logOutPressed,
+    TResult Function(SessionCreated value)? sessionCreated,
+    TResult Function(SessionDeleted value)? sessionDeleted,
+    TResult Function(SessionFetched value)? sessionFetched,
+  }) {
+    return initBloc?.call(this);
   }
 
   @override
@@ -234,7 +282,8 @@ class _$LoggedOut implements LoggedOut {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is LoggedOut);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is LoggedOut);
   }
 
   @override
@@ -251,6 +300,19 @@ class _$LoggedOut implements LoggedOut {
     required TResult Function() sessionFetched,
   }) {
     return loggedOut();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initBloc,
+    TResult Function()? loggedOut,
+    TResult Function()? logOutPressed,
+    TResult Function()? sessionCreated,
+    TResult Function()? sessionDeleted,
+    TResult Function()? sessionFetched,
+  }) {
+    return loggedOut?.call();
   }
 
   @override
@@ -281,6 +343,19 @@ class _$LoggedOut implements LoggedOut {
     required TResult Function(SessionFetched value) sessionFetched,
   }) {
     return loggedOut(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InitBloc value)? initBloc,
+    TResult Function(LoggedOut value)? loggedOut,
+    TResult Function(LogOutPressed value)? logOutPressed,
+    TResult Function(SessionCreated value)? sessionCreated,
+    TResult Function(SessionDeleted value)? sessionDeleted,
+    TResult Function(SessionFetched value)? sessionFetched,
+  }) {
+    return loggedOut?.call(this);
   }
 
   @override
@@ -336,7 +411,8 @@ class _$LogOutPressed implements LogOutPressed {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is LogOutPressed);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is LogOutPressed);
   }
 
   @override
@@ -353,6 +429,19 @@ class _$LogOutPressed implements LogOutPressed {
     required TResult Function() sessionFetched,
   }) {
     return logOutPressed();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initBloc,
+    TResult Function()? loggedOut,
+    TResult Function()? logOutPressed,
+    TResult Function()? sessionCreated,
+    TResult Function()? sessionDeleted,
+    TResult Function()? sessionFetched,
+  }) {
+    return logOutPressed?.call();
   }
 
   @override
@@ -383,6 +472,19 @@ class _$LogOutPressed implements LogOutPressed {
     required TResult Function(SessionFetched value) sessionFetched,
   }) {
     return logOutPressed(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InitBloc value)? initBloc,
+    TResult Function(LoggedOut value)? loggedOut,
+    TResult Function(LogOutPressed value)? logOutPressed,
+    TResult Function(SessionCreated value)? sessionCreated,
+    TResult Function(SessionDeleted value)? sessionDeleted,
+    TResult Function(SessionFetched value)? sessionFetched,
+  }) {
+    return logOutPressed?.call(this);
   }
 
   @override
@@ -438,7 +540,8 @@ class _$SessionCreated implements SessionCreated {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is SessionCreated);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is SessionCreated);
   }
 
   @override
@@ -455,6 +558,19 @@ class _$SessionCreated implements SessionCreated {
     required TResult Function() sessionFetched,
   }) {
     return sessionCreated();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initBloc,
+    TResult Function()? loggedOut,
+    TResult Function()? logOutPressed,
+    TResult Function()? sessionCreated,
+    TResult Function()? sessionDeleted,
+    TResult Function()? sessionFetched,
+  }) {
+    return sessionCreated?.call();
   }
 
   @override
@@ -485,6 +601,19 @@ class _$SessionCreated implements SessionCreated {
     required TResult Function(SessionFetched value) sessionFetched,
   }) {
     return sessionCreated(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InitBloc value)? initBloc,
+    TResult Function(LoggedOut value)? loggedOut,
+    TResult Function(LogOutPressed value)? logOutPressed,
+    TResult Function(SessionCreated value)? sessionCreated,
+    TResult Function(SessionDeleted value)? sessionDeleted,
+    TResult Function(SessionFetched value)? sessionFetched,
+  }) {
+    return sessionCreated?.call(this);
   }
 
   @override
@@ -540,7 +669,8 @@ class _$SessionDeleted implements SessionDeleted {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is SessionDeleted);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is SessionDeleted);
   }
 
   @override
@@ -557,6 +687,19 @@ class _$SessionDeleted implements SessionDeleted {
     required TResult Function() sessionFetched,
   }) {
     return sessionDeleted();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initBloc,
+    TResult Function()? loggedOut,
+    TResult Function()? logOutPressed,
+    TResult Function()? sessionCreated,
+    TResult Function()? sessionDeleted,
+    TResult Function()? sessionFetched,
+  }) {
+    return sessionDeleted?.call();
   }
 
   @override
@@ -587,6 +730,19 @@ class _$SessionDeleted implements SessionDeleted {
     required TResult Function(SessionFetched value) sessionFetched,
   }) {
     return sessionDeleted(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InitBloc value)? initBloc,
+    TResult Function(LoggedOut value)? loggedOut,
+    TResult Function(LogOutPressed value)? logOutPressed,
+    TResult Function(SessionCreated value)? sessionCreated,
+    TResult Function(SessionDeleted value)? sessionDeleted,
+    TResult Function(SessionFetched value)? sessionFetched,
+  }) {
+    return sessionDeleted?.call(this);
   }
 
   @override
@@ -642,7 +798,8 @@ class _$SessionFetched implements SessionFetched {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is SessionFetched);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is SessionFetched);
   }
 
   @override
@@ -659,6 +816,19 @@ class _$SessionFetched implements SessionFetched {
     required TResult Function() sessionFetched,
   }) {
     return sessionFetched();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? initBloc,
+    TResult Function()? loggedOut,
+    TResult Function()? logOutPressed,
+    TResult Function()? sessionCreated,
+    TResult Function()? sessionDeleted,
+    TResult Function()? sessionFetched,
+  }) {
+    return sessionFetched?.call();
   }
 
   @override
@@ -693,6 +863,19 @@ class _$SessionFetched implements SessionFetched {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(InitBloc value)? initBloc,
+    TResult Function(LoggedOut value)? loggedOut,
+    TResult Function(LogOutPressed value)? logOutPressed,
+    TResult Function(SessionCreated value)? sessionCreated,
+    TResult Function(SessionDeleted value)? sessionDeleted,
+    TResult Function(SessionFetched value)? sessionFetched,
+  }) {
+    return sessionFetched?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(InitBloc value)? initBloc,
     TResult Function(LoggedOut value)? loggedOut,
@@ -718,7 +901,7 @@ class _$SettingsStateTearOff {
   const _$SettingsStateTearOff();
 
   _SettingsState call(
-      {required Option<Result<None, CoreFailure>> failureOption,
+      {required Option<Result<None<Object>, CoreFailure>> failureOption,
       required bool isLoggedOut,
       required bool isProcessing,
       required Settings settings,
@@ -738,7 +921,7 @@ const $SettingsState = _$SettingsStateTearOff();
 
 /// @nodoc
 mixin _$SettingsState {
-  Option<Result<None, CoreFailure>> get failureOption =>
+  Option<Result<None<Object>, CoreFailure>> get failureOption =>
       throw _privateConstructorUsedError;
   bool get isLoggedOut => throw _privateConstructorUsedError;
   bool get isProcessing => throw _privateConstructorUsedError;
@@ -756,7 +939,7 @@ abstract class $SettingsStateCopyWith<$Res> {
           SettingsState value, $Res Function(SettingsState) then) =
       _$SettingsStateCopyWithImpl<$Res>;
   $Res call(
-      {Option<Result<None, CoreFailure>> failureOption,
+      {Option<Result<None<Object>, CoreFailure>> failureOption,
       bool isLoggedOut,
       bool isProcessing,
       Settings settings,
@@ -786,7 +969,7 @@ class _$SettingsStateCopyWithImpl<$Res>
       failureOption: failureOption == freezed
           ? _value.failureOption
           : failureOption // ignore: cast_nullable_to_non_nullable
-              as Option<Result<None, CoreFailure>>,
+              as Option<Result<None<Object>, CoreFailure>>,
       isLoggedOut: isLoggedOut == freezed
           ? _value.isLoggedOut
           : isLoggedOut // ignore: cast_nullable_to_non_nullable
@@ -822,7 +1005,7 @@ abstract class _$SettingsStateCopyWith<$Res>
       __$SettingsStateCopyWithImpl<$Res>;
   @override
   $Res call(
-      {Option<Result<None, CoreFailure>> failureOption,
+      {Option<Result<None<Object>, CoreFailure>> failureOption,
       bool isLoggedOut,
       bool isProcessing,
       Settings settings,
@@ -855,7 +1038,7 @@ class __$SettingsStateCopyWithImpl<$Res>
       failureOption: failureOption == freezed
           ? _value.failureOption
           : failureOption // ignore: cast_nullable_to_non_nullable
-              as Option<Result<None, CoreFailure>>,
+              as Option<Result<None<Object>, CoreFailure>>,
       isLoggedOut: isLoggedOut == freezed
           ? _value.isLoggedOut
           : isLoggedOut // ignore: cast_nullable_to_non_nullable
@@ -887,7 +1070,7 @@ class _$_SettingsState implements _SettingsState {
       required this.username});
 
   @override
-  final Option<Result<None, CoreFailure>> failureOption;
+  final Option<Result<None<Object>, CoreFailure>> failureOption;
   @override
   final bool isLoggedOut;
   @override
@@ -905,32 +1088,26 @@ class _$_SettingsState implements _SettingsState {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _SettingsState &&
-            (identical(other.failureOption, failureOption) ||
-                const DeepCollectionEquality()
-                    .equals(other.failureOption, failureOption)) &&
-            (identical(other.isLoggedOut, isLoggedOut) ||
-                const DeepCollectionEquality()
-                    .equals(other.isLoggedOut, isLoggedOut)) &&
-            (identical(other.isProcessing, isProcessing) ||
-                const DeepCollectionEquality()
-                    .equals(other.isProcessing, isProcessing)) &&
-            (identical(other.settings, settings) ||
-                const DeepCollectionEquality()
-                    .equals(other.settings, settings)) &&
-            (identical(other.username, username) ||
-                const DeepCollectionEquality()
-                    .equals(other.username, username)));
+        (other.runtimeType == runtimeType &&
+            other is _SettingsState &&
+            const DeepCollectionEquality()
+                .equals(other.failureOption, failureOption) &&
+            const DeepCollectionEquality()
+                .equals(other.isLoggedOut, isLoggedOut) &&
+            const DeepCollectionEquality()
+                .equals(other.isProcessing, isProcessing) &&
+            const DeepCollectionEquality().equals(other.settings, settings) &&
+            const DeepCollectionEquality().equals(other.username, username));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(failureOption) ^
-      const DeepCollectionEquality().hash(isLoggedOut) ^
-      const DeepCollectionEquality().hash(isProcessing) ^
-      const DeepCollectionEquality().hash(settings) ^
-      const DeepCollectionEquality().hash(username);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(failureOption),
+      const DeepCollectionEquality().hash(isLoggedOut),
+      const DeepCollectionEquality().hash(isProcessing),
+      const DeepCollectionEquality().hash(settings),
+      const DeepCollectionEquality().hash(username));
 
   @JsonKey(ignore: true)
   @override
@@ -940,23 +1117,22 @@ class _$_SettingsState implements _SettingsState {
 
 abstract class _SettingsState implements SettingsState {
   const factory _SettingsState(
-      {required Option<Result<None, CoreFailure>> failureOption,
+      {required Option<Result<None<Object>, CoreFailure>> failureOption,
       required bool isLoggedOut,
       required bool isProcessing,
       required Settings settings,
       required String username}) = _$_SettingsState;
 
   @override
-  Option<Result<None, CoreFailure>> get failureOption =>
-      throw _privateConstructorUsedError;
+  Option<Result<None<Object>, CoreFailure>> get failureOption;
   @override
-  bool get isLoggedOut => throw _privateConstructorUsedError;
+  bool get isLoggedOut;
   @override
-  bool get isProcessing => throw _privateConstructorUsedError;
+  bool get isProcessing;
   @override
-  Settings get settings => throw _privateConstructorUsedError;
+  Settings get settings;
   @override
-  String get username => throw _privateConstructorUsedError;
+  String get username;
   @override
   @JsonKey(ignore: true)
   _$SettingsStateCopyWith<_SettingsState> get copyWith =>

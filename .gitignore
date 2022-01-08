@@ -92,3 +92,6 @@ app.*.symbols
 app.*.map.json
 
 **/coverage/**
+
+lib/development_firebase_options.dart
+lib/production_firebase_options.dart

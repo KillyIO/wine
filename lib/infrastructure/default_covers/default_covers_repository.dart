@@ -1,18 +1,21 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/services.dart';
 import 'package:hive/hive.dart';
 import 'package:injectable/injectable.dart';
-import 'package:rustic/result.dart';
-import 'package:rustic/tuple.dart';
+import 'package:oxidized/oxidized.dart';
 import 'package:wine/domain/default_covers/default_covers_failure.dart';
 import 'package:wine/domain/default_covers/i_default_covers_repository.dart';
 import 'package:wine/utils/constants/boxes.dart';
 import 'package:wine/utils/paths/default_covers.dart';
 
 /// @nodoc
-@LazySingleton(as: IDefaultCoversRepository, env: [
-  Environment.dev,
-  Environment.prod,
-])
+@LazySingleton(
+  as: IDefaultCoversRepository,
+  env: [
+    Environment.dev,
+    Environment.prod,
+  ],
+)
 class DefaultCoversRepository implements IDefaultCoversRepository {
   /// @nodoc
   DefaultCoversRepository(
@@ -27,31 +30,39 @@ class DefaultCoversRepository implements IDefaultCoversRepository {
   Future<Result<Unit, DefaultCoversFailure>> cacheDefaultCoverURLs(
     Map<String, String> urls,
   ) async {
-    final box = await _hive.openBox<String>(defaultCoversBox);
+    try {
+      final box = await _hive.openBox<String>(defaultCoversBox);
 
-    for (final key in urls.keys) {
-      await box.put(key, urls[key]!);
+      for (final key in urls.keys) {
+        await box.put(key, urls[key]!);
 
-      final url = box.get(key);
-      if (url == null) {
-        return const Err(DefaultCoversFailure.defaultCoverURLsNotCached());
+        final url = box.get(key);
+        if (url == null) {
+          return Err(const DefaultCoversFailure.defaultCoverURLsNotCached());
+        }
       }
+      return Ok(unit);
+    } catch (_) {
+      return Err(const DefaultCoversFailure.unexpected());
     }
-    return const Ok(Unit());
   }
 
   @override
   Future<Result<String, DefaultCoversFailure>> fetchDefaultCoverURLByKey(
     String key,
   ) async {
-    final box = await _hive.openBox<String>(defaultCoversBox);
+    try {
+      final box = await _hive.openBox<String>(defaultCoversBox);
 
-    final url = box.get(key);
+      final url = box.get(key);
 
-    if (url != null) {
-      return Ok(url);
+      if (url != null) {
+        return Ok(url);
+      }
+      return Err(const DefaultCoversFailure.defaultCoverURLsNotFetched());
+    } catch (_) {
+      return Err(const DefaultCoversFailure.unexpected());
     }
-    return const Err(DefaultCoversFailure.defaultCoverURLsNotFetched());
   }
 
   @override
@@ -62,7 +73,7 @@ class DefaultCoversRepository implements IDefaultCoversRepository {
           await _firestore.collection(defaultCoversPath).get();
 
       if (querySnapshot.docs.isEmpty) {
-        return const Err(DefaultCoversFailure.defaultCoverURLsNotLoaded());
+        return Err(const DefaultCoversFailure.defaultCoverURLsNotLoaded());
       }
 
       final data = <String, String>{};
@@ -72,10 +83,15 @@ class DefaultCoversRepository implements IDefaultCoversRepository {
         data[map['key'] as String] = map['coverURL'] as String;
       }
       return Ok(data);
-    } on FirebaseException catch (_) {
-      return const Err(DefaultCoversFailure.serverError());
+    } on PlatformException catch (e) {
+      if (e.code == 'firebase_firestore') {
+        if ((e.details as Map)['code'] == 'permission-denied') {
+          return Err(const DefaultCoversFailure.permissionDenied());
+        }
+      }
+      return Err(const DefaultCoversFailure.serverError());
     } catch (_) {
-      return const Err(DefaultCoversFailure.unexpected());
+      return Err(const DefaultCoversFailure.unexpected());
     }
   }
 }

@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:rustic/result.dart';
+import 'package:oxidized/oxidized.dart';
 import 'package:wine/domain/core/language.dart';
 import 'package:wine/domain/core/value_failure.dart';
 
@@ -12,7 +12,7 @@ void main() {
 
       expect(
         language.value,
-        const Ok<String, ValueFailure<String>>(testLanguage),
+        Ok<String, ValueFailure<String>>(testLanguage),
       );
     });
 
@@ -21,8 +21,8 @@ void main() {
 
       expect(
         language.value,
-        const Err<String, ValueFailure<String>>(
-          ValueFailure<String>.emptySelection(testEmpty),
+        Err<String, ValueFailure<String>>(
+          const ValueFailure<String>.emptySelection(testEmpty),
         ),
       );
     });

@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/services.dart';
 import 'package:injectable/injectable.dart';
-import 'package:rustic/result.dart';
-import 'package:rustic/tuple.dart';
+import 'package:oxidized/oxidized.dart';
 import 'package:wine/domain/auth/email_address.dart';
 import 'package:wine/domain/auth/username.dart';
 import 'package:wine/domain/core/unique_id.dart';
@@ -13,8 +13,11 @@ import 'package:wine/utils/constants/users.dart';
 import 'package:wine/utils/paths/users.dart';
 
 /// @nodoc
-@LazySingleton(as: IUserRepository, env: [Environment.dev, Environment.prod])
-class UserRepository extends IUserRepository {
+@LazySingleton(
+  as: IUserRepository,
+  env: [Environment.dev, Environment.prod],
+)
+class UserRepository implements IUserRepository {
   /// @nodoc
   UserRepository(this._firestore);
 
@@ -33,18 +36,23 @@ class UserRepository extends IUserRepository {
           .get();
 
       if (documentSnapshot.exists) {
-        return const Err(UserFailure.usernameAlreadyInUse());
+        return Err(const UserFailure.usernameAlreadyInUse());
       }
-      return const Ok(Unit());
-    } on FirebaseException catch (_) {
-      return const Err(UserFailure.serverError());
+      return Ok(unit);
+    } on PlatformException catch (e) {
+      if (e.code == 'firebase_firestore') {
+        if ((e.details as Map)['code'] == 'permission-denied') {
+          return Err(const UserFailure.permissionDenied());
+        }
+      }
+      return Err(const UserFailure.serverError());
     } catch (_) {
-      return const Err(UserFailure.unexpected());
+      return Err(const UserFailure.unexpected());
     }
   }
 
   @override
-  Future<Result<User, UserFailure>> loadUser(String userUID) async {
+  Future<Result<User, UserFailure>> loadUser(UniqueID userUID) async {
     try {
       final user = await _firestore
           .collection(usersPath)
@@ -61,18 +69,23 @@ class UserRepository extends IUserRepository {
             },
             toFirestore: (value, _) => UserDTO.fromDomain(value).toJson(),
           )
-          .doc(userUID)
+          .doc(userUID.getOrCrash())
           .get()
           .then((s) => s.data());
 
       if (user != null) {
         return Ok(user);
       }
-      return const Err(UserFailure.userNotFound());
-    } on FirebaseException catch (_) {
-      return const Err(UserFailure.serverError());
+      return Err(const UserFailure.userNotFound());
+    } on PlatformException catch (e) {
+      if (e.code == 'firebase_firestore') {
+        if ((e.details as Map)['code'] == 'permission-denied') {
+          return Err(const UserFailure.permissionDenied());
+        }
+      }
+      return Err(const UserFailure.serverError());
     } catch (_) {
-      return const Err(UserFailure.unexpected());
+      return Err(const UserFailure.unexpected());
     }
   }
 
@@ -90,11 +103,16 @@ class UserRepository extends IUserRepository {
 
       await usersRef.set(user, SetOptions(merge: true));
 
-      return const Ok(Unit());
-    } on FirebaseException catch (_) {
-      return const Err(UserFailure.serverError());
+      return Ok(unit);
+    } on PlatformException catch (e) {
+      if (e.code == 'firebase_firestore') {
+        if ((e.details as Map)['code'] == 'permission-denied') {
+          return Err(const UserFailure.permissionDenied());
+        }
+      }
+      return Err(const UserFailure.serverError());
     } catch (_) {
-      return const Err(UserFailure.unexpected());
+      return Err(const UserFailure.unexpected());
     }
   }
 
@@ -113,11 +131,16 @@ class UserRepository extends IUserRepository {
       await mapReference
           .set(<String, dynamic>{'uid': uid}, SetOptions(merge: true));
 
-      return const Ok(Unit());
-    } on FirebaseException catch (_) {
-      return const Err(UserFailure.serverError());
+      return Ok(unit);
+    } on PlatformException catch (e) {
+      if (e.code == 'firebase_firestore') {
+        if ((e.details as Map)['code'] == 'permission-denied') {
+          return Err(const UserFailure.permissionDenied());
+        }
+      }
+      return Err(const UserFailure.serverError());
     } catch (_) {
-      return const Err(UserFailure.unexpected());
+      return Err(const UserFailure.unexpected());
     }
   }
 }

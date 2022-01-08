@@ -4,8 +4,22 @@ part of 'library_bloc.dart';
 @freezed
 class LibraryEvent with _$LibraryEvent {
   /// @nodoc
+  const factory LibraryEvent.chapterDeleted(UniqueID uid) = ChapterDeleted;
+
+  /// @nodoc
   const factory LibraryEvent.initBloc() = InitBloc;
 
   /// @nodoc
-  const factory LibraryEvent.sessionFetched(UniqueID uid) = SessionFetched;
+  const factory LibraryEvent.pageViewIndexChanged(int index) =
+      PageViewIndexChanged;
+
+  /// @nodoc
+  const factory LibraryEvent.seriesDeleted(UniqueID uid) = SeriesDeleted;
+
+  /// @nodoc
+  const factory LibraryEvent.sessionFetched() = SessionFetched;
+
+  /// @nodoc
+  const factory LibraryEvent.verticalNavbarIndexChanged(int index) =
+      VerticalNavbarIndexChanged;
 }

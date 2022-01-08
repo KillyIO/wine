@@ -9,8 +9,7 @@ class AuthFailure with _$AuthFailure {
   const factory AuthFailure.cancelledByUser() = CancelledByUser;
 
   /// @nodoc
-  const factory AuthFailure.credentialOrEmailAlreadyInUse() =
-      CredentialOrEmailAlreadyInUse;
+  const factory AuthFailure.credentialAlreadyInUse() = CredentialAlreadyInUse;
 
   /// @nodoc
   const factory AuthFailure.emailAlreadyInUse() = EmailAlreadyInUse;
@@ -18,6 +17,9 @@ class AuthFailure with _$AuthFailure {
   /// @nodoc
   const factory AuthFailure.invalidEmailAndPasswordCombination() =
       InvalidEmailAndPasswordCombination;
+
+  /// @nodoc
+  const factory AuthFailure.permissionDenied() = PermissionDenied;
 
   /// Serves as a "catch all" failure if we don't know what went wrong.
   ///

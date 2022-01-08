@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'home_bloc.dart';
 
@@ -15,10 +16,6 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 class _$HomeEventTearOff {
   const _$HomeEventTearOff();
-
-  InitBloc initBloc() {
-    return const InitBloc();
-  }
 
   LoadNewSeries loadNewSeries() {
     return const LoadNewSeries();
@@ -45,6 +42,12 @@ class _$HomeEventTearOff {
   LoadTopSeries loadTopSeries() {
     return const LoadTopSeries();
   }
+
+  PageViewIndexChanged pageViewIndexChanged(int index) {
+    return PageViewIndexChanged(
+      index,
+    );
+  }
 }
 
 /// @nodoc
@@ -54,43 +57,63 @@ const $HomeEvent = _$HomeEventTearOff();
 mixin _$HomeEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() initBloc,
     required TResult Function() loadNewSeries,
     required TResult Function(String key) loadSeriesByGenre,
     required TResult Function(String key) loadSeriesByLanguage,
     required TResult Function(String key) loadSeriesByTime,
     required TResult Function() loadTopSeries,
+    required TResult Function(int index) pageViewIndexChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initBloc,
+  TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? loadNewSeries,
     TResult Function(String key)? loadSeriesByGenre,
     TResult Function(String key)? loadSeriesByLanguage,
     TResult Function(String key)? loadSeriesByTime,
     TResult Function()? loadTopSeries,
+    TResult Function(int index)? pageViewIndexChanged,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? loadNewSeries,
+    TResult Function(String key)? loadSeriesByGenre,
+    TResult Function(String key)? loadSeriesByLanguage,
+    TResult Function(String key)? loadSeriesByTime,
+    TResult Function()? loadTopSeries,
+    TResult Function(int index)? pageViewIndexChanged,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(InitBloc value) initBloc,
     required TResult Function(LoadNewSeries value) loadNewSeries,
     required TResult Function(LoadSeriesByGenre value) loadSeriesByGenre,
     required TResult Function(LoadSeriesByLanguage value) loadSeriesByLanguage,
     required TResult Function(LoadSeriesByTime value) loadSeriesByTime,
     required TResult Function(LoadTopSeries value) loadTopSeries,
+    required TResult Function(PageViewIndexChanged value) pageViewIndexChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(InitBloc value)? initBloc,
+  TResult? mapOrNull<TResult extends Object?>({
     TResult Function(LoadNewSeries value)? loadNewSeries,
     TResult Function(LoadSeriesByGenre value)? loadSeriesByGenre,
     TResult Function(LoadSeriesByLanguage value)? loadSeriesByLanguage,
     TResult Function(LoadSeriesByTime value)? loadSeriesByTime,
     TResult Function(LoadTopSeries value)? loadTopSeries,
+    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(LoadNewSeries value)? loadNewSeries,
+    TResult Function(LoadSeriesByGenre value)? loadSeriesByGenre,
+    TResult Function(LoadSeriesByLanguage value)? loadSeriesByLanguage,
+    TResult Function(LoadSeriesByTime value)? loadSeriesByTime,
+    TResult Function(LoadTopSeries value)? loadTopSeries,
+    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -109,105 +132,6 @@ class _$HomeEventCopyWithImpl<$Res> implements $HomeEventCopyWith<$Res> {
   final HomeEvent _value;
   // ignore: unused_field
   final $Res Function(HomeEvent) _then;
-}
-
-/// @nodoc
-abstract class $InitBlocCopyWith<$Res> {
-  factory $InitBlocCopyWith(InitBloc value, $Res Function(InitBloc) then) =
-      _$InitBlocCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class _$InitBlocCopyWithImpl<$Res> extends _$HomeEventCopyWithImpl<$Res>
-    implements $InitBlocCopyWith<$Res> {
-  _$InitBlocCopyWithImpl(InitBloc _value, $Res Function(InitBloc) _then)
-      : super(_value, (v) => _then(v as InitBloc));
-
-  @override
-  InitBloc get _value => super._value as InitBloc;
-}
-
-/// @nodoc
-
-class _$InitBloc implements InitBloc {
-  const _$InitBloc();
-
-  @override
-  String toString() {
-    return 'HomeEvent.initBloc()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) || (other is InitBloc);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() initBloc,
-    required TResult Function() loadNewSeries,
-    required TResult Function(String key) loadSeriesByGenre,
-    required TResult Function(String key) loadSeriesByLanguage,
-    required TResult Function(String key) loadSeriesByTime,
-    required TResult Function() loadTopSeries,
-  }) {
-    return initBloc();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initBloc,
-    TResult Function()? loadNewSeries,
-    TResult Function(String key)? loadSeriesByGenre,
-    TResult Function(String key)? loadSeriesByLanguage,
-    TResult Function(String key)? loadSeriesByTime,
-    TResult Function()? loadTopSeries,
-    required TResult orElse(),
-  }) {
-    if (initBloc != null) {
-      return initBloc();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(InitBloc value) initBloc,
-    required TResult Function(LoadNewSeries value) loadNewSeries,
-    required TResult Function(LoadSeriesByGenre value) loadSeriesByGenre,
-    required TResult Function(LoadSeriesByLanguage value) loadSeriesByLanguage,
-    required TResult Function(LoadSeriesByTime value) loadSeriesByTime,
-    required TResult Function(LoadTopSeries value) loadTopSeries,
-  }) {
-    return initBloc(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(InitBloc value)? initBloc,
-    TResult Function(LoadNewSeries value)? loadNewSeries,
-    TResult Function(LoadSeriesByGenre value)? loadSeriesByGenre,
-    TResult Function(LoadSeriesByLanguage value)? loadSeriesByLanguage,
-    TResult Function(LoadSeriesByTime value)? loadSeriesByTime,
-    TResult Function(LoadTopSeries value)? loadTopSeries,
-    required TResult orElse(),
-  }) {
-    if (initBloc != null) {
-      return initBloc(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class InitBloc implements HomeEvent {
-  const factory InitBloc() = _$InitBloc;
 }
 
 /// @nodoc
@@ -240,7 +164,8 @@ class _$LoadNewSeries implements LoadNewSeries {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is LoadNewSeries);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is LoadNewSeries);
   }
 
   @override
@@ -249,25 +174,38 @@ class _$LoadNewSeries implements LoadNewSeries {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() initBloc,
     required TResult Function() loadNewSeries,
     required TResult Function(String key) loadSeriesByGenre,
     required TResult Function(String key) loadSeriesByLanguage,
     required TResult Function(String key) loadSeriesByTime,
     required TResult Function() loadTopSeries,
+    required TResult Function(int index) pageViewIndexChanged,
   }) {
     return loadNewSeries();
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initBloc,
+  TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? loadNewSeries,
     TResult Function(String key)? loadSeriesByGenre,
     TResult Function(String key)? loadSeriesByLanguage,
     TResult Function(String key)? loadSeriesByTime,
     TResult Function()? loadTopSeries,
+    TResult Function(int index)? pageViewIndexChanged,
+  }) {
+    return loadNewSeries?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? loadNewSeries,
+    TResult Function(String key)? loadSeriesByGenre,
+    TResult Function(String key)? loadSeriesByLanguage,
+    TResult Function(String key)? loadSeriesByTime,
+    TResult Function()? loadTopSeries,
+    TResult Function(int index)? pageViewIndexChanged,
     required TResult orElse(),
   }) {
     if (loadNewSeries != null) {
@@ -279,25 +217,38 @@ class _$LoadNewSeries implements LoadNewSeries {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(InitBloc value) initBloc,
     required TResult Function(LoadNewSeries value) loadNewSeries,
     required TResult Function(LoadSeriesByGenre value) loadSeriesByGenre,
     required TResult Function(LoadSeriesByLanguage value) loadSeriesByLanguage,
     required TResult Function(LoadSeriesByTime value) loadSeriesByTime,
     required TResult Function(LoadTopSeries value) loadTopSeries,
+    required TResult Function(PageViewIndexChanged value) pageViewIndexChanged,
   }) {
     return loadNewSeries(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(InitBloc value)? initBloc,
+  TResult? mapOrNull<TResult extends Object?>({
     TResult Function(LoadNewSeries value)? loadNewSeries,
     TResult Function(LoadSeriesByGenre value)? loadSeriesByGenre,
     TResult Function(LoadSeriesByLanguage value)? loadSeriesByLanguage,
     TResult Function(LoadSeriesByTime value)? loadSeriesByTime,
     TResult Function(LoadTopSeries value)? loadTopSeries,
+    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
+  }) {
+    return loadNewSeries?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(LoadNewSeries value)? loadNewSeries,
+    TResult Function(LoadSeriesByGenre value)? loadSeriesByGenre,
+    TResult Function(LoadSeriesByLanguage value)? loadSeriesByLanguage,
+    TResult Function(LoadSeriesByTime value)? loadSeriesByTime,
+    TResult Function(LoadTopSeries value)? loadTopSeries,
+    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
     required TResult orElse(),
   }) {
     if (loadNewSeries != null) {
@@ -359,14 +310,14 @@ class _$LoadSeriesByGenre implements LoadSeriesByGenre {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is LoadSeriesByGenre &&
-            (identical(other.key, key) ||
-                const DeepCollectionEquality().equals(other.key, key)));
+        (other.runtimeType == runtimeType &&
+            other is LoadSeriesByGenre &&
+            const DeepCollectionEquality().equals(other.key, key));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(key);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(key));
 
   @JsonKey(ignore: true)
   @override
@@ -376,25 +327,38 @@ class _$LoadSeriesByGenre implements LoadSeriesByGenre {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() initBloc,
     required TResult Function() loadNewSeries,
     required TResult Function(String key) loadSeriesByGenre,
     required TResult Function(String key) loadSeriesByLanguage,
     required TResult Function(String key) loadSeriesByTime,
     required TResult Function() loadTopSeries,
+    required TResult Function(int index) pageViewIndexChanged,
   }) {
     return loadSeriesByGenre(key);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initBloc,
+  TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? loadNewSeries,
     TResult Function(String key)? loadSeriesByGenre,
     TResult Function(String key)? loadSeriesByLanguage,
     TResult Function(String key)? loadSeriesByTime,
     TResult Function()? loadTopSeries,
+    TResult Function(int index)? pageViewIndexChanged,
+  }) {
+    return loadSeriesByGenre?.call(key);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? loadNewSeries,
+    TResult Function(String key)? loadSeriesByGenre,
+    TResult Function(String key)? loadSeriesByLanguage,
+    TResult Function(String key)? loadSeriesByTime,
+    TResult Function()? loadTopSeries,
+    TResult Function(int index)? pageViewIndexChanged,
     required TResult orElse(),
   }) {
     if (loadSeriesByGenre != null) {
@@ -406,25 +370,38 @@ class _$LoadSeriesByGenre implements LoadSeriesByGenre {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(InitBloc value) initBloc,
     required TResult Function(LoadNewSeries value) loadNewSeries,
     required TResult Function(LoadSeriesByGenre value) loadSeriesByGenre,
     required TResult Function(LoadSeriesByLanguage value) loadSeriesByLanguage,
     required TResult Function(LoadSeriesByTime value) loadSeriesByTime,
     required TResult Function(LoadTopSeries value) loadTopSeries,
+    required TResult Function(PageViewIndexChanged value) pageViewIndexChanged,
   }) {
     return loadSeriesByGenre(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(InitBloc value)? initBloc,
+  TResult? mapOrNull<TResult extends Object?>({
     TResult Function(LoadNewSeries value)? loadNewSeries,
     TResult Function(LoadSeriesByGenre value)? loadSeriesByGenre,
     TResult Function(LoadSeriesByLanguage value)? loadSeriesByLanguage,
     TResult Function(LoadSeriesByTime value)? loadSeriesByTime,
     TResult Function(LoadTopSeries value)? loadTopSeries,
+    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
+  }) {
+    return loadSeriesByGenre?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(LoadNewSeries value)? loadNewSeries,
+    TResult Function(LoadSeriesByGenre value)? loadSeriesByGenre,
+    TResult Function(LoadSeriesByLanguage value)? loadSeriesByLanguage,
+    TResult Function(LoadSeriesByTime value)? loadSeriesByTime,
+    TResult Function(LoadTopSeries value)? loadTopSeries,
+    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
     required TResult orElse(),
   }) {
     if (loadSeriesByGenre != null) {
@@ -437,7 +414,7 @@ class _$LoadSeriesByGenre implements LoadSeriesByGenre {
 abstract class LoadSeriesByGenre implements HomeEvent {
   const factory LoadSeriesByGenre(String key) = _$LoadSeriesByGenre;
 
-  String get key => throw _privateConstructorUsedError;
+  String get key;
   @JsonKey(ignore: true)
   $LoadSeriesByGenreCopyWith<LoadSeriesByGenre> get copyWith =>
       throw _privateConstructorUsedError;
@@ -491,14 +468,14 @@ class _$LoadSeriesByLanguage implements LoadSeriesByLanguage {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is LoadSeriesByLanguage &&
-            (identical(other.key, key) ||
-                const DeepCollectionEquality().equals(other.key, key)));
+        (other.runtimeType == runtimeType &&
+            other is LoadSeriesByLanguage &&
+            const DeepCollectionEquality().equals(other.key, key));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(key);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(key));
 
   @JsonKey(ignore: true)
   @override
@@ -509,25 +486,38 @@ class _$LoadSeriesByLanguage implements LoadSeriesByLanguage {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() initBloc,
     required TResult Function() loadNewSeries,
     required TResult Function(String key) loadSeriesByGenre,
     required TResult Function(String key) loadSeriesByLanguage,
     required TResult Function(String key) loadSeriesByTime,
     required TResult Function() loadTopSeries,
+    required TResult Function(int index) pageViewIndexChanged,
   }) {
     return loadSeriesByLanguage(key);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initBloc,
+  TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? loadNewSeries,
     TResult Function(String key)? loadSeriesByGenre,
     TResult Function(String key)? loadSeriesByLanguage,
     TResult Function(String key)? loadSeriesByTime,
     TResult Function()? loadTopSeries,
+    TResult Function(int index)? pageViewIndexChanged,
+  }) {
+    return loadSeriesByLanguage?.call(key);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? loadNewSeries,
+    TResult Function(String key)? loadSeriesByGenre,
+    TResult Function(String key)? loadSeriesByLanguage,
+    TResult Function(String key)? loadSeriesByTime,
+    TResult Function()? loadTopSeries,
+    TResult Function(int index)? pageViewIndexChanged,
     required TResult orElse(),
   }) {
     if (loadSeriesByLanguage != null) {
@@ -539,25 +529,38 @@ class _$LoadSeriesByLanguage implements LoadSeriesByLanguage {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(InitBloc value) initBloc,
     required TResult Function(LoadNewSeries value) loadNewSeries,
     required TResult Function(LoadSeriesByGenre value) loadSeriesByGenre,
     required TResult Function(LoadSeriesByLanguage value) loadSeriesByLanguage,
     required TResult Function(LoadSeriesByTime value) loadSeriesByTime,
     required TResult Function(LoadTopSeries value) loadTopSeries,
+    required TResult Function(PageViewIndexChanged value) pageViewIndexChanged,
   }) {
     return loadSeriesByLanguage(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(InitBloc value)? initBloc,
+  TResult? mapOrNull<TResult extends Object?>({
     TResult Function(LoadNewSeries value)? loadNewSeries,
     TResult Function(LoadSeriesByGenre value)? loadSeriesByGenre,
     TResult Function(LoadSeriesByLanguage value)? loadSeriesByLanguage,
     TResult Function(LoadSeriesByTime value)? loadSeriesByTime,
     TResult Function(LoadTopSeries value)? loadTopSeries,
+    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
+  }) {
+    return loadSeriesByLanguage?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(LoadNewSeries value)? loadNewSeries,
+    TResult Function(LoadSeriesByGenre value)? loadSeriesByGenre,
+    TResult Function(LoadSeriesByLanguage value)? loadSeriesByLanguage,
+    TResult Function(LoadSeriesByTime value)? loadSeriesByTime,
+    TResult Function(LoadTopSeries value)? loadTopSeries,
+    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
     required TResult orElse(),
   }) {
     if (loadSeriesByLanguage != null) {
@@ -570,7 +573,7 @@ class _$LoadSeriesByLanguage implements LoadSeriesByLanguage {
 abstract class LoadSeriesByLanguage implements HomeEvent {
   const factory LoadSeriesByLanguage(String key) = _$LoadSeriesByLanguage;
 
-  String get key => throw _privateConstructorUsedError;
+  String get key;
   @JsonKey(ignore: true)
   $LoadSeriesByLanguageCopyWith<LoadSeriesByLanguage> get copyWith =>
       throw _privateConstructorUsedError;
@@ -623,14 +626,14 @@ class _$LoadSeriesByTime implements LoadSeriesByTime {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is LoadSeriesByTime &&
-            (identical(other.key, key) ||
-                const DeepCollectionEquality().equals(other.key, key)));
+        (other.runtimeType == runtimeType &&
+            other is LoadSeriesByTime &&
+            const DeepCollectionEquality().equals(other.key, key));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(key);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(key));
 
   @JsonKey(ignore: true)
   @override
@@ -640,25 +643,38 @@ class _$LoadSeriesByTime implements LoadSeriesByTime {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() initBloc,
     required TResult Function() loadNewSeries,
     required TResult Function(String key) loadSeriesByGenre,
     required TResult Function(String key) loadSeriesByLanguage,
     required TResult Function(String key) loadSeriesByTime,
     required TResult Function() loadTopSeries,
+    required TResult Function(int index) pageViewIndexChanged,
   }) {
     return loadSeriesByTime(key);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initBloc,
+  TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? loadNewSeries,
     TResult Function(String key)? loadSeriesByGenre,
     TResult Function(String key)? loadSeriesByLanguage,
     TResult Function(String key)? loadSeriesByTime,
     TResult Function()? loadTopSeries,
+    TResult Function(int index)? pageViewIndexChanged,
+  }) {
+    return loadSeriesByTime?.call(key);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? loadNewSeries,
+    TResult Function(String key)? loadSeriesByGenre,
+    TResult Function(String key)? loadSeriesByLanguage,
+    TResult Function(String key)? loadSeriesByTime,
+    TResult Function()? loadTopSeries,
+    TResult Function(int index)? pageViewIndexChanged,
     required TResult orElse(),
   }) {
     if (loadSeriesByTime != null) {
@@ -670,25 +686,38 @@ class _$LoadSeriesByTime implements LoadSeriesByTime {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(InitBloc value) initBloc,
     required TResult Function(LoadNewSeries value) loadNewSeries,
     required TResult Function(LoadSeriesByGenre value) loadSeriesByGenre,
     required TResult Function(LoadSeriesByLanguage value) loadSeriesByLanguage,
     required TResult Function(LoadSeriesByTime value) loadSeriesByTime,
     required TResult Function(LoadTopSeries value) loadTopSeries,
+    required TResult Function(PageViewIndexChanged value) pageViewIndexChanged,
   }) {
     return loadSeriesByTime(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(InitBloc value)? initBloc,
+  TResult? mapOrNull<TResult extends Object?>({
     TResult Function(LoadNewSeries value)? loadNewSeries,
     TResult Function(LoadSeriesByGenre value)? loadSeriesByGenre,
     TResult Function(LoadSeriesByLanguage value)? loadSeriesByLanguage,
     TResult Function(LoadSeriesByTime value)? loadSeriesByTime,
     TResult Function(LoadTopSeries value)? loadTopSeries,
+    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
+  }) {
+    return loadSeriesByTime?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(LoadNewSeries value)? loadNewSeries,
+    TResult Function(LoadSeriesByGenre value)? loadSeriesByGenre,
+    TResult Function(LoadSeriesByLanguage value)? loadSeriesByLanguage,
+    TResult Function(LoadSeriesByTime value)? loadSeriesByTime,
+    TResult Function(LoadTopSeries value)? loadTopSeries,
+    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
     required TResult orElse(),
   }) {
     if (loadSeriesByTime != null) {
@@ -701,7 +730,7 @@ class _$LoadSeriesByTime implements LoadSeriesByTime {
 abstract class LoadSeriesByTime implements HomeEvent {
   const factory LoadSeriesByTime(String key) = _$LoadSeriesByTime;
 
-  String get key => throw _privateConstructorUsedError;
+  String get key;
   @JsonKey(ignore: true)
   $LoadSeriesByTimeCopyWith<LoadSeriesByTime> get copyWith =>
       throw _privateConstructorUsedError;
@@ -737,7 +766,8 @@ class _$LoadTopSeries implements LoadTopSeries {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is LoadTopSeries);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is LoadTopSeries);
   }
 
   @override
@@ -746,25 +776,38 @@ class _$LoadTopSeries implements LoadTopSeries {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
-    required TResult Function() initBloc,
     required TResult Function() loadNewSeries,
     required TResult Function(String key) loadSeriesByGenre,
     required TResult Function(String key) loadSeriesByLanguage,
     required TResult Function(String key) loadSeriesByTime,
     required TResult Function() loadTopSeries,
+    required TResult Function(int index) pageViewIndexChanged,
   }) {
     return loadTopSeries();
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? initBloc,
+  TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? loadNewSeries,
     TResult Function(String key)? loadSeriesByGenre,
     TResult Function(String key)? loadSeriesByLanguage,
     TResult Function(String key)? loadSeriesByTime,
     TResult Function()? loadTopSeries,
+    TResult Function(int index)? pageViewIndexChanged,
+  }) {
+    return loadTopSeries?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? loadNewSeries,
+    TResult Function(String key)? loadSeriesByGenre,
+    TResult Function(String key)? loadSeriesByLanguage,
+    TResult Function(String key)? loadSeriesByTime,
+    TResult Function()? loadTopSeries,
+    TResult Function(int index)? pageViewIndexChanged,
     required TResult orElse(),
   }) {
     if (loadTopSeries != null) {
@@ -776,25 +819,38 @@ class _$LoadTopSeries implements LoadTopSeries {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
-    required TResult Function(InitBloc value) initBloc,
     required TResult Function(LoadNewSeries value) loadNewSeries,
     required TResult Function(LoadSeriesByGenre value) loadSeriesByGenre,
     required TResult Function(LoadSeriesByLanguage value) loadSeriesByLanguage,
     required TResult Function(LoadSeriesByTime value) loadSeriesByTime,
     required TResult Function(LoadTopSeries value) loadTopSeries,
+    required TResult Function(PageViewIndexChanged value) pageViewIndexChanged,
   }) {
     return loadTopSeries(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(InitBloc value)? initBloc,
+  TResult? mapOrNull<TResult extends Object?>({
     TResult Function(LoadNewSeries value)? loadNewSeries,
     TResult Function(LoadSeriesByGenre value)? loadSeriesByGenre,
     TResult Function(LoadSeriesByLanguage value)? loadSeriesByLanguage,
     TResult Function(LoadSeriesByTime value)? loadSeriesByTime,
     TResult Function(LoadTopSeries value)? loadTopSeries,
+    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
+  }) {
+    return loadTopSeries?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(LoadNewSeries value)? loadNewSeries,
+    TResult Function(LoadSeriesByGenre value)? loadSeriesByGenre,
+    TResult Function(LoadSeriesByLanguage value)? loadSeriesByLanguage,
+    TResult Function(LoadSeriesByTime value)? loadSeriesByTime,
+    TResult Function(LoadTopSeries value)? loadTopSeries,
+    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
     required TResult orElse(),
   }) {
     if (loadTopSeries != null) {
@@ -809,17 +865,178 @@ abstract class LoadTopSeries implements HomeEvent {
 }
 
 /// @nodoc
+abstract class $PageViewIndexChangedCopyWith<$Res> {
+  factory $PageViewIndexChangedCopyWith(PageViewIndexChanged value,
+          $Res Function(PageViewIndexChanged) then) =
+      _$PageViewIndexChangedCopyWithImpl<$Res>;
+  $Res call({int index});
+}
+
+/// @nodoc
+class _$PageViewIndexChangedCopyWithImpl<$Res>
+    extends _$HomeEventCopyWithImpl<$Res>
+    implements $PageViewIndexChangedCopyWith<$Res> {
+  _$PageViewIndexChangedCopyWithImpl(
+      PageViewIndexChanged _value, $Res Function(PageViewIndexChanged) _then)
+      : super(_value, (v) => _then(v as PageViewIndexChanged));
+
+  @override
+  PageViewIndexChanged get _value => super._value as PageViewIndexChanged;
+
+  @override
+  $Res call({
+    Object? index = freezed,
+  }) {
+    return _then(PageViewIndexChanged(
+      index == freezed
+          ? _value.index
+          : index // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$PageViewIndexChanged implements PageViewIndexChanged {
+  const _$PageViewIndexChanged(this.index);
+
+  @override
+  final int index;
+
+  @override
+  String toString() {
+    return 'HomeEvent.pageViewIndexChanged(index: $index)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is PageViewIndexChanged &&
+            const DeepCollectionEquality().equals(other.index, index));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(index));
+
+  @JsonKey(ignore: true)
+  @override
+  $PageViewIndexChangedCopyWith<PageViewIndexChanged> get copyWith =>
+      _$PageViewIndexChangedCopyWithImpl<PageViewIndexChanged>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() loadNewSeries,
+    required TResult Function(String key) loadSeriesByGenre,
+    required TResult Function(String key) loadSeriesByLanguage,
+    required TResult Function(String key) loadSeriesByTime,
+    required TResult Function() loadTopSeries,
+    required TResult Function(int index) pageViewIndexChanged,
+  }) {
+    return pageViewIndexChanged(index);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? loadNewSeries,
+    TResult Function(String key)? loadSeriesByGenre,
+    TResult Function(String key)? loadSeriesByLanguage,
+    TResult Function(String key)? loadSeriesByTime,
+    TResult Function()? loadTopSeries,
+    TResult Function(int index)? pageViewIndexChanged,
+  }) {
+    return pageViewIndexChanged?.call(index);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? loadNewSeries,
+    TResult Function(String key)? loadSeriesByGenre,
+    TResult Function(String key)? loadSeriesByLanguage,
+    TResult Function(String key)? loadSeriesByTime,
+    TResult Function()? loadTopSeries,
+    TResult Function(int index)? pageViewIndexChanged,
+    required TResult orElse(),
+  }) {
+    if (pageViewIndexChanged != null) {
+      return pageViewIndexChanged(index);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(LoadNewSeries value) loadNewSeries,
+    required TResult Function(LoadSeriesByGenre value) loadSeriesByGenre,
+    required TResult Function(LoadSeriesByLanguage value) loadSeriesByLanguage,
+    required TResult Function(LoadSeriesByTime value) loadSeriesByTime,
+    required TResult Function(LoadTopSeries value) loadTopSeries,
+    required TResult Function(PageViewIndexChanged value) pageViewIndexChanged,
+  }) {
+    return pageViewIndexChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(LoadNewSeries value)? loadNewSeries,
+    TResult Function(LoadSeriesByGenre value)? loadSeriesByGenre,
+    TResult Function(LoadSeriesByLanguage value)? loadSeriesByLanguage,
+    TResult Function(LoadSeriesByTime value)? loadSeriesByTime,
+    TResult Function(LoadTopSeries value)? loadTopSeries,
+    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
+  }) {
+    return pageViewIndexChanged?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(LoadNewSeries value)? loadNewSeries,
+    TResult Function(LoadSeriesByGenre value)? loadSeriesByGenre,
+    TResult Function(LoadSeriesByLanguage value)? loadSeriesByLanguage,
+    TResult Function(LoadSeriesByTime value)? loadSeriesByTime,
+    TResult Function(LoadTopSeries value)? loadTopSeries,
+    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
+    required TResult orElse(),
+  }) {
+    if (pageViewIndexChanged != null) {
+      return pageViewIndexChanged(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class PageViewIndexChanged implements HomeEvent {
+  const factory PageViewIndexChanged(int index) = _$PageViewIndexChanged;
+
+  int get index;
+  @JsonKey(ignore: true)
+  $PageViewIndexChangedCopyWith<PageViewIndexChanged> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 class _$HomeStateTearOff {
   const _$HomeStateTearOff();
 
   _HomeState call(
-      {required Option<Result<Unit, CoreFailure>> failure,
+      {required int currentPageViewIdx,
+      required Option<Result<Unit, CoreFailure>> failure,
       required String genreFilterKey,
       required String languageFilterKey,
       required List<Series> newSeriesList,
       required String timeFilterKey,
       required List<Series> topSeriesList}) {
     return _HomeState(
+      currentPageViewIdx: currentPageViewIdx,
       failure: failure,
       genreFilterKey: genreFilterKey,
       languageFilterKey: languageFilterKey,
@@ -835,6 +1052,7 @@ const $HomeState = _$HomeStateTearOff();
 
 /// @nodoc
 mixin _$HomeState {
+  int get currentPageViewIdx => throw _privateConstructorUsedError;
   Option<Result<Unit, CoreFailure>> get failure =>
       throw _privateConstructorUsedError;
   String get genreFilterKey => throw _privateConstructorUsedError;
@@ -853,7 +1071,8 @@ abstract class $HomeStateCopyWith<$Res> {
   factory $HomeStateCopyWith(HomeState value, $Res Function(HomeState) then) =
       _$HomeStateCopyWithImpl<$Res>;
   $Res call(
-      {Option<Result<Unit, CoreFailure>> failure,
+      {int currentPageViewIdx,
+      Option<Result<Unit, CoreFailure>> failure,
       String genreFilterKey,
       String languageFilterKey,
       List<Series> newSeriesList,
@@ -871,6 +1090,7 @@ class _$HomeStateCopyWithImpl<$Res> implements $HomeStateCopyWith<$Res> {
 
   @override
   $Res call({
+    Object? currentPageViewIdx = freezed,
     Object? failure = freezed,
     Object? genreFilterKey = freezed,
     Object? languageFilterKey = freezed,
@@ -879,6 +1099,10 @@ class _$HomeStateCopyWithImpl<$Res> implements $HomeStateCopyWith<$Res> {
     Object? topSeriesList = freezed,
   }) {
     return _then(_value.copyWith(
+      currentPageViewIdx: currentPageViewIdx == freezed
+          ? _value.currentPageViewIdx
+          : currentPageViewIdx // ignore: cast_nullable_to_non_nullable
+              as int,
       failure: failure == freezed
           ? _value.failure
           : failure // ignore: cast_nullable_to_non_nullable
@@ -914,7 +1138,8 @@ abstract class _$HomeStateCopyWith<$Res> implements $HomeStateCopyWith<$Res> {
       __$HomeStateCopyWithImpl<$Res>;
   @override
   $Res call(
-      {Option<Result<Unit, CoreFailure>> failure,
+      {int currentPageViewIdx,
+      Option<Result<Unit, CoreFailure>> failure,
       String genreFilterKey,
       String languageFilterKey,
       List<Series> newSeriesList,
@@ -933,6 +1158,7 @@ class __$HomeStateCopyWithImpl<$Res> extends _$HomeStateCopyWithImpl<$Res>
 
   @override
   $Res call({
+    Object? currentPageViewIdx = freezed,
     Object? failure = freezed,
     Object? genreFilterKey = freezed,
     Object? languageFilterKey = freezed,
@@ -941,6 +1167,10 @@ class __$HomeStateCopyWithImpl<$Res> extends _$HomeStateCopyWithImpl<$Res>
     Object? topSeriesList = freezed,
   }) {
     return _then(_HomeState(
+      currentPageViewIdx: currentPageViewIdx == freezed
+          ? _value.currentPageViewIdx
+          : currentPageViewIdx // ignore: cast_nullable_to_non_nullable
+              as int,
       failure: failure == freezed
           ? _value.failure
           : failure // ignore: cast_nullable_to_non_nullable
@@ -973,13 +1203,16 @@ class __$HomeStateCopyWithImpl<$Res> extends _$HomeStateCopyWithImpl<$Res>
 
 class _$_HomeState implements _HomeState {
   const _$_HomeState(
-      {required this.failure,
+      {required this.currentPageViewIdx,
+      required this.failure,
       required this.genreFilterKey,
       required this.languageFilterKey,
       required this.newSeriesList,
       required this.timeFilterKey,
       required this.topSeriesList});
 
+  @override
+  final int currentPageViewIdx;
   @override
   final Option<Result<Unit, CoreFailure>> failure;
   @override
@@ -995,42 +1228,39 @@ class _$_HomeState implements _HomeState {
 
   @override
   String toString() {
-    return 'HomeState(failure: $failure, genreFilterKey: $genreFilterKey, languageFilterKey: $languageFilterKey, newSeriesList: $newSeriesList, timeFilterKey: $timeFilterKey, topSeriesList: $topSeriesList)';
+    return 'HomeState(currentPageViewIdx: $currentPageViewIdx, failure: $failure, genreFilterKey: $genreFilterKey, languageFilterKey: $languageFilterKey, newSeriesList: $newSeriesList, timeFilterKey: $timeFilterKey, topSeriesList: $topSeriesList)';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _HomeState &&
-            (identical(other.failure, failure) ||
-                const DeepCollectionEquality()
-                    .equals(other.failure, failure)) &&
-            (identical(other.genreFilterKey, genreFilterKey) ||
-                const DeepCollectionEquality()
-                    .equals(other.genreFilterKey, genreFilterKey)) &&
-            (identical(other.languageFilterKey, languageFilterKey) ||
-                const DeepCollectionEquality()
-                    .equals(other.languageFilterKey, languageFilterKey)) &&
-            (identical(other.newSeriesList, newSeriesList) ||
-                const DeepCollectionEquality()
-                    .equals(other.newSeriesList, newSeriesList)) &&
-            (identical(other.timeFilterKey, timeFilterKey) ||
-                const DeepCollectionEquality()
-                    .equals(other.timeFilterKey, timeFilterKey)) &&
-            (identical(other.topSeriesList, topSeriesList) ||
-                const DeepCollectionEquality()
-                    .equals(other.topSeriesList, topSeriesList)));
+        (other.runtimeType == runtimeType &&
+            other is _HomeState &&
+            const DeepCollectionEquality()
+                .equals(other.currentPageViewIdx, currentPageViewIdx) &&
+            const DeepCollectionEquality().equals(other.failure, failure) &&
+            const DeepCollectionEquality()
+                .equals(other.genreFilterKey, genreFilterKey) &&
+            const DeepCollectionEquality()
+                .equals(other.languageFilterKey, languageFilterKey) &&
+            const DeepCollectionEquality()
+                .equals(other.newSeriesList, newSeriesList) &&
+            const DeepCollectionEquality()
+                .equals(other.timeFilterKey, timeFilterKey) &&
+            const DeepCollectionEquality()
+                .equals(other.topSeriesList, topSeriesList));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(failure) ^
-      const DeepCollectionEquality().hash(genreFilterKey) ^
-      const DeepCollectionEquality().hash(languageFilterKey) ^
-      const DeepCollectionEquality().hash(newSeriesList) ^
-      const DeepCollectionEquality().hash(timeFilterKey) ^
-      const DeepCollectionEquality().hash(topSeriesList);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(currentPageViewIdx),
+      const DeepCollectionEquality().hash(failure),
+      const DeepCollectionEquality().hash(genreFilterKey),
+      const DeepCollectionEquality().hash(languageFilterKey),
+      const DeepCollectionEquality().hash(newSeriesList),
+      const DeepCollectionEquality().hash(timeFilterKey),
+      const DeepCollectionEquality().hash(topSeriesList));
 
   @JsonKey(ignore: true)
   @override
@@ -1040,7 +1270,8 @@ class _$_HomeState implements _HomeState {
 
 abstract class _HomeState implements HomeState {
   const factory _HomeState(
-      {required Option<Result<Unit, CoreFailure>> failure,
+      {required int currentPageViewIdx,
+      required Option<Result<Unit, CoreFailure>> failure,
       required String genreFilterKey,
       required String languageFilterKey,
       required List<Series> newSeriesList,
@@ -1048,18 +1279,19 @@ abstract class _HomeState implements HomeState {
       required List<Series> topSeriesList}) = _$_HomeState;
 
   @override
-  Option<Result<Unit, CoreFailure>> get failure =>
-      throw _privateConstructorUsedError;
+  int get currentPageViewIdx;
   @override
-  String get genreFilterKey => throw _privateConstructorUsedError;
+  Option<Result<Unit, CoreFailure>> get failure;
   @override
-  String get languageFilterKey => throw _privateConstructorUsedError;
+  String get genreFilterKey;
   @override
-  List<Series> get newSeriesList => throw _privateConstructorUsedError;
+  String get languageFilterKey;
   @override
-  String get timeFilterKey => throw _privateConstructorUsedError;
+  List<Series> get newSeriesList;
   @override
-  List<Series> get topSeriesList => throw _privateConstructorUsedError;
+  String get timeFilterKey;
+  @override
+  List<Series> get topSeriesList;
   @override
   @JsonKey(ignore: true)
   _$HomeStateCopyWith<_HomeState> get copyWith =>

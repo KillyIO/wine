@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:wine/application/library/library_navigation/library_navigation_bloc.dart';
+import 'package:wine/application/library/library_bloc.dart';
 import 'package:wine/presentation/core/navbars/vertical_navbar_button.dart';
 
 /// @nodoc
@@ -40,16 +40,16 @@ class LibraryVerticalNavbar extends StatelessWidget {
                 top: index == 0 ? 20.0 : 0.0,
                 bottom: 20,
               ),
-              child: BlocBuilder<LibraryNavigationBloc, LibraryNavigationState>(
+              child: BlocBuilder<LibraryBloc, LibraryState>(
                 builder: (context, state) {
                   return VerticalNavbarButton(
                     color:
                         currentIndex == index ? Colors.black : Colors.black12,
-                    onPressed: () => context
-                        .read<LibraryNavigationBloc>()
-                        .add(LibraryNavigationEvent.verticalNavbarIndexChanged(
-                          index,
-                        )),
+                    onPressed: () => context.read<LibraryBloc>().add(
+                          LibraryEvent.verticalNavbarIndexChanged(
+                            index,
+                          ),
+                        ),
                     title: value,
                     width: width,
                   );

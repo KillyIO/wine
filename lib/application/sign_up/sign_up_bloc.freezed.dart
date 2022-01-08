@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'sign_up_bloc.dart';
 
@@ -84,6 +85,19 @@ mixin _$SignUpEvent {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? accountCreated,
+    TResult Function(String confirmPasswordStr)? confirmPasswordChanged,
+    TResult Function(String emailAddressStr)? emailAddressChanged,
+    TResult Function(String passwordStr)? passwordChanged,
+    TResult Function()? signUpPressed,
+    TResult Function(User user)? userDetailsSaved,
+    TResult Function()? usernameAvailabilityConfirmed,
+    TResult Function(User user)? usernameSaved,
+    TResult Function(String usernameStr)? usernameChanged,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? accountCreated,
     TResult Function(String confirmPasswordStr)? confirmPasswordChanged,
@@ -110,6 +124,20 @@ mixin _$SignUpEvent {
         usernameAvailabilityConfirmed,
     required TResult Function(UsernameSaved value) usernameSaved,
     required TResult Function(UsernameChanged value) usernameChanged,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(AccountCreated value)? accountCreated,
+    TResult Function(ConfirmPasswordChanged value)? confirmPasswordChanged,
+    TResult Function(EmailAddressChanged value)? emailAddressChanged,
+    TResult Function(PasswordChanged value)? passwordChanged,
+    TResult Function(SignUpPressed value)? signUpPressed,
+    TResult Function(UserDetailsSaved value)? userDetailsSaved,
+    TResult Function(UsernameAvailabilityConfirmed value)?
+        usernameAvailabilityConfirmed,
+    TResult Function(UsernameSaved value)? usernameSaved,
+    TResult Function(UsernameChanged value)? usernameChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -175,7 +203,8 @@ class _$AccountCreated implements AccountCreated {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is AccountCreated);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is AccountCreated);
   }
 
   @override
@@ -195,6 +224,22 @@ class _$AccountCreated implements AccountCreated {
     required TResult Function(String usernameStr) usernameChanged,
   }) {
     return accountCreated();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? accountCreated,
+    TResult Function(String confirmPasswordStr)? confirmPasswordChanged,
+    TResult Function(String emailAddressStr)? emailAddressChanged,
+    TResult Function(String passwordStr)? passwordChanged,
+    TResult Function()? signUpPressed,
+    TResult Function(User user)? userDetailsSaved,
+    TResult Function()? usernameAvailabilityConfirmed,
+    TResult Function(User user)? usernameSaved,
+    TResult Function(String usernameStr)? usernameChanged,
+  }) {
+    return accountCreated?.call();
   }
 
   @override
@@ -233,6 +278,23 @@ class _$AccountCreated implements AccountCreated {
     required TResult Function(UsernameChanged value) usernameChanged,
   }) {
     return accountCreated(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(AccountCreated value)? accountCreated,
+    TResult Function(ConfirmPasswordChanged value)? confirmPasswordChanged,
+    TResult Function(EmailAddressChanged value)? emailAddressChanged,
+    TResult Function(PasswordChanged value)? passwordChanged,
+    TResult Function(SignUpPressed value)? signUpPressed,
+    TResult Function(UserDetailsSaved value)? userDetailsSaved,
+    TResult Function(UsernameAvailabilityConfirmed value)?
+        usernameAvailabilityConfirmed,
+    TResult Function(UsernameSaved value)? usernameSaved,
+    TResult Function(UsernameChanged value)? usernameChanged,
+  }) {
+    return accountCreated?.call(this);
   }
 
   @override
@@ -309,16 +371,15 @@ class _$ConfirmPasswordChanged implements ConfirmPasswordChanged {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is ConfirmPasswordChanged &&
-            (identical(other.confirmPasswordStr, confirmPasswordStr) ||
-                const DeepCollectionEquality()
-                    .equals(other.confirmPasswordStr, confirmPasswordStr)));
+        (other.runtimeType == runtimeType &&
+            other is ConfirmPasswordChanged &&
+            const DeepCollectionEquality()
+                .equals(other.confirmPasswordStr, confirmPasswordStr));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(confirmPasswordStr);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(confirmPasswordStr));
 
   @JsonKey(ignore: true)
   @override
@@ -340,6 +401,22 @@ class _$ConfirmPasswordChanged implements ConfirmPasswordChanged {
     required TResult Function(String usernameStr) usernameChanged,
   }) {
     return confirmPasswordChanged(confirmPasswordStr);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? accountCreated,
+    TResult Function(String confirmPasswordStr)? confirmPasswordChanged,
+    TResult Function(String emailAddressStr)? emailAddressChanged,
+    TResult Function(String passwordStr)? passwordChanged,
+    TResult Function()? signUpPressed,
+    TResult Function(User user)? userDetailsSaved,
+    TResult Function()? usernameAvailabilityConfirmed,
+    TResult Function(User user)? usernameSaved,
+    TResult Function(String usernameStr)? usernameChanged,
+  }) {
+    return confirmPasswordChanged?.call(confirmPasswordStr);
   }
 
   @override
@@ -382,6 +459,23 @@ class _$ConfirmPasswordChanged implements ConfirmPasswordChanged {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(AccountCreated value)? accountCreated,
+    TResult Function(ConfirmPasswordChanged value)? confirmPasswordChanged,
+    TResult Function(EmailAddressChanged value)? emailAddressChanged,
+    TResult Function(PasswordChanged value)? passwordChanged,
+    TResult Function(SignUpPressed value)? signUpPressed,
+    TResult Function(UserDetailsSaved value)? userDetailsSaved,
+    TResult Function(UsernameAvailabilityConfirmed value)?
+        usernameAvailabilityConfirmed,
+    TResult Function(UsernameSaved value)? usernameSaved,
+    TResult Function(UsernameChanged value)? usernameChanged,
+  }) {
+    return confirmPasswordChanged?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AccountCreated value)? accountCreated,
     TResult Function(ConfirmPasswordChanged value)? confirmPasswordChanged,
@@ -406,7 +500,7 @@ abstract class ConfirmPasswordChanged implements SignUpEvent {
   const factory ConfirmPasswordChanged(String confirmPasswordStr) =
       _$ConfirmPasswordChanged;
 
-  String get confirmPasswordStr => throw _privateConstructorUsedError;
+  String get confirmPasswordStr;
   @JsonKey(ignore: true)
   $ConfirmPasswordChangedCopyWith<ConfirmPasswordChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -460,16 +554,15 @@ class _$EmailAddressChanged implements EmailAddressChanged {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is EmailAddressChanged &&
-            (identical(other.emailAddressStr, emailAddressStr) ||
-                const DeepCollectionEquality()
-                    .equals(other.emailAddressStr, emailAddressStr)));
+        (other.runtimeType == runtimeType &&
+            other is EmailAddressChanged &&
+            const DeepCollectionEquality()
+                .equals(other.emailAddressStr, emailAddressStr));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(emailAddressStr);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(emailAddressStr));
 
   @JsonKey(ignore: true)
   @override
@@ -490,6 +583,22 @@ class _$EmailAddressChanged implements EmailAddressChanged {
     required TResult Function(String usernameStr) usernameChanged,
   }) {
     return emailAddressChanged(emailAddressStr);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? accountCreated,
+    TResult Function(String confirmPasswordStr)? confirmPasswordChanged,
+    TResult Function(String emailAddressStr)? emailAddressChanged,
+    TResult Function(String passwordStr)? passwordChanged,
+    TResult Function()? signUpPressed,
+    TResult Function(User user)? userDetailsSaved,
+    TResult Function()? usernameAvailabilityConfirmed,
+    TResult Function(User user)? usernameSaved,
+    TResult Function(String usernameStr)? usernameChanged,
+  }) {
+    return emailAddressChanged?.call(emailAddressStr);
   }
 
   @override
@@ -532,6 +641,23 @@ class _$EmailAddressChanged implements EmailAddressChanged {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(AccountCreated value)? accountCreated,
+    TResult Function(ConfirmPasswordChanged value)? confirmPasswordChanged,
+    TResult Function(EmailAddressChanged value)? emailAddressChanged,
+    TResult Function(PasswordChanged value)? passwordChanged,
+    TResult Function(SignUpPressed value)? signUpPressed,
+    TResult Function(UserDetailsSaved value)? userDetailsSaved,
+    TResult Function(UsernameAvailabilityConfirmed value)?
+        usernameAvailabilityConfirmed,
+    TResult Function(UsernameSaved value)? usernameSaved,
+    TResult Function(UsernameChanged value)? usernameChanged,
+  }) {
+    return emailAddressChanged?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AccountCreated value)? accountCreated,
     TResult Function(ConfirmPasswordChanged value)? confirmPasswordChanged,
@@ -556,7 +682,7 @@ abstract class EmailAddressChanged implements SignUpEvent {
   const factory EmailAddressChanged(String emailAddressStr) =
       _$EmailAddressChanged;
 
-  String get emailAddressStr => throw _privateConstructorUsedError;
+  String get emailAddressStr;
   @JsonKey(ignore: true)
   $EmailAddressChangedCopyWith<EmailAddressChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -610,15 +736,15 @@ class _$PasswordChanged implements PasswordChanged {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is PasswordChanged &&
-            (identical(other.passwordStr, passwordStr) ||
-                const DeepCollectionEquality()
-                    .equals(other.passwordStr, passwordStr)));
+        (other.runtimeType == runtimeType &&
+            other is PasswordChanged &&
+            const DeepCollectionEquality()
+                .equals(other.passwordStr, passwordStr));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(passwordStr);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(passwordStr));
 
   @JsonKey(ignore: true)
   @override
@@ -639,6 +765,22 @@ class _$PasswordChanged implements PasswordChanged {
     required TResult Function(String usernameStr) usernameChanged,
   }) {
     return passwordChanged(passwordStr);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? accountCreated,
+    TResult Function(String confirmPasswordStr)? confirmPasswordChanged,
+    TResult Function(String emailAddressStr)? emailAddressChanged,
+    TResult Function(String passwordStr)? passwordChanged,
+    TResult Function()? signUpPressed,
+    TResult Function(User user)? userDetailsSaved,
+    TResult Function()? usernameAvailabilityConfirmed,
+    TResult Function(User user)? usernameSaved,
+    TResult Function(String usernameStr)? usernameChanged,
+  }) {
+    return passwordChanged?.call(passwordStr);
   }
 
   @override
@@ -681,6 +823,23 @@ class _$PasswordChanged implements PasswordChanged {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(AccountCreated value)? accountCreated,
+    TResult Function(ConfirmPasswordChanged value)? confirmPasswordChanged,
+    TResult Function(EmailAddressChanged value)? emailAddressChanged,
+    TResult Function(PasswordChanged value)? passwordChanged,
+    TResult Function(SignUpPressed value)? signUpPressed,
+    TResult Function(UserDetailsSaved value)? userDetailsSaved,
+    TResult Function(UsernameAvailabilityConfirmed value)?
+        usernameAvailabilityConfirmed,
+    TResult Function(UsernameSaved value)? usernameSaved,
+    TResult Function(UsernameChanged value)? usernameChanged,
+  }) {
+    return passwordChanged?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AccountCreated value)? accountCreated,
     TResult Function(ConfirmPasswordChanged value)? confirmPasswordChanged,
@@ -704,7 +863,7 @@ class _$PasswordChanged implements PasswordChanged {
 abstract class PasswordChanged implements SignUpEvent {
   const factory PasswordChanged(String passwordStr) = _$PasswordChanged;
 
-  String get passwordStr => throw _privateConstructorUsedError;
+  String get passwordStr;
   @JsonKey(ignore: true)
   $PasswordChangedCopyWith<PasswordChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -740,7 +899,8 @@ class _$SignUpPressed implements SignUpPressed {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is SignUpPressed);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is SignUpPressed);
   }
 
   @override
@@ -760,6 +920,22 @@ class _$SignUpPressed implements SignUpPressed {
     required TResult Function(String usernameStr) usernameChanged,
   }) {
     return signUpPressed();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? accountCreated,
+    TResult Function(String confirmPasswordStr)? confirmPasswordChanged,
+    TResult Function(String emailAddressStr)? emailAddressChanged,
+    TResult Function(String passwordStr)? passwordChanged,
+    TResult Function()? signUpPressed,
+    TResult Function(User user)? userDetailsSaved,
+    TResult Function()? usernameAvailabilityConfirmed,
+    TResult Function(User user)? usernameSaved,
+    TResult Function(String usernameStr)? usernameChanged,
+  }) {
+    return signUpPressed?.call();
   }
 
   @override
@@ -798,6 +974,23 @@ class _$SignUpPressed implements SignUpPressed {
     required TResult Function(UsernameChanged value) usernameChanged,
   }) {
     return signUpPressed(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(AccountCreated value)? accountCreated,
+    TResult Function(ConfirmPasswordChanged value)? confirmPasswordChanged,
+    TResult Function(EmailAddressChanged value)? emailAddressChanged,
+    TResult Function(PasswordChanged value)? passwordChanged,
+    TResult Function(SignUpPressed value)? signUpPressed,
+    TResult Function(UserDetailsSaved value)? userDetailsSaved,
+    TResult Function(UsernameAvailabilityConfirmed value)?
+        usernameAvailabilityConfirmed,
+    TResult Function(UsernameSaved value)? usernameSaved,
+    TResult Function(UsernameChanged value)? usernameChanged,
+  }) {
+    return signUpPressed?.call(this);
   }
 
   @override
@@ -883,14 +1076,14 @@ class _$UserDetailsSaved implements UserDetailsSaved {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is UserDetailsSaved &&
-            (identical(other.user, user) ||
-                const DeepCollectionEquality().equals(other.user, user)));
+        (other.runtimeType == runtimeType &&
+            other is UserDetailsSaved &&
+            const DeepCollectionEquality().equals(other.user, user));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(user);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(user));
 
   @JsonKey(ignore: true)
   @override
@@ -911,6 +1104,22 @@ class _$UserDetailsSaved implements UserDetailsSaved {
     required TResult Function(String usernameStr) usernameChanged,
   }) {
     return userDetailsSaved(user);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? accountCreated,
+    TResult Function(String confirmPasswordStr)? confirmPasswordChanged,
+    TResult Function(String emailAddressStr)? emailAddressChanged,
+    TResult Function(String passwordStr)? passwordChanged,
+    TResult Function()? signUpPressed,
+    TResult Function(User user)? userDetailsSaved,
+    TResult Function()? usernameAvailabilityConfirmed,
+    TResult Function(User user)? usernameSaved,
+    TResult Function(String usernameStr)? usernameChanged,
+  }) {
+    return userDetailsSaved?.call(user);
   }
 
   @override
@@ -953,6 +1162,23 @@ class _$UserDetailsSaved implements UserDetailsSaved {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(AccountCreated value)? accountCreated,
+    TResult Function(ConfirmPasswordChanged value)? confirmPasswordChanged,
+    TResult Function(EmailAddressChanged value)? emailAddressChanged,
+    TResult Function(PasswordChanged value)? passwordChanged,
+    TResult Function(SignUpPressed value)? signUpPressed,
+    TResult Function(UserDetailsSaved value)? userDetailsSaved,
+    TResult Function(UsernameAvailabilityConfirmed value)?
+        usernameAvailabilityConfirmed,
+    TResult Function(UsernameSaved value)? usernameSaved,
+    TResult Function(UsernameChanged value)? usernameChanged,
+  }) {
+    return userDetailsSaved?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AccountCreated value)? accountCreated,
     TResult Function(ConfirmPasswordChanged value)? confirmPasswordChanged,
@@ -976,7 +1202,7 @@ class _$UserDetailsSaved implements UserDetailsSaved {
 abstract class UserDetailsSaved implements SignUpEvent {
   const factory UserDetailsSaved(User user) = _$UserDetailsSaved;
 
-  User get user => throw _privateConstructorUsedError;
+  User get user;
   @JsonKey(ignore: true)
   $UserDetailsSavedCopyWith<UserDetailsSaved> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1016,7 +1242,9 @@ class _$UsernameAvailabilityConfirmed implements UsernameAvailabilityConfirmed {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is UsernameAvailabilityConfirmed);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is UsernameAvailabilityConfirmed);
   }
 
   @override
@@ -1036,6 +1264,22 @@ class _$UsernameAvailabilityConfirmed implements UsernameAvailabilityConfirmed {
     required TResult Function(String usernameStr) usernameChanged,
   }) {
     return usernameAvailabilityConfirmed();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? accountCreated,
+    TResult Function(String confirmPasswordStr)? confirmPasswordChanged,
+    TResult Function(String emailAddressStr)? emailAddressChanged,
+    TResult Function(String passwordStr)? passwordChanged,
+    TResult Function()? signUpPressed,
+    TResult Function(User user)? userDetailsSaved,
+    TResult Function()? usernameAvailabilityConfirmed,
+    TResult Function(User user)? usernameSaved,
+    TResult Function(String usernameStr)? usernameChanged,
+  }) {
+    return usernameAvailabilityConfirmed?.call();
   }
 
   @override
@@ -1074,6 +1318,23 @@ class _$UsernameAvailabilityConfirmed implements UsernameAvailabilityConfirmed {
     required TResult Function(UsernameChanged value) usernameChanged,
   }) {
     return usernameAvailabilityConfirmed(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(AccountCreated value)? accountCreated,
+    TResult Function(ConfirmPasswordChanged value)? confirmPasswordChanged,
+    TResult Function(EmailAddressChanged value)? emailAddressChanged,
+    TResult Function(PasswordChanged value)? passwordChanged,
+    TResult Function(SignUpPressed value)? signUpPressed,
+    TResult Function(UserDetailsSaved value)? userDetailsSaved,
+    TResult Function(UsernameAvailabilityConfirmed value)?
+        usernameAvailabilityConfirmed,
+    TResult Function(UsernameSaved value)? usernameSaved,
+    TResult Function(UsernameChanged value)? usernameChanged,
+  }) {
+    return usernameAvailabilityConfirmed?.call(this);
   }
 
   @override
@@ -1159,14 +1420,14 @@ class _$UsernameSaved implements UsernameSaved {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is UsernameSaved &&
-            (identical(other.user, user) ||
-                const DeepCollectionEquality().equals(other.user, user)));
+        (other.runtimeType == runtimeType &&
+            other is UsernameSaved &&
+            const DeepCollectionEquality().equals(other.user, user));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(user);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(user));
 
   @JsonKey(ignore: true)
   @override
@@ -1187,6 +1448,22 @@ class _$UsernameSaved implements UsernameSaved {
     required TResult Function(String usernameStr) usernameChanged,
   }) {
     return usernameSaved(user);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? accountCreated,
+    TResult Function(String confirmPasswordStr)? confirmPasswordChanged,
+    TResult Function(String emailAddressStr)? emailAddressChanged,
+    TResult Function(String passwordStr)? passwordChanged,
+    TResult Function()? signUpPressed,
+    TResult Function(User user)? userDetailsSaved,
+    TResult Function()? usernameAvailabilityConfirmed,
+    TResult Function(User user)? usernameSaved,
+    TResult Function(String usernameStr)? usernameChanged,
+  }) {
+    return usernameSaved?.call(user);
   }
 
   @override
@@ -1229,6 +1506,23 @@ class _$UsernameSaved implements UsernameSaved {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(AccountCreated value)? accountCreated,
+    TResult Function(ConfirmPasswordChanged value)? confirmPasswordChanged,
+    TResult Function(EmailAddressChanged value)? emailAddressChanged,
+    TResult Function(PasswordChanged value)? passwordChanged,
+    TResult Function(SignUpPressed value)? signUpPressed,
+    TResult Function(UserDetailsSaved value)? userDetailsSaved,
+    TResult Function(UsernameAvailabilityConfirmed value)?
+        usernameAvailabilityConfirmed,
+    TResult Function(UsernameSaved value)? usernameSaved,
+    TResult Function(UsernameChanged value)? usernameChanged,
+  }) {
+    return usernameSaved?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AccountCreated value)? accountCreated,
     TResult Function(ConfirmPasswordChanged value)? confirmPasswordChanged,
@@ -1252,7 +1546,7 @@ class _$UsernameSaved implements UsernameSaved {
 abstract class UsernameSaved implements SignUpEvent {
   const factory UsernameSaved(User user) = _$UsernameSaved;
 
-  User get user => throw _privateConstructorUsedError;
+  User get user;
   @JsonKey(ignore: true)
   $UsernameSavedCopyWith<UsernameSaved> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1306,15 +1600,15 @@ class _$UsernameChanged implements UsernameChanged {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is UsernameChanged &&
-            (identical(other.usernameStr, usernameStr) ||
-                const DeepCollectionEquality()
-                    .equals(other.usernameStr, usernameStr)));
+        (other.runtimeType == runtimeType &&
+            other is UsernameChanged &&
+            const DeepCollectionEquality()
+                .equals(other.usernameStr, usernameStr));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(usernameStr);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(usernameStr));
 
   @JsonKey(ignore: true)
   @override
@@ -1335,6 +1629,22 @@ class _$UsernameChanged implements UsernameChanged {
     required TResult Function(String usernameStr) usernameChanged,
   }) {
     return usernameChanged(usernameStr);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? accountCreated,
+    TResult Function(String confirmPasswordStr)? confirmPasswordChanged,
+    TResult Function(String emailAddressStr)? emailAddressChanged,
+    TResult Function(String passwordStr)? passwordChanged,
+    TResult Function()? signUpPressed,
+    TResult Function(User user)? userDetailsSaved,
+    TResult Function()? usernameAvailabilityConfirmed,
+    TResult Function(User user)? usernameSaved,
+    TResult Function(String usernameStr)? usernameChanged,
+  }) {
+    return usernameChanged?.call(usernameStr);
   }
 
   @override
@@ -1377,6 +1687,23 @@ class _$UsernameChanged implements UsernameChanged {
 
   @override
   @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(AccountCreated value)? accountCreated,
+    TResult Function(ConfirmPasswordChanged value)? confirmPasswordChanged,
+    TResult Function(EmailAddressChanged value)? emailAddressChanged,
+    TResult Function(PasswordChanged value)? passwordChanged,
+    TResult Function(SignUpPressed value)? signUpPressed,
+    TResult Function(UserDetailsSaved value)? userDetailsSaved,
+    TResult Function(UsernameAvailabilityConfirmed value)?
+        usernameAvailabilityConfirmed,
+    TResult Function(UsernameSaved value)? usernameSaved,
+    TResult Function(UsernameChanged value)? usernameChanged,
+  }) {
+    return usernameChanged?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AccountCreated value)? accountCreated,
     TResult Function(ConfirmPasswordChanged value)? confirmPasswordChanged,
@@ -1400,7 +1727,7 @@ class _$UsernameChanged implements UsernameChanged {
 abstract class UsernameChanged implements SignUpEvent {
   const factory UsernameChanged(String usernameStr) = _$UsernameChanged;
 
-  String get usernameStr => throw _privateConstructorUsedError;
+  String get usernameStr;
   @JsonKey(ignore: true)
   $UsernameChangedCopyWith<UsernameChanged> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1413,7 +1740,7 @@ class _$SignUpStateTearOff {
   _SignUpState call(
       {required ConfirmPassword confirmPassword,
       required EmailAddress emailAddress,
-      required Option<Result<None, CoreFailure>> failureOption,
+      required Option<Result<None<Object>, CoreFailure>> failureOption,
       required bool isAuthenticated,
       required bool isProcessing,
       required Password password,
@@ -1439,7 +1766,7 @@ const $SignUpState = _$SignUpStateTearOff();
 mixin _$SignUpState {
   ConfirmPassword get confirmPassword => throw _privateConstructorUsedError;
   EmailAddress get emailAddress => throw _privateConstructorUsedError;
-  Option<Result<None, CoreFailure>> get failureOption =>
+  Option<Result<None<Object>, CoreFailure>> get failureOption =>
       throw _privateConstructorUsedError;
   bool get isAuthenticated => throw _privateConstructorUsedError;
   bool get isProcessing => throw _privateConstructorUsedError;
@@ -1460,7 +1787,7 @@ abstract class $SignUpStateCopyWith<$Res> {
   $Res call(
       {ConfirmPassword confirmPassword,
       EmailAddress emailAddress,
-      Option<Result<None, CoreFailure>> failureOption,
+      Option<Result<None<Object>, CoreFailure>> failureOption,
       bool isAuthenticated,
       bool isProcessing,
       Password password,
@@ -1499,7 +1826,7 @@ class _$SignUpStateCopyWithImpl<$Res> implements $SignUpStateCopyWith<$Res> {
       failureOption: failureOption == freezed
           ? _value.failureOption
           : failureOption // ignore: cast_nullable_to_non_nullable
-              as Option<Result<None, CoreFailure>>,
+              as Option<Result<None<Object>, CoreFailure>>,
       isAuthenticated: isAuthenticated == freezed
           ? _value.isAuthenticated
           : isAuthenticated // ignore: cast_nullable_to_non_nullable
@@ -1534,7 +1861,7 @@ abstract class _$SignUpStateCopyWith<$Res>
   $Res call(
       {ConfirmPassword confirmPassword,
       EmailAddress emailAddress,
-      Option<Result<None, CoreFailure>> failureOption,
+      Option<Result<None<Object>, CoreFailure>> failureOption,
       bool isAuthenticated,
       bool isProcessing,
       Password password,
@@ -1575,7 +1902,7 @@ class __$SignUpStateCopyWithImpl<$Res> extends _$SignUpStateCopyWithImpl<$Res>
       failureOption: failureOption == freezed
           ? _value.failureOption
           : failureOption // ignore: cast_nullable_to_non_nullable
-              as Option<Result<None, CoreFailure>>,
+              as Option<Result<None<Object>, CoreFailure>>,
       isAuthenticated: isAuthenticated == freezed
           ? _value.isAuthenticated
           : isAuthenticated // ignore: cast_nullable_to_non_nullable
@@ -1618,7 +1945,7 @@ class _$_SignUpState implements _SignUpState {
   @override
   final EmailAddress emailAddress;
   @override
-  final Option<Result<None, CoreFailure>> failureOption;
+  final Option<Result<None<Object>, CoreFailure>> failureOption;
   @override
   final bool isAuthenticated;
   @override
@@ -1638,44 +1965,35 @@ class _$_SignUpState implements _SignUpState {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _SignUpState &&
-            (identical(other.confirmPassword, confirmPassword) ||
-                const DeepCollectionEquality()
-                    .equals(other.confirmPassword, confirmPassword)) &&
-            (identical(other.emailAddress, emailAddress) ||
-                const DeepCollectionEquality()
-                    .equals(other.emailAddress, emailAddress)) &&
-            (identical(other.failureOption, failureOption) ||
-                const DeepCollectionEquality()
-                    .equals(other.failureOption, failureOption)) &&
-            (identical(other.isAuthenticated, isAuthenticated) ||
-                const DeepCollectionEquality()
-                    .equals(other.isAuthenticated, isAuthenticated)) &&
-            (identical(other.isProcessing, isProcessing) ||
-                const DeepCollectionEquality()
-                    .equals(other.isProcessing, isProcessing)) &&
-            (identical(other.password, password) ||
-                const DeepCollectionEquality()
-                    .equals(other.password, password)) &&
-            (identical(other.showErrorMessages, showErrorMessages) ||
-                const DeepCollectionEquality()
-                    .equals(other.showErrorMessages, showErrorMessages)) &&
-            (identical(other.username, username) ||
-                const DeepCollectionEquality()
-                    .equals(other.username, username)));
+        (other.runtimeType == runtimeType &&
+            other is _SignUpState &&
+            const DeepCollectionEquality()
+                .equals(other.confirmPassword, confirmPassword) &&
+            const DeepCollectionEquality()
+                .equals(other.emailAddress, emailAddress) &&
+            const DeepCollectionEquality()
+                .equals(other.failureOption, failureOption) &&
+            const DeepCollectionEquality()
+                .equals(other.isAuthenticated, isAuthenticated) &&
+            const DeepCollectionEquality()
+                .equals(other.isProcessing, isProcessing) &&
+            const DeepCollectionEquality().equals(other.password, password) &&
+            const DeepCollectionEquality()
+                .equals(other.showErrorMessages, showErrorMessages) &&
+            const DeepCollectionEquality().equals(other.username, username));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(confirmPassword) ^
-      const DeepCollectionEquality().hash(emailAddress) ^
-      const DeepCollectionEquality().hash(failureOption) ^
-      const DeepCollectionEquality().hash(isAuthenticated) ^
-      const DeepCollectionEquality().hash(isProcessing) ^
-      const DeepCollectionEquality().hash(password) ^
-      const DeepCollectionEquality().hash(showErrorMessages) ^
-      const DeepCollectionEquality().hash(username);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(confirmPassword),
+      const DeepCollectionEquality().hash(emailAddress),
+      const DeepCollectionEquality().hash(failureOption),
+      const DeepCollectionEquality().hash(isAuthenticated),
+      const DeepCollectionEquality().hash(isProcessing),
+      const DeepCollectionEquality().hash(password),
+      const DeepCollectionEquality().hash(showErrorMessages),
+      const DeepCollectionEquality().hash(username));
 
   @JsonKey(ignore: true)
   @override
@@ -1687,7 +2005,7 @@ abstract class _SignUpState implements SignUpState {
   const factory _SignUpState(
       {required ConfirmPassword confirmPassword,
       required EmailAddress emailAddress,
-      required Option<Result<None, CoreFailure>> failureOption,
+      required Option<Result<None<Object>, CoreFailure>> failureOption,
       required bool isAuthenticated,
       required bool isProcessing,
       required Password password,
@@ -1695,22 +2013,21 @@ abstract class _SignUpState implements SignUpState {
       required Username username}) = _$_SignUpState;
 
   @override
-  ConfirmPassword get confirmPassword => throw _privateConstructorUsedError;
+  ConfirmPassword get confirmPassword;
   @override
-  EmailAddress get emailAddress => throw _privateConstructorUsedError;
+  EmailAddress get emailAddress;
   @override
-  Option<Result<None, CoreFailure>> get failureOption =>
-      throw _privateConstructorUsedError;
+  Option<Result<None<Object>, CoreFailure>> get failureOption;
   @override
-  bool get isAuthenticated => throw _privateConstructorUsedError;
+  bool get isAuthenticated;
   @override
-  bool get isProcessing => throw _privateConstructorUsedError;
+  bool get isProcessing;
   @override
-  Password get password => throw _privateConstructorUsedError;
+  Password get password;
   @override
-  bool get showErrorMessages => throw _privateConstructorUsedError;
+  bool get showErrorMessages;
   @override
-  Username get username => throw _privateConstructorUsedError;
+  Username get username;
   @override
   @JsonKey(ignore: true)
   _$SignUpStateCopyWith<_SignUpState> get copyWith =>

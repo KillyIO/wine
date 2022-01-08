@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:rustic/result.dart';
+import 'package:oxidized/oxidized.dart';
 import 'package:wine/domain/core/value_failure.dart';
 import 'package:wine/domain/series/summary.dart';
 
@@ -12,7 +12,7 @@ void main() {
 
       expect(
         summary.value,
-        const Ok<String, ValueFailure<String>>(testSummary),
+        Ok<String, ValueFailure<String>>(testSummary),
       );
     });
 
@@ -21,8 +21,8 @@ void main() {
 
       expect(
         summary.value,
-        const Err<String, ValueFailure<String>>(
-          ValueFailure<String>.emptyInput(testEmpty),
+        Err<String, ValueFailure<String>>(
+          const ValueFailure<String>.emptyInput(testEmpty),
         ),
       );
     });
@@ -32,8 +32,8 @@ void main() {
 
       expect(
         summary.value,
-        const Err<String, ValueFailure<String>>(
-          ValueFailure<String>.tooLongInput(testInvalidSummaryTooLong),
+        Err<String, ValueFailure<String>>(
+          const ValueFailure<String>.tooLongInput(testInvalidSummaryTooLong),
         ),
       );
     });

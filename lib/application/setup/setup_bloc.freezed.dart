@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'setup_bloc.dart';
 
@@ -35,6 +36,10 @@ class _$SetupEventTearOff {
     );
   }
 
+  OnboardingDonePressed onboardingDonePressed() {
+    return const OnboardingDonePressed();
+  }
+
   SessionFetched sessionFetched(User session) {
     return SessionFetched(
       session,
@@ -45,12 +50,12 @@ class _$SetupEventTearOff {
     return const SessionNotFound();
   }
 
-  SettingsInitialized settingsInitialized() {
-    return const SettingsInitialized();
-  }
-
   SettingsFetched settingsFetched() {
     return const SettingsFetched();
+  }
+
+  SettingsInitialized settingsInitialized() {
+    return const SettingsInitialized();
   }
 
   SettingsNotFound settingsNotFound() {
@@ -76,12 +81,29 @@ mixin _$SetupEvent {
     required TResult Function() defaultCoverURLsCached,
     required TResult Function(Map<String, String> defaultCoverURLs)
         defaultCoverURLsLoaded,
+    required TResult Function() onboardingDonePressed,
     required TResult Function(User session) sessionFetched,
     required TResult Function() sessionNotFound,
-    required TResult Function() settingsInitialized,
     required TResult Function() settingsFetched,
+    required TResult Function() settingsInitialized,
     required TResult Function() settingsNotFound,
     required TResult Function(User user) userLoaded,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? appLaunched,
+    TResult Function()? authenticated,
+    TResult Function()? defaultCoverURLsCached,
+    TResult Function(Map<String, String> defaultCoverURLs)?
+        defaultCoverURLsLoaded,
+    TResult Function()? onboardingDonePressed,
+    TResult Function(User session)? sessionFetched,
+    TResult Function()? sessionNotFound,
+    TResult Function()? settingsFetched,
+    TResult Function()? settingsInitialized,
+    TResult Function()? settingsNotFound,
+    TResult Function(User user)? userLoaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -91,10 +113,11 @@ mixin _$SetupEvent {
     TResult Function()? defaultCoverURLsCached,
     TResult Function(Map<String, String> defaultCoverURLs)?
         defaultCoverURLsLoaded,
+    TResult Function()? onboardingDonePressed,
     TResult Function(User session)? sessionFetched,
     TResult Function()? sessionNotFound,
-    TResult Function()? settingsInitialized,
     TResult Function()? settingsFetched,
+    TResult Function()? settingsInitialized,
     TResult Function()? settingsNotFound,
     TResult Function(User user)? userLoaded,
     required TResult orElse(),
@@ -108,12 +131,29 @@ mixin _$SetupEvent {
         defaultCoverURLsCached,
     required TResult Function(DefaultCoverURLsLoaded value)
         defaultCoverURLsLoaded,
+    required TResult Function(OnboardingDonePressed value)
+        onboardingDonePressed,
     required TResult Function(SessionFetched value) sessionFetched,
     required TResult Function(SessionNotFound value) sessionNotFound,
-    required TResult Function(SettingsInitialized value) settingsInitialized,
     required TResult Function(SettingsFetched value) settingsFetched,
+    required TResult Function(SettingsInitialized value) settingsInitialized,
     required TResult Function(SettingsNotFound value) settingsNotFound,
     required TResult Function(UserLoaded value) userLoaded,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(AppLaunched value)? appLaunched,
+    TResult Function(Authenticated value)? authenticated,
+    TResult Function(DefaultCoverURLsCached value)? defaultCoverURLsCached,
+    TResult Function(DefaultCoverURLsLoaded value)? defaultCoverURLsLoaded,
+    TResult Function(OnboardingDonePressed value)? onboardingDonePressed,
+    TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(SessionNotFound value)? sessionNotFound,
+    TResult Function(SettingsFetched value)? settingsFetched,
+    TResult Function(SettingsInitialized value)? settingsInitialized,
+    TResult Function(SettingsNotFound value)? settingsNotFound,
+    TResult Function(UserLoaded value)? userLoaded,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -122,10 +162,11 @@ mixin _$SetupEvent {
     TResult Function(Authenticated value)? authenticated,
     TResult Function(DefaultCoverURLsCached value)? defaultCoverURLsCached,
     TResult Function(DefaultCoverURLsLoaded value)? defaultCoverURLsLoaded,
+    TResult Function(OnboardingDonePressed value)? onboardingDonePressed,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SessionNotFound value)? sessionNotFound,
-    TResult Function(SettingsInitialized value)? settingsInitialized,
     TResult Function(SettingsFetched value)? settingsFetched,
+    TResult Function(SettingsInitialized value)? settingsInitialized,
     TResult Function(SettingsNotFound value)? settingsNotFound,
     TResult Function(UserLoaded value)? userLoaded,
     required TResult orElse(),
@@ -185,7 +226,8 @@ class _$AppLaunched with DiagnosticableTreeMixin implements AppLaunched {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is AppLaunched);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is AppLaunched);
   }
 
   @override
@@ -199,14 +241,34 @@ class _$AppLaunched with DiagnosticableTreeMixin implements AppLaunched {
     required TResult Function() defaultCoverURLsCached,
     required TResult Function(Map<String, String> defaultCoverURLs)
         defaultCoverURLsLoaded,
+    required TResult Function() onboardingDonePressed,
     required TResult Function(User session) sessionFetched,
     required TResult Function() sessionNotFound,
-    required TResult Function() settingsInitialized,
     required TResult Function() settingsFetched,
+    required TResult Function() settingsInitialized,
     required TResult Function() settingsNotFound,
     required TResult Function(User user) userLoaded,
   }) {
     return appLaunched();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? appLaunched,
+    TResult Function()? authenticated,
+    TResult Function()? defaultCoverURLsCached,
+    TResult Function(Map<String, String> defaultCoverURLs)?
+        defaultCoverURLsLoaded,
+    TResult Function()? onboardingDonePressed,
+    TResult Function(User session)? sessionFetched,
+    TResult Function()? sessionNotFound,
+    TResult Function()? settingsFetched,
+    TResult Function()? settingsInitialized,
+    TResult Function()? settingsNotFound,
+    TResult Function(User user)? userLoaded,
+  }) {
+    return appLaunched?.call();
   }
 
   @override
@@ -217,10 +279,11 @@ class _$AppLaunched with DiagnosticableTreeMixin implements AppLaunched {
     TResult Function()? defaultCoverURLsCached,
     TResult Function(Map<String, String> defaultCoverURLs)?
         defaultCoverURLsLoaded,
+    TResult Function()? onboardingDonePressed,
     TResult Function(User session)? sessionFetched,
     TResult Function()? sessionNotFound,
-    TResult Function()? settingsInitialized,
     TResult Function()? settingsFetched,
+    TResult Function()? settingsInitialized,
     TResult Function()? settingsNotFound,
     TResult Function(User user)? userLoaded,
     required TResult orElse(),
@@ -240,14 +303,34 @@ class _$AppLaunched with DiagnosticableTreeMixin implements AppLaunched {
         defaultCoverURLsCached,
     required TResult Function(DefaultCoverURLsLoaded value)
         defaultCoverURLsLoaded,
+    required TResult Function(OnboardingDonePressed value)
+        onboardingDonePressed,
     required TResult Function(SessionFetched value) sessionFetched,
     required TResult Function(SessionNotFound value) sessionNotFound,
-    required TResult Function(SettingsInitialized value) settingsInitialized,
     required TResult Function(SettingsFetched value) settingsFetched,
+    required TResult Function(SettingsInitialized value) settingsInitialized,
     required TResult Function(SettingsNotFound value) settingsNotFound,
     required TResult Function(UserLoaded value) userLoaded,
   }) {
     return appLaunched(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(AppLaunched value)? appLaunched,
+    TResult Function(Authenticated value)? authenticated,
+    TResult Function(DefaultCoverURLsCached value)? defaultCoverURLsCached,
+    TResult Function(DefaultCoverURLsLoaded value)? defaultCoverURLsLoaded,
+    TResult Function(OnboardingDonePressed value)? onboardingDonePressed,
+    TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(SessionNotFound value)? sessionNotFound,
+    TResult Function(SettingsFetched value)? settingsFetched,
+    TResult Function(SettingsInitialized value)? settingsInitialized,
+    TResult Function(SettingsNotFound value)? settingsNotFound,
+    TResult Function(UserLoaded value)? userLoaded,
+  }) {
+    return appLaunched?.call(this);
   }
 
   @override
@@ -257,10 +340,11 @@ class _$AppLaunched with DiagnosticableTreeMixin implements AppLaunched {
     TResult Function(Authenticated value)? authenticated,
     TResult Function(DefaultCoverURLsCached value)? defaultCoverURLsCached,
     TResult Function(DefaultCoverURLsLoaded value)? defaultCoverURLsLoaded,
+    TResult Function(OnboardingDonePressed value)? onboardingDonePressed,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SessionNotFound value)? sessionNotFound,
-    TResult Function(SettingsInitialized value)? settingsInitialized,
     TResult Function(SettingsFetched value)? settingsFetched,
+    TResult Function(SettingsInitialized value)? settingsInitialized,
     TResult Function(SettingsNotFound value)? settingsNotFound,
     TResult Function(UserLoaded value)? userLoaded,
     required TResult orElse(),
@@ -312,7 +396,8 @@ class _$Authenticated with DiagnosticableTreeMixin implements Authenticated {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is Authenticated);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is Authenticated);
   }
 
   @override
@@ -326,14 +411,34 @@ class _$Authenticated with DiagnosticableTreeMixin implements Authenticated {
     required TResult Function() defaultCoverURLsCached,
     required TResult Function(Map<String, String> defaultCoverURLs)
         defaultCoverURLsLoaded,
+    required TResult Function() onboardingDonePressed,
     required TResult Function(User session) sessionFetched,
     required TResult Function() sessionNotFound,
-    required TResult Function() settingsInitialized,
     required TResult Function() settingsFetched,
+    required TResult Function() settingsInitialized,
     required TResult Function() settingsNotFound,
     required TResult Function(User user) userLoaded,
   }) {
     return authenticated();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? appLaunched,
+    TResult Function()? authenticated,
+    TResult Function()? defaultCoverURLsCached,
+    TResult Function(Map<String, String> defaultCoverURLs)?
+        defaultCoverURLsLoaded,
+    TResult Function()? onboardingDonePressed,
+    TResult Function(User session)? sessionFetched,
+    TResult Function()? sessionNotFound,
+    TResult Function()? settingsFetched,
+    TResult Function()? settingsInitialized,
+    TResult Function()? settingsNotFound,
+    TResult Function(User user)? userLoaded,
+  }) {
+    return authenticated?.call();
   }
 
   @override
@@ -344,10 +449,11 @@ class _$Authenticated with DiagnosticableTreeMixin implements Authenticated {
     TResult Function()? defaultCoverURLsCached,
     TResult Function(Map<String, String> defaultCoverURLs)?
         defaultCoverURLsLoaded,
+    TResult Function()? onboardingDonePressed,
     TResult Function(User session)? sessionFetched,
     TResult Function()? sessionNotFound,
-    TResult Function()? settingsInitialized,
     TResult Function()? settingsFetched,
+    TResult Function()? settingsInitialized,
     TResult Function()? settingsNotFound,
     TResult Function(User user)? userLoaded,
     required TResult orElse(),
@@ -367,14 +473,34 @@ class _$Authenticated with DiagnosticableTreeMixin implements Authenticated {
         defaultCoverURLsCached,
     required TResult Function(DefaultCoverURLsLoaded value)
         defaultCoverURLsLoaded,
+    required TResult Function(OnboardingDonePressed value)
+        onboardingDonePressed,
     required TResult Function(SessionFetched value) sessionFetched,
     required TResult Function(SessionNotFound value) sessionNotFound,
-    required TResult Function(SettingsInitialized value) settingsInitialized,
     required TResult Function(SettingsFetched value) settingsFetched,
+    required TResult Function(SettingsInitialized value) settingsInitialized,
     required TResult Function(SettingsNotFound value) settingsNotFound,
     required TResult Function(UserLoaded value) userLoaded,
   }) {
     return authenticated(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(AppLaunched value)? appLaunched,
+    TResult Function(Authenticated value)? authenticated,
+    TResult Function(DefaultCoverURLsCached value)? defaultCoverURLsCached,
+    TResult Function(DefaultCoverURLsLoaded value)? defaultCoverURLsLoaded,
+    TResult Function(OnboardingDonePressed value)? onboardingDonePressed,
+    TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(SessionNotFound value)? sessionNotFound,
+    TResult Function(SettingsFetched value)? settingsFetched,
+    TResult Function(SettingsInitialized value)? settingsInitialized,
+    TResult Function(SettingsNotFound value)? settingsNotFound,
+    TResult Function(UserLoaded value)? userLoaded,
+  }) {
+    return authenticated?.call(this);
   }
 
   @override
@@ -384,10 +510,11 @@ class _$Authenticated with DiagnosticableTreeMixin implements Authenticated {
     TResult Function(Authenticated value)? authenticated,
     TResult Function(DefaultCoverURLsCached value)? defaultCoverURLsCached,
     TResult Function(DefaultCoverURLsLoaded value)? defaultCoverURLsLoaded,
+    TResult Function(OnboardingDonePressed value)? onboardingDonePressed,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SessionNotFound value)? sessionNotFound,
-    TResult Function(SettingsInitialized value)? settingsInitialized,
     TResult Function(SettingsFetched value)? settingsFetched,
+    TResult Function(SettingsInitialized value)? settingsInitialized,
     TResult Function(SettingsNotFound value)? settingsNotFound,
     TResult Function(UserLoaded value)? userLoaded,
     required TResult orElse(),
@@ -443,7 +570,8 @@ class _$DefaultCoverURLsCached
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is DefaultCoverURLsCached);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is DefaultCoverURLsCached);
   }
 
   @override
@@ -457,14 +585,34 @@ class _$DefaultCoverURLsCached
     required TResult Function() defaultCoverURLsCached,
     required TResult Function(Map<String, String> defaultCoverURLs)
         defaultCoverURLsLoaded,
+    required TResult Function() onboardingDonePressed,
     required TResult Function(User session) sessionFetched,
     required TResult Function() sessionNotFound,
-    required TResult Function() settingsInitialized,
     required TResult Function() settingsFetched,
+    required TResult Function() settingsInitialized,
     required TResult Function() settingsNotFound,
     required TResult Function(User user) userLoaded,
   }) {
     return defaultCoverURLsCached();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? appLaunched,
+    TResult Function()? authenticated,
+    TResult Function()? defaultCoverURLsCached,
+    TResult Function(Map<String, String> defaultCoverURLs)?
+        defaultCoverURLsLoaded,
+    TResult Function()? onboardingDonePressed,
+    TResult Function(User session)? sessionFetched,
+    TResult Function()? sessionNotFound,
+    TResult Function()? settingsFetched,
+    TResult Function()? settingsInitialized,
+    TResult Function()? settingsNotFound,
+    TResult Function(User user)? userLoaded,
+  }) {
+    return defaultCoverURLsCached?.call();
   }
 
   @override
@@ -475,10 +623,11 @@ class _$DefaultCoverURLsCached
     TResult Function()? defaultCoverURLsCached,
     TResult Function(Map<String, String> defaultCoverURLs)?
         defaultCoverURLsLoaded,
+    TResult Function()? onboardingDonePressed,
     TResult Function(User session)? sessionFetched,
     TResult Function()? sessionNotFound,
-    TResult Function()? settingsInitialized,
     TResult Function()? settingsFetched,
+    TResult Function()? settingsInitialized,
     TResult Function()? settingsNotFound,
     TResult Function(User user)? userLoaded,
     required TResult orElse(),
@@ -498,14 +647,34 @@ class _$DefaultCoverURLsCached
         defaultCoverURLsCached,
     required TResult Function(DefaultCoverURLsLoaded value)
         defaultCoverURLsLoaded,
+    required TResult Function(OnboardingDonePressed value)
+        onboardingDonePressed,
     required TResult Function(SessionFetched value) sessionFetched,
     required TResult Function(SessionNotFound value) sessionNotFound,
-    required TResult Function(SettingsInitialized value) settingsInitialized,
     required TResult Function(SettingsFetched value) settingsFetched,
+    required TResult Function(SettingsInitialized value) settingsInitialized,
     required TResult Function(SettingsNotFound value) settingsNotFound,
     required TResult Function(UserLoaded value) userLoaded,
   }) {
     return defaultCoverURLsCached(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(AppLaunched value)? appLaunched,
+    TResult Function(Authenticated value)? authenticated,
+    TResult Function(DefaultCoverURLsCached value)? defaultCoverURLsCached,
+    TResult Function(DefaultCoverURLsLoaded value)? defaultCoverURLsLoaded,
+    TResult Function(OnboardingDonePressed value)? onboardingDonePressed,
+    TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(SessionNotFound value)? sessionNotFound,
+    TResult Function(SettingsFetched value)? settingsFetched,
+    TResult Function(SettingsInitialized value)? settingsInitialized,
+    TResult Function(SettingsNotFound value)? settingsNotFound,
+    TResult Function(UserLoaded value)? userLoaded,
+  }) {
+    return defaultCoverURLsCached?.call(this);
   }
 
   @override
@@ -515,10 +684,11 @@ class _$DefaultCoverURLsCached
     TResult Function(Authenticated value)? authenticated,
     TResult Function(DefaultCoverURLsCached value)? defaultCoverURLsCached,
     TResult Function(DefaultCoverURLsLoaded value)? defaultCoverURLsLoaded,
+    TResult Function(OnboardingDonePressed value)? onboardingDonePressed,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SessionNotFound value)? sessionNotFound,
-    TResult Function(SettingsInitialized value)? settingsInitialized,
     TResult Function(SettingsFetched value)? settingsFetched,
+    TResult Function(SettingsInitialized value)? settingsInitialized,
     TResult Function(SettingsNotFound value)? settingsNotFound,
     TResult Function(UserLoaded value)? userLoaded,
     required TResult orElse(),
@@ -592,16 +762,15 @@ class _$DefaultCoverURLsLoaded
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is DefaultCoverURLsLoaded &&
-            (identical(other.defaultCoverURLs, defaultCoverURLs) ||
-                const DeepCollectionEquality()
-                    .equals(other.defaultCoverURLs, defaultCoverURLs)));
+        (other.runtimeType == runtimeType &&
+            other is DefaultCoverURLsLoaded &&
+            const DeepCollectionEquality()
+                .equals(other.defaultCoverURLs, defaultCoverURLs));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(defaultCoverURLs);
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(defaultCoverURLs));
 
   @JsonKey(ignore: true)
   @override
@@ -617,14 +786,34 @@ class _$DefaultCoverURLsLoaded
     required TResult Function() defaultCoverURLsCached,
     required TResult Function(Map<String, String> defaultCoverURLs)
         defaultCoverURLsLoaded,
+    required TResult Function() onboardingDonePressed,
     required TResult Function(User session) sessionFetched,
     required TResult Function() sessionNotFound,
-    required TResult Function() settingsInitialized,
     required TResult Function() settingsFetched,
+    required TResult Function() settingsInitialized,
     required TResult Function() settingsNotFound,
     required TResult Function(User user) userLoaded,
   }) {
     return defaultCoverURLsLoaded(defaultCoverURLs);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? appLaunched,
+    TResult Function()? authenticated,
+    TResult Function()? defaultCoverURLsCached,
+    TResult Function(Map<String, String> defaultCoverURLs)?
+        defaultCoverURLsLoaded,
+    TResult Function()? onboardingDonePressed,
+    TResult Function(User session)? sessionFetched,
+    TResult Function()? sessionNotFound,
+    TResult Function()? settingsFetched,
+    TResult Function()? settingsInitialized,
+    TResult Function()? settingsNotFound,
+    TResult Function(User user)? userLoaded,
+  }) {
+    return defaultCoverURLsLoaded?.call(defaultCoverURLs);
   }
 
   @override
@@ -635,10 +824,11 @@ class _$DefaultCoverURLsLoaded
     TResult Function()? defaultCoverURLsCached,
     TResult Function(Map<String, String> defaultCoverURLs)?
         defaultCoverURLsLoaded,
+    TResult Function()? onboardingDonePressed,
     TResult Function(User session)? sessionFetched,
     TResult Function()? sessionNotFound,
-    TResult Function()? settingsInitialized,
     TResult Function()? settingsFetched,
+    TResult Function()? settingsInitialized,
     TResult Function()? settingsNotFound,
     TResult Function(User user)? userLoaded,
     required TResult orElse(),
@@ -658,14 +848,34 @@ class _$DefaultCoverURLsLoaded
         defaultCoverURLsCached,
     required TResult Function(DefaultCoverURLsLoaded value)
         defaultCoverURLsLoaded,
+    required TResult Function(OnboardingDonePressed value)
+        onboardingDonePressed,
     required TResult Function(SessionFetched value) sessionFetched,
     required TResult Function(SessionNotFound value) sessionNotFound,
-    required TResult Function(SettingsInitialized value) settingsInitialized,
     required TResult Function(SettingsFetched value) settingsFetched,
+    required TResult Function(SettingsInitialized value) settingsInitialized,
     required TResult Function(SettingsNotFound value) settingsNotFound,
     required TResult Function(UserLoaded value) userLoaded,
   }) {
     return defaultCoverURLsLoaded(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(AppLaunched value)? appLaunched,
+    TResult Function(Authenticated value)? authenticated,
+    TResult Function(DefaultCoverURLsCached value)? defaultCoverURLsCached,
+    TResult Function(DefaultCoverURLsLoaded value)? defaultCoverURLsLoaded,
+    TResult Function(OnboardingDonePressed value)? onboardingDonePressed,
+    TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(SessionNotFound value)? sessionNotFound,
+    TResult Function(SettingsFetched value)? settingsFetched,
+    TResult Function(SettingsInitialized value)? settingsInitialized,
+    TResult Function(SettingsNotFound value)? settingsNotFound,
+    TResult Function(UserLoaded value)? userLoaded,
+  }) {
+    return defaultCoverURLsLoaded?.call(this);
   }
 
   @override
@@ -675,10 +885,11 @@ class _$DefaultCoverURLsLoaded
     TResult Function(Authenticated value)? authenticated,
     TResult Function(DefaultCoverURLsCached value)? defaultCoverURLsCached,
     TResult Function(DefaultCoverURLsLoaded value)? defaultCoverURLsLoaded,
+    TResult Function(OnboardingDonePressed value)? onboardingDonePressed,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SessionNotFound value)? sessionNotFound,
-    TResult Function(SettingsInitialized value)? settingsInitialized,
     TResult Function(SettingsFetched value)? settingsFetched,
+    TResult Function(SettingsInitialized value)? settingsInitialized,
     TResult Function(SettingsNotFound value)? settingsNotFound,
     TResult Function(UserLoaded value)? userLoaded,
     required TResult orElse(),
@@ -694,11 +905,184 @@ abstract class DefaultCoverURLsLoaded implements SetupEvent {
   const factory DefaultCoverURLsLoaded(Map<String, String> defaultCoverURLs) =
       _$DefaultCoverURLsLoaded;
 
-  Map<String, String> get defaultCoverURLs =>
-      throw _privateConstructorUsedError;
+  Map<String, String> get defaultCoverURLs;
   @JsonKey(ignore: true)
   $DefaultCoverURLsLoadedCopyWith<DefaultCoverURLsLoaded> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $OnboardingDonePressedCopyWith<$Res> {
+  factory $OnboardingDonePressedCopyWith(OnboardingDonePressed value,
+          $Res Function(OnboardingDonePressed) then) =
+      _$OnboardingDonePressedCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$OnboardingDonePressedCopyWithImpl<$Res>
+    extends _$SetupEventCopyWithImpl<$Res>
+    implements $OnboardingDonePressedCopyWith<$Res> {
+  _$OnboardingDonePressedCopyWithImpl(
+      OnboardingDonePressed _value, $Res Function(OnboardingDonePressed) _then)
+      : super(_value, (v) => _then(v as OnboardingDonePressed));
+
+  @override
+  OnboardingDonePressed get _value => super._value as OnboardingDonePressed;
+}
+
+/// @nodoc
+
+class _$OnboardingDonePressed
+    with DiagnosticableTreeMixin
+    implements OnboardingDonePressed {
+  const _$OnboardingDonePressed();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'SetupEvent.onboardingDonePressed()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties
+      ..add(DiagnosticsProperty('type', 'SetupEvent.onboardingDonePressed'));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is OnboardingDonePressed);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() appLaunched,
+    required TResult Function() authenticated,
+    required TResult Function() defaultCoverURLsCached,
+    required TResult Function(Map<String, String> defaultCoverURLs)
+        defaultCoverURLsLoaded,
+    required TResult Function() onboardingDonePressed,
+    required TResult Function(User session) sessionFetched,
+    required TResult Function() sessionNotFound,
+    required TResult Function() settingsFetched,
+    required TResult Function() settingsInitialized,
+    required TResult Function() settingsNotFound,
+    required TResult Function(User user) userLoaded,
+  }) {
+    return onboardingDonePressed();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? appLaunched,
+    TResult Function()? authenticated,
+    TResult Function()? defaultCoverURLsCached,
+    TResult Function(Map<String, String> defaultCoverURLs)?
+        defaultCoverURLsLoaded,
+    TResult Function()? onboardingDonePressed,
+    TResult Function(User session)? sessionFetched,
+    TResult Function()? sessionNotFound,
+    TResult Function()? settingsFetched,
+    TResult Function()? settingsInitialized,
+    TResult Function()? settingsNotFound,
+    TResult Function(User user)? userLoaded,
+  }) {
+    return onboardingDonePressed?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? appLaunched,
+    TResult Function()? authenticated,
+    TResult Function()? defaultCoverURLsCached,
+    TResult Function(Map<String, String> defaultCoverURLs)?
+        defaultCoverURLsLoaded,
+    TResult Function()? onboardingDonePressed,
+    TResult Function(User session)? sessionFetched,
+    TResult Function()? sessionNotFound,
+    TResult Function()? settingsFetched,
+    TResult Function()? settingsInitialized,
+    TResult Function()? settingsNotFound,
+    TResult Function(User user)? userLoaded,
+    required TResult orElse(),
+  }) {
+    if (onboardingDonePressed != null) {
+      return onboardingDonePressed();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(AppLaunched value) appLaunched,
+    required TResult Function(Authenticated value) authenticated,
+    required TResult Function(DefaultCoverURLsCached value)
+        defaultCoverURLsCached,
+    required TResult Function(DefaultCoverURLsLoaded value)
+        defaultCoverURLsLoaded,
+    required TResult Function(OnboardingDonePressed value)
+        onboardingDonePressed,
+    required TResult Function(SessionFetched value) sessionFetched,
+    required TResult Function(SessionNotFound value) sessionNotFound,
+    required TResult Function(SettingsFetched value) settingsFetched,
+    required TResult Function(SettingsInitialized value) settingsInitialized,
+    required TResult Function(SettingsNotFound value) settingsNotFound,
+    required TResult Function(UserLoaded value) userLoaded,
+  }) {
+    return onboardingDonePressed(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(AppLaunched value)? appLaunched,
+    TResult Function(Authenticated value)? authenticated,
+    TResult Function(DefaultCoverURLsCached value)? defaultCoverURLsCached,
+    TResult Function(DefaultCoverURLsLoaded value)? defaultCoverURLsLoaded,
+    TResult Function(OnboardingDonePressed value)? onboardingDonePressed,
+    TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(SessionNotFound value)? sessionNotFound,
+    TResult Function(SettingsFetched value)? settingsFetched,
+    TResult Function(SettingsInitialized value)? settingsInitialized,
+    TResult Function(SettingsNotFound value)? settingsNotFound,
+    TResult Function(UserLoaded value)? userLoaded,
+  }) {
+    return onboardingDonePressed?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(AppLaunched value)? appLaunched,
+    TResult Function(Authenticated value)? authenticated,
+    TResult Function(DefaultCoverURLsCached value)? defaultCoverURLsCached,
+    TResult Function(DefaultCoverURLsLoaded value)? defaultCoverURLsLoaded,
+    TResult Function(OnboardingDonePressed value)? onboardingDonePressed,
+    TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(SessionNotFound value)? sessionNotFound,
+    TResult Function(SettingsFetched value)? settingsFetched,
+    TResult Function(SettingsInitialized value)? settingsInitialized,
+    TResult Function(SettingsNotFound value)? settingsNotFound,
+    TResult Function(UserLoaded value)? userLoaded,
+    required TResult orElse(),
+  }) {
+    if (onboardingDonePressed != null) {
+      return onboardingDonePressed(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class OnboardingDonePressed implements SetupEvent {
+  const factory OnboardingDonePressed() = _$OnboardingDonePressed;
 }
 
 /// @nodoc
@@ -765,14 +1149,14 @@ class _$SessionFetched with DiagnosticableTreeMixin implements SessionFetched {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is SessionFetched &&
-            (identical(other.session, session) ||
-                const DeepCollectionEquality().equals(other.session, session)));
+        (other.runtimeType == runtimeType &&
+            other is SessionFetched &&
+            const DeepCollectionEquality().equals(other.session, session));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(session);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(session));
 
   @JsonKey(ignore: true)
   @override
@@ -787,14 +1171,34 @@ class _$SessionFetched with DiagnosticableTreeMixin implements SessionFetched {
     required TResult Function() defaultCoverURLsCached,
     required TResult Function(Map<String, String> defaultCoverURLs)
         defaultCoverURLsLoaded,
+    required TResult Function() onboardingDonePressed,
     required TResult Function(User session) sessionFetched,
     required TResult Function() sessionNotFound,
-    required TResult Function() settingsInitialized,
     required TResult Function() settingsFetched,
+    required TResult Function() settingsInitialized,
     required TResult Function() settingsNotFound,
     required TResult Function(User user) userLoaded,
   }) {
     return sessionFetched(session);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? appLaunched,
+    TResult Function()? authenticated,
+    TResult Function()? defaultCoverURLsCached,
+    TResult Function(Map<String, String> defaultCoverURLs)?
+        defaultCoverURLsLoaded,
+    TResult Function()? onboardingDonePressed,
+    TResult Function(User session)? sessionFetched,
+    TResult Function()? sessionNotFound,
+    TResult Function()? settingsFetched,
+    TResult Function()? settingsInitialized,
+    TResult Function()? settingsNotFound,
+    TResult Function(User user)? userLoaded,
+  }) {
+    return sessionFetched?.call(session);
   }
 
   @override
@@ -805,10 +1209,11 @@ class _$SessionFetched with DiagnosticableTreeMixin implements SessionFetched {
     TResult Function()? defaultCoverURLsCached,
     TResult Function(Map<String, String> defaultCoverURLs)?
         defaultCoverURLsLoaded,
+    TResult Function()? onboardingDonePressed,
     TResult Function(User session)? sessionFetched,
     TResult Function()? sessionNotFound,
-    TResult Function()? settingsInitialized,
     TResult Function()? settingsFetched,
+    TResult Function()? settingsInitialized,
     TResult Function()? settingsNotFound,
     TResult Function(User user)? userLoaded,
     required TResult orElse(),
@@ -828,14 +1233,34 @@ class _$SessionFetched with DiagnosticableTreeMixin implements SessionFetched {
         defaultCoverURLsCached,
     required TResult Function(DefaultCoverURLsLoaded value)
         defaultCoverURLsLoaded,
+    required TResult Function(OnboardingDonePressed value)
+        onboardingDonePressed,
     required TResult Function(SessionFetched value) sessionFetched,
     required TResult Function(SessionNotFound value) sessionNotFound,
-    required TResult Function(SettingsInitialized value) settingsInitialized,
     required TResult Function(SettingsFetched value) settingsFetched,
+    required TResult Function(SettingsInitialized value) settingsInitialized,
     required TResult Function(SettingsNotFound value) settingsNotFound,
     required TResult Function(UserLoaded value) userLoaded,
   }) {
     return sessionFetched(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(AppLaunched value)? appLaunched,
+    TResult Function(Authenticated value)? authenticated,
+    TResult Function(DefaultCoverURLsCached value)? defaultCoverURLsCached,
+    TResult Function(DefaultCoverURLsLoaded value)? defaultCoverURLsLoaded,
+    TResult Function(OnboardingDonePressed value)? onboardingDonePressed,
+    TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(SessionNotFound value)? sessionNotFound,
+    TResult Function(SettingsFetched value)? settingsFetched,
+    TResult Function(SettingsInitialized value)? settingsInitialized,
+    TResult Function(SettingsNotFound value)? settingsNotFound,
+    TResult Function(UserLoaded value)? userLoaded,
+  }) {
+    return sessionFetched?.call(this);
   }
 
   @override
@@ -845,10 +1270,11 @@ class _$SessionFetched with DiagnosticableTreeMixin implements SessionFetched {
     TResult Function(Authenticated value)? authenticated,
     TResult Function(DefaultCoverURLsCached value)? defaultCoverURLsCached,
     TResult Function(DefaultCoverURLsLoaded value)? defaultCoverURLsLoaded,
+    TResult Function(OnboardingDonePressed value)? onboardingDonePressed,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SessionNotFound value)? sessionNotFound,
-    TResult Function(SettingsInitialized value)? settingsInitialized,
     TResult Function(SettingsFetched value)? settingsFetched,
+    TResult Function(SettingsInitialized value)? settingsInitialized,
     TResult Function(SettingsNotFound value)? settingsNotFound,
     TResult Function(UserLoaded value)? userLoaded,
     required TResult orElse(),
@@ -863,7 +1289,7 @@ class _$SessionFetched with DiagnosticableTreeMixin implements SessionFetched {
 abstract class SessionFetched implements SetupEvent {
   const factory SessionFetched(User session) = _$SessionFetched;
 
-  User get session => throw _privateConstructorUsedError;
+  User get session;
   @JsonKey(ignore: true)
   $SessionFetchedCopyWith<SessionFetched> get copyWith =>
       throw _privateConstructorUsedError;
@@ -907,7 +1333,8 @@ class _$SessionNotFound
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is SessionNotFound);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is SessionNotFound);
   }
 
   @override
@@ -921,14 +1348,34 @@ class _$SessionNotFound
     required TResult Function() defaultCoverURLsCached,
     required TResult Function(Map<String, String> defaultCoverURLs)
         defaultCoverURLsLoaded,
+    required TResult Function() onboardingDonePressed,
     required TResult Function(User session) sessionFetched,
     required TResult Function() sessionNotFound,
-    required TResult Function() settingsInitialized,
     required TResult Function() settingsFetched,
+    required TResult Function() settingsInitialized,
     required TResult Function() settingsNotFound,
     required TResult Function(User user) userLoaded,
   }) {
     return sessionNotFound();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? appLaunched,
+    TResult Function()? authenticated,
+    TResult Function()? defaultCoverURLsCached,
+    TResult Function(Map<String, String> defaultCoverURLs)?
+        defaultCoverURLsLoaded,
+    TResult Function()? onboardingDonePressed,
+    TResult Function(User session)? sessionFetched,
+    TResult Function()? sessionNotFound,
+    TResult Function()? settingsFetched,
+    TResult Function()? settingsInitialized,
+    TResult Function()? settingsNotFound,
+    TResult Function(User user)? userLoaded,
+  }) {
+    return sessionNotFound?.call();
   }
 
   @override
@@ -939,10 +1386,11 @@ class _$SessionNotFound
     TResult Function()? defaultCoverURLsCached,
     TResult Function(Map<String, String> defaultCoverURLs)?
         defaultCoverURLsLoaded,
+    TResult Function()? onboardingDonePressed,
     TResult Function(User session)? sessionFetched,
     TResult Function()? sessionNotFound,
-    TResult Function()? settingsInitialized,
     TResult Function()? settingsFetched,
+    TResult Function()? settingsInitialized,
     TResult Function()? settingsNotFound,
     TResult Function(User user)? userLoaded,
     required TResult orElse(),
@@ -962,14 +1410,34 @@ class _$SessionNotFound
         defaultCoverURLsCached,
     required TResult Function(DefaultCoverURLsLoaded value)
         defaultCoverURLsLoaded,
+    required TResult Function(OnboardingDonePressed value)
+        onboardingDonePressed,
     required TResult Function(SessionFetched value) sessionFetched,
     required TResult Function(SessionNotFound value) sessionNotFound,
-    required TResult Function(SettingsInitialized value) settingsInitialized,
     required TResult Function(SettingsFetched value) settingsFetched,
+    required TResult Function(SettingsInitialized value) settingsInitialized,
     required TResult Function(SettingsNotFound value) settingsNotFound,
     required TResult Function(UserLoaded value) userLoaded,
   }) {
     return sessionNotFound(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(AppLaunched value)? appLaunched,
+    TResult Function(Authenticated value)? authenticated,
+    TResult Function(DefaultCoverURLsCached value)? defaultCoverURLsCached,
+    TResult Function(DefaultCoverURLsLoaded value)? defaultCoverURLsLoaded,
+    TResult Function(OnboardingDonePressed value)? onboardingDonePressed,
+    TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(SessionNotFound value)? sessionNotFound,
+    TResult Function(SettingsFetched value)? settingsFetched,
+    TResult Function(SettingsInitialized value)? settingsInitialized,
+    TResult Function(SettingsNotFound value)? settingsNotFound,
+    TResult Function(UserLoaded value)? userLoaded,
+  }) {
+    return sessionNotFound?.call(this);
   }
 
   @override
@@ -979,10 +1447,11 @@ class _$SessionNotFound
     TResult Function(Authenticated value)? authenticated,
     TResult Function(DefaultCoverURLsCached value)? defaultCoverURLsCached,
     TResult Function(DefaultCoverURLsLoaded value)? defaultCoverURLsLoaded,
+    TResult Function(OnboardingDonePressed value)? onboardingDonePressed,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SessionNotFound value)? sessionNotFound,
-    TResult Function(SettingsInitialized value)? settingsInitialized,
     TResult Function(SettingsFetched value)? settingsFetched,
+    TResult Function(SettingsInitialized value)? settingsInitialized,
     TResult Function(SettingsNotFound value)? settingsNotFound,
     TResult Function(UserLoaded value)? userLoaded,
     required TResult orElse(),
@@ -996,6 +1465,178 @@ class _$SessionNotFound
 
 abstract class SessionNotFound implements SetupEvent {
   const factory SessionNotFound() = _$SessionNotFound;
+}
+
+/// @nodoc
+abstract class $SettingsFetchedCopyWith<$Res> {
+  factory $SettingsFetchedCopyWith(
+          SettingsFetched value, $Res Function(SettingsFetched) then) =
+      _$SettingsFetchedCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$SettingsFetchedCopyWithImpl<$Res> extends _$SetupEventCopyWithImpl<$Res>
+    implements $SettingsFetchedCopyWith<$Res> {
+  _$SettingsFetchedCopyWithImpl(
+      SettingsFetched _value, $Res Function(SettingsFetched) _then)
+      : super(_value, (v) => _then(v as SettingsFetched));
+
+  @override
+  SettingsFetched get _value => super._value as SettingsFetched;
+}
+
+/// @nodoc
+
+class _$SettingsFetched
+    with DiagnosticableTreeMixin
+    implements SettingsFetched {
+  const _$SettingsFetched();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'SetupEvent.settingsFetched()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties..add(DiagnosticsProperty('type', 'SetupEvent.settingsFetched'));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is SettingsFetched);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() appLaunched,
+    required TResult Function() authenticated,
+    required TResult Function() defaultCoverURLsCached,
+    required TResult Function(Map<String, String> defaultCoverURLs)
+        defaultCoverURLsLoaded,
+    required TResult Function() onboardingDonePressed,
+    required TResult Function(User session) sessionFetched,
+    required TResult Function() sessionNotFound,
+    required TResult Function() settingsFetched,
+    required TResult Function() settingsInitialized,
+    required TResult Function() settingsNotFound,
+    required TResult Function(User user) userLoaded,
+  }) {
+    return settingsFetched();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? appLaunched,
+    TResult Function()? authenticated,
+    TResult Function()? defaultCoverURLsCached,
+    TResult Function(Map<String, String> defaultCoverURLs)?
+        defaultCoverURLsLoaded,
+    TResult Function()? onboardingDonePressed,
+    TResult Function(User session)? sessionFetched,
+    TResult Function()? sessionNotFound,
+    TResult Function()? settingsFetched,
+    TResult Function()? settingsInitialized,
+    TResult Function()? settingsNotFound,
+    TResult Function(User user)? userLoaded,
+  }) {
+    return settingsFetched?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? appLaunched,
+    TResult Function()? authenticated,
+    TResult Function()? defaultCoverURLsCached,
+    TResult Function(Map<String, String> defaultCoverURLs)?
+        defaultCoverURLsLoaded,
+    TResult Function()? onboardingDonePressed,
+    TResult Function(User session)? sessionFetched,
+    TResult Function()? sessionNotFound,
+    TResult Function()? settingsFetched,
+    TResult Function()? settingsInitialized,
+    TResult Function()? settingsNotFound,
+    TResult Function(User user)? userLoaded,
+    required TResult orElse(),
+  }) {
+    if (settingsFetched != null) {
+      return settingsFetched();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(AppLaunched value) appLaunched,
+    required TResult Function(Authenticated value) authenticated,
+    required TResult Function(DefaultCoverURLsCached value)
+        defaultCoverURLsCached,
+    required TResult Function(DefaultCoverURLsLoaded value)
+        defaultCoverURLsLoaded,
+    required TResult Function(OnboardingDonePressed value)
+        onboardingDonePressed,
+    required TResult Function(SessionFetched value) sessionFetched,
+    required TResult Function(SessionNotFound value) sessionNotFound,
+    required TResult Function(SettingsFetched value) settingsFetched,
+    required TResult Function(SettingsInitialized value) settingsInitialized,
+    required TResult Function(SettingsNotFound value) settingsNotFound,
+    required TResult Function(UserLoaded value) userLoaded,
+  }) {
+    return settingsFetched(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(AppLaunched value)? appLaunched,
+    TResult Function(Authenticated value)? authenticated,
+    TResult Function(DefaultCoverURLsCached value)? defaultCoverURLsCached,
+    TResult Function(DefaultCoverURLsLoaded value)? defaultCoverURLsLoaded,
+    TResult Function(OnboardingDonePressed value)? onboardingDonePressed,
+    TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(SessionNotFound value)? sessionNotFound,
+    TResult Function(SettingsFetched value)? settingsFetched,
+    TResult Function(SettingsInitialized value)? settingsInitialized,
+    TResult Function(SettingsNotFound value)? settingsNotFound,
+    TResult Function(UserLoaded value)? userLoaded,
+  }) {
+    return settingsFetched?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(AppLaunched value)? appLaunched,
+    TResult Function(Authenticated value)? authenticated,
+    TResult Function(DefaultCoverURLsCached value)? defaultCoverURLsCached,
+    TResult Function(DefaultCoverURLsLoaded value)? defaultCoverURLsLoaded,
+    TResult Function(OnboardingDonePressed value)? onboardingDonePressed,
+    TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(SessionNotFound value)? sessionNotFound,
+    TResult Function(SettingsFetched value)? settingsFetched,
+    TResult Function(SettingsInitialized value)? settingsInitialized,
+    TResult Function(SettingsNotFound value)? settingsNotFound,
+    TResult Function(UserLoaded value)? userLoaded,
+    required TResult orElse(),
+  }) {
+    if (settingsFetched != null) {
+      return settingsFetched(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SettingsFetched implements SetupEvent {
+  const factory SettingsFetched() = _$SettingsFetched;
 }
 
 /// @nodoc
@@ -1038,7 +1679,8 @@ class _$SettingsInitialized
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is SettingsInitialized);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is SettingsInitialized);
   }
 
   @override
@@ -1052,14 +1694,34 @@ class _$SettingsInitialized
     required TResult Function() defaultCoverURLsCached,
     required TResult Function(Map<String, String> defaultCoverURLs)
         defaultCoverURLsLoaded,
+    required TResult Function() onboardingDonePressed,
     required TResult Function(User session) sessionFetched,
     required TResult Function() sessionNotFound,
-    required TResult Function() settingsInitialized,
     required TResult Function() settingsFetched,
+    required TResult Function() settingsInitialized,
     required TResult Function() settingsNotFound,
     required TResult Function(User user) userLoaded,
   }) {
     return settingsInitialized();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? appLaunched,
+    TResult Function()? authenticated,
+    TResult Function()? defaultCoverURLsCached,
+    TResult Function(Map<String, String> defaultCoverURLs)?
+        defaultCoverURLsLoaded,
+    TResult Function()? onboardingDonePressed,
+    TResult Function(User session)? sessionFetched,
+    TResult Function()? sessionNotFound,
+    TResult Function()? settingsFetched,
+    TResult Function()? settingsInitialized,
+    TResult Function()? settingsNotFound,
+    TResult Function(User user)? userLoaded,
+  }) {
+    return settingsInitialized?.call();
   }
 
   @override
@@ -1070,10 +1732,11 @@ class _$SettingsInitialized
     TResult Function()? defaultCoverURLsCached,
     TResult Function(Map<String, String> defaultCoverURLs)?
         defaultCoverURLsLoaded,
+    TResult Function()? onboardingDonePressed,
     TResult Function(User session)? sessionFetched,
     TResult Function()? sessionNotFound,
-    TResult Function()? settingsInitialized,
     TResult Function()? settingsFetched,
+    TResult Function()? settingsInitialized,
     TResult Function()? settingsNotFound,
     TResult Function(User user)? userLoaded,
     required TResult orElse(),
@@ -1093,14 +1756,34 @@ class _$SettingsInitialized
         defaultCoverURLsCached,
     required TResult Function(DefaultCoverURLsLoaded value)
         defaultCoverURLsLoaded,
+    required TResult Function(OnboardingDonePressed value)
+        onboardingDonePressed,
     required TResult Function(SessionFetched value) sessionFetched,
     required TResult Function(SessionNotFound value) sessionNotFound,
-    required TResult Function(SettingsInitialized value) settingsInitialized,
     required TResult Function(SettingsFetched value) settingsFetched,
+    required TResult Function(SettingsInitialized value) settingsInitialized,
     required TResult Function(SettingsNotFound value) settingsNotFound,
     required TResult Function(UserLoaded value) userLoaded,
   }) {
     return settingsInitialized(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(AppLaunched value)? appLaunched,
+    TResult Function(Authenticated value)? authenticated,
+    TResult Function(DefaultCoverURLsCached value)? defaultCoverURLsCached,
+    TResult Function(DefaultCoverURLsLoaded value)? defaultCoverURLsLoaded,
+    TResult Function(OnboardingDonePressed value)? onboardingDonePressed,
+    TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(SessionNotFound value)? sessionNotFound,
+    TResult Function(SettingsFetched value)? settingsFetched,
+    TResult Function(SettingsInitialized value)? settingsInitialized,
+    TResult Function(SettingsNotFound value)? settingsNotFound,
+    TResult Function(UserLoaded value)? userLoaded,
+  }) {
+    return settingsInitialized?.call(this);
   }
 
   @override
@@ -1110,10 +1793,11 @@ class _$SettingsInitialized
     TResult Function(Authenticated value)? authenticated,
     TResult Function(DefaultCoverURLsCached value)? defaultCoverURLsCached,
     TResult Function(DefaultCoverURLsLoaded value)? defaultCoverURLsLoaded,
+    TResult Function(OnboardingDonePressed value)? onboardingDonePressed,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SessionNotFound value)? sessionNotFound,
-    TResult Function(SettingsInitialized value)? settingsInitialized,
     TResult Function(SettingsFetched value)? settingsFetched,
+    TResult Function(SettingsInitialized value)? settingsInitialized,
     TResult Function(SettingsNotFound value)? settingsNotFound,
     TResult Function(UserLoaded value)? userLoaded,
     required TResult orElse(),
@@ -1127,135 +1811,6 @@ class _$SettingsInitialized
 
 abstract class SettingsInitialized implements SetupEvent {
   const factory SettingsInitialized() = _$SettingsInitialized;
-}
-
-/// @nodoc
-abstract class $SettingsFetchedCopyWith<$Res> {
-  factory $SettingsFetchedCopyWith(
-          SettingsFetched value, $Res Function(SettingsFetched) then) =
-      _$SettingsFetchedCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class _$SettingsFetchedCopyWithImpl<$Res> extends _$SetupEventCopyWithImpl<$Res>
-    implements $SettingsFetchedCopyWith<$Res> {
-  _$SettingsFetchedCopyWithImpl(
-      SettingsFetched _value, $Res Function(SettingsFetched) _then)
-      : super(_value, (v) => _then(v as SettingsFetched));
-
-  @override
-  SettingsFetched get _value => super._value as SettingsFetched;
-}
-
-/// @nodoc
-
-class _$SettingsFetched
-    with DiagnosticableTreeMixin
-    implements SettingsFetched {
-  const _$SettingsFetched();
-
-  @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'SetupEvent.settingsFetched()';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties..add(DiagnosticsProperty('type', 'SetupEvent.settingsFetched'));
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) || (other is SettingsFetched);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() appLaunched,
-    required TResult Function() authenticated,
-    required TResult Function() defaultCoverURLsCached,
-    required TResult Function(Map<String, String> defaultCoverURLs)
-        defaultCoverURLsLoaded,
-    required TResult Function(User session) sessionFetched,
-    required TResult Function() sessionNotFound,
-    required TResult Function() settingsInitialized,
-    required TResult Function() settingsFetched,
-    required TResult Function() settingsNotFound,
-    required TResult Function(User user) userLoaded,
-  }) {
-    return settingsFetched();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? appLaunched,
-    TResult Function()? authenticated,
-    TResult Function()? defaultCoverURLsCached,
-    TResult Function(Map<String, String> defaultCoverURLs)?
-        defaultCoverURLsLoaded,
-    TResult Function(User session)? sessionFetched,
-    TResult Function()? sessionNotFound,
-    TResult Function()? settingsInitialized,
-    TResult Function()? settingsFetched,
-    TResult Function()? settingsNotFound,
-    TResult Function(User user)? userLoaded,
-    required TResult orElse(),
-  }) {
-    if (settingsFetched != null) {
-      return settingsFetched();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(AppLaunched value) appLaunched,
-    required TResult Function(Authenticated value) authenticated,
-    required TResult Function(DefaultCoverURLsCached value)
-        defaultCoverURLsCached,
-    required TResult Function(DefaultCoverURLsLoaded value)
-        defaultCoverURLsLoaded,
-    required TResult Function(SessionFetched value) sessionFetched,
-    required TResult Function(SessionNotFound value) sessionNotFound,
-    required TResult Function(SettingsInitialized value) settingsInitialized,
-    required TResult Function(SettingsFetched value) settingsFetched,
-    required TResult Function(SettingsNotFound value) settingsNotFound,
-    required TResult Function(UserLoaded value) userLoaded,
-  }) {
-    return settingsFetched(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(AppLaunched value)? appLaunched,
-    TResult Function(Authenticated value)? authenticated,
-    TResult Function(DefaultCoverURLsCached value)? defaultCoverURLsCached,
-    TResult Function(DefaultCoverURLsLoaded value)? defaultCoverURLsLoaded,
-    TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(SessionNotFound value)? sessionNotFound,
-    TResult Function(SettingsInitialized value)? settingsInitialized,
-    TResult Function(SettingsFetched value)? settingsFetched,
-    TResult Function(SettingsNotFound value)? settingsNotFound,
-    TResult Function(UserLoaded value)? userLoaded,
-    required TResult orElse(),
-  }) {
-    if (settingsFetched != null) {
-      return settingsFetched(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class SettingsFetched implements SetupEvent {
-  const factory SettingsFetched() = _$SettingsFetched;
 }
 
 /// @nodoc
@@ -1297,7 +1852,8 @@ class _$SettingsNotFound
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is SettingsNotFound);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is SettingsNotFound);
   }
 
   @override
@@ -1311,14 +1867,34 @@ class _$SettingsNotFound
     required TResult Function() defaultCoverURLsCached,
     required TResult Function(Map<String, String> defaultCoverURLs)
         defaultCoverURLsLoaded,
+    required TResult Function() onboardingDonePressed,
     required TResult Function(User session) sessionFetched,
     required TResult Function() sessionNotFound,
-    required TResult Function() settingsInitialized,
     required TResult Function() settingsFetched,
+    required TResult Function() settingsInitialized,
     required TResult Function() settingsNotFound,
     required TResult Function(User user) userLoaded,
   }) {
     return settingsNotFound();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? appLaunched,
+    TResult Function()? authenticated,
+    TResult Function()? defaultCoverURLsCached,
+    TResult Function(Map<String, String> defaultCoverURLs)?
+        defaultCoverURLsLoaded,
+    TResult Function()? onboardingDonePressed,
+    TResult Function(User session)? sessionFetched,
+    TResult Function()? sessionNotFound,
+    TResult Function()? settingsFetched,
+    TResult Function()? settingsInitialized,
+    TResult Function()? settingsNotFound,
+    TResult Function(User user)? userLoaded,
+  }) {
+    return settingsNotFound?.call();
   }
 
   @override
@@ -1329,10 +1905,11 @@ class _$SettingsNotFound
     TResult Function()? defaultCoverURLsCached,
     TResult Function(Map<String, String> defaultCoverURLs)?
         defaultCoverURLsLoaded,
+    TResult Function()? onboardingDonePressed,
     TResult Function(User session)? sessionFetched,
     TResult Function()? sessionNotFound,
-    TResult Function()? settingsInitialized,
     TResult Function()? settingsFetched,
+    TResult Function()? settingsInitialized,
     TResult Function()? settingsNotFound,
     TResult Function(User user)? userLoaded,
     required TResult orElse(),
@@ -1352,14 +1929,34 @@ class _$SettingsNotFound
         defaultCoverURLsCached,
     required TResult Function(DefaultCoverURLsLoaded value)
         defaultCoverURLsLoaded,
+    required TResult Function(OnboardingDonePressed value)
+        onboardingDonePressed,
     required TResult Function(SessionFetched value) sessionFetched,
     required TResult Function(SessionNotFound value) sessionNotFound,
-    required TResult Function(SettingsInitialized value) settingsInitialized,
     required TResult Function(SettingsFetched value) settingsFetched,
+    required TResult Function(SettingsInitialized value) settingsInitialized,
     required TResult Function(SettingsNotFound value) settingsNotFound,
     required TResult Function(UserLoaded value) userLoaded,
   }) {
     return settingsNotFound(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(AppLaunched value)? appLaunched,
+    TResult Function(Authenticated value)? authenticated,
+    TResult Function(DefaultCoverURLsCached value)? defaultCoverURLsCached,
+    TResult Function(DefaultCoverURLsLoaded value)? defaultCoverURLsLoaded,
+    TResult Function(OnboardingDonePressed value)? onboardingDonePressed,
+    TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(SessionNotFound value)? sessionNotFound,
+    TResult Function(SettingsFetched value)? settingsFetched,
+    TResult Function(SettingsInitialized value)? settingsInitialized,
+    TResult Function(SettingsNotFound value)? settingsNotFound,
+    TResult Function(UserLoaded value)? userLoaded,
+  }) {
+    return settingsNotFound?.call(this);
   }
 
   @override
@@ -1369,10 +1966,11 @@ class _$SettingsNotFound
     TResult Function(Authenticated value)? authenticated,
     TResult Function(DefaultCoverURLsCached value)? defaultCoverURLsCached,
     TResult Function(DefaultCoverURLsLoaded value)? defaultCoverURLsLoaded,
+    TResult Function(OnboardingDonePressed value)? onboardingDonePressed,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SessionNotFound value)? sessionNotFound,
-    TResult Function(SettingsInitialized value)? settingsInitialized,
     TResult Function(SettingsFetched value)? settingsFetched,
+    TResult Function(SettingsInitialized value)? settingsInitialized,
     TResult Function(SettingsNotFound value)? settingsNotFound,
     TResult Function(UserLoaded value)? userLoaded,
     required TResult orElse(),
@@ -1451,14 +2049,14 @@ class _$UserLoaded with DiagnosticableTreeMixin implements UserLoaded {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is UserLoaded &&
-            (identical(other.user, user) ||
-                const DeepCollectionEquality().equals(other.user, user)));
+        (other.runtimeType == runtimeType &&
+            other is UserLoaded &&
+            const DeepCollectionEquality().equals(other.user, user));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(user);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(user));
 
   @JsonKey(ignore: true)
   @override
@@ -1473,14 +2071,34 @@ class _$UserLoaded with DiagnosticableTreeMixin implements UserLoaded {
     required TResult Function() defaultCoverURLsCached,
     required TResult Function(Map<String, String> defaultCoverURLs)
         defaultCoverURLsLoaded,
+    required TResult Function() onboardingDonePressed,
     required TResult Function(User session) sessionFetched,
     required TResult Function() sessionNotFound,
-    required TResult Function() settingsInitialized,
     required TResult Function() settingsFetched,
+    required TResult Function() settingsInitialized,
     required TResult Function() settingsNotFound,
     required TResult Function(User user) userLoaded,
   }) {
     return userLoaded(user);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? appLaunched,
+    TResult Function()? authenticated,
+    TResult Function()? defaultCoverURLsCached,
+    TResult Function(Map<String, String> defaultCoverURLs)?
+        defaultCoverURLsLoaded,
+    TResult Function()? onboardingDonePressed,
+    TResult Function(User session)? sessionFetched,
+    TResult Function()? sessionNotFound,
+    TResult Function()? settingsFetched,
+    TResult Function()? settingsInitialized,
+    TResult Function()? settingsNotFound,
+    TResult Function(User user)? userLoaded,
+  }) {
+    return userLoaded?.call(user);
   }
 
   @override
@@ -1491,10 +2109,11 @@ class _$UserLoaded with DiagnosticableTreeMixin implements UserLoaded {
     TResult Function()? defaultCoverURLsCached,
     TResult Function(Map<String, String> defaultCoverURLs)?
         defaultCoverURLsLoaded,
+    TResult Function()? onboardingDonePressed,
     TResult Function(User session)? sessionFetched,
     TResult Function()? sessionNotFound,
-    TResult Function()? settingsInitialized,
     TResult Function()? settingsFetched,
+    TResult Function()? settingsInitialized,
     TResult Function()? settingsNotFound,
     TResult Function(User user)? userLoaded,
     required TResult orElse(),
@@ -1514,14 +2133,34 @@ class _$UserLoaded with DiagnosticableTreeMixin implements UserLoaded {
         defaultCoverURLsCached,
     required TResult Function(DefaultCoverURLsLoaded value)
         defaultCoverURLsLoaded,
+    required TResult Function(OnboardingDonePressed value)
+        onboardingDonePressed,
     required TResult Function(SessionFetched value) sessionFetched,
     required TResult Function(SessionNotFound value) sessionNotFound,
-    required TResult Function(SettingsInitialized value) settingsInitialized,
     required TResult Function(SettingsFetched value) settingsFetched,
+    required TResult Function(SettingsInitialized value) settingsInitialized,
     required TResult Function(SettingsNotFound value) settingsNotFound,
     required TResult Function(UserLoaded value) userLoaded,
   }) {
     return userLoaded(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(AppLaunched value)? appLaunched,
+    TResult Function(Authenticated value)? authenticated,
+    TResult Function(DefaultCoverURLsCached value)? defaultCoverURLsCached,
+    TResult Function(DefaultCoverURLsLoaded value)? defaultCoverURLsLoaded,
+    TResult Function(OnboardingDonePressed value)? onboardingDonePressed,
+    TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(SessionNotFound value)? sessionNotFound,
+    TResult Function(SettingsFetched value)? settingsFetched,
+    TResult Function(SettingsInitialized value)? settingsInitialized,
+    TResult Function(SettingsNotFound value)? settingsNotFound,
+    TResult Function(UserLoaded value)? userLoaded,
+  }) {
+    return userLoaded?.call(this);
   }
 
   @override
@@ -1531,10 +2170,11 @@ class _$UserLoaded with DiagnosticableTreeMixin implements UserLoaded {
     TResult Function(Authenticated value)? authenticated,
     TResult Function(DefaultCoverURLsCached value)? defaultCoverURLsCached,
     TResult Function(DefaultCoverURLsLoaded value)? defaultCoverURLsLoaded,
+    TResult Function(OnboardingDonePressed value)? onboardingDonePressed,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SessionNotFound value)? sessionNotFound,
-    TResult Function(SettingsInitialized value)? settingsInitialized,
     TResult Function(SettingsFetched value)? settingsFetched,
+    TResult Function(SettingsInitialized value)? settingsInitialized,
     TResult Function(SettingsNotFound value)? settingsNotFound,
     TResult Function(UserLoaded value)? userLoaded,
     required TResult orElse(),
@@ -1549,7 +2189,7 @@ class _$UserLoaded with DiagnosticableTreeMixin implements UserLoaded {
 abstract class UserLoaded implements SetupEvent {
   const factory UserLoaded(User user) = _$UserLoaded;
 
-  User get user => throw _privateConstructorUsedError;
+  User get user;
   @JsonKey(ignore: true)
   $UserLoadedCopyWith<UserLoaded> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1559,22 +2199,22 @@ abstract class UserLoaded implements SetupEvent {
 class _$SetupStateTearOff {
   const _$SetupStateTearOff();
 
+  _Content content() {
+    return const _Content();
+  }
+
   _Failure failure(CoreFailure failure) {
     return _Failure(
       failure,
     );
   }
 
-  _InitHomeBloc initHomeBloc() {
-    return const _InitHomeBloc();
-  }
-
   _Initial initial() {
     return const _Initial();
   }
 
-  _NavigateToOnboarding navigateToOnboarding() {
-    return const _NavigateToOnboarding();
+  _Onboarding onboarding() {
+    return const _Onboarding();
   }
 }
 
@@ -1585,35 +2225,51 @@ const $SetupState = _$SetupStateTearOff();
 mixin _$SetupState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() content,
     required TResult Function(CoreFailure failure) failure,
-    required TResult Function() initHomeBloc,
     required TResult Function() initial,
-    required TResult Function() navigateToOnboarding,
+    required TResult Function() onboarding,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? content,
+    TResult Function(CoreFailure failure)? failure,
+    TResult Function()? initial,
+    TResult Function()? onboarding,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? content,
     TResult Function(CoreFailure failure)? failure,
-    TResult Function()? initHomeBloc,
     TResult Function()? initial,
-    TResult Function()? navigateToOnboarding,
+    TResult Function()? onboarding,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(_Content value) content,
     required TResult Function(_Failure value) failure,
-    required TResult Function(_InitHomeBloc value) initHomeBloc,
     required TResult Function(_Initial value) initial,
-    required TResult Function(_NavigateToOnboarding value) navigateToOnboarding,
+    required TResult Function(_Onboarding value) onboarding,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Content value)? content,
+    TResult Function(_Failure value)? failure,
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Onboarding value)? onboarding,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Content value)? content,
     TResult Function(_Failure value)? failure,
-    TResult Function(_InitHomeBloc value)? initHomeBloc,
     TResult Function(_Initial value)? initial,
-    TResult Function(_NavigateToOnboarding value)? navigateToOnboarding,
+    TResult Function(_Onboarding value)? onboarding,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -1633,6 +2289,126 @@ class _$SetupStateCopyWithImpl<$Res> implements $SetupStateCopyWith<$Res> {
   final SetupState _value;
   // ignore: unused_field
   final $Res Function(SetupState) _then;
+}
+
+/// @nodoc
+abstract class _$ContentCopyWith<$Res> {
+  factory _$ContentCopyWith(_Content value, $Res Function(_Content) then) =
+      __$ContentCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$ContentCopyWithImpl<$Res> extends _$SetupStateCopyWithImpl<$Res>
+    implements _$ContentCopyWith<$Res> {
+  __$ContentCopyWithImpl(_Content _value, $Res Function(_Content) _then)
+      : super(_value, (v) => _then(v as _Content));
+
+  @override
+  _Content get _value => super._value as _Content;
+}
+
+/// @nodoc
+
+class _$_Content with DiagnosticableTreeMixin implements _Content {
+  const _$_Content();
+
+  @override
+  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
+    return 'SetupState.content()';
+  }
+
+  @override
+  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
+    super.debugFillProperties(properties);
+    properties..add(DiagnosticsProperty('type', 'SetupState.content'));
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _Content);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() content,
+    required TResult Function(CoreFailure failure) failure,
+    required TResult Function() initial,
+    required TResult Function() onboarding,
+  }) {
+    return content();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? content,
+    TResult Function(CoreFailure failure)? failure,
+    TResult Function()? initial,
+    TResult Function()? onboarding,
+  }) {
+    return content?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? content,
+    TResult Function(CoreFailure failure)? failure,
+    TResult Function()? initial,
+    TResult Function()? onboarding,
+    required TResult orElse(),
+  }) {
+    if (content != null) {
+      return content();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Content value) content,
+    required TResult Function(_Failure value) failure,
+    required TResult Function(_Initial value) initial,
+    required TResult Function(_Onboarding value) onboarding,
+  }) {
+    return content(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Content value)? content,
+    TResult Function(_Failure value)? failure,
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Onboarding value)? onboarding,
+  }) {
+    return content?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Content value)? content,
+    TResult Function(_Failure value)? failure,
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Onboarding value)? onboarding,
+    required TResult orElse(),
+  }) {
+    if (content != null) {
+      return content(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _Content implements SetupState {
+  const factory _Content() = _$_Content;
 }
 
 /// @nodoc
@@ -1697,14 +2473,14 @@ class _$_Failure with DiagnosticableTreeMixin implements _Failure {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _Failure &&
-            (identical(other.failure, failure) ||
-                const DeepCollectionEquality().equals(other.failure, failure)));
+        (other.runtimeType == runtimeType &&
+            other is _Failure &&
+            const DeepCollectionEquality().equals(other.failure, failure));
   }
 
   @override
   int get hashCode =>
-      runtimeType.hashCode ^ const DeepCollectionEquality().hash(failure);
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(failure));
 
   @JsonKey(ignore: true)
   @override
@@ -1714,21 +2490,32 @@ class _$_Failure with DiagnosticableTreeMixin implements _Failure {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() content,
     required TResult Function(CoreFailure failure) failure,
-    required TResult Function() initHomeBloc,
     required TResult Function() initial,
-    required TResult Function() navigateToOnboarding,
+    required TResult Function() onboarding,
   }) {
     return failure(this.failure);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? content,
     TResult Function(CoreFailure failure)? failure,
-    TResult Function()? initHomeBloc,
     TResult Function()? initial,
-    TResult Function()? navigateToOnboarding,
+    TResult Function()? onboarding,
+  }) {
+    return failure?.call(this.failure);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? content,
+    TResult Function(CoreFailure failure)? failure,
+    TResult Function()? initial,
+    TResult Function()? onboarding,
     required TResult orElse(),
   }) {
     if (failure != null) {
@@ -1740,21 +2527,32 @@ class _$_Failure with DiagnosticableTreeMixin implements _Failure {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(_Content value) content,
     required TResult Function(_Failure value) failure,
-    required TResult Function(_InitHomeBloc value) initHomeBloc,
     required TResult Function(_Initial value) initial,
-    required TResult Function(_NavigateToOnboarding value) navigateToOnboarding,
+    required TResult Function(_Onboarding value) onboarding,
   }) {
     return failure(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Content value)? content,
     TResult Function(_Failure value)? failure,
-    TResult Function(_InitHomeBloc value)? initHomeBloc,
     TResult Function(_Initial value)? initial,
-    TResult Function(_NavigateToOnboarding value)? navigateToOnboarding,
+    TResult Function(_Onboarding value)? onboarding,
+  }) {
+    return failure?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Content value)? content,
+    TResult Function(_Failure value)? failure,
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Onboarding value)? onboarding,
     required TResult orElse(),
   }) {
     if (failure != null) {
@@ -1767,109 +2565,10 @@ class _$_Failure with DiagnosticableTreeMixin implements _Failure {
 abstract class _Failure implements SetupState {
   const factory _Failure(CoreFailure failure) = _$_Failure;
 
-  CoreFailure get failure => throw _privateConstructorUsedError;
+  CoreFailure get failure;
   @JsonKey(ignore: true)
   _$FailureCopyWith<_Failure> get copyWith =>
       throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class _$InitHomeBlocCopyWith<$Res> {
-  factory _$InitHomeBlocCopyWith(
-          _InitHomeBloc value, $Res Function(_InitHomeBloc) then) =
-      __$InitHomeBlocCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$InitHomeBlocCopyWithImpl<$Res> extends _$SetupStateCopyWithImpl<$Res>
-    implements _$InitHomeBlocCopyWith<$Res> {
-  __$InitHomeBlocCopyWithImpl(
-      _InitHomeBloc _value, $Res Function(_InitHomeBloc) _then)
-      : super(_value, (v) => _then(v as _InitHomeBloc));
-
-  @override
-  _InitHomeBloc get _value => super._value as _InitHomeBloc;
-}
-
-/// @nodoc
-
-class _$_InitHomeBloc with DiagnosticableTreeMixin implements _InitHomeBloc {
-  const _$_InitHomeBloc();
-
-  @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'SetupState.initHomeBloc()';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties..add(DiagnosticsProperty('type', 'SetupState.initHomeBloc'));
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _InitHomeBloc);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function(CoreFailure failure) failure,
-    required TResult Function() initHomeBloc,
-    required TResult Function() initial,
-    required TResult Function() navigateToOnboarding,
-  }) {
-    return initHomeBloc();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function(CoreFailure failure)? failure,
-    TResult Function()? initHomeBloc,
-    TResult Function()? initial,
-    TResult Function()? navigateToOnboarding,
-    required TResult orElse(),
-  }) {
-    if (initHomeBloc != null) {
-      return initHomeBloc();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Failure value) failure,
-    required TResult Function(_InitHomeBloc value) initHomeBloc,
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_NavigateToOnboarding value) navigateToOnboarding,
-  }) {
-    return initHomeBloc(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Failure value)? failure,
-    TResult Function(_InitHomeBloc value)? initHomeBloc,
-    TResult Function(_Initial value)? initial,
-    TResult Function(_NavigateToOnboarding value)? navigateToOnboarding,
-    required TResult orElse(),
-  }) {
-    if (initHomeBloc != null) {
-      return initHomeBloc(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _InitHomeBloc implements SetupState {
-  const factory _InitHomeBloc() = _$_InitHomeBloc;
 }
 
 /// @nodoc
@@ -1906,7 +2605,8 @@ class _$_Initial with DiagnosticableTreeMixin implements _Initial {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Initial);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _Initial);
   }
 
   @override
@@ -1915,21 +2615,32 @@ class _$_Initial with DiagnosticableTreeMixin implements _Initial {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() content,
     required TResult Function(CoreFailure failure) failure,
-    required TResult Function() initHomeBloc,
     required TResult Function() initial,
-    required TResult Function() navigateToOnboarding,
+    required TResult Function() onboarding,
   }) {
     return initial();
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? content,
     TResult Function(CoreFailure failure)? failure,
-    TResult Function()? initHomeBloc,
     TResult Function()? initial,
-    TResult Function()? navigateToOnboarding,
+    TResult Function()? onboarding,
+  }) {
+    return initial?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? content,
+    TResult Function(CoreFailure failure)? failure,
+    TResult Function()? initial,
+    TResult Function()? onboarding,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -1941,21 +2652,32 @@ class _$_Initial with DiagnosticableTreeMixin implements _Initial {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(_Content value) content,
     required TResult Function(_Failure value) failure,
-    required TResult Function(_InitHomeBloc value) initHomeBloc,
     required TResult Function(_Initial value) initial,
-    required TResult Function(_NavigateToOnboarding value) navigateToOnboarding,
+    required TResult Function(_Onboarding value) onboarding,
   }) {
     return initial(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Content value)? content,
     TResult Function(_Failure value)? failure,
-    TResult Function(_InitHomeBloc value)? initHomeBloc,
     TResult Function(_Initial value)? initial,
-    TResult Function(_NavigateToOnboarding value)? navigateToOnboarding,
+    TResult Function(_Onboarding value)? onboarding,
+  }) {
+    return initial?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Content value)? content,
+    TResult Function(_Failure value)? failure,
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Onboarding value)? onboarding,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -1970,46 +2692,43 @@ abstract class _Initial implements SetupState {
 }
 
 /// @nodoc
-abstract class _$NavigateToOnboardingCopyWith<$Res> {
-  factory _$NavigateToOnboardingCopyWith(_NavigateToOnboarding value,
-          $Res Function(_NavigateToOnboarding) then) =
-      __$NavigateToOnboardingCopyWithImpl<$Res>;
+abstract class _$OnboardingCopyWith<$Res> {
+  factory _$OnboardingCopyWith(
+          _Onboarding value, $Res Function(_Onboarding) then) =
+      __$OnboardingCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class __$NavigateToOnboardingCopyWithImpl<$Res>
-    extends _$SetupStateCopyWithImpl<$Res>
-    implements _$NavigateToOnboardingCopyWith<$Res> {
-  __$NavigateToOnboardingCopyWithImpl(
-      _NavigateToOnboarding _value, $Res Function(_NavigateToOnboarding) _then)
-      : super(_value, (v) => _then(v as _NavigateToOnboarding));
+class __$OnboardingCopyWithImpl<$Res> extends _$SetupStateCopyWithImpl<$Res>
+    implements _$OnboardingCopyWith<$Res> {
+  __$OnboardingCopyWithImpl(
+      _Onboarding _value, $Res Function(_Onboarding) _then)
+      : super(_value, (v) => _then(v as _Onboarding));
 
   @override
-  _NavigateToOnboarding get _value => super._value as _NavigateToOnboarding;
+  _Onboarding get _value => super._value as _Onboarding;
 }
 
 /// @nodoc
 
-class _$_NavigateToOnboarding
-    with DiagnosticableTreeMixin
-    implements _NavigateToOnboarding {
-  const _$_NavigateToOnboarding();
+class _$_Onboarding with DiagnosticableTreeMixin implements _Onboarding {
+  const _$_Onboarding();
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'SetupState.navigateToOnboarding()';
+    return 'SetupState.onboarding()';
   }
 
   @override
   void debugFillProperties(DiagnosticPropertiesBuilder properties) {
     super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'SetupState.navigateToOnboarding'));
+    properties..add(DiagnosticsProperty('type', 'SetupState.onboarding'));
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _NavigateToOnboarding);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _Onboarding);
   }
 
   @override
@@ -2018,25 +2737,36 @@ class _$_NavigateToOnboarding
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() content,
     required TResult Function(CoreFailure failure) failure,
-    required TResult Function() initHomeBloc,
     required TResult Function() initial,
-    required TResult Function() navigateToOnboarding,
+    required TResult Function() onboarding,
   }) {
-    return navigateToOnboarding();
+    return onboarding();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? content,
+    TResult Function(CoreFailure failure)? failure,
+    TResult Function()? initial,
+    TResult Function()? onboarding,
+  }) {
+    return onboarding?.call();
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? content,
     TResult Function(CoreFailure failure)? failure,
-    TResult Function()? initHomeBloc,
     TResult Function()? initial,
-    TResult Function()? navigateToOnboarding,
+    TResult Function()? onboarding,
     required TResult orElse(),
   }) {
-    if (navigateToOnboarding != null) {
-      return navigateToOnboarding();
+    if (onboarding != null) {
+      return onboarding();
     }
     return orElse();
   }
@@ -2044,30 +2774,41 @@ class _$_NavigateToOnboarding
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(_Content value) content,
     required TResult Function(_Failure value) failure,
-    required TResult Function(_InitHomeBloc value) initHomeBloc,
     required TResult Function(_Initial value) initial,
-    required TResult Function(_NavigateToOnboarding value) navigateToOnboarding,
+    required TResult Function(_Onboarding value) onboarding,
   }) {
-    return navigateToOnboarding(this);
+    return onboarding(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Content value)? content,
+    TResult Function(_Failure value)? failure,
+    TResult Function(_Initial value)? initial,
+    TResult Function(_Onboarding value)? onboarding,
+  }) {
+    return onboarding?.call(this);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Content value)? content,
     TResult Function(_Failure value)? failure,
-    TResult Function(_InitHomeBloc value)? initHomeBloc,
     TResult Function(_Initial value)? initial,
-    TResult Function(_NavigateToOnboarding value)? navigateToOnboarding,
+    TResult Function(_Onboarding value)? onboarding,
     required TResult orElse(),
   }) {
-    if (navigateToOnboarding != null) {
-      return navigateToOnboarding(this);
+    if (onboarding != null) {
+      return onboarding(this);
     }
     return orElse();
   }
 }
 
-abstract class _NavigateToOnboarding implements SetupState {
-  const factory _NavigateToOnboarding() = _$_NavigateToOnboarding;
+abstract class _Onboarding implements SetupState {
+  const factory _Onboarding() = _$_Onboarding;
 }

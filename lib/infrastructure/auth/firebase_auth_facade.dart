@@ -1,11 +1,10 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart' as auth;
+import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'package:injectable/injectable.dart';
-import 'package:rustic/option.dart';
-import 'package:rustic/result.dart';
-import 'package:rustic/tuple.dart';
+import 'package:oxidized/oxidized.dart';
 
 import 'package:wine/domain/auth/auth_failure.dart';
 import 'package:wine/domain/auth/email_address.dart';
@@ -59,22 +58,25 @@ class FirebaseAuthFacade implements IAuthFacade {
         currentUser = _firebaseAuth.currentUser;
         await currentUser?.sendEmailVerification();
 
-        return const Ok(Unit());
+        return Ok(unit);
       }
-      return const Err(AuthFailure.unexpected());
+      return Err(const AuthFailure.unexpected());
     } on FirebaseException catch (e) {
       if (e.code == 'email-already-in-use') {
-        return const Err(AuthFailure.emailAlreadyInUse());
+        return Err(const AuthFailure.emailAlreadyInUse());
       }
-      return const Err(AuthFailure.serverError());
+      if (e.code == 'permission-denied') {
+        return Err(const AuthFailure.permissionDenied());
+      }
+      return Err(const AuthFailure.serverError());
     } catch (err) {
-      return const Err(AuthFailure.unexpected());
+      return Err(const AuthFailure.unexpected());
     }
   }
 
   @override
   Future<Option<User>> getLoggedInUser() async =>
-      (_firebaseAuth.currentUser?.toDomain()).asOption();
+      Option.from(_firebaseAuth.currentUser?.toDomain());
 
   @override
   bool get isAnonymous {
@@ -92,11 +94,11 @@ class FirebaseAuthFacade implements IAuthFacade {
   Future<Result<Unit, AuthFailure>> logInAnonymously() async {
     try {
       await _firebaseAuth.signInAnonymously();
-      return const Ok(Unit());
+      return Ok(unit);
     } on FirebaseException catch (_) {
-      return const Err(AuthFailure.serverError());
+      return Err(const AuthFailure.serverError());
     } catch (_) {
-      return const Err(AuthFailure.unexpected());
+      return Err(const AuthFailure.unexpected());
     }
   }
 
@@ -108,7 +110,7 @@ class FirebaseAuthFacade implements IAuthFacade {
       if (anonymousUser != null) {
         final googleAccount = await _googleSignIn.signIn();
         if (googleAccount == null) {
-          return const Err(AuthFailure.cancelledByUser());
+          return Err(const AuthFailure.cancelledByUser());
         }
 
         final googleAuthentication = await googleAccount.authentication;
@@ -126,16 +128,19 @@ class FirebaseAuthFacade implements IAuthFacade {
 
         return _updateUserInfo(_googleSignIn.currentUser, currentUser);
       }
-      return const Err(AuthFailure.unexpected());
-    } on FirebaseException catch (_) {
-      return const Err(AuthFailure.serverError());
+      return Err(const AuthFailure.unexpected());
+    } on FirebaseException catch (e) {
+      if (e.code == 'permission-denied') {
+        return Err(const AuthFailure.permissionDenied());
+      }
+      return Err(const AuthFailure.serverError());
     } on Exception catch (e) {
       if (e is PlatformException) {
         if (e.code == 'popup_closed_by_user') {
-          return const Err(AuthFailure.cancelledByUser());
+          return Err(const AuthFailure.cancelledByUser());
         }
       }
-      return const Err(AuthFailure.unexpected());
+      return Err(const AuthFailure.unexpected());
     }
   }
 
@@ -158,18 +163,22 @@ class FirebaseAuthFacade implements IAuthFacade {
           password: passwordStr,
         );
 
-        return const Ok(Unit());
+        return Ok(unit);
       }
-      return const Err(AuthFailure.unexpected());
+      return Err(const AuthFailure.unexpected());
     } on FirebaseException catch (e) {
+      if (e.code == 'permission-denied') {
+        return Err(const AuthFailure.permissionDenied());
+      }
+      if (e.code == 'wrong-password' || e.code == 'user-not-found') {
+        return Err(const AuthFailure.invalidEmailAndPasswordCombination());
+      }
+
       await _firebaseAuth.signInAnonymously();
 
-      if (e.code == 'wrong-password' || e.code == 'user-not-found') {
-        return const Err(AuthFailure.invalidEmailAndPasswordCombination());
-      }
-      return const Err(AuthFailure.serverError());
+      return Err(const AuthFailure.serverError());
     } catch (_) {
-      return const Err(AuthFailure.unexpected());
+      return Err(const AuthFailure.unexpected());
     }
   }
 
@@ -179,36 +188,49 @@ class FirebaseAuthFacade implements IAuthFacade {
       final anonymousUser = _firebaseAuth.currentUser;
 
       if (anonymousUser != null) {
-        final googleAccount = await _googleSignIn.signIn();
-        if (googleAccount == null) {
-          return const Err(AuthFailure.cancelledByUser());
+        if (kIsWeb) {
+          final provider = auth.GoogleAuthProvider();
+
+          final credential = await anonymousUser.linkWithPopup(provider);
+
+          return _updateUserInfoWithUser(credential.user, anonymousUser);
+        } else {
+          final googleAccount = await _googleSignIn.signIn();
+          if (googleAccount == null) {
+            return Err(const AuthFailure.cancelledByUser());
+          }
+
+          final googleAuthentication = await googleAccount.authentication;
+          final auth.AuthCredential authCredential =
+              auth.GoogleAuthProvider.credential(
+            idToken: googleAuthentication.idToken,
+            accessToken: googleAuthentication.accessToken,
+          );
+
+          await anonymousUser.linkWithCredential(authCredential);
+
+          return _updateUserInfo(_googleSignIn.currentUser, anonymousUser);
         }
-
-        final googleAuthentication = await googleAccount.authentication;
-        final auth.AuthCredential authCredential =
-            auth.GoogleAuthProvider.credential(
-          idToken: googleAuthentication.idToken,
-          accessToken: googleAuthentication.accessToken,
-        );
-
-        await anonymousUser.linkWithCredential(authCredential);
-
-        return _updateUserInfo(_googleSignIn.currentUser, anonymousUser);
       }
-      return const Err(AuthFailure.unexpected());
+      return Err(const AuthFailure.unexpected());
     } on FirebaseException catch (e) {
-      if (e.code == 'credential-already-in-use' ||
-          e.code == 'email-already-in-use') {
-        return const Err(AuthFailure.credentialOrEmailAlreadyInUse());
+      if (e.code == 'credential-already-in-use') {
+        return Err(const AuthFailure.credentialAlreadyInUse());
       }
-      return const Err(AuthFailure.serverError());
+      if (e.code == 'email-already-in-use') {
+        return Err(const AuthFailure.emailAlreadyInUse());
+      }
+      if (e.code == 'permission-denied') {
+        return Err(const AuthFailure.permissionDenied());
+      }
+      return Err(const AuthFailure.serverError());
     } on Exception catch (e) {
       if (e is PlatformException) {
         if (e.code == 'popup_closed_by_user') {
-          return const Err(AuthFailure.cancelledByUser());
+          return Err(const AuthFailure.cancelledByUser());
         }
       }
-      return const Err(AuthFailure.unexpected());
+      return Err(const AuthFailure.unexpected());
     }
   }
 
@@ -222,15 +244,18 @@ class FirebaseAuthFacade implements IAuthFacade {
 
       final currentUser = _firebaseAuth.currentUser;
       if (currentUser != null) {
-        return const Err(AuthFailure.unableToSignOut());
+        return Err(const AuthFailure.unableToSignOut());
       }
 
       await _firebaseAuth.signInAnonymously();
-      return const Ok(Unit());
-    } on FirebaseException catch (_) {
-      return const Err(AuthFailure.serverError());
+      return Ok(unit);
+    } on FirebaseException catch (e) {
+      if (e.code == 'permission-denied') {
+        return Err(const AuthFailure.permissionDenied());
+      }
+      return Err(const AuthFailure.serverError());
     } catch (_) {
-      return const Err(AuthFailure.unexpected());
+      return Err(const AuthFailure.unexpected());
     }
   }
 
@@ -241,13 +266,16 @@ class FirebaseAuthFacade implements IAuthFacade {
 
       if (currentUser != null) {
         await currentUser.sendEmailVerification();
-        return const Ok(Unit());
+        return Ok(unit);
       }
-      return const Err(AuthFailure.unexpected());
-    } on FirebaseException catch (_) {
-      return const Err(AuthFailure.serverError());
+      return Err(const AuthFailure.unexpected());
+    } on FirebaseException catch (e) {
+      if (e.code == 'permission-denied') {
+        return Err(const AuthFailure.permissionDenied());
+      }
+      return Err(const AuthFailure.serverError());
     } catch (_) {
-      return const Err(AuthFailure.unexpected());
+      return Err(const AuthFailure.unexpected());
     }
   }
 
@@ -262,8 +290,24 @@ class FirebaseAuthFacade implements IAuthFacade {
       ]);
       await currentUser.reload();
 
-      return const Ok(Unit());
+      return Ok(unit);
     }
-    return const Err(AuthFailure.unexpected());
+    return Err(const AuthFailure.unexpected());
+  }
+
+  Future<Result<Unit, AuthFailure>> _updateUserInfoWithUser(
+    auth.User? newUser,
+    auth.User? currentUser,
+  ) async {
+    if (newUser != null && currentUser != null) {
+      await Future.wait([
+        currentUser.updateDisplayName(newUser.displayName),
+        currentUser.updatePhotoURL(newUser.photoURL),
+      ]);
+      await currentUser.reload();
+
+      return Ok(unit);
+    }
+    return Err(const AuthFailure.unexpected());
   }
 }

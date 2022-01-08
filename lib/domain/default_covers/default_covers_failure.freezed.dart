@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'default_covers_failure.dart';
 
@@ -28,6 +29,10 @@ class _$DefaultCoversFailureTearOff {
     return const DefaultCoverURLsNotLoaded();
   }
 
+  PermissionDenied permissionDenied() {
+    return const PermissionDenied();
+  }
+
   ServerError serverError() {
     return const ServerError();
   }
@@ -47,8 +52,19 @@ mixin _$DefaultCoversFailure {
     required TResult Function() defaultCoverURLsNotCached,
     required TResult Function() defaultCoverURLsNotFetched,
     required TResult Function() defaultCoverURLsNotLoaded,
+    required TResult Function() permissionDenied,
     required TResult Function() serverError,
     required TResult Function() unexpected,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? defaultCoverURLsNotCached,
+    TResult Function()? defaultCoverURLsNotFetched,
+    TResult Function()? defaultCoverURLsNotLoaded,
+    TResult Function()? permissionDenied,
+    TResult Function()? serverError,
+    TResult Function()? unexpected,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -56,6 +72,7 @@ mixin _$DefaultCoversFailure {
     TResult Function()? defaultCoverURLsNotCached,
     TResult Function()? defaultCoverURLsNotFetched,
     TResult Function()? defaultCoverURLsNotLoaded,
+    TResult Function()? permissionDenied,
     TResult Function()? serverError,
     TResult Function()? unexpected,
     required TResult orElse(),
@@ -69,8 +86,22 @@ mixin _$DefaultCoversFailure {
         defaultCoverURLsNotFetched,
     required TResult Function(DefaultCoverURLsNotLoaded value)
         defaultCoverURLsNotLoaded,
+    required TResult Function(PermissionDenied value) permissionDenied,
     required TResult Function(ServerError value) serverError,
     required TResult Function(Unexpected value) unexpected,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(DefaultCoverURLsNotCached value)?
+        defaultCoverURLsNotCached,
+    TResult Function(DefaultCoverURLsNotFetched value)?
+        defaultCoverURLsNotFetched,
+    TResult Function(DefaultCoverURLsNotLoaded value)?
+        defaultCoverURLsNotLoaded,
+    TResult Function(PermissionDenied value)? permissionDenied,
+    TResult Function(ServerError value)? serverError,
+    TResult Function(Unexpected value)? unexpected,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -81,6 +112,7 @@ mixin _$DefaultCoversFailure {
         defaultCoverURLsNotFetched,
     TResult Function(DefaultCoverURLsNotLoaded value)?
         defaultCoverURLsNotLoaded,
+    TResult Function(PermissionDenied value)? permissionDenied,
     TResult Function(ServerError value)? serverError,
     TResult Function(Unexpected value)? unexpected,
     required TResult orElse(),
@@ -137,7 +169,9 @@ class _$DefaultCoverURLsNotCached implements DefaultCoverURLsNotCached {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is DefaultCoverURLsNotCached);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is DefaultCoverURLsNotCached);
   }
 
   @override
@@ -149,6 +183,7 @@ class _$DefaultCoverURLsNotCached implements DefaultCoverURLsNotCached {
     required TResult Function() defaultCoverURLsNotCached,
     required TResult Function() defaultCoverURLsNotFetched,
     required TResult Function() defaultCoverURLsNotLoaded,
+    required TResult Function() permissionDenied,
     required TResult Function() serverError,
     required TResult Function() unexpected,
   }) {
@@ -157,10 +192,24 @@ class _$DefaultCoverURLsNotCached implements DefaultCoverURLsNotCached {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? defaultCoverURLsNotCached,
+    TResult Function()? defaultCoverURLsNotFetched,
+    TResult Function()? defaultCoverURLsNotLoaded,
+    TResult Function()? permissionDenied,
+    TResult Function()? serverError,
+    TResult Function()? unexpected,
+  }) {
+    return defaultCoverURLsNotCached?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? defaultCoverURLsNotCached,
     TResult Function()? defaultCoverURLsNotFetched,
     TResult Function()? defaultCoverURLsNotLoaded,
+    TResult Function()? permissionDenied,
     TResult Function()? serverError,
     TResult Function()? unexpected,
     required TResult orElse(),
@@ -180,10 +229,27 @@ class _$DefaultCoverURLsNotCached implements DefaultCoverURLsNotCached {
         defaultCoverURLsNotFetched,
     required TResult Function(DefaultCoverURLsNotLoaded value)
         defaultCoverURLsNotLoaded,
+    required TResult Function(PermissionDenied value) permissionDenied,
     required TResult Function(ServerError value) serverError,
     required TResult Function(Unexpected value) unexpected,
   }) {
     return defaultCoverURLsNotCached(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(DefaultCoverURLsNotCached value)?
+        defaultCoverURLsNotCached,
+    TResult Function(DefaultCoverURLsNotFetched value)?
+        defaultCoverURLsNotFetched,
+    TResult Function(DefaultCoverURLsNotLoaded value)?
+        defaultCoverURLsNotLoaded,
+    TResult Function(PermissionDenied value)? permissionDenied,
+    TResult Function(ServerError value)? serverError,
+    TResult Function(Unexpected value)? unexpected,
+  }) {
+    return defaultCoverURLsNotCached?.call(this);
   }
 
   @override
@@ -195,6 +261,7 @@ class _$DefaultCoverURLsNotCached implements DefaultCoverURLsNotCached {
         defaultCoverURLsNotFetched,
     TResult Function(DefaultCoverURLsNotLoaded value)?
         defaultCoverURLsNotLoaded,
+    TResult Function(PermissionDenied value)? permissionDenied,
     TResult Function(ServerError value)? serverError,
     TResult Function(Unexpected value)? unexpected,
     required TResult orElse(),
@@ -242,7 +309,9 @@ class _$DefaultCoverURLsNotFetched implements DefaultCoverURLsNotFetched {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is DefaultCoverURLsNotFetched);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is DefaultCoverURLsNotFetched);
   }
 
   @override
@@ -254,6 +323,7 @@ class _$DefaultCoverURLsNotFetched implements DefaultCoverURLsNotFetched {
     required TResult Function() defaultCoverURLsNotCached,
     required TResult Function() defaultCoverURLsNotFetched,
     required TResult Function() defaultCoverURLsNotLoaded,
+    required TResult Function() permissionDenied,
     required TResult Function() serverError,
     required TResult Function() unexpected,
   }) {
@@ -262,10 +332,24 @@ class _$DefaultCoverURLsNotFetched implements DefaultCoverURLsNotFetched {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? defaultCoverURLsNotCached,
+    TResult Function()? defaultCoverURLsNotFetched,
+    TResult Function()? defaultCoverURLsNotLoaded,
+    TResult Function()? permissionDenied,
+    TResult Function()? serverError,
+    TResult Function()? unexpected,
+  }) {
+    return defaultCoverURLsNotFetched?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? defaultCoverURLsNotCached,
     TResult Function()? defaultCoverURLsNotFetched,
     TResult Function()? defaultCoverURLsNotLoaded,
+    TResult Function()? permissionDenied,
     TResult Function()? serverError,
     TResult Function()? unexpected,
     required TResult orElse(),
@@ -285,10 +369,27 @@ class _$DefaultCoverURLsNotFetched implements DefaultCoverURLsNotFetched {
         defaultCoverURLsNotFetched,
     required TResult Function(DefaultCoverURLsNotLoaded value)
         defaultCoverURLsNotLoaded,
+    required TResult Function(PermissionDenied value) permissionDenied,
     required TResult Function(ServerError value) serverError,
     required TResult Function(Unexpected value) unexpected,
   }) {
     return defaultCoverURLsNotFetched(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(DefaultCoverURLsNotCached value)?
+        defaultCoverURLsNotCached,
+    TResult Function(DefaultCoverURLsNotFetched value)?
+        defaultCoverURLsNotFetched,
+    TResult Function(DefaultCoverURLsNotLoaded value)?
+        defaultCoverURLsNotLoaded,
+    TResult Function(PermissionDenied value)? permissionDenied,
+    TResult Function(ServerError value)? serverError,
+    TResult Function(Unexpected value)? unexpected,
+  }) {
+    return defaultCoverURLsNotFetched?.call(this);
   }
 
   @override
@@ -300,6 +401,7 @@ class _$DefaultCoverURLsNotFetched implements DefaultCoverURLsNotFetched {
         defaultCoverURLsNotFetched,
     TResult Function(DefaultCoverURLsNotLoaded value)?
         defaultCoverURLsNotLoaded,
+    TResult Function(PermissionDenied value)? permissionDenied,
     TResult Function(ServerError value)? serverError,
     TResult Function(Unexpected value)? unexpected,
     required TResult orElse(),
@@ -347,7 +449,9 @@ class _$DefaultCoverURLsNotLoaded implements DefaultCoverURLsNotLoaded {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is DefaultCoverURLsNotLoaded);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is DefaultCoverURLsNotLoaded);
   }
 
   @override
@@ -359,6 +463,7 @@ class _$DefaultCoverURLsNotLoaded implements DefaultCoverURLsNotLoaded {
     required TResult Function() defaultCoverURLsNotCached,
     required TResult Function() defaultCoverURLsNotFetched,
     required TResult Function() defaultCoverURLsNotLoaded,
+    required TResult Function() permissionDenied,
     required TResult Function() serverError,
     required TResult Function() unexpected,
   }) {
@@ -367,10 +472,24 @@ class _$DefaultCoverURLsNotLoaded implements DefaultCoverURLsNotLoaded {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? defaultCoverURLsNotCached,
+    TResult Function()? defaultCoverURLsNotFetched,
+    TResult Function()? defaultCoverURLsNotLoaded,
+    TResult Function()? permissionDenied,
+    TResult Function()? serverError,
+    TResult Function()? unexpected,
+  }) {
+    return defaultCoverURLsNotLoaded?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? defaultCoverURLsNotCached,
     TResult Function()? defaultCoverURLsNotFetched,
     TResult Function()? defaultCoverURLsNotLoaded,
+    TResult Function()? permissionDenied,
     TResult Function()? serverError,
     TResult Function()? unexpected,
     required TResult orElse(),
@@ -390,10 +509,27 @@ class _$DefaultCoverURLsNotLoaded implements DefaultCoverURLsNotLoaded {
         defaultCoverURLsNotFetched,
     required TResult Function(DefaultCoverURLsNotLoaded value)
         defaultCoverURLsNotLoaded,
+    required TResult Function(PermissionDenied value) permissionDenied,
     required TResult Function(ServerError value) serverError,
     required TResult Function(Unexpected value) unexpected,
   }) {
     return defaultCoverURLsNotLoaded(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(DefaultCoverURLsNotCached value)?
+        defaultCoverURLsNotCached,
+    TResult Function(DefaultCoverURLsNotFetched value)?
+        defaultCoverURLsNotFetched,
+    TResult Function(DefaultCoverURLsNotLoaded value)?
+        defaultCoverURLsNotLoaded,
+    TResult Function(PermissionDenied value)? permissionDenied,
+    TResult Function(ServerError value)? serverError,
+    TResult Function(Unexpected value)? unexpected,
+  }) {
+    return defaultCoverURLsNotLoaded?.call(this);
   }
 
   @override
@@ -405,6 +541,7 @@ class _$DefaultCoverURLsNotLoaded implements DefaultCoverURLsNotLoaded {
         defaultCoverURLsNotFetched,
     TResult Function(DefaultCoverURLsNotLoaded value)?
         defaultCoverURLsNotLoaded,
+    TResult Function(PermissionDenied value)? permissionDenied,
     TResult Function(ServerError value)? serverError,
     TResult Function(Unexpected value)? unexpected,
     required TResult orElse(),
@@ -418,6 +555,144 @@ class _$DefaultCoverURLsNotLoaded implements DefaultCoverURLsNotLoaded {
 
 abstract class DefaultCoverURLsNotLoaded implements DefaultCoversFailure {
   const factory DefaultCoverURLsNotLoaded() = _$DefaultCoverURLsNotLoaded;
+}
+
+/// @nodoc
+abstract class $PermissionDeniedCopyWith<$Res> {
+  factory $PermissionDeniedCopyWith(
+          PermissionDenied value, $Res Function(PermissionDenied) then) =
+      _$PermissionDeniedCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$PermissionDeniedCopyWithImpl<$Res>
+    extends _$DefaultCoversFailureCopyWithImpl<$Res>
+    implements $PermissionDeniedCopyWith<$Res> {
+  _$PermissionDeniedCopyWithImpl(
+      PermissionDenied _value, $Res Function(PermissionDenied) _then)
+      : super(_value, (v) => _then(v as PermissionDenied));
+
+  @override
+  PermissionDenied get _value => super._value as PermissionDenied;
+}
+
+/// @nodoc
+
+class _$PermissionDenied implements PermissionDenied {
+  const _$PermissionDenied();
+
+  @override
+  String toString() {
+    return 'DefaultCoversFailure.permissionDenied()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is PermissionDenied);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() defaultCoverURLsNotCached,
+    required TResult Function() defaultCoverURLsNotFetched,
+    required TResult Function() defaultCoverURLsNotLoaded,
+    required TResult Function() permissionDenied,
+    required TResult Function() serverError,
+    required TResult Function() unexpected,
+  }) {
+    return permissionDenied();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? defaultCoverURLsNotCached,
+    TResult Function()? defaultCoverURLsNotFetched,
+    TResult Function()? defaultCoverURLsNotLoaded,
+    TResult Function()? permissionDenied,
+    TResult Function()? serverError,
+    TResult Function()? unexpected,
+  }) {
+    return permissionDenied?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? defaultCoverURLsNotCached,
+    TResult Function()? defaultCoverURLsNotFetched,
+    TResult Function()? defaultCoverURLsNotLoaded,
+    TResult Function()? permissionDenied,
+    TResult Function()? serverError,
+    TResult Function()? unexpected,
+    required TResult orElse(),
+  }) {
+    if (permissionDenied != null) {
+      return permissionDenied();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(DefaultCoverURLsNotCached value)
+        defaultCoverURLsNotCached,
+    required TResult Function(DefaultCoverURLsNotFetched value)
+        defaultCoverURLsNotFetched,
+    required TResult Function(DefaultCoverURLsNotLoaded value)
+        defaultCoverURLsNotLoaded,
+    required TResult Function(PermissionDenied value) permissionDenied,
+    required TResult Function(ServerError value) serverError,
+    required TResult Function(Unexpected value) unexpected,
+  }) {
+    return permissionDenied(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(DefaultCoverURLsNotCached value)?
+        defaultCoverURLsNotCached,
+    TResult Function(DefaultCoverURLsNotFetched value)?
+        defaultCoverURLsNotFetched,
+    TResult Function(DefaultCoverURLsNotLoaded value)?
+        defaultCoverURLsNotLoaded,
+    TResult Function(PermissionDenied value)? permissionDenied,
+    TResult Function(ServerError value)? serverError,
+    TResult Function(Unexpected value)? unexpected,
+  }) {
+    return permissionDenied?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(DefaultCoverURLsNotCached value)?
+        defaultCoverURLsNotCached,
+    TResult Function(DefaultCoverURLsNotFetched value)?
+        defaultCoverURLsNotFetched,
+    TResult Function(DefaultCoverURLsNotLoaded value)?
+        defaultCoverURLsNotLoaded,
+    TResult Function(PermissionDenied value)? permissionDenied,
+    TResult Function(ServerError value)? serverError,
+    TResult Function(Unexpected value)? unexpected,
+    required TResult orElse(),
+  }) {
+    if (permissionDenied != null) {
+      return permissionDenied(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class PermissionDenied implements DefaultCoversFailure {
+  const factory PermissionDenied() = _$PermissionDenied;
 }
 
 /// @nodoc
@@ -451,7 +726,8 @@ class _$ServerError implements ServerError {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is ServerError);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is ServerError);
   }
 
   @override
@@ -463,6 +739,7 @@ class _$ServerError implements ServerError {
     required TResult Function() defaultCoverURLsNotCached,
     required TResult Function() defaultCoverURLsNotFetched,
     required TResult Function() defaultCoverURLsNotLoaded,
+    required TResult Function() permissionDenied,
     required TResult Function() serverError,
     required TResult Function() unexpected,
   }) {
@@ -471,10 +748,24 @@ class _$ServerError implements ServerError {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? defaultCoverURLsNotCached,
+    TResult Function()? defaultCoverURLsNotFetched,
+    TResult Function()? defaultCoverURLsNotLoaded,
+    TResult Function()? permissionDenied,
+    TResult Function()? serverError,
+    TResult Function()? unexpected,
+  }) {
+    return serverError?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? defaultCoverURLsNotCached,
     TResult Function()? defaultCoverURLsNotFetched,
     TResult Function()? defaultCoverURLsNotLoaded,
+    TResult Function()? permissionDenied,
     TResult Function()? serverError,
     TResult Function()? unexpected,
     required TResult orElse(),
@@ -494,10 +785,27 @@ class _$ServerError implements ServerError {
         defaultCoverURLsNotFetched,
     required TResult Function(DefaultCoverURLsNotLoaded value)
         defaultCoverURLsNotLoaded,
+    required TResult Function(PermissionDenied value) permissionDenied,
     required TResult Function(ServerError value) serverError,
     required TResult Function(Unexpected value) unexpected,
   }) {
     return serverError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(DefaultCoverURLsNotCached value)?
+        defaultCoverURLsNotCached,
+    TResult Function(DefaultCoverURLsNotFetched value)?
+        defaultCoverURLsNotFetched,
+    TResult Function(DefaultCoverURLsNotLoaded value)?
+        defaultCoverURLsNotLoaded,
+    TResult Function(PermissionDenied value)? permissionDenied,
+    TResult Function(ServerError value)? serverError,
+    TResult Function(Unexpected value)? unexpected,
+  }) {
+    return serverError?.call(this);
   }
 
   @override
@@ -509,6 +817,7 @@ class _$ServerError implements ServerError {
         defaultCoverURLsNotFetched,
     TResult Function(DefaultCoverURLsNotLoaded value)?
         defaultCoverURLsNotLoaded,
+    TResult Function(PermissionDenied value)? permissionDenied,
     TResult Function(ServerError value)? serverError,
     TResult Function(Unexpected value)? unexpected,
     required TResult orElse(),
@@ -554,7 +863,8 @@ class _$Unexpected implements Unexpected {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is Unexpected);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is Unexpected);
   }
 
   @override
@@ -566,6 +876,7 @@ class _$Unexpected implements Unexpected {
     required TResult Function() defaultCoverURLsNotCached,
     required TResult Function() defaultCoverURLsNotFetched,
     required TResult Function() defaultCoverURLsNotLoaded,
+    required TResult Function() permissionDenied,
     required TResult Function() serverError,
     required TResult Function() unexpected,
   }) {
@@ -574,10 +885,24 @@ class _$Unexpected implements Unexpected {
 
   @override
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? defaultCoverURLsNotCached,
+    TResult Function()? defaultCoverURLsNotFetched,
+    TResult Function()? defaultCoverURLsNotLoaded,
+    TResult Function()? permissionDenied,
+    TResult Function()? serverError,
+    TResult Function()? unexpected,
+  }) {
+    return unexpected?.call();
+  }
+
+  @override
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? defaultCoverURLsNotCached,
     TResult Function()? defaultCoverURLsNotFetched,
     TResult Function()? defaultCoverURLsNotLoaded,
+    TResult Function()? permissionDenied,
     TResult Function()? serverError,
     TResult Function()? unexpected,
     required TResult orElse(),
@@ -597,10 +922,27 @@ class _$Unexpected implements Unexpected {
         defaultCoverURLsNotFetched,
     required TResult Function(DefaultCoverURLsNotLoaded value)
         defaultCoverURLsNotLoaded,
+    required TResult Function(PermissionDenied value) permissionDenied,
     required TResult Function(ServerError value) serverError,
     required TResult Function(Unexpected value) unexpected,
   }) {
     return unexpected(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(DefaultCoverURLsNotCached value)?
+        defaultCoverURLsNotCached,
+    TResult Function(DefaultCoverURLsNotFetched value)?
+        defaultCoverURLsNotFetched,
+    TResult Function(DefaultCoverURLsNotLoaded value)?
+        defaultCoverURLsNotLoaded,
+    TResult Function(PermissionDenied value)? permissionDenied,
+    TResult Function(ServerError value)? serverError,
+    TResult Function(Unexpected value)? unexpected,
+  }) {
+    return unexpected?.call(this);
   }
 
   @override
@@ -612,6 +954,7 @@ class _$Unexpected implements Unexpected {
         defaultCoverURLsNotFetched,
     TResult Function(DefaultCoverURLsNotLoaded value)?
         defaultCoverURLsNotLoaded,
+    TResult Function(PermissionDenied value)? permissionDenied,
     TResult Function(ServerError value)? serverError,
     TResult Function(Unexpected value)? unexpected,
     required TResult orElse(),

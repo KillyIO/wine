@@ -1,13 +1,16 @@
 /// @nodoc
 enum Flavor {
   /// @nodoc
-  beta,
-
-  /// @nodoc
   development,
 
   /// @nodoc
   production,
+}
+
+/// @nodoc
+extension FlavorName on Flavor {
+  /// @nodoc
+  String get name => toString().split('.').last;
 }
 
 /// @nodoc
@@ -16,16 +19,16 @@ class F {
   static Flavor? appFlavor;
 
   /// @nodoc
+  static String get name => appFlavor?.name ?? '';
+
+  /// @nodoc
   static String get title {
     switch (appFlavor) {
-      case Flavor.beta:
-        return 'WINE Beta';
       case Flavor.development:
         return 'WINE Dev';
       case Flavor.production:
+      case null:
         return 'WINE';
-      default:
-        return 'title';
     }
   }
 }

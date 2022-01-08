@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:rustic/result.dart';
+import 'package:oxidized/oxidized.dart';
 import 'package:wine/domain/core/title.dart';
 import 'package:wine/domain/core/value_failure.dart';
 
@@ -10,7 +10,7 @@ void main() {
     test('When input valid Then return input', () {
       final title = Title(testTitle);
 
-      expect(title.value, const Ok<String, ValueFailure<String>>(testTitle));
+      expect(title.value, Ok<String, ValueFailure<String>>(testTitle));
     });
 
     test('When input empty Then return emptyInput', () {
@@ -18,8 +18,8 @@ void main() {
 
       expect(
         title.value,
-        const Err<String, ValueFailure<String>>(
-          ValueFailure<String>.emptyInput(testEmpty),
+        Err<String, ValueFailure<String>>(
+          const ValueFailure<String>.emptyInput(testEmpty),
         ),
       );
     });
@@ -31,8 +31,8 @@ void main() {
 
         expect(
           title.value,
-          const Err<String, ValueFailure<String>>(
-            ValueFailure<String>.tooLongInput(testInvalidTitleTooLong),
+          Err<String, ValueFailure<String>>(
+            const ValueFailure<String>.tooLongInput(testInvalidTitleTooLong),
           ),
         );
       },

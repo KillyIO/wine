@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:wine/application/library/library_navigation/library_navigation_bloc.dart';
+import 'package:wine/application/library/library_bloc.dart';
 import 'package:wine/presentation/core/page_view/horizontal_page_view_navbar.dart';
 import 'package:wine/presentation/library/widgets/library_page_view_builder.dart';
 import 'package:wine/utils/constants/library.dart';
 import 'package:wine/utils/constants/palette.dart';
+import 'package:wine/utils/functions/dialog_functions.dart';
 
 /// @nodoc
 class LibraryLayout extends StatelessWidget {
@@ -15,24 +16,48 @@ class LibraryLayout extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Column(
-        children: <Widget>[
-          BlocBuilder<LibraryNavigationBloc, LibraryNavigationState>(
-            builder: (context, state) {
-              return HorizontalPageViewNavbar(
-                colors: const <Color>[pastelYellow, pastelPink],
-                controller: _pageController,
-                pageIndex: state.currentPageViewIdx,
-                titles: libraryPageViewKeys,
-              );
-            },
-          ),
-          LibraryPageViewBuilder(
-            pageController: _pageController,
-          ),
-        ],
-      ),
+    return Column(
+      children: <Widget>[
+        BlocConsumer<LibraryBloc, LibraryState>(
+          listener: (context, state) {
+            state.failureOption.when(
+              some: (value) => value.when(
+                ok: (_) {},
+                err: (err) => err.maybeMap(
+                  series: (f) => f.f.maybeMap(
+                    seriesNotFound: (_) async => baseErrorDialog(
+                      context,
+                      <String>['Series not found!'],
+                    ),
+                    serverError: (_) async => baseErrorDialog(
+                      context,
+                      <String>['A problem occurred on our end!'],
+                    ),
+                    unexpected: (_) async => baseErrorDialog(
+                      context,
+                      <String>['An unexpected error occured!'],
+                    ),
+                    orElse: () {},
+                  ),
+                  orElse: () {},
+                ),
+              ),
+              none: () {},
+            );
+          },
+          builder: (context, state) {
+            return HorizontalPageViewNavbar(
+              colors: const <Color>[pastelYellow, pastelPink],
+              controller: _pageController,
+              pageIndex: state.currentPageViewIdx,
+              titles: libraryPageViewKeys,
+            );
+          },
+        ),
+        LibraryPageViewBuilder(
+          pageController: _pageController,
+        ),
+      ],
     );
   }
 }

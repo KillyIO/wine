@@ -4,9 +4,6 @@ part of 'home_bloc.dart';
 @freezed
 class HomeEvent with _$HomeEvent {
   /// @nodoc
-  const factory HomeEvent.initBloc() = InitBloc;
-
-  /// @nodoc
   const factory HomeEvent.loadNewSeries() = LoadNewSeries;
 
   /// @nodoc
@@ -21,4 +18,8 @@ class HomeEvent with _$HomeEvent {
 
   /// @nodoc
   const factory HomeEvent.loadTopSeries() = LoadTopSeries;
+
+  /// @nodoc
+  const factory HomeEvent.pageViewIndexChanged(int index) =
+      PageViewIndexChanged;
 }

@@ -1,14 +1,10 @@
-import 'dart:async';
-
 import 'package:bloc/bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
-import 'package:rustic/option.dart';
-import 'package:rustic/result.dart';
-import 'package:rustic/tuple.dart';
-import 'package:wine/application/home/home_navigation/home_navigation_bloc.dart';
+import 'package:oxidized/oxidized.dart';
 import 'package:wine/domain/core/core_failure.dart';
 import 'package:wine/domain/series/series.dart';
+import 'package:wine/utils/constants/home.dart';
 
 part 'home_event.dart';
 part 'home_state.dart';
@@ -20,49 +16,42 @@ part 'home_bloc.freezed.dart';
 @injectable
 class HomeBloc extends Bloc<HomeEvent, HomeState> {
   /// @nodoc
-  HomeBloc(
-    this._homeNavigationBloc,
-  ) : super(HomeState.initial());
+  HomeBloc() : super(HomeState.initial()) {
+    on<LoadNewSeries>((_, emit) {});
+    on<LoadSeriesByGenre>((value, emit) {});
+    on<LoadSeriesByLanguage>((value, emit) {});
+    on<LoadSeriesByTime>((value, emit) {});
+    on<LoadTopSeries>((_, emit) {});
+    on<PageViewIndexChanged>((value, emit) {
+      if (state.currentPageViewIdx != value.index) {
+        var newIdx = value.index;
+        if (value.index > homePageViewKeys.length - 1) {
+          newIdx = 0;
+        }
+        if (value.index < 0) {
+          newIdx = homePageViewKeys.length - 1;
+        }
+        emit(
+          state.copyWith(
+            currentPageViewIdx: newIdx,
+            failure: Option.none(),
+          ),
+        );
 
-  /// @nodoc
-  final HomeNavigationBloc _homeNavigationBloc;
-
-  late StreamSubscription _homeNavigationBlocSubscription;
-
-  @override
-  Stream<HomeState> mapEventToState(
-    HomeEvent event,
-  ) async* {
-    yield* event.map(
-      initBloc: (value) async* {
-        _homeNavigationBlocSubscription =
-            _homeNavigationBloc.stream.listen((homeNavigationState) {
-          switch (homeNavigationState.currentPageViewIdx) {
-            case 0:
-              if (state.topSeriesList.isEmpty) {
-                add(const HomeEvent.loadTopSeries());
-              }
-              break;
-            case 1:
-              if (state.newSeriesList.isEmpty) {
-                add(const HomeEvent.loadNewSeries());
-              }
-              break;
-            default:
-          }
-        });
-      },
-      loadNewSeries: (_) async* {},
-      loadSeriesByGenre: (value) async* {},
-      loadSeriesByLanguage: (value) async* {},
-      loadSeriesByTime: (value) async* {},
-      loadTopSeries: (_) async* {},
-    );
-  }
-
-  @override
-  Future<void> close() {
-    _homeNavigationBlocSubscription.cancel();
-    return super.close();
+        switch (state.currentPageViewIdx) {
+          case 0:
+            if (state.topSeriesList.isEmpty) {
+              add(const HomeEvent.loadTopSeries());
+            }
+            break;
+          case 1:
+            if (state.newSeriesList.isEmpty) {
+              add(const HomeEvent.loadNewSeries());
+            }
+            break;
+          default:
+        }
+      }
+    });
   }
 }

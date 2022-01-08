@@ -3,7 +3,7 @@ import 'package:fake_cloud_firestore/fake_cloud_firestore.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:hive/hive.dart';
 import 'package:mocktail/mocktail.dart';
-import 'package:rustic/tuple.dart';
+import 'package:oxidized/oxidized.dart';
 
 import 'package:wine/domain/default_covers/default_covers_failure.dart';
 import 'package:wine/domain/default_covers/i_default_covers_repository.dart';
@@ -44,9 +44,9 @@ void main() {
       final result = await _defaultCoversRepository
           .cacheDefaultCoverURLs(testDefaultCovers);
 
-      expect(result.isOk, true);
+      expect(result.isOk(), true);
       result.match(
-        (ok) => expect(ok, const Unit()),
+        (ok) => expect(ok, unit),
         (_) {},
       );
 
@@ -63,7 +63,7 @@ void main() {
         final result = await _defaultCoversRepository
             .cacheDefaultCoverURLs(testDefaultCovers);
 
-        expect(result.isErr, true);
+        expect(result.isErr(), true);
         result.match(
           (_) {},
           (err) => expect(
@@ -82,7 +82,7 @@ void main() {
       final result =
           await _defaultCoversRepository.fetchDefaultCoverURLByKey('string');
 
-      expect(result.isOk, true);
+      expect(result.isOk(), true);
       result.match(
         (ok) => expect(ok, 'coverURL'),
         (_) {},
@@ -97,7 +97,7 @@ void main() {
         final result =
             await _defaultCoversRepository.fetchDefaultCoverURLByKey('string');
 
-        expect(result.isErr, true);
+        expect(result.isErr(), true);
         result.match(
           (_) {},
           (err) => expect(
@@ -116,17 +116,15 @@ void main() {
       final result = await _defaultCoversRepository.loadDefaultCoverURLs();
       final expectedMap = {'key': 'coverURL'};
 
-      expect(result.isOk, true);
+      expect(result.isOk(), true);
       result.match(
         (ok) => expect(ok, expectedMap),
         (_) {},
       );
     });
 
-    // ignore: todo
-    // TODO uncomment these tests
-    // ignore: todo
-    // TODO once fake_cloud_firestore allows throwing exceptions
+    // TODO(SSebigo): uncomment these tests
+    // TODO(SSebigo): once fake_cloud_firestore allows throwing exceptions
     // test('When docs empty Then return DefaultCoverURLsNotLoaded', () async {
     // when(() => _firestore.collection(any()))
     // .thenReturn(_collectionReference);
@@ -136,7 +134,7 @@ void main() {
 
     //   final result = await _defaultCoversRepository.loadDefaultCoverURLs();
 
-    //   expect(result.isErr, true);
+    //   expect(result.isErr(), true);
     //   result.match(
     //     (_) {},
     //     (failure) => expect(
@@ -153,7 +151,7 @@ void main() {
 
     //   final result = await _defaultCoversRepository.loadDefaultCoverURLs();
 
-    //   expect(result.isErr, true);
+    //   expect(result.isErr(), true);
     //   result.match(
     //     (_) {},
     //     (failure) => expect(
@@ -168,7 +166,7 @@ void main() {
 
     //   final result = await _defaultCoversRepository.loadDefaultCoverURLs();
 
-    //   expect(result.isErr, true);
+    //   expect(result.isErr(), true);
     //   result.match(
     //     (_) {},
     //     (failure) => expect(

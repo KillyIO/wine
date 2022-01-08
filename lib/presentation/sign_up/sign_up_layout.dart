@@ -36,13 +36,18 @@ class SignUpLayout extends StatelessWidget {
 
     return BlocListener<SignUpBloc, SignUpState>(
       listener: (context, state) {
-        state.failureOption.whenSome(
-          (some) => some.whenErr(
-            (err) => err.maybeMap(
+        state.failureOption.when(
+          some: (value) => value.when(
+            ok: (_) {},
+            err: (err) => err.maybeMap(
               auth: (f) => f.f.maybeMap(
                 emailAlreadyInUse: (_) async => baseErrorDialog(
                   context,
                   <String>['Email address already in use.'],
+                ),
+                permissionDenied: (_) async => baseErrorDialog(
+                  context,
+                  <String>['Forbidden action. Permission denied!'],
                 ),
                 serverError: (_) async => baseErrorDialog(
                   context,
@@ -62,6 +67,10 @@ class SignUpLayout extends StatelessWidget {
                 orElse: () {},
               ),
               user: (f) => f.f.maybeMap(
+                permissionDenied: (_) async => baseErrorDialog(
+                  context,
+                  <String>['Forbidden action. Permission denied!'],
+                ),
                 serverError: (_) async => baseErrorDialog(
                   context,
                   <String>['A problem occurred on our end!'],
@@ -79,6 +88,7 @@ class SignUpLayout extends StatelessWidget {
               orElse: () {},
             ),
           ),
+          none: () {},
         );
 
         if (state.isAuthenticated) {
@@ -98,151 +108,149 @@ class SignUpLayout extends StatelessWidget {
       },
       child: BlocBuilder<SignUpBloc, SignUpState>(
         builder: (context, state) {
-          return SafeArea(
-            child: AbsorbPointer(
-              absorbing: state.isProcessing,
-              child: Form(
-                autovalidateMode: AutovalidateMode.always,
-                child: SingleChildScrollView(
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: <Widget>[
-                      if (onDialogBackButtonPressed != null)
-                        Padding(
-                          padding: const EdgeInsets.only(left: 10, top: 10),
-                          child: IconButton(
-                            key: const Key('sign_up_dialog_back_button'),
-                            highlightColor: Colors.transparent,
-                            hoverColor: Colors.transparent,
-                            icon: const Icon(
-                              Icons.keyboard_backspace_outlined,
-                              color: Colors.black,
-                            ),
-                            onPressed: onDialogBackButtonPressed,
-                            splashColor: Colors.transparent,
+          return AbsorbPointer(
+            absorbing: state.isProcessing,
+            child: Form(
+              autovalidateMode: AutovalidateMode.always,
+              child: SingleChildScrollView(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    if (onDialogBackButtonPressed != null)
+                      Padding(
+                        padding: const EdgeInsets.only(left: 10, top: 10),
+                        child: IconButton(
+                          key: const Key('sign_up_dialog_back_button'),
+                          highlightColor: Colors.transparent,
+                          hoverColor: Colors.transparent,
+                          icon: const Icon(
+                            Icons.keyboard_backspace_outlined,
+                            color: Colors.black,
                           ),
-                        ),
-                      // SECTION e-mail address
-                      Padding(
-                        padding: EdgeInsets.only(
-                          top: onDialogBackButtonPressed != null ? 25 : 0,
-                        ),
-                        child: const TextFieldLabel(title: 'EMAIL ADDRESS*'),
-                      ),
-                      AuthenticationTextField(
-                        hintText: 'Email address',
-                        onChanged: (value) => context
-                            .read<SignUpBloc>()
-                            .add(SignUpEvent.emailAddressChanged(value)),
-                        validator: (_) => context
-                            .watch<SignUpBloc>()
-                            .state
-                            .emailAddress
-                            .value
-                            .match(
-                              (_) => null,
-                              (err) => err.maybeMap(
-                                invalidEmailAddress: (_) =>
-                                    'The email address is invalid.',
-                                orElse: () => null,
-                              ),
-                            ),
-                        keyboardType: TextInputType.emailAddress,
-                      ),
-                      // SECTION password
-                      const Padding(
-                        padding: EdgeInsets.only(top: 10),
-                        child: TextFieldLabel(title: 'PASSWORD*'),
-                      ),
-                      AuthenticationTextField(
-                        hintText: 'Password (6+ characters)',
-                        obscureText: true,
-                        onChanged: (value) => context
-                            .read<SignUpBloc>()
-                            .add(SignUpEvent.passwordChanged(value)),
-                        validator: (_) => context
-                            .watch<SignUpBloc>()
-                            .state
-                            .password
-                            .value
-                            .match(
-                              (_) => null,
-                              (err) => err.maybeMap(
-                                invalidPassword: (_) =>
-                                    'The password is invalid.',
-                                orElse: () => null,
-                              ),
-                            ),
-                      ),
-                      // SECTION confirm password
-                      const Padding(
-                        padding: EdgeInsets.only(top: 10),
-                        child: TextFieldLabel(title: 'CONFIRM YOUR PASSWORD*'),
-                      ),
-                      AuthenticationTextField(
-                        hintText: 'Confirm your password (6+ characters)',
-                        obscureText: true,
-                        onChanged: (value) => context
-                            .read<SignUpBloc>()
-                            .add(SignUpEvent.confirmPasswordChanged(value)),
-                        validator: (_) => context
-                            .watch<SignUpBloc>()
-                            .state
-                            .confirmPassword
-                            .value
-                            .match(
-                              (_) => null,
-                              (err) => err.maybeMap(
-                                invalidConfirmPassword: (_) =>
-                                    'The confirm password is invalid.',
-                                orElse: () => null,
-                              ),
-                            ),
-                      ),
-                      // SECTION Username
-                      const Padding(
-                        padding: EdgeInsets.only(top: 10),
-                        child: TextFieldLabel(title: 'USERNAME*'),
-                      ),
-                      AuthenticationTextField(
-                        hintText: 'Username (4+ characters)',
-                        onChanged: (value) => context
-                            .read<SignUpBloc>()
-                            .add(SignUpEvent.usernameChanged(value)),
-                        validator: (_) => context
-                            .watch<SignUpBloc>()
-                            .state
-                            .username
-                            .value
-                            .match(
-                              (_) => null,
-                              (err) => err.maybeMap(
-                                invalidUsername: (_) =>
-                                    'The username is invalid.',
-                                orElse: () => null,
-                              ),
-                            ),
-                      ),
-                      const Padding(
-                        padding: EdgeInsets.only(left: 20, right: 20, top: 25),
-                        child: SignUpTOSAndPPButton(),
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(vertical: 25),
-                        child: DefaultButton(
-                          color: pastelPink,
-                          title: 'SIGN UP',
-                          isProcessing: state.isProcessing,
-                          onPressed: state.isProcessing
-                              ? null
-                              : () => context
-                                  .read<SignUpBloc>()
-                                  .add(const SignUpEvent.signUpPressed()),
-                          width: mediaQuery.width,
+                          onPressed: onDialogBackButtonPressed,
+                          splashColor: Colors.transparent,
                         ),
                       ),
-                    ],
-                  ),
+                    // SECTION e-mail address
+                    Padding(
+                      padding: EdgeInsets.only(
+                        top: onDialogBackButtonPressed != null ? 25 : 0,
+                      ),
+                      child: const TextFieldLabel(title: 'EMAIL ADDRESS*'),
+                    ),
+                    AuthenticationTextField(
+                      hintText: 'Email address',
+                      onChanged: (value) => context
+                          .read<SignUpBloc>()
+                          .add(SignUpEvent.emailAddressChanged(value)),
+                      validator: (_) => context
+                          .watch<SignUpBloc>()
+                          .state
+                          .emailAddress
+                          .value
+                          .match(
+                            (_) => null,
+                            (err) => err.maybeMap(
+                              invalidEmailAddress: (_) =>
+                                  'The email address is invalid.',
+                              orElse: () => null,
+                            ),
+                          ),
+                      keyboardType: TextInputType.emailAddress,
+                    ),
+                    // SECTION password
+                    const Padding(
+                      padding: EdgeInsets.only(top: 10),
+                      child: TextFieldLabel(title: 'PASSWORD*'),
+                    ),
+                    AuthenticationTextField(
+                      hintText: 'Password (6+ characters)',
+                      obscureText: true,
+                      onChanged: (value) => context
+                          .read<SignUpBloc>()
+                          .add(SignUpEvent.passwordChanged(value)),
+                      validator: (_) => context
+                          .watch<SignUpBloc>()
+                          .state
+                          .password
+                          .value
+                          .match(
+                            (_) => null,
+                            (err) => err.maybeMap(
+                              invalidPassword: (_) =>
+                                  'The password is invalid.',
+                              orElse: () => null,
+                            ),
+                          ),
+                    ),
+                    // SECTION confirm password
+                    const Padding(
+                      padding: EdgeInsets.only(top: 10),
+                      child: TextFieldLabel(title: 'CONFIRM YOUR PASSWORD*'),
+                    ),
+                    AuthenticationTextField(
+                      hintText: 'Confirm your password (6+ characters)',
+                      obscureText: true,
+                      onChanged: (value) => context
+                          .read<SignUpBloc>()
+                          .add(SignUpEvent.confirmPasswordChanged(value)),
+                      validator: (_) => context
+                          .watch<SignUpBloc>()
+                          .state
+                          .confirmPassword
+                          .value
+                          .match(
+                            (_) => null,
+                            (err) => err.maybeMap(
+                              invalidConfirmPassword: (_) =>
+                                  'The confirm password is invalid.',
+                              orElse: () => null,
+                            ),
+                          ),
+                    ),
+                    // SECTION Username
+                    const Padding(
+                      padding: EdgeInsets.only(top: 10),
+                      child: TextFieldLabel(title: 'USERNAME*'),
+                    ),
+                    AuthenticationTextField(
+                      hintText: 'Username (4+ characters)',
+                      onChanged: (value) => context
+                          .read<SignUpBloc>()
+                          .add(SignUpEvent.usernameChanged(value)),
+                      validator: (_) => context
+                          .watch<SignUpBloc>()
+                          .state
+                          .username
+                          .value
+                          .match(
+                            (_) => null,
+                            (err) => err.maybeMap(
+                              invalidUsername: (_) =>
+                                  'The username is invalid.',
+                              orElse: () => null,
+                            ),
+                          ),
+                    ),
+                    const Padding(
+                      padding: EdgeInsets.only(left: 20, right: 20, top: 25),
+                      child: SignUpTOSAndPPButton(),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 25),
+                      child: DefaultButton(
+                        color: pastelPink,
+                        title: 'SIGN UP',
+                        isProcessing: state.isProcessing,
+                        onPressed: state.isProcessing
+                            ? null
+                            : () => context
+                                .read<SignUpBloc>()
+                                .add(const SignUpEvent.signUpPressed()),
+                        width: mediaQuery.width,
+                      ),
+                    ),
+                  ],
                 ),
               ),
             ),

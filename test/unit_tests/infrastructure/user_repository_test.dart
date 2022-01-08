@@ -1,7 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:fake_cloud_firestore/fake_cloud_firestore.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:rustic/tuple.dart';
+import 'package:oxidized/oxidized.dart';
 import 'package:wine/domain/auth/username.dart';
 import 'package:wine/domain/core/unique_id.dart';
 import 'package:wine/domain/user/i_user_repository.dart';
@@ -11,11 +11,8 @@ import 'package:wine/utils/paths/users.dart';
 
 import '../utils/constants.dart';
 
-// ignore: todo
-// TODO uncomment these tests
-// ignore: todo
-// TODO once fake_cloud_firestore allows throwing exceptions
-
+// TODO(SSebigo): uncomment these tests
+// TODO(SSebigo): once fake_cloud_firestore allows throwing exceptions
 void main() {
   late IUserRepository _userRepository;
 
@@ -32,9 +29,9 @@ void main() {
       final result = await _userRepository
           .checkUsernameAvailability(Username(testUsername));
 
-      expect(result.isOk, true);
+      expect(result.isOk(), true);
       result.match(
-        (ok) => expect(ok, const Unit()),
+        (ok) => expect(ok, unit),
         (_) {},
       );
     });
@@ -48,7 +45,7 @@ void main() {
       final result = await _userRepository
           .checkUsernameAvailability(Username(testUsername));
 
-      expect(result.isErr, true);
+      expect(result.isErr(), true);
       result.match(
         (_) {},
         (err) => expect(err, isA<UsernameAlreadyInUse>()),
@@ -61,7 +58,7 @@ void main() {
     //   final result = await _userRepository
     //       .checkUsernameAvailability(Username(testUsername));
 
-    //   expect(result.isErr, true);
+    //   expect(result.isErr(), true);
     //   result.match(
     //     (_) {},
     //     (err) => expect(err, isA<ServerError>()),
@@ -74,7 +71,7 @@ void main() {
     //   final result = await _userRepository
     //       .checkUsernameAvailability(Username(testUsername));
 
-    //   expect(result.isErr, true);
+    //   expect(result.isErr(), true);
     //   result.match(
     //     (_) {},
     //     (err) => expect(err, isA<Unexpected>()),
@@ -89,9 +86,10 @@ void main() {
           .doc(testUserUid)
           .set(testUserFirestore, SetOptions(merge: true));
 
-      final result = await _userRepository.loadUser(testUserUid);
+      final result = await _userRepository
+          .loadUser(UniqueID.fromUniqueString(testUserUid));
 
-      expect(result.isOk, true);
+      expect(result.isOk(), true);
       result.match(
         (ok) => expect(ok, testUser),
         (_) {},
@@ -99,9 +97,10 @@ void main() {
     });
 
     test('When user not loaded Then return UserNotFound', () async {
-      final result = await _userRepository.loadUser(testHiveUser.uid);
+      final result = await _userRepository
+          .loadUser(UniqueID.fromUniqueString(testHiveUser.uid));
 
-      expect(result.isErr, true);
+      expect(result.isErr(), true);
       result.match(
         (_) {},
         (err) => expect(err, isA<UserNotFound>()),
@@ -113,7 +112,7 @@ void main() {
 
     //   final result = await _userRepository.loadUser(testHiveUser.uid);
 
-    //   expect(result.isErr, true);
+    //   expect(result.isErr(), true);
     //   result.match(
     //     (_) {},
     //     (err) => expect(err, isA<ServerError>()),
@@ -125,7 +124,7 @@ void main() {
 
     //   final result = await _userRepository.loadUser(testHiveUser.uid);
 
-    //   expect(result.isErr, true);
+    //   expect(result.isErr(), true);
     //   result.match(
     //     (_) {},
     //     (err) => expect(err, isA<Unexpected>()),
@@ -137,9 +136,9 @@ void main() {
     test('When user details saved Then return Unit', () async {
       final result = await _userRepository.saveDetailsFromUser(testUser);
 
-      expect(result.isOk, true);
+      expect(result.isOk(), true);
       result.match(
-        (ok) => expect(ok, const Unit()),
+        (ok) => expect(ok, unit),
         (_) {},
       );
     });
@@ -150,7 +149,7 @@ void main() {
 
     //   final result = await _userRepository.saveDetailsFromUser(testUser);
 
-    //   expect(result.isErr, true);
+    //   expect(result.isErr(), true);
     //   result.match(
     //     (_) {},
     //     (err) => expect(err, isA<ServerError>()),
@@ -163,7 +162,7 @@ void main() {
 
     //   final result = await _userRepository.saveDetailsFromUser(testUser);
 
-    //   expect(result.isErr, true);
+    //   expect(result.isErr(), true);
     //   result.match(
     //     (_) {},
     //     (err) => expect(err, isA<Unexpected>()),
@@ -178,9 +177,9 @@ void main() {
         Username(testUsername),
       );
 
-      expect(result.isOk, true);
+      expect(result.isOk(), true);
       result.match(
-        (ok) => expect(ok, const Unit()),
+        (ok) => expect(ok, unit),
         (_) {},
       );
     });
@@ -193,7 +192,7 @@ void main() {
     //       await _userRepository
     //.saveUsername(testUid, Username(testUsername));
 
-    //   expect(result.isErr, true);
+    //   expect(result.isErr(), true);
     //   result.match(
     //     (_) {},
     //     (err) => expect(err, isA<ServerError>()),
@@ -208,7 +207,7 @@ void main() {
     //       await _userRepository
     //.saveUsername(testUid, Username(testUsername));
 
-    //   expect(result.isErr, true);
+    //   expect(result.isErr(), true);
     //   result.match(
     //     (_) {},
     //     (err) => expect(err, isA<Unexpected>()),

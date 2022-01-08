@@ -1,6 +1,6 @@
 import 'dart:io';
 
-import 'package:rustic/result.dart';
+import 'package:oxidized/oxidized.dart';
 import 'package:string_validator/string_validator.dart';
 import 'package:stringr/stringr.dart';
 
@@ -21,20 +21,18 @@ Result<String, ValueFailure<String>> validateConfirmPassword(
 }
 
 /// @nodoc
-Result<File, ValueFailure<File>> validateCoverFile(File file) {
-  final isImage = file.path.isImage;
+Result<String, ValueFailure<String>> validateCoverFile(String path) {
+  final isImage = path.isImage;
 
-  if (isImage != null && isImage && file.existsSync()) {
-    return Ok(file);
+  if (isImage != null && isImage && File(path).existsSync()) {
+    return Ok(path);
   }
-  return Err(ValueFailure.invalidCoverFile(file));
+  return Err(ValueFailure.invalidCoverFile(path));
 }
 
 /// @nodoc
 Result<String, ValueFailure<String>> validateCoverURL(String input) {
-  final isImage = input.isImage;
-
-  if (isImage != null && isImage && isURL(input)) {
+  if (isURL(input)) {
     return Ok(input);
   }
   return Err(ValueFailure.invalidCoverURL(input));
@@ -49,11 +47,8 @@ Result<String, ValueFailure<String>> validateEmailAddress(String input) {
 }
 
 /// @nodoc
-Result<String, ValueFailure<String>> validateGenre(
-  String input, {
-  bool isOptional = false,
-}) {
-  if (input.isNotEmpty || isOptional) {
+Result<String, ValueFailure<String>> validateGenre(String input) {
+  if (input.isNotEmpty) {
     return Ok(input);
   }
   return Err(ValueFailure.emptySelection(input));

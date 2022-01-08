@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'auth_bloc.dart';
 
@@ -42,6 +43,13 @@ mixin _$AuthEvent {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? anonymous,
+    TResult Function()? authChanged,
+    TResult Function()? authenticated,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? anonymous,
     TResult Function()? authChanged,
@@ -54,6 +62,13 @@ mixin _$AuthEvent {
     required TResult Function(Anonymous value) anonymous,
     required TResult Function(AuthChanged value) authChanged,
     required TResult Function(Authenticated value) authenticated,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(Anonymous value)? anonymous,
+    TResult Function(AuthChanged value)? authChanged,
+    TResult Function(Authenticated value)? authenticated,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -109,7 +124,8 @@ class _$Anonymous implements Anonymous {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is Anonymous);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is Anonymous);
   }
 
   @override
@@ -123,6 +139,16 @@ class _$Anonymous implements Anonymous {
     required TResult Function() authenticated,
   }) {
     return anonymous();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? anonymous,
+    TResult Function()? authChanged,
+    TResult Function()? authenticated,
+  }) {
+    return anonymous?.call();
   }
 
   @override
@@ -147,6 +173,16 @@ class _$Anonymous implements Anonymous {
     required TResult Function(Authenticated value) authenticated,
   }) {
     return anonymous(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(Anonymous value)? anonymous,
+    TResult Function(AuthChanged value)? authChanged,
+    TResult Function(Authenticated value)? authenticated,
+  }) {
+    return anonymous?.call(this);
   }
 
   @override
@@ -198,7 +234,8 @@ class _$AuthChanged implements AuthChanged {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is AuthChanged);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is AuthChanged);
   }
 
   @override
@@ -212,6 +249,16 @@ class _$AuthChanged implements AuthChanged {
     required TResult Function() authenticated,
   }) {
     return authChanged();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? anonymous,
+    TResult Function()? authChanged,
+    TResult Function()? authenticated,
+  }) {
+    return authChanged?.call();
   }
 
   @override
@@ -236,6 +283,16 @@ class _$AuthChanged implements AuthChanged {
     required TResult Function(Authenticated value) authenticated,
   }) {
     return authChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(Anonymous value)? anonymous,
+    TResult Function(AuthChanged value)? authChanged,
+    TResult Function(Authenticated value)? authenticated,
+  }) {
+    return authChanged?.call(this);
   }
 
   @override
@@ -287,7 +344,8 @@ class _$Authenticated implements Authenticated {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is Authenticated);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is Authenticated);
   }
 
   @override
@@ -301,6 +359,16 @@ class _$Authenticated implements Authenticated {
     required TResult Function() authenticated,
   }) {
     return authenticated();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? anonymous,
+    TResult Function()? authChanged,
+    TResult Function()? authenticated,
+  }) {
+    return authenticated?.call();
   }
 
   @override
@@ -325,6 +393,16 @@ class _$Authenticated implements Authenticated {
     required TResult Function(Authenticated value) authenticated,
   }) {
     return authenticated(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(Anonymous value)? anonymous,
+    TResult Function(AuthChanged value)? authChanged,
+    TResult Function(Authenticated value)? authenticated,
+  }) {
+    return authenticated?.call(this);
   }
 
   @override
@@ -376,6 +454,13 @@ mixin _$AuthState {
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? anonymous,
+    TResult Function()? authenticated,
+    TResult Function()? initial,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? anonymous,
     TResult Function()? authenticated,
@@ -388,6 +473,13 @@ mixin _$AuthState {
     required TResult Function(_Anonymous value) anonymous,
     required TResult Function(_Authenticated value) authenticated,
     required TResult Function(_Initial value) initial,
+  }) =>
+      throw _privateConstructorUsedError;
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Anonymous value)? anonymous,
+    TResult Function(_Authenticated value)? authenticated,
+    TResult Function(_Initial value)? initial,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -444,7 +536,8 @@ class _$_Anonymous implements _Anonymous {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Anonymous);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _Anonymous);
   }
 
   @override
@@ -458,6 +551,16 @@ class _$_Anonymous implements _Anonymous {
     required TResult Function() initial,
   }) {
     return anonymous();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? anonymous,
+    TResult Function()? authenticated,
+    TResult Function()? initial,
+  }) {
+    return anonymous?.call();
   }
 
   @override
@@ -482,6 +585,16 @@ class _$_Anonymous implements _Anonymous {
     required TResult Function(_Initial value) initial,
   }) {
     return anonymous(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Anonymous value)? anonymous,
+    TResult Function(_Authenticated value)? authenticated,
+    TResult Function(_Initial value)? initial,
+  }) {
+    return anonymous?.call(this);
   }
 
   @override
@@ -533,7 +646,8 @@ class _$_Authenticated implements _Authenticated {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Authenticated);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _Authenticated);
   }
 
   @override
@@ -547,6 +661,16 @@ class _$_Authenticated implements _Authenticated {
     required TResult Function() initial,
   }) {
     return authenticated();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? anonymous,
+    TResult Function()? authenticated,
+    TResult Function()? initial,
+  }) {
+    return authenticated?.call();
   }
 
   @override
@@ -571,6 +695,16 @@ class _$_Authenticated implements _Authenticated {
     required TResult Function(_Initial value) initial,
   }) {
     return authenticated(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Anonymous value)? anonymous,
+    TResult Function(_Authenticated value)? authenticated,
+    TResult Function(_Initial value)? initial,
+  }) {
+    return authenticated?.call(this);
   }
 
   @override
@@ -620,7 +754,8 @@ class _$_Initial implements _Initial {
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is _Initial);
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is _Initial);
   }
 
   @override
@@ -634,6 +769,16 @@ class _$_Initial implements _Initial {
     required TResult Function() initial,
   }) {
     return initial();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? anonymous,
+    TResult Function()? authenticated,
+    TResult Function()? initial,
+  }) {
+    return initial?.call();
   }
 
   @override
@@ -658,6 +803,16 @@ class _$_Initial implements _Initial {
     required TResult Function(_Initial value) initial,
   }) {
     return initial(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(_Anonymous value)? anonymous,
+    TResult Function(_Authenticated value)? authenticated,
+    TResult Function(_Initial value)? initial,
+  }) {
+    return initial?.call(this);
   }
 
   @override

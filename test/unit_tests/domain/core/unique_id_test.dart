@@ -1,5 +1,5 @@
 import 'package:flutter_test/flutter_test.dart';
-import 'package:rustic/result.dart';
+import 'package:oxidized/oxidized.dart';
 import 'package:wine/domain/core/unique_id.dart';
 import 'package:wine/domain/core/value_failure.dart';
 
@@ -34,8 +34,8 @@ void main() {
 
           expect(
             uid.value,
-            const Err<String, ValueFailure<String>>(
-              ValueFailure<String>.invalidUniqueID(testInvalidUid),
+            Err<String, ValueFailure<String>>(
+              const ValueFailure<String>.invalidUniqueID(testInvalidUid),
             ),
           );
         },

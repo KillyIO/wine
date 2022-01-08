@@ -9,56 +9,62 @@ environment:
   sdk: ">=2.12.0 <3.0.0"
 
 dependencies:
-  auto_route: ^2.3.0
-  cloud_firestore: ^2.5.1
-  cupertino_icons: ^1.0.3
-  device_preview: ^0.7.4
-  devicelocale: ^0.4.2
+  assorted_layout_widgets: ^5.4.1
+  auto_route: ^3.2.1
+  cached_network_image: ^3.2.0
+  cloud_firestore: ^3.1.6
+  cupertino_icons: ^1.0.4
+  devicelocale: ^0.5.0
   equatable: ^2.0.3
-  firebase_auth: ^3.1.0
-  firebase_core: ^1.6.0
+  firebase_auth: ^3.3.5
+  firebase_core: ^1.11.0
+  firebase_storage: ^10.2.5
   flare_flutter: ^3.0.2
-  flare_loading: ^3.0.0
   flutter:
     sdk: flutter
-  flutter_bloc: ^7.1.0
-  flutter_native_splash: ^1.2.1
-  freezed_annotation: ^0.14.2
+  flutter_bloc: ^8.0.1
+  flutter_native_splash: ^1.3.3
+  flutter_staggered_grid_view: ^0.6.0
+  freezed_annotation: ^1.1.0
   get_it: ^7.2.0
-  google_sign_in: ^5.1.0
-  hive: ^2.0.4
+  google_sign_in: ^5.2.1
+  hive: ^2.0.5
   hive_flutter: ^1.1.0
-  injectable: ^1.4.1
+  image_cropper: ^1.4.1
+  image_picker: ^0.8.4+4
+  injectable: ^1.5.0
+  intl: ^0.17.0
   introduction_screen: ^2.1.0
-  json_annotation: ^4.0.1
+  json_annotation: ^4.4.0
+  like_button: ^2.0.4
   line_icons: ^2.0.1
   logger: ^1.1.0
-  mime: ^1.0.0
-  path_provider: ^2.0.3
+  oxidized: ^5.1.0
+  path_provider: ^2.0.8
+  readmore: ^2.1.0
   responsive_builder: ^0.4.1
-  rustic: ^0.3.0
   shimmer: ^2.0.0
   simple_gesture_detector: ^0.2.0
   string_validator: ^0.3.0
   stringr: ^0.0.2-prerelease
-  time: ^2.0.0
-  uuid: ^3.0.4
+  time: ^2.1.0
+  uuid: ^3.0.5
 
 dev_dependencies:
-  auto_route_generator: ^2.1.0
-  bloc_test: ^8.1.0
-  build_runner: ^2.1.2
-  fake_cloud_firestore: ^1.1.3
-  flutter_flavorizr: ^2.0.0
+  auto_route_generator: ^3.2.1
+  bloc_test: ^9.0.2
+  build_runner: ^2.1.7
+  fake_cloud_firestore: ^1.2.0
+  flutter_flavorizr: ^2.1.2
   flutter_test:
     sdk: flutter
   fluttericon: ^2.0.0
-  freezed: ^0.14.2
-  hive_generator: ^1.1.0
-  injectable_generator: ^1.4.1
-  json_serializable: ^4.1.3
-  mocktail: ^0.1.4
-  very_good_analysis: ^2.3.0
+  freezed: ^1.1.0
+  hive_generator: ^1.1.1
+  injectable_generator: ^1.5.2
+  json_serializable: ^6.1.3
+  mocktail: ^0.2.0
+  very_good_analysis: ^2.4.0
 
 flavorizr:
   app:
@@ -67,18 +73,6 @@ flavorizr:
     ios: null
 
   flavors:
-    beta:
-      app:
-        name: "WINE Beta"
-
-      android:
-        applicationId: "io.killy.wine.beta"
-        generateDummyAssets: false
-
-      ios:
-        bundleId: "io.killy.wine.beta"
-        generateDummyAssets: false
-
     development:
       app:
         name: "WINE Dev"

@@ -2,7 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart' as auth;
 import 'package:flutter_test/flutter_test.dart';
 import 'package:hive/hive.dart';
 import 'package:mocktail/mocktail.dart';
-import 'package:rustic/tuple.dart';
+import 'package:oxidized/oxidized.dart';
 import 'package:wine/domain/sessions/i_sessions_repository.dart';
 import 'package:wine/domain/sessions/sessions_failure.dart';
 import 'package:wine/infrastructure/sessions/sessions_repository.dart';
@@ -26,7 +26,7 @@ void main() {
 
     _sessionsRepository = SessionsRepository(_firebaseAuth, _hive);
 
-    registerFallbackValue<HiveUser>(MockHiveUser());
+    registerFallbackValue(MockHiveUser());
 
     when(() => _hive.openBox<dynamic>(any())).thenAnswer((_) async => _box);
 
@@ -42,9 +42,9 @@ void main() {
 
       final result = await _sessionsRepository.createSession();
 
-      expect(result.isOk, true);
+      expect(result.isOk(), true);
       result.match(
-        (ok) => expect(ok, const Unit()),
+        (ok) => expect(ok, unit),
         (_) {},
       );
     });
@@ -54,7 +54,7 @@ void main() {
 
       final result = await _sessionsRepository.createSession();
 
-      expect(result.isErr, true);
+      expect(result.isErr(), true);
       result.match(
         (_) {},
         (err) => expect(err, isA<SessionNotCreated>()),
@@ -74,9 +74,9 @@ void main() {
 
       final result = await _sessionsRepository.deleteSession();
 
-      expect(result.isOk, true);
+      expect(result.isOk(), true);
       result.match(
-        (ok) => expect(ok, const Unit()),
+        (ok) => expect(ok, unit),
         (_) {},
       );
     });
@@ -86,7 +86,7 @@ void main() {
 
       final result = await _sessionsRepository.deleteSession();
 
-      expect(result.isErr, true);
+      expect(result.isErr(), true);
       result.match(
         (_) {},
         (err) => expect(err, isA<SessionNotDeleted>()),
@@ -100,7 +100,7 @@ void main() {
 
       final result = await _sessionsRepository.fetchSession();
 
-      expect(result.isOk, true);
+      expect(result.isOk(), true);
       result.match(
         (ok) => expect(ok, testHiveUser.toDomain()),
         (_) {},
@@ -112,7 +112,7 @@ void main() {
 
       final result = await _sessionsRepository.fetchSession();
 
-      expect(result.isErr, true);
+      expect(result.isErr(), true);
       result.match(
         (_) {},
         (err) => expect(err, isA<SessionNotFound>()),
@@ -127,9 +127,9 @@ void main() {
       final result =
           await _sessionsRepository.updateSession(testHiveUser.toDomain());
 
-      expect(result.isOk, true);
+      expect(result.isOk(), true);
       result.match(
-        (ok) => expect(ok, const Unit()),
+        (ok) => expect(ok, unit),
         (_) {},
       );
     });
@@ -144,7 +144,7 @@ void main() {
       final result =
           await _sessionsRepository.updateSession(testHiveUser.toDomain());
 
-      expect(result.isErr, true);
+      expect(result.isErr(), true);
       result.match(
         (_) {},
         (err) => expect(err, isA<SessionNotUpdated>()),

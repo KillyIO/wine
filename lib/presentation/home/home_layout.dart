@@ -1,31 +1,26 @@
-import 'package:auto_route/auto_route.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:wine/application/home/home_bloc.dart';
-import 'package:wine/application/home/home_navigation/home_navigation_bloc.dart';
 import 'package:wine/application/setup/setup_bloc.dart';
-import 'package:wine/presentation/core/footer/footer.dart';
-import 'package:wine/presentation/core/page_view/horizontal_page_view_navbar.dart';
+import 'package:wine/presentation/home/home_content_layout.dart';
 import 'package:wine/presentation/home/home_filters_menu_layout.dart';
 import 'package:wine/presentation/home/home_menu_layout.dart';
+import 'package:wine/presentation/home/home_onboarding_layout.dart';
+import 'package:wine/presentation/home/home_splash_layout.dart';
 import 'package:wine/presentation/home/widgets/home_app_bar.dart';
-import 'package:wine/presentation/home/widgets/home_page_view_builder.dart';
-import 'package:wine/presentation/routes/router.dart';
-import 'package:wine/utils/constants/core.dart';
-import 'package:wine/utils/constants/home.dart';
-import 'package:wine/utils/constants/palette.dart';
 import 'package:wine/utils/functions/dialog_functions.dart';
 
 /// @nodoc
 class HomeLayout extends StatelessWidget {
   /// @nodoc
-  HomeLayout({Key? key}) : super(key: key);
-
-  final PageController _pageController = PageController(initialPage: 1000);
+  const HomeLayout({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    SystemChrome.setPreferredOrientations([
+      DeviceOrientation.portraitUp,
+      DeviceOrientation.portraitDown,
+    ]);
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: const HomeAppBar(),
@@ -100,45 +95,36 @@ class HomeLayout extends StatelessWidget {
                 orElse: () {},
               );
             },
-            initHomeBloc: (_) {
-              context.read<HomeBloc>().add(const HomeEvent.initBloc());
-            },
-            navigateToOnboarding: (_) {
-              context.router.root.push(const OnboardingRoute());
-            },
             orElse: () {},
           );
         },
-        child: SafeArea(
-          child: Center(
-            child: Container(
-              constraints: const BoxConstraints(
-                maxWidth: maxContentLayoutWidth,
-              ),
-              child: Column(
-                children: <Widget>[
-                  BlocBuilder<HomeNavigationBloc, HomeNavigationState>(
-                    builder: (context, state) {
-                      return HorizontalPageViewNavbar(
-                        colors: const <Color>[pastelYellow, pastelPink],
-                        controller: _pageController,
-                        pageIndex: state.currentPageViewIdx,
-                        titles: homePageViewKeys,
-                      );
-                    },
-                  ),
-                  HomePageViewBuilder(
-                    controller: _pageController,
-                  ),
-                  if (kIsWeb) const Footer(),
-                ],
-              ),
-            ),
-          ),
+        child: BlocBuilder<SetupBloc, SetupState>(
+          builder: (context, state) {
+            return state.map(
+              content: (_) => const HomeContentLayout(),
+              failure: (_) => Container(),
+              initial: (_) => const HomeSplashLayout(),
+              onboarding: (_) => const HomeOnboardingLayout(),
+            );
+          },
         ),
       ),
-      drawer: const HomeFiltersMenuLayout(),
-      endDrawer: const HomeMenuLayout(),
+      drawer: BlocBuilder<SetupBloc, SetupState>(
+        builder: (context, state) {
+          return state.maybeMap(
+            content: (_) => const HomeFiltersMenuLayout(),
+            orElse: () => Container(),
+          );
+        },
+      ),
+      endDrawer: BlocBuilder<SetupBloc, SetupState>(
+        builder: (context, state) {
+          return state.maybeMap(
+            content: (_) => const HomeMenuLayout(),
+            orElse: () => Container(),
+          );
+        },
+      ),
     );
   }
 }

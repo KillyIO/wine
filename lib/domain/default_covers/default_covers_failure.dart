@@ -18,6 +18,9 @@ class DefaultCoversFailure with _$DefaultCoversFailure {
       DefaultCoverURLsNotLoaded;
 
   /// @nodoc
+  const factory DefaultCoversFailure.permissionDenied() = PermissionDenied;
+
+  /// @nodoc
   const factory DefaultCoversFailure.serverError() = ServerError;
 
   /// @nodoc

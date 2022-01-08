@@ -1,5 +1,6 @@
+// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
-// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides
+// ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target
 
 part of 'settings_dto.dart';
 
@@ -37,7 +38,7 @@ class _$SettingsDTOTearOff {
     );
   }
 
-  SettingsDTO fromJson(Map<String, Object> json) {
+  SettingsDTO fromJson(Map<String, Object?> json) {
     return SettingsDTO.fromJson(json);
   }
 }
@@ -196,7 +197,7 @@ class _$_SettingsDTO implements _SettingsDTO {
       required this.enableSeriesViewsCount});
 
   factory _$_SettingsDTO.fromJson(Map<String, dynamic> json) =>
-      _$_$_SettingsDTOFromJson(json);
+      _$$_SettingsDTOFromJson(json);
 
   @override
   final bool? enableChaptersBookmarksCount;
@@ -219,44 +220,32 @@ class _$_SettingsDTO implements _SettingsDTO {
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other is _SettingsDTO &&
-            (identical(other.enableChaptersBookmarksCount,
-                    enableChaptersBookmarksCount) ||
-                const DeepCollectionEquality().equals(
-                    other.enableChaptersBookmarksCount,
-                    enableChaptersBookmarksCount)) &&
-            (identical(
-                    other.enableChaptersLikesCount, enableChaptersLikesCount) ||
-                const DeepCollectionEquality().equals(
-                    other.enableChaptersLikesCount,
-                    enableChaptersLikesCount)) &&
-            (identical(
-                    other.enableChaptersViewsCount, enableChaptersViewsCount) ||
-                const DeepCollectionEquality().equals(
-                    other.enableChaptersViewsCount,
-                    enableChaptersViewsCount)) &&
-            (identical(other.enableSeriesBookmarksCount,
-                    enableSeriesBookmarksCount) ||
-                const DeepCollectionEquality().equals(
-                    other.enableSeriesBookmarksCount,
-                    enableSeriesBookmarksCount)) &&
-            (identical(other.enableSeriesLikesCount, enableSeriesLikesCount) ||
-                const DeepCollectionEquality().equals(
-                    other.enableSeriesLikesCount, enableSeriesLikesCount)) &&
-            (identical(other.enableSeriesViewsCount, enableSeriesViewsCount) ||
-                const DeepCollectionEquality().equals(
-                    other.enableSeriesViewsCount, enableSeriesViewsCount)));
+        (other.runtimeType == runtimeType &&
+            other is _SettingsDTO &&
+            const DeepCollectionEquality().equals(
+                other.enableChaptersBookmarksCount,
+                enableChaptersBookmarksCount) &&
+            const DeepCollectionEquality().equals(
+                other.enableChaptersLikesCount, enableChaptersLikesCount) &&
+            const DeepCollectionEquality().equals(
+                other.enableChaptersViewsCount, enableChaptersViewsCount) &&
+            const DeepCollectionEquality().equals(
+                other.enableSeriesBookmarksCount, enableSeriesBookmarksCount) &&
+            const DeepCollectionEquality()
+                .equals(other.enableSeriesLikesCount, enableSeriesLikesCount) &&
+            const DeepCollectionEquality()
+                .equals(other.enableSeriesViewsCount, enableSeriesViewsCount));
   }
 
   @override
-  int get hashCode =>
-      runtimeType.hashCode ^
-      const DeepCollectionEquality().hash(enableChaptersBookmarksCount) ^
-      const DeepCollectionEquality().hash(enableChaptersLikesCount) ^
-      const DeepCollectionEquality().hash(enableChaptersViewsCount) ^
-      const DeepCollectionEquality().hash(enableSeriesBookmarksCount) ^
-      const DeepCollectionEquality().hash(enableSeriesLikesCount) ^
-      const DeepCollectionEquality().hash(enableSeriesViewsCount);
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(enableChaptersBookmarksCount),
+      const DeepCollectionEquality().hash(enableChaptersLikesCount),
+      const DeepCollectionEquality().hash(enableChaptersViewsCount),
+      const DeepCollectionEquality().hash(enableSeriesBookmarksCount),
+      const DeepCollectionEquality().hash(enableSeriesLikesCount),
+      const DeepCollectionEquality().hash(enableSeriesViewsCount));
 
   @JsonKey(ignore: true)
   @override
@@ -265,7 +254,7 @@ class _$_SettingsDTO implements _SettingsDTO {
 
   @override
   Map<String, dynamic> toJson() {
-    return _$_$_SettingsDTOToJson(this);
+    return _$$_SettingsDTOToJson(this);
   }
 }
 
@@ -282,17 +271,17 @@ abstract class _SettingsDTO implements SettingsDTO {
       _$_SettingsDTO.fromJson;
 
   @override
-  bool? get enableChaptersBookmarksCount => throw _privateConstructorUsedError;
+  bool? get enableChaptersBookmarksCount;
   @override
-  bool? get enableChaptersLikesCount => throw _privateConstructorUsedError;
+  bool? get enableChaptersLikesCount;
   @override
-  bool? get enableChaptersViewsCount => throw _privateConstructorUsedError;
+  bool? get enableChaptersViewsCount;
   @override
-  bool? get enableSeriesBookmarksCount => throw _privateConstructorUsedError;
+  bool? get enableSeriesBookmarksCount;
   @override
-  bool? get enableSeriesLikesCount => throw _privateConstructorUsedError;
+  bool? get enableSeriesLikesCount;
   @override
-  bool? get enableSeriesViewsCount => throw _privateConstructorUsedError;
+  bool? get enableSeriesViewsCount;
   @override
   @JsonKey(ignore: true)
   _$SettingsDTOCopyWith<_SettingsDTO> get copyWith =>

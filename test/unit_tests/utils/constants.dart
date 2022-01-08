@@ -1,6 +1,5 @@
 // SECTION valid inputs
 import 'package:cloud_firestore/cloud_firestore.dart' hide Settings;
-import 'package:firebase_core/firebase_core.dart';
 import 'package:wine/domain/auth/email_address.dart';
 import 'package:wine/domain/auth/username.dart';
 import 'package:wine/domain/core/unique_id.dart';
@@ -19,7 +18,7 @@ const testName = 'Lphong Tieu 75';
 const testEmpty = '';
 
 const testGenre = 'horror';
-const testGenreOptional = 'action';
+const testGenres = <String>['horror'];
 
 const testLanguage = 'fr';
 
@@ -73,8 +72,6 @@ const testCoverURL = 'https://storage.com/example-bucket/cover.jpeg';
 const testCoverPath = '/path/cover.jpeg';
 const testInvalidCoverURL =
     'http:storage.invalid.com/example-bucket/cover.jpeg';
-const testInvalidCoverURLExtension =
-    'https://storage.com/example-bucket/cover.pdf';
 const testInvalidCoverPath = '///invalid/path//cover.jpeg';
 
 // SECTION Default Covers

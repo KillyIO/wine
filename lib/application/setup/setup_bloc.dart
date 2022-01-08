@@ -1,7 +1,6 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
@@ -30,7 +29,103 @@ class SetupBloc extends Bloc<SetupEvent, SetupState> {
     this._sessionsRepository,
     this._settingsRepository,
     this._userRepository,
-  ) : super(const SetupState.initial());
+  ) : super(const SetupState.initial()) {
+    on<AppLaunched>((_, emit) async {
+      emit(const SetupState.initial());
+
+      if (_authFacade.isLoggedIn) {
+        add(const SetupEvent.authenticated());
+      } else {
+        (await _authFacade.logInAnonymously()).match(
+          (_) {
+            add(const SetupEvent.authenticated());
+          },
+          (failure) {
+            emit(SetupState.failure(CoreFailure.auth(failure)));
+          },
+        );
+      }
+    });
+    on<Authenticated>((_, emit) async {
+      if (_authFacade.isAnonymous) {
+        await _fetchSettings();
+      } else {
+        (await _defaultCoversRepository.loadDefaultCoverURLs()).match(
+          (defaultCoverURLs) {
+            add(SetupEvent.defaultCoverURLsLoaded(defaultCoverURLs));
+          },
+          (failure) {
+            emit(SetupState.failure(CoreFailure.defaultCovers(failure)));
+          },
+        );
+      }
+    });
+    on<DefaultCoverURLsCached>((_, __) async => _fetchSettings());
+    on<DefaultCoverURLsLoaded>(
+      (value, emit) async => (await _defaultCoversRepository
+              .cacheDefaultCoverURLs(value.defaultCoverURLs))
+          .match(
+        (_) {
+          add(const SetupEvent.defaultCoverURLsCached());
+        },
+        (failure) {
+          emit(SetupState.failure(CoreFailure.defaultCovers(failure)));
+        },
+      ),
+    );
+    on<OnboardingDonePressed>((_, emit) => emit(const SetupState.content()));
+    on<SessionFetched>((value, emit) async {
+      if (_authFacade.isAnonymous) {
+        emit(const SetupState.content());
+      } else {
+        (await _userRepository.loadUser(value.session.uid)).match(
+          (user) {
+            add(SetupEvent.userLoaded(user));
+          },
+          (failure) {
+            emit(SetupState.failure(CoreFailure.user(failure)));
+          },
+        );
+      }
+    });
+    on<SessionNotFound>(
+      (_, emit) async => (await _sessionsRepository.createSession()).match(
+        (session) {
+          if (kIsWeb) {
+            emit(const SetupState.content());
+          } else {
+            emit(const SetupState.onboarding());
+          }
+        },
+        (failure) {
+          emit(SetupState.failure(CoreFailure.sessions(failure)));
+        },
+      ),
+    );
+    on<SettingsFetched>((_, __) async => await _fetchSession());
+    on<SettingsInitialized>((_, __) async => await _fetchSession());
+    on<SettingsNotFound>(
+      (_, emit) async => (await _settingsRepository.initializeSettings()).match(
+        (_) {
+          add(const SetupEvent.settingsInitialized());
+        },
+        (failure) {
+          emit(SetupState.failure(CoreFailure.settings(failure)));
+        },
+      ),
+    );
+    on<UserLoaded>(
+      (value, emit) async =>
+          (await _sessionsRepository.updateSession(value.user)).match(
+        (_) {
+          emit(const SetupState.content());
+        },
+        (failure) {
+          emit(SetupState.failure(CoreFailure.sessions(failure)));
+        },
+      ),
+    );
+  }
 
   final IAuthFacade _authFacade;
   final IDefaultCoversRepository _defaultCoversRepository;
@@ -38,116 +133,7 @@ class SetupBloc extends Bloc<SetupEvent, SetupState> {
   final ISettingsRepository _settingsRepository;
   final IUserRepository _userRepository;
 
-  @override
-  Stream<SetupState> mapEventToState(
-    SetupEvent event,
-  ) async* {
-    yield* event.map(
-      appLaunched: (_) async* {
-        yield const SetupState.initial();
-
-        if (_authFacade.isLoggedIn) {
-          add(const SetupEvent.authenticated());
-        } else {
-          yield* (await _authFacade.logInAnonymously()).match(
-            (_) async* {
-              add(const SetupEvent.authenticated());
-            },
-            (failure) async* {
-              yield SetupState.failure(CoreFailure.auth(failure));
-            },
-          );
-        }
-      },
-      authenticated: (_) async* {
-        if (_authFacade.isAnonymous) {
-          await _fetchSettings();
-        } else {
-          yield* (await _defaultCoversRepository.loadDefaultCoverURLs()).match(
-            (defaultCoverURLs) async* {
-              add(SetupEvent.defaultCoverURLsLoaded(defaultCoverURLs));
-            },
-            (failure) async* {
-              yield SetupState.failure(CoreFailure.defaultCovers(failure));
-            },
-          );
-        }
-      },
-      defaultCoverURLsCached: (_) async* {
-        await _fetchSettings();
-      },
-      defaultCoverURLsLoaded: (value) async* {
-        yield* (await _defaultCoversRepository
-                .cacheDefaultCoverURLs(value.defaultCoverURLs))
-            .match(
-          (_) async* {
-            add(const SetupEvent.defaultCoverURLsCached());
-          },
-          (failure) async* {
-            yield SetupState.failure(CoreFailure.defaultCovers(failure));
-          },
-        );
-      },
-      sessionFetched: (value) async* {
-        if (_authFacade.isAnonymous) {
-          yield const SetupState.initHomeBloc();
-        } else {
-          yield* (await _userRepository
-                  .loadUser(value.session.uid.getOrCrash()))
-              .match(
-            (user) async* {
-              add(SetupEvent.userLoaded(user));
-            },
-            (failure) async* {
-              yield SetupState.failure(CoreFailure.user(failure));
-            },
-          );
-        }
-      },
-      sessionNotFound: (_) async* {
-        yield* (await _sessionsRepository.createSession()).match(
-          (session) async* {
-            if (kIsWeb) {
-              yield const SetupState.initHomeBloc();
-            } else {
-              yield const SetupState.navigateToOnboarding();
-            }
-          },
-          (failure) async* {
-            yield SetupState.failure(CoreFailure.sessions(failure));
-          },
-        );
-      },
-      settingsFetched: (_) async* {
-        await _fetchSession();
-      },
-      settingsInitialized: (_) async* {
-        await _fetchSession();
-      },
-      settingsNotFound: (_) async* {
-        yield* (await _settingsRepository.initializeSettings()).match(
-          (_) async* {
-            add(const SetupEvent.settingsInitialized());
-          },
-          (failure) async* {
-            yield SetupState.failure(CoreFailure.settings(failure));
-          },
-        );
-      },
-      userLoaded: (value) async* {
-        yield* (await _sessionsRepository.updateSession(value.user)).match(
-          (_) async* {
-            yield const SetupState.initHomeBloc();
-          },
-          (failure) async* {
-            yield SetupState.failure(CoreFailure.sessions(failure));
-          },
-        );
-      },
-    );
-  }
-
-  Future<void> _fetchSession() async {
+  FutureOr<void> _fetchSession() async {
     (await _sessionsRepository.fetchSession()).match(
       (session) {
         add(SetupEvent.sessionFetched(session));

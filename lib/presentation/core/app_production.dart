@@ -3,9 +3,11 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import 'package:wine/application/auth/auth_bloc.dart';
 import 'package:wine/application/home/home_bloc.dart';
+import 'package:wine/application/library/library_bloc.dart';
 import 'package:wine/flavors.dart';
 import 'package:wine/injection.dart';
 import 'package:wine/presentation/routes/router.gr.dart';
+import 'package:wine/utils/themes.dart';
 
 /// @nodoc
 class AppProduction extends StatelessWidget {
@@ -20,14 +22,19 @@ class AppProduction extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
-        BlocProvider(create: (_) => getIt<AuthBloc>()),
+        BlocProvider(
+          lazy: false,
+          create: (_) => getIt<AuthBloc>()..add(const AuthEvent.authChanged()),
+        ),
         BlocProvider(create: (_) => getIt<HomeBloc>()),
+        BlocProvider(create: (_) => getIt<LibraryBloc>()),
       ],
       child: MaterialApp.router(
         builder: (_, router) => router!,
         debugShowCheckedModeBanner: false,
         routerDelegate: _appRouter.delegate(),
         routeInformationParser: _appRouter.defaultRouteParser(),
+        theme: lightTheme,
         title: F.title,
       ),
     );

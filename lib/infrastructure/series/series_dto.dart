@@ -21,19 +21,38 @@ class SeriesDTO with _$SeriesDTO {
     required String authorUID,
     required int bookmarksCount,
     required String coverURL,
-    required String genre,
-    String? genreOptional,
+    required List<String> genres,
     required bool isNSFW,
     required bool isPublished,
     required String language,
     required int likesCount,
-    @ServerTimestampConverter() required FieldValue serverTimeStamp,
     String? subtitle,
     required String summary,
     required String title,
     required String uid,
+    @ServerTimestampConverter() required FieldValue updatedAt,
     required int viewsCount,
   }) = _SeriesDTO;
+
+  /// @nodoc
+  factory SeriesDTO.fromDomain(Series series) {
+    return SeriesDTO(
+      authorUID: series.authorUID.getOrCrash(),
+      bookmarksCount: series.bookmarksCount,
+      coverURL: series.coverURL.getOrCrash(),
+      genres: series.genres.map((g) => g.getOrCrash()).toList(),
+      isNSFW: series.isNSFW,
+      isPublished: series.isPublished,
+      language: series.language.getOrCrash(),
+      likesCount: series.likesCount,
+      subtitle: series.subtitle?.getOrCrash(),
+      summary: series.summary.getOrCrash(),
+      title: series.title.getOrCrash(),
+      uid: series.uid.getOrCrash(),
+      updatedAt: FieldValue.serverTimestamp(),
+      viewsCount: series.viewsCount,
+    );
+  }
 
   /// @nodoc
   factory SeriesDTO.fromJson(Map<String, dynamic> json) =>
@@ -52,8 +71,7 @@ extension SeriesDTOX on SeriesDTO {
         authorUID: UniqueID.fromUniqueString(authorUID),
         bookmarksCount: bookmarksCount,
         coverURL: CoverURL(coverURL),
-        genre: Genre(genre),
-        genreOptional: Genre(genreOptional ?? '', isOptional: true),
+        genres: genres.map((g) => Genre(g)).toList(),
         isNSFW: isNSFW,
         isPublished: isPublished,
         language: Language(language),
@@ -70,8 +88,7 @@ extension SeriesDTOX on SeriesDTO {
         'authorUID': authorUID,
         'bookmarksCount': bookmarksCount,
         'coverURL': coverURL,
-        'genre': genre,
-        'genreOptional': genreOptional,
+        'genres': genres,
         'isNSFW': isNSFW,
         'isPublished': isPublished,
         'language': language,
@@ -91,8 +108,7 @@ extension SeriesMapX on Map {
         authorUID: UniqueID.fromUniqueString(this['authorUID'] as String),
         bookmarksCount: this['bookmarksCount'] as int,
         coverURL: CoverURL(this['coverURL'] as String),
-        genre: Genre(this['genre'] as String),
-        genreOptional: Genre(this['genreOptional'] as String, isOptional: true),
+        genres: (this['genres'] as List<String>).map((g) => Genre(g)).toList(),
         isNSFW: this['isNSFW'] as bool,
         isPublished: this['isPublished'] as bool,
         language: Language(this['language'] as String),

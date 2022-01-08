@@ -18,16 +18,19 @@ class SetupEvent with _$SetupEvent {
   ) = DefaultCoverURLsLoaded;
 
   /// @nodoc
+  const factory SetupEvent.onboardingDonePressed() = OnboardingDonePressed;
+
+  /// @nodoc
   const factory SetupEvent.sessionFetched(User session) = SessionFetched;
 
   /// @nodoc
   const factory SetupEvent.sessionNotFound() = SessionNotFound;
 
   /// @nodoc
-  const factory SetupEvent.settingsInitialized() = SettingsInitialized;
+  const factory SetupEvent.settingsFetched() = SettingsFetched;
 
   /// @nodoc
-  const factory SetupEvent.settingsFetched() = SettingsFetched;
+  const factory SetupEvent.settingsInitialized() = SettingsInitialized;
 
   /// @nodoc
   const factory SetupEvent.settingsNotFound() = SettingsNotFound;
