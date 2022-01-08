@@ -5,6 +5,7 @@ part of 'series_bloc.dart';
 class SeriesState with _$SeriesState {
   /// @nodoc
   const factory SeriesState({
+    required bool authorIsUser,
     required User author,
     required Option<Result<None, CoreFailure>> failureOption,
     required bool isBookmarked,
@@ -17,6 +18,7 @@ class SeriesState with _$SeriesState {
 
   /// @nodoc
   factory SeriesState.initial() => SeriesState(
+        authorIsUser: false,
         author: User.empty(),
         failureOption: const None(),
         isBookmarked: false,

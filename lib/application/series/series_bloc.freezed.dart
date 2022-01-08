@@ -1405,7 +1405,8 @@ class _$SeriesStateTearOff {
   const _$SeriesStateTearOff();
 
   _SeriesState call(
-      {required User author,
+      {required bool authorIsUser,
+      required User author,
       required Option<Result<None<Object>, CoreFailure>> failureOption,
       required bool isBookmarked,
       required bool isLiked,
@@ -1414,6 +1415,7 @@ class _$SeriesStateTearOff {
       required User session,
       required Settings settings}) {
     return _SeriesState(
+      authorIsUser: authorIsUser,
       author: author,
       failureOption: failureOption,
       isBookmarked: isBookmarked,
@@ -1431,6 +1433,7 @@ const $SeriesState = _$SeriesStateTearOff();
 
 /// @nodoc
 mixin _$SeriesState {
+  bool get authorIsUser => throw _privateConstructorUsedError;
   User get author => throw _privateConstructorUsedError;
   Option<Result<None<Object>, CoreFailure>> get failureOption =>
       throw _privateConstructorUsedError;
@@ -1452,7 +1455,8 @@ abstract class $SeriesStateCopyWith<$Res> {
           SeriesState value, $Res Function(SeriesState) then) =
       _$SeriesStateCopyWithImpl<$Res>;
   $Res call(
-      {User author,
+      {bool authorIsUser,
+      User author,
       Option<Result<None<Object>, CoreFailure>> failureOption,
       bool isBookmarked,
       bool isLiked,
@@ -1477,6 +1481,7 @@ class _$SeriesStateCopyWithImpl<$Res> implements $SeriesStateCopyWith<$Res> {
 
   @override
   $Res call({
+    Object? authorIsUser = freezed,
     Object? author = freezed,
     Object? failureOption = freezed,
     Object? isBookmarked = freezed,
@@ -1487,6 +1492,10 @@ class _$SeriesStateCopyWithImpl<$Res> implements $SeriesStateCopyWith<$Res> {
     Object? settings = freezed,
   }) {
     return _then(_value.copyWith(
+      authorIsUser: authorIsUser == freezed
+          ? _value.authorIsUser
+          : authorIsUser // ignore: cast_nullable_to_non_nullable
+              as bool,
       author: author == freezed
           ? _value.author
           : author // ignore: cast_nullable_to_non_nullable
@@ -1559,7 +1568,8 @@ abstract class _$SeriesStateCopyWith<$Res>
       __$SeriesStateCopyWithImpl<$Res>;
   @override
   $Res call(
-      {User author,
+      {bool authorIsUser,
+      User author,
       Option<Result<None<Object>, CoreFailure>> failureOption,
       bool isBookmarked,
       bool isLiked,
@@ -1590,6 +1600,7 @@ class __$SeriesStateCopyWithImpl<$Res> extends _$SeriesStateCopyWithImpl<$Res>
 
   @override
   $Res call({
+    Object? authorIsUser = freezed,
     Object? author = freezed,
     Object? failureOption = freezed,
     Object? isBookmarked = freezed,
@@ -1600,6 +1611,10 @@ class __$SeriesStateCopyWithImpl<$Res> extends _$SeriesStateCopyWithImpl<$Res>
     Object? settings = freezed,
   }) {
     return _then(_SeriesState(
+      authorIsUser: authorIsUser == freezed
+          ? _value.authorIsUser
+          : authorIsUser // ignore: cast_nullable_to_non_nullable
+              as bool,
       author: author == freezed
           ? _value.author
           : author // ignore: cast_nullable_to_non_nullable
@@ -1640,7 +1655,8 @@ class __$SeriesStateCopyWithImpl<$Res> extends _$SeriesStateCopyWithImpl<$Res>
 
 class _$_SeriesState implements _SeriesState {
   const _$_SeriesState(
-      {required this.author,
+      {required this.authorIsUser,
+      required this.author,
       required this.failureOption,
       required this.isBookmarked,
       required this.isLiked,
@@ -1649,6 +1665,8 @@ class _$_SeriesState implements _SeriesState {
       required this.session,
       required this.settings});
 
+  @override
+  final bool authorIsUser;
   @override
   final User author;
   @override
@@ -1668,7 +1686,7 @@ class _$_SeriesState implements _SeriesState {
 
   @override
   String toString() {
-    return 'SeriesState(author: $author, failureOption: $failureOption, isBookmarked: $isBookmarked, isLiked: $isLiked, isProcessing: $isProcessing, series: $series, session: $session, settings: $settings)';
+    return 'SeriesState(authorIsUser: $authorIsUser, author: $author, failureOption: $failureOption, isBookmarked: $isBookmarked, isLiked: $isLiked, isProcessing: $isProcessing, series: $series, session: $session, settings: $settings)';
   }
 
   @override
@@ -1676,6 +1694,8 @@ class _$_SeriesState implements _SeriesState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _SeriesState &&
+            const DeepCollectionEquality()
+                .equals(other.authorIsUser, authorIsUser) &&
             const DeepCollectionEquality().equals(other.author, author) &&
             const DeepCollectionEquality()
                 .equals(other.failureOption, failureOption) &&
@@ -1692,6 +1712,7 @@ class _$_SeriesState implements _SeriesState {
   @override
   int get hashCode => Object.hash(
       runtimeType,
+      const DeepCollectionEquality().hash(authorIsUser),
       const DeepCollectionEquality().hash(author),
       const DeepCollectionEquality().hash(failureOption),
       const DeepCollectionEquality().hash(isBookmarked),
@@ -1709,7 +1730,8 @@ class _$_SeriesState implements _SeriesState {
 
 abstract class _SeriesState implements SeriesState {
   const factory _SeriesState(
-      {required User author,
+      {required bool authorIsUser,
+      required User author,
       required Option<Result<None<Object>, CoreFailure>> failureOption,
       required bool isBookmarked,
       required bool isLiked,
@@ -1718,6 +1740,8 @@ abstract class _SeriesState implements SeriesState {
       required User session,
       required Settings settings}) = _$_SeriesState;
 
+  @override
+  bool get authorIsUser;
   @override
   User get author;
   @override

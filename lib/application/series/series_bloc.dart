@@ -32,6 +32,8 @@ class SeriesBloc extends Bloc<SeriesEvent, SeriesState> {
     this._settingsRepository,
     this._userRepository,
   ) : super(SeriesState.initial()) {
+    // TODO(SSebigo): try loading first chapter
+    // TODO(SSebigo): try fetching last chapter read
     on<AuthorLoaded>((_, emit) async {
       await _fetchSettings(emit);
     });
@@ -71,6 +73,8 @@ class SeriesBloc extends Bloc<SeriesEvent, SeriesState> {
         (session) {
           emit(
             state.copyWith(
+              authorIsUser: state.series.authorUID.getOrCrash() !=
+                  session.uid.getOrCrash(),
               failureOption: const None(),
               session: session,
             ),
@@ -137,8 +141,7 @@ class SeriesBloc extends Bloc<SeriesEvent, SeriesState> {
       await _loadSeries(emit, reload: true);
     });
     on<SessionFetched>((_, emit) async {
-      if (state.series.authorUID.getOrCrash() !=
-          state.session.uid.getOrCrash()) {
+      if (!state.authorIsUser) {
         (await _userRepository.loadUser(state.series.authorUID)).match(
           (user) {
             emit(
