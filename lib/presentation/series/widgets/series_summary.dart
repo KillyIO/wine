@@ -17,6 +17,14 @@ class SeriesSummary extends StatelessWidget {
     if (summary != null) {
       return ReadMoreText(
         summary!,
+        lessStyle: const TextStyle(
+          color: Colors.black,
+          fontWeight: FontWeight.bold,
+        ),
+        moreStyle: const TextStyle(
+          color: Colors.black,
+          fontWeight: FontWeight.bold,
+        ),
         trimMode: TrimMode.Line,
         trimCollapsedText: ' More',
         trimExpandedText: ' Less',
