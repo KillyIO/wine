@@ -1,6 +1,5 @@
 import 'dart:io';
 
-import 'package:mime/mime.dart';
 import 'package:oxidized/oxidized.dart';
 import 'package:string_validator/string_validator.dart';
 import 'package:stringr/stringr.dart';
@@ -33,9 +32,7 @@ Result<String, ValueFailure<String>> validateCoverFile(String path) {
 
 /// @nodoc
 Result<String, ValueFailure<String>> validateCoverURL(String input) {
-  final type = lookupMimeType(input)?.split('/');
-
-  if (isURL(input) && type?.first == 'image') {
+  if (isURL(input)) {
     return Ok(input);
   }
   return Err(ValueFailure.invalidCoverURL(input));

@@ -39,7 +39,6 @@ dependencies:
   like_button: ^2.0.4
   line_icons: ^2.0.1
   logger: ^1.1.0
-  mime: ^1.0.1
   oxidized: ^5.1.0
   path_provider: ^2.0.8
   readmore: ^2.1.0
