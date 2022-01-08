@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:like_button/like_button.dart';
 import 'package:wine/application/series/series_bloc.dart';
+import 'package:wine/presentation/series/widgets/series_chapter_one.dart';
 import 'package:wine/presentation/series/widgets/series_cover_layout.dart';
 import 'package:wine/presentation/series/widgets/series_genres.dart';
+import 'package:wine/presentation/series/widgets/series_resume_reading.dart';
 import 'package:wine/presentation/series/widgets/series_stats.dart';
 import 'package:wine/presentation/series/widgets/series_summary_layout.dart';
 import 'package:wine/utils/constants/core.dart';
-import 'package:wine/utils/constants/palette.dart';
 import 'package:wine/utils/functions/dialog_functions.dart';
 
 /// @nodoc
@@ -71,7 +71,18 @@ class SeriesLayout extends StatelessWidget {
                   padding: EdgeInsets.only(bottom: 20),
                   child: SeriesSummaryLayout(),
                 ),
-                SeriesGenres(),
+                Padding(
+                  padding: EdgeInsets.only(bottom: 50),
+                  child: SeriesGenres(),
+                ),
+                Padding(
+                  padding: EdgeInsets.only(bottom: 50),
+                  child: SeriesChapterOne(),
+                ),
+                Padding(
+                  padding: EdgeInsets.only(bottom: 20),
+                  child: SeriesResumeReading(),
+                ),
               ],
             ),
           ),
