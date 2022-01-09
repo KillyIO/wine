@@ -35,6 +35,9 @@ dependencies:
   injectable: ^1.5.0
   intl: ^0.17.0
   introduction_screen: ^2.1.0
+  isar: ^1.0.5
+  isar_connect: ^1.0.5
+  isar_flutter_libs: ^1.0.5
   json_annotation: ^4.4.0
   like_button: ^2.0.4
   line_icons: ^2.0.1
@@ -62,6 +65,7 @@ dev_dependencies:
   freezed: ^1.1.0
   hive_generator: ^1.1.1
   injectable_generator: ^1.5.2
+  isar_generator: ^1.0.5
   json_serializable: ^6.1.3
   mocktail: ^0.2.0
   very_good_analysis: ^2.4.0

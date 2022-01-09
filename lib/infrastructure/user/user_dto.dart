@@ -7,6 +7,7 @@ import 'package:wine/domain/core/unique_id.dart';
 import 'package:wine/domain/user/user.dart';
 import 'package:wine/infrastructure/core/converter.dart';
 import 'package:wine/infrastructure/user/hive_user.dart';
+import 'package:wine/infrastructure/user/isar_user.dart';
 
 part 'user_dto.freezed.dart';
 part 'user_dto.g.dart';
@@ -57,7 +58,7 @@ extension UserDTOX on UserDTO {
       );
 
   /// @nodoc
-  HiveUser toAdapter() => HiveUser(
+  IsarUser toAdapter() => IsarUser(
         emailAddress: emailAddress,
         uid: uid,
         username: username,

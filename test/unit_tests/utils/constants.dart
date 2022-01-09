@@ -7,6 +7,7 @@ import 'package:wine/domain/settings/settings.dart';
 import 'package:wine/domain/user/user.dart';
 import 'package:wine/infrastructure/settings/hive_settings.dart';
 import 'package:wine/infrastructure/user/hive_user.dart';
+import 'package:wine/infrastructure/user/isar_user.dart';
 
 const testConfirmPasssword = r'''wT-t"_fCznEH+tPMt7Y$JB''';
 const testEmailAddress = 'lphong.tieu.75@pickuplanet.com';
@@ -104,8 +105,9 @@ final testUser = User(
   uid: UniqueID.fromUniqueString(testUserUid),
   username: Username(testEmailAddress.split('@').first),
 );
-final testHiveUser = HiveUser(
+final testIsarUser = IsarUser(
   emailAddress: testEmailAddress,
+  id: 0,
   uid: testUserUid,
   username: testEmailAddress.split('@').first,
 );

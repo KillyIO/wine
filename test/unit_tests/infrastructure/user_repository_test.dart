@@ -98,7 +98,7 @@ void main() {
 
     test('When user not loaded Then return UserNotFound', () async {
       final result = await _userRepository
-          .loadUser(UniqueID.fromUniqueString(testHiveUser.uid));
+          .loadUser(UniqueID.fromUniqueString(testIsarUser.uid));
 
       expect(result.isErr(), true);
       result.match(
