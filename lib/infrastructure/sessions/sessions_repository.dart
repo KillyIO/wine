@@ -33,13 +33,20 @@ class SessionsRepository implements ISessionsRepository {
 
     if (firebaseUser != null) {
       return _isar.writeTxn((isar) async {
-        await isar.isarUsers.put(
-          IsarUser(
-            emailAddress: defaultEmailAddress,
-            uid: firebaseUser.uid,
-            username: defaultUsername,
-          ),
-        );
+        final session = await isar.isarUsers
+            .where()
+            .uidEqualTo(firebaseUser.uid)
+            .findFirst();
+
+        if (session == null) {
+          await isar.isarUsers.put(
+            IsarUser(
+              emailAddress: defaultEmailAddress,
+              uid: firebaseUser.uid,
+              username: defaultUsername,
+            ),
+          );
+        }
 
         return Ok(unit);
       });
@@ -87,10 +94,19 @@ class SessionsRepository implements ISessionsRepository {
   @override
   Future<Result<Unit, SessionsFailure>> updateSession(User user) async {
     final firebaseUser = _firebaseAuth.currentUser;
-    final userAdapter = UserDTO.fromDomain(user).toAdapter();
+    var userAdapter = UserDTO.fromDomain(user).toAdapter();
 
     if (firebaseUser != null) {
       await _isar.writeTxn((isar) async {
+        final session = await _isar.isarUsers
+            .where()
+            .uidEqualTo(user.uid.getOrCrash())
+            .findFirst();
+
+        if (session != null) {
+          userAdapter = userAdapter.copyWith(id: session.id);
+        }
+
         await isar.isarUsers.put(userAdapter);
       });
 
