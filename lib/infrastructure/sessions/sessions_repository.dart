@@ -97,26 +97,27 @@ class SessionsRepository implements ISessionsRepository {
     var userAdapter = UserDTO.fromDomain(user).toAdapter();
 
     if (firebaseUser != null) {
+      var session = await _isar.isarUsers
+          .where()
+          .uidEqualTo(user.uid.getOrCrash())
+          .findFirst();
+
+      if (session == null) {
+        return Err(const SessionsFailure.sessionNotFound());
+      }
+
+      userAdapter = userAdapter.copyWith(id: session.id);
+
       await _isar.writeTxn((isar) async {
-        final session = await _isar.isarUsers
-            .where()
-            .uidEqualTo(user.uid.getOrCrash())
-            .findFirst();
-
-        if (session != null) {
-          userAdapter = userAdapter.copyWith(id: session.id);
-        }
-
         await isar.isarUsers.put(userAdapter);
       });
 
-      final session = (await _isar.isarUsers
-              .where()
-              .uidEqualTo(user.uid.getOrCrash())
-              .findFirst())
-          ?.toDomain();
+      session = await _isar.isarUsers
+          .where()
+          .uidEqualTo(user.uid.getOrCrash())
+          .findFirst();
 
-      if (session != null && session == user) {
+      if (session != null && session == userAdapter) {
         return Ok(unit);
       }
     }
