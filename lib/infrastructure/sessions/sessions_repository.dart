@@ -94,19 +94,19 @@ class SessionsRepository implements ISessionsRepository {
   @override
   Future<Result<Unit, SessionsFailure>> updateSession(User user) async {
     final firebaseUser = _firebaseAuth.currentUser;
-    var userAdapter = UserDTO.fromDomain(user).toAdapter();
 
     if (firebaseUser != null) {
       var session = await _isar.isarUsers
           .where()
-          .uidEqualTo(user.uid.getOrCrash())
+          .uidEqualTo(firebaseUser.uid)
           .findFirst();
 
       if (session == null) {
         return Err(const SessionsFailure.sessionNotFound());
       }
 
-      userAdapter = userAdapter.copyWith(id: session.id);
+      final userAdapter =
+          UserDTO.fromDomain(user).toAdapter().copyWith(id: session.id);
 
       await _isar.writeTxn((isar) async {
         await isar.isarUsers.put(userAdapter);
@@ -114,7 +114,7 @@ class SessionsRepository implements ISessionsRepository {
 
       session = await _isar.isarUsers
           .where()
-          .uidEqualTo(user.uid.getOrCrash())
+          .uidEqualTo(firebaseUser.uid)
           .findFirst();
 
       if (session != null && session == userAdapter) {
