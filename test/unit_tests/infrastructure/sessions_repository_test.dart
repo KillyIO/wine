@@ -34,7 +34,7 @@ void main() {
     _sessionsRepository = SessionsRepository(_firebaseAuth, _isar);
 
     registerFallbackValue(MockIsarUser());
-    registerFallbackValue(MockIsarCollection<MockIsarUser>());
+    registerFallbackValue(MockIsarCollection<IsarUser>());
     registerFallbackValue(MockWhereClause());
 
     when(() => _firebaseAuth.currentUser).thenReturn(MockUser());
@@ -142,7 +142,6 @@ void main() {
 
   group('updateSession -', () {
     test('When session updated Then return Unit', () async {
-      // when(() => _box.get(any<dynamic>())).thenReturn(testHiveUser);
       when(() => _isar.writeTxn(any())).thenAnswer((_) async => null);
       when(() => _isar.isarUsers).thenReturn(_collection);
       when(_collection.where).thenReturn(_where);
@@ -159,6 +158,25 @@ void main() {
       result.match(
         (ok) => expect(ok, unit),
         (_) {},
+      );
+    });
+
+    test('When session not found Then return SessionNotFound', () async {
+      when(() => _isar.isarUsers).thenReturn(_collection);
+      when(_collection.where).thenReturn(_where);
+      when(
+        () => _where.addWhereClause<QAfterWhereClause>(any()),
+      ).thenReturn(_uidEqualTo);
+      when(_uidEqualTo.build).thenReturn(_build);
+      when(_build.findFirst).thenAnswer((_) async => null);
+
+      final result =
+          await _sessionsRepository.updateSession(testIsarUser.toDomain());
+
+      expect(result.isErr(), true);
+      result.match(
+        (_) {},
+        (err) => expect(err, isA<SessionNotFound>()),
       );
     });
 
