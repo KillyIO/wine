@@ -3,6 +3,7 @@ import 'package:isar/isar.dart';
 import 'package:isar_connect/isar_connect.dart';
 import 'package:path_provider/path_provider.dart';
 import 'package:wine/flavors.dart';
+import 'package:wine/infrastructure/settings/isar_settings.dart';
 import 'package:wine/infrastructure/user/isar_user.dart';
 
 /// @nodoc
@@ -19,7 +20,7 @@ abstract class IIsarInjectableModule {
     }
 
     final isar = await Isar.open(
-      schemas: [IsarUserSchema],
+      schemas: [IsarSettingsSchema, IsarUserSchema],
       directory: (await getApplicationDocumentsDirectory()).path,
     );
 

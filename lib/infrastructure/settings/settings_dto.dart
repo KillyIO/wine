@@ -1,6 +1,7 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
+import 'package:wine/domain/core/unique_id.dart';
 import 'package:wine/domain/settings/settings.dart';
-import 'package:wine/infrastructure/settings/hive_settings.dart';
+import 'package:wine/infrastructure/settings/isar_settings.dart';
 
 part 'settings_dto.freezed.dart';
 part 'settings_dto.g.dart';
@@ -16,6 +17,7 @@ class SettingsDTO with _$SettingsDTO {
     required bool? enableSeriesBookmarksCount,
     required bool? enableSeriesLikesCount,
     required bool? enableSeriesViewsCount,
+    String? uid,
   }) = _SettingsDTO;
 
   /// @nodoc
@@ -31,7 +33,7 @@ class SettingsDTO with _$SettingsDTO {
   }
 
   /// @nodoc
-  factory SettingsDTO.fromAdapter(HiveSettings settings) {
+  factory SettingsDTO.fromAdapter(IsarSettings settings) {
     return SettingsDTO(
       enableChaptersBookmarksCount: settings.enableChaptersBookmarksCount,
       enableChaptersLikesCount: settings.enableChaptersLikesCount,
@@ -39,6 +41,7 @@ class SettingsDTO with _$SettingsDTO {
       enableSeriesBookmarksCount: settings.enableSeriesBookmarksCount,
       enableSeriesLikesCount: settings.enableSeriesLikesCount,
       enableSeriesViewsCount: settings.enableSeriesViewsCount,
+      uid: settings.uid,
     );
   }
 
@@ -60,13 +63,14 @@ extension SettingsDTOX on SettingsDTO {
       );
 
   /// @nodoc
-  HiveSettings toAdapter() => HiveSettings(
+  IsarSettings toAdapter() => IsarSettings(
         enableChaptersBookmarksCount: enableChaptersBookmarksCount,
         enableChaptersLikesCount: enableChaptersLikesCount,
         enableChaptersViewsCount: enableChaptersViewsCount,
         enableSeriesBookmarksCount: enableSeriesBookmarksCount,
         enableSeriesLikesCount: enableSeriesLikesCount,
         enableSeriesViewsCount: enableSeriesViewsCount,
+        uid: uid ?? UniqueID().getOrCrash(),
       );
 }
 

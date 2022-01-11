@@ -27,7 +27,8 @@ class _$SettingsDTOTearOff {
       required bool? enableChaptersViewsCount,
       required bool? enableSeriesBookmarksCount,
       required bool? enableSeriesLikesCount,
-      required bool? enableSeriesViewsCount}) {
+      required bool? enableSeriesViewsCount,
+      String? uid}) {
     return _SettingsDTO(
       enableChaptersBookmarksCount: enableChaptersBookmarksCount,
       enableChaptersLikesCount: enableChaptersLikesCount,
@@ -35,6 +36,7 @@ class _$SettingsDTOTearOff {
       enableSeriesBookmarksCount: enableSeriesBookmarksCount,
       enableSeriesLikesCount: enableSeriesLikesCount,
       enableSeriesViewsCount: enableSeriesViewsCount,
+      uid: uid,
     );
   }
 
@@ -54,6 +56,7 @@ mixin _$SettingsDTO {
   bool? get enableSeriesBookmarksCount => throw _privateConstructorUsedError;
   bool? get enableSeriesLikesCount => throw _privateConstructorUsedError;
   bool? get enableSeriesViewsCount => throw _privateConstructorUsedError;
+  String? get uid => throw _privateConstructorUsedError;
 
   Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
@@ -72,7 +75,8 @@ abstract class $SettingsDTOCopyWith<$Res> {
       bool? enableChaptersViewsCount,
       bool? enableSeriesBookmarksCount,
       bool? enableSeriesLikesCount,
-      bool? enableSeriesViewsCount});
+      bool? enableSeriesViewsCount,
+      String? uid});
 }
 
 /// @nodoc
@@ -91,6 +95,7 @@ class _$SettingsDTOCopyWithImpl<$Res> implements $SettingsDTOCopyWith<$Res> {
     Object? enableSeriesBookmarksCount = freezed,
     Object? enableSeriesLikesCount = freezed,
     Object? enableSeriesViewsCount = freezed,
+    Object? uid = freezed,
   }) {
     return _then(_value.copyWith(
       enableChaptersBookmarksCount: enableChaptersBookmarksCount == freezed
@@ -117,6 +122,10 @@ class _$SettingsDTOCopyWithImpl<$Res> implements $SettingsDTOCopyWith<$Res> {
           ? _value.enableSeriesViewsCount
           : enableSeriesViewsCount // ignore: cast_nullable_to_non_nullable
               as bool?,
+      uid: uid == freezed
+          ? _value.uid
+          : uid // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -134,7 +143,8 @@ abstract class _$SettingsDTOCopyWith<$Res>
       bool? enableChaptersViewsCount,
       bool? enableSeriesBookmarksCount,
       bool? enableSeriesLikesCount,
-      bool? enableSeriesViewsCount});
+      bool? enableSeriesViewsCount,
+      String? uid});
 }
 
 /// @nodoc
@@ -155,6 +165,7 @@ class __$SettingsDTOCopyWithImpl<$Res> extends _$SettingsDTOCopyWithImpl<$Res>
     Object? enableSeriesBookmarksCount = freezed,
     Object? enableSeriesLikesCount = freezed,
     Object? enableSeriesViewsCount = freezed,
+    Object? uid = freezed,
   }) {
     return _then(_SettingsDTO(
       enableChaptersBookmarksCount: enableChaptersBookmarksCount == freezed
@@ -181,6 +192,10 @@ class __$SettingsDTOCopyWithImpl<$Res> extends _$SettingsDTOCopyWithImpl<$Res>
           ? _value.enableSeriesViewsCount
           : enableSeriesViewsCount // ignore: cast_nullable_to_non_nullable
               as bool?,
+      uid: uid == freezed
+          ? _value.uid
+          : uid // ignore: cast_nullable_to_non_nullable
+              as String?,
     ));
   }
 }
@@ -194,7 +209,8 @@ class _$_SettingsDTO implements _SettingsDTO {
       required this.enableChaptersViewsCount,
       required this.enableSeriesBookmarksCount,
       required this.enableSeriesLikesCount,
-      required this.enableSeriesViewsCount});
+      required this.enableSeriesViewsCount,
+      this.uid});
 
   factory _$_SettingsDTO.fromJson(Map<String, dynamic> json) =>
       _$$_SettingsDTOFromJson(json);
@@ -211,10 +227,12 @@ class _$_SettingsDTO implements _SettingsDTO {
   final bool? enableSeriesLikesCount;
   @override
   final bool? enableSeriesViewsCount;
+  @override
+  final String? uid;
 
   @override
   String toString() {
-    return 'SettingsDTO(enableChaptersBookmarksCount: $enableChaptersBookmarksCount, enableChaptersLikesCount: $enableChaptersLikesCount, enableChaptersViewsCount: $enableChaptersViewsCount, enableSeriesBookmarksCount: $enableSeriesBookmarksCount, enableSeriesLikesCount: $enableSeriesLikesCount, enableSeriesViewsCount: $enableSeriesViewsCount)';
+    return 'SettingsDTO(enableChaptersBookmarksCount: $enableChaptersBookmarksCount, enableChaptersLikesCount: $enableChaptersLikesCount, enableChaptersViewsCount: $enableChaptersViewsCount, enableSeriesBookmarksCount: $enableSeriesBookmarksCount, enableSeriesLikesCount: $enableSeriesLikesCount, enableSeriesViewsCount: $enableSeriesViewsCount, uid: $uid)';
   }
 
   @override
@@ -234,7 +252,8 @@ class _$_SettingsDTO implements _SettingsDTO {
             const DeepCollectionEquality()
                 .equals(other.enableSeriesLikesCount, enableSeriesLikesCount) &&
             const DeepCollectionEquality()
-                .equals(other.enableSeriesViewsCount, enableSeriesViewsCount));
+                .equals(other.enableSeriesViewsCount, enableSeriesViewsCount) &&
+            const DeepCollectionEquality().equals(other.uid, uid));
   }
 
   @override
@@ -245,7 +264,8 @@ class _$_SettingsDTO implements _SettingsDTO {
       const DeepCollectionEquality().hash(enableChaptersViewsCount),
       const DeepCollectionEquality().hash(enableSeriesBookmarksCount),
       const DeepCollectionEquality().hash(enableSeriesLikesCount),
-      const DeepCollectionEquality().hash(enableSeriesViewsCount));
+      const DeepCollectionEquality().hash(enableSeriesViewsCount),
+      const DeepCollectionEquality().hash(uid));
 
   @JsonKey(ignore: true)
   @override
@@ -265,7 +285,8 @@ abstract class _SettingsDTO implements SettingsDTO {
       required bool? enableChaptersViewsCount,
       required bool? enableSeriesBookmarksCount,
       required bool? enableSeriesLikesCount,
-      required bool? enableSeriesViewsCount}) = _$_SettingsDTO;
+      required bool? enableSeriesViewsCount,
+      String? uid}) = _$_SettingsDTO;
 
   factory _SettingsDTO.fromJson(Map<String, dynamic> json) =
       _$_SettingsDTO.fromJson;
@@ -282,6 +303,8 @@ abstract class _SettingsDTO implements SettingsDTO {
   bool? get enableSeriesLikesCount;
   @override
   bool? get enableSeriesViewsCount;
+  @override
+  String? get uid;
   @override
   @JsonKey(ignore: true)
   _$SettingsDTOCopyWith<_SettingsDTO> get copyWith =>

@@ -1,10 +1,13 @@
 import 'package:isar/isar.dart';
 import 'package:mocktail/mocktail.dart';
+import 'package:wine/infrastructure/settings/isar_settings.dart';
 import 'package:wine/infrastructure/user/isar_user.dart';
 
 class MockIsar extends Mock implements Isar {}
 
 class MockIsarCollection<T> extends Mock implements IsarCollection<T> {}
+
+class MockIsarSettings extends Mock implements IsarSettings {}
 
 class MockIsarUser extends Mock implements IsarUser {}
 
