@@ -217,9 +217,9 @@ void main() {
               .thenAnswer((_) => Stream.fromIterable([Option.some(testUser)]));
           when(() => _authFacade.isLoggedIn).thenReturn(true);
           when(() => _authFacade.isAnonymous).thenReturn(false);
-          when(_defaultCoversRepository.loadDefaultCoverURLs)
-              .thenAnswer((_) async => Ok(testDefaultCovers));
-          when(() => _defaultCoversRepository.cacheDefaultCoverURLs(any()))
+          when(_defaultCoversRepository.loadDefaultCovers)
+              .thenAnswer((_) async => Ok([testDefaultCover]));
+          when(() => _defaultCoversRepository.cacheDefaultCovers(any()))
               .thenAnswer((_) async => Ok(unit));
           when(_settingsRepository.fetchSettings)
               .thenAnswer((_) async => Ok(testSettings));

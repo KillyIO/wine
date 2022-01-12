@@ -126,12 +126,12 @@ void main() {
             when(_authFacade.logInAnonymously)
                 .thenAnswer((_) async => Ok(unit));
             when(() => _authFacade.isAnonymous).thenReturn(false);
-            when(_defaultCoversRepository.loadDefaultCoverURLs)
-                .thenAnswer((_) async => Ok(testDefaultCovers));
-            when(() => _defaultCoversRepository.cacheDefaultCoverURLs(any()))
+            when(_defaultCoversRepository.loadDefaultCovers)
+                .thenAnswer((_) async => Ok([testDefaultCover]));
+            when(() => _defaultCoversRepository.cacheDefaultCovers(any()))
                 .thenAnswer(
               (_) async => Err(
-                const DefaultCoversFailure.defaultCoverURLsNotCached(),
+                const DefaultCoversFailure.defaultCoversNotCached(),
               ),
             );
 
@@ -165,9 +165,9 @@ void main() {
           (tester) async {
             when(() => _authFacade.isLoggedIn).thenReturn(true);
             when(() => _authFacade.isAnonymous).thenReturn(false);
-            when(_defaultCoversRepository.loadDefaultCoverURLs).thenAnswer(
+            when(_defaultCoversRepository.loadDefaultCovers).thenAnswer(
               (_) async =>
-                  Err(const DefaultCoversFailure.defaultCoverURLsNotLoaded()),
+                  Err(const DefaultCoversFailure.defaultCoversNotLoaded()),
             );
 
             final authBloc = getIt<AuthBloc>()
@@ -200,7 +200,7 @@ void main() {
           (tester) async {
             when(() => _authFacade.isLoggedIn).thenReturn(true);
             when(() => _authFacade.isAnonymous).thenReturn(false);
-            when(_defaultCoversRepository.loadDefaultCoverURLs).thenAnswer(
+            when(_defaultCoversRepository.loadDefaultCovers).thenAnswer(
               (_) async => Err(const DefaultCoversFailure.serverError()),
             );
 
@@ -231,7 +231,7 @@ void main() {
           (tester) async {
             when(() => _authFacade.isLoggedIn).thenReturn(true);
             when(() => _authFacade.isAnonymous).thenReturn(false);
-            when(_defaultCoversRepository.loadDefaultCoverURLs).thenAnswer(
+            when(_defaultCoversRepository.loadDefaultCovers).thenAnswer(
               (_) async => Err(const DefaultCoversFailure.unexpected()),
             );
 
@@ -271,9 +271,9 @@ void main() {
             when(_authFacade.logInAnonymously)
                 .thenAnswer((_) async => Ok(unit));
             when(() => _authFacade.isAnonymous).thenReturn(false);
-            when(_defaultCoversRepository.loadDefaultCoverURLs)
-                .thenAnswer((_) async => Ok(testDefaultCovers));
-            when(() => _defaultCoversRepository.cacheDefaultCoverURLs(any()))
+            when(_defaultCoversRepository.loadDefaultCovers)
+                .thenAnswer((_) async => Ok([testDefaultCover]));
+            when(() => _defaultCoversRepository.cacheDefaultCovers(any()))
                 .thenAnswer((_) async => Ok(unit));
             when(_settingsRepository.fetchSettings)
                 .thenAnswer((_) async => Ok(testSettings));
@@ -314,9 +314,9 @@ void main() {
             when(_authFacade.logInAnonymously)
                 .thenAnswer((_) async => Ok(unit));
             when(() => _authFacade.isAnonymous).thenReturn(false);
-            when(_defaultCoversRepository.loadDefaultCoverURLs)
-                .thenAnswer((_) async => Ok(testDefaultCovers));
-            when(() => _defaultCoversRepository.cacheDefaultCoverURLs(any()))
+            when(_defaultCoversRepository.loadDefaultCovers)
+                .thenAnswer((_) async => Ok([testDefaultCover]));
+            when(() => _defaultCoversRepository.cacheDefaultCovers(any()))
                 .thenAnswer((_) async => Ok(unit));
             when(_settingsRepository.fetchSettings)
                 .thenAnswer((_) async => Ok(testSettings));
@@ -365,9 +365,9 @@ void main() {
             when(_authFacade.logInAnonymously)
                 .thenAnswer((_) async => Ok(unit));
             when(() => _authFacade.isAnonymous).thenReturn(false);
-            when(_defaultCoversRepository.loadDefaultCoverURLs)
-                .thenAnswer((_) async => Ok(testDefaultCovers));
-            when(() => _defaultCoversRepository.cacheDefaultCoverURLs(any()))
+            when(_defaultCoversRepository.loadDefaultCovers)
+                .thenAnswer((_) async => Ok([testDefaultCover]));
+            when(() => _defaultCoversRepository.cacheDefaultCovers(any()))
                 .thenAnswer((_) async => Ok(unit));
             when(_settingsRepository.fetchSettings).thenAnswer(
               (_) async => Err(const SettingsFailure.settingsNotFound()),
@@ -416,9 +416,9 @@ void main() {
             when(_authFacade.logInAnonymously)
                 .thenAnswer((_) async => Ok(unit));
             when(() => _authFacade.isAnonymous).thenReturn(false);
-            when(_defaultCoversRepository.loadDefaultCoverURLs)
-                .thenAnswer((_) async => Ok(testDefaultCovers));
-            when(() => _defaultCoversRepository.cacheDefaultCoverURLs(any()))
+            when(_defaultCoversRepository.loadDefaultCovers)
+                .thenAnswer((_) async => Ok([testDefaultCover]));
+            when(() => _defaultCoversRepository.cacheDefaultCovers(any()))
                 .thenAnswer((_) async => Ok(unit));
             when(_settingsRepository.fetchSettings)
                 .thenAnswer((_) async => Ok(testSettings));

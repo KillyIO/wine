@@ -293,12 +293,11 @@ class TypewriterSeriesBloc
       final randomKey =
           placeholdersKeys[Random().nextInt(placeholdersKeys.length)];
 
-      (await _defaultCoversRepository.fetchDefaultCoverURLByKey(randomKey))
-          .match(
-        (coverURL) {
+      (await _defaultCoversRepository.fetchDefaultCoverByKey(randomKey)).match(
+        (defaultCover) {
           emit(
             state.copyWith(
-              coverURL: coverURL,
+              coverURL: defaultCover.url.getOrCrash(),
               failureOption: const None(),
               isProcessing: false,
             ),

@@ -10,12 +10,12 @@ class SetupEvent with _$SetupEvent {
   const factory SetupEvent.authenticated() = Authenticated;
 
   /// @nodoc
-  const factory SetupEvent.defaultCoverURLsCached() = DefaultCoverURLsCached;
+  const factory SetupEvent.defaultCoversCached() = DefaultCoversCached;
 
   /// @nodoc
-  const factory SetupEvent.defaultCoverURLsLoaded(
-    Map<String, String> defaultCoverURLs,
-  ) = DefaultCoverURLsLoaded;
+  const factory SetupEvent.defaultCoversLoaded(
+    List<DefaultCover> defaultCovers,
+  ) = DefaultCoversLoaded;
 
   /// @nodoc
   const factory SetupEvent.onboardingDonePressed() = OnboardingDonePressed;

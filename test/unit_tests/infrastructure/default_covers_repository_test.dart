@@ -1,16 +1,18 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:cloud_firestore/cloud_firestore.dart' hide Query;
 import 'package:fake_cloud_firestore/fake_cloud_firestore.dart';
 import 'package:flutter_test/flutter_test.dart';
-import 'package:hive/hive.dart';
+import 'package:isar/isar.dart';
 import 'package:mocktail/mocktail.dart';
 import 'package:oxidized/oxidized.dart';
 
 import 'package:wine/domain/default_covers/default_covers_failure.dart';
 import 'package:wine/domain/default_covers/i_default_covers_repository.dart';
+import 'package:wine/infrastructure/default_covers/default_cover_dto.dart';
 import 'package:wine/infrastructure/default_covers/default_covers_repository.dart';
+import 'package:wine/infrastructure/default_covers/isar_default_cover.dart';
 import 'package:wine/utils/paths/default_covers.dart';
 
-import '../../mocks/hive_mocks.dart';
+import '../../mocks/isar_mocks.dart';
 import '../utils/constants.dart';
 
 void main() {
@@ -18,107 +20,123 @@ void main() {
 
   late FirebaseFirestore _firestore;
 
-  late HiveInterface _hive;
-  final Box<String> _box = MockBox<String>();
+  late Isar _isar;
+  late IsarCollection<IsarDefaultCover> _collection;
+  late QueryBuilder<IsarDefaultCover, IsarDefaultCover, QWhere> _where;
+  late QueryBuilder<IsarDefaultCover, IsarDefaultCover, QAfterWhereClause>
+      _uidEqualTo;
+  late Query<IsarDefaultCover> _build;
 
   setUp(() {
     _firestore = FakeFirebaseFirestore();
+    _isar = MockIsar();
+    _collection = MockIsarCollection<IsarDefaultCover>();
+    _where = MockQueryBuilder<IsarDefaultCover, IsarDefaultCover, QWhere>();
+    _uidEqualTo = MockQueryBuilder<IsarDefaultCover, IsarDefaultCover,
+        QAfterWhereClause>();
+    _build = MockQuery<IsarDefaultCover>();
 
-    _hive = MockHiveInterface();
+    registerFallbackValue(MockIsarDefaultCover());
+    registerFallbackValue(MockIsarCollection<IsarDefaultCover>());
+    registerFallbackValue(MockWhereClause());
 
-    _defaultCoversRepository = DefaultCoversRepository(_firestore, _hive);
-
-    when(() => _hive.openBox<dynamic>(any())).thenAnswer((_) async => _box);
+    _defaultCoversRepository = DefaultCoversRepository(_firestore, _isar);
   });
 
-  group('cacheDefaultCoverURLs -', () {
-    setUp(() {
-      when(() => _box.put(any<dynamic>(), any())).thenAnswer((_) async {
-        return;
-      });
-    });
-
+  group('cacheDefaultCovers -', () {
     test('When covers cached Then return Unit', () async {
-      when(() => _box.get(any<dynamic>())).thenReturn('coverURL');
+      when(() => _isar.writeTxn(any()))
+          .thenAnswer((_) async => Result<Unit, DefaultCoversFailure>.ok(unit));
 
-      final result = await _defaultCoversRepository
-          .cacheDefaultCoverURLs(testDefaultCovers);
+      final result =
+          await _defaultCoversRepository.cacheDefaultCovers([testDefaultCover]);
 
       expect(result.isOk(), true);
       result.match(
         (ok) => expect(ok, unit),
         (_) {},
       );
-
-      verify(() => _box.put(any<dynamic>(), any())).called(2);
-
-      verify(() => _box.get(any<dynamic>())).called(2);
     });
 
     test(
-      'When at least one cover not cached The return DefaultCoverURLsNotCached',
+      'When at least one cover not cached The return DefaultCoversNotCached',
       () async {
-        when(() => _box.get(any<dynamic>())).thenReturn(null);
+        when(() => _isar.writeTxn(any())).thenAnswer(
+          (_) async => Result<Unit, DefaultCoversFailure>.err(
+            const DefaultCoversFailure.defaultCoversNotCached(),
+          ),
+        );
 
         final result = await _defaultCoversRepository
-            .cacheDefaultCoverURLs(testDefaultCovers);
+            .cacheDefaultCovers([testDefaultCover]);
 
         expect(result.isErr(), true);
         result.match(
           (_) {},
           (err) => expect(
             err,
-            const DefaultCoversFailure.defaultCoverURLsNotCached(),
+            const DefaultCoversFailure.defaultCoversNotCached(),
           ),
         );
       },
     );
   });
 
-  group('fetchDefaultCoverURLByKey -', () {
-    test('When cover fetched Then return cover URL', () async {
-      when(() => _box.get(any<dynamic>())).thenReturn('coverURL');
+  group('fetchDefaultCoverByKey -', () {
+    setUp(() {
+      when(() => _isar.isarDefaultCovers).thenReturn(_collection);
+      when(_collection.where).thenReturn(_where);
+      when(
+        () => _where.addWhereClause<QAfterWhereClause>(any()),
+      ).thenReturn(_uidEqualTo);
+      when(_uidEqualTo.build).thenReturn(_build);
+    });
+
+    test('When cover fetched Then return DefaultCover', () async {
+      when(_build.findFirst).thenAnswer((_) async => testIsarDefaultCover);
 
       final result =
-          await _defaultCoversRepository.fetchDefaultCoverURLByKey('string');
+          await _defaultCoversRepository.fetchDefaultCoverByKey('key');
 
       expect(result.isOk(), true);
       result.match(
-        (ok) => expect(ok, 'coverURL'),
+        (ok) => expect(ok, testDefaultCover),
         (_) {},
       );
     });
 
     test(
-      'When cover not found Then return DefaultCoverURLsNotFetched',
+      'When cover not found Then return DefaultCoverNotFetched',
       () async {
-        when(() => _box.get(any<dynamic>())).thenReturn(null);
+        when(_build.findFirst).thenAnswer((_) async => null);
 
         final result =
-            await _defaultCoversRepository.fetchDefaultCoverURLByKey('string');
+            await _defaultCoversRepository.fetchDefaultCoverByKey('key');
 
         expect(result.isErr(), true);
         result.match(
           (_) {},
           (err) => expect(
             err,
-            const DefaultCoversFailure.defaultCoverURLsNotFetched(),
+            const DefaultCoversFailure.defaultCoverNotFetched(),
           ),
         );
       },
     );
   });
 
-  group('loadDefaultCoverURLs -', () {
-    test('When cover URLs loaded Then return Map', () async {
-      await _firestore.collection(defaultCoversPath).add(testDefaultCovers);
+  group('loadDefaultCovers -', () {
+    test('When cover URLs loaded Then return DefaultCover list', () async {
+      await _firestore
+          .collection(defaultCoversPath)
+          .add(<String, dynamic>{'key': 'key', 'coverURL': testCoverURL});
 
-      final result = await _defaultCoversRepository.loadDefaultCoverURLs();
-      final expectedMap = {'key': 'coverURL'};
+      final result = await _defaultCoversRepository.loadDefaultCovers();
+      final expectedList = [testDefaultCover];
 
       expect(result.isOk(), true);
       result.match(
-        (ok) => expect(ok, expectedMap),
+        (ok) => expect(ok, expectedList),
         (_) {},
       );
     });

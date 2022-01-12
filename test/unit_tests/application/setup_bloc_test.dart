@@ -88,24 +88,23 @@ void main() {
         build: () => _setupBloc,
         act: (bloc) {
           when(() => _authFacade.isAnonymous).thenReturn(false);
-          when(() => _defaultCoversRepository.loadDefaultCoverURLs())
-              .thenAnswer(
+          when(() => _defaultCoversRepository.loadDefaultCovers()).thenAnswer(
             (_) async =>
-                Err(const DefaultCoversFailure.defaultCoverURLsNotLoaded()),
+                Err(const DefaultCoversFailure.defaultCoversNotLoaded()),
           );
           return bloc.add(const SetupEvent.authenticated());
         },
         expect: () => <SetupState>[
           const SetupState.failure(
             CoreFailure.defaultCovers(
-              DefaultCoversFailure.defaultCoverURLsNotLoaded(),
+              DefaultCoversFailure.defaultCoversNotLoaded(),
             ),
           ),
         ],
         verify: (_) {
           verifyInOrder([
             () => _authFacade.isAnonymous,
-            _defaultCoversRepository.loadDefaultCoverURLs,
+            _defaultCoversRepository.loadDefaultCovers,
           ]);
         },
       );
@@ -115,26 +114,25 @@ void main() {
         build: () => _setupBloc,
         act: (bloc) {
           when(
-            () => _defaultCoversRepository
-                .cacheDefaultCoverURLs(testDefaultCovers),
+            () =>
+                _defaultCoversRepository.cacheDefaultCovers([testDefaultCover]),
           ).thenAnswer(
             (_) async =>
-                Err(const DefaultCoversFailure.defaultCoverURLsNotCached()),
+                Err(const DefaultCoversFailure.defaultCoversNotCached()),
           );
-          return bloc
-              .add(const SetupEvent.defaultCoverURLsLoaded(testDefaultCovers));
+          return bloc.add(SetupEvent.defaultCoversLoaded([testDefaultCover]));
         },
         expect: () => <SetupState>[
           const SetupState.failure(
             CoreFailure.defaultCovers(
-              DefaultCoversFailure.defaultCoverURLsNotCached(),
+              DefaultCoversFailure.defaultCoversNotCached(),
             ),
           ),
         ],
         verify: (_) {
           verify(
-            () => _defaultCoversRepository
-                .cacheDefaultCoverURLs(testDefaultCovers),
+            () =>
+                _defaultCoversRepository.cacheDefaultCovers([testDefaultCover]),
           ).called(1);
         },
       );
@@ -289,11 +287,11 @@ void main() {
           when(() => _authFacade.isLoggedIn).thenReturn(false);
           when(_authFacade.logInAnonymously).thenAnswer((_) async => Ok(unit));
           when(() => _authFacade.isAnonymous).thenReturn(false);
-          when(_defaultCoversRepository.loadDefaultCoverURLs)
-              .thenAnswer((_) async => Ok(testDefaultCovers));
+          when(_defaultCoversRepository.loadDefaultCovers)
+              .thenAnswer((_) async => Ok([testDefaultCover]));
           when(
-            () => _defaultCoversRepository
-                .cacheDefaultCoverURLs(testDefaultCovers),
+            () =>
+                _defaultCoversRepository.cacheDefaultCovers([testDefaultCover]),
           ).thenAnswer((_) async => Ok(unit));
           when(_settingsRepository.fetchSettings).thenAnswer(
             (_) async => Err(const SettingsFailure.settingsNotFound()),
@@ -318,9 +316,9 @@ void main() {
             () => _authFacade.isLoggedIn,
             _authFacade.logInAnonymously,
             () => _authFacade.isAnonymous,
-            _defaultCoversRepository.loadDefaultCoverURLs,
-            () => _defaultCoversRepository
-                .cacheDefaultCoverURLs(testDefaultCovers),
+            _defaultCoversRepository.loadDefaultCovers,
+            () =>
+                _defaultCoversRepository.cacheDefaultCovers([testDefaultCover]),
             _settingsRepository.fetchSettings,
             _settingsRepository.initializeSettings,
             _sessionsRepository.fetchSession,

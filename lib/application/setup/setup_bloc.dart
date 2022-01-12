@@ -7,6 +7,7 @@ import 'package:injectable/injectable.dart';
 
 import 'package:wine/domain/auth/i_auth_facade.dart';
 import 'package:wine/domain/core/core_failure.dart';
+import 'package:wine/domain/default_covers/default_cover.dart';
 import 'package:wine/domain/default_covers/i_default_covers_repository.dart';
 import 'package:wine/domain/sessions/i_sessions_repository.dart';
 import 'package:wine/domain/settings/i_settings_repository.dart';
@@ -50,9 +51,9 @@ class SetupBloc extends Bloc<SetupEvent, SetupState> {
       if (_authFacade.isAnonymous) {
         await _fetchSettings();
       } else {
-        (await _defaultCoversRepository.loadDefaultCoverURLs()).match(
+        (await _defaultCoversRepository.loadDefaultCovers()).match(
           (defaultCoverURLs) {
-            add(SetupEvent.defaultCoverURLsLoaded(defaultCoverURLs));
+            add(SetupEvent.defaultCoversLoaded(defaultCoverURLs));
           },
           (failure) {
             emit(SetupState.failure(CoreFailure.defaultCovers(failure)));
@@ -60,19 +61,18 @@ class SetupBloc extends Bloc<SetupEvent, SetupState> {
         );
       }
     });
-    on<DefaultCoverURLsCached>((_, __) async => _fetchSettings());
-    on<DefaultCoverURLsLoaded>(
-      (value, emit) async => (await _defaultCoversRepository
-              .cacheDefaultCoverURLs(value.defaultCoverURLs))
+    on<DefaultCoversCached>((_, __) async => _fetchSettings());
+    on<DefaultCoversLoaded>((value, emit) async {
+      (await _defaultCoversRepository.cacheDefaultCovers(value.defaultCovers))
           .match(
         (_) {
-          add(const SetupEvent.defaultCoverURLsCached());
+          add(const SetupEvent.defaultCoversCached());
         },
         (failure) {
           emit(SetupState.failure(CoreFailure.defaultCovers(failure)));
         },
-      ),
-    );
+      );
+    });
     on<OnboardingDonePressed>((_, emit) => emit(const SetupState.content()));
     on<SessionFetched>((value, emit) async {
       if (_authFacade.isAnonymous) {

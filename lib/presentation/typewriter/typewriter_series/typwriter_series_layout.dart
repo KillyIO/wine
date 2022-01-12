@@ -45,7 +45,7 @@ class TypewriterSeriesLayout extends StatelessWidget {
               ok: (_) {},
               err: (err) => err.maybeMap(
                 defaultCovers: (f) => f.f.maybeMap(
-                  defaultCoverURLsNotFetched: (_) async => baseErrorDialog(
+                  defaultCoverNotFetched: (_) async => baseErrorDialog(
                     context,
                     <String>['Cover not found!'],
                   ),

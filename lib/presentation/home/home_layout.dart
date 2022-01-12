@@ -41,11 +41,11 @@ class HomeLayout extends StatelessWidget {
                   ),
                 ),
                 defaultCovers: (f) => f.f.maybeMap(
-                  defaultCoverURLsNotCached: (_) => restartAppDialog(
+                  defaultCoversNotCached: (_) => restartAppDialog(
                     context,
                     <String>['Default covers could not be cached!'],
                   ),
-                  defaultCoverURLsNotLoaded: (_) => restartAppDialog(
+                  defaultCoversNotLoaded: (_) => restartAppDialog(
                     context,
                     <String>['Default covers could not be loaded!'],
                   ),
