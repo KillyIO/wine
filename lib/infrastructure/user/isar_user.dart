@@ -77,7 +77,7 @@ class IsarUser extends Equatable {
   }
 
   @override
-  List<Object?> get props => [emailAddress, uid, username];
+  List<Object?> get props => [emailAddress, id, uid, username];
 
   @override
   bool get stringify => true;
