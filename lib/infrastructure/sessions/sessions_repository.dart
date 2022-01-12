@@ -23,8 +23,6 @@ class SessionsRepository implements ISessionsRepository {
   );
 
   final auth.FirebaseAuth _firebaseAuth;
-
-  /// @nodoc
   final Isar _isar;
 
   @override
