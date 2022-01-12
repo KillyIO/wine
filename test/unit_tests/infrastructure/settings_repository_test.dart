@@ -73,13 +73,16 @@ void main() {
   });
 
   group('fetchSettings -', () {
-    test('When settings fetched Then return Settings', () async {
+    setUp(() {
       when(() => _isar.isarSettingss).thenReturn(_collection);
       when(_collection.where).thenReturn(_where);
       when(
         () => _where.addWhereClause<QAfterWhereClause>(any()),
       ).thenReturn(_uidEqualTo);
       when(_uidEqualTo.build).thenReturn(_build);
+    });
+
+    test('When settings fetched Then return Settings', () async {
       when(_build.findFirst).thenAnswer((_) async => testIsarSettings);
 
       final result = await _settingsRepository.fetchSettings();
@@ -92,12 +95,6 @@ void main() {
     });
 
     test('When settings not fetched Then return SettingsNotFound', () async {
-      when(() => _isar.isarSettingss).thenReturn(_collection);
-      when(_collection.where).thenReturn(_where);
-      when(
-        () => _where.addWhereClause<QAfterWhereClause>(any()),
-      ).thenReturn(_uidEqualTo);
-      when(_uidEqualTo.build).thenReturn(_build);
       when(_build.findFirst).thenAnswer((_) async => null);
 
       final result = await _settingsRepository.fetchSettings();
@@ -145,14 +142,17 @@ void main() {
   });
 
   group('updateSettings -', () {
-    test('When settings updated Then return Unit', () async {
-      when(() => _isar.writeTxn(any())).thenAnswer((_) async => null);
+    setUp(() {
       when(() => _isar.isarSettingss).thenReturn(_collection);
       when(_collection.where).thenReturn(_where);
       when(
         () => _where.addWhereClause<QAfterWhereClause>(any()),
       ).thenReturn(_uidEqualTo);
       when(_uidEqualTo.build).thenReturn(_build);
+    });
+
+    test('When settings updated Then return Unit', () async {
+      when(() => _isar.writeTxn(any())).thenAnswer((_) async => null);
       when(_build.findFirst).thenAnswer((_) async => testIsarSettings);
 
       final result =
@@ -166,12 +166,6 @@ void main() {
     });
 
     test('When settings not found Then return SettingsNotFound', () async {
-      when(() => _isar.isarSettingss).thenReturn(_collection);
-      when(_collection.where).thenReturn(_where);
-      when(
-        () => _where.addWhereClause<QAfterWhereClause>(any()),
-      ).thenReturn(_uidEqualTo);
-      when(_uidEqualTo.build).thenReturn(_build);
       when(_build.findFirst).thenAnswer((_) async => null);
 
       final result =
@@ -189,12 +183,6 @@ void main() {
           testIsarSettings.copyWith(enableChaptersBookmarksCount: true);
 
       when(() => _isar.writeTxn(any())).thenAnswer((_) async => null);
-      when(() => _isar.isarSettingss).thenReturn(_collection);
-      when(_collection.where).thenReturn(_where);
-      when(
-        () => _where.addWhereClause<QAfterWhereClause>(any()),
-      ).thenReturn(_uidEqualTo);
-      when(_uidEqualTo.build).thenReturn(_build);
       when(_build.findFirst).thenAnswer((_) async => updatedTestIsarSettings);
 
       final result =

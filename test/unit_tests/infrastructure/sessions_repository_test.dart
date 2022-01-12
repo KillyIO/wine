@@ -103,13 +103,16 @@ void main() {
   });
 
   group('fetchSession -', () {
-    test('When session fetched Then return User', () async {
+    setUp(() {
       when(() => _isar.isarUsers).thenReturn(_collection);
       when(_collection.where).thenReturn(_where);
       when(
         () => _where.addWhereClause<QAfterWhereClause>(any()),
       ).thenReturn(_uidEqualTo);
       when(_uidEqualTo.build).thenReturn(_build);
+    });
+
+    test('When session fetched Then return User', () async {
       when(_build.findFirst).thenAnswer((_) async => testIsarUser);
 
       final result = await _sessionsRepository.fetchSession();
@@ -122,12 +125,6 @@ void main() {
     });
 
     test('When session not fetched Then return SessionNotFound', () async {
-      when(() => _isar.isarUsers).thenReturn(_collection);
-      when(_collection.where).thenReturn(_where);
-      when(
-        () => _where.addWhereClause<QAfterWhereClause>(any()),
-      ).thenReturn(_uidEqualTo);
-      when(_uidEqualTo.build).thenReturn(_build);
       when(_build.findFirst).thenAnswer((_) async => null);
 
       final result = await _sessionsRepository.fetchSession();
@@ -141,14 +138,17 @@ void main() {
   });
 
   group('updateSession -', () {
-    test('When session updated Then return Unit', () async {
-      when(() => _isar.writeTxn(any())).thenAnswer((_) async => null);
+    setUp(() {
       when(() => _isar.isarUsers).thenReturn(_collection);
       when(_collection.where).thenReturn(_where);
       when(
         () => _where.addWhereClause<QAfterWhereClause>(any()),
       ).thenReturn(_uidEqualTo);
       when(_uidEqualTo.build).thenReturn(_build);
+    });
+
+    test('When session updated Then return Unit', () async {
+      when(() => _isar.writeTxn(any())).thenAnswer((_) async => null);
       when(_build.findFirst).thenAnswer((_) async => testIsarUser);
 
       final result =
@@ -162,12 +162,6 @@ void main() {
     });
 
     test('When session not found Then return SessionNotFound', () async {
-      when(() => _isar.isarUsers).thenReturn(_collection);
-      when(_collection.where).thenReturn(_where);
-      when(
-        () => _where.addWhereClause<QAfterWhereClause>(any()),
-      ).thenReturn(_uidEqualTo);
-      when(_uidEqualTo.build).thenReturn(_build);
       when(_build.findFirst).thenAnswer((_) async => null);
 
       final result =
@@ -186,12 +180,6 @@ void main() {
       );
 
       when(() => _isar.writeTxn(any())).thenAnswer((_) async => null);
-      when(() => _isar.isarUsers).thenReturn(_collection);
-      when(_collection.where).thenReturn(_where);
-      when(
-        () => _where.addWhereClause<QAfterWhereClause>(any()),
-      ).thenReturn(_uidEqualTo);
-      when(_uidEqualTo.build).thenReturn(_build);
       when(_build.findFirst).thenAnswer((_) async => updatedTestIsarUser);
 
       final result =
