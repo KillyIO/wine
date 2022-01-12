@@ -41,4 +41,7 @@ class ValueFailure<T> with _$ValueFailure<T> {
 
   /// @nodoc
   const factory ValueFailure.tooLongInput(T failedValue) = TooLongInput<T>;
+
+  /// @nodoc
+  const factory ValueFailure.tooShortInput(T failedValue) = TooShortInput<T>;
 }
