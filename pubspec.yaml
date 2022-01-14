@@ -9,7 +9,7 @@ environment:
   sdk: ">=2.12.0 <3.0.0"
 
 dependencies:
-  assorted_layout_widgets: ^5.4.1
+  assorted_layout_widgets: ^5.5.0
   auto_route: ^3.2.1
   cached_network_image: ^3.2.0
   cloud_firestore: ^3.1.6
@@ -63,7 +63,7 @@ dev_dependencies:
   freezed: ^1.1.0
   injectable_generator: ^1.5.2
   isar_generator: ^1.0.5
-  json_serializable: ^6.1.3
+  json_serializable: ^6.1.4
   mocktail: ^0.2.0
   very_good_analysis: ^2.4.0
 
