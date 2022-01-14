@@ -17,15 +17,16 @@ extension GetIsarUserCollection on Isar {
 final IsarUserSchema = CollectionSchema(
   name: 'IsarUser',
   schema:
-      '{"name":"IsarUser","properties":[{"name":"emailAddress","type":"String"},{"name":"uid","type":"String"},{"name":"username","type":"String"},{"name":"stringify","type":"Byte"},{"name":"hashCode","type":"Long"}],"indexes":[{"name":"uid","unique":false,"properties":[{"name":"uid","type":"Hash","caseSensitive":true}]}],"links":[]}',
+      '{"name":"IsarUser","properties":[{"name":"emailAddress","type":"String"},{"name":"uid","type":"String"},{"name":"updatedAt","type":"Long"},{"name":"username","type":"String"},{"name":"stringify","type":"Byte"},{"name":"hashCode","type":"Long"}],"indexes":[{"name":"uid","unique":false,"properties":[{"name":"uid","type":"Hash","caseSensitive":true}]}],"links":[]}',
   adapter: const _IsarUserAdapter(),
   idName: 'id',
   propertyIds: {
     'emailAddress': 0,
     'uid': 1,
-    'username': 2,
-    'stringify': 3,
-    'hashCode': 4
+    'updatedAt': 2,
+    'username': 3,
+    'stringify': 4,
+    'hashCode': 5
   },
   indexIds: {'uid': 0},
   indexTypes: {
@@ -55,14 +56,16 @@ class _IsarUserAdapter extends IsarTypeAdapter<IsarUser> {
     final value1 = object.uid;
     final _uid = BinaryWriter.utf8Encoder.convert(value1);
     dynamicSize += _uid.length;
-    final value2 = object.username;
-    final _username = BinaryWriter.utf8Encoder.convert(value2);
+    final value2 = object.updatedAt;
+    final _updatedAt = value2;
+    final value3 = object.username;
+    final _username = BinaryWriter.utf8Encoder.convert(value3);
     dynamicSize += _username.length;
-    final value3 = object.stringify;
-    final _stringify = value3;
-    final value4 = object.hashCode;
-    final _hashCode = value4;
-    final size = dynamicSize + 43;
+    final value4 = object.stringify;
+    final _stringify = value4;
+    final value5 = object.hashCode;
+    final _hashCode = value5;
+    final size = dynamicSize + 51;
 
     late int bufferSize;
     if (existingBufferSize != null) {
@@ -79,12 +82,13 @@ class _IsarUserAdapter extends IsarTypeAdapter<IsarUser> {
     }
     rawObj.buffer_length = size;
     final buffer = rawObj.buffer.asTypedList(size);
-    final writer = BinaryWriter(buffer, 43);
+    final writer = BinaryWriter(buffer, 51);
     writer.writeBytes(offsets[0], _emailAddress);
     writer.writeBytes(offsets[1], _uid);
-    writer.writeBytes(offsets[2], _username);
-    writer.writeBool(offsets[3], _stringify);
-    writer.writeLong(offsets[4], _hashCode);
+    writer.writeDateTime(offsets[2], _updatedAt);
+    writer.writeBytes(offsets[3], _username);
+    writer.writeBool(offsets[4], _stringify);
+    writer.writeLong(offsets[5], _hashCode);
     return bufferSize;
   }
 
@@ -95,7 +99,8 @@ class _IsarUserAdapter extends IsarTypeAdapter<IsarUser> {
       emailAddress: reader.readString(offsets[0]),
       id: id,
       uid: reader.readString(offsets[1]),
-      username: reader.readString(offsets[2]),
+      updatedAt: reader.readDateTime(offsets[2]),
+      username: reader.readString(offsets[3]),
     );
     return object;
   }
@@ -111,10 +116,12 @@ class _IsarUserAdapter extends IsarTypeAdapter<IsarUser> {
       case 1:
         return (reader.readString(offset)) as P;
       case 2:
-        return (reader.readString(offset)) as P;
+        return (reader.readDateTime(offset)) as P;
       case 3:
-        return (reader.readBool(offset)) as P;
+        return (reader.readString(offset)) as P;
       case 4:
+        return (reader.readBool(offset)) as P;
+      case 5:
         return (reader.readLong(offset)) as P;
       default:
         throw 'Illegal propertyIndex';
@@ -458,6 +465,47 @@ extension IsarUserQueryFilter
     ));
   }
 
+  QueryBuilder<IsarUser, IsarUser, QAfterFilterCondition> updatedAtEqualTo(
+    DateTime value,
+  ) {
+    return addFilterCondition(FilterCondition(
+      type: ConditionType.eq,
+      property: 'updatedAt',
+      value: value,
+    ));
+  }
+
+  QueryBuilder<IsarUser, IsarUser, QAfterFilterCondition> updatedAtGreaterThan(
+    DateTime value,
+  ) {
+    return addFilterCondition(FilterCondition(
+      type: ConditionType.gt,
+      property: 'updatedAt',
+      value: value,
+    ));
+  }
+
+  QueryBuilder<IsarUser, IsarUser, QAfterFilterCondition> updatedAtLessThan(
+    DateTime value,
+  ) {
+    return addFilterCondition(FilterCondition(
+      type: ConditionType.lt,
+      property: 'updatedAt',
+      value: value,
+    ));
+  }
+
+  QueryBuilder<IsarUser, IsarUser, QAfterFilterCondition> updatedAtBetween(
+    DateTime lower,
+    DateTime upper,
+  ) {
+    return addFilterCondition(FilterCondition.between(
+      property: 'updatedAt',
+      lower: lower,
+      upper: upper,
+    ));
+  }
+
   QueryBuilder<IsarUser, IsarUser, QAfterFilterCondition> usernameEqualTo(
     String value, {
     bool caseSensitive = true,
@@ -629,6 +677,14 @@ extension IsarUserQueryWhereSortBy
     return addSortByInternal('uid', Sort.desc);
   }
 
+  QueryBuilder<IsarUser, IsarUser, QAfterSortBy> sortByUpdatedAt() {
+    return addSortByInternal('updatedAt', Sort.asc);
+  }
+
+  QueryBuilder<IsarUser, IsarUser, QAfterSortBy> sortByUpdatedAtDesc() {
+    return addSortByInternal('updatedAt', Sort.desc);
+  }
+
   QueryBuilder<IsarUser, IsarUser, QAfterSortBy> sortByUsername() {
     return addSortByInternal('username', Sort.asc);
   }
@@ -680,6 +736,14 @@ extension IsarUserQueryWhereSortThenBy
     return addSortByInternal('uid', Sort.desc);
   }
 
+  QueryBuilder<IsarUser, IsarUser, QAfterSortBy> thenByUpdatedAt() {
+    return addSortByInternal('updatedAt', Sort.asc);
+  }
+
+  QueryBuilder<IsarUser, IsarUser, QAfterSortBy> thenByUpdatedAtDesc() {
+    return addSortByInternal('updatedAt', Sort.desc);
+  }
+
   QueryBuilder<IsarUser, IsarUser, QAfterSortBy> thenByUsername() {
     return addSortByInternal('username', Sort.asc);
   }
@@ -721,6 +785,10 @@ extension IsarUserQueryWhereDistinct
     return addDistinctByInternal('uid', caseSensitive: caseSensitive);
   }
 
+  QueryBuilder<IsarUser, IsarUser, QDistinct> distinctByUpdatedAt() {
+    return addDistinctByInternal('updatedAt');
+  }
+
   QueryBuilder<IsarUser, IsarUser, QDistinct> distinctByUsername(
       {bool caseSensitive = true}) {
     return addDistinctByInternal('username', caseSensitive: caseSensitive);
@@ -747,6 +815,10 @@ extension IsarUserQueryProperty
 
   QueryBuilder<IsarUser, String, QQueryOperations> uidProperty() {
     return addPropertyName('uid');
+  }
+
+  QueryBuilder<IsarUser, DateTime, QQueryOperations> updatedAtProperty() {
+    return addPropertyName('updatedAt');
   }
 
   QueryBuilder<IsarUser, String, QQueryOperations> usernameProperty() {

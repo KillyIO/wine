@@ -36,10 +36,6 @@ class SettingsWrapper extends AutoRouter implements AutoRouteWrapper {
                   orElse: () {},
                 ),
                 sessions: (f) => f.f.maybeMap(
-                  sessionNotCreated: (_) async => baseErrorDialog(
-                    context,
-                    <String>['Session could not be created!'],
-                  ),
                   sessionNotDeleted: (_) async => baseErrorDialog(
                     context,
                     <String>['Session could not be deleted!'],

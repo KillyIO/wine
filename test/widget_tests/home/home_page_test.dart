@@ -265,7 +265,7 @@ void main() {
         });
 
         testWidgets(
-          '''Should display ErrorDialog with SessionsFailure.sessionNotCreated message''',
+          '''Should display ErrorDialog with SessionsFailure.sessionNotInserted message''',
           (tester) async {
             when(() => _authFacade.isLoggedIn).thenReturn(false);
             when(_authFacade.logInAnonymously)
@@ -279,9 +279,6 @@ void main() {
                 .thenAnswer((_) async => Ok(testSettings));
             when(_sessionsRepository.fetchSession).thenAnswer(
               (_) async => Err(const SessionsFailure.sessionNotFound()),
-            );
-            when(_sessionsRepository.createSession).thenAnswer(
-              (_) async => Err(const SessionsFailure.sessionNotCreated()),
             );
 
             final authBloc = getIt<AuthBloc>()
@@ -324,8 +321,8 @@ void main() {
                 .thenAnswer((_) async => Ok(testUser));
             when(() => _userRepository.loadUser(any()))
                 .thenAnswer((_) async => Ok(testUser));
-            when(() => _sessionsRepository.updateSession(any())).thenAnswer(
-              (_) async => Err(const SessionsFailure.sessionNotUpdated()),
+            when(() => _sessionsRepository.insertSession(any())).thenAnswer(
+              (_) async => Err(const SessionsFailure.sessionNotInserted()),
             );
 
             final authBloc = getIt<AuthBloc>()
@@ -463,7 +460,6 @@ void main() {
       when(_sessionsRepository.fetchSession).thenAnswer(
         (_) async => Err(const SessionsFailure.sessionNotFound()),
       );
-      when(_sessionsRepository.createSession).thenAnswer((_) async => Ok(unit));
 
       final authBloc = getIt<AuthBloc>()..add(const AuthEvent.authChanged());
 

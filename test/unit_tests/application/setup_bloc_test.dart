@@ -157,101 +157,26 @@ void main() {
       );
 
       blocTest<SetupBloc, SetupState>(
-        '''emits [SessionsFailure.sessionNotCreated] when sessionNotFound is added.''',
-        build: () => _setupBloc,
-        act: (bloc) {
-          when(() => _sessionsRepository.createSession()).thenAnswer(
-            (_) async => Err(const SessionsFailure.sessionNotCreated()),
-          );
-          return bloc.add(const SetupEvent.sessionNotFound());
-        },
-        expect: () => <SetupState>[
-          const SetupState.failure(
-            CoreFailure.sessions(SessionsFailure.sessionNotCreated()),
-          ),
-        ],
-        verify: (_) {
-          verify(_sessionsRepository.createSession).called(1);
-        },
-      );
-
-      blocTest<SetupBloc, SetupState>(
-        'emits [UserFailure.userNotFound] when sessionFetched is added.',
-        build: () => _setupBloc,
-        act: (bloc) {
-          when(() => _authFacade.isAnonymous).thenReturn(false);
-          when(
-            () => _userRepository
-                .loadUser(UniqueID.fromUniqueString(testUserUid)),
-          ).thenAnswer((_) async => Err(const UserFailure.userNotFound()));
-          return bloc.add(SetupEvent.sessionFetched(testUser));
-        },
-        expect: () => <SetupState>[
-          const SetupState.failure(
-            CoreFailure.user(UserFailure.userNotFound()),
-          ),
-        ],
-        verify: (_) {
-          verifyInOrder([
-            () => _authFacade.isAnonymous,
-            () => _userRepository
-                .loadUser(UniqueID.fromUniqueString(testUserUid)),
-          ]);
-        },
-      );
-
-      blocTest<SetupBloc, SetupState>(
         'emits [SessionsFailure.sessionNotUpdated] when userLoaded is added.',
         build: () => _setupBloc,
         act: (bloc) {
-          when(() => _sessionsRepository.updateSession(testUser)).thenAnswer(
-            (_) async => Err(const SessionsFailure.sessionNotUpdated()),
+          when(() => _sessionsRepository.insertSession(testUser)).thenAnswer(
+            (_) async => Err(const SessionsFailure.sessionNotInserted()),
           );
           return bloc.add(SetupEvent.userLoaded(testUser));
         },
         expect: () => <SetupState>[
           const SetupState.failure(
-            CoreFailure.sessions(SessionsFailure.sessionNotUpdated()),
+            CoreFailure.sessions(SessionsFailure.sessionNotInserted()),
           ),
         ],
         verify: (_) {
-          verify(() => _sessionsRepository.updateSession(testUser)).called(1);
+          verify(() => _sessionsRepository.insertSession(testUser)).called(1);
         },
       );
     });
 
     group('Completed -', () {
-      blocTest<SetupBloc, SetupState>(
-        'emits [SetupState.navigateToOnboarding] when appLaunched is added.',
-        build: () => _setupBloc,
-        act: (bloc) {
-          when(() => _authFacade.isLoggedIn).thenReturn(true);
-          when(() => _authFacade.isAnonymous).thenReturn(true);
-          when(_settingsRepository.fetchSettings)
-              .thenAnswer((_) async => Ok(testSettings));
-          when(_sessionsRepository.fetchSession).thenAnswer(
-            (_) async => Err(const SessionsFailure.sessionNotFound()),
-          );
-          when(_sessionsRepository.createSession)
-              .thenAnswer((_) async => Ok(unit));
-
-          return bloc.add(const SetupEvent.appLaunched());
-        },
-        expect: () => <SetupState>[
-          const SetupState.initial(),
-          const SetupState.onboarding(),
-        ],
-        verify: (_) {
-          verifyInOrder([
-            () => _authFacade.isLoggedIn,
-            () => _authFacade.isAnonymous,
-            _settingsRepository.fetchSettings,
-            _sessionsRepository.fetchSession,
-            _sessionsRepository.createSession,
-          ]);
-        },
-      );
-
       blocTest<SetupBloc, SetupState>(
         'emits [SetupState.initHomeBloc] when appLaunched is added.',
         build: () => _setupBloc,
@@ -302,7 +227,7 @@ void main() {
               .thenAnswer((_) async => Ok(testUser));
           when(() => _userRepository.loadUser(testUser.uid))
               .thenAnswer((_) async => Ok(testUser));
-          when(() => _sessionsRepository.updateSession(testUser))
+          when(() => _sessionsRepository.insertSession(testUser))
               .thenAnswer((_) async => Ok(unit));
 
           return bloc.add(const SetupEvent.appLaunched());
@@ -323,7 +248,7 @@ void main() {
             _settingsRepository.initializeSettings,
             _sessionsRepository.fetchSession,
             () => _userRepository.loadUser(testUser.uid),
-            () => _sessionsRepository.updateSession(testUser)
+            () => _sessionsRepository.insertSession(testUser)
           ]);
         },
       );

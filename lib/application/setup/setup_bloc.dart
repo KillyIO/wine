@@ -88,20 +88,13 @@ class SetupBloc extends Bloc<SetupEvent, SetupState> {
         );
       }
     });
-    on<SessionNotFound>(
-      (_, emit) async => (await _sessionsRepository.createSession()).match(
-        (session) {
-          if (kIsWeb) {
-            emit(const SetupState.content());
-          } else {
-            emit(const SetupState.onboarding());
-          }
-        },
-        (failure) {
-          emit(SetupState.failure(CoreFailure.sessions(failure)));
-        },
-      ),
-    );
+    on<SessionNotFound>((_, emit) {
+      if (kIsWeb) {
+        emit(const SetupState.content());
+      } else {
+        emit(const SetupState.onboarding());
+      }
+    });
     on<SettingsFetched>((_, __) async => await _fetchSession());
     on<SettingsInitialized>((_, __) async => await _fetchSession());
     on<SettingsNotFound>(
@@ -116,7 +109,7 @@ class SetupBloc extends Bloc<SetupEvent, SetupState> {
     );
     on<UserLoaded>(
       (value, emit) async =>
-          (await _sessionsRepository.updateSession(value.user)).match(
+          (await _sessionsRepository.insertSession(value.user)).match(
         (_) {
           emit(const SetupState.content());
         },

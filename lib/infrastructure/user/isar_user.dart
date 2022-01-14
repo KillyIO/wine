@@ -15,6 +15,7 @@ class IsarUser extends Equatable {
     required this.emailAddress,
     this.id,
     required this.uid,
+    required this.updatedAt,
     required this.username,
   });
 
@@ -24,6 +25,7 @@ class IsarUser extends Equatable {
       emailAddress: map['emailAddress'] as String,
       id: map['id'] as int,
       uid: map['uid'] as String,
+      updatedAt: map['updatedAt'] as DateTime,
       username: map['username'] as String,
     );
   }
@@ -40,6 +42,9 @@ class IsarUser extends Equatable {
   final String uid;
 
   /// @nodoc
+  final DateTime updatedAt;
+
+  /// @nodoc
   final String username;
 
   /// @nodoc
@@ -47,12 +52,14 @@ class IsarUser extends Equatable {
     String? emailAddress,
     int? id,
     String? uid,
+    DateTime? updatedAt,
     String? username,
   }) {
     return IsarUser(
       emailAddress: emailAddress ?? this.emailAddress,
       id: id ?? this.id,
       uid: uid ?? this.uid,
+      updatedAt: updatedAt ?? this.updatedAt,
       username: username ?? this.username,
     );
   }
@@ -63,6 +70,7 @@ class IsarUser extends Equatable {
       'emailAddress': emailAddress,
       'id': id,
       'uid': uid,
+      'updatedAt': updatedAt,
       'username': username,
     };
   }
@@ -77,7 +85,7 @@ class IsarUser extends Equatable {
   }
 
   @override
-  List<Object?> get props => [emailAddress, id, uid, username];
+  List<Object?> get props => [emailAddress, id, uid, updatedAt, username];
 
   @override
   bool get stringify => true;

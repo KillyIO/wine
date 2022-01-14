@@ -60,11 +60,11 @@ class HomeLayout extends StatelessWidget {
                   orElse: () {},
                 ),
                 sessions: (f) => f.f.maybeMap(
-                  sessionNotCreated: (_) => restartAppDialog(
+                  sessionNotFound: (_) => restartAppDialog(
                     context,
-                    <String>['Session could not be created!'],
+                    <String>['Session not found!'],
                   ),
-                  sessionNotUpdated: (_) => restartAppDialog(
+                  sessionNotInserted: (_) => restartAppDialog(
                     context,
                     <String>['Session could not be updated!'],
                   ),

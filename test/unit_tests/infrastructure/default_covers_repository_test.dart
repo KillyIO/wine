@@ -7,7 +7,6 @@ import 'package:oxidized/oxidized.dart';
 
 import 'package:wine/domain/default_covers/default_covers_failure.dart';
 import 'package:wine/domain/default_covers/i_default_covers_repository.dart';
-import 'package:wine/infrastructure/default_covers/default_cover_dto.dart';
 import 'package:wine/infrastructure/default_covers/default_covers_repository.dart';
 import 'package:wine/infrastructure/default_covers/isar_default_cover.dart';
 import 'package:wine/utils/paths/default_covers.dart';

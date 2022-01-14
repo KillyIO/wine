@@ -9,14 +9,11 @@ part 'sessions_failure.freezed.dart';
 @freezed
 class SessionsFailure with _$SessionsFailure {
   /// @nodoc
-  const factory SessionsFailure.sessionNotCreated() = SessionNotCreated;
-
-  /// @nodoc
   const factory SessionsFailure.sessionNotDeleted() = SessionNotDeleted;
 
   /// @nodoc
   const factory SessionsFailure.sessionNotFound() = SessionNotFound;
 
   /// @nodoc
-  const factory SessionsFailure.sessionNotUpdated() = SessionNotUpdated;
+  const factory SessionsFailure.sessionNotInserted() = SessionNotInserted;
 }

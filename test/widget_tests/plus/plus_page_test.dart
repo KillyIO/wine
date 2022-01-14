@@ -227,7 +227,7 @@ void main() {
               .thenAnswer((_) async => Ok(testUser));
           when(() => _userRepository.loadUser(any()))
               .thenAnswer((_) async => Ok(testUser));
-          when(() => _sessionsRepository.updateSession(testUser))
+          when(() => _sessionsRepository.insertSession(testUser))
               .thenAnswer((_) async => Ok(unit));
 
           final authBloc = getIt<AuthBloc>()

@@ -117,6 +117,7 @@ final testIsarUser = IsarUser(
   emailAddress: testEmailAddress,
   id: 0,
   uid: testUserUid,
+  updatedAt: DateTime.now(),
   username: testEmailAddress.split('@').first,
 );
 final testUserFirestore = {

@@ -245,11 +245,11 @@ void main() {
       );
 
       blocTest<LogInBloc, LogInState>(
-        '''emits [SesssionssFailure.sessionNotUpdated] when userDetailsSaved is added.''',
+        '''emits [SesssionssFailure.sessionNotInserted] when userDetailsSaved is added.''',
         build: () => _logInBloc,
         act: (bloc) {
-          when(() => _sessionsRepository.updateSession(any())).thenAnswer(
-            (_) async => Err(const SessionsFailure.sessionNotUpdated()),
+          when(() => _sessionsRepository.insertSession(any())).thenAnswer(
+            (_) async => Err(const SessionsFailure.sessionNotInserted()),
           );
           return bloc.add(LogInEvent.userDetailsSaved(testUser));
         },
@@ -258,7 +258,9 @@ void main() {
             emailAddress: EmailAddress(''),
             failureOption: Some(
               Err(
-                const CoreFailure.sessions(SessionsFailure.sessionNotUpdated()),
+                const CoreFailure.sessions(
+                  SessionsFailure.sessionNotInserted(),
+                ),
               ),
             ),
             isAuthenticated: false,
@@ -268,7 +270,7 @@ void main() {
           )
         ],
         verify: (_) {
-          verify(() => _sessionsRepository.updateSession(any())).called(1);
+          verify(() => _sessionsRepository.insertSession(any())).called(1);
         },
       );
     });
@@ -287,7 +289,7 @@ void main() {
               .thenAnswer((_) async => Ok(testUser));
           when(() => _userRepository.saveDetailsFromUser(any()))
               .thenAnswer((_) async => Ok(unit));
-          when(() => _sessionsRepository.updateSession(any()))
+          when(() => _sessionsRepository.insertSession(any()))
               .thenAnswer((_) async => Ok(unit));
           when(() => _authFacade.isAnonymous).thenReturn(false);
           return bloc
@@ -322,7 +324,7 @@ void main() {
             _authFacade.getLoggedInUser,
             () => _userRepository.saveDetailsFromUser(any())
           ]);
-          verify(() => _sessionsRepository.updateSession(any())).called(1);
+          verify(() => _sessionsRepository.insertSession(any())).called(1);
         },
       );
 
@@ -340,7 +342,7 @@ void main() {
               .thenAnswer((_) async => Ok(testUser));
           when(() => _userRepository.saveDetailsFromUser(any()))
               .thenAnswer((_) async => Ok(unit));
-          when(() => _sessionsRepository.updateSession(any()))
+          when(() => _sessionsRepository.insertSession(any()))
               .thenAnswer((_) async => Ok(unit));
           return bloc.add(const LogInEvent.logInWithGooglePressed());
         },
@@ -370,7 +372,7 @@ void main() {
             () => _userRepository.loadUser(any()),
             () => _userRepository.saveDetailsFromUser(any())
           ]);
-          verify(() => _sessionsRepository.updateSession(any())).called(1);
+          verify(() => _sessionsRepository.insertSession(any())).called(1);
         },
       );
 
@@ -393,7 +395,7 @@ void main() {
               .thenAnswer((_) async => Ok(unit));
           when(() => _userRepository.saveDetailsFromUser(any()))
               .thenAnswer((_) async => Ok(unit));
-          when(() => _sessionsRepository.updateSession(any()))
+          when(() => _sessionsRepository.insertSession(any()))
               .thenAnswer((_) async => Ok(unit));
           return bloc.add(const LogInEvent.logInWithGooglePressed());
         },
@@ -425,7 +427,7 @@ void main() {
             () => _userRepository.saveUsername(any(), any()),
             () => _userRepository.saveDetailsFromUser(any())
           ]);
-          verify(() => _sessionsRepository.updateSession(any())).called(1);
+          verify(() => _sessionsRepository.insertSession(any())).called(1);
         },
       );
 
@@ -451,7 +453,7 @@ void main() {
               .thenAnswer((_) async => Ok(unit));
           when(() => _userRepository.saveDetailsFromUser(any()))
               .thenAnswer((_) async => Ok(unit));
-          when(() => _sessionsRepository.updateSession(any()))
+          when(() => _sessionsRepository.insertSession(any()))
               .thenAnswer((_) async => Ok(unit));
           return bloc.add(const LogInEvent.logInWithGooglePressed());
         },
@@ -483,7 +485,7 @@ void main() {
             () => _userRepository.saveUsername(any(), any()),
             () => _userRepository.saveDetailsFromUser(any())
           ]);
-          verify(() => _sessionsRepository.updateSession(any())).called(1);
+          verify(() => _sessionsRepository.insertSession(any())).called(1);
         },
       );
     });

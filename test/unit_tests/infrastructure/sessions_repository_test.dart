@@ -40,37 +40,6 @@ void main() {
     when(() => _firebaseAuth.currentUser).thenReturn(MockUser());
   });
 
-  group('createSession -', () {
-    test('When session created Then return Unit', () async {
-      when(() => _isar.writeTxn(any()))
-          .thenAnswer((_) async => Result<Unit, SessionsFailure>.ok(unit));
-
-      final result = await _sessionsRepository.createSession();
-
-      expect(result.isOk(), true);
-      result.match(
-        (ok) => expect(ok, unit),
-        (_) {},
-      );
-    });
-
-    test('When session not created Then return SessionNotCreated', () async {
-      when(() => _isar.writeTxn(any())).thenAnswer(
-        (_) async => Result<Unit, SessionsFailure>.err(
-          const SessionsFailure.sessionNotCreated(),
-        ),
-      );
-
-      final result = await _sessionsRepository.createSession();
-
-      expect(result.isErr(), true);
-      result.match(
-        (_) {},
-        (err) => expect(err, isA<SessionNotCreated>()),
-      );
-    });
-  });
-
   group('deleteSession -', () {
     test('When session deleted Then return Unit', () async {
       when(() => _isar.writeTxn(any()))
@@ -137,7 +106,7 @@ void main() {
     });
   });
 
-  group('updateSession -', () {
+  group('insertSession -', () {
     setUp(() {
       when(() => _isar.isarUsers).thenReturn(_collection);
       when(_collection.where).thenReturn(_where);
@@ -149,28 +118,17 @@ void main() {
 
     test('When session updated Then return Unit', () async {
       when(() => _isar.writeTxn(any())).thenAnswer((_) async => null);
-      when(_build.findFirst).thenAnswer((_) async => testIsarUser);
+      when(_build.findFirst).thenAnswer(
+        (_) async => testIsarUser.copyWith(updatedAt: DateTime.now()),
+      );
 
       final result =
-          await _sessionsRepository.updateSession(testIsarUser.toDomain());
+          await _sessionsRepository.insertSession(testIsarUser.toDomain());
 
       expect(result.isOk(), true);
       result.match(
         (ok) => expect(ok, unit),
         (_) {},
-      );
-    });
-
-    test('When session not found Then return SessionNotFound', () async {
-      when(_build.findFirst).thenAnswer((_) async => null);
-
-      final result =
-          await _sessionsRepository.updateSession(testIsarUser.toDomain());
-
-      expect(result.isErr(), true);
-      result.match(
-        (_) {},
-        (err) => expect(err, isA<SessionNotFound>()),
       );
     });
 
@@ -183,12 +141,12 @@ void main() {
       when(_build.findFirst).thenAnswer((_) async => updatedTestIsarUser);
 
       final result =
-          await _sessionsRepository.updateSession(testIsarUser.toDomain());
+          await _sessionsRepository.insertSession(testIsarUser.toDomain());
 
       expect(result.isErr(), true);
       result.match(
         (_) {},
-        (err) => expect(err, isA<SessionNotUpdated>()),
+        (err) => expect(err, isA<SessionNotInserted>()),
       );
     });
   });

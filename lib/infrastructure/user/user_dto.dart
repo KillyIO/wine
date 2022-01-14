@@ -60,6 +60,7 @@ extension UserDTOX on UserDTO {
   IsarUser toAdapter() => IsarUser(
         emailAddress: emailAddress,
         uid: uid,
+        updatedAt: DateTime.now(),
         username: username,
       );
 

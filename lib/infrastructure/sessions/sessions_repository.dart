@@ -8,7 +8,6 @@ import 'package:wine/domain/sessions/sessions_failure.dart';
 import 'package:wine/domain/user/user.dart';
 import 'package:wine/infrastructure/user/isar_user.dart';
 import 'package:wine/infrastructure/user/user_dto.dart';
-import 'package:wine/utils/constants/users.dart';
 
 /// @nodoc
 @LazySingleton(
@@ -24,33 +23,6 @@ class SessionsRepository implements ISessionsRepository {
 
   final auth.FirebaseAuth _firebaseAuth;
   final Isar _isar;
-
-  @override
-  Future<Result<Unit, SessionsFailure>> createSession() async {
-    final firebaseUser = _firebaseAuth.currentUser;
-
-    if (firebaseUser != null) {
-      return _isar.writeTxn((isar) async {
-        final session = await isar.isarUsers
-            .where()
-            .uidEqualTo(firebaseUser.uid)
-            .findFirst();
-
-        if (session == null) {
-          await isar.isarUsers.put(
-            IsarUser(
-              emailAddress: defaultEmailAddress,
-              uid: firebaseUser.uid,
-              username: defaultUsername,
-            ),
-          );
-        }
-
-        return Ok(unit);
-      });
-    }
-    return Err(const SessionsFailure.sessionNotCreated());
-  }
 
   @override
   Future<Result<Unit, SessionsFailure>> deleteSession() async {
@@ -90,21 +62,19 @@ class SessionsRepository implements ISessionsRepository {
   }
 
   @override
-  Future<Result<Unit, SessionsFailure>> updateSession(User user) async {
+  Future<Result<Unit, SessionsFailure>> insertSession(User user) async {
     final firebaseUser = _firebaseAuth.currentUser;
 
     if (firebaseUser != null) {
+      var userAdapter = UserDTO.fromDomain(user).toAdapter();
       var session = await _isar.isarUsers
           .where()
           .uidEqualTo(firebaseUser.uid)
           .findFirst();
 
-      if (session == null) {
-        return Err(const SessionsFailure.sessionNotFound());
+      if (session != null) {
+        userAdapter = userAdapter.copyWith(id: session.id);
       }
-
-      final userAdapter =
-          UserDTO.fromDomain(user).toAdapter().copyWith(id: session.id);
 
       await _isar.writeTxn((isar) async {
         await isar.isarUsers.put(userAdapter);
@@ -115,10 +85,11 @@ class SessionsRepository implements ISessionsRepository {
           .uidEqualTo(firebaseUser.uid)
           .findFirst();
 
-      if (session != null && session == userAdapter) {
+      if (session != null &&
+          session.updatedAt.compareTo(userAdapter.updatedAt) >= 0) {
         return Ok(unit);
       }
     }
-    return Err(const SessionsFailure.sessionNotUpdated());
+    return Err(const SessionsFailure.sessionNotInserted());
   }
 }
