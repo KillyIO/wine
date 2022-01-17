@@ -12,7 +12,7 @@ class SeriesEvent with _$SeriesEvent {
   }) = BookmarkButtonPressed;
 
   /// @nodoc
-  const factory SeriesEvent.dataSet() = DataSet;
+  const factory SeriesEvent.chapterOneLoaded() = ChapterOneLoaded;
 
   /// @nodoc
   const factory SeriesEvent.launchWithID(
@@ -26,7 +26,7 @@ class SeriesEvent with _$SeriesEvent {
   }) = LikeButtonPressed;
 
   /// @nodoc
-  const factory SeriesEvent.seriesViewsUpdated() = SeriesViewsUpdated;
+  const factory SeriesEvent.seriesSet() = SeriesSet;
 
   /// @nodoc
   const factory SeriesEvent.sessionFetched() = SessionFetched;
