@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:injectable/injectable.dart';
 import 'package:isar/isar.dart';
@@ -38,18 +39,19 @@ class DefaultCoversRepository implements IDefaultCoversRepository {
         final covers = <IsarDefaultCover>[];
 
         for (final defaultCover in defaultCovers) {
+          var defaultCoverAdapter =
+              DefaultCoverDTO.fromDomain(defaultCover).toAdapter();
+
           final isarDefaultCover = await isar.isarDefaultCovers
               .where()
               .keyEqualTo(defaultCover.key)
               .findFirst();
 
           if (isarDefaultCover != null) {
-            final defaultCoverAdapter = DefaultCoverDTO.fromDomain(defaultCover)
-                .toAdapter()
-                .copyWith(id: isarDefaultCover.id);
-
-            covers.add(defaultCoverAdapter);
+            defaultCoverAdapter =
+                defaultCoverAdapter.copyWith(id: isarDefaultCover.id);
           }
+          covers.add(defaultCoverAdapter);
         }
 
         final ids = await isar.isarDefaultCovers.putAll(covers);
