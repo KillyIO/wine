@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:wine/application/series/series_bloc.dart';
+import 'package:wine/presentation/core/buttons/default_button.dart';
+import 'package:wine/presentation/core/chapter/chapter_tile.dart';
 import 'package:wine/utils/constants/palette.dart';
 
 /// @nodoc
@@ -8,6 +12,8 @@ class SeriesChapterOne extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final mediaQuery = MediaQuery.of(context).size;
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -23,9 +29,26 @@ class SeriesChapterOne extends StatelessWidget {
             ),
           ),
         ),
-        // TODO(SSebigo): display ChapterTile if chapter one found
-        // else display button to write first chapter
-        Container(),
+        BlocBuilder<SeriesBloc, SeriesState>(
+          builder: (context, state) {
+            if (state.chapterOne != null) {
+              return ChapterTile(
+                title: state.chapterOne!.title.getOrCrash(),
+                coverURL: state.chapterOne!.coverURL.getOrCrash(),
+                onPressed: () {},
+              );
+            }
+            if (state.authorIsUser) {
+              return DefaultButton(
+                color: pastelPink,
+                hasRoundedCorners: true,
+                title: 'WRITE FIRST CHAPTER',
+                width: mediaQuery.width,
+              );
+            }
+            return Container();
+          },
+        ),
       ],
     );
   }
