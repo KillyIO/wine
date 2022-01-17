@@ -1,5 +1,6 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:wine/domain/auth/auth_failure.dart';
+import 'package:wine/domain/chapter/chapter_failure.dart';
 import 'package:wine/domain/default_covers/default_covers_failure.dart';
 import 'package:wine/domain/series/series_failure.dart';
 import 'package:wine/domain/sessions/sessions_failure.dart';
@@ -13,6 +14,9 @@ part 'core_failure.freezed.dart';
 class CoreFailure with _$CoreFailure {
   /// @nodoc
   const factory CoreFailure.auth(AuthFailure f) = _Auth;
+
+  /// @nodoc
+  const factory CoreFailure.chapter(ChapterFailure f) = _Chapter;
 
   /// @nodoc
   const factory CoreFailure.defaultCovers(DefaultCoversFailure f) =
