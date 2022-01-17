@@ -8,7 +8,7 @@ class Language extends ValueObject<String> {
   /// @nodoc
   factory Language(String input) {
     return Language._(
-      validateLanguage(input),
+      validateSelectionNotEmpty(input),
     );
   }
 
