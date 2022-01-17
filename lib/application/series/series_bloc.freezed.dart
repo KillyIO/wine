@@ -27,8 +27,8 @@ class _$SeriesEventTearOff {
     );
   }
 
-  DataSet dataSet() {
-    return const DataSet();
+  ChapterOneLoaded chapterOneLoaded() {
+    return const ChapterOneLoaded();
   }
 
   LaunchWithID launchWithID(UniqueID id, {Series? series}) {
@@ -44,8 +44,8 @@ class _$SeriesEventTearOff {
     );
   }
 
-  SeriesViewsUpdated seriesViewsUpdated() {
-    return const SeriesViewsUpdated();
+  SeriesSet seriesSet() {
+    return const SeriesSet();
   }
 
   SessionFetched sessionFetched() {
@@ -66,10 +66,10 @@ mixin _$SeriesEvent {
   TResult when<TResult extends Object?>({
     required TResult Function() authorLoaded,
     required TResult Function(bool isBookmarked) bookmarkButtonPressed,
-    required TResult Function() dataSet,
+    required TResult Function() chapterOneLoaded,
     required TResult Function(UniqueID id, Series? series) launchWithID,
     required TResult Function(bool isLiked) likeButtonPressed,
-    required TResult Function() seriesViewsUpdated,
+    required TResult Function() seriesSet,
     required TResult Function() sessionFetched,
     required TResult Function() settingsFetched,
   }) =>
@@ -78,10 +78,10 @@ mixin _$SeriesEvent {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? authorLoaded,
     TResult Function(bool isBookmarked)? bookmarkButtonPressed,
-    TResult Function()? dataSet,
+    TResult Function()? chapterOneLoaded,
     TResult Function(UniqueID id, Series? series)? launchWithID,
     TResult Function(bool isLiked)? likeButtonPressed,
-    TResult Function()? seriesViewsUpdated,
+    TResult Function()? seriesSet,
     TResult Function()? sessionFetched,
     TResult Function()? settingsFetched,
   }) =>
@@ -90,10 +90,10 @@ mixin _$SeriesEvent {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? authorLoaded,
     TResult Function(bool isBookmarked)? bookmarkButtonPressed,
-    TResult Function()? dataSet,
+    TResult Function()? chapterOneLoaded,
     TResult Function(UniqueID id, Series? series)? launchWithID,
     TResult Function(bool isLiked)? likeButtonPressed,
-    TResult Function()? seriesViewsUpdated,
+    TResult Function()? seriesSet,
     TResult Function()? sessionFetched,
     TResult Function()? settingsFetched,
     required TResult orElse(),
@@ -104,10 +104,10 @@ mixin _$SeriesEvent {
     required TResult Function(AuthorLoaded value) authorLoaded,
     required TResult Function(BookmarkButtonPressed value)
         bookmarkButtonPressed,
-    required TResult Function(DataSet value) dataSet,
+    required TResult Function(ChapterOneLoaded value) chapterOneLoaded,
     required TResult Function(LaunchWithID value) launchWithID,
     required TResult Function(LikeButtonPressed value) likeButtonPressed,
-    required TResult Function(SeriesViewsUpdated value) seriesViewsUpdated,
+    required TResult Function(SeriesSet value) seriesSet,
     required TResult Function(SessionFetched value) sessionFetched,
     required TResult Function(SettingsFetched value) settingsFetched,
   }) =>
@@ -116,10 +116,10 @@ mixin _$SeriesEvent {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(AuthorLoaded value)? authorLoaded,
     TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
-    TResult Function(DataSet value)? dataSet,
+    TResult Function(ChapterOneLoaded value)? chapterOneLoaded,
     TResult Function(LaunchWithID value)? launchWithID,
     TResult Function(LikeButtonPressed value)? likeButtonPressed,
-    TResult Function(SeriesViewsUpdated value)? seriesViewsUpdated,
+    TResult Function(SeriesSet value)? seriesSet,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SettingsFetched value)? settingsFetched,
   }) =>
@@ -128,10 +128,10 @@ mixin _$SeriesEvent {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AuthorLoaded value)? authorLoaded,
     TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
-    TResult Function(DataSet value)? dataSet,
+    TResult Function(ChapterOneLoaded value)? chapterOneLoaded,
     TResult Function(LaunchWithID value)? launchWithID,
     TResult Function(LikeButtonPressed value)? likeButtonPressed,
-    TResult Function(SeriesViewsUpdated value)? seriesViewsUpdated,
+    TResult Function(SeriesSet value)? seriesSet,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SettingsFetched value)? settingsFetched,
     required TResult orElse(),
@@ -197,10 +197,10 @@ class _$AuthorLoaded implements AuthorLoaded {
   TResult when<TResult extends Object?>({
     required TResult Function() authorLoaded,
     required TResult Function(bool isBookmarked) bookmarkButtonPressed,
-    required TResult Function() dataSet,
+    required TResult Function() chapterOneLoaded,
     required TResult Function(UniqueID id, Series? series) launchWithID,
     required TResult Function(bool isLiked) likeButtonPressed,
-    required TResult Function() seriesViewsUpdated,
+    required TResult Function() seriesSet,
     required TResult Function() sessionFetched,
     required TResult Function() settingsFetched,
   }) {
@@ -212,10 +212,10 @@ class _$AuthorLoaded implements AuthorLoaded {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? authorLoaded,
     TResult Function(bool isBookmarked)? bookmarkButtonPressed,
-    TResult Function()? dataSet,
+    TResult Function()? chapterOneLoaded,
     TResult Function(UniqueID id, Series? series)? launchWithID,
     TResult Function(bool isLiked)? likeButtonPressed,
-    TResult Function()? seriesViewsUpdated,
+    TResult Function()? seriesSet,
     TResult Function()? sessionFetched,
     TResult Function()? settingsFetched,
   }) {
@@ -227,10 +227,10 @@ class _$AuthorLoaded implements AuthorLoaded {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? authorLoaded,
     TResult Function(bool isBookmarked)? bookmarkButtonPressed,
-    TResult Function()? dataSet,
+    TResult Function()? chapterOneLoaded,
     TResult Function(UniqueID id, Series? series)? launchWithID,
     TResult Function(bool isLiked)? likeButtonPressed,
-    TResult Function()? seriesViewsUpdated,
+    TResult Function()? seriesSet,
     TResult Function()? sessionFetched,
     TResult Function()? settingsFetched,
     required TResult orElse(),
@@ -247,10 +247,10 @@ class _$AuthorLoaded implements AuthorLoaded {
     required TResult Function(AuthorLoaded value) authorLoaded,
     required TResult Function(BookmarkButtonPressed value)
         bookmarkButtonPressed,
-    required TResult Function(DataSet value) dataSet,
+    required TResult Function(ChapterOneLoaded value) chapterOneLoaded,
     required TResult Function(LaunchWithID value) launchWithID,
     required TResult Function(LikeButtonPressed value) likeButtonPressed,
-    required TResult Function(SeriesViewsUpdated value) seriesViewsUpdated,
+    required TResult Function(SeriesSet value) seriesSet,
     required TResult Function(SessionFetched value) sessionFetched,
     required TResult Function(SettingsFetched value) settingsFetched,
   }) {
@@ -262,10 +262,10 @@ class _$AuthorLoaded implements AuthorLoaded {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(AuthorLoaded value)? authorLoaded,
     TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
-    TResult Function(DataSet value)? dataSet,
+    TResult Function(ChapterOneLoaded value)? chapterOneLoaded,
     TResult Function(LaunchWithID value)? launchWithID,
     TResult Function(LikeButtonPressed value)? likeButtonPressed,
-    TResult Function(SeriesViewsUpdated value)? seriesViewsUpdated,
+    TResult Function(SeriesSet value)? seriesSet,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SettingsFetched value)? settingsFetched,
   }) {
@@ -277,10 +277,10 @@ class _$AuthorLoaded implements AuthorLoaded {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AuthorLoaded value)? authorLoaded,
     TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
-    TResult Function(DataSet value)? dataSet,
+    TResult Function(ChapterOneLoaded value)? chapterOneLoaded,
     TResult Function(LaunchWithID value)? launchWithID,
     TResult Function(LikeButtonPressed value)? likeButtonPressed,
-    TResult Function(SeriesViewsUpdated value)? seriesViewsUpdated,
+    TResult Function(SeriesSet value)? seriesSet,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SettingsFetched value)? settingsFetched,
     required TResult orElse(),
@@ -365,10 +365,10 @@ class _$BookmarkButtonPressed implements BookmarkButtonPressed {
   TResult when<TResult extends Object?>({
     required TResult Function() authorLoaded,
     required TResult Function(bool isBookmarked) bookmarkButtonPressed,
-    required TResult Function() dataSet,
+    required TResult Function() chapterOneLoaded,
     required TResult Function(UniqueID id, Series? series) launchWithID,
     required TResult Function(bool isLiked) likeButtonPressed,
-    required TResult Function() seriesViewsUpdated,
+    required TResult Function() seriesSet,
     required TResult Function() sessionFetched,
     required TResult Function() settingsFetched,
   }) {
@@ -380,10 +380,10 @@ class _$BookmarkButtonPressed implements BookmarkButtonPressed {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? authorLoaded,
     TResult Function(bool isBookmarked)? bookmarkButtonPressed,
-    TResult Function()? dataSet,
+    TResult Function()? chapterOneLoaded,
     TResult Function(UniqueID id, Series? series)? launchWithID,
     TResult Function(bool isLiked)? likeButtonPressed,
-    TResult Function()? seriesViewsUpdated,
+    TResult Function()? seriesSet,
     TResult Function()? sessionFetched,
     TResult Function()? settingsFetched,
   }) {
@@ -395,10 +395,10 @@ class _$BookmarkButtonPressed implements BookmarkButtonPressed {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? authorLoaded,
     TResult Function(bool isBookmarked)? bookmarkButtonPressed,
-    TResult Function()? dataSet,
+    TResult Function()? chapterOneLoaded,
     TResult Function(UniqueID id, Series? series)? launchWithID,
     TResult Function(bool isLiked)? likeButtonPressed,
-    TResult Function()? seriesViewsUpdated,
+    TResult Function()? seriesSet,
     TResult Function()? sessionFetched,
     TResult Function()? settingsFetched,
     required TResult orElse(),
@@ -415,10 +415,10 @@ class _$BookmarkButtonPressed implements BookmarkButtonPressed {
     required TResult Function(AuthorLoaded value) authorLoaded,
     required TResult Function(BookmarkButtonPressed value)
         bookmarkButtonPressed,
-    required TResult Function(DataSet value) dataSet,
+    required TResult Function(ChapterOneLoaded value) chapterOneLoaded,
     required TResult Function(LaunchWithID value) launchWithID,
     required TResult Function(LikeButtonPressed value) likeButtonPressed,
-    required TResult Function(SeriesViewsUpdated value) seriesViewsUpdated,
+    required TResult Function(SeriesSet value) seriesSet,
     required TResult Function(SessionFetched value) sessionFetched,
     required TResult Function(SettingsFetched value) settingsFetched,
   }) {
@@ -430,10 +430,10 @@ class _$BookmarkButtonPressed implements BookmarkButtonPressed {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(AuthorLoaded value)? authorLoaded,
     TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
-    TResult Function(DataSet value)? dataSet,
+    TResult Function(ChapterOneLoaded value)? chapterOneLoaded,
     TResult Function(LaunchWithID value)? launchWithID,
     TResult Function(LikeButtonPressed value)? likeButtonPressed,
-    TResult Function(SeriesViewsUpdated value)? seriesViewsUpdated,
+    TResult Function(SeriesSet value)? seriesSet,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SettingsFetched value)? settingsFetched,
   }) {
@@ -445,10 +445,10 @@ class _$BookmarkButtonPressed implements BookmarkButtonPressed {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AuthorLoaded value)? authorLoaded,
     TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
-    TResult Function(DataSet value)? dataSet,
+    TResult Function(ChapterOneLoaded value)? chapterOneLoaded,
     TResult Function(LaunchWithID value)? launchWithID,
     TResult Function(LikeButtonPressed value)? likeButtonPressed,
-    TResult Function(SeriesViewsUpdated value)? seriesViewsUpdated,
+    TResult Function(SeriesSet value)? seriesSet,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SettingsFetched value)? settingsFetched,
     required TResult orElse(),
@@ -471,35 +471,38 @@ abstract class BookmarkButtonPressed implements SeriesEvent {
 }
 
 /// @nodoc
-abstract class $DataSetCopyWith<$Res> {
-  factory $DataSetCopyWith(DataSet value, $Res Function(DataSet) then) =
-      _$DataSetCopyWithImpl<$Res>;
+abstract class $ChapterOneLoadedCopyWith<$Res> {
+  factory $ChapterOneLoadedCopyWith(
+          ChapterOneLoaded value, $Res Function(ChapterOneLoaded) then) =
+      _$ChapterOneLoadedCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$DataSetCopyWithImpl<$Res> extends _$SeriesEventCopyWithImpl<$Res>
-    implements $DataSetCopyWith<$Res> {
-  _$DataSetCopyWithImpl(DataSet _value, $Res Function(DataSet) _then)
-      : super(_value, (v) => _then(v as DataSet));
+class _$ChapterOneLoadedCopyWithImpl<$Res>
+    extends _$SeriesEventCopyWithImpl<$Res>
+    implements $ChapterOneLoadedCopyWith<$Res> {
+  _$ChapterOneLoadedCopyWithImpl(
+      ChapterOneLoaded _value, $Res Function(ChapterOneLoaded) _then)
+      : super(_value, (v) => _then(v as ChapterOneLoaded));
 
   @override
-  DataSet get _value => super._value as DataSet;
+  ChapterOneLoaded get _value => super._value as ChapterOneLoaded;
 }
 
 /// @nodoc
 
-class _$DataSet implements DataSet {
-  const _$DataSet();
+class _$ChapterOneLoaded implements ChapterOneLoaded {
+  const _$ChapterOneLoaded();
 
   @override
   String toString() {
-    return 'SeriesEvent.dataSet()';
+    return 'SeriesEvent.chapterOneLoaded()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is DataSet);
+        (other.runtimeType == runtimeType && other is ChapterOneLoaded);
   }
 
   @override
@@ -510,14 +513,14 @@ class _$DataSet implements DataSet {
   TResult when<TResult extends Object?>({
     required TResult Function() authorLoaded,
     required TResult Function(bool isBookmarked) bookmarkButtonPressed,
-    required TResult Function() dataSet,
+    required TResult Function() chapterOneLoaded,
     required TResult Function(UniqueID id, Series? series) launchWithID,
     required TResult Function(bool isLiked) likeButtonPressed,
-    required TResult Function() seriesViewsUpdated,
+    required TResult Function() seriesSet,
     required TResult Function() sessionFetched,
     required TResult Function() settingsFetched,
   }) {
-    return dataSet();
+    return chapterOneLoaded();
   }
 
   @override
@@ -525,14 +528,14 @@ class _$DataSet implements DataSet {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? authorLoaded,
     TResult Function(bool isBookmarked)? bookmarkButtonPressed,
-    TResult Function()? dataSet,
+    TResult Function()? chapterOneLoaded,
     TResult Function(UniqueID id, Series? series)? launchWithID,
     TResult Function(bool isLiked)? likeButtonPressed,
-    TResult Function()? seriesViewsUpdated,
+    TResult Function()? seriesSet,
     TResult Function()? sessionFetched,
     TResult Function()? settingsFetched,
   }) {
-    return dataSet?.call();
+    return chapterOneLoaded?.call();
   }
 
   @override
@@ -540,16 +543,16 @@ class _$DataSet implements DataSet {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? authorLoaded,
     TResult Function(bool isBookmarked)? bookmarkButtonPressed,
-    TResult Function()? dataSet,
+    TResult Function()? chapterOneLoaded,
     TResult Function(UniqueID id, Series? series)? launchWithID,
     TResult Function(bool isLiked)? likeButtonPressed,
-    TResult Function()? seriesViewsUpdated,
+    TResult Function()? seriesSet,
     TResult Function()? sessionFetched,
     TResult Function()? settingsFetched,
     required TResult orElse(),
   }) {
-    if (dataSet != null) {
-      return dataSet();
+    if (chapterOneLoaded != null) {
+      return chapterOneLoaded();
     }
     return orElse();
   }
@@ -560,14 +563,14 @@ class _$DataSet implements DataSet {
     required TResult Function(AuthorLoaded value) authorLoaded,
     required TResult Function(BookmarkButtonPressed value)
         bookmarkButtonPressed,
-    required TResult Function(DataSet value) dataSet,
+    required TResult Function(ChapterOneLoaded value) chapterOneLoaded,
     required TResult Function(LaunchWithID value) launchWithID,
     required TResult Function(LikeButtonPressed value) likeButtonPressed,
-    required TResult Function(SeriesViewsUpdated value) seriesViewsUpdated,
+    required TResult Function(SeriesSet value) seriesSet,
     required TResult Function(SessionFetched value) sessionFetched,
     required TResult Function(SettingsFetched value) settingsFetched,
   }) {
-    return dataSet(this);
+    return chapterOneLoaded(this);
   }
 
   @override
@@ -575,14 +578,14 @@ class _$DataSet implements DataSet {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(AuthorLoaded value)? authorLoaded,
     TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
-    TResult Function(DataSet value)? dataSet,
+    TResult Function(ChapterOneLoaded value)? chapterOneLoaded,
     TResult Function(LaunchWithID value)? launchWithID,
     TResult Function(LikeButtonPressed value)? likeButtonPressed,
-    TResult Function(SeriesViewsUpdated value)? seriesViewsUpdated,
+    TResult Function(SeriesSet value)? seriesSet,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SettingsFetched value)? settingsFetched,
   }) {
-    return dataSet?.call(this);
+    return chapterOneLoaded?.call(this);
   }
 
   @override
@@ -590,23 +593,23 @@ class _$DataSet implements DataSet {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AuthorLoaded value)? authorLoaded,
     TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
-    TResult Function(DataSet value)? dataSet,
+    TResult Function(ChapterOneLoaded value)? chapterOneLoaded,
     TResult Function(LaunchWithID value)? launchWithID,
     TResult Function(LikeButtonPressed value)? likeButtonPressed,
-    TResult Function(SeriesViewsUpdated value)? seriesViewsUpdated,
+    TResult Function(SeriesSet value)? seriesSet,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SettingsFetched value)? settingsFetched,
     required TResult orElse(),
   }) {
-    if (dataSet != null) {
-      return dataSet(this);
+    if (chapterOneLoaded != null) {
+      return chapterOneLoaded(this);
     }
     return orElse();
   }
 }
 
-abstract class DataSet implements SeriesEvent {
-  const factory DataSet() = _$DataSet;
+abstract class ChapterOneLoaded implements SeriesEvent {
+  const factory ChapterOneLoaded() = _$ChapterOneLoaded;
 }
 
 /// @nodoc
@@ -698,10 +701,10 @@ class _$LaunchWithID implements LaunchWithID {
   TResult when<TResult extends Object?>({
     required TResult Function() authorLoaded,
     required TResult Function(bool isBookmarked) bookmarkButtonPressed,
-    required TResult Function() dataSet,
+    required TResult Function() chapterOneLoaded,
     required TResult Function(UniqueID id, Series? series) launchWithID,
     required TResult Function(bool isLiked) likeButtonPressed,
-    required TResult Function() seriesViewsUpdated,
+    required TResult Function() seriesSet,
     required TResult Function() sessionFetched,
     required TResult Function() settingsFetched,
   }) {
@@ -713,10 +716,10 @@ class _$LaunchWithID implements LaunchWithID {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? authorLoaded,
     TResult Function(bool isBookmarked)? bookmarkButtonPressed,
-    TResult Function()? dataSet,
+    TResult Function()? chapterOneLoaded,
     TResult Function(UniqueID id, Series? series)? launchWithID,
     TResult Function(bool isLiked)? likeButtonPressed,
-    TResult Function()? seriesViewsUpdated,
+    TResult Function()? seriesSet,
     TResult Function()? sessionFetched,
     TResult Function()? settingsFetched,
   }) {
@@ -728,10 +731,10 @@ class _$LaunchWithID implements LaunchWithID {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? authorLoaded,
     TResult Function(bool isBookmarked)? bookmarkButtonPressed,
-    TResult Function()? dataSet,
+    TResult Function()? chapterOneLoaded,
     TResult Function(UniqueID id, Series? series)? launchWithID,
     TResult Function(bool isLiked)? likeButtonPressed,
-    TResult Function()? seriesViewsUpdated,
+    TResult Function()? seriesSet,
     TResult Function()? sessionFetched,
     TResult Function()? settingsFetched,
     required TResult orElse(),
@@ -748,10 +751,10 @@ class _$LaunchWithID implements LaunchWithID {
     required TResult Function(AuthorLoaded value) authorLoaded,
     required TResult Function(BookmarkButtonPressed value)
         bookmarkButtonPressed,
-    required TResult Function(DataSet value) dataSet,
+    required TResult Function(ChapterOneLoaded value) chapterOneLoaded,
     required TResult Function(LaunchWithID value) launchWithID,
     required TResult Function(LikeButtonPressed value) likeButtonPressed,
-    required TResult Function(SeriesViewsUpdated value) seriesViewsUpdated,
+    required TResult Function(SeriesSet value) seriesSet,
     required TResult Function(SessionFetched value) sessionFetched,
     required TResult Function(SettingsFetched value) settingsFetched,
   }) {
@@ -763,10 +766,10 @@ class _$LaunchWithID implements LaunchWithID {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(AuthorLoaded value)? authorLoaded,
     TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
-    TResult Function(DataSet value)? dataSet,
+    TResult Function(ChapterOneLoaded value)? chapterOneLoaded,
     TResult Function(LaunchWithID value)? launchWithID,
     TResult Function(LikeButtonPressed value)? likeButtonPressed,
-    TResult Function(SeriesViewsUpdated value)? seriesViewsUpdated,
+    TResult Function(SeriesSet value)? seriesSet,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SettingsFetched value)? settingsFetched,
   }) {
@@ -778,10 +781,10 @@ class _$LaunchWithID implements LaunchWithID {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AuthorLoaded value)? authorLoaded,
     TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
-    TResult Function(DataSet value)? dataSet,
+    TResult Function(ChapterOneLoaded value)? chapterOneLoaded,
     TResult Function(LaunchWithID value)? launchWithID,
     TResult Function(LikeButtonPressed value)? likeButtonPressed,
-    TResult Function(SeriesViewsUpdated value)? seriesViewsUpdated,
+    TResult Function(SeriesSet value)? seriesSet,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SettingsFetched value)? settingsFetched,
     required TResult orElse(),
@@ -870,10 +873,10 @@ class _$LikeButtonPressed implements LikeButtonPressed {
   TResult when<TResult extends Object?>({
     required TResult Function() authorLoaded,
     required TResult Function(bool isBookmarked) bookmarkButtonPressed,
-    required TResult Function() dataSet,
+    required TResult Function() chapterOneLoaded,
     required TResult Function(UniqueID id, Series? series) launchWithID,
     required TResult Function(bool isLiked) likeButtonPressed,
-    required TResult Function() seriesViewsUpdated,
+    required TResult Function() seriesSet,
     required TResult Function() sessionFetched,
     required TResult Function() settingsFetched,
   }) {
@@ -885,10 +888,10 @@ class _$LikeButtonPressed implements LikeButtonPressed {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? authorLoaded,
     TResult Function(bool isBookmarked)? bookmarkButtonPressed,
-    TResult Function()? dataSet,
+    TResult Function()? chapterOneLoaded,
     TResult Function(UniqueID id, Series? series)? launchWithID,
     TResult Function(bool isLiked)? likeButtonPressed,
-    TResult Function()? seriesViewsUpdated,
+    TResult Function()? seriesSet,
     TResult Function()? sessionFetched,
     TResult Function()? settingsFetched,
   }) {
@@ -900,10 +903,10 @@ class _$LikeButtonPressed implements LikeButtonPressed {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? authorLoaded,
     TResult Function(bool isBookmarked)? bookmarkButtonPressed,
-    TResult Function()? dataSet,
+    TResult Function()? chapterOneLoaded,
     TResult Function(UniqueID id, Series? series)? launchWithID,
     TResult Function(bool isLiked)? likeButtonPressed,
-    TResult Function()? seriesViewsUpdated,
+    TResult Function()? seriesSet,
     TResult Function()? sessionFetched,
     TResult Function()? settingsFetched,
     required TResult orElse(),
@@ -920,10 +923,10 @@ class _$LikeButtonPressed implements LikeButtonPressed {
     required TResult Function(AuthorLoaded value) authorLoaded,
     required TResult Function(BookmarkButtonPressed value)
         bookmarkButtonPressed,
-    required TResult Function(DataSet value) dataSet,
+    required TResult Function(ChapterOneLoaded value) chapterOneLoaded,
     required TResult Function(LaunchWithID value) launchWithID,
     required TResult Function(LikeButtonPressed value) likeButtonPressed,
-    required TResult Function(SeriesViewsUpdated value) seriesViewsUpdated,
+    required TResult Function(SeriesSet value) seriesSet,
     required TResult Function(SessionFetched value) sessionFetched,
     required TResult Function(SettingsFetched value) settingsFetched,
   }) {
@@ -935,10 +938,10 @@ class _$LikeButtonPressed implements LikeButtonPressed {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(AuthorLoaded value)? authorLoaded,
     TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
-    TResult Function(DataSet value)? dataSet,
+    TResult Function(ChapterOneLoaded value)? chapterOneLoaded,
     TResult Function(LaunchWithID value)? launchWithID,
     TResult Function(LikeButtonPressed value)? likeButtonPressed,
-    TResult Function(SeriesViewsUpdated value)? seriesViewsUpdated,
+    TResult Function(SeriesSet value)? seriesSet,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SettingsFetched value)? settingsFetched,
   }) {
@@ -950,10 +953,10 @@ class _$LikeButtonPressed implements LikeButtonPressed {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AuthorLoaded value)? authorLoaded,
     TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
-    TResult Function(DataSet value)? dataSet,
+    TResult Function(ChapterOneLoaded value)? chapterOneLoaded,
     TResult Function(LaunchWithID value)? launchWithID,
     TResult Function(LikeButtonPressed value)? likeButtonPressed,
-    TResult Function(SeriesViewsUpdated value)? seriesViewsUpdated,
+    TResult Function(SeriesSet value)? seriesSet,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SettingsFetched value)? settingsFetched,
     required TResult orElse(),
@@ -976,38 +979,35 @@ abstract class LikeButtonPressed implements SeriesEvent {
 }
 
 /// @nodoc
-abstract class $SeriesViewsUpdatedCopyWith<$Res> {
-  factory $SeriesViewsUpdatedCopyWith(
-          SeriesViewsUpdated value, $Res Function(SeriesViewsUpdated) then) =
-      _$SeriesViewsUpdatedCopyWithImpl<$Res>;
+abstract class $SeriesSetCopyWith<$Res> {
+  factory $SeriesSetCopyWith(SeriesSet value, $Res Function(SeriesSet) then) =
+      _$SeriesSetCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$SeriesViewsUpdatedCopyWithImpl<$Res>
-    extends _$SeriesEventCopyWithImpl<$Res>
-    implements $SeriesViewsUpdatedCopyWith<$Res> {
-  _$SeriesViewsUpdatedCopyWithImpl(
-      SeriesViewsUpdated _value, $Res Function(SeriesViewsUpdated) _then)
-      : super(_value, (v) => _then(v as SeriesViewsUpdated));
+class _$SeriesSetCopyWithImpl<$Res> extends _$SeriesEventCopyWithImpl<$Res>
+    implements $SeriesSetCopyWith<$Res> {
+  _$SeriesSetCopyWithImpl(SeriesSet _value, $Res Function(SeriesSet) _then)
+      : super(_value, (v) => _then(v as SeriesSet));
 
   @override
-  SeriesViewsUpdated get _value => super._value as SeriesViewsUpdated;
+  SeriesSet get _value => super._value as SeriesSet;
 }
 
 /// @nodoc
 
-class _$SeriesViewsUpdated implements SeriesViewsUpdated {
-  const _$SeriesViewsUpdated();
+class _$SeriesSet implements SeriesSet {
+  const _$SeriesSet();
 
   @override
   String toString() {
-    return 'SeriesEvent.seriesViewsUpdated()';
+    return 'SeriesEvent.seriesSet()';
   }
 
   @override
   bool operator ==(dynamic other) {
     return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is SeriesViewsUpdated);
+        (other.runtimeType == runtimeType && other is SeriesSet);
   }
 
   @override
@@ -1018,14 +1018,14 @@ class _$SeriesViewsUpdated implements SeriesViewsUpdated {
   TResult when<TResult extends Object?>({
     required TResult Function() authorLoaded,
     required TResult Function(bool isBookmarked) bookmarkButtonPressed,
-    required TResult Function() dataSet,
+    required TResult Function() chapterOneLoaded,
     required TResult Function(UniqueID id, Series? series) launchWithID,
     required TResult Function(bool isLiked) likeButtonPressed,
-    required TResult Function() seriesViewsUpdated,
+    required TResult Function() seriesSet,
     required TResult Function() sessionFetched,
     required TResult Function() settingsFetched,
   }) {
-    return seriesViewsUpdated();
+    return seriesSet();
   }
 
   @override
@@ -1033,14 +1033,14 @@ class _$SeriesViewsUpdated implements SeriesViewsUpdated {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? authorLoaded,
     TResult Function(bool isBookmarked)? bookmarkButtonPressed,
-    TResult Function()? dataSet,
+    TResult Function()? chapterOneLoaded,
     TResult Function(UniqueID id, Series? series)? launchWithID,
     TResult Function(bool isLiked)? likeButtonPressed,
-    TResult Function()? seriesViewsUpdated,
+    TResult Function()? seriesSet,
     TResult Function()? sessionFetched,
     TResult Function()? settingsFetched,
   }) {
-    return seriesViewsUpdated?.call();
+    return seriesSet?.call();
   }
 
   @override
@@ -1048,16 +1048,16 @@ class _$SeriesViewsUpdated implements SeriesViewsUpdated {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? authorLoaded,
     TResult Function(bool isBookmarked)? bookmarkButtonPressed,
-    TResult Function()? dataSet,
+    TResult Function()? chapterOneLoaded,
     TResult Function(UniqueID id, Series? series)? launchWithID,
     TResult Function(bool isLiked)? likeButtonPressed,
-    TResult Function()? seriesViewsUpdated,
+    TResult Function()? seriesSet,
     TResult Function()? sessionFetched,
     TResult Function()? settingsFetched,
     required TResult orElse(),
   }) {
-    if (seriesViewsUpdated != null) {
-      return seriesViewsUpdated();
+    if (seriesSet != null) {
+      return seriesSet();
     }
     return orElse();
   }
@@ -1068,14 +1068,14 @@ class _$SeriesViewsUpdated implements SeriesViewsUpdated {
     required TResult Function(AuthorLoaded value) authorLoaded,
     required TResult Function(BookmarkButtonPressed value)
         bookmarkButtonPressed,
-    required TResult Function(DataSet value) dataSet,
+    required TResult Function(ChapterOneLoaded value) chapterOneLoaded,
     required TResult Function(LaunchWithID value) launchWithID,
     required TResult Function(LikeButtonPressed value) likeButtonPressed,
-    required TResult Function(SeriesViewsUpdated value) seriesViewsUpdated,
+    required TResult Function(SeriesSet value) seriesSet,
     required TResult Function(SessionFetched value) sessionFetched,
     required TResult Function(SettingsFetched value) settingsFetched,
   }) {
-    return seriesViewsUpdated(this);
+    return seriesSet(this);
   }
 
   @override
@@ -1083,14 +1083,14 @@ class _$SeriesViewsUpdated implements SeriesViewsUpdated {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(AuthorLoaded value)? authorLoaded,
     TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
-    TResult Function(DataSet value)? dataSet,
+    TResult Function(ChapterOneLoaded value)? chapterOneLoaded,
     TResult Function(LaunchWithID value)? launchWithID,
     TResult Function(LikeButtonPressed value)? likeButtonPressed,
-    TResult Function(SeriesViewsUpdated value)? seriesViewsUpdated,
+    TResult Function(SeriesSet value)? seriesSet,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SettingsFetched value)? settingsFetched,
   }) {
-    return seriesViewsUpdated?.call(this);
+    return seriesSet?.call(this);
   }
 
   @override
@@ -1098,23 +1098,23 @@ class _$SeriesViewsUpdated implements SeriesViewsUpdated {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AuthorLoaded value)? authorLoaded,
     TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
-    TResult Function(DataSet value)? dataSet,
+    TResult Function(ChapterOneLoaded value)? chapterOneLoaded,
     TResult Function(LaunchWithID value)? launchWithID,
     TResult Function(LikeButtonPressed value)? likeButtonPressed,
-    TResult Function(SeriesViewsUpdated value)? seriesViewsUpdated,
+    TResult Function(SeriesSet value)? seriesSet,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SettingsFetched value)? settingsFetched,
     required TResult orElse(),
   }) {
-    if (seriesViewsUpdated != null) {
-      return seriesViewsUpdated(this);
+    if (seriesSet != null) {
+      return seriesSet(this);
     }
     return orElse();
   }
 }
 
-abstract class SeriesViewsUpdated implements SeriesEvent {
-  const factory SeriesViewsUpdated() = _$SeriesViewsUpdated;
+abstract class SeriesSet implements SeriesEvent {
+  const factory SeriesSet() = _$SeriesSet;
 }
 
 /// @nodoc
@@ -1159,10 +1159,10 @@ class _$SessionFetched implements SessionFetched {
   TResult when<TResult extends Object?>({
     required TResult Function() authorLoaded,
     required TResult Function(bool isBookmarked) bookmarkButtonPressed,
-    required TResult Function() dataSet,
+    required TResult Function() chapterOneLoaded,
     required TResult Function(UniqueID id, Series? series) launchWithID,
     required TResult Function(bool isLiked) likeButtonPressed,
-    required TResult Function() seriesViewsUpdated,
+    required TResult Function() seriesSet,
     required TResult Function() sessionFetched,
     required TResult Function() settingsFetched,
   }) {
@@ -1174,10 +1174,10 @@ class _$SessionFetched implements SessionFetched {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? authorLoaded,
     TResult Function(bool isBookmarked)? bookmarkButtonPressed,
-    TResult Function()? dataSet,
+    TResult Function()? chapterOneLoaded,
     TResult Function(UniqueID id, Series? series)? launchWithID,
     TResult Function(bool isLiked)? likeButtonPressed,
-    TResult Function()? seriesViewsUpdated,
+    TResult Function()? seriesSet,
     TResult Function()? sessionFetched,
     TResult Function()? settingsFetched,
   }) {
@@ -1189,10 +1189,10 @@ class _$SessionFetched implements SessionFetched {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? authorLoaded,
     TResult Function(bool isBookmarked)? bookmarkButtonPressed,
-    TResult Function()? dataSet,
+    TResult Function()? chapterOneLoaded,
     TResult Function(UniqueID id, Series? series)? launchWithID,
     TResult Function(bool isLiked)? likeButtonPressed,
-    TResult Function()? seriesViewsUpdated,
+    TResult Function()? seriesSet,
     TResult Function()? sessionFetched,
     TResult Function()? settingsFetched,
     required TResult orElse(),
@@ -1209,10 +1209,10 @@ class _$SessionFetched implements SessionFetched {
     required TResult Function(AuthorLoaded value) authorLoaded,
     required TResult Function(BookmarkButtonPressed value)
         bookmarkButtonPressed,
-    required TResult Function(DataSet value) dataSet,
+    required TResult Function(ChapterOneLoaded value) chapterOneLoaded,
     required TResult Function(LaunchWithID value) launchWithID,
     required TResult Function(LikeButtonPressed value) likeButtonPressed,
-    required TResult Function(SeriesViewsUpdated value) seriesViewsUpdated,
+    required TResult Function(SeriesSet value) seriesSet,
     required TResult Function(SessionFetched value) sessionFetched,
     required TResult Function(SettingsFetched value) settingsFetched,
   }) {
@@ -1224,10 +1224,10 @@ class _$SessionFetched implements SessionFetched {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(AuthorLoaded value)? authorLoaded,
     TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
-    TResult Function(DataSet value)? dataSet,
+    TResult Function(ChapterOneLoaded value)? chapterOneLoaded,
     TResult Function(LaunchWithID value)? launchWithID,
     TResult Function(LikeButtonPressed value)? likeButtonPressed,
-    TResult Function(SeriesViewsUpdated value)? seriesViewsUpdated,
+    TResult Function(SeriesSet value)? seriesSet,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SettingsFetched value)? settingsFetched,
   }) {
@@ -1239,10 +1239,10 @@ class _$SessionFetched implements SessionFetched {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AuthorLoaded value)? authorLoaded,
     TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
-    TResult Function(DataSet value)? dataSet,
+    TResult Function(ChapterOneLoaded value)? chapterOneLoaded,
     TResult Function(LaunchWithID value)? launchWithID,
     TResult Function(LikeButtonPressed value)? likeButtonPressed,
-    TResult Function(SeriesViewsUpdated value)? seriesViewsUpdated,
+    TResult Function(SeriesSet value)? seriesSet,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SettingsFetched value)? settingsFetched,
     required TResult orElse(),
@@ -1301,10 +1301,10 @@ class _$SettingsFetched implements SettingsFetched {
   TResult when<TResult extends Object?>({
     required TResult Function() authorLoaded,
     required TResult Function(bool isBookmarked) bookmarkButtonPressed,
-    required TResult Function() dataSet,
+    required TResult Function() chapterOneLoaded,
     required TResult Function(UniqueID id, Series? series) launchWithID,
     required TResult Function(bool isLiked) likeButtonPressed,
-    required TResult Function() seriesViewsUpdated,
+    required TResult Function() seriesSet,
     required TResult Function() sessionFetched,
     required TResult Function() settingsFetched,
   }) {
@@ -1316,10 +1316,10 @@ class _$SettingsFetched implements SettingsFetched {
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? authorLoaded,
     TResult Function(bool isBookmarked)? bookmarkButtonPressed,
-    TResult Function()? dataSet,
+    TResult Function()? chapterOneLoaded,
     TResult Function(UniqueID id, Series? series)? launchWithID,
     TResult Function(bool isLiked)? likeButtonPressed,
-    TResult Function()? seriesViewsUpdated,
+    TResult Function()? seriesSet,
     TResult Function()? sessionFetched,
     TResult Function()? settingsFetched,
   }) {
@@ -1331,10 +1331,10 @@ class _$SettingsFetched implements SettingsFetched {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? authorLoaded,
     TResult Function(bool isBookmarked)? bookmarkButtonPressed,
-    TResult Function()? dataSet,
+    TResult Function()? chapterOneLoaded,
     TResult Function(UniqueID id, Series? series)? launchWithID,
     TResult Function(bool isLiked)? likeButtonPressed,
-    TResult Function()? seriesViewsUpdated,
+    TResult Function()? seriesSet,
     TResult Function()? sessionFetched,
     TResult Function()? settingsFetched,
     required TResult orElse(),
@@ -1351,10 +1351,10 @@ class _$SettingsFetched implements SettingsFetched {
     required TResult Function(AuthorLoaded value) authorLoaded,
     required TResult Function(BookmarkButtonPressed value)
         bookmarkButtonPressed,
-    required TResult Function(DataSet value) dataSet,
+    required TResult Function(ChapterOneLoaded value) chapterOneLoaded,
     required TResult Function(LaunchWithID value) launchWithID,
     required TResult Function(LikeButtonPressed value) likeButtonPressed,
-    required TResult Function(SeriesViewsUpdated value) seriesViewsUpdated,
+    required TResult Function(SeriesSet value) seriesSet,
     required TResult Function(SessionFetched value) sessionFetched,
     required TResult Function(SettingsFetched value) settingsFetched,
   }) {
@@ -1366,10 +1366,10 @@ class _$SettingsFetched implements SettingsFetched {
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(AuthorLoaded value)? authorLoaded,
     TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
-    TResult Function(DataSet value)? dataSet,
+    TResult Function(ChapterOneLoaded value)? chapterOneLoaded,
     TResult Function(LaunchWithID value)? launchWithID,
     TResult Function(LikeButtonPressed value)? likeButtonPressed,
-    TResult Function(SeriesViewsUpdated value)? seriesViewsUpdated,
+    TResult Function(SeriesSet value)? seriesSet,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SettingsFetched value)? settingsFetched,
   }) {
@@ -1381,10 +1381,10 @@ class _$SettingsFetched implements SettingsFetched {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AuthorLoaded value)? authorLoaded,
     TResult Function(BookmarkButtonPressed value)? bookmarkButtonPressed,
-    TResult Function(DataSet value)? dataSet,
+    TResult Function(ChapterOneLoaded value)? chapterOneLoaded,
     TResult Function(LaunchWithID value)? launchWithID,
     TResult Function(LikeButtonPressed value)? likeButtonPressed,
-    TResult Function(SeriesViewsUpdated value)? seriesViewsUpdated,
+    TResult Function(SeriesSet value)? seriesSet,
     TResult Function(SessionFetched value)? sessionFetched,
     TResult Function(SettingsFetched value)? settingsFetched,
     required TResult orElse(),
@@ -1407,6 +1407,8 @@ class _$SeriesStateTearOff {
   _SeriesState call(
       {required bool authorIsUser,
       required User author,
+      Chapter? chapterOne,
+      Chapter? chapterResume,
       required Option<Result<None<Object>, CoreFailure>> failureOption,
       required bool isBookmarked,
       required bool isLiked,
@@ -1417,6 +1419,8 @@ class _$SeriesStateTearOff {
     return _SeriesState(
       authorIsUser: authorIsUser,
       author: author,
+      chapterOne: chapterOne,
+      chapterResume: chapterResume,
       failureOption: failureOption,
       isBookmarked: isBookmarked,
       isLiked: isLiked,
@@ -1435,6 +1439,8 @@ const $SeriesState = _$SeriesStateTearOff();
 mixin _$SeriesState {
   bool get authorIsUser => throw _privateConstructorUsedError;
   User get author => throw _privateConstructorUsedError;
+  Chapter? get chapterOne => throw _privateConstructorUsedError;
+  Chapter? get chapterResume => throw _privateConstructorUsedError;
   Option<Result<None<Object>, CoreFailure>> get failureOption =>
       throw _privateConstructorUsedError;
   bool get isBookmarked => throw _privateConstructorUsedError;
@@ -1457,6 +1463,8 @@ abstract class $SeriesStateCopyWith<$Res> {
   $Res call(
       {bool authorIsUser,
       User author,
+      Chapter? chapterOne,
+      Chapter? chapterResume,
       Option<Result<None<Object>, CoreFailure>> failureOption,
       bool isBookmarked,
       bool isLiked,
@@ -1466,6 +1474,8 @@ abstract class $SeriesStateCopyWith<$Res> {
       Settings settings});
 
   $UserCopyWith<$Res> get author;
+  $ChapterCopyWith<$Res>? get chapterOne;
+  $ChapterCopyWith<$Res>? get chapterResume;
   $SeriesCopyWith<$Res> get series;
   $UserCopyWith<$Res> get session;
   $SettingsCopyWith<$Res> get settings;
@@ -1483,6 +1493,8 @@ class _$SeriesStateCopyWithImpl<$Res> implements $SeriesStateCopyWith<$Res> {
   $Res call({
     Object? authorIsUser = freezed,
     Object? author = freezed,
+    Object? chapterOne = freezed,
+    Object? chapterResume = freezed,
     Object? failureOption = freezed,
     Object? isBookmarked = freezed,
     Object? isLiked = freezed,
@@ -1500,6 +1512,14 @@ class _$SeriesStateCopyWithImpl<$Res> implements $SeriesStateCopyWith<$Res> {
           ? _value.author
           : author // ignore: cast_nullable_to_non_nullable
               as User,
+      chapterOne: chapterOne == freezed
+          ? _value.chapterOne
+          : chapterOne // ignore: cast_nullable_to_non_nullable
+              as Chapter?,
+      chapterResume: chapterResume == freezed
+          ? _value.chapterResume
+          : chapterResume // ignore: cast_nullable_to_non_nullable
+              as Chapter?,
       failureOption: failureOption == freezed
           ? _value.failureOption
           : failureOption // ignore: cast_nullable_to_non_nullable
@@ -1539,6 +1559,28 @@ class _$SeriesStateCopyWithImpl<$Res> implements $SeriesStateCopyWith<$Res> {
   }
 
   @override
+  $ChapterCopyWith<$Res>? get chapterOne {
+    if (_value.chapterOne == null) {
+      return null;
+    }
+
+    return $ChapterCopyWith<$Res>(_value.chapterOne!, (value) {
+      return _then(_value.copyWith(chapterOne: value));
+    });
+  }
+
+  @override
+  $ChapterCopyWith<$Res>? get chapterResume {
+    if (_value.chapterResume == null) {
+      return null;
+    }
+
+    return $ChapterCopyWith<$Res>(_value.chapterResume!, (value) {
+      return _then(_value.copyWith(chapterResume: value));
+    });
+  }
+
+  @override
   $SeriesCopyWith<$Res> get series {
     return $SeriesCopyWith<$Res>(_value.series, (value) {
       return _then(_value.copyWith(series: value));
@@ -1570,6 +1612,8 @@ abstract class _$SeriesStateCopyWith<$Res>
   $Res call(
       {bool authorIsUser,
       User author,
+      Chapter? chapterOne,
+      Chapter? chapterResume,
       Option<Result<None<Object>, CoreFailure>> failureOption,
       bool isBookmarked,
       bool isLiked,
@@ -1580,6 +1624,10 @@ abstract class _$SeriesStateCopyWith<$Res>
 
   @override
   $UserCopyWith<$Res> get author;
+  @override
+  $ChapterCopyWith<$Res>? get chapterOne;
+  @override
+  $ChapterCopyWith<$Res>? get chapterResume;
   @override
   $SeriesCopyWith<$Res> get series;
   @override
@@ -1602,6 +1650,8 @@ class __$SeriesStateCopyWithImpl<$Res> extends _$SeriesStateCopyWithImpl<$Res>
   $Res call({
     Object? authorIsUser = freezed,
     Object? author = freezed,
+    Object? chapterOne = freezed,
+    Object? chapterResume = freezed,
     Object? failureOption = freezed,
     Object? isBookmarked = freezed,
     Object? isLiked = freezed,
@@ -1619,6 +1669,14 @@ class __$SeriesStateCopyWithImpl<$Res> extends _$SeriesStateCopyWithImpl<$Res>
           ? _value.author
           : author // ignore: cast_nullable_to_non_nullable
               as User,
+      chapterOne: chapterOne == freezed
+          ? _value.chapterOne
+          : chapterOne // ignore: cast_nullable_to_non_nullable
+              as Chapter?,
+      chapterResume: chapterResume == freezed
+          ? _value.chapterResume
+          : chapterResume // ignore: cast_nullable_to_non_nullable
+              as Chapter?,
       failureOption: failureOption == freezed
           ? _value.failureOption
           : failureOption // ignore: cast_nullable_to_non_nullable
@@ -1657,6 +1715,8 @@ class _$_SeriesState implements _SeriesState {
   const _$_SeriesState(
       {required this.authorIsUser,
       required this.author,
+      this.chapterOne,
+      this.chapterResume,
       required this.failureOption,
       required this.isBookmarked,
       required this.isLiked,
@@ -1669,6 +1729,10 @@ class _$_SeriesState implements _SeriesState {
   final bool authorIsUser;
   @override
   final User author;
+  @override
+  final Chapter? chapterOne;
+  @override
+  final Chapter? chapterResume;
   @override
   final Option<Result<None<Object>, CoreFailure>> failureOption;
   @override
@@ -1686,7 +1750,7 @@ class _$_SeriesState implements _SeriesState {
 
   @override
   String toString() {
-    return 'SeriesState(authorIsUser: $authorIsUser, author: $author, failureOption: $failureOption, isBookmarked: $isBookmarked, isLiked: $isLiked, isProcessing: $isProcessing, series: $series, session: $session, settings: $settings)';
+    return 'SeriesState(authorIsUser: $authorIsUser, author: $author, chapterOne: $chapterOne, chapterResume: $chapterResume, failureOption: $failureOption, isBookmarked: $isBookmarked, isLiked: $isLiked, isProcessing: $isProcessing, series: $series, session: $session, settings: $settings)';
   }
 
   @override
@@ -1697,6 +1761,10 @@ class _$_SeriesState implements _SeriesState {
             const DeepCollectionEquality()
                 .equals(other.authorIsUser, authorIsUser) &&
             const DeepCollectionEquality().equals(other.author, author) &&
+            const DeepCollectionEquality()
+                .equals(other.chapterOne, chapterOne) &&
+            const DeepCollectionEquality()
+                .equals(other.chapterResume, chapterResume) &&
             const DeepCollectionEquality()
                 .equals(other.failureOption, failureOption) &&
             const DeepCollectionEquality()
@@ -1714,6 +1782,8 @@ class _$_SeriesState implements _SeriesState {
       runtimeType,
       const DeepCollectionEquality().hash(authorIsUser),
       const DeepCollectionEquality().hash(author),
+      const DeepCollectionEquality().hash(chapterOne),
+      const DeepCollectionEquality().hash(chapterResume),
       const DeepCollectionEquality().hash(failureOption),
       const DeepCollectionEquality().hash(isBookmarked),
       const DeepCollectionEquality().hash(isLiked),
@@ -1732,6 +1802,8 @@ abstract class _SeriesState implements SeriesState {
   const factory _SeriesState(
       {required bool authorIsUser,
       required User author,
+      Chapter? chapterOne,
+      Chapter? chapterResume,
       required Option<Result<None<Object>, CoreFailure>> failureOption,
       required bool isBookmarked,
       required bool isLiked,
@@ -1744,6 +1816,10 @@ abstract class _SeriesState implements SeriesState {
   bool get authorIsUser;
   @override
   User get author;
+  @override
+  Chapter? get chapterOne;
+  @override
+  Chapter? get chapterResume;
   @override
   Option<Result<None<Object>, CoreFailure>> get failureOption;
   @override

@@ -7,6 +7,8 @@ class SeriesState with _$SeriesState {
   const factory SeriesState({
     required bool authorIsUser,
     required User author,
+    Chapter? chapterOne,
+    Chapter? chapterResume,
     required Option<Result<None, CoreFailure>> failureOption,
     required bool isBookmarked,
     required bool isLiked,
