@@ -6,6 +6,7 @@ import 'package:stringr/stringr.dart';
 
 import 'package:wine/domain/core/value_failure.dart';
 import 'package:wine/infrastructure/core/string_helpers.dart';
+import 'package:wine/utils/constants/chapter.dart';
 import 'package:wine/utils/constants/core.dart';
 import 'package:wine/utils/constants/series.dart';
 
@@ -47,15 +48,7 @@ Result<String, ValueFailure<String>> validateEmailAddress(String input) {
 }
 
 /// @nodoc
-Result<String, ValueFailure<String>> validateGenre(String input) {
-  if (input.isNotEmpty) {
-    return Ok(input);
-  }
-  return Err(ValueFailure.emptySelection(input));
-}
-
-/// @nodoc
-Result<String, ValueFailure<String>> validateLanguage(String input) {
+Result<String, ValueFailure<String>> validateSelectionNotEmpty(String input) {
   if (input.isNotEmpty) {
     return Ok(input);
   }
@@ -70,6 +63,20 @@ Result<String, ValueFailure<String>> validatePassword(String input) {
     return Ok(input);
   }
   return Err(ValueFailure.invalidPassword(input));
+}
+
+/// @nodoc
+Result<String, ValueFailure<String>> validateStory(String input) {
+  if (input.isEmpty) {
+    return Err(ValueFailure.emptyInput(input));
+  }
+  if (input.countWords() < storyMinWords) {
+    return Err(ValueFailure.tooShortInput(input));
+  }
+  if (input.countWords() > storyMaxWords) {
+    return Err(ValueFailure.tooLongInput(input));
+  }
+  return Ok(input);
 }
 
 /// @nodoc
