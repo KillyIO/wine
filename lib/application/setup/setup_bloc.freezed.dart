@@ -35,18 +35,10 @@ class _$SetupEventTearOff {
     );
   }
 
-  OnboardingDonePressed onboardingDonePressed() {
-    return const OnboardingDonePressed();
-  }
-
   SessionFetched sessionFetched(User session) {
     return SessionFetched(
       session,
     );
-  }
-
-  SessionNotFound sessionNotFound() {
-    return const SessionNotFound();
   }
 
   SettingsFetched settingsFetched() {
@@ -80,9 +72,7 @@ mixin _$SetupEvent {
     required TResult Function() defaultCoversCached,
     required TResult Function(List<DefaultCover> defaultCovers)
         defaultCoversLoaded,
-    required TResult Function() onboardingDonePressed,
     required TResult Function(User session) sessionFetched,
-    required TResult Function() sessionNotFound,
     required TResult Function() settingsFetched,
     required TResult Function() settingsInitialized,
     required TResult Function() settingsNotFound,
@@ -95,9 +85,7 @@ mixin _$SetupEvent {
     TResult Function()? authenticated,
     TResult Function()? defaultCoversCached,
     TResult Function(List<DefaultCover> defaultCovers)? defaultCoversLoaded,
-    TResult Function()? onboardingDonePressed,
     TResult Function(User session)? sessionFetched,
-    TResult Function()? sessionNotFound,
     TResult Function()? settingsFetched,
     TResult Function()? settingsInitialized,
     TResult Function()? settingsNotFound,
@@ -110,9 +98,7 @@ mixin _$SetupEvent {
     TResult Function()? authenticated,
     TResult Function()? defaultCoversCached,
     TResult Function(List<DefaultCover> defaultCovers)? defaultCoversLoaded,
-    TResult Function()? onboardingDonePressed,
     TResult Function(User session)? sessionFetched,
-    TResult Function()? sessionNotFound,
     TResult Function()? settingsFetched,
     TResult Function()? settingsInitialized,
     TResult Function()? settingsNotFound,
@@ -126,10 +112,7 @@ mixin _$SetupEvent {
     required TResult Function(Authenticated value) authenticated,
     required TResult Function(DefaultCoversCached value) defaultCoversCached,
     required TResult Function(DefaultCoversLoaded value) defaultCoversLoaded,
-    required TResult Function(OnboardingDonePressed value)
-        onboardingDonePressed,
     required TResult Function(SessionFetched value) sessionFetched,
-    required TResult Function(SessionNotFound value) sessionNotFound,
     required TResult Function(SettingsFetched value) settingsFetched,
     required TResult Function(SettingsInitialized value) settingsInitialized,
     required TResult Function(SettingsNotFound value) settingsNotFound,
@@ -142,9 +125,7 @@ mixin _$SetupEvent {
     TResult Function(Authenticated value)? authenticated,
     TResult Function(DefaultCoversCached value)? defaultCoversCached,
     TResult Function(DefaultCoversLoaded value)? defaultCoversLoaded,
-    TResult Function(OnboardingDonePressed value)? onboardingDonePressed,
     TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(SessionNotFound value)? sessionNotFound,
     TResult Function(SettingsFetched value)? settingsFetched,
     TResult Function(SettingsInitialized value)? settingsInitialized,
     TResult Function(SettingsNotFound value)? settingsNotFound,
@@ -157,9 +138,7 @@ mixin _$SetupEvent {
     TResult Function(Authenticated value)? authenticated,
     TResult Function(DefaultCoversCached value)? defaultCoversCached,
     TResult Function(DefaultCoversLoaded value)? defaultCoversLoaded,
-    TResult Function(OnboardingDonePressed value)? onboardingDonePressed,
     TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(SessionNotFound value)? sessionNotFound,
     TResult Function(SettingsFetched value)? settingsFetched,
     TResult Function(SettingsInitialized value)? settingsInitialized,
     TResult Function(SettingsNotFound value)? settingsNotFound,
@@ -236,9 +215,7 @@ class _$AppLaunched with DiagnosticableTreeMixin implements AppLaunched {
     required TResult Function() defaultCoversCached,
     required TResult Function(List<DefaultCover> defaultCovers)
         defaultCoversLoaded,
-    required TResult Function() onboardingDonePressed,
     required TResult Function(User session) sessionFetched,
-    required TResult Function() sessionNotFound,
     required TResult Function() settingsFetched,
     required TResult Function() settingsInitialized,
     required TResult Function() settingsNotFound,
@@ -254,9 +231,7 @@ class _$AppLaunched with DiagnosticableTreeMixin implements AppLaunched {
     TResult Function()? authenticated,
     TResult Function()? defaultCoversCached,
     TResult Function(List<DefaultCover> defaultCovers)? defaultCoversLoaded,
-    TResult Function()? onboardingDonePressed,
     TResult Function(User session)? sessionFetched,
-    TResult Function()? sessionNotFound,
     TResult Function()? settingsFetched,
     TResult Function()? settingsInitialized,
     TResult Function()? settingsNotFound,
@@ -272,9 +247,7 @@ class _$AppLaunched with DiagnosticableTreeMixin implements AppLaunched {
     TResult Function()? authenticated,
     TResult Function()? defaultCoversCached,
     TResult Function(List<DefaultCover> defaultCovers)? defaultCoversLoaded,
-    TResult Function()? onboardingDonePressed,
     TResult Function(User session)? sessionFetched,
-    TResult Function()? sessionNotFound,
     TResult Function()? settingsFetched,
     TResult Function()? settingsInitialized,
     TResult Function()? settingsNotFound,
@@ -294,10 +267,7 @@ class _$AppLaunched with DiagnosticableTreeMixin implements AppLaunched {
     required TResult Function(Authenticated value) authenticated,
     required TResult Function(DefaultCoversCached value) defaultCoversCached,
     required TResult Function(DefaultCoversLoaded value) defaultCoversLoaded,
-    required TResult Function(OnboardingDonePressed value)
-        onboardingDonePressed,
     required TResult Function(SessionFetched value) sessionFetched,
-    required TResult Function(SessionNotFound value) sessionNotFound,
     required TResult Function(SettingsFetched value) settingsFetched,
     required TResult Function(SettingsInitialized value) settingsInitialized,
     required TResult Function(SettingsNotFound value) settingsNotFound,
@@ -313,9 +283,7 @@ class _$AppLaunched with DiagnosticableTreeMixin implements AppLaunched {
     TResult Function(Authenticated value)? authenticated,
     TResult Function(DefaultCoversCached value)? defaultCoversCached,
     TResult Function(DefaultCoversLoaded value)? defaultCoversLoaded,
-    TResult Function(OnboardingDonePressed value)? onboardingDonePressed,
     TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(SessionNotFound value)? sessionNotFound,
     TResult Function(SettingsFetched value)? settingsFetched,
     TResult Function(SettingsInitialized value)? settingsInitialized,
     TResult Function(SettingsNotFound value)? settingsNotFound,
@@ -331,9 +299,7 @@ class _$AppLaunched with DiagnosticableTreeMixin implements AppLaunched {
     TResult Function(Authenticated value)? authenticated,
     TResult Function(DefaultCoversCached value)? defaultCoversCached,
     TResult Function(DefaultCoversLoaded value)? defaultCoversLoaded,
-    TResult Function(OnboardingDonePressed value)? onboardingDonePressed,
     TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(SessionNotFound value)? sessionNotFound,
     TResult Function(SettingsFetched value)? settingsFetched,
     TResult Function(SettingsInitialized value)? settingsInitialized,
     TResult Function(SettingsNotFound value)? settingsNotFound,
@@ -402,9 +368,7 @@ class _$Authenticated with DiagnosticableTreeMixin implements Authenticated {
     required TResult Function() defaultCoversCached,
     required TResult Function(List<DefaultCover> defaultCovers)
         defaultCoversLoaded,
-    required TResult Function() onboardingDonePressed,
     required TResult Function(User session) sessionFetched,
-    required TResult Function() sessionNotFound,
     required TResult Function() settingsFetched,
     required TResult Function() settingsInitialized,
     required TResult Function() settingsNotFound,
@@ -420,9 +384,7 @@ class _$Authenticated with DiagnosticableTreeMixin implements Authenticated {
     TResult Function()? authenticated,
     TResult Function()? defaultCoversCached,
     TResult Function(List<DefaultCover> defaultCovers)? defaultCoversLoaded,
-    TResult Function()? onboardingDonePressed,
     TResult Function(User session)? sessionFetched,
-    TResult Function()? sessionNotFound,
     TResult Function()? settingsFetched,
     TResult Function()? settingsInitialized,
     TResult Function()? settingsNotFound,
@@ -438,9 +400,7 @@ class _$Authenticated with DiagnosticableTreeMixin implements Authenticated {
     TResult Function()? authenticated,
     TResult Function()? defaultCoversCached,
     TResult Function(List<DefaultCover> defaultCovers)? defaultCoversLoaded,
-    TResult Function()? onboardingDonePressed,
     TResult Function(User session)? sessionFetched,
-    TResult Function()? sessionNotFound,
     TResult Function()? settingsFetched,
     TResult Function()? settingsInitialized,
     TResult Function()? settingsNotFound,
@@ -460,10 +420,7 @@ class _$Authenticated with DiagnosticableTreeMixin implements Authenticated {
     required TResult Function(Authenticated value) authenticated,
     required TResult Function(DefaultCoversCached value) defaultCoversCached,
     required TResult Function(DefaultCoversLoaded value) defaultCoversLoaded,
-    required TResult Function(OnboardingDonePressed value)
-        onboardingDonePressed,
     required TResult Function(SessionFetched value) sessionFetched,
-    required TResult Function(SessionNotFound value) sessionNotFound,
     required TResult Function(SettingsFetched value) settingsFetched,
     required TResult Function(SettingsInitialized value) settingsInitialized,
     required TResult Function(SettingsNotFound value) settingsNotFound,
@@ -479,9 +436,7 @@ class _$Authenticated with DiagnosticableTreeMixin implements Authenticated {
     TResult Function(Authenticated value)? authenticated,
     TResult Function(DefaultCoversCached value)? defaultCoversCached,
     TResult Function(DefaultCoversLoaded value)? defaultCoversLoaded,
-    TResult Function(OnboardingDonePressed value)? onboardingDonePressed,
     TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(SessionNotFound value)? sessionNotFound,
     TResult Function(SettingsFetched value)? settingsFetched,
     TResult Function(SettingsInitialized value)? settingsInitialized,
     TResult Function(SettingsNotFound value)? settingsNotFound,
@@ -497,9 +452,7 @@ class _$Authenticated with DiagnosticableTreeMixin implements Authenticated {
     TResult Function(Authenticated value)? authenticated,
     TResult Function(DefaultCoversCached value)? defaultCoversCached,
     TResult Function(DefaultCoversLoaded value)? defaultCoversLoaded,
-    TResult Function(OnboardingDonePressed value)? onboardingDonePressed,
     TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(SessionNotFound value)? sessionNotFound,
     TResult Function(SettingsFetched value)? settingsFetched,
     TResult Function(SettingsInitialized value)? settingsInitialized,
     TResult Function(SettingsNotFound value)? settingsNotFound,
@@ -572,9 +525,7 @@ class _$DefaultCoversCached
     required TResult Function() defaultCoversCached,
     required TResult Function(List<DefaultCover> defaultCovers)
         defaultCoversLoaded,
-    required TResult Function() onboardingDonePressed,
     required TResult Function(User session) sessionFetched,
-    required TResult Function() sessionNotFound,
     required TResult Function() settingsFetched,
     required TResult Function() settingsInitialized,
     required TResult Function() settingsNotFound,
@@ -590,9 +541,7 @@ class _$DefaultCoversCached
     TResult Function()? authenticated,
     TResult Function()? defaultCoversCached,
     TResult Function(List<DefaultCover> defaultCovers)? defaultCoversLoaded,
-    TResult Function()? onboardingDonePressed,
     TResult Function(User session)? sessionFetched,
-    TResult Function()? sessionNotFound,
     TResult Function()? settingsFetched,
     TResult Function()? settingsInitialized,
     TResult Function()? settingsNotFound,
@@ -608,9 +557,7 @@ class _$DefaultCoversCached
     TResult Function()? authenticated,
     TResult Function()? defaultCoversCached,
     TResult Function(List<DefaultCover> defaultCovers)? defaultCoversLoaded,
-    TResult Function()? onboardingDonePressed,
     TResult Function(User session)? sessionFetched,
-    TResult Function()? sessionNotFound,
     TResult Function()? settingsFetched,
     TResult Function()? settingsInitialized,
     TResult Function()? settingsNotFound,
@@ -630,10 +577,7 @@ class _$DefaultCoversCached
     required TResult Function(Authenticated value) authenticated,
     required TResult Function(DefaultCoversCached value) defaultCoversCached,
     required TResult Function(DefaultCoversLoaded value) defaultCoversLoaded,
-    required TResult Function(OnboardingDonePressed value)
-        onboardingDonePressed,
     required TResult Function(SessionFetched value) sessionFetched,
-    required TResult Function(SessionNotFound value) sessionNotFound,
     required TResult Function(SettingsFetched value) settingsFetched,
     required TResult Function(SettingsInitialized value) settingsInitialized,
     required TResult Function(SettingsNotFound value) settingsNotFound,
@@ -649,9 +593,7 @@ class _$DefaultCoversCached
     TResult Function(Authenticated value)? authenticated,
     TResult Function(DefaultCoversCached value)? defaultCoversCached,
     TResult Function(DefaultCoversLoaded value)? defaultCoversLoaded,
-    TResult Function(OnboardingDonePressed value)? onboardingDonePressed,
     TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(SessionNotFound value)? sessionNotFound,
     TResult Function(SettingsFetched value)? settingsFetched,
     TResult Function(SettingsInitialized value)? settingsInitialized,
     TResult Function(SettingsNotFound value)? settingsNotFound,
@@ -667,9 +609,7 @@ class _$DefaultCoversCached
     TResult Function(Authenticated value)? authenticated,
     TResult Function(DefaultCoversCached value)? defaultCoversCached,
     TResult Function(DefaultCoversLoaded value)? defaultCoversLoaded,
-    TResult Function(OnboardingDonePressed value)? onboardingDonePressed,
     TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(SessionNotFound value)? sessionNotFound,
     TResult Function(SettingsFetched value)? settingsFetched,
     TResult Function(SettingsInitialized value)? settingsInitialized,
     TResult Function(SettingsNotFound value)? settingsNotFound,
@@ -768,9 +708,7 @@ class _$DefaultCoversLoaded
     required TResult Function() defaultCoversCached,
     required TResult Function(List<DefaultCover> defaultCovers)
         defaultCoversLoaded,
-    required TResult Function() onboardingDonePressed,
     required TResult Function(User session) sessionFetched,
-    required TResult Function() sessionNotFound,
     required TResult Function() settingsFetched,
     required TResult Function() settingsInitialized,
     required TResult Function() settingsNotFound,
@@ -786,9 +724,7 @@ class _$DefaultCoversLoaded
     TResult Function()? authenticated,
     TResult Function()? defaultCoversCached,
     TResult Function(List<DefaultCover> defaultCovers)? defaultCoversLoaded,
-    TResult Function()? onboardingDonePressed,
     TResult Function(User session)? sessionFetched,
-    TResult Function()? sessionNotFound,
     TResult Function()? settingsFetched,
     TResult Function()? settingsInitialized,
     TResult Function()? settingsNotFound,
@@ -804,9 +740,7 @@ class _$DefaultCoversLoaded
     TResult Function()? authenticated,
     TResult Function()? defaultCoversCached,
     TResult Function(List<DefaultCover> defaultCovers)? defaultCoversLoaded,
-    TResult Function()? onboardingDonePressed,
     TResult Function(User session)? sessionFetched,
-    TResult Function()? sessionNotFound,
     TResult Function()? settingsFetched,
     TResult Function()? settingsInitialized,
     TResult Function()? settingsNotFound,
@@ -826,10 +760,7 @@ class _$DefaultCoversLoaded
     required TResult Function(Authenticated value) authenticated,
     required TResult Function(DefaultCoversCached value) defaultCoversCached,
     required TResult Function(DefaultCoversLoaded value) defaultCoversLoaded,
-    required TResult Function(OnboardingDonePressed value)
-        onboardingDonePressed,
     required TResult Function(SessionFetched value) sessionFetched,
-    required TResult Function(SessionNotFound value) sessionNotFound,
     required TResult Function(SettingsFetched value) settingsFetched,
     required TResult Function(SettingsInitialized value) settingsInitialized,
     required TResult Function(SettingsNotFound value) settingsNotFound,
@@ -845,9 +776,7 @@ class _$DefaultCoversLoaded
     TResult Function(Authenticated value)? authenticated,
     TResult Function(DefaultCoversCached value)? defaultCoversCached,
     TResult Function(DefaultCoversLoaded value)? defaultCoversLoaded,
-    TResult Function(OnboardingDonePressed value)? onboardingDonePressed,
     TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(SessionNotFound value)? sessionNotFound,
     TResult Function(SettingsFetched value)? settingsFetched,
     TResult Function(SettingsInitialized value)? settingsInitialized,
     TResult Function(SettingsNotFound value)? settingsNotFound,
@@ -863,9 +792,7 @@ class _$DefaultCoversLoaded
     TResult Function(Authenticated value)? authenticated,
     TResult Function(DefaultCoversCached value)? defaultCoversCached,
     TResult Function(DefaultCoversLoaded value)? defaultCoversLoaded,
-    TResult Function(OnboardingDonePressed value)? onboardingDonePressed,
     TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(SessionNotFound value)? sessionNotFound,
     TResult Function(SettingsFetched value)? settingsFetched,
     TResult Function(SettingsInitialized value)? settingsInitialized,
     TResult Function(SettingsNotFound value)? settingsNotFound,
@@ -887,176 +814,6 @@ abstract class DefaultCoversLoaded implements SetupEvent {
   @JsonKey(ignore: true)
   $DefaultCoversLoadedCopyWith<DefaultCoversLoaded> get copyWith =>
       throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $OnboardingDonePressedCopyWith<$Res> {
-  factory $OnboardingDonePressedCopyWith(OnboardingDonePressed value,
-          $Res Function(OnboardingDonePressed) then) =
-      _$OnboardingDonePressedCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class _$OnboardingDonePressedCopyWithImpl<$Res>
-    extends _$SetupEventCopyWithImpl<$Res>
-    implements $OnboardingDonePressedCopyWith<$Res> {
-  _$OnboardingDonePressedCopyWithImpl(
-      OnboardingDonePressed _value, $Res Function(OnboardingDonePressed) _then)
-      : super(_value, (v) => _then(v as OnboardingDonePressed));
-
-  @override
-  OnboardingDonePressed get _value => super._value as OnboardingDonePressed;
-}
-
-/// @nodoc
-
-class _$OnboardingDonePressed
-    with DiagnosticableTreeMixin
-    implements OnboardingDonePressed {
-  const _$OnboardingDonePressed();
-
-  @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'SetupEvent.onboardingDonePressed()';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties
-      ..add(DiagnosticsProperty('type', 'SetupEvent.onboardingDonePressed'));
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is OnboardingDonePressed);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() appLaunched,
-    required TResult Function() authenticated,
-    required TResult Function() defaultCoversCached,
-    required TResult Function(List<DefaultCover> defaultCovers)
-        defaultCoversLoaded,
-    required TResult Function() onboardingDonePressed,
-    required TResult Function(User session) sessionFetched,
-    required TResult Function() sessionNotFound,
-    required TResult Function() settingsFetched,
-    required TResult Function() settingsInitialized,
-    required TResult Function() settingsNotFound,
-    required TResult Function(User user) userLoaded,
-  }) {
-    return onboardingDonePressed();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? appLaunched,
-    TResult Function()? authenticated,
-    TResult Function()? defaultCoversCached,
-    TResult Function(List<DefaultCover> defaultCovers)? defaultCoversLoaded,
-    TResult Function()? onboardingDonePressed,
-    TResult Function(User session)? sessionFetched,
-    TResult Function()? sessionNotFound,
-    TResult Function()? settingsFetched,
-    TResult Function()? settingsInitialized,
-    TResult Function()? settingsNotFound,
-    TResult Function(User user)? userLoaded,
-  }) {
-    return onboardingDonePressed?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? appLaunched,
-    TResult Function()? authenticated,
-    TResult Function()? defaultCoversCached,
-    TResult Function(List<DefaultCover> defaultCovers)? defaultCoversLoaded,
-    TResult Function()? onboardingDonePressed,
-    TResult Function(User session)? sessionFetched,
-    TResult Function()? sessionNotFound,
-    TResult Function()? settingsFetched,
-    TResult Function()? settingsInitialized,
-    TResult Function()? settingsNotFound,
-    TResult Function(User user)? userLoaded,
-    required TResult orElse(),
-  }) {
-    if (onboardingDonePressed != null) {
-      return onboardingDonePressed();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(AppLaunched value) appLaunched,
-    required TResult Function(Authenticated value) authenticated,
-    required TResult Function(DefaultCoversCached value) defaultCoversCached,
-    required TResult Function(DefaultCoversLoaded value) defaultCoversLoaded,
-    required TResult Function(OnboardingDonePressed value)
-        onboardingDonePressed,
-    required TResult Function(SessionFetched value) sessionFetched,
-    required TResult Function(SessionNotFound value) sessionNotFound,
-    required TResult Function(SettingsFetched value) settingsFetched,
-    required TResult Function(SettingsInitialized value) settingsInitialized,
-    required TResult Function(SettingsNotFound value) settingsNotFound,
-    required TResult Function(UserLoaded value) userLoaded,
-  }) {
-    return onboardingDonePressed(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(AppLaunched value)? appLaunched,
-    TResult Function(Authenticated value)? authenticated,
-    TResult Function(DefaultCoversCached value)? defaultCoversCached,
-    TResult Function(DefaultCoversLoaded value)? defaultCoversLoaded,
-    TResult Function(OnboardingDonePressed value)? onboardingDonePressed,
-    TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(SessionNotFound value)? sessionNotFound,
-    TResult Function(SettingsFetched value)? settingsFetched,
-    TResult Function(SettingsInitialized value)? settingsInitialized,
-    TResult Function(SettingsNotFound value)? settingsNotFound,
-    TResult Function(UserLoaded value)? userLoaded,
-  }) {
-    return onboardingDonePressed?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(AppLaunched value)? appLaunched,
-    TResult Function(Authenticated value)? authenticated,
-    TResult Function(DefaultCoversCached value)? defaultCoversCached,
-    TResult Function(DefaultCoversLoaded value)? defaultCoversLoaded,
-    TResult Function(OnboardingDonePressed value)? onboardingDonePressed,
-    TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(SessionNotFound value)? sessionNotFound,
-    TResult Function(SettingsFetched value)? settingsFetched,
-    TResult Function(SettingsInitialized value)? settingsInitialized,
-    TResult Function(SettingsNotFound value)? settingsNotFound,
-    TResult Function(UserLoaded value)? userLoaded,
-    required TResult orElse(),
-  }) {
-    if (onboardingDonePressed != null) {
-      return onboardingDonePressed(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class OnboardingDonePressed implements SetupEvent {
-  const factory OnboardingDonePressed() = _$OnboardingDonePressed;
 }
 
 /// @nodoc
@@ -1145,9 +902,7 @@ class _$SessionFetched with DiagnosticableTreeMixin implements SessionFetched {
     required TResult Function() defaultCoversCached,
     required TResult Function(List<DefaultCover> defaultCovers)
         defaultCoversLoaded,
-    required TResult Function() onboardingDonePressed,
     required TResult Function(User session) sessionFetched,
-    required TResult Function() sessionNotFound,
     required TResult Function() settingsFetched,
     required TResult Function() settingsInitialized,
     required TResult Function() settingsNotFound,
@@ -1163,9 +918,7 @@ class _$SessionFetched with DiagnosticableTreeMixin implements SessionFetched {
     TResult Function()? authenticated,
     TResult Function()? defaultCoversCached,
     TResult Function(List<DefaultCover> defaultCovers)? defaultCoversLoaded,
-    TResult Function()? onboardingDonePressed,
     TResult Function(User session)? sessionFetched,
-    TResult Function()? sessionNotFound,
     TResult Function()? settingsFetched,
     TResult Function()? settingsInitialized,
     TResult Function()? settingsNotFound,
@@ -1181,9 +934,7 @@ class _$SessionFetched with DiagnosticableTreeMixin implements SessionFetched {
     TResult Function()? authenticated,
     TResult Function()? defaultCoversCached,
     TResult Function(List<DefaultCover> defaultCovers)? defaultCoversLoaded,
-    TResult Function()? onboardingDonePressed,
     TResult Function(User session)? sessionFetched,
-    TResult Function()? sessionNotFound,
     TResult Function()? settingsFetched,
     TResult Function()? settingsInitialized,
     TResult Function()? settingsNotFound,
@@ -1203,10 +954,7 @@ class _$SessionFetched with DiagnosticableTreeMixin implements SessionFetched {
     required TResult Function(Authenticated value) authenticated,
     required TResult Function(DefaultCoversCached value) defaultCoversCached,
     required TResult Function(DefaultCoversLoaded value) defaultCoversLoaded,
-    required TResult Function(OnboardingDonePressed value)
-        onboardingDonePressed,
     required TResult Function(SessionFetched value) sessionFetched,
-    required TResult Function(SessionNotFound value) sessionNotFound,
     required TResult Function(SettingsFetched value) settingsFetched,
     required TResult Function(SettingsInitialized value) settingsInitialized,
     required TResult Function(SettingsNotFound value) settingsNotFound,
@@ -1222,9 +970,7 @@ class _$SessionFetched with DiagnosticableTreeMixin implements SessionFetched {
     TResult Function(Authenticated value)? authenticated,
     TResult Function(DefaultCoversCached value)? defaultCoversCached,
     TResult Function(DefaultCoversLoaded value)? defaultCoversLoaded,
-    TResult Function(OnboardingDonePressed value)? onboardingDonePressed,
     TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(SessionNotFound value)? sessionNotFound,
     TResult Function(SettingsFetched value)? settingsFetched,
     TResult Function(SettingsInitialized value)? settingsInitialized,
     TResult Function(SettingsNotFound value)? settingsNotFound,
@@ -1240,9 +986,7 @@ class _$SessionFetched with DiagnosticableTreeMixin implements SessionFetched {
     TResult Function(Authenticated value)? authenticated,
     TResult Function(DefaultCoversCached value)? defaultCoversCached,
     TResult Function(DefaultCoversLoaded value)? defaultCoversLoaded,
-    TResult Function(OnboardingDonePressed value)? onboardingDonePressed,
     TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(SessionNotFound value)? sessionNotFound,
     TResult Function(SettingsFetched value)? settingsFetched,
     TResult Function(SettingsInitialized value)? settingsInitialized,
     TResult Function(SettingsNotFound value)? settingsNotFound,
@@ -1263,174 +1007,6 @@ abstract class SessionFetched implements SetupEvent {
   @JsonKey(ignore: true)
   $SessionFetchedCopyWith<SessionFetched> get copyWith =>
       throw _privateConstructorUsedError;
-}
-
-/// @nodoc
-abstract class $SessionNotFoundCopyWith<$Res> {
-  factory $SessionNotFoundCopyWith(
-          SessionNotFound value, $Res Function(SessionNotFound) then) =
-      _$SessionNotFoundCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class _$SessionNotFoundCopyWithImpl<$Res> extends _$SetupEventCopyWithImpl<$Res>
-    implements $SessionNotFoundCopyWith<$Res> {
-  _$SessionNotFoundCopyWithImpl(
-      SessionNotFound _value, $Res Function(SessionNotFound) _then)
-      : super(_value, (v) => _then(v as SessionNotFound));
-
-  @override
-  SessionNotFound get _value => super._value as SessionNotFound;
-}
-
-/// @nodoc
-
-class _$SessionNotFound
-    with DiagnosticableTreeMixin
-    implements SessionNotFound {
-  const _$SessionNotFound();
-
-  @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'SetupEvent.sessionNotFound()';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties..add(DiagnosticsProperty('type', 'SetupEvent.sessionNotFound'));
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is SessionNotFound);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() appLaunched,
-    required TResult Function() authenticated,
-    required TResult Function() defaultCoversCached,
-    required TResult Function(List<DefaultCover> defaultCovers)
-        defaultCoversLoaded,
-    required TResult Function() onboardingDonePressed,
-    required TResult Function(User session) sessionFetched,
-    required TResult Function() sessionNotFound,
-    required TResult Function() settingsFetched,
-    required TResult Function() settingsInitialized,
-    required TResult Function() settingsNotFound,
-    required TResult Function(User user) userLoaded,
-  }) {
-    return sessionNotFound();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? appLaunched,
-    TResult Function()? authenticated,
-    TResult Function()? defaultCoversCached,
-    TResult Function(List<DefaultCover> defaultCovers)? defaultCoversLoaded,
-    TResult Function()? onboardingDonePressed,
-    TResult Function(User session)? sessionFetched,
-    TResult Function()? sessionNotFound,
-    TResult Function()? settingsFetched,
-    TResult Function()? settingsInitialized,
-    TResult Function()? settingsNotFound,
-    TResult Function(User user)? userLoaded,
-  }) {
-    return sessionNotFound?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? appLaunched,
-    TResult Function()? authenticated,
-    TResult Function()? defaultCoversCached,
-    TResult Function(List<DefaultCover> defaultCovers)? defaultCoversLoaded,
-    TResult Function()? onboardingDonePressed,
-    TResult Function(User session)? sessionFetched,
-    TResult Function()? sessionNotFound,
-    TResult Function()? settingsFetched,
-    TResult Function()? settingsInitialized,
-    TResult Function()? settingsNotFound,
-    TResult Function(User user)? userLoaded,
-    required TResult orElse(),
-  }) {
-    if (sessionNotFound != null) {
-      return sessionNotFound();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(AppLaunched value) appLaunched,
-    required TResult Function(Authenticated value) authenticated,
-    required TResult Function(DefaultCoversCached value) defaultCoversCached,
-    required TResult Function(DefaultCoversLoaded value) defaultCoversLoaded,
-    required TResult Function(OnboardingDonePressed value)
-        onboardingDonePressed,
-    required TResult Function(SessionFetched value) sessionFetched,
-    required TResult Function(SessionNotFound value) sessionNotFound,
-    required TResult Function(SettingsFetched value) settingsFetched,
-    required TResult Function(SettingsInitialized value) settingsInitialized,
-    required TResult Function(SettingsNotFound value) settingsNotFound,
-    required TResult Function(UserLoaded value) userLoaded,
-  }) {
-    return sessionNotFound(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(AppLaunched value)? appLaunched,
-    TResult Function(Authenticated value)? authenticated,
-    TResult Function(DefaultCoversCached value)? defaultCoversCached,
-    TResult Function(DefaultCoversLoaded value)? defaultCoversLoaded,
-    TResult Function(OnboardingDonePressed value)? onboardingDonePressed,
-    TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(SessionNotFound value)? sessionNotFound,
-    TResult Function(SettingsFetched value)? settingsFetched,
-    TResult Function(SettingsInitialized value)? settingsInitialized,
-    TResult Function(SettingsNotFound value)? settingsNotFound,
-    TResult Function(UserLoaded value)? userLoaded,
-  }) {
-    return sessionNotFound?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(AppLaunched value)? appLaunched,
-    TResult Function(Authenticated value)? authenticated,
-    TResult Function(DefaultCoversCached value)? defaultCoversCached,
-    TResult Function(DefaultCoversLoaded value)? defaultCoversLoaded,
-    TResult Function(OnboardingDonePressed value)? onboardingDonePressed,
-    TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(SessionNotFound value)? sessionNotFound,
-    TResult Function(SettingsFetched value)? settingsFetched,
-    TResult Function(SettingsInitialized value)? settingsInitialized,
-    TResult Function(SettingsNotFound value)? settingsNotFound,
-    TResult Function(UserLoaded value)? userLoaded,
-    required TResult orElse(),
-  }) {
-    if (sessionNotFound != null) {
-      return sessionNotFound(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class SessionNotFound implements SetupEvent {
-  const factory SessionNotFound() = _$SessionNotFound;
 }
 
 /// @nodoc
@@ -1486,9 +1062,7 @@ class _$SettingsFetched
     required TResult Function() defaultCoversCached,
     required TResult Function(List<DefaultCover> defaultCovers)
         defaultCoversLoaded,
-    required TResult Function() onboardingDonePressed,
     required TResult Function(User session) sessionFetched,
-    required TResult Function() sessionNotFound,
     required TResult Function() settingsFetched,
     required TResult Function() settingsInitialized,
     required TResult Function() settingsNotFound,
@@ -1504,9 +1078,7 @@ class _$SettingsFetched
     TResult Function()? authenticated,
     TResult Function()? defaultCoversCached,
     TResult Function(List<DefaultCover> defaultCovers)? defaultCoversLoaded,
-    TResult Function()? onboardingDonePressed,
     TResult Function(User session)? sessionFetched,
-    TResult Function()? sessionNotFound,
     TResult Function()? settingsFetched,
     TResult Function()? settingsInitialized,
     TResult Function()? settingsNotFound,
@@ -1522,9 +1094,7 @@ class _$SettingsFetched
     TResult Function()? authenticated,
     TResult Function()? defaultCoversCached,
     TResult Function(List<DefaultCover> defaultCovers)? defaultCoversLoaded,
-    TResult Function()? onboardingDonePressed,
     TResult Function(User session)? sessionFetched,
-    TResult Function()? sessionNotFound,
     TResult Function()? settingsFetched,
     TResult Function()? settingsInitialized,
     TResult Function()? settingsNotFound,
@@ -1544,10 +1114,7 @@ class _$SettingsFetched
     required TResult Function(Authenticated value) authenticated,
     required TResult Function(DefaultCoversCached value) defaultCoversCached,
     required TResult Function(DefaultCoversLoaded value) defaultCoversLoaded,
-    required TResult Function(OnboardingDonePressed value)
-        onboardingDonePressed,
     required TResult Function(SessionFetched value) sessionFetched,
-    required TResult Function(SessionNotFound value) sessionNotFound,
     required TResult Function(SettingsFetched value) settingsFetched,
     required TResult Function(SettingsInitialized value) settingsInitialized,
     required TResult Function(SettingsNotFound value) settingsNotFound,
@@ -1563,9 +1130,7 @@ class _$SettingsFetched
     TResult Function(Authenticated value)? authenticated,
     TResult Function(DefaultCoversCached value)? defaultCoversCached,
     TResult Function(DefaultCoversLoaded value)? defaultCoversLoaded,
-    TResult Function(OnboardingDonePressed value)? onboardingDonePressed,
     TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(SessionNotFound value)? sessionNotFound,
     TResult Function(SettingsFetched value)? settingsFetched,
     TResult Function(SettingsInitialized value)? settingsInitialized,
     TResult Function(SettingsNotFound value)? settingsNotFound,
@@ -1581,9 +1146,7 @@ class _$SettingsFetched
     TResult Function(Authenticated value)? authenticated,
     TResult Function(DefaultCoversCached value)? defaultCoversCached,
     TResult Function(DefaultCoversLoaded value)? defaultCoversLoaded,
-    TResult Function(OnboardingDonePressed value)? onboardingDonePressed,
     TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(SessionNotFound value)? sessionNotFound,
     TResult Function(SettingsFetched value)? settingsFetched,
     TResult Function(SettingsInitialized value)? settingsInitialized,
     TResult Function(SettingsNotFound value)? settingsNotFound,
@@ -1656,9 +1219,7 @@ class _$SettingsInitialized
     required TResult Function() defaultCoversCached,
     required TResult Function(List<DefaultCover> defaultCovers)
         defaultCoversLoaded,
-    required TResult Function() onboardingDonePressed,
     required TResult Function(User session) sessionFetched,
-    required TResult Function() sessionNotFound,
     required TResult Function() settingsFetched,
     required TResult Function() settingsInitialized,
     required TResult Function() settingsNotFound,
@@ -1674,9 +1235,7 @@ class _$SettingsInitialized
     TResult Function()? authenticated,
     TResult Function()? defaultCoversCached,
     TResult Function(List<DefaultCover> defaultCovers)? defaultCoversLoaded,
-    TResult Function()? onboardingDonePressed,
     TResult Function(User session)? sessionFetched,
-    TResult Function()? sessionNotFound,
     TResult Function()? settingsFetched,
     TResult Function()? settingsInitialized,
     TResult Function()? settingsNotFound,
@@ -1692,9 +1251,7 @@ class _$SettingsInitialized
     TResult Function()? authenticated,
     TResult Function()? defaultCoversCached,
     TResult Function(List<DefaultCover> defaultCovers)? defaultCoversLoaded,
-    TResult Function()? onboardingDonePressed,
     TResult Function(User session)? sessionFetched,
-    TResult Function()? sessionNotFound,
     TResult Function()? settingsFetched,
     TResult Function()? settingsInitialized,
     TResult Function()? settingsNotFound,
@@ -1714,10 +1271,7 @@ class _$SettingsInitialized
     required TResult Function(Authenticated value) authenticated,
     required TResult Function(DefaultCoversCached value) defaultCoversCached,
     required TResult Function(DefaultCoversLoaded value) defaultCoversLoaded,
-    required TResult Function(OnboardingDonePressed value)
-        onboardingDonePressed,
     required TResult Function(SessionFetched value) sessionFetched,
-    required TResult Function(SessionNotFound value) sessionNotFound,
     required TResult Function(SettingsFetched value) settingsFetched,
     required TResult Function(SettingsInitialized value) settingsInitialized,
     required TResult Function(SettingsNotFound value) settingsNotFound,
@@ -1733,9 +1287,7 @@ class _$SettingsInitialized
     TResult Function(Authenticated value)? authenticated,
     TResult Function(DefaultCoversCached value)? defaultCoversCached,
     TResult Function(DefaultCoversLoaded value)? defaultCoversLoaded,
-    TResult Function(OnboardingDonePressed value)? onboardingDonePressed,
     TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(SessionNotFound value)? sessionNotFound,
     TResult Function(SettingsFetched value)? settingsFetched,
     TResult Function(SettingsInitialized value)? settingsInitialized,
     TResult Function(SettingsNotFound value)? settingsNotFound,
@@ -1751,9 +1303,7 @@ class _$SettingsInitialized
     TResult Function(Authenticated value)? authenticated,
     TResult Function(DefaultCoversCached value)? defaultCoversCached,
     TResult Function(DefaultCoversLoaded value)? defaultCoversLoaded,
-    TResult Function(OnboardingDonePressed value)? onboardingDonePressed,
     TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(SessionNotFound value)? sessionNotFound,
     TResult Function(SettingsFetched value)? settingsFetched,
     TResult Function(SettingsInitialized value)? settingsInitialized,
     TResult Function(SettingsNotFound value)? settingsNotFound,
@@ -1825,9 +1375,7 @@ class _$SettingsNotFound
     required TResult Function() defaultCoversCached,
     required TResult Function(List<DefaultCover> defaultCovers)
         defaultCoversLoaded,
-    required TResult Function() onboardingDonePressed,
     required TResult Function(User session) sessionFetched,
-    required TResult Function() sessionNotFound,
     required TResult Function() settingsFetched,
     required TResult Function() settingsInitialized,
     required TResult Function() settingsNotFound,
@@ -1843,9 +1391,7 @@ class _$SettingsNotFound
     TResult Function()? authenticated,
     TResult Function()? defaultCoversCached,
     TResult Function(List<DefaultCover> defaultCovers)? defaultCoversLoaded,
-    TResult Function()? onboardingDonePressed,
     TResult Function(User session)? sessionFetched,
-    TResult Function()? sessionNotFound,
     TResult Function()? settingsFetched,
     TResult Function()? settingsInitialized,
     TResult Function()? settingsNotFound,
@@ -1861,9 +1407,7 @@ class _$SettingsNotFound
     TResult Function()? authenticated,
     TResult Function()? defaultCoversCached,
     TResult Function(List<DefaultCover> defaultCovers)? defaultCoversLoaded,
-    TResult Function()? onboardingDonePressed,
     TResult Function(User session)? sessionFetched,
-    TResult Function()? sessionNotFound,
     TResult Function()? settingsFetched,
     TResult Function()? settingsInitialized,
     TResult Function()? settingsNotFound,
@@ -1883,10 +1427,7 @@ class _$SettingsNotFound
     required TResult Function(Authenticated value) authenticated,
     required TResult Function(DefaultCoversCached value) defaultCoversCached,
     required TResult Function(DefaultCoversLoaded value) defaultCoversLoaded,
-    required TResult Function(OnboardingDonePressed value)
-        onboardingDonePressed,
     required TResult Function(SessionFetched value) sessionFetched,
-    required TResult Function(SessionNotFound value) sessionNotFound,
     required TResult Function(SettingsFetched value) settingsFetched,
     required TResult Function(SettingsInitialized value) settingsInitialized,
     required TResult Function(SettingsNotFound value) settingsNotFound,
@@ -1902,9 +1443,7 @@ class _$SettingsNotFound
     TResult Function(Authenticated value)? authenticated,
     TResult Function(DefaultCoversCached value)? defaultCoversCached,
     TResult Function(DefaultCoversLoaded value)? defaultCoversLoaded,
-    TResult Function(OnboardingDonePressed value)? onboardingDonePressed,
     TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(SessionNotFound value)? sessionNotFound,
     TResult Function(SettingsFetched value)? settingsFetched,
     TResult Function(SettingsInitialized value)? settingsInitialized,
     TResult Function(SettingsNotFound value)? settingsNotFound,
@@ -1920,9 +1459,7 @@ class _$SettingsNotFound
     TResult Function(Authenticated value)? authenticated,
     TResult Function(DefaultCoversCached value)? defaultCoversCached,
     TResult Function(DefaultCoversLoaded value)? defaultCoversLoaded,
-    TResult Function(OnboardingDonePressed value)? onboardingDonePressed,
     TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(SessionNotFound value)? sessionNotFound,
     TResult Function(SettingsFetched value)? settingsFetched,
     TResult Function(SettingsInitialized value)? settingsInitialized,
     TResult Function(SettingsNotFound value)? settingsNotFound,
@@ -2025,9 +1562,7 @@ class _$UserLoaded with DiagnosticableTreeMixin implements UserLoaded {
     required TResult Function() defaultCoversCached,
     required TResult Function(List<DefaultCover> defaultCovers)
         defaultCoversLoaded,
-    required TResult Function() onboardingDonePressed,
     required TResult Function(User session) sessionFetched,
-    required TResult Function() sessionNotFound,
     required TResult Function() settingsFetched,
     required TResult Function() settingsInitialized,
     required TResult Function() settingsNotFound,
@@ -2043,9 +1578,7 @@ class _$UserLoaded with DiagnosticableTreeMixin implements UserLoaded {
     TResult Function()? authenticated,
     TResult Function()? defaultCoversCached,
     TResult Function(List<DefaultCover> defaultCovers)? defaultCoversLoaded,
-    TResult Function()? onboardingDonePressed,
     TResult Function(User session)? sessionFetched,
-    TResult Function()? sessionNotFound,
     TResult Function()? settingsFetched,
     TResult Function()? settingsInitialized,
     TResult Function()? settingsNotFound,
@@ -2061,9 +1594,7 @@ class _$UserLoaded with DiagnosticableTreeMixin implements UserLoaded {
     TResult Function()? authenticated,
     TResult Function()? defaultCoversCached,
     TResult Function(List<DefaultCover> defaultCovers)? defaultCoversLoaded,
-    TResult Function()? onboardingDonePressed,
     TResult Function(User session)? sessionFetched,
-    TResult Function()? sessionNotFound,
     TResult Function()? settingsFetched,
     TResult Function()? settingsInitialized,
     TResult Function()? settingsNotFound,
@@ -2083,10 +1614,7 @@ class _$UserLoaded with DiagnosticableTreeMixin implements UserLoaded {
     required TResult Function(Authenticated value) authenticated,
     required TResult Function(DefaultCoversCached value) defaultCoversCached,
     required TResult Function(DefaultCoversLoaded value) defaultCoversLoaded,
-    required TResult Function(OnboardingDonePressed value)
-        onboardingDonePressed,
     required TResult Function(SessionFetched value) sessionFetched,
-    required TResult Function(SessionNotFound value) sessionNotFound,
     required TResult Function(SettingsFetched value) settingsFetched,
     required TResult Function(SettingsInitialized value) settingsInitialized,
     required TResult Function(SettingsNotFound value) settingsNotFound,
@@ -2102,9 +1630,7 @@ class _$UserLoaded with DiagnosticableTreeMixin implements UserLoaded {
     TResult Function(Authenticated value)? authenticated,
     TResult Function(DefaultCoversCached value)? defaultCoversCached,
     TResult Function(DefaultCoversLoaded value)? defaultCoversLoaded,
-    TResult Function(OnboardingDonePressed value)? onboardingDonePressed,
     TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(SessionNotFound value)? sessionNotFound,
     TResult Function(SettingsFetched value)? settingsFetched,
     TResult Function(SettingsInitialized value)? settingsInitialized,
     TResult Function(SettingsNotFound value)? settingsNotFound,
@@ -2120,9 +1646,7 @@ class _$UserLoaded with DiagnosticableTreeMixin implements UserLoaded {
     TResult Function(Authenticated value)? authenticated,
     TResult Function(DefaultCoversCached value)? defaultCoversCached,
     TResult Function(DefaultCoversLoaded value)? defaultCoversLoaded,
-    TResult Function(OnboardingDonePressed value)? onboardingDonePressed,
     TResult Function(SessionFetched value)? sessionFetched,
-    TResult Function(SessionNotFound value)? sessionNotFound,
     TResult Function(SettingsFetched value)? settingsFetched,
     TResult Function(SettingsInitialized value)? settingsInitialized,
     TResult Function(SettingsNotFound value)? settingsNotFound,
@@ -2162,10 +1686,6 @@ class _$SetupStateTearOff {
   _Initial initial() {
     return const _Initial();
   }
-
-  _Onboarding onboarding() {
-    return const _Onboarding();
-  }
 }
 
 /// @nodoc
@@ -2178,7 +1698,6 @@ mixin _$SetupState {
     required TResult Function() content,
     required TResult Function(CoreFailure failure) failure,
     required TResult Function() initial,
-    required TResult Function() onboarding,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -2186,7 +1705,6 @@ mixin _$SetupState {
     TResult Function()? content,
     TResult Function(CoreFailure failure)? failure,
     TResult Function()? initial,
-    TResult Function()? onboarding,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -2194,7 +1712,6 @@ mixin _$SetupState {
     TResult Function()? content,
     TResult Function(CoreFailure failure)? failure,
     TResult Function()? initial,
-    TResult Function()? onboarding,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -2203,7 +1720,6 @@ mixin _$SetupState {
     required TResult Function(_Content value) content,
     required TResult Function(_Failure value) failure,
     required TResult Function(_Initial value) initial,
-    required TResult Function(_Onboarding value) onboarding,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -2211,7 +1727,6 @@ mixin _$SetupState {
     TResult Function(_Content value)? content,
     TResult Function(_Failure value)? failure,
     TResult Function(_Initial value)? initial,
-    TResult Function(_Onboarding value)? onboarding,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -2219,7 +1734,6 @@ mixin _$SetupState {
     TResult Function(_Content value)? content,
     TResult Function(_Failure value)? failure,
     TResult Function(_Initial value)? initial,
-    TResult Function(_Onboarding value)? onboarding,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -2288,7 +1802,6 @@ class _$_Content with DiagnosticableTreeMixin implements _Content {
     required TResult Function() content,
     required TResult Function(CoreFailure failure) failure,
     required TResult Function() initial,
-    required TResult Function() onboarding,
   }) {
     return content();
   }
@@ -2299,7 +1812,6 @@ class _$_Content with DiagnosticableTreeMixin implements _Content {
     TResult Function()? content,
     TResult Function(CoreFailure failure)? failure,
     TResult Function()? initial,
-    TResult Function()? onboarding,
   }) {
     return content?.call();
   }
@@ -2310,7 +1822,6 @@ class _$_Content with DiagnosticableTreeMixin implements _Content {
     TResult Function()? content,
     TResult Function(CoreFailure failure)? failure,
     TResult Function()? initial,
-    TResult Function()? onboarding,
     required TResult orElse(),
   }) {
     if (content != null) {
@@ -2325,7 +1836,6 @@ class _$_Content with DiagnosticableTreeMixin implements _Content {
     required TResult Function(_Content value) content,
     required TResult Function(_Failure value) failure,
     required TResult Function(_Initial value) initial,
-    required TResult Function(_Onboarding value) onboarding,
   }) {
     return content(this);
   }
@@ -2336,7 +1846,6 @@ class _$_Content with DiagnosticableTreeMixin implements _Content {
     TResult Function(_Content value)? content,
     TResult Function(_Failure value)? failure,
     TResult Function(_Initial value)? initial,
-    TResult Function(_Onboarding value)? onboarding,
   }) {
     return content?.call(this);
   }
@@ -2347,7 +1856,6 @@ class _$_Content with DiagnosticableTreeMixin implements _Content {
     TResult Function(_Content value)? content,
     TResult Function(_Failure value)? failure,
     TResult Function(_Initial value)? initial,
-    TResult Function(_Onboarding value)? onboarding,
     required TResult orElse(),
   }) {
     if (content != null) {
@@ -2443,7 +1951,6 @@ class _$_Failure with DiagnosticableTreeMixin implements _Failure {
     required TResult Function() content,
     required TResult Function(CoreFailure failure) failure,
     required TResult Function() initial,
-    required TResult Function() onboarding,
   }) {
     return failure(this.failure);
   }
@@ -2454,7 +1961,6 @@ class _$_Failure with DiagnosticableTreeMixin implements _Failure {
     TResult Function()? content,
     TResult Function(CoreFailure failure)? failure,
     TResult Function()? initial,
-    TResult Function()? onboarding,
   }) {
     return failure?.call(this.failure);
   }
@@ -2465,7 +1971,6 @@ class _$_Failure with DiagnosticableTreeMixin implements _Failure {
     TResult Function()? content,
     TResult Function(CoreFailure failure)? failure,
     TResult Function()? initial,
-    TResult Function()? onboarding,
     required TResult orElse(),
   }) {
     if (failure != null) {
@@ -2480,7 +1985,6 @@ class _$_Failure with DiagnosticableTreeMixin implements _Failure {
     required TResult Function(_Content value) content,
     required TResult Function(_Failure value) failure,
     required TResult Function(_Initial value) initial,
-    required TResult Function(_Onboarding value) onboarding,
   }) {
     return failure(this);
   }
@@ -2491,7 +1995,6 @@ class _$_Failure with DiagnosticableTreeMixin implements _Failure {
     TResult Function(_Content value)? content,
     TResult Function(_Failure value)? failure,
     TResult Function(_Initial value)? initial,
-    TResult Function(_Onboarding value)? onboarding,
   }) {
     return failure?.call(this);
   }
@@ -2502,7 +2005,6 @@ class _$_Failure with DiagnosticableTreeMixin implements _Failure {
     TResult Function(_Content value)? content,
     TResult Function(_Failure value)? failure,
     TResult Function(_Initial value)? initial,
-    TResult Function(_Onboarding value)? onboarding,
     required TResult orElse(),
   }) {
     if (failure != null) {
@@ -2568,7 +2070,6 @@ class _$_Initial with DiagnosticableTreeMixin implements _Initial {
     required TResult Function() content,
     required TResult Function(CoreFailure failure) failure,
     required TResult Function() initial,
-    required TResult Function() onboarding,
   }) {
     return initial();
   }
@@ -2579,7 +2080,6 @@ class _$_Initial with DiagnosticableTreeMixin implements _Initial {
     TResult Function()? content,
     TResult Function(CoreFailure failure)? failure,
     TResult Function()? initial,
-    TResult Function()? onboarding,
   }) {
     return initial?.call();
   }
@@ -2590,7 +2090,6 @@ class _$_Initial with DiagnosticableTreeMixin implements _Initial {
     TResult Function()? content,
     TResult Function(CoreFailure failure)? failure,
     TResult Function()? initial,
-    TResult Function()? onboarding,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -2605,7 +2104,6 @@ class _$_Initial with DiagnosticableTreeMixin implements _Initial {
     required TResult Function(_Content value) content,
     required TResult Function(_Failure value) failure,
     required TResult Function(_Initial value) initial,
-    required TResult Function(_Onboarding value) onboarding,
   }) {
     return initial(this);
   }
@@ -2616,7 +2114,6 @@ class _$_Initial with DiagnosticableTreeMixin implements _Initial {
     TResult Function(_Content value)? content,
     TResult Function(_Failure value)? failure,
     TResult Function(_Initial value)? initial,
-    TResult Function(_Onboarding value)? onboarding,
   }) {
     return initial?.call(this);
   }
@@ -2627,7 +2124,6 @@ class _$_Initial with DiagnosticableTreeMixin implements _Initial {
     TResult Function(_Content value)? content,
     TResult Function(_Failure value)? failure,
     TResult Function(_Initial value)? initial,
-    TResult Function(_Onboarding value)? onboarding,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -2639,126 +2135,4 @@ class _$_Initial with DiagnosticableTreeMixin implements _Initial {
 
 abstract class _Initial implements SetupState {
   const factory _Initial() = _$_Initial;
-}
-
-/// @nodoc
-abstract class _$OnboardingCopyWith<$Res> {
-  factory _$OnboardingCopyWith(
-          _Onboarding value, $Res Function(_Onboarding) then) =
-      __$OnboardingCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class __$OnboardingCopyWithImpl<$Res> extends _$SetupStateCopyWithImpl<$Res>
-    implements _$OnboardingCopyWith<$Res> {
-  __$OnboardingCopyWithImpl(
-      _Onboarding _value, $Res Function(_Onboarding) _then)
-      : super(_value, (v) => _then(v as _Onboarding));
-
-  @override
-  _Onboarding get _value => super._value as _Onboarding;
-}
-
-/// @nodoc
-
-class _$_Onboarding with DiagnosticableTreeMixin implements _Onboarding {
-  const _$_Onboarding();
-
-  @override
-  String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'SetupState.onboarding()';
-  }
-
-  @override
-  void debugFillProperties(DiagnosticPropertiesBuilder properties) {
-    super.debugFillProperties(properties);
-    properties..add(DiagnosticsProperty('type', 'SetupState.onboarding'));
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is _Onboarding);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() content,
-    required TResult Function(CoreFailure failure) failure,
-    required TResult Function() initial,
-    required TResult Function() onboarding,
-  }) {
-    return onboarding();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? content,
-    TResult Function(CoreFailure failure)? failure,
-    TResult Function()? initial,
-    TResult Function()? onboarding,
-  }) {
-    return onboarding?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? content,
-    TResult Function(CoreFailure failure)? failure,
-    TResult Function()? initial,
-    TResult Function()? onboarding,
-    required TResult orElse(),
-  }) {
-    if (onboarding != null) {
-      return onboarding();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(_Content value) content,
-    required TResult Function(_Failure value) failure,
-    required TResult Function(_Initial value) initial,
-    required TResult Function(_Onboarding value) onboarding,
-  }) {
-    return onboarding(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(_Content value)? content,
-    TResult Function(_Failure value)? failure,
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Onboarding value)? onboarding,
-  }) {
-    return onboarding?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(_Content value)? content,
-    TResult Function(_Failure value)? failure,
-    TResult Function(_Initial value)? initial,
-    TResult Function(_Onboarding value)? onboarding,
-    required TResult orElse(),
-  }) {
-    if (onboarding != null) {
-      return onboarding(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class _Onboarding implements SetupState {
-  const factory _Onboarding() = _$_Onboarding;
 }

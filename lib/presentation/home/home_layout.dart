@@ -5,7 +5,6 @@ import 'package:wine/application/setup/setup_bloc.dart';
 import 'package:wine/presentation/home/home_content_layout.dart';
 import 'package:wine/presentation/home/home_filters_menu_layout.dart';
 import 'package:wine/presentation/home/home_menu_layout.dart';
-import 'package:wine/presentation/home/home_onboarding_layout.dart';
 import 'package:wine/presentation/home/home_splash_layout.dart';
 import 'package:wine/presentation/home/widgets/home_app_bar.dart';
 import 'package:wine/utils/functions/dialog_functions.dart';
@@ -104,7 +103,6 @@ class HomeLayout extends StatelessWidget {
               content: (_) => const HomeContentLayout(),
               failure: (_) => Container(),
               initial: (_) => const HomeSplashLayout(),
-              onboarding: (_) => const HomeOnboardingLayout(),
             );
           },
         ),

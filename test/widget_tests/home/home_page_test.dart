@@ -18,7 +18,6 @@ import 'package:wine/domain/user/i_user_repository.dart';
 import 'package:wine/domain/user/user_failure.dart';
 import 'package:wine/injection.dart';
 import 'package:wine/presentation/home/widgets/home_app_bar.dart';
-import 'package:wine/presentation/onboarding/onboarding_page.dart';
 import 'package:wine/presentation/routes/router.dart';
 
 import '../../mocks/domain_mocks.dart';
@@ -447,34 +446,6 @@ void main() {
           },
         );
       });
-    });
-
-    testWidgets('Should navigate to Onboarding page', (tester) async {
-      when(() => _authFacade.authStateChanges)
-          .thenAnswer((_) => Stream.fromIterable([Option.none()]));
-      when(() => _authFacade.isLoggedIn).thenReturn(false);
-      when(_authFacade.logInAnonymously).thenAnswer((_) async => Ok(unit));
-      when(() => _authFacade.isAnonymous).thenReturn(true);
-      when(_settingsRepository.fetchSettings)
-          .thenAnswer((_) async => Ok(testSettings));
-      when(_sessionsRepository.fetchSession).thenAnswer(
-        (_) async => Err(const SessionsFailure.sessionNotFound()),
-      );
-
-      final authBloc = getIt<AuthBloc>()..add(const AuthEvent.authChanged());
-
-      await tester.pumpWidget(
-        TestRouterWidget(
-          appRouter: AppRouter(),
-          providers: [
-            BlocProvider<AuthBloc>(create: (_) => authBloc),
-            BlocProvider<HomeBloc>(create: (_) => getIt<HomeBloc>()),
-          ],
-        ),
-      );
-      await tester.pumpAndSettle();
-
-      expect(find.byType(OnboardingPage), findsOneWidget);
     });
 
     group('AppBar -', () {

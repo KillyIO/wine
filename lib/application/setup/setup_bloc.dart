@@ -73,30 +73,18 @@ class SetupBloc extends Bloc<SetupEvent, SetupState> {
         },
       );
     });
-    on<OnboardingDonePressed>((_, emit) => emit(const SetupState.content()));
     on<SessionFetched>((value, emit) async {
-      if (_authFacade.isAnonymous) {
-        emit(const SetupState.content());
-      } else {
-        (await _userRepository.loadUser(value.session.uid)).match(
-          (user) {
-            add(SetupEvent.userLoaded(user));
-          },
-          (failure) {
-            emit(SetupState.failure(CoreFailure.user(failure)));
-          },
-        );
-      }
+      (await _userRepository.loadUser(value.session.uid)).match(
+        (user) {
+          add(SetupEvent.userLoaded(user));
+        },
+        (failure) {
+          emit(SetupState.failure(CoreFailure.user(failure)));
+        },
+      );
     });
-    on<SessionNotFound>((_, emit) {
-      if (kIsWeb) {
-        emit(const SetupState.content());
-      } else {
-        emit(const SetupState.onboarding());
-      }
-    });
-    on<SettingsFetched>((_, __) async => await _fetchSession());
-    on<SettingsInitialized>((_, __) async => await _fetchSession());
+    on<SettingsFetched>((_, emit) async => await _fetchSession(emit));
+    on<SettingsInitialized>((_, emit) async => await _fetchSession(emit));
     on<SettingsNotFound>(
       (_, emit) async => (await _settingsRepository.initializeSettings()).match(
         (_) {
@@ -126,13 +114,13 @@ class SetupBloc extends Bloc<SetupEvent, SetupState> {
   final ISettingsRepository _settingsRepository;
   final IUserRepository _userRepository;
 
-  FutureOr<void> _fetchSession() async {
+  FutureOr<void> _fetchSession(Emitter<SetupState> emit) async {
     (await _sessionsRepository.fetchSession()).match(
       (session) {
         add(SetupEvent.sessionFetched(session));
       },
       (_) {
-        add(const SetupEvent.sessionNotFound());
+        emit(const SetupState.content());
       },
     );
   }

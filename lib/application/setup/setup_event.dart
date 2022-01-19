@@ -18,13 +18,7 @@ class SetupEvent with _$SetupEvent {
   ) = DefaultCoversLoaded;
 
   /// @nodoc
-  const factory SetupEvent.onboardingDonePressed() = OnboardingDonePressed;
-
-  /// @nodoc
   const factory SetupEvent.sessionFetched(User session) = SessionFetched;
-
-  /// @nodoc
-  const factory SetupEvent.sessionNotFound() = SessionNotFound;
 
   /// @nodoc
   const factory SetupEvent.settingsFetched() = SettingsFetched;
