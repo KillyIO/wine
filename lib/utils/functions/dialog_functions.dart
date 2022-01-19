@@ -17,7 +17,7 @@ Future<void> redirectDialog(
 ) async {
   bool? result = false;
 
-  Timer(const Duration(seconds: 2), () {
+  final timer = Timer(const Duration(seconds: 4), () {
     context.router.pop<bool>(true);
 
     result = true;
@@ -31,6 +31,8 @@ Future<void> redirectDialog(
       key: const Key('redirect_success_dialog'),
       messages: messages,
       onPressed: () async {
+        timer.cancel();
+
         await context.router.pop<bool>(true);
       },
     ),
