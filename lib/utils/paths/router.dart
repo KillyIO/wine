@@ -8,9 +8,6 @@ const String libraryPath = '/library';
 const String logInPath = '/log-in';
 
 /// @nodoc
-const String onboardingPath = '/onboarding';
-
-/// @nodoc
 const String plusPath = '/plus';
 
 /// @nodoc
