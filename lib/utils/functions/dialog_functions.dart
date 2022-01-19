@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -13,7 +15,15 @@ Future<void> redirectDialog(
   List<String> messages,
   void Function() onNavigate,
 ) async {
-  final result = await showDialog<bool>(
+  bool? result = false;
+
+  Timer(const Duration(seconds: 2), () {
+    context.router.pop<bool>(true);
+
+    result = true;
+  });
+
+  result = await showDialog<bool>(
     context: context,
     barrierDismissible: false,
     useRootNavigator: false,
@@ -26,7 +36,7 @@ Future<void> redirectDialog(
     ),
   );
 
-  if (result != null && result) {
+  if (result != null && result!) {
     onNavigate();
   }
 }
