@@ -23,13 +23,9 @@ class HomePageViewBuilder extends StatelessWidget {
         controller: controller,
         itemBuilder: (context, index) =>
             _pageViewLayouts[index % _pageViewLayouts.length],
-        onPageChanged: (index) {
-          context.read<HomeBloc>().add(
-                HomeEvent.pageViewIndexChanged(
-                  index % _pageViewLayouts.length,
-                ),
-              );
-        },
+        onPageChanged: (index) => context.read<HomeBloc>().add(
+              HomeEvent.pageViewIndexChanged(index % _pageViewLayouts.length),
+            ),
       ),
     );
   }
