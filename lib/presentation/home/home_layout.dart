@@ -111,7 +111,7 @@ class HomeLayout extends StatelessWidget {
         builder: (context, state) {
           return state.maybeMap(
             content: (_) => const HomeFiltersMenuLayout(),
-            orElse: () => Container(),
+            orElse: Container.new,
           );
         },
       ),
@@ -119,7 +119,7 @@ class HomeLayout extends StatelessWidget {
         builder: (context, state) {
           return state.maybeMap(
             content: (_) => const HomeMenuLayout(),
-            orElse: () => Container(),
+            orElse: Container.new,
           );
         },
       ),

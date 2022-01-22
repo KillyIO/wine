@@ -1,4 +1,7 @@
+import 'dart:convert';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter_quill/flutter_quill.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:wine/domain/chapter/chapter.dart';
 import 'package:wine/domain/chapter/licence.dart';
@@ -77,7 +80,7 @@ extension ChapterDTOX on ChapterDTO {
         authorUID: UniqueID.fromUniqueString(authorUID),
         bookmarksCount: bookmarksCount,
         coverURL: CoverURL(coverURL),
-        genres: genres.map((g) => Genre(g)).toList(),
+        genres: genres.map(Genre.new).toList(),
         index: index,
         isNSFW: isNSFW,
         isPublished: isPublished,
@@ -86,7 +89,12 @@ extension ChapterDTOX on ChapterDTO {
         likesCount: likesCount,
         previousChapterUID: UniqueID.fromUniqueString(previousChapterUID ?? ''),
         seriesUID: UniqueID.fromUniqueString(seriesUID),
-        story: Story(story),
+        story: Story(
+          Document.fromJson(jsonDecode(story) as List<dynamic>).toPlainText(),
+          Document.fromJson(jsonDecode(story) as List<dynamic>)
+              .toDelta()
+              .toJson(),
+        ),
         title: Title(title),
         uid: UniqueID.fromUniqueString(uid),
         viewsCount: viewsCount,
@@ -120,7 +128,7 @@ extension ChapterMapX on Map {
         authorUID: UniqueID.fromUniqueString(this['authorUID'] as String),
         bookmarksCount: this['bookmarksCount'] as int,
         coverURL: CoverURL(this['coverURL'] as String),
-        genres: (this['genres'] as List<String>).map((g) => Genre(g)).toList(),
+        genres: (this['genres'] as List<String>).map(Genre.new).toList(),
         index: this['index'] as int,
         isNSFW: this['isNSFW'] as bool,
         isPublished: this['isPublished'] as bool,
@@ -130,7 +138,14 @@ extension ChapterMapX on Map {
         previousChapterUID:
             UniqueID.fromUniqueString(this['previousChapterUID'] as String),
         seriesUID: UniqueID.fromUniqueString(this['seriesUID'] as String),
-        story: Story(this['story'] as String),
+        story: Story(
+          Document.fromJson(
+            jsonDecode(this['story'] as String) as List<dynamic>,
+          ).toPlainText(),
+          Document.fromJson(
+            jsonDecode(this['story'] as String) as List<dynamic>,
+          ).toDelta().toJson(),
+        ),
         title: Title(this['title'] as String),
         uid: UniqueID.fromUniqueString(this['uid'] as String),
         viewsCount: this['viewsCount'] as int,

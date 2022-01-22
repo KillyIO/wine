@@ -17,7 +17,7 @@ void main() {
         authorUID: UniqueID.fromUniqueString(testUserUid),
         bookmarksCount: 10,
         coverURL: CoverURL(testCoverURL),
-        genres: testGenres.map((g) => Genre(g)).toList(),
+        genres: testGenres.map(Genre.new).toList(),
         isNSFW: false,
         isPublished: false,
         language: Language(testLanguage),
