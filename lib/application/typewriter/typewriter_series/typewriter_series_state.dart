@@ -6,6 +6,7 @@ class TypewriterSeriesState with _$TypewriterSeriesState {
   /// @nodoc
   const factory TypewriterSeriesState({
     required String coverURL,
+    required TypewriterEndState endState,
     required Option<Result<None, CoreFailure>> failureOption,
     required List<Genre> genres,
     required bool isEdit,
@@ -14,7 +15,6 @@ class TypewriterSeriesState with _$TypewriterSeriesState {
     required Language language,
     required Series series,
     required bool showErrorMessages,
-    required TypewriterEndState endState,
     required Subtitle subtitle,
     required TextEditingController subtitleController,
     required int subtitleWordCount,
@@ -29,6 +29,7 @@ class TypewriterSeriesState with _$TypewriterSeriesState {
   /// @nodoc
   factory TypewriterSeriesState.initial() => TypewriterSeriesState(
         coverURL: '',
+        endState: TypewriterEndState.unknown,
         failureOption: const None(),
         genres: <Genre>[],
         isEdit: false,
@@ -37,7 +38,6 @@ class TypewriterSeriesState with _$TypewriterSeriesState {
         language: Language(''),
         series: Series.empty(),
         showErrorMessages: false,
-        endState: TypewriterEndState.unknown,
         subtitle: Subtitle(''),
         subtitleController: TextEditingController(),
         subtitleWordCount: 0,
