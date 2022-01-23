@@ -86,11 +86,11 @@ class SeriesStats extends StatelessWidget {
                 dotPrimaryColor: pastelYellow,
                 dotSecondaryColor: pastelYellow.withGreen(214).withBlue(69),
               ),
-              countBuilder: (count, _, text) {
+              countBuilder: (count, isBookmarked, text) {
                 return Text(
                   NumberFormat.compact().format(count),
-                  style: const TextStyle(
-                    color: Colors.black38,
+                  style: TextStyle(
+                    color: isBookmarked ? pastelYellow : Colors.black38,
                     fontSize: 18,
                   ),
                 );
