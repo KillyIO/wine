@@ -29,13 +29,11 @@ class LibraryPageViewBuilder extends StatelessWidget {
             controller: pageController,
             itemBuilder: (context, index) =>
                 _pageViewLayouts[index % _pageViewLayouts.length],
-            onPageChanged: (index) {
-              context.read<LibraryBloc>().add(
-                    LibraryEvent.pageViewIndexChanged(
-                      index % _pageViewLayouts.length,
-                    ),
-                  );
-            },
+            onPageChanged: (index) => context.read<LibraryBloc>().add(
+                  LibraryEvent.pageViewIndexChanged(
+                    index % _pageViewLayouts.length,
+                  ),
+                ),
           );
         },
       ),
