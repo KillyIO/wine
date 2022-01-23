@@ -7,6 +7,10 @@ class TypewriterChapterEvent with _$TypewriterChapterEvent {
   const factory TypewriterChapterEvent.addCoverPressed() = AddCoverPressed;
 
   /// @nodoc
+  const factory TypewriterChapterEvent.chapterOneExistenceChecked() =
+      ChapterOneExistenceChecked;
+
+  /// @nodoc
   const factory TypewriterChapterEvent.deleteButtonPressed() =
       DeleteButtonPressed;
 
@@ -28,7 +32,7 @@ class TypewriterChapterEvent with _$TypewriterChapterEvent {
   /// @nodoc
   const factory TypewriterChapterEvent.launchAsNewChapter(
     Series series, {
-    Chapter? chapter,
+    Chapter? previousChapter,
   }) = LaunchAsNewChapter;
 
   /// @nodoc
@@ -40,4 +44,25 @@ class TypewriterChapterEvent with _$TypewriterChapterEvent {
   /// @nodoc
   const factory TypewriterChapterEvent.licenceSelected(String licence) =
       LicenceSelected;
+
+  /// @nodoc
+  const factory TypewriterChapterEvent.pageViewIndexChanged(int index) =
+      PageViewIndexChanged;
+
+  /// @nodoc
+  const factory TypewriterChapterEvent.publishButtonPressed() =
+      PublishButtonPressed;
+
+  /// @nodoc
+  const factory TypewriterChapterEvent.saveButtonPressed() = SaveButtonPressed;
+
+  /// @nodoc
+  const factory TypewriterChapterEvent.sessionFetched() = SessionFetched;
+
+  /// @nodoc
+  const factory TypewriterChapterEvent.storyChanged() = StoryChanged;
+
+  /// @nodoc
+  const factory TypewriterChapterEvent.titleChanged(String title) =
+      TitleChanged;
 }

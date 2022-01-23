@@ -21,6 +21,10 @@ class _$TypewriterChapterEventTearOff {
     return const AddCoverPressed();
   }
 
+  ChapterOneExistenceChecked chapterOneExistenceChecked() {
+    return const ChapterOneExistenceChecked();
+  }
+
   DeleteButtonPressed deleteButtonPressed() {
     return const DeleteButtonPressed();
   }
@@ -49,10 +53,11 @@ class _$TypewriterChapterEventTearOff {
     );
   }
 
-  LaunchAsNewChapter launchAsNewChapter(Series series, {Chapter? chapter}) {
+  LaunchAsNewChapter launchAsNewChapter(Series series,
+      {Chapter? previousChapter}) {
     return LaunchAsNewChapter(
       series,
-      chapter: chapter,
+      previousChapter: previousChapter,
     );
   }
 
@@ -68,6 +73,34 @@ class _$TypewriterChapterEventTearOff {
       licence,
     );
   }
+
+  PageViewIndexChanged pageViewIndexChanged(int index) {
+    return PageViewIndexChanged(
+      index,
+    );
+  }
+
+  PublishButtonPressed publishButtonPressed() {
+    return const PublishButtonPressed();
+  }
+
+  SaveButtonPressed saveButtonPressed() {
+    return const SaveButtonPressed();
+  }
+
+  SessionFetched sessionFetched() {
+    return const SessionFetched();
+  }
+
+  StoryChanged storyChanged() {
+    return const StoryChanged();
+  }
+
+  TitleChanged titleChanged(String title) {
+    return TitleChanged(
+      title,
+    );
+  }
 }
 
 /// @nodoc
@@ -78,47 +111,72 @@ mixin _$TypewriterChapterEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() addCoverPressed,
+    required TResult Function() chapterOneExistenceChecked,
     required TResult Function() deleteButtonPressed,
     required TResult Function(String genre) genreAdded,
     required TResult Function(String genre) genreRemoved,
     required TResult Function(bool isNSFW) isNSFWChanged,
     required TResult Function(String language) languageSelected,
-    required TResult Function(Series series, Chapter? chapter)
+    required TResult Function(Series series, Chapter? previousChapter)
         launchAsNewChapter,
     required TResult Function(UniqueID id, Chapter? chapter) launchWithID,
     required TResult Function(String licence) licenceSelected,
+    required TResult Function(int index) pageViewIndexChanged,
+    required TResult Function() publishButtonPressed,
+    required TResult Function() saveButtonPressed,
+    required TResult Function() sessionFetched,
+    required TResult Function() storyChanged,
+    required TResult Function(String title) titleChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? addCoverPressed,
+    TResult Function()? chapterOneExistenceChecked,
     TResult Function()? deleteButtonPressed,
     TResult Function(String genre)? genreAdded,
     TResult Function(String genre)? genreRemoved,
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
-    TResult Function(Series series, Chapter? chapter)? launchAsNewChapter,
+    TResult Function(Series series, Chapter? previousChapter)?
+        launchAsNewChapter,
     TResult Function(UniqueID id, Chapter? chapter)? launchWithID,
     TResult Function(String licence)? licenceSelected,
+    TResult Function(int index)? pageViewIndexChanged,
+    TResult Function()? publishButtonPressed,
+    TResult Function()? saveButtonPressed,
+    TResult Function()? sessionFetched,
+    TResult Function()? storyChanged,
+    TResult Function(String title)? titleChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? addCoverPressed,
+    TResult Function()? chapterOneExistenceChecked,
     TResult Function()? deleteButtonPressed,
     TResult Function(String genre)? genreAdded,
     TResult Function(String genre)? genreRemoved,
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
-    TResult Function(Series series, Chapter? chapter)? launchAsNewChapter,
+    TResult Function(Series series, Chapter? previousChapter)?
+        launchAsNewChapter,
     TResult Function(UniqueID id, Chapter? chapter)? launchWithID,
     TResult Function(String licence)? licenceSelected,
+    TResult Function(int index)? pageViewIndexChanged,
+    TResult Function()? publishButtonPressed,
+    TResult Function()? saveButtonPressed,
+    TResult Function()? sessionFetched,
+    TResult Function()? storyChanged,
+    TResult Function(String title)? titleChanged,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(AddCoverPressed value) addCoverPressed,
+    required TResult Function(ChapterOneExistenceChecked value)
+        chapterOneExistenceChecked,
     required TResult Function(DeleteButtonPressed value) deleteButtonPressed,
     required TResult Function(GenreAdded value) genreAdded,
     required TResult Function(GenreRemoved value) genreRemoved,
@@ -127,11 +185,19 @@ mixin _$TypewriterChapterEvent {
     required TResult Function(LaunchAsNewChapter value) launchAsNewChapter,
     required TResult Function(LaunchWithID value) launchWithID,
     required TResult Function(LicenceSelected value) licenceSelected,
+    required TResult Function(PageViewIndexChanged value) pageViewIndexChanged,
+    required TResult Function(PublishButtonPressed value) publishButtonPressed,
+    required TResult Function(SaveButtonPressed value) saveButtonPressed,
+    required TResult Function(SessionFetched value) sessionFetched,
+    required TResult Function(StoryChanged value) storyChanged,
+    required TResult Function(TitleChanged value) titleChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(AddCoverPressed value)? addCoverPressed,
+    TResult Function(ChapterOneExistenceChecked value)?
+        chapterOneExistenceChecked,
     TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
     TResult Function(GenreAdded value)? genreAdded,
     TResult Function(GenreRemoved value)? genreRemoved,
@@ -140,11 +206,19 @@ mixin _$TypewriterChapterEvent {
     TResult Function(LaunchAsNewChapter value)? launchAsNewChapter,
     TResult Function(LaunchWithID value)? launchWithID,
     TResult Function(LicenceSelected value)? licenceSelected,
+    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
+    TResult Function(PublishButtonPressed value)? publishButtonPressed,
+    TResult Function(SaveButtonPressed value)? saveButtonPressed,
+    TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(StoryChanged value)? storyChanged,
+    TResult Function(TitleChanged value)? titleChanged,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AddCoverPressed value)? addCoverPressed,
+    TResult Function(ChapterOneExistenceChecked value)?
+        chapterOneExistenceChecked,
     TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
     TResult Function(GenreAdded value)? genreAdded,
     TResult Function(GenreRemoved value)? genreRemoved,
@@ -153,6 +227,12 @@ mixin _$TypewriterChapterEvent {
     TResult Function(LaunchAsNewChapter value)? launchAsNewChapter,
     TResult Function(LaunchWithID value)? launchWithID,
     TResult Function(LicenceSelected value)? licenceSelected,
+    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
+    TResult Function(PublishButtonPressed value)? publishButtonPressed,
+    TResult Function(SaveButtonPressed value)? saveButtonPressed,
+    TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(StoryChanged value)? storyChanged,
+    TResult Function(TitleChanged value)? titleChanged,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -217,15 +297,22 @@ class _$AddCoverPressed implements AddCoverPressed {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() addCoverPressed,
+    required TResult Function() chapterOneExistenceChecked,
     required TResult Function() deleteButtonPressed,
     required TResult Function(String genre) genreAdded,
     required TResult Function(String genre) genreRemoved,
     required TResult Function(bool isNSFW) isNSFWChanged,
     required TResult Function(String language) languageSelected,
-    required TResult Function(Series series, Chapter? chapter)
+    required TResult Function(Series series, Chapter? previousChapter)
         launchAsNewChapter,
     required TResult Function(UniqueID id, Chapter? chapter) launchWithID,
     required TResult Function(String licence) licenceSelected,
+    required TResult Function(int index) pageViewIndexChanged,
+    required TResult Function() publishButtonPressed,
+    required TResult Function() saveButtonPressed,
+    required TResult Function() sessionFetched,
+    required TResult Function() storyChanged,
+    required TResult Function(String title) titleChanged,
   }) {
     return addCoverPressed();
   }
@@ -234,14 +321,22 @@ class _$AddCoverPressed implements AddCoverPressed {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? addCoverPressed,
+    TResult Function()? chapterOneExistenceChecked,
     TResult Function()? deleteButtonPressed,
     TResult Function(String genre)? genreAdded,
     TResult Function(String genre)? genreRemoved,
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
-    TResult Function(Series series, Chapter? chapter)? launchAsNewChapter,
+    TResult Function(Series series, Chapter? previousChapter)?
+        launchAsNewChapter,
     TResult Function(UniqueID id, Chapter? chapter)? launchWithID,
     TResult Function(String licence)? licenceSelected,
+    TResult Function(int index)? pageViewIndexChanged,
+    TResult Function()? publishButtonPressed,
+    TResult Function()? saveButtonPressed,
+    TResult Function()? sessionFetched,
+    TResult Function()? storyChanged,
+    TResult Function(String title)? titleChanged,
   }) {
     return addCoverPressed?.call();
   }
@@ -250,14 +345,22 @@ class _$AddCoverPressed implements AddCoverPressed {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? addCoverPressed,
+    TResult Function()? chapterOneExistenceChecked,
     TResult Function()? deleteButtonPressed,
     TResult Function(String genre)? genreAdded,
     TResult Function(String genre)? genreRemoved,
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
-    TResult Function(Series series, Chapter? chapter)? launchAsNewChapter,
+    TResult Function(Series series, Chapter? previousChapter)?
+        launchAsNewChapter,
     TResult Function(UniqueID id, Chapter? chapter)? launchWithID,
     TResult Function(String licence)? licenceSelected,
+    TResult Function(int index)? pageViewIndexChanged,
+    TResult Function()? publishButtonPressed,
+    TResult Function()? saveButtonPressed,
+    TResult Function()? sessionFetched,
+    TResult Function()? storyChanged,
+    TResult Function(String title)? titleChanged,
     required TResult orElse(),
   }) {
     if (addCoverPressed != null) {
@@ -270,6 +373,8 @@ class _$AddCoverPressed implements AddCoverPressed {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(AddCoverPressed value) addCoverPressed,
+    required TResult Function(ChapterOneExistenceChecked value)
+        chapterOneExistenceChecked,
     required TResult Function(DeleteButtonPressed value) deleteButtonPressed,
     required TResult Function(GenreAdded value) genreAdded,
     required TResult Function(GenreRemoved value) genreRemoved,
@@ -278,6 +383,12 @@ class _$AddCoverPressed implements AddCoverPressed {
     required TResult Function(LaunchAsNewChapter value) launchAsNewChapter,
     required TResult Function(LaunchWithID value) launchWithID,
     required TResult Function(LicenceSelected value) licenceSelected,
+    required TResult Function(PageViewIndexChanged value) pageViewIndexChanged,
+    required TResult Function(PublishButtonPressed value) publishButtonPressed,
+    required TResult Function(SaveButtonPressed value) saveButtonPressed,
+    required TResult Function(SessionFetched value) sessionFetched,
+    required TResult Function(StoryChanged value) storyChanged,
+    required TResult Function(TitleChanged value) titleChanged,
   }) {
     return addCoverPressed(this);
   }
@@ -286,6 +397,8 @@ class _$AddCoverPressed implements AddCoverPressed {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(AddCoverPressed value)? addCoverPressed,
+    TResult Function(ChapterOneExistenceChecked value)?
+        chapterOneExistenceChecked,
     TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
     TResult Function(GenreAdded value)? genreAdded,
     TResult Function(GenreRemoved value)? genreRemoved,
@@ -294,6 +407,12 @@ class _$AddCoverPressed implements AddCoverPressed {
     TResult Function(LaunchAsNewChapter value)? launchAsNewChapter,
     TResult Function(LaunchWithID value)? launchWithID,
     TResult Function(LicenceSelected value)? licenceSelected,
+    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
+    TResult Function(PublishButtonPressed value)? publishButtonPressed,
+    TResult Function(SaveButtonPressed value)? saveButtonPressed,
+    TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(StoryChanged value)? storyChanged,
+    TResult Function(TitleChanged value)? titleChanged,
   }) {
     return addCoverPressed?.call(this);
   }
@@ -302,6 +421,8 @@ class _$AddCoverPressed implements AddCoverPressed {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AddCoverPressed value)? addCoverPressed,
+    TResult Function(ChapterOneExistenceChecked value)?
+        chapterOneExistenceChecked,
     TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
     TResult Function(GenreAdded value)? genreAdded,
     TResult Function(GenreRemoved value)? genreRemoved,
@@ -310,6 +431,12 @@ class _$AddCoverPressed implements AddCoverPressed {
     TResult Function(LaunchAsNewChapter value)? launchAsNewChapter,
     TResult Function(LaunchWithID value)? launchWithID,
     TResult Function(LicenceSelected value)? licenceSelected,
+    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
+    TResult Function(PublishButtonPressed value)? publishButtonPressed,
+    TResult Function(SaveButtonPressed value)? saveButtonPressed,
+    TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(StoryChanged value)? storyChanged,
+    TResult Function(TitleChanged value)? titleChanged,
     required TResult orElse(),
   }) {
     if (addCoverPressed != null) {
@@ -321,6 +448,203 @@ class _$AddCoverPressed implements AddCoverPressed {
 
 abstract class AddCoverPressed implements TypewriterChapterEvent {
   const factory AddCoverPressed() = _$AddCoverPressed;
+}
+
+/// @nodoc
+abstract class $ChapterOneExistenceCheckedCopyWith<$Res> {
+  factory $ChapterOneExistenceCheckedCopyWith(ChapterOneExistenceChecked value,
+          $Res Function(ChapterOneExistenceChecked) then) =
+      _$ChapterOneExistenceCheckedCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$ChapterOneExistenceCheckedCopyWithImpl<$Res>
+    extends _$TypewriterChapterEventCopyWithImpl<$Res>
+    implements $ChapterOneExistenceCheckedCopyWith<$Res> {
+  _$ChapterOneExistenceCheckedCopyWithImpl(ChapterOneExistenceChecked _value,
+      $Res Function(ChapterOneExistenceChecked) _then)
+      : super(_value, (v) => _then(v as ChapterOneExistenceChecked));
+
+  @override
+  ChapterOneExistenceChecked get _value =>
+      super._value as ChapterOneExistenceChecked;
+}
+
+/// @nodoc
+
+class _$ChapterOneExistenceChecked implements ChapterOneExistenceChecked {
+  const _$ChapterOneExistenceChecked();
+
+  @override
+  String toString() {
+    return 'TypewriterChapterEvent.chapterOneExistenceChecked()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is ChapterOneExistenceChecked);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() addCoverPressed,
+    required TResult Function() chapterOneExistenceChecked,
+    required TResult Function() deleteButtonPressed,
+    required TResult Function(String genre) genreAdded,
+    required TResult Function(String genre) genreRemoved,
+    required TResult Function(bool isNSFW) isNSFWChanged,
+    required TResult Function(String language) languageSelected,
+    required TResult Function(Series series, Chapter? previousChapter)
+        launchAsNewChapter,
+    required TResult Function(UniqueID id, Chapter? chapter) launchWithID,
+    required TResult Function(String licence) licenceSelected,
+    required TResult Function(int index) pageViewIndexChanged,
+    required TResult Function() publishButtonPressed,
+    required TResult Function() saveButtonPressed,
+    required TResult Function() sessionFetched,
+    required TResult Function() storyChanged,
+    required TResult Function(String title) titleChanged,
+  }) {
+    return chapterOneExistenceChecked();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? addCoverPressed,
+    TResult Function()? chapterOneExistenceChecked,
+    TResult Function()? deleteButtonPressed,
+    TResult Function(String genre)? genreAdded,
+    TResult Function(String genre)? genreRemoved,
+    TResult Function(bool isNSFW)? isNSFWChanged,
+    TResult Function(String language)? languageSelected,
+    TResult Function(Series series, Chapter? previousChapter)?
+        launchAsNewChapter,
+    TResult Function(UniqueID id, Chapter? chapter)? launchWithID,
+    TResult Function(String licence)? licenceSelected,
+    TResult Function(int index)? pageViewIndexChanged,
+    TResult Function()? publishButtonPressed,
+    TResult Function()? saveButtonPressed,
+    TResult Function()? sessionFetched,
+    TResult Function()? storyChanged,
+    TResult Function(String title)? titleChanged,
+  }) {
+    return chapterOneExistenceChecked?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? addCoverPressed,
+    TResult Function()? chapterOneExistenceChecked,
+    TResult Function()? deleteButtonPressed,
+    TResult Function(String genre)? genreAdded,
+    TResult Function(String genre)? genreRemoved,
+    TResult Function(bool isNSFW)? isNSFWChanged,
+    TResult Function(String language)? languageSelected,
+    TResult Function(Series series, Chapter? previousChapter)?
+        launchAsNewChapter,
+    TResult Function(UniqueID id, Chapter? chapter)? launchWithID,
+    TResult Function(String licence)? licenceSelected,
+    TResult Function(int index)? pageViewIndexChanged,
+    TResult Function()? publishButtonPressed,
+    TResult Function()? saveButtonPressed,
+    TResult Function()? sessionFetched,
+    TResult Function()? storyChanged,
+    TResult Function(String title)? titleChanged,
+    required TResult orElse(),
+  }) {
+    if (chapterOneExistenceChecked != null) {
+      return chapterOneExistenceChecked();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(AddCoverPressed value) addCoverPressed,
+    required TResult Function(ChapterOneExistenceChecked value)
+        chapterOneExistenceChecked,
+    required TResult Function(DeleteButtonPressed value) deleteButtonPressed,
+    required TResult Function(GenreAdded value) genreAdded,
+    required TResult Function(GenreRemoved value) genreRemoved,
+    required TResult Function(IsNSFWChanged value) isNSFWChanged,
+    required TResult Function(LanguageSelected value) languageSelected,
+    required TResult Function(LaunchAsNewChapter value) launchAsNewChapter,
+    required TResult Function(LaunchWithID value) launchWithID,
+    required TResult Function(LicenceSelected value) licenceSelected,
+    required TResult Function(PageViewIndexChanged value) pageViewIndexChanged,
+    required TResult Function(PublishButtonPressed value) publishButtonPressed,
+    required TResult Function(SaveButtonPressed value) saveButtonPressed,
+    required TResult Function(SessionFetched value) sessionFetched,
+    required TResult Function(StoryChanged value) storyChanged,
+    required TResult Function(TitleChanged value) titleChanged,
+  }) {
+    return chapterOneExistenceChecked(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(AddCoverPressed value)? addCoverPressed,
+    TResult Function(ChapterOneExistenceChecked value)?
+        chapterOneExistenceChecked,
+    TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
+    TResult Function(GenreAdded value)? genreAdded,
+    TResult Function(GenreRemoved value)? genreRemoved,
+    TResult Function(IsNSFWChanged value)? isNSFWChanged,
+    TResult Function(LanguageSelected value)? languageSelected,
+    TResult Function(LaunchAsNewChapter value)? launchAsNewChapter,
+    TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(LicenceSelected value)? licenceSelected,
+    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
+    TResult Function(PublishButtonPressed value)? publishButtonPressed,
+    TResult Function(SaveButtonPressed value)? saveButtonPressed,
+    TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(StoryChanged value)? storyChanged,
+    TResult Function(TitleChanged value)? titleChanged,
+  }) {
+    return chapterOneExistenceChecked?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(AddCoverPressed value)? addCoverPressed,
+    TResult Function(ChapterOneExistenceChecked value)?
+        chapterOneExistenceChecked,
+    TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
+    TResult Function(GenreAdded value)? genreAdded,
+    TResult Function(GenreRemoved value)? genreRemoved,
+    TResult Function(IsNSFWChanged value)? isNSFWChanged,
+    TResult Function(LanguageSelected value)? languageSelected,
+    TResult Function(LaunchAsNewChapter value)? launchAsNewChapter,
+    TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(LicenceSelected value)? licenceSelected,
+    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
+    TResult Function(PublishButtonPressed value)? publishButtonPressed,
+    TResult Function(SaveButtonPressed value)? saveButtonPressed,
+    TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(StoryChanged value)? storyChanged,
+    TResult Function(TitleChanged value)? titleChanged,
+    required TResult orElse(),
+  }) {
+    if (chapterOneExistenceChecked != null) {
+      return chapterOneExistenceChecked(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ChapterOneExistenceChecked implements TypewriterChapterEvent {
+  const factory ChapterOneExistenceChecked() = _$ChapterOneExistenceChecked;
 }
 
 /// @nodoc
@@ -365,15 +689,22 @@ class _$DeleteButtonPressed implements DeleteButtonPressed {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() addCoverPressed,
+    required TResult Function() chapterOneExistenceChecked,
     required TResult Function() deleteButtonPressed,
     required TResult Function(String genre) genreAdded,
     required TResult Function(String genre) genreRemoved,
     required TResult Function(bool isNSFW) isNSFWChanged,
     required TResult Function(String language) languageSelected,
-    required TResult Function(Series series, Chapter? chapter)
+    required TResult Function(Series series, Chapter? previousChapter)
         launchAsNewChapter,
     required TResult Function(UniqueID id, Chapter? chapter) launchWithID,
     required TResult Function(String licence) licenceSelected,
+    required TResult Function(int index) pageViewIndexChanged,
+    required TResult Function() publishButtonPressed,
+    required TResult Function() saveButtonPressed,
+    required TResult Function() sessionFetched,
+    required TResult Function() storyChanged,
+    required TResult Function(String title) titleChanged,
   }) {
     return deleteButtonPressed();
   }
@@ -382,14 +713,22 @@ class _$DeleteButtonPressed implements DeleteButtonPressed {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? addCoverPressed,
+    TResult Function()? chapterOneExistenceChecked,
     TResult Function()? deleteButtonPressed,
     TResult Function(String genre)? genreAdded,
     TResult Function(String genre)? genreRemoved,
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
-    TResult Function(Series series, Chapter? chapter)? launchAsNewChapter,
+    TResult Function(Series series, Chapter? previousChapter)?
+        launchAsNewChapter,
     TResult Function(UniqueID id, Chapter? chapter)? launchWithID,
     TResult Function(String licence)? licenceSelected,
+    TResult Function(int index)? pageViewIndexChanged,
+    TResult Function()? publishButtonPressed,
+    TResult Function()? saveButtonPressed,
+    TResult Function()? sessionFetched,
+    TResult Function()? storyChanged,
+    TResult Function(String title)? titleChanged,
   }) {
     return deleteButtonPressed?.call();
   }
@@ -398,14 +737,22 @@ class _$DeleteButtonPressed implements DeleteButtonPressed {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? addCoverPressed,
+    TResult Function()? chapterOneExistenceChecked,
     TResult Function()? deleteButtonPressed,
     TResult Function(String genre)? genreAdded,
     TResult Function(String genre)? genreRemoved,
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
-    TResult Function(Series series, Chapter? chapter)? launchAsNewChapter,
+    TResult Function(Series series, Chapter? previousChapter)?
+        launchAsNewChapter,
     TResult Function(UniqueID id, Chapter? chapter)? launchWithID,
     TResult Function(String licence)? licenceSelected,
+    TResult Function(int index)? pageViewIndexChanged,
+    TResult Function()? publishButtonPressed,
+    TResult Function()? saveButtonPressed,
+    TResult Function()? sessionFetched,
+    TResult Function()? storyChanged,
+    TResult Function(String title)? titleChanged,
     required TResult orElse(),
   }) {
     if (deleteButtonPressed != null) {
@@ -418,6 +765,8 @@ class _$DeleteButtonPressed implements DeleteButtonPressed {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(AddCoverPressed value) addCoverPressed,
+    required TResult Function(ChapterOneExistenceChecked value)
+        chapterOneExistenceChecked,
     required TResult Function(DeleteButtonPressed value) deleteButtonPressed,
     required TResult Function(GenreAdded value) genreAdded,
     required TResult Function(GenreRemoved value) genreRemoved,
@@ -426,6 +775,12 @@ class _$DeleteButtonPressed implements DeleteButtonPressed {
     required TResult Function(LaunchAsNewChapter value) launchAsNewChapter,
     required TResult Function(LaunchWithID value) launchWithID,
     required TResult Function(LicenceSelected value) licenceSelected,
+    required TResult Function(PageViewIndexChanged value) pageViewIndexChanged,
+    required TResult Function(PublishButtonPressed value) publishButtonPressed,
+    required TResult Function(SaveButtonPressed value) saveButtonPressed,
+    required TResult Function(SessionFetched value) sessionFetched,
+    required TResult Function(StoryChanged value) storyChanged,
+    required TResult Function(TitleChanged value) titleChanged,
   }) {
     return deleteButtonPressed(this);
   }
@@ -434,6 +789,8 @@ class _$DeleteButtonPressed implements DeleteButtonPressed {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(AddCoverPressed value)? addCoverPressed,
+    TResult Function(ChapterOneExistenceChecked value)?
+        chapterOneExistenceChecked,
     TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
     TResult Function(GenreAdded value)? genreAdded,
     TResult Function(GenreRemoved value)? genreRemoved,
@@ -442,6 +799,12 @@ class _$DeleteButtonPressed implements DeleteButtonPressed {
     TResult Function(LaunchAsNewChapter value)? launchAsNewChapter,
     TResult Function(LaunchWithID value)? launchWithID,
     TResult Function(LicenceSelected value)? licenceSelected,
+    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
+    TResult Function(PublishButtonPressed value)? publishButtonPressed,
+    TResult Function(SaveButtonPressed value)? saveButtonPressed,
+    TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(StoryChanged value)? storyChanged,
+    TResult Function(TitleChanged value)? titleChanged,
   }) {
     return deleteButtonPressed?.call(this);
   }
@@ -450,6 +813,8 @@ class _$DeleteButtonPressed implements DeleteButtonPressed {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AddCoverPressed value)? addCoverPressed,
+    TResult Function(ChapterOneExistenceChecked value)?
+        chapterOneExistenceChecked,
     TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
     TResult Function(GenreAdded value)? genreAdded,
     TResult Function(GenreRemoved value)? genreRemoved,
@@ -458,6 +823,12 @@ class _$DeleteButtonPressed implements DeleteButtonPressed {
     TResult Function(LaunchAsNewChapter value)? launchAsNewChapter,
     TResult Function(LaunchWithID value)? launchWithID,
     TResult Function(LicenceSelected value)? licenceSelected,
+    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
+    TResult Function(PublishButtonPressed value)? publishButtonPressed,
+    TResult Function(SaveButtonPressed value)? saveButtonPressed,
+    TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(StoryChanged value)? storyChanged,
+    TResult Function(TitleChanged value)? titleChanged,
     required TResult orElse(),
   }) {
     if (deleteButtonPressed != null) {
@@ -536,15 +907,22 @@ class _$GenreAdded implements GenreAdded {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() addCoverPressed,
+    required TResult Function() chapterOneExistenceChecked,
     required TResult Function() deleteButtonPressed,
     required TResult Function(String genre) genreAdded,
     required TResult Function(String genre) genreRemoved,
     required TResult Function(bool isNSFW) isNSFWChanged,
     required TResult Function(String language) languageSelected,
-    required TResult Function(Series series, Chapter? chapter)
+    required TResult Function(Series series, Chapter? previousChapter)
         launchAsNewChapter,
     required TResult Function(UniqueID id, Chapter? chapter) launchWithID,
     required TResult Function(String licence) licenceSelected,
+    required TResult Function(int index) pageViewIndexChanged,
+    required TResult Function() publishButtonPressed,
+    required TResult Function() saveButtonPressed,
+    required TResult Function() sessionFetched,
+    required TResult Function() storyChanged,
+    required TResult Function(String title) titleChanged,
   }) {
     return genreAdded(genre);
   }
@@ -553,14 +931,22 @@ class _$GenreAdded implements GenreAdded {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? addCoverPressed,
+    TResult Function()? chapterOneExistenceChecked,
     TResult Function()? deleteButtonPressed,
     TResult Function(String genre)? genreAdded,
     TResult Function(String genre)? genreRemoved,
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
-    TResult Function(Series series, Chapter? chapter)? launchAsNewChapter,
+    TResult Function(Series series, Chapter? previousChapter)?
+        launchAsNewChapter,
     TResult Function(UniqueID id, Chapter? chapter)? launchWithID,
     TResult Function(String licence)? licenceSelected,
+    TResult Function(int index)? pageViewIndexChanged,
+    TResult Function()? publishButtonPressed,
+    TResult Function()? saveButtonPressed,
+    TResult Function()? sessionFetched,
+    TResult Function()? storyChanged,
+    TResult Function(String title)? titleChanged,
   }) {
     return genreAdded?.call(genre);
   }
@@ -569,14 +955,22 @@ class _$GenreAdded implements GenreAdded {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? addCoverPressed,
+    TResult Function()? chapterOneExistenceChecked,
     TResult Function()? deleteButtonPressed,
     TResult Function(String genre)? genreAdded,
     TResult Function(String genre)? genreRemoved,
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
-    TResult Function(Series series, Chapter? chapter)? launchAsNewChapter,
+    TResult Function(Series series, Chapter? previousChapter)?
+        launchAsNewChapter,
     TResult Function(UniqueID id, Chapter? chapter)? launchWithID,
     TResult Function(String licence)? licenceSelected,
+    TResult Function(int index)? pageViewIndexChanged,
+    TResult Function()? publishButtonPressed,
+    TResult Function()? saveButtonPressed,
+    TResult Function()? sessionFetched,
+    TResult Function()? storyChanged,
+    TResult Function(String title)? titleChanged,
     required TResult orElse(),
   }) {
     if (genreAdded != null) {
@@ -589,6 +983,8 @@ class _$GenreAdded implements GenreAdded {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(AddCoverPressed value) addCoverPressed,
+    required TResult Function(ChapterOneExistenceChecked value)
+        chapterOneExistenceChecked,
     required TResult Function(DeleteButtonPressed value) deleteButtonPressed,
     required TResult Function(GenreAdded value) genreAdded,
     required TResult Function(GenreRemoved value) genreRemoved,
@@ -597,6 +993,12 @@ class _$GenreAdded implements GenreAdded {
     required TResult Function(LaunchAsNewChapter value) launchAsNewChapter,
     required TResult Function(LaunchWithID value) launchWithID,
     required TResult Function(LicenceSelected value) licenceSelected,
+    required TResult Function(PageViewIndexChanged value) pageViewIndexChanged,
+    required TResult Function(PublishButtonPressed value) publishButtonPressed,
+    required TResult Function(SaveButtonPressed value) saveButtonPressed,
+    required TResult Function(SessionFetched value) sessionFetched,
+    required TResult Function(StoryChanged value) storyChanged,
+    required TResult Function(TitleChanged value) titleChanged,
   }) {
     return genreAdded(this);
   }
@@ -605,6 +1007,8 @@ class _$GenreAdded implements GenreAdded {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(AddCoverPressed value)? addCoverPressed,
+    TResult Function(ChapterOneExistenceChecked value)?
+        chapterOneExistenceChecked,
     TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
     TResult Function(GenreAdded value)? genreAdded,
     TResult Function(GenreRemoved value)? genreRemoved,
@@ -613,6 +1017,12 @@ class _$GenreAdded implements GenreAdded {
     TResult Function(LaunchAsNewChapter value)? launchAsNewChapter,
     TResult Function(LaunchWithID value)? launchWithID,
     TResult Function(LicenceSelected value)? licenceSelected,
+    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
+    TResult Function(PublishButtonPressed value)? publishButtonPressed,
+    TResult Function(SaveButtonPressed value)? saveButtonPressed,
+    TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(StoryChanged value)? storyChanged,
+    TResult Function(TitleChanged value)? titleChanged,
   }) {
     return genreAdded?.call(this);
   }
@@ -621,6 +1031,8 @@ class _$GenreAdded implements GenreAdded {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AddCoverPressed value)? addCoverPressed,
+    TResult Function(ChapterOneExistenceChecked value)?
+        chapterOneExistenceChecked,
     TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
     TResult Function(GenreAdded value)? genreAdded,
     TResult Function(GenreRemoved value)? genreRemoved,
@@ -629,6 +1041,12 @@ class _$GenreAdded implements GenreAdded {
     TResult Function(LaunchAsNewChapter value)? launchAsNewChapter,
     TResult Function(LaunchWithID value)? launchWithID,
     TResult Function(LicenceSelected value)? licenceSelected,
+    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
+    TResult Function(PublishButtonPressed value)? publishButtonPressed,
+    TResult Function(SaveButtonPressed value)? saveButtonPressed,
+    TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(StoryChanged value)? storyChanged,
+    TResult Function(TitleChanged value)? titleChanged,
     required TResult orElse(),
   }) {
     if (genreAdded != null) {
@@ -713,15 +1131,22 @@ class _$GenreRemoved implements GenreRemoved {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() addCoverPressed,
+    required TResult Function() chapterOneExistenceChecked,
     required TResult Function() deleteButtonPressed,
     required TResult Function(String genre) genreAdded,
     required TResult Function(String genre) genreRemoved,
     required TResult Function(bool isNSFW) isNSFWChanged,
     required TResult Function(String language) languageSelected,
-    required TResult Function(Series series, Chapter? chapter)
+    required TResult Function(Series series, Chapter? previousChapter)
         launchAsNewChapter,
     required TResult Function(UniqueID id, Chapter? chapter) launchWithID,
     required TResult Function(String licence) licenceSelected,
+    required TResult Function(int index) pageViewIndexChanged,
+    required TResult Function() publishButtonPressed,
+    required TResult Function() saveButtonPressed,
+    required TResult Function() sessionFetched,
+    required TResult Function() storyChanged,
+    required TResult Function(String title) titleChanged,
   }) {
     return genreRemoved(genre);
   }
@@ -730,14 +1155,22 @@ class _$GenreRemoved implements GenreRemoved {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? addCoverPressed,
+    TResult Function()? chapterOneExistenceChecked,
     TResult Function()? deleteButtonPressed,
     TResult Function(String genre)? genreAdded,
     TResult Function(String genre)? genreRemoved,
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
-    TResult Function(Series series, Chapter? chapter)? launchAsNewChapter,
+    TResult Function(Series series, Chapter? previousChapter)?
+        launchAsNewChapter,
     TResult Function(UniqueID id, Chapter? chapter)? launchWithID,
     TResult Function(String licence)? licenceSelected,
+    TResult Function(int index)? pageViewIndexChanged,
+    TResult Function()? publishButtonPressed,
+    TResult Function()? saveButtonPressed,
+    TResult Function()? sessionFetched,
+    TResult Function()? storyChanged,
+    TResult Function(String title)? titleChanged,
   }) {
     return genreRemoved?.call(genre);
   }
@@ -746,14 +1179,22 @@ class _$GenreRemoved implements GenreRemoved {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? addCoverPressed,
+    TResult Function()? chapterOneExistenceChecked,
     TResult Function()? deleteButtonPressed,
     TResult Function(String genre)? genreAdded,
     TResult Function(String genre)? genreRemoved,
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
-    TResult Function(Series series, Chapter? chapter)? launchAsNewChapter,
+    TResult Function(Series series, Chapter? previousChapter)?
+        launchAsNewChapter,
     TResult Function(UniqueID id, Chapter? chapter)? launchWithID,
     TResult Function(String licence)? licenceSelected,
+    TResult Function(int index)? pageViewIndexChanged,
+    TResult Function()? publishButtonPressed,
+    TResult Function()? saveButtonPressed,
+    TResult Function()? sessionFetched,
+    TResult Function()? storyChanged,
+    TResult Function(String title)? titleChanged,
     required TResult orElse(),
   }) {
     if (genreRemoved != null) {
@@ -766,6 +1207,8 @@ class _$GenreRemoved implements GenreRemoved {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(AddCoverPressed value) addCoverPressed,
+    required TResult Function(ChapterOneExistenceChecked value)
+        chapterOneExistenceChecked,
     required TResult Function(DeleteButtonPressed value) deleteButtonPressed,
     required TResult Function(GenreAdded value) genreAdded,
     required TResult Function(GenreRemoved value) genreRemoved,
@@ -774,6 +1217,12 @@ class _$GenreRemoved implements GenreRemoved {
     required TResult Function(LaunchAsNewChapter value) launchAsNewChapter,
     required TResult Function(LaunchWithID value) launchWithID,
     required TResult Function(LicenceSelected value) licenceSelected,
+    required TResult Function(PageViewIndexChanged value) pageViewIndexChanged,
+    required TResult Function(PublishButtonPressed value) publishButtonPressed,
+    required TResult Function(SaveButtonPressed value) saveButtonPressed,
+    required TResult Function(SessionFetched value) sessionFetched,
+    required TResult Function(StoryChanged value) storyChanged,
+    required TResult Function(TitleChanged value) titleChanged,
   }) {
     return genreRemoved(this);
   }
@@ -782,6 +1231,8 @@ class _$GenreRemoved implements GenreRemoved {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(AddCoverPressed value)? addCoverPressed,
+    TResult Function(ChapterOneExistenceChecked value)?
+        chapterOneExistenceChecked,
     TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
     TResult Function(GenreAdded value)? genreAdded,
     TResult Function(GenreRemoved value)? genreRemoved,
@@ -790,6 +1241,12 @@ class _$GenreRemoved implements GenreRemoved {
     TResult Function(LaunchAsNewChapter value)? launchAsNewChapter,
     TResult Function(LaunchWithID value)? launchWithID,
     TResult Function(LicenceSelected value)? licenceSelected,
+    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
+    TResult Function(PublishButtonPressed value)? publishButtonPressed,
+    TResult Function(SaveButtonPressed value)? saveButtonPressed,
+    TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(StoryChanged value)? storyChanged,
+    TResult Function(TitleChanged value)? titleChanged,
   }) {
     return genreRemoved?.call(this);
   }
@@ -798,6 +1255,8 @@ class _$GenreRemoved implements GenreRemoved {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AddCoverPressed value)? addCoverPressed,
+    TResult Function(ChapterOneExistenceChecked value)?
+        chapterOneExistenceChecked,
     TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
     TResult Function(GenreAdded value)? genreAdded,
     TResult Function(GenreRemoved value)? genreRemoved,
@@ -806,6 +1265,12 @@ class _$GenreRemoved implements GenreRemoved {
     TResult Function(LaunchAsNewChapter value)? launchAsNewChapter,
     TResult Function(LaunchWithID value)? launchWithID,
     TResult Function(LicenceSelected value)? licenceSelected,
+    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
+    TResult Function(PublishButtonPressed value)? publishButtonPressed,
+    TResult Function(SaveButtonPressed value)? saveButtonPressed,
+    TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(StoryChanged value)? storyChanged,
+    TResult Function(TitleChanged value)? titleChanged,
     required TResult orElse(),
   }) {
     if (genreRemoved != null) {
@@ -890,15 +1355,22 @@ class _$IsNSFWChanged implements IsNSFWChanged {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() addCoverPressed,
+    required TResult Function() chapterOneExistenceChecked,
     required TResult Function() deleteButtonPressed,
     required TResult Function(String genre) genreAdded,
     required TResult Function(String genre) genreRemoved,
     required TResult Function(bool isNSFW) isNSFWChanged,
     required TResult Function(String language) languageSelected,
-    required TResult Function(Series series, Chapter? chapter)
+    required TResult Function(Series series, Chapter? previousChapter)
         launchAsNewChapter,
     required TResult Function(UniqueID id, Chapter? chapter) launchWithID,
     required TResult Function(String licence) licenceSelected,
+    required TResult Function(int index) pageViewIndexChanged,
+    required TResult Function() publishButtonPressed,
+    required TResult Function() saveButtonPressed,
+    required TResult Function() sessionFetched,
+    required TResult Function() storyChanged,
+    required TResult Function(String title) titleChanged,
   }) {
     return isNSFWChanged(isNSFW);
   }
@@ -907,14 +1379,22 @@ class _$IsNSFWChanged implements IsNSFWChanged {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? addCoverPressed,
+    TResult Function()? chapterOneExistenceChecked,
     TResult Function()? deleteButtonPressed,
     TResult Function(String genre)? genreAdded,
     TResult Function(String genre)? genreRemoved,
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
-    TResult Function(Series series, Chapter? chapter)? launchAsNewChapter,
+    TResult Function(Series series, Chapter? previousChapter)?
+        launchAsNewChapter,
     TResult Function(UniqueID id, Chapter? chapter)? launchWithID,
     TResult Function(String licence)? licenceSelected,
+    TResult Function(int index)? pageViewIndexChanged,
+    TResult Function()? publishButtonPressed,
+    TResult Function()? saveButtonPressed,
+    TResult Function()? sessionFetched,
+    TResult Function()? storyChanged,
+    TResult Function(String title)? titleChanged,
   }) {
     return isNSFWChanged?.call(isNSFW);
   }
@@ -923,14 +1403,22 @@ class _$IsNSFWChanged implements IsNSFWChanged {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? addCoverPressed,
+    TResult Function()? chapterOneExistenceChecked,
     TResult Function()? deleteButtonPressed,
     TResult Function(String genre)? genreAdded,
     TResult Function(String genre)? genreRemoved,
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
-    TResult Function(Series series, Chapter? chapter)? launchAsNewChapter,
+    TResult Function(Series series, Chapter? previousChapter)?
+        launchAsNewChapter,
     TResult Function(UniqueID id, Chapter? chapter)? launchWithID,
     TResult Function(String licence)? licenceSelected,
+    TResult Function(int index)? pageViewIndexChanged,
+    TResult Function()? publishButtonPressed,
+    TResult Function()? saveButtonPressed,
+    TResult Function()? sessionFetched,
+    TResult Function()? storyChanged,
+    TResult Function(String title)? titleChanged,
     required TResult orElse(),
   }) {
     if (isNSFWChanged != null) {
@@ -943,6 +1431,8 @@ class _$IsNSFWChanged implements IsNSFWChanged {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(AddCoverPressed value) addCoverPressed,
+    required TResult Function(ChapterOneExistenceChecked value)
+        chapterOneExistenceChecked,
     required TResult Function(DeleteButtonPressed value) deleteButtonPressed,
     required TResult Function(GenreAdded value) genreAdded,
     required TResult Function(GenreRemoved value) genreRemoved,
@@ -951,6 +1441,12 @@ class _$IsNSFWChanged implements IsNSFWChanged {
     required TResult Function(LaunchAsNewChapter value) launchAsNewChapter,
     required TResult Function(LaunchWithID value) launchWithID,
     required TResult Function(LicenceSelected value) licenceSelected,
+    required TResult Function(PageViewIndexChanged value) pageViewIndexChanged,
+    required TResult Function(PublishButtonPressed value) publishButtonPressed,
+    required TResult Function(SaveButtonPressed value) saveButtonPressed,
+    required TResult Function(SessionFetched value) sessionFetched,
+    required TResult Function(StoryChanged value) storyChanged,
+    required TResult Function(TitleChanged value) titleChanged,
   }) {
     return isNSFWChanged(this);
   }
@@ -959,6 +1455,8 @@ class _$IsNSFWChanged implements IsNSFWChanged {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(AddCoverPressed value)? addCoverPressed,
+    TResult Function(ChapterOneExistenceChecked value)?
+        chapterOneExistenceChecked,
     TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
     TResult Function(GenreAdded value)? genreAdded,
     TResult Function(GenreRemoved value)? genreRemoved,
@@ -967,6 +1465,12 @@ class _$IsNSFWChanged implements IsNSFWChanged {
     TResult Function(LaunchAsNewChapter value)? launchAsNewChapter,
     TResult Function(LaunchWithID value)? launchWithID,
     TResult Function(LicenceSelected value)? licenceSelected,
+    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
+    TResult Function(PublishButtonPressed value)? publishButtonPressed,
+    TResult Function(SaveButtonPressed value)? saveButtonPressed,
+    TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(StoryChanged value)? storyChanged,
+    TResult Function(TitleChanged value)? titleChanged,
   }) {
     return isNSFWChanged?.call(this);
   }
@@ -975,6 +1479,8 @@ class _$IsNSFWChanged implements IsNSFWChanged {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AddCoverPressed value)? addCoverPressed,
+    TResult Function(ChapterOneExistenceChecked value)?
+        chapterOneExistenceChecked,
     TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
     TResult Function(GenreAdded value)? genreAdded,
     TResult Function(GenreRemoved value)? genreRemoved,
@@ -983,6 +1489,12 @@ class _$IsNSFWChanged implements IsNSFWChanged {
     TResult Function(LaunchAsNewChapter value)? launchAsNewChapter,
     TResult Function(LaunchWithID value)? launchWithID,
     TResult Function(LicenceSelected value)? licenceSelected,
+    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
+    TResult Function(PublishButtonPressed value)? publishButtonPressed,
+    TResult Function(SaveButtonPressed value)? saveButtonPressed,
+    TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(StoryChanged value)? storyChanged,
+    TResult Function(TitleChanged value)? titleChanged,
     required TResult orElse(),
   }) {
     if (isNSFWChanged != null) {
@@ -1067,15 +1579,22 @@ class _$LanguageSelected implements LanguageSelected {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() addCoverPressed,
+    required TResult Function() chapterOneExistenceChecked,
     required TResult Function() deleteButtonPressed,
     required TResult Function(String genre) genreAdded,
     required TResult Function(String genre) genreRemoved,
     required TResult Function(bool isNSFW) isNSFWChanged,
     required TResult Function(String language) languageSelected,
-    required TResult Function(Series series, Chapter? chapter)
+    required TResult Function(Series series, Chapter? previousChapter)
         launchAsNewChapter,
     required TResult Function(UniqueID id, Chapter? chapter) launchWithID,
     required TResult Function(String licence) licenceSelected,
+    required TResult Function(int index) pageViewIndexChanged,
+    required TResult Function() publishButtonPressed,
+    required TResult Function() saveButtonPressed,
+    required TResult Function() sessionFetched,
+    required TResult Function() storyChanged,
+    required TResult Function(String title) titleChanged,
   }) {
     return languageSelected(language);
   }
@@ -1084,14 +1603,22 @@ class _$LanguageSelected implements LanguageSelected {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? addCoverPressed,
+    TResult Function()? chapterOneExistenceChecked,
     TResult Function()? deleteButtonPressed,
     TResult Function(String genre)? genreAdded,
     TResult Function(String genre)? genreRemoved,
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
-    TResult Function(Series series, Chapter? chapter)? launchAsNewChapter,
+    TResult Function(Series series, Chapter? previousChapter)?
+        launchAsNewChapter,
     TResult Function(UniqueID id, Chapter? chapter)? launchWithID,
     TResult Function(String licence)? licenceSelected,
+    TResult Function(int index)? pageViewIndexChanged,
+    TResult Function()? publishButtonPressed,
+    TResult Function()? saveButtonPressed,
+    TResult Function()? sessionFetched,
+    TResult Function()? storyChanged,
+    TResult Function(String title)? titleChanged,
   }) {
     return languageSelected?.call(language);
   }
@@ -1100,14 +1627,22 @@ class _$LanguageSelected implements LanguageSelected {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? addCoverPressed,
+    TResult Function()? chapterOneExistenceChecked,
     TResult Function()? deleteButtonPressed,
     TResult Function(String genre)? genreAdded,
     TResult Function(String genre)? genreRemoved,
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
-    TResult Function(Series series, Chapter? chapter)? launchAsNewChapter,
+    TResult Function(Series series, Chapter? previousChapter)?
+        launchAsNewChapter,
     TResult Function(UniqueID id, Chapter? chapter)? launchWithID,
     TResult Function(String licence)? licenceSelected,
+    TResult Function(int index)? pageViewIndexChanged,
+    TResult Function()? publishButtonPressed,
+    TResult Function()? saveButtonPressed,
+    TResult Function()? sessionFetched,
+    TResult Function()? storyChanged,
+    TResult Function(String title)? titleChanged,
     required TResult orElse(),
   }) {
     if (languageSelected != null) {
@@ -1120,6 +1655,8 @@ class _$LanguageSelected implements LanguageSelected {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(AddCoverPressed value) addCoverPressed,
+    required TResult Function(ChapterOneExistenceChecked value)
+        chapterOneExistenceChecked,
     required TResult Function(DeleteButtonPressed value) deleteButtonPressed,
     required TResult Function(GenreAdded value) genreAdded,
     required TResult Function(GenreRemoved value) genreRemoved,
@@ -1128,6 +1665,12 @@ class _$LanguageSelected implements LanguageSelected {
     required TResult Function(LaunchAsNewChapter value) launchAsNewChapter,
     required TResult Function(LaunchWithID value) launchWithID,
     required TResult Function(LicenceSelected value) licenceSelected,
+    required TResult Function(PageViewIndexChanged value) pageViewIndexChanged,
+    required TResult Function(PublishButtonPressed value) publishButtonPressed,
+    required TResult Function(SaveButtonPressed value) saveButtonPressed,
+    required TResult Function(SessionFetched value) sessionFetched,
+    required TResult Function(StoryChanged value) storyChanged,
+    required TResult Function(TitleChanged value) titleChanged,
   }) {
     return languageSelected(this);
   }
@@ -1136,6 +1679,8 @@ class _$LanguageSelected implements LanguageSelected {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(AddCoverPressed value)? addCoverPressed,
+    TResult Function(ChapterOneExistenceChecked value)?
+        chapterOneExistenceChecked,
     TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
     TResult Function(GenreAdded value)? genreAdded,
     TResult Function(GenreRemoved value)? genreRemoved,
@@ -1144,6 +1689,12 @@ class _$LanguageSelected implements LanguageSelected {
     TResult Function(LaunchAsNewChapter value)? launchAsNewChapter,
     TResult Function(LaunchWithID value)? launchWithID,
     TResult Function(LicenceSelected value)? licenceSelected,
+    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
+    TResult Function(PublishButtonPressed value)? publishButtonPressed,
+    TResult Function(SaveButtonPressed value)? saveButtonPressed,
+    TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(StoryChanged value)? storyChanged,
+    TResult Function(TitleChanged value)? titleChanged,
   }) {
     return languageSelected?.call(this);
   }
@@ -1152,6 +1703,8 @@ class _$LanguageSelected implements LanguageSelected {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AddCoverPressed value)? addCoverPressed,
+    TResult Function(ChapterOneExistenceChecked value)?
+        chapterOneExistenceChecked,
     TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
     TResult Function(GenreAdded value)? genreAdded,
     TResult Function(GenreRemoved value)? genreRemoved,
@@ -1160,6 +1713,12 @@ class _$LanguageSelected implements LanguageSelected {
     TResult Function(LaunchAsNewChapter value)? launchAsNewChapter,
     TResult Function(LaunchWithID value)? launchWithID,
     TResult Function(LicenceSelected value)? licenceSelected,
+    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
+    TResult Function(PublishButtonPressed value)? publishButtonPressed,
+    TResult Function(SaveButtonPressed value)? saveButtonPressed,
+    TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(StoryChanged value)? storyChanged,
+    TResult Function(TitleChanged value)? titleChanged,
     required TResult orElse(),
   }) {
     if (languageSelected != null) {
@@ -1183,10 +1742,10 @@ abstract class $LaunchAsNewChapterCopyWith<$Res> {
   factory $LaunchAsNewChapterCopyWith(
           LaunchAsNewChapter value, $Res Function(LaunchAsNewChapter) then) =
       _$LaunchAsNewChapterCopyWithImpl<$Res>;
-  $Res call({Series series, Chapter? chapter});
+  $Res call({Series series, Chapter? previousChapter});
 
   $SeriesCopyWith<$Res> get series;
-  $ChapterCopyWith<$Res>? get chapter;
+  $ChapterCopyWith<$Res>? get previousChapter;
 }
 
 /// @nodoc
@@ -1203,16 +1762,16 @@ class _$LaunchAsNewChapterCopyWithImpl<$Res>
   @override
   $Res call({
     Object? series = freezed,
-    Object? chapter = freezed,
+    Object? previousChapter = freezed,
   }) {
     return _then(LaunchAsNewChapter(
       series == freezed
           ? _value.series
           : series // ignore: cast_nullable_to_non_nullable
               as Series,
-      chapter: chapter == freezed
-          ? _value.chapter
-          : chapter // ignore: cast_nullable_to_non_nullable
+      previousChapter: previousChapter == freezed
+          ? _value.previousChapter
+          : previousChapter // ignore: cast_nullable_to_non_nullable
               as Chapter?,
     ));
   }
@@ -1225,13 +1784,13 @@ class _$LaunchAsNewChapterCopyWithImpl<$Res>
   }
 
   @override
-  $ChapterCopyWith<$Res>? get chapter {
-    if (_value.chapter == null) {
+  $ChapterCopyWith<$Res>? get previousChapter {
+    if (_value.previousChapter == null) {
       return null;
     }
 
-    return $ChapterCopyWith<$Res>(_value.chapter!, (value) {
-      return _then(_value.copyWith(chapter: value));
+    return $ChapterCopyWith<$Res>(_value.previousChapter!, (value) {
+      return _then(_value.copyWith(previousChapter: value));
     });
   }
 }
@@ -1239,16 +1798,16 @@ class _$LaunchAsNewChapterCopyWithImpl<$Res>
 /// @nodoc
 
 class _$LaunchAsNewChapter implements LaunchAsNewChapter {
-  const _$LaunchAsNewChapter(this.series, {this.chapter});
+  const _$LaunchAsNewChapter(this.series, {this.previousChapter});
 
   @override
   final Series series;
   @override
-  final Chapter? chapter;
+  final Chapter? previousChapter;
 
   @override
   String toString() {
-    return 'TypewriterChapterEvent.launchAsNewChapter(series: $series, chapter: $chapter)';
+    return 'TypewriterChapterEvent.launchAsNewChapter(series: $series, previousChapter: $previousChapter)';
   }
 
   @override
@@ -1257,14 +1816,15 @@ class _$LaunchAsNewChapter implements LaunchAsNewChapter {
         (other.runtimeType == runtimeType &&
             other is LaunchAsNewChapter &&
             const DeepCollectionEquality().equals(other.series, series) &&
-            const DeepCollectionEquality().equals(other.chapter, chapter));
+            const DeepCollectionEquality()
+                .equals(other.previousChapter, previousChapter));
   }
 
   @override
   int get hashCode => Object.hash(
       runtimeType,
       const DeepCollectionEquality().hash(series),
-      const DeepCollectionEquality().hash(chapter));
+      const DeepCollectionEquality().hash(previousChapter));
 
   @JsonKey(ignore: true)
   @override
@@ -1275,51 +1835,74 @@ class _$LaunchAsNewChapter implements LaunchAsNewChapter {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() addCoverPressed,
+    required TResult Function() chapterOneExistenceChecked,
     required TResult Function() deleteButtonPressed,
     required TResult Function(String genre) genreAdded,
     required TResult Function(String genre) genreRemoved,
     required TResult Function(bool isNSFW) isNSFWChanged,
     required TResult Function(String language) languageSelected,
-    required TResult Function(Series series, Chapter? chapter)
+    required TResult Function(Series series, Chapter? previousChapter)
         launchAsNewChapter,
     required TResult Function(UniqueID id, Chapter? chapter) launchWithID,
     required TResult Function(String licence) licenceSelected,
+    required TResult Function(int index) pageViewIndexChanged,
+    required TResult Function() publishButtonPressed,
+    required TResult Function() saveButtonPressed,
+    required TResult Function() sessionFetched,
+    required TResult Function() storyChanged,
+    required TResult Function(String title) titleChanged,
   }) {
-    return launchAsNewChapter(series, chapter);
+    return launchAsNewChapter(series, previousChapter);
   }
 
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? addCoverPressed,
+    TResult Function()? chapterOneExistenceChecked,
     TResult Function()? deleteButtonPressed,
     TResult Function(String genre)? genreAdded,
     TResult Function(String genre)? genreRemoved,
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
-    TResult Function(Series series, Chapter? chapter)? launchAsNewChapter,
+    TResult Function(Series series, Chapter? previousChapter)?
+        launchAsNewChapter,
     TResult Function(UniqueID id, Chapter? chapter)? launchWithID,
     TResult Function(String licence)? licenceSelected,
+    TResult Function(int index)? pageViewIndexChanged,
+    TResult Function()? publishButtonPressed,
+    TResult Function()? saveButtonPressed,
+    TResult Function()? sessionFetched,
+    TResult Function()? storyChanged,
+    TResult Function(String title)? titleChanged,
   }) {
-    return launchAsNewChapter?.call(series, chapter);
+    return launchAsNewChapter?.call(series, previousChapter);
   }
 
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? addCoverPressed,
+    TResult Function()? chapterOneExistenceChecked,
     TResult Function()? deleteButtonPressed,
     TResult Function(String genre)? genreAdded,
     TResult Function(String genre)? genreRemoved,
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
-    TResult Function(Series series, Chapter? chapter)? launchAsNewChapter,
+    TResult Function(Series series, Chapter? previousChapter)?
+        launchAsNewChapter,
     TResult Function(UniqueID id, Chapter? chapter)? launchWithID,
     TResult Function(String licence)? licenceSelected,
+    TResult Function(int index)? pageViewIndexChanged,
+    TResult Function()? publishButtonPressed,
+    TResult Function()? saveButtonPressed,
+    TResult Function()? sessionFetched,
+    TResult Function()? storyChanged,
+    TResult Function(String title)? titleChanged,
     required TResult orElse(),
   }) {
     if (launchAsNewChapter != null) {
-      return launchAsNewChapter(series, chapter);
+      return launchAsNewChapter(series, previousChapter);
     }
     return orElse();
   }
@@ -1328,6 +1911,8 @@ class _$LaunchAsNewChapter implements LaunchAsNewChapter {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(AddCoverPressed value) addCoverPressed,
+    required TResult Function(ChapterOneExistenceChecked value)
+        chapterOneExistenceChecked,
     required TResult Function(DeleteButtonPressed value) deleteButtonPressed,
     required TResult Function(GenreAdded value) genreAdded,
     required TResult Function(GenreRemoved value) genreRemoved,
@@ -1336,6 +1921,12 @@ class _$LaunchAsNewChapter implements LaunchAsNewChapter {
     required TResult Function(LaunchAsNewChapter value) launchAsNewChapter,
     required TResult Function(LaunchWithID value) launchWithID,
     required TResult Function(LicenceSelected value) licenceSelected,
+    required TResult Function(PageViewIndexChanged value) pageViewIndexChanged,
+    required TResult Function(PublishButtonPressed value) publishButtonPressed,
+    required TResult Function(SaveButtonPressed value) saveButtonPressed,
+    required TResult Function(SessionFetched value) sessionFetched,
+    required TResult Function(StoryChanged value) storyChanged,
+    required TResult Function(TitleChanged value) titleChanged,
   }) {
     return launchAsNewChapter(this);
   }
@@ -1344,6 +1935,8 @@ class _$LaunchAsNewChapter implements LaunchAsNewChapter {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(AddCoverPressed value)? addCoverPressed,
+    TResult Function(ChapterOneExistenceChecked value)?
+        chapterOneExistenceChecked,
     TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
     TResult Function(GenreAdded value)? genreAdded,
     TResult Function(GenreRemoved value)? genreRemoved,
@@ -1352,6 +1945,12 @@ class _$LaunchAsNewChapter implements LaunchAsNewChapter {
     TResult Function(LaunchAsNewChapter value)? launchAsNewChapter,
     TResult Function(LaunchWithID value)? launchWithID,
     TResult Function(LicenceSelected value)? licenceSelected,
+    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
+    TResult Function(PublishButtonPressed value)? publishButtonPressed,
+    TResult Function(SaveButtonPressed value)? saveButtonPressed,
+    TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(StoryChanged value)? storyChanged,
+    TResult Function(TitleChanged value)? titleChanged,
   }) {
     return launchAsNewChapter?.call(this);
   }
@@ -1360,6 +1959,8 @@ class _$LaunchAsNewChapter implements LaunchAsNewChapter {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AddCoverPressed value)? addCoverPressed,
+    TResult Function(ChapterOneExistenceChecked value)?
+        chapterOneExistenceChecked,
     TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
     TResult Function(GenreAdded value)? genreAdded,
     TResult Function(GenreRemoved value)? genreRemoved,
@@ -1368,6 +1969,12 @@ class _$LaunchAsNewChapter implements LaunchAsNewChapter {
     TResult Function(LaunchAsNewChapter value)? launchAsNewChapter,
     TResult Function(LaunchWithID value)? launchWithID,
     TResult Function(LicenceSelected value)? licenceSelected,
+    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
+    TResult Function(PublishButtonPressed value)? publishButtonPressed,
+    TResult Function(SaveButtonPressed value)? saveButtonPressed,
+    TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(StoryChanged value)? storyChanged,
+    TResult Function(TitleChanged value)? titleChanged,
     required TResult orElse(),
   }) {
     if (launchAsNewChapter != null) {
@@ -1378,11 +1985,11 @@ class _$LaunchAsNewChapter implements LaunchAsNewChapter {
 }
 
 abstract class LaunchAsNewChapter implements TypewriterChapterEvent {
-  const factory LaunchAsNewChapter(Series series, {Chapter? chapter}) =
+  const factory LaunchAsNewChapter(Series series, {Chapter? previousChapter}) =
       _$LaunchAsNewChapter;
 
   Series get series;
-  Chapter? get chapter;
+  Chapter? get previousChapter;
   @JsonKey(ignore: true)
   $LaunchAsNewChapterCopyWith<LaunchAsNewChapter> get copyWith =>
       throw _privateConstructorUsedError;
@@ -1477,15 +2084,22 @@ class _$LaunchWithID implements LaunchWithID {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() addCoverPressed,
+    required TResult Function() chapterOneExistenceChecked,
     required TResult Function() deleteButtonPressed,
     required TResult Function(String genre) genreAdded,
     required TResult Function(String genre) genreRemoved,
     required TResult Function(bool isNSFW) isNSFWChanged,
     required TResult Function(String language) languageSelected,
-    required TResult Function(Series series, Chapter? chapter)
+    required TResult Function(Series series, Chapter? previousChapter)
         launchAsNewChapter,
     required TResult Function(UniqueID id, Chapter? chapter) launchWithID,
     required TResult Function(String licence) licenceSelected,
+    required TResult Function(int index) pageViewIndexChanged,
+    required TResult Function() publishButtonPressed,
+    required TResult Function() saveButtonPressed,
+    required TResult Function() sessionFetched,
+    required TResult Function() storyChanged,
+    required TResult Function(String title) titleChanged,
   }) {
     return launchWithID(id, chapter);
   }
@@ -1494,14 +2108,22 @@ class _$LaunchWithID implements LaunchWithID {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? addCoverPressed,
+    TResult Function()? chapterOneExistenceChecked,
     TResult Function()? deleteButtonPressed,
     TResult Function(String genre)? genreAdded,
     TResult Function(String genre)? genreRemoved,
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
-    TResult Function(Series series, Chapter? chapter)? launchAsNewChapter,
+    TResult Function(Series series, Chapter? previousChapter)?
+        launchAsNewChapter,
     TResult Function(UniqueID id, Chapter? chapter)? launchWithID,
     TResult Function(String licence)? licenceSelected,
+    TResult Function(int index)? pageViewIndexChanged,
+    TResult Function()? publishButtonPressed,
+    TResult Function()? saveButtonPressed,
+    TResult Function()? sessionFetched,
+    TResult Function()? storyChanged,
+    TResult Function(String title)? titleChanged,
   }) {
     return launchWithID?.call(id, chapter);
   }
@@ -1510,14 +2132,22 @@ class _$LaunchWithID implements LaunchWithID {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? addCoverPressed,
+    TResult Function()? chapterOneExistenceChecked,
     TResult Function()? deleteButtonPressed,
     TResult Function(String genre)? genreAdded,
     TResult Function(String genre)? genreRemoved,
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
-    TResult Function(Series series, Chapter? chapter)? launchAsNewChapter,
+    TResult Function(Series series, Chapter? previousChapter)?
+        launchAsNewChapter,
     TResult Function(UniqueID id, Chapter? chapter)? launchWithID,
     TResult Function(String licence)? licenceSelected,
+    TResult Function(int index)? pageViewIndexChanged,
+    TResult Function()? publishButtonPressed,
+    TResult Function()? saveButtonPressed,
+    TResult Function()? sessionFetched,
+    TResult Function()? storyChanged,
+    TResult Function(String title)? titleChanged,
     required TResult orElse(),
   }) {
     if (launchWithID != null) {
@@ -1530,6 +2160,8 @@ class _$LaunchWithID implements LaunchWithID {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(AddCoverPressed value) addCoverPressed,
+    required TResult Function(ChapterOneExistenceChecked value)
+        chapterOneExistenceChecked,
     required TResult Function(DeleteButtonPressed value) deleteButtonPressed,
     required TResult Function(GenreAdded value) genreAdded,
     required TResult Function(GenreRemoved value) genreRemoved,
@@ -1538,6 +2170,12 @@ class _$LaunchWithID implements LaunchWithID {
     required TResult Function(LaunchAsNewChapter value) launchAsNewChapter,
     required TResult Function(LaunchWithID value) launchWithID,
     required TResult Function(LicenceSelected value) licenceSelected,
+    required TResult Function(PageViewIndexChanged value) pageViewIndexChanged,
+    required TResult Function(PublishButtonPressed value) publishButtonPressed,
+    required TResult Function(SaveButtonPressed value) saveButtonPressed,
+    required TResult Function(SessionFetched value) sessionFetched,
+    required TResult Function(StoryChanged value) storyChanged,
+    required TResult Function(TitleChanged value) titleChanged,
   }) {
     return launchWithID(this);
   }
@@ -1546,6 +2184,8 @@ class _$LaunchWithID implements LaunchWithID {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(AddCoverPressed value)? addCoverPressed,
+    TResult Function(ChapterOneExistenceChecked value)?
+        chapterOneExistenceChecked,
     TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
     TResult Function(GenreAdded value)? genreAdded,
     TResult Function(GenreRemoved value)? genreRemoved,
@@ -1554,6 +2194,12 @@ class _$LaunchWithID implements LaunchWithID {
     TResult Function(LaunchAsNewChapter value)? launchAsNewChapter,
     TResult Function(LaunchWithID value)? launchWithID,
     TResult Function(LicenceSelected value)? licenceSelected,
+    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
+    TResult Function(PublishButtonPressed value)? publishButtonPressed,
+    TResult Function(SaveButtonPressed value)? saveButtonPressed,
+    TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(StoryChanged value)? storyChanged,
+    TResult Function(TitleChanged value)? titleChanged,
   }) {
     return launchWithID?.call(this);
   }
@@ -1562,6 +2208,8 @@ class _$LaunchWithID implements LaunchWithID {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AddCoverPressed value)? addCoverPressed,
+    TResult Function(ChapterOneExistenceChecked value)?
+        chapterOneExistenceChecked,
     TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
     TResult Function(GenreAdded value)? genreAdded,
     TResult Function(GenreRemoved value)? genreRemoved,
@@ -1570,6 +2218,12 @@ class _$LaunchWithID implements LaunchWithID {
     TResult Function(LaunchAsNewChapter value)? launchAsNewChapter,
     TResult Function(LaunchWithID value)? launchWithID,
     TResult Function(LicenceSelected value)? licenceSelected,
+    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
+    TResult Function(PublishButtonPressed value)? publishButtonPressed,
+    TResult Function(SaveButtonPressed value)? saveButtonPressed,
+    TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(StoryChanged value)? storyChanged,
+    TResult Function(TitleChanged value)? titleChanged,
     required TResult orElse(),
   }) {
     if (launchWithID != null) {
@@ -1655,15 +2309,22 @@ class _$LicenceSelected implements LicenceSelected {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() addCoverPressed,
+    required TResult Function() chapterOneExistenceChecked,
     required TResult Function() deleteButtonPressed,
     required TResult Function(String genre) genreAdded,
     required TResult Function(String genre) genreRemoved,
     required TResult Function(bool isNSFW) isNSFWChanged,
     required TResult Function(String language) languageSelected,
-    required TResult Function(Series series, Chapter? chapter)
+    required TResult Function(Series series, Chapter? previousChapter)
         launchAsNewChapter,
     required TResult Function(UniqueID id, Chapter? chapter) launchWithID,
     required TResult Function(String licence) licenceSelected,
+    required TResult Function(int index) pageViewIndexChanged,
+    required TResult Function() publishButtonPressed,
+    required TResult Function() saveButtonPressed,
+    required TResult Function() sessionFetched,
+    required TResult Function() storyChanged,
+    required TResult Function(String title) titleChanged,
   }) {
     return licenceSelected(licence);
   }
@@ -1672,14 +2333,22 @@ class _$LicenceSelected implements LicenceSelected {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult Function()? addCoverPressed,
+    TResult Function()? chapterOneExistenceChecked,
     TResult Function()? deleteButtonPressed,
     TResult Function(String genre)? genreAdded,
     TResult Function(String genre)? genreRemoved,
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
-    TResult Function(Series series, Chapter? chapter)? launchAsNewChapter,
+    TResult Function(Series series, Chapter? previousChapter)?
+        launchAsNewChapter,
     TResult Function(UniqueID id, Chapter? chapter)? launchWithID,
     TResult Function(String licence)? licenceSelected,
+    TResult Function(int index)? pageViewIndexChanged,
+    TResult Function()? publishButtonPressed,
+    TResult Function()? saveButtonPressed,
+    TResult Function()? sessionFetched,
+    TResult Function()? storyChanged,
+    TResult Function(String title)? titleChanged,
   }) {
     return licenceSelected?.call(licence);
   }
@@ -1688,14 +2357,22 @@ class _$LicenceSelected implements LicenceSelected {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? addCoverPressed,
+    TResult Function()? chapterOneExistenceChecked,
     TResult Function()? deleteButtonPressed,
     TResult Function(String genre)? genreAdded,
     TResult Function(String genre)? genreRemoved,
     TResult Function(bool isNSFW)? isNSFWChanged,
     TResult Function(String language)? languageSelected,
-    TResult Function(Series series, Chapter? chapter)? launchAsNewChapter,
+    TResult Function(Series series, Chapter? previousChapter)?
+        launchAsNewChapter,
     TResult Function(UniqueID id, Chapter? chapter)? launchWithID,
     TResult Function(String licence)? licenceSelected,
+    TResult Function(int index)? pageViewIndexChanged,
+    TResult Function()? publishButtonPressed,
+    TResult Function()? saveButtonPressed,
+    TResult Function()? sessionFetched,
+    TResult Function()? storyChanged,
+    TResult Function(String title)? titleChanged,
     required TResult orElse(),
   }) {
     if (licenceSelected != null) {
@@ -1708,6 +2385,8 @@ class _$LicenceSelected implements LicenceSelected {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(AddCoverPressed value) addCoverPressed,
+    required TResult Function(ChapterOneExistenceChecked value)
+        chapterOneExistenceChecked,
     required TResult Function(DeleteButtonPressed value) deleteButtonPressed,
     required TResult Function(GenreAdded value) genreAdded,
     required TResult Function(GenreRemoved value) genreRemoved,
@@ -1716,6 +2395,12 @@ class _$LicenceSelected implements LicenceSelected {
     required TResult Function(LaunchAsNewChapter value) launchAsNewChapter,
     required TResult Function(LaunchWithID value) launchWithID,
     required TResult Function(LicenceSelected value) licenceSelected,
+    required TResult Function(PageViewIndexChanged value) pageViewIndexChanged,
+    required TResult Function(PublishButtonPressed value) publishButtonPressed,
+    required TResult Function(SaveButtonPressed value) saveButtonPressed,
+    required TResult Function(SessionFetched value) sessionFetched,
+    required TResult Function(StoryChanged value) storyChanged,
+    required TResult Function(TitleChanged value) titleChanged,
   }) {
     return licenceSelected(this);
   }
@@ -1724,6 +2409,8 @@ class _$LicenceSelected implements LicenceSelected {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult Function(AddCoverPressed value)? addCoverPressed,
+    TResult Function(ChapterOneExistenceChecked value)?
+        chapterOneExistenceChecked,
     TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
     TResult Function(GenreAdded value)? genreAdded,
     TResult Function(GenreRemoved value)? genreRemoved,
@@ -1732,6 +2419,12 @@ class _$LicenceSelected implements LicenceSelected {
     TResult Function(LaunchAsNewChapter value)? launchAsNewChapter,
     TResult Function(LaunchWithID value)? launchWithID,
     TResult Function(LicenceSelected value)? licenceSelected,
+    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
+    TResult Function(PublishButtonPressed value)? publishButtonPressed,
+    TResult Function(SaveButtonPressed value)? saveButtonPressed,
+    TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(StoryChanged value)? storyChanged,
+    TResult Function(TitleChanged value)? titleChanged,
   }) {
     return licenceSelected?.call(this);
   }
@@ -1740,6 +2433,8 @@ class _$LicenceSelected implements LicenceSelected {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(AddCoverPressed value)? addCoverPressed,
+    TResult Function(ChapterOneExistenceChecked value)?
+        chapterOneExistenceChecked,
     TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
     TResult Function(GenreAdded value)? genreAdded,
     TResult Function(GenreRemoved value)? genreRemoved,
@@ -1748,6 +2443,12 @@ class _$LicenceSelected implements LicenceSelected {
     TResult Function(LaunchAsNewChapter value)? launchAsNewChapter,
     TResult Function(LaunchWithID value)? launchWithID,
     TResult Function(LicenceSelected value)? licenceSelected,
+    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
+    TResult Function(PublishButtonPressed value)? publishButtonPressed,
+    TResult Function(SaveButtonPressed value)? saveButtonPressed,
+    TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(StoryChanged value)? storyChanged,
+    TResult Function(TitleChanged value)? titleChanged,
     required TResult orElse(),
   }) {
     if (licenceSelected != null) {
@@ -1767,12 +2468,1276 @@ abstract class LicenceSelected implements TypewriterChapterEvent {
 }
 
 /// @nodoc
+abstract class $PageViewIndexChangedCopyWith<$Res> {
+  factory $PageViewIndexChangedCopyWith(PageViewIndexChanged value,
+          $Res Function(PageViewIndexChanged) then) =
+      _$PageViewIndexChangedCopyWithImpl<$Res>;
+  $Res call({int index});
+}
+
+/// @nodoc
+class _$PageViewIndexChangedCopyWithImpl<$Res>
+    extends _$TypewriterChapterEventCopyWithImpl<$Res>
+    implements $PageViewIndexChangedCopyWith<$Res> {
+  _$PageViewIndexChangedCopyWithImpl(
+      PageViewIndexChanged _value, $Res Function(PageViewIndexChanged) _then)
+      : super(_value, (v) => _then(v as PageViewIndexChanged));
+
+  @override
+  PageViewIndexChanged get _value => super._value as PageViewIndexChanged;
+
+  @override
+  $Res call({
+    Object? index = freezed,
+  }) {
+    return _then(PageViewIndexChanged(
+      index == freezed
+          ? _value.index
+          : index // ignore: cast_nullable_to_non_nullable
+              as int,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$PageViewIndexChanged implements PageViewIndexChanged {
+  const _$PageViewIndexChanged(this.index);
+
+  @override
+  final int index;
+
+  @override
+  String toString() {
+    return 'TypewriterChapterEvent.pageViewIndexChanged(index: $index)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is PageViewIndexChanged &&
+            const DeepCollectionEquality().equals(other.index, index));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(index));
+
+  @JsonKey(ignore: true)
+  @override
+  $PageViewIndexChangedCopyWith<PageViewIndexChanged> get copyWith =>
+      _$PageViewIndexChangedCopyWithImpl<PageViewIndexChanged>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() addCoverPressed,
+    required TResult Function() chapterOneExistenceChecked,
+    required TResult Function() deleteButtonPressed,
+    required TResult Function(String genre) genreAdded,
+    required TResult Function(String genre) genreRemoved,
+    required TResult Function(bool isNSFW) isNSFWChanged,
+    required TResult Function(String language) languageSelected,
+    required TResult Function(Series series, Chapter? previousChapter)
+        launchAsNewChapter,
+    required TResult Function(UniqueID id, Chapter? chapter) launchWithID,
+    required TResult Function(String licence) licenceSelected,
+    required TResult Function(int index) pageViewIndexChanged,
+    required TResult Function() publishButtonPressed,
+    required TResult Function() saveButtonPressed,
+    required TResult Function() sessionFetched,
+    required TResult Function() storyChanged,
+    required TResult Function(String title) titleChanged,
+  }) {
+    return pageViewIndexChanged(index);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? addCoverPressed,
+    TResult Function()? chapterOneExistenceChecked,
+    TResult Function()? deleteButtonPressed,
+    TResult Function(String genre)? genreAdded,
+    TResult Function(String genre)? genreRemoved,
+    TResult Function(bool isNSFW)? isNSFWChanged,
+    TResult Function(String language)? languageSelected,
+    TResult Function(Series series, Chapter? previousChapter)?
+        launchAsNewChapter,
+    TResult Function(UniqueID id, Chapter? chapter)? launchWithID,
+    TResult Function(String licence)? licenceSelected,
+    TResult Function(int index)? pageViewIndexChanged,
+    TResult Function()? publishButtonPressed,
+    TResult Function()? saveButtonPressed,
+    TResult Function()? sessionFetched,
+    TResult Function()? storyChanged,
+    TResult Function(String title)? titleChanged,
+  }) {
+    return pageViewIndexChanged?.call(index);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? addCoverPressed,
+    TResult Function()? chapterOneExistenceChecked,
+    TResult Function()? deleteButtonPressed,
+    TResult Function(String genre)? genreAdded,
+    TResult Function(String genre)? genreRemoved,
+    TResult Function(bool isNSFW)? isNSFWChanged,
+    TResult Function(String language)? languageSelected,
+    TResult Function(Series series, Chapter? previousChapter)?
+        launchAsNewChapter,
+    TResult Function(UniqueID id, Chapter? chapter)? launchWithID,
+    TResult Function(String licence)? licenceSelected,
+    TResult Function(int index)? pageViewIndexChanged,
+    TResult Function()? publishButtonPressed,
+    TResult Function()? saveButtonPressed,
+    TResult Function()? sessionFetched,
+    TResult Function()? storyChanged,
+    TResult Function(String title)? titleChanged,
+    required TResult orElse(),
+  }) {
+    if (pageViewIndexChanged != null) {
+      return pageViewIndexChanged(index);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(AddCoverPressed value) addCoverPressed,
+    required TResult Function(ChapterOneExistenceChecked value)
+        chapterOneExistenceChecked,
+    required TResult Function(DeleteButtonPressed value) deleteButtonPressed,
+    required TResult Function(GenreAdded value) genreAdded,
+    required TResult Function(GenreRemoved value) genreRemoved,
+    required TResult Function(IsNSFWChanged value) isNSFWChanged,
+    required TResult Function(LanguageSelected value) languageSelected,
+    required TResult Function(LaunchAsNewChapter value) launchAsNewChapter,
+    required TResult Function(LaunchWithID value) launchWithID,
+    required TResult Function(LicenceSelected value) licenceSelected,
+    required TResult Function(PageViewIndexChanged value) pageViewIndexChanged,
+    required TResult Function(PublishButtonPressed value) publishButtonPressed,
+    required TResult Function(SaveButtonPressed value) saveButtonPressed,
+    required TResult Function(SessionFetched value) sessionFetched,
+    required TResult Function(StoryChanged value) storyChanged,
+    required TResult Function(TitleChanged value) titleChanged,
+  }) {
+    return pageViewIndexChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(AddCoverPressed value)? addCoverPressed,
+    TResult Function(ChapterOneExistenceChecked value)?
+        chapterOneExistenceChecked,
+    TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
+    TResult Function(GenreAdded value)? genreAdded,
+    TResult Function(GenreRemoved value)? genreRemoved,
+    TResult Function(IsNSFWChanged value)? isNSFWChanged,
+    TResult Function(LanguageSelected value)? languageSelected,
+    TResult Function(LaunchAsNewChapter value)? launchAsNewChapter,
+    TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(LicenceSelected value)? licenceSelected,
+    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
+    TResult Function(PublishButtonPressed value)? publishButtonPressed,
+    TResult Function(SaveButtonPressed value)? saveButtonPressed,
+    TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(StoryChanged value)? storyChanged,
+    TResult Function(TitleChanged value)? titleChanged,
+  }) {
+    return pageViewIndexChanged?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(AddCoverPressed value)? addCoverPressed,
+    TResult Function(ChapterOneExistenceChecked value)?
+        chapterOneExistenceChecked,
+    TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
+    TResult Function(GenreAdded value)? genreAdded,
+    TResult Function(GenreRemoved value)? genreRemoved,
+    TResult Function(IsNSFWChanged value)? isNSFWChanged,
+    TResult Function(LanguageSelected value)? languageSelected,
+    TResult Function(LaunchAsNewChapter value)? launchAsNewChapter,
+    TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(LicenceSelected value)? licenceSelected,
+    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
+    TResult Function(PublishButtonPressed value)? publishButtonPressed,
+    TResult Function(SaveButtonPressed value)? saveButtonPressed,
+    TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(StoryChanged value)? storyChanged,
+    TResult Function(TitleChanged value)? titleChanged,
+    required TResult orElse(),
+  }) {
+    if (pageViewIndexChanged != null) {
+      return pageViewIndexChanged(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class PageViewIndexChanged implements TypewriterChapterEvent {
+  const factory PageViewIndexChanged(int index) = _$PageViewIndexChanged;
+
+  int get index;
+  @JsonKey(ignore: true)
+  $PageViewIndexChangedCopyWith<PageViewIndexChanged> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class $PublishButtonPressedCopyWith<$Res> {
+  factory $PublishButtonPressedCopyWith(PublishButtonPressed value,
+          $Res Function(PublishButtonPressed) then) =
+      _$PublishButtonPressedCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$PublishButtonPressedCopyWithImpl<$Res>
+    extends _$TypewriterChapterEventCopyWithImpl<$Res>
+    implements $PublishButtonPressedCopyWith<$Res> {
+  _$PublishButtonPressedCopyWithImpl(
+      PublishButtonPressed _value, $Res Function(PublishButtonPressed) _then)
+      : super(_value, (v) => _then(v as PublishButtonPressed));
+
+  @override
+  PublishButtonPressed get _value => super._value as PublishButtonPressed;
+}
+
+/// @nodoc
+
+class _$PublishButtonPressed implements PublishButtonPressed {
+  const _$PublishButtonPressed();
+
+  @override
+  String toString() {
+    return 'TypewriterChapterEvent.publishButtonPressed()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is PublishButtonPressed);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() addCoverPressed,
+    required TResult Function() chapterOneExistenceChecked,
+    required TResult Function() deleteButtonPressed,
+    required TResult Function(String genre) genreAdded,
+    required TResult Function(String genre) genreRemoved,
+    required TResult Function(bool isNSFW) isNSFWChanged,
+    required TResult Function(String language) languageSelected,
+    required TResult Function(Series series, Chapter? previousChapter)
+        launchAsNewChapter,
+    required TResult Function(UniqueID id, Chapter? chapter) launchWithID,
+    required TResult Function(String licence) licenceSelected,
+    required TResult Function(int index) pageViewIndexChanged,
+    required TResult Function() publishButtonPressed,
+    required TResult Function() saveButtonPressed,
+    required TResult Function() sessionFetched,
+    required TResult Function() storyChanged,
+    required TResult Function(String title) titleChanged,
+  }) {
+    return publishButtonPressed();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? addCoverPressed,
+    TResult Function()? chapterOneExistenceChecked,
+    TResult Function()? deleteButtonPressed,
+    TResult Function(String genre)? genreAdded,
+    TResult Function(String genre)? genreRemoved,
+    TResult Function(bool isNSFW)? isNSFWChanged,
+    TResult Function(String language)? languageSelected,
+    TResult Function(Series series, Chapter? previousChapter)?
+        launchAsNewChapter,
+    TResult Function(UniqueID id, Chapter? chapter)? launchWithID,
+    TResult Function(String licence)? licenceSelected,
+    TResult Function(int index)? pageViewIndexChanged,
+    TResult Function()? publishButtonPressed,
+    TResult Function()? saveButtonPressed,
+    TResult Function()? sessionFetched,
+    TResult Function()? storyChanged,
+    TResult Function(String title)? titleChanged,
+  }) {
+    return publishButtonPressed?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? addCoverPressed,
+    TResult Function()? chapterOneExistenceChecked,
+    TResult Function()? deleteButtonPressed,
+    TResult Function(String genre)? genreAdded,
+    TResult Function(String genre)? genreRemoved,
+    TResult Function(bool isNSFW)? isNSFWChanged,
+    TResult Function(String language)? languageSelected,
+    TResult Function(Series series, Chapter? previousChapter)?
+        launchAsNewChapter,
+    TResult Function(UniqueID id, Chapter? chapter)? launchWithID,
+    TResult Function(String licence)? licenceSelected,
+    TResult Function(int index)? pageViewIndexChanged,
+    TResult Function()? publishButtonPressed,
+    TResult Function()? saveButtonPressed,
+    TResult Function()? sessionFetched,
+    TResult Function()? storyChanged,
+    TResult Function(String title)? titleChanged,
+    required TResult orElse(),
+  }) {
+    if (publishButtonPressed != null) {
+      return publishButtonPressed();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(AddCoverPressed value) addCoverPressed,
+    required TResult Function(ChapterOneExistenceChecked value)
+        chapterOneExistenceChecked,
+    required TResult Function(DeleteButtonPressed value) deleteButtonPressed,
+    required TResult Function(GenreAdded value) genreAdded,
+    required TResult Function(GenreRemoved value) genreRemoved,
+    required TResult Function(IsNSFWChanged value) isNSFWChanged,
+    required TResult Function(LanguageSelected value) languageSelected,
+    required TResult Function(LaunchAsNewChapter value) launchAsNewChapter,
+    required TResult Function(LaunchWithID value) launchWithID,
+    required TResult Function(LicenceSelected value) licenceSelected,
+    required TResult Function(PageViewIndexChanged value) pageViewIndexChanged,
+    required TResult Function(PublishButtonPressed value) publishButtonPressed,
+    required TResult Function(SaveButtonPressed value) saveButtonPressed,
+    required TResult Function(SessionFetched value) sessionFetched,
+    required TResult Function(StoryChanged value) storyChanged,
+    required TResult Function(TitleChanged value) titleChanged,
+  }) {
+    return publishButtonPressed(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(AddCoverPressed value)? addCoverPressed,
+    TResult Function(ChapterOneExistenceChecked value)?
+        chapterOneExistenceChecked,
+    TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
+    TResult Function(GenreAdded value)? genreAdded,
+    TResult Function(GenreRemoved value)? genreRemoved,
+    TResult Function(IsNSFWChanged value)? isNSFWChanged,
+    TResult Function(LanguageSelected value)? languageSelected,
+    TResult Function(LaunchAsNewChapter value)? launchAsNewChapter,
+    TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(LicenceSelected value)? licenceSelected,
+    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
+    TResult Function(PublishButtonPressed value)? publishButtonPressed,
+    TResult Function(SaveButtonPressed value)? saveButtonPressed,
+    TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(StoryChanged value)? storyChanged,
+    TResult Function(TitleChanged value)? titleChanged,
+  }) {
+    return publishButtonPressed?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(AddCoverPressed value)? addCoverPressed,
+    TResult Function(ChapterOneExistenceChecked value)?
+        chapterOneExistenceChecked,
+    TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
+    TResult Function(GenreAdded value)? genreAdded,
+    TResult Function(GenreRemoved value)? genreRemoved,
+    TResult Function(IsNSFWChanged value)? isNSFWChanged,
+    TResult Function(LanguageSelected value)? languageSelected,
+    TResult Function(LaunchAsNewChapter value)? launchAsNewChapter,
+    TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(LicenceSelected value)? licenceSelected,
+    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
+    TResult Function(PublishButtonPressed value)? publishButtonPressed,
+    TResult Function(SaveButtonPressed value)? saveButtonPressed,
+    TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(StoryChanged value)? storyChanged,
+    TResult Function(TitleChanged value)? titleChanged,
+    required TResult orElse(),
+  }) {
+    if (publishButtonPressed != null) {
+      return publishButtonPressed(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class PublishButtonPressed implements TypewriterChapterEvent {
+  const factory PublishButtonPressed() = _$PublishButtonPressed;
+}
+
+/// @nodoc
+abstract class $SaveButtonPressedCopyWith<$Res> {
+  factory $SaveButtonPressedCopyWith(
+          SaveButtonPressed value, $Res Function(SaveButtonPressed) then) =
+      _$SaveButtonPressedCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$SaveButtonPressedCopyWithImpl<$Res>
+    extends _$TypewriterChapterEventCopyWithImpl<$Res>
+    implements $SaveButtonPressedCopyWith<$Res> {
+  _$SaveButtonPressedCopyWithImpl(
+      SaveButtonPressed _value, $Res Function(SaveButtonPressed) _then)
+      : super(_value, (v) => _then(v as SaveButtonPressed));
+
+  @override
+  SaveButtonPressed get _value => super._value as SaveButtonPressed;
+}
+
+/// @nodoc
+
+class _$SaveButtonPressed implements SaveButtonPressed {
+  const _$SaveButtonPressed();
+
+  @override
+  String toString() {
+    return 'TypewriterChapterEvent.saveButtonPressed()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is SaveButtonPressed);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() addCoverPressed,
+    required TResult Function() chapterOneExistenceChecked,
+    required TResult Function() deleteButtonPressed,
+    required TResult Function(String genre) genreAdded,
+    required TResult Function(String genre) genreRemoved,
+    required TResult Function(bool isNSFW) isNSFWChanged,
+    required TResult Function(String language) languageSelected,
+    required TResult Function(Series series, Chapter? previousChapter)
+        launchAsNewChapter,
+    required TResult Function(UniqueID id, Chapter? chapter) launchWithID,
+    required TResult Function(String licence) licenceSelected,
+    required TResult Function(int index) pageViewIndexChanged,
+    required TResult Function() publishButtonPressed,
+    required TResult Function() saveButtonPressed,
+    required TResult Function() sessionFetched,
+    required TResult Function() storyChanged,
+    required TResult Function(String title) titleChanged,
+  }) {
+    return saveButtonPressed();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? addCoverPressed,
+    TResult Function()? chapterOneExistenceChecked,
+    TResult Function()? deleteButtonPressed,
+    TResult Function(String genre)? genreAdded,
+    TResult Function(String genre)? genreRemoved,
+    TResult Function(bool isNSFW)? isNSFWChanged,
+    TResult Function(String language)? languageSelected,
+    TResult Function(Series series, Chapter? previousChapter)?
+        launchAsNewChapter,
+    TResult Function(UniqueID id, Chapter? chapter)? launchWithID,
+    TResult Function(String licence)? licenceSelected,
+    TResult Function(int index)? pageViewIndexChanged,
+    TResult Function()? publishButtonPressed,
+    TResult Function()? saveButtonPressed,
+    TResult Function()? sessionFetched,
+    TResult Function()? storyChanged,
+    TResult Function(String title)? titleChanged,
+  }) {
+    return saveButtonPressed?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? addCoverPressed,
+    TResult Function()? chapterOneExistenceChecked,
+    TResult Function()? deleteButtonPressed,
+    TResult Function(String genre)? genreAdded,
+    TResult Function(String genre)? genreRemoved,
+    TResult Function(bool isNSFW)? isNSFWChanged,
+    TResult Function(String language)? languageSelected,
+    TResult Function(Series series, Chapter? previousChapter)?
+        launchAsNewChapter,
+    TResult Function(UniqueID id, Chapter? chapter)? launchWithID,
+    TResult Function(String licence)? licenceSelected,
+    TResult Function(int index)? pageViewIndexChanged,
+    TResult Function()? publishButtonPressed,
+    TResult Function()? saveButtonPressed,
+    TResult Function()? sessionFetched,
+    TResult Function()? storyChanged,
+    TResult Function(String title)? titleChanged,
+    required TResult orElse(),
+  }) {
+    if (saveButtonPressed != null) {
+      return saveButtonPressed();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(AddCoverPressed value) addCoverPressed,
+    required TResult Function(ChapterOneExistenceChecked value)
+        chapterOneExistenceChecked,
+    required TResult Function(DeleteButtonPressed value) deleteButtonPressed,
+    required TResult Function(GenreAdded value) genreAdded,
+    required TResult Function(GenreRemoved value) genreRemoved,
+    required TResult Function(IsNSFWChanged value) isNSFWChanged,
+    required TResult Function(LanguageSelected value) languageSelected,
+    required TResult Function(LaunchAsNewChapter value) launchAsNewChapter,
+    required TResult Function(LaunchWithID value) launchWithID,
+    required TResult Function(LicenceSelected value) licenceSelected,
+    required TResult Function(PageViewIndexChanged value) pageViewIndexChanged,
+    required TResult Function(PublishButtonPressed value) publishButtonPressed,
+    required TResult Function(SaveButtonPressed value) saveButtonPressed,
+    required TResult Function(SessionFetched value) sessionFetched,
+    required TResult Function(StoryChanged value) storyChanged,
+    required TResult Function(TitleChanged value) titleChanged,
+  }) {
+    return saveButtonPressed(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(AddCoverPressed value)? addCoverPressed,
+    TResult Function(ChapterOneExistenceChecked value)?
+        chapterOneExistenceChecked,
+    TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
+    TResult Function(GenreAdded value)? genreAdded,
+    TResult Function(GenreRemoved value)? genreRemoved,
+    TResult Function(IsNSFWChanged value)? isNSFWChanged,
+    TResult Function(LanguageSelected value)? languageSelected,
+    TResult Function(LaunchAsNewChapter value)? launchAsNewChapter,
+    TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(LicenceSelected value)? licenceSelected,
+    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
+    TResult Function(PublishButtonPressed value)? publishButtonPressed,
+    TResult Function(SaveButtonPressed value)? saveButtonPressed,
+    TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(StoryChanged value)? storyChanged,
+    TResult Function(TitleChanged value)? titleChanged,
+  }) {
+    return saveButtonPressed?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(AddCoverPressed value)? addCoverPressed,
+    TResult Function(ChapterOneExistenceChecked value)?
+        chapterOneExistenceChecked,
+    TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
+    TResult Function(GenreAdded value)? genreAdded,
+    TResult Function(GenreRemoved value)? genreRemoved,
+    TResult Function(IsNSFWChanged value)? isNSFWChanged,
+    TResult Function(LanguageSelected value)? languageSelected,
+    TResult Function(LaunchAsNewChapter value)? launchAsNewChapter,
+    TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(LicenceSelected value)? licenceSelected,
+    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
+    TResult Function(PublishButtonPressed value)? publishButtonPressed,
+    TResult Function(SaveButtonPressed value)? saveButtonPressed,
+    TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(StoryChanged value)? storyChanged,
+    TResult Function(TitleChanged value)? titleChanged,
+    required TResult orElse(),
+  }) {
+    if (saveButtonPressed != null) {
+      return saveButtonPressed(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SaveButtonPressed implements TypewriterChapterEvent {
+  const factory SaveButtonPressed() = _$SaveButtonPressed;
+}
+
+/// @nodoc
+abstract class $SessionFetchedCopyWith<$Res> {
+  factory $SessionFetchedCopyWith(
+          SessionFetched value, $Res Function(SessionFetched) then) =
+      _$SessionFetchedCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$SessionFetchedCopyWithImpl<$Res>
+    extends _$TypewriterChapterEventCopyWithImpl<$Res>
+    implements $SessionFetchedCopyWith<$Res> {
+  _$SessionFetchedCopyWithImpl(
+      SessionFetched _value, $Res Function(SessionFetched) _then)
+      : super(_value, (v) => _then(v as SessionFetched));
+
+  @override
+  SessionFetched get _value => super._value as SessionFetched;
+}
+
+/// @nodoc
+
+class _$SessionFetched implements SessionFetched {
+  const _$SessionFetched();
+
+  @override
+  String toString() {
+    return 'TypewriterChapterEvent.sessionFetched()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is SessionFetched);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() addCoverPressed,
+    required TResult Function() chapterOneExistenceChecked,
+    required TResult Function() deleteButtonPressed,
+    required TResult Function(String genre) genreAdded,
+    required TResult Function(String genre) genreRemoved,
+    required TResult Function(bool isNSFW) isNSFWChanged,
+    required TResult Function(String language) languageSelected,
+    required TResult Function(Series series, Chapter? previousChapter)
+        launchAsNewChapter,
+    required TResult Function(UniqueID id, Chapter? chapter) launchWithID,
+    required TResult Function(String licence) licenceSelected,
+    required TResult Function(int index) pageViewIndexChanged,
+    required TResult Function() publishButtonPressed,
+    required TResult Function() saveButtonPressed,
+    required TResult Function() sessionFetched,
+    required TResult Function() storyChanged,
+    required TResult Function(String title) titleChanged,
+  }) {
+    return sessionFetched();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? addCoverPressed,
+    TResult Function()? chapterOneExistenceChecked,
+    TResult Function()? deleteButtonPressed,
+    TResult Function(String genre)? genreAdded,
+    TResult Function(String genre)? genreRemoved,
+    TResult Function(bool isNSFW)? isNSFWChanged,
+    TResult Function(String language)? languageSelected,
+    TResult Function(Series series, Chapter? previousChapter)?
+        launchAsNewChapter,
+    TResult Function(UniqueID id, Chapter? chapter)? launchWithID,
+    TResult Function(String licence)? licenceSelected,
+    TResult Function(int index)? pageViewIndexChanged,
+    TResult Function()? publishButtonPressed,
+    TResult Function()? saveButtonPressed,
+    TResult Function()? sessionFetched,
+    TResult Function()? storyChanged,
+    TResult Function(String title)? titleChanged,
+  }) {
+    return sessionFetched?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? addCoverPressed,
+    TResult Function()? chapterOneExistenceChecked,
+    TResult Function()? deleteButtonPressed,
+    TResult Function(String genre)? genreAdded,
+    TResult Function(String genre)? genreRemoved,
+    TResult Function(bool isNSFW)? isNSFWChanged,
+    TResult Function(String language)? languageSelected,
+    TResult Function(Series series, Chapter? previousChapter)?
+        launchAsNewChapter,
+    TResult Function(UniqueID id, Chapter? chapter)? launchWithID,
+    TResult Function(String licence)? licenceSelected,
+    TResult Function(int index)? pageViewIndexChanged,
+    TResult Function()? publishButtonPressed,
+    TResult Function()? saveButtonPressed,
+    TResult Function()? sessionFetched,
+    TResult Function()? storyChanged,
+    TResult Function(String title)? titleChanged,
+    required TResult orElse(),
+  }) {
+    if (sessionFetched != null) {
+      return sessionFetched();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(AddCoverPressed value) addCoverPressed,
+    required TResult Function(ChapterOneExistenceChecked value)
+        chapterOneExistenceChecked,
+    required TResult Function(DeleteButtonPressed value) deleteButtonPressed,
+    required TResult Function(GenreAdded value) genreAdded,
+    required TResult Function(GenreRemoved value) genreRemoved,
+    required TResult Function(IsNSFWChanged value) isNSFWChanged,
+    required TResult Function(LanguageSelected value) languageSelected,
+    required TResult Function(LaunchAsNewChapter value) launchAsNewChapter,
+    required TResult Function(LaunchWithID value) launchWithID,
+    required TResult Function(LicenceSelected value) licenceSelected,
+    required TResult Function(PageViewIndexChanged value) pageViewIndexChanged,
+    required TResult Function(PublishButtonPressed value) publishButtonPressed,
+    required TResult Function(SaveButtonPressed value) saveButtonPressed,
+    required TResult Function(SessionFetched value) sessionFetched,
+    required TResult Function(StoryChanged value) storyChanged,
+    required TResult Function(TitleChanged value) titleChanged,
+  }) {
+    return sessionFetched(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(AddCoverPressed value)? addCoverPressed,
+    TResult Function(ChapterOneExistenceChecked value)?
+        chapterOneExistenceChecked,
+    TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
+    TResult Function(GenreAdded value)? genreAdded,
+    TResult Function(GenreRemoved value)? genreRemoved,
+    TResult Function(IsNSFWChanged value)? isNSFWChanged,
+    TResult Function(LanguageSelected value)? languageSelected,
+    TResult Function(LaunchAsNewChapter value)? launchAsNewChapter,
+    TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(LicenceSelected value)? licenceSelected,
+    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
+    TResult Function(PublishButtonPressed value)? publishButtonPressed,
+    TResult Function(SaveButtonPressed value)? saveButtonPressed,
+    TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(StoryChanged value)? storyChanged,
+    TResult Function(TitleChanged value)? titleChanged,
+  }) {
+    return sessionFetched?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(AddCoverPressed value)? addCoverPressed,
+    TResult Function(ChapterOneExistenceChecked value)?
+        chapterOneExistenceChecked,
+    TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
+    TResult Function(GenreAdded value)? genreAdded,
+    TResult Function(GenreRemoved value)? genreRemoved,
+    TResult Function(IsNSFWChanged value)? isNSFWChanged,
+    TResult Function(LanguageSelected value)? languageSelected,
+    TResult Function(LaunchAsNewChapter value)? launchAsNewChapter,
+    TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(LicenceSelected value)? licenceSelected,
+    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
+    TResult Function(PublishButtonPressed value)? publishButtonPressed,
+    TResult Function(SaveButtonPressed value)? saveButtonPressed,
+    TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(StoryChanged value)? storyChanged,
+    TResult Function(TitleChanged value)? titleChanged,
+    required TResult orElse(),
+  }) {
+    if (sessionFetched != null) {
+      return sessionFetched(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SessionFetched implements TypewriterChapterEvent {
+  const factory SessionFetched() = _$SessionFetched;
+}
+
+/// @nodoc
+abstract class $StoryChangedCopyWith<$Res> {
+  factory $StoryChangedCopyWith(
+          StoryChanged value, $Res Function(StoryChanged) then) =
+      _$StoryChangedCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$StoryChangedCopyWithImpl<$Res>
+    extends _$TypewriterChapterEventCopyWithImpl<$Res>
+    implements $StoryChangedCopyWith<$Res> {
+  _$StoryChangedCopyWithImpl(
+      StoryChanged _value, $Res Function(StoryChanged) _then)
+      : super(_value, (v) => _then(v as StoryChanged));
+
+  @override
+  StoryChanged get _value => super._value as StoryChanged;
+}
+
+/// @nodoc
+
+class _$StoryChanged implements StoryChanged {
+  const _$StoryChanged();
+
+  @override
+  String toString() {
+    return 'TypewriterChapterEvent.storyChanged()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is StoryChanged);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() addCoverPressed,
+    required TResult Function() chapterOneExistenceChecked,
+    required TResult Function() deleteButtonPressed,
+    required TResult Function(String genre) genreAdded,
+    required TResult Function(String genre) genreRemoved,
+    required TResult Function(bool isNSFW) isNSFWChanged,
+    required TResult Function(String language) languageSelected,
+    required TResult Function(Series series, Chapter? previousChapter)
+        launchAsNewChapter,
+    required TResult Function(UniqueID id, Chapter? chapter) launchWithID,
+    required TResult Function(String licence) licenceSelected,
+    required TResult Function(int index) pageViewIndexChanged,
+    required TResult Function() publishButtonPressed,
+    required TResult Function() saveButtonPressed,
+    required TResult Function() sessionFetched,
+    required TResult Function() storyChanged,
+    required TResult Function(String title) titleChanged,
+  }) {
+    return storyChanged();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? addCoverPressed,
+    TResult Function()? chapterOneExistenceChecked,
+    TResult Function()? deleteButtonPressed,
+    TResult Function(String genre)? genreAdded,
+    TResult Function(String genre)? genreRemoved,
+    TResult Function(bool isNSFW)? isNSFWChanged,
+    TResult Function(String language)? languageSelected,
+    TResult Function(Series series, Chapter? previousChapter)?
+        launchAsNewChapter,
+    TResult Function(UniqueID id, Chapter? chapter)? launchWithID,
+    TResult Function(String licence)? licenceSelected,
+    TResult Function(int index)? pageViewIndexChanged,
+    TResult Function()? publishButtonPressed,
+    TResult Function()? saveButtonPressed,
+    TResult Function()? sessionFetched,
+    TResult Function()? storyChanged,
+    TResult Function(String title)? titleChanged,
+  }) {
+    return storyChanged?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? addCoverPressed,
+    TResult Function()? chapterOneExistenceChecked,
+    TResult Function()? deleteButtonPressed,
+    TResult Function(String genre)? genreAdded,
+    TResult Function(String genre)? genreRemoved,
+    TResult Function(bool isNSFW)? isNSFWChanged,
+    TResult Function(String language)? languageSelected,
+    TResult Function(Series series, Chapter? previousChapter)?
+        launchAsNewChapter,
+    TResult Function(UniqueID id, Chapter? chapter)? launchWithID,
+    TResult Function(String licence)? licenceSelected,
+    TResult Function(int index)? pageViewIndexChanged,
+    TResult Function()? publishButtonPressed,
+    TResult Function()? saveButtonPressed,
+    TResult Function()? sessionFetched,
+    TResult Function()? storyChanged,
+    TResult Function(String title)? titleChanged,
+    required TResult orElse(),
+  }) {
+    if (storyChanged != null) {
+      return storyChanged();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(AddCoverPressed value) addCoverPressed,
+    required TResult Function(ChapterOneExistenceChecked value)
+        chapterOneExistenceChecked,
+    required TResult Function(DeleteButtonPressed value) deleteButtonPressed,
+    required TResult Function(GenreAdded value) genreAdded,
+    required TResult Function(GenreRemoved value) genreRemoved,
+    required TResult Function(IsNSFWChanged value) isNSFWChanged,
+    required TResult Function(LanguageSelected value) languageSelected,
+    required TResult Function(LaunchAsNewChapter value) launchAsNewChapter,
+    required TResult Function(LaunchWithID value) launchWithID,
+    required TResult Function(LicenceSelected value) licenceSelected,
+    required TResult Function(PageViewIndexChanged value) pageViewIndexChanged,
+    required TResult Function(PublishButtonPressed value) publishButtonPressed,
+    required TResult Function(SaveButtonPressed value) saveButtonPressed,
+    required TResult Function(SessionFetched value) sessionFetched,
+    required TResult Function(StoryChanged value) storyChanged,
+    required TResult Function(TitleChanged value) titleChanged,
+  }) {
+    return storyChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(AddCoverPressed value)? addCoverPressed,
+    TResult Function(ChapterOneExistenceChecked value)?
+        chapterOneExistenceChecked,
+    TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
+    TResult Function(GenreAdded value)? genreAdded,
+    TResult Function(GenreRemoved value)? genreRemoved,
+    TResult Function(IsNSFWChanged value)? isNSFWChanged,
+    TResult Function(LanguageSelected value)? languageSelected,
+    TResult Function(LaunchAsNewChapter value)? launchAsNewChapter,
+    TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(LicenceSelected value)? licenceSelected,
+    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
+    TResult Function(PublishButtonPressed value)? publishButtonPressed,
+    TResult Function(SaveButtonPressed value)? saveButtonPressed,
+    TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(StoryChanged value)? storyChanged,
+    TResult Function(TitleChanged value)? titleChanged,
+  }) {
+    return storyChanged?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(AddCoverPressed value)? addCoverPressed,
+    TResult Function(ChapterOneExistenceChecked value)?
+        chapterOneExistenceChecked,
+    TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
+    TResult Function(GenreAdded value)? genreAdded,
+    TResult Function(GenreRemoved value)? genreRemoved,
+    TResult Function(IsNSFWChanged value)? isNSFWChanged,
+    TResult Function(LanguageSelected value)? languageSelected,
+    TResult Function(LaunchAsNewChapter value)? launchAsNewChapter,
+    TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(LicenceSelected value)? licenceSelected,
+    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
+    TResult Function(PublishButtonPressed value)? publishButtonPressed,
+    TResult Function(SaveButtonPressed value)? saveButtonPressed,
+    TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(StoryChanged value)? storyChanged,
+    TResult Function(TitleChanged value)? titleChanged,
+    required TResult orElse(),
+  }) {
+    if (storyChanged != null) {
+      return storyChanged(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class StoryChanged implements TypewriterChapterEvent {
+  const factory StoryChanged() = _$StoryChanged;
+}
+
+/// @nodoc
+abstract class $TitleChangedCopyWith<$Res> {
+  factory $TitleChangedCopyWith(
+          TitleChanged value, $Res Function(TitleChanged) then) =
+      _$TitleChangedCopyWithImpl<$Res>;
+  $Res call({String title});
+}
+
+/// @nodoc
+class _$TitleChangedCopyWithImpl<$Res>
+    extends _$TypewriterChapterEventCopyWithImpl<$Res>
+    implements $TitleChangedCopyWith<$Res> {
+  _$TitleChangedCopyWithImpl(
+      TitleChanged _value, $Res Function(TitleChanged) _then)
+      : super(_value, (v) => _then(v as TitleChanged));
+
+  @override
+  TitleChanged get _value => super._value as TitleChanged;
+
+  @override
+  $Res call({
+    Object? title = freezed,
+  }) {
+    return _then(TitleChanged(
+      title == freezed
+          ? _value.title
+          : title // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$TitleChanged implements TitleChanged {
+  const _$TitleChanged(this.title);
+
+  @override
+  final String title;
+
+  @override
+  String toString() {
+    return 'TypewriterChapterEvent.titleChanged(title: $title)';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is TitleChanged &&
+            const DeepCollectionEquality().equals(other.title, title));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(title));
+
+  @JsonKey(ignore: true)
+  @override
+  $TitleChangedCopyWith<TitleChanged> get copyWith =>
+      _$TitleChangedCopyWithImpl<TitleChanged>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() addCoverPressed,
+    required TResult Function() chapterOneExistenceChecked,
+    required TResult Function() deleteButtonPressed,
+    required TResult Function(String genre) genreAdded,
+    required TResult Function(String genre) genreRemoved,
+    required TResult Function(bool isNSFW) isNSFWChanged,
+    required TResult Function(String language) languageSelected,
+    required TResult Function(Series series, Chapter? previousChapter)
+        launchAsNewChapter,
+    required TResult Function(UniqueID id, Chapter? chapter) launchWithID,
+    required TResult Function(String licence) licenceSelected,
+    required TResult Function(int index) pageViewIndexChanged,
+    required TResult Function() publishButtonPressed,
+    required TResult Function() saveButtonPressed,
+    required TResult Function() sessionFetched,
+    required TResult Function() storyChanged,
+    required TResult Function(String title) titleChanged,
+  }) {
+    return titleChanged(title);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? addCoverPressed,
+    TResult Function()? chapterOneExistenceChecked,
+    TResult Function()? deleteButtonPressed,
+    TResult Function(String genre)? genreAdded,
+    TResult Function(String genre)? genreRemoved,
+    TResult Function(bool isNSFW)? isNSFWChanged,
+    TResult Function(String language)? languageSelected,
+    TResult Function(Series series, Chapter? previousChapter)?
+        launchAsNewChapter,
+    TResult Function(UniqueID id, Chapter? chapter)? launchWithID,
+    TResult Function(String licence)? licenceSelected,
+    TResult Function(int index)? pageViewIndexChanged,
+    TResult Function()? publishButtonPressed,
+    TResult Function()? saveButtonPressed,
+    TResult Function()? sessionFetched,
+    TResult Function()? storyChanged,
+    TResult Function(String title)? titleChanged,
+  }) {
+    return titleChanged?.call(title);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? addCoverPressed,
+    TResult Function()? chapterOneExistenceChecked,
+    TResult Function()? deleteButtonPressed,
+    TResult Function(String genre)? genreAdded,
+    TResult Function(String genre)? genreRemoved,
+    TResult Function(bool isNSFW)? isNSFWChanged,
+    TResult Function(String language)? languageSelected,
+    TResult Function(Series series, Chapter? previousChapter)?
+        launchAsNewChapter,
+    TResult Function(UniqueID id, Chapter? chapter)? launchWithID,
+    TResult Function(String licence)? licenceSelected,
+    TResult Function(int index)? pageViewIndexChanged,
+    TResult Function()? publishButtonPressed,
+    TResult Function()? saveButtonPressed,
+    TResult Function()? sessionFetched,
+    TResult Function()? storyChanged,
+    TResult Function(String title)? titleChanged,
+    required TResult orElse(),
+  }) {
+    if (titleChanged != null) {
+      return titleChanged(title);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(AddCoverPressed value) addCoverPressed,
+    required TResult Function(ChapterOneExistenceChecked value)
+        chapterOneExistenceChecked,
+    required TResult Function(DeleteButtonPressed value) deleteButtonPressed,
+    required TResult Function(GenreAdded value) genreAdded,
+    required TResult Function(GenreRemoved value) genreRemoved,
+    required TResult Function(IsNSFWChanged value) isNSFWChanged,
+    required TResult Function(LanguageSelected value) languageSelected,
+    required TResult Function(LaunchAsNewChapter value) launchAsNewChapter,
+    required TResult Function(LaunchWithID value) launchWithID,
+    required TResult Function(LicenceSelected value) licenceSelected,
+    required TResult Function(PageViewIndexChanged value) pageViewIndexChanged,
+    required TResult Function(PublishButtonPressed value) publishButtonPressed,
+    required TResult Function(SaveButtonPressed value) saveButtonPressed,
+    required TResult Function(SessionFetched value) sessionFetched,
+    required TResult Function(StoryChanged value) storyChanged,
+    required TResult Function(TitleChanged value) titleChanged,
+  }) {
+    return titleChanged(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(AddCoverPressed value)? addCoverPressed,
+    TResult Function(ChapterOneExistenceChecked value)?
+        chapterOneExistenceChecked,
+    TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
+    TResult Function(GenreAdded value)? genreAdded,
+    TResult Function(GenreRemoved value)? genreRemoved,
+    TResult Function(IsNSFWChanged value)? isNSFWChanged,
+    TResult Function(LanguageSelected value)? languageSelected,
+    TResult Function(LaunchAsNewChapter value)? launchAsNewChapter,
+    TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(LicenceSelected value)? licenceSelected,
+    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
+    TResult Function(PublishButtonPressed value)? publishButtonPressed,
+    TResult Function(SaveButtonPressed value)? saveButtonPressed,
+    TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(StoryChanged value)? storyChanged,
+    TResult Function(TitleChanged value)? titleChanged,
+  }) {
+    return titleChanged?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(AddCoverPressed value)? addCoverPressed,
+    TResult Function(ChapterOneExistenceChecked value)?
+        chapterOneExistenceChecked,
+    TResult Function(DeleteButtonPressed value)? deleteButtonPressed,
+    TResult Function(GenreAdded value)? genreAdded,
+    TResult Function(GenreRemoved value)? genreRemoved,
+    TResult Function(IsNSFWChanged value)? isNSFWChanged,
+    TResult Function(LanguageSelected value)? languageSelected,
+    TResult Function(LaunchAsNewChapter value)? launchAsNewChapter,
+    TResult Function(LaunchWithID value)? launchWithID,
+    TResult Function(LicenceSelected value)? licenceSelected,
+    TResult Function(PageViewIndexChanged value)? pageViewIndexChanged,
+    TResult Function(PublishButtonPressed value)? publishButtonPressed,
+    TResult Function(SaveButtonPressed value)? saveButtonPressed,
+    TResult Function(SessionFetched value)? sessionFetched,
+    TResult Function(StoryChanged value)? storyChanged,
+    TResult Function(TitleChanged value)? titleChanged,
+    required TResult orElse(),
+  }) {
+    if (titleChanged != null) {
+      return titleChanged(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class TitleChanged implements TypewriterChapterEvent {
+  const factory TitleChanged(String title) = _$TitleChanged;
+
+  String get title;
+  @JsonKey(ignore: true)
+  $TitleChangedCopyWith<TitleChanged> get copyWith =>
+      throw _privateConstructorUsedError;
+}
+
+/// @nodoc
 class _$TypewriterChapterStateTearOff {
   const _$TypewriterChapterStateTearOff();
 
-  _TypewriterChapterState call({required String coverURL}) {
+  _TypewriterChapterState call(
+      {required Chapter chapter,
+      required String coverURL,
+      required int currentPageViewIdx,
+      required TypewriterEndState endState,
+      required Option<Result<None<Object>, CoreFailure>> failureOption,
+      required List<Genre> genres,
+      required bool isEdit,
+      required bool isNSFW,
+      required bool isProcessing,
+      required Language language,
+      required Licence licence,
+      required bool showErrorMessages,
+      required Story story,
+      required QuillController storyController,
+      required int storyWordCount,
+      required Title title,
+      required TextEditingController titleController,
+      required int titleWordCount}) {
     return _TypewriterChapterState(
+      chapter: chapter,
       coverURL: coverURL,
+      currentPageViewIdx: currentPageViewIdx,
+      endState: endState,
+      failureOption: failureOption,
+      genres: genres,
+      isEdit: isEdit,
+      isNSFW: isNSFW,
+      isProcessing: isProcessing,
+      language: language,
+      licence: licence,
+      showErrorMessages: showErrorMessages,
+      story: story,
+      storyController: storyController,
+      storyWordCount: storyWordCount,
+      title: title,
+      titleController: titleController,
+      titleWordCount: titleWordCount,
     );
   }
 }
@@ -1782,7 +3747,26 @@ const $TypewriterChapterState = _$TypewriterChapterStateTearOff();
 
 /// @nodoc
 mixin _$TypewriterChapterState {
+  Chapter get chapter => throw _privateConstructorUsedError;
   String get coverURL => throw _privateConstructorUsedError;
+  int get currentPageViewIdx => throw _privateConstructorUsedError;
+  TypewriterEndState get endState => throw _privateConstructorUsedError;
+  Option<Result<None<Object>, CoreFailure>> get failureOption =>
+      throw _privateConstructorUsedError;
+  List<Genre> get genres => throw _privateConstructorUsedError;
+  bool get isEdit => throw _privateConstructorUsedError;
+  bool get isNSFW => throw _privateConstructorUsedError;
+  bool get isProcessing => throw _privateConstructorUsedError;
+  Language get language => throw _privateConstructorUsedError;
+  Licence get licence => throw _privateConstructorUsedError;
+  bool get showErrorMessages => throw _privateConstructorUsedError;
+  Story get story => throw _privateConstructorUsedError;
+  QuillController get storyController => throw _privateConstructorUsedError;
+  int get storyWordCount => throw _privateConstructorUsedError;
+  Title get title => throw _privateConstructorUsedError;
+  TextEditingController get titleController =>
+      throw _privateConstructorUsedError;
+  int get titleWordCount => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $TypewriterChapterStateCopyWith<TypewriterChapterState> get copyWith =>
@@ -1794,7 +3778,27 @@ abstract class $TypewriterChapterStateCopyWith<$Res> {
   factory $TypewriterChapterStateCopyWith(TypewriterChapterState value,
           $Res Function(TypewriterChapterState) then) =
       _$TypewriterChapterStateCopyWithImpl<$Res>;
-  $Res call({String coverURL});
+  $Res call(
+      {Chapter chapter,
+      String coverURL,
+      int currentPageViewIdx,
+      TypewriterEndState endState,
+      Option<Result<None<Object>, CoreFailure>> failureOption,
+      List<Genre> genres,
+      bool isEdit,
+      bool isNSFW,
+      bool isProcessing,
+      Language language,
+      Licence licence,
+      bool showErrorMessages,
+      Story story,
+      QuillController storyController,
+      int storyWordCount,
+      Title title,
+      TextEditingController titleController,
+      int titleWordCount});
+
+  $ChapterCopyWith<$Res> get chapter;
 }
 
 /// @nodoc
@@ -1808,14 +3812,106 @@ class _$TypewriterChapterStateCopyWithImpl<$Res>
 
   @override
   $Res call({
+    Object? chapter = freezed,
     Object? coverURL = freezed,
+    Object? currentPageViewIdx = freezed,
+    Object? endState = freezed,
+    Object? failureOption = freezed,
+    Object? genres = freezed,
+    Object? isEdit = freezed,
+    Object? isNSFW = freezed,
+    Object? isProcessing = freezed,
+    Object? language = freezed,
+    Object? licence = freezed,
+    Object? showErrorMessages = freezed,
+    Object? story = freezed,
+    Object? storyController = freezed,
+    Object? storyWordCount = freezed,
+    Object? title = freezed,
+    Object? titleController = freezed,
+    Object? titleWordCount = freezed,
   }) {
     return _then(_value.copyWith(
+      chapter: chapter == freezed
+          ? _value.chapter
+          : chapter // ignore: cast_nullable_to_non_nullable
+              as Chapter,
       coverURL: coverURL == freezed
           ? _value.coverURL
           : coverURL // ignore: cast_nullable_to_non_nullable
               as String,
+      currentPageViewIdx: currentPageViewIdx == freezed
+          ? _value.currentPageViewIdx
+          : currentPageViewIdx // ignore: cast_nullable_to_non_nullable
+              as int,
+      endState: endState == freezed
+          ? _value.endState
+          : endState // ignore: cast_nullable_to_non_nullable
+              as TypewriterEndState,
+      failureOption: failureOption == freezed
+          ? _value.failureOption
+          : failureOption // ignore: cast_nullable_to_non_nullable
+              as Option<Result<None<Object>, CoreFailure>>,
+      genres: genres == freezed
+          ? _value.genres
+          : genres // ignore: cast_nullable_to_non_nullable
+              as List<Genre>,
+      isEdit: isEdit == freezed
+          ? _value.isEdit
+          : isEdit // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isNSFW: isNSFW == freezed
+          ? _value.isNSFW
+          : isNSFW // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isProcessing: isProcessing == freezed
+          ? _value.isProcessing
+          : isProcessing // ignore: cast_nullable_to_non_nullable
+              as bool,
+      language: language == freezed
+          ? _value.language
+          : language // ignore: cast_nullable_to_non_nullable
+              as Language,
+      licence: licence == freezed
+          ? _value.licence
+          : licence // ignore: cast_nullable_to_non_nullable
+              as Licence,
+      showErrorMessages: showErrorMessages == freezed
+          ? _value.showErrorMessages
+          : showErrorMessages // ignore: cast_nullable_to_non_nullable
+              as bool,
+      story: story == freezed
+          ? _value.story
+          : story // ignore: cast_nullable_to_non_nullable
+              as Story,
+      storyController: storyController == freezed
+          ? _value.storyController
+          : storyController // ignore: cast_nullable_to_non_nullable
+              as QuillController,
+      storyWordCount: storyWordCount == freezed
+          ? _value.storyWordCount
+          : storyWordCount // ignore: cast_nullable_to_non_nullable
+              as int,
+      title: title == freezed
+          ? _value.title
+          : title // ignore: cast_nullable_to_non_nullable
+              as Title,
+      titleController: titleController == freezed
+          ? _value.titleController
+          : titleController // ignore: cast_nullable_to_non_nullable
+              as TextEditingController,
+      titleWordCount: titleWordCount == freezed
+          ? _value.titleWordCount
+          : titleWordCount // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
+  }
+
+  @override
+  $ChapterCopyWith<$Res> get chapter {
+    return $ChapterCopyWith<$Res>(_value.chapter, (value) {
+      return _then(_value.copyWith(chapter: value));
+    });
   }
 }
 
@@ -1826,7 +3922,28 @@ abstract class _$TypewriterChapterStateCopyWith<$Res>
           $Res Function(_TypewriterChapterState) then) =
       __$TypewriterChapterStateCopyWithImpl<$Res>;
   @override
-  $Res call({String coverURL});
+  $Res call(
+      {Chapter chapter,
+      String coverURL,
+      int currentPageViewIdx,
+      TypewriterEndState endState,
+      Option<Result<None<Object>, CoreFailure>> failureOption,
+      List<Genre> genres,
+      bool isEdit,
+      bool isNSFW,
+      bool isProcessing,
+      Language language,
+      Licence licence,
+      bool showErrorMessages,
+      Story story,
+      QuillController storyController,
+      int storyWordCount,
+      Title title,
+      TextEditingController titleController,
+      int titleWordCount});
+
+  @override
+  $ChapterCopyWith<$Res> get chapter;
 }
 
 /// @nodoc
@@ -1842,13 +3959,98 @@ class __$TypewriterChapterStateCopyWithImpl<$Res>
 
   @override
   $Res call({
+    Object? chapter = freezed,
     Object? coverURL = freezed,
+    Object? currentPageViewIdx = freezed,
+    Object? endState = freezed,
+    Object? failureOption = freezed,
+    Object? genres = freezed,
+    Object? isEdit = freezed,
+    Object? isNSFW = freezed,
+    Object? isProcessing = freezed,
+    Object? language = freezed,
+    Object? licence = freezed,
+    Object? showErrorMessages = freezed,
+    Object? story = freezed,
+    Object? storyController = freezed,
+    Object? storyWordCount = freezed,
+    Object? title = freezed,
+    Object? titleController = freezed,
+    Object? titleWordCount = freezed,
   }) {
     return _then(_TypewriterChapterState(
+      chapter: chapter == freezed
+          ? _value.chapter
+          : chapter // ignore: cast_nullable_to_non_nullable
+              as Chapter,
       coverURL: coverURL == freezed
           ? _value.coverURL
           : coverURL // ignore: cast_nullable_to_non_nullable
               as String,
+      currentPageViewIdx: currentPageViewIdx == freezed
+          ? _value.currentPageViewIdx
+          : currentPageViewIdx // ignore: cast_nullable_to_non_nullable
+              as int,
+      endState: endState == freezed
+          ? _value.endState
+          : endState // ignore: cast_nullable_to_non_nullable
+              as TypewriterEndState,
+      failureOption: failureOption == freezed
+          ? _value.failureOption
+          : failureOption // ignore: cast_nullable_to_non_nullable
+              as Option<Result<None<Object>, CoreFailure>>,
+      genres: genres == freezed
+          ? _value.genres
+          : genres // ignore: cast_nullable_to_non_nullable
+              as List<Genre>,
+      isEdit: isEdit == freezed
+          ? _value.isEdit
+          : isEdit // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isNSFW: isNSFW == freezed
+          ? _value.isNSFW
+          : isNSFW // ignore: cast_nullable_to_non_nullable
+              as bool,
+      isProcessing: isProcessing == freezed
+          ? _value.isProcessing
+          : isProcessing // ignore: cast_nullable_to_non_nullable
+              as bool,
+      language: language == freezed
+          ? _value.language
+          : language // ignore: cast_nullable_to_non_nullable
+              as Language,
+      licence: licence == freezed
+          ? _value.licence
+          : licence // ignore: cast_nullable_to_non_nullable
+              as Licence,
+      showErrorMessages: showErrorMessages == freezed
+          ? _value.showErrorMessages
+          : showErrorMessages // ignore: cast_nullable_to_non_nullable
+              as bool,
+      story: story == freezed
+          ? _value.story
+          : story // ignore: cast_nullable_to_non_nullable
+              as Story,
+      storyController: storyController == freezed
+          ? _value.storyController
+          : storyController // ignore: cast_nullable_to_non_nullable
+              as QuillController,
+      storyWordCount: storyWordCount == freezed
+          ? _value.storyWordCount
+          : storyWordCount // ignore: cast_nullable_to_non_nullable
+              as int,
+      title: title == freezed
+          ? _value.title
+          : title // ignore: cast_nullable_to_non_nullable
+              as Title,
+      titleController: titleController == freezed
+          ? _value.titleController
+          : titleController // ignore: cast_nullable_to_non_nullable
+              as TextEditingController,
+      titleWordCount: titleWordCount == freezed
+          ? _value.titleWordCount
+          : titleWordCount // ignore: cast_nullable_to_non_nullable
+              as int,
     ));
   }
 }
@@ -1856,14 +4058,66 @@ class __$TypewriterChapterStateCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_TypewriterChapterState implements _TypewriterChapterState {
-  const _$_TypewriterChapterState({required this.coverURL});
+  const _$_TypewriterChapterState(
+      {required this.chapter,
+      required this.coverURL,
+      required this.currentPageViewIdx,
+      required this.endState,
+      required this.failureOption,
+      required this.genres,
+      required this.isEdit,
+      required this.isNSFW,
+      required this.isProcessing,
+      required this.language,
+      required this.licence,
+      required this.showErrorMessages,
+      required this.story,
+      required this.storyController,
+      required this.storyWordCount,
+      required this.title,
+      required this.titleController,
+      required this.titleWordCount});
 
   @override
+  final Chapter chapter;
+  @override
   final String coverURL;
+  @override
+  final int currentPageViewIdx;
+  @override
+  final TypewriterEndState endState;
+  @override
+  final Option<Result<None<Object>, CoreFailure>> failureOption;
+  @override
+  final List<Genre> genres;
+  @override
+  final bool isEdit;
+  @override
+  final bool isNSFW;
+  @override
+  final bool isProcessing;
+  @override
+  final Language language;
+  @override
+  final Licence licence;
+  @override
+  final bool showErrorMessages;
+  @override
+  final Story story;
+  @override
+  final QuillController storyController;
+  @override
+  final int storyWordCount;
+  @override
+  final Title title;
+  @override
+  final TextEditingController titleController;
+  @override
+  final int titleWordCount;
 
   @override
   String toString() {
-    return 'TypewriterChapterState(coverURL: $coverURL)';
+    return 'TypewriterChapterState(chapter: $chapter, coverURL: $coverURL, currentPageViewIdx: $currentPageViewIdx, endState: $endState, failureOption: $failureOption, genres: $genres, isEdit: $isEdit, isNSFW: $isNSFW, isProcessing: $isProcessing, language: $language, licence: $licence, showErrorMessages: $showErrorMessages, story: $story, storyController: $storyController, storyWordCount: $storyWordCount, title: $title, titleController: $titleController, titleWordCount: $titleWordCount)';
   }
 
   @override
@@ -1871,12 +4125,55 @@ class _$_TypewriterChapterState implements _TypewriterChapterState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _TypewriterChapterState &&
-            const DeepCollectionEquality().equals(other.coverURL, coverURL));
+            const DeepCollectionEquality().equals(other.chapter, chapter) &&
+            const DeepCollectionEquality().equals(other.coverURL, coverURL) &&
+            const DeepCollectionEquality()
+                .equals(other.currentPageViewIdx, currentPageViewIdx) &&
+            const DeepCollectionEquality().equals(other.endState, endState) &&
+            const DeepCollectionEquality()
+                .equals(other.failureOption, failureOption) &&
+            const DeepCollectionEquality().equals(other.genres, genres) &&
+            const DeepCollectionEquality().equals(other.isEdit, isEdit) &&
+            const DeepCollectionEquality().equals(other.isNSFW, isNSFW) &&
+            const DeepCollectionEquality()
+                .equals(other.isProcessing, isProcessing) &&
+            const DeepCollectionEquality().equals(other.language, language) &&
+            const DeepCollectionEquality().equals(other.licence, licence) &&
+            const DeepCollectionEquality()
+                .equals(other.showErrorMessages, showErrorMessages) &&
+            const DeepCollectionEquality().equals(other.story, story) &&
+            const DeepCollectionEquality()
+                .equals(other.storyController, storyController) &&
+            const DeepCollectionEquality()
+                .equals(other.storyWordCount, storyWordCount) &&
+            const DeepCollectionEquality().equals(other.title, title) &&
+            const DeepCollectionEquality()
+                .equals(other.titleController, titleController) &&
+            const DeepCollectionEquality()
+                .equals(other.titleWordCount, titleWordCount));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(coverURL));
+  int get hashCode => Object.hash(
+      runtimeType,
+      const DeepCollectionEquality().hash(chapter),
+      const DeepCollectionEquality().hash(coverURL),
+      const DeepCollectionEquality().hash(currentPageViewIdx),
+      const DeepCollectionEquality().hash(endState),
+      const DeepCollectionEquality().hash(failureOption),
+      const DeepCollectionEquality().hash(genres),
+      const DeepCollectionEquality().hash(isEdit),
+      const DeepCollectionEquality().hash(isNSFW),
+      const DeepCollectionEquality().hash(isProcessing),
+      const DeepCollectionEquality().hash(language),
+      const DeepCollectionEquality().hash(licence),
+      const DeepCollectionEquality().hash(showErrorMessages),
+      const DeepCollectionEquality().hash(story),
+      const DeepCollectionEquality().hash(storyController),
+      const DeepCollectionEquality().hash(storyWordCount),
+      const DeepCollectionEquality().hash(title),
+      const DeepCollectionEquality().hash(titleController),
+      const DeepCollectionEquality().hash(titleWordCount));
 
   @JsonKey(ignore: true)
   @override
@@ -1886,11 +4183,62 @@ class _$_TypewriterChapterState implements _TypewriterChapterState {
 }
 
 abstract class _TypewriterChapterState implements TypewriterChapterState {
-  const factory _TypewriterChapterState({required String coverURL}) =
-      _$_TypewriterChapterState;
+  const factory _TypewriterChapterState(
+      {required Chapter chapter,
+      required String coverURL,
+      required int currentPageViewIdx,
+      required TypewriterEndState endState,
+      required Option<Result<None<Object>, CoreFailure>> failureOption,
+      required List<Genre> genres,
+      required bool isEdit,
+      required bool isNSFW,
+      required bool isProcessing,
+      required Language language,
+      required Licence licence,
+      required bool showErrorMessages,
+      required Story story,
+      required QuillController storyController,
+      required int storyWordCount,
+      required Title title,
+      required TextEditingController titleController,
+      required int titleWordCount}) = _$_TypewriterChapterState;
 
   @override
+  Chapter get chapter;
+  @override
   String get coverURL;
+  @override
+  int get currentPageViewIdx;
+  @override
+  TypewriterEndState get endState;
+  @override
+  Option<Result<None<Object>, CoreFailure>> get failureOption;
+  @override
+  List<Genre> get genres;
+  @override
+  bool get isEdit;
+  @override
+  bool get isNSFW;
+  @override
+  bool get isProcessing;
+  @override
+  Language get language;
+  @override
+  Licence get licence;
+  @override
+  bool get showErrorMessages;
+  @override
+  Story get story;
+  @override
+  QuillController get storyController;
+  @override
+  int get storyWordCount;
+  @override
+  Title get title;
+  @override
+  TextEditingController get titleController;
+  @override
+  int get titleWordCount;
   @override
   @JsonKey(ignore: true)
   _$TypewriterChapterStateCopyWith<_TypewriterChapterState> get copyWith =>
