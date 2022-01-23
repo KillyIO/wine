@@ -12,6 +12,13 @@ class Licence extends ValueObject<String> {
     );
   }
 
+  /// @nodoc
+  factory Licence.forSaving(Result<String, ValueFailure<String>> input) {
+    return Licence._(
+      Ok(input.unwrapOr('')),
+    );
+  }
+
   const Licence._(this.value);
 
   @override

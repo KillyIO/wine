@@ -6,9 +6,16 @@ import 'package:wine/domain/core/value_validators.dart';
 /// @nodoc
 class Story extends ValueObject<String> {
   /// @nodoc
-  factory Story(String input) {
+  factory Story(String input, List<dynamic> json) {
     return Story._(
-      validateStory(input),
+      validateStory(input, json),
+    );
+  }
+
+  /// @nodoc
+  factory Story.forSaving(Result<String, ValueFailure<String>> input) {
+    return Story._(
+      Ok(input.unwrapOr('')),
     );
   }
 
