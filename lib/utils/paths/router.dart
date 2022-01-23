@@ -29,6 +29,12 @@ const String settingsSeriesPath = 'series';
 const String signUpPath = '/sign-up';
 
 /// @nodoc
+const String typewriterChapterIDPath = '/chapter/:id';
+
+/// @nodoc
+const String typewriterChapterNewPath = '/chapter/new';
+
+/// @nodoc
 const String typewriterPath = '/typewriter';
 
 /// @nodoc
