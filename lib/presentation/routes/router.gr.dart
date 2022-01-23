@@ -13,7 +13,8 @@
 import 'package:auto_route/auto_route.dart' as _i13;
 import 'package:flutter/foundation.dart' as _i15;
 import 'package:flutter/material.dart' as _i14;
-import 'package:wine/domain/core/typewriter_type.dart' as _i17;
+import 'package:wine/domain/chapter/chapter.dart' as _i17;
+import 'package:wine/domain/core/typewriter_type.dart' as _i18;
 import 'package:wine/domain/series/series.dart' as _i16;
 import 'package:wine/presentation/home/home_page.dart' as _i1;
 import 'package:wine/presentation/library/library_page.dart' as _i2;
@@ -74,6 +75,34 @@ class AppRouter extends _i13.RootStackRouter {
           routeData: routeData,
           child: _i7.SignUpPage(key: args.key, navigateTo: args.navigateTo));
     },
+    TypewriterChapterId.name: (routeData) {
+      final pathParams = routeData.inheritedPathParams;
+      final args = routeData.argsAs<TypewriterChapterIdArgs>(
+          orElse: () =>
+              TypewriterChapterIdArgs(id: pathParams.optString('id')));
+      return _i13.AdaptivePage<_i8.TypewriterPage>(
+          routeData: routeData,
+          child: _i8.TypewriterPage(
+              key: args.key,
+              chapter: args.chapter,
+              series: args.series,
+              id: args.id,
+              type: args.type));
+    },
+    TypewriterChapterNew.name: (routeData) {
+      final pathParams = routeData.inheritedPathParams;
+      final args = routeData.argsAs<TypewriterChapterNewArgs>(
+          orElse: () =>
+              TypewriterChapterNewArgs(id: pathParams.optString('id')));
+      return _i13.AdaptivePage<_i8.TypewriterPage>(
+          routeData: routeData,
+          child: _i8.TypewriterPage(
+              key: args.key,
+              chapter: args.chapter,
+              series: args.series,
+              id: args.id,
+              type: args.type));
+    },
     TypewriterSeriesId.name: (routeData) {
       final pathParams = routeData.inheritedPathParams;
       final args = routeData.argsAs<TypewriterSeriesIdArgs>(
@@ -82,6 +111,7 @@ class AppRouter extends _i13.RootStackRouter {
           routeData: routeData,
           child: _i8.TypewriterPage(
               key: args.key,
+              chapter: args.chapter,
               series: args.series,
               id: args.id,
               type: args.type));
@@ -95,6 +125,7 @@ class AppRouter extends _i13.RootStackRouter {
           routeData: routeData,
           child: _i8.TypewriterPage(
               key: args.key,
+              chapter: args.chapter,
               series: args.series,
               id: args.id,
               type: args.type));
@@ -135,6 +166,10 @@ class AppRouter extends _i13.RootStackRouter {
               path: '', parent: SettingsWrapper.name)
         ]),
         _i13.RouteConfig(SignUpRoute.name, path: '/sign-up'),
+        _i13.RouteConfig(TypewriterChapterId.name,
+            path: '/typewriter/chapter/:id'),
+        _i13.RouteConfig(TypewriterChapterNew.name,
+            path: '/typewriter/chapter/new'),
         _i13.RouteConfig(TypewriterSeriesId.name,
             path: '/typewriter/series/:id'),
         _i13.RouteConfig(TypewriterSeriesNew.name,
@@ -253,16 +288,102 @@ class SignUpRouteArgs {
 
 /// generated route for
 /// [_i8.TypewriterPage]
+class TypewriterChapterId extends _i13.PageRouteInfo<TypewriterChapterIdArgs> {
+  TypewriterChapterId(
+      {_i15.Key? key,
+      _i17.Chapter? chapter,
+      _i16.Series? series,
+      String? id,
+      _i18.TypewriterType type = _i18.TypewriterType.unknown})
+      : super(TypewriterChapterId.name,
+            path: '/typewriter/chapter/:id',
+            args: TypewriterChapterIdArgs(
+                key: key, chapter: chapter, series: series, id: id, type: type),
+            rawPathParams: {'id': id});
+
+  static const String name = 'TypewriterChapterId';
+}
+
+class TypewriterChapterIdArgs {
+  const TypewriterChapterIdArgs(
+      {this.key,
+      this.chapter,
+      this.series,
+      this.id,
+      this.type = _i18.TypewriterType.unknown});
+
+  final _i15.Key? key;
+
+  final _i17.Chapter? chapter;
+
+  final _i16.Series? series;
+
+  final String? id;
+
+  final _i18.TypewriterType type;
+
+  @override
+  String toString() {
+    return 'TypewriterChapterIdArgs{key: $key, chapter: $chapter, series: $series, id: $id, type: $type}';
+  }
+}
+
+/// generated route for
+/// [_i8.TypewriterPage]
+class TypewriterChapterNew
+    extends _i13.PageRouteInfo<TypewriterChapterNewArgs> {
+  TypewriterChapterNew(
+      {_i15.Key? key,
+      _i17.Chapter? chapter,
+      _i16.Series? series,
+      String? id,
+      _i18.TypewriterType type = _i18.TypewriterType.unknown})
+      : super(TypewriterChapterNew.name,
+            path: '/typewriter/chapter/new',
+            args: TypewriterChapterNewArgs(
+                key: key, chapter: chapter, series: series, id: id, type: type),
+            rawPathParams: {'id': id});
+
+  static const String name = 'TypewriterChapterNew';
+}
+
+class TypewriterChapterNewArgs {
+  const TypewriterChapterNewArgs(
+      {this.key,
+      this.chapter,
+      this.series,
+      this.id,
+      this.type = _i18.TypewriterType.unknown});
+
+  final _i15.Key? key;
+
+  final _i17.Chapter? chapter;
+
+  final _i16.Series? series;
+
+  final String? id;
+
+  final _i18.TypewriterType type;
+
+  @override
+  String toString() {
+    return 'TypewriterChapterNewArgs{key: $key, chapter: $chapter, series: $series, id: $id, type: $type}';
+  }
+}
+
+/// generated route for
+/// [_i8.TypewriterPage]
 class TypewriterSeriesId extends _i13.PageRouteInfo<TypewriterSeriesIdArgs> {
   TypewriterSeriesId(
       {_i15.Key? key,
+      _i17.Chapter? chapter,
       _i16.Series? series,
       String? id,
-      _i17.TypewriterType type = _i17.TypewriterType.unknown})
+      _i18.TypewriterType type = _i18.TypewriterType.unknown})
       : super(TypewriterSeriesId.name,
             path: '/typewriter/series/:id',
             args: TypewriterSeriesIdArgs(
-                key: key, series: series, id: id, type: type),
+                key: key, chapter: chapter, series: series, id: id, type: type),
             rawPathParams: {'id': id});
 
   static const String name = 'TypewriterSeriesId';
@@ -271,21 +392,24 @@ class TypewriterSeriesId extends _i13.PageRouteInfo<TypewriterSeriesIdArgs> {
 class TypewriterSeriesIdArgs {
   const TypewriterSeriesIdArgs(
       {this.key,
+      this.chapter,
       this.series,
       this.id,
-      this.type = _i17.TypewriterType.unknown});
+      this.type = _i18.TypewriterType.unknown});
 
   final _i15.Key? key;
+
+  final _i17.Chapter? chapter;
 
   final _i16.Series? series;
 
   final String? id;
 
-  final _i17.TypewriterType type;
+  final _i18.TypewriterType type;
 
   @override
   String toString() {
-    return 'TypewriterSeriesIdArgs{key: $key, series: $series, id: $id, type: $type}';
+    return 'TypewriterSeriesIdArgs{key: $key, chapter: $chapter, series: $series, id: $id, type: $type}';
   }
 }
 
@@ -294,13 +418,14 @@ class TypewriterSeriesIdArgs {
 class TypewriterSeriesNew extends _i13.PageRouteInfo<TypewriterSeriesNewArgs> {
   TypewriterSeriesNew(
       {_i15.Key? key,
+      _i17.Chapter? chapter,
       _i16.Series? series,
       String? id,
-      _i17.TypewriterType type = _i17.TypewriterType.unknown})
+      _i18.TypewriterType type = _i18.TypewriterType.unknown})
       : super(TypewriterSeriesNew.name,
             path: '/typewriter/series/new',
             args: TypewriterSeriesNewArgs(
-                key: key, series: series, id: id, type: type),
+                key: key, chapter: chapter, series: series, id: id, type: type),
             rawPathParams: {'id': id});
 
   static const String name = 'TypewriterSeriesNew';
@@ -309,21 +434,24 @@ class TypewriterSeriesNew extends _i13.PageRouteInfo<TypewriterSeriesNewArgs> {
 class TypewriterSeriesNewArgs {
   const TypewriterSeriesNewArgs(
       {this.key,
+      this.chapter,
       this.series,
       this.id,
-      this.type = _i17.TypewriterType.unknown});
+      this.type = _i18.TypewriterType.unknown});
 
   final _i15.Key? key;
+
+  final _i17.Chapter? chapter;
 
   final _i16.Series? series;
 
   final String? id;
 
-  final _i17.TypewriterType type;
+  final _i18.TypewriterType type;
 
   @override
   String toString() {
-    return 'TypewriterSeriesNewArgs{key: $key, series: $series, id: $id, type: $type}';
+    return 'TypewriterSeriesNewArgs{key: $key, chapter: $chapter, series: $series, id: $id, type: $type}';
   }
 }
 

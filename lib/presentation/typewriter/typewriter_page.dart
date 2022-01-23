@@ -2,8 +2,11 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:wine/domain/chapter/chapter.dart';
 import 'package:wine/domain/core/typewriter_type.dart';
 import 'package:wine/domain/series/series.dart';
+import 'package:wine/presentation/typewriter/typewriter_chapter/typewriter_chapter_id_page.dart';
+import 'package:wine/presentation/typewriter/typewriter_chapter/typewriter_chapter_new_page.dart';
 import 'package:wine/presentation/typewriter/typewriter_series/typewriter_series_id_page.dart';
 import 'package:wine/presentation/typewriter/typewriter_series/typewriter_series_new_page.dart';
 import 'package:wine/utils/constants/core.dart';
@@ -14,10 +17,14 @@ class TypewriterPage extends StatelessWidget {
   /// @nodoc
   const TypewriterPage({
     Key? key,
+    this.chapter,
     this.series,
     @PathParam('id') this.id,
     this.type = TypewriterType.unknown,
   }) : super(key: key);
+
+  /// @nodoc
+  final Chapter? chapter;
 
   /// @nodoc
   final Series? series;
@@ -31,13 +38,16 @@ class TypewriterPage extends StatelessWidget {
   Widget get _typewriter {
     switch (type) {
       case TypewriterType.chapter:
-      // if (id != null) {
-      //   return TypewriterChapterIDPage(seriesId: id!);
-      // }
-      // return const TypewriterChapterNewPage();
+        if (id != null) {
+          return TypewriterChapterIDPage(chapter: chapter, chapterId: id!);
+        }
+        return TypewriterChapterNewPage(
+          series: series!,
+          previousChapter: chapter,
+        );
       case TypewriterType.series:
         if (id != null) {
-          return TypewriterSeriesIDPage(seriesId: id!, series: series);
+          return TypewriterSeriesIDPage(series: series, seriesId: id!);
         }
         return const TypewriterSeriesNewPage();
     }
@@ -60,10 +70,7 @@ class TypewriterPage extends StatelessWidget {
           backgroundColor: Colors.transparent,
           bottom: PreferredSize(
             preferredSize: const Size.fromHeight(0),
-            child: Container(
-              color: Colors.black,
-              height: 2,
-            ),
+            child: Container(color: Colors.black, height: 2),
           ),
           centerTitle: true,
           elevation: 0,
@@ -71,17 +78,14 @@ class TypewriterPage extends StatelessWidget {
               ? Padding(
                   padding: getAssetBackButtonPadding(mediaQuery),
                   child: IconButton(
-                    key: const Key('typewriter_back'),
+                    key: const Key('typewriter_back_button'),
                     highlightColor: Colors.transparent,
                     hoverColor: Colors.transparent,
                     icon: const Icon(
                       Icons.keyboard_backspace_outlined,
                       color: Colors.black,
                     ),
-                    onPressed: () {
-                      FocusScope.of(context).requestFocus(FocusNode());
-                      context.router.root.pop();
-                    },
+                    onPressed: context.router.root.pop,
                     splashColor: Colors.transparent,
                   ),
                 )

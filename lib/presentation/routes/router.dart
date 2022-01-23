@@ -66,6 +66,16 @@ export 'router.gr.dart';
       path: signUpPath,
     ),
     AutoRoute<TypewriterPage>(
+      name: 'TypewriterChapterId',
+      page: TypewriterPage,
+      path: '$typewriterPath$typewriterChapterIDPath',
+    ),
+    AutoRoute<TypewriterPage>(
+      name: 'TypewriterChapterNew',
+      page: TypewriterPage,
+      path: '$typewriterPath$typewriterChapterNewPath',
+    ),
+    AutoRoute<TypewriterPage>(
       name: 'TypewriterSeriesId',
       page: TypewriterPage,
       path: '$typewriterPath$typewriterSeriesIDPath',
