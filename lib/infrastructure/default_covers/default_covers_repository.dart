@@ -105,11 +105,9 @@ class DefaultCoversRepository implements IDefaultCoversRepository {
         );
       }
       return Ok(data);
-    } on PlatformException catch (e) {
-      if (e.code == 'firebase_firestore') {
-        if ((e.details as Map)['code'] == 'permission-denied') {
-          return Err(const DefaultCoversFailure.permissionDenied());
-        }
+    } on FirebaseException catch (e) {
+      if (e.code == 'permission-denied') {
+        return Err(const DefaultCoversFailure.permissionDenied());
       }
       return Err(const DefaultCoversFailure.serverError());
     } catch (_) {

@@ -1,5 +1,4 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:flutter/services.dart';
 import 'package:injectable/injectable.dart';
 import 'package:oxidized/oxidized.dart';
 import 'package:wine/domain/auth/email_address.dart';
@@ -39,11 +38,9 @@ class UserRepository implements IUserRepository {
         return Err(const UserFailure.usernameAlreadyInUse());
       }
       return Ok(unit);
-    } on PlatformException catch (e) {
-      if (e.code == 'firebase_firestore') {
-        if ((e.details as Map)['code'] == 'permission-denied') {
-          return Err(const UserFailure.permissionDenied());
-        }
+    } on FirebaseException catch (e) {
+      if (e.code == 'permission-denied') {
+        return Err(const UserFailure.permissionDenied());
       }
       return Err(const UserFailure.serverError());
     } catch (_) {
@@ -77,11 +74,9 @@ class UserRepository implements IUserRepository {
         return Ok(user);
       }
       return Err(const UserFailure.userNotFound());
-    } on PlatformException catch (e) {
-      if (e.code == 'firebase_firestore') {
-        if ((e.details as Map)['code'] == 'permission-denied') {
-          return Err(const UserFailure.permissionDenied());
-        }
+    } on FirebaseException catch (e) {
+      if (e.code == 'permission-denied') {
+        return Err(const UserFailure.permissionDenied());
       }
       return Err(const UserFailure.serverError());
     } catch (_) {
@@ -104,11 +99,9 @@ class UserRepository implements IUserRepository {
       await usersRef.set(user, SetOptions(merge: true));
 
       return Ok(unit);
-    } on PlatformException catch (e) {
-      if (e.code == 'firebase_firestore') {
-        if ((e.details as Map)['code'] == 'permission-denied') {
-          return Err(const UserFailure.permissionDenied());
-        }
+    } on FirebaseException catch (e) {
+      if (e.code == 'permission-denied') {
+        return Err(const UserFailure.permissionDenied());
       }
       return Err(const UserFailure.serverError());
     } catch (_) {
@@ -132,11 +125,9 @@ class UserRepository implements IUserRepository {
           .set(<String, dynamic>{'uid': uid}, SetOptions(merge: true));
 
       return Ok(unit);
-    } on PlatformException catch (e) {
-      if (e.code == 'firebase_firestore') {
-        if ((e.details as Map)['code'] == 'permission-denied') {
-          return Err(const UserFailure.permissionDenied());
-        }
+    } on FirebaseException catch (e) {
+      if (e.code == 'permission-denied') {
+        return Err(const UserFailure.permissionDenied());
       }
       return Err(const UserFailure.serverError());
     } catch (_) {

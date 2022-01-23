@@ -54,11 +54,9 @@ class ChapterRepository implements IChapterRepository {
         return Ok(unit);
       }
       return Err(const ChapterFailure.chapterOneAlreadyExists());
-    } on PlatformException catch (e) {
-      if (e.code == 'firebase_firestore') {
-        if ((e.details as Map)['code'] == 'permission-denied') {
-          return Err(const ChapterFailure.permissionDenied());
-        }
+    } on FirebaseException catch (e) {
+      if (e.code == 'permission-denied') {
+        return Err(const ChapterFailure.permissionDenied());
       }
       return Err(const ChapterFailure.serverError());
     } catch (_) {
@@ -88,11 +86,9 @@ class ChapterRepository implements IChapterRepository {
           .set(ChapterDTO.fromDomain(tmpChapter).toJson());
 
       return Ok(unit);
-    } on PlatformException catch (e) {
-      if (e.code == 'firebase_firestore') {
-        if ((e.details as Map)['code'] == 'permission-denied') {
-          return Err(const ChapterFailure.permissionDenied());
-        }
+    } on FirebaseException catch (e) {
+      if (e.code == 'permission-denied') {
+        return Err(const ChapterFailure.permissionDenied());
       }
       return Err(const ChapterFailure.serverError());
     } catch (_) {
@@ -106,11 +102,9 @@ class ChapterRepository implements IChapterRepository {
       await _firestore.collection(chaptersPath).doc(uid.getOrCrash()).delete();
 
       return Ok(unit);
-    } on PlatformException catch (e) {
-      if (e.code == 'firebase_firestore') {
-        if ((e.details as Map)['code'] == 'permission-denied') {
-          return Err(const ChapterFailure.permissionDenied());
-        }
+    } on FirebaseException catch (e) {
+      if (e.code == 'permission-denied') {
+        return Err(const ChapterFailure.permissionDenied());
       }
       return Err(const ChapterFailure.serverError());
     } catch (_) {
@@ -129,11 +123,9 @@ class ChapterRepository implements IChapterRepository {
         return Ok(chapter);
       }
       return Err(const ChapterFailure.chapterNotFound());
-    } on PlatformException catch (e) {
-      if (e.code == 'firebase_firestore') {
-        if ((e.details as Map)['code'] == 'permission-denied') {
-          return Err(const ChapterFailure.permissionDenied());
-        }
+    } on FirebaseException catch (e) {
+      if (e.code == 'permission-denied') {
+        return Err(const ChapterFailure.permissionDenied());
       }
       return Err(const ChapterFailure.serverError());
     } catch (_) {
@@ -219,11 +211,9 @@ class ChapterRepository implements IChapterRepository {
         chapter.add(doc.data());
       }
       return Ok(chapter);
-    } on PlatformException catch (e) {
-      if (e.code == 'firebase_firestore') {
-        if ((e.details as Map)['code'] == 'permission-denied') {
-          return Err(const ChapterFailure.permissionDenied());
-        }
+    } on FirebaseException catch (e) {
+      if (e.code == 'permission-denied') {
+        return Err(const ChapterFailure.permissionDenied());
       }
       return Err(const ChapterFailure.serverError());
     } catch (_) {
@@ -253,11 +243,9 @@ class ChapterRepository implements IChapterRepository {
           .update(ChapterDTO.fromDomain(tmpChapter).toJson());
 
       return Ok(unit);
-    } on PlatformException catch (e) {
-      if (e.code == 'firebase_firestore') {
-        if ((e.details as Map)['code'] == 'permission-denied') {
-          return Err(const ChapterFailure.permissionDenied());
-        }
+    } on FirebaseException catch (e) {
+      if (e.code == 'permission-denied') {
+        return Err(const ChapterFailure.permissionDenied());
       }
       return Err(const ChapterFailure.serverError());
     } catch (_) {
@@ -280,11 +268,9 @@ class ChapterRepository implements IChapterRepository {
         return Ok(url);
       }
       return Err(const ChapterFailure.coverNotUploaded());
-    } on PlatformException catch (e) {
-      if (e.code == 'firebase_firestore') {
-        if ((e.details as Map)['code'] == 'permission-denied') {
-          return Err(const ChapterFailure.permissionDenied());
-        }
+    } on FirebaseException catch (e) {
+      if (e.code == 'permission-denied') {
+        return Err(const ChapterFailure.permissionDenied());
       }
       return Err(const ChapterFailure.serverError());
     } catch (_) {

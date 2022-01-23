@@ -2,7 +2,6 @@ import 'dart:io';
 
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_storage/firebase_storage.dart';
-import 'package:flutter/services.dart';
 import 'package:injectable/injectable.dart';
 import 'package:oxidized/oxidized.dart';
 import 'package:path/path.dart' as p;
@@ -51,11 +50,9 @@ class SeriesRepository implements ISeriesRepository {
           .set(SeriesDTO.fromDomain(tmpSeries).toJson());
 
       return Ok(unit);
-    } on PlatformException catch (e) {
-      if (e.code == 'firebase_firestore') {
-        if ((e.details as Map)['code'] == 'permission-denied') {
-          return Err(const SeriesFailure.permissionDenied());
-        }
+    } on FirebaseException catch (e) {
+      if (e.code == 'permission-denied') {
+        return Err(const SeriesFailure.permissionDenied());
       }
       return Err(const SeriesFailure.serverError());
     } catch (_) {
@@ -69,11 +66,9 @@ class SeriesRepository implements ISeriesRepository {
       await _firestore.collection(seriesPath).doc(uid.getOrCrash()).delete();
 
       return Ok(unit);
-    } on PlatformException catch (e) {
-      if (e.code == 'firebase_firestore') {
-        if ((e.details as Map)['code'] == 'permission-denied') {
-          return Err(const SeriesFailure.permissionDenied());
-        }
+    } on FirebaseException catch (e) {
+      if (e.code == 'permission-denied') {
+        return Err(const SeriesFailure.permissionDenied());
       }
       return Err(const SeriesFailure.serverError());
     } catch (_) {
@@ -156,11 +151,9 @@ class SeriesRepository implements ISeriesRepository {
         return Ok(series);
       }
       return Err(const SeriesFailure.seriesNotFound());
-    } on PlatformException catch (e) {
-      if (e.code == 'firebase_firestore') {
-        if ((e.details as Map)['code'] == 'permission-denied') {
-          return Err(const SeriesFailure.permissionDenied());
-        }
+    } on FirebaseException catch (e) {
+      if (e.code == 'permission-denied') {
+        return Err(const SeriesFailure.permissionDenied());
       }
       return Err(const SeriesFailure.serverError());
     } catch (_) {
@@ -208,11 +201,9 @@ class SeriesRepository implements ISeriesRepository {
         series.add(doc.data());
       }
       return Ok(series);
-    } on PlatformException catch (e) {
-      if (e.code == 'firebase_firestore') {
-        if ((e.details as Map)['code'] == 'permission-denied') {
-          return Err(const SeriesFailure.permissionDenied());
-        }
+    } on FirebaseException catch (e) {
+      if (e.code == 'permission-denied') {
+        return Err(const SeriesFailure.permissionDenied());
       }
       return Err(const SeriesFailure.serverError());
     } catch (_) {
@@ -242,11 +233,9 @@ class SeriesRepository implements ISeriesRepository {
           .update(SeriesDTO.fromDomain(tmpSeries).toJson());
 
       return Ok(unit);
-    } on PlatformException catch (e) {
-      if (e.code == 'firebase_firestore') {
-        if ((e.details as Map)['code'] == 'permission-denied') {
-          return Err(const SeriesFailure.permissionDenied());
-        }
+    } on FirebaseException catch (e) {
+      if (e.code == 'permission-denied') {
+        return Err(const SeriesFailure.permissionDenied());
       }
       return Err(const SeriesFailure.serverError());
     } catch (_) {
@@ -297,11 +286,9 @@ class SeriesRepository implements ISeriesRepository {
       });
 
       return Ok(unit);
-    } on PlatformException catch (e) {
-      if (e.code == 'firebase_firestore') {
-        if ((e.details as Map)['code'] == 'permission-denied') {
-          return Err(const SeriesFailure.permissionDenied());
-        }
+    } on FirebaseException catch (e) {
+      if (e.code == 'permission-denied') {
+        return Err(const SeriesFailure.permissionDenied());
       }
       return Err(const SeriesFailure.serverError());
     } catch (e) {
@@ -350,11 +337,9 @@ class SeriesRepository implements ISeriesRepository {
       });
 
       return Ok(unit);
-    } on PlatformException catch (e) {
-      if (e.code == 'firebase_firestore') {
-        if ((e.details as Map)['code'] == 'permission-denied') {
-          return Err(const SeriesFailure.permissionDenied());
-        }
+    } on FirebaseException catch (e) {
+      if (e.code == 'permission-denied') {
+        return Err(const SeriesFailure.permissionDenied());
       }
       return Err(const SeriesFailure.serverError());
     } catch (e) {
@@ -402,11 +387,9 @@ class SeriesRepository implements ISeriesRepository {
       });
 
       return Ok(false);
-    } on PlatformException catch (e) {
-      if (e.code == 'firebase_firestore') {
-        if ((e.details as Map)['code'] == 'permission-denied') {
-          return Err(const SeriesFailure.permissionDenied());
-        }
+    } on FirebaseException catch (e) {
+      if (e.code == 'permission-denied') {
+        return Err(const SeriesFailure.permissionDenied());
       }
       return Err(const SeriesFailure.serverError());
     } catch (_) {
@@ -429,11 +412,9 @@ class SeriesRepository implements ISeriesRepository {
         return Ok(url);
       }
       return Err(const SeriesFailure.coverNotUploaded());
-    } on PlatformException catch (e) {
-      if (e.code == 'firebase_firestore') {
-        if ((e.details as Map)['code'] == 'permission-denied') {
-          return Err(const SeriesFailure.permissionDenied());
-        }
+    } on FirebaseException catch (e) {
+      if (e.code == 'permission-denied') {
+        return Err(const SeriesFailure.permissionDenied());
       }
       return Err(const SeriesFailure.serverError());
     } catch (_) {
