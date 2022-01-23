@@ -2964,6 +2964,7 @@ class _$TypewriterSeriesStateTearOff {
 
   _TypewriterSeriesState call(
       {required String coverURL,
+      required TypewriterEndState endState,
       required Option<Result<None<Object>, CoreFailure>> failureOption,
       required List<Genre> genres,
       required bool isEdit,
@@ -2972,7 +2973,6 @@ class _$TypewriterSeriesStateTearOff {
       required Language language,
       required Series series,
       required bool showErrorMessages,
-      required TypewriterEndState endState,
       required Subtitle subtitle,
       required TextEditingController subtitleController,
       required int subtitleWordCount,
@@ -2984,6 +2984,7 @@ class _$TypewriterSeriesStateTearOff {
       required int titleWordCount}) {
     return _TypewriterSeriesState(
       coverURL: coverURL,
+      endState: endState,
       failureOption: failureOption,
       genres: genres,
       isEdit: isEdit,
@@ -2992,7 +2993,6 @@ class _$TypewriterSeriesStateTearOff {
       language: language,
       series: series,
       showErrorMessages: showErrorMessages,
-      endState: endState,
       subtitle: subtitle,
       subtitleController: subtitleController,
       subtitleWordCount: subtitleWordCount,
@@ -3012,6 +3012,7 @@ const $TypewriterSeriesState = _$TypewriterSeriesStateTearOff();
 /// @nodoc
 mixin _$TypewriterSeriesState {
   String get coverURL => throw _privateConstructorUsedError;
+  TypewriterEndState get endState => throw _privateConstructorUsedError;
   Option<Result<None<Object>, CoreFailure>> get failureOption =>
       throw _privateConstructorUsedError;
   List<Genre> get genres => throw _privateConstructorUsedError;
@@ -3021,7 +3022,6 @@ mixin _$TypewriterSeriesState {
   Language get language => throw _privateConstructorUsedError;
   Series get series => throw _privateConstructorUsedError;
   bool get showErrorMessages => throw _privateConstructorUsedError;
-  TypewriterEndState get endState => throw _privateConstructorUsedError;
   Subtitle get subtitle => throw _privateConstructorUsedError;
   TextEditingController get subtitleController =>
       throw _privateConstructorUsedError;
@@ -3047,6 +3047,7 @@ abstract class $TypewriterSeriesStateCopyWith<$Res> {
       _$TypewriterSeriesStateCopyWithImpl<$Res>;
   $Res call(
       {String coverURL,
+      TypewriterEndState endState,
       Option<Result<None<Object>, CoreFailure>> failureOption,
       List<Genre> genres,
       bool isEdit,
@@ -3055,7 +3056,6 @@ abstract class $TypewriterSeriesStateCopyWith<$Res> {
       Language language,
       Series series,
       bool showErrorMessages,
-      TypewriterEndState endState,
       Subtitle subtitle,
       TextEditingController subtitleController,
       int subtitleWordCount,
@@ -3081,6 +3081,7 @@ class _$TypewriterSeriesStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? coverURL = freezed,
+    Object? endState = freezed,
     Object? failureOption = freezed,
     Object? genres = freezed,
     Object? isEdit = freezed,
@@ -3089,7 +3090,6 @@ class _$TypewriterSeriesStateCopyWithImpl<$Res>
     Object? language = freezed,
     Object? series = freezed,
     Object? showErrorMessages = freezed,
-    Object? endState = freezed,
     Object? subtitle = freezed,
     Object? subtitleController = freezed,
     Object? subtitleWordCount = freezed,
@@ -3105,6 +3105,10 @@ class _$TypewriterSeriesStateCopyWithImpl<$Res>
           ? _value.coverURL
           : coverURL // ignore: cast_nullable_to_non_nullable
               as String,
+      endState: endState == freezed
+          ? _value.endState
+          : endState // ignore: cast_nullable_to_non_nullable
+              as TypewriterEndState,
       failureOption: failureOption == freezed
           ? _value.failureOption
           : failureOption // ignore: cast_nullable_to_non_nullable
@@ -3137,10 +3141,6 @@ class _$TypewriterSeriesStateCopyWithImpl<$Res>
           ? _value.showErrorMessages
           : showErrorMessages // ignore: cast_nullable_to_non_nullable
               as bool,
-      endState: endState == freezed
-          ? _value.endState
-          : endState // ignore: cast_nullable_to_non_nullable
-              as TypewriterEndState,
       subtitle: subtitle == freezed
           ? _value.subtitle
           : subtitle // ignore: cast_nullable_to_non_nullable
@@ -3197,6 +3197,7 @@ abstract class _$TypewriterSeriesStateCopyWith<$Res>
   @override
   $Res call(
       {String coverURL,
+      TypewriterEndState endState,
       Option<Result<None<Object>, CoreFailure>> failureOption,
       List<Genre> genres,
       bool isEdit,
@@ -3205,7 +3206,6 @@ abstract class _$TypewriterSeriesStateCopyWith<$Res>
       Language language,
       Series series,
       bool showErrorMessages,
-      TypewriterEndState endState,
       Subtitle subtitle,
       TextEditingController subtitleController,
       int subtitleWordCount,
@@ -3234,6 +3234,7 @@ class __$TypewriterSeriesStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? coverURL = freezed,
+    Object? endState = freezed,
     Object? failureOption = freezed,
     Object? genres = freezed,
     Object? isEdit = freezed,
@@ -3242,7 +3243,6 @@ class __$TypewriterSeriesStateCopyWithImpl<$Res>
     Object? language = freezed,
     Object? series = freezed,
     Object? showErrorMessages = freezed,
-    Object? endState = freezed,
     Object? subtitle = freezed,
     Object? subtitleController = freezed,
     Object? subtitleWordCount = freezed,
@@ -3258,6 +3258,10 @@ class __$TypewriterSeriesStateCopyWithImpl<$Res>
           ? _value.coverURL
           : coverURL // ignore: cast_nullable_to_non_nullable
               as String,
+      endState: endState == freezed
+          ? _value.endState
+          : endState // ignore: cast_nullable_to_non_nullable
+              as TypewriterEndState,
       failureOption: failureOption == freezed
           ? _value.failureOption
           : failureOption // ignore: cast_nullable_to_non_nullable
@@ -3290,10 +3294,6 @@ class __$TypewriterSeriesStateCopyWithImpl<$Res>
           ? _value.showErrorMessages
           : showErrorMessages // ignore: cast_nullable_to_non_nullable
               as bool,
-      endState: endState == freezed
-          ? _value.endState
-          : endState // ignore: cast_nullable_to_non_nullable
-              as TypewriterEndState,
       subtitle: subtitle == freezed
           ? _value.subtitle
           : subtitle // ignore: cast_nullable_to_non_nullable
@@ -3339,6 +3339,7 @@ class __$TypewriterSeriesStateCopyWithImpl<$Res>
 class _$_TypewriterSeriesState implements _TypewriterSeriesState {
   const _$_TypewriterSeriesState(
       {required this.coverURL,
+      required this.endState,
       required this.failureOption,
       required this.genres,
       required this.isEdit,
@@ -3347,7 +3348,6 @@ class _$_TypewriterSeriesState implements _TypewriterSeriesState {
       required this.language,
       required this.series,
       required this.showErrorMessages,
-      required this.endState,
       required this.subtitle,
       required this.subtitleController,
       required this.subtitleWordCount,
@@ -3360,6 +3360,8 @@ class _$_TypewriterSeriesState implements _TypewriterSeriesState {
 
   @override
   final String coverURL;
+  @override
+  final TypewriterEndState endState;
   @override
   final Option<Result<None<Object>, CoreFailure>> failureOption;
   @override
@@ -3376,8 +3378,6 @@ class _$_TypewriterSeriesState implements _TypewriterSeriesState {
   final Series series;
   @override
   final bool showErrorMessages;
-  @override
-  final TypewriterEndState endState;
   @override
   final Subtitle subtitle;
   @override
@@ -3399,7 +3399,7 @@ class _$_TypewriterSeriesState implements _TypewriterSeriesState {
 
   @override
   String toString() {
-    return 'TypewriterSeriesState(coverURL: $coverURL, failureOption: $failureOption, genres: $genres, isEdit: $isEdit, isNSFW: $isNSFW, isProcessing: $isProcessing, language: $language, series: $series, showErrorMessages: $showErrorMessages, endState: $endState, subtitle: $subtitle, subtitleController: $subtitleController, subtitleWordCount: $subtitleWordCount, summary: $summary, summaryController: $summaryController, summaryWordCount: $summaryWordCount, title: $title, titleController: $titleController, titleWordCount: $titleWordCount)';
+    return 'TypewriterSeriesState(coverURL: $coverURL, endState: $endState, failureOption: $failureOption, genres: $genres, isEdit: $isEdit, isNSFW: $isNSFW, isProcessing: $isProcessing, language: $language, series: $series, showErrorMessages: $showErrorMessages, subtitle: $subtitle, subtitleController: $subtitleController, subtitleWordCount: $subtitleWordCount, summary: $summary, summaryController: $summaryController, summaryWordCount: $summaryWordCount, title: $title, titleController: $titleController, titleWordCount: $titleWordCount)';
   }
 
   @override
@@ -3408,6 +3408,7 @@ class _$_TypewriterSeriesState implements _TypewriterSeriesState {
         (other.runtimeType == runtimeType &&
             other is _TypewriterSeriesState &&
             const DeepCollectionEquality().equals(other.coverURL, coverURL) &&
+            const DeepCollectionEquality().equals(other.endState, endState) &&
             const DeepCollectionEquality()
                 .equals(other.failureOption, failureOption) &&
             const DeepCollectionEquality().equals(other.genres, genres) &&
@@ -3419,7 +3420,6 @@ class _$_TypewriterSeriesState implements _TypewriterSeriesState {
             const DeepCollectionEquality().equals(other.series, series) &&
             const DeepCollectionEquality()
                 .equals(other.showErrorMessages, showErrorMessages) &&
-            const DeepCollectionEquality().equals(other.endState, endState) &&
             const DeepCollectionEquality().equals(other.subtitle, subtitle) &&
             const DeepCollectionEquality()
                 .equals(other.subtitleController, subtitleController) &&
@@ -3441,6 +3441,7 @@ class _$_TypewriterSeriesState implements _TypewriterSeriesState {
   int get hashCode => Object.hashAll([
         runtimeType,
         const DeepCollectionEquality().hash(coverURL),
+        const DeepCollectionEquality().hash(endState),
         const DeepCollectionEquality().hash(failureOption),
         const DeepCollectionEquality().hash(genres),
         const DeepCollectionEquality().hash(isEdit),
@@ -3449,7 +3450,6 @@ class _$_TypewriterSeriesState implements _TypewriterSeriesState {
         const DeepCollectionEquality().hash(language),
         const DeepCollectionEquality().hash(series),
         const DeepCollectionEquality().hash(showErrorMessages),
-        const DeepCollectionEquality().hash(endState),
         const DeepCollectionEquality().hash(subtitle),
         const DeepCollectionEquality().hash(subtitleController),
         const DeepCollectionEquality().hash(subtitleWordCount),
@@ -3471,6 +3471,7 @@ class _$_TypewriterSeriesState implements _TypewriterSeriesState {
 abstract class _TypewriterSeriesState implements TypewriterSeriesState {
   const factory _TypewriterSeriesState(
       {required String coverURL,
+      required TypewriterEndState endState,
       required Option<Result<None<Object>, CoreFailure>> failureOption,
       required List<Genre> genres,
       required bool isEdit,
@@ -3479,7 +3480,6 @@ abstract class _TypewriterSeriesState implements TypewriterSeriesState {
       required Language language,
       required Series series,
       required bool showErrorMessages,
-      required TypewriterEndState endState,
       required Subtitle subtitle,
       required TextEditingController subtitleController,
       required int subtitleWordCount,
@@ -3492,6 +3492,8 @@ abstract class _TypewriterSeriesState implements TypewriterSeriesState {
 
   @override
   String get coverURL;
+  @override
+  TypewriterEndState get endState;
   @override
   Option<Result<None<Object>, CoreFailure>> get failureOption;
   @override
@@ -3508,8 +3510,6 @@ abstract class _TypewriterSeriesState implements TypewriterSeriesState {
   Series get series;
   @override
   bool get showErrorMessages;
-  @override
-  TypewriterEndState get endState;
   @override
   Subtitle get subtitle;
   @override
