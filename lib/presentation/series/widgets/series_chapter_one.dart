@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:wine/application/series/series_bloc.dart';
+import 'package:wine/domain/core/typewriter_type.dart';
 import 'package:wine/presentation/core/buttons/default_button.dart';
 import 'package:wine/presentation/core/chapter/chapter_tile.dart';
+import 'package:wine/presentation/routes/router.dart';
 import 'package:wine/utils/constants/palette.dart';
+import 'package:wine/utils/functions/navigation_functions.dart';
 
 /// @nodoc
 class SeriesChapterOne extends StatelessWidget {
@@ -42,11 +45,25 @@ class SeriesChapterOne extends StatelessWidget {
               return DefaultButton(
                 color: pastelPink,
                 hasRoundedCorners: true,
+                onPressed: () => handleAuthGuardedNavigation(
+                  context,
+                  navigateTo: TypewriterChapterNew(
+                    series: state.series,
+                    type: TypewriterType.chapter,
+                  ),
+                ),
                 title: 'WRITE FIRST CHAPTER',
                 width: mediaQuery.width,
               );
             }
-            return Container();
+            return const Text(
+              'Chapter 1 yet to be published',
+              style: TextStyle(
+                fontSize: 14,
+                fontWeight: FontWeight.w600,
+                letterSpacing: .5,
+              ),
+            );
           },
         ),
       ],
