@@ -8,6 +8,11 @@ import 'package:wine/domain/core/unique_id.dart';
 /// @nodoc
 abstract class IChapterRepository {
   /// @nodoc
+  Future<Result<Unit, ChapterFailure>> checkChapterOneAlreadyExists(
+    UniqueID seriesID,
+  );
+
+  /// @nodoc
   Future<Result<Unit, ChapterFailure>> createChapter(Chapter chapter);
 
   /// @nodoc
@@ -27,6 +32,9 @@ abstract class IChapterRepository {
     UniqueID uid, {
     UniqueID? lastChapterID,
   });
+
+  /// @nodoc
+  Future<Result<Unit, ChapterFailure>> updateChapter(Chapter chapter);
 
   /// @nodoc
   Future<Result<String, ChapterFailure>> uploadCover(File cover);
