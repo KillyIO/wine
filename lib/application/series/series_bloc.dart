@@ -176,8 +176,6 @@ class SeriesBloc extends Bloc<SeriesEvent, SeriesState> {
               isProcessing: false,
             ),
           );
-
-          add(const SeriesEvent.likeStatusLoaded());
         },
         (failure) {
           emit(
@@ -240,7 +238,7 @@ class SeriesBloc extends Bloc<SeriesEvent, SeriesState> {
       }
     });
     on<SettingsFetched>((_, emit) async {
-      (await _chapterRepository.loadChapterBySeriesIDAndIndex(
+      (await _chapterRepository.loadChapterBySeriesUIDAndIndex(
         state.series.uid,
         1,
       ))
@@ -259,11 +257,20 @@ class SeriesBloc extends Bloc<SeriesEvent, SeriesState> {
           }
         },
         (failure) {
-          emit(
-            state.copyWith(
-              failureOption: Option.some(Err(CoreFailure.chapter(failure))),
-              isProcessing: false,
-            ),
+          failure.maybeWhen(
+            chapterNotFound: () {
+              if (!_authFacade.isAnonymous) {
+                add(const SeriesEvent.chapterOneLoaded());
+              }
+            },
+            orElse: () {
+              emit(
+                state.copyWith(
+                  failureOption: Option.some(Err(CoreFailure.chapter(failure))),
+                  isProcessing: false,
+                ),
+              );
+            },
           );
         },
       );
