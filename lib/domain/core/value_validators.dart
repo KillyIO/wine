@@ -66,17 +66,20 @@ Result<String, ValueFailure<String>> validatePassword(String input) {
 }
 
 /// @nodoc
-Result<String, ValueFailure<String>> validateStory(String input) {
+Result<String, ValueFailure<String>> validateStory(
+  String input,
+  List<dynamic> json,
+) {
   if (input.isEmpty) {
-    return Err(ValueFailure.emptyInput(input));
+    return Err(ValueFailure.emptyInput(json.toString()));
   }
   if (input.countWords() < storyMinWords) {
-    return Err(ValueFailure.tooShortInput(input));
+    return Err(ValueFailure.tooShortInput(json.toString()));
   }
   if (input.countWords() > storyMaxWords) {
-    return Err(ValueFailure.tooLongInput(input));
+    return Err(ValueFailure.tooLongInput(json.toString()));
   }
-  return Ok(input);
+  return Ok(json.toString());
 }
 
 /// @nodoc
