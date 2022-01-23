@@ -83,7 +83,7 @@ class TypewriterTextField extends StatelessWidget {
               color: wordCountError ? error : Colors.black,
             ),
           ),
-        )
+        ),
       ],
     );
   }
