@@ -17,16 +17,16 @@ final _privateConstructorUsedError = UnsupportedError(
 class _$ChapterFailureTearOff {
   const _$ChapterFailureTearOff();
 
+  ChapterNotFound chapterNotFound() {
+    return const ChapterNotFound();
+  }
+
   ChapterOneAlreadyExists chapterOneAlreadyExists() {
     return const ChapterOneAlreadyExists();
   }
 
   CoverNotUploaded coverNotUploaded() {
     return const CoverNotUploaded();
-  }
-
-  ChapterNotFound chapterNotFound() {
-    return const ChapterNotFound();
   }
 
   PermissionDenied permissionDenied() {
@@ -49,9 +49,9 @@ const $ChapterFailure = _$ChapterFailureTearOff();
 mixin _$ChapterFailure {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() chapterNotFound,
     required TResult Function() chapterOneAlreadyExists,
     required TResult Function() coverNotUploaded,
-    required TResult Function() chapterNotFound,
     required TResult Function() permissionDenied,
     required TResult Function() serverError,
     required TResult Function() unexpected,
@@ -59,9 +59,9 @@ mixin _$ChapterFailure {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? chapterNotFound,
     TResult Function()? chapterOneAlreadyExists,
     TResult Function()? coverNotUploaded,
-    TResult Function()? chapterNotFound,
     TResult Function()? permissionDenied,
     TResult Function()? serverError,
     TResult Function()? unexpected,
@@ -69,9 +69,9 @@ mixin _$ChapterFailure {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? chapterNotFound,
     TResult Function()? chapterOneAlreadyExists,
     TResult Function()? coverNotUploaded,
-    TResult Function()? chapterNotFound,
     TResult Function()? permissionDenied,
     TResult Function()? serverError,
     TResult Function()? unexpected,
@@ -80,10 +80,10 @@ mixin _$ChapterFailure {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(ChapterNotFound value) chapterNotFound,
     required TResult Function(ChapterOneAlreadyExists value)
         chapterOneAlreadyExists,
     required TResult Function(CoverNotUploaded value) coverNotUploaded,
-    required TResult Function(ChapterNotFound value) chapterNotFound,
     required TResult Function(PermissionDenied value) permissionDenied,
     required TResult Function(ServerError value) serverError,
     required TResult Function(Unexpected value) unexpected,
@@ -91,9 +91,9 @@ mixin _$ChapterFailure {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(ChapterNotFound value)? chapterNotFound,
     TResult Function(ChapterOneAlreadyExists value)? chapterOneAlreadyExists,
     TResult Function(CoverNotUploaded value)? coverNotUploaded,
-    TResult Function(ChapterNotFound value)? chapterNotFound,
     TResult Function(PermissionDenied value)? permissionDenied,
     TResult Function(ServerError value)? serverError,
     TResult Function(Unexpected value)? unexpected,
@@ -101,9 +101,9 @@ mixin _$ChapterFailure {
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(ChapterNotFound value)? chapterNotFound,
     TResult Function(ChapterOneAlreadyExists value)? chapterOneAlreadyExists,
     TResult Function(CoverNotUploaded value)? coverNotUploaded,
-    TResult Function(ChapterNotFound value)? chapterNotFound,
     TResult Function(PermissionDenied value)? permissionDenied,
     TResult Function(ServerError value)? serverError,
     TResult Function(Unexpected value)? unexpected,
@@ -127,6 +127,136 @@ class _$ChapterFailureCopyWithImpl<$Res>
   final ChapterFailure _value;
   // ignore: unused_field
   final $Res Function(ChapterFailure) _then;
+}
+
+/// @nodoc
+abstract class $ChapterNotFoundCopyWith<$Res> {
+  factory $ChapterNotFoundCopyWith(
+          ChapterNotFound value, $Res Function(ChapterNotFound) then) =
+      _$ChapterNotFoundCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$ChapterNotFoundCopyWithImpl<$Res>
+    extends _$ChapterFailureCopyWithImpl<$Res>
+    implements $ChapterNotFoundCopyWith<$Res> {
+  _$ChapterNotFoundCopyWithImpl(
+      ChapterNotFound _value, $Res Function(ChapterNotFound) _then)
+      : super(_value, (v) => _then(v as ChapterNotFound));
+
+  @override
+  ChapterNotFound get _value => super._value as ChapterNotFound;
+}
+
+/// @nodoc
+
+class _$ChapterNotFound implements ChapterNotFound {
+  const _$ChapterNotFound();
+
+  @override
+  String toString() {
+    return 'ChapterFailure.chapterNotFound()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType && other is ChapterNotFound);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() chapterNotFound,
+    required TResult Function() chapterOneAlreadyExists,
+    required TResult Function() coverNotUploaded,
+    required TResult Function() permissionDenied,
+    required TResult Function() serverError,
+    required TResult Function() unexpected,
+  }) {
+    return chapterNotFound();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? chapterNotFound,
+    TResult Function()? chapterOneAlreadyExists,
+    TResult Function()? coverNotUploaded,
+    TResult Function()? permissionDenied,
+    TResult Function()? serverError,
+    TResult Function()? unexpected,
+  }) {
+    return chapterNotFound?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? chapterNotFound,
+    TResult Function()? chapterOneAlreadyExists,
+    TResult Function()? coverNotUploaded,
+    TResult Function()? permissionDenied,
+    TResult Function()? serverError,
+    TResult Function()? unexpected,
+    required TResult orElse(),
+  }) {
+    if (chapterNotFound != null) {
+      return chapterNotFound();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(ChapterNotFound value) chapterNotFound,
+    required TResult Function(ChapterOneAlreadyExists value)
+        chapterOneAlreadyExists,
+    required TResult Function(CoverNotUploaded value) coverNotUploaded,
+    required TResult Function(PermissionDenied value) permissionDenied,
+    required TResult Function(ServerError value) serverError,
+    required TResult Function(Unexpected value) unexpected,
+  }) {
+    return chapterNotFound(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(ChapterNotFound value)? chapterNotFound,
+    TResult Function(ChapterOneAlreadyExists value)? chapterOneAlreadyExists,
+    TResult Function(CoverNotUploaded value)? coverNotUploaded,
+    TResult Function(PermissionDenied value)? permissionDenied,
+    TResult Function(ServerError value)? serverError,
+    TResult Function(Unexpected value)? unexpected,
+  }) {
+    return chapterNotFound?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(ChapterNotFound value)? chapterNotFound,
+    TResult Function(ChapterOneAlreadyExists value)? chapterOneAlreadyExists,
+    TResult Function(CoverNotUploaded value)? coverNotUploaded,
+    TResult Function(PermissionDenied value)? permissionDenied,
+    TResult Function(ServerError value)? serverError,
+    TResult Function(Unexpected value)? unexpected,
+    required TResult orElse(),
+  }) {
+    if (chapterNotFound != null) {
+      return chapterNotFound(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class ChapterNotFound implements ChapterFailure {
+  const factory ChapterNotFound() = _$ChapterNotFound;
 }
 
 /// @nodoc
@@ -170,9 +300,9 @@ class _$ChapterOneAlreadyExists implements ChapterOneAlreadyExists {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() chapterNotFound,
     required TResult Function() chapterOneAlreadyExists,
     required TResult Function() coverNotUploaded,
-    required TResult Function() chapterNotFound,
     required TResult Function() permissionDenied,
     required TResult Function() serverError,
     required TResult Function() unexpected,
@@ -183,9 +313,9 @@ class _$ChapterOneAlreadyExists implements ChapterOneAlreadyExists {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? chapterNotFound,
     TResult Function()? chapterOneAlreadyExists,
     TResult Function()? coverNotUploaded,
-    TResult Function()? chapterNotFound,
     TResult Function()? permissionDenied,
     TResult Function()? serverError,
     TResult Function()? unexpected,
@@ -196,9 +326,9 @@ class _$ChapterOneAlreadyExists implements ChapterOneAlreadyExists {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? chapterNotFound,
     TResult Function()? chapterOneAlreadyExists,
     TResult Function()? coverNotUploaded,
-    TResult Function()? chapterNotFound,
     TResult Function()? permissionDenied,
     TResult Function()? serverError,
     TResult Function()? unexpected,
@@ -213,10 +343,10 @@ class _$ChapterOneAlreadyExists implements ChapterOneAlreadyExists {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(ChapterNotFound value) chapterNotFound,
     required TResult Function(ChapterOneAlreadyExists value)
         chapterOneAlreadyExists,
     required TResult Function(CoverNotUploaded value) coverNotUploaded,
-    required TResult Function(ChapterNotFound value) chapterNotFound,
     required TResult Function(PermissionDenied value) permissionDenied,
     required TResult Function(ServerError value) serverError,
     required TResult Function(Unexpected value) unexpected,
@@ -227,9 +357,9 @@ class _$ChapterOneAlreadyExists implements ChapterOneAlreadyExists {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(ChapterNotFound value)? chapterNotFound,
     TResult Function(ChapterOneAlreadyExists value)? chapterOneAlreadyExists,
     TResult Function(CoverNotUploaded value)? coverNotUploaded,
-    TResult Function(ChapterNotFound value)? chapterNotFound,
     TResult Function(PermissionDenied value)? permissionDenied,
     TResult Function(ServerError value)? serverError,
     TResult Function(Unexpected value)? unexpected,
@@ -240,9 +370,9 @@ class _$ChapterOneAlreadyExists implements ChapterOneAlreadyExists {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(ChapterNotFound value)? chapterNotFound,
     TResult Function(ChapterOneAlreadyExists value)? chapterOneAlreadyExists,
     TResult Function(CoverNotUploaded value)? coverNotUploaded,
-    TResult Function(ChapterNotFound value)? chapterNotFound,
     TResult Function(PermissionDenied value)? permissionDenied,
     TResult Function(ServerError value)? serverError,
     TResult Function(Unexpected value)? unexpected,
@@ -300,9 +430,9 @@ class _$CoverNotUploaded implements CoverNotUploaded {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() chapterNotFound,
     required TResult Function() chapterOneAlreadyExists,
     required TResult Function() coverNotUploaded,
-    required TResult Function() chapterNotFound,
     required TResult Function() permissionDenied,
     required TResult Function() serverError,
     required TResult Function() unexpected,
@@ -313,9 +443,9 @@ class _$CoverNotUploaded implements CoverNotUploaded {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? chapterNotFound,
     TResult Function()? chapterOneAlreadyExists,
     TResult Function()? coverNotUploaded,
-    TResult Function()? chapterNotFound,
     TResult Function()? permissionDenied,
     TResult Function()? serverError,
     TResult Function()? unexpected,
@@ -326,9 +456,9 @@ class _$CoverNotUploaded implements CoverNotUploaded {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? chapterNotFound,
     TResult Function()? chapterOneAlreadyExists,
     TResult Function()? coverNotUploaded,
-    TResult Function()? chapterNotFound,
     TResult Function()? permissionDenied,
     TResult Function()? serverError,
     TResult Function()? unexpected,
@@ -343,10 +473,10 @@ class _$CoverNotUploaded implements CoverNotUploaded {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(ChapterNotFound value) chapterNotFound,
     required TResult Function(ChapterOneAlreadyExists value)
         chapterOneAlreadyExists,
     required TResult Function(CoverNotUploaded value) coverNotUploaded,
-    required TResult Function(ChapterNotFound value) chapterNotFound,
     required TResult Function(PermissionDenied value) permissionDenied,
     required TResult Function(ServerError value) serverError,
     required TResult Function(Unexpected value) unexpected,
@@ -357,9 +487,9 @@ class _$CoverNotUploaded implements CoverNotUploaded {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(ChapterNotFound value)? chapterNotFound,
     TResult Function(ChapterOneAlreadyExists value)? chapterOneAlreadyExists,
     TResult Function(CoverNotUploaded value)? coverNotUploaded,
-    TResult Function(ChapterNotFound value)? chapterNotFound,
     TResult Function(PermissionDenied value)? permissionDenied,
     TResult Function(ServerError value)? serverError,
     TResult Function(Unexpected value)? unexpected,
@@ -370,9 +500,9 @@ class _$CoverNotUploaded implements CoverNotUploaded {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(ChapterNotFound value)? chapterNotFound,
     TResult Function(ChapterOneAlreadyExists value)? chapterOneAlreadyExists,
     TResult Function(CoverNotUploaded value)? coverNotUploaded,
-    TResult Function(ChapterNotFound value)? chapterNotFound,
     TResult Function(PermissionDenied value)? permissionDenied,
     TResult Function(ServerError value)? serverError,
     TResult Function(Unexpected value)? unexpected,
@@ -387,136 +517,6 @@ class _$CoverNotUploaded implements CoverNotUploaded {
 
 abstract class CoverNotUploaded implements ChapterFailure {
   const factory CoverNotUploaded() = _$CoverNotUploaded;
-}
-
-/// @nodoc
-abstract class $ChapterNotFoundCopyWith<$Res> {
-  factory $ChapterNotFoundCopyWith(
-          ChapterNotFound value, $Res Function(ChapterNotFound) then) =
-      _$ChapterNotFoundCopyWithImpl<$Res>;
-}
-
-/// @nodoc
-class _$ChapterNotFoundCopyWithImpl<$Res>
-    extends _$ChapterFailureCopyWithImpl<$Res>
-    implements $ChapterNotFoundCopyWith<$Res> {
-  _$ChapterNotFoundCopyWithImpl(
-      ChapterNotFound _value, $Res Function(ChapterNotFound) _then)
-      : super(_value, (v) => _then(v as ChapterNotFound));
-
-  @override
-  ChapterNotFound get _value => super._value as ChapterNotFound;
-}
-
-/// @nodoc
-
-class _$ChapterNotFound implements ChapterNotFound {
-  const _$ChapterNotFound();
-
-  @override
-  String toString() {
-    return 'ChapterFailure.chapterNotFound()';
-  }
-
-  @override
-  bool operator ==(dynamic other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType && other is ChapterNotFound);
-  }
-
-  @override
-  int get hashCode => runtimeType.hashCode;
-
-  @override
-  @optionalTypeArgs
-  TResult when<TResult extends Object?>({
-    required TResult Function() chapterOneAlreadyExists,
-    required TResult Function() coverNotUploaded,
-    required TResult Function() chapterNotFound,
-    required TResult Function() permissionDenied,
-    required TResult Function() serverError,
-    required TResult Function() unexpected,
-  }) {
-    return chapterNotFound();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? whenOrNull<TResult extends Object?>({
-    TResult Function()? chapterOneAlreadyExists,
-    TResult Function()? coverNotUploaded,
-    TResult Function()? chapterNotFound,
-    TResult Function()? permissionDenied,
-    TResult Function()? serverError,
-    TResult Function()? unexpected,
-  }) {
-    return chapterNotFound?.call();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object?>({
-    TResult Function()? chapterOneAlreadyExists,
-    TResult Function()? coverNotUploaded,
-    TResult Function()? chapterNotFound,
-    TResult Function()? permissionDenied,
-    TResult Function()? serverError,
-    TResult Function()? unexpected,
-    required TResult orElse(),
-  }) {
-    if (chapterNotFound != null) {
-      return chapterNotFound();
-    }
-    return orElse();
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult map<TResult extends Object?>({
-    required TResult Function(ChapterOneAlreadyExists value)
-        chapterOneAlreadyExists,
-    required TResult Function(CoverNotUploaded value) coverNotUploaded,
-    required TResult Function(ChapterNotFound value) chapterNotFound,
-    required TResult Function(PermissionDenied value) permissionDenied,
-    required TResult Function(ServerError value) serverError,
-    required TResult Function(Unexpected value) unexpected,
-  }) {
-    return chapterNotFound(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult? mapOrNull<TResult extends Object?>({
-    TResult Function(ChapterOneAlreadyExists value)? chapterOneAlreadyExists,
-    TResult Function(CoverNotUploaded value)? coverNotUploaded,
-    TResult Function(ChapterNotFound value)? chapterNotFound,
-    TResult Function(PermissionDenied value)? permissionDenied,
-    TResult Function(ServerError value)? serverError,
-    TResult Function(Unexpected value)? unexpected,
-  }) {
-    return chapterNotFound?.call(this);
-  }
-
-  @override
-  @optionalTypeArgs
-  TResult maybeMap<TResult extends Object?>({
-    TResult Function(ChapterOneAlreadyExists value)? chapterOneAlreadyExists,
-    TResult Function(CoverNotUploaded value)? coverNotUploaded,
-    TResult Function(ChapterNotFound value)? chapterNotFound,
-    TResult Function(PermissionDenied value)? permissionDenied,
-    TResult Function(ServerError value)? serverError,
-    TResult Function(Unexpected value)? unexpected,
-    required TResult orElse(),
-  }) {
-    if (chapterNotFound != null) {
-      return chapterNotFound(this);
-    }
-    return orElse();
-  }
-}
-
-abstract class ChapterNotFound implements ChapterFailure {
-  const factory ChapterNotFound() = _$ChapterNotFound;
 }
 
 /// @nodoc
@@ -560,9 +560,9 @@ class _$PermissionDenied implements PermissionDenied {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() chapterNotFound,
     required TResult Function() chapterOneAlreadyExists,
     required TResult Function() coverNotUploaded,
-    required TResult Function() chapterNotFound,
     required TResult Function() permissionDenied,
     required TResult Function() serverError,
     required TResult Function() unexpected,
@@ -573,9 +573,9 @@ class _$PermissionDenied implements PermissionDenied {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? chapterNotFound,
     TResult Function()? chapterOneAlreadyExists,
     TResult Function()? coverNotUploaded,
-    TResult Function()? chapterNotFound,
     TResult Function()? permissionDenied,
     TResult Function()? serverError,
     TResult Function()? unexpected,
@@ -586,9 +586,9 @@ class _$PermissionDenied implements PermissionDenied {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? chapterNotFound,
     TResult Function()? chapterOneAlreadyExists,
     TResult Function()? coverNotUploaded,
-    TResult Function()? chapterNotFound,
     TResult Function()? permissionDenied,
     TResult Function()? serverError,
     TResult Function()? unexpected,
@@ -603,10 +603,10 @@ class _$PermissionDenied implements PermissionDenied {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(ChapterNotFound value) chapterNotFound,
     required TResult Function(ChapterOneAlreadyExists value)
         chapterOneAlreadyExists,
     required TResult Function(CoverNotUploaded value) coverNotUploaded,
-    required TResult Function(ChapterNotFound value) chapterNotFound,
     required TResult Function(PermissionDenied value) permissionDenied,
     required TResult Function(ServerError value) serverError,
     required TResult Function(Unexpected value) unexpected,
@@ -617,9 +617,9 @@ class _$PermissionDenied implements PermissionDenied {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(ChapterNotFound value)? chapterNotFound,
     TResult Function(ChapterOneAlreadyExists value)? chapterOneAlreadyExists,
     TResult Function(CoverNotUploaded value)? coverNotUploaded,
-    TResult Function(ChapterNotFound value)? chapterNotFound,
     TResult Function(PermissionDenied value)? permissionDenied,
     TResult Function(ServerError value)? serverError,
     TResult Function(Unexpected value)? unexpected,
@@ -630,9 +630,9 @@ class _$PermissionDenied implements PermissionDenied {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(ChapterNotFound value)? chapterNotFound,
     TResult Function(ChapterOneAlreadyExists value)? chapterOneAlreadyExists,
     TResult Function(CoverNotUploaded value)? coverNotUploaded,
-    TResult Function(ChapterNotFound value)? chapterNotFound,
     TResult Function(PermissionDenied value)? permissionDenied,
     TResult Function(ServerError value)? serverError,
     TResult Function(Unexpected value)? unexpected,
@@ -689,9 +689,9 @@ class _$ServerError implements ServerError {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() chapterNotFound,
     required TResult Function() chapterOneAlreadyExists,
     required TResult Function() coverNotUploaded,
-    required TResult Function() chapterNotFound,
     required TResult Function() permissionDenied,
     required TResult Function() serverError,
     required TResult Function() unexpected,
@@ -702,9 +702,9 @@ class _$ServerError implements ServerError {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? chapterNotFound,
     TResult Function()? chapterOneAlreadyExists,
     TResult Function()? coverNotUploaded,
-    TResult Function()? chapterNotFound,
     TResult Function()? permissionDenied,
     TResult Function()? serverError,
     TResult Function()? unexpected,
@@ -715,9 +715,9 @@ class _$ServerError implements ServerError {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? chapterNotFound,
     TResult Function()? chapterOneAlreadyExists,
     TResult Function()? coverNotUploaded,
-    TResult Function()? chapterNotFound,
     TResult Function()? permissionDenied,
     TResult Function()? serverError,
     TResult Function()? unexpected,
@@ -732,10 +732,10 @@ class _$ServerError implements ServerError {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(ChapterNotFound value) chapterNotFound,
     required TResult Function(ChapterOneAlreadyExists value)
         chapterOneAlreadyExists,
     required TResult Function(CoverNotUploaded value) coverNotUploaded,
-    required TResult Function(ChapterNotFound value) chapterNotFound,
     required TResult Function(PermissionDenied value) permissionDenied,
     required TResult Function(ServerError value) serverError,
     required TResult Function(Unexpected value) unexpected,
@@ -746,9 +746,9 @@ class _$ServerError implements ServerError {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(ChapterNotFound value)? chapterNotFound,
     TResult Function(ChapterOneAlreadyExists value)? chapterOneAlreadyExists,
     TResult Function(CoverNotUploaded value)? coverNotUploaded,
-    TResult Function(ChapterNotFound value)? chapterNotFound,
     TResult Function(PermissionDenied value)? permissionDenied,
     TResult Function(ServerError value)? serverError,
     TResult Function(Unexpected value)? unexpected,
@@ -759,9 +759,9 @@ class _$ServerError implements ServerError {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(ChapterNotFound value)? chapterNotFound,
     TResult Function(ChapterOneAlreadyExists value)? chapterOneAlreadyExists,
     TResult Function(CoverNotUploaded value)? coverNotUploaded,
-    TResult Function(ChapterNotFound value)? chapterNotFound,
     TResult Function(PermissionDenied value)? permissionDenied,
     TResult Function(ServerError value)? serverError,
     TResult Function(Unexpected value)? unexpected,
@@ -817,9 +817,9 @@ class _$Unexpected implements Unexpected {
   @override
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
+    required TResult Function() chapterNotFound,
     required TResult Function() chapterOneAlreadyExists,
     required TResult Function() coverNotUploaded,
-    required TResult Function() chapterNotFound,
     required TResult Function() permissionDenied,
     required TResult Function() serverError,
     required TResult Function() unexpected,
@@ -830,9 +830,9 @@ class _$Unexpected implements Unexpected {
   @override
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
+    TResult Function()? chapterNotFound,
     TResult Function()? chapterOneAlreadyExists,
     TResult Function()? coverNotUploaded,
-    TResult Function()? chapterNotFound,
     TResult Function()? permissionDenied,
     TResult Function()? serverError,
     TResult Function()? unexpected,
@@ -843,9 +843,9 @@ class _$Unexpected implements Unexpected {
   @override
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? chapterNotFound,
     TResult Function()? chapterOneAlreadyExists,
     TResult Function()? coverNotUploaded,
-    TResult Function()? chapterNotFound,
     TResult Function()? permissionDenied,
     TResult Function()? serverError,
     TResult Function()? unexpected,
@@ -860,10 +860,10 @@ class _$Unexpected implements Unexpected {
   @override
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
+    required TResult Function(ChapterNotFound value) chapterNotFound,
     required TResult Function(ChapterOneAlreadyExists value)
         chapterOneAlreadyExists,
     required TResult Function(CoverNotUploaded value) coverNotUploaded,
-    required TResult Function(ChapterNotFound value) chapterNotFound,
     required TResult Function(PermissionDenied value) permissionDenied,
     required TResult Function(ServerError value) serverError,
     required TResult Function(Unexpected value) unexpected,
@@ -874,9 +874,9 @@ class _$Unexpected implements Unexpected {
   @override
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
+    TResult Function(ChapterNotFound value)? chapterNotFound,
     TResult Function(ChapterOneAlreadyExists value)? chapterOneAlreadyExists,
     TResult Function(CoverNotUploaded value)? coverNotUploaded,
-    TResult Function(ChapterNotFound value)? chapterNotFound,
     TResult Function(PermissionDenied value)? permissionDenied,
     TResult Function(ServerError value)? serverError,
     TResult Function(Unexpected value)? unexpected,
@@ -887,9 +887,9 @@ class _$Unexpected implements Unexpected {
   @override
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
+    TResult Function(ChapterNotFound value)? chapterNotFound,
     TResult Function(ChapterOneAlreadyExists value)? chapterOneAlreadyExists,
     TResult Function(CoverNotUploaded value)? coverNotUploaded,
-    TResult Function(ChapterNotFound value)? chapterNotFound,
     TResult Function(PermissionDenied value)? permissionDenied,
     TResult Function(ServerError value)? serverError,
     TResult Function(Unexpected value)? unexpected,
