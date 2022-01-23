@@ -82,6 +82,70 @@ class SeriesRepository implements ISeriesRepository {
   }
 
   @override
+  Future<Result<bool, SeriesFailure>> loadBookmarkStatus(
+    UniqueID userID,
+    UniqueID seriesUID,
+  ) async {
+    try {
+      final documentSnapshot = await _firestore
+          .collection(seriesBookmarksPath)
+          .doc(seriesUID.getOrCrash())
+          .get();
+
+      if (!documentSnapshot.exists) {
+        return Ok(false);
+      }
+
+      final data = documentSnapshot.data();
+      if (data != null) {
+        final isBookmarked = data[userID.getOrCrash()] as bool;
+
+        return Ok(isBookmarked);
+      }
+      return Ok(false);
+    } on FirebaseException catch (e) {
+      if (e.code == 'permission-denied') {
+        return Err(const SeriesFailure.permissionDenied());
+      }
+      return Err(const SeriesFailure.serverError());
+    } catch (_) {
+      return Err(const SeriesFailure.unexpected());
+    }
+  }
+
+  @override
+  Future<Result<bool, SeriesFailure>> loadLikeStatus(
+    UniqueID userID,
+    UniqueID seriesUID,
+  ) async {
+    try {
+      final documentSnapshot = await _firestore
+          .collection(seriesLikesPath)
+          .doc(seriesUID.getOrCrash())
+          .get();
+
+      if (!documentSnapshot.exists) {
+        return Ok(false);
+      }
+
+      final data = documentSnapshot.data();
+      if (data != null) {
+        final isLiked = data[userID.getOrCrash()] as bool;
+
+        return Ok(isLiked);
+      }
+      return Ok(false);
+    } on FirebaseException catch (e) {
+      if (e.code == 'permission-denied') {
+        return Err(const SeriesFailure.permissionDenied());
+      }
+      return Err(const SeriesFailure.serverError());
+    } catch (_) {
+      return Err(const SeriesFailure.unexpected());
+    }
+  }
+
+  @override
   Future<Result<Series, SeriesFailure>> loadSeriesByID(UniqueID uid) async {
     try {
       final snapshot =
@@ -107,15 +171,15 @@ class SeriesRepository implements ISeriesRepository {
   @override
   Future<Result<List<Series>, SeriesFailure>> loadSeriesByUserID(
     UniqueID uid, {
-    UniqueID? lastSeriesID,
+    UniqueID? lastSeriesUID,
   }) async {
     try {
       final seriesCollection = _firestore.collection(seriesPath);
 
       Query? query;
-      if (lastSeriesID != null) {
+      if (lastSeriesUID != null) {
         final lastDocument =
-            await seriesCollection.doc(lastSeriesID.getOrCrash()).get();
+            await seriesCollection.doc(lastSeriesUID.getOrCrash()).get();
 
         query = seriesCollection
             .startAfterDocument(lastDocument)
@@ -193,7 +257,7 @@ class SeriesRepository implements ISeriesRepository {
   @override
   Future<Result<Unit, SeriesFailure>> updateSeriesBookmarks(
     UniqueID userID,
-    UniqueID seriesID, {
+    UniqueID seriesUID, {
     required bool isBookmarked,
   }) async {
     try {
@@ -201,7 +265,7 @@ class SeriesRepository implements ISeriesRepository {
         // Check userID register inside series_bookmarks collection
         final seriesBookmarksReference = _firestore
             .collection(seriesBookmarksPath)
-            .doc(seriesID.getOrCrash());
+            .doc(seriesUID.getOrCrash());
 
         final sbrSnapshot = await transaction.get(seriesBookmarksReference);
         final dbIsBookmarked =
@@ -212,7 +276,7 @@ class SeriesRepository implements ISeriesRepository {
           // TODO(SSebigo): make sure firebase rules
           // match to prevent fraudulent updates
           final seriesReference =
-              _firestore.collection(seriesPath).doc(seriesID.getOrCrash());
+              _firestore.collection(seriesPath).doc(seriesUID.getOrCrash());
 
           final srSnapshot = await transaction.get(seriesReference);
           final bookmarksCount = srSnapshot.data()?['bookmarksCount'] as int;
@@ -248,14 +312,14 @@ class SeriesRepository implements ISeriesRepository {
   @override
   Future<Result<Unit, SeriesFailure>> updateSeriesLikes(
     UniqueID userID,
-    UniqueID seriesID, {
+    UniqueID seriesUID, {
     required bool isLiked,
   }) async {
     try {
       await _firestore.runTransaction((transaction) async {
         // Check userID register inside series_likes collection
         final seriesLikesReference =
-            _firestore.collection(seriesLikesPath).doc(seriesID.getOrCrash());
+            _firestore.collection(seriesLikesPath).doc(seriesUID.getOrCrash());
 
         final slrSnapshot = await transaction.get(seriesLikesReference);
         final dbIsLiked =
@@ -266,7 +330,7 @@ class SeriesRepository implements ISeriesRepository {
           // TODO(SSebigo): make sure firebase rules
           // match to prevent fraudulent updates
           final seriesReference =
-              _firestore.collection(seriesPath).doc(seriesID.getOrCrash());
+              _firestore.collection(seriesPath).doc(seriesUID.getOrCrash());
 
           final srSnapshot = await transaction.get(seriesReference);
           final likesCount = srSnapshot.data()?['likesCount'] as int;
@@ -301,13 +365,13 @@ class SeriesRepository implements ISeriesRepository {
   @override
   Future<Result<bool, SeriesFailure>> updateSeriesViews(
     UniqueID userID,
-    UniqueID seriesID,
+    UniqueID seriesUID,
   ) async {
     try {
       await _firestore.runTransaction((transaction) async {
         // Check userID register inside series_views collection
         final seriesViewsReference =
-            _firestore.collection(seriesViewsPath).doc(seriesID.getOrCrash());
+            _firestore.collection(seriesViewsPath).doc(seriesUID.getOrCrash());
 
         final svrSnapshot = await transaction.get(seriesViewsReference);
         final viewed =
@@ -318,7 +382,7 @@ class SeriesRepository implements ISeriesRepository {
           // TODO(SSebigo): make sure firebase rules
           // match to prevent fraudulent updates
           final seriesReference =
-              _firestore.collection(seriesPath).doc(seriesID.getOrCrash());
+              _firestore.collection(seriesPath).doc(seriesUID.getOrCrash());
 
           final srSnapshot = await transaction.get(seriesReference);
           final viewsCount = srSnapshot.data()?['viewsCount'] as int;

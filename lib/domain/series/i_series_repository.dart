@@ -14,12 +14,24 @@ abstract class ISeriesRepository {
   Future<Result<Unit, SeriesFailure>> deleteSeries(UniqueID uid);
 
   /// @nodoc
+  Future<Result<bool, SeriesFailure>> loadBookmarkStatus(
+    UniqueID userID,
+    UniqueID seriesUID,
+  );
+
+  /// @nodoc
+  Future<Result<bool, SeriesFailure>> loadLikeStatus(
+    UniqueID userID,
+    UniqueID seriesUID,
+  );
+
+  /// @nodoc
   Future<Result<Series, SeriesFailure>> loadSeriesByID(UniqueID uid);
 
   /// @nodoc
   Future<Result<List<Series>, SeriesFailure>> loadSeriesByUserID(
     UniqueID uid, {
-    UniqueID? lastSeriesID,
+    UniqueID? lastSeriesUID,
   });
 
   /// @nodoc
@@ -28,21 +40,21 @@ abstract class ISeriesRepository {
   /// @nodoc
   Future<Result<Unit, SeriesFailure>> updateSeriesBookmarks(
     UniqueID userID,
-    UniqueID seriesID, {
+    UniqueID seriesUID, {
     required bool isBookmarked,
   });
 
   /// @nodoc
   Future<Result<Unit, SeriesFailure>> updateSeriesLikes(
     UniqueID userID,
-    UniqueID seriesID, {
+    UniqueID seriesUID, {
     required bool isLiked,
   });
 
   /// @nodoc
   Future<Result<bool, SeriesFailure>> updateSeriesViews(
     UniqueID userID,
-    UniqueID seriesID,
+    UniqueID seriesUID,
   );
 
   /// @nodoc
