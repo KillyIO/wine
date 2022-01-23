@@ -27,6 +27,21 @@ class SeriesLayout extends StatelessWidget {
             some: (value) => value.when(
               ok: (_) {},
               err: (err) => err.maybeMap(
+                chapter: (f) => f.f.maybeMap(
+                  permissionDenied: (_) async => baseErrorDialog(
+                    context,
+                    <String>['Forbidden action. Permission denied!'],
+                  ),
+                  serverError: (_) async => baseErrorDialog(
+                    context,
+                    <String>['A problem occurred on our end!'],
+                  ),
+                  unexpected: (_) async => baseErrorDialog(
+                    context,
+                    <String>['An unexpected error occured!'],
+                  ),
+                  orElse: () {},
+                ),
                 series: (f) => f.f.maybeMap(
                   permissionDenied: (_) async => baseErrorDialog(
                     context,
