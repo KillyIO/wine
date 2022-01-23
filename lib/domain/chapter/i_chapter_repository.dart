@@ -9,7 +9,7 @@ import 'package:wine/domain/core/unique_id.dart';
 abstract class IChapterRepository {
   /// @nodoc
   Future<Result<Unit, ChapterFailure>> checkChapterOneAlreadyExists(
-    UniqueID seriesID,
+    UniqueID seriesUID,
   );
 
   /// @nodoc
@@ -22,15 +22,15 @@ abstract class IChapterRepository {
   Future<Result<Chapter, ChapterFailure>> loadChapterByID(UniqueID uid);
 
   /// @nodoc
-  Future<Result<Chapter, ChapterFailure>> loadChapterBySeriesIDAndIndex(
-    UniqueID seriesID,
+  Future<Result<Chapter, ChapterFailure>> loadChapterBySeriesUIDAndIndex(
+    UniqueID seriesUID,
     int index,
   );
 
   /// @nodoc
   Future<Result<List<Chapter>, ChapterFailure>> loadChaptersByUserID(
     UniqueID uid, {
-    UniqueID? lastChapterID,
+    UniqueID? lastChapterUID,
   });
 
   /// @nodoc

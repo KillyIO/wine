@@ -31,12 +31,12 @@ class ChapterRepository implements IChapterRepository {
 
   @override
   Future<Result<Unit, ChapterFailure>> checkChapterOneAlreadyExists(
-    UniqueID seriesID,
+    UniqueID seriesUID,
   ) async {
     try {
       final querySnapshot = await _firestore
           .collection(chaptersPath)
-          .where('seriesID', isEqualTo: seriesID)
+          .where('seriesUID', isEqualTo: seriesUID.getOrCrash())
           .where('index', isEqualTo: 1)
           .where('isPublished', isEqualTo: true)
           .withConverter<Chapter>(
@@ -142,14 +142,14 @@ class ChapterRepository implements IChapterRepository {
   }
 
   @override
-  Future<Result<Chapter, ChapterFailure>> loadChapterBySeriesIDAndIndex(
-    UniqueID seriesID,
+  Future<Result<Chapter, ChapterFailure>> loadChapterBySeriesUIDAndIndex(
+    UniqueID seriesUID,
     int index,
   ) async {
     try {
       final querySnapshot = await _firestore
           .collection(chaptersPath)
-          .where('seriesID', isEqualTo: seriesID)
+          .where('seriesUID', isEqualTo: seriesUID.getOrCrash())
           .where('index', isEqualTo: index)
           .withConverter<Chapter>(
             fromFirestore: (snapshot, _) {
@@ -169,11 +169,9 @@ class ChapterRepository implements IChapterRepository {
       final chapter = querySnapshot.docs.first.data();
 
       return Ok(chapter);
-    } on PlatformException catch (e) {
-      if (e.code == 'firebase_firestore') {
-        if ((e.details as Map)['code'] == 'permission-denied') {
-          return Err(const ChapterFailure.permissionDenied());
-        }
+    } on FirebaseException catch (e) {
+      if (e.code == 'permission-denied') {
+        return Err(const ChapterFailure.permissionDenied());
       }
       return Err(const ChapterFailure.serverError());
     } catch (_) {
@@ -184,15 +182,15 @@ class ChapterRepository implements IChapterRepository {
   @override
   Future<Result<List<Chapter>, ChapterFailure>> loadChaptersByUserID(
     UniqueID uid, {
-    UniqueID? lastChapterID,
+    UniqueID? lastChapterUID,
   }) async {
     try {
       final chaptersCollection = _firestore.collection(chaptersPath);
 
       Query? query;
-      if (lastChapterID != null) {
+      if (lastChapterUID != null) {
         final lastDocument =
-            await chaptersCollection.doc(lastChapterID.getOrCrash()).get();
+            await chaptersCollection.doc(lastChapterUID.getOrCrash()).get();
 
         query = chaptersCollection
             .startAfterDocument(lastDocument)
