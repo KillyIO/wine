@@ -30,6 +30,43 @@ class ChapterRepository implements IChapterRepository {
   final FirebaseStorage _firebaseStorage;
 
   @override
+  Future<Result<Unit, ChapterFailure>> checkChapterOneAlreadyExists(
+    UniqueID seriesID,
+  ) async {
+    try {
+      final querySnapshot = await _firestore
+          .collection(chaptersPath)
+          .where('seriesID', isEqualTo: seriesID)
+          .where('index', isEqualTo: 1)
+          .where('isPublished', isEqualTo: true)
+          .withConverter<Chapter>(
+            fromFirestore: (snapshot, _) {
+              if (snapshot.exists) {
+                return ChapterDTO.fromJson(snapshot.data()!).toDomain();
+              }
+              return Chapter.empty();
+            },
+            toFirestore: (value, _) => ChapterDTO.fromDomain(value).toJson(),
+          )
+          .get();
+
+      if (querySnapshot.docs.isEmpty) {
+        return Ok(unit);
+      }
+      return Err(const ChapterFailure.chapterOneAlreadyExists());
+    } on PlatformException catch (e) {
+      if (e.code == 'firebase_firestore') {
+        if ((e.details as Map)['code'] == 'permission-denied') {
+          return Err(const ChapterFailure.permissionDenied());
+        }
+      }
+      return Err(const ChapterFailure.serverError());
+    } catch (_) {
+      return Err(const ChapterFailure.unexpected());
+    }
+  }
+
+  @override
   Future<Result<Unit, ChapterFailure>> createChapter(Chapter chapter) async {
     var tmpChapter = chapter;
 
@@ -64,15 +101,44 @@ class ChapterRepository implements IChapterRepository {
   }
 
   @override
-  Future<Result<Unit, ChapterFailure>> deleteChapter(UniqueID uid) {
-    // TODO(SSebigo): implement deleteChapter
-    throw UnimplementedError();
+  Future<Result<Unit, ChapterFailure>> deleteChapter(UniqueID uid) async {
+    try {
+      await _firestore.collection(chaptersPath).doc(uid.getOrCrash()).delete();
+
+      return Ok(unit);
+    } on PlatformException catch (e) {
+      if (e.code == 'firebase_firestore') {
+        if ((e.details as Map)['code'] == 'permission-denied') {
+          return Err(const ChapterFailure.permissionDenied());
+        }
+      }
+      return Err(const ChapterFailure.serverError());
+    } catch (_) {
+      return Err(const ChapterFailure.unexpected());
+    }
   }
 
   @override
-  Future<Result<Chapter, ChapterFailure>> loadChapterByID(UniqueID uid) {
-    // TODO(SSebigo): implement loadChapterByID
-    throw UnimplementedError();
+  Future<Result<Chapter, ChapterFailure>> loadChapterByID(UniqueID uid) async {
+    try {
+      final snapshot =
+          await _firestore.collection(chaptersPath).doc(uid.getOrCrash()).get();
+
+      if (snapshot.exists) {
+        final chapter = ChapterDTO.fromJson(snapshot.data()!).toDomain();
+        return Ok(chapter);
+      }
+      return Err(const ChapterFailure.chapterNotFound());
+    } on PlatformException catch (e) {
+      if (e.code == 'firebase_firestore') {
+        if ((e.details as Map)['code'] == 'permission-denied') {
+          return Err(const ChapterFailure.permissionDenied());
+        }
+      }
+      return Err(const ChapterFailure.serverError());
+    } catch (_) {
+      return Err(const ChapterFailure.unexpected());
+    }
   }
 
   @override
@@ -119,9 +185,86 @@ class ChapterRepository implements IChapterRepository {
   Future<Result<List<Chapter>, ChapterFailure>> loadChaptersByUserID(
     UniqueID uid, {
     UniqueID? lastChapterID,
-  }) {
-    // TODO(SSebigo): implement loadChaptersByUserID
-    throw UnimplementedError();
+  }) async {
+    try {
+      final chaptersCollection = _firestore.collection(chaptersPath);
+
+      Query? query;
+      if (lastChapterID != null) {
+        final lastDocument =
+            await chaptersCollection.doc(lastChapterID.getOrCrash()).get();
+
+        query = chaptersCollection
+            .startAfterDocument(lastDocument)
+            .where('authorUID', isEqualTo: uid.getOrCrash());
+      } else {
+        query =
+            chaptersCollection.where('authorUID', isEqualTo: uid.getOrCrash());
+      }
+
+      final querySnapshot = await query
+          .orderBy('updatedAt', descending: true)
+          .limit(20)
+          .withConverter<Chapter>(
+            fromFirestore: (snapshot, _) {
+              if (snapshot.exists) {
+                return ChapterDTO.fromJson(snapshot.data()!).toDomain();
+              }
+              return Chapter.empty();
+            },
+            toFirestore: (value, _) => ChapterDTO.fromDomain(value).toJson(),
+          )
+          .get();
+
+      final chapter = <Chapter>[];
+      for (final doc in querySnapshot.docs) {
+        chapter.add(doc.data());
+      }
+      return Ok(chapter);
+    } on PlatformException catch (e) {
+      if (e.code == 'firebase_firestore') {
+        if ((e.details as Map)['code'] == 'permission-denied') {
+          return Err(const ChapterFailure.permissionDenied());
+        }
+      }
+      return Err(const ChapterFailure.serverError());
+    } catch (_) {
+      return Err(const ChapterFailure.unexpected());
+    }
+  }
+
+  @override
+  Future<Result<Unit, ChapterFailure>> updateChapter(Chapter chapter) async {
+    var tmpChapter = chapter;
+
+    try {
+      final coverURL = tmpChapter.coverURL.getOrCrash();
+
+      if (!isURL(coverURL)) {
+        (await uploadCover(File(coverURL))).match(
+          (success) {
+            tmpChapter = tmpChapter.copyWith(coverURL: CoverURL(success));
+          },
+          (_) {},
+        );
+      }
+
+      await _firestore
+          .collection(chaptersPath)
+          .doc(tmpChapter.uid.getOrCrash())
+          .update(ChapterDTO.fromDomain(tmpChapter).toJson());
+
+      return Ok(unit);
+    } on PlatformException catch (e) {
+      if (e.code == 'firebase_firestore') {
+        if ((e.details as Map)['code'] == 'permission-denied') {
+          return Err(const ChapterFailure.permissionDenied());
+        }
+      }
+      return Err(const ChapterFailure.serverError());
+    } catch (_) {
+      return Err(const ChapterFailure.unexpected());
+    }
   }
 
   @override
